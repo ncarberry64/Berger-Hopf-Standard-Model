@@ -1,6 +1,46 @@
 # Reviewer Reproduction Guide
 
-## Current v15.7 audit
+## Current cross-resolution checkpoint
+
+```bash
+python -m pytest -q tests/test_bhsm_aether_cross_resolution_reconnaissance_v21_35.py tests/test_engine_invariant_preservation.py tests/test_engine_physics_status_separation.py
+python tools/audit_forbidden_claims.py
+python tools/audit_bhsm_status.py
+python tools/audit_frozen_prediction_integrity.py
+git diff --check
+```
+
+Inspect the [v21.35 cross-resolution artifact](../artifacts/BHSM_AETHER_CROSS_RESOLUTION_RECONNAISSANCE_V21_35.json).
+The full historical pytest corpus remains available locally but is not a
+mandatory pull-request check; run `python -m pytest -q` only when a full
+historical regression is scientifically warranted.
+
+## Current corrected-Rayleigh N=3 audit
+
+The canonical snapshot is the validated rolling checkpoint at exact
+`||F376|| = 0.777030406838571`. It is not a closed root. Run:
+
+```bash
+python -m pytest -q tests/test_bhsm_aether_n3_response_resolution_v20_78_to_v20_79.py tests/test_bhsm_public_readiness_v6_21_0.py
+python tools/audit_public_readiness.py --format human
+python tools/audit_frozen_prediction_integrity.py
+git diff --check
+```
+
+Then inspect the
+[N=3 continuation ledger](BHSM_N3_CONTINUATION_LEDGER.md),
+[rolling checkpoint artifact](../artifacts/BHSM_N3_FRESH_EIGENPAIR_CURVATURE_CONTINUATION_CHECKPOINT.json),
+[claim boundaries](../CLAIMS.md), and [gate ledger](../theory/gate_ledger.md).
+The checkpoint must show exact v21.32 -> v21.33 replay equivalence, fresh
+curvature validation at every rolling step, strict exact-merit descent, and a
+fresh rank-14 complete child passing eta, trace, constraints, momentum, flux,
+persistence, and nonzero-motion gates at every promotion.
+
+Do not compare legacy `~0.758...` residual values directly to the corrected
+ordered-Rayleigh `~0.787...` series unless the legacy state is reevaluated with
+the corrected definition.
+
+## Historical v15.7 audit
 
 Recommended current reviewer command:
 

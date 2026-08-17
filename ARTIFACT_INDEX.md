@@ -1,5 +1,16 @@
 # BHSM Artifact Index
 
+## Current cross-resolution encapsulation checkpoint (v21.35)
+
+- [`BHSM_AETHER_CROSS_RESOLUTION_RECONNAISSANCE_V21_35.json`](artifacts/BHSM_AETHER_CROSS_RESOLUTION_RECONNAISSANCE_V21_35.json)
+- Source: [`aether_cross_resolution_reconnaissance_v21_35.py`](src/bhsm/interface/aether_cross_resolution_reconnaissance_v21_35.py)
+- Focused test: [`test_bhsm_aether_cross_resolution_reconnaissance_v21_35.py`](tests/test_bhsm_aether_cross_resolution_reconnaissance_v21_35.py)
+
+This checkpoint records independent N4/N5 construction, validated N4 ordered
+event, complete rank-16 N4 child and positive-duration persistence, plus the
+admissible ordered N5 event and structurally full-rank 18-row child map. The N5
+exact root and persistence remain active. `FULL_BHSM_COMPLETE = FALSE`.
+
 ## Current BHSM v15.10 sigma-coefficient response reconstruction
 
 The deterministic current record is controlled by
@@ -2268,3 +2279,22 @@ The mathematical report is
 - `BHSM_aether_n3_fresh_sbp_second_dense_radius_v17_21.json`
 - `BHSM_aether_n3_fresh_sbp_v0_priority_family_v17_22.json`
 <!-- /BHSM_V17_19_TO_V17_22_ARTIFACTS -->
+
+## Current corrected-Rayleigh N=3 canonization checkpoint
+
+- `artifacts/BHSM_N3_RAYLEIGH_EVENT_COVECTOR_V20_80.json`
+- `artifacts/BHSM_N3_V20_62_PLATEAU_PROPOSAL_MECHANISM_AUDIT_V20_67.json`
+- `artifacts/BHSM_N3_STRUCTURAL_HINDSIGHT_RECOVERY_V20_68.json`
+- `artifacts/BHSM_N3_ISOLATED_EIGENPAIR_EVENT_HESSIAN_V21_17.json`
+- `artifacts/BHSM_N3_EIGENPAIR_CURVATURE_EXPANDED_RADIUS_V21_21.json`
+- `artifacts/BHSM_N3_EIGHTH_EXPANDED_RADIUS_REFRESHED_CONTINUATION_V21_33.json`
+- `artifacts/BHSM_N3_FRESH_EIGENPAIR_CURVATURE_CONTINUATION_CHECKPOINT.json`
+
+The current reproducibility narrative is
+`docs/BHSM_N3_CONTINUATION_LEDGER.md`. The rolling artifact is authoritative
+for the latest accepted snapshot and preserves every accepted raw vector in
+hexadecimal form. It first reproduces the manual v21.32 -> v21.33 state exactly
+and then records 36 fresh-curvature promotions through corrected-Rayleigh
+`||F376|| = 0.777030406838571`. Legacy-event-covector and corrected-Rayleigh
+norm series are separate measurement eras unless reevaluated under one
+definition.

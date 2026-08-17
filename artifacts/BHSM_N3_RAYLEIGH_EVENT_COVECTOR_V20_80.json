@@ -1,0 +1,71 @@
+{
+  "FULL_BHSM_COMPLETE": false,
+  "artifact": "BHSM_N3_RAYLEIGH_EVENT_COVECTOR_V20_80",
+  "classification": "BHSM_N3_ISOLATED_ORDERED_EVENT_RAYLEIGH_COVECTOR",
+  "rayleigh_event_covector": {
+    "acceptance_gate_changed": false,
+    "directional_checks": [
+      {
+        "absolute_residual": 1.4062037936e-05,
+        "direction": "physical_residual",
+        "event_value_central_derivative": -0.087028060232152,
+        "rayleigh_directional_derivative": -0.087013998194216,
+        "step": 1e-06
+      },
+      {
+        "absolute_residual": 4.967335e-09,
+        "direction": "latest_accepted_secant",
+        "event_value_central_derivative": 1.4711724e-08,
+        "rayleigh_directional_derivative": 1.9679059e-08,
+        "step": 3e-05
+      },
+      {
+        "absolute_residual": 9.6005e-11,
+        "direction": "material_corridor_secant",
+        "event_value_central_derivative": 2.11469548e-07,
+        "rayleigh_directional_derivative": 2.11565553e-07,
+        "step": 3e-05
+      },
+      {
+        "absolute_residual": 2.3021931e-08,
+        "direction": "multisecant_direction",
+        "event_value_central_derivative": 7.1672290827e-05,
+        "rayleigh_directional_derivative": 7.1649268896e-05,
+        "step": 3e-05
+      }
+    ],
+    "event_multiplier_reprojected_only": true,
+    "legacy_covector_scaled_l2": 94.18210807139877,
+    "legacy_vs_rayleigh_relative_residual": 0.250151271224286,
+    "next_action": "RESUME_SQUARE_376_CLOSURE_FROM_V20_77_GEOMETRY_WITH_REPROJECTED_RAYLEIGH_EVENT_MULTIPLIER",
+    "numerical_event_derivative_corrected": true,
+    "ordered_event": {
+      "eigenvalue": -8.3194528516e-05,
+      "lower_gap": 0.582688242079649,
+      "upper_gap": 1.0547008861e-05
+    },
+    "outcome": "LEGACY_EVENT_COVECTOR_INVALIDATED_RAYLEIGH_COVECTOR_VALIDATED",
+    "physical_equations_changed": false,
+    "physical_event_changed": false,
+    "rayleigh_covector_scaled_l2": 75.39632791711603,
+    "rayleigh_f376_l2": 0.798607212645983,
+    "rayleigh_projected_raw_event_multiplier": 157.2418455564045,
+    "rayleigh_stationarity_l2": 0.7942620162863,
+    "rayleigh_step_stability_relative_residual": 2.82857e-10,
+    "scaled_event_residual": -0.083194528516047,
+    "source_geometry": "v20.77",
+    "source_legacy_f376_l2": 0.758671922543989
+  },
+  "status": "VALIDATED",
+  "validation": {
+    "derivative_correction_explicit": true,
+    "event_multiplier_reprojected": true,
+    "legacy_inconsistency_demonstrated": true,
+    "ordered_event_isolated": true,
+    "rayleigh_matches_event_directionals": true,
+    "rayleigh_step_stable": true,
+    "same_physics": true
+  },
+  "validation_passed": true,
+  "version": "v20.80"
+}

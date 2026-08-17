@@ -124,7 +124,10 @@ def test_manifest_is_canonical_and_deterministic():
         "BHSM_REPOSITORY_PUBLIC_REVIEW_READY"
     )
     assert manifest["scientific_formulas_changed"] is False
-    assert manifest["scientific_source_modules_changed"] is False
+    assert manifest["scientific_source_modules_changed"] is True
+    assert manifest["proposal_workflow_source_changed"] is True
+    assert manifest["physical_equations_changed"] is False
+    assert manifest["acceptance_gate_changed"] is False
     assert manifest["official_prediction_logic_changed"] is False
 
 

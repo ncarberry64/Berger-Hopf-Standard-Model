@@ -2,179 +2,116 @@
 
 ## Current public claim boundary
 
-Current version: **v18.73**.
+Current public identifier: **v21.35 cross-resolution encapsulation
+checkpoint**. This is not a release and does not claim BHSM completion.
 
-Supported now: the N=3 event-to-complete-child correspondence is explicitly
-derived and numerically solved.  The complete child is the reconstructed whole
-system, not an additional coordinate or a static point.  Its boundary traces,
-seven local constraints, attachment momentum, dynamic flux, Calderon sector,
-discrete core ownership and positive-duration persistence all close at the
-latest accepted event.  Nonzero motion, momentum and time dependence are
-retained as physical relative evolution.
+Supported now: N3 and N4 independently reconstruct complete persistent
+children under their retained equations. Supported now: the independent N5
+branch is eta-admissible, has an ordered event, and exposes a structurally
+full-rank 18-row child map. The N5 exact root, certification, and persistence
+are not yet closed.
 
-Supported now: complete-child-gated global promotions reduce the
-unchanged 376-row residual from `0.831926246412044` to
-`0.807144219141348`. The latest accepted v18.71 line state was independently evaluated
-and promoted at v18.73 only after its complete moving child was recomputed
-from all 26 variables and shown persistent.  No componentwise event
-monotonicity, handcrafted
-direction mixture, empirical particle selector, or 377th row is used.
-The physical nonlinear problem is the square 376-variable KKT system with an
-explicit event multiplier.  Intermediate rows may worsen during a legitimate
-coupled step, and remaining on the previous iterate path is not a physical
-condition.  Trust regions, damping and line-search rules are numerical
-controls only.
+Supported numerical equivalence: splitting the unchanged N5 map as
+`F18=(A16,Phi2)`, solving the local compatibility fiber `A16=0`, and evaluating
+`Phi2` on that fiber has the same roots as `F18=0`. It adds no row, constraint,
+coefficient, event definition, or acceptance gate.
 
-Supported/reclassified: v18.69 confirms that the regular 14-row child map has
-rank 14 and nullity 12 across neighboring Jacobian steps. Six canonical
-ownership directions are genuine gauge-fixed Cauchy freedom and six remain
-Cauchy-multiplier mixtures. The retained formulation does not justify calling
-them all gauge/chart redundancy. Reprojected fiber probes preserve the
-existing physical gates while retained action and eta observables vary. No
-action selector, extra equation, or optimization over the fiber is claimed;
-the Unique-Actualization/selection owner remains open.
+Not supported: resolution-independent general-N reconstruction, absolute
+scale, physical masses, CKM, PMNS, CP, neutrino splittings, empirical
+validation, or `FULL_BHSM_COMPLETE = TRUE`.
 
-Supported now: the retained action has measured radius powers `5` for spatial
-and intrinsic curvature, `7` for cosmological and ADM kinetic contributions,
-and `-1` for the boundary Casimir contribution at the accepted v18.12 state.
-The eta and Hopf-inertia terms are mixed rather than single monomials and have
-local fitted exponents `1.8083` and `-2.1733` on the measured radius family.
-The response is physically anisotropic, but its dimensionless maximum action
-curvature gives characteristic displacement `0.103135`, not order `1e-6`.
+Active dependency:
+`CLOSE_THE_UNCHANGED_N5_F18_ROOT_CERTIFY_N5_PERSISTENCE_THEN_DERIVE_THE_GENERAL_N_RECONSTRUCTION_STATEMENT`.
 
-Invalidated: the current evidence does not support identifying the observed
-`~1e-6` numerical near-stall with intrinsically tiny action-normalized physical
-stiffness.  The large curvature-spectrum ratio is dominated by soft modes.
+### Historical corrected-Rayleigh N3 claim boundary
 
-Reclassified: physical scale/period/geometry anisotropy is real, while much of
-the raw-coordinate compression in high u, eta-sensitive shift and lapse modes
-comes from coordinate units.  v18.15 supplies an invertible action-curvature
-right-coordinate map.  It changes no equation or residual row and exactly
-preserves the source state, residual, eta, root set, event definition, and
-complete-child persistence gate.  Its effect on accepted N=3 continuation is
-demonstrated at v18.25 only through independent exact-merit and complete-child
-checks; the coordinate map itself is not an acceptance condition.  v18.26
-also shows that a validated direction can have a line minimum below the
-inherited `1e-8` coarse trial floor; v18.27 measures that finer bracket rather
-than treating the coarse solver floor as physics.
+Current public identifier: **corrected-Rayleigh N=3 rolling snapshot**. This is
+not a release version and does not claim closure.
 
-Reclassified/invalidated: v18.30 validates the matrix-free directional
-response but its bounded right-mapped GMRES run does not solve the Newton
-equation.  v18.31's congruent MINRES direction fails its exact response check.
-Neither linear-solver model is promoted as physics.  The v18.31 line state is
-accepted at v18.33 only because independently recomputed exact merit, eta and
-the full complete-child persistence gate pass.
+Supported now: the event-to-complete-child correspondence is explicitly
+implemented as 14 physical rows on 26 child variables. The complete child is
+the reconstructed whole system, not an extra KKT coordinate or a static point.
+At accepted frontiers its boundary traces, seven constraints, attachment
+momentum, dynamic flux, eta domain, Calderon/core sectors, positive-duration
+persistence, and nonzero relative motion pass. The child Jacobian has rank 14.
+No equation 377 or empirical selector was added.
 
-Supported/reclassified: v18.34 measures a common direct-response plateau for
-the unchanged nested 376-row residual.  v18.35 does not produce a validated
-Newton direction--the resulting direction fails the same scale-consistency
-test--but its independently evaluated line state reduces exact total merit by
-`0.00302809525`.  v18.36-v18.37 promote that state only after recomputing the
-whole child and its persistence.  Solver failure is neither physics nor a veto
-on an independently admissible physical state.
+Supported now: the physical nonlinear problem remains the square 376-variable
+KKT system with explicit event multiplier. Proposal models have no physical
+authority. Exact unweighted corrected-Rayleigh `F376` decides merit; a fresh
+complete-child solve decides physical promotion. Individual rows may worsen in
+a coupled step, and leaving the previous iterate path is not a defect.
 
-Supported/reclassified: v18.38 remeasures the direct-response plateau after
-the v18.37 state change.  v18.39's resulting direction again fails its own
-scale-consistency test, so its JFNK/Newton claim remains invalidated.  Its
-independently evaluated line state reduces exact merit by `0.00168862805`, and
-v18.40-v18.41 promote only that state after a fresh complete-child and
-persistence evaluation.
+Supported snapshot: rolling checkpoint step 36 has exact
+`||F376|| = 0.777030406838571`. Its fresh child has rank 14, eta minimum
+`1.00003772292787`, two-scale flux envelope `1.6172791659e-5` below the
+unchanged `2e-5` gate, maximum 14-row mismatch `6.51707072e-7`, and
+persistence constraint `6.1803e-11`; trace, all constraints, momentum, flux,
+persistence, and nonzero-motion gates pass. Frozen predictions are unchanged.
 
-Supported/reclassified: v18.42 remeasures the plateau after v18.41.  v18.43's
-Newton model is invalidated by its resulting-direction response test, but its
-line contains independently merit-reducing eta-admissible states.  The most
-aggressive candidate is not promoted because v18.45 fails the unchanged
-two-scale child-flux gate.  v18.46-v18.47 use the next lowest-merit existing
-line state and promote it only after complete-child flux and persistence pass,
-reducing exact merit by `0.00497706683`.
+Validated numerical correction: near ordered-event degeneracy the legacy
+event covector differed from the isolated-eigenvalue Rayleigh derivative by
+approximately `25.0151%`. The corrected ordered-Rayleigh treatment changes the
+derivative/evaluation machinery, not the physical event definition or KKT row
+count. Legacy norms near `0.758...` and corrected-Rayleigh norms near
+`0.787...` are different numerical series unless legacy states are reevaluated
+with the corrected definition. Their apparent jump is not evidence of physical
+regression.
 
-Validated diagnostic: v18.48 finds that v18.43's raw proposal norm is dominated
-by event-multiplier units, while its action-owned norm is concentrated in
-scale, v and w geometry.  Lapse departs first and eta-sensitive shift has the
-largest normalized departure, but w has the largest absolute nonlinear defect.
-The audited u/eta-shift/lapse interactions are absolutely subdominant.  This
-is a measured local interpretation, not a new equation or theorem.
+Validated derivation: the terminal scale/v ordered-event second variation uses
+the isolated-eigenpair formula with eigenvector response and the terminal
+SBP/period second pullback. It reproduces the Rayleigh covector to `1.8e-14`,
+is stable across the audited local derivative scales to `3.232284e-9`, and has
+worst stable directional event-response discrepancy `1.185584e-4`. This
+resolved `RAYLEIGH_EVENT_HESSIAN_TERMINAL_SCALE_V_ASSEMBLY` without changing
+the event or acceptance gates.
 
-Supported/reclassified: v18.49-v18.50 remeasure the local response and scan
-both orientations of a bounded geometric probe using exact nonlinear merit.
-The solver interpretation remains invalidated.  The lowest-merit physical
-proposal fails the unchanged flux gate at v18.52; v18.53-v18.54 promote the
-next existing exact-merit state only after its complete-child flux and
-persistence pass, reducing exact merit by `0.00134272343`.
+Validated proposal workflow: bounded dual-metric range-space proposals use
+accepted-history action-coordinate and physical-scaled radii. The rolling
+driver was adopted only after exact reproduction of the manual v21.32 ->
+v21.33 state. It then promoted 36 consecutive fresh-curvature states under the
+unchanged exact-merit and complete-child gates. Fresh isolated-eigenpair
+curvature is proposal information only; the rolling driver is workflow
+automation, not new physics.
 
-Supported/reclassified: v18.55-v18.56 repeat the accepted-frontier response
-measurement and bidirectional exact-merit scan.  The solver interpretation is
-again invalidated and never promoted as Newton convergence.  v18.57-v18.58
-recompute the moving child and promote the exact-merit state only after all
-unchanged eta, flux, and persistence gates pass, reducing exact merit by
-`0.00201664283`.
+Validated/reclassified diagnostics:
 
-Supported/reclassified: v18.59 records the existing N=3 target as an unchanged
-square root problem on the already implemented physically admissible event
-set.  Rank 14 in 26 child variables gives regular local chart nullity 12, not
-twelve new physical parameters.  Two lower-residual candidates are preserved
-as rejected because only their unchanged two-scale flux gate fails.  The
-accepted corridor shows no measured monotonic collapse toward flux, eta, rank,
-or persistence boundaries, but no root-in-admissible-set theorem is claimed.
+- The historical plateau audit was Outcome E: the proposal mechanism stalled
+  while the physical root remained open. Flux was oscillatory, no physical
+  block owned at least 60%, no history-localized owner was found, and root-basin
+  entry was not demonstrated.
+- Structural hindsight was H5, `HINDSIGHT_SUBSPACE_NO_MATERIAL_RECOVERY`.
+  Large accepted descents carried more scale/v/period and less shift, but the
+  rank-14 child tangent supplied no new selector or equation.
+- A structured shake recovered a useful collective proposal only after its
+  temporary excitation was removed. Original exact `F376` and a fresh child
+  alone decided promotion; no artificial force entered the physical solve.
+- The latest one-time ownership audit is
+  `DISTRIBUTED_DESCENT_CONTINUES`: period is largest at `45.9739%` but below
+  dominance, scale and v continue falling, and stationarity weight is split
+  approximately evenly between interior and event-near nodes. Period is not
+  promoted to a physical blocker.
 
-Validated diagnostic: v18.60 finds noncollinear action-owned accepted secants
-with mean scale/w/v squared fraction `0.985975`.  The available rejected
-directions are not systematically more u/eta-shift/lapse-compressed.  Finite
-secant turning is not promoted to a manifold theorem, causal coupling claim, or
-new continuation condition.
+Numerically invalidated or insufficient as a closure mechanism: a common
+coordinatewise event-Hessian finite-difference scale; the raw asymmetric 37x37
+event block and naive symmetrization; an unbounded Moore-Penrose response step;
+action-radius-only trust; unpreconditioned Krylov restarts 30 and 60; the
+action-owned preconditioner as a sufficient cure; curvature transport;
+corrected multisecants; and mandatory stale-curvature reuse. These are
+proposal-model results, not failures of BHSM physics. No numerical rank cutoff,
+trust radius, damping rule, preconditioner, or componentwise monotonicity rule
+became a physical selector.
 
-Supported/reclassified: v18.61 resolves a common direct-response plateau at
-`1e-6/3e-7` without relaxing its scale-consistency criteria.  v18.62's bounded
-Krylov vector fails its independent Newton interpretation but locates an exact
-nonlinear line state with norm `0.8115026784613`.  v18.63-v18.64 promote that
-state only after a fresh rank-14 child, eta, unchanged two-scale flux, and
-positive-duration nonzero-motion persistence all pass.
-
-Supported/reclassified: v18.65 measures a common `3e-7/1e-7` response plateau
-at v18.64.  v18.66's bounded solver interpretation is invalidated, but its
-exact bidirectional line scan yields an independently lower-merit state.
-v18.67-v18.68 promote that state only after the fresh rank-14 child, eta,
-unchanged two-scale flux, and persistence gates all pass.
-
-Supported now: the v18.18 exact action Hessian reproduces the unchanged
-v17.61 action-covector response to at worst `1.81e-7` on the audited
-directions.  v18.22 validates the needed directional event response without
-claiming a full coordinatewise event Hessian and produces an independently
-merit-reducing, eta-admissible state.  v18.24-v18.25 close its first recomputed
-14-row whole-child BVP and persistence gate; v18.27-v18.29, v18.31-v18.33,
-v18.35-v18.37, v18.39-v18.41 and v18.43-v18.47
-repeat the exact merit, recomputed-child and persistence gates at subsequent
-accepted states.
-
-Invalidated: neither the uniform-raw v18.19 event Hessian nor the
-coordinatewise-scaled v18.21 event Hessian differentiates the exact nonlinear
-residual.  They are not used in the accepted v18.25 or v18.29 steps.
-
-Not supported: a solved N=3 saddle.  The residual remains far from zero.
-The v18.05 projection-chain Jacobian and v18.07-v18.08 coordinate-column
-Jacobians are invalidated as derivatives of the exact projected nonlinear map
-by directional checks.  Their norm-reducing trials are physical proposals
-only and are promoted solely after independent complete-child acceptance.
-
-Also not supported: N=4+ convergence, a microscopic pregeometric transition
-generator, the complete one-loop source/saddle chain, broken return, physical
-mass/flavor/absolute-spectrum reconstruction, Unique Actualization, or full
-completion.
+Not supported: a solved N=3 saddle, `F376 = 0`, a unique N=3 root, or an
+approximately solved root. Also open are continuum N>=4 convergence,
+reconstruction/return closure, absolute scale, mass matrices, CKM, PMNS, CP,
+neutrino splittings, the absolute gauge spectrum, decay law, Unique
+Actualization, empirical validation, and full BHSM completion.
 
 `FULL_BHSM_COMPLETE = FALSE`.
 
 Exact next object:
 `CONTINUE_PHYSICALLY_ADMISSIBLE_EXACT_376_ROW_DESCENT_FROM_THE_LATEST_ACCEPTED_FRONTIER_TO_F376_ZERO`.
-
-The coefficient-free spectral charged-current kernel remains an
-author-selected, no-fit action candidate. Full rank, unitarity, SU(2) closure,
-nonzero CP invariant, and frozen inputs establish mathematical viability but
-not parent-action provenance.
-
-The proposed white-hole origin, plasma/acoustic-BAO to cooled-cosmology scale
-sequence, and analogous process at core-energy-matching quantum events are
-underived author hypotheses. They are not new fields, fitted thresholds,
-standard-cosmology derivations, or empirical conclusions.
 
 ## Historical claim boundaries
 

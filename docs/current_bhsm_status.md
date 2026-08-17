@@ -1,8 +1,95 @@
 # Current BHSM status
 
+## Authoritative frontier: v21.35 cross-resolution encapsulation
+
+BHSM has independently reconstructed complete persistent children at N3 and
+N4. An independently derived N5 branch is eta-admissible, has an ordered
+event, and has a structurally full-rank 18-row child map. N5 root closure,
+certification, and persistence remain active.
+
+The active numerical representation is exactly
+`F18(Y)=(A16(Y),Phi2(Y))`: the existing 16 trace/constraint/momentum rows define
+a local implicit compatibility fiber and the existing two dynamic Calderon
+flux rows are evaluated on it. Roots are unchanged. No new physics, row,
+coefficient, event definition, eta condition, or child gate is introduced.
+
+- `N3 COMPLETE PERSISTENT CHILD = YES`
+- `N4 COMPLETE PERSISTENT CHILD = YES`
+- `N5 COMPLETE CHILD = ACTIVE`
+- `FULL_BHSM_COMPLETE = FALSE`
+
+Evidence:
+[`BHSM_AETHER_CROSS_RESOLUTION_RECONNAISSANCE_V21_35.json`](../artifacts/BHSM_AETHER_CROSS_RESOLUTION_RECONNAISSANCE_V21_35.json).
+
+Exact next dependency:
+`CLOSE_THE_UNCHANGED_N5_F18_ROOT_CERTIFY_N5_PERSISTENCE_THEN_DERIVE_THE_GENERAL_N_RECONSTRUCTION_STATEMENT`.
+
+The corrected-Rayleigh N3 chronology below is retained for provenance.
+
 Full BHSM v1.0 Candidate is a repo-audited completion framework, not yet a completed replacement of the Standard Model. The program goal remains replacement by derivation, with the Standard Model retained as the preserved infrared layer until that derivation is complete.
 
-## v18.73 N=3 constrained-root, child-fiber and continuation frontier
+## Corrected-Rayleigh N=3 rolling snapshot
+
+BHSM remains under active derivation. The physical solve is the unchanged
+square 376-variable KKT system with explicit event multiplier, and the exact
+N=3 root remains open. The event-to-complete-child correspondence is a
+14-row boundary/BVP map on 26 child variables, not equation 377. A candidate
+is promoted only after exact unweighted corrected-Rayleigh `F376` merit falls
+and a fresh rank-14 complete moving child passes eta, trace, seven constraints,
+momentum, the unchanged `2e-5` two-scale flux gate, positive-duration
+persistence, and nonzero relative evolution.
+
+The authoritative accepted rolling checkpoint is step 36 with
+`||F376|| = 0.777030406838571`. Its child has rank 14, eta minimum
+`1.00003772292787`, flux envelope `1.6172791659e-5`, maximum 14-row
+mismatch `6.51707072e-7`, and persistence constraint `6.1803e-11`; every
+retained gate passes. This is a snapshot, not a new scientific version or a
+claim that N=3 is approximately solved.
+
+The legacy coordinatewise event covector was invalid near ordered-event
+degeneracy, with approximately `25.0151%` disagreement from the retained
+Rayleigh derivative. Consequently legacy residual values near `0.758...` and
+corrected ordered-Rayleigh values near `0.787...` belong to distinct numerical
+measurement eras. They must not be plotted as one directly comparable monotone
+series unless the legacy states are reevaluated under the corrected definition.
+The apparent jump does not establish physical regression: the event definition,
+KKT system, and physical gates did not change.
+
+The isolated-eigenpair second variation includes eigenvector response and the
+terminal scale/v SBP/period pullback. It reproduces the Rayleigh covector to
+`1.8e-14`, is stable to `3.232284e-9` across the audited local scales, and has
+worst stable directional discrepancy `1.185584e-4`. This resolved the
+demonstrated terminal scale/v curvature-assembly blocker. Fresh curvature then
+restored material prospective descent; repeated stale reuse contracted and is
+not required cadence.
+
+The rolling driver is validated workflow automation because it first
+reproduced the manual v21.32 -> v21.33 state exactly. It then promoted 36
+consecutive fresh-curvature steps. Each step still uses original exact `F376`
+and a fresh complete-child solve; curvature, bounded action/physical trust
+metrics, Krylov, historical secants, and structured shake can propose only.
+No numerical rank cutoff, preconditioner, regularizer, or componentwise rule is
+a physical selector.
+
+The historical plateau audit was Outcome E and structural hindsight was H5.
+The latest ownership audit is distributed descent: period is largest at
+`45.9739%`, below the 60% dominance criterion; scale and v fall, while history
+weight is approximately evenly split between interior and event-near nodes.
+There is no demonstrated dominant physical or history-localized owner. See the
+[authoritative continuation ledger](BHSM_N3_CONTINUATION_LEDGER.md) and
+[rolling checkpoint artifact](../artifacts/BHSM_N3_FRESH_EIGENPAIR_CURVATURE_CONTINUATION_CHECKPOINT.json).
+
+Frozen predictions are unchanged. N=4+ convergence, broken reconstruction and
+return, absolute scale, masses, CKM, PMNS, CP, neutrino splittings, gauge
+spectrum, decay law, Unique Actualization, and empirical validation remain
+open.
+
+`FULL_BHSM_COMPLETE = FALSE`.
+
+Active dependency:
+`CONTINUE_PHYSICALLY_ADMISSIBLE_EXACT_376_ROW_DESCENT_FROM_THE_LATEST_ACCEPTED_FRONTIER_TO_F376_ZERO`.
+
+## Historical v18.83 N=3 constrained-root, child-fiber and continuation snapshot
 
 The missing event-to-child relation is now explicit.  For each candidate N=3
 event, `F_child=0` requires three event traces, seven local Dirac constraints,
@@ -12,11 +99,11 @@ core ownership close without adding a continuous row.  A positive projected
 evolution interval then tests persistence.  The whole reconstructed child is
 the additional system-level object; no fourth coordinate is introduced.
 
-The latest accepted physical state is v18.73, with global residual `0.807144219141348` and
-positive global eta. Its recomputed child closes trace to `1e-15`, constraints
-to `2.9e-13`, attachment momentum to `1.90e-11`, and the two-scale dynamic
-flux envelope to `5.64e-6`. It persists through time `1e-4` with positive eta
-and maximum constraint residual `6.54e-11`. Velocity, momentum and time dependence remain
+The latest accepted physical state is v18.83, with global residual `0.80554785212226` and
+positive global eta. Its recomputed child closes trace to `2e-15`, constraints
+to `1.78e-13`, attachment momentum to `3.49e-11`, and the two-scale dynamic
+flux envelope to `1.16e-5`. It persists through time `1e-4` with positive eta
+and maximum constraint residual `6.56e-11`. Velocity, momentum and time dependence remain
 nonzero; stability means constraint-consistent relative persistence, not
 staticity.
 
@@ -63,8 +150,16 @@ persistence pass. The exact norm advances to `0.807144219141348`. N=4+,
 the microscopic pregeometric transition generator, one-loop source/saddle
 closure, broken return and physical observables remain downstream and open.
 
-`FULL_BHSM_COMPLETE = FALSE`. The v18.73 sprint snapshot is authorized for
-GitHub and USB publication without implying scientific completion.
+v18.74-v18.77 repeat the unchanged physical cycle and advance the norm to
+`0.806818034168188`. v18.78-v18.81 then locate a lower-norm primary state but
+reject it because the independent flux envelope `2.3188127181e-5` exceeds the
+unchanged `2e-5` gate. v18.82-v18.83 reconstruct and promote the next-lowest
+already measured line state, advancing the accepted norm to
+`0.80554785212226` without changing equations, tolerances, or acceptance
+semantics.
+
+At the historical v18.83 snapshot, `FULL_BHSM_COMPLETE = FALSE`; that statement
+remains unchanged. This section is provenance, not the current frontier.
 
 Active dependency:
 `CONTINUE_PHYSICALLY_ADMISSIBLE_EXACT_376_ROW_DESCENT_FROM_THE_LATEST_ACCEPTED_FRONTIER_TO_F376_ZERO`.

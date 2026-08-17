@@ -5,9 +5,85 @@ evidence, not competing public status pages.
 
 ## Current public summary
 
-Current version: **v18.73**.
+Current identifier: **v21.35 cross-resolution encapsulation checkpoint**. It
+is a development checkpoint, not a release version.
 
-BHSM v17.84-v18.73 derives and executes the missing N=3
+Independent N3 and N4 complete persistent children are validated. The
+independent N5 branch is eta-admissible and has a validated ordered event and
+structurally full-rank 18-row child map. Its exact root, certification, and
+persistence remain active. `FULL_BHSM_COMPLETE = FALSE`.
+
+The N5 numerical representation writes the existing rows as
+`F18(Y)=(A16(Y), Phi2(Y))` and evaluates `Phi2` on the local implicit fiber
+`A16=0`. This is root-equivalent to the unchanged child map and changes no
+physical equation, event definition, eta domain, or complete-child gate.
+
+Exact next object:
+`CLOSE_THE_UNCHANGED_N5_F18_ROOT_CERTIFY_N5_PERSISTENCE_THEN_DERIVE_THE_GENERAL_N_RECONSTRUCTION_STATEMENT`.
+
+### Historical corrected-Rayleigh N3 snapshot
+
+Current identifier: **corrected-Rayleigh N=3 rolling snapshot**. It is a
+development checkpoint, not a release version.
+
+BHSM remains under active derivation. The exact N=3 KKT root remains open and
+`FULL_BHSM_COMPLETE = FALSE`. The retained physical problem is the square
+376-variable KKT system with explicit event multiplier. No equation 377,
+empirical particle selector, residual left scaling, componentwise monotonicity,
+or relaxed gate has been introduced.
+
+The authoritative accepted rolling checkpoint is step 36 with exact unweighted
+corrected-Rayleigh `||F376|| = 0.777030406838571`. Its complete-child map is 14
+physical rows on 26 variables with rank 14. The fresh reconstructed moving
+child has eta minimum `1.00003772292787`, flux envelope
+`1.6172791659e-5` under the unchanged `2e-5` limit, maximum 14-row mismatch
+`6.51707072e-7`, persistence constraint `6.1803e-11`, and passing trace,
+seven-constraint, momentum, persistence, and nonzero-relative-motion gates.
+
+The legacy event covector was numerically invalid near ordered-event
+degeneracy, differing from the retained Rayleigh derivative by approximately
+`25.0151%`. Earlier residual values near `0.758...` therefore belong to a
+legacy numerical series. Corrected ordered-Rayleigh values near `0.787...` are
+not directly comparable unless the older states are reevaluated with the same
+definition. The apparent jump is a correction of derivative/evaluation
+machinery, not established physical regression; the event definition and 376
+physical equations did not change.
+
+The terminal scale/v isolated-eigenpair second variation includes eigenvector
+response and the terminal SBP/period second pullback. It reproduces the
+Rayleigh covector to `1.8e-14`, is stable to `3.232284e-9` across the audited
+local scales, and matches stable directional event response with worst
+discrepancy `1.185584e-4`. This resolved the demonstrated terminal scale/v
+assembly blocker and restored material prospective descent.
+
+The rolling driver first reproduced the manual v21.32 -> v21.33 state exactly,
+then promoted 36 consecutive freshly recomputed curvature steps. It is
+workflow automation only. Every proposal is still evaluated by original exact
+`F376` and a fresh complete-child reconstruction. Structured shake,
+action/physical trust metrics, curvature, Krylov, and secant memory can propose
+but cannot decide physics.
+
+The current ownership classification is distributed descent: period is the
+largest squared block at `45.9739%` but below the 60% dominance criterion;
+scale and v continue falling, and interior/event-near stationarity weight is
+split approximately evenly. There is no demonstrated dominant physical or
+history-localized blocker. The historical plateau result was Outcome E and
+structural hindsight was H5; invalid numerical routes and their provenance are
+retained in the [N=3 continuation ledger](docs/BHSM_N3_CONTINUATION_LEDGER.md).
+
+Frozen predictions and official prediction logic are unchanged. N=4+
+convergence, reconstruction/return, absolute scale, masses, CKM, PMNS, CP,
+neutrino splittings, gauge spectrum, decay law, Unique Actualization, and full
+completion remain open.
+
+Exact next object:
+`CONTINUE_PHYSICALLY_ADMISSIBLE_EXACT_376_ROW_DESCENT_FROM_THE_LATEST_ACCEPTED_FRONTIER_TO_F376_ZERO`.
+
+## Historical v18.83 snapshot (superseded as current frontier)
+
+Historical version: **v18.83**.
+
+BHSM v17.84-v18.83 derives and executes the missing N=3
 event-to-complete-child correspondence.  A candidate event is accepted only
 when it reconstructs a whole child satisfying three boundary traces, all seven
 local Dirac constraints, two attachment momenta, two resolved dynamic-flux
@@ -17,15 +93,22 @@ positive constraint-projected persistence interval.  This is a 14-row child
 boundary/BVP map evaluated on event states; it adds no equation to the global
 376-row KKT system.
 
-The latest physically promoted state is v18.73. Its exact 376-row norm is
-`0.807144219141348`, its event magnitude is `0.083752222964491`, and its global
-eta minimum is `0.774053610471969`. The child chart was recomputed from all 26
+The latest physically promoted state is v18.83. Its exact 376-row norm is
+`0.80554785212226`, its event magnitude is `0.083598507276914`, and its global
+eta minimum is `0.774215156076363`. The child chart was recomputed from all 26
 child variables and has rank 14.  The reconstructed child has trace residual
-`1e-15`, seven-constraint residual `2.9e-13`, momentum mismatch `1.90e-11`,
-resolved two-scale flux envelope `5.64e-6`, and persists for `1e-4` with
-constraint residual below `6.54e-11` and positive eta. Its motion, momentum,
+`2e-15`, seven-constraint residual `1.78e-13`, momentum mismatch `3.49e-11`,
+resolved two-scale flux envelope `1.16e-5`, and persists for `1e-4` with
+constraint residual below `6.56e-11` and positive eta. Its motion, momentum,
 and time dependence remain nonzero and are classified as physical
 constraint-consistent relative evolution, not particle defects.
+
+v18.74-v18.77 execute another unchanged response, bidirectional exact-merit,
+fresh-child, flux, and persistence cycle. v18.78-v18.81 then find a still lower
+exact-merit state but reject it because its independently recomputed flux
+envelope is `2.3188127181e-5`, above the unchanged `2e-5` gate. v18.82-v18.83
+test the next-lowest already measured line state and promote it only after the
+entire gate passes. No threshold or physical equation is changed.
 
 The event definition is therefore no longer the current N=3 blocker.  The
 simultaneous N=3 saddle remains open: the residual is far from zero.  v18.05

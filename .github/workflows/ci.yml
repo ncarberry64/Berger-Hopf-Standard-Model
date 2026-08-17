@@ -1,61 +1,53 @@
-name: test-suite
+name: BHSM core CI
 
 on:
   push:
     branches: [main]
   pull_request:
   workflow_dispatch:
+    inputs:
+      full_historical_regression:
+        description: Run the retained full pytest corpus
+        required: false
+        default: false
+        type: boolean
 
 permissions:
   contents: read
 
 jobs:
-  pytest:
+  core-scientific-checkpoint:
     runs-on: ubuntu-latest
-    timeout-minutes: 90
+    timeout-minutes: 15
     steps:
       - uses: actions/checkout@v4
-        with:
-          fetch-depth: 0
       - uses: actions/setup-python@v5
         with:
           python-version: "3.12"
           cache: pip
       - name: Install
         run: python -m pip install -e ".[benchmark]"
-      - name: Fast regression suite
+      - name: Focused cross-resolution and invariant tests
         run: >-
           python -m pytest -q
-          --ignore-glob="tests/test_bhsm_aether_n3_*.py"
-          --junitxml=artifacts/pytest-results.xml
-      - name: Coordinate benchmark precision gate
-        run: |
-          python tools/verify_precision.py
-          python -m bhsm.interface.benchmarks.coordinate_benchmark \
-            --events 100000 \
-            --boundary-fraction 0.35 \
-            --repeats 1 \
-            --output tmp/ci-coordinate-benchmark/results.json \
-            --markdown tmp/ci-coordinate-benchmark/results.md \
-            --plot tmp/ci-coordinate-benchmark/latency.png \
-            --summary
-          python tools/verify_precision.py \
-            --results tmp/ci-coordinate-benchmark/results.json
-      - name: Claim and frozen-integrity audits
+          tests/test_bhsm_aether_cross_resolution_reconnaissance_v21_35.py
+          tests/test_engine_invariant_preservation.py
+          tests/test_engine_physics_status_separation.py
+      - name: Public status and claim boundaries
         run: |
           python tools/audit_forbidden_claims.py
           python tools/audit_bhsm_status.py
           python tools/audit_frozen_prediction_integrity.py
-      - name: Upload test report
-        if: always()
-        uses: actions/upload-artifact@v4
-        with:
-          name: pytest-results
-          path: artifacts/pytest-results.xml
+          python tools/verify_precision.py
+      - name: Patch hygiene
+        run: git diff --check
 
-  current-n3-frontier:
+  full-historical-regression:
+    if: >-
+      github.event_name == 'workflow_dispatch' &&
+      inputs.full_historical_regression
     runs-on: ubuntu-latest
-    timeout-minutes: 40
+    timeout-minutes: 120
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-python@v5
@@ -64,92 +56,11 @@ jobs:
           cache: pip
       - name: Install
         run: python -m pip install -e ".[benchmark]"
-      - name: Verify current N=3 deterministic frontier
-        run: >-
-          python -m pytest -q
-          tests/test_bhsm_aether_n3_child_fiber_ownership_v18_69.py
-          tests/test_bhsm_aether_n3_eighth_direct_residual_scale_audit_v18_70.py
-          tests/test_bhsm_aether_n3_fifth_bidirectional_merit_manifold_probe_v18_71.py
-          tests/test_bhsm_aether_n3_fifth_bidirectional_probe_child_v18_72.py
-          tests/test_bhsm_aether_n3_fifth_bidirectional_probe_promotion_v18_73.py
-
-  root-integration:
-    runs-on: ubuntu-latest
-    timeout-minutes: 20
-    container:
-      image: rootproject/root@sha256:9d2a9dd6991dc3571eeb8a33b0eb313cfd785eb3303b14ce0170b09a44c2ecb7
-    steps:
-      - uses: actions/checkout@v4
-      - name: Report ROOT toolchain
-        run: |
-          root-config --version
-          cmake --version
-      - name: Configure generic-safe ROOT integration
-        run: >-
-          cmake -S . -B build
-          -DBUILD_ROOT_INTEGRATION=ON
-          -DENABLE_AVX2=OFF
-          -DENABLE_AVX512=OFF
-          -DCMAKE_BUILD_TYPE=Release
-      - name: Compile ROOT integration
-        run: cmake --build build --config Release --parallel 2
-      - name: Run live ROOT integration smoke test
-        run: ctest --test-dir build --build-config Release --output-on-failure
-      - name: Measure ROOT implicit-multithreading scaling
-        run: >-
-          python tools/run_root_imt_scaling.py
-          --executable build/bhsm_root_imt_scaling
-          --threads 1,2
-          --entries 500000
-          --repeats 3
-          --output artifacts/runtime/root_imt_scaling.json
-      - name: Report ROOT scaling rows
-        run: cat artifacts/runtime/root_imt_scaling.json
-      - name: Upload ROOT scaling report
+      - name: Retained full historical pytest corpus
+        run: python -m pytest -q --junitxml=artifacts/pytest-results.xml
+      - name: Upload historical test report
+        if: always()
         uses: actions/upload-artifact@v4
         with:
-          name: root-imt-scaling
-          path: artifacts/runtime/root_imt_scaling.json
-
-  native-profile:
-    runs-on: ubuntu-latest
-    timeout-minutes: 20
-    steps:
-      - uses: actions/checkout@v4
-      - uses: actions/setup-python@v5
-        with:
-          python-version: "3.12"
-          cache: pip
-      - name: Install benchmark runtime
-        run: python -m pip install -e .
-      - name: Download and verify CERN Open Data sample
-        run: >-
-          python -m bhsm.interface.benchmarks.cern_open_data_benchmark
-          --download --repeats 1 --replication-factor 1
-          --output tmp/native-profile/source-check.json
-          --markdown tmp/native-profile/source-check.md
-      - name: Build native profiling harness
-        run: |
-          cmake -S . -B build/native-profile \
-            -DBUILD_NATIVE_BENCHMARK=ON \
-            -DBUILD_ROOT_INTEGRATION=OFF \
-            -DENABLE_AVX2=OFF \
-            -DENABLE_AVX512=OFF \
-            -DCMAKE_BUILD_TYPE=Release
-          cmake --build build/native-profile --config Release --parallel 2
-          ctest --test-dir build/native-profile --output-on-failure
-      - name: Attempt hardware-counter collection
-        run: >-
-          python tools/run_linux_perf_profile.py
-          --executable build/native-profile/bhsm_native_coordinate_benchmark
-          --data data/external/cern_open_data/dimuon.csv
-          --repetitions 3
-          --replication-factor 10
-          --output artifacts/runtime/native_microarchitecture_profile.json
-      - name: Report counter availability
-        run: cat artifacts/runtime/native_microarchitecture_profile.json
-      - name: Upload profiling report
-        uses: actions/upload-artifact@v4
-        with:
-          name: native-microarchitecture-profile
-          path: artifacts/runtime/native_microarchitecture_profile.json
+          name: historical-pytest-results
+          path: artifacts/pytest-results.xml

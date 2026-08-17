@@ -1,0 +1,568 @@
+{
+  "FULL_BHSM_COMPLETE": false,
+  "artifact": "BHSM_N3_TERMINAL_DERIVATIVE_OWNER_AUDIT_V21_09",
+  "classification": "BHSM_N3_TERMINAL_ACTION_VS_EVENT_DERIVATIVE_OWNER_AUDIT",
+  "status": "VALIDATED",
+  "terminal_derivative_owner_audit": {
+    "acceptance_gate_changed": false,
+    "classification": "TERMINAL_DERIVATIVE_OWNER_IDENTIFIED",
+    "combined": {
+      "assembled_vs_exact_relative": 0.03012077903748,
+      "difference_block_norms": {
+        "event": {
+          "l2": 10.359921034536754,
+          "max_abs": 10.359921034536754,
+          "max_row": 375,
+          "rms_per_row": 10.359921034536754,
+          "rows": 1,
+          "squared_fraction": 7.35e-11
+        },
+        "lapse": {
+          "l2": 1.105465201802484,
+          "max_abs": 0.866453127903274,
+          "max_row": 370,
+          "rms_per_row": 0.130280323426715,
+          "rows": 72,
+          "squared_fraction": 8.37e-13
+        },
+        "period": {
+          "l2": 39064.47036978416,
+          "max_abs": 39064.47036978416,
+          "max_row": 374,
+          "rms_per_row": 39064.47036978416,
+          "rows": 1,
+          "squared_fraction": 0.001045049157948
+        },
+        "scale": {
+          "l2": 868131.7178021624,
+          "max_abs": 614133.1586207412,
+          "max_row": 210,
+          "rms_per_row": 181017.97646187968,
+          "rows": 23,
+          "squared_fraction": 0.516112153476277
+        },
+        "shift": {
+          "l2": 2665.613904668826,
+          "max_abs": 2665.6138995609363,
+          "max_row": 371,
+          "rms_per_row": 314.1456113360797,
+          "rows": 72,
+          "squared_fraction": 4.86594649e-06
+        },
+        "u": {
+          "l2": 254.44227268577075,
+          "max_abs": 181.97705789237807,
+          "max_row": 211,
+          "rms_per_row": 30.63125005835842,
+          "rows": 69,
+          "squared_fraction": 4.4335475e-08
+        },
+        "v": {
+          "l2": 836419.5110194796,
+          "max_abs": 599192.254324045,
+          "max_row": 227,
+          "rms_per_row": 100693.07637166198,
+          "rows": 69,
+          "squared_fraction": 0.479094459460871
+        },
+        "w": {
+          "l2": 73934.6969005381,
+          "max_abs": 53969.2701562061,
+          "max_row": 214,
+          "rms_per_row": 8900.691559009054,
+          "rows": 69,
+          "squared_fraction": 0.003743427548602
+        }
+      },
+      "largest_difference_rows": [
+        {
+          "abs": 614133.1586207412,
+          "block": "scale",
+          "component": "scale",
+          "difference": -614133.1586207412,
+          "history_node": 22,
+          "region": "EVENT_NEAR",
+          "row": 210,
+          "sector": "q_stationarity"
+        },
+        {
+          "abs": 613590.3562177084,
+          "block": "scale",
+          "component": "scale",
+          "difference": 613590.3562177084,
+          "history_node": 23,
+          "region": "EVENT_NEAR",
+          "row": 220,
+          "sector": "q_stationarity"
+        },
+        {
+          "abs": 599192.254324045,
+          "block": "v",
+          "component": "v0",
+          "difference": 599192.254324045,
+          "history_node": 23,
+          "region": "EVENT_NEAR",
+          "row": 227,
+          "sector": "q_stationarity"
+        },
+        {
+          "abs": 583580.5331271775,
+          "block": "v",
+          "component": "v0",
+          "difference": -583580.5331271775,
+          "history_node": 22,
+          "region": "EVENT_NEAR",
+          "row": 217,
+          "sector": "q_stationarity"
+        },
+        {
+          "abs": 53969.2701562061,
+          "block": "w",
+          "component": "w0",
+          "difference": -53969.2701562061,
+          "history_node": 22,
+          "region": "EVENT_NEAR",
+          "row": 214,
+          "sector": "q_stationarity"
+        },
+        {
+          "abs": 50533.72371978825,
+          "block": "w",
+          "component": "w0",
+          "difference": 50533.72371978825,
+          "history_node": 23,
+          "region": "EVENT_NEAR",
+          "row": 224,
+          "sector": "q_stationarity"
+        },
+        {
+          "abs": 39064.47036978416,
+          "block": "period",
+          "component": "period",
+          "difference": 39064.47036978416,
+          "history_node": null,
+          "region": "GLOBAL",
+          "row": 374,
+          "sector": "period"
+        },
+        {
+          "abs": 2665.6138995609363,
+          "block": "shift",
+          "component": "shift0",
+          "difference": -2665.6138995609363,
+          "history_node": 23,
+          "region": "EVENT_NEAR",
+          "row": 371,
+          "sector": "multiplier_stationarity"
+        },
+        {
+          "abs": 181.97705789237807,
+          "block": "u",
+          "component": "u0",
+          "difference": -181.97705789237807,
+          "history_node": 22,
+          "region": "EVENT_NEAR",
+          "row": 211,
+          "sector": "q_stationarity"
+        },
+        {
+          "abs": 177.81275996924796,
+          "block": "u",
+          "component": "u0",
+          "difference": 177.81275996924796,
+          "history_node": 23,
+          "region": "EVENT_NEAR",
+          "row": 221,
+          "sector": "q_stationarity"
+        }
+      ]
+    },
+    "direction": {
+      "action_coordinate_radius": 1.97e-13,
+      "coordinate_map": {
+        "action_reference": 163.9944856390301,
+        "invertible": true,
+        "maximum_singular_value": 8061342.521504347,
+        "minimum_singular_value": 0.097262289977255,
+        "multiplier_resolved_rank": 6,
+        "q_resolved_rank": 10,
+        "source": "VALIDATED_V18_15_ACTION_CURVATURE_COORDINATE_MAP"
+      },
+      "name": "negative_current_merit_gradient",
+      "physical_scaled_radius": 1.92663866e-07
+    },
+    "event_definition_changed": false,
+    "first_action_owned_blocker": "RAYLEIGH_EVENT_HESSIAN_TERMINAL_SCALE_V_ASSEMBLY",
+    "owner_checks": [
+      {
+        "assembled_response_l2": 1643.6510203164873,
+        "assembled_vs_exact_relative": 0.153910184028109,
+        "difference_block_norms": {
+          "event": {
+            "l2": 0.0,
+            "max_abs": 0.0,
+            "max_row": 375,
+            "rms_per_row": 0.0,
+            "rows": 1,
+            "squared_fraction": 0.0
+          },
+          "lapse": {
+            "l2": 0.000941097394822,
+            "max_abs": 0.000301193191448,
+            "max_row": 362,
+            "rms_per_row": 0.000110909391606,
+            "rows": 72,
+            "squared_fraction": 1.3608e-11
+          },
+          "period": {
+            "l2": 213.651532112503,
+            "max_abs": 213.651532112503,
+            "max_row": 374,
+            "rms_per_row": 213.651532112503,
+            "rows": 1,
+            "squared_fraction": 0.701354300710116
+          },
+          "scale": {
+            "l2": 139.3677448878866,
+            "max_abs": 30.05061416962303,
+            "max_row": 220,
+            "rms_per_row": 29.060183663753552,
+            "rows": 23,
+            "squared_fraction": 0.29843515924752
+          },
+          "shift": {
+            "l2": 0.001639547136877,
+            "max_abs": 0.001089344393803,
+            "max_row": 359,
+            "rms_per_row": 0.000193222483093,
+            "rows": 72,
+            "squared_fraction": 4.1302e-11
+          },
+          "u": {
+            "l2": 0.028370858391797,
+            "max_abs": 0.00606709740089,
+            "max_row": 221,
+            "rms_per_row": 0.003415449990272,
+            "rows": 69,
+            "squared_fraction": 1.2367172e-08
+          },
+          "v": {
+            "l2": 3.701029521658457,
+            "max_abs": 1.70203280980661,
+            "max_row": 217,
+            "rms_per_row": 0.44555159626047,
+            "rows": 69,
+            "squared_fraction": 0.000210460471968
+          },
+          "w": {
+            "l2": 0.066108124260809,
+            "max_abs": 0.039004390579102,
+            "max_row": 214,
+            "rms_per_row": 0.007958482935038,
+            "rows": 69,
+            "squared_fraction": 6.7148314e-08
+          }
+        },
+        "double_vs_reference_exact_relative": 0.348086867473898,
+        "exact_response_l2": 1657.5625342396686,
+        "exact_response_step_stable": false,
+        "half_vs_reference_exact_relative": 0.490606908930581,
+        "largest_difference_rows": [
+          {
+            "abs": 213.651532112503,
+            "block": "period",
+            "component": "period",
+            "difference": 213.651532112503,
+            "history_node": null,
+            "region": "GLOBAL",
+            "row": 374,
+            "sector": "period"
+          },
+          {
+            "abs": 30.05061416962303,
+            "block": "scale",
+            "component": "scale",
+            "difference": -30.05061416962303,
+            "history_node": 23,
+            "region": "EVENT_NEAR",
+            "row": 220,
+            "sector": "q_stationarity"
+          },
+          {
+            "abs": 29.522418378140372,
+            "block": "scale",
+            "component": "scale",
+            "difference": -29.522418378140372,
+            "history_node": 20,
+            "region": "INTERIOR_HISTORY",
+            "row": 190,
+            "sector": "q_stationarity"
+          },
+          {
+            "abs": 29.311392036857086,
+            "block": "scale",
+            "component": "scale",
+            "difference": -29.311392036857086,
+            "history_node": 21,
+            "region": "EVENT_NEAR",
+            "row": 200,
+            "sector": "q_stationarity"
+          },
+          {
+            "abs": 29.21080872736553,
+            "block": "scale",
+            "component": "scale",
+            "difference": -29.21080872736553,
+            "history_node": 16,
+            "region": "INTERIOR_HISTORY",
+            "row": 150,
+            "sector": "q_stationarity"
+          },
+          {
+            "abs": 29.135025442885528,
+            "block": "scale",
+            "component": "scale",
+            "difference": -29.135025442885528,
+            "history_node": 17,
+            "region": "INTERIOR_HISTORY",
+            "row": 160,
+            "sector": "q_stationarity"
+          },
+          {
+            "abs": 29.112485781610506,
+            "block": "scale",
+            "component": "scale",
+            "difference": -29.112485781610506,
+            "history_node": 19,
+            "region": "INTERIOR_HISTORY",
+            "row": 180,
+            "sector": "q_stationarity"
+          },
+          {
+            "abs": 29.102000100923103,
+            "block": "scale",
+            "component": "scale",
+            "difference": -29.102000100923103,
+            "history_node": 15,
+            "region": "INTERIOR_HISTORY",
+            "row": 140,
+            "sector": "q_stationarity"
+          },
+          {
+            "abs": 29.09686953298834,
+            "block": "scale",
+            "component": "scale",
+            "difference": -29.09686953298834,
+            "history_node": 4,
+            "region": "INTERIOR_HISTORY",
+            "row": 30,
+            "sector": "q_stationarity"
+          },
+          {
+            "abs": 29.043222879493918,
+            "block": "scale",
+            "component": "scale",
+            "difference": -29.043222879493918,
+            "history_node": 18,
+            "region": "INTERIOR_HISTORY",
+            "row": 170,
+            "sector": "q_stationarity"
+          }
+        ],
+        "owner": "action"
+      },
+      {
+        "assembled_response_l2": 41326660.73586904,
+        "assembled_vs_exact_relative": 0.030120818111603,
+        "difference_block_norms": {
+          "event": {
+            "l2": 10.359921034536754,
+            "max_abs": 10.359921034536754,
+            "max_row": 375,
+            "rms_per_row": 10.359921034536754,
+            "rows": 1,
+            "squared_fraction": 7.35e-11
+          },
+          "lapse": {
+            "l2": 1.105441531237966,
+            "max_abs": 0.86645337396281,
+            "max_row": 370,
+            "rms_per_row": 0.130277533823934,
+            "rows": 72,
+            "squared_fraction": 8.37e-13
+          },
+          "period": {
+            "l2": 38850.81883767154,
+            "max_abs": 38850.81883767154,
+            "max_row": 374,
+            "rms_per_row": 38850.81883767154,
+            "rows": 1,
+            "squared_fraction": 0.001033659895091
+          },
+          "scale": {
+            "l2": 868132.6037992055,
+            "max_abs": 614104.3999994397,
+            "max_row": 210,
+            "rms_per_row": 181018.16120503398,
+            "rows": 23,
+            "squared_fraction": 0.516118524685828
+          },
+          "shift": {
+            "l2": 2665.6146068934904,
+            "max_abs": 2665.6146017860156,
+            "max_row": 371,
+            "rms_per_row": 314.14569409405004,
+            "rows": 72,
+            "squared_fraction": 4.86599919e-06
+          },
+          "u": {
+            "l2": 254.44226813178315,
+            "max_abs": 181.98298126813097,
+            "max_row": 211,
+            "rms_per_row": 30.631249510122743,
+            "rows": 69,
+            "squared_fraction": 4.4335931e-08
+          },
+          "v": {
+            "l2": 836419.5438633205,
+            "max_abs": 599190.6424864046,
+            "max_row": 227,
+            "rms_per_row": 100693.08032559579,
+            "rows": 69,
+            "squared_fraction": 0.479099433408635
+          },
+          "w": {
+            "l2": 73934.75103812097,
+            "max_abs": 53969.30916059669,
+            "max_row": 214,
+            "rms_per_row": 8900.698076408153,
+            "rows": 69,
+            "squared_fraction": 0.003743471600988
+          }
+        },
+        "double_vs_reference_exact_relative": 0.000609594386706,
+        "exact_response_l2": 40118490.12772891,
+        "exact_response_step_stable": true,
+        "half_vs_reference_exact_relative": 0.000745863397883,
+        "largest_difference_rows": [
+          {
+            "abs": 614104.3999994397,
+            "block": "scale",
+            "component": "scale",
+            "difference": -614104.3999994397,
+            "history_node": 22,
+            "region": "EVENT_NEAR",
+            "row": 210,
+            "sector": "q_stationarity"
+          },
+          {
+            "abs": 613620.4068318754,
+            "block": "scale",
+            "component": "scale",
+            "difference": 613620.4068318754,
+            "history_node": 23,
+            "region": "EVENT_NEAR",
+            "row": 220,
+            "sector": "q_stationarity"
+          },
+          {
+            "abs": 599190.6424864046,
+            "block": "v",
+            "component": "v0",
+            "difference": 599190.6424864046,
+            "history_node": 23,
+            "region": "EVENT_NEAR",
+            "row": 227,
+            "sector": "q_stationarity"
+          },
+          {
+            "abs": 583582.2351599857,
+            "block": "v",
+            "component": "v0",
+            "difference": -583582.2351599857,
+            "history_node": 22,
+            "region": "EVENT_NEAR",
+            "row": 217,
+            "sector": "q_stationarity"
+          },
+          {
+            "abs": 53969.30916059669,
+            "block": "w",
+            "component": "w0",
+            "difference": -53969.30916059669,
+            "history_node": 22,
+            "region": "EVENT_NEAR",
+            "row": 214,
+            "sector": "q_stationarity"
+          },
+          {
+            "abs": 50533.76127110864,
+            "block": "w",
+            "component": "w0",
+            "difference": 50533.76127110864,
+            "history_node": 23,
+            "region": "EVENT_NEAR",
+            "row": 224,
+            "sector": "q_stationarity"
+          },
+          {
+            "abs": 38850.81883767154,
+            "block": "period",
+            "component": "period",
+            "difference": 38850.81883767154,
+            "history_node": null,
+            "region": "GLOBAL",
+            "row": 374,
+            "sector": "period"
+          },
+          {
+            "abs": 2665.6146017860156,
+            "block": "shift",
+            "component": "shift0",
+            "difference": -2665.6146017860156,
+            "history_node": 23,
+            "region": "EVENT_NEAR",
+            "row": 371,
+            "sector": "multiplier_stationarity"
+          },
+          {
+            "abs": 181.98298126813097,
+            "block": "u",
+            "component": "u0",
+            "difference": -181.98298126813097,
+            "history_node": 22,
+            "region": "EVENT_NEAR",
+            "row": 211,
+            "sector": "q_stationarity"
+          },
+          {
+            "abs": 177.8066928718472,
+            "block": "u",
+            "component": "u0",
+            "difference": 177.8066928718472,
+            "history_node": 23,
+            "region": "EVENT_NEAR",
+            "row": 221,
+            "sector": "q_stationarity"
+          }
+        ],
+        "owner": "event"
+      }
+    ],
+    "physical_equations_changed": false,
+    "source_frontier": {
+      "exact_rayleigh_f376_l2": 0.782775399601569,
+      "version": "v21.04"
+    }
+  },
+  "validation": {
+    "components_recompose_assembled_response": true,
+    "components_recompose_residual": true,
+    "one_classification": true,
+    "same_physics": true,
+    "source_v21_04_reproduced": true,
+    "two_owner_checks": true
+  },
+  "validation_passed": true,
+  "version": "v21.09"
+}

@@ -1,0 +1,4828 @@
+{
+  "FULL_BHSM_COMPLETE": false,
+  "active_calculation": "RESUME_UNCHANGED_N3_CONTINUATION",
+  "artifact": "BHSM_N3_RESIDUAL_OWNERSHIP_AND_CLOSURE_DISTANCE_AUDIT_V19_62",
+  "classification": "BHSM_N3_RESIDUAL_OWNERSHIP_AND_CLOSURE_DISTANCE_AUDIT",
+  "ledger": {
+    "INVALIDATED": [
+      "solver convergence as physical evidence",
+      "componentwise monotonicity as a gate"
+    ],
+    "OPEN": [
+      "N3_EXACT_KKT_CLOSURE",
+      "FULL_BHSM_COMPLETE"
+    ],
+    "RECLASSIFIED": [],
+    "VALIDATED": [
+      "exact accepted-frontier F376 replay",
+      "eight physical block decomposition",
+      "node/history localization",
+      "recent slopes and naive nonphysical extrapolation"
+    ]
+  },
+  "residual_ownership_and_closure_distance_audit": {
+    "accepted_frontiers": [
+      {
+        "blocks": {
+          "F_event": {
+            "fraction_total_squared": 0.010703805835122,
+            "l2_norm": 0.083931074020022,
+            "maximum_absolute_component": 0.083931074020022,
+            "maximum_owner": {
+              "block": "F_event",
+              "column": null,
+              "kind": "event",
+              "node": null
+            },
+            "maximum_row": 375,
+            "rms_per_row": 0.083931074020022,
+            "rows": 1,
+            "squared_contribution": 0.007044425186154
+          },
+          "F_lapse": {
+            "fraction_total_squared": 2.43852e-10,
+            "l2_norm": 1.2668249882e-05,
+            "maximum_absolute_component": 1.0999093016e-05,
+            "maximum_owner": {
+              "block": "F_lapse",
+              "column": 0,
+              "kind": "multiplier_stationarity",
+              "node": 23
+            },
+            "maximum_row": 368,
+            "rms_per_row": 1.492967566e-06,
+            "rows": 72,
+            "squared_contribution": 1.60485e-10
+          },
+          "F_period": {
+            "fraction_total_squared": 0.343824733380883,
+            "l2_norm": 0.475688033959933,
+            "maximum_absolute_component": 0.475688033959933,
+            "maximum_owner": {
+              "block": "F_period",
+              "column": null,
+              "kind": "period_stationarity",
+              "node": null
+            },
+            "maximum_row": 374,
+            "rms_per_row": 0.475688033959933,
+            "rows": 1,
+            "squared_contribution": 0.226279105652666
+          },
+          "F_scale": {
+            "fraction_total_squared": 0.135044760252304,
+            "l2_norm": 0.298120978787619,
+            "maximum_absolute_component": 0.152899692741049,
+            "maximum_owner": {
+              "block": "F_scale",
+              "column": 0,
+              "kind": "q_stationarity",
+              "node": 22
+            },
+            "maximum_row": 210,
+            "rms_per_row": 0.062162521210022,
+            "rows": 23,
+            "squared_contribution": 0.088876117993288
+          },
+          "F_shift": {
+            "fraction_total_squared": 0.007957976113823,
+            "l2_norm": 0.072369402161879,
+            "maximum_absolute_component": 0.05414792035319,
+            "maximum_owner": {
+              "block": "F_shift",
+              "column": 3,
+              "kind": "multiplier_stationarity",
+              "node": 23
+            },
+            "maximum_row": 371,
+            "rms_per_row": 0.008528815836513,
+            "rows": 72,
+            "squared_contribution": 0.005237330369268
+          },
+          "F_u": {
+            "fraction_total_squared": 2.1721719243e-05,
+            "l2_norm": 0.003780948547513,
+            "maximum_absolute_component": 0.003472167236905,
+            "maximum_owner": {
+              "block": "F_u",
+              "column": 1,
+              "kind": "q_stationarity",
+              "node": 22
+            },
+            "maximum_row": 211,
+            "rms_per_row": 0.000455172716366,
+            "rows": 69,
+            "squared_contribution": 1.4295571919e-05
+          },
+          "F_v": {
+            "fraction_total_squared": 0.145429063931188,
+            "l2_norm": 0.309370766768898,
+            "maximum_absolute_component": 0.183799891967032,
+            "maximum_owner": {
+              "block": "F_v",
+              "column": 7,
+              "kind": "q_stationarity",
+              "node": 22
+            },
+            "maximum_row": 217,
+            "rms_per_row": 0.037243863677272,
+            "rows": 69,
+            "squared_contribution": 0.095710271331176
+          },
+          "F_w": {
+            "fraction_total_squared": 0.357017938523585,
+            "l2_norm": 0.484728648624819,
+            "maximum_absolute_component": 0.214314808478618,
+            "maximum_owner": {
+              "block": "F_w",
+              "column": 4,
+              "kind": "q_stationarity",
+              "node": 23
+            },
+            "maximum_row": 224,
+            "rms_per_row": 0.058354471879811,
+            "rows": 69,
+            "squared_contribution": 0.234961862797643
+          }
+        },
+        "motion": {
+          "history_velocity_norms": {
+            "scale": 1.674794307082985,
+            "u": 0.981203575569415,
+            "v": 2.955425716552114,
+            "w": 20.857067338591413
+          }
+        },
+        "node_localization": {
+          "maximum_node": 23,
+          "maximum_node_region": "event_near",
+          "node_norms": [
+            0.006806166372517,
+            0.00974014967852,
+            0.012827996569038,
+            0.021678848040667,
+            0.020369620929049,
+            0.034643987663244,
+            0.031670485483398,
+            0.045936378317301,
+            0.042886498503534,
+            0.057688587245393,
+            0.053989511809655,
+            0.074294809550662,
+            0.067423320111982,
+            0.095893952927645,
+            0.083347906540185,
+            0.121645532401433,
+            0.091790455256965,
+            0.156221834414893,
+            0.132001739474802,
+            0.21186814992531,
+            0.202907457077666,
+            0.235305180299367,
+            0.295249939851184,
+            0.302245213817544
+          ],
+          "partition_definition": "physical nodes 0-2 reset-near, 3-20 interior, 21-23 event-near; diagnostic only",
+          "regions": {
+            "event_near": {
+              "fraction_stationarity_squared": 0.550596259846964,
+              "l2_norm": 0.483625086335953,
+              "nodes": [
+                21,
+                22,
+                23
+              ],
+              "rms_per_node": 0.279221073782919
+            },
+            "interior_history": {
+              "fraction_stationarity_squared": 0.448683984973953,
+              "l2_norm": 0.436578632296514,
+              "nodes": [
+                3,
+                4,
+                5,
+                6,
+                7,
+                8,
+                9,
+                10,
+                11,
+                12,
+                13,
+                14,
+                15,
+                16,
+                17,
+                18,
+                19,
+                20
+              ],
+              "rms_per_node": 0.102902570472671
+            },
+            "reset_near": {
+              "fraction_stationarity_squared": 0.000719755179083,
+              "l2_norm": 0.017485763135351,
+              "nodes": [
+                0,
+                1,
+                2
+              ],
+              "rms_per_node": 0.010095410053181
+            }
+          }
+        },
+        "total_l2_norm": 0.811248056430707,
+        "version": "v18.68"
+      },
+      {
+        "blocks": {
+          "F_event": {
+            "fraction_total_squared": 0.010766893186965,
+            "l2_norm": 0.083752222964491,
+            "maximum_absolute_component": 0.083752222964491,
+            "maximum_owner": {
+              "block": "F_event",
+              "column": null,
+              "kind": "event",
+              "node": null
+            },
+            "maximum_row": 375,
+            "rms_per_row": 0.083752222964491,
+            "rows": 1,
+            "squared_contribution": 0.007014434851494
+          },
+          "F_lapse": {
+            "fraction_total_squared": 2.49792e-10,
+            "l2_norm": 1.2756770278e-05,
+            "maximum_absolute_component": 1.1109924777e-05,
+            "maximum_owner": {
+              "block": "F_lapse",
+              "column": 0,
+              "kind": "multiplier_stationarity",
+              "node": 23
+            },
+            "maximum_row": 368,
+            "rms_per_row": 1.503399795e-06,
+            "rows": 72,
+            "squared_contribution": 1.62735e-10
+          },
+          "F_period": {
+            "fraction_total_squared": 0.352236067493115,
+            "l2_norm": 0.479035890019456,
+            "maximum_absolute_component": 0.479035890019456,
+            "maximum_owner": {
+              "block": "F_period",
+              "column": null,
+              "kind": "period_stationarity",
+              "node": null
+            },
+            "maximum_row": 374,
+            "rms_per_row": 0.479035890019456,
+            "rows": 1,
+            "squared_contribution": 0.229475383926732
+          },
+          "F_scale": {
+            "fraction_total_squared": 0.142654491282626,
+            "l2_norm": 0.304855381128028,
+            "maximum_absolute_component": 0.153573920677746,
+            "maximum_owner": {
+              "block": "F_scale",
+              "column": 0,
+              "kind": "q_stationarity",
+              "node": 22
+            },
+            "maximum_row": 210,
+            "rms_per_row": 0.063566741168057,
+            "rows": 23,
+            "squared_contribution": 0.092936803402715
+          },
+          "F_shift": {
+            "fraction_total_squared": 0.008308448158617,
+            "l2_norm": 0.073571751933718,
+            "maximum_absolute_component": 0.056017317702576,
+            "maximum_owner": {
+              "block": "F_shift",
+              "column": 3,
+              "kind": "multiplier_stationarity",
+              "node": 23
+            },
+            "maximum_row": 371,
+            "rms_per_row": 0.008670514116018,
+            "rows": 72,
+            "squared_contribution": 0.005412802682597
+          },
+          "F_u": {
+            "fraction_total_squared": 2.1935015499e-05,
+            "l2_norm": 0.003780246443234,
+            "maximum_absolute_component": 0.003478010912965,
+            "maximum_owner": {
+              "block": "F_u",
+              "column": 1,
+              "kind": "q_stationarity",
+              "node": 22
+            },
+            "maximum_row": 211,
+            "rms_per_row": 0.000455088192943,
+            "rows": 69,
+            "squared_contribution": 1.4290263172e-05
+          },
+          "F_v": {
+            "fraction_total_squared": 0.137567537810137,
+            "l2_norm": 0.299370582800486,
+            "maximum_absolute_component": 0.169803150325647,
+            "maximum_owner": {
+              "block": "F_v",
+              "column": 7,
+              "kind": "q_stationarity",
+              "node": 22
+            },
+            "maximum_row": 217,
+            "rms_per_row": 0.03603998299922,
+            "rows": 69,
+            "squared_contribution": 0.089622745846303
+          },
+          "F_w": {
+            "fraction_total_squared": 0.34844462680325,
+            "l2_norm": 0.476450762784099,
+            "maximum_absolute_component": 0.207880593393235,
+            "maximum_owner": {
+              "block": "F_w",
+              "column": 4,
+              "kind": "q_stationarity",
+              "node": 23
+            },
+            "maximum_row": 224,
+            "rms_per_row": 0.057357931531129,
+            "rows": 69,
+            "squared_contribution": 0.22700532935755
+          }
+        },
+        "motion": {
+          "accepted_frontier_displacement_norms": {
+            "scale": 4.5940237405e-05,
+            "u": 2.29952033e-07,
+            "v": 4.511979005e-05,
+            "w": 0.000370468752216
+          },
+          "history_velocity_norms": {
+            "scale": 1.668954226133408,
+            "u": 0.977633831141834,
+            "v": 2.945201239961001,
+            "w": 20.791036623833502
+          }
+        },
+        "node_localization": {
+          "maximum_node": 23,
+          "maximum_node_region": "event_near",
+          "node_norms": [
+            0.006869220890605,
+            0.012092945673795,
+            0.010443385152302,
+            0.028189342669404,
+            0.021734325158973,
+            0.0402951960509,
+            0.037523178452685,
+            0.045103849603923,
+            0.045733323407696,
+            0.052138415818979,
+            0.058365482848115,
+            0.068615040912358,
+            0.06890619505865,
+            0.091063844785916,
+            0.088698317421155,
+            0.127170446870709,
+            0.098068718791137,
+            0.164221978059237,
+            0.142561947322398,
+            0.201870506405384,
+            0.209948621321771,
+            0.228975749811555,
+            0.281684604624589,
+            0.291264537329649
+          ],
+          "partition_definition": "physical nodes 0-2 reset-near, 3-20 interior, 21-23 event-near; diagnostic only",
+          "regions": {
+            "event_near": {
+              "fraction_stationarity_squared": 0.521964654629156,
+              "l2_norm": 0.465415020374428,
+              "nodes": [
+                21,
+                22,
+                23
+              ],
+              "rms_per_node": 0.268707487298071
+            },
+            "interior_history": {
+              "fraction_stationarity_squared": 0.477306440127443,
+              "l2_norm": 0.445059929336251,
+              "nodes": [
+                3,
+                4,
+                5,
+                6,
+                7,
+                8,
+                9,
+                10,
+                11,
+                12,
+                13,
+                14,
+                15,
+                16,
+                17,
+                18,
+                19,
+                20
+              ],
+              "rms_per_node": 0.104901631356023
+            },
+            "reset_near": {
+              "fraction_stationarity_squared": 0.000728905243401,
+              "l2_norm": 0.017392234593421,
+              "nodes": [
+                0,
+                1,
+                2
+              ],
+              "rms_per_node": 0.010041411324321
+            }
+          }
+        },
+        "total_l2_norm": 0.807144219141348,
+        "version": "v18.73"
+      },
+      {
+        "blocks": {
+          "F_event": {
+            "fraction_total_squared": 0.010754037080959,
+            "l2_norm": 0.083668380330887,
+            "maximum_absolute_component": 0.083668380330887,
+            "maximum_owner": {
+              "block": "F_event",
+              "column": null,
+              "kind": "event",
+              "node": null
+            },
+            "maximum_row": 375,
+            "rms_per_row": 0.083668380330887,
+            "rows": 1,
+            "squared_contribution": 0.007000397867194
+          },
+          "F_lapse": {
+            "fraction_total_squared": 2.50779e-10,
+            "l2_norm": 1.2776763386e-05,
+            "maximum_absolute_component": 1.1140130973e-05,
+            "maximum_owner": {
+              "block": "F_lapse",
+              "column": 0,
+              "kind": "multiplier_stationarity",
+              "node": 23
+            },
+            "maximum_row": 368,
+            "rms_per_row": 1.505756005e-06,
+            "rows": 72,
+            "squared_contribution": 1.63246e-10
+          },
+          "F_period": {
+            "fraction_total_squared": 0.348433009881292,
+            "l2_norm": 0.476250279269997,
+            "maximum_absolute_component": 0.476250279269997,
+            "maximum_owner": {
+              "block": "F_period",
+              "column": null,
+              "kind": "period_stationarity",
+              "node": null
+            },
+            "maximum_row": 374,
+            "rms_per_row": 0.476250279269997,
+            "rows": 1,
+            "squared_contribution": 0.22681432850475
+          },
+          "F_scale": {
+            "fraction_total_squared": 0.144971898534029,
+            "l2_norm": 0.307197382049742,
+            "maximum_absolute_component": 0.153536824645975,
+            "maximum_owner": {
+              "block": "F_scale",
+              "column": 0,
+              "kind": "q_stationarity",
+              "node": 23
+            },
+            "maximum_row": 220,
+            "rms_per_row": 0.064055082117969,
+            "rows": 23,
+            "squared_contribution": 0.094370231538215
+          },
+          "F_shift": {
+            "fraction_total_squared": 0.008381960008573,
+            "l2_norm": 0.073866647611884,
+            "maximum_absolute_component": 0.056538308507858,
+            "maximum_owner": {
+              "block": "F_shift",
+              "column": 3,
+              "kind": "multiplier_stationarity",
+              "node": 23
+            },
+            "maximum_row": 371,
+            "rms_per_row": 0.00870526790498,
+            "rows": 72,
+            "squared_contribution": 0.005456281629418
+          },
+          "F_u": {
+            "fraction_total_squared": 2.1873711365e-05,
+            "l2_norm": 0.00377343467204,
+            "maximum_absolute_component": 0.003475593283606,
+            "maximum_owner": {
+              "block": "F_u",
+              "column": 1,
+              "kind": "q_stationarity",
+              "node": 22
+            },
+            "maximum_row": 211,
+            "rms_per_row": 0.000454268152057,
+            "rows": 69,
+            "squared_contribution": 1.4238809224e-05
+          },
+          "F_v": {
+            "fraction_total_squared": 0.143370185552172,
+            "l2_norm": 0.305495643044402,
+            "maximum_absolute_component": 0.178441377815207,
+            "maximum_owner": {
+              "block": "F_v",
+              "column": 7,
+              "kind": "q_stationarity",
+              "node": 22
+            },
+            "maximum_row": 217,
+            "rms_per_row": 0.036777353601886,
+            "rows": 69,
+            "squared_contribution": 0.093327587919113
+          },
+          "F_w": {
+            "fraction_total_squared": 0.344067034980831,
+            "l2_norm": 0.473257090626076,
+            "maximum_absolute_component": 0.201791682323698,
+            "maximum_owner": {
+              "block": "F_w",
+              "column": 4,
+              "kind": "q_stationarity",
+              "node": 21
+            },
+            "maximum_row": 204,
+            "rms_per_row": 0.056973458583909,
+            "rows": 69,
+            "squared_contribution": 0.223972273827858
+          }
+        },
+        "motion": {
+          "accepted_frontier_displacement_norms": {
+            "scale": 2.8670900872e-05,
+            "u": 1.83408929e-07,
+            "v": 6.7992681074e-05,
+            "w": 0.000173978863525
+          },
+          "history_velocity_norms": {
+            "scale": 1.666238310505973,
+            "u": 0.975602889002824,
+            "v": 2.941154610319241,
+            "w": 20.751814762207527
+          }
+        },
+        "node_localization": {
+          "maximum_node": 23,
+          "maximum_node_region": "event_near",
+          "node_norms": [
+            0.006879427531072,
+            0.012235439602599,
+            0.010893054605591,
+            0.028398958583601,
+            0.023614969012432,
+            0.040208693272734,
+            0.039535941795393,
+            0.044612964012629,
+            0.046707114447002,
+            0.051498556186941,
+            0.058735942683948,
+            0.068158883835563,
+            0.069122466517994,
+            0.091064148922599,
+            0.08963790443466,
+            0.127410086328471,
+            0.0995956754712,
+            0.16508157425861,
+            0.143842582915389,
+            0.203935177979714,
+            0.211957929057323,
+            0.231648055780632,
+            0.27627606161601,
+            0.292669800549139
+          ],
+          "partition_definition": "physical nodes 0-2 reset-near, 3-20 interior, 21-23 event-near; diagnostic only",
+          "regions": {
+            "event_near": {
+              "fraction_stationarity_squared": 0.516959722797098,
+              "l2_norm": 0.464375813455517,
+              "nodes": [
+                21,
+                22,
+                23
+              ],
+              "rms_per_node": 0.268107500903694
+            },
+            "interior_history": {
+              "fraction_stationarity_squared": 0.482283479294583,
+              "l2_norm": 0.448530965063212,
+              "nodes": [
+                3,
+                4,
+                5,
+                6,
+                7,
+                8,
+                9,
+                10,
+                11,
+                12,
+                13,
+                14,
+                15,
+                16,
+                17,
+                18,
+                19,
+                20
+              ],
+              "rms_per_node": 0.105719762322781
+            },
+            "reset_near": {
+              "fraction_stationarity_squared": 0.000756797908319,
+              "l2_norm": 0.017767699458976,
+              "nodes": [
+                0,
+                1,
+                2
+              ],
+              "rms_per_node": 0.01025818606552
+            }
+          }
+        },
+        "total_l2_norm": 0.806818034168188,
+        "version": "v18.77"
+      },
+      {
+        "blocks": {
+          "F_event": {
+            "fraction_total_squared": 0.010769966628448,
+            "l2_norm": 0.083598507276914,
+            "maximum_absolute_component": 0.083598507276914,
+            "maximum_owner": {
+              "block": "F_event",
+              "column": null,
+              "kind": "event",
+              "node": null
+            },
+            "maximum_row": 375,
+            "rms_per_row": 0.083598507276914,
+            "rows": 1,
+            "squared_contribution": 0.006988710418928
+          },
+          "F_lapse": {
+            "fraction_total_squared": 2.51207e-10,
+            "l2_norm": 1.2767529154e-05,
+            "maximum_absolute_component": 1.1138044199e-05,
+            "maximum_owner": {
+              "block": "F_lapse",
+              "column": 0,
+              "kind": "multiplier_stationarity",
+              "node": 23
+            },
+            "maximum_row": 368,
+            "rms_per_row": 1.504667741e-06,
+            "rows": 72,
+            "squared_contribution": 1.6301e-10
+          },
+          "F_period": {
+            "fraction_total_squared": 0.351517308955023,
+            "l2_norm": 0.477600421525841,
+            "maximum_absolute_component": 0.477600421525841,
+            "maximum_owner": {
+              "block": "F_period",
+              "column": null,
+              "kind": "period_stationarity",
+              "node": null
+            },
+            "maximum_row": 374,
+            "rms_per_row": 0.477600421525841,
+            "rows": 1,
+            "squared_contribution": 0.228102162641661
+          },
+          "F_scale": {
+            "fraction_total_squared": 0.147335452668147,
+            "l2_norm": 0.309203908419533,
+            "maximum_absolute_component": 0.159902571931186,
+            "maximum_owner": {
+              "block": "F_scale",
+              "column": 0,
+              "kind": "q_stationarity",
+              "node": 23
+            },
+            "maximum_row": 220,
+            "rms_per_row": 0.064473471788256,
+            "rows": 23,
+            "squared_contribution": 0.095607056981915
+          },
+          "F_shift": {
+            "fraction_total_squared": 0.00840213736827,
+            "l2_norm": 0.073839072497269,
+            "maximum_absolute_component": 0.056560464506921,
+            "maximum_owner": {
+              "block": "F_shift",
+              "column": 3,
+              "kind": "multiplier_stationarity",
+              "node": 23
+            },
+            "maximum_row": 371,
+            "rms_per_row": 0.008702018146557,
+            "rows": 72,
+            "squared_contribution": 0.005452208627257
+          },
+          "F_u": {
+            "fraction_total_squared": 2.1930111104e-05,
+            "l2_norm": 0.003772348089357,
+            "maximum_absolute_component": 0.003476961100684,
+            "maximum_owner": {
+              "block": "F_u",
+              "column": 1,
+              "kind": "q_stationarity",
+              "node": 22
+            },
+            "maximum_row": 211,
+            "rms_per_row": 0.000454137342874,
+            "rows": 69,
+            "squared_contribution": 1.4230610107e-05
+          },
+          "F_v": {
+            "fraction_total_squared": 0.140507567209293,
+            "l2_norm": 0.301954287892934,
+            "maximum_absolute_component": 0.177250043027684,
+            "maximum_owner": {
+              "block": "F_v",
+              "column": 7,
+              "kind": "q_stationarity",
+              "node": 22
+            },
+            "maximum_row": 217,
+            "rms_per_row": 0.036351024540897,
+            "rows": 69,
+            "squared_contribution": 0.091176391976929
+          },
+          "F_w": {
+            "fraction_total_squared": 0.341445636808508,
+            "l2_norm": 0.47070859418432,
+            "maximum_absolute_component": 0.202338611574845,
+            "maximum_owner": {
+              "block": "F_w",
+              "column": 4,
+              "kind": "q_stationarity",
+              "node": 23
+            },
+            "maximum_row": 224,
+            "rms_per_row": 0.056666655665682,
+            "rows": 69,
+            "squared_contribution": 0.221566580638978
+          }
+        },
+        "motion": {
+          "accepted_frontier_displacement_norms": {
+            "scale": 2.2050252716e-05,
+            "u": 1.06459004e-07,
+            "v": 1.2404582164e-05,
+            "w": 5.3406192109e-05
+          },
+          "history_velocity_norms": {
+            "scale": 1.664223457211951,
+            "u": 0.973901249362371,
+            "v": 2.936414273557419,
+            "w": 20.71491891590829
+          }
+        },
+        "node_localization": {
+          "maximum_node": 23,
+          "maximum_node_region": "event_near",
+          "node_norms": [
+            0.006888328832368,
+            0.012209994615081,
+            0.01095583860095,
+            0.028245998343073,
+            0.023465228838597,
+            0.039907622429714,
+            0.039354957239229,
+            0.044144295795233,
+            0.046528506343857,
+            0.050844449584453,
+            0.058393650029081,
+            0.067367441385618,
+            0.068851787191943,
+            0.090224387424999,
+            0.089246825214908,
+            0.126528063050054,
+            0.09918754846332,
+            0.164157198849519,
+            0.143297534458252,
+            0.202973949723671,
+            0.211134384094457,
+            0.230713569290733,
+            0.272510551637622,
+            0.29482342733912
+          ],
+          "partition_definition": "physical nodes 0-2 reset-near, 3-20 interior, 21-23 event-near; diagnostic only",
+          "regions": {
+            "event_near": {
+              "fraction_stationarity_squared": 0.518132121797287,
+              "l2_norm": 0.463046007559396,
+              "nodes": [
+                21,
+                22,
+                23
+              ],
+              "rms_per_node": 0.267339737111599
+            },
+            "interior_history": {
+              "fraction_stationarity_squared": 0.481102893080638,
+              "l2_norm": 0.446193120116667,
+              "nodes": [
+                3,
+                4,
+                5,
+                6,
+                7,
+                8,
+                9,
+                10,
+                11,
+                12,
+                13,
+                14,
+                15,
+                16,
+                17,
+                18,
+                19,
+                20
+              ],
+              "rms_per_node": 0.105168726984426
+            },
+            "reset_near": {
+              "fraction_stationarity_squared": 0.000764985122075,
+              "l2_norm": 0.017792229822403,
+              "nodes": [
+                0,
+                1,
+                2
+              ],
+              "rms_per_node": 0.010272348677448
+            }
+          }
+        },
+        "total_l2_norm": 0.80554785212226,
+        "version": "v18.83"
+      },
+      {
+        "blocks": {
+          "F_event": {
+            "fraction_total_squared": 0.010788169389576,
+            "l2_norm": 0.083534405469597,
+            "maximum_absolute_component": 0.083534405469597,
+            "maximum_owner": {
+              "block": "F_event",
+              "column": null,
+              "kind": "event",
+              "node": null
+            },
+            "maximum_row": 375,
+            "rms_per_row": 0.083534405469597,
+            "rows": 1,
+            "squared_contribution": 0.006977996897159
+          },
+          "F_lapse": {
+            "fraction_total_squared": 2.5131e-10,
+            "l2_norm": 1.2749586853e-05,
+            "maximum_absolute_component": 1.1124191223e-05,
+            "maximum_owner": {
+              "block": "F_lapse",
+              "column": 0,
+              "kind": "multiplier_stationarity",
+              "node": 23
+            },
+            "maximum_row": 368,
+            "rms_per_row": 1.50255322e-06,
+            "rows": 72,
+            "squared_contribution": 1.62552e-10
+          },
+          "F_period": {
+            "fraction_total_squared": 0.353343238644098,
+            "l2_norm": 0.47806824826879,
+            "maximum_absolute_component": 0.47806824826879,
+            "maximum_owner": {
+              "block": "F_period",
+              "column": null,
+              "kind": "period_stationarity",
+              "node": null
+            },
+            "maximum_row": 374,
+            "rms_per_row": 0.47806824826879,
+            "rows": 1,
+            "squared_contribution": 0.228549250002789
+          },
+          "F_scale": {
+            "fraction_total_squared": 0.14909833063654,
+            "l2_norm": 0.310547400349576,
+            "maximum_absolute_component": 0.165447730880131,
+            "maximum_owner": {
+              "block": "F_scale",
+              "column": 0,
+              "kind": "q_stationarity",
+              "node": 23
+            },
+            "maximum_row": 220,
+            "rms_per_row": 0.06475360922084,
+            "rows": 23,
+            "squared_contribution": 0.09643968786388
+          },
+          "F_shift": {
+            "fraction_total_squared": 0.008373597974305,
+            "l2_norm": 0.073594873071569,
+            "maximum_absolute_component": 0.056312497128496,
+            "maximum_owner": {
+              "block": "F_shift",
+              "column": 3,
+              "kind": "multiplier_stationarity",
+              "node": 23
+            },
+            "maximum_row": 371,
+            "rms_per_row": 0.008673238968245,
+            "rows": 72,
+            "squared_contribution": 0.00541620534242
+          },
+          "F_u": {
+            "fraction_total_squared": 2.196462494e-05,
+            "l2_norm": 0.003769236634048,
+            "maximum_absolute_component": 0.003476453982094,
+            "maximum_owner": {
+              "block": "F_u",
+              "column": 1,
+              "kind": "q_stationarity",
+              "node": 22
+            },
+            "maximum_row": 211,
+            "rms_per_row": 0.000453762767672,
+            "rows": 69,
+            "squared_contribution": 1.4207144803e-05
+          },
+          "F_v": {
+            "fraction_total_squared": 0.138941738716171,
+            "l2_norm": 0.299783601128635,
+            "maximum_absolute_component": 0.178984920264713,
+            "maximum_owner": {
+              "block": "F_v",
+              "column": 7,
+              "kind": "q_stationarity",
+              "node": 22
+            },
+            "maximum_row": 217,
+            "rms_per_row": 0.036089704562995,
+            "rows": 69,
+            "squared_contribution": 0.089870207505653
+          },
+          "F_w": {
+            "fraction_total_squared": 0.33943295976306,
+            "l2_norm": 0.468563562625417,
+            "maximum_absolute_component": 0.202698528983479,
+            "maximum_owner": {
+              "block": "F_w",
+              "column": 4,
+              "kind": "q_stationarity",
+              "node": 23
+            },
+            "maximum_row": 224,
+            "rms_per_row": 0.056408424211568,
+            "rows": 69,
+            "squared_contribution": 0.219551812220223
+          }
+        },
+        "motion": {
+          "accepted_frontier_displacement_norms": {
+            "scale": 2.0325717104e-05,
+            "u": 8.4974873e-08,
+            "v": 2.5650109749e-05,
+            "w": 6.5705162692e-05
+          },
+          "history_velocity_norms": {
+            "scale": 1.662462418105346,
+            "u": 0.97241690982113,
+            "v": 2.932434655865223,
+            "w": 20.683723829299034
+          }
+        },
+        "node_localization": {
+          "maximum_node": 23,
+          "maximum_node_region": "event_near",
+          "node_norms": [
+            0.006885085161439,
+            0.011076316269306,
+            0.011686497847367,
+            0.02538848786373,
+            0.023640758033645,
+            0.03776732771993,
+            0.038955757982428,
+            0.043892167882779,
+            0.046835784235867,
+            0.051905851854909,
+            0.05914826600847,
+            0.068298507812008,
+            0.070017502852255,
+            0.09102224563465,
+            0.089986805741223,
+            0.126301424169331,
+            0.098757887745345,
+            0.163229647884255,
+            0.143005262137865,
+            0.202742103116681,
+            0.211644746667272,
+            0.229157874744597,
+            0.268578097257007,
+            0.295347992395484
+          ],
+          "partition_definition": "physical nodes 0-2 reset-near, 3-20 interior, 21-23 event-near; diagnostic only",
+          "regions": {
+            "event_near": {
+              "fraction_stationarity_squared": 0.515152010138933,
+              "l2_norm": 0.460302033990399,
+              "nodes": [
+                21,
+                22,
+                23
+              ],
+              "rms_per_node": 0.265755503232889
+            },
+            "interior_history": {
+              "fraction_stationarity_squared": 0.484102380118931,
+              "l2_norm": 0.446214628101902,
+              "nodes": [
+                3,
+                4,
+                5,
+                6,
+                7,
+                8,
+                9,
+                10,
+                11,
+                12,
+                13,
+                14,
+                15,
+                16,
+                17,
+                18,
+                19,
+                20
+              ],
+              "rms_per_node": 0.105173796465163
+            },
+            "reset_near": {
+              "fraction_stationarity_squared": 0.000745609742136,
+              "l2_norm": 0.017511807779737,
+              "nodes": [
+                0,
+                1,
+                2
+              ],
+              "rms_per_node": 0.010110446935628
+            }
+          }
+        },
+        "total_l2_norm": 0.804250811090346,
+        "version": "v18.87"
+      },
+      {
+        "blocks": {
+          "F_event": {
+            "fraction_total_squared": 0.011003378292844,
+            "l2_norm": 0.083702285432041,
+            "maximum_absolute_component": 0.083702285432041,
+            "maximum_owner": {
+              "block": "F_event",
+              "column": null,
+              "kind": "event",
+              "node": null
+            },
+            "maximum_row": 375,
+            "rms_per_row": 0.083702285432041,
+            "rows": 1,
+            "squared_contribution": 0.007006072586547
+          },
+          "F_lapse": {
+            "fraction_total_squared": 2.56513e-10,
+            "l2_norm": 1.2779947156e-05,
+            "maximum_absolute_component": 1.1153887306e-05,
+            "maximum_owner": {
+              "block": "F_lapse",
+              "column": 0,
+              "kind": "multiplier_stationarity",
+              "node": 23
+            },
+            "maximum_row": 368,
+            "rms_per_row": 1.506131216e-06,
+            "rows": 72,
+            "squared_contribution": 1.63327e-10
+          },
+          "F_period": {
+            "fraction_total_squared": 0.4030930702409,
+            "l2_norm": 0.506613735334432,
+            "maximum_absolute_component": 0.506613735334432,
+            "maximum_owner": {
+              "block": "F_period",
+              "column": null,
+              "kind": "period_stationarity",
+              "node": null
+            },
+            "maximum_row": 374,
+            "rms_per_row": 0.506613735334432,
+            "rows": 1,
+            "squared_contribution": 0.256657476829506
+          },
+          "F_scale": {
+            "fraction_total_squared": 0.13978869657732,
+            "l2_norm": 0.298339200746873,
+            "maximum_absolute_component": 0.149591854010279,
+            "maximum_owner": {
+              "block": "F_scale",
+              "column": 0,
+              "kind": "q_stationarity",
+              "node": 22
+            },
+            "maximum_row": 210,
+            "rms_per_row": 0.06220802363399,
+            "rows": 23,
+            "squared_contribution": 0.089006278702283
+          },
+          "F_shift": {
+            "fraction_total_squared": 0.008605441241387,
+            "l2_norm": 0.074022008667643,
+            "maximum_absolute_component": 0.056492511437295,
+            "maximum_owner": {
+              "block": "F_shift",
+              "column": 3,
+              "kind": "multiplier_stationarity",
+              "node": 23
+            },
+            "maximum_row": 371,
+            "rms_per_row": 0.00872357738099,
+            "rows": 72,
+            "squared_contribution": 0.005479257767193
+          },
+          "F_u": {
+            "fraction_total_squared": 2.2429783367e-05,
+            "l2_norm": 0.003779086509342,
+            "maximum_absolute_component": 0.003480118136939,
+            "maximum_owner": {
+              "block": "F_u",
+              "column": 1,
+              "kind": "q_stationarity",
+              "node": 22
+            },
+            "maximum_row": 211,
+            "rms_per_row": 0.000454948553312,
+            "rows": 69,
+            "squared_contribution": 1.4281494845e-05
+          },
+          "F_v": {
+            "fraction_total_squared": 0.086228358457072,
+            "l2_norm": 0.234314601809647,
+            "maximum_absolute_component": 0.139346431636417,
+            "maximum_owner": {
+              "block": "F_v",
+              "column": 7,
+              "kind": "q_stationarity",
+              "node": 22
+            },
+            "maximum_row": 217,
+            "rms_per_row": 0.028208163229307,
+            "rows": 69,
+            "squared_contribution": 0.054903332621213
+          },
+          "F_w": {
+            "fraction_total_squared": 0.351258625150598,
+            "l2_norm": 0.472920121799803,
+            "maximum_absolute_component": 0.201030378765721,
+            "maximum_owner": {
+              "block": "F_w",
+              "column": 4,
+              "kind": "q_stationarity",
+              "node": 23
+            },
+            "maximum_row": 224,
+            "rms_per_row": 0.056932892304295,
+            "rows": 69,
+            "squared_contribution": 0.223653441603141
+          }
+        },
+        "motion": {
+          "accepted_frontier_displacement_norms": {
+            "scale": 0.000117345340955,
+            "u": 9.27404768e-07,
+            "v": 0.000378989361138,
+            "w": 0.001033452898765
+          },
+          "history_velocity_norms": {
+            "scale": 1.66541763543904,
+            "u": 0.976071000458216,
+            "v": 2.930562232444727,
+            "w": 20.758097319111595
+          }
+        },
+        "node_localization": {
+          "maximum_node": 23,
+          "maximum_node_region": "event_near",
+          "node_norms": [
+            0.006873227168921,
+            0.010308731790351,
+            0.016823344140612,
+            0.018634182028189,
+            0.020655955002951,
+            0.032231986467506,
+            0.033117235729503,
+            0.045161556863959,
+            0.044503587418458,
+            0.060652117753383,
+            0.058488966269102,
+            0.074908116630704,
+            0.069004781193512,
+            0.090976863689724,
+            0.087903949667741,
+            0.116725285571147,
+            0.089755616764462,
+            0.151794672256302,
+            0.142261311247467,
+            0.199269881230566,
+            0.198999753391636,
+            0.225120521684414,
+            0.257970242759437,
+            0.265924612912451
+          ],
+          "partition_definition": "physical nodes 0-2 reset-near, 3-20 interior, 21-23 event-near; diagnostic only",
+          "regions": {
+            "event_near": {
+              "fraction_stationarity_squared": 0.503794327827148,
+              "l2_norm": 0.433524849559357,
+              "nodes": [
+                21,
+                22,
+                23
+              ],
+              "rms_per_node": 0.250295688593487
+            },
+            "interior_history": {
+              "fraction_stationarity_squared": 0.495035511613131,
+              "l2_norm": 0.429739759686748,
+              "nodes": [
+                3,
+                4,
+                5,
+                6,
+                7,
+                8,
+                9,
+                10,
+                11,
+                12,
+                13,
+                14,
+                15,
+                16,
+                17,
+                18,
+                19,
+                20
+              ],
+              "rms_per_node": 0.101290632739992
+            },
+            "reset_near": {
+              "fraction_stationarity_squared": 0.001170160559722,
+              "l2_norm": 0.020893446602092,
+              "nodes": [
+                0,
+                1,
+                2
+              ],
+              "rms_per_node": 0.012062837020017
+            }
+          }
+        },
+        "total_l2_norm": 0.797947455518253,
+        "version": "v19.03"
+      },
+      {
+        "blocks": {
+          "F_event": {
+            "fraction_total_squared": 0.010998999784892,
+            "l2_norm": 0.08360789661758,
+            "maximum_absolute_component": 0.08360789661758,
+            "maximum_owner": {
+              "block": "F_event",
+              "column": null,
+              "kind": "event",
+              "node": null
+            },
+            "maximum_row": 375,
+            "rms_per_row": 0.08360789661758,
+            "rows": 1,
+            "squared_contribution": 0.006990280376816
+          },
+          "F_lapse": {
+            "fraction_total_squared": 2.5647e-10,
+            "l2_norm": 1.2766993488e-05,
+            "maximum_absolute_component": 1.1149957004e-05,
+            "maximum_owner": {
+              "block": "F_lapse",
+              "column": 0,
+              "kind": "multiplier_stationarity",
+              "node": 23
+            },
+            "maximum_row": 368,
+            "rms_per_row": 1.504604612e-06,
+            "rows": 72,
+            "squared_contribution": 1.62996e-10
+          },
+          "F_period": {
+            "fraction_total_squared": 0.40315968797254,
+            "l2_norm": 0.506184976421546,
+            "maximum_absolute_component": 0.506184976421546,
+            "maximum_owner": {
+              "block": "F_period",
+              "column": null,
+              "kind": "period_stationarity",
+              "node": null
+            },
+            "maximum_row": 374,
+            "rms_per_row": 0.506184976421546,
+            "rows": 1,
+            "squared_contribution": 0.256223230354881
+          },
+          "F_scale": {
+            "fraction_total_squared": 0.14142852874782,
+            "l2_norm": 0.299805235526738,
+            "maximum_absolute_component": 0.15619992522709,
+            "maximum_owner": {
+              "block": "F_scale",
+              "column": 0,
+              "kind": "q_stationarity",
+              "node": 23
+            },
+            "maximum_row": 220,
+            "rms_per_row": 0.062513713017101,
+            "rows": 23,
+            "squared_contribution": 0.089883179249243
+          },
+          "F_shift": {
+            "fraction_total_squared": 0.008588406123698,
+            "l2_norm": 0.073880017119688,
+            "maximum_absolute_component": 0.056384496089572,
+            "maximum_owner": {
+              "block": "F_shift",
+              "column": 3,
+              "kind": "multiplier_stationarity",
+              "node": 23
+            },
+            "maximum_row": 371,
+            "rms_per_row": 0.008706843516585,
+            "rows": 72,
+            "squared_contribution": 0.005458256929605
+          },
+          "F_u": {
+            "fraction_total_squared": 2.2331356139e-05,
+            "l2_norm": 0.00376728303444,
+            "maximum_absolute_component": 0.003473480216169,
+            "maximum_owner": {
+              "block": "F_u",
+              "column": 1,
+              "kind": "q_stationarity",
+              "node": 22
+            },
+            "maximum_row": 211,
+            "rms_per_row": 0.000453527581917,
+            "rows": 69,
+            "squared_contribution": 1.4192421462e-05
+          },
+          "F_v": {
+            "fraction_total_squared": 0.089212398029772,
+            "l2_norm": 0.23811311012847,
+            "maximum_absolute_component": 0.154249432210738,
+            "maximum_owner": {
+              "block": "F_v",
+              "column": 7,
+              "kind": "q_stationarity",
+              "node": 22
+            },
+            "maximum_row": 217,
+            "rms_per_row": 0.028665449893722,
+            "rows": 69,
+            "squared_contribution": 0.056697853215053
+          },
+          "F_w": {
+            "fraction_total_squared": 0.34658964772867,
+            "l2_norm": 0.469330193083468,
+            "maximum_absolute_component": 0.200350691855108,
+            "maximum_owner": {
+              "block": "F_w",
+              "column": 4,
+              "kind": "q_stationarity",
+              "node": 21
+            },
+            "maximum_row": 204,
+            "rms_per_row": 0.056500715673262,
+            "rows": 69,
+            "squared_contribution": 0.220270830139765
+          }
+        },
+        "motion": {
+          "accepted_frontier_displacement_norms": {
+            "scale": 3.0812956532e-05,
+            "u": 1.05700624e-07,
+            "v": 3.5130779732e-05,
+            "w": 9.2397765778e-05
+          },
+          "history_velocity_norms": {
+            "scale": 1.662676079725326,
+            "u": 0.97378912092273,
+            "v": 2.925255133437424,
+            "w": 20.710635389108692
+          }
+        },
+        "node_localization": {
+          "maximum_node": 23,
+          "maximum_node_region": "event_near",
+          "node_norms": [
+            0.006875434616049,
+            0.010134271132727,
+            0.01692836282618,
+            0.017935943708988,
+            0.020436218340198,
+            0.031165939617615,
+            0.032712283896777,
+            0.044194458433739,
+            0.044171838416969,
+            0.059967392165957,
+            0.058370063867096,
+            0.074399641913062,
+            0.069398475139599,
+            0.090723929772279,
+            0.088415839039803,
+            0.116481432163092,
+            0.089981680212882,
+            0.151427450920438,
+            0.140946055650315,
+            0.199610741868034,
+            0.19651835111001,
+            0.225414526413003,
+            0.25543866734324,
+            0.269841986649481
+          ],
+          "partition_definition": "physical nodes 0-2 reset-near, 3-20 interior, 21-23 event-near; diagnostic only",
+          "regions": {
+            "event_near": {
+              "fraction_stationarity_squared": 0.50728709650071,
+              "l2_norm": 0.434597882244066,
+              "nodes": [
+                21,
+                22,
+                23
+              ],
+              "rms_per_node": 0.250915204302853
+            },
+            "interior_history": {
+              "fraction_stationarity_squared": 0.49154041890369,
+              "l2_norm": 0.427799542246799,
+              "nodes": [
+                3,
+                4,
+                5,
+                6,
+                7,
+                8,
+                9,
+                10,
+                11,
+                12,
+                13,
+                14,
+                15,
+                16,
+                17,
+                18,
+                19,
+                20
+              ],
+              "rms_per_node": 0.100833319103737
+            },
+            "reset_near": {
+              "fraction_stationarity_squared": 0.0011724845956,
+              "l2_norm": 0.020893647851105,
+              "nodes": [
+                0,
+                1,
+                2
+              ],
+              "rms_per_node": 0.012062953211189
+            }
+          }
+        },
+        "total_l2_norm": 0.797206261170734,
+        "version": "v19.07"
+      },
+      {
+        "blocks": {
+          "F_event": {
+            "fraction_total_squared": 0.011032665497599,
+            "l2_norm": 0.083604143281612,
+            "maximum_absolute_component": 0.083604143281612,
+            "maximum_owner": {
+              "block": "F_event",
+              "column": null,
+              "kind": "event",
+              "node": null
+            },
+            "maximum_row": 375,
+            "rms_per_row": 0.083604143281612,
+            "rows": 1,
+            "squared_contribution": 0.006989652773852
+          },
+          "F_lapse": {
+            "fraction_total_squared": 2.60178e-10,
+            "l2_norm": 1.2838747922e-05,
+            "maximum_absolute_component": 1.1235357411e-05,
+            "maximum_owner": {
+              "block": "F_lapse",
+              "column": 0,
+              "kind": "multiplier_stationarity",
+              "node": 23
+            },
+            "maximum_row": 368,
+            "rms_per_row": 1.513060953e-06,
+            "rows": 72,
+            "squared_contribution": 1.64833e-10
+          },
+          "F_period": {
+            "fraction_total_squared": 0.407957366371713,
+            "l2_norm": 0.508387618693345,
+            "maximum_absolute_component": 0.508387618693345,
+            "maximum_owner": {
+              "block": "F_period",
+              "column": null,
+              "kind": "period_stationarity",
+              "node": null
+            },
+            "maximum_row": 374,
+            "rms_per_row": 0.508387618693345,
+            "rows": 1,
+            "squared_contribution": 0.25845797084069
+          },
+          "F_scale": {
+            "fraction_total_squared": 0.140616544796345,
+            "l2_norm": 0.298473505707433,
+            "maximum_absolute_component": 0.150551264327387,
+            "maximum_owner": {
+              "block": "F_scale",
+              "column": 0,
+              "kind": "q_stationarity",
+              "node": 23
+            },
+            "maximum_row": 220,
+            "rms_per_row": 0.062236028154146,
+            "rows": 23,
+            "squared_contribution": 0.089086433609285
+          },
+          "F_shift": {
+            "fraction_total_squared": 0.008872522321243,
+            "l2_norm": 0.074974076627599,
+            "maximum_absolute_component": 0.057803329933501,
+            "maximum_owner": {
+              "block": "F_shift",
+              "column": 3,
+              "kind": "multiplier_stationarity",
+              "node": 23
+            },
+            "maximum_row": 371,
+            "rms_per_row": 0.008835779666096,
+            "rows": 72,
+            "squared_contribution": 0.005621112166161
+          },
+          "F_u": {
+            "fraction_total_squared": 2.2387473758e-05,
+            "l2_norm": 0.003766085022374,
+            "maximum_absolute_component": 0.003473419578947,
+            "maximum_owner": {
+              "block": "F_u",
+              "column": 1,
+              "kind": "q_stationarity",
+              "node": 22
+            },
+            "maximum_row": 211,
+            "rms_per_row": 0.000453383358212,
+            "rows": 69,
+            "squared_contribution": 1.4183396396e-05
+          },
+          "F_v": {
+            "fraction_total_squared": 0.085384645239376,
+            "l2_norm": 0.232582730400064,
+            "maximum_absolute_component": 0.143818403336684,
+            "maximum_owner": {
+              "block": "F_v",
+              "column": 7,
+              "kind": "q_stationarity",
+              "node": 22
+            },
+            "maximum_row": 217,
+            "rms_per_row": 0.027999670412229,
+            "rows": 69,
+            "squared_contribution": 0.054094726480349
+          },
+          "F_w": {
+            "fraction_total_squared": 0.346113868039789,
+            "l2_norm": 0.468270798483238,
+            "maximum_absolute_component": 0.200166688341035,
+            "maximum_owner": {
+              "block": "F_w",
+              "column": 4,
+              "kind": "q_stationarity",
+              "node": 21
+            },
+            "maximum_row": 204,
+            "rms_per_row": 0.056373179550559,
+            "rows": 69,
+            "squared_contribution": 0.21927754071213
+          }
+        },
+        "motion": {
+          "accepted_frontier_displacement_norms": {
+            "scale": 7.365092804e-06,
+            "u": 3.0064213e-08,
+            "v": 1.5672838249e-05,
+            "w": 5.9478660888e-05
+          },
+          "history_velocity_norms": {
+            "scale": 1.661749049886838,
+            "u": 0.973202548088003,
+            "v": 2.923484042447183,
+            "w": 20.700307965619007
+          }
+        },
+        "node_localization": {
+          "maximum_node": 23,
+          "maximum_node_region": "event_near",
+          "node_norms": [
+            0.006876759526868,
+            0.010010251221785,
+            0.016791428717448,
+            0.017752233266351,
+            0.019690924324247,
+            0.031232148863657,
+            0.032060685932808,
+            0.044253943391743,
+            0.0442114748332,
+            0.059485652329855,
+            0.058466687029347,
+            0.073480138130353,
+            0.069533216752914,
+            0.089956120780889,
+            0.088370146570394,
+            0.116178482074744,
+            0.089920825693972,
+            0.151767324634431,
+            0.140771626249604,
+            0.200355072501011,
+            0.195781851348897,
+            0.225393557397224,
+            0.250384875442624,
+            0.267492236582715
+          ],
+          "partition_definition": "physical nodes 0-2 reset-near, 3-20 interior, 21-23 event-near; diagnostic only",
+          "regions": {
+            "event_near": {
+              "fraction_stationarity_squared": 0.502716534209928,
+              "l2_norm": 0.430170824439103,
+              "nodes": [
+                21,
+                22,
+                23
+              ],
+              "rms_per_node": 0.248359241287439
+            },
+            "interior_history": {
+              "fraction_stationarity_squared": 0.496116788165508,
+              "l2_norm": 0.427337818711438,
+              "nodes": [
+                3,
+                4,
+                5,
+                6,
+                7,
+                8,
+                9,
+                10,
+                11,
+                12,
+                13,
+                14,
+                15,
+                16,
+                17,
+                18,
+                19,
+                20
+              ],
+              "rms_per_node": 0.100724489822775
+            },
+            "reset_near": {
+              "fraction_stationarity_squared": 0.001166677624564,
+              "l2_norm": 0.020723103760942,
+              "nodes": [
+                0,
+                1,
+                2
+              ],
+              "rms_per_node": 0.011964489534824
+            }
+          }
+        },
+        "total_l2_norm": 0.795953277613514,
+        "version": "v19.13"
+      },
+      {
+        "blocks": {
+          "F_event": {
+            "fraction_total_squared": 0.011064420872437,
+            "l2_norm": 0.083699194728613,
+            "maximum_absolute_component": 0.083699194728613,
+            "maximum_owner": {
+              "block": "F_event",
+              "column": null,
+              "kind": "event",
+              "node": null
+            },
+            "maximum_row": 375,
+            "rms_per_row": 0.083699194728613,
+            "rows": 1,
+            "squared_contribution": 0.007005555198218
+          },
+          "F_lapse": {
+            "fraction_total_squared": 2.61891e-10,
+            "l2_norm": 1.2877068166e-05,
+            "maximum_absolute_component": 1.1269614204e-05,
+            "maximum_owner": {
+              "block": "F_lapse",
+              "column": 0,
+              "kind": "multiplier_stationarity",
+              "node": 23
+            },
+            "maximum_row": 368,
+            "rms_per_row": 1.517577037e-06,
+            "rows": 72,
+            "squared_contribution": 1.65819e-10
+          },
+          "F_period": {
+            "fraction_total_squared": 0.40683114472282,
+            "l2_norm": 0.507532704175135,
+            "maximum_absolute_component": 0.507532704175135,
+            "maximum_owner": {
+              "block": "F_period",
+              "column": null,
+              "kind": "period_stationarity",
+              "node": null
+            },
+            "maximum_row": 374,
+            "rms_per_row": 0.507532704175135,
+            "rows": 1,
+            "squared_contribution": 0.257589445807325
+          },
+          "F_scale": {
+            "fraction_total_squared": 0.135213040642511,
+            "l2_norm": 0.292594545378804,
+            "maximum_absolute_component": 0.138167681930554,
+            "maximum_owner": {
+              "block": "F_scale",
+              "column": 0,
+              "kind": "q_stationarity",
+              "node": 23
+            },
+            "maximum_row": 220,
+            "rms_per_row": 0.061010180185957,
+            "rows": 23,
+            "squared_contribution": 0.085611567985429
+          },
+          "F_shift": {
+            "fraction_total_squared": 0.009056855342658,
+            "l2_norm": 0.075726110634837,
+            "maximum_absolute_component": 0.058762701047711,
+            "maximum_owner": {
+              "block": "F_shift",
+              "column": 3,
+              "kind": "multiplier_stationarity",
+              "node": 23
+            },
+            "maximum_row": 371,
+            "rms_per_row": 0.008924407723796,
+            "rows": 72,
+            "squared_contribution": 0.00573444383188
+          },
+          "F_u": {
+            "fraction_total_squared": 2.2585710527e-05,
+            "l2_norm": 0.003781584549072,
+            "maximum_absolute_component": 0.003484274672646,
+            "maximum_owner": {
+              "block": "F_u",
+              "column": 1,
+              "kind": "q_stationarity",
+              "node": 22
+            },
+            "maximum_row": 211,
+            "rms_per_row": 0.000455249281956,
+            "rows": 69,
+            "squared_contribution": 1.4300381702e-05
+          },
+          "F_v": {
+            "fraction_total_squared": 0.08642114954422,
+            "l2_norm": 0.23391978464462,
+            "maximum_absolute_component": 0.139936215579579,
+            "maximum_owner": {
+              "block": "F_v",
+              "column": 7,
+              "kind": "q_stationarity",
+              "node": 22
+            },
+            "maximum_row": 217,
+            "rms_per_row": 0.028160632828082,
+            "rows": 69,
+            "squared_contribution": 0.054718465648186
+          },
+          "F_w": {
+            "fraction_total_squared": 0.351390802902937,
+            "l2_norm": 0.47168507133286,
+            "maximum_absolute_component": 0.202116619577403,
+            "maximum_owner": {
+              "block": "F_w",
+              "column": 4,
+              "kind": "q_stationarity",
+              "node": 21
+            },
+            "maximum_row": 204,
+            "rms_per_row": 0.056784209700228,
+            "rows": 69,
+            "squared_contribution": 0.222486806518285
+          }
+        },
+        "motion": {
+          "accepted_frontier_displacement_norms": {
+            "scale": 1.9815098444e-05,
+            "u": 3.3791582e-08,
+            "v": 2.1269890473e-05,
+            "w": 0.00010612542623
+          },
+          "history_velocity_norms": {
+            "scale": 1.66414260005147,
+            "u": 0.974795864402498,
+            "v": 2.927425143717814,
+            "w": 20.73063365807119
+          }
+        },
+        "node_localization": {
+          "maximum_node": 23,
+          "maximum_node_region": "event_near",
+          "node_norms": [
+            0.006892429102313,
+            0.010695085087132,
+            0.017440547341372,
+            0.019723867506141,
+            0.021350686246924,
+            0.033390487079555,
+            0.033876433188193,
+            0.045128448854888,
+            0.045260336643482,
+            0.058846072052634,
+            0.059359608645032,
+            0.073168221070766,
+            0.069787320168569,
+            0.090279249994209,
+            0.08916696481968,
+            0.11599121546176,
+            0.091197458059977,
+            0.151163705470985,
+            0.143363873291625,
+            0.200170070556163,
+            0.197825741746806,
+            0.227060830572328,
+            0.247307943646467,
+            0.265518602602812
+          ],
+          "partition_definition": "physical nodes 0-2 reset-near, 3-20 interior, 21-23 event-near; diagnostic only",
+          "regions": {
+            "event_near": {
+              "fraction_stationarity_squared": 0.497110896374076,
+              "l2_norm": 0.428039680519213,
+              "nodes": [
+                21,
+                22,
+                23
+              ],
+              "rms_per_node": 0.247128824771609
+            },
+            "interior_history": {
+              "fraction_stationarity_squared": 0.501624571246671,
+              "l2_norm": 0.429978549833351,
+              "nodes": [
+                3,
+                4,
+                5,
+                6,
+                7,
+                8,
+                9,
+                10,
+                11,
+                12,
+                13,
+                14,
+                15,
+                16,
+                17,
+                18,
+                19,
+                20
+              ],
+              "rms_per_node": 0.101346916117307
+            },
+            "reset_near": {
+              "fraction_stationarity_squared": 0.001264532379253,
+              "l2_norm": 0.021588494980383,
+              "nodes": [
+                0,
+                1,
+                2
+              ],
+              "rms_per_node": 0.012464123388323
+            }
+          }
+        },
+        "total_l2_norm": 0.795713884217715,
+        "version": "v19.17"
+      },
+      {
+        "blocks": {
+          "F_event": {
+            "fraction_total_squared": 0.011056577574809,
+            "l2_norm": 0.083596533313489,
+            "maximum_absolute_component": 0.083596533313489,
+            "maximum_owner": {
+              "block": "F_event",
+              "column": null,
+              "kind": "event",
+              "node": null
+            },
+            "maximum_row": 375,
+            "rms_per_row": 0.083596533313489,
+            "rows": 1,
+            "squared_contribution": 0.006988380382033
+          },
+          "F_lapse": {
+            "fraction_total_squared": 2.6221e-10,
+            "l2_norm": 1.2873669884e-05,
+            "maximum_absolute_component": 1.1275013667e-05,
+            "maximum_owner": {
+              "block": "F_lapse",
+              "column": 0,
+              "kind": "multiplier_stationarity",
+              "node": 23
+            },
+            "maximum_row": 368,
+            "rms_per_row": 1.517176546e-06,
+            "rows": 72,
+            "squared_contribution": 1.65731e-10
+          },
+          "F_period": {
+            "fraction_total_squared": 0.407598174033371,
+            "l2_norm": 0.507567754903583,
+            "maximum_absolute_component": 0.507567754903583,
+            "maximum_owner": {
+              "block": "F_period",
+              "column": null,
+              "kind": "period_stationarity",
+              "node": null
+            },
+            "maximum_row": 374,
+            "rms_per_row": 0.507567754903583,
+            "rows": 1,
+            "squared_contribution": 0.257625025817863
+          },
+          "F_scale": {
+            "fraction_total_squared": 0.139879016285384,
+            "l2_norm": 0.297340586668551,
+            "maximum_absolute_component": 0.15401030483715,
+            "maximum_owner": {
+              "block": "F_scale",
+              "column": 0,
+              "kind": "q_stationarity",
+              "node": 23
+            },
+            "maximum_row": 220,
+            "rms_per_row": 0.06199979820458,
+            "rows": 23,
+            "squared_contribution": 0.088411424480398
+          },
+          "F_shift": {
+            "fraction_total_squared": 0.009070218892723,
+            "l2_norm": 0.075715848451716,
+            "maximum_absolute_component": 0.05884566110289,
+            "maximum_owner": {
+              "block": "F_shift",
+              "column": 3,
+              "kind": "multiplier_stationarity",
+              "node": 23
+            },
+            "maximum_row": 371,
+            "rms_per_row": 0.008923198313917,
+            "rows": 72,
+            "squared_contribution": 0.005732889706763
+          },
+          "F_u": {
+            "fraction_total_squared": 2.2502911692e-05,
+            "l2_norm": 0.003771353718841,
+            "maximum_absolute_component": 0.003478886964024,
+            "maximum_owner": {
+              "block": "F_u",
+              "column": 1,
+              "kind": "q_stationarity",
+              "node": 22
+            },
+            "maximum_row": 211,
+            "rms_per_row": 0.000454017634731,
+            "rows": 69,
+            "squared_contribution": 1.4223108873e-05
+          },
+          "F_v": {
+            "fraction_total_squared": 0.085969484821192,
+            "l2_norm": 0.233104185396185,
+            "maximum_absolute_component": 0.150617182423027,
+            "maximum_owner": {
+              "block": "F_v",
+              "column": 7,
+              "kind": "q_stationarity",
+              "node": 22
+            },
+            "maximum_row": 217,
+            "rms_per_row": 0.028062446216783,
+            "rows": 69,
+            "squared_contribution": 0.054337561249219
+          },
+          "F_w": {
+            "fraction_total_squared": 0.346404025218619,
+            "l2_norm": 0.467917592877577,
+            "maximum_absolute_component": 0.20177137662686,
+            "maximum_owner": {
+              "block": "F_w",
+              "column": 4,
+              "kind": "q_stationarity",
+              "node": 21
+            },
+            "maximum_row": 204,
+            "rms_per_row": 0.056330658592407,
+            "rows": 69,
+            "squared_contribution": 0.218946873724346
+          }
+        },
+        "motion": {
+          "accepted_frontier_displacement_norms": {
+            "scale": 2.1913383042e-05,
+            "u": 8.7298711e-08,
+            "v": 1.6758338159e-05,
+            "w": 8.122650298e-05
+          },
+          "history_velocity_norms": {
+            "scale": 1.661185968278421,
+            "u": 0.972574488432925,
+            "v": 2.921118346651592,
+            "w": 20.685262494113367
+          }
+        },
+        "node_localization": {
+          "maximum_node": 23,
+          "maximum_node_region": "event_near",
+          "node_norms": [
+            0.006896745411631,
+            0.010793770788402,
+            0.017546985429974,
+            0.01998966861612,
+            0.021330866948877,
+            0.033357874892878,
+            0.033711843880392,
+            0.044382906969628,
+            0.044648414317143,
+            0.058129835217202,
+            0.058772923888365,
+            0.072820862906136,
+            0.06894136206638,
+            0.089688837291773,
+            0.088565222554239,
+            0.115494751840012,
+            0.090481892642369,
+            0.150687728221176,
+            0.142867805438353,
+            0.200334032989976,
+            0.197934209846166,
+            0.227184457308454,
+            0.246814960501911,
+            0.265783280941455
+          ],
+          "partition_definition": "physical nodes 0-2 reset-near, 3-20 interior, 21-23 event-near; diagnostic only",
+          "regions": {
+            "event_near": {
+              "fraction_stationarity_squared": 0.498502267124836,
+              "l2_norm": 0.427984993659942,
+              "nodes": [
+                21,
+                22,
+                23
+              ],
+              "rms_per_node": 0.247097251298688
+            },
+            "interior_history": {
+              "fraction_stationarity_squared": 0.500213268840767,
+              "l2_norm": 0.428718847678108,
+              "nodes": [
+                3,
+                4,
+                5,
+                6,
+                7,
+                8,
+                9,
+                10,
+                11,
+                12,
+                13,
+                14,
+                15,
+                16,
+                17,
+                18,
+                19,
+                20
+              ],
+              "rms_per_node": 0.101050001471891
+            },
+            "reset_near": {
+              "fraction_stationarity_squared": 0.001284464034397,
+              "l2_norm": 0.021724808003412,
+              "nodes": [
+                0,
+                1,
+                2
+              ],
+              "rms_per_node": 0.012542823748863
+            }
+          }
+        },
+        "total_l2_norm": 0.795019734745765,
+        "version": "v19.21"
+      },
+      {
+        "blocks": {
+          "F_event": {
+            "fraction_total_squared": 0.011052747169266,
+            "l2_norm": 0.083556866414175,
+            "maximum_absolute_component": 0.083556866414175,
+            "maximum_owner": {
+              "block": "F_event",
+              "column": null,
+              "kind": "event",
+              "node": null
+            },
+            "maximum_row": 375,
+            "rms_per_row": 0.083556866414175,
+            "rows": 1,
+            "squared_contribution": 0.006981749924956
+          },
+          "F_lapse": {
+            "fraction_total_squared": 2.62461e-10,
+            "l2_norm": 1.2875957454e-05,
+            "maximum_absolute_component": 1.1281813293e-05,
+            "maximum_owner": {
+              "block": "F_lapse",
+              "column": 0,
+              "kind": "multiplier_stationarity",
+              "node": 23
+            },
+            "maximum_row": 368,
+            "rms_per_row": 1.517446138e-06,
+            "rows": 72,
+            "squared_contribution": 1.6579e-10
+          },
+          "F_period": {
+            "fraction_total_squared": 0.407726456827867,
+            "l2_norm": 0.507494655803868,
+            "maximum_absolute_component": 0.507494655803868,
+            "maximum_owner": {
+              "block": "F_period",
+              "column": null,
+              "kind": "period_stationarity",
+              "node": null
+            },
+            "maximum_row": 374,
+            "rms_per_row": 0.507494655803868,
+            "rows": 1,
+            "squared_contribution": 0.257550825669486
+          },
+          "F_scale": {
+            "fraction_total_squared": 0.141224490877885,
+            "l2_norm": 0.298677175407871,
+            "maximum_absolute_component": 0.155890957818898,
+            "maximum_owner": {
+              "block": "F_scale",
+              "column": 0,
+              "kind": "q_stationarity",
+              "node": 23
+            },
+            "maximum_row": 220,
+            "rms_per_row": 0.062278496222394,
+            "rows": 23,
+            "squared_contribution": 0.089208055109624
+          },
+          "F_shift": {
+            "fraction_total_squared": 0.009092017159126,
+            "l2_norm": 0.075783934688148,
+            "maximum_absolute_component": 0.058966721863899,
+            "maximum_owner": {
+              "block": "F_shift",
+              "column": 3,
+              "kind": "multiplier_stationarity",
+              "node": 23
+            },
+            "maximum_row": 371,
+            "rms_per_row": 0.008931222353831,
+            "rows": 72,
+            "squared_contribution": 0.005743204756817
+          },
+          "F_u": {
+            "fraction_total_squared": 2.2489965699e-05,
+            "l2_norm": 0.003769132658905,
+            "maximum_absolute_component": 0.003478384732162,
+            "maximum_owner": {
+              "block": "F_u",
+              "column": 1,
+              "kind": "q_stationarity",
+              "node": 22
+            },
+            "maximum_row": 211,
+            "rms_per_row": 0.000453750250536,
+            "rows": 69,
+            "squared_contribution": 1.4206361e-05
+          },
+          "F_v": {
+            "fraction_total_squared": 0.086560855326517,
+            "l2_norm": 0.233834073985497,
+            "maximum_absolute_component": 0.15240889409679,
+            "maximum_owner": {
+              "block": "F_v",
+              "column": 7,
+              "kind": "q_stationarity",
+              "node": 22
+            },
+            "maximum_row": 217,
+            "rms_per_row": 0.028150314477265,
+            "rows": 69,
+            "squared_contribution": 0.054678374156655
+          },
+          "F_w": {
+            "fraction_total_squared": 0.344320942411178,
+            "l2_norm": 0.466368002495858,
+            "maximum_absolute_component": 0.201804659544634,
+            "maximum_owner": {
+              "block": "F_w",
+              "column": 4,
+              "kind": "q_stationarity",
+              "node": 21
+            },
+            "maximum_row": 204,
+            "rms_per_row": 0.05614410983237,
+            "rows": 69,
+            "squared_contribution": 0.217499113751976
+          }
+        },
+        "motion": {
+          "accepted_frontier_displacement_norms": {
+            "scale": 9.912004355e-06,
+            "u": 3.7183656e-08,
+            "v": 1.8285858703e-05,
+            "w": 3.5253779992e-05
+          },
+          "history_velocity_norms": {
+            "scale": 1.659960783715938,
+            "u": 0.971631826288751,
+            "v": 2.918991222873056,
+            "w": 20.665890294640935
+          }
+        },
+        "node_localization": {
+          "maximum_node": 23,
+          "maximum_node_region": "event_near",
+          "node_norms": [
+            0.006897359942145,
+            0.010851543351877,
+            0.017643015993469,
+            0.020080724567863,
+            0.021161798311336,
+            0.033547761051883,
+            0.033168902381203,
+            0.044459661771112,
+            0.044335653554236,
+            0.058065573482369,
+            0.05850974461031,
+            0.072853170404887,
+            0.068540370686301,
+            0.089706938927996,
+            0.088092464966993,
+            0.115759580090571,
+            0.090032784143295,
+            0.150823668092947,
+            0.14245906090455,
+            0.200529723737274,
+            0.197398716029946,
+            0.227512828915521,
+            0.246254909691827,
+            0.266287118982008
+          ],
+          "partition_definition": "physical nodes 0-2 reset-near, 3-20 interior, 21-23 event-near; diagnostic only",
+          "regions": {
+            "event_near": {
+              "fraction_stationarity_squared": 0.499294336051707,
+              "l2_norm": 0.428149970926323,
+              "nodes": [
+                21,
+                22,
+                23
+              ],
+              "rms_per_node": 0.247192500967843
+            },
+            "interior_history": {
+              "fraction_stationarity_squared": 0.499407516795935,
+              "l2_norm": 0.428198494996208,
+              "nodes": [
+                3,
+                4,
+                5,
+                6,
+                7,
+                8,
+                9,
+                10,
+                11,
+                12,
+                13,
+                14,
+                15,
+                16,
+                17,
+                18,
+                19,
+                20
+              ],
+              "rms_per_node": 0.100927353168564
+            },
+            "reset_near": {
+              "fraction_stationarity_squared": 0.001298147152357,
+              "l2_norm": 0.021831298189411,
+              "nodes": [
+                0,
+                1,
+                2
+              ],
+              "rms_per_node": 0.012604305886416
+            }
+          }
+        },
+        "total_l2_norm": 0.794780177090688,
+        "version": "v19.25"
+      },
+      {
+        "blocks": {
+          "F_event": {
+            "fraction_total_squared": 0.011091311556816,
+            "l2_norm": 0.08353473205613,
+            "maximum_absolute_component": 0.08353473205613,
+            "maximum_owner": {
+              "block": "F_event",
+              "column": null,
+              "kind": "event",
+              "node": null
+            },
+            "maximum_row": 375,
+            "rms_per_row": 0.08353473205613,
+            "rows": 1,
+            "squared_contribution": 0.006978051459689
+          },
+          "F_lapse": {
+            "fraction_total_squared": 2.62657e-10,
+            "l2_norm": 1.285493001e-05,
+            "maximum_absolute_component": 1.1260040506e-05,
+            "maximum_owner": {
+              "block": "F_lapse",
+              "column": 0,
+              "kind": "multiplier_stationarity",
+              "node": 23
+            },
+            "maximum_row": 368,
+            "rms_per_row": 1.51496803e-06,
+            "rows": 72,
+            "squared_contribution": 1.65249e-10
+          },
+          "F_period": {
+            "fraction_total_squared": 0.411087701830631,
+            "l2_norm": 0.508560790816579,
+            "maximum_absolute_component": 0.508560790816579,
+            "maximum_owner": {
+              "block": "F_period",
+              "column": null,
+              "kind": "period_stationarity",
+              "node": null
+            },
+            "maximum_row": 374,
+            "rms_per_row": 0.508560790816579,
+            "rows": 1,
+            "squared_contribution": 0.258634077955984
+          },
+          "F_scale": {
+            "fraction_total_squared": 0.141164734666696,
+            "l2_norm": 0.298015422415222,
+            "maximum_absolute_component": 0.140629851897488,
+            "maximum_owner": {
+              "block": "F_scale",
+              "column": 0,
+              "kind": "q_stationarity",
+              "node": 23
+            },
+            "maximum_row": 220,
+            "rms_per_row": 0.062140511184882,
+            "rows": 23,
+            "squared_contribution": 0.088813191997323
+          },
+          "F_shift": {
+            "fraction_total_squared": 0.009075887588274,
+            "l2_norm": 0.075564912808968,
+            "maximum_absolute_component": 0.058712590129088,
+            "maximum_owner": {
+              "block": "F_shift",
+              "column": 3,
+              "kind": "multiplier_stationarity",
+              "node": 23
+            },
+            "maximum_row": 371,
+            "rms_per_row": 0.008905410377832,
+            "rows": 72,
+            "squared_contribution": 0.005710056047827
+          },
+          "F_u": {
+            "fraction_total_squared": 2.2691603642e-05,
+            "l2_norm": 0.003778402553031,
+            "maximum_absolute_component": 0.003486590556754,
+            "maximum_owner": {
+              "block": "F_u",
+              "column": 1,
+              "kind": "q_stationarity",
+              "node": 22
+            },
+            "maximum_row": 211,
+            "rms_per_row": 0.000454866214648,
+            "rows": 69,
+            "squared_contribution": 1.4276325853e-05
+          },
+          "F_v": {
+            "fraction_total_squared": 0.082332375656359,
+            "l2_norm": 0.227594076648077,
+            "maximum_absolute_component": 0.137671568425099,
+            "maximum_owner": {
+              "block": "F_v",
+              "column": 7,
+              "kind": "q_stationarity",
+              "node": 22
+            },
+            "maximum_row": 217,
+            "rms_per_row": 0.027399107074547,
+            "rows": 69,
+            "squared_contribution": 0.051799063725291
+          },
+          "F_w": {
+            "fraction_total_squared": 0.345225296834925,
+            "l2_norm": 0.466044017420227,
+            "maximum_absolute_component": 0.202763113123349,
+            "maximum_owner": {
+              "block": "F_w",
+              "column": 4,
+              "kind": "q_stationarity",
+              "node": 23
+            },
+            "maximum_row": 224,
+            "rms_per_row": 0.056105106612653,
+            "rows": 69,
+            "squared_contribution": 0.217197026173185
+          }
+        },
+        "motion": {
+          "accepted_frontier_displacement_norms": {
+            "scale": 1.2686499324e-05,
+            "u": 3.0347302e-08,
+            "v": 7.535362355e-06,
+            "w": 9.390891219e-05
+          },
+          "history_velocity_norms": {
+            "scale": 1.659699194284044,
+            "u": 0.971124870189161,
+            "v": 2.917202828465021,
+            "w": 20.65205275533152
+          }
+        },
+        "node_localization": {
+          "maximum_node": 23,
+          "maximum_node_region": "event_near",
+          "node_norms": [
+            0.006896915811841,
+            0.010836260582091,
+            0.017744886405102,
+            0.019973885657249,
+            0.021682447630372,
+            0.033468179145182,
+            0.033457248131244,
+            0.044671741765965,
+            0.044255689029815,
+            0.058258623629338,
+            0.058292281054229,
+            0.073058305141856,
+            0.068406930632612,
+            0.089661913627454,
+            0.087504398015634,
+            0.115443719941029,
+            0.089695576049933,
+            0.14954719907587,
+            0.142069547280975,
+            0.199681061193157,
+            0.197705302460988,
+            0.225723739165872,
+            0.243350466895442,
+            0.265394840165568
+          ],
+          "partition_definition": "physical nodes 0-2 reset-near, 3-20 interior, 21-23 event-near; diagnostic only",
+          "regions": {
+            "event_near": {
+              "fraction_stationarity_squared": 0.496804339891895,
+              "l2_norm": 0.424976560939259,
+              "nodes": [
+                21,
+                22,
+                23
+              ],
+              "rms_per_node": 0.245360331857563
+            },
+            "interior_history": {
+              "fraction_stationarity_squared": 0.501875636414025,
+              "l2_norm": 0.427140098916409,
+              "nodes": [
+                3,
+                4,
+                5,
+                6,
+                7,
+                8,
+                9,
+                10,
+                11,
+                12,
+                13,
+                14,
+                15,
+                16,
+                17,
+                18,
+                19,
+                20
+              ],
+              "rms_per_node": 0.100677886820162
+            },
+            "reset_near": {
+              "fraction_stationarity_squared": 0.001320023694081,
+              "l2_norm": 0.021906003392874,
+              "nodes": [
+                0,
+                1,
+                2
+              ],
+              "rms_per_node": 0.012647436955744
+            }
+          }
+        },
+        "total_l2_norm": 0.793187079982019,
+        "version": "v19.29"
+      },
+      {
+        "blocks": {
+          "F_event": {
+            "fraction_total_squared": 0.0111040148919,
+            "l2_norm": 0.083534194648883,
+            "maximum_absolute_component": 0.083534194648883,
+            "maximum_owner": {
+              "block": "F_event",
+              "column": null,
+              "kind": "event",
+              "node": null
+            },
+            "maximum_row": 375,
+            "rms_per_row": 0.083534194648883,
+            "rows": 1,
+            "squared_contribution": 0.006977961675638
+          },
+          "F_lapse": {
+            "fraction_total_squared": 2.58923e-10,
+            "l2_norm": 1.2755853652e-05,
+            "maximum_absolute_component": 1.1147202924e-05,
+            "maximum_owner": {
+              "block": "F_lapse",
+              "column": 0,
+              "kind": "multiplier_stationarity",
+              "node": 23
+            },
+            "maximum_row": 368,
+            "rms_per_row": 1.50329177e-06,
+            "rows": 72,
+            "squared_contribution": 1.62712e-10
+          },
+          "F_period": {
+            "fraction_total_squared": 0.411534935567452,
+            "l2_norm": 0.508542936578741,
+            "maximum_absolute_component": 0.508542936578741,
+            "maximum_owner": {
+              "block": "F_period",
+              "column": null,
+              "kind": "period_stationarity",
+              "node": null
+            },
+            "maximum_row": 374,
+            "rms_per_row": 0.508542936578741,
+            "rows": 1,
+            "squared_contribution": 0.25861591834413
+          },
+          "F_scale": {
+            "fraction_total_squared": 0.140308630463226,
+            "l2_norm": 0.296938468959178,
+            "maximum_absolute_component": 0.145733355273304,
+            "maximum_owner": {
+              "block": "F_scale",
+              "column": 0,
+              "kind": "q_stationarity",
+              "node": 23
+            },
+            "maximum_row": 220,
+            "rms_per_row": 0.061915950866028,
+            "rows": 23,
+            "squared_contribution": 0.088172454347821
+          },
+          "F_shift": {
+            "fraction_total_squared": 0.008701138884422,
+            "l2_norm": 0.073945597506841,
+            "maximum_absolute_component": 0.056587859353496,
+            "maximum_owner": {
+              "block": "F_shift",
+              "column": 3,
+              "kind": "multiplier_stationarity",
+              "node": 23
+            },
+            "maximum_row": 371,
+            "rms_per_row": 0.00871457223933,
+            "rows": 72,
+            "squared_contribution": 0.005467951390644
+          },
+          "F_u": {
+            "fraction_total_squared": 2.2774165305e-05,
+            "l2_norm": 0.003783079835838,
+            "maximum_absolute_component": 0.003490088507553,
+            "maximum_owner": {
+              "block": "F_u",
+              "column": 1,
+              "kind": "q_stationarity",
+              "node": 22
+            },
+            "maximum_row": 211,
+            "rms_per_row": 0.000455429293329,
+            "rows": 69,
+            "squared_contribution": 1.4311693044e-05
+          },
+          "F_v": {
+            "fraction_total_squared": 0.081490826546975,
+            "l2_norm": 0.226296915053674,
+            "maximum_absolute_component": 0.124082234995253,
+            "maximum_owner": {
+              "block": "F_v",
+              "column": 7,
+              "kind": "q_stationarity",
+              "node": 22
+            },
+            "maximum_row": 217,
+            "rms_per_row": 0.027242947169414,
+            "rows": 69,
+            "squared_contribution": 0.05121029376281
+          },
+          "F_w": {
+            "fraction_total_squared": 0.346837679221797,
+            "l2_norm": 0.466860797919186,
+            "maximum_absolute_component": 0.206694815734385,
+            "maximum_owner": {
+              "block": "F_w",
+              "column": 4,
+              "kind": "q_stationarity",
+              "node": 23
+            },
+            "maximum_row": 224,
+            "rms_per_row": 0.056203435429804,
+            "rows": 69,
+            "squared_contribution": 0.217959004633739
+          }
+        },
+        "motion": {
+          "accepted_frontier_displacement_norms": {
+            "scale": 1.3732027691e-05,
+            "u": 6.0291694e-08,
+            "v": 1.5321097166e-05,
+            "w": 7.4137682631e-05
+          },
+          "history_velocity_norms": {
+            "scale": 1.660314199564946,
+            "u": 0.971212169103826,
+            "v": 2.917737881732533,
+            "w": 20.652118589910373
+          }
+        },
+        "node_localization": {
+          "maximum_node": 23,
+          "maximum_node_region": "event_near",
+          "node_norms": [
+            0.006901586605082,
+            0.010533761984929,
+            0.018415928689742,
+            0.01928154753025,
+            0.021694369735593,
+            0.032773196403678,
+            0.033158076571409,
+            0.044429396280931,
+            0.043830365107178,
+            0.058738933617519,
+            0.058181752734089,
+            0.073328731284483,
+            0.067694209078481,
+            0.089711562307592,
+            0.087198045200071,
+            0.115118129984153,
+            0.088437874138425,
+            0.148775041927852,
+            0.141512330932537,
+            0.198897537986968,
+            0.195141081007288,
+            0.223472632875857,
+            0.23619298821587,
+            0.276347568177636
+          ],
+          "partition_definition": "physical nodes 0-2 reset-near, 3-20 interior, 21-23 event-near; diagnostic only",
+          "regions": {
+            "event_near": {
+              "fraction_stationarity_squared": 0.50188277440029,
+              "l2_norm": 0.426726052362054,
+              "nodes": [
+                21,
+                22,
+                23
+              ],
+              "rms_per_node": 0.246370401201458
+            },
+            "interior_history": {
+              "fraction_stationarity_squared": 0.49674538016834,
+              "l2_norm": 0.424536398625063,
+              "nodes": [
+                3,
+                4,
+                5,
+                6,
+                7,
+                8,
+                9,
+                10,
+                11,
+                12,
+                13,
+                14,
+                15,
+                16,
+                17,
+                18,
+                19,
+                20
+              ],
+              "rms_per_node": 0.100064188776099
+            },
+            "reset_near": {
+              "fraction_stationarity_squared": 0.00137184543137,
+              "l2_norm": 0.02231005308663,
+              "nodes": [
+                0,
+                1,
+                2
+              ],
+              "rms_per_node": 0.012880715155201
+            }
+          }
+        },
+        "total_l2_norm": 0.792728134993666,
+        "version": "v19.33"
+      },
+      {
+        "blocks": {
+          "F_event": {
+            "fraction_total_squared": 0.011104074601971,
+            "l2_norm": 0.083534194646587,
+            "maximum_absolute_component": 0.083534194646587,
+            "maximum_owner": {
+              "block": "F_event",
+              "column": null,
+              "kind": "event",
+              "node": null
+            },
+            "maximum_row": 375,
+            "rms_per_row": 0.083534194646587,
+            "rows": 1,
+            "squared_contribution": 0.006977961675254
+          },
+          "F_lapse": {
+            "fraction_total_squared": 2.58928e-10,
+            "l2_norm": 1.2755944348e-05,
+            "maximum_absolute_component": 1.1147306599e-05,
+            "maximum_owner": {
+              "block": "F_lapse",
+              "column": 0,
+              "kind": "multiplier_stationarity",
+              "node": 23
+            },
+            "maximum_row": 368,
+            "rms_per_row": 1.503302458e-06,
+            "rows": 72,
+            "squared_contribution": 1.62714e-10
+          },
+          "F_period": {
+            "fraction_total_squared": 0.411535351020289,
+            "l2_norm": 0.508541825957391,
+            "maximum_absolute_component": 0.508541825957391,
+            "maximum_owner": {
+              "block": "F_period",
+              "column": null,
+              "kind": "period_stationarity",
+              "node": null
+            },
+            "maximum_row": 374,
+            "rms_per_row": 0.508541825957391,
+            "rows": 1,
+            "squared_contribution": 0.258614788748078
+          },
+          "F_scale": {
+            "fraction_total_squared": 0.140308033755683,
+            "l2_norm": 0.296937039172469,
+            "maximum_absolute_component": 0.145733146573972,
+            "maximum_owner": {
+              "block": "F_scale",
+              "column": 0,
+              "kind": "q_stationarity",
+              "node": 23
+            },
+            "maximum_row": 220,
+            "rms_per_row": 0.06191565273489,
+            "rows": 23,
+            "squared_contribution": 0.088171605232512
+          },
+          "F_shift": {
+            "fraction_total_squared": 0.008701207805826,
+            "l2_norm": 0.073945691549102,
+            "maximum_absolute_component": 0.056587982240194,
+            "maximum_owner": {
+              "block": "F_shift",
+              "column": 3,
+              "kind": "multiplier_stationarity",
+              "node": 23
+            },
+            "maximum_row": 371,
+            "rms_per_row": 0.008714583322316,
+            "rows": 72,
+            "squared_contribution": 0.005467965298675
+          },
+          "F_u": {
+            "fraction_total_squared": 2.2774287054e-05,
+            "l2_norm": 0.003783079776339,
+            "maximum_absolute_component": 0.003490088476883,
+            "maximum_owner": {
+              "block": "F_u",
+              "column": 1,
+              "kind": "q_stationarity",
+              "node": 22
+            },
+            "maximum_row": 211,
+            "rms_per_row": 0.000455429286166,
+            "rows": 69,
+            "squared_contribution": 1.4311692594e-05
+          },
+          "F_v": {
+            "fraction_total_squared": 0.081492183679827,
+            "l2_norm": 0.226298190952255,
+            "maximum_absolute_component": 0.124082021629912,
+            "maximum_owner": {
+              "block": "F_v",
+              "column": 7,
+              "kind": "q_stationarity",
+              "node": 22
+            },
+            "maximum_row": 217,
+            "rms_per_row": 0.027243100769554,
+            "rows": 69,
+            "squared_contribution": 0.051210871228263
+          },
+          "F_w": {
+            "fraction_total_squared": 0.34683637459042,
+            "l2_norm": 0.466858664628744,
+            "maximum_absolute_component": 0.206694029388707,
+            "maximum_owner": {
+              "block": "F_w",
+              "column": 4,
+              "kind": "q_stationarity",
+              "node": 23
+            },
+            "maximum_row": 224,
+            "rms_per_row": 0.056203178611814,
+            "rows": 69,
+            "squared_contribution": 0.217957012738934
+          }
+        },
+        "motion": {
+          "accepted_frontier_displacement_norms": {
+            "scale": 3.33e-13,
+            "u": 3e-15,
+            "v": 9.14e-13,
+            "w": 2.617e-12
+          },
+          "history_velocity_norms": {
+            "scale": 1.660314199591564,
+            "u": 0.97121216912635,
+            "v": 2.917737881775812,
+            "w": 20.65211859038115
+          }
+        },
+        "node_localization": {
+          "maximum_node": 23,
+          "maximum_node_region": "event_near",
+          "node_norms": [
+            0.006901586605002,
+            0.01053376198488,
+            0.018415928679081,
+            0.019281547537739,
+            0.021694369710624,
+            0.032773196416965,
+            0.033158076545969,
+            0.044429396294082,
+            0.043830365088176,
+            0.058738933622609,
+            0.058181752719998,
+            0.073328731275614,
+            0.067694209067952,
+            0.089711562291563,
+            0.087198045190665,
+            0.115118129974354,
+            0.088437874136536,
+            0.148775041920958,
+            0.141512330933229,
+            0.198897537988452,
+            0.195141080972744,
+            0.223472632876826,
+            0.236187678809568,
+            0.276348035797612
+          ],
+          "partition_definition": "physical nodes 0-2 reset-near, 3-20 interior, 21-23 event-near; diagnostic only",
+          "regions": {
+            "event_near": {
+              "fraction_stationarity_squared": 0.501879685955885,
+              "l2_norm": 0.4267234164603,
+              "nodes": [
+                21,
+                22,
+                23
+              ],
+              "rms_per_node": 0.246368879362871
+            },
+            "interior_history": {
+              "fraction_stationarity_squared": 0.496748460107855,
+              "l2_norm": 0.424536398592404,
+              "nodes": [
+                3,
+                4,
+                5,
+                6,
+                7,
+                8,
+                9,
+                10,
+                11,
+                12,
+                13,
+                14,
+                15,
+                16,
+                17,
+                18,
+                19,
+                20
+              ],
+              "rms_per_node": 0.100064188768401
+            },
+            "reset_near": {
+              "fraction_stationarity_squared": 0.001371853936261,
+              "l2_norm": 0.022310053077781,
+              "nodes": [
+                0,
+                1,
+                2
+              ],
+              "rms_per_node": 0.012880715150092
+            }
+          }
+        },
+        "total_l2_norm": 0.792726003595835,
+        "version": "v19.37"
+      },
+      {
+        "blocks": {
+          "F_event": {
+            "fraction_total_squared": 0.011105404376417,
+            "l2_norm": 0.08338984129638,
+            "maximum_absolute_component": 0.08338984129638,
+            "maximum_owner": {
+              "block": "F_event",
+              "column": null,
+              "kind": "event",
+              "node": null
+            },
+            "maximum_row": 375,
+            "rms_per_row": 0.08338984129638,
+            "rows": 1,
+            "squared_contribution": 0.006953865631435
+          },
+          "F_lapse": {
+            "fraction_total_squared": 2.59078e-10,
+            "l2_norm": 1.2736826719e-05,
+            "maximum_absolute_component": 1.1140536442e-05,
+            "maximum_owner": {
+              "block": "F_lapse",
+              "column": 0,
+              "kind": "multiplier_stationarity",
+              "node": 23
+            },
+            "maximum_row": 368,
+            "rms_per_row": 1.501049424e-06,
+            "rows": 72,
+            "squared_contribution": 1.62227e-10
+          },
+          "F_period": {
+            "fraction_total_squared": 0.410885174079028,
+            "l2_norm": 0.507231474440719,
+            "maximum_absolute_component": 0.507231474440719,
+            "maximum_owner": {
+              "block": "F_period",
+              "column": null,
+              "kind": "period_stationarity",
+              "node": null
+            },
+            "maximum_row": 374,
+            "rms_per_row": 0.507231474440719,
+            "rows": 1,
+            "squared_contribution": 0.257283768663305
+          },
+          "F_scale": {
+            "fraction_total_squared": 0.142979458540307,
+            "l2_norm": 0.299214601387602,
+            "maximum_absolute_component": 0.137651494438225,
+            "maximum_owner": {
+              "block": "F_scale",
+              "column": 0,
+              "kind": "q_stationarity",
+              "node": 22
+            },
+            "maximum_row": 210,
+            "rms_per_row": 0.062390557285657,
+            "rows": 23,
+            "squared_contribution": 0.089529377683542
+          },
+          "F_shift": {
+            "fraction_total_squared": 0.008732952435299,
+            "l2_norm": 0.07394801254142,
+            "maximum_absolute_component": 0.056723140719857,
+            "maximum_owner": {
+              "block": "F_shift",
+              "column": 3,
+              "kind": "multiplier_stationarity",
+              "node": 23
+            },
+            "maximum_row": 371,
+            "rms_per_row": 0.008714856853884,
+            "rows": 72,
+            "squared_contribution": 0.005468308558826
+          },
+          "F_u": {
+            "fraction_total_squared": 2.2879612136e-05,
+            "l2_norm": 0.003785038381614,
+            "maximum_absolute_component": 0.003495900619775,
+            "maximum_owner": {
+              "block": "F_u",
+              "column": 1,
+              "kind": "q_stationarity",
+              "node": 22
+            },
+            "maximum_row": 211,
+            "rms_per_row": 0.000455665074533,
+            "rows": 69,
+            "squared_contribution": 1.432651555e-05
+          },
+          "F_v": {
+            "fraction_total_squared": 0.084335283256168,
+            "l2_norm": 0.22980031136593,
+            "maximum_absolute_component": 0.122111285737378,
+            "maximum_owner": {
+              "block": "F_v",
+              "column": 7,
+              "kind": "q_stationarity",
+              "node": 22
+            },
+            "maximum_row": 217,
+            "rms_per_row": 0.027664706523163,
+            "rows": 69,
+            "squared_contribution": 0.052808183103878
+          },
+          "F_w": {
+            "fraction_total_squared": 0.341938847441567,
+            "l2_norm": 0.462722034276678,
+            "maximum_absolute_component": 0.219478016197013,
+            "maximum_owner": {
+              "block": "F_w",
+              "column": 4,
+              "kind": "q_stationarity",
+              "node": 23
+            },
+            "maximum_row": 224,
+            "rms_per_row": 0.05570518683798,
+            "rows": 69,
+            "squared_contribution": 0.214111681005148
+          }
+        },
+        "motion": {
+          "accepted_frontier_displacement_norms": {
+            "scale": 6.1834625796e-05,
+            "u": 2.28260615e-07,
+            "v": 8.3962670206e-05,
+            "w": 0.000327385647376
+          },
+          "history_velocity_norms": {
+            "scale": 1.656996106229498,
+            "u": 0.967722423998864,
+            "v": 2.910084933516772,
+            "w": 20.573209462762115
+          }
+        },
+        "node_localization": {
+          "maximum_node": 23,
+          "maximum_node_region": "event_near",
+          "node_norms": [
+            0.006900526291574,
+            0.010019427063689,
+            0.018776438938941,
+            0.017618590924102,
+            0.023166436570844,
+            0.030790764571589,
+            0.03472862847582,
+            0.043058977440897,
+            0.045431262660137,
+            0.058224457068179,
+            0.059667628806707,
+            0.073479729541805,
+            0.069722291945063,
+            0.090269432799245,
+            0.089320662139194,
+            0.115876146082894,
+            0.089812055563923,
+            0.148146778307537,
+            0.138757337641455,
+            0.19462875351179,
+            0.192025144993601,
+            0.216518498388877,
+            0.240780345445582,
+            0.280838858399686
+          ],
+          "partition_definition": "physical nodes 0-2 reset-near, 3-20 interior, 21-23 event-near; diagnostic only",
+          "regions": {
+            "event_near": {
+              "fraction_stationarity_squared": 0.507625636052772,
+              "l2_norm": 0.428632592420019,
+              "nodes": [
+                21,
+                22,
+                23
+              ],
+              "rms_per_node": 0.247471142617145
+            },
+            "interior_history": {
+              "fraction_stationarity_squared": 0.490991338928482,
+              "l2_norm": 0.421551203181122,
+              "nodes": [
+                3,
+                4,
+                5,
+                6,
+                7,
+                8,
+                9,
+                10,
+                11,
+                12,
+                13,
+                14,
+                15,
+                16,
+                17,
+                18,
+                19,
+                20
+              ],
+              "rms_per_node": 0.09936057146224
+            },
+            "reset_near": {
+              "fraction_stationarity_squared": 0.001383025018746,
+              "l2_norm": 0.022373217046573,
+              "nodes": [
+                0,
+                1,
+                2
+              ],
+              "rms_per_node": 0.012917182884477
+            }
+          }
+        },
+        "total_l2_norm": 0.791308733253912,
+        "version": "v19.41"
+      },
+      {
+        "blocks": {
+          "F_event": {
+            "fraction_total_squared": 0.011105592117707,
+            "l2_norm": 0.08338832324108,
+            "maximum_absolute_component": 0.08338832324108,
+            "maximum_owner": {
+              "block": "F_event",
+              "column": null,
+              "kind": "event",
+              "node": null
+            },
+            "maximum_row": 375,
+            "rms_per_row": 0.08338832324108,
+            "rows": 1,
+            "squared_contribution": 0.006953612452959
+          },
+          "F_lapse": {
+            "fraction_total_squared": 2.59498e-10,
+            "l2_norm": 1.2746796164e-05,
+            "maximum_absolute_component": 1.1151884313e-05,
+            "maximum_owner": {
+              "block": "F_lapse",
+              "column": 0,
+              "kind": "multiplier_stationarity",
+              "node": 23
+            },
+            "maximum_row": 368,
+            "rms_per_row": 1.502224334e-06,
+            "rows": 72,
+            "squared_contribution": 1.62481e-10
+          },
+          "F_period": {
+            "fraction_total_squared": 0.411264850841177,
+            "l2_norm": 0.50745224551862,
+            "maximum_absolute_component": 0.50745224551862,
+            "maximum_owner": {
+              "block": "F_period",
+              "column": null,
+              "kind": "period_stationarity",
+              "node": null
+            },
+            "maximum_row": 374,
+            "rms_per_row": 0.50745224551862,
+            "rows": 1,
+            "squared_contribution": 0.257507781481889
+          },
+          "F_scale": {
+            "fraction_total_squared": 0.143648891719046,
+            "l2_norm": 0.299906253552856,
+            "maximum_absolute_component": 0.14049171446478,
+            "maximum_owner": {
+              "block": "F_scale",
+              "column": 0,
+              "kind": "q_stationarity",
+              "node": 22
+            },
+            "maximum_row": 210,
+            "rms_per_row": 0.062534776731626,
+            "rows": 23,
+            "squared_contribution": 0.08994376092011
+          },
+          "F_shift": {
+            "fraction_total_squared": 0.008774667755885,
+            "l2_norm": 0.074122442602015,
+            "maximum_absolute_component": 0.056953611836104,
+            "maximum_owner": {
+              "block": "F_shift",
+              "column": 3,
+              "kind": "multiplier_stationarity",
+              "node": 23
+            },
+            "maximum_row": 371,
+            "rms_per_row": 0.008735413633666,
+            "rows": 72,
+            "squared_contribution": 0.005494136497289
+          },
+          "F_u": {
+            "fraction_total_squared": 2.2891852388e-05,
+            "l2_norm": 0.003785949792055,
+            "maximum_absolute_component": 0.003496686347108,
+            "maximum_owner": {
+              "block": "F_u",
+              "column": 1,
+              "kind": "q_stationarity",
+              "node": 22
+            },
+            "maximum_row": 211,
+            "rms_per_row": 0.000455774795456,
+            "rows": 69,
+            "squared_contribution": 1.4333415828e-05
+          },
+          "F_v": {
+            "fraction_total_squared": 0.083437347321268,
+            "l2_norm": 0.228567577800587,
+            "maximum_absolute_component": 0.119936547950198,
+            "maximum_owner": {
+              "block": "F_v",
+              "column": 7,
+              "kind": "q_stationarity",
+              "node": 22
+            },
+            "maximum_row": 217,
+            "rms_per_row": 0.027516302841272,
+            "rows": 69,
+            "squared_contribution": 0.052243137621627
+          },
+          "F_w": {
+            "fraction_total_squared": 0.341745758133031,
+            "l2_norm": 0.462579037483105,
+            "maximum_absolute_component": 0.220211839541991,
+            "maximum_owner": {
+              "block": "F_w",
+              "column": 4,
+              "kind": "q_stationarity",
+              "node": 23
+            },
+            "maximum_row": 224,
+            "rms_per_row": 0.055687972046998,
+            "rows": 69,
+            "squared_contribution": 0.213979365918796
+          }
+        },
+        "motion": {
+          "accepted_frontier_displacement_norms": {
+            "scale": 1.358189708e-06,
+            "u": 4.165715e-09,
+            "v": 5.636689237e-06,
+            "w": 1.4925471224e-05
+          },
+          "history_velocity_norms": {
+            "scale": 1.65692010133224,
+            "u": 0.967665168179741,
+            "v": 2.909720388045611,
+            "w": 20.571660941526208
+          }
+        },
+        "node_localization": {
+          "maximum_node": 23,
+          "maximum_node_region": "event_near",
+          "node_norms": [
+            0.00690072351988,
+            0.01001404878125,
+            0.018644873511236,
+            0.017594473497404,
+            0.023062022386581,
+            0.030724873692487,
+            0.034896905679438,
+            0.042878653622984,
+            0.045482723770467,
+            0.058249909083883,
+            0.059672652120394,
+            0.073643134180496,
+            0.069457722671662,
+            0.09032433037852,
+            0.08931700998948,
+            0.11576257868898,
+            0.090028418059207,
+            0.148014702019396,
+            0.138385081808886,
+            0.194716585866551,
+            0.190911924421042,
+            0.215523564744874,
+            0.241436610611231,
+            0.281535619133161
+          ],
+          "partition_definition": "physical nodes 0-2 reset-near, 3-20 interior, 21-23 event-near; diagnostic only",
+          "regions": {
+            "event_near": {
+              "fraction_stationarity_squared": 0.508756435476383,
+              "l2_norm": 0.428957280792003,
+              "nodes": [
+                21,
+                22,
+                23
+              ],
+              "rms_per_node": 0.247658601536113
+            },
+            "interior_history": {
+              "fraction_stationarity_squared": 0.489873459235569,
+              "l2_norm": 0.420921433672985,
+              "nodes": [
+                3,
+                4,
+                5,
+                6,
+                7,
+                8,
+                9,
+                10,
+                11,
+                12,
+                13,
+                14,
+                15,
+                16,
+                17,
+                18,
+                19,
+                20
+              ],
+              "rms_per_node": 0.099212133365644
+            },
+            "reset_near": {
+              "fraction_stationarity_squared": 0.001370105288047,
+              "l2_norm": 0.022260558536143,
+              "nodes": [
+                0,
+                1,
+                2
+              ],
+              "rms_per_node": 0.012852139463154
+            }
+          }
+        },
+        "total_l2_norm": 0.791287639528749,
+        "version": "v19.45"
+      },
+      {
+        "blocks": {
+          "F_event": {
+            "fraction_total_squared": 0.011104043422207,
+            "l2_norm": 0.083310274137276,
+            "maximum_absolute_component": 0.083310274137276,
+            "maximum_owner": {
+              "block": "F_event",
+              "column": null,
+              "kind": "event",
+              "node": null
+            },
+            "maximum_row": 375,
+            "rms_per_row": 0.083310274137276,
+            "rows": 1,
+            "squared_contribution": 0.006940601776828
+          },
+          "F_lapse": {
+            "fraction_total_squared": 2.586e-10,
+            "l2_norm": 1.2713704423e-05,
+            "maximum_absolute_component": 1.1119938765e-05,
+            "maximum_owner": {
+              "block": "F_lapse",
+              "column": 0,
+              "kind": "multiplier_stationarity",
+              "node": 23
+            },
+            "maximum_row": 368,
+            "rms_per_row": 1.498324435e-06,
+            "rows": 72,
+            "squared_contribution": 1.61638e-10
+          },
+          "F_period": {
+            "fraction_total_squared": 0.410621308670104,
+            "l2_norm": 0.506615798913165,
+            "maximum_absolute_component": 0.506615798913165,
+            "maximum_owner": {
+              "block": "F_period",
+              "column": null,
+              "kind": "period_stationarity",
+              "node": null
+            },
+            "maximum_row": 374,
+            "rms_per_row": 0.506615798913165,
+            "rows": 1,
+            "squared_contribution": 0.256659567708424
+          },
+          "F_scale": {
+            "fraction_total_squared": 0.146441292849848,
+            "l2_norm": 0.302544850256748,
+            "maximum_absolute_component": 0.140517182400222,
+            "maximum_owner": {
+              "block": "F_scale",
+              "column": 0,
+              "kind": "q_stationarity",
+              "node": 23
+            },
+            "maximum_row": 220,
+            "rms_per_row": 0.063084962177271,
+            "rows": 23,
+            "squared_contribution": 0.091533386416878
+          },
+          "F_shift": {
+            "fraction_total_squared": 0.008649921867571,
+            "l2_norm": 0.073529917744904,
+            "maximum_absolute_component": 0.056227113336727,
+            "maximum_owner": {
+              "block": "F_shift",
+              "column": 3,
+              "kind": "multiplier_stationarity",
+              "node": 23
+            },
+            "maximum_row": 371,
+            "rms_per_row": 0.008665583909585,
+            "rows": 72,
+            "squared_contribution": 0.005406648803572
+          },
+          "F_u": {
+            "fraction_total_squared": 2.2809208895e-05,
+            "l2_norm": 0.003775835794047,
+            "maximum_absolute_component": 0.003490464906069,
+            "maximum_owner": {
+              "block": "F_u",
+              "column": 1,
+              "kind": "q_stationarity",
+              "node": 22
+            },
+            "maximum_row": 211,
+            "rms_per_row": 0.000454557213178,
+            "rows": 69,
+            "squared_contribution": 1.4256935944e-05
+          },
+          "F_v": {
+            "fraction_total_squared": 0.085113235395097,
+            "l2_norm": 0.230651635069515,
+            "maximum_absolute_component": 0.133925394253605,
+            "maximum_owner": {
+              "block": "F_v",
+              "column": 7,
+              "kind": "q_stationarity",
+              "node": 22
+            },
+            "maximum_row": 217,
+            "rms_per_row": 0.027767193853471,
+            "rows": 69,
+            "squared_contribution": 0.053200176760241
+          },
+          "F_w": {
+            "fraction_total_squared": 0.338047388327677,
+            "l2_norm": 0.459670655763272,
+            "maximum_absolute_component": 0.212907739927719,
+            "maximum_owner": {
+              "block": "F_w",
+              "column": 4,
+              "kind": "q_stationarity",
+              "node": 23
+            },
+            "maximum_row": 224,
+            "rms_per_row": 0.055337844032556,
+            "rows": 69,
+            "squared_contribution": 0.211297111769836
+          }
+        },
+        "motion": {
+          "accepted_frontier_displacement_norms": {
+            "scale": 1.1566509603e-05,
+            "u": 3.9082024e-08,
+            "v": 2.454774658e-05,
+            "w": 8.2751949954e-05
+          },
+          "history_velocity_norms": {
+            "scale": 1.654781923623911,
+            "u": 0.966294631312871,
+            "v": 2.906551939034373,
+            "w": 20.546433900799084
+          }
+        },
+        "node_localization": {
+          "maximum_node": 23,
+          "maximum_node_region": "event_near",
+          "node_norms": [
+            0.006903977481534,
+            0.010486781501399,
+            0.020151197188789,
+            0.018234587084599,
+            0.024382933676111,
+            0.029926152870134,
+            0.034775386378787,
+            0.041997025133749,
+            0.045159901732911,
+            0.058807102382591,
+            0.059921366540138,
+            0.074033792612782,
+            0.069070749113903,
+            0.090373554641012,
+            0.089138788130147,
+            0.115182005781138,
+            0.089789500583536,
+            0.148890187426236,
+            0.138633459493818,
+            0.196045738029567,
+            0.191796632158052,
+            0.21853433490954,
+            0.241353254587593,
+            0.276936735350604
+          ],
+          "partition_definition": "physical nodes 0-2 reset-near, 3-20 interior, 21-23 event-near; diagnostic only",
+          "regions": {
+            "event_near": {
+              "fraction_stationarity_squared": 0.505469097665407,
+              "l2_norm": 0.427437252027744,
+              "nodes": [
+                21,
+                22,
+                23
+              ],
+              "rms_per_node": 0.246781012519892
+            },
+            "interior_history": {
+              "fraction_stationarity_squared": 0.492971334554747,
+              "l2_norm": 0.4221199689515,
+              "nodes": [
+                3,
+                4,
+                5,
+                6,
+                7,
+                8,
+                9,
+                10,
+                11,
+                12,
+                13,
+                14,
+                15,
+                16,
+                17,
+                18,
+                19,
+                20
+              ],
+              "rms_per_node": 0.099494630839954
+            },
+            "reset_near": {
+              "fraction_stationarity_squared": 0.001559567779846,
+              "l2_norm": 0.023742540712087,
+              "nodes": [
+                0,
+                1,
+                2
+              ],
+              "rms_per_node": 0.013707762271369
+            }
+          }
+        },
+        "total_l2_norm": 0.790602144149231,
+        "version": "v19.49"
+      },
+      {
+        "blocks": {
+          "F_event": {
+            "fraction_total_squared": 0.01111528719143,
+            "l2_norm": 0.083243917329097,
+            "maximum_absolute_component": 0.083243917329097,
+            "maximum_owner": {
+              "block": "F_event",
+              "column": null,
+              "kind": "event",
+              "node": null
+            },
+            "maximum_row": 375,
+            "rms_per_row": 0.083243917329097,
+            "rows": 1,
+            "squared_contribution": 0.006929549772293
+          },
+          "F_lapse": {
+            "fraction_total_squared": 2.58254e-10,
+            "l2_norm": 1.2688660201e-05,
+            "maximum_absolute_component": 1.1098194574e-05,
+            "maximum_owner": {
+              "block": "F_lapse",
+              "column": 0,
+              "kind": "multiplier_stationarity",
+              "node": 23
+            },
+            "maximum_row": 368,
+            "rms_per_row": 1.495372945e-06,
+            "rows": 72,
+            "squared_contribution": 1.61002e-10
+          },
+          "F_period": {
+            "fraction_total_squared": 0.411626588474967,
+            "l2_norm": 0.506575142120473,
+            "maximum_absolute_component": 0.506575142120473,
+            "maximum_owner": {
+              "block": "F_period",
+              "column": null,
+              "kind": "period_stationarity",
+              "node": null
+            },
+            "maximum_row": 374,
+            "rms_per_row": 0.506575142120473,
+            "rows": 1,
+            "squared_contribution": 0.256618374614377
+          },
+          "F_scale": {
+            "fraction_total_squared": 0.149967626202063,
+            "l2_norm": 0.305767219290089,
+            "maximum_absolute_component": 0.143969539234485,
+            "maximum_owner": {
+              "block": "F_scale",
+              "column": 0,
+              "kind": "q_stationarity",
+              "node": 23
+            },
+            "maximum_row": 220,
+            "rms_per_row": 0.063756872568134,
+            "rows": 23,
+            "squared_contribution": 0.093493592392393
+          },
+          "F_shift": {
+            "fraction_total_squared": 0.008603214054043,
+            "l2_norm": 0.073235648132524,
+            "maximum_absolute_component": 0.055881432001893,
+            "maximum_owner": {
+              "block": "F_shift",
+              "column": 3,
+              "kind": "multiplier_stationarity",
+              "node": 23
+            },
+            "maximum_row": 371,
+            "rms_per_row": 0.008630903903183,
+            "rows": 72,
+            "squared_contribution": 0.005363460157391
+          },
+          "F_u": {
+            "fraction_total_squared": 2.2937394406e-05,
+            "l2_norm": 0.003781500883985,
+            "maximum_absolute_component": 0.003497092685541,
+            "maximum_owner": {
+              "block": "F_u",
+              "column": 1,
+              "kind": "q_stationarity",
+              "node": 22
+            },
+            "maximum_row": 211,
+            "rms_per_row": 0.000455239209863,
+            "rows": 69,
+            "squared_contribution": 1.4299748936e-05
+          },
+          "F_v": {
+            "fraction_total_squared": 0.083147948294992,
+            "l2_norm": 0.22767635701136,
+            "maximum_absolute_component": 0.129473775853932,
+            "maximum_owner": {
+              "block": "F_v",
+              "column": 7,
+              "kind": "q_stationarity",
+              "node": 22
+            },
+            "maximum_row": 217,
+            "rms_per_row": 0.027409012466273,
+            "rows": 69,
+            "squared_contribution": 0.051836523541964
+          },
+          "F_w": {
+            "fraction_total_squared": 0.335516398129845,
+            "l2_norm": 0.457350376075945,
+            "maximum_absolute_component": 0.21390677057478,
+            "maximum_owner": {
+              "block": "F_w",
+              "column": 4,
+              "kind": "q_stationarity",
+              "node": 23
+            },
+            "maximum_row": 224,
+            "rms_per_row": 0.055058515183,
+            "rows": 69,
+            "squared_contribution": 0.209169366496808
+          }
+        },
+        "motion": {
+          "accepted_frontier_displacement_norms": {
+            "scale": 1.6078444864e-05,
+            "u": 8.441041e-09,
+            "v": 1.1306756768e-05,
+            "w": 4.444276264e-05
+          },
+          "history_velocity_norms": {
+            "scale": 1.653088069176841,
+            "u": 0.964896734214985,
+            "v": 2.902717433231365,
+            "w": 20.515434291015183
+          }
+        },
+        "node_localization": {
+          "maximum_node": 23,
+          "maximum_node_region": "event_near",
+          "node_norms": [
+            0.00690496158633,
+            0.010258043678925,
+            0.020029745934902,
+            0.01813413950254,
+            0.024400583917396,
+            0.030232986005535,
+            0.034995989413549,
+            0.041948265892963,
+            0.044983170427301,
+            0.05838474707932,
+            0.05982680597987,
+            0.073782988951448,
+            0.069126949300863,
+            0.090228062927887,
+            0.088956791795839,
+            0.114724550452229,
+            0.089694367558604,
+            0.148255607965884,
+            0.138065500343922,
+            0.1950009733254,
+            0.191209592728297,
+            0.217373778663714,
+            0.238533009063944,
+            0.279692075487059
+          ],
+          "partition_definition": "physical nodes 0-2 reset-near, 3-20 interior, 21-23 event-near; diagnostic only",
+          "regions": {
+            "event_near": {
+              "fraction_stationarity_squared": 0.506775621286092,
+              "l2_norm": 0.427056217790936,
+              "nodes": [
+                21,
+                22,
+                23
+              ],
+              "rms_per_node": 0.246561022300701
+            },
+            "interior_history": {
+              "fraction_stationarity_squared": 0.491684696257198,
+              "l2_norm": 0.420649655494629,
+              "nodes": [
+                3,
+                4,
+                5,
+                6,
+                7,
+                8,
+                9,
+                10,
+                11,
+                12,
+                13,
+                14,
+                15,
+                16,
+                17,
+                18,
+                19,
+                20
+              ],
+              "rms_per_node": 0.099148074634679
+            },
+            "reset_near": {
+              "fraction_stationarity_squared": 0.00153968245671,
+              "l2_norm": 0.023539258205053,
+              "nodes": [
+                0,
+                1,
+                2
+              ],
+              "rms_per_node": 0.013590397061211
+            }
+          }
+        },
+        "total_l2_norm": 0.789572774913855,
+        "version": "v19.53"
+      },
+      {
+        "blocks": {
+          "F_event": {
+            "fraction_total_squared": 0.011125390678413,
+            "l2_norm": 0.083217811809975,
+            "maximum_absolute_component": 0.083217811809975,
+            "maximum_owner": {
+              "block": "F_event",
+              "column": null,
+              "kind": "event",
+              "node": null
+            },
+            "maximum_row": 375,
+            "rms_per_row": 0.083217811809975,
+            "rows": 1,
+            "squared_contribution": 0.00692520420244
+          },
+          "F_lapse": {
+            "fraction_total_squared": 2.58268e-10,
+            "l2_norm": 1.2679260092e-05,
+            "maximum_absolute_component": 1.1090571016e-05,
+            "maximum_owner": {
+              "block": "F_lapse",
+              "column": 0,
+              "kind": "multiplier_stationarity",
+              "node": 23
+            },
+            "maximum_row": 368,
+            "rms_per_row": 1.494265132e-06,
+            "rows": 72,
+            "squared_contribution": 1.60764e-10
+          },
+          "F_period": {
+            "fraction_total_squared": 0.409285936884485,
+            "l2_norm": 0.504745049264716,
+            "maximum_absolute_component": 0.504745049264716,
+            "maximum_owner": {
+              "block": "F_period",
+              "column": null,
+              "kind": "period_stationarity",
+              "node": null
+            },
+            "maximum_row": 374,
+            "rms_per_row": 0.504745049264716,
+            "rows": 1,
+            "squared_contribution": 0.254767564757241
+          },
+          "F_scale": {
+            "fraction_total_squared": 0.154948694268576,
+            "l2_norm": 0.310565076502798,
+            "maximum_absolute_component": 0.159035978398935,
+            "maximum_owner": {
+              "block": "F_scale",
+              "column": 0,
+              "kind": "q_stationarity",
+              "node": 23
+            },
+            "maximum_row": 220,
+            "rms_per_row": 0.064757294953572,
+            "rows": 23,
+            "squared_contribution": 0.096450666743189
+          },
+          "F_shift": {
+            "fraction_total_squared": 0.008599018056967,
+            "l2_norm": 0.073161581883139,
+            "maximum_absolute_component": 0.055785965192438,
+            "maximum_owner": {
+              "block": "F_shift",
+              "column": 3,
+              "kind": "multiplier_stationarity",
+              "node": 23
+            },
+            "maximum_row": 371,
+            "rms_per_row": 0.008622175111984,
+            "rows": 72,
+            "squared_contribution": 0.005352617063643
+          },
+          "F_u": {
+            "fraction_total_squared": 2.308059648e-05,
+            "l2_norm": 0.003790374928976,
+            "maximum_absolute_component": 0.003505119089005,
+            "maximum_owner": {
+              "block": "F_u",
+              "column": 1,
+              "kind": "q_stationarity",
+              "node": 22
+            },
+            "maximum_row": 211,
+            "rms_per_row": 0.00045630751934,
+            "rows": 69,
+            "squared_contribution": 1.4366942102e-05
+          },
+          "F_v": {
+            "fraction_total_squared": 0.081907287701168,
+            "l2_norm": 0.225797915890383,
+            "maximum_absolute_component": 0.12365113356708,
+            "maximum_owner": {
+              "block": "F_v",
+              "column": 7,
+              "kind": "q_stationarity",
+              "node": 22
+            },
+            "maximum_row": 217,
+            "rms_per_row": 0.027182874729453,
+            "rows": 69,
+            "squared_contribution": 0.050984698820441
+          },
+          "F_w": {
+            "fraction_total_squared": 0.334110591555641,
+            "l2_norm": 0.456040883446891,
+            "maximum_absolute_component": 0.214635496231327,
+            "maximum_owner": {
+              "block": "F_w",
+              "column": 4,
+              "kind": "q_stationarity",
+              "node": 23
+            },
+            "maximum_row": 224,
+            "rms_per_row": 0.054900870795742,
+            "rows": 69,
+            "squared_contribution": 0.207973287375021
+          }
+        },
+        "motion": {
+          "accepted_frontier_displacement_norms": {
+            "scale": 5.831995918e-06,
+            "u": 2.3658694e-08,
+            "v": 3.397221163e-06,
+            "w": 3.8286018629e-05
+          },
+          "history_velocity_norms": {
+            "scale": 1.652406162721931,
+            "u": 0.964301572564602,
+            "v": 2.901032655916882,
+            "w": 20.501203932287446
+          }
+        },
+        "node_localization": {
+          "maximum_node": 23,
+          "maximum_node_region": "event_near",
+          "node_norms": [
+            0.006906506755876,
+            0.010245383333591,
+            0.019807389941401,
+            0.018098135663499,
+            0.023933000340083,
+            0.029889550707213,
+            0.034458473118913,
+            0.041671843582574,
+            0.044358147339865,
+            0.058238429000933,
+            0.058980240733301,
+            0.073644208289661,
+            0.068207323230317,
+            0.08979266319414,
+            0.087968401437826,
+            0.113832667401858,
+            0.088879334489358,
+            0.147497163045104,
+            0.137128385776113,
+            0.194149163706338,
+            0.188797693487553,
+            0.213687855255291,
+            0.237110485809301,
+            0.290101230850458
+          ],
+          "partition_definition": "physical nodes 0-2 reset-near, 3-20 interior, 21-23 event-near; diagnostic only",
+          "regions": {
+            "event_near": {
+              "fraction_stationarity_squared": 0.515673972882629,
+              "l2_norm": 0.431326565499134,
+              "nodes": [
+                21,
+                22,
+                23
+              ],
+              "rms_per_node": 0.249026508699562
+            },
+            "interior_history": {
+              "fraction_stationarity_squared": 0.482815391820917,
+              "l2_norm": 0.417358395852256,
+              "nodes": [
+                3,
+                4,
+                5,
+                6,
+                7,
+                8,
+                9,
+                10,
+                11,
+                12,
+                13,
+                14,
+                15,
+                16,
+                17,
+                18,
+                19,
+                20
+              ],
+              "rms_per_node": 0.098372317297423
+            },
+            "reset_near": {
+              "fraction_stationarity_squared": 0.001510635296454,
+              "l2_norm": 0.023345243873472,
+              "nodes": [
+                0,
+                1,
+                2
+              ],
+              "rms_per_node": 0.013478382834647
+            }
+          }
+        },
+        "total_l2_norm": 0.788966669806045,
+        "version": "v19.57"
+      },
+      {
+        "blocks": {
+          "F_event": {
+            "fraction_total_squared": 0.011129703437823,
+            "l2_norm": 0.083207698891268,
+            "maximum_absolute_component": 0.083207698891268,
+            "maximum_owner": {
+              "block": "F_event",
+              "column": null,
+              "kind": "event",
+              "node": null
+            },
+            "maximum_row": 375,
+            "rms_per_row": 0.083207698891268,
+            "rows": 1,
+            "squared_contribution": 0.00692352115478
+          },
+          "F_lapse": {
+            "fraction_total_squared": 2.58238e-10,
+            "l2_norm": 1.2674527013e-05,
+            "maximum_absolute_component": 1.1085462762e-05,
+            "maximum_owner": {
+              "block": "F_lapse",
+              "column": 0,
+              "kind": "multiplier_stationarity",
+              "node": 23
+            },
+            "maximum_row": 368,
+            "rms_per_row": 1.493707333e-06,
+            "rows": 72,
+            "squared_contribution": 1.60644e-10
+          },
+          "F_period": {
+            "fraction_total_squared": 0.406586045250351,
+            "l2_norm": 0.502918891950545,
+            "maximum_absolute_component": 0.502918891950545,
+            "maximum_owner": {
+              "block": "F_period",
+              "column": null,
+              "kind": "period_stationarity",
+              "node": null
+            },
+            "maximum_row": 374,
+            "rms_per_row": 0.502918891950545,
+            "rows": 1,
+            "squared_contribution": 0.252927411880764
+          },
+          "F_scale": {
+            "fraction_total_squared": 0.156236037129159,
+            "l2_norm": 0.311754207108669,
+            "maximum_absolute_component": 0.160018095345491,
+            "maximum_owner": {
+              "block": "F_scale",
+              "column": 0,
+              "kind": "q_stationarity",
+              "node": 23
+            },
+            "maximum_row": 220,
+            "rms_per_row": 0.065005245825092,
+            "rows": 23,
+            "squared_contribution": 0.097190685649955
+          },
+          "F_shift": {
+            "fraction_total_squared": 0.00859552543764,
+            "l2_norm": 0.073123661669899,
+            "maximum_absolute_component": 0.055737799987568,
+            "maximum_owner": {
+              "block": "F_shift",
+              "column": 3,
+              "kind": "multiplier_stationarity",
+              "node": 23
+            },
+            "maximum_row": 371,
+            "rms_per_row": 0.008617706171996,
+            "rows": 72,
+            "squared_contribution": 0.005347069896014
+          },
+          "F_u": {
+            "fraction_total_squared": 2.3066909313e-05,
+            "l2_norm": 0.003788056253344,
+            "maximum_absolute_component": 0.003503233811115,
+            "maximum_owner": {
+              "block": "F_u",
+              "column": 1,
+              "kind": "q_stationarity",
+              "node": 22
+            },
+            "maximum_row": 211,
+            "rms_per_row": 0.000456028383596,
+            "rows": 69,
+            "squared_contribution": 1.4349370178e-05
+          },
+          "F_v": {
+            "fraction_total_squared": 0.083558714969027,
+            "l2_norm": 0.227990941407011,
+            "maximum_absolute_component": 0.13683156453565,
+            "maximum_owner": {
+              "block": "F_v",
+              "column": 7,
+              "kind": "q_stationarity",
+              "node": 22
+            },
+            "maximum_row": 217,
+            "rms_per_row": 0.027446883977111,
+            "rows": 69,
+            "squared_contribution": 0.051979869363655
+          },
+          "F_w": {
+            "fraction_total_squared": 0.333870906608448,
+            "l2_norm": 0.455733552494843,
+            "maximum_absolute_component": 0.213087779463795,
+            "maximum_owner": {
+              "block": "F_w",
+              "column": 4,
+              "kind": "q_stationarity",
+              "node": 23
+            },
+            "maximum_row": 224,
+            "rms_per_row": 0.0548638724969,
+            "rows": 69,
+            "squared_contribution": 0.207693070869569
+          }
+        },
+        "motion": {
+          "accepted_frontier_displacement_norms": {
+            "scale": 1.384714597e-06,
+            "u": 1.6264968e-08,
+            "v": 2.013211218e-06,
+            "w": 1.5574842642e-05
+          },
+          "history_velocity_norms": {
+            "scale": 1.652287417222248,
+            "u": 0.964224426097164,
+            "v": 2.900815073819393,
+            "w": 20.49949372700358
+          }
+        },
+        "node_localization": {
+          "maximum_node": 23,
+          "maximum_node_region": "event_near",
+          "node_norms": [
+            0.006908573060976,
+            0.010320338941487,
+            0.019854463124516,
+            0.018213853415716,
+            0.023805267138943,
+            0.029742404641258,
+            0.034102039737941,
+            0.041368446345559,
+            0.044213460113451,
+            0.057896239144801,
+            0.058910111944346,
+            0.073516846072236,
+            0.068063218070634,
+            0.089692787083557,
+            0.087685251899877,
+            0.11361980135696,
+            0.088487121055817,
+            0.147339999903306,
+            0.136682533899719,
+            0.1939688209918,
+            0.188395304668302,
+            0.213424217690295,
+            0.247466495967792,
+            0.285367049163972
+          ],
+          "partition_definition": "physical nodes 0-2 reset-near, 3-20 interior, 21-23 event-near; diagnostic only",
+          "regions": {
+            "event_near": {
+              "fraction_stationarity_squared": 0.519632528200113,
+              "l2_norm": 0.433847802889267,
+              "nodes": [
+                21,
+                22,
+                23
+              ],
+              "rms_per_node": 0.250482145785446
+            },
+            "interior_history": {
+              "fraction_stationarity_squared": 0.478853392388013,
+              "l2_norm": 0.416476520051975,
+              "nodes": [
+                3,
+                4,
+                5,
+                6,
+                7,
+                8,
+                9,
+                10,
+                11,
+                12,
+                13,
+                14,
+                15,
+                16,
+                17,
+                18,
+                19,
+                20
+              ],
+              "rms_per_node": 0.098164457177909
+            },
+            "reset_near": {
+              "fraction_stationarity_squared": 0.001514079411873,
+              "l2_norm": 0.023418742143181,
+              "nodes": [
+                0,
+                1,
+                2
+              ],
+              "rms_per_node": 0.013520817080448
+            }
+          }
+        },
+        "total_l2_norm": 0.788717933323162,
+        "version": "v19.61"
+      }
+    ],
+    "block_trends": {
+      "F_event": {
+        "accelerating_toward_zero": true,
+        "label": "FALLING",
+        "last_five_absolute_change": -0.000180624349812,
+        "preceding_linear_slope_per_accepted_step": -3.3458764513e-05,
+        "recent_linear_slope_per_accepted_step": -4.5371102693e-05,
+        "recent_relative_slope_per_step": -0.000544843743081,
+        "v18_68_to_latest_absolute_change": -0.000723375128754,
+        "v18_68_to_v19_29_absolute_change": -0.000396341963892,
+        "v18_87_to_latest_absolute_change": -0.000326706578329,
+        "v18_87_to_v19_29_absolute_change": 3.26586533e-07
+      },
+      "F_lapse": {
+        "accelerating_toward_zero": false,
+        "label": "FALLING",
+        "last_five_absolute_change": -7.2269151e-08,
+        "preceding_linear_slope_per_accepted_step": -3.7724713e-08,
+        "recent_linear_slope_per_accepted_step": -1.7898263e-08,
+        "recent_relative_slope_per_step": -0.0014092466481,
+        "v18_68_to_latest_absolute_change": 6.277131e-09,
+        "v18_68_to_v19_29_absolute_change": 1.86680128e-07,
+        "v18_87_to_latest_absolute_change": -7.505984e-08,
+        "v18_87_to_v19_29_absolute_change": 1.05343157e-07
+      },
+      "F_period": {
+        "accelerating_toward_zero": true,
+        "label": "FALLING",
+        "last_five_absolute_change": -0.004533353568074,
+        "preceding_linear_slope_per_accepted_step": -5.4532758549e-05,
+        "recent_linear_slope_per_accepted_step": -0.00109374567846,
+        "recent_relative_slope_per_step": -0.00216300002964,
+        "v18_68_to_latest_absolute_change": 0.027230857990612,
+        "v18_68_to_v19_29_absolute_change": 0.032872756856646,
+        "v18_87_to_latest_absolute_change": 0.024850643681755,
+        "v18_87_to_v19_29_absolute_change": 0.030492542547789
+      },
+      "F_scale": {
+        "accelerating_toward_zero": false,
+        "label": "GROWING",
+        "last_five_absolute_change": 0.011847953555812,
+        "preceding_linear_slope_per_accepted_step": -3.53128329e-07,
+        "recent_linear_slope_per_accepted_step": 0.003171613335767,
+        "recent_relative_slope_per_step": 0.010361108808632,
+        "v18_68_to_latest_absolute_change": 0.01363322832105,
+        "v18_68_to_v19_29_absolute_change": -0.000105556372397,
+        "v18_87_to_latest_absolute_change": 0.001206806759093,
+        "v18_87_to_v19_29_absolute_change": -0.012531977934354
+      },
+      "F_shift": {
+        "accelerating_toward_zero": false,
+        "label": "FALLING",
+        "last_five_absolute_change": -0.000998780932116,
+        "preceding_linear_slope_per_accepted_step": -0.000529106555332,
+        "recent_linear_slope_per_accepted_step": -0.0002365897726,
+        "recent_relative_slope_per_step": -0.003221772981692,
+        "v18_68_to_latest_absolute_change": 0.00075425950802,
+        "v18_68_to_v19_29_absolute_change": 0.00319551064709,
+        "v18_87_to_latest_absolute_change": -0.00047121140167,
+        "v18_87_to_v19_29_absolute_change": 0.001970039737399
+      },
+      "F_u": {
+        "accelerating_toward_zero": false,
+        "label": "GROWING",
+        "last_five_absolute_change": 2.106461289e-06,
+        "preceding_linear_slope_per_accepted_step": 3.648866872e-06,
+        "recent_linear_slope_per_accepted_step": 1.875205751e-06,
+        "recent_relative_slope_per_step": 0.000495516787954,
+        "v18_68_to_latest_absolute_change": 7.107705831e-06,
+        "v18_68_to_v19_29_absolute_change": -2.545994482e-06,
+        "v18_87_to_latest_absolute_change": 1.8819619296e-05,
+        "v18_87_to_v19_29_absolute_change": 9.165918983e-06
+      },
+      "F_v": {
+        "accelerating_toward_zero": false,
+        "label": "FALLING",
+        "last_five_absolute_change": -0.000576636393576,
+        "preceding_linear_slope_per_accepted_step": -0.000936341093496,
+        "recent_linear_slope_per_accepted_step": -0.000600699196628,
+        "recent_relative_slope_per_step": -0.002633064773726,
+        "v18_68_to_latest_absolute_change": -0.081379825361887,
+        "v18_68_to_v19_29_absolute_change": -0.081776690120821,
+        "v18_87_to_latest_absolute_change": -0.071792659721624,
+        "v18_87_to_v19_29_absolute_change": -0.072189524480558
+      },
+      "F_w": {
+        "accelerating_toward_zero": true,
+        "label": "FALLING",
+        "last_five_absolute_change": -0.006845484988263,
+        "preceding_linear_slope_per_accepted_step": -0.000647728922984,
+        "recent_linear_slope_per_accepted_step": -0.001732074229291,
+        "recent_relative_slope_per_step": -0.003779552895678,
+        "v18_68_to_latest_absolute_change": -0.028995096129976,
+        "v18_68_to_v19_29_absolute_change": -0.018684631204592,
+        "v18_87_to_latest_absolute_change": -0.012830010130574,
+        "v18_87_to_v19_29_absolute_change": -0.00251954520519
+      }
+    },
+    "classification": "OUTCOME A: DISTRIBUTED_DESCENT_CONTINUES",
+    "continuation_changed": false,
+    "first_action_owned_blocker": null,
+    "latest_dominance": {
+      "fraction_total_squared": 0.406586045250351,
+      "largest_block": "F_period",
+      "major_blocks_at_least_5_percent": [
+        "F_scale",
+        "F_w",
+        "F_v",
+        "F_period"
+      ]
+    },
+    "latest_history_localization": {
+      "fraction_stationarity_squared": 0.519632528200113,
+      "largest_region": "event_near",
+      "strongly_localized_threshold": 0.7
+    },
+    "latest_largest_20_rows": [
+      {
+        "absolute_value": 0.502918891950545,
+        "block": "F_period",
+        "column": null,
+        "kind": "period_stationarity",
+        "node": null,
+        "region": "global",
+        "row": 374,
+        "value": 0.502918891950545
+      },
+      {
+        "absolute_value": 0.213087779463795,
+        "block": "F_w",
+        "column": 4,
+        "kind": "q_stationarity",
+        "node": 23,
+        "region": "event_near",
+        "row": 224,
+        "value": 0.213087779463795
+      },
+      {
+        "absolute_value": 0.185867280791354,
+        "block": "F_w",
+        "column": 4,
+        "kind": "q_stationarity",
+        "node": 21,
+        "region": "event_near",
+        "row": 204,
+        "value": 0.185867280791354
+      },
+      {
+        "absolute_value": 0.172617935488186,
+        "block": "F_w",
+        "column": 4,
+        "kind": "q_stationarity",
+        "node": 19,
+        "region": "interior_history",
+        "row": 184,
+        "value": 0.172617935488186
+      },
+      {
+        "absolute_value": 0.160018095345491,
+        "block": "F_scale",
+        "column": 0,
+        "kind": "q_stationarity",
+        "node": 23,
+        "region": "event_near",
+        "row": 220,
+        "value": -0.160018095345491
+      },
+      {
+        "absolute_value": 0.156383404461026,
+        "block": "F_w",
+        "column": 4,
+        "kind": "q_stationarity",
+        "node": 22,
+        "region": "event_near",
+        "row": 214,
+        "value": 0.156383404461026
+      },
+      {
+        "absolute_value": 0.149758968557652,
+        "block": "F_w",
+        "column": 4,
+        "kind": "q_stationarity",
+        "node": 20,
+        "region": "interior_history",
+        "row": 194,
+        "value": 0.149758968557652
+      },
+      {
+        "absolute_value": 0.13683156453565,
+        "block": "F_v",
+        "column": 7,
+        "kind": "q_stationarity",
+        "node": 22,
+        "region": "event_near",
+        "row": 217,
+        "value": 0.13683156453565
+      },
+      {
+        "absolute_value": 0.133784524104944,
+        "block": "F_scale",
+        "column": 0,
+        "kind": "q_stationarity",
+        "node": 22,
+        "region": "event_near",
+        "row": 210,
+        "value": -0.133784524104944
+      },
+      {
+        "absolute_value": 0.123587770004166,
+        "block": "F_w",
+        "column": 4,
+        "kind": "q_stationarity",
+        "node": 17,
+        "region": "interior_history",
+        "row": 164,
+        "value": 0.123587770004166
+      },
+      {
+        "absolute_value": 0.10410721355006,
+        "block": "F_w",
+        "column": 4,
+        "kind": "q_stationarity",
+        "node": 18,
+        "region": "interior_history",
+        "row": 174,
+        "value": 0.10410721355006
+      },
+      {
+        "absolute_value": 0.102835083985803,
+        "block": "F_scale",
+        "column": 0,
+        "kind": "q_stationarity",
+        "node": 21,
+        "region": "event_near",
+        "row": 200,
+        "value": -0.102835083985803
+      },
+      {
+        "absolute_value": 0.09375497981827,
+        "block": "F_scale",
+        "column": 0,
+        "kind": "q_stationarity",
+        "node": 20,
+        "region": "interior_history",
+        "row": 190,
+        "value": -0.09375497981827
+      },
+      {
+        "absolute_value": 0.087919888699931,
+        "block": "F_w",
+        "column": 4,
+        "kind": "q_stationarity",
+        "node": 15,
+        "region": "interior_history",
+        "row": 144,
+        "value": 0.087919888699931
+      },
+      {
+        "absolute_value": 0.085523960883298,
+        "block": "F_v",
+        "column": 7,
+        "kind": "q_stationarity",
+        "node": 23,
+        "region": "event_near",
+        "row": 227,
+        "value": 0.085523960883298
+      },
+      {
+        "absolute_value": 0.083207698891268,
+        "block": "F_event",
+        "column": null,
+        "kind": "event",
+        "node": null,
+        "region": "global",
+        "row": 375,
+        "value": -0.083207698891268
+      },
+      {
+        "absolute_value": 0.082222070472827,
+        "block": "F_scale",
+        "column": 0,
+        "kind": "q_stationarity",
+        "node": 19,
+        "region": "interior_history",
+        "row": 180,
+        "value": -0.082222070472827
+      },
+      {
+        "absolute_value": 0.078622272214503,
+        "block": "F_scale",
+        "column": 0,
+        "kind": "q_stationarity",
+        "node": 18,
+        "region": "interior_history",
+        "row": 170,
+        "value": -0.078622272214503
+      },
+      {
+        "absolute_value": 0.065327683921981,
+        "block": "F_scale",
+        "column": 0,
+        "kind": "q_stationarity",
+        "node": 16,
+        "region": "interior_history",
+        "row": 150,
+        "value": -0.065327683921981
+      },
+      {
+        "absolute_value": 0.065110612477715,
+        "block": "F_v",
+        "column": 7,
+        "kind": "q_stationarity",
+        "node": 20,
+        "region": "interior_history",
+        "row": 197,
+        "value": 0.065110612477715
+      }
+    ],
+    "local_root_basin_evidence": {
+      "coherent_direction_response": false,
+      "increasing_fractional_merit_reduction": false,
+      "increasingly_accurate_local_linearization": false,
+      "recent_response_diagnostics": [
+        {
+          "direction_response_relative_change": 1.458275788049056,
+          "fractional_exact_merit_reduction": 2.6656757693e-05,
+          "relative_exact_linear_residual": 1.42147191553151,
+          "solver_interpretation": "INVALIDATED",
+          "version": "v19.43"
+        },
+        {
+          "direction_response_relative_change": 1.023228117300522,
+          "fractional_exact_merit_reduction": 0.000866303661619,
+          "relative_exact_linear_residual": 1.001347268520263,
+          "solver_interpretation": "INVALIDATED",
+          "version": "v19.47"
+        },
+        {
+          "direction_response_relative_change": 0.920146316363184,
+          "fractional_exact_merit_reduction": 0.001302006632533,
+          "relative_exact_linear_residual": 2.403403722857315,
+          "solver_interpretation": "INVALIDATED",
+          "version": "v19.51"
+        },
+        {
+          "direction_response_relative_change": 1.110682766953524,
+          "fractional_exact_merit_reduction": 0.000767636786712,
+          "relative_exact_linear_residual": 9.453823593803731,
+          "solver_interpretation": "INVALIDATED",
+          "version": "v19.55"
+        },
+        {
+          "direction_response_relative_change": 1.388950164328306,
+          "fractional_exact_merit_reduction": 0.000315268682952,
+          "relative_exact_linear_residual": 2.149299861909629,
+          "solver_interpretation": "INVALIDATED",
+          "version": "v19.59"
+        }
+      ],
+      "source": "already-owned v19.43-v19.59 exact-merit and response diagnostics"
+    },
+    "motion_residual_comparison": {
+      "correlation_is_not_causality": true,
+      "corresponding_residual_trends": {
+        "scale": "GROWING",
+        "u": "GROWING",
+        "v": "FALLING",
+        "w": "FALLING"
+      },
+      "interpretation": "w/v carry most accepted displacement and both residual blocks fall; scale is smaller but its residual grows; dominant period residual falls",
+      "latest_accepted_displacement_carriers_at_5_percent_of_maximum": [
+        "scale",
+        "w",
+        "v"
+      ],
+      "latest_motion": {
+        "accepted_frontier_displacement_norms": {
+          "scale": 1.384714597e-06,
+          "u": 1.6264968e-08,
+          "v": 2.013211218e-06,
+          "w": 1.5574842642e-05
+        },
+        "history_velocity_norms": {
+          "scale": 1.652287417222248,
+          "u": 0.964224426097164,
+          "v": 2.900815073819393,
+          "w": 20.49949372700358
+        }
+      },
+      "other_major_block_comparatively_frozen": false
+    },
+    "rejected_candidates_excluded": [
+      {
+        "reason": "complete-child flux gate failure",
+        "version": "v18.81"
+      },
+      {
+        "reason": "complete-child flux gate failure",
+        "version": "v19.11"
+      }
+    ],
+    "residual_definition": {
+      "equations_changed": false,
+      "evaluation": "_square_physical_residual(raw*kkt_variable_scales())",
+      "layout": {
+        "event": 375,
+        "multiplier_stationarity": [
+          230,
+          374
+        ],
+        "period": 374,
+        "q_stationarity": [
+          0,
+          230
+        ]
+      },
+      "meaning": "current retained exact action/event F376 in its validated KKT coordinates, without additional left row scaling",
+      "physical_solve_dimension": [
+        376,
+        376
+      ],
+      "row_scaling_added": false
+    },
+    "thresholds_are_diagnostic_not_physical_gates": true,
+    "total_trend": {
+      "accelerating_toward_zero": false,
+      "label": "FALLING",
+      "naive_nonphysical_steps_to_zero": 1164.1787706861828,
+      "preceding_linear_slope_per_accepted_step": -0.000740396405974,
+      "recent_linear_slope_per_accepted_step": -0.000677488675436,
+      "recent_relative_slope_per_step": -0.000857765800681
+    }
+  },
+  "status": "VALIDATED",
+  "validation": {
+    "accepted_only_trend": true,
+    "all_requested_frontiers_present": true,
+    "block_squares_recompose_total": true,
+    "eight_exact_blocks": true,
+    "latest_v19_61_norm_reproduced": true,
+    "no_equation_or_scaling_change": true,
+    "node_partition_complete": true,
+    "one_classification": true,
+    "requested_v19_29_norm_reproduced": true,
+    "twenty_dominant_rows": true
+  },
+  "validation_passed": true,
+  "version": "v19.62"
+}
