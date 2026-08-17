@@ -5,6 +5,24 @@ evidence, not competing public status pages.
 
 ## Current public summary
 
+Current identifier: **v21.35 cross-resolution encapsulation checkpoint**. It
+is a development checkpoint, not a release version.
+
+Independent N3 and N4 complete persistent children are validated. The
+independent N5 branch is eta-admissible and has a validated ordered event and
+structurally full-rank 18-row child map. Its exact root, certification, and
+persistence remain active. `FULL_BHSM_COMPLETE = FALSE`.
+
+The N5 numerical representation writes the existing rows as
+`F18(Y)=(A16(Y), Phi2(Y))` and evaluates `Phi2` on the local implicit fiber
+`A16=0`. This is root-equivalent to the unchanged child map and changes no
+physical equation, event definition, eta domain, or complete-child gate.
+
+Exact next object:
+`CLOSE_THE_UNCHANGED_N5_F18_ROOT_CERTIFY_N5_PERSISTENCE_THEN_DERIVE_THE_GENERAL_N_RECONSTRUCTION_STATEMENT`.
+
+### Historical corrected-Rayleigh N3 snapshot
+
 Current identifier: **corrected-Rayleigh N=3 rolling snapshot**. It is a
 development checkpoint, not a release version.
 

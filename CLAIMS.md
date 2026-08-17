@@ -2,6 +2,29 @@
 
 ## Current public claim boundary
 
+Current public identifier: **v21.35 cross-resolution encapsulation
+checkpoint**. This is not a release and does not claim BHSM completion.
+
+Supported now: N3 and N4 independently reconstruct complete persistent
+children under their retained equations. Supported now: the independent N5
+branch is eta-admissible, has an ordered event, and exposes a structurally
+full-rank 18-row child map. The N5 exact root, certification, and persistence
+are not yet closed.
+
+Supported numerical equivalence: splitting the unchanged N5 map as
+`F18=(A16,Phi2)`, solving the local compatibility fiber `A16=0`, and evaluating
+`Phi2` on that fiber has the same roots as `F18=0`. It adds no row, constraint,
+coefficient, event definition, or acceptance gate.
+
+Not supported: resolution-independent general-N reconstruction, absolute
+scale, physical masses, CKM, PMNS, CP, neutrino splittings, empirical
+validation, or `FULL_BHSM_COMPLETE = TRUE`.
+
+Active dependency:
+`CLOSE_THE_UNCHANGED_N5_F18_ROOT_CERTIFY_N5_PERSISTENCE_THEN_DERIVE_THE_GENERAL_N_RECONSTRUCTION_STATEMENT`.
+
+### Historical corrected-Rayleigh N3 claim boundary
+
 Current public identifier: **corrected-Rayleigh N=3 rolling snapshot**. This is
 not a release version and does not claim closure.
 

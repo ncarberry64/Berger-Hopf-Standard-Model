@@ -1,5 +1,31 @@
 # Current BHSM status
 
+## Authoritative frontier: v21.35 cross-resolution encapsulation
+
+BHSM has independently reconstructed complete persistent children at N3 and
+N4. An independently derived N5 branch is eta-admissible, has an ordered
+event, and has a structurally full-rank 18-row child map. N5 root closure,
+certification, and persistence remain active.
+
+The active numerical representation is exactly
+`F18(Y)=(A16(Y),Phi2(Y))`: the existing 16 trace/constraint/momentum rows define
+a local implicit compatibility fiber and the existing two dynamic Calderon
+flux rows are evaluated on it. Roots are unchanged. No new physics, row,
+coefficient, event definition, eta condition, or child gate is introduced.
+
+- `N3 COMPLETE PERSISTENT CHILD = YES`
+- `N4 COMPLETE PERSISTENT CHILD = YES`
+- `N5 COMPLETE CHILD = ACTIVE`
+- `FULL_BHSM_COMPLETE = FALSE`
+
+Evidence:
+[`BHSM_AETHER_CROSS_RESOLUTION_RECONNAISSANCE_V21_35.json`](../artifacts/BHSM_AETHER_CROSS_RESOLUTION_RECONNAISSANCE_V21_35.json).
+
+Exact next dependency:
+`CLOSE_THE_UNCHANGED_N5_F18_ROOT_CERTIFY_N5_PERSISTENCE_THEN_DERIVE_THE_GENERAL_N_RECONSTRUCTION_STATEMENT`.
+
+The corrected-Rayleigh N3 chronology below is retained for provenance.
+
 Full BHSM v1.0 Candidate is a repo-audited completion framework, not yet a completed replacement of the Standard Model. The program goal remains replacement by derivation, with the Standard Model retained as the preserved infrared layer until that derivation is complete.
 
 ## Corrected-Rayleigh N=3 rolling snapshot
