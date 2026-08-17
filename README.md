@@ -10,31 +10,32 @@ BHSM is an independent artifact-backed computational framework and mathematical-
 
 ## Current Research Frontier -- cross-resolution encapsulation
 
-BHSM has independently reconstructed complete persistent children at `N=3`
-and `N=4`. An independently derived `N=5` branch has passed reset,
-eta-admissibility, ordered-event, and full-rank 18-row complete-child-map
-structural tests. The active calculation solves the unchanged N5 child map by
-treating its 16 trace/constraint/momentum compatibility rows as an implicit
-local fiber and evaluating the two retained dynamic Calderon-flux conditions
-on that fiber. This equivalent numerical representation adds no row,
-coefficient, event definition, child criterion, or gate.
+BHSM has independently reconstructed complete persistent children at `N=3`,
+`N=4`, and `N=5` under their retained finite-resolution equations. The N5
+unchanged 18-row map closes at fixed-reference merit
+`5.90723795458673e-14` (raw `||F18||=1.1665202200968536e-7`), with eta minimum
+`1.006162307589007`, complete-child certification, positive-duration
+persistence, and nonzero relative evolution. No row, coefficient, event
+definition, child criterion, or gate was added.
 
 | Scientific gate | Status |
 | --- | --- |
 | `N3 COMPLETE PERSISTENT CHILD` | **YES** |
 | `N4 COMPLETE PERSISTENT CHILD` | **YES** |
-| `N5 COMPLETE CHILD` | **ACTIVE — exact root not yet closed** |
+| `N5 COMPLETE PERSISTENT CHILD` | **YES** |
 | `FULL_BHSM_COMPLETE` | **FALSE** |
 
 The durable checkpoint is
 [`BHSM_AETHER_CROSS_RESOLUTION_RECONNAISSANCE_V21_35.json`](artifacts/BHSM_AETHER_CROSS_RESOLUTION_RECONNAISSANCE_V21_35.json).
-Any newer N5 residual is a rolling local snapshot until its exact root,
-certification, and persistence are committed. Frozen predictions remain
-unchanged.
+The same-action event-to-child reaction/BVP correspondence is now explicit and
+finite-N solvable at N3/N4/N5. The dimension laws are `8N+2` whole-child
+variables, `2N+8` physical rows, and a `6N-6` local root manifold. These three
+finite-N results do not yet prove a resolution-independent limit. Frozen
+predictions remain unchanged.
 
 Exact next object:
 
-`CLOSE_THE_UNCHANGED_N5_F18_ROOT_CERTIFY_N5_PERSISTENCE_THEN_DERIVE_THE_GENERAL_N_RECONSTRUCTION_STATEMENT`
+`PROVE_OR_LOCALIZE_THE_FIRST_FAILURE_OF_UNIFORM_GENERAL_N_REACTION_CALDERON_GRAPH_CONVERGENCE`
 
 ## Historical corrected-Rayleigh N=3 snapshot
 
@@ -84,8 +85,8 @@ Read the authoritative [N=3 continuation ledger](docs/BHSM_N3_CONTINUATION_LEDGE
 | --- | --- |
 | Computational framework | Validated software/tests; this does not validate nature |
 | Current test corpus | Focused cross-resolution, complete-child, persistence, claim-firewall, frozen-integrity, and engine-invariant checks; historical corpus retained for manual regression |
-| Internal mathematical program | Independent N3/N4 complete persistent children validated; N5 exact 18-row root active |
-| Nonlinear Norman cycle | N3/N4 persistence validated; N5 certification and persistence await its exact root |
+| Internal mathematical program | Independent N3/N4/N5 complete persistent children validated for their finite-N maps; general-N convergence remains open |
+| Nonlinear Norman cycle | N3/N4/N5 finite-resolution persistence validated |
 | Scale and flavor | Absolute scale, action-derived CKM, and PMNS remain open |
 | Frozen predictions | Unchanged |
 | Empirical status | Not established |

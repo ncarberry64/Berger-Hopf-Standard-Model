@@ -2,13 +2,15 @@
 
 ## Active cross-resolution completion path
 
-1. Close the unchanged independent N5 18-row complete-child root.
-2. Apply the already-defined eta, event-branch, constraint, boundary, and
-   complete-child certification criteria.
-3. Validate positive-duration constraint-consistent N5 persistence.
-4. With independent N3/N4/N5 complete persistent children, derive and test the
-   general-N reconstruction statement instead of increasing N mechanically.
-5. Resume the existing action/scale/returned-family-operator dependency chain
+1. Preserve the independently validated N3/N4/N5 complete persistent children
+   and the unchanged finite-N maps that produced them.
+2. Use the derived `8N+2` variable, `2N+8` row, and `6N-6` manifold laws and
+   same-action event/child reaction BVP to prove a uniform general-N
+   reaction-Calderon graph convergence/right-inverse bound, or localize its
+   first action-owned failure.
+3. Transfer eta, ordered-event, and positive-duration persistence uniformly;
+   do not infer a continuum limit from three resolutions alone.
+4. Resume the existing action/scale/returned-family-operator dependency chain
    without reopening closed sectors or retuning frozen predictions.
 
 `FULL_BHSM_COMPLETE = FALSE`.

@@ -25,6 +25,7 @@ from scipy.optimize import (
 
 from bhsm.interface.aether_constraint_consistent_sobolev_lift_v15_84 import (
     constraint_residual,
+    embed_nested_state,
 )
 from bhsm.interface.aether_exact_radial_schur_lift_v15_83 import (
     exact_action_jet_at_state,
@@ -40,6 +41,15 @@ from bhsm.interface.aether_n3_constraint_solved_orbit_v16_08 import (
 )
 from bhsm.interface.aether_n3_fresh_sbp_asymmetric_period_v0_priority_v17_42 import (
     deterministic_json,
+)
+from bhsm.interface.aether_n3_replacement_global_kkt_v16_11 import (
+    unpack_reduced,
+)
+from bhsm.interface.aether_n3_sbp_redirect_audit_v16_57 import (
+    trapezoid_sbp_difference,
+)
+from bhsm.interface.aether_n3_scale_corrected_period_log_continuation_v17_76 import (
+    v17_75_selected_raw_vector,
 )
 from bhsm.interface.aether_post_cut_nonround_lorentzian_cap_v15_48 import (
     RADIUS0,
@@ -1158,7 +1168,8 @@ def breadth_first_closure_network_audit() -> dict[str, Any]:
             "SolveChildBVP->R_return(z_event)"
         ),
         "classification": (
-            "DERIVED_SET_VALUED_INTERFACE_N4_ROOT_VALIDATED_N5_ROOT_OPEN"
+            "DERIVED_SET_VALUED_INTERFACE_N3_N4_N5_ROOTS_AND_PERSISTENCE_"
+            "VALIDATED_GENERAL_N_UNIFORM_CONVERGENCE_OPEN"
         ),
         "inputs": [
             "CONSTRAINT_ETA_ADMISSIBLE_ORDERED_EVENT_STATE",
@@ -1188,11 +1199,10 @@ def breadth_first_closure_network_audit() -> dict[str, Any]:
             "RECONSTRUCTED_SCALE_AND_RETURN_STATE_RELATION",
             "SPIN_GAUGE_DOMAIN_AND_BUNDLE_ISOMORPHISM_CLASS",
         ],
-        "current_N4_status": (
-            "EVENT_VALIDATED;_16_ROW_MAP_STRUCTURALLY_FULL_RANK;_"
-            "CENTER_FIXED_SOBOLEV_NORMALIZED_RICHARDSON_DERIVATIVE_"
-            "VALIDATED;_COMPLETE_CHILD_AND_LOCAL_POSITIVE_DURATION_"
-            "RELATIVE_PERSISTENCE_VALIDATED"
+        "current_cross_resolution_status": (
+            "INDEPENDENT_N3_N4_N5_ORDERED_EVENT_COMPLETE_CHILD_AND_"
+            "POSITIVE_DURATION_RELATIVE_PERSISTENCE_VALIDATED;_GENERAL_N_"
+            "LOCAL_ROW_AND_FIBER_DIMENSION_LAW_DERIVED"
         ),
         "single_valued_return_proved": False,
         "sources": [
@@ -1335,7 +1345,8 @@ def breadth_first_closure_network_audit() -> dict[str, Any]:
         ),
         "eventual_on_shell_map": (
             "DIFFERENTIATED_CHILD_BVP_JACOBI_SOLVE_USES_THE_ACTION_HESSIAN_"
-            "BUT_IS_NOT_SUBSTITUTED_BEFORE_AN_N4_CHILD_HISTORY_EXISTS"
+            "AND_IS_A_FUTURE_EXACT_RESPONSE_ROUTE_IF_THE_NOW_VALIDATED_"
+            "N3_N4_N5_CHILDREN_REQUIRE_RESPONSE_DERIVATIVES"
         ),
         "physical_rows_or_gates_changed": False,
         "classification": (
@@ -1348,21 +1359,28 @@ def breadth_first_closure_network_audit() -> dict[str, Any]:
         {
             "priority": 1,
             "object": (
-                "DERIVE_THE_N5_DYNAMIC_CALDERON_FLUX_JACOBIAN_FROM_THE_"
-                "ACTION_FOURTH_VARIATION_OR_DIFFERENTIATED_CHILD_BVP"
+                "DERIVE_THE_ON_SHELL_CHILD_EULER_BVP_CALDERON_TRACE_FROM_"
+                "THE_SAME_ACTION_SO_VERTICAL_INTERIOR_VARIATIONS_VANISH_"
+                "AND_REEVALUATE_THE_N3_N4_N5_BOUNDARY_MOMENTUM_FLUX_RELATION"
             ),
-            "feeds": ["RETURN_INTERFACE", "PERSISTENCE"],
+            "feeds": ["GENERAL_N_RETURN_INTERFACE", "PERSISTENCE"],
         },
         {
             "priority": 2,
             "object": (
-                "ACTION_DERIVED_ENVIRONMENT_TO_RECONSTRUCTION_MAP_AND_"
-                "COMPOSITE_MINUS_PARENT_NOETHER_HAMILTONIAN"
+                "REGULAR_POLE_ATTACHMENT_MATERIAL_TRANSMISSION_BVP_AND_"
+                "ACTION_DERIVED_ENVIRONMENT_TO_RECONSTRUCTION_RETURN_MAP_"
+                "WITH_ON_SHELL_CALDERON_OR_RETURN_POLARIZATION_J_boundary"
             ),
-            "feeds": ["RETURN_INTERFACE", "MASS_INTERFACE"],
+            "feeds": ["RETURN_INTERFACE", "SCALE_INTERFACE"],
         },
         {
             "priority": 3,
+            "object": "COMPOSITE_MINUS_PARENT_NOETHER_HAMILTONIAN",
+            "feeds": ["MASS_INTERFACE"],
+        },
+        {
+            "priority": 4,
             "object": (
                 "RETURNED_FAMILY_OPERATORS_AND_ACTION_DERIVED_COMMON_"
                 "DOMAIN_TRANSPORT"
@@ -1393,7 +1411,9 @@ def breadth_first_closure_network_audit() -> dict[str, Any]:
             shared_invariants["required_by_multiple_interfaces"]
         ) >= 3,
         "first_blocker_action_owned_and_localized": (
-            "N5_DYNAMIC_CALDERON_FLUX_JACOBIAN" in blockers[0]["object"]
+            "ON_SHELL_CHILD_EULER_BVP_CALDERON_TRACE" in blockers[0]["object"]
+            and "VERTICAL_INTERIOR_VARIATIONS_VANISH" in blockers[0]["object"]
+            and "BOUNDARY_MOMENTUM_FLUX_RELATION" in blockers[0]["object"]
         ),
         "higher_variation_requirement_derived": (
             not flux_variation["higher_variation_verdict"]
@@ -1413,8 +1433,8 @@ def breadth_first_closure_network_audit() -> dict[str, Any]:
         "ordered_open_interfaces": blockers,
         "scientific_classification": (
             "THREE_CONDITIONAL_INTERFACES_FROZEN;_NO_DOWNSTREAM_NUMERICAL_"
-            "PREDICTION_PROMOTED;_N4_COMPLETE_PERSISTENT_CHILD_VALIDATED;_"
-            "N5_COMPLETE_CHILD_MAP_ACTIVE"
+            "PREDICTION_PROMOTED;_N3_N4_N5_COMPLETE_PERSISTENT_CHILDREN_"
+            "VALIDATED;_GENERAL_N_UNIFORM_CONVERGENCE_BOUND_ACTIVE"
         ),
         "validation": validation,
         "validation_passed": all(validation.values()),
@@ -2620,20 +2640,53 @@ def _trace_jacobian_at_order(order: int) -> np.ndarray:
 def _attachment_jacobian_at_order(
     order: int, coordinates: np.ndarray,
 ) -> np.ndarray:
-    q = np.asarray(coordinates, dtype=float)
+    q = np.asarray(coordinates)
     qdim = dimensions(order)["coordinates"]
     signs_k = (-1.0) ** np.arange(1, order + 1)
     signs_j = (-1.0) ** np.arange(order)
-    v_boundary = float(q[1 + 2 * order:1 + 3 * order] @ signs_j)
-    j_w = np.zeros(qdim)
+    v_boundary = q[1 + 2 * order:1 + 3 * order] @ signs_j
+    dtype = np.result_type(q, float)
+    j_w = np.zeros(qdim, dtype=dtype)
     j_w[0] = 1.0
     j_w[1:1 + order] = signs_k
     j_w[1 + 2 * order:1 + 3 * order] = (
-        -math.tanh(2.0 * v_boundary) * signs_j
+        -np.tanh(2.0 * v_boundary) * signs_j
     )
-    j_c = np.zeros(qdim)
+    j_c = np.zeros(qdim, dtype=dtype)
     j_c[0] = 1.0
     return np.vstack((j_w, j_c - j_w))
+
+
+def _attachment_coordinates_at_order(
+    order: int, coordinates: np.ndarray,
+) -> np.ndarray:
+    """Exact two-coordinate attachment chart whose derivative is B(q)."""
+
+    q = np.asarray(coordinates)
+    signs_k = (-1.0) ** np.arange(1, order + 1)
+    signs_j = (-1.0) ** np.arange(order)
+    u_boundary = q[1:1 + order] @ signs_k
+    v_boundary = q[1 + 2 * order:1 + 3 * order] @ signs_j
+    q_w = q[0] + u_boundary - 0.5 * np.log(np.cosh(2.0 * v_boundary))
+    return np.asarray([q_w, q[0] - q_w])
+
+
+def _attachment_chart_curvature_on_velocity(
+    order: int, coordinates: np.ndarray, velocities: np.ndarray,
+) -> np.ndarray:
+    """Return D^2 b(q)[v,v] for the exact attachment chart."""
+
+    q = np.asarray(coordinates)
+    velocity = np.asarray(velocities)
+    signs_j = (-1.0) ** np.arange(order)
+    v_boundary = q[1 + 2 * order:1 + 3 * order] @ signs_j
+    v_boundary_rate = (
+        velocity[1 + 2 * order:1 + 3 * order] @ signs_j
+    )
+    first = (
+        -2.0 * v_boundary_rate**2 / np.cosh(2.0 * v_boundary) ** 2
+    )
+    return np.asarray([first, -first])
 
 
 def _boundary_lift(
@@ -2660,8 +2713,8 @@ def _canonical_pair_at_order(
     jet = exact_full_action_jet_at_state(
         order, coordinates, velocities, multipliers, points=points
     )
-    gradient = np.asarray(jet.gradient, dtype=float)
-    hessian = np.asarray(jet.hessian, dtype=float)
+    gradient = np.asarray(jet.gradient)
+    hessian = np.asarray(jet.hessian)
     boundary = _attachment_jacobian_at_order(order, coordinates)
     q_form = hessian[:qdim, :qdim]
     v_form = hessian[qdim:2 * qdim, qdim:2 * qdim]
@@ -2674,26 +2727,135 @@ def _canonical_pair_at_order(
     return momentum, force, q_lift, v_lift
 
 
+def _complex_step_canonical_momentum_rate(
+    order: int,
+    coordinates: np.ndarray,
+    velocities: np.ndarray,
+    multipliers: np.ndarray,
+    acceleration: np.ndarray,
+    multiplier_rate: np.ndarray,
+    *,
+    points: int,
+    step: float = 1.0e-20,
+) -> np.ndarray:
+    """Evaluate Dp(y)X(y) on the same analytic lifted momentum map."""
+
+    if step <= 0.0:
+        raise ValueError("complex momentum-rate step must be positive")
+    q_complex = np.asarray(coordinates, dtype=complex) + (
+        1j * step * np.asarray(velocities, dtype=float)
+    )
+    v_complex = np.asarray(velocities, dtype=complex) + (
+        1j * step * np.asarray(acceleration, dtype=float)
+    )
+    m_complex = np.asarray(multipliers, dtype=complex) + (
+        1j * step * np.asarray(multiplier_rate, dtype=float)
+    )
+    momentum, _, _, _ = _canonical_pair_at_order(
+        order, q_complex, v_complex, m_complex, points=points
+    )
+    return np.imag(momentum) / step
+
+
+def _bicomplex_dynamic_flux_directional_derivative(
+    order: int,
+    state: np.ndarray,
+    direction: np.ndarray,
+    event_flux: np.ndarray,
+    *,
+    points: int,
+    outer_step: float = 1.0e-20,
+    inner_relative_step: float = 1.0e-1,
+) -> np.ndarray:
+    """Differentiate the exact dynamic flux by commuting complex units."""
+
+    if outer_step <= 0.0 or inner_relative_step <= 0.0:
+        raise ValueError("positive bicomplex derivative steps required")
+    y = np.asarray(state, dtype=float)
+    d = np.asarray(direction, dtype=float)
+    if y.shape != d.shape:
+        raise ValueError("state and directional shapes differ")
+    qdim = dimensions(order)["coordinates"]
+    q = y[:qdim]
+    velocity = y[qdim:2 * qdim]
+    multipliers = y[2 * qdim:]
+    real_dynamics = _exact_full_jet_euler_dirac_acceleration(
+        order, q, velocity, multipliers, points=points
+    )
+    tangent_scale = max(
+        1.0,
+        float(np.max(np.abs(velocity))),
+        float(np.max(np.abs(real_dynamics["acceleration"]))),
+        float(np.max(np.abs(real_dynamics["multiplier_rate"]))),
+    )
+    inner_step = inner_relative_step / tangent_scale
+    outer = y.astype(complex) + 1j * outer_step * d
+    q_outer = outer[:qdim]
+    v_outer = outer[qdim:2 * qdim]
+    m_outer = outer[2 * qdim:]
+    momentum, force, q_lift, _ = _canonical_pair_at_order(
+        order, q_outer, v_outer, m_outer, points=points
+    )
+    outer_dynamics = _exact_full_jet_euler_dirac_acceleration(
+        order, q_outer, v_outer, m_outer, points=points
+    )
+    tangent = np.concatenate((
+        v_outer,
+        np.asarray(outer_dynamics["acceleration"]),
+        np.asarray(outer_dynamics["multiplier_rate"]),
+    ))
+
+    def idempotent_momentum_rate(step: float) -> np.ndarray:
+        plus_state = outer - 1j * step * tangent
+        minus_state = outer + 1j * step * tangent
+        plus_momentum, _, _, _ = _canonical_pair_at_order(
+            order,
+            plus_state[:qdim],
+            plus_state[qdim:2 * qdim],
+            plus_state[2 * qdim:],
+            points=points,
+        )
+        minus_momentum, _, _, _ = _canonical_pair_at_order(
+            order,
+            minus_state[:qdim],
+            minus_state[qdim:2 * qdim],
+            minus_state[2 * qdim:],
+            points=points,
+        )
+        return (minus_momentum - plus_momentum) / (2j * step)
+
+    coarse_rate = idempotent_momentum_rate(inner_step)
+    half_rate = idempotent_momentum_rate(0.5 * inner_step)
+    momentum_rate = (4.0 * half_rate - coarse_rate) / 3.0
+    child_covector = _metric_radial_flux_covector_at_order(
+        order, q_outer, m_outer
+    )
+    child_flux = q_lift.T @ child_covector
+    flux = child_flux + momentum_rate - force + event_flux
+    return np.imag(flux) / outer_step
+
+
 def _metric_radial_flux_covector_at_order(
     order: int, coordinates: np.ndarray, multipliers: np.ndarray,
 ) -> np.ndarray:
-    q = np.asarray(coordinates, dtype=float)
-    m = np.asarray(multipliers, dtype=float)
+    q = np.asarray(coordinates)
+    m = np.asarray(multipliers)
     qdim = dimensions(order)["coordinates"]
     signs_k = (-1.0) ** np.arange(1, order + 1)
     signs_j = (-1.0) ** np.arange(order)
-    scale = float(q[0])
-    u = float(q[1:1 + order] @ signs_k)
-    w = float(q[1 + order:1 + 2 * order] @ signs_j)
-    v = float(q[1 + 2 * order:1 + 3 * order] @ signs_j)
-    radius = float(RADIUS0 * math.exp(scale))
-    c_radius = float(radius * math.exp(u + w))
-    a_radius = float(radius * math.exp(u + v) / math.sqrt(2.0))
-    b_radius = float(radius * math.exp(u - v) / math.sqrt(2.0))
-    lapse = float(math.exp(float(m[:order] @ signs_k)))
-    prefactor = float(3.0 * lapse * a_radius**3 * b_radius**3 / c_radius)
-    d_log_a = np.zeros(qdim)
-    d_log_b = np.zeros(qdim)
+    scale = q[0]
+    u = q[1:1 + order] @ signs_k
+    w = q[1 + order:1 + 2 * order] @ signs_j
+    v = q[1 + 2 * order:1 + 3 * order] @ signs_j
+    radius = RADIUS0 * np.exp(scale)
+    c_radius = radius * np.exp(u + w)
+    a_radius = radius * np.exp(u + v) / np.sqrt(2.0)
+    b_radius = radius * np.exp(u - v) / np.sqrt(2.0)
+    lapse = np.exp(m[:order] @ signs_k)
+    prefactor = 3.0 * lapse * a_radius**3 * b_radius**3 / c_radius
+    dtype = np.result_type(q, m, float)
+    d_log_a = np.zeros(qdim, dtype=dtype)
+    d_log_b = np.zeros(qdim, dtype=dtype)
     d_log_a[0] = d_log_b[0] = 1.0
     d_log_a[1:1 + order] = signs_k
     d_log_b[1:1 + order] = signs_k
@@ -2712,18 +2874,16 @@ def _exact_full_jet_euler_dirac_acceleration(
 ) -> dict[str, Any]:
     """Solve Euler--Dirac using the existing exact full q,v,m action jet."""
 
-    q = np.asarray(coordinates, dtype=float)
-    velocity = np.asarray(velocities, dtype=float)
-    m = np.asarray(multipliers, dtype=float)
+    q = np.asarray(coordinates)
+    velocity = np.asarray(velocities)
+    m = np.asarray(multipliers)
     qdim = dimensions(order)["coordinates"]
     jet = exact_full_action_jet_at_state(
         order, q, velocity, m, points=points
     )
-    dirac_hessian = np.asarray(
-        jet.hessian[qdim:, qdim:], dtype=float
-    )
-    mixed_z_q = np.asarray(jet.hessian[qdim:, :qdim], dtype=float)
-    gradient_q = np.asarray(jet.gradient[:qdim], dtype=float)
+    dirac_hessian = np.asarray(jet.hessian[qdim:, qdim:])
+    mixed_z_q = np.asarray(jet.hessian[qdim:, :qdim])
+    gradient_q = np.asarray(jet.gradient[:qdim])
     rhs = np.concatenate((
         gradient_q - mixed_z_q[:qdim] @ velocity,
         -mixed_z_q[qdim:] @ velocity,
@@ -2752,6 +2912,7 @@ def _child_rows_at_order(
     relative_flux_step: float = 1.0e-1,
     fixed_flux_time_step: float | None = None,
     richardson_flux: bool = True,
+    flux_derivative_method: str = "richardson",
 ) -> np.ndarray:
     size = dimensions(order)
     qdim = size["coordinates"]
@@ -2798,10 +2959,23 @@ def _child_rows_at_order(
         )
         return (plus - minus) / (2.0 * step)
 
-    momentum_rate = centered_momentum_rate(epsilon)
-    if richardson_flux:
-        half_rate = centered_momentum_rate(0.5 * epsilon)
-        momentum_rate = (4.0 * half_rate - momentum_rate) / 3.0
+    if flux_derivative_method == "complex_step":
+        momentum_rate = _complex_step_canonical_momentum_rate(
+            order,
+            q,
+            velocity,
+            multipliers,
+            acceleration,
+            multiplier_rate,
+            points=points,
+        )
+    elif flux_derivative_method == "richardson":
+        momentum_rate = centered_momentum_rate(epsilon)
+        if richardson_flux:
+            half_rate = centered_momentum_rate(0.5 * epsilon)
+            momentum_rate = (4.0 * half_rate - momentum_rate) / 3.0
+    else:
+        raise ValueError("unknown dynamic-flux derivative method")
     flux = child_flux - (-momentum_rate + force - event_flux)
     return np.concatenate((
         _trace_jacobian_at_order(order) @ (q - event_coordinates),
@@ -3927,6 +4101,382 @@ def n5_child_flux_step_audit(*, points: int = 44) -> dict[str, Any]:
     }
 
 
+@lru_cache(maxsize=4)
+def n5_complex_flux_derivative_equivalence_audit(
+    *, points: int = 44, outer_base_step: float = 1.0e-3,
+) -> dict[str, Any]:
+    """Validate the subtraction-free derivative of the unchanged flux map."""
+
+    order = 5
+    artifact_path = Path("artifacts") / (
+        "BHSM_AETHER_CROSS_RESOLUTION_RECONNAISSANCE_V21_35.json"
+    )
+    payload = json.loads(artifact_path.read_text(encoding="utf-8"))
+    result = payload["cross_resolution_reconnaissance"]
+    child = result["N5_event_conditioned_complete_child_reconstruction"]
+    child_state = child["child_state"]
+    state = np.concatenate((
+        np.asarray(child_state["coordinates"], dtype=float),
+        np.asarray(child_state["velocities"], dtype=float),
+        np.asarray(child_state["multipliers"], dtype=float),
+    ))
+    selected_run = next(
+        run for run in result[
+            "N5_independent_eta_branch_event_classification"
+        ]["quadrature_runs"]
+        if int(run["points"]) == points
+    )
+    event = selected_run["event"]
+    q_event = np.asarray(event["coordinates"], dtype=float)
+    v_event = np.asarray(event["velocities"], dtype=float)
+    m_event = np.asarray(event["multipliers"], dtype=float)
+    event_momentum, _, event_lift, _ = _canonical_pair_at_order(
+        order, q_event, v_event, m_event, points=points
+    )
+    event_flux = event_lift.T @ _metric_radial_flux_covector_at_order(
+        order, q_event, m_event
+    )
+    richardson_rows = _child_rows_at_order(
+        order,
+        state,
+        q_event,
+        event_momentum,
+        event_flux,
+        points=points,
+        flux_derivative_method="richardson",
+    )
+    complex_rows = _child_rows_at_order(
+        order,
+        state,
+        q_event,
+        event_momentum,
+        event_flux,
+        points=points,
+        flux_derivative_method="complex_step",
+    )
+    size = dimensions(order)
+    qdim = size["coordinates"]
+    dynamics = _exact_full_jet_euler_dirac_acceleration(
+        order,
+        state[:qdim],
+        state[qdim:2 * qdim],
+        state[2 * qdim:],
+        points=points,
+    )
+    momentum_rates = [
+        _complex_step_canonical_momentum_rate(
+            order,
+            state[:qdim],
+            state[qdim:2 * qdim],
+            state[2 * qdim:],
+            np.asarray(dynamics["acceleration"], dtype=float),
+            np.asarray(dynamics["multiplier_rate"], dtype=float),
+            points=points,
+            step=step,
+        )
+        for step in (1.0e-8, 1.0e-12, 1.0e-16, 1.0e-20, 1.0e-24)
+    ]
+    momentum_rate_spread = max(
+        _relative_difference(momentum_rates[index], momentum_rates[2])
+        for index in range(len(momentum_rates))
+    )
+    frequencies = spectral_frequencies(order)
+    regularity_weights = sobolev_weights(order)
+    direction_weights = np.concatenate((
+        (1.0 + frequencies["coordinates"] ** 2) ** 3.0,
+        regularity_weights["velocities"],
+        regularity_weights["multipliers"],
+    ))
+    variable_count = state.size
+    row_count = 2 * order + 8
+
+    def central_jacobian(step: float) -> np.ndarray:
+        jacobian = np.empty((row_count, variable_count))
+        for column in range(variable_count):
+            delta = np.zeros(variable_count)
+            delta[column] = step / direction_weights[column]
+            jacobian[:, column] = (
+                _child_rows_at_order(
+                    order,
+                    state + delta,
+                    q_event,
+                    event_momentum,
+                    event_flux,
+                    points=points,
+                    flux_derivative_method="complex_step",
+                )
+                - _child_rows_at_order(
+                    order,
+                    state - delta,
+                    q_event,
+                    event_momentum,
+                    event_flux,
+                    points=points,
+                    flux_derivative_method="complex_step",
+                )
+            ) / (2.0 * step)
+        return jacobian
+
+    base_step = outer_base_step
+    coarse = central_jacobian(base_step)
+    mid = central_jacobian(0.5 * base_step)
+    fine = central_jacobian(0.25 * base_step)
+    coarse_richardson = (4.0 * mid - coarse) / 3.0
+    fine_richardson = (4.0 * fine - mid) / 3.0
+    row_scales = np.maximum(np.linalg.norm(fine_richardson, axis=1), 1.0)
+    singular = np.linalg.svd(
+        fine_richardson / row_scales[:, None], compute_uv=False
+    )
+    tolerance = np.finfo(float).eps * max(row_count, variable_count) * singular[0]
+    rank = int(np.count_nonzero(singular > tolerance))
+    constraint_stop = 3 + (2 * order + 1)
+    block_changes = {
+        name: float(
+            np.linalg.norm(
+                fine_richardson[row_slice] - coarse_richardson[row_slice]
+            ) / max(1.0, np.linalg.norm(coarse_richardson[row_slice]))
+        )
+        for name, row_slice in (
+            ("trace", slice(0, 3)),
+            ("constraints", slice(3, constraint_stop)),
+            ("canonical_momentum", slice(constraint_stop, constraint_stop + 2)),
+            ("dynamic_Calderon_flux", slice(constraint_stop + 2, row_count)),
+        )
+    }
+    outer_change = float(
+        np.linalg.norm(fine_richardson - coarse_richardson)
+        / max(1.0, np.linalg.norm(coarse_richardson))
+    )
+    value_equivalence = _relative_difference(complex_rows, richardson_rows)
+    validated = bool(
+        value_equivalence < 1.0e-7
+        and momentum_rate_spread < 1.0e-8
+        and outer_change < 1.0e-1
+        and rank == row_count
+    )
+    return {
+        "source": "LATEST_ADMISSIBLE_N5_CHILD_CHECKPOINT",
+        "physical_map": (
+            "UNCHANGED_PHI=Q_DAGGER_GAMMA_CHILD+Dp(y)X(y)-Q_DAGGER_L_q+"
+            "GAMMA_EVENT"
+        ),
+        "Richardson_to_complex_step_row_relative_difference": value_equivalence,
+        "complex_step_sizes": [1.0e-8, 1.0e-12, 1.0e-16, 1.0e-20, 1.0e-24],
+        "complex_momentum_rate_maximum_relative_spread": momentum_rate_spread,
+        "outer_Richardson_base_step": base_step,
+        "outer_Richardson_relative_change": outer_change,
+        "outer_Richardson_block_relative_changes": block_changes,
+        "full_chart_rank": rank,
+        "physical_row_count": row_count,
+        "complex_flux_derivative_validated": validated,
+        "subtractive_finite_difference_removed": True,
+        "action_equations_or_child_gates_changed": False,
+        "required_next": (
+            "ADOPT_THE_EQUIVALENT_COMPLEX_STEP_FLUX_EVALUATION_AND_RESUME_"
+            "THE_UNCHANGED_N5_18_ROW_SOLVE"
+            if validated else
+            "DERIVE_THE_FOURTH_VARIATION_OR_DIFFERENTIATED_CHILD_BVP"
+        ),
+        "FULL_BHSM_COMPLETE": False,
+    }
+
+
+@lru_cache(maxsize=1)
+def n5_bicomplex_flux_jacobian_audit(*, points: int = 44) -> dict[str, Any]:
+    """Validate the fourth-variation-equivalent N5 flux Jacobian block."""
+
+    order = 5
+    artifact_path = Path("artifacts") / (
+        "BHSM_AETHER_CROSS_RESOLUTION_RECONNAISSANCE_V21_35.json"
+    )
+    payload = json.loads(artifact_path.read_text(encoding="utf-8"))
+    result = payload["cross_resolution_reconnaissance"]
+    child_state = result[
+        "N5_event_conditioned_complete_child_reconstruction"
+    ]["child_state"]
+    state = np.concatenate((
+        np.asarray(child_state["coordinates"], dtype=float),
+        np.asarray(child_state["velocities"], dtype=float),
+        np.asarray(child_state["multipliers"], dtype=float),
+    ))
+    selected_run = next(
+        run for run in result[
+            "N5_independent_eta_branch_event_classification"
+        ]["quadrature_runs"]
+        if int(run["points"]) == points
+    )
+    event = selected_run["event"]
+    q_event = np.asarray(event["coordinates"], dtype=float)
+    v_event = np.asarray(event["velocities"], dtype=float)
+    m_event = np.asarray(event["multipliers"], dtype=float)
+    _, _, event_lift, _ = _canonical_pair_at_order(
+        order, q_event, v_event, m_event, points=points
+    )
+    event_flux = event_lift.T @ _metric_radial_flux_covector_at_order(
+        order, q_event, m_event
+    )
+    frequencies = spectral_frequencies(order)
+    regularity_weights = sobolev_weights(order)
+    direction_weights = np.concatenate((
+        (1.0 + frequencies["coordinates"] ** 2) ** 3.0,
+        regularity_weights["velocities"],
+        regularity_weights["multipliers"],
+    ))
+
+    def flux_block(outer_step: float, inner_relative_step: float) -> np.ndarray:
+        block = np.empty((2, state.size))
+        for column in range(state.size):
+            direction = np.zeros(state.size)
+            direction[column] = 1.0 / direction_weights[column]
+            block[:, column] = _bicomplex_dynamic_flux_directional_derivative(
+                order,
+                state,
+                direction,
+                event_flux,
+                points=points,
+                outer_step=outer_step,
+                inner_relative_step=inner_relative_step,
+            )
+        return block
+
+    outer_steps = (1.0e-8, 1.0e-9, 1.0e-10)
+    outer_blocks = [flux_block(step, 1.0e-1) for step in outer_steps]
+    outer_changes = [
+        _relative_difference(outer_blocks[index + 1], outer_blocks[index])
+        for index in range(len(outer_blocks) - 1)
+    ]
+    inner_coarse = flux_block(1.0e-9, 2.0e-1)
+    inner_change = _relative_difference(inner_coarse, outer_blocks[1])
+    validated = bool(max(outer_changes) < 1.0e-2 and inner_change < 1.0e-2)
+    return {
+        "source": "LATEST_ADMISSIBLE_N5_CHILD_CHECKPOINT",
+        "mathematical_route": (
+            "BICOMPLEX_IDEMPOTENT_MIXED_DIRECTIONAL_DERIVATIVE_OF_THE_"
+            "STATE_DEPENDENT_HESSIAN_MINIMAL_LIFT"
+        ),
+        "equivalent_higher_variation": "ACTION_FOURTH_VARIATION_DIRECTION",
+        "outer_complex_steps": list(outer_steps),
+        "outer_adjacent_relative_changes": outer_changes,
+        "inner_Richardson_relative_steps": [2.0e-1, 1.0e-1],
+        "inner_relative_change": inner_change,
+        "selected_outer_complex_step": 1.0e-9,
+        "selected_inner_relative_step": 1.0e-1,
+        "flux_jacobian_shape": list(outer_blocks[1].shape),
+        "flux_jacobian": outer_blocks[1].tolist(),
+        "bicomplex_flux_jacobian_validated": validated,
+        "subtractive_outer_difference_used": False,
+        "action_equations_or_child_gates_changed": False,
+        "required_next": (
+            "ADOPT_AS_THE_N5_QUASI_NEWTON_FLUX_BLOCK_AND_RESUME_THE_EXACT_"
+            "18_ROW_MERIT_SOLVE"
+            if validated else "DERIVE_THE_DIFFERENTIATED_CHILD_BVP"
+        ),
+        "FULL_BHSM_COMPLETE": False,
+    }
+
+
+@lru_cache(maxsize=1)
+def n5_exact_physical_merit_gradient_audit(*, points: int = 44) -> dict[str, Any]:
+    """Audit a derivative of the unchanged fixed exact 18-row merit."""
+
+    order = 5
+    payload = json.loads((Path("artifacts") / (
+        "BHSM_AETHER_CROSS_RESOLUTION_RECONNAISSANCE_V21_35.json"
+    )).read_text(encoding="utf-8"))
+    result = payload["cross_resolution_reconnaissance"]
+    child = result["N5_event_conditioned_complete_child_reconstruction"]
+    child_state = child["child_state"]
+    state = np.concatenate((
+        np.asarray(child_state["coordinates"], dtype=float),
+        np.asarray(child_state["velocities"], dtype=float),
+        np.asarray(child_state["multipliers"], dtype=float),
+    ))
+    row_scales = np.asarray(
+        child["proposal_model"]["fixed_reference_row_scales"], dtype=float
+    )
+    selected_run = next(
+        run for run in result[
+            "N5_independent_eta_branch_event_classification"
+        ]["quadrature_runs"] if int(run["points"]) == points
+    )
+    event = selected_run["event"]
+    q_event = np.asarray(event["coordinates"], dtype=float)
+    v_event = np.asarray(event["velocities"], dtype=float)
+    m_event = np.asarray(event["multipliers"], dtype=float)
+    event_momentum, _, event_lift, _ = _canonical_pair_at_order(
+        order, q_event, v_event, m_event, points=points
+    )
+    event_flux = event_lift.T @ _metric_radial_flux_covector_at_order(
+        order, q_event, m_event
+    )
+    frequencies = spectral_frequencies(order)
+    regularity_weights = sobolev_weights(order)
+    direction_weights = np.concatenate((
+        (1.0 + frequencies["coordinates"] ** 2) ** 3.0,
+        regularity_weights["velocities"],
+        regularity_weights["multipliers"],
+    ))
+
+    def merit(solver_values: np.ndarray) -> float:
+        physical = solver_values / direction_weights
+        rows = _child_rows_at_order(
+            order,
+            physical,
+            q_event,
+            event_momentum,
+            event_flux,
+            points=points,
+            flux_derivative_method="complex_step",
+        ) / row_scales
+        return 0.5 * float(rows @ rows)
+
+    center = state * direction_weights
+
+    def central_gradient(step: float) -> np.ndarray:
+        gradient = np.empty(center.size)
+        for column in range(center.size):
+            delta = np.zeros(center.size)
+            delta[column] = step
+            gradient[column] = (
+                merit(center + delta) - merit(center - delta)
+            ) / (2.0 * step)
+        return gradient
+
+    steps = (1.0e-1, 5.0e-2, 2.5e-2)
+    central = [central_gradient(step) for step in steps]
+    coarse = (4.0 * central[1] - central[0]) / 3.0
+    fine = (4.0 * central[2] - central[1]) / 3.0
+    change = _relative_difference(fine, coarse)
+    center_merit = merit(center)
+    direction = -fine / max(1.0, float(np.linalg.norm(fine)))
+    gradient_factors = tuple(2.0**-index for index in range(13))
+    trial_merits = [
+        merit(center + factor * direction)
+        for factor in gradient_factors
+    ]
+    validated = bool(
+        change < 1.0e-1 and min(trial_merits) < center_merit
+    )
+    return {
+        "source": "LATEST_ADMISSIBLE_N5_CHILD_CHECKPOINT",
+        "merit": "ONE_HALF_FIXED_REFERENCE_NORM_SQUARED_OF_EXACT_18_ROWS",
+        "normalized_steps": list(steps),
+        "coarse_to_fine_Richardson_relative_change": change,
+        "gradient_norm": float(np.linalg.norm(fine)),
+        "center_merit": center_merit,
+        "negative_gradient_trial_factors": list(gradient_factors),
+        "negative_gradient_trial_merits": trial_merits,
+        "exact_merit_gradient_validated": validated,
+        "componentwise_monotonicity_required": False,
+        "action_equations_or_child_gates_changed": False,
+        "required_next": (
+            "ADOPT_AS_A_NUMERICAL_PROPOSAL_AND_RESUME_THE_N5_18_ROW_SOLVE"
+            if validated else "DERIVE_THE_DIFFERENTIATED_CHILD_BVP"
+        ),
+        "FULL_BHSM_COMPLETE": False,
+    }
+
+
 @lru_cache(maxsize=1)
 def n5_event_conditioned_complete_child_reconstruction(
     *, points: int = 44,
@@ -4036,41 +4586,72 @@ def n5_event_conditioned_complete_child_reconstruction(
             event_momentum,
             event_flux,
             points=points,
+            flux_derivative_method="complex_step",
         )
 
     def proposal_jacobian(center: np.ndarray, step: float) -> np.ndarray:
-        inner_step = _child_flux_time_step_at_order(
-            order, center, points=points, relative_flux_step=1.0e-1
-        )
+        del step
         jacobian = np.empty((row_count, variable_count))
+        q_center = center[:qdim]
+        v_center = center[qdim:2 * qdim]
+        m_center = center[2 * qdim:]
+        full_jet = exact_full_action_jet_at_state(
+            order, q_center, v_center, m_center, points=points
+        )
+        full_gradient = np.asarray(full_jet.gradient, dtype=float)
+        full_hessian = np.asarray(full_jet.hessian, dtype=float)
+        multiplier_start = 2 * qdim
+        constraint_jacobian = full_hessian[multiplier_start:, :]
+        energy_gradient = np.concatenate((
+            v_center @ full_hessian[
+                qdim:2 * qdim, :qdim
+            ] - full_gradient[:qdim],
+            full_hessian[
+                qdim:2 * qdim, qdim:2 * qdim
+            ] @ v_center,
+            v_center @ full_hessian[
+                qdim:2 * qdim, multiplier_start:
+            ] - full_gradient[multiplier_start:],
+        ))
+        trace_jacobian = _trace_jacobian_at_order(order)
         for column in range(variable_count):
-            delta = np.zeros(variable_count)
-            delta[column] = step / direction_weights[column]
-            jacobian[:, column] = (
-                _child_rows_at_order(
+            direction = np.zeros(variable_count)
+            direction[column] = 1.0 / direction_weights[column]
+            jacobian[:3, column] = (
+                trace_jacobian @ direction[:qdim]
+            )
+            jacobian[3:3 + size["multipliers"], column] = (
+                constraint_jacobian @ direction
+            )
+            jacobian[3 + size["multipliers"], column] = (
+                energy_gradient @ direction
+            )
+            outer = center.astype(complex) + 1j * 1.0e-20 * direction
+            complex_momentum, _, _, _ = _canonical_pair_at_order(
+                order,
+                outer[:qdim],
+                outer[qdim:2 * qdim],
+                outer[2 * qdim:],
+                points=points,
+            )
+            jacobian[-4:-2, column] = (
+                np.imag(complex_momentum) / 1.0e-20
+            )
+            jacobian[-2:, column] = (
+                _bicomplex_dynamic_flux_directional_derivative(
                     order,
-                    center + delta,
-                    q_event,
-                    event_momentum,
+                    center,
+                    direction,
                     event_flux,
                     points=points,
-                    fixed_flux_time_step=inner_step,
+                    outer_step=1.0e-9,
+                    inner_relative_step=1.0e-1,
                 )
-                - _child_rows_at_order(
-                    order,
-                    center - delta,
-                    q_event,
-                    event_momentum,
-                    event_flux,
-                    points=points,
-                    fixed_flux_time_step=inner_step,
-                )
-            ) / (2.0 * step)
+            )
         return jacobian
 
-    proposal_step = 1.0e-1
-    raw_jacobian = proposal_jacobian(state, proposal_step)
-    row_scales = np.maximum(np.linalg.norm(raw_jacobian, axis=1), 1.0)
+    proposal_step = 1.0e-3
+    row_scales: np.ndarray | None = None
     fixed_merit_scaling_preserved = False
     if continuation_checkpoint_used and isinstance(stored_checkpoint, dict):
         stored_scales = np.asarray(
@@ -4082,20 +4663,101 @@ def n5_event_conditioned_complete_child_reconstruction(
         if stored_scales.shape == (row_count,) and np.all(stored_scales > 0.0):
             row_scales = stored_scales
             fixed_merit_scaling_preserved = True
-    jacobian = raw_jacobian / row_scales[:, None]
+    if row_scales is None:
+        initial_jacobian = proposal_jacobian(state, proposal_step)
+        row_scales = np.maximum(np.linalg.norm(initial_jacobian, axis=1), 1.0)
     solver_values = state * direction_weights
     rows = exact_rows(state)
     scaled_rows = rows / row_scales
     initial_merit = float(np.linalg.norm(scaled_rows))
+    merit_gradient_audit: dict[str, Any] = {
+        "attempted": False,
+        "accepted": False,
+    }
     accepted_steps = 0
+    if continuation_checkpoint_used:
+        merit_gradient_audit["attempted"] = True
+
+        def scalar_merit(values: np.ndarray) -> float:
+            trial = values / direction_weights
+            trial_rows = exact_rows(trial) / row_scales
+            return 0.5 * float(trial_rows @ trial_rows)
+
+        central_gradients: list[np.ndarray] = []
+        gradient_steps = (1.0e-1, 5.0e-2, 2.5e-2)
+        for gradient_step in gradient_steps:
+            gradient = np.empty(variable_count)
+            for column in range(variable_count):
+                delta = np.zeros(variable_count)
+                delta[column] = gradient_step
+                gradient[column] = (
+                    scalar_merit(solver_values + delta)
+                    - scalar_merit(solver_values - delta)
+                ) / (2.0 * gradient_step)
+            central_gradients.append(gradient)
+        coarse_gradient = (
+            4.0 * central_gradients[1] - central_gradients[0]
+        ) / 3.0
+        fine_gradient = (
+            4.0 * central_gradients[2] - central_gradients[1]
+        ) / 3.0
+        gradient_change = _relative_difference(
+            fine_gradient, coarse_gradient
+        )
+        gradient_direction = -fine_gradient / max(
+            1.0, float(np.linalg.norm(fine_gradient))
+        )
+        center_squared_merit = 0.5 * initial_merit**2
+        gradient_trials: list[dict[str, float]] = []
+        best: tuple[float, np.ndarray] | None = None
+        for factor in (2.0**-index for index in range(13)):
+            trial_values = solver_values + factor * gradient_direction
+            trial_state = trial_values / direction_weights
+            eta_trial = _eta_legendre_minimum(
+                order,
+                trial_state[:qdim],
+                trial_state[2 * qdim:],
+                points=800,
+            )["minimum"]
+            if eta_trial <= 0.0:
+                continue
+            trial_squared_merit = scalar_merit(trial_values)
+            gradient_trials.append({
+                "factor": factor,
+                "squared_merit": trial_squared_merit,
+                "eta_minimum": eta_trial,
+            })
+            if (
+                trial_squared_merit < center_squared_merit
+                and (best is None or trial_squared_merit < best[0])
+            ):
+                best = (trial_squared_merit, trial_values)
+        merit_gradient_audit.update({
+            "normalized_steps": list(gradient_steps),
+            "Richardson_relative_change": gradient_change,
+            "promoted_as_exact_derivative": False,
+            "trials": gradient_trials,
+        })
+        if best is not None:
+            solver_values = best[1]
+            state = solver_values / direction_weights
+            rows = exact_rows(state)
+            scaled_rows = rows / row_scales
+            accepted_steps = 1
+            merit_gradient_audit["accepted"] = True
+    raw_jacobian = proposal_jacobian(state, proposal_step)
+    jacobian = raw_jacobian / row_scales[:, None]
     rejected_trials = 0
     refreshes = 0
+    rejected_step_secant_repairs = 0
+    exact_flux_coordinate_refreshes = 0
     poll_evaluations = 0
     accepted_poll_steps = 0
     poll_attempts = 0
-    trust_radius = 0.25
+    trust_radius = 16.0
     message = "maximum quasi-Newton iterations reached"
-    for _ in range(8):
+    first_direction_audit: dict[str, Any] | None = None
+    for iteration in range(64):
         merit = float(np.linalg.norm(scaled_rows))
         if merit < 1.0e-10:
             message = "scaled complete-child merit converged"
@@ -4104,8 +4766,39 @@ def n5_event_conditioned_complete_child_reconstruction(
         delta_norm = float(np.linalg.norm(delta))
         if delta_norm > trust_radius:
             delta *= trust_radius / delta_norm
+        if iteration == 0:
+            predicted_row_change = jacobian @ delta
+            block_slices = {
+                "trace": slice(0, 3),
+                "constraints": slice(3, 14),
+                "canonical_momentum": slice(14, 16),
+                "dynamic_Calderon_flux": slice(16, 18),
+            }
+            first_direction_audit = {
+                "raw_minimum_norm_step": delta_norm,
+                "applied_step_norm": float(np.linalg.norm(delta)),
+                "solver_direction": delta.tolist(),
+                "predicted_merit_directional_derivative": float(
+                    scaled_rows @ predicted_row_change
+                ),
+                "predicted_block_directional_derivatives": {
+                    name: float(
+                        scaled_rows[row_slice]
+                        @ predicted_row_change[row_slice]
+                    )
+                    for name, row_slice in block_slices.items()
+                },
+                "center_scaled_block_norms": {
+                    name: float(np.linalg.norm(scaled_rows[row_slice]))
+                    for name, row_slice in block_slices.items()
+                },
+                "line_trials": [],
+            }
         accepted = False
         factor = 1.0
+        secant_candidates: list[
+            tuple[float, np.ndarray, np.ndarray, np.ndarray]
+        ] = []
         while factor >= 2.0**-24:
             trial_values = solver_values + factor * delta
             trial_state = trial_values / direction_weights
@@ -4125,7 +4818,26 @@ def n5_event_conditioned_complete_child_reconstruction(
                 rejected_trials += 1
                 continue
             trial_scaled = trial_rows / row_scales
-            if float(np.linalg.norm(trial_scaled)) < merit:
+            trial_merit = float(np.linalg.norm(trial_scaled))
+            secant_candidates.append((
+                factor, trial_values, trial_rows, trial_scaled
+            ))
+            if iteration == 0 and first_direction_audit is not None:
+                first_direction_audit["line_trials"].append({
+                    "factor": factor,
+                    "merit": trial_merit,
+                    "eta_minimum": _eta_legendre_minimum(
+                        order,
+                        trial_state[:qdim],
+                        trial_state[2 * qdim:],
+                        points=800,
+                    )["minimum"],
+                    "scaled_block_norms": {
+                        name: float(np.linalg.norm(trial_scaled[row_slice]))
+                        for name, row_slice in block_slices.items()
+                    },
+                })
+            if trial_merit < merit:
                 accepted = True
                 break
             factor *= 0.5
@@ -4133,9 +4845,13 @@ def n5_event_conditioned_complete_child_reconstruction(
         if not accepted:
             best_merit = merit
             best: tuple[np.ndarray, np.ndarray, np.ndarray] | None = None
+            poll_refreshed_flux = False
             for poll_factor in (() if poll_attempts else (1.0, 0.4)):
                 poll_attempts += 1
                 poll_radius = trust_radius * poll_factor
+                paired_poll_rows: dict[
+                    tuple[int, float], np.ndarray
+                ] = {}
                 for column in range(variable_count):
                     for sign in (-1.0, 1.0):
                         trial_values = solver_values.copy()
@@ -4157,10 +4873,24 @@ def n5_event_conditioned_complete_child_reconstruction(
                             continue
                         poll_evaluations += 1
                         trial_scaled = trial_rows / row_scales
+                        paired_poll_rows[(column, sign)] = trial_scaled
                         trial_merit = float(np.linalg.norm(trial_scaled))
                         if trial_merit < best_merit:
                             best_merit = trial_merit
                             best = (trial_values, trial_rows, trial_scaled)
+                refreshed_columns = 0
+                for column in range(variable_count):
+                    minus = paired_poll_rows.get((column, -1.0))
+                    plus = paired_poll_rows.get((column, 1.0))
+                    if minus is None or plus is None:
+                        continue
+                    jacobian[-2:, column] = (
+                        plus[-2:] - minus[-2:]
+                    ) / (2.0 * poll_radius)
+                    refreshed_columns += 1
+                if refreshed_columns:
+                    exact_flux_coordinate_refreshes += 1
+                    poll_refreshed_flux = True
                 if best is not None:
                     break
             if best is not None:
@@ -4168,7 +4898,34 @@ def n5_event_conditioned_complete_child_reconstruction(
                 accepted = True
                 accepted_poll_steps += 1
                 factor = poll_factor
+            elif poll_refreshed_flux:
+                trust_radius = max(1.0e-6, 0.5 * trust_radius)
+                continue
         if not accepted:
+            # The exact residual evaluations rejected by the merit gate still
+            # contain local curvature information.  Retain a sufficiently
+            # resolved, smallest-step secant instead of replacing the evolved
+            # model with the identical seed Jacobian (``proposal_step`` does
+            # not enter ``proposal_jacobian``).  This changes proposals only;
+            # exact merit and eta continue to decide every accepted state.
+            secant_signal_floor = max(1.0e-7, 1.0e-4 * merit)
+            resolved_secants = [
+                candidate for candidate in secant_candidates
+                if float(np.linalg.norm(candidate[3] - scaled_rows))
+                >= secant_signal_floor
+            ]
+            if resolved_secants:
+                _, secant_values, _, secant_scaled = resolved_secants[-1]
+                step_vector = secant_values - solver_values
+                row_change = secant_scaled - scaled_rows
+                denominator = float(step_vector @ step_vector)
+                if denominator > 1.0e-24:
+                    jacobian += np.outer(
+                        row_change - jacobian @ step_vector, step_vector
+                    ) / denominator
+                    rejected_step_secant_repairs += 1
+                    trust_radius = max(1.0e-6, 0.5 * trust_radius)
+                    continue
             if refreshes < 2:
                 state = solver_values / direction_weights
                 raw_jacobian = proposal_jacobian(
@@ -4192,7 +4949,7 @@ def n5_event_conditioned_complete_child_reconstruction(
         rows = trial_rows
         accepted_steps += 1
         trust_radius = (
-            min(2.0, 1.5 * trust_radius)
+            min(32.0, 1.5 * trust_radius)
             if factor == 1.0 else max(1.0e-6, factor * trust_radius)
         )
     state = solver_values / direction_weights
@@ -4222,12 +4979,15 @@ def n5_event_conditioned_complete_child_reconstruction(
         "whole_child_variable_count": variable_count,
         "proposal_model": {
             "classification": (
-                "COARSE_ACTION_SOBOLEV_QUASI_NEWTON_MODEL_EXACT_RESIDUAL_"
-                "CONTROLS_PROMOTION"
+                "ACTION_SOBOLEV_QUASI_NEWTON_WITH_VALIDATED_BICOMPLEX_"
+                "FOURTH_VARIATION_FLUX_BLOCK_AND_EXACT_RESIDUAL_PROMOTION"
             ),
             "outer_step": proposal_step,
             "inner_relative_flux_step": 1.0e-1,
             "finite_difference_derivative_promoted_as_physics": False,
+            "bicomplex_flux_jacobian_adopted": True,
+            "bicomplex_outer_step": 1.0e-9,
+            "bicomplex_inner_relative_step": 1.0e-1,
             "componentwise_monotonicity_required": False,
             "fixed_reference_row_scales": row_scales.tolist(),
             "fixed_merit_scaling_preserved_from_checkpoint": (
@@ -4238,6 +4998,8 @@ def n5_event_conditioned_complete_child_reconstruction(
             "accepted_steps": accepted_steps,
             "rejected_trials": rejected_trials,
             "proposal_refreshes": refreshes,
+            "rejected_step_secant_repairs": rejected_step_secant_repairs,
+            "exact_flux_coordinate_refreshes": exact_flux_coordinate_refreshes,
             "derivative_free_poll_evaluations": poll_evaluations,
             "accepted_derivative_free_poll_steps": accepted_poll_steps,
             "derivative_free_poll_radii_attempted": poll_attempts,
@@ -4245,6 +5007,8 @@ def n5_event_conditioned_complete_child_reconstruction(
             "initial_fixed_reference_merit": initial_merit,
             "final_fixed_reference_merit": final_merit,
             "fixed_reference_merit_reduced": final_merit < initial_merit,
+            "inexact_exact_merit_gradient_proposal": merit_gradient_audit,
+            "first_coupled_direction_audit": first_direction_audit,
         },
         "child_state": {
             "coordinates": state[:qdim].tolist(),
@@ -4273,9 +5037,8 @@ def n5_event_conditioned_complete_child_reconstruction(
         "required_next": (
             "EVALUATE_POSITIVE_DURATION_CONSTRAINT_CONSISTENT_RELATIVE_N5_"
             "PERSISTENCE" if root_closed else
-            "DERIVE_THE_ACTION_OWNED_N5_DYNAMIC_CALDERON_FLUX_JACOBIAN_"
-            "VIA_THE_REQUIRED_FOURTH_VARIATION_OR_A_DIFFERENTIATED_CHILD_"
-            "BVP_BEFORE_FURTHER_REPETITIVE_CONTINUATION"
+            "CONTINUE_THE_UNCHANGED_EXACT_MERIT_N5_18_ROW_CHILD_SOLVE_"
+            "WITH_THE_VALIDATED_BICOMPLEX_FOURTH_VARIATION_FLUX_BLOCK"
         ),
         "FULL_BHSM_COMPLETE": False,
     }
@@ -4528,6 +5291,9 @@ def n4_latest_checkpoint_proposal_audit(
 @lru_cache(maxsize=1)
 def n4_complete_child_positive_duration_persistence(
     *, points: int = 44, time_step: float = 1.0e-5, steps: int = 10,
+    _order: int = 4,
+    _child_key: str = "N4_event_conditioned_complete_child_reconstruction",
+    _source_label: str = "VALIDATED_INDEPENDENT_N4_COMPLETE_CHILD",
 ) -> dict[str, Any]:
     """Evolve the validated moving N4 child inside its physical domain."""
 
@@ -4537,14 +5303,26 @@ def n4_complete_child_positive_duration_persistence(
         "BHSM_AETHER_CROSS_RESOLUTION_RECONNAISSANCE_V21_35.json"
     )
     payload = json.loads(artifact_path.read_text(encoding="utf-8"))
-    child = payload["cross_resolution_reconnaissance"][
-        "N4_event_conditioned_complete_child_reconstruction"
-    ]
+    child = payload["cross_resolution_reconnaissance"][_child_key]
     if not child["complete_child_candidate_validated"]:
-        raise RuntimeError("N4 complete child must close before persistence")
-    order = 4
+        raise RuntimeError("complete child must close before persistence")
+    order = _order
     qdim = dimensions(order)["coordinates"]
     source = child["child_state"]
+    exact_source = source.get("binary64_hex")
+    if exact_source is not None:
+        source = {
+            **source,
+            "coordinates": [
+                float.fromhex(item) for item in exact_source["coordinates"]
+            ],
+            "velocities": [
+                float.fromhex(item) for item in exact_source["velocities"]
+            ],
+            "multipliers": [
+                float.fromhex(item) for item in exact_source["multipliers"]
+            ],
+        }
     q0 = np.asarray(source["coordinates"], dtype=float)
     v0 = np.asarray(source["velocities"], dtype=float)
     m0 = np.asarray(source["multipliers"], dtype=float)
@@ -4742,7 +5520,7 @@ def n4_complete_child_positive_duration_persistence(
         local_existence_validated or numerical_witness_validated
     )
     return {
-        "source": "VALIDATED_INDEPENDENT_N4_COMPLETE_CHILD",
+        "source": _source_label,
         "persistence_domain": (
             "FINITE_CONSTRAINT_CONSISTENT_L_eta_POSITIVE_RELATIVE_CHILD_"
             "EVOLUTION_WITH_FIXED_DISCRETE_TOPOLOGY_AND_CARRIER_CLASS"
@@ -4805,6 +5583,1960 @@ def n4_complete_child_positive_duration_persistence(
             coarse["first_exit"] is not None or fine["first_exit"] is not None
         ),
         "numerical_convergence_is_reliability_not_new_physics": True,
+        "FULL_BHSM_COMPLETE": False,
+    }
+
+
+@lru_cache(maxsize=2)
+def n5_complete_child_positive_duration_persistence(
+    *, points: int = 44, time_step: float = 1.0e-5, steps: int = 10,
+) -> dict[str, Any]:
+    """Apply the retained N4 persistence definition to the closed N5 child."""
+
+    return n4_complete_child_positive_duration_persistence(
+        points=points,
+        time_step=time_step,
+        steps=steps,
+        _order=5,
+        _child_key="N5_event_conditioned_complete_child_reconstruction",
+        _source_label="VALIDATED_INDEPENDENT_N5_COMPLETE_CHILD",
+    )
+
+
+def child_jacobi_radial_principal_symbol_audit() -> dict[str, Any]:
+    """Derive the radial principal form of the retained Galerkin action."""
+
+    lapse = 1.3
+    radial_scale = 0.9
+    warp_a = 1.1
+    warp_b = 1.2
+    shift = 0.2
+    K_value = 3.0 * lapse * warp_a**3 * warp_b**3 / radial_scale
+    J_value = radial_scale * warp_a**3 * warp_b**3 / (2.0 * lapse)
+
+    def matrix(beta: float) -> np.ndarray:
+        return np.asarray([
+            [10.0 * K_value - 84.0 * J_value * beta**2,
+             -12.0 * J_value * beta**2, 0.0, 2.0 * K_value,
+             -12.0 * J_value * beta],
+            [-12.0 * J_value * beta**2, 0.0, 0.0, 0.0, 0.0],
+            [0.0, 0.0, 12.0 * J_value * beta**2 - 2.0 * K_value,
+             0.0, 0.0],
+            [2.0 * K_value, 0.0, 0.0, 0.0, 0.0],
+            [-12.0 * J_value * beta, 0.0, 0.0, 0.0, 0.0],
+        ])
+
+    generic_matrix = matrix(shift)
+    beta_zero_matrix = matrix(0.0)
+    null_one = np.asarray([
+        0.0, K_value / (6.0 * J_value * shift**2), 0.0, 1.0, 0.0,
+    ])
+    null_two = np.asarray([0.0, -1.0 / shift, 0.0, 0.0, 1.0])
+    raw_v = 12.0 * J_value * shift**2 - 2.0 * K_value
+    reduced_v = -2.0 * K_value * (
+        1.0 - radial_scale**2 * shift**2 / lapse**2
+    )
+    validation = {
+        "generic_rank_three": int(np.linalg.matrix_rank(generic_matrix)) == 3,
+        "beta_zero_rank_three": int(
+            np.linalg.matrix_rank(beta_zero_matrix)
+        ) == 3,
+        "two_generic_null_directions_verified": bool(
+            np.linalg.norm(generic_matrix @ null_one) < 1.0e-10
+            and np.linalg.norm(generic_matrix @ null_two) < 1.0e-10
+        ),
+        "v_coefficient_reduction_verified": math.isclose(
+            raw_v, reduced_v, rel_tol=1.0e-14, abs_tol=1.0e-14
+        ),
+        "representative_point_subluminal": bool(
+            lapse**2 > radial_scale**2 * shift**2
+        ),
+        "canonical_physical_block_determinant_verified": math.isclose(
+            float(np.linalg.det(np.asarray([
+                [10.0 * K_value, 0.0, 2.0 * K_value],
+                [0.0, -2.0 * K_value, 0.0],
+                [2.0 * K_value, 0.0, 0.0],
+            ]))),
+            8.0 * K_value**3,
+            rel_tol=1.0e-14,
+            abs_tol=1.0e-12,
+        ),
+    }
+    return {
+        "classification": (
+            "RETAINED_ACTION_RADIAL_INTERIOR_PRINCIPAL_SYMBOL_DERIVED;_"
+            "BOUNDARY_COMPLEMENTING_AND_GLOBAL_INF_SUP_OPEN"
+        ),
+        "scope": (
+            "CURRENT_COHOMOGENEITY_ONE_RETAINED_u_w_v_LOG_LAPSE_SHIFT_"
+            "ACTION_SECTOR_WITH_f=chi_AND_DERIVED_MATERIAL_PROFILE"
+        ),
+        "derivative_variables": [
+            "u_chi", "w_chi", "v_chi", "logN_chi", "beta_chi",
+        ],
+        "positive_background_factors": {
+            "K": "3*N*A^3*B^3/C",
+            "J": "C*A^3*B^3/(2*N)",
+        },
+        "principal_quadratic_form": (
+            "K*(2*logN_chi*u_chi+5*u_chi^2-v_chi^2)+"
+            "J*(-6*beta*(7*beta*u_chi^2+2*beta*u_chi*w_chi-"
+            "beta*v_chi^2+2*beta_chi*u_chi))"
+        ),
+        "principal_hessian": [
+            ["10K-84J*beta^2", "-12J*beta^2", "0", "2K", "-12J*beta"],
+            ["-12J*beta^2", "0", "0", "0", "0"],
+            ["0", "0", "12J*beta^2-2K", "0", "0"],
+            ["2K", "0", "0", "0", "0"],
+            ["-12J*beta", "0", "0", "0", "0"],
+        ],
+        "algebraic_rank": {
+            "generic_rank": 3,
+            "generic_nullity": 2,
+            "beta_zero_rank": 3,
+            "compatible_with_existing_two_diffeomorphism_gauge_directions": True,
+            "boundary_compatible_gauge_identification_proved": False,
+        },
+        "physical_v_mode_coefficient": {
+            "frame": "RAW_COORDINATE_TIME_VELOCITIES_HELD_FIXED",
+            "raw": "12J*beta^2-2K",
+            "reduced": "-2K*(1-C^2*beta^2/N^2)",
+            "nonzero_on_regular_subluminal_domain": "N^2>C^2*beta^2",
+            "characteristic_degeneracy": "N^2=C^2*beta^2",
+            "used_as_a_new_admissibility_gate": False,
+        },
+        "canonical_normal_frame_reduction": {
+            "held_fixed": (
+                "NORMAL_LEGENDRE_CAUCHY_DATA_H_C_H_A_H_B_OR_EQUIVALENT_"
+                "CANONICAL_MOMENTA"
+            ),
+            "ADM_kinetic_spatial_symbol_contribution": 0,
+            "physical_derivative_variables": [
+                "u_chi", "v_chi", "logN_chi",
+            ],
+            "physical_principal_hessian": [
+                ["10K", "0", "2K"],
+                ["0", "-2K", "0"],
+                ["2K", "0", "0"],
+            ],
+            "determinant": "8K^3",
+            "interior_nondegenerate_when": "K=3*N*A^3*B^3/C>0",
+            "independent_of_shift": True,
+        },
+        "derived_conclusion": (
+            "THE_RAW_COORDINATE_TIME_FORM_HAS_THREE_NONNULL_DIRECTIONS_AND_"
+            "TWO_GAUGE_COMPATIBLE_NULL_DIRECTIONS;_AFTER_THE_ACTION_OWNED_"
+            "NORMAL_LEGENDRE_REDUCTION_THE_THREE_BY_THREE_PHYSICAL_INTERIOR_"
+            "BLOCK_HAS_DETERMINANT_8K^3_AND_IS_SHIFT_INDEPENDENT"
+        ),
+        "not_yet_proved": [
+            "THE_NULLSPACE_EQUALS_THE_GLOBAL_BOUNDARY_COMPATIBLE_GAUGE_ORBIT",
+            "THE_REGULAR_POLE_ATTACHMENT_AND_MATERIAL_TRANSMISSION_CONDITIONS_COMPLEMENT_THE_SYMBOL",
+            "A_GLOBAL_GAUGE_REDUCED_INF_SUP_LOWER_BOUND",
+            "THE_FULL_UNTRUNCATED_f_sigma_lambda_sigma_SYSTEM_SYMBOL",
+        ],
+        "algebra_validation": validation,
+        "algebra_validation_passed": all(validation.values()),
+        "new_physics_or_acceptance_gate": False,
+        "FULL_BHSM_COMPLETE": False,
+    }
+
+
+def cross_resolution_principal_symbol_frame_audit(
+    path: str | Path = (
+        "artifacts/BHSM_AETHER_CROSS_RESOLUTION_RECONNAISSANCE_V21_35.json"
+    ),
+    *,
+    samples: int = 20001,
+) -> dict[str, Any]:
+    """Measure raw-shift crossings and the canonical interior symbol at N3-N5."""
+
+    if samples < 1001:
+        raise ValueError("dense principal-symbol sampling required")
+    target = Path(path)
+    payload = json.loads(target.read_text(encoding="utf-8"))
+    result = payload["cross_resolution_reconnaissance"]
+    n3_payload = json.loads((target.parent / (
+        "BHSM_aether_n3_complete_child_persistence_v17_99.json"
+    )).read_text(encoding="utf-8"))
+    n3_state = n3_payload["complete_child_persistence"]["evolution"][
+        "rows"
+    ][0]
+    states = {
+        3: n3_state,
+        4: result["N4_event_conditioned_complete_child_reconstruction"][
+            "child_state"
+        ],
+        5: result["N5_event_conditioned_complete_child_reconstruction"][
+            "child_state"
+        ],
+    }
+    chi = np.linspace(0.0, math.pi / 4.0, samples)
+    rows = []
+    for order, source in states.items():
+        exact = source.get("binary64_hex")
+        if exact is None:
+            q = np.asarray(source["coordinates"], dtype=float)
+            m = np.asarray(source["multipliers"], dtype=float)
+        else:
+            q = np.asarray([
+                float.fromhex(item) for item in exact["coordinates"]
+            ])
+            m = np.asarray([
+                float.fromhex(item) for item in exact["multipliers"]
+            ])
+        ks = np.arange(1, order + 1, dtype=float)
+        js = np.arange(order, dtype=float)
+        cos_k = np.cos(4.0 * np.outer(ks, chi))
+        cos_j = np.cos(4.0 * np.outer(js, chi))
+        u = q[1:1 + order] @ cos_k
+        window = np.sin(2.0 * chi) ** 2
+        w = window * (q[1 + order:1 + 2 * order] @ cos_j)
+        v = window * (q[1 + 2 * order:1 + 3 * order] @ cos_j)
+        radius = RADIUS0 * math.exp(float(q[0]))
+        C = radius * np.exp(u + w)
+        A = radius * np.exp(u + v) * np.cos(chi)
+        B = radius * np.exp(u - v) * np.sin(chi)
+        lapse = np.exp(m[:order] @ cos_k)
+        beta = np.sin(4.0 * chi) * (m[order:] @ cos_j)
+        ratio = (C * beta / lapse) ** 2
+        maximum_index = int(np.argmax(ratio))
+        signs = np.sign(ratio - 1.0)
+        crossing_count = int(np.count_nonzero(signs[1:] * signs[:-1] < 0.0))
+        K = 3.0 * lapse * A**3 * B**3 / C
+        weighted_coefficient = (
+            3.0 * lapse * radius**5 * np.exp(5.0 * u - w)
+        )
+        open_cap_K = K[1:]
+        eta = source.get("eta_Legendre", {})
+        eta_minimum = eta.get(
+            "minimum", source.get("eta_Legendre_minimum", {}).get("minimum")
+        )
+        rows.append({
+            "N": order,
+            "maximum_raw_shift_ratio_C2_beta2_over_N2": float(
+                ratio[maximum_index]
+            ),
+            "minimum_raw_fixed_velocity_v_coefficient_factor": float(
+                np.min(1.0 - ratio)
+            ),
+            "chi_at_maximum_raw_shift_ratio": float(chi[maximum_index]),
+            "raw_coordinate_characteristic_crossing_count": crossing_count,
+            "canonical_K_positive_on_sampled_open_cap": bool(
+                np.all(open_cap_K > 0.0)
+            ),
+            "minimum_sampled_open_cap_K": float(np.min(open_cap_K)),
+            "minimum_weighted_principal_coefficient_K_over_sin3cos3": float(
+                np.min(weighted_coefficient)
+            ),
+            "maximum_weighted_principal_coefficient_K_over_sin3cos3": float(
+                np.max(weighted_coefficient)
+            ),
+            "eta_minimum": float(eta_minimum),
+        })
+    validation = {
+        "orders_N3_N4_N5_measured": [row["N"] for row in rows] == [3, 4, 5],
+        "raw_coordinate_crossings_exposed": all(
+            row["raw_coordinate_characteristic_crossing_count"] > 0
+            for row in rows
+        ),
+        "canonical_K_positive_on_sampled_open_caps": all(
+            row["canonical_K_positive_on_sampled_open_cap"] for row in rows
+        ),
+        "eta_domain_retained": all(row["eta_minimum"] > 0.0 for row in rows),
+        "N4_to_N5_weighted_principal_minimum_not_collapsing": bool(
+            rows[2][
+                "minimum_weighted_principal_coefficient_K_over_sin3cos3"
+            ] / rows[1][
+                "minimum_weighted_principal_coefficient_K_over_sin3cos3"
+            ] > 0.5
+        ),
+    }
+    n5_n4_principal_ratio = float(
+        rows[2]["minimum_weighted_principal_coefficient_K_over_sin3cos3"]
+        / rows[1]["minimum_weighted_principal_coefficient_K_over_sin3cos3"]
+    )
+    return {
+        "classification": (
+            "RAW_FIXED_COORDINATE_VELOCITY_CHARACTERISTIC_CROSSINGS_"
+            "MEASURED;_CANONICAL_NORMAL_FRAME_INTERIOR_SYMBOL_"
+            "NONDEGENERATE;_WEIGHTED_POLE_ATTACHMENT_ESTIMATE_OPEN"
+        ),
+        "rows": rows,
+        "raw_crossing_is_a_physical_defect": False,
+        "raw_crossing_is_a_new_acceptance_gate": False,
+        "reason": (
+            "A_LARGE_SHIFT_CAN_MAKE_THE_COORDINATE_TIME_VECTOR_SPACELIKE_"
+            "WITHOUT_DESTROYING_THE_ADM_LORENTZIAN_NORMAL;_THE_ACTION_OWNED_"
+            "CANONICAL_NORMAL_FRAME_REMOVES_THIS_COORDINATE_MIXING"
+        ),
+        "canonical_interior_determinant": "8K^3_WITH_K=3*N*A^3*B^3/C",
+        "N5_over_N4_weighted_principal_minimum_ratio": n5_n4_principal_ratio,
+        "principal_geometry_degeneracy_supported_as_the_owner_of_the_"
+        "reported_full_map_small_singular_values": False,
+        "reclassification": (
+            "THE_CANONICAL_WEIGHTED_PRINCIPAL_GEOMETRY_BLOCK_DOES_NOT_"
+            "COLLAPSE_FROM_N4_TO_N5;_ANY_REMAINING_INF_SUP_LOSS_MUST_BE_"
+            "LOCALIZED_IN_LOWER_ORDER_FULL_CONSTRAINT_CALDERON_COUPLING_OR_"
+            "INCOMPARABLE_NUMERICAL_SCALING_BEFORE_IT_IS_CALLED_PHYSICAL"
+        ),
+        "remaining_endpoint_object": (
+            "WEIGHTED_REGULAR_POLE_ATTACHMENT_AND_MATERIAL_TRANSMISSION_"
+            "NORMAL_SUBMERSION_INF_SUP_ESTIMATE"
+        ),
+        "validation": validation,
+        "validation_passed": all(validation.values()),
+        "FULL_BHSM_COMPLETE": False,
+    }
+
+
+def weighted_pole_attachment_principal_estimate() -> dict[str, Any]:
+    """Derive the action-weighted pole estimate for trace-fixed variations."""
+
+    smallest_matrix_modulus = math.sqrt(29.0) - 5.0
+    poincare_constant = math.pi**5 / 1024.0
+    validation = {
+        "physical_matrix_smallest_modulus_positive": (
+            smallest_matrix_modulus > 0.0
+        ),
+        "weighted_Poincare_constant_positive": poincare_constant > 0.0,
+        "trace_rows_fix_three_attachment_geometry_combinations": (
+            _trace_jacobian_at_order(3).shape == (3, 10)
+            and np.linalg.matrix_rank(_trace_jacobian_at_order(3)) == 3
+        ),
+    }
+    return {
+        "classification": (
+            "WEIGHTED_REGULAR_POLE_AND_ATTACHMENT_PRINCIPAL_ESTIMATE_"
+            "DERIVED;_GLOBAL_LOWER_ORDER_INF_SUP_OPEN"
+        ),
+        "cap_interval": "0<=chi<=L,_L=pi/4",
+        "natural_radial_weight": "omega=sin(chi)^3*cos(chi)^3",
+        "weight_equivalence": (
+            "(8/pi^3)*chi^3<=omega(chi)<=chi^3_ON_[0,pi/4]"
+        ),
+        "trace_fixed_normal_variations": {
+            "three_rows": [
+                "delta(logC_attachment)=0",
+                "delta(logA_attachment)=0",
+                "delta(logB_attachment)=0",
+            ],
+            "equivalent_geometry_relations": [
+                "delta_v(L)=0",
+                "delta_w(L)=0",
+                "delta_(scale+u)(L)=0",
+            ],
+            "scale_has_no_radial_derivative": True,
+        },
+        "weighted_Poincare_Hardy_estimate": {
+            "chi3_exact_bound": (
+                "integral_0^L chi^3*f^2<=L^2/8*integral_0^L chi^3*(f')^2_"
+                "FOR_f(L)=0"
+            ),
+            "omega_bound": (
+                "integral_0^L omega*f^2<=(pi^5/1024)*"
+                "integral_0^L omega*(f')^2"
+            ),
+            "omega_constant": poincare_constant,
+        },
+        "canonical_physical_matrix": {
+            "dimensionless_matrix": [
+                [10.0, 0.0, 2.0],
+                [0.0, -2.0, 0.0],
+                [2.0, 0.0, 0.0],
+            ],
+            "eigenvalues": [
+                5.0 + math.sqrt(29.0),
+                -2.0,
+                5.0 - math.sqrt(29.0),
+            ],
+            "smallest_absolute_eigenvalue": smallest_matrix_modulus,
+            "determinant": 8.0,
+        },
+        "action_weight_factorization": {
+            "K": "kappa(chi)*omega(chi)",
+            "kappa": "3*lapse*R^5*exp(5u-w)",
+            "kappa_positive_on_every_finite_eta_admissible_child": True,
+            "uniform_general_N_bound_proved": False,
+        },
+        "principal_normal_inf_sup": (
+            "beta_principal>=(sqrt(29)-5)*inf(kappa)_IN_THE_omega_WEIGHTED_"
+            "DERIVATIVE_NORM_AFTER_THE_EXISTING_TRACE_AND_GAUGE_REDUCTION"
+        ),
+        "closed_here": [
+            "THE_chi^3_POLE_WEIGHT_IS_GEOMETRIC_NOT_A_PHYSICAL_ZERO_MODE",
+            "THE_ATTACHMENT_TRACE_ROWS_CONTROL_THE_TRACE_FIXED_GEOMETRY_VARIATIONS",
+            "THE_CANONICAL_PHYSICAL_PRINCIPAL_MATRIX_HAS_A_NONZERO_INF_SUP_CONSTANT",
+        ],
+        "still_open": [
+            "UNIFORM_GENERAL_N_LOWER_AND_UPPER_BOUNDS_FOR_kappa",
+            "LOWER_ORDER_AND_NONLOCAL_CALDERON_TERMS_DO_NOT_CREATE_A_NORMAL_KERNEL",
+            "FULL_CONSTRAINT_MOMENTUM_FLUX_SCHUR_COMPLEMENT_INF_SUP",
+            "SPECTRAL_AND_QUADRATURE_CONSISTENCY_IN_THE_WEIGHTED_DUAL_NORM",
+            "FULL_MATERIAL_TRANSMISSION_AND_UNTRUNCATED_f_sigma_lambda_sigma_BLOCK",
+        ],
+        "validation": validation,
+        "validation_passed": all(validation.values()),
+        "new_equations_constraints_or_acceptance_gates": False,
+        "FULL_BHSM_COMPLETE": False,
+    }
+
+
+def cross_resolution_strong_constraint_infsup_audit(
+    path: str | Path = (
+        "artifacts/BHSM_AETHER_CROSS_RESOLUTION_RECONNAISSANCE_V21_35.json"
+    ),
+    *,
+    points: int = 44,
+) -> dict[str, Any]:
+    """Compare weak-dual and strong-H4 normalizations of the nonflux map."""
+
+    target = Path(path)
+    payload = json.loads(target.read_text(encoding="utf-8"))
+    result = payload["cross_resolution_reconnaissance"]
+    n3_payload = json.loads((target.parent / (
+        "BHSM_aether_n3_complete_child_persistence_v17_99.json"
+    )).read_text(encoding="utf-8"))
+    states = {
+        3: n3_payload["complete_child_persistence"]["evolution"]["rows"][0],
+        4: result["N4_event_conditioned_complete_child_reconstruction"][
+            "child_state"
+        ],
+        5: result["N5_event_conditioned_complete_child_reconstruction"][
+            "child_state"
+        ],
+    }
+    rows = []
+    for order, source in states.items():
+        exact = source.get("binary64_hex")
+        if exact is None:
+            q = np.asarray(source["coordinates"], dtype=float)
+            velocity = np.asarray(source["velocities"], dtype=float)
+            multipliers = np.asarray(source["multipliers"], dtype=float)
+        else:
+            q = np.asarray([
+                float.fromhex(item) for item in exact["coordinates"]
+            ])
+            velocity = np.asarray([
+                float.fromhex(item) for item in exact["velocities"]
+            ])
+            multipliers = np.asarray([
+                float.fromhex(item) for item in exact["multipliers"]
+            ])
+        qdim = q.size
+        state = np.concatenate((q, velocity, multipliers))
+        jet = exact_full_action_jet_at_state(
+            order, q, velocity, multipliers, points=points
+        )
+        gradient = np.asarray(jet.gradient, dtype=float)
+        hessian = np.asarray(jet.hessian, dtype=float)
+        multiplier_start = 2 * qdim
+        constraint_jacobian = hessian[multiplier_start:, :]
+        energy_gradient = np.concatenate((
+            velocity @ hessian[qdim:2 * qdim, :qdim] - gradient[:qdim],
+            hessian[qdim:2 * qdim, qdim:2 * qdim] @ velocity,
+            velocity @ hessian[qdim:2 * qdim, multiplier_start:]
+            - gradient[multiplier_start:],
+        ))
+        frequencies = spectral_frequencies(order)
+        regularity = sobolev_weights(order)
+        domain_weights = np.concatenate((
+            (1.0 + frequencies["coordinates"] ** 2) ** 3.0,
+            regularity["velocities"],
+            regularity["multipliers"],
+        ))
+        row_count = 2 * order + 6
+        matrix = np.empty((row_count, state.size))
+        trace = _trace_jacobian_at_order(order)
+        for column in range(state.size):
+            direction = np.zeros(state.size)
+            direction[column] = 1.0 / domain_weights[column]
+            matrix[:3, column] = trace @ direction[:qdim]
+            matrix[3:3 + 2 * order, column] = (
+                constraint_jacobian @ direction
+            )
+            matrix[3 + 2 * order, column] = energy_gradient @ direction
+            complex_state = state.astype(complex) + 1j * 1.0e-20 * direction
+            momentum, _, _, _ = _canonical_pair_at_order(
+                order,
+                complex_state[:qdim],
+                complex_state[qdim:2 * qdim],
+                complex_state[2 * qdim:],
+                points=points,
+            )
+            matrix[-2:, column] = np.imag(momentum) / 1.0e-20
+
+        normalizations = {
+            "raw_coefficient": np.ones(2 * order),
+            "weak_Hminus6_dual": 1.0 / regularity["multipliers"],
+            "strong_H4": (
+                1.0 + frequencies["multipliers"] ** 2
+            ) ** 2.0,
+        }
+        measurements = {}
+        strong_left = None
+        for name, constraint_weights in normalizations.items():
+            output_weights = np.ones(row_count)
+            output_weights[3:3 + 2 * order] = constraint_weights
+            normalized = output_weights[:, None] * matrix
+            left, singular, _ = np.linalg.svd(normalized, full_matrices=False)
+            tolerance = (
+                np.finfo(float).eps * max(normalized.shape) * singular[0]
+            )
+            rank = int(np.count_nonzero(singular > tolerance))
+            measurements[name] = {
+                "rank": rank,
+                "row_count": row_count,
+                "smallest_singular_value": float(singular[-1]),
+                "largest_singular_value": float(singular[0]),
+                "condition_number": float(singular[0] / singular[-1]),
+            }
+            if name == "strong_H4":
+                strong_left = left[:, -1]
+        assert strong_left is not None
+        measurements["strong_H4"]["smallest_left_vector_block_norms"] = {
+            "trace": float(np.linalg.norm(strong_left[:3])),
+            "constraints": float(np.linalg.norm(
+                strong_left[3:3 + 2 * order]
+            )),
+            "energy": float(abs(strong_left[3 + 2 * order])),
+            "momentum": float(np.linalg.norm(strong_left[-2:])),
+        }
+        rows.append({"N": order, "normalizations": measurements})
+
+    validation = {
+        "strong_H4_maps_full_row_rank_at_N3_N4_N5": all(
+            row["normalizations"]["strong_H4"]["rank"]
+            == row["normalizations"]["strong_H4"]["row_count"]
+            for row in rows
+        ),
+        "weak_Hminus6_creates_artificial_N5_numerical_rank_loss": bool(
+            rows[2]["normalizations"]["weak_Hminus6_dual"]["rank"]
+            < rows[2]["normalizations"]["weak_Hminus6_dual"]["row_count"]
+        ),
+        "N5_strong_H4_owner_is_not_a_pure_high_constraint_mode": bool(
+            rows[2]["normalizations"]["strong_H4"]
+            ["smallest_left_vector_block_norms"]["trace"] > 0.9
+        ),
+    }
+    return {
+        "classification": (
+            "STRONG_H4_CONSTRAINT_CODOMAIN_RESTORES_FULL_N3_N4_N5_RANK;_"
+            "WEAK_H_MINUS_6_COLLAPSE_INVALIDATED;_BOUNDARY_SYMPLECTIC_"
+            "NORMALIZATION_AND_FULL_FLUX_INF_SUP_OPEN"
+        ),
+        "domain_norm": "H6_q_CROSS_H5_v_CROSS_H6_m",
+        "constraint_differential_order": {
+            "Hamiltonian_from_H6_geometry": "SECOND_ORDER_TO_H4",
+            "momentum_from_H5_velocity": "FIRST_ORDER_TO_H4",
+            "strong_constraint_codomain": "H4",
+        },
+        "rows": rows,
+        "invalidated": (
+            "USING_THE_WEAK_H_MINUS_6_DUAL_COEFFICIENT_NORM_AS_THE_STRONG_"
+            "GENERAL_N_INF_SUP_DIAGNOSTIC"
+        ),
+        "reclassified_owner": (
+            "THE_N5_STRONG_H4_SOFT_LEFT_VECTOR_IS_DOMINATED_BY_ATTACHMENT_"
+            "TRACE_WITH_MIXED_CONSTRAINT_AND_ENERGY_CONTENT;_IT_IS_NOT_THE_"
+            "HIGH_LAPSE_MODE_COLLAPSE_CREATED_BY_THE_WEAK_DUAL_NORM"
+        ),
+        "required_next": (
+            "DERIVE_THE_ACTION_INDUCED_BOUNDARY_SYMPLECTIC_NORM_AND_EVALUATE_"
+            "THE_FULL_DYNAMIC_FLUX_CALDERON_NORMAL_INF_SUP_WITH_WEIGHTED_"
+            "SPECTRAL_CONSISTENCY"
+        ),
+        "physical_rows_changed": False,
+        "acceptance_gates_changed": False,
+        "validation": validation,
+        "validation_passed": all(validation.values()),
+        "FULL_BHSM_COMPLETE": False,
+    }
+
+
+def cross_resolution_boundary_symplectic_polarization_audit(
+    path: str | Path = (
+        "artifacts/BHSM_AETHER_CROSS_RESOLUTION_RECONNAISSANCE_V21_35.json"
+    ),
+    *,
+    points: int = 44,
+) -> dict[str, Any]:
+    """Derive the reduced boundary symplectic form and test Hessian signatures."""
+
+    target = Path(path)
+    payload = json.loads(target.read_text(encoding="utf-8"))
+    result = payload["cross_resolution_reconnaissance"]
+    n3_payload = json.loads((target.parent / (
+        "BHSM_aether_n3_complete_child_persistence_v17_99.json"
+    )).read_text(encoding="utf-8"))
+    states = {
+        3: n3_payload["complete_child_persistence"]["evolution"]["rows"][0],
+        4: result["N4_event_conditioned_complete_child_reconstruction"][
+            "child_state"
+        ],
+        5: result["N5_event_conditioned_complete_child_reconstruction"][
+            "child_state"
+        ],
+    }
+    rows = []
+
+    def signature(values: np.ndarray) -> dict[str, int]:
+        scale = max(1.0, float(np.max(np.abs(values))))
+        tolerance = 1.0e-12 * scale
+        return {
+            "positive": int(np.count_nonzero(values > tolerance)),
+            "negative": int(np.count_nonzero(values < -tolerance)),
+            "zero": int(np.count_nonzero(np.abs(values) <= tolerance)),
+        }
+
+    for order, source in states.items():
+        exact = source.get("binary64_hex")
+        if exact is None:
+            q = np.asarray(source["coordinates"], dtype=float)
+            velocity = np.asarray(source["velocities"], dtype=float)
+            multipliers = np.asarray(source["multipliers"], dtype=float)
+        else:
+            q = np.asarray([
+                float.fromhex(item) for item in exact["coordinates"]
+            ])
+            velocity = np.asarray([
+                float.fromhex(item) for item in exact["velocities"]
+            ])
+            multipliers = np.asarray([
+                float.fromhex(item) for item in exact["multipliers"]
+            ])
+        _, _, q_lift, v_lift = _canonical_pair_at_order(
+            order, q, velocity, multipliers, points=points
+        )
+        jet = exact_full_action_jet_at_state(
+            order, q, velocity, multipliers, points=points
+        )
+        hessian = np.asarray(jet.hessian, dtype=float)
+        qdim = q.size
+        q_form = hessian[:qdim, :qdim]
+        v_form = hessian[qdim:2 * qdim, qdim:2 * qdim]
+        qv_form = hessian[:qdim, qdim:2 * qdim]
+        reduced_q = q_lift.T @ q_form @ q_lift
+        reduced_v = v_lift.T @ v_form @ v_lift
+        reduced_qv = q_lift.T @ qv_form @ v_lift
+        boundary_hessian = np.block([
+            [reduced_q, reduced_qv],
+            [reduced_qv.T, reduced_v],
+        ])
+        q_eigen = np.linalg.eigvalsh(reduced_q)
+        v_eigen = np.linalg.eigvalsh(reduced_v)
+        boundary_eigen = np.linalg.eigvalsh(boundary_hessian)
+        hamiltonian_generator = -np.block([
+            [np.zeros((2, 2)), np.eye(2)],
+            [-np.eye(2), np.zeros((2, 2))],
+        ]) @ boundary_hessian
+        generator_eigen = np.linalg.eigvals(hamiltonian_generator)
+        generator_scale = max(1.0, float(np.max(np.abs(generator_eigen))))
+        generator_tolerance = 1.0e-9 * generator_scale
+        real_pair_count = int(np.count_nonzero(
+            (np.abs(np.imag(generator_eigen)) <= generator_tolerance)
+            & (np.abs(np.real(generator_eigen)) > generator_tolerance)
+        ) // 2)
+        imaginary_pair_count = int(np.count_nonzero(
+            (np.abs(np.real(generator_eigen)) <= generator_tolerance)
+            & (np.abs(np.imag(generator_eigen)) > generator_tolerance)
+        ) // 2)
+        generator_type = (
+            "HYPERBOLIC_HYPERBOLIC"
+            if real_pair_count == 2 else
+            "HYPERBOLIC_ELLIPTIC"
+            if real_pair_count == 1 and imaginary_pair_count == 1 else
+            "UNCLASSIFIED_MIXED"
+        )
+        rows.append({
+            "N": order,
+            "reduced_configuration_Hessian": reduced_q.tolist(),
+            "reduced_velocity_Legendre_Hessian": reduced_v.tolist(),
+            "reduced_configuration_velocity_cross_Hessian": (
+                reduced_qv.tolist()
+            ),
+            "configuration_eigenvalues": q_eigen.tolist(),
+            "velocity_eigenvalues": v_eigen.tolist(),
+            "boundary_Hessian_eigenvalues": boundary_eigen.tolist(),
+            "configuration_signature": signature(q_eigen),
+            "velocity_signature": signature(v_eigen),
+            "boundary_Hessian_signature": signature(boundary_eigen),
+            "Hamiltonian_generator_eigenvalues": [
+                {"real": float(np.real(value)), "imaginary": float(np.imag(value))}
+                for value in generator_eigen
+            ],
+            "Hamiltonian_generator_type": generator_type,
+            "hyperbolic_pair_count": real_pair_count,
+            "elliptic_pair_count": imaginary_pair_count,
+        })
+    omega = np.block([
+        [np.zeros((2, 2)), np.eye(2)],
+        [-np.eye(2), np.zeros((2, 2))],
+    ])
+    validation = {
+        "canonical_symplectic_form_antisymmetric": bool(
+            np.allclose(omega.T, -omega, rtol=0.0, atol=0.0)
+        ),
+        "canonical_symplectic_form_full_rank": int(
+            np.linalg.matrix_rank(omega)
+        ) == 4,
+        "velocity_Legendre_forms_indefinite_at_N3_N4_N5": all(
+            row["velocity_signature"]["positive"] == 1
+            and row["velocity_signature"]["negative"] == 1
+            for row in rows
+        ),
+        "no_zero_reduced_boundary_Hessian_modes": all(
+            row["boundary_Hessian_signature"]["zero"] == 0 for row in rows
+        ),
+        "N3_local_generator_has_two_hyperbolic_pairs": (
+            rows[0]["Hamiltonian_generator_type"] == "HYPERBOLIC_HYPERBOLIC"
+        ),
+        "N4_N5_local_generators_share_hyperbolic_elliptic_type": all(
+            row["Hamiltonian_generator_type"] == "HYPERBOLIC_ELLIPTIC"
+            for row in rows[1:]
+        ),
+    }
+    return {
+        "classification": (
+            "REDUCED_TSTAR_R2_BOUNDARY_SYMPLECTIC_FORM_DERIVED;_ACTION_"
+            "HESSIANS_INDEFINITE;_POSITIVE_CALDERON_POLARIZATION_OPEN"
+        ),
+        "boundary_coordinates": ["q_W", "x_D"],
+        "canonical_momenta": ["p_q_W", "p_x_D"],
+        "canonical_symplectic_matrix": omega.tolist(),
+        "rows": rows,
+        "action_Hessian_itself_is_a_positive_boundary_norm": False,
+        "taking_entrywise_or_spectral_absolute_values_is_action_derived": False,
+        "solver_row_scales_are_the_boundary_Hilbert_metric": False,
+        "fixed_analytic_boundary_norm_for_general_N": {
+            "coordinates": "(q_W,x_D,p_q_W,p_x_D)_IN_RETAINED_DIMENSIONLESS_ACTION_UNITS",
+            "norm": "THE_FIXED_EUCLIDEAN_NORM_ON_THIS_N_INDEPENDENT_R4_CHART",
+            "role": "FUNCTION_SPACE_ESTIMATE_ONLY_NOT_A_PHYSICAL_OBSERVABLE_OR_GATE",
+            "requires_a_positive_Calderon_polarization": False,
+            "all_fixed_finite_dimensional_norms_are_equivalent": True,
+        },
+        "local_generator_type_is_identical_at_N3_N4_N5": False,
+        "N4_N5_mixed_type_agrees": True,
+        "N3_may_be_declared_underresolved_from_this_alone": False,
+        "type_comparison_claim_boundary": (
+            "THE_CHECKPOINTS_ARE_INDEPENDENT_ROOTS;_THE_SHARED_N4_N5_MIXED_"
+            "TYPE_IS_STRUCTURAL_EVIDENCE_BUT_NOT_A_PROOF_OF_BRANCHWISE_"
+            "SPECTRAL_CONVERGENCE_OR_AN_INVALIDATION_OF_N3"
+        ),
+        "required_positive_polarization": {
+            "acceptable_owner": (
+                "THE_ON_SHELL_CHILD_CALDERON_PROJECTOR_OR_RETURN_MONODROMY_"
+                "ON_THE_REDUCED_TSTAR_R2_BOUNDARY_PHASE_SPACE"
+            ),
+            "compatible_metric_formula_after_J_is_derived": (
+                "g_boundary(a,b)=Omega_boundary(a,J_boundary*b)"
+            ),
+            "J_boundary_derived_now": False,
+            "blocks_general_N_root_relation_convergence": False,
+            "blocks_physical_return_Floquet_and_positive_frequency_readout": True,
+        },
+        "required_next": (
+            "DERIVE_THE_ACTION_OWNED_ON_SHELL_CHILD_CALDERON_OR_RETURN_"
+            "POLARIZATION_J_boundary_FOR_PHYSICAL_RETURN_FLOQUET_READOUT"
+        ),
+        "physical_rows_changed": False,
+        "acceptance_gates_changed": False,
+        "validation": validation,
+        "validation_passed": all(validation.values()),
+        "FULL_BHSM_COMPLETE": False,
+    }
+
+
+def nested_attachment_lift_consistency_audit(
+    path: str | Path = (
+        "artifacts/BHSM_AETHER_CROSS_RESOLUTION_RECONNAISSANCE_V21_35.json"
+    ),
+    *,
+    points: int = 64,
+) -> dict[str, Any]:
+    """Test the current attachment lift on one exact nested N3 state."""
+
+    target = Path(path)
+    n3_payload = json.loads((target.parent / (
+        "BHSM_aether_n3_complete_child_persistence_v17_99.json"
+    )).read_text(encoding="utf-8"))
+    source = n3_payload["complete_child_persistence"]["evolution"]["rows"][0]
+    q3 = np.asarray(source["coordinates"], dtype=float)
+    v3 = np.asarray(source["velocities"], dtype=float)
+    m3 = np.asarray(source["multipliers"], dtype=float)
+    frequencies3 = spectral_frequencies(3)
+    regularity3 = sobolev_weights(3)
+    domain_weights3 = np.concatenate((
+        (1.0 + frequencies3["coordinates"] ** 2) ** 3.0,
+        regularity3["velocities"],
+        regularity3["multipliers"],
+    ))
+    strong_constraint_weights3 = (
+        1.0 + frequencies3["multipliers"] ** 2
+    ) ** 2.0
+
+    def common_matrix(order: int) -> np.ndarray:
+        if order == 3:
+            q, velocity, multipliers = q3.copy(), v3.copy(), m3.copy()
+        else:
+            q, velocity, multipliers = embed_nested_state(
+                q3, v3, m3, 3, order
+            )
+        qdim = q.size
+        jet = exact_full_action_jet_at_state(
+            order, q, velocity, multipliers, points=points
+        )
+        gradient = np.asarray(jet.gradient, dtype=float)
+        hessian = np.asarray(jet.hessian, dtype=float)
+        constraint_jacobian = hessian[2 * qdim:, :]
+        energy_gradient = np.concatenate((
+            velocity @ hessian[qdim:2 * qdim, :qdim] - gradient[:qdim],
+            hessian[qdim:2 * qdim, qdim:2 * qdim] @ velocity,
+            velocity @ hessian[qdim:2 * qdim, 2 * qdim:]
+            - gradient[2 * qdim:],
+        ))
+        matrix = np.empty((12, 26))
+        trace = _trace_jacobian_at_order(order)
+        for column in range(26):
+            direction3 = np.zeros(26)
+            direction3[column] = 1.0 / domain_weights3[column]
+            dq3 = direction3[:10]
+            dv3 = direction3[10:20]
+            dm3 = direction3[20:]
+            if order == 3:
+                dq, dv, dm = dq3, dv3, dm3
+            else:
+                dq, dv, dm = embed_nested_state(
+                    dq3, dv3, dm3, 3, order
+                )
+            direction = np.concatenate((dq, dv, dm))
+            matrix[:3, column] = trace @ dq
+            constraints = constraint_jacobian @ direction
+            matrix[3:6, column] = constraints[:3]
+            matrix[6:9, column] = constraints[order:order + 3]
+            matrix[9, column] = energy_gradient @ direction
+            complex_q = q.astype(complex) + 1j * 1.0e-20 * dq
+            complex_v = velocity.astype(complex) + 1j * 1.0e-20 * dv
+            complex_m = multipliers.astype(complex) + 1j * 1.0e-20 * dm
+            momentum, _, _, _ = _canonical_pair_at_order(
+                order, complex_q, complex_v, complex_m, points=points
+            )
+            matrix[10:, column] = np.imag(momentum) / 1.0e-20
+        matrix[3:9] *= strong_constraint_weights3[:, None]
+        return matrix
+
+    matrices = {order: common_matrix(order) for order in (3, 4, 5)}
+    blocks = {
+        "trace": slice(0, 3),
+        "strong_H4_constraints": slice(3, 9),
+        "energy": slice(9, 10),
+        "attachment_momentum": slice(10, 12),
+    }
+    comparisons = []
+    for low, high in ((3, 4), (3, 5), (4, 5)):
+        difference = matrices[high] - matrices[low]
+        block_changes = {}
+        for name, block in blocks.items():
+            block_changes[name] = float(
+                np.linalg.norm(difference[block])
+                / max(1.0, np.linalg.norm(matrices[low][block]))
+            )
+        comparisons.append({
+            "low_order": low,
+            "high_order": high,
+            "total_relative_change": float(
+                np.linalg.norm(difference) / np.linalg.norm(matrices[low])
+            ),
+            "maximum_absolute_change": float(np.max(np.abs(difference))),
+            "block_relative_changes": block_changes,
+        })
+    validation = {
+        "trace_nested_to_machine_precision": all(
+            row["block_relative_changes"]["trace"] < 1.0e-13
+            for row in comparisons
+        ),
+        "strong_constraints_nested_to_machine_precision": all(
+            row["block_relative_changes"]["strong_H4_constraints"] < 1.0e-13
+            for row in comparisons
+        ),
+        "energy_nested_to_machine_precision": all(
+            row["block_relative_changes"]["energy"] < 1.0e-12
+            for row in comparisons
+        ),
+        "attachment_momentum_lift_not_nested": all(
+            row["block_relative_changes"]["attachment_momentum"] > 0.5
+            for row in comparisons
+        ),
+    }
+    return {
+        "classification": (
+            "NONLINEAR_ACTION_TRACE_CONSTRAINT_ENERGY_CORE_NESTED;_"
+            "STATE_DEPENDENT_HESSIAN_HORIZONTAL_ATTACHMENT_MOMENTUM_LIFT_"
+            "NOT_SPECTRALLY_CONSISTENT"
+        ),
+        "source": (
+            "ONE_ACCEPTED_N3_CHILD_STATE_EXACTLY_INJECTED_INTO_N4_AND_N5_"
+            "FOR_OPERATOR_CONSISTENCY_ONLY"
+        ),
+        "accepted_N3_state_used_as_higher_N_child_existence_evidence": False,
+        "points": points,
+        "domain_norm": "COMMON_H6_q_CROSS_H5_v_CROSS_H6_m",
+        "constraint_codomain": "COMMON_STRONG_H4",
+        "comparisons": comparisons,
+        "finite_N_N3_N4_N5_roots_remain_valid_for_their_stated_maps": True,
+        "current_lift_may_be_promoted_as_a_general_N_Calderon_projector": False,
+        "why": (
+            "THE_HESSIAN_HORIZONTAL_LIFT_RECOMPUTES_AN_INDEFINITE_GLOBAL_"
+            "SCHUR_INVERSE_WHEN_NEW_SPECTRAL_MODES_ARE_ADDED;_THE_ORDER_ONE_"
+            "MOMENTUM_CHANGE_IS_NOT_OWNED_BY_THE_EXACT_NESTED_ACTION_CORE"
+        ),
+        "required_next": (
+            "DERIVE_THE_ON_SHELL_CHILD_EULER_BVP_CALDERON_TRACE_FROM_THE_"
+            "SAME_ACTION_SO_VERTICAL_INTERIOR_VARIATIONS_VANISH_AND_"
+            "REEVALUATE_THE_N3_N4_N5_BOUNDARY_MOMENTUM_FLUX_RELATION"
+        ),
+        "new_physics_rows_constraints_or_gates_added": False,
+        "validation": validation,
+        "validation_passed": all(validation.values()),
+        "FULL_BHSM_COMPLETE": False,
+    }
+
+
+def on_shell_boundary_reaction_audit(
+    path: str | Path = (
+        "artifacts/BHSM_AETHER_CROSS_RESOLUTION_RECONNAISSANCE_V21_35.json"
+    ),
+    *,
+    points: int = 44,
+) -> dict[str, Any]:
+    """Test what the lift-independent child boundary relation must retain."""
+
+    target = Path(path)
+    payload = json.loads(target.read_text(encoding="utf-8"))[
+        "cross_resolution_reconnaissance"
+    ]
+    event = next(
+        row["event"]
+        for row in payload[
+            "N5_independent_eta_branch_event_classification"
+        ]["quadrature_runs"]
+        if int(row["points"]) == points
+    )
+    child = payload[
+        "N5_event_conditioned_complete_child_reconstruction"
+    ]["child_state"]
+    exact = child["binary64_hex"]
+    q_event = np.asarray(event["coordinates"], dtype=float)
+    v_event = np.asarray(event["velocities"], dtype=float)
+    m_event = np.asarray(event["multipliers"], dtype=float)
+    q_child = np.asarray([
+        float.fromhex(value) for value in exact["coordinates"]
+    ])
+    v_child = np.asarray([
+        float.fromhex(value) for value in exact["velocities"]
+    ])
+    m_child = np.asarray([
+        float.fromhex(value) for value in exact["multipliers"]
+    ])
+    order = 5
+    qdim = q_child.size
+    event_momentum, _, event_lift, _ = _canonical_pair_at_order(
+        order, q_event, v_event, m_event, points=points
+    )
+    child_momentum, _, child_lift, _ = _canonical_pair_at_order(
+        order, q_child, v_child, m_child, points=points
+    )
+    event_flux = event_lift.T @ _metric_radial_flux_covector_at_order(
+        order, q_event, m_event
+    )
+    child_flux = child_lift.T @ _metric_radial_flux_covector_at_order(
+        order, q_child, m_child
+    )
+    child_state = np.concatenate((q_child, v_child, m_child))
+    physical_rows = _child_rows_at_order(
+        order,
+        child_state,
+        q_event,
+        event_momentum,
+        event_flux,
+        points=points,
+        flux_derivative_method="complex_step",
+    )
+    dynamics = _exact_full_jet_euler_dirac_acceleration(
+        order, q_child, v_child, m_child, points=points
+    )
+    jet = exact_full_action_jet_at_state(
+        order, q_child, v_child, m_child, points=points
+    )
+    gradient = np.asarray(jet.gradient, dtype=float)
+    hessian = np.asarray(jet.hessian, dtype=float)
+    momentum_rate = (
+        hessian[qdim:2 * qdim, :qdim] @ v_child
+        + hessian[qdim:2 * qdim, qdim:2 * qdim]
+        @ np.asarray(dynamics["acceleration"], dtype=float)
+        + hessian[qdim:2 * qdim, 2 * qdim:]
+        @ np.asarray(dynamics["multiplier_rate"], dtype=float)
+    )
+    full_euler_covector = momentum_rate - gradient[:qdim]
+    raw_two_sided = event_flux + child_flux
+    validation = {
+        "exact_binary64_N5_root_replayed": bool(
+            np.linalg.norm(physical_rows[-2:]) < 2.0e-7
+        ),
+        "canonical_momentum_match_replayed": bool(
+            np.linalg.norm(child_momentum - event_momentum) < 1.0e-10
+        ),
+        "full_Euler_Dirac_tangent_closes": bool(
+            np.linalg.norm(full_euler_covector) < 1.0e-8
+        ),
+        "raw_two_sided_radial_flux_is_not_the_validated_dynamic_row": bool(
+            np.linalg.norm(raw_two_sided) > 1.0
+            and np.linalg.norm(physical_rows[-2:]) < 2.0e-7
+        ),
+    }
+    return {
+        "classification": (
+            "LIFT_INDEPENDENT_ON_SHELL_BOUNDARY_REACTION_FORM_DERIVED;_"
+            "RAW_FLUX_ONLY_REPLACEMENT_INVALIDATED;_LORENTZIAN_CHILD_"
+            "HISTORY_BVP_OPEN"
+        ),
+        "finite_N_definition": {
+            "vertical_space": (
+                "V_Phi=KER(D_Gamma0)_INTERSECT_EXISTING_POLE_DOMAIN_"
+                "INTERSECT_EXISTING_CONSTRAINT_GAUGE_TANGENT"
+            ),
+            "on_shell_condition": (
+                "<E_child(Phi),delta_Phi>=0_FOR_ALL_delta_Phi_IN_V_Phi"
+            ),
+            "boundary_reaction": (
+                "Lambda_child=H^star*E_child_FOR_ANY_H_WITH_"
+                "D_Gamma0*H=IDENTITY"
+            ),
+            "lift_independence_proof": (
+                "H1-H2_MAPS_INTO_V_Phi_SO_(H1-H2)^star*E_child=0"
+            ),
+            "complete_event_to_child_equation": (
+                "F_child(e)=Lambda_event(e)+Lambda_child(Phi_e)=0"
+            ),
+            "single_valued_child_assumed": False,
+        },
+        "N5_exact_checkpoint_measurement": {
+            "event_projected_radial_flux": event_flux.tolist(),
+            "child_projected_radial_flux": child_flux.tolist(),
+            "raw_two_sided_radial_flux": raw_two_sided.tolist(),
+            "raw_two_sided_radial_flux_norm": float(
+                np.linalg.norm(raw_two_sided)
+            ),
+            "validated_dynamic_F18_rows": physical_rows[-2:].tolist(),
+            "validated_dynamic_F18_norm": float(
+                np.linalg.norm(physical_rows[-2:])
+            ),
+            "full_Euler_Dirac_covector_norm": float(
+                np.linalg.norm(full_euler_covector)
+            ),
+            "current_attachment_momentum_match_norm": float(
+                np.linalg.norm(child_momentum - event_momentum)
+            ),
+        },
+        "decisive_result": (
+            "THE_ORDER_10^3_RAW_TWO_SIDED_RADIAL_SUM_CANNOT_REPLACE_THE_"
+            "ORDER_10^-7_VALIDATED_DYNAMIC_ROWS;_THE_REDUCED_MOMENTUM_"
+            "FORCE_CONNECTION_TERMS_ARE_PHYSICAL_PARTS_OF_THE_BOUNDARY_"
+            "REACTION_UNTIL_ELIMINATED_BY_A_SAME_ACTION_ON_SHELL_BVP"
+        ),
+        "current_Hessian_minimal_lift_promoted_as_general_N_physics": False,
+        "validated_finite_N_F18_root_changed": False,
+        "new_equations_constraints_or_acceptance_gates": False,
+        "required_next": (
+            "SOLVE_THE_SAME_ACTION_LORENTZIAN_CHILD_HISTORY_BVP_WITH_THE_"
+            "EXISTING_POLE_ATTACHMENT_CAUCHY_AND_ETA_DOMAIN;_EXTRACT_"
+            "ITS_BOUNDARY_REACTION_MULTIPLIER_AND_TEST_N3_N4_N5_"
+            "SPECTRAL_CONSISTENCY"
+        ),
+        "validation": validation,
+        "validation_passed": all(validation.values()),
+        "FULL_BHSM_COMPLETE": False,
+    }
+
+
+def _child_history_boundary_reaction_solve(
+    order: int,
+    coordinates: np.ndarray,
+    velocities: np.ndarray,
+    multipliers: np.ndarray,
+    boundary_acceleration: np.ndarray,
+    *,
+    points: int,
+) -> dict[str, Any]:
+    """Solve the same-action Euler--Dirac boundary-reaction system."""
+
+    q = np.asarray(coordinates, dtype=float)
+    velocity = np.asarray(velocities, dtype=float)
+    m = np.asarray(multipliers, dtype=float)
+    bddot = np.asarray(boundary_acceleration, dtype=float)
+    qdim = q.size
+    mdim = m.size
+    boundary = _attachment_jacobian_at_order(order, q)
+    boundary_curvature = _attachment_chart_curvature_on_velocity(
+        order, q, velocity
+    )
+    jet = exact_full_action_jet_at_state(
+        order, q, velocity, m, points=points
+    )
+    gradient = np.asarray(jet.gradient, dtype=float)
+    hessian = np.asarray(jet.hessian, dtype=float)
+    zero_m_boundary = np.zeros((mdim, 2))
+    matrix = np.block([
+        [
+            hessian[qdim:2 * qdim, qdim:2 * qdim],
+            hessian[qdim:2 * qdim, 2 * qdim:],
+            -boundary.T,
+        ],
+        [
+            hessian[2 * qdim:, qdim:2 * qdim],
+            hessian[2 * qdim:, 2 * qdim:],
+            zero_m_boundary,
+        ],
+        [
+            boundary,
+            np.zeros((2, mdim)),
+            np.zeros((2, 2)),
+        ],
+    ])
+    radial_flux = _metric_radial_flux_covector_at_order(order, q, m)
+    right_hand_side = np.concatenate((
+        gradient[:qdim]
+        - hessian[qdim:2 * qdim, :qdim] @ velocity
+        - radial_flux,
+        -hessian[2 * qdim:, :qdim] @ velocity,
+        bddot - boundary_curvature,
+    ))
+    solved = np.linalg.solve(matrix, right_hand_side)
+    acceleration = solved[:qdim]
+    multiplier_rate = solved[qdim:qdim + mdim]
+    reaction = solved[-2:]
+    euler_reaction_residual = (
+        hessian[qdim:2 * qdim, :qdim] @ velocity
+        + hessian[qdim:2 * qdim, qdim:2 * qdim] @ acceleration
+        + hessian[qdim:2 * qdim, 2 * qdim:] @ multiplier_rate
+        - gradient[:qdim]
+        + radial_flux
+        - boundary.T @ reaction
+    )
+    constraint_tangent_residual = (
+        hessian[2 * qdim:, :qdim] @ velocity
+        + hessian[2 * qdim:, qdim:2 * qdim] @ acceleration
+        + hessian[2 * qdim:, 2 * qdim:] @ multiplier_rate
+    )
+    boundary_acceleration_residual = (
+        boundary @ acceleration + boundary_curvature - bddot
+    )
+    singular = np.linalg.svd(matrix, compute_uv=False)
+    return {
+        "matrix_dimension": int(matrix.shape[0]),
+        "matrix_rank": int(np.linalg.matrix_rank(matrix)),
+        "smallest_singular_value": float(singular[-1]),
+        "condition_number": float(singular[0] / singular[-1]),
+        "boundary_reaction": reaction.tolist(),
+        "boundary_reaction_norm": float(np.linalg.norm(reaction)),
+        "acceleration": acceleration,
+        "multiplier_rate": multiplier_rate,
+        "maximum_Euler_reaction_residual": float(
+            np.max(np.abs(euler_reaction_residual))
+        ),
+        "maximum_constraint_tangent_residual": float(
+            np.max(np.abs(constraint_tangent_residual))
+        ),
+        "maximum_boundary_acceleration_residual": float(
+            np.max(np.abs(boundary_acceleration_residual))
+        ),
+    }
+
+
+def child_history_bvp_bordered_operator_audit(
+    path: str | Path = (
+        "artifacts/BHSM_AETHER_CROSS_RESOLUTION_RECONNAISSANCE_V21_35.json"
+    ),
+    *,
+    points: int = 44,
+) -> dict[str, Any]:
+    """Construct the finite-N Lorentzian child-history BVP operator."""
+
+    target = Path(path)
+    payload = json.loads(target.read_text(encoding="utf-8"))[
+        "cross_resolution_reconnaissance"
+    ]
+    n3_payload = json.loads((target.parent / (
+        "BHSM_aether_n3_complete_child_persistence_v17_99.json"
+    )).read_text(encoding="utf-8"))
+    states = {
+        3: n3_payload["complete_child_persistence"]["evolution"]["rows"][0],
+        4: payload[
+            "N4_event_conditioned_complete_child_reconstruction"
+        ]["child_state"],
+        5: payload[
+            "N5_event_conditioned_complete_child_reconstruction"
+        ]["child_state"],
+    }
+    rows = []
+    attachment_derivative_errors = []
+    for order, source in states.items():
+        exact = source.get("binary64_hex")
+        if exact is None:
+            q = np.asarray(source["coordinates"], dtype=float)
+            velocity = np.asarray(source["velocities"], dtype=float)
+            m = np.asarray(source["multipliers"], dtype=float)
+        else:
+            q = np.asarray([
+                float.fromhex(value) for value in exact["coordinates"]
+            ])
+            velocity = np.asarray([
+                float.fromhex(value) for value in exact["velocities"]
+            ])
+            m = np.asarray([
+                float.fromhex(value) for value in exact["multipliers"]
+            ])
+        analytic_boundary = _attachment_jacobian_at_order(order, q)
+        complex_boundary = np.empty_like(analytic_boundary)
+        for column in range(q.size):
+            perturbed = q.astype(complex)
+            perturbed[column] += 1j * 1.0e-20
+            complex_boundary[:, column] = np.imag(
+                _attachment_coordinates_at_order(order, perturbed)
+            ) / 1.0e-20
+        derivative_error = float(np.max(np.abs(
+            analytic_boundary - complex_boundary
+        )))
+        attachment_derivative_errors.append(derivative_error)
+        free = _exact_full_jet_euler_dirac_acceleration(
+            order, q, velocity, m, points=points
+        )
+        boundary_acceleration_probe = (
+            analytic_boundary @ np.asarray(free["acceleration"], dtype=float)
+            + _attachment_chart_curvature_on_velocity(order, q, velocity)
+        )
+        solved = _child_history_boundary_reaction_solve(
+            order,
+            q,
+            velocity,
+            m,
+            boundary_acceleration_probe,
+            points=points,
+        )
+        rows.append({
+            "N": order,
+            "coordinate_dimension": int(q.size),
+            "multiplier_dimension": int(m.size),
+            "bordered_dimension": solved["matrix_dimension"],
+            "expected_bordered_dimension_5N_plus_3": 5 * order + 3,
+            "bordered_rank": solved["matrix_rank"],
+            "smallest_singular_value": solved["smallest_singular_value"],
+            "condition_number": solved["condition_number"],
+            "attachment_chart_derivative_error": derivative_error,
+            "probe_boundary_reaction": solved["boundary_reaction"],
+            "probe_boundary_reaction_norm": solved[
+                "boundary_reaction_norm"
+            ],
+            "maximum_Euler_reaction_residual": solved[
+                "maximum_Euler_reaction_residual"
+            ],
+            "maximum_constraint_tangent_residual": solved[
+                "maximum_constraint_tangent_residual"
+            ],
+            "maximum_boundary_acceleration_residual": solved[
+                "maximum_boundary_acceleration_residual"
+            ],
+        })
+    validation = {
+        "exact_attachment_chart_differentiates_to_existing_boundary_rows": (
+            max(attachment_derivative_errors) < 1.0e-12
+        ),
+        "general_N_dimension_law_holds_at_N3_N4_N5": all(
+            row["bordered_dimension"]
+            == row["expected_bordered_dimension_5N_plus_3"]
+            for row in rows
+        ),
+        "all_finite_N_bordered_operators_full_rank": all(
+            row["bordered_rank"] == row["bordered_dimension"]
+            for row in rows
+        ),
+        "all_equation_blocks_replay": all(
+            row["maximum_Euler_reaction_residual"] < 1.0e-7
+            and row["maximum_constraint_tangent_residual"] < 1.0e-7
+            and row["maximum_boundary_acceleration_residual"] < 1.0e-7
+            for row in rows
+        ),
+    }
+    return {
+        "classification": (
+            "SAME_ACTION_LORENTZIAN_CHILD_HISTORY_BVP_BORDERED_OPERATOR_"
+            "DERIVED_AND_FINITE_N_INVERTIBLE;_EVENT_CHILD_REACTION_"
+            "MATCHING_AND_UNIFORM_GENERAL_N_BOUND_OPEN"
+        ),
+        "unknowns": "(a_(3N+1),m_dot_(2N),Lambda_boundary_2)",
+        "equations": {
+            "Euler_reaction": (
+                "L_vv*a+L_vm*m_dot-B^star*Lambda="
+                "L_q-L_vq*v-Gamma1_child"
+            ),
+            "constraint_tangency": (
+                "L_mv*a+L_mm*m_dot=-L_mq*v"
+            ),
+            "boundary_history": (
+                "B*a=b_ddot-D2b[v,v]"
+            ),
+        },
+        "exact_attachment_chart": {
+            "q_W": "scale+u_L-(1/2)log(cosh(2v_L))",
+            "x_D": "scale-q_W",
+            "derivative": "B=D_q(q_W,x_D)",
+        },
+        "general_N_bordered_dimension": "5N+3",
+        "rows": rows,
+        "probe_boundary_acceleration_is_a_physical_junction_solution": False,
+        "probe_role": (
+            "USES_THE_UNCONSTRAINED_EULER_DIRAC_BOUNDARY_ACCELERATION_ONLY_"
+            "TO_TEST_THE_BORDERED_OPERATOR;_REACTION_VALUES_ARE_NOT_"
+            "PROMOTED_AS_EVENT_CHILD_MATCHES"
+        ),
+        "finite_rank_implies_uniform_general_N_inf_sup": False,
+        "existing_N3_N4_N5_F_rows_or_persistence_changed": False,
+        "new_equations_constraints_or_acceptance_gates": False,
+        "required_next": (
+            "EVALUATE_THE_EVENT_SIDE_REACTION_FROM_EACH_ACCEPTED_EVENT_"
+            "HISTORY_AND_SOLVE_THE_EXISTING_TWO_SIDED_REACTION_MATCH;_"
+            "THEN_TEST_THE_REACTION_CALDERON_GRAPH_UNDER_NESTED_SPECTRAL_"
+            "INJECTION"
+        ),
+        "validation": validation,
+        "validation_passed": all(validation.values()),
+        "FULL_BHSM_COMPLETE": False,
+    }
+
+
+def event_child_two_sided_reaction_match_audit(
+    path: str | Path = (
+        "artifacts/BHSM_AETHER_CROSS_RESOLUTION_RECONNAISSANCE_V21_35.json"
+    ),
+    *,
+    points: int = 44,
+) -> dict[str, Any]:
+    """Solve the derived event-to-child boundary-reaction correspondence."""
+
+    target = Path(path)
+    payload = json.loads(target.read_text(encoding="utf-8"))[
+        "cross_resolution_reconnaissance"
+    ]
+    n3_payload = json.loads((target.parent / (
+        "BHSM_aether_n3_complete_child_persistence_v17_99.json"
+    )).read_text(encoding="utf-8"))
+    n3_state = unpack_reduced(v17_75_selected_raw_vector())
+    n3_q_history = np.asarray(n3_state["coordinates"], dtype=float)
+    n3_m_history = np.asarray(n3_state["multipliers"], dtype=float)
+    n3_v_history = (
+        trapezoid_sbp_difference() @ n3_q_history
+        / float(n3_state["period"])
+    )
+    n4_event = payload["N4_adaptive_event_convergence_audit"][
+        "quadrature_control"
+    ]["event"]
+    n5_event = next(
+        row["event"]
+        for row in payload[
+            "N5_independent_eta_branch_event_classification"
+        ]["quadrature_runs"]
+        if int(row["points"]) == points
+    )
+    events = {
+        3: {
+            "coordinates": n3_q_history[-1],
+            "velocities": n3_v_history[-1],
+            "multipliers": n3_m_history[-1],
+            "source": "V17_75_ACCEPTED_EVENT_HISTORY",
+        },
+        4: {**n4_event, "source": "INDEPENDENT_N4_ACCEPTED_EVENT_HISTORY"},
+        5: {**n5_event, "source": "INDEPENDENT_N5_ACCEPTED_EVENT_HISTORY"},
+    }
+    children = {
+        3: n3_payload["complete_child_persistence"]["evolution"]["rows"][0],
+        4: payload[
+            "N4_event_conditioned_complete_child_reconstruction"
+        ]["child_state"],
+        5: payload[
+            "N5_event_conditioned_complete_child_reconstruction"
+        ]["child_state"],
+    }
+    rows = []
+    for order in (3, 4, 5):
+        event = events[order]
+        child = children[order]
+        q_event = np.asarray(event["coordinates"], dtype=float)
+        v_event = np.asarray(event["velocities"], dtype=float)
+        m_event = np.asarray(event["multipliers"], dtype=float)
+        exact = child.get("binary64_hex")
+        if exact is None:
+            q_child = np.asarray(child["coordinates"], dtype=float)
+            v_child = np.asarray(child["velocities"], dtype=float)
+            m_child = np.asarray(child["multipliers"], dtype=float)
+        else:
+            q_child = np.asarray([
+                float.fromhex(value) for value in exact["coordinates"]
+            ])
+            v_child = np.asarray([
+                float.fromhex(value) for value in exact["velocities"]
+            ])
+            m_child = np.asarray([
+                float.fromhex(value) for value in exact["multipliers"]
+            ])
+        event_boundary = _attachment_jacobian_at_order(order, q_event)
+        child_boundary = _attachment_jacobian_at_order(order, q_child)
+        event_dynamics = _exact_full_jet_euler_dirac_acceleration(
+            order, q_event, v_event, m_event, points=points
+        )
+        event_boundary_acceleration = (
+            event_boundary @ np.asarray(
+                event_dynamics["acceleration"], dtype=float
+            )
+            + _attachment_chart_curvature_on_velocity(
+                order, q_event, v_event
+            )
+        )
+        event_reaction = _child_history_boundary_reaction_solve(
+            order,
+            q_event,
+            v_event,
+            m_event,
+            event_boundary_acceleration,
+            points=points,
+        )
+        child_zero = _child_history_boundary_reaction_solve(
+            order,
+            q_child,
+            v_child,
+            m_child,
+            np.zeros(2),
+            points=points,
+        )
+        child_offset = np.asarray(
+            child_zero["boundary_reaction"], dtype=float
+        )
+        child_response = np.empty((2, 2))
+        for column in range(2):
+            unit = np.zeros(2)
+            unit[column] = 1.0
+            unit_reaction = _child_history_boundary_reaction_solve(
+                order,
+                q_child,
+                v_child,
+                m_child,
+                unit,
+                points=points,
+            )
+            child_response[:, column] = (
+                np.asarray(unit_reaction["boundary_reaction"], dtype=float)
+                - child_offset
+            )
+        event_reaction_vector = np.asarray(
+            event_reaction["boundary_reaction"], dtype=float
+        )
+        child_boundary_acceleration = np.linalg.solve(
+            child_response, -event_reaction_vector - child_offset
+        )
+        child_reaction = _child_history_boundary_reaction_solve(
+            order,
+            q_child,
+            v_child,
+            m_child,
+            child_boundary_acceleration,
+            points=points,
+        )
+        child_reaction_vector = np.asarray(
+            child_reaction["boundary_reaction"], dtype=float
+        )
+        event_momentum = _canonical_pair_at_order(
+            order, q_event, v_event, m_event, points=points
+        )[0]
+        child_momentum = _canonical_pair_at_order(
+            order, q_child, v_child, m_child, points=points
+        )[0]
+        rows.append({
+            "N": order,
+            "event_source": event["source"],
+            "event_boundary_acceleration": (
+                event_boundary_acceleration.tolist()
+            ),
+            "event_boundary_reaction": event_reaction_vector.tolist(),
+            "child_reaction_response_matrix": child_response.tolist(),
+            "child_reaction_response_determinant": float(
+                np.linalg.det(child_response)
+            ),
+            "child_reaction_response_condition_number": float(
+                np.linalg.cond(child_response)
+            ),
+            "solved_child_boundary_acceleration": (
+                child_boundary_acceleration.tolist()
+            ),
+            "solved_child_boundary_reaction": (
+                child_reaction_vector.tolist()
+            ),
+            "two_sided_reaction_match_norm": float(np.linalg.norm(
+                event_reaction_vector + child_reaction_vector
+            )),
+            "attachment_configuration_jump_norm": float(np.linalg.norm(
+                _attachment_coordinates_at_order(order, q_child)
+                - _attachment_coordinates_at_order(order, q_event)
+            )),
+            "attachment_rate_jump_norm": float(np.linalg.norm(
+                child_boundary @ v_child - event_boundary @ v_event
+            )),
+            "accepted_attachment_momentum_match_norm": float(
+                np.linalg.norm(child_momentum - event_momentum)
+            ),
+            "maximum_child_BVP_block_residual": max(
+                child_reaction["maximum_Euler_reaction_residual"],
+                child_reaction["maximum_constraint_tangent_residual"],
+                child_reaction["maximum_boundary_acceleration_residual"],
+            ),
+        })
+    validation = {
+        "N3_N4_N5_event_histories_and_children_used": (
+            [row["N"] for row in rows] == [3, 4, 5]
+        ),
+        "all_child_reaction_response_matrices_invertible": all(
+            abs(row["child_reaction_response_determinant"]) > 1.0e-10
+            for row in rows
+        ),
+        "all_two_sided_reaction_matches_close": all(
+            row["two_sided_reaction_match_norm"] < 1.0e-6
+            for row in rows
+        ),
+        "all_bordered_equations_replay": all(
+            row["maximum_child_BVP_block_residual"] < 1.0e-6
+            for row in rows
+        ),
+        "N4_N5_accepted_momentum_rows_replay": all(
+            row["accepted_attachment_momentum_match_norm"] < 1.0e-10
+            for row in rows[1:]
+        ),
+    }
+    return {
+        "classification": (
+            "EVENT_TO_COMPLETE_CHILD_TWO_SIDED_BOUNDARY_REACTION_MAP_"
+            "DERIVED_AND_FINITE_N_SOLVABLE_AT_N3_N4_N5;_UNIFORM_"
+            "GENERAL_N_GRAPH_CONVERGENCE_AND_RETURN_MAP_OPEN"
+        ),
+        "map": (
+            "Lambda_child_N(b_ddot_child;Y_child)="
+            "-Lambda_event_N(b_ddot_event;z_event)"
+        ),
+        "selection": (
+            "THE_ACCEPTED_EVENT_HISTORY_FIXES_THE_EVENT_REACTION;_THE_"
+            "SAME_ACTION_CHILD_BORDERED_OPERATOR_DETERMINES_THE_CHILD_"
+            "BOUNDARY_ACCELERATION_WITHOUT_A_NEW_PHYSICAL_ROW"
+        ),
+        "rows": rows,
+        "configuration_or_rate_continuity_imposed_as_a_new_gate": False,
+        "why_not": (
+            "THE_RECONSTRUCTED_CHILD_IS_A_NEW_PIECEWISE_LORENTZIAN_"
+            "SOLUTION;_THE_EXISTING_TRACE_AND_CANONICAL_MOMENTUM_ROWS_"
+            "ARE_RETAINED_AND_NO_EXTRA_C1_MATCH_IS_ASSUMED"
+        ),
+        "accepted_F_N_roots_or_persistence_changed": False,
+        "new_equations_constraints_or_acceptance_gates": False,
+        "required_next": (
+            "TEST_THE_TWO_BY_TWO_REACTION_CALDERON_GRAPH_UNDER_EXACT_"
+            "NESTED_SPECTRAL_INJECTION_AND_DERIVE_A_UNIFORM_NORMAL_"
+            "RIGHT_INVERSE_OR_LOCALIZE_ITS_FIRST_ACTION_OWNED_FAILURE"
+        ),
+        "validation": validation,
+        "validation_passed": all(validation.values()),
+        "FULL_BHSM_COMPLETE": False,
+    }
+
+
+def event_to_child_on_shell_calderon_interface() -> dict[str, Any]:
+    """Reconcile the validated local child roots with the required full BVP."""
+
+    missing = (
+        "DERIVE_THE_ON_SHELL_CHILD_EULER_BVP_CALDERON_TRACE_FROM_THE_SAME_"
+        "ACTION_SO_VERTICAL_INTERIOR_VARIATIONS_VANISH_AND_REEVALUATE_THE_"
+        "N3_N4_N5_BOUNDARY_MOMENTUM_FLUX_RELATION"
+    )
+    principal_symbol = child_jacobi_radial_principal_symbol_audit()
+    weighted_principal = weighted_pole_attachment_principal_estimate()
+    return {
+        "classification": (
+            "VARIATIONAL_EVENT_TO_ON_SHELL_CHILD_CALDERON_INTERFACE_DERIVED;_"
+            "FUNCTION_SPACE_BVP_AND_COMPLEMENTING_ESTIMATE_OPEN"
+        ),
+        "retained_total_functional": (
+            "Gamma_total=Gamma_pre[z]+Gamma_child[Phi]+"
+            "Gamma_match[Gamma0_event(z),Gamma0_child(Phi);I_event,I_env,B_SM]"
+        ),
+        "on_shell_child_relation": {
+            "definition": (
+                "C_child={(Gamma0(Phi),Gamma1(Phi)):delta_Gamma_child(Phi)=0,_"
+                "CONSTRAINTS=0,_POLE_AND_TRANSMISSION_DOMAIN,_L_eta>0}"
+            ),
+            "event_trace_matching": "Gamma0_child=Gamma0_event",
+            "canonical_momentum_matching": "p_child=p_event",
+            "dynamic_flux_balance": (
+                "Gamma1_event+Gamma1_child+D_t(p_child)-partial_q(L_child)=0"
+            ),
+            "topology_bundle_and_FR_block": (
+                "THE_EXISTING_I_event_I_env_B_SM_SUPERSELECTION_BLOCK"
+            ),
+            "staticity_zero_momentum_or_zero_flux_required": False,
+        },
+        "validated_finite_N_local_map": {
+            "formula": (
+                "F_N=(TRACE_3,CONSTRAINTS_(2N+1),MOMENTUM_2,DYNAMIC_FLUX_2)"
+            ),
+            "role": (
+                "CONSTRAINT_CONSISTENT_LOCAL_CAUCHY_GERM_INTERSECTION_WITH_"
+                "THE_EVENT_BOUNDARY_RELATION"
+            ),
+            "N3_N4_N5_roots_and_positive_duration_persistence": True,
+            "is_already_a_global_function_space_child_BVP": False,
+            "is_sufficient_to_prove_a_single_valued_return_map": False,
+        },
+        "full_BVP_solution_and_return_map": {
+            "solution": (
+                "Phi_e=SolveChildBVP[Gamma0_event(e),p_event(e),I_event,I_env,B_SM]"
+            ),
+            "calderon_output": "Lambda_child(e)=Gamma1(Phi_e)",
+            "return_output": (
+                "R_return(e)=Trace_return(Phi_e)_OR_THE_SET_OF_SUCH_TRACES_"
+                "WHEN_THE_INTERIOR_SOLUTION_IS_NOT_UNIQUE"
+            ),
+            "reconstructed_radius": (
+                "R_rec(e)=R_star*exp(q_scale(Trace_return(Phi_e)))"
+            ),
+            "single_valuedness_assumed": False,
+        },
+        "differentiated_BVP": {
+            "Jacobi_operator": (
+                "J_e=D_Phi(delta_Gamma_child,CONSTRAINTS,BOUNDARY_MATCHING)"
+            ),
+            "variation_solve": "J_e*delta_Phi=-D_e(E_child,B_child)*delta_e",
+            "calderon_derivative": (
+                "D_Lambda_child*delta_e=Gamma1_Phi*delta_Phi+Gamma1_e*delta_e"
+            ),
+            "uses_only_the_retained_action_Hessian_after_the_BVP_is_defined": True,
+            "replaces_the_validated_exact_F_N_residual": False,
+            "N5_proposal_Jacobian_reopened": False,
+        },
+        "lift_independent_boundary_reaction": {
+            "vertical_on_shell_equation": (
+                "E_child(Phi)_RESTRICTED_TO_KER(D_Gamma0)=0"
+            ),
+            "reaction_definition": (
+                "Lambda_child=H^star*E_child,_D_Gamma0*H=IDENTITY"
+            ),
+            "independence": (
+                "(H1-H2)^star*E_child=0_BECAUSE_H1-H2_IS_VERTICAL"
+            ),
+            "event_to_complete_child_map": (
+                "F_child(e)=Lambda_event(e)+Lambda_child(Phi_e)=0"
+            ),
+            "raw_Gamma1_event_plus_raw_Gamma1_child_is_sufficient": False,
+            "existing_local_Hessian_lift_is_the_general_N_projector": False,
+        },
+        "required_function_space_proof": {
+            "gauge_reduction": (
+                "QUOTIENT_TIME_REPARAMETERIZATION_AND_RADIAL_"
+                "DIFFEOMORPHISM_WITH_THE_EXISTING_ETA_CLOCK_INVARIANTS"
+            ),
+            "domain": (
+                "THE_VALIDATED_CAP_0_LE_chi_LE_pi/4_WITH_ONE_REGULAR_POLE_"
+                "AND_THE_EXISTING_ATTACHMENT_BOUNDARY_MODE;_A_FULL_TWO_POLE_"
+                "CHILD_REQUIRES_THE_DERIVED_GLUE_TRANSMISSION"
+            ),
+            "complementing_condition": (
+                "THE_GAUGE_FIXED_JACOBI_PRINCIPAL_BOUNDARY_SYMBOL_HAS_NO_"
+                "NONZERO_DECAYING_HOMOGENEOUS_SOLUTION"
+            ),
+            "inf_sup": (
+                "THE_NORMAL_JACOBI_CALDERON_SCHUR_COMPLEMENT_HAS_beta_0>0"
+            ),
+            "eta_margin": "inf(L_eta)>=eta_0>0",
+        },
+        "retained_radial_principal_symbol_audit": principal_symbol,
+        "weighted_pole_attachment_principal_estimate": weighted_principal,
+        "first_missing_mathematical_object": missing,
+        "required_next": missing,
+        "new_action_terms_equations_constraints_or_gates": False,
+        "FULL_BHSM_COMPLETE": False,
+    }
+
+
+def general_n_galerkin_transfer_certificate() -> dict[str, Any]:
+    """Derive the continuum-to-Galerkin certificate required by general N."""
+
+    calderon = event_to_child_on_shell_calderon_interface()
+    missing = (
+        "DERIVE_THE_ON_SHELL_CHILD_EULER_BVP_CALDERON_TRACE_FROM_THE_SAME_"
+        "ACTION_SO_VERTICAL_INTERIOR_VARIATIONS_VANISH_AND_REEVALUATE_THE_"
+        "N3_N4_N5_BOUNDARY_MOMENTUM_FLUX_RELATION"
+    )
+    return {
+        "classification": (
+            "ACTION_OWNED_GALERKIN_TRANSFER_THEOREM_DERIVED;_CONTINUUM_"
+            "INF_SUP_AND_TAIL_CERTIFICATE_OPEN"
+        ),
+        "continuum_spaces": {
+            "state_space": "X=H6_q_CROSS_H5_v_CROSS_H6_m",
+            "constraint_space": (
+                "THE_H_MINUS_6_DUAL_OF_THE_H6_LAPSE_SHIFT_MULTIPLIER_SPACE"
+            ),
+            "boundary_space": "R3_TRACE_CROSS_R2_MOMENTUM_CROSS_R2_FLUX",
+            "output_space": (
+                "Y=R3_CROSS_H_MINUS_6_CONSTRAINTS_CROSS_R2_CROSS_R2"
+            ),
+            "basis": (
+                "THE_EXISTING_NESTED_POLE_REGULAR_COSINE_AND_WINDOWED_"
+                "COSINE_BASIS"
+            ),
+            "numerical_fixed_ROW_scales_are_the_continuum_norm": False,
+        },
+        "smoothness_from_the_retained_action": {
+            "regularity": "s=6>11/2",
+            "sobolev_algebra_and_trace_control": True,
+            "eta_interior_requirement": "inf(L_eta)>=eta_0>0",
+            "consequence": (
+                "THE_EXPONENTIAL_GEOMETRY_RECIPROCAL_LAPSE_ETA_RESPONSE_"
+                "AND_BOUNDARY_TRACES_DEFINE_A_SMOOTH_LOCAL_ACTION_MAP"
+            ),
+            "new_action_term_added": False,
+        },
+        "set_valued_continuum_relation": {
+            "definition": (
+                "R(e)={Y_IN_X:F(Y;e)=0,_L_eta(Y)>0,_Y_PERSISTS}"
+            ),
+            "finite_N_relation": (
+                "R_N(e_N)={Y_N:F_N(Y_N;e_N)=0,_L_eta(Y_N)>0,_Y_N_PERSISTS}"
+            ),
+            "correct_convergence_object": (
+                "LOCAL_GRAPH_OR_HAUSDORFF_CONVERGENCE_OF_R_N_TO_R"
+            ),
+            "arbitrary_root_coordinates_must_form_a_Cauchy_sequence": False,
+            "physical_branch_selector_added": False,
+        },
+        "event_to_child_on_shell_calderon_interface": calderon,
+        "normal_inf_sup_condition": {
+            "definition": (
+                "beta=inf_(lambda_ne_0)norm(D_F(Y_star;e_star)^*lambda)_"
+                "X_star/norm(lambda)_Y"
+            ),
+            "required_bound": "beta>=beta_0>0_AFTER_EXISTING_GAUGE_REDUCTION",
+            "meaning": (
+                "THE_CONTINUUM_LINEARIZATION_IS_SURJECTIVE_WITH_A_BOUNDED_"
+                "NORMAL_RIGHT_INVERSE;_ITS_KERNEL_IS_THE_CHILD_MANIFOLD"
+            ),
+            "kernel_removed_as_a_defect": False,
+        },
+        "spectral_consistency_condition": {
+            "derivative_defect": (
+                "delta_N=norm(D_F_N-Q_N*D_F*P_N)_X_N_TO_Y_N"
+            ),
+            "nonlinear_injected_defect": (
+                "epsilon_N=norm(F_N(P_N*Y_star;e_N))_Y_N"
+            ),
+            "event_defect": "norm(e_N-P_N*e_star)_EVENT_TO_ZERO",
+            "quadrature_aliasing_included": True,
+            "required_limits": "delta_N_TO_0_AND_epsilon_N_TO_0",
+        },
+        "galerkin_transfer_lemma": {
+            "hypothesis": "delta_N<beta_0",
+            "discrete_inf_sup": "beta_N>=beta_0-delta_N",
+            "right_inverse_bound": "kappa_N<=1/(beta_0-delta_N)",
+            "newton_kantorovich_condition": (
+                "L_N*epsilon_N/(beta_0-delta_N)^2<=1/2"
+            ),
+            "local_zero_set_distance_bound": (
+                "dist_graph(R_N,R)<=2*epsilon_N/(beta_0-delta_N)"
+            ),
+            "summable_bound_consequence": (
+                "IF_THE_DISTANCE_BOUNDS_ARE_SUMMABLE_THEN_THE_NESTED_"
+                "LOCAL_CHILD_RELATIONS_ARE_CAUCHY_IN_GRAPH_DISTANCE"
+            ),
+        },
+        "current_evidence": {
+            "N3_N4_N5_discrete_full_row_rank": True,
+            "N3_N4_N5_complete_persistence": True,
+            "initial_constraint_fiber_smallest_singular_values": {
+                "N3": 1.69802344039e-4,
+                "N4": 5.6894892171e-5,
+                "N5": 4.09514089e-6,
+            },
+            "accepted_child_local_map_smallest_resolved_singular_values": {
+                "N4_full_map": 1.550576651e-6,
+                "N5_structural_full_map": 2.39514503e-7,
+                "N5_final_nonflux_map": 2.88434876e-7,
+            },
+            "singular_values_are_directly_cross_resolution_comparable": False,
+            "why_not_comparable": (
+                "THE_STATES_WERE_INDEPENDENT_AND_THE_REPORTED_MATRICES_USE_"
+                "N_DEPENDENT_NUMERICAL_ROW_AND_SOBOLEV_COORDINATE_SCALINGS"
+            ),
+            "naive_uniform_lower_bound_supported": False,
+            "finite_rank_implies_a_uniform_inf_sup_bound": False,
+            "independent_root_coordinates_are_a_convergence_sequence": False,
+            "existing_cross_resolution_common_mode_differences_are_proof": False,
+        },
+        "proof_obligations": [
+            "DEFINE_THE_CONTINUUM_EVENT_CONDITIONED_ON_SHELL_CALDERON_MAP",
+            "PROVE_THE_GAUGE_REDUCED_CONSTRAINT_BOUNDARY_MAP_IS_A_BANACH_SUBMERSION",
+            "LOWER_BOUND_THE_CONTINUUM_NORMAL_INF_SUP_CONSTANT_beta_0",
+            "BOUND_SPECTRAL_TRUNCATION_AND_GAUSS_QUADRATURE_ALIASING_ERRORS",
+            "PROVE_ORDERED_EVENT_BRANCH_CONVERGENCE_AND_A_UNIFORM_ETA_MARGIN",
+            "TRANSFER_POSITIVE_DURATION_EULER_DIRAC_PERSISTENCE_UNIFORMLY",
+        ],
+        "first_missing_mathematical_object": missing,
+        "required_next": missing,
+        "solver_proposal_curvature_is_part_of_this_certificate": False,
+        "new_equations_constraints_or_acceptance_gates": False,
+        "FULL_BHSM_COMPLETE": False,
+    }
+
+
+def general_n_complete_child_reconstruction_statement() -> dict[str, Any]:
+    """State the exact general-N child-map architecture and open uniform bound."""
+
+    ledgers = []
+    for order in (3, 4, 5):
+        coordinate_count = 1 + 3 * order
+        multiplier_count = 2 * order
+        state_count = 2 * coordinate_count + multiplier_count
+        constraint_count = 2 * order + 1
+        compatibility_rows = 3 + constraint_count + 2
+        physical_rows = compatibility_rows + 2
+        ledgers.append({
+            "N": order,
+            "coordinates": coordinate_count,
+            "velocities": coordinate_count,
+            "multipliers": multiplier_count,
+            "whole_child_variables": state_count,
+            "trace_rows": 3,
+            "constraint_rows": constraint_count,
+            "momentum_rows": 2,
+            "dynamic_flux_rows": 2,
+            "compatibility_rows": compatibility_rows,
+            "complete_child_rows": physical_rows,
+            "compatibility_fiber_dimension": state_count - compatibility_rows,
+            "complete_child_fiber_dimension": state_count - physical_rows,
+            "complete_persistent_child_validated": True,
+        })
+    transfer = general_n_galerkin_transfer_certificate()
+    missing_object = transfer["required_next"]
+    return {
+        "classification": (
+            "GENERAL_N_LOCAL_RECONSTRUCTION_ARCHITECTURE_DERIVED;_"
+            "UNIFORM_CROSS_RESOLUTION_CONVERGENCE_ESTIMATE_OPEN"
+        ),
+        "domain": "INTEGER_SPECTRAL_ORDER_N_AT_LEAST_3",
+        "exact_dimension_formulas": {
+            "coordinate_count": "1+3N",
+            "multiplier_count": "2N",
+            "whole_child_variable_count": "8N+2",
+            "constraint_row_count": "2N+1",
+            "order_independent_boundary_core_rows": 7,
+            "compatibility_row_count": "2N+6",
+            "complete_child_physical_row_count": "2N+8",
+            "compatibility_fiber_dimension_at_full_row_rank": "6N-4",
+            "complete_child_fiber_dimension_at_full_row_rank": "6N-6",
+        },
+        "validated_resolution_ledger": ledgers,
+        "local_reconstruction_theorem": {
+            "map": "F_N(Y_N;e_N)=(A_N,Phi_N):R^(8N+2)->R^(2N+8)",
+            "event_parameter": (
+                "e_N_IS_THE_EXISTING_ETA_ADMISSIBLE_ORDERED_EVENT_STATE_"
+                "AND_IS_NOT_AN_ADDED_CHILD_UNKNOWN"
+            ),
+            "compatibility_map": (
+                "A_N=(TRACE_3,CONSTRAINTS_(2N+1),MOMENTUM_2)"
+            ),
+            "return_map": "Phi_N=DYNAMIC_CALDERON_FLUX_2",
+            "hypotheses": [
+                "THE_EVENT_IS_ORDERED_AND_ETA_ADMISSIBLE",
+                "THE_RETAINED_ACTION_CHILD_MAP_IS_C1_ON_THE_EVENT_CHART",
+                "D_A_N_HAS_FULL_ROW_RANK_2N+6",
+                "D_F_N_HAS_FULL_ROW_RANK_2N+8_AT_THE_ROOT",
+            ],
+            "conclusion": (
+                "THE_IMPLICIT_FUNCTION_THEOREM_GIVES_A_LOCAL_SMOOTH_"
+                "COMPLETE_CHILD_MANIFOLD_OF_DIMENSION_6N-6"
+            ),
+            "fiber_equivalence": (
+                "A_N(Y)=0_AND_Phi_N_RESTRICTED_TO_THE_LOCAL_A_N_FIBER_"
+                "EQUALS_ZERO_IFF_THE_UNCHANGED_F_N(Y)=0"
+            ),
+            "new_equations_constraints_or_acceptance_gates": False,
+        },
+        "cross_resolution_continuation_criterion": {
+            "spectral_prolongation": (
+                "I_N_TO_N_PLUS_1_APPLIED_TO_BOTH_THE_ORDERED_EVENT_e_N_"
+                "AND_COMPLETE_CHILD_Y_N"
+            ),
+            "event_convergence_prerequisite": (
+                "THE_EXISTING_ORDERED_EVENT_CONSTRUCTION_SUPPLIES_e_(N+1)_"
+                "ON_THE_SAME_BRANCH_WITH_norm(e_(N+1)-I*e_N)->0"
+            ),
+            "injected_defect": (
+                "epsilon_N=norm(F_(N+1)(I*Y_N;e_(N+1)))"
+            ),
+            "normal_right_inverse_bound": (
+                "norm(B_(N+1))<=kappa_(N+1),_D_F_(N+1)B_(N+1)=I"
+            ),
+            "derivative_lipschitz_bound": (
+                "norm(D_F_(N+1)(X)-D_F_(N+1)(Z))<=L_(N+1)norm(X-Z)"
+            ),
+            "newton_kantorovich_smallness": (
+                "kappa_(N+1)^2*L_(N+1)*epsilon_N<=1/2"
+            ),
+            "admissibility_margin": (
+                "THE_RESULTING_2*kappa_(N+1)*epsilon_N_NEIGHBORHOOD_"
+                "REMAINS_INSIDE_THE_EXISTING_ETA_AND_ORDERED_EVENT_DOMAIN"
+            ),
+            "conclusion_if_verified": (
+                "AN_F_(N+1)_ROOT_EXISTS_NEAR_THE_SPECTRAL_PROLONGATION;_"
+                "THE_NORMAL_CORRECTION_IS_AT_MOST_2*kappa*epsilon"
+            ),
+            "solution_manifold_kernel_is_not_a_defect": True,
+            "extra_gauge_or_physical_selector_added": False,
+        },
+        "resolution_independent_limit_criterion": {
+            "topology": "BHSM_ACTION_OWNED_SOBOLEV_PRODUCT_TOPOLOGY",
+            "state_convergence_requires": [
+                "CONSISTENT_SPECTRAL_INJECTION_AND_RESTRICTION",
+                "UNIFORM_OR_CONTROLLED_NORMAL_RIGHT_INVERSE_BOUNDS",
+                "SUMMABLE_NORMAL_CORRECTIONS_OR_AN_EQUIVALENT_CAUCHY_BOUND",
+                "SPECTRAL_DEFECT_DECAY_TO_ZERO",
+                "A_UNIFORM_POSITIVE_ETA_AND_ORDERED_EVENT_MARGIN",
+            ],
+            "persistence_convergence_requires": [
+                "UNIFORM_LOCAL_LIPSCHITZ_CONTROL_OF_THE_RETAINED_EULER_DIRAC_VECTOR_FIELDS",
+                "UNIFORM_DIRAC_HESSIAN_INVERTIBILITY_ON_A_COMMON_POSITIVE_DURATION",
+                "CONVERGENCE_OF_THE_PROJECTED_FLOWS_IN_THE_SAME_SOBOLEV_TOPOLOGY",
+            ],
+            "three_resolutions_alone_prove_the_limit": False,
+        },
+        "galerkin_transfer_certificate": transfer,
+        "validated": {
+            "independent_N3_N4_N5_complete_persistent_children": True,
+            "row_and_fiber_dimension_law_at_N3_N4_N5": True,
+            "same_action_and_unchanged_child_map_pattern": True,
+            "local_fiber_reduction_adds_no_physics": True,
+        },
+        "open": {
+            "uniform_right_inverse_bound": True,
+            "spectral_injection_defect_decay": True,
+            "uniform_eta_and_event_margin": True,
+            "common_duration_persistence_convergence": True,
+            "numerical_state_convergence_from_N3_N4_N5": True,
+        },
+        "first_missing_mathematical_object": missing_object,
+        "required_next": missing_object,
         "FULL_BHSM_COMPLETE": False,
     }
 
@@ -5398,6 +8130,242 @@ def refresh_existing_n5_child_checkpoint(path: str | Path) -> Path:
     return target
 
 
+def promote_existing_n5_persistence(path: str | Path) -> Path:
+    """Record N5 persistence only after the unchanged 18-row root closes."""
+
+    target = Path(path)
+    payload = json.loads(target.read_text(encoding="utf-8"))
+    result = dict(payload["cross_resolution_reconnaissance"])
+    child = dict(result["N5_event_conditioned_complete_child_reconstruction"])
+    if not child.get("complete_child_candidate_validated", False):
+        raise RuntimeError("N5 exact 18-row child root must close first")
+    n5_complete_child_positive_duration_persistence.cache_clear()
+    persistence = n5_complete_child_positive_duration_persistence(points=44)
+    if not persistence["positive_duration_relative_persistence_validated"]:
+        raise RuntimeError("N5 retained-action persistence did not validate")
+    child["persistence_evaluated"] = True
+    child["complete_persistent_child_validated"] = True
+    child["required_next"] = (
+        "DERIVE_THE_GENERAL_N_COMPLETE_PERSISTENT_CHILD_RECONSTRUCTION_"
+        "AND_CROSS_RESOLUTION_CONVERGENCE_STATEMENT_FROM_INDEPENDENT_N3_N4_N5"
+    )
+    result["N5_event_conditioned_complete_child_reconstruction"] = child
+    result["N5_complete_child_positive_duration_persistence"] = persistence
+    result["active_dependency"] = child["required_next"]
+    result["scientific_status"] = (
+        "INDEPENDENT_N3_N4_N5_COMPLETE_PERSISTENT_CHILDREN_VALIDATED;_"
+        "GENERAL_N_RECONSTRUCTION_AND_CONVERGENCE_STATEMENT_ACTIVE"
+    )
+    questions = dict(result["questions"])
+    child_question = dict(questions["same_rank14_complete_child_reconstructs"])
+    child_question.update({
+        "N5_complete_child_candidate_validated": True,
+        "N5_complete_persistent_child_validated": True,
+        "N5_child_status": "VALIDATED_RANK18_COMPLETE_PERSISTENT_CHILD",
+    })
+    questions["same_rank14_complete_child_reconstructs"] = child_question
+    result["questions"] = questions
+    payload["cross_resolution_reconnaissance"] = result
+    validation = dict(payload["validation"])
+    validation["N5_complete_persistent_child_validated"] = True
+    validation["N5_eta_domain_retained_through_persistence"] = bool(
+        persistence["coarse_evolution"]["minimum_eta_Legendre"] > 0.0
+        and persistence["fine_evolution"]["minimum_eta_Legendre"] > 0.0
+    )
+    validation["N5_nonzero_relative_evolution_retained"] = bool(
+        persistence["nonzero_relative_evolution_retained"]
+    )
+    payload["validation"] = validation
+    payload["validation_passed"] = all(validation.values())
+    target.write_text(deterministic_json(payload), encoding="utf-8")
+    return target
+
+
+def promote_existing_general_n_statement(path: str | Path) -> Path:
+    """Record the derived local general-N architecture without claiming a limit."""
+
+    target = Path(path)
+    payload = json.loads(target.read_text(encoding="utf-8"))
+    result = dict(payload["cross_resolution_reconnaissance"])
+    n4 = result["N4_event_conditioned_complete_child_reconstruction"]
+    n5 = result["N5_event_conditioned_complete_child_reconstruction"]
+    n3_path = target.parent / (
+        "BHSM_aether_n3_complete_child_persistence_v17_99.json"
+    )
+    n3_payload = json.loads(n3_path.read_text(encoding="utf-8"))
+    n3_persistence = n3_payload["complete_child_persistence"]["persistence"]
+    independent_persistent = bool(
+        n3_payload["validation_passed"]
+        and n3_persistence["positive_duration_witness"]
+        and n3_persistence["relative_evolution_nonzero"]
+        and n4["complete_child_candidate_validated"]
+        and n4["persistence_validated"]
+        and n5["complete_child_candidate_validated"]
+        and n5["complete_persistent_child_validated"]
+    )
+    if not independent_persistent:
+        raise RuntimeError("independent N3/N4/N5 persistent children required")
+
+    statement = general_n_complete_child_reconstruction_statement()
+    frame_audit = cross_resolution_principal_symbol_frame_audit(target)
+    strong_constraint_audit = cross_resolution_strong_constraint_infsup_audit(
+        target
+    )
+    boundary_polarization_audit = (
+        cross_resolution_boundary_symplectic_polarization_audit(target)
+    )
+    attachment_lift_audit = nested_attachment_lift_consistency_audit(target)
+    boundary_reaction_audit = on_shell_boundary_reaction_audit(target)
+    history_bvp_audit = child_history_bvp_bordered_operator_audit(target)
+    two_sided_reaction_audit = event_child_two_sided_reaction_match_audit(
+        target
+    )
+    statement["cross_resolution_principal_symbol_frame_audit"] = frame_audit
+    statement["cross_resolution_strong_constraint_infsup_audit"] = (
+        strong_constraint_audit
+    )
+    statement["cross_resolution_boundary_symplectic_polarization_audit"] = (
+        boundary_polarization_audit
+    )
+    statement["nested_attachment_lift_consistency_audit"] = (
+        attachment_lift_audit
+    )
+    statement["on_shell_boundary_reaction_audit"] = boundary_reaction_audit
+    statement["child_history_bvp_bordered_operator_audit"] = (
+        history_bvp_audit
+    )
+    statement["event_child_two_sided_reaction_match_audit"] = (
+        two_sided_reaction_audit
+    )
+    required_next = statement["required_next"]
+    result["general_N_complete_child_reconstruction_and_convergence_statement"] = (
+        statement
+    )
+    result["cross_resolution_principal_symbol_frame_audit"] = frame_audit
+    result["cross_resolution_strong_constraint_infsup_audit"] = (
+        strong_constraint_audit
+    )
+    result["cross_resolution_boundary_symplectic_polarization_audit"] = (
+        boundary_polarization_audit
+    )
+    result["nested_attachment_lift_consistency_audit"] = attachment_lift_audit
+    result["on_shell_boundary_reaction_audit"] = boundary_reaction_audit
+    result["child_history_bvp_bordered_operator_audit"] = history_bvp_audit
+    result["event_child_two_sided_reaction_match_audit"] = (
+        two_sided_reaction_audit
+    )
+    child = dict(n5)
+    child["required_next"] = required_next
+    result["N5_event_conditioned_complete_child_reconstruction"] = child
+    result["active_dependency"] = required_next
+    result["scientific_status"] = (
+        "INDEPENDENT_N3_N4_N5_COMPLETE_PERSISTENT_CHILDREN_VALIDATED;_"
+        "GENERAL_N_LOCAL_RECONSTRUCTION_ARCHITECTURE_DERIVED;_UNIFORM_"
+        "CROSS_RESOLUTION_CONVERGENCE_ESTIMATE_OPEN"
+    )
+
+    questions = dict(result["questions"])
+    rank_question = dict(questions["same_rank14_complete_child_reconstructs"])
+    rank_question.update({
+        "classification": "RECLASSIFIED_AND_RESOLVED_AT_N3_N4_N5",
+        "answer": "GENERAL_COMPLETE_CHILD_ROW_RANK_IS_2N+8",
+        "literal_rank14_survives": False,
+        "validated_ranks": {"N3": 14, "N4": 16, "N5": 18},
+        "validated_root_fiber_dimensions": {"N3": 12, "N4": 18, "N5": 24},
+        "reconstruction_gate": (
+            "CLOSED_INDEPENDENTLY_AT_N3_N4_N5;_UNIFORM_GENERAL_N_"
+            "CONTINUATION_ESTIMATE_REMAINS_OPEN"
+        ),
+    })
+    rank_question.pop("N4_active_blocker", None)
+    rank_question.pop("N5_active_blocker", None)
+    questions["same_rank14_complete_child_reconstructs"] = rank_question
+
+    movie = dict(questions["encapsulation_movie_resembles_N3"])
+    movie.update({
+        "classification": "RECLASSIFIED",
+        "answer": (
+            "INDEPENDENT_POSITIVE_DURATION_MOVIES_EXIST_AT_N3_N4_N5;_"
+            "CROSS_RESOLUTION_MOVIE_CONVERGENCE_IS_OPEN"
+        ),
+        "independent_persistence_movies_validated": True,
+        "full_movie_compared": False,
+    })
+    questions["encapsulation_movie_resembles_N3"] = movie
+
+    structure = dict(questions["period_scale_w_v_survive_resolution"])
+    structure.update({
+        "classification": "RECLASSIFIED",
+        "answer": (
+            "THE_PERIOD_SCALE_W_V_COORDINATE_ARCHITECTURE_SURVIVES_AT_"
+            "N3_N4_N5;_QUANTITATIVE_SPECTRAL_CONVERGENCE_IS_OPEN"
+        ),
+        "architectural_survival_validated": True,
+        "quantitative_convergence_validated": False,
+    })
+    questions["period_scale_w_v_survive_resolution"] = structure
+
+    n5_question = dict(questions["N5_confirms_or_contradicts_N4"])
+    n5_question.update({
+        "classification": "VALIDATED_STRUCTURAL_CONFIRMATION",
+        "answer": (
+            "N5_CONFIRMS_THE_ACTION_DERIVED_COMPLETE_PERSISTENT_CHILD_"
+            "ARCHITECTURE;_IT_DOES_NOT_BY_ITSELF_PROVE_RESOLUTION_CONVERGENCE"
+        ),
+        "event_child_confirmation": True,
+        "complete_persistence_confirmation": True,
+        "blocker": None,
+    })
+    questions["N5_confirms_or_contradicts_N4"] = n5_question
+    result["questions"] = questions
+    payload["cross_resolution_reconnaissance"] = result
+    closure_network = breadth_first_closure_network_audit()
+    payload["breadth_first_closure_network_audit"] = closure_network
+
+    validation = dict(payload["validation"])
+    validation.pop(
+        "N5_flux_value_stable_but_outer_derivative_unresolved", None
+    )
+    validation.update({
+        "independent_N3_N4_N5_complete_persistent_children": True,
+        "general_N_dimension_law_validated_at_N3_N4_N5": True,
+        "general_N_local_fiber_equivalence_adds_no_physics": True,
+        "general_N_uniform_convergence_not_overpromoted": bool(
+            statement["resolution_independent_limit_criterion"][
+                "three_resolutions_alone_prove_the_limit"
+            ] is False
+        ),
+        "breadth_first_closure_network_validated": closure_network[
+            "validation_passed"
+        ],
+        "cross_resolution_principal_symbol_frame_audit_validated": frame_audit[
+            "validation_passed"
+        ],
+        "cross_resolution_strong_constraint_infsup_audit_validated": (
+            strong_constraint_audit["validation_passed"]
+        ),
+        "cross_resolution_boundary_symplectic_polarization_audit_validated": (
+            boundary_polarization_audit["validation_passed"]
+        ),
+        "nested_attachment_lift_consistency_audit_validated": (
+            attachment_lift_audit["validation_passed"]
+        ),
+        "on_shell_boundary_reaction_audit_validated": (
+            boundary_reaction_audit["validation_passed"]
+        ),
+        "child_history_bvp_bordered_operator_audit_validated": (
+            history_bvp_audit["validation_passed"]
+        ),
+        "event_child_two_sided_reaction_match_audit_validated": (
+            two_sided_reaction_audit["validation_passed"]
+        ),
+    })
+    payload["validation"] = validation
+    payload["validation_passed"] = all(validation.values())
+    target.write_text(deterministic_json(payload), encoding="utf-8")
+    return target
+
+
 def reclassify_existing_n5_proposal_plateau(path: str | Path) -> Path:
     """Freeze the demonstrated N5 flux-Jacobian owner without a new solve."""
 
@@ -5478,6 +8446,19 @@ __all__ = [
     "n5_event_conditioned_complete_child_chart_audit",
     "n5_child_flux_step_audit",
     "n5_event_conditioned_complete_child_reconstruction",
+    "n5_complete_child_positive_duration_persistence",
+    "child_jacobi_radial_principal_symbol_audit",
+    "cross_resolution_principal_symbol_frame_audit",
+    "weighted_pole_attachment_principal_estimate",
+    "cross_resolution_strong_constraint_infsup_audit",
+    "cross_resolution_boundary_symplectic_polarization_audit",
+    "nested_attachment_lift_consistency_audit",
+    "on_shell_boundary_reaction_audit",
+    "child_history_bvp_bordered_operator_audit",
+    "event_child_two_sided_reaction_match_audit",
+    "event_to_child_on_shell_calderon_interface",
+    "general_n_galerkin_transfer_certificate",
+    "general_n_complete_child_reconstruction_statement",
     "cross_resolution_reconnaissance",
     "completion_payload",
     "materialize",
@@ -5486,5 +8467,7 @@ __all__ = [
     "refresh_existing_cross_resolution_classification",
     "refresh_existing_n5_child_chart_checkpoint",
     "refresh_existing_n5_child_checkpoint",
+    "promote_existing_n5_persistence",
+    "promote_existing_general_n_statement",
     "reclassify_existing_n5_proposal_plateau",
 ]

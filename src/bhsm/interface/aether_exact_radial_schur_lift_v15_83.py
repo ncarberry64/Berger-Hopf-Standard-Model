@@ -43,23 +43,28 @@ class Jet:
 
     __slots__ = ("value", "gradient", "hessian")
 
-    def __init__(self, value: float, gradient: np.ndarray, hessian: np.ndarray):
-        self.value = float(value)
-        self.gradient = np.asarray(gradient, dtype=float)
-        self.hessian = np.asarray(hessian, dtype=float)
+    def __init__(self, value: complex, gradient: np.ndarray, hessian: np.ndarray):
+        self.value = np.asarray(value).item()
+        self.gradient = np.asarray(gradient)
+        self.hessian = np.asarray(hessian)
 
     @classmethod
     def constant(cls, value: float, size: int) -> "Jet":
-        return cls(value, np.zeros(size), np.zeros((size, size)))
+        dtype = np.result_type(value, float)
+        return cls(
+            value,
+            np.zeros(size, dtype=dtype),
+            np.zeros((size, size), dtype=dtype),
+        )
 
     @classmethod
     def affine(cls, value: float, gradient: np.ndarray) -> "Jet":
-        vector = np.asarray(gradient, dtype=float)
+        vector = np.asarray(gradient)
         return cls(value, vector, np.zeros((vector.size, vector.size)))
 
     def __add__(self, other: float | "Jet") -> "Jet":
         if not isinstance(other, Jet):
-            other = Jet.constant(float(other), self.gradient.size)
+            other = Jet.constant(other, self.gradient.size)
         return Jet(
             self.value + other.value,
             self.gradient + other.gradient,
@@ -79,7 +84,7 @@ class Jet:
 
     def __mul__(self, other: float | "Jet") -> "Jet":
         if not isinstance(other, Jet):
-            scalar = float(other)
+            scalar = other
             return Jet(
                 scalar * self.value,
                 scalar * self.gradient,
@@ -130,7 +135,7 @@ class Jet:
         return result
 
     def exp(self) -> "Jet":
-        value = math.exp(self.value)
+        value = np.exp(self.value)
         return Jet(
             value,
             value * self.gradient,

@@ -8,18 +8,25 @@ evidence, not competing public status pages.
 Current identifier: **v21.35 cross-resolution encapsulation checkpoint**. It
 is a development checkpoint, not a release version.
 
-Independent N3 and N4 complete persistent children are validated. The
-independent N5 branch is eta-admissible and has a validated ordered event and
-structurally full-rank 18-row child map. Its exact root, certification, and
-persistence remain active. `FULL_BHSM_COMPLETE = FALSE`.
+Independent N3, N4, and N5 complete persistent children are validated for
+their retained finite-resolution maps. N5 closes the unchanged 18 physical
+rows at fixed-reference merit `5.90723795458673e-14` (raw
+`||F18||=1.1665202200968536e-7`), remains eta-admissible, and passes the
+existing certification and positive-duration persistence gates with nonzero
+relative evolution. `FULL_BHSM_COMPLETE = FALSE`.
 
 The N5 numerical representation writes the existing rows as
 `F18(Y)=(A16(Y), Phi2(Y))` and evaluates `Phi2` on the local implicit fiber
 `A16=0`. This is root-equivalent to the unchanged child map and changes no
 physical equation, event definition, eta domain, or complete-child gate.
 
+The finite-N pattern has `8N+2` variables, `2N+8` rows, and a `6N-6` local
+root manifold. The same-action two-sided event/child reaction map is solvable
+at N3/N4/N5 without a new row or C1 matching assumption. A uniform general-N
+reaction-Calderon graph convergence/right-inverse bound remains open.
+
 Exact next object:
-`CLOSE_THE_UNCHANGED_N5_F18_ROOT_CERTIFY_N5_PERSISTENCE_THEN_DERIVE_THE_GENERAL_N_RECONSTRUCTION_STATEMENT`.
+`PROVE_OR_LOCALIZE_THE_FIRST_FAILURE_OF_UNIFORM_GENERAL_N_REACTION_CALDERON_GRAPH_CONVERGENCE`.
 
 ### Historical corrected-Rayleigh N3 snapshot
 

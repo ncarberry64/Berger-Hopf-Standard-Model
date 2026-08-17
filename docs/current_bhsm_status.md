@@ -2,10 +2,12 @@
 
 ## Authoritative frontier: v21.35 cross-resolution encapsulation
 
-BHSM has independently reconstructed complete persistent children at N3 and
-N4. An independently derived N5 branch is eta-admissible, has an ordered
-event, and has a structurally full-rank 18-row child map. N5 root closure,
-certification, and persistence remain active.
+BHSM has independently reconstructed complete persistent children at N3, N4,
+and N5 for their retained finite-resolution maps. N5 closes the unchanged
+18-row map at fixed-reference merit `5.90723795458673e-14` (raw
+`||F18||=1.1665202200968536e-7`), with eta minimum `1.006162307589007`,
+complete-child certification, positive-duration persistence, and nonzero
+relative evolution.
 
 The active numerical representation is exactly
 `F18(Y)=(A16(Y),Phi2(Y))`: the existing 16 trace/constraint/momentum rows define
@@ -15,14 +17,20 @@ coefficient, event definition, eta condition, or child gate is introduced.
 
 - `N3 COMPLETE PERSISTENT CHILD = YES`
 - `N4 COMPLETE PERSISTENT CHILD = YES`
-- `N5 COMPLETE CHILD = ACTIVE`
+- `N5 COMPLETE PERSISTENT CHILD = YES`
 - `FULL_BHSM_COMPLETE = FALSE`
 
 Evidence:
 [`BHSM_AETHER_CROSS_RESOLUTION_RECONNAISSANCE_V21_35.json`](../artifacts/BHSM_AETHER_CROSS_RESOLUTION_RECONNAISSANCE_V21_35.json).
 
+The finite-N reconstruction pattern is `F_N:R^(8N+2)->R^(2N+8)` with a
+`6N-6` local root manifold. The retained same-action Lorentzian child-history
+BVP supplies a lift-independent boundary reaction, and the two-sided
+event/child reaction match is solvable at N3/N4/N5 without a new physical row
+or C1 continuity gate. Three resolutions alone do not prove the limit.
+
 Exact next dependency:
-`CLOSE_THE_UNCHANGED_N5_F18_ROOT_CERTIFY_N5_PERSISTENCE_THEN_DERIVE_THE_GENERAL_N_RECONSTRUCTION_STATEMENT`.
+`PROVE_OR_LOCALIZE_THE_FIRST_FAILURE_OF_UNIFORM_GENERAL_N_REACTION_CALDERON_GRAPH_CONVERGENCE`.
 
 The corrected-Rayleigh N3 chronology below is retained for provenance.
 
@@ -79,8 +87,8 @@ There is no demonstrated dominant physical or history-localized owner. See the
 [authoritative continuation ledger](BHSM_N3_CONTINUATION_LEDGER.md) and
 [rolling checkpoint artifact](../artifacts/BHSM_N3_FRESH_EIGENPAIR_CURVATURE_CONTINUATION_CHECKPOINT.json).
 
-Frozen predictions are unchanged. N=4+ convergence, broken reconstruction and
-return, absolute scale, masses, CKM, PMNS, CP, neutrino splittings, gauge
+Frozen predictions are unchanged. Uniform general-N convergence and return,
+absolute scale, masses, CKM, PMNS, CP, neutrino splittings, gauge
 spectrum, decay law, Unique Actualization, and empirical validation remain
 open.
 

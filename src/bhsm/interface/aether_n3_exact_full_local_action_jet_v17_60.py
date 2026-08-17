@@ -27,7 +27,7 @@ def _variables(values: np.ndarray, offset: int, size: int) -> list[Jet]:
     for index, value in enumerate(values):
         gradient = np.zeros(size)
         gradient[offset + index] = 1.0
-        result.append(Jet.affine(float(value), gradient))
+        result.append(Jet.affine(value, gradient))
     return result
 
 
@@ -39,7 +39,7 @@ def _linear(variables: list[Jet], coefficients: np.ndarray) -> Jet:
 
 
 def _sqrt(value: Jet) -> Jet:
-    root = math.sqrt(value.value)
+    root = np.sqrt(value.value)
     return Jet(
         root,
         value.gradient / (2.0 * root),
@@ -53,9 +53,9 @@ def exact_full_action_jet_at_state(
     multipliers: np.ndarray, *, points: int = 44,
 ) -> Jet:
     size = dimensions(order)
-    q = np.asarray(coordinates, dtype=float)
-    velocity = np.asarray(velocities, dtype=float)
-    multipliers = np.asarray(multipliers, dtype=float)
+    q = np.asarray(coordinates)
+    velocity = np.asarray(velocities)
+    multipliers = np.asarray(multipliers)
     qdim = size["coordinates"]
     mdim = size["multipliers"]
     if q.shape != (qdim,) or velocity.shape != (qdim,) or multipliers.shape != (mdim,):
