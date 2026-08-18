@@ -326,6 +326,27 @@ def test_latest_n4_child_checkpoint_uses_fixed_merit_full_space_proposal():
     assert coherent_persistence[
         "finite_duration_numerical_movie_converged"
     ] is True
+    schur = payload["cross_resolution_reconnaissance"][
+        "reaction_calderon_nested_schur_trace_audit"
+    ]
+    assert schur["validation_passed"] is True
+    assert all(
+        row["exact_nested_bordered_matrix_error"] < 1.0e-12
+        for row in schur["shell_rows"]
+    )
+    assert all(
+        row["schur_correction_relative_to_low_operator"] > 1.0
+        for row in schur["shell_rows"]
+    )
+    assert schur["trace_scaling"]["L2_trace_loglog_slope"] > 0.4
+    assert abs(schur["trace_scaling"]["H1_trace_loglog_slope"]) < 0.1
+    assert schur["derived_domain_reclassification"][
+        "pure_state_energy_space_is_a_complete_Calderon_domain"
+    ] is False
+    assert schur["derived_domain_reclassification"][
+        "new_physical_equation_constraint_or_gate"
+    ] is False
+    assert schur["finite_N_roots_events_or_persistence_changed"] is False
 
 
 def test_general_n_reconstruction_statement_preserves_the_physical_map():
@@ -352,6 +373,12 @@ def test_general_n_reconstruction_statement_preserves_the_physical_map():
     assert transfer["continuum_spaces"]["classical_regular_domain"] == (
         "X_s=H6_q_CROSS_H5_v_CROSS_H6_m"
     )
+    assert transfer["continuum_spaces"][
+        "pure_action_energy_state_space_is_the_complete_reaction_domain"
+    ] is False
+    assert "D_EULER_DIRAC" in transfer["continuum_spaces"][
+        "reaction_Calderon_graph_domain"
+    ]
     assert transfer["set_valued_continuum_relation"][
         "physical_branch_selector_added"
     ] is False

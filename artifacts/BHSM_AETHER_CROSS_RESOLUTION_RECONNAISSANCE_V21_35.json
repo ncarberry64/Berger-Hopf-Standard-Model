@@ -3669,7 +3669,7 @@
         "state": "X_E=R_scale_CROSS_H1_radial_geometry_CROSS_L2_velocity_CROSS_H1_lapse_shift",
         "why_owned_by_the_action": "THE_RETAINED_RADIAL_ACTION_CONTAINS_FIRST_RADIAL_DERIVATIVES_OF_GEOMETRY_LAPSE_AND_SHIFT_AND_ALGEBRAIC_COORDINATE_TIME_VELOCITIES"
       },
-      "classification": "ACTION_ENERGY_TOPOLOGY_DERIVED;_H6_MINIMUM_PROJECTION_RECLASSIFIED_AS_OVERREGULARIZED_FOR_RELATION_TRANSPORT;_COHERENT_N4_TO_N5_COMPLETE_PERSISTENT_CHILD_GRAPH_VALIDATED;_UNIFORM_REACTION_CALDERON_GRAPH_BOUND_OPEN",
+      "classification": "ACTION_ENERGY_TOPOLOGY_DERIVED;_H6_MINIMUM_PROJECTION_RECLASSIFIED_AS_OVERREGULARIZED_FOR_RELATION_TRANSPORT;_COHERENT_N4_TO_N5_COMPLETE_PERSISTENT_CHILD_GRAPH_VALIDATED;_REACTION_CALDERON_GRAPH_DOMAIN_RECLASSIFIED",
       "coherent_N4_to_N5_event": {
         "N4_branch_index_plus_new_lapse_shift_pair": 10,
         "action_energy_projection": {
@@ -3762,7 +3762,7 @@
         "action_energy_projection_eta_minimum": 0.990331281838482,
         "physical_constraints_or_eta_gate_changed": false
       },
-      "required_next": "TEST_THE_TWO_BY_TWO_REACTION_CALDERON_GRAPH_UNDER_EXACT_NESTED_SPECTRAL_INJECTION_AND_DERIVE_A_UNIFORM_NORMAL_RIGHT_INVERSE_OR_LOCALIZE_ITS_FIRST_ACTION_OWNED_FAILURE",
+      "required_next": "DERIVE_THE_WEAK_CONORMAL_REACTION_CALDERON_MAP_ON_THE_EULER_DIRAC_GRAPH_DOMAIN_AND_PROVE_UNIFORM_HIGH_SHELL_SCHUR_TAIL_CONTROL_OR_LOCALIZE_ITS_FIRST_LOWER_ORDER_FAILURE",
       "tail_rows": [
         {
           "N": 3,
@@ -3830,7 +3830,7 @@
       },
       "validation_passed": true
     },
-    "active_dependency": "TEST_THE_TWO_BY_TWO_REACTION_CALDERON_GRAPH_UNDER_EXACT_NESTED_SPECTRAL_INJECTION_AND_DERIVE_A_UNIFORM_NORMAL_RIGHT_INVERSE_OR_LOCALIZE_ITS_FIRST_ACTION_OWNED_FAILURE",
+    "active_dependency": "DERIVE_THE_WEAK_CONORMAL_REACTION_CALDERON_MAP_ON_THE_EULER_DIRAC_GRAPH_DOMAIN_AND_PROVE_UNIFORM_HIGH_SHELL_SCHUR_TAIL_CONTROL_OR_LOCALIZE_ITS_FIRST_LOWER_ORDER_FAILURE",
     "child_history_bvp_bordered_operator_audit": {
       "FULL_BHSM_COMPLETE": false,
       "classification": "SAME_ACTION_LORENTZIAN_CHILD_HISTORY_BVP_BORDERED_OPERATOR_DERIVED_AND_FINITE_N_INVERTIBLE;_EVENT_CHILD_REACTION_MATCHING_AND_UNIFORM_GENERAL_N_BOUND_OPEN",
@@ -4188,7 +4188,7 @@
         "maximum_trace": 0.0,
         "momentum_norm": 6.95e-13
       },
-      "required_next": "TEST_THE_TWO_BY_TWO_REACTION_CALDERON_GRAPH_UNDER_EXACT_NESTED_SPECTRAL_INJECTION_AND_DERIVE_A_UNIFORM_NORMAL_RIGHT_INVERSE_OR_LOCALIZE_ITS_FIRST_ACTION_OWNED_FAILURE",
+      "required_next": "DERIVE_THE_WEAK_CONORMAL_REACTION_CALDERON_MAP_ON_THE_EULER_DIRAC_GRAPH_DOMAIN_AND_PROVE_UNIFORM_HIGH_SHELL_SCHUR_TAIL_CONTROL_OR_LOCALIZE_ITS_FIRST_LOWER_ORDER_FAILURE",
       "seed_classification": "ACTION_ENERGY_NEAREST_CONSTRAINT_PROJECTION_OF_THE_EXACT_N4_CHILD_INTO_N5",
       "source_event": "ACTION_ENERGY_COHERENT_N4_TO_N5_EVENT"
     },
@@ -6334,7 +6334,7 @@
         "order_independent_boundary_core_rows": 7,
         "whole_child_variable_count": "8N+2"
       },
-      "first_missing_mathematical_object": "TEST_THE_TWO_BY_TWO_REACTION_CALDERON_GRAPH_UNDER_EXACT_NESTED_SPECTRAL_INJECTION_AND_DERIVE_A_UNIFORM_NORMAL_RIGHT_INVERSE_OR_LOCALIZE_ITS_FIRST_ACTION_OWNED_FAILURE",
+      "first_missing_mathematical_object": "DERIVE_THE_WEAK_CONORMAL_REACTION_CALDERON_MAP_ON_THE_EULER_DIRAC_GRAPH_DOMAIN_AND_PROVE_UNIFORM_HIGH_SHELL_SCHUR_TAIL_CONTROL_OR_LOCALIZE_ITS_FIRST_LOWER_ORDER_FAILURE",
       "galerkin_transfer_certificate": {
         "FULL_BHSM_COMPLETE": false,
         "classification": "ACTION_OWNED_GALERKIN_TRANSFER_THEOREM_DERIVED;_CONTINUUM_INF_SUP_AND_TAIL_CERTIFICATE_OPEN",
@@ -6789,7 +6789,7 @@
         "uniform_eta_and_event_margin": true,
         "uniform_right_inverse_bound": true
       },
-      "required_next": "TEST_THE_TWO_BY_TWO_REACTION_CALDERON_GRAPH_UNDER_EXACT_NESTED_SPECTRAL_INJECTION_AND_DERIVE_A_UNIFORM_NORMAL_RIGHT_INVERSE_OR_LOCALIZE_ITS_FIRST_ACTION_OWNED_FAILURE",
+      "required_next": "DERIVE_THE_WEAK_CONORMAL_REACTION_CALDERON_MAP_ON_THE_EULER_DIRAC_GRAPH_DOMAIN_AND_PROVE_UNIFORM_HIGH_SHELL_SCHUR_TAIL_CONTROL_OR_LOCALIZE_ITS_FIRST_LOWER_ORDER_FAILURE",
       "resolution_independent_limit_criterion": {
         "persistence_convergence_requires": [
           "UNIFORM_LOCAL_LIPSCHITZ_CONTROL_OF_THE_RETAINED_EULER_DIRAC_VECTOR_FIELDS",
@@ -7403,7 +7403,393 @@
         }
       }
     },
-    "scientific_status": "INDEPENDENT_N3_N4_N5_COMPLETE_PERSISTENT_CHILDREN_VALIDATED;_ACTION_ENERGY_COHERENT_N4_TO_N5_COMPLETE_PERSISTENT_CHILD_GRAPH_VALIDATED;_UNIFORM_REACTION_CALDERON_GRAPH_BOUND_OPEN"
+    "reaction_calderon_nested_schur_trace_audit": {
+      "FULL_BHSM_COMPLETE": false,
+      "classification": "BORDERED_ACTION_OPERATOR_EXACTLY_NESTED;_PURE_ACTION_ENERGY_REACTION_CALDERON_GRAPH_DOMAIN_INVALIDATED_BY_UNBOUNDED_L2_BOUNDARY_ACCELERATION_TRACE;_EULER_DIRAC_GRAPH_DOMAIN_REQUIRED",
+      "derived_domain_reclassification": {
+        "new_physical_equation_constraint_or_gate": false,
+        "pure_state_energy_space_is_a_complete_Calderon_domain": false,
+        "reaction_domain": "D_EULER_DIRAC={U_IN_CLASSICAL_DOMAIN:E_U_IN_X_E_STAR_AND_Gamma_acc(U)_IN_R2}",
+        "reaction_graph_norm": "norm(U)_X_E+norm(E_U)_X_E_STAR+norm(Gamma_acc(U))_R2",
+        "state_transport_topology_retained": "H1_GEOMETRY_CROSS_L2_VELOCITY_CROSS_H1_LAPSE_SHIFT",
+        "weak_conormal_reaction": "Lambda_child=H_star*E_child_ON_THE_EULER_DIRAC_GRAPH_DOMAIN_INDEPENDENT_OF_THE_CHOSEN_BOUNDARY_LIFT"
+      },
+      "finite_N_roots_events_or_persistence_changed": false,
+      "invalidated": "USING_THE_PURE_H1_CROSS_L2_CROSS_H1_STATE_ENERGY_NORM_AS_THE_COMPLETE_BOUNDARY_ACCELERATION_CALDERON_GRAPH_NORM",
+      "required_next": "DERIVE_THE_WEAK_CONORMAL_REACTION_CALDERON_MAP_ON_THE_EULER_DIRAC_GRAPH_DOMAIN_AND_PROVE_UNIFORM_HIGH_SHELL_SCHUR_TAIL_CONTROL_OR_LOCALIZE_ITS_FIRST_LOWER_ORDER_FAILURE",
+      "shell_rows": [
+        {
+          "effective_low_operator_smallest_singular_value": 0.000304883055238,
+          "exact_nested_bordered_matrix_error": 0.0,
+          "high_N": 4,
+          "high_shell_smallest_singular_value": 0.647329796225899,
+          "injected_affine_offset_relative_change": 0.699959451371026,
+          "injected_high_reaction_response_singular_values": [
+            1002.5323896645785,
+            0.074786379859529
+          ],
+          "injected_linear_graph_gap": 0.972623728838199,
+          "injected_reaction_response_relative_change": 0.174025777375191,
+          "low_N": 3,
+          "low_high_coupling_norm": 884.0172035722699,
+          "low_operator_smallest_singular_value": 0.000345681148275,
+          "low_reaction_response_singular_values": [
+            1163.336258890794,
+            6.159546403401622
+          ],
+          "new_shell_dimension": 5,
+          "schur_correction_norm": 174628.42172654453,
+          "schur_correction_relative_to_low_operator": 70.18832579114614
+        },
+        {
+          "effective_low_operator_smallest_singular_value": 1.8967146906e-05,
+          "exact_nested_bordered_matrix_error": 0.0,
+          "high_N": 5,
+          "high_shell_smallest_singular_value": 0.001539064729208,
+          "injected_affine_offset_relative_change": 1.620767247291969,
+          "injected_high_reaction_response_singular_values": [
+            1378.5587204756507,
+            0.29504079987555
+          ],
+          "injected_linear_graph_gap": 0.28746076420568,
+          "injected_reaction_response_relative_change": 1.262669102461176,
+          "low_N": 4,
+          "low_high_coupling_norm": 259.6549177579543,
+          "low_operator_smallest_singular_value": 2.595817711e-06,
+          "low_reaction_response_singular_values": [
+            5243.055608112663,
+            0.00047365155927
+          ],
+          "new_shell_dimension": 5,
+          "schur_correction_norm": 57943.43101533163,
+          "schur_correction_relative_to_low_operator": 75.0576209920468
+        }
+      ],
+      "trace_scaling": {
+        "H1_trace_loglog_slope": 0.001009229735201,
+        "L2_trace_loglog_slope": 0.496083923405252,
+        "rows": [
+          {
+            "H1_acceleration_to_boundary_trace_norm": 1.045068693758749,
+            "L2_acceleration_to_boundary_trace_norm": 2.920809626481889,
+            "N": 4
+          },
+          {
+            "H1_acceleration_to_boundary_trace_norm": 1.046463672372607,
+            "L2_acceleration_to_boundary_trace_norm": 3.244216054852149,
+            "N": 5
+          },
+          {
+            "H1_acceleration_to_boundary_trace_norm": 1.047435395117057,
+            "L2_acceleration_to_boundary_trace_norm": 3.538473864450061,
+            "N": 6
+          },
+          {
+            "H1_acceleration_to_boundary_trace_norm": 1.048150811478609,
+            "L2_acceleration_to_boundary_trace_norm": 3.810227607874509,
+            "N": 7
+          },
+          {
+            "H1_acceleration_to_boundary_trace_norm": 1.048699382772014,
+            "L2_acceleration_to_boundary_trace_norm": 4.063940178071117,
+            "N": 8
+          },
+          {
+            "H1_acceleration_to_boundary_trace_norm": 1.049133318591121,
+            "L2_acceleration_to_boundary_trace_norm": 4.302775637731996,
+            "N": 9
+          },
+          {
+            "H1_acceleration_to_boundary_trace_norm": 1.049485121542066,
+            "L2_acceleration_to_boundary_trace_norm": 4.529071891375803,
+            "N": 10
+          },
+          {
+            "H1_acceleration_to_boundary_trace_norm": 1.049776076935872,
+            "L2_acceleration_to_boundary_trace_norm": 4.74461355357553,
+            "N": 11
+          },
+          {
+            "H1_acceleration_to_boundary_trace_norm": 1.050020704550355,
+            "L2_acceleration_to_boundary_trace_norm": 4.950799142508643,
+            "N": 12
+          },
+          {
+            "H1_acceleration_to_boundary_trace_norm": 1.050229247333863,
+            "L2_acceleration_to_boundary_trace_norm": 5.148748569434876,
+            "N": 13
+          },
+          {
+            "H1_acceleration_to_boundary_trace_norm": 1.050409137344156,
+            "L2_acceleration_to_boundary_trace_norm": 5.339375031417243,
+            "N": 14
+          },
+          {
+            "H1_acceleration_to_boundary_trace_norm": 1.050565897656821,
+            "L2_acceleration_to_boundary_trace_norm": 5.523434712188027,
+            "N": 15
+          },
+          {
+            "H1_acceleration_to_boundary_trace_norm": 1.050703718076752,
+            "L2_acceleration_to_boundary_trace_norm": 5.701562118716424,
+            "N": 16
+          },
+          {
+            "H1_acceleration_to_boundary_trace_norm": 1.050825834422194,
+            "L2_acceleration_to_boundary_trace_norm": 5.874295817516765,
+            "N": 17
+          },
+          {
+            "H1_acceleration_to_boundary_trace_norm": 1.050934785340335,
+            "L2_acceleration_to_boundary_trace_norm": 6.042097574962613,
+            "N": 18
+          },
+          {
+            "H1_acceleration_to_boundary_trace_norm": 1.051032590421145,
+            "L2_acceleration_to_boundary_trace_norm": 6.205366855291329,
+            "N": 19
+          },
+          {
+            "H1_acceleration_to_boundary_trace_norm": 1.051120876373372,
+            "L2_acceleration_to_boundary_trace_norm": 6.364451981415413,
+            "N": 20
+          },
+          {
+            "H1_acceleration_to_boundary_trace_norm": 1.051200968109067,
+            "L2_acceleration_to_boundary_trace_norm": 6.519658851320368,
+            "N": 21
+          },
+          {
+            "H1_acceleration_to_boundary_trace_norm": 1.051273955615993,
+            "L2_acceleration_to_boundary_trace_norm": 6.671257833772085,
+            "N": 22
+          },
+          {
+            "H1_acceleration_to_boundary_trace_norm": 1.051340743806709,
+            "L2_acceleration_to_boundary_trace_norm": 6.819489287377369,
+            "N": 23
+          },
+          {
+            "H1_acceleration_to_boundary_trace_norm": 1.051402090193494,
+            "L2_acceleration_to_boundary_trace_norm": 6.964568024530711,
+            "N": 24
+          },
+          {
+            "H1_acceleration_to_boundary_trace_norm": 1.051458633721574,
+            "L2_acceleration_to_boundary_trace_norm": 7.106686956669751,
+            "N": 25
+          },
+          {
+            "H1_acceleration_to_boundary_trace_norm": 1.051510917090031,
+            "L2_acceleration_to_boundary_trace_norm": 7.246020097121709,
+            "N": 26
+          },
+          {
+            "H1_acceleration_to_boundary_trace_norm": 1.051559404213922,
+            "L2_acceleration_to_boundary_trace_norm": 7.382725054665219,
+            "N": 27
+          },
+          {
+            "H1_acceleration_to_boundary_trace_norm": 1.051604494018185,
+            "L2_acceleration_to_boundary_trace_norm": 7.516945119520356,
+            "N": 28
+          },
+          {
+            "H1_acceleration_to_boundary_trace_norm": 1.051646531431817,
+            "L2_acceleration_to_boundary_trace_norm": 7.648811020318543,
+            "N": 29
+          },
+          {
+            "H1_acceleration_to_boundary_trace_norm": 1.051685816223513,
+            "L2_acceleration_to_boundary_trace_norm": 7.778442413321254,
+            "N": 30
+          },
+          {
+            "H1_acceleration_to_boundary_trace_norm": 1.051722610157488,
+            "L2_acceleration_to_boundary_trace_norm": 7.905949152116716,
+            "N": 31
+          },
+          {
+            "H1_acceleration_to_boundary_trace_norm": 1.051757142830587,
+            "L2_acceleration_to_boundary_trace_norm": 8.031432376084014,
+            "N": 32
+          },
+          {
+            "H1_acceleration_to_boundary_trace_norm": 1.051789616465729,
+            "L2_acceleration_to_boundary_trace_norm": 8.154985448265277,
+            "N": 33
+          },
+          {
+            "H1_acceleration_to_boundary_trace_norm": 1.051820209873076,
+            "L2_acceleration_to_boundary_trace_norm": 8.276694767347566,
+            "N": 34
+          },
+          {
+            "H1_acceleration_to_boundary_trace_norm": 1.051849081742762,
+            "L2_acceleration_to_boundary_trace_norm": 8.396640473807029,
+            "N": 35
+          },
+          {
+            "H1_acceleration_to_boundary_trace_norm": 1.051876373397164,
+            "L2_acceleration_to_boundary_trace_norm": 8.51489706659977,
+            "N": 36
+          },
+          {
+            "H1_acceleration_to_boundary_trace_norm": 1.051902211103456,
+            "L2_acceleration_to_boundary_trace_norm": 8.631533943868657,
+            "N": 37
+          },
+          {
+            "H1_acceleration_to_boundary_trace_norm": 1.051926708026261,
+            "L2_acceleration_to_boundary_trace_norm": 8.746615878802483,
+            "N": 38
+          },
+          {
+            "H1_acceleration_to_boundary_trace_norm": 1.051949965884106,
+            "L2_acceleration_to_boundary_trace_norm": 8.860203439905474,
+            "N": 39
+          },
+          {
+            "H1_acceleration_to_boundary_trace_norm": 1.051972076360785,
+            "L2_acceleration_to_boundary_trace_norm": 8.972353363412475,
+            "N": 40
+          },
+          {
+            "H1_acceleration_to_boundary_trace_norm": 1.051993122312936,
+            "L2_acceleration_to_boundary_trace_norm": 9.083118884344836,
+            "N": 41
+          },
+          {
+            "H1_acceleration_to_boundary_trace_norm": 1.052013178807338,
+            "L2_acceleration_to_boundary_trace_norm": 9.192550031685151,
+            "N": 42
+          },
+          {
+            "H1_acceleration_to_boundary_trace_norm": 1.052032314015302,
+            "L2_acceleration_to_boundary_trace_norm": 9.30069389231196,
+            "N": 43
+          },
+          {
+            "H1_acceleration_to_boundary_trace_norm": 1.05205058998661,
+            "L2_acceleration_to_boundary_trace_norm": 9.407594847642175,
+            "N": 44
+          },
+          {
+            "H1_acceleration_to_boundary_trace_norm": 1.052068063321502,
+            "L2_acceleration_to_boundary_trace_norm": 9.513294786352894,
+            "N": 45
+          },
+          {
+            "H1_acceleration_to_boundary_trace_norm": 1.052084785756061,
+            "L2_acceleration_to_boundary_trace_norm": 9.617833296072764,
+            "N": 46
+          },
+          {
+            "H1_acceleration_to_boundary_trace_norm": 1.052100804673714,
+            "L2_acceleration_to_boundary_trace_norm": 9.721247836529226,
+            "N": 47
+          },
+          {
+            "H1_acceleration_to_boundary_trace_norm": 1.052116163553535,
+            "L2_acceleration_to_boundary_trace_norm": 9.823573896298024,
+            "N": 48
+          },
+          {
+            "H1_acceleration_to_boundary_trace_norm": 1.052130902364255,
+            "L2_acceleration_to_boundary_trace_norm": 9.924845135013767,
+            "N": 49
+          },
+          {
+            "H1_acceleration_to_boundary_trace_norm": 1.052145057911499,
+            "L2_acceleration_to_boundary_trace_norm": 10.02509351265629,
+            "N": 50
+          },
+          {
+            "H1_acceleration_to_boundary_trace_norm": 1.052158664144617,
+            "L2_acceleration_to_boundary_trace_norm": 10.12434940731995,
+            "N": 51
+          },
+          {
+            "H1_acceleration_to_boundary_trace_norm": 1.052171752428468,
+            "L2_acceleration_to_boundary_trace_norm": 10.222641722695462,
+            "N": 52
+          },
+          {
+            "H1_acceleration_to_boundary_trace_norm": 1.052184351784763,
+            "L2_acceleration_to_boundary_trace_norm": 10.319997986341475,
+            "N": 53
+          },
+          {
+            "H1_acceleration_to_boundary_trace_norm": 1.052196489106851,
+            "L2_acceleration_to_boundary_trace_norm": 10.416444439692583,
+            "N": 54
+          },
+          {
+            "H1_acceleration_to_boundary_trace_norm": 1.052208189351312,
+            "L2_acceleration_to_boundary_trace_norm": 10.512006120637361,
+            "N": 55
+          },
+          {
+            "H1_acceleration_to_boundary_trace_norm": 1.052219475709215,
+            "L2_acceleration_to_boundary_trace_norm": 10.606706939402669,
+            "N": 56
+          },
+          {
+            "H1_acceleration_to_boundary_trace_norm": 1.052230369759523,
+            "L2_acceleration_to_boundary_trace_norm": 10.700569748395273,
+            "N": 57
+          },
+          {
+            "H1_acceleration_to_boundary_trace_norm": 1.052240891606776,
+            "L2_acceleration_to_boundary_trace_norm": 10.793616406579138,
+            "N": 58
+          },
+          {
+            "H1_acceleration_to_boundary_trace_norm": 1.0522510600049,
+            "L2_acceleration_to_boundary_trace_norm": 10.885867838901493,
+            "N": 59
+          },
+          {
+            "H1_acceleration_to_boundary_trace_norm": 1.052260892468751,
+            "L2_acceleration_to_boundary_trace_norm": 10.977344091225605,
+            "N": 60
+          },
+          {
+            "H1_acceleration_to_boundary_trace_norm": 1.052270405374774,
+            "L2_acceleration_to_boundary_trace_norm": 11.06806438117839,
+            "N": 61
+          },
+          {
+            "H1_acceleration_to_boundary_trace_norm": 1.05227961405202,
+            "L2_acceleration_to_boundary_trace_norm": 11.158047145278292,
+            "N": 62
+          },
+          {
+            "H1_acceleration_to_boundary_trace_norm": 1.052288532864558,
+            "L2_acceleration_to_boundary_trace_norm": 11.247310082670472,
+            "N": 63
+          },
+          {
+            "H1_acceleration_to_boundary_trace_norm": 1.052297175286231,
+            "L2_acceleration_to_boundary_trace_norm": 11.33587019576348,
+            "N": 64
+          }
+        ],
+        "sampled_N_range": [
+          4,
+          64
+        ]
+      },
+      "validation": {
+        "H1_boundary_trace_is_uniformly_controlled": true,
+        "bordered_action_operator_is_exactly_nested": true,
+        "each_added_resolution_shell_has_five_BVP_unknowns": true,
+        "pure_L2_boundary_acceleration_trace_is_not_uniform": true,
+        "raw_high_shell_Schur_correction_does_not_decay_N3_to_N5": true
+      },
+      "validation_passed": true
+    },
+    "scientific_status": "INDEPENDENT_N3_N4_N5_COMPLETE_PERSISTENT_CHILDREN_VALIDATED;_ACTION_ENERGY_COHERENT_N4_TO_N5_COMPLETE_PERSISTENT_CHILD_GRAPH_VALIDATED;_PURE_ENERGY_REACTION_DOMAIN_INVALIDATED;_EULER_DIRAC_GRAPH_DOMAIN_WEAK_CONORMAL_MAP_OPEN"
   },
   "ingredient_process_ownership_audit": {
     "FULL_BHSM_COMPLETE": false,
@@ -7966,6 +8352,7 @@
     "orders_N3_N4_N5_measured": true,
     "physical_scale_accessibility_audit_validated": true,
     "rank14_not_silently_imposed_at_higher_N": true,
+    "reaction_calderon_nested_schur_trace_audit_validated": true,
     "undefined_sector_balance_not_promoted": true
   },
   "validation_passed": true,

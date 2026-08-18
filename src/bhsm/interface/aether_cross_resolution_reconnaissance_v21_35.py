@@ -7660,13 +7660,280 @@ def action_energy_topology_coherent_event_audit(
     }
 
 
+def reaction_calderon_nested_schur_trace_audit(
+    path: str | Path = (
+        "artifacts/BHSM_AETHER_CROSS_RESOLUTION_RECONNAISSANCE_V21_35.json"
+    ),
+    *,
+    points: int = 44,
+) -> dict[str, Any]:
+    """Localize the first uniform reaction-Calderon graph obstruction."""
+
+    target = Path(path)
+    payload = json.loads(target.read_text(encoding="utf-8"))[
+        "cross_resolution_reconnaissance"
+    ]
+    n3_payload = json.loads((target.parent / (
+        "BHSM_aether_n3_complete_child_persistence_v17_99.json"
+    )).read_text(encoding="utf-8"))
+    states = {
+        3: n3_payload["complete_child_persistence"]["evolution"]["rows"][0],
+        4: payload[
+            "N4_event_conditioned_complete_child_reconstruction"
+        ]["child_state"],
+    }
+
+    def exact_state(source: Mapping[str, Any]) -> tuple[
+        np.ndarray, np.ndarray, np.ndarray
+    ]:
+        exact = source.get("binary64_hex")
+        if exact is None:
+            return tuple(  # type: ignore[return-value]
+                np.asarray(source[name], dtype=float)
+                for name in ("coordinates", "velocities", "multipliers")
+            )
+        return tuple(  # type: ignore[return-value]
+            np.asarray([float.fromhex(value) for value in exact[name]])
+            for name in ("coordinates", "velocities", "multipliers")
+        )
+
+    def bordered_matrix(
+        order: int, q: np.ndarray, velocity: np.ndarray, m: np.ndarray,
+    ) -> np.ndarray:
+        qdim = 3 * order + 1
+        mdim = 2 * order
+        hessian = np.asarray(
+            exact_full_action_jet_at_state(
+                order, q, velocity, m, points=points
+            ).hessian,
+            dtype=float,
+        )
+        boundary = _attachment_jacobian_at_order(order, q)
+        return np.block([
+            [
+                hessian[qdim:2 * qdim, qdim:2 * qdim],
+                hessian[qdim:2 * qdim, 2 * qdim:],
+                -boundary.T,
+            ],
+            [
+                hessian[2 * qdim:, qdim:2 * qdim],
+                hessian[2 * qdim:, 2 * qdim:],
+                np.zeros((mdim, 2)),
+            ],
+            [boundary, np.zeros((2, mdim)), np.zeros((2, 2))],
+        ])
+
+    def bordered_injection(order: int) -> np.ndarray:
+        qlow = 3 * order + 1
+        qhigh = 3 * (order + 1) + 1
+        mlow = 2 * order
+        mhigh = 2 * (order + 1)
+        iq = np.zeros((qhigh, qlow))
+        iq[0, 0] = 1.0
+        for family in range(3):
+            low = 1 + family * order
+            high = 1 + family * (order + 1)
+            iq[high:high + order, low:low + order] = np.eye(order)
+        im = np.zeros((mhigh, mlow))
+        im[:order, :order] = np.eye(order)
+        im[order + 1:2 * order + 1, order:2 * order] = np.eye(order)
+        return np.block([
+            [iq, np.zeros((qhigh, mlow)), np.zeros((qhigh, 2))],
+            [np.zeros((mhigh, qlow)), im, np.zeros((mhigh, 2))],
+            [np.zeros((2, qlow)), np.zeros((2, mlow)), np.eye(2)],
+        ])
+
+    def response_graph(
+        order: int, q: np.ndarray, velocity: np.ndarray, m: np.ndarray,
+    ) -> tuple[np.ndarray, np.ndarray, np.ndarray]:
+        zero = _child_history_boundary_reaction_solve(
+            order, q, velocity, m, np.zeros(2), points=points
+        )
+        offset = np.asarray(zero["boundary_reaction"], dtype=float)
+        response = np.empty((2, 2))
+        for column in range(2):
+            unit = np.zeros(2)
+            unit[column] = 1.0
+            solved = _child_history_boundary_reaction_solve(
+                order, q, velocity, m, unit, points=points
+            )
+            response[:, column] = (
+                np.asarray(solved["boundary_reaction"], dtype=float)
+                - offset
+            )
+        graph = np.vstack((np.eye(2), response))
+        projector = graph @ np.linalg.solve(graph.T @ graph, graph.T)
+        return offset, response, projector
+
+    shell_rows = []
+    for order, source in states.items():
+        q, velocity, m = exact_state(source)
+        qh, vh, mh = embed_nested_state(
+            q, velocity, m, order, order + 1
+        )
+        low_matrix = bordered_matrix(order, q, velocity, m)
+        high_matrix = bordered_matrix(order + 1, qh, vh, mh)
+        injection = bordered_injection(order)
+        used = set(np.argmax(injection, axis=0).tolist())
+        high_indices = np.asarray([
+            index for index in range(high_matrix.shape[0])
+            if index not in used
+        ])
+        complement = np.eye(high_matrix.shape[0])[:, high_indices]
+        low_restriction = injection.T @ high_matrix @ injection
+        low_high = injection.T @ high_matrix @ complement
+        high_high = complement.T @ high_matrix @ complement
+        high_singular = np.linalg.svd(high_high, compute_uv=False)
+        correction = low_high @ np.linalg.solve(high_high, low_high.T)
+        effective = low_restriction - correction
+        low_offset, low_response, low_projector = response_graph(
+            order, q, velocity, m
+        )
+        high_offset, high_response, high_projector = response_graph(
+            order + 1, qh, vh, mh
+        )
+        shell_rows.append({
+            "low_N": order,
+            "high_N": order + 1,
+            "new_shell_dimension": int(high_indices.size),
+            "exact_nested_bordered_matrix_error": float(
+                np.linalg.norm(low_restriction - low_matrix)
+            ),
+            "high_shell_smallest_singular_value": float(high_singular[-1]),
+            "low_high_coupling_norm": float(np.linalg.norm(low_high)),
+            "schur_correction_norm": float(np.linalg.norm(correction)),
+            "schur_correction_relative_to_low_operator": float(
+                np.linalg.norm(correction)
+                / max(1.0, np.linalg.norm(low_matrix))
+            ),
+            "low_operator_smallest_singular_value": float(
+                np.linalg.svd(low_matrix, compute_uv=False)[-1]
+            ),
+            "effective_low_operator_smallest_singular_value": float(
+                np.linalg.svd(effective, compute_uv=False)[-1]
+            ),
+            "injected_reaction_response_relative_change": float(
+                np.linalg.norm(high_response - low_response)
+                / max(1.0, np.linalg.norm(low_response))
+            ),
+            "injected_affine_offset_relative_change": float(
+                np.linalg.norm(high_offset - low_offset)
+                / max(1.0, np.linalg.norm(low_offset))
+            ),
+            "injected_linear_graph_gap": float(
+                np.linalg.norm(high_projector - low_projector, ord=2)
+            ),
+            "low_reaction_response_singular_values": np.linalg.svd(
+                low_response, compute_uv=False
+            ).tolist(),
+            "injected_high_reaction_response_singular_values": np.linalg.svd(
+                high_response, compute_uv=False
+            ).tolist(),
+        })
+
+    trace_rows = []
+    for order in range(4, 65):
+        q = np.zeros(3 * order + 1)
+        boundary = _attachment_jacobian_at_order(order, q)
+        frequencies = spectral_frequencies(order)["coordinates"]
+        h1_weight = np.sqrt(1.0 + frequencies**2)
+        trace_rows.append({
+            "N": order,
+            "L2_acceleration_to_boundary_trace_norm": float(
+                np.linalg.norm(boundary, ord=2)
+            ),
+            "H1_acceleration_to_boundary_trace_norm": float(
+                np.linalg.norm(boundary / h1_weight[None, :], ord=2)
+            ),
+        })
+    fit_rows = trace_rows[12:]
+    log_n = np.log([row["N"] for row in fit_rows])
+    l2_slope = float(np.polyfit(log_n, np.log([
+        row["L2_acceleration_to_boundary_trace_norm"]
+        for row in fit_rows
+    ]), 1)[0])
+    h1_slope = float(np.polyfit(log_n, np.log([
+        row["H1_acceleration_to_boundary_trace_norm"]
+        for row in fit_rows
+    ]), 1)[0])
+    validation = {
+        "bordered_action_operator_is_exactly_nested": all(
+            row["exact_nested_bordered_matrix_error"] < 1.0e-12
+            for row in shell_rows
+        ),
+        "each_added_resolution_shell_has_five_BVP_unknowns": all(
+            row["new_shell_dimension"] == 5 for row in shell_rows
+        ),
+        "raw_high_shell_Schur_correction_does_not_decay_N3_to_N5": all(
+            row["schur_correction_relative_to_low_operator"] > 1.0
+            for row in shell_rows
+        ),
+        "pure_L2_boundary_acceleration_trace_is_not_uniform": l2_slope > 0.4,
+        "H1_boundary_trace_is_uniformly_controlled": bool(
+            abs(h1_slope) < 0.1
+            and max(
+                row["H1_acceleration_to_boundary_trace_norm"]
+                for row in trace_rows
+            ) < 2.0 * min(
+                row["H1_acceleration_to_boundary_trace_norm"]
+                for row in trace_rows
+            )
+        ),
+    }
+    return {
+        "classification": (
+            "BORDERED_ACTION_OPERATOR_EXACTLY_NESTED;_PURE_ACTION_ENERGY_"
+            "REACTION_CALDERON_GRAPH_DOMAIN_INVALIDATED_BY_UNBOUNDED_L2_"
+            "BOUNDARY_ACCELERATION_TRACE;_EULER_DIRAC_GRAPH_DOMAIN_REQUIRED"
+        ),
+        "shell_rows": shell_rows,
+        "trace_scaling": {
+            "sampled_N_range": [4, 64],
+            "L2_trace_loglog_slope": l2_slope,
+            "H1_trace_loglog_slope": h1_slope,
+            "rows": trace_rows,
+        },
+        "derived_domain_reclassification": {
+            "state_transport_topology_retained": (
+                "H1_GEOMETRY_CROSS_L2_VELOCITY_CROSS_H1_LAPSE_SHIFT"
+            ),
+            "pure_state_energy_space_is_a_complete_Calderon_domain": False,
+            "reaction_domain": (
+                "D_EULER_DIRAC={U_IN_CLASSICAL_DOMAIN:E_U_IN_X_E_STAR_"
+                "AND_Gamma_acc(U)_IN_R2}"
+            ),
+            "reaction_graph_norm": (
+                "norm(U)_X_E+norm(E_U)_X_E_STAR+norm(Gamma_acc(U))_R2"
+            ),
+            "weak_conormal_reaction": (
+                "Lambda_child=H_star*E_child_ON_THE_EULER_DIRAC_GRAPH_"
+                "DOMAIN_INDEPENDENT_OF_THE_CHOSEN_BOUNDARY_LIFT"
+            ),
+            "new_physical_equation_constraint_or_gate": False,
+        },
+        "invalidated": (
+            "USING_THE_PURE_H1_CROSS_L2_CROSS_H1_STATE_ENERGY_NORM_AS_"
+            "THE_COMPLETE_BOUNDARY_ACCELERATION_CALDERON_GRAPH_NORM"
+        ),
+        "finite_N_roots_events_or_persistence_changed": False,
+        "required_next": (
+            "DERIVE_THE_WEAK_CONORMAL_REACTION_CALDERON_MAP_ON_THE_EULER_"
+            "DIRAC_GRAPH_DOMAIN_AND_PROVE_UNIFORM_HIGH_SHELL_SCHUR_TAIL_"
+            "CONTROL_OR_LOCALIZE_ITS_FIRST_LOWER_ORDER_FAILURE"
+        ),
+        "validation": validation,
+        "validation_passed": all(validation.values()),
+        "FULL_BHSM_COMPLETE": False,
+    }
+
+
 def event_to_child_on_shell_calderon_interface() -> dict[str, Any]:
     """Reconcile the validated local child roots with the required full BVP."""
 
     missing = (
-        "CONSTRUCT_A_COHERENT_EVENT_CONDITIONED_CHILD_GRAPH_IN_THE_ACTION_"
-        "ENERGY_TOPOLOGY_AND_PROVE_ITS_UNIFORM_NORMAL_RIGHT_INVERSE_AND_"
-        "SPECTRAL_TAIL_BOUNDS"
+        "DERIVE_THE_WEAK_CONORMAL_REACTION_CALDERON_MAP_ON_THE_EULER_"
+        "DIRAC_GRAPH_DOMAIN_AND_PROVE_UNIFORM_HIGH_SHELL_SCHUR_TAIL_"
+        "CONTROL_OR_LOCALIZE_ITS_FIRST_LOWER_ORDER_FAILURE"
     )
     principal_symbol = child_jacobi_radial_principal_symbol_audit()
     weighted_principal = weighted_pole_attachment_principal_estimate()
@@ -7781,9 +8048,9 @@ def general_n_galerkin_transfer_certificate() -> dict[str, Any]:
 
     calderon = event_to_child_on_shell_calderon_interface()
     missing = (
-        "DERIVE_THE_ON_SHELL_CHILD_EULER_BVP_CALDERON_TRACE_FROM_THE_SAME_"
-        "ACTION_SO_VERTICAL_INTERIOR_VARIATIONS_VANISH_AND_REEVALUATE_THE_"
-        "N3_N4_N5_BOUNDARY_MOMENTUM_FLUX_RELATION"
+        "DERIVE_THE_WEAK_CONORMAL_REACTION_CALDERON_MAP_ON_THE_EULER_"
+        "DIRAC_GRAPH_DOMAIN_AND_PROVE_UNIFORM_HIGH_SHELL_SCHUR_TAIL_"
+        "CONTROL_OR_LOCALIZE_ITS_FIRST_LOWER_ORDER_FAILURE"
     )
     return {
         "classification": (
@@ -7796,6 +8063,16 @@ def general_n_galerkin_transfer_certificate() -> dict[str, Any]:
                 "CROSS_H1_lapse_shift"
             ),
             "classical_regular_domain": "X_s=H6_q_CROSS_H5_v_CROSS_H6_m",
+            "reaction_Calderon_graph_domain": (
+                "D_EULER_DIRAC={U_IN_X_s:E_U_IN_X_E_STAR_AND_"
+                "Gamma_acc(U)_IN_R2}"
+            ),
+            "reaction_graph_norm": (
+                "norm(U)_X_E+norm(E_U)_X_E_STAR+norm(Gamma_acc(U))_R2"
+            ),
+            "pure_action_energy_state_space_is_the_complete_reaction_domain": (
+                False
+            ),
             "constraint_space": (
                 "H_MINUS_1_LAPSE_SHIFT_DUAL_CROSS_R_ENERGY"
             ),
@@ -8916,11 +9193,12 @@ def promote_existing_coherent_n4_to_n5_child_persistence(
     )
     if not persistence["positive_duration_relative_persistence_validated"]:
         raise RuntimeError("coherent N4-to-N5 child persistence did not close")
-    required_next = (
-        "TEST_THE_TWO_BY_TWO_REACTION_CALDERON_GRAPH_UNDER_EXACT_NESTED_"
-        "SPECTRAL_INJECTION_AND_DERIVE_A_UNIFORM_NORMAL_RIGHT_INVERSE_OR_"
-        "LOCALIZE_ITS_FIRST_ACTION_OWNED_FAILURE"
+    reaction_calderon = reaction_calderon_nested_schur_trace_audit(
+        target, points=44
     )
+    if not reaction_calderon["validation_passed"]:
+        raise RuntimeError("reaction-Calderon nested Schur audit failed")
+    required_next = reaction_calderon["required_next"]
     graph.update({
         "persistence_evaluated": True,
         "persistence_validated": True,
@@ -8931,13 +9209,16 @@ def promote_existing_coherent_n4_to_n5_child_persistence(
     result[
         "coherent_N4_to_N5_complete_child_positive_duration_persistence"
     ] = persistence
+    result["reaction_calderon_nested_schur_trace_audit"] = (
+        reaction_calderon
+    )
     energy = dict(result["action_energy_topology_coherent_event_audit"])
     energy.update({
         "classification": (
             "ACTION_ENERGY_TOPOLOGY_DERIVED;_H6_MINIMUM_PROJECTION_"
             "RECLASSIFIED_AS_OVERREGULARIZED_FOR_RELATION_TRANSPORT;_"
             "COHERENT_N4_TO_N5_COMPLETE_PERSISTENT_CHILD_GRAPH_VALIDATED;_"
-            "UNIFORM_REACTION_CALDERON_GRAPH_BOUND_OPEN"
+            "REACTION_CALDERON_GRAPH_DOMAIN_RECLASSIFIED"
         ),
         "coherent_complete_child_graph_validated": True,
         "coherent_complete_child_persistence_validated": True,
@@ -8956,7 +9237,8 @@ def promote_existing_coherent_n4_to_n5_child_persistence(
     result["scientific_status"] = (
         "INDEPENDENT_N3_N4_N5_COMPLETE_PERSISTENT_CHILDREN_VALIDATED;_"
         "ACTION_ENERGY_COHERENT_N4_TO_N5_COMPLETE_PERSISTENT_CHILD_GRAPH_"
-        "VALIDATED;_UNIFORM_REACTION_CALDERON_GRAPH_BOUND_OPEN"
+        "VALIDATED;_PURE_ENERGY_REACTION_DOMAIN_INVALIDATED;_EULER_DIRAC_"
+        "GRAPH_DOMAIN_WEAK_CONORMAL_MAP_OPEN"
     )
     payload["cross_resolution_reconnaissance"] = result
     validation = dict(payload["validation"])
@@ -8965,6 +9247,9 @@ def promote_existing_coherent_n4_to_n5_child_persistence(
         "coherent_N4_to_N5_positive_duration_persistence_validated": True,
         "coherent_N4_to_N5_nonzero_relative_evolution_retained": bool(
             persistence["nonzero_relative_evolution_retained"]
+        ),
+        "reaction_calderon_nested_schur_trace_audit_validated": (
+            reaction_calderon["validation_passed"]
         ),
     })
     payload["validation"] = validation
@@ -9065,6 +9350,7 @@ __all__ = [
     "child_history_bvp_bordered_operator_audit",
     "event_child_two_sided_reaction_match_audit",
     "action_energy_topology_coherent_event_audit",
+    "reaction_calderon_nested_schur_trace_audit",
     "event_to_child_on_shell_calderon_interface",
     "general_n_galerkin_transfer_certificate",
     "general_n_complete_child_reconstruction_statement",
