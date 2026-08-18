@@ -16,6 +16,7 @@ from bhsm.interface.aether_cross_resolution_reconnaissance_v21_35 import (
     soft_boundary_acceleration_compactness_criterion,
     soft_jacobi_semigroup_compactness_reduction,
     jacobi_form_coefficient_mosco_theorem,
+    actual_child_S2_compactness_audit,
     uniform_boundary_jerk_compactness_reduction,
     uniform_positive_duration_normal_closed_range_reduction,
     weak_calderon_boundary_generator_reduction,
@@ -369,6 +370,26 @@ def test_jacobi_form_coefficient_mosco_theorem():
     assert status[
         "genuine_uniform_normal_closed_range_failure_demonstrated"
     ] is False
+    assert audit[
+        "new_physics_equations_constraints_regularizers_objectives_or_gates"
+    ] is False
+
+
+def test_actual_child_S2_compactness_audit():
+    audit = actual_child_S2_compactness_audit()
+    assert audit["validation_passed"] is True
+    assert [row["N"] for row in audit["rows"]] == [3, 4, 5, 6]
+    assert all(
+        row["complete_persistent_child_validated"] for row in audit["rows"]
+    )
+    assert max(audit["N4_to_N6_norm_spread_ratios"].values()) < 1.3
+    n56 = audit["comparisons"][-1]["restricted_relative_differences"]
+    assert all(value < 0.2 for value in n56.values())
+    gap = audit["theorem_gap"]
+    assert gap["full_static_S2_estimate_from_snapshot_rows_is_valid"] is False
+    assert gap["coupled_spatial_dynamic_S2_estimate_proved"] is False
+    assert "D_chi_v" in gap["velocity_derivative_fact"]
+    assert gap["genuine_uniform_failure_demonstrated"] is False
     assert audit[
         "new_physics_equations_constraints_regularizers_objectives_or_gates"
     ] is False

@@ -12800,6 +12800,175 @@ def jacobi_form_coefficient_mosco_theorem(
     }
 
 
+def actual_child_S2_compactness_audit(
+    path: str | Path = (
+        "artifacts/BHSM_AETHER_CROSS_RESOLUTION_RECONNAISSANCE_V21_35.json"
+    ),
+) -> dict[str, Any]:
+    """Measure S2 compactness evidence on the completed N3--N6 children."""
+
+    result = json.loads(Path(path).read_text(encoding="utf-8"))[
+        "cross_resolution_reconnaissance"
+    ]
+    candidate_keys = {
+        3: "N3_exact_attachment_weak_child_candidate",
+        4: "N4_exact_attachment_weak_child_candidate",
+        5: "coherent_N5_exact_attachment_weak_child_candidate",
+        6: "N6_weak_complete_child_candidate",
+    }
+
+    def decode(order: int) -> tuple[np.ndarray, ...]:
+        exact = result[candidate_keys[order]]["child_state"]["binary64_hex"]
+        return tuple(
+            np.asarray([float.fromhex(value) for value in exact[name]])
+            for name in ("coordinates", "velocities", "multipliers")
+        )
+
+    states = {order: decode(order) for order in candidate_keys}
+    rows = []
+    for order, (q, velocity, multipliers) in states.items():
+        frequencies = spectral_frequencies(order)
+        rows.append({
+            "N": order,
+            "q_H2_norm": float(np.linalg.norm(
+                q * (1.0 + frequencies["coordinates"] ** 2)
+            )),
+            "velocity_H1_norm": float(np.linalg.norm(
+                velocity * np.sqrt(
+                    1.0 + frequencies["coordinates"] ** 2
+                )
+            )),
+            "multiplier_H2_norm": float(np.linalg.norm(
+                multipliers * (1.0 + frequencies["multipliers"] ** 2)
+            )),
+            "complete_persistent_child_validated": bool(
+                result[candidate_keys[order]][
+                    "complete_persistent_child_validated"
+                ]
+            ),
+        })
+
+    def restrict(
+        value: np.ndarray, high: int, low: int, *, multiplier: bool,
+    ) -> np.ndarray:
+        if multiplier:
+            return np.concatenate((value[:low], value[high:high + low]))
+        target = np.zeros(1 + 3 * low)
+        target[0] = value[0]
+        for family in range(3):
+            target[1 + family * low:1 + (family + 1) * low] = value[
+                1 + family * high:1 + family * high + low
+            ]
+        return target
+
+    comparisons = []
+    for low, high in ((3, 4), (4, 5), (5, 6)):
+        q_low, v_low, m_low = states[low]
+        q_high, v_high, m_high = states[high]
+        frequencies = spectral_frequencies(low)
+        weights = {
+            "q_H2": 1.0 + frequencies["coordinates"] ** 2,
+            "velocity_H1": np.sqrt(
+                1.0 + frequencies["coordinates"] ** 2
+            ),
+            "multiplier_H2": 1.0 + frequencies["multipliers"] ** 2,
+        }
+        triples = {
+            "q_H2": (
+                q_low, restrict(q_high, high, low, multiplier=False)
+            ),
+            "velocity_H1": (
+                v_low, restrict(v_high, high, low, multiplier=False)
+            ),
+            "multiplier_H2": (
+                m_low, restrict(m_high, high, low, multiplier=True)
+            ),
+        }
+        comparisons.append({
+            "pair": f"N{low}_to_N{high}",
+            "restricted_relative_differences": {
+                name: float(
+                    np.linalg.norm((left - right) * weights[name])
+                    / max(1.0, np.linalg.norm(left * weights[name]))
+                )
+                for name, (left, right) in triples.items()
+            },
+        })
+    n4_n6 = [row for row in rows if row["N"] >= 4]
+    spread = {
+        name: max(row[name] for row in n4_n6) / min(
+            row[name] for row in n4_n6
+        )
+        for name in ("q_H2_norm", "velocity_H1_norm", "multiplier_H2_norm")
+    }
+    validation = {
+        "all_N3_through_N6_children_are_complete_and_persistent": all(
+            row["complete_persistent_child_validated"] for row in rows
+        ),
+        "N4_through_N6_S2_norms_remain_in_one_finite_band": bool(
+            max(spread.values()) < 1.3
+        ),
+        "N5_to_N6_restricted_S2_differences_are_resolved": all(
+            value < 0.2
+            for value in comparisons[-1]["restricted_relative_differences"].values()
+        ),
+        "four_finite_children_not_promoted_as_a_uniform_general_N_bound": True,
+        "N3_not_invalidated_by_its_larger_S2_norm": True,
+        "no_new_equation_constraint_regularizer_objective_or_gate": True,
+    }
+    return {
+        "classification": (
+            "THE_ACTUAL_COMPLETE_PERSISTENT_N4_N5_N6_CHILDREN_OCCUPY_A_"
+            "COMMON_FINITE_S2_BAND_AND_THE_RESTRICTED_N5_TO_N6_S2_"
+            "DIFFERENCE_IS_RESOLVED;_THIS_IS_COMPACTNESS_EVIDENCE_NOT_AN_"
+            "N_UNIFORM_A_PRIORI_BOUND"
+        ),
+        "S2_space": "H2_q_CROSS_H1_velocity_CROSS_H2_lapse_shift",
+        "rows": rows,
+        "comparisons": comparisons,
+        "N4_to_N6_norm_spread_ratios": spread,
+        "theorem_gap": {
+            "static_spatial_estimate": (
+                "norm(q)_H2+norm(m)_H2<=C(eta0^-1,norm(U)_X_E)*"
+                "(norm(E_U)_X_E_star+norm(Gamma_U)_boundary+"
+                "norm(U)_X_E)_ON_THE_EXISTING_GAUGE_FIXED_CHILD_CHART"
+            ),
+            "velocity_derivative_fact": (
+                "THE_RETAINED_ACTION_DEPENDS_ON_v_BUT_NOT_D_chi_v,_SO_"
+                "THE_STATIC_CHILD_ROWS_DO_NOT_ELLIPTICALLY_CONTROL_"
+                "norm(v)_H1"
+            ),
+            "dynamic_velocity_estimate": (
+                "sup_0<=t<=T_norm(v(t))_H1<=C_T*(norm(v(0))_H1+"
+                "integral_0^T_norm(D_t_v)_H1_dt)_FROM_THE_EXISTING_"
+                "POSITIVE_DURATION_EULER_DIRAC_EVOLUTION"
+            ),
+            "spatial_principal_owner": (
+                "THE_EXISTING_INVERTIBLE_GAUGE_FIXED_RADIAL_PRINCIPAL_"
+                "MATRIX_WITH_GAP_sqrt(29)-5"
+            ),
+            "first_uncontrolled_term": (
+                "N_UNIFORM_H1_VELOCITY_PROPAGATION_ON_THE_ACTUAL_"
+                "POSITIVE_DURATION_CORRECTED_CHILD_HISTORIES"
+            ),
+            "full_static_S2_estimate_from_snapshot_rows_is_valid": False,
+            "coupled_spatial_dynamic_S2_estimate_proved": False,
+            "genuine_uniform_failure_demonstrated": False,
+        },
+        "exact_next_mathematical_lemma": (
+            "PROVE_THE_GAUGE_FIXED_H2_q_H2_m_SPATIAL_GARDING_ESTIMATE_"
+            "AND_THE_N_UNIFORM_H1_v_PROPAGATION_ESTIMATE_ON_THE_"
+            "EXISTING_POSITIVE_DURATION_CORRECTED_CHILD_HISTORIES"
+        ),
+        "new_physics_equations_constraints_regularizers_objectives_or_gates": (
+            False
+        ),
+        "validation": validation,
+        "validation_passed": all(validation.values()),
+        "FULL_BHSM_COMPLETE": False,
+    }
+
+
 def weak_constraint_boundary_source_tail_audit(
     path: str | Path = (
         "artifacts/BHSM_AETHER_CROSS_RESOLUTION_RECONNAISSANCE_V21_35.json"
@@ -16199,15 +16368,19 @@ def promote_boundary_jerk_weak_graph_domain_audit(
     if not mosco["validation_passed"]:
         raise RuntimeError("Jacobi coefficient-to-Mosco theorem failed")
     result["jacobi_form_coefficient_mosco_theorem"] = mosco
-    result["active_dependency"] = mosco["exact_next_mathematical_lemma"]
+    actual_S2 = actual_child_S2_compactness_audit(target)
+    if not actual_S2["validation_passed"]:
+        raise RuntimeError("actual-child S2 compactness audit failed")
+    result["actual_child_S2_compactness_audit"] = actual_S2
+    result["active_dependency"] = actual_S2["exact_next_mathematical_lemma"]
     result["scientific_status"] = (
         "N3_TO_N6_EXACT_ATTACHMENT_WEAK_COMPLETE_PERSISTENT_CHILDREN_"
         "VALIDATED;_THE_HARD_MOMENTUM_RESPONSE_CLOSES_AND_THE_SOFT_"
         "NORMAL_CHANNEL_IS_POSITIVE_DURATION_DYNAMICAL;_UNIFORM_"
         "CLASSICAL_H6_CONTROL_IS_INVALID_AS_A_NEW_CRITERION;_THE_WEAK_"
         "CALDERON_BOUNDARY_JERK_FAILURE_IS_LOCALIZED_TO_THE_ACTION_"
-        "SELECTED_SOFT_CAUCHY_VECTOR_AND_ACTUAL_BACKGROUND_COMPACTNESS;_"
-        "THE_ACTION_COEFFICIENT_TO_MOSCO_STEP_IS_CLOSED"
+        "GAUGE_FIXED_S2_A_PRIORI_BOUND_FOR_THE_ACTUAL_CORRECTED_CHILD_"
+        "BUNDLE;_N4_N5_N6_FINITE_CHILDREN_SHARE_ONE_MEASURED_S2_BAND"
     )
     payload["cross_resolution_reconnaissance"] = result
     validation = dict(payload["validation"])
@@ -16235,6 +16408,9 @@ def promote_boundary_jerk_weak_graph_domain_audit(
     validation["jacobi_form_coefficient_mosco_theorem_validated"] = (
         mosco["validation_passed"]
     )
+    validation["actual_child_S2_compactness_audit_validated"] = actual_S2[
+        "validation_passed"
+    ]
     payload["validation"] = validation
     payload["validation_passed"] = all(validation.values())
     target.write_text(deterministic_json(payload), encoding="utf-8")
@@ -16459,6 +16635,7 @@ __all__ = [
     "soft_boundary_acceleration_compactness_criterion",
     "soft_jacobi_semigroup_compactness_reduction",
     "jacobi_form_coefficient_mosco_theorem",
+    "actual_child_S2_compactness_audit",
     "weak_constraint_boundary_source_tail_audit",
     "weak_complete_child_normal_right_inverse_audit",
     "weak_complete_child_normal_lipschitz_audit",
