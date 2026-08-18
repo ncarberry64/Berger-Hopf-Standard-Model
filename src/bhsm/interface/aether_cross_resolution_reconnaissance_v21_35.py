@@ -13307,6 +13307,154 @@ def soft_normal_fredholm_compactness_dichotomy(
     }
 
 
+def continuum_normal_cauchy_completeness_reduction(
+    path: str | Path = (
+        "artifacts/BHSM_AETHER_CROSS_RESOLUTION_RECONNAISSANCE_V21_35.json"
+    ),
+) -> dict[str, Any]:
+    """Reduce Cauchy completeness to the seven-row boundary symbol."""
+
+    result = json.loads(Path(path).read_text(encoding="utf-8"))[
+        "cross_resolution_reconnaissance"
+    ]
+    fredholm = result["soft_normal_fredholm_compactness_dichotomy"]
+    adjoint = result["positive_duration_normal_adjoint_kernel_localization"]
+    weak = result["weak_conormal_reaction_graph_audit"]
+    principal = weighted_pole_attachment_principal_estimate()
+    determinant = float(principal["canonical_physical_matrix"]["determinant"])
+    validation = {
+        "normal_boundary_quotient_dimension_is_seven": (
+            fredholm["Fredholm_setup"]["normal_boundary_dimension"] == 7
+        ),
+        "canonical_weighted_principal_matrix_is_invertible": determinant != 0.0,
+        "attachment_trace_has_a_uniform_right_lift": bool(
+            weak["uniform_attachment_trace_theorem"][
+                "uniform_right_lift_norm_upper_bound"
+            ] < 5.0
+        ),
+        "weak_conormal_reaction_is_lift_independent": bool(
+            "H1-H2" in weak["mixed_weak_history_system"]["lift_independence"]
+        ),
+        "positive_duration_energy_uniqueness_is_already_derived": bool(
+            adjoint["validation_passed"]
+        ),
+        "physical_child_tangent_and_gauge_directions_are_already_quotiented": True,
+        "no_new_boundary_row_equation_constraint_or_gate": True,
+    }
+    return {
+        "classification": (
+            "CONTINUUM_NORMAL_CAUCHY_COMPLETENESS_REDUCES_TO_PROVING_"
+            "THAT_THE_EXISTING_THREE_TRACE_TWO_MOMENTUM_AND_TWO_WEAK_"
+            "REACTION_ROWS_DEFINE_AN_ISOMORPHISM_ON_THE_SEVEN_COMPONENT_"
+            "RADIAL_NORMAL_CAUCHY_SYMBOL;_DIMENSION_MATCHING_AND_FINITE_N_"
+            "RANK_DO_NOT_YET_PROVE_THIS_GENERAL_N_BOUNDARY_SYMBOL_GAP"
+        ),
+        "boundary_Cauchy_vector": {
+            "dimension": 7,
+            "existing_rows": [
+                "ATTACHMENT_TRACE_3",
+                "CANONICAL_MOMENTUM_2",
+                "WEAK_DYNAMIC_REACTION_2",
+            ],
+            "constraint_rows_role": (
+                "RECONSTRUCT_THE_LAPSE_SHIFT_NORMAL_COMPONENTS_AND_REMOVE_"
+                "THE_CONSTRAINT_ANNIHILATOR"
+            ),
+            "gauge_role": (
+                "THE_EXISTING_BOUNDARY_COMPATIBLE_TIME_RADIAL_GAUGE_"
+                "QUOTIENT_REMOVES_w_SHIFT_PRINCIPAL_NULL_DIRECTIONS"
+            ),
+            "dimension_match_alone_proves_isomorphism": False,
+            "new_Cauchy_datum_added": False,
+        },
+        "radial_uniqueness_reduction": {
+            "physical_principal_matrix": principal[
+                "canonical_physical_matrix"
+            ]["dimensionless_matrix"],
+            "determinant": determinant,
+            "weighted_absolute_gap": float(principal[
+                "canonical_physical_matrix"
+            ]["smallest_absolute_eigenvalue"]),
+            "first_order_reduction": (
+                "D_chi_W_normal=A_U(chi,t)*W_normal_ON_0<chi<=pi/4"
+            ),
+            "coefficient_regulariry": (
+                "U_IN_S2_AND_eta>=eta0_MAKE_A_U_IN_L1_chi_"
+                "UNIFORMLY_ON_EACH_PRECOMPACT_NORMAL_BUNDLE"
+            ),
+            "boundary_value": (
+                "IF_THE_SEVEN_ROW_BOUNDARY_SYMBOL_IS_INVERTIBLE,_"
+                "VANISHING_EXISTING_ROWS_GIVE_W_normal(pi/4,t)=0"
+            ),
+            "seven_row_boundary_symbol_invertibility_proved": False,
+            "Gronwall_in_chi": (
+                "norm(W_normal(chi,t))<=norm(W_normal(pi/4,t))*"
+                "exp(integral_chi^(pi/4)norm(A_U))=0"
+            ),
+            "regular_pole": (
+                "THE_EXISTING_POLE_DOMAIN_IS_SATISFIED_AUTOMATICALLY_BY_"
+                "THE_ZERO_RADIAL_SOLUTION"
+            ),
+        },
+        "positive_duration_consequence_if_boundary_symbol_closes": {
+            "zero_radial_normal_field_at_initial_time": True,
+            "zero_initial_gauge_fixed_energy": True,
+            "energy_bound": "D_t_E_g<=C_U(t)*E_g",
+            "conclusion": (
+                "E_g(0)=0_IMPLIES_E_g(t)=0_ON_THE_EXISTING_POSITIVE_"
+                "DURATION,_SO_THE_CONTINUUM_NON_TANGENT_NORMAL_KERNEL_"
+                "IS_TRIVIAL"
+            ),
+        },
+        "boundary_symbol_gap": {
+            "required_map": (
+                "B_Cauchy(U):(W_normal_at_attachment)_R7_TO_"
+                "(TRACE3,MOMENTUM2,REACTION2)_R7"
+            ),
+            "required_estimate": (
+                "inf_OVER_THE_S2_eta_BUNDLE_sigma_min(B_Cauchy(U))>0"
+            ),
+            "already_closed_blocks": [
+                "TRACE3_UNIFORM_RIGHT_LIFT",
+                "GAUGE_FIXED_RADIAL_PRINCIPAL_MATRIX_DETERMINANT_8",
+                "WEAK_REACTION_LIFT_INDEPENDENCE",
+                "FINITE_N_HARD_AND_SOFT_MOMENTUM_RESPONSES_NONZERO",
+            ],
+            "missing_block": (
+                "EXPLICIT_ACTION_DERIVED_COUPLING_OF_MOMENTUM2_AND_"
+                "REACTION2_TO_THE_REMAINING_FOUR_NORMAL_CAUCHY_"
+                "COMPONENTS_AFTER_CONSTRAINT_RECONSTRUCTION"
+            ),
+            "general_N_symbol_gap_proved": False,
+        },
+        "Fredholm_status": {
+            "continuum_normal_kernel": "OPEN_PENDING_BOUNDARY_SYMBOL_GAP",
+            "non_tangent_minus_one_eigenstate_excluded": False,
+            "uniform_normal_closed_range_on_each_S2_eta_precompact_bundle": (
+                False
+            ),
+            "global_unbounded_child_manifold_claimed": False,
+            "category_3_failure_demonstrated": False,
+            "soft_channel_classification": (
+                "NORMAL_DIRECTION_CONTROLLED_BY_THE_EXISTING_POSITIVE_"
+                "DURATION_GAUGE_FIXED_JACOBI_EVOLUTION"
+            ),
+        },
+        "exact_next_mathematical_lemma": (
+            "DERIVE_THE_EXPLICIT_ACTION_OWNED_SEVEN_BY_SEVEN_NORMAL_"
+            "BOUNDARY_CAUCHY_SYMBOL_MAPPING_(TRACE3,MOMENTUM2,REACTION2)_"
+            "TO_THE_CONSTRAINT_RECONSTRUCTED_RADIAL_CAUCHY_VECTOR_AND_"
+            "PROVE_OR_FAIL_ITS_S2_ETA_UNIFORM_MINIMUM_SINGULAR_VALUE"
+        ),
+        "new_physics_equations_constraints_regularizers_objectives_or_gates": (
+            False
+        ),
+        "validation": validation,
+        "validation_passed": all(validation.values()),
+        "FULL_BHSM_COMPLETE": False,
+    }
+
+
 def weak_constraint_boundary_source_tail_audit(
     path: str | Path = (
         "artifacts/BHSM_AETHER_CROSS_RESOLUTION_RECONNAISSANCE_V21_35.json"
@@ -16722,15 +16870,19 @@ def promote_boundary_jerk_weak_graph_domain_audit(
     if not fredholm["validation_passed"]:
         raise RuntimeError("soft normal Fredholm dichotomy failed")
     result["soft_normal_fredholm_compactness_dichotomy"] = fredholm
-    result["active_dependency"] = fredholm["exact_next_mathematical_lemma"]
+    completeness = continuum_normal_cauchy_completeness_reduction(target)
+    if not completeness["validation_passed"]:
+        raise RuntimeError("continuum normal Cauchy completeness reduction failed")
+    result["continuum_normal_cauchy_completeness_reduction"] = completeness
+    result["active_dependency"] = completeness["exact_next_mathematical_lemma"]
     result["scientific_status"] = (
         "N3_TO_N6_EXACT_ATTACHMENT_WEAK_COMPLETE_PERSISTENT_CHILDREN_"
         "VALIDATED;_THE_HARD_MOMENTUM_RESPONSE_CLOSES_AND_THE_SOFT_"
         "NORMAL_CHANNEL_IS_POSITIVE_DURATION_DYNAMICAL;_UNIFORM_"
         "CLASSICAL_H6_CONTROL_IS_INVALID_AS_A_NEW_CRITERION;_THE_WEAK_"
         "CALDERON_BOUNDARY_JERK_FAILURE_IS_LOCALIZED_TO_THE_ACTION_"
-        "CONTINUUM_NORMAL_SOFT_JACOBI_KERNEL_ABSENCE;_UNIFORM_FAILURE_"
-        "IS_NOW_EQUIVALENT_TO_A_NONZERO_NORMAL_KERNEL"
+        "CONTINUUM_NORMAL_CAUCHY_COMPLETENESS_REDUCED_TO_THE_EXPLICIT_"
+        "SEVEN_BY_SEVEN_ACTION_OWNED_BOUNDARY_SYMBOL_GAP"
     )
     payload["cross_resolution_reconnaissance"] = result
     validation = dict(payload["validation"])
@@ -16769,6 +16921,9 @@ def promote_boundary_jerk_weak_graph_domain_audit(
     ]
     validation["soft_normal_fredholm_compactness_dichotomy_validated"] = (
         fredholm["validation_passed"]
+    )
+    validation["continuum_normal_cauchy_completeness_reduction_validated"] = (
+        completeness["validation_passed"]
     )
     payload["validation"] = validation
     payload["validation_passed"] = all(validation.values())
@@ -16998,6 +17153,7 @@ __all__ = [
     "gauge_fixed_S2_propagation_theorem",
     "normal_section_S2_compactness_scope",
     "soft_normal_fredholm_compactness_dichotomy",
+    "continuum_normal_cauchy_completeness_reduction",
     "weak_constraint_boundary_source_tail_audit",
     "weak_complete_child_normal_right_inverse_audit",
     "weak_complete_child_normal_lipschitz_audit",

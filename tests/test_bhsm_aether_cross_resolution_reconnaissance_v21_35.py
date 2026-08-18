@@ -20,6 +20,7 @@ from bhsm.interface.aether_cross_resolution_reconnaissance_v21_35 import (
     gauge_fixed_S2_propagation_theorem,
     normal_section_S2_compactness_scope,
     soft_normal_fredholm_compactness_dichotomy,
+    continuum_normal_cauchy_completeness_reduction,
     uniform_boundary_jerk_compactness_reduction,
     uniform_positive_duration_normal_closed_range_reduction,
     weak_calderon_boundary_generator_reduction,
@@ -461,6 +462,38 @@ def test_soft_normal_fredholm_compactness_dichotomy():
         "NORMAL_DIRECTION_CONTROLLED_BY_THE_EXISTING_POSITIVE_"
         "DURATION_GAUGE_FIXED_JACOBI_EVOLUTION"
     )
+    assert audit[
+        "new_physics_equations_constraints_regularizers_objectives_or_gates"
+    ] is False
+
+
+def test_continuum_normal_cauchy_completeness_reduction():
+    audit = continuum_normal_cauchy_completeness_reduction()
+    assert audit["validation_passed"] is True
+    boundary = audit["boundary_Cauchy_vector"]
+    assert boundary["dimension"] == 7
+    assert boundary["existing_rows"] == [
+        "ATTACHMENT_TRACE_3",
+        "CANONICAL_MOMENTUM_2",
+        "WEAK_DYNAMIC_REACTION_2",
+    ]
+    assert boundary["dimension_match_alone_proves_isomorphism"] is False
+    assert boundary["new_Cauchy_datum_added"] is False
+    uniqueness = audit["radial_uniqueness_reduction"]
+    assert uniqueness["determinant"] != 0.0
+    assert uniqueness["weighted_absolute_gap"] > 0.0
+    assert uniqueness["seven_row_boundary_symbol_invertibility_proved"] is False
+    symbol = audit["boundary_symbol_gap"]
+    assert symbol["general_N_symbol_gap_proved"] is False
+    consequence = audit["Fredholm_status"]
+    assert consequence["continuum_normal_kernel"] == (
+        "OPEN_PENDING_BOUNDARY_SYMBOL_GAP"
+    )
+    assert consequence[
+        "uniform_normal_closed_range_on_each_S2_eta_precompact_bundle"
+    ] is False
+    assert consequence["global_unbounded_child_manifold_claimed"] is False
+    assert consequence["category_3_failure_demonstrated"] is False
     assert audit[
         "new_physics_equations_constraints_regularizers_objectives_or_gates"
     ] is False
