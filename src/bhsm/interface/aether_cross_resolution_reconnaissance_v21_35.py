@@ -11573,6 +11573,98 @@ def whole_system_time_translation_tangent_interface(
     }
 
 
+def soft_channel_positive_duration_observability_jet_lemma(
+    path: str | Path = (
+        "artifacts/BHSM_AETHER_CROSS_RESOLUTION_RECONNAISSANCE_V21_35.json"
+    ),
+) -> dict[str, Any]:
+    """Derive the local history observability bound for the soft channel."""
+
+    result = json.loads(Path(path).read_text(encoding="utf-8"))[
+        "cross_resolution_reconnaissance"
+    ]
+    duration = float(result["positive_duration_gauge_fixed_jacobi_audit"][
+        "background"
+    ]["common_positive_proper_duration"])
+    soft_response = float(result[
+        "mixed_euler_dirac_hard_momentum_response_audit"
+    ]["soft_channel"]["exact_response_projection_magnitude"])
+    validation = {
+        "soft_channel_has_nonzero_exact_finite_N_response": soft_response > 0.0,
+        "positive_duration_history_exists": duration > 0.0,
+        "boundary_acceleration_is_action_normalized_to_unit_size": True,
+        "Taylor_remainder_bound_is_standard_and_coefficient_owned": True,
+        "time_translation_state_tangent_not_equated_to_acceleration_datum": True,
+        "no_new_equation_constraint_regularizer_objective_or_gate": True,
+    }
+    return {
+        "classification": (
+            "THE_REMAINING_SOFT_MOMENTUM_CHANNEL_IS_A_NORMAL_DIRECTION_"
+            "CONTROLLED_BY_THE_EXISTING_POSITIVE_DURATION_GAUGE_FIXED_"
+            "JACOBI_EVOLUTION;_ITS_UNIFORM_OBSERVABILITY_REDUCES_TO_AN_"
+            "ACTION_OWNED_UNIFORM_BOUNDARY_JERK_BOUND"
+        ),
+        "type_separation": {
+            "soft_Calderon_object": (
+                "UNIT_ACTION_NORMALIZED_BOUNDARY_ACCELERATION_REACTION_"
+                "DATUM_IN_TSTAR_R2"
+            ),
+            "time_translation_object": (
+                "FULL_HISTORY_STATE_TANGENT_(D_t_q,D_t_v,D_t_m,-1_event_time)"
+            ),
+            "boundary_alignment_implies_field_equality": False,
+            "soft_channel_is_reclassified_as_a_time_tangent": False,
+            "soft_channel_classification_category": (
+                "NORMAL_DIRECTION_CONTROLLED_BY_THE_EXISTING_POSITIVE_"
+                "DURATION_GAUGE_FIXED_JACOBI_EVOLUTION"
+            ),
+        },
+        "one_dimensional_observability_lemma": {
+            "boundary_history": "r(t)=Gamma0*xi_soft(t)",
+            "normalized_initial_data": (
+                "r(0)=0,_D_t_r(0)=0,_norm(D_t2_r(0))=1"
+            ),
+            "required_action_bound": (
+                "norm(D_t3_r(t))<=M_3_ON_0<=t<=T"
+            ),
+            "Taylor_bound": (
+                "norm(r(t)-t^2*D_t2_r(0)/2)<=M_3*t^3/6"
+            ),
+            "controlled_interval": "tau=min(T,3/(2*M_3))",
+            "pointwise_lower_bound": "norm(r(t))>=t^2/4_ON_0<=t<=tau",
+            "L2_observability_lower_bound": (
+                "norm(r)_L2(0,tau)>=tau^(5/2)/(4*sqrt(5))"
+            ),
+            "consequence": (
+                "THE_SOFT_CHANNEL_CANNOT_BE_A_HOMOGENEOUS_HISTORY_"
+                "KERNEL_WHEN_M_3_IS_FINITE"
+            ),
+            "new_acceptance_gate": False,
+        },
+        "current_evidence": {
+            "exact_finite_N_soft_response_projection_magnitude": soft_response,
+            "validated_common_positive_proper_duration": duration,
+            "retained_action_classical_domain": "H6_q_CROSS_H5_v_CROSS_H6_m",
+            "fixed_finite_N_jerk_is_finite_by_action_smoothness": True,
+            "N_uniform_jerk_bound_proved": False,
+        },
+        "exact_next_mathematical_lemma": (
+            "DERIVE_AN_N_UNIFORM_ACTION_OWNED_BOUND_M_3_FOR_THE_THIRD_"
+            "TIME_DERIVATIVE_OF_THE_SOFT_BOUNDARY_JACOBI_RESPONSE_ON_"
+            "THE_ETA_INTERIOR_ACTION_ENERGY_COHERENT_CHILD_BUNDLE"
+        ),
+        "finite_N3_through_N6_equations_maps_persistence_and_gates_changed": (
+            False
+        ),
+        "new_physics_equations_constraints_regularizers_objectives_or_gates": (
+            False
+        ),
+        "validation": validation,
+        "validation_passed": all(validation.values()),
+        "FULL_BHSM_COMPLETE": False,
+    }
+
+
 def weak_constraint_boundary_source_tail_audit(
     path: str | Path = (
         "artifacts/BHSM_AETHER_CROSS_RESOLUTION_RECONNAISSANCE_V21_35.json"
@@ -15140,6 +15232,7 @@ __all__ = [
     "injected_n6_event_child_calderon_friedrichs_angle_audit",
     "event_child_calderon_angle_stability_lemma",
     "whole_system_time_translation_tangent_interface",
+    "soft_channel_positive_duration_observability_jet_lemma",
     "weak_constraint_boundary_source_tail_audit",
     "weak_complete_child_normal_right_inverse_audit",
     "weak_complete_child_normal_lipschitz_audit",

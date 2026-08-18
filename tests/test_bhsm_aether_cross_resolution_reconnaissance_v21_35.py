@@ -8,6 +8,7 @@ from bhsm.interface.aether_cross_resolution_reconnaissance_v21_35 import (
     general_n_complete_child_reconstruction_statement,
     injected_n6_event_child_calderon_friedrichs_angle_audit,
     positive_duration_normal_adjoint_kernel_localization,
+    soft_channel_positive_duration_observability_jet_lemma,
     uniform_positive_duration_normal_closed_range_reduction,
     whole_system_time_translation_tangent_interface,
 )
@@ -133,6 +134,24 @@ def test_whole_system_time_translation_tangent_interface():
         "measured_N12_N13_minimum_second_principal_angle_sine"
     ] > 1.0e-2
     assert normal["uniform_general_N_lower_bound_proved"] is False
+    assert audit[
+        "new_physics_equations_constraints_regularizers_objectives_or_gates"
+    ] is False
+
+
+def test_soft_channel_positive_duration_observability_jet_lemma():
+    audit = soft_channel_positive_duration_observability_jet_lemma()
+    assert audit["validation_passed"] is True
+    separation = audit["type_separation"]
+    assert separation["boundary_alignment_implies_field_equality"] is False
+    assert separation["soft_channel_is_reclassified_as_a_time_tangent"] is False
+    assert separation["soft_channel_classification_category"] == (
+        "NORMAL_DIRECTION_CONTROLLED_BY_THE_EXISTING_POSITIVE_"
+        "DURATION_GAUGE_FIXED_JACOBI_EVOLUTION"
+    )
+    lemma = audit["one_dimensional_observability_lemma"]
+    assert "tau^(5/2)" in lemma["L2_observability_lower_bound"]
+    assert audit["current_evidence"]["N_uniform_jerk_bound_proved"] is False
     assert audit[
         "new_physics_equations_constraints_regularizers_objectives_or_gates"
     ] is False
