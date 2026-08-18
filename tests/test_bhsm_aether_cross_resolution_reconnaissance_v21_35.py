@@ -11,6 +11,8 @@ from bhsm.interface.aether_cross_resolution_reconnaissance_v21_35 import (
     positive_duration_normal_adjoint_kernel_localization,
     soft_channel_positive_duration_observability_jet_lemma,
     soft_calderon_second_graph_domain_reduction,
+    soft_second_graph_coefficient_bundle_audit,
+    soft_uniform_smooth_boundary_lift_audit,
     uniform_boundary_jerk_compactness_reduction,
     uniform_positive_duration_normal_closed_range_reduction,
     weak_calderon_boundary_generator_reduction,
@@ -256,6 +258,46 @@ def test_soft_calderon_second_graph_domain_reduction():
     ] is False
     failure = audit["failure_dichotomy"]
     assert failure[
+        "genuine_uniform_normal_closed_range_failure_demonstrated"
+    ] is False
+    assert audit[
+        "new_physics_equations_constraints_regularizers_objectives_or_gates"
+    ] is False
+
+
+def test_soft_second_graph_coefficient_bundle_audit():
+    audit = soft_second_graph_coefficient_bundle_audit()
+    assert audit["validation_passed"] is True
+    assert [row["N"] for row in audit["rows"]] == [6, 7, 8, 9, 10]
+    assert audit["maximum_measured_growth"] < 1.5
+    lemma = audit["differentiated_energy_lemma"]
+    assert "[D_t,J_U]" in lemma["differentiated_equation"]
+    assert lemma["new_BHSM_equation_or_gate"] is False
+    gap = audit["remaining_gap"]
+    assert gap[
+        "uniform_initial_D2_lift_for_the_action_selected_soft_boundary_datum"
+    ] is False
+    assert gap[
+        "genuine_uniform_normal_closed_range_failure_demonstrated"
+    ] is False
+    assert audit[
+        "new_physics_equations_constraints_regularizers_objectives_or_gates"
+    ] is False
+
+
+def test_soft_uniform_smooth_boundary_lift_audit():
+    audit = soft_uniform_smooth_boundary_lift_audit(maximum_order=16)
+    assert audit["validation_passed"] is True
+    assert all(
+        row["boundary_right_inverse_defect"] < 1.0e-14
+        for row in audit["rows"]
+    )
+    assert max(
+        row["H6_operator_norm"] for row in audit["rows"]
+    ) == min(row["H6_operator_norm"] for row in audit["rows"])
+    vertical = audit["remaining_vertical_problem"]
+    assert vertical["uniform_vertical_D2_bound_proved"] is False
+    assert vertical[
         "genuine_uniform_normal_closed_range_failure_demonstrated"
     ] is False
     assert audit[

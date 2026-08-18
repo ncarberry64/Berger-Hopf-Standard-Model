@@ -12178,6 +12178,249 @@ def soft_calderon_second_graph_domain_reduction(
     }
 
 
+def soft_second_graph_coefficient_bundle_audit(
+    path: str | Path = (
+        "artifacts/BHSM_AETHER_CROSS_RESOLUTION_RECONNAISSANCE_V21_35.json"
+    ),
+) -> dict[str, Any]:
+    """Audit the one-extra-derivative coefficients needed by soft D2."""
+
+    result = json.loads(Path(path).read_text(encoding="utf-8"))[
+        "cross_resolution_reconnaissance"
+    ]
+    source_rows = result["sequential_action_energy_projection_audit"]["rows"]
+    rows = []
+    for source in source_rows:
+        order = int(source["N"])
+        frequencies = spectral_frequencies(order)
+        record: dict[str, Any] = {"N": order}
+        for side in ("event", "child"):
+            exact = source[side]["projected_state_binary64_hex"]
+            q, velocity, multipliers = tuple(
+                np.asarray([float.fromhex(value) for value in exact[name]])
+                for name in ("coordinates", "velocities", "multipliers")
+            )
+            record[side] = {
+                "q_H2_norm": float(np.linalg.norm(
+                    q * (1.0 + frequencies["coordinates"] ** 2)
+                )),
+                "velocity_H1_norm": float(np.linalg.norm(
+                    velocity * np.sqrt(
+                        1.0 + frequencies["coordinates"] ** 2
+                    )
+                )),
+                "multiplier_H2_norm": float(np.linalg.norm(
+                    multipliers * (1.0 + frequencies["multipliers"] ** 2)
+                )),
+                "eta_Legendre_minimum": float(
+                    source[side]["eta_Legendre_minimum"]
+                ),
+                "maximum_constraint_residual": float(
+                    source[side]["maximum_constraint_residual"]
+                ),
+            }
+        rows.append(record)
+    growth = {
+        side: {
+            name: rows[-1][side][name] / rows[0][side][name]
+            for name in ("q_H2_norm", "velocity_H1_norm", "multiplier_H2_norm")
+        }
+        for side in ("event", "child")
+    }
+    maximum_growth = max(
+        value for side in growth.values() for value in side.values()
+    )
+    validation = {
+        "all_measured_states_remain_eta_admissible": all(
+            row[side]["eta_Legendre_minimum"] > 0.0
+            for row in rows for side in ("event", "child")
+        ),
+        "all_measured_constraint_projections_close": all(
+            row[side]["maximum_constraint_residual"] < 1.0e-8
+            for row in rows for side in ("event", "child")
+        ),
+        "measured_S2_coefficient_norm_growth_is_bounded": bool(
+            maximum_growth < 1.5
+        ),
+        "projection_rows_not_promoted_as_complete_higher_N_children": True,
+        "measured_bound_not_promoted_as_a_uniform_bundle_theorem": True,
+        "no_new_equation_constraint_regularizer_objective_or_gate": True,
+    }
+    return {
+        "classification": (
+            "THE_EXISTING_N6_TO_N10_EVENT_CHILD_PROJECTIONS_REMAIN_"
+            "BOUNDED_IN_THE_ONE_EXTRA_DERIVATIVE_COEFFICIENT_SPACE_"
+            "S2=H2_q_CROSS_H1_v_CROSS_H2_m_WHILE_ETA_AND_CONSTRAINTS_"
+            "REMAIN_ADMISSIBLE;_THIS_SUPPORTS_BUT_DOES_NOT_PROVE_THE_"
+            "SOFT_SECOND_GRAPH_BOUND_ON_A_NONLINEAR_COMPLETE_CHILD_BUNDLE"
+        ),
+        "coefficient_space": (
+            "S2=H2_q_CROSS_H1_velocity_CROSS_H2_lapse_shift"
+        ),
+        "rows": rows,
+        "N6_to_N10_growth": growth,
+        "maximum_measured_growth": maximum_growth,
+        "differentiated_energy_lemma": {
+            "Jacobi_equation": "J_U*xi=0",
+            "differentiated_equation": (
+                "J_U*(D_t_xi)=-[D_t,J_U]*xi"
+            ),
+            "coefficient_bound": (
+                "norm([D_t,J_U]*xi)_X_E_star<=C2(K_S2,eta0^-1)*"
+                "norm(xi)_D1_ON_THE_ONE_DIMENSIONAL_CAP"
+            ),
+            "energy_bound": (
+                "D_t_E1<=C2*(E1+E0),_E1=E_g(D_t_xi)"
+            ),
+            "conclusion_if_initial_soft_D2_lift_is_uniform": (
+                "sup_N_sup_0<=t<=T_norm(xi_soft,N(t))_D2<INFINITY"
+            ),
+            "new_BHSM_equation_or_gate": False,
+        },
+        "remaining_gap": {
+            "uniform_positive_duration_S2_bound_on_actual_corrected_child_"
+            "histories": False,
+            "uniform_initial_D2_lift_for_the_action_selected_soft_boundary_"
+            "datum": False,
+            "finite_projection_measurement_proves_either_statement": False,
+            "genuine_uniform_normal_closed_range_failure_demonstrated": (
+                False
+            ),
+        },
+        "exact_next_mathematical_lemma": (
+            "PROVE_AN_N_UNIFORM_INITIAL_D2_LIFT_BOUND_FOR_THE_ACTION_"
+            "SELECTED_SOFT_CALDERON_BOUNDARY_DATUM_ON_THE_S2_ETA_"
+            "INTERIOR_CHILD_BUNDLE_AND_PROPAGATE_IT_BY_THE_"
+            "DIFFERENTIATED_GAUGE_FIXED_JACOBI_ENERGY_ESTIMATE"
+        ),
+        "new_physics_equations_constraints_regularizers_objectives_or_gates": (
+            False
+        ),
+        "validation": validation,
+        "validation_passed": all(validation.values()),
+        "FULL_BHSM_COMPLETE": False,
+    }
+
+
+def soft_uniform_smooth_boundary_lift_audit(
+    path: str | Path = (
+        "artifacts/BHSM_AETHER_CROSS_RESOLUTION_RECONNAISSANCE_V21_35.json"
+    ),
+    *,
+    maximum_order: int = 64,
+) -> dict[str, Any]:
+    """Construct a fixed low-mode smooth lift for attachment coordinates."""
+
+    if maximum_order < 6:
+        raise ValueError("the smooth lift audit starts at the N6 frontier")
+    result = json.loads(Path(path).read_text(encoding="utf-8"))[
+        "cross_resolution_reconnaissance"
+    ]
+    exact = result["N6_weak_complete_child_candidate"]["child_state"][
+        "binary64_hex"
+    ]
+    base_q = np.asarray([
+        float.fromhex(value) for value in exact["coordinates"]
+    ])
+    rows = []
+    for order in range(6, maximum_order + 1):
+        q = (
+            base_q if order == 6 else
+            embed_nested_state(
+                base_q,
+                np.zeros_like(base_q),
+                np.zeros(12),
+                6,
+                order,
+            )[0]
+        )
+        qdim = dimensions(order)["coordinates"]
+        lift = np.zeros((qdim, 2))
+        lift[0] = [1.0, 1.0]
+        lift[1] = [0.0, 1.0]
+        boundary = _attachment_jacobian_at_order(order, q)
+        defect = boundary @ lift - np.eye(2)
+        frequencies = spectral_frequencies(order)["coordinates"]
+        norm_by_s = {}
+        for regularity in (1, 2, 6):
+            weights = (1.0 + frequencies**2) ** (0.5 * regularity)
+            norm_by_s[f"H{regularity}_operator_norm"] = float(
+                np.linalg.norm(weights[:, None] * lift, ord=2)
+            )
+        rows.append({
+            "N": order,
+            "boundary_right_inverse_defect": float(
+                np.linalg.norm(defect, ord=2)
+            ),
+            **norm_by_s,
+        })
+    validation = {
+        "fixed_scale_and_first_u_mode_lift_is_an_exact_right_inverse": all(
+            row["boundary_right_inverse_defect"] < 1.0e-14 for row in rows
+        ),
+        "smooth_lift_norm_is_independent_of_N": all(
+            abs(row["H6_operator_norm"] - rows[0]["H6_operator_norm"])
+            < 1.0e-14
+            for row in rows
+        ),
+        "lift_uses_only_preexisting_scale_and_u1_coordinates": True,
+        "lift_does_not_solve_or_modify_the_vertical_Jacobi_equation": True,
+        "no_new_equation_constraint_regularizer_objective_or_gate": True,
+    }
+    return {
+        "classification": (
+            "THE_ATTACHMENT_CONFIGURATION_TRACE_HAS_AN_EXACT_N_"
+            "INDEPENDENT_SMOOTH_RIGHT_LIFT_USING_ONLY_THE_EXISTING_SCALE_"
+            "AND_FIRST_u_MODE;_THE_SOFT_D2_BLOCKER_IS_NOT_THE_BOUNDARY_"
+            "TRACE_BUT_THE_VERTICAL_WEAK_JACOBI_CORRECTION_AND_CONORMAL_"
+            "REACTION"
+        ),
+        "attachment_chart": "(q_w,q_c=q_scale-q_w)",
+        "lift_formula": {
+            "for_boundary_datum": "delta_b=(delta_q_w,delta_q_c)",
+            "nonzero_coordinates": (
+                "delta_q_scale=delta_q_w+delta_q_c,_delta_u1=delta_q_c"
+            ),
+            "matrix_columns_in_(q_scale,u1)": [[1.0, 1.0], [0.0, 1.0]],
+            "identity": "B_N(q)*H_smooth=I2_FOR_ALL_N>=1_AND_ALL_q",
+        },
+        "rows": rows,
+        "uniform_bounds": {
+            "H1": rows[0]["H1_operator_norm"],
+            "H2": rows[0]["H2_operator_norm"],
+            "H6": rows[0]["H6_operator_norm"],
+        },
+        "remaining_vertical_problem": {
+            "decomposition": (
+                "xi_soft,N=H_smooth*b_soft,N+zeta_N,_Gamma0*zeta_N=0"
+            ),
+            "vertical_equation": (
+                "J_U,N*zeta_N=-J_U,N*H_smooth*b_soft,N"
+            ),
+            "required_bound": (
+                "sup_N_norm(zeta_N)_D2<=C_vert,2*"
+                "norm(J_U,N*H_smooth*b_soft,N)_D1_star"
+            ),
+            "conormal_reaction_is_part_of_the_same_vertical_solution": True,
+            "uniform_vertical_D2_bound_proved": False,
+            "genuine_uniform_normal_closed_range_failure_demonstrated": (
+                False
+            ),
+        },
+        "exact_next_mathematical_lemma": (
+            "PROVE_OR_LOCALIZE_FAILURE_OF_THE_N_UNIFORM_D2_VERTICAL_"
+            "JACOBI_CORRECTION_BOUND_FOR_THE_FIXED_SMOOTH_SOFT_BOUNDARY_"
+            "LIFT_ON_THE_S2_ETA_INTERIOR_CHILD_BUNDLE"
+        ),
+        "new_physics_equations_constraints_regularizers_objectives_or_gates": (
+            False
+        ),
+        "validation": validation,
+        "validation_passed": all(validation.values()),
+        "FULL_BHSM_COMPLETE": False,
+    }
+
+
 def weak_constraint_boundary_source_tail_audit(
     path: str | Path = (
         "artifacts/BHSM_AETHER_CROSS_RESOLUTION_RECONNAISSANCE_V21_35.json"
@@ -15557,14 +15800,23 @@ def promote_boundary_jerk_weak_graph_domain_audit(
     if not second_graph["validation_passed"]:
         raise RuntimeError("soft Calderon second graph-domain reduction failed")
     result["soft_calderon_second_graph_domain_reduction"] = second_graph
-    result["active_dependency"] = second_graph["exact_next_mathematical_lemma"]
+    coefficients = soft_second_graph_coefficient_bundle_audit(target)
+    if not coefficients["validation_passed"]:
+        raise RuntimeError("soft second-graph coefficient audit failed")
+    result["soft_second_graph_coefficient_bundle_audit"] = coefficients
+    smooth_lift = soft_uniform_smooth_boundary_lift_audit(target)
+    if not smooth_lift["validation_passed"]:
+        raise RuntimeError("soft smooth boundary-lift audit failed")
+    result["soft_uniform_smooth_boundary_lift_audit"] = smooth_lift
+    result["active_dependency"] = smooth_lift["exact_next_mathematical_lemma"]
     result["scientific_status"] = (
         "N3_TO_N6_EXACT_ATTACHMENT_WEAK_COMPLETE_PERSISTENT_CHILDREN_"
         "VALIDATED;_THE_HARD_MOMENTUM_RESPONSE_CLOSES_AND_THE_SOFT_"
         "NORMAL_CHANNEL_IS_POSITIVE_DURATION_DYNAMICAL;_UNIFORM_"
         "CLASSICAL_H6_CONTROL_IS_INVALID_AS_A_NEW_CRITERION;_THE_WEAK_"
         "CALDERON_BOUNDARY_JERK_FAILURE_IS_LOCALIZED_TO_THE_ACTION_"
-        "SELECTED_SOFT_LINE_SECOND_WEAK_EULER_DIRAC_GRAPH_NORM"
+        "SELECTED_SOFT_VERTICAL_D2_JACOBI_CORRECTION;_THE_SMOOTH_"
+        "CONFIGURATION_TRACE_LIFT_IS_UNIFORM"
     )
     payload["cross_resolution_reconnaissance"] = result
     validation = dict(payload["validation"])
@@ -15576,6 +15828,12 @@ def promote_boundary_jerk_weak_graph_domain_audit(
     )
     validation["soft_calderon_second_graph_domain_reduction_validated"] = (
         second_graph["validation_passed"]
+    )
+    validation["soft_second_graph_coefficient_bundle_audit_validated"] = (
+        coefficients["validation_passed"]
+    )
+    validation["soft_uniform_smooth_boundary_lift_audit_validated"] = (
+        smooth_lift["validation_passed"]
     )
     payload["validation"] = validation
     payload["validation_passed"] = all(validation.values())
@@ -15796,6 +16054,8 @@ __all__ = [
     "boundary_jerk_weak_graph_domain_audit",
     "weak_calderon_boundary_generator_reduction",
     "soft_calderon_second_graph_domain_reduction",
+    "soft_second_graph_coefficient_bundle_audit",
+    "soft_uniform_smooth_boundary_lift_audit",
     "weak_constraint_boundary_source_tail_audit",
     "weak_complete_child_normal_right_inverse_audit",
     "weak_complete_child_normal_lipschitz_audit",
