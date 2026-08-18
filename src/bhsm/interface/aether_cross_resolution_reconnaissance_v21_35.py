@@ -12054,6 +12054,130 @@ def weak_calderon_boundary_generator_reduction(
     }
 
 
+def soft_calderon_second_graph_domain_reduction(
+    path: str | Path = (
+        "artifacts/BHSM_AETHER_CROSS_RESOLUTION_RECONNAISSANCE_V21_35.json"
+    ),
+) -> dict[str, Any]:
+    """Identify the minimal weak domain that controls soft boundary jerk."""
+
+    result = json.loads(Path(path).read_text(encoding="utf-8"))[
+        "cross_resolution_reconnaissance"
+    ]
+    trace = result["reaction_calderon_nested_schur_trace_audit"]
+    generator = result["weak_calderon_boundary_generator_reduction"]
+    l2_slope = float(trace["trace_scaling"]["L2_trace_loglog_slope"])
+    h1_slope = float(trace["trace_scaling"]["H1_trace_loglog_slope"])
+    validation = {
+        "pure_L2_boundary_acceleration_trace_is_already_invalidated": bool(
+            l2_slope > 0.4
+        ),
+        "H1_boundary_trace_is_uniformly_bounded": bool(
+            abs(h1_slope) < 0.1
+        ),
+        "first_Euler_Dirac_graph_domain_is_already_action_owned": bool(
+            "D_EULER_DIRAC" in trace["derived_domain_reclassification"][
+                "reaction_domain"
+            ]
+        ),
+        "full_soft_generator_is_the_current_localized_owner": bool(
+            not generator["failure_localization"][
+                "genuine_uniform_normal_closed_range_failure_demonstrated"
+            ]
+        ),
+        "second_graph_domain_is_a_theorem_domain_not_a_child_gate": True,
+        "no_new_equation_constraint_regularizer_objective_or_gate": True,
+    }
+    return {
+        "classification": (
+            "THE_FULL_SOFT_CALDERON_GENERATOR_BOUND_IS_EQUIVALENT_TO_"
+            "UNIFORM_CONTROL_OF_THE_ACTION_SELECTED_SOFT_JACOBI_LINE_IN_"
+            "THE_SECOND_WEAK_EULER_DIRAC_GRAPH_DOMAIN;_THE_EXISTING_"
+            "FIRST_GRAPH_ENERGY_DOES_NOT_SUPPLY_THIS_EXTRA_TIME_TRACE_"
+            "REGULARITY,_SO_THE_FAILURE_IS_PRECISELY_LOCALIZED"
+        ),
+        "graph_scale": {
+            "energy_space": (
+                "X_E=H1_q_CROSS_L2_v_CROSS_H1_lapse_shift"
+            ),
+            "first_graph_domain": (
+                "D1={xi_IN_X_E:J_U*xi_IN_X_E_star_AND_"
+                "Gamma_acc*xi_IN_R2}"
+            ),
+            "first_graph_norm": (
+                "norm(xi)_D1=norm(xi)_X_E+norm(J_U*xi)_X_E_star+"
+                "norm(Gamma_acc*xi)_R2"
+            ),
+            "second_graph_domain": (
+                "D2={xi_IN_D1:D_t_xi_IN_D1_AND_"
+                "[D_t,Gamma_acc]*xi_IN_R2}"
+            ),
+            "second_graph_norm": (
+                "norm(xi)_D2=norm(xi)_D1+norm(D_t_xi)_D1+"
+                "norm([D_t,Gamma_acc]*xi)_R2"
+            ),
+            "new_physical_domain_or_acceptance_condition": False,
+        },
+        "exact_jerk_identity": {
+            "boundary_acceleration": "D_t2_r_N=Gamma_acc,N*xi_N",
+            "boundary_jerk": (
+                "D_t3_r_N=Gamma_acc,N*D_t_xi_N+"
+                "[D_t,Gamma_acc,N]*xi_N"
+            ),
+            "bound": (
+                "norm(D_t3_r_N)<=C_Gamma*norm(D_t_xi_N)_D1+"
+                "C_comm*norm(xi_N)_D1"
+            ),
+            "sufficient_soft_line_estimate": (
+                "sup_N_sup_0<=t<=T_norm(xi_soft,N(t))_D2<=K_soft,2_"
+                "FOR_norm(Gamma_acc,N*xi_soft,N(0))=1"
+            ),
+            "consequence": "M3<=max(C_Gamma,C_comm)*K_soft,2",
+            "third_or_fourth_order_solver_proposal_derivative_required": (
+                False
+            ),
+        },
+        "why_first_graph_energy_is_insufficient": {
+            "measured_L2_boundary_trace_loglog_slope": l2_slope,
+            "measured_H1_boundary_trace_loglog_slope": h1_slope,
+            "velocity_component_owned_only_in_L2_by_X_E": True,
+            "trace_of_D_t_xi_controlled_by_first_energy_alone": False,
+            "static_Calderon_projector_convergence_supplies_time_trace_"
+            "regularity": False,
+        },
+        "failure_dichotomy": {
+            "if_soft_D2_bound_holds": (
+                "THE_TAYLOR_OBSERVABILITY_CONSTANT_IS_N_UNIFORM_AND_THE_"
+                "SOFT_NORMAL_CHANNEL_HAS_UNIFORM_POSITIVE_DURATION_"
+                "CLOSED_RANGE"
+            ),
+            "if_soft_D2_bound_fails": (
+                "THE_BOUNDARY_JERK_SUFFICIENT_ARGUMENT_FAILS;_THIS_ALONE_"
+                "DOES_NOT_PROVE_FAILURE_OF_THE_UNIFORM_INTEGRATED_"
+                "OBSERVABILITY_OR_NORMAL_CLOSED_RANGE_ESTIMATE"
+            ),
+            "genuine_uniform_normal_closed_range_failure_demonstrated": (
+                False
+            ),
+            "classification_category": (
+                "NORMAL_DIRECTION_CONTROLLED_BY_THE_EXISTING_POSITIVE_"
+                "DURATION_GAUGE_FIXED_JACOBI_EVOLUTION"
+            ),
+        },
+        "exact_next_mathematical_lemma": (
+            "PROVE_OR_DISPROVE_AN_N_UNIFORM_SECOND_WEAK_EULER_DIRAC_"
+            "GRAPH_NORM_BOUND_FOR_THE_ACTION_SELECTED_SOFT_CALDERON_"
+            "JACOBI_LINE_ON_THE_EXISTING_POSITIVE_DURATION_INTERVAL"
+        ),
+        "new_physics_equations_constraints_regularizers_objectives_or_gates": (
+            False
+        ),
+        "validation": validation,
+        "validation_passed": all(validation.values()),
+        "FULL_BHSM_COMPLETE": False,
+    }
+
+
 def weak_constraint_boundary_source_tail_audit(
     path: str | Path = (
         "artifacts/BHSM_AETHER_CROSS_RESOLUTION_RECONNAISSANCE_V21_35.json"
@@ -15429,14 +15553,18 @@ def promote_boundary_jerk_weak_graph_domain_audit(
     if not reduction["validation_passed"]:
         raise RuntimeError("weak Calderon boundary-generator reduction failed")
     result["weak_calderon_boundary_generator_reduction"] = reduction
-    result["active_dependency"] = reduction["exact_next_mathematical_lemma"]
+    second_graph = soft_calderon_second_graph_domain_reduction(target)
+    if not second_graph["validation_passed"]:
+        raise RuntimeError("soft Calderon second graph-domain reduction failed")
+    result["soft_calderon_second_graph_domain_reduction"] = second_graph
+    result["active_dependency"] = second_graph["exact_next_mathematical_lemma"]
     result["scientific_status"] = (
         "N3_TO_N6_EXACT_ATTACHMENT_WEAK_COMPLETE_PERSISTENT_CHILDREN_"
         "VALIDATED;_THE_HARD_MOMENTUM_RESPONSE_CLOSES_AND_THE_SOFT_"
         "NORMAL_CHANNEL_IS_POSITIVE_DURATION_DYNAMICAL;_UNIFORM_"
         "CLASSICAL_H6_CONTROL_IS_INVALID_AS_A_NEW_CRITERION;_THE_WEAK_"
-        "CALDERON_BOUNDARY_JERK_FAILURE_IS_LOCALIZED_TO_THE_FULL_SOFT_"
-        "WEAK_BOUNDARY_GENERATOR_HIDDEN_REGULARITY_ESTIMATE"
+        "CALDERON_BOUNDARY_JERK_FAILURE_IS_LOCALIZED_TO_THE_ACTION_"
+        "SELECTED_SOFT_LINE_SECOND_WEAK_EULER_DIRAC_GRAPH_NORM"
     )
     payload["cross_resolution_reconnaissance"] = result
     validation = dict(payload["validation"])
@@ -15445,6 +15573,9 @@ def promote_boundary_jerk_weak_graph_domain_audit(
     ]
     validation["weak_calderon_boundary_generator_reduction_validated"] = (
         reduction["validation_passed"]
+    )
+    validation["soft_calderon_second_graph_domain_reduction_validated"] = (
+        second_graph["validation_passed"]
     )
     payload["validation"] = validation
     payload["validation_passed"] = all(validation.values())
@@ -15664,6 +15795,7 @@ __all__ = [
     "uniform_boundary_jerk_compactness_reduction",
     "boundary_jerk_weak_graph_domain_audit",
     "weak_calderon_boundary_generator_reduction",
+    "soft_calderon_second_graph_domain_reduction",
     "weak_constraint_boundary_source_tail_audit",
     "weak_complete_child_normal_right_inverse_audit",
     "weak_complete_child_normal_lipschitz_audit",

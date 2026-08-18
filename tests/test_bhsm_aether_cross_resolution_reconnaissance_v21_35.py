@@ -10,6 +10,7 @@ from bhsm.interface.aether_cross_resolution_reconnaissance_v21_35 import (
     injected_n6_event_child_calderon_friedrichs_angle_audit,
     positive_duration_normal_adjoint_kernel_localization,
     soft_channel_positive_duration_observability_jet_lemma,
+    soft_calderon_second_graph_domain_reduction,
     uniform_boundary_jerk_compactness_reduction,
     uniform_positive_duration_normal_closed_range_reduction,
     weak_calderon_boundary_generator_reduction,
@@ -231,6 +232,32 @@ def test_weak_calderon_boundary_generator_reduction():
         "NORMAL_DIRECTION_CONTROLLED_BY_THE_EXISTING_POSITIVE_"
         "DURATION_GAUGE_FIXED_JACOBI_EVOLUTION"
     )
+    assert audit[
+        "new_physics_equations_constraints_regularizers_objectives_or_gates"
+    ] is False
+
+
+def test_soft_calderon_second_graph_domain_reduction():
+    audit = soft_calderon_second_graph_domain_reduction()
+    assert audit["validation_passed"] is True
+    scale = audit["graph_scale"]
+    assert "D_t_xi_IN_D1" in scale["second_graph_domain"]
+    assert scale["new_physical_domain_or_acceptance_condition"] is False
+    identity = audit["exact_jerk_identity"]
+    assert "[D_t,Gamma_acc,N]" in identity["boundary_jerk"]
+    assert identity[
+        "third_or_fourth_order_solver_proposal_derivative_required"
+    ] is False
+    insufficient = audit["why_first_graph_energy_is_insufficient"]
+    assert insufficient["measured_L2_boundary_trace_loglog_slope"] > 0.4
+    assert abs(insufficient["measured_H1_boundary_trace_loglog_slope"]) < 0.1
+    assert insufficient[
+        "trace_of_D_t_xi_controlled_by_first_energy_alone"
+    ] is False
+    failure = audit["failure_dichotomy"]
+    assert failure[
+        "genuine_uniform_normal_closed_range_failure_demonstrated"
+    ] is False
     assert audit[
         "new_physics_equations_constraints_regularizers_objectives_or_gates"
     ] is False

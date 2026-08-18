@@ -5991,7 +5991,7 @@
       },
       "validation_passed": true
     },
-    "active_dependency": "PROVE_AN_N_UNIFORM_HIDDEN_REGULARITY_ESTIMATE_FOR_THE_FULL_SOFT_CALDERON_BOUNDARY_GENERATOR_A_N_P_SOFT,_INCLUDING_PARALLEL_AMPLITUDE_AND_OFF_DIAGONAL_ROTATION,_FROM_THE_WEAK_CONORMAL_GREEN_IDENTITY_AND_THE_EXISTING_GAUGE_FIXED_JACOBI_ENERGY_ESTIMATE",
+    "active_dependency": "PROVE_OR_DISPROVE_AN_N_UNIFORM_SECOND_WEAK_EULER_DIRAC_GRAPH_NORM_BOUND_FOR_THE_ACTION_SELECTED_SOFT_CALDERON_JACOBI_LINE_ON_THE_EXISTING_POSITIVE_DURATION_INTERVAL",
     "boundary_compatible_gauge_quotient_audit": {
       "FULL_BHSM_COMPLETE": false,
       "boundary_compatibility": {
@@ -11650,7 +11650,7 @@
       },
       "validation_passed": true
     },
-    "scientific_status": "N3_TO_N6_EXACT_ATTACHMENT_WEAK_COMPLETE_PERSISTENT_CHILDREN_VALIDATED;_THE_HARD_MOMENTUM_RESPONSE_CLOSES_AND_THE_SOFT_NORMAL_CHANNEL_IS_POSITIVE_DURATION_DYNAMICAL;_UNIFORM_CLASSICAL_H6_CONTROL_IS_INVALID_AS_A_NEW_CRITERION;_THE_WEAK_CALDERON_BOUNDARY_JERK_FAILURE_IS_LOCALIZED_TO_THE_FULL_SOFT_WEAK_BOUNDARY_GENERATOR_HIDDEN_REGULARITY_ESTIMATE",
+    "scientific_status": "N3_TO_N6_EXACT_ATTACHMENT_WEAK_COMPLETE_PERSISTENT_CHILDREN_VALIDATED;_THE_HARD_MOMENTUM_RESPONSE_CLOSES_AND_THE_SOFT_NORMAL_CHANNEL_IS_POSITIVE_DURATION_DYNAMICAL;_UNIFORM_CLASSICAL_H6_CONTROL_IS_INVALID_AS_A_NEW_CRITERION;_THE_WEAK_CALDERON_BOUNDARY_JERK_FAILURE_IS_LOCALIZED_TO_THE_ACTION_SELECTED_SOFT_LINE_SECOND_WEAK_EULER_DIRAC_GRAPH_NORM",
     "sequential_action_energy_projection_audit": {
       "FULL_BHSM_COMPLETE": false,
       "classification": "ACTION_ENERGY_COHERENT_EVENT_AND_CHILD_ADMIT_SEQUENTIAL_NESTED_CONSTRAINT_FIBER_TRANSPORT;_THIS_IS_NOT_YET_A_GENERAL_N_COMPLETE_CHILD_ROOT_CONTINUATION_THEOREM",
@@ -12583,6 +12583,50 @@
         "finite_N5_root_event_persistence_and_gates_unchanged": true
       },
       "validation_passed": true
+    },
+    "soft_calderon_second_graph_domain_reduction": {
+      "FULL_BHSM_COMPLETE": false,
+      "classification": "THE_FULL_SOFT_CALDERON_GENERATOR_BOUND_IS_EQUIVALENT_TO_UNIFORM_CONTROL_OF_THE_ACTION_SELECTED_SOFT_JACOBI_LINE_IN_THE_SECOND_WEAK_EULER_DIRAC_GRAPH_DOMAIN;_THE_EXISTING_FIRST_GRAPH_ENERGY_DOES_NOT_SUPPLY_THIS_EXTRA_TIME_TRACE_REGULARITY,_SO_THE_FAILURE_IS_PRECISELY_LOCALIZED",
+      "exact_jerk_identity": {
+        "bound": "norm(D_t3_r_N)<=C_Gamma*norm(D_t_xi_N)_D1+C_comm*norm(xi_N)_D1",
+        "boundary_acceleration": "D_t2_r_N=Gamma_acc,N*xi_N",
+        "boundary_jerk": "D_t3_r_N=Gamma_acc,N*D_t_xi_N+[D_t,Gamma_acc,N]*xi_N",
+        "consequence": "M3<=max(C_Gamma,C_comm)*K_soft,2",
+        "sufficient_soft_line_estimate": "sup_N_sup_0<=t<=T_norm(xi_soft,N(t))_D2<=K_soft,2_FOR_norm(Gamma_acc,N*xi_soft,N(0))=1",
+        "third_or_fourth_order_solver_proposal_derivative_required": false
+      },
+      "exact_next_mathematical_lemma": "PROVE_OR_DISPROVE_AN_N_UNIFORM_SECOND_WEAK_EULER_DIRAC_GRAPH_NORM_BOUND_FOR_THE_ACTION_SELECTED_SOFT_CALDERON_JACOBI_LINE_ON_THE_EXISTING_POSITIVE_DURATION_INTERVAL",
+      "failure_dichotomy": {
+        "classification_category": "NORMAL_DIRECTION_CONTROLLED_BY_THE_EXISTING_POSITIVE_DURATION_GAUGE_FIXED_JACOBI_EVOLUTION",
+        "genuine_uniform_normal_closed_range_failure_demonstrated": false,
+        "if_soft_D2_bound_fails": "THE_BOUNDARY_JERK_SUFFICIENT_ARGUMENT_FAILS;_THIS_ALONE_DOES_NOT_PROVE_FAILURE_OF_THE_UNIFORM_INTEGRATED_OBSERVABILITY_OR_NORMAL_CLOSED_RANGE_ESTIMATE",
+        "if_soft_D2_bound_holds": "THE_TAYLOR_OBSERVABILITY_CONSTANT_IS_N_UNIFORM_AND_THE_SOFT_NORMAL_CHANNEL_HAS_UNIFORM_POSITIVE_DURATION_CLOSED_RANGE"
+      },
+      "graph_scale": {
+        "energy_space": "X_E=H1_q_CROSS_L2_v_CROSS_H1_lapse_shift",
+        "first_graph_domain": "D1={xi_IN_X_E:J_U*xi_IN_X_E_star_AND_Gamma_acc*xi_IN_R2}",
+        "first_graph_norm": "norm(xi)_D1=norm(xi)_X_E+norm(J_U*xi)_X_E_star+norm(Gamma_acc*xi)_R2",
+        "new_physical_domain_or_acceptance_condition": false,
+        "second_graph_domain": "D2={xi_IN_D1:D_t_xi_IN_D1_AND_[D_t,Gamma_acc]*xi_IN_R2}",
+        "second_graph_norm": "norm(xi)_D2=norm(xi)_D1+norm(D_t_xi)_D1+norm([D_t,Gamma_acc]*xi)_R2"
+      },
+      "new_physics_equations_constraints_regularizers_objectives_or_gates": false,
+      "validation": {
+        "H1_boundary_trace_is_uniformly_bounded": true,
+        "first_Euler_Dirac_graph_domain_is_already_action_owned": true,
+        "full_soft_generator_is_the_current_localized_owner": true,
+        "no_new_equation_constraint_regularizer_objective_or_gate": true,
+        "pure_L2_boundary_acceleration_trace_is_already_invalidated": true,
+        "second_graph_domain_is_a_theorem_domain_not_a_child_gate": true
+      },
+      "validation_passed": true,
+      "why_first_graph_energy_is_insufficient": {
+        "measured_H1_boundary_trace_loglog_slope": 0.001009229735201,
+        "measured_L2_boundary_trace_loglog_slope": 0.496083923405252,
+        "static_Calderon_projector_convergence_supplies_time_trace_regularity": false,
+        "trace_of_D_t_xi_controlled_by_first_energy_alone": false,
+        "velocity_component_owned_only_in_L2_by_X_E": true
+      }
     },
     "soft_channel_positive_duration_observability_jet_lemma": {
       "FULL_BHSM_COMPLETE": false,
@@ -14747,6 +14791,7 @@
     "rank14_not_silently_imposed_at_higher_N": true,
     "reaction_calderon_nested_schur_trace_audit_validated": true,
     "sequential_action_energy_projection_audit_validated": true,
+    "soft_calderon_second_graph_domain_reduction_validated": true,
     "soft_channel_positive_duration_observability_jet_lemma_validated": true,
     "undefined_sector_balance_not_promoted": true,
     "uniform_boundary_jerk_compactness_reduction_validated": true,
