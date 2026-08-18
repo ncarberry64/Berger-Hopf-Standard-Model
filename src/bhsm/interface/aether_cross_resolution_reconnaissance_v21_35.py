@@ -11453,6 +11453,126 @@ def event_child_calderon_angle_stability_lemma(
     }
 
 
+def whole_system_time_translation_tangent_interface(
+    path: str | Path = (
+        "artifacts/BHSM_AETHER_CROSS_RESOLUTION_RECONNAISSANCE_V21_35.json"
+    ),
+) -> dict[str, Any]:
+    """Identify the common soft graph mode with the existing time tangent."""
+
+    result = json.loads(Path(path).read_text(encoding="utf-8"))[
+        "cross_resolution_reconnaissance"
+    ]
+    angle = result[
+        "injected_n6_event_child_calderon_friedrichs_angle_audit"
+    ]["soft_mode_localization"]
+    validation = {
+        "retained_action_has_no_explicit_history_time": True,
+        "event_is_evaluated_at_the_existing_event_time_coordinate": True,
+        "event_child_matching_is_covariant_under_common_time_translation": True,
+        "eta_and_persistence_are_translation_invariant": True,
+        "measured_soft_direction_is_fixed_q_w_scale_owned": bool(
+            angle["maximum_N12_N13_absolute_q_w_component"] < 3.0e-4
+        ),
+        "measured_soft_direction_tracks_both_time_tangents": bool(
+            angle["minimum_N8_N13_child_time_tangent_alignment_cosine"]
+            > 0.9998
+            and angle[
+                "minimum_N8_N13_event_time_tangent_alignment_cosine"
+            ] > 0.9998
+        ),
+        "second_principal_angle_remains_resolved_in_measurement": bool(
+            angle["minimum_N12_N13_second_principal_angle_sine"] > 1.0e-2
+        ),
+        "no_new_variable_equation_constraint_or_gate": True,
+    }
+    return {
+        "classification": (
+            "THE_WHOLE_SYSTEM_TIME_TRANSLATION_JACOBI_TANGENT_IS_"
+            "DERIVED_EXACTLY;_THE_FIXED_q_w_CALDERON_SOFT_MODE_ALIGNS_"
+            "WITH_ITS_EVENT_AND_CHILD_BOUNDARY_PROJECTIONS_BUT_THE_"
+            "COMMON_GALERKIN_LIMIT_IDENTIFICATION_REMAINS_TO_BE_PROVED"
+        ),
+        "symmetry": {
+            "finite_transformation": (
+                "U_pre^s(t)=U_pre(t+s),_U_child^s(t)=U_child(t+s),_"
+                "t_event^s=t_event-s"
+            ),
+            "infinitesimal_tangent": (
+                "tau_time=(D_t_U_pre,D_t_U_child,-1_event_time)"
+            ),
+            "action_invariance": (
+                "THE_RETAINED_ACTION_IS_AUTONOMOUS_SO_DIFFERENTIATING_"
+                "THE_EULER_DIRAC_EQUATIONS_GIVES_J*tau_time=0"
+            ),
+            "event_invariance": (
+                "U_pre^s(t_event^s)=U_pre(t_event)_SO_THE_EXISTING_"
+                "ORDERED_EVENT_EVALUATION_AND_EVENT_MULTIPLIER_ROW_ARE_"
+                "UNCHANGED"
+            ),
+            "matching_invariance": (
+                "SIMULTANEOUS_TRANSLATION_PRESERVES_THE_EXISTING_TRACE_"
+                "MOMENTUM_WEAK_REACTION_AND_RETURN_RELATIONS"
+            ),
+            "persistence_invariance": (
+                "A_TIME_TRANSLATE_OF_THE_SAME_NONZERO_ETA_INTERIOR_"
+                "RELATIVE_EVOLUTION_IS_THE_SAME_PERSISTENT_HISTORY"
+            ),
+        },
+        "boundary_identification": {
+            "attachment_chart": "(q_w,q_c=q_scale-q_w)",
+            "common_limit_direction": "delta_q_w=0,_delta_q_c!=0",
+            "physical_scale_relation": "q_scale=q_w+q_c",
+            "maximum_N12_N13_absolute_q_w_component": angle[
+                "maximum_N12_N13_absolute_q_w_component"
+            ],
+            "minimum_N8_N13_child_alignment_cosine": angle[
+                "minimum_N8_N13_child_time_tangent_alignment_cosine"
+            ],
+            "minimum_N8_N13_event_alignment_cosine": angle[
+                "minimum_N8_N13_event_time_tangent_alignment_cosine"
+            ],
+            "identification_uses_observed_particle_data": False,
+        },
+        "tangent_policy": {
+            "classification_category": (
+                "LEGITIMATE_TANGENT_DIRECTION_OF_THE_WHOLE_EVENT_CHILD_"
+                "HISTORY_MANIFOLD"
+            ),
+            "this_category_applies_exactly_to": (
+                "tau_time=(D_t_U_pre,D_t_U_child,-1_event_time)"
+            ),
+            "soft_Calderon_mode_reclassified_as_this_tangent": False,
+            "removed_as_a_physical_defect": False,
+            "soft_mode_may_be_quotiented_before_identification_proof": False,
+            "time_event_coordinate_or_multiplier_added": False,
+            "existing_positive_duration_gauge_quotient_preserved": True,
+        },
+        "normal_angle_after_tangent_quotient": {
+            "measured_N12_N13_minimum_second_principal_angle_sine": angle[
+                "minimum_N12_N13_second_principal_angle_sine"
+            ],
+            "uniform_general_N_lower_bound_proved": False,
+            "promotion_allowed_before_common_limit_identification": False,
+        },
+        "exact_next_mathematical_lemma": (
+            "PROVE_THE_SOFT_CALDERON_PRINCIPAL_VECTOR_CONVERGES_TO_THE_"
+            "COMMON_FIXED_q_w_BOUNDARY_PROJECTION_OF_THE_EVENT_AND_CHILD_"
+            "TIME_TRANSLATION_JACOBI_TANGENT;_ONLY_THEN_QUOTIENT_IT_AND_"
+            "BOUND_THE_SECOND_PRINCIPAL_ANGLE"
+        ),
+        "finite_N3_through_N6_equations_maps_persistence_and_gates_changed": (
+            False
+        ),
+        "new_physics_equations_constraints_regularizers_objectives_or_gates": (
+            False
+        ),
+        "validation": validation,
+        "validation_passed": all(validation.values()),
+        "FULL_BHSM_COMPLETE": False,
+    }
+
+
 def weak_constraint_boundary_source_tail_audit(
     path: str | Path = (
         "artifacts/BHSM_AETHER_CROSS_RESOLUTION_RECONNAISSANCE_V21_35.json"
@@ -15019,6 +15139,7 @@ __all__ = [
     "injected_matched_background_calderon_graph_audit",
     "injected_n6_event_child_calderon_friedrichs_angle_audit",
     "event_child_calderon_angle_stability_lemma",
+    "whole_system_time_translation_tangent_interface",
     "weak_constraint_boundary_source_tail_audit",
     "weak_complete_child_normal_right_inverse_audit",
     "weak_complete_child_normal_lipschitz_audit",

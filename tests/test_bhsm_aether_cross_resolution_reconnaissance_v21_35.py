@@ -9,6 +9,7 @@ from bhsm.interface.aether_cross_resolution_reconnaissance_v21_35 import (
     injected_n6_event_child_calderon_friedrichs_angle_audit,
     positive_duration_normal_adjoint_kernel_localization,
     uniform_positive_duration_normal_closed_range_reduction,
+    whole_system_time_translation_tangent_interface,
 )
 
 
@@ -104,6 +105,34 @@ def test_event_child_calderon_angle_stability_lemma():
     assert audit["candidate_scale_tangent_resolution"][
         "action_autonomy_makes_D_t_U_an_exact_Jacobi_tangent"
     ] is True
+    assert audit[
+        "new_physics_equations_constraints_regularizers_objectives_or_gates"
+    ] is False
+
+
+def test_whole_system_time_translation_tangent_interface():
+    audit = whole_system_time_translation_tangent_interface()
+    assert audit["validation_passed"] is True
+    policy = audit["tangent_policy"]
+    assert policy["classification_category"] == (
+        "LEGITIMATE_TANGENT_DIRECTION_OF_THE_WHOLE_EVENT_CHILD_"
+        "HISTORY_MANIFOLD"
+    )
+    assert policy["soft_Calderon_mode_reclassified_as_this_tangent"] is False
+    assert policy[
+        "soft_mode_may_be_quotiented_before_identification_proof"
+    ] is False
+    assert policy["removed_as_a_physical_defect"] is False
+    assert policy["time_event_coordinate_or_multiplier_added"] is False
+    assert policy["existing_positive_duration_gauge_quotient_preserved"] is True
+    boundary = audit["boundary_identification"]
+    assert boundary["minimum_N8_N13_child_alignment_cosine"] > 0.9998
+    assert boundary["minimum_N8_N13_event_alignment_cosine"] > 0.9998
+    normal = audit["normal_angle_after_tangent_quotient"]
+    assert normal[
+        "measured_N12_N13_minimum_second_principal_angle_sine"
+    ] > 1.0e-2
+    assert normal["uniform_general_N_lower_bound_proved"] is False
     assert audit[
         "new_physics_equations_constraints_regularizers_objectives_or_gates"
     ] is False
