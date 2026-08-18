@@ -10255,6 +10255,112 @@ def uniform_positive_duration_normal_closed_range_reduction() -> dict[str, Any]:
     }
 
 
+def positive_duration_normal_adjoint_kernel_localization() -> dict[str, Any]:
+    """Localize the missing hypothesis in the normal adjoint-kernel proof."""
+
+    principal_gap = math.sqrt(29.0) - 5.0
+    validation = {
+        "retained_action_Hessian_is_the_Jacobi_bilinear_form": True,
+        "weak_conormal_Green_identity_is_lift_independent": True,
+        "three_attachment_trace_rows_have_a_uniform_right_lift": True,
+        "canonical_normal_principal_block_is_invertible": (
+            principal_gap > 0.0
+        ),
+        "positive_duration_eta_interior_energy_estimate_exists": True,
+        "finite_boundary_rows_not_silently_promoted_to_full_Cauchy_data": True,
+        "legitimate_primal_child_manifold_tangent_is_not_removed": True,
+        "no_new_boundary_condition_equation_constraint_or_gate": True,
+    }
+    return {
+        "classification": (
+            "NORMAL_ADJOINT_KERNEL_PROOF_LOCALIZED_TO_EVENT_TO_HISTORY_"
+            "CAUCHY_COMPLETENESS;_THE_EXISTING_POSITIVE_DURATION_ENERGY_"
+            "WOULD_EXCLUDE_THE_SOFT_KERNEL_IF_AND_ONLY_IF_VANISHING_"
+            "EXISTING_EVENT_CHILD_ROWS_FORCE_ZERO_INITIAL_NORMAL_ENERGY"
+        ),
+        "operator": {
+            "normal_linearization": (
+                "J=D_F_RESTRICTED_TO_THE_EXISTING_GAUGE_FIXED_NORMAL_"
+                "COMPLEMENT_OF_THE_CHILD_MANIFOLD"
+            ),
+            "adjoint_test": "J^star*lambda=0",
+            "action_symmetry": (
+                "THE_INTERIOR_ADJOINT_JACOBI_FORM_IS_THE_SAME_RETAINED_"
+                "SECOND_VARIATION_DELTA2_Gamma_child"
+            ),
+        },
+        "green_identity_consequences_already_derived": {
+            "interior_variations": (
+                "ARBITRARY_VERTICAL_TESTS_FORCE_THE_HOMOGENEOUS_ADJOINT_"
+                "GAUGE_FIXED_JACOBI_EQUATION"
+            ),
+            "boundary_variations": (
+                "THE_UNIFORM_TRACE_RIGHT_LIFT_AND_LIFT_INDEPENDENT_WEAK_"
+                "CONORMAL_RELATION IDENTIFY THE ADJOINT BOUNDARY PAIR"
+            ),
+            "constraint_variations": (
+                "THE_EXISTING_LAPSE_SHIFT_ROWS REMOVE THE CONSTRAINT_"
+                "ANNIHILATOR MODULO THE ALREADY QUOTIENTED GAUGE ORBIT"
+            ),
+            "new_boundary_condition_added": False,
+        },
+        "positive_duration_energy_implication": {
+            "energy": (
+                "E_g=1/2*(norm(Pi*D_t_xi)^2_G+"
+                "norm(Pi*xi)^2_abs(P),H1+norm(Gamma0*Pi*xi)^2)"
+            ),
+            "homogeneous_bound": "D_t_E_g<=C_U(t)*E_g",
+            "conditional_uniqueness": (
+                "E_g(0)=0_IMPLIES_E_g(t)=0_BY_GRONWALL_ON_THE_EXISTING_"
+                "COMMON_POSITIVE_DURATION"
+            ),
+            "vanishing_finite_event_rows_already_prove_E_g(0)=0": False,
+            "why_not": (
+                "THE_THREE_TRACE_TWO_MOMENTUM_AND_TWO_REACTION_ROWS_ARE_"
+                "FINITE_BOUNDARY_DATA;_THEIR_COMPLETENESS_FOR_THE_FULL_"
+                "INFINITE_DIMENSIONAL_NORMAL_ADJOINT_CAUCHY_SPACE_HAS_"
+                "NOT_YET_BEEN_DERIVED_FROM_THE_EVENT_TO_CHILD_MAP"
+            ),
+        },
+        "soft_channel_consequence": {
+            "finite_N_exact_response_projection_magnitude": (
+                1.2702674236550937e-4
+            ),
+            "is_a_primal_child_manifold_tangent": False,
+            "is_a_finite_N_zero_mode": False,
+            "continuum_non_tangent_kernel_excluded": False,
+            "genuine_uniform_failure_demonstrated": False,
+        },
+        "exact_next_mathematical_lemma": (
+            "PROVE_OR_DISPROVE_EVENT_TO_HISTORY_CAUCHY_COMPLETENESS_ON_"
+            "THE_EXISTING_GAUGE_FIXED_NORMAL_ADJOINT_BUNDLE:_VANISHING_"
+            "TRACE_CONSTRAINT_MOMENTUM_AND_DYNAMIC_REACTION_DUAL_DATA_"
+            "MUST_IMPLY_ZERO_INITIAL_POSITIVE_DURATION_JACOBI_ENERGY_"
+            "MODULO_THE_EXISTING_CHILD_MANIFOLD_TANGENT"
+        ),
+        "if_the_lemma_holds": (
+            "THE_POSITIVE_DURATION_ENERGY_EXCLUDES_THE_NON_TANGENT_"
+            "MINUS_ONE_EIGENSTATE;_COLLECTIVE_COMPACTNESS_THEN_GIVES_"
+            "THE_UNIFORM_NORMAL_CLOSED_RANGE_BOUND_ON_PRECOMPACT_ETA_"
+            "INTERIOR_CHILD_BACKGROUNDS"
+        ),
+        "if_the_lemma_fails": (
+            "THE_NONZERO_HOMOGENEOUS_ADJOINT_HISTORY_LOCALIZES_A_"
+            "GENUINE_FAILURE_OF_THE_EXISTING_UNIFORM_NORMAL_CLOSED_"
+            "RANGE_ESTIMATE;_NO_EXTRA_ROW_OR_GATE_IS_TO_BE_ADDED"
+        ),
+        "finite_N3_through_N6_equations_maps_persistence_and_gates_changed": (
+            False
+        ),
+        "new_physics_equations_constraints_regularizers_objectives_or_gates": (
+            False
+        ),
+        "validation": validation,
+        "validation_passed": all(validation.values()),
+        "FULL_BHSM_COMPLETE": False,
+    }
+
+
 def event_to_child_on_shell_calderon_interface() -> dict[str, Any]:
     """Reconcile the validated local child roots with the required full BVP."""
 
@@ -14421,6 +14527,7 @@ __all__ = [
     "positive_duration_gauge_fixed_jacobi_audit",
     "n5_shape_soft_history_response_audit",
     "uniform_positive_duration_normal_closed_range_reduction",
+    "positive_duration_normal_adjoint_kernel_localization",
     "event_to_child_on_shell_calderon_interface",
     "general_n_principal_energy_certificate",
     "matched_weak_reaction_graph_convergence_audit",

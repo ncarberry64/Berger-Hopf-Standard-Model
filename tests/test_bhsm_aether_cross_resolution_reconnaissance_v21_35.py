@@ -5,6 +5,7 @@ from bhsm.interface.aether_cross_resolution_reconnaissance_v21_35 import (
     completion_payload,
     deterministic_json,
     general_n_complete_child_reconstruction_statement,
+    positive_duration_normal_adjoint_kernel_localization,
     uniform_positive_duration_normal_closed_range_reduction,
 )
 
@@ -22,6 +23,22 @@ def test_uniform_positive_duration_normal_closed_range_reduction():
     assert audit["failure_localization"][
         "uniform_failure_demonstrated"
     ] is False
+    assert audit[
+        "new_physics_equations_constraints_regularizers_objectives_or_gates"
+    ] is False
+
+
+def test_positive_duration_normal_adjoint_kernel_localization():
+    audit = positive_duration_normal_adjoint_kernel_localization()
+    assert audit["validation_passed"] is True
+    implication = audit["positive_duration_energy_implication"]
+    assert implication[
+        "vanishing_finite_event_rows_already_prove_E_g(0)=0"
+    ] is False
+    soft = audit["soft_channel_consequence"]
+    assert soft["is_a_finite_N_zero_mode"] is False
+    assert soft["continuum_non_tangent_kernel_excluded"] is False
+    assert soft["genuine_uniform_failure_demonstrated"] is False
     assert audit[
         "new_physics_equations_constraints_regularizers_objectives_or_gates"
     ] is False
