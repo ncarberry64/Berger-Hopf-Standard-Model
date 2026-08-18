@@ -5991,7 +5991,7 @@
       },
       "validation_passed": true
     },
-    "active_dependency": "PROVE_OR_DISPROVE_A_UNIFORM_POSITIVE_SHORT_TIME_WEIGHTED_MODULUS_Omega_N_FOR_THE_ACTION_NORMALIZED_SOFT_BOUNDARY_ACCELERATION_USING_THE_WEAK_CALDERON_EVOLUTION;_ONLY_A_NORMALIZED_L2_HISTORY_SEQUENCE_TENDING_TO_ZERO_CAN_PROMOTE_CATEGORY_3",
+    "active_dependency": "PROVE_THE_MOSCO_STRONG_RESOLVENT_CONVERGENCE_OF_THE_GAUGE_FIXED_WEAK_JACOBI_FORMS_AND_STRONG_CONVERGENCE_OF_THE_ACTION_SELECTED_SOFT_CALDERON_CAUCHY_VECTORS_ON_THE_S2_ETA_INTERIOR_CORRECTED_CHILD_BUNDLE",
     "boundary_compatible_gauge_quotient_audit": {
       "FULL_BHSM_COMPLETE": false,
       "boundary_compatibility": {
@@ -11650,7 +11650,7 @@
       },
       "validation_passed": true
     },
-    "scientific_status": "N3_TO_N6_EXACT_ATTACHMENT_WEAK_COMPLETE_PERSISTENT_CHILDREN_VALIDATED;_THE_HARD_MOMENTUM_RESPONSE_CLOSES_AND_THE_SOFT_NORMAL_CHANNEL_IS_POSITIVE_DURATION_DYNAMICAL;_UNIFORM_CLASSICAL_H6_CONTROL_IS_INVALID_AS_A_NEW_CRITERION;_THE_WEAK_CALDERON_BOUNDARY_JERK_FAILURE_IS_LOCALIZED_TO_THE_ACTION_SELECTED_SOFT_BOUNDARY_ACCELERATION_WEIGHTED_TIME_MODULUS;_D2_IS_A_SUFFICIENT_CERTIFICATE_NOT_A_NEW_GATE",
+    "scientific_status": "N3_TO_N6_EXACT_ATTACHMENT_WEAK_COMPLETE_PERSISTENT_CHILDREN_VALIDATED;_THE_HARD_MOMENTUM_RESPONSE_CLOSES_AND_THE_SOFT_NORMAL_CHANNEL_IS_POSITIVE_DURATION_DYNAMICAL;_UNIFORM_CLASSICAL_H6_CONTROL_IS_INVALID_AS_A_NEW_CRITERION;_THE_WEAK_CALDERON_BOUNDARY_JERK_FAILURE_IS_LOCALIZED_TO_THE_ACTION_SELECTED_SOFT_JACOBI_SEMIGROUP_AND_CAUCHY_VECTOR_STRONG_CONVERGENCE;_D2_IS_ONLY_A_SUFFICIENT_CERTIFICATE",
     "sequential_action_energy_projection_audit": {
       "FULL_BHSM_COMPLETE": false,
       "classification": "ACTION_ENERGY_COHERENT_EVENT_AND_CHILD_ADMIT_SEQUENTIAL_NESTED_CONSTRAINT_FIBER_TRANSPORT;_THIS_IS_NOT_YET_A_GENERAL_N_COMPLETE_CHILD_ROOT_CONTINUATION_THEOREM",
@@ -12691,6 +12691,54 @@
       },
       "soft_channel_classification_category": "NORMAL_DIRECTION_CONTROLLED_BY_THE_EXISTING_POSITIVE_DURATION_GAUGE_FIXED_JACOBI_EVOLUTION",
       "soft_channel_is_reclassified_as_a_time_tangent": false,
+      "validation_passed": true
+    },
+    "soft_jacobi_semigroup_compactness_reduction": {
+      "FULL_BHSM_COMPLETE": false,
+      "classification": "THE_MINIMAL_SOFT_BOUNDARY_TIME_MODULUS_FOLLOWS_FROM_STRONG_UNIFORM_ON_COMPACT_TIME_CONVERGENCE_OF_THE_EXISTING_GAUGE_FIXED_JACOBI_PROPAGATORS_ON_THE_ACTION_SELECTED_SOFT_CAUCHY_VECTORS;_THIS_REQUIRES_MOSCO_STRONG_RESOLVENT_CONVERGENCE_ON_THE_NONLINEAR_CORRECTED_CHILD_BUNDLE,_NOT_A_NEW_D2_OR_H6_GATE",
+      "common_energy_space": {
+        "Jacobi_generators": "A_N_ON_H_gauge,N",
+        "embeddings": "I_N:H_gauge,N_TO_H_gauge_FROM_THE_EXISTING_NESTED_SPECTRAL_INJECTIONS",
+        "propagators": "S_N(t)=exp(t*A_N)",
+        "soft_Cauchy_vectors": "x_N=THE_ACTION_NORMALIZED_NON_TANGENT_SOFT_CALDERON_CAUCHY_DATUM",
+        "space": "H_gauge=THE_EXISTING_ACTION_ENERGY_COMPLETION_AFTER_THE_BOUNDARY_COMPATIBLE_GAUGE_QUOTIENT"
+      },
+      "current_evidence": {
+        "action_selected_soft_Cauchy_vector_strong_convergence": false,
+        "fixed_injected_background_graph_convergence": true,
+        "higher_N_positive_duration_soft_histories_required_for_this_analytic_route": false,
+        "nonlinear_corrected_background_Mosco_convergence": false,
+        "uniform_principal_gap": 0.385164807134504,
+        "uniform_trace_right_lift_bound": 4.249543667773264
+      },
+      "exact_next_mathematical_lemma": "PROVE_THE_MOSCO_STRONG_RESOLVENT_CONVERGENCE_OF_THE_GAUGE_FIXED_WEAK_JACOBI_FORMS_AND_STRONG_CONVERGENCE_OF_THE_ACTION_SELECTED_SOFT_CALDERON_CAUCHY_VECTORS_ON_THE_S2_ETA_INTERIOR_CORRECTED_CHILD_BUNDLE",
+      "failure_localization": {
+        "category_3_still_requires_L2_history_collapse": true,
+        "current_classification_category": "NORMAL_DIRECTION_CONTROLLED_BY_THE_EXISTING_POSITIVE_DURATION_GAUGE_FIXED_JACOBI_EVOLUTION",
+        "failure_of_either_statement_proves_category_3": false,
+        "first_unproved_data_statement": "STRONG_PRECOMPACTNESS_AND_IDENTIFICATION_OF_THE_ACTION_SELECTED_SOFT_CALDERON_CAUCHY_VECTORS_MODULO_THE_EXISTING_TANGENT_AND_GAUGE_QUOTIENT",
+        "first_unproved_operator_statement": "MOSCO_STRONG_RESOLVENT_CONVERGENCE_OF_THE_GAUGE_FIXED_WEAK_JACOBI_FORMS_ALONG_THE_ACTUAL_S2_ETA_INTERIOR_CORRECTED_CHILD_BUNDLE"
+      },
+      "new_physics_equations_constraints_regularizers_objectives_or_gates": false,
+      "semigroup_compactness_lemma": {
+        "Trotter_Kato_conclusion": "sup_0<=t<=T_norm(I_N*S_N(t)x_N-S(t)x)_H_gauge_TO_ZERO",
+        "boundary_consequence": "THE_UNIFORM_TRACE_AND_WEAK_CONORMAL_MAP_TRANSFER_THIS_TO_Omega_N(t)_TO_ZERO_UNIFORMLY",
+        "hypotheses": [
+          "sup_N_sup_0<=t<=T_norm(S_N(t))<=M_T",
+          "A_N_CONVERGES_TO_A_IN_STRONG_RESOLVENT_SENSE_AFTER_I_N",
+          "I_N*x_N_CONVERGES_STRONGLY_TO_x_IN_H_gauge"
+        ],
+        "soft_observability_consequence": "EXISTS_tau0>0_WITH_norm(r_N)_L2(0,tau0)>=tau0^(5/2)/(4*sqrt(5))",
+        "uniform_time_continuity_conclusion": "lim_h_TO_0_sup_N_sup_0<=t<=h_norm(I_N*S_N(t)x_N-I_N*x_N)=0"
+      },
+      "validation": {
+        "fixed_background_Calderon_graph_convergence_is_already_derived": true,
+        "no_new_equation_constraint_regularizer_objective_or_gate": true,
+        "nonlinear_corrected_bundle_convergence_not_assumed": true,
+        "uniform_H1_trace_right_lift_is_already_action_owned": true,
+        "uniform_principal_gap_is_already_action_owned": true,
+        "weighted_modulus_is_the_current_minimal_observability_object": true
+      },
       "validation_passed": true
     },
     "soft_second_graph_coefficient_bundle_audit": {
@@ -15055,6 +15103,7 @@
     "soft_boundary_acceleration_compactness_criterion_validated": true,
     "soft_calderon_second_graph_domain_reduction_validated": true,
     "soft_channel_positive_duration_observability_jet_lemma_validated": true,
+    "soft_jacobi_semigroup_compactness_reduction_validated": true,
     "soft_second_graph_coefficient_bundle_audit_validated": true,
     "soft_uniform_smooth_boundary_lift_audit_validated": true,
     "undefined_sector_balance_not_promoted": true,

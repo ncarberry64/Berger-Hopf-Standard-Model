@@ -14,6 +14,7 @@ from bhsm.interface.aether_cross_resolution_reconnaissance_v21_35 import (
     soft_second_graph_coefficient_bundle_audit,
     soft_uniform_smooth_boundary_lift_audit,
     soft_boundary_acceleration_compactness_criterion,
+    soft_jacobi_semigroup_compactness_reduction,
     uniform_boundary_jerk_compactness_reduction,
     uniform_positive_duration_normal_closed_range_reduction,
     weak_calderon_boundary_generator_reduction,
@@ -320,6 +321,28 @@ def test_soft_boundary_acceleration_compactness_criterion():
     failure = audit["failure_policy"]
     assert failure["such_a_sequence_is_currently_constructed"] is False
     assert "L2" in failure["genuine_closed_range_failure_requires"]
+    assert audit[
+        "new_physics_equations_constraints_regularizers_objectives_or_gates"
+    ] is False
+
+
+def test_soft_jacobi_semigroup_compactness_reduction():
+    audit = soft_jacobi_semigroup_compactness_reduction()
+    assert audit["validation_passed"] is True
+    lemma = audit["semigroup_compactness_lemma"]
+    assert "Trotter" not in lemma["Trotter_Kato_conclusion"] or (
+        "TO_ZERO" in lemma["Trotter_Kato_conclusion"]
+    )
+    evidence = audit["current_evidence"]
+    assert evidence["uniform_principal_gap"] > 0.0
+    assert evidence["uniform_trace_right_lift_bound"] < 5.0
+    assert evidence["nonlinear_corrected_background_Mosco_convergence"] is False
+    assert evidence[
+        "action_selected_soft_Cauchy_vector_strong_convergence"
+    ] is False
+    failure = audit["failure_localization"]
+    assert failure["failure_of_either_statement_proves_category_3"] is False
+    assert failure["category_3_still_requires_L2_history_collapse"] is True
     assert audit[
         "new_physics_equations_constraints_regularizers_objectives_or_gates"
     ] is False

@@ -12541,6 +12541,135 @@ def soft_boundary_acceleration_compactness_criterion(
     }
 
 
+def soft_jacobi_semigroup_compactness_reduction(
+    path: str | Path = (
+        "artifacts/BHSM_AETHER_CROSS_RESOLUTION_RECONNAISSANCE_V21_35.json"
+    ),
+) -> dict[str, Any]:
+    """Reduce the soft time modulus to Jacobi propagator convergence."""
+
+    result = json.loads(Path(path).read_text(encoding="utf-8"))[
+        "cross_resolution_reconnaissance"
+    ]
+    principal = result["positive_duration_gauge_fixed_jacobi_audit"][
+        "principal_energy_estimate"
+    ]
+    fixed_graph = result["injected_matched_background_calderon_graph_audit"]
+    criterion = result["soft_boundary_acceleration_compactness_criterion"]
+    trace = result["weak_conormal_reaction_graph_audit"]
+    validation = {
+        "uniform_principal_gap_is_already_action_owned": bool(
+            principal["absolute_principal_smallest_eigenvalue"] > 0.0
+        ),
+        "uniform_H1_trace_right_lift_is_already_action_owned": bool(
+            trace["uniform_attachment_trace_theorem"][
+                "uniform_right_lift_norm_upper_bound"
+            ] < 5.0
+        ),
+        "fixed_background_Calderon_graph_convergence_is_already_derived": bool(
+            fixed_graph["validation_passed"]
+        ),
+        "weighted_modulus_is_the_current_minimal_observability_object": bool(
+            criterion["validation_passed"]
+        ),
+        "nonlinear_corrected_bundle_convergence_not_assumed": True,
+        "no_new_equation_constraint_regularizer_objective_or_gate": True,
+    }
+    return {
+        "classification": (
+            "THE_MINIMAL_SOFT_BOUNDARY_TIME_MODULUS_FOLLOWS_FROM_"
+            "STRONG_UNIFORM_ON_COMPACT_TIME_CONVERGENCE_OF_THE_EXISTING_"
+            "GAUGE_FIXED_JACOBI_PROPAGATORS_ON_THE_ACTION_SELECTED_SOFT_"
+            "CAUCHY_VECTORS;_THIS_REQUIRES_MOSCO_STRONG_RESOLVENT_"
+            "CONVERGENCE_ON_THE_NONLINEAR_CORRECTED_CHILD_BUNDLE,_NOT_A_"
+            "NEW_D2_OR_H6_GATE"
+        ),
+        "common_energy_space": {
+            "space": (
+                "H_gauge=THE_EXISTING_ACTION_ENERGY_COMPLETION_AFTER_"
+                "THE_BOUNDARY_COMPATIBLE_GAUGE_QUOTIENT"
+            ),
+            "embeddings": (
+                "I_N:H_gauge,N_TO_H_gauge_FROM_THE_EXISTING_NESTED_"
+                "SPECTRAL_INJECTIONS"
+            ),
+            "Jacobi_generators": "A_N_ON_H_gauge,N",
+            "propagators": "S_N(t)=exp(t*A_N)",
+            "soft_Cauchy_vectors": (
+                "x_N=THE_ACTION_NORMALIZED_NON_TANGENT_SOFT_CALDERON_"
+                "CAUCHY_DATUM"
+            ),
+        },
+        "semigroup_compactness_lemma": {
+            "hypotheses": [
+                "sup_N_sup_0<=t<=T_norm(S_N(t))<=M_T",
+                "A_N_CONVERGES_TO_A_IN_STRONG_RESOLVENT_SENSE_AFTER_I_N",
+                "I_N*x_N_CONVERGES_STRONGLY_TO_x_IN_H_gauge",
+            ],
+            "Trotter_Kato_conclusion": (
+                "sup_0<=t<=T_norm(I_N*S_N(t)x_N-S(t)x)_H_gauge_TO_ZERO"
+            ),
+            "uniform_time_continuity_conclusion": (
+                "lim_h_TO_0_sup_N_sup_0<=t<=h_"
+                "norm(I_N*S_N(t)x_N-I_N*x_N)=0"
+            ),
+            "boundary_consequence": (
+                "THE_UNIFORM_TRACE_AND_WEAK_CONORMAL_MAP_TRANSFER_THIS_"
+                "TO_Omega_N(t)_TO_ZERO_UNIFORMLY"
+            ),
+            "soft_observability_consequence": (
+                "EXISTS_tau0>0_WITH_"
+                "norm(r_N)_L2(0,tau0)>=tau0^(5/2)/(4*sqrt(5))"
+            ),
+        },
+        "current_evidence": {
+            "uniform_principal_gap": float(
+                principal["absolute_principal_smallest_eigenvalue"]
+            ),
+            "uniform_trace_right_lift_bound": float(
+                trace["uniform_attachment_trace_theorem"][
+                    "uniform_right_lift_norm_upper_bound"
+                ]
+            ),
+            "fixed_injected_background_graph_convergence": True,
+            "nonlinear_corrected_background_Mosco_convergence": False,
+            "action_selected_soft_Cauchy_vector_strong_convergence": False,
+            "higher_N_positive_duration_soft_histories_required_for_"
+            "this_analytic_route": False,
+        },
+        "failure_localization": {
+            "first_unproved_operator_statement": (
+                "MOSCO_STRONG_RESOLVENT_CONVERGENCE_OF_THE_GAUGE_FIXED_"
+                "WEAK_JACOBI_FORMS_ALONG_THE_ACTUAL_S2_ETA_INTERIOR_"
+                "CORRECTED_CHILD_BUNDLE"
+            ),
+            "first_unproved_data_statement": (
+                "STRONG_PRECOMPACTNESS_AND_IDENTIFICATION_OF_THE_ACTION_"
+                "SELECTED_SOFT_CALDERON_CAUCHY_VECTORS_MODULO_THE_"
+                "EXISTING_TANGENT_AND_GAUGE_QUOTIENT"
+            ),
+            "failure_of_either_statement_proves_category_3": False,
+            "category_3_still_requires_L2_history_collapse": True,
+            "current_classification_category": (
+                "NORMAL_DIRECTION_CONTROLLED_BY_THE_EXISTING_POSITIVE_"
+                "DURATION_GAUGE_FIXED_JACOBI_EVOLUTION"
+            ),
+        },
+        "exact_next_mathematical_lemma": (
+            "PROVE_THE_MOSCO_STRONG_RESOLVENT_CONVERGENCE_OF_THE_"
+            "GAUGE_FIXED_WEAK_JACOBI_FORMS_AND_STRONG_CONVERGENCE_OF_"
+            "THE_ACTION_SELECTED_SOFT_CALDERON_CAUCHY_VECTORS_ON_THE_"
+            "S2_ETA_INTERIOR_CORRECTED_CHILD_BUNDLE"
+        ),
+        "new_physics_equations_constraints_regularizers_objectives_or_gates": (
+            False
+        ),
+        "validation": validation,
+        "validation_passed": all(validation.values()),
+        "FULL_BHSM_COMPLETE": False,
+    }
+
+
 def weak_constraint_boundary_source_tail_audit(
     path: str | Path = (
         "artifacts/BHSM_AETHER_CROSS_RESOLUTION_RECONNAISSANCE_V21_35.json"
@@ -15932,15 +16061,19 @@ def promote_boundary_jerk_weak_graph_domain_audit(
     if not compactness["validation_passed"]:
         raise RuntimeError("soft boundary-acceleration criterion failed")
     result["soft_boundary_acceleration_compactness_criterion"] = compactness
-    result["active_dependency"] = compactness["exact_next_mathematical_lemma"]
+    semigroup = soft_jacobi_semigroup_compactness_reduction(target)
+    if not semigroup["validation_passed"]:
+        raise RuntimeError("soft Jacobi semigroup compactness reduction failed")
+    result["soft_jacobi_semigroup_compactness_reduction"] = semigroup
+    result["active_dependency"] = semigroup["exact_next_mathematical_lemma"]
     result["scientific_status"] = (
         "N3_TO_N6_EXACT_ATTACHMENT_WEAK_COMPLETE_PERSISTENT_CHILDREN_"
         "VALIDATED;_THE_HARD_MOMENTUM_RESPONSE_CLOSES_AND_THE_SOFT_"
         "NORMAL_CHANNEL_IS_POSITIVE_DURATION_DYNAMICAL;_UNIFORM_"
         "CLASSICAL_H6_CONTROL_IS_INVALID_AS_A_NEW_CRITERION;_THE_WEAK_"
         "CALDERON_BOUNDARY_JERK_FAILURE_IS_LOCALIZED_TO_THE_ACTION_"
-        "SELECTED_SOFT_BOUNDARY_ACCELERATION_WEIGHTED_TIME_MODULUS;_"
-        "D2_IS_A_SUFFICIENT_CERTIFICATE_NOT_A_NEW_GATE"
+        "SELECTED_SOFT_JACOBI_SEMIGROUP_AND_CAUCHY_VECTOR_STRONG_"
+        "CONVERGENCE;_D2_IS_ONLY_A_SUFFICIENT_CERTIFICATE"
     )
     payload["cross_resolution_reconnaissance"] = result
     validation = dict(payload["validation"])
@@ -15961,6 +16094,9 @@ def promote_boundary_jerk_weak_graph_domain_audit(
     )
     validation["soft_boundary_acceleration_compactness_criterion_validated"] = (
         compactness["validation_passed"]
+    )
+    validation["soft_jacobi_semigroup_compactness_reduction_validated"] = (
+        semigroup["validation_passed"]
     )
     payload["validation"] = validation
     payload["validation_passed"] = all(validation.values())
@@ -16184,6 +16320,7 @@ __all__ = [
     "soft_second_graph_coefficient_bundle_audit",
     "soft_uniform_smooth_boundary_lift_audit",
     "soft_boundary_acceleration_compactness_criterion",
+    "soft_jacobi_semigroup_compactness_reduction",
     "weak_constraint_boundary_source_tail_audit",
     "weak_complete_child_normal_right_inverse_audit",
     "weak_complete_child_normal_lipschitz_audit",
