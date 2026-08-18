@@ -2,7 +2,7 @@
 
 [![CI](https://github.com/ncarberry64/Berger-Hopf-Standard-Model/actions/workflows/ci.yml/badge.svg)](https://github.com/ncarberry64/Berger-Hopf-Standard-Model/actions/workflows/ci.yml)
 [![Latest archival release](https://img.shields.io/github/v/release/ncarberry64/Berger-Hopf-Standard-Model?label=archival%20release)](https://github.com/ncarberry64/Berger-Hopf-Standard-Model/releases/latest)
-[![Current research status](https://img.shields.io/badge/current%20research-cross--resolution%20N3--N5-orange)](docs/current_bhsm_status.md)
+[![Current research status](https://img.shields.io/badge/current%20research-N3--N6%20boundary%20graph-orange)](docs/current_bhsm_status.md)
 [![Python 3.10+](https://img.shields.io/badge/python-3.10%2B-3776AB)](https://www.python.org/)
 [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.20663419.svg)](https://doi.org/10.5281/zenodo.20663419)
 
@@ -27,15 +27,20 @@ definition, child criterion, or gate was added.
 
 The durable checkpoint is
 [`BHSM_AETHER_CROSS_RESOLUTION_RECONNAISSANCE_V21_35.json`](artifacts/BHSM_AETHER_CROSS_RESOLUTION_RECONNAISSANCE_V21_35.json).
-The same-action event-to-child reaction/BVP correspondence is now explicit and
-finite-N solvable at N3/N4/N5. The dimension laws are `8N+2` whole-child
-variables, `2N+8` physical rows, and a `6N-6` local root manifold. These three
-finite-N results do not yet prove a resolution-independent limit. Frozen
-predictions remain unchanged.
+The same-action event-to-child attachment/reaction BVP correspondence is now
+explicitly matched at N3/N4/N5/N6. N6 closes its full
+trace/constraint/momentum compatibility system to `7.341e-12`, matches the
+exact attachment configuration with zero recorded jump, and has a converged
+positive-duration persistence witness with nonzero relative evolution. This
+is an N6 boundary-graph checkpoint, not promotion of a fourth complete
+persistent child. The dimension laws remain `8N+2` whole-child variables,
+`2N+8` physical rows, and a `6N-6` local root manifold. Finite-N results do
+not yet prove a resolution-independent limit. Frozen predictions remain
+unchanged.
 
 Exact next object:
 
-`PROVE_OR_LOCALIZE_THE_FIRST_FAILURE_OF_UNIFORM_GENERAL_N_REACTION_CALDERON_GRAPH_CONVERGENCE`
+`PROVE_COLLECTIVE_COMPACT_CONVERGENCE_OF_THE_LOWER_ORDER_GAUGE_FIXED_WEAK_JACOBI_CALDERON_OPERATORS_AND_A_UNIFORM_SPECTRAL_GAP_ON_THE_NORMAL_COMPLEMENT_OF_THE_CHILD_MANIFOLD`
 
 ## Historical corrected-Rayleigh N=3 snapshot
 
@@ -85,8 +90,8 @@ Read the authoritative [N=3 continuation ledger](docs/BHSM_N3_CONTINUATION_LEDGE
 | --- | --- |
 | Computational framework | Validated software/tests; this does not validate nature |
 | Current test corpus | Focused cross-resolution, complete-child, persistence, claim-firewall, frozen-integrity, and engine-invariant checks; historical corpus retained for manual regression |
-| Internal mathematical program | Independent N3/N4/N5 complete persistent children validated for their finite-N maps; general-N convergence remains open |
-| Nonlinear Norman cycle | N3/N4/N5 finite-resolution persistence validated |
+| Internal mathematical program | Independent N3/N4/N5 complete persistent children validated; exact attachment-matched weak reaction graphs measured through N6; general-N convergence remains open |
+| Nonlinear Norman cycle | N3/N4/N5 finite-resolution persistence validated; N6 has a boundary-compatible persistence witness but is not promoted as a complete persistent child |
 | Scale and flavor | Absolute scale, action-derived CKM, and PMNS remain open |
 | Frozen predictions | Unchanged |
 | Empirical status | Not established |

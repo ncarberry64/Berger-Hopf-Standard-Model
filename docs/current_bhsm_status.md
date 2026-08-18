@@ -26,11 +26,18 @@ Evidence:
 The finite-N reconstruction pattern is `F_N:R^(8N+2)->R^(2N+8)` with a
 `6N-6` local root manifold. The retained same-action Lorentzian child-history
 BVP supplies a lift-independent boundary reaction, and the two-sided
-event/child reaction match is solvable at N3/N4/N5 without a new physical row
-or C1 continuity gate. Three resolutions alone do not prove the limit.
+event/child attachment/reaction match is explicit at N3/N4/N5/N6 without a
+new physical row or C1 continuity gate. N6 closes full
+trace/constraint/momentum compatibility to `7.341e-12`, records zero exact
+attachment jump after boundary matching, and has a converged positive-duration
+persistence witness with nonzero relative evolution. This does not by itself
+promote N6 as a fourth complete persistent child. The boundary-compatible
+principal gauge quotient is derived and exact-attachment action-normalized
+weak reaction graphs are measured through N6. Finite resolutions alone do not
+prove the limit.
 
 Exact next dependency:
-`PROVE_OR_LOCALIZE_THE_FIRST_FAILURE_OF_UNIFORM_GENERAL_N_REACTION_CALDERON_GRAPH_CONVERGENCE`.
+`PROVE_COLLECTIVE_COMPACT_CONVERGENCE_OF_THE_LOWER_ORDER_GAUGE_FIXED_WEAK_JACOBI_CALDERON_OPERATORS_AND_A_UNIFORM_SPECTRAL_GAP_ON_THE_NORMAL_COMPLEMENT_OF_THE_CHILD_MANIFOLD`.
 
 The corrected-Rayleigh N3 chronology below is retained for provenance.
 

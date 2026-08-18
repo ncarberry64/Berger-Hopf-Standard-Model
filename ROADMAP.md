@@ -2,12 +2,14 @@
 
 ## Active cross-resolution completion path
 
-1. Preserve the independently validated N3/N4/N5 complete persistent children
-   and the unchanged finite-N maps that produced them.
-2. Use the derived `8N+2` variable, `2N+8` row, and `6N-6` manifold laws and
-   same-action event/child reaction BVP to prove a uniform general-N
-   reaction-Calderon graph convergence/right-inverse bound, or localize its
-   first action-owned failure.
+1. Preserve the independently validated N3/N4/N5 complete persistent children,
+   the exact attachment-matched N3-N6 weak reaction graphs, and the unchanged
+   finite-N maps that produced them.
+2. Use the derived `8N+2` variable, `2N+8` row, `6N-6` manifold laws,
+   boundary-compatible principal gauge quotient, and same-action event/child
+   BVP to prove collective compact convergence of the lower-order gauge-fixed
+   weak Jacobi-Calderon operators and a uniform normal-complement spectral gap,
+   or localize the first action-owned failure.
 3. Transfer eta, ordered-event, and positive-duration persistence uniformly;
    do not infer a continuum limit from three resolutions alone.
 4. Resume the existing action/scale/returned-family-operator dependency chain
