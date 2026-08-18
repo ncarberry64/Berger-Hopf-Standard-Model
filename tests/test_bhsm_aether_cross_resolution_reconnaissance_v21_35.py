@@ -5,6 +5,7 @@ from bhsm.interface.aether_cross_resolution_reconnaissance_v21_35 import (
     completion_payload,
     deterministic_json,
     general_n_complete_child_reconstruction_statement,
+    injected_n6_event_child_calderon_friedrichs_angle_audit,
     positive_duration_normal_adjoint_kernel_localization,
     uniform_positive_duration_normal_closed_range_reduction,
 )
@@ -39,6 +40,25 @@ def test_positive_duration_normal_adjoint_kernel_localization():
     assert soft["is_a_finite_N_zero_mode"] is False
     assert soft["continuum_non_tangent_kernel_excluded"] is False
     assert soft["genuine_uniform_failure_demonstrated"] is False
+    assert audit[
+        "new_physics_equations_constraints_regularizers_objectives_or_gates"
+    ] is False
+
+
+def test_injected_n6_event_child_calderon_friedrichs_angle_audit():
+    audit = injected_n6_event_child_calderon_friedrichs_angle_audit(
+        points=96, maximum_order=13
+    )
+    assert audit["validation_passed"] is True
+    assert audit["fixed_pair_event_to_history_Cauchy_completeness"] is True
+    assert audit["minimum_measured_Friedrichs_sine"] > 0.0
+    assert all(
+        row["linearized_graph_intersection_dimension"] == 0
+        for row in audit["rows"]
+    )
+    assert audit[
+        "uniform_nonlinear_child_bundle_Cauchy_completeness"
+    ] is False
     assert audit[
         "new_physics_equations_constraints_regularizers_objectives_or_gates"
     ] is False

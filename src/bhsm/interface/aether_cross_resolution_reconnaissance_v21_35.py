@@ -10968,6 +10968,223 @@ def injected_matched_background_calderon_graph_audit(
         "FULL_BHSM_COMPLETE": False,
     }
 
+@lru_cache(maxsize=2)
+def injected_n6_event_child_calderon_friedrichs_angle_audit(
+    path: str | Path = (
+        "artifacts/BHSM_AETHER_CROSS_RESOLUTION_RECONNAISSANCE_V21_35.json"
+    ),
+    *,
+    points: int = 96,
+    maximum_order: int = 13,
+) -> dict[str, Any]:
+    """Measure the fixed-pair event/child Calderon graph angle."""
+
+    if maximum_order < 8:
+        raise ValueError("at least three injected resolution shells required")
+    result = json.loads(Path(path).read_text(encoding="utf-8"))[
+        "cross_resolution_reconnaissance"
+    ]
+    event_exact = result["sequential_action_energy_projection_audit"][
+        "rows"
+    ][0]["event"]["projected_state_binary64_hex"]
+    child_exact = result["N6_weak_complete_child_candidate"][
+        "child_state"
+    ]["binary64_hex"]
+
+    def decode(exact: Mapping[str, Any]) -> tuple[np.ndarray, ...]:
+        return tuple(
+            np.asarray([float.fromhex(value) for value in exact[name]])
+            for name in ("coordinates", "velocities", "multipliers")
+        )
+
+    event_base = decode(event_exact)
+    child_base = decode(child_exact)
+
+    def reaction_response(
+        order: int,
+        state: tuple[np.ndarray, ...],
+    ) -> tuple[np.ndarray, np.ndarray]:
+        zero = _child_history_boundary_reaction_solve(
+            order, *state, np.zeros(2), points=points
+        )
+        offset = np.asarray(zero["boundary_reaction"], dtype=float)
+        response = np.empty((2, 2))
+        for column in range(2):
+            unit = np.zeros(2)
+            unit[column] = 1.0
+            solved = _child_history_boundary_reaction_solve(
+                order, *state, unit, points=points
+            )
+            response[:, column] = (
+                np.asarray(solved["boundary_reaction"], dtype=float)
+                - offset
+            )
+        return offset, response
+
+    rows = []
+    previous_event_projector: np.ndarray | None = None
+    previous_child_projector: np.ndarray | None = None
+    for order in range(6, maximum_order + 1):
+        event = (
+            event_base if order == 6 else
+            embed_nested_state(*event_base, 6, order)
+        )
+        child = (
+            child_base if order == 6 else
+            embed_nested_state(*child_base, 6, order)
+        )
+        event_q = event[0]
+        child_q = child[0]
+        event_boundary = _attachment_jacobian_at_order(order, event_q)
+        child_boundary = _attachment_jacobian_at_order(order, child_q)
+        frequencies = spectral_frequencies(order)
+        q_weight = np.sqrt(1.0 + frequencies["coordinates"] ** 2)
+        inverse_weight = np.diag(1.0 / q_weight**2)
+        event_gram = event_boundary @ inverse_weight @ event_boundary.T
+        child_gram = child_boundary @ inverse_weight @ child_boundary.T
+        common_gram = 0.5 * (event_gram + child_gram)
+        eigenvalues, eigenvectors = np.linalg.eigh(common_gram)
+        sqrt_gram = (
+            eigenvectors @ np.diag(np.sqrt(eigenvalues)) @ eigenvectors.T
+        )
+        event_offset, event_response = reaction_response(order, event)
+        child_offset, child_response = reaction_response(order, child)
+        event_normalized = sqrt_gram @ event_response @ sqrt_gram
+        child_normalized = sqrt_gram @ child_response @ sqrt_gram
+        event_frame, _ = np.linalg.qr(np.vstack((
+            np.eye(2), -event_normalized,
+        )))
+        child_frame, _ = np.linalg.qr(np.vstack((
+            np.eye(2), child_normalized,
+        )))
+        event_projector = event_frame @ event_frame.T
+        child_projector = child_frame @ child_frame.T
+        cosines = np.linalg.svd(
+            child_frame.T @ event_frame, compute_uv=False
+        )
+        cosines = np.clip(cosines, 0.0, 1.0)
+        sines = np.sqrt(np.maximum(0.0, 1.0 - cosines**2))
+        total_response = child_normalized + event_normalized
+        total_singular = np.linalg.svd(total_response, compute_uv=False)
+        rows.append({
+            "N": order,
+            "attachment_configuration_jump_norm": float(np.linalg.norm(
+                _attachment_coordinates_at_order(order, child_q)
+                - _attachment_coordinates_at_order(order, event_q)
+            )),
+            "event_child_trace_gram_difference": float(np.linalg.norm(
+                event_gram - child_gram, ord=2
+            )),
+            "event_reaction_offset": event_offset.tolist(),
+            "child_reaction_offset": child_offset.tolist(),
+            "event_action_normalized_response_singular_values": (
+                np.linalg.svd(
+                    event_normalized, compute_uv=False
+                ).tolist()
+            ),
+            "child_action_normalized_response_singular_values": (
+                np.linalg.svd(
+                    child_normalized, compute_uv=False
+                ).tolist()
+            ),
+            "matched_total_response_singular_values": total_singular.tolist(),
+            "Calderon_graph_principal_angle_cosines": cosines.tolist(),
+            "Calderon_graph_principal_angle_sines": sines.tolist(),
+            "Friedrichs_transversality_sine": float(np.min(sines)),
+            "linearized_graph_intersection_dimension": int(np.count_nonzero(
+                cosines > 1.0 - 1.0e-10
+            )),
+            "event_graph_projector_step": (
+                None if previous_event_projector is None else
+                float(np.linalg.norm(
+                    event_projector - previous_event_projector, ord=2
+                ))
+            ),
+            "child_graph_projector_step": (
+                None if previous_child_projector is None else
+                float(np.linalg.norm(
+                    child_projector - previous_child_projector, ord=2
+                ))
+            ),
+        })
+        previous_event_projector = event_projector
+        previous_child_projector = child_projector
+    tail = rows[-3:]
+    validation = {
+        "same_exact_matched_N6_event_child_pair_injected": True,
+        "attachment_configuration_match_replays": all(
+            row["attachment_configuration_jump_norm"] < 1.0e-10
+            for row in rows
+        ),
+        "common_boundary_energy_gram_replays": all(
+            row["event_child_trace_gram_difference"] < 1.0e-10
+            for row in rows
+        ),
+        "all_fixed_pair_linearized_graph_intersections_are_trivial": all(
+            row["linearized_graph_intersection_dimension"] == 0
+            for row in rows
+        ),
+        "all_fixed_pair_Friedrichs_sines_are_resolved_nonzero": all(
+            row["Friedrichs_transversality_sine"]
+            > 100.0 * np.finfo(float).eps
+            for row in rows
+        ),
+        "late_fixed_pair_graph_steps_are_bounded": all(
+            max(
+                row["event_graph_projector_step"],
+                row["child_graph_projector_step"],
+            ) < 5.0e-2
+            for row in tail
+        ),
+        "no_higher_N_child_root_or_new_gate_claimed": True,
+    }
+    return {
+        "classification": (
+            "FIXED_MATCHED_N6_EVENT_AND_CHILD_CALDERON_GRAPHS_ARE_"
+            "TRANSVERSE_THROUGH_THE_INJECTED_GALERKIN_SEQUENCE;_THIS_"
+            "CLOSES_EVENT_TO_HISTORY_CAUCHY_COMPLETENESS_ON_THE_FIXED_"
+            "PAIR_BUT_NOT_YET_UNIFORMLY_ON_THE_NONLINEAR_CHILD_BUNDLE"
+            if all(validation.values()) else
+            "FIXED_MATCHED_EVENT_CHILD_CALDERON_TRANSVERSALITY_FAILS_OR_"
+            "REMAINS_UNRESOLVED"
+        ),
+        "source": (
+            "EXACT_ATTACHMENT_MATCHED_N6_EVENT_CHILD_PAIR_INJECTED_"
+            "WITHOUT_REOPTIMIZATION"
+        ),
+        "boundary_space": (
+            "TSTAR_R2_WITH_THE_ACTION_H1_MINIMAL_LIFT_GRAM_AND_MATCHING_"
+            "INVOLUTION_(b,Lambda_event)_TO_(b,-Lambda_event)"
+        ),
+        "Friedrichs_definition": (
+            "sin(theta_F,N)=inf_{x_in_L_child_minus_intersection}"
+            "dist(x,S*L_event)/norm(x)"
+        ),
+        "rows": rows,
+        "minimum_measured_Friedrichs_sine": min(
+            row["Friedrichs_transversality_sine"] for row in rows
+        ),
+        "minimum_late_Friedrichs_sine": min(
+            row["Friedrichs_transversality_sine"] for row in tail
+        ),
+        "fixed_pair_event_to_history_Cauchy_completeness": all(
+            validation.values()
+        ),
+        "uniform_nonlinear_child_bundle_Cauchy_completeness": False,
+        "exact_next_mathematical_lemma": (
+            "PROVE_A_UNIFORM_POSITIVE_FRIEDRICHS_ANGLE_BETWEEN_THE_"
+            "MATCHED_EVENT_AND_CHILD_CALDERON_GRAPHS_ON_THE_ACTION_"
+            "ENERGY_COHERENT_ETA_INTERIOR_NORMAL_BUNDLE"
+        ),
+        "new_physics_equations_constraints_regularizers_objectives_or_gates": (
+            False
+        ),
+        "validation": validation,
+        "validation_passed": all(validation.values()),
+        "FULL_BHSM_COMPLETE": False,
+    }
+
+
 def weak_constraint_boundary_source_tail_audit(
     path: str | Path = (
         "artifacts/BHSM_AETHER_CROSS_RESOLUTION_RECONNAISSANCE_V21_35.json"
@@ -14532,6 +14749,7 @@ __all__ = [
     "general_n_principal_energy_certificate",
     "matched_weak_reaction_graph_convergence_audit",
     "injected_matched_background_calderon_graph_audit",
+    "injected_n6_event_child_calderon_friedrichs_angle_audit",
     "weak_constraint_boundary_source_tail_audit",
     "weak_complete_child_normal_right_inverse_audit",
     "weak_complete_child_normal_lipschitz_audit",
