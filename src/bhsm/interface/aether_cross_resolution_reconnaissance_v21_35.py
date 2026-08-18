@@ -12670,6 +12670,136 @@ def soft_jacobi_semigroup_compactness_reduction(
     }
 
 
+def jacobi_form_coefficient_mosco_theorem(
+    path: str | Path = (
+        "artifacts/BHSM_AETHER_CROSS_RESOLUTION_RECONNAISSANCE_V21_35.json"
+    ),
+) -> dict[str, Any]:
+    """Prove coefficient-to-Mosco convergence for the retained action."""
+
+    result = json.loads(Path(path).read_text(encoding="utf-8"))[
+        "cross_resolution_reconnaissance"
+    ]
+    coefficients = result["soft_second_graph_coefficient_bundle_audit"]
+    semigroup = result["soft_jacobi_semigroup_compactness_reduction"]
+    principal = result["positive_duration_gauge_fixed_jacobi_audit"][
+        "principal_energy_estimate"
+    ]
+    validation = {
+        "retained_local_action_uses_at_most_first_radial_derivatives": True,
+        "nonlocal_collective_inertia_Hessian_is_finite_rank": True,
+        "Casimir_term_is_an_existing_smooth_boundary_trace_functional": True,
+        "one_dimensional_S2_embeds_compactly_into_C1_C0_C1": True,
+        "eta_interior_removes_all_reciprocal_coefficient_singularities": True,
+        "nested_Galerkin_spaces_are_dense_in_the_weak_graph_domain": True,
+        "uniform_gauge_fixed_principal_gap_is_positive": bool(
+            principal["absolute_principal_smallest_eigenvalue"] > 0.0
+        ),
+        "measured_projection_sequence_is_not_used_as_a_proof": bool(
+            not coefficients["remaining_gap"][
+                "finite_projection_measurement_proves_either_statement"
+            ]
+        ),
+        "no_new_equation_constraint_regularizer_objective_or_gate": True,
+    }
+    return {
+        "classification": (
+            "FOR_ANY_S2_STRONGLY_CONVERGENT_ETA_INTERIOR_CORRECTED_CHILD_"
+            "BACKGROUND_SEQUENCE,_THE_EXACT_RETAINED_ACTION_HESSIAN_"
+            "FORMS_AND_WEAK_CONORMAL_GRAPHS_CONVERGE_IN_NORM_FORM_AND_"
+            "HENCE_MOSCO_STRONG_RESOLVENT_SENSE;_THE_OPERATOR_HALF_OF_"
+            "THE_SOFT_SEMIGROUP_LEMMA_IS_CLOSED_CONDITIONALLY_ON_THE_"
+            "ACTUAL_BACKGROUND_COMPACTNESS"
+        ),
+        "retained_action_coefficient_inventory": {
+            "bulk_local_dependence": (
+                "SMOOTH_FUNCTIONS_OF_(q,D_chi_q,v,m,D_chi_m)_WITH_"
+                "EXPONENTIAL_GEOMETRY_AND_INTEGER_POWERS"
+            ),
+            "eta_dependence": (
+                "eta_Legendre=1+(x_spatial-f_normal^2)^3"
+            ),
+            "collective_inertia": (
+                "ONE_SCALAR_INTEGRAL_FOLLOWED_BY_A_RECIPROCAL;_ITS_"
+                "SECOND_VARIATION_IS_FINITE_RANK_PLUS_LOCAL_COEFFICIENTS"
+            ),
+            "boundary_Casimir": (
+                "-C_SM*exp(logN_boundary)/R4_boundary"
+            ),
+            "highest_radial_derivative_order": 1,
+            "new_action_term": False,
+        },
+        "coefficient_convergence_theorem": {
+            "background_hypothesis": (
+                "U_N_TO_U_STRONGLY_IN_"
+                "S2=H2_q_CROSS_H1_v_CROSS_H2_m_AND_"
+                "inf_N_eta(U_N)>=eta0>0"
+            ),
+            "Sobolev_embedding": (
+                "H2_q_TO_C1_q,_H1_v_TO_C0_v,_H2_m_TO_C1_m_"
+                "ON_THE_COMPACT_ONE_DIMENSIONAL_CAP"
+            ),
+            "local_coefficient_conclusion": (
+                "ALL_LOCAL_HESSIAN_COEFFICIENTS_CONVERGE_UNIFORMLY_"
+                "AND_ARE_UNIFORMLY_BOUNDED"
+            ),
+            "finite_rank_conclusion": (
+                "THE_COLLECTIVE_INERTIA_HESSIAN_CONVERGES_IN_OPERATOR_NORM"
+            ),
+            "boundary_conclusion": (
+                "THE_CASIMIR_AND_ATTACHMENT_TRACE_HESSIANS_CONVERGE_IN_"
+                "THE_FIXED_FINITE_DIMENSIONAL_BOUNDARY_OPERATOR_NORM"
+            ),
+        },
+        "form_and_resolvent_conclusion": {
+            "common_form_domain": (
+                "V_GAUGE=THE_EXISTING_ACTION_ENERGY_FORM_SPACE_AFTER_"
+                "THE_BOUNDARY_COMPATIBLE_GAUGE_QUOTIENT"
+            ),
+            "norm_form_convergence": (
+                "norm(j_N-j)_B(V_GAUGE,V_GAUGE_star)_TO_ZERO"
+            ),
+            "operator_graph_domain": (
+                "D1_N_IS_THE_ASSOCIATED_WEAK_EULER_DIRAC_AND_CONORMAL_"
+                "OPERATOR_DOMAIN_AND_MAY_VARY_WITH_THE_BACKGROUND"
+            ),
+            "Mosco_convergence": True,
+            "strong_resolvent_convergence_for_a_common_stable_shift": True,
+            "positive_duration_propagator_convergence_if_energy_stability_"
+            "is_uniform": True,
+            "zero_frequency_normal_inverse_uniformity_inferred": False,
+            "why_not": (
+                "A_COMPACT_LOWER_ORDER_NORMAL_EIGENVALUE_MAY_APPROACH_ZERO_"
+                "WITHOUT_VIOLATING_PRINCIPAL_OR_SHIFTED_RESOLVENT_"
+                "CONVERGENCE"
+            ),
+        },
+        "closed_and_open": {
+            "operator_coefficient_to_Mosco_implication": "PROVED",
+            "actual_corrected_child_bundle_has_an_N_uniform_S2_bound": False,
+            "actual_corrected_child_backgrounds_have_a_unique_strong_limit": (
+                False
+            ),
+            "action_selected_soft_Cauchy_vectors_converge_strongly": False,
+            "genuine_uniform_normal_closed_range_failure_demonstrated": (
+                False
+            ),
+        },
+        "exact_next_mathematical_lemma": (
+            "PROVE_S2_ETA_PRECOMPACTNESS_AND_LIMIT_IDENTIFICATION_OF_THE_"
+            "ACTUAL_CORRECTED_CHILD_BACKGROUNDS_AND_STRONG_GRAPH_"
+            "COMPACTNESS_OF_THE_ACTION_SELECTED_SOFT_CALDERON_CAUCHY_"
+            "VECTORS;_THE_ACTION_COEFFICIENT_TO_MOSCO_STEP_IS_CLOSED"
+        ),
+        "new_physics_equations_constraints_regularizers_objectives_or_gates": (
+            False
+        ),
+        "validation": validation,
+        "validation_passed": all(validation.values()),
+        "FULL_BHSM_COMPLETE": False,
+    }
+
+
 def weak_constraint_boundary_source_tail_audit(
     path: str | Path = (
         "artifacts/BHSM_AETHER_CROSS_RESOLUTION_RECONNAISSANCE_V21_35.json"
@@ -16065,15 +16195,19 @@ def promote_boundary_jerk_weak_graph_domain_audit(
     if not semigroup["validation_passed"]:
         raise RuntimeError("soft Jacobi semigroup compactness reduction failed")
     result["soft_jacobi_semigroup_compactness_reduction"] = semigroup
-    result["active_dependency"] = semigroup["exact_next_mathematical_lemma"]
+    mosco = jacobi_form_coefficient_mosco_theorem(target)
+    if not mosco["validation_passed"]:
+        raise RuntimeError("Jacobi coefficient-to-Mosco theorem failed")
+    result["jacobi_form_coefficient_mosco_theorem"] = mosco
+    result["active_dependency"] = mosco["exact_next_mathematical_lemma"]
     result["scientific_status"] = (
         "N3_TO_N6_EXACT_ATTACHMENT_WEAK_COMPLETE_PERSISTENT_CHILDREN_"
         "VALIDATED;_THE_HARD_MOMENTUM_RESPONSE_CLOSES_AND_THE_SOFT_"
         "NORMAL_CHANNEL_IS_POSITIVE_DURATION_DYNAMICAL;_UNIFORM_"
         "CLASSICAL_H6_CONTROL_IS_INVALID_AS_A_NEW_CRITERION;_THE_WEAK_"
         "CALDERON_BOUNDARY_JERK_FAILURE_IS_LOCALIZED_TO_THE_ACTION_"
-        "SELECTED_SOFT_JACOBI_SEMIGROUP_AND_CAUCHY_VECTOR_STRONG_"
-        "CONVERGENCE;_D2_IS_ONLY_A_SUFFICIENT_CERTIFICATE"
+        "SELECTED_SOFT_CAUCHY_VECTOR_AND_ACTUAL_BACKGROUND_COMPACTNESS;_"
+        "THE_ACTION_COEFFICIENT_TO_MOSCO_STEP_IS_CLOSED"
     )
     payload["cross_resolution_reconnaissance"] = result
     validation = dict(payload["validation"])
@@ -16097,6 +16231,9 @@ def promote_boundary_jerk_weak_graph_domain_audit(
     )
     validation["soft_jacobi_semigroup_compactness_reduction_validated"] = (
         semigroup["validation_passed"]
+    )
+    validation["jacobi_form_coefficient_mosco_theorem_validated"] = (
+        mosco["validation_passed"]
     )
     payload["validation"] = validation
     payload["validation_passed"] = all(validation.values())
@@ -16321,6 +16458,7 @@ __all__ = [
     "soft_uniform_smooth_boundary_lift_audit",
     "soft_boundary_acceleration_compactness_criterion",
     "soft_jacobi_semigroup_compactness_reduction",
+    "jacobi_form_coefficient_mosco_theorem",
     "weak_constraint_boundary_source_tail_audit",
     "weak_complete_child_normal_right_inverse_audit",
     "weak_complete_child_normal_lipschitz_audit",

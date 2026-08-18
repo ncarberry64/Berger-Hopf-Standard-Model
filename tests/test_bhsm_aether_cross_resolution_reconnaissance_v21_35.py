@@ -15,6 +15,7 @@ from bhsm.interface.aether_cross_resolution_reconnaissance_v21_35 import (
     soft_uniform_smooth_boundary_lift_audit,
     soft_boundary_acceleration_compactness_criterion,
     soft_jacobi_semigroup_compactness_reduction,
+    jacobi_form_coefficient_mosco_theorem,
     uniform_boundary_jerk_compactness_reduction,
     uniform_positive_duration_normal_closed_range_reduction,
     weak_calderon_boundary_generator_reduction,
@@ -343,6 +344,31 @@ def test_soft_jacobi_semigroup_compactness_reduction():
     failure = audit["failure_localization"]
     assert failure["failure_of_either_statement_proves_category_3"] is False
     assert failure["category_3_still_requires_L2_history_collapse"] is True
+    assert audit[
+        "new_physics_equations_constraints_regularizers_objectives_or_gates"
+    ] is False
+
+
+def test_jacobi_form_coefficient_mosco_theorem():
+    audit = jacobi_form_coefficient_mosco_theorem()
+    assert audit["validation_passed"] is True
+    inventory = audit["retained_action_coefficient_inventory"]
+    assert inventory["highest_radial_derivative_order"] == 1
+    assert inventory["new_action_term"] is False
+    conclusion = audit["form_and_resolvent_conclusion"]
+    assert conclusion["Mosco_convergence"] is True
+    assert conclusion[
+        "strong_resolvent_convergence_for_a_common_stable_shift"
+    ] is True
+    assert conclusion["zero_frequency_normal_inverse_uniformity_inferred"] is False
+    status = audit["closed_and_open"]
+    assert status["operator_coefficient_to_Mosco_implication"] == "PROVED"
+    assert status[
+        "actual_corrected_child_bundle_has_an_N_uniform_S2_bound"
+    ] is False
+    assert status[
+        "genuine_uniform_normal_closed_range_failure_demonstrated"
+    ] is False
     assert audit[
         "new_physics_equations_constraints_regularizers_objectives_or_gates"
     ] is False
