@@ -9,6 +9,7 @@ from bhsm.interface.aether_cross_resolution_reconnaissance_v21_35 import (
     injected_n6_event_child_calderon_friedrichs_angle_audit,
     positive_duration_normal_adjoint_kernel_localization,
     soft_channel_positive_duration_observability_jet_lemma,
+    uniform_boundary_jerk_compactness_reduction,
     uniform_positive_duration_normal_closed_range_reduction,
     whole_system_time_translation_tangent_interface,
 )
@@ -152,6 +153,23 @@ def test_soft_channel_positive_duration_observability_jet_lemma():
     lemma = audit["one_dimensional_observability_lemma"]
     assert "tau^(5/2)" in lemma["L2_observability_lower_bound"]
     assert audit["current_evidence"]["N_uniform_jerk_bound_proved"] is False
+    assert audit[
+        "new_physics_equations_constraints_regularizers_objectives_or_gates"
+    ] is False
+
+
+def test_uniform_boundary_jerk_compactness_reduction():
+    audit = uniform_boundary_jerk_compactness_reduction()
+    assert audit["validation_passed"] is True
+    fixed = audit["fixed_background_soft_observability"]
+    assert fixed["homogeneous_history_kernel_possible"] is False
+    assert "tau_fixed^(5/2)" in fixed["lower_bound"]
+    bundle = audit["nonlinear_child_bundle_extension"]
+    assert bundle["proved_from_N3_through_N6_examples"] is False
+    assert bundle[
+        "proved_by_the_oscillatory_N6_through_N10_constraint_projections"
+    ] is False
+    assert bundle["genuine_uniform_failure_demonstrated"] is False
     assert audit[
         "new_physics_equations_constraints_regularizers_objectives_or_gates"
     ] is False

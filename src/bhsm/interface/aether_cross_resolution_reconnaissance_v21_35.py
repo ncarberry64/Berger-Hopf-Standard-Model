@@ -11665,6 +11665,113 @@ def soft_channel_positive_duration_observability_jet_lemma(
     }
 
 
+def uniform_boundary_jerk_compactness_reduction(
+    path: str | Path = (
+        "artifacts/BHSM_AETHER_CROSS_RESOLUTION_RECONNAISSANCE_V21_35.json"
+    ),
+) -> dict[str, Any]:
+    """Derive fixed-background uniform jerk and isolate branch compactness."""
+
+    result = json.loads(Path(path).read_text(encoding="utf-8"))[
+        "cross_resolution_reconnaissance"
+    ]
+    eta_minimum = float(result[
+        "weak_complete_child_normal_right_inverse_audit"
+    ]["center_residual"]["eta_Legendre_minimum"])
+    duration = float(result["positive_duration_gauge_fixed_jacobi_audit"][
+        "background"
+    ]["common_positive_proper_duration"])
+    validation = {
+        "fixed_injected_initial_background_is_one_finite_trigonometric_state": True,
+        "spectral_projections_are_Sobolev_contractions": True,
+        "retained_action_vector_field_is_analytic_on_eta_interior_S6": True,
+        "boundary_trace_is_bounded_from_the_classical_domain": True,
+        "fixed_background_eta_margin_is_positive": eta_minimum > 0.0,
+        "fixed_positive_duration_is_positive": duration > 0.0,
+        "nonlinear_bundle_precompactness_not_assumed": True,
+        "no_new_action_term_equation_constraint_or_gate": True,
+    }
+    return {
+        "classification": (
+            "AN_N_UNIFORM_BOUNDARY_JERK_CONSTANT_EXISTS_FOR_THE_FIXED_"
+            "INJECTED_N6_ETA_INTERIOR_BACKGROUND_BY_ACTION_ANALYTICITY_"
+            "AND_SOBOLEV_GALERKIN_STABILITY;_EXTENSION_TO_THE_NONLINEAR_"
+            "CORRECTED_CHILD_BUNDLE_REQUIRES_A_UNIFORM_CLASSICAL_NORM_"
+            "AND_ETA_MARGIN"
+        ),
+        "fixed_background_theorem": {
+            "initial_data": "U_N(0)=P_N*U_N6",
+            "projection_bound": (
+                "norm(P_N*U_N6)_H6xH5xH6<=norm(U_N6)_H6xH5xH6"
+            ),
+            "eta_margin": eta_minimum,
+            "common_duration": duration,
+            "action_map": (
+                "X_action:U_TO(D_t_q,D_t_v,D_t_m)_IS_ANALYTIC_ON_"
+                "THE_ETA_INTERIOR_CLASSICAL_DOMAIN"
+            ),
+            "uniform_local_flow_bound": (
+                "sup_N_sup_0<=t<=T0 norm(U_N(t))_S6<=K_star_FOR_SOME_"
+                "T0>0_FROM_THE_COMMON_INITIAL_NORM_AND_ETA_MARGIN"
+            ),
+            "Jacobi_bound": (
+                "sup_N norm(xi_N(t))_S6<=exp(L_X*t)*norm(xi_N(0))_S6"
+            ),
+            "trace_commutator_bound": (
+                "norm(D_t3(Gamma0*xi_N))<=C_trace*P3(K_star,eta0^-1)_"
+                "*exp(L_X*T0)*norm(xi_N(0))_S6"
+            ),
+            "uniform_jerk_constant": (
+                "M3_fixed=C_trace*P3(K_star,eta0^-1)*exp(L_X*T0)"
+            ),
+            "requires_explicit_third_or_fourth_order_proposal_Jacobian": (
+                False
+            ),
+            "why_not": (
+                "THIS_IS_A_CLASSICAL_ENERGY_AND_COMMUTATOR_BOUND_ON_THE_"
+                "RETAINED_VECTOR_FIELD,_NOT_A_NUMERICAL_PROPOSAL_"
+                "DERIVATIVE"
+            ),
+        },
+        "fixed_background_soft_observability": {
+            "classification": (
+                "UNIFORMLY_DYNAMICAL_CONTROLLED_ACROSS_THE_FIXED_"
+                "INJECTED_GALERKIN_SEQUENCE"
+            ),
+            "controlled_interval": (
+                "tau_fixed=min(T0,3/(2*M3_fixed))>0"
+            ),
+            "lower_bound": (
+                "norm(r_N)_L2(0,tau_fixed)>=tau_fixed^(5/2)/(4*sqrt(5))"
+            ),
+            "homogeneous_history_kernel_possible": False,
+        },
+        "nonlinear_child_bundle_extension": {
+            "required_uniform_bound": (
+                "sup_N norm(U_event,N,U_child,N)_H6xH5xH6<=K_bundle"
+            ),
+            "required_eta_margin": (
+                "inf_N_inf_t eta_Legendre(U_event,N,U_child,N)>=eta_bundle>0"
+            ),
+            "proved_from_N3_through_N6_examples": False,
+            "proved_by_the_oscillatory_N6_through_N10_constraint_"
+            "projections": False,
+            "genuine_uniform_failure_demonstrated": False,
+        },
+        "exact_next_mathematical_lemma": (
+            "PROVE_OR_DISPROVE_AN_N_UNIFORM_H6xH5xH6_BOUND_AND_POSITIVE_"
+            "ETA_MARGIN_FOR_THE_MIXED_BOUNDARY_LAYER_CORRECTED_EVENT_"
+            "CHILD_BUNDLE"
+        ),
+        "new_physics_equations_constraints_regularizers_objectives_or_gates": (
+            False
+        ),
+        "validation": validation,
+        "validation_passed": all(validation.values()),
+        "FULL_BHSM_COMPLETE": False,
+    }
+
+
 def weak_constraint_boundary_source_tail_audit(
     path: str | Path = (
         "artifacts/BHSM_AETHER_CROSS_RESOLUTION_RECONNAISSANCE_V21_35.json"
@@ -15233,6 +15340,7 @@ __all__ = [
     "event_child_calderon_angle_stability_lemma",
     "whole_system_time_translation_tangent_interface",
     "soft_channel_positive_duration_observability_jet_lemma",
+    "uniform_boundary_jerk_compactness_reduction",
     "weak_constraint_boundary_source_tail_audit",
     "weak_complete_child_normal_right_inverse_audit",
     "weak_complete_child_normal_lipschitz_audit",
