@@ -294,6 +294,262 @@ def test_latest_n4_child_checkpoint_uses_fixed_merit_full_space_proposal():
     ] is False
     assert match["accepted_F_N_roots_or_persistence_changed"] is False
     assert match["new_equations_constraints_or_acceptance_gates"] is False
+    energy = payload["cross_resolution_reconnaissance"][
+        "action_energy_topology_coherent_event_audit"
+    ]
+    assert energy["validation_passed"] is True
+    assert energy["projection_comparison"][
+        "H6_H5_H6_projection_eta_minimum"
+    ] <= 0.0
+    assert energy["projection_comparison"][
+        "action_energy_projection_eta_minimum"
+    ] > 0.0
+    assert energy["coherent_N4_to_N5_event"]["branch_index"] == 10
+    assert energy["coherent_complete_child_graph_validated"] is True
+    assert energy["coherent_complete_child_persistence_validated"] is True
+    graph = payload["cross_resolution_reconnaissance"][
+        "coherent_N4_to_N5_complete_child_graph"
+    ]
+    assert graph["independent_N5_child_used_as_graph_seed"] is False
+    assert graph["physical_equations_or_gates_changed"] is False
+    assert graph["complete_child_candidate_validated"] is True
+    assert graph["complete_persistent_child_validated"] is True
+    assert graph["fiber_reduction"]["final_fixed_reference_merit"] < 1.0e-12
+    assert graph["physical_residuals"]["dynamic_flux_norm"] < 2.0e-5
+    coherent_persistence = payload["cross_resolution_reconnaissance"][
+        "coherent_N4_to_N5_complete_child_positive_duration_persistence"
+    ]
+    assert coherent_persistence[
+        "positive_duration_relative_persistence_validated"
+    ] is True
+    assert coherent_persistence["nonzero_relative_evolution_retained"] is True
+    assert coherent_persistence[
+        "finite_duration_numerical_movie_converged"
+    ] is True
+    schur = payload["cross_resolution_reconnaissance"][
+        "reaction_calderon_nested_schur_trace_audit"
+    ]
+    assert schur["validation_passed"] is True
+    assert all(
+        row["exact_nested_bordered_matrix_error"] < 1.0e-12
+        for row in schur["shell_rows"]
+    )
+    assert all(
+        row["schur_correction_relative_to_low_operator"] > 1.0
+        for row in schur["shell_rows"]
+    )
+    assert schur["trace_scaling"]["L2_trace_loglog_slope"] > 0.4
+    assert abs(schur["trace_scaling"]["H1_trace_loglog_slope"]) < 0.1
+    assert schur["derived_domain_reclassification"][
+        "pure_state_energy_space_is_a_complete_Calderon_domain"
+    ] is False
+    assert schur["derived_domain_reclassification"][
+        "new_physical_equation_constraint_or_gate"
+    ] is False
+    assert schur["finite_N_roots_events_or_persistence_changed"] is False
+    weak = payload["cross_resolution_reconnaissance"][
+        "weak_conormal_reaction_graph_audit"
+    ]
+    assert weak["validation_passed"] is True
+    assert weak["uniform_attachment_trace_theorem"][
+        "analytic_smallest_singular_lower_bound"
+    ] > 0.0
+    assert weak["uniform_attachment_trace_theorem"][
+        "uniform_right_lift_norm_upper_bound"
+    ] < 5.0
+    assert weak["coherent_high_shell_tail"][
+        "correction_norm_loglog_slope"
+    ] < -1.0
+    assert all(
+        row["exact_raw_nested_operator_error"] < 1.0e-12
+        for row in weak["coherent_high_shell_tail"]["rows"]
+    )
+    assert weak["mixed_weak_history_system"][
+        "strong_boundary_acceleration_trace_required"
+    ] is False
+    assert weak["mixed_weak_history_system"][
+        "new_equation_constraint_or_acceptance_gate"
+    ] is False
+    assert weak["uniform_general_N_graph_convergence_proved"] is False
+    assert weak["finite_N_roots_events_persistence_or_gates_changed"] is False
+    quotient = payload["cross_resolution_reconnaissance"][
+        "boundary_compatible_gauge_quotient_audit"
+    ]
+    assert quotient["validation_passed"] is True
+    assert quotient["principal_null_space"][
+        "slice_intersects_principal_null_space_trivially"
+    ] is True
+    assert quotient["principal_null_space"][
+        "retained_principal_determinant"
+    ] == 8.0
+    assert quotient["boundary_compatibility"][
+        "quotient_changes_boundary_data"
+    ] is False
+    assert all(
+        row["quotient_improvement_factor"] > 10.0
+        for row in quotient["rows"]
+    )
+    assert quotient["rows"][-1]["quotient_soft_mode_blocks"][
+        "shape_b"
+    ] > 0.9
+    assert quotient[
+        "candidate_slice_promoted_as_a_global_gauge_theorem"
+    ] is False
+    assert quotient[
+        "instantaneous_Cauchy_matrix_is_the_full_history_Jacobi_operator"
+    ] is False
+    assert quotient["finite_N_children_or_gates_changed"] is False
+    sequential = payload["cross_resolution_reconnaissance"][
+        "sequential_action_energy_projection_audit"
+    ]
+    assert sequential["validation_passed"] is True
+    assert [row["N"] for row in sequential["rows"]] == [6, 7, 8, 9, 10]
+    assert all(
+        row[label]["maximum_constraint_residual"] < 1.0e-8
+        and row[label]["eta_Legendre_minimum"] > 0.0
+        and "coordinate_time_vector_timelike_margin" in row[label]
+        and "projected_state_binary64_hex" in row[label]
+        for row in sequential["rows"] for label in ("event", "child")
+    )
+    assert sequential[
+        "complete_child_dynamic_reaction_rows_solved_at_N6_TO_N10"
+    ] is False
+    jacobi = payload["cross_resolution_reconnaissance"][
+        "positive_duration_gauge_fixed_jacobi_audit"
+    ]
+    assert jacobi["validation_passed"] is True
+    assert jacobi["principal_energy_estimate"][
+        "absolute_principal_smallest_eigenvalue"
+    ] > 0.0
+    assert jacobi["principal_energy_estimate"][
+        "proves_finite_N5_weak_Jacobi_well_posedness_modulo_kernel"
+    ] is True
+    assert jacobi["principal_energy_estimate"][
+        "proves_N_uniform_normal_gap"
+    ] is False
+    assert jacobi["remaining_shape_soft_mode"][
+        "is_a_principal_gauge_kernel"
+    ] is False
+    assert jacobi["normal_kernel_policy"][
+        "child_manifold_tangent_kernel_is_physical_and_retained"
+    ] is True
+    assert jacobi["new_action_terms_equations_constraints_or_gates"] is False
+    n6_extension = payload["cross_resolution_reconnaissance"][
+        "N6_full_compatibility_extension_audit"
+    ]
+    assert n6_extension["validation_passed"] is True
+    assert n6_extension["final_compatibility_norm"] < n6_extension[
+        "initial_compatibility_norm"
+    ]
+    assert n6_extension["complete_dynamic_reaction_rows_solved"] is False
+    assert n6_extension["is_a_complete_N6_child_claim"] is False
+    assert n6_extension[
+        "new_equations_constraints_or_acceptance_gates"
+    ] is False
+    boundary_match = payload["cross_resolution_reconnaissance"][
+        "N6_complete_boundary_BVP_match_audit"
+    ]
+    assert boundary_match["validation_passed"] is True
+    assert boundary_match["final_exact_attachment_jump_norm"] < 1.0e-9
+    assert boundary_match["final_compatibility_maximum"] < 1.0e-9
+    assert boundary_match[
+        "new_equation_constraint_or_acceptance_gate"
+    ] is False
+    reaction = payload["cross_resolution_reconnaissance"][
+        "N6_event_child_weak_reaction_audit"
+    ]
+    assert reaction["validation_passed"] is True
+    assert reaction["attachment_configuration_jump_norm"] < 1.0e-9
+    assert reaction["two_sided_reaction_match_norm"] < 1.0e-6
+    assert reaction["legacy_local_dynamic_flux_row_used"] is False
+    assert reaction[
+        "new_action_equation_constraint_or_acceptance_gate"
+    ] is False
+    n6_candidate = payload["cross_resolution_reconnaissance"][
+        "N6_weak_complete_child_candidate"
+    ]
+    assert n6_candidate["complete_child_candidate_validated"] is True
+    assert n6_candidate["complete_persistent_child_validated"] is True
+    assert n6_candidate[
+        "legacy_local_dynamic_flux_map_used_as_general_N_physics"
+    ] is False
+    n6_persistence = payload["cross_resolution_reconnaissance"][
+        "N6_weak_complete_child_positive_duration_persistence"
+    ]
+    assert n6_persistence[
+        "positive_duration_relative_persistence_validated"
+    ] is True
+    assert n6_persistence["nonzero_relative_evolution_retained"] is True
+    assert n6_persistence[
+        "finite_duration_numerical_movie_converged"
+    ] is True
+    n5_matched = payload["cross_resolution_reconnaissance"][
+        "coherent_N5_exact_attachment_weak_child_audit"
+    ]
+    assert n5_matched["validation_passed"] is True
+    assert n5_matched["final_exact_attachment_jump_norm"] < 1.0e-9
+    assert n5_matched["final_compatibility_maximum"] < 1.0e-9
+    assert n5_matched["two_sided_reaction_match_norm"] < 1.0e-6
+    assert n5_matched["legacy_local_dynamic_flux_map_reopened"] is False
+    assert n5_matched["new_equation_constraint_or_acceptance_gate"] is False
+    n5_matched_candidate = payload["cross_resolution_reconnaissance"][
+        "coherent_N5_exact_attachment_weak_child_candidate"
+    ]
+    assert n5_matched_candidate[
+        "complete_persistent_child_validated"
+    ] is True
+    n5_matched_persistence = payload["cross_resolution_reconnaissance"][
+        "coherent_N5_exact_attachment_positive_duration_persistence"
+    ]
+    assert n5_matched_persistence[
+        "positive_duration_relative_persistence_validated"
+    ] is True
+    assert n5_matched_persistence[
+        "nonzero_relative_evolution_retained"
+    ] is True
+    legacy_matched = payload["cross_resolution_reconnaissance"][
+        "legacy_N3_N4_exact_attachment_weak_child_audit"
+    ]
+    assert legacy_matched["validation_passed"] is True
+    assert [row["N"] for row in legacy_matched["rows"]] == [3, 4]
+    assert all(
+        row["final_exact_attachment_jump_norm"] < 1.0e-9
+        and row["final_compatibility_maximum"] < 1.0e-9
+        and row["two_sided_reaction_match_norm"] < 1.0e-6
+        for row in legacy_matched["rows"]
+    )
+    assert legacy_matched[
+        "legacy_local_dynamic_flux_maps_reopened"
+    ] is False
+    for order in (3, 4):
+        candidate = payload["cross_resolution_reconnaissance"][
+            f"N{order}_exact_attachment_weak_child_candidate"
+        ]
+        persistence = payload["cross_resolution_reconnaissance"][
+            f"N{order}_exact_attachment_positive_duration_persistence"
+        ]
+        assert candidate["complete_persistent_child_validated"] is True
+        assert persistence[
+            "positive_duration_relative_persistence_validated"
+        ] is True
+        assert persistence["nonzero_relative_evolution_retained"] is True
+    graph = payload["cross_resolution_reconnaissance"][
+        "matched_weak_reaction_graph_convergence_audit"
+    ]
+    assert graph["validation_passed"] is True
+    assert [row["N"] for row in graph["rows"]] == [3, 4, 5, 6]
+    assert graph["general_N_convergence_proved"] is False
+    assert graph[
+        "raw_DtN_jump_reclassified_as_a_physical_graph_failure"
+    ] is False
+    assert all(
+        comparison[
+            "bounded_Calderon_graph_projector_operator_difference"
+        ] <= 1.0
+        for comparison in graph["comparisons"]
+    )
+    assert graph["increase_N_mechanically_as_the_next_step"] is False
+    assert graph["new_equations_constraints_or_acceptance_gates"] is False
 
 
 def test_general_n_reconstruction_statement_preserves_the_physical_map():
@@ -314,8 +570,18 @@ def test_general_n_reconstruction_statement_preserves_the_physical_map():
     assert continuation["extra_gauge_or_physical_selector_added"] is False
     transfer = statement["galerkin_transfer_certificate"]
     assert transfer["continuum_spaces"]["state_space"] == (
-        "X=H6_q_CROSS_H5_v_CROSS_H6_m"
+        "X_E=R_scale_CROSS_H1_radial_geometry_CROSS_L2_velocity_"
+        "CROSS_H1_lapse_shift"
     )
+    assert transfer["continuum_spaces"]["classical_regular_domain"] == (
+        "X_s=H6_q_CROSS_H5_v_CROSS_H6_m"
+    )
+    assert transfer["continuum_spaces"][
+        "pure_action_energy_state_space_is_the_complete_reaction_domain"
+    ] is False
+    assert "D_EULER_DIRAC" in transfer["continuum_spaces"][
+        "reaction_Calderon_graph_domain"
+    ]
     assert transfer["set_valued_continuum_relation"][
         "physical_branch_selector_added"
     ] is False
