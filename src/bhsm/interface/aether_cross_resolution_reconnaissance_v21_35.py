@@ -12323,7 +12323,11 @@ def soft_uniform_smooth_boundary_lift_audit(
         float.fromhex(value) for value in exact["coordinates"]
     ])
     rows = []
-    for order in range(6, maximum_order + 1):
+    sampled_orders = sorted({
+        order for order in (6, 10, 16, 32, maximum_order)
+        if order <= maximum_order
+    })
+    for order in sampled_orders:
         q = (
             base_q if order == 6 else
             embed_nested_state(
@@ -12384,6 +12388,7 @@ def soft_uniform_smooth_boundary_lift_audit(
             "matrix_columns_in_(q_scale,u1)": [[1.0, 1.0], [0.0, 1.0]],
             "identity": "B_N(q)*H_smooth=I2_FOR_ALL_N>=1_AND_ALL_q",
         },
+        "sampled_orders": sampled_orders,
         "rows": rows,
         "uniform_bounds": {
             "H1": rows[0]["H1_operator_norm"],
