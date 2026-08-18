@@ -16,7 +16,10 @@ from bhsm.interface.aether_cross_resolution_reconnaissance_v21_35 import (
     _child_rows_at_order,
     _eta_legendre_minimum,
     _metric_radial_flux_covector_at_order,
+    _project_constraints_action_energy,
     _trace_jacobian_at_order,
+    action_energy_topology_coherent_event_audit,
+    embed_nested_state,
 )
 from bhsm.interface.aether_n3_exact_full_local_action_jet_v17_60 import (
     exact_full_action_jet_at_state,
@@ -36,6 +39,7 @@ from bhsm.interface.aether_sobolev_metric_soft_mode_lift_v16_07 import (
 def continue_n5_fiber(
     path: Path, *, iterations: int = 8, trust_radius: float = 256.0,
     pair_step: float = 1.0, project_nonflux_first: bool = False,
+    coherent_event: bool = False,
 ) -> dict[str, object]:
     payload = json.loads(path.read_text(encoding="utf-8"))
     result = payload["cross_resolution_reconnaissance"]
@@ -47,6 +51,60 @@ def continue_n5_fiber(
     variable_count = 2 * qdim + size["multipliers"]
     nonflux_count = 16
     source = child["child_state"]
+    seed_classification = "INDEPENDENT_N5_ACCEPTED_CHILD_CHECKPOINT"
+    coherent_checkpoint_used = False
+    if coherent_event:
+        n4_source = result[
+            "N4_event_conditioned_complete_child_reconstruction"
+        ]["child_state"]
+        n4_exact = n4_source.get("binary64_hex")
+        if n4_exact is not None:
+            n4_source = {
+                **n4_source,
+                "coordinates": [
+                    float.fromhex(item) for item in n4_exact["coordinates"]
+                ],
+                "velocities": [
+                    float.fromhex(item) for item in n4_exact["velocities"]
+                ],
+                "multipliers": [
+                    float.fromhex(item) for item in n4_exact["multipliers"]
+                ],
+            }
+        q_seed, v_seed, m_seed = embed_nested_state(
+            np.asarray(n4_source["coordinates"], dtype=float),
+            np.asarray(n4_source["velocities"], dtype=float),
+            np.asarray(n4_source["multipliers"], dtype=float),
+            4,
+            5,
+        )
+        projection = _project_constraints_action_energy(
+            5, q_seed, v_seed, m_seed, points=points
+        )
+        if not projection["success"]:
+            raise RuntimeError("coherent child action-energy seed failed")
+        source = {
+            "coordinates": q_seed.tolist(),
+            "velocities": np.asarray(
+                projection["velocities"], dtype=float
+            ).tolist(),
+            "multipliers": np.asarray(
+                projection["multipliers"], dtype=float
+            ).tolist(),
+        }
+        seed_classification = (
+            "ACTION_ENERGY_NEAREST_CONSTRAINT_PROJECTION_OF_THE_EXACT_"
+            "N4_CHILD_INTO_N5"
+        )
+        stored_graph = result.get(
+            "coherent_N4_to_N5_complete_child_graph"
+        )
+        if (
+            isinstance(stored_graph, dict)
+            and stored_graph.get("checkpoint_promotion_eligible") is True
+        ):
+            source = stored_graph["child_state"]
+            coherent_checkpoint_used = True
     exact_source = source.get("binary64_hex")
     if exact_source is not None:
         source = {
@@ -60,11 +118,16 @@ def continue_n5_fiber(
         np.asarray(source["velocities"], dtype=float),
         np.asarray(source["multipliers"], dtype=float),
     ))
-    event = next(
-        run["event"] for run in result[
-            "N5_independent_eta_branch_event_classification"
-        ]["quadrature_runs"] if int(run["points"]) == points
-    )
+    if coherent_event:
+        event = action_energy_topology_coherent_event_audit(
+            path, points=points
+        )["coherent_N4_to_N5_event"]
+    else:
+        event = next(
+            run["event"] for run in result[
+                "N5_independent_eta_branch_event_classification"
+            ]["quadrature_runs"] if int(run["points"]) == points
+        )
     q_event = np.asarray(event["coordinates"], dtype=float)
     v_event = np.asarray(event["velocities"], dtype=float)
     m_event = np.asarray(event["multipliers"], dtype=float)
@@ -367,8 +430,16 @@ def continue_n5_fiber(
             and np.linalg.norm(solver_values) <= 100.0 * max(1.0, bounded_start)
         ),
     }
+    physical_residuals = {
+        "maximum_trace": float(np.max(np.abs(final_rows[:3]))),
+        "maximum_eleven_constraints": float(
+            np.max(np.abs(final_rows[3:constraint_stop]))
+        ),
+        "momentum_norm": float(np.linalg.norm(final_rows[14:16])),
+        "dynamic_flux_norm": float(np.linalg.norm(final_rows[-2:])),
+    }
     if promoted:
-        child["child_state"] = {
+        promoted_state = {
             "coordinates": state[:qdim].tolist(),
             "velocities": state[qdim:2 * qdim].tolist(),
             "multipliers": state[2 * qdim:].tolist(),
@@ -383,26 +454,45 @@ def continue_n5_fiber(
             },
             "eta_Legendre": eta,
         }
-        child["physical_residuals"] = {
-            "maximum_trace": float(np.max(np.abs(final_rows[:3]))),
-            "maximum_eleven_constraints": float(
-                np.max(np.abs(final_rows[3:constraint_stop]))
-            ),
-            "momentum_norm": float(np.linalg.norm(final_rows[14:16])),
-            "dynamic_flux_norm": float(np.linalg.norm(final_rows[-2:])),
-        }
-        child["complete_child_candidate_validated"] = root_closed
-        child["checkpoint_promotion_eligible"] = True
-        child["fiber_reduction"] = audit
-        child["required_next"] = (
+        required_next = (
             "EVALUATE_POSITIVE_DURATION_CONSTRAINT_CONSISTENT_RELATIVE_N5_"
             "PERSISTENCE" if root_closed else
             "CONTINUE_THE_UNCHANGED_EXACT_N5_F18_ROOT_ON_THE_VALIDATED_"
             "LOCAL_NONFLUX_FIBER"
         )
-        result["N5_event_conditioned_complete_child_reconstruction"] = child
-        result["N5_child_fiber_reduction_audit"] = audit
-        result["active_dependency"] = child["required_next"]
+        if coherent_event:
+            graph = {
+                "classification": (
+                    "COHERENT_N4_TO_N5_EVENT_CONDITIONED_COMPLETE_CHILD_"
+                    "GRAPH"
+                ),
+                "source_event": "ACTION_ENERGY_COHERENT_N4_TO_N5_EVENT",
+                "seed_classification": seed_classification,
+                "independent_N5_child_used_as_graph_seed": False,
+                "coherent_checkpoint_used": coherent_checkpoint_used,
+                "physical_equations_or_gates_changed": False,
+                "child_state": promoted_state,
+                "physical_residuals": physical_residuals,
+                "complete_child_candidate_validated": root_closed,
+                "checkpoint_promotion_eligible": True,
+                "fiber_reduction": audit,
+                "required_next": required_next,
+                "FULL_BHSM_COMPLETE": False,
+            }
+            result["coherent_N4_to_N5_complete_child_graph"] = graph
+            result["active_dependency"] = required_next
+        else:
+            child["child_state"] = promoted_state
+            child["physical_residuals"] = physical_residuals
+            child["complete_child_candidate_validated"] = root_closed
+            child["checkpoint_promotion_eligible"] = True
+            child["fiber_reduction"] = audit
+            child["required_next"] = required_next
+            result[
+                "N5_event_conditioned_complete_child_reconstruction"
+            ] = child
+            result["N5_child_fiber_reduction_audit"] = audit
+            result["active_dependency"] = required_next
         payload["cross_resolution_reconnaissance"] = result
         path.write_text(deterministic_json(payload), encoding="utf-8")
     return {
@@ -412,7 +502,10 @@ def continue_n5_fiber(
         "final_merit": final_merit,
         "final_raw_residual_norm": final_raw_residual_norm,
         "eta_minimum": eta["minimum"],
-        "physical_residuals": child.get("physical_residuals"),
+        "physical_residuals": physical_residuals,
+        "coherent_event": coherent_event,
+        "seed_classification": seed_classification,
+        "coherent_checkpoint_used": coherent_checkpoint_used,
         "audit": audit,
     }
 
@@ -424,6 +517,7 @@ def main() -> None:
     parser.add_argument("--trust-radius", type=float, default=8192.0)
     parser.add_argument("--pair-step", type=float, default=1.0)
     parser.add_argument("--project-nonflux-first", action="store_true")
+    parser.add_argument("--coherent-event", action="store_true")
     args = parser.parse_args()
     print(json.dumps(
         continue_n5_fiber(
@@ -432,6 +526,7 @@ def main() -> None:
             trust_radius=args.trust_radius,
             pair_step=args.pair_step,
             project_nonflux_first=args.project_nonflux_first,
+            coherent_event=args.coherent_event,
         ),
         indent=2,
     ))

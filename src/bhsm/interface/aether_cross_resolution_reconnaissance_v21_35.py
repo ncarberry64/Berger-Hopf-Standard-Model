@@ -184,6 +184,102 @@ def _eta_legendre_minimum(
     return {"minimum": float(refined.fun), "chi": float(refined.x)}
 
 
+def _project_constraints_action_energy(
+    order: int,
+    coordinates: np.ndarray,
+    trial_velocity: np.ndarray,
+    multiplier_seed: np.ndarray,
+    *,
+    points: int,
+) -> dict[str, Any]:
+    """Nearest constraint projection in the retained action energy topology."""
+
+    q = np.asarray(coordinates, dtype=float)
+    trial = np.asarray(trial_velocity, dtype=float)
+    seed = np.asarray(multiplier_seed, dtype=float)
+    frequencies = spectral_frequencies(order)
+    velocity_weights = np.ones_like(trial)
+    multiplier_weights = np.sqrt(
+        1.0 + frequencies["multipliers"] ** 2
+    )
+    qdim = q.size
+    correction = np.zeros(trial.size + seed.size)
+    initial = constraint_residual(
+        order, q, trial, seed, points=points
+    )
+    row_scale = np.maximum(1.0, np.abs(initial))
+
+    def unpack(value: np.ndarray) -> tuple[np.ndarray, np.ndarray]:
+        return (
+            trial + value[:qdim] / velocity_weights,
+            seed + value[qdim:] / multiplier_weights,
+        )
+
+    def rows(value: np.ndarray) -> np.ndarray:
+        velocity, multipliers = unpack(value)
+        return constraint_residual(
+            order, q, velocity, multipliers, points=points
+        ) / row_scale
+
+    converged = False
+    message = "maximum action-energy projection iterations reached"
+    for iteration in range(32):
+        value = rows(correction)
+        maximum = float(np.max(np.abs(value)))
+        if maximum < 2.0e-10:
+            converged = True
+            message = "minimum-action-energy-norm projection converged"
+            break
+        jacobian = np.empty((value.size, correction.size))
+        for column in range(correction.size):
+            step = 2.0e-4 * max(1.0, abs(float(correction[column])))
+            delta = np.zeros_like(correction)
+            delta[column] = step
+            jacobian[:, column] = (
+                rows(correction + delta) - rows(correction - delta)
+            ) / (2.0 * step)
+        delta = np.linalg.lstsq(
+            jacobian, -value, rcond=1.0e-12
+        )[0]
+        accepted = False
+        factor = 1.0
+        for _ in range(16):
+            candidate = correction + factor * delta
+            if np.max(np.abs(rows(candidate))) < maximum:
+                correction = candidate
+                accepted = True
+                break
+            factor *= 0.5
+        if not accepted:
+            message = "action-energy projection line search failed"
+            break
+    velocity, multipliers = unpack(correction)
+    residual = constraint_residual(
+        order, q, velocity, multipliers, points=points
+    )
+    return {
+        "success": converged,
+        "message": message,
+        "iterations": iteration + 1,
+        "coordinates": q,
+        "velocities": velocity,
+        "multipliers": multipliers,
+        "action_energy_correction_norm": float(np.linalg.norm(correction)),
+        "raw_velocity_correction_norm": float(
+            np.linalg.norm(velocity - trial)
+        ),
+        "raw_multiplier_correction_norm": float(
+            np.linalg.norm(multipliers - seed)
+        ),
+        "maximum_constraint_residual": float(np.max(np.abs(residual))),
+        "scaled_maximum_constraint_residual": float(
+            np.max(np.abs(residual) / row_scale)
+        ),
+        "domain_norm": "L2_velocity_CROSS_H1_lapse_shift",
+        "physical_constraints_changed": False,
+    }
+
+
 def _tail_measure(
     order: int, velocities: np.ndarray, multipliers: np.ndarray,
 ) -> dict[str, float]:
@@ -5603,6 +5699,22 @@ def n5_complete_child_positive_duration_persistence(
     )
 
 
+@lru_cache(maxsize=2)
+def coherent_n4_to_n5_complete_child_positive_duration_persistence(
+    *, points: int = 44, time_step: float = 1.0e-5, steps: int = 10,
+) -> dict[str, Any]:
+    """Apply the unchanged persistence definition to the coherent N5 child."""
+
+    return n4_complete_child_positive_duration_persistence(
+        points=points,
+        time_step=time_step,
+        steps=steps,
+        _order=5,
+        _child_key="coherent_N4_to_N5_complete_child_graph",
+        _source_label="ACTION_ENERGY_COHERENT_N4_TO_N5_COMPLETE_CHILD",
+    )
+
+
 def child_jacobi_radial_principal_symbol_audit() -> dict[str, Any]:
     """Derive the radial principal form of the retained Galerkin action."""
 
@@ -7154,13 +7266,407 @@ def event_child_two_sided_reaction_match_audit(
     }
 
 
+def action_energy_topology_coherent_event_audit(
+    path: str | Path = (
+        "artifacts/BHSM_AETHER_CROSS_RESOLUTION_RECONNAISSANCE_V21_35.json"
+    ),
+    *,
+    points: int = 44,
+) -> dict[str, Any]:
+    """Use the action energy topology to transport the N4 event into N5."""
+
+    target = Path(path)
+    payload = json.loads(target.read_text(encoding="utf-8"))[
+        "cross_resolution_reconnaissance"
+    ]
+    n3_payload = json.loads((target.parent / (
+        "BHSM_aether_n3_complete_child_persistence_v17_99.json"
+    )).read_text(encoding="utf-8"))
+    states = {
+        3: n3_payload["complete_child_persistence"]["evolution"]["rows"][0],
+        4: payload[
+            "N4_event_conditioned_complete_child_reconstruction"
+        ]["child_state"],
+        5: payload[
+            "N5_event_conditioned_complete_child_reconstruction"
+        ]["child_state"],
+    }
+
+    def exact_state(source: Mapping[str, Any]) -> tuple[
+        np.ndarray, np.ndarray, np.ndarray
+    ]:
+        exact = source.get("binary64_hex")
+        if exact is None:
+            return tuple(  # type: ignore[return-value]
+                np.asarray(source[name], dtype=float)
+                for name in ("coordinates", "velocities", "multipliers")
+            )
+        return tuple(  # type: ignore[return-value]
+            np.asarray([float.fromhex(value) for value in exact[name]])
+            for name in ("coordinates", "velocities", "multipliers")
+        )
+
+    tail_rows = []
+    decoded = {order: exact_state(source) for order, source in states.items()}
+    for order, (q, velocity, multipliers) in decoded.items():
+        frequencies = spectral_frequencies(order)
+        q_energy = np.sqrt(1.0 + frequencies["coordinates"] ** 2)
+        m_energy = np.sqrt(1.0 + frequencies["multipliers"] ** 2)
+        regularity = sobolev_weights(order)
+        highest_q = np.asarray([order, 2 * order, 3 * order])
+        highest_m = np.asarray([order - 1, 2 * order - 1])
+
+        def fraction(weighted: np.ndarray, indices: np.ndarray) -> float:
+            return float(
+                np.linalg.norm(weighted[indices])
+                / max(1.0e-300, np.linalg.norm(weighted))
+            )
+
+        tail_rows.append({
+            "N": order,
+            "action_energy_norms": {
+                "H1_q": float(np.linalg.norm(q * q_energy)),
+                "L2_velocity": float(np.linalg.norm(velocity)),
+                "H1_multiplier": float(
+                    np.linalg.norm(multipliers * m_energy)
+                ),
+            },
+            "highest_mode_fractions_in_action_energy_norm": {
+                "q": fraction(q * q_energy, highest_q),
+                "velocity": fraction(velocity, highest_q),
+                "multiplier": fraction(
+                    multipliers * m_energy, highest_m
+                ),
+            },
+            "highest_mode_fractions_in_H6_H5_H6_regularity_norm": {
+                "q": fraction(
+                    q * (1.0 + frequencies["coordinates"] ** 2) ** 3.0,
+                    highest_q,
+                ),
+                "velocity": fraction(
+                    velocity * regularity["velocities"], highest_q
+                ),
+                "multiplier": fraction(
+                    multipliers * regularity["multipliers"], highest_m
+                ),
+            },
+        })
+
+    def restrict_five_to_four(
+        value: np.ndarray, *, multiplier: bool,
+    ) -> np.ndarray:
+        if multiplier:
+            restricted = np.zeros(8)
+            restricted[:4] = value[:4]
+            restricted[4:] = value[5:9]
+            return restricted
+        restricted = np.zeros(13)
+        restricted[0] = value[0]
+        for family in range(3):
+            low = 1 + family * 4
+            high = 1 + family * 5
+            restricted[low:low + 4] = value[high:high + 4]
+        return restricted
+
+    q4_child, v4_child, m4_child = decoded[4]
+    q5_child, v5_child, m5_child = decoded[5]
+    frequencies4 = spectral_frequencies(4)
+    q4_energy = np.sqrt(1.0 + frequencies4["coordinates"] ** 2)
+    m4_energy = np.sqrt(1.0 + frequencies4["multipliers"] ** 2)
+    independent_differences = {}
+    for name, low, high, weight in (
+        (
+            "q_H1", q4_child,
+            restrict_five_to_four(q5_child, multiplier=False), q4_energy,
+        ),
+        (
+            "velocity_L2", v4_child,
+            restrict_five_to_four(v5_child, multiplier=False),
+            np.ones_like(v4_child),
+        ),
+        (
+            "multiplier_H1", m4_child,
+            restrict_five_to_four(m5_child, multiplier=True), m4_energy,
+        ),
+    ):
+        independent_differences[name] = float(
+            np.linalg.norm((low - high) * weight)
+            / max(1.0, np.linalg.norm(low * weight), np.linalg.norm(high * weight))
+        )
+
+    n4_event = payload["N4_adaptive_event_convergence_audit"][
+        "quadrature_control"
+    ]["event"]
+    q4_event = np.asarray(n4_event["coordinates"], dtype=float)
+    v4_event = np.asarray(n4_event["velocities"], dtype=float)
+    m4_event = np.asarray(n4_event["multipliers"], dtype=float)
+    q0, v_seed, m_seed = embed_nested_state(
+        q4_event, v4_event, m4_event, 4, 5
+    )
+    energy_projection = _project_constraints_action_energy(
+        5, q0, v_seed, m_seed, points=points
+    )
+    h6_projection = project_nested_constraints_sobolev(
+        5, q0, v_seed, m_seed, points=points
+    )
+    v0 = np.asarray(energy_projection["velocities"], dtype=float)
+    m0 = np.asarray(energy_projection["multipliers"], dtype=float)
+    initial_values, initial_vectors = np.linalg.eigh(
+        exact_action_jet_at_state(5, q0, v0, m0, points=points).hessian
+    )
+    initial_index = int(np.argmin(np.abs(initial_values)))
+    reference = initial_vectors[:, initial_index]
+    dynamics = _exact_full_jet_euler_dirac_acceleration(
+        5, q0, v0, m0, points=points
+    )
+    acceleration = np.asarray(dynamics["acceleration"], dtype=float)
+    multiplier_rate = np.asarray(dynamics["multiplier_rate"], dtype=float)
+    cache: dict[float, dict[str, Any]] = {}
+
+    def candidate(offset: float) -> dict[str, Any]:
+        key = float(offset)
+        if key in cache:
+            return cache[key]
+        q = q0 + key * v0
+        projection = _project_constraints_action_energy(
+            5,
+            q,
+            v0 + key * acceleration,
+            m0 + key * multiplier_rate,
+            points=points,
+        )
+        velocity = np.asarray(projection["velocities"], dtype=float)
+        multipliers = np.asarray(projection["multipliers"], dtype=float)
+        values, vectors = np.linalg.eigh(
+            exact_action_jet_at_state(
+                5, q, velocity, multipliers, points=points
+            ).hessian
+        )
+        index = int(np.argmax(np.abs(vectors.T @ reference)))
+        result = {
+            "lambda": float(values[index]),
+            "branch_index": index,
+            "branch_overlap": float(abs(vectors[:, index] @ reference)),
+            "negative_inertia": int(np.count_nonzero(values < 0.0)),
+            "coordinates": q,
+            "velocities": velocity,
+            "multipliers": multipliers,
+            "maximum_constraint_residual": projection[
+                "maximum_constraint_residual"
+            ],
+            "projection": projection,
+        }
+        cache[key] = result
+        return result
+
+    center = candidate(0.0)
+    derivative_step = 1.0e-8
+    forward = candidate(derivative_step)
+    derivative = (forward["lambda"] - center["lambda"]) / derivative_step
+    predicted = -center["lambda"] / derivative
+    if predicted < 0.0:
+        lower = min(1.5 * predicted, -1.0e-8)
+        upper = 0.0
+    else:
+        lower = 0.0
+        upper = max(1.5 * predicted, 1.0e-8)
+    for _ in range(12):
+        if candidate(lower)["lambda"] * candidate(upper)["lambda"] <= 0.0:
+            break
+        if predicted < 0.0:
+            lower *= 1.75
+        else:
+            upper *= 1.75
+    else:
+        raise RuntimeError("coherent N4-to-N5 event branch failed to bracket")
+    root = brentq(
+        lambda offset: candidate(offset)["lambda"],
+        lower,
+        upper,
+        xtol=1.0e-14,
+        rtol=1.0e-12,
+        maxiter=64,
+    )
+    event = candidate(root)
+    eta = _eta_legendre_minimum(
+        5, event["coordinates"], event["multipliers"], points=2400
+    )
+    h6_eta = _eta_legendre_minimum(
+        5,
+        np.asarray(h6_projection["coordinates"], dtype=float),
+        np.asarray(h6_projection["multipliers"], dtype=float),
+        points=2400,
+    )
+    independent_n5_event = next(
+        row["event"]
+        for row in payload[
+            "N5_independent_eta_branch_event_classification"
+        ]["quadrature_runs"]
+        if int(row["points"]) == points
+    )
+    coherent_event = {
+        "source": "EXACT_N4_EVENT_INJECTED_INTO_N5_FOR_RELATION_TRANSPORT",
+        "used_as_independent_N5_existence_evidence": False,
+        "local_continuation_offset": float(root),
+        "lambda_ordered": event["lambda"],
+        "branch_index": event["branch_index"],
+        "branch_overlap": event["branch_overlap"],
+        "negative_inertia": event["negative_inertia"],
+        "maximum_constraint_residual": event[
+            "maximum_constraint_residual"
+        ],
+        "eta_Legendre": eta,
+        "coordinates": event["coordinates"].tolist(),
+        "velocities": event["velocities"].tolist(),
+        "multipliers": event["multipliers"].tolist(),
+        "action_energy_projection": {
+            key: value for key, value in energy_projection.items()
+            if key not in {"coordinates", "velocities", "multipliers"}
+        },
+        "independent_N5_branch_index": int(
+            independent_n5_event["branch_index"]
+        ),
+        "N4_branch_index_plus_new_lapse_shift_pair": int(
+            n4_event["branch_index"] + 2
+        ),
+    }
+    stored_graph = payload.get("coherent_N4_to_N5_complete_child_graph")
+    graph_validated = bool(
+        isinstance(stored_graph, dict)
+        and stored_graph.get("complete_child_candidate_validated") is True
+    )
+    stored_persistence = payload.get(
+        "coherent_N4_to_N5_complete_child_positive_duration_persistence"
+    )
+    persistence_validated = bool(
+        isinstance(stored_persistence, dict)
+        and stored_persistence.get(
+            "positive_duration_relative_persistence_validated"
+        ) is True
+    )
+    if persistence_validated:
+        classification = (
+            "ACTION_ENERGY_TOPOLOGY_DERIVED;_H6_MINIMUM_PROJECTION_"
+            "RECLASSIFIED_AS_OVERREGULARIZED_FOR_RELATION_TRANSPORT;_"
+            "COHERENT_N4_TO_N5_COMPLETE_PERSISTENT_CHILD_GRAPH_VALIDATED;_"
+            "UNIFORM_REACTION_CALDERON_GRAPH_BOUND_OPEN"
+        )
+        required_next = (
+            "TEST_THE_TWO_BY_TWO_REACTION_CALDERON_GRAPH_UNDER_EXACT_"
+            "NESTED_SPECTRAL_INJECTION_AND_DERIVE_A_UNIFORM_NORMAL_RIGHT_"
+            "INVERSE_OR_LOCALIZE_ITS_FIRST_ACTION_OWNED_FAILURE"
+        )
+    elif graph_validated:
+        classification = (
+            "ACTION_ENERGY_TOPOLOGY_DERIVED;_H6_MINIMUM_PROJECTION_"
+            "RECLASSIFIED_AS_OVERREGULARIZED_FOR_RELATION_TRANSPORT;_"
+            "COHERENT_N4_TO_N5_COMPLETE_CHILD_GRAPH_VALIDATED;_PERSISTENCE_"
+            "OPEN"
+        )
+        required_next = (
+            "EVALUATE_POSITIVE_DURATION_CONSTRAINT_CONSISTENT_RELATIVE_"
+            "PERSISTENCE_OF_THE_COHERENT_N4_TO_N5_COMPLETE_CHILD"
+        )
+    else:
+        classification = (
+            "ACTION_ENERGY_TOPOLOGY_DERIVED;_H6_MINIMUM_PROJECTION_"
+            "RECLASSIFIED_AS_OVERREGULARIZED_FOR_RELATION_TRANSPORT;_"
+            "COHERENT_N4_TO_N5_ORDERED_EVENT_VALIDATED;_COHERENT_CHILD_"
+            "GRAPH_OPEN"
+        )
+        required_next = (
+            "SOLVE_THE_UNCHANGED_N5_F18_COMPLETE_CHILD_RELATION_AT_THE_"
+            "COHERENT_EVENT_USING_THE_ACTION_ENERGY_NEAREST_EMBEDDED_N4_"
+            "CHILD_ONLY_AS_A_GRAPH_DISTANCE_SEED;_DO_NOT_REPLACE_THE_"
+            "INDEPENDENT_N5_EXISTENCE_RESULT"
+        )
+    validation = {
+        "action_energy_projection_closes_constraints": bool(
+            energy_projection["success"]
+            and energy_projection["maximum_constraint_residual"] < 1.0e-8
+        ),
+        "action_energy_projection_retains_eta_domain": bool(
+            center["maximum_constraint_residual"] < 1.0e-8
+            and _eta_legendre_minimum(
+                5, q0, m0, points=1600
+            )["minimum"] > 0.0
+        ),
+        "H6_minimum_projection_eta_failure_exposed": h6_eta["minimum"] <= 0.0,
+        "coherent_N5_event_closes": bool(
+            abs(event["lambda"]) < 1.0e-9
+            and event["branch_overlap"] > 0.9
+            and event["maximum_constraint_residual"] < 1.0e-8
+            and eta["minimum"] > 0.0
+        ),
+        "coherent_branch_matches_independent_N5_structural_index": bool(
+            event["branch_index"] == independent_n5_event["branch_index"]
+            == int(n4_event["branch_index"] + 2)
+        ),
+        "N4_N5_highest_energy_mode_fractions_small": all(
+            row["highest_mode_fractions_in_action_energy_norm"]["q"] < 0.01
+            and row["highest_mode_fractions_in_action_energy_norm"]["velocity"] < 0.05
+            and row["highest_mode_fractions_in_action_energy_norm"]["multiplier"] < 0.05
+            for row in tail_rows[1:]
+        ),
+        "independent_children_not_misreported_as_a_Cauchy_sequence": max(
+            independent_differences.values()
+        ) > 0.8,
+    }
+    return {
+        "classification": classification,
+        "action_energy_space": {
+            "state": (
+                "X_E=R_scale_CROSS_H1_radial_geometry_CROSS_L2_velocity_"
+                "CROSS_H1_lapse_shift"
+            ),
+            "constraint_dual": "Hminus1_lapse_shift_CROSS_R_energy",
+            "boundary": "FINITE_R3_TRACE_CROSS_TSTAR_R2_REACTION",
+            "why_owned_by_the_action": (
+                "THE_RETAINED_RADIAL_ACTION_CONTAINS_FIRST_RADIAL_"
+                "DERIVATIVES_OF_GEOMETRY_LAPSE_AND_SHIFT_AND_ALGEBRAIC_"
+                "COORDINATE_TIME_VELOCITIES"
+            ),
+            "H6_H5_H6_role": (
+                "CLASSICAL_REGULARITY_AND_POINTWISE_SMOOTHNESS_CLASS_NOT_"
+                "THE_PHYSICAL_ENERGY_DISTANCE_USED_TO_TRANSPORT_ROOTS"
+            ),
+        },
+        "tail_rows": tail_rows,
+        "independent_N4_N5_child_energy_relative_differences": (
+            independent_differences
+        ),
+        "independent_children_are_a_proved_convergence_sequence": False,
+        "projection_comparison": {
+            "H6_H5_H6_projection_constraint_maximum": h6_projection[
+                "maximum_constraint_residual"
+            ],
+            "H6_H5_H6_projection_eta_minimum": h6_eta["minimum"],
+            "action_energy_projection_constraint_maximum": (
+                energy_projection["maximum_constraint_residual"]
+            ),
+            "action_energy_projection_eta_minimum": _eta_legendre_minimum(
+                5, q0, m0, points=2400
+            )["minimum"],
+            "physical_constraints_or_eta_gate_changed": False,
+        },
+        "coherent_N4_to_N5_event": coherent_event,
+        "new_physics_equations_constraints_or_acceptance_gates": False,
+        "coherent_complete_child_graph_validated": graph_validated,
+        "coherent_complete_child_persistence_validated": persistence_validated,
+        "required_next": required_next,
+        "validation": validation,
+        "validation_passed": all(validation.values()),
+        "FULL_BHSM_COMPLETE": False,
+    }
+
+
 def event_to_child_on_shell_calderon_interface() -> dict[str, Any]:
     """Reconcile the validated local child roots with the required full BVP."""
 
     missing = (
-        "DERIVE_THE_ON_SHELL_CHILD_EULER_BVP_CALDERON_TRACE_FROM_THE_SAME_"
-        "ACTION_SO_VERTICAL_INTERIOR_VARIATIONS_VANISH_AND_REEVALUATE_THE_"
-        "N3_N4_N5_BOUNDARY_MOMENTUM_FLUX_RELATION"
+        "CONSTRUCT_A_COHERENT_EVENT_CONDITIONED_CHILD_GRAPH_IN_THE_ACTION_"
+        "ENERGY_TOPOLOGY_AND_PROVE_ITS_UNIFORM_NORMAL_RIGHT_INVERSE_AND_"
+        "SPECTRAL_TAIL_BOUNDS"
     )
     principal_symbol = child_jacobi_radial_principal_symbol_audit()
     weighted_principal = weighted_pole_attachment_principal_estimate()
@@ -7285,22 +7791,29 @@ def general_n_galerkin_transfer_certificate() -> dict[str, Any]:
             "INF_SUP_AND_TAIL_CERTIFICATE_OPEN"
         ),
         "continuum_spaces": {
-            "state_space": "X=H6_q_CROSS_H5_v_CROSS_H6_m",
+            "state_space": (
+                "X_E=R_scale_CROSS_H1_radial_geometry_CROSS_L2_velocity_"
+                "CROSS_H1_lapse_shift"
+            ),
+            "classical_regular_domain": "X_s=H6_q_CROSS_H5_v_CROSS_H6_m",
             "constraint_space": (
-                "THE_H_MINUS_6_DUAL_OF_THE_H6_LAPSE_SHIFT_MULTIPLIER_SPACE"
+                "H_MINUS_1_LAPSE_SHIFT_DUAL_CROSS_R_ENERGY"
             ),
             "boundary_space": "R3_TRACE_CROSS_R2_MOMENTUM_CROSS_R2_FLUX",
             "output_space": (
-                "Y=R3_CROSS_H_MINUS_6_CONSTRAINTS_CROSS_R2_CROSS_R2"
+                "Y_E=R3_CROSS_H_MINUS_1_CONSTRAINTS_CROSS_R_ENERGY_"
+                "CROSS_R2_MOMENTUM_CROSS_R2_REACTION"
             ),
             "basis": (
                 "THE_EXISTING_NESTED_POLE_REGULAR_COSINE_AND_WINDOWED_"
                 "COSINE_BASIS"
             ),
             "numerical_fixed_ROW_scales_are_the_continuum_norm": False,
+            "H6_H5_H6_is_the_root_transport_distance": False,
         },
         "smoothness_from_the_retained_action": {
             "regularity": "s=6>11/2",
+            "role": "CLASSICAL_SOLUTION_DOMAIN_NOT_ENERGY_GRAPH_METRIC",
             "sobolev_algebra_and_trace_control": True,
             "eta_interior_requirement": "inf(L_eta)>=eta_0>0",
             "consequence": (
@@ -7506,7 +8019,10 @@ def general_n_complete_child_reconstruction_statement() -> dict[str, Any]:
             "extra_gauge_or_physical_selector_added": False,
         },
         "resolution_independent_limit_criterion": {
-            "topology": "BHSM_ACTION_OWNED_SOBOLEV_PRODUCT_TOPOLOGY",
+            "topology": (
+                "BHSM_ACTION_ENERGY_TOPOLOGY_H1_GEOMETRY_L2_VELOCITY_"
+                "H1_LAPSE_SHIFT"
+            ),
             "state_convergence_requires": [
                 "CONSISTENT_SPECTRAL_INJECTION_AND_RESTRICTION",
                 "UNIFORM_OR_CONTROLLED_NORMAL_RIGHT_INVERSE_BOUNDS",
@@ -7517,7 +8033,7 @@ def general_n_complete_child_reconstruction_statement() -> dict[str, Any]:
             "persistence_convergence_requires": [
                 "UNIFORM_LOCAL_LIPSCHITZ_CONTROL_OF_THE_RETAINED_EULER_DIRAC_VECTOR_FIELDS",
                 "UNIFORM_DIRAC_HESSIAN_INVERTIBILITY_ON_A_COMMON_POSITIVE_DURATION",
-                "CONVERGENCE_OF_THE_PROJECTED_FLOWS_IN_THE_SAME_SOBOLEV_TOPOLOGY",
+                "CONVERGENCE_OF_THE_PROJECTED_FLOWS_IN_THE_ACTION_ENERGY_TOPOLOGY",
             ],
             "three_resolutions_alone_prove_the_limit": False,
         },
@@ -8220,6 +8736,9 @@ def promote_existing_general_n_statement(path: str | Path) -> Path:
     two_sided_reaction_audit = event_child_two_sided_reaction_match_audit(
         target
     )
+    energy_topology_audit = action_energy_topology_coherent_event_audit(
+        target
+    )
     statement["cross_resolution_principal_symbol_frame_audit"] = frame_audit
     statement["cross_resolution_strong_constraint_infsup_audit"] = (
         strong_constraint_audit
@@ -8237,7 +8756,12 @@ def promote_existing_general_n_statement(path: str | Path) -> Path:
     statement["event_child_two_sided_reaction_match_audit"] = (
         two_sided_reaction_audit
     )
-    required_next = statement["required_next"]
+    statement["action_energy_topology_coherent_event_audit"] = (
+        energy_topology_audit
+    )
+    required_next = energy_topology_audit["required_next"]
+    statement["first_missing_mathematical_object"] = required_next
+    statement["required_next"] = required_next
     result["general_N_complete_child_reconstruction_and_convergence_statement"] = (
         statement
     )
@@ -8254,6 +8778,9 @@ def promote_existing_general_n_statement(path: str | Path) -> Path:
     result["event_child_two_sided_reaction_match_audit"] = (
         two_sided_reaction_audit
     )
+    result["action_energy_topology_coherent_event_audit"] = (
+        energy_topology_audit
+    )
     child = dict(n5)
     child["required_next"] = required_next
     result["N5_event_conditioned_complete_child_reconstruction"] = child
@@ -8261,7 +8788,8 @@ def promote_existing_general_n_statement(path: str | Path) -> Path:
     result["scientific_status"] = (
         "INDEPENDENT_N3_N4_N5_COMPLETE_PERSISTENT_CHILDREN_VALIDATED;_"
         "GENERAL_N_LOCAL_RECONSTRUCTION_ARCHITECTURE_DERIVED;_UNIFORM_"
-        "CROSS_RESOLUTION_CONVERGENCE_ESTIMATE_OPEN"
+        "ACTION_ENERGY_TOPOLOGY_AND_COHERENT_N4_TO_N5_EVENT_DERIVED;_"
+        "COHERENT_COMPLETE_CHILD_GRAPH_AND_UNIFORM_BOUND_OPEN"
     )
 
     questions = dict(result["questions"])
@@ -8359,6 +8887,85 @@ def promote_existing_general_n_statement(path: str | Path) -> Path:
         "event_child_two_sided_reaction_match_audit_validated": (
             two_sided_reaction_audit["validation_passed"]
         ),
+        "action_energy_topology_coherent_event_audit_validated": (
+            energy_topology_audit["validation_passed"]
+        ),
+    })
+    payload["validation"] = validation
+    payload["validation_passed"] = all(validation.values())
+    target.write_text(deterministic_json(payload), encoding="utf-8")
+    return target
+
+
+def promote_existing_coherent_n4_to_n5_child_persistence(
+    path: str | Path,
+) -> Path:
+    """Promote the already-defined persistence witness for the coherent graph."""
+
+    target = Path(path)
+    payload = json.loads(target.read_text(encoding="utf-8"))
+    result = dict(payload["cross_resolution_reconnaissance"])
+    graph = dict(result["coherent_N4_to_N5_complete_child_graph"])
+    if not graph.get("complete_child_candidate_validated", False):
+        raise RuntimeError("coherent N4-to-N5 child root must close first")
+    coherent_n4_to_n5_complete_child_positive_duration_persistence.cache_clear()
+    persistence = (
+        coherent_n4_to_n5_complete_child_positive_duration_persistence(
+            points=44
+        )
+    )
+    if not persistence["positive_duration_relative_persistence_validated"]:
+        raise RuntimeError("coherent N4-to-N5 child persistence did not close")
+    required_next = (
+        "TEST_THE_TWO_BY_TWO_REACTION_CALDERON_GRAPH_UNDER_EXACT_NESTED_"
+        "SPECTRAL_INJECTION_AND_DERIVE_A_UNIFORM_NORMAL_RIGHT_INVERSE_OR_"
+        "LOCALIZE_ITS_FIRST_ACTION_OWNED_FAILURE"
+    )
+    graph.update({
+        "persistence_evaluated": True,
+        "persistence_validated": True,
+        "complete_persistent_child_validated": True,
+        "required_next": required_next,
+    })
+    result["coherent_N4_to_N5_complete_child_graph"] = graph
+    result[
+        "coherent_N4_to_N5_complete_child_positive_duration_persistence"
+    ] = persistence
+    energy = dict(result["action_energy_topology_coherent_event_audit"])
+    energy.update({
+        "classification": (
+            "ACTION_ENERGY_TOPOLOGY_DERIVED;_H6_MINIMUM_PROJECTION_"
+            "RECLASSIFIED_AS_OVERREGULARIZED_FOR_RELATION_TRANSPORT;_"
+            "COHERENT_N4_TO_N5_COMPLETE_PERSISTENT_CHILD_GRAPH_VALIDATED;_"
+            "UNIFORM_REACTION_CALDERON_GRAPH_BOUND_OPEN"
+        ),
+        "coherent_complete_child_graph_validated": True,
+        "coherent_complete_child_persistence_validated": True,
+        "required_next": required_next,
+    })
+    result["action_energy_topology_coherent_event_audit"] = energy
+    statement = dict(
+        result["general_N_complete_child_reconstruction_and_convergence_statement"]
+    )
+    statement["first_missing_mathematical_object"] = required_next
+    statement["required_next"] = required_next
+    result[
+        "general_N_complete_child_reconstruction_and_convergence_statement"
+    ] = statement
+    result["active_dependency"] = required_next
+    result["scientific_status"] = (
+        "INDEPENDENT_N3_N4_N5_COMPLETE_PERSISTENT_CHILDREN_VALIDATED;_"
+        "ACTION_ENERGY_COHERENT_N4_TO_N5_COMPLETE_PERSISTENT_CHILD_GRAPH_"
+        "VALIDATED;_UNIFORM_REACTION_CALDERON_GRAPH_BOUND_OPEN"
+    )
+    payload["cross_resolution_reconnaissance"] = result
+    validation = dict(payload["validation"])
+    validation.update({
+        "coherent_N4_to_N5_complete_child_graph_validated": True,
+        "coherent_N4_to_N5_positive_duration_persistence_validated": True,
+        "coherent_N4_to_N5_nonzero_relative_evolution_retained": bool(
+            persistence["nonzero_relative_evolution_retained"]
+        ),
     })
     payload["validation"] = validation
     payload["validation_passed"] = all(validation.values())
@@ -8447,6 +9054,7 @@ __all__ = [
     "n5_child_flux_step_audit",
     "n5_event_conditioned_complete_child_reconstruction",
     "n5_complete_child_positive_duration_persistence",
+    "coherent_n4_to_n5_complete_child_positive_duration_persistence",
     "child_jacobi_radial_principal_symbol_audit",
     "cross_resolution_principal_symbol_frame_audit",
     "weighted_pole_attachment_principal_estimate",
@@ -8456,6 +9064,7 @@ __all__ = [
     "on_shell_boundary_reaction_audit",
     "child_history_bvp_bordered_operator_audit",
     "event_child_two_sided_reaction_match_audit",
+    "action_energy_topology_coherent_event_audit",
     "event_to_child_on_shell_calderon_interface",
     "general_n_galerkin_transfer_certificate",
     "general_n_complete_child_reconstruction_statement",
@@ -8469,5 +9078,6 @@ __all__ = [
     "refresh_existing_n5_child_checkpoint",
     "promote_existing_n5_persistence",
     "promote_existing_general_n_statement",
+    "promote_existing_coherent_n4_to_n5_child_persistence",
     "reclassify_existing_n5_proposal_plateau",
 ]

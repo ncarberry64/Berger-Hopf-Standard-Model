@@ -294,6 +294,38 @@ def test_latest_n4_child_checkpoint_uses_fixed_merit_full_space_proposal():
     ] is False
     assert match["accepted_F_N_roots_or_persistence_changed"] is False
     assert match["new_equations_constraints_or_acceptance_gates"] is False
+    energy = payload["cross_resolution_reconnaissance"][
+        "action_energy_topology_coherent_event_audit"
+    ]
+    assert energy["validation_passed"] is True
+    assert energy["projection_comparison"][
+        "H6_H5_H6_projection_eta_minimum"
+    ] <= 0.0
+    assert energy["projection_comparison"][
+        "action_energy_projection_eta_minimum"
+    ] > 0.0
+    assert energy["coherent_N4_to_N5_event"]["branch_index"] == 10
+    assert energy["coherent_complete_child_graph_validated"] is True
+    assert energy["coherent_complete_child_persistence_validated"] is True
+    graph = payload["cross_resolution_reconnaissance"][
+        "coherent_N4_to_N5_complete_child_graph"
+    ]
+    assert graph["independent_N5_child_used_as_graph_seed"] is False
+    assert graph["physical_equations_or_gates_changed"] is False
+    assert graph["complete_child_candidate_validated"] is True
+    assert graph["complete_persistent_child_validated"] is True
+    assert graph["fiber_reduction"]["final_fixed_reference_merit"] < 1.0e-12
+    assert graph["physical_residuals"]["dynamic_flux_norm"] < 2.0e-5
+    coherent_persistence = payload["cross_resolution_reconnaissance"][
+        "coherent_N4_to_N5_complete_child_positive_duration_persistence"
+    ]
+    assert coherent_persistence[
+        "positive_duration_relative_persistence_validated"
+    ] is True
+    assert coherent_persistence["nonzero_relative_evolution_retained"] is True
+    assert coherent_persistence[
+        "finite_duration_numerical_movie_converged"
+    ] is True
 
 
 def test_general_n_reconstruction_statement_preserves_the_physical_map():
@@ -314,7 +346,11 @@ def test_general_n_reconstruction_statement_preserves_the_physical_map():
     assert continuation["extra_gauge_or_physical_selector_added"] is False
     transfer = statement["galerkin_transfer_certificate"]
     assert transfer["continuum_spaces"]["state_space"] == (
-        "X=H6_q_CROSS_H5_v_CROSS_H6_m"
+        "X_E=R_scale_CROSS_H1_radial_geometry_CROSS_L2_velocity_"
+        "CROSS_H1_lapse_shift"
+    )
+    assert transfer["continuum_spaces"]["classical_regular_domain"] == (
+        "X_s=H6_q_CROSS_H5_v_CROSS_H6_m"
     )
     assert transfer["set_valued_continuum_relation"][
         "physical_branch_selector_added"
