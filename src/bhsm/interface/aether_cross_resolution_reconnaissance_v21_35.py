@@ -8196,6 +8196,179 @@ def weak_conormal_reaction_graph_audit(
     }
 
 
+def boundary_compatible_gauge_quotient_audit(
+    path: str | Path = (
+        "artifacts/BHSM_AETHER_CROSS_RESOLUTION_RECONNAISSANCE_V21_35.json"
+    ),
+    *,
+    points: int = 96,
+    maximum_order: int = 13,
+) -> dict[str, Any]:
+    """Test the principal w/shift quotient before a full history estimate."""
+
+    target = Path(path)
+    result = json.loads(target.read_text(encoding="utf-8"))[
+        "cross_resolution_reconnaissance"
+    ]
+    source = result["coherent_N4_to_N5_complete_child_graph"]["child_state"]
+    exact = source["binary64_hex"]
+    base = tuple(
+        np.asarray([float.fromhex(value) for value in exact[name]])
+        for name in ("coordinates", "velocities", "multipliers")
+    )
+    rows = []
+    for order in range(5, maximum_order + 1):
+        if order == 5:
+            q, velocity, m = base
+        else:
+            q, velocity, m = embed_nested_state(*base, 5, order)
+        qdim = 3 * order + 1
+        mdim = 2 * order
+        hessian = np.asarray(
+            exact_full_action_jet_at_state(
+                order, q, velocity, m, points=points
+            ).hessian,
+            dtype=float,
+        )
+        boundary = _attachment_jacobian_at_order(order, q)
+        bordered = np.block([
+            [
+                hessian[qdim:2 * qdim, qdim:2 * qdim],
+                hessian[qdim:2 * qdim, 2 * qdim:],
+                -boundary.T,
+            ],
+            [
+                hessian[2 * qdim:, qdim:2 * qdim],
+                hessian[2 * qdim:, 2 * qdim:],
+                np.zeros((mdim, 2)),
+            ],
+            [boundary, np.zeros((2, mdim)), np.zeros((2, 2))],
+        ])
+        full_u, full_singular, full_vh = np.linalg.svd(bordered)
+        del full_u
+        full_soft = full_vh[-1]
+        acceleration = full_soft[:qdim]
+        multiplier_rate = full_soft[qdim:qdim + mdim]
+        w_block = acceleration[1 + order:1 + 2 * order]
+        shift_block = multiplier_rate[order:]
+        keep = np.concatenate((
+            np.arange(0, 1 + order),
+            np.arange(1 + 2 * order, 1 + 3 * order),
+            qdim + np.arange(order),
+            qdim + mdim + np.arange(2),
+        ))
+        reduced = bordered[np.ix_(keep, keep)]
+        _, reduced_singular, reduced_vh = np.linalg.svd(reduced)
+        reduced_soft = reduced_vh[-1]
+        reduced_q_count = 1 + 2 * order
+        reduced_u = reduced_soft[1:1 + order]
+        reduced_shape = reduced_soft[1 + order:reduced_q_count]
+        reduced_lapse = reduced_soft[
+            reduced_q_count:reduced_q_count + order
+        ]
+        rows.append({
+            "N": order,
+            "full_bordered_dimension": int(bordered.shape[0]),
+            "quotient_slice_dimension": int(reduced.shape[0]),
+            "expected_quotient_dimension_3N_plus_3": 3 * order + 3,
+            "full_smallest_singular_value": float(full_singular[-1]),
+            "quotient_smallest_singular_value": float(reduced_singular[-1]),
+            "quotient_improvement_factor": float(
+                reduced_singular[-1] / full_singular[-1]
+            ),
+            "full_soft_mode_w_fraction": float(
+                np.linalg.norm(w_block)
+                / max(1.0e-300, np.linalg.norm(acceleration))
+            ),
+            "full_soft_mode_shift_fraction": float(
+                np.linalg.norm(shift_block)
+                / max(1.0e-300, np.linalg.norm(multiplier_rate))
+            ),
+            "full_soft_mode_boundary_trace_norm": float(
+                np.linalg.norm(boundary @ acceleration)
+            ),
+            "quotient_soft_mode_blocks": {
+                "u": float(np.linalg.norm(reduced_u)),
+                "shape_b": float(np.linalg.norm(reduced_shape)),
+                "lapse": float(np.linalg.norm(reduced_lapse)),
+                "reaction": float(np.linalg.norm(reduced_soft[-2:])),
+            },
+        })
+    validation = {
+        "quotient_dimension_law_holds": all(
+            row["quotient_slice_dimension"]
+            == row["expected_quotient_dimension_3N_plus_3"]
+            for row in rows
+        ),
+        "full_soft_modes_are_w_dominated": all(
+            row["full_soft_mode_w_fraction"] > 0.85 for row in rows
+        ),
+        "full_soft_modes_are_boundary_invisible": all(
+            row["full_soft_mode_boundary_trace_norm"] < 1.0e-6
+            for row in rows
+        ),
+        "principal_quotient_materially_improves_every_finite_operator": all(
+            row["quotient_improvement_factor"] > 10.0 for row in rows
+        ),
+        "remaining_quotient_soft_mode_is_shape_owned_at_highest_order": (
+            rows[-1]["quotient_soft_mode_blocks"]["shape_b"] > 0.9
+        ),
+    }
+    return {
+        "classification": (
+            "BOUNDARY_COMPATIBLE_PRINCIPAL_W_SHIFT_GAUGE_QUOTIENT_DERIVED_"
+            "AND_FINITE_N_TESTED;_GAUGE_SOFT_SECTOR_REMOVED;_REMAINING_"
+            "SHAPE_SOFTNESS_REQUIRES_FULL_HISTORY_JACOBI_ENERGY_ESTIMATE"
+        ),
+        "principal_null_space": {
+            "variables": "(u_chi,w_chi,b_chi,logN_chi,beta_chi)",
+            "generic_null_vectors": [
+                "(0,K/(6J*beta^2),0,1,0)",
+                "(0,-1/beta,0,0,1)",
+            ],
+            "beta_zero_limit": "SPAN{delta_w,delta_beta}",
+            "slice": "delta_w=0_AND_delta_beta=0",
+            "slice_intersects_principal_null_space_trivially": True,
+            "retained_principal_variables": "(delta_u,delta_b,delta_logN)",
+            "retained_principal_matrix": [
+                [10.0, 0.0, 2.0],
+                [0.0, -2.0, 0.0],
+                [2.0, 0.0, 0.0],
+            ],
+            "retained_principal_determinant": 8.0,
+        },
+        "boundary_compatibility": {
+            "attachment_chart": (
+                "Gamma0=(scale+u_L-(1/2)log(cosh(2b_L)),-u_L+"
+                "(1/2)log(cosh(2b_L)))"
+            ),
+            "Gamma0_depends_on_w": False,
+            "Gamma0_depends_on_shift_beta": False,
+            "quotient_changes_boundary_data": False,
+        },
+        "rows": rows,
+        "candidate_slice_promoted_as_a_global_gauge_theorem": False,
+        "why_not": (
+            "THE_PRINCIPAL_NULL_INTERSECTION_AND_FINITE_N_IMPROVEMENT_DO_"
+            "NOT_BY_THEMSELVES_DERIVE_THE_GLOBAL_FADDEEV_POPOV_MAP_OR_A_"
+            "POSITIVE_DURATION_SPACETIME_JACOBI_ENERGY_ESTIMATE"
+        ),
+        "instantaneous_Cauchy_matrix_is_the_full_history_Jacobi_operator": (
+            False
+        ),
+        "finite_N_children_or_gates_changed": False,
+        "required_next": (
+            "DERIVE_THE_POSITIVE_DURATION_BOUNDARY_COMPATIBLE_GAUGE_FIXED_"
+            "JACOBI_EVOLUTION_AND_ITS_WEIGHTED_ENERGY_ESTIMATE;_TEST_"
+            "WHETHER_THE_REMAINING_SHAPE_SOFT_MODE_IS_A_TRUE_HISTORY_"
+            "KERNEL_OR_AN_INSTANTANEOUS_POLE_LOCALIZATION_ARTIFACT"
+        ),
+        "validation": validation,
+        "validation_passed": all(validation.values()),
+        "FULL_BHSM_COMPLETE": False,
+    }
+
+
 def event_to_child_on_shell_calderon_interface() -> dict[str, Any]:
     """Reconcile the validated local child roots with the required full BVP."""
 
@@ -9472,7 +9645,12 @@ def promote_existing_coherent_n4_to_n5_child_persistence(
     )
     if not weak_conormal["validation_passed"]:
         raise RuntimeError("weak conormal reaction graph audit failed")
-    required_next = weak_conormal["required_next"]
+    gauge_quotient = boundary_compatible_gauge_quotient_audit(
+        target, points=96, maximum_order=13
+    )
+    if not gauge_quotient["validation_passed"]:
+        raise RuntimeError("boundary-compatible gauge quotient audit failed")
+    required_next = gauge_quotient["required_next"]
     graph.update({
         "persistence_evaluated": True,
         "persistence_validated": True,
@@ -9487,6 +9665,7 @@ def promote_existing_coherent_n4_to_n5_child_persistence(
         reaction_calderon
     )
     result["weak_conormal_reaction_graph_audit"] = weak_conormal
+    result["boundary_compatible_gauge_quotient_audit"] = gauge_quotient
     energy = dict(result["action_energy_topology_coherent_event_audit"])
     energy.update({
         "classification": (
@@ -9513,7 +9692,8 @@ def promote_existing_coherent_n4_to_n5_child_persistence(
         "INDEPENDENT_N3_N4_N5_COMPLETE_PERSISTENT_CHILDREN_VALIDATED;_"
         "ACTION_ENERGY_COHERENT_N4_TO_N5_COMPLETE_PERSISTENT_CHILD_GRAPH_"
         "VALIDATED;_WEAK_CONORMAL_REACTION_GRAPH_AND_UNIFORM_TRACE_LIFT_"
-        "DERIVED;_GAUGE_REDUCED_LOWER_ORDER_VERTICAL_INF_SUP_OPEN"
+        "DERIVED;_PRINCIPAL_GAUGE_SOFT_SECTOR_QUOTIENTED;_FULL_HISTORY_"
+        "JACOBI_ENERGY_ESTIMATE_OPEN"
     )
     payload["cross_resolution_reconnaissance"] = result
     validation = dict(payload["validation"])
@@ -9528,6 +9708,9 @@ def promote_existing_coherent_n4_to_n5_child_persistence(
         ),
         "weak_conormal_reaction_graph_audit_validated": (
             weak_conormal["validation_passed"]
+        ),
+        "boundary_compatible_gauge_quotient_audit_validated": (
+            gauge_quotient["validation_passed"]
         ),
     })
     payload["validation"] = validation
@@ -9630,6 +9813,7 @@ __all__ = [
     "action_energy_topology_coherent_event_audit",
     "reaction_calderon_nested_schur_trace_audit",
     "weak_conormal_reaction_graph_audit",
+    "boundary_compatible_gauge_quotient_audit",
     "event_to_child_on_shell_calderon_interface",
     "general_n_galerkin_transfer_certificate",
     "general_n_complete_child_reconstruction_statement",

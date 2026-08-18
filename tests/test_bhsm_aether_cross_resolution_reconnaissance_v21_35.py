@@ -372,6 +372,33 @@ def test_latest_n4_child_checkpoint_uses_fixed_merit_full_space_proposal():
     ] is False
     assert weak["uniform_general_N_graph_convergence_proved"] is False
     assert weak["finite_N_roots_events_persistence_or_gates_changed"] is False
+    quotient = payload["cross_resolution_reconnaissance"][
+        "boundary_compatible_gauge_quotient_audit"
+    ]
+    assert quotient["validation_passed"] is True
+    assert quotient["principal_null_space"][
+        "slice_intersects_principal_null_space_trivially"
+    ] is True
+    assert quotient["principal_null_space"][
+        "retained_principal_determinant"
+    ] == 8.0
+    assert quotient["boundary_compatibility"][
+        "quotient_changes_boundary_data"
+    ] is False
+    assert all(
+        row["quotient_improvement_factor"] > 10.0
+        for row in quotient["rows"]
+    )
+    assert quotient["rows"][-1]["quotient_soft_mode_blocks"][
+        "shape_b"
+    ] > 0.9
+    assert quotient[
+        "candidate_slice_promoted_as_a_global_gauge_theorem"
+    ] is False
+    assert quotient[
+        "instantaneous_Cauchy_matrix_is_the_full_history_Jacobi_operator"
+    ] is False
+    assert quotient["finite_N_children_or_gates_changed"] is False
 
 
 def test_general_n_reconstruction_statement_preserves_the_physical_map():

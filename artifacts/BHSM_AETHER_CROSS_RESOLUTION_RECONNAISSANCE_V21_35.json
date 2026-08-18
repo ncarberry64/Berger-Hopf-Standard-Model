@@ -3762,7 +3762,7 @@
         "action_energy_projection_eta_minimum": 0.990331281838482,
         "physical_constraints_or_eta_gate_changed": false
       },
-      "required_next": "DERIVE_THE_BOUNDARY_COMPATIBLE_TIME_AND_RADIAL_GAUGE_QUOTIENT_AND_TEST_THE_LOWER_ORDER_VERTICAL_JACOBI_KERNEL_ON_THE_COHERENT_GRAPH_BEFORE_PROMOTING_UNIFORM_GENERAL_N_CONVERGENCE",
+      "required_next": "DERIVE_THE_POSITIVE_DURATION_BOUNDARY_COMPATIBLE_GAUGE_FIXED_JACOBI_EVOLUTION_AND_ITS_WEIGHTED_ENERGY_ESTIMATE;_TEST_WHETHER_THE_REMAINING_SHAPE_SOFT_MODE_IS_A_TRUE_HISTORY_KERNEL_OR_AN_INSTANTANEOUS_POLE_LOCALIZATION_ARTIFACT",
       "tail_rows": [
         {
           "N": 3,
@@ -3830,7 +3830,223 @@
       },
       "validation_passed": true
     },
-    "active_dependency": "DERIVE_THE_BOUNDARY_COMPATIBLE_TIME_AND_RADIAL_GAUGE_QUOTIENT_AND_TEST_THE_LOWER_ORDER_VERTICAL_JACOBI_KERNEL_ON_THE_COHERENT_GRAPH_BEFORE_PROMOTING_UNIFORM_GENERAL_N_CONVERGENCE",
+    "active_dependency": "DERIVE_THE_POSITIVE_DURATION_BOUNDARY_COMPATIBLE_GAUGE_FIXED_JACOBI_EVOLUTION_AND_ITS_WEIGHTED_ENERGY_ESTIMATE;_TEST_WHETHER_THE_REMAINING_SHAPE_SOFT_MODE_IS_A_TRUE_HISTORY_KERNEL_OR_AN_INSTANTANEOUS_POLE_LOCALIZATION_ARTIFACT",
+    "boundary_compatible_gauge_quotient_audit": {
+      "FULL_BHSM_COMPLETE": false,
+      "boundary_compatibility": {
+        "Gamma0_depends_on_shift_beta": false,
+        "Gamma0_depends_on_w": false,
+        "attachment_chart": "Gamma0=(scale+u_L-(1/2)log(cosh(2b_L)),-u_L+(1/2)log(cosh(2b_L)))",
+        "quotient_changes_boundary_data": false
+      },
+      "candidate_slice_promoted_as_a_global_gauge_theorem": false,
+      "classification": "BOUNDARY_COMPATIBLE_PRINCIPAL_W_SHIFT_GAUGE_QUOTIENT_DERIVED_AND_FINITE_N_TESTED;_GAUGE_SOFT_SECTOR_REMOVED;_REMAINING_SHAPE_SOFTNESS_REQUIRES_FULL_HISTORY_JACOBI_ENERGY_ESTIMATE",
+      "finite_N_children_or_gates_changed": false,
+      "instantaneous_Cauchy_matrix_is_the_full_history_Jacobi_operator": false,
+      "principal_null_space": {
+        "beta_zero_limit": "SPAN{delta_w,delta_beta}",
+        "generic_null_vectors": [
+          "(0,K/(6J*beta^2),0,1,0)",
+          "(0,-1/beta,0,0,1)"
+        ],
+        "retained_principal_determinant": 8.0,
+        "retained_principal_matrix": [
+          [
+            10.0,
+            0.0,
+            2.0
+          ],
+          [
+            0.0,
+            -2.0,
+            0.0
+          ],
+          [
+            2.0,
+            0.0,
+            0.0
+          ]
+        ],
+        "retained_principal_variables": "(delta_u,delta_b,delta_logN)",
+        "slice": "delta_w=0_AND_delta_beta=0",
+        "slice_intersects_principal_null_space_trivially": true,
+        "variables": "(u_chi,w_chi,b_chi,logN_chi,beta_chi)"
+      },
+      "required_next": "DERIVE_THE_POSITIVE_DURATION_BOUNDARY_COMPATIBLE_GAUGE_FIXED_JACOBI_EVOLUTION_AND_ITS_WEIGHTED_ENERGY_ESTIMATE;_TEST_WHETHER_THE_REMAINING_SHAPE_SOFT_MODE_IS_A_TRUE_HISTORY_KERNEL_OR_AN_INSTANTANEOUS_POLE_LOCALIZATION_ARTIFACT",
+      "rows": [
+        {
+          "N": 5,
+          "expected_quotient_dimension_3N_plus_3": 18,
+          "full_bordered_dimension": 28,
+          "full_smallest_singular_value": 1.5017750225e-05,
+          "full_soft_mode_boundary_trace_norm": 1.88740924e-07,
+          "full_soft_mode_shift_fraction": 0.672510362968936,
+          "full_soft_mode_w_fraction": 0.987441148820688,
+          "quotient_improvement_factor": 175.5880603724255,
+          "quotient_slice_dimension": 18,
+          "quotient_smallest_singular_value": 0.00263693763315,
+          "quotient_soft_mode_blocks": {
+            "lapse": 0.058648792017441,
+            "reaction": 0.029276161457321,
+            "shape_b": 0.997837094980275,
+            "u": 0.004935305475485
+          }
+        },
+        {
+          "N": 6,
+          "expected_quotient_dimension_3N_plus_3": 21,
+          "full_bordered_dimension": 33,
+          "full_smallest_singular_value": 9.12902668e-07,
+          "full_soft_mode_boundary_trace_norm": 4.405246e-09,
+          "full_soft_mode_shift_fraction": 0.822161711207401,
+          "full_soft_mode_w_fraction": 0.994675495030902,
+          "quotient_improvement_factor": 647.6660416973214,
+          "quotient_slice_dimension": 21,
+          "quotient_smallest_singular_value": 0.000591256057246,
+          "quotient_soft_mode_blocks": {
+            "lapse": 0.037349172892975,
+            "reaction": 0.014036138363622,
+            "shape_b": 0.999197193882663,
+            "u": 0.0036046818008
+          }
+        },
+        {
+          "N": 7,
+          "expected_quotient_dimension_3N_plus_3": 24,
+          "full_bordered_dimension": 38,
+          "full_smallest_singular_value": 1.03054549e-07,
+          "full_soft_mode_boundary_trace_norm": 6.19794e-10,
+          "full_soft_mode_shift_fraction": 0.930214011315518,
+          "full_soft_mode_w_fraction": 0.895416403630075,
+          "quotient_improvement_factor": 1590.9509669317733,
+          "quotient_slice_dimension": 24,
+          "quotient_smallest_singular_value": 0.000163954734229,
+          "quotient_soft_mode_blocks": {
+            "lapse": 0.024119335701895,
+            "reaction": 0.016664494302604,
+            "shape_b": 0.999567713595734,
+            "u": 0.002222206875831
+          }
+        },
+        {
+          "N": 8,
+          "expected_quotient_dimension_3N_plus_3": 27,
+          "full_bordered_dimension": 43,
+          "full_smallest_singular_value": 5.03190309e-07,
+          "full_soft_mode_boundary_trace_norm": 1.922431e-09,
+          "full_soft_mode_shift_fraction": 0.727682489510936,
+          "full_soft_mode_w_fraction": 0.99534869400846,
+          "quotient_improvement_factor": 134.8842371832449,
+          "quotient_slice_dimension": 27,
+          "quotient_smallest_singular_value": 6.7872440997e-05,
+          "quotient_soft_mode_blocks": {
+            "lapse": 0.017525659521175,
+            "reaction": 0.001575677898363,
+            "shape_b": 0.999844789351054,
+            "u": 0.000875045744158
+          }
+        },
+        {
+          "N": 9,
+          "expected_quotient_dimension_3N_plus_3": 30,
+          "full_bordered_dimension": 48,
+          "full_smallest_singular_value": 1.5231608e-08,
+          "full_soft_mode_boundary_trace_norm": 2.15e-12,
+          "full_soft_mode_shift_fraction": 0.923497020005435,
+          "full_soft_mode_w_fraction": 0.979926322900133,
+          "quotient_improvement_factor": 1989.6203060754324,
+          "quotient_slice_dimension": 30,
+          "quotient_smallest_singular_value": 3.0305116746e-05,
+          "quotient_soft_mode_blocks": {
+            "lapse": 0.012412475082397,
+            "reaction": 0.00523861653353,
+            "shape_b": 0.999909176029058,
+            "u": 0.000356443538168
+          }
+        },
+        {
+          "N": 10,
+          "expected_quotient_dimension_3N_plus_3": 33,
+          "full_bordered_dimension": 53,
+          "full_smallest_singular_value": 4.8883535e-08,
+          "full_soft_mode_boundary_trace_norm": 2.0554e-11,
+          "full_soft_mode_shift_fraction": 0.964681830892795,
+          "full_soft_mode_w_fraction": 0.978950165160538,
+          "quotient_improvement_factor": 278.2252081352846,
+          "quotient_slice_dimension": 33,
+          "quotient_smallest_singular_value": 1.3600631631e-05,
+          "quotient_soft_mode_blocks": {
+            "lapse": 0.008392229916028,
+            "reaction": 0.001930207243609,
+            "shape_b": 0.999962849347298,
+            "u": 0.000380397511827
+          }
+        },
+        {
+          "N": 11,
+          "expected_quotient_dimension_3N_plus_3": 36,
+          "full_bordered_dimension": 58,
+          "full_smallest_singular_value": 2.329358e-08,
+          "full_soft_mode_boundary_trace_norm": 7.946e-12,
+          "full_soft_mode_shift_fraction": 0.896186384389989,
+          "full_soft_mode_w_fraction": 0.989447496095085,
+          "quotient_improvement_factor": 301.5993772241417,
+          "quotient_slice_dimension": 36,
+          "quotient_smallest_singular_value": 7.025329281e-06,
+          "quotient_soft_mode_blocks": {
+            "lapse": 0.006549227240298,
+            "reaction": 0.003031278509208,
+            "shape_b": 0.999973843162949,
+            "u": 0.000481625450298
+          }
+        },
+        {
+          "N": 12,
+          "expected_quotient_dimension_3N_plus_3": 39,
+          "full_bordered_dimension": 63,
+          "full_smallest_singular_value": 5.714062e-09,
+          "full_soft_mode_boundary_trace_norm": 4.9e-14,
+          "full_soft_mode_shift_fraction": 0.750063904701846,
+          "full_soft_mode_w_fraction": 0.999173981388406,
+          "quotient_improvement_factor": 626.605301121261,
+          "quotient_slice_dimension": 39,
+          "quotient_smallest_singular_value": 3.580461559e-06,
+          "quotient_soft_mode_blocks": {
+            "lapse": 0.005307626343021,
+            "reaction": 0.000899935649434,
+            "shape_b": 0.999985426574886,
+            "u": 0.000407254554614
+          }
+        },
+        {
+          "N": 13,
+          "expected_quotient_dimension_3N_plus_3": 42,
+          "full_bordered_dimension": 68,
+          "full_smallest_singular_value": 3.61627e-10,
+          "full_soft_mode_boundary_trace_norm": 9.3e-14,
+          "full_soft_mode_shift_fraction": 0.87757258307367,
+          "full_soft_mode_w_fraction": 0.993748783977442,
+          "quotient_improvement_factor": 5541.369893259115,
+          "quotient_slice_dimension": 42,
+          "quotient_smallest_singular_value": 2.003906889e-06,
+          "quotient_soft_mode_blocks": {
+            "lapse": 0.004376632492036,
+            "reaction": 0.001648280994489,
+            "shape_b": 0.999989024056854,
+            "u": 0.000282884452254
+          }
+        }
+      ],
+      "validation": {
+        "full_soft_modes_are_boundary_invisible": true,
+        "full_soft_modes_are_w_dominated": true,
+        "principal_quotient_materially_improves_every_finite_operator": true,
+        "quotient_dimension_law_holds": true,
+        "remaining_quotient_soft_mode_is_shape_owned_at_highest_order": true
+      },
+      "validation_passed": true,
+      "why_not": "THE_PRINCIPAL_NULL_INTERSECTION_AND_FINITE_N_IMPROVEMENT_DO_NOT_BY_THEMSELVES_DERIVE_THE_GLOBAL_FADDEEV_POPOV_MAP_OR_A_POSITIVE_DURATION_SPACETIME_JACOBI_ENERGY_ESTIMATE"
+    },
     "child_history_bvp_bordered_operator_audit": {
       "FULL_BHSM_COMPLETE": false,
       "classification": "SAME_ACTION_LORENTZIAN_CHILD_HISTORY_BVP_BORDERED_OPERATOR_DERIVED_AND_FINITE_N_INVERTIBLE;_EVENT_CHILD_REACTION_MATCHING_AND_UNIFORM_GENERAL_N_BOUND_OPEN",
@@ -4188,7 +4404,7 @@
         "maximum_trace": 0.0,
         "momentum_norm": 6.95e-13
       },
-      "required_next": "DERIVE_THE_BOUNDARY_COMPATIBLE_TIME_AND_RADIAL_GAUGE_QUOTIENT_AND_TEST_THE_LOWER_ORDER_VERTICAL_JACOBI_KERNEL_ON_THE_COHERENT_GRAPH_BEFORE_PROMOTING_UNIFORM_GENERAL_N_CONVERGENCE",
+      "required_next": "DERIVE_THE_POSITIVE_DURATION_BOUNDARY_COMPATIBLE_GAUGE_FIXED_JACOBI_EVOLUTION_AND_ITS_WEIGHTED_ENERGY_ESTIMATE;_TEST_WHETHER_THE_REMAINING_SHAPE_SOFT_MODE_IS_A_TRUE_HISTORY_KERNEL_OR_AN_INSTANTANEOUS_POLE_LOCALIZATION_ARTIFACT",
       "seed_classification": "ACTION_ENERGY_NEAREST_CONSTRAINT_PROJECTION_OF_THE_EXACT_N4_CHILD_INTO_N5",
       "source_event": "ACTION_ENERGY_COHERENT_N4_TO_N5_EVENT"
     },
@@ -6334,7 +6550,7 @@
         "order_independent_boundary_core_rows": 7,
         "whole_child_variable_count": "8N+2"
       },
-      "first_missing_mathematical_object": "DERIVE_THE_BOUNDARY_COMPATIBLE_TIME_AND_RADIAL_GAUGE_QUOTIENT_AND_TEST_THE_LOWER_ORDER_VERTICAL_JACOBI_KERNEL_ON_THE_COHERENT_GRAPH_BEFORE_PROMOTING_UNIFORM_GENERAL_N_CONVERGENCE",
+      "first_missing_mathematical_object": "DERIVE_THE_POSITIVE_DURATION_BOUNDARY_COMPATIBLE_GAUGE_FIXED_JACOBI_EVOLUTION_AND_ITS_WEIGHTED_ENERGY_ESTIMATE;_TEST_WHETHER_THE_REMAINING_SHAPE_SOFT_MODE_IS_A_TRUE_HISTORY_KERNEL_OR_AN_INSTANTANEOUS_POLE_LOCALIZATION_ARTIFACT",
       "galerkin_transfer_certificate": {
         "FULL_BHSM_COMPLETE": false,
         "classification": "ACTION_OWNED_GALERKIN_TRANSFER_THEOREM_DERIVED;_CONTINUUM_INF_SUP_AND_TAIL_CERTIFICATE_OPEN",
@@ -6789,7 +7005,7 @@
         "uniform_eta_and_event_margin": true,
         "uniform_right_inverse_bound": true
       },
-      "required_next": "DERIVE_THE_BOUNDARY_COMPATIBLE_TIME_AND_RADIAL_GAUGE_QUOTIENT_AND_TEST_THE_LOWER_ORDER_VERTICAL_JACOBI_KERNEL_ON_THE_COHERENT_GRAPH_BEFORE_PROMOTING_UNIFORM_GENERAL_N_CONVERGENCE",
+      "required_next": "DERIVE_THE_POSITIVE_DURATION_BOUNDARY_COMPATIBLE_GAUGE_FIXED_JACOBI_EVOLUTION_AND_ITS_WEIGHTED_ENERGY_ESTIMATE;_TEST_WHETHER_THE_REMAINING_SHAPE_SOFT_MODE_IS_A_TRUE_HISTORY_KERNEL_OR_AN_INSTANTANEOUS_POLE_LOCALIZATION_ARTIFACT",
       "resolution_independent_limit_criterion": {
         "persistence_convergence_requires": [
           "UNIFORM_LOCAL_LIPSCHITZ_CONTROL_OF_THE_RETAINED_EULER_DIRAC_VECTOR_FIELDS",
@@ -7789,7 +8005,7 @@
       },
       "validation_passed": true
     },
-    "scientific_status": "INDEPENDENT_N3_N4_N5_COMPLETE_PERSISTENT_CHILDREN_VALIDATED;_ACTION_ENERGY_COHERENT_N4_TO_N5_COMPLETE_PERSISTENT_CHILD_GRAPH_VALIDATED;_WEAK_CONORMAL_REACTION_GRAPH_AND_UNIFORM_TRACE_LIFT_DERIVED;_GAUGE_REDUCED_LOWER_ORDER_VERTICAL_INF_SUP_OPEN",
+    "scientific_status": "INDEPENDENT_N3_N4_N5_COMPLETE_PERSISTENT_CHILDREN_VALIDATED;_ACTION_ENERGY_COHERENT_N4_TO_N5_COMPLETE_PERSISTENT_CHILD_GRAPH_VALIDATED;_WEAK_CONORMAL_REACTION_GRAPH_AND_UNIFORM_TRACE_LIFT_DERIVED;_PRINCIPAL_GAUGE_SOFT_SECTOR_QUOTIENTED;_FULL_HISTORY_JACOBI_ENERGY_ESTIMATE_OPEN",
     "weak_conormal_reaction_graph_audit": {
       "FULL_BHSM_COMPLETE": false,
       "classification": "WEAK_CONORMAL_REACTION_MAP_DERIVED_ON_MIXED_EULER_DIRAC_GRAPH_DOMAIN;_ATTACHMENT_TRACE_UNIFORMLY_SUBMERSIVE;_COHERENT_HIGH_SHELL_TAIL_SUMMABLE_BY_MEASUREMENT;_GAUGE_REDUCED_LOWER_ORDER_NORMAL_INF_SUP_OPEN",
@@ -8461,6 +8677,7 @@
     "action_energy_topology_coherent_event_audit_validated": true,
     "all_constraint_fibers_full_row_rank": true,
     "all_independent_constraint_projections_closed": true,
+    "boundary_compatible_gauge_quotient_audit_validated": true,
     "breadth_first_closure_network_validated": true,
     "child_history_bvp_bordered_operator_audit_validated": true,
     "coherent_N4_to_N5_complete_child_graph_validated": true,
