@@ -57,6 +57,22 @@ def test_injected_n6_event_child_calderon_friedrichs_angle_audit():
         row["linearized_graph_intersection_dimension"] == 0
         for row in audit["rows"]
     )
+    soft = audit["soft_mode_localization"]
+    assert soft["action_owned_scale_coordinate"] is True
+    assert soft["maximum_N12_N13_absolute_q_w_component"] < 3.0e-4
+    assert soft[
+        "complete_persistent_child_scale_family_integrability_proved"
+    ] is False
+    assert soft["promoted_as_a_legitimate_child_manifold_tangent"] is False
+    assert soft["minimum_N12_N13_second_principal_angle_sine"] > 1.0e-2
+    assert soft[
+        "minimum_N8_N13_child_time_tangent_alignment_cosine"
+    ] > 0.9998
+    assert soft[
+        "minimum_N8_N13_event_time_tangent_alignment_cosine"
+    ] > 0.9998
+    assert soft["time_translation_field_D_t_U_is_a_Jacobi_tangent"] is True
+    assert soft["common_event_child_time_tangent_limit_proved"] is False
     assert audit[
         "uniform_nonlinear_child_bundle_Cauchy_completeness"
     ] is False
@@ -82,6 +98,12 @@ def test_event_child_calderon_angle_stability_lemma():
         == 0.5 * stability["reference_gap"]
     )
     assert audit["uniform_positive_angle_proved"] is False
+    assert audit["candidate_scale_tangent_resolution"][
+        "scale_family_integrability_proved"
+    ] is False
+    assert audit["candidate_scale_tangent_resolution"][
+        "action_autonomy_makes_D_t_U_an_exact_Jacobi_tangent"
+    ] is True
     assert audit[
         "new_physics_equations_constraints_regularizers_objectives_or_gates"
     ] is False

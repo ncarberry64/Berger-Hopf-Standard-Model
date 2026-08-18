@@ -11059,11 +11059,49 @@ def injected_n6_event_child_calderon_friedrichs_angle_audit(
         )))
         event_projector = event_frame @ event_frame.T
         child_projector = child_frame @ child_frame.T
-        cosines = np.linalg.svd(
-            child_frame.T @ event_frame, compute_uv=False
+        angle_left, cosines, angle_right_t = np.linalg.svd(
+            child_frame.T @ event_frame
         )
         cosines = np.clip(cosines, 0.0, 1.0)
         sines = np.sqrt(np.maximum(0.0, 1.0 - cosines**2))
+        child_soft_graph_vector = child_frame @ angle_left[:, 0]
+        event_soft_graph_vector = event_frame @ angle_right_t.T[:, 0]
+        raw_soft_boundary = sqrt_gram @ child_soft_graph_vector[:2]
+        raw_soft_boundary /= np.linalg.norm(raw_soft_boundary)
+        child_dynamics = _exact_full_jet_euler_dirac_acceleration(
+            order, *child, points=points
+        )
+        child_boundary_acceleration = (
+            child_boundary @ np.asarray(
+                child_dynamics["acceleration"], dtype=float
+            )
+            + _attachment_chart_curvature_on_velocity(
+                order, child[0], child[1]
+            )
+        )
+        child_boundary_acceleration /= np.linalg.norm(
+            child_boundary_acceleration
+        )
+        event_dynamics = _exact_full_jet_euler_dirac_acceleration(
+            order, *event, points=points
+        )
+        event_boundary_acceleration = (
+            event_boundary @ np.asarray(
+                event_dynamics["acceleration"], dtype=float
+            )
+            + _attachment_chart_curvature_on_velocity(
+                order, event[0], event[1]
+            )
+        )
+        event_boundary_acceleration /= np.linalg.norm(
+            event_boundary_acceleration
+        )
+        time_tangent_alignment = abs(float(
+            raw_soft_boundary @ child_boundary_acceleration
+        ))
+        event_time_tangent_alignment = abs(float(
+            raw_soft_boundary @ event_boundary_acceleration
+        ))
         total_response = child_normalized + event_normalized
         total_singular = np.linalg.svd(total_response, compute_uv=False)
         rows.append({
@@ -11087,10 +11125,40 @@ def injected_n6_event_child_calderon_friedrichs_angle_audit(
                     child_normalized, compute_uv=False
                 ).tolist()
             ),
+            "event_action_normalized_response_matrix": (
+                event_normalized.tolist()
+            ),
+            "child_action_normalized_response_matrix": (
+                child_normalized.tolist()
+            ),
             "matched_total_response_singular_values": total_singular.tolist(),
             "Calderon_graph_principal_angle_cosines": cosines.tolist(),
             "Calderon_graph_principal_angle_sines": sines.tolist(),
             "Friedrichs_transversality_sine": float(np.min(sines)),
+            "soft_child_graph_vector": child_soft_graph_vector.tolist(),
+            "soft_matched_event_graph_vector": event_soft_graph_vector.tolist(),
+            "soft_raw_attachment_chart_direction": raw_soft_boundary.tolist(),
+            "normalized_child_flow_boundary_acceleration": (
+                child_boundary_acceleration.tolist()
+            ),
+            "normalized_event_flow_boundary_acceleration": (
+                event_boundary_acceleration.tolist()
+            ),
+            "soft_to_child_time_translation_alignment_cosine": (
+                time_tangent_alignment
+            ),
+            "soft_to_event_time_translation_alignment_cosine": (
+                event_time_tangent_alignment
+            ),
+            "soft_graph_vector_difference_norm": float(np.linalg.norm(
+                child_soft_graph_vector - event_soft_graph_vector
+            )),
+            "soft_child_reaction_fraction": float(
+                np.linalg.norm(child_soft_graph_vector[2:])
+            ),
+            "soft_event_reaction_fraction": float(
+                np.linalg.norm(event_soft_graph_vector[2:])
+            ),
             "linearized_graph_intersection_dimension": int(np.count_nonzero(
                 cosines > 1.0 - 1.0e-10
             )),
@@ -11110,6 +11178,22 @@ def injected_n6_event_child_calderon_friedrichs_angle_audit(
         previous_event_projector = event_projector
         previous_child_projector = child_projector
     tail = rows[-3:]
+    late_raw_scale_misalignment = max(
+        abs(row["soft_raw_attachment_chart_direction"][0])
+        for row in rows[-2:]
+    )
+    late_second_angle_minimum = min(
+        row["Calderon_graph_principal_angle_sines"][1]
+        for row in rows[-2:]
+    )
+    post_transition_child_time_alignment = min(
+        row["soft_to_child_time_translation_alignment_cosine"]
+        for row in rows if row["N"] >= 8
+    )
+    post_transition_event_time_alignment = min(
+        row["soft_to_event_time_translation_alignment_cosine"]
+        for row in rows if row["N"] >= 8
+    )
     validation = {
         "same_exact_matched_N6_event_child_pair_injected": True,
         "attachment_configuration_match_replays": all(
@@ -11167,14 +11251,50 @@ def injected_n6_event_child_calderon_friedrichs_angle_audit(
         "minimum_late_Friedrichs_sine": min(
             row["Friedrichs_transversality_sine"] for row in tail
         ),
+        "soft_mode_localization": {
+            "attachment_chart": "(q_w,q_c=q_scale-q_w)",
+            "N12_raw_direction": rows[-2][
+                "soft_raw_attachment_chart_direction"
+            ],
+            "N13_raw_direction": rows[-1][
+                "soft_raw_attachment_chart_direction"
+            ],
+            "maximum_N12_N13_absolute_q_w_component": (
+                late_raw_scale_misalignment
+            ),
+            "candidate_limit_direction": "delta_q_w=0,_delta_q_c!=0",
+            "interpretation": (
+                "FIXED_ATTACHMENT_q_w_PHYSICAL_SCALE_DIRECTION_BECAUSE_"
+                "q_scale=q_w+q_c"
+            ),
+            "action_owned_scale_coordinate": True,
+            "retained_action_is_time_autonomous": True,
+            "time_translation_field_D_t_U_is_a_Jacobi_tangent": True,
+            "minimum_N8_N13_child_time_tangent_alignment_cosine": (
+                post_transition_child_time_alignment
+            ),
+            "minimum_N8_N13_event_time_tangent_alignment_cosine": (
+                post_transition_event_time_alignment
+            ),
+            "common_event_child_time_tangent_limit_proved": False,
+            "complete_persistent_child_scale_family_integrability_proved": (
+                False
+            ),
+            "promoted_as_a_legitimate_child_manifold_tangent": False,
+            "minimum_N12_N13_second_principal_angle_sine": (
+                late_second_angle_minimum
+            ),
+        },
         "fixed_pair_event_to_history_Cauchy_completeness": all(
             validation.values()
         ),
         "uniform_nonlinear_child_bundle_Cauchy_completeness": False,
         "exact_next_mathematical_lemma": (
-            "PROVE_A_UNIFORM_POSITIVE_FRIEDRICHS_ANGLE_BETWEEN_THE_"
-            "MATCHED_EVENT_AND_CHILD_CALDERON_GRAPHS_ON_THE_ACTION_"
-            "ENERGY_COHERENT_ETA_INTERIOR_NORMAL_BUNDLE"
+            "PROVE_THAT_THE_EVENT_AND_CHILD_TIME_TRANSLATION_JACOBI_"
+            "FIELDS_HAVE_THE_SAME_FIXED_q_w_PHYSICAL_SCALE_BOUNDARY_"
+            "DIRECTION_IN_THE_GALERKIN_LIMIT;_THEN_QUOTIENT_THIS_"
+            "LEGITIMATE_WHOLE_HISTORY_TANGENT_AND_BOUND_THE_SECOND_"
+            "CALDERON_PRINCIPAL_ANGLE_UNIFORMLY"
         ),
         "new_physics_equations_constraints_regularizers_objectives_or_gates": (
             False
@@ -11294,12 +11414,34 @@ def event_child_calderon_angle_stability_lemma(
             ),
             "finite_N_soft_response_alone_proves_either_failure": False,
         },
+        "candidate_scale_tangent_resolution": {
+            "candidate_direction": (
+                "delta_q_w=0,_delta_q_c!=0_WITH_q_scale=q_w+q_c"
+            ),
+            "why_it_is_action_owned": (
+                "q_scale=log(R_phys/R_star)_IS_THE_EXISTING_PHYSICAL_"
+                "SCALE_COORDINATE"
+            ),
+            "scale_family_integrability_proved": False,
+            "action_autonomy_makes_D_t_U_an_exact_Jacobi_tangent": True,
+            "event_and_child_time_tangent_common_boundary_limit_proved": (
+                False
+            ),
+            "may_be_quotiented_before_integrability_is_proved": False,
+            "if_integrable": (
+                "THE_SOFT_GRAPH_DIRECTION_IS_A_LEGITIMATE_CHILD_"
+                "MANIFOLD_TANGENT_AND_THE_SECOND_PRINCIPAL_ANGLE_IS_THE_"
+                "NORMAL_FRIEDRICHS_ANGLE"
+            ),
+            "if_not_integrable_and_the_angle_vanishes": (
+                "THE_DIRECTION_IS_A_GENUINE_FAILURE_OF_THE_UNIFORM_"
+                "NORMAL_CLOSED_RANGE_ESTIMATE"
+            ),
+        },
         "exact_next_mathematical_lemma": (
-            "BOUND_THE_EVENT_AND_CHILD_CALDERON_GRAPH_PROJECTOR_"
-            "VARIATIONS_IN_THE_ACTION_ENERGY_NORM_BY_LESS_THAN_HALF_"
-            "THE_FIXED_PAIR_FRIEDRICHS_MARGIN,_OR_EXHIBIT_THE_"
-            "CORRESPONDING_NON_TANGENT_ZERO_MODE_OF_THE_DOUBLED_JACOBI_"
-            "OPERATOR"
+            "PROVE_THE_COMMON_FIXED_q_w_BOUNDARY_LIMIT_OF_THE_EVENT_AND_"
+            "CHILD_TIME_TRANSLATION_JACOBI_FIELDS_BEFORE_QUOTIENTING_"
+            "THE_SOFT_CALDERON_DIRECTION"
         ),
         "uniform_positive_angle_proved": False,
         "new_physics_equations_constraints_regularizers_objectives_or_gates": (
