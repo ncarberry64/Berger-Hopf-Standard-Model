@@ -550,6 +550,67 @@ def test_latest_n4_child_checkpoint_uses_fixed_merit_full_space_proposal():
     )
     assert graph["increase_N_mechanically_as_the_next_step"] is False
     assert graph["new_equations_constraints_or_acceptance_gates"] is False
+    injected_graph = payload["cross_resolution_reconnaissance"][
+        "injected_matched_background_calderon_graph_audit"
+    ]
+    assert injected_graph["validation_passed"] is True
+    assert [row["N"] for row in injected_graph["rows"]] == list(
+        range(5, 14)
+    )
+    assert injected_graph["late_tail"]["maximum_projector_step"] < 0.02
+    assert injected_graph["late_tail"]["minimum_projector_step"] < 0.001
+    assert injected_graph["analytic_operator_theorem"][
+        "nonlinear_root_manifold_convergence_implied"
+    ] is False
+    assert injected_graph[
+        "raw_DtN_matrices_used_as_the_convergence_object"
+    ] is False
+    assert injected_graph["increase_N_nonlinear_roots_mechanically"] is False
+    assert injected_graph[
+        "new_equations_constraints_or_acceptance_gates"
+    ] is False
+    weak_tail = payload["cross_resolution_reconnaissance"][
+        "weak_constraint_boundary_source_tail_audit"
+    ]
+    assert weak_tail["validation_passed"] is True
+    assert weak_tail["exact_boundary_lapse_covector"][
+        "belongs_to_bulk_constraint_failure"
+    ] is False
+    assert weak_tail["measured_loglog_tail_slope_N12_to_N40"] < -0.5
+    assert weak_tail["strong_L2_constraint_codomain_required"] is False
+    right_inverse = payload["cross_resolution_reconnaissance"][
+        "weak_complete_child_normal_right_inverse_audit"
+    ]
+    assert right_inverse["validation_passed"] is True
+    assert right_inverse["map"]["row_count"] == 19
+    assert right_inverse["derivative"]["rank"] == 19
+    assert right_inverse["center_residual"][
+        "action_normalized_total_norm"
+    ] < 1.0e-8
+    assert right_inverse["derivative"][
+        "smallest_normal_singular_value"
+    ] > 0.1
+    assert right_inverse["derivative"][
+        "right_inverse_defect_operator_norm"
+    ] < 1.0e-9
+    assert right_inverse[
+        "new_equations_constraints_or_acceptance_gates"
+    ] is False
+    lipschitz = payload["cross_resolution_reconnaissance"][
+        "weak_complete_child_normal_lipschitz_audit"
+    ]
+    assert lipschitz["validation_passed"] is True
+    assert lipschitz["normal_dimension"] == 19
+    assert lipschitz["two_scale_tensor_relative_change"] < 5.0e-2
+    measured_radii = lipschitz["finite_N_measured_radii_polynomial"]
+    assert measured_radii["discriminant"] > 0.0
+    assert len(measured_radii["negative_interval_roots"]) == 2
+    assert measured_radii[
+        "is_a_rigorous_infinite_dimensional_existence_proof"
+    ] is False
+    assert lipschitz[
+        "new_equations_constraints_or_acceptance_gates"
+    ] is False
 
 
 def test_general_n_reconstruction_statement_preserves_the_physical_map():
