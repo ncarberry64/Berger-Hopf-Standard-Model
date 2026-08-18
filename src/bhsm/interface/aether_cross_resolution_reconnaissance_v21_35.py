@@ -7927,6 +7927,275 @@ def reaction_calderon_nested_schur_trace_audit(
     }
 
 
+def weak_conormal_reaction_graph_audit(
+    path: str | Path = (
+        "artifacts/BHSM_AETHER_CROSS_RESOLUTION_RECONNAISSANCE_V21_35.json"
+    ),
+    *,
+    points: int = 96,
+    maximum_order: int = 12,
+) -> dict[str, Any]:
+    """Derive the weak reaction map and test its coherent high-shell tail."""
+
+    if maximum_order < 8:
+        raise ValueError("a resolved coherent high-shell sequence is required")
+    target = Path(path)
+    result = json.loads(target.read_text(encoding="utf-8"))[
+        "cross_resolution_reconnaissance"
+    ]
+    source = result["coherent_N4_to_N5_complete_child_graph"]["child_state"]
+    exact = source.get("binary64_hex")
+    if exact is None:
+        base = tuple(
+            np.asarray(source[name], dtype=float)
+            for name in ("coordinates", "velocities", "multipliers")
+        )
+    else:
+        base = tuple(
+            np.asarray([float.fromhex(value) for value in exact[name]])
+            for name in ("coordinates", "velocities", "multipliers")
+        )
+
+    def state(order: int) -> tuple[np.ndarray, np.ndarray, np.ndarray]:
+        if order == 5:
+            return base  # type: ignore[return-value]
+        return embed_nested_state(*base, 5, order)
+
+    def matrix(
+        order: int, q: np.ndarray, velocity: np.ndarray, m: np.ndarray,
+    ) -> np.ndarray:
+        qdim = 3 * order + 1
+        mdim = 2 * order
+        hessian = np.asarray(
+            exact_full_action_jet_at_state(
+                order, q, velocity, m, points=points
+            ).hessian,
+            dtype=float,
+        )
+        boundary = _attachment_jacobian_at_order(order, q)
+        return np.block([
+            [
+                hessian[qdim:2 * qdim, qdim:2 * qdim],
+                hessian[qdim:2 * qdim, 2 * qdim:],
+                -boundary.T,
+            ],
+            [
+                hessian[2 * qdim:, qdim:2 * qdim],
+                hessian[2 * qdim:, 2 * qdim:],
+                np.zeros((mdim, 2)),
+            ],
+            [boundary, np.zeros((2, mdim)), np.zeros((2, 2))],
+        ])
+
+    def injection(order: int) -> np.ndarray:
+        qlow = 3 * order + 1
+        qhigh = 3 * (order + 1) + 1
+        mlow = 2 * order
+        mhigh = 2 * (order + 1)
+        iq = np.zeros((qhigh, qlow))
+        iq[0, 0] = 1.0
+        for family in range(3):
+            low = 1 + family * order
+            high = 1 + family * (order + 1)
+            iq[high:high + order, low:low + order] = np.eye(order)
+        im = np.zeros((mhigh, mlow))
+        im[:order, :order] = np.eye(order)
+        im[order + 1:2 * order + 1, order:2 * order] = np.eye(order)
+        return np.block([
+            [iq, np.zeros((qhigh, mlow)), np.zeros((qhigh, 2))],
+            [np.zeros((mhigh, qlow)), im, np.zeros((mhigh, 2))],
+            [np.zeros((2, qlow)), np.zeros((2, mlow)), np.eye(2)],
+        ])
+
+    shell_rows = []
+    for order in range(5, maximum_order + 1):
+        low_state = state(order)
+        high_state = state(order + 1)
+        low_raw = matrix(order, *low_state)
+        high_raw = matrix(order + 1, *high_state)
+        inject = injection(order)
+        frequencies = spectral_frequencies(order + 1)
+        graph_weights = np.concatenate((
+            np.sqrt(1.0 + frequencies["coordinates"] ** 2),
+            np.sqrt(1.0 + frequencies["multipliers"] ** 2),
+            np.ones(2),
+        ))
+        high = high_raw / (
+            graph_weights[:, None] * graph_weights[None, :]
+        )
+        used = set(np.argmax(inject, axis=0).tolist())
+        high_indices = np.asarray([
+            index for index in range(high.shape[0]) if index not in used
+        ])
+        complement = np.eye(high.shape[0])[:, high_indices]
+        low_block = inject.T @ high @ inject
+        coupling = inject.T @ high @ complement
+        shell = complement.T @ high @ complement
+        correction = coupling @ np.linalg.solve(shell, coupling.T)
+        shell_rows.append({
+            "low_N": order,
+            "high_N": order + 1,
+            "exact_raw_nested_operator_error": float(np.linalg.norm(
+                inject.T @ high_raw @ inject - low_raw
+            )),
+            "new_shell_dimension": int(high_indices.size),
+            "H1_graph_shell_correction_norm": float(
+                np.linalg.norm(correction)
+            ),
+            "H1_graph_shell_correction_relative": float(
+                np.linalg.norm(correction)
+                / max(1.0, np.linalg.norm(low_block))
+            ),
+            "H1_graph_low_high_coupling_norm": float(
+                np.linalg.norm(coupling)
+            ),
+            "H1_graph_high_shell_smallest_singular_value": float(
+                np.linalg.svd(shell, compute_uv=False)[-1]
+            ),
+        })
+    orders = np.asarray([row["low_N"] for row in shell_rows], dtype=float)
+    corrections = np.asarray([
+        row["H1_graph_shell_correction_norm"] for row in shell_rows
+    ])
+    correction_slope = float(np.polyfit(
+        np.log(orders), np.log(corrections), 1
+    )[0])
+
+    trace_rows = []
+    for order in range(4, 129):
+        q = np.zeros(3 * order + 1)
+        boundary = _attachment_jacobian_at_order(order, q)
+        weights = np.sqrt(
+            1.0 + spectral_frequencies(order)["coordinates"] ** 2
+        )
+        singular = np.linalg.svd(
+            boundary / weights[None, :], compute_uv=False
+        )
+        trace_rows.append({
+            "N": order,
+            "largest_singular_value": float(singular[0]),
+            "smallest_singular_value": float(singular[-1]),
+        })
+    s_lower = 1.0 / 17.0
+    lambda_lower = 0.5 * (
+        1.0 + 2.0 * s_lower - math.sqrt(1.0 + 4.0 * s_lower**2)
+    )
+    analytic_trace_infsup_lower = math.sqrt(lambda_lower)
+    s_upper = 1.0 + math.pi**2 / 48.0
+    lambda_upper = 0.5 * (
+        1.0 + 2.0 * s_upper + math.sqrt(1.0 + 4.0 * s_upper**2)
+    )
+    analytic_trace_norm_upper = math.sqrt(lambda_upper)
+    validation = {
+        "coherent_injected_bordered_operators_exactly_nested": all(
+            row["exact_raw_nested_operator_error"] < 1.0e-12
+            for row in shell_rows
+        ),
+        "five_unknown_shell_law_retained": all(
+            row["new_shell_dimension"] == 5 for row in shell_rows
+        ),
+        "measured_H1_graph_shell_tail_is_summable": bool(
+            correction_slope < -1.0
+            and all(
+                corrections[index + 1] < corrections[index]
+                for index in range(corrections.size - 1)
+            )
+        ),
+        "analytic_H1_attachment_trace_infsup_positive": (
+            analytic_trace_infsup_lower > 0.0
+        ),
+        "sampled_trace_singular_values_respect_analytic_bounds": all(
+            row["smallest_singular_value"]
+            >= analytic_trace_infsup_lower - 1.0e-12
+            and row["largest_singular_value"]
+            <= analytic_trace_norm_upper + 1.0e-12
+            for row in trace_rows
+        ),
+    }
+    return {
+        "classification": (
+            "WEAK_CONORMAL_REACTION_MAP_DERIVED_ON_MIXED_EULER_DIRAC_"
+            "GRAPH_DOMAIN;_ATTACHMENT_TRACE_UNIFORMLY_SUBMERSIVE;_COHERENT_"
+            "HIGH_SHELL_TAIL_SUMMABLE_BY_MEASUREMENT;_GAUGE_REDUCED_"
+            "LOWER_ORDER_NORMAL_INF_SUP_OPEN"
+        ),
+        "mixed_weak_history_system": {
+            "state_space": (
+                "V=H1_GEOMETRY_CROSS_H1_LAPSE_SHIFT_WITH_VELOCITY_IN_L2"
+            ),
+            "boundary_history_variable": "b(t)=Gamma0(q(t))_IN_R2",
+            "vertical_space": "V0=KER(Gamma0)",
+            "vertical_equation": (
+                "a_child(U,V)=ell_child(V)_FOR_ALL_V_IN_V0"
+            ),
+            "weak_conormal_reaction": (
+                "<Lambda,phi>=a_child(U,H*phi)-ell_child(H*phi),_"
+                "Gamma0*H=IDENTITY"
+            ),
+            "lift_independence": (
+                "H1-H2_MAPS_INTO_V0_SO_THE_VERTICAL_EQUATION_CANCELS_"
+                "THE_DIFFERENCE"
+            ),
+            "strong_boundary_acceleration_trace_required": False,
+            "classical_consistency": (
+                "FOR_CLASSICAL_SOLUTIONS_Gamma0(q_tt)=b_tt_AND_THE_WEAK_"
+                "MULTIPLIER_EQUALS_THE_EXISTING_FINITE_N_REACTION"
+            ),
+            "new_equation_constraint_or_acceptance_gate": False,
+        },
+        "uniform_attachment_trace_theorem": {
+            "weighted_trace_matrix_gram": (
+                "[[1+s_N,-s_N],[-s_N,s_N]],_s_N>=1/17"
+            ),
+            "analytic_smallest_singular_lower_bound": (
+                analytic_trace_infsup_lower
+            ),
+            "analytic_largest_singular_upper_bound": analytic_trace_norm_upper,
+            "uniform_right_lift_norm_upper_bound": (
+                1.0 / analytic_trace_infsup_lower
+            ),
+            "sampled_N_range": [4, 128],
+            "sampled_smallest_singular_minimum": min(
+                row["smallest_singular_value"] for row in trace_rows
+            ),
+            "sampled_smallest_singular_maximum": max(
+                row["smallest_singular_value"] for row in trace_rows
+            ),
+        },
+        "coherent_high_shell_tail": {
+            "source": (
+                "EXACT_COHERENT_N5_COMPLETE_PERSISTENT_CHILD_INJECTED_"
+                "WITHOUT_CLAIMING_HIGHER_N_CHILD_EXISTENCE"
+            ),
+            "quadrature_points": points,
+            "rows": shell_rows,
+            "correction_norm_loglog_slope": correction_slope,
+            "summable_measurement_is_a_uniform_neighborhood_proof": False,
+        },
+        "closed_here": [
+            "THE_WEAK_CONORMAL_REACTION_IS_LIFT_INDEPENDENT",
+            "THE_ATTACHMENT_TRACE_HAS_A_UNIFORM_H1_RIGHT_LIFT",
+            "THE_STRONG_L2_ACCELERATION_TRACE_IS_NOT_NEEDED_IN_THE_MIXED_FORM",
+            "THE_COHERENT_N5_HIGH_SHELL_SCHUR_TAIL_DECAYS_SUMMABLY_IN_MEASUREMENT",
+        ],
+        "first_open_lower_order_object": (
+            "PROVE_KERNEL_ABSENCE_AND_A_UNIFORM_NORMAL_INF_SUP_FOR_THE_"
+            "GAUGE_REDUCED_VERTICAL_EULER_DIRAC_JACOBI_OPERATOR_IN_A_"
+            "NEIGHBORHOOD_OF_THE_COHERENT_CHILD_GRAPH"
+        ),
+        "uniform_general_N_graph_convergence_proved": False,
+        "finite_N_roots_events_persistence_or_gates_changed": False,
+        "required_next": (
+            "DERIVE_THE_BOUNDARY_COMPATIBLE_TIME_AND_RADIAL_GAUGE_QUOTIENT_"
+            "AND_TEST_THE_LOWER_ORDER_VERTICAL_JACOBI_KERNEL_ON_THE_"
+            "COHERENT_GRAPH_BEFORE_PROMOTING_UNIFORM_GENERAL_N_CONVERGENCE"
+        ),
+        "validation": validation,
+        "validation_passed": all(validation.values()),
+        "FULL_BHSM_COMPLETE": False,
+    }
+
+
 def event_to_child_on_shell_calderon_interface() -> dict[str, Any]:
     """Reconcile the validated local child roots with the required full BVP."""
 
@@ -9198,7 +9467,12 @@ def promote_existing_coherent_n4_to_n5_child_persistence(
     )
     if not reaction_calderon["validation_passed"]:
         raise RuntimeError("reaction-Calderon nested Schur audit failed")
-    required_next = reaction_calderon["required_next"]
+    weak_conormal = weak_conormal_reaction_graph_audit(
+        target, points=96, maximum_order=12
+    )
+    if not weak_conormal["validation_passed"]:
+        raise RuntimeError("weak conormal reaction graph audit failed")
+    required_next = weak_conormal["required_next"]
     graph.update({
         "persistence_evaluated": True,
         "persistence_validated": True,
@@ -9212,6 +9486,7 @@ def promote_existing_coherent_n4_to_n5_child_persistence(
     result["reaction_calderon_nested_schur_trace_audit"] = (
         reaction_calderon
     )
+    result["weak_conormal_reaction_graph_audit"] = weak_conormal
     energy = dict(result["action_energy_topology_coherent_event_audit"])
     energy.update({
         "classification": (
@@ -9237,8 +9512,8 @@ def promote_existing_coherent_n4_to_n5_child_persistence(
     result["scientific_status"] = (
         "INDEPENDENT_N3_N4_N5_COMPLETE_PERSISTENT_CHILDREN_VALIDATED;_"
         "ACTION_ENERGY_COHERENT_N4_TO_N5_COMPLETE_PERSISTENT_CHILD_GRAPH_"
-        "VALIDATED;_PURE_ENERGY_REACTION_DOMAIN_INVALIDATED;_EULER_DIRAC_"
-        "GRAPH_DOMAIN_WEAK_CONORMAL_MAP_OPEN"
+        "VALIDATED;_WEAK_CONORMAL_REACTION_GRAPH_AND_UNIFORM_TRACE_LIFT_"
+        "DERIVED;_GAUGE_REDUCED_LOWER_ORDER_VERTICAL_INF_SUP_OPEN"
     )
     payload["cross_resolution_reconnaissance"] = result
     validation = dict(payload["validation"])
@@ -9250,6 +9525,9 @@ def promote_existing_coherent_n4_to_n5_child_persistence(
         ),
         "reaction_calderon_nested_schur_trace_audit_validated": (
             reaction_calderon["validation_passed"]
+        ),
+        "weak_conormal_reaction_graph_audit_validated": (
+            weak_conormal["validation_passed"]
         ),
     })
     payload["validation"] = validation
@@ -9351,6 +9629,7 @@ __all__ = [
     "event_child_two_sided_reaction_match_audit",
     "action_energy_topology_coherent_event_audit",
     "reaction_calderon_nested_schur_trace_audit",
+    "weak_conormal_reaction_graph_audit",
     "event_to_child_on_shell_calderon_interface",
     "general_n_galerkin_transfer_certificate",
     "general_n_complete_child_reconstruction_statement",

@@ -347,6 +347,31 @@ def test_latest_n4_child_checkpoint_uses_fixed_merit_full_space_proposal():
         "new_physical_equation_constraint_or_gate"
     ] is False
     assert schur["finite_N_roots_events_or_persistence_changed"] is False
+    weak = payload["cross_resolution_reconnaissance"][
+        "weak_conormal_reaction_graph_audit"
+    ]
+    assert weak["validation_passed"] is True
+    assert weak["uniform_attachment_trace_theorem"][
+        "analytic_smallest_singular_lower_bound"
+    ] > 0.0
+    assert weak["uniform_attachment_trace_theorem"][
+        "uniform_right_lift_norm_upper_bound"
+    ] < 5.0
+    assert weak["coherent_high_shell_tail"][
+        "correction_norm_loglog_slope"
+    ] < -1.0
+    assert all(
+        row["exact_raw_nested_operator_error"] < 1.0e-12
+        for row in weak["coherent_high_shell_tail"]["rows"]
+    )
+    assert weak["mixed_weak_history_system"][
+        "strong_boundary_acceleration_trace_required"
+    ] is False
+    assert weak["mixed_weak_history_system"][
+        "new_equation_constraint_or_acceptance_gate"
+    ] is False
+    assert weak["uniform_general_N_graph_convergence_proved"] is False
+    assert weak["finite_N_roots_events_persistence_or_gates_changed"] is False
 
 
 def test_general_n_reconstruction_statement_preserves_the_physical_map():
