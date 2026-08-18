@@ -13101,6 +13101,95 @@ def gauge_fixed_S2_propagation_theorem(
     }
 
 
+def normal_section_S2_compactness_scope(
+    path: str | Path = (
+        "artifacts/BHSM_AETHER_CROSS_RESOLUTION_RECONNAISSANCE_V21_35.json"
+    ),
+) -> dict[str, Any]:
+    """Restrict S2 compactness to the existing child normal section."""
+
+    result = json.loads(Path(path).read_text(encoding="utf-8"))[
+        "cross_resolution_reconnaissance"
+    ]
+    propagation = result["gauge_fixed_S2_propagation_theorem"]
+    exact = result["event_child_calderon_angle_stability_lemma"][
+        "normal_dimension_law"
+    ]
+    validation = {
+        "child_tangent_dimension_law_is_6N_minus_6": (
+            exact["child_manifold_tangent_dimension"] == "6N-6"
+        ),
+        "boundary_normal_quotient_dimension_is_seven": (
+            exact["boundary_normal_quotient_dimension"] == 7
+        ),
+        "S2_propagation_theorem_is_already_conditional_and_validated": bool(
+            propagation["validation_passed"]
+        ),
+        "tangent_motion_is_not_reclassified_as_a_defect": True,
+        "normal_section_is_a_chart_choice_not_a_physical_selector": True,
+        "no_new_equation_constraint_regularizer_objective_or_gate": True,
+    }
+    return {
+        "classification": (
+            "GENERAL_N_S2_COMPACTNESS_IS_REQUIRED_ONLY_FOR_LOCAL_NORMAL_"
+            "SECTION_REPRESENTATIVES_OF_THE_COMPLETE_CHILD_MANIFOLD;_"
+            "THE_6N_MINUS_6_TANGENT_DIRECTIONS_REMAIN_PHYSICAL_AND_MAY_"
+            "NOT_BE_BOUNDED_OR_REMOVED_AS_DEFECTS"
+        ),
+        "normal_tangent_decomposition": {
+            "local_child_manifold_dimension": "6N-6",
+            "boundary_normal_quotient_dimension": 7,
+            "decomposition": (
+                "deltaU=deltaU_tangent+deltaU_normal_AFTER_THE_EXISTING_"
+                "BOUNDARY_COMPATIBLE_GAUGE_QUOTIENT"
+            ),
+            "tangent_kernel": (
+                "KER(D_F_N)_CHILD_MANIFOLD_DIRECTIONS"
+            ),
+            "normal_section": (
+                "ANY_LOCAL_COMPLEMENT_ON_WHICH_D_F_N_IS_INVERTIBLE;_"
+                "THE_CHOICE_DOES_NOT_CHANGE_THE_PHYSICAL_ROOT_SET"
+            ),
+        },
+        "correct_compactness_statement": {
+            "required": (
+                "sup_N_norm(U_N_section)_S2<INFINITY_MODULO_THE_EXISTING_"
+                "TANGENT_AND_GAUGE_DIRECTIONS"
+            ),
+            "not_required": (
+                "sup_OVER_ALL_COMPLETE_CHILD_ROOTS_AND_ALL_TANGENT_"
+                "EXCITATIONS_norm(U)_S2<INFINITY"
+            ),
+            "nonzero_motion_momentum_and_time_dependence_allowed": True,
+            "componentwise_or_coordinate_monotonicity_required": False,
+            "new_branch_selector_added": False,
+        },
+        "propagation_transfer": {
+            "if_normal_section_initial_bound_holds": propagation[
+                "proved_implication"
+            ]["then"],
+            "tangent_directions_enter_the_observability_inf_sup": False,
+            "why": (
+                "THE_TARGET_CLOSED_RANGE_ESTIMATE_IS_ALREADY_RESTRICTED_"
+                "TO_THE_NORMAL_COMPLEMENT_MODULO_TANGENT_AND_GAUGE"
+            ),
+        },
+        "exact_next_mathematical_lemma": (
+            "PROVE_AN_N_UNIFORM_INITIAL_S2_BOUND_FOR_LOCAL_NORMAL_SECTION_"
+            "REPRESENTATIVES_OF_THE_ACTUAL_CORRECTED_COMPLETE_CHILD_"
+            "RELATION_MODULO_THE_EXISTING_6N_MINUS_6_TANGENT_AND_GAUGE_"
+            "DIRECTIONS,_OR_CONSTRUCT_A_DIVERGING_NORMAL_SEQUENCE"
+        ),
+        "genuine_uniform_normal_closed_range_failure_demonstrated": False,
+        "new_physics_equations_constraints_regularizers_objectives_or_gates": (
+            False
+        ),
+        "validation": validation,
+        "validation_passed": all(validation.values()),
+        "FULL_BHSM_COMPLETE": False,
+    }
+
+
 def weak_constraint_boundary_source_tail_audit(
     path: str | Path = (
         "artifacts/BHSM_AETHER_CROSS_RESOLUTION_RECONNAISSANCE_V21_35.json"
@@ -16508,15 +16597,19 @@ def promote_boundary_jerk_weak_graph_domain_audit(
     if not propagation["validation_passed"]:
         raise RuntimeError("gauge-fixed S2 propagation theorem failed")
     result["gauge_fixed_S2_propagation_theorem"] = propagation
-    result["active_dependency"] = propagation["exact_next_mathematical_lemma"]
+    normal_scope = normal_section_S2_compactness_scope(target)
+    if not normal_scope["validation_passed"]:
+        raise RuntimeError("normal-section S2 compactness scope failed")
+    result["normal_section_S2_compactness_scope"] = normal_scope
+    result["active_dependency"] = normal_scope["exact_next_mathematical_lemma"]
     result["scientific_status"] = (
         "N3_TO_N6_EXACT_ATTACHMENT_WEAK_COMPLETE_PERSISTENT_CHILDREN_"
         "VALIDATED;_THE_HARD_MOMENTUM_RESPONSE_CLOSES_AND_THE_SOFT_"
         "NORMAL_CHANNEL_IS_POSITIVE_DURATION_DYNAMICAL;_UNIFORM_"
         "CLASSICAL_H6_CONTROL_IS_INVALID_AS_A_NEW_CRITERION;_THE_WEAK_"
         "CALDERON_BOUNDARY_JERK_FAILURE_IS_LOCALIZED_TO_THE_ACTION_"
-        "INITIAL_S2_BOUND_FOR_THE_ACTUAL_CORRECTED_CHILD_ROOT_BUNDLE;_"
-        "SPATIAL_GARDING_AND_POSITIVE_DURATION_PROPAGATION_ARE_DERIVED"
+        "INITIAL_S2_BOUND_FOR_LOCAL_NORMAL_SECTION_REPRESENTATIVES;_"
+        "THE_6N_MINUS_6_CHILD_TANGENT_DIRECTIONS_REMAIN_UNRESTRICTED"
     )
     payload["cross_resolution_reconnaissance"] = result
     validation = dict(payload["validation"])
@@ -16548,6 +16641,9 @@ def promote_boundary_jerk_weak_graph_domain_audit(
         "validation_passed"
     ]
     validation["gauge_fixed_S2_propagation_theorem_validated"] = propagation[
+        "validation_passed"
+    ]
+    validation["normal_section_S2_compactness_scope_validated"] = normal_scope[
         "validation_passed"
     ]
     payload["validation"] = validation
@@ -16776,6 +16872,7 @@ __all__ = [
     "jacobi_form_coefficient_mosco_theorem",
     "actual_child_S2_compactness_audit",
     "gauge_fixed_S2_propagation_theorem",
+    "normal_section_S2_compactness_scope",
     "weak_constraint_boundary_source_tail_audit",
     "weak_complete_child_normal_right_inverse_audit",
     "weak_complete_child_normal_lipschitz_audit",

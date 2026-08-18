@@ -18,6 +18,7 @@ from bhsm.interface.aether_cross_resolution_reconnaissance_v21_35 import (
     jacobi_form_coefficient_mosco_theorem,
     actual_child_S2_compactness_audit,
     gauge_fixed_S2_propagation_theorem,
+    normal_section_S2_compactness_scope,
     uniform_boundary_jerk_compactness_reduction,
     uniform_positive_duration_normal_closed_range_reduction,
     weak_calderon_boundary_generator_reduction,
@@ -413,6 +414,28 @@ def test_gauge_fixed_S2_propagation_theorem():
     assert audit["proved_implication"][
         "initial_N_uniform_bound_proved_from_N3_to_N6"
     ] is False
+    assert audit[
+        "genuine_uniform_normal_closed_range_failure_demonstrated"
+    ] is False
+    assert audit[
+        "new_physics_equations_constraints_regularizers_objectives_or_gates"
+    ] is False
+
+
+def test_normal_section_S2_compactness_scope():
+    audit = normal_section_S2_compactness_scope()
+    assert audit["validation_passed"] is True
+    decomposition = audit["normal_tangent_decomposition"]
+    assert decomposition["local_child_manifold_dimension"] == "6N-6"
+    compactness = audit["correct_compactness_statement"]
+    assert "ALL_COMPLETE_CHILD_ROOTS" in compactness["not_required"]
+    assert compactness[
+        "nonzero_motion_momentum_and_time_dependence_allowed"
+    ] is True
+    assert compactness["componentwise_or_coordinate_monotonicity_required"] is False
+    assert compactness["new_branch_selector_added"] is False
+    transfer = audit["propagation_transfer"]
+    assert transfer["tangent_directions_enter_the_observability_inf_sup"] is False
     assert audit[
         "genuine_uniform_normal_closed_range_failure_demonstrated"
     ] is False
