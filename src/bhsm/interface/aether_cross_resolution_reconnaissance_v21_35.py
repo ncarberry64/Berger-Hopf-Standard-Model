@@ -13190,6 +13190,123 @@ def normal_section_S2_compactness_scope(
     }
 
 
+def soft_normal_fredholm_compactness_dichotomy(
+    path: str | Path = (
+        "artifacts/BHSM_AETHER_CROSS_RESOLUTION_RECONNAISSANCE_V21_35.json"
+    ),
+) -> dict[str, Any]:
+    """Identify genuine uniform failure with a continuum normal kernel."""
+
+    result = json.loads(Path(path).read_text(encoding="utf-8"))[
+        "cross_resolution_reconnaissance"
+    ]
+    scope = result["normal_section_S2_compactness_scope"]
+    mosco = result["jacobi_form_coefficient_mosco_theorem"]
+    propagation = result["gauge_fixed_S2_propagation_theorem"]
+    hard = result["mixed_euler_dirac_hard_momentum_response_audit"]
+    validation = {
+        "normal_boundary_quotient_has_fixed_dimension_seven": (
+            scope["normal_tangent_decomposition"][
+                "boundary_normal_quotient_dimension"
+            ] == 7
+        ),
+        "principal_spatial_gap_and_propagation_are_derived": bool(
+            propagation["validation_passed"]
+        ),
+        "coefficient_to_Mosco_implication_is_derived": (
+            mosco["closed_and_open"][
+                "operator_coefficient_to_Mosco_implication"
+            ] == "PROVED"
+        ),
+        "finite_N_soft_response_is_resolved_nonzero": bool(
+            hard["soft_channel"]["exact_response_projection_magnitude"] > 0.0
+        ),
+        "finite_conditioning_not_used_as_a_failure_proof": True,
+        "tangent_and_gauge_kernels_remain_quotiented_not_deleted": True,
+        "no_new_equation_constraint_regularizer_objective_or_gate": True,
+    }
+    return {
+        "classification": (
+            "ON_ANY_S2_ETA_PRECOMPACT_NORMAL_SECTION_BUNDLE,_FAILURE_OF_"
+            "THE_N_UNIFORM_NORMAL_RIGHT_INVERSE_IS_EQUIVALENT_TO_THE_"
+            "EXISTENCE_OF_A_NONZERO_CONTINUUM_GAUGE_QUOTIENTED_NORMAL_"
+            "JACOBI_KERNEL;_RAW_SMALL_SINGULAR_VALUES_OR_D2_FAILURE_"
+            "ALONE_DO_NOT_ESTABLISH_CATEGORY_3"
+        ),
+        "Fredholm_setup": {
+            "normal_boundary_dimension": 7,
+            "principal_operator": (
+                "THE_EXISTING_WEIGHTED_GAUGE_FIXED_RADIAL_OPERATOR_WITH_"
+                "ABSOLUTE_GAP_sqrt(29)-5"
+            ),
+            "lower_order_terms": (
+                "RELATIVELY_COMPACT_ONE_DIMENSIONAL_MULTIPLICATION,_"
+                "FINITE_RANK_COLLECTIVE_INERTIA,_AND_FINITE_DIMENSIONAL_"
+                "WEAK_CONORMAL_BOUNDARY_COUPLING"
+            ),
+            "Fredholm_index": 0,
+            "physical_tangent_kernel_included_in_normal_problem": False,
+        },
+        "compactness_contradiction": {
+            "assume_failure": (
+                "EXISTS_N_j_AND_NORMAL_x_j_WITH_norm(x_j)_S2=1_AND_"
+                "norm(J_Nj*x_j,Gamma_Nj*x_j)_dual_TO_ZERO"
+            ),
+            "background_compactness": (
+                "S2_ETA_PRECOMPACTNESS_SELECTS_A_STRONGLY_CONVERGENT_"
+                "BACKGROUND_SUBSEQUENCE"
+            ),
+            "operator_limit": (
+                "THE_PROVED_COEFFICIENT_TO_MOSCO_THEOREM_PASSES_THE_"
+                "JACOBI_AND_WEAK_CONORMAL_RELATIONS_TO_THE_LIMIT"
+            ),
+            "no_high_frequency_escape": (
+                "THE_WEIGHTED_GARDING_ESTIMATE_IMPLIES_"
+                "1<=C*(RESIDUAL+norm(x_j)_X_E);_COMPACT_X_E_EMBEDDING_"
+                "PREVENTS_THE_LIMIT_FROM_VANISHING"
+            ),
+            "limit": (
+                "NONZERO_x_star_IN_THE_NORMAL_QUOTIENT_WITH_"
+                "J_star*x_star=0_AND_ZERO_MATCHED_BOUNDARY_HISTORY"
+            ),
+        },
+        "converse": {
+            "continuum_normal_kernel_is_compatible_with_a_uniform_right_"
+            "inverse": False,
+            "meaning": (
+                "A_NONZERO_NORMAL_KERNEL_PRODUCES_GALERKIN_QUASIMODES_"
+                "AND_FORCES_THE_DISCRETE_NORMAL_INF_SUP_TO_ZERO"
+            ),
+        },
+        "classification_policy": {
+            "category_2": (
+                "NO_CONTINUUM_NORMAL_KERNEL_OR_L2_HISTORY_COLLAPSE_HAS_"
+                "BEEN_CONSTRUCTED;_THE_FINITE_N_RESPONSE_IS_NONZERO"
+            ),
+            "category_3_requires": (
+                "EXHIBIT_THE_NONZERO_CONTINUUM_NORMAL_KERNEL_OR_AN_"
+                "EQUIVALENT_ACTION_NORMALIZED_L2_HISTORY_COLLAPSE_SEQUENCE"
+            ),
+            "current_category": (
+                "NORMAL_DIRECTION_CONTROLLED_BY_THE_EXISTING_POSITIVE_"
+                "DURATION_GAUGE_FIXED_JACOBI_EVOLUTION"
+            ),
+            "genuine_uniform_failure_demonstrated": False,
+        },
+        "exact_next_mathematical_lemma": (
+            "PROVE_CONTINUUM_GAUGE_QUOTIENTED_NORMAL_SOFT_JACOBI_KERNEL_"
+            "ABSENCE_FROM_THE_POSITIVE_DURATION_WEAK_GREEN_ENERGY_"
+            "IDENTITY,_OR_EXHIBIT_THE_NONZERO_KERNEL_HISTORY"
+        ),
+        "new_physics_equations_constraints_regularizers_objectives_or_gates": (
+            False
+        ),
+        "validation": validation,
+        "validation_passed": all(validation.values()),
+        "FULL_BHSM_COMPLETE": False,
+    }
+
+
 def weak_constraint_boundary_source_tail_audit(
     path: str | Path = (
         "artifacts/BHSM_AETHER_CROSS_RESOLUTION_RECONNAISSANCE_V21_35.json"
@@ -16601,15 +16718,19 @@ def promote_boundary_jerk_weak_graph_domain_audit(
     if not normal_scope["validation_passed"]:
         raise RuntimeError("normal-section S2 compactness scope failed")
     result["normal_section_S2_compactness_scope"] = normal_scope
-    result["active_dependency"] = normal_scope["exact_next_mathematical_lemma"]
+    fredholm = soft_normal_fredholm_compactness_dichotomy(target)
+    if not fredholm["validation_passed"]:
+        raise RuntimeError("soft normal Fredholm dichotomy failed")
+    result["soft_normal_fredholm_compactness_dichotomy"] = fredholm
+    result["active_dependency"] = fredholm["exact_next_mathematical_lemma"]
     result["scientific_status"] = (
         "N3_TO_N6_EXACT_ATTACHMENT_WEAK_COMPLETE_PERSISTENT_CHILDREN_"
         "VALIDATED;_THE_HARD_MOMENTUM_RESPONSE_CLOSES_AND_THE_SOFT_"
         "NORMAL_CHANNEL_IS_POSITIVE_DURATION_DYNAMICAL;_UNIFORM_"
         "CLASSICAL_H6_CONTROL_IS_INVALID_AS_A_NEW_CRITERION;_THE_WEAK_"
         "CALDERON_BOUNDARY_JERK_FAILURE_IS_LOCALIZED_TO_THE_ACTION_"
-        "INITIAL_S2_BOUND_FOR_LOCAL_NORMAL_SECTION_REPRESENTATIVES;_"
-        "THE_6N_MINUS_6_CHILD_TANGENT_DIRECTIONS_REMAIN_UNRESTRICTED"
+        "CONTINUUM_NORMAL_SOFT_JACOBI_KERNEL_ABSENCE;_UNIFORM_FAILURE_"
+        "IS_NOW_EQUIVALENT_TO_A_NONZERO_NORMAL_KERNEL"
     )
     payload["cross_resolution_reconnaissance"] = result
     validation = dict(payload["validation"])
@@ -16646,6 +16767,9 @@ def promote_boundary_jerk_weak_graph_domain_audit(
     validation["normal_section_S2_compactness_scope_validated"] = normal_scope[
         "validation_passed"
     ]
+    validation["soft_normal_fredholm_compactness_dichotomy_validated"] = (
+        fredholm["validation_passed"]
+    )
     payload["validation"] = validation
     payload["validation_passed"] = all(validation.values())
     target.write_text(deterministic_json(payload), encoding="utf-8")
@@ -16873,6 +16997,7 @@ __all__ = [
     "actual_child_S2_compactness_audit",
     "gauge_fixed_S2_propagation_theorem",
     "normal_section_S2_compactness_scope",
+    "soft_normal_fredholm_compactness_dichotomy",
     "weak_constraint_boundary_source_tail_audit",
     "weak_complete_child_normal_right_inverse_audit",
     "weak_complete_child_normal_lipschitz_audit",

@@ -19,6 +19,7 @@ from bhsm.interface.aether_cross_resolution_reconnaissance_v21_35 import (
     actual_child_S2_compactness_audit,
     gauge_fixed_S2_propagation_theorem,
     normal_section_S2_compactness_scope,
+    soft_normal_fredholm_compactness_dichotomy,
     uniform_boundary_jerk_compactness_reduction,
     uniform_positive_duration_normal_closed_range_reduction,
     weak_calderon_boundary_generator_reduction,
@@ -439,6 +440,27 @@ def test_normal_section_S2_compactness_scope():
     assert audit[
         "genuine_uniform_normal_closed_range_failure_demonstrated"
     ] is False
+    assert audit[
+        "new_physics_equations_constraints_regularizers_objectives_or_gates"
+    ] is False
+
+
+def test_soft_normal_fredholm_compactness_dichotomy():
+    audit = soft_normal_fredholm_compactness_dichotomy()
+    assert audit["validation_passed"] is True
+    setup = audit["Fredholm_setup"]
+    assert setup["normal_boundary_dimension"] == 7
+    assert setup["Fredholm_index"] == 0
+    assert setup["physical_tangent_kernel_included_in_normal_problem"] is False
+    compactness = audit["compactness_contradiction"]
+    assert "NONZERO_x_star" in compactness["limit"]
+    policy = audit["classification_policy"]
+    assert "L2_HISTORY_COLLAPSE" in policy["category_3_requires"]
+    assert policy["genuine_uniform_failure_demonstrated"] is False
+    assert policy["current_category"] == (
+        "NORMAL_DIRECTION_CONTROLLED_BY_THE_EXISTING_POSITIVE_"
+        "DURATION_GAUGE_FIXED_JACOBI_EVOLUTION"
+    )
     assert audit[
         "new_physics_equations_constraints_regularizers_objectives_or_gates"
     ] is False
