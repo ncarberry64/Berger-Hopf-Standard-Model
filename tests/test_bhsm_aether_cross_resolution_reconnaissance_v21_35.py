@@ -483,6 +483,73 @@ def test_latest_n4_child_checkpoint_uses_fixed_merit_full_space_proposal():
     assert n6_persistence[
         "finite_duration_numerical_movie_converged"
     ] is True
+    n5_matched = payload["cross_resolution_reconnaissance"][
+        "coherent_N5_exact_attachment_weak_child_audit"
+    ]
+    assert n5_matched["validation_passed"] is True
+    assert n5_matched["final_exact_attachment_jump_norm"] < 1.0e-9
+    assert n5_matched["final_compatibility_maximum"] < 1.0e-9
+    assert n5_matched["two_sided_reaction_match_norm"] < 1.0e-6
+    assert n5_matched["legacy_local_dynamic_flux_map_reopened"] is False
+    assert n5_matched["new_equation_constraint_or_acceptance_gate"] is False
+    n5_matched_candidate = payload["cross_resolution_reconnaissance"][
+        "coherent_N5_exact_attachment_weak_child_candidate"
+    ]
+    assert n5_matched_candidate[
+        "complete_persistent_child_validated"
+    ] is True
+    n5_matched_persistence = payload["cross_resolution_reconnaissance"][
+        "coherent_N5_exact_attachment_positive_duration_persistence"
+    ]
+    assert n5_matched_persistence[
+        "positive_duration_relative_persistence_validated"
+    ] is True
+    assert n5_matched_persistence[
+        "nonzero_relative_evolution_retained"
+    ] is True
+    legacy_matched = payload["cross_resolution_reconnaissance"][
+        "legacy_N3_N4_exact_attachment_weak_child_audit"
+    ]
+    assert legacy_matched["validation_passed"] is True
+    assert [row["N"] for row in legacy_matched["rows"]] == [3, 4]
+    assert all(
+        row["final_exact_attachment_jump_norm"] < 1.0e-9
+        and row["final_compatibility_maximum"] < 1.0e-9
+        and row["two_sided_reaction_match_norm"] < 1.0e-6
+        for row in legacy_matched["rows"]
+    )
+    assert legacy_matched[
+        "legacy_local_dynamic_flux_maps_reopened"
+    ] is False
+    for order in (3, 4):
+        candidate = payload["cross_resolution_reconnaissance"][
+            f"N{order}_exact_attachment_weak_child_candidate"
+        ]
+        persistence = payload["cross_resolution_reconnaissance"][
+            f"N{order}_exact_attachment_positive_duration_persistence"
+        ]
+        assert candidate["complete_persistent_child_validated"] is True
+        assert persistence[
+            "positive_duration_relative_persistence_validated"
+        ] is True
+        assert persistence["nonzero_relative_evolution_retained"] is True
+    graph = payload["cross_resolution_reconnaissance"][
+        "matched_weak_reaction_graph_convergence_audit"
+    ]
+    assert graph["validation_passed"] is True
+    assert [row["N"] for row in graph["rows"]] == [3, 4, 5, 6]
+    assert graph["general_N_convergence_proved"] is False
+    assert graph[
+        "raw_DtN_jump_reclassified_as_a_physical_graph_failure"
+    ] is False
+    assert all(
+        comparison[
+            "bounded_Calderon_graph_projector_operator_difference"
+        ] <= 1.0
+        for comparison in graph["comparisons"]
+    )
+    assert graph["increase_N_mechanically_as_the_next_step"] is False
+    assert graph["new_equations_constraints_or_acceptance_gates"] is False
 
 
 def test_general_n_reconstruction_statement_preserves_the_physical_map():

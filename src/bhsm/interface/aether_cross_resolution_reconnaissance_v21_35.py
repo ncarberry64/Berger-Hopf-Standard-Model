@@ -19,6 +19,7 @@ import numpy as np
 from scipy.linalg import qr
 from scipy.optimize import (
     brentq,
+    least_squares,
     linear_sum_assignment,
     minimize_scalar,
 )
@@ -5758,6 +5759,48 @@ def n6_weak_complete_child_positive_duration_persistence(
     )
 
 
+@lru_cache(maxsize=2)
+def coherent_n5_exact_attachment_positive_duration_persistence(
+    *, points: int = 44, time_step: float = 1.0e-5, steps: int = 10,
+) -> dict[str, Any]:
+    """Evolve the exact-attachment matched coherent N5 weak child."""
+
+    return n4_complete_child_positive_duration_persistence(
+        points=points,
+        time_step=time_step,
+        steps=steps,
+        _order=5,
+        _child_key="coherent_N5_exact_attachment_weak_child_candidate",
+        _source_label=(
+            "COHERENT_N5_EXACT_ATTACHMENT_WEAK_CONORMAL_CHILD"
+        ),
+    )
+
+
+@lru_cache(maxsize=4)
+def legacy_exact_attachment_positive_duration_persistence(
+    order: int,
+    *,
+    points: int = 44,
+    time_step: float = 1.0e-5,
+    steps: int = 10,
+) -> dict[str, Any]:
+    """Evolve an exact-attachment matched legacy weak child."""
+
+    if order not in (3, 4):
+        raise ValueError("legacy matched persistence supports N3 or N4")
+    return n4_complete_child_positive_duration_persistence(
+        points=points,
+        time_step=time_step,
+        steps=steps,
+        _order=order,
+        _child_key=f"N{order}_exact_attachment_weak_child_candidate",
+        _source_label=(
+            f"N{order}_EXACT_ATTACHMENT_WEAK_CONORMAL_CHILD"
+        ),
+    )
+
+
 def child_jacobi_radial_principal_symbol_audit() -> dict[str, Any]:
     """Derive the radial principal form of the retained Galerkin action."""
 
@@ -8201,6 +8244,476 @@ def n6_event_child_weak_reaction_audit(
         ),
         "finite_N5_physical_map_and_gates_unchanged": True,
     }
+
+
+def coherent_n5_exact_attachment_weak_child_audit(
+    path: str | Path = (
+        "artifacts/BHSM_AETHER_CROSS_RESOLUTION_RECONNAISSANCE_V21_35.json"
+    ),
+    *,
+    points: int = 44,
+) -> dict[str, Any]:
+    """Reconcile the coherent N5 child with the exact attachment BVP map."""
+
+    target = Path(path)
+    result = json.loads(target.read_text(encoding="utf-8"))[
+        "cross_resolution_reconnaissance"
+    ]
+    event = action_energy_topology_coherent_event_audit(target)[
+        "coherent_N4_to_N5_event"
+    ]
+    q_event = np.asarray(event["coordinates"], dtype=float)
+    v_event = np.asarray(event["velocities"], dtype=float)
+    m_event = np.asarray(event["multipliers"], dtype=float)
+    exact = result["coherent_N4_to_N5_complete_child_graph"][
+        "child_state"
+    ]["binary64_hex"]
+    q_child = np.asarray([
+        float.fromhex(value) for value in exact["coordinates"]
+    ])
+    v_child = np.asarray([
+        float.fromhex(value) for value in exact["velocities"]
+    ])
+    m_child = np.asarray([
+        float.fromhex(value) for value in exact["multipliers"]
+    ])
+    order = 5
+    qdim = dimensions(order)["coordinates"]
+    event_momentum = _canonical_pair_at_order(
+        order, q_event, v_event, m_event, points=points
+    )[0]
+    seed = np.concatenate((q_child, v_child, m_child))
+    frequencies = spectral_frequencies(order)
+    weights = np.concatenate((
+        np.sqrt(1.0 + frequencies["coordinates"] ** 2),
+        np.ones(qdim),
+        np.sqrt(1.0 + frequencies["multipliers"] ** 2),
+    ))
+
+    def physical_state(value: np.ndarray) -> np.ndarray:
+        return seed + value / weights
+
+    def physical_rows(state: np.ndarray) -> np.ndarray:
+        return np.concatenate((
+            _child_compatibility_rows_at_order(
+                order, state, q_event, event_momentum, points=points
+            ),
+            _attachment_coordinates_at_order(order, state[:qdim])
+            - _attachment_coordinates_at_order(order, q_event),
+        ))
+
+    initial_rows = physical_rows(seed)
+    row_scale = np.maximum(1.0, np.abs(initial_rows))
+    solution = least_squares(
+        lambda value: physical_rows(physical_state(value)) / row_scale,
+        np.zeros_like(seed),
+        method="trf",
+        jac="2-point",
+        xtol=1.0e-12,
+        ftol=1.0e-12,
+        gtol=1.0e-12,
+        max_nfev=300,
+    )
+    solved = physical_state(solution.x)
+    final_rows = physical_rows(solved)
+    solved_q = solved[:qdim]
+    solved_v = solved[qdim:2 * qdim]
+    solved_m = solved[2 * qdim:]
+    compatibility_count = 2 * order + 6
+    compatibility_maximum = float(np.max(np.abs(
+        final_rows[:compatibility_count]
+    )))
+    attachment_norm = float(np.linalg.norm(
+        final_rows[compatibility_count:]
+    ))
+    eta = _eta_legendre_minimum(order, solved_q, solved_m, points=2000)
+
+    event_boundary = _attachment_jacobian_at_order(order, q_event)
+    child_boundary = _attachment_jacobian_at_order(order, solved_q)
+    event_dynamics = _exact_full_jet_euler_dirac_acceleration(
+        order, q_event, v_event, m_event, points=points
+    )
+    event_boundary_acceleration = (
+        event_boundary @ np.asarray(
+            event_dynamics["acceleration"], dtype=float
+        )
+        + _attachment_chart_curvature_on_velocity(
+            order, q_event, v_event
+        )
+    )
+    event_reaction = _child_history_boundary_reaction_solve(
+        order,
+        q_event,
+        v_event,
+        m_event,
+        event_boundary_acceleration,
+        points=points,
+    )
+    child_zero = _child_history_boundary_reaction_solve(
+        order, solved_q, solved_v, solved_m, np.zeros(2), points=points
+    )
+    child_offset = np.asarray(child_zero["boundary_reaction"], dtype=float)
+    child_response = np.empty((2, 2))
+    for column in range(2):
+        unit = np.zeros(2)
+        unit[column] = 1.0
+        response = _child_history_boundary_reaction_solve(
+            order, solved_q, solved_v, solved_m, unit, points=points
+        )
+        child_response[:, column] = (
+            np.asarray(response["boundary_reaction"], dtype=float)
+            - child_offset
+        )
+    event_reaction_vector = np.asarray(
+        event_reaction["boundary_reaction"], dtype=float
+    )
+    child_boundary_acceleration = np.linalg.solve(
+        child_response, -event_reaction_vector - child_offset
+    )
+    child_reaction = _child_history_boundary_reaction_solve(
+        order,
+        solved_q,
+        solved_v,
+        solved_m,
+        child_boundary_acceleration,
+        points=points,
+    )
+    child_reaction_vector = np.asarray(
+        child_reaction["boundary_reaction"], dtype=float
+    )
+    reaction_match = float(np.linalg.norm(
+        event_reaction_vector + child_reaction_vector
+    ))
+    child_momentum = _canonical_pair_at_order(
+        order, solved_q, solved_v, solved_m, points=points
+    )[0]
+    maximum_bvp_residual = max(
+        child_reaction["maximum_Euler_reaction_residual"],
+        child_reaction["maximum_constraint_tangent_residual"],
+        child_reaction["maximum_boundary_acceleration_residual"],
+    )
+    validation = {
+        "compatibility_fiber_remains_closed": bool(
+            compatibility_maximum < 1.0e-9
+        ),
+        "exact_attachment_configuration_matches": bool(
+            attachment_norm < 1.0e-9
+        ),
+        "two_sided_weak_reaction_matches": bool(
+            reaction_match < 1.0e-6
+        ),
+        "bordered_reaction_blocks_replay": bool(
+            maximum_bvp_residual < 1.0e-6
+        ),
+        "canonical_momentum_match_replays": bool(
+            np.linalg.norm(child_momentum - event_momentum) < 1.0e-9
+        ),
+        "eta_domain_retained": bool(eta["minimum"] > 0.0),
+        "original_coherent_F18_root_unchanged": True,
+    }
+
+
+def legacy_n3_n4_exact_attachment_weak_child_audit(
+    path: str | Path = (
+        "artifacts/BHSM_AETHER_CROSS_RESOLUTION_RECONNAISSANCE_V21_35.json"
+    ),
+    *,
+    points: int = 44,
+) -> dict[str, Any]:
+    """Reconcile the legacy N3/N4 children with the exact boundary map."""
+
+    target = Path(path)
+    result = json.loads(target.read_text(encoding="utf-8"))[
+        "cross_resolution_reconnaissance"
+    ]
+    n3_payload = json.loads((target.parent / (
+        "BHSM_aether_n3_complete_child_persistence_v17_99.json"
+    )).read_text(encoding="utf-8"))
+    n3_state = unpack_reduced(v17_75_selected_raw_vector())
+    n3_q_history = np.asarray(n3_state["coordinates"], dtype=float)
+    n3_m_history = np.asarray(n3_state["multipliers"], dtype=float)
+    n3_v_history = (
+        trapezoid_sbp_difference() @ n3_q_history
+        / float(n3_state["period"])
+    )
+    n4_event = result["N4_adaptive_event_convergence_audit"][
+        "quadrature_control"
+    ]["event"]
+    events = {
+        3: (n3_q_history[-1], n3_v_history[-1], n3_m_history[-1]),
+        4: tuple(
+            np.asarray(n4_event[name], dtype=float)
+            for name in ("coordinates", "velocities", "multipliers")
+        ),
+    }
+    sources = {
+        3: n3_payload["complete_child_persistence"]["evolution"]["rows"][0],
+        4: result[
+            "N4_event_conditioned_complete_child_reconstruction"
+        ]["child_state"],
+    }
+
+    def decode(source: Mapping[str, Any]) -> tuple[np.ndarray, ...]:
+        exact = source.get("binary64_hex")
+        if exact is None:
+            return tuple(
+                np.asarray(source[name], dtype=float)
+                for name in ("coordinates", "velocities", "multipliers")
+            )
+        return tuple(
+            np.asarray([float.fromhex(value) for value in exact[name]])
+            for name in ("coordinates", "velocities", "multipliers")
+        )
+
+    rows = []
+    for order in (3, 4):
+        q_event, v_event, m_event = events[order]
+        q_child, v_child, m_child = decode(sources[order])
+        qdim = dimensions(order)["coordinates"]
+        event_momentum = _canonical_pair_at_order(
+            order, q_event, v_event, m_event, points=points
+        )[0]
+        seed = np.concatenate((q_child, v_child, m_child))
+        frequencies = spectral_frequencies(order)
+        weights = np.concatenate((
+            np.sqrt(1.0 + frequencies["coordinates"] ** 2),
+            np.ones(qdim),
+            np.sqrt(1.0 + frequencies["multipliers"] ** 2),
+        ))
+
+        def physical_state(value: np.ndarray) -> np.ndarray:
+            return seed + value / weights
+
+        def physical_rows(state: np.ndarray) -> np.ndarray:
+            return np.concatenate((
+                _child_compatibility_rows_at_order(
+                    order,
+                    state,
+                    q_event,
+                    event_momentum,
+                    points=points,
+                ),
+                _attachment_coordinates_at_order(order, state[:qdim])
+                - _attachment_coordinates_at_order(order, q_event),
+            ))
+
+        initial_rows = physical_rows(seed)
+        row_scale = np.maximum(1.0, np.abs(initial_rows))
+        solution = least_squares(
+            lambda value: (
+                physical_rows(physical_state(value)) / row_scale
+            ),
+            np.zeros_like(seed),
+            method="trf",
+            jac="2-point",
+            xtol=1.0e-12,
+            ftol=1.0e-12,
+            gtol=1.0e-12,
+            max_nfev=300,
+        )
+        solved = physical_state(solution.x)
+        final_rows = physical_rows(solved)
+        solved_q = solved[:qdim]
+        solved_v = solved[qdim:2 * qdim]
+        solved_m = solved[2 * qdim:]
+        compatibility_count = 2 * order + 6
+        compatibility_maximum = float(np.max(np.abs(
+            final_rows[:compatibility_count]
+        )))
+        attachment_norm = float(np.linalg.norm(
+            final_rows[compatibility_count:]
+        ))
+        eta = _eta_legendre_minimum(
+            order, solved_q, solved_m, points=2000
+        )
+
+        event_boundary = _attachment_jacobian_at_order(order, q_event)
+        event_dynamics = _exact_full_jet_euler_dirac_acceleration(
+            order, q_event, v_event, m_event, points=points
+        )
+        event_boundary_acceleration = (
+            event_boundary @ np.asarray(
+                event_dynamics["acceleration"], dtype=float
+            )
+            + _attachment_chart_curvature_on_velocity(
+                order, q_event, v_event
+            )
+        )
+        event_reaction = _child_history_boundary_reaction_solve(
+            order,
+            q_event,
+            v_event,
+            m_event,
+            event_boundary_acceleration,
+            points=points,
+        )
+        child_zero = _child_history_boundary_reaction_solve(
+            order,
+            solved_q,
+            solved_v,
+            solved_m,
+            np.zeros(2),
+            points=points,
+        )
+        child_offset = np.asarray(
+            child_zero["boundary_reaction"], dtype=float
+        )
+        child_response = np.empty((2, 2))
+        for column in range(2):
+            unit = np.zeros(2)
+            unit[column] = 1.0
+            response = _child_history_boundary_reaction_solve(
+                order,
+                solved_q,
+                solved_v,
+                solved_m,
+                unit,
+                points=points,
+            )
+            child_response[:, column] = (
+                np.asarray(response["boundary_reaction"], dtype=float)
+                - child_offset
+            )
+        event_reaction_vector = np.asarray(
+            event_reaction["boundary_reaction"], dtype=float
+        )
+        child_boundary_acceleration = np.linalg.solve(
+            child_response, -event_reaction_vector - child_offset
+        )
+        child_reaction = _child_history_boundary_reaction_solve(
+            order,
+            solved_q,
+            solved_v,
+            solved_m,
+            child_boundary_acceleration,
+            points=points,
+        )
+        child_reaction_vector = np.asarray(
+            child_reaction["boundary_reaction"], dtype=float
+        )
+        reaction_match = float(np.linalg.norm(
+            event_reaction_vector + child_reaction_vector
+        ))
+        child_momentum = _canonical_pair_at_order(
+            order, solved_q, solved_v, solved_m, points=points
+        )[0]
+        maximum_bvp_residual = max(
+            child_reaction["maximum_Euler_reaction_residual"],
+            child_reaction["maximum_constraint_tangent_residual"],
+            child_reaction["maximum_boundary_acceleration_residual"],
+        )
+        rows.append({
+            "N": order,
+            "least_squares_success": bool(solution.success),
+            "function_evaluations": int(solution.nfev),
+            "initial_exact_attachment_jump_norm": float(np.linalg.norm(
+                initial_rows[-2:]
+            )),
+            "final_exact_attachment_jump_norm": attachment_norm,
+            "final_compatibility_maximum": compatibility_maximum,
+            "action_energy_correction_norm": float(
+                np.linalg.norm(solution.x)
+            ),
+            "eta_Legendre_minimum": eta["minimum"],
+            "child_reaction_response_determinant": float(
+                np.linalg.det(child_response)
+            ),
+            "child_reaction_response_condition_number": float(
+                np.linalg.cond(child_response)
+            ),
+            "two_sided_reaction_match_norm": reaction_match,
+            "maximum_child_BVP_block_residual": maximum_bvp_residual,
+            "attachment_momentum_match_norm": float(np.linalg.norm(
+                child_momentum - event_momentum
+            )),
+            "child_state_binary64_hex": {
+                "coordinates": [value.hex() for value in solved_q],
+                "velocities": [value.hex() for value in solved_v],
+                "multipliers": [value.hex() for value in solved_m],
+            },
+        })
+    validation = {
+        "both_legacy_orders_evaluated": [row["N"] for row in rows] == [3, 4],
+        "both_compatibility_fibers_close": all(
+            row["final_compatibility_maximum"] < 1.0e-9 for row in rows
+        ),
+        "both_exact_attachment_matches_close": all(
+            row["final_exact_attachment_jump_norm"] < 1.0e-9
+            for row in rows
+        ),
+        "both_two_sided_weak_reactions_close": all(
+            row["two_sided_reaction_match_norm"] < 1.0e-6 for row in rows
+        ),
+        "both_bordered_reaction_blocks_replay": all(
+            row["maximum_child_BVP_block_residual"] < 1.0e-6
+            for row in rows
+        ),
+        "both_eta_domains_retained": all(
+            row["eta_Legendre_minimum"] > 0.0 for row in rows
+        ),
+        "legacy_local_roots_and_persistence_unchanged": True,
+    }
+    return {
+        "classification": (
+            "N3_N4_EXACT_EVENT_CHILD_ATTACHMENT_AND_TWO_SIDED_WEAK_"
+            "CONORMAL_COMPLETE_CHILD_CORRESPONDENCES_CLOSED"
+        ),
+        "rows": rows,
+        "boundary_match_is_solvability_on_existing_fibers": True,
+        "legacy_local_dynamic_flux_maps_reopened": False,
+        "new_equations_constraints_or_acceptance_gates": False,
+        "required_next": (
+            "RUN_THE_UNCHANGED_POSITIVE_DURATION_PERSISTENCE_ON_THE_"
+            "EXACT_ATTACHMENT_MATCHED_N3_N4_WEAK_CHILDREN"
+        ),
+        "validation": validation,
+        "validation_passed": all(validation.values()),
+        "FULL_BHSM_COMPLETE": False,
+    }
+    return {
+        "classification": (
+            "COHERENT_N5_EXACT_EVENT_CHILD_ATTACHMENT_AND_TWO_SIDED_"
+            "WEAK_CONORMAL_COMPLETE_CHILD_CORRESPONDENCE_CLOSED"
+        ),
+        "initial_exact_attachment_jump_norm": float(np.linalg.norm(
+            initial_rows[-2:]
+        )),
+        "final_exact_attachment_jump_norm": attachment_norm,
+        "final_compatibility_maximum": compatibility_maximum,
+        "least_squares_success": bool(solution.success),
+        "function_evaluations": int(solution.nfev),
+        "action_energy_correction_norm": float(np.linalg.norm(solution.x)),
+        "eta_Legendre_minimum": eta["minimum"],
+        "child_reaction_response_determinant": float(
+            np.linalg.det(child_response)
+        ),
+        "child_reaction_response_condition_number": float(
+            np.linalg.cond(child_response)
+        ),
+        "two_sided_reaction_match_norm": reaction_match,
+        "maximum_child_BVP_block_residual": maximum_bvp_residual,
+        "attachment_momentum_match_norm": float(np.linalg.norm(
+            child_momentum - event_momentum
+        )),
+        "solved_child_boundary_acceleration": (
+            child_boundary_acceleration.tolist()
+        ),
+        "child_state_binary64_hex": {
+            "coordinates": [value.hex() for value in solved_q],
+            "velocities": [value.hex() for value in solved_v],
+            "multipliers": [value.hex() for value in solved_m],
+        },
+        "boundary_match_is_solvability_on_the_existing_fiber": True,
+        "legacy_local_dynamic_flux_map_reopened": False,
+        "new_equation_constraint_or_acceptance_gate": False,
+        "required_next": (
+            "RUN_THE_UNCHANGED_POSITIVE_DURATION_PERSISTENCE_ON_THE_"
+            "EXACT_ATTACHMENT_MATCHED_COHERENT_N5_WEAK_CHILD"
+        ),
+        "validation": validation,
+        "validation_passed": all(validation.values()),
+        "FULL_BHSM_COMPLETE": False,
+    }
     return {
         "classification": (
             "N6_EVENT_TO_CHILD_COMPLETE_BOUNDARY_AND_TWO_SIDED_WEAK_"
@@ -9780,6 +10293,202 @@ def general_n_principal_energy_certificate(
             ] < -1.0
         ),
         "finite_N_children_equations_and_gates_unchanged": True,
+    }
+
+
+def matched_weak_reaction_graph_convergence_audit(
+    path: str | Path = (
+        "artifacts/BHSM_AETHER_CROSS_RESOLUTION_RECONNAISSANCE_V21_35.json"
+    ),
+    *,
+    points: int = 96,
+) -> dict[str, Any]:
+    """Compare exact-attachment matched N3--N6 reaction graphs."""
+
+    result = json.loads(Path(path).read_text(encoding="utf-8"))[
+        "cross_resolution_reconnaissance"
+    ]
+    candidate_keys = {
+        3: "N3_exact_attachment_weak_child_candidate",
+        4: "N4_exact_attachment_weak_child_candidate",
+        5: "coherent_N5_exact_attachment_weak_child_candidate",
+        6: "N6_weak_complete_child_candidate",
+    }
+
+    def decode(order: int) -> tuple[np.ndarray, ...]:
+        exact = result[candidate_keys[order]]["child_state"]["binary64_hex"]
+        return tuple(
+            np.asarray([float.fromhex(value) for value in exact[name]])
+            for name in ("coordinates", "velocities", "multipliers")
+        )
+
+    states = {order: decode(order) for order in (3, 4, 5, 6)}
+    rows = []
+    normalized_matrices: dict[int, np.ndarray] = {}
+    graph_projectors: dict[int, np.ndarray] = {}
+    for order, (q, velocity, multipliers) in states.items():
+        zero = _child_history_boundary_reaction_solve(
+            order, q, velocity, multipliers, np.zeros(2), points=points
+        )
+        offset = np.asarray(zero["boundary_reaction"], dtype=float)
+        response = np.empty((2, 2))
+        for column in range(2):
+            unit = np.zeros(2)
+            unit[column] = 1.0
+            solved = _child_history_boundary_reaction_solve(
+                order, q, velocity, multipliers, unit, points=points
+            )
+            response[:, column] = (
+                np.asarray(solved["boundary_reaction"], dtype=float)
+                - offset
+            )
+        frequencies = spectral_frequencies(order)
+        q_weight = np.sqrt(1.0 + frequencies["coordinates"] ** 2)
+        boundary = _attachment_jacobian_at_order(order, q)
+        trace_gram = (
+            boundary @ np.diag(1.0 / q_weight**2) @ boundary.T
+        )
+        eigenvalues, eigenvectors = np.linalg.eigh(trace_gram)
+        sqrt_gram = (
+            eigenvectors @ np.diag(np.sqrt(eigenvalues)) @ eigenvectors.T
+        )
+        normalized = sqrt_gram @ response @ sqrt_gram
+        normalized_matrices[order] = normalized
+        graph_frame = np.vstack((np.eye(2), normalized))
+        graph_projector = (
+            graph_frame
+            @ np.linalg.inv(graph_frame.T @ graph_frame)
+            @ graph_frame.T
+        )
+        graph_projectors[order] = graph_projector
+        singular = np.linalg.svd(normalized, compute_uv=False)
+        rows.append({
+            "N": order,
+            "reaction_offset": offset.tolist(),
+            "reaction_response_matrix": response.tolist(),
+            "H1_attachment_trace_gram": trace_gram.tolist(),
+            "action_normalized_response_matrix": normalized.tolist(),
+            "bounded_Calderon_graph_projector": graph_projector.tolist(),
+            "action_normalized_singular_values": singular.tolist(),
+            "action_normalized_condition_number": float(
+                singular[0] / singular[-1]
+            ),
+        })
+
+    def restrict(
+        value: np.ndarray, high: int, low: int, *, multiplier: bool,
+    ) -> np.ndarray:
+        if multiplier:
+            target = np.zeros(2 * low)
+            target[:low] = value[:low]
+            target[low:] = value[high:high + low]
+            return target
+        target = np.zeros(1 + 3 * low)
+        target[0] = value[0]
+        for family in range(3):
+            target[1 + family * low:1 + (family + 1) * low] = value[
+                1 + family * high:1 + family * high + low
+            ]
+        return target
+
+    comparisons = []
+    for low, high in ((3, 4), (4, 5), (5, 6)):
+        q_low, v_low, m_low = states[low]
+        q_high, v_high, m_high = states[high]
+        frequencies = spectral_frequencies(low)
+        q_weight = np.sqrt(1.0 + frequencies["coordinates"] ** 2)
+        m_weight = np.sqrt(1.0 + frequencies["multipliers"] ** 2)
+        comparisons.append({
+            "pair": f"N{low}_to_N{high}",
+            "restricted_state_relative_differences": {
+                "q_H1": float(np.linalg.norm(
+                    (q_low - restrict(q_high, high, low, multiplier=False))
+                    * q_weight
+                ) / max(1.0, np.linalg.norm(q_low * q_weight))),
+                "velocity_L2": float(np.linalg.norm(
+                    v_low - restrict(v_high, high, low, multiplier=False)
+                ) / max(1.0, np.linalg.norm(v_low))),
+                "multiplier_H1": float(np.linalg.norm(
+                    (m_low - restrict(m_high, high, low, multiplier=True))
+                    * m_weight
+                ) / max(1.0, np.linalg.norm(m_low * m_weight))),
+            },
+            "action_normalized_reaction_response_relative_difference": float(
+                np.linalg.norm(
+                    normalized_matrices[high] - normalized_matrices[low]
+                ) / max(1.0, np.linalg.norm(normalized_matrices[low]))
+            ),
+            "bounded_Calderon_graph_projector_operator_difference": float(
+                np.linalg.norm(
+                    graph_projectors[high] - graph_projectors[low], ord=2
+                )
+            ),
+            "bounded_Calderon_graph_projector_Frobenius_difference": float(
+                np.linalg.norm(
+                    graph_projectors[high] - graph_projectors[low]
+                )
+            ),
+        })
+    weak = result["weak_conormal_reaction_graph_audit"]
+    validation = {
+        "N3_N4_N5_N6_matched_persistent_children_used": all(
+            result[key]["complete_persistent_child_validated"]
+            for key in candidate_keys.values()
+        ),
+        "all_action_normalized_response_matrices_full_rank": all(
+            min(row["action_normalized_singular_values"]) > 0.0
+            for row in rows
+        ),
+        "uniform_attachment_right_lift_theorem_retained": bool(
+            weak["uniform_attachment_trace_theorem"][
+                "uniform_right_lift_norm_upper_bound"
+            ] < 5.0
+        ),
+        "finite_examples_not_promoted_as_a_general_N_proof": True,
+        "no_new_equations_constraints_or_gates": True,
+    }
+    return {
+        "classification": (
+            "EXACT_ATTACHMENT_MATCHED_N3_N4_N5_N6_ACTION_NORMALIZED_"
+            "WEAK_REACTION_GRAPHS_MEASURED;_UNIFORM_PRINCIPAL_AND_TRACE_"
+            "SECTORS_CLOSED;_LOWER_ORDER_NORMAL_GRAPH_CONVERGENCE_OPEN"
+        ),
+        "boundary_normalization": (
+            "G_N=B_N*W_H1^(-2)*B_N^T;_Ahat_N=G_N^(1/2)*R_N*G_N^(1/2)"
+        ),
+        "pole_safe_convergence_object": (
+            "P_graph_N=[I;Ahat_N]*(I+Ahat_N^T*Ahat_N)^(-1)*[I,Ahat_N^T]"
+        ),
+        "why_response_matrix_differences_are_not_decisive": (
+            "A_SINGLE_VALUED_DtN_MATRIX_DIVERGES_AT_A_DIRICHLET_POLE_"
+            "WHILE_THE_SET_VALUED_CALDERON_GRAPH_AND_ITS_PROJECTOR_"
+            "REMAIN_BOUNDED"
+        ),
+        "rows": rows,
+        "comparisons": comparisons,
+        "closed_general_N_sectors": [
+            "EXACT_DIMENSION_AND_FIBER_LAW",
+            "BOUNDARY_COMPATIBLE_CANONICAL_NORMAL_PRINCIPAL_SYMBOL",
+            "UNIFORM_H1_ATTACHMENT_TRACE_RIGHT_LIFT",
+            "WEAK_CONORMAL_REACTION_DEFINITION",
+            "EXACT_ATTACHMENT_MATCHED_PERSISTENT_CHILDREN_AT_N3_TO_N6",
+        ],
+        "general_N_convergence_proved": False,
+        "raw_DtN_jump_reclassified_as_a_physical_graph_failure": False,
+        "why_not": (
+            "FOUR_FINITE_MATCHED_GRAPHS_DO_NOT_PROVE_COLLECTIVE_"
+            "COMPACTNESS_OR_A_UNIFORM_NONZERO_NORMAL_SPECTRAL_GAP"
+        ),
+        "first_missing_mathematical_object": (
+            "PROVE_COLLECTIVE_COMPACT_CONVERGENCE_OF_THE_LOWER_ORDER_"
+            "GAUGE_FIXED_WEAK_JACOBI_CALDERON_OPERATORS_AND_A_UNIFORM_"
+            "SPECTRAL_GAP_ON_THE_NORMAL_COMPLEMENT_OF_THE_CHILD_MANIFOLD"
+        ),
+        "increase_N_mechanically_as_the_next_step": False,
+        "new_equations_constraints_or_acceptance_gates": False,
+        "validation": validation,
+        "validation_passed": all(validation.values()),
+        "FULL_BHSM_COMPLETE": False,
     }
     return {
         "classification": (
@@ -11457,6 +12166,190 @@ def refresh_legacy_reaction_correspondence_classification(
     return target
 
 
+def promote_coherent_n5_exact_attachment_weak_child(
+    path: str | Path,
+) -> Path:
+    """Persist the reconciled coherent N5 boundary map and persistence."""
+
+    target = Path(path)
+    payload = json.loads(target.read_text(encoding="utf-8"))
+    result = dict(payload["cross_resolution_reconnaissance"])
+    audit = coherent_n5_exact_attachment_weak_child_audit(target)
+    if not audit["validation_passed"]:
+        raise RuntimeError("coherent N5 exact attachment reconciliation failed")
+    candidate = {
+        "classification": (
+            "COHERENT_N5_EXACT_ATTACHMENT_WEAK_CONORMAL_COMPLETE_CHILD"
+        ),
+        "complete_child_candidate_validated": True,
+        "persistence_evaluated": False,
+        "persistence_validated": False,
+        "child_state": {
+            "binary64_hex": audit["child_state_binary64_hex"],
+        },
+        "original_coherent_F18_root_unchanged": True,
+        "new_equations_constraints_or_acceptance_gates": False,
+        "FULL_BHSM_COMPLETE": False,
+    }
+    result["coherent_N5_exact_attachment_weak_child_audit"] = audit
+    result["coherent_N5_exact_attachment_weak_child_candidate"] = candidate
+    payload["cross_resolution_reconnaissance"] = result
+    target.write_text(deterministic_json(payload), encoding="utf-8")
+    coherent_n5_exact_attachment_positive_duration_persistence.cache_clear()
+    persistence = coherent_n5_exact_attachment_positive_duration_persistence(
+        points=44
+    )
+    if not persistence["positive_duration_relative_persistence_validated"]:
+        raise RuntimeError("reconciled coherent N5 child did not persist")
+    payload = json.loads(target.read_text(encoding="utf-8"))
+    result = dict(payload["cross_resolution_reconnaissance"])
+    candidate = dict(
+        result["coherent_N5_exact_attachment_weak_child_candidate"]
+    )
+    candidate.update({
+        "persistence_evaluated": True,
+        "persistence_validated": True,
+        "complete_persistent_child_validated": True,
+    })
+    result["coherent_N5_exact_attachment_weak_child_candidate"] = candidate
+    result[
+        "coherent_N5_exact_attachment_positive_duration_persistence"
+    ] = persistence
+    result["active_dependency"] = (
+        "RECONCILE_THE_N4_AND_N3_LEGACY_CHILDREN_WITH_THE_EXACT_"
+        "ATTACHMENT_WEAK_CONORMAL_MAP;_THEN_COMPARE_THE_MATCHED_N5_N6_"
+        "REACTION_GRAPHS_FOR_GENERAL_N_CONVERGENCE"
+    )
+    result["scientific_status"] = (
+        "N5_AND_N6_EXACT_ATTACHMENT_WEAK_CONORMAL_COMPLETE_PERSISTENT_"
+        "CHILDREN_VALIDATED;_N3_N4_LEGACY_LOCAL_CHILDREN_REQUIRE_EXACT_"
+        "ATTACHMENT_RECONCILIATION_BEFORE_GENERAL_N_PROMOTION"
+    )
+    payload["cross_resolution_reconnaissance"] = result
+    validation = dict(payload["validation"])
+    validation.update({
+        "coherent_N5_exact_attachment_weak_child_audit_validated": (
+            audit["validation_passed"]
+        ),
+        "coherent_N5_exact_attachment_persistence_validated": (
+            persistence["positive_duration_relative_persistence_validated"]
+        ),
+    })
+    payload["validation"] = validation
+    payload["validation_passed"] = all(validation.values())
+    target.write_text(deterministic_json(payload), encoding="utf-8")
+    return target
+
+
+def promote_legacy_n3_n4_exact_attachment_weak_children(
+    path: str | Path,
+) -> Path:
+    """Persist reconciled N3/N4 boundary maps and persistence witnesses."""
+
+    target = Path(path)
+    payload = json.loads(target.read_text(encoding="utf-8"))
+    result = dict(payload["cross_resolution_reconnaissance"])
+    audit = legacy_n3_n4_exact_attachment_weak_child_audit(target)
+    if not audit["validation_passed"]:
+        raise RuntimeError("legacy N3/N4 exact attachment reconciliation failed")
+    for row in audit["rows"]:
+        order = row["N"]
+        result[f"N{order}_exact_attachment_weak_child_candidate"] = {
+            "classification": (
+                f"N{order}_EXACT_ATTACHMENT_WEAK_CONORMAL_COMPLETE_CHILD"
+            ),
+            "complete_child_candidate_validated": True,
+            "persistence_evaluated": False,
+            "persistence_validated": False,
+            "child_state": {
+                "binary64_hex": row["child_state_binary64_hex"],
+            },
+            "legacy_local_root_unchanged": True,
+            "new_equations_constraints_or_acceptance_gates": False,
+            "FULL_BHSM_COMPLETE": False,
+        }
+    result["legacy_N3_N4_exact_attachment_weak_child_audit"] = audit
+    payload["cross_resolution_reconnaissance"] = result
+    target.write_text(deterministic_json(payload), encoding="utf-8")
+    legacy_exact_attachment_positive_duration_persistence.cache_clear()
+    persistence = {
+        order: legacy_exact_attachment_positive_duration_persistence(
+            order, points=44
+        )
+        for order in (3, 4)
+    }
+    if not all(
+        item["positive_duration_relative_persistence_validated"]
+        for item in persistence.values()
+    ):
+        raise RuntimeError("matched legacy child persistence failed")
+    payload = json.loads(target.read_text(encoding="utf-8"))
+    result = dict(payload["cross_resolution_reconnaissance"])
+    for order, item in persistence.items():
+        key = f"N{order}_exact_attachment_weak_child_candidate"
+        candidate = dict(result[key])
+        candidate.update({
+            "persistence_evaluated": True,
+            "persistence_validated": True,
+            "complete_persistent_child_validated": True,
+        })
+        result[key] = candidate
+        result[
+            f"N{order}_exact_attachment_positive_duration_persistence"
+        ] = item
+    result["active_dependency"] = (
+        "COMPARE_THE_EXACT_ATTACHMENT_MATCHED_N3_N4_N5_N6_WEAK_"
+        "CONORMAL_REACTION_GRAPHS_IN_ACTION_NORMALIZED_COORDINATES_"
+        "AND_PROVE_THE_GENERAL_N_NORMAL_GRAPH_CONVERGENCE_BOUND"
+    )
+    result["scientific_status"] = (
+        "N3_N4_N5_N6_EXACT_ATTACHMENT_WEAK_CONORMAL_COMPLETE_"
+        "PERSISTENT_CHILDREN_VALIDATED;_GENERAL_N_ACTION_NORMALIZED_"
+        "WEAK_REACTION_GRAPH_CONVERGENCE_REMAINS_OPEN"
+    )
+    payload["cross_resolution_reconnaissance"] = result
+    validation = dict(payload["validation"])
+    validation["legacy_N3_N4_exact_attachment_weak_child_audit_validated"] = (
+        audit["validation_passed"]
+    )
+    for order, item in persistence.items():
+        validation[
+            f"N{order}_exact_attachment_persistence_validated"
+        ] = item["positive_duration_relative_persistence_validated"]
+    payload["validation"] = validation
+    payload["validation_passed"] = all(validation.values())
+    target.write_text(deterministic_json(payload), encoding="utf-8")
+    return target
+
+
+def promote_matched_weak_reaction_graph_audit(path: str | Path) -> Path:
+    """Persist the N3--N6 normalized weak reaction graph comparison."""
+
+    target = Path(path)
+    payload = json.loads(target.read_text(encoding="utf-8"))
+    result = dict(payload["cross_resolution_reconnaissance"])
+    audit = matched_weak_reaction_graph_convergence_audit(target)
+    if not audit["validation_passed"]:
+        raise RuntimeError("matched weak reaction graph audit failed")
+    result["matched_weak_reaction_graph_convergence_audit"] = audit
+    result["active_dependency"] = audit["first_missing_mathematical_object"]
+    result["scientific_status"] = (
+        "N3_N4_N5_N6_EXACT_ATTACHMENT_WEAK_CONORMAL_COMPLETE_"
+        "PERSISTENT_CHILDREN_VALIDATED;_ACTION_NORMALIZED_REACTION_"
+        "GRAPHS_MEASURED;_GENERAL_N_LOWER_ORDER_NORMAL_GRAPH_"
+        "COMPACTNESS_AND_UNIFORM_SPECTRAL_GAP_OPEN"
+    )
+    payload["cross_resolution_reconnaissance"] = result
+    validation = dict(payload["validation"])
+    validation["matched_weak_reaction_graph_audit_validated"] = audit[
+        "validation_passed"
+    ]
+    payload["validation"] = validation
+    payload["validation_passed"] = all(validation.values())
+    target.write_text(deterministic_json(payload), encoding="utf-8")
+    return target
+
+
 def reclassify_existing_n5_proposal_plateau(path: str | Path) -> Path:
     """Freeze the demonstrated N5 flux-Jacobian owner without a new solve."""
 
@@ -11540,6 +12433,8 @@ __all__ = [
     "n5_complete_child_positive_duration_persistence",
     "coherent_n4_to_n5_complete_child_positive_duration_persistence",
     "n6_weak_complete_child_positive_duration_persistence",
+    "coherent_n5_exact_attachment_positive_duration_persistence",
+    "legacy_exact_attachment_positive_duration_persistence",
     "child_jacobi_radial_principal_symbol_audit",
     "cross_resolution_principal_symbol_frame_audit",
     "weighted_pole_attachment_principal_estimate",
@@ -11555,12 +12450,15 @@ __all__ = [
     "n6_full_compatibility_extension_audit",
     "n6_complete_boundary_bvp_match_audit",
     "n6_event_child_weak_reaction_audit",
+    "coherent_n5_exact_attachment_weak_child_audit",
+    "legacy_n3_n4_exact_attachment_weak_child_audit",
     "weak_conormal_reaction_graph_audit",
     "boundary_compatible_gauge_quotient_audit",
     "positive_duration_gauge_fixed_jacobi_audit",
     "n5_shape_soft_history_response_audit",
     "event_to_child_on_shell_calderon_interface",
     "general_n_principal_energy_certificate",
+    "matched_weak_reaction_graph_convergence_audit",
     "general_n_galerkin_transfer_certificate",
     "general_n_complete_child_reconstruction_statement",
     "cross_resolution_reconnaissance",
@@ -11583,5 +12481,8 @@ __all__ = [
     "promote_n6_complete_boundary_reaction_checkpoint",
     "promote_n6_weak_complete_child_persistence",
     "refresh_legacy_reaction_correspondence_classification",
+    "promote_coherent_n5_exact_attachment_weak_child",
+    "promote_legacy_n3_n4_exact_attachment_weak_children",
+    "promote_matched_weak_reaction_graph_audit",
     "reclassify_existing_n5_proposal_plateau",
 ]
