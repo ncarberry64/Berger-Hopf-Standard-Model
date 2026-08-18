@@ -399,6 +399,90 @@ def test_latest_n4_child_checkpoint_uses_fixed_merit_full_space_proposal():
         "instantaneous_Cauchy_matrix_is_the_full_history_Jacobi_operator"
     ] is False
     assert quotient["finite_N_children_or_gates_changed"] is False
+    sequential = payload["cross_resolution_reconnaissance"][
+        "sequential_action_energy_projection_audit"
+    ]
+    assert sequential["validation_passed"] is True
+    assert [row["N"] for row in sequential["rows"]] == [6, 7, 8, 9, 10]
+    assert all(
+        row[label]["maximum_constraint_residual"] < 1.0e-8
+        and row[label]["eta_Legendre_minimum"] > 0.0
+        and "coordinate_time_vector_timelike_margin" in row[label]
+        and "projected_state_binary64_hex" in row[label]
+        for row in sequential["rows"] for label in ("event", "child")
+    )
+    assert sequential[
+        "complete_child_dynamic_reaction_rows_solved_at_N6_TO_N10"
+    ] is False
+    jacobi = payload["cross_resolution_reconnaissance"][
+        "positive_duration_gauge_fixed_jacobi_audit"
+    ]
+    assert jacobi["validation_passed"] is True
+    assert jacobi["principal_energy_estimate"][
+        "absolute_principal_smallest_eigenvalue"
+    ] > 0.0
+    assert jacobi["principal_energy_estimate"][
+        "proves_finite_N5_weak_Jacobi_well_posedness_modulo_kernel"
+    ] is True
+    assert jacobi["principal_energy_estimate"][
+        "proves_N_uniform_normal_gap"
+    ] is False
+    assert jacobi["remaining_shape_soft_mode"][
+        "is_a_principal_gauge_kernel"
+    ] is False
+    assert jacobi["normal_kernel_policy"][
+        "child_manifold_tangent_kernel_is_physical_and_retained"
+    ] is True
+    assert jacobi["new_action_terms_equations_constraints_or_gates"] is False
+    n6_extension = payload["cross_resolution_reconnaissance"][
+        "N6_full_compatibility_extension_audit"
+    ]
+    assert n6_extension["validation_passed"] is True
+    assert n6_extension["final_compatibility_norm"] < n6_extension[
+        "initial_compatibility_norm"
+    ]
+    assert n6_extension["complete_dynamic_reaction_rows_solved"] is False
+    assert n6_extension["is_a_complete_N6_child_claim"] is False
+    assert n6_extension[
+        "new_equations_constraints_or_acceptance_gates"
+    ] is False
+    boundary_match = payload["cross_resolution_reconnaissance"][
+        "N6_complete_boundary_BVP_match_audit"
+    ]
+    assert boundary_match["validation_passed"] is True
+    assert boundary_match["final_exact_attachment_jump_norm"] < 1.0e-9
+    assert boundary_match["final_compatibility_maximum"] < 1.0e-9
+    assert boundary_match[
+        "new_equation_constraint_or_acceptance_gate"
+    ] is False
+    reaction = payload["cross_resolution_reconnaissance"][
+        "N6_event_child_weak_reaction_audit"
+    ]
+    assert reaction["validation_passed"] is True
+    assert reaction["attachment_configuration_jump_norm"] < 1.0e-9
+    assert reaction["two_sided_reaction_match_norm"] < 1.0e-6
+    assert reaction["legacy_local_dynamic_flux_row_used"] is False
+    assert reaction[
+        "new_action_equation_constraint_or_acceptance_gate"
+    ] is False
+    n6_candidate = payload["cross_resolution_reconnaissance"][
+        "N6_weak_complete_child_candidate"
+    ]
+    assert n6_candidate["complete_child_candidate_validated"] is True
+    assert n6_candidate["complete_persistent_child_validated"] is True
+    assert n6_candidate[
+        "legacy_local_dynamic_flux_map_used_as_general_N_physics"
+    ] is False
+    n6_persistence = payload["cross_resolution_reconnaissance"][
+        "N6_weak_complete_child_positive_duration_persistence"
+    ]
+    assert n6_persistence[
+        "positive_duration_relative_persistence_validated"
+    ] is True
+    assert n6_persistence["nonzero_relative_evolution_retained"] is True
+    assert n6_persistence[
+        "finite_duration_numerical_movie_converged"
+    ] is True
 
 
 def test_general_n_reconstruction_statement_preserves_the_physical_map():
