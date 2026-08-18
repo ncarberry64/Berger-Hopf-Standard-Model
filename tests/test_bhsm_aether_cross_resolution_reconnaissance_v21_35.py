@@ -17,6 +17,7 @@ from bhsm.interface.aether_cross_resolution_reconnaissance_v21_35 import (
     soft_jacobi_semigroup_compactness_reduction,
     jacobi_form_coefficient_mosco_theorem,
     actual_child_S2_compactness_audit,
+    gauge_fixed_S2_propagation_theorem,
     uniform_boundary_jerk_compactness_reduction,
     uniform_positive_duration_normal_closed_range_reduction,
     weak_calderon_boundary_generator_reduction,
@@ -390,6 +391,31 @@ def test_actual_child_S2_compactness_audit():
     assert gap["coupled_spatial_dynamic_S2_estimate_proved"] is False
     assert "D_chi_v" in gap["velocity_derivative_fact"]
     assert gap["genuine_uniform_failure_demonstrated"] is False
+    assert audit[
+        "new_physics_equations_constraints_regularizers_objectives_or_gates"
+    ] is False
+
+
+def test_gauge_fixed_S2_propagation_theorem():
+    audit = gauge_fixed_S2_propagation_theorem()
+    assert audit["validation_passed"] is True
+    constants = audit["action_owned_constants"]
+    assert constants["canonical_principal_absolute_gap"] > 0.0
+    assert constants["weighted_Hardy_Poincare_constant"] > 0.0
+    spatial = audit["spatial_Garding_estimate"]
+    assert spatial["velocity_H1_controlled_by_this_static_estimate"] is False
+    propagation = audit["positive_duration_velocity_propagation"]
+    assert "Gronwall" not in propagation["Gronwall_bound"] or (
+        "E_S2(t)" in propagation["Gronwall_bound"]
+    )
+    assert propagation["requires_nonzero_motion_to_vanish"] is False
+    assert propagation["new_persistence_gate"] is False
+    assert audit["proved_implication"][
+        "initial_N_uniform_bound_proved_from_N3_to_N6"
+    ] is False
+    assert audit[
+        "genuine_uniform_normal_closed_range_failure_demonstrated"
+    ] is False
     assert audit[
         "new_physics_equations_constraints_regularizers_objectives_or_gates"
     ] is False

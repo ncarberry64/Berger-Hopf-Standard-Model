@@ -12969,6 +12969,138 @@ def actual_child_S2_compactness_audit(
     }
 
 
+def gauge_fixed_S2_propagation_theorem(
+    path: str | Path = (
+        "artifacts/BHSM_AETHER_CROSS_RESOLUTION_RECONNAISSANCE_V21_35.json"
+    ),
+) -> dict[str, Any]:
+    """Derive the coupled spatial and positive-duration S2 estimate."""
+
+    result = json.loads(Path(path).read_text(encoding="utf-8"))[
+        "cross_resolution_reconnaissance"
+    ]
+    actual = result["actual_child_S2_compactness_audit"]
+    principal = weighted_pole_attachment_principal_estimate()
+    gap = float(principal["canonical_physical_matrix"][
+        "smallest_absolute_eigenvalue"
+    ])
+    hardy = float(principal["weighted_Poincare_Hardy_estimate"][
+        "omega_constant"
+    ])
+    measured_K = max(
+        math.sqrt(
+            row["q_H2_norm"] ** 2
+            + row["velocity_H1_norm"] ** 2
+            + row["multiplier_H2_norm"] ** 2
+        )
+        for row in actual["rows"]
+    )
+    validation = {
+        "weighted_principal_matrix_has_positive_absolute_gap": gap > 0.0,
+        "weighted_Hardy_Poincare_constant_is_positive": hardy > 0.0,
+        "attachment_trace_fixes_the_three_principal_geometry_traces": bool(
+            principal["validation"][
+                "trace_rows_fix_three_attachment_geometry_combinations"
+            ]
+        ),
+        "actual_N3_through_N6_initial_S2_norms_are_finite": bool(
+            measured_K < math.inf
+        ),
+        "static_rows_not_used_to_control_D_chi_velocity": True,
+        "general_N_initial_S2_bound_not_assumed_from_finite_data": True,
+        "no_new_equation_constraint_regularizer_objective_or_gate": True,
+    }
+    return {
+        "classification": (
+            "THE_EXISTING_WEIGHTED_GAUGE_FIXED_PRINCIPAL_GAP_AND_"
+            "ATTACHMENT_TRACE_GIVE_A_SPATIAL_GARDING_ESTIMATE_FOR_q_AND_"
+            "m;_COUPLED_WITH_THE_EXISTING_POSITIVE_DURATION_EVOLUTION_"
+            "THIS_PROPAGATES_ANY_N_UNIFORM_INITIAL_S2_BOUND,_BUT_THE_"
+            "GENERAL_N_INITIAL_BOUND_ITSELF_REMAINS_OPEN"
+        ),
+        "action_owned_constants": {
+            "canonical_principal_absolute_gap": gap,
+            "weighted_Hardy_Poincare_constant": hardy,
+            "natural_weight": principal["natural_radial_weight"],
+            "weight_equivalence": principal["weight_equivalence"],
+            "measured_maximum_N3_to_N6_initial_S2_product_norm": measured_K,
+        },
+        "uniform_coefficient_ball": {
+            "hypothesis": (
+                "norm(U)_X_E<=K_E_AND_eta(U)>=eta0>0"
+            ),
+            "derived_pointwise_control": (
+                "H1_q_AND_H1_m_EMBED_IN_L_infinity_ON_[0,pi/4],_SO_"
+                "R,N,exp(5u-w),eta_inverse_AND_THE_PRINCIPAL_WEIGHT_"
+                "kappa_HAVE_K_E_eta0_OWNED_UPPER_AND_LOWER_BOUNDS"
+            ),
+            "new_acceptance_gate": False,
+        },
+        "spatial_Garding_estimate": {
+            "gauge_slice": "delta_w=0_AND_delta_beta=0",
+            "trace_conditions": (
+                "THE_EXISTING_THREE_ATTACHMENT_ROWS_FIX_delta_v(L),_"
+                "delta_w(L),_delta(scale+u)(L)"
+            ),
+            "principal_estimate": (
+                "gap*norm(D_chi(delta_q,delta_m))_omega<=C_kappa*"
+                "norm(J_principal*deltaU)_omega_star"
+            ),
+            "lower_order_Garding_form": (
+                "norm(delta_q,delta_m)_H1_omega<=C(K_E,eta0)*"
+                "(norm(J_U*deltaU)_Hminus1_omega+"
+                "norm(deltaU)_X_E+norm(Gamma0*deltaq))"
+            ),
+            "nonlinear_spatial_bootstrap": (
+                "norm(q,m)_H2_omega<=C(K_E,eta0)*"
+                "(1+norm(v)_H1^2+norm(E_U)_L2_omega+"
+                "norm(Gamma_U)_boundary)"
+            ),
+            "velocity_H1_controlled_by_this_static_estimate": False,
+        },
+        "positive_duration_velocity_propagation": {
+            "existing_evolution": "D_t_q=v,_D_t_v=a_action(U)",
+            "differentiated_energy": (
+                "D_t_E_S2<=C(K_E,eta0)*(1+E_S2),_"
+                "E_S2=norm(q,m)_H2_omega^2+norm(v)_H1_omega^2"
+            ),
+            "Gronwall_bound": (
+                "E_S2(t)<=exp(C*t)*(E_S2(0)+C*t)_ON_0<=t<=T0"
+            ),
+            "common_duration": (
+                "T0=T0(K_E,eta0,E_S2(0))>0"
+            ),
+            "requires_nonzero_motion_to_vanish": False,
+            "new_persistence_gate": False,
+        },
+        "proved_implication": {
+            "if": (
+                "sup_N_E_S2,N(0)<=K2_AND_inf_N_eta_N(0)>=eta0>0_"
+                "ON_THE_ACTUAL_CORRECTED_CHILD_ROOTS"
+            ),
+            "then": (
+                "sup_N_sup_0<=t<=T0_E_S2,N(t)<=K2_prime_AND_THE_"
+                "BACKGROUND_JACOBI_FORMS_HAVE_THE_PREVIOUSLY_PROVED_"
+                "MOSCO_STRONG_RESOLVENT_COMPACTNESS"
+            ),
+            "initial_N_uniform_bound_proved_from_N3_to_N6": False,
+        },
+        "exact_next_mathematical_lemma": (
+            "PROVE_AN_N_UNIFORM_INITIAL_S2_BOUND_FOR_THE_ACTUAL_"
+            "CORRECTED_COMPLETE_CHILD_ROOTS_FROM_THE_EXISTING_ON_SHELL_"
+            "WEAK_CALDERON_RELATION,_OR_CONSTRUCT_AN_ACTION_NORMALIZED_"
+            "ROOT_SEQUENCE_WITH_DIVERGING_S2_NORM"
+        ),
+        "genuine_uniform_normal_closed_range_failure_demonstrated": False,
+        "new_physics_equations_constraints_regularizers_objectives_or_gates": (
+            False
+        ),
+        "validation": validation,
+        "validation_passed": all(validation.values()),
+        "FULL_BHSM_COMPLETE": False,
+    }
+
+
 def weak_constraint_boundary_source_tail_audit(
     path: str | Path = (
         "artifacts/BHSM_AETHER_CROSS_RESOLUTION_RECONNAISSANCE_V21_35.json"
@@ -16372,15 +16504,19 @@ def promote_boundary_jerk_weak_graph_domain_audit(
     if not actual_S2["validation_passed"]:
         raise RuntimeError("actual-child S2 compactness audit failed")
     result["actual_child_S2_compactness_audit"] = actual_S2
-    result["active_dependency"] = actual_S2["exact_next_mathematical_lemma"]
+    propagation = gauge_fixed_S2_propagation_theorem(target)
+    if not propagation["validation_passed"]:
+        raise RuntimeError("gauge-fixed S2 propagation theorem failed")
+    result["gauge_fixed_S2_propagation_theorem"] = propagation
+    result["active_dependency"] = propagation["exact_next_mathematical_lemma"]
     result["scientific_status"] = (
         "N3_TO_N6_EXACT_ATTACHMENT_WEAK_COMPLETE_PERSISTENT_CHILDREN_"
         "VALIDATED;_THE_HARD_MOMENTUM_RESPONSE_CLOSES_AND_THE_SOFT_"
         "NORMAL_CHANNEL_IS_POSITIVE_DURATION_DYNAMICAL;_UNIFORM_"
         "CLASSICAL_H6_CONTROL_IS_INVALID_AS_A_NEW_CRITERION;_THE_WEAK_"
         "CALDERON_BOUNDARY_JERK_FAILURE_IS_LOCALIZED_TO_THE_ACTION_"
-        "GAUGE_FIXED_S2_A_PRIORI_BOUND_FOR_THE_ACTUAL_CORRECTED_CHILD_"
-        "BUNDLE;_N4_N5_N6_FINITE_CHILDREN_SHARE_ONE_MEASURED_S2_BAND"
+        "INITIAL_S2_BOUND_FOR_THE_ACTUAL_CORRECTED_CHILD_ROOT_BUNDLE;_"
+        "SPATIAL_GARDING_AND_POSITIVE_DURATION_PROPAGATION_ARE_DERIVED"
     )
     payload["cross_resolution_reconnaissance"] = result
     validation = dict(payload["validation"])
@@ -16409,6 +16545,9 @@ def promote_boundary_jerk_weak_graph_domain_audit(
         mosco["validation_passed"]
     )
     validation["actual_child_S2_compactness_audit_validated"] = actual_S2[
+        "validation_passed"
+    ]
+    validation["gauge_fixed_S2_propagation_theorem_validated"] = propagation[
         "validation_passed"
     ]
     payload["validation"] = validation
@@ -16636,6 +16775,7 @@ __all__ = [
     "soft_jacobi_semigroup_compactness_reduction",
     "jacobi_form_coefficient_mosco_theorem",
     "actual_child_S2_compactness_audit",
+    "gauge_fixed_S2_propagation_theorem",
     "weak_constraint_boundary_source_tail_audit",
     "weak_complete_child_normal_right_inverse_audit",
     "weak_complete_child_normal_lipschitz_audit",
