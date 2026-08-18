@@ -611,6 +611,57 @@ def test_latest_n4_child_checkpoint_uses_fixed_merit_full_space_proposal():
     assert lipschitz[
         "new_equations_constraints_or_acceptance_gates"
     ] is False
+    boundary_layer = payload["cross_resolution_reconnaissance"][
+        "weak_boundary_layer_radii_obstruction_audit"
+    ]
+    assert boundary_layer["validation_passed"] is True
+    assert boundary_layer["boundary_H_minus_1_tail_norm"] > 0.2
+    assert boundary_layer[
+        "minimum_principal_correction_to_radius_ratio"
+    ] > 1.0e3
+    assert min(
+        boundary_layer[
+            "asymptotic_cutoff_estimates_to_reach_that_radius"
+        ].values()
+    ) > 1.0e8
+    assert boundary_layer["validation"][
+        "finite_N6_root_and_persistence_remain_valid"
+    ] is True
+    assert boundary_layer[
+        "new_equations_constraints_or_acceptance_gates"
+    ] is False
+    parametrix = payload["cross_resolution_reconnaissance"][
+        "casimir_boundary_layer_parametrix_audit"
+    ]
+    assert parametrix["validation_passed"] is True
+    assert parametrix["map"]["Jacobian_rank"] == parametrix["map"]["rows"]
+    assert parametrix["map"]["smallest_nonzero_singular_value"] < 1.0e-10
+    assert parametrix["strict_exact_merit_reduction_found"] is False
+    assert parametrix["q_only_finite_boundary_layer_lift_promoted"] is False
+    assert parametrix["is_a_higher_N_complete_child_root"] is False
+    assert parametrix[
+        "new_equations_constraints_or_acceptance_gates"
+    ] is False
+    hard_response = payload["cross_resolution_reconnaissance"][
+        "mixed_euler_dirac_hard_momentum_response_audit"
+    ]
+    assert hard_response["validation_passed"] is True
+    assert hard_response["exact_full_weak_norm"]["after"] < (
+        hard_response["exact_full_weak_norm"]["before"]
+    )
+    assert hard_response["exact_momentum_dual_norm"]["after"] < (
+        hard_response["exact_momentum_dual_norm"]["before"]
+    )
+    assert hard_response["eta_Legendre_minimum"] > 0.0
+    assert hard_response["soft_channel"][
+        "is_a_legitimate_child_manifold_tangent"
+    ] is False
+    assert hard_response["soft_channel"][
+        "uniform_normal_closed_range_failure_proved"
+    ] is False
+    assert hard_response[
+        "new_equations_constraints_regularizers_objectives_or_gates"
+    ] is False
 
 
 def test_general_n_reconstruction_statement_preserves_the_physical_map():

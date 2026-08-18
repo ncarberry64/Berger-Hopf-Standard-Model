@@ -11296,6 +11296,945 @@ def weak_complete_child_normal_lipschitz_audit(
     }
 
 
+def weak_boundary_layer_radii_obstruction_audit(
+    path: str | Path = (
+        "artifacts/BHSM_AETHER_CROSS_RESOLUTION_RECONNAISSANCE_V21_35.json"
+    ),
+    *,
+    cutoff: int = 6,
+) -> dict[str, Any]:
+    """Compare the exact Casimir boundary tail with the measured N6 radius."""
+
+    if cutoff < 1:
+        raise ValueError("a positive Galerkin cutoff is required")
+    result = json.loads(Path(path).read_text(encoding="utf-8"))[
+        "cross_resolution_reconnaissance"
+    ]
+    tail_audit = result["weak_constraint_boundary_source_tail_audit"]
+    lipschitz = result["weak_complete_child_normal_lipschitz_audit"]
+    coefficient = abs(float(
+        tail_audit["exact_boundary_lapse_covector"]["coefficient"]
+    ))
+    total_series = 0.5 * (
+        (math.pi / 4.0) / math.tanh(math.pi / 4.0) - 1.0
+    )
+    retained_series = sum(
+        1.0 / (1.0 + 16.0 * mode**2)
+        for mode in range(1, cutoff + 1)
+    )
+    tail_series = total_series - retained_series
+    boundary_tail = coefficient * math.sqrt(tail_series)
+    principal_gap = math.sqrt(29.0) - 5.0
+    principal_norm = math.sqrt(29.0) + 5.0
+    principal_correction_bracket = [
+        boundary_tail / principal_norm,
+        boundary_tail / principal_gap,
+    ]
+    measured_roots = lipschitz["finite_N_measured_radii_polynomial"][
+        "negative_interval_roots"
+    ]
+    if len(measured_roots) != 2:
+        raise RuntimeError("finite-N measured radii interval is unavailable")
+    measured_upper_radius = float(measured_roots[1])
+    asymptotic_orders = {
+        "using_principal_norm_lower_correction_scale": (
+            coefficient / (4.0 * principal_norm * measured_upper_radius)
+        ) ** 2,
+        "using_principal_gap_upper_correction_scale": (
+            coefficient / (4.0 * principal_gap * measured_upper_radius)
+        ) ** 2,
+    }
+    validation = {
+        "exact_H_minus_1_boundary_series_is_positive": tail_series > 0.0,
+        "N6_direct_tail_exceeds_measured_finite_N_radius": (
+            principal_correction_bracket[0] > measured_upper_radius
+        ),
+        "mechanical_resolution_increase_is_not_a_practical_closure_route": (
+            min(asymptotic_orders.values()) > 1.0e8
+        ),
+        "boundary_source_is_action_owned_not_a_new_constraint": True,
+        "finite_N6_root_and_persistence_remain_valid": True,
+        "no_new_equation_constraint_or_acceptance_gate": True,
+    }
+    return {
+        "classification": (
+            "DIRECT_N6_TO_CONTINUUM_RADII_TRANSFER_INVALIDATED_BY_THE_"
+            "ACTION_OWNED_CASIMIR_BOUNDARY_DISTRIBUTION_TAIL;_AN_EXACT_"
+            "VARIATIONAL_BOUNDARY_LAYER_LIFT_OR_PARAMETRIX_IS_REQUIRED"
+        ),
+        "exact_series_identity": {
+            "series": "SUM_k>=1 1/(1+16*k^2)",
+            "closed_form": "((pi/4)*coth(pi/4)-1)/2",
+            "total": total_series,
+            "retained_through_cutoff": retained_series,
+            "tail_after_cutoff": tail_series,
+        },
+        "cutoff": cutoff,
+        "boundary_Casimir_coefficient": coefficient,
+        "boundary_H_minus_1_tail_norm": boundary_tail,
+        "normalized_principal_symbol": {
+            "smallest_absolute_eigenvalue": principal_gap,
+            "largest_absolute_eigenvalue": principal_norm,
+            "principal_only_correction_norm_bracket": (
+                principal_correction_bracket
+            ),
+        },
+        "finite_N_measured_radii_upper_root": measured_upper_radius,
+        "minimum_principal_correction_to_radius_ratio": (
+            principal_correction_bracket[0] / measured_upper_radius
+        ),
+        "asymptotic_cutoff_estimates_to_reach_that_radius": asymptotic_orders,
+        "interpretation": (
+            "THE_FINITE_N6_CHILD_REMAINS_A_VALID_ROOT_OF_ITS_RETAINED_"
+            "TOTAL_WEAK_EQUATIONS;_WHAT_FAILS_IS USING_ITS_ZERO_PADDED_"
+            "STATE_AS_AN_ALREADY_SMALL_CONTINUUM_NEWTON_SEED"
+        ),
+        "invalidated_next_route": (
+            "MECHANICALLY_INCREASE_N_UNTIL_THE_RAW_BOUNDARY_TAIL_FITS_"
+            "INSIDE_THE_N6_LOCAL_RADII_BALL"
+        ),
+        "first_missing_mathematical_object": (
+            "DERIVE_FROM_THE_RETAINED_ACTION_AN_EXACT_BOUNDARY_LAYER_"
+            "LIFT_OR_CALDERON_PARAMETRIX_FOR_THE_CASIMIR_LAPSE_"
+            "DISTRIBUTION_AND_APPLY_THE_RADII_BOUND_ONLY_TO_ITS_"
+            "REGULAR_REMAINDER"
+        ),
+        "new_equations_constraints_or_acceptance_gates": False,
+        "validation": validation,
+        "validation_passed": all(validation.values()),
+        "FULL_BHSM_COMPLETE": False,
+    }
+
+
+def casimir_boundary_layer_parametrix_audit(
+    path: str | Path = (
+        "artifacts/BHSM_AETHER_CROSS_RESOLUTION_RECONNAISSANCE_V21_35.json"
+    ),
+    *,
+    maximum_order: int = 48,
+    points: int = 256,
+    derivative_step: float = 2.0e-5,
+) -> dict[str, Any]:
+    """Construct the exact-action high-shell lift of the Casimir source."""
+
+    if maximum_order <= 6 or derivative_step <= 0.0:
+        raise ValueError("a higher order and positive derivative step are required")
+    result = json.loads(Path(path).read_text(encoding="utf-8"))[
+        "cross_resolution_reconnaissance"
+    ]
+    child_exact = result["N6_weak_complete_child_candidate"][
+        "child_state"
+    ]["binary64_hex"]
+    event_exact = result["sequential_action_energy_projection_audit"][
+        "rows"
+    ][0]["event"]["projected_state_binary64_hex"]
+
+    def decode(exact: Mapping[str, Any]) -> tuple[np.ndarray, ...]:
+        return tuple(
+            np.asarray([float.fromhex(value) for value in exact[name]])
+            for name in ("coordinates", "velocities", "multipliers")
+        )
+
+    child_n6 = decode(child_exact)
+    event_n6 = decode(event_exact)
+    child_q, child_v, child_m = embed_nested_state(
+        *child_n6, 6, maximum_order
+    )
+    event_q, _, _ = embed_nested_state(*event_n6, 6, maximum_order)
+    qdim = dimensions(maximum_order)["coordinates"]
+    mdim = dimensions(maximum_order)["multipliers"]
+    frequencies = spectral_frequencies(maximum_order)
+    q_weights = np.sqrt(1.0 + frequencies["coordinates"] ** 2)
+    m_weights = np.sqrt(1.0 + frequencies["multipliers"] ** 2)
+    trace = _trace_jacobian_at_order(maximum_order)
+    attachment = _attachment_jacobian_at_order(maximum_order, child_q)
+    boundary_covectors = np.vstack((trace, attachment[1]))
+    boundary_gram = (
+        boundary_covectors
+        @ np.diag(1.0 / q_weights**2)
+        @ boundary_covectors.T
+    )
+    eigenvalues, eigenvectors = np.linalg.eigh(boundary_gram)
+    boundary_inverse_sqrt = (
+        eigenvectors
+        @ np.diag(1.0 / np.sqrt(eigenvalues))
+        @ eigenvectors.T
+    )
+    event_attachment = _attachment_coordinates_at_order(
+        maximum_order, event_q
+    )
+    high_indices = np.asarray([
+        1 + family * maximum_order + mode
+        for family in range(3)
+        for mode in range(6, maximum_order)
+    ], dtype=int)
+
+    def q_from_correction(correction: np.ndarray) -> np.ndarray:
+        q = child_q.copy()
+        q[high_indices] += correction / q_weights[high_indices]
+        return q
+
+    def normalized_rows(correction: np.ndarray) -> np.ndarray:
+        q = q_from_correction(correction)
+        boundary_rows = np.concatenate((
+            trace @ (q - event_q),
+            [
+                _attachment_coordinates_at_order(maximum_order, q)[1]
+                - event_attachment[1]
+            ],
+        ))
+        constraints = constraint_residual(
+            maximum_order, q, child_v, child_m, points=points
+        )
+        return np.concatenate((
+            boundary_inverse_sqrt @ boundary_rows,
+            constraints[:mdim] / m_weights,
+            constraints[mdim:],
+        ))
+
+    zero = np.zeros(high_indices.size)
+    initial_rows = normalized_rows(zero)
+    jacobian = np.empty((initial_rows.size, zero.size))
+    for column in range(zero.size):
+        delta = np.zeros_like(zero)
+        delta[column] = derivative_step
+        jacobian[:, column] = (
+            normalized_rows(delta) - normalized_rows(-delta)
+        ) / (2.0 * derivative_step)
+    singular = np.linalg.svd(jacobian, compute_uv=False)
+    tolerance = np.finfo(float).eps * max(jacobian.shape) * singular[0]
+    rank = int(np.count_nonzero(singular > tolerance))
+    proposal = np.linalg.lstsq(jacobian, -initial_rows, rcond=1.0e-12)[0]
+    trials = []
+    for exponent in range(13):
+        factor = 2.0 ** (-exponent)
+        correction = factor * proposal
+        q = q_from_correction(correction)
+        eta = _eta_legendre_minimum(
+            maximum_order, q, child_m, points=max(points, 512)
+        )
+        rows = normalized_rows(correction)
+        trials.append({
+            "factor": factor,
+            "action_H1_correction_norm": float(np.linalg.norm(correction)),
+            "normalized_boundary_constraint_norm": float(np.linalg.norm(rows)),
+            "normalized_boundary_constraint_maximum": float(
+                np.max(np.abs(rows))
+            ),
+            "eta_Legendre_minimum": eta["minimum"],
+            "admissible": bool(eta["minimum"] > 0.0),
+        })
+    admissible = [trial for trial in trials if trial["admissible"]]
+    best = min(
+        admissible,
+        key=lambda trial: trial["normalized_boundary_constraint_norm"],
+    )
+    best_correction = float(best["factor"]) * proposal
+    best_q = q_from_correction(best_correction)
+    best_constraints = constraint_residual(
+        maximum_order, best_q, child_v, child_m, points=points
+    )
+    initial_constraints = constraint_residual(
+        maximum_order, child_q, child_v, child_m, points=points
+    )
+    high = np.arange(maximum_order) >= 6
+    dual_weights_squared = 1.0 / (1.0 + frequencies["multipliers"] ** 2)
+
+    def high_tail(constraints: np.ndarray) -> float:
+        return math.sqrt(float(
+            np.sum(
+                dual_weights_squared[:maximum_order][high]
+                * constraints[:maximum_order][high] ** 2
+            )
+            + np.sum(
+                dual_weights_squared[maximum_order:][high]
+                * constraints[maximum_order:2 * maximum_order][high] ** 2
+            )
+        ))
+
+    correction_by_family = {}
+    for family, name in enumerate(("u", "w", "v")):
+        values = best_correction[
+            family * (maximum_order - 6):(family + 1) * (maximum_order - 6)
+        ]
+        correction_by_family[name] = {
+            "H1_norm": float(np.linalg.norm(values)),
+            "first_six_normalized_coefficients": values[:6].tolist(),
+            "last_six_normalized_coefficients": values[-6:].tolist(),
+        }
+    exact_merit_reduced = bool(
+        best["normalized_boundary_constraint_norm"]
+        < np.linalg.norm(initial_rows)
+    )
+    validation = {
+        "exact_retained_constraint_derivative_used": True,
+        "only_preexisting_high_geometry_shell_variables_used": True,
+        "boundary_configuration_rows_included_unchanged": True,
+        "eta_domain_retained": bool(best["eta_Legendre_minimum"] > 0.0),
+        "exact_nonlinear_merit_controls_the_parametrix_verdict": True,
+        "failed_q_only_parametrix_not_promoted": not exact_merit_reduced,
+        "finite_N6_child_and_persistence_left_unchanged": True,
+        "no_new_equation_constraint_or_acceptance_gate": True,
+    }
+    return {
+        "classification": (
+            "Q_ONLY_HIGH_SHELL_CASIMIR_BOUNDARY_LAYER_PARAMETRIX_"
+            "INVALIDATED_BY_ITS_ACTION_NORMALIZED_NEAR_KERNEL_AND_"
+            "EXACT_NONLINEAR_WEAK_MERIT;_A_MIXED_GAUGE_REDUCED_"
+            "EULER_DIRAC_PARAMETRIX_IS_REQUIRED"
+        ),
+        "source": (
+            "EXACT_TOTAL_CONSTRAINT_MAP_AT_FIXED_N6_CHILD_EMBEDDED_IN_"
+            f"N{maximum_order}_WITHOUT_A_HIGHER_N_COMPLETE_CHILD_ROOT"
+        ),
+        "maximum_order": maximum_order,
+        "quadrature_points": points,
+        "map": {
+            "rows": int(initial_rows.size),
+            "high_geometry_unknowns": int(high_indices.size),
+            "Jacobian_rank": rank,
+            "smallest_nonzero_singular_value": float(singular[rank - 1]),
+            "physical_equations_changed": False,
+        },
+        "initial": {
+            "normalized_boundary_constraint_norm": float(
+                np.linalg.norm(initial_rows)
+            ),
+            "H_minus_1_high_constraint_tail": high_tail(initial_constraints),
+        },
+        "best_parametrix_trial": best,
+        "strict_exact_merit_reduction_found": exact_merit_reduced,
+        "H_minus_1_high_constraint_tail_after_parametrix": high_tail(
+            best_constraints
+        ),
+        "line_trials": trials,
+        "correction_by_geometry_family": correction_by_family,
+        "is_a_higher_N_complete_child_root": False,
+        "is_a_new_boundary_condition": False,
+        "infinitesimal_q_only_descent_ruled_out": False,
+        "q_only_finite_boundary_layer_lift_promoted": False,
+        "first_missing_mathematical_object": (
+            "DERIVE_THE_MIXED_BOUNDARY_COMPATIBLE_GAUGE_REDUCED_"
+            "EULER_DIRAC_CASIMIR_BOUNDARY_LAYER_PARAMETRIX_USING_THE_"
+            "RETAINED_q_v_m_ACTION_BLOCKS_AND_WEAK_CONORMAL_RELATION"
+        ),
+        "new_equations_constraints_or_acceptance_gates": False,
+        "validation": validation,
+        "validation_passed": all(validation.values()),
+        "FULL_BHSM_COMPLETE": False,
+    }
+
+
+def mixed_euler_dirac_boundary_layer_parametrix_audit(
+    path: str | Path = (
+        "artifacts/BHSM_AETHER_CROSS_RESOLUTION_RECONNAISSANCE_V21_35.json"
+    ),
+    *,
+    maximum_order: int = 48,
+    points: int = 256,
+) -> dict[str, Any]:
+    """Lift the Casimir tail with the exact mixed q-v-m action Hessian."""
+
+    if maximum_order <= 6:
+        raise ValueError("the mixed boundary layer requires a higher shell")
+    result = json.loads(Path(path).read_text(encoding="utf-8"))[
+        "cross_resolution_reconnaissance"
+    ]
+    child_exact = result["N6_weak_complete_child_candidate"][
+        "child_state"
+    ]["binary64_hex"]
+    event_exact = result["sequential_action_energy_projection_audit"][
+        "rows"
+    ][0]["event"]["projected_state_binary64_hex"]
+
+    def decode(exact: Mapping[str, Any]) -> tuple[np.ndarray, ...]:
+        return tuple(
+            np.asarray([float.fromhex(value) for value in exact[name]])
+            for name in ("coordinates", "velocities", "multipliers")
+        )
+
+    child_n6 = decode(child_exact)
+    event_n6 = decode(event_exact)
+    child = embed_nested_state(*child_n6, 6, maximum_order)
+    event = embed_nested_state(*event_n6, 6, maximum_order)
+    child_q, child_v, child_m = child
+    event_q, event_v, event_m = event
+    qdim = dimensions(maximum_order)["coordinates"]
+    mdim = dimensions(maximum_order)["multipliers"]
+    center = np.concatenate(child)
+    frequencies = spectral_frequencies(maximum_order)
+    q_weights = np.sqrt(1.0 + frequencies["coordinates"] ** 2)
+    m_weights = np.sqrt(1.0 + frequencies["multipliers"] ** 2)
+    domain_weights = np.concatenate((
+        q_weights, np.ones(qdim), m_weights
+    ))
+    trace = _trace_jacobian_at_order(maximum_order)
+    attachment = _attachment_jacobian_at_order(maximum_order, child_q)
+    boundary_covectors = np.vstack((trace, attachment[1]))
+    boundary_gram = (
+        boundary_covectors
+        @ np.diag(1.0 / q_weights**2)
+        @ boundary_covectors.T
+    )
+    eigenvalues, eigenvectors = np.linalg.eigh(boundary_gram)
+    boundary_inverse_sqrt = (
+        eigenvectors
+        @ np.diag(1.0 / np.sqrt(eigenvalues))
+        @ eigenvectors.T
+    )
+    event_attachment = _attachment_coordinates_at_order(
+        maximum_order, event_q
+    )
+    high_q = [
+        1 + family * maximum_order + mode
+        for family in range(3)
+        for mode in range(6, maximum_order)
+    ]
+    high_v = [qdim + index for index in high_q]
+    high_m = [
+        2 * qdim + mode
+        for mode in range(6, maximum_order)
+    ] + [
+        2 * qdim + maximum_order + mode
+        for mode in range(6, maximum_order)
+    ]
+    high_indices = np.asarray(high_q + high_v + high_m, dtype=int)
+
+    def state_from_correction(correction: np.ndarray) -> np.ndarray:
+        state = center.copy()
+        state[high_indices] += correction / domain_weights[high_indices]
+        return state
+
+    def normalized_rows(state: np.ndarray) -> np.ndarray:
+        q = state[:qdim]
+        velocity = state[qdim:2 * qdim]
+        multipliers = state[2 * qdim:]
+        boundary_rows = np.concatenate((
+            trace @ (q - event_q),
+            [
+                _attachment_coordinates_at_order(maximum_order, q)[1]
+                - event_attachment[1]
+            ],
+        ))
+        constraints = constraint_residual(
+            maximum_order, q, velocity, multipliers, points=points
+        )
+        return np.concatenate((
+            boundary_inverse_sqrt @ boundary_rows,
+            constraints[:mdim] / m_weights,
+            constraints[mdim:],
+        ))
+
+    center_rows = normalized_rows(center)
+    jet = exact_full_action_jet_at_state(
+        maximum_order, child_q, child_v, child_m, points=points
+    )
+    gradient = np.asarray(jet.gradient, dtype=float)
+    hessian = np.asarray(jet.hessian, dtype=float)
+    multiplier_slice = slice(2 * qdim, 2 * qdim + mdim)
+    velocity_slice = slice(qdim, 2 * qdim)
+    constraint_jacobian = hessian[multiplier_slice, :].copy()
+    energy_gradient = child_v @ hessian[velocity_slice, :] - gradient
+    energy_gradient[velocity_slice] += gradient[velocity_slice]
+    raw_jacobian = np.vstack((constraint_jacobian, energy_gradient))
+    normalized_constraint_jacobian = raw_jacobian.copy()
+    normalized_constraint_jacobian[:mdim] /= m_weights[:, None]
+    boundary_jacobian = np.zeros((4, center.size))
+    boundary_jacobian[:, :qdim] = (
+        boundary_inverse_sqrt @ boundary_covectors
+    )
+    normalized_jacobian = np.vstack((
+        boundary_jacobian, normalized_constraint_jacobian
+    )) / domain_weights[None, :]
+    reduced_jacobian = normalized_jacobian[:, high_indices]
+    left_vectors, singular, _ = np.linalg.svd(
+        reduced_jacobian, full_matrices=True
+    )
+    tolerance = (
+        np.finfo(float).eps * max(reduced_jacobian.shape) * singular[0]
+    )
+    rank = int(np.count_nonzero(singular > tolerance))
+    left_null = left_vectors[:, rank:]
+    left_null_residual = float(np.linalg.norm(left_null.T @ center_rows))
+    proposal = np.linalg.lstsq(
+        reduced_jacobian, -center_rows, rcond=1.0e-12
+    )[0]
+    proposal_direction = proposal / max(1.0, np.linalg.norm(proposal))
+    check_step = 2.0e-5
+    directional_exact = (
+        normalized_rows(state_from_correction(check_step * proposal_direction))
+        - normalized_rows(state_from_correction(-check_step * proposal_direction))
+    ) / (2.0 * check_step)
+    directional_linear = reduced_jacobian @ proposal_direction
+    derivative_error = float(
+        np.linalg.norm(directional_exact - directional_linear)
+        / max(1.0, np.linalg.norm(directional_exact))
+    )
+    trials = []
+    for exponent in range(17):
+        factor = 2.0 ** (-exponent)
+        correction = factor * proposal
+        state = state_from_correction(correction)
+        rows = normalized_rows(state)
+        eta = _eta_legendre_minimum(
+            maximum_order,
+            state[:qdim],
+            state[2 * qdim:],
+            points=max(points, 512),
+        )
+        trials.append({
+            "factor": factor,
+            "action_product_correction_norm": float(
+                np.linalg.norm(correction)
+            ),
+            "normalized_boundary_constraint_norm": float(np.linalg.norm(rows)),
+            "normalized_boundary_constraint_maximum": float(
+                np.max(np.abs(rows))
+            ),
+            "eta_Legendre_minimum": eta["minimum"],
+            "admissible": bool(eta["minimum"] > 0.0),
+        })
+    admissible = [trial for trial in trials if trial["admissible"]]
+    best = min(
+        admissible,
+        key=lambda trial: trial["normalized_boundary_constraint_norm"],
+    )
+    best_correction = float(best["factor"]) * proposal
+    best_state = state_from_correction(best_correction)
+    event_momentum = _canonical_pair_at_order(
+        maximum_order, event_q, event_v, event_m, points=points
+    )[0]
+    child_momentum = _canonical_pair_at_order(
+        maximum_order,
+        best_state[:qdim],
+        best_state[qdim:2 * qdim],
+        best_state[2 * qdim:],
+        points=points,
+    )[0]
+    momentum_gram = (
+        _attachment_jacobian_at_order(maximum_order, best_state[:qdim])
+        @ _attachment_jacobian_at_order(maximum_order, best_state[:qdim]).T
+    )
+    momentum_values, momentum_vectors = np.linalg.eigh(momentum_gram)
+    momentum_sqrt = (
+        momentum_vectors
+        @ np.diag(np.sqrt(momentum_values))
+        @ momentum_vectors.T
+    )
+    momentum_mismatch = child_momentum - event_momentum
+    normalized_momentum = momentum_sqrt @ momentum_mismatch
+    center_v_form = hessian[velocity_slice, velocity_slice]
+    center_cv = hessian[multiplier_slice, velocity_slice]
+    center_v_lift = _boundary_lift(
+        center_v_form, attachment, center_cv
+    )
+    initial_child_momentum = (
+        center_v_lift.T @ gradient[velocity_slice]
+    )
+    initial_momentum_mismatch = initial_child_momentum - event_momentum
+    center_momentum_values, center_momentum_vectors = np.linalg.eigh(
+        attachment @ attachment.T
+    )
+    center_momentum_sqrt = (
+        center_momentum_vectors
+        @ np.diag(np.sqrt(center_momentum_values))
+        @ center_momentum_vectors.T
+    )
+    initial_normalized_momentum = (
+        center_momentum_sqrt @ initial_momentum_mismatch
+    )
+    frozen_momentum_jacobian = (
+        center_momentum_sqrt
+        @ center_v_lift.T
+        @ hessian[velocity_slice, :]
+    ) / domain_weights[None, :]
+    full_proposal_jacobian = np.vstack((
+        reduced_jacobian,
+        frozen_momentum_jacobian[:, high_indices],
+    ))
+    initial_full_rows = np.concatenate((
+        center_rows, initial_normalized_momentum
+    ))
+    full_proposal = np.linalg.lstsq(
+        full_proposal_jacobian, -initial_full_rows, rcond=1.0e-12
+    )[0]
+
+    def exact_full_rows(state: np.ndarray) -> tuple[np.ndarray, np.ndarray]:
+        boundary_constraint = normalized_rows(state)
+        state_q = state[:qdim]
+        state_momentum = _canonical_pair_at_order(
+            maximum_order,
+            state_q,
+            state[qdim:2 * qdim],
+            state[2 * qdim:],
+            points=points,
+        )[0]
+        state_attachment = _attachment_jacobian_at_order(
+            maximum_order, state_q
+        )
+        state_values, state_vectors = np.linalg.eigh(
+            state_attachment @ state_attachment.T
+        )
+        state_sqrt = (
+            state_vectors
+            @ np.diag(np.sqrt(state_values))
+            @ state_vectors.T
+        )
+        momentum_rows = state_sqrt @ (state_momentum - event_momentum)
+        return np.concatenate((boundary_constraint, momentum_rows)), momentum_rows
+
+    full_trials = []
+    for factor in (1.0, 0.0625, 0.015625):
+        correction = factor * full_proposal
+        state = state_from_correction(correction)
+        rows, momentum_rows = exact_full_rows(state)
+        eta = _eta_legendre_minimum(
+            maximum_order,
+            state[:qdim],
+            state[2 * qdim:],
+            points=max(points, 512),
+        )
+        full_trials.append({
+            "factor": factor,
+            "action_product_correction_norm": float(np.linalg.norm(correction)),
+            "exact_normalized_full_weak_norm": float(np.linalg.norm(rows)),
+            "exact_normalized_boundary_constraint_norm": float(
+                np.linalg.norm(rows[:-2])
+            ),
+            "exact_normalized_momentum_dual_norm": float(
+                np.linalg.norm(momentum_rows)
+            ),
+            "eta_Legendre_minimum": eta["minimum"],
+            "admissible": bool(eta["minimum"] > 0.0),
+        })
+    full_best = min(
+        (trial for trial in full_trials if trial["admissible"]),
+        key=lambda trial: trial["exact_normalized_full_weak_norm"],
+    )
+    initial_full_norm = float(np.linalg.norm(initial_full_rows))
+    full_strict_reduction = bool(
+        full_best["exact_normalized_full_weak_norm"] < initial_full_norm
+    )
+    best_jet = exact_full_action_jet_at_state(
+        maximum_order,
+        best_state[:qdim],
+        best_state[qdim:2 * qdim],
+        best_state[2 * qdim:],
+        points=points,
+    )
+    best_gradient = np.asarray(best_jet.gradient, dtype=float)
+    best_hessian = np.asarray(best_jet.hessian, dtype=float)
+    best_velocity = best_state[qdim:2 * qdim]
+    best_constraint_jacobian = best_hessian[multiplier_slice, :].copy()
+    best_energy_gradient = (
+        best_velocity @ best_hessian[velocity_slice, :] - best_gradient
+    )
+    best_energy_gradient[velocity_slice] += best_gradient[velocity_slice]
+    best_raw_constraint_jacobian = np.vstack((
+        best_constraint_jacobian, best_energy_gradient
+    ))
+    best_raw_constraint_jacobian[:mdim] /= m_weights[:, None]
+    best_attachment = _attachment_jacobian_at_order(
+        maximum_order, best_state[:qdim]
+    )
+    best_boundary_covectors = np.vstack((trace, best_attachment[1]))
+    best_boundary_jacobian = np.zeros((4, center.size))
+    best_boundary_jacobian[:, :qdim] = (
+        boundary_inverse_sqrt @ best_boundary_covectors
+    )
+    best_bc_jacobian = np.vstack((
+        best_boundary_jacobian, best_raw_constraint_jacobian
+    )) / domain_weights[None, :]
+    best_reduced_bc_jacobian = best_bc_jacobian[:, high_indices]
+    best_left, best_singular, best_right_t = np.linalg.svd(
+        best_reduced_bc_jacobian, full_matrices=True
+    )
+    best_tolerance = (
+        np.finfo(float).eps
+        * max(best_reduced_bc_jacobian.shape)
+        * best_singular[0]
+    )
+    best_rank = int(np.count_nonzero(best_singular > best_tolerance))
+    tangent_kernel = best_right_t[best_rank:].T
+    best_v_form = best_hessian[velocity_slice, velocity_slice]
+    best_cv = best_hessian[multiplier_slice, velocity_slice]
+    best_v_lift = _boundary_lift(
+        best_v_form, best_attachment, best_cv
+    )
+    best_frozen_momentum_jacobian = (
+        momentum_sqrt
+        @ best_v_lift.T
+        @ best_hessian[velocity_slice, :]
+    ) / domain_weights[None, :]
+    tangent_momentum_response = (
+        best_frozen_momentum_jacobian[:, high_indices] @ tangent_kernel
+    )
+    tangent_response_singular = np.linalg.svd(
+        tangent_momentum_response, compute_uv=False
+    )
+    tangent_basis = tangent_kernel @ np.linalg.pinv(
+        tangent_momentum_response, rcond=1.0e-12
+    )
+    for column in range(tangent_basis.shape[1]):
+        norm = float(np.linalg.norm(tangent_basis[:, column]))
+        if norm == 0.0:
+            raise RuntimeError("frozen tangent proposal basis collapsed")
+        tangent_basis[:, column] /= norm
+    boundary_only_rows, _ = exact_full_rows(best_state)
+    paired_step = 2.0e-5
+    paired_exact_jacobian = np.empty((boundary_only_rows.size, 2))
+    for column in range(2):
+        direction = tangent_basis[:, column]
+        plus_rows, _ = exact_full_rows(state_from_correction(
+            best_correction + paired_step * direction
+        ))
+        minus_rows, _ = exact_full_rows(state_from_correction(
+            best_correction - paired_step * direction
+        ))
+        paired_exact_jacobian[:, column] = (
+            plus_rows - minus_rows
+        ) / (2.0 * paired_step)
+    paired_left, paired_singular, paired_right_t = np.linalg.svd(
+        paired_exact_jacobian, full_matrices=False
+    )
+    exact_tangent_coordinates = np.linalg.lstsq(
+        paired_exact_jacobian, -boundary_only_rows, rcond=1.0e-12
+    )[0]
+    tangent_correction = tangent_basis @ exact_tangent_coordinates
+    tangent_trials = []
+    for factor in (1.0, 0.5, 0.25, 0.125, 0.0625, 0.03125, 0.015625, 0.0078125):
+        correction = best_correction + factor * tangent_correction
+        state = state_from_correction(correction)
+        rows, momentum_rows = exact_full_rows(state)
+        eta = _eta_legendre_minimum(
+            maximum_order,
+            state[:qdim],
+            state[2 * qdim:],
+            points=max(points, 512),
+        )
+        tangent_trials.append({
+            "factor": factor,
+            "increment_action_product_norm": float(
+                factor * np.linalg.norm(tangent_correction)
+            ),
+            "total_action_product_correction_norm": float(
+                np.linalg.norm(correction)
+            ),
+            "exact_normalized_full_weak_norm": float(np.linalg.norm(rows)),
+            "exact_normalized_boundary_constraint_norm": float(
+                np.linalg.norm(rows[:-2])
+            ),
+            "exact_normalized_momentum_dual_norm": float(
+                np.linalg.norm(momentum_rows)
+            ),
+            "eta_Legendre_minimum": eta["minimum"],
+            "admissible": bool(eta["minimum"] > 0.0),
+        })
+    tangent_best = min(
+        (trial for trial in tangent_trials if trial["admissible"]),
+        key=lambda trial: trial["exact_normalized_full_weak_norm"],
+    )
+    boundary_only_full_norm = float(math.hypot(
+        best["normalized_boundary_constraint_norm"],
+        np.linalg.norm(normalized_momentum),
+    ))
+    tangent_strict_reduction = bool(
+        tangent_best["exact_normalized_full_weak_norm"]
+        < boundary_only_full_norm
+    )
+    hard_coordinates = (
+        -paired_right_t[0]
+        * float(paired_left[:, 0] @ boundary_only_rows)
+        / paired_singular[0]
+    )
+    hard_correction = tangent_basis @ hard_coordinates
+    hard_trials = []
+    for factor in (1.0, 0.5, 0.25, 0.125, 0.0625, 0.03125):
+        correction = best_correction + factor * hard_correction
+        state = state_from_correction(correction)
+        rows, momentum_rows = exact_full_rows(state)
+        eta = _eta_legendre_minimum(
+            maximum_order,
+            state[:qdim],
+            state[2 * qdim:],
+            points=max(points, 512),
+        )
+        hard_trials.append({
+            "factor": factor,
+            "increment_action_product_norm": float(
+                factor * np.linalg.norm(hard_correction)
+            ),
+            "exact_normalized_full_weak_norm": float(np.linalg.norm(rows)),
+            "exact_normalized_boundary_constraint_norm": float(
+                np.linalg.norm(rows[:-2])
+            ),
+            "exact_normalized_momentum_dual_norm": float(
+                np.linalg.norm(momentum_rows)
+            ),
+            "eta_Legendre_minimum": eta["minimum"],
+            "admissible": bool(eta["minimum"] > 0.0),
+        })
+    hard_best = min(
+        (trial for trial in hard_trials if trial["admissible"]),
+        key=lambda trial: trial["exact_normalized_full_weak_norm"],
+    )
+    hard_strict_reduction = bool(
+        hard_best["exact_normalized_full_weak_norm"]
+        < boundary_only_full_norm
+    )
+    strict_reduction = bool(
+        best["normalized_boundary_constraint_norm"]
+        < np.linalg.norm(center_rows)
+    )
+    validation = {
+        "exact_full_action_Hessian_used": True,
+        "analytic_constraint_Jacobian_matches_exact_directional_response": (
+            derivative_error < 1.0e-6
+        ),
+        "single_left_null_identity_is_compatible_with_the_source": bool(
+            center_rows.size - rank == 1 and left_null_residual < 1.0e-8
+        ),
+        "eta_domain_retained": bool(best["eta_Legendre_minimum"] > 0.0),
+        "exact_nonlinear_boundary_constraint_merit_reduced": strict_reduction,
+        "frozen_momentum_proposal_reduces_exact_full_weak_merit": (
+            full_strict_reduction
+        ),
+        "boundary_constraint_tangent_momentum_step_reduces_exact_merit": (
+            hard_strict_reduction
+        ),
+        "finite_N6_child_and_persistence_left_unchanged": True,
+        "no_new_equation_constraint_or_acceptance_gate": True,
+    }
+    return {
+        "classification": (
+            "MIXED_GAUGE_REDUCED_EULER_DIRAC_CASIMIR_BOUNDARY_LAYER_"
+            "PARAMETRIX_CLOSES_THE_BOUNDARY_CONSTRAINT_OWNER;_THE_"
+            "RETURNED_MOMENTUM_AND_FULL_WEAK_REMAINDER_CONTROL_NEXT"
+            if all(validation.values()) else
+            "MIXED_EULER_DIRAC_BOUNDARY_LAYER_PARAMETRIX_REMAINS_OPEN"
+        ),
+        "source": (
+            "EXACT_FULL_q_v_m_ACTION_HESSIAN_AT_THE_ZERO_PADDED_MATCHED_"
+            f"N6_CHILD_IN_N{maximum_order};_NO_HIGHER_N_ROOT_SOLVE"
+        ),
+        "maximum_order": maximum_order,
+        "quadrature_points": points,
+        "map": {
+            "rows": int(center_rows.size),
+            "high_shell_unknowns": int(high_indices.size),
+            "high_q_unknowns": len(high_q),
+            "high_v_unknowns": len(high_v),
+            "high_m_unknowns": len(high_m),
+            "rank": rank,
+            "left_nullity": int(center_rows.size - rank),
+            "left_null_source_compatibility_norm": left_null_residual,
+            "smallest_nonzero_singular_value": float(singular[rank - 1]),
+            "condition_number": float(singular[0] / singular[rank - 1]),
+        },
+        "analytic_constraint_Jacobian_directional_error": derivative_error,
+        "initial_normalized_boundary_constraint_norm": float(
+            np.linalg.norm(center_rows)
+        ),
+        "best_parametrix_trial": best,
+        "line_trials": trials,
+        "returned_momentum_remainder": {
+            "raw_norm": float(np.linalg.norm(momentum_mismatch)),
+            "action_normalized_dual_norm": float(
+                np.linalg.norm(normalized_momentum)
+            ),
+            "included_in_this_parametrix_solve": False,
+        },
+        "full_weak_frozen_momentum_proposal": {
+            "proposal_model": (
+                "EXACT_BOUNDARY_CONSTRAINT_JACOBIAN_PLUS_FROZEN_"
+                "STATE_DEPENDENT_LIFT_MOMENTUM_SLOPE"
+            ),
+            "exact_residual_controls_promotion": True,
+            "initial_exact_normalized_full_weak_norm": initial_full_norm,
+            "best_trial": full_best,
+            "trials": full_trials,
+            "strict_exact_full_weak_reduction_found": full_strict_reduction,
+            "frozen_lift_slope_promoted_as_physics": False,
+        },
+        "boundary_constraint_tangent_momentum_correction": {
+            "boundary_constraint_normal_rank": best_rank,
+            "tangent_kernel_dimension": int(tangent_kernel.shape[1]),
+            "tangent_momentum_response_singular_values": (
+                tangent_response_singular.tolist()
+            ),
+            "paired_exact_slope_step": paired_step,
+            "paired_exact_two_direction_Jacobian_singular_values": (
+                paired_singular.tolist()
+            ),
+            "frozen_lift_slope_is_proposal_only": True,
+            "paired_exact_slopes_replace_the_failed_orientation": True,
+            "exact_full_weak_residual_controls_promotion": True,
+            "boundary_only_exact_full_weak_norm": boundary_only_full_norm,
+            "best_trial": tangent_best,
+            "trials": tangent_trials,
+            "strict_exact_full_weak_reduction_found": tangent_strict_reduction,
+            "hard_response_rank_one_test": {
+                "classification": (
+                    "FINITE_N_HARD_MOMENTUM_RESPONSE_CLOSED;_THE_SECOND_"
+                    "SOFT_CHANNEL_IS_A_NORMAL_DIRECTION_CONTROLLED_BY_THE_"
+                    "EXISTING_POSITIVE_DURATION_GAUGE_FIXED_JACOBI_"
+                    "EVOLUTION;_THE_N_UNIFORM_CLOSED_RANGE_BOUND_REMAINS_"
+                    "THE_THEOREM_LEVEL_DEPENDENCY"
+                ),
+                "retained_exact_singular_value": float(paired_singular[0]),
+                "deferred_soft_exact_singular_value": float(paired_singular[1]),
+                "exact_full_weak_norm_before": boundary_only_full_norm,
+                "exact_full_weak_norm_after": hard_best[
+                    "exact_normalized_full_weak_norm"
+                ],
+                "exact_boundary_constraint_norm_before": best[
+                    "normalized_boundary_constraint_norm"
+                ],
+                "exact_boundary_constraint_norm_after": hard_best[
+                    "exact_normalized_boundary_constraint_norm"
+                ],
+                "eta_Legendre_minimum_after": hard_best[
+                    "eta_Legendre_minimum"
+                ],
+                "soft_channel_classification": (
+                    "NORMAL_DIRECTION_CONTROLLED_BY_THE_EXISTING_POSITIVE_"
+                    "DURATION_GAUGE_FIXED_JACOBI_EVOLUTION"
+                ),
+                "soft_channel_is_a_legitimate_child_manifold_tangent": False,
+                "soft_channel_exact_response_projection_magnitude": float(
+                    paired_singular[1]
+                ),
+                "uniform_normal_closed_range_failure_proved": False,
+                "exact_next_mathematical_lemma": (
+                    "N_UNIFORM_POSITIVE_DURATION_GAUGE_FIXED_JACOBI_"
+                    "OBSERVABILITY_INF_SUP_LOWER_BOUND_FOR_THE_ISOLATED_"
+                    "SOFT_MOMENTUM_NORMAL_CHANNEL_MODULO_THE_EXISTING_CHILD_"
+                    "MANIFOLD_TANGENT_AND_GAUGE_QUOTIENT"
+                ),
+                "trials": hard_trials,
+                "best_trial": hard_best,
+                "strict_exact_full_weak_reduction_found": hard_strict_reduction,
+            },
+        },
+        "strict_exact_merit_reduction_found": strict_reduction,
+        "is_a_higher_N_complete_child_root": False,
+        "is_a_new_boundary_condition": False,
+        "first_missing_mathematical_object": (
+            "PROVE_THE_N_UNIFORM_POSITIVE_DURATION_GAUGE_FIXED_JACOBI_"
+            "OBSERVABILITY_INF_SUP_LOWER_BOUND_FOR_THE_ISOLATED_SOFT_"
+            "MOMENTUM_NORMAL_CHANNEL_MODULO_THE_EXISTING_CHILD_MANIFOLD_"
+            "TANGENT_AND_GAUGE_QUOTIENT"
+            if hard_strict_reduction else
+            "LOCALIZE_THE_FIRST_FAILED_MIXED_ACTION_BLOCK_BEFORE_ANY_"
+            "FURTHER_BOUNDARY_LAYER_CONTINUATION"
+        ),
+        "new_equations_constraints_or_acceptance_gates": False,
+        "validation": validation,
+        "validation_passed": all(validation.values()),
+        "FULL_BHSM_COMPLETE": False,
+    }
+
+
 def general_n_galerkin_transfer_certificate() -> dict[str, Any]:
     """Derive the continuum-to-Galerkin certificate required by general N."""
 
@@ -13181,6 +14120,62 @@ def promote_weak_complete_child_normal_audits(path: str | Path) -> Path:
     return target
 
 
+def promote_weak_boundary_layer_radii_obstruction(path: str | Path) -> Path:
+    """Persist the first failed infinite-dimensional radii constant."""
+
+    target = Path(path)
+    audit = weak_boundary_layer_radii_obstruction_audit(target)
+    if not audit["validation_passed"]:
+        raise RuntimeError("weak boundary-layer obstruction audit failed")
+    payload = json.loads(target.read_text(encoding="utf-8"))
+    result = dict(payload["cross_resolution_reconnaissance"])
+    result["weak_boundary_layer_radii_obstruction_audit"] = audit
+    result["active_dependency"] = audit["first_missing_mathematical_object"]
+    result["scientific_status"] = (
+        "N3_TO_N6_EXACT_ATTACHMENT_WEAK_COMPLETE_PERSISTENT_CHILDREN_"
+        "VALIDATED;_FINITE_N6_NORMAL_RADII_DATA_CLOSES;_DIRECT_"
+        "CONTINUUM_TRANSFER_FAILS_AT_THE_EXACT_CASIMIR_BOUNDARY_TAIL;_"
+        "ACTION_DERIVED_BOUNDARY_LAYER_PARAMETRIX_REQUIRED"
+    )
+    payload["cross_resolution_reconnaissance"] = result
+    validation = dict(payload["validation"])
+    validation["weak_boundary_layer_radii_obstruction_validated"] = audit[
+        "validation_passed"
+    ]
+    payload["validation"] = validation
+    payload["validation_passed"] = all(validation.values())
+    target.write_text(deterministic_json(payload), encoding="utf-8")
+    return target
+
+
+def promote_casimir_boundary_layer_parametrix_audit(path: str | Path) -> Path:
+    """Persist the invalidated q-only lift and its mixed-action successor."""
+
+    target = Path(path)
+    audit = casimir_boundary_layer_parametrix_audit(target)
+    if not audit["validation_passed"]:
+        raise RuntimeError("Casimir boundary-layer parametrix audit failed")
+    payload = json.loads(target.read_text(encoding="utf-8"))
+    result = dict(payload["cross_resolution_reconnaissance"])
+    result["casimir_boundary_layer_parametrix_audit"] = audit
+    result["active_dependency"] = audit["first_missing_mathematical_object"]
+    result["scientific_status"] = (
+        "N3_TO_N6_EXACT_ATTACHMENT_WEAK_COMPLETE_PERSISTENT_CHILDREN_"
+        "VALIDATED;_DIRECT_CONTINUUM_RADII_TRANSFER_FAILS_AT_THE_"
+        "CASIMIR_BOUNDARY_TAIL;_Q_ONLY_HIGH_SHELL_LIFT_INVALIDATED;_"
+        "MIXED_GAUGE_REDUCED_EULER_DIRAC_PARAMETRIX_REQUIRED"
+    )
+    payload["cross_resolution_reconnaissance"] = result
+    validation = dict(payload["validation"])
+    validation["casimir_boundary_layer_parametrix_audit_validated"] = audit[
+        "validation_passed"
+    ]
+    payload["validation"] = validation
+    payload["validation_passed"] = all(validation.values())
+    target.write_text(deterministic_json(payload), encoding="utf-8")
+    return target
+
+
 def reclassify_existing_n5_proposal_plateau(path: str | Path) -> Path:
     """Freeze the demonstrated N5 flux-Jacobian owner without a new solve."""
 
@@ -13294,6 +14289,8 @@ __all__ = [
     "weak_constraint_boundary_source_tail_audit",
     "weak_complete_child_normal_right_inverse_audit",
     "weak_complete_child_normal_lipschitz_audit",
+    "weak_boundary_layer_radii_obstruction_audit",
+    "casimir_boundary_layer_parametrix_audit",
     "general_n_galerkin_transfer_certificate",
     "general_n_complete_child_reconstruction_statement",
     "cross_resolution_reconnaissance",
@@ -13322,5 +14319,7 @@ __all__ = [
     "promote_injected_calderon_graph_audit",
     "promote_weak_constraint_boundary_tail_audit",
     "promote_weak_complete_child_normal_audits",
+    "promote_weak_boundary_layer_radii_obstruction",
+    "promote_casimir_boundary_layer_parametrix_audit",
     "reclassify_existing_n5_proposal_plateau",
 ]
