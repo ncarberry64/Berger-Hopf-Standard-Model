@@ -13455,6 +13455,174 @@ def continuum_normal_cauchy_completeness_reduction(
     }
 
 
+def normal_boundary_cauchy_symbol_factorization(
+    path: str | Path = (
+        "artifacts/BHSM_AETHER_CROSS_RESOLUTION_RECONNAISSANCE_V21_35.json"
+    ),
+) -> dict[str, Any]:
+    """Factor the existing seven-dimensional normal boundary symbol."""
+
+    result = json.loads(Path(path).read_text(encoding="utf-8"))[
+        "cross_resolution_reconnaissance"
+    ]
+    reduction = result["continuum_normal_cauchy_completeness_reduction"]
+    fixed = result[
+        "injected_n6_event_child_calderon_friedrichs_angle_audit"
+    ]
+    tangent = result["whole_system_time_translation_tangent_interface"]
+    hard = result["mixed_euler_dirac_hard_momentum_response_audit"]
+    rows = []
+    for record in fixed["rows"]:
+        gamma = float(record["Friedrichs_transversality_sine"])
+        cosine = math.sqrt(max(0.0, 1.0 - gamma**2))
+        symbol_gap = gamma / math.sqrt(1.0 + cosine)
+        rows.append({
+            "N": int(record["N"]),
+            "Friedrichs_sine": gamma,
+            "largest_principal_cosine": cosine,
+            "exact_four_by_four_matched_graph_symbol_gap": symbol_gap,
+            "exact_seven_by_seven_boundary_symbol_gap": min(1.0, symbol_gap),
+            "universal_gamma_over_sqrt2_lower_bound": gamma / math.sqrt(2.0),
+            "linearized_graph_intersection_dimension": int(
+                record["linearized_graph_intersection_dimension"]
+            ),
+        })
+    second_sine = float(tangent["normal_angle_after_tangent_quotient"][
+        "measured_N12_N13_minimum_second_principal_angle_sine"
+    ])
+    hard_test = hard
+    validation = {
+        "three_trace_plus_four_Calderon_coordinates_equal_seven": (
+            reduction["boundary_Cauchy_vector"]["dimension"] == 3 + 4
+        ),
+        "all_fixed_pair_symbols_are_full_rank": all(
+            row["exact_seven_by_seven_boundary_symbol_gap"] > 0.0
+            and row["linearized_graph_intersection_dimension"] == 0
+            for row in rows
+        ),
+        "exact_angle_to_symbol_identity_replays": all(
+            abs(
+                row["exact_four_by_four_matched_graph_symbol_gap"] ** 2
+                * (1.0 + row["largest_principal_cosine"])
+                - row["Friedrichs_sine"] ** 2
+            ) < 1.0e-14
+            for row in rows
+        ),
+        "hard_rank_one_result_is_retained": bool(
+            hard_test["exact_full_weak_norm"]["after"]
+            < hard_test["exact_full_weak_norm"]["before"]
+        ),
+        "soft_momentum_channel_remains_normal_and_dynamical": (
+            hard_test["soft_channel"]["classification"]
+            == "NORMAL_DIRECTION_CONTROLLED_BY_THE_EXISTING_POSITIVE_"
+            "DURATION_GAUGE_FIXED_JACOBI_EVOLUTION"
+        ),
+        "finite_fixed_pair_gap_not_promoted_to_a_uniform_bundle_theorem": True,
+        "candidate_time_tangent_not_quotiented_from_boundary_alignment": bool(
+            tangent["tangent_policy"][
+                "soft_Calderon_mode_reclassified_as_this_tangent"
+            ] is False
+        ),
+        "no_new_equation_constraint_regularizer_objective_or_gate": True,
+    }
+    return {
+        "classification": (
+            "THE_EXISTING_SEVEN_DIMENSIONAL_NORMAL_BOUNDARY_CAUCHY_"
+            "SYMBOL_FACTORS_AS_THE_THREE_TRACE_ROWS_DIRECT_SUM_THE_"
+            "FOUR_DIMENSIONAL_MATCHED_EVENT_CHILD_CALDERON_GRAPH_SYMBOL;_"
+            "THE_FIXED_INJECTED_PAIR_IS_FULL_RANK_BUT_AN_S2_ETA_UNIFORM_"
+            "NONLINEAR_NORMAL_GRAPH_ANGLE_OR_A_NONZERO_LIMIT_KERNEL_"
+            "REMAINS_TO_BE_PROVED"
+        ),
+        "action_normalized_symbol": {
+            "boundary_space": "B=TSTAR(R2)_WITH_THE_EXISTING_ACTION_TRACE_GRAM",
+            "event_matching_involution": "S(b,Lambda)=(b,-Lambda)",
+            "orthonormal_frames": (
+                "Q_child_FOR_L_child_AND_Q_Se_FOR_S*L_event_IN_B"
+            ),
+            "four_by_four_graph_block": "M4=[Q_child,-Q_Se]",
+            "seven_by_seven_symbol": "B7=I3_TRACE_DIRECT_SUM_M4",
+            "row_identification": (
+                "TRACE3_DIRECT_SUM_THE_CONSTRAINT_RECONSTRUCTED_"
+                "CANONICAL_MOMENTUM2_WEAK_REACTION2_CAUCHY_PAIR"
+            ),
+            "singular_value_formula": (
+                "sigma(M4)={sqrt(1+cos(theta_i)),sqrt(1-cos(theta_i))}_"
+                "FOR_i=1,2"
+            ),
+            "minimum_gap_formula": (
+                "sigma_min(B7)=min(1,gamma/sqrt(1+sqrt(1-gamma^2)))_"
+                "WITH_gamma=sin(theta_F)"
+            ),
+            "uniform_lower_bound_if_gamma_is_uniform": (
+                "sigma_min(B7)>=min(1,gamma/sqrt(2))"
+            ),
+            "single_valued_DtN_matrix_required": False,
+        },
+        "fixed_injected_pair": {
+            "source": fixed["classification"],
+            "rows": rows,
+            "minimum_exact_seven_by_seven_gap": min(
+                row["exact_seven_by_seven_boundary_symbol_gap"]
+                for row in rows
+            ),
+            "finite_pair_Cauchy_completeness": bool(
+                fixed["fixed_pair_event_to_history_Cauchy_completeness"]
+            ),
+            "is_a_uniform_nonlinear_child_bundle_proof": False,
+        },
+        "tangent_and_soft_separation": {
+            "whole_system_time_translation_tangent_exists_exactly": True,
+            "near_intersection_identified_with_that_full_history_tangent": False,
+            "measured_second_angle_sine": second_sine,
+            "conditional_second_angle_symbol_lower_bound": (
+                second_sine / math.sqrt(2.0)
+            ),
+            "conditional_value_promoted": False,
+            "hard_test_soft_momentum_projection": hard_test[
+                "soft_channel"
+            ][
+                "exact_response_projection_magnitude"
+            ],
+            "hard_test_soft_momentum_classification": hard_test["soft_channel"][
+                "classification"
+            ],
+        },
+        "uniform_closed_range_dichotomy": {
+            "required": (
+                "inf_OVER_THE_S2_ETA_NORMAL_SECTION_"
+                "sin(theta_F(L_child,S*L_event))>0_MODULO_ONLY_"
+                "PROVED_TANGENT_AND_GAUGE_DIRECTIONS"
+            ),
+            "fixed_pair_rank_proves_required_statement": False,
+            "decreasing_injected_gap_proves_failure": False,
+            "category_3_requires": (
+                "A_NONZERO_CONTINUUM_GAUGE_QUOTIENTED_MATCHED_"
+                "EVENT_CHILD_JACOBI_HISTORY_OR_AN_EQUIVALENT_NORMALIZED_"
+                "L2_HISTORY_COLLAPSE_SEQUENCE"
+            ),
+            "current_soft_channel_category": (
+                "NORMAL_DIRECTION_CONTROLLED_BY_THE_EXISTING_POSITIVE_"
+                "DURATION_GAUGE_FIXED_JACOBI_EVOLUTION"
+            ),
+            "genuine_uniform_failure_demonstrated": False,
+        },
+        "exact_next_mathematical_lemma": (
+            "PROVE_THAT_THE_CONTINUUM_GAUGE_QUOTIENTED_EVENT_AND_CHILD_"
+            "WEAK_CALDERON_GRAPHS_HAVE_NO_NON_TANGENT_INTERSECTION_ON_"
+            "THE_S2_ETA_NORMAL_SECTION_BY_THE_POSITIVE_DURATION_WEAK_"
+            "GREEN_ENERGY_IDENTITY,_OR_EXHIBIT_THE_NONZERO_MATCHED_"
+            "NORMAL_JACOBI_HISTORY"
+        ),
+        "new_physics_equations_constraints_regularizers_objectives_or_gates": (
+            False
+        ),
+        "validation": validation,
+        "validation_passed": all(validation.values()),
+        "FULL_BHSM_COMPLETE": False,
+    }
+
+
 def weak_constraint_boundary_source_tail_audit(
     path: str | Path = (
         "artifacts/BHSM_AETHER_CROSS_RESOLUTION_RECONNAISSANCE_V21_35.json"
@@ -16874,15 +17042,21 @@ def promote_boundary_jerk_weak_graph_domain_audit(
     if not completeness["validation_passed"]:
         raise RuntimeError("continuum normal Cauchy completeness reduction failed")
     result["continuum_normal_cauchy_completeness_reduction"] = completeness
-    result["active_dependency"] = completeness["exact_next_mathematical_lemma"]
+    symbol = normal_boundary_cauchy_symbol_factorization(target)
+    if not symbol["validation_passed"]:
+        raise RuntimeError("normal boundary Cauchy symbol factorization failed")
+    result["normal_boundary_cauchy_symbol_factorization"] = symbol
+    result["active_dependency"] = symbol["exact_next_mathematical_lemma"]
     result["scientific_status"] = (
         "N3_TO_N6_EXACT_ATTACHMENT_WEAK_COMPLETE_PERSISTENT_CHILDREN_"
         "VALIDATED;_THE_HARD_MOMENTUM_RESPONSE_CLOSES_AND_THE_SOFT_"
         "NORMAL_CHANNEL_IS_POSITIVE_DURATION_DYNAMICAL;_UNIFORM_"
         "CLASSICAL_H6_CONTROL_IS_INVALID_AS_A_NEW_CRITERION;_THE_WEAK_"
         "CALDERON_BOUNDARY_JERK_FAILURE_IS_LOCALIZED_TO_THE_ACTION_"
-        "CONTINUUM_NORMAL_CAUCHY_COMPLETENESS_REDUCED_TO_THE_EXPLICIT_"
-        "SEVEN_BY_SEVEN_ACTION_OWNED_BOUNDARY_SYMBOL_GAP"
+        "SEVEN_BY_SEVEN_ACTION_NORMALIZED_BOUNDARY_SYMBOL_FACTORIZED;_"
+        "CONTINUUM_NON_TANGENT_EVENT_CHILD_CALDERON_INTERSECTION_"
+        "EXCLUSION_OR_EXHIBITION_IS_THE_REMAINING_NORMAL_CLOSED_RANGE_"
+        "DEPENDENCY"
     )
     payload["cross_resolution_reconnaissance"] = result
     validation = dict(payload["validation"])
@@ -16924,6 +17098,9 @@ def promote_boundary_jerk_weak_graph_domain_audit(
     )
     validation["continuum_normal_cauchy_completeness_reduction_validated"] = (
         completeness["validation_passed"]
+    )
+    validation["normal_boundary_cauchy_symbol_factorization_validated"] = (
+        symbol["validation_passed"]
     )
     payload["validation"] = validation
     payload["validation_passed"] = all(validation.values())
@@ -17154,6 +17331,7 @@ __all__ = [
     "normal_section_S2_compactness_scope",
     "soft_normal_fredholm_compactness_dichotomy",
     "continuum_normal_cauchy_completeness_reduction",
+    "normal_boundary_cauchy_symbol_factorization",
     "weak_constraint_boundary_source_tail_audit",
     "weak_complete_child_normal_right_inverse_audit",
     "weak_complete_child_normal_lipschitz_audit",

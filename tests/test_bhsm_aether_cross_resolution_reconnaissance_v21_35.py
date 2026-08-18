@@ -21,6 +21,7 @@ from bhsm.interface.aether_cross_resolution_reconnaissance_v21_35 import (
     normal_section_S2_compactness_scope,
     soft_normal_fredholm_compactness_dichotomy,
     continuum_normal_cauchy_completeness_reduction,
+    normal_boundary_cauchy_symbol_factorization,
     uniform_boundary_jerk_compactness_reduction,
     uniform_positive_duration_normal_closed_range_reduction,
     weak_calderon_boundary_generator_reduction,
@@ -494,6 +495,37 @@ def test_continuum_normal_cauchy_completeness_reduction():
     ] is False
     assert consequence["global_unbounded_child_manifold_claimed"] is False
     assert consequence["category_3_failure_demonstrated"] is False
+    assert audit[
+        "new_physics_equations_constraints_regularizers_objectives_or_gates"
+    ] is False
+
+
+def test_normal_boundary_cauchy_symbol_factorization():
+    audit = normal_boundary_cauchy_symbol_factorization()
+    assert audit["validation_passed"] is True
+    symbol = audit["action_normalized_symbol"]
+    assert symbol["seven_by_seven_symbol"] == "B7=I3_TRACE_DIRECT_SUM_M4"
+    assert symbol["single_valued_DtN_matrix_required"] is False
+    fixed = audit["fixed_injected_pair"]
+    assert fixed["minimum_exact_seven_by_seven_gap"] > 0.0
+    assert fixed["finite_pair_Cauchy_completeness"] is True
+    assert fixed["is_a_uniform_nonlinear_child_bundle_proof"] is False
+    for row in fixed["rows"]:
+        assert row["exact_seven_by_seven_boundary_symbol_gap"] > 0.0
+        assert row["linearized_graph_intersection_dimension"] == 0
+        assert (
+            row["exact_seven_by_seven_boundary_symbol_gap"]
+            >= row["universal_gamma_over_sqrt2_lower_bound"]
+        )
+    separation = audit["tangent_and_soft_separation"]
+    assert separation[
+        "near_intersection_identified_with_that_full_history_tangent"
+    ] is False
+    assert separation["conditional_value_promoted"] is False
+    dichotomy = audit["uniform_closed_range_dichotomy"]
+    assert dichotomy["fixed_pair_rank_proves_required_statement"] is False
+    assert dichotomy["decreasing_injected_gap_proves_failure"] is False
+    assert dichotomy["genuine_uniform_failure_demonstrated"] is False
     assert audit[
         "new_physics_equations_constraints_regularizers_objectives_or_gates"
     ] is False
