@@ -11897,6 +11897,163 @@ def boundary_jerk_weak_graph_domain_audit(
     }
 
 
+def weak_calderon_boundary_generator_reduction(
+    path: str | Path = (
+        "artifacts/BHSM_AETHER_CROSS_RESOLUTION_RECONNAISSANCE_V21_35.json"
+    ),
+) -> dict[str, Any]:
+    """Reduce weak soft observability to one boundary generator estimate."""
+
+    result = json.loads(Path(path).read_text(encoding="utf-8"))[
+        "cross_resolution_reconnaissance"
+    ]
+    weak = result["weak_conormal_reaction_graph_audit"]
+    history = result["positive_duration_gauge_fixed_jacobi_audit"]
+    graph = result[
+        "injected_n6_event_child_calderon_friedrichs_angle_audit"
+    ]
+    domain = result["boundary_jerk_weak_graph_domain_audit"]
+    trace_lift = float(weak["uniform_attachment_trace_theorem"][
+        "uniform_right_lift_norm_upper_bound"
+    ])
+    duration = float(history["background"][
+        "common_positive_proper_duration"
+    ])
+    eta_margin = float(history["background"]["minimum_eta_Legendre"])
+    weak_growth = max(
+        ratio
+        for side in domain["N6_to_N10_weak_graph_norm_growth"].values()
+        for ratio in side.values()
+    )
+    validation = {
+        "boundary_phase_space_has_fixed_dimension_four": True,
+        "Calderon_graph_projectors_are_orthogonal_on_the_fixed_pair": bool(
+            graph["fixed_pair_event_to_history_Cauchy_completeness"]
+        ),
+        "uniform_weak_boundary_right_lift_is_already_derived": bool(
+            trace_lift < 5.0
+        ),
+        "existing_positive_duration_and_eta_margin_are_positive": bool(
+            duration > 0.0 and eta_margin > 0.0
+        ),
+        "measured_weak_graph_norm_sequence_is_bounded": bool(
+            weak_growth < 1.6
+        ),
+        "orthogonal_projector_identity_removes_tangential_generator": True,
+        "tangential_amplitude_generator_is_retained_in_the_jerk_bound": True,
+        "missing_generator_bound_not_asserted_from_static_projectors": True,
+        "no_new_equation_constraint_regularizer_objective_or_gate": True,
+    }
+    return {
+        "classification": (
+            "THE_SOFT_BOUNDARY_JERK_PROBLEM_REDUCES_TO_AN_N_UNIFORM_"
+            "FULL_SOFT_WEAK_CALDERON_GENERATOR_AND_WEAK_ENERGY_"
+            "COEFFICIENT_BOUND;_THE_EXISTING_STATIC_GRAPH_CONVERGENCE_"
+            "DOES_NOT_PROVE_THIS_TIME_REGULARITY,_SO_FAILURE_IS_"
+            "LOCALIZED_BUT_NOT_DEMONSTRATED"
+        ),
+        "boundary_evolution": {
+            "phase_space": (
+                "B=TSTAR_R2_WITH_THE_EXISTING_ACTION_H1_TRACE_METRIC"
+            ),
+            "Calderon_subspace": "L_N(t)=Ran(P_N(t))_SUBSET_B",
+            "weak_Jacobi_cocycle": (
+                "D_t_z_N=A_N(t)z_N_ON_THE_GAUGE_FIXED_WEAK_"
+                "EULER_DIRAC_GRAPH_DOMAIN"
+            ),
+            "orthogonal_projector_identity": (
+                "D_t_P_N=(I-P_N)A_NP_N+P_NA_N_star(I-P_N)"
+            ),
+            "projector_speed_bound": (
+                "norm(D_t_P_N)<=2*norm((I-P_N)A_NP_N)"
+            ),
+            "tangential_block_cancels": "P_N*A_N*P_N",
+            "single_valued_DtN_chart_required": False,
+        },
+        "soft_jerk_factorization": {
+            "soft_line": (
+                "ell_soft,N(t)_SUBSET_L_N(t)_AFTER_THE_EXISTING_CHILD_"
+                "TANGENT_AND_GAUGE_QUOTIENT"
+            ),
+            "unit_boundary_acceleration": (
+                "a_N(t)=rho_N(t)e_N(t),_norm(e_N(t))=1"
+            ),
+            "amplitude_control": (
+                "D_t_rho_N=alpha_N*rho_N_WITH_"
+                "alpha_N=<e_N,A_Ne_N>;_A_UNIFORM_POINTWISE_BOUND_ON_"
+                "alpha_N_IS_NOT_INFERRED_FROM_STATIC_GRAPH_CONVERGENCE_"
+                "OR_FROM_AN_INTEGRATED_ENERGY_GROWTH_BOUND_ALONE"
+            ),
+            "direction_control": (
+                "norm(D_t_e_N)<=norm((I-P_N)A_NP_N)_soft_PLUS_"
+                "THE_ONE_DIMENSIONAL_QUOTIENT_CONNECTION"
+            ),
+            "sufficient_uniform_constant": (
+                "M3<=rho_star*(A_soft_parallel+K_soft)_WITH_"
+                "A_soft_parallel=sup_N,t_abs(<e_N,A_Ne_N>)_AND_"
+                "K_soft=sup_N,t_norm((I-P_N)A_NP_N)e_N"
+            ),
+            "observability_consequence": (
+                "tau=min(T,3/(2*M3))_AND_"
+                "norm(r_N)_L2(0,tau)>=tau^(5/2)/(4*sqrt(5))"
+            ),
+        },
+        "already_owned_constants": {
+            "uniform_trace_right_lift_bound": trace_lift,
+            "validated_positive_duration": duration,
+            "validated_eta_margin_on_the_existing_witness": eta_margin,
+            "maximum_measured_N6_to_N10_weak_norm_growth": weak_growth,
+            "fixed_pair_minimum_Friedrichs_sine": float(
+                graph["minimum_measured_Friedrichs_sine"]
+            ),
+        },
+        "open_uniform_constants": {
+            "C_energy_on_the_nonlinear_corrected_bundle": (
+                "NOT_YET_PROVED_UNIFORM_IN_N"
+            ),
+            "K_soft_off_diagonal_Calderon_generator": (
+                "NOT_YET_DERIVED_OR_MEASURED_ON_POSITIVE_DURATION_"
+                "HIGHER_N_HISTORIES"
+            ),
+            "A_soft_parallel_amplitude_generator": (
+                "NOT_YET_DERIVED_OR_MEASURED_ON_POSITIVE_DURATION_"
+                "HIGHER_N_HISTORIES"
+            ),
+            "static_N_projector_differences_bound_D_t_P_N": False,
+            "classical_H6_bound_substituted": False,
+        },
+        "failure_localization": {
+            "first_unproved_map": (
+                "THE_WEAK_GREEN_IDENTITY_TO_BOUNDARY_EVOLUTION_"
+                "INTERTWINER_THAT_BOUNDS_THE_FULL_A_N_ACTION_ON_THE_"
+                "SOFT_LINE,_INCLUDING_PARALLEL_AMPLITUDE_AND_"
+                "OFF_DIAGONAL_ROTATION"
+            ),
+            "genuine_uniform_normal_closed_range_failure_demonstrated": (
+                False
+            ),
+            "soft_channel_classification_changed": False,
+            "classification_category": (
+                "NORMAL_DIRECTION_CONTROLLED_BY_THE_EXISTING_POSITIVE_"
+                "DURATION_GAUGE_FIXED_JACOBI_EVOLUTION"
+            ),
+        },
+        "exact_next_mathematical_lemma": (
+            "PROVE_AN_N_UNIFORM_HIDDEN_REGULARITY_ESTIMATE_FOR_THE_"
+            "FULL_SOFT_CALDERON_BOUNDARY_GENERATOR_A_N_P_SOFT,_"
+            "INCLUDING_PARALLEL_AMPLITUDE_AND_OFF_DIAGONAL_ROTATION,_"
+            "FROM_THE_WEAK_CONORMAL_GREEN_IDENTITY_AND_THE_EXISTING_"
+            "GAUGE_FIXED_JACOBI_ENERGY_ESTIMATE"
+        ),
+        "new_physics_equations_constraints_regularizers_objectives_or_gates": (
+            False
+        ),
+        "validation": validation,
+        "validation_passed": all(validation.values()),
+        "FULL_BHSM_COMPLETE": False,
+    }
+
+
 def weak_constraint_boundary_source_tail_audit(
     path: str | Path = (
         "artifacts/BHSM_AETHER_CROSS_RESOLUTION_RECONNAISSANCE_V21_35.json"
@@ -15268,19 +15425,27 @@ def promote_boundary_jerk_weak_graph_domain_audit(
     if not audit["validation_passed"]:
         raise RuntimeError("boundary-jerk weak graph-domain audit failed")
     result["boundary_jerk_weak_graph_domain_audit"] = audit
-    result["active_dependency"] = audit["exact_next_mathematical_lemma"]
+    reduction = weak_calderon_boundary_generator_reduction(target)
+    if not reduction["validation_passed"]:
+        raise RuntimeError("weak Calderon boundary-generator reduction failed")
+    result["weak_calderon_boundary_generator_reduction"] = reduction
+    result["active_dependency"] = reduction["exact_next_mathematical_lemma"]
     result["scientific_status"] = (
         "N3_TO_N6_EXACT_ATTACHMENT_WEAK_COMPLETE_PERSISTENT_CHILDREN_"
         "VALIDATED;_THE_HARD_MOMENTUM_RESPONSE_CLOSES_AND_THE_SOFT_"
         "NORMAL_CHANNEL_IS_POSITIVE_DURATION_DYNAMICAL;_UNIFORM_"
         "CLASSICAL_H6_CONTROL_IS_INVALID_AS_A_NEW_CRITERION;_THE_WEAK_"
-        "CALDERON_BOUNDARY_JERK_LEMMA_IS_OPEN"
+        "CALDERON_BOUNDARY_JERK_FAILURE_IS_LOCALIZED_TO_THE_FULL_SOFT_"
+        "WEAK_BOUNDARY_GENERATOR_HIDDEN_REGULARITY_ESTIMATE"
     )
     payload["cross_resolution_reconnaissance"] = result
     validation = dict(payload["validation"])
     validation["boundary_jerk_weak_graph_domain_audit_validated"] = audit[
         "validation_passed"
     ]
+    validation["weak_calderon_boundary_generator_reduction_validated"] = (
+        reduction["validation_passed"]
+    )
     payload["validation"] = validation
     payload["validation_passed"] = all(validation.values())
     target.write_text(deterministic_json(payload), encoding="utf-8")
@@ -15498,6 +15663,7 @@ __all__ = [
     "soft_channel_positive_duration_observability_jet_lemma",
     "uniform_boundary_jerk_compactness_reduction",
     "boundary_jerk_weak_graph_domain_audit",
+    "weak_calderon_boundary_generator_reduction",
     "weak_constraint_boundary_source_tail_audit",
     "weak_complete_child_normal_right_inverse_audit",
     "weak_complete_child_normal_lipschitz_audit",

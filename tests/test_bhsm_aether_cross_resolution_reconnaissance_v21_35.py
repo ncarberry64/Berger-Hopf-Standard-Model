@@ -12,6 +12,7 @@ from bhsm.interface.aether_cross_resolution_reconnaissance_v21_35 import (
     soft_channel_positive_duration_observability_jet_lemma,
     uniform_boundary_jerk_compactness_reduction,
     uniform_positive_duration_normal_closed_range_reduction,
+    weak_calderon_boundary_generator_reduction,
     whole_system_time_translation_tangent_interface,
 )
 
@@ -200,6 +201,36 @@ def test_boundary_jerk_weak_graph_domain_audit():
         "correct_history_domain"
     ]
     assert audit["genuine_uniform_closed_range_failure_demonstrated"] is False
+    assert audit[
+        "new_physics_equations_constraints_regularizers_objectives_or_gates"
+    ] is False
+
+
+def test_weak_calderon_boundary_generator_reduction():
+    audit = weak_calderon_boundary_generator_reduction()
+    assert audit["validation_passed"] is True
+    evolution = audit["boundary_evolution"]
+    assert "(I-P_N)A_NP_N" in evolution["projector_speed_bound"]
+    assert evolution["tangential_block_cancels"] == "P_N*A_N*P_N"
+    assert evolution["single_valued_DtN_chart_required"] is False
+    owned = audit["already_owned_constants"]
+    assert owned["uniform_trace_right_lift_bound"] < 5.0
+    assert owned["validated_positive_duration"] > 0.0
+    assert owned["validated_eta_margin_on_the_existing_witness"] > 0.0
+    assert audit["open_uniform_constants"][
+        "static_N_projector_differences_bound_D_t_P_N"
+    ] is False
+    assert "NOT_YET" in audit["open_uniform_constants"][
+        "A_soft_parallel_amplitude_generator"
+    ]
+    failure = audit["failure_localization"]
+    assert failure[
+        "genuine_uniform_normal_closed_range_failure_demonstrated"
+    ] is False
+    assert failure["classification_category"] == (
+        "NORMAL_DIRECTION_CONTROLLED_BY_THE_EXISTING_POSITIVE_"
+        "DURATION_GAUGE_FIXED_JACOBI_EVOLUTION"
+    )
     assert audit[
         "new_physics_equations_constraints_regularizers_objectives_or_gates"
     ] is False

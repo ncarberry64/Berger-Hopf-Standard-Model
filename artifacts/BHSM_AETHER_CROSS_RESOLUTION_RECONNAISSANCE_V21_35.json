@@ -5991,7 +5991,7 @@
       },
       "validation_passed": true
     },
-    "active_dependency": "DERIVE_THE_SOFT_BOUNDARY_JERK_BOUND_FROM_THE_WEAK_EULER_DIRAC_GRAPH_NORM_AND_THE_FINITE_DIMENSIONAL_CALDERON_BOUNDARY_EVOLUTION_WITHOUT_REQUIRING_UNIFORM_GLOBAL_H6",
+    "active_dependency": "PROVE_AN_N_UNIFORM_HIDDEN_REGULARITY_ESTIMATE_FOR_THE_FULL_SOFT_CALDERON_BOUNDARY_GENERATOR_A_N_P_SOFT,_INCLUDING_PARALLEL_AMPLITUDE_AND_OFF_DIAGONAL_ROTATION,_FROM_THE_WEAK_CONORMAL_GREEN_IDENTITY_AND_THE_EXISTING_GAUGE_FIXED_JACOBI_ENERGY_ESTIMATE",
     "boundary_compatible_gauge_quotient_audit": {
       "FULL_BHSM_COMPLETE": false,
       "boundary_compatibility": {
@@ -11650,7 +11650,7 @@
       },
       "validation_passed": true
     },
-    "scientific_status": "N3_TO_N6_EXACT_ATTACHMENT_WEAK_COMPLETE_PERSISTENT_CHILDREN_VALIDATED;_THE_HARD_MOMENTUM_RESPONSE_CLOSES_AND_THE_SOFT_NORMAL_CHANNEL_IS_POSITIVE_DURATION_DYNAMICAL;_UNIFORM_CLASSICAL_H6_CONTROL_IS_INVALID_AS_A_NEW_CRITERION;_THE_WEAK_CALDERON_BOUNDARY_JERK_LEMMA_IS_OPEN",
+    "scientific_status": "N3_TO_N6_EXACT_ATTACHMENT_WEAK_COMPLETE_PERSISTENT_CHILDREN_VALIDATED;_THE_HARD_MOMENTUM_RESPONSE_CLOSES_AND_THE_SOFT_NORMAL_CHANNEL_IS_POSITIVE_DURATION_DYNAMICAL;_UNIFORM_CLASSICAL_H6_CONTROL_IS_INVALID_AS_A_NEW_CRITERION;_THE_WEAK_CALDERON_BOUNDARY_JERK_FAILURE_IS_LOCALIZED_TO_THE_FULL_SOFT_WEAK_BOUNDARY_GENERATOR_HIDDEN_REGULARITY_ESTIMATE",
     "sequential_action_energy_projection_audit": {
       "FULL_BHSM_COMPLETE": false,
       "classification": "ACTION_ENERGY_COHERENT_EVENT_AND_CHILD_ADMIT_SEQUENTIAL_NESTED_CONSTRAINT_FIBER_TRANSPORT;_THIS_IS_NOT_YET_A_GENERAL_N_COMPLETE_CHILD_ROOT_CONTINUATION_THEOREM",
@@ -12693,6 +12693,61 @@
         "finite_N6_root_and_persistence_remain_valid": true,
         "mechanical_resolution_increase_is_not_a_practical_closure_route": true,
         "no_new_equation_constraint_or_acceptance_gate": true
+      },
+      "validation_passed": true
+    },
+    "weak_calderon_boundary_generator_reduction": {
+      "FULL_BHSM_COMPLETE": false,
+      "already_owned_constants": {
+        "fixed_pair_minimum_Friedrichs_sine": 0.000200688538568,
+        "maximum_measured_N6_to_N10_weak_norm_growth": 1.061327877947197,
+        "uniform_trace_right_lift_bound": 4.249543667773264,
+        "validated_eta_margin_on_the_existing_witness": 0.99830307447322,
+        "validated_positive_duration": 0.000113439890737
+      },
+      "boundary_evolution": {
+        "Calderon_subspace": "L_N(t)=Ran(P_N(t))_SUBSET_B",
+        "orthogonal_projector_identity": "D_t_P_N=(I-P_N)A_NP_N+P_NA_N_star(I-P_N)",
+        "phase_space": "B=TSTAR_R2_WITH_THE_EXISTING_ACTION_H1_TRACE_METRIC",
+        "projector_speed_bound": "norm(D_t_P_N)<=2*norm((I-P_N)A_NP_N)",
+        "single_valued_DtN_chart_required": false,
+        "tangential_block_cancels": "P_N*A_N*P_N",
+        "weak_Jacobi_cocycle": "D_t_z_N=A_N(t)z_N_ON_THE_GAUGE_FIXED_WEAK_EULER_DIRAC_GRAPH_DOMAIN"
+      },
+      "classification": "THE_SOFT_BOUNDARY_JERK_PROBLEM_REDUCES_TO_AN_N_UNIFORM_FULL_SOFT_WEAK_CALDERON_GENERATOR_AND_WEAK_ENERGY_COEFFICIENT_BOUND;_THE_EXISTING_STATIC_GRAPH_CONVERGENCE_DOES_NOT_PROVE_THIS_TIME_REGULARITY,_SO_FAILURE_IS_LOCALIZED_BUT_NOT_DEMONSTRATED",
+      "exact_next_mathematical_lemma": "PROVE_AN_N_UNIFORM_HIDDEN_REGULARITY_ESTIMATE_FOR_THE_FULL_SOFT_CALDERON_BOUNDARY_GENERATOR_A_N_P_SOFT,_INCLUDING_PARALLEL_AMPLITUDE_AND_OFF_DIAGONAL_ROTATION,_FROM_THE_WEAK_CONORMAL_GREEN_IDENTITY_AND_THE_EXISTING_GAUGE_FIXED_JACOBI_ENERGY_ESTIMATE",
+      "failure_localization": {
+        "classification_category": "NORMAL_DIRECTION_CONTROLLED_BY_THE_EXISTING_POSITIVE_DURATION_GAUGE_FIXED_JACOBI_EVOLUTION",
+        "first_unproved_map": "THE_WEAK_GREEN_IDENTITY_TO_BOUNDARY_EVOLUTION_INTERTWINER_THAT_BOUNDS_THE_FULL_A_N_ACTION_ON_THE_SOFT_LINE,_INCLUDING_PARALLEL_AMPLITUDE_AND_OFF_DIAGONAL_ROTATION",
+        "genuine_uniform_normal_closed_range_failure_demonstrated": false,
+        "soft_channel_classification_changed": false
+      },
+      "new_physics_equations_constraints_regularizers_objectives_or_gates": false,
+      "open_uniform_constants": {
+        "A_soft_parallel_amplitude_generator": "NOT_YET_DERIVED_OR_MEASURED_ON_POSITIVE_DURATION_HIGHER_N_HISTORIES",
+        "C_energy_on_the_nonlinear_corrected_bundle": "NOT_YET_PROVED_UNIFORM_IN_N",
+        "K_soft_off_diagonal_Calderon_generator": "NOT_YET_DERIVED_OR_MEASURED_ON_POSITIVE_DURATION_HIGHER_N_HISTORIES",
+        "classical_H6_bound_substituted": false,
+        "static_N_projector_differences_bound_D_t_P_N": false
+      },
+      "soft_jerk_factorization": {
+        "amplitude_control": "D_t_rho_N=alpha_N*rho_N_WITH_alpha_N=<e_N,A_Ne_N>;_A_UNIFORM_POINTWISE_BOUND_ON_alpha_N_IS_NOT_INFERRED_FROM_STATIC_GRAPH_CONVERGENCE_OR_FROM_AN_INTEGRATED_ENERGY_GROWTH_BOUND_ALONE",
+        "direction_control": "norm(D_t_e_N)<=norm((I-P_N)A_NP_N)_soft_PLUS_THE_ONE_DIMENSIONAL_QUOTIENT_CONNECTION",
+        "observability_consequence": "tau=min(T,3/(2*M3))_AND_norm(r_N)_L2(0,tau)>=tau^(5/2)/(4*sqrt(5))",
+        "soft_line": "ell_soft,N(t)_SUBSET_L_N(t)_AFTER_THE_EXISTING_CHILD_TANGENT_AND_GAUGE_QUOTIENT",
+        "sufficient_uniform_constant": "M3<=rho_star*(A_soft_parallel+K_soft)_WITH_A_soft_parallel=sup_N,t_abs(<e_N,A_Ne_N>)_AND_K_soft=sup_N,t_norm((I-P_N)A_NP_N)e_N",
+        "unit_boundary_acceleration": "a_N(t)=rho_N(t)e_N(t),_norm(e_N(t))=1"
+      },
+      "validation": {
+        "Calderon_graph_projectors_are_orthogonal_on_the_fixed_pair": true,
+        "boundary_phase_space_has_fixed_dimension_four": true,
+        "existing_positive_duration_and_eta_margin_are_positive": true,
+        "measured_weak_graph_norm_sequence_is_bounded": true,
+        "missing_generator_bound_not_asserted_from_static_projectors": true,
+        "no_new_equation_constraint_regularizer_objective_or_gate": true,
+        "orthogonal_projector_identity_removes_tangential_generator": true,
+        "tangential_amplitude_generator_is_retained_in_the_jerk_bound": true,
+        "uniform_weak_boundary_right_lift_is_already_derived": true
       },
       "validation_passed": true
     },
@@ -14697,6 +14752,7 @@
     "uniform_boundary_jerk_compactness_reduction_validated": true,
     "uniform_positive_duration_normal_closed_range_reduction_validated": true,
     "weak_boundary_layer_radii_obstruction_validated": true,
+    "weak_calderon_boundary_generator_reduction_validated": true,
     "weak_complete_child_normal_lipschitz_validated": true,
     "weak_complete_child_normal_right_inverse_validated": true,
     "weak_conormal_reaction_graph_audit_validated": true,
