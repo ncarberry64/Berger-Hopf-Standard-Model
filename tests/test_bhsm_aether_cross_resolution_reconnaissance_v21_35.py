@@ -2,6 +2,7 @@ import json
 from pathlib import Path
 
 from bhsm.interface.aether_cross_resolution_reconnaissance_v21_35 import (
+    boundary_jerk_weak_graph_domain_audit,
     completion_payload,
     deterministic_json,
     event_child_calderon_angle_stability_lemma,
@@ -170,6 +171,35 @@ def test_uniform_boundary_jerk_compactness_reduction():
         "proved_by_the_oscillatory_N6_through_N10_constraint_projections"
     ] is False
     assert bundle["genuine_uniform_failure_demonstrated"] is False
+    assert audit[
+        "new_physics_equations_constraints_regularizers_objectives_or_gates"
+    ] is False
+
+
+def test_boundary_jerk_weak_graph_domain_audit():
+    audit = boundary_jerk_weak_graph_domain_audit()
+    assert audit["validation_passed"] is True
+    assert max(
+        audit["N6_to_N10_classical_norm_growth"]["event"][
+            "velocity_H5_norm"
+        ],
+        audit["N6_to_N10_classical_norm_growth"]["event"][
+            "multiplier_H6_norm"
+        ],
+    ) > 10.0
+    assert all(
+        ratio < 1.6
+        for side in audit["N6_to_N10_weak_graph_norm_growth"].values()
+        for ratio in side.values()
+    )
+    reclassified = audit["reclassification"]
+    assert reclassified[
+        "uniform_H6_bundle_bound_is_an_existing_BHSM_gate"
+    ] is False
+    assert "WEAK_EULER_DIRAC_GRAPH_DOMAIN" in reclassified[
+        "correct_history_domain"
+    ]
+    assert audit["genuine_uniform_closed_range_failure_demonstrated"] is False
     assert audit[
         "new_physics_equations_constraints_regularizers_objectives_or_gates"
     ] is False

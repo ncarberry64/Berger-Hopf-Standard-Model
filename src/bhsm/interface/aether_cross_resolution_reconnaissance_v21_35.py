@@ -11772,6 +11772,131 @@ def uniform_boundary_jerk_compactness_reduction(
     }
 
 
+def boundary_jerk_weak_graph_domain_audit(
+    path: str | Path = (
+        "artifacts/BHSM_AETHER_CROSS_RESOLUTION_RECONNAISSANCE_V21_35.json"
+    ),
+) -> dict[str, Any]:
+    """Audit classical versus weak norms before bounding boundary jerk."""
+
+    result = json.loads(Path(path).read_text(encoding="utf-8"))[
+        "cross_resolution_reconnaissance"
+    ]
+    projection_rows = result["sequential_action_energy_projection_audit"][
+        "rows"
+    ]
+    rows = []
+    for row in projection_rows:
+        order = int(row["N"])
+        frequencies = spectral_frequencies(order)
+        record: dict[str, Any] = {"N": order}
+        for side in ("event", "child"):
+            exact = row[side]["projected_state_binary64_hex"]
+            q, velocity, multipliers = tuple(
+                np.asarray([float.fromhex(value) for value in exact[name]])
+                for name in ("coordinates", "velocities", "multipliers")
+            )
+            q_frequency = frequencies["coordinates"]
+            m_frequency = frequencies["multipliers"]
+            record[side] = {
+                "q_H6_norm": float(np.linalg.norm(
+                    q * (1.0 + q_frequency**2) ** 3.0
+                )),
+                "velocity_H5_norm": float(np.linalg.norm(
+                    velocity * (1.0 + q_frequency**2) ** 2.5
+                )),
+                "multiplier_H6_norm": float(np.linalg.norm(
+                    multipliers * (1.0 + m_frequency**2) ** 3.0
+                )),
+                "q_H1_norm": float(np.linalg.norm(
+                    q * np.sqrt(1.0 + q_frequency**2)
+                )),
+                "velocity_L2_norm": float(np.linalg.norm(velocity)),
+                "multiplier_H1_norm": float(np.linalg.norm(
+                    multipliers * np.sqrt(1.0 + m_frequency**2)
+                )),
+                "eta_Legendre_minimum": float(
+                    row[side]["eta_Legendre_minimum"]
+                ),
+                "maximum_constraint_residual": float(
+                    row[side]["maximum_constraint_residual"]
+                ),
+            }
+        rows.append(record)
+    classical_growth = {}
+    weak_growth = {}
+    for side in ("event", "child"):
+        classical_growth[side] = {
+            name: rows[-1][side][name] / rows[0][side][name]
+            for name in (
+                "q_H6_norm", "velocity_H5_norm", "multiplier_H6_norm"
+            )
+        }
+        weak_growth[side] = {
+            name: rows[-1][side][name] / rows[0][side][name]
+            for name in ("q_H1_norm", "velocity_L2_norm", "multiplier_H1_norm")
+        }
+    validation = {
+        "all_projected_states_remain_eta_admissible": all(
+            record[side]["eta_Legendre_minimum"] > 0.0
+            for record in rows for side in ("event", "child")
+        ),
+        "all_constraint_projections_close": all(
+            record[side]["maximum_constraint_residual"] < 1.0e-8
+            for record in rows for side in ("event", "child")
+        ),
+        "weak_action_energy_norms_remain_bounded_in_the_measured_sequence": all(
+            ratio < 1.6
+            for side in weak_growth.values() for ratio in side.values()
+        ),
+        "classical_velocity_or_multiplier_norm_growth_is_order_ten": all(
+            max(
+                classical_growth[side]["velocity_H5_norm"],
+                classical_growth[side]["multiplier_H6_norm"],
+            ) > 10.0
+            for side in ("event", "child")
+        ),
+        "sequential_projection_not_promoted_as_complete_higher_N_children": True,
+        "uniform_H6_not_added_as_a_physical_or_acceptance_gate": True,
+    }
+    return {
+        "classification": (
+            "THE_CURRENT_SEQUENTIAL_EVENT_CHILD_PROJECTIONS_ARE_ETA_"
+            "ADMISSIBLE_AND_BOUNDED_IN_THE_ACTION_ENERGY_GRAPH_NORM_BUT_"
+            "NOT_PRECOMPACT_IN_THE_CLASSICAL_H6xH5xH6_NORM;_A_UNIFORM_"
+            "CLASSICAL_NORM_MAY_NOT_BE_IMPOSED_AS_THE_SOFT_HISTORY_"
+            "OBSERVABILITY_CRITERION"
+        ),
+        "rows": rows,
+        "N6_to_N10_classical_norm_growth": classical_growth,
+        "N6_to_N10_weak_graph_norm_growth": weak_growth,
+        "reclassification": {
+            "uniform_H6_bundle_bound_is_currently_proved": False,
+            "uniform_H6_bundle_bound_is_an_existing_BHSM_gate": False,
+            "correct_history_domain": (
+                "WEAK_EULER_DIRAC_GRAPH_DOMAIN_H1_q_CROSS_L2_v_CROSS_"
+                "H1_lapse_shift_WITH_BOUNDARY_HISTORY_IN_TSTAR_R2"
+            ),
+            "boundary_jerk_must_be_controlled_by": (
+                "THE_FINITE_DIMENSIONAL_BOUNDARY_CALDERON_EVOLUTION_AND_"
+                "WEAK_HISTORY_ENERGY_ESTIMATE,_NOT_A_GLOBAL_H6_SUPREMUM"
+            ),
+        },
+        "exact_next_mathematical_lemma": (
+            "DERIVE_THE_SOFT_BOUNDARY_JERK_BOUND_FROM_THE_WEAK_EULER_"
+            "DIRAC_GRAPH_NORM_AND_THE_FINITE_DIMENSIONAL_CALDERON_"
+            "BOUNDARY_EVOLUTION_WITHOUT_REQUIRING_UNIFORM_GLOBAL_H6"
+        ),
+        "genuine_uniform_closed_range_failure_demonstrated": False,
+        "new_physics_equations_constraints_regularizers_objectives_or_gates": (
+            False
+        ),
+        "validation": validation,
+        "validation_passed": all(validation.values()),
+        "FULL_BHSM_COMPLETE": False,
+    }
+
+
 def weak_constraint_boundary_source_tail_audit(
     path: str | Path = (
         "artifacts/BHSM_AETHER_CROSS_RESOLUTION_RECONNAISSANCE_V21_35.json"
@@ -15131,6 +15256,37 @@ def promote_weak_constraint_boundary_tail_audit(path: str | Path) -> Path:
     return target
 
 
+def promote_boundary_jerk_weak_graph_domain_audit(
+    path: str | Path,
+) -> Path:
+    """Persist the weak-domain localization of the soft jerk lemma."""
+
+    target = Path(path)
+    payload = json.loads(target.read_text(encoding="utf-8"))
+    result = dict(payload["cross_resolution_reconnaissance"])
+    audit = boundary_jerk_weak_graph_domain_audit(target)
+    if not audit["validation_passed"]:
+        raise RuntimeError("boundary-jerk weak graph-domain audit failed")
+    result["boundary_jerk_weak_graph_domain_audit"] = audit
+    result["active_dependency"] = audit["exact_next_mathematical_lemma"]
+    result["scientific_status"] = (
+        "N3_TO_N6_EXACT_ATTACHMENT_WEAK_COMPLETE_PERSISTENT_CHILDREN_"
+        "VALIDATED;_THE_HARD_MOMENTUM_RESPONSE_CLOSES_AND_THE_SOFT_"
+        "NORMAL_CHANNEL_IS_POSITIVE_DURATION_DYNAMICAL;_UNIFORM_"
+        "CLASSICAL_H6_CONTROL_IS_INVALID_AS_A_NEW_CRITERION;_THE_WEAK_"
+        "CALDERON_BOUNDARY_JERK_LEMMA_IS_OPEN"
+    )
+    payload["cross_resolution_reconnaissance"] = result
+    validation = dict(payload["validation"])
+    validation["boundary_jerk_weak_graph_domain_audit_validated"] = audit[
+        "validation_passed"
+    ]
+    payload["validation"] = validation
+    payload["validation_passed"] = all(validation.values())
+    target.write_text(deterministic_json(payload), encoding="utf-8")
+    return target
+
+
 def promote_weak_complete_child_normal_audits(path: str | Path) -> Path:
     """Persist the N6 weak-map right inverse and normal Hessian audit."""
 
@@ -15341,6 +15497,7 @@ __all__ = [
     "whole_system_time_translation_tangent_interface",
     "soft_channel_positive_duration_observability_jet_lemma",
     "uniform_boundary_jerk_compactness_reduction",
+    "boundary_jerk_weak_graph_domain_audit",
     "weak_constraint_boundary_source_tail_audit",
     "weak_complete_child_normal_right_inverse_audit",
     "weak_complete_child_normal_lipschitz_audit",
@@ -15372,6 +15529,7 @@ __all__ = [
     "promote_legacy_n3_n4_exact_attachment_weak_children",
     "promote_matched_weak_reaction_graph_audit",
     "promote_injected_calderon_graph_audit",
+    "promote_boundary_jerk_weak_graph_domain_audit",
     "promote_weak_constraint_boundary_tail_audit",
     "promote_weak_complete_child_normal_audits",
     "promote_weak_boundary_layer_radii_obstruction",
