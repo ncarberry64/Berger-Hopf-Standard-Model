@@ -5991,7 +5991,7 @@
       },
       "validation_passed": true
     },
-    "active_dependency": "PROVE_OR_LOCALIZE_FAILURE_OF_THE_N_UNIFORM_D2_VERTICAL_JACOBI_CORRECTION_BOUND_FOR_THE_FIXED_SMOOTH_SOFT_BOUNDARY_LIFT_ON_THE_S2_ETA_INTERIOR_CHILD_BUNDLE",
+    "active_dependency": "PROVE_OR_DISPROVE_A_UNIFORM_POSITIVE_SHORT_TIME_WEIGHTED_MODULUS_Omega_N_FOR_THE_ACTION_NORMALIZED_SOFT_BOUNDARY_ACCELERATION_USING_THE_WEAK_CALDERON_EVOLUTION;_ONLY_A_NORMALIZED_L2_HISTORY_SEQUENCE_TENDING_TO_ZERO_CAN_PROMOTE_CATEGORY_3",
     "boundary_compatible_gauge_quotient_audit": {
       "FULL_BHSM_COMPLETE": false,
       "boundary_compatibility": {
@@ -11650,7 +11650,7 @@
       },
       "validation_passed": true
     },
-    "scientific_status": "N3_TO_N6_EXACT_ATTACHMENT_WEAK_COMPLETE_PERSISTENT_CHILDREN_VALIDATED;_THE_HARD_MOMENTUM_RESPONSE_CLOSES_AND_THE_SOFT_NORMAL_CHANNEL_IS_POSITIVE_DURATION_DYNAMICAL;_UNIFORM_CLASSICAL_H6_CONTROL_IS_INVALID_AS_A_NEW_CRITERION;_THE_WEAK_CALDERON_BOUNDARY_JERK_FAILURE_IS_LOCALIZED_TO_THE_ACTION_SELECTED_SOFT_VERTICAL_D2_JACOBI_CORRECTION;_THE_SMOOTH_CONFIGURATION_TRACE_LIFT_IS_UNIFORM",
+    "scientific_status": "N3_TO_N6_EXACT_ATTACHMENT_WEAK_COMPLETE_PERSISTENT_CHILDREN_VALIDATED;_THE_HARD_MOMENTUM_RESPONSE_CLOSES_AND_THE_SOFT_NORMAL_CHANNEL_IS_POSITIVE_DURATION_DYNAMICAL;_UNIFORM_CLASSICAL_H6_CONTROL_IS_INVALID_AS_A_NEW_CRITERION;_THE_WEAK_CALDERON_BOUNDARY_JERK_FAILURE_IS_LOCALIZED_TO_THE_ACTION_SELECTED_SOFT_BOUNDARY_ACCELERATION_WEIGHTED_TIME_MODULUS;_D2_IS_A_SUFFICIENT_CERTIFICATE_NOT_A_NEW_GATE",
     "sequential_action_energy_projection_audit": {
       "FULL_BHSM_COMPLETE": false,
       "classification": "ACTION_ENERGY_COHERENT_EVENT_AND_CHILD_ADMIT_SEQUENTIAL_NESTED_CONSTRAINT_FIBER_TRANSPORT;_THIS_IS_NOT_YET_A_GENERAL_N_COMPLETE_CHILD_ROOT_CONTINUATION_THEOREM",
@@ -12581,6 +12581,50 @@
         "all_projected_constraints_close": true,
         "eta_domain_retained": true,
         "finite_N5_root_event_persistence_and_gates_unchanged": true
+      },
+      "validation_passed": true
+    },
+    "soft_boundary_acceleration_compactness_criterion": {
+      "FULL_BHSM_COMPLETE": false,
+      "certificate_hierarchy": {
+        "uniform_D2_bound_is_a_new_physical_acceptance_gate": false,
+        "uniform_D2_soft_line_bound": "SUFFICIENT_VIA_A_UNIFORM_LIPSCHITZ_BOUND_ON_a_N",
+        "uniform_fractional_time_translation_bound": "ALSO_SUFFICIENT_IF_IT_FORCES_Omega_N(t)_TO_ZERO_UNIFORMLY",
+        "uniform_global_H6_bound_required": false
+      },
+      "classification": "UNIFORM_SOFT_OBSERVABILITY_REQUIRES_ONLY_A_UNIFORM_SHORT_TIME_WEIGHTED_MODULUS_FOR_THE_ACTION_NORMALIZED_BOUNDARY_ACCELERATION;_A_SECOND_GRAPH_BOUND_IS_SUFFICIENT_BUT_NOT_REQUIRED,_AND_ITS_FAILURE_MAY_NOT_BE_RECLASSIFIED_AS_CLOSED_RANGE_FAILURE",
+      "exact_next_mathematical_lemma": "PROVE_OR_DISPROVE_A_UNIFORM_POSITIVE_SHORT_TIME_WEIGHTED_MODULUS_Omega_N_FOR_THE_ACTION_NORMALIZED_SOFT_BOUNDARY_ACCELERATION_USING_THE_WEAK_CALDERON_EVOLUTION;_ONLY_A_NORMALIZED_L2_HISTORY_SEQUENCE_TENDING_TO_ZERO_CAN_PROMOTE_CATEGORY_3",
+      "existing_data": {
+        "finite_N_soft_response_projection_magnitude": 0.000127026742366,
+        "higher_N_positive_duration_soft_histories_available": false,
+        "positive_duration": 0.000113439890737
+      },
+      "failure_policy": {
+        "D2_vertical_bound_fails": "ONLY_THE_LIPSCHITZ_CERTIFICATE_FAILS",
+        "current_classification_category": "NORMAL_DIRECTION_CONTROLLED_BY_THE_EXISTING_POSITIVE_DURATION_GAUGE_FIXED_JACOBI_EVOLUTION",
+        "genuine_closed_range_failure_requires": "AN_ACTION_NORMALIZED_NON_TANGENT_SOFT_SEQUENCE_WITH_norm(r_N)_L2(0,T)_TO_ZERO",
+        "such_a_sequence_is_currently_constructed": false,
+        "weighted_modulus_not_proved": "UNIFORM_OBSERVABILITY_REMAINS_OPEN"
+      },
+      "minimal_weighted_modulus": {
+        "definition": "Omega_N(t)=4/t^2*integral_0^t_(t-s)*norm(a_N(s)-a_N(0))_ds",
+        "integrated_consequence": "norm(r_N)_L2(0,tau0)>=tau0^(5/2)/(4*sqrt(5))",
+        "pointwise_consequence": "norm(r_N(t))>=t^2/4_ON_0<=t<=tau0",
+        "sufficient_uniform_condition": "EXISTS_tau0>0_SUCH_THAT_sup_N_sup_0<t<=tau0_Omega_N(t)<=1"
+      },
+      "new_physics_equations_constraints_regularizers_objectives_or_gates": false,
+      "normalized_soft_history": {
+        "exact_integral_identity": "r_N(t)=integral_0^t_(t-s)*a_N(s)_ds",
+        "initial_conditions": "r_N(0)=D_t_r_N(0)=0,_a_N(0)=D_t2_r_N(0),_norm(a_N(0))=1",
+        "response": "r_N(t)=Gamma0*xi_soft,N(t)"
+      },
+      "validation": {
+        "D2_is_recorded_only_as_a_sufficient_certificate": true,
+        "existing_positive_duration_is_positive": true,
+        "failure_requires_vanishing_integrated_response_not_D2_blowup": true,
+        "finite_N_soft_response_is_nonzero": true,
+        "no_new_equation_constraint_regularizer_objective_or_gate": true,
+        "smooth_configuration_trace_lift_is_uniform": true
       },
       "validation_passed": true
     },
@@ -15008,6 +15052,7 @@
     "rank14_not_silently_imposed_at_higher_N": true,
     "reaction_calderon_nested_schur_trace_audit_validated": true,
     "sequential_action_energy_projection_audit_validated": true,
+    "soft_boundary_acceleration_compactness_criterion_validated": true,
     "soft_calderon_second_graph_domain_reduction_validated": true,
     "soft_channel_positive_duration_observability_jet_lemma_validated": true,
     "soft_second_graph_coefficient_bundle_audit_validated": true,

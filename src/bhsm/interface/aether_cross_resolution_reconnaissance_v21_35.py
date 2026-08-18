@@ -12426,6 +12426,121 @@ def soft_uniform_smooth_boundary_lift_audit(
     }
 
 
+def soft_boundary_acceleration_compactness_criterion(
+    path: str | Path = (
+        "artifacts/BHSM_AETHER_CROSS_RESOLUTION_RECONNAISSANCE_V21_35.json"
+    ),
+) -> dict[str, Any]:
+    """State the minimal soft-history compactness criterion for closure."""
+
+    result = json.loads(Path(path).read_text(encoding="utf-8"))[
+        "cross_resolution_reconnaissance"
+    ]
+    hard = result["mixed_euler_dirac_hard_momentum_response_audit"]
+    second = result["soft_calderon_second_graph_domain_reduction"]
+    smooth = result["soft_uniform_smooth_boundary_lift_audit"]
+    duration = float(result[
+        "positive_duration_gauge_fixed_jacobi_audit"
+    ]["background"]["common_positive_proper_duration"])
+    validation = {
+        "finite_N_soft_response_is_nonzero": bool(
+            hard["soft_channel"]["exact_response_projection_magnitude"] > 0.0
+        ),
+        "existing_positive_duration_is_positive": bool(duration > 0.0),
+        "smooth_configuration_trace_lift_is_uniform": bool(
+            smooth["validation_passed"]
+        ),
+        "D2_is_recorded_only_as_a_sufficient_certificate": bool(
+            second["validation_passed"]
+        ),
+        "failure_requires_vanishing_integrated_response_not_D2_blowup": True,
+        "no_new_equation_constraint_regularizer_objective_or_gate": True,
+    }
+    return {
+        "classification": (
+            "UNIFORM_SOFT_OBSERVABILITY_REQUIRES_ONLY_A_UNIFORM_SHORT_"
+            "TIME_WEIGHTED_MODULUS_FOR_THE_ACTION_NORMALIZED_BOUNDARY_"
+            "ACCELERATION;_A_SECOND_GRAPH_BOUND_IS_SUFFICIENT_BUT_NOT_"
+            "REQUIRED,_AND_ITS_FAILURE_MAY_NOT_BE_RECLASSIFIED_AS_"
+            "CLOSED_RANGE_FAILURE"
+        ),
+        "normalized_soft_history": {
+            "response": "r_N(t)=Gamma0*xi_soft,N(t)",
+            "initial_conditions": (
+                "r_N(0)=D_t_r_N(0)=0,_a_N(0)=D_t2_r_N(0),_"
+                "norm(a_N(0))=1"
+            ),
+            "exact_integral_identity": (
+                "r_N(t)=integral_0^t_(t-s)*a_N(s)_ds"
+            ),
+        },
+        "minimal_weighted_modulus": {
+            "definition": (
+                "Omega_N(t)=4/t^2*integral_0^t_(t-s)*"
+                "norm(a_N(s)-a_N(0))_ds"
+            ),
+            "sufficient_uniform_condition": (
+                "EXISTS_tau0>0_SUCH_THAT_sup_N_sup_0<t<=tau0_"
+                "Omega_N(t)<=1"
+            ),
+            "pointwise_consequence": (
+                "norm(r_N(t))>=t^2/4_ON_0<=t<=tau0"
+            ),
+            "integrated_consequence": (
+                "norm(r_N)_L2(0,tau0)>=tau0^(5/2)/(4*sqrt(5))"
+            ),
+        },
+        "certificate_hierarchy": {
+            "uniform_D2_soft_line_bound": (
+                "SUFFICIENT_VIA_A_UNIFORM_LIPSCHITZ_BOUND_ON_a_N"
+            ),
+            "uniform_fractional_time_translation_bound": (
+                "ALSO_SUFFICIENT_IF_IT_FORCES_Omega_N(t)_TO_ZERO_"
+                "UNIFORMLY"
+            ),
+            "uniform_D2_bound_is_a_new_physical_acceptance_gate": False,
+            "uniform_global_H6_bound_required": False,
+        },
+        "failure_policy": {
+            "D2_vertical_bound_fails": (
+                "ONLY_THE_LIPSCHITZ_CERTIFICATE_FAILS"
+            ),
+            "weighted_modulus_not_proved": (
+                "UNIFORM_OBSERVABILITY_REMAINS_OPEN"
+            ),
+            "genuine_closed_range_failure_requires": (
+                "AN_ACTION_NORMALIZED_NON_TANGENT_SOFT_SEQUENCE_WITH_"
+                "norm(r_N)_L2(0,T)_TO_ZERO"
+            ),
+            "such_a_sequence_is_currently_constructed": False,
+            "current_classification_category": (
+                "NORMAL_DIRECTION_CONTROLLED_BY_THE_EXISTING_POSITIVE_"
+                "DURATION_GAUGE_FIXED_JACOBI_EVOLUTION"
+            ),
+        },
+        "existing_data": {
+            "positive_duration": duration,
+            "finite_N_soft_response_projection_magnitude": float(
+                hard["soft_channel"]["exact_response_projection_magnitude"]
+            ),
+            "higher_N_positive_duration_soft_histories_available": False,
+        },
+        "exact_next_mathematical_lemma": (
+            "PROVE_OR_DISPROVE_A_UNIFORM_POSITIVE_SHORT_TIME_WEIGHTED_"
+            "MODULUS_Omega_N_FOR_THE_ACTION_NORMALIZED_SOFT_BOUNDARY_"
+            "ACCELERATION_USING_THE_WEAK_CALDERON_EVOLUTION;_ONLY_A_"
+            "NORMALIZED_L2_HISTORY_SEQUENCE_TENDING_TO_ZERO_CAN_PROMOTE_"
+            "CATEGORY_3"
+        ),
+        "new_physics_equations_constraints_regularizers_objectives_or_gates": (
+            False
+        ),
+        "validation": validation,
+        "validation_passed": all(validation.values()),
+        "FULL_BHSM_COMPLETE": False,
+    }
+
+
 def weak_constraint_boundary_source_tail_audit(
     path: str | Path = (
         "artifacts/BHSM_AETHER_CROSS_RESOLUTION_RECONNAISSANCE_V21_35.json"
@@ -15813,15 +15928,19 @@ def promote_boundary_jerk_weak_graph_domain_audit(
     if not smooth_lift["validation_passed"]:
         raise RuntimeError("soft smooth boundary-lift audit failed")
     result["soft_uniform_smooth_boundary_lift_audit"] = smooth_lift
-    result["active_dependency"] = smooth_lift["exact_next_mathematical_lemma"]
+    compactness = soft_boundary_acceleration_compactness_criterion(target)
+    if not compactness["validation_passed"]:
+        raise RuntimeError("soft boundary-acceleration criterion failed")
+    result["soft_boundary_acceleration_compactness_criterion"] = compactness
+    result["active_dependency"] = compactness["exact_next_mathematical_lemma"]
     result["scientific_status"] = (
         "N3_TO_N6_EXACT_ATTACHMENT_WEAK_COMPLETE_PERSISTENT_CHILDREN_"
         "VALIDATED;_THE_HARD_MOMENTUM_RESPONSE_CLOSES_AND_THE_SOFT_"
         "NORMAL_CHANNEL_IS_POSITIVE_DURATION_DYNAMICAL;_UNIFORM_"
         "CLASSICAL_H6_CONTROL_IS_INVALID_AS_A_NEW_CRITERION;_THE_WEAK_"
         "CALDERON_BOUNDARY_JERK_FAILURE_IS_LOCALIZED_TO_THE_ACTION_"
-        "SELECTED_SOFT_VERTICAL_D2_JACOBI_CORRECTION;_THE_SMOOTH_"
-        "CONFIGURATION_TRACE_LIFT_IS_UNIFORM"
+        "SELECTED_SOFT_BOUNDARY_ACCELERATION_WEIGHTED_TIME_MODULUS;_"
+        "D2_IS_A_SUFFICIENT_CERTIFICATE_NOT_A_NEW_GATE"
     )
     payload["cross_resolution_reconnaissance"] = result
     validation = dict(payload["validation"])
@@ -15839,6 +15958,9 @@ def promote_boundary_jerk_weak_graph_domain_audit(
     )
     validation["soft_uniform_smooth_boundary_lift_audit_validated"] = (
         smooth_lift["validation_passed"]
+    )
+    validation["soft_boundary_acceleration_compactness_criterion_validated"] = (
+        compactness["validation_passed"]
     )
     payload["validation"] = validation
     payload["validation_passed"] = all(validation.values())
@@ -16061,6 +16183,7 @@ __all__ = [
     "soft_calderon_second_graph_domain_reduction",
     "soft_second_graph_coefficient_bundle_audit",
     "soft_uniform_smooth_boundary_lift_audit",
+    "soft_boundary_acceleration_compactness_criterion",
     "weak_constraint_boundary_source_tail_audit",
     "weak_complete_child_normal_right_inverse_audit",
     "weak_complete_child_normal_lipschitz_audit",

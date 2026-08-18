@@ -13,6 +13,7 @@ from bhsm.interface.aether_cross_resolution_reconnaissance_v21_35 import (
     soft_calderon_second_graph_domain_reduction,
     soft_second_graph_coefficient_bundle_audit,
     soft_uniform_smooth_boundary_lift_audit,
+    soft_boundary_acceleration_compactness_criterion,
     uniform_boundary_jerk_compactness_reduction,
     uniform_positive_duration_normal_closed_range_reduction,
     weak_calderon_boundary_generator_reduction,
@@ -300,6 +301,25 @@ def test_soft_uniform_smooth_boundary_lift_audit():
     assert vertical[
         "genuine_uniform_normal_closed_range_failure_demonstrated"
     ] is False
+    assert audit[
+        "new_physics_equations_constraints_regularizers_objectives_or_gates"
+    ] is False
+
+
+def test_soft_boundary_acceleration_compactness_criterion():
+    audit = soft_boundary_acceleration_compactness_criterion()
+    assert audit["validation_passed"] is True
+    modulus = audit["minimal_weighted_modulus"]
+    assert "Omega_N" in modulus["definition"]
+    assert "t^2/4" in modulus["pointwise_consequence"]
+    hierarchy = audit["certificate_hierarchy"]
+    assert hierarchy[
+        "uniform_D2_bound_is_a_new_physical_acceptance_gate"
+    ] is False
+    assert hierarchy["uniform_global_H6_bound_required"] is False
+    failure = audit["failure_policy"]
+    assert failure["such_a_sequence_is_currently_constructed"] is False
+    assert "L2" in failure["genuine_closed_range_failure_requires"]
     assert audit[
         "new_physics_equations_constraints_regularizers_objectives_or_gates"
     ] is False
