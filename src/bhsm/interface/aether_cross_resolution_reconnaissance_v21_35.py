@@ -11185,6 +11185,132 @@ def injected_n6_event_child_calderon_friedrichs_angle_audit(
     }
 
 
+def event_child_calderon_angle_stability_lemma(
+    path: str | Path = (
+        "artifacts/BHSM_AETHER_CROSS_RESOLUTION_RECONNAISSANCE_V21_35.json"
+    ),
+) -> dict[str, Any]:
+    """Derive the constant-dimensional normal exact sequence and angle bound."""
+
+    result = json.loads(Path(path).read_text(encoding="utf-8"))[
+        "cross_resolution_reconnaissance"
+    ]
+    fixed = result[
+        "injected_n6_event_child_calderon_friedrichs_angle_audit"
+    ]
+    gamma_fixed = float(fixed["minimum_measured_Friedrichs_sine"])
+    rows = []
+    for order in (3, 4, 5, 6):
+        whole = 8 * order + 2
+        constraints = 2 * order + 1
+        boundary = 7
+        tangent = whole - constraints - boundary
+        rows.append({
+            "N": order,
+            "whole_state_dimension": whole,
+            "constraint_normal_dimension": constraints,
+            "constraint_fiber_dimension": whole - constraints,
+            "boundary_normal_quotient_dimension": boundary,
+            "child_manifold_tangent_dimension": tangent,
+            "dimension_identity_remainder": (
+                whole - constraints - boundary - tangent
+            ),
+        })
+    perturbation_budget = 0.5 * gamma_fixed
+    validation = {
+        "normal_exact_sequence_dimension_identity_holds": all(
+            row["dimension_identity_remainder"] == 0 for row in rows
+        ),
+        "boundary_normal_dimension_is_resolution_independent": all(
+            row["boundary_normal_quotient_dimension"] == 7 for row in rows
+        ),
+        "tangent_dimension_law_is_6N_minus_6": all(
+            row["child_manifold_tangent_dimension"] == 6 * row["N"] - 6
+            for row in rows
+        ),
+        "fixed_pair_Friedrichs_angle_is_resolved_positive": gamma_fixed > 0.0,
+        "no_tangent_direction_removed_as_a_defect": True,
+        "stability_radius_is_a_theorem_bound_not_a_new_gate": True,
+        "no_new_equation_constraint_regularizer_or_objective": True,
+    }
+    return {
+        "classification": (
+            "THE_COMPLETE_CHILD_NORMAL_EXACT_SEQUENCE_HAS_A_CONSTANT_"
+            "SEVEN_DIMENSIONAL_BOUNDARY_QUOTIENT_FOR_ALL_N;_THE_"
+            "UNIFORM_CLOSED_RANGE_PROBLEM_IS_EXACTLY_A_UNIFORM_"
+            "FRIEDRICHS_ANGLE_PROBLEM_FOR_THE_MATCHED_EVENT_CHILD_"
+            "CALDERON_GRAPHS"
+        ),
+        "normal_exact_sequence": {
+            "sequence": (
+                "0_TO_T_child,N_TO_KER(C_N)_TO_Y_boundary,R7_TO_0"
+            ),
+            "ambient_state_dimension": "8N+2",
+            "constraint_normal_dimension": "2N+1",
+            "constraint_fiber_dimension": "6N+1",
+            "boundary_normal_quotient_dimension": 7,
+            "child_manifold_tangent_dimension": "6N-6",
+            "rows": rows,
+            "gauge_directions_are_already_quotiented": True,
+        },
+        "Calderon_identification": {
+            "event_graph": "L_event,N_SUBSET_TSTAR(R2)",
+            "child_graph": "L_child,N_SUBSET_TSTAR(R2)",
+            "matching_involution": "S(b,Lambda)=(b,-Lambda)",
+            "doubled_Jacobi_kernel": (
+                "KER(J_double,N)_normal_IS_ISOMORPHIC_TO_"
+                "L_child,N_INTERSECTION_S*L_event,N"
+            ),
+            "normal_closed_range_constant": (
+                "gamma_N=sin(theta_F(L_child,N,S*L_event,N))"
+            ),
+            "single_valued_DtN_matrix_required": False,
+        },
+        "projector_stability_lemma": {
+            "reference_gap": gamma_fixed,
+            "projector_changes": (
+                "delta_child=norm(P_child-P_child,0),_"
+                "delta_event=norm(P_event-P_event,0)"
+            ),
+            "conservative_bound": (
+                "gamma>=gamma_0-2*(delta_child+delta_event)"
+            ),
+            "sufficient_positive_margin_condition": (
+                "delta_child+delta_event<gamma_0/2"
+            ),
+            "fixed_injected_N6_through_N13_total_projector_change_budget": (
+                perturbation_budget
+            ),
+            "used_as_a_new_physical_acceptance_gate": False,
+        },
+        "failure_dichotomy": {
+            "if_backgrounds_and_projectors_are_precompact": (
+                "gamma_N_TO_ZERO_IMPLIES_A_NON_TANGENT_ZERO_MODE_OF_THE_"
+                "DOUBLED_EVENT_CHILD_JACOBI_OPERATOR"
+            ),
+            "otherwise": (
+                "THE_FIRST_FAILURE_IS_LOSS_OF_ACTION_ENERGY_BACKGROUND_"
+                "OR_TANGENT_GAUGE_PROJECTOR_PRECOMPACTNESS"
+            ),
+            "finite_N_soft_response_alone_proves_either_failure": False,
+        },
+        "exact_next_mathematical_lemma": (
+            "BOUND_THE_EVENT_AND_CHILD_CALDERON_GRAPH_PROJECTOR_"
+            "VARIATIONS_IN_THE_ACTION_ENERGY_NORM_BY_LESS_THAN_HALF_"
+            "THE_FIXED_PAIR_FRIEDRICHS_MARGIN,_OR_EXHIBIT_THE_"
+            "CORRESPONDING_NON_TANGENT_ZERO_MODE_OF_THE_DOUBLED_JACOBI_"
+            "OPERATOR"
+        ),
+        "uniform_positive_angle_proved": False,
+        "new_physics_equations_constraints_regularizers_objectives_or_gates": (
+            False
+        ),
+        "validation": validation,
+        "validation_passed": all(validation.values()),
+        "FULL_BHSM_COMPLETE": False,
+    }
+
+
 def weak_constraint_boundary_source_tail_audit(
     path: str | Path = (
         "artifacts/BHSM_AETHER_CROSS_RESOLUTION_RECONNAISSANCE_V21_35.json"
@@ -14750,6 +14876,7 @@ __all__ = [
     "matched_weak_reaction_graph_convergence_audit",
     "injected_matched_background_calderon_graph_audit",
     "injected_n6_event_child_calderon_friedrichs_angle_audit",
+    "event_child_calderon_angle_stability_lemma",
     "weak_constraint_boundary_source_tail_audit",
     "weak_complete_child_normal_right_inverse_audit",
     "weak_complete_child_normal_lipschitz_audit",

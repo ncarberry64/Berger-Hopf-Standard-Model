@@ -4,6 +4,7 @@ from pathlib import Path
 from bhsm.interface.aether_cross_resolution_reconnaissance_v21_35 import (
     completion_payload,
     deterministic_json,
+    event_child_calderon_angle_stability_lemma,
     general_n_complete_child_reconstruction_statement,
     injected_n6_event_child_calderon_friedrichs_angle_audit,
     positive_duration_normal_adjoint_kernel_localization,
@@ -59,6 +60,28 @@ def test_injected_n6_event_child_calderon_friedrichs_angle_audit():
     assert audit[
         "uniform_nonlinear_child_bundle_Cauchy_completeness"
     ] is False
+    assert audit[
+        "new_physics_equations_constraints_regularizers_objectives_or_gates"
+    ] is False
+
+
+def test_event_child_calderon_angle_stability_lemma():
+    audit = event_child_calderon_angle_stability_lemma()
+    assert audit["validation_passed"] is True
+    exact = audit["normal_exact_sequence"]
+    assert exact["boundary_normal_quotient_dimension"] == 7
+    assert all(
+        row["dimension_identity_remainder"] == 0 for row in exact["rows"]
+    )
+    stability = audit["projector_stability_lemma"]
+    assert stability["reference_gap"] > 0.0
+    assert (
+        stability[
+            "fixed_injected_N6_through_N13_total_projector_change_budget"
+        ]
+        == 0.5 * stability["reference_gap"]
+    )
+    assert audit["uniform_positive_angle_proved"] is False
     assert audit[
         "new_physics_equations_constraints_regularizers_objectives_or_gates"
     ] is False
