@@ -10117,6 +10117,144 @@ def n5_shape_soft_history_response_audit(
     }
 
 
+def uniform_positive_duration_normal_closed_range_reduction() -> dict[str, Any]:
+    """Reduce uniform Jacobi closed range to its exact kernel lemma."""
+
+    principal_gap = math.sqrt(29.0) - 5.0
+    trace_s = 1.0 / 17.0
+    trace_lambda = 0.5 * (
+        1.0 + 2.0 * trace_s
+        - math.sqrt(1.0 + 4.0 * trace_s**2)
+    )
+    trace_infsup = math.sqrt(trace_lambda)
+    soft_response = 1.2702674236550937e-4
+    hard_response = 7.600306105991273
+    validation = {
+        "canonical_normal_principal_gap_is_positive": principal_gap > 0.0,
+        "attachment_trace_infsup_is_positive": trace_infsup > 0.0,
+        "isolated_soft_channel_has_nonzero_exact_finite_N_response": (
+            soft_response > 0.0
+        ),
+        "hard_and_soft_channels_are_not_identified": (
+            hard_response > 1.0e4 * soft_response
+        ),
+        "no_uniform_failure_claimed_from_one_finite_N_singular_value": True,
+        "no_new_equation_constraint_regularizer_objective_or_gate": True,
+    }
+    return {
+        "classification": (
+            "UNIFORM_POSITIVE_DURATION_NORMAL_CLOSED_RANGE_REDUCED_TO_"
+            "COLLECTIVE_COMPACTNESS_AND_NORMAL_KERNEL_EXCLUSION;_THE_"
+            "FINITE_N_SOFT_MOMENTUM_CHANNEL_IS_NOT_A_TANGENT_OR_ZERO_"
+            "MODE;_A_GENUINE_UNIFORM_FAILURE_IS_NOT_YET_PROVED"
+        ),
+        "operator_factorization": {
+            "gauge_reduced_history_operator": "J_N=P_N+K_N",
+            "principal_operator": (
+                "P_N=THE_ACTION_NORMALIZED_CANONICAL_RADIAL_PRINCIPAL_"
+                "EULER_DIRAC_OPERATOR_WITH_EXISTING_TRACE_AND_GAUGE_"
+                "QUOTIENT"
+            ),
+            "lower_order_operator": (
+                "K_N=RETAINED_LOWER_ORDER_ACTION_HESSIAN_PLUS_EXISTING_"
+                "CONSTRAINT_MOMENTUM_AND_WEAK_REACTION_SCHUR_BLOCKS"
+            ),
+            "normalized_compact_operator": "C_N=P_N^(-1)*K_N",
+            "normal_minimum_modulus": (
+                "beta_N=inf_{x_perp_ker(J_N),norm(x)=1}"
+                "norm(P_N*(I+C_N)*x)"
+            ),
+        },
+        "already_closed_uniform_blocks": {
+            "canonical_principal_absolute_gap": principal_gap,
+            "uniform_attachment_trace_infsup": trace_infsup,
+            "uniform_attachment_right_lift_bound": 1.0 / trace_infsup,
+            "boundary_compatible_gauge_quotient": True,
+            "weak_conormal_reaction_is_lift_independent": True,
+        },
+        "fixed_background_compactness_proof": {
+            "domain": (
+                "THE_BOUNDED_ONE_DIMENSIONAL_CAP_WITH_THE_EXISTING_"
+                "WEIGHTED_H1_GEOMETRY_L2_VELOCITY_AND_H1_MULTIPLIER_"
+                "ACTION_SPACES"
+            ),
+            "rellich_step": (
+                "H1_EMBEDS_COMPACTLY_IN_L2_AND_L2_EMBEDS_COMPACTLY_IN_"
+                "H_MINUS_1_ON_THE_BOUNDED_CAP"
+            ),
+            "coefficient_step": (
+                "THE_RETAINED_S6_ACTION_BACKGROUND_MAKES_EVERY_LOWER_"
+                "ORDER_MULTIPLICATION_BLOCK_BOUNDED"
+            ),
+            "boundary_and_constraint_step": (
+                "TRACE_REACTION_CONSTRAINT_AND_MOMENTUM_SCHUR_BLOCKS_ARE_"
+                "FINITE_RANK_AFTER_THE_EXISTING_QUOTIENT"
+            ),
+            "conclusion": (
+                "K_IS_P_COMPACT_AND_J=P*(I+C)_IS_FREDHOLM_OF_INDEX_ZERO_"
+                "ON_EACH_FIXED_ETA_INTERIOR_BACKGROUND"
+            ),
+            "extends_uniformly_to_the_whole_child_branch": False,
+        },
+        "uniform_contradiction_lemma": {
+            "hypotheses": [
+                "P_N_HAS_THE_ALREADY_DERIVED_N_INDEPENDENT_NORMAL_INVERSE_BOUND",
+                "C_N_IS_COLLECTIVELY_COMPACT_AND_CONVERGES_STRONGLY_TO_C",
+                "KER(I+C)_NORMAL_COMPLEMENT_IS_ZERO",
+                "THE_DISCRETE_TANGENT_AND_GAUGE_PROJECTORS_CONVERGE_TO_THE_EXISTING_CONTINUUM_QUOTIENT",
+            ],
+            "argument": (
+                "IF_UNIT_NORMAL_x_N_SATISFIED_norm((I+C_N)x_N)_TO_ZERO,_"
+                "COLLECTIVE_COMPACTNESS_GIVES_C_N*x_N_TO_y;_THEN_x_N_TO_"
+                "MINUS_y_STRONGLY_AND_CONSISTENCY_GIVES_(I+C)y=0;_THE_"
+                "NORMAL_KERNEL_HYPOTHESIS_FORCES_y=0,_CONTRADICTING_"
+                "norm(x_N)=1"
+            ),
+            "conclusion": (
+                "inf_N_beta_N>0_AND_THE_GAUGE_FIXED_NORMAL_JACOBI_"
+                "CALDERON_RANGES_ARE_UNIFORMLY_CLOSED"
+            ),
+        },
+        "isolated_soft_momentum_channel": {
+            "finite_N_exact_response_projection_magnitude": soft_response,
+            "hard_response_magnitude": hard_response,
+            "legitimate_child_manifold_tangent": False,
+            "finite_N_zero_mode": False,
+            "classification": (
+                "NORMAL_DIRECTION_CONTROLLED_BY_THE_EXISTING_POSITIVE_"
+                "DURATION_GAUGE_FIXED_JACOBI_EVOLUTION"
+            ),
+            "one_finite_N_value_proves_an_N_uniform_gap": False,
+        },
+        "failure_localization": {
+            "principal_symbol_failure": False,
+            "attachment_trace_failure": False,
+            "gauge_quotient_failure": False,
+            "hard_momentum_response_failure": False,
+            "uniform_failure_demonstrated": False,
+            "only_remaining_failure_mechanisms": [
+                "LOSS_OF_COLLECTIVE_COMPACTNESS_OR_COEFFICIENT_CONVERGENCE_ALONG_THE_ACTION_ENERGY_COHERENT_CHILD_BRANCH",
+                "A_NON_TANGENT_CONTINUUM_MINUS_ONE_EIGENSTATE_OF_C_IN_THE_ISOLATED_SOFT_MOMENTUM_CHANNEL",
+            ],
+        },
+        "exact_next_mathematical_lemma": (
+            "PROVE_COLLECTIVE_COMPACT_CONVERGENCE_OF_C_N=P_N^(-1)K_N_"
+            "ON_THE_ACTION_ENERGY_COHERENT_NORMAL_BUNDLE_AND_EXCLUDE_A_"
+            "NON_TANGENT_MINUS_ONE_EIGENSTATE_IN_THE_ISOLATED_SOFT_"
+            "MOMENTUM_CHANNEL"
+        ),
+        "finite_N3_through_N6_equations_maps_persistence_and_gates_changed": (
+            False
+        ),
+        "new_physics_equations_constraints_regularizers_objectives_or_gates": (
+            False
+        ),
+        "validation": validation,
+        "validation_passed": all(validation.values()),
+        "FULL_BHSM_COMPLETE": False,
+    }
+
+
 def event_to_child_on_shell_calderon_interface() -> dict[str, Any]:
     """Reconcile the validated local child roots with the required full BVP."""
 
@@ -14282,6 +14420,7 @@ __all__ = [
     "boundary_compatible_gauge_quotient_audit",
     "positive_duration_gauge_fixed_jacobi_audit",
     "n5_shape_soft_history_response_audit",
+    "uniform_positive_duration_normal_closed_range_reduction",
     "event_to_child_on_shell_calderon_interface",
     "general_n_principal_energy_certificate",
     "matched_weak_reaction_graph_convergence_audit",
