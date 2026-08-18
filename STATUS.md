@@ -21,12 +21,17 @@ The N5 numerical representation writes the existing rows as
 physical equation, event definition, eta domain, or complete-child gate.
 
 The finite-N pattern has `8N+2` variables, `2N+8` rows, and a `6N-6` local
-root manifold. The same-action two-sided event/child reaction map is solvable
-at N3/N4/N5 without a new row or C1 matching assumption. A uniform general-N
-reaction-Calderon graph convergence/right-inverse bound remains open.
+root manifold. The same-action two-sided event/child attachment/reaction map
+is now explicitly matched at N3/N4/N5/N6 without a new row or C1 matching
+assumption. At N6, full trace/constraint/momentum compatibility closes to
+`7.341e-12`, exact attachment jump is zero after the existing boundary solve,
+and the positive-duration persistence witness is converged with nonzero
+relative evolution. N6 is not promoted here as a complete persistent child.
+Action-normalized weak reaction graphs are measured through N6; uniform
+lower-order graph convergence remains open.
 
 Exact next object:
-`PROVE_OR_LOCALIZE_THE_FIRST_FAILURE_OF_UNIFORM_GENERAL_N_REACTION_CALDERON_GRAPH_CONVERGENCE`.
+`PROVE_COLLECTIVE_COMPACT_CONVERGENCE_OF_THE_LOWER_ORDER_GAUGE_FIXED_WEAK_JACOBI_CALDERON_OPERATORS_AND_A_UNIFORM_SPECTRAL_GAP_ON_THE_NORMAL_COMPLEMENT_OF_THE_CHILD_MANIFOLD`.
 
 ### Historical corrected-Rayleigh N3 snapshot
 

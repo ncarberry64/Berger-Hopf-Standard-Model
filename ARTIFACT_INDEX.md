@@ -11,8 +11,11 @@ their retained finite-N maps. N5 closes the unchanged 18-row map at
 fixed-reference merit `5.90723795458673e-14` (raw
 `||F18||=1.1665202200968536e-7`), with eta admissibility, certification,
 positive-duration persistence, and nonzero relative evolution. It also records
-the `8N+2` variable, `2N+8` row, `6N-6` manifold laws and finite-N solvability
-of the same-action two-sided event/child reaction map. Uniform general-N
+the `8N+2` variable, `2N+8` row, `6N-6` manifold laws; exact attachment-matched
+two-sided weak reaction graphs at N3/N4/N5/N6; the N6 compatibility closure,
+zero attachment jump, and converged persistence witness; and the
+boundary-compatible principal gauge quotient. N6 is not promoted here as a
+fourth complete persistent child. Uniform lower-order general-N graph
 convergence remains open. `FULL_BHSM_COMPLETE = FALSE`.
 
 ## Current BHSM v15.10 sigma-coefficient response reconstruction

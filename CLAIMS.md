@@ -17,8 +17,15 @@ Supported numerical equivalence: splitting the unchanged N5 map as
 coefficient, event definition, or acceptance gate.
 
 Supported finite-N mathematics: the whole-child variable/row/manifold laws are
-`8N+2`, `2N+8`, and `6N-6`; the same-action two-sided event/child reaction map
-is finite-N solvable at N3/N4/N5 without adding a physical row or C1 gate.
+`8N+2`, `2N+8`, and `6N-6`; the same-action two-sided event/child
+attachment/reaction map is explicitly matched at N3/N4/N5/N6 without adding a
+physical row or C1 gate. N6 closes trace/constraint/momentum compatibility to
+`7.341e-12`, records zero exact-attachment jump after boundary matching, and
+has a converged positive-duration nonzero-evolution persistence witness.
+Action-normalized weak reaction graphs have been measured through N6.
+
+Not supported: promotion of N6 as a fourth complete persistent child from
+these boundary-graph results alone.
 
 Not supported: resolution-independent general-N reconstruction or uniform
 reaction-Calderon graph convergence, absolute
@@ -26,7 +33,7 @@ scale, physical masses, CKM, PMNS, CP, neutrino splittings, empirical
 validation, or `FULL_BHSM_COMPLETE = TRUE`.
 
 Active dependency:
-`PROVE_OR_LOCALIZE_THE_FIRST_FAILURE_OF_UNIFORM_GENERAL_N_REACTION_CALDERON_GRAPH_CONVERGENCE`.
+`PROVE_COLLECTIVE_COMPACT_CONVERGENCE_OF_THE_LOWER_ORDER_GAUGE_FIXED_WEAK_JACOBI_CALDERON_OPERATORS_AND_A_UNIFORM_SPECTRAL_GAP_ON_THE_NORMAL_COMPLEMENT_OF_THE_CHILD_MANIFOLD`.
 
 ### Historical corrected-Rayleigh N3 claim boundary
 
