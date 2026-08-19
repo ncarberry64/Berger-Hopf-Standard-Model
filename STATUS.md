@@ -5,7 +5,7 @@ evidence, not competing public status pages.
 
 ## Current public summary
 
-Current identifier: **v21.35 cross-resolution encapsulation checkpoint**. It
+Current identifier: **v21.36 nonlinear-homotopy integrability checkpoint**. It
 is a development checkpoint, not a release version.
 
 Complete persistent children through N6 are validated for their retained
@@ -40,17 +40,21 @@ so the tail beyond a finite cutoff is summable. This does not close the whole
 N6-to-infinity construction. The repaired-anchor N6-to-N12 probe finds no
 linear bridge obstruction: hard, full-Schur, and soft Lyapunov-Schmidt
 responses remain nonzero and the unchanged exact joint weak merit descends.
-The old one-ball failure is local-basin evidence only. What remains open is a
-finite overlapping nonlinear radii cover with rigorous action-analytic
-Jacobian-Lipschitz and eta/Dirac/event/persistence neighborhood majorants,
-including quadrature consistency. The reduced local N6 canonical energy is a
+The old one-ball failure is local-basin evidence only. The current `t` cover
+encloses a fixed-center linear Schur family, but the unchanged exact joint
+residual has no `t` parameter. A nonlinear retained-action family with a
+rooted N6 endpoint and preserved normal rank is required before local radii
+balls are defined. Scaling away high modes collapses that rank; retaining it
+exposes a nonzero omitted weak tail (`0.086772051123605` on the original
+matched child and `0.080655518582802` on the repaired ordered-event child).
+Source subtraction is not the unchanged action. The reduced local N6 canonical energy is a
 constraint diagnostic, not `Delta H`, a mass, or a physical scale readout.
 The v14.54 relative-energy/Floquet object is presently a conditional contract,
 not an executable complete composite-minus-matched-parent `Q_xi` evaluator;
 the stored N6 persistence data also lacks a paired parent history.
 
 Exact next object:
-`CERTIFY_ACTION_ANALYTIC_NORMAL_JACOBIAN_LIPSCHITZ_AND_PHYSICAL_NEIGHBORHOOD_MAJORANTS_ON_A_FINITE_OVERLAPPING_N6_TO_M0_CHORD_COVER;_THEN_APPEND_THE_PROVED_INVERSE_SQUARE_ASYMPTOTIC_TAIL`.
+`DERIVE_THE_EXACT_NONLINEAR_NESTED_GALERKIN_EVENT_CHILD_HOMOTOPY_FROM_THE_UNCHANGED_RETAINED_ACTION_WITH_A_ROOTED_N6_ENDPOINT_AND_PRESERVED_GAUGE_FIXED_NORMAL_RANK,_OR_LOCALIZE_WHY_THIS_REQUIRES_AN_ADDED_SOURCE_OR_PRINCIPAL_TERM`.
 
 ### Historical corrected-Rayleigh N3 snapshot
 

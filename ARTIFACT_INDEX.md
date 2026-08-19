@@ -1,6 +1,23 @@
 # BHSM Artifact Index
 
-## Current cross-resolution encapsulation checkpoint (v21.35)
+## Current nonlinear-homotopy integrability checkpoint (v21.36)
+
+- [`BHSM_N6_N12_NONLINEAR_HOMOTOPY_INTEGRABILITY_V21_36.json`](artifacts/BHSM_N6_N12_NONLINEAR_HOMOTOPY_INTEGRABILITY_V21_36.json)
+- Source: [`aether_n6_n12_nonlinear_homotopy_integrability_v21_36.py`](src/bhsm/interface/aether_n6_n12_nonlinear_homotopy_integrability_v21_36.py)
+- Reproduction: [`audit_n6_n12_nonlinear_homotopy_integrability.py`](scripts/audit_n6_n12_nonlinear_homotopy_integrability.py)
+- Focused test: [`test_bhsm_n6_n12_nonlinear_homotopy_integrability_v21_36.py`](tests/test_bhsm_n6_n12_nonlinear_homotopy_integrability_v21_36.py)
+
+This audit preserves the validated 4,124-interval linear Schur cover but proves
+that its parameter is absent from the unchanged exact nonlinear joint
+residual. It separately reproduces the original matched-child omitted weak
+tail `0.086772051123605` and repaired ordered-event-child tail
+`0.080655518582802`. Coordinate pullback loses the high normal rank at the N6
+endpoint; keeping the rank retains the nonzero tail, while source subtraction
+would change the action. The exact nonlinear retained-action homotopy is the
+first localized dependency before segmentwise radii bounds.
+`CONTINUUM_EVENT_CHILD_CERTIFIED = FALSE` and `FULL_BHSM_COMPLETE = FALSE`.
+
+## Retained v21.35 cross-resolution evidence
 
 - [`BHSM_AETHER_CROSS_RESOLUTION_RECONNAISSANCE_V21_35.json`](artifacts/BHSM_AETHER_CROSS_RESOLUTION_RECONNAISSANCE_V21_35.json)
 - Source: [`aether_cross_resolution_reconnaissance_v21_35.py`](src/bhsm/interface/aether_cross_resolution_reconnaissance_v21_35.py)

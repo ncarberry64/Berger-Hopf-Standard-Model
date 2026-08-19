@@ -2,7 +2,7 @@
 
 ## Current public claim boundary
 
-Current public identifier: **v21.35 cross-resolution encapsulation
+Current public identifier: **v21.36 nonlinear-homotopy integrability
 checkpoint**. This is not a release and does not claim BHSM completion.
 
 Supported now: N3 through N6 reconstruct complete persistent children under
@@ -36,7 +36,12 @@ inverse, making the sufficiently high tail summable.
 Supported diagnostic: on the repaired-anchor N6-to-N12 joint probe the hard,
 full-Schur, and isolated soft Lyapunov-Schmidt responses remain nonzero while
 the unchanged exact joint weak merit descends. This is not itself a continuum
-certificate.
+certificate. The interval cover is rigorously limited to the fixed-center
+linear Schur proxy. The repository does not yet define an exact nonlinear
+`F(t,Y)` with a rooted N6 endpoint, the physical N12 endpoint, and preserved
+gauge-fixed normal rank. The original matched and repaired N6 omitted weak
+tails are separately reproducible and nonzero; they are not one numerical
+record.
 
 Not supported: a rigorous finite overlapping nonlinear radii cover, a
 completed continuum child, the
@@ -49,7 +54,7 @@ history, so the conditional v14.54 Floquet/relative-energy contract is not a
 current mass readout.
 
 Active dependency:
-`CERTIFY_ACTION_ANALYTIC_NORMAL_JACOBIAN_LIPSCHITZ_AND_PHYSICAL_NEIGHBORHOOD_MAJORANTS_ON_A_FINITE_OVERLAPPING_N6_TO_M0_CHORD_COVER;_THEN_APPEND_THE_PROVED_INVERSE_SQUARE_ASYMPTOTIC_TAIL`.
+`DERIVE_THE_EXACT_NONLINEAR_NESTED_GALERKIN_EVENT_CHILD_HOMOTOPY_FROM_THE_UNCHANGED_RETAINED_ACTION_WITH_A_ROOTED_N6_ENDPOINT_AND_PRESERVED_GAUGE_FIXED_NORMAL_RANK,_OR_LOCALIZE_WHY_THIS_REQUIRES_AN_ADDED_SOURCE_OR_PRINCIPAL_TERM`.
 
 ### Historical corrected-Rayleigh N3 claim boundary
 
