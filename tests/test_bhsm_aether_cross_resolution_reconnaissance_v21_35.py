@@ -22,6 +22,7 @@ from bhsm.interface.aether_cross_resolution_reconnaissance_v21_35 import (
     soft_normal_fredholm_compactness_dichotomy,
     continuum_normal_cauchy_completeness_reduction,
     normal_boundary_cauchy_symbol_factorization,
+    actual_corrected_event_child_soft_evans_audit,
     uniform_boundary_jerk_compactness_reduction,
     uniform_positive_duration_normal_closed_range_reduction,
     weak_calderon_boundary_generator_reduction,
@@ -522,10 +523,40 @@ def test_normal_boundary_cauchy_symbol_factorization():
         "near_intersection_identified_with_that_full_history_tangent"
     ] is False
     assert separation["conditional_value_promoted"] is False
+    evans = audit["pole_safe_soft_Evans_factor"]
+    assert evans["basis_and_DtN_pole_invariant"] is True
+    assert evans["fixed_injected_pair_determines_e_soft_star"] is False
+    assert evans[
+        "actual_corrected_child_limit_and_soft_vector_identified"
+    ] is False
     dichotomy = audit["uniform_closed_range_dichotomy"]
     assert dichotomy["fixed_pair_rank_proves_required_statement"] is False
     assert dichotomy["decreasing_injected_gap_proves_failure"] is False
     assert dichotomy["genuine_uniform_failure_demonstrated"] is False
+    assert audit[
+        "new_physics_equations_constraints_regularizers_objectives_or_gates"
+    ] is False
+
+
+def test_actual_corrected_event_child_soft_evans_audit():
+    audit = actual_corrected_event_child_soft_evans_audit()
+    assert audit["validation_passed"] is True
+    assert [row["N"] for row in audit["rows"]] == [3, 4, 5, 6]
+    for row in audit["rows"]:
+        assert row["complete_persistent_child_validated"] is True
+        assert row["attachment_configuration_jump_norm"] < 1.0e-10
+        assert row["minimum_event_child_eta_Legendre"] > 0.0
+        assert row["minimum_graph_symbol_singular_value"] > 0.0
+        assert row["absolute_pole_safe_Evans_wedge"] > 0.0
+    sequence = audit["sequence_diagnostic"]
+    assert sequence["soft_factor_monotone_in_N"] is False
+    assert sequence["four_independent_resolutions_prove_a_unique_limit"] is False
+    assert sequence[
+        "fixed_injected_background_substituted_for_actual_roots"
+    ] is False
+    policy = audit["classification_policy"]
+    assert policy["legitimate_tangent_identified"] is False
+    assert policy["genuine_uniform_normal_failure_demonstrated"] is False
     assert audit[
         "new_physics_equations_constraints_regularizers_objectives_or_gates"
     ] is False

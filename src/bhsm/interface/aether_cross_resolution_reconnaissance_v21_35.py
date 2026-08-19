@@ -13588,6 +13588,32 @@ def normal_boundary_cauchy_symbol_factorization(
                 "classification"
             ],
         },
+        "pole_safe_soft_Evans_factor": {
+            "definition": (
+                "E_N=det([Q_child,-Q_Se]);_abs(E_N)="
+                "sin(theta_1,N)*sin(theta_2,N)"
+            ),
+            "basis_and_DtN_pole_invariant": True,
+            "hard_factor": (
+                "THE_NONSOFT_PRINCIPAL_ANGLE_OR_EQUIVALENT_HARD_"
+                "RANK_ONE_RESPONSE"
+            ),
+            "soft_factor": "e_soft,N=sin(theta_F,N)_AFTER_PROVED_QUOTIENTS",
+            "continuity_statement": (
+                "ON_AN_S2_ETA_STRONGLY_CONVERGENT_NORMAL_SECTION_THE_"
+                "PROVED_MOSCO_GRAPH_CONVERGENCE_GIVES_e_soft,N_TO_e_soft,*"
+            ),
+            "closed_range_branch": (
+                "e_soft,*!=0_IMPLIES_A_LOCAL_UNIFORM_NORMAL_GRAPH_GAP"
+            ),
+            "zero_branch": (
+                "e_soft,*=0_PRODUCES_A_CONTINUUM_MATCHED_GRAPH_VECTOR;_"
+                "CATEGORY_3_REQUIRES_ITS_WEAK_JACOBI_LIFT_TO_BE_NONZERO_"
+                "AND_NON_TANGENT"
+            ),
+            "fixed_injected_pair_determines_e_soft_star": False,
+            "actual_corrected_child_limit_and_soft_vector_identified": False,
+        },
         "uniform_closed_range_dichotomy": {
             "required": (
                 "inf_OVER_THE_S2_ETA_NORMAL_SECTION_"
@@ -13608,11 +13634,246 @@ def normal_boundary_cauchy_symbol_factorization(
             "genuine_uniform_failure_demonstrated": False,
         },
         "exact_next_mathematical_lemma": (
-            "PROVE_THAT_THE_CONTINUUM_GAUGE_QUOTIENTED_EVENT_AND_CHILD_"
-            "WEAK_CALDERON_GRAPHS_HAVE_NO_NON_TANGENT_INTERSECTION_ON_"
-            "THE_S2_ETA_NORMAL_SECTION_BY_THE_POSITIVE_DURATION_WEAK_"
-            "GREEN_ENERGY_IDENTITY,_OR_EXHIBIT_THE_NONZERO_MATCHED_"
-            "NORMAL_JACOBI_HISTORY"
+            "CONSTRUCT_THE_ACTION_NORMALIZED_CONTINUUM_SOFT_EVANS_FACTOR_"
+            "ON_THE_LIMIT_OF_THE_ACTUAL_CORRECTED_CHILD_NORMAL_SECTION_"
+            "AND_PROVE_e_soft,STAR_IS_NONZERO;_IF_IT_VANISHES,_LIFT_ITS_"
+            "NULL_VECTOR_BY_THE_EXISTING_POSITIVE_DURATION_WEAK_GREEN_"
+            "EVOLUTION_AND_CLASSIFY_THE_HISTORY_AS_TANGENT_OR_GENUINELY_"
+            "NORMAL"
+        ),
+        "new_physics_equations_constraints_regularizers_objectives_or_gates": (
+            False
+        ),
+        "validation": validation,
+        "validation_passed": all(validation.values()),
+        "FULL_BHSM_COMPLETE": False,
+    }
+
+
+@lru_cache(maxsize=2)
+def actual_corrected_event_child_soft_evans_audit(
+    path: str | Path = (
+        "artifacts/BHSM_AETHER_CROSS_RESOLUTION_RECONNAISSANCE_V21_35.json"
+    ),
+    *,
+    points: int = 96,
+) -> dict[str, Any]:
+    """Evaluate the pole-safe soft Evans factor on actual N3--N6 pairs."""
+
+    target = Path(path)
+    result = json.loads(target.read_text(encoding="utf-8"))[
+        "cross_resolution_reconnaissance"
+    ]
+
+    def decode(exact: Mapping[str, Any]) -> tuple[np.ndarray, ...]:
+        return tuple(
+            np.asarray([float.fromhex(value) for value in exact[name]])
+            for name in ("coordinates", "velocities", "multipliers")
+        )
+
+    n3_state = unpack_reduced(v17_75_selected_raw_vector())
+    n3_q_history = np.asarray(n3_state["coordinates"], dtype=float)
+    n3_m_history = np.asarray(n3_state["multipliers"], dtype=float)
+    n3_v_history = (
+        trapezoid_sbp_difference() @ n3_q_history
+        / float(n3_state["period"])
+    )
+    n4_event = result["N4_adaptive_event_convergence_audit"][
+        "quadrature_control"
+    ]["event"]
+    n5_event = result["action_energy_topology_coherent_event_audit"][
+        "coherent_N4_to_N5_event"
+    ]
+    events = {
+        3: (n3_q_history[-1], n3_v_history[-1], n3_m_history[-1]),
+        4: tuple(
+            np.asarray(n4_event[name], dtype=float)
+            for name in ("coordinates", "velocities", "multipliers")
+        ),
+        5: tuple(
+            np.asarray(n5_event[name], dtype=float)
+            for name in ("coordinates", "velocities", "multipliers")
+        ),
+        6: decode(result["sequential_action_energy_projection_audit"][
+            "rows"
+        ][0]["event"]["projected_state_binary64_hex"]),
+    }
+    candidate_keys = {
+        3: "N3_exact_attachment_weak_child_candidate",
+        4: "N4_exact_attachment_weak_child_candidate",
+        5: "coherent_N5_exact_attachment_weak_child_candidate",
+        6: "N6_weak_complete_child_candidate",
+    }
+    children = {
+        order: decode(
+            result[key]["child_state"]["binary64_hex"]
+        )
+        for order, key in candidate_keys.items()
+    }
+
+    def reaction_response(
+        order: int, state: tuple[np.ndarray, ...],
+    ) -> np.ndarray:
+        zero = np.asarray(_child_history_boundary_reaction_solve(
+            order, *state, np.zeros(2), points=points
+        )["boundary_reaction"], dtype=float)
+        response = np.empty((2, 2))
+        for column in range(2):
+            unit = np.zeros(2)
+            unit[column] = 1.0
+            solved = _child_history_boundary_reaction_solve(
+                order, *state, unit, points=points
+            )
+            response[:, column] = (
+                np.asarray(solved["boundary_reaction"], dtype=float) - zero
+            )
+        return response
+
+    rows = []
+    for order in (3, 4, 5, 6):
+        event = events[order]
+        child = children[order]
+        frequencies = spectral_frequencies(order)["coordinates"]
+        inverse_weight = np.diag(1.0 / (1.0 + frequencies**2))
+        event_boundary = _attachment_jacobian_at_order(order, event[0])
+        child_boundary = _attachment_jacobian_at_order(order, child[0])
+        common_gram = 0.5 * (
+            event_boundary @ inverse_weight @ event_boundary.T
+            + child_boundary @ inverse_weight @ child_boundary.T
+        )
+        eigenvalues, eigenvectors = np.linalg.eigh(common_gram)
+        sqrt_gram = (
+            eigenvectors
+            @ np.diag(np.sqrt(eigenvalues))
+            @ eigenvectors.T
+        )
+        event_response = (
+            sqrt_gram @ reaction_response(order, event) @ sqrt_gram
+        )
+        child_response = (
+            sqrt_gram @ reaction_response(order, child) @ sqrt_gram
+        )
+        event_frame, _ = np.linalg.qr(np.vstack((
+            np.eye(2), -event_response,
+        )))
+        child_frame, _ = np.linalg.qr(np.vstack((
+            np.eye(2), child_response,
+        )))
+        cosines = np.clip(
+            np.linalg.svd(
+                child_frame.T @ event_frame, compute_uv=False
+            ),
+            0.0,
+            1.0,
+        )
+        sines = np.sqrt(np.maximum(0.0, 1.0 - cosines**2))
+        graph_symbol = np.column_stack((child_frame, -event_frame))
+        symbol_singular = np.linalg.svd(graph_symbol, compute_uv=False)
+        total_response_singular = np.linalg.svd(
+            child_response + event_response, compute_uv=False
+        )
+        child_eta = _eta_legendre_minimum(
+            order, child[0], child[2], points=max(2000, points)
+        )["minimum"]
+        event_eta = _eta_legendre_minimum(
+            order, event[0], event[2], points=max(2000, points)
+        )["minimum"]
+        rows.append({
+            "N": order,
+            "soft_principal_angle_sine": float(sines[0]),
+            "hard_principal_angle_sine": float(sines[1]),
+            "absolute_pole_safe_Evans_wedge": float(np.prod(sines)),
+            "minimum_graph_symbol_singular_value": float(
+                symbol_singular[-1]
+            ),
+            "total_response_singular_values": (
+                total_response_singular.tolist()
+            ),
+            "attachment_configuration_jump_norm": float(np.linalg.norm(
+                _attachment_coordinates_at_order(order, child[0])
+                - _attachment_coordinates_at_order(order, event[0])
+            )),
+            "minimum_event_child_eta_Legendre": float(
+                min(child_eta, event_eta)
+            ),
+            "complete_persistent_child_validated": bool(
+                result[candidate_keys[order]][
+                    "complete_persistent_child_validated"
+                ]
+            ),
+        })
+    soft = np.asarray([
+        row["soft_principal_angle_sine"] for row in rows
+    ])
+    wedge = np.asarray([
+        row["absolute_pole_safe_Evans_wedge"] for row in rows
+    ])
+    validation = {
+        "actual_N3_N4_N5_N6_corrected_persistent_children_used": all(
+            row["complete_persistent_child_validated"] for row in rows
+        ),
+        "all_actual_event_child_attachment_matches_replay": all(
+            row["attachment_configuration_jump_norm"] < 1.0e-10
+            for row in rows
+        ),
+        "all_actual_pairs_are_eta_admissible": all(
+            row["minimum_event_child_eta_Legendre"] > 0.0 for row in rows
+        ),
+        "all_finite_actual_pair_graph_symbols_are_full_rank": all(
+            row["minimum_graph_symbol_singular_value"]
+            > 100.0 * np.finfo(float).eps
+            for row in rows
+        ),
+        "finite_pair_transversality_not_promoted_to_a_uniform_limit": True,
+        "lack_of_a_resolved_sequence_not_promoted_to_category_3": True,
+        "no_new_equation_constraint_regularizer_objective_or_gate": True,
+    }
+    return {
+        "classification": (
+            "THE_ACTUAL_CORRECTED_N3_N4_N5_N6_EVENT_CHILD_WEAK_"
+            "CALDERON_PAIRS_ARE_EACH_FINITE_DIMENSIONALLY_TRANSVERSE,_"
+            "BUT_THEIR_POLE_SAFE_SOFT_EVANS_FACTORS_DO_NOT_YET_DEFINE_"
+            "A_RESOLVED_COHERENT_CONTINUUM_SEQUENCE;_NEITHER_A_UNIFORM_"
+            "GAP_NOR_A_GENUINE_NORMAL_KERNEL_IS_ESTABLISHED"
+        ),
+        "source": (
+            "EXACT_ATTACHMENT_WEAK_CONORMAL_COMPLETE_PERSISTENT_"
+            "N3_N4_N5_N6_CHILDREN_WITH_THEIR_OWN_ACCEPTED_EVENTS"
+        ),
+        "rows": rows,
+        "sequence_diagnostic": {
+            "soft_factor_maximum_to_minimum_ratio": float(
+                np.max(soft) / np.min(soft)
+            ),
+            "Evans_wedge_maximum_to_minimum_ratio": float(
+                np.max(wedge) / np.min(wedge)
+            ),
+            "soft_factor_monotone_in_N": bool(
+                np.all(np.diff(soft) >= 0.0)
+                or np.all(np.diff(soft) <= 0.0)
+            ),
+            "four_independent_resolutions_prove_a_unique_limit": False,
+            "fixed_injected_background_substituted_for_actual_roots": False,
+        },
+        "classification_policy": {
+            "current_soft_channel_category": (
+                "NORMAL_DIRECTION_CONTROLLED_BY_THE_EXISTING_POSITIVE_"
+                "DURATION_GAUGE_FIXED_JACOBI_EVOLUTION"
+            ),
+            "legitimate_tangent_identified": False,
+            "genuine_uniform_normal_failure_demonstrated": False,
+            "category_3_still_requires": (
+                "A_COHERENT_ACTION_NORMALIZED_ACTUAL_ROOT_SEQUENCE_WITH_"
+                "A_NONZERO_NON_TANGENT_MATCHED_JACOBI_HISTORY_OR_"
+                "NORMALIZED_L2_HISTORY_COLLAPSE"
+            ),
+        },
+        "exact_next_mathematical_lemma": (
+            "DERIVE_THE_ACTION_OWNED_NESTED_GALERKIN_NORMAL_SECTION_"
+            "CORRESPONDENCE_FOR_THE_ACTUAL_CORRECTED_EVENT_CHILD_ROOT_"
+            "RELATION_AND_PROVE_S2_ETA_GRAPH_COMPACTNESS;_THEN_EVALUATE_"
+            "THE_LIMIT_SOFT_EVANS_FACTOR_OR_LIFT_ITS_ZERO_TO_THE_"
+            "NON_TANGENT_POSITIVE_DURATION_JACOBI_HISTORY"
         ),
         "new_physics_equations_constraints_regularizers_objectives_or_gates": (
             False
@@ -17046,7 +17307,11 @@ def promote_boundary_jerk_weak_graph_domain_audit(
     if not symbol["validation_passed"]:
         raise RuntimeError("normal boundary Cauchy symbol factorization failed")
     result["normal_boundary_cauchy_symbol_factorization"] = symbol
-    result["active_dependency"] = symbol["exact_next_mathematical_lemma"]
+    actual_evans = actual_corrected_event_child_soft_evans_audit(target)
+    if not actual_evans["validation_passed"]:
+        raise RuntimeError("actual corrected soft Evans audit failed")
+    result["actual_corrected_event_child_soft_evans_audit"] = actual_evans
+    result["active_dependency"] = actual_evans["exact_next_mathematical_lemma"]
     result["scientific_status"] = (
         "N3_TO_N6_EXACT_ATTACHMENT_WEAK_COMPLETE_PERSISTENT_CHILDREN_"
         "VALIDATED;_THE_HARD_MOMENTUM_RESPONSE_CLOSES_AND_THE_SOFT_"
@@ -17054,9 +17319,10 @@ def promote_boundary_jerk_weak_graph_domain_audit(
         "CLASSICAL_H6_CONTROL_IS_INVALID_AS_A_NEW_CRITERION;_THE_WEAK_"
         "CALDERON_BOUNDARY_JERK_FAILURE_IS_LOCALIZED_TO_THE_ACTION_"
         "SEVEN_BY_SEVEN_ACTION_NORMALIZED_BOUNDARY_SYMBOL_FACTORIZED;_"
-        "CONTINUUM_NON_TANGENT_EVENT_CHILD_CALDERON_INTERSECTION_"
-        "EXCLUSION_OR_EXHIBITION_IS_THE_REMAINING_NORMAL_CLOSED_RANGE_"
-        "DEPENDENCY"
+        "ACTUAL_N3_TO_N6_PAIRS_ARE_FINITE_DIMENSIONALLY_TRANSVERSE_BUT_"
+        "DO_NOT_YET_DEFINE_A_COHERENT_CONTINUUM_SOFT_EVANS_SEQUENCE;_"
+        "THE_ACTION_OWNED_ACTUAL_ROOT_NORMAL_SECTION_CORRESPONDENCE_IS_"
+        "THE_REMAINING_CLOSED_RANGE_DEPENDENCY"
     )
     payload["cross_resolution_reconnaissance"] = result
     validation = dict(payload["validation"])
@@ -17101,6 +17367,9 @@ def promote_boundary_jerk_weak_graph_domain_audit(
     )
     validation["normal_boundary_cauchy_symbol_factorization_validated"] = (
         symbol["validation_passed"]
+    )
+    validation["actual_corrected_event_child_soft_evans_audit_validated"] = (
+        actual_evans["validation_passed"]
     )
     payload["validation"] = validation
     payload["validation_passed"] = all(validation.values())
@@ -17332,6 +17601,7 @@ __all__ = [
     "soft_normal_fredholm_compactness_dichotomy",
     "continuum_normal_cauchy_completeness_reduction",
     "normal_boundary_cauchy_symbol_factorization",
+    "actual_corrected_event_child_soft_evans_audit",
     "weak_constraint_boundary_source_tail_audit",
     "weak_complete_child_normal_right_inverse_audit",
     "weak_complete_child_normal_lipschitz_audit",
