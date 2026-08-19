@@ -1,3 +1,4 @@
+import ast
 import json
 from pathlib import Path
 
@@ -30,6 +31,33 @@ from bhsm.interface.aether_cross_resolution_reconnaissance_v21_35 import (
     weak_calderon_boundary_generator_reduction,
     whole_system_time_translation_tangent_interface,
 )
+
+
+def test_persisted_n6_and_general_n_audits_have_replayable_returns():
+    source = Path(
+        "src/bhsm/interface/aether_cross_resolution_reconnaissance_v21_35.py"
+    ).read_text(encoding="utf-8")
+    tree = ast.parse(source)
+    required = {
+        "reaction_calderon_nested_schur_trace_audit",
+        "sequential_action_energy_projection_audit",
+        "n6_full_compatibility_extension_audit",
+        "n6_event_child_weak_reaction_audit",
+        "coherent_n5_exact_attachment_weak_child_audit",
+        "general_n_principal_energy_certificate",
+    }
+    functions = {
+        node.name: node
+        for node in tree.body
+        if isinstance(node, ast.FunctionDef) and node.name in required
+    }
+    assert functions.keys() == required
+    for node in functions.values():
+        top_level_returns = [
+            item for item in node.body if isinstance(item, ast.Return)
+        ]
+        assert len(top_level_returns) == 1
+        assert node.body[-1] is top_level_returns[0]
 
 
 def test_n6_inverse_square_tail_closure_audit_is_fail_closed():
