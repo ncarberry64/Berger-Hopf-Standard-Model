@@ -65,7 +65,8 @@ def test_n6_inverse_square_tail_closure_audit_is_fail_closed():
     assert audit["validation_passed"] is True
     law = audit["action_derived_inverse_square_law"]
     assert law["proved_shell_estimate"] == (
-        "norm(r_n,weak)<=C_r*n^-2_FOR_n>=2"
+        "norm(r_n,weak)<=C_r*n^-2_FOR_EACH_EVENT_OR_CHILD_COMPONENT_"
+        "AND_norm(r_n,event_child)<=C_r_product*n^-2"
     )
     assert law["fitted_constant_used"] is False
     split = audit["exact_boundary_bulk_split"]
@@ -87,25 +88,60 @@ def test_n6_inverse_square_tail_closure_audit_is_fail_closed():
         "asymptotic_inverse_square_correction_is_summable"
     ] is True
     assert asymptotic["summed_high_tail_bound"] == (
-        "sum_(n>M0)norm(delta_Y_n)<=(2*C_r/beta_P)*"
-        "sum_(n>M0)n^-2<=2*C_r/(beta_P*M0)"
+        "sum_(n>M0)norm(delta_Y_n)<=(2*C_r_product/beta_P)*"
+        "sum_(n>M0)n^-2<=2*C_r_product/(beta_P*M0)"
     )
     assert asymptotic["uses_a_higher_N_complete_child_root"] is False
     bridge = audit["finite_bridge_obstruction"]
     assert bridge["hard_momentum_channel_closed"] is True
     assert bridge["finite_bridge_certified"] is False
     assert bridge["brute_force_complete_roots_for_every_N_required"] is False
+    joint = audit["joint_event_child_tail"]
+    assert joint["event_first_omitted_shell_bound"] == "C_r_event/49"
+    assert joint["product_first_omitted_shell_bound"] == "C_r_product/49"
+    assert joint["event_tail_numeric_probe_required_for_the_proof"] is False
+    assert joint["child_only_tail_used_as_the_whole_system_defect"] is False
+    response = audit["identity_response_trace_consistency"]
+    assert response["pointwise_exact_at_finite_quadrature"] is False
+    assert response["converges_to_the_exact_identity_response"] is True
+    assert response["rows"][-1]["maximum_sigma_error"] < response["rows"][0][
+        "maximum_sigma_error"
+    ]
+    scalar = audit["finite_bridge_soft_scalar_reduction"]
+    assert scalar["soft_denominator"] == "d_s(t)=D_t-C_t*A_t^(-1)*B_t"
+    assert scalar[
+        "endpoint_nonzero_measurements_prove_no_interior_crossing"
+    ] is False
+    assert scalar["new_equation_constraint_gate_or_selector"] is False
     nonlinear = audit["nonlinear_Hessian_remainder"]
     assert nonlinear[
         "eta_persistence_neighborhood_closed_for_the_whole_tail"
     ] is False
     assert nonlinear["asymptotic_tail_only_radii_polynomial_closes"] is True
     assert nonlinear["full_N6_to_infinity_radii_polynomial_closes"] is False
+    assert nonlinear["repository_radii_polynomial"] == (
+        "p(r)=Y+(Z0+Z1-1)*r+Z2*r^2"
+    )
     assert audit["infinite_tail_complete_child_constructed"] is False
     assert audit["category_3_collapse_sequence_constructed"] is False
     assert audit[
         "equations_gates_running_law_or_frozen_predictions_changed"
     ] is False
+
+
+def test_persisted_n6_local_energy_reconnaissance_is_not_mass():
+    payload = json.loads(Path(
+        "artifacts/BHSM_AETHER_CROSS_RESOLUTION_RECONNAISSANCE_V21_35.json"
+    ).read_text(encoding="utf-8"))["cross_resolution_reconnaissance"]
+    audit = payload["N6_reduced_local_energy_readout_reconnaissance"]
+    assert audit["validation_passed"] is True
+    assert audit["is_Delta_H6"] is False
+    assert audit["is_a_mass_measurement"] is False
+    assert audit["v14_54_conditional_contract"][
+        "complete_Q_xi_evaluator_exists"
+    ] is False
+    assert audit["family_cycle_ownership_gate"]["gate_closed"] is False
+    assert audit["new_mass_formula_invented"] is False
 
 
 def test_uniform_positive_duration_normal_closed_range_reduction():

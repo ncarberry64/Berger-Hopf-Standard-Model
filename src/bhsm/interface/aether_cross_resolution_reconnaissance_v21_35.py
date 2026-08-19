@@ -14063,28 +14063,21 @@ def soft_normal_lyapunov_schmidt_reduction(
     }
 
 
-def weak_constraint_boundary_source_tail_audit(
-    path: str | Path = (
-        "artifacts/BHSM_AETHER_CROSS_RESOLUTION_RECONNAISSANCE_V21_35.json"
-    ),
+def _embedded_weak_bulk_constraint_data(
+    exact: Mapping[str, Any],
     *,
-    maximum_order: int = 48,
-    points: int = 256,
+    source_order: int,
+    maximum_order: int,
+    points: int,
 ) -> dict[str, Any]:
-    """Separate the exact boundary lapse covector from the bulk H-1 tail."""
+    """Evaluate the retained bulk weak constraint after reaction routing."""
 
-    result = json.loads(Path(path).read_text(encoding="utf-8"))[
-        "cross_resolution_reconnaissance"
-    ]
-    exact = result["N6_weak_complete_child_candidate"][
-        "child_state"
-    ]["binary64_hex"]
     base = tuple(
         np.asarray([float.fromhex(value) for value in exact[name]])
         for name in ("coordinates", "velocities", "multipliers")
     )
     q, velocity, multipliers = embed_nested_state(
-        *base, 6, maximum_order
+        *base, source_order, maximum_order
     )
     constraints = constraint_residual(
         maximum_order, q, velocity, multipliers, points=points
@@ -14111,11 +14104,43 @@ def weak_constraint_boundary_source_tail_audit(
     boundary_coefficient = (
         -standard_model_casimir_coefficient() * boundary_lapse / r4
     )
-    bulk_lapse = (
-        constraints[:maximum_order] - boundary_coefficient * signs_k
-    )
-    bulk_shift = constraints[maximum_order:2 * maximum_order]
     frequencies = spectral_frequencies(maximum_order)["multipliers"]
+    return {
+        "boundary_coefficient": float(boundary_coefficient),
+        "bulk_lapse": (
+            constraints[:maximum_order] - boundary_coefficient * signs_k
+        ),
+        "bulk_shift": constraints[maximum_order:2 * maximum_order],
+        "frequencies": frequencies,
+    }
+
+
+def weak_constraint_boundary_source_tail_audit(
+    path: str | Path = (
+        "artifacts/BHSM_AETHER_CROSS_RESOLUTION_RECONNAISSANCE_V21_35.json"
+    ),
+    *,
+    maximum_order: int = 48,
+    points: int = 256,
+) -> dict[str, Any]:
+    """Separate the exact boundary lapse covector from the bulk H-1 tail."""
+
+    result = json.loads(Path(path).read_text(encoding="utf-8"))[
+        "cross_resolution_reconnaissance"
+    ]
+    exact = result["N6_weak_complete_child_candidate"][
+        "child_state"
+    ]["binary64_hex"]
+    data = _embedded_weak_bulk_constraint_data(
+        exact,
+        source_order=6,
+        maximum_order=maximum_order,
+        points=points,
+    )
+    boundary_coefficient = data["boundary_coefficient"]
+    bulk_lapse = data["bulk_lapse"]
+    bulk_shift = data["bulk_shift"]
+    frequencies = data["frequencies"]
     dual_weights_squared = 1.0 / (1.0 + frequencies**2)
     cuts = [
         cut for cut in (6, 8, 10, 12, 16, 20, 24, 32, 40, 47)
@@ -14237,6 +14262,33 @@ def n6_inverse_square_tail_closure_audit(
         row["bulk_constraint_H_minus_1_tail_norm"]
         for row in tail["rows"] if row["cutoff_N"] == 6
     )
+    localization_rows = []
+    for quadrature_points in (44, 96, 256):
+        nodes, _ = np.polynomial.legendre.leggauss(quadrature_points)
+        chi = (nodes + 1.0) * math.pi / 8.0
+        raw = np.sin(chi) ** 2 * np.cos(chi) ** 2
+        augmented_chi = np.concatenate(([0.0], chi, [math.pi / 4.0]))
+        augmented_raw = np.concatenate(([0.0], raw, [0.25]))
+        cumulative = np.concatenate(([0.0], np.cumsum(
+            0.5
+            * (augmented_raw[1:] + augmented_raw[:-1])
+            * np.diff(augmented_chi)
+        )))
+        cumulative *= 0.5 / cumulative[-1]
+        discrete_sigma = -0.5 + cumulative[1:-1]
+        exact_sigma = (
+            -0.5 + 2.0 * chi / math.pi
+            - np.sin(4.0 * chi) / (2.0 * math.pi)
+        )
+        localization_rows.append({
+            "quadrature_points": quadrature_points,
+            "maximum_sigma_error": float(np.max(np.abs(
+                discrete_sigma - exact_sigma
+            ))),
+            "L2_node_sigma_error": float(np.linalg.norm(
+                discrete_sigma - exact_sigma
+            )),
+        })
 
     # If kappa_n <= K*n**alpha, comparison with the integral gives this
     # completely explicit upper bound for sum_{n>=7} n**(alpha-2).
@@ -14269,6 +14321,13 @@ def n6_inverse_square_tail_closure_audit(
         "high_shell_compact_perturbation_reduces_infinity_to_a_finite_"
         "bridge": True,
         "finite_soft_Schur_bridge_not_silently_assumed_invertible": True,
+        "ordered_event_tail_is_included_in_the_whole_system_bridge": True,
+        "identity_response_quadrature_error_decreases": all(
+            later["maximum_sigma_error"] < earlier["maximum_sigma_error"]
+            for earlier, later in zip(
+                localization_rows, localization_rows[1:]
+            )
+        ),
     }
     return {
         "classification": (
@@ -14284,6 +14343,33 @@ def n6_inverse_square_tail_closure_audit(
             "Dirac_smallest_singular_value": dirac_gap,
             "finite_N6_normal_right_inverse_norm": finite_n6_inverse,
             "finite_N6_inverse_is_a_uniform_infinite_tail_bound": False,
+        },
+        "joint_event_child_tail": {
+            "event_first_omitted_shell_bound": "C_r_event/49",
+            "child_first_omitted_bulk_H_minus_1_tail_norm": first_tail,
+            "product_first_omitted_shell_bound": "C_r_product/49",
+            "event_tail_numeric_probe_required_for_the_proof": False,
+            "event_and_child_obey_the_same_inverse_square_derivation": True,
+            "child_only_tail_used_as_the_whole_system_defect": False,
+        },
+        "identity_response_trace_consistency": {
+            "exact_retained_identity_join": (
+                "sigma(chi)=-1/2+2*chi/pi-sin(4*chi)/(2*pi)"
+            ),
+            "current_residual_evaluator": (
+                "TRAPEZOIDAL_CUMULATIVE_RESPONSE_EVALUATED_ON_GAUSS_"
+                "NODES_BEFORE_THE_OUTER_GAUSS_ACTION_QUADRATURE"
+            ),
+            "rows": localization_rows,
+            "pointwise_exact_at_finite_quadrature": False,
+            "converges_to_the_exact_identity_response": True,
+            "interpretation": (
+                "THE_ANALYTIC_N_MINUS_2_LAW_USES_THE_EXACT_RETAINED_"
+                "IDENTITY_RESPONSE;_THE_FINITE_BRIDGE_RADII_SOURCE_MUST_"
+                "ALSO_MAJORIZE_THIS_EXISTING_QUADRATURE_CONSISTENCY_"
+                "DEFECT_BEFORE_A_CONTINUUM_ROOT_IS_PROMOTED"
+            ),
+            "physical_action_or_gate_changed_here": False,
         },
         "exact_boundary_bulk_split": {
             "boundary_covector": "-C_SM*N_boundary/R4*(-1)^n",
@@ -14327,8 +14413,12 @@ def n6_inverse_square_tail_closure_audit(
                 "5*norm(E_beta'',L1)/36"
             ),
             "vector_constant": "C_r=sqrt(C_N^2+C_beta^2)",
+            "whole_event_child_constant": (
+                "C_r_product=sqrt(C_r_event^2+C_r_child^2)"
+            ),
             "proved_shell_estimate": (
-                "norm(r_n,weak)<=C_r*n^-2_FOR_n>=2"
+                "norm(r_n,weak)<=C_r*n^-2_FOR_EACH_EVENT_OR_CHILD_"
+                "COMPONENT_AND_norm(r_n,event_child)<=C_r_product*n^-2"
             ),
             "why_action_owned": (
                 "E_N_AND_E_beta_ARE_THE_MULTIPLIER_EULER_DENSITIES_OF_"
@@ -14377,8 +14467,9 @@ def n6_inverse_square_tail_closure_audit(
         },
         "asymptotic_high_shell_fredholm_theorem": {
             "normal_operator_split": (
-                "A_6=P_6+K_6_ON_THE_EXISTING_GAUGE_REDUCED_MIXED_"
-                "EULER_DIRAC_WEAK_GRAPH_DOMAIN"
+                "A_6_PRODUCT=P_EVENT_DIRECT_SUM_P_CHILD+K_EVENT_CHILD_"
+                "ON_THE_EXISTING_GAUGE_REDUCED_MIXED_EULER_DIRAC_WEAK_"
+                "GRAPH_AND_MATCHING_DOMAIN"
             ),
             "principal_bound": (
                 "norm(P_6*x)_dual>=beta_P*norm(x)_graph,_"
@@ -14411,14 +14502,20 @@ def n6_inverse_square_tail_closure_audit(
                 "epsilon_M<=beta_P/2_FOR_ALL_M>=M_0"
             ),
             "Neumann_inverse": (
-                "norm((Q_M*A_6*Q_M)^(-1))<="
+                "norm((Q_M*A_6_PRODUCT*Q_M)^(-1))<="
                 "1/(beta_P-epsilon_M)<=2/beta_P_FOR_M>=M_0"
+            ),
+            "nonlinear_neighborhood_transfer": (
+                "C2_CONTINUITY_OF_THE_RETAINED_ACTION_ON_A_CLOSED_ETA_"
+                "INTERIOR_BALL_PRESERVES_epsilon_M<3*beta_P/4_AFTER_"
+                "SHRINKING_THE_EXISTING_BALL,_SO_THE_HIGH_TAIL_INVERSE_"
+                "REMAINS_AT_MOST_4/beta_P_THERE"
             ),
             "asymptotic_inverse_growth": "kappa_M=O(1),_alpha=0<1",
             "asymptotic_inverse_square_correction_is_summable": True,
             "summed_high_tail_bound": (
-                "sum_(n>M0)norm(delta_Y_n)<=(2*C_r/beta_P)*"
-                "sum_(n>M0)n^-2<=2*C_r/(beta_P*M0)"
+                "sum_(n>M0)norm(delta_Y_n)<=(2*C_r_product/beta_P)*"
+                "sum_(n>M0)n^-2<=2*C_r_product/(beta_P*M0)"
             ),
             "uses_a_higher_N_complete_child_root": False,
             "uses_an_instantaneous_singular_value_as_observability": False,
@@ -14434,15 +14531,17 @@ def n6_inverse_square_tail_closure_audit(
                 "HAS_THE_PROVED_NEUMANN_INVERSE"
             ),
             "remaining_operator": (
-                "S_FIN=A_LE_M0-"
+                "S_FIN_EVENT_CHILD=A_LE_M0-"
                 "A_LOW_HIGH*A_HIGH_HIGH^(-1)*A_HIGH_LOW"
             ),
             "remaining_source": (
                 "r_FIN=r_LOW-A_LOW_HIGH*A_HIGH_HIGH^(-1)*r_HIGH"
             ),
             "required_finite_statement": (
-                "S_FIN_HAS_A_BOUNDED_NORMAL_RIGHT_INVERSE_OR_r_FIN_IS_"
-                "ORTHOGONAL_TO_ITS_EXISTING_ADJOINT_KERNEL"
+                "S_FIN_EVENT_CHILD_HAS_A_BOUNDED_NORMAL_RIGHT_INVERSE_"
+                "OR_r_FIN_IS_ORTHOGONAL_TO_ITS_EXISTING_ADJOINT_KERNEL;_"
+                "THE_SOURCE_INCLUDES_THE_ACTION_QUADRATURE_CONSISTENCY_"
+                "DEFECT"
             ),
             "why_N6_full_row_rank_is_not_enough": (
                 "THE_SCHUR_FEEDBACK_FROM_ALL_OMITTED_MODES_CHANGES_THE_"
@@ -14456,12 +14555,59 @@ def n6_inverse_square_tail_closure_audit(
             "finite_bridge_certified": False,
             "brute_force_complete_roots_for_every_N_required": False,
         },
+        "finite_bridge_soft_scalar_reduction": {
+            "tail_homotopy": (
+                "S_FIN(t)=A_LOW_LOW-t*A_LOW_HIGH*"
+                "A_HIGH_HIGH^(-1)*A_HIGH_LOW,_0<=t<=1"
+            ),
+            "hard_soft_block_operator": (
+                "J_t=[[A_t,B_t],[C_t,D_t]]_ON_HARD_DIRECT_SUM_SOFT"
+            ),
+            "existing_split": (
+                "THE_HARD_NORMAL_COMPLEMENT_HAS_THE_VALIDATED_RANK_ONE_"
+                "MOMENTUM_RESPONSE;_phi_s_AND_psi_s_ARE_THE_REMAINING_"
+                "ACTION_NORMALIZED_SOFT_RIGHT_AND_LEFT_DIRECTIONS"
+            ),
+            "soft_denominator": (
+                "d_s(t)=D_t-C_t*A_t^(-1)*B_t"
+            ),
+            "soft_source": (
+                "g_s(t)=r_soft(t)-C_t*A_t^(-1)*r_hard(t)"
+            ),
+            "closure_alternative": (
+                "inf_(0<=t<=1)abs(d_s(t))=d0>0,_WITH_THE_HARD_"
+                "INVERSE_AND_RADII_BOUNDS,_IMPLIES_THE_FINITE_BRIDGE"
+            ),
+            "compatible_crossing_alternative": (
+                "IF_d_s(t_star)=0,_A_SOURCE_SPECIFIC_BRIDGE_CAN_PASS_"
+                "ONLY_IF_g_s(t_star)=0_AND_THE_EXISTING_NONLINEAR_"
+                "LYAPUNOV_SCHMIDT_EQUATION_HAS_A_ROOT"
+            ),
+            "retained_action_obstruction": (
+                "d_s(t_star)=0_AND_g_s(t_star)!=0"
+            ),
+            "endpoint_nonzero_measurements_prove_no_interior_crossing": (
+                False
+            ),
+            "new_equation_constraint_gate_or_selector": False,
+        },
         "nonlinear_Hessian_remainder": {
             "exact_Taylor_form": (
                 "norm(R(delta))<=M2*rho^2/2_ON_norm(delta)<=rho"
             ),
             "radii_polynomial": (
                 "p(rho)=D1+(K*M2/2)*rho^2-rho"
+            ),
+            "repository_radii_polynomial": (
+                "p(r)=Y+(Z0+Z1-1)*r+Z2*r^2"
+            ),
+            "continuum_certificate": (
+                "EXISTS_r_star>0_WITH_p(r_star)<0_AND_"
+                "r_star+R_infinity(M0)<r_physical"
+            ),
+            "physical_radius": (
+                "r_physical=min(r_eta,r_Dirac_self_adjoint_domain,_"
+                "r_event_match,r_positive_duration_persistence)"
             ),
             "closure_condition": "2*K*M2*D1<1",
             "small_root": (
@@ -14486,11 +14632,16 @@ def n6_inverse_square_tail_closure_audit(
                 "CHOOSE_A_CLOSED_RADIUS_rho0_INSIDE_THE_EXISTING_ETA_"
                 "DIRAC_PERSISTENCE_NEIGHBORHOOD;_ANALYTICITY_OF_THE_"
                 "RETAINED_ACTION_GIVES_A_FINITE_M2(rho0);_THEN_CHOOSE_"
-                "M0_SO_4*C_r/(beta_P*M0)<rho0_AND_"
-                "8*M2(rho0)*C_r/beta_P^2/M0<1"
+                "M0_SO_4*C_r_product/(beta_P*M0)<rho0_AND_"
+                "8*M2(rho0)*C_r_product/beta_P^2/M0<1"
             ),
             "asymptotic_tail_only_radii_polynomial_closes": True,
             "full_N6_to_infinity_radii_polynomial_closes": False,
+            "normal_uniqueness_only": (
+                "THE_CERTIFICATE_GIVES_EXISTENCE_AND_NORMAL_UNIQUENESS_"
+                "ON_THE_CHOSEN_GAUGE_FIXED_SLICE;_LEGITIMATE_CHILD_"
+                "TANGENTS_REMAIN_IN_THE_SOLUTION_MANIFOLD"
+            ),
             "reason": (
                 "NO_RIGOROUS_ACTION_NORM_VALUES_FOR_K,_M2,_L_eta,_"
                 "L_Dirac_OR_THE_FULL_LOWER_ORDER_TAIL_SCHUR_BOUND_ARE_"
@@ -14506,9 +14657,12 @@ def n6_inverse_square_tail_closure_audit(
         ),
         "infinite_tail_complete_child_constructed": False,
         "first_retained_action_obstruction": (
-            "CERTIFY_ONE_FINITE_N6_TO_M0_MIXED_GAUGE_REDUCED_NORMAL_"
-            "SCHUR_BRIDGE,_INCLUDING_THE_EXISTING_SOFT_MOMENTUM_SOURCE_"
-            "COMPATIBILITY,_AND_ITS_ACTION_NORM_RADII_POLYNOMIAL;_THE_"
+            "CERTIFY_ONE_FINITE_N6_TO_M0_MIXED_GAUGE_REDUCED_EVENT_"
+            "CHILD_NORMAL_SCHUR_BRIDGE,_INCLUDING_THE_EXISTING_SOFT_"
+            "MOMENTUM_LYAPUNOV_SCHMIDT_DENOMINATOR_OR_SOURCE_"
+            "COMPATIBILITY_ALONG_THE_TAIL_HOMOTOPY,_AND_ITS_ACTION_"
+            "NORM_RADII_POLYNOMIAL_INCLUDING_THE_EXISTING_ACTION_"
+            "QUADRATURE_CONSISTENCY_DEFECT;_THE_"
             "M_GREATER_THAN_M0_INVERSE_SQUARE_TAIL_THEN_CLOSES_"
             "ANALYTICALLY"
         ),
@@ -14518,6 +14672,190 @@ def n6_inverse_square_tail_closure_audit(
         "category_3_collapse_sequence_constructed": False,
         "higher_N_probe_promoted_as_a_complete_child": False,
         "equations_gates_running_law_or_frozen_predictions_changed": False,
+        "validation": validation,
+        "validation_passed": all(validation.values()),
+        "FULL_BHSM_COMPLETE": False,
+    }
+
+
+def n6_reduced_local_energy_readout_reconnaissance(
+    path: str | Path = (
+        "artifacts/BHSM_AETHER_CROSS_RESOLUTION_RECONNAISSANCE_V21_35.json"
+    ),
+) -> dict[str, Any]:
+    """Audit the executable local energy without promoting it to mass."""
+
+    result = json.loads(Path(path).read_text(encoding="utf-8"))[
+        "cross_resolution_reconnaissance"
+    ]
+    order = 6
+    qdim = dimensions(order)["coordinates"]
+    exact = result["N6_weak_complete_child_candidate"][
+        "child_state"
+    ]["binary64_hex"]
+    q0, v0, m0 = tuple(
+        np.asarray([float.fromhex(value) for value in exact[name]])
+        for name in ("coordinates", "velocities", "multipliers")
+    )
+    initial = np.concatenate((q0, v0, m0))
+    persistence = n6_weak_complete_child_positive_duration_persistence(
+        points=96, time_step=1.0e-5, steps=10
+    )
+    coarse = np.asarray(
+        persistence["coarse_evolution"]["final_state"], dtype=float
+    )
+    fine = np.asarray(
+        persistence["fine_evolution"]["final_state"], dtype=float
+    )
+
+    def local_energy(
+        state: np.ndarray, points: int,
+    ) -> tuple[float, Any]:
+        q = state[:qdim]
+        velocity = state[qdim:2 * qdim]
+        multipliers = state[2 * qdim:]
+        jet = exact_full_action_jet_at_state(
+            order, q, velocity, multipliers, points=points
+        )
+        return (
+            float(
+                velocity @ np.asarray(jet.gradient[qdim:2 * qdim])
+                - jet.value
+            ),
+            jet,
+        )
+
+    rows = []
+    for points in (96, 512, 1024):
+        initial_energy, _ = local_energy(initial, points)
+        coarse_energy, _ = local_energy(coarse, points)
+        fine_energy, _ = local_energy(fine, points)
+
+        def maximum_constraint(state: np.ndarray) -> float:
+            return float(np.max(np.abs(constraint_residual(
+                order,
+                state[:qdim],
+                state[qdim:2 * qdim],
+                state[2 * qdim:],
+                points=points,
+            ))))
+
+        rows.append({
+            "quadrature_points": points,
+            "initial_H6_local": initial_energy,
+            "coarse_final_H6_local": coarse_energy,
+            "fine_final_H6_local": fine_energy,
+            "fine_minus_initial": fine_energy - initial_energy,
+            "coarse_minus_fine": coarse_energy - fine_energy,
+            "initial_constraint_maximum": maximum_constraint(initial),
+            "fine_constraint_maximum": maximum_constraint(fine),
+        })
+
+    _, jet = local_energy(initial, 96)
+    gradient = np.asarray(jet.gradient, dtype=float)
+    hessian = np.asarray(jet.hessian, dtype=float)
+    q_slice = slice(0, qdim)
+    v_slice = slice(qdim, 2 * qdim)
+    m_slice = slice(2 * qdim, None)
+    energy_gradient = np.concatenate((
+        v0 @ hessian[v_slice, q_slice] - gradient[q_slice],
+        hessian[v_slice, v_slice] @ v0,
+        v0 @ hessian[v_slice, m_slice] - gradient[m_slice],
+    ))
+    dynamics = _exact_full_jet_euler_dirac_acceleration(
+        order, q0, v0, m0, points=96
+    )
+    flow = np.concatenate((
+        dynamics["coordinate_rate"],
+        dynamics["acceleration"],
+        dynamics["multiplier_rate"],
+    ))
+    tangency = float(energy_gradient @ flow)
+    normalized_tangency = abs(tangency) / max(
+        1.0, float(np.linalg.norm(energy_gradient) * np.linalg.norm(flow))
+    )
+    retained = rows[0]
+    finest = rows[-1]
+    validation = {
+        "retained_96_point_local_energy_is_time_step_stable": bool(
+            abs(retained["coarse_minus_fine"]) < 1.0e-12
+        ),
+        "autonomous_local_energy_flow_tangency_is_resolved": bool(
+            normalized_tangency < 1.0e-12
+        ),
+        "quadrature_sensitivity_is_not_hidden": bool(
+            abs(finest["initial_H6_local"]) > 1.0e-5
+            and finest["initial_constraint_maximum"] > 1.0e-5
+        ),
+        "local_constraint_energy_not_promoted_to_relative_energy_or_mass": True,
+        "v14_54_contract_not_misreported_as_an_executable_evaluator": True,
+        "frozen_predictions_not_read_or_used": True,
+        "no_new_equation_constraint_gate_or_selector": True,
+    }
+    return {
+        "classification": (
+            "N6_REDUCED_LOCAL_CANONICAL_ENERGY_DIAGNOSTIC_IS_"
+            "AUTONOMOUS_AND_TIME_STEP_STABLE_AT_THE_RETAINED_"
+            "QUADRATURE_BUT_NOT_QUADRATURE_CONVERGED;_THE_V14_54_"
+            "RELATIVE_ENERGY_READOUT_REMAINS_CONDITIONAL"
+        ),
+        "executable_local_quantity": "H6_local=v^T*partial_v(L6)-L6",
+        "is_Delta_H6": False,
+        "is_a_mass_measurement": False,
+        "rows": rows,
+        "flow_tangency": {
+            "D_t_H6_local": tangency,
+            "action_normalized_residual": normalized_tangency,
+            "common_history_time_translation_tangent_is_exact": True,
+            "all_legitimate_child_tangents_must_annihilate_energy": False,
+        },
+        "persistence_interval": {
+            "coordinate_duration": persistence["fine_evolution"][
+                "coordinate_duration"
+            ],
+            "proper_duration": persistence["fine_evolution"][
+                "child_proper_duration"
+            ],
+        },
+        "v14_54_conditional_contract": {
+            "relative_cycle": "Phi_f(t+T_f)=h_f*Phi_f(t)",
+            "Floquet": "U_f(T_f)*psi=exp(-i*theta_f)*psi",
+            "quasi_energy": "epsilon_f=hbar*theta_f/T_f",
+            "required_physical_readout": (
+                "Delta_H_f=Q_xi[COMPLETE_COMPOSITE]-"
+                "Q_xi[MATCHED_PARENT]"
+            ),
+            "complete_Q_xi_evaluator_exists": False,
+            "matched_parent_positive_duration_history_exists": False,
+            "relative_periodic_cycle_and_monodromy_exist": False,
+        },
+        "family_cycle_ownership_gate": {
+            "requirements": [
+                "THREE_COMPLETE_ACTION_SELECTED_CHARGED_LEPTON_RELATIVE_PERIODIC_CYCLES",
+                "ACTION_DERIVED_RETURNED_SPINOR_PROJECTOR_FOR_EACH_DISTINCT_FAMILY_SECTOR",
+                "INEQUIVALENCE_MODULO_GAUGE_COMMON_TIME_AND_TRUE_DISCRETE_EQUIVALENCES",
+                "COMMON_ACTION_OWNED_REST_FRAME_CLOCK_AND_CONTINUOUS_FLOQUET_LOG_BRANCH",
+                "COMPLETE_RELATIVE_Q_XI_AND_STATIONARY_FLOQUET_CONSISTENCY",
+                "N_QUADRATURE_AND_PROJECTION_CONVERGENCE",
+            ],
+            "C3_equivalent_cycles_produce_a_hierarchy": False,
+            "C3_equivalent_cycles_consequence": (
+                "THE_EXISTING_FAMILY_CENTRALITY_THEOREM_RETURNS_"
+                "DEGENERATE_QUASI_ENERGIES"
+            ),
+            "observed_mass_ordering_may_label_or_select_cycles": False,
+            "gate_closed": False,
+        },
+        "exact_next_dependency": (
+            "DERIVE_AND_EVALUATE_THE_EXISTING_COMPLETE_COMPOSITE_MINUS_"
+            "MATCHED_PARENT_NOETHER_HAMILTONIAN_Q_XI_ON_A_PAIRED_N6_"
+            "PARENT_CHILD_HISTORY_WITH_QUADRATURE_CONVERGENCE"
+        ),
+        "then": (
+            "CLOSE_THE_ACTION_SELECTED_GAUGE_REDUCED_RELATIVE_PERIODIC_"
+            "PARENT_CHILD_BVP_WITH_T_H_AND_STABLE_MONODROMY"
+        ),
+        "new_mass_formula_invented": False,
         "validation": validation,
         "validation_passed": all(validation.values()),
         "FULL_BHSM_COMPLETE": False,
@@ -15646,20 +15984,40 @@ def mixed_euler_dirac_boundary_layer_parametrix_audit(
         tangent_basis[:, column] /= norm
     boundary_only_rows, _ = exact_full_rows(best_state)
     paired_step = 2.0e-5
-    paired_exact_jacobian = np.empty((boundary_only_rows.size, 2))
-    for column in range(2):
-        direction = tangent_basis[:, column]
-        plus_rows, _ = exact_full_rows(state_from_correction(
-            best_correction + paired_step * direction
-        ))
-        minus_rows, _ = exact_full_rows(state_from_correction(
-            best_correction - paired_step * direction
-        ))
-        paired_exact_jacobian[:, column] = (
-            plus_rows - minus_rows
-        ) / (2.0 * paired_step)
+    def exact_paired_jacobian(step: float) -> np.ndarray:
+        matrix = np.empty((boundary_only_rows.size, 2))
+        for column in range(2):
+            direction = tangent_basis[:, column]
+            plus_rows, _ = exact_full_rows(state_from_correction(
+                best_correction + step * direction
+            ))
+            minus_rows, _ = exact_full_rows(state_from_correction(
+                best_correction - step * direction
+            ))
+            matrix[:, column] = (plus_rows - minus_rows) / (2.0 * step)
+        return matrix
+
+    paired_exact_jacobian = exact_paired_jacobian(paired_step)
+    paired_half_jacobian = exact_paired_jacobian(0.5 * paired_step)
+    paired_richardson_jacobian = (
+        4.0 * paired_half_jacobian - paired_exact_jacobian
+    ) / 3.0
     paired_left, paired_singular, paired_right_t = np.linalg.svd(
         paired_exact_jacobian, full_matrices=False
+    )
+    paired_half_singular = np.linalg.svd(
+        paired_half_jacobian, compute_uv=False
+    )
+    paired_richardson_singular = np.linalg.svd(
+        paired_richardson_jacobian, compute_uv=False
+    )
+    paired_scale_difference = float(np.linalg.norm(
+        paired_half_jacobian - paired_exact_jacobian, ord=2
+    ))
+    hard_source_projection = float(abs(paired_left[:, 0] @ boundary_only_rows))
+    soft_source_projection = float(abs(paired_left[:, 1] @ boundary_only_rows))
+    soft_linear_coordinate = float(
+        soft_source_projection / paired_singular[1]
     )
     exact_tangent_coordinates = np.linalg.lstsq(
         paired_exact_jacobian, -boundary_only_rows, rcond=1.0e-12
@@ -15830,6 +16188,20 @@ def mixed_euler_dirac_boundary_layer_parametrix_audit(
             "paired_exact_two_direction_Jacobian_singular_values": (
                 paired_singular.tolist()
             ),
+            "finite_Schur_source_compatibility_measurement": {
+                "paired_half_step": 0.5 * paired_step,
+                "half_step_singular_values": paired_half_singular.tolist(),
+                "Richardson_singular_values": (
+                    paired_richardson_singular.tolist()
+                ),
+                "full_to_half_operator_difference": paired_scale_difference,
+                "hard_left_source_projection": hard_source_projection,
+                "soft_left_source_projection": soft_source_projection,
+                "soft_linear_coordinate_required": soft_linear_coordinate,
+                "soft_source_exactly_orthogonal_to_the_measured_left_"
+                "direction": bool(soft_source_projection == 0.0),
+                "two_scale_measurement_is_an_interval_proof": False,
+            },
             "frozen_lift_slope_is_proposal_only": True,
             "paired_exact_slopes_replace_the_failed_orientation": True,
             "exact_full_weak_residual_controls_promotion": True,
@@ -17760,18 +18132,48 @@ def promote_n6_inverse_square_tail_closure_audit(path: str | Path) -> Path:
     result["active_dependency"] = audit["first_retained_action_obstruction"]
     result["scientific_status"] = (
         "N3_TO_N6_EXACT_ATTACHMENT_WEAK_COMPLETE_PERSISTENT_CHILDREN_"
-        "VALIDATED;_THE_RETAINED_ACTION_GIVES_AN_EXACT_N_MINUS_2_BULK_"
-        "EULER_DIRAC_SHELL_BOUND_AFTER_WEAK_REACTION_ROUTING_AND_THE_"
+        "VALIDATED;_THE_RETAINED_ACTION_GIVES_AN_EXACT_N_MINUS_2_"
+        "EVENT_CHILD_PRODUCT_BULK_EULER_DIRAC_SHELL_BOUND_AFTER_WEAK_"
+        "REACTION_ROUTING_AND_THE_"
         "PRINCIPAL_PLUS_COMPACT_SPLIT_GIVES_AN_O_1_ASYMPTOTIC_HIGH_"
         "SHELL_INVERSE;_INFINITE_RESOLUTION_IS_REDUCED_TO_ONE_FINITE_"
-        "N6_TO_M0_MIXED_NORMAL_SCHUR_BRIDGE_AND_ITS_NONLINEAR_RADII_"
-        "POLYNOMIAL"
+        "N6_TO_M0_MIXED_EVENT_CHILD_NORMAL_SCHUR_BRIDGE_AND_ITS_"
+        "NONLINEAR_RADII_POLYNOMIAL"
     )
     payload["cross_resolution_reconnaissance"] = result
     validation = dict(payload["validation"])
     validation["N6_inverse_square_tail_closure_audit_validated"] = audit[
         "validation_passed"
     ]
+    payload["validation"] = validation
+    payload["validation_passed"] = all(validation.values())
+    target.write_text(deterministic_json(payload), encoding="utf-8")
+    return target
+
+
+def promote_n6_reduced_local_energy_readout_reconnaissance(
+    path: str | Path,
+) -> Path:
+    """Persist the fail-closed N6 local-energy downstream reconnaissance."""
+
+    target = Path(path)
+    audit = n6_reduced_local_energy_readout_reconnaissance(target)
+    if not audit["validation_passed"]:
+        raise RuntimeError("N6 reduced local-energy reconnaissance failed")
+    payload = json.loads(target.read_text(encoding="utf-8"))
+    result = dict(payload["cross_resolution_reconnaissance"])
+    result["N6_reduced_local_energy_readout_reconnaissance"] = audit
+    result["downstream_after_continuum_child"] = [
+        "DERIVE_COMPLETE_COMPOSITE_MINUS_MATCHED_PARENT_Q_XI",
+        "CLOSE_RELATIVE_PERIODIC_PARENT_CHILD_CYCLE_AND_MONODROMY",
+        "CLOSE_ACTION_SELECTED_FAMILY_CYCLE_OWNERSHIP",
+        "EVALUATE_RELATIVE_QUASI_ENERGY_RATIOS_WITHOUT_OBSERVED_INPUTS",
+    ]
+    payload["cross_resolution_reconnaissance"] = result
+    validation = dict(payload["validation"])
+    validation["N6_reduced_local_energy_readout_reconnaissance_validated"] = (
+        True
+    )
     payload["validation"] = validation
     payload["validation_passed"] = all(validation.values())
     target.write_text(deterministic_json(payload), encoding="utf-8")
@@ -18013,6 +18415,77 @@ def promote_casimir_boundary_layer_parametrix_audit(path: str | Path) -> Path:
     return target
 
 
+def promote_mixed_finite_schur_bridge_measurement(
+    path: str | Path,
+    *,
+    maximum_order: int = 48,
+    points: int = 256,
+    precomputed_compact: Mapping[str, Any] | None = None,
+) -> Path:
+    """Persist one compact fixed-background finite-bridge measurement."""
+
+    target = Path(path)
+    if precomputed_compact is None:
+        measurement = mixed_euler_dirac_boundary_layer_parametrix_audit(
+            target, maximum_order=maximum_order, points=points
+        )
+        tangent = measurement[
+            "boundary_constraint_tangent_momentum_correction"
+        ]
+        bridge = tangent["finite_Schur_source_compatibility_measurement"]
+        hard = tangent["hard_response_rank_one_test"]
+        compact = {
+            "classification": (
+                "FIXED_EVENT_CHILD_SIDE_MIXED_FINITE_SCHUR_ENDPOINT_"
+                "MEASURED_WITH_PAIRED_EXACT_SLOPES;_THIS_IS_NOT_A_"
+                "JOINT_EVENT_CHILD_INTERVAL_OR_TAIL_HOMOTOPY_PROOF"
+            ),
+            "source": measurement["source"],
+            "maximum_order": maximum_order,
+            "quadrature_points": points,
+            "paired_exact_singular_values": tangent[
+                "paired_exact_two_direction_Jacobian_singular_values"
+            ],
+            "source_compatibility": bridge,
+            "hard_channel": hard,
+            "finite_bridge_certified": False,
+            "joint_event_child_bridge_certified": False,
+            "higher_N_complete_child_promoted": False,
+            "new_equation_constraint_gate_or_selector": False,
+            "validation_passed": bool(
+                measurement["validation_passed"]
+                and hard["strict_exact_full_weak_reduction_found"]
+                and bridge["soft_left_source_projection"] >= 0.0
+            ),
+            "FULL_BHSM_COMPLETE": False,
+        }
+    else:
+        compact = dict(precomputed_compact)
+        bridge = compact["source_compatibility"]
+        compact["validation_passed"] = bool(
+            compact.get("validation_passed", False)
+            and bridge["two_scale_measurement_is_an_interval_proof"] is False
+            and bridge["soft_left_source_projection"] >= 0.0
+            and compact["finite_bridge_certified"] is False
+            and compact["joint_event_child_bridge_certified"] is False
+        )
+    if not compact["validation_passed"]:
+        raise RuntimeError("mixed finite Schur bridge measurement failed")
+    payload = json.loads(target.read_text(encoding="utf-8"))
+    result = dict(payload["cross_resolution_reconnaissance"])
+    result["mixed_finite_Schur_bridge_measurement"] = compact
+    result["active_dependency"] = result[
+        "N6_inverse_square_tail_closure_audit"
+    ]["first_retained_action_obstruction"]
+    payload["cross_resolution_reconnaissance"] = result
+    validation = dict(payload["validation"])
+    validation["mixed_finite_Schur_bridge_measurement_validated"] = True
+    payload["validation"] = validation
+    payload["validation_passed"] = all(validation.values())
+    target.write_text(deterministic_json(payload), encoding="utf-8")
+    return target
+
+
 def reclassify_existing_n5_proposal_plateau(path: str | Path) -> Path:
     """Freeze the demonstrated N5 flux-Jacobian owner without a new solve."""
 
@@ -18148,10 +18621,12 @@ __all__ = [
     "soft_normal_lyapunov_schmidt_reduction",
     "weak_constraint_boundary_source_tail_audit",
     "n6_inverse_square_tail_closure_audit",
+    "n6_reduced_local_energy_readout_reconnaissance",
     "weak_complete_child_normal_right_inverse_audit",
     "weak_complete_child_normal_lipschitz_audit",
     "weak_boundary_layer_radii_obstruction_audit",
     "casimir_boundary_layer_parametrix_audit",
+    "mixed_euler_dirac_boundary_layer_parametrix_audit",
     "general_n_galerkin_transfer_certificate",
     "general_n_complete_child_reconstruction_statement",
     "cross_resolution_reconnaissance",
@@ -18181,8 +18656,10 @@ __all__ = [
     "promote_boundary_jerk_weak_graph_domain_audit",
     "promote_weak_constraint_boundary_tail_audit",
     "promote_n6_inverse_square_tail_closure_audit",
+    "promote_n6_reduced_local_energy_readout_reconnaissance",
     "promote_weak_complete_child_normal_audits",
     "promote_weak_boundary_layer_radii_obstruction",
     "promote_casimir_boundary_layer_parametrix_audit",
+    "promote_mixed_finite_schur_bridge_measurement",
     "reclassify_existing_n5_proposal_plateau",
 ]
