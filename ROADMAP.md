@@ -4,7 +4,9 @@
 
 1. Preserve the validated N3/N4/N5/N6 complete persistent children,
    the exact attachment-matched N3-N6 weak reaction graphs, and the unchanged
-   finite-N maps that produced them.
+   finite-N maps that produced them. The authoritative N6 anchor is the
+   corrected ordered-event solution and rebuilt child/persistence record; the
+   former N5-projected event seed is provenance only.
 2. Certify the one remaining finite N6-to-asymptotic joint event-child normal
    bridge: bound the soft Lyapunov-Schmidt denominator or prove source
    compatibility along the homotopy, then close the existing action-norm radii
@@ -12,8 +14,13 @@
 3. Attach that finite bridge to the action-derived inverse-square shell law and
    asymptotic `O(1)` normal inverse. The high tail is then summable; transfer
    eta, ordered-event, and persistence inside the existing physical radius.
-4. Resume the existing action/scale/returned-family-operator dependency chain
-   without reopening closed sectors or retuning frozen predictions.
+4. Construct the existing complete composite-minus-matched-parent `Q_xi` on a
+   paired continuum parent/child history and close the action-selected
+   relative-periodic/Floquet BVP. The reduced local canonical energy is not a
+   substitute for this object.
+5. Resume action-selected family-cycle ownership, relative quasi-energy mass
+   ratios, absolute scale, and returned-family current dependencies without
+   reopening closed sectors or retuning frozen predictions.
 
 `FULL_BHSM_COMPLETE = FALSE`.
 

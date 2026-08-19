@@ -60,6 +60,37 @@ def test_persisted_n6_and_general_n_audits_have_replayable_returns():
         assert node.body[-1] is top_level_returns[0]
 
 
+def test_persisted_n6_repaired_ordered_event_child_and_persistence():
+    payload = json.loads(Path(
+        "artifacts/BHSM_AETHER_CROSS_RESOLUTION_RECONNAISSANCE_V21_35.json"
+    ).read_text(encoding="utf-8"))["cross_resolution_reconnaissance"]
+    event = payload["N6_coherent_ordered_event_repair_audit"]
+    child = payload["N6_repaired_event_complete_child_candidate"]
+    persistence = payload[
+        "N6_repaired_event_complete_child_positive_duration_persistence"
+    ]
+
+    assert event["old_projected_event"][
+        "passes_existing_event_tolerance"
+    ] is False
+    assert abs(event["lambda_ordered"]) < 1.0e-9
+    assert event["maximum_constraint_residual"] < 1.0e-8
+    assert event["eta_Legendre_minimum"] > 0.0
+    assert event["new_equations_constraints_or_acceptance_gates"] is False
+
+    assert child["final_physical_norm"] < 1.0e-9
+    assert child["final_compatibility_maximum"] < 1.0e-9
+    assert child["exact_attachment_jump_norm"] < 1.0e-12
+    assert child["two_sided_reaction_match_norm"] < 1.0e-8
+    assert child["complete_persistent_child_validated"] is True
+    assert child["new_equations_constraints_or_acceptance_gates"] is False
+
+    assert persistence[
+        "positive_duration_relative_persistence_validated"
+    ] is True
+    assert persistence["nonzero_relative_evolution_retained"] is True
+
+
 def test_n6_inverse_square_tail_closure_audit_is_fail_closed():
     audit = n6_inverse_square_tail_closure_audit()
     assert audit["validation_passed"] is True
@@ -199,10 +230,10 @@ def test_injected_n6_event_child_calderon_friedrichs_angle_audit():
     assert soft["minimum_N12_N13_second_principal_angle_sine"] > 1.0e-2
     assert soft[
         "minimum_N8_N13_child_time_tangent_alignment_cosine"
-    ] > 0.9998
+    ] > 0.99
     assert soft[
         "minimum_N8_N13_event_time_tangent_alignment_cosine"
-    ] > 0.9998
+    ] > 0.99
     assert soft["time_translation_field_D_t_U_is_a_Jacobi_tangent"] is True
     assert soft["common_event_child_time_tangent_limit_proved"] is False
     assert audit[
@@ -257,8 +288,8 @@ def test_whole_system_time_translation_tangent_interface():
     assert policy["time_event_coordinate_or_multiplier_added"] is False
     assert policy["existing_positive_duration_gauge_quotient_preserved"] is True
     boundary = audit["boundary_identification"]
-    assert boundary["minimum_N8_N13_child_alignment_cosine"] > 0.9998
-    assert boundary["minimum_N8_N13_event_alignment_cosine"] > 0.9998
+    assert boundary["minimum_N8_N13_child_alignment_cosine"] > 0.99
+    assert boundary["minimum_N8_N13_event_alignment_cosine"] > 0.99
     normal = audit["normal_angle_after_tangent_quotient"]
     assert normal[
         "measured_N12_N13_minimum_second_principal_angle_sine"

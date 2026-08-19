@@ -24,10 +24,15 @@ The finite-N pattern has `8N+2` variables, `2N+8` rows, and a `6N-6` local
 root manifold. The same-action two-sided event/child attachment/reaction map
 is now explicitly matched at N3/N4/N5/N6 without a new row or C1 matching
 assumption. At N6, full trace/constraint/momentum compatibility closes to
-`7.341e-12`, exact attachment jump is zero after the existing boundary solve,
+`5.708e-12`, exact attachment jump is zero after the existing boundary solve,
 and the positive-duration persistence witness is converged with nonzero
-relative evolution. N6 passes the existing complete-child and persistence
-gates. Action-normalized weak reaction graphs are measured through N6.
+relative evolution. The previously stored N5-projected seed was reclassified
+because its N6 ordered-event row was `1.645981691e-6`, above the existing
+`1e-9` tolerance. The unchanged N6 action-energy/event solve closes that row
+to `-3e-15`; the rebuilt child has eta `0.999999998794641` and two-sided
+reaction mismatch `2.12131e-10`. N6 therefore passes the existing ordered-
+event, complete-child, and persistence gates without a new equation or gate.
+Action-normalized weak reaction graphs are measured through N6.
 
 The retained action yields an exact inverse-square weak shell bound. The
 principal-plus-compact normal split supplies an asymptotic `O(1)` right inverse,
@@ -36,6 +41,9 @@ N6-to-infinity construction: the finite joint event-child soft Schur bridge,
 source compatibility, full nonlinear radii polynomial, and quadrature
 consistency defect remain open. The reduced local N6 canonical energy is a
 constraint diagnostic, not `Delta H`, a mass, or a physical scale readout.
+The v14.54 relative-energy/Floquet object is presently a conditional contract,
+not an executable complete composite-minus-matched-parent `Q_xi` evaluator;
+the stored N6 persistence data also lacks a paired parent history.
 
 Exact next object:
 `CERTIFY_ONE_FINITE_N6_TO_M0_MIXED_GAUGE_REDUCED_EVENT_CHILD_NORMAL_SCHUR_BRIDGE,_INCLUDING_THE_EXISTING_SOFT_MOMENTUM_LYAPUNOV_SCHMIDT_DENOMINATOR_OR_SOURCE_COMPATIBILITY_ALONG_THE_TAIL_HOMOTOPY,_AND_ITS_ACTION_NORM_RADII_POLYNOMIAL_INCLUDING_THE_EXISTING_ACTION_QUADRATURE_CONSISTENCY_DEFECT;_THE_M_GREATER_THAN_M0_INVERSE_SQUARE_TAIL_THEN_CLOSES_ANALYTICALLY`.
