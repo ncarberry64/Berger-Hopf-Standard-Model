@@ -23,6 +23,7 @@ from bhsm.interface.aether_cross_resolution_reconnaissance_v21_35 import (
     continuum_normal_cauchy_completeness_reduction,
     normal_boundary_cauchy_symbol_factorization,
     actual_corrected_event_child_soft_evans_audit,
+    soft_normal_lyapunov_schmidt_reduction,
     uniform_boundary_jerk_compactness_reduction,
     uniform_positive_duration_normal_closed_range_reduction,
     weak_calderon_boundary_generator_reduction,
@@ -557,6 +558,30 @@ def test_actual_corrected_event_child_soft_evans_audit():
     policy = audit["classification_policy"]
     assert policy["legitimate_tangent_identified"] is False
     assert policy["genuine_uniform_normal_failure_demonstrated"] is False
+    assert audit[
+        "new_physics_equations_constraints_regularizers_objectives_or_gates"
+    ] is False
+
+
+def test_soft_normal_lyapunov_schmidt_reduction():
+    audit = soft_normal_lyapunov_schmidt_reduction()
+    assert audit["validation_passed"] is True
+    normal = audit["normal_decomposition"]
+    assert normal["hard_response_measurement"] > 0.0
+    assert normal["new_branch_selector"] is False
+    scalar = audit["soft_scalar"]
+    assert scalar["is_an_added_equation"] is False
+    assert scalar["finite_exact_response_projection"] > 0.0
+    assert scalar["uniform_general_N_derivative_bound_proved"] is False
+    classification = audit["three_way_classification"]
+    assert classification[
+        "category_1_proved_for_the_hard_test_soft_line"
+    ] is False
+    assert classification["category_3_proved"] is False
+    correspondence = audit["nested_normal_section_correspondence"]
+    assert correspondence[
+        "all_three_hypotheses_currently_proved_together"
+    ] is False
     assert audit[
         "new_physics_equations_constraints_regularizers_objectives_or_gates"
     ] is False

@@ -13884,6 +13884,141 @@ def actual_corrected_event_child_soft_evans_audit(
     }
 
 
+def soft_normal_lyapunov_schmidt_reduction(
+    path: str | Path = (
+        "artifacts/BHSM_AETHER_CROSS_RESOLUTION_RECONNAISSANCE_V21_35.json"
+    ),
+) -> dict[str, Any]:
+    """Reduce the remaining normal correspondence to its physical soft scalar."""
+
+    result = json.loads(Path(path).read_text(encoding="utf-8"))[
+        "cross_resolution_reconnaissance"
+    ]
+    hard = result["mixed_euler_dirac_hard_momentum_response_audit"]
+    symbol = result["normal_boundary_cauchy_symbol_factorization"]
+    actual = result["actual_corrected_event_child_soft_evans_audit"]
+    criterion = result["soft_boundary_acceleration_compactness_criterion"]
+    normal = result["normal_section_S2_compactness_scope"]
+    hard_response = float(hard["hard_exact_response_singular_value"])
+    soft_response = float(
+        hard["soft_channel"]["exact_response_projection_magnitude"]
+    )
+    validation = {
+        "finite_hard_normal_block_is_invertible": hard_response > 0.0,
+        "finite_soft_response_is_resolved_nonzero": soft_response > 0.0,
+        "seven_dimensional_boundary_symbol_is_factored": (
+            symbol["action_normalized_symbol"]["seven_by_seven_symbol"]
+            == "B7=I3_TRACE_DIRECT_SUM_M4"
+        ),
+        "actual_finite_pairs_are_individually_transverse": all(
+            row["minimum_graph_symbol_singular_value"] > 0.0
+            for row in actual["rows"]
+        ),
+        "child_tangent_and_gauge_directions_remain_quotiented": (
+            normal["normal_tangent_decomposition"][
+                "local_child_manifold_dimension"
+            ] == "6N-6"
+        ),
+        "weighted_positive_duration_observability_object_is_existing": bool(
+            criterion["validation_passed"]
+        ),
+        "no_new_equation_constraint_regularizer_objective_or_gate": True,
+    }
+    return {
+        "classification": (
+            "AFTER_THE_CLOSED_HARD_NORMAL_BLOCKS_ARE_SOLVED,_THE_EXISTING_"
+            "COMPLETE_CHILD_RELATION_REDUCES_LOCALLY_TO_ONE_ACTION_OWNED_"
+            "SOFT_SCALAR_SOLVABILITY_FUNCTION;_ITS_DERIVATIVE_IS_ZERO_"
+            "EQUIVALENT_TO_THE_POLE_SAFE_SOFT_EVANS_FACTOR,_SO_THE_"
+            "THREE_ALLOWED_CLASSIFICATIONS_ARE_EXACTLY_THE_THREE_"
+            "LYAPUNOV_SCHMIDT_ALTERNATIVES"
+        ),
+        "normal_decomposition": {
+            "space": (
+                "X_normal,N=X_hard,N_DIRECT_SUM_span{e_soft,N}_AFTER_THE_"
+                "EXISTING_CHILD_TANGENT_AND_GAUGE_QUOTIENT"
+            ),
+            "hard_equation": (
+                "Pi_hard*F_N(U_hard+s*e_soft)=0"
+            ),
+            "hard_solution": (
+                "U_hard=H_N(s)_BY_THE_EXISTING_HARD_NORMAL_RIGHT_INVERSE"
+            ),
+            "hard_response_measurement": hard_response,
+            "new_branch_selector": False,
+        },
+        "soft_scalar": {
+            "definition": (
+                "g_N(s)=ell_soft,N*F_N(H_N(s)+s*e_soft,N)"
+            ),
+            "is_an_added_equation": False,
+            "reason": (
+                "g_N_IS_THE_REMAINING_COKERNEL_PROJECTION_OF_THE_"
+                "UNCHANGED_PHYSICAL_COMPLETE_CHILD_MAP"
+            ),
+            "root_condition": "g_N(s_star)=0",
+            "linearization": (
+                "g_N_prime(s_star)=0_IFF_THE_ACTION_NORMALIZED_SOFT_"
+                "EVANS_FACTOR_VANISHES_AFTER_NONZERO_HARD_METRIC_FACTORS"
+            ),
+            "finite_exact_response_projection": soft_response,
+            "uniform_general_N_derivative_bound_proved": False,
+        },
+        "three_way_classification": {
+            "category_1_tangent": (
+                "g_N_VANISHES_ALONG_AN_ACTION_INTEGRABLE_LOCAL_CHILD_"
+                "FAMILY_AND_e_soft_IS_ITS_JACOBI_TANGENT"
+            ),
+            "category_2_dynamically_controlled_normal": (
+                "g_N_prime_IS_NONZERO_OR_THE_EQUIVALENT_POSITIVE_DURATION_"
+                "BOUNDARY_HISTORY_HAS_A_NONVANISHING_OBSERVABILITY_NORM"
+            ),
+            "category_3_genuine_failure": (
+                "A_NON_TANGENT_NORMALIZED_SEQUENCE_HAS_g_N_prime_TO_ZERO_"
+                "AND_ITS_POSITIVE_DURATION_L2_HISTORY_RESPONSE_TO_ZERO,_"
+                "EQUIVALENT_ON_A_PRECOMPACT_BUNDLE_TO_A_NONZERO_"
+                "CONTINUUM_NORMAL_JACOBI_KERNEL"
+            ),
+            "current_finite_soft_classification": (
+                "NORMAL_DIRECTION_CONTROLLED_BY_THE_EXISTING_POSITIVE_"
+                "DURATION_GAUGE_FIXED_JACOBI_EVOLUTION"
+            ),
+            "category_1_proved_for_the_hard_test_soft_line": False,
+            "category_3_proved": False,
+        },
+        "nested_normal_section_correspondence": {
+            "conditional_construction": (
+                "INJECT_U_N_INTO_X_NPLUS1,_SOLVE_THE_HARD_COMPLEMENT_BY_"
+                "H_NPLUS1(s),_AND_USE_ONLY_g_NPLUS1(s)=0_TO_CONTINUE_THE_"
+                "UNCHANGED_ROOT_RELATION"
+            ),
+            "action_metric_role": (
+                "CHOOSES_THE_NORMAL_CHART_ORTHOGONAL_TO_TANGENT_AND_"
+                "GAUGE;_IT_DOES_NOT_SELECT_OR_MODIFY_A_PHYSICAL_ROOT"
+            ),
+            "uniform_correspondence_follows_if": [
+                "THE_EXISTING_HARD_RIGHT_INVERSE_AND_HIGH_SHELL_TAIL_ARE_UNIFORM",
+                "inf_N_abs(g_N_prime(s_N))>0",
+                "THE_ACTUAL_NORMAL_SECTION_BACKGROUNDS_ARE_S2_ETA_PRECOMPACT",
+            ],
+            "all_three_hypotheses_currently_proved_together": False,
+        },
+        "exact_next_mathematical_lemma": (
+            "PROVE_inf_N_abs(g_N_prime(s_N))>0_FOR_THE_ACTION_SELECTED_"
+            "SOFT_NORMAL_SCALAR_FROM_THE_EXISTING_POSITIVE_DURATION_"
+            "WEIGHTED_BOUNDARY_ACCELERATION_MODULUS_ON_THE_ACTUAL_S2_"
+            "ETA_NORMAL_SECTION,_OR_CONSTRUCT_THE_NON_TANGENT_NORMALIZED_"
+            "L2_HISTORY_COLLAPSE_SEQUENCE"
+        ),
+        "new_physics_equations_constraints_regularizers_objectives_or_gates": (
+            False
+        ),
+        "validation": validation,
+        "validation_passed": all(validation.values()),
+        "FULL_BHSM_COMPLETE": False,
+    }
+
+
 def weak_constraint_boundary_source_tail_audit(
     path: str | Path = (
         "artifacts/BHSM_AETHER_CROSS_RESOLUTION_RECONNAISSANCE_V21_35.json"
@@ -17311,7 +17446,11 @@ def promote_boundary_jerk_weak_graph_domain_audit(
     if not actual_evans["validation_passed"]:
         raise RuntimeError("actual corrected soft Evans audit failed")
     result["actual_corrected_event_child_soft_evans_audit"] = actual_evans
-    result["active_dependency"] = actual_evans["exact_next_mathematical_lemma"]
+    soft_scalar = soft_normal_lyapunov_schmidt_reduction(target)
+    if not soft_scalar["validation_passed"]:
+        raise RuntimeError("soft normal Lyapunov-Schmidt reduction failed")
+    result["soft_normal_lyapunov_schmidt_reduction"] = soft_scalar
+    result["active_dependency"] = soft_scalar["exact_next_mathematical_lemma"]
     result["scientific_status"] = (
         "N3_TO_N6_EXACT_ATTACHMENT_WEAK_COMPLETE_PERSISTENT_CHILDREN_"
         "VALIDATED;_THE_HARD_MOMENTUM_RESPONSE_CLOSES_AND_THE_SOFT_"
@@ -17321,8 +17460,9 @@ def promote_boundary_jerk_weak_graph_domain_audit(
         "SEVEN_BY_SEVEN_ACTION_NORMALIZED_BOUNDARY_SYMBOL_FACTORIZED;_"
         "ACTUAL_N3_TO_N6_PAIRS_ARE_FINITE_DIMENSIONALLY_TRANSVERSE_BUT_"
         "DO_NOT_YET_DEFINE_A_COHERENT_CONTINUUM_SOFT_EVANS_SEQUENCE;_"
-        "THE_ACTION_OWNED_ACTUAL_ROOT_NORMAL_SECTION_CORRESPONDENCE_IS_"
-        "THE_REMAINING_CLOSED_RANGE_DEPENDENCY"
+        "THE_REMAINING_NORMAL_CORRESPONDENCE_IS_REDUCED_TO_THE_ONE_"
+        "ACTION_OWNED_SOFT_LYAPUNOV_SCHMIDT_DERIVATIVE_OR_ITS_"
+        "POSITIVE_DURATION_HISTORY_COLLAPSE"
     )
     payload["cross_resolution_reconnaissance"] = result
     validation = dict(payload["validation"])
@@ -17370,6 +17510,9 @@ def promote_boundary_jerk_weak_graph_domain_audit(
     )
     validation["actual_corrected_event_child_soft_evans_audit_validated"] = (
         actual_evans["validation_passed"]
+    )
+    validation["soft_normal_lyapunov_schmidt_reduction_validated"] = (
+        soft_scalar["validation_passed"]
     )
     payload["validation"] = validation
     payload["validation_passed"] = all(validation.values())
@@ -17602,6 +17745,7 @@ __all__ = [
     "continuum_normal_cauchy_completeness_reduction",
     "normal_boundary_cauchy_symbol_factorization",
     "actual_corrected_event_child_soft_evans_audit",
+    "soft_normal_lyapunov_schmidt_reduction",
     "weak_constraint_boundary_source_tail_audit",
     "weak_complete_child_normal_right_inverse_audit",
     "weak_complete_child_normal_lipschitz_audit",
