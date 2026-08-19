@@ -14266,6 +14266,9 @@ def n6_inverse_square_tail_closure_audit(
         ),
         "finite_N6_inverse_not_promoted_to_a_uniform_tail_inverse": True,
         "measured_N6_Hessian_not_promoted_to_a_rigorous_tail_bound": True,
+        "high_shell_compact_perturbation_reduces_infinity_to_a_finite_"
+        "bridge": True,
+        "finite_soft_Schur_bridge_not_silently_assumed_invertible": True,
     }
     return {
         "classification": (
@@ -14372,6 +14375,87 @@ def n6_inverse_square_tail_closure_audit(
                 "THE_FULL_GAUGE_REDUCED_LOWER_ORDER_TAIL_SCHUR_OPERATOR"
             ),
         },
+        "asymptotic_high_shell_fredholm_theorem": {
+            "normal_operator_split": (
+                "A_6=P_6+K_6_ON_THE_EXISTING_GAUGE_REDUCED_MIXED_"
+                "EULER_DIRAC_WEAK_GRAPH_DOMAIN"
+            ),
+            "principal_bound": (
+                "norm(P_6*x)_dual>=beta_P*norm(x)_graph,_"
+                "beta_P=sqrt(29)-5"
+            ),
+            "lower_order_bound": (
+                "epsilon_M=norm(Q_M*P_6^(-1)*K_6*Q_M)_TO_ZERO"
+            ),
+            "action_owned_compactness_modulus": (
+                "epsilon_M_IS_THE_EXACT_OPERATOR_NORM_TAIL_OF_THE_"
+                "WEIGHTED_FIRST_AND_ZEROTH_ORDER_RETAINED_ACTION_"
+                "BLOCKS_PLUS_THE_FINITE_RANK_COLLECTIVE_INERTIA,_"
+                "ATTACHMENT_AND_WEAK_REACTION_BLOCKS;_IT_IS_NOT_A_FIT"
+            ),
+            "why_epsilon_M_tends_to_zero": (
+                "THE_N6_BACKGROUND_IS_A_FINITE_TRIGONOMETRIC_"
+                "POLYNOMIAL,_THE_RETAINED_ACTION_COEFFICIENTS_ARE_"
+                "ANALYTIC_ON_ETA_GREATER_THAN_ZERO,_THE_CAP_IS_COMPACT,_"
+                "RELLICH_MAKES_THE_LOWER_ORDER_INTERIOR_BLOCKS_COMPACT,_"
+                "AND_THE_NONLOCAL_AND_BOUNDARY_BLOCKS_ARE_FINITE_RANK"
+            ),
+            "spectral_gain": (
+                "FIRST_ORDER_LOWER_BLOCKS_GAIN_M^-1_AND_ZEROTH_ORDER_"
+                "BLOCKS_GAIN_M^-2_FROM_H1_TO_H_MINUS_1;_NO_UNPROVED_"
+                "COMMON_POWER_RATE_IS_ASSIGNED_TO_THE_COMBINED_"
+                "BOUNDARY_GRAPH_TAIL"
+            ),
+            "finite_cutoff": (
+                "M_0_IS_ANY_FINITE_ACTION_OWNED_CUTOFF_WITH_"
+                "epsilon_M<=beta_P/2_FOR_ALL_M>=M_0"
+            ),
+            "Neumann_inverse": (
+                "norm((Q_M*A_6*Q_M)^(-1))<="
+                "1/(beta_P-epsilon_M)<=2/beta_P_FOR_M>=M_0"
+            ),
+            "asymptotic_inverse_growth": "kappa_M=O(1),_alpha=0<1",
+            "asymptotic_inverse_square_correction_is_summable": True,
+            "summed_high_tail_bound": (
+                "sum_(n>M0)norm(delta_Y_n)<=(2*C_r/beta_P)*"
+                "sum_(n>M0)n^-2<=2*C_r/(beta_P*M0)"
+            ),
+            "uses_a_higher_N_complete_child_root": False,
+            "uses_an_instantaneous_singular_value_as_observability": False,
+            "scope": (
+                "THIS_PROVES_THE_INFINITE_HIGH_HIGH_TAIL_AT_THE_FIXED_"
+                "N6_ANCHOR;_IT_DOES_NOT_INVERT_THE_FINITE_LOW_HIGH_"
+                "SCHUR_BRIDGE_OR_EXCLUDE_ITS_SOFT_NORMAL_COKERNEL"
+            ),
+        },
+        "finite_bridge_obstruction": {
+            "decomposition": (
+                "X_NORMAL=X_LE_M0_DIRECT_SUM_X_GT_M0;_THE_SECOND_BLOCK_"
+                "HAS_THE_PROVED_NEUMANN_INVERSE"
+            ),
+            "remaining_operator": (
+                "S_FIN=A_LE_M0-"
+                "A_LOW_HIGH*A_HIGH_HIGH^(-1)*A_HIGH_LOW"
+            ),
+            "remaining_source": (
+                "r_FIN=r_LOW-A_LOW_HIGH*A_HIGH_HIGH^(-1)*r_HIGH"
+            ),
+            "required_finite_statement": (
+                "S_FIN_HAS_A_BOUNDED_NORMAL_RIGHT_INVERSE_OR_r_FIN_IS_"
+                "ORTHOGONAL_TO_ITS_EXISTING_ADJOINT_KERNEL"
+            ),
+            "why_N6_full_row_rank_is_not_enough": (
+                "THE_SCHUR_FEEDBACK_FROM_ALL_OMITTED_MODES_CHANGES_THE_"
+                "FINITE_NORMAL_OPERATOR"
+            ),
+            "localized_channel": (
+                "THE_ALREADY_ISOLATED_SOFT_MOMENTUM_NORMAL_LINE;_IT_"
+                "REMAINS_CATEGORY_2_AND_NO_CATEGORY_3_SEQUENCE_EXISTS"
+            ),
+            "hard_momentum_channel_closed": True,
+            "finite_bridge_certified": False,
+            "brute_force_complete_roots_for_every_N_required": False,
+        },
         "nonlinear_Hessian_remainder": {
             "exact_Taylor_form": (
                 "norm(R(delta))<=M2*rho^2/2_ON_norm(delta)<=rho"
@@ -14392,6 +14476,21 @@ def n6_inverse_square_tail_closure_audit(
             ],
             "that_measurement_is_a_uniform_analytic_M2": False,
             "eta_persistence_neighborhood_closed_for_the_whole_tail": False,
+            "asymptotic_tail_neighborhood_fact": (
+                "FOR_EVERY_PREASSIGNED_POSITIVE_ETA_DIRAC_PERSISTENCE_"
+                "RADIUS,_THE_PROVED_M_GREATER_THAN_M0_TAIL_CAN_BE_MADE_"
+                "SMALLER_BY_INCREASING_M;_THE_UNCONTROLLED_QUANTITY_IS_"
+                "THE_SINGLE_FINITE_N6_TO_M_BRIDGE"
+            ),
+            "asymptotic_tail_radii_choice": (
+                "CHOOSE_A_CLOSED_RADIUS_rho0_INSIDE_THE_EXISTING_ETA_"
+                "DIRAC_PERSISTENCE_NEIGHBORHOOD;_ANALYTICITY_OF_THE_"
+                "RETAINED_ACTION_GIVES_A_FINITE_M2(rho0);_THEN_CHOOSE_"
+                "M0_SO_4*C_r/(beta_P*M0)<rho0_AND_"
+                "8*M2(rho0)*C_r/beta_P^2/M0<1"
+            ),
+            "asymptotic_tail_only_radii_polynomial_closes": True,
+            "full_N6_to_infinity_radii_polynomial_closes": False,
             "reason": (
                 "NO_RIGOROUS_ACTION_NORM_VALUES_FOR_K,_M2,_L_eta,_"
                 "L_Dirac_OR_THE_FULL_LOWER_ORDER_TAIL_SCHUR_BOUND_ARE_"
@@ -14400,14 +14499,18 @@ def n6_inverse_square_tail_closure_audit(
             ),
         },
         "theorem_outcome": (
-            "FIRST_RETAINED_ACTION_OBSTRUCTION_LOCALIZED;_THE_N_MINUS_2_"
-            "SOURCE_LAW_IS_NOT_THE_BLOCKER"
+            "THE_INFINITE_ASYMPTOTIC_TAIL_IS_REDUCED_ANALYTICALLY_TO_A_"
+            "SUMMABLE_O_N_MINUS_2_SOURCE_WITH_AN_O_1_HIGH_SHELL_"
+            "INVERSE;_THE_ONLY_UNCLOSED_TRANSFER_FROM_N6_IS_ONE_FINITE_"
+            "MIXED_NORMAL_SCHUR_BRIDGE_AND_ITS_NONLINEAR_RADII_BOUND"
         ),
         "infinite_tail_complete_child_constructed": False,
         "first_retained_action_obstruction": (
-            "CERTIFY_THE_ACTION_NORMALIZED_FULL_GAUGE_REDUCED_TAIL_"
-            "SCHUR_RIGHT_INVERSE_MAJORANT_AND_THE_ASSOCIATED_NONLINEAR_"
-            "RADII_POLYNOMIAL_AT_THE_N6_COMPLETE_CHILD"
+            "CERTIFY_ONE_FINITE_N6_TO_M0_MIXED_GAUGE_REDUCED_NORMAL_"
+            "SCHUR_BRIDGE,_INCLUDING_THE_EXISTING_SOFT_MOMENTUM_SOURCE_"
+            "COMPATIBILITY,_AND_ITS_ACTION_NORM_RADII_POLYNOMIAL;_THE_"
+            "M_GREATER_THAN_M0_INVERSE_SQUARE_TAIL_THEN_CLOSES_"
+            "ANALYTICALLY"
         ),
         "soft_channel_classification": (
             "CATEGORY_2_DYNAMICALLY_CONTROLLED_NORMAL_DIRECTION"
@@ -17658,10 +17761,11 @@ def promote_n6_inverse_square_tail_closure_audit(path: str | Path) -> Path:
     result["scientific_status"] = (
         "N3_TO_N6_EXACT_ATTACHMENT_WEAK_COMPLETE_PERSISTENT_CHILDREN_"
         "VALIDATED;_THE_RETAINED_ACTION_GIVES_AN_EXACT_N_MINUS_2_BULK_"
-        "EULER_DIRAC_SHELL_BOUND_AFTER_WEAK_REACTION_ROUTING;_THE_"
-        "SHARP_POWER_GROWTH_THRESHOLD_FOR_THE_NORMAL_INVERSE_IS_ALPHA_"
-        "LESS_THAN_ONE;_THE_FULL_TAIL_SCHUR_MAJORANT_AND_NONLINEAR_N6_"
-        "RADII_POLYNOMIAL_REMAIN_UNCERTIFIED"
+        "EULER_DIRAC_SHELL_BOUND_AFTER_WEAK_REACTION_ROUTING_AND_THE_"
+        "PRINCIPAL_PLUS_COMPACT_SPLIT_GIVES_AN_O_1_ASYMPTOTIC_HIGH_"
+        "SHELL_INVERSE;_INFINITE_RESOLUTION_IS_REDUCED_TO_ONE_FINITE_"
+        "N6_TO_M0_MIXED_NORMAL_SCHUR_BRIDGE_AND_ITS_NONLINEAR_RADII_"
+        "POLYNOMIAL"
     )
     payload["cross_resolution_reconnaissance"] = result
     validation = dict(payload["validation"])

@@ -79,10 +79,28 @@ def test_n6_inverse_square_tail_closure_audit_is_fail_closed():
     assert inverse[
         "allowed_growth_proved_below_threshold_for_BHSM_tail"
     ] is False
+    asymptotic = audit["asymptotic_high_shell_fredholm_theorem"]
+    assert asymptotic["asymptotic_inverse_growth"] == (
+        "kappa_M=O(1),_alpha=0<1"
+    )
+    assert asymptotic[
+        "asymptotic_inverse_square_correction_is_summable"
+    ] is True
+    assert asymptotic["summed_high_tail_bound"] == (
+        "sum_(n>M0)norm(delta_Y_n)<=(2*C_r/beta_P)*"
+        "sum_(n>M0)n^-2<=2*C_r/(beta_P*M0)"
+    )
+    assert asymptotic["uses_a_higher_N_complete_child_root"] is False
+    bridge = audit["finite_bridge_obstruction"]
+    assert bridge["hard_momentum_channel_closed"] is True
+    assert bridge["finite_bridge_certified"] is False
+    assert bridge["brute_force_complete_roots_for_every_N_required"] is False
     nonlinear = audit["nonlinear_Hessian_remainder"]
     assert nonlinear[
         "eta_persistence_neighborhood_closed_for_the_whole_tail"
     ] is False
+    assert nonlinear["asymptotic_tail_only_radii_polynomial_closes"] is True
+    assert nonlinear["full_N6_to_infinity_radii_polynomial_closes"] is False
     assert audit["infinite_tail_complete_child_constructed"] is False
     assert audit["category_3_collapse_sequence_constructed"] is False
     assert audit[
