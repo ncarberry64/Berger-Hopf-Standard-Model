@@ -11,6 +11,14 @@ git diff --check
 ```
 
 Inspect the [v21.35 cross-resolution artifact](../artifacts/BHSM_AETHER_CROSS_RESOLUTION_RECONNAISSANCE_V21_35.json).
+For the new finite-tail checkpoint alone, the focused replay is:
+
+```bash
+python -m pytest -q tests/test_bhsm_aether_cross_resolution_reconnaissance_v21_35.py -k "replayable_returns or inverse_square_tail or local_energy"
+```
+
+This verifies the action-derived shell law and fail-closed finite bridge, and
+also enforces that the reduced local N6 energy is not reported as mass.
 The full historical pytest corpus remains available locally but is not a
 mandatory pull-request check; run `python -m pytest -q` only when a full
 historical regression is scientifically warranted.

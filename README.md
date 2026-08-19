@@ -2,7 +2,7 @@
 
 [![CI](https://github.com/ncarberry64/Berger-Hopf-Standard-Model/actions/workflows/ci.yml/badge.svg)](https://github.com/ncarberry64/Berger-Hopf-Standard-Model/actions/workflows/ci.yml)
 [![Latest archival release](https://img.shields.io/github/v/release/ncarberry64/Berger-Hopf-Standard-Model?label=archival%20release)](https://github.com/ncarberry64/Berger-Hopf-Standard-Model/releases/latest)
-[![Current research status](https://img.shields.io/badge/current%20research-N3--N6%20boundary%20graph-orange)](docs/current_bhsm_status.md)
+[![Current research status](https://img.shields.io/badge/current%20research-N3--N6%20persistent%20children-orange)](docs/current_bhsm_status.md)
 [![Python 3.10+](https://img.shields.io/badge/python-3.10%2B-3776AB)](https://www.python.org/)
 [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.20663419.svg)](https://doi.org/10.5281/zenodo.20663419)
 
@@ -10,8 +10,8 @@ BHSM is an independent artifact-backed computational framework and mathematical-
 
 ## Current Research Frontier -- cross-resolution encapsulation
 
-BHSM has independently reconstructed complete persistent children at `N=3`,
-`N=4`, and `N=5` under their retained finite-resolution equations. The N5
+BHSM has reconstructed complete persistent children through `N=6` under the
+unchanged retained finite-resolution equations. The N5
 unchanged 18-row map closes at fixed-reference merit
 `5.90723795458673e-14` (raw `||F18||=1.1665202200968536e-7`), with eta minimum
 `1.006162307589007`, complete-child certification, positive-duration
@@ -23,24 +23,24 @@ definition, child criterion, or gate was added.
 | `N3 COMPLETE PERSISTENT CHILD` | **YES** |
 | `N4 COMPLETE PERSISTENT CHILD` | **YES** |
 | `N5 COMPLETE PERSISTENT CHILD` | **YES** |
+| `N6 COMPLETE PERSISTENT CHILD` | **YES** |
 | `FULL_BHSM_COMPLETE` | **FALSE** |
 
 The durable checkpoint is
 [`BHSM_AETHER_CROSS_RESOLUTION_RECONNAISSANCE_V21_35.json`](artifacts/BHSM_AETHER_CROSS_RESOLUTION_RECONNAISSANCE_V21_35.json).
-The same-action event-to-child attachment/reaction BVP correspondence is now
-explicitly matched at N3/N4/N5/N6. N6 closes its full
-trace/constraint/momentum compatibility system to `7.341e-12`, matches the
-exact attachment configuration with zero recorded jump, and has a converged
-positive-duration persistence witness with nonzero relative evolution. This
-is an N6 boundary-graph checkpoint, not promotion of a fourth complete
-persistent child. The dimension laws remain `8N+2` whole-child variables,
-`2N+8` physical rows, and a `6N-6` local root manifold. Finite-N results do
-not yet prove a resolution-independent limit. Frozen predictions remain
-unchanged.
+The same-action event-to-child attachment/reaction BVP correspondence is
+explicitly matched at N3/N4/N5/N6. The retained action gives an exact
+inverse-square weak high-mode shell bound, and the principal-plus-compact
+normal split closes the asymptotic tail with an `O(1)` inverse and a summable
+correction. The finite N6-to-asymptotic bridge is not yet certified: its soft
+Lyapunov-Schmidt denominator/source compatibility and the full action-norm
+radii polynomial, including quadrature consistency, remain open. A fixed-event
+N48 child-side response is diagnostic only, not that joint bridge proof.
+Frozen predictions remain unchanged.
 
 Exact next object:
 
-`PROVE_COLLECTIVE_COMPACT_CONVERGENCE_OF_THE_LOWER_ORDER_GAUGE_FIXED_WEAK_JACOBI_CALDERON_OPERATORS_AND_A_UNIFORM_SPECTRAL_GAP_ON_THE_NORMAL_COMPLEMENT_OF_THE_CHILD_MANIFOLD`
+`CERTIFY_ONE_FINITE_N6_TO_M0_MIXED_GAUGE_REDUCED_EVENT_CHILD_NORMAL_SCHUR_BRIDGE,_INCLUDING_THE_EXISTING_SOFT_MOMENTUM_LYAPUNOV_SCHMIDT_DENOMINATOR_OR_SOURCE_COMPATIBILITY_ALONG_THE_TAIL_HOMOTOPY,_AND_ITS_ACTION_NORM_RADII_POLYNOMIAL_INCLUDING_THE_EXISTING_ACTION_QUADRATURE_CONSISTENCY_DEFECT;_THE_M_GREATER_THAN_M0_INVERSE_SQUARE_TAIL_THEN_CLOSES_ANALYTICALLY`
 
 ## Historical corrected-Rayleigh N=3 snapshot
 
@@ -90,8 +90,8 @@ Read the authoritative [N=3 continuation ledger](docs/BHSM_N3_CONTINUATION_LEDGE
 | --- | --- |
 | Computational framework | Validated software/tests; this does not validate nature |
 | Current test corpus | Focused cross-resolution, complete-child, persistence, claim-firewall, frozen-integrity, and engine-invariant checks; historical corpus retained for manual regression |
-| Internal mathematical program | Independent N3/N4/N5 complete persistent children validated; exact attachment-matched weak reaction graphs measured through N6; general-N convergence remains open |
-| Nonlinear Norman cycle | N3/N4/N5 finite-resolution persistence validated; N6 has a boundary-compatible persistence witness but is not promoted as a complete persistent child |
+| Internal mathematical program | Complete persistent children validated through N6; inverse-square asymptotic tail closes conditionally on one finite joint bridge |
+| Nonlinear Norman cycle | N3/N4/N5/N6 finite-resolution persistence validated; resolution-independent continuation remains open |
 | Scale and flavor | Absolute scale, action-derived CKM, and PMNS remain open |
 | Frozen predictions | Unchanged |
 | Empirical status | Not established |

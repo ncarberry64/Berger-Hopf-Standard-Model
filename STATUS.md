@@ -8,8 +8,8 @@ evidence, not competing public status pages.
 Current identifier: **v21.35 cross-resolution encapsulation checkpoint**. It
 is a development checkpoint, not a release version.
 
-Independent N3, N4, and N5 complete persistent children are validated for
-their retained finite-resolution maps. N5 closes the unchanged 18 physical
+Complete persistent children through N6 are validated for their retained
+finite-resolution maps. N5 closes the unchanged 18 physical
 rows at fixed-reference merit `5.90723795458673e-14` (raw
 `||F18||=1.1665202200968536e-7`), remains eta-admissible, and passes the
 existing certification and positive-duration persistence gates with nonzero
@@ -26,12 +26,19 @@ is now explicitly matched at N3/N4/N5/N6 without a new row or C1 matching
 assumption. At N6, full trace/constraint/momentum compatibility closes to
 `7.341e-12`, exact attachment jump is zero after the existing boundary solve,
 and the positive-duration persistence witness is converged with nonzero
-relative evolution. N6 is not promoted here as a complete persistent child.
-Action-normalized weak reaction graphs are measured through N6; uniform
-lower-order graph convergence remains open.
+relative evolution. N6 passes the existing complete-child and persistence
+gates. Action-normalized weak reaction graphs are measured through N6.
+
+The retained action yields an exact inverse-square weak shell bound. The
+principal-plus-compact normal split supplies an asymptotic `O(1)` right inverse,
+so the tail beyond a finite cutoff is summable. This does not close the whole
+N6-to-infinity construction: the finite joint event-child soft Schur bridge,
+source compatibility, full nonlinear radii polynomial, and quadrature
+consistency defect remain open. The reduced local N6 canonical energy is a
+constraint diagnostic, not `Delta H`, a mass, or a physical scale readout.
 
 Exact next object:
-`PROVE_COLLECTIVE_COMPACT_CONVERGENCE_OF_THE_LOWER_ORDER_GAUGE_FIXED_WEAK_JACOBI_CALDERON_OPERATORS_AND_A_UNIFORM_SPECTRAL_GAP_ON_THE_NORMAL_COMPLEMENT_OF_THE_CHILD_MANIFOLD`.
+`CERTIFY_ONE_FINITE_N6_TO_M0_MIXED_GAUGE_REDUCED_EVENT_CHILD_NORMAL_SCHUR_BRIDGE,_INCLUDING_THE_EXISTING_SOFT_MOMENTUM_LYAPUNOV_SCHMIDT_DENOMINATOR_OR_SOURCE_COMPATIBILITY_ALONG_THE_TAIL_HOMOTOPY,_AND_ITS_ACTION_NORM_RADII_POLYNOMIAL_INCLUDING_THE_EXISTING_ACTION_QUADRATURE_CONSISTENCY_DEFECT;_THE_M_GREATER_THAN_M0_INVERSE_SQUARE_TAIL_THEN_CLOSES_ANALYTICALLY`.
 
 ### Historical corrected-Rayleigh N3 snapshot
 

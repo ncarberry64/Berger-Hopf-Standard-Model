@@ -2,8 +2,8 @@
 
 ## Authoritative frontier: v21.35 cross-resolution encapsulation
 
-BHSM has independently reconstructed complete persistent children at N3, N4,
-and N5 for their retained finite-resolution maps. N5 closes the unchanged
+BHSM has reconstructed complete persistent children through N6 for their
+retained finite-resolution maps. N5 closes the unchanged
 18-row map at fixed-reference merit `5.90723795458673e-14` (raw
 `||F18||=1.1665202200968536e-7`), with eta minimum `1.006162307589007`,
 complete-child certification, positive-duration persistence, and nonzero
@@ -18,6 +18,7 @@ coefficient, event definition, eta condition, or child gate is introduced.
 - `N3 COMPLETE PERSISTENT CHILD = YES`
 - `N4 COMPLETE PERSISTENT CHILD = YES`
 - `N5 COMPLETE PERSISTENT CHILD = YES`
+- `N6 COMPLETE PERSISTENT CHILD = YES`
 - `FULL_BHSM_COMPLETE = FALSE`
 
 Evidence:
@@ -30,14 +31,24 @@ event/child attachment/reaction match is explicit at N3/N4/N5/N6 without a
 new physical row or C1 continuity gate. N6 closes full
 trace/constraint/momentum compatibility to `7.341e-12`, records zero exact
 attachment jump after boundary matching, and has a converged positive-duration
-persistence witness with nonzero relative evolution. This does not by itself
-promote N6 as a fourth complete persistent child. The boundary-compatible
-principal gauge quotient is derived and exact-attachment action-normalized
-weak reaction graphs are measured through N6. Finite resolutions alone do not
-prove the limit.
+persistence witness with nonzero relative evolution and passes the existing
+complete-child gates. The boundary-compatible principal gauge quotient is
+derived and exact-attachment action-normalized weak reaction graphs are
+measured through N6.
+
+The retained action gives `||r_n||_weak <= C_r n^-2` with no fitted constant.
+For the joint event-child graph, the principal-plus-compact split gives an
+asymptotic `O(1)` normal inverse and therefore a summable sufficiently high
+tail. The finite bridge from N6 to that regime remains open: the soft
+Lyapunov-Schmidt denominator/source compatibility and the existing nonlinear
+action-norm radii polynomial must be certified with the quadrature consistency
+defect included. The N48 fixed-event child-side response is not an interval
+proof of that joint bridge. The reduced local N6 canonical energy is not
+`Delta H`, a mass, or a scale readout; the paired parent-child `Q_xi` evaluator
+remains downstream and open.
 
 Exact next dependency:
-`PROVE_COLLECTIVE_COMPACT_CONVERGENCE_OF_THE_LOWER_ORDER_GAUGE_FIXED_WEAK_JACOBI_CALDERON_OPERATORS_AND_A_UNIFORM_SPECTRAL_GAP_ON_THE_NORMAL_COMPLEMENT_OF_THE_CHILD_MANIFOLD`.
+`CERTIFY_ONE_FINITE_N6_TO_M0_MIXED_GAUGE_REDUCED_EVENT_CHILD_NORMAL_SCHUR_BRIDGE,_INCLUDING_THE_EXISTING_SOFT_MOMENTUM_LYAPUNOV_SCHMIDT_DENOMINATOR_OR_SOURCE_COMPATIBILITY_ALONG_THE_TAIL_HOMOTOPY,_AND_ITS_ACTION_NORM_RADII_POLYNOMIAL_INCLUDING_THE_EXISTING_ACTION_QUADRATURE_CONSISTENCY_DEFECT;_THE_M_GREATER_THAN_M0_INVERSE_SQUARE_TAIL_THEN_CLOSES_ANALYTICALLY`.
 
 The corrected-Rayleigh N3 chronology below is retained for provenance.
 
