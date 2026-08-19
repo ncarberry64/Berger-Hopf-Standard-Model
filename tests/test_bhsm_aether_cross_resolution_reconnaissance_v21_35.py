@@ -160,6 +160,37 @@ def test_n6_inverse_square_tail_closure_audit_is_fail_closed():
     ] is False
 
 
+def test_n6_n12_joint_schur_chord_probe_is_fail_closed():
+    payload = json.loads(Path(
+        "artifacts/BHSM_N6_N12_JOINT_SCHUR_CHORD_COVER.json"
+    ).read_text(encoding="utf-8"))
+    probe = payload["latest_probe"]
+    cover = probe["affine_schur_interval_cover"]
+    status = probe["certification_status"]
+    anchor = payload["finite_anchor_history"]
+    assert probe["continuation_final_norm"] < anchor[
+        "zero_padded_repaired_N6_in_N12_exact_joint_norm"
+    ]
+    assert probe["minimum_hard_singular"] > 0.0
+    assert probe["minimum_full_schur_singular"] > 0.0
+    assert probe["minimum_abs_soft_denominator"] > 0.0
+    assert cover["accepted_interval_count"] + cover[
+        "rejected_interval_count"
+    ] > 0
+    assert cover["accepted_interval_count"] > 0
+    assert cover["rejected_interval_count"] == 0
+    assert cover["minimum_certified_hard_gap"] > 0.0
+    assert cover["minimum_certified_full_gap"] > 0.0
+    assert cover["minimum_certified_soft_denominator"] > 0.0
+    assert status["fixed_paired_linear_schur_homotopy_enclosed"] is True
+    assert status["paired_slopes_are_proposal_curvature_only"] is True
+    assert status["nonlinear_segment_radii_polynomials_certified"] is False
+    assert status["CONTINUUM_EVENT_CHILD_CERTIFIED"] is False
+    assert payload["higher_N_complete_child_promoted"] is False
+    assert payload["frozen_predictions_touched"] is False
+    assert payload["FULL_BHSM_COMPLETE"] is False
+
+
 def test_persisted_n6_local_energy_reconnaissance_is_not_mass():
     payload = json.loads(Path(
         "artifacts/BHSM_AETHER_CROSS_RESOLUTION_RECONNAISSANCE_V21_35.json"

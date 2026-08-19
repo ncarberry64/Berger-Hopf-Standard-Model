@@ -7,10 +7,11 @@
    finite-N maps that produced them. The authoritative N6 anchor is the
    corrected ordered-event solution and rebuilt child/persistence record; the
    former N5-projected event seed is provenance only.
-2. Certify the one remaining finite N6-to-asymptotic joint event-child normal
-   bridge: bound the soft Lyapunov-Schmidt denominator or prove source
-   compatibility along the homotopy, then close the existing action-norm radii
-   polynomial including its quadrature-consistency defect.
+2. Preserve the nonzero repaired-anchor N6-to-N12 hard/full-Schur/soft response
+   result, and replace the failed N6-centered one-ball attempt with overlapping
+   chord balls. Certify each ball using rigorous action-analytic normal
+   Jacobian-Lipschitz and existing eta/Dirac/event/persistence neighborhood
+   majorants, including quadrature consistency.
 3. Attach that finite bridge to the action-derived inverse-square shell law and
    asymptotic `O(1)` normal inverse. The high tail is then summable; transfer
    eta, ordered-event, and persistence inside the existing physical radius.

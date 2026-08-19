@@ -32,11 +32,16 @@ The same-action event-to-child attachment/reaction BVP correspondence is
 explicitly matched at N3/N4/N5/N6. The retained action gives an exact
 inverse-square weak high-mode shell bound, and the principal-plus-compact
 normal split closes the asymptotic tail with an `O(1)` inverse and a summable
-correction. The finite N6-to-asymptotic bridge is not yet certified: its soft
-Lyapunov-Schmidt denominator/source compatibility and the full action-norm
-radii polynomial, including quadrature consistency, remain open. A fixed-event
-N48 child-side response is diagnostic only, not that joint bridge proof.
-Frozen predictions remain unchanged.
+correction. The repaired-anchor N6-to-N12 joint probe does not identify a
+linear obstruction: its hard block, full Schur response, and isolated soft
+Lyapunov-Schmidt denominator stay nonzero while the unchanged exact joint weak
+merit descends. The failed N6-centered one-ball radius is therefore only a
+local-basin failure. Continuum promotion remains open because no rigorous
+action-analytic Jacobian-Lipschitz/radii bound yet encloses the ordered-event
+eigenline, state-dependent canonical momentum lift, quadrature defect, and
+existing eta/Dirac/event/persistence neighborhoods on every chord ball.
+Frozen predictions remain unchanged. The compact probe is
+[`BHSM_N6_N12_JOINT_SCHUR_CHORD_COVER.json`](artifacts/BHSM_N6_N12_JOINT_SCHUR_CHORD_COVER.json).
 
 N6 provenance was re-audited before this checkpoint. The earlier N5-projected
 N6 seed had ordered-event value `1.645981691e-6`, outside the existing `1e-9`
@@ -48,7 +53,7 @@ No equation, gate, or acceptance rule changed.
 
 Exact next object:
 
-`CERTIFY_ONE_FINITE_N6_TO_M0_MIXED_GAUGE_REDUCED_EVENT_CHILD_NORMAL_SCHUR_BRIDGE,_INCLUDING_THE_EXISTING_SOFT_MOMENTUM_LYAPUNOV_SCHMIDT_DENOMINATOR_OR_SOURCE_COMPATIBILITY_ALONG_THE_TAIL_HOMOTOPY,_AND_ITS_ACTION_NORM_RADII_POLYNOMIAL_INCLUDING_THE_EXISTING_ACTION_QUADRATURE_CONSISTENCY_DEFECT;_THE_M_GREATER_THAN_M0_INVERSE_SQUARE_TAIL_THEN_CLOSES_ANALYTICALLY`
+`CERTIFY_ACTION_ANALYTIC_NORMAL_JACOBIAN_LIPSCHITZ_AND_PHYSICAL_NEIGHBORHOOD_MAJORANTS_ON_A_FINITE_OVERLAPPING_N6_TO_M0_CHORD_COVER;_THEN_APPEND_THE_PROVED_INVERSE_SQUARE_ASYMPTOTIC_TAIL`
 
 ## Historical corrected-Rayleigh N=3 snapshot
 

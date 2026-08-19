@@ -19,12 +19,20 @@ the repaired unchanged ordered-event row (`-3e-15`, versus
 `1.645981691e-6` for the superseded projected seed); its rebuilt child closes
 to `5.708e-12`, remains eta-admissible, and passes persistence. It also records the
 action-derived inverse-square weak shell bound, asymptotic `O(1)` normal inverse
-and summable high tail; the finite joint event-child soft Schur bridge and full
-nonlinear radii polynomial remain open. The N48 child-side response and reduced
+and summable high tail. The fixed paired N6-to-N12 normal section has a finite
+linear Schur/soft interval cover, while the full nonlinear chord radii
+certificate remains open. The N48 child-side response and reduced
 local N6 energy are diagnostics, not a joint bridge proof or a mass readout.
 The v14.54 relative-energy object remains a conditional contract because a
 paired parent history and complete `Q_xi` evaluator are absent.
 `FULL_BHSM_COMPLETE = FALSE`.
+
+The focused
+[`BHSM_N6_N12_JOINT_SCHUR_CHORD_COVER.json`](artifacts/BHSM_N6_N12_JOINT_SCHUR_CHORD_COVER.json)
+records the repaired-anchor exact joint weak chord probe, fixed normal
+decomposition, linear Schur/soft interval enclosure attempt, and exact
+nonlinear certification boundary. It does not promote N12 as a complete child
+or certify a continuum event-child.
 
 Read the focused [N6 relative-energy reconnaissance](docs/BHSM_N6_RELATIVE_ENERGY_RECONNAISSANCE.md)
 for the fixed-action local-energy diagnostic and the exact missing matched-

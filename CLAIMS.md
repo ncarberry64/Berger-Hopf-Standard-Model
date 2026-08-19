@@ -33,8 +33,13 @@ gives the weak shell estimate `||r_n|| <= C_r n^-2` without fitted constants.
 The joint principal-plus-compact normal operator has an asymptotic `O(1)`
 inverse, making the sufficiently high tail summable.
 
-Not supported: the finite N6-to-asymptotic joint event-child soft Schur bridge,
-its nonlinear action-norm radii polynomial, a completed continuum child, the
+Supported diagnostic: on the repaired-anchor N6-to-N12 joint probe the hard,
+full-Schur, and isolated soft Lyapunov-Schmidt responses remain nonzero while
+the unchanged exact joint weak merit descends. This is not itself a continuum
+certificate.
+
+Not supported: a rigorous finite overlapping nonlinear radii cover, a
+completed continuum child, the
 reduced local N6 energy as `Delta H` or mass, absolute
 scale, physical masses, CKM, PMNS, CP, neutrino splittings, empirical
 validation, or `FULL_BHSM_COMPLETE = TRUE`.
@@ -44,7 +49,7 @@ history, so the conditional v14.54 Floquet/relative-energy contract is not a
 current mass readout.
 
 Active dependency:
-`CERTIFY_ONE_FINITE_N6_TO_M0_MIXED_GAUGE_REDUCED_EVENT_CHILD_NORMAL_SCHUR_BRIDGE,_INCLUDING_THE_EXISTING_SOFT_MOMENTUM_LYAPUNOV_SCHMIDT_DENOMINATOR_OR_SOURCE_COMPATIBILITY_ALONG_THE_TAIL_HOMOTOPY,_AND_ITS_ACTION_NORM_RADII_POLYNOMIAL_INCLUDING_THE_EXISTING_ACTION_QUADRATURE_CONSISTENCY_DEFECT;_THE_M_GREATER_THAN_M0_INVERSE_SQUARE_TAIL_THEN_CLOSES_ANALYTICALLY`.
+`CERTIFY_ACTION_ANALYTIC_NORMAL_JACOBIAN_LIPSCHITZ_AND_PHYSICAL_NEIGHBORHOOD_MAJORANTS_ON_A_FINITE_OVERLAPPING_N6_TO_M0_CHORD_COVER;_THEN_APPEND_THE_PROVED_INVERSE_SQUARE_ASYMPTOTIC_TAIL`.
 
 ### Historical corrected-Rayleigh N3 claim boundary
 

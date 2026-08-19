@@ -37,16 +37,20 @@ Action-normalized weak reaction graphs are measured through N6.
 The retained action yields an exact inverse-square weak shell bound. The
 principal-plus-compact normal split supplies an asymptotic `O(1)` right inverse,
 so the tail beyond a finite cutoff is summable. This does not close the whole
-N6-to-infinity construction: the finite joint event-child soft Schur bridge,
-source compatibility, full nonlinear radii polynomial, and quadrature
-consistency defect remain open. The reduced local N6 canonical energy is a
+N6-to-infinity construction. The repaired-anchor N6-to-N12 probe finds no
+linear bridge obstruction: hard, full-Schur, and soft Lyapunov-Schmidt
+responses remain nonzero and the unchanged exact joint weak merit descends.
+The old one-ball failure is local-basin evidence only. What remains open is a
+finite overlapping nonlinear radii cover with rigorous action-analytic
+Jacobian-Lipschitz and eta/Dirac/event/persistence neighborhood majorants,
+including quadrature consistency. The reduced local N6 canonical energy is a
 constraint diagnostic, not `Delta H`, a mass, or a physical scale readout.
 The v14.54 relative-energy/Floquet object is presently a conditional contract,
 not an executable complete composite-minus-matched-parent `Q_xi` evaluator;
 the stored N6 persistence data also lacks a paired parent history.
 
 Exact next object:
-`CERTIFY_ONE_FINITE_N6_TO_M0_MIXED_GAUGE_REDUCED_EVENT_CHILD_NORMAL_SCHUR_BRIDGE,_INCLUDING_THE_EXISTING_SOFT_MOMENTUM_LYAPUNOV_SCHMIDT_DENOMINATOR_OR_SOURCE_COMPATIBILITY_ALONG_THE_TAIL_HOMOTOPY,_AND_ITS_ACTION_NORM_RADII_POLYNOMIAL_INCLUDING_THE_EXISTING_ACTION_QUADRATURE_CONSISTENCY_DEFECT;_THE_M_GREATER_THAN_M0_INVERSE_SQUARE_TAIL_THEN_CLOSES_ANALYTICALLY`.
+`CERTIFY_ACTION_ANALYTIC_NORMAL_JACOBIAN_LIPSCHITZ_AND_PHYSICAL_NEIGHBORHOOD_MAJORANTS_ON_A_FINITE_OVERLAPPING_N6_TO_M0_CHORD_COVER;_THEN_APPEND_THE_PROVED_INVERSE_SQUARE_ASYMPTOTIC_TAIL`.
 
 ### Historical corrected-Rayleigh N3 snapshot
 
