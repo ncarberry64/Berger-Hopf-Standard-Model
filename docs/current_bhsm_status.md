@@ -43,18 +43,21 @@ measured through N6.
 The retained action gives `||r_n||_weak <= C_r n^-2` with no fitted constant.
 For the joint event-child graph, the principal-plus-compact split gives an
 asymptotic `O(1)` normal inverse and therefore a summable sufficiently high
-tail. The finite bridge from N6 to that regime remains open: the soft
-Lyapunov-Schmidt denominator/source compatibility and the existing nonlinear
-action-norm radii polynomial must be certified with the quadrature consistency
-defect included. The N48 fixed-event child-side response is not an interval
-proof of that joint bridge. The reduced local N6 canonical energy is not
+tail. The repaired-anchor N6-to-N12 joint calculation keeps the hard, full
+Schur, and soft Lyapunov-Schmidt responses nonzero and reduces the unchanged
+exact joint weak merit, so it is not classified as a linear retained-action
+obstruction. The old one-ball failure is a local-basin failure only. A
+continuum child is still not certified: each overlapping chord ball needs a
+rigorous action-analytic Jacobian-Lipschitz/radii majorant that also preserves
+the existing eta, Dirac, ordered-event, and persistence neighborhoods and
+includes quadrature consistency. The reduced local N6 canonical energy is not
 `Delta H`, a mass, or a scale readout; the paired parent-child `Q_xi` evaluator
 remains downstream and open. The v14.54 relative-energy/Floquet definitions
 are a conditional contract, not an executable evaluator, and the N6 artifact
 does not store the paired matched-parent history required to apply them.
 
 Exact next dependency:
-`CERTIFY_ONE_FINITE_N6_TO_M0_MIXED_GAUGE_REDUCED_EVENT_CHILD_NORMAL_SCHUR_BRIDGE,_INCLUDING_THE_EXISTING_SOFT_MOMENTUM_LYAPUNOV_SCHMIDT_DENOMINATOR_OR_SOURCE_COMPATIBILITY_ALONG_THE_TAIL_HOMOTOPY,_AND_ITS_ACTION_NORM_RADII_POLYNOMIAL_INCLUDING_THE_EXISTING_ACTION_QUADRATURE_CONSISTENCY_DEFECT;_THE_M_GREATER_THAN_M0_INVERSE_SQUARE_TAIL_THEN_CLOSES_ANALYTICALLY`.
+`CERTIFY_ACTION_ANALYTIC_NORMAL_JACOBIAN_LIPSCHITZ_AND_PHYSICAL_NEIGHBORHOOD_MAJORANTS_ON_A_FINITE_OVERLAPPING_N6_TO_M0_CHORD_COVER;_THEN_APPEND_THE_PROVED_INVERSE_SQUARE_ASYMPTOTIC_TAIL`.
 
 The corrected-Rayleigh N3 chronology below is retained for provenance.
 
