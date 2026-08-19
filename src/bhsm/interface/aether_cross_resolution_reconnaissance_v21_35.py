@@ -13928,10 +13928,10 @@ def soft_normal_lyapunov_schmidt_reduction(
         "classification": (
             "AFTER_THE_CLOSED_HARD_NORMAL_BLOCKS_ARE_SOLVED,_THE_EXISTING_"
             "COMPLETE_CHILD_RELATION_REDUCES_LOCALLY_TO_ONE_ACTION_OWNED_"
-            "SOFT_SCALAR_SOLVABILITY_FUNCTION;_ITS_DERIVATIVE_IS_ZERO_"
-            "EQUIVALENT_TO_THE_POLE_SAFE_SOFT_EVANS_FACTOR,_SO_THE_"
-            "THREE_ALLOWED_CLASSIFICATIONS_ARE_EXACTLY_THE_THREE_"
-            "LYAPUNOV_SCHMIDT_ALTERNATIVES"
+            "SOFT_SCALAR_SOLVABILITY_FUNCTION_AND_ITS_POSITIVE_DURATION_"
+            "HISTORY_RESPONSE;_THE_STATIC_EVANS_FACTOR_AND_DYNAMIC_"
+            "OBSERVABILITY_MODULUS_ARE_DISTINCT,_AND_CATEGORY_3_REQUIRES_"
+            "THE_FULL_NORMAL_HISTORY_RESPONSE_TO_COLLAPSE"
         ),
         "normal_decomposition": {
             "space": (
@@ -13963,6 +13963,29 @@ def soft_normal_lyapunov_schmidt_reduction(
             ),
             "finite_exact_response_projection": soft_response,
             "uniform_general_N_derivative_bound_proved": False,
+            "static_Evans_zero_alone_proves_history_closed_range_failure": (
+                False
+            ),
+        },
+        "positive_duration_soft_operator": {
+            "reduced_map": (
+                "G_soft,N_prime=(g_N_prime,_r_N)_WITH_"
+                "r_N(t)=Gamma0*xi_soft,N(t)_ON_0<=t<=T"
+            ),
+            "normal_minimum_modulus_lower_bound": (
+                "beta_soft,N>=norm(r_N)_L2(0,T)_IN_THE_EXISTING_PRODUCT_"
+                "CODOMAIN_METRIC"
+            ),
+            "static_boundary_factor_may_vanish_while_history_is_observable": (
+                True
+            ),
+            "weighted_modulus_sufficient_condition": criterion[
+                "minimal_weighted_modulus"
+            ]["sufficient_uniform_condition"],
+            "weighted_modulus_history_lower_bound": criterion[
+                "minimal_weighted_modulus"
+            ]["integrated_consequence"],
+            "uniform_history_lower_bound_proved_on_actual_sequence": False,
         },
         "three_way_classification": {
             "category_1_tangent": (
@@ -13970,8 +13993,9 @@ def soft_normal_lyapunov_schmidt_reduction(
                 "FAMILY_AND_e_soft_IS_ITS_JACOBI_TANGENT"
             ),
             "category_2_dynamically_controlled_normal": (
-                "g_N_prime_IS_NONZERO_OR_THE_EQUIVALENT_POSITIVE_DURATION_"
-                "BOUNDARY_HISTORY_HAS_A_NONVANISHING_OBSERVABILITY_NORM"
+                "THE_POSITIVE_DURATION_BOUNDARY_HISTORY_HAS_A_"
+                "NONVANISHING_OBSERVABILITY_NORM;_THIS_DOES_NOT_REQUIRE_"
+                "THE_STATIC_EVANS_FACTOR_TO_BE_UNIFORMLY_SEPARATED"
             ),
             "category_3_genuine_failure": (
                 "A_NON_TANGENT_NORMALIZED_SEQUENCE_HAS_g_N_prime_TO_ZERO_"
@@ -14001,14 +14025,38 @@ def soft_normal_lyapunov_schmidt_reduction(
                 "inf_N_abs(g_N_prime(s_N))>0",
                 "THE_ACTUAL_NORMAL_SECTION_BACKGROUNDS_ARE_S2_ETA_PRECOMPACT",
             ],
+            "root_chart_uniqueness_is_the_history_closed_range_theorem": False,
             "all_three_hypotheses_currently_proved_together": False,
         },
+        "compact_bundle_observability_implication": {
+            "hypotheses": [
+                "THE_ACTUAL_CORRECTED_NORMAL_SECTION_BACKGROUNDS_HAVE_COMPACT_S2_ETA_CLOSURE",
+                "THE_ACTION_NORMALIZED_SOFT_CAUCHY_VECTORS_HAVE_COMPACT_STRONG_GRAPH_CLOSURE",
+                "THE_EXISTING_POSITIVE_DURATION_ENERGY_BOUND_IS_UNIFORM_ON_THAT_CLOSURE",
+            ],
+            "operator_step": (
+                "THE_PROVED_ACTION_COEFFICIENT_TO_MOSCO_THEOREM_AND_"
+                "TROTTER_KATO_GIVE_STRONG_UNIFORM_ON_COMPACT_TIME_"
+                "CONVERGENCE_OF_THE_SOFT_JACOBI_PROPAGATORS"
+            ),
+            "compact_uniform_continuity_step": (
+                "CONTINUITY_OF_THE_BOUNDARY_ACCELERATION_ON_THE_COMPACT_"
+                "BACKGROUND_CAUCHY_SET_GIVES_Omega_N(t)_TO_ZERO_"
+                "UNIFORMLY_AS_t_TO_ZERO"
+            ),
+            "conclusion": (
+                "EXISTS_tau0>0_WITH_inf_N_norm(r_N)_L2(0,tau0)>=_"
+                "tau0^(5/2)/(4*sqrt(5))>0"
+            ),
+            "proves_category_2_if_hypotheses_close": True,
+            "actual_compact_background_Cauchy_set_proved": False,
+        },
         "exact_next_mathematical_lemma": (
-            "PROVE_inf_N_abs(g_N_prime(s_N))>0_FOR_THE_ACTION_SELECTED_"
-            "SOFT_NORMAL_SCALAR_FROM_THE_EXISTING_POSITIVE_DURATION_"
-            "WEIGHTED_BOUNDARY_ACCELERATION_MODULUS_ON_THE_ACTUAL_S2_"
-            "ETA_NORMAL_SECTION,_OR_CONSTRUCT_THE_NON_TANGENT_NORMALIZED_"
-            "L2_HISTORY_COLLAPSE_SEQUENCE"
+            "PROVE_COMPACT_STRONG_GRAPH_CLOSURE_OF_THE_ACTUAL_CORRECTED_"
+            "S2_ETA_NORMAL_SECTION_BACKGROUNDS_AND_ACTION_NORMALIZED_SOFT_"
+            "CAUCHY_VECTORS,_WHICH_GIVES_THE_UNIFORM_WEIGHTED_BOUNDARY_"
+            "ACCELERATION_MODULUS;_OR_CONSTRUCT_THE_NON_TANGENT_"
+            "NORMALIZED_L2_HISTORY_COLLAPSE_SEQUENCE"
         ),
         "new_physics_equations_constraints_regularizers_objectives_or_gates": (
             False

@@ -573,6 +573,16 @@ def test_soft_normal_lyapunov_schmidt_reduction():
     assert scalar["is_an_added_equation"] is False
     assert scalar["finite_exact_response_projection"] > 0.0
     assert scalar["uniform_general_N_derivative_bound_proved"] is False
+    assert scalar[
+        "static_Evans_zero_alone_proves_history_closed_range_failure"
+    ] is False
+    history = audit["positive_duration_soft_operator"]
+    assert history[
+        "static_boundary_factor_may_vanish_while_history_is_observable"
+    ] is True
+    assert history[
+        "uniform_history_lower_bound_proved_on_actual_sequence"
+    ] is False
     classification = audit["three_way_classification"]
     assert classification[
         "category_1_proved_for_the_hard_test_soft_line"
@@ -580,8 +590,14 @@ def test_soft_normal_lyapunov_schmidt_reduction():
     assert classification["category_3_proved"] is False
     correspondence = audit["nested_normal_section_correspondence"]
     assert correspondence[
+        "root_chart_uniqueness_is_the_history_closed_range_theorem"
+    ] is False
+    assert correspondence[
         "all_three_hypotheses_currently_proved_together"
     ] is False
+    compact = audit["compact_bundle_observability_implication"]
+    assert compact["proves_category_2_if_hypotheses_close"] is True
+    assert compact["actual_compact_background_Cauchy_set_proved"] is False
     assert audit[
         "new_physics_equations_constraints_regularizers_objectives_or_gates"
     ] is False
