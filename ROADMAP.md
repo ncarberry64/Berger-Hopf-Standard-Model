@@ -8,22 +8,26 @@
    corrected ordered-event solution and rebuilt child/persistence record; the
    former N5-projected event seed is provenance only.
 2. Preserve the nonzero repaired-anchor N6-to-N12 hard/full-Schur/soft response
-   result. Derive the missing exact nonlinear retained-action homotopy with a
-   rooted N6 endpoint and preserved gauge-fixed normal rank. The current `t`
-   family is only a fixed-center linear Schur proxy; source subtraction or an
-   added principal term is not unchanged BHSM physics.
-3. Once that nonlinear family exists, cover it by overlapping chord balls with
+   result and the fixed-chart endpoint-rank theorem. A regular fixed N12 chart
+   cannot simultaneously keep the unchanged rooted N6 map, forbid auxiliary
+   high equations, and retain all 57 N12 normal rows.
+3. Close one mathematically explicit permitted bridge: either a singular
+   variable-chart transition with unchanged physical endpoints, or a
+   proof-only action-norm high block with a theorem that the physical endpoint
+   and root are independent of that auxiliary device. Neither is presently
+   promoted as BHSM physics.
+4. Once that nonlinear family exists, cover it by overlapping chord balls with
    rigorous action-analytic Jacobian-Lipschitz and existing
    eta/Dirac/event/persistence neighborhood majorants, including quadrature
    consistency.
-4. Attach that finite bridge to the action-derived inverse-square shell law and
+5. Attach that finite bridge to the action-derived inverse-square shell law and
    asymptotic `O(1)` normal inverse. The high tail is then summable; transfer
    eta, ordered-event, and persistence inside the existing physical radius.
-5. Construct the existing complete composite-minus-matched-parent `Q_xi` on a
+6. Construct the existing complete composite-minus-matched-parent `Q_xi` on a
    paired continuum parent/child history and close the action-selected
    relative-periodic/Floquet BVP. The reduced local canonical energy is not a
    substitute for this object.
-6. Resume action-selected family-cycle ownership, relative quasi-energy mass
+7. Resume action-selected family-cycle ownership, relative quasi-energy mass
    ratios, absolute scale, and returned-family current dependencies without
    reopening closed sectors or retuning frozen predictions.
 

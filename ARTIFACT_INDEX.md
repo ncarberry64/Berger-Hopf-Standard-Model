@@ -1,6 +1,21 @@
 # BHSM Artifact Index
 
-## Current nonlinear-homotopy integrability checkpoint (v21.36)
+## Current fixed-chart endpoint-rank checkpoint (v21.37)
+
+- [`BHSM_N6_N12_FIXED_CHART_RANK_NO_GO_V21_37.json`](artifacts/BHSM_N6_N12_FIXED_CHART_RANK_NO_GO_V21_37.json)
+- Source: [`aether_n6_n12_fixed_chart_rank_no_go_v21_37.py`](src/bhsm/interface/aether_n6_n12_fixed_chart_rank_no_go_v21_37.py)
+- Reproduction: [`audit_n6_n12_fixed_chart_rank_no_go.py`](scripts/audit_n6_n12_fixed_chart_rank_no_go.py)
+- Focused test: [`test_bhsm_n6_n12_fixed_chart_rank_no_go_v21_37.py`](tests/test_bhsm_n6_n12_fixed_chart_rank_no_go_v21_37.py)
+
+The theorem records the exact dimension/rank obstruction behind v21.36. The
+joint map grows from 100 variables/33 rows at N6 to 196 variables/57 rows at
+N12. On a fixed N12 chart, an unchanged N6 extension has no derivative into
+the 24 new row directions; retaining those N12 rows instead leaves the
+injected N6 state non-rooted. This excludes the requested regular fixed-chart
+proof without an auxiliary high block or singular chart change; it does not
+claim physical continuum nonexistence.
+
+## Retained v21.36 nonlinear-homotopy evidence
 
 - [`BHSM_N6_N12_NONLINEAR_HOMOTOPY_INTEGRABILITY_V21_36.json`](artifacts/BHSM_N6_N12_NONLINEAR_HOMOTOPY_INTEGRABILITY_V21_36.json)
 - Source: [`aether_n6_n12_nonlinear_homotopy_integrability_v21_36.py`](src/bhsm/interface/aether_n6_n12_nonlinear_homotopy_integrability_v21_36.py)

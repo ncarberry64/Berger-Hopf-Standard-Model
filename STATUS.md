@@ -5,7 +5,7 @@ evidence, not competing public status pages.
 
 ## Current public summary
 
-Current identifier: **v21.36 nonlinear-homotopy integrability checkpoint**. It
+Current identifier: **v21.37 fixed-chart endpoint-rank checkpoint**. It
 is a development checkpoint, not a release version.
 
 Complete persistent children through N6 are validated for their retained
@@ -47,14 +47,20 @@ rooted N6 endpoint and preserved normal rank is required before local radii
 balls are defined. Scaling away high modes collapses that rank; retaining it
 exposes a nonzero omitted weak tail (`0.086772051123605` on the original
 matched child and `0.080655518582802` on the repaired ordered-event child).
-Source subtraction is not the unchanged action. The reduced local N6 canonical energy is a
-constraint diagnostic, not `Delta H`, a mass, or a physical scale readout.
+Source subtraction is not the unchanged action. The fixed-chart theorem makes
+the obstruction exact: the joint map grows from 100 variables/33 rows at N6
+to 196 variables/57 rows at N12. Without an auxiliary high equation, the
+rooted N6 endpoint is deficient by at least 24 normal rows. Keeping or scaling
+the physical N12 high rows respectively loses the N6 root or collapses the
+endpoint rank. This is a continuation-proof obstruction only; physical
+continuum nonexistence is not claimed. The reduced local N6 canonical energy
+is a constraint diagnostic, not `Delta H`, a mass, or a physical scale readout.
 The v14.54 relative-energy/Floquet object is presently a conditional contract,
 not an executable complete composite-minus-matched-parent `Q_xi` evaluator;
 the stored N6 persistence data also lacks a paired parent history.
 
 Exact next object:
-`DERIVE_THE_EXACT_NONLINEAR_NESTED_GALERKIN_EVENT_CHILD_HOMOTOPY_FROM_THE_UNCHANGED_RETAINED_ACTION_WITH_A_ROOTED_N6_ENDPOINT_AND_PRESERVED_GAUGE_FIXED_NORMAL_RANK,_OR_LOCALIZE_WHY_THIS_REQUIRES_AN_ADDED_SOURCE_OR_PRINCIPAL_TERM`.
+`PROVE_A_VARIABLE_CHART_SINGULAR_GALERKIN_TRANSITION_WITH_UNCHANGED_PHYSICAL_ENDPOINTS,_OR_EXPLICITLY_AUTHORIZE_AND_PROVE_ENDPOINT_INDEPENDENCE_OF_AN_ACTION_NORM_AUXILIARY_HIGH_BLOCK`.
 
 ### Historical corrected-Rayleigh N3 snapshot
 

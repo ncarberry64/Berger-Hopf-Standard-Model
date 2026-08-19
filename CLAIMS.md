@@ -2,7 +2,7 @@
 
 ## Current public claim boundary
 
-Current public identifier: **v21.36 nonlinear-homotopy integrability
+Current public identifier: **v21.37 fixed-chart endpoint-rank
 checkpoint**. This is not a release and does not claim BHSM completion.
 
 Supported now: N3 through N6 reconstruct complete persistent children under
@@ -43,6 +43,12 @@ gauge-fixed normal rank. The original matched and repaired N6 omitted weak
 tails are separately reproducible and nonzero; they are not one numerical
 record.
 
+Supported theorem: on one fixed N12 product chart, an unchanged rooted N6
+extension has derivative rank at most 33 for 57 N12 rows. Full N12 normal rank
+therefore requires an auxiliary high endpoint equation, while retaining the
+physical N12 high rows leaves the injected N6 state non-rooted. This excludes
+that regular proof architecture; it does not exclude a continuum BHSM child.
+
 Not supported: a rigorous finite overlapping nonlinear radii cover, a
 completed continuum child, the
 reduced local N6 energy as `Delta H` or mass, absolute
@@ -54,7 +60,7 @@ history, so the conditional v14.54 Floquet/relative-energy contract is not a
 current mass readout.
 
 Active dependency:
-`DERIVE_THE_EXACT_NONLINEAR_NESTED_GALERKIN_EVENT_CHILD_HOMOTOPY_FROM_THE_UNCHANGED_RETAINED_ACTION_WITH_A_ROOTED_N6_ENDPOINT_AND_PRESERVED_GAUGE_FIXED_NORMAL_RANK,_OR_LOCALIZE_WHY_THIS_REQUIRES_AN_ADDED_SOURCE_OR_PRINCIPAL_TERM`.
+`PROVE_A_VARIABLE_CHART_SINGULAR_GALERKIN_TRANSITION_WITH_UNCHANGED_PHYSICAL_ENDPOINTS,_OR_EXPLICITLY_AUTHORIZE_AND_PROVE_ENDPOINT_INDEPENDENCE_OF_AN_ACTION_NORM_AUXILIARY_HIGH_BLOCK`.
 
 ### Historical corrected-Rayleigh N3 claim boundary
 

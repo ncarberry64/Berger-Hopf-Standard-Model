@@ -46,6 +46,12 @@ Frozen predictions remain unchanged. The compact probe is
 [`BHSM_N6_N12_JOINT_SCHUR_CHORD_COVER.json`](artifacts/BHSM_N6_N12_JOINT_SCHUR_CHORD_COVER.json).
 The fail-closed integrability record is
 [`BHSM_N6_N12_NONLINEAR_HOMOTOPY_INTEGRABILITY_V21_36.json`](artifacts/BHSM_N6_N12_NONLINEAR_HOMOTOPY_INTEGRABILITY_V21_36.json).
+The endpoint-rank theorem sharpens this to a fixed-chart no-go: N6 to N12 adds
+96 state directions and 24 physical rows, so an unchanged N6 extension has
+rank at most 33 against 57 rows. Retaining the N12 high rows loses the N6 root;
+scaling them away makes the endpoint normal gap zero. This does not disprove a
+continuum child, but it excludes the requested regular fixed-chart proof
+without an auxiliary high block or a singular variable-chart transition.
 
 N6 provenance was re-audited before this checkpoint. The earlier N5-projected
 N6 seed had ordered-event value `1.645981691e-6`, outside the existing `1e-9`
@@ -57,7 +63,7 @@ No equation, gate, or acceptance rule changed.
 
 Exact next object:
 
-`DERIVE_THE_EXACT_NONLINEAR_NESTED_GALERKIN_EVENT_CHILD_HOMOTOPY_FROM_THE_UNCHANGED_RETAINED_ACTION_WITH_A_ROOTED_N6_ENDPOINT_AND_PRESERVED_GAUGE_FIXED_NORMAL_RANK,_OR_LOCALIZE_WHY_THIS_REQUIRES_AN_ADDED_SOURCE_OR_PRINCIPAL_TERM`
+`PROVE_A_VARIABLE_CHART_SINGULAR_GALERKIN_TRANSITION_WITH_UNCHANGED_PHYSICAL_ENDPOINTS,_OR_EXPLICITLY_AUTHORIZE_AND_PROVE_ENDPOINT_INDEPENDENCE_OF_AN_ACTION_NORM_AUXILIARY_HIGH_BLOCK`
 
 ## Historical corrected-Rayleigh N=3 snapshot
 
