@@ -14,12 +14,21 @@ positive-duration persistence, and nonzero relative evolution. It also records
 the `8N+2` variable, `2N+8` row, `6N-6` manifold laws; exact attachment-matched
 two-sided weak reaction graphs at N3/N4/N5/N6; the N6 compatibility closure,
 zero attachment jump, and converged persistence witness; and the
-boundary-compatible principal gauge quotient. It also records the
+boundary-compatible principal gauge quotient. The authoritative N6 event is
+the repaired unchanged ordered-event row (`-3e-15`, versus
+`1.645981691e-6` for the superseded projected seed); its rebuilt child closes
+to `5.708e-12`, remains eta-admissible, and passes persistence. It also records the
 action-derived inverse-square weak shell bound, asymptotic `O(1)` normal inverse
 and summable high tail; the finite joint event-child soft Schur bridge and full
 nonlinear radii polynomial remain open. The N48 child-side response and reduced
 local N6 energy are diagnostics, not a joint bridge proof or a mass readout.
+The v14.54 relative-energy object remains a conditional contract because a
+paired parent history and complete `Q_xi` evaluator are absent.
 `FULL_BHSM_COMPLETE = FALSE`.
+
+Read the focused [N6 relative-energy reconnaissance](docs/BHSM_N6_RELATIVE_ENERGY_RECONNAISSANCE.md)
+for the fixed-action local-energy diagnostic and the exact missing matched-
+parent `Q_xi` object. It records no mass prediction.
 
 ## Current BHSM v15.10 sigma-coefficient response reconstruction
 

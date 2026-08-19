@@ -20,8 +20,11 @@ Supported finite-N mathematics: the whole-child variable/row/manifold laws are
 `8N+2`, `2N+8`, and `6N-6`; the same-action two-sided event/child
 attachment/reaction map is explicitly matched at N3/N4/N5/N6 without adding a
 physical row or C1 gate. N6 closes trace/constraint/momentum compatibility to
-`7.341e-12`, records zero exact-attachment jump after boundary matching, and
-has a converged positive-duration nonzero-evolution persistence witness.
+`5.708e-12`, records zero exact-attachment jump after boundary matching, and
+has a converged positive-duration nonzero-evolution persistence witness. The
+authoritative N6 event is the repaired unchanged-row solution with ordered
+eigenvalue `-3e-15`; the superseded projected seed (`1.645981691e-6`) does not
+pass the pre-existing `1e-9` event tolerance.
 Action-normalized weak reaction graphs have been measured through N6, and N6
 passes the existing complete-child and positive-duration persistence gates.
 
@@ -35,6 +38,10 @@ its nonlinear action-norm radii polynomial, a completed continuum child, the
 reduced local N6 energy as `Delta H` or mass, absolute
 scale, physical masses, CKM, PMNS, CP, neutrino splittings, empirical
 validation, or `FULL_BHSM_COMPLETE = TRUE`.
+The repository does not yet contain an executable complete
+composite-minus-matched-parent `Q_xi` evaluator or paired N6 parent/child
+history, so the conditional v14.54 Floquet/relative-energy contract is not a
+current mass readout.
 
 Active dependency:
 `CERTIFY_ONE_FINITE_N6_TO_M0_MIXED_GAUGE_REDUCED_EVENT_CHILD_NORMAL_SCHUR_BRIDGE,_INCLUDING_THE_EXISTING_SOFT_MOMENTUM_LYAPUNOV_SCHMIDT_DENOMINATOR_OR_SOURCE_COMPATIBILITY_ALONG_THE_TAIL_HOMOTOPY,_AND_ITS_ACTION_NORM_RADII_POLYNOMIAL_INCLUDING_THE_EXISTING_ACTION_QUADRATURE_CONSISTENCY_DEFECT;_THE_M_GREATER_THAN_M0_INVERSE_SQUARE_TAIL_THEN_CLOSES_ANALYTICALLY`.

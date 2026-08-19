@@ -29,10 +29,14 @@ The finite-N reconstruction pattern is `F_N:R^(8N+2)->R^(2N+8)` with a
 BVP supplies a lift-independent boundary reaction, and the two-sided
 event/child attachment/reaction match is explicit at N3/N4/N5/N6 without a
 new physical row or C1 continuity gate. N6 closes full
-trace/constraint/momentum compatibility to `7.341e-12`, records zero exact
+trace/constraint/momentum compatibility to `5.708e-12`, records zero exact
 attachment jump after boundary matching, and has a converged positive-duration
-persistence witness with nonzero relative evolution and passes the existing
-complete-child gates. The boundary-compatible principal gauge quotient is
+persistence witness with nonzero relative evolution. Its authoritative event
+is the repaired unchanged-row solution (`lambda_ordered=-3e-15`); the former
+N5-projected seed (`1.645981691e-6`) failed the existing `1e-9` N6 event
+tolerance and is provenance only. The rebuilt child retains eta
+`0.999999998794641` and reaction mismatch `2.12131e-10`, so all existing N6
+gates pass. The boundary-compatible principal gauge quotient is
 derived and exact-attachment action-normalized weak reaction graphs are
 measured through N6.
 
@@ -45,7 +49,9 @@ action-norm radii polynomial must be certified with the quadrature consistency
 defect included. The N48 fixed-event child-side response is not an interval
 proof of that joint bridge. The reduced local N6 canonical energy is not
 `Delta H`, a mass, or a scale readout; the paired parent-child `Q_xi` evaluator
-remains downstream and open.
+remains downstream and open. The v14.54 relative-energy/Floquet definitions
+are a conditional contract, not an executable evaluator, and the N6 artifact
+does not store the paired matched-parent history required to apply them.
 
 Exact next dependency:
 `CERTIFY_ONE_FINITE_N6_TO_M0_MIXED_GAUGE_REDUCED_EVENT_CHILD_NORMAL_SCHUR_BRIDGE,_INCLUDING_THE_EXISTING_SOFT_MOMENTUM_LYAPUNOV_SCHMIDT_DENOMINATOR_OR_SOURCE_COMPATIBILITY_ALONG_THE_TAIL_HOMOTOPY,_AND_ITS_ACTION_NORM_RADII_POLYNOMIAL_INCLUDING_THE_EXISTING_ACTION_QUADRATURE_CONSISTENCY_DEFECT;_THE_M_GREATER_THAN_M0_INVERSE_SQUARE_TAIL_THEN_CLOSES_ANALYTICALLY`.

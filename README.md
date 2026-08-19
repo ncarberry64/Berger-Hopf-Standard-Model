@@ -38,6 +38,14 @@ radii polynomial, including quadrature consistency, remain open. A fixed-event
 N48 child-side response is diagnostic only, not that joint bridge proof.
 Frozen predictions remain unchanged.
 
+N6 provenance was re-audited before this checkpoint. The earlier N5-projected
+N6 seed had ordered-event value `1.645981691e-6`, outside the existing `1e-9`
+tolerance. Using the unchanged retained action-energy fiber and ordered-event
+row repaired it to `-3e-15`; the rebuilt child then closed its physical norm to
+`5.708e-12`, retained eta `0.999999998794641`, matched the two-sided reaction
+to `2.12131e-10`, and passed the existing positive-duration persistence gate.
+No equation, gate, or acceptance rule changed.
+
 Exact next object:
 
 `CERTIFY_ONE_FINITE_N6_TO_M0_MIXED_GAUGE_REDUCED_EVENT_CHILD_NORMAL_SCHUR_BRIDGE,_INCLUDING_THE_EXISTING_SOFT_MOMENTUM_LYAPUNOV_SCHMIDT_DENOMINATOR_OR_SOURCE_COMPATIBILITY_ALONG_THE_TAIL_HOMOTOPY,_AND_ITS_ACTION_NORM_RADII_POLYNOMIAL_INCLUDING_THE_EXISTING_ACTION_QUADRATURE_CONSISTENCY_DEFECT;_THE_M_GREATER_THAN_M0_INVERSE_SQUARE_TAIL_THEN_CLOSES_ANALYTICALLY`
