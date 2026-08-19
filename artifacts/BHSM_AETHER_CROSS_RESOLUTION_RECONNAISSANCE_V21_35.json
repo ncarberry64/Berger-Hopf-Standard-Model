@@ -5144,6 +5144,260 @@
       },
       "validation_passed": true
     },
+    "N6_inverse_square_tail_closure_audit": {
+      "FULL_BHSM_COMPLETE": false,
+      "action_derived_inverse_square_law": {
+        "fitted_constant_used": false,
+        "fixed_order_quadrature_tail_used_as_the_proof": false,
+        "higher_N_root_used": false,
+        "lapse_basis": "phi_n=cos(4*n*chi),_n>=1",
+        "lapse_constant": "C_N=(abs(E_N'(0))+abs(E_N'(L))+norm(E_N'',L1))/16",
+        "lapse_identity": "integral(E_N*phi_n)=(((-1)^n*E_N'(L)-E_N'(0))-integral(E_N''*phi_n))/(16*n^2)",
+        "proved_shell_estimate": "norm(r_n,weak)<=C_r*n^-2_FOR_EACH_EVENT_OR_CHILD_COMPONENT_AND_norm(r_n,event_child)<=C_r_product*n^-2",
+        "quadrature_requirement": "ORDER_DEPENDENT_GAUSS_EVALUATION_MUST_RESOLVE_THE_VARIATIONAL_INTEGRALS;_QUADRATURE_ALIASING_IS_NOT_PART_OF_C_r",
+        "regularity_at_the_N6_anchor": "E_N_AND_E_beta_ARE_W2,1_ON_[0,pi/4]_BECAUSE_THE_N6_FIELDS_ARE_FINITE_TRIGONOMETRIC_POLYNOMIALS_AND_THE_RETAINED_ACTION_IS_ANALYTIC_ON_THE_ETA_INTERIOR",
+        "shift_basis": "psi_n=sin(4*chi)*cos(4*n*chi)=(sin(4*(n+1)*chi)-sin(4*(n-1)*chi))/2",
+        "shift_constant_for_n_at_least_2": "C_beta=(abs(E_beta(0))+abs(E_beta(L)))/3+5*norm(E_beta'',L1)/36",
+        "shift_identity": "S_m(E)=integral(E*sin(4*m*chi))=(E(0)-(-1)^m*E(L))/(4*m)-integral(E''*sin(4*m*chi))/(16*m^2);_the_equal-parity_endpoint_terms_cancel_to_order_n^-2_in_(S_(n+1)-S_(n-1))/2",
+        "vector_constant": "C_r=sqrt(C_N^2+C_beta^2)",
+        "weak_variation_after_reaction_routing": "delta_S_bulk=integral_0^L(E_N*delta_logN+E_beta*delta_beta)dchi,_L=pi/4",
+        "whole_event_child_constant": "C_r_product=sqrt(C_r_event^2+C_r_child^2)",
+        "why_action_owned": "E_N_AND_E_beta_ARE_THE_MULTIPLIER_EULER_DENSITIES_OF_THE_RETAINED_LOCAL_ACTION;_THE_ENDPOINT_CANCELLATION_USES_ITS_EXISTING_COSINE_AND_WINDOWED_SHIFT_BASES"
+      },
+      "asymptotic_high_shell_fredholm_theorem": {
+        "Neumann_inverse": "norm((Q_M*A_6_PRODUCT*Q_M)^(-1))<=1/(beta_P-epsilon_M)<=2/beta_P_FOR_M>=M_0",
+        "action_owned_compactness_modulus": "epsilon_M_IS_THE_EXACT_OPERATOR_NORM_TAIL_OF_THE_WEIGHTED_FIRST_AND_ZEROTH_ORDER_RETAINED_ACTION_BLOCKS_PLUS_THE_FINITE_RANK_COLLECTIVE_INERTIA,_ATTACHMENT_AND_WEAK_REACTION_BLOCKS;_IT_IS_NOT_A_FIT",
+        "asymptotic_inverse_growth": "kappa_M=O(1),_alpha=0<1",
+        "asymptotic_inverse_square_correction_is_summable": true,
+        "finite_cutoff": "M_0_IS_ANY_FINITE_ACTION_OWNED_CUTOFF_WITH_epsilon_M<=beta_P/2_FOR_ALL_M>=M_0",
+        "lower_order_bound": "epsilon_M=norm(Q_M*P_6^(-1)*K_6*Q_M)_TO_ZERO",
+        "nonlinear_neighborhood_transfer": "C2_CONTINUITY_OF_THE_RETAINED_ACTION_ON_A_CLOSED_ETA_INTERIOR_BALL_PRESERVES_epsilon_M<3*beta_P/4_AFTER_SHRINKING_THE_EXISTING_BALL,_SO_THE_HIGH_TAIL_INVERSE_REMAINS_AT_MOST_4/beta_P_THERE",
+        "normal_operator_split": "A_6_PRODUCT=P_EVENT_DIRECT_SUM_P_CHILD+K_EVENT_CHILD_ON_THE_EXISTING_GAUGE_REDUCED_MIXED_EULER_DIRAC_WEAK_GRAPH_AND_MATCHING_DOMAIN",
+        "principal_bound": "norm(P_6*x)_dual>=beta_P*norm(x)_graph,_beta_P=sqrt(29)-5",
+        "scope": "THIS_PROVES_THE_INFINITE_HIGH_HIGH_TAIL_AT_THE_FIXED_N6_ANCHOR;_IT_DOES_NOT_INVERT_THE_FINITE_LOW_HIGH_SCHUR_BRIDGE_OR_EXCLUDE_ITS_SOFT_NORMAL_COKERNEL",
+        "spectral_gain": "FIRST_ORDER_LOWER_BLOCKS_GAIN_M^-1_AND_ZEROTH_ORDER_BLOCKS_GAIN_M^-2_FROM_H1_TO_H_MINUS_1;_NO_UNPROVED_COMMON_POWER_RATE_IS_ASSIGNED_TO_THE_COMBINED_BOUNDARY_GRAPH_TAIL",
+        "summed_high_tail_bound": "sum_(n>M0)norm(delta_Y_n)<=(2*C_r_product/beta_P)*sum_(n>M0)n^-2<=2*C_r_product/(beta_P*M0)",
+        "uses_a_higher_N_complete_child_root": false,
+        "uses_an_instantaneous_singular_value_as_observability": false,
+        "why_epsilon_M_tends_to_zero": "THE_N6_BACKGROUND_IS_A_FINITE_TRIGONOMETRIC_POLYNOMIAL,_THE_RETAINED_ACTION_COEFFICIENTS_ARE_ANALYTIC_ON_ETA_GREATER_THAN_ZERO,_THE_CAP_IS_COMPACT,_RELLICH_MAKES_THE_LOWER_ORDER_INTERIOR_BLOCKS_COMPACT,_AND_THE_NONLOCAL_AND_BOUNDARY_BLOCKS_ARE_FINITE_RANK"
+      },
+      "category_3_collapse_sequence_constructed": false,
+      "classification": "ACTION_DERIVED_INVERSE_SQUARE_BULK_EULER_DIRAC_SHELL_LAW_PROVED;_SHARP_NORMAL_INVERSE_GROWTH_THRESHOLD_DERIVED;_N6_TO_INFINITY_NONLINEAR_CLOSURE_NOT_YET_CERTIFIED",
+      "equations_gates_running_law_or_frozen_predictions_changed": false,
+      "exact_boundary_bulk_split": {
+        "boundary_covector": "-C_SM*N_boundary/R4*(-1)^n",
+        "destination": "EXISTING_WEAK_CONORMAL_REACTION_RELATION",
+        "new_boundary_condition_or_gate": false,
+        "raw_boundary_coefficients_have_inverse_square_decay": false,
+        "raw_boundary_distribution_used_in_the_bulk_tail_bound": false
+      },
+      "finite_anchor": {
+        "Dirac_smallest_singular_value": 1.6701672591e-05,
+        "N": 6,
+        "complete_persistent_child_validated": true,
+        "eta_Legendre_margin": 1.000021066638955,
+        "finite_N6_inverse_is_a_uniform_infinite_tail_bound": false,
+        "finite_N6_normal_right_inverse_norm": 9.819205297616628,
+        "first_omitted_bulk_H_minus_1_tail_norm": 0.086772051123605
+      },
+      "finite_bridge_obstruction": {
+        "brute_force_complete_roots_for_every_N_required": false,
+        "decomposition": "X_NORMAL=X_LE_M0_DIRECT_SUM_X_GT_M0;_THE_SECOND_BLOCK_HAS_THE_PROVED_NEUMANN_INVERSE",
+        "finite_bridge_certified": false,
+        "hard_momentum_channel_closed": true,
+        "localized_channel": "THE_ALREADY_ISOLATED_SOFT_MOMENTUM_NORMAL_LINE;_IT_REMAINS_CATEGORY_2_AND_NO_CATEGORY_3_SEQUENCE_EXISTS",
+        "remaining_operator": "S_FIN_EVENT_CHILD=A_LE_M0-A_LOW_HIGH*A_HIGH_HIGH^(-1)*A_HIGH_LOW",
+        "remaining_source": "r_FIN=r_LOW-A_LOW_HIGH*A_HIGH_HIGH^(-1)*r_HIGH",
+        "required_finite_statement": "S_FIN_EVENT_CHILD_HAS_A_BOUNDED_NORMAL_RIGHT_INVERSE_OR_r_FIN_IS_ORTHOGONAL_TO_ITS_EXISTING_ADJOINT_KERNEL;_THE_SOURCE_INCLUDES_THE_ACTION_QUADRATURE_CONSISTENCY_DEFECT",
+        "why_N6_full_row_rank_is_not_enough": "THE_SCHUR_FEEDBACK_FROM_ALL_OMITTED_MODES_CHANGES_THE_FINITE_NORMAL_OPERATOR"
+      },
+      "finite_bridge_soft_scalar_reduction": {
+        "closure_alternative": "inf_(0<=t<=1)abs(d_s(t))=d0>0,_WITH_THE_HARD_INVERSE_AND_RADII_BOUNDS,_IMPLIES_THE_FINITE_BRIDGE",
+        "compatible_crossing_alternative": "IF_d_s(t_star)=0,_A_SOURCE_SPECIFIC_BRIDGE_CAN_PASS_ONLY_IF_g_s(t_star)=0_AND_THE_EXISTING_NONLINEAR_LYAPUNOV_SCHMIDT_EQUATION_HAS_A_ROOT",
+        "endpoint_nonzero_measurements_prove_no_interior_crossing": false,
+        "existing_split": "THE_HARD_NORMAL_COMPLEMENT_HAS_THE_VALIDATED_RANK_ONE_MOMENTUM_RESPONSE;_phi_s_AND_psi_s_ARE_THE_REMAINING_ACTION_NORMALIZED_SOFT_RIGHT_AND_LEFT_DIRECTIONS",
+        "new_equation_constraint_gate_or_selector": false,
+        "retained_action_obstruction": "d_s(t_star)=0_AND_g_s(t_star)!=0",
+        "soft_denominator": "d_s(t)=<psi_s,S_FIN(t)*phi_s>",
+        "soft_source": "g_s(t)=<psi_s,r_FIN(t)>",
+        "tail_homotopy": "S_FIN(t)=A_LOW_LOW-t*A_LOW_HIGH*A_HIGH_HIGH^(-1)*A_HIGH_LOW,_0<=t<=1"
+      },
+      "first_retained_action_obstruction": "CERTIFY_ONE_FINITE_N6_TO_M0_MIXED_GAUGE_REDUCED_EVENT_CHILD_NORMAL_SCHUR_BRIDGE,_INCLUDING_THE_EXISTING_SOFT_MOMENTUM_LYAPUNOV_SCHMIDT_DENOMINATOR_OR_SOURCE_COMPATIBILITY_ALONG_THE_TAIL_HOMOTOPY,_AND_ITS_ACTION_NORM_RADII_POLYNOMIAL_INCLUDING_THE_EXISTING_ACTION_QUADRATURE_CONSISTENCY_DEFECT;_THE_M_GREATER_THAN_M0_INVERSE_SQUARE_TAIL_THEN_CLOSES_ANALYTICALLY",
+      "higher_N_probe_promoted_as_a_complete_child": false,
+      "identity_response_trace_consistency": {
+        "converges_to_the_exact_identity_response": true,
+        "current_residual_evaluator": "TRAPEZOIDAL_CUMULATIVE_RESPONSE_EVALUATED_ON_GAUSS_NODES_BEFORE_THE_OUTER_GAUSS_ACTION_QUADRATURE",
+        "exact_retained_identity_join": "sigma(chi)=-1/2+2*chi/pi-sin(4*chi)/(2*pi)",
+        "interpretation": "THE_ANALYTIC_N_MINUS_2_LAW_USES_THE_EXACT_RETAINED_IDENTITY_RESPONSE;_THE_FINITE_BRIDGE_RADII_SOURCE_MUST_ALSO_MAJORIZE_THIS_EXISTING_QUADRATURE_CONSISTENCY_DEFECT_BEFORE_A_CONTINUUM_ROOT_IS_PROMOTED",
+        "physical_action_or_gate_changed_here": false,
+        "pointwise_exact_at_finite_quadrature": false,
+        "rows": [
+          {
+            "L2_node_sigma_error": 0.000296784453798,
+            "maximum_sigma_error": 8.7339389537e-05,
+            "quadrature_points": 44
+          },
+          {
+            "L2_node_sigma_error": 9.3005878182e-05,
+            "maximum_sigma_error": 1.8622939631e-05,
+            "quadrature_points": 96
+          },
+          {
+            "L2_node_sigma_error": 2.1465684427e-05,
+            "maximum_sigma_error": 2.637544969e-06,
+            "quadrature_points": 256
+          }
+        ]
+      },
+      "infinite_tail_complete_child_constructed": false,
+      "joint_event_child_tail": {
+        "child_first_omitted_bulk_H_minus_1_tail_norm": 0.086772051123605,
+        "child_only_tail_used_as_the_whole_system_defect": false,
+        "event_and_child_obey_the_same_inverse_square_derivation": true,
+        "event_first_omitted_shell_bound": "C_r_event/49",
+        "event_tail_numeric_probe_required_for_the_proof": false,
+        "product_first_omitted_shell_bound": "C_r_product/49"
+      },
+      "nonlinear_Hessian_remainder": {
+        "N6_measured_finite_map_Hessian_Frobenius": 39904.87757641086,
+        "asymptotic_tail_neighborhood_fact": "FOR_EVERY_PREASSIGNED_POSITIVE_ETA_DIRAC_PERSISTENCE_RADIUS,_THE_PROVED_M_GREATER_THAN_M0_TAIL_CAN_BE_MADE_SMALLER_BY_INCREASING_M;_THE_UNCONTROLLED_QUANTITY_IS_THE_SINGLE_FINITE_N6_TO_M_BRIDGE",
+        "asymptotic_tail_only_radii_polynomial_closes": true,
+        "asymptotic_tail_radii_choice": "CHOOSE_A_CLOSED_RADIUS_rho0_INSIDE_THE_EXISTING_ETA_DIRAC_PERSISTENCE_NEIGHBORHOOD;_ANALYTICITY_OF_THE_RETAINED_ACTION_GIVES_A_FINITE_M2(rho0);_THEN_CHOOSE_M0_SO_4*C_r_product/(beta_P*M0)<rho0_AND_8*M2(rho0)*C_r_product/beta_P^2/M0<1",
+        "closure_condition": "2*K*M2*D1<1",
+        "eta_persistence_neighborhood_closed_for_the_whole_tail": false,
+        "exact_Taylor_form": "norm(R(delta))<=M2*rho^2/2_ON_norm(delta)<=rho",
+        "existing_eta_and_persistence_neighborhood_condition": "rho_minus<min(eta_6/L_eta,_sigma_Dirac/L_Dirac,_rho_existing_boundary_and_persistence_chart)",
+        "full_N6_to_infinity_radii_polynomial_closes": false,
+        "radii_polynomial": "p(rho)=D1+(K*M2/2)*rho^2-rho",
+        "reason": "NO_RIGOROUS_ACTION_NORM_VALUES_FOR_K,_M2,_L_eta,_L_Dirac_OR_THE_FULL_LOWER_ORDER_TAIL_SCHUR_BOUND_ARE_CURRENTLY_AVAILABLE;_SUMMABILITY_ALONE_DOES_NOT_PROVE_THE_SUM_FROM_SHELL_7_STAYS_IN_THE_OPEN_N6_CHART",
+        "small_root": "rho_minus=(1-sqrt(1-2*K*M2*D1))/(K*M2)",
+        "that_measurement_is_a_uniform_analytic_M2": false
+      },
+      "normal_inverse_summability": {
+        "allowed_growth_proved_below_threshold_for_BHSM_tail": false,
+        "borderline_alpha_equal_one_is_summable": false,
+        "correction_bound": "norm(delta_Y_n)<=kappa_n*C_r*n^-2",
+        "exact_general_criterion": "sum_(n>=7)kappa_n/n^2<infinity",
+        "power_law_hypothesis": "kappa_n<=K*n^alpha",
+        "principal_tail_route": {
+          "consequence": "kappa_n=O(1)_AND_THE_LINEAR_TAIL_SUMS",
+          "if_beta_P_and_C_LO_are_certified": "beta_n>=beta_P-C_LO/n_AND_kappa_n<=1/(beta_P-C_LO/n)_FOR_n>C_LO/beta_P",
+          "principal_modulus_gap": "sqrt(29)-5",
+          "principal_modulus_gap_value": 0.385164807134504,
+          "uniform_beta_P_and_C_LO_certified_on_the_N6_tail": false
+        },
+        "reason": "THE_REPOSITORY_HAS_A_FINITE_N6_RIGHT_INVERSE_AND_AN_ACTION_PRINCIPAL_GAP_BUT_NO_ACTION_NORM_MAJORANT_FOR_THE_FULL_GAUGE_REDUCED_LOWER_ORDER_TAIL_SCHUR_OPERATOR",
+        "sharp_power_threshold": "alpha<1",
+        "uniform_inverse_case": {
+          "alpha": 0.0,
+          "series_bound": "sum_(n>=7)n^-2<=8/49",
+          "series_bound_value": 0.163265306122449,
+          "total_linear_correction_bound": "D1<=8*K*C_r/49"
+        }
+      },
+      "soft_channel_classification": "CATEGORY_2_DYNAMICALLY_CONTROLLED_NORMAL_DIRECTION",
+      "theorem_outcome": "THE_INFINITE_ASYMPTOTIC_TAIL_IS_REDUCED_ANALYTICALLY_TO_A_SUMMABLE_O_N_MINUS_2_SOURCE_WITH_AN_O_1_HIGH_SHELL_INVERSE;_THE_ONLY_UNCLOSED_TRANSFER_FROM_N6_IS_ONE_FINITE_MIXED_NORMAL_SCHUR_BRIDGE_AND_ITS_NONLINEAR_RADII_BOUND",
+      "validation": {
+        "N6_complete_child_and_persistence_are_preserved": true,
+        "canonical_principal_matrix_has_positive_modulus_gap": true,
+        "exact_boundary_covector_kept_out_of_bulk_tail": true,
+        "finite_N6_inverse_not_promoted_to_a_uniform_tail_inverse": true,
+        "finite_soft_Schur_bridge_not_silently_assumed_invertible": true,
+        "high_shell_compact_perturbation_reduces_infinity_to_a_finite_bridge": true,
+        "identity_response_quadrature_error_decreases": true,
+        "inverse_square_constants_are_action_norms_not_fits": true,
+        "measured_N6_Hessian_not_promoted_to_a_rigorous_tail_bound": true,
+        "ordered_event_tail_is_included_in_the_whole_system_bridge": true,
+        "power_growth_threshold_is_strictly_below_one": true,
+        "uniform_inverse_makes_the_linear_correction_summable": true
+      },
+      "validation_passed": true
+    },
+    "N6_reduced_local_energy_readout_reconnaissance": {
+      "FULL_BHSM_COMPLETE": false,
+      "classification": "N6_REDUCED_LOCAL_CANONICAL_ENERGY_DIAGNOSTIC_IS_AUTONOMOUS_AND_TIME_STEP_STABLE_AT_THE_RETAINED_QUADRATURE_BUT_NOT_QUADRATURE_CONVERGED;_THE_V14_54_RELATIVE_ENERGY_READOUT_REMAINS_CONDITIONAL",
+      "exact_next_dependency": "DERIVE_AND_EVALUATE_THE_EXISTING_COMPLETE_COMPOSITE_MINUS_MATCHED_PARENT_NOETHER_HAMILTONIAN_Q_XI_ON_A_PAIRED_N6_PARENT_CHILD_HISTORY_WITH_QUADRATURE_CONVERGENCE",
+      "executable_local_quantity": "H6_local=v^T*partial_v(L6)-L6",
+      "family_cycle_ownership_gate": {
+        "C3_equivalent_cycles_consequence": "THE_EXISTING_FAMILY_CENTRALITY_THEOREM_RETURNS_DEGENERATE_QUASI_ENERGIES",
+        "C3_equivalent_cycles_produce_a_hierarchy": false,
+        "gate_closed": false,
+        "observed_mass_ordering_may_label_or_select_cycles": false,
+        "requirements": [
+          "THREE_COMPLETE_ACTION_SELECTED_CHARGED_LEPTON_RELATIVE_PERIODIC_CYCLES",
+          "ACTION_DERIVED_RETURNED_SPINOR_PROJECTOR_FOR_EACH_DISTINCT_FAMILY_SECTOR",
+          "INEQUIVALENCE_MODULO_GAUGE_COMMON_TIME_AND_TRUE_DISCRETE_EQUIVALENCES",
+          "COMMON_ACTION_OWNED_REST_FRAME_CLOCK_AND_CONTINUOUS_FLOQUET_LOG_BRANCH",
+          "COMPLETE_RELATIVE_Q_XI_AND_STATIONARY_FLOQUET_CONSISTENCY",
+          "N_QUADRATURE_AND_PROJECTION_CONVERGENCE"
+        ]
+      },
+      "flow_tangency": {
+        "D_t_H6_local": 2.9408e-11,
+        "action_normalized_residual": 0.0,
+        "all_legitimate_child_tangents_must_annihilate_energy": false,
+        "common_history_time_translation_tangent_is_exact": true
+      },
+      "is_Delta_H6": false,
+      "is_a_mass_measurement": false,
+      "new_mass_formula_invented": false,
+      "persistence_interval": {
+        "coordinate_duration": 0.0001,
+        "proper_duration": 0.000113092519434
+      },
+      "rows": [
+        {
+          "coarse_final_H6_local": -2.9e-14,
+          "coarse_minus_fine": -9.8e-14,
+          "fine_constraint_maximum": 6.1e-14,
+          "fine_final_H6_local": 6.9e-14,
+          "fine_minus_initial": 2.4e-14,
+          "initial_H6_local": 4.5e-14,
+          "initial_constraint_maximum": 3.2e-14,
+          "quadrature_points": 96
+        },
+        {
+          "coarse_final_H6_local": -5.0790724061e-05,
+          "coarse_minus_fine": -1.38e-13,
+          "fine_constraint_maximum": 0.000162434716568,
+          "fine_final_H6_local": -5.0790723923e-05,
+          "fine_minus_initial": 5.9582254e-08,
+          "initial_H6_local": -5.0850306176e-05,
+          "initial_constraint_maximum": 0.0001625497016,
+          "quadrature_points": 512
+        },
+        {
+          "coarse_final_H6_local": -5.2191060859e-05,
+          "coarse_minus_fine": -1.02e-13,
+          "fine_constraint_maximum": 0.00016691227864,
+          "fine_final_H6_local": -5.2191060757e-05,
+          "fine_minus_initial": 6.1223931e-08,
+          "initial_H6_local": -5.2252284688e-05,
+          "initial_constraint_maximum": 0.000167030433078,
+          "quadrature_points": 1024
+        }
+      ],
+      "then": "CLOSE_THE_ACTION_SELECTED_GAUGE_REDUCED_RELATIVE_PERIODIC_PARENT_CHILD_BVP_WITH_T_H_AND_STABLE_MONODROMY",
+      "v14_54_conditional_contract": {
+        "Floquet": "U_f(T_f)*psi=exp(-i*theta_f)*psi",
+        "complete_Q_xi_evaluator_exists": false,
+        "matched_parent_positive_duration_history_exists": false,
+        "quasi_energy": "epsilon_f=hbar*theta_f/T_f",
+        "relative_cycle": "Phi_f(t+T_f)=h_f*Phi_f(t)",
+        "relative_periodic_cycle_and_monodromy_exist": false,
+        "required_physical_readout": "Delta_H_f=Q_xi[COMPLETE_COMPOSITE]-Q_xi[MATCHED_PARENT]"
+      },
+      "validation": {
+        "autonomous_local_energy_flow_tangency_is_resolved": true,
+        "frozen_predictions_not_read_or_used": true,
+        "local_constraint_energy_not_promoted_to_relative_energy_or_mass": true,
+        "no_new_equation_constraint_gate_or_selector": true,
+        "quadrature_sensitivity_is_not_hidden": true,
+        "retained_96_point_local_energy_is_time_step_stable": true,
+        "v14_54_contract_not_misreported_as_an_executable_evaluator": true
+      },
+      "validation_passed": true
+    },
     "N6_weak_complete_child_candidate": {
       "FULL_BHSM_COMPLETE": false,
       "child_state": {
@@ -5991,7 +6245,182 @@
       },
       "validation_passed": true
     },
-    "active_dependency": "PROVE_COLLECTIVE_COMPACT_CONVERGENCE_OF_THE_LOWER_ORDER_GAUGE_FIXED_WEAK_JACOBI_CALDERON_OPERATORS_AND_A_UNIFORM_SPECTRAL_GAP_ON_THE_NORMAL_COMPLEMENT_OF_THE_CHILD_MANIFOLD",
+    "active_dependency": "CERTIFY_ONE_FINITE_N6_TO_M0_MIXED_GAUGE_REDUCED_EVENT_CHILD_NORMAL_SCHUR_BRIDGE,_INCLUDING_THE_EXISTING_SOFT_MOMENTUM_LYAPUNOV_SCHMIDT_DENOMINATOR_OR_SOURCE_COMPATIBILITY_ALONG_THE_TAIL_HOMOTOPY,_AND_ITS_ACTION_NORM_RADII_POLYNOMIAL_INCLUDING_THE_EXISTING_ACTION_QUADRATURE_CONSISTENCY_DEFECT;_THE_M_GREATER_THAN_M0_INVERSE_SQUARE_TAIL_THEN_CLOSES_ANALYTICALLY",
+    "actual_child_S2_compactness_audit": {
+      "FULL_BHSM_COMPLETE": false,
+      "N4_to_N6_norm_spread_ratios": {
+        "multiplier_H2_norm": 1.069056604093126,
+        "q_H2_norm": 1.090865995752644,
+        "velocity_H1_norm": 1.252299541566077
+      },
+      "S2_space": "H2_q_CROSS_H1_velocity_CROSS_H2_lapse_shift",
+      "classification": "THE_ACTUAL_COMPLETE_PERSISTENT_N4_N5_N6_CHILDREN_OCCUPY_A_COMMON_FINITE_S2_BAND_AND_THE_RESTRICTED_N5_TO_N6_S2_DIFFERENCE_IS_RESOLVED;_THIS_IS_COMPACTNESS_EVIDENCE_NOT_AN_N_UNIFORM_A_PRIORI_BOUND",
+      "comparisons": [
+        {
+          "pair": "N3_to_N4",
+          "restricted_relative_differences": {
+            "multiplier_H2": 1.012273063054703,
+            "q_H2": 1.138357240984889,
+            "velocity_H1": 0.783528867536618
+          }
+        },
+        {
+          "pair": "N4_to_N5",
+          "restricted_relative_differences": {
+            "multiplier_H2": 0.297965487678886,
+            "q_H2": 0.2641038074152,
+            "velocity_H1": 0.551014255517553
+          }
+        },
+        {
+          "pair": "N5_to_N6",
+          "restricted_relative_differences": {
+            "multiplier_H2": 0.007928688443983,
+            "q_H2": 0.150012342266124,
+            "velocity_H1": 0.053882391389545
+          }
+        }
+      ],
+      "exact_next_mathematical_lemma": "PROVE_THE_GAUGE_FIXED_H2_q_H2_m_SPATIAL_GARDING_ESTIMATE_AND_THE_N_UNIFORM_H1_v_PROPAGATION_ESTIMATE_ON_THE_EXISTING_POSITIVE_DURATION_CORRECTED_CHILD_HISTORIES",
+      "new_physics_equations_constraints_regularizers_objectives_or_gates": false,
+      "rows": [
+        {
+          "N": 3,
+          "complete_persistent_child_validated": true,
+          "multiplier_H2_norm": 139.01837655290046,
+          "q_H2_norm": 10.718846230129122,
+          "velocity_H1_norm": 37.223377729789625
+        },
+        {
+          "N": 4,
+          "complete_persistent_child_validated": true,
+          "multiplier_H2_norm": 32.622305903394576,
+          "q_H2_norm": 2.912783248685366,
+          "velocity_H1_norm": 14.798828618796493
+        },
+        {
+          "N": 5,
+          "complete_persistent_child_validated": true,
+          "multiplier_H2_norm": 30.51504081120931,
+          "q_H2_norm": 3.169419608010022,
+          "velocity_H1_norm": 18.530761934648353
+        },
+        {
+          "N": 6,
+          "complete_persistent_child_validated": true,
+          "multiplier_H2_norm": 30.53626755535393,
+          "q_H2_norm": 3.177456198988783,
+          "velocity_H1_norm": 18.532566295033785
+        }
+      ],
+      "theorem_gap": {
+        "coupled_spatial_dynamic_S2_estimate_proved": false,
+        "dynamic_velocity_estimate": "sup_0<=t<=T_norm(v(t))_H1<=C_T*(norm(v(0))_H1+integral_0^T_norm(D_t_v)_H1_dt)_FROM_THE_EXISTING_POSITIVE_DURATION_EULER_DIRAC_EVOLUTION",
+        "first_uncontrolled_term": "N_UNIFORM_H1_VELOCITY_PROPAGATION_ON_THE_ACTUAL_POSITIVE_DURATION_CORRECTED_CHILD_HISTORIES",
+        "full_static_S2_estimate_from_snapshot_rows_is_valid": false,
+        "genuine_uniform_failure_demonstrated": false,
+        "spatial_principal_owner": "THE_EXISTING_INVERTIBLE_GAUGE_FIXED_RADIAL_PRINCIPAL_MATRIX_WITH_GAP_sqrt(29)-5",
+        "static_spatial_estimate": "norm(q)_H2+norm(m)_H2<=C(eta0^-1,norm(U)_X_E)*(norm(E_U)_X_E_star+norm(Gamma_U)_boundary+norm(U)_X_E)_ON_THE_EXISTING_GAUGE_FIXED_CHILD_CHART",
+        "velocity_derivative_fact": "THE_RETAINED_ACTION_DEPENDS_ON_v_BUT_NOT_D_chi_v,_SO_THE_STATIC_CHILD_ROWS_DO_NOT_ELLIPTICALLY_CONTROL_norm(v)_H1"
+      },
+      "validation": {
+        "N3_not_invalidated_by_its_larger_S2_norm": true,
+        "N4_through_N6_S2_norms_remain_in_one_finite_band": true,
+        "N5_to_N6_restricted_S2_differences_are_resolved": true,
+        "all_N3_through_N6_children_are_complete_and_persistent": true,
+        "four_finite_children_not_promoted_as_a_uniform_general_N_bound": true,
+        "no_new_equation_constraint_regularizer_objective_or_gate": true
+      },
+      "validation_passed": true
+    },
+    "actual_corrected_event_child_soft_evans_audit": {
+      "FULL_BHSM_COMPLETE": false,
+      "classification": "THE_ACTUAL_CORRECTED_N3_N4_N5_N6_EVENT_CHILD_WEAK_CALDERON_PAIRS_ARE_EACH_FINITE_DIMENSIONALLY_TRANSVERSE,_BUT_THEIR_POLE_SAFE_SOFT_EVANS_FACTORS_DO_NOT_YET_DEFINE_A_RESOLVED_COHERENT_CONTINUUM_SEQUENCE;_NEITHER_A_UNIFORM_GAP_NOR_A_GENUINE_NORMAL_KERNEL_IS_ESTABLISHED",
+      "classification_policy": {
+        "category_3_still_requires": "A_COHERENT_ACTION_NORMALIZED_ACTUAL_ROOT_SEQUENCE_WITH_A_NONZERO_NON_TANGENT_MATCHED_JACOBI_HISTORY_OR_NORMALIZED_L2_HISTORY_COLLAPSE",
+        "current_soft_channel_category": "NORMAL_DIRECTION_CONTROLLED_BY_THE_EXISTING_POSITIVE_DURATION_GAUGE_FIXED_JACOBI_EVOLUTION",
+        "genuine_uniform_normal_failure_demonstrated": false,
+        "legitimate_tangent_identified": false
+      },
+      "exact_next_mathematical_lemma": "DERIVE_THE_ACTION_OWNED_NESTED_GALERKIN_NORMAL_SECTION_CORRESPONDENCE_FOR_THE_ACTUAL_CORRECTED_EVENT_CHILD_ROOT_RELATION_AND_PROVE_S2_ETA_GRAPH_COMPACTNESS;_THEN_EVALUATE_THE_LIMIT_SOFT_EVANS_FACTOR_OR_LIFT_ITS_ZERO_TO_THE_NON_TANGENT_POSITIVE_DURATION_JACOBI_HISTORY",
+      "new_physics_equations_constraints_regularizers_objectives_or_gates": false,
+      "rows": [
+        {
+          "N": 3,
+          "absolute_pole_safe_Evans_wedge": 0.032133836345732,
+          "attachment_configuration_jump_norm": 0.0,
+          "complete_persistent_child_validated": true,
+          "hard_principal_angle_sine": 0.226233091886355,
+          "minimum_event_child_eta_Legendre": 0.997096218044383,
+          "minimum_graph_symbol_singular_value": 0.100692022396031,
+          "soft_principal_angle_sine": 0.142038620777343,
+          "total_response_singular_values": [
+            1884.8360717844255,
+            0.23978095613515
+          ]
+        },
+        {
+          "N": 4,
+          "absolute_pole_safe_Evans_wedge": 3.868851624e-06,
+          "attachment_configuration_jump_norm": 0.0,
+          "complete_persistent_child_validated": true,
+          "hard_principal_angle_sine": 0.003229420177296,
+          "minimum_event_child_eta_Legendre": 1.001592506859126,
+          "minimum_graph_symbol_singular_value": 0.000847115444681,
+          "soft_principal_angle_sine": 0.00119800193579,
+          "total_response_singular_values": [
+            35307.49924435189,
+            0.002254010519852
+          ]
+        },
+        {
+          "N": 5,
+          "absolute_pole_safe_Evans_wedge": 0.000142787607214,
+          "attachment_configuration_jump_norm": 2e-15,
+          "complete_persistent_child_validated": true,
+          "hard_principal_angle_sine": 0.442381558591457,
+          "minimum_event_child_eta_Legendre": 0.990328482311431,
+          "minimum_graph_symbol_singular_value": 0.000228233037893,
+          "soft_principal_angle_sine": 0.000322770252151,
+          "total_response_singular_values": [
+            12.994981127071512,
+            0.000322927245601
+          ]
+        },
+        {
+          "N": 6,
+          "absolute_pole_safe_Evans_wedge": 0.000978947305818,
+          "attachment_configuration_jump_norm": 0.0,
+          "complete_persistent_child_validated": true,
+          "hard_principal_angle_sine": 0.033921081638827,
+          "minimum_event_child_eta_Legendre": 0.984285375657069,
+          "minimum_graph_symbol_singular_value": 0.020408912031079,
+          "soft_principal_angle_sine": 0.028859554546098,
+          "total_response_singular_values": [
+            1991.9650742235128,
+            0.049896628256761
+          ]
+        }
+      ],
+      "sequence_diagnostic": {
+        "Evans_wedge_maximum_to_minimum_ratio": 8305.781526331219,
+        "fixed_injected_background_substituted_for_actual_roots": false,
+        "four_independent_resolutions_prove_a_unique_limit": false,
+        "soft_factor_maximum_to_minimum_ratio": 440.06106458265765,
+        "soft_factor_monotone_in_N": false
+      },
+      "source": "EXACT_ATTACHMENT_WEAK_CONORMAL_COMPLETE_PERSISTENT_N3_N4_N5_N6_CHILDREN_WITH_THEIR_OWN_ACCEPTED_EVENTS",
+      "validation": {
+        "actual_N3_N4_N5_N6_corrected_persistent_children_used": true,
+        "all_actual_event_child_attachment_matches_replay": true,
+        "all_actual_pairs_are_eta_admissible": true,
+        "all_finite_actual_pair_graph_symbols_are_full_rank": true,
+        "finite_pair_transversality_not_promoted_to_a_uniform_limit": true,
+        "lack_of_a_resolved_sequence_not_promoted_to_category_3": true,
+        "no_new_equation_constraint_regularizer_objective_or_gate": true
+      },
+      "validation_passed": true
+    },
     "boundary_compatible_gauge_quotient_audit": {
       "FULL_BHSM_COMPLETE": false,
       "boundary_compatibility": {
@@ -6207,6 +6636,379 @@
       },
       "validation_passed": true,
       "why_not": "THE_PRINCIPAL_NULL_INTERSECTION_AND_FINITE_N_IMPROVEMENT_DO_NOT_BY_THEMSELVES_DERIVE_THE_GLOBAL_FADDEEV_POPOV_MAP_OR_A_POSITIVE_DURATION_SPACETIME_JACOBI_ENERGY_ESTIMATE"
+    },
+    "boundary_jerk_weak_graph_domain_audit": {
+      "FULL_BHSM_COMPLETE": false,
+      "N6_to_N10_classical_norm_growth": {
+        "child": {
+          "multiplier_H6_norm": 11.834965052816528,
+          "q_H6_norm": 1.0,
+          "velocity_H5_norm": 10.728261929384562
+        },
+        "event": {
+          "multiplier_H6_norm": 17.183228567638725,
+          "q_H6_norm": 1.0,
+          "velocity_H5_norm": 11.563163161367887
+        }
+      },
+      "N6_to_N10_weak_graph_norm_growth": {
+        "child": {
+          "multiplier_H1_norm": 0.935394693285577,
+          "q_H1_norm": 1.0,
+          "velocity_L2_norm": 1.061327877947197
+        },
+        "event": {
+          "multiplier_H1_norm": 0.967616626202046,
+          "q_H1_norm": 1.0,
+          "velocity_L2_norm": 1.053016200771533
+        }
+      },
+      "classification": "THE_CURRENT_SEQUENTIAL_EVENT_CHILD_PROJECTIONS_ARE_ETA_ADMISSIBLE_AND_BOUNDED_IN_THE_ACTION_ENERGY_GRAPH_NORM_BUT_NOT_PRECOMPACT_IN_THE_CLASSICAL_H6xH5xH6_NORM;_A_UNIFORM_CLASSICAL_NORM_MAY_NOT_BE_IMPOSED_AS_THE_SOFT_HISTORY_OBSERVABILITY_CRITERION",
+      "exact_next_mathematical_lemma": "DERIVE_THE_SOFT_BOUNDARY_JERK_BOUND_FROM_THE_WEAK_EULER_DIRAC_GRAPH_NORM_AND_THE_FINITE_DIMENSIONAL_CALDERON_BOUNDARY_EVOLUTION_WITHOUT_REQUIRING_UNIFORM_GLOBAL_H6",
+      "genuine_uniform_closed_range_failure_demonstrated": false,
+      "new_physics_equations_constraints_regularizers_objectives_or_gates": false,
+      "reclassification": {
+        "boundary_jerk_must_be_controlled_by": "THE_FINITE_DIMENSIONAL_BOUNDARY_CALDERON_EVOLUTION_AND_WEAK_HISTORY_ENERGY_ESTIMATE,_NOT_A_GLOBAL_H6_SUPREMUM",
+        "correct_history_domain": "WEAK_EULER_DIRAC_GRAPH_DOMAIN_H1_q_CROSS_L2_v_CROSS_H1_lapse_shift_WITH_BOUNDARY_HISTORY_IN_TSTAR_R2",
+        "uniform_H6_bundle_bound_is_an_existing_BHSM_gate": false,
+        "uniform_H6_bundle_bound_is_currently_proved": false
+      },
+      "rows": [
+        {
+          "N": 6,
+          "child": {
+            "eta_Legendre_minimum": 0.996784766150211,
+            "maximum_constraint_residual": 5.9229e-11,
+            "multiplier_H1_norm": 4.128692373602976,
+            "multiplier_H6_norm": 596926.590927692,
+            "q_H1_norm": 0.779860851661209,
+            "q_H6_norm": 1615.0058629196812,
+            "velocity_H5_norm": 637334.1065248162,
+            "velocity_L2_norm": 5.970873111068436
+          },
+          "event": {
+            "eta_Legendre_minimum": 0.984285375657069,
+            "maximum_constraint_residual": 2.4e-14,
+            "multiplier_H1_norm": 4.824351901732141,
+            "multiplier_H6_norm": 375026.75043070974,
+            "q_H1_norm": 0.003457858371164,
+            "q_H6_norm": 77.12014001387243,
+            "velocity_H5_norm": 447091.4630743427,
+            "velocity_L2_norm": 5.130696779462909
+          }
+        },
+        {
+          "N": 7,
+          "child": {
+            "eta_Legendre_minimum": 0.973922600085242,
+            "maximum_constraint_residual": 8.8e-14,
+            "multiplier_H1_norm": 3.956562650126024,
+            "multiplier_H6_norm": 1771147.2399215722,
+            "q_H1_norm": 0.779860851661209,
+            "q_H6_norm": 1615.0058629196812,
+            "velocity_H5_norm": 1820758.3529511509,
+            "velocity_L2_norm": 6.197528479932211
+          },
+          "event": {
+            "eta_Legendre_minimum": 0.883358920420822,
+            "maximum_constraint_residual": 6.9e-14,
+            "multiplier_H1_norm": 4.715126775273066,
+            "multiplier_H6_norm": 1352929.0081255685,
+            "q_H1_norm": 0.003457858371164,
+            "q_H6_norm": 77.12014001387243,
+            "velocity_H5_norm": 1700863.1082978263,
+            "velocity_L2_norm": 5.281608126134235
+          }
+        },
+        {
+          "N": 8,
+          "child": {
+            "eta_Legendre_minimum": 0.973573941746274,
+            "maximum_constraint_residual": 4.73e-13,
+            "multiplier_H1_norm": 3.95749045045214,
+            "multiplier_H6_norm": 1771702.4934350913,
+            "q_H1_norm": 0.779860851661209,
+            "q_H6_norm": 1615.0058629196812,
+            "velocity_H5_norm": 1799162.1825014625,
+            "velocity_L2_norm": 6.199660540746804
+          },
+          "event": {
+            "eta_Legendre_minimum": 0.855566002044938,
+            "maximum_constraint_residual": 1.5e-14,
+            "multiplier_H1_norm": 4.733407753434768,
+            "multiplier_H6_norm": 1517054.6786185566,
+            "q_H1_norm": 0.003457858371164,
+            "q_H6_norm": 77.12014001387243,
+            "velocity_H5_norm": 1688828.4509946015,
+            "velocity_L2_norm": 5.282945011268736
+          }
+        },
+        {
+          "N": 9,
+          "child": {
+            "eta_Legendre_minimum": 0.994374805427328,
+            "maximum_constraint_residual": 4.7e-14,
+            "multiplier_H1_norm": 3.852345656159809,
+            "multiplier_H6_norm": 6661054.464294455,
+            "q_H1_norm": 0.779860851661209,
+            "q_H6_norm": 1615.0058629196812,
+            "velocity_H5_norm": 6326783.314046188,
+            "velocity_L2_norm": 6.344981121927947
+          },
+          "event": {
+            "eta_Legendre_minimum": 0.869836212912301,
+            "maximum_constraint_residual": 1.2e-14,
+            "multiplier_H1_norm": 4.655379284289217,
+            "multiplier_H6_norm": 4814788.422348982,
+            "q_H1_norm": 0.003457858371164,
+            "q_H6_norm": 77.12014001387243,
+            "velocity_H5_norm": 4191145.0075386707,
+            "velocity_L2_norm": 5.406019812810769
+          }
+        },
+        {
+          "N": 10,
+          "child": {
+            "eta_Legendre_minimum": 0.994749148362237,
+            "maximum_constraint_residual": 1.12e-13,
+            "multiplier_H1_norm": 3.861956936476858,
+            "multiplier_H6_norm": 7064605.342726143,
+            "q_H1_norm": 0.779860851661209,
+            "q_H6_norm": 1615.0058629196812,
+            "velocity_H5_norm": 6837487.231328511,
+            "velocity_L2_norm": 6.337054088462243
+          },
+          "event": {
+            "eta_Legendre_minimum": 0.901562827395808,
+            "maximum_constraint_residual": 2.62e-13,
+            "multiplier_H1_norm": 4.668123110765478,
+            "multiplier_H6_norm": 6444170.37162969,
+            "q_H1_norm": 0.003457858371164,
+            "q_H6_norm": 77.12014001387243,
+            "velocity_H5_norm": 5169791.535583311,
+            "velocity_L2_norm": 5.402706830020774
+          }
+        }
+      ],
+      "validation": {
+        "all_constraint_projections_close": true,
+        "all_projected_states_remain_eta_admissible": true,
+        "classical_velocity_or_multiplier_norm_growth_is_order_ten": true,
+        "sequential_projection_not_promoted_as_complete_higher_N_children": true,
+        "uniform_H6_not_added_as_a_physical_or_acceptance_gate": true,
+        "weak_action_energy_norms_remain_bounded_in_the_measured_sequence": true
+      },
+      "validation_passed": true
+    },
+    "casimir_boundary_layer_parametrix_audit": {
+      "FULL_BHSM_COMPLETE": false,
+      "H_minus_1_high_constraint_tail_after_parametrix": 0.19501597387699,
+      "best_parametrix_trial": {
+        "action_H1_correction_norm": 0.355126430173814,
+        "admissible": true,
+        "eta_Legendre_minimum": 1.000021061417401,
+        "factor": 0.000244140625,
+        "normalized_boundary_constraint_maximum": 0.152455880513687,
+        "normalized_boundary_constraint_norm": 0.251417586364562
+      },
+      "classification": "Q_ONLY_HIGH_SHELL_CASIMIR_BOUNDARY_LAYER_PARAMETRIX_INVALIDATED_BY_ITS_ACTION_NORMALIZED_NEAR_KERNEL_AND_EXACT_NONLINEAR_WEAK_MERIT;_A_MIXED_GAUGE_REDUCED_EULER_DIRAC_PARAMETRIX_IS_REQUIRED",
+      "correction_by_geometry_family": {
+        "u": {
+          "H1_norm": 0.00270599638126,
+          "first_six_normalized_coefficients": [
+            -0.000131475040214,
+            -0.000444965155283,
+            -0.000104935643784,
+            0.000113985585509,
+            0.000756851739532,
+            0.00108481680167
+          ],
+          "last_six_normalized_coefficients": [
+            0.000198949278881,
+            0.000160554190301,
+            -0.000137574772701,
+            -6.9491204005e-05,
+            6.0480342059e-05,
+            4.3869705237e-05
+          ]
+        },
+        "v": {
+          "H1_norm": 0.286258862525526,
+          "first_six_normalized_coefficients": [
+            -0.00218657002412,
+            -0.004745994269427,
+            -0.003827596642773,
+            -0.013030820696009,
+            -0.025862949242891,
+            -0.014966164118623
+          ],
+          "last_six_normalized_coefficients": [
+            -0.050554131209539,
+            -0.03854273095095,
+            0.013776830416737,
+            0.005280971294208,
+            -0.016804731136585,
+            -0.0081255653624
+          ]
+        },
+        "w": {
+          "H1_norm": 0.210150714053446,
+          "first_six_normalized_coefficients": [
+            0.000149350902926,
+            0.004631720743457,
+            -0.013597824382588,
+            -0.04205576248357,
+            -0.01261682112212,
+            -0.038570690976969
+          ],
+          "last_six_normalized_coefficients": [
+            -0.005776476803543,
+            -0.041148269083027,
+            0.019689453913302,
+            -9.1135136367e-05,
+            -0.023975330299995,
+            -0.029942803068005
+          ]
+        }
+      },
+      "first_missing_mathematical_object": "DERIVE_THE_MIXED_BOUNDARY_COMPATIBLE_GAUGE_REDUCED_EULER_DIRAC_CASIMIR_BOUNDARY_LAYER_PARAMETRIX_USING_THE_RETAINED_q_v_m_ACTION_BLOCKS_AND_WEAK_CONORMAL_RELATION",
+      "infinitesimal_q_only_descent_ruled_out": false,
+      "initial": {
+        "H_minus_1_high_constraint_tail": 0.195865057689985,
+        "normalized_boundary_constraint_norm": 0.1958651172478
+      },
+      "is_a_higher_N_complete_child_root": false,
+      "is_a_new_boundary_condition": false,
+      "line_trials": [
+        {
+          "action_H1_correction_norm": 1454.5978579919426,
+          "admissible": true,
+          "eta_Legendre_minimum": 0.78903825719789,
+          "factor": 1.0,
+          "normalized_boundary_constraint_maximum": 1.8446541247030274e+47,
+          "normalized_boundary_constraint_norm": 1.905038750467e+47
+        },
+        {
+          "action_H1_correction_norm": 727.2989289959713,
+          "admissible": true,
+          "eta_Legendre_minimum": 0.959419545943359,
+          "factor": 0.5,
+          "normalized_boundary_constraint_maximum": 2.942932064201251e+21,
+          "normalized_boundary_constraint_norm": 3.0392637523978963e+21
+        },
+        {
+          "action_H1_correction_norm": 363.64946449798566,
+          "admissible": true,
+          "eta_Legendre_minimum": 0.993756016359336,
+          "factor": 0.25,
+          "normalized_boundary_constraint_maximum": 452713409.57457286,
+          "normalized_boundary_constraint_norm": 466983036.55617505
+        },
+        {
+          "action_H1_correction_norm": 181.82473224899283,
+          "admissible": true,
+          "eta_Legendre_minimum": 0.999168883999672,
+          "factor": 0.125,
+          "normalized_boundary_constraint_maximum": 41612.64925153564,
+          "normalized_boundary_constraint_norm": 42735.60497471042
+        },
+        {
+          "action_H1_correction_norm": 90.91236612449642,
+          "admissible": true,
+          "eta_Legendre_minimum": 0.999907419315885,
+          "factor": 0.0625,
+          "normalized_boundary_constraint_maximum": 9648.605261261826,
+          "normalized_boundary_constraint_norm": 9990.284932503362
+        },
+        {
+          "action_H1_correction_norm": 45.45618306224821,
+          "admissible": true,
+          "eta_Legendre_minimum": 0.999994407592931,
+          "factor": 0.03125,
+          "normalized_boundary_constraint_maximum": 2424.1299034528633,
+          "normalized_boundary_constraint_norm": 2516.8942915397406
+        },
+        {
+          "action_H1_correction_norm": 22.728091531124104,
+          "admissible": true,
+          "eta_Legendre_minimum": 1.000000001412194,
+          "factor": 0.015625,
+          "normalized_boundary_constraint_maximum": 613.5936240591807,
+          "normalized_boundary_constraint_norm": 637.9083590303342
+        },
+        {
+          "action_H1_correction_norm": 11.364045765562052,
+          "admissible": true,
+          "eta_Legendre_minimum": 1.000004034774956,
+          "factor": 0.0078125,
+          "normalized_boundary_constraint_maximum": 154.72693999051546,
+          "normalized_boundary_constraint_norm": 160.9598234583506
+        },
+        {
+          "action_H1_correction_norm": 5.682022882781026,
+          "admissible": true,
+          "eta_Legendre_minimum": 1.000014161122321,
+          "factor": 0.00390625,
+          "normalized_boundary_constraint_maximum": 38.87208511044397,
+          "normalized_boundary_constraint_norm": 40.45028827230002
+        },
+        {
+          "action_H1_correction_norm": 2.841011441390513,
+          "admissible": true,
+          "eta_Legendre_minimum": 1.000019403250225,
+          "factor": 0.001953125,
+          "normalized_boundary_constraint_maximum": 9.743260785081254,
+          "normalized_boundary_constraint_norm": 10.141423631260855
+        },
+        {
+          "action_H1_correction_norm": 1.420505720695256,
+          "admissible": true,
+          "eta_Legendre_minimum": 1.000020723396489,
+          "factor": 0.0009765625,
+          "normalized_boundary_constraint_maximum": 2.438972129766538,
+          "normalized_boundary_constraint_norm": 2.545150710494108
+        },
+        {
+          "action_H1_correction_norm": 0.710252860347628,
+          "admissible": true,
+          "eta_Legendre_minimum": 1.000021005158759,
+          "factor": 0.00048828125,
+          "normalized_boundary_constraint_maximum": 0.610048811844188,
+          "normalized_boundary_constraint_norm": 0.663534872585249
+        },
+        {
+          "action_H1_correction_norm": 0.355126430173814,
+          "admissible": true,
+          "eta_Legendre_minimum": 1.000021061417401,
+          "factor": 0.000244140625,
+          "normalized_boundary_constraint_maximum": 0.152455880513687,
+          "normalized_boundary_constraint_norm": 0.251417586364562
+        }
+      ],
+      "map": {
+        "Jacobian_rank": 101,
+        "high_geometry_unknowns": 126,
+        "physical_equations_changed": false,
+        "rows": 101,
+        "smallest_nonzero_singular_value": 2.153e-12
+      },
+      "maximum_order": 48,
+      "new_equations_constraints_or_acceptance_gates": false,
+      "q_only_finite_boundary_layer_lift_promoted": false,
+      "quadrature_points": 256,
+      "source": "EXACT_TOTAL_CONSTRAINT_MAP_AT_FIXED_N6_CHILD_EMBEDDED_IN_N48_WITHOUT_A_HIGHER_N_COMPLETE_CHILD_ROOT",
+      "strict_exact_merit_reduction_found": false,
+      "validation": {
+        "boundary_configuration_rows_included_unchanged": true,
+        "eta_domain_retained": true,
+        "exact_nonlinear_merit_controls_the_parametrix_verdict": true,
+        "exact_retained_constraint_derivative_used": true,
+        "failed_q_only_parametrix_not_promoted": true,
+        "finite_N6_child_and_persistence_left_unchanged": true,
+        "no_new_equation_constraint_or_acceptance_gate": true,
+        "only_preexisting_high_geometry_shell_variables_used": true
+      },
+      "validation_passed": true
     },
     "child_history_bvp_bordered_operator_audit": {
       "FULL_BHSM_COMPLETE": false,
@@ -7897,6 +8699,154 @@
       "persistence_evaluated": true,
       "persistence_validated": true
     },
+    "continuum_normal_cauchy_completeness_reduction": {
+      "FULL_BHSM_COMPLETE": false,
+      "Fredholm_status": {
+        "category_3_failure_demonstrated": false,
+        "continuum_normal_kernel": "OPEN_PENDING_BOUNDARY_SYMBOL_GAP",
+        "global_unbounded_child_manifold_claimed": false,
+        "non_tangent_minus_one_eigenstate_excluded": false,
+        "soft_channel_classification": "NORMAL_DIRECTION_CONTROLLED_BY_THE_EXISTING_POSITIVE_DURATION_GAUGE_FIXED_JACOBI_EVOLUTION",
+        "uniform_normal_closed_range_on_each_S2_eta_precompact_bundle": false
+      },
+      "boundary_Cauchy_vector": {
+        "constraint_rows_role": "RECONSTRUCT_THE_LAPSE_SHIFT_NORMAL_COMPONENTS_AND_REMOVE_THE_CONSTRAINT_ANNIHILATOR",
+        "dimension": 7,
+        "dimension_match_alone_proves_isomorphism": false,
+        "existing_rows": [
+          "ATTACHMENT_TRACE_3",
+          "CANONICAL_MOMENTUM_2",
+          "WEAK_DYNAMIC_REACTION_2"
+        ],
+        "gauge_role": "THE_EXISTING_BOUNDARY_COMPATIBLE_TIME_RADIAL_GAUGE_QUOTIENT_REMOVES_w_SHIFT_PRINCIPAL_NULL_DIRECTIONS",
+        "new_Cauchy_datum_added": false
+      },
+      "boundary_symbol_gap": {
+        "already_closed_blocks": [
+          "TRACE3_UNIFORM_RIGHT_LIFT",
+          "GAUGE_FIXED_RADIAL_PRINCIPAL_MATRIX_DETERMINANT_8",
+          "WEAK_REACTION_LIFT_INDEPENDENCE",
+          "FINITE_N_HARD_AND_SOFT_MOMENTUM_RESPONSES_NONZERO"
+        ],
+        "general_N_symbol_gap_proved": false,
+        "missing_block": "EXPLICIT_ACTION_DERIVED_COUPLING_OF_MOMENTUM2_AND_REACTION2_TO_THE_REMAINING_FOUR_NORMAL_CAUCHY_COMPONENTS_AFTER_CONSTRAINT_RECONSTRUCTION",
+        "required_estimate": "inf_OVER_THE_S2_eta_BUNDLE_sigma_min(B_Cauchy(U))>0",
+        "required_map": "B_Cauchy(U):(W_normal_at_attachment)_R7_TO_(TRACE3,MOMENTUM2,REACTION2)_R7"
+      },
+      "classification": "CONTINUUM_NORMAL_CAUCHY_COMPLETENESS_REDUCES_TO_PROVING_THAT_THE_EXISTING_THREE_TRACE_TWO_MOMENTUM_AND_TWO_WEAK_REACTION_ROWS_DEFINE_AN_ISOMORPHISM_ON_THE_SEVEN_COMPONENT_RADIAL_NORMAL_CAUCHY_SYMBOL;_DIMENSION_MATCHING_AND_FINITE_N_RANK_DO_NOT_YET_PROVE_THIS_GENERAL_N_BOUNDARY_SYMBOL_GAP",
+      "exact_next_mathematical_lemma": "DERIVE_THE_EXPLICIT_ACTION_OWNED_SEVEN_BY_SEVEN_NORMAL_BOUNDARY_CAUCHY_SYMBOL_MAPPING_(TRACE3,MOMENTUM2,REACTION2)_TO_THE_CONSTRAINT_RECONSTRUCTED_RADIAL_CAUCHY_VECTOR_AND_PROVE_OR_FAIL_ITS_S2_ETA_UNIFORM_MINIMUM_SINGULAR_VALUE",
+      "new_physics_equations_constraints_regularizers_objectives_or_gates": false,
+      "positive_duration_consequence_if_boundary_symbol_closes": {
+        "conclusion": "E_g(0)=0_IMPLIES_E_g(t)=0_ON_THE_EXISTING_POSITIVE_DURATION,_SO_THE_CONTINUUM_NON_TANGENT_NORMAL_KERNEL_IS_TRIVIAL",
+        "energy_bound": "D_t_E_g<=C_U(t)*E_g",
+        "zero_initial_gauge_fixed_energy": true,
+        "zero_radial_normal_field_at_initial_time": true
+      },
+      "radial_uniqueness_reduction": {
+        "Gronwall_in_chi": "norm(W_normal(chi,t))<=norm(W_normal(pi/4,t))*exp(integral_chi^(pi/4)norm(A_U))=0",
+        "boundary_value": "IF_THE_SEVEN_ROW_BOUNDARY_SYMBOL_IS_INVERTIBLE,_VANISHING_EXISTING_ROWS_GIVE_W_normal(pi/4,t)=0",
+        "coefficient_regulariry": "U_IN_S2_AND_eta>=eta0_MAKE_A_U_IN_L1_chi_UNIFORMLY_ON_EACH_PRECOMPACT_NORMAL_BUNDLE",
+        "determinant": 8.0,
+        "first_order_reduction": "D_chi_W_normal=A_U(chi,t)*W_normal_ON_0<chi<=pi/4",
+        "physical_principal_matrix": [
+          [
+            10.0,
+            0.0,
+            2.0
+          ],
+          [
+            0.0,
+            -2.0,
+            0.0
+          ],
+          [
+            2.0,
+            0.0,
+            0.0
+          ]
+        ],
+        "regular_pole": "THE_EXISTING_POLE_DOMAIN_IS_SATISFIED_AUTOMATICALLY_BY_THE_ZERO_RADIAL_SOLUTION",
+        "seven_row_boundary_symbol_invertibility_proved": false,
+        "weighted_absolute_gap": 0.385164807134504
+      },
+      "validation": {
+        "attachment_trace_has_a_uniform_right_lift": true,
+        "canonical_weighted_principal_matrix_is_invertible": true,
+        "no_new_boundary_row_equation_constraint_or_gate": true,
+        "normal_boundary_quotient_dimension_is_seven": true,
+        "physical_child_tangent_and_gauge_directions_are_already_quotiented": true,
+        "positive_duration_energy_uniqueness_is_already_derived": true,
+        "weak_conormal_reaction_is_lift_independent": true
+      },
+      "validation_passed": true
+    },
+    "continuum_normal_cauchy_completeness_theorem": {
+      "FULL_BHSM_COMPLETE": false,
+      "Fredholm_consequence": {
+        "category_3_failure_demonstrated": false,
+        "continuum_normal_kernel": "TRIVIAL",
+        "global_unbounded_child_manifold_claimed": false,
+        "non_tangent_minus_one_eigenstate_of_the_compact_normal_operator": false,
+        "soft_channel_classification": "NORMAL_DIRECTION_CONTROLLED_BY_THE_EXISTING_POSITIVE_DURATION_GAUGE_FIXED_JACOBI_EVOLUTION",
+        "uniform_normal_closed_range_on_each_S2_eta_precompact_bundle": true
+      },
+      "boundary_Cauchy_vector": {
+        "constraint_rows_role": "RECONSTRUCT_THE_LAPSE_SHIFT_NORMAL_COMPONENTS_AND_REMOVE_THE_CONSTRAINT_ANNIHILATOR",
+        "dimension": 7,
+        "existing_rows": [
+          "ATTACHMENT_TRACE_3",
+          "CANONICAL_MOMENTUM_2",
+          "WEAK_DYNAMIC_REACTION_2"
+        ],
+        "gauge_role": "THE_EXISTING_BOUNDARY_COMPATIBLE_TIME_RADIAL_GAUGE_QUOTIENT_REMOVES_w_SHIFT_PRINCIPAL_NULL_DIRECTIONS",
+        "new_Cauchy_datum_added": false
+      },
+      "classification": "ON_THE_EXISTING_S2_ETA_INTERIOR_GAUGE_FIXED_NORMAL_BUNDLE,_THE_THREE_TRACE_TWO_MOMENTUM_AND_TWO_WEAK_DYNAMIC_REACTION_ROWS_FORM_THE_COMPLETE_SEVEN_COMPONENT_RADIAL_NORMAL_CAUCHY_VECTOR;_ZERO_EXISTING_HISTORY_DATA_FORCE_THE_CONTINUUM_NORMAL_JACOBI_FIELD_AND_ITS_INITIAL_ENERGY_TO_VANISH",
+      "exact_next_mathematical_lemma": "TRANSFER_THE_PROVED_PRECOMPACT_BUNDLE_NORMAL_CLOSED_RANGE_BOUND_TO_THE_ACTUAL_GENERAL_N_LOCAL_NORMAL_SECTIONS_USING_THE_EXISTING_GALERKIN_DEFECT_AND_ETA_MARGIN_ESTIMATES",
+      "new_physics_equations_constraints_regularizers_objectives_or_gates": false,
+      "positive_duration_consequence": {
+        "conclusion": "E_g(0)=0_IMPLIES_E_g(t)=0_ON_THE_EXISTING_POSITIVE_DURATION,_SO_THE_CONTINUUM_NON_TANGENT_NORMAL_KERNEL_IS_TRIVIAL",
+        "energy_bound": "D_t_E_g<=C_U(t)*E_g",
+        "zero_initial_gauge_fixed_energy": true,
+        "zero_radial_normal_field_at_initial_time": true
+      },
+      "radial_uniqueness_proof": {
+        "Gronwall_in_chi": "norm(W_normal(chi,t))<=norm(W_normal(pi/4,t))*exp(integral_chi^(pi/4)norm(A_U))=0",
+        "boundary_value": "VANISHING_EXISTING_TRACE_MOMENTUM_REACTION_ROWS_GIVE_W_normal(pi/4,t)=0",
+        "coefficient_regulariry": "U_IN_S2_AND_eta>=eta0_MAKE_A_U_IN_L1_chi_UNIFORMLY_ON_EACH_PRECOMPACT_NORMAL_BUNDLE",
+        "determinant": 8.0,
+        "first_order_reduction": "D_chi_W_normal=A_U(chi,t)*W_normal_ON_0<chi<=pi/4",
+        "physical_principal_matrix": [
+          [
+            10.0,
+            0.0,
+            2.0
+          ],
+          [
+            0.0,
+            -2.0,
+            0.0
+          ],
+          [
+            2.0,
+            0.0,
+            0.0
+          ]
+        ],
+        "regular_pole": "THE_EXISTING_POLE_DOMAIN_IS_SATISFIED_AUTOMATICALLY_BY_THE_ZERO_RADIAL_SOLUTION",
+        "weighted_absolute_gap": 0.385164807134504
+      },
+      "validation": {
+        "attachment_trace_has_a_uniform_right_lift": true,
+        "canonical_weighted_principal_matrix_is_invertible": true,
+        "no_new_boundary_row_equation_constraint_or_gate": true,
+        "normal_boundary_quotient_dimension_is_seven": true,
+        "physical_child_tangent_and_gauge_directions_are_already_quotiented": true,
+        "positive_duration_energy_uniqueness_is_already_derived": true,
+        "weak_conormal_reaction_is_lift_independent": true
+      },
+      "validation_passed": true
+    },
     "cross_resolution_boundary_symplectic_polarization_audit": {
       "FULL_BHSM_COMPLETE": false,
       "N3_may_be_declared_underresolved_from_this_alone": false,
@@ -8402,6 +9352,42 @@
       },
       "validation_passed": true
     },
+    "downstream_after_continuum_child": [
+      "DERIVE_COMPLETE_COMPOSITE_MINUS_MATCHED_PARENT_Q_XI",
+      "CLOSE_RELATIVE_PERIODIC_PARENT_CHILD_CYCLE_AND_MONODROMY",
+      "CLOSE_ACTION_SELECTED_FAMILY_CYCLE_OWNERSHIP",
+      "EVALUATE_RELATIVE_QUASI_ENERGY_RATIOS_WITHOUT_OBSERVED_INPUTS"
+    ],
+    "event_child_calderon_angle_stability_lemma": {
+      "FULL_BHSM_COMPLETE": false,
+      "candidate_scale_tangent": {
+        "action_autonomy_makes_D_t_U_an_exact_Jacobi_tangent": true,
+        "candidate_direction": "delta_q_w=0,_delta_q_c!=0_WITH_q_scale=q_w+q_c",
+        "event_and_child_time_tangent_common_boundary_limit_proved": false,
+        "if_integrable": "LEGITIMATE_CHILD_MANIFOLD_TANGENT;_USE_THE_SECOND_CALDERON_PRINCIPAL_ANGLE_AS_THE_NORMAL_ANGLE",
+        "if_not_integrable_and_the_angle_vanishes": "GENUINE_FAILURE_OF_THE_UNIFORM_NORMAL_CLOSED_RANGE_ESTIMATE",
+        "may_be_quotiented_before_integrability_is_proved": false,
+        "scale_family_integrability_proved": false
+      },
+      "classification": "THE_COMPLETE_CHILD_NORMAL_EXACT_SEQUENCE_HAS_A_CONSTANT_SEVEN_DIMENSIONAL_BOUNDARY_QUOTIENT_FOR_ALL_N;_THE_UNIFORM_CLOSED_RANGE_PROBLEM_IS_EXACTLY_A_UNIFORM_FRIEDRICHS_ANGLE_PROBLEM_FOR_THE_MATCHED_EVENT_CHILD_CALDERON_GRAPHS",
+      "exact_next_mathematical_lemma": "PROVE_AN_N_UNIFORM_POSITIVE_LOWER_BOUND_FOR_THE_SECOND_EVENT_CHILD_CALDERON_PRINCIPAL_ANGLE_AFTER_QUOTIENTING_THE_EXISTING_WHOLE_SYSTEM_TIME_TRANSLATION_TANGENT",
+      "new_physics_equations_constraints_regularizers_objectives_or_gates": false,
+      "normal_dimension_law": {
+        "boundary_normal_quotient_dimension": 7,
+        "child_manifold_tangent_dimension": "6N-6",
+        "constraint_fiber_dimension": "6N+1",
+        "constraint_normal_dimension": "2N+1",
+        "whole_state_dimension": "8N+2"
+      },
+      "projector_stability": {
+        "conservative_bound": "gamma>=gamma_0-2*(delta_child+delta_event)",
+        "fixed_pair_reference_gap": 0.000200688538568,
+        "sufficient_total_projector_change_bound": 0.000100344269284,
+        "used_as_a_new_physical_acceptance_gate": false
+      },
+      "uniform_positive_angle_proved": false,
+      "validation_passed": true
+    },
     "event_child_two_sided_reaction_match_audit": {
       "FULL_BHSM_COMPLETE": false,
       "accepted_F_N_roots_or_persistence_changed": false,
@@ -8780,6 +9766,56 @@
           "omega_constant": 0.298847348423126
         }
       }
+    },
+    "gauge_fixed_S2_propagation_theorem": {
+      "FULL_BHSM_COMPLETE": false,
+      "action_owned_constants": {
+        "canonical_principal_absolute_gap": 0.385164807134504,
+        "measured_maximum_N3_to_N6_initial_S2_product_norm": 144.31417994612926,
+        "natural_weight": "omega=sin(chi)^3*cos(chi)^3",
+        "weight_equivalence": "(8/pi^3)*chi^3<=omega(chi)<=chi^3_ON_[0,pi/4]",
+        "weighted_Hardy_Poincare_constant": 0.298847348423126
+      },
+      "classification": "THE_EXISTING_WEIGHTED_GAUGE_FIXED_PRINCIPAL_GAP_AND_ATTACHMENT_TRACE_GIVE_A_SPATIAL_GARDING_ESTIMATE_FOR_q_AND_m;_COUPLED_WITH_THE_EXISTING_POSITIVE_DURATION_EVOLUTION_THIS_PROPAGATES_ANY_N_UNIFORM_INITIAL_S2_BOUND,_BUT_THE_GENERAL_N_INITIAL_BOUND_ITSELF_REMAINS_OPEN",
+      "exact_next_mathematical_lemma": "PROVE_AN_N_UNIFORM_INITIAL_S2_BOUND_FOR_THE_ACTUAL_CORRECTED_COMPLETE_CHILD_ROOTS_FROM_THE_EXISTING_ON_SHELL_WEAK_CALDERON_RELATION,_OR_CONSTRUCT_AN_ACTION_NORMALIZED_ROOT_SEQUENCE_WITH_DIVERGING_S2_NORM",
+      "genuine_uniform_normal_closed_range_failure_demonstrated": false,
+      "new_physics_equations_constraints_regularizers_objectives_or_gates": false,
+      "positive_duration_velocity_propagation": {
+        "Gronwall_bound": "E_S2(t)<=exp(C*t)*(E_S2(0)+C*t)_ON_0<=t<=T0",
+        "common_duration": "T0=T0(K_E,eta0,E_S2(0))>0",
+        "differentiated_energy": "D_t_E_S2<=C(K_E,eta0)*(1+E_S2),_E_S2=norm(q,m)_H2_omega^2+norm(v)_H1_omega^2",
+        "existing_evolution": "D_t_q=v,_D_t_v=a_action(U)",
+        "new_persistence_gate": false,
+        "requires_nonzero_motion_to_vanish": false
+      },
+      "proved_implication": {
+        "if": "sup_N_E_S2,N(0)<=K2_AND_inf_N_eta_N(0)>=eta0>0_ON_THE_ACTUAL_CORRECTED_CHILD_ROOTS",
+        "initial_N_uniform_bound_proved_from_N3_to_N6": false,
+        "then": "sup_N_sup_0<=t<=T0_E_S2,N(t)<=K2_prime_AND_THE_BACKGROUND_JACOBI_FORMS_HAVE_THE_PREVIOUSLY_PROVED_MOSCO_STRONG_RESOLVENT_COMPACTNESS"
+      },
+      "spatial_Garding_estimate": {
+        "gauge_slice": "delta_w=0_AND_delta_beta=0",
+        "lower_order_Garding_form": "norm(delta_q,delta_m)_H1_omega<=C(K_E,eta0)*(norm(J_U*deltaU)_Hminus1_omega+norm(deltaU)_X_E+norm(Gamma0*deltaq))",
+        "nonlinear_spatial_bootstrap": "norm(q,m)_H2_omega<=C(K_E,eta0)*(1+norm(v)_H1^2+norm(E_U)_L2_omega+norm(Gamma_U)_boundary)",
+        "principal_estimate": "gap*norm(D_chi(delta_q,delta_m))_omega<=C_kappa*norm(J_principal*deltaU)_omega_star",
+        "trace_conditions": "THE_EXISTING_THREE_ATTACHMENT_ROWS_FIX_delta_v(L),_delta_w(L),_delta(scale+u)(L)",
+        "velocity_H1_controlled_by_this_static_estimate": false
+      },
+      "uniform_coefficient_ball": {
+        "derived_pointwise_control": "H1_q_AND_H1_m_EMBED_IN_L_infinity_ON_[0,pi/4],_SO_R,N,exp(5u-w),eta_inverse_AND_THE_PRINCIPAL_WEIGHT_kappa_HAVE_K_E_eta0_OWNED_UPPER_AND_LOWER_BOUNDS",
+        "hypothesis": "norm(U)_X_E<=K_E_AND_eta(U)>=eta0>0",
+        "new_acceptance_gate": false
+      },
+      "validation": {
+        "actual_N3_through_N6_initial_S2_norms_are_finite": true,
+        "attachment_trace_fixes_the_three_principal_geometry_traces": true,
+        "general_N_initial_S2_bound_not_assumed_from_finite_data": true,
+        "no_new_equation_constraint_regularizer_objective_or_gate": true,
+        "static_rows_not_used_to_control_D_chi_velocity": true,
+        "weighted_Hardy_Poincare_constant_is_positive": true,
+        "weighted_principal_matrix_has_positive_absolute_gap": true
+      },
+      "validation_passed": true
     },
     "general_N_complete_child_reconstruction_and_convergence_statement": {
       "FULL_BHSM_COMPLETE": false,
@@ -9234,6 +10270,501 @@
           "whole_child_variables": 42
         }
       ]
+    },
+    "injected_matched_background_calderon_graph_audit": {
+      "FULL_BHSM_COMPLETE": false,
+      "analytic_operator_theorem": {
+        "boundary": "THE_EXACT_ATTACHMENT_TRACE_HAS_A_UNIFORM_H1_RIGHT_LIFT_AND_THE_WEAK_CONORMAL_GREEN_RELATION_IS_LIFT_INDEPENDENT",
+        "coefficient_regularity": "THE_INJECTED_FINITE_TRIGONOMETRIC_BACKGROUND_AND_EXPONENTIAL_ACTION_COEFFICIENTS_ARE_ANALYTIC_ON_THE_POSITIVE_ETA_COMPACT_CHART",
+        "conclusion": "NESTED_GALERKIN_RESOLVENTS_CONVERGE_COLLECTIVELY_COMPACTLY_AND_THE_SET_VALUED_CALDERON_RELATIONS_CONVERGE_IN_THE_GRAPH_GAP_TOPOLOGY_ON_THIS_FIXED_BACKGROUND;_DtN_POLES_DO_NOT_BREAK_GRAPH_CONVERGENCE",
+        "lower_order_part": "ON_THE_COMPACT_ONE_DIMENSIONAL_RADIAL_DOMAIN,_H1_EMBEDS_COMPACTLY_IN_L2,_SO_SMOOTH_LOWER_ORDER_MULTIPLICATION_AND_FIRST_ORDER_TERMS_ARE_PRINCIPAL_RELATIVELY_COMPACT",
+        "nonlinear_root_manifold_convergence_implied": false,
+        "nonlocal_inertia_part": "THE_RETAINED_COLLECTIVE_INERTIA_SECOND_VARIATION_IS_FINITE_RANK_AND_THEREFORE_COMPACT",
+        "principal_part": "THE_BOUNDARY_COMPATIBLE_CANONICAL_NORMAL_SYMBOL_HAS_ACTION_NORMALIZED_ABSOLUTE_GAP_sqrt(29)-5"
+      },
+      "classification": "FIXED_MATCHED_BACKGROUND_ACTION_NORMALIZED_LINEAR_WEAK_CALDERON_GRAPH_GALERKIN_CONVERGENCE_DERIVED_AND_MEASURED;_NONLINEAR_COMPLETE_CHILD_ROOT_TRANSFER_REMAINS_OPEN",
+      "first_missing_mathematical_object": "DERIVE_AND_VALIDATE_AN_ACTION_NORMALIZED_A_POSTERIORI_NEWTON_KANTOROVICH_OR_RADII_POLYNOMIAL_BOUND_FOR_THE_NONLINEAR_WEAK_COMPLETE_CHILD_MAP_ON_THE_NORMAL_COMPLEMENT_OF_THE_CHILD_MANIFOLD",
+      "increase_N_nonlinear_roots_mechanically": false,
+      "late_tail": {
+        "maximum_projector_step": 0.013372080109431,
+        "minimum_projector_step": 0.000421179244681,
+        "orders": [
+          10,
+          11,
+          12,
+          13
+        ]
+      },
+      "new_equations_constraints_or_acceptance_gates": false,
+      "raw_DtN_matrices_used_as_the_convergence_object": false,
+      "rows": [
+        {
+          "N": 5,
+          "action_normalized_response_singular_values": [
+            2.642903203550108,
+            0.000515854563671
+          ],
+          "bounded_Calderon_graph_projector": [
+            [
+              0.134010264327322,
+              0.087169922904922,
+              -0.327660905816049,
+              0.033034053986754
+            ],
+            [
+              0.087169922904922,
+              0.9912252675452,
+              0.033034053986628,
+              -0.002809331433774
+            ],
+            [
+              -0.327660905816049,
+              0.033034053986628,
+              0.865989735672611,
+              -0.08716992290525
+            ],
+            [
+              0.033034053986754,
+              -0.002809331433774,
+              -0.08716992290525,
+              0.008774732454866
+            ]
+          ],
+          "projector_idempotence_error": 0.0,
+          "projector_operator_step_from_previous_N": null,
+          "projector_symmetry_error": 0.0,
+          "raw_DtN_condition_number": 5123.34946645488
+        },
+        {
+          "N": 6,
+          "action_normalized_response_singular_values": [
+            123.3254801007831,
+            0.003332936788078
+          ],
+          "bounded_Calderon_graph_projector": [
+            [
+              0.005082834365502,
+              0.070650775896602,
+              -0.008084131916417,
+              0.000337396918562
+            ],
+            [
+              0.070650775896602,
+              0.994971802757553,
+              0.000337396918558,
+              -0.003356859166571
+            ],
+            [
+              -0.008084131916417,
+              0.000337396918558,
+              0.994917165634451,
+              -0.070650775896954
+            ],
+            [
+              0.000337396918562,
+              -0.003356859166571,
+              -0.070650775896953,
+              0.005028197242496
+            ]
+          ],
+          "projector_idempotence_error": 3e-15,
+          "projector_operator_step_from_previous_N": 0.348493311566694,
+          "projector_symmetry_error": 0.0,
+          "raw_DtN_condition_number": 37002.04592596432
+        },
+        {
+          "N": 7,
+          "action_normalized_response_singular_values": [
+            756.4975023233352,
+            0.012828559394787
+          ],
+          "bounded_Calderon_graph_projector": [
+            [
+              0.003232093786521,
+              0.056739528545635,
+              0.00135904904561,
+              0.00065287241156
+            ],
+            [
+              0.056739528545635,
+              0.996605108724059,
+              0.000652872411542,
+              0.012789278595679
+            ],
+            [
+              0.00135904904561,
+              0.000652872411542,
+              0.996767906213764,
+              -0.056739528544626
+            ],
+            [
+              0.00065287241156,
+              0.012789278595679,
+              -0.056739528544615,
+              0.003394891275622
+            ]
+          ],
+          "projector_idempotence_error": 2.01e-13,
+          "projector_operator_step_from_previous_N": 0.022345759202551,
+          "projector_symmetry_error": 1.2e-14,
+          "raw_DtN_condition_number": 58969.793804810804
+        },
+        {
+          "N": 8,
+          "action_normalized_response_singular_values": [
+            546.5920515552797,
+            0.000152404296336
+          ],
+          "bounded_Calderon_graph_projector": [
+            [
+              0.004357797222296,
+              0.065844317793469,
+              -0.001822208975987,
+              0.000110428377253
+            ],
+            [
+              0.065844317793469,
+              0.995645526675607,
+              0.00011042837725,
+              -0.000159707198714
+            ],
+            [
+              -0.001822208975987,
+              0.000110428377258,
+              0.995642202777994,
+              -0.06584431779328
+            ],
+            [
+              0.000110428377253,
+              -0.000159707198714,
+              -0.065844317793271,
+              0.004354473324409
+            ]
+          ],
+          "projector_idempotence_error": 2.63e-13,
+          "projector_operator_step_from_previous_N": 0.017122072083897,
+          "projector_symmetry_error": 9e-15,
+          "raw_DtN_condition_number": 3586460.911516568
+        },
+        {
+          "N": 9,
+          "action_normalized_response_singular_values": [
+            46.39502702912653,
+            0.000422365131852
+          ],
+          "bounded_Calderon_graph_projector": [
+            [
+              0.004451098239396,
+              0.06299993260014,
+              -0.02145641043486,
+              0.001384524282102
+            ],
+            [
+              0.06299993260014,
+              0.996013084028283,
+              0.001384524281914,
+              0.000334750121738
+            ],
+            [
+              -0.02145641043486,
+              0.001384524281914,
+              0.995548901759488,
+              -0.062999932608909
+            ],
+            [
+              0.001384524282102,
+              0.000334750121738,
+              -0.062999932608909,
+              0.003986915972833
+            ]
+          ],
+          "projector_idempotence_error": 2e-15,
+          "projector_operator_step_from_previous_N": 0.020131849611456,
+          "projector_symmetry_error": 0.0,
+          "raw_DtN_condition_number": 109845.77923303556
+        },
+        {
+          "N": 10,
+          "action_normalized_response_singular_values": [
+            111.01707939649145,
+            0.000105770233132
+          ],
+          "bounded_Calderon_graph_projector": [
+            [
+              0.004494908518185,
+              0.066286787910548,
+              -0.00896666769406,
+              0.000604098141272
+            ],
+            [
+              0.066286787910548,
+              0.995586210984224,
+              0.000604098141272,
+              6.5545700542e-05
+            ],
+            [
+              -0.00896666769406,
+              0.000604098141272,
+              0.995505091481818,
+              -0.066286787910559
+            ],
+            [
+              0.000604098141272,
+              6.5545700542e-05,
+              -0.06628678791056,
+              0.004413789015778
+            ]
+          ],
+          "projector_idempotence_error": 4e-15,
+          "projector_operator_step_from_previous_N": 0.013372080109431,
+          "projector_symmetry_error": 0.0,
+          "raw_DtN_condition_number": 1049606.0763914438
+        },
+        {
+          "N": 11,
+          "action_normalized_response_singular_values": [
+            101.3301920459276,
+            0.000151446343558
+          ],
+          "bounded_Calderon_graph_projector": [
+            [
+              0.004527473598617,
+              0.066408087516605,
+              -0.009823375590371,
+              0.000665421541444
+            ],
+            [
+              0.066408087516605,
+              0.995569885753332,
+              0.000665421541444,
+              0.000107055990973
+            ],
+            [
+              -0.009823375590371,
+              0.000665421541444,
+              0.995472526401373,
+              -0.066408087516704
+            ],
+            [
+              0.000665421541444,
+              0.000107055990973,
+              -0.066408087516704,
+              0.004430114246678
+            ]
+          ],
+          "projector_idempotence_error": 4e-15,
+          "projector_operator_step_from_previous_N": 0.0008793160836,
+          "projector_symmetry_error": 0.0,
+          "raw_DtN_condition_number": 669083.1199031487
+        },
+        {
+          "N": 12,
+          "action_normalized_response_singular_values": [
+            103.43164940233986,
+            0.000120037112199
+          ],
+          "bounded_Calderon_graph_projector": [
+            [
+              0.00456261534488,
+              0.066699014368366,
+              -0.00962357168061,
+              0.000652867897259
+            ],
+            [
+              0.066699014368366,
+              0.995530835998479,
+              0.000652867897249,
+              7.6291871882e-05
+            ],
+            [
+              -0.00962357168061,
+              0.000652867897249,
+              0.99543738465498,
+              -0.06669901436936
+            ],
+            [
+              0.000652867897259,
+              7.6291871882e-05,
+              -0.06669901436936,
+              0.004469164001659
+            ]
+          ],
+          "projector_idempotence_error": 6e-15,
+          "projector_operator_step_from_previous_N": 0.000421179244681,
+          "projector_symmetry_error": 0.0,
+          "raw_DtN_condition_number": 861663.9263273722
+        },
+        {
+          "N": 13,
+          "action_normalized_response_singular_values": [
+            74.80818998555615,
+            8.0144111859e-05
+          ],
+          "bounded_Calderon_graph_projector": [
+            [
+              0.004726983797364,
+              0.067281685725135,
+              -0.013303967684627,
+              0.000904782500709
+            ],
+            [
+              0.067281685725135,
+              0.995451668454535,
+              0.000904782501597,
+              1.8979695889e-05
+            ],
+            [
+              -0.013303967684627,
+              0.000904782501597,
+              0.995273016211646,
+              -0.067281685658814
+            ],
+            [
+              0.000904782500709,
+              1.8979695889e-05,
+              -0.067281685658814,
+              0.004548331536459
+            ]
+          ],
+          "projector_idempotence_error": 2e-15,
+          "projector_operator_step_from_previous_N": 0.003790832640081,
+          "projector_symmetry_error": 0.0,
+          "raw_DtN_condition_number": 933420.912032377
+        }
+      ],
+      "source": "ONE_EXACT_ATTACHMENT_MATCHED_COHERENT_N5_CHILD_INJECTED_WITHOUT_REOPTIMIZATION_INTO_N5_THROUGH_N13",
+      "validation": {
+        "all_graph_projectors_are_orthogonal": true,
+        "late_projector_steps_reach_subpercent_scale": true,
+        "no_higher_N_nonlinear_child_claim_made": true,
+        "no_new_equations_constraints_or_gates": true,
+        "post_transition_projector_steps_are_small": true,
+        "same_exact_physical_N5_background_injected_at_every_order": true
+      },
+      "validation_passed": true
+    },
+    "injected_n6_event_child_calderon_friedrichs_angle_audit": {
+      "FULL_BHSM_COMPLETE": false,
+      "classification": "FIXED_MATCHED_N6_EVENT_AND_CHILD_CALDERON_GRAPHS_ARE_TRANSVERSE_THROUGH_THE_INJECTED_GALERKIN_SEQUENCE;_THIS_CLOSES_EVENT_TO_HISTORY_CAUCHY_COMPLETENESS_ON_THE_FIXED_PAIR_BUT_NOT_YET_UNIFORMLY_ON_THE_NONLINEAR_CHILD_BUNDLE",
+      "fixed_pair_event_to_history_Cauchy_completeness": true,
+      "minimum_measured_Friedrichs_sine": 0.000200688538568,
+      "new_physics_equations_constraints_regularizers_objectives_or_gates": false,
+      "rows": [
+        {
+          "Friedrichs_transversality_sine": 0.028859554546098,
+          "N": 6,
+          "linearized_graph_intersection_dimension": 0
+        },
+        {
+          "Friedrichs_transversality_sine": 0.000461787001265,
+          "N": 7,
+          "linearized_graph_intersection_dimension": 0
+        },
+        {
+          "Friedrichs_transversality_sine": 0.000553425493817,
+          "N": 8,
+          "linearized_graph_intersection_dimension": 0
+        },
+        {
+          "Friedrichs_transversality_sine": 0.000418483752403,
+          "N": 9,
+          "linearized_graph_intersection_dimension": 0
+        },
+        {
+          "Friedrichs_transversality_sine": 0.000866592526374,
+          "N": 10,
+          "linearized_graph_intersection_dimension": 0
+        },
+        {
+          "Friedrichs_transversality_sine": 0.000536541522525,
+          "N": 11,
+          "linearized_graph_intersection_dimension": 0
+        },
+        {
+          "Friedrichs_transversality_sine": 0.000236731328342,
+          "N": 12,
+          "linearized_graph_intersection_dimension": 0
+        },
+        {
+          "Friedrichs_transversality_sine": 0.000200688538568,
+          "N": 13,
+          "linearized_graph_intersection_dimension": 0
+        }
+      ],
+      "soft_mode_localization": {
+        "N12_raw_direction": [
+          -0.000255274042418,
+          -0.999999967417581
+        ],
+        "N13_raw_direction": [
+          -0.000218937159486,
+          -0.99999997603326
+        ],
+        "action_owned_scale_coordinate": true,
+        "attachment_chart": "(q_w,q_c=q_scale-q_w)",
+        "candidate_limit_direction": "delta_q_w=0,_delta_q_c!=0",
+        "common_event_child_time_tangent_limit_proved": false,
+        "complete_persistent_child_scale_family_integrability_proved": false,
+        "maximum_N12_N13_absolute_q_w_component": 0.000255274042418,
+        "minimum_N12_N13_second_principal_angle_sine": 0.018511058539813,
+        "minimum_N8_N13_child_time_tangent_alignment_cosine": 0.99997994569945,
+        "minimum_N8_N13_event_time_tangent_alignment_cosine": 0.99989061303604,
+        "promoted_as_a_legitimate_child_manifold_tangent": false,
+        "retained_action_is_time_autonomous": true,
+        "time_translation_field_D_t_U_is_a_Jacobi_tangent": true
+      },
+      "uniform_nonlinear_child_bundle_Cauchy_completeness": false,
+      "validation_passed": true
+    },
+    "jacobi_form_coefficient_mosco_theorem": {
+      "FULL_BHSM_COMPLETE": false,
+      "classification": "FOR_ANY_S2_STRONGLY_CONVERGENT_ETA_INTERIOR_CORRECTED_CHILD_BACKGROUND_SEQUENCE,_THE_EXACT_RETAINED_ACTION_HESSIAN_FORMS_AND_WEAK_CONORMAL_GRAPHS_CONVERGE_IN_NORM_FORM_AND_HENCE_MOSCO_STRONG_RESOLVENT_SENSE;_THE_OPERATOR_HALF_OF_THE_SOFT_SEMIGROUP_LEMMA_IS_CLOSED_CONDITIONALLY_ON_THE_ACTUAL_BACKGROUND_COMPACTNESS",
+      "closed_and_open": {
+        "action_selected_soft_Cauchy_vectors_converge_strongly": false,
+        "actual_corrected_child_backgrounds_have_a_unique_strong_limit": false,
+        "actual_corrected_child_bundle_has_an_N_uniform_S2_bound": false,
+        "genuine_uniform_normal_closed_range_failure_demonstrated": false,
+        "operator_coefficient_to_Mosco_implication": "PROVED"
+      },
+      "coefficient_convergence_theorem": {
+        "Sobolev_embedding": "H2_q_TO_C1_q,_H1_v_TO_C0_v,_H2_m_TO_C1_m_ON_THE_COMPACT_ONE_DIMENSIONAL_CAP",
+        "background_hypothesis": "U_N_TO_U_STRONGLY_IN_S2=H2_q_CROSS_H1_v_CROSS_H2_m_AND_inf_N_eta(U_N)>=eta0>0",
+        "boundary_conclusion": "THE_CASIMIR_AND_ATTACHMENT_TRACE_HESSIANS_CONVERGE_IN_THE_FIXED_FINITE_DIMENSIONAL_BOUNDARY_OPERATOR_NORM",
+        "finite_rank_conclusion": "THE_COLLECTIVE_INERTIA_HESSIAN_CONVERGES_IN_OPERATOR_NORM",
+        "local_coefficient_conclusion": "ALL_LOCAL_HESSIAN_COEFFICIENTS_CONVERGE_UNIFORMLY_AND_ARE_UNIFORMLY_BOUNDED"
+      },
+      "exact_next_mathematical_lemma": "PROVE_S2_ETA_PRECOMPACTNESS_AND_LIMIT_IDENTIFICATION_OF_THE_ACTUAL_CORRECTED_CHILD_BACKGROUNDS_AND_STRONG_GRAPH_COMPACTNESS_OF_THE_ACTION_SELECTED_SOFT_CALDERON_CAUCHY_VECTORS;_THE_ACTION_COEFFICIENT_TO_MOSCO_STEP_IS_CLOSED",
+      "form_and_resolvent_conclusion": {
+        "Mosco_convergence": true,
+        "common_form_domain": "V_GAUGE=THE_EXISTING_ACTION_ENERGY_FORM_SPACE_AFTER_THE_BOUNDARY_COMPATIBLE_GAUGE_QUOTIENT",
+        "norm_form_convergence": "norm(j_N-j)_B(V_GAUGE,V_GAUGE_star)_TO_ZERO",
+        "operator_graph_domain": "D1_N_IS_THE_ASSOCIATED_WEAK_EULER_DIRAC_AND_CONORMAL_OPERATOR_DOMAIN_AND_MAY_VARY_WITH_THE_BACKGROUND",
+        "positive_duration_propagator_convergence_if_energy_stability_is_uniform": true,
+        "strong_resolvent_convergence_for_a_common_stable_shift": true,
+        "why_not": "A_COMPACT_LOWER_ORDER_NORMAL_EIGENVALUE_MAY_APPROACH_ZERO_WITHOUT_VIOLATING_PRINCIPAL_OR_SHIFTED_RESOLVENT_CONVERGENCE",
+        "zero_frequency_normal_inverse_uniformity_inferred": false
+      },
+      "new_physics_equations_constraints_regularizers_objectives_or_gates": false,
+      "retained_action_coefficient_inventory": {
+        "boundary_Casimir": "-C_SM*exp(logN_boundary)/R4_boundary",
+        "bulk_local_dependence": "SMOOTH_FUNCTIONS_OF_(q,D_chi_q,v,m,D_chi_m)_WITH_EXPONENTIAL_GEOMETRY_AND_INTEGER_POWERS",
+        "collective_inertia": "ONE_SCALAR_INTEGRAL_FOLLOWED_BY_A_RECIPROCAL;_ITS_SECOND_VARIATION_IS_FINITE_RANK_PLUS_LOCAL_COEFFICIENTS",
+        "eta_dependence": "eta_Legendre=1+(x_spatial-f_normal^2)^3",
+        "highest_radial_derivative_order": 1,
+        "new_action_term": false
+      },
+      "validation": {
+        "Casimir_term_is_an_existing_smooth_boundary_trace_functional": true,
+        "eta_interior_removes_all_reciprocal_coefficient_singularities": true,
+        "measured_projection_sequence_is_not_used_as_a_proof": true,
+        "nested_Galerkin_spaces_are_dense_in_the_weak_graph_domain": true,
+        "no_new_equation_constraint_regularizer_objective_or_gate": true,
+        "nonlocal_collective_inertia_Hessian_is_finite_rank": true,
+        "one_dimensional_S2_embeds_compactly_into_C1_C0_C1": true,
+        "retained_local_action_uses_at_most_first_radial_derivatives": true,
+        "uniform_gauge_fixed_principal_gap_is_positive": true
+      },
+      "validation_passed": true
     },
     "legacy_N3_N4_exact_attachment_weak_child_audit": {
       "FULL_BHSM_COMPLETE": false,
@@ -9698,6 +11229,74 @@
       "why_not": "FOUR_FINITE_MATCHED_GRAPHS_DO_NOT_PROVE_COLLECTIVE_COMPACTNESS_OR_A_UNIFORM_NONZERO_NORMAL_SPECTRAL_GAP",
       "why_response_matrix_differences_are_not_decisive": "A_SINGLE_VALUED_DtN_MATRIX_DIVERGES_AT_A_DIRICHLET_POLE_WHILE_THE_SET_VALUED_CALDERON_GRAPH_AND_ITS_PROJECTOR_REMAIN_BOUNDED"
     },
+    "mixed_euler_dirac_hard_momentum_response_audit": {
+      "FULL_BHSM_COMPLETE": false,
+      "boundary_constraint_norm": {
+        "after": 0.197051121797091,
+        "before": 0.186505648228041,
+        "physical_map_or_gate_changed": false
+      },
+      "classification": "FINITE_N_HARD_MOMENTUM_RESPONSE_CLOSED;_THE_SECOND_SOFT_CHANNEL_IS_A_NORMAL_DIRECTION_CONTROLLED_BY_THE_EXISTING_POSITIVE_DURATION_GAUGE_FIXED_JACOBI_EVOLUTION;_THE_N_UNIFORM_CLOSED_RANGE_BOUND_REMAINS_THE_THEOREM_LEVEL_DEPENDENCY",
+      "eta_Legendre_minimum": 1.000027975160257,
+      "exact_full_weak_norm": {
+        "after": 0.198577367690024,
+        "before": 0.343305016672915
+      },
+      "exact_momentum_dual_norm": {
+        "after": 0.024572878488426,
+        "before": 0.28822556731114
+      },
+      "exact_next_mathematical_lemma": "N_UNIFORM_POSITIVE_DURATION_GAUGE_FIXED_JACOBI_OBSERVABILITY_INF_SUP_LOWER_BOUND_FOR_THE_ISOLATED_SOFT_MOMENTUM_NORMAL_CHANNEL_MODULO_THE_EXISTING_CHILD_MANIFOLD_TANGENT_AND_GAUGE_QUOTIENT",
+      "hard_exact_response_singular_value": 7.600306105991273,
+      "new_equations_constraints_regularizers_objectives_or_gates": false,
+      "soft_channel": {
+        "classification": "NORMAL_DIRECTION_CONTROLLED_BY_THE_EXISTING_POSITIVE_DURATION_GAUGE_FIXED_JACOBI_EVOLUTION",
+        "exact_response_projection_magnitude": 0.000127026742366,
+        "is_a_legitimate_child_manifold_tangent": false,
+        "uniform_normal_closed_range_failure_proved": false
+      },
+      "validation_passed": true
+    },
+    "mixed_finite_Schur_bridge_measurement": {
+      "FULL_BHSM_COMPLETE": false,
+      "classification": "FIXED_EVENT_CHILD_SIDE_MIXED_FINITE_SCHUR_ENDPOINT_MEASURED_WITH_PAIRED_EXACT_SLOPES;_THIS_IS_NOT_A_JOINT_EVENT_CHILD_INTERVAL_OR_TAIL_HOMOTOPY_PROOF",
+      "finite_bridge_certified": false,
+      "hard_channel": {
+        "eta_Legendre_minimum_after": 1.000027975160257,
+        "exact_full_weak_norm_after": 0.198577367690024,
+        "exact_full_weak_norm_before": 0.343305016672915,
+        "strict_exact_full_weak_reduction_found": true
+      },
+      "higher_N_complete_child_promoted": false,
+      "joint_event_child_bridge_certified": false,
+      "maximum_order": 48,
+      "new_equation_constraint_gate_or_selector": false,
+      "paired_exact_singular_values": [
+        7.600306105991273,
+        0.000127026742366
+      ],
+      "quadrature_points": 256,
+      "source": "EXACT_FULL_q_v_m_ACTION_HESSIAN_AT_THE_ZERO_PADDED_MATCHED_N6_CHILD_IN_N48;_NO_HIGHER_N_ROOT_SOLVE",
+      "source_compatibility": {
+        "Richardson_singular_values": [
+          7.703747069865963,
+          0.000924177962554
+        ],
+        "full_to_half_operator_difference": 0.093002090308924,
+        "half_step_singular_values": [
+          7.677829603118406,
+          0.000653935535917
+        ],
+        "hard_left_source_projection": 0.287372834358414,
+        "measured_N6_local_radii_upper_root": 2.552098932e-06,
+        "soft_coordinate_to_local_radius_ratio": 68338912.49861096,
+        "soft_left_source_projection": 0.022154437604963,
+        "soft_linear_coordinate_required": 174.4076656017465,
+        "soft_source_exactly_orthogonal_to_the_measured_left_direction": false,
+        "two_scale_measurement_is_an_interval_proof": false
+      },
+      "validation_passed": true
+    },
     "nested_attachment_lift_consistency_audit": {
       "FULL_BHSM_COMPLETE": false,
       "accepted_N3_state_used_as_higher_N_child_existence_evidence": false,
@@ -9756,6 +11355,178 @@
       },
       "validation_passed": true,
       "why": "THE_HESSIAN_HORIZONTAL_LIFT_RECOMPUTES_AN_INDEFINITE_GLOBAL_SCHUR_INVERSE_WHEN_NEW_SPECTRAL_MODES_ARE_ADDED;_THE_ORDER_ONE_MOMENTUM_CHANGE_IS_NOT_OWNED_BY_THE_EXACT_NESTED_ACTION_CORE"
+    },
+    "normal_boundary_cauchy_symbol_factorization": {
+      "FULL_BHSM_COMPLETE": false,
+      "action_normalized_symbol": {
+        "boundary_space": "B=TSTAR(R2)_WITH_THE_EXISTING_ACTION_TRACE_GRAM",
+        "event_matching_involution": "S(b,Lambda)=(b,-Lambda)",
+        "four_by_four_graph_block": "M4=[Q_child,-Q_Se]",
+        "minimum_gap_formula": "sigma_min(B7)=min(1,gamma/sqrt(1+sqrt(1-gamma^2)))_WITH_gamma=sin(theta_F)",
+        "orthonormal_frames": "Q_child_FOR_L_child_AND_Q_Se_FOR_S*L_event_IN_B",
+        "row_identification": "TRACE3_DIRECT_SUM_THE_CONSTRAINT_RECONSTRUCTED_CANONICAL_MOMENTUM2_WEAK_REACTION2_CAUCHY_PAIR",
+        "seven_by_seven_symbol": "B7=I3_TRACE_DIRECT_SUM_M4",
+        "single_valued_DtN_matrix_required": false,
+        "singular_value_formula": "sigma(M4)={sqrt(1+cos(theta_i)),sqrt(1-cos(theta_i))}_FOR_i=1,2",
+        "uniform_lower_bound_if_gamma_is_uniform": "sigma_min(B7)>=min(1,gamma/sqrt(2))"
+      },
+      "classification": "THE_EXISTING_SEVEN_DIMENSIONAL_NORMAL_BOUNDARY_CAUCHY_SYMBOL_FACTORS_AS_THE_THREE_TRACE_ROWS_DIRECT_SUM_THE_FOUR_DIMENSIONAL_MATCHED_EVENT_CHILD_CALDERON_GRAPH_SYMBOL;_THE_FIXED_INJECTED_PAIR_IS_FULL_RANK_BUT_AN_S2_ETA_UNIFORM_NONLINEAR_NORMAL_GRAPH_ANGLE_OR_A_NONZERO_LIMIT_KERNEL_REMAINS_TO_BE_PROVED",
+      "exact_next_mathematical_lemma": "CONSTRUCT_THE_ACTION_NORMALIZED_CONTINUUM_SOFT_EVANS_FACTOR_ON_THE_LIMIT_OF_THE_ACTUAL_CORRECTED_CHILD_NORMAL_SECTION_AND_PROVE_e_soft,STAR_IS_NONZERO;_IF_IT_VANISHES,_LIFT_ITS_NULL_VECTOR_BY_THE_EXISTING_POSITIVE_DURATION_WEAK_GREEN_EVOLUTION_AND_CLASSIFY_THE_HISTORY_AS_TANGENT_OR_GENUINELY_NORMAL",
+      "fixed_injected_pair": {
+        "finite_pair_Cauchy_completeness": true,
+        "is_a_uniform_nonlinear_child_bundle_proof": false,
+        "minimum_exact_seven_by_seven_gap": 0.000141908227242,
+        "rows": [
+          {
+            "Friedrichs_sine": 0.028859554546098,
+            "N": 6,
+            "exact_four_by_four_matched_graph_symbol_gap": 0.020408912031068,
+            "exact_seven_by_seven_boundary_symbol_gap": 0.020408912031068,
+            "largest_principal_cosine": 0.999583476309708,
+            "linearized_graph_intersection_dimension": 0,
+            "universal_gamma_over_sqrt2_lower_bound": 0.020406786721569
+          },
+          {
+            "Friedrichs_sine": 0.000461787001265,
+            "N": 7,
+            "exact_four_by_four_matched_graph_symbol_gap": 0.000326532728762,
+            "exact_seven_by_seven_boundary_symbol_gap": 0.000326532728762,
+            "largest_principal_cosine": 0.999999893376377,
+            "linearized_graph_intersection_dimension": 0,
+            "universal_gamma_over_sqrt2_lower_bound": 0.000326532720058
+          },
+          {
+            "Friedrichs_sine": 0.000553425493817,
+            "N": 8,
+            "exact_four_by_four_matched_graph_symbol_gap": 0.000391330934542,
+            "exact_seven_by_seven_boundary_symbol_gap": 0.000391330934542,
+            "largest_principal_cosine": 0.9999998468601,
+            "linearized_graph_intersection_dimension": 0,
+            "universal_gamma_over_sqrt2_lower_bound": 0.00039133091956
+          },
+          {
+            "Friedrichs_sine": 0.000418483752403,
+            "N": 9,
+            "exact_four_by_four_matched_graph_symbol_gap": 0.000295912705618,
+            "exact_seven_by_seven_boundary_symbol_gap": 0.000295912705618,
+            "largest_principal_cosine": 0.999999912435671,
+            "linearized_graph_intersection_dimension": 0,
+            "universal_gamma_over_sqrt2_lower_bound": 0.000295912699141
+          },
+          {
+            "Friedrichs_sine": 0.000866592526374,
+            "N": 10,
+            "exact_four_by_four_matched_graph_symbol_gap": 0.000612773509447,
+            "exact_seven_by_seven_boundary_symbol_gap": 0.000612773509447,
+            "largest_principal_cosine": 0.999999624508626,
+            "linearized_graph_intersection_dimension": 0,
+            "universal_gamma_over_sqrt2_lower_bound": 0.000612773451925
+          },
+          {
+            "Friedrichs_sine": 0.000536541522525,
+            "N": 11,
+            "exact_four_by_four_matched_graph_symbol_gap": 0.000379392162618,
+            "exact_seven_by_seven_boundary_symbol_gap": 0.000379392162618,
+            "largest_principal_cosine": 0.999999856061587,
+            "linearized_graph_intersection_dimension": 0,
+            "universal_gamma_over_sqrt2_lower_bound": 0.000379392148966
+          },
+          {
+            "Friedrichs_sine": 0.000236731328342,
+            "N": 12,
+            "exact_four_by_four_matched_graph_symbol_gap": 0.000167394328763,
+            "exact_seven_by_seven_boundary_symbol_gap": 0.000167394328763,
+            "largest_principal_cosine": 0.999999971979139,
+            "linearized_graph_intersection_dimension": 0,
+            "universal_gamma_over_sqrt2_lower_bound": 0.00016739432759
+          },
+          {
+            "Friedrichs_sine": 0.000200688538568,
+            "N": 13,
+            "exact_four_by_four_matched_graph_symbol_gap": 0.000141908227242,
+            "exact_seven_by_seven_boundary_symbol_gap": 0.000141908227242,
+            "largest_principal_cosine": 0.999999979862055,
+            "linearized_graph_intersection_dimension": 0,
+            "universal_gamma_over_sqrt2_lower_bound": 0.000141908226528
+          }
+        ],
+        "source": "FIXED_MATCHED_N6_EVENT_AND_CHILD_CALDERON_GRAPHS_ARE_TRANSVERSE_THROUGH_THE_INJECTED_GALERKIN_SEQUENCE;_THIS_CLOSES_EVENT_TO_HISTORY_CAUCHY_COMPLETENESS_ON_THE_FIXED_PAIR_BUT_NOT_YET_UNIFORMLY_ON_THE_NONLINEAR_CHILD_BUNDLE"
+      },
+      "new_physics_equations_constraints_regularizers_objectives_or_gates": false,
+      "pole_safe_soft_Evans_factor": {
+        "actual_corrected_child_limit_and_soft_vector_identified": false,
+        "basis_and_DtN_pole_invariant": true,
+        "closed_range_branch": "e_soft,*!=0_IMPLIES_A_LOCAL_UNIFORM_NORMAL_GRAPH_GAP",
+        "continuity_statement": "ON_AN_S2_ETA_STRONGLY_CONVERGENT_NORMAL_SECTION_THE_PROVED_MOSCO_GRAPH_CONVERGENCE_GIVES_e_soft,N_TO_e_soft,*",
+        "definition": "E_N=det([Q_child,-Q_Se]);_abs(E_N)=sin(theta_1,N)*sin(theta_2,N)",
+        "fixed_injected_pair_determines_e_soft_star": false,
+        "hard_factor": "THE_NONSOFT_PRINCIPAL_ANGLE_OR_EQUIVALENT_HARD_RANK_ONE_RESPONSE",
+        "soft_factor": "e_soft,N=sin(theta_F,N)_AFTER_PROVED_QUOTIENTS",
+        "zero_branch": "e_soft,*=0_PRODUCES_A_CONTINUUM_MATCHED_GRAPH_VECTOR;_CATEGORY_3_REQUIRES_ITS_WEAK_JACOBI_LIFT_TO_BE_NONZERO_AND_NON_TANGENT"
+      },
+      "tangent_and_soft_separation": {
+        "conditional_second_angle_symbol_lower_bound": 0.013089295020443,
+        "conditional_value_promoted": false,
+        "hard_test_soft_momentum_classification": "NORMAL_DIRECTION_CONTROLLED_BY_THE_EXISTING_POSITIVE_DURATION_GAUGE_FIXED_JACOBI_EVOLUTION",
+        "hard_test_soft_momentum_projection": 0.000127026742366,
+        "measured_second_angle_sine": 0.018511058539813,
+        "near_intersection_identified_with_that_full_history_tangent": false,
+        "whole_system_time_translation_tangent_exists_exactly": true
+      },
+      "uniform_closed_range_dichotomy": {
+        "category_3_requires": "A_NONZERO_CONTINUUM_GAUGE_QUOTIENTED_MATCHED_EVENT_CHILD_JACOBI_HISTORY_OR_AN_EQUIVALENT_NORMALIZED_L2_HISTORY_COLLAPSE_SEQUENCE",
+        "current_soft_channel_category": "NORMAL_DIRECTION_CONTROLLED_BY_THE_EXISTING_POSITIVE_DURATION_GAUGE_FIXED_JACOBI_EVOLUTION",
+        "decreasing_injected_gap_proves_failure": false,
+        "fixed_pair_rank_proves_required_statement": false,
+        "genuine_uniform_failure_demonstrated": false,
+        "required": "inf_OVER_THE_S2_ETA_NORMAL_SECTION_sin(theta_F(L_child,S*L_event))>0_MODULO_ONLY_PROVED_TANGENT_AND_GAUGE_DIRECTIONS"
+      },
+      "validation": {
+        "all_fixed_pair_symbols_are_full_rank": true,
+        "candidate_time_tangent_not_quotiented_from_boundary_alignment": true,
+        "exact_angle_to_symbol_identity_replays": true,
+        "finite_fixed_pair_gap_not_promoted_to_a_uniform_bundle_theorem": true,
+        "hard_rank_one_result_is_retained": true,
+        "no_new_equation_constraint_regularizer_objective_or_gate": true,
+        "soft_momentum_channel_remains_normal_and_dynamical": true,
+        "three_trace_plus_four_Calderon_coordinates_equal_seven": true
+      },
+      "validation_passed": true
+    },
+    "normal_section_S2_compactness_scope": {
+      "FULL_BHSM_COMPLETE": false,
+      "classification": "GENERAL_N_S2_COMPACTNESS_IS_REQUIRED_ONLY_FOR_LOCAL_NORMAL_SECTION_REPRESENTATIVES_OF_THE_COMPLETE_CHILD_MANIFOLD;_THE_6N_MINUS_6_TANGENT_DIRECTIONS_REMAIN_PHYSICAL_AND_MAY_NOT_BE_BOUNDED_OR_REMOVED_AS_DEFECTS",
+      "correct_compactness_statement": {
+        "componentwise_or_coordinate_monotonicity_required": false,
+        "new_branch_selector_added": false,
+        "nonzero_motion_momentum_and_time_dependence_allowed": true,
+        "not_required": "sup_OVER_ALL_COMPLETE_CHILD_ROOTS_AND_ALL_TANGENT_EXCITATIONS_norm(U)_S2<INFINITY",
+        "required": "sup_N_norm(U_N_section)_S2<INFINITY_MODULO_THE_EXISTING_TANGENT_AND_GAUGE_DIRECTIONS"
+      },
+      "exact_next_mathematical_lemma": "PROVE_AN_N_UNIFORM_INITIAL_S2_BOUND_FOR_LOCAL_NORMAL_SECTION_REPRESENTATIVES_OF_THE_ACTUAL_CORRECTED_COMPLETE_CHILD_RELATION_MODULO_THE_EXISTING_6N_MINUS_6_TANGENT_AND_GAUGE_DIRECTIONS,_OR_CONSTRUCT_A_DIVERGING_NORMAL_SEQUENCE",
+      "genuine_uniform_normal_closed_range_failure_demonstrated": false,
+      "new_physics_equations_constraints_regularizers_objectives_or_gates": false,
+      "normal_tangent_decomposition": {
+        "boundary_normal_quotient_dimension": 7,
+        "decomposition": "deltaU=deltaU_tangent+deltaU_normal_AFTER_THE_EXISTING_BOUNDARY_COMPATIBLE_GAUGE_QUOTIENT",
+        "local_child_manifold_dimension": "6N-6",
+        "normal_section": "ANY_LOCAL_COMPLEMENT_ON_WHICH_D_F_N_IS_INVERTIBLE;_THE_CHOICE_DOES_NOT_CHANGE_THE_PHYSICAL_ROOT_SET",
+        "tangent_kernel": "KER(D_F_N)_CHILD_MANIFOLD_DIRECTIONS"
+      },
+      "propagation_transfer": {
+        "if_normal_section_initial_bound_holds": "sup_N_sup_0<=t<=T0_E_S2,N(t)<=K2_prime_AND_THE_BACKGROUND_JACOBI_FORMS_HAVE_THE_PREVIOUSLY_PROVED_MOSCO_STRONG_RESOLVENT_COMPACTNESS",
+        "tangent_directions_enter_the_observability_inf_sup": false,
+        "why": "THE_TARGET_CLOSED_RANGE_ESTIMATE_IS_ALREADY_RESTRICTED_TO_THE_NORMAL_COMPLEMENT_MODULO_TANGENT_AND_GAUGE"
+      },
+      "validation": {
+        "S2_propagation_theorem_is_already_conditional_and_validated": true,
+        "boundary_normal_quotient_dimension_is_seven": true,
+        "child_tangent_dimension_law_is_6N_minus_6": true,
+        "no_new_equation_constraint_regularizer_objective_or_gate": true,
+        "normal_section_is_a_chart_choice_not_a_physical_selector": true,
+        "tangent_motion_is_not_reclassified_as_a_defect": true
+      },
+      "validation_passed": true
     },
     "on_shell_boundary_reaction_audit": {
       "FULL_BHSM_COMPLETE": false,
@@ -10300,6 +12071,22 @@
         "weak_conormal_variation": "<delta_Lambda,phi>=delta2_Gamma_child[U](xi,H*phi)_PLUS_THE_LINEARIZED_COEFFICIENT_TERM"
       }
     },
+    "positive_duration_normal_adjoint_kernel_localization": {
+      "FULL_BHSM_COMPLETE": false,
+      "classification": "NORMAL_ADJOINT_KERNEL_PROOF_LOCALIZED_TO_EVENT_TO_HISTORY_CAUCHY_COMPLETENESS;_THE_EXISTING_POSITIVE_DURATION_ENERGY_WOULD_EXCLUDE_THE_SOFT_KERNEL_IF_AND_ONLY_IF_VANISHING_EXISTING_EVENT_CHILD_ROWS_FORCE_ZERO_INITIAL_NORMAL_ENERGY",
+      "exact_next_mathematical_lemma": "PROVE_OR_DISPROVE_EVENT_TO_HISTORY_CAUCHY_COMPLETENESS_ON_THE_EXISTING_GAUGE_FIXED_NORMAL_ADJOINT_BUNDLE:_VANISHING_TRACE_CONSTRAINT_MOMENTUM_AND_DYNAMIC_REACTION_DUAL_DATA_MUST_IMPLY_ZERO_INITIAL_POSITIVE_DURATION_JACOBI_ENERGY_MODULO_THE_EXISTING_CHILD_MANIFOLD_TANGENT",
+      "finite_event_rows_already_prove_zero_initial_normal_energy": false,
+      "if_the_lemma_fails": "THE_NONZERO_HOMOGENEOUS_ADJOINT_HISTORY_IS_A_GENUINE_FAILURE_OF_THE_EXISTING_UNIFORM_NORMAL_CLOSED_RANGE_ESTIMATE;_NO_EXTRA_ROW_OR_GATE_IS_TO_BE_ADDED",
+      "new_physics_equations_constraints_regularizers_objectives_or_gates": false,
+      "soft_channel": {
+        "continuum_non_tangent_kernel_excluded": false,
+        "finite_N_exact_response_projection_magnitude": 0.000127026742366,
+        "finite_N_zero_mode": false,
+        "genuine_uniform_failure_demonstrated": false,
+        "legitimate_child_manifold_tangent": false
+      },
+      "validation_passed": true
+    },
     "questions": {
       "N4_independently_derived_from_same_action": {
         "answer": true,
@@ -10758,7 +12545,7 @@
       },
       "validation_passed": true
     },
-    "scientific_status": "N3_N4_N5_N6_EXACT_ATTACHMENT_WEAK_CONORMAL_COMPLETE_PERSISTENT_CHILDREN_VALIDATED;_ACTION_NORMALIZED_REACTION_GRAPHS_MEASURED;_GENERAL_N_LOWER_ORDER_NORMAL_GRAPH_COMPACTNESS_AND_UNIFORM_SPECTRAL_GAP_OPEN",
+    "scientific_status": "N3_TO_N6_EXACT_ATTACHMENT_WEAK_COMPLETE_PERSISTENT_CHILDREN_VALIDATED;_THE_RETAINED_ACTION_GIVES_AN_EXACT_N_MINUS_2_EVENT_CHILD_PRODUCT_BULK_EULER_DIRAC_SHELL_BOUND_AFTER_WEAK_REACTION_ROUTING_AND_THE_PRINCIPAL_PLUS_COMPACT_SPLIT_GIVES_AN_O_1_ASYMPTOTIC_HIGH_SHELL_INVERSE;_INFINITE_RESOLUTION_IS_REDUCED_TO_ONE_FINITE_N6_TO_M0_MIXED_EVENT_CHILD_NORMAL_SCHUR_BRIDGE_AND_ITS_NONLINEAR_RADII_POLYNOMIAL",
     "sequential_action_energy_projection_audit": {
       "FULL_BHSM_COMPLETE": false,
       "classification": "ACTION_ENERGY_COHERENT_EVENT_AND_CHILD_ADMIT_SEQUENTIAL_NESTED_CONSTRAINT_FIBER_TRANSPORT;_THIS_IS_NOT_YET_A_GENERAL_N_COMPLETE_CHILD_ROOT_CONTINUATION_THEOREM",
@@ -11692,6 +13479,1806 @@
       },
       "validation_passed": true
     },
+    "soft_boundary_acceleration_compactness_criterion": {
+      "FULL_BHSM_COMPLETE": false,
+      "certificate_hierarchy": {
+        "uniform_D2_bound_is_a_new_physical_acceptance_gate": false,
+        "uniform_D2_soft_line_bound": "SUFFICIENT_VIA_A_UNIFORM_LIPSCHITZ_BOUND_ON_a_N",
+        "uniform_fractional_time_translation_bound": "ALSO_SUFFICIENT_IF_IT_FORCES_Omega_N(t)_TO_ZERO_UNIFORMLY",
+        "uniform_global_H6_bound_required": false
+      },
+      "classification": "UNIFORM_SOFT_OBSERVABILITY_REQUIRES_ONLY_A_UNIFORM_SHORT_TIME_WEIGHTED_MODULUS_FOR_THE_ACTION_NORMALIZED_BOUNDARY_ACCELERATION;_A_SECOND_GRAPH_BOUND_IS_SUFFICIENT_BUT_NOT_REQUIRED,_AND_ITS_FAILURE_MAY_NOT_BE_RECLASSIFIED_AS_CLOSED_RANGE_FAILURE",
+      "exact_next_mathematical_lemma": "PROVE_OR_DISPROVE_A_UNIFORM_POSITIVE_SHORT_TIME_WEIGHTED_MODULUS_Omega_N_FOR_THE_ACTION_NORMALIZED_SOFT_BOUNDARY_ACCELERATION_USING_THE_WEAK_CALDERON_EVOLUTION;_ONLY_A_NORMALIZED_L2_HISTORY_SEQUENCE_TENDING_TO_ZERO_CAN_PROMOTE_CATEGORY_3",
+      "existing_data": {
+        "finite_N_soft_response_projection_magnitude": 0.000127026742366,
+        "higher_N_positive_duration_soft_histories_available": false,
+        "positive_duration": 0.000113439890737
+      },
+      "failure_policy": {
+        "D2_vertical_bound_fails": "ONLY_THE_LIPSCHITZ_CERTIFICATE_FAILS",
+        "current_classification_category": "NORMAL_DIRECTION_CONTROLLED_BY_THE_EXISTING_POSITIVE_DURATION_GAUGE_FIXED_JACOBI_EVOLUTION",
+        "genuine_closed_range_failure_requires": "AN_ACTION_NORMALIZED_NON_TANGENT_SOFT_SEQUENCE_WITH_norm(r_N)_L2(0,T)_TO_ZERO",
+        "such_a_sequence_is_currently_constructed": false,
+        "weighted_modulus_not_proved": "UNIFORM_OBSERVABILITY_REMAINS_OPEN"
+      },
+      "minimal_weighted_modulus": {
+        "definition": "Omega_N(t)=4/t^2*integral_0^t_(t-s)*norm(a_N(s)-a_N(0))_ds",
+        "integrated_consequence": "norm(r_N)_L2(0,tau0)>=tau0^(5/2)/(4*sqrt(5))",
+        "pointwise_consequence": "norm(r_N(t))>=t^2/4_ON_0<=t<=tau0",
+        "sufficient_uniform_condition": "EXISTS_tau0>0_SUCH_THAT_sup_N_sup_0<t<=tau0_Omega_N(t)<=1"
+      },
+      "new_physics_equations_constraints_regularizers_objectives_or_gates": false,
+      "normalized_soft_history": {
+        "exact_integral_identity": "r_N(t)=integral_0^t_(t-s)*a_N(s)_ds",
+        "initial_conditions": "r_N(0)=D_t_r_N(0)=0,_a_N(0)=D_t2_r_N(0),_norm(a_N(0))=1",
+        "response": "r_N(t)=Gamma0*xi_soft,N(t)"
+      },
+      "validation": {
+        "D2_is_recorded_only_as_a_sufficient_certificate": true,
+        "existing_positive_duration_is_positive": true,
+        "failure_requires_vanishing_integrated_response_not_D2_blowup": true,
+        "finite_N_soft_response_is_nonzero": true,
+        "no_new_equation_constraint_regularizer_objective_or_gate": true,
+        "smooth_configuration_trace_lift_is_uniform": true
+      },
+      "validation_passed": true
+    },
+    "soft_calderon_second_graph_domain_reduction": {
+      "FULL_BHSM_COMPLETE": false,
+      "classification": "THE_FULL_SOFT_CALDERON_GENERATOR_BOUND_IS_EQUIVALENT_TO_UNIFORM_CONTROL_OF_THE_ACTION_SELECTED_SOFT_JACOBI_LINE_IN_THE_SECOND_WEAK_EULER_DIRAC_GRAPH_DOMAIN;_THE_EXISTING_FIRST_GRAPH_ENERGY_DOES_NOT_SUPPLY_THIS_EXTRA_TIME_TRACE_REGULARITY,_SO_THE_FAILURE_IS_PRECISELY_LOCALIZED",
+      "exact_jerk_identity": {
+        "bound": "norm(D_t3_r_N)<=C_Gamma*norm(D_t_xi_N)_D1+C_comm*norm(xi_N)_D1",
+        "boundary_acceleration": "D_t2_r_N=Gamma_acc,N*xi_N",
+        "boundary_jerk": "D_t3_r_N=Gamma_acc,N*D_t_xi_N+[D_t,Gamma_acc,N]*xi_N",
+        "consequence": "M3<=max(C_Gamma,C_comm)*K_soft,2",
+        "sufficient_soft_line_estimate": "sup_N_sup_0<=t<=T_norm(xi_soft,N(t))_D2<=K_soft,2_FOR_norm(Gamma_acc,N*xi_soft,N(0))=1",
+        "third_or_fourth_order_solver_proposal_derivative_required": false
+      },
+      "exact_next_mathematical_lemma": "PROVE_OR_DISPROVE_AN_N_UNIFORM_SECOND_WEAK_EULER_DIRAC_GRAPH_NORM_BOUND_FOR_THE_ACTION_SELECTED_SOFT_CALDERON_JACOBI_LINE_ON_THE_EXISTING_POSITIVE_DURATION_INTERVAL",
+      "failure_dichotomy": {
+        "classification_category": "NORMAL_DIRECTION_CONTROLLED_BY_THE_EXISTING_POSITIVE_DURATION_GAUGE_FIXED_JACOBI_EVOLUTION",
+        "genuine_uniform_normal_closed_range_failure_demonstrated": false,
+        "if_soft_D2_bound_fails": "THE_BOUNDARY_JERK_SUFFICIENT_ARGUMENT_FAILS;_THIS_ALONE_DOES_NOT_PROVE_FAILURE_OF_THE_UNIFORM_INTEGRATED_OBSERVABILITY_OR_NORMAL_CLOSED_RANGE_ESTIMATE",
+        "if_soft_D2_bound_holds": "THE_TAYLOR_OBSERVABILITY_CONSTANT_IS_N_UNIFORM_AND_THE_SOFT_NORMAL_CHANNEL_HAS_UNIFORM_POSITIVE_DURATION_CLOSED_RANGE"
+      },
+      "graph_scale": {
+        "energy_space": "X_E=H1_q_CROSS_L2_v_CROSS_H1_lapse_shift",
+        "first_graph_domain": "D1={xi_IN_X_E:J_U*xi_IN_X_E_star_AND_Gamma_acc*xi_IN_R2}",
+        "first_graph_norm": "norm(xi)_D1=norm(xi)_X_E+norm(J_U*xi)_X_E_star+norm(Gamma_acc*xi)_R2",
+        "new_physical_domain_or_acceptance_condition": false,
+        "second_graph_domain": "D2={xi_IN_D1:D_t_xi_IN_D1_AND_[D_t,Gamma_acc]*xi_IN_R2}",
+        "second_graph_norm": "norm(xi)_D2=norm(xi)_D1+norm(D_t_xi)_D1+norm([D_t,Gamma_acc]*xi)_R2"
+      },
+      "new_physics_equations_constraints_regularizers_objectives_or_gates": false,
+      "validation": {
+        "H1_boundary_trace_is_uniformly_bounded": true,
+        "first_Euler_Dirac_graph_domain_is_already_action_owned": true,
+        "full_soft_generator_is_the_current_localized_owner": true,
+        "no_new_equation_constraint_regularizer_objective_or_gate": true,
+        "pure_L2_boundary_acceleration_trace_is_already_invalidated": true,
+        "second_graph_domain_is_a_theorem_domain_not_a_child_gate": true
+      },
+      "validation_passed": true,
+      "why_first_graph_energy_is_insufficient": {
+        "measured_H1_boundary_trace_loglog_slope": 0.001009229735201,
+        "measured_L2_boundary_trace_loglog_slope": 0.496083923405252,
+        "static_Calderon_projector_convergence_supplies_time_trace_regularity": false,
+        "trace_of_D_t_xi_controlled_by_first_energy_alone": false,
+        "velocity_component_owned_only_in_L2_by_X_E": true
+      }
+    },
+    "soft_channel_positive_duration_observability_jet_lemma": {
+      "FULL_BHSM_COMPLETE": false,
+      "classification": "THE_REMAINING_SOFT_MOMENTUM_CHANNEL_IS_A_NORMAL_DIRECTION_CONTROLLED_BY_THE_EXISTING_POSITIVE_DURATION_GAUGE_FIXED_JACOBI_EVOLUTION;_ITS_UNIFORM_OBSERVABILITY_REDUCES_TO_AN_ACTION_OWNED_UNIFORM_BOUNDARY_JERK_BOUND",
+      "current_evidence": {
+        "N_uniform_jerk_bound_proved": false,
+        "exact_finite_N_soft_response_projection_magnitude": 0.000127026742366,
+        "fixed_finite_N_jerk_is_finite_by_action_smoothness": true,
+        "validated_common_positive_proper_duration": 0.000113439890737
+      },
+      "exact_next_mathematical_lemma": "DERIVE_AN_N_UNIFORM_ACTION_OWNED_BOUND_M_3_FOR_THE_THIRD_TIME_DERIVATIVE_OF_THE_SOFT_BOUNDARY_JACOBI_RESPONSE_ON_THE_ETA_INTERIOR_ACTION_ENERGY_COHERENT_CHILD_BUNDLE",
+      "new_physics_equations_constraints_regularizers_objectives_or_gates": false,
+      "one_dimensional_observability_lemma": {
+        "L2_observability_lower_bound": "norm(r)_L2(0,tau)>=tau^(5/2)/(4*sqrt(5))",
+        "controlled_interval": "tau=min(T,3/(2*M_3))",
+        "normalized_initial_data": "r(0)=0,_D_t_r(0)=0,_norm(D_t2_r(0))=1",
+        "pointwise_lower_bound": "norm(r(t))>=t^2/4_ON_0<=t<=tau"
+      },
+      "soft_channel_classification_category": "NORMAL_DIRECTION_CONTROLLED_BY_THE_EXISTING_POSITIVE_DURATION_GAUGE_FIXED_JACOBI_EVOLUTION",
+      "soft_channel_is_reclassified_as_a_time_tangent": false,
+      "validation_passed": true
+    },
+    "soft_jacobi_semigroup_compactness_reduction": {
+      "FULL_BHSM_COMPLETE": false,
+      "classification": "THE_MINIMAL_SOFT_BOUNDARY_TIME_MODULUS_FOLLOWS_FROM_STRONG_UNIFORM_ON_COMPACT_TIME_CONVERGENCE_OF_THE_EXISTING_GAUGE_FIXED_JACOBI_PROPAGATORS_ON_THE_ACTION_SELECTED_SOFT_CAUCHY_VECTORS;_THIS_REQUIRES_MOSCO_STRONG_RESOLVENT_CONVERGENCE_ON_THE_NONLINEAR_CORRECTED_CHILD_BUNDLE,_NOT_A_NEW_D2_OR_H6_GATE",
+      "common_energy_space": {
+        "Jacobi_generators": "A_N_ON_H_gauge,N",
+        "embeddings": "I_N:H_gauge,N_TO_H_gauge_FROM_THE_EXISTING_NESTED_SPECTRAL_INJECTIONS",
+        "propagators": "S_N(t)=exp(t*A_N)",
+        "soft_Cauchy_vectors": "x_N=THE_ACTION_NORMALIZED_NON_TANGENT_SOFT_CALDERON_CAUCHY_DATUM",
+        "space": "H_gauge=THE_EXISTING_ACTION_ENERGY_COMPLETION_AFTER_THE_BOUNDARY_COMPATIBLE_GAUGE_QUOTIENT"
+      },
+      "current_evidence": {
+        "action_selected_soft_Cauchy_vector_strong_convergence": false,
+        "fixed_injected_background_graph_convergence": true,
+        "higher_N_positive_duration_soft_histories_required_for_this_analytic_route": false,
+        "nonlinear_corrected_background_Mosco_convergence": false,
+        "uniform_principal_gap": 0.385164807134504,
+        "uniform_trace_right_lift_bound": 4.249543667773264
+      },
+      "exact_next_mathematical_lemma": "PROVE_THE_MOSCO_STRONG_RESOLVENT_CONVERGENCE_OF_THE_GAUGE_FIXED_WEAK_JACOBI_FORMS_AND_STRONG_CONVERGENCE_OF_THE_ACTION_SELECTED_SOFT_CALDERON_CAUCHY_VECTORS_ON_THE_S2_ETA_INTERIOR_CORRECTED_CHILD_BUNDLE",
+      "failure_localization": {
+        "category_3_still_requires_L2_history_collapse": true,
+        "current_classification_category": "NORMAL_DIRECTION_CONTROLLED_BY_THE_EXISTING_POSITIVE_DURATION_GAUGE_FIXED_JACOBI_EVOLUTION",
+        "failure_of_either_statement_proves_category_3": false,
+        "first_unproved_data_statement": "STRONG_PRECOMPACTNESS_AND_IDENTIFICATION_OF_THE_ACTION_SELECTED_SOFT_CALDERON_CAUCHY_VECTORS_MODULO_THE_EXISTING_TANGENT_AND_GAUGE_QUOTIENT",
+        "first_unproved_operator_statement": "MOSCO_STRONG_RESOLVENT_CONVERGENCE_OF_THE_GAUGE_FIXED_WEAK_JACOBI_FORMS_ALONG_THE_ACTUAL_S2_ETA_INTERIOR_CORRECTED_CHILD_BUNDLE"
+      },
+      "new_physics_equations_constraints_regularizers_objectives_or_gates": false,
+      "semigroup_compactness_lemma": {
+        "Trotter_Kato_conclusion": "sup_0<=t<=T_norm(I_N*S_N(t)x_N-S(t)x)_H_gauge_TO_ZERO",
+        "boundary_consequence": "THE_UNIFORM_TRACE_AND_WEAK_CONORMAL_MAP_TRANSFER_THIS_TO_Omega_N(t)_TO_ZERO_UNIFORMLY",
+        "hypotheses": [
+          "sup_N_sup_0<=t<=T_norm(S_N(t))<=M_T",
+          "A_N_CONVERGES_TO_A_IN_STRONG_RESOLVENT_SENSE_AFTER_I_N",
+          "I_N*x_N_CONVERGES_STRONGLY_TO_x_IN_H_gauge"
+        ],
+        "soft_observability_consequence": "EXISTS_tau0>0_WITH_norm(r_N)_L2(0,tau0)>=tau0^(5/2)/(4*sqrt(5))",
+        "uniform_time_continuity_conclusion": "lim_h_TO_0_sup_N_sup_0<=t<=h_norm(I_N*S_N(t)x_N-I_N*x_N)=0"
+      },
+      "validation": {
+        "fixed_background_Calderon_graph_convergence_is_already_derived": true,
+        "no_new_equation_constraint_regularizer_objective_or_gate": true,
+        "nonlinear_corrected_bundle_convergence_not_assumed": true,
+        "uniform_H1_trace_right_lift_is_already_action_owned": true,
+        "uniform_principal_gap_is_already_action_owned": true,
+        "weighted_modulus_is_the_current_minimal_observability_object": true
+      },
+      "validation_passed": true
+    },
+    "soft_normal_fredholm_compactness_dichotomy": {
+      "FULL_BHSM_COMPLETE": false,
+      "Fredholm_setup": {
+        "Fredholm_index": 0,
+        "lower_order_terms": "RELATIVELY_COMPACT_ONE_DIMENSIONAL_MULTIPLICATION,_FINITE_RANK_COLLECTIVE_INERTIA,_AND_FINITE_DIMENSIONAL_WEAK_CONORMAL_BOUNDARY_COUPLING",
+        "normal_boundary_dimension": 7,
+        "physical_tangent_kernel_included_in_normal_problem": false,
+        "principal_operator": "THE_EXISTING_WEIGHTED_GAUGE_FIXED_RADIAL_OPERATOR_WITH_ABSOLUTE_GAP_sqrt(29)-5"
+      },
+      "classification": "ON_ANY_S2_ETA_PRECOMPACT_NORMAL_SECTION_BUNDLE,_FAILURE_OF_THE_N_UNIFORM_NORMAL_RIGHT_INVERSE_IS_EQUIVALENT_TO_THE_EXISTENCE_OF_A_NONZERO_CONTINUUM_GAUGE_QUOTIENTED_NORMAL_JACOBI_KERNEL;_RAW_SMALL_SINGULAR_VALUES_OR_D2_FAILURE_ALONE_DO_NOT_ESTABLISH_CATEGORY_3",
+      "classification_policy": {
+        "category_2": "NO_CONTINUUM_NORMAL_KERNEL_OR_L2_HISTORY_COLLAPSE_HAS_BEEN_CONSTRUCTED;_THE_FINITE_N_RESPONSE_IS_NONZERO",
+        "category_3_requires": "EXHIBIT_THE_NONZERO_CONTINUUM_NORMAL_KERNEL_OR_AN_EQUIVALENT_ACTION_NORMALIZED_L2_HISTORY_COLLAPSE_SEQUENCE",
+        "current_category": "NORMAL_DIRECTION_CONTROLLED_BY_THE_EXISTING_POSITIVE_DURATION_GAUGE_FIXED_JACOBI_EVOLUTION",
+        "genuine_uniform_failure_demonstrated": false
+      },
+      "compactness_contradiction": {
+        "assume_failure": "EXISTS_N_j_AND_NORMAL_x_j_WITH_norm(x_j)_S2=1_AND_norm(J_Nj*x_j,Gamma_Nj*x_j)_dual_TO_ZERO",
+        "background_compactness": "S2_ETA_PRECOMPACTNESS_SELECTS_A_STRONGLY_CONVERGENT_BACKGROUND_SUBSEQUENCE",
+        "limit": "NONZERO_x_star_IN_THE_NORMAL_QUOTIENT_WITH_J_star*x_star=0_AND_ZERO_MATCHED_BOUNDARY_HISTORY",
+        "no_high_frequency_escape": "THE_WEIGHTED_GARDING_ESTIMATE_IMPLIES_1<=C*(RESIDUAL+norm(x_j)_X_E);_COMPACT_X_E_EMBEDDING_PREVENTS_THE_LIMIT_FROM_VANISHING",
+        "operator_limit": "THE_PROVED_COEFFICIENT_TO_MOSCO_THEOREM_PASSES_THE_JACOBI_AND_WEAK_CONORMAL_RELATIONS_TO_THE_LIMIT"
+      },
+      "converse": {
+        "continuum_normal_kernel_is_compatible_with_a_uniform_right_inverse": false,
+        "meaning": "A_NONZERO_NORMAL_KERNEL_PRODUCES_GALERKIN_QUASIMODES_AND_FORCES_THE_DISCRETE_NORMAL_INF_SUP_TO_ZERO"
+      },
+      "exact_next_mathematical_lemma": "PROVE_CONTINUUM_GAUGE_QUOTIENTED_NORMAL_SOFT_JACOBI_KERNEL_ABSENCE_FROM_THE_POSITIVE_DURATION_WEAK_GREEN_ENERGY_IDENTITY,_OR_EXHIBIT_THE_NONZERO_KERNEL_HISTORY",
+      "new_physics_equations_constraints_regularizers_objectives_or_gates": false,
+      "validation": {
+        "coefficient_to_Mosco_implication_is_derived": true,
+        "finite_N_soft_response_is_resolved_nonzero": true,
+        "finite_conditioning_not_used_as_a_failure_proof": true,
+        "no_new_equation_constraint_regularizer_objective_or_gate": true,
+        "normal_boundary_quotient_has_fixed_dimension_seven": true,
+        "principal_spatial_gap_and_propagation_are_derived": true,
+        "tangent_and_gauge_kernels_remain_quotiented_not_deleted": true
+      },
+      "validation_passed": true
+    },
+    "soft_normal_lyapunov_schmidt_reduction": {
+      "FULL_BHSM_COMPLETE": false,
+      "classification": "AFTER_THE_CLOSED_HARD_NORMAL_BLOCKS_ARE_SOLVED,_THE_EXISTING_COMPLETE_CHILD_RELATION_REDUCES_LOCALLY_TO_ONE_ACTION_OWNED_SOFT_SCALAR_SOLVABILITY_FUNCTION_AND_ITS_POSITIVE_DURATION_HISTORY_RESPONSE;_THE_STATIC_EVANS_FACTOR_AND_DYNAMIC_OBSERVABILITY_MODULUS_ARE_DISTINCT,_AND_CATEGORY_3_REQUIRES_THE_FULL_NORMAL_HISTORY_RESPONSE_TO_COLLAPSE",
+      "compact_bundle_observability_implication": {
+        "actual_compact_background_Cauchy_set_proved": false,
+        "compact_uniform_continuity_step": "CONTINUITY_OF_THE_BOUNDARY_ACCELERATION_ON_THE_COMPACT_BACKGROUND_CAUCHY_SET_GIVES_Omega_N(t)_TO_ZERO_UNIFORMLY_AS_t_TO_ZERO",
+        "conclusion": "EXISTS_tau0>0_WITH_inf_N_norm(r_N)_L2(0,tau0)>=_tau0^(5/2)/(4*sqrt(5))>0",
+        "hypotheses": [
+          "THE_ACTUAL_CORRECTED_NORMAL_SECTION_BACKGROUNDS_HAVE_COMPACT_S2_ETA_CLOSURE",
+          "THE_ACTION_NORMALIZED_SOFT_CAUCHY_VECTORS_HAVE_COMPACT_STRONG_GRAPH_CLOSURE",
+          "THE_EXISTING_POSITIVE_DURATION_ENERGY_BOUND_IS_UNIFORM_ON_THAT_CLOSURE"
+        ],
+        "operator_step": "THE_PROVED_ACTION_COEFFICIENT_TO_MOSCO_THEOREM_AND_TROTTER_KATO_GIVE_STRONG_UNIFORM_ON_COMPACT_TIME_CONVERGENCE_OF_THE_SOFT_JACOBI_PROPAGATORS",
+        "proves_category_2_if_hypotheses_close": true
+      },
+      "exact_next_mathematical_lemma": "PROVE_COMPACT_STRONG_GRAPH_CLOSURE_OF_THE_ACTUAL_CORRECTED_S2_ETA_NORMAL_SECTION_BACKGROUNDS_AND_ACTION_NORMALIZED_SOFT_CAUCHY_VECTORS,_WHICH_GIVES_THE_UNIFORM_WEIGHTED_BOUNDARY_ACCELERATION_MODULUS;_OR_CONSTRUCT_THE_NON_TANGENT_NORMALIZED_L2_HISTORY_COLLAPSE_SEQUENCE",
+      "nested_normal_section_correspondence": {
+        "action_metric_role": "CHOOSES_THE_NORMAL_CHART_ORTHOGONAL_TO_TANGENT_AND_GAUGE;_IT_DOES_NOT_SELECT_OR_MODIFY_A_PHYSICAL_ROOT",
+        "all_three_hypotheses_currently_proved_together": false,
+        "conditional_construction": "INJECT_U_N_INTO_X_NPLUS1,_SOLVE_THE_HARD_COMPLEMENT_BY_H_NPLUS1(s),_AND_USE_ONLY_g_NPLUS1(s)=0_TO_CONTINUE_THE_UNCHANGED_ROOT_RELATION",
+        "root_chart_uniqueness_is_the_history_closed_range_theorem": false,
+        "uniform_correspondence_follows_if": [
+          "THE_EXISTING_HARD_RIGHT_INVERSE_AND_HIGH_SHELL_TAIL_ARE_UNIFORM",
+          "inf_N_abs(g_N_prime(s_N))>0",
+          "THE_ACTUAL_NORMAL_SECTION_BACKGROUNDS_ARE_S2_ETA_PRECOMPACT"
+        ]
+      },
+      "new_physics_equations_constraints_regularizers_objectives_or_gates": false,
+      "normal_decomposition": {
+        "hard_equation": "Pi_hard*F_N(U_hard+s*e_soft)=0",
+        "hard_response_measurement": 7.600306105991273,
+        "hard_solution": "U_hard=H_N(s)_BY_THE_EXISTING_HARD_NORMAL_RIGHT_INVERSE",
+        "new_branch_selector": false,
+        "space": "X_normal,N=X_hard,N_DIRECT_SUM_span{e_soft,N}_AFTER_THE_EXISTING_CHILD_TANGENT_AND_GAUGE_QUOTIENT"
+      },
+      "positive_duration_soft_operator": {
+        "normal_minimum_modulus_lower_bound": "beta_soft,N>=norm(r_N)_L2(0,T)_IN_THE_EXISTING_PRODUCT_CODOMAIN_METRIC",
+        "reduced_map": "G_soft,N_prime=(g_N_prime,_r_N)_WITH_r_N(t)=Gamma0*xi_soft,N(t)_ON_0<=t<=T",
+        "static_boundary_factor_may_vanish_while_history_is_observable": true,
+        "uniform_history_lower_bound_proved_on_actual_sequence": false,
+        "weighted_modulus_history_lower_bound": "norm(r_N)_L2(0,tau0)>=tau0^(5/2)/(4*sqrt(5))",
+        "weighted_modulus_sufficient_condition": "EXISTS_tau0>0_SUCH_THAT_sup_N_sup_0<t<=tau0_Omega_N(t)<=1"
+      },
+      "soft_scalar": {
+        "definition": "g_N(s)=ell_soft,N*F_N(H_N(s)+s*e_soft,N)",
+        "finite_exact_response_projection": 0.000127026742366,
+        "is_an_added_equation": false,
+        "linearization": "g_N_prime(s_star)=0_IFF_THE_ACTION_NORMALIZED_SOFT_EVANS_FACTOR_VANISHES_AFTER_NONZERO_HARD_METRIC_FACTORS",
+        "reason": "g_N_IS_THE_REMAINING_COKERNEL_PROJECTION_OF_THE_UNCHANGED_PHYSICAL_COMPLETE_CHILD_MAP",
+        "root_condition": "g_N(s_star)=0",
+        "static_Evans_zero_alone_proves_history_closed_range_failure": false,
+        "uniform_general_N_derivative_bound_proved": false
+      },
+      "three_way_classification": {
+        "category_1_proved_for_the_hard_test_soft_line": false,
+        "category_1_tangent": "g_N_VANISHES_ALONG_AN_ACTION_INTEGRABLE_LOCAL_CHILD_FAMILY_AND_e_soft_IS_ITS_JACOBI_TANGENT",
+        "category_2_dynamically_controlled_normal": "THE_POSITIVE_DURATION_BOUNDARY_HISTORY_HAS_A_NONVANISHING_OBSERVABILITY_NORM;_THIS_DOES_NOT_REQUIRE_THE_STATIC_EVANS_FACTOR_TO_BE_UNIFORMLY_SEPARATED",
+        "category_3_genuine_failure": "A_NON_TANGENT_NORMALIZED_SEQUENCE_HAS_g_N_prime_TO_ZERO_AND_ITS_POSITIVE_DURATION_L2_HISTORY_RESPONSE_TO_ZERO,_EQUIVALENT_ON_A_PRECOMPACT_BUNDLE_TO_A_NONZERO_CONTINUUM_NORMAL_JACOBI_KERNEL",
+        "category_3_proved": false,
+        "current_finite_soft_classification": "NORMAL_DIRECTION_CONTROLLED_BY_THE_EXISTING_POSITIVE_DURATION_GAUGE_FIXED_JACOBI_EVOLUTION"
+      },
+      "validation": {
+        "actual_finite_pairs_are_individually_transverse": true,
+        "child_tangent_and_gauge_directions_remain_quotiented": true,
+        "finite_hard_normal_block_is_invertible": true,
+        "finite_soft_response_is_resolved_nonzero": true,
+        "no_new_equation_constraint_regularizer_objective_or_gate": true,
+        "seven_dimensional_boundary_symbol_is_factored": true,
+        "weighted_positive_duration_observability_object_is_existing": true
+      },
+      "validation_passed": true
+    },
+    "soft_second_graph_coefficient_bundle_audit": {
+      "FULL_BHSM_COMPLETE": false,
+      "N6_to_N10_growth": {
+        "child": {
+          "multiplier_H2_norm": 0.999829768693827,
+          "q_H2_norm": 1.0,
+          "velocity_H1_norm": 1.184698280940413
+        },
+        "event": {
+          "multiplier_H2_norm": 0.996706230083766,
+          "q_H2_norm": 1.0,
+          "velocity_H1_norm": 1.146738567361204
+        }
+      },
+      "classification": "THE_EXISTING_N6_TO_N10_EVENT_CHILD_PROJECTIONS_REMAIN_BOUNDED_IN_THE_ONE_EXTRA_DERIVATIVE_COEFFICIENT_SPACE_S2=H2_q_CROSS_H1_v_CROSS_H2_m_WHILE_ETA_AND_CONSTRAINTS_REMAIN_ADMISSIBLE;_THIS_SUPPORTS_BUT_DOES_NOT_PROVE_THE_SOFT_SECOND_GRAPH_BOUND_ON_A_NONLINEAR_COMPLETE_CHILD_BUNDLE",
+      "coefficient_space": "S2=H2_q_CROSS_H1_velocity_CROSS_H2_lapse_shift",
+      "differentiated_energy_lemma": {
+        "Jacobi_equation": "J_U*xi=0",
+        "coefficient_bound": "norm([D_t,J_U]*xi)_X_E_star<=C2(K_S2,eta0^-1)*norm(xi)_D1_ON_THE_ONE_DIMENSIONAL_CAP",
+        "conclusion_if_initial_soft_D2_lift_is_uniform": "sup_N_sup_0<=t<=T_norm(xi_soft,N(t))_D2<INFINITY",
+        "differentiated_equation": "J_U*(D_t_xi)=-[D_t,J_U]*xi",
+        "energy_bound": "D_t_E1<=C2*(E1+E0),_E1=E_g(D_t_xi)",
+        "new_BHSM_equation_or_gate": false
+      },
+      "exact_next_mathematical_lemma": "PROVE_AN_N_UNIFORM_INITIAL_D2_LIFT_BOUND_FOR_THE_ACTION_SELECTED_SOFT_CALDERON_BOUNDARY_DATUM_ON_THE_S2_ETA_INTERIOR_CHILD_BUNDLE_AND_PROPAGATE_IT_BY_THE_DIFFERENTIATED_GAUGE_FIXED_JACOBI_ENERGY_ESTIMATE",
+      "maximum_measured_growth": 1.184698280940413,
+      "new_physics_equations_constraints_regularizers_objectives_or_gates": false,
+      "remaining_gap": {
+        "finite_projection_measurement_proves_either_statement": false,
+        "genuine_uniform_normal_closed_range_failure_demonstrated": false,
+        "uniform_initial_D2_lift_for_the_action_selected_soft_boundary_datum": false,
+        "uniform_positive_duration_S2_bound_on_actual_corrected_child_histories": false
+      },
+      "rows": [
+        {
+          "N": 6,
+          "child": {
+            "eta_Legendre_minimum": 0.996784766150211,
+            "maximum_constraint_residual": 5.9229e-11,
+            "multiplier_H2_norm": 30.832441190417935,
+            "q_H2_norm": 3.133868353082359,
+            "velocity_H1_norm": 18.772304106146105
+          },
+          "event": {
+            "eta_Legendre_minimum": 0.984285375657069,
+            "maximum_constraint_residual": 2.4e-14,
+            "multiplier_H2_norm": 32.72280207063566,
+            "q_H2_norm": 0.014204448704025,
+            "velocity_H1_norm": 16.188695351251933
+          }
+        },
+        {
+          "N": 7,
+          "child": {
+            "eta_Legendre_minimum": 0.973922600085242,
+            "maximum_constraint_residual": 8.8e-14,
+            "multiplier_H2_norm": 30.69714612590743,
+            "q_H2_norm": 3.133868353082359,
+            "velocity_H1_norm": 21.03013483166127
+          },
+          "event": {
+            "eta_Legendre_minimum": 0.883358920420822,
+            "maximum_constraint_residual": 6.9e-14,
+            "multiplier_H2_norm": 32.485980954432414,
+            "q_H2_norm": 0.014204448704025,
+            "velocity_H1_norm": 17.758121633038325
+          }
+        },
+        {
+          "N": 8,
+          "child": {
+            "eta_Legendre_minimum": 0.973573941746274,
+            "maximum_constraint_residual": 4.73e-13,
+            "multiplier_H2_norm": 30.68346319196661,
+            "q_H2_norm": 3.133868353082359,
+            "velocity_H1_norm": 20.993943105127205
+          },
+          "event": {
+            "eta_Legendre_minimum": 0.855566002044938,
+            "maximum_constraint_residual": 1.5e-14,
+            "multiplier_H2_norm": 32.592485726256555,
+            "q_H2_norm": 0.014204448704025,
+            "velocity_H1_norm": 17.76467614106833
+          }
+        },
+        {
+          "N": 9,
+          "child": {
+            "eta_Legendre_minimum": 0.994374805427328,
+            "maximum_constraint_residual": 4.7e-14,
+            "multiplier_H2_norm": 30.784061937087838,
+            "q_H2_norm": 3.133868353082359,
+            "velocity_H1_norm": 22.178374944208013
+          },
+          "event": {
+            "eta_Legendre_minimum": 0.869836212912301,
+            "maximum_constraint_residual": 1.2e-14,
+            "multiplier_H2_norm": 32.50627861496038,
+            "q_H2_norm": 0.014204448704025,
+            "velocity_H1_norm": 18.566736694312777
+          }
+        },
+        {
+          "N": 10,
+          "child": {
+            "eta_Legendre_minimum": 0.994749148362237,
+            "maximum_constraint_residual": 1.12e-13,
+            "multiplier_H2_norm": 30.827192543681594,
+            "q_H2_norm": 3.133868353082359,
+            "velocity_H1_norm": 22.239516403841947
+          },
+          "event": {
+            "eta_Legendre_minimum": 0.901562827395808,
+            "maximum_constraint_residual": 2.62e-13,
+            "multiplier_H2_norm": 32.61502068960053,
+            "q_H2_norm": 0.014204448704025,
+            "velocity_H1_norm": 18.564201314541634
+          }
+        }
+      ],
+      "validation": {
+        "all_measured_constraint_projections_close": true,
+        "all_measured_states_remain_eta_admissible": true,
+        "measured_S2_coefficient_norm_growth_is_bounded": true,
+        "measured_bound_not_promoted_as_a_uniform_bundle_theorem": true,
+        "no_new_equation_constraint_regularizer_objective_or_gate": true,
+        "projection_rows_not_promoted_as_complete_higher_N_children": true
+      },
+      "validation_passed": true
+    },
+    "soft_uniform_smooth_boundary_lift_audit": {
+      "FULL_BHSM_COMPLETE": false,
+      "attachment_chart": "(q_w,q_c=q_scale-q_w)",
+      "classification": "THE_ATTACHMENT_CONFIGURATION_TRACE_HAS_AN_EXACT_N_INDEPENDENT_SMOOTH_RIGHT_LIFT_USING_ONLY_THE_EXISTING_SCALE_AND_FIRST_u_MODE;_THE_SOFT_D2_BLOCKER_IS_NOT_THE_BOUNDARY_TRACE_BUT_THE_VERTICAL_WEAK_JACOBI_CORRECTION_AND_CONORMAL_REACTION",
+      "exact_next_mathematical_lemma": "PROVE_OR_LOCALIZE_FAILURE_OF_THE_N_UNIFORM_D2_VERTICAL_JACOBI_CORRECTION_BOUND_FOR_THE_FIXED_SMOOTH_SOFT_BOUNDARY_LIFT_ON_THE_S2_ETA_INTERIOR_CHILD_BUNDLE",
+      "lift_formula": {
+        "for_boundary_datum": "delta_b=(delta_q_w,delta_q_c)",
+        "identity": "B_N(q)*H_smooth=I2_FOR_ALL_N>=1_AND_ALL_q",
+        "matrix_columns_in_(q_scale,u1)": [
+          [
+            1.0,
+            1.0
+          ],
+          [
+            0.0,
+            1.0
+          ]
+        ],
+        "nonzero_coordinates": "delta_q_scale=delta_q_w+delta_q_c,_delta_u1=delta_q_c"
+      },
+      "new_physics_equations_constraints_regularizers_objectives_or_gates": false,
+      "remaining_vertical_problem": {
+        "conormal_reaction_is_part_of_the_same_vertical_solution": true,
+        "decomposition": "xi_soft,N=H_smooth*b_soft,N+zeta_N,_Gamma0*zeta_N=0",
+        "genuine_uniform_normal_closed_range_failure_demonstrated": false,
+        "required_bound": "sup_N_norm(zeta_N)_D2<=C_vert,2*norm(J_U,N*H_smooth*b_soft,N)_D1_star",
+        "uniform_vertical_D2_bound_proved": false,
+        "vertical_equation": "J_U,N*zeta_N=-J_U,N*H_smooth*b_soft,N"
+      },
+      "rows": [
+        {
+          "H1_operator_norm": 4.249543667773264,
+          "H2_operator_norm": 17.029487959600672,
+          "H6_operator_norm": 4913.000101770815,
+          "N": 6,
+          "boundary_right_inverse_defect": 0.0
+        },
+        {
+          "H1_operator_norm": 4.249543667773264,
+          "H2_operator_norm": 17.029487959600672,
+          "H6_operator_norm": 4913.000101770815,
+          "N": 10,
+          "boundary_right_inverse_defect": 0.0
+        },
+        {
+          "H1_operator_norm": 4.249543667773264,
+          "H2_operator_norm": 17.029487959600672,
+          "H6_operator_norm": 4913.000101770815,
+          "N": 16,
+          "boundary_right_inverse_defect": 0.0
+        },
+        {
+          "H1_operator_norm": 4.249543667773264,
+          "H2_operator_norm": 17.029487959600672,
+          "H6_operator_norm": 4913.000101770815,
+          "N": 32,
+          "boundary_right_inverse_defect": 0.0
+        },
+        {
+          "H1_operator_norm": 4.249543667773264,
+          "H2_operator_norm": 17.029487959600672,
+          "H6_operator_norm": 4913.000101770815,
+          "N": 64,
+          "boundary_right_inverse_defect": 0.0
+        }
+      ],
+      "sampled_orders": [
+        6,
+        10,
+        16,
+        32,
+        64
+      ],
+      "uniform_bounds": {
+        "H1": 4.249543667773264,
+        "H2": 17.029487959600672,
+        "H6": 4913.000101770815
+      },
+      "validation": {
+        "fixed_scale_and_first_u_mode_lift_is_an_exact_right_inverse": true,
+        "lift_does_not_solve_or_modify_the_vertical_Jacobi_equation": true,
+        "lift_uses_only_preexisting_scale_and_u1_coordinates": true,
+        "no_new_equation_constraint_regularizer_objective_or_gate": true,
+        "smooth_lift_norm_is_independent_of_N": true
+      },
+      "validation_passed": true
+    },
+    "uniform_boundary_jerk_compactness_reduction": {
+      "FULL_BHSM_COMPLETE": false,
+      "classification": "AN_N_UNIFORM_BOUNDARY_JERK_CONSTANT_EXISTS_FOR_THE_FIXED_INJECTED_N6_ETA_INTERIOR_BACKGROUND_BY_ACTION_ANALYTICITY_AND_SOBOLEV_GALERKIN_STABILITY;_EXTENSION_TO_THE_NONLINEAR_CORRECTED_CHILD_BUNDLE_REQUIRES_A_UNIFORM_CLASSICAL_NORM_AND_ETA_MARGIN",
+      "exact_next_mathematical_lemma": "PROVE_OR_DISPROVE_AN_N_UNIFORM_H6xH5xH6_BOUND_AND_POSITIVE_ETA_MARGIN_FOR_THE_MIXED_BOUNDARY_LAYER_CORRECTED_EVENT_CHILD_BUNDLE",
+      "fixed_background_soft_observability": {
+        "classification": "UNIFORMLY_DYNAMICAL_CONTROLLED_ACROSS_THE_FIXED_INJECTED_GALERKIN_SEQUENCE",
+        "homogeneous_history_kernel_possible": false,
+        "lower_bound": "norm(r_N)_L2(0,tau_fixed)>=tau_fixed^(5/2)/(4*sqrt(5))"
+      },
+      "new_physics_equations_constraints_regularizers_objectives_or_gates": false,
+      "nonlinear_child_bundle_extension": {
+        "genuine_uniform_failure_demonstrated": false,
+        "proved_by_the_oscillatory_N6_through_N10_constraint_projections": false,
+        "proved_from_N3_through_N6_examples": false,
+        "required_eta_margin": "inf_N_inf_t eta_Legendre>=eta_bundle>0",
+        "required_uniform_bound": "sup_N norm(U_event,N,U_child,N)_H6xH5xH6<=K_bundle"
+      },
+      "validation_passed": true
+    },
+    "uniform_positive_duration_normal_closed_range_reduction": {
+      "FULL_BHSM_COMPLETE": false,
+      "already_closed_uniform_blocks": {
+        "canonical_principal_absolute_gap": 0.385164807134504,
+        "uniform_attachment_right_lift_bound": 4.249543667773264,
+        "uniform_attachment_trace_infsup": 0.235319384427927
+      },
+      "classification": "UNIFORM_POSITIVE_DURATION_NORMAL_CLOSED_RANGE_REDUCED_TO_COLLECTIVE_COMPACTNESS_AND_NORMAL_KERNEL_EXCLUSION;_THE_FINITE_N_SOFT_MOMENTUM_CHANNEL_IS_NOT_A_TANGENT_OR_ZERO_MODE;_A_GENUINE_UNIFORM_FAILURE_IS_NOT_YET_PROVED",
+      "exact_next_mathematical_lemma": "PROVE_COLLECTIVE_COMPACT_CONVERGENCE_OF_C_N=P_N^(-1)K_N_ON_THE_ACTION_ENERGY_COHERENT_NORMAL_BUNDLE_AND_EXCLUDE_A_NON_TANGENT_MINUS_ONE_EIGENSTATE_IN_THE_ISOLATED_SOFT_MOMENTUM_CHANNEL",
+      "failure_localization": {
+        "attachment_trace_failure": false,
+        "gauge_quotient_failure": false,
+        "hard_momentum_response_failure": false,
+        "only_remaining_failure_mechanisms": [
+          "LOSS_OF_COLLECTIVE_COMPACTNESS_OR_COEFFICIENT_CONVERGENCE_ALONG_THE_ACTION_ENERGY_COHERENT_CHILD_BRANCH",
+          "A_NON_TANGENT_CONTINUUM_MINUS_ONE_EIGENSTATE_OF_C_IN_THE_ISOLATED_SOFT_MOMENTUM_CHANNEL"
+        ],
+        "principal_symbol_failure": false,
+        "uniform_failure_demonstrated": false
+      },
+      "fixed_background_compactness": "PROVED_BY_RELLICH_H1_TO_L2_TO_H_MINUS_1_AND_FINITE_RANK_TRACE_CONSTRAINT_REACTION_BLOCKS",
+      "isolated_soft_momentum_channel": {
+        "classification": "NORMAL_DIRECTION_CONTROLLED_BY_THE_EXISTING_POSITIVE_DURATION_GAUGE_FIXED_JACOBI_EVOLUTION",
+        "finite_N_exact_response_projection_magnitude": 0.000127026742366,
+        "finite_N_zero_mode": false,
+        "legitimate_child_manifold_tangent": false,
+        "one_finite_N_value_proves_an_N_uniform_gap": false
+      },
+      "new_physics_equations_constraints_regularizers_objectives_or_gates": false,
+      "validation_passed": true
+    },
+    "weak_boundary_layer_radii_obstruction_audit": {
+      "FULL_BHSM_COMPLETE": false,
+      "asymptotic_cutoff_estimates_to_reach_that_radius": {
+        "using_principal_gap_upper_correction_scale": 311841333950.37103,
+        "using_principal_norm_lower_correction_scale": 428943499.2710528
+      },
+      "boundary_Casimir_coefficient": 2.195689551624391,
+      "boundary_H_minus_1_tail_norm": 0.215041886481946,
+      "classification": "DIRECT_N6_TO_CONTINUUM_RADII_TRANSFER_INVALIDATED_BY_THE_ACTION_OWNED_CASIMIR_BOUNDARY_DISTRIBUTION_TAIL;_AN_EXACT_VARIATIONAL_BOUNDARY_LAYER_LIFT_OR_PARAMETRIX_IS_REQUIRED",
+      "cutoff": 6,
+      "exact_series_identity": {
+        "closed_form": "((pi/4)*coth(pi/4)-1)/2",
+        "retained_through_cutoff": 0.089222614943243,
+        "series": "SUM_k>=1 1/(1+16*k^2)",
+        "tail_after_cutoff": 0.009591891379383,
+        "total": 0.098814506322626
+      },
+      "finite_N_measured_radii_upper_root": 2.552098932e-06,
+      "first_missing_mathematical_object": "DERIVE_FROM_THE_RETAINED_ACTION_AN_EXACT_BOUNDARY_LAYER_LIFT_OR_CALDERON_PARAMETRIX_FOR_THE_CASIMIR_LAPSE_DISTRIBUTION_AND_APPLY_THE_RADII_BOUND_ONLY_TO_ITS_REGULAR_REMAINDER",
+      "interpretation": "THE_FINITE_N6_CHILD_REMAINS_A_VALID_ROOT_OF_ITS_RETAINED_TOTAL_WEAK_EQUATIONS;_WHAT_FAILS_IS USING_ITS_ZERO_PADDED_STATE_AS_AN_ALREADY_SMALL_CONTINUUM_NEWTON_SEED",
+      "invalidated_next_route": "MECHANICALLY_INCREASE_N_UNTIL_THE_RAW_BOUNDARY_TAIL_FITS_INSIDE_THE_N6_LOCAL_RADII_BALL",
+      "minimum_principal_correction_to_radius_ratio": 8113.573272387788,
+      "new_equations_constraints_or_acceptance_gates": false,
+      "normalized_principal_symbol": {
+        "largest_absolute_eigenvalue": 10.385164807134505,
+        "principal_only_correction_norm_bracket": [
+          0.020706641683165,
+          0.558311357888029
+        ],
+        "smallest_absolute_eigenvalue": 0.385164807134504
+      },
+      "validation": {
+        "N6_direct_tail_exceeds_measured_finite_N_radius": true,
+        "boundary_source_is_action_owned_not_a_new_constraint": true,
+        "exact_H_minus_1_boundary_series_is_positive": true,
+        "finite_N6_root_and_persistence_remain_valid": true,
+        "mechanical_resolution_increase_is_not_a_practical_closure_route": true,
+        "no_new_equation_constraint_or_acceptance_gate": true
+      },
+      "validation_passed": true
+    },
+    "weak_calderon_boundary_generator_reduction": {
+      "FULL_BHSM_COMPLETE": false,
+      "already_owned_constants": {
+        "fixed_pair_minimum_Friedrichs_sine": 0.000200688538568,
+        "maximum_measured_N6_to_N10_weak_norm_growth": 1.061327877947197,
+        "uniform_trace_right_lift_bound": 4.249543667773264,
+        "validated_eta_margin_on_the_existing_witness": 0.99830307447322,
+        "validated_positive_duration": 0.000113439890737
+      },
+      "boundary_evolution": {
+        "Calderon_subspace": "L_N(t)=Ran(P_N(t))_SUBSET_B",
+        "orthogonal_projector_identity": "D_t_P_N=(I-P_N)A_NP_N+P_NA_N_star(I-P_N)",
+        "phase_space": "B=TSTAR_R2_WITH_THE_EXISTING_ACTION_H1_TRACE_METRIC",
+        "projector_speed_bound": "norm(D_t_P_N)<=2*norm((I-P_N)A_NP_N)",
+        "single_valued_DtN_chart_required": false,
+        "tangential_block_cancels": "P_N*A_N*P_N",
+        "weak_Jacobi_cocycle": "D_t_z_N=A_N(t)z_N_ON_THE_GAUGE_FIXED_WEAK_EULER_DIRAC_GRAPH_DOMAIN"
+      },
+      "classification": "THE_SOFT_BOUNDARY_JERK_PROBLEM_REDUCES_TO_AN_N_UNIFORM_FULL_SOFT_WEAK_CALDERON_GENERATOR_AND_WEAK_ENERGY_COEFFICIENT_BOUND;_THE_EXISTING_STATIC_GRAPH_CONVERGENCE_DOES_NOT_PROVE_THIS_TIME_REGULARITY,_SO_FAILURE_IS_LOCALIZED_BUT_NOT_DEMONSTRATED",
+      "exact_next_mathematical_lemma": "PROVE_AN_N_UNIFORM_HIDDEN_REGULARITY_ESTIMATE_FOR_THE_FULL_SOFT_CALDERON_BOUNDARY_GENERATOR_A_N_P_SOFT,_INCLUDING_PARALLEL_AMPLITUDE_AND_OFF_DIAGONAL_ROTATION,_FROM_THE_WEAK_CONORMAL_GREEN_IDENTITY_AND_THE_EXISTING_GAUGE_FIXED_JACOBI_ENERGY_ESTIMATE",
+      "failure_localization": {
+        "classification_category": "NORMAL_DIRECTION_CONTROLLED_BY_THE_EXISTING_POSITIVE_DURATION_GAUGE_FIXED_JACOBI_EVOLUTION",
+        "first_unproved_map": "THE_WEAK_GREEN_IDENTITY_TO_BOUNDARY_EVOLUTION_INTERTWINER_THAT_BOUNDS_THE_FULL_A_N_ACTION_ON_THE_SOFT_LINE,_INCLUDING_PARALLEL_AMPLITUDE_AND_OFF_DIAGONAL_ROTATION",
+        "genuine_uniform_normal_closed_range_failure_demonstrated": false,
+        "soft_channel_classification_changed": false
+      },
+      "new_physics_equations_constraints_regularizers_objectives_or_gates": false,
+      "open_uniform_constants": {
+        "A_soft_parallel_amplitude_generator": "NOT_YET_DERIVED_OR_MEASURED_ON_POSITIVE_DURATION_HIGHER_N_HISTORIES",
+        "C_energy_on_the_nonlinear_corrected_bundle": "NOT_YET_PROVED_UNIFORM_IN_N",
+        "K_soft_off_diagonal_Calderon_generator": "NOT_YET_DERIVED_OR_MEASURED_ON_POSITIVE_DURATION_HIGHER_N_HISTORIES",
+        "classical_H6_bound_substituted": false,
+        "static_N_projector_differences_bound_D_t_P_N": false
+      },
+      "soft_jerk_factorization": {
+        "amplitude_control": "D_t_rho_N=alpha_N*rho_N_WITH_alpha_N=<e_N,A_Ne_N>;_A_UNIFORM_POINTWISE_BOUND_ON_alpha_N_IS_NOT_INFERRED_FROM_STATIC_GRAPH_CONVERGENCE_OR_FROM_AN_INTEGRATED_ENERGY_GROWTH_BOUND_ALONE",
+        "direction_control": "norm(D_t_e_N)<=norm((I-P_N)A_NP_N)_soft_PLUS_THE_ONE_DIMENSIONAL_QUOTIENT_CONNECTION",
+        "observability_consequence": "tau=min(T,3/(2*M3))_AND_norm(r_N)_L2(0,tau)>=tau^(5/2)/(4*sqrt(5))",
+        "soft_line": "ell_soft,N(t)_SUBSET_L_N(t)_AFTER_THE_EXISTING_CHILD_TANGENT_AND_GAUGE_QUOTIENT",
+        "sufficient_uniform_constant": "M3<=rho_star*(A_soft_parallel+K_soft)_WITH_A_soft_parallel=sup_N,t_abs(<e_N,A_Ne_N>)_AND_K_soft=sup_N,t_norm((I-P_N)A_NP_N)e_N",
+        "unit_boundary_acceleration": "a_N(t)=rho_N(t)e_N(t),_norm(e_N(t))=1"
+      },
+      "validation": {
+        "Calderon_graph_projectors_are_orthogonal_on_the_fixed_pair": true,
+        "boundary_phase_space_has_fixed_dimension_four": true,
+        "existing_positive_duration_and_eta_margin_are_positive": true,
+        "measured_weak_graph_norm_sequence_is_bounded": true,
+        "missing_generator_bound_not_asserted_from_static_projectors": true,
+        "no_new_equation_constraint_regularizer_objective_or_gate": true,
+        "orthogonal_projector_identity_removes_tangential_generator": true,
+        "tangential_amplitude_generator_is_retained_in_the_jerk_bound": true,
+        "uniform_weak_boundary_right_lift_is_already_derived": true
+      },
+      "validation_passed": true
+    },
+    "weak_complete_child_normal_lipschitz_audit": {
+      "FULL_BHSM_COMPLETE": false,
+      "Newton_correction": {
+        "action_normalized_norm": 1.151e-12,
+        "eta_minima_at_signed_corrections": [
+          1.000021066638954,
+          1.000021066638956
+        ]
+      },
+      "Richardson_Hessian_Frobenius_bound_measurement": 39904.87757641086,
+      "classification": "FINITE_N_ACTION_NORMALIZED_NORMAL_HESSIAN_AND_MEASURED_RADII_CONDITION_EVALUATED;_A_RIGOROUS_NEIGHBORHOOD_SUPREMUM_AND_INFINITE_TAIL_BOUND_REMAIN_REQUIRED",
+      "derivative_step": 2e-05,
+      "finite_N_measured_radii_polynomial": {
+        "Y": 1.151e-12,
+        "Z0": 4.6e-14,
+        "discriminant": 0.999998196103139,
+        "formula": "p(r)=Z2*r^2-(1-Z0)*r+Y",
+        "is_a_rigorous_infinite_dimensional_existence_proof": false,
+        "measured_Z2": 391834.16309917974,
+        "negative_interval_roots": [
+          1.151e-12,
+          2.552098932e-06
+        ],
+        "normal_inverse_operator_norm": 9.819204741297249
+      },
+      "first_missing_mathematical_object": "DERIVE_A_CONSERVATIVE_ACTION_ANALYTIC_SUPREMUM_FOR_THE_NORMAL_HESSIAN_ON_THE_MEASURED_RADII_BALL_AND_BOUND_THE_INFINITE_WEAK_CONSTRAINT_TAIL_AFTER_PRINCIPAL_INVERSION",
+      "new_equations_constraints_or_acceptance_gates": false,
+      "normal_dimension": 19,
+      "source": "TOTAL_WEAK_N6_MAP_ON_ITS_19_DIMENSIONAL_NORMAL_QUOTIENT",
+      "two_scale_Hessian_rows": [
+        {
+          "Hessian_tensor_Frobenius_norm": 39904.75470946256,
+          "largest_single_output_Hessian_slice_norm": 29099.706742328413,
+          "mixed_direction_symmetry_relative_error": 3.8968344726e-05,
+          "normalized_outer_radius": 0.0002
+        },
+        {
+          "Hessian_tensor_Frobenius_norm": 39904.84685560604,
+          "largest_single_output_Hessian_slice_norm": 29099.54142177797,
+          "mixed_direction_symmetry_relative_error": 9.394337481e-06,
+          "normalized_outer_radius": 0.0001
+        }
+      ],
+      "two_scale_tensor_relative_change": 2.4838438286e-05,
+      "validation": {
+        "Newton_correction_remains_eta_admissible": true,
+        "measured_finite_N_radii_discriminant_is_positive": true,
+        "mixed_direction_symmetry_replays": true,
+        "no_new_equation_constraint_or_acceptance_gate": true,
+        "normal_reduced_Jacobian_is_invertible": true,
+        "two_scale_Hessian_measurement_is_stable": true
+      },
+      "validation_passed": true,
+      "why_not_yet_a_theorem": "THE_TWO_SCALE_TENSOR_IS_A_CONTROLLED_LOCAL_MEASUREMENT_BUT_NOT_AN_INTERVAL_OR_ANALYTIC_SUPREMUM_OVER_THE_FULL_BALL;_THE_INFINITE_H_MINUS_1_HIGH_SHELL_DEFECT_MUST_ALSO_BE_BOUNDED_AFTER_THE_PRINCIPAL_INVERSE_GAIN"
+    },
+    "weak_complete_child_normal_right_inverse_audit": {
+      "FULL_BHSM_COMPLETE": false,
+      "center_residual": {
+        "action_normalized_maximum": 3.8341e-11,
+        "action_normalized_total_norm": 4.5276e-11,
+        "eta_Legendre_minimum": 1.000021066638955,
+        "raw_boundary_momentum_norm": 1.732e-11,
+        "raw_boundary_norm": 0.0,
+        "raw_total_constraint_norm": 6.1e-14
+      },
+      "classification": "ACTION_NORMALIZED_TOTAL_WEAK_N6_COMPLETE_CHILD_MAP_HAS_A_FINITE_FULL_ROW_RANK_NORMAL_RIGHT_INVERSE;_NONLINEAR_LIPSCHITZ_AND_INFINITE_TAIL_RADII_BOUND_REMAINS_OPEN",
+      "derivative": {
+        "condition_number": 7403.484431411537,
+        "coordinate_singular_values_used_as_physics": false,
+        "largest_singular_value": 753.980002150332,
+        "normal_domain_basis": [
+          [
+            -0.09312021991032,
+            -0.017003412604458,
+            0.060458345646296,
+            -0.113868284112436,
+            0.094259079381818,
+            -0.037344520507465,
+            -0.056138499528303,
+            -0.017183210405448,
+            0.004775544096534,
+            -0.002089645916233,
+            0.000168441659274,
+            0.001540525754082,
+            -0.00247151624097,
+            -0.417927823420788,
+            0.104041443381346,
+            -0.054576724876951,
+            0.0367893844871,
+            -0.027828205898904,
+            0.02176281491445,
+            0.019009938934389,
+            0.003962779708329,
+            -0.053793784831649,
+            0.228348845996307,
+            -0.42851139435537,
+            0.525663316100526,
+            -0.492714519540632,
+            -0.008508785861139,
+            0.005016868809963,
+            0.00115480925227,
+            -0.004411401314638,
+            0.004202777307176,
+            -0.000843970356825,
+            0.037013396897601,
+            -0.040326477140007,
+            0.045355116449847,
+            -0.043921247381801,
+            0.034106758900742,
+            -0.018392275561186,
+            -0.002406600624099,
+            0.002444961577602,
+            -0.001423246454244,
+            0.000873275567599,
+            -0.000764710624603,
+            0.000831050869643,
+            -0.052963767228792,
+            0.000439880730087,
+            -0.000422840295965,
+            -0.00270875552515,
+            0.003264845837088,
+            0.001563200802153
+          ],
+          [
+            0.042128826344592,
+            -0.335294467005356,
+            -0.103459996992132,
+            0.26387510541109,
+            0.023745691858565,
+            -0.102071927801214,
+            0.01965517806218,
+            0.147612904617241,
+            -0.039230726346163,
+            -0.000528322651527,
+            0.019236975221461,
+            -0.008720912372737,
+            -0.002137920045127,
+            0.110128440768804,
+            -0.034342831793995,
+            -0.009709576258795,
+            0.036231606601427,
+            -0.024006188204638,
+            0.007255167954119,
+            -0.137872622914934,
+            0.526685647678168,
+            -0.635676180265283,
+            0.107245637913796,
+            0.072003964022167,
+            0.031614702653356,
+            -0.052465147178979,
+            0.057264685444151,
+            -0.014481688857238,
+            -0.036390189641413,
+            0.024489051001248,
+            0.001547197470326,
+            -0.004158625023641,
+            0.128427315118955,
+            -0.070485264421679,
+            -0.012145892401695,
+            0.021790125481374,
+            -5.0852306146e-05,
+            -0.002266959329442,
+            0.007190787816407,
+            0.003675467659054,
+            -0.00699043831372,
+            0.001242846032638,
+            -0.000596659161965,
+            0.001683031725955,
+            -0.07457278223763,
+            0.024669134337663,
+            0.001737459957792,
+            -0.014317845172557,
+            0.003673794875781,
+            0.003962589212348
+          ],
+          [
+            -0.077845247636128,
+            0.455693490974413,
+            -0.322223993554229,
+            0.020792448742835,
+            -0.023266493811015,
+            0.119708360874906,
+            -0.068038671765839,
+            -0.035173894834166,
+            0.015227526123883,
+            -0.007822986038233,
+            -0.001909836116542,
+            0.003615537291285,
+            0.001118297039372,
+            -0.163588868309294,
+            0.038854879592526,
+            -0.000781750961095,
+            -0.018268306537577,
+            0.013031911051919,
+            -0.000638853388449,
+            -0.682534911918173,
+            0.328356932874665,
+            0.116049217601764,
+            -0.084393565424415,
+            -0.068222939655623,
+            0.012900757553042,
+            0.088279733386198,
+            -0.033394134064302,
+            0.019398149337305,
+            0.003599059763591,
+            -0.008668018484189,
+            -0.000729057730791,
+            0.005428858828601,
+            -0.027248318777458,
+            -0.008618364360119,
+            0.052955595256694,
+            -0.044441255400362,
+            0.016129092330726,
+            -0.002250605399994,
+            -0.013281415879979,
+            0.005433700666665,
+            0.00096264505503,
+            1.6718573572e-05,
+            -0.000764705578216,
+            0.000515934460582,
+            0.130864612649081,
+            -0.01911940523996,
+            -0.003792640617523,
+            0.010480337122333,
+            -0.005012869115093,
+            -0.001853758862879
+          ],
+          [
+            -0.011508888720092,
+            0.04804252699904,
+            0.248004936664825,
+            -0.102486080485743,
+            -0.313520554662416,
+            0.26321385837268,
+            0.064859841707505,
+            -0.062731450023208,
+            0.014268108937859,
+            0.008013886535614,
+            -0.014481229843999,
+            0.00020397304911,
+            0.009306491436484,
+            -0.082775634608086,
+            0.019102220459682,
+            0.013510973939376,
+            -0.022706045929727,
+            0.000505552976532,
+            0.014721311526287,
+            -0.066106255181165,
+            -0.051664886370949,
+            -0.201749647658143,
+            0.61997901299632,
+            -0.326641253695881,
+            -0.253235367398451,
+            0.365001252073189,
+            -0.021405634809145,
+            -0.00131851620157,
+            0.021219544833091,
+            -0.000495216977642,
+            -0.018640121570168,
+            0.010304521113064,
+            -0.00819391207437,
+            -0.020597991979322,
+            0.043836241852022,
+            -0.00956939218144,
+            -0.02484379345947,
+            0.018465319624614,
+            -0.007664881793264,
+            -0.000444745060712,
+            0.003216674726852,
+            0.001950200101583,
+            -0.002555040786405,
+            0.000393964719607,
+            0.002773955524465,
+            -0.002204947406404,
+            0.000360649323574,
+            0.005567881958282,
+            -0.00015462283877,
+            -0.004452228941673
+          ],
+          [
+            -0.089927823449927,
+            0.152202375252281,
+            0.06182114757782,
+            0.235664596621095,
+            -0.30057490430372,
+            -0.268406261192878,
+            0.282770216828896,
+            -0.127829720258903,
+            0.023715633701492,
+            0.011365374131676,
+            -0.010742587425695,
+            -0.00910621227408,
+            0.005912359668797,
+            -0.359277673005997,
+            0.071348806811668,
+            0.005053265970343,
+            -0.009482953881738,
+            -0.019295735147634,
+            0.013078838210777,
+            -0.070852614274135,
+            -0.117880092193679,
+            -0.052400770729191,
+            0.163601452496112,
+            0.432327456726108,
+            -0.316797888069887,
+            -0.402942642001758,
+            -0.046175833697251,
+            0.008180387132255,
+            0.023103792267211,
+            0.002701748462899,
+            -0.009392330058587,
+            -0.010292181285507,
+            -0.05330311060099,
+            0.000136683625552,
+            0.047465138067062,
+            -0.016101643360155,
+            0.004479826035067,
+            -0.026949415632464,
+            -0.013121071675956,
+            -0.003081052178215,
+            0.005228010744913,
+            0.005000579405066,
+            -0.000818258046082,
+            -0.003428980768653,
+            -0.083715151793407,
+            -0.020517663196968,
+            0.008120921931647,
+            0.010252837883772,
+            -0.00085744522928,
+            -0.002637789837565
+          ],
+          [
+            -0.297925517842215,
+            0.240757697213031,
+            -0.154765816301515,
+            0.301178034322535,
+            -0.367482324859496,
+            0.184440949396256,
+            -0.272856572474725,
+            -0.024350145127571,
+            0.010951763307843,
+            0.009346810984186,
+            -0.012354761797081,
+            -0.000604639016128,
+            0.001943821925126,
+            0.546305368278838,
+            -0.102271869987236,
+            0.033139957370252,
+            -0.020950784510872,
+            0.017344449972294,
+            -0.015440124513013,
+            0.11110773974154,
+            -0.071504135410378,
+            0.009023403915797,
+            0.156888439640911,
+            -0.03244318563404,
+            0.16999792785321,
+            -0.288720204088338,
+            -0.03555952180198,
+            0.007093227594477,
+            0.020356890528082,
+            -0.004181466285075,
+            -0.005833337155541,
+            0.00190378718732,
+            -0.048498830443848,
+            0.042506382271669,
+            -0.016823644477437,
+            -0.015622237897718,
+            0.030688175993607,
+            -0.029998547436793,
+            -0.007556485623549,
+            -0.003897325326659,
+            -0.000577574524527,
+            0.002235829600697,
+            -0.00025509697924,
+            -0.000933001785435,
+            -0.13376141943625,
+            -0.03518276555306,
+            -0.00713075853447,
+            0.010512547133566,
+            0.002453708795937,
+            0.002861869732935
+          ],
+          [
+            0.047222244884674,
+            -0.05620058097391,
+            -0.186753167425691,
+            -0.113788768662629,
+            -0.091260954344201,
+            0.063624959895991,
+            -0.148894714147078,
+            -0.013644444116025,
+            0.007856123892085,
+            -0.003461552437348,
+            0.000907154772201,
+            0.002202176243601,
+            -0.004060347820858,
+            -0.198049883126754,
+            0.032637040594328,
+            0.004553382946209,
+            -0.010809247271631,
+            0.007596499262,
+            -0.009193171941431,
+            0.206637845059585,
+            0.347653379872869,
+            0.249090988191931,
+            -0.030172296785509,
+            -0.049849742290807,
+            -0.184525166354669,
+            0.062557014786245,
+            -0.002691697079806,
+            0.01041691779487,
+            -0.002813992838827,
+            -0.005449969148875,
+            0.003038118267381,
+            0.001118780141584,
+            -0.036792722919865,
+            0.01177083525343,
+            0.017533270300004,
+            -0.015206403918274,
+            0.007699478079028,
+            0.000342710574506,
+            -0.004406917397569,
+            0.004626786829044,
+            -0.000128555024129,
+            -0.002688516748127,
+            -0.001070015275936,
+            -0.000440571371495,
+            -0.762477054249272,
+            -0.137688698094194,
+            -0.022179551554111,
+            0.007231603769236,
+            0.021135663287829,
+            0.028270149808658
+          ],
+          [
+            0.078972449025302,
+            0.240988037667557,
+            0.094282498229131,
+            -0.358089284664845,
+            0.248876207762207,
+            -0.487269819489531,
+            0.276421098423293,
+            -0.005705430792325,
+            0.018214467124674,
+            0.001031349152292,
+            -0.009688651308064,
+            -0.002724521069037,
+            0.003287553481348,
+            0.459849933078217,
+            -0.083541181411352,
+            0.0488307958069,
+            -0.05249945238977,
+            0.035167596647029,
+            -0.023803157589085,
+            -0.120691380374553,
+            0.148477013836123,
+            0.083873566894317,
+            0.28495088048334,
+            -0.090683869356128,
+            -0.050901436450172,
+            -0.142499376368272,
+            -0.023538087436597,
+            -0.002633369164075,
+            0.030602144389271,
+            -0.007368779446464,
+            -0.012664143652714,
+            0.005785664612322,
+            -0.03371391411797,
+            0.008622790976673,
+            0.018969387840784,
+            0.006476494524602,
+            -0.046794528167867,
+            0.055616261612866,
+            -0.001372372092506,
+            -0.004467504727052,
+            0.003748932915127,
+            0.000738565254762,
+            -0.002255586415195,
+            -0.00129832333368,
+            -0.150885387468731,
+            -0.093010266463438,
+            -0.019302698917769,
+            0.02030381743943,
+            0.003624582884611,
+            0.008035872201996
+          ],
+          [
+            -0.319704630890088,
+            -0.049515344294242,
+            -0.309280461840721,
+            0.048629152782957,
+            -0.127440469713294,
+            0.036976657237101,
+            0.599392135777199,
+            0.246673279144806,
+            -0.033263755309416,
+            -0.022163402006585,
+            0.014175980533862,
+            0.003963152697734,
+            0.003275741540975,
+            0.045502286432873,
+            0.062814688876263,
+            -0.14032579909435,
+            0.104036637488372,
+            -0.043852365653795,
+            0.039093696194504,
+            0.208218364059455,
+            0.093751298155917,
+            0.146287396576205,
+            -0.133028358324825,
+            -0.362912697392958,
+            -0.181176536368662,
+            -0.033243848279192,
+            0.04378870077353,
+            0.009442248441855,
+            -0.037456849894483,
+            -0.011195960188984,
+            0.015274108429545,
+            -0.000258338377549,
+            0.14617836091362,
+            -0.02638111938525,
+            -0.055291089165027,
+            -0.037520595767694,
+            0.065262402211066,
+            -0.035018121802856,
+            0.027281730076343,
+            0.008052717431064,
+            -0.008589442082645,
+            -0.009614158036124,
+            -0.0035705004922,
+            0.002061085180125,
+            0.134908395048762,
+            0.06547305363421,
+            -0.004210554205252,
+            -0.03889096416599,
+            0.00096532351288,
+            0.010664673767751
+          ],
+          [
+            -0.414755437780605,
+            0.24949791761001,
+            -0.169178553575716,
+            0.241239180650913,
+            0.280483611793567,
+            -0.356481814280916,
+            -0.022081647476306,
+            -0.068749583642649,
+            0.017646677509844,
+            0.007285423523796,
+            -0.00144376897331,
+            -0.007599155674907,
+            -0.000182348068021,
+            -0.138113333498022,
+            0.058742820644002,
+            -0.059498527661652,
+            0.061875286217291,
+            -0.029240829841602,
+            -0.002924633742418,
+            0.184535579669894,
+            -0.171322751768296,
+            -0.181543204277421,
+            0.111975697989864,
+            0.052001092401595,
+            0.205821260585688,
+            0.498247769874757,
+            -0.065215528302555,
+            0.007955733461724,
+            0.036300707185795,
+            -0.007315171497397,
+            -0.001679591371877,
+            0.004699847155078,
+            0.008714454536406,
+            -0.015496025739584,
+            0.018442992961692,
+            -0.023593844119386,
+            0.027661777789465,
+            0.004468417896431,
+            -0.003188269853754,
+            -0.015097929919677,
+            -0.000117790438039,
+            0.00443064951718,
+            0.005385983429273,
+            -0.000227428181593,
+            -0.154033942728573,
+            -0.049089254413029,
+            0.007130482184809,
+            0.018542088370246,
+            0.003559071187674,
+            -0.002094395181489
+          ],
+          [
+            -0.492744930407503,
+            0.144149816728242,
+            0.202429460879288,
+            -0.414761846292871,
+            0.140214226055416,
+            0.104786569779993,
+            -0.335834398138665,
+            0.242569003496145,
+            -0.008360351057953,
+            -0.014930599159277,
+            0.006529815969177,
+            -0.003412449933567,
+            -0.006745322500736,
+            -0.032217926716333,
+            0.129827101378158,
+            -0.159792585445124,
+            0.073899906660452,
+            -0.002925467770002,
+            0.010909903130416,
+            0.135089212874131,
+            0.182610562917964,
+            -0.120687262674861,
+            -0.001066062766504,
+            0.226597288748249,
+            -0.280085944324555,
+            -0.14288071796507,
+            0.017696889696472,
+            -0.009873014916971,
+            -0.0112406312977,
+            0.026195028501716,
+            -0.007876252110173,
+            -0.016182052640822,
+            0.141798323387103,
+            -0.038852456590072,
+            -0.0369585819145,
+            -0.022865334951348,
+            0.028933355076417,
+            -0.005580164214858,
+            0.025615222299788,
+            -0.003151442542354,
+            -0.011434905576159,
+            -0.00185916031879,
+            -0.000592739749179,
+            -0.000128675415377,
+            0.155065366155323,
+            -0.014628724714491,
+            -0.057533900402944,
+            -0.008134113491499,
+            0.031573229175283,
+            0.004496080684197
+          ],
+          [
+            0.00278258786726,
+            0.154689902705856,
+            0.486500120293799,
+            0.00536347419868,
+            -0.463010423323335,
+            -0.17440960653096,
+            0.123062277544836,
+            0.301978065325343,
+            -0.021606219357814,
+            0.012289549530678,
+            -0.007457128409715,
+            5.8764804039e-05,
+            -0.017852718950232,
+            -0.007408407572948,
+            0.101350805446747,
+            -0.038978336196591,
+            -0.035500309454701,
+            -0.00358816785307,
+            0.035514682748424,
+            0.019182135749678,
+            0.245014270969052,
+            0.110114136284564,
+            -0.201170961976712,
+            0.110710934217113,
+            0.413869366895744,
+            0.231839877725173,
+            0.021075514973278,
+            -0.009299561702579,
+            -0.025092037661206,
+            0.020844605958886,
+            0.03486236463228,
+            -0.016875037737406,
+            0.018083269583798,
+            0.003527149799921,
+            0.006131334363658,
+            -0.022810457773843,
+            -0.013893798420975,
+            0.024499897620153,
+            0.026464121021136,
+            0.002360439435335,
+            -0.01121932494663,
+            -0.008145834362566,
+            0.004996751336071,
+            0.002215919276635,
+            -0.031269713814939,
+            -0.031501513876789,
+            -0.076969547263367,
+            -0.059553219603879,
+            0.038955675899209,
+            0.062333129939103
+          ],
+          [
+            0.331070020646517,
+            0.201756660703484,
+            -0.106041837357546,
+            0.218266063499214,
+            0.075585697442166,
+            -0.145683580978789,
+            -0.237376565270443,
+            0.732725753096881,
+            -0.179311623346228,
+            0.097239221781778,
+            -0.070386054798633,
+            0.05021902473732,
+            -0.035564787429573,
+            -0.097086950942585,
+            0.005565930240317,
+            0.016892568666404,
+            0.006388776883748,
+            -0.019887805457282,
+            -0.009846832519278,
+            0.045915949337751,
+            -0.166545469868733,
+            0.05756858928861,
+            0.164728439234698,
+            -0.109431424629014,
+            -0.170295362873192,
+            -0.046040381073706,
+            -0.007417157537591,
+            0.007014814236889,
+            0.009924239625568,
+            -0.016922036210547,
+            -0.01159889083043,
+            0.014304789564109,
+            -0.024637342335767,
+            0.007442035854602,
+            0.00611713846424,
+            0.010370413343086,
+            -0.005756538252766,
+            -0.014664720299679,
+            -0.003929573713384,
+            0.004075606839721,
+            0.006329826270501,
+            0.0003846941647,
+            -0.005050045881618,
+            -0.002169940624802,
+            0.021005027215206,
+            0.0299524791872,
+            0.03999645112155,
+            0.010541022352612,
+            -0.033024344395135,
+            -0.022112419203946
+          ],
+          [
+            0.359842232022403,
+            0.419457633825417,
+            -0.262687395914998,
+            -0.266433232082655,
+            -0.000981784490085,
+            0.354346090856722,
+            0.272793518479933,
+            0.017081050461394,
+            -0.020246763830566,
+            0.008917789527223,
+            0.005079967600239,
+            -0.005409337126945,
+            -0.001777881898514,
+            -0.01488569181615,
+            0.030400283742626,
+            -0.097122201604007,
+            0.061354818615612,
+            0.0166767696343,
+            0.016536685121272,
+            0.273006531043504,
+            -0.048749213564044,
+            -0.342877587034397,
+            0.012518054853387,
+            0.268187012044396,
+            0.215339328809797,
+            -0.017080364475132,
+            -0.017372833632057,
+            -0.019701662939283,
+            0.017367083915178,
+            0.031947967205802,
+            -0.001721711307329,
+            -0.027339133801162,
+            0.073476921291734,
+            -0.027999847775404,
+            -0.026330729968775,
+            -0.00603936754486,
+            0.017110396723822,
+            0.032132696204951,
+            0.00133293777619,
+            -0.021945305884386,
+            -0.008057730881608,
+            0.00714344657606,
+            0.010704435844043,
+            0.002019697502418,
+            -0.045829890147443,
+            -0.066565769048252,
+            -0.055518100858581,
+            0.017065594761356,
+            0.062362535887697,
+            0.011612098829111
+          ],
+          [
+            -0.316363965774261,
+            -0.299127614519699,
+            -0.058091225511648,
+            -0.190854066892638,
+            0.070424363914748,
+            0.24656444070371,
+            0.243283300708939,
+            0.35317941759942,
+            -0.163183817366177,
+            0.127601403980266,
+            -0.084500937461981,
+            0.05162357220621,
+            -0.031415474270826,
+            -0.005508555074212,
+            -0.145305393401682,
+            0.168321731464206,
+            -0.101069988678127,
+            0.065497106285411,
+            -0.034154537355896,
+            -0.319244252558334,
+            -0.245027547899225,
+            -0.004441450356555,
+            0.069760348811734,
+            0.243393160059074,
+            0.193069175524687,
+            0.025051066961761,
+            -0.093297603487614,
+            0.006624277963558,
+            0.060851419816312,
+            -0.004914417067414,
+            -0.015681674180078,
+            -0.002612366723953,
+            -0.209199062945895,
+            0.047252141358817,
+            0.070926147034468,
+            0.008160121218567,
+            -0.029346836746178,
+            0.028821027624487,
+            -0.053178182962119,
+            -0.016076034941016,
+            0.013446025723303,
+            0.014139494228635,
+            0.008226465479216,
+            -0.000863248953107,
+            -0.233129881973774,
+            -0.097556746179588,
+            0.01974563431116,
+            0.066471679370718,
+            0.012315564882243,
+            -0.015740442368059
+          ],
+          [
+            0.08171091528348,
+            -0.31814513775608,
+            -0.436803658384098,
+            -0.306656535034191,
+            -0.345944811881784,
+            -0.288011278420558,
+            -0.184604463170731,
+            -0.002603474488859,
+            0.005969636830894,
+            -0.025389686371593,
+            0.005210128133315,
+            -0.008646714253406,
+            0.006780408802102,
+            0.021645671549486,
+            0.101981119747028,
+            -0.219307368877565,
+            0.139183513363635,
+            -0.038513421073297,
+            0.029016002724623,
+            -0.035440147676154,
+            -0.04034923885872,
+            0.187169708240333,
+            0.299713293781082,
+            0.223414717314101,
+            0.158116407490183,
+            0.114613796958487,
+            -0.053555277145308,
+            0.028373617649279,
+            0.022130208333713,
+            -0.01193869496188,
+            -0.003283020395232,
+            -0.010599866710298,
+            0.090064319491044,
+            0.016090890865052,
+            -0.055918132010179,
+            -0.067537311177105,
+            0.087550038705045,
+            -0.023383008348968,
+            -0.006879227759896,
+            -0.011826202840818,
+            -0.000741220042834,
+            0.00560374186434,
+            0.006714046141808,
+            -0.006299903732801,
+            0.207446357552761,
+            -0.006527632914951,
+            -0.025508252012479,
+            0.00268650678126,
+            0.022786033636158,
+            0.00388498616343
+          ],
+          [
+            -0.120454413301871,
+            0.08930789527824,
+            -0.213631988535723,
+            -0.241556650750518,
+            -0.240573154040935,
+            -0.196696534682527,
+            -0.088158283547246,
+            -0.028980872486517,
+            -0.120404127244737,
+            0.01661223874641,
+            0.019727293550571,
+            0.016639657094634,
+            -0.007595572303881,
+            -0.169522582828725,
+            -0.300254667295534,
+            0.372731100534984,
+            -0.213668151869526,
+            0.034318677205211,
+            -0.016088059034751,
+            0.151521510831571,
+            0.02263105063353,
+            -0.150512211212968,
+            -0.093384289179367,
+            -0.077745978276743,
+            0.002027339256478,
+            0.01024151891494,
+            0.284495094345425,
+            -0.084860542882822,
+            -0.098961871112518,
+            0.02078747875913,
+            0.012209544130331,
+            0.01618152072829,
+            -0.085508299928475,
+            0.015860956435296,
+            -0.076045046036645,
+            0.299618592390654,
+            -0.316976993269166,
+            0.170133935738609,
+            -0.008722017288098,
+            0.02359751414469,
+            0.018233178827068,
+            -0.004037500469461,
+            -0.005106991040337,
+            0.00233595987714,
+            0.10709992307746,
+            0.175856052520999,
+            0.080120974758492,
+            -0.045899825802543,
+            -0.060730947400885,
+            -0.002858867198291
+          ],
+          [
+            -0.023735437173001,
+            -0.018035495360929,
+            0.034540523063366,
+            0.241508109326692,
+            0.239332550661834,
+            0.212272653858919,
+            0.102365331748139,
+            0.00560361119751,
+            0.023268573159225,
+            -0.015352464751489,
+            0.022339076815207,
+            -0.024927283923894,
+            0.019572177633314,
+            -0.048610407115015,
+            0.049060672416132,
+            -0.044639831707806,
+            0.062126000989466,
+            -0.056812219910535,
+            0.054509122518241,
+            0.124663856935777,
+            0.293920513695572,
+            0.356049218394994,
+            0.383987624153829,
+            0.231029359912318,
+            0.129398941184556,
+            0.003193391086857,
+            0.171434349766549,
+            -0.055829585488834,
+            -0.010336195003907,
+            -0.004699565237079,
+            -0.016854804614891,
+            -0.002796566942966,
+            -0.121242902858633,
+            0.198058189529612,
+            -0.261673363373477,
+            0.258978130771411,
+            -0.244055837858761,
+            0.227455557980603,
+            0.041728287182776,
+            0.011463729329456,
+            0.026674262354946,
+            0.002188276247642,
+            -0.001955667278196,
+            -0.018063138693064,
+            0.153465198205052,
+            -0.003878732216697,
+            0.011443279263186,
+            0.027347906785613,
+            0.00152999823052,
+            -0.017339535782092
+          ],
+          [
+            -0.008974446589009,
+            0.020803878446853,
+            0.004095635025625,
+            0.063008177651978,
+            0.106272106220522,
+            0.09441437627564,
+            0.03709078398012,
+            0.004819821037262,
+            -0.027228989602699,
+            -0.04703734946529,
+            0.071382854000533,
+            -0.012471706924344,
+            -0.029601315025381,
+            -0.00727977831211,
+            -0.159516853954933,
+            0.236947362410474,
+            -0.157226182365859,
+            0.067547075649118,
+            -0.087157467356056,
+            0.05859374941423,
+            0.058319161657255,
+            0.254529639699962,
+            0.218648427641493,
+            0.200615012078512,
+            0.083974974279421,
+            0.035622333942779,
+            0.144201128362804,
+            0.043023305608183,
+            -0.153509978007843,
+            0.014605717177748,
+            0.069644132071038,
+            -0.08179274439611,
+            0.429749882806912,
+            -0.399735539630489,
+            0.320581834167472,
+            -0.180466474762151,
+            0.111984404464715,
+            -0.078456244385676,
+            0.035257246783682,
+            0.057667541957627,
+            0.018777563197719,
+            0.001033005243163,
+            0.00637012755409,
+            -0.018850483760017,
+            -0.00962545497258,
+            0.305649564834061,
+            0.084725240624445,
+            -0.117406881827864,
+            0.043591636309643,
+            -0.011244639634361
+          ]
+        ],
+        "normal_right_inverse_norm": 9.819205297616628,
+        "normalized_central_step": 2e-05,
+        "rank": 19,
+        "rank_tolerance": 8.371e-12,
+        "right_inverse_defect_operator_norm": 5.87e-13,
+        "singular_values": [
+          753.980002150332,
+          244.9177658397463,
+          89.04569863797747,
+          38.81381512478933,
+          22.631759973641802,
+          11.430933185099597,
+          10.271729479347096,
+          7.82202135835164,
+          5.154530622824566,
+          4.204993712631871,
+          2.983343664623814,
+          1.461509244297103,
+          0.976731525443748,
+          0.82805695048019,
+          0.70071971166828,
+          0.321334687107534,
+          0.20521870908823,
+          0.12909744027017,
+          0.101841235587846
+        ],
+        "smallest_normal_singular_value": 0.101841235587846,
+        "softest_normal_domain_direction": [
+          -0.008974446589009,
+          0.020803878446853,
+          0.004095635025625,
+          0.063008177651978,
+          0.106272106220522,
+          0.09441437627564,
+          0.03709078398012,
+          0.004819821037262,
+          -0.027228989602699,
+          -0.04703734946529,
+          0.071382854000533,
+          -0.012471706924344,
+          -0.029601315025381,
+          -0.00727977831211,
+          -0.159516853954933,
+          0.236947362410474,
+          -0.157226182365859,
+          0.067547075649118,
+          -0.087157467356056,
+          0.05859374941423,
+          0.058319161657255,
+          0.254529639699962,
+          0.218648427641493,
+          0.200615012078512,
+          0.083974974279421,
+          0.035622333942779,
+          0.144201128362804,
+          0.043023305608183,
+          -0.153509978007843,
+          0.014605717177748,
+          0.069644132071038,
+          -0.08179274439611,
+          0.429749882806912,
+          -0.399735539630489,
+          0.320581834167472,
+          -0.180466474762151,
+          0.111984404464715,
+          -0.078456244385676,
+          0.035257246783682,
+          0.057667541957627,
+          0.018777563197719,
+          0.001033005243163,
+          0.00637012755409,
+          -0.018850483760017,
+          -0.00962545497258,
+          0.305649564834061,
+          0.084725240624445,
+          -0.117406881827864,
+          0.043591636309643,
+          -0.011244639634361
+        ]
+      },
+      "first_missing_mathematical_object": "MEASURE_AN_ACTION_NORMALIZED_LOCAL_JACOBIAN_LIPSCHITZ_BOUND_ON_THE_NORMAL_RIGHT_INVERSE_DIRECTIONS_AND_COMBINE_IT_WITH_THE_WEAK_HIGH_SHELL_TAIL_IN_AN_A_POSTERIORI_RADII_POLYNOMIAL",
+      "map": {
+        "codomain": "FOUR_INDEPENDENT_BOUNDARY_CONFIGURATION_ROWS_CROSS_H_MINUS_1_TOTAL_CONSTRAINTS_CROSS_R_ENERGY_CROSS_BOUNDARY_MOMENTUM_DUAL",
+        "domain": "H1_q_CROSS_L2_v_CROSS_H1_lapse_shift",
+        "independent_boundary_rows": "THREE_TRACE_ROWS_PLUS_THE_SECOND_EXACT_ATTACHMENT_COORDINATE;_THE_FIRST_ATTACHMENT_COORDINATE_IS_ALGEBRAICALLY_REDUNDANT_WITH_THE_TRACE_ROWS",
+        "physical_equations_changed": false,
+        "row_count": 19,
+        "variable_count": 50
+      },
+      "new_equations_constraints_or_acceptance_gates": false,
+      "normalization": {
+        "boundary_Gram": "C*W_q^(-2)*C^T",
+        "boundary_momentum_dual": "sqrt(B*B^T)*Delta_p",
+        "constraint_dual": "TOTAL_L_m_ROWS_DIVIDED_BY_H1_m_WEIGHTS",
+        "domain": "H1_q_L2_v_H1_m_ACTION_OWNED_SPECTRAL_WEIGHTS",
+        "tuned_scale_or_observed_particle_data_used": false
+      },
+      "source": "EXACT_ATTACHMENT_MATCHED_PERSISTENT_N6_WEAK_CHILD",
+      "validation": {
+        "boundary_Casimir_covector_retained_in_total_constraint_map": true,
+        "eta_domain_retained": true,
+        "independent_weak_rows_have_full_rank": true,
+        "no_componentwise_monotonicity_or_new_gate_added": true,
+        "normal_right_inverse_defect_is_small": true,
+        "total_weak_map_closes_at_matched_N6_state": true
+      },
+      "validation_passed": true
+    },
     "weak_conormal_reaction_graph_audit": {
       "FULL_BHSM_COMPLETE": false,
       "classification": "WEAK_CONORMAL_REACTION_MAP_DERIVED_ON_MIXED_EULER_DIRAC_GRAPH_DOMAIN;_ATTACHMENT_TRACE_UNIFORMLY_SUBMERSIVE;_COHERENT_HIGH_SHELL_TAIL_SUMMABLE_BY_MEASUREMENT;_GAUGE_REDUCED_LOWER_ORDER_NORMAL_INF_SUP_OPEN",
@@ -11822,6 +15409,118 @@
         "five_unknown_shell_law_retained": true,
         "measured_H1_graph_shell_tail_is_summable": true,
         "sampled_trace_singular_values_respect_analytic_bounds": true
+      },
+      "validation_passed": true
+    },
+    "weak_constraint_boundary_source_tail_audit": {
+      "FULL_BHSM_COMPLETE": false,
+      "classification": "NONDECAYING_RAW_LAPSE_CONSTRAINT_ROWS_RECLASSIFIED_AS_THE_EXACT_BOUNDARY_CASIMIR_COVECTOR;_INTERIOR_WEAK_H_MINUS_1_CONSTRAINT_TAIL_DECAYS_ON_THE_MATCHED_N6_BACKGROUND",
+      "continuum_interpretation": "THE_MULTIPLIER_VARIATION_IS_A_DISTRIBUTIONAL_ELEMENT_OF_H_MINUS_1_PLUS_A_BOUNDARY_COVECTOR;_AFTER_THE_EXACT_BOUNDARY_TERM_IS_ROUTED_TO_THE_CONORMAL_RELATION,_THE_BULK_SPECTRAL_TAIL_TENDS_TO_ZERO",
+      "exact_boundary_lapse_covector": {
+        "belongs_to": "WEAK_CONORMAL_BOUNDARY_REACTION",
+        "belongs_to_bulk_constraint_failure": false,
+        "coefficient": -2.195689551624391,
+        "formula": "-C_SM*N_boundary/R4*(-1)^k"
+      },
+      "first_missing_mathematical_object": "COMPUTE_THE_ACTION_NORMALIZED_NORMAL_RIGHT_INVERSE_DEFECT_AND_NONLINEAR_LIPSCHITZ_BOUND_NEEDED_FOR_AN_A_POSTERIORI_RADII_POLYNOMIAL_ON_THE_WEAK_COMPLETE_CHILD_MAP",
+      "maximum_order": 48,
+      "measured_loglog_tail_slope_N12_to_N40": -2.660562165397841,
+      "new_equation_constraint_or_acceptance_gate": false,
+      "quadrature_points": 256,
+      "rows": [
+        {
+          "bulk_constraint_H_minus_1_tail_norm": 0.086772051123605,
+          "cutoff_N": 6,
+          "first_omitted_lapse_coefficient": -1.330868450748244,
+          "first_omitted_shift_coefficient": 0.795351712791854
+        },
+        {
+          "bulk_constraint_H_minus_1_tail_norm": 0.03207731593309,
+          "cutoff_N": 8,
+          "first_omitted_lapse_coefficient": -0.184747840557292,
+          "first_omitted_shift_coefficient": 0.310217378780327
+        },
+        {
+          "bulk_constraint_H_minus_1_tail_norm": 0.013683050437336,
+          "cutoff_N": 10,
+          "first_omitted_lapse_coefficient": 0.016992148170766,
+          "first_omitted_shift_coefficient": -0.522454427786806
+        },
+        {
+          "bulk_constraint_H_minus_1_tail_norm": 0.00378548821769,
+          "cutoff_N": 12,
+          "first_omitted_lapse_coefficient": 0.043860216210871,
+          "first_omitted_shift_coefficient": 0.034557710200721
+        },
+        {
+          "bulk_constraint_H_minus_1_tail_norm": 0.001895463791307,
+          "cutoff_N": 16,
+          "first_omitted_lapse_coefficient": 0.021800839831007,
+          "first_omitted_shift_coefficient": -0.059633337138114
+        },
+        {
+          "bulk_constraint_H_minus_1_tail_norm": 0.001105127287574,
+          "cutoff_N": 20,
+          "first_omitted_lapse_coefficient": 0.016513231493703,
+          "first_omitted_shift_coefficient": -0.039621133802743
+        },
+        {
+          "bulk_constraint_H_minus_1_tail_norm": 0.00068696630842,
+          "cutoff_N": 24,
+          "first_omitted_lapse_coefficient": 0.011621577782551,
+          "first_omitted_shift_coefficient": -0.026757919643102
+        },
+        {
+          "bulk_constraint_H_minus_1_tail_norm": 0.000314615387838,
+          "cutoff_N": 32,
+          "first_omitted_lapse_coefficient": 0.006659754581426,
+          "first_omitted_shift_coefficient": -0.015051098456285
+        },
+        {
+          "bulk_constraint_H_minus_1_tail_norm": 0.000148948087479,
+          "cutoff_N": 40,
+          "first_omitted_lapse_coefficient": 0.00431949964226,
+          "first_omitted_shift_coefficient": -0.009639325312714
+        },
+        {
+          "bulk_constraint_H_minus_1_tail_norm": 4.058967929e-05,
+          "cutoff_N": 47,
+          "first_omitted_lapse_coefficient": -0.003140414970547,
+          "first_omitted_shift_coefficient": 0.006983988470178
+        }
+      ],
+      "strong_L2_constraint_codomain_required": false,
+      "validation": {
+        "bulk_H_minus_1_tail_decreases_after_N12": true,
+        "exact_boundary_Casimir_covector_subtracted": true,
+        "finite_child_equations_and_gates_unchanged": true,
+        "measured_tail_power_is_summable_in_squared_dual_norm": true,
+        "raw_strong_lapse_coefficients_not_used_as_bulk_failure": true
+      },
+      "validation_passed": true
+    },
+    "whole_system_time_translation_tangent_interface": {
+      "FULL_BHSM_COMPLETE": false,
+      "boundary_identification": {
+        "common_limit_direction": "delta_q_w=0,_delta_q_c!=0",
+        "maximum_N12_N13_absolute_q_w_component": 0.000255274042418,
+        "minimum_N8_N13_child_alignment_cosine": 0.99997994569945,
+        "minimum_N8_N13_event_alignment_cosine": 0.99989061303604,
+        "physical_scale_relation": "q_scale=q_w+q_c"
+      },
+      "classification": "THE_WHOLE_SYSTEM_TIME_TRANSLATION_JACOBI_TANGENT_IS_DERIVED_EXACTLY;_THE_FIXED_q_w_CALDERON_SOFT_MODE_ALIGNS_WITH_ITS_EVENT_AND_CHILD_BOUNDARY_PROJECTIONS_BUT_THE_COMMON_GALERKIN_LIMIT_IDENTIFICATION_REMAINS_TO_BE_PROVED",
+      "exact_next_mathematical_lemma": "PROVE_THE_SOFT_CALDERON_PRINCIPAL_VECTOR_CONVERGES_TO_THE_COMMON_FIXED_q_w_BOUNDARY_PROJECTION_OF_THE_EVENT_AND_CHILD_TIME_TRANSLATION_JACOBI_TANGENT;_ONLY_THEN_QUOTIENT_IT_AND_BOUND_THE_SECOND_PRINCIPAL_ANGLE",
+      "new_physics_equations_constraints_regularizers_objectives_or_gates": false,
+      "normal_angle_after_tangent_quotient": {
+        "measured_N12_N13_minimum_second_principal_angle_sine": 0.018511058539813,
+        "uniform_general_N_lower_bound_proved": false
+      },
+      "tangent_policy": {
+        "classification_category": "LEGITIMATE_TANGENT_DIRECTION_OF_THE_WHOLE_EVENT_CHILD_HISTORY_MANIFOLD",
+        "existing_positive_duration_gauge_quotient_preserved": true,
+        "soft_Calderon_mode_reclassified_as_this_tangent": false,
+        "soft_mode_may_be_quotiented_before_identification_proof": false,
+        "time_event_coordinate_or_multiplier_added": false
       },
       "validation_passed": true
     }
@@ -12365,22 +16064,32 @@
     "N6_complete_boundary_BVP_match_audit_validated": true,
     "N6_event_child_weak_reaction_audit_validated": true,
     "N6_full_compatibility_extension_audit_validated": true,
+    "N6_inverse_square_tail_closure_audit_validated": true,
+    "N6_reduced_local_energy_readout_reconnaissance_validated": true,
     "N6_weak_complete_child_persistence_validated": true,
     "action_energy_topology_coherent_event_audit_validated": true,
+    "actual_child_S2_compactness_audit_validated": true,
+    "actual_corrected_event_child_soft_evans_audit_validated": true,
     "all_constraint_fibers_full_row_rank": true,
     "all_independent_constraint_projections_closed": true,
     "boundary_compatible_gauge_quotient_audit_validated": true,
+    "boundary_jerk_weak_graph_domain_audit_validated": true,
     "breadth_first_closure_network_validated": true,
+    "casimir_boundary_layer_parametrix_audit_validated": true,
     "child_history_bvp_bordered_operator_audit_validated": true,
     "coherent_N4_to_N5_complete_child_graph_validated": true,
     "coherent_N4_to_N5_nonzero_relative_evolution_retained": true,
     "coherent_N4_to_N5_positive_duration_persistence_validated": true,
     "coherent_N5_exact_attachment_persistence_validated": true,
     "coherent_N5_exact_attachment_weak_child_audit_validated": true,
+    "continuum_normal_cauchy_completeness_reduction_validated": true,
+    "continuum_normal_cauchy_completeness_theorem_validated": true,
     "cross_resolution_boundary_symplectic_polarization_audit_validated": true,
     "cross_resolution_principal_symbol_frame_audit_validated": true,
     "cross_resolution_strong_constraint_infsup_audit_validated": true,
+    "event_child_calderon_angle_stability_lemma_validated": true,
     "event_child_two_sided_reaction_match_audit_validated": true,
+    "gauge_fixed_S2_propagation_theorem_validated": true,
     "general_N_dimension_law_validated_at_N3_N4_N5": true,
     "general_N_local_fiber_equivalence_adds_no_physics": true,
     "general_N_uniform_convergence_not_overpromoted": true,
@@ -12389,20 +16098,44 @@
     "included_N4_positive_duration_persistence": true,
     "independent_N3_N4_N5_complete_persistent_children": true,
     "ingredient_process_ownership_validated": true,
+    "injected_Calderon_graph_convergence_audit_validated": true,
+    "injected_n6_event_child_calderon_friedrichs_angle_audit_validated": true,
+    "jacobi_form_coefficient_mosco_theorem_validated": true,
     "legacy_N3_N4_exact_attachment_weak_child_audit_validated": true,
     "matched_weak_reaction_graph_audit_validated": true,
+    "mixed_euler_dirac_hard_momentum_response_audit_validated": true,
+    "mixed_finite_Schur_bridge_measurement_validated": true,
     "nested_attachment_lift_consistency_audit_validated": true,
     "no_accepted_N3_trajectory_transplanted": true,
     "no_cross_resolution_state_transplant": true,
+    "normal_boundary_cauchy_symbol_factorization_validated": true,
+    "normal_section_S2_compactness_scope_validated": true,
     "on_shell_boundary_reaction_audit_validated": true,
     "orders_N3_N4_N5_measured": true,
     "physical_scale_accessibility_audit_validated": true,
     "positive_duration_gauge_fixed_jacobi_audit_validated": true,
+    "positive_duration_normal_adjoint_kernel_localization_validated": true,
     "rank14_not_silently_imposed_at_higher_N": true,
     "reaction_calderon_nested_schur_trace_audit_validated": true,
     "sequential_action_energy_projection_audit_validated": true,
+    "soft_boundary_acceleration_compactness_criterion_validated": true,
+    "soft_calderon_second_graph_domain_reduction_validated": true,
+    "soft_channel_positive_duration_observability_jet_lemma_validated": true,
+    "soft_jacobi_semigroup_compactness_reduction_validated": true,
+    "soft_normal_fredholm_compactness_dichotomy_validated": true,
+    "soft_normal_lyapunov_schmidt_reduction_validated": true,
+    "soft_second_graph_coefficient_bundle_audit_validated": true,
+    "soft_uniform_smooth_boundary_lift_audit_validated": true,
     "undefined_sector_balance_not_promoted": true,
-    "weak_conormal_reaction_graph_audit_validated": true
+    "uniform_boundary_jerk_compactness_reduction_validated": true,
+    "uniform_positive_duration_normal_closed_range_reduction_validated": true,
+    "weak_boundary_layer_radii_obstruction_validated": true,
+    "weak_calderon_boundary_generator_reduction_validated": true,
+    "weak_complete_child_normal_lipschitz_validated": true,
+    "weak_complete_child_normal_right_inverse_validated": true,
+    "weak_conormal_reaction_graph_audit_validated": true,
+    "weak_constraint_boundary_tail_audit_validated": true,
+    "whole_system_time_translation_tangent_interface_validated": true
   },
   "validation_passed": true,
   "version": "v21.35"

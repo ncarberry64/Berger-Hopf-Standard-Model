@@ -2,16 +2,16 @@
 
 ## Active cross-resolution completion path
 
-1. Preserve the independently validated N3/N4/N5 complete persistent children,
+1. Preserve the validated N3/N4/N5/N6 complete persistent children,
    the exact attachment-matched N3-N6 weak reaction graphs, and the unchanged
    finite-N maps that produced them.
-2. Use the derived `8N+2` variable, `2N+8` row, `6N-6` manifold laws,
-   boundary-compatible principal gauge quotient, and same-action event/child
-   BVP to prove collective compact convergence of the lower-order gauge-fixed
-   weak Jacobi-Calderon operators and a uniform normal-complement spectral gap,
-   or localize the first action-owned failure.
-3. Transfer eta, ordered-event, and positive-duration persistence uniformly;
-   do not infer a continuum limit from three resolutions alone.
+2. Certify the one remaining finite N6-to-asymptotic joint event-child normal
+   bridge: bound the soft Lyapunov-Schmidt denominator or prove source
+   compatibility along the homotopy, then close the existing action-norm radii
+   polynomial including its quadrature-consistency defect.
+3. Attach that finite bridge to the action-derived inverse-square shell law and
+   asymptotic `O(1)` normal inverse. The high tail is then summable; transfer
+   eta, ordered-event, and persistence inside the existing physical radius.
 4. Resume the existing action/scale/returned-family-operator dependency chain
    without reopening closed sectors or retuning frozen predictions.
 

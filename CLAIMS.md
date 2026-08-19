@@ -5,8 +5,8 @@
 Current public identifier: **v21.35 cross-resolution encapsulation
 checkpoint**. This is not a release and does not claim BHSM completion.
 
-Supported now: N3, N4, and N5 independently reconstruct complete persistent
-children under their retained finite-resolution equations. N5 closes its
+Supported now: N3 through N6 reconstruct complete persistent children under
+their retained finite-resolution equations. N5 closes its
 unchanged 18-row map at fixed-reference merit `5.90723795458673e-14` (raw
 `||F18||=1.1665202200968536e-7`), is eta-admissible, and passes the existing
 certification and persistence gates with nonzero relative evolution.
@@ -22,18 +22,22 @@ attachment/reaction map is explicitly matched at N3/N4/N5/N6 without adding a
 physical row or C1 gate. N6 closes trace/constraint/momentum compatibility to
 `7.341e-12`, records zero exact-attachment jump after boundary matching, and
 has a converged positive-duration nonzero-evolution persistence witness.
-Action-normalized weak reaction graphs have been measured through N6.
+Action-normalized weak reaction graphs have been measured through N6, and N6
+passes the existing complete-child and positive-duration persistence gates.
 
-Not supported: promotion of N6 as a fourth complete persistent child from
-these boundary-graph results alone.
+Supported analytic tail result: integration by parts in the retained action
+gives the weak shell estimate `||r_n|| <= C_r n^-2` without fitted constants.
+The joint principal-plus-compact normal operator has an asymptotic `O(1)`
+inverse, making the sufficiently high tail summable.
 
-Not supported: resolution-independent general-N reconstruction or uniform
-reaction-Calderon graph convergence, absolute
+Not supported: the finite N6-to-asymptotic joint event-child soft Schur bridge,
+its nonlinear action-norm radii polynomial, a completed continuum child, the
+reduced local N6 energy as `Delta H` or mass, absolute
 scale, physical masses, CKM, PMNS, CP, neutrino splittings, empirical
 validation, or `FULL_BHSM_COMPLETE = TRUE`.
 
 Active dependency:
-`PROVE_COLLECTIVE_COMPACT_CONVERGENCE_OF_THE_LOWER_ORDER_GAUGE_FIXED_WEAK_JACOBI_CALDERON_OPERATORS_AND_A_UNIFORM_SPECTRAL_GAP_ON_THE_NORMAL_COMPLEMENT_OF_THE_CHILD_MANIFOLD`.
+`CERTIFY_ONE_FINITE_N6_TO_M0_MIXED_GAUGE_REDUCED_EVENT_CHILD_NORMAL_SCHUR_BRIDGE,_INCLUDING_THE_EXISTING_SOFT_MOMENTUM_LYAPUNOV_SCHMIDT_DENOMINATOR_OR_SOURCE_COMPATIBILITY_ALONG_THE_TAIL_HOMOTOPY,_AND_ITS_ACTION_NORM_RADII_POLYNOMIAL_INCLUDING_THE_EXISTING_ACTION_QUADRATURE_CONSISTENCY_DEFECT;_THE_M_GREATER_THAN_M0_INVERSE_SQUARE_TAIL_THEN_CLOSES_ANALYTICALLY`.
 
 ### Historical corrected-Rayleigh N3 claim boundary
 
