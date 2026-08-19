@@ -36,12 +36,16 @@ correction. The repaired-anchor N6-to-N12 joint probe does not identify a
 linear obstruction: its hard block, full Schur response, and isolated soft
 Lyapunov-Schmidt denominator stay nonzero while the unchanged exact joint weak
 merit descends. The failed N6-centered one-ball radius is therefore only a
-local-basin failure. Continuum promotion remains open because no rigorous
-action-analytic Jacobian-Lipschitz/radii bound yet encloses the ordered-event
-eigenline, state-dependent canonical momentum lift, quadrature defect, and
-existing eta/Dirac/event/persistence neighborhoods on every chord ball.
+local-basin failure. The covered parameter occurs only in the fixed-center
+linear Schur proxy: the unchanged exact joint residual is `rows(joint)`, not a
+nonlinear `F(t,Y)`. Overlapping radii balls therefore require a rooted,
+rank-preserving nonlinear retained-action family first. Scaling away the high
+modes collapses the endpoint normal rank; retaining it exposes the nonzero
+omitted weak tail, while source subtraction would change the retained action.
 Frozen predictions remain unchanged. The compact probe is
 [`BHSM_N6_N12_JOINT_SCHUR_CHORD_COVER.json`](artifacts/BHSM_N6_N12_JOINT_SCHUR_CHORD_COVER.json).
+The fail-closed integrability record is
+[`BHSM_N6_N12_NONLINEAR_HOMOTOPY_INTEGRABILITY_V21_36.json`](artifacts/BHSM_N6_N12_NONLINEAR_HOMOTOPY_INTEGRABILITY_V21_36.json).
 
 N6 provenance was re-audited before this checkpoint. The earlier N5-projected
 N6 seed had ordered-event value `1.645981691e-6`, outside the existing `1e-9`
@@ -53,7 +57,7 @@ No equation, gate, or acceptance rule changed.
 
 Exact next object:
 
-`CERTIFY_ACTION_ANALYTIC_NORMAL_JACOBIAN_LIPSCHITZ_AND_PHYSICAL_NEIGHBORHOOD_MAJORANTS_ON_A_FINITE_OVERLAPPING_N6_TO_M0_CHORD_COVER;_THEN_APPEND_THE_PROVED_INVERSE_SQUARE_ASYMPTOTIC_TAIL`
+`DERIVE_THE_EXACT_NONLINEAR_NESTED_GALERKIN_EVENT_CHILD_HOMOTOPY_FROM_THE_UNCHANGED_RETAINED_ACTION_WITH_A_ROOTED_N6_ENDPOINT_AND_PRESERVED_GAUGE_FIXED_NORMAL_RANK,_OR_LOCALIZE_WHY_THIS_REQUIRES_AN_ADDED_SOURCE_OR_PRINCIPAL_TERM`
 
 ## Historical corrected-Rayleigh N=3 snapshot
 

@@ -8,18 +8,22 @@
    corrected ordered-event solution and rebuilt child/persistence record; the
    former N5-projected event seed is provenance only.
 2. Preserve the nonzero repaired-anchor N6-to-N12 hard/full-Schur/soft response
-   result, and replace the failed N6-centered one-ball attempt with overlapping
-   chord balls. Certify each ball using rigorous action-analytic normal
-   Jacobian-Lipschitz and existing eta/Dirac/event/persistence neighborhood
-   majorants, including quadrature consistency.
-3. Attach that finite bridge to the action-derived inverse-square shell law and
+   result. Derive the missing exact nonlinear retained-action homotopy with a
+   rooted N6 endpoint and preserved gauge-fixed normal rank. The current `t`
+   family is only a fixed-center linear Schur proxy; source subtraction or an
+   added principal term is not unchanged BHSM physics.
+3. Once that nonlinear family exists, cover it by overlapping chord balls with
+   rigorous action-analytic Jacobian-Lipschitz and existing
+   eta/Dirac/event/persistence neighborhood majorants, including quadrature
+   consistency.
+4. Attach that finite bridge to the action-derived inverse-square shell law and
    asymptotic `O(1)` normal inverse. The high tail is then summable; transfer
    eta, ordered-event, and persistence inside the existing physical radius.
-4. Construct the existing complete composite-minus-matched-parent `Q_xi` on a
+5. Construct the existing complete composite-minus-matched-parent `Q_xi` on a
    paired continuum parent/child history and close the action-selected
    relative-periodic/Floquet BVP. The reduced local canonical energy is not a
    substitute for this object.
-5. Resume action-selected family-cycle ownership, relative quasi-energy mass
+6. Resume action-selected family-cycle ownership, relative quasi-energy mass
    ratios, absolute scale, and returned-family current dependencies without
    reopening closed sectors or retuning frozen predictions.
 
