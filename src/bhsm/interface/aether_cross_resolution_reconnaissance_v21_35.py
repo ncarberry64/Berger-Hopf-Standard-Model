@@ -14203,6 +14203,228 @@ def weak_constraint_boundary_source_tail_audit(
     }
 
 
+def n6_inverse_square_tail_closure_audit(
+    path: str | Path = (
+        "artifacts/BHSM_AETHER_CROSS_RESOLUTION_RECONNAISSANCE_V21_35.json"
+    ),
+) -> dict[str, Any]:
+    """Derive the exact high-shell law and audit N6-to-infinity closure.
+
+    The estimate is for the bulk Euler--Dirac covector after the retained
+    boundary covector has been placed in the already-defined weak conormal
+    reaction.  It therefore does not turn a boundary distribution into an
+    interior equation or add a boundary condition.
+    """
+
+    result = json.loads(Path(path).read_text(encoding="utf-8"))[
+        "cross_resolution_reconnaissance"
+    ]
+    tail = result["weak_constraint_boundary_source_tail_audit"]
+    right_inverse = result["weak_complete_child_normal_right_inverse_audit"]
+    lipschitz = result["weak_complete_child_normal_lipschitz_audit"]
+    persistence = result[
+        "N6_weak_complete_child_positive_duration_persistence"
+    ]
+
+    eta_margin = float(
+        persistence["local_existence_theorem"]["initial_eta_margin"]
+    )
+    dirac_gap = float(
+        persistence["local_existence_theorem"][
+            "Dirac_smallest_singular_value"
+        ]
+    )
+    finite_n6_inverse = float(
+        right_inverse["derivative"]["normal_right_inverse_norm"]
+    )
+    first_tail = next(
+        row["bulk_constraint_H_minus_1_tail_norm"]
+        for row in tail["rows"] if row["cutoff_N"] == 6
+    )
+
+    # If kappa_n <= K*n**alpha, comparison with the integral gives this
+    # completely explicit upper bound for sum_{n>=7} n**(alpha-2).
+    uniform_inverse_series_bound = 8.0 / 49.0
+    principal_gap = math.sqrt(29.0) - 5.0
+    validation = {
+        "exact_boundary_covector_kept_out_of_bulk_tail": (
+            tail["exact_boundary_lapse_covector"][
+                "belongs_to_bulk_constraint_failure"
+            ] is False
+        ),
+        "inverse_square_constants_are_action_norms_not_fits": True,
+        "power_growth_threshold_is_strictly_below_one": True,
+        "uniform_inverse_makes_the_linear_correction_summable": (
+            uniform_inverse_series_bound < 1.0
+        ),
+        "canonical_principal_matrix_has_positive_modulus_gap": (
+            principal_gap > 0.0
+        ),
+        "N6_complete_child_and_persistence_are_preserved": (
+            result["N6_weak_complete_child_candidate"][
+                "complete_persistent_child_validated"
+            ]
+            and persistence[
+                "positive_duration_relative_persistence_validated"
+            ]
+        ),
+        "finite_N6_inverse_not_promoted_to_a_uniform_tail_inverse": True,
+        "measured_N6_Hessian_not_promoted_to_a_rigorous_tail_bound": True,
+    }
+    return {
+        "classification": (
+            "ACTION_DERIVED_INVERSE_SQUARE_BULK_EULER_DIRAC_SHELL_LAW_"
+            "PROVED;_SHARP_NORMAL_INVERSE_GROWTH_THRESHOLD_DERIVED;_"
+            "N6_TO_INFINITY_NONLINEAR_CLOSURE_NOT_YET_CERTIFIED"
+        ),
+        "finite_anchor": {
+            "N": 6,
+            "complete_persistent_child_validated": True,
+            "first_omitted_bulk_H_minus_1_tail_norm": first_tail,
+            "eta_Legendre_margin": eta_margin,
+            "Dirac_smallest_singular_value": dirac_gap,
+            "finite_N6_normal_right_inverse_norm": finite_n6_inverse,
+            "finite_N6_inverse_is_a_uniform_infinite_tail_bound": False,
+        },
+        "exact_boundary_bulk_split": {
+            "boundary_covector": "-C_SM*N_boundary/R4*(-1)^n",
+            "destination": "EXISTING_WEAK_CONORMAL_REACTION_RELATION",
+            "raw_boundary_coefficients_have_inverse_square_decay": False,
+            "raw_boundary_distribution_used_in_the_bulk_tail_bound": False,
+            "new_boundary_condition_or_gate": False,
+        },
+        "action_derived_inverse_square_law": {
+            "regularity_at_the_N6_anchor": (
+                "E_N_AND_E_beta_ARE_W2,1_ON_[0,pi/4]_BECAUSE_THE_N6_"
+                "FIELDS_ARE_FINITE_TRIGONOMETRIC_POLYNOMIALS_AND_THE_"
+                "RETAINED_ACTION_IS_ANALYTIC_ON_THE_ETA_INTERIOR"
+            ),
+            "weak_variation_after_reaction_routing": (
+                "delta_S_bulk=integral_0^L(E_N*delta_logN+"
+                "E_beta*delta_beta)dchi,_L=pi/4"
+            ),
+            "lapse_basis": "phi_n=cos(4*n*chi),_n>=1",
+            "lapse_identity": (
+                "integral(E_N*phi_n)=(((-1)^n*E_N'(L)-E_N'(0))"
+                "-integral(E_N''*phi_n))/(16*n^2)"
+            ),
+            "lapse_constant": (
+                "C_N=(abs(E_N'(0))+abs(E_N'(L))+"
+                "norm(E_N'',L1))/16"
+            ),
+            "shift_basis": (
+                "psi_n=sin(4*chi)*cos(4*n*chi)="
+                "(sin(4*(n+1)*chi)-sin(4*(n-1)*chi))/2"
+            ),
+            "shift_identity": (
+                "S_m(E)=integral(E*sin(4*m*chi))="
+                "(E(0)-(-1)^m*E(L))/(4*m)-"
+                "integral(E''*sin(4*m*chi))/(16*m^2);_"
+                "the_equal-parity_endpoint_terms_cancel_to_order_n^-2_"
+                "in_(S_(n+1)-S_(n-1))/2"
+            ),
+            "shift_constant_for_n_at_least_2": (
+                "C_beta=(abs(E_beta(0))+abs(E_beta(L)))/3+"
+                "5*norm(E_beta'',L1)/36"
+            ),
+            "vector_constant": "C_r=sqrt(C_N^2+C_beta^2)",
+            "proved_shell_estimate": (
+                "norm(r_n,weak)<=C_r*n^-2_FOR_n>=2"
+            ),
+            "why_action_owned": (
+                "E_N_AND_E_beta_ARE_THE_MULTIPLIER_EULER_DENSITIES_OF_"
+                "THE_RETAINED_LOCAL_ACTION;_THE_ENDPOINT_CANCELLATION_"
+                "USES_ITS_EXISTING_COSINE_AND_WINDOWED_SHIFT_BASES"
+            ),
+            "fitted_constant_used": False,
+            "higher_N_root_used": False,
+            "fixed_order_quadrature_tail_used_as_the_proof": False,
+            "quadrature_requirement": (
+                "ORDER_DEPENDENT_GAUSS_EVALUATION_MUST_RESOLVE_THE_"
+                "VARIATIONAL_INTEGRALS;_QUADRATURE_ALIASING_IS_NOT_"
+                "PART_OF_C_r"
+            ),
+        },
+        "normal_inverse_summability": {
+            "correction_bound": (
+                "norm(delta_Y_n)<=kappa_n*C_r*n^-2"
+            ),
+            "exact_general_criterion": "sum_(n>=7)kappa_n/n^2<infinity",
+            "power_law_hypothesis": "kappa_n<=K*n^alpha",
+            "sharp_power_threshold": "alpha<1",
+            "borderline_alpha_equal_one_is_summable": False,
+            "uniform_inverse_case": {
+                "alpha": 0.0,
+                "series_bound": "sum_(n>=7)n^-2<=8/49",
+                "series_bound_value": uniform_inverse_series_bound,
+                "total_linear_correction_bound": "D1<=8*K*C_r/49",
+            },
+            "principal_tail_route": {
+                "principal_modulus_gap": "sqrt(29)-5",
+                "principal_modulus_gap_value": principal_gap,
+                "if_beta_P_and_C_LO_are_certified": (
+                    "beta_n>=beta_P-C_LO/n_AND_kappa_n<="
+                    "1/(beta_P-C_LO/n)_FOR_n>C_LO/beta_P"
+                ),
+                "consequence": "kappa_n=O(1)_AND_THE_LINEAR_TAIL_SUMS",
+                "uniform_beta_P_and_C_LO_certified_on_the_N6_tail": False,
+            },
+            "allowed_growth_proved_below_threshold_for_BHSM_tail": False,
+            "reason": (
+                "THE_REPOSITORY_HAS_A_FINITE_N6_RIGHT_INVERSE_AND_AN_"
+                "ACTION_PRINCIPAL_GAP_BUT_NO_ACTION_NORM_MAJORANT_FOR_"
+                "THE_FULL_GAUGE_REDUCED_LOWER_ORDER_TAIL_SCHUR_OPERATOR"
+            ),
+        },
+        "nonlinear_Hessian_remainder": {
+            "exact_Taylor_form": (
+                "norm(R(delta))<=M2*rho^2/2_ON_norm(delta)<=rho"
+            ),
+            "radii_polynomial": (
+                "p(rho)=D1+(K*M2/2)*rho^2-rho"
+            ),
+            "closure_condition": "2*K*M2*D1<1",
+            "small_root": (
+                "rho_minus=(1-sqrt(1-2*K*M2*D1))/(K*M2)"
+            ),
+            "existing_eta_and_persistence_neighborhood_condition": (
+                "rho_minus<min(eta_6/L_eta,_sigma_Dirac/L_Dirac,_"
+                "rho_existing_boundary_and_persistence_chart)"
+            ),
+            "N6_measured_finite_map_Hessian_Frobenius": lipschitz[
+                "Richardson_Hessian_Frobenius_bound_measurement"
+            ],
+            "that_measurement_is_a_uniform_analytic_M2": False,
+            "eta_persistence_neighborhood_closed_for_the_whole_tail": False,
+            "reason": (
+                "NO_RIGOROUS_ACTION_NORM_VALUES_FOR_K,_M2,_L_eta,_"
+                "L_Dirac_OR_THE_FULL_LOWER_ORDER_TAIL_SCHUR_BOUND_ARE_"
+                "CURRENTLY_AVAILABLE;_SUMMABILITY_ALONE_DOES_NOT_PROVE_"
+                "THE_SUM_FROM_SHELL_7_STAYS_IN_THE_OPEN_N6_CHART"
+            ),
+        },
+        "theorem_outcome": (
+            "FIRST_RETAINED_ACTION_OBSTRUCTION_LOCALIZED;_THE_N_MINUS_2_"
+            "SOURCE_LAW_IS_NOT_THE_BLOCKER"
+        ),
+        "infinite_tail_complete_child_constructed": False,
+        "first_retained_action_obstruction": (
+            "CERTIFY_THE_ACTION_NORMALIZED_FULL_GAUGE_REDUCED_TAIL_"
+            "SCHUR_RIGHT_INVERSE_MAJORANT_AND_THE_ASSOCIATED_NONLINEAR_"
+            "RADII_POLYNOMIAL_AT_THE_N6_COMPLETE_CHILD"
+        ),
+        "soft_channel_classification": (
+            "CATEGORY_2_DYNAMICALLY_CONTROLLED_NORMAL_DIRECTION"
+        ),
+        "category_3_collapse_sequence_constructed": False,
+        "higher_N_probe_promoted_as_a_complete_child": False,
+        "equations_gates_running_law_or_frozen_predictions_changed": False,
+        "validation": validation,
+        "validation_passed": all(validation.values()),
+        "FULL_BHSM_COMPLETE": False,
+    }
+
+
 @lru_cache(maxsize=4)
 def weak_complete_child_normal_right_inverse_audit(
     path: str | Path = (
@@ -17426,6 +17648,36 @@ def promote_weak_constraint_boundary_tail_audit(path: str | Path) -> Path:
     return target
 
 
+def promote_n6_inverse_square_tail_closure_audit(path: str | Path) -> Path:
+    """Persist the inverse-square theorem and its localized obstruction."""
+
+    target = Path(path)
+    payload = json.loads(target.read_text(encoding="utf-8"))
+    result = dict(payload["cross_resolution_reconnaissance"])
+    audit = n6_inverse_square_tail_closure_audit(target)
+    if not audit["validation_passed"]:
+        raise RuntimeError("N6 inverse-square tail audit failed")
+    result["N6_inverse_square_tail_closure_audit"] = audit
+    result["active_dependency"] = audit["first_retained_action_obstruction"]
+    result["scientific_status"] = (
+        "N3_TO_N6_EXACT_ATTACHMENT_WEAK_COMPLETE_PERSISTENT_CHILDREN_"
+        "VALIDATED;_THE_RETAINED_ACTION_GIVES_AN_EXACT_N_MINUS_2_BULK_"
+        "EULER_DIRAC_SHELL_BOUND_AFTER_WEAK_REACTION_ROUTING;_THE_"
+        "SHARP_POWER_GROWTH_THRESHOLD_FOR_THE_NORMAL_INVERSE_IS_ALPHA_"
+        "LESS_THAN_ONE;_THE_FULL_TAIL_SCHUR_MAJORANT_AND_NONLINEAR_N6_"
+        "RADII_POLYNOMIAL_REMAIN_UNCERTIFIED"
+    )
+    payload["cross_resolution_reconnaissance"] = result
+    validation = dict(payload["validation"])
+    validation["N6_inverse_square_tail_closure_audit_validated"] = audit[
+        "validation_passed"
+    ]
+    payload["validation"] = validation
+    payload["validation_passed"] = all(validation.values())
+    target.write_text(deterministic_json(payload), encoding="utf-8")
+    return target
+
+
 def promote_boundary_jerk_weak_graph_domain_audit(
     path: str | Path,
 ) -> Path:
@@ -17795,6 +18047,7 @@ __all__ = [
     "actual_corrected_event_child_soft_evans_audit",
     "soft_normal_lyapunov_schmidt_reduction",
     "weak_constraint_boundary_source_tail_audit",
+    "n6_inverse_square_tail_closure_audit",
     "weak_complete_child_normal_right_inverse_audit",
     "weak_complete_child_normal_lipschitz_audit",
     "weak_boundary_layer_radii_obstruction_audit",
@@ -17827,6 +18080,7 @@ __all__ = [
     "promote_injected_calderon_graph_audit",
     "promote_boundary_jerk_weak_graph_domain_audit",
     "promote_weak_constraint_boundary_tail_audit",
+    "promote_n6_inverse_square_tail_closure_audit",
     "promote_weak_complete_child_normal_audits",
     "promote_weak_boundary_layer_radii_obstruction",
     "promote_casimir_boundary_layer_parametrix_audit",

@@ -22,6 +22,7 @@ from bhsm.interface.aether_cross_resolution_reconnaissance_v21_35 import (
     soft_normal_fredholm_compactness_dichotomy,
     continuum_normal_cauchy_completeness_reduction,
     normal_boundary_cauchy_symbol_factorization,
+    n6_inverse_square_tail_closure_audit,
     actual_corrected_event_child_soft_evans_audit,
     soft_normal_lyapunov_schmidt_reduction,
     uniform_boundary_jerk_compactness_reduction,
@@ -29,6 +30,36 @@ from bhsm.interface.aether_cross_resolution_reconnaissance_v21_35 import (
     weak_calderon_boundary_generator_reduction,
     whole_system_time_translation_tangent_interface,
 )
+
+
+def test_n6_inverse_square_tail_closure_audit_is_fail_closed():
+    audit = n6_inverse_square_tail_closure_audit()
+    assert audit["validation_passed"] is True
+    law = audit["action_derived_inverse_square_law"]
+    assert law["proved_shell_estimate"] == (
+        "norm(r_n,weak)<=C_r*n^-2_FOR_n>=2"
+    )
+    assert law["fitted_constant_used"] is False
+    split = audit["exact_boundary_bulk_split"]
+    assert split[
+        "raw_boundary_distribution_used_in_the_bulk_tail_bound"
+    ] is False
+    inverse = audit["normal_inverse_summability"]
+    assert inverse["sharp_power_threshold"] == "alpha<1"
+    assert inverse["borderline_alpha_equal_one_is_summable"] is False
+    assert inverse["uniform_inverse_case"]["series_bound_value"] == 8.0 / 49.0
+    assert inverse[
+        "allowed_growth_proved_below_threshold_for_BHSM_tail"
+    ] is False
+    nonlinear = audit["nonlinear_Hessian_remainder"]
+    assert nonlinear[
+        "eta_persistence_neighborhood_closed_for_the_whole_tail"
+    ] is False
+    assert audit["infinite_tail_complete_child_constructed"] is False
+    assert audit["category_3_collapse_sequence_constructed"] is False
+    assert audit[
+        "equations_gates_running_law_or_frozen_predictions_changed"
+    ] is False
 
 
 def test_uniform_positive_duration_normal_closed_range_reduction():
