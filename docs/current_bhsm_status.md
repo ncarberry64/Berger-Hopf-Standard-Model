@@ -1,6 +1,6 @@
 # Current BHSM status
 
-## Authoritative frontier: v21.36 nonlinear-homotopy integrability
+## Authoritative frontier: v21.37 fixed-chart endpoint-rank theorem
 
 BHSM has reconstructed complete persistent children through N6 for their
 retained finite-resolution maps. N5 closes the unchanged
@@ -53,14 +53,20 @@ overlapping radii proof first requires an exact retained-action `F(t,Y)` with
 a rooted N6 endpoint and preserved gauge-fixed normal rank. High-mode scaling
 collapses the endpoint rank; retaining the rank exposes the nonzero omitted
 weak tail. A source-subtracted homotopy changes the action and is not adopted.
-The reduced local N6 canonical energy is not
+The endpoint-rank theorem closes the regular fixed-chart question: N6 has 100
+joint variables and 33 rows; N12 has 196 variables and 57 rows. An unchanged
+N6 extension has zero derivative in the 96 new state directions and no image
+in the 24 new row directions, so it cannot possess the full N12 normal right
+inverse at `t=0`. Retaining the N12 high rows instead leaves the injected N6
+state non-rooted. This is a proof-architecture obstruction, not physical
+nonexistence of a continuum child. The reduced local N6 canonical energy is not
 `Delta H`, a mass, or a scale readout; the paired parent-child `Q_xi` evaluator
 remains downstream and open. The v14.54 relative-energy/Floquet definitions
 are a conditional contract, not an executable evaluator, and the N6 artifact
 does not store the paired matched-parent history required to apply them.
 
 Exact next dependency:
-`DERIVE_THE_EXACT_NONLINEAR_NESTED_GALERKIN_EVENT_CHILD_HOMOTOPY_FROM_THE_UNCHANGED_RETAINED_ACTION_WITH_A_ROOTED_N6_ENDPOINT_AND_PRESERVED_GAUGE_FIXED_NORMAL_RANK,_OR_LOCALIZE_WHY_THIS_REQUIRES_AN_ADDED_SOURCE_OR_PRINCIPAL_TERM`.
+`PROVE_A_VARIABLE_CHART_SINGULAR_GALERKIN_TRANSITION_WITH_UNCHANGED_PHYSICAL_ENDPOINTS,_OR_EXPLICITLY_AUTHORIZE_AND_PROVE_ENDPOINT_INDEPENDENCE_OF_AN_ACTION_NORM_AUXILIARY_HIGH_BLOCK`.
 
 The corrected-Rayleigh N3 chronology below is retained for provenance.
 
