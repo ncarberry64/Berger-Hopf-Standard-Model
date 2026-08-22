@@ -1,0 +1,96 @@
+{
+  "CONTINUUM_EVENT_CHILD_CERTIFIED": false,
+  "C_r_event_child_product": 6476.158172228676,
+  "FULL_BHSM_COMPLETE": false,
+  "binary_checkpoint_to_full_root_neighborhood_action_radius": 8.873497235197913e-16,
+  "classification": "N12_RETAINED_ACTION_INVERSE_SQUARE_BULK_SOURCE_CONSTANT_CERTIFIED",
+  "derivation": {
+    "C_N": "(|E_N'(0)|+|E_N'(pi/4)|+||E_N''||_L1)/16",
+    "C_beta": "(|E_beta(0)|+|E_beta(pi/4)|)/3+5||E_beta''||_L1/36",
+    "C_r_sector": "sqrt(C_N^2+C_beta^2)",
+    "bulk_boundary_split": "THE_STANDARD_MODEL_CASIMIR_BOUNDARY_COVECTOR_REMAINS_IN_THE_EXISTING_WEAK_CONORMAL_REACTION_RELATION",
+    "density": "UNCHANGED_RETAINED_LOCAL_ACTION_PLUS_THE_EXACT_COLLECTIVE_INERTIA_VARIATION_COEFFICIENT"
+  },
+  "exact_next_dependency": "COMBINE_C_r_WITH_THE_ACTION_OWNED_HIGH_TAIL_NORMAL_INVERSE_AND_OBSERVATION_PROPAGATOR_TO_BOUND_epsilon_obs_M0_AND_COMPARE_IT_WITH_c_M0",
+  "finite_value_identity_checks": [
+    {
+      "finite_value_only_cross_check": true,
+      "retained_action_value_binary": 3.3745498749835883,
+      "sector": "event"
+    },
+    {
+      "finite_value_only_cross_check": true,
+      "retained_action_value_binary": 2.0345791840787792,
+      "sector": "child"
+    }
+  ],
+  "inputs": {
+    "artifacts/n12_direct_checkpoint/BHSM_N12_CALDERON_ACTION_BALL.json": "D10CB20187594C2C0643334046DB0B82BD3970EBFC5E10CEE9316EAAEDEA6285",
+    "artifacts/n12_direct_checkpoint/BHSM_N12_CALDERON_DIRECTED_CENTER.json": "6954A539CAAB33610FC47DE6B9B15FA5F142ECA234FFAB5F02B4B1F0E245D8FF",
+    "artifacts/n12_direct_checkpoint/BHSM_N12_COMPLETE_PERSISTENT_CHILD_STATE.npz": "93E00A944C756B658FB82E56BC6A5C694E03B9760BB4084545E10D963A9AA230"
+  },
+  "order": 12,
+  "partition_count": 512,
+  "proved_shell_law": "norm(r_n,event_child)_weak<=C_r_event_child_product*n^-2",
+  "sectors": {
+    "child": {
+      "C_N": 954.9171888268178,
+      "C_beta": 4371.44742115785,
+      "C_r": 4474.530075155663,
+      "E_N_prime_endpoint_absolute_bounds": [
+        1.4695899608347161e-08,
+        83.11563091909662
+      ],
+      "E_N_second_derivative_L1_bound": 15195.559390292234,
+      "E_beta_endpoint_absolute_bounds": [
+        9.7945e-319,
+        50.47082216924576
+      ],
+      "E_beta_second_derivative_L1_bound": 31353.291459124026,
+      "collective_inertia_variation_coefficient_interval": [
+        2.322414063725192e-09,
+        2.476455332914017e-09
+      ],
+      "inertia_interval": [
+        18.23392964789356,
+        18.828932477501134
+      ]
+    },
+    "event": {
+      "C_N": 831.3756377876379,
+      "C_beta": 4607.38752734338,
+      "C_r": 4681.795091440346,
+      "E_N_prime_endpoint_absolute_bounds": [
+        2.905687779276631e-08,
+        86.39664036156422
+      ],
+      "E_N_second_derivative_L1_bound": 13215.613564208921,
+      "E_beta_endpoint_absolute_bounds": [
+        5.82726e-319,
+        43.310922621937934
+      ],
+      "E_beta_second_derivative_L1_bound": 33069.24398257305,
+      "collective_inertia_variation_coefficient_interval": [
+        1.4033698318365128e-09,
+        1.5126749026946329e-09
+      ],
+      "inertia_interval": [
+        23.33042894679687,
+        24.221969685100067
+      ]
+    }
+  },
+  "validation": {
+    "boundary_Casimir_routed_only_to_existing_weak_reaction": true,
+    "endpoint_safe_density_is_algebraically_the_retained_action": true,
+    "finite_action_derived_constants": true,
+    "inverse_square_constant_not_fitted": true,
+    "no_higher_N_root_or_observed_particle_data_used": true,
+    "no_new_equation_constraint_gate_scale_fit_or_event_definition": true,
+    "outward_rounded_partition_enclosures_used": true,
+    "positive_inertia_enclosed_in_both_sectors": true,
+    "validated_exact_N12_root_neighborhood_consumed": true,
+    "whole_action_coordinate_ball_consumed": true
+  },
+  "validation_passed": true
+}

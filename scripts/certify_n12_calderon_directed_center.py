@@ -33,6 +33,9 @@ from bhsm.interface.aether_sobolev_metric_soft_mode_lift_v16_07 import (
 ORDER = 12
 POINTS = 96
 DPS = int(os.environ.get("BHSM_N12_CALDERON_CENTER_DPS", "60"))
+ROOT_NEIGHBORHOOD_MULTIPLIER = float(os.environ.get(
+    "BHSM_N12_CALDERON_ROOT_NEIGHBORHOOD_MULTIPLIER", "2.0"
+))
 ROOT = Path(__file__).resolve().parents[1]
 CHECKPOINT = ROOT / (
     "artifacts/n12_direct_checkpoint/"
@@ -45,6 +48,12 @@ PROMOTION = ROOT / (
 ROOT_ROUNDING = ROOT / (
     "artifacts/n12_direct_checkpoint/"
     "BHSM_N12_DIRECTED_ROUNDING_CERTIFICATE.json"
+)
+EXACT_NORMAL = ROOT / (
+    "artifacts/n12_direct_checkpoint/BHSM_N12_EXACT_NORMAL_1E20.npz"
+)
+EXACT_RESIDUAL = ROOT / (
+    "artifacts/n12_direct_checkpoint/BHSM_N12_EXACT_ROOT_RESIDUAL.json"
 )
 RESULT = Path(os.environ.get(
     "BHSM_N12_CALDERON_DIRECTED_CENTER_RESULT",
@@ -509,8 +518,10 @@ def _enclose_inverse(
     inverse = midpoint ** -1
     identity = mp.eye(midpoint.rows)
     residual = identity - inverse * midpoint
+    residual_norm = _frobenius(residual)
+    matrix_radius_norm = _frobenius(radius)
     product_radius = _abs_matrix(inverse) * radius
-    defect = _frobenius(residual) + _frobenius(product_radius)
+    defect = residual_norm + _frobenius(product_radius)
     if defect >= 1 and require_contractive:
         raise np.linalg.LinAlgError("interval inverse defect is not contractive")
     inverse_norm = _frobenius(inverse)
@@ -524,6 +535,8 @@ def _enclose_inverse(
         "midpoint": midpoint,
         "radius": radius,
         "inverse": inverse,
+        "midpoint_residual_norm": residual_norm,
+        "matrix_radius_Frobenius": matrix_radius_norm,
         "defect": defect,
         "inverse_bound": inverse_bound,
         "inverse_radius": inverse_radius,
@@ -531,10 +544,33 @@ def _enclose_inverse(
     }
 
 
-def _response_interval(inverse_data: dict[str, Any]) -> np.ndarray:
+def _response_interval(
+    inverse_data: dict[str, Any],
+) -> tuple[np.ndarray, dict[str, mp.mpf]]:
     inverse = inverse_data["inverse"]
-    radius = inverse_data["inverse_radius"]
     start = inverse.rows - 2
+    residual = inverse_data["midpoint_residual_norm"]
+    inverse_norm = _frobenius(inverse)
+    midpoint_inverse_error = inverse_norm * residual / (1 - residual)
+    exact_midpoint_inverse_norm = inverse_norm / (1 - residual)
+    matrix_radius = inverse_data["matrix_radius_Frobenius"]
+    perturbation_product = exact_midpoint_inverse_norm * matrix_radius
+    if perturbation_product >= 1:
+        raise np.linalg.LinAlgError(
+            "response-block perturbation is not contractive"
+        )
+    left = _frobenius(mp.matrix([
+        [inverse[row, column] for column in range(inverse.cols)]
+        for row in range(start, inverse.rows)
+    ])) + midpoint_inverse_error
+    right = _frobenius(mp.matrix([
+        [inverse[row, column] for column in range(start, inverse.cols)]
+        for row in range(inverse.rows)
+    ])) + midpoint_inverse_error
+    radius = (
+        midpoint_inverse_error
+        + left * matrix_radius * right / (1 - perturbation_product)
+    )
     output = np.empty((2, 2), dtype=object)
     for row in range(2):
         for column in range(2):
@@ -542,12 +578,24 @@ def _response_interval(inverse_data: dict[str, Any]) -> np.ndarray:
             output[row, column] = mp.iv.mpf([
                 center - radius, center + radius
             ])
-    return output
+    return output, {
+        "midpoint_inverse_error_Frobenius": midpoint_inverse_error,
+        "matrix_radius_Frobenius": matrix_radius,
+        "exact_midpoint_inverse_Frobenius_bound": (
+            exact_midpoint_inverse_norm
+        ),
+        "response_left_factor_Frobenius_bound": left,
+        "response_right_factor_Frobenius_bound": right,
+        "response_perturbation_product": perturbation_product,
+        "response_block_radius_bound": radius,
+    }
 
 
 def main() -> None:
     if DPS < 40:
         raise ValueError("at least 40 interval decimal digits required")
+    if ROOT_NEIGHBORHOOD_MULTIPLIER < 1.0:
+        raise ValueError("root-neighborhood multiplier must be at least one")
     mp.mp.dps = DPS + 20
     mp.iv.dps = DPS
     promotion = json.loads(PROMOTION.read_text(encoding="utf-8"))
@@ -559,8 +607,36 @@ def main() -> None:
     if root_rounding.get("validation_passed") is not True:
         raise RuntimeError("directed N12 root enclosure required")
     root_contraction = float(root_rounding["directed_contraction_bound"])
-    root_distance = float(root_rounding["directed_Y_upper"]) / (
+    center_root_distance = float(root_rounding["directed_Y_upper"]) / (
         1.0 - root_contraction
+    )
+    exact_normal = np.load(EXACT_NORMAL)
+    normal_basis = np.asarray(exact_normal["normal_basis"], dtype=float)
+    normal_jacobian = np.asarray(
+        exact_normal["analytic_normal_jacobian"], dtype=float
+    )
+    residual = np.asarray(json.loads(
+        EXACT_RESIDUAL.read_text(encoding="utf-8")
+    )["exact_residual_vector"], dtype=float)
+    approximate_inverse = np.linalg.inv(normal_jacobian)
+    correction_coefficients = [
+        -mp.fsum(
+            mp.mpf(float(approximate_inverse[row, column]))
+            * mp.mpf(float(residual[column]))
+            for column in range(residual.size)
+        )
+        for row in range(residual.size)
+    ]
+    correction_norm = mp.sqrt(mp.fsum(
+        value**2 for value in correction_coefficients
+    ))
+    first_picard_root_distance = root_contraction * center_root_distance
+    first_picard_enclosure_radius = (
+        ROOT_NEIGHBORHOOD_MULTIPLIER * first_picard_root_distance
+    )
+    exact_root_neighborhood_radius = (
+        (ROOT_NEIGHBORHOOD_MULTIPLIER - 1.0)
+        * first_picard_root_distance
     )
     qdim = dimensions(ORDER)["coordinates"]
     mdim = dimensions(ORDER)["multipliers"]
@@ -580,17 +656,37 @@ def main() -> None:
         np.ones(velocity_keep.size), m_weights[:ORDER]
     ))
     state_weights = np.concatenate((q_weights, np.ones(qdim), m_weights))
+    joint_weights = np.concatenate((state_weights, state_weights))
+    normal_row_norms = np.linalg.norm(normal_basis, axis=1)
+    first_picard_center = []
+    for row in range(joint.size):
+        action_correction = mp.fsum(
+            mp.mpf(float(normal_basis[row, column]))
+            * correction_coefficients[column]
+            for column in range(residual.size)
+        )
+        first_picard_center.append(
+            mp.mpf(float(joint[row]))
+            + action_correction / mp.mpf(float(joint_weights[row]))
+        )
     states = {}
     for index, name in enumerate(("event", "child")):
-        center = joint[
+        offset = index * state_dimension
+        center = first_picard_center[
             index * state_dimension:(index + 1) * state_dimension
         ]
         states[name] = np.asarray([
             mp.iv.mpf([
-                mp.mpf(float(value)) - mp.mpf(root_distance / weight),
-                mp.mpf(float(value)) + mp.mpf(root_distance / weight),
+                value - mp.mpf(
+                    first_picard_enclosure_radius
+                    * normal_row_norms[offset + local] / weight
+                ),
+                value + mp.mpf(
+                    first_picard_enclosure_radius
+                    * normal_row_norms[offset + local] / weight
+                ),
             ])
-            for value, weight in zip(center, state_weights)
+            for local, (value, weight) in enumerate(zip(center, state_weights))
         ], dtype=object)
     attachments = {}
     hessians = {}
@@ -646,7 +742,7 @@ def main() -> None:
         matrix[:active_indices.size, -2:] = -coupling.T
         matrix[-2:, :active_indices.size] = coupling
         inverse_data = _enclose_inverse(matrix)
-        responses[name] = _response_interval(inverse_data)
+        responses[name], response_data = _response_interval(inverse_data)
         sector_records[name] = {
             "quotient_dimension": dimension,
             "gauge_fixed_Dirac_core_dimension": active_indices.size,
@@ -666,6 +762,9 @@ def main() -> None:
             "response_Frobenius_bound": float(
                 _interval_frobenius_upper(responses[name])
             ),
+            **{
+                key: float(value) for key, value in response_data.items()
+            },
         }
 
     graphs = {}
@@ -701,12 +800,16 @@ def main() -> None:
             symbol_inverse["defect"] < 1
         ),
         "directed_symbol_gap_positive": bool(symbol_gap_lower > 0),
+        "positive_normal_section_action_neighborhood_about_exact_root_"
+        "enclosed": bool(
+            exact_root_neighborhood_radius > 0.0
+        ),
         "no_sampled_history_promoted_as_an_interval": True,
         "no_new_equation_constraint_gate_scale_fit_or_event_definition": True,
     }
     output = {
         "classification": (
-            "N12_EXACT_ROOT_ENCLOSURE_CALDERON_GRAPH_SYMBOL_CERTIFIED_"
+            "N12_EXACT_ROOT_NEIGHBORHOOD_CALDERON_GRAPH_SYMBOL_CERTIFIED_"
             "BY_DIRECTED_INTERVAL_ACTION_JETS"
             if all(validation.values()) else
             "N12_EXACT_ROOT_ENCLOSURE_CALDERON_CERTIFICATE_FAILED"
@@ -718,10 +821,30 @@ def main() -> None:
         "checkpoint_SHA256": _sha256(CHECKPOINT),
         "promotion_SHA256": _sha256(PROMOTION),
         "root_rounding_SHA256": _sha256(ROOT_ROUNDING),
-        "exact_root_action_coordinate_distance_upper": root_distance,
+        "exact_normal_SHA256": _sha256(EXACT_NORMAL),
+        "exact_residual_SHA256": _sha256(EXACT_RESIDUAL),
+        "numerical_center_to_exact_root_distance_upper": center_root_distance,
+        "first_Picard_action_correction_norm": float(correction_norm),
+        "first_Picard_center_to_exact_root_distance_upper": (
+            first_picard_root_distance
+        ),
+        "first_Picard_normal_enclosure_radius": (
+            first_picard_enclosure_radius
+        ),
+        "certified_normal_section_action_neighborhood_radius_about_exact_"
+        "root": (
+            exact_root_neighborhood_radius
+        ),
+        "root_neighborhood_multiplier": ROOT_NEIGHBORHOOD_MULTIPLIER,
+        "exact_root_action_coordinate_distance_upper": (
+            first_picard_root_distance
+        ),
         "root_enclosure_geometry": (
-            "JOINT_ACTION_BALL_ENCLOSED_BY_PER_COORDINATE_INTERVALS;_"
-            "EACH_SECTOR_BOX_CONTAINS_ITS_EXACT_ROOT_HALF"
+            "EXACT_FIRST_FIXED_APPROXIMATE_INVERSE_PICARD_CENTER;_THE_"
+            "CONTRACTION_REMAINDER_LIES_IN_THE_STORED_57_DIMENSIONAL_"
+            "NORMAL_BASIS_AND_IS_ENCLOSED_USING_ITS_COORDINATE_ROW_NORMS;_"
+            "THIS_IS_A_NORMAL_SECTION_ENCLOSURE_NOT_AN_ARBITRARY_STATE_"
+            "NEIGHBORHOOD"
         ),
         "sector_records": sector_records,
         "common_trace_Gram": {
@@ -755,9 +878,8 @@ def main() -> None:
             "PROPAGATOR_REMAINS_A_SEPARATE_LEMMA"
         ),
         "exact_next_dependency": (
-            "ENCLOSE_THE_CALDERON_GRAPH_ON_THE_CONTRACTION_CORRELATED_"
-            "N12_ROOT_CORRECTION_SET_WITHOUT_REPLACING_IT_BY_THE_"
-            "INDEPENDENT_PER_COORDINATE_BOX"
+            "ENCLOSE_A_WHOLE_ACTION_COORDINATE_NEIGHBORHOOD_ABOUT_"
+            "EACH_EXACT_ROOT_USING_THE_DIRECTED_CORRELATED_GRAPH_GAP"
         ),
         "CONTINUUM_EVENT_CHILD_CERTIFIED": False,
         "FULL_BHSM_COMPLETE": False,

@@ -2,13 +2,13 @@
 
 [![CI](https://github.com/ncarberry64/Berger-Hopf-Standard-Model/actions/workflows/ci.yml/badge.svg)](https://github.com/ncarberry64/Berger-Hopf-Standard-Model/actions/workflows/ci.yml)
 [![Latest archival release](https://img.shields.io/github/v/release/ncarberry64/Berger-Hopf-Standard-Model?label=archival%20release)](https://github.com/ncarberry64/Berger-Hopf-Standard-Model/releases/latest)
-[![Current research status](https://img.shields.io/badge/current%20research-N12%20exact--root%20Calderon%20localized-orange)](docs/current_bhsm_status.md)
+[![Current research status](https://img.shields.io/badge/current%20research-N12%20finite--core%20closed%3B%20tail%20modulus%20open-orange)](docs/current_bhsm_status.md)
 [![Python 3.10+](https://img.shields.io/badge/python-3.10%2B-3776AB)](https://www.python.org/)
 [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.20663419.svg)](https://doi.org/10.5281/zenodo.20663419)
 
 BHSM is an independent artifact-backed computational framework and mathematical-physics research program investigating whether Standard Model structure and particle-like dynamics can be derived from Berger-Hopf boundary/envelopment geometry and a common action architecture.
 
-## Current Research Frontier -- N12 exact-root Calderon enclosure
+## Current Research Frontier -- N12 finite core closed, continuum tail open
 
 BHSM now has a directly corrected `N=12` complete persistent child under the
 unchanged retained 57-row finite-resolution map. Its independently evaluated
@@ -29,17 +29,24 @@ the hard trial allows the coupled constraint/boundary norm to move from
 `0.12021432656497034` to `0.14718333891190302` while the independently
 evaluated total merit falls. No componentwise monotonicity was imposed.
 
-The exact-root Calderon audit now separates a certified sector result from the
-remaining coupled certificate. The directed N12 root enclosure has
-action-coordinate radius `8.11055778207114e-16`. On its independent coordinate
-box, the existing gauge-fixed event and child quotient inverses remain
-contractive, with interval defects `1.54815013797252e-5` and
-`2.53230111144797e-6`. The coupled graph-symbol enclosure is not contractive
-(`973.187877081044`) because that box discards the correlations imposed by the
-contractive 57-row root correction. This is numerical overenclosure, not a
-retained-action obstruction or a continuum-child certificate. The exact next
-lemma must preserve those root-correction correlations before deriving the
-positive-duration modulus `c_M0`.
+The contraction-correlated exact-root Calderon problem is now closed. The
+first Picard center lies within `5.57567776096209e-18` action coordinates of
+the exact root; directed interval action jets give normalized graph gap
+`0.0016229286468592938`. A whole action-coordinate ball of radius
+`7.62939453125e-17` about each enclosed exact root retains graph gap
+`0.0008481866624639198`. On that ball, the retained gauge-fixed
+Euler--Dirac/Jacobi evolution gives a positive-duration finite-core observation
+modulus `c_M0 >= 2.0753723606658987e-19`.
+
+The unchanged action also now supplies an explicit, outward-rounded,
+non-fitted inverse-square bulk source constant
+`C_r,event-child <= 6476.158172228676`. This certifies the shell law
+`||r_n||_weak <= C_r n^-2`; the standard-model boundary Casimir covector stays
+in the existing weak conormal reaction relation. These results do not yet
+certify a continuum child. The N12-to-infinity observation perturbation still
+lacks explicit uniform graph-norm moduli for four compact blocks: interior
+lower-order Euler--Dirac, ordered-event projector, canonical momentum/dynamic
+flux, and Gauss-consistency. No retained-action obstruction has been found.
 
 | Scientific gate | Status |
 | --- | --- |
@@ -107,14 +114,12 @@ No equation, gate, or acceptance rule changed.
 
 Exact next object:
 
-`ENCLOSE_THE_SOURCE_RESTRICTED_N12_TO_INFINITY_NONLINEAR_EVENT_CHILD_RADII_POLYNOMIAL_WITH_EXPLICIT_ACTION_OWNED_C_r_K_M2_AND_EXISTING_ETA_EVENT_DIRAC_PERSISTENCE_NEIGHBORHOODS`
+`DERIVE_EXPLICIT_ACTION_GRAPH_NORM_TAIL_MODULI_FOR_THE_FOUR_RETAINED_COMPACT_BLOCKS;_VERIFY_epsilon_obs(M0)<c_M0;_THEN_CLOSE_THE_NONLINEAR_CONTINUUM_RADII_POLYNOMIAL`
 
-The first missing object inside that unchanged dependency is
-`ENCLOSE_THE_CALDERON_GRAPH_ON_THE_CONTRACTION_CORRELATED_N12_ROOT_CORRECTION_SET_WITHOUT_REPLACING_IT_BY_THE_INDEPENDENT_PER_COORDINATE_BOX`.
-Only after it closes may the finite-core positive-duration modulus `c_M0` and
-tail perturbation `epsilon_obs(M0)` be used to evaluate `K`. The N16 probe and
-sampled N12 history are not promoted as roots, continuum states, or interval
-certificates.
+The N16 probe and higher-resolution sampled states are not promoted as roots,
+continuum states, or interval certificates. `Q_xi`, relative `Delta H`,
+action-selected families, and a frozen blind observable remain downstream of
+the continuum-child gate.
 
 ## Historical corrected-Rayleigh N=3 snapshot
 

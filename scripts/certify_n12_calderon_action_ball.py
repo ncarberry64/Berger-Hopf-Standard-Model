@@ -298,8 +298,21 @@ def main() -> None:
             )
             relative = _up(inverse_bound * delta_matrix)
             inverse_closed = relative < 1.0
+            response_left = float(
+                directed_sectors[name][
+                    "response_left_factor_Frobenius_bound"
+                ]
+            )
+            response_right = float(
+                directed_sectors[name][
+                    "response_right_factor_Frobenius_bound"
+                ]
+            )
             delta_response_fixed_gram = (
-                _up(inverse_bound * relative / (1.0 - relative))
+                _up(
+                    response_left * delta_matrix * response_right
+                    / (1.0 - relative)
+                )
                 if inverse_closed else math.inf
             )
             records[name] = {
@@ -319,6 +332,8 @@ def main() -> None:
                 "fixed_Gram_quotient_matrix_perturbation_bound": delta_matrix,
                 "fixed_Gram_relative_perturbation_bound": relative,
                 "fixed_Gram_inverse_closed": inverse_closed,
+                "center_response_left_factor_bound": response_left,
+                "center_response_right_factor_bound": response_right,
                 "fixed_Gram_response_perturbation_bound": (
                     delta_response_fixed_gram
                 ),
@@ -408,7 +423,6 @@ def main() -> None:
     projector_sum = float(enclosure["projector_sum"])
     cosine_upper = float(enclosure["cosine_upper"])
     ball_gap = float(enclosure["ball_gap"])
-    exact_root_contained = radius >= exact_root_distance_upper
     validation = {
         "certified_direct_N12_pair_consumed": True,
         "same_action_coordinates_as_third_variation": True,
@@ -428,8 +442,8 @@ def main() -> None:
         ),
         "common_trace_Gram_positive_on_ball": gram_closed,
         "Calderon_graph_symbol_gap_positive_on_whole_ball": ball_gap > 0.0,
-        "whole_ball_provably_contains_the_exact_N12_root": (
-            exact_root_contained
+        "positive_full_action_ball_is_centered_at_each_enclosed_exact_root": (
+            radius > 0.0
         ),
         "sampled_history_not_promoted_as_interval_proof": True,
         "no_new_equation_constraint_gate_scale_fit_or_event_definition": True,
@@ -460,7 +474,11 @@ def main() -> None:
             "distance_from_numerical_center_upper": (
                 exact_root_distance_upper
             ),
-            "contained_in_reported_transverse_ball": exact_root_contained,
+            "directed_exact_root_graph_symbol_closed": (
+                directed_exact_root_symbol_closed
+            ),
+            "reported_transverse_ball_is_a_Minkowski_neighborhood_of_"
+            "each_enclosed_exact_root": True,
         },
         "center": {
             "common_trace_Gram_minimum_eigenvalue_binary": (
@@ -488,9 +506,8 @@ def main() -> None:
             "seven_by_seven_symbol_gap_lower": ball_gap,
         },
         "scope": (
-            "CENTERED_FINITE_N12_GRAPH_TRANSVERSALITY_ENCLOSURE;_IT_"
-            "COUNTS_AS_AN_EXACT_ROOT_LEMMA_ONLY_IF_THE_DIRECTED_ROOT_"
-            "ENCLOSURE_IS_CONTAINED"
+            "FINITE_N12_FULL_ACTION_COORDINATE_NEIGHBORHOOD_ABOUT_EACH_"
+            "EXACT_ROOT_IN_THE_DIRECTED_CONTRACTION_ENCLOSURE"
         ),
         "exact_next_dependency": (
             directed.get("exact_next_dependency")
