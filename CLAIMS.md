@@ -2,7 +2,7 @@
 
 ## Current public claim boundary
 
-Current public identifier: **N12 eta-completed source-compatibility provenance
+Current public identifier: **N12 source-restricted dynamic-Calderon provenance
 checkpoint**. This is not a release and does not claim continuum or BHSM
 completion.
 
@@ -22,19 +22,20 @@ definition, or acceptance gate was introduced.
 
 Supported finite diagnostic: the gauge-fixed N12 event/child Calderon boundary
 symbol has gap `0.029146859835472938`; doubled quadrature agrees to
-`7.44e-13`. Zero-padded N16--N48 probes retain positive finite gaps, with
-observed minimum `0.00912893612489853`. These probes are not complete-child
-roots and cannot establish an N-uniform theorem.
+`7.44e-13`. The source-restricted linear N48 and N64 probes retain positive
+unchanged dynamic-symbol gaps `0.00922485414794376` and
+`0.0038382679025004396`. These probes are not complete-child roots and cannot
+establish an N-uniform theorem.
 
 Also supported as a finite diagnostic: after the existing weak boundary
 reaction is routed, the exact omitted bulk source has inverse-square shell
-decay. Its N16--N48 minimum-action linear corrections are common-mode Cauchy
-with sampled `N^2 * distance <= 1.4876792803344001` and sampled
-`H2_q x H1_v x H2_m` norm at most `0.6486315875453534`. The worst static
-right inverse is not uniformly bounded and cannot be multiplied by a generic
-inverse-square source to prove summability. The exact source's decreasing
-projection onto that shift-owned soft line does not itself prove the nonlinear
-continuum theorem.
+decay. The N48-to-N64 event/child action-coordinate correction distances are
+`0.0018305896390707417` and `0.0010832491904661818`, while the corresponding
+strong-graph distances remain `0.2789519506622375` and
+`0.1755558333355768`. Sampled strong norms remain bounded, but strong-graph
+Cauchy closure is not established. The worst static right inverse is not
+uniformly bounded and cannot be multiplied by a generic inverse-square source
+to prove summability.
 
 Supported source-compatibility theorem: the retained eta clock supplies a
 nonzero shift current, and the radial-diffeomorphism Ward identity is `metric
@@ -45,10 +46,12 @@ statement is invalidated.
 Supported finite diagnostic: the N48 source-restricted linear proposal lowers
 the event/child high routed bulk weak residuals by more than two orders of
 magnitude while preserving eta. It is not a root because coupled boundary and
-energy closure remains open. The raw near-zero event Hessian cluster is absent
-from the already-existing principal gauge quotient, whose selected branch has
-minimum observed neighbor gap `1.9607047715840434e-08` across 96/192-point
-quadrature. This does not establish an N-uniform event projector.
+energy closure remains open. The principal retained-coordinate submatrix is
+not equivalent to the unchanged ordered-event eigenproblem. Exact Feshbach
+elimination requires the existing shifted w/shift inverse, whose sampled gap
+collapses to `7.369327366811907e-09` at embedded N48. The static event-projector
+shortcut is invalidated; the positive dynamic-symbol probes remain finite
+category-2 evidence only.
 
 Not supported: a continuum/resolution-independent child, a uniform Calderon
 projector-tail bound, the reduced local energy as `Delta H` or mass, an
@@ -57,7 +60,7 @@ scale, physical masses or mixing, a new blind observable, empirical
 validation, or `FULL_BHSM_COMPLETE = TRUE`.
 
 Active dependency:
-`CERTIFY_THE_ETA_COMPLETED_SOURCE_RESTRICTED_MIXED_EULER_DIRAC_S2_RIGHT_INVERSE_AND_THE_EXISTING_GAUGE_REDUCED_ORDERED_EVENT_PROJECTOR_ON_THE_CORRECTED_NORMAL_SECTION;_THEN_CLOSE_THE_UNCHANGED_NONLINEAR_JOINT_EVENT_CHILD_RADIUS_AND_TRANSFER_ETA_EVENT_DIRAC_PERSISTENCE`.
+`PROVE_THE_SOURCE_RESTRICTED_POSITIVE_DURATION_GAUGE_FIXED_JACOBI_CALDERON_RIGHT_INVERSE_AND_STRONG_GRAPH_COMPACTNESS_FOR_THE_ETA_COMPLETED_WARD_SOURCE;_USE_IT_TO_CONTROL_THE_UNCHANGED_ORDERED_EVENT_PROJECTOR_AND_CLOSE_THE_NONLINEAR_N12_TO_INFINITY_EVENT_CHILD_RADIUS_WITH_EXISTING_ETA_EVENT_DIRAC_PERSISTENCE_GATES`.
 
 ### Historical corrected-Rayleigh N3 claim boundary
 

@@ -1,0 +1,60 @@
+{
+  "classification": "BHSM_N12_SOURCE_RESTRICTED_DYNAMIC_CALDERON_PROVENANCE_CHECKPOINT",
+  "scientific_status": {
+    "DIRECT_N12_COMPLETE_PERSISTENT_CHILD_CERTIFIED": true,
+    "principal_submatrix_is_unchanged_ordered_event_definition": false,
+    "exact_Feshbach_elimination_algebraically_equivalent": true,
+    "sampled_static_w_shift_inverse_uniformly_controlled": false,
+    "N48_source_corrected_Calderon_symbol_transverse": true,
+    "N64_source_corrected_Calderon_symbol_transverse": true,
+    "N64_state_promoted_as_complete_child": false,
+    "CONTINUUM_EVENT_CHILD_CERTIFIED": false,
+    "FULL_BHSM_COMPLETE": false
+  },
+  "validated": [
+    "The principal retained-coordinate submatrix is not equivalent to the unchanged ordered-event eigenproblem. Exact Feshbach elimination is algebraically equivalent only when the shifted existing w/shift block is inverted.",
+    "The sampled shifted w/shift block gap collapses from 8.877056607545721e-06 at N12 to 7.369327366811907e-09 at embedded N48, so the static projector shortcut cannot provide the required uniform event control.",
+    "The unchanged positive-duration event-child Calderon graph symbol remains transverse on the source-restricted linear probes: the corrected N48 gap is 0.00922485414794376 at 192-point quadrature and the corrected N64 gap is 0.0038382679025004396 at 96-point quadrature.",
+    "At the N64 linear probe the event/child eta minima are 0.8320252649968627 and 1.0000000446725377. The full q-v-m 48-to-64 action-coordinate correction distances are 0.0018305896390707417 and 0.0010832491904661818, while the corresponding S2 distances are 0.2789519506622375 and 0.1755558333355768."
+  ],
+  "invalidated": [
+    "The earlier principal-submatrix isolation diagnostic cannot be promoted as the unchanged ordered-event projector theorem.",
+    "Finite action-Cauchy behavior and bounded sampled S2 correction norms do not by themselves prove strong-graph closure or the nonlinear continuum radius."
+  ],
+  "claim_boundary": "N48 and N64 source-corrected states are retained-action linear diagnostic probes, not complete-child roots. Positive sampled Calderon gaps are finite evidence only and do not establish an N-uniform observation bound, continuum child, Q_xi, Delta H, mass, scale, family selection, or prediction.",
+  "soft_channel_classification": "CATEGORY_2_DYNAMICALLY_CONTROLLED_NORMAL_DIRECTION; NOT TANGENT; NO CATEGORY_3_COLLAPSE SEQUENCE",
+  "exact_next_dependency": "PROVE_THE_SOURCE_RESTRICTED_POSITIVE_DURATION_GAUGE_FIXED_JACOBI_CALDERON_RIGHT_INVERSE_AND_STRONG_GRAPH_COMPACTNESS_FOR_THE_ETA_COMPLETED_WARD_SOURCE;_USE_IT_TO_CONTROL_THE_UNCHANGED_ORDERED_EVENT_PROJECTOR_AND_CLOSE_THE_NONLINEAR_N12_TO_INFINITY_EVENT_CHILD_RADIUS_WITH_EXISTING_ETA_EVENT_DIRAC_PERSISTENCE_GATES",
+  "files": [
+    {
+      "path": "artifacts/n12_dynamic_calderon_checkpoint/BHSM_N12_N48_ORDERED_EVENT_FESHBACH_EQUIVALENCE_AUDIT.json",
+      "bytes": 18147,
+      "SHA256": "144AE68E8575574D7CA77EBC01744A4C3FE49706708E390998965A4483A4EB97"
+    },
+    {
+      "path": "artifacts/n12_dynamic_calderon_checkpoint/BHSM_N48_SOURCE_CORRECTED_CALDERON_SYMBOL_AUDIT.json",
+      "bytes": 2884,
+      "SHA256": "979E04DEFB2F45C3423E46B7A1B0A19AD900367377E2D86DC82157615C2C192E"
+    },
+    {
+      "path": "artifacts/n12_dynamic_calderon_checkpoint/BHSM_N64_FULL_QVM_CONSTRAINT_TAIL_DIAGNOSTIC.json",
+      "bytes": 72978,
+      "SHA256": "5428D527DF5F1D7435B4CDEE09D233F31F38FF1EA09276E078678295FBB80DFE"
+    },
+    {
+      "path": "artifacts/n12_dynamic_calderon_checkpoint/BHSM_N64_FULL_QVM_LINEAR_CORRECTION_CANDIDATES.npz",
+      "bytes": 19352,
+      "SHA256": "B26728E139D50816D846F145477C8F261293004F75FDB0AC7C3F24422CC05BEE"
+    },
+    {
+      "path": "artifacts/n12_dynamic_calderon_checkpoint/BHSM_N64_SOURCE_CORRECTED_CALDERON_SYMBOL_AUDIT.json",
+      "bytes": 1826,
+      "SHA256": "250026037F3229A9306AFF584ADFA7A993CEE90D871F7CF25EF19B6CDAE34D35"
+    }
+  ],
+  "reproduction": [
+    "PYTHONPATH=src python scripts/audit_n12_n48_ordered_event_feshbach_equivalence.py",
+    "PYTHONPATH=src python scripts/audit_n12_full_qvm_constraint_tail.py with BHSM_N12_FULL_QVM_ORDERS=48,64 and BHSM_N12_FULL_QVM_POINTS=96",
+    "PYTHONPATH=src python scripts/audit_n48_source_corrected_calderon_symbol.py with the retained N48 or N64 linear-candidate checkpoint"
+  ],
+  "new_equation_constraint_gate_scale_fit_prediction_or_event_definition": false
+}

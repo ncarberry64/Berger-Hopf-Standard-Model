@@ -1,6 +1,20 @@
 # BHSM 1.0 definition of done
 
-## Current v15.10 evaluation
+## Current N12 continuum evaluation
+
+`FULL_BHSM_COMPLETE = FALSE`. Direct N12 is a certified complete persistent
+child, but continuum closure is open. The source-corrected finite dynamic
+Calderon gap remains positive through the N64 diagnostic probe while the
+equivalent static Feshbach reduction loses uniform control in its shifted
+w/shift inverse. The N48-to-N64 correction is action-small but does not yet
+prove strong-graph Cauchy closure. N48 and N64 probes are not complete-child
+roots. `Q_xi`, relative `Delta H`, action-selected states/families, and a new
+blind observable remain downstream and open.
+
+Exact next object:
+`PROVE_THE_SOURCE_RESTRICTED_POSITIVE_DURATION_GAUGE_FIXED_JACOBI_CALDERON_RIGHT_INVERSE_AND_STRONG_GRAPH_COMPACTNESS_FOR_THE_ETA_COMPLETED_WARD_SOURCE;_USE_IT_TO_CONTROL_THE_UNCHANGED_ORDERED_EVENT_PROJECTOR_AND_CLOSE_THE_NONLINEAR_N12_TO_INFINITY_EVENT_CHILD_RADIUS_WITH_EXISTING_ETA_EVENT_DIRAC_PERSISTENCE_GATES`.
+
+## Historical v15.10 evaluation
 
 `FULL_BHSM_COMPLETE = FALSE`. The action-derived v15.9 radial eta precursor is
 preserved. The retained action now has an exact inverse from three canonical

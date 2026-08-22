@@ -2,13 +2,13 @@
 
 [![CI](https://github.com/ncarberry64/Berger-Hopf-Standard-Model/actions/workflows/ci.yml/badge.svg)](https://github.com/ncarberry64/Berger-Hopf-Standard-Model/actions/workflows/ci.yml)
 [![Latest archival release](https://img.shields.io/github/v/release/ncarberry64/Berger-Hopf-Standard-Model?label=archival%20release)](https://github.com/ncarberry64/Berger-Hopf-Standard-Model/releases/latest)
-[![Current research status](https://img.shields.io/badge/current%20research-N12%20source%20compatibility-orange)](docs/current_bhsm_status.md)
+[![Current research status](https://img.shields.io/badge/current%20research-N12%20dynamic%20Calderon-orange)](docs/current_bhsm_status.md)
 [![Python 3.10+](https://img.shields.io/badge/python-3.10%2B-3776AB)](https://www.python.org/)
 [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.20663419.svg)](https://doi.org/10.5281/zenodo.20663419)
 
 BHSM is an independent artifact-backed computational framework and mathematical-physics research program investigating whether Standard Model structure and particle-like dynamics can be derived from Berger-Hopf boundary/envelopment geometry and a common action architecture.
 
-## Current Research Frontier -- N12 continuum source compatibility
+## Current Research Frontier -- N12 source-restricted dynamic Calderon control
 
 BHSM now has a directly corrected `N=12` complete persistent child under the
 unchanged retained 57-row finite-resolution map. Its independently evaluated
@@ -35,22 +35,23 @@ ball, physical neighborhood, persistence witness, exact normal data, and
 retained-action tail diagnostics. The corrected branch is the same-action
 `N6` index-12 to `N12` index-24 ordered-event branch.
 
-Targeted event/child Calderon reconnaissance finds a gauge-fixed seven-by-seven
-boundary-symbol gap `0.029146859835472938` at the certified N12 state. The
-zero-padded N16--N48 probes retain positive finite gaps, with observed minimum
-`0.00912893612489853`; these are diagnostic probes, not complete-child roots
-and not an N-uniform theorem. The continuum claim therefore remains fail
-closed. `Q_xi`, relative `Delta H`, action-selected families, and any new blind
-observable remain downstream and open. Frozen predictions are unchanged.
+The unchanged positive-duration event/child Calderon symbol has finite gap
+`0.029146859835472938` at the certified N12 state. Source-restricted linear
+probes remain transverse at N48 (`0.00922485414794376`, 192-point quadrature)
+and N64 (`0.0038382679025004396`, 96-point quadrature), with admissible eta.
+These are diagnostic probes, not complete-child roots or an N-uniform theorem.
+The continuum claim therefore remains fail closed. `Q_xi`, relative `Delta H`,
+action-selected families, and any new blind observable remain downstream and
+open. Frozen predictions are unchanged.
 
-The retained-action N12-to-N48 full q-v-m tail audit now separates the exact
+The retained-action N12-to-N64 full q-v-m tail audit now separates the exact
 omitted source from the worst static normal direction. After routing the
 existing weak boundary reaction, the source has inverse-square shell decay;
-its common-mode linear corrections are action-Cauchy with sampled
-`N^2 * distance <= 1.4876792803344001` and remain bounded in the required
-`H2_q x H1_v x H2_m` compactness graph (`<= 0.6486315875453534`). The worst
-instantaneous inverse nevertheless grows much faster than `N`, so the naive
-generic-inverse proof is invalid. These N16--N48 states remain linear
+the N48-to-N64 event/child correction distances are action-small (`0.00183`,
+`0.00108`) while their strong `H2_q x H1_v x H2_m` distances remain `0.279`
+and `0.176`. Sampled strong norms remain bounded (`<=0.675`), but strong-graph
+Cauchy closure is not proved. The worst instantaneous inverse grows rapidly,
+so the naive generic-inverse proof remains invalid. These states are linear
 zero-padded probes, not nonlinear complete-child roots or a continuum proof.
 
 The retained radial-diffeomorphism Ward identity is now corrected. Because
@@ -60,10 +61,14 @@ current to below `1e-10` on every N16--N48 probe; the earlier eta-free
 annihilation statement is invalidated. At N48 the source-restricted proposal
 reduces event/child high bulk weak residuals by over two orders of magnitude
 with admissible eta, but it disturbs finite boundary/energy rows and is not a
-root. The raw event Hessian has a near-zero cluster; the existing principal
-gauge quotient instead gives a quadrature-stable isolated branch with minimum
-observed neighbor gap `1.9607047715840434e-08`. This is finite diagnostic
-evidence, not a continuum projector theorem.
+root. A direct equivalence audit now shows that the earlier principal retained
+submatrix is not the unchanged ordered-event definition. Exact Feshbach
+elimination is equivalent only through the existing shifted w/shift inverse,
+whose sampled gap collapses from `8.877056607545721e-06` at N12 to
+`7.369327366811907e-09` at embedded N48. The static projector shortcut is
+therefore invalidated; the soft line remains a category-2 dynamically
+controlled normal direction because no category-3 history collapse sequence
+has been constructed.
 
 N6 provenance was re-audited before this checkpoint. The earlier N5-projected
 N6 seed had ordered-event value `1.645981691e-6`, outside the existing `1e-9`
@@ -75,7 +80,7 @@ No equation, gate, or acceptance rule changed.
 
 Exact next object:
 
-`CERTIFY_THE_ETA_COMPLETED_SOURCE_RESTRICTED_MIXED_EULER_DIRAC_S2_RIGHT_INVERSE_AND_THE_EXISTING_GAUGE_REDUCED_ORDERED_EVENT_PROJECTOR_ON_THE_CORRECTED_NORMAL_SECTION;_THEN_CLOSE_THE_UNCHANGED_NONLINEAR_JOINT_EVENT_CHILD_RADIUS_AND_TRANSFER_ETA_EVENT_DIRAC_PERSISTENCE`
+`PROVE_THE_SOURCE_RESTRICTED_POSITIVE_DURATION_GAUGE_FIXED_JACOBI_CALDERON_RIGHT_INVERSE_AND_STRONG_GRAPH_COMPACTNESS_FOR_THE_ETA_COMPLETED_WARD_SOURCE;_USE_IT_TO_CONTROL_THE_UNCHANGED_ORDERED_EVENT_PROJECTOR_AND_CLOSE_THE_NONLINEAR_N12_TO_INFINITY_EVENT_CHILD_RADIUS_WITH_EXISTING_ETA_EVENT_DIRAC_PERSISTENCE_GATES`
 
 ## Historical corrected-Rayleigh N=3 snapshot
 

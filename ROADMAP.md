@@ -9,9 +9,11 @@
 2. Preserve the corrected radial-diffeomorphism Ward identity: the exact shift
    source is geometric momentum plus the retained eta-clock current. The
    eta-free static-cokernel annihilation statement is invalidated.
-3. Certify the eta-completed source-restricted mixed Euler--Dirac S2 right
-   inverse and the existing gauge-reduced ordered-event projector on the
-   corrected normal section. Then enclose the inverse-square tail and nonlinear
+3. Prove the source-restricted positive-duration gauge-fixed Jacobi--Calderon
+   right inverse and strong-graph compactness for the eta-completed Ward source.
+   Use that dynamic estimate to control the unchanged ordered-event projector;
+   the principal static submatrix shortcut is invalidated by the collapsing
+   shifted w/shift inverse. Then enclose the inverse-square tail and nonlinear
    Hessian remainder inside the existing eta, event, boundary/Dirac, and
    persistence neighborhoods.
 4. Promote a resolution-independent child only after the analytic tail and
