@@ -1,6 +1,6 @@
 # Current BHSM status
 
-## Authoritative frontier: N12 continuum-majorant effectiveness localization
+## Authoritative frontier: N12 exact-root Calderon enclosure localization
 
 The unchanged retained N12 57-row event/child map now has a directly corrected
 complete persistent child. Its independently evaluated residual is
@@ -20,17 +20,16 @@ to improve componentwise and moves from `0.12021432656497034` to
 It remains category 2, a dynamically controlled normal direction. The N16
 state is a diagnostic proposal, not a complete-child root.
 
-The subsequent effectiveness audit identifies why the existing qualitative
-closed-range theorem does not yet evaluate the nonlinear continuum radius.
-The principal gap, compact lower-order part, index zero, and kernel exclusion
-do not numerically bound the inverse; an explicit rank-one compact
-counterfamily demonstrates this without invalidating BHSM's qualitative
-theorem. The required retained-action datum is an effective positive-duration
-observation modulus. On the certified N12 pair, the unchanged doubled
-Calderon gap remains positive from `0.029146859835472938` to
-`0.02882113423436863` over the sampled `1e-10` parent-backward/child-forward
-history while constraints and eta remain admissible. The samples are not
-promoted as a whole-interval enclosure.
+The directed exact-root audit now encloses the N12 root within
+`8.11055778207114e-16` action coordinates. The existing gauge-fixed event and
+child sector inverses remain contractive on the corresponding independent
+coordinate box, with interval defects `1.54815013797252e-5` and
+`2.53230111144797e-6`. The coupled graph-symbol inverse defect is
+`973.187877081044`, so that box does not certify transversality. It erased the
+correlations imposed by the contractive 57-row root correction; this is a
+localized numerical overenclosure rather than a retained-action obstruction.
+The sampled ungauge-fixed history remains diagnostic and is not an interval
+or positive-duration proof.
 
 - `N3 COMPLETE PERSISTENT CHILD = YES`
 - `N4 COMPLETE PERSISTENT CHILD = YES`
@@ -82,10 +81,10 @@ the soft channel remains category 2: a dynamically controlled normal line.
 Exact next dependency:
 `ENCLOSE_THE_SOURCE_RESTRICTED_N12_TO_INFINITY_NONLINEAR_EVENT_CHILD_RADII_POLYNOMIAL_WITH_EXPLICIT_ACTION_OWNED_C_r_K_M2_AND_EXISTING_ETA_EVENT_DIRAC_PERSISTENCE_NEIGHBORHOODS`.
 
-The first missing quantitative object is an action-owned whole-interval
-finite-core lower bound `c_M0` together with a source-tail observation
-perturbation `epsilon_obs(M0) < c_M0`. These give the required explicit
-right-inverse bound `K <= 1/(c_M0-epsilon_obs(M0))`.
+The first missing object is a directed coupled-graph enclosure on the
+contraction-correlated N12 root-correction set. Once that closes, the
+positive-duration finite-core bound `c_M0`, source-tail perturbation
+`epsilon_obs(M0)`, and explicit inverse bound `K` become the next lemma.
 
 `Q_xi`, relative `Delta H`, action-selected families, and a new frozen blind
 observable remain downstream and open. The following v21.37 discussion is
