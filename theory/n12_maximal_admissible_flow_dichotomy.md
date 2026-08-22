@@ -48,9 +48,9 @@ until the first of: a transverse zero, an admissible-domain exit, a Dirac
 singularity, state blowup, or loss of ordered-eigenline simplicity. The
 theorem does not assert which alternative occurs.
 
-The continuum lift is still open. The static inverse-square normal tail and
-positive-duration observation theorem do not yet provide uniform local-
-Lipschitz bounds and Galerkin convergence for the nonlinear vector field along
-every bounded admissible flow segment. Those dynamic estimates are the exact
-next lemma needed to transfer this maximal-flow dichotomy to the certified
-continuum child.
+The local continuum lift at the anchor is now closed by the action-graph
+Galerkin/Duhamel estimate in `n12_local_continuum_galerkin_flow.md`. The global
+lift remains open: the fixed anchor ball does not provide uniform bounds along
+every later admissible flow segment. The exact next object is either an a
+priori strong-space bound with uniform eta/Dirac margins or a finite analytic
+action-ball cover up to ordered-event return or physical-domain exit.

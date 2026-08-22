@@ -24,6 +24,10 @@ CONTINUUM = ROOT / (
     "artifacts/n12_continuum_majorant_effectiveness/"
     "BHSM_CONTINUUM_EVENT_CHILD_CERTIFICATE.json"
 )
+LOCAL_CONTINUUM = ROOT / (
+    "artifacts/intrinsic_state_selection/"
+    "BHSM_N12_LOCAL_CONTINUUM_GALERKIN_FLOW.json"
+)
 THEOREM = ROOT / "theory/n12_maximal_admissible_flow_dichotomy.md"
 SOURCE = ROOT / "src/bhsm/interface/aether_cross_resolution_reconnaissance_v21_35.py"
 RESULT = ROOT / (
@@ -37,13 +41,18 @@ def _sha256(path: Path) -> str:
 
 
 def main() -> None:
-    inputs = (DIRECT, OBSERVATION, CONTINUUM, THEOREM, SOURCE)
+    inputs = (
+        DIRECT, OBSERVATION, CONTINUUM, LOCAL_CONTINUUM, THEOREM, SOURCE,
+    )
     missing = [str(path) for path in inputs if not path.is_file()]
     if missing:
         raise FileNotFoundError("missing finite-flow inputs: " + ", ".join(missing))
     direct = json.loads(DIRECT.read_text(encoding="utf-8"))
     observation = json.loads(OBSERVATION.read_text(encoding="utf-8"))
     continuum = json.loads(CONTINUUM.read_text(encoding="utf-8"))
+    local_continuum = json.loads(
+        LOCAL_CONTINUUM.read_text(encoding="utf-8")
+    )
     function_source = inspect.getsource(
         cross._exact_full_jet_euler_dirac_acceleration
     )
@@ -76,6 +85,9 @@ def main() -> None:
         ),
         "continuum_static_child_remains_certified": continuum[
             "CONTINUUM_EVENT_CHILD_CERTIFIED"
+        ] is True,
+        "local_continuum_Galerkin_flow_is_certified": local_continuum[
+            "validation_passed"
         ] is True,
         "theorem_does_not_choose_an_outcome": True,
         "no_new_equation_gate_selector_or_numerical_history": True,
@@ -118,15 +130,14 @@ def main() -> None:
         "continuum_transfer": {
             "static_continuum_event_child_certified": True,
             "positive_duration_normal_observation_certified": True,
+            "local_continuum_flow_on_anchor_action_ball_closed": True,
             "uniform_nonlinear_vector_field_local_Lipschitz_bound_along_"
             "bounded_admissible_segments": False,
             "nonlinear_Galerkin_flow_convergence_on_such_segments": False,
             "continuum_maximal_flow_dichotomy_closed": False,
-            "first_missing_lemma": (
-                "PROVE_UNIFORM_ACTION_GRAPH_LOCAL_LIPSCHITZ_BOUNDS_AND_"
-                "NONLINEAR_GALERKIN_FLOW_CONVERGENCE_ON_EVERY_BOUNDED_"
-                "ETA_DIRAC_ADMISSIBLE_CHILD_SEGMENT"
-            ),
+            "first_missing_lemma": local_continuum[
+                "first_missing_action_owned_object"
+            ],
         },
         "prediction_frozen": False,
         "FULL_BHSM_COMPLETE": False,

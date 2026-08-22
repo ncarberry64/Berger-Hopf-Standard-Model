@@ -42,6 +42,10 @@ FINITE_FLOW = ROOT / (
     "artifacts/intrinsic_state_selection/"
     "BHSM_N12_FINITE_FLOW_CONTINUATION_DICHOTOMY.json"
 )
+COERCIVE = ROOT / (
+    "artifacts/intrinsic_state_selection/"
+    "BHSM_N12_GLOBAL_FLOW_COERCIVE_CONTROL_GATE.json"
+)
 RESULT = ROOT / (
     "artifacts/intrinsic_state_selection/"
     "BHSM_N12_INTRINSIC_RETURN_ACTION_OWNERSHIP_GATE.json"
@@ -60,7 +64,7 @@ def main() -> None:
     inputs = (
         CONTINUUM, DIRECT, PERSISTENCE, RETURN, INTRINSIC, ETA_EXIT,
         PERSISTENCE_DEFINITION, CLOCK, RELATIVE_PERIODIC, POST_PARENT,
-        FINITE_FLOW,
+        FINITE_FLOW, COERCIVE,
     )
     missing = [str(path) for path in inputs if not path.is_file()]
     if missing:
@@ -76,14 +80,15 @@ def main() -> None:
     relative_periodic = _load(RELATIVE_PERIODIC)
     post_parent = _load(POST_PARENT)
     finite_flow = _load(FINITE_FLOW)
+    coercive = _load(COERCIVE)
 
     eta_boundary = eta_exit["boundary_transversality"]
     child_domain = persistence_definition["persistence_and_decay_contract"][
         "persistence_domain_B_child"
     ]
-    first_missing = (
-        finite_flow["continuum_transfer"]["first_missing_lemma"]
-    )
+    first_missing = coercive["global_flow_consequence"][
+        "first_missing_action_owned_object"
+    ]
     validation = {
         "continuum_event_child_remains_certified": continuum[
             "CONTINUUM_EVENT_CHILD_CERTIFIED"
@@ -128,6 +133,9 @@ def main() -> None:
             and finite_flow["theorem"]["unique_maximal_N12_solution_exists"]
             is True
         ),
+        "unreduced_energy_noncoercivity_is_localized": coercive[
+            "validation_passed"
+        ] is True,
         "no_new_evolution_selector_observable_or_prediction": True,
     }
     payload = {
@@ -166,6 +174,9 @@ def main() -> None:
         },
         "global_flow_audit": {
             "finite_N12_maximal_flow_dichotomy_proved": True,
+            "local_continuum_anchor_flow_certified": finite_flow[
+                "continuum_transfer"
+            ]["local_continuum_flow_on_anchor_action_ball_closed"],
             "continuum_certificate_scope": (
                 "STATIC_EVENT_TO_COMPLETE_CHILD_NORMAL_TAIL_WITH_TRANSFERRED_"
                 "POSITIVE_DURATION_NEIGHBORHOOD"
@@ -177,6 +188,7 @@ def main() -> None:
             "uniform_eta_Dirac_action_graph_bound_for_all_forward_times": False,
             "compact_invariant_child_energy_shell_proved": False,
             "anchor_specific_recurrence_proved": False,
+            "unreduced_autonomous_energy_supplies_S2_control": False,
             "blanket_eta_domain_invariance_may_be_assumed": False,
             "counterexample_scope": (
                 "THE_EXISTING_N3_RETAINED_ACTION_FLOW_EXITS_ETA_TRANSVERSELY;_"
