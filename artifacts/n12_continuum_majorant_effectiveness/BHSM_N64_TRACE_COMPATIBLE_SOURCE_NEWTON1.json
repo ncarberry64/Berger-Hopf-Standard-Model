@@ -1,0 +1,55 @@
+{
+  "CONTINUUM_EVENT_CHILD_CERTIFIED": false,
+  "FULL_BHSM_COMPLETE": false,
+  "M_star_certified": false,
+  "accepted": true,
+  "classification": "N64_TRACE_COMPATIBLE_SOURCE_NEWTON1_ACCEPTED_AS_FINITE_CORE_PROPOSAL",
+  "exact_merit": {
+    "after_norm": 1.371849652715317e-09,
+    "before_norm": 0.0002529367645772152,
+    "boundary_after_norm": 6.490777128450115e-17,
+    "boundary_before_norm": 9.494442057588127e-17,
+    "eta_after": {
+      "child": 1.000000019878692,
+      "event": 0.832824874909153
+    },
+    "eta_before": {
+      "child": 1.000000019882249,
+      "event": 0.8328279142532227
+    },
+    "ratio": 5.423686252207618e-06
+  },
+  "exact_next_dependency": "REFRESH_THE_EXACT_PAIRED_FINITE_CORE_JACOBIAN_AT_THE_ACCEPTED_STATE_AND_CONTINUE_ONLY_IF_EXACT_MERIT_DESCENDS;_THEN_BUILD_THE_LOCAL_FINITE_CORE_RADIUS_BEFORE_APPENDING_THE_ANALYTIC_TAIL",
+  "input": {
+    "SHA256": "960C5824E8588D11AFCD944AE914DFB3F128EC3B16F2186A4B6C1685E2CFC679",
+    "path": "artifacts/n12_continuum_majorant_effectiveness/BHSM_N64_TRACE_COMPATIBLE_SOURCE_CORRECTION_STATE.npz"
+  },
+  "order": 64,
+  "paired_linear_solve": {
+    "action_norm_step": 6.92990067169783e-05,
+    "condition_number": 181541.01735142813,
+    "linear_prediction_defect": 1.4690859037333072e-18,
+    "rank": 212,
+    "shape": [
+      212,
+      1028
+    ],
+    "smallest_singular_value": 0.00030389508383717737
+  },
+  "state_artifact": {
+    "SHA256": "470A9E61E5F6B5BD3BF0069B3114595555147E11702F36913DE1C4E3664CE602",
+    "path": "artifacts/n12_continuum_majorant_effectiveness/BHSM_N64_TRACE_COMPATIBLE_SOURCE_NEWTON1_STATE.npz"
+  },
+  "state_status": "FINITE_CORE_PROPOSAL_ONLY_NOT_A_COMPLETE_CHILD_ROOT",
+  "validation": {
+    "candidate_acceptance_uses_exact_map_not_linear_prediction": true,
+    "eta_admissible_after_proposal": true,
+    "exact_joint_merit_reduced": true,
+    "input_trace_compatible_candidate_consumed": true,
+    "no_equation_constraint_gate_scale_fit_or_event_definition_changed": true,
+    "paired_normal_Jacobian_full_row_rank": true,
+    "state_not_promoted_as_complete_child_root": true,
+    "unchanged_exact_joint_map_reevaluated_before_and_after": true
+  },
+  "validation_passed": true
+}

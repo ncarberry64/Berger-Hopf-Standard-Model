@@ -1,0 +1,106 @@
+{
+  "CONTINUUM_EVENT_CHILD_CERTIFIED": true,
+  "Delta_H_evaluated": false,
+  "FULL_BHSM_COMPLETE": false,
+  "Q_xi_evaluated": false,
+  "after_that": "DERIVE_THE_COMPLETE_THETA_RETAINED_AND_B_XI_MATCH_BOUNDARY_IMPROVEMENT_AND_EVALUATE_BOTH_CHARGES_ON_THE_COMMON_HISTORY",
+  "artifact": "BHSM_N12_MATCHED_PARENT_QXI_OWNERSHIP",
+  "available_local_diagnostic_only": [
+    {
+      "child_local_Legendre_energy": -3.552713678800501e-15,
+      "child_minus_event_local_Legendre_energy": 2.6645352591003757e-15,
+      "event_local_Legendre_energy": -6.217248937900877e-15,
+      "is_Delta_H": false,
+      "is_Q_xi": false,
+      "quadrature_points": 96
+    },
+    {
+      "child_local_Legendre_energy": -2.3092638912203256e-14,
+      "child_minus_event_local_Legendre_energy": 6.927791673660977e-14,
+      "event_local_Legendre_energy": -9.237055564881302e-14,
+      "is_Delta_H": false,
+      "is_Q_xi": false,
+      "quadrature_points": 192
+    }
+  ],
+  "certified_initial_event_child_Cauchy_match": {
+    "attachment_absolute": 2.2551405187698492e-17,
+    "canonical_momentum_l2": 2.5678447536955742e-11,
+    "does_not_define_a_parent_only_restriction": true,
+    "trace_l2": 8.985440383381201e-17
+  },
+  "classification": "Q_XI_GATE_OPEN;_THE_CONTINUUM_CHILD_IS_CERTIFIED_BUT_THE_RETAINED_N12_STATE_SPACE_DOES_NOT_DEFINE_THE_ACTION_OWNED_MATCHED_PARENT_RESTRICTION_OR_COMPLETE_COVARIANT_CHARGE",
+  "first_open_action_owned_dependency": "DERIVE_THE_ACTION_OWNED_MATCHED_PARENT_RESTRICTION_R_P_FROM_THE_COMPLETE_PARENT_COMPOSITE_ACTION_WITH_IDENTICAL_INTERFACE_GENERATOR_CLOCK_DOMAIN_AND_REFERENCE_DATA",
+  "inputs": {
+    "artifacts\\BHSM_cycle_invariant_mass_contract_v14_54.json": "1B1206A3FE11663CA9CC0A4A2BD6896AF3433296D400C8804D4EA00BF74B814F",
+    "artifacts\\BHSM_unified_master_action_v7_0.json": "569F342698300ACB6B7F625F8EC2B7CE2F1FF4BAE8E9AC14D4A2CA5FB5DAB422",
+    "artifacts\\n12_continuum_majorant_effectiveness\\BHSM_CONTINUUM_EVENT_CHILD_CERTIFICATE.json": "FFF4010ABA2F60B4ED5002161DF583904BBA66FABA3AF6DE0901CC29C80CF89A",
+    "artifacts\\n12_direct_checkpoint\\BHSM_N12_COMPLETE_PERSISTENT_CHILD_STATE.npz": "8AEE33C46C320A36384C83E6B9BDE387AE3E565D99C7D49C606895229B796890"
+  },
+  "required_boundary_improved_charge": {
+    "complete_common_reference_Q_xi_assembler_available": false,
+    "complete_flux_conservation_available": false,
+    "complete_symplectic_current_available": false,
+    "complete_symplectic_potential_available": false,
+    "matched_seam_corner_reference_term_available": false,
+    "variation": "delta_H_xi=integral_boundary(delta_Q_xi-i_xi_Theta_retained)-delta_B_xi_match"
+  },
+  "required_matched_parent_map": {
+    "defined_by_current_N12_state_or_action_API": false,
+    "event_side_is_the_required_matched_parent": false,
+    "reason": "THE_EVENT_HALF_IS_A_THRESHOLD_CAUCHY_STATE_IN_THE_JOINT_EVENT_CHILD_MAP;_NO_RETAINED_ACTION_RESTRICTION_IDENTIFIES_IT_AS_THE_PARENT_ONLY_REFERENCE_OF_THE_COMPOSITE",
+    "requirements": [
+      "same retained action and common interface trace",
+      "same symmetry generator xi and clock normalization",
+      "same boundary normal, orientation, domain, and duration",
+      "parent-only restriction defined without deleting retained terms",
+      "common reference subtraction convention"
+    ],
+    "symbol": "R_P:Phi_(P+C)->Phi_P_matched"
+  },
+  "state_and_action_inventory": {
+    "explicit_composite_minus_parent_restriction_variables": [],
+    "explicit_parent_only_fields": [],
+    "joint_total": 196,
+    "moving_seam_embedding_variables": [],
+    "per_side_coordinates": 37,
+    "per_side_lapse_shift_multipliers": 24,
+    "per_side_total": 98,
+    "per_side_velocities": 37,
+    "reference_subtraction_variables": [],
+    "retained_action_callable_signature": "(order: 'int', coordinates: 'np.ndarray', velocities: 'np.ndarray', multipliers: 'np.ndarray', *, points: 'int' = 44) -> 'Jet'",
+    "stored_checkpoint_arrays": [
+      "state",
+      "n6_ordered_branch_index",
+      "branch_reference",
+      "soft_right_direction",
+      "paired_j_full",
+      "paired_j_half",
+      "paired_jacobian",
+      "recent_accepted_states"
+    ]
+  },
+  "upstream_parent_composite_action_provenance": {
+    "R_5to4": null,
+    "R_8to5": null,
+    "exact_missing_object": "COVARIANT_BULK_BOUNDARY_REDUCTION_FUNCTOR",
+    "master_action_closed": false,
+    "relation_to_R_P": "R_P_REQUIRES_THE_SAME_UNSOURCED_COVARIANT_BULK_BOUNDARY_REDUCTION_DATA_SPECIALIZED_TO_THE_MATCHED_PARENT_REFERENCE"
+  },
+  "v14_54_contract": {
+    "instantaneous_snapshot_is_physical_mass": false,
+    "relative_charge": "Delta H_xi is the covariant composite-minus-parent Hamiltonian charge including gravity, gauge, GHY, seam, corner and counterterm pieces"
+  },
+  "validation": {
+    "certified_N12_joint_state_consumed": true,
+    "continuum_event_child_certificate_consumed": true,
+    "covariant_phase_space_fail_closed_ledger_consumed": true,
+    "event_side_not_substituted_for_matched_parent": true,
+    "initial_event_child_trace_and_momentum_match_measured": true,
+    "local_Legendre_energy_not_promoted_to_Q_xi_or_Delta_H": true,
+    "mass_prediction_and_frozen_ledger_untouched": true,
+    "new_physics_equation_constraint_gate_or_selector": false,
+    "retained_action_API_inventory_is_explicit": true
+  },
+  "validation_passed": true
+}

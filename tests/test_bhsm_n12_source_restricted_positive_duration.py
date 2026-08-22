@@ -11,7 +11,7 @@ ROOT = Path(__file__).resolve().parents[1]
 CHECKPOINT = ROOT / "artifacts" / "n12_source_restricted_positive_duration"
 
 
-def test_source_restricted_positive_duration_theorem_closes_only_its_scope():
+def test_source_restricted_positive_duration_theorem_uses_weighted_pole_bound():
     result = source_restricted_positive_duration_theorem()
     conclusions = result["conclusions"]
 
@@ -36,7 +36,7 @@ def test_static_and_finite_probe_shortcuts_remain_invalid():
 
     assert result["finite_diagnostics"]["used_as_the_uniform_bound"] is False
     assert result["validation"]["static_shifted_inverse_not_used"] is True
-    assert "NUMERICAL_CONSTANTS" in result["promotion_boundary"]
+    assert "SUPERSEDED_UNRESTRICTED_STATIC_INVERSE" in result["promotion_boundary"]
 
 
 def test_checkpoint_manifest_hashes_and_fails_closed():

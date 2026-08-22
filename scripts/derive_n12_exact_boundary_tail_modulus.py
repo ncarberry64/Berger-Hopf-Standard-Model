@@ -1,7 +1,10 @@
-"""Derive the exact N12-to-infinity trace/attachment tail modulus.
+"""Derive the exact N12-to-infinity raw-coordinate trace diagnostic.
 
-Only the existing nested cosine basis and action-coordinate H1 weights enter.
-No sampled higher-order state, fit, equation, or acceptance gate is used.
+The diagonal frequency weights are retained numerical coordinates, not the
+natural weighted action graph because the principal radial density vanishes
+cubically at the regular pole.  The exact coth identity remains useful as a
+coordinate diagnostic, but this quantity must not be compared with the
+weighted principal gap as though both used one continuum norm.
 """
 
 from __future__ import annotations
@@ -144,7 +147,7 @@ def main() -> None:
     validation = {
         "certified_N12_anchor_consumed": True,
         "exact_coth_series_identity_used": True,
-        "existing_action_coordinate_weights_used": True,
+        "existing_raw_frequency_coordinate_weights_used": True,
         "event_and_child_boundary_derivatives_included": True,
         "retained_boundary_row_normalization_included": True,
         "series_identity_cross_check_passed": identity_check[
@@ -152,9 +155,13 @@ def main() -> None:
         ],
         "no_higher_order_probe_promoted_as_root": True,
         "no_new_equation_constraint_gate_scale_or_fit": True,
+        "raw_coordinate_modulus_not_promoted_as_action_graph_modulus": True,
     }
     payload = {
-        "classification": "N12_EXACT_TRACE_ATTACHMENT_HIGH_SHELL_MODULUS_DERIVED",
+        "classification": (
+            "N12_EXACT_RAW_FREQUENCY_TRACE_TAIL_DIAGNOSTIC_DERIVED;_"
+            "NOT_A_COMMON_NORM_ACTION_GRAPH_MODULUS"
+        ),
         "source_checkpoint": str(CHECKPOINT),
         "source_checkpoint_SHA256": _sha256(CHECKPOINT),
         "source_promotion": str(PROMOTION),
@@ -174,24 +181,24 @@ def main() -> None:
             "child_tanh_two_v_boundary": child_tanh,
         },
         "joint_child_minus_event_tail": {
-            "raw_action_H1_to_boundary_operator_norm": raw_modulus,
-            "existing_normalized_boundary_operator_norm": normalized_modulus,
+            "raw_frequency_coordinate_to_boundary_operator_norm": raw_modulus,
+            "retained_row_normalized_raw_coordinate_operator_norm": normalized_modulus,
             "raw_row_gram": joint_raw_gram.tolist(),
             "normalized_row_gram": normalized_gram.tolist(),
         },
         "identity_cross_check": identity_check,
         "scope": {
-            "trace_attachment_compact_tail_closed": True,
+            "raw_frequency_coordinate_series_closed": True,
+            "trace_attachment_compact_tail_closed": False,
             "bulk_Euler_Dirac_normal_tail_closed_here": False,
             "ordered_event_spectral_projector_tail_closed_here": False,
             "canonical_momentum_flux_tail_closed_here": False,
             "CONTINUUM_EVENT_CHILD_CERTIFIED": False,
         },
         "exact_next_dependency": (
-            "BOUND_THE_REMAINING_INTERIOR_EULER_DIRAC_ORDERED_EVENT_"
-            "AND_CANONICAL_MOMENTUM_FLUX_COMPACT_TAIL_BLOCKS_IN_THE_"
-            "SAME_ACTION_GRAPH_NORM_AND_CLOSE_THE_FULL_NORMAL_SCHUR_"
-            "COMPLEMENT"
+            "USE_THE_EXACT_ACTION_ORTHOGONAL_TRACE_COMPATIBLE_GALERKIN_"
+            "PROJECTION_AND_DERIVE_COMPACT_BLOCK_TAILS_IN_THE_NATURAL_"
+            "WEIGHTED_ACTION_GRAPH_DUAL"
         ),
         "validation": validation,
         "validation_passed": all(validation.values()),

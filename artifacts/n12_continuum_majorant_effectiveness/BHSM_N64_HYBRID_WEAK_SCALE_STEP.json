@@ -1,0 +1,122 @@
+{
+  "CONTINUUM_EVENT_CHILD_CERTIFIED": false,
+  "FULL_BHSM_COMPLETE": false,
+  "M_star_certified": false,
+  "accepted": true,
+  "accepted_factor": 0.03125,
+  "boundary_kernel_geometry_action_coordinate_amplitude": -0.13100856072724076,
+  "boundary_norm": 6.784992288877226e-17,
+  "classification": "N64_COMMON_SCALE_AUGMENTED_HYBRID_WEAK_STEP_ACCEPTED",
+  "common_scale_action_coordinate_amplitude": -0.0838027248730509,
+  "difference_step": 1e-05,
+  "eta": {
+    "child": 0.9330677529234969,
+    "event": 0.0670922602277162
+  },
+  "eta_direction_target": 1.0,
+  "eta_gradient": {
+    "action_gradient_norm": 19.747251184440312,
+    "chi": 0.4993530456097653,
+    "minimum": 0.04614958820603965,
+    "x_eta": -0.9843739007888999
+  },
+  "eta_tangent_predictor_used": true,
+  "exact_next_dependency": "CONTINUE_THE_SAME_SCALE_AUGMENTED_HYBRID_WEAK_CORRECTION",
+  "exact_norm_after": 0.10890644854630277,
+  "exact_norm_before": 0.10898390032970091,
+  "full_proposal_action_norm": 5.782589603220192,
+  "geometry_column_norm": 52.42228204117048,
+  "geometry_direction": {
+    "action_norm": 0.9999999999999999,
+    "chi": 0.4993530456097653,
+    "event_eta_action_derivative": 7.24274863588527,
+    "joint_boundary_linear_defect": 1.2989428732883397e-15
+  },
+  "input": {
+    "SHA256": "EBC3AC9B8178D673C523DB11AB0719C480099E90192F0DFB69337CED75AABA1C",
+    "path": "artifacts/n12_continuum_majorant_effectiveness/BHSM_N64_HYBRID_WEAK_SCALE_STATE.npz"
+  },
+  "normal_rank": 258,
+  "normal_shape": [
+    258,
+    644
+  ],
+  "normal_smallest_singular_value": 1.7942430848832713e-06,
+  "predicted_eta_directional_derivative": 0.9999999999999855,
+  "scale_column_norm": 24.517702661754026,
+  "state_artifact": {
+    "SHA256": "EBC3AC9B8178D673C523DB11AB0719C480099E90192F0DFB69337CED75AABA1C",
+    "path": "artifacts/n12_continuum_majorant_effectiveness/BHSM_N64_HYBRID_WEAK_SCALE_STATE.npz",
+    "status": "FINITE_ANALYTIC_CORE_NOT_A_COMPLETE_CHILD_ROOT"
+  },
+  "trials": [
+    {
+      "admissible": false,
+      "eta": {
+        "child": 0.1733485428121444,
+        "event": -8.09250306332753
+      },
+      "evaluated_exact_rows": false,
+      "factor": 1.0
+    },
+    {
+      "admissible": false,
+      "eta": {
+        "child": 0.8503066483650824,
+        "event": -0.8097671468738823
+      },
+      "evaluated_exact_rows": false,
+      "factor": 0.5
+    },
+    {
+      "admissible": false,
+      "eta": {
+        "child": 0.8953461738579708,
+        "event": -0.0266243848324188
+      },
+      "evaluated_exact_rows": false,
+      "factor": 0.25
+    },
+    {
+      "admissible": true,
+      "eta": {
+        "child": 0.9173886663552386,
+        "event": 0.06331061189529974
+      },
+      "evaluated_exact_rows": true,
+      "exact_hybrid_weak_norm": 0.1751430410897084,
+      "factor": 0.125
+    },
+    {
+      "admissible": true,
+      "eta": {
+        "child": 0.9279480330819365,
+        "event": 0.07326261647504373
+      },
+      "evaluated_exact_rows": true,
+      "exact_hybrid_weak_norm": 0.11727303316098409,
+      "factor": 0.0625
+    },
+    {
+      "admissible": true,
+      "eta": {
+        "child": 0.9330677529234969,
+        "event": 0.0670922602277162
+      },
+      "evaluated_exact_rows": true,
+      "exact_hybrid_weak_norm": 0.10890644854630277,
+      "factor": 0.03125
+    }
+  ],
+  "validation": {
+    "augmented_normal_full_row_rank": true,
+    "common_scale_preserves_four_boundary_rows_exactly": true,
+    "eta_admissible_if_accepted": true,
+    "exact_merit_reduced_if_accepted": true,
+    "existing_common_scale_coordinate_only": true,
+    "no_equation_constraint_gate_scale_fit_or_event_definition_changed": true,
+    "not_promoted_as_complete_child_root": true,
+    "unchanged_hybrid_weak_rows_reevaluated": true
+  },
+  "validation_passed": true
+}

@@ -1,0 +1,101 @@
+{
+  "CONTINUUM_EVENT_CHILD_CERTIFIED": false,
+  "FULL_BHSM_COMPLETE": false,
+  "M_star_certified": false,
+  "classification": "A4_FOUR_COMPACT_OBSERVATION_MODULI_CLOSED_IN_ONE_SOURCE_RESTRICTED_MIXED_ACTION_GRAPH_NORM;_SELECT_M0_NEXT",
+  "closed_same_norm_constants": {
+    "Fortin_operator_bound": "||(I-Pi_M)f||_L2(omega)<=C_F(M)||f||_G",
+    "Gauss_consistency_C_GQ_upper": 3.1930993772749974e+55,
+    "canonical_momentum_dynamic_flux_C_flux_G_upper": 1.5965496886374987e+55,
+    "common_analytic_Fortin_envelope_for_every_integer_M_ge_12": "C_F(M)<=4/sqrt(M)",
+    "complete_four_row_direct_trace_tail": 0.0,
+    "exact_M12_familywise_Fortin_upper": 0.8977315963068819,
+    "finite_N12_positive_duration_observation_lower": 2.036906619199693e-19,
+    "full_rank_two_weighted_pole_H2_inverse_upper": 0.6802884193701528,
+    "interior_lower_order_C_ED_G_upper": 12391920.680687092,
+    "interior_lower_order_fixed_ball_variation_upper": 24783841.361374184,
+    "ordered_event_C_event_G_upper": 87643524705241.42,
+    "source_normal_quotient_representative_norm": 1.0,
+    "source_restricted_full_mixed_graph_architecture_assembled": true,
+    "source_restricted_weighted_pole_H2_inverse_upper": 0.004749681321879146
+  },
+  "conditional_cutoff_identity_not_a_certificate": {
+    "C_compact_currently_available": true,
+    "C_compact_sum_upper": 4.789649065912496e+55,
+    "if_a_combined_same_norm_coefficient_C_compact_is_enclosed": "epsilon_obs(M)<=4*C_compact/sqrt(M)",
+    "then_any_integer_cutoff_strictly_above": "(4*C_compact/c_M0)^2",
+    "would_close": "epsilon_obs(M)<c_M0"
+  },
+  "earliest_missing_mathematical_object": "THE_FIRST_INTEGER_M0_FOR_WHICH_4*C_compact/sqrt(M0)_IS_STRICTLY_BELOW_THE_EXISTING_c_M0_OBSERVATION_BOUND",
+  "epsilon_obs_M_evaluable": false,
+  "first_factor_to_derive": "M0_AND_K=1/(c_M0-epsilon_obs(M0))",
+  "four_compact_blocks": {
+    "Gauss_consistency": {
+      "C_GQ_upper": 3.1930993772749974e+55,
+      "diagnostic_samples_promoted_as_bound": false,
+      "existing_diagnostic_evaluator": "scripts/audit_n12_physical_map_quadrature.py",
+      "first_missing_factor": null,
+      "fixed_ball_state_variation_upper": 6.386198754549995e+55,
+      "meaning": "ANALYTIC_GAUSS_LEGENDRE_REMAINDER_FOR_THE_RETAINED_ACTION_DERIVATIVES_AND_CANONICAL_LIFTS",
+      "same_norm_coefficient_enclosed": true
+    },
+    "canonical_momentum_dynamic_flux": {
+      "C_flux_G_upper": 1.5965496886374987e+55,
+      "first_missing_factor": null,
+      "fixed_ball_state_variation_upper": 3.1930993772749974e+55,
+      "retained_factorization": "p=V^T*L_v,_V=A_v^-1*K_v^T*(K_v*A_v^-1*K_v^T)^-1*E;_flux=Gamma_q*g_rad+Dp(Y)X_ED(Y)-Gamma_q*L_q+event_flux",
+      "same_norm_coefficient_enclosed": true
+    },
+    "interior_lower_order_Euler_Dirac": {
+      "C_ED_G_upper": 12391920.680687092,
+      "factorization_required": "epsilon_ED(M)<=C_ED^G*C_F(M),_where_C_ED^G=sup_Y||K_ED,lo(Y)||_(L2(omega)->G*)",
+      "first_missing_factor": null,
+      "fixed_ball_state_variation_upper": 24783841.361374184,
+      "same_norm_coefficient_enclosed": true,
+      "state_control_used": "FIXED_BALL_VARIATION_MODULUS_2*C_ED_G;_THIS_IS_SUFFICIENT_FOR_THE_FIXED_RADIUS_ARGUMENT_AND_IS_NOT_PROMOTED_AS_A_SHARP_LIPSCHITZ_CONSTANT"
+    },
+    "ordered_event_projector": {
+      "C_event_G_upper": 87643524705241.42,
+      "exact_derivative_identity": "DP[h]=-S_red*DH[h]*P-P*DH[h]*S_red",
+      "finite_N12_reduced_resolvent_upper": 3536317.2087533837,
+      "finite_N12_simple_branch_gap_lower": 2.82780062157523e-07,
+      "first_missing_factor": null,
+      "fixed_ball_state_variation_upper": 175287049410482.84,
+      "same_norm_coefficient_enclosed": true
+    }
+  },
+  "inputs": {
+    "artifacts/n12_continuum_majorant_effectiveness/BHSM_N12_ACTION_GRAPH_GALERKIN_PROJECTOR.json": "73F7F95365EED267297B72EB2D2A45CA8C0495D03BE129E07A69C1CB1EDA4B89",
+    "artifacts/n12_continuum_majorant_effectiveness/BHSM_N12_ENDPOINT_SAFE_ED_REMAINDER.json": "B67BE91D6E733A19E0EA77EC669269247231F971B7A12CCD05B7AF5F240A4BF8",
+    "artifacts/n12_continuum_majorant_effectiveness/BHSM_N12_EULER_DIRAC_PRINCIPAL_COMPACT_INVENTORY.json": "2DDB84B5918B6A44997EB7C0D8C165256D8CBDE418742903CA8C70DB1D31A8A5",
+    "artifacts/n12_continuum_majorant_effectiveness/BHSM_N12_FLUX_COMPACT_MODULUS.json": "E47B2EF98D68AF1E8705A22781B9FF2B0D7F1F818E5251BB03925B6C64D31034",
+    "artifacts/n12_continuum_majorant_effectiveness/BHSM_N12_FULL_POLE_INDICIAL_BOUND.json": "19475A2CE08D538F9BD1750CE61BA2CA3AE837D98E093996F2F72ED429E02F58",
+    "artifacts/n12_continuum_majorant_effectiveness/BHSM_N12_GAUSS_COMPACT_MODULUS.json": "1E117E125A30CF6A519782E3D201BE49B3853B7D2E0AA38A828727604E76C3E7",
+    "artifacts/n12_continuum_majorant_effectiveness/BHSM_N12_ORDERED_EVENT_COMPACT_MODULUS.json": "956E29B40ECD8220C390A8FC4A542E64985EF91304D8F5607513169A6AF21BD6",
+    "artifacts/n12_continuum_majorant_effectiveness/BHSM_N12_SOURCE_NORMAL_QUOTIENT_ISOMETRY.json": "38DA176C099C6B6F9FA4288F42BC09B873C0D7FB04EAE40B5ECBA89FDE8B482E",
+    "artifacts/n12_continuum_majorant_effectiveness/BHSM_N12_SOURCE_RESTRICTED_INDICIAL_BOUND.json": "6AC2786682AB74185A424122187D559359002CA09EEE3C6E19E4FE914459A996",
+    "artifacts/n12_continuum_majorant_effectiveness/BHSM_N12_SOURCE_RESTRICTED_MIXED_GRAPH.json": "FE99AEFA5637CBAD831B9C14D625DA44B3CDFDD8CA87F98ABC676B2E7C618A23",
+    "artifacts/n12_direct_checkpoint/BHSM_N12_ORDERED_EVENT_EIGENLINE_BALL.json": "5619F3AA48A718CCD0865F0BB1412BE955E91674101262B02000F86CFB3F17C5",
+    "artifacts/n12_direct_checkpoint/BHSM_N12_POSITIVE_DURATION_OBSERVATION.json": "6D60505F4DB2EC6428FEB5818B5E4AB304DCC662B55A389869481AE0C6B91560",
+    "scripts/audit_n12_physical_map_quadrature.py": "DB602402547BEE2E53EA737D1EE8EB2B1473BA0544325135964E8B8C464F138E"
+  },
+  "validation": {
+    "Euler_Dirac_compact_coefficient_and_fixed_ball_variation_closed": true,
+    "Gauss_consistency_compact_modulus_closed": true,
+    "canonical_momentum_dynamic_flux_compact_modulus_closed": true,
+    "common_analytic_Fortin_envelope_is_four_over_sqrt_M": true,
+    "complete_ED_noncompact_inventory_assembled": true,
+    "complete_four_row_trace_tail_is_exactly_zero": true,
+    "critical_pole_block_is_routed_out_of_the_compact_remainder": true,
+    "cross_quadrature_samples_not_promoted_as_an_analytic_bound": true,
+    "epsilon_obs_not_invented": true,
+    "finite_raw_majorants_not_mixed_with_continuum_graph_norm": true,
+    "full_rank_two_source_restricted_pole_inverse_is_closed": true,
+    "no_equation_constraint_gate_scale_fit_or_event_definition_changed": true,
+    "ordered_event_compact_modulus_closed": true,
+    "rank_two_critical_pole_matrix_is_routed_to_full_indicial_inverse": true,
+    "source_normal_quotient_factor_is_norm_one": true,
+    "source_restricted_mixed_graph_architecture_assembled": true
+  },
+  "validation_passed": true
+}

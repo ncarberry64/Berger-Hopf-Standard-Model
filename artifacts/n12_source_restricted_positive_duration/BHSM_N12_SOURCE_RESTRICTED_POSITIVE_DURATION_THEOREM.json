@@ -1,14 +1,15 @@
 {
   "action_owned_constants": {
-    "S2_shell_law": "norm(delta_Y_n)_S2<=C_S2*n^-1_AFTER_THE_EXISTING_ACTION_GRAPH_WEIGHT",
+    "S2_shell_law": "norm(delta_Y_n)_S2<=C_S2*n^-1_ON_THE_EXISTING_SOURCE_RESTRICTED_WEIGHTED_POLE_SPACE",
     "fitted_constant_or_exponent_used": false,
-    "high_tail_inverse_bound_after_compact_cutoff": 10.385164807134512,
     "principal_modulus_gap": 0.38516480713450374,
+    "source_restricted_weighted_pole_H2_inverse_bound": 0.004749681321879146,
     "source_shell_law": "norm(r_n)_weak<=C_r*n^-2",
     "squared_S2_tail_bound_after_N12": 0.08333333333333333,
-    "squared_S2_tail_comparison": "sum_(n>N)n^-2<=1/N"
+    "squared_S2_tail_comparison": "sum_(n>N)n^-2<=1/N",
+    "superseded_static_high_tail_inverse_candidate": 10.385164807134512
   },
-  "classification": "SOURCE_RESTRICTED_POSITIVE_DURATION_NORMAL_JACOBI_CALDERON_CLOSED_RANGE_CLOSED_QUALITATIVELY;_NONLINEAR_CONTINUUM_RADIUS_REMAINS_OPEN",
+  "classification": "SOURCE_RESTRICTED_POSITIVE_DURATION_NORMAL_JACOBI_CALDERON_CLOSED_RANGE_CLOSED_QUALITATIVELY_WITH_THE_WEIGHTED_REGULAR_POLE_INDICIAL_BOUND;_NONLINEAR_CONTINUUM_RADIUS_REMAINS_OPEN",
   "conclusions": {
     "CONTINUUM_EVENT_CHILD_CERTIFIED": false,
     "FULL_BHSM_COMPLETE": false,
@@ -30,21 +31,23 @@
   "hypotheses": {
     "boundary_Casimir_covector_is_routed_to_existing_weak_reaction": true,
     "collective_inertia_and_boundary_blocks_are_finite_rank": true,
+    "critical_inverse_square_v_block_is_relatively_compact": false,
     "direct_N12_complete_persistent_child_certified": true,
     "eta_completed_Ward_source_is_the_retained_source": true,
     "gauge_fixed_principal_modulus_gap_is_positive": true,
-    "lower_order_bulk_blocks_are_relatively_compact": true,
+    "genuinely_lower_order_bulk_remainder_is_relatively_compact": true,
     "normal_problem_has_Fredholm_index_zero": true,
     "positive_duration_energy_evolution_is_the_retained_Jacobi_flow": true,
     "soft_history_uses_existing_boundary_acceleration_normalization": true,
+    "source_restricted_positive_duration_indicial_solvability_closed": true,
     "tangent_and_gauge_directions_are_quotiented": true,
     "weak_source_shell_bound_is_action_derived_n_minus_2": true
   },
-  "promotion_boundary": "THIS_CLOSES_THE_QUALITATIVE_SOURCE_RESTRICTED_DYNAMIC_NORMAL_CLOSED_RANGE_LEMMA_ONLY._IT_DOES_NOT_SUPPLY_THE_NUMERICAL_CONSTANTS_REQUIRED_FOR_THE_NONLINEAR_CONTINUUM_RADIUS_AND_DOES_NOT_CERTIFY_A_CONTINUUM_CHILD,_Q_XI,_DELTA_H,_MASS,_FAMILY_SELECTION,_OR_A_PREDICTION",
+  "promotion_boundary": "THIS_CLOSES_THE_QUALITATIVE_SOURCE_RESTRICTED_DYNAMIC_NORMAL_CLOSED_RANGE_LEMMA_USING_THE_WEIGHTED_POLE_BOUND,_NOT_THE_SUPERSEDED_UNRESTRICTED_STATIC_INVERSE._IT_DOES_NOT_SUPPLY_THE_COMPACT_BLOCK_epsilon_obs_OR_CERTIFY_A_CONTINUUM_CHILD,_Q_XI,_DELTA_H,_MASS,_FAMILY_SELECTION,_OR_PREDICTION",
   "proof": {
     "step_1_inverse_square_source": "TWO_INTEGRATIONS_BY_PARTS_IN_THE_RETAINED_COSINE_AND_WINDOWED_SHIFT_BASES_GIVE_THE_ETA_COMPLETED_WARD_SOURCE_BOUND_norm(r_n)_weak<=C_r*n^-2;_THE_EXACT_BOUNDARY_CASIMIR_COVECTOR_STAYS_IN_THE_EXISTING_WEAK_CONORMAL_REACTION",
-    "step_2_high_shell_regularization": "THE_GAUGE_FIXED_MIXED_EULER_DIRAC_PRINCIPAL_GAP_beta_P=sqrt(29)-5_AND_RELATIVE_COMPACTNESS_OF_ALL_LOWER_ORDER_OR_FINITE_RANK_BLOCKS_GIVE_A_HIGH_SHELL_INVERSE_BOUND_AT_MOST_4/beta_P_AFTER_ONE_FINITE_CUTOFF",
-    "step_3_strong_graph_compactness": "THE_ACTION_CORRECTION_IS_O(n^-2);_ONE_ADDITIONAL_S2_WEIGHT_MAKES_ITS_SHELL_O(n^-1),_WHOSE_SQUARES_HAVE_TAIL_AT_MOST_C_S2^2/N._THE_FINITE_CORE_IS_COMPACT,_SO_THE_SOURCE_RESTRICTED_BACKGROUND_AND_SOFT_CAUCHY_FAMILIES_HAVE_COMPACT_STRONG_GRAPH_CLOSURE",
+    "step_2_high_shell_regularization": "THE_UNRESTRICTED_STATIC_4/beta_P_ARGUMENT_IS_SUPERSEDED._THE_WARD_TO_v_TRANSFER_HAS_THE_EXISTING_REGULAR_POLE_WINDOW;_CONJUGATION_BY_exp(t/2)_GIVES_SYMBOL_(i*xi-1/2)^2+1_WITH_MINIMUM_MODULUS_ONE_AND_THE_EXPLICIT_SOURCE_RESTRICTED_WEIGHTED_H2_BOUND",
+    "step_3_strong_graph_compactness": "THE_WEIGHTED_POLE_INVERSE_COMBINED_WITH_THE_ACTION_INVERSE_SQUARE_SOURCE_LAW_GIVES_THE_ONE_DERIVATIVE_STRONGER_S2_SHELL_BOUND;_ITS_SQUARE_TAIL_IS_SUMMABLE",
     "step_4_propagator_limit": "S2_ETA_COMPACTNESS_GIVES_UNIFORM_COEFFICIENT_CONVERGENCE;_THE_RETAINED_HESSIAN_FORMS_CONVERGE_IN_MOSCO_STRONG_RESOLVENT_SENSE_AND_TROTTER_KATO_PASSES_THE_POSITIVE_DURATION_JACOBI_HISTORIES_TO_THE_LIMIT",
     "step_5_zero_observation_exclusion": "IF_THE_L2_BOUNDARY_OBSERVATION_TENDED_TO_ZERO,_STRONG_GRAPH_COMPACTNESS_WOULD_GIVE_A_LIMIT_HISTORY_WITH_ZERO_OBSERVATION_ON_A_POSITIVE_INTERVAL._THE_EXISTING_NORMALIZATION_norm(D_t^2_Gamma0_xi(0))=1_PASSES_TO_THE_LIMIT,_WHILE_THE_ZERO_HISTORY_HAS_SECOND_DERIVATIVE_ZERO,_A_CONTRADICTION",
     "step_6_closed_range": "THE_NORMAL_FREDHOLM_INDEX_IS_ZERO;_KERNEL_EXCLUSION_AND_THE_CLOSED_GRAPH_THEOREM_GIVE_A_BOUNDED_RIGHT_INVERSE_ON_THIS_SOURCE_RESTRICTED_NORMAL_BUNDLE"
@@ -55,6 +58,7 @@
     "ordered_event_control": "USE_THE_PROVED_POSITIVE_DURATION_CALDERON_RIGHT_INVERSE;_DO_NOT_USE_THE_INVALIDATED_STATIC_PRINCIPAL_SUBMATRIX_SHORTCUT",
     "required_action_owned_majorants": [
       "EXPLICIT_W2,1_ETA_COMPLETED_WARD_SOURCE_CONSTANT_C_r",
+      "CERTIFIED_SOURCE_RESTRICTED_POSITIVE_DURATION_INDICIAL_BOUND",
       "FINITE_CORE_PLUS_TAIL_NORMAL_RIGHT_INVERSE_BOUND_K",
       "FULL_ACTION_HESSIAN_LIPSCHITZ_MAJORANT_M2",
       "ETA_EVENT_DIRAC_AND_PERSISTENCE_NEIGHBORHOOD_RADII"
@@ -66,12 +70,14 @@
     "not_covered": "ARBITRARY_GRAPH_DOMAIN_DATA,_ZERO_PADDED_PROBES,_OR_UNRESTRICTED_HIGH_FREQUENCY_JACOBI_SEQUENCES"
   },
   "validation": {
-    "all_action_owned_hypotheses_recorded": true,
+    "critical_indicial_source_restriction_closed": true,
     "finite_probe_gaps_not_used_as_uniform_lower_bound": true,
     "no_new_equation_constraint_gate_scale_fit_or_event_definition": true,
     "nonlinear_radius_not_promoted": true,
+    "old_static_principal_inverse_not_promoted": true,
     "p_series_tail_is_finite": true,
     "principal_gap_replays": true,
+    "static_Weyl_sequence_not_promoted_to_dynamic_category_3": true,
     "static_shifted_inverse_not_used": true
   },
   "validation_passed": true

@@ -1,0 +1,50 @@
+{
+  "CONTINUUM_EVENT_CHILD_CERTIFIED": false,
+  "FULL_BHSM_COMPLETE": false,
+  "bounds": {
+    "A1": 12391920.680687092,
+    "A2": 191982169.45224527,
+    "C_flux_G_upper": 1.5965496886374987e+55,
+    "D2p_upper": 2.519166284751433e+40,
+    "Dp_upper": 6.545157017146888e+25,
+    "Fortin_composition": "epsilon_flux(M)<=C_flux_G*C_F(M)<=4*C_flux_G/sqrt(M)_FOR_INTEGER_M>=12",
+    "K_Dirac": 15529881.614399638,
+    "V0": 15529881.614399638,
+    "V1": 2.98864901687485e+21,
+    "V2": 1.1503014855934772e+36,
+    "action_Hessian": 451180.99452729366,
+    "action_gradient": 21900.05243235381,
+    "fixed_ball_flux_variation_upper": 3.1930993772749974e+55,
+    "radial_flux_first_variation_upper": 10240.519841035624,
+    "vector_field": 633761136889393.9,
+    "vector_field_derivative": 857568036.2787914
+  },
+  "classification": "CANONICAL_MOMENTUM_DYNAMIC_FLUX_COMPACT_MODULUS_ENCLOSED_BY_THE_EXISTING_GAUGE_FIXED_LEGENDRE_DIRAC_COMPOSITION",
+  "first_missing_action_owned_object": "DERIVE_THE_GAUSS_CONSISTENCY_COMPACT_MODULUS_IN_THE_SAME_SOURCE_RESTRICTED_MIXED_GRAPH_NORM",
+  "fixed_ball_state_variation_modulus_complete": true,
+  "inputs": {
+    "artifacts/n12_continuum_majorant_effectiveness/BHSM_N12_ACTION_GRAPH_GALERKIN_PROJECTOR.json": "73F7F95365EED267297B72EB2D2A45CA8C0495D03BE129E07A69C1CB1EDA4B89",
+    "artifacts/n12_continuum_majorant_effectiveness/BHSM_N12_ENDPOINT_SAFE_ED_REMAINDER.json": "B67BE91D6E733A19E0EA77EC669269247231F971B7A12CCD05B7AF5F240A4BF8",
+    "artifacts/n12_continuum_majorant_effectiveness/BHSM_N12_SOURCE_NORMAL_QUOTIENT_ISOMETRY.json": "38DA176C099C6B6F9FA4288F42BC09B873C0D7FB04EAE40B5ECBA89FDE8B482E",
+    "artifacts/n12_direct_checkpoint/BHSM_N12_ACTION_MAJORANTS.json": "06943C2077C9A8736B3CCFF5A004EB5870AA6CF88A31403D531005768D8F631E",
+    "artifacts/n12_direct_checkpoint/BHSM_N12_POSITIVE_DURATION_OBSERVATION.json": "6D60505F4DB2EC6428FEB5818B5E4AB304DCC662B55A389869481AE0C6B91560",
+    "artifacts/n12_direct_checkpoint/BHSM_N12_PRINCIPAL_COERCIVITY.json": "3BBCFA11384EB371BD145C48B9BA3D03978F504D300FD11E3F036F2194AFC084"
+  },
+  "inverse_derivative_identities": {
+    "V0": "||V||<=K_D",
+    "V1": "||DV||<=K_D^2*A1",
+    "V2": "||D2V||<=2*K_D^3*A1^2+K_D^2*A2"
+  },
+  "retained_factorization": "p=V^T*L_v,_V=A_v^-1*K_v^T*(K_v*A_v^-1*K_v^T)^-1*E;_flux=Gamma_q*g_rad+Dp(Y)X_ED(Y)-Gamma_q*L_q+event_flux",
+  "same_norm_coefficient_enclosed": true,
+  "validation": {
+    "complete_four_row_trace_tail_is_zero": true,
+    "endpoint_safe_compact_Hessian_coefficient_consumed": true,
+    "first_sufficient_bound_is_finite": true,
+    "gauge_fixed_Dirac_inverse_closed_on_existing_ball": true,
+    "no_equation_constraint_gate_scale_fit_or_event_definition_changed": true,
+    "retained_action_derivative_majorants_consumed": true,
+    "source_normal_quotient_representative_has_norm_one": true
+  },
+  "validation_passed": true
+}

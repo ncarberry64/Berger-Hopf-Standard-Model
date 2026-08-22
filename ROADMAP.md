@@ -2,36 +2,19 @@
 
 ## Active cross-resolution completion path
 
-1. Preserve the validated N3/N4/N5/N6 and direct N12 complete persistent
-   children and the unchanged finite-resolution maps and gates that produced
-   them. The authoritative direct N12 state closes all 57 rows at
-   `1.5155497333590932e-13` inside a certified `1e-11` action-coordinate ball.
-2. Preserve the corrected radial-diffeomorphism Ward identity: the exact shift
-   source is geometric momentum plus the retained eta-clock current. The
-   eta-free static-cokernel annihilation statement is invalidated.
-3. Preserve the proved qualitative source-restricted positive-duration
-   Jacobi--Calderon right inverse and strong-graph compactness for the
-   eta-completed Ward source. It applies to the action-selected normal bundle,
-   not arbitrary Jacobi data; the collapsing static w/shift shortcut remains
-   invalid.
-4. Preserve the now-certified contraction-correlated exact-root graph, whole
-   action-ball graph gap, finite-core positive-duration modulus `c_M0`, and
-   explicit non-fitted inverse-square source constant `C_r`, and sharp
-   N12-to-infinity source-tail enclosure. Derive the explicit retained-action
-   compact cutoff `M_star` for the gauge-reduced high-shell normal inverse;
-   then bound the interior Euler--Dirac, ordered-event projector,
-   canonical momentum/flux, Gauss-consistency, and observation perturbations.
-   Prove `epsilon_obs(M0) < c_M0`, evaluate `K`, and close the unchanged
-   nonlinear N12-to-infinity radii polynomial inside the existing physical
-   neighborhoods. Do not treat finite probes as roots or fit missing constants
-   from them.
-5. Promote a resolution-independent child only after the analytic tail and
-   nonlinear radius close. Do not promote zero-padded probes as roots.
-6. Construct the existing complete composite-minus-matched-parent `Q_xi` on a
-   paired continuum parent/child history and close the action-selected
-   relative-periodic/Floquet BVP. The reduced local canonical energy is not a
-   substitute for this object.
-7. Resume action-selected family-cycle ownership, relative quasi-energy mass
+1. Preserve the certified N3/N4/N5/N6/N12 finite children and the now-certified
+   resolution-independent event-child construction. Do not reopen the closed
+   action-Galerkin/compact-tail/nonlinear-radius proof unless contradicted.
+2. Derive the action-owned matched-parent restriction
+   `R_P: Phi_(P+C) -> Phi_P^matched` from the complete parent-composite action,
+   preserving one interface, generator, clock, domain, orientation, and
+   subtraction convention. The event-side state is not this reference.
+3. Complete the boundary-improved covariant `Q_xi` assembler, evolve the
+   matched parent and composite on the same history, and evaluate
+   `Delta H = Q_xi[P+C] - Q_xi[P matched]` with continuum error control. The
+   reduced local Legendre energy is not a substitute.
+4. Close the action-selected relative-periodic/Floquet state/family BVP.
+5. Resume action-selected family-cycle ownership, relative quasi-energy mass
    ratios, absolute scale, and returned-family current dependencies without
    reopening closed sectors or retuning frozen predictions.
 

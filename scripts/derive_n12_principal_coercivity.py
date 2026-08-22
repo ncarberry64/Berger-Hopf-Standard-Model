@@ -108,27 +108,28 @@ def main() -> None:
     )
     matrix_gap = math.sqrt(29.0) - 5.0
     principal_lower = matrix_gap * kappa_lower
-    boundary_modulus = float(
-        boundary["joint_child_minus_event_tail"]
-        ["existing_normalized_boundary_operator_norm"]
-    )
-    boundary_ratio = boundary_modulus / principal_lower
+    boundary_record = boundary["joint_child_minus_event_tail"]
+    boundary_modulus = float(boundary_record.get(
+        "retained_row_normalized_raw_coordinate_operator_norm",
+        boundary_record.get("existing_normalized_boundary_operator_norm"),
+    ))
+    previous_incompatible_ratio = boundary_modulus / principal_lower
     validation = {
         "certified_root_ball_consumed": True,
         "coefficient_bound_uses_only_retained_action_fields": True,
         "finite_trigonometric_triangle_bound_is_global_on_cap": True,
         "action_coordinate_ball_variation_included": True,
         "weighted_principal_lower_bound_positive": principal_lower > 0.0,
-        "exact_trace_attachment_tail_below_principal_lower_bound": (
-            boundary_ratio < 1.0
-        ),
+        "raw_frequency_trace_diagnostic_not_compared_with_weighted_"
+        "principal_gap": True,
         "no_sampled_chi_minimum_promoted_as_global_bound": True,
         "no_new_equation_constraint_gate_scale_or_fit": True,
     }
     payload = {
         "classification": (
-            "N12_WEIGHTED_GAUGE_REDUCED_PRINCIPAL_COERCIVITY_AND_"
-            "TRACE_ATTACHMENT_RELATIVE_TAIL_BOUND_CLOSED"
+            "N12_WEIGHTED_GAUGE_REDUCED_PRINCIPAL_COERCIVITY_CLOSED;_"
+            "PREVIOUS_RAW_FREQUENCY_TRACE_RATIO_RECLASSIFIED_AS_"
+            "INCOMPATIBLE_NORM_DIAGNOSTIC"
         ),
         "source_checkpoint": str(CHECKPOINT),
         "source_checkpoint_SHA256": _sha256(CHECKPOINT),
@@ -149,8 +150,12 @@ def main() -> None:
         "state_bounds": bounds,
         "joint_kappa_lower_on_certified_root_ball": kappa_lower,
         "weighted_principal_inf_sup_lower_bound": principal_lower,
-        "exact_trace_attachment_tail_operator_norm": boundary_modulus,
-        "trace_attachment_to_principal_ratio": boundary_ratio,
+        "raw_frequency_trace_coordinate_diagnostic": boundary_modulus,
+        "previous_incompatible_trace_to_principal_quotient": (
+            previous_incompatible_ratio
+        ),
+        "trace_attachment_to_principal_ratio": None,
+        "common_action_graph_trace_tail_bound": None,
         "remaining_compact_blocks": [
             "INTERIOR_LOWER_ORDER_EULER_DIRAC",
             "ORDERED_EVENT_SPECTRAL_PROJECTOR",
@@ -158,10 +163,11 @@ def main() -> None:
             "GAUSS_QUADRATURE_CONSISTENCY",
         ],
         "CONTINUUM_EVENT_CHILD_CERTIFIED": False,
+        "M_star_certified": False,
         "exact_next_dependency": (
-            "DERIVE_EXPLICIT_ACTION_GRAPH_NORM_MODULI_FOR_THE_REMAINING_"
-            "FOUR_COMPACT_BLOCKS_AND_PROVE_THEIR_GAUGE_REDUCED_SCHUR_"
-            "FEEDBACK_PRESERVES_THE_N12_PRINCIPAL_LOWER_BOUND"
+            "USE_THE_ACTION_ORTHOGONAL_TRACE_COMPATIBLE_GALERKIN_"
+            "PROJECTION_AND_DERIVE_EXPLICIT_NATURAL_ACTION_GRAPH_DUAL_"
+            "MODULI_FOR_THE_REMAINING_COMPACT_BLOCKS_BEFORE_CHOOSING_M_STAR"
         ),
         "validation": validation,
         "validation_passed": all(validation.values()),
