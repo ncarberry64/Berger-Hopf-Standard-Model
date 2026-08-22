@@ -31,7 +31,7 @@ def test_constraint_reduced_legendre_energy_identity_is_fail_closed() -> None:
     ] is True
 
 
-def test_aggregate_points_to_direct_continuation_or_exit_lemma() -> None:
+def test_aggregate_points_to_ordered_event_transport_bound() -> None:
     aggregate = json.loads(
         (ROOT / "artifacts" / "intrinsic_state_selection"
          / "BHSM_N12_INTRINSIC_RETURN_ACTION_OWNERSHIP_GATE.json").read_text(
@@ -40,11 +40,14 @@ def test_aggregate_points_to_direct_continuation_or_exit_lemma() -> None:
     )
 
     assert aggregate["validation_passed"] is True
-    assert "CONTINUUM_STRONG_S2_CONTINUATION_OR_PHYSICAL_DOMAIN_EXIT" in aggregate[
+    assert "GLOBAL_SIGN_OR_INTEGRATED_BOUND" in aggregate[
         "first_missing_action_owned_object"
     ]
     assert aggregate["validation"][
         "child_boundary_H_xi_ownership_no_go_is_localized"
+    ] is True
+    assert aggregate["validation"][
+        "continuum_maximal_flow_dichotomy_is_closed"
     ] is True
     assert aggregate["validation"][
         "constraint_reduced_Legendre_energy_zero_identity_is_closed"
