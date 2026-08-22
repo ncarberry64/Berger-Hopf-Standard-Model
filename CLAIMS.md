@@ -2,9 +2,9 @@
 
 ## Current public claim boundary
 
-Current public identifier: **N16 coupled-tail hard-response diagnostic from
-the certified N12 anchor**. This is not a release and does not claim an N16
-root, continuum closure, or BHSM completion.
+Current public identifier: **N12 continuum-majorant effectiveness localization
+from the certified N12 anchor**. This is not a release and does not claim an
+N16 root, continuum closure, or BHSM completion.
 
 Supported now: N3, N4, N5, N6, and direct N12 reconstruct complete persistent
 children under their retained finite-resolution equations. The corrected N12
@@ -31,6 +31,17 @@ is claimed or required. The remaining soft source projection is
 `0.00043277842426231244`. It remains a category-2 dynamically controlled
 normal line. This does not prove a quantitative uniform inverse or an N16
 root.
+
+Supported effectiveness result: a fixed positive principal gap, compact
+lower-order correction, Fredholm index zero, and kernel exclusion do not by
+themselves determine a numerical normal inverse bound. The explicit rank-one
+counterfamily localizes the missing retained-action input to an effective
+positive-duration observation separation/convergence modulus; it does not
+invalidate the qualitative BHSM closed-range theorem or construct a category-3
+collapse sequence. The certified N12 parent-backward/child-forward diagnostic
+keeps the unchanged symbol gap positive (`0.029146859835472938` to
+`0.02882113423436863` over `1e-10`) with admissible eta and closed constraints,
+but sampled time points are not promoted as a whole-interval bound.
 
 Supported finite diagnostic: the gauge-fixed N12 event/child Calderon boundary
 symbol has gap `0.029146859835472938`; doubled quadrature agrees to
@@ -78,8 +89,10 @@ validation, or `FULL_BHSM_COMPLETE = TRUE`.
 Active dependency:
 `ENCLOSE_THE_SOURCE_RESTRICTED_N12_TO_INFINITY_NONLINEAR_EVENT_CHILD_RADII_POLYNOMIAL_WITH_EXPLICIT_ACTION_OWNED_C_r_K_M2_AND_EXISTING_ETA_EVENT_DIRAC_PERSISTENCE_NEIGHBORHOODS`.
 
-Its first missing explicit constant is the validated source-restricted
-positive-duration soft normal right-inverse bound `K`.
+Its first missing object is the effective source-restricted positive-duration
+observation compactness modulus: retained-action bounds must establish
+`epsilon_obs(M0) < c_M0` and hence
+`K <= 1/(c_M0-epsilon_obs(M0))`.
 
 ### Historical corrected-Rayleigh N3 claim boundary
 

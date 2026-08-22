@@ -5,8 +5,9 @@ evidence, not competing public status pages.
 
 ## Current public summary
 
-Current identifier: **N16 coupled-tail hard-response diagnostic from the
-certified N12 anchor**. It is a development checkpoint, not a release version.
+Current identifier: **N12 continuum-majorant effectiveness localization from
+the certified N12 anchor**. It is a development checkpoint, not a release
+version.
 
 Complete persistent children are validated at N3, N4, N5, N6, and now direct
 N12 under their unchanged retained finite-resolution maps. The corrected N12
@@ -29,6 +30,18 @@ the unchanged coupled merit is authoritative. The remaining soft source
 projection is `0.08926177036476479` against paired response
 `0.00043277842426231244`. The soft line remains category 2, not tangent and
 not a demonstrated uniform failure. N16 is diagnostic only, not a root.
+
+The continuum-constant audit retains the qualitative source-restricted
+closed-range theorem but proves that the principal gap plus qualitative
+compactness, index zero, and kernel exclusion cannot determine a numerical
+inverse norm. A rank-one compact counterfamily makes the missing datum exact:
+an action-owned positive-duration observation separation/convergence modulus.
+The unchanged N12 doubled Calderon symbol was also measured along the retained
+parent-backward/child-forward history. Its gap is
+`0.029146859835472938` at the certified pair and
+`0.02882113423436863` after `1e-10` coordinate time, with constraints and eta
+preserved. This is deterministic positive-duration evidence, not a rigorous
+whole-interval lower bound.
 
 The authoritative branch is the same-action N6 index-12 to N12 index-24
 ordered-event correction. The public manifest hash-locks the N12 state,
@@ -88,8 +101,11 @@ family, and new frozen blind observable remain open.
 Exact next object:
 `ENCLOSE_THE_SOURCE_RESTRICTED_N12_TO_INFINITY_NONLINEAR_EVENT_CHILD_RADII_POLYNOMIAL_WITH_EXPLICIT_ACTION_OWNED_C_r_K_M2_AND_EXISTING_ETA_EVENT_DIRAC_PERSISTENCE_NEIGHBORHOODS`.
 
-The first missing quantitative object inside it is a validated
-source-restricted positive-duration soft normal right-inverse bound `K`.
+The first missing quantitative object inside it is the effective
+source-restricted positive-duration observation compactness modulus. The next
+lemma must enclose a finite-core whole-interval lower bound `c_M0` and an
+action-owned tail perturbation `epsilon_obs(M0) < c_M0`, yielding
+`K <= 1/(c_M0-epsilon_obs(M0))`.
 
 ### Historical corrected-Rayleigh N3 snapshot
 
