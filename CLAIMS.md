@@ -2,7 +2,8 @@
 
 ## Current public claim boundary
 
-Current public identifier: **N12 source-restricted dynamic-Calderon provenance
+Current public identifier: **N12 source-restricted positive-duration
+closed-range
 checkpoint**. This is not a release and does not claim continuum or BHSM
 completion.
 
@@ -24,18 +25,21 @@ Supported finite diagnostic: the gauge-fixed N12 event/child Calderon boundary
 symbol has gap `0.029146859835472938`; doubled quadrature agrees to
 `7.44e-13`. The source-restricted linear N48 and N64 probes retain positive
 unchanged dynamic-symbol gaps `0.00922485414794376` and
-`0.0038382679025004396`. These probes are not complete-child roots and cannot
-establish an N-uniform theorem.
+`0.0038382679025004396`. These probes are not complete-child roots and are not
+used as the uniform theorem.
 
 Also supported as a finite diagnostic: after the existing weak boundary
 reaction is routed, the exact omitted bulk source has inverse-square shell
 decay. The N48-to-N64 event/child action-coordinate correction distances are
 `0.0018305896390707417` and `0.0010832491904661818`, while the corresponding
 strong-graph distances remain `0.2789519506622375` and
-`0.1755558333355768`. Sampled strong norms remain bounded, but strong-graph
-Cauchy closure is not established. The worst static right inverse is not
-uniformly bounded and cannot be multiplied by a generic inverse-square source
-to prove summability.
+`0.1755558333355768`. Sampled strong norms remain bounded, but those samples
+alone are not a convergence proof. The action-derived `n^-2` Ward-source
+restriction does give `O(n^-1)` one-derivative-stronger shells with a summable
+squared tail. On that restricted normal bundle, the principal gap and
+Mosco/Trotter-Kato limit exclude high-mode graph escape and a nonzero
+zero-observation history; Fredholm index zero then supplies a qualitative
+source-restricted normal right inverse. Arbitrary Jacobi data are not covered.
 
 Supported source-compatibility theorem: the retained eta clock supplies a
 nonzero shift current, and the radial-diffeomorphism Ward identity is `metric
@@ -53,14 +57,15 @@ collapses to `7.369327366811907e-09` at embedded N48. The static event-projector
 shortcut is invalidated; the positive dynamic-symbol probes remain finite
 category-2 evidence only.
 
-Not supported: a continuum/resolution-independent child, a uniform Calderon
-projector-tail bound, the reduced local energy as `Delta H` or mass, an
+Not supported: a continuum/resolution-independent child, a quantitative
+nonlinear event-child radius, a closed-range theorem for arbitrary Jacobi data,
+the reduced local energy as `Delta H` or mass, an
 executable matched-parent `Q_xi`, action-selected particle families, absolute
 scale, physical masses or mixing, a new blind observable, empirical
 validation, or `FULL_BHSM_COMPLETE = TRUE`.
 
 Active dependency:
-`PROVE_THE_SOURCE_RESTRICTED_POSITIVE_DURATION_GAUGE_FIXED_JACOBI_CALDERON_RIGHT_INVERSE_AND_STRONG_GRAPH_COMPACTNESS_FOR_THE_ETA_COMPLETED_WARD_SOURCE;_USE_IT_TO_CONTROL_THE_UNCHANGED_ORDERED_EVENT_PROJECTOR_AND_CLOSE_THE_NONLINEAR_N12_TO_INFINITY_EVENT_CHILD_RADIUS_WITH_EXISTING_ETA_EVENT_DIRAC_PERSISTENCE_GATES`.
+`ENCLOSE_THE_SOURCE_RESTRICTED_N12_TO_INFINITY_NONLINEAR_EVENT_CHILD_RADII_POLYNOMIAL_WITH_EXPLICIT_ACTION_OWNED_C_r_K_M2_AND_EXISTING_ETA_EVENT_DIRAC_PERSISTENCE_NEIGHBORHOODS`.
 
 ### Historical corrected-Rayleigh N3 claim boundary
 

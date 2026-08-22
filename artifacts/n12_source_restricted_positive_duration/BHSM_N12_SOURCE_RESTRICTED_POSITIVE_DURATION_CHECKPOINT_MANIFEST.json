@@ -1,0 +1,32 @@
+{
+  "classification": "BHSM_N12_SOURCE_RESTRICTED_POSITIVE_DURATION_CLOSED_RANGE_CHECKPOINT",
+  "scientific_status": {
+    "DIRECT_N12_COMPLETE_PERSISTENT_CHILD_CERTIFIED": true,
+    "SOURCE_RESTRICTED_STRONG_GRAPH_COMPACTNESS_PROVED": true,
+    "SOURCE_RESTRICTED_POSITIVE_DURATION_OBSERVATION_BOUND_PROVED": true,
+    "SOURCE_RESTRICTED_NORMAL_RIGHT_INVERSE_PROVED": true,
+    "ARBITRARY_JACOBI_DATA_COVERED": false,
+    "CONTINUUM_EVENT_CHILD_CERTIFIED": false,
+    "FULL_BHSM_COMPLETE": false
+  },
+  "validated": [
+    "The eta-completed Ward source has the retained action-derived inverse-square weak shell law after the exact boundary Casimir covector is routed to the existing weak conormal reaction.",
+    "The gauge-fixed principal modulus gap sqrt(29)-5 and relative compactness of lower-order and finite-rank blocks give an asymptotically bounded high-shell inverse.",
+    "On the Ward-source-selected soft normal line, the resulting action O(n^-2) correction has square-summable one-derivative-stronger S2 shells, excluding high-mode graph escape.",
+    "Mosco/Trotter-Kato passage plus the existing unit boundary-acceleration normalization excludes a nonzero zero-observation positive-duration limit. Fredholm index zero then gives the source-restricted normal right inverse."
+  ],
+  "claim_boundary": "This is a qualitative theorem on the eta-completed Ward-source-selected normal bundle. It is not a numerical enclosure of the nonlinear N12-to-infinity radius, does not cover arbitrary Jacobi data, and does not certify a continuum child, Q_xi, Delta H, mass, family selection, or prediction.",
+  "soft_channel_classification": "CATEGORY_2_DYNAMICALLY_CONTROLLED_NORMAL_DIRECTION; NOT TANGENT; NO CATEGORY_3_COLLAPSE SEQUENCE",
+  "exact_next_dependency": "ENCLOSE_THE_SOURCE_RESTRICTED_N12_TO_INFINITY_NONLINEAR_EVENT_CHILD_RADII_POLYNOMIAL_WITH_EXPLICIT_ACTION_OWNED_C_r_K_M2_AND_EXISTING_ETA_EVENT_DIRAC_PERSISTENCE_NEIGHBORHOODS",
+  "files": [
+    {
+      "path": "artifacts/n12_source_restricted_positive_duration/BHSM_N12_SOURCE_RESTRICTED_POSITIVE_DURATION_THEOREM.json",
+      "SHA256": "A5E13AA08FB72A2A14EB82D6A3423F8DA59F942AEA486CBFE0460FDAF932C5E8"
+    }
+  ],
+  "reproduction": [
+    "PYTHONPATH=src python scripts/materialize_n12_source_restricted_positive_duration.py",
+    "PYTHONPATH=src python -m pytest tests/test_bhsm_n12_source_restricted_positive_duration.py -q"
+  ],
+  "new_equation_constraint_gate_scale_fit_prediction_or_event_definition": false
+}
