@@ -1,6 +1,6 @@
 # Current BHSM status
 
-## Authoritative frontier: continuum child certified; matched-parent Qxi open
+## Authoritative frontier: continuum child certified; physical readout open
 
 The direct N12 complete persistent child now anchors a certified
 resolution-independent event-to-child construction. The exact four-row
@@ -17,8 +17,8 @@ scale, coefficient, or event definition is used.
 - `Q_xi / Delta H = OPEN`
 - `FULL_BHSM_COMPLETE = FALSE`
 
-The first open dependency is not another continuum estimate. The retained N12
-state/action API has no action-owned matched-parent restriction
+The matched-parent readout dependency is not another continuum estimate. The
+retained N12 state/action API has no action-owned matched-parent restriction
 `R_P: Phi_(P+C) -> Phi_P^matched`; the event-side Cauchy state is not a
 parent-only reference. The complete common-reference covariant charge also
 requires the retained symplectic boundary improvement. Local Legendre energy
@@ -29,9 +29,25 @@ The v7.1 `R_8to5` and `R_5to4` maps already close the covariant correspondence;
 they are noninjective/set-valued and do not select a unique matched parent.
 Exact next object:
 `DERIVE_ACTION_SELECTED_PARENT_ONLY_LOCUS_AND_SINGLE_VALUED_GAUGE_QUOTIENTED_STATIONARY_SECTION`.
+The first missing datum is the action-owned realization of the abstract
+empty-event identity as an invariant parent-only field/domain. The N12
+event-child normal inverse does not act on the absent parent KKT operator and
+cannot establish this section.
+The reduced N12 event tuple cannot be promoted to the matched parent by forward
+evolution: the retained formation audit leaves restoration versus encapsulation
+unselected, and the existing positive-duration diagnostic evolves the event
+backward rather than certifying a forward parent history.
 
-Evidence: [`continuum certificate`](../artifacts/n12_continuum_majorant_effectiveness/BHSM_CONTINUUM_EVENT_CHILD_CERTIFICATE.json)
-and [`Q_xi ownership audit`](../artifacts/qxi_relative_energy_preparation/BHSM_N12_MATCHED_PARENT_QXI_OWNERSHIP.json).
+The post-parent audit finds no executable blind physical observable among the
+currently owned alternatives. Internal scale ratios have no absolute
+anchor/particle map; nonzero charge, a stable clock cycle, and flavor states
+remain unselected. The shortest nonfabricated flagship dependency is
+`ACTION_SELECTED_INTRINSIC_PHYSICAL_STATE_AND_OBSERVABLE_MAP_ON_THE_CERTIFIED_CONTINUUM_CHILD`.
+
+Evidence: [`continuum certificate`](../artifacts/n12_continuum_majorant_effectiveness/BHSM_CONTINUUM_EVENT_CHILD_CERTIFICATE.json),
+[`Q_xi ownership audit`](../artifacts/qxi_relative_energy_preparation/BHSM_N12_MATCHED_PARENT_QXI_OWNERSHIP.json),
+[`matched-parent stationary-section gate`](../artifacts/qxi_relative_energy_preparation/BHSM_N12_MATCHED_PARENT_STATIONARY_SECTION_GATE.json),
+and [`post-parent observable audit`](../artifacts/qxi_relative_energy_preparation/BHSM_POST_PARENT_FLAGSHIP_OBSERVABLE_GATE.json).
 
 ## Prior N12 source-tail frontier (superseded)
 

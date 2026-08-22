@@ -35,6 +35,10 @@ INPUTS = (
         "artifacts/qxi_relative_energy_preparation/"
         "BHSM_N12_MATCHED_PARENT_QXI_OWNERSHIP.json"
     ),
+    ROOT / (
+        "artifacts/qxi_relative_energy_preparation/"
+        "BHSM_N12_MATCHED_PARENT_STATIONARY_SECTION_GATE.json"
+    ),
 )
 
 
@@ -56,11 +60,25 @@ def main() -> None:
                 "BHSM_N12_MATCHED_PARENT_QXI_OWNERSHIP.json"
             ),
             "missing_dependency": (
-                "DERIVE_ACTION_SELECTED_PARENT_ONLY_LOCUS_AND_SINGLE_VALUED_"
-                "GAUGE_QUOTIENTED_STATIONARY_SECTION_OVER_FIXED_COMMON_DATA"
+                "ACTION_OWNED_REALIZATION_OF_THE_ABSTRACT_EMPTY_EVENT_IDENTITY_"
+                "AS_AN_INVARIANT_PARENT_ONLY_FIELD_DOMAIN_D_P"
             ),
             "executable_immediately_after_continuum": False,
             "event_side_may_be_substituted": False,
+        },
+        {
+            "object": "matched_parent_stationary_section",
+            "current_implementation": None,
+            "historical_or_conditional_source": (
+                "artifacts/qxi_relative_energy_preparation/"
+                "BHSM_N12_MATCHED_PARENT_STATIONARY_SECTION_GATE.json"
+            ),
+            "missing_dependency": (
+                "TYPE_D_P_AND_I_P;_THEN_PROVE_THE_PARENT_BORDERED_HESSIAN_"
+                "INVERTIBLE_OR_DERIVE_A_UNIQUE_SIMPLE_LYAPUNOV_SCHMIDT_ROOT"
+            ),
+            "executable_immediately_after_continuum": False,
+            "N12_normal_inverse_may_be_substituted": False,
         },
         {
             "object": "complete_Q_xi_contract",
@@ -191,6 +209,10 @@ def main() -> None:
         },
         "reuse_table": rows,
         "first_post_continuum_dependency": (
+            "ACTION_OWNED_REALIZATION_OF_THE_ABSTRACT_EMPTY_EVENT_IDENTITY_"
+            "AS_AN_INVARIANT_PARENT_ONLY_FIELD_DOMAIN_D_P"
+        ),
+        "active_primary_dependency": (
             "DERIVE_ACTION_SELECTED_PARENT_ONLY_LOCUS_AND_SINGLE_VALUED_"
             "GAUGE_QUOTIENTED_STATIONARY_SECTION_OVER_FIXED_COMMON_DATA"
         ),

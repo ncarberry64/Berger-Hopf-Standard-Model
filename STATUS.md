@@ -5,8 +5,9 @@ evidence, not competing public status pages.
 
 ## Current public summary
 
-Current identifier: **continuum event-child certified; matched-parent Qxi
-restriction open**. It is a development checkpoint, not a release version.
+Current identifier: **continuum event-child certified; action-owned physical
+observable selection open**. It is a development checkpoint, not a release
+version.
 
 The direct N12 complete persistent child plus the exact four-row
 trace-compatible action-Galerkin tail now certifies a resolution-independent
@@ -16,8 +17,8 @@ the summed correction lies inside the existing eta, event, Dirac, boundary,
 and persistence neighborhood. No higher-N root or altered physical gate is
 used. `CONTINUUM_EVENT_CHILD_CERTIFIED = TRUE`.
 
-The next gate is open at one exact action-owned object: the current retained
-state/action API does not define the matched-parent restriction
+The matched-parent charge gate is open at one exact action-owned object: the
+current retained state/action API does not define the matched-parent restriction
 `R_P: Phi_(P+C) -> Phi_P^matched`. The event-side Cauchy state cannot be
 substituted for that parent-only reference. Consequently `Q_xi`, `Delta H`,
 mass, action-selected families, and a blind observable remain open;
@@ -27,6 +28,19 @@ The v7.1 covariant `R_8to5` and `R_5to4` correspondences are retained and
 closed; they are noninjective/set-valued and do not select a unique matched
 parent. Exact next object:
 `DERIVE_ACTION_SELECTED_PARENT_ONLY_LOCUS_AND_SINGLE_VALUED_GAUGE_QUOTIENTED_STATIONARY_SECTION`.
+The first missing datum is the action-owned realization of the abstract
+empty-event identity as an invariant parent-only field/domain; no current
+retained invariant distinguishes that domain from the complete-child sector.
+The event-forward shortcut is also open: the N12 event is a reduced
+zero-eigenvalue threshold, not an action-selected positive-duration
+non-encapsulating parent branch.
+
+No current alternative is executable as a blind physical prediction. Internal
+scale ratios lack an absolute anchor/particle map; nonzero charge, a stable
+clock cycle, and the flavor matrix are not action-selected. The shortest
+nonfabricated flagship dependency is now
+`ACTION_SELECTED_INTRINSIC_PHYSICAL_STATE_AND_OBSERVABLE_MAP_ON_THE_CERTIFIED_CONTINUUM_CHILD`.
+The matched-parent route remains open but is not assumed.
 
 ## Prior N12 source-tail checkpoint (superseded)
 

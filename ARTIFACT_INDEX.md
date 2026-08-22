@@ -6,9 +6,11 @@
 - [`BHSM_N12_FIRST_SUFFICIENT_COMPACT_CUTOFF.json`](artifacts/n12_continuum_majorant_effectiveness/BHSM_N12_FIRST_SUFFICIENT_COMPACT_CUTOFF.json)
 - [`BHSM_N12_COMPACT_OBSERVATION_MODULI_AUDIT.json`](artifacts/n12_continuum_majorant_effectiveness/BHSM_N12_COMPACT_OBSERVATION_MODULI_AUDIT.json)
 - [`BHSM_N12_MATCHED_PARENT_QXI_OWNERSHIP.json`](artifacts/qxi_relative_energy_preparation/BHSM_N12_MATCHED_PARENT_QXI_OWNERSHIP.json)
+- [`BHSM_N12_MATCHED_PARENT_STATIONARY_SECTION_GATE.json`](artifacts/qxi_relative_energy_preparation/BHSM_N12_MATCHED_PARENT_STATIONARY_SECTION_GATE.json)
+- [`BHSM_POST_PARENT_FLAGSHIP_OBSERVABLE_GATE.json`](artifacts/qxi_relative_energy_preparation/BHSM_POST_PARENT_FLAGSHIP_OBSERVABLE_GATE.json)
 - [`BHSM_QXI_RELATIVE_ENERGY_REUSE_TABLE.json`](artifacts/qxi_relative_energy_preparation/BHSM_QXI_RELATIVE_ENERGY_REUSE_TABLE.json)
-- Reproduction: [`certify_n12_continuum_event_child.py`](scripts/certify_n12_continuum_event_child.py), [`audit_n12_matched_parent_qxi_ownership.py`](scripts/audit_n12_matched_parent_qxi_ownership.py), and [`materialize_qxi_relative_energy_reuse_table.py`](scripts/materialize_qxi_relative_energy_reuse_table.py)
-- Focused tests: [`test_bhsm_continuum_event_child_certificate.py`](tests/test_bhsm_continuum_event_child_certificate.py), [`test_bhsm_n12_matched_parent_qxi_ownership.py`](tests/test_bhsm_n12_matched_parent_qxi_ownership.py), and [`test_bhsm_qxi_relative_energy_reuse_table.py`](tests/test_bhsm_qxi_relative_energy_reuse_table.py)
+- Reproduction: [`certify_n12_continuum_event_child.py`](scripts/certify_n12_continuum_event_child.py), [`audit_n12_matched_parent_qxi_ownership.py`](scripts/audit_n12_matched_parent_qxi_ownership.py), [`audit_n12_matched_parent_stationary_section.py`](scripts/audit_n12_matched_parent_stationary_section.py), [`audit_post_parent_flagship_observable_chain.py`](scripts/audit_post_parent_flagship_observable_chain.py), and [`materialize_qxi_relative_energy_reuse_table.py`](scripts/materialize_qxi_relative_energy_reuse_table.py)
+- Focused tests: [`test_bhsm_continuum_event_child_certificate.py`](tests/test_bhsm_continuum_event_child_certificate.py), [`test_bhsm_n12_matched_parent_qxi_ownership.py`](tests/test_bhsm_n12_matched_parent_qxi_ownership.py), [`test_bhsm_n12_matched_parent_stationary_section.py`](tests/test_bhsm_n12_matched_parent_stationary_section.py), [`test_bhsm_post_parent_flagship_observable_chain.py`](tests/test_bhsm_post_parent_flagship_observable_chain.py), and [`test_bhsm_qxi_relative_energy_reuse_table.py`](tests/test_bhsm_qxi_relative_energy_reuse_table.py)
 
 The N12 anchor plus the exact action-Galerkin tail and nonlinear radius certify
 a resolution-independent child. The downstream charge remains fail closed at
