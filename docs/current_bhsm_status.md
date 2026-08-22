@@ -1,6 +1,6 @@
 # Current BHSM status
 
-## Authoritative frontier: N12 source-restricted positive-duration closure
+## Authoritative frontier: N16 coupled-tail diagnostic from the certified N12 anchor
 
 The unchanged retained N12 57-row event/child map now has a directly corrected
 complete persistent child. Its independently evaluated residual is
@@ -8,6 +8,17 @@ complete persistent child. Its independently evaluated residual is
 a root ball of radius `1e-11`. The corrected N6 index-12 to N12 index-24
 ordered-event branch passes the existing eta, ordered-event, boundary/Dirac,
 rank, and positive-duration persistence gates with nonzero relative evolution.
+
+The unchanged N16 coupled diagnostic restores every event/child owner omitted
+by the constraint-only tail lift. Paired exact hard momentum slopes reduce
+full weak merit from `0.9618557665898765` to `0.35386295232775206`; eta stays
+admissible and the ordered-event neighbor gap remains
+`6.763897075659092e-09`. The coupled constraint/boundary block is not required
+to improve componentwise and moves from `0.12021432656497034` to
+`0.14718333891190302`. The remaining soft source projection is
+`0.08926177036476479` with paired response `0.00043277842426231244`.
+It remains category 2, a dynamically controlled normal direction. The N16
+state is a diagnostic proposal, not a complete-child root.
 
 - `N3 COMPLETE PERSISTENT CHILD = YES`
 - `N4 COMPLETE PERSISTENT CHILD = YES`
@@ -58,6 +69,9 @@ the soft channel remains category 2: a dynamically controlled normal line.
 
 Exact next dependency:
 `ENCLOSE_THE_SOURCE_RESTRICTED_N12_TO_INFINITY_NONLINEAR_EVENT_CHILD_RADII_POLYNOMIAL_WITH_EXPLICIT_ACTION_OWNED_C_r_K_M2_AND_EXISTING_ETA_EVENT_DIRAC_PERSISTENCE_NEIGHBORHOODS`.
+
+The first missing quantitative constant inside this dependency is a validated
+source-restricted positive-duration soft normal right-inverse bound `K`.
 
 `Q_xi`, relative `Delta H`, action-selected families, and a new frozen blind
 observable remain downstream and open. The following v21.37 discussion is

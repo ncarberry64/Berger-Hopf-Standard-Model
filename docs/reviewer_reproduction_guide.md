@@ -1,6 +1,30 @@
 # Reviewer Reproduction Guide
 
-## Current dynamic-Calderon checkpoint
+## Current N16 coupled momentum-response diagnostic
+
+Run the hash-locked finite diagnostic first:
+
+```bash
+python -m pytest -q tests/test_bhsm_n16_coupled_momentum_response.py
+python tools/audit_forbidden_claims.py
+python tools/audit_bhsm_status.py
+python tools/audit_frozen_prediction_integrity.py
+git diff --check
+```
+
+Inspect the [N16 checkpoint manifest](../artifacts/n16_coupled_momentum_response/BHSM_N16_COUPLED_MOMENTUM_RESPONSE_CHECKPOINT_MANIFEST.json).
+It records the exact paired hard-response reduction and the unchanged
+category-2 soft classification. The stored N16 candidates are diagnostic
+proposals, not roots or continuum backgrounds.
+
+The deterministic PowerShell replay is:
+
+```powershell
+$env:PYTHONPATH='src'; $env:BHSM_N12_FULL_QVM_ORDERS='16,16'; $env:BHSM_N12_FULL_QVM_RESULT='artifacts/n16_coupled_momentum_response/BHSM_N16_FULL_QVM_SOURCE_TAIL_AUDIT.json'; $env:BHSM_N12_FULL_QVM_CORRECTION_CHECKPOINT='artifacts/n16_coupled_momentum_response/BHSM_N16_FULL_QVM_LINEAR_SOURCE_CANDIDATE.npz'; python scripts/audit_n12_full_qvm_constraint_tail.py
+$env:BHSM_N16_COMPLETE_CHILD_AUDIT='artifacts/n16_coupled_momentum_response/BHSM_N16_COUPLED_MOMENTUM_RESPONSE_AUDIT.json'; $env:BHSM_N16_COUPLED_CANDIDATE='artifacts/n16_coupled_momentum_response/BHSM_N16_HARD_RESPONSE_CANDIDATE.npz'; python scripts/audit_n16_complete_child_candidate.py
+```
+
+## Prior dynamic-Calderon checkpoint
 
 Run the hash-locked focused replay first:
 

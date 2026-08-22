@@ -2,13 +2,13 @@
 
 [![CI](https://github.com/ncarberry64/Berger-Hopf-Standard-Model/actions/workflows/ci.yml/badge.svg)](https://github.com/ncarberry64/Berger-Hopf-Standard-Model/actions/workflows/ci.yml)
 [![Latest archival release](https://img.shields.io/github/v/release/ncarberry64/Berger-Hopf-Standard-Model?label=archival%20release)](https://github.com/ncarberry64/Berger-Hopf-Standard-Model/releases/latest)
-[![Current research status](https://img.shields.io/badge/current%20research-N12%20source--restricted%20closed%20range-orange)](docs/current_bhsm_status.md)
+[![Current research status](https://img.shields.io/badge/current%20research-N16%20coupled%20tail%20diagnostic-orange)](docs/current_bhsm_status.md)
 [![Python 3.10+](https://img.shields.io/badge/python-3.10%2B-3776AB)](https://www.python.org/)
 [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.20663419.svg)](https://doi.org/10.5281/zenodo.20663419)
 
 BHSM is an independent artifact-backed computational framework and mathematical-physics research program investigating whether Standard Model structure and particle-like dynamics can be derived from Berger-Hopf boundary/envelopment geometry and a common action architecture.
 
-## Current Research Frontier -- N12 source-restricted positive-duration closure
+## Current Research Frontier -- N16 coupled-tail diagnostic from the certified N12 anchor
 
 BHSM now has a directly corrected `N=12` complete persistent child under the
 unchanged retained 57-row finite-resolution map. Its independently evaluated
@@ -17,6 +17,17 @@ action-coordinate root ball has radius `1e-11`. The ordered event, eta domain,
 boundary/Dirac neighborhood, and positive-duration persistence gates all pass.
 No physical row, coefficient, event definition, child criterion, or gate was
 added.
+
+The first unchanged-map N16 coupled audit now shows why the constraint-only
+tail lift was insufficient. Its exact paired hard momentum response reduces
+the full weak merit from `0.9618557665898765` to `0.35386295232775206` while
+eta remains admissible and the ordered branch stays isolated. The remaining
+soft source projection is `0.08926177036476479`, with paired response
+`0.00043277842426231244`. It remains category 2: a dynamically controlled
+normal direction. This is a finite structural diagnostic, not an N16 root;
+the hard trial allows the coupled constraint/boundary norm to move from
+`0.12021432656497034` to `0.14718333891190302` while the independently
+evaluated total merit falls. No componentwise monotonicity was imposed.
 
 | Scientific gate | Status |
 | --- | --- |
@@ -85,6 +96,10 @@ No equation, gate, or acceptance rule changed.
 Exact next object:
 
 `ENCLOSE_THE_SOURCE_RESTRICTED_N12_TO_INFINITY_NONLINEAR_EVENT_CHILD_RADII_POLYNOMIAL_WITH_EXPLICIT_ACTION_OWNED_C_r_K_M2_AND_EXISTING_ETA_EVENT_DIRAC_PERSISTENCE_NEIGHBORHOODS`
+
+The first missing explicit constant inside that unchanged dependency is the
+validated source-restricted positive-duration soft normal right-inverse bound
+`K`. The N16 probe is not promoted as a complete child or continuum state.
 
 ## Historical corrected-Rayleigh N=3 snapshot
 
