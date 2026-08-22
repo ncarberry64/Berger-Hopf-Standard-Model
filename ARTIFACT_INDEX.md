@@ -1,5 +1,19 @@
 # BHSM Artifact Index
 
+## Current N12 continuum source-compatibility checkpoint
+
+- [`BHSM_N12_CONTINUUM_SOURCE_COMPATIBILITY_MANIFEST.json`](artifacts/n12_continuum_source_compatibility_checkpoint/BHSM_N12_CONTINUUM_SOURCE_COMPATIBILITY_MANIFEST.json)
+- [`BHSM_N12_RADIAL_DIFFEO_NOETHER_COMPATIBILITY_AUDIT.json`](artifacts/n12_continuum_source_compatibility_checkpoint/BHSM_N12_RADIAL_DIFFEO_NOETHER_COMPATIBILITY_AUDIT.json)
+- [`BHSM_N48_LINEAR_SOURCE_CORRECTION_NONLINEAR_AUDIT.json`](artifacts/n12_continuum_source_compatibility_checkpoint/BHSM_N48_LINEAR_SOURCE_CORRECTION_NONLINEAR_AUDIT.json)
+- [`BHSM_N48_ORDERED_EVENT_PROJECTOR_CLUSTER_AUDIT.json`](artifacts/n12_continuum_source_compatibility_checkpoint/BHSM_N48_ORDERED_EVENT_PROJECTOR_CLUSTER_AUDIT.json)
+- Reproduction: [`audit_n12_radial_diffeo_noether_compatibility.py`](scripts/audit_n12_radial_diffeo_noether_compatibility.py), [`audit_n48_linear_correction_candidate.py`](scripts/audit_n48_linear_correction_candidate.py), and [`audit_n48_ordered_event_projector_cluster.py`](scripts/audit_n48_ordered_event_projector_cluster.py)
+
+The corrected Ward identity includes the retained eta-clock shift current; the
+eta-free static-cokernel annihilation statement is invalidated. N48 linear and
+spectral results remain diagnostic: the high bulk source responds strongly and
+the existing principal gauge quotient isolates the ordered branch, but the
+finite coupled corrector and continuum radius are open.
+
 ## Current direct N12 complete-persistent-child checkpoint
 
 - [`BHSM_N12_SCIENTIFIC_CHECKPOINT_MANIFEST.json`](artifacts/n12_direct_checkpoint/BHSM_N12_SCIENTIFIC_CHECKPOINT_MANIFEST.json)

@@ -1,6 +1,6 @@
 # Current BHSM status
 
-## Authoritative frontier: direct N12 complete persistent child
+## Authoritative frontier: N12 eta-completed source compatibility
 
 The unchanged retained N12 57-row event/child map now has a directly corrected
 complete persistent child. Its independently evaluated residual is
@@ -34,8 +34,19 @@ instantaneous static inverse grows too rapidly for the naive generic-inverse
 proof, but the exact source decouples from that increasingly shift-owned soft
 line. These are zero-padded linear probes, not corrected roots.
 
+The retained radial-diffeomorphism Ward identity now closes only after the
+eta-clock shift current is included. The eta-free static-cokernel annihilation
+statement is invalidated. Exact shift rows reconstruct from geometric momentum
+plus eta current to below `1e-10` on N16--N48 probes. At N48 the
+source-restricted proposal reduces high bulk weak residuals by over two orders
+of magnitude with admissible eta, but it disturbs finite boundary/energy rows
+and is not a root. The raw event-Hessian near-zero cluster is absent in the
+already-existing principal gauge quotient, where the selected branch has a
+quadrature-stable minimum neighbor gap `1.9607047715840434e-08`. This is not
+an N-uniform projector theorem.
+
 Exact next dependency:
-`PROVE_THE_RADIAL_DIFFEO_NOETHER_COMPATIBILITY_IDENTITY_FOR_THE_EXACT_OMITTED_SOURCE_AND_CLOSE_THE_SOURCE_RESTRICTED_MIXED_EULER_DIRAC_N12_TO_INFINITY_NONLINEAR_RADIUS`.
+`CERTIFY_THE_ETA_COMPLETED_SOURCE_RESTRICTED_MIXED_EULER_DIRAC_S2_RIGHT_INVERSE_AND_THE_EXISTING_GAUGE_REDUCED_ORDERED_EVENT_PROJECTOR_ON_THE_CORRECTED_NORMAL_SECTION;_THEN_CLOSE_THE_UNCHANGED_NONLINEAR_JOINT_EVENT_CHILD_RADIUS_AND_TRANSFER_ETA_EVENT_DIRAC_PERSISTENCE`.
 
 `Q_xi`, relative `Delta H`, action-selected families, and a new frozen blind
 observable remain downstream and open. The following v21.37 discussion is

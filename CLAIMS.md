@@ -2,7 +2,7 @@
 
 ## Current public claim boundary
 
-Current public identifier: **direct N12 complete-persistent-child provenance
+Current public identifier: **N12 eta-completed source-compatibility provenance
 checkpoint**. This is not a release and does not claim continuum or BHSM
 completion.
 
@@ -36,6 +36,20 @@ inverse-square source to prove summability. The exact source's decreasing
 projection onto that shift-owned soft line does not itself prove the nonlinear
 continuum theorem.
 
+Supported source-compatibility theorem: the retained eta clock supplies a
+nonzero shift current, and the radial-diffeomorphism Ward identity is `metric
+momentum + total shift - eta-clock current = 0`. Exact shift-row reconstruction
+defects are below `1e-10` on N16--N48 probes. The eta-free annihilation
+statement is invalidated.
+
+Supported finite diagnostic: the N48 source-restricted linear proposal lowers
+the event/child high routed bulk weak residuals by more than two orders of
+magnitude while preserving eta. It is not a root because coupled boundary and
+energy closure remains open. The raw near-zero event Hessian cluster is absent
+from the already-existing principal gauge quotient, whose selected branch has
+minimum observed neighbor gap `1.9607047715840434e-08` across 96/192-point
+quadrature. This does not establish an N-uniform event projector.
+
 Not supported: a continuum/resolution-independent child, a uniform Calderon
 projector-tail bound, the reduced local energy as `Delta H` or mass, an
 executable matched-parent `Q_xi`, action-selected particle families, absolute
@@ -43,7 +57,7 @@ scale, physical masses or mixing, a new blind observable, empirical
 validation, or `FULL_BHSM_COMPLETE = TRUE`.
 
 Active dependency:
-`PROVE_THE_RADIAL_DIFFEO_NOETHER_COMPATIBILITY_IDENTITY_FOR_THE_EXACT_OMITTED_SOURCE_AND_CLOSE_THE_SOURCE_RESTRICTED_MIXED_EULER_DIRAC_N12_TO_INFINITY_NONLINEAR_RADIUS`.
+`CERTIFY_THE_ETA_COMPLETED_SOURCE_RESTRICTED_MIXED_EULER_DIRAC_S2_RIGHT_INVERSE_AND_THE_EXISTING_GAUGE_REDUCED_ORDERED_EVENT_PROJECTOR_ON_THE_CORRECTED_NORMAL_SECTION;_THEN_CLOSE_THE_UNCHANGED_NONLINEAR_JOINT_EVENT_CHILD_RADIUS_AND_TRANSFER_ETA_EVENT_DIRAC_PERSISTENCE`.
 
 ### Historical corrected-Rayleigh N3 claim boundary
 

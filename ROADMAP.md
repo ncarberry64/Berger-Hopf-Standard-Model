@@ -6,14 +6,14 @@
    children and the unchanged finite-resolution maps and gates that produced
    them. The authoritative direct N12 state closes all 57 rows at
    `2.1479968882829104e-14` inside a certified `1e-11` action-coordinate ball.
-2. Prove the retained radial-diffeomorphism/Noether compatibility identity
-   that annihilates the collapsing static shift cokernel on the exact omitted
-   source. The N16--N48 source corrections are action-Cauchy and S2-bounded,
-   but remain finite linear probes.
-3. Enclose the resulting source-restricted mixed Euler--Dirac Schur correction,
-   inverse-square tail, and nonlinear Hessian remainder. Certify that the
-   summed correction remains inside the existing eta, ordered-event,
-   boundary/Dirac, and persistence neighborhoods.
+2. Preserve the corrected radial-diffeomorphism Ward identity: the exact shift
+   source is geometric momentum plus the retained eta-clock current. The
+   eta-free static-cokernel annihilation statement is invalidated.
+3. Certify the eta-completed source-restricted mixed Euler--Dirac S2 right
+   inverse and the existing gauge-reduced ordered-event projector on the
+   corrected normal section. Then enclose the inverse-square tail and nonlinear
+   Hessian remainder inside the existing eta, event, boundary/Dirac, and
+   persistence neighborhoods.
 4. Promote a resolution-independent child only after the analytic tail and
    nonlinear radius close. Do not promote zero-padded probes as roots.
 5. Construct the existing complete composite-minus-matched-parent `Q_xi` on a
