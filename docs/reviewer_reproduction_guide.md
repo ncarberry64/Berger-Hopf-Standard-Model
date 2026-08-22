@@ -1,17 +1,24 @@
 # Reviewer Reproduction Guide
 
-## Current cross-resolution checkpoint
+## Current direct N12 checkpoint
 
 ```bash
-python -m pytest -q tests/test_bhsm_aether_cross_resolution_reconnaissance_v21_35.py tests/test_engine_invariant_preservation.py tests/test_engine_physics_status_separation.py
+python scripts/promote_n12_public_checkpoint.py
+python -m pytest -q tests/test_bhsm_n12_direct_checkpoint.py tests/test_engine_invariant_preservation.py tests/test_engine_physics_status_separation.py
 python tools/audit_forbidden_claims.py
 python tools/audit_bhsm_status.py
 python tools/audit_frozen_prediction_integrity.py
 git diff --check
 ```
 
-Inspect the [v21.35 cross-resolution artifact](../artifacts/BHSM_AETHER_CROSS_RESOLUTION_RECONNAISSANCE_V21_35.json).
-For the new finite-tail checkpoint alone, the focused replay is:
+Inspect the [N12 checkpoint manifest](../artifacts/n12_direct_checkpoint/BHSM_N12_SCIENTIFIC_CHECKPOINT_MANIFEST.json).
+It verifies hashes for the exact state, residual, radii proof, physical
+neighborhoods, exact normals, persistence witness, and tail diagnostics.
+The direct N12 child is finite-resolution evidence; the N16--N48 zero-padded
+Calderon states are probes and must not be reported as roots or a continuum
+certificate.
+
+For the retained N3--N6 provenance, the focused replay is:
 
 ```bash
 python -m pytest -q tests/test_bhsm_aether_cross_resolution_reconnaissance_v21_35.py -k "persisted_n6_repaired or replayable_returns or inverse_square_tail or local_energy"

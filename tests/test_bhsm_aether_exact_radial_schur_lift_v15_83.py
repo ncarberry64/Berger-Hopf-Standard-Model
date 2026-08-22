@@ -1,10 +1,13 @@
 import json
 
+import numpy as np
+
 from bhsm.interface.aether_exact_radial_schur_lift_v15_83 import (
     angular_selection_theorem,
     completion_payload,
     deterministic_json,
     exact_radial_rows,
+    identity_response_localization,
 )
 
 
@@ -27,3 +30,16 @@ def test_payload_is_valid_and_deterministic():
     encoded = deterministic_json(payload)
     assert encoded == deterministic_json(completion_payload())
     assert json.loads(encoded)["version"] == "v15.83"
+
+
+def test_identity_response_localization_uses_exact_normalized_integral():
+    chi = np.linspace(0.0, np.pi / 4.0, 1001)
+    raw = np.sin(chi) ** 2 * np.cos(chi) ** 2
+    increments = 0.5 * (raw[1:] + raw[:-1]) * np.diff(chi)
+    cumulative = np.concatenate(([0.0], np.cumsum(increments)))
+    cumulative *= 0.5 / cumulative[-1]
+    numerical = 1.0 - 4.0 * (-0.5 + cumulative) ** 2
+    exact = identity_response_localization(chi)
+    assert exact[0] == 0.0
+    assert exact[-1] == 1.0
+    assert np.max(np.abs(exact - numerical)) < 1.0e-6

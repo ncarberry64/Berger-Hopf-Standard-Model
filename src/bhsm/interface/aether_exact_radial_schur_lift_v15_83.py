@@ -147,6 +147,17 @@ def _affine(value: float, coefficients: np.ndarray) -> Jet:
     return Jet.affine(float(value), np.asarray(coefficients, dtype=float))
 
 
+def identity_response_localization(chi: np.ndarray | float) -> np.ndarray:
+    """Exact retained localization for the identity eta response."""
+
+    coordinates = np.asarray(chi)
+    response_sigma = (
+        -0.5 + 2.0 * coordinates / math.pi
+        - np.sin(4.0 * coordinates) / (2.0 * math.pi)
+    )
+    return 1.0 - 4.0 * response_sigma**2
+
+
 def exact_action_jet_at_state(
     order: int,
     coordinates: np.ndarray,
@@ -182,19 +193,15 @@ def exact_action_jet_at_state(
     bulk = Jet.constant(0.0, total_size)
     inertia = Jet.constant(0.0, total_size)
 
-    # Response trace for the fixed monotone eta gauge f=chi.
-    raw = np.sin(chi) ** 2 * np.cos(chi) ** 2
-    augmented_chi = np.concatenate(([0.0], chi, [math.pi / 4.0]))
-    augmented_raw = np.concatenate(([0.0], raw, [0.25]))
-    cumulative = np.concatenate((
-        [0.0],
-        np.cumsum(
-            0.5 * (augmented_raw[1:] + augmented_raw[:-1])
-            * np.diff(augmented_chi)
-        ),
-    ))
-    cumulative *= 0.5 / cumulative[-1]
-    localization = 1.0 - 4.0 * (-0.5 + cumulative[1:-1]) ** 2
+    # Exact response trace for the fixed monotone eta gauge f=chi.  The
+    # former trapezoidal cumulative on Gauss nodes made the retained action
+    # depend spuriously on the outer quadrature order.  Here
+    #
+    #   integral_0^chi sin^2(s) cos^2(s) ds
+    #       = chi/8 - sin(4 chi)/32,
+    #
+    # and normalization to total response 1/2 gives this closed form.
+    localization = identity_response_localization(chi)
 
     qdim = size["coordinates"]
     for index, coordinate in enumerate(chi):

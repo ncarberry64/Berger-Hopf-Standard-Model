@@ -1,0 +1,75 @@
+{
+  "classification": "N12_WEIGHTED_GAUGE_REDUCED_PRINCIPAL_COERCIVITY_AND_TRACE_ATTACHMENT_RELATIVE_TAIL_BOUND_CLOSED",
+  "source_checkpoint": ".tmp_direct_n12_high_precision_action_center.npz",
+  "source_checkpoint_SHA256": "93E00A944C756B658FB82E56BC6A5C694E03B9760BB4084545E10D963A9AA230",
+  "source_promotion": ".tmp_direct_n12_high_precision_complete_persistent_child_promotion.json",
+  "source_promotion_SHA256": "C94C1F1E479841CD2FC14B6606138DFABB38017A54FBE441E9B80B53458876DF",
+  "source_boundary_tail": ".tmp_direct_n12_high_precision_exact_boundary_tail.json",
+  "source_boundary_tail_SHA256": "CC0B7E412AD556F3711B690D1020F2B41E673F161CD4FC7875AC9B72D3CC32B0",
+  "root_ball_action_radius": 1e-11,
+  "retained_factorization": {
+    "kappa": "3*N*R^5*exp(5*u-w)",
+    "principal_matrix": [
+      [
+        10.0,
+        0.0,
+        2.0
+      ],
+      [
+        0.0,
+        -2.0,
+        0.0
+      ],
+      [
+        2.0,
+        0.0,
+        0.0
+      ]
+    ],
+    "principal_matrix_smallest_absolute_eigenvalue": 0.38516480713450374
+  },
+  "state_bounds": {
+    "event": {
+      "log_kappa_lower_center": 3.143603953308582,
+      "log_kappa_upper_center": 6.000682833290674,
+      "log_kappa_action_coordinate_Lipschitz_bound": 5.341595979592185,
+      "log_kappa_lower_on_root_ball": 3.143603953255166,
+      "log_kappa_upper_on_root_ball": 6.00068283334409,
+      "kappa_lower_on_root_ball": 23.1872823373508,
+      "kappa_upper_on_root_ball": 403.70436219794095
+    },
+    "child": {
+      "log_kappa_lower_center": 3.468033787746366,
+      "log_kappa_upper_center": 5.676252998852892,
+      "log_kappa_action_coordinate_Lipschitz_bound": 5.341595979592185,
+      "log_kappa_lower_on_root_ball": 3.46803378769295,
+      "log_kappa_upper_on_root_ball": 5.676252998906308,
+      "kappa_lower_on_root_ball": 32.07361686573188,
+      "kappa_upper_on_root_ball": 291.85380202957674
+    }
+  },
+  "joint_kappa_lower_on_certified_root_ball": 23.1872823373508,
+  "weighted_principal_inf_sup_lower_bound": 8.930925129439007,
+  "exact_trace_attachment_tail_operator_norm": 0.3263719672129126,
+  "trace_attachment_to_principal_ratio": 0.03654402679259876,
+  "remaining_compact_blocks": [
+    "INTERIOR_LOWER_ORDER_EULER_DIRAC",
+    "ORDERED_EVENT_SPECTRAL_PROJECTOR",
+    "CANONICAL_MOMENTUM_AND_DYNAMIC_FLUX",
+    "GAUSS_QUADRATURE_CONSISTENCY"
+  ],
+  "CONTINUUM_EVENT_CHILD_CERTIFIED": false,
+  "exact_next_dependency": "DERIVE_EXPLICIT_ACTION_GRAPH_NORM_MODULI_FOR_THE_REMAINING_FOUR_COMPACT_BLOCKS_AND_PROVE_THEIR_GAUGE_REDUCED_SCHUR_FEEDBACK_PRESERVES_THE_N12_PRINCIPAL_LOWER_BOUND",
+  "validation": {
+    "certified_root_ball_consumed": true,
+    "coefficient_bound_uses_only_retained_action_fields": true,
+    "finite_trigonometric_triangle_bound_is_global_on_cap": true,
+    "action_coordinate_ball_variation_included": true,
+    "weighted_principal_lower_bound_positive": true,
+    "exact_trace_attachment_tail_below_principal_lower_bound": true,
+    "no_sampled_chi_minimum_promoted_as_global_bound": true,
+    "no_new_equation_constraint_gate_scale_or_fit": true
+  },
+  "validation_passed": true,
+  "FULL_BHSM_COMPLETE": false
+}

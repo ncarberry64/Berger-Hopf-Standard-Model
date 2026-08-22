@@ -2,65 +2,38 @@
 
 ## Current public claim boundary
 
-Current public identifier: **v21.37 fixed-chart endpoint-rank
-checkpoint**. This is not a release and does not claim BHSM completion.
+Current public identifier: **direct N12 complete-persistent-child provenance
+checkpoint**. This is not a release and does not claim continuum or BHSM
+completion.
 
-Supported now: N3 through N6 reconstruct complete persistent children under
-their retained finite-resolution equations. N5 closes its
-unchanged 18-row map at fixed-reference merit `5.90723795458673e-14` (raw
-`||F18||=1.1665202200968536e-7`), is eta-admissible, and passes the existing
-certification and persistence gates with nonzero relative evolution.
+Supported now: N3, N4, N5, N6, and direct N12 reconstruct complete persistent
+children under their retained finite-resolution equations. The corrected N12
+state closes the unchanged 57-row map at
+`||F12|| = 2.1479968882829104e-14`, lies in a certified action-coordinate ball
+of radius `1e-11`, remains eta-admissible, preserves the ordered event and
+boundary/Dirac neighborhoods, and passes positive-duration persistence with
+nonzero relative evolution.
 
-Supported numerical equivalence: splitting the unchanged N5 map as
-`F18=(A16,Phi2)`, solving the local compatibility fiber `A16=0`, and evaluating
-`Phi2` on that fiber has the same roots as `F18=0`. It adds no row, constraint,
-coefficient, event definition, or acceptance gate.
+Supported provenance: the branch is the same-action N6 index-12 to N12
+index-24 ordered-event correction. The durable manifest records byte hashes
+for the state, exact residual, radii proof, physical gates, exact normal data,
+and persistence witness. No new physical equation, coefficient, scale, event
+definition, or acceptance gate was introduced.
 
-Supported finite-N mathematics: the whole-child variable/row/manifold laws are
-`8N+2`, `2N+8`, and `6N-6`; the same-action two-sided event/child
-attachment/reaction map is explicitly matched at N3/N4/N5/N6 without adding a
-physical row or C1 gate. N6 closes trace/constraint/momentum compatibility to
-`5.708e-12`, records zero exact-attachment jump after boundary matching, and
-has a converged positive-duration nonzero-evolution persistence witness. The
-authoritative N6 event is the repaired unchanged-row solution with ordered
-eigenvalue `-3e-15`; the superseded projected seed (`1.645981691e-6`) does not
-pass the pre-existing `1e-9` event tolerance.
-Action-normalized weak reaction graphs have been measured through N6, and N6
-passes the existing complete-child and positive-duration persistence gates.
+Supported finite diagnostic: the gauge-fixed N12 event/child Calderon boundary
+symbol has gap `0.029146859835472938`; doubled quadrature agrees to
+`7.44e-13`. Zero-padded N16--N48 probes retain positive finite gaps, with
+observed minimum `0.00912893612489853`. These probes are not complete-child
+roots and cannot establish an N-uniform theorem.
 
-Supported analytic tail result: integration by parts in the retained action
-gives the weak shell estimate `||r_n|| <= C_r n^-2` without fitted constants.
-The joint principal-plus-compact normal operator has an asymptotic `O(1)`
-inverse, making the sufficiently high tail summable.
-
-Supported diagnostic: on the repaired-anchor N6-to-N12 joint probe the hard,
-full-Schur, and isolated soft Lyapunov-Schmidt responses remain nonzero while
-the unchanged exact joint weak merit descends. This is not itself a continuum
-certificate. The interval cover is rigorously limited to the fixed-center
-linear Schur proxy. The repository does not yet define an exact nonlinear
-`F(t,Y)` with a rooted N6 endpoint, the physical N12 endpoint, and preserved
-gauge-fixed normal rank. The original matched and repaired N6 omitted weak
-tails are separately reproducible and nonzero; they are not one numerical
-record.
-
-Supported theorem: on one fixed N12 product chart, an unchanged rooted N6
-extension has derivative rank at most 33 for 57 N12 rows. Full N12 normal rank
-therefore requires an auxiliary high endpoint equation, while retaining the
-physical N12 high rows leaves the injected N6 state non-rooted. This excludes
-that regular proof architecture; it does not exclude a continuum BHSM child.
-
-Not supported: a rigorous finite overlapping nonlinear radii cover, a
-completed continuum child, the
-reduced local N6 energy as `Delta H` or mass, absolute
-scale, physical masses, CKM, PMNS, CP, neutrino splittings, empirical
+Not supported: a continuum/resolution-independent child, a uniform Calderon
+projector-tail bound, the reduced local energy as `Delta H` or mass, an
+executable matched-parent `Q_xi`, action-selected particle families, absolute
+scale, physical masses or mixing, a new blind observable, empirical
 validation, or `FULL_BHSM_COMPLETE = TRUE`.
-The repository does not yet contain an executable complete
-composite-minus-matched-parent `Q_xi` evaluator or paired N6 parent/child
-history, so the conditional v14.54 Floquet/relative-energy contract is not a
-current mass readout.
 
 Active dependency:
-`PROVE_A_VARIABLE_CHART_SINGULAR_GALERKIN_TRANSITION_WITH_UNCHANGED_PHYSICAL_ENDPOINTS,_OR_EXPLICITLY_AUTHORIZE_AND_PROVE_ENDPOINT_INDEPENDENCE_OF_AN_ACTION_NORM_AUXILIARY_HIGH_BLOCK`.
+`DERIVE_AN_EXPLICIT_N12_TO_INFINITY_RETAINED_ACTION_BOUND_ON_THE_GAUGE_FIXED_EVENT_CHILD_CALDERON_GRAPH_PROJECTOR_TAIL_AND_CLOSE_THE_NONLINEAR_INVERSE_SQUARE_CORRECTION_RADIUS`.
 
 ### Historical corrected-Rayleigh N3 claim boundary
 

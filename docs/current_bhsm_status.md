@@ -1,6 +1,39 @@
 # Current BHSM status
 
-## Authoritative frontier: v21.37 fixed-chart endpoint-rank theorem
+## Authoritative frontier: direct N12 complete persistent child
+
+The unchanged retained N12 57-row event/child map now has a directly corrected
+complete persistent child. Its independently evaluated residual is
+`2.1479968882829104e-14`, and the full action-norm radii construction certifies
+a root ball of radius `1e-11`. The corrected N6 index-12 to N12 index-24
+ordered-event branch passes the existing eta, ordered-event, boundary/Dirac,
+rank, and positive-duration persistence gates with nonzero relative evolution.
+
+- `N3 COMPLETE PERSISTENT CHILD = YES`
+- `N4 COMPLETE PERSISTENT CHILD = YES`
+- `N5 COMPLETE PERSISTENT CHILD = YES`
+- `N6 COMPLETE PERSISTENT CHILD = YES`
+- `N12 COMPLETE PERSISTENT CHILD = YES`
+- `CONTINUUM_EVENT_CHILD_CERTIFIED = FALSE`
+- `FULL_BHSM_COMPLETE = FALSE`
+
+Evidence is hash-locked by the
+[`N12 scientific checkpoint manifest`](../artifacts/n12_direct_checkpoint/BHSM_N12_SCIENTIFIC_CHECKPOINT_MANIFEST.json).
+The gauge-fixed N12 event/child Calderon boundary symbol has finite gap
+`0.029146859835472938`; doubled quadrature agrees to `7.44e-13`. Zero-padded
+N16--N48 probes retain positive gaps, with observed minimum
+`0.00912893612489853`, but are diagnostics rather than corrected roots. They
+do not prove uniform continuum closure.
+
+Exact next dependency:
+`DERIVE_AN_EXPLICIT_N12_TO_INFINITY_RETAINED_ACTION_BOUND_ON_THE_GAUGE_FIXED_EVENT_CHILD_CALDERON_GRAPH_PROJECTOR_TAIL_AND_CLOSE_THE_NONLINEAR_INVERSE_SQUARE_CORRECTION_RADIUS`.
+
+`Q_xi`, relative `Delta H`, action-selected families, and a new frozen blind
+observable remain downstream and open. The following v21.37 discussion is
+retained as historical proof-architecture provenance and is superseded as the
+current finite-resolution frontier.
+
+## Historical v21.37 fixed-chart endpoint-rank theorem
 
 BHSM has reconstructed complete persistent children through N6 for their
 retained finite-resolution maps. N5 closes the unchanged

@@ -1,6 +1,24 @@
 # BHSM Artifact Index
 
-## Current fixed-chart endpoint-rank checkpoint (v21.37)
+## Current direct N12 complete-persistent-child checkpoint
+
+- [`BHSM_N12_SCIENTIFIC_CHECKPOINT_MANIFEST.json`](artifacts/n12_direct_checkpoint/BHSM_N12_SCIENTIFIC_CHECKPOINT_MANIFEST.json)
+- [`BHSM_N12_COMPLETE_PERSISTENT_CHILD_STATE.npz`](artifacts/n12_direct_checkpoint/BHSM_N12_COMPLETE_PERSISTENT_CHILD_STATE.npz)
+- [`BHSM_N12_COMPLETE_PERSISTENT_CHILD_CERTIFICATE.json`](artifacts/n12_direct_checkpoint/BHSM_N12_COMPLETE_PERSISTENT_CHILD_CERTIFICATE.json)
+- [`BHSM_N12_FULL_ACTION_RADII_CERTIFICATE.json`](artifacts/n12_direct_checkpoint/BHSM_N12_FULL_ACTION_RADII_CERTIFICATE.json)
+- [`BHSM_N12_POSITIVE_DURATION_PERSISTENCE.json`](artifacts/n12_direct_checkpoint/BHSM_N12_POSITIVE_DURATION_PERSISTENCE.json)
+- Reproduction/promoter: [`promote_n12_public_checkpoint.py`](scripts/promote_n12_public_checkpoint.py)
+- Event/child symbol audit: [`audit_n12_event_child_calderon_symbol.py`](scripts/audit_n12_event_child_calderon_symbol.py)
+
+The unchanged 57-row N12 map closes at
+`||F12|| = 2.1479968882829104e-14` inside a certified `1e-11`
+action-coordinate ball. Existing ordered-event, eta, boundary/Dirac, and
+positive-duration persistence gates pass. The manifest byte-hashes 26
+authoritative files. Finite zero-padded N16--N48 symbol probes are explicitly
+diagnostic, not roots; continuum closure and all downstream physical readouts
+remain open.
+
+## Historical fixed-chart endpoint-rank checkpoint (v21.37)
 
 - [`BHSM_N6_N12_FIXED_CHART_RANK_NO_GO_V21_37.json`](artifacts/BHSM_N6_N12_FIXED_CHART_RANK_NO_GO_V21_37.json)
 - Source: [`aether_n6_n12_fixed_chart_rank_no_go_v21_37.py`](src/bhsm/interface/aether_n6_n12_fixed_chart_rank_no_go_v21_37.py)

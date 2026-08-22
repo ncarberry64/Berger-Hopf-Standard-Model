@@ -100,6 +100,12 @@ def nonlinear_homotopy_integrability_audit(
     ]["binary64_hex"]
     original_tail = _tail_norm(original_child)
     repaired_tail = _tail_norm(repaired_child)
+    # These are the published v21.36 binary64 provenance values.  Later
+    # action-jet arithmetic repairs can legitimately change a fresh diagnostic
+    # reevaluation by roundoff-scale amounts; they must not rewrite the
+    # historical measurement era that this audit records.
+    original_tail_v21_36 = 0.086772051123605
+    repaired_tail_v21_36 = 0.080655518582802
 
     cover = linear["latest_probe"]["affine_schur_interval_cover"]
     fixed_linear_scope = cover["scope"] == "FIXED_PAIRED_RICHARDSON_LINEARIZATION_ONLY"
@@ -177,11 +183,13 @@ def nonlinear_homotopy_integrability_audit(
                 "finite_anchor_history"
             ]["zero_padded_repaired_N6_in_N12_exact_joint_norm"],
             "original_matched_N6_first_omitted_weak_H_minus_1_tail": (
-                original_tail
+                original_tail_v21_36
             ),
             "repaired_ordered_event_N6_first_omitted_weak_H_minus_1_tail": (
-                repaired_tail
+                repaired_tail_v21_36
             ),
+            "current_kernel_reevaluation_original_tail": original_tail,
+            "current_kernel_reevaluation_repaired_tail": repaired_tail,
             "tail_provenance_note": (
                 "0.086772051123605_BELONGS_TO_THE_ORIGINAL_MATCHED_N6_"
                 "CHILD;_THE_REPAIRED_ORDERED_EVENT_CHILD_HAS_THE_SEPARATE_"
