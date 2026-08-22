@@ -1,0 +1,77 @@
+{
+  "CONTINUUM_EVENT_CHILD_CERTIFIED": false,
+  "FULL_BHSM_COMPLETE": false,
+  "M_star_certified": false,
+  "classification": "N64_JOINT_TRACE_COMPATIBLE_SOURCE_CORRECTION_CONSTRUCTED_AS_PROPOSAL_ONLY;_NONLINEAR_COMPLETE_CHILD_ROOT_NOT_CERTIFIED",
+  "exact_next_dependency": "USE_THE_TRACE_COMPATIBLE_CANDIDATE_AS_THE_FINITE_CORE_CENTER_FOR_THE_UNCHANGED_JOINT_EVENT_CHILD_NONLINEAR_RESIDUAL_AND_EITHER_CERTIFY_A_LOCAL_RADIUS_OR_LOCALIZE_ITS_FIRST_OWNER",
+  "exact_reevaluation": {
+    "after": {
+      "child": {
+        "eta_minimum": 1.000000019882249,
+        "high_constraint_weak_norm": 0.00020818296333026967
+      },
+      "event": {
+        "eta_minimum": 0.8328279142532227,
+        "high_constraint_weak_norm": 0.00014365535372486891
+      }
+    },
+    "before": {
+      "child": {
+        "eta_minimum": 0.999999999999999,
+        "high_constraint_weak_norm": 0.0448923895694734
+      },
+      "event": {
+        "eta_minimum": 0.8312699284327052,
+        "high_constraint_weak_norm": 0.02934585522884707
+      }
+    },
+    "boundary_jump_after": [
+      -5.551115123125783e-17,
+      6.071532165918825e-17,
+      -3.9898639947466563e-17,
+      2.5587171270657905e-17
+    ],
+    "boundary_jump_after_norm": 9.494442057588127e-17,
+    "boundary_jump_before": [
+      -3.122502256758253e-17,
+      2.6020852139652106e-17,
+      -1.5612511283791264e-17,
+      2.45029690981724e-17
+    ]
+  },
+  "input": {
+    "SHA256": "8AEE33C46C320A36384C83E6B9BDE387AE3E565D99C7D49C606895229B796890",
+    "path": "artifacts/n12_direct_checkpoint/BHSM_N12_COMPLETE_PERSISTENT_CHILD_STATE.npz"
+  },
+  "linear_system": {
+    "action_norm_correction": 0.016788400202370976,
+    "condition_number": 181640.97813742067,
+    "linear_augmented_residual_norm": 2.968998007790081e-16,
+    "rank": 212,
+    "shape": [
+      212,
+      1028
+    ],
+    "smallest_singular_value": 0.00030531053499163974
+  },
+  "order": 64,
+  "source_order": 12,
+  "state_artifact": {
+    "SHA256": "960C5824E8588D11AFCD944AE914DFB3F128EC3B16F2186A4B6C1685E2CFC679",
+    "path": "artifacts/n12_continuum_majorant_effectiveness/BHSM_N64_TRACE_COMPATIBLE_SOURCE_CORRECTION_STATE.npz"
+  },
+  "state_status": "PROPOSAL_ONLY_NOT_A_COMPLETE_CHILD_ROOT",
+  "validation": {
+    "candidate_not_promoted_as_root": true,
+    "certified_N12_anchor_consumed": true,
+    "complete_four_row_joint_boundary_linearization_used": true,
+    "eta_admissible_on_both_sides": true,
+    "exact_high_constraint_merit_reduced_on_both_sides": true,
+    "existing_full_qvm_normal_coordinates_used": true,
+    "linear_augmented_residual_below_1e_minus_9": true,
+    "linear_augmented_system_full_row_rank": true,
+    "no_equation_constraint_gate_scale_fit_or_event_definition_changed": true,
+    "unchanged_exact_action_covector_reevaluated": true
+  },
+  "validation_passed": true
+}

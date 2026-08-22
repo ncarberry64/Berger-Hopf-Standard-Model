@@ -1,0 +1,130 @@
+{
+  "CONTINUUM_EVENT_CHILD_CERTIFIED": false,
+  "C_ED_G_evaluable": false,
+  "FULL_BHSM_COMPLETE": false,
+  "classification": "EXACT_MIXED_EULER_DIRAC_NONCOMPACT_BLOCK_INVENTORY_DERIVED;_A_SPLIT_CONTAINING_ONLY_THE_RADIAL_kappa_P_AND_POLE_BLOCK_IS_INVALID_BECAUSE_L2_VELOCITY_AND_DERIVATIVE_VELOCITY_COUPLINGS_ARE_ALSO_NONCOMPACT",
+  "critical_regular_pole_block": {
+    "counted_as_compact": false,
+    "operator": "6*c*(D_t^2+1)",
+    "source_restricted_weighted_H2_inverse_upper": 0.004749681321879146
+  },
+  "derivative_velocity_mixed_block": {
+    "exact_nonzero_entries": {
+      "D2_adm[beta,beta_prime]": "-3*(ap + bp)/N**2",
+      "D2_adm[la,beta]": "3*(2*ap + 3*bp + cp)/N**2",
+      "D2_adm[la,beta_prime]": "3/N**2",
+      "D2_adm[lb,beta]": "3*(3*ap + 2*bp + cp)/N**2",
+      "D2_adm[lb,beta_prime]": "3/N**2",
+      "D2_adm[lc,beta]": "3*(ap + bp)/N**2"
+    },
+    "must_remain_in_principal_ED_operator_before_gauge_reduction": true,
+    "source": "SHIFT_AND_SHIFT_DERIVATIVE_IN_Hc_Ha_Hb"
+  },
+  "epsilon_obs_M_evaluable": false,
+  "finite_rank_blocks": {
+    "boundary_Casimir_and_attachment": "FIXED_FINITE_DIMENSIONAL_TRACE_BLOCK_WITH_ZERO_DIRECT_TAIL_UNDER_THE_FOUR_ROW_FORTIN_PROJECTOR",
+    "collective_inertia": "D2(-c/I)=c*I^-2*D2I-2*c*I^-3*DI_tensor_DI"
+  },
+  "first_missing_executable_map": "THE_EXISTING_SOURCE_NORMAL_COMPRESSION_APPLIED_TO_THE_ENDPOINT_AUDIT_RANK_TWO_CRITICAL_POLE_MATRIX,_FOLLOWED_BY_THE_OUTWARD_INTERVAL_COEFFICIENT_EXTRACTOR_FOR_THE_TRUE_UNDIFFERENTIATED_K_ED,lo",
+  "inputs": {
+    "artifacts/n12_continuum_majorant_effectiveness/BHSM_N12_SOURCE_RESTRICTED_INDICIAL_BOUND.json": "6AC2786682AB74185A424122187D559359002CA09EEE3C6E19E4FE914459A996",
+    "artifacts/n12_continuum_majorant_effectiveness/BHSM_N12_SOURCE_RESTRICTED_MIXED_GRAPH.json": "FE99AEFA5637CBAD831B9C14D625DA44B3CDFDD8CA87F98ABC676B2E7C618A23",
+    "src/bhsm/interface/aether_n3_exact_full_local_action_jet_v17_60.py": "C8F6440DA11EE84F13E3668DDA95CBEADC9C5B5FC26E276EC9749A8CB1D21AFF"
+  },
+  "required_principal_operator": [
+    "FULL_kappa_P_RADIAL_DERIVATIVE_BLOCK",
+    "CRITICAL_REGULAR_POLE_INDICIAL_BLOCK",
+    "FULL_CANONICAL_L2_VELOCITY_LEGENDRE_MULTIPLICATION_BLOCK",
+    "ALL_DERIVATIVE_TO_L2_VELOCITY_MIXED_BLOCKS_BEFORE_THE_EXISTING_GAUGE_QUOTIENT"
+  ],
+  "source_normal_quotient": {
+    "SHA256": "38DA176C099C6B6F9FA4288F42BC09B873C0D7FB04EAE40B5ECBA89FDE8B482E",
+    "artifact": "artifacts/n12_continuum_majorant_effectiveness/BHSM_N12_SOURCE_NORMAL_QUOTIENT_ISOMETRY.json",
+    "representative_norm": "ONE",
+    "separate_C_ED_multiplier_required": false
+  },
+  "spatial_principal_block": {
+    "density_owner": "ap^2+bp^2+3*ap*bp+n_prime*(ap+bp)",
+    "determinant": 8,
+    "dimensionless_matrix": [
+      [
+        "10",
+        "0",
+        "2"
+      ],
+      [
+        "0",
+        "-2",
+        "0"
+      ],
+      [
+        "2",
+        "0",
+        "0"
+      ]
+    ],
+    "full_coefficient": "kappa*omega",
+    "smallest_absolute_eigenvalue": "sqrt(29)-5",
+    "variables": [
+      "D_chi_u",
+      "D_chi_b",
+      "D_chi_logN"
+    ]
+  },
+  "validation": {
+    "L2_velocity_block_is_nonzero_and_singular_before_gauge_quotient": true,
+    "assembled_mixed_graph_consumed": true,
+    "boundary_trace_block_not_inserted_into_bulk_remainder": true,
+    "critical_pole_block_routed_to_existing_indicial_inverse": true,
+    "derivative_velocity_couplings_are_nonzero": true,
+    "exact_L2_velocity_Hessian_reproduced": true,
+    "exact_spatial_principal_matrix_reproduced": true,
+    "no_new_equation_constraint_gate_scale_fit_or_event_definition": true,
+    "source_normal_quotient_factor_is_norm_one_if_materialized": true,
+    "spatial_principal_determinant_is_eight": true
+  },
+  "validation_passed": true,
+  "velocity_L2_block": {
+    "dimensionless_ADM_Hessian": [
+      [
+        "-42",
+        "0",
+        "-42",
+        "-6"
+      ],
+      [
+        "0",
+        "6",
+        "0",
+        "0"
+      ],
+      [
+        "-42",
+        "0",
+        "-42",
+        "-6"
+      ],
+      [
+        "-6",
+        "0",
+        "-6",
+        "0"
+      ]
+    ],
+    "may_be_bounded_by_C_F_as_a_compact_L2_multiplication": false,
+    "must_remain_in_principal_ED_operator": true,
+    "null_vector": [
+      "-1",
+      "0",
+      "1",
+      "0"
+    ],
+    "rank_before_existing_gauge_quotient": 3,
+    "variables": [
+      "dot_u",
+      "dot_b",
+      "dot_rho",
+      "dot_w"
+    ]
+  }
+}

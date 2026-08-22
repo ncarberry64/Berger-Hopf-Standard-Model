@@ -2,13 +2,50 @@
 
 [![CI](https://github.com/ncarberry64/Berger-Hopf-Standard-Model/actions/workflows/ci.yml/badge.svg)](https://github.com/ncarberry64/Berger-Hopf-Standard-Model/actions/workflows/ci.yml)
 [![Latest archival release](https://img.shields.io/github/v/release/ncarberry64/Berger-Hopf-Standard-Model?label=archival%20release)](https://github.com/ncarberry64/Berger-Hopf-Standard-Model/releases/latest)
-[![Current research status](https://img.shields.io/badge/current%20research-N12%20sharp%20source%20tail%20closed%3B%20normal%20cutoff%20open-orange)](docs/current_bhsm_status.md)
+[![Current research status](https://img.shields.io/badge/current%20research-continuum%20child%20certified%3B%20Qxi%20reference%20open-orange)](docs/current_bhsm_status.md)
 [![Python 3.10+](https://img.shields.io/badge/python-3.10%2B-3776AB)](https://www.python.org/)
 [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.20663419.svg)](https://doi.org/10.5281/zenodo.20663419)
 
 BHSM is an independent artifact-backed computational framework and mathematical-physics research program investigating whether Standard Model structure and particle-like dynamics can be derived from Berger-Hopf boundary/envelopment geometry and a common action architecture.
 
-## Current Research Frontier -- N12 sharp source tail closed, normal cutoff open
+## Current Research Frontier -- continuum child certified; matched-parent Qxi open
+
+BHSM now has a certified resolution-independent event-to-complete-child
+construction. The direct N12 complete persistent child is the finite anchor;
+the exact four-row trace-compatible action-Galerkin projector, four retained
+compact-block moduli, quantitative normal inverse, action-derived inverse-square
+source tail, and nonlinear radii polynomial place the entire N12-to-infinity
+correction inside the existing physical neighborhood. The selected proof
+margin gives `K <= 9.818810450848289e18`, linear correction
+`D1 <= 1.795995767425834e-128`, and a positive Kantorovich discriminant. No
+higher-resolution root, new equation, gate, fitted coefficient, event change,
+or empirical input is used.
+
+`CONTINUUM_EVENT_CHILD_CERTIFIED = TRUE`. The next physical readout remains
+fail closed. The retained N12 state/action API has no action-owned matched-parent
+restriction `R_P: Phi_(P+C) -> Phi_P^matched`, and the event half is not a
+parent-only reference. The available local Legendre energy is therefore not
+`Q_xi`, `Delta H`, mass, or a prediction. The first open action-owned dependency
+is to derive `R_P` from the complete parent-composite action with one common
+interface, generator, clock, domain, orientation, and subtraction convention;
+the boundary-improved covariant charge follows.
+
+| Scientific gate | Status |
+| --- | --- |
+| `N12 COMPLETE PERSISTENT CHILD` | **YES** |
+| `CONTINUUM_EVENT_CHILD_CERTIFIED` | **YES** |
+| `Q_xi / Delta H` | **OPEN -- matched-parent restriction absent** |
+| `FULL_BHSM_COMPLETE` | **FALSE** |
+
+Evidence: [`continuum certificate`](artifacts/n12_continuum_majorant_effectiveness/BHSM_CONTINUUM_EVENT_CHILD_CERTIFICATE.json),
+[`Q_xi ownership audit`](artifacts/qxi_relative_energy_preparation/BHSM_N12_MATCHED_PARENT_QXI_OWNERSHIP.json),
+and [`reuse table`](artifacts/qxi_relative_energy_preparation/BHSM_QXI_RELATIVE_ENERGY_REUSE_TABLE.json).
+
+Exact next object:
+
+`DERIVE_THE_ACTION_OWNED_MATCHED_PARENT_RESTRICTION_R_P_FROM_THE_COMPLETE_PARENT_COMPOSITE_ACTION`
+
+## Prior N12 source-tail checkpoint (superseded by the continuum certificate above)
 
 BHSM now has a directly corrected `N=12` complete persistent child under the
 unchanged retained 57-row finite-resolution map. Its independently evaluated

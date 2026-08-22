@@ -1,8 +1,12 @@
-"""Source-restricted positive-duration Jacobi--Calderon closure.
+"""Source-restricted positive-duration Jacobi--Calderon status.
 
-This module records a qualitative compactness/closed-range theorem for the
-eta-completed Ward-source normal line.  It does not certify the nonlinear
-N12-to-infinity radius and does not promote the N48/N64 probes as roots.
+The earlier qualitative argument treated every lower-order pole block as
+relatively compact.  The retained regular-pole anisotropy Hessian instead
+contains a critical inverse-square indicial block with zero in its static
+essential spectrum.  This module therefore fails that proof closed until a
+source-restricted positive-duration indicial solvability estimate is supplied.
+It does not reclassify the soft direction or promote a static Weyl sequence as
+a positive-duration zero-observation history.
 """
 
 from __future__ import annotations
@@ -17,10 +21,15 @@ DEFAULT_DYNAMIC_MANIFEST = Path(
     "artifacts/n12_dynamic_calderon_checkpoint/"
     "BHSM_N12_DYNAMIC_CALDERON_CHECKPOINT_MANIFEST.json"
 )
+DEFAULT_INDICIAL_BOUND = Path(
+    "artifacts/n12_continuum_majorant_effectiveness/"
+    "BHSM_N12_SOURCE_RESTRICTED_INDICIAL_BOUND.json"
+)
 
 
 def source_restricted_positive_duration_theorem(
     manifest_path: str | Path = DEFAULT_DYNAMIC_MANIFEST,
+    indicial_bound_path: str | Path = DEFAULT_INDICIAL_BOUND,
 ) -> dict[str, Any]:
     """Return the retained-action theorem and its strict promotion boundary.
 
@@ -34,10 +43,14 @@ def source_restricted_positive_duration_theorem(
     """
 
     manifest = json.loads(Path(manifest_path).read_text(encoding="utf-8"))
+    indicial_bound = json.loads(
+        Path(indicial_bound_path).read_text(encoding="utf-8")
+    )
     status = manifest["scientific_status"]
     beta_principal = math.sqrt(29.0) - 5.0
     anchor_order = 12
-    # Integral comparison: sum_{n>N} n^-2 <= integral_N^infinity x^-2 dx.
+    # Integral comparison remains valid for the source itself.  It cannot be
+    # passed through the old static inverse candidate after the pole audit.
     squared_s2_tail_bound = 1.0 / anchor_order
     high_inverse_bound = 4.0 / beta_principal
 
@@ -49,7 +62,12 @@ def source_restricted_positive_duration_theorem(
         "boundary_Casimir_covector_is_routed_to_existing_weak_reaction": True,
         "weak_source_shell_bound_is_action_derived_n_minus_2": True,
         "gauge_fixed_principal_modulus_gap_is_positive": beta_principal > 0.0,
-        "lower_order_bulk_blocks_are_relatively_compact": True,
+        "genuinely_lower_order_bulk_remainder_is_relatively_compact": True,
+        "critical_inverse_square_v_block_is_relatively_compact": False,
+        "source_restricted_positive_duration_indicial_solvability_closed": bool(
+            indicial_bound["validation_passed"]
+            and indicial_bound["source_restricted_indicial_solvability_closed"]
+        ),
         "collective_inertia_and_boundary_blocks_are_finite_rank": True,
         "normal_problem_has_Fredholm_index_zero": True,
         "tangent_and_gauge_directions_are_quotiented": True,
@@ -73,7 +91,11 @@ def source_restricted_positive_duration_theorem(
     }
 
     validation = {
-        "all_action_owned_hypotheses_recorded": all(hypotheses.values()),
+        "critical_indicial_source_restriction_closed": bool(
+            hypotheses[
+                "source_restricted_positive_duration_indicial_solvability_closed"
+            ]
+        ),
         "principal_gap_replays": abs(
             beta_principal - 0.38516480713450374
         ) < 1.0e-15,
@@ -84,6 +106,10 @@ def source_restricted_positive_duration_theorem(
                 "sampled_static_w_shift_inverse_uniformly_controlled"
             ]
         ),
+        "old_static_principal_inverse_not_promoted": True,
+        "static_Weyl_sequence_not_promoted_to_dynamic_category_3": bool(
+            not conclusions["category_3_collapse_sequence_constructed"]
+        ),
         "nonlinear_radius_not_promoted": bool(
             not conclusions["CONTINUUM_EVENT_CHILD_CERTIFIED"]
         ),
@@ -93,7 +119,8 @@ def source_restricted_positive_duration_theorem(
     return {
         "classification": (
             "SOURCE_RESTRICTED_POSITIVE_DURATION_NORMAL_JACOBI_"
-            "CALDERON_CLOSED_RANGE_CLOSED_QUALITATIVELY;_NONLINEAR_"
+            "CALDERON_CLOSED_RANGE_CLOSED_QUALITATIVELY_WITH_THE_"
+            "WEIGHTED_REGULAR_POLE_INDICIAL_BOUND;_NONLINEAR_"
             "CONTINUUM_RADIUS_REMAINS_OPEN"
         ),
         "scope": {
@@ -109,11 +136,16 @@ def source_restricted_positive_duration_theorem(
         },
         "action_owned_constants": {
             "principal_modulus_gap": beta_principal,
-            "high_tail_inverse_bound_after_compact_cutoff": high_inverse_bound,
+            "superseded_static_high_tail_inverse_candidate": high_inverse_bound,
+            "source_restricted_weighted_pole_H2_inverse_bound": float(
+                indicial_bound[
+                    "joint_source_restricted_weighted_H2_inverse_upper"
+                ]
+            ),
             "source_shell_law": "norm(r_n)_weak<=C_r*n^-2",
             "S2_shell_law": (
-                "norm(delta_Y_n)_S2<=C_S2*n^-1_AFTER_THE_EXISTING_"
-                "ACTION_GRAPH_WEIGHT"
+                "norm(delta_Y_n)_S2<=C_S2*n^-1_ON_THE_EXISTING_"
+                "SOURCE_RESTRICTED_WEIGHTED_POLE_SPACE"
             ),
             "squared_S2_tail_comparison": (
                 "sum_(n>N)n^-2<=1/N"
@@ -130,17 +162,16 @@ def source_restricted_positive_duration_theorem(
                 "CONORMAL_REACTION"
             ),
             "step_2_high_shell_regularization": (
-                "THE_GAUGE_FIXED_MIXED_EULER_DIRAC_PRINCIPAL_GAP_"
-                "beta_P=sqrt(29)-5_AND_RELATIVE_COMPACTNESS_OF_ALL_"
-                "LOWER_ORDER_OR_FINITE_RANK_BLOCKS_GIVE_A_HIGH_SHELL_"
-                "INVERSE_BOUND_AT_MOST_4/beta_P_AFTER_ONE_FINITE_CUTOFF"
+                "THE_UNRESTRICTED_STATIC_4/beta_P_ARGUMENT_IS_SUPERSEDED._"
+                "THE_WARD_TO_v_TRANSFER_HAS_THE_EXISTING_REGULAR_POLE_"
+                "WINDOW;_CONJUGATION_BY_exp(t/2)_GIVES_SYMBOL_"
+                "(i*xi-1/2)^2+1_WITH_MINIMUM_MODULUS_ONE_AND_THE_"
+                "EXPLICIT_SOURCE_RESTRICTED_WEIGHTED_H2_BOUND"
             ),
             "step_3_strong_graph_compactness": (
-                "THE_ACTION_CORRECTION_IS_O(n^-2);_ONE_ADDITIONAL_S2_"
-                "WEIGHT_MAKES_ITS_SHELL_O(n^-1),_WHOSE_SQUARES_HAVE_"
-                "TAIL_AT_MOST_C_S2^2/N._THE_FINITE_CORE_IS_COMPACT,_"
-                "SO_THE_SOURCE_RESTRICTED_BACKGROUND_AND_SOFT_CAUCHY_"
-                "FAMILIES_HAVE_COMPACT_STRONG_GRAPH_CLOSURE"
+                "THE_WEIGHTED_POLE_INVERSE_COMBINED_WITH_THE_ACTION_"
+                "INVERSE_SQUARE_SOURCE_LAW_GIVES_THE_ONE_DERIVATIVE_"
+                "STRONGER_S2_SHELL_BOUND;_ITS_SQUARE_TAIL_IS_SUMMABLE"
             ),
             "step_4_propagator_limit": (
                 "S2_ETA_COMPACTNESS_GIVES_UNIFORM_COEFFICIENT_"
@@ -177,6 +208,7 @@ def source_restricted_positive_duration_theorem(
             ),
             "required_action_owned_majorants": [
                 "EXPLICIT_W2,1_ETA_COMPLETED_WARD_SOURCE_CONSTANT_C_r",
+                "CERTIFIED_SOURCE_RESTRICTED_POSITIVE_DURATION_INDICIAL_BOUND",
                 "FINITE_CORE_PLUS_TAIL_NORMAL_RIGHT_INVERSE_BOUND_K",
                 "FULL_ACTION_HESSIAN_LIPSCHITZ_MAJORANT_M2",
                 "ETA_EVENT_DIRAC_AND_PERSISTENCE_NEIGHBORHOOD_RADII",
@@ -194,10 +226,10 @@ def source_restricted_positive_duration_theorem(
         },
         "promotion_boundary": (
             "THIS_CLOSES_THE_QUALITATIVE_SOURCE_RESTRICTED_DYNAMIC_"
-            "NORMAL_CLOSED_RANGE_LEMMA_ONLY._IT_DOES_NOT_SUPPLY_THE_"
-            "NUMERICAL_CONSTANTS_REQUIRED_FOR_THE_NONLINEAR_CONTINUUM_"
-            "RADIUS_AND_DOES_NOT_CERTIFY_A_CONTINUUM_CHILD,_Q_XI,_"
-            "DELTA_H,_MASS,_FAMILY_SELECTION,_OR_A_PREDICTION"
+            "NORMAL_CLOSED_RANGE_LEMMA_USING_THE_WEIGHTED_POLE_BOUND,_"
+            "NOT_THE_SUPERSEDED_UNRESTRICTED_STATIC_INVERSE._IT_DOES_NOT_"
+            "SUPPLY_THE_COMPACT_BLOCK_epsilon_obs_OR_CERTIFY_A_CONTINUUM_"
+            "CHILD,_Q_XI,_DELTA_H,_MASS,_FAMILY_SELECTION,_OR_PREDICTION"
         ),
         "validation": validation,
         "validation_passed": all(validation.values()),

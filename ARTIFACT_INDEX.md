@@ -1,6 +1,21 @@
 # BHSM Artifact Index
 
-## Current N12 correlated-root finite-core and inverse-square checkpoint
+## Current continuum-child and Qxi-ownership checkpoint
+
+- [`BHSM_CONTINUUM_EVENT_CHILD_CERTIFICATE.json`](artifacts/n12_continuum_majorant_effectiveness/BHSM_CONTINUUM_EVENT_CHILD_CERTIFICATE.json)
+- [`BHSM_N12_FIRST_SUFFICIENT_COMPACT_CUTOFF.json`](artifacts/n12_continuum_majorant_effectiveness/BHSM_N12_FIRST_SUFFICIENT_COMPACT_CUTOFF.json)
+- [`BHSM_N12_COMPACT_OBSERVATION_MODULI_AUDIT.json`](artifacts/n12_continuum_majorant_effectiveness/BHSM_N12_COMPACT_OBSERVATION_MODULI_AUDIT.json)
+- [`BHSM_N12_MATCHED_PARENT_QXI_OWNERSHIP.json`](artifacts/qxi_relative_energy_preparation/BHSM_N12_MATCHED_PARENT_QXI_OWNERSHIP.json)
+- [`BHSM_QXI_RELATIVE_ENERGY_REUSE_TABLE.json`](artifacts/qxi_relative_energy_preparation/BHSM_QXI_RELATIVE_ENERGY_REUSE_TABLE.json)
+- Reproduction: [`certify_n12_continuum_event_child.py`](scripts/certify_n12_continuum_event_child.py), [`audit_n12_matched_parent_qxi_ownership.py`](scripts/audit_n12_matched_parent_qxi_ownership.py), and [`materialize_qxi_relative_energy_reuse_table.py`](scripts/materialize_qxi_relative_energy_reuse_table.py)
+- Focused tests: [`test_bhsm_continuum_event_child_certificate.py`](tests/test_bhsm_continuum_event_child_certificate.py), [`test_bhsm_n12_matched_parent_qxi_ownership.py`](tests/test_bhsm_n12_matched_parent_qxi_ownership.py), and [`test_bhsm_qxi_relative_energy_reuse_table.py`](tests/test_bhsm_qxi_relative_energy_reuse_table.py)
+
+The N12 anchor plus the exact action-Galerkin tail and nonlinear radius certify
+a resolution-independent child. The downstream charge remains fail closed at
+the absent action-owned matched-parent restriction; no local energy is promoted
+to `Q_xi`, `Delta H`, mass, or a prediction.
+
+## Prior N12 correlated-root finite-core and inverse-square checkpoint
 
 - [`BHSM_N12_CALDERON_ROOT_ENCLOSURE_CHECKPOINT.json`](artifacts/n12_direct_checkpoint/BHSM_N12_CALDERON_ROOT_ENCLOSURE_CHECKPOINT.json)
 - [`BHSM_N12_CALDERON_DIRECTED_CENTER.json`](artifacts/n12_direct_checkpoint/BHSM_N12_CALDERON_DIRECTED_CENTER.json)

@@ -2,10 +2,28 @@
 
 ## Current public claim boundary
 
-Current public identifier: **N12 sharp retained-action source tail closed;
-explicit high-shell normal cutoff open**.
-This is not a release and does not claim an N16 root, continuum closure, or
-BHSM completion.
+Current public identifier: **continuum event-child certified; matched-parent
+Qxi restriction open**. This is not a release and does not claim `Q_xi`,
+`Delta H`, mass, a blind prediction, or BHSM completion.
+
+Supported now: the certified N12 complete persistent child extends to a
+resolution-independent child through the exact four-row trace-compatible
+action-Galerkin projector, four retained compact-block moduli, quantitative
+normal inverse, action-derived inverse-square source tail, and nonlinear radii
+certificate. The selected proof margin gives `K <= 9.818810450848289e18`,
+`D1 <= 1.795995767425834e-128`, and a positive nonlinear discriminant, with
+the summed correction inside every existing physical neighborhood. No
+higher-resolution root, new physical row, gate, fitted coefficient, scale, or
+empirical input is used.
+
+Not supported: treating the event-side Cauchy state as the matched parent,
+calling `v^T partial_v L-L` a complete covariant `Q_xi`, or calling its
+child-minus-event difference `Delta H`, mass, or a prediction. The current
+retained N12 state/action API does not define the required parent-only
+restriction `R_P: Phi_(P+C) -> Phi_P^matched` or the boundary-improved common
+reference charge. That is the first open action-owned dependency.
+
+## Prior N12 source-tail claim boundary (superseded)
 
 Supported now: N3, N4, N5, N6, and direct N12 reconstruct complete persistent
 children under their retained finite-resolution equations. The corrected N12

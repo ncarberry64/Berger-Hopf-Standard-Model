@@ -1,0 +1,129 @@
+{
+  "CONTINUUM_EVENT_CHILD_CERTIFIED": false,
+  "C_ED_G_evaluable_after_desingularized_remainder_enclosure": true,
+  "FULL_BHSM_COMPLETE": false,
+  "classification": "FULL_GAUGE_FIXED_RANK_TWO_REGULAR_POLE_SOURCE_RESTRICTED_INDICIAL_BOUND_CLOSED;_THE_CONFORMAL_AND_BERGER_CRITICAL_LINES_ARE_BOTH_RETAINED_IN_THE_PRINCIPAL_OPERATOR",
+  "epsilon_obs_M_evaluable": false,
+  "first_missing_action_owned_object": "INTERVAL_ENCLOSE_THE_ENDPOINT_ELIGIBLE_DESINGULARIZED_REMAINDER_MATRIX_AND_ITS_STATE_LIPSCHITZ_NORM_TO_OBTAIN_C_ED_G",
+  "full_rank_two_source_restricted_indicial_solvability_closed": true,
+  "high_shell_reduction": {
+    "derivative_matrix_P": [
+      [
+        "10",
+        "0",
+        "2"
+      ],
+      [
+        "0",
+        "-2",
+        "0"
+      ],
+      [
+        "2",
+        "0",
+        "0"
+      ]
+    ],
+    "new_quotient_or_physical_constraint": false,
+    "scale_rho": "EXISTING_SINGLE_FINITE_CORE_COORDINATE",
+    "variables": [
+      "u",
+      "b",
+      "logN"
+    ],
+    "w_and_shift": "EXISTING_BOUNDARY_COMPATIBLE_GAUGE_QUOTIENT",
+    "zero_order_rank_two_matrix_M": [
+      [
+        "150",
+        "30",
+        "30"
+      ],
+      [
+        "30",
+        "12",
+        "6"
+      ],
+      [
+        "30",
+        "6",
+        "6"
+      ]
+    ]
+  },
+  "inputs": {
+    "artifacts/n12_continuum_majorant_effectiveness/BHSM_N12_ENDPOINT_SAFE_ED_REMAINDER.json": "B67BE91D6E733A19E0EA77EC669269247231F971B7A12CCD05B7AF5F240A4BF8",
+    "artifacts/n12_continuum_majorant_effectiveness/BHSM_N12_SOURCE_RESTRICTED_INDICIAL_BOUND.json": "6AC2786682AB74185A424122187D559359002CA09EEE3C6E19E4FE914459A996"
+  },
+  "joint_full_rank_two_weighted_H2_inverse_upper": 0.6802884193701528,
+  "logarithmic_symbol": {
+    "coordinate": "t=-log(chi)",
+    "determinant": "-216*(z - 1)*(z + 1)*(z**4 - 5*z**2 - 1)",
+    "operator": "c0*(-3*P*D_t^2+3*P+M)",
+    "symbol_in_z": [
+      [
+        "-30*(z**2 - 6)",
+        "30",
+        "-6*(z**2 - 6)"
+      ],
+      [
+        "30",
+        "6*(z**2 + 1)",
+        "6"
+      ],
+      [
+        "-6*(z**2 - 6)",
+        "6",
+        "6"
+      ]
+    ],
+    "unitary_unknown": "g=chi*(delta_u,delta_b,delta_logN)",
+    "unweighted_thresholds_remain_part_of_the_static_spectrum": true
+  },
+  "previous_scalar_Berger_bound_invalidated": false,
+  "previous_scalar_Berger_bound_is_sufficient_for_full_rank_two_block": false,
+  "root_ball_coefficient_enclosure": {
+    "child": {
+      "full_rank_two_weighted_H2_inverse_upper": 0.6802884193701528,
+      "previous_Berger_line_weighted_H2_inverse_upper": 0.004749681321879146,
+      "root_ball_c_lower": 70.72630423259663
+    },
+    "event": {
+      "full_rank_two_weighted_H2_inverse_upper": 0.3653238903281482,
+      "previous_Berger_line_weighted_H2_inverse_upper": 0.0025506417703455037,
+      "root_ball_c_lower": 131.70309138848702
+    }
+  },
+  "source_restricted_weighted_proof": {
+    "Frobenius_norm_squared": "9*(112*y**2 + 1344*y + 3789)",
+    "absolute_determinant_squared_in_y_equals_xi_squared": "729*(4*y + 1)*(4*y + 9)*(256*y**4 + 2816*y**3 + 6624*y**2 + 1264*y + 1225)/64",
+    "alpha": "1/2",
+    "derivative_numerator": "-288*(y + 1)*(112*y**2 + 1344*y + 3789)*(2867200*y**7 + 57561088*y**6 + 420142080*y**5 + 1402680576*y**4 + 2265303360*y**3 + 1629320304*y**2 + 304661460*y + 57791007)",
+    "exact_H2_symbol_inverse_upper_before_c0": "1684/35",
+    "inverse_majorant_squared": "16*(y + 1)**2*(112*y**2 + 1344*y + 3789)**2/(9*(4*y + 1)*(4*y + 9)*(256*y**4 + 2816*y**3 + 6624*y**2 + 1264*y + 1225))",
+    "large_frequency_limit": "7/3",
+    "maximum_occurs_at_xi": 0.0,
+    "positive_degree_seven_factor_coefficients": [
+      2867200,
+      57561088,
+      420142080,
+      1402680576,
+      2265303360,
+      1629320304,
+      304661460,
+      57791007
+    ],
+    "singular_value_inequality": "sigma_min(S)>=2*abs(det(S))/norm(S)_F^2",
+    "substitution": "z=i*xi-1/2"
+  },
+  "validation": {
+    "all_root_ball_pole_coefficients_positive": true,
+    "endpoint_rank_two_matrix_consumed": true,
+    "exact_maximum_inverse_majorant_is_1684_over_35": true,
+    "existing_scalar_source_restricted_indicial_bound_consumed": true,
+    "full_symbol_determinant_factorized_exactly": true,
+    "inverse_bound_is_monotone_decreasing_in_xi_squared": true,
+    "no_new_equation_constraint_gate_scale_fit_or_event_definition": true,
+    "weighted_symbol_has_no_real_zero": true
+  },
+  "validation_passed": true
+}

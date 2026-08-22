@@ -1,6 +1,37 @@
 # Current BHSM status
 
-## Authoritative frontier: N12 sharp source tail closed; normal cutoff open
+## Authoritative frontier: continuum child certified; matched-parent Qxi open
+
+The direct N12 complete persistent child now anchors a certified
+resolution-independent event-to-child construction. The exact four-row
+trace-compatible action-Galerkin projector, the four retained compact-block
+moduli, quantitative normal inverse, inverse-square action source tail, and
+nonlinear radii polynomial place the N12-to-infinity correction inside every
+existing physical neighborhood. At the selected proof margin,
+`K <= 9.818810450848289e18`, `D1 <= 1.795995767425834e-128`, and the nonlinear
+discriminant is positive. No higher-resolution root or changed equation, gate,
+scale, coefficient, or event definition is used.
+
+- `N12 COMPLETE PERSISTENT CHILD = YES`
+- `CONTINUUM_EVENT_CHILD_CERTIFIED = TRUE`
+- `Q_xi / Delta H = OPEN`
+- `FULL_BHSM_COMPLETE = FALSE`
+
+The first open dependency is not another continuum estimate. The retained N12
+state/action API has no action-owned matched-parent restriction
+`R_P: Phi_(P+C) -> Phi_P^matched`; the event-side Cauchy state is not a
+parent-only reference. The complete common-reference covariant charge also
+requires the retained symplectic boundary improvement. Local Legendre energy
+is therefore diagnostic only and is not `Q_xi`, `Delta H`, mass, or a
+prediction.
+
+Exact next object:
+`DERIVE_THE_ACTION_OWNED_MATCHED_PARENT_RESTRICTION_R_P_FROM_THE_COMPLETE_PARENT_COMPOSITE_ACTION`.
+
+Evidence: [`continuum certificate`](../artifacts/n12_continuum_majorant_effectiveness/BHSM_CONTINUUM_EVENT_CHILD_CERTIFICATE.json)
+and [`Q_xi ownership audit`](../artifacts/qxi_relative_energy_preparation/BHSM_N12_MATCHED_PARENT_QXI_OWNERSHIP.json).
+
+## Prior N12 source-tail frontier (superseded)
 
 The unchanged retained N12 57-row event/child map now has a directly corrected
 complete persistent child. Its independently evaluated residual is

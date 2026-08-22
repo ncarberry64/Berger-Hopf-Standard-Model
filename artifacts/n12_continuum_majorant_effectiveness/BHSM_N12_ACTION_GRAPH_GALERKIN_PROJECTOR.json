@@ -1,0 +1,582 @@
+{
+  "CONTINUUM_EVENT_CHILD_CERTIFIED": false,
+  "FULL_BHSM_COMPLETE": false,
+  "M_star_certified": false,
+  "analytic_countersequence": {
+    "asymptotic_conclusion": "a0~(pi*K)^-1/2_AND_norm(h_K)=O(K^-1),_SO_ANY_RAW_COEFFICIENT_PROJECTION_RETAINING_b0_HAS_UNBOUNDED_OPERATOR_NORM_IN_THE_ACTION_GRAPH",
+    "basis_membership": "h_K_IS_IN_THE_WINDOWED_COSINE_SPACE_THROUGH_MODE_K",
+    "definition": "w=sin(2chi)^2,_y=cos(4chi)=1-2w,_h_K=w*(1-w)^K/a0(K),_a0(K)=4^-K*binomial(2K,K)",
+    "exact_norm_formula": "norm(h_K)^2=a0^-2*{0.5*[B(3,b)-2(K+1)B(4,b)+(K+1)^2B(5,b)]+B(4,2K+1/2)/32},_b=2K-1/2",
+    "finite_rows_are_the_proof": false,
+    "fixed_low_coordinate": "RAW_b0(h_K)=1",
+    "proof_owner": "EXACT_BETA_FUNCTION_IDENTITY_AND_STANDARD_STIRLING_ASYMPTOTICS",
+    "rows": [
+      {
+        "K": 8,
+        "K_times_graph_norm": 0.5390023413829084,
+        "canonical_omega_graph_norm": 0.06737529267286355,
+        "constant_Chebyshev_coefficient_a0": 0.196380615234375,
+        "maximum_basis_mode_index": 8,
+        "raw_b0_after_normalization": 1.0,
+        "required_resolution": 9
+      },
+      {
+        "K": 16,
+        "K_times_graph_norm": 0.5790876799112101,
+        "canonical_omega_graph_norm": 0.03619297999445063,
+        "constant_Chebyshev_coefficient_a0": 0.13994993409141898,
+        "maximum_basis_mode_index": 16,
+        "raw_b0_after_normalization": 1.0,
+        "required_resolution": 17
+      },
+      {
+        "K": 32,
+        "K_times_graph_norm": 0.60181057655643,
+        "canonical_omega_graph_norm": 0.018806580517388437,
+        "constant_Chebyshev_coefficient_a0": 0.09934675374796689,
+        "maximum_basis_mode_index": 32,
+        "raw_b0_after_normalization": 1.0,
+        "required_resolution": 33
+      },
+      {
+        "K": 64,
+        "K_times_graph_norm": 0.6139499873499012,
+        "canonical_omega_graph_norm": 0.009592968552342207,
+        "constant_Chebyshev_coefficient_a0": 0.07038609217001514,
+        "maximum_basis_mode_index": 64,
+        "raw_b0_after_normalization": 1.0,
+        "required_resolution": 65
+      },
+      {
+        "K": 128,
+        "K_times_graph_norm": 0.6202300790132602,
+        "canonical_omega_graph_norm": 0.0048455474922910954,
+        "constant_Chebyshev_coefficient_a0": 0.04981910993614015,
+        "maximum_basis_mode_index": 128,
+        "raw_b0_after_normalization": 1.0,
+        "required_resolution": 129
+      },
+      {
+        "K": 256,
+        "K_times_graph_norm": 0.6234248872213332,
+        "canonical_omega_graph_norm": 0.0024352534657083326,
+        "constant_Chebyshev_coefficient_a0": 0.03524463548583874,
+        "maximum_basis_mode_index": 256,
+        "raw_b0_after_normalization": 1.0,
+        "required_resolution": 257
+      },
+      {
+        "K": 512,
+        "K_times_graph_norm": 0.6250362648841739,
+        "canonical_omega_graph_norm": 0.001220773954851902,
+        "constant_Chebyshev_coefficient_a0": 0.024927805892979545,
+        "maximum_basis_mode_index": 512,
+        "raw_b0_after_normalization": 1.0,
+        "required_resolution": 513
+      },
+      {
+        "K": 1024,
+        "K_times_graph_norm": 0.6258454832771597,
+        "canonical_omega_graph_norm": 0.0006111772297628513,
+        "constant_Chebyshev_coefficient_a0": 0.01762877240484652,
+        "maximum_basis_mode_index": 1024,
+        "raw_b0_after_normalization": 1.0,
+        "required_resolution": 1025
+      }
+    ]
+  },
+  "classification": "RAW_COEFFICIENT_TRUNCATION_IS_NOT_UNIFORMLY_BOUNDED_IN_THE_RETAINED_ACTION_WEIGHTED_TRACE_GRAPH;_THE_EXACT_ACTION_ORTHOGONAL_GALERKIN_PROJECTOR_IS_THE_REQUIRED_STABLE_NESTED_PROJECTION",
+  "critical_regular_pole_block_routing": "THE_WEIGHTED_L2_FORTIN_ESTIMATE_APPLIES_ONLY_TO_GENUINELY_COMPACT_OMEGA_WEIGHTED_BLOCKS;_THE_RETAINED_v_INVERSE_SQUARE_REGULAR_POLE_BLOCK_IS_PART_OF_THE_INDICIAL_PRINCIPAL_OPERATOR_AND_IS_NOT_COUNTED_AS_COMPACT",
+  "exact_next_dependency": "ENCLOSE_C_ED^G_IN_THE_SOURCE_RESTRICTED_FULL_MIXED_GRAPH;_THEN_REUSE_THE_SAME_FACTORIZATION_FOR_THE_ORDERED_EVENT,_MOMENTUM_FLUX,_AND_GAUSS_CONSISTENCY_BLOCKS",
+  "exact_weighted_polynomial_reduction": {
+    "bulk_Jacobi_derivative_eigenvalue": "n*(n+3/2)",
+    "bulk_Jacobi_parameters": "alpha=-1/2,_beta=1",
+    "coordinate": "w=sin(2chi)^2_IN_[0,1]",
+    "derivative_identity": "omega(chi)*abs(df/dchi)^2*dchi=w^2*(1-w)^(1/2)*abs(df/dw)^2*dw/2",
+    "finite_constraint_resolution": "IN_THE_ORTHONORMAL_JACOBI_COEFFICIENTS_THE_BULK_GRAPH_DIAGONAL_IS_d_n=n*(n+3/2)/2+1/32;_THE_ATTACHMENT_CONDITION_IS_A_CONTINUOUS_RANK_ONE_ENDPOINT_FUNCTIONAL;_THE_WINDOWED_REGULAR_POLE_CONDITION_CONTRIBUTES_ONE_FINITE_M_POLE_REPRODUCING_KERNEL_WHOSE_WEIGHTED_L2_TO_G_RATIO_IS_COMPUTED_BY_THE_EXACT_TWO_BY_TWO_ENDPOINT_SCHUR_FORM",
+    "measure_identity": "omega(chi)*dchi=w*(1-w)^(-1/2)*dw/32",
+    "unwindowed_polynomial_space": "span{cos(4kchi)}=POLYNOMIALS_IN_(1-2w)",
+    "windowed_shape_space": "span{sin(2chi)^2*cos(4jchi)}=w*POLYNOMIALS_IN_(1-2w)"
+  },
+  "explicit_weighted_Jacobi_Fortin_tail": {
+    "attachment_tail_inequalities": [
+      "a_n^2=(4^-n*binomial(2n,n))^2<=1/(pi*n)",
+      "1/h_n<=4n_FOR_n>=1",
+      "d_n>=n^2/2_FOR_n>=1",
+      "sum_(n>M)a_n^2/(d_n*h_n)<=8/(pi*M)"
+    ],
+    "common_analytic_envelope": {
+      "bound": "C_F(M)<=4/sqrt(M)",
+      "finite_table_used_as_proof": false,
+      "proof_owner": "EXACT_JACOBI_DIAGONAL,_a_n^2<=1/(pi*n),_h_n^-1<=4n,_d_n>=n^2/2,_zeta(4)=pi^4/90,_AND_THE_EXACT_ENDPOINT_SCHUR_COMPLEMENT",
+      "range": "EVERY_INTEGER_M_GREATER_THAN_OR_EQUAL_TO_12",
+      "scale_u_bound": "C_u(M)<=sqrt(2)/M+sqrt((768+16*zeta(4)/pi)*8/pi)/(24*sqrt(M))<2.258/sqrt(M)",
+      "windowed_shape_bound": "THE_EXACT_TWO_BY_TWO_POLE_ATTACHMENT_SCHUR_FORM_AND_b_n=(-1)^n(n+1)_GIVE_sqrt(R_pole)<=1.5/sqrt(M);_THE_ATTACHMENT_AND_BULK_TERMS_HAVE_THE_SAME_1.849_AND_sqrt(2/M)_OVER_sqrt(M)_BOUNDS,_SO_C_shape(M)<3.758/sqrt(M)<4/sqrt(M)"
+    },
+    "finite_rows_are_a_fit": false,
+    "new_physics_or_gate": false,
+    "operator_bound": "norm((Identity-Pi_M^G)f)_L2(omega)<=C_F(M)*norm(f)_G_ON_THE_EXISTING_TRACE_COMPATIBLE_LOW_SPACE",
+    "proof_owner": "EXACT_JACOBI_DIAGONAL,_FINITE_ENDPOINT_SCHUR_ALGEBRA,_AND_THE_DISPLAYED_ANALYTIC_p_SERIES_REMAINDER",
+    "regular_pole_note": "POINT_EVALUATION_AT_w=0_IS_NOT_CONTINUOUS_IN_G;_IT_IS_THEREFORE_NOT_PROMOTED_AS_A_CONTINUUM_TRACE._ITS_ONLY_EFFECT_IS_THE_EXPLICIT_FINITE_M_WINDOWED_POLE_REPRODUCING_KERNEL_TERM",
+    "rows": [
+      {
+        "M": 12,
+        "attachment_dual_tail_upper": 0.21220659078940599,
+        "existing_scale_core_augmented_u_G_to_weighted_L2_tail_upper": 0.6139040589746563,
+        "finite_low_shape_endpoint_Schur_determinant": 8874.829156282543,
+        "finite_low_u_constraint_Schur_determinant": 152.04277664690852,
+        "next_bulk_graph_diagonal": 94.28125,
+        "scale_fixed_u_G_to_weighted_L2_tail_upper": 1.565740443034516,
+        "scale_fixed_u_zero_Chebyshev_constant_layer_L2_to_G_ratio_squared": 0.9059925020192429,
+        "windowed_shape_G_to_weighted_L2_tail_upper": 0.8977315963068819,
+        "windowed_shape_pole_boundary_layer_L2_to_G_ratio_squared": 0.08055807094799534
+      },
+      {
+        "M": 16,
+        "attachment_dual_tail_upper": 0.1591549430920545,
+        "existing_scale_core_augmented_u_G_to_weighted_L2_tail_upper": 0.5218087861147384,
+        "finite_low_shape_endpoint_Schur_determinant": 15000.696387521806,
+        "finite_low_u_constraint_Schur_determinant": 163.6237469112764,
+        "next_bulk_graph_diagonal": 157.28125,
+        "scale_fixed_u_G_to_weighted_L2_tail_upper": 1.4480449617428108,
+        "scale_fixed_u_zero_Chebyshev_constant_layer_L2_to_G_ratio_squared": 0.8579134530412597,
+        "windowed_shape_G_to_weighted_L2_tail_upper": 0.7491888698502899,
+        "windowed_shape_pole_boundary_layer_L2_to_G_ratio_squared": 0.05170170247953471
+      },
+      {
+        "M": 24,
+        "attachment_dual_tail_upper": 0.10610329539470299,
+        "existing_scale_core_augmented_u_G_to_weighted_L2_tail_upper": 0.4155541396826164,
+        "finite_low_shape_endpoint_Schur_determinant": 32061.50024002715,
+        "finite_low_u_constraint_Schur_determinant": 179.98316948072232,
+        "next_bulk_graph_diagonal": 331.28125,
+        "scale_fixed_u_G_to_weighted_L2_tail_upper": 1.307130070846022,
+        "scale_fixed_u_zero_Chebyshev_constant_layer_L2_to_G_ratio_squared": 0.7949076410290989,
+        "windowed_shape_G_to_weighted_L2_tail_upper": 0.57943915214753,
+        "windowed_shape_pole_boundary_layer_L2_to_G_ratio_squared": 0.026858297310597988
+      },
+      {
+        "M": 32,
+        "attachment_dual_tail_upper": 0.07957747154602725,
+        "existing_scale_core_augmented_u_G_to_weighted_L2_tail_upper": 0.3540601163247929,
+        "finite_low_shape_endpoint_Schur_determinant": 55539.74954681279,
+        "finite_low_u_constraint_Schur_determinant": 191.6122295409814,
+        "next_bulk_graph_diagonal": 569.28125,
+        "scale_fixed_u_G_to_weighted_L2_tail_upper": 1.2222805982576257,
+        "scale_fixed_u_zero_Chebyshev_constant_layer_L2_to_G_ratio_squared": 0.7538068052469268,
+        "windowed_shape_G_to_weighted_L2_tail_upper": 0.48288503308685765,
+        "windowed_shape_pole_boundary_layer_L2_to_G_ratio_squared": 0.016595859178736315
+      },
+      {
+        "M": 48,
+        "attachment_dual_tail_upper": 0.053051647697351496,
+        "existing_scale_core_augmented_u_G_to_weighted_L2_tail_upper": 0.28317076559588805,
+        "finite_low_shape_endpoint_Schur_determinant": 121757.63263618256,
+        "finite_low_u_constraint_Schur_determinant": 208.02739254315225,
+        "next_bulk_graph_diagonal": 1237.28125,
+        "scale_fixed_u_G_to_weighted_L2_tail_upper": 1.1203961105754805,
+        "scale_fixed_u_zero_Chebyshev_constant_layer_L2_to_G_ratio_squared": 0.7009462782754967,
+        "windowed_shape_G_to_weighted_L2_tail_upper": 0.37410748787256165,
+        "windowed_shape_pole_boundary_layer_L2_to_G_ratio_squared": 0.008269487458416597
+      },
+      {
+        "M": 64,
+        "attachment_dual_tail_upper": 0.039788735773013624,
+        "existing_scale_core_augmented_u_G_to_weighted_L2_tail_upper": 0.2420670096008012,
+        "finite_low_shape_endpoint_Schur_determinant": 213662.70431430405,
+        "finite_low_u_constraint_Schur_determinant": 219.68844467616043,
+        "next_bulk_graph_diagonal": 2161.28125,
+        "scale_fixed_u_G_to_weighted_L2_tail_upper": 1.0586941073438334,
+        "scale_fixed_u_zero_Chebyshev_constant_layer_L2_to_G_ratio_squared": 0.6668798167675409,
+        "windowed_shape_G_to_weighted_L2_tail_upper": 0.31273524764551197,
+        "windowed_shape_pole_boundary_layer_L2_to_G_ratio_squared": 0.004993999868338913
+      },
+      {
+        "M": 96,
+        "attachment_dual_tail_upper": 0.026525823848675748,
+        "existing_scale_core_augmented_u_G_to_weighted_L2_tail_upper": 0.19450581046927026,
+        "finite_low_shape_endpoint_Schur_determinant": 474543.3576669306,
+        "finite_low_u_constraint_Schur_determinant": 236.13923624397677,
+        "next_bulk_graph_diagonal": 4777.28125,
+        "scale_fixed_u_G_to_weighted_L2_tail_upper": 0.984022394032418,
+        "scale_fixed_u_zero_Chebyshev_constant_layer_L2_to_G_ratio_squared": 0.6233364357206014,
+        "windowed_shape_G_to_weighted_L2_tail_upper": 0.24376445983829817,
+        "windowed_shape_pole_boundary_layer_L2_to_G_ratio_squared": 0.0024264145376584056
+      },
+      {
+        "M": 128,
+        "attachment_dual_tail_upper": 0.019894367886506812,
+        "existing_scale_core_augmented_u_G_to_weighted_L2_tail_upper": 0.16679682297590015,
+        "finite_low_shape_endpoint_Schur_determinant": 838189.9423325973,
+        "finite_low_u_constraint_Schur_determinant": 247.81970826267536,
+        "next_bulk_graph_diagonal": 8417.28125,
+        "scale_fixed_u_G_to_weighted_L2_tail_upper": 0.9383797944602288,
+        "scale_fixed_u_zero_Chebyshev_constant_layer_L2_to_G_ratio_squared": 0.595340281883991,
+        "windowed_shape_G_to_weighted_L2_tail_upper": 0.20480803780753187,
+        "windowed_shape_pole_boundary_layer_L2_to_G_ratio_squared": 0.0014448524529750133
+      },
+      {
+        "M": 256,
+        "attachment_dual_tail_upper": 0.009947183943253406,
+        "existing_scale_core_augmented_u_G_to_weighted_L2_tail_upper": 0.11570116679008986,
+        "finite_low_shape_endpoint_Schur_determinant": 3320469.9708405687,
+        "finite_low_u_constraint_Schur_determinant": 275.9822940325914,
+        "next_bulk_graph_diagonal": 33217.28125,
+        "scale_fixed_u_G_to_weighted_L2_tail_upper": 0.8481220290395394,
+        "scale_fixed_u_zero_Chebyshev_constant_layer_L2_to_G_ratio_squared": 0.5364403194576906,
+        "windowed_shape_G_to_weighted_L2_tail_upper": 0.1358937444299162,
+        "windowed_shape_pole_boundary_layer_L2_to_G_ratio_squared": 0.00040774019174000676
+      },
+      {
+        "M": 512,
+        "attachment_dual_tail_upper": 0.004973591971626703,
+        "existing_scale_core_augmented_u_G_to_weighted_L2_tail_upper": 0.08067839767032634,
+        "finite_low_shape_endpoint_Schur_determinant": 13218030.49818684,
+        "finite_low_u_constraint_Schur_determinant": 304.1613574347733,
+        "next_bulk_graph_diagonal": 131969.28125,
+        "scale_fixed_u_G_to_weighted_L2_tail_upper": 0.7789428320116535,
+        "scale_fixed_u_zero_Chebyshev_constant_layer_L2_to_G_ratio_squared": 0.487573220265526,
+        "windowed_shape_G_to_weighted_L2_tail_upper": 0.09131600834428451,
+        "windowed_shape_pole_boundary_layer_L2_to_G_ratio_squared": 0.0001131587608505957
+      },
+      {
+        "M": 1024,
+        "attachment_dual_tail_upper": 0.0024867959858133515,
+        "existing_scale_core_augmented_u_G_to_weighted_L2_tail_upper": 0.056477759492195384,
+        "finite_low_shape_endpoint_Schur_determinant": 52745249.93911149,
+        "finite_low_u_constraint_Schur_determinant": 332.3485948024708,
+        "next_bulk_graph_diagonal": 526081.28125,
+        "scale_fixed_u_G_to_weighted_L2_tail_upper": 0.7247577007083995,
+        "scale_fixed_u_zero_Chebyshev_constant_layer_L2_to_G_ratio_squared": 0.4465980798314866,
+        "windowed_shape_G_to_weighted_L2_tail_upper": 0.06204846669833132,
+        "windowed_shape_pole_boundary_layer_L2_to_G_ratio_squared": 3.103277877646379e-05
+      },
+      {
+        "M": 4096,
+        "attachment_dual_tail_upper": 0.0006216989964533379,
+        "existing_scale_core_augmented_u_G_to_weighted_L2_tail_upper": 0.027893620863676444,
+        "finite_low_shape_endpoint_Schur_determinant": 842408081.1858977,
+        "finite_low_u_constraint_Schur_determinant": 388.7325683275246,
+        "next_bulk_graph_diagonal": 8395777.28125,
+        "scale_fixed_u_G_to_weighted_L2_tail_upper": 0.6460040653046756,
+        "scale_fixed_u_zero_Chebyshev_constant_layer_L2_to_G_ratio_squared": 0.3820605215266674,
+        "windowed_shape_G_to_weighted_L2_tail_upper": 0.02940233602876801,
+        "windowed_shape_pole_boundary_layer_L2_to_G_ratio_squared": 2.2762214493749973e-06
+      }
+    ],
+    "scale_core_augmentation": {
+      "changes_finite_equations_or_boundary_rows": false,
+      "changes_physical_scale": false,
+      "finite_core_direction": "THE_EXACT_G_RIESZ_REPRESENTATIVE_OF_THE_MISSING_CHEBYSHEV_T0_FUNCTIONAL",
+      "physical_owner": "THE_EXISTING_SINGLE_scale_COORDINATE_AND_SCALE/u_NORMALIZATION,_NOT_A_NEW_FIELD_OR_MODE",
+      "use": "KEEP_THIS_ONE_LINE_IN_THE_FINITE_BORDERED_CORE;_THE_REMAINING_u_TAIL_THEN_HAS_THE_DISPLAYED_SCALE_CORE_AUGMENTED_BOUND"
+    },
+    "scale_u_algebraic_identity": "abs(T0(P_n^(-1/2,1)(-cos(theta))))=product_(k=1)^n(1-1/(4k^2))>=2/pi",
+    "scale_u_note": "THE_MISSING_u_CONSTANT_MODE_IS_HANDLED_AS_ITS_EXACT_FINITE_M_CHEBYSHEV_T0_REPRODUCING_KERNEL;_IT_IS_NOT_SILENTLY_REPLACED_BY_A_FULL_POLYNOMIAL_SPACE",
+    "scale_u_rate": "THE_ZERO_CHEBYSHEV_CONSTANT_REPRODUCING_KERNEL_HAS_ENERGY_GROWTH_AT_LEAST_LOGARITHMIC,_SO_ITS_L2_TO_G_RATIO_TENDS_TO_ZERO_WITH_AN_EXPLICIT,_SLOW_LOGARITHMIC_BOUND",
+    "unwindowed_low_space": "AFTER_THE_FOUR_EXISTING_BOUNDARY_ROWS_FIX_THE_SCALE_ERROR,_THE_u_LOW_SPACE_IS_THE_DEGREE_M_POLYNOMIALS_WITH_ZERO_CHEBYSHEV_T0_COEFFICIENT",
+    "windowed_low_space": "w*P_(M-1)_EQUALS_DEGREE_M_POLYNOMIALS_WITH_THE_ALGEBRAIC_REGULAR_POLE_VALUE_ZERO"
+  },
+  "finite_diagnostics": {
+    "shape_b": [
+      {
+        "N": 16,
+        "action_orthogonal_idempotence_defect": 2.7595667076592305e-09,
+        "action_orthogonal_projection_norm_in_natural_graph": 1.0000000000069929,
+        "action_orthogonal_self_adjointness_relative_defect": 1.0214042681701303e-14,
+        "maximum_natural_to_raw_coordinate_norm_ratio_squared": 1.2154509163738885,
+        "minimum_natural_to_raw_coordinate_norm_ratio_squared": 3.778894251037356e-08,
+        "raw_coefficient_low_projection_norm_in_natural_graph": 42.18837255843684
+      },
+      {
+        "N": 24,
+        "action_orthogonal_idempotence_defect": 2.7616384046108515e-09,
+        "action_orthogonal_projection_norm_in_natural_graph": 1.0000000000069929,
+        "action_orthogonal_self_adjointness_relative_defect": 4.504926193811705e-15,
+        "maximum_natural_to_raw_coordinate_norm_ratio_squared": 1.2167413033661485,
+        "minimum_natural_to_raw_coordinate_norm_ratio_squared": 2.6317698063360817e-09,
+        "raw_coefficient_low_projection_norm_in_natural_graph": 351.02297329401597
+      },
+      {
+        "N": 32,
+        "action_orthogonal_idempotence_defect": 2.763440888211029e-09,
+        "action_orthogonal_projection_norm_in_natural_graph": 1.0000000000069926,
+        "action_orthogonal_self_adjointness_relative_defect": 2.537463423836151e-15,
+        "maximum_natural_to_raw_coordinate_norm_ratio_squared": 1.2173760727890266,
+        "minimum_natural_to_raw_coordinate_norm_ratio_squared": 3.838182745423657e-10,
+        "raw_coefficient_low_projection_norm_in_natural_graph": 953.9777518141117
+      },
+      {
+        "N": 48,
+        "action_orthogonal_idempotence_defect": 2.3900631205375894e-09,
+        "action_orthogonal_projection_norm_in_natural_graph": 1.000000000013144,
+        "action_orthogonal_self_adjointness_relative_defect": 6.89055698759596e-15,
+        "maximum_natural_to_raw_coordinate_norm_ratio_squared": 1.2180040065411637,
+        "minimum_natural_to_raw_coordinate_norm_ratio_squared": 2.4567617047819876e-11,
+        "raw_coefficient_low_projection_norm_in_natural_graph": 2949.8475546846166
+      },
+      {
+        "N": 64,
+        "action_orthogonal_idempotence_defect": 2.392287131770133e-09,
+        "action_orthogonal_projection_norm_in_natural_graph": 1.0000000000131188,
+        "action_orthogonal_self_adjointness_relative_defect": 4.5103539690022484e-15,
+        "maximum_natural_to_raw_coordinate_norm_ratio_squared": 1.2183154358662418,
+        "minimum_natural_to_raw_coordinate_norm_ratio_squared": 3.4306573569769574e-12,
+        "raw_coefficient_low_projection_norm_in_natural_graph": 5915.611266304913
+      },
+      {
+        "N": 96,
+        "action_orthogonal_idempotence_defect": 2.396729027107097e-09,
+        "action_orthogonal_projection_norm_in_natural_graph": 1.000000000013119,
+        "action_orthogonal_self_adjointness_relative_defect": 2.4368868341579744e-15,
+        "maximum_natural_to_raw_coordinate_norm_ratio_squared": 1.2186251870168832,
+        "minimum_natural_to_raw_coordinate_norm_ratio_squared": 2.1009214080497872e-13,
+        "raw_coefficient_low_projection_norm_in_natural_graph": 14596.965687323813
+      },
+      {
+        "N": 128,
+        "action_orthogonal_idempotence_defect": 2.4011627488996588e-09,
+        "action_orthogonal_projection_norm_in_natural_graph": 1.0000000000134033,
+        "action_orthogonal_self_adjointness_relative_defect": 1.571726496432003e-15,
+        "maximum_natural_to_raw_coordinate_norm_ratio_squared": 1.218779436407778,
+        "minimum_natural_to_raw_coordinate_norm_ratio_squared": 2.8684645480309436e-14,
+        "raw_coefficient_low_projection_norm_in_natural_graph": 26850.09571159256
+      }
+    ],
+    "u": [
+      {
+        "N": 16,
+        "action_orthogonal_idempotence_defect": 7.636387798498996e-14,
+        "action_orthogonal_projection_norm_in_natural_graph": 1.0000000000000013,
+        "action_orthogonal_self_adjointness_relative_defect": 2.448477416571904e-16,
+        "maximum_natural_to_raw_coordinate_norm_ratio_squared": 0.1330059265912153,
+        "minimum_natural_to_raw_coordinate_norm_ratio_squared": 6.499604523760267e-05,
+        "raw_coefficient_low_projection_norm_in_natural_graph": 3.426072873215718
+      },
+      {
+        "N": 24,
+        "action_orthogonal_idempotence_defect": 7.63760863295804e-14,
+        "action_orthogonal_projection_norm_in_natural_graph": 1.000000000000001,
+        "action_orthogonal_self_adjointness_relative_defect": 1.0735916288240507e-16,
+        "maximum_natural_to_raw_coordinate_norm_ratio_squared": 0.13440772808348245,
+        "minimum_natural_to_raw_coordinate_norm_ratio_squared": 2.042316832110299e-05,
+        "raw_coefficient_low_projection_norm_in_natural_graph": 6.201264100936459
+      },
+      {
+        "N": 32,
+        "action_orthogonal_idempotence_defect": 7.637749768005089e-14,
+        "action_orthogonal_projection_norm_in_natural_graph": 1.000000000000001,
+        "action_orthogonal_self_adjointness_relative_defect": 6.090877342004078e-17,
+        "maximum_natural_to_raw_coordinate_norm_ratio_squared": 0.1351139666805456,
+        "minimum_natural_to_raw_coordinate_norm_ratio_squared": 8.856040430450508e-06,
+        "raw_coefficient_low_projection_norm_in_natural_graph": 7.779154115803144
+      },
+      {
+        "N": 48,
+        "action_orthogonal_idempotence_defect": 1.277931657190561e-13,
+        "action_orthogonal_projection_norm_in_natural_graph": 1.0000000000000058,
+        "action_orthogonal_self_adjointness_relative_defect": 3.584740041986722e-17,
+        "maximum_natural_to_raw_coordinate_norm_ratio_squared": 0.13582395529623642,
+        "minimum_natural_to_raw_coordinate_norm_ratio_squared": 2.6902751256042417e-06,
+        "raw_coefficient_low_projection_norm_in_natural_graph": 9.582470225932534
+      },
+      {
+        "N": 64,
+        "action_orthogonal_idempotence_defect": 1.2806275740731894e-13,
+        "action_orthogonal_projection_norm_in_natural_graph": 1.0000000000000056,
+        "action_orthogonal_self_adjointness_relative_defect": 2.5074022311395828e-17,
+        "maximum_natural_to_raw_coordinate_norm_ratio_squared": 0.13618039885345296,
+        "minimum_natural_to_raw_coordinate_norm_ratio_squared": 1.1472255845356955e-06,
+        "raw_coefficient_low_projection_norm_in_natural_graph": 10.630699250409878
+      },
+      {
+        "N": 96,
+        "action_orthogonal_idempotence_defect": 1.2860394963478112e-13,
+        "action_orthogonal_projection_norm_in_natural_graph": 1.0000000000000056,
+        "action_orthogonal_self_adjointness_relative_defect": 1.4923199294211335e-17,
+        "maximum_natural_to_raw_coordinate_norm_ratio_squared": 0.13653783090392585,
+        "minimum_natural_to_raw_coordinate_norm_ratio_squared": 3.4283903432223193e-07,
+        "raw_coefficient_low_projection_norm_in_natural_graph": 11.862293428174883
+      },
+      {
+        "N": 128,
+        "action_orthogonal_idempotence_defect": 1.2914690559113725e-13,
+        "action_orthogonal_projection_norm_in_natural_graph": 1.0000000000000049,
+        "action_orthogonal_self_adjointness_relative_defect": 1.1589741646156811e-17,
+        "maximum_natural_to_raw_coordinate_norm_ratio_squared": 0.13671692274749442,
+        "minimum_natural_to_raw_coordinate_norm_ratio_squared": 1.45042911549972e-07,
+        "raw_coefficient_low_projection_norm_in_natural_graph": 12.599251168389264
+      }
+    ]
+  },
+  "first_missing_action_owned_modulus": "THE_SOURCE_RESTRICTED_REGULAR_POLE_v_INDICIAL_BLOCK_IS_CLOSED_SEPARATELY;_THE_FIRST_REMAINING_OBJECT_IS_A_FULL_MIXED_(dq,dv,dm)_GRAPH_TO_OBSERVATION_FACTORIZATION_FOR_THE_GENUINELY_COMPACT_INTERIOR_EULER_DIRAC_BLOCK",
+  "full_normal_compact_tail_closed": false,
+  "reclassification": {
+    "classification": "GALERKIN_PROJECTION_CONDITIONING",
+    "previous_comparison_of_weighted_principal_gap_with_raw_frequency_tail_is_a_common_norm_certificate": false,
+    "static_singular_value_collapse_is_a_physical_obstruction": false,
+    "weighted_principal_gap_sqrt29_minus5_invalidated": false
+  },
+  "retained_action_graph": {
+    "canonical_family_norm": "integral_0^(pi/4)omega*(abs(f_prime)^2+abs(f)^2)dchi+abs(f(pi/4))^2",
+    "interval": "0<=chi<=pi/4",
+    "principal_factor": "kappa=3*lapse*R^5*exp(5u-w)>0",
+    "principal_weight": "omega=sin(chi)^3*cos(chi)^3",
+    "raw_frequency_diagonal_is_uniformly_equivalent": false,
+    "reason": "omega_VANISHES_CUBICALLY_AT_THE_REGULAR_POLE"
+  },
+  "stable_projection": {
+    "exact_identities": [
+      "R_M^G*I_M=Identity_M",
+      "(Pi_M^G)^2=Pi_M^G",
+      "(Pi_M^G)^T*G_N=G_N*Pi_M^G",
+      "norm(Pi_M^G)_G=1"
+    ],
+    "injection": "I_M:R^M_TO_R^N_IS_THE_EXISTING_ZERO_PADDING",
+    "new_physics_or_gate": false,
+    "physical_interpretation": "THE_NESTED_FIELD_SUBSPACE_AND_EVERY_BASIS_VARIABLE_KEEP_THEIR_EXISTING_MEANING;_ONLY_THE_PROOF_RESTRICTION_IS_THE_ACTION_GRAPH_BEST_APPROXIMATION_INSTEAD_OF_RAW_COEFFICIENT_DELETION",
+    "projector": "Pi_M^G=I_M*R_M^G",
+    "restriction": "R_M^G=(I_M^T*G_N*I_M)^-1*I_M^T*G_N"
+  },
+  "superseded_claim": "trace_attachment_to_principal_ratio=0.03654402679259201_IS_NOT_A_COMMON_ACTION_GRAPH_NORM_RATIO",
+  "supersedes_common_norm_claim_in": "artifacts/n12_direct_checkpoint/BHSM_N12_PRINCIPAL_COERCIVITY.json",
+  "trace_compatible_galerkin_decomposition": {
+    "boundary_operator": "Gamma_N=THE_EXISTING_THREE_GEOMETRY_TRACE_ROWS_PLUS_THE_INDEPENDENT_SECOND_ATTACHMENT_ROW",
+    "consequence": "THE_BOUNDARY_AND_ATTACHMENT_TRACE_IS_A_FIXED_FINITE_DIMENSIONAL_LIFTED_BLOCK_AND_ITS_INTERIOR_GALERKIN_TAIL_IS_EXACTLY_ZERO;_IT_MUST_NOT_BE_SUBTRACTED_FROM_THE_WEIGHTED_PRINCIPAL_GAP_USING_A_RAW_FREQUENCY_TAIL_NORM",
+    "construction": "P_M,N*x=I_M*H_M*Gamma_N*x+Pi_(I_M*K_M)^G*(x-I_M*H_M*Gamma_N*x)",
+    "exact_identities": [
+      "Gamma_N*I_M=Gamma_M",
+      "Gamma_N*P_M,N=Gamma_N",
+      "Gamma_N*(Identity-P_M,N)=0",
+      "P_M,N*I_M=I_M",
+      "P_M,N^2=P_M,N",
+      "norm(Pi_(I_M*K_M)^G)_G=1"
+    ],
+    "finite_roundoff_diagnostics": {
+      "child": [
+        {
+          "N": 16,
+          "attachment_trace_preservation_defect": 9.894728977932926e-14,
+          "attachment_trace_tail_defect": 9.906826004468104e-14,
+          "full_trace_compatible_projection_norm": 1.0044460171430025,
+          "idempotence_defect": 7.374554931846083e-09,
+          "identity_on_injected_N12_defect": 6.392866952838596e-10,
+          "nested_attachment_trace_defect": 1.0816665110907547e-16,
+          "trace_kernel_action_orthogonal_projection_norm": 1.0000000000169744
+        },
+        {
+          "N": 24,
+          "attachment_trace_preservation_defect": 1.0125009380296816e-13,
+          "attachment_trace_tail_defect": 1.013459017129563e-13,
+          "full_trace_compatible_projection_norm": 1.0097988856655074,
+          "idempotence_defect": 7.374787083133863e-09,
+          "identity_on_injected_N12_defect": 6.392866952838596e-10,
+          "nested_attachment_trace_defect": 1.0816665110907547e-16,
+          "trace_kernel_action_orthogonal_projection_norm": 1.0000000000134786
+        },
+        {
+          "N": 32,
+          "attachment_trace_preservation_defect": 1.0281400847958321e-13,
+          "attachment_trace_tail_defect": 1.0292243797833604e-13,
+          "full_trace_compatible_projection_norm": 1.0130745349048151,
+          "idempotence_defect": 7.374787089667603e-09,
+          "identity_on_injected_N12_defect": 6.392866952838596e-10,
+          "nested_attachment_trace_defect": 1.0816665110907547e-16,
+          "trace_kernel_action_orthogonal_projection_norm": 1.000000000014641
+        },
+        {
+          "N": 48,
+          "attachment_trace_preservation_defect": 2.0648835486673596e-13,
+          "attachment_trace_tail_defect": 2.064976200510311e-13,
+          "full_trace_compatible_projection_norm": 1.017103921501086,
+          "idempotence_defect": 3.896085460201666e-09,
+          "identity_on_injected_N12_defect": 4.903394837961042e-10,
+          "nested_attachment_trace_defect": 1.0816665110907547e-16,
+          "trace_kernel_action_orthogonal_projection_norm": 1.0000000000013383
+        },
+        {
+          "N": 64,
+          "attachment_trace_preservation_defect": 2.1667324311001613e-13,
+          "attachment_trace_tail_defect": 2.1668167172140648e-13,
+          "full_trace_compatible_projection_norm": 1.01961753040136,
+          "idempotence_defect": 3.896085462235043e-09,
+          "identity_on_injected_N12_defect": 4.903394837961042e-10,
+          "nested_attachment_trace_defect": 1.0816665110907547e-16,
+          "trace_kernel_action_orthogonal_projection_norm": 1.0000000000014673
+        }
+      ],
+      "event": [
+        {
+          "N": 16,
+          "attachment_trace_preservation_defect": 2.806026496204427e-13,
+          "attachment_trace_tail_defect": 2.8066289596489306e-13,
+          "full_trace_compatible_projection_norm": 1.0044460171430034,
+          "idempotence_defect": 2.148963015983785e-09,
+          "identity_on_injected_N12_defect": 2.706561324330467e-10,
+          "nested_attachment_trace_defect": 6.009258394948637e-18,
+          "trace_kernel_action_orthogonal_projection_norm": 1.000000000005144
+        },
+        {
+          "N": 24,
+          "attachment_trace_preservation_defect": 3.2258238262722026e-13,
+          "attachment_trace_tail_defect": 3.2263787368651833e-13,
+          "full_trace_compatible_projection_norm": 1.0097988856655071,
+          "idempotence_defect": 2.1489979807831353e-09,
+          "identity_on_injected_N12_defect": 2.7065613243304677e-10,
+          "nested_attachment_trace_defect": 6.009258394948637e-18,
+          "trace_kernel_action_orthogonal_projection_norm": 1.0000000000041336
+        },
+        {
+          "N": 32,
+          "attachment_trace_preservation_defect": 3.584114035524022e-13,
+          "attachment_trace_tail_defect": 3.584631843358464e-13,
+          "full_trace_compatible_projection_norm": 1.0130745349048147,
+          "idempotence_defect": 2.1489979824767806e-09,
+          "identity_on_injected_N12_defect": 2.7065613243304677e-10,
+          "nested_attachment_trace_defect": 6.009258394948637e-18,
+          "trace_kernel_action_orthogonal_projection_norm": 1.0000000000042104
+        },
+        {
+          "N": 48,
+          "attachment_trace_preservation_defect": 1.3651854769423054e-13,
+          "attachment_trace_tail_defect": 1.363825762160864e-13,
+          "full_trace_compatible_projection_norm": 1.0171039215010875,
+          "idempotence_defect": 6.150669261145958e-09,
+          "identity_on_injected_N12_defect": 6.067531126915998e-10,
+          "nested_attachment_trace_defect": 6.009258394948637e-18,
+          "trace_kernel_action_orthogonal_projection_norm": 1.0000000000264095
+        },
+        {
+          "N": 64,
+          "attachment_trace_preservation_defect": 1.476769899943073e-13,
+          "attachment_trace_tail_defect": 1.475431953328992e-13,
+          "full_trace_compatible_projection_norm": 1.0196175304013608,
+          "idempotence_defect": 6.1506692629519556e-09,
+          "identity_on_injected_N12_defect": 6.067531126915998e-10,
+          "nested_attachment_trace_defect": 6.009258394948637e-18,
+          "trace_kernel_action_orthogonal_projection_norm": 1.0000000000259464
+        }
+      ]
+    },
+    "low_action_minimum_norm_right_lift": "H_M=G_M^-1*Gamma_M^T*(Gamma_M*G_M^-1*Gamma_M^T)^-1",
+    "new_physics_or_gate": false,
+    "trace_kernel": "K_M=KER(Gamma_M)"
+  },
+  "validation": {
+    "action_orthogonal_projectors_are_idempotent_to_roundoff": true,
+    "action_orthogonal_projectors_are_unit_norm_to_roundoff": true,
+    "attachment_trace_is_exactly_nested_to_roundoff": true,
+    "common_four_over_sqrt_M_envelope_dominates_all_exact_rows": true,
+    "countersequence_has_fixed_raw_low_coefficient": true,
+    "explicit_Fortin_tail_constants_are_positive": true,
+    "explicit_Fortin_tail_constants_decrease": true,
+    "explicit_countersequence_graph_norm_tends_down": true,
+    "no_finite_projection_growth_fit_used_as_the_proof": true,
+    "physical_equations_rows_gates_and_nested_spaces_unchanged": true,
+    "raw_coefficient_projection_growth_is_diagnostic_only": true,
+    "trace_compatible_projector_preserves_attachment_rows": true,
+    "trace_kernel_projector_is_unit_norm_to_roundoff": true
+  },
+  "validation_passed": true,
+  "weighted_L2_Jacobi_Fortin_tail_closed": true
+}

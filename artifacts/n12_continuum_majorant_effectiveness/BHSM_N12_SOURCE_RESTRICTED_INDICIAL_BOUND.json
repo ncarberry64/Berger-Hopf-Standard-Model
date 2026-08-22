@@ -1,0 +1,69 @@
+{
+  "CONTINUUM_EVENT_CHILD_CERTIFIED": false,
+  "FULL_BHSM_COMPLETE": false,
+  "M_star_certified": false,
+  "category_3_positive_duration_collapse_sequence_constructed": false,
+  "classification": "SOURCE_RESTRICTED_REGULAR_POLE_v_INDICIAL_LIMITING_ABSORPTION_BOUND_CLOSED_ON_THE_CERTIFIED_N12_ROOT_BALL",
+  "exact_next_dependency": "APPLY_THE_WEIGHTED_JACOBI_FORTIN_TAIL_TO_THE_GENUINELY_COMPACT_INTERIOR_ORDERED_EVENT_MOMENTUM_FLUX_AND_GAUSS_BLOCKS,_COMBINE_WITH_THIS_INDICIAL_BOUND,_AND_COMPUTE_THE_FIRST_epsilon_obs_M0_LT_c_M0",
+  "inputs": {
+    "artifacts/n12_continuum_majorant_effectiveness/BHSM_N12_ACTION_GRAPH_GALERKIN_PROJECTOR.json": "73F7F95365EED267297B72EB2D2A45CA8C0495D03BE129E07A69C1CB1EDA4B89",
+    "artifacts/n12_continuum_majorant_effectiveness/BHSM_N12_REGULAR_POLE_INDICIAL_OPERATOR.json": "99A2FC667C3B99C3DD0035E04D9775F034FCBFF85A176556E58A0E5C771E7DBE",
+    "artifacts/n12_continuum_majorant_effectiveness/BHSM_N12_REGULAR_POLE_SOURCE_RESTRICTION.json": "F2E3607336453EF824AFF917827892ED5CB1B771DE4EC9FB45652A4C09232A92",
+    "artifacts/n12_direct_checkpoint/BHSM_N12_COMPLETE_PERSISTENT_CHILD_CERTIFICATE.json": "F5DC5D969410FBCD32DD8466BB2FB2A1BF78B67D5BC39215778D618DF5CF155B"
+  },
+  "joint_source_restricted_weighted_H2_inverse_upper": 0.004749681321879146,
+  "root_ball_coefficient_enclosure": {
+    "action_coordinate_radius": 1e-11,
+    "dual_norm_of_delta_log_c": 5.238250052951117,
+    "formula": "c_lower=c_center*exp(-radius*dual_norm_delta_log_c)",
+    "sectors": {
+      "child": {
+        "center_c": 70.72630423630146,
+        "root_ball_c_lower": 70.72630423259663,
+        "weighted_H2_graph_inverse_upper": 0.004749681321879146,
+        "weighted_L2_inverse_upper": 0.0023565018485704027
+      },
+      "event": {
+        "center_c": 131.70309139538597,
+        "root_ball_c_lower": 131.70309138848702,
+        "weighted_H2_graph_inverse_upper": 0.0025506417703455037,
+        "weighted_L2_inverse_upper": 0.0012654727000678133
+      }
+    }
+  },
+  "source_restricted_indicial_solvability_closed": true,
+  "source_restriction": {
+    "consequence": "THE_INDIRECT_MIXED_WARD_TO_v_FORCING_HAS_AT_LEAST_ONE_SPARE_POWER_OF_chi_AND_BELONGS_TO_exp(alpha*t)L2_FOR_alpha=1/2",
+    "new_domain_or_gate": false,
+    "retained_window": "v_AND_DOT_v_ARE_sin(2chi)^2_TIMES_THE_EXISTING_EVEN_SPECTRAL_SERIES_AND_ARE_O(chi^2)_AT_THE_REGULAR_POLE",
+    "round_pole_symmetry": "INTERCHANGE_OF_THE_EQUAL_A_AND_B_BERGER_FACTORS_SENDS_v_TO_MINUS_v_AND_LEAVES_THE_WARD_MULTIPLIER_SECTOR_INVARIANT"
+  },
+  "unrestricted_static_Weyl_sequence_invalidated": false,
+  "validation": {
+    "both_root_ball_indicial_coefficients_positive": true,
+    "complete_four_row_trace_lift_validated": true,
+    "conjugated_symbol_has_no_real_zero": true,
+    "direct_v_Euler_source_projection_is_zero": true,
+    "exact_Ward_source_support_audit_validated": true,
+    "finite_boundary_trace_owned_by_existing_four_row_lift": true,
+    "indicial_subblock_derivation_validated": true,
+    "mixed_transfer_has_existing_regular_pole_window": true,
+    "no_equation_constraint_gate_scale_fit_or_event_definition_changed": true,
+    "static_Weyl_sequence_excluded_only_from_the_weighted_source_space": true,
+    "unrestricted_static_inverse_not_promoted": true
+  },
+  "validation_passed": true,
+  "weighted_symbol_proof": {
+    "H2_graph_multiplier_maximum": 2.0155644370746373,
+    "H2_graph_multiplier_squared": "(1+xi^2)^2/abs(p_1/2(xi))^2<=65/16",
+    "H2_maximum_occurs_at_xi_squared": 1.3214285714285714,
+    "alpha": 0.5,
+    "conjugated_symbol": "p_alpha(xi)=(i*xi-alpha)^2+1",
+    "coordinate": "t=-log(chi)",
+    "exact_modulus_squared": "abs(p_1/2(xi))^2=xi^4-(3/2)xi^2+25/16",
+    "half_line_trace_treatment": "SUBTRACT_THE_EXISTING_FINITE_FOUR_ROW_TRACE_LIFT_AND_ODD_EXTEND_THE_ZERO_TRACE_REMAINDER;_NO_NEW_BOUNDARY_CONDITION_IS_INTRODUCED",
+    "minimum_occurs_at_abs_xi": 0.8660254037844386,
+    "minimum_symbol_modulus": 1.0,
+    "weight": "exp(alpha*t)=chi^-alpha"
+  }
+}

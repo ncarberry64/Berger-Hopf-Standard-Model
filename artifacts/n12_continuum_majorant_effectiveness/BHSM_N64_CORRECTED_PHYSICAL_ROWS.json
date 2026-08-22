@@ -1,0 +1,99 @@
+{
+  "CONTINUUM_EVENT_CHILD_CERTIFIED": false,
+  "FULL_BHSM_COMPLETE": false,
+  "M_star_certified": false,
+  "boundary_jump_norm": 4.291523656109013e-17,
+  "canonical_momentum": {
+    "child": [
+      -0.07109866611194927,
+      -0.009567778940206878
+    ],
+    "event": [
+      -0.19914815771568428,
+      -0.007289098695202212
+    ],
+    "jump": [
+      0.12804949160373502,
+      -0.0022786802450046667
+    ],
+    "jump_norm": 0.12806976490817018
+  },
+  "classification": "N64_CORRECTED_CONSTRAINT_ORDERED_EVENT_AND_MOMENTUM_ROWS_EVALUATED;_DYNAMIC_FLUX_AND_NONLINEAR_COMPLETION_REMAIN_OPEN",
+  "constraints": {
+    "child": {
+      "block_maxima": {
+        "energy": 0.00932581783357625,
+        "high_lapse": 0.042651565909518324,
+        "high_shift": 2.4939634762925866e-15,
+        "low_lapse": 0.04633285935705025,
+        "low_shift": 0.06733775914558358
+      },
+      "block_norms": {
+        "energy": 0.00932581783357625,
+        "high_lapse": 0.14078213425801167,
+        "high_shift": 8.885699096793219e-15,
+        "low_lapse": 0.07631470131015843,
+        "low_shift": 0.09299214154341677
+      },
+      "full_norm": 0.18541319324523653
+    },
+    "event": {
+      "block_maxima": {
+        "energy": 0.007990125597367188,
+        "high_lapse": 0.026471958931756596,
+        "high_shift": 3.750614245442201e-15,
+        "low_lapse": 0.02501164996299751,
+        "low_shift": 0.04825924591307555
+      },
+      "block_norms": {
+        "energy": 0.007990125597367188,
+        "high_lapse": 0.08737730484055822,
+        "high_shift": 8.769546817783676e-15,
+        "low_lapse": 0.036308666418170446,
+        "low_shift": 0.07347167483785748
+      },
+      "full_norm": 0.120062657678428
+    }
+  },
+  "dynamic_flux": {
+    "derivative_method": "complex_step",
+    "norm": 593.226375791177,
+    "rows": [
+      -567.1331026384114,
+      -174.0045310503836
+    ]
+  },
+  "dynamic_flux_evaluated": true,
+  "eta": {
+    "child": 1.000000019878692,
+    "event": 0.8328248749057363
+  },
+  "exact_next_dependency": "EVALUATE_THE_UNCHANGED_DYNAMIC_FLUX_ROWS_AT_THIS_SAME_N64_CENTER_AND_THEN_CONSTRUCT_THE_COUPLED_CORRECTION_FOR_THE_REMAINING_CORRECTED_PHYSICAL_ROWS",
+  "inputs": {
+    "artifacts/n12_continuum_majorant_effectiveness/BHSM_N64_TRACE_COMPATIBLE_SOURCE_NEWTON2_STATE.npz": "99A5DA34D3869BE7664EE9244A29551090F37C0241952C6DB8FECD3DB247FB68",
+    "artifacts/n12_direct_checkpoint/BHSM_N12_COMPLETE_PERSISTENT_CHILD_STATE.npz": "8AEE33C46C320A36384C83E6B9BDE387AE3E565D99C7D49C606895229B796890"
+  },
+  "ordered_event": {
+    "Decimal_Schur_value_evaluated": false,
+    "binary_eigenvalue_diagnostic": 6.563427536612451e-12,
+    "lower_neighbor_gap": 5.140035937567122e-12,
+    "selected_index": 123,
+    "simple_branch": true,
+    "transported_reference_overlap": 0.5572611046114891,
+    "upper_neighbor_gap": 3.1248046388971044e-13
+  },
+  "state_status": "FINITE_CORE_PROPOSAL_ONLY_NOT_A_COMPLETE_CHILD_ROOT",
+  "validation": {
+    "candidate_not_promoted_as_complete_child": true,
+    "canonical_momentum_evaluated_from_unchanged_action": true,
+    "complete_four_row_boundary_closed": true,
+    "corrected_Decimal_action_blocks_used_for_constraints": true,
+    "dynamic_flux_evaluated_from_unchanged_action": true,
+    "eta_admissible": true,
+    "no_equation_constraint_gate_scale_fit_or_event_definition_changed": true,
+    "ordered_branch_remains_simple": true,
+    "trace_compatible_Newton2_center_consumed": true,
+    "transported_N12_ordered_eigenline_selector_used": true
+  },
+  "validation_passed": true
+}

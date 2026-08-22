@@ -1,0 +1,159 @@
+{
+  "CONTINUUM_EVENT_CHILD_CERTIFIED": false,
+  "FULL_BHSM_COMPLETE": false,
+  "M_star_certified": false,
+  "classification": "RETAINED_REGULAR_POLE_INVERSE_SQUARE_NORMAL_BLOCK_DERIVED;_ZERO_LIES_IN_THE_STATIC_INDICIAL_ESSENTIAL_SPECTRUM;_THE_OLD_UNIFORM_STATIC_COMPACT_CUTOFF_ROUTE_IS_INVALID",
+  "exact_next_dependency": "PROJECT_THE_EXACT_INVERSE_SQUARE_OMITTED_SOURCE_ONTO_THE_REGULAR_POLE_INDICIAL_CHANNEL_AND_DERIVE_A_SOURCE_RESTRICTED_LIMITING_ABSORPTION_OR_SOLVABILITY_BOUND_WITH_SUMMABLE_GROWTH;_THEN_INCLUDE_THE_EXISTING_POSITIVE_DURATION_ORDERED_EVENT_AND_MOMENTUM_FLUX_OBSERVATION_ROWS",
+  "explicit_Weyl_sequence": {
+    "definition": "g_(T,L)(t)=L^-1/2*phi((t-T)/L)*exp(i*t)/norm(phi),_phi(s)=sin(pi*s)^2_ON_[0,1],_T_TO_INFINITY,_L_TO_INFINITY",
+    "exact_phi_norms": {
+      "L2_squared": 0.375,
+      "first_derivative_L2_squared": 4.934802200544679,
+      "second_derivative_L2_squared": 194.81818206800483
+    },
+    "non_tangent_normal_owner": "PHYSICAL_BERGER_ANISOTROPY_v",
+    "physical_variation": "delta_v_(T,L)(chi)=chi^-1*g_(T,L)(-log(chi));_IT_IS_SMOOTH,_TRACE_ZERO,_AND_IDENTICALLY_ZERO_NEAR_THE_EXACT_POLE",
+    "remainder_control": "CHOOSE_T/L_TO_INFINITY;_THE_O(exp(-2T))_RETAINED_BACKGROUND_REMAINDER_VANISHES_RELATIVE_TO_THE_GRAPH_NORM",
+    "rows": [
+      {
+        "L": 8.0,
+        "complexified_graph_norm_squared_before_normalization": 2.205616758356028,
+        "normalized_indicial_residual_before_positive_coefficient": 0.6560502764616493
+      },
+      {
+        "L": 16.0,
+        "complexified_graph_norm_squared_before_normalization": 2.051404189589007,
+        "normalized_indicial_residual_before_positive_coefficient": 0.32263984247438415
+      },
+      {
+        "L": 32.0,
+        "complexified_graph_norm_squared_before_normalization": 2.012851047397252,
+        "normalized_indicial_residual_before_positive_coefficient": 0.16057441360901178
+      },
+      {
+        "L": 64.0,
+        "complexified_graph_norm_squared_before_normalization": 2.003212761849313,
+        "normalized_indicial_residual_before_positive_coefficient": 0.08019149793382009
+      },
+      {
+        "L": 128.0,
+        "complexified_graph_norm_squared_before_normalization": 2.000803190462328,
+        "normalized_indicial_residual_before_positive_coefficient": 0.04008370432769808
+      }
+    ]
+  },
+  "finite_Galerkin_diagnostics": [
+    {
+      "N": 12,
+      "signed_nearest_zero_generalized_indicial_eigenvalue": -0.38357559970819183,
+      "smallest_absolute_generalized_indicial_eigenvalue": 0.38357559970819183,
+      "used_as_the_proof": false
+    },
+    {
+      "N": 16,
+      "signed_nearest_zero_generalized_indicial_eigenvalue": 0.13598369507626681,
+      "smallest_absolute_generalized_indicial_eigenvalue": 0.13598369507626681,
+      "used_as_the_proof": false
+    },
+    {
+      "N": 24,
+      "signed_nearest_zero_generalized_indicial_eigenvalue": 0.8068510993000637,
+      "smallest_absolute_generalized_indicial_eigenvalue": 0.8068510993000637,
+      "used_as_the_proof": false
+    },
+    {
+      "N": 32,
+      "signed_nearest_zero_generalized_indicial_eigenvalue": 1.2368568003616014,
+      "smallest_absolute_generalized_indicial_eigenvalue": 1.2368568003616014,
+      "used_as_the_proof": false
+    },
+    {
+      "N": 48,
+      "signed_nearest_zero_generalized_indicial_eigenvalue": 1.7790209506358758,
+      "smallest_absolute_generalized_indicial_eigenvalue": 1.7790209506358758,
+      "used_as_the_proof": false
+    },
+    {
+      "N": 64,
+      "signed_nearest_zero_generalized_indicial_eigenvalue": -1.871215706099762,
+      "smallest_absolute_generalized_indicial_eigenvalue": 1.871215706099762,
+      "used_as_the_proof": false
+    },
+    {
+      "N": 96,
+      "signed_nearest_zero_generalized_indicial_eigenvalue": -1.3991613295343424,
+      "smallest_absolute_generalized_indicial_eigenvalue": 1.3991613295343424,
+      "used_as_the_proof": false
+    },
+    {
+      "N": 128,
+      "signed_nearest_zero_generalized_indicial_eigenvalue": -1.0762781505726577,
+      "smallest_absolute_generalized_indicial_eigenvalue": 1.0762781505726577,
+      "used_as_the_proof": false
+    },
+    {
+      "N": 192,
+      "signed_nearest_zero_generalized_indicial_eigenvalue": -0.638602892321896,
+      "smallest_absolute_generalized_indicial_eigenvalue": 0.638602892321896,
+      "used_as_the_proof": false
+    },
+    {
+      "N": 256,
+      "signed_nearest_zero_generalized_indicial_eigenvalue": -0.3424867536335796,
+      "smallest_absolute_generalized_indicial_eigenvalue": 0.3424867536335796,
+      "used_as_the_proof": false
+    }
+  ],
+  "input": {
+    "SHA256": "8AEE33C46C320A36384C83E6B9BDE387AE3E565D99C7D49C606895229B796890",
+    "path": "artifacts/n12_direct_checkpoint/BHSM_N12_COMPLETE_PERSISTENT_CHILD_STATE.npz"
+  },
+  "logarithmic_normal_form": {
+    "coordinate": "t=-log(chi)",
+    "essential_spectrum_contains_zero": true,
+    "indicial_operator": "6*c*(D_t^2+1)",
+    "quadratic_form": "6*c*integral_(0,infinity)(abs(g)^2-abs(D_t_g)^2)dt",
+    "unitary_unknown": "g(t)=chi*delta_v(chi)"
+  },
+  "reclassification": {
+    "BHSM_continuum_child_disproved": false,
+    "all_lower_order_pole_terms_are_compact": false,
+    "full_positive_duration_mixed_operator_proved_to_have_zero_essential_spectrum": false,
+    "high_tail_inverse_4_over_sqrt29_minus5_promoted": false,
+    "pointwise_matrix_gap_is_a_uniform_global_static_inverse": false,
+    "pointwise_matrix_gap_sqrt29_minus5_invalidated": false,
+    "pure_v_Weyl_sequence_proved_to_satisfy_the_full_mixed_constraints": false,
+    "uniform_static_M_star_exists_by_the_old_Neumann_split": false,
+    "why_not": "THE_COMPLETE_SOURCE_RESTRICTED_AND_POSITIVE_DURATION_EVENT_MOMENTUM_OBSERVATION_OPERATOR_HAS_NOT_BEEN_REDUCED_TO_THIS_STATIC_INDICIAL_BLOCK"
+  },
+  "round_pole_action_expansion": {
+    "ADM_eta_collective_inertia_and_smooth_background_remainders": "RELATIVELY_COMPACT_AFTER_THE_CRITICAL_INDICIAL_BLOCK_IS_RETAINED_IN_THE_PRINCIPAL_OPERATOR",
+    "c": "lapse(0)*r_p^5>0",
+    "physical_anisotropy_variable": "delta_v_AFTER_EXISTING_GAUGE_REDUCTION",
+    "regular_identities": "C(0)=A0(0)=B0(0)=r_p,_beta(chi)=O(chi),_omega(chi)=chi^3+O(chi^5)",
+    "second_variation": "delta2_L_v=c*[12*chi*delta_v^2-6*chi^3*(D_chi_delta_v)^2]+O(chi^2)_MIXED+O(chi^3)_GRAPH"
+  },
+  "sectors": {
+    "child": {
+      "pole_lapse": 2.108477862696914,
+      "pole_radius_C_equals_A0_equals_B0": 2.018935217888238,
+      "positive_indicial_coefficient_c_equals_lapse_times_radius5": 70.72630423630146
+    },
+    "event": {
+      "pole_lapse": 4.050987966550884,
+      "pole_radius_C_equals_A0_equals_B0": 2.0063514178086304,
+      "positive_indicial_coefficient_c_equals_lapse_times_radius5": 131.70309139538597
+    }
+  },
+  "validation": {
+    "both_pole_indicial_coefficients_positive": true,
+    "canonical_normal_frame_and_existing_gauge_quotient_retained": true,
+    "certified_N12_anchor_consumed": true,
+    "exact_round_pole_identity_used": true,
+    "finite_probes_not_used_as_the_proof": true,
+    "no_equation_constraint_gate_scale_fit_or_event_definition_changed": true,
+    "positive_duration_soft_channel_not_reclassified_by_static_sequence": true,
+    "weyl_residual_decreases": true
+  },
+  "validation_passed": true
+}

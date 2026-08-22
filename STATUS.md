@@ -5,9 +5,28 @@ evidence, not competing public status pages.
 
 ## Current public summary
 
-Current identifier: **N12 sharp retained-action source tail closed; explicit
-high-shell normal cutoff open**. It is a development checkpoint, not a release
-version.
+Current identifier: **continuum event-child certified; matched-parent Qxi
+restriction open**. It is a development checkpoint, not a release version.
+
+The direct N12 complete persistent child plus the exact four-row
+trace-compatible action-Galerkin tail now certifies a resolution-independent
+child. At the first sufficient proof margin, `K <= 9.818810450848289e18`,
+`D1 <= 1.795995767425834e-128`, and the nonlinear discriminant is positive;
+the summed correction lies inside the existing eta, event, Dirac, boundary,
+and persistence neighborhood. No higher-N root or altered physical gate is
+used. `CONTINUUM_EVENT_CHILD_CERTIFIED = TRUE`.
+
+The next gate is open at one exact action-owned object: the current retained
+state/action API does not define the matched-parent restriction
+`R_P: Phi_(P+C) -> Phi_P^matched`. The event-side Cauchy state cannot be
+substituted for that parent-only reference. Consequently `Q_xi`, `Delta H`,
+mass, action-selected families, and a blind observable remain open;
+`FULL_BHSM_COMPLETE = FALSE`.
+
+Exact next object:
+`DERIVE_THE_ACTION_OWNED_MATCHED_PARENT_RESTRICTION_R_P_FROM_THE_COMPLETE_PARENT_COMPOSITE_ACTION`.
+
+## Prior N12 source-tail checkpoint (superseded)
 
 Complete persistent children are validated at N3, N4, N5, N6, and now direct
 N12 under their unchanged retained finite-resolution maps. The corrected N12

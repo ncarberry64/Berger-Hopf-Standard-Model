@@ -1,6 +1,24 @@
 # Gate Ledger
 
-## Current N12 dynamic-Calderon continuum gates
+## Current continuum-child and Qxi gates
+
+- `N12_COMPLETE_PERSISTENT_CHILD`: `CERTIFIED`.
+- `CONTINUUM_EVENT_CHILD_CERTIFIED`: `TRUE`.
+- Selected continuum proof margin: `K <= 9.818810450848289E18`,
+  `D1 <= 1.795995767425834E-128`, positive nonlinear discriminant, and summed
+  correction inside the unchanged physical neighborhood.
+- Higher-resolution complete-child roots used: `NONE`.
+- Equations, event definition, coefficients, scale, or physical gates changed:
+  `FALSE`.
+- `MATCHED_PARENT_RESTRICTION_R_P`: `OPEN_NOT_DEFINED_BY_CURRENT_RETAINED_N12_STATE_OR_ACTION_API`.
+- Event-side Cauchy state as matched parent-only reference: `FORBIDDEN_NOT_DERIVED`.
+- Complete boundary-improved common-reference `Q_XI`: `OPEN`.
+- `DELTA_H`, mass, action-selected family, and new blind prediction: `OPEN`.
+- `FULL_BHSM_COMPLETE`: `FALSE`.
+- Exact next dependency:
+  `DERIVE_THE_ACTION_OWNED_MATCHED_PARENT_RESTRICTION_R_P_FROM_THE_COMPLETE_PARENT_COMPOSITE_ACTION`.
+
+## Prior N12 dynamic-Calderon continuum gates (superseded)
 
 - `N12_COMPLETE_PERSISTENT_CHILD`: `CERTIFIED`, unchanged 57-row residual
   `1.5155497333590932E-13`, action-coordinate root ball `1E-11`.
