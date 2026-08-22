@@ -31,7 +31,7 @@ def test_constraint_reduced_legendre_energy_identity_is_fail_closed() -> None:
     ] is True
 
 
-def test_aggregate_points_to_ordered_event_transport_bound() -> None:
+def test_aggregate_points_to_oriented_component_return_or_exit_bound() -> None:
     aggregate = json.loads(
         (ROOT / "artifacts" / "intrinsic_state_selection"
          / "BHSM_N12_INTRINSIC_RETURN_ACTION_OWNERSHIP_GATE.json").read_text(
@@ -40,7 +40,7 @@ def test_aggregate_points_to_ordered_event_transport_bound() -> None:
     )
 
     assert aggregate["validation_passed"] is True
-    assert "GLOBAL_SIGN_OR_INTEGRATED_BOUND" in aggregate[
+    assert "POST_EVENT_COMPLETE_CHILD_COMPONENT" in aggregate[
         "first_missing_action_owned_object"
     ]
     assert aggregate["validation"][
@@ -48,6 +48,9 @@ def test_aggregate_points_to_ordered_event_transport_bound() -> None:
     ] is True
     assert aggregate["validation"][
         "continuum_maximal_flow_dichotomy_is_closed"
+    ] is True
+    assert aggregate["validation"][
+        "event_forward_global_sign_shortcut_is_invalidated"
     ] is True
     assert aggregate["validation"][
         "constraint_reduced_Legendre_energy_zero_identity_is_closed"
