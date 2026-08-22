@@ -45,7 +45,9 @@ CONTINUUM = Path(
     "BHSM_CONTINUUM_EVENT_CHILD_CERTIFICATE.json"
 )
 MASS_CONTRACT = Path("artifacts/BHSM_cycle_invariant_mass_contract_v14_54.json")
-MASTER_ACTION = Path("artifacts/BHSM_unified_master_action_v7_0.json")
+REDUCTION_FUNCTOR = Path(
+    "artifacts/BHSM_covariant_bulk_boundary_reduction_functor_v7_1.json"
+)
 RESULT = Path(os.environ.get(
     "BHSM_N12_QXI_OWNERSHIP_RESULT",
     "artifacts/qxi_relative_energy_preparation/"
@@ -83,7 +85,9 @@ def main() -> None:
     if continuum.get("CONTINUUM_EVENT_CHILD_CERTIFIED") is not True:
         raise RuntimeError("continuum event-child certificate is required")
     mass_contract = json.loads(MASS_CONTRACT.read_text(encoding="utf-8"))
-    master_action = json.loads(MASTER_ACTION.read_text(encoding="utf-8"))
+    reduction_functor = json.loads(
+        REDUCTION_FUNCTOR.read_text(encoding="utf-8")
+    )
     checkpoint = np.load(CHECKPOINT)
     joint = np.asarray(checkpoint["state"], dtype=float)
     size = dimensions(ORDER)
@@ -143,7 +147,8 @@ def main() -> None:
             "same retained action and common interface trace",
             "same symmetry generator xi and clock normalization",
             "same boundary normal, orientation, domain, and duration",
-            "parent-only restriction defined without deleting retained terms",
+            "action-selected parent-only locus without deleting retained terms",
+            "single-valued gauge-quotiented stationary section",
             "common reference subtraction convention",
         ],
         "defined_by_current_N12_state_or_action_API": False,
@@ -172,8 +177,8 @@ def main() -> None:
         "complete_common_reference_Q_xi_assembler_available": False,
     }
     first_blocker = (
-        "DERIVE_THE_ACTION_OWNED_MATCHED_PARENT_RESTRICTION_"
-        "R_P_FROM_THE_COMPLETE_PARENT_COMPOSITE_ACTION_WITH_IDENTICAL_"
+        "DERIVE_ACTION_SELECTED_PARENT_ONLY_LOCUS_AND_SINGLE_VALUED_"
+        "GAUGE_QUOTIENTED_STATIONARY_SECTION_OVER_FIXED_COMMON_"
         "INTERFACE_GENERATOR_CLOCK_DOMAIN_AND_REFERENCE_DATA"
     )
     validation = {
@@ -200,7 +205,7 @@ def main() -> None:
             str(CHECKPOINT): _sha256(CHECKPOINT),
             str(CONTINUUM): _sha256(CONTINUUM),
             str(MASS_CONTRACT): _sha256(MASS_CONTRACT),
-            str(MASTER_ACTION): _sha256(MASTER_ACTION),
+            str(REDUCTION_FUNCTOR): _sha256(REDUCTION_FUNCTOR),
         },
         "v14_54_contract": {
             "relative_charge": mass_contract["relative_charge"],
@@ -218,13 +223,25 @@ def main() -> None:
         "available_local_diagnostic_only": local_rows,
         "required_matched_parent_map": required_parent_map,
         "upstream_parent_composite_action_provenance": {
-            "master_action_closed": master_action["master_action_closed"],
-            "exact_missing_object": master_action["exact_missing_object"],
-            "R_8to5": master_action["maps"]["R_8to5"],
-            "R_5to4": master_action["maps"]["R_5to4"],
+            "stratified_master_action_closed": (
+                reduction_functor["authoritative_architecture"]["status"]
+                == "BHSM_STRATIFIED_MASTER_ACTION_CLOSED_WITH_"
+                "COVARIANT_COMPATIBILITY_MAPS"
+            ),
+            "R_8to5_defined": True,
+            "R_5to4_defined": True,
+            "R_8to5_discarded_component": "Phi_perp",
+            "R_5to4_global_uniqueness_claimed": False,
+            "Lyapunov_Schmidt_coordinates_retained": True,
+            "boundary_localized_parent_maps": {
+                row["field"]: row["map"]
+                for row in reduction_functor["field_and_bundle_transport"]
+                if row["field"] in {"A_SM", "Psi", "H"}
+            },
             "relation_to_R_P": (
-                "R_P_REQUIRES_THE_SAME_UNSOURCED_COVARIANT_BULK_BOUNDARY_"
-                "REDUCTION_DATA_SPECIALIZED_TO_THE_MATCHED_PARENT_REFERENCE"
+                "R_85_AND_R_54_DEFINE_A_NONINJECTIVE_SET_VALUED_"
+                "CORRESPONDENCE;_THEY_DO_NOT_SELECT_A_UNIQUE_PARENT_ONLY_"
+                "GAUGE_QUOTIENTED_STATIONARY_SECTION"
             ),
         },
         "required_boundary_improved_charge": required_charge,

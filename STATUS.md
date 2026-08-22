@@ -23,8 +23,10 @@ substituted for that parent-only reference. Consequently `Q_xi`, `Delta H`,
 mass, action-selected families, and a blind observable remain open;
 `FULL_BHSM_COMPLETE = FALSE`.
 
-Exact next object:
-`DERIVE_THE_ACTION_OWNED_MATCHED_PARENT_RESTRICTION_R_P_FROM_THE_COMPLETE_PARENT_COMPOSITE_ACTION`.
+The v7.1 covariant `R_8to5` and `R_5to4` correspondences are retained and
+closed; they are noninjective/set-valued and do not select a unique matched
+parent. Exact next object:
+`DERIVE_ACTION_SELECTED_PARENT_ONLY_LOCUS_AND_SINGLE_VALUED_GAUGE_QUOTIENTED_STATIONARY_SECTION`.
 
 ## Prior N12 source-tail checkpoint (superseded)
 

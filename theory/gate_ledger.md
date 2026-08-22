@@ -15,8 +15,9 @@
 - Complete boundary-improved common-reference `Q_XI`: `OPEN`.
 - `DELTA_H`, mass, action-selected family, and new blind prediction: `OPEN`.
 - `FULL_BHSM_COMPLETE`: `FALSE`.
+- Existing v7.1 covariant `R_8to5`/`R_5to4` correspondence: `CLOSED_BUT_NONINJECTIVE_AND_SET_VALUED`.
 - Exact next dependency:
-  `DERIVE_THE_ACTION_OWNED_MATCHED_PARENT_RESTRICTION_R_P_FROM_THE_COMPLETE_PARENT_COMPOSITE_ACTION`.
+  `DERIVE_ACTION_SELECTED_PARENT_ONLY_LOCUS_AND_SINGLE_VALUED_GAUGE_QUOTIENTED_STATIONARY_SECTION`.
 
 ## Prior N12 dynamic-Calderon continuum gates (superseded)
 

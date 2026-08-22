@@ -56,8 +56,8 @@ def main() -> None:
                 "BHSM_N12_MATCHED_PARENT_QXI_OWNERSHIP.json"
             ),
             "missing_dependency": (
-                "DERIVE_R_P_FROM_THE_COMPLETE_PARENT_COMPOSITE_ACTION_WITH_"
-                "IDENTICAL_INTERFACE_GENERATOR_CLOCK_DOMAIN_AND_REFERENCE_DATA"
+                "DERIVE_ACTION_SELECTED_PARENT_ONLY_LOCUS_AND_SINGLE_VALUED_"
+                "GAUGE_QUOTIENTED_STATIONARY_SECTION_OVER_FIXED_COMMON_DATA"
             ),
             "executable_immediately_after_continuum": False,
             "event_side_may_be_substituted": False,
@@ -191,8 +191,8 @@ def main() -> None:
         },
         "reuse_table": rows,
         "first_post_continuum_dependency": (
-            "DERIVE_THE_ACTION_OWNED_MATCHED_PARENT_RESTRICTION_R_P_FROM_"
-            "THE_COMPLETE_PARENT_COMPOSITE_ACTION"
+            "DERIVE_ACTION_SELECTED_PARENT_ONLY_LOCUS_AND_SINGLE_VALUED_"
+            "GAUGE_QUOTIENTED_STATIONARY_SECTION_OVER_FIXED_COMMON_DATA"
         ),
         "Q_xi_evaluated": False,
         "Delta_H_evaluated": False,

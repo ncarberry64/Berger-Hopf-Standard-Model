@@ -30,10 +30,10 @@
     "trace_l2": 8.985440383381201e-17
   },
   "classification": "Q_XI_GATE_OPEN;_THE_CONTINUUM_CHILD_IS_CERTIFIED_BUT_THE_RETAINED_N12_STATE_SPACE_DOES_NOT_DEFINE_THE_ACTION_OWNED_MATCHED_PARENT_RESTRICTION_OR_COMPLETE_COVARIANT_CHARGE",
-  "first_open_action_owned_dependency": "DERIVE_THE_ACTION_OWNED_MATCHED_PARENT_RESTRICTION_R_P_FROM_THE_COMPLETE_PARENT_COMPOSITE_ACTION_WITH_IDENTICAL_INTERFACE_GENERATOR_CLOCK_DOMAIN_AND_REFERENCE_DATA",
+  "first_open_action_owned_dependency": "DERIVE_ACTION_SELECTED_PARENT_ONLY_LOCUS_AND_SINGLE_VALUED_GAUGE_QUOTIENTED_STATIONARY_SECTION_OVER_FIXED_COMMON_INTERFACE_GENERATOR_CLOCK_DOMAIN_AND_REFERENCE_DATA",
   "inputs": {
+    "artifacts\\BHSM_covariant_bulk_boundary_reduction_functor_v7_1.json": "7ED661C2AA6BF4F2ABCB7F29C40966385CD97AA159B5B15DF01E6DB7A485CD27",
     "artifacts\\BHSM_cycle_invariant_mass_contract_v14_54.json": "1B1206A3FE11663CA9CC0A4A2BD6896AF3433296D400C8804D4EA00BF74B814F",
-    "artifacts\\BHSM_unified_master_action_v7_0.json": "569F342698300ACB6B7F625F8EC2B7CE2F1FF4BAE8E9AC14D4A2CA5FB5DAB422",
     "artifacts\\n12_continuum_majorant_effectiveness\\BHSM_CONTINUUM_EVENT_CHILD_CERTIFICATE.json": "FFF4010ABA2F60B4ED5002161DF583904BBA66FABA3AF6DE0901CC29C80CF89A",
     "artifacts\\n12_direct_checkpoint\\BHSM_N12_COMPLETE_PERSISTENT_CHILD_STATE.npz": "8AEE33C46C320A36384C83E6B9BDE387AE3E565D99C7D49C606895229B796890"
   },
@@ -53,7 +53,8 @@
       "same retained action and common interface trace",
       "same symmetry generator xi and clock normalization",
       "same boundary normal, orientation, domain, and duration",
-      "parent-only restriction defined without deleting retained terms",
+      "action-selected parent-only locus without deleting retained terms",
+      "single-valued gauge-quotiented stationary section",
       "common reference subtraction convention"
     ],
     "symbol": "R_P:Phi_(P+C)->Phi_P_matched"
@@ -81,11 +82,18 @@
     ]
   },
   "upstream_parent_composite_action_provenance": {
-    "R_5to4": null,
-    "R_8to5": null,
-    "exact_missing_object": "COVARIANT_BULK_BOUNDARY_REDUCTION_FUNCTOR",
-    "master_action_closed": false,
-    "relation_to_R_P": "R_P_REQUIRES_THE_SAME_UNSOURCED_COVARIANT_BULK_BOUNDARY_REDUCTION_DATA_SPECIALIZED_TO_THE_MATCHED_PARENT_REFERENCE"
+    "Lyapunov_Schmidt_coordinates_retained": true,
+    "R_5to4_defined": true,
+    "R_5to4_global_uniqueness_claimed": false,
+    "R_8to5_defined": true,
+    "R_8to5_discarded_component": "Phi_perp",
+    "boundary_localized_parent_maps": {
+      "A_SM": null,
+      "H": null,
+      "Psi": null
+    },
+    "relation_to_R_P": "R_85_AND_R_54_DEFINE_A_NONINJECTIVE_SET_VALUED_CORRESPONDENCE;_THEY_DO_NOT_SELECT_A_UNIQUE_PARENT_ONLY_GAUGE_QUOTIENTED_STATIONARY_SECTION",
+    "stratified_master_action_closed": true
   },
   "v14_54_contract": {
     "instantaneous_snapshot_is_physical_mass": false,

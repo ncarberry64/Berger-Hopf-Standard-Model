@@ -21,7 +21,9 @@ calling `v^T partial_v L-L` a complete covariant `Q_xi`, or calling its
 child-minus-event difference `Delta H`, mass, or a prediction. The current
 retained N12 state/action API does not define the required parent-only
 restriction `R_P: Phi_(P+C) -> Phi_P^matched` or the boundary-improved common
-reference charge. That is the first open action-owned dependency.
+reference charge. The existing v7.1 reduction correspondence is retained, but
+it is noninjective/set-valued and supplies no action-selected single-valued
+parent-only stationary section. That section is the first open dependency.
 
 ## Prior N12 source-tail claim boundary (superseded)
 
