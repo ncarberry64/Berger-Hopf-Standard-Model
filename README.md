@@ -2,13 +2,13 @@
 
 [![CI](https://github.com/ncarberry64/Berger-Hopf-Standard-Model/actions/workflows/ci.yml/badge.svg)](https://github.com/ncarberry64/Berger-Hopf-Standard-Model/actions/workflows/ci.yml)
 [![Latest archival release](https://img.shields.io/github/v/release/ncarberry64/Berger-Hopf-Standard-Model?label=archival%20release)](https://github.com/ncarberry64/Berger-Hopf-Standard-Model/releases/latest)
-[![Current research status](https://img.shields.io/badge/current%20research-direct%20N12%20child-orange)](docs/current_bhsm_status.md)
+[![Current research status](https://img.shields.io/badge/current%20research-N12%20source%20compatibility-orange)](docs/current_bhsm_status.md)
 [![Python 3.10+](https://img.shields.io/badge/python-3.10%2B-3776AB)](https://www.python.org/)
 [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.20663419.svg)](https://doi.org/10.5281/zenodo.20663419)
 
 BHSM is an independent artifact-backed computational framework and mathematical-physics research program investigating whether Standard Model structure and particle-like dynamics can be derived from Berger-Hopf boundary/envelopment geometry and a common action architecture.
 
-## Current Research Frontier -- direct N12 complete persistent child
+## Current Research Frontier -- N12 continuum source compatibility
 
 BHSM now has a directly corrected `N=12` complete persistent child under the
 unchanged retained 57-row finite-resolution map. Its independently evaluated
@@ -53,6 +53,18 @@ instantaneous inverse nevertheless grows much faster than `N`, so the naive
 generic-inverse proof is invalid. These N16--N48 states remain linear
 zero-padded probes, not nonlinear complete-child roots or a continuum proof.
 
+The retained radial-diffeomorphism Ward identity is now corrected. Because
+`x_eta = x_spatial - (beta/N)^2`, the eta clock supplies a nonzero shift
+current. Exact retained shift rows reconstruct as geometric momentum plus that
+current to below `1e-10` on every N16--N48 probe; the earlier eta-free
+annihilation statement is invalidated. At N48 the source-restricted proposal
+reduces event/child high bulk weak residuals by over two orders of magnitude
+with admissible eta, but it disturbs finite boundary/energy rows and is not a
+root. The raw event Hessian has a near-zero cluster; the existing principal
+gauge quotient instead gives a quadrature-stable isolated branch with minimum
+observed neighbor gap `1.9607047715840434e-08`. This is finite diagnostic
+evidence, not a continuum projector theorem.
+
 N6 provenance was re-audited before this checkpoint. The earlier N5-projected
 N6 seed had ordered-event value `1.645981691e-6`, outside the existing `1e-9`
 tolerance. Using the unchanged retained action-energy fiber and ordered-event
@@ -63,7 +75,7 @@ No equation, gate, or acceptance rule changed.
 
 Exact next object:
 
-`PROVE_THE_RADIAL_DIFFEO_NOETHER_COMPATIBILITY_IDENTITY_FOR_THE_EXACT_OMITTED_SOURCE_AND_CLOSE_THE_SOURCE_RESTRICTED_MIXED_EULER_DIRAC_N12_TO_INFINITY_NONLINEAR_RADIUS`
+`CERTIFY_THE_ETA_COMPLETED_SOURCE_RESTRICTED_MIXED_EULER_DIRAC_S2_RIGHT_INVERSE_AND_THE_EXISTING_GAUGE_REDUCED_ORDERED_EVENT_PROJECTOR_ON_THE_CORRECTED_NORMAL_SECTION;_THEN_CLOSE_THE_UNCHANGED_NONLINEAR_JOINT_EVENT_CHILD_RADIUS_AND_TRANSFER_ETA_EVENT_DIRAC_PERSISTENCE`
 
 ## Historical corrected-Rayleigh N=3 snapshot
 

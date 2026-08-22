@@ -55,6 +55,10 @@ RESULT = Path(os.environ.get(
     "BHSM_N12_FULL_QVM_RESULT",
     ".tmp_direct_n12_full_qvm_constraint_tail.json",
 ))
+CORRECTION_CHECKPOINT = Path(os.environ.get(
+    "BHSM_N12_FULL_QVM_CORRECTION_CHECKPOINT",
+    ".tmp_n12_full_qvm_linear_correction_candidates.npz",
+))
 
 
 def _sha256(path: Path) -> str:
@@ -485,6 +489,26 @@ def main() -> None:
         name: _correction_cauchy_rows(rows)
         for name, rows in evaluations.items()
     }
+    last_order = int(ORDERS[-1])
+    correction_payload: dict[str, np.ndarray] = {}
+    for name in ("event", "child"):
+        action_correction = np.asarray(
+            evaluations[name][-1]["full_qvm_all_mode_normal_map"][
+                "_exact_source_action_correction"
+            ],
+            dtype=float,
+        )
+        raw_correction = action_correction / _state_weights(last_order)
+        embedded_state = np.concatenate(embed_nested_state(
+            *states[name], SOURCE_ORDER, last_order
+        ))
+        correction_payload[f"{name}_embedded_state"] = embedded_state
+        correction_payload[f"{name}_raw_correction"] = raw_correction
+        correction_payload[f"{name}_candidate_state"] = (
+            embedded_state + raw_correction
+        )
+    correction_payload["order"] = np.asarray(last_order, dtype=int)
+    np.savez_compressed(CORRECTION_CHECKPOINT, **correction_payload)
     source_summary = {
         name: {
             "maximum_sampled_N_squared_action_Cauchy_distance": float(max(
@@ -575,6 +599,7 @@ def main() -> None:
         "evaluations": evaluations,
         "exact_source_correction_cauchy_diagnostic": correction_cauchy,
         "exact_source_summary": source_summary,
+        "linear_correction_candidate_checkpoint": str(CORRECTION_CHECKPOINT),
         "finite_power_fits": fits,
         "classification": (
             "N12_TO_N48_RETAINED_ACTION_SOURCE_RESTRICTED_LINEAR_TAIL_"
@@ -607,10 +632,10 @@ def main() -> None:
             ),
         },
         "exact_next_mathematical_lemma": (
-            "PROVE_THE_ACTION_DERIVED_RADIAL_DIFFEO_NOETHER_COMPATIBILITY_"
-            "IDENTITY_ANNIHILATES_THE_STATIC_SHIFT_COKERNEL_ON_THE_EXACT_"
-            "OMITTED_SOURCE_AND_ENCLOSE_THE_SOURCE_RESTRICTED_MIXED_EULER_"
-            "DIRAC_SCHUR_CORRECTION_IN_S2_WITH_AN_N_MINUS_2_CAUCHY_TAIL;_"
+            "USE_THE_ETA_COMPLETED_RADIAL_DIFFEO_WARD_IDENTITY_TO_ENCLOSE_"
+            "THE_SOURCE_RESTRICTED_MIXED_EULER_DIRAC_SCHUR_CORRECTION_IN_"
+            "S2_WITH_AN_N_MINUS_2_CAUCHY_TAIL_AND_CERTIFY_THE_GAUGE_REDUCED_"
+            "ORDERED_EVENT_PROJECTOR_ON_THE_CORRECTED_NORMAL_SECTION;_"
             "THEN_CLOSE_THE_UNCHANGED_NONLINEAR_JOINT_EVENT_CHILD_RADIUS_"
             "AND_TRANSFER_ETA_EVENT_DIRAC_PERSISTENCE"
         ),

@@ -5,7 +5,7 @@ evidence, not competing public status pages.
 
 ## Current public summary
 
-Current identifier: **direct N12 complete-persistent-child provenance
+Current identifier: **N12 eta-completed source-compatibility provenance
 checkpoint**. It is a development checkpoint, not a release version.
 
 Complete persistent children are validated at N3, N4, N5, N6, and now direct
@@ -43,12 +43,28 @@ grows faster than the summability threshold. Thus a generic worst-inverse
 argument is invalid, while the exact source remains asymptotically decoupled
 from that shift-owned soft line. This is finite linear evidence only.
 
+The retained radial-diffeomorphism Ward identity is now corrected and closed
+algebraically. Since `x_eta=x_spatial-(beta/N)^2`, the retained eta clock and
+collective inverse inertia supply a nonzero shift current. Exact shift rows
+equal geometric momentum plus this current to below `1e-10` on all N16--N48
+event/child probes. Compatibility without the eta term is invalidated. The
+soft channel remains category 2: dynamically controlled and normal, not
+tangent; no category-3 collapse sequence has been constructed.
+
+At the N48 source-restricted linear proposal, high routed bulk weak residuals
+fall by more than two orders of magnitude and eta remains admissible, but
+finite boundary and energy rows remain open. Raw/action-coordinate event
+Hessians contain a near-zero cluster; the already-existing principal gauge
+quotient instead gives a quadrature-stable isolated branch with minimum
+observed neighbor gap `1.9607047715840434e-08`. These are diagnostic probes,
+not roots or a uniform projector theorem.
+
 The reduced local energy remains a diagnostic, not `Delta H`, mass, or scale.
 An executable composite-minus-matched-parent `Q_xi`, action-selected state or
 family, and new frozen blind observable remain open.
 
 Exact next object:
-`PROVE_THE_RADIAL_DIFFEO_NOETHER_COMPATIBILITY_IDENTITY_FOR_THE_EXACT_OMITTED_SOURCE_AND_CLOSE_THE_SOURCE_RESTRICTED_MIXED_EULER_DIRAC_N12_TO_INFINITY_NONLINEAR_RADIUS`.
+`CERTIFY_THE_ETA_COMPLETED_SOURCE_RESTRICTED_MIXED_EULER_DIRAC_S2_RIGHT_INVERSE_AND_THE_EXISTING_GAUGE_REDUCED_ORDERED_EVENT_PROJECTOR_ON_THE_CORRECTED_NORMAL_SECTION;_THEN_CLOSE_THE_UNCHANGED_NONLINEAR_JOINT_EVENT_CHILD_RADIUS_AND_TRANSFER_ETA_EVENT_DIRAC_PERSISTENCE`.
 
 ### Historical corrected-Rayleigh N3 snapshot
 

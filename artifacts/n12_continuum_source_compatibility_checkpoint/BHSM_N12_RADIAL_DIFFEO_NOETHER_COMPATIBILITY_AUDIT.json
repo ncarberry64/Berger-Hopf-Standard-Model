@@ -1,0 +1,1885 @@
+{
+  "CONTINUUM_EVENT_CHILD_CERTIFIED": false,
+  "FULL_BHSM_COMPLETE": false,
+  "action_quadrature_points": 96,
+  "artifact": "BHSM_N12_RADIAL_DIFFEO_NOETHER_COMPATIBILITY_AUDIT",
+  "checkpoint": "artifacts\\n12_direct_checkpoint\\BHSM_N12_COMPLETE_PERSISTENT_CHILD_STATE.npz",
+  "checkpoint_sha256": "93E00A944C756B658FB82E56BC6A5C694E03B9760BB4084545E10D963A9AA230",
+  "classification": "RADIAL_DIFFEO_WARD_IDENTITY_DERIVED_WITH_THE_RETAINED_ETA_CLOCK_CURRENT;_STATIC_SHIFT_COKERNEL_ANNIHILATION_WITHOUT_ETA_IS_INVALIDATED;_FINITE_GALERKIN_TAIL_ENCLOSURE_REMAINS_OPEN",
+  "derived_Ward_identity": {
+    "coefficient_or_parameter_fitted": false,
+    "eta_definitions": "X_ETA=X_SPATIAL-(BETA/N)^2;_I=INTEGRAL(VOLUME*LOCALIZATION*(1+X_ETA^3)/N)",
+    "eta_shift_current": "J_ETA=DELTA_BETA{INTEGRAL[-N*VOLUME*LOCALIZATION*(X_ETA/2+X_ETA^4/8)]-1/(8*V_HOPF^2*I)}",
+    "identity": "PAIR(P,L_THETA_G)+PAIR(C_SHIFT_TOTAL,THETA)-PAIR(J_ETA_CLOCK,THETA)=0",
+    "new_physical_source_added": false,
+    "partial_X_eta_partial_beta": "-2*BETA/N^2"
+  },
+  "evaluations": {
+    "child": [
+      {
+        "N": 16,
+        "descriptor_velocity_rows": [
+          {
+            "Noether_pairing": -3.061116335726781,
+            "eta_completed_relative_Ward_defect": 0.00018784027448412894,
+            "generator_mode": 0,
+            "identity": "P_DOT_L_THETA_G_PLUS_SHIFT_CONSTRAINT_THETA_MINUS_ETA_CLOCK_CURRENT_EQUALS_ZERO",
+            "metric_plus_total_shift_minus_eta_Ward_pairing": 0.0011502179227118603,
+            "normalized_Noether_pairing": 0.018748019485476445,
+            "projection": {
+              "configuration_and_lapse_variations_are_zero_at_xi_zero": true,
+              "shift_basis_projection_error": 0.0,
+              "velocity_projection_relative_error": 0.14393461962261855
+            },
+            "relative_cancellation_defect": 0.9999999999999959,
+            "retained_eta_clock_shift_current": -3.062266553649493,
+            "shift_constraint_pairing": 6.1838667871144334e-15,
+            "velocity_pairing": -3.0611163357267874
+          },
+          {
+            "Noether_pairing": 1.8493980999199757,
+            "eta_completed_relative_Ward_defect": 0.0005601627840965252,
+            "generator_mode": 1,
+            "identity": "P_DOT_L_THETA_G_PLUS_SHIFT_CONSTRAINT_THETA_MINUS_ETA_CLOCK_CURRENT_EQUALS_ZERO",
+            "metric_plus_total_shift_minus_eta_Ward_pairing": 0.0020707680099343317,
+            "normalized_Noether_pairing": 0.011808279336095476,
+            "projection": {
+              "configuration_and_lapse_variations_are_zero_at_xi_zero": true,
+              "shift_basis_projection_error": 0.0,
+              "velocity_projection_relative_error": 0.16562804172355386
+            },
+            "relative_cancellation_defect": 1.0,
+            "retained_eta_clock_shift_current": 1.8473273319100414,
+            "shift_constraint_pairing": 2.859630574440058e-15,
+            "velocity_pairing": 1.8493980999199728
+          },
+          {
+            "Noether_pairing": 0.04924432298787429,
+            "eta_completed_relative_Ward_defect": 0.00011046513928805186,
+            "generator_mode": 12,
+            "identity": "P_DOT_L_THETA_G_PLUS_SHIFT_CONSTRAINT_THETA_MINUS_ETA_CLOCK_CURRENT_EQUALS_ZERO",
+            "metric_plus_total_shift_minus_eta_Ward_pairing": -0.0001588768419684347,
+            "normalized_Noether_pairing": 6.837172853676611e-05,
+            "projection": {
+              "configuration_and_lapse_variations_are_zero_at_xi_zero": true,
+              "shift_basis_projection_error": 0.0,
+              "velocity_projection_relative_error": 0.02345480680525249
+            },
+            "relative_cancellation_defect": 0.0354569049014076,
+            "retained_eta_clock_shift_current": 0.049403199829842724,
+            "shift_constraint_pairing": 0.7190471701742541,
+            "velocity_pairing": -0.6698028471863798
+          },
+          {
+            "Noether_pairing": 0.018472882609350094,
+            "eta_completed_relative_Ward_defect": 0.0027296463850937603,
+            "generator_mode": 15,
+            "identity": "P_DOT_L_THETA_G_PLUS_SHIFT_CONSTRAINT_THETA_MINUS_ETA_CLOCK_CURRENT_EQUALS_ZERO",
+            "metric_plus_total_shift_minus_eta_Ward_pairing": 0.005789434425938841,
+            "normalized_Noether_pairing": 1.71751582137412e-05,
+            "projection": {
+              "configuration_and_lapse_variations_are_zero_at_xi_zero": true,
+              "shift_basis_projection_error": 0.0,
+              "velocity_projection_relative_error": 0.019951055895025962
+            },
+            "relative_cancellation_defect": 0.008762132910828705,
+            "retained_eta_clock_shift_current": 0.012683448183411253,
+            "shift_constraint_pairing": 1.063368054996607,
+            "velocity_pairing": -1.0448951723872568
+          }
+        ],
+        "generator": "XI_J=SIN(4CHI)COS(4JCHI),_XI_J_ENDPOINT_FIXED;_DELTA_FIELDS=L_XI_FIELDS",
+        "maximum_descriptor_velocity_relative_cancellation_defect": 1.0,
+        "maximum_relative_cancellation_defect": 0.2533242627035822,
+        "probe_kind": "ZERO_PADDED_CERTIFIED_N12_NOT_A_HIGHER_N_ROOT",
+        "rows": [
+          {
+            "Noether_pairing": 0.5516110595990461,
+            "action_coordinate_generator_norm": 18938.358809467496,
+            "action_covector_pairing_blocks": {
+              "coordinates": 22.547121499752983,
+              "lapse": 0.7136419095738734,
+              "shift": -24.076829942601957,
+              "velocities": 1.3676775928741474
+            },
+            "generator_mode": 12,
+            "normalized_Noether_pairing": 2.9126655860131323e-05,
+            "projection": {
+              "configuration_projection_relative_error": 0.02345480680525249,
+              "generator_endpoint_maximum": 7.690753251789118e-06,
+              "lapse_projection_relative_error": 0.021850686330774045,
+              "shift_projection_relative_error": 0.009519444327483445,
+              "velocity_projection_relative_error": 0.1529062823318012
+            },
+            "relative_cancellation_defect": 0.011325490011628919
+          },
+          {
+            "Noether_pairing": 3.938898116161067,
+            "action_coordinate_generator_norm": 23603.655614336003,
+            "action_covector_pairing_blocks": {
+              "coordinates": 26.384232950401515,
+              "lapse": -0.23064210833547588,
+              "shift": -18.4547970866472,
+              "velocities": -3.7598956392577714
+            },
+            "generator_mode": 13,
+            "normalized_Noether_pairing": 0.00016687661354323113,
+            "projection": {
+              "configuration_projection_relative_error": 0.02194118681673927,
+              "generator_endpoint_maximum": 7.690753246102991e-06,
+              "lapse_projection_relative_error": 0.03594901567387578,
+              "shift_projection_relative_error": 0.009877907695205568,
+              "velocity_projection_relative_error": 0.1943436186665117
+            },
+            "relative_cancellation_defect": 0.08066624987411711
+          },
+          {
+            "Noether_pairing": 2.2538519670052115,
+            "action_coordinate_generator_norm": 35042.311726589796,
+            "action_covector_pairing_blocks": {
+              "coordinates": 2.6368147803541455,
+              "lapse": 2.3621537317167736,
+              "shift": 0.5765087924760337,
+              "velocities": -3.3216253375417413
+            },
+            "generator_mode": 15,
+            "normalized_Noether_pairing": 6.431801601990226e-05,
+            "projection": {
+              "configuration_projection_relative_error": 0.019951055895025962,
+              "generator_endpoint_maximum": 7.690753233366063e-06,
+              "lapse_projection_relative_error": 0.4925316130895154,
+              "shift_projection_relative_error": 0.4093257783988121,
+              "velocity_projection_relative_error": 0.4223012173570446
+            },
+            "relative_cancellation_defect": 0.2533242627035822
+          }
+        ],
+        "shift_source_decomposition": {
+          "exact_action_row_reconstruction": {
+            "eta_collective_inertia": 18.529045970275092,
+            "maximum_absolute_defect": 4.824012091419334e-14,
+            "relative_l2_defect": 5.773290424512357e-14
+          },
+          "exact_identity": "C_SHIFT_TOTAL=C_SHIFT_GEOMETRIC_PLUS_J_ETA_CLOCK",
+          "rows": [
+            {
+              "N_squared_first_eta_clock_weak_coefficient": 0.14817744641408973,
+              "cutoff_N": 12,
+              "eta_clock_H_minus_1_tail_norm": 0.001090803658628956,
+              "first_eta_clock_weak_coefficient": 0.0010290100445422897,
+              "first_geometric_momentum_weak_coefficient": 0.013947889491468435,
+              "first_total_shift_weak_coefficient": 0.014976899536010726,
+              "geometric_momentum_H_minus_1_tail_norm": 0.031933380069640825,
+              "total_shift_H_minus_1_tail_norm": 0.03265208459825057
+            },
+            {
+              "N_squared_first_eta_clock_weak_coefficient": 0.047556326101120386,
+              "cutoff_N": 15,
+              "eta_clock_H_minus_1_tail_norm": 0.0002113614493383128,
+              "first_eta_clock_weak_coefficient": 0.0002113614493383128,
+              "first_geometric_momentum_weak_coefficient": 0.017508978479838344,
+              "first_total_shift_weak_coefficient": 0.017720339929176657,
+              "geometric_momentum_H_minus_1_tail_norm": 0.017508978479838344,
+              "total_shift_H_minus_1_tail_norm": 0.017720339929176657
+            }
+          ]
+        }
+      },
+      {
+        "N": 24,
+        "descriptor_velocity_rows": [
+          {
+            "Noether_pairing": -3.061676729032669,
+            "eta_completed_relative_Ward_defect": 9.631451331233654e-05,
+            "generator_mode": 0,
+            "identity": "P_DOT_L_THETA_G_PLUS_SHIFT_CONSTRAINT_THETA_MINUS_ETA_CLOCK_CURRENT_EQUALS_ZERO",
+            "metric_plus_total_shift_minus_eta_Ward_pairing": 0.0005898246168238863,
+            "normalized_Noether_pairing": 0.010236451504406045,
+            "projection": {
+              "configuration_and_lapse_variations_are_zero_at_xi_zero": true,
+              "shift_basis_projection_error": 0.0,
+              "velocity_projection_relative_error": 0.11814543583704144
+            },
+            "relative_cancellation_defect": 0.9999999999999959,
+            "retained_eta_clock_shift_current": -3.062266553649493,
+            "shift_constraint_pairing": 6.1838667871144334e-15,
+            "velocity_pairing": -3.0616767290326754
+          },
+          {
+            "Noether_pairing": 1.8482055687071015,
+            "eta_completed_relative_Ward_defect": 0.00023764821493361726,
+            "generator_mode": 1,
+            "identity": "P_DOT_L_THETA_G_PLUS_SHIFT_CONSTRAINT_THETA_MINUS_ETA_CLOCK_CURRENT_EQUALS_ZERO",
+            "metric_plus_total_shift_minus_eta_Ward_pairing": 0.0008782367970601168,
+            "normalized_Noether_pairing": 0.006300827128852933,
+            "projection": {
+              "configuration_and_lapse_variations_are_zero_at_xi_zero": true,
+              "shift_basis_projection_error": 0.0,
+              "velocity_projection_relative_error": 0.13588644974930636
+            },
+            "relative_cancellation_defect": 1.0,
+            "retained_eta_clock_shift_current": 1.8473273319100414,
+            "shift_constraint_pairing": 2.859630574440058e-15,
+            "velocity_pairing": 1.8482055687070986
+          },
+          {
+            "Noether_pairing": 0.04990214650405145,
+            "eta_completed_relative_Ward_defect": 0.0003470703067109052,
+            "generator_mode": 12,
+            "identity": "P_DOT_L_THETA_G_PLUS_SHIFT_CONSTRAINT_THETA_MINUS_ETA_CLOCK_CURRENT_EQUALS_ZERO",
+            "metric_plus_total_shift_minus_eta_Ward_pairing": 0.0004989466742087237,
+            "normalized_Noether_pairing": 8.00612735880309e-05,
+            "projection": {
+              "configuration_and_lapse_variations_are_zero_at_xi_zero": true,
+              "shift_basis_projection_error": 0.0,
+              "velocity_projection_relative_error": 0.019301287983436916
+            },
+            "relative_cancellation_defect": 0.0359475775222828,
+            "retained_eta_clock_shift_current": 0.049403199829842724,
+            "shift_constraint_pairing": 0.7190471701742541,
+            "velocity_pairing": -0.6691450236702027
+          },
+          {
+            "Noether_pairing": -0.0013298440518501042,
+            "eta_completed_relative_Ward_defect": 0.0010562551503515765,
+            "generator_mode": 16,
+            "identity": "P_DOT_L_THETA_G_PLUS_SHIFT_CONSTRAINT_THETA_MINUS_ETA_CLOCK_CURRENT_EQUALS_ZERO",
+            "metric_plus_total_shift_minus_eta_Ward_pairing": 0.0003497210112590129,
+            "normalized_Noether_pairing": 1.233730884979521e-06,
+            "projection": {
+              "configuration_and_lapse_variations_are_zero_at_xi_zero": true,
+              "shift_basis_projection_error": 0.0,
+              "velocity_projection_relative_error": 0.014514984568842777
+            },
+            "relative_cancellation_defect": 0.004036979144217016,
+            "retained_eta_clock_shift_current": -0.0016795650631091172,
+            "shift_constraint_pairing": -0.16537273996884277,
+            "velocity_pairing": 0.16404289591699267
+          },
+          {
+            "Noether_pairing": -0.0013471792044464082,
+            "eta_completed_relative_Ward_defect": 0.0014337154398545626,
+            "generator_mode": 20,
+            "identity": "P_DOT_L_THETA_G_PLUS_SHIFT_CONSTRAINT_THETA_MINUS_ETA_CLOCK_CURRENT_EQUALS_ZERO",
+            "metric_plus_total_shift_minus_eta_Ward_pairing": -0.00013263977253061233,
+            "normalized_Noether_pairing": 8.377143417943461e-07,
+            "projection": {
+              "configuration_and_lapse_variations_are_zero_at_xi_zero": true,
+              "shift_basis_projection_error": 0.0,
+              "velocity_projection_relative_error": 0.011603690080692435
+            },
+            "relative_cancellation_defect": 0.014755494440850045,
+            "retained_eta_clock_shift_current": -0.0012145394319157958,
+            "shift_constraint_pairing": -0.046323676417233346,
+            "velocity_pairing": 0.04497649721278694
+          },
+          {
+            "Noether_pairing": 0.002729976604930292,
+            "eta_completed_relative_Ward_defect": 0.07035283398609292,
+            "generator_mode": 23,
+            "identity": "P_DOT_L_THETA_G_PLUS_SHIFT_CONSTRAINT_THETA_MINUS_ETA_CLOCK_CURRENT_EQUALS_ZERO",
+            "metric_plus_total_shift_minus_eta_Ward_pairing": 0.002874730645764469,
+            "normalized_Noether_pairing": 1.3235770901931837e-06,
+            "projection": {
+              "configuration_and_lapse_variations_are_zero_at_xi_zero": true,
+              "shift_basis_projection_error": 0.0,
+              "velocity_projection_relative_error": 0.010767049000830609
+            },
+            "relative_cancellation_defect": 0.06704781071342213,
+            "retained_eta_clock_shift_current": -0.0001447540408341771,
+            "shift_constraint_pairing": 0.021723420411448122,
+            "velocity_pairing": -0.01899344380651783
+          }
+        ],
+        "generator": "XI_J=SIN(4CHI)COS(4JCHI),_XI_J_ENDPOINT_FIXED;_DELTA_FIELDS=L_XI_FIELDS",
+        "maximum_descriptor_velocity_relative_cancellation_defect": 1.0,
+        "maximum_relative_cancellation_defect": 0.05547766313644085,
+        "probe_kind": "ZERO_PADDED_CERTIFIED_N12_NOT_A_HIGHER_N_ROOT",
+        "rows": [
+          {
+            "Noether_pairing": 1.5922988969064706,
+            "action_coordinate_generator_norm": 16793.630603926154,
+            "action_covector_pairing_blocks": {
+              "coordinates": 23.564011527087764,
+              "lapse": 0.5934933598818568,
+              "shift": -23.938295435756164,
+              "velocities": 1.3730894456930132
+            },
+            "generator_mode": 12,
+            "normalized_Noether_pairing": 9.481564376759661e-05,
+            "projection": {
+              "configuration_projection_relative_error": 0.019301287983436916,
+              "generator_endpoint_maximum": 7.690753251789118e-06,
+              "lapse_projection_relative_error": 0.00018730009259037818,
+              "shift_projection_relative_error": 1.2495326361141786e-07,
+              "velocity_projection_relative_error": 0.015568219950152697
+            },
+            "relative_cancellation_defect": 0.032187884231091084
+          },
+          {
+            "Noether_pairing": 1.0214457987395418,
+            "action_coordinate_generator_norm": 21068.36337554777,
+            "action_covector_pairing_blocks": {
+              "coordinates": 23.65149829285942,
+              "lapse": -0.2314553155892181,
+              "shift": -18.670730910934015,
+              "velocities": -3.7278662675966436
+            },
+            "generator_mode": 13,
+            "normalized_Noether_pairing": 4.848244643079612e-05,
+            "projection": {
+              "configuration_projection_relative_error": 0.017856246232857143,
+              "generator_endpoint_maximum": 7.690753246102991e-06,
+              "lapse_projection_relative_error": 0.00028600342598507095,
+              "shift_projection_relative_error": 7.417094192956887e-07,
+              "velocity_projection_relative_error": 0.030016650761766666
+            },
+            "relative_cancellation_defect": 0.022070258696407212
+          },
+          {
+            "Noether_pairing": -0.8727877606473543,
+            "action_coordinate_generator_norm": 102873.56709297653,
+            "action_covector_pairing_blocks": {
+              "coordinates": 6.0759710674374805,
+              "lapse": 1.2591256211533628,
+              "shift": -8.30251252433392,
+              "velocities": 0.09462807509572284
+            },
+            "generator_mode": 23,
+            "normalized_Noether_pairing": 8.484081823064751e-06,
+            "projection": {
+              "configuration_projection_relative_error": 0.010767049000830609,
+              "generator_endpoint_maximum": 7.690753164222743e-06,
+              "lapse_projection_relative_error": 0.4925316130895156,
+              "shift_projection_relative_error": 0.40953469377994045,
+              "velocity_projection_relative_error": 0.42143154424025553
+            },
+            "relative_cancellation_defect": 0.05547766313644085
+          }
+        ],
+        "shift_source_decomposition": {
+          "exact_action_row_reconstruction": {
+            "eta_collective_inertia": 18.529045970275092,
+            "maximum_absolute_defect": 6.691869280928131e-14,
+            "relative_l2_defect": 8.438872153296794e-14
+          },
+          "exact_identity": "C_SHIFT_TOTAL=C_SHIFT_GEOMETRIC_PLUS_J_ETA_CLOCK",
+          "rows": [
+            {
+              "N_squared_first_eta_clock_weak_coefficient": 0.14817744641408973,
+              "cutoff_N": 12,
+              "eta_clock_H_minus_1_tail_norm": 0.0010941038438950397,
+              "first_eta_clock_weak_coefficient": 0.0010290100445422897,
+              "first_geometric_momentum_weak_coefficient": 0.013947889491468435,
+              "first_total_shift_weak_coefficient": 0.014976899536010726,
+              "geometric_momentum_H_minus_1_tail_norm": 0.032284065848964504,
+              "total_shift_H_minus_1_tail_norm": 0.03300606797641605
+            },
+            {
+              "N_squared_first_eta_clock_weak_coefficient": 0.006717440302442272,
+              "cutoff_N": 16,
+              "eta_clock_H_minus_1_tail_norm": 8.491524920522481e-05,
+              "first_eta_clock_weak_coefficient": -2.6240001181415124e-05,
+              "first_geometric_momentum_weak_coefficient": -0.0025573936951062835,
+              "first_total_shift_weak_coefficient": -0.002583633696287699,
+              "geometric_momentum_H_minus_1_tail_norm": 0.00474553949179038,
+              "total_shift_H_minus_1_tail_norm": 0.004820984821847618
+            },
+            {
+              "N_squared_first_eta_clock_weak_coefficient": 0.006072222785703352,
+              "cutoff_N": 20,
+              "eta_clock_H_minus_1_tail_norm": 1.5884632048055975e-05,
+              "first_eta_clock_weak_coefficient": -1.518055696425838e-05,
+              "first_geometric_momentum_weak_coefficient": -0.0005638201655865411,
+              "first_total_shift_weak_coefficient": -0.0005790007225507996,
+              "geometric_momentum_H_minus_1_tail_norm": 0.0006945834993291645,
+              "total_shift_H_minus_1_tail_norm": 0.0007065157798167655
+            },
+            {
+              "N_squared_first_eta_clock_weak_coefficient": 0.0008322865699815196,
+              "cutoff_N": 23,
+              "eta_clock_H_minus_1_tail_norm": 1.573320548169224e-06,
+              "first_eta_clock_weak_coefficient": -1.573320548169224e-06,
+              "first_geometric_momentum_weak_coefficient": 0.00023768350795912063,
+              "first_total_shift_weak_coefficient": 0.0002361101874109514,
+              "geometric_momentum_H_minus_1_tail_norm": 0.00023768350795912063,
+              "total_shift_H_minus_1_tail_norm": 0.0002361101874109514
+            }
+          ]
+        }
+      },
+      {
+        "N": 32,
+        "descriptor_velocity_rows": [
+          {
+            "Noether_pairing": -3.062019198450088,
+            "eta_completed_relative_Ward_defect": 4.038923221701162e-05,
+            "generator_mode": 0,
+            "identity": "P_DOT_L_THETA_G_PLUS_SHIFT_CONSTRAINT_THETA_MINUS_ETA_CLOCK_CURRENT_EQUALS_ZERO",
+            "metric_plus_total_shift_minus_eta_Ward_pairing": 0.00024735519940488615,
+            "normalized_Noether_pairing": 0.0066590085932524395,
+            "projection": {
+              "configuration_and_lapse_variations_are_zero_at_xi_zero": true,
+              "shift_basis_projection_error": 0.0,
+              "velocity_projection_relative_error": 0.10258682627473562
+            },
+            "relative_cancellation_defect": 0.9999999999999959,
+            "retained_eta_clock_shift_current": -3.062266553649493,
+            "shift_constraint_pairing": 6.1838667871144334e-15,
+            "velocity_pairing": -3.0620191984500944
+          },
+          {
+            "Noether_pairing": 1.8476983195578753,
+            "eta_completed_relative_Ward_defect": 0.00010040191403990952,
+            "generator_mode": 1,
+            "identity": "P_DOT_L_THETA_G_PLUS_SHIFT_CONSTRAINT_THETA_MINUS_ETA_CLOCK_CURRENT_EQUALS_ZERO",
+            "metric_plus_total_shift_minus_eta_Ward_pairing": 0.00037098764783394245,
+            "normalized_Noether_pairing": 0.004063676428528123,
+            "projection": {
+              "configuration_and_lapse_variations_are_zero_at_xi_zero": true,
+              "shift_basis_projection_error": 0.0,
+              "velocity_projection_relative_error": 0.11797120094481355
+            },
+            "relative_cancellation_defect": 1.0,
+            "retained_eta_clock_shift_current": 1.8473273319100414,
+            "shift_constraint_pairing": 2.859630574440058e-15,
+            "velocity_pairing": 1.8476983195578724
+          },
+          {
+            "Noether_pairing": 0.04963251703663529,
+            "eta_completed_relative_Ward_defect": 0.00015948451565468496,
+            "generator_mode": 12,
+            "identity": "P_DOT_L_THETA_G_PLUS_SHIFT_CONSTRAINT_THETA_MINUS_ETA_CLOCK_CURRENT_EQUALS_ZERO",
+            "metric_plus_total_shift_minus_eta_Ward_pairing": 0.0002293172067925689,
+            "normalized_Noether_pairing": 8.967169367093286e-05,
+            "projection": {
+              "configuration_and_lapse_variations_are_zero_at_xi_zero": true,
+              "shift_basis_projection_error": 0.0,
+              "velocity_projection_relative_error": 0.016763380766837314
+            },
+            "relative_cancellation_defect": 0.03574640382855306,
+            "retained_eta_clock_shift_current": 0.049403199829842724,
+            "shift_constraint_pairing": 0.7190471701742541,
+            "velocity_pairing": -0.6694146531376188
+          },
+          {
+            "Noether_pairing": -0.0014696690826079828,
+            "eta_completed_relative_Ward_defect": 0.0006342123312510306,
+            "generator_mode": 16,
+            "identity": "P_DOT_L_THETA_G_PLUS_SHIFT_CONSTRAINT_THETA_MINUS_ETA_CLOCK_CURRENT_EQUALS_ZERO",
+            "metric_plus_total_shift_minus_eta_Ward_pairing": 0.00020989598050113437,
+            "normalized_Noether_pairing": 1.520841675797159e-06,
+            "projection": {
+              "configuration_and_lapse_variations_are_zero_at_xi_zero": true,
+              "shift_basis_projection_error": 0.0,
+              "velocity_projection_relative_error": 0.012608658529446058
+            },
+            "relative_cancellation_defect": 0.004463337524829057,
+            "retained_eta_clock_shift_current": -0.0016795650631091172,
+            "shift_constraint_pairing": -0.16537273996884277,
+            "velocity_pairing": 0.1639030708862348
+          },
+          {
+            "Noether_pairing": -0.001043921082892231,
+            "eta_completed_relative_Ward_defect": 0.0018382038181622429,
+            "generator_mode": 20,
+            "identity": "P_DOT_L_THETA_G_PLUS_SHIFT_CONSTRAINT_THETA_MINUS_ETA_CLOCK_CURRENT_EQUALS_ZERO",
+            "metric_plus_total_shift_minus_eta_Ward_pairing": 0.0001706183490235648,
+            "normalized_Noether_pairing": 7.052671470786622e-07,
+            "projection": {
+              "configuration_and_lapse_variations_are_zero_at_xi_zero": true,
+              "shift_basis_projection_error": 0.0,
+              "velocity_projection_relative_error": 0.01009856810764229
+            },
+            "relative_cancellation_defect": 0.011396091422898994,
+            "retained_eta_clock_shift_current": -0.0012145394319157958,
+            "shift_constraint_pairing": -0.046323676417233346,
+            "velocity_pairing": 0.045279755334341115
+          },
+          {
+            "Noether_pairing": 0.0015783591325579382,
+            "eta_completed_relative_Ward_defect": 0.0662320679615251,
+            "generator_mode": 31,
+            "identity": "P_DOT_L_THETA_G_PLUS_SHIFT_CONSTRAINT_THETA_MINUS_ETA_CLOCK_CURRENT_EQUALS_ZERO",
+            "metric_plus_total_shift_minus_eta_Ward_pairing": 0.0015786143370500846,
+            "normalized_Noether_pairing": 4.867076715500394e-07,
+            "projection": {
+              "configuration_and_lapse_variations_are_zero_at_xi_zero": true,
+              "shift_basis_projection_error": 0.0,
+              "velocity_projection_relative_error": 0.006982066401148167
+            },
+            "relative_cancellation_defect": 0.06622206970690936,
+            "retained_eta_clock_shift_current": -2.552044921462236e-07,
+            "shift_constraint_pairing": 0.01270634811404227,
+            "velocity_pairing": -0.011127988981484331
+          }
+        ],
+        "generator": "XI_J=SIN(4CHI)COS(4JCHI),_XI_J_ENDPOINT_FIXED;_DELTA_FIELDS=L_XI_FIELDS",
+        "maximum_descriptor_velocity_relative_cancellation_defect": 1.0,
+        "maximum_relative_cancellation_defect": 0.09330094732947593,
+        "probe_kind": "ZERO_PADDED_CERTIFIED_N12_NOT_A_HIGHER_N_ROOT",
+        "rows": [
+          {
+            "Noether_pairing": 1.627958965585603,
+            "action_coordinate_generator_norm": 16965.794337235824,
+            "action_covector_pairing_blocks": {
+              "coordinates": 23.59944070028791,
+              "lapse": 0.5928063545157825,
+              "shift": -23.93829389849985,
+              "velocities": 1.3740058092817602
+            },
+            "generator_mode": 12,
+            "normalized_Noether_pairing": 9.595536367033674e-05,
+            "projection": {
+              "configuration_projection_relative_error": 0.016763380766837314,
+              "generator_endpoint_maximum": 7.690753251789118e-06,
+              "lapse_projection_relative_error": 9.684215421314953e-05,
+              "shift_projection_relative_error": 1.4996402454838194e-15,
+              "velocity_projection_relative_error": 4.074200834012403e-15
+            },
+            "relative_cancellation_defect": 0.03288503929533977
+          },
+          {
+            "Noether_pairing": 0.3487106172401906,
+            "action_coordinate_generator_norm": 20122.702859002813,
+            "action_covector_pairing_blocks": {
+              "coordinates": 22.981640115236647,
+              "lapse": -0.2310618136642959,
+              "shift": -18.670743267044692,
+              "velocities": -3.731124417287469
+            },
+            "generator_mode": 13,
+            "normalized_Noether_pairing": 1.7329213658998046e-05,
+            "projection": {
+              "configuration_projection_relative_error": 0.015494765840237724,
+              "generator_endpoint_maximum": 7.690753246102991e-06,
+              "lapse_projection_relative_error": 0.00022672855823233984,
+              "shift_projection_relative_error": 1.6295738535806494e-15,
+              "velocity_projection_relative_error": 4.5262216814579815e-15
+            },
+            "relative_cancellation_defect": 0.007644720101426261
+          },
+          {
+            "Noether_pairing": -0.24839237018982174,
+            "action_coordinate_generator_norm": 34746.43306236735,
+            "action_covector_pairing_blocks": {
+              "coordinates": 35.49580987246547,
+              "lapse": -0.9951560904715242,
+              "shift": -35.267785046272024,
+              "velocities": 0.518738894088255
+            },
+            "generator_mode": 16,
+            "normalized_Noether_pairing": 7.148715660798197e-06,
+            "projection": {
+              "configuration_projection_relative_error": 0.012608658529446058,
+              "generator_endpoint_maximum": 7.690753226315264e-06,
+              "lapse_projection_relative_error": 3.876292129109425e-15,
+              "shift_projection_relative_error": 1.3683822944535826e-15,
+              "velocity_projection_relative_error": 3.90351062666827e-15
+            },
+            "relative_cancellation_defect": 0.0034366490939593372
+          },
+          {
+            "Noether_pairing": -1.4278877784970134,
+            "action_coordinate_generator_norm": 217854.55344637108,
+            "action_covector_pairing_blocks": {
+              "coordinates": 5.6796401618859065,
+              "lapse": 1.2561995568881548,
+              "shift": -8.365997911029648,
+              "velocities": 0.0022704137585736286
+            },
+            "generator_mode": 31,
+            "normalized_Noether_pairing": 6.5543168866952986e-06,
+            "projection": {
+              "configuration_projection_relative_error": 0.006982066401148167,
+              "generator_endpoint_maximum": 7.690753065966449e-06,
+              "lapse_projection_relative_error": 0.49253161308951676,
+              "shift_projection_relative_error": 0.40963081910824295,
+              "velocity_projection_relative_error": 0.4209893303075186
+            },
+            "relative_cancellation_defect": 0.09330094732947593
+          }
+        ],
+        "shift_source_decomposition": {
+          "exact_action_row_reconstruction": {
+            "eta_collective_inertia": 18.529045970275092,
+            "maximum_absolute_defect": 1.145195049900849e-13,
+            "relative_l2_defect": 1.404153536835115e-13
+          },
+          "exact_identity": "C_SHIFT_TOTAL=C_SHIFT_GEOMETRIC_PLUS_J_ETA_CLOCK",
+          "rows": [
+            {
+              "N_squared_first_eta_clock_weak_coefficient": 0.14817744641408973,
+              "cutoff_N": 12,
+              "eta_clock_H_minus_1_tail_norm": 0.001094103922639024,
+              "first_eta_clock_weak_coefficient": 0.0010290100445422897,
+              "first_geometric_momentum_weak_coefficient": 0.013947889491468435,
+              "first_total_shift_weak_coefficient": 0.014976899536010726,
+              "geometric_momentum_H_minus_1_tail_norm": 0.032287016977143694,
+              "total_shift_H_minus_1_tail_norm": 0.033008957930912214
+            },
+            {
+              "N_squared_first_eta_clock_weak_coefficient": 0.006717440302442272,
+              "cutoff_N": 16,
+              "eta_clock_H_minus_1_tail_norm": 8.491626378841395e-05,
+              "first_eta_clock_weak_coefficient": -2.6240001181415124e-05,
+              "first_geometric_momentum_weak_coefficient": -0.0025573936951062835,
+              "first_total_shift_weak_coefficient": -0.002583633696287699,
+              "geometric_momentum_H_minus_1_tail_norm": 0.004765574740808405,
+              "total_shift_H_minus_1_tail_norm": 0.0048407308408359795
+            },
+            {
+              "N_squared_first_eta_clock_weak_coefficient": 0.006072222785703352,
+              "cutoff_N": 20,
+              "eta_clock_H_minus_1_tail_norm": 1.589005486145963e-05,
+              "first_eta_clock_weak_coefficient": -1.518055696425838e-05,
+              "first_geometric_momentum_weak_coefficient": -0.0005638201655865411,
+              "first_total_shift_weak_coefficient": -0.0005790007225507996,
+              "geometric_momentum_H_minus_1_tail_norm": 0.0008203680757009925,
+              "total_shift_H_minus_1_tail_norm": 0.000830629260299439
+            },
+            {
+              "N_squared_first_eta_clock_weak_coefficient": 0.00015179827915160957,
+              "cutoff_N": 24,
+              "eta_clock_H_minus_1_tail_norm": 4.1510022653563614e-07,
+              "first_eta_clock_weak_coefficient": -2.635386790826555e-07,
+              "first_geometric_momentum_weak_coefficient": -0.0002122574422287786,
+              "first_total_shift_weak_coefficient": -0.00021252098090786126,
+              "geometric_momentum_H_minus_1_tail_norm": 0.00043652897050367915,
+              "total_shift_H_minus_1_tail_norm": 0.0004367841811873466
+            },
+            {
+              "N_squared_first_eta_clock_weak_coefficient": 1.977770501621985e-06,
+              "cutoff_N": 31,
+              "eta_clock_H_minus_1_tail_norm": 2.0580338206264154e-09,
+              "first_eta_clock_weak_coefficient": -2.0580338206264154e-09,
+              "first_geometric_momentum_weak_coefficient": 0.00010246927534427665,
+              "first_total_shift_weak_coefficient": 0.00010246721731045601,
+              "geometric_momentum_H_minus_1_tail_norm": 0.00010246927534427665,
+              "total_shift_H_minus_1_tail_norm": 0.00010246721731045601
+            }
+          ]
+        }
+      },
+      {
+        "N": 48,
+        "descriptor_velocity_rows": [
+          {
+            "Noether_pairing": -3.0621938525442545,
+            "eta_completed_relative_Ward_defect": 1.1870613967081936e-05,
+            "generator_mode": 0,
+            "identity": "P_DOT_L_THETA_G_PLUS_SHIFT_CONSTRAINT_THETA_MINUS_ETA_CLOCK_CURRENT_EQUALS_ZERO",
+            "metric_plus_total_shift_minus_eta_Ward_pairing": 7.270110523860396e-05,
+            "normalized_Noether_pairing": 0.0036300090530240114,
+            "projection": {
+              "configuration_and_lapse_variations_are_zero_at_xi_zero": true,
+              "shift_basis_projection_error": 0.0,
+              "velocity_projection_relative_error": 0.08398206711518426
+            },
+            "relative_cancellation_defect": 0.9999999999999959,
+            "retained_eta_clock_shift_current": -3.062266553649493,
+            "shift_constraint_pairing": 6.1838667871144334e-15,
+            "velocity_pairing": -3.0621938525442607
+          },
+          {
+            "Noether_pairing": 1.8474372616665249,
+            "eta_completed_relative_Ward_defect": 2.9752844518054273e-05,
+            "generator_mode": 1,
+            "identity": "P_DOT_L_THETA_G_PLUS_SHIFT_CONSTRAINT_THETA_MINUS_ETA_CLOCK_CURRENT_EQUALS_ZERO",
+            "metric_plus_total_shift_minus_eta_Ward_pairing": 0.00010992975648349557,
+            "normalized_Noether_pairing": 0.0022012934740733526,
+            "projection": {
+              "configuration_and_lapse_variations_are_zero_at_xi_zero": true,
+              "shift_basis_projection_error": 0.0,
+              "velocity_projection_relative_error": 0.09656434478624282
+            },
+            "relative_cancellation_defect": 1.0,
+            "retained_eta_clock_shift_current": 1.8473273319100414,
+            "shift_constraint_pairing": 2.859630574440058e-15,
+            "velocity_pairing": 1.847437261666522
+          },
+          {
+            "Noether_pairing": 0.049473690785721836,
+            "eta_completed_relative_Ward_defect": 4.9019323225330594e-05,
+            "generator_mode": 12,
+            "identity": "P_DOT_L_THETA_G_PLUS_SHIFT_CONSTRAINT_THETA_MINUS_ETA_CLOCK_CURRENT_EQUALS_ZERO",
+            "metric_plus_total_shift_minus_eta_Ward_pairing": 7.049095587911142e-05,
+            "normalized_Noether_pairing": 7.950131032562328e-05,
+            "projection": {
+              "configuration_and_lapse_variations_are_zero_at_xi_zero": true,
+              "shift_basis_projection_error": 0.0,
+              "velocity_projection_relative_error": 0.013723810845533499
+            },
+            "relative_cancellation_defect": 0.03562793827190951,
+            "retained_eta_clock_shift_current": 0.049403199829842724,
+            "shift_constraint_pairing": 0.7190471701742541,
+            "velocity_pairing": -0.6695734793885323
+          },
+          {
+            "Noether_pairing": -0.0016110439495884976,
+            "eta_completed_relative_Ward_defect": 0.00020712881952663565,
+            "generator_mode": 16,
+            "identity": "P_DOT_L_THETA_G_PLUS_SHIFT_CONSTRAINT_THETA_MINUS_ETA_CLOCK_CURRENT_EQUALS_ZERO",
+            "metric_plus_total_shift_minus_eta_Ward_pairing": 6.852111352061954e-05,
+            "normalized_Noether_pairing": 1.92690480898184e-06,
+            "projection": {
+              "configuration_and_lapse_variations_are_zero_at_xi_zero": true,
+              "shift_basis_projection_error": 0.0,
+              "velocity_projection_relative_error": 0.010322967641123695
+            },
+            "relative_cancellation_defect": 0.004894790011114972,
+            "retained_eta_clock_shift_current": -0.0016795650631091172,
+            "shift_constraint_pairing": -0.16537273996884277,
+            "velocity_pairing": 0.16376169601925428
+          },
+          {
+            "Noether_pairing": -0.0011489456442540513,
+            "eta_completed_relative_Ward_defect": 0.0007074932903285459,
+            "generator_mode": 20,
+            "identity": "P_DOT_L_THETA_G_PLUS_SHIFT_CONSTRAINT_THETA_MINUS_ETA_CLOCK_CURRENT_EQUALS_ZERO",
+            "metric_plus_total_shift_minus_eta_Ward_pairing": 6.55937876617445e-05,
+            "normalized_Noether_pairing": 9.172358658392801e-07,
+            "projection": {
+              "configuration_and_lapse_variations_are_zero_at_xi_zero": true,
+              "shift_basis_projection_error": 0.0,
+              "velocity_projection_relative_error": 0.008269519855304002
+            },
+            "relative_cancellation_defect": 0.012557001586547304,
+            "retained_eta_clock_shift_current": -0.0012145394319157958,
+            "shift_constraint_pairing": -0.046323676417233346,
+            "velocity_pairing": 0.045174730772979295
+          },
+          {
+            "Noether_pairing": 0.0006919072231051952,
+            "eta_completed_relative_Ward_defect": 0.0653825199605807,
+            "generator_mode": 47,
+            "identity": "P_DOT_L_THETA_G_PLUS_SHIFT_CONSTRAINT_THETA_MINUS_ETA_CLOCK_CURRENT_EQUALS_ZERO",
+            "metric_plus_total_shift_minus_eta_Ward_pairing": 0.0006919072643333568,
+            "normalized_Noether_pairing": 1.1375807589328531e-07,
+            "projection": {
+              "configuration_and_lapse_variations_are_zero_at_xi_zero": true,
+              "shift_basis_projection_error": 0.0,
+              "velocity_projection_relative_error": 0.0038153704481478467
+            },
+            "relative_cancellation_defect": 0.065382516319405,
+            "retained_eta_clock_shift_current": -4.122816163003296e-11,
+            "shift_constraint_pairing": 0.005637178713115741,
+            "velocity_pairing": -0.004945271490010545
+          }
+        ],
+        "generator": "XI_J=SIN(4CHI)COS(4JCHI),_XI_J_ENDPOINT_FIXED;_DELTA_FIELDS=L_XI_FIELDS",
+        "maximum_descriptor_velocity_relative_cancellation_defect": 1.0,
+        "maximum_relative_cancellation_defect": 0.30280100224828055,
+        "probe_kind": "ZERO_PADDED_CERTIFIED_N12_NOT_A_HIGHER_N_ROOT",
+        "rows": [
+          {
+            "Noether_pairing": 1.5795557556437543,
+            "action_coordinate_generator_norm": 33901.842302943194,
+            "action_covector_pairing_blocks": {
+              "coordinates": 23.551037490345795,
+              "lapse": 0.5928063545157697,
+              "shift": -23.938293898499857,
+              "velocities": 1.374005809282047
+            },
+            "generator_mode": 12,
+            "normalized_Noether_pairing": 4.659203300897382e-05,
+            "projection": {
+              "configuration_projection_relative_error": 0.013723810845533499,
+              "generator_endpoint_maximum": 7.690753251789118e-06,
+              "lapse_projection_relative_error": 9.684215421314702e-05,
+              "shift_projection_relative_error": 1.417316077859312e-15,
+              "velocity_projection_relative_error": 6.874680278729884e-15
+            },
+            "relative_cancellation_defect": 0.031938514452959726
+          },
+          {
+            "Noether_pairing": -0.19571346322629768,
+            "action_coordinate_generator_norm": 34174.812374573004,
+            "action_covector_pairing_blocks": {
+              "coordinates": 22.437216034770096,
+              "lapse": -0.23106181366429446,
+              "shift": -18.670743267044696,
+              "velocities": -3.731124417287403
+            },
+            "generator_mode": 13,
+            "normalized_Noether_pairing": 5.726833583786223e-06,
+            "projection": {
+              "configuration_projection_relative_error": 0.012682241105087085,
+              "generator_endpoint_maximum": 7.690753246102991e-06,
+              "lapse_projection_relative_error": 0.00022672855823234147,
+              "shift_projection_relative_error": 3.169511550802341e-15,
+              "velocity_projection_relative_error": 7.032455659415665e-15
+            },
+            "relative_cancellation_defect": 0.004342419153805746
+          },
+          {
+            "Noether_pairing": 0.11167268256118866,
+            "action_coordinate_generator_norm": 96557.65075819213,
+            "action_covector_pairing_blocks": {
+              "coordinates": 0.23866950064380626,
+              "lapse": 0.0015663005659580786,
+              "shift": -0.08457995513741055,
+              "velocities": -0.04398316351116513
+            },
+            "generator_mode": 24,
+            "normalized_Noether_pairing": 1.156538934867511e-06,
+            "projection": {
+              "configuration_projection_relative_error": 0.0068962357820228,
+              "generator_endpoint_maximum": 7.690753153532822e-06,
+              "lapse_projection_relative_error": 3.745149533463793e-15,
+              "shift_projection_relative_error": 2.527733294658822e-15,
+              "velocity_projection_relative_error": 6.006828740840451e-15
+            },
+            "relative_cancellation_defect": 0.30280100224828055
+          },
+          {
+            "Noether_pairing": -1.9811185068930512,
+            "action_coordinate_generator_norm": 619098.0638298187,
+            "action_covector_pairing_blocks": {
+              "coordinates": 5.344313584289731,
+              "lapse": 1.2550356631096262,
+              "shift": -8.582159762097875,
+              "velocities": 0.001692007805466925
+            },
+            "generator_mode": 47,
+            "normalized_Noether_pairing": 3.2000075959495044e-06,
+            "projection": {
+              "configuration_projection_relative_error": 0.0038153704481478467,
+              "generator_endpoint_maximum": 7.69075278211493e-06,
+              "lapse_projection_relative_error": 0.49253161308951604,
+              "shift_projection_relative_error": 0.4097217605151065,
+              "velocity_projection_relative_error": 0.4205420852504544
+            },
+            "relative_cancellation_defect": 0.1304809509296082
+          }
+        ],
+        "shift_source_decomposition": {
+          "exact_action_row_reconstruction": {
+            "eta_collective_inertia": 18.529045970275092,
+            "maximum_absolute_defect": 1.5147258447534284e-13,
+            "relative_l2_defect": 2.4648552297458464e-13
+          },
+          "exact_identity": "C_SHIFT_TOTAL=C_SHIFT_GEOMETRIC_PLUS_J_ETA_CLOCK",
+          "rows": [
+            {
+              "N_squared_first_eta_clock_weak_coefficient": 0.14817744641408973,
+              "cutoff_N": 12,
+              "eta_clock_H_minus_1_tail_norm": 0.0010941039226539388,
+              "first_eta_clock_weak_coefficient": 0.0010290100445422897,
+              "first_geometric_momentum_weak_coefficient": 0.013947889491468435,
+              "first_total_shift_weak_coefficient": 0.014976899536010726,
+              "geometric_momentum_H_minus_1_tail_norm": 0.032287841796226395,
+              "total_shift_H_minus_1_tail_norm": 0.03300976472675026
+            },
+            {
+              "N_squared_first_eta_clock_weak_coefficient": 0.006717440302442272,
+              "cutoff_N": 16,
+              "eta_clock_H_minus_1_tail_norm": 8.491626398058431e-05,
+              "first_eta_clock_weak_coefficient": -2.6240001181415124e-05,
+              "first_geometric_momentum_weak_coefficient": -0.0025573936951062835,
+              "first_total_shift_weak_coefficient": -0.002583633696287699,
+              "geometric_momentum_H_minus_1_tail_norm": 0.004771159731764458,
+              "total_shift_H_minus_1_tail_norm": 0.004846229328467018
+            },
+            {
+              "N_squared_first_eta_clock_weak_coefficient": 0.006072222785703352,
+              "cutoff_N": 20,
+              "eta_clock_H_minus_1_tail_norm": 1.5890055888415747e-05,
+              "first_eta_clock_weak_coefficient": -1.518055696425838e-05,
+              "first_geometric_momentum_weak_coefficient": -0.0005638201655865411,
+              "first_total_shift_weak_coefficient": -0.0005790007225507996,
+              "geometric_momentum_H_minus_1_tail_norm": 0.0008522126233569536,
+              "total_shift_H_minus_1_tail_norm": 0.0008620954696197338
+            },
+            {
+              "N_squared_first_eta_clock_weak_coefficient": 0.00015179827915160957,
+              "cutoff_N": 24,
+              "eta_clock_H_minus_1_tail_norm": 4.151395366007913e-07,
+              "first_eta_clock_weak_coefficient": -2.635386790826555e-07,
+              "first_geometric_momentum_weak_coefficient": -0.0002122574422287786,
+              "first_total_shift_weak_coefficient": -0.00021252098090786126,
+              "geometric_momentum_H_minus_1_tail_norm": 0.0004937814474730629,
+              "total_shift_H_minus_1_tail_norm": 0.0004940081493343779
+            },
+            {
+              "N_squared_first_eta_clock_weak_coefficient": 5.304387765681116e-06,
+              "cutoff_N": 32,
+              "eta_clock_H_minus_1_tail_norm": 5.712860858033616e-09,
+              "first_eta_clock_weak_coefficient": -5.180066177422965e-09,
+              "first_geometric_momentum_weak_coefficient": -9.349601745159858e-05,
+              "first_total_shift_weak_coefficient": -9.3501197517776e-05,
+              "geometric_momentum_H_minus_1_tail_norm": 0.00023078686223351454,
+              "total_shift_H_minus_1_tail_norm": 0.00023078914765056917
+            },
+            {
+              "N_squared_first_eta_clock_weak_coefficient": 6.507506062022672e-12,
+              "cutoff_N": 40,
+              "eta_clock_H_minus_1_tail_norm": 5.9342439192002795e-12,
+              "first_eta_clock_weak_coefficient": 4.06719128876417e-15,
+              "first_geometric_momentum_weak_coefficient": -4.839559843075638e-05,
+              "first_total_shift_weak_coefficient": -4.8395598426689184e-05,
+              "geometric_momentum_H_minus_1_tail_norm": 0.00010981017824721811,
+              "total_shift_H_minus_1_tail_norm": 0.00010981017957432167
+            },
+            {
+              "N_squared_first_eta_clock_weak_coefficient": 4.84424046212929e-10,
+              "cutoff_N": 47,
+              "eta_clock_H_minus_1_tail_norm": 2.1929562979308694e-13,
+              "first_eta_clock_weak_coefficient": -2.1929562979308694e-13,
+              "first_geometric_momentum_weak_coefficient": 2.9984569195283496e-05,
+              "first_total_shift_weak_coefficient": 2.9984568975987866e-05,
+              "geometric_momentum_H_minus_1_tail_norm": 2.9984569195283496e-05,
+              "total_shift_H_minus_1_tail_norm": 2.9984568975987866e-05
+            }
+          ]
+        }
+      }
+    ],
+    "event": [
+      {
+        "N": 16,
+        "descriptor_velocity_rows": [
+          {
+            "Noether_pairing": -3.074953513505203,
+            "eta_completed_relative_Ward_defect": 0.00035977854292661436,
+            "generator_mode": 0,
+            "identity": "P_DOT_L_THETA_G_PLUS_SHIFT_CONSTRAINT_THETA_MINUS_ETA_CLOCK_CURRENT_EQUALS_ZERO",
+            "metric_plus_total_shift_minus_eta_Ward_pairing": 0.0022134009234711094,
+            "normalized_Noether_pairing": 0.018964220354677607,
+            "projection": {
+              "configuration_and_lapse_variations_are_zero_at_xi_zero": true,
+              "shift_basis_projection_error": 0.0,
+              "velocity_projection_relative_error": 0.14689297610192686
+            },
+            "relative_cancellation_defect": 1.0,
+            "retained_eta_clock_shift_current": -3.077166914428674,
+            "shift_constraint_pairing": -1.4047608973570884e-14,
+            "velocity_pairing": -3.074953513505189
+          },
+          {
+            "Noether_pairing": 1.9430090833177533,
+            "eta_completed_relative_Ward_defect": 0.0010102147192521786,
+            "generator_mode": 1,
+            "identity": "P_DOT_L_THETA_G_PLUS_SHIFT_CONSTRAINT_THETA_MINUS_ETA_CLOCK_CURRENT_EQUALS_ZERO",
+            "metric_plus_total_shift_minus_eta_Ward_pairing": 0.003921750940691027,
+            "normalized_Noether_pairing": 0.012487299114260317,
+            "projection": {
+              "configuration_and_lapse_variations_are_zero_at_xi_zero": true,
+              "shift_basis_projection_error": 0.0,
+              "velocity_projection_relative_error": 0.16581211677127
+            },
+            "relative_cancellation_defect": 1.0,
+            "retained_eta_clock_shift_current": 1.9390873323770623,
+            "shift_constraint_pairing": 5.4437906819608486e-15,
+            "velocity_pairing": 1.9430090833177478
+          },
+          {
+            "Noether_pairing": -0.04104441553317084,
+            "eta_completed_relative_Ward_defect": 0.0001259150789171344,
+            "generator_mode": 12,
+            "identity": "P_DOT_L_THETA_G_PLUS_SHIFT_CONSTRAINT_THETA_MINUS_ETA_CLOCK_CURRENT_EQUALS_ZERO",
+            "metric_plus_total_shift_minus_eta_Ward_pairing": 0.0001300858649187428,
+            "normalized_Noether_pairing": 5.6928920513599963e-05,
+            "projection": {
+              "configuration_and_lapse_variations_are_zero_at_xi_zero": true,
+              "shift_basis_projection_error": 0.0,
+              "velocity_projection_relative_error": 0.02348942802803877
+            },
+            "relative_cancellation_defect": 0.04137753366496093,
+            "retained_eta_clock_shift_current": -0.041174501398089584,
+            "shift_constraint_pairing": 0.4754524419734476,
+            "velocity_pairing": -0.5164968575066184
+          },
+          {
+            "Noether_pairing": -0.02707520865033386,
+            "eta_completed_relative_Ward_defect": 0.008540862378303515,
+            "generator_mode": 15,
+            "identity": "P_DOT_L_THETA_G_PLUS_SHIFT_CONSTRAINT_THETA_MINUS_ETA_CLOCK_CURRENT_EQUALS_ZERO",
+            "metric_plus_total_shift_minus_eta_Ward_pairing": 0.013250567418674704,
+            "normalized_Noether_pairing": 2.5374180606617716e-05,
+            "projection": {
+              "configuration_and_lapse_variations_are_zero_at_xi_zero": true,
+              "shift_basis_projection_error": 0.0,
+              "velocity_projection_relative_error": 0.019534669767294458
+            },
+            "relative_cancellation_defect": 0.01791747513544891,
+            "retained_eta_clock_shift_current": -0.04032577606900856,
+            "shift_constraint_pairing": 0.7420155203661236,
+            "velocity_pairing": -0.7690907290164575
+          }
+        ],
+        "generator": "XI_J=SIN(4CHI)COS(4JCHI),_XI_J_ENDPOINT_FIXED;_DELTA_FIELDS=L_XI_FIELDS",
+        "maximum_descriptor_velocity_relative_cancellation_defect": 1.0,
+        "maximum_relative_cancellation_defect": 0.2123766138196489,
+        "probe_kind": "ZERO_PADDED_CERTIFIED_N12_NOT_A_HIGHER_N_ROOT",
+        "rows": [
+          {
+            "Noether_pairing": -2.842940760874787,
+            "action_coordinate_generator_norm": 18973.577301971352,
+            "action_covector_pairing_blocks": {
+              "coordinates": 15.361428129971339,
+              "lapse": -0.3308474668552903,
+              "shift": -17.992066388370166,
+              "velocities": 0.11854496437932997
+            },
+            "generator_mode": 12,
+            "normalized_Noether_pairing": 0.00014983683443708877,
+            "projection": {
+              "configuration_projection_relative_error": 0.02348942802803877,
+              "generator_endpoint_maximum": 7.690753251789118e-06,
+              "lapse_projection_relative_error": 0.021532198740179975,
+              "shift_projection_relative_error": 0.028496149483331106,
+              "velocity_projection_relative_error": 0.34909667096932157
+            },
+            "relative_cancellation_defect": 0.08410348989172466
+          },
+          {
+            "Noether_pairing": 4.615990214112218,
+            "action_coordinate_generator_norm": 23627.97219443646,
+            "action_covector_pairing_blocks": {
+              "coordinates": 13.175458645278201,
+              "lapse": -0.13719688232721683,
+              "shift": -7.656418122551566,
+              "velocities": -0.7658534262872011
+            },
+            "generator_mode": 13,
+            "normalized_Noether_pairing": 0.00019536125132224076,
+            "projection": {
+              "configuration_projection_relative_error": 0.021905904679261443,
+              "generator_endpoint_maximum": 7.690753246102991e-06,
+              "lapse_projection_relative_error": 0.03362081822241213,
+              "shift_projection_relative_error": 0.029336887747290454,
+              "velocity_projection_relative_error": 0.3844665402188704
+            },
+            "relative_cancellation_defect": 0.2123766138196489
+          },
+          {
+            "Noether_pairing": -2.5940227603334507,
+            "action_coordinate_generator_norm": 34831.39138689586,
+            "action_covector_pairing_blocks": {
+              "coordinates": 9.213318787272394,
+              "lapse": 0.8628910405622954,
+              "shift": -10.756019647530717,
+              "velocities": -1.9142129406374229
+            },
+            "generator_mode": 15,
+            "normalized_Noether_pairing": 7.447370481184293e-05,
+            "projection": {
+              "configuration_projection_relative_error": 0.019534669767294458,
+              "generator_endpoint_maximum": 7.690753233366063e-06,
+              "lapse_projection_relative_error": 0.4335964124748662,
+              "shift_projection_relative_error": 0.40529335849819526,
+              "velocity_projection_relative_error": 0.5256950469842753
+            },
+            "relative_cancellation_defect": 0.11404081187256233
+          }
+        ],
+        "shift_source_decomposition": {
+          "exact_action_row_reconstruction": {
+            "eta_collective_inertia": 23.774863321567288,
+            "maximum_absolute_defect": 2.1038726316646716e-14,
+            "relative_l2_defect": 3.6938584895916166e-14
+          },
+          "exact_identity": "C_SHIFT_TOTAL=C_SHIFT_GEOMETRIC_PLUS_J_ETA_CLOCK",
+          "rows": [
+            {
+              "N_squared_first_eta_clock_weak_coefficient": 0.12349670660111378,
+              "cutoff_N": 12,
+              "eta_clock_H_minus_1_tail_norm": 0.0018548224521447254,
+              "first_eta_clock_weak_coefficient": -0.0008576160180632902,
+              "first_geometric_momentum_weak_coefficient": 0.010760726346502015,
+              "first_total_shift_weak_coefficient": 0.009903110328438726,
+              "geometric_momentum_H_minus_1_tail_norm": 0.02385537903541646,
+              "total_shift_H_minus_1_tail_norm": 0.023629876671227602
+            },
+            {
+              "N_squared_first_eta_clock_weak_coefficient": 0.15120066162502696,
+              "cutoff_N": 15,
+              "eta_clock_H_minus_1_tail_norm": 0.0006720029405556753,
+              "first_eta_clock_weak_coefficient": -0.0006720029405556753,
+              "first_geometric_momentum_weak_coefficient": 0.013037211009228165,
+              "first_total_shift_weak_coefficient": 0.01236520806867249,
+              "geometric_momentum_H_minus_1_tail_norm": 0.013037211009228165,
+              "total_shift_H_minus_1_tail_norm": 0.01236520806867249
+            }
+          ]
+        }
+      },
+      {
+        "N": 24,
+        "descriptor_velocity_rows": [
+          {
+            "Noether_pairing": -3.076164588135527,
+            "eta_completed_relative_Ward_defect": 0.0001628916454004876,
+            "generator_mode": 0,
+            "identity": "P_DOT_L_THETA_G_PLUS_SHIFT_CONSTRAINT_THETA_MINUS_ETA_CLOCK_CURRENT_EQUALS_ZERO",
+            "metric_plus_total_shift_minus_eta_Ward_pairing": 0.0010023262931473376,
+            "normalized_Noether_pairing": 0.010318190351721265,
+            "projection": {
+              "configuration_and_lapse_variations_are_zero_at_xi_zero": true,
+              "shift_basis_projection_error": 0.0,
+              "velocity_projection_relative_error": 0.12057373499485084
+            },
+            "relative_cancellation_defect": 1.0,
+            "retained_eta_clock_shift_current": -3.077166914428674,
+            "shift_constraint_pairing": -1.4047608973570884e-14,
+            "velocity_pairing": -3.0761645881355126
+          },
+          {
+            "Noether_pairing": 1.9406092840915985,
+            "eta_completed_relative_Ward_defect": 0.0003922862700335238,
+            "generator_mode": 1,
+            "identity": "P_DOT_L_THETA_G_PLUS_SHIFT_CONSTRAINT_THETA_MINUS_ETA_CLOCK_CURRENT_EQUALS_ZERO",
+            "metric_plus_total_shift_minus_eta_Ward_pairing": 0.0015219517145361738,
+            "normalized_Noether_pairing": 0.006636138829392917,
+            "projection": {
+              "configuration_and_lapse_variations_are_zero_at_xi_zero": true,
+              "shift_basis_projection_error": 0.0,
+              "velocity_projection_relative_error": 0.1360374707024088
+            },
+            "relative_cancellation_defect": 1.0,
+            "retained_eta_clock_shift_current": 1.9390873323770623,
+            "shift_constraint_pairing": 5.4437906819608486e-15,
+            "velocity_pairing": 1.940609284091593
+          },
+          {
+            "Noether_pairing": -0.040354975796029535,
+            "eta_completed_relative_Ward_defect": 0.000793779859432744,
+            "generator_mode": 12,
+            "identity": "P_DOT_L_THETA_G_PLUS_SHIFT_CONSTRAINT_THETA_MINUS_ETA_CLOCK_CURRENT_EQUALS_ZERO",
+            "metric_plus_total_shift_minus_eta_Ward_pairing": 0.0008195256020600492,
+            "normalized_Noether_pairing": 6.472643979799014e-05,
+            "projection": {
+              "configuration_and_lapse_variations_are_zero_at_xi_zero": true,
+              "shift_basis_projection_error": 0.0,
+              "velocity_projection_relative_error": 0.019300709146217322
+            },
+            "relative_cancellation_defect": 0.040710793844204764,
+            "retained_eta_clock_shift_current": -0.041174501398089584,
+            "shift_constraint_pairing": 0.4754524419734476,
+            "velocity_pairing": -0.5158074177694771
+          },
+          {
+            "Noether_pairing": -0.02064633797614135,
+            "eta_completed_relative_Ward_defect": 0.0013821554681326448,
+            "generator_mode": 16,
+            "identity": "P_DOT_L_THETA_G_PLUS_SHIFT_CONSTRAINT_THETA_MINUS_ETA_CLOCK_CURRENT_EQUALS_ZERO",
+            "metric_plus_total_shift_minus_eta_Ward_pairing": 0.0007226571208697602,
+            "normalized_Noether_pairing": 1.9150469684701916e-05,
+            "projection": {
+              "configuration_and_lapse_variations_are_zero_at_xi_zero": true,
+              "shift_basis_projection_error": 0.0,
+              "velocity_projection_relative_error": 0.014505741817671253
+            },
+            "relative_cancellation_defect": 0.04117089806894646,
+            "retained_eta_clock_shift_current": -0.02136899509701111,
+            "shift_constraint_pairing": -0.2610626347821633,
+            "velocity_pairing": 0.24041629680602195
+          },
+          {
+            "Noether_pairing": 0.010123734927855642,
+            "eta_completed_relative_Ward_defect": 0.0013387059344268323,
+            "generator_mode": 20,
+            "identity": "P_DOT_L_THETA_G_PLUS_SHIFT_CONSTRAINT_THETA_MINUS_ETA_CLOCK_CURRENT_EQUALS_ZERO",
+            "metric_plus_total_shift_minus_eta_Ward_pairing": -0.00017835783219796383,
+            "normalized_Noether_pairing": 6.291251866925605e-06,
+            "projection": {
+              "configuration_and_lapse_variations_are_zero_at_xi_zero": true,
+              "shift_basis_projection_error": 0.0,
+              "velocity_projection_relative_error": 0.011618146601314935
+            },
+            "relative_cancellation_defect": 0.08235403680956596,
+            "retained_eta_clock_shift_current": 0.010302092760053606,
+            "shift_constraint_pairing": -0.05640284829290624,
+            "velocity_pairing": 0.06652658322076188
+          },
+          {
+            "Noether_pairing": 0.007406295856892649,
+            "eta_completed_relative_Ward_defect": 0.1829500057711652,
+            "generator_mode": 23,
+            "identity": "P_DOT_L_THETA_G_PLUS_SHIFT_CONSTRAINT_THETA_MINUS_ETA_CLOCK_CURRENT_EQUALS_ZERO",
+            "metric_plus_total_shift_minus_eta_Ward_pairing": 0.006264188761580856,
+            "normalized_Noether_pairing": 3.6164672772156133e-06,
+            "projection": {
+              "configuration_and_lapse_variations_are_zero_at_xi_zero": true,
+              "shift_basis_projection_error": 0.0,
+              "velocity_projection_relative_error": 0.010541820012064036
+            },
+            "relative_cancellation_defect": 0.2237701249092624,
+            "retained_eta_clock_shift_current": 0.0011421070953117928,
+            "shift_constraint_pairing": 0.020252041262388606,
+            "velocity_pairing": -0.012845745405495957
+          }
+        ],
+        "generator": "XI_J=SIN(4CHI)COS(4JCHI),_XI_J_ENDPOINT_FIXED;_DELTA_FIELDS=L_XI_FIELDS",
+        "maximum_descriptor_velocity_relative_cancellation_defect": 1.0,
+        "maximum_relative_cancellation_defect": 0.1698636389965374,
+        "probe_kind": "ZERO_PADDED_CERTIFIED_N12_NOT_A_HIGHER_N_ROOT",
+        "rows": [
+          {
+            "Noether_pairing": -1.9722974243635925,
+            "action_coordinate_generator_norm": 16806.410228552973,
+            "action_covector_pairing_blocks": {
+              "coordinates": 15.975138856697283,
+              "lapse": -0.27151147663543007,
+              "shift": -17.78914743479033,
+              "velocities": 0.11322263036488422
+            },
+            "generator_mode": 12,
+            "normalized_Noether_pairing": 0.00011735387852265978,
+            "projection": {
+              "configuration_projection_relative_error": 0.019300709146217322,
+              "generator_endpoint_maximum": 7.690753251789118e-06,
+              "lapse_projection_relative_error": 0.0003352920929984564,
+              "shift_projection_relative_error": 7.80144929944032e-06,
+              "velocity_projection_relative_error": 0.014699562925956672
+            },
+            "relative_cancellation_defect": 0.057755607667472744
+          },
+          {
+            "Noether_pairing": 2.8576151337832045,
+            "action_coordinate_generator_norm": 21085.313268980048,
+            "action_covector_pairing_blocks": {
+              "coordinates": 11.749316507792365,
+              "lapse": -0.09321105984849551,
+              "shift": -8.026008760653376,
+              "velocities": -0.7724815535072889
+            },
+            "generator_mode": 13,
+            "normalized_Noether_pairing": 0.0001355263304523545,
+            "projection": {
+              "configuration_projection_relative_error": 0.01785868998868213,
+              "generator_endpoint_maximum": 7.690753246102991e-06,
+              "lapse_projection_relative_error": 0.0004282459635217074,
+              "shift_projection_relative_error": 1.4683827394076346e-05,
+              "velocity_projection_relative_error": 0.019411408731773844
+            },
+            "relative_cancellation_defect": 0.13844351815143116
+          },
+          {
+            "Noether_pairing": -2.2203235828583576,
+            "action_coordinate_generator_norm": 102329.03637674321,
+            "action_covector_pairing_blocks": {
+              "coordinates": 5.1818792328018235,
+              "lapse": 0.24356481812239958,
+              "shift": -7.598007593553725,
+              "velocities": -0.04776004022885536
+            },
+            "generator_mode": 23,
+            "normalized_Noether_pairing": 2.169788421229559e-05,
+            "projection": {
+              "configuration_projection_relative_error": 0.010541820012064036,
+              "generator_endpoint_maximum": 7.690753164222743e-06,
+              "lapse_projection_relative_error": 0.43359641247486647,
+              "shift_projection_relative_error": 0.40477487184734406,
+              "velocity_projection_relative_error": 0.5253951547381649
+            },
+            "relative_cancellation_defect": 0.1698636389965374
+          }
+        ],
+        "shift_source_decomposition": {
+          "exact_action_row_reconstruction": {
+            "eta_collective_inertia": 23.774863321567288,
+            "maximum_absolute_defect": 9.806738754392086e-14,
+            "relative_l2_defect": 1.415257851326349e-13
+          },
+          "exact_identity": "C_SHIFT_TOTAL=C_SHIFT_GEOMETRIC_PLUS_J_ETA_CLOCK",
+          "rows": [
+            {
+              "N_squared_first_eta_clock_weak_coefficient": 0.12349670660111378,
+              "cutoff_N": 12,
+              "eta_clock_H_minus_1_tail_norm": 0.001979881556714547,
+              "first_eta_clock_weak_coefficient": -0.0008576160180632902,
+              "first_geometric_momentum_weak_coefficient": 0.010760726346502015,
+              "first_total_shift_weak_coefficient": 0.009903110328438726,
+              "geometric_momentum_H_minus_1_tail_norm": 0.024422255715053,
+              "total_shift_H_minus_1_tail_norm": 0.024173751494698748
+            },
+            {
+              "N_squared_first_eta_clock_weak_coefficient": 0.08546554821855566,
+              "cutoff_N": 16,
+              "eta_clock_H_minus_1_tail_norm": 0.0006925060646941989,
+              "first_eta_clock_weak_coefficient": -0.00033384979772873305,
+              "first_geometric_momentum_weak_coefficient": -0.0037447560244395646,
+              "first_total_shift_weak_coefficient": -0.004078605822168298,
+              "geometric_momentum_H_minus_1_tail_norm": 0.005231392289634939,
+              "total_shift_H_minus_1_tail_norm": 0.005098940069271605
+            },
+            {
+              "N_squared_first_eta_clock_weak_coefficient": 0.05150644001681462,
+              "cutoff_N": 20,
+              "eta_clock_H_minus_1_tail_norm": 0.00014424241326802328,
+              "first_eta_clock_weak_coefficient": 0.00012876610004203655,
+              "first_geometric_momentum_weak_coefficient": -0.0008337466292507819,
+              "first_total_shift_weak_coefficient": -0.0007049805292087454,
+              "geometric_momentum_H_minus_1_tail_norm": 0.000898936049571838,
+              "total_shift_H_minus_1_tail_norm": 0.0008054822546640985
+            },
+            {
+              "N_squared_first_eta_clock_weak_coefficient": 0.006566727888429189,
+              "cutoff_N": 23,
+              "eta_clock_H_minus_1_tail_norm": 1.2413474269242324e-05,
+              "first_eta_clock_weak_coefficient": 1.2413474269242324e-05,
+              "first_geometric_momentum_weak_coefficient": 0.0002077044062187198,
+              "first_total_shift_weak_coefficient": 0.00022011788048796212,
+              "geometric_momentum_H_minus_1_tail_norm": 0.0002077044062187198,
+              "total_shift_H_minus_1_tail_norm": 0.00022011788048796212
+            }
+          ]
+        }
+      },
+      {
+        "N": 32,
+        "descriptor_velocity_rows": [
+          {
+            "Noether_pairing": -3.0767435895083337,
+            "eta_completed_relative_Ward_defect": 6.878958023026953e-05,
+            "generator_mode": 0,
+            "identity": "P_DOT_L_THETA_G_PLUS_SHIFT_CONSTRAINT_THETA_MINUS_ETA_CLOCK_CURRENT_EQUALS_ZERO",
+            "metric_plus_total_shift_minus_eta_Ward_pairing": 0.0004233249203404732,
+            "normalized_Noether_pairing": 0.006703487030806831,
+            "projection": {
+              "configuration_and_lapse_variations_are_zero_at_xi_zero": true,
+              "shift_basis_projection_error": 0.0,
+              "velocity_projection_relative_error": 0.10469534195357132
+            },
+            "relative_cancellation_defect": 1.0,
+            "retained_eta_clock_shift_current": -3.077166914428674,
+            "shift_constraint_pairing": -1.4047608973570884e-14,
+            "velocity_pairing": -3.0767435895083195
+          },
+          {
+            "Noether_pairing": 1.9397330051763384,
+            "eta_completed_relative_Ward_defect": 0.00016646112557080678,
+            "generator_mode": 1,
+            "identity": "P_DOT_L_THETA_G_PLUS_SHIFT_CONSTRAINT_THETA_MINUS_ETA_CLOCK_CURRENT_EQUALS_ZERO",
+            "metric_plus_total_shift_minus_eta_Ward_pairing": 0.0006456727992760758,
+            "normalized_Noether_pairing": 0.004273673890300657,
+            "projection": {
+              "configuration_and_lapse_variations_are_zero_at_xi_zero": true,
+              "shift_basis_projection_error": 0.0,
+              "velocity_projection_relative_error": 0.1181023113184983
+            },
+            "relative_cancellation_defect": 1.0,
+            "retained_eta_clock_shift_current": 1.9390873323770623,
+            "shift_constraint_pairing": 5.4437906819608486e-15,
+            "velocity_pairing": 1.9397330051763328
+          },
+          {
+            "Noether_pairing": -0.04078363167575105,
+            "eta_completed_relative_Ward_defect": 0.00037843326355704355,
+            "generator_mode": 12,
+            "identity": "P_DOT_L_THETA_G_PLUS_SHIFT_CONSTRAINT_THETA_MINUS_ETA_CLOCK_CURRENT_EQUALS_ZERO",
+            "metric_plus_total_shift_minus_eta_Ward_pairing": 0.0003908697223385313,
+            "normalized_Noether_pairing": 7.367300829062612e-05,
+            "projection": {
+              "configuration_and_lapse_variations_are_zero_at_xi_zero": true,
+              "shift_basis_projection_error": 0.0,
+              "velocity_projection_relative_error": 0.016767845012573033
+            },
+            "relative_cancellation_defect": 0.04112544517079987,
+            "retained_eta_clock_shift_current": -0.041174501398089584,
+            "shift_constraint_pairing": 0.4754524419734476,
+            "velocity_pairing": -0.5162360736491987
+          },
+          {
+            "Noether_pairing": -0.02101307154366827,
+            "eta_completed_relative_Ward_defect": 0.0006812179233074891,
+            "generator_mode": 16,
+            "identity": "P_DOT_L_THETA_G_PLUS_SHIFT_CONSTRAINT_THETA_MINUS_ETA_CLOCK_CURRENT_EQUALS_ZERO",
+            "metric_plus_total_shift_minus_eta_Ward_pairing": 0.00035592355334283787,
+            "normalized_Noether_pairing": 2.174033689953152e-05,
+            "projection": {
+              "configuration_and_lapse_variations_are_zero_at_xi_zero": true,
+              "shift_basis_projection_error": 0.0,
+              "velocity_projection_relative_error": 0.012610558044423336
+            },
+            "relative_cancellation_defect": 0.041932867782240674,
+            "retained_eta_clock_shift_current": -0.02136899509701111,
+            "shift_constraint_pairing": -0.2610626347821633,
+            "velocity_pairing": 0.24004956323849502
+          },
+          {
+            "Noether_pairing": 0.010576443058675979,
+            "eta_completed_relative_Ward_defect": 0.002052226307379026,
+            "generator_mode": 20,
+            "identity": "P_DOT_L_THETA_G_PLUS_SHIFT_CONSTRAINT_THETA_MINUS_ETA_CLOCK_CURRENT_EQUALS_ZERO",
+            "metric_plus_total_shift_minus_eta_Ward_pairing": 0.00027435029862237295,
+            "normalized_Noether_pairing": 7.144946928337893e-06,
+            "projection": {
+              "configuration_and_lapse_variations_are_zero_at_xi_zero": true,
+              "shift_basis_projection_error": 0.0,
+              "velocity_projection_relative_error": 0.01009655002155302
+            },
+            "relative_cancellation_defect": 0.08572102160937385,
+            "retained_eta_clock_shift_current": 0.010302092760053606,
+            "shift_constraint_pairing": -0.05640284829290624,
+            "velocity_pairing": 0.06697929135158222
+          },
+          {
+            "Noether_pairing": 0.0034759689741815022,
+            "eta_completed_relative_Ward_defect": 0.18566587915041421,
+            "generator_mode": 31,
+            "identity": "P_DOT_L_THETA_G_PLUS_SHIFT_CONSTRAINT_THETA_MINUS_ETA_CLOCK_CURRENT_EQUALS_ZERO",
+            "metric_plus_total_shift_minus_eta_Ward_pairing": 0.003482707747571359,
+            "normalized_Noether_pairing": 1.079065672836632e-06,
+            "projection": {
+              "configuration_and_lapse_variations_are_zero_at_xi_zero": true,
+              "shift_basis_projection_error": 0.0,
+              "velocity_projection_relative_error": 0.006836165946363164
+            },
+            "relative_cancellation_defect": 0.18537322505984805,
+            "retained_eta_clock_shift_current": -6.738773389856628e-06,
+            "shift_constraint_pairing": 0.011113580593430488,
+            "velocity_pairing": -0.007637611619248986
+          }
+        ],
+        "generator": "XI_J=SIN(4CHI)COS(4JCHI),_XI_J_ENDPOINT_FIXED;_DELTA_FIELDS=L_XI_FIELDS",
+        "maximum_descriptor_velocity_relative_cancellation_defect": 1.0,
+        "maximum_relative_cancellation_defect": 0.24306972431669868,
+        "probe_kind": "ZERO_PADDED_CERTIFIED_N12_NOT_A_HIGHER_N_ROOT",
+        "rows": [
+          {
+            "Noether_pairing": -1.9393096780396681,
+            "action_coordinate_generator_norm": 16966.118611149086,
+            "action_covector_pairing_blocks": {
+              "coordinates": 16.009422397527825,
+              "lapse": -0.2723839457467131,
+              "shift": -17.789228530844895,
+              "velocities": 0.11288040102411497
+            },
+            "generator_mode": 12,
+            "normalized_Noether_pairing": 0.00011430485206942226,
+            "projection": {
+              "configuration_projection_relative_error": 0.016767845012573033,
+              "generator_endpoint_maximum": 7.690753251789118e-06,
+              "lapse_projection_relative_error": 0.00024808691562524794,
+              "shift_projection_relative_error": 1.3949587116134824e-15,
+              "velocity_projection_relative_error": 1.2735178330242056e-14
+            },
+            "relative_cancellation_defect": 0.05673164300900943
+          },
+          {
+            "Noether_pairing": 2.425117852769526,
+            "action_coordinate_generator_norm": 20127.61955877355,
+            "action_covector_pairing_blocks": {
+              "coordinates": 11.315364429333759,
+              "lapse": -0.09301732941161456,
+              "shift": -8.025885057788894,
+              "velocities": -0.7713441893637238
+            },
+            "generator_mode": 13,
+            "normalized_Noether_pairing": 0.00012048706732001135,
+            "projection": {
+              "configuration_projection_relative_error": 0.015498288583446566,
+              "generator_endpoint_maximum": 7.690753246102991e-06,
+              "lapse_projection_relative_error": 0.0003189786202555997,
+              "shift_projection_relative_error": 1.6612621273854887e-15,
+              "velocity_projection_relative_error": 1.3760491216040012e-14
+            },
+            "relative_cancellation_defect": 0.1200220004265962
+          },
+          {
+            "Noether_pairing": 1.6607518679207083,
+            "action_coordinate_generator_norm": 34762.02045825554,
+            "action_covector_pairing_blocks": {
+              "coordinates": 26.376081427189533,
+              "lapse": -0.47030292645741967,
+              "shift": -25.32104041414568,
+              "velocities": 1.0760137813342765
+            },
+            "generator_mode": 16,
+            "normalized_Noether_pairing": 4.7774894727855235e-05,
+            "projection": {
+              "configuration_projection_relative_error": 0.012610558044423336,
+              "generator_endpoint_maximum": 7.690753226315264e-06,
+              "lapse_projection_relative_error": 3.389805198485257e-15,
+              "shift_projection_relative_error": 1.7591165473971792e-15,
+              "velocity_projection_relative_error": 1.1721551185600234e-14
+            },
+            "relative_cancellation_defect": 0.031191671935094086
+          },
+          {
+            "Noether_pairing": -2.8664168293157575,
+            "action_coordinate_generator_norm": 216789.14363368982,
+            "action_covector_pairing_blocks": {
+              "coordinates": 4.22525942307856,
+              "lapse": 0.23249791718730406,
+              "shift": -7.329493600675258,
+              "velocities": 0.005319431093636558
+            },
+            "generator_mode": 31,
+            "normalized_Noether_pairing": 1.3222141945258858e-05,
+            "projection": {
+              "configuration_projection_relative_error": 0.006836165946363164,
+              "generator_endpoint_maximum": 7.690753065966449e-06,
+              "lapse_projection_relative_error": 0.4335964124748676,
+              "shift_projection_relative_error": 0.40453211869286737,
+              "velocity_projection_relative_error": 0.5252428362196495
+            },
+            "relative_cancellation_defect": 0.24306972431669868
+          }
+        ],
+        "shift_source_decomposition": {
+          "exact_action_row_reconstruction": {
+            "eta_collective_inertia": 23.774863321567288,
+            "maximum_absolute_defect": 2.0005351542007332e-13,
+            "relative_l2_defect": 2.4303595457588194e-13
+          },
+          "exact_identity": "C_SHIFT_TOTAL=C_SHIFT_GEOMETRIC_PLUS_J_ETA_CLOCK",
+          "rows": [
+            {
+              "N_squared_first_eta_clock_weak_coefficient": 0.12349670660111378,
+              "cutoff_N": 12,
+              "eta_clock_H_minus_1_tail_norm": 0.001979957765542351,
+              "first_eta_clock_weak_coefficient": -0.0008576160180632902,
+              "first_geometric_momentum_weak_coefficient": 0.010760726346502015,
+              "first_total_shift_weak_coefficient": 0.009903110328438726,
+              "geometric_momentum_H_minus_1_tail_norm": 0.02442553334403125,
+              "total_shift_H_minus_1_tail_norm": 0.02417690330348698
+            },
+            {
+              "N_squared_first_eta_clock_weak_coefficient": 0.08546554821855566,
+              "cutoff_N": 16,
+              "eta_clock_H_minus_1_tail_norm": 0.0006927239163990851,
+              "first_eta_clock_weak_coefficient": -0.00033384979772873305,
+              "first_geometric_momentum_weak_coefficient": -0.0037447560244395646,
+              "first_total_shift_weak_coefficient": -0.004078605822168298,
+              "geometric_momentum_H_minus_1_tail_norm": 0.005246672299371792,
+              "total_shift_H_minus_1_tail_norm": 0.0051138617353946175
+            },
+            {
+              "N_squared_first_eta_clock_weak_coefficient": 0.05150644001681462,
+              "cutoff_N": 20,
+              "eta_clock_H_minus_1_tail_norm": 0.00014528471529525757,
+              "first_eta_clock_weak_coefficient": 0.00012876610004203655,
+              "first_geometric_momentum_weak_coefficient": -0.0008337466292507819,
+              "first_total_shift_weak_coefficient": -0.0007049805292087454,
+              "geometric_momentum_H_minus_1_tail_norm": 0.000983966945665971,
+              "total_shift_H_minus_1_tail_norm": 0.0008950942303961598
+            },
+            {
+              "N_squared_first_eta_clock_weak_coefficient": 0.008328557926468203,
+              "cutoff_N": 24,
+              "eta_clock_H_minus_1_tail_norm": 1.737166408381274e-05,
+              "first_eta_clock_weak_coefficient": 1.4459301955673964e-05,
+              "first_geometric_momentum_weak_coefficient": -0.0002038923284240819,
+              "first_total_shift_weak_coefficient": -0.00018943302646840795,
+              "geometric_momentum_H_minus_1_tail_norm": 0.00040013113968222734,
+              "total_shift_H_minus_1_tail_norm": 0.00039037420343784743
+            },
+            {
+              "N_squared_first_eta_clock_weak_coefficient": 5.2223795574637756e-05,
+              "cutoff_N": 31,
+              "eta_clock_H_minus_1_tail_norm": 5.434317957818705e-08,
+              "first_eta_clock_weak_coefficient": -5.434317957818705e-08,
+              "first_geometric_momentum_weak_coefficient": 8.967707880302628e-05,
+              "first_total_shift_weak_coefficient": 8.962273562344809e-05,
+              "geometric_momentum_H_minus_1_tail_norm": 8.967707880302628e-05,
+              "total_shift_H_minus_1_tail_norm": 8.962273562344809e-05
+            }
+          ]
+        }
+      },
+      {
+        "N": 48,
+        "descriptor_velocity_rows": [
+          {
+            "Noether_pairing": -3.0770406238699675,
+            "eta_completed_relative_Ward_defect": 2.0521010694032345e-05,
+            "generator_mode": 0,
+            "identity": "P_DOT_L_THETA_G_PLUS_SHIFT_CONSTRAINT_THETA_MINUS_ETA_CLOCK_CURRENT_EQUALS_ZERO",
+            "metric_plus_total_shift_minus_eta_Ward_pairing": 0.0001262905587067209,
+            "normalized_Noether_pairing": 0.003650695591521643,
+            "projection": {
+              "configuration_and_lapse_variations_are_zero_at_xi_zero": true,
+              "shift_basis_projection_error": 0.0,
+              "velocity_projection_relative_error": 0.08570819035813532
+            },
+            "relative_cancellation_defect": 1.0,
+            "retained_eta_clock_shift_current": -3.077166914428674,
+            "shift_constraint_pairing": -1.4047608973570884e-14,
+            "velocity_pairing": -3.0770406238699533
+          },
+          {
+            "Noether_pairing": 1.939280490582148,
+            "eta_completed_relative_Ward_defect": 4.9803993304122904e-05,
+            "generator_mode": 1,
+            "identity": "P_DOT_L_THETA_G_PLUS_SHIFT_CONSTRAINT_THETA_MINUS_ETA_CLOCK_CURRENT_EQUALS_ZERO",
+            "metric_plus_total_shift_minus_eta_Ward_pairing": 0.00019315820508558623,
+            "normalized_Noether_pairing": 0.0023126156690964237,
+            "projection": {
+              "configuration_and_lapse_variations_are_zero_at_xi_zero": true,
+              "shift_basis_projection_error": 0.0,
+              "velocity_projection_relative_error": 0.09667166409153212
+            },
+            "relative_cancellation_defect": 1.0,
+            "retained_eta_clock_shift_current": 1.9390873323770623,
+            "shift_constraint_pairing": 5.4437906819608486e-15,
+            "velocity_pairing": 1.9392804905821424
+          },
+          {
+            "Noether_pairing": -0.04105218133762356,
+            "eta_completed_relative_Ward_defect": 0.00011839737010339706,
+            "generator_mode": 12,
+            "identity": "P_DOT_L_THETA_G_PLUS_SHIFT_CONSTRAINT_THETA_MINUS_ETA_CLOCK_CURRENT_EQUALS_ZERO",
+            "metric_plus_total_shift_minus_eta_Ward_pairing": 0.00012232006046602323,
+            "normalized_Noether_pairing": 6.599720836442384e-05,
+            "projection": {
+              "configuration_and_lapse_variations_are_zero_at_xi_zero": true,
+              "shift_basis_projection_error": 0.0,
+              "velocity_projection_relative_error": 0.01372746562525229
+            },
+            "relative_cancellation_defect": 0.04138503850048061,
+            "retained_eta_clock_shift_current": -0.041174501398089584,
+            "shift_constraint_pairing": 0.4754524419734476,
+            "velocity_pairing": -0.5165046233110712
+          },
+          {
+            "Noether_pairing": -0.02125021386932155,
+            "eta_completed_relative_Ward_defect": 0.00022744390770832292,
+            "generator_mode": 16,
+            "identity": "P_DOT_L_THETA_G_PLUS_SHIFT_CONSTRAINT_THETA_MINUS_ETA_CLOCK_CURRENT_EQUALS_ZERO",
+            "metric_plus_total_shift_minus_eta_Ward_pairing": 0.00011878122768956001,
+            "normalized_Noether_pairing": 2.5416900336685467e-05,
+            "projection": {
+              "configuration_and_lapse_variations_are_zero_at_xi_zero": true,
+              "shift_basis_projection_error": 0.0,
+              "velocity_projection_relative_error": 0.010324522813039758
+            },
+            "relative_cancellation_defect": 0.04242617720268609,
+            "retained_eta_clock_shift_current": -0.02136899509701111,
+            "shift_constraint_pairing": -0.2610626347821633,
+            "velocity_pairing": 0.23981242091284175
+          },
+          {
+            "Noether_pairing": 0.010415614959463755,
+            "eta_completed_relative_Ward_defect": 0.0008502045016060002,
+            "generator_mode": 20,
+            "identity": "P_DOT_L_THETA_G_PLUS_SHIFT_CONSTRAINT_THETA_MINUS_ETA_CLOCK_CURRENT_EQUALS_ZERO",
+            "metric_plus_total_shift_minus_eta_Ward_pairing": 0.00011352219941014943,
+            "normalized_Noether_pairing": 8.314347367407444e-06,
+            "projection": {
+              "configuration_and_lapse_variations_are_zero_at_xi_zero": true,
+              "shift_basis_projection_error": 0.0,
+              "velocity_projection_relative_error": 0.008270319286929045
+            },
+            "relative_cancellation_defect": 0.08452770733280711,
+            "retained_eta_clock_shift_current": 0.010302092760053606,
+            "shift_constraint_pairing": -0.05640284829290624,
+            "velocity_pairing": 0.06681846325237
+          },
+          {
+            "Noether_pairing": 0.0015440240182322566,
+            "eta_completed_relative_Ward_defect": 0.18872656333604174,
+            "generator_mode": 47,
+            "identity": "P_DOT_L_THETA_G_PLUS_SHIFT_CONSTRAINT_THETA_MINUS_ETA_CLOCK_CURRENT_EQUALS_ZERO",
+            "metric_plus_total_shift_minus_eta_Ward_pairing": 0.0015440249079485442,
+            "normalized_Noether_pairing": 2.5545427964449724e-07,
+            "projection": {
+              "configuration_and_lapse_variations_are_zero_at_xi_zero": true,
+              "shift_basis_projection_error": 0.0,
+              "velocity_projection_relative_error": 0.0037359820901845717
+            },
+            "relative_cancellation_defect": 0.18872647510984175,
+            "retained_eta_clock_shift_current": -8.897162876403506e-10,
+            "shift_constraint_pairing": 0.004862651696350287,
+            "velocity_pairing": -0.0033186276781180307
+          }
+        ],
+        "generator": "XI_J=SIN(4CHI)COS(4JCHI),_XI_J_ENDPOINT_FIXED;_DELTA_FIELDS=L_XI_FIELDS",
+        "maximum_descriptor_velocity_relative_cancellation_defect": 1.0,
+        "maximum_relative_cancellation_defect": 0.27589403787510997,
+        "probe_kind": "ZERO_PADDED_CERTIFIED_N12_NOT_A_HIGHER_N_ROOT",
+        "rows": [
+          {
+            "Noether_pairing": -1.9694493506601396,
+            "action_coordinate_generator_norm": 33887.21986494356,
+            "action_covector_pairing_blocks": {
+              "coordinates": 15.979282724907335,
+              "lapse": -0.2723839457467192,
+              "shift": -17.789228530844916,
+              "velocities": 0.11288040102416011
+            },
+            "generator_mode": 12,
+            "normalized_Noether_pairing": 5.811776116510347e-05,
+            "projection": {
+              "configuration_projection_relative_error": 0.01372746562525229,
+              "generator_endpoint_maximum": 7.690753251789118e-06,
+              "lapse_projection_relative_error": 0.0002480869156252543,
+              "shift_projection_relative_error": 1.4172588991538067e-15,
+              "velocity_projection_relative_error": 1.5207590124059034e-14
+            },
+            "relative_cancellation_defect": 0.057664176680795584
+          },
+          {
+            "Noether_pairing": 2.086544137288048,
+            "action_coordinate_generator_norm": 34160.826422178696,
+            "action_covector_pairing_blocks": {
+              "coordinates": 10.976790713852333,
+              "lapse": -0.093017329411618,
+              "shift": -8.025885057788896,
+              "velocities": -0.771344189363771
+            },
+            "generator_mode": 13,
+            "normalized_Noether_pairing": 6.108002515809667e-05,
+            "projection": {
+              "configuration_projection_relative_error": 0.012685124419309855,
+              "generator_endpoint_maximum": 7.690753246102991e-06,
+              "lapse_projection_relative_error": 0.00031897862025561145,
+              "shift_projection_relative_error": 3.2944098122115406e-15,
+              "velocity_projection_relative_error": 1.3740209224679001e-14
+            },
+            "relative_cancellation_defect": 0.10502543015281633
+          },
+          {
+            "Noether_pairing": -0.008763526545618069,
+            "action_coordinate_generator_norm": 96575.71066531351,
+            "action_covector_pairing_blocks": {
+              "coordinates": 0.00017020778481540246,
+              "lapse": -0.0005248756373106289,
+              "shift": -0.03715563800509797,
+              "velocities": 0.028746779311975126
+            },
+            "generator_mode": 24,
+            "normalized_Noether_pairing": 9.07425530213117e-08,
+            "projection": {
+              "configuration_projection_relative_error": 0.006896699415940139,
+              "generator_endpoint_maximum": 7.690753153532822e-06,
+              "lapse_projection_relative_error": 3.4111760798366883e-15,
+              "shift_projection_relative_error": 2.5240096752371744e-15,
+              "velocity_projection_relative_error": 1.7358862780487025e-14
+            },
+            "relative_cancellation_defect": 0.1315894207492366
+          },
+          {
+            "Noether_pairing": -3.247960379680642,
+            "action_coordinate_generator_norm": 616335.5317036012,
+            "action_covector_pairing_blocks": {
+              "coordinates": 4.027229726026805,
+              "lapse": 0.23246575311426998,
+              "shift": -7.510226236866007,
+              "velocities": 0.002570378044290126
+            },
+            "generator_mode": 47,
+            "normalized_Noether_pairing": 5.269792527948238e-06,
+            "projection": {
+              "configuration_projection_relative_error": 0.0037359820901845717,
+              "generator_endpoint_maximum": 7.69075278211493e-06,
+              "lapse_projection_relative_error": 0.43359641247486697,
+              "shift_projection_relative_error": 0.40429970640550544,
+              "velocity_projection_relative_error": 0.5250889025367454
+            },
+            "relative_cancellation_defect": 0.27589403787510997
+          }
+        ],
+        "shift_source_decomposition": {
+          "exact_action_row_reconstruction": {
+            "eta_collective_inertia": 23.774863321567288,
+            "maximum_absolute_defect": 2.0005351542007332e-13,
+            "relative_l2_defect": 3.2521327507120656e-13
+          },
+          "exact_identity": "C_SHIFT_TOTAL=C_SHIFT_GEOMETRIC_PLUS_J_ETA_CLOCK",
+          "rows": [
+            {
+              "N_squared_first_eta_clock_weak_coefficient": 0.12349670660111378,
+              "cutoff_N": 12,
+              "eta_clock_H_minus_1_tail_norm": 0.0019799577673786962,
+              "first_eta_clock_weak_coefficient": -0.0008576160180632902,
+              "first_geometric_momentum_weak_coefficient": 0.010760726346502015,
+              "first_total_shift_weak_coefficient": 0.009903110328438726,
+              "geometric_momentum_H_minus_1_tail_norm": 0.02442635406410206,
+              "total_shift_H_minus_1_tail_norm": 0.02417773281664332
+            },
+            {
+              "N_squared_first_eta_clock_weak_coefficient": 0.08546554821855566,
+              "cutoff_N": 16,
+              "eta_clock_H_minus_1_tail_norm": 0.0006927239216477652,
+              "first_eta_clock_weak_coefficient": -0.00033384979772873305,
+              "first_geometric_momentum_weak_coefficient": -0.0037447560244395646,
+              "first_total_shift_weak_coefficient": -0.004078605822168298,
+              "geometric_momentum_H_minus_1_tail_norm": 0.005250491780918069,
+              "total_shift_H_minus_1_tail_norm": 0.00511778200547509
+            },
+            {
+              "N_squared_first_eta_clock_weak_coefficient": 0.05150644001681462,
+              "cutoff_N": 20,
+              "eta_clock_H_minus_1_tail_norm": 0.00014528474032119267,
+              "first_eta_clock_weak_coefficient": 0.00012876610004203655,
+              "first_geometric_momentum_weak_coefficient": -0.0008337466292507819,
+              "first_total_shift_weak_coefficient": -0.0007049805292087454,
+              "geometric_momentum_H_minus_1_tail_norm": 0.0010041337932049318,
+              "total_shift_H_minus_1_tail_norm": 0.0009172265195249661
+            },
+            {
+              "N_squared_first_eta_clock_weak_coefficient": 0.008328557926468203,
+              "cutoff_N": 24,
+              "eta_clock_H_minus_1_tail_norm": 1.7371873382372046e-05,
+              "first_eta_clock_weak_coefficient": 1.4459301955673964e-05,
+              "first_geometric_momentum_weak_coefficient": -0.0002038923284240819,
+              "first_total_shift_weak_coefficient": -0.00018943302646840795,
+              "geometric_momentum_H_minus_1_tail_norm": 0.0004474356416696182,
+              "total_shift_H_minus_1_tail_norm": 0.0004387514393607426
+            },
+            {
+              "N_squared_first_eta_clock_weak_coefficient": 6.997249074893166e-05,
+              "cutoff_N": 32,
+              "eta_clock_H_minus_1_tail_norm": 8.527468755004341e-08,
+              "first_eta_clock_weak_coefficient": -6.833251049700357e-08,
+              "first_geometric_momentum_weak_coefficient": -8.147661270643944e-05,
+              "first_total_shift_weak_coefficient": -8.154494521693644e-05,
+              "geometric_momentum_H_minus_1_tail_norm": 0.00020023417413844448,
+              "total_shift_H_minus_1_tail_norm": 0.00020027682549758329
+            },
+            {
+              "N_squared_first_eta_clock_weak_coefficient": 3.896490160669134e-07,
+              "cutoff_N": 40,
+              "eta_clock_H_minus_1_tail_norm": 4.427349317578598e-10,
+              "first_eta_clock_weak_coefficient": 2.435306350418209e-10,
+              "first_geometric_momentum_weak_coefficient": -4.1848576102454366e-05,
+              "first_total_shift_weak_coefficient": -4.184833257181932e-05,
+              "geometric_momentum_H_minus_1_tail_norm": 9.485621937086907e-05,
+              "total_shift_H_minus_1_tail_norm": 9.485596889617042e-05
+            },
+            {
+              "N_squared_first_eta_clock_weak_coefficient": 1.0454018491242156e-08,
+              "cutoff_N": 47,
+              "eta_clock_H_minus_1_tail_norm": 4.732466496714421e-12,
+              "first_eta_clock_weak_coefficient": -4.732466496714421e-12,
+              "first_geometric_momentum_weak_coefficient": 2.5864807431764205e-05,
+              "first_total_shift_weak_coefficient": 2.5864802699297708e-05,
+              "geometric_momentum_H_minus_1_tail_norm": 2.5864807431764205e-05,
+              "total_shift_H_minus_1_tail_norm": 2.5864802699297708e-05
+            }
+          ]
+        }
+      }
+    ]
+  },
+  "exact_next_mathematical_lemma": "PROVE_AN_ACTION_DERIVED_INVERSE_SQUARE_H_MINUS_1_TAIL_AND_S2_SOURCE_RESTRICTED_RIGHT_INVERSE_FOR_THE_ETA_COMPLETED_WARD_SOURCE_ON_THE_POSITIVE_DURATION_MIXED_EULER_DIRAC_HISTORY;_THEN_CLOSE_THE_UNCHANGED_NONLINEAR_JOINT_EVENT_CHILD_RADIUS",
+  "orders": [
+    16,
+    24,
+    32,
+    48
+  ],
+  "projection_quadrature_points": 768,
+  "promotion": "artifacts\\n12_direct_checkpoint\\BHSM_N12_COMPLETE_PERSISTENT_CHILD_CERTIFICATE.json",
+  "promotion_sha256": "D33E7F2717B0DD310EAFD05AC9A0968B6D2822AF6968915D33ED4AAEDA54594A",
+  "scientific_interpretation": {
+    "invalidated": "THE_STATIC_SHIFT_COKERNEL_IS_ANNIHILATED_BY_RADIAL_DIFFEOMORPHISM_COMPATIBILITY_WITHOUT_AN_ETA_CURRENT",
+    "soft_channel_classification": "CATEGORY_2_DYNAMICALLY_CONTROLLED_NORMAL_DIRECTION;_NOT_QUOTIENTED_AS_TANGENT_AND_NO_CATEGORY_3_SEQUENCE_PROVED",
+    "validated": "THE_RETAINED_ACTION_OWNS_A_NONZERO_ETA_CLOCK_SHIFT_CURRENT_AND_THE_METRIC_MOMENTUM_PLUS_TOTAL_SHIFT_WARD_PAIRING_CLOSES_ONLY_AFTER_THAT_CURRENT_IS_INCLUDED"
+  },
+  "source_order": 12,
+  "validation": {
+    "certified_N12_anchor_consumed": true,
+    "endpoint_fixed_radial_Lie_derivative_used": true,
+    "eta_completed_exact_shift_rows_reconstructed_to_1e_minus_10": true,
+    "existing_q_v_m_basis_only": true,
+    "new_physics_equation_constraint_quotient_or_gate": false,
+    "unchanged_exact_full_action_covector_used": true,
+    "zero_padded_probes_not_promoted_as_roots": true
+  },
+  "validation_passed": true
+}
