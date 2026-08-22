@@ -1,0 +1,100 @@
+{
+  "classification": "N12_EXACT_TRACE_ATTACHMENT_HIGH_SHELL_MODULUS_DERIVED",
+  "source_checkpoint": ".tmp_direct_n12_high_precision_action_center.npz",
+  "source_checkpoint_SHA256": "93E00A944C756B658FB82E56BC6A5C694E03B9760BB4084545E10D963A9AA230",
+  "source_promotion": ".tmp_direct_n12_high_precision_complete_persistent_child_promotion.json",
+  "source_promotion_SHA256": "C94C1F1E479841CD2FC14B6606138DFABB38017A54FBE441E9B80B53458876DF",
+  "basis_series": {
+    "positive_mode_identity": "sum_(n>=1)(1+16*n^2)^-1=((pi/4)*coth(pi/4)-1)/2",
+    "u_tail_starts_at_mode": 13,
+    "windowed_w_v_tail_starts_at_mode": 12,
+    "u_tail_sum": 0.004996674890227093,
+    "windowed_tail_sum": 0.005430514369619721
+  },
+  "boundary_state_data": {
+    "event_tanh_two_v_boundary": 0.00420702245769987,
+    "child_tanh_two_v_boundary": 0.004207022457699868
+  },
+  "joint_child_minus_event_tail": {
+    "raw_action_H1_to_boundary_operator_norm": 0.20812878293528145,
+    "existing_normalized_boundary_operator_norm": 0.3263719672129126,
+    "raw_row_gram": [
+      [
+        0.020854378519693628,
+        0.009993349780454186,
+        0.009993349780454186,
+        -0.009993349780454186
+      ],
+      [
+        0.009993349780454186,
+        0.020854378519693628,
+        -0.0008676789587852562,
+        -0.009947657188634482
+      ],
+      [
+        0.009993349780454186,
+        -0.0008676789587852562,
+        0.020854378519693628,
+        -0.01003904237227389
+      ],
+      [
+        -0.009993349780454186,
+        -0.009947657188634482,
+        -0.01003904237227389,
+        0.009993542010214122
+      ]
+    ],
+    "normalized_row_gram": [
+      [
+        0.009724212957374771,
+        -0.0006384923806515299,
+        -0.0006771977050515647,
+        -0.011012197728622677
+      ],
+      [
+        -0.0006384923806515292,
+        0.008420184249876887,
+        -0.001571400138706729,
+        -0.01653204937682871
+      ],
+      [
+        -0.0006771977050515655,
+        -0.0015714001387067285,
+        0.008304922877140387,
+        -0.016218477774110358
+      ],
+      [
+        -0.011012197728622677,
+        -0.016532049376828707,
+        -0.01621847777411036,
+        0.09993615588558419
+      ]
+    ]
+  },
+  "identity_cross_check": {
+    "u_closed_minus_partial": 6.249996870651836e-08,
+    "j_closed_minus_partial": 6.249996870998781e-08,
+    "positive_integral_remainder_upper": 6.25e-08,
+    "both_differences_inside_positive_remainder_bracket": true
+  },
+  "scope": {
+    "trace_attachment_compact_tail_closed": true,
+    "bulk_Euler_Dirac_normal_tail_closed_here": false,
+    "ordered_event_spectral_projector_tail_closed_here": false,
+    "canonical_momentum_flux_tail_closed_here": false,
+    "CONTINUUM_EVENT_CHILD_CERTIFIED": false
+  },
+  "exact_next_dependency": "BOUND_THE_REMAINING_INTERIOR_EULER_DIRAC_ORDERED_EVENT_AND_CANONICAL_MOMENTUM_FLUX_COMPACT_TAIL_BLOCKS_IN_THE_SAME_ACTION_GRAPH_NORM_AND_CLOSE_THE_FULL_NORMAL_SCHUR_COMPLEMENT",
+  "validation": {
+    "certified_N12_anchor_consumed": true,
+    "exact_coth_series_identity_used": true,
+    "existing_action_coordinate_weights_used": true,
+    "event_and_child_boundary_derivatives_included": true,
+    "retained_boundary_row_normalization_included": true,
+    "series_identity_cross_check_passed": true,
+    "no_higher_order_probe_promoted_as_root": true,
+    "no_new_equation_constraint_gate_scale_or_fit": true
+  },
+  "validation_passed": true,
+  "FULL_BHSM_COMPLETE": false
+}

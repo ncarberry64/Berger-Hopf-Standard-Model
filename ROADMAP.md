@@ -2,32 +2,24 @@
 
 ## Active cross-resolution completion path
 
-1. Preserve the validated N3/N4/N5/N6 complete persistent children,
-   the exact attachment-matched N3-N6 weak reaction graphs, and the unchanged
-   finite-N maps that produced them. The authoritative N6 anchor is the
-   corrected ordered-event solution and rebuilt child/persistence record; the
-   former N5-projected event seed is provenance only.
-2. Preserve the nonzero repaired-anchor N6-to-N12 hard/full-Schur/soft response
-   result and the fixed-chart endpoint-rank theorem. A regular fixed N12 chart
-   cannot simultaneously keep the unchanged rooted N6 map, forbid auxiliary
-   high equations, and retain all 57 N12 normal rows.
-3. Close one mathematically explicit permitted bridge: either a singular
-   variable-chart transition with unchanged physical endpoints, or a
-   proof-only action-norm high block with a theorem that the physical endpoint
-   and root are independent of that auxiliary device. Neither is presently
-   promoted as BHSM physics.
-4. Once that nonlinear family exists, cover it by overlapping chord balls with
-   rigorous action-analytic Jacobian-Lipschitz and existing
-   eta/Dirac/event/persistence neighborhood majorants, including quadrature
-   consistency.
-5. Attach that finite bridge to the action-derived inverse-square shell law and
-   asymptotic `O(1)` normal inverse. The high tail is then summable; transfer
-   eta, ordered-event, and persistence inside the existing physical radius.
-6. Construct the existing complete composite-minus-matched-parent `Q_xi` on a
+1. Preserve the validated N3/N4/N5/N6 and direct N12 complete persistent
+   children and the unchanged finite-resolution maps and gates that produced
+   them. The authoritative direct N12 state closes all 57 rows at
+   `2.1479968882829104e-14` inside a certified `1e-11` action-coordinate ball.
+2. Derive an explicit retained-action bound on the N12-to-infinity
+   gauge-fixed event/child Calderon graph-projector tail. The finite N12 symbol
+   gap and zero-padded N16--N48 probes are evidence only, not the theorem.
+3. Combine that projector bound with the existing inverse-square weak shell law,
+   controlled normal inverse, and nonlinear Hessian remainder. Certify that the
+   summed correction remains inside the existing eta, ordered-event,
+   boundary/Dirac, and persistence neighborhoods.
+4. Promote a resolution-independent child only after the analytic tail and
+   nonlinear radius close. Do not promote zero-padded probes as roots.
+5. Construct the existing complete composite-minus-matched-parent `Q_xi` on a
    paired continuum parent/child history and close the action-selected
    relative-periodic/Floquet BVP. The reduced local canonical energy is not a
    substitute for this object.
-7. Resume action-selected family-cycle ownership, relative quasi-energy mass
+6. Resume action-selected family-cycle ownership, relative quasi-energy mass
    ratios, absolute scale, and returned-family current dependencies without
    reopening closed sectors or retuning frozen predictions.
 

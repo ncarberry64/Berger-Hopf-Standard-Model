@@ -11,6 +11,7 @@ from __future__ import annotations
 
 import json
 import math
+from decimal import Decimal, localcontext
 from functools import lru_cache
 from pathlib import Path
 from typing import Any, Mapping
@@ -2821,6 +2822,177 @@ def _boundary_lift(
     inverse_times = np.linalg.solve(form, combined.T)
     compliance = combined @ inverse_times
     return inverse_times @ np.linalg.solve(compliance, target)
+
+
+def _decimal_dense_solve_real(
+    matrix: np.ndarray,
+    right_hand_side: np.ndarray,
+) -> list[list[Decimal]]:
+    """Solve a real dense system after exact binary64-to-Decimal lifting."""
+
+    coefficients = [[
+        Decimal.from_float(float(value)) for value in row
+    ] for row in np.asarray(matrix, dtype=float)]
+    right = [[
+        Decimal.from_float(float(value)) for value in row
+    ] for row in np.asarray(right_hand_side, dtype=float)]
+    size = len(coefficients)
+    columns = len(right[0])
+    for column in range(size):
+        pivot = max(
+            range(column, size),
+            key=lambda row: abs(coefficients[row][column]),
+        )
+        if pivot != column:
+            coefficients[column], coefficients[pivot] = (
+                coefficients[pivot], coefficients[column]
+            )
+            right[column], right[pivot] = right[pivot], right[column]
+        diagonal = coefficients[column][column]
+        if diagonal == 0:
+            raise np.linalg.LinAlgError("singular Decimal dense system")
+        for row in range(column + 1, size):
+            factor = coefficients[row][column] / diagonal
+            if factor == 0:
+                continue
+            coefficients[row][column] = Decimal(0)
+            for inner in range(column + 1, size):
+                coefficients[row][inner] -= (
+                    factor * coefficients[column][inner]
+                )
+            for rhs_column in range(columns):
+                right[row][rhs_column] -= factor * right[column][rhs_column]
+    solution = [[Decimal(0) for _ in range(columns)] for _ in range(size)]
+    for row in range(size - 1, -1, -1):
+        for rhs_column in range(columns):
+            remainder = right[row][rhs_column] - sum(
+                coefficients[row][inner] * solution[inner][rhs_column]
+                for inner in range(row + 1, size)
+            )
+            solution[row][rhs_column] = (
+                remainder / coefficients[row][row]
+            )
+    return solution
+
+
+def _decimal_matrix_product_real(
+    left: np.ndarray | list[list[Decimal]],
+    right: list[list[Decimal]],
+) -> list[list[Decimal]]:
+    if isinstance(left, np.ndarray):
+        left_decimal = [[
+            Decimal.from_float(float(value)) for value in row
+        ] for row in np.asarray(left, dtype=float)]
+    else:
+        left_decimal = left
+    return [[
+        sum(
+            left_decimal[row][inner] * right[inner][column]
+            for inner in range(len(right))
+        )
+        for column in range(len(right[0]))
+    ] for row in range(len(left_decimal))]
+
+
+def _canonical_momentum_at_order_high_precision_real(
+    order: int,
+    coordinates: np.ndarray,
+    velocities: np.ndarray,
+    multipliers: np.ndarray,
+    *,
+    points: int,
+    precision: int = 80,
+) -> np.ndarray:
+    """Evaluate the existing Hessian-minimal momentum with stable real solves.
+
+    This changes no action term or canonical definition.  It only prevents
+    the ill-conditioned binary64 lift solves from dominating the difference
+    of the event and child momenta near a complete-child root.
+    """
+
+    if precision < 34:
+        raise ValueError("high-precision canonical momentum needs >=34 digits")
+    if any(np.iscomplexobj(value) for value in (
+        coordinates, velocities, multipliers
+    )):
+        raise TypeError("high-precision real momentum does not accept complex input")
+    qdim = dimensions(order)["coordinates"]
+    jet = exact_full_action_jet_at_state(
+        order, coordinates, velocities, multipliers, points=points
+    )
+    gradient = np.asarray(jet.gradient, dtype=float)
+    hessian = np.asarray(jet.hessian, dtype=float)
+    boundary = _attachment_jacobian_at_order(order, coordinates)
+    constraints = hessian[2 * qdim:, qdim:2 * qdim]
+    combined = np.vstack((boundary, constraints))
+    target = np.zeros((combined.shape[0], 2))
+    target[:2] = np.eye(2)
+    with localcontext() as context:
+        context.prec = precision
+        inverse_times = _decimal_dense_solve_real(
+            hessian[qdim:2 * qdim, qdim:2 * qdim], combined.T
+        )
+        compliance = _decimal_matrix_product_real(combined, inverse_times)
+        # Solve the compliance system without a float round trip, preserving
+        # every Decimal accumulated in K A^{-1} K^T.
+        coefficients = [row[:] for row in compliance]
+        right = [[
+            Decimal.from_float(float(value)) for value in row
+        ] for row in target]
+        size = len(coefficients)
+        columns = 2
+        for column in range(size):
+            pivot = max(
+                range(column, size),
+                key=lambda row: abs(coefficients[row][column]),
+            )
+            if pivot != column:
+                coefficients[column], coefficients[pivot] = (
+                    coefficients[pivot], coefficients[column]
+                )
+                right[column], right[pivot] = right[pivot], right[column]
+            diagonal = coefficients[column][column]
+            for row in range(column + 1, size):
+                factor = coefficients[row][column] / diagonal
+                if factor == 0:
+                    continue
+                coefficients[row][column] = Decimal(0)
+                for inner in range(column + 1, size):
+                    coefficients[row][inner] -= (
+                        factor * coefficients[column][inner]
+                    )
+                for rhs_column in range(columns):
+                    right[row][rhs_column] -= (
+                        factor * right[column][rhs_column]
+                    )
+        compliance_solution = [
+            [Decimal(0) for _ in range(columns)] for _ in range(size)
+        ]
+        for row in range(size - 1, -1, -1):
+            for rhs_column in range(columns):
+                remainder = right[row][rhs_column] - sum(
+                    coefficients[row][inner]
+                    * compliance_solution[inner][rhs_column]
+                    for inner in range(row + 1, size)
+                )
+                compliance_solution[row][rhs_column] = (
+                    remainder / coefficients[row][row]
+                )
+        lift = _decimal_matrix_product_real(
+            inverse_times, compliance_solution
+        )
+        gradient_velocity = [
+            Decimal.from_float(float(value))
+            for value in gradient[qdim:2 * qdim]
+        ]
+        momentum = [
+            sum(
+                lift[row][column] * gradient_velocity[row]
+                for row in range(qdim)
+            )
+            for column in range(2)
+        ]
+    return np.asarray([float(value) for value in momentum])
 
 
 def _canonical_pair_at_order(

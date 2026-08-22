@@ -7,7 +7,10 @@ from typing import Any
 
 import numpy as np
 
-from bhsm.interface.aether_exact_radial_schur_lift_v15_83 import Jet
+from bhsm.interface.aether_exact_radial_schur_lift_v15_83 import (
+    Jet,
+    identity_response_localization,
+)
 from bhsm.interface.aether_m4_standard_model_zeta_backreaction_v15_51 import standard_model_casimir_coefficient
 from bhsm.interface.aether_n3_fresh_sbp_asymmetric_period_v0_priority_v17_42 import deterministic_json
 from bhsm.interface.aether_n3_high_accuracy_action_covector_v17_57 import _high_accuracy_local_first_derivatives
@@ -77,14 +80,10 @@ def exact_full_action_jet_at_state(
     radius = RADIUS0 * qj[0].exp()
     kappa0 = 15.0 * 5.0 ** (1.0 / 3.0) / 4.0
     bulk = Jet.constant(0.0, total); inertia = Jet.constant(0.0, total)
-    raw = np.sin(chi) ** 2 * np.cos(chi) ** 2
-    augmented_chi = np.concatenate(([0.0], chi, [math.pi / 4.0]))
-    augmented_raw = np.concatenate(([0.0], raw, [0.25]))
-    cumulative = np.concatenate(([0.0], np.cumsum(
-        0.5 * (augmented_raw[1:] + augmented_raw[:-1]) * np.diff(augmented_chi)
-    )))
-    cumulative *= 0.5 / cumulative[-1]
-    localization = 1.0 - 4.0 * (-0.5 + cumulative[1:-1]) ** 2
+    # Exact normalized identity response.  Keeping the response integral in
+    # closed form prevents the retained action from acquiring a spurious
+    # dependence on the Gauss quadrature used for the outer action integral.
+    localization = identity_response_localization(chi)
     for index, coordinate in enumerate(chi):
         window = math.sin(2.0 * coordinate) ** 2
         window_prime = 2.0 * math.sin(4.0 * coordinate)

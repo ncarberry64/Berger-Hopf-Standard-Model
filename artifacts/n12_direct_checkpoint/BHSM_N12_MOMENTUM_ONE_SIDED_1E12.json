@@ -1,0 +1,28 @@
+{
+  "classification": "N12_CENTER_MOMENTUM_HESSIAN_ONE_SIDED_PROOF_APPROXIMATION",
+  "order": 12,
+  "points": 96,
+  "forward_action_coordinate_step": 1e-12,
+  "outer_complex_step": 1e-20,
+  "checkpoint": ".tmp_direct_n12_high_precision_action_center.npz",
+  "checkpoint_SHA256": "93E00A944C756B658FB82E56BC6A5C694E03B9760BB4084545E10D963A9AA230",
+  "exact_normal_jacobian": ".tmp_direct_n12_high_precision_root_exact_normal_1e20.npz",
+  "exact_normal_jacobian_SHA256": "7B4EB498886C4556C0B7E17E85272D320232DE1A58DB205E40734F3EC09C26BB",
+  "result": ".tmp_direct_n12_high_precision_root_momentum_one_sided_1e12.npz",
+  "result_SHA256": "3E8241BB5C1A3AD39BF2FC1EABDAEADDF930E52AA3029CC5C616F2E343D25D38",
+  "mismatch_Frobenius_norm": 224410.24092421203,
+  "mismatch_component_operator_norms": [
+    206884.17333499156,
+    12690.54567384941
+  ],
+  "validation": {
+    "same_center_as_exact_normal_jacobian": true,
+    "unchanged_canonical_pair": true,
+    "truncation_promoted_without_majorant": false,
+    "physical_equation_gate_or_selector_changed": false
+  },
+  "validation_passed": true,
+  "scope": "CENTER_APPROXIMATION_ONLY;_THE_COMPOSED_THIRD_VARIATION_MUST_ENCLOSE_THE_FORWARD_TRUNCATION_BEFORE_CERTIFICATION",
+  "DIRECT_N12_COMPLETE_PERSISTENT_CHILD_CERTIFIED": false,
+  "FULL_BHSM_COMPLETE": false
+}

@@ -2,21 +2,21 @@
 
 [![CI](https://github.com/ncarberry64/Berger-Hopf-Standard-Model/actions/workflows/ci.yml/badge.svg)](https://github.com/ncarberry64/Berger-Hopf-Standard-Model/actions/workflows/ci.yml)
 [![Latest archival release](https://img.shields.io/github/v/release/ncarberry64/Berger-Hopf-Standard-Model?label=archival%20release)](https://github.com/ncarberry64/Berger-Hopf-Standard-Model/releases/latest)
-[![Current research status](https://img.shields.io/badge/current%20research-N3--N6%20persistent%20children-orange)](docs/current_bhsm_status.md)
+[![Current research status](https://img.shields.io/badge/current%20research-direct%20N12%20child-orange)](docs/current_bhsm_status.md)
 [![Python 3.10+](https://img.shields.io/badge/python-3.10%2B-3776AB)](https://www.python.org/)
 [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.20663419.svg)](https://doi.org/10.5281/zenodo.20663419)
 
 BHSM is an independent artifact-backed computational framework and mathematical-physics research program investigating whether Standard Model structure and particle-like dynamics can be derived from Berger-Hopf boundary/envelopment geometry and a common action architecture.
 
-## Current Research Frontier -- cross-resolution encapsulation
+## Current Research Frontier -- direct N12 complete persistent child
 
-BHSM has reconstructed complete persistent children through `N=6` under the
-unchanged retained finite-resolution equations. The N5
-unchanged 18-row map closes at fixed-reference merit
-`5.90723795458673e-14` (raw `||F18||=1.1665202200968536e-7`), with eta minimum
-`1.006162307589007`, complete-child certification, positive-duration
-persistence, and nonzero relative evolution. No row, coefficient, event
-definition, child criterion, or gate was added.
+BHSM now has a directly corrected `N=12` complete persistent child under the
+unchanged retained 57-row finite-resolution map. Its independently evaluated
+exact residual is `||F12|| = 2.1479968882829104e-14`; the certified
+action-coordinate root ball has radius `1e-11`. The ordered event, eta domain,
+boundary/Dirac neighborhood, and positive-duration persistence gates all pass.
+No physical row, coefficient, event definition, child criterion, or gate was
+added.
 
 | Scientific gate | Status |
 | --- | --- |
@@ -24,34 +24,24 @@ definition, child criterion, or gate was added.
 | `N4 COMPLETE PERSISTENT CHILD` | **YES** |
 | `N5 COMPLETE PERSISTENT CHILD` | **YES** |
 | `N6 COMPLETE PERSISTENT CHILD` | **YES** |
+| `N12 COMPLETE PERSISTENT CHILD` | **YES** |
+| `CONTINUUM_EVENT_CHILD_CERTIFIED` | **FALSE** |
 | `FULL_BHSM_COMPLETE` | **FALSE** |
 
-The durable checkpoint is
-[`BHSM_AETHER_CROSS_RESOLUTION_RECONNAISSANCE_V21_35.json`](artifacts/BHSM_AETHER_CROSS_RESOLUTION_RECONNAISSANCE_V21_35.json).
-The same-action event-to-child attachment/reaction BVP correspondence is
-explicitly matched at N3/N4/N5/N6. The retained action gives an exact
-inverse-square weak high-mode shell bound, and the principal-plus-compact
-normal split closes the asymptotic tail with an `O(1)` inverse and a summable
-correction. The repaired-anchor N6-to-N12 joint probe does not identify a
-linear obstruction: its hard block, full Schur response, and isolated soft
-Lyapunov-Schmidt denominator stay nonzero while the unchanged exact joint weak
-merit descends. The failed N6-centered one-ball radius is therefore only a
-local-basin failure. The covered parameter occurs only in the fixed-center
-linear Schur proxy: the unchanged exact joint residual is `rows(joint)`, not a
-nonlinear `F(t,Y)`. Overlapping radii balls therefore require a rooted,
-rank-preserving nonlinear retained-action family first. Scaling away the high
-modes collapses the endpoint normal rank; retaining it exposes the nonzero
-omitted weak tail, while source subtraction would change the retained action.
-Frozen predictions remain unchanged. The compact probe is
-[`BHSM_N6_N12_JOINT_SCHUR_CHORD_COVER.json`](artifacts/BHSM_N6_N12_JOINT_SCHUR_CHORD_COVER.json).
-The fail-closed integrability record is
-[`BHSM_N6_N12_NONLINEAR_HOMOTOPY_INTEGRABILITY_V21_36.json`](artifacts/BHSM_N6_N12_NONLINEAR_HOMOTOPY_INTEGRABILITY_V21_36.json).
-The endpoint-rank theorem sharpens this to a fixed-chart no-go: N6 to N12 adds
-96 state directions and 24 physical rows, so an unchanged N6 extension has
-rank at most 33 against 57 rows. Retaining the N12 high rows loses the N6 root;
-scaling them away makes the endpoint normal gap zero. This does not disprove a
-continuum child, but it excludes the requested regular fixed-chart proof
-without an auxiliary high block or a singular variable-chart transition.
+The durable provenance is the
+[`N12 scientific checkpoint manifest`](artifacts/n12_direct_checkpoint/BHSM_N12_SCIENTIFIC_CHECKPOINT_MANIFEST.json),
+which hash-locks the state, exact residual, radii certificate, ordered-event
+ball, physical neighborhood, persistence witness, exact normal data, and
+retained-action tail diagnostics. The corrected branch is the same-action
+`N6` index-12 to `N12` index-24 ordered-event branch.
+
+Targeted event/child Calderon reconnaissance finds a gauge-fixed seven-by-seven
+boundary-symbol gap `0.029146859835472938` at the certified N12 state. The
+zero-padded N16--N48 probes retain positive finite gaps, with observed minimum
+`0.00912893612489853`; these are diagnostic probes, not complete-child roots
+and not an N-uniform theorem. The continuum claim therefore remains fail
+closed. `Q_xi`, relative `Delta H`, action-selected families, and any new blind
+observable remain downstream and open. Frozen predictions are unchanged.
 
 N6 provenance was re-audited before this checkpoint. The earlier N5-projected
 N6 seed had ordered-event value `1.645981691e-6`, outside the existing `1e-9`
@@ -63,7 +53,7 @@ No equation, gate, or acceptance rule changed.
 
 Exact next object:
 
-`PROVE_A_VARIABLE_CHART_SINGULAR_GALERKIN_TRANSITION_WITH_UNCHANGED_PHYSICAL_ENDPOINTS,_OR_EXPLICITLY_AUTHORIZE_AND_PROVE_ENDPOINT_INDEPENDENCE_OF_AN_ACTION_NORM_AUXILIARY_HIGH_BLOCK`
+`DERIVE_AN_EXPLICIT_N12_TO_INFINITY_RETAINED_ACTION_BOUND_ON_THE_GAUGE_FIXED_EVENT_CHILD_CALDERON_GRAPH_PROJECTOR_TAIL_AND_CLOSE_THE_NONLINEAR_INVERSE_SQUARE_CORRECTION_RADIUS`
 
 ## Historical corrected-Rayleigh N=3 snapshot
 
@@ -113,8 +103,8 @@ Read the authoritative [N=3 continuation ledger](docs/BHSM_N3_CONTINUATION_LEDGE
 | --- | --- |
 | Computational framework | Validated software/tests; this does not validate nature |
 | Current test corpus | Focused cross-resolution, complete-child, persistence, claim-firewall, frozen-integrity, and engine-invariant checks; historical corpus retained for manual regression |
-| Internal mathematical program | Complete persistent children validated through N6; inverse-square asymptotic tail closes conditionally on one finite joint bridge |
-| Nonlinear Norman cycle | N3/N4/N5/N6 finite-resolution persistence validated; resolution-independent continuation remains open |
+| Internal mathematical program | Complete persistent children validated at N3--N6 and direct N12; continuum projector-tail/radius bound remains open |
+| Nonlinear Norman cycle | N3/N4/N5/N6/N12 finite-resolution persistence validated; resolution-independent continuation remains open |
 | Scale and flavor | Absolute scale, action-derived CKM, and PMNS remain open |
 | Frozen predictions | Unchanged |
 | Empirical status | Not established |

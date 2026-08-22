@@ -1,0 +1,52 @@
+{
+  "classification": "DIRECT_N12_COMPLETE_PERSISTENT_CHILD_CERTIFIED",
+  "order": 12,
+  "points": 96,
+  "source_checkpoint": ".tmp_direct_n12_high_precision_action_center.npz",
+  "source_checkpoint_SHA256": "93E00A944C756B658FB82E56BC6A5C694E03B9760BB4084545E10D963A9AA230",
+  "certificate_inputs": {
+    ".tmp_direct_n12_high_precision_root_full_radii_1e11.json": "BE56C46E4AADCA07DCD8599661D1F481284B5F70AFEEDA9519FF4CAF677B6B83",
+    ".tmp_direct_n12_high_precision_root_directed_center.json": "7D2007AC33EFD2352EFA5E10C01E23C563B48202FA5B9274BD1DA2F7D050F989",
+    ".tmp_direct_n12_high_precision_root_physical_neighborhood.json": "0BFC8EEE5C4BE80D35FD31B360D05D39327C8F510460DEEE57CD8346ADD60AF5",
+    ".tmp_direct_n12_high_precision_root_persistence_final.json": "B840183E1B100FF083AB6F1E968D79C2EADE073F8947C52D2D563C068DB04BE0"
+  },
+  "certified_root_ball": {
+    "coordinate_system": "EXISTING_ACTION_COORDINATES",
+    "center_exact_F12_norm": 2.1479968882829104e-14,
+    "radius": 1e-11,
+    "directed_Y_upper": 8.054801004461516e-16,
+    "directed_Z0_upper": 2.3338547660850186e-06,
+    "Z2_upper": 687225838.7567053,
+    "radii_polynomial_at_radius": -9.964809889414057e-12,
+    "contraction_bound": 0.006874592242333138,
+    "unique_unchanged_F12_root_exists_in_ball": true,
+    "center_itself_claimed_as_exact_root": false
+  },
+  "existing_physical_gates": {
+    "corrected_action_owned_ordered_branch": true,
+    "eta_ball_lower": 0.9999998807924174,
+    "Dirac_relative_ball_perturbation": 0.0005447573136430522,
+    "Dirac_invertible_on_ball": true,
+    "boundary_lapse_ball_lower": 1.1294138124936393,
+    "nonzero_velocity_ball_lower": 5.96752735597626,
+    "canonical_lifts_invertible_on_ball": true,
+    "positive_duration_proper_time": 1.1294294576219405e-07,
+    "coarse_fine_relative_difference": 6.444884136056414e-11,
+    "maximum_constraint_residual_on_witness": 9.459100169806334e-14,
+    "minimum_eta_on_witness": 0.999999999999999,
+    "nonzero_relative_evolution_retained": true
+  },
+  "validation": {
+    "unchanged_57_row_F12_root_certified": true,
+    "eta_event_Dirac_and_boundary_gates_transfer_to_root": true,
+    "existing_positive_duration_persistence_gate": true,
+    "componentwise_monotonicity_required": false,
+    "solver_parameter_promoted_as_physics": false,
+    "new_equation_constraint_gate_scale_or_selector": false
+  },
+  "validation_passed": true,
+  "DIRECT_N12_COMPLETE_PERSISTENT_CHILD_CERTIFIED": true,
+  "CONTINUUM_EVENT_CHILD_CERTIFIED": false,
+  "exact_next_dependency": "APPEND_THE_ACTION_DERIVED_INVERSE_SQUARE_HIGH_MODE_TAIL_TO_THE_CERTIFIED_N12_ANCHOR_AND_CLOSE_THE_GENERAL_N_CONTINUUM_EVENT_CHILD_CONSTRUCTION",
+  "FULL_BHSM_COMPLETE": false
+}

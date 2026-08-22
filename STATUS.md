@@ -5,62 +5,40 @@ evidence, not competing public status pages.
 
 ## Current public summary
 
-Current identifier: **v21.37 fixed-chart endpoint-rank checkpoint**. It
-is a development checkpoint, not a release version.
+Current identifier: **direct N12 complete-persistent-child provenance
+checkpoint**. It is a development checkpoint, not a release version.
 
-Complete persistent children through N6 are validated for their retained
-finite-resolution maps. N5 closes the unchanged 18 physical
-rows at fixed-reference merit `5.90723795458673e-14` (raw
-`||F18||=1.1665202200968536e-7`), remains eta-admissible, and passes the
-existing certification and positive-duration persistence gates with nonzero
-relative evolution. `FULL_BHSM_COMPLETE = FALSE`.
+Complete persistent children are validated at N3, N4, N5, N6, and now direct
+N12 under their unchanged retained finite-resolution maps. The corrected N12
+branch closes all 57 physical rows with independently evaluated
+`||F12|| = 2.1479968882829104e-14`. Its certified action-coordinate root ball
+has radius `1e-11`; ordered-event, eta, boundary/Dirac, rank, and
+positive-duration persistence conditions remain inside their existing
+neighborhoods. The persistence witness includes nonzero relative evolution.
+No equation, gate, field, coefficient, scale, or acceptance rule changed.
 
-The N5 numerical representation writes the existing rows as
-`F18(Y)=(A16(Y), Phi2(Y))` and evaluates `Phi2` on the local implicit fiber
-`A16=0`. This is root-equivalent to the unchanged child map and changes no
-physical equation, event definition, eta domain, or complete-child gate.
+The authoritative branch is the same-action N6 index-12 to N12 index-24
+ordered-event correction. The public manifest hash-locks the N12 state,
+residual, action-norm radii proof, physical neighborhoods, persistence data,
+exact normal operators, and tail diagnostics. The previous fixed-chart
+endpoint-rank theorem remains valid as a statement about that attempted N6
+injection proof architecture; it is not an obstruction to the separately
+corrected direct N12 root.
 
-The finite-N pattern has `8N+2` variables, `2N+8` rows, and a `6N-6` local
-root manifold. The same-action two-sided event/child attachment/reaction map
-is now explicitly matched at N3/N4/N5/N6 without a new row or C1 matching
-assumption. At N6, full trace/constraint/momentum compatibility closes to
-`5.708e-12`, exact attachment jump is zero after the existing boundary solve,
-and the positive-duration persistence witness is converged with nonzero
-relative evolution. The previously stored N5-projected seed was reclassified
-because its N6 ordered-event row was `1.645981691e-6`, above the existing
-`1e-9` tolerance. The unchanged N6 action-energy/event solve closes that row
-to `-3e-15`; the rebuilt child has eta `0.999999998794641` and two-sided
-reaction mismatch `2.12131e-10`. N6 therefore passes the existing ordered-
-event, complete-child, and persistence gates without a new equation or gate.
-Action-normalized weak reaction graphs are measured through N6.
+At the certified state, the existing boundary-compatible gauge-fixed
+event/child Calderon symbol has gap `0.029146859835472938`. Resolution-doubled
+quadrature reproduces it to `7.44e-13`. Zero-padded N16--N48 probes have
+positive finite gaps with observed minimum `0.00912893612489853`, but they are
+not corrected roots and do not establish a uniform continuum estimate.
+Accordingly `CONTINUUM_EVENT_CHILD_CERTIFIED = FALSE` and
+`FULL_BHSM_COMPLETE = FALSE`.
 
-The retained action yields an exact inverse-square weak shell bound. The
-principal-plus-compact normal split supplies an asymptotic `O(1)` right inverse,
-so the tail beyond a finite cutoff is summable. This does not close the whole
-N6-to-infinity construction. The repaired-anchor N6-to-N12 probe finds no
-linear bridge obstruction: hard, full-Schur, and soft Lyapunov-Schmidt
-responses remain nonzero and the unchanged exact joint weak merit descends.
-The old one-ball failure is local-basin evidence only. The current `t` cover
-encloses a fixed-center linear Schur family, but the unchanged exact joint
-residual has no `t` parameter. A nonlinear retained-action family with a
-rooted N6 endpoint and preserved normal rank is required before local radii
-balls are defined. Scaling away high modes collapses that rank; retaining it
-exposes a nonzero omitted weak tail (`0.086772051123605` on the original
-matched child and `0.080655518582802` on the repaired ordered-event child).
-Source subtraction is not the unchanged action. The fixed-chart theorem makes
-the obstruction exact: the joint map grows from 100 variables/33 rows at N6
-to 196 variables/57 rows at N12. Without an auxiliary high equation, the
-rooted N6 endpoint is deficient by at least 24 normal rows. Keeping or scaling
-the physical N12 high rows respectively loses the N6 root or collapses the
-endpoint rank. This is a continuation-proof obstruction only; physical
-continuum nonexistence is not claimed. The reduced local N6 canonical energy
-is a constraint diagnostic, not `Delta H`, a mass, or a physical scale readout.
-The v14.54 relative-energy/Floquet object is presently a conditional contract,
-not an executable complete composite-minus-matched-parent `Q_xi` evaluator;
-the stored N6 persistence data also lacks a paired parent history.
+The reduced local energy remains a diagnostic, not `Delta H`, mass, or scale.
+An executable composite-minus-matched-parent `Q_xi`, action-selected state or
+family, and new frozen blind observable remain open.
 
 Exact next object:
-`PROVE_A_VARIABLE_CHART_SINGULAR_GALERKIN_TRANSITION_WITH_UNCHANGED_PHYSICAL_ENDPOINTS,_OR_EXPLICITLY_AUTHORIZE_AND_PROVE_ENDPOINT_INDEPENDENCE_OF_AN_ACTION_NORM_AUXILIARY_HIGH_BLOCK`.
+`DERIVE_AN_EXPLICIT_N12_TO_INFINITY_RETAINED_ACTION_BOUND_ON_THE_GAUGE_FIXED_EVENT_CHILD_CALDERON_GRAPH_PROJECTOR_TAIL_AND_CLOSE_THE_NONLINEAR_INVERSE_SQUARE_CORRECTION_RADIUS`.
 
 ### Historical corrected-Rayleigh N3 snapshot
 
