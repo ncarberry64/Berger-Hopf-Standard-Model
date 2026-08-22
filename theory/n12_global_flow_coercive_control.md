@@ -32,8 +32,23 @@ is not the complete boundary-improved \(Q_\xi\), and the matched-parent charge
 is unavailable. Therefore neither may be used as the missing a priori bound
 or interpreted as mass.
 
-The action-owned next lemma is to derive the constraint-reduced,
-gauge-quotiented energy identity and prove a coercive \(S_2\) estimate on the
-actual continuum child component, or rigorously show that the retained
-boundary/constraint form supplies no such estimate. Until then the local
-continuum flow cannot be globalized by energy conservation.
+The constraint-reduced identity has now been derived.  The unchanged
+constraint map is
+
+\[
+C_N=(\partial_mL_N,E_N),\qquad E_N=\partial_vL_N\cdot v-L_N,
+\]
+
+so (E_N\) is identically zero on the complete-child constraint set.  Its
+intrinsic first and second variations on that set vanish, and the gauge
+quotient cannot turn the zero function into a coercive norm.  The earlier
+possibility that this local Legendre energy might control the strong
+topology is therefore invalidated, not merely left open.  The full proof is
+recorded in `theory/n12_constraint_reduced_energy_identity.md`.
+
+The next action-owned lemma is to derive the complete child-only
+boundary-improved Hamiltonian variation from the retained action and test
+its gauge-reduced strong-(S_2) control.  This is not the unavailable matched
+parent subtraction and may not be called mass.  If it is also unavailable or
+noncoercive, global continuation must instead come from a direct analytic
+continuation/physical-domain-exit estimate for the existing flow.
