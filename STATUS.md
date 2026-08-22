@@ -5,7 +5,7 @@ evidence, not competing public status pages.
 
 ## Current public summary
 
-Current identifier: **N12 eta-completed source-compatibility provenance
+Current identifier: **N12 source-restricted dynamic-Calderon provenance
 checkpoint**. It is a development checkpoint, not a release version.
 
 Complete persistent children are validated at N3, N4, N5, N6, and now direct
@@ -26,22 +26,22 @@ injection proof architecture; it is not an obstruction to the separately
 corrected direct N12 root.
 
 At the certified state, the existing boundary-compatible gauge-fixed
-event/child Calderon symbol has gap `0.029146859835472938`. Resolution-doubled
-quadrature reproduces it to `7.44e-13`. Zero-padded N16--N48 probes have
-positive finite gaps with observed minimum `0.00912893612489853`, but they are
-not corrected roots and do not establish a uniform continuum estimate.
-Accordingly `CONTINUUM_EVENT_CHILD_CERTIFIED = FALSE` and
+event/child Calderon symbol has gap `0.029146859835472938`. The same unchanged
+dynamic symbol remains transverse on source-restricted linear probes at N48
+(`0.00922485414794376`, 192 points) and N64 (`0.0038382679025004396`, 96
+points). They are not corrected roots and do not establish a uniform continuum
+estimate. Accordingly `CONTINUUM_EVENT_CHILD_CERTIFIED = FALSE` and
 `FULL_BHSM_COMPLETE = FALSE`.
 
-The exact full q-v-m retained-action audit through N48 reclassifies the tail.
+The exact full q-v-m retained-action audit through N64 reclassifies the tail.
 After the existing weak boundary reaction is removed from the bulk rows, the
-omitted source has inverse-square shell decay and its minimum-action linear
-corrections are common-mode Cauchy with sampled `N^2 * distance <=
-1.4876792803344001`. Their sampled `H2_q x H1_v x H2_m` norms stay below
-`0.6486315875453534`. In contrast, the worst instantaneous static inverse
-grows faster than the summability threshold. Thus a generic worst-inverse
-argument is invalid, while the exact source remains asymptotically decoupled
-from that shift-owned soft line. This is finite linear evidence only.
+omitted source has inverse-square shell decay. From N48 to N64 the event/child
+action-coordinate correction distances are `0.0018305896390707417` and
+`0.0010832491904661818`, but the corresponding strong-graph distances are
+`0.2789519506622375` and `0.1755558333355768`. Sampled strong norms remain
+bounded by `0.6748061644458057`; strong-graph Cauchy closure is not established.
+The worst instantaneous static inverse still grows faster than the summability
+threshold. This is finite linear evidence only.
 
 The retained radial-diffeomorphism Ward identity is now corrected and closed
 algebraically. Since `x_eta=x_spatial-(beta/N)^2`, the retained eta clock and
@@ -53,18 +53,20 @@ tangent; no category-3 collapse sequence has been constructed.
 
 At the N48 source-restricted linear proposal, high routed bulk weak residuals
 fall by more than two orders of magnitude and eta remains admissible, but
-finite boundary and energy rows remain open. Raw/action-coordinate event
-Hessians contain a near-zero cluster; the already-existing principal gauge
-quotient instead gives a quadrature-stable isolated branch with minimum
-observed neighbor gap `1.9607047715840434e-08`. These are diagnostic probes,
-not roots or a uniform projector theorem.
+finite boundary and energy rows remain open. The earlier principal-submatrix
+isolation is not equivalent to the unchanged ordered-event eigenproblem. Exact
+Feshbach elimination is equivalent only by inverting the shifted existing
+w/shift block, whose sampled gap falls from `8.877056607545721e-06` at N12 to
+`7.369327366811907e-09` at embedded N48. The static event-projector shortcut is
+invalidated. The positive finite dynamic Calderon gaps support category-2
+normal control but are not a uniform theorem.
 
 The reduced local energy remains a diagnostic, not `Delta H`, mass, or scale.
 An executable composite-minus-matched-parent `Q_xi`, action-selected state or
 family, and new frozen blind observable remain open.
 
 Exact next object:
-`CERTIFY_THE_ETA_COMPLETED_SOURCE_RESTRICTED_MIXED_EULER_DIRAC_S2_RIGHT_INVERSE_AND_THE_EXISTING_GAUGE_REDUCED_ORDERED_EVENT_PROJECTOR_ON_THE_CORRECTED_NORMAL_SECTION;_THEN_CLOSE_THE_UNCHANGED_NONLINEAR_JOINT_EVENT_CHILD_RADIUS_AND_TRANSFER_ETA_EVENT_DIRAC_PERSISTENCE`.
+`PROVE_THE_SOURCE_RESTRICTED_POSITIVE_DURATION_GAUGE_FIXED_JACOBI_CALDERON_RIGHT_INVERSE_AND_STRONG_GRAPH_COMPACTNESS_FOR_THE_ETA_COMPLETED_WARD_SOURCE;_USE_IT_TO_CONTROL_THE_UNCHANGED_ORDERED_EVENT_PROJECTOR_AND_CLOSE_THE_NONLINEAR_N12_TO_INFINITY_EVENT_CHILD_RADIUS_WITH_EXISTING_ETA_EVENT_DIRAC_PERSISTENCE_GATES`.
 
 ### Historical corrected-Rayleigh N3 snapshot
 

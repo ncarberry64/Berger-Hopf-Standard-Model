@@ -85,60 +85,65 @@ def _reaction_response(
     order: int,
     state: tuple[np.ndarray, ...],
 ) -> tuple[np.ndarray, np.ndarray, list[dict[str, float]]]:
+    q, velocity, multipliers = state
+    qdim = dimensions(order)["coordinates"]
+    mdim = dimensions(order)["multipliers"]
+    boundary = _attachment_jacobian_at_order(order, q)
+    curvature = _attachment_chart_curvature_on_velocity(
+        order, q, velocity
+    )
+    jet = exact_full_action_jet_at_state(
+        order, q, velocity, multipliers, points=POINTS
+    )
+    gradient = np.asarray(jet.gradient, dtype=float)
+    hessian = np.asarray(jet.hessian, dtype=float)
+    matrix = np.block([
+        [
+            hessian[qdim:2 * qdim, qdim:2 * qdim],
+            hessian[qdim:2 * qdim, 2 * qdim:],
+            -boundary.T,
+        ],
+        [
+            hessian[2 * qdim:, qdim:2 * qdim],
+            hessian[2 * qdim:, 2 * qdim:],
+            np.zeros((mdim, 2)),
+        ],
+        [
+            boundary,
+            np.zeros((2, mdim)),
+            np.zeros((2, 2)),
+        ],
+    ])
+    radial_flux = _metric_radial_flux_covector_at_order(
+        order, q, multipliers
+    )
+    base_right_hand_side = np.concatenate((
+        gradient[:qdim]
+        - hessian[qdim:2 * qdim, :qdim] @ velocity
+        - radial_flux,
+        -hessian[2 * qdim:, :qdim] @ velocity,
+        -curvature,
+    ))
+    # Existing boundary-compatible normal quotient: remove w-velocity and
+    # shift-rate gauge-soft directions and retain
+    # (scale,u,v,log-lapse,reaction).
+    keep = np.concatenate((
+        np.arange(0, 1 + order),
+        np.arange(1 + 2 * order, 1 + 3 * order),
+        qdim + np.arange(order),
+        qdim + mdim + np.arange(2),
+    ))
+    reduced = matrix[np.ix_(keep, keep)]
+    singular = np.linalg.svd(reduced, compute_uv=False)
+
     def solve(boundary_acceleration: np.ndarray) -> dict[str, object]:
-        q, velocity, multipliers = state
-        qdim = dimensions(order)["coordinates"]
-        mdim = dimensions(order)["multipliers"]
-        boundary = _attachment_jacobian_at_order(order, q)
-        curvature = _attachment_chart_curvature_on_velocity(
-            order, q, velocity
+        right_hand_side = base_right_hand_side.copy()
+        right_hand_side[-2:] += np.asarray(
+            boundary_acceleration, dtype=float
         )
-        jet = exact_full_action_jet_at_state(
-            order, q, velocity, multipliers, points=POINTS
-        )
-        gradient = np.asarray(jet.gradient, dtype=float)
-        hessian = np.asarray(jet.hessian, dtype=float)
-        matrix = np.block([
-            [
-                hessian[qdim:2 * qdim, qdim:2 * qdim],
-                hessian[qdim:2 * qdim, 2 * qdim:],
-                -boundary.T,
-            ],
-            [
-                hessian[2 * qdim:, qdim:2 * qdim],
-                hessian[2 * qdim:, 2 * qdim:],
-                np.zeros((mdim, 2)),
-            ],
-            [
-                boundary,
-                np.zeros((2, mdim)),
-                np.zeros((2, 2)),
-            ],
-        ])
-        radial_flux = _metric_radial_flux_covector_at_order(
-            order, q, multipliers
-        )
-        right_hand_side = np.concatenate((
-            gradient[:qdim]
-            - hessian[qdim:2 * qdim, :qdim] @ velocity
-            - radial_flux,
-            -hessian[2 * qdim:, :qdim] @ velocity,
-            np.asarray(boundary_acceleration, dtype=float) - curvature,
-        ))
-        # Existing boundary-compatible normal quotient: remove w-velocity
-        # and shift-rate gauge-soft directions and retain
-        # (scale,u,v,log-lapse,reaction).
-        keep = np.concatenate((
-            np.arange(0, 1 + order),
-            np.arange(1 + 2 * order, 1 + 3 * order),
-            qdim + np.arange(order),
-            qdim + mdim + np.arange(2),
-        ))
-        reduced = matrix[np.ix_(keep, keep)]
         reduced_rhs = right_hand_side[keep]
         solved = np.linalg.solve(reduced, reduced_rhs)
         residual = reduced @ solved - reduced_rhs
-        singular = np.linalg.svd(reduced, compute_uv=False)
         return {
             "boundary_reaction": solved[-2:],
             "smallest_singular_value": float(singular[-1]),

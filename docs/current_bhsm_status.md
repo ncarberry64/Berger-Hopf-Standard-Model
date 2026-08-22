@@ -1,6 +1,6 @@
 # Current BHSM status
 
-## Authoritative frontier: N12 eta-completed source compatibility
+## Authoritative frontier: N12 source-restricted dynamic Calderon control
 
 The unchanged retained N12 57-row event/child map now has a directly corrected
 complete persistent child. Its independently evaluated residual is
@@ -20,19 +20,21 @@ rank, and positive-duration persistence gates with nonzero relative evolution.
 Evidence is hash-locked by the
 [`N12 scientific checkpoint manifest`](../artifacts/n12_direct_checkpoint/BHSM_N12_SCIENTIFIC_CHECKPOINT_MANIFEST.json).
 The gauge-fixed N12 event/child Calderon boundary symbol has finite gap
-`0.029146859835472938`; doubled quadrature agrees to `7.44e-13`. Zero-padded
-N16--N48 probes retain positive gaps, with observed minimum
-`0.00912893612489853`, but are diagnostics rather than corrected roots. They
-do not prove uniform continuum closure.
+`0.029146859835472938`; doubled quadrature agrees to `7.44e-13`. On the
+source-restricted linear probes, the unchanged dynamic graph symbol remains
+transverse at N48 (`0.00922485414794376`, 192 points) and N64
+(`0.0038382679025004396`, 96 points). These are diagnostics rather than
+corrected roots and do not prove uniform continuum closure.
 
-The unchanged full q-v-m retained-action tail audit through N48 further shows
+The unchanged full q-v-m retained-action tail audit through N64 further shows
 that, after routing the existing weak boundary reaction, the exact omitted
-source has inverse-square shells. Its minimum-action linear corrections are
-common-mode Cauchy with sampled `N^2 * distance <= 1.4876792803344001` and
-remain bounded in `H2_q x H1_v x H2_m` by `0.6486315875453534`. The worst
+source has inverse-square shells. From N48 to N64 the event/child action
+distances are `0.0018305896390707417` and `0.0010832491904661818`; their
+strong `H2_q x H1_v x H2_m` distances remain `0.2789519506622375` and
+`0.1755558333355768`. Sampled strong norms remain bounded by
+`0.6748061644458057`, but strong-graph Cauchy closure is open. The worst
 instantaneous static inverse grows too rapidly for the naive generic-inverse
-proof, but the exact source decouples from that increasingly shift-owned soft
-line. These are zero-padded linear probes, not corrected roots.
+proof. These are zero-padded linear probes, not corrected roots.
 
 The retained radial-diffeomorphism Ward identity now closes only after the
 eta-clock shift current is included. The eta-free static-cokernel annihilation
@@ -40,13 +42,16 @@ statement is invalidated. Exact shift rows reconstruct from geometric momentum
 plus eta current to below `1e-10` on N16--N48 probes. At N48 the
 source-restricted proposal reduces high bulk weak residuals by over two orders
 of magnitude with admissible eta, but it disturbs finite boundary/energy rows
-and is not a root. The raw event-Hessian near-zero cluster is absent in the
-already-existing principal gauge quotient, where the selected branch has a
-quadrature-stable minimum neighbor gap `1.9607047715840434e-08`. This is not
-an N-uniform projector theorem.
+and is not a root. The principal retained-coordinate submatrix is not
+equivalent to the unchanged ordered-event eigenproblem. Exact Feshbach
+elimination is equivalent only through the shifted existing w/shift inverse,
+whose sampled gap collapses from `8.877056607545721e-06` at N12 to
+`7.369327366811907e-09` at embedded N48. The static projector shortcut is
+invalidated. No category-3 history collapse sequence has been constructed, so
+the soft channel remains category 2: a dynamically controlled normal line.
 
 Exact next dependency:
-`CERTIFY_THE_ETA_COMPLETED_SOURCE_RESTRICTED_MIXED_EULER_DIRAC_S2_RIGHT_INVERSE_AND_THE_EXISTING_GAUGE_REDUCED_ORDERED_EVENT_PROJECTOR_ON_THE_CORRECTED_NORMAL_SECTION;_THEN_CLOSE_THE_UNCHANGED_NONLINEAR_JOINT_EVENT_CHILD_RADIUS_AND_TRANSFER_ETA_EVENT_DIRAC_PERSISTENCE`.
+`PROVE_THE_SOURCE_RESTRICTED_POSITIVE_DURATION_GAUGE_FIXED_JACOBI_CALDERON_RIGHT_INVERSE_AND_STRONG_GRAPH_COMPACTNESS_FOR_THE_ETA_COMPLETED_WARD_SOURCE;_USE_IT_TO_CONTROL_THE_UNCHANGED_ORDERED_EVENT_PROJECTOR_AND_CLOSE_THE_NONLINEAR_N12_TO_INFINITY_EVENT_CHILD_RADIUS_WITH_EXISTING_ETA_EVENT_DIRAC_PERSISTENCE_GATES`.
 
 `Q_xi`, relative `Delta H`, action-selected families, and a new frozen blind
 observable remain downstream and open. The following v21.37 discussion is

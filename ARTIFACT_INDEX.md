@@ -1,6 +1,23 @@
 # BHSM Artifact Index
 
-## Current N12 continuum source-compatibility checkpoint
+## Current N12 source-restricted dynamic-Calderon checkpoint
+
+- [`BHSM_N12_DYNAMIC_CALDERON_CHECKPOINT_MANIFEST.json`](artifacts/n12_dynamic_calderon_checkpoint/BHSM_N12_DYNAMIC_CALDERON_CHECKPOINT_MANIFEST.json)
+- [`BHSM_N12_N48_ORDERED_EVENT_FESHBACH_EQUIVALENCE_AUDIT.json`](artifacts/n12_dynamic_calderon_checkpoint/BHSM_N12_N48_ORDERED_EVENT_FESHBACH_EQUIVALENCE_AUDIT.json)
+- [`BHSM_N48_SOURCE_CORRECTED_CALDERON_SYMBOL_AUDIT.json`](artifacts/n12_dynamic_calderon_checkpoint/BHSM_N48_SOURCE_CORRECTED_CALDERON_SYMBOL_AUDIT.json)
+- [`BHSM_N64_FULL_QVM_CONSTRAINT_TAIL_DIAGNOSTIC.json`](artifacts/n12_dynamic_calderon_checkpoint/BHSM_N64_FULL_QVM_CONSTRAINT_TAIL_DIAGNOSTIC.json)
+- [`BHSM_N64_FULL_QVM_LINEAR_CORRECTION_CANDIDATES.npz`](artifacts/n12_dynamic_calderon_checkpoint/BHSM_N64_FULL_QVM_LINEAR_CORRECTION_CANDIDATES.npz)
+- [`BHSM_N64_SOURCE_CORRECTED_CALDERON_SYMBOL_AUDIT.json`](artifacts/n12_dynamic_calderon_checkpoint/BHSM_N64_SOURCE_CORRECTED_CALDERON_SYMBOL_AUDIT.json)
+- Reproduction: [`audit_n12_n48_ordered_event_feshbach_equivalence.py`](scripts/audit_n12_n48_ordered_event_feshbach_equivalence.py), [`audit_n12_full_qvm_constraint_tail.py`](scripts/audit_n12_full_qvm_constraint_tail.py), [`audit_n12_event_child_calderon_symbol.py`](scripts/audit_n12_event_child_calderon_symbol.py), and [`audit_n48_source_corrected_calderon_symbol.py`](scripts/audit_n48_source_corrected_calderon_symbol.py)
+
+The exact Feshbach audit invalidates the principal static submatrix as an
+equivalent ordered-event definition and localizes the collapsing shifted
+w/shift inverse. The unchanged dynamic event-child Calderon symbol nevertheless
+remains transverse on source-corrected N48 and N64 linear probes. The N64 probe
+is action-Cauchy but does not establish strong-graph closure. No N64 child root,
+uniform theorem, continuum child, or downstream physical readout is promoted.
+
+## Prior N12 continuum source-compatibility checkpoint
 
 - [`BHSM_N12_CONTINUUM_SOURCE_COMPATIBILITY_MANIFEST.json`](artifacts/n12_continuum_source_compatibility_checkpoint/BHSM_N12_CONTINUUM_SOURCE_COMPATIBILITY_MANIFEST.json)
 - [`BHSM_N12_RADIAL_DIFFEO_NOETHER_COMPATIBILITY_AUDIT.json`](artifacts/n12_continuum_source_compatibility_checkpoint/BHSM_N12_RADIAL_DIFFEO_NOETHER_COMPATIBILITY_AUDIT.json)

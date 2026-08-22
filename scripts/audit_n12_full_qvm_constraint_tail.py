@@ -519,12 +519,12 @@ def main() -> None:
                 row["target_correction_S2_norm"]
                 for row in correction_cauchy[name]
             )),
-            "N48_exact_source_soft_required_correction_amplitude": float(
+            f"N{last_order}_exact_source_soft_required_correction_amplitude": float(
                 evaluations[name][-1]["full_qvm_all_mode_normal_map"][
                     "exact_source_soft_required_correction_amplitude"
                 ]
             ),
-            "N48_exact_source_total_linear_correction_norm": float(
+            f"N{last_order}_exact_source_total_linear_correction_norm": float(
                 evaluations[name][-1]["full_qvm_all_mode_normal_map"][
                     "exact_source_minimum_action_norm_linear_correction"
                 ]
@@ -602,7 +602,7 @@ def main() -> None:
         "linear_correction_candidate_checkpoint": str(CORRECTION_CHECKPOINT),
         "finite_power_fits": fits,
         "classification": (
-            "N12_TO_N48_RETAINED_ACTION_SOURCE_RESTRICTED_LINEAR_TAIL_"
+            f"N12_TO_N{last_order}_RETAINED_ACTION_SOURCE_RESTRICTED_LINEAR_TAIL_"
             "IS_ACTION_CAUCHY_AND_S2_BOUNDED_DESPITE_STATIC_WORST_INVERSE_"
             "COLLAPSE;_FINITE_STRUCTURAL_RESULT_ONLY"
         ),
@@ -612,7 +612,7 @@ def main() -> None:
                 "EXACT_N12_OMITTED_BULK_SOURCE_HAS_INVERSE_SQUARE_SHELL_"
                 "DECAY;_ITS_MINIMUM_ACTION_LINEAR_CORRECTIONS_FORM_AN_"
                 "N_MINUS_2_COMMON_MODE_CAUCHY_SEQUENCE_AND_REMAIN_S2_"
-                "BOUNDED_ON_N16_TO_N48"
+                f"BOUNDED_ON_THE_SAMPLED_CUTS_THROUGH_N{last_order}"
             ),
             "invalidated": (
                 "THE_NAIVE_PROOF_USING_THE_WORST_INSTANTANEOUS_STATIC_"

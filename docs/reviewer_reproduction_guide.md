@@ -1,5 +1,32 @@
 # Reviewer Reproduction Guide
 
+## Current dynamic-Calderon checkpoint
+
+Run the hash-locked focused replay first:
+
+```bash
+python -m pytest -q tests/test_bhsm_n12_dynamic_calderon_checkpoint.py tests/test_bhsm_n12_direct_checkpoint.py
+python tools/audit_forbidden_claims.py
+python tools/audit_bhsm_status.py
+python tools/audit_frozen_prediction_integrity.py
+git diff --check
+```
+
+Inspect the [dynamic-Calderon manifest](../artifacts/n12_dynamic_calderon_checkpoint/BHSM_N12_DYNAMIC_CALDERON_CHECKPOINT_MANIFEST.json).
+It locks the exact ordered-event Feshbach audit, source-restricted N48/N64
+Calderon probes, N64 full q-v-m tail diagnostic, and the retained N64 linear
+candidate. The principal submatrix is not the unchanged ordered-event
+definition; the positive finite dynamic gaps are not a uniform theorem. N48
+and N64 probes must not be reported as complete-child roots.
+
+The expensive numerical replay uses the existing scripts and no altered map:
+
+```bash
+PYTHONPATH=src python scripts/audit_n12_n48_ordered_event_feshbach_equivalence.py
+BHSM_N12_FULL_QVM_ORDERS=48,64 BHSM_N12_FULL_QVM_POINTS=96 PYTHONPATH=src python scripts/audit_n12_full_qvm_constraint_tail.py
+BHSM_N48_LINEAR_CANDIDATE_CHECKPOINT=artifacts/n12_dynamic_calderon_checkpoint/BHSM_N64_FULL_QVM_LINEAR_CORRECTION_CANDIDATES.npz BHSM_N48_CORRECTED_CALDERON_POINTS=96 PYTHONPATH=src python scripts/audit_n48_source_corrected_calderon_symbol.py
+```
+
 ## Current direct N12 checkpoint
 
 ```bash
@@ -14,9 +41,9 @@ git diff --check
 Inspect the [N12 checkpoint manifest](../artifacts/n12_direct_checkpoint/BHSM_N12_SCIENTIFIC_CHECKPOINT_MANIFEST.json).
 It verifies hashes for the exact state, residual, radii proof, physical
 neighborhoods, exact normals, persistence witness, and tail diagnostics.
-The direct N12 child is finite-resolution evidence; the N16--N48 zero-padded
-Calderon states are probes and must not be reported as roots or a continuum
-certificate.
+The direct N12 child is finite-resolution evidence; the higher-order zero-padded
+or source-corrected Calderon states through N64 are probes and must not be
+reported as roots or a continuum certificate.
 
 For the retained N3--N6 provenance, the focused replay is:
 
