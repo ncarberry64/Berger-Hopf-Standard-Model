@@ -1,8 +1,10 @@
 # Formal-reversal obstruction to a global event-forward shortcut
 
-BHSM physical time is oriented and forward.  The involution below is therefore
-used only as a formal reflection between candidate forward-time Cauchy sectors.
-It is not physical backward evolution and is not quotiented as gauge.
+BHSM physical time has the single existing forward clock orientation
+\(dt>0\), positive lapse, and \(d\tau=N_{\rm boundary}dt>0\). The involution
+below is therefore used only as a formal reflection between Cauchy states in
+that same time domain. It is not a competing temporal orientation, physical
+backward evolution, or gauge.
 
 Write the retained phase variables as
 
@@ -74,9 +76,9 @@ Exact action parity makes the cubic factor even and the Fredholm forcing odd,
 so \(K(\mathcal RY)=-K(Y)\).  Consequently no strictly one-signed global
 event-hitting bound can hold on the union of both action-admissible reflected
 sectors.  On a simple nondegenerate singular-event component,
-\(\operatorname{sgn}K\) is a temporal-chirality label and \(\mathcal R\)
-exchanges its signs.  This makes the sectors distinct; it does not select
-either one.
+\(\operatorname{sgn}K\) is a terminal/emergent singular-boundary label and
+\(\mathcal R\) exchanges its signs. This distinguishes the paired Cauchy-state
+roles; it does not create or select a second physical time orientation.
 
 The certified N12 persistence endpoints show a positive local event secant
 on the stored forward history.  That measurement is consistent with the
@@ -89,11 +91,13 @@ not impose a sign of \(K\), canonical momentum, or shift current.  The two
 forward-time chiral sectors remain distinct and unquotiented.  The exact
 remaining return dependency is to prove either:
 
-1. derive the one-sided singular hitting law and event-to-child reset
-   regularity from the existing action; then prove a finite boundary hit; or
-2. prove that the ordered event stays nonzero until the already-classified
-   continuum physical/strong-domain exit.
+1. that at least one existing forward complete-child history enters the now
+   certified terminal singular-event chart; or
+2. that the ordered event stays nonzero until the already-classified continuum
+   physical/strong-domain exit.
 
-The current action does not supply the selection required by item 1.  The
+The local singular hitting law and regular set-valued reset relation are now
+certified. The current action does not yet supply the global control required
+by item 1. The
 formal reflection may not be quotiented to create it.  This is not
 authorization for a new trajectory campaign or a new orientation gate.

@@ -33,9 +33,9 @@ def test_intrinsic_return_action_ownership_gate_fails_closed() -> None:
     ] is False
     assert payload["flagship_chain_consequence"]["prediction_frozen"] is False
     assert payload["flagship_chain_consequence"][
-        "temporal_chirality_sectors_quotiented"
+        "chiral_state_pair_quotiented"
     ] is False
     assert payload["validation"]["formal_reflection_is_not_gauge"] is True
     assert payload["validation"][
-        "one_temporal_chirality_sector_is_not_action_selected"
+        "single_forward_time_orientation_is_not_a_selection_problem"
     ] is True

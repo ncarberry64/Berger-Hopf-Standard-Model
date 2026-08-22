@@ -20,6 +20,14 @@ SINGULAR_EVENT = ROOT / (
     "artifacts/intrinsic_state_selection/"
     "BHSM_N12_SINGULAR_EVENT_TEMPORAL_CHIRALITY.json"
 )
+SINGULAR_RESET = ROOT / (
+    "artifacts/intrinsic_state_selection/"
+    "BHSM_N12_CONTINUUM_SINGULAR_HITTING_RESET_RELATION.json"
+)
+TIME_DOMAIN = ROOT / (
+    "artifacts/intrinsic_state_selection/"
+    "BHSM_N12_FORWARD_TIME_DOMAIN_ORIENTATION_AUDIT.json"
+)
 ETA_WARD = ROOT / (
     "artifacts/n12_continuum_source_compatibility_checkpoint/"
     "BHSM_N12_RADIAL_DIFFEO_NOETHER_COMPATIBILITY_AUDIT.json"
@@ -46,7 +54,8 @@ def _load(path: Path) -> dict[str, object]:
 def main() -> None:
     inputs = (
         BOUNDARY, EVENT_FLUX, CLOCK, SPATIAL_ORIENTATION,
-        EVENT_EQUIVARIANCE, ORDERED_REVERSAL, SINGULAR_EVENT, ETA_WARD, THEORY,
+        EVENT_EQUIVARIANCE, ORDERED_REVERSAL, SINGULAR_EVENT, SINGULAR_RESET,
+        TIME_DOMAIN, ETA_WARD, THEORY,
     )
     missing = [str(path) for path in inputs if not path.is_file()]
     if missing:
@@ -59,6 +68,8 @@ def main() -> None:
     equivariance = _load(EVENT_EQUIVARIANCE)
     ordered = _load(ORDERED_REVERSAL)
     singular = _load(SINGULAR_EVENT)
+    singular_reset = _load(SINGULAR_RESET)
+    time_domain = _load(TIME_DOMAIN)
     eta_ward = _load(ETA_WARD)
 
     eta_identity = eta_ward["derived_Ward_identity"]
@@ -67,6 +78,14 @@ def main() -> None:
     event_sector = event_flux["event_sector_ledger"]
     validation = {
         "BHSM_forward_time_orientation_preserved": True,
+        "single_physical_time_orientation_certified": (
+            time_domain["admissible_clock_domain"][
+                "number_of_physical_time_orientations"
+            ] == 1
+        ),
+        "artificial_temporal_sector_ambiguity_removed": time_domain[
+            "intrinsic_state_consequence"
+        ]["artificial_two_temporal_sector_ambiguity_removed"] is True,
         "formal_reflection_not_quotiented": (
             equivariance["physical_domain"]["formal_reversal_is_gauge"] is False
         ),
@@ -80,6 +99,9 @@ def main() -> None:
             singular["validation"][
                 "one_sided_squared_eigenvalue_rate_derived_from_existing_action"
             ] is True
+        ),
+        "local_singular_hitting_reset_relation_certified": (
+            singular_reset["validation_passed"] is True
         ),
         "event_child_equations_unchanged": True,
         "matched_parent_not_fabricated": True,
@@ -109,23 +131,27 @@ def main() -> None:
     payload = {
         "artifact": "BHSM_N12_FORWARD_TIME_TEMPORAL_CHIRALITY_AUDIT",
         "classification": (
-            "FORMAL_REVERSAL_LABELS_TWO_DISTINCT_FORWARD_TIME_TEMPORAL_"
-            "CHIRALITY_SECTORS;_THE_CURRENT_RETAINED_ACTION_DOES_NOT_SELECT_ONE"
+            "ONE_FORWARD_PHYSICAL_TIME_DOMAIN;_FORMAL_REVERSAL_IS_AN_"
+            "ALGEBRAIC_CHIRAL_PAIRING_NOT_A_COMPETING_TEMPORAL_ORIENTATION"
         ),
         "physical_time": {
             "orientation": "FORWARD",
+            "number_of_admissible_orientations": 1,
+            "domain": "dt>0,_N_boundary>0,_d_tau=N_boundary*dt>0",
             "formal_reversal_is_backward_physical_evolution": False,
             "formal_reversal_is_gauge": False,
             "R_related_Cauchy_states_are_automatically_equivalent": False,
+            "action_selection_between_forward_and_backward_required": False,
         },
         "formal_reflection": {
             "map": "R(q,v,log_lapse,shift)=(q,-v,log_lapse,-shift)",
             "retained_action_even": True,
             "event_child_graph_equivariant": True,
             "interpretation": (
-                "CANDIDATE_CHIRAL_REFLECTION_BETWEEN_DISTINCT_FORWARD_TIME_"
-                "SOLUTION_SECTORS"
+                "ALGEBRAIC_OR_CHIRAL_PAIRING_BETWEEN_CAUCHY_STATES_INSIDE_"
+                "THE_SAME_SINGLE_FORWARD_TIME_DOMAIN"
             ),
+            "reexpressed_state_independently_satisfies_forward_domain": True,
         },
         "candidate_invariant_audit": {
             "eta_clock_shift_current": {
@@ -141,7 +167,7 @@ def main() -> None:
             },
             "canonical_momentum_and_symplectic_orientation": {
                 "parity": "MOMENTUM_ODD_AND_FORMAL_REFLECTION_ANTISYMPLECTIC",
-                "distinguishes_forward_time_sectors": True,
+                "distinguishes_chiral_Cauchy_states": True,
                 "outgoing_sign_selected": False,
                 "reason": (
                     "THE_EXISTING_CHILD_ROW_MATCHES_EVENT_AND_CHILD_MOMENTA_"
@@ -159,7 +185,7 @@ def main() -> None:
                 ),
                 "locally_constant_on_nonzero_simple_singular_event_components": True,
                 "sign_imposed_by_event_equation": False,
-                "status": "ACTION_OWNED_LABEL_NOT_ACTION_SELECTED_SIGN",
+                "status": "ACTION_OWNED_TERMINAL_EMERGENT_LABEL_NOT_TIME_ORIENTATION_SELECTOR",
             },
             "Hopf_boundary_attachment_topology": {
                 "parity_under_formal_velocity_shift_reflection": "EVEN",
@@ -175,10 +201,11 @@ def main() -> None:
             },
         },
         "event_to_child_conclusion": {
-            "one_temporal_chirality_sector_action_selected": False,
-            "two_sectors_may_be_quotiented": False,
+            "physical_time_orientation_action_selected": "ALREADY_FIXED_BY_FORWARD_CLOCK_DOMAIN",
+            "second_temporal_sector_exists": False,
+            "chiral_state_pair_may_be_quotiented": False,
             "equivariance_is_physical_equivalence": False,
-            "numerical_basin_or_crossing_sign_may_choose_sector": False,
+            "numerical_basin_or_crossing_sign_may_choose_physical_state": False,
             "new_sign_gate_added": False,
         },
         "flagship_consequence": {
@@ -188,7 +215,7 @@ def main() -> None:
                 "WITH_FORMAL_REFLECTION_RETAINED_AS_DISTINCT_CHIRAL_PARTNER_TO_"
                 "REFLECTION_INVARIANT_DIMENSIONLESS_OBSERVABLE_TO_BLIND_FREEZE"
             ),
-            "first_missing_object": singular["exact_next_dependency"],
+            "first_missing_object": singular_reset["exact_next_dependency"],
             "numerical_campaign_authorized": False,
             "prediction_frozen": False,
         },

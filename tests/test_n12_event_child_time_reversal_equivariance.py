@@ -65,11 +65,12 @@ def test_event_child_equivariance_gate_is_fail_closed() -> None:
     assert artifact["physical_domain"][
         "R_related_states_physically_identified"
     ] is False
-    assert artifact["action_selection_consequence"][
-        "one_temporal_chirality_sector_action_selected_by_current_equations"
+    assert artifact["physical_domain"]["number_of_physical_time_orientations"] == 1
+    assert artifact["physical_domain"][
+        "reflected_state_is_a_second_temporal_orientation"
     ] is False
     assert artifact["action_selection_consequence"][
-        "temporal_chirality_sectors_quotiented"
+        "chiral_state_pair_quotiented"
     ] is False
     assert artifact["action_selection_consequence"]["new_sign_gate_allowed"] is False
     assert artifact["action_selection_consequence"][

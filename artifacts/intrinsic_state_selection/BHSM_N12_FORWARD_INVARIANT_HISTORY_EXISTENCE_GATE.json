@@ -8,47 +8,50 @@
     "prediction_frozen": false,
     "trajectory_sampling_is_proof": false
   },
-  "classification": "SINGULAR_EVENT_HITTING_RESET_REGULARITY_NOT_PROVED;_NO_ACTION_SELECTED_FORWARD_RETURN_OR_INVARIANT_CHILD_HISTORY_YET",
+  "classification": "LOCAL_SINGULAR_EVENT_HITTING_RESET_RELATION_CERTIFIED;_GLOBAL_FORWARD_REACHABILITY_AND_INVARIANT_CHILD_HISTORY_OPEN",
   "exact_return_domain": {
     "empty_proved": false,
     "first_certified_local_interval_event_free": true,
     "flow": "THE_EXISTING_FORWARD_RETAINED_CONTINUUM_EULER_DIRAC_FLOW",
+    "local_terminal_hitting_and_reset_relation_certified": true,
     "nonempty_proved": false,
     "required_history": "REMAINS_IN_ETA_METRIC_LAPSE_INERTIA_GAUGE_TRACE_DIRAC_AND_CHILD_DOMAINS_UNTIL_A_FINITE_FIRST_POSITIVE_EVENT_ZERO",
-    "required_landing": "REGULAR_ONE_SIDED_SINGULAR_EVENT_LIMIT_INSIDE_THE_CERTIFIED_CONTINUUM_EVENT_TO_CHILD_CHART_WITH_REGULAR_RESET",
-    "start": "C_INFINITY(E)_FOR_E_IN_THE_EXISTING_SIMPLE_ORDERED_EVENT_SECTION"
+    "required_landing": "CERTIFIED_ONE_SIDED_SINGULAR_EVENT_LIMIT_INSIDE_THE_REGULAR_CONTINUUM_EVENT_TO_CHILD_RELATION",
+    "start": "C_IN_MATHFRAK_C_INFINITY(E)_FOR_E_IN_THE_EXISTING_SIMPLE_ORDERED_EVENT_SECTION"
   },
   "forward_singular_hitting_orientation": {
-    "F": "F(t)=E_ORD(FLOW_t(C_INFINITY(E)))",
+    "F": "F(t)=E_ORD(FLOW_t(C))_FOR_C_IN_MATHFRAK_C_INFINITY(E)",
     "N12_initial_child_side": "POSITIVE_AT_96_192_AND_384_POINT_QUADRATURE",
     "center_hitting_product": -3.757616928173632e-15,
     "continuum_initial_child_event_value_lower": "1.43073918588889213428936787151717088219730915335981165370515810678096319639512772739033433632082515910254214985102771111893549738197257019999341804838448046460530852131537933674729E-9",
     "continuum_initial_child_side_independently_enclosed": true,
     "formal_reflection_creates_a_forward_return": false,
     "formal_reflection_flips_hitting_orientation": true,
-    "hypotheses": "SIMPLE_EVENT_LINE_HARD_INVERSE_AND_COEFFICIENT_LIMITS_EXIST_AND_C_PSI*B_PSI_IS_NONZERO",
+    "hypotheses": "CERTIFIED_ON_THE_LOCAL_TERMINAL_EVENT_CHART",
     "identity": "LIM_D_DT(F(T)^2)=2*C_PSI*B_PSI",
+    "local_terminal_hitting_theorem_certified": true,
     "new_sign_gate": false
   },
   "inputs": {
     "artifacts/BHSM_aether_joint_hamiltonian_selection_v15_2.json": "BE14C8FEB69B8070807577B74D5B54E9751A842A5A3510D739C8A5BA5CE5B95F",
     "artifacts/BHSM_relative_periodic_persistence_v15_7.json": "0A2F5D2EA77FA246A220C6E1F4B6A4234B1A4C8B1D411F0994DDFD413F913F11",
-    "artifacts/intrinsic_state_selection/BHSM_N12_CONTINUUM_CHILD_INITIAL_EVENT_SIDE.json": "201501334D0E074C59C855C6B0DE941D6F577887AFFA4D013B98969725F3DE4D",
+    "artifacts/intrinsic_state_selection/BHSM_N12_CONTINUUM_CHILD_INITIAL_EVENT_SIDE.json": "89421C3330D52F1BA8F882EB951A3FF8527C9B0E9B53EE3B74BAD4ACDC773C25",
     "artifacts/intrinsic_state_selection/BHSM_N12_CONTINUUM_MAXIMAL_FLOW_DICHOTOMY.json": "F75E3CEE4EE4D0768027770FEFECAC1A17994B4297AE344E3FC2D83F86B002A9",
-    "artifacts/intrinsic_state_selection/BHSM_N12_EXISTING_PERSISTENCE_EVENT_RETURN_AUDIT.json": "26047EE412BD68970524F129DB0AB0C44AE3587A7FBDFCDCA2F8D2FE88F7E1C5",
-    "artifacts/intrinsic_state_selection/BHSM_N12_FORWARD_TIME_TEMPORAL_CHIRALITY_AUDIT.json": "A3323FC2B9592CE625C1AB10CD9FF244F4ADA3C65A1279F1DEEE744049822D74",
+    "artifacts/intrinsic_state_selection/BHSM_N12_CONTINUUM_SINGULAR_HITTING_RESET_RELATION.json": "FAE8BFFDBF19FA71F33340AB00B5C708779D475E935C505203D2B31BA3A3988D",
+    "artifacts/intrinsic_state_selection/BHSM_N12_EXISTING_PERSISTENCE_EVENT_RETURN_AUDIT.json": "AF0190F278AEA72CBD2BA1F460947B22A3402879E4F6F16B0A6E7B775B1258BF",
+    "artifacts/intrinsic_state_selection/BHSM_N12_FORWARD_TIME_TEMPORAL_CHIRALITY_AUDIT.json": "7BE87031A9959C04A7AE9946A75AEBD8CAEFA31E7D70587A1687DCBC85F5455D",
     "artifacts/intrinsic_state_selection/BHSM_N12_GLOBAL_FLOW_COERCIVE_CONTROL_GATE.json": "0A6C1BED930316B8EFF8BBE110078AE1C582E638E6BC42445330CC276EC2A2C4",
-    "artifacts/intrinsic_state_selection/BHSM_N12_INTRINSIC_STATE_RETURN_SECTION_GATE.json": "9556834E9E16BF6AFFF801044BF364D27E99D1E477CA5C06D1560AD36ED0D8A1",
+    "artifacts/intrinsic_state_selection/BHSM_N12_INTRINSIC_STATE_RETURN_SECTION_GATE.json": "42DA69E6F609500DB76B6AD03609D26668AA10FEA165D8D7FC6788F5CA6B199C",
     "artifacts/intrinsic_state_selection/BHSM_N12_LOCAL_CONTINUUM_GALERKIN_FLOW.json": "2E2359D7644BB5A9A26AEA62DDB8AAB406CEE2DBFF8BCF6FA713CE827B91D872",
-    "artifacts/intrinsic_state_selection/BHSM_N12_LOCAL_CONTINUUM_NO_EVENT_RETURN.json": "24E22E7746588A20607FA032EB0C29BF40D02B8EF396381AD7B92CAC1F531345",
-    "artifacts/intrinsic_state_selection/BHSM_N12_SINGULAR_EVENT_TEMPORAL_CHIRALITY.json": "029755CC064CA6051A34CDD478BDA574920DBD013836EDEB2ACE9E9706B6B0DF",
+    "artifacts/intrinsic_state_selection/BHSM_N12_LOCAL_CONTINUUM_NO_EVENT_RETURN.json": "E5F085F20E27A439776176ADB45F062D0C64E3E6EC25688C3A9AA8632D27C8C9",
+    "artifacts/intrinsic_state_selection/BHSM_N12_SINGULAR_EVENT_TEMPORAL_CHIRALITY.json": "E68082F736A4A23D4F7342D8178C06B546D7846EFDA08866BD2F77808144A4B7",
     "artifacts/n12_continuum_majorant_effectiveness/BHSM_CONTINUUM_EVENT_CHILD_CERTIFICATE.json": "429FDDAE87C257F27DE419FE8903493470CDB8F56F344F6B0BD6DC889C17F350",
-    "theory/n12_forward_invariant_history_existence_gate.md": "24115ED1C2186A74D3F3F1B46B0621E50DE7E5BEDED6B6F838E5263FD6F94536"
+    "theory/n12_forward_invariant_history_existence_gate.md": "9AC42EB44DEFB7A96B1224186D0BE1037E30AB2645A11B135C396BE340E29CA0"
   },
   "localized_failure": {
     "after_nonempty_return": "PROVE_A_PERIODIC_POINT_BY_AN_ACTION_OWNED_COMPACT_TRAPPING_DEGREE_INDEX_OR_EQUIVALENT_EXISTENCE_MECHANISM",
-    "exact_next_dependency": "DERIVE_AND_CERTIFY_THE_EXISTING_ACTION_OWNED_ONE_SIDED_SINGULAR_ORDERED_EVENT_HITTING_LAW_AND_ITS_EVENT_TO_CHILD_RESET_REGULARITY_OR_LOCALIZE_THE_FIRST_RETAINED_ACTION_FAILURE",
-    "first_retained_action_failure": "ONE_SIDED_SINGULAR_ORDERED_EVENT_HITTING_AND_RESET_REGULARITY_NOT_ESTABLISHED",
+    "exact_next_dependency": "PROVE_THAT_AT_LEAST_ONE_EXISTING_FORWARD_COMPLETE_CHILD_HISTORY_REACHES_THE_CERTIFIED_TERMINAL_SINGULAR_EVENT_CHART_BEFORE_ANY_EXISTING_PHYSICAL_DOMAIN_EXIT_OR_PROVE_THAT_NO_SUCH_HISTORY_DOES",
+    "first_retained_action_failure": "GLOBAL_FORWARD_REACHABILITY_OF_THE_CERTIFIED_TERMINAL_SINGULAR_EVENT_CHART_BEFORE_PHYSICAL_DOMAIN_EXIT_NOT_ESTABLISHED",
     "no_return_or_no_orbit_proved": false
   },
   "periodic_point_prerequisites": {
@@ -56,9 +59,10 @@
     "compact_trapping_set": false,
     "continuous_return_map_on_controlled_iterate_domain": false,
     "fixed_or_periodic_point_may_be_claimed": false,
+    "global_return_into_certified_child_chart": false,
+    "local_reset_relation_regular": true,
     "nonempty_return_domain": false,
-    "nonzero_return_degree_or_index": false,
-    "return_into_certified_child_chart": false
+    "nonzero_return_degree_or_index": false
   },
   "validation": {
     "candidate_boundary_return_relation_typed": true,
@@ -74,8 +78,9 @@
     "no_new_equation_gate_parent_selector_or_numerical_campaign": true,
     "ordinary_Poincare_map_theorem_retracted": true,
     "relative_periodic_orbit_absent": true,
+    "reset_is_regular_relation_not_single_valued_map": true,
     "return_domain_neither_nonempty_nor_empty_is_proved": true,
-    "singular_boundary_hitting_reset_theorem_open": true,
+    "singular_boundary_hitting_reset_theorem_closed_locally": true,
     "stable_reference_cycle_absent": true
   },
   "validation_passed": true

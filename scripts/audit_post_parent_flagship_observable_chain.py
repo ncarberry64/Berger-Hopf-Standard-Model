@@ -34,6 +34,14 @@ INVARIANT_HISTORY = ROOT / (
     "artifacts/intrinsic_state_selection/"
     "BHSM_N12_FORWARD_INVARIANT_HISTORY_EXISTENCE_GATE.json"
 )
+TIME_DOMAIN = ROOT / (
+    "artifacts/intrinsic_state_selection/"
+    "BHSM_N12_FORWARD_TIME_DOMAIN_ORIENTATION_AUDIT.json"
+)
+REACHABILITY = ROOT / (
+    "artifacts/intrinsic_state_selection/"
+    "BHSM_N12_FORWARD_TERMINAL_CHART_REACHABILITY_GATE.json"
+)
 RESULT = ROOT / (
     "artifacts/qxi_relative_energy_preparation/"
     "BHSM_POST_PARENT_FLAGSHIP_OBSERVABLE_GATE.json"
@@ -47,7 +55,7 @@ def _sha256(path: Path) -> str:
 def main() -> None:
     inputs = (
         CONTINUUM, PARENT, ABSOLUTE_UNIT, CHARGE, CLOCK, FLAVOR, TRANSPORT,
-        CHIRALITY, INVARIANT_HISTORY,
+        CHIRALITY, INVARIANT_HISTORY, TIME_DOMAIN, REACHABILITY,
     )
     missing = [str(path) for path in inputs if not path.is_file()]
     if missing:
@@ -64,6 +72,8 @@ def main() -> None:
     invariant_history = json.loads(
         INVARIANT_HISTORY.read_text(encoding="utf-8")
     )
+    time_domain = json.loads(TIME_DOMAIN.read_text(encoding="utf-8"))
+    reachability = json.loads(REACHABILITY.read_text(encoding="utf-8"))
 
     ratios = absolute_unit["unit_anchor"]["preserved_relative_ratios"]
     validation = {
@@ -90,13 +100,17 @@ def main() -> None:
         "formal_reflection_is_not_gauge": (
             chirality["physical_time"]["formal_reversal_is_gauge"] is False
         ),
-        "one_temporal_chirality_sector_is_not_action_selected": (
-            chirality["event_to_child_conclusion"][
-                "one_temporal_chirality_sector_action_selected"
-            ] is False
+        "single_forward_time_orientation_is_already_fixed": (
+            time_domain["admissible_clock_domain"][
+                "number_of_physical_time_orientations"
+            ] == 1
         ),
         "forward_first_return_domain_nonempty_not_proved": (
             invariant_history["exact_return_domain"]["nonempty_proved"] is False
+        ),
+        "global_reachability_obstruction_localized": (
+            reachability["validation_passed"] is True
+            and reachability["global_outcome"]["outcome_selected"] is False
         ),
     }
     payload = {
@@ -150,7 +164,7 @@ def main() -> None:
                 "INVARIANT_DIMENSIONLESS_OBSERVABLE_TO_BLIND_PREDICTION"
             ),
             "first_missing_object": (
-                invariant_history["localized_failure"]["exact_next_dependency"]
+                reachability["exact_next_mathematical_lemma"]
             ),
             "after_first_return_domain": (
                 "ACTION_SELECTED_INVARIANT_COMPLETE_CHILD_HISTORY_WITH_FORMAL_"
@@ -163,8 +177,9 @@ def main() -> None:
                 "or values conditional on an unselected state, charge, cycle, or domain"
             ),
             "matched_parent_route_may_resume_only_if_action_owned": True,
-            "temporal_chirality_may_be_selected_by_solver_or_event_sign_gate": False,
-            "temporal_chirality_sectors_may_be_quotiented": False,
+            "physical_time_orientation_selection_is_not_open": True,
+            "chiral_state_may_be_selected_by_solver_or_event_sign_gate": False,
+            "chiral_state_pair_may_be_quotiented": False,
         },
         "prediction_frozen": False,
         "held_out_comparison_performed": False,

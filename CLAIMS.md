@@ -2,8 +2,8 @@
 
 ## Current public claim boundary
 
-Current public identifier: **continuum event-child certified; matched-parent
-Qxi restriction open**. This is not a release and does not claim `Q_xi`,
+Current public identifier: **continuum event-child and local singular reset
+certified; global forward reachability open**. This is not a release and does not claim `Q_xi`,
 `Delta H`, mass, a blind prediction, or BHSM completion.
 
 Supported now: the certified N12 complete persistent child extends to a
@@ -16,6 +16,20 @@ the summed correction inside every existing physical neighborhood. No
 higher-resolution root, new physical row, gate, fitted coefficient, scale, or
 empirical input is used.
 
+Also supported: the retained action certifies the local one-sided singular
+hitting law and a regular set-valued continuum event-to-child reset relation.
+At N12 the fixed-event child block has rank 31, giving fiber dimension 67, or
+66 after the existing whole-system time quotient. BHSM has one physical time
+orientation, already encoded by positive coordinate direction, positive lapse,
+and positive proper duration. Formal reversal is a chiral Cauchy-state pairing
+inside that domain, not a competing temporal orientation and not gauge.
+
+Not supported: global terminal-chart reachability, nonreturn, an
+action-selected invariant child orbit, or a single-valued physical reset. The
+constraint-reduced energy is identically zero and the unreduced energy is
+noncoercive, so neither supplies the missing compact trapping/global transport
+estimate.
+
 Not supported: treating the event-side Cauchy state as the matched parent,
 calling `v^T partial_v L-L` a complete covariant `Q_xi`, or calling its
 child-minus-event difference `Delta H`, mass, or a prediction. The current
@@ -23,7 +37,8 @@ retained N12 state/action API does not define the required parent-only
 restriction `R_P: Phi_(P+C) -> Phi_P^matched` or the boundary-improved common
 reference charge. The existing v7.1 reduction correspondence is retained, but
 it is noninjective/set-valued and supplies no action-selected single-valued
-parent-only stationary section. That section is the first open dependency.
+parent-only stationary section. That readout route remains open but is
+downstream of the active intrinsic-state reachability dependency.
 
 ## Prior N12 source-tail claim boundary (superseded)
 

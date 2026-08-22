@@ -114,8 +114,8 @@ def main() -> None:
             "physical_domain_exit_proved": False,
             "next_dependency": (
                 "EXTEND_THE_EXISTING_ANALYTIC_ACTION_BALL_COVER_BEYOND_THE_"
-                "FIRST_LOCAL_INTERVAL_UNTIL_A_TRANSVERSE_EVENT_RETURN_OR_"
-                "RETAINED_PHYSICAL_DOMAIN_EXIT_IS_CERTIFIED"
+                "FIRST_LOCAL_INTERVAL_UNTIL_ENTRY_INTO_THE_CERTIFIED_TERMINAL_"
+                "SINGULAR_EVENT_CHART_OR_RETAINED_PHYSICAL_DOMAIN_EXIT_IS_CERTIFIED"
             ),
         },
         "inputs": {

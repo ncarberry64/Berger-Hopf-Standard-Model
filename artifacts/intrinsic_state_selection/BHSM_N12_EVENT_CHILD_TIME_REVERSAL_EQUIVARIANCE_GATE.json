@@ -1,7 +1,7 @@
 {
   "FULL_BHSM_COMPLETE": false,
   "artifact": "BHSM_N12_EVENT_CHILD_TIME_REVERSAL_EQUIVARIANCE_GATE",
-  "classification": "EXISTING_COMPLETE_EVENT_TO_CHILD_RELATION_IS_FORMAL_REVERSAL_EQUIVARIANT_BUT_DOES_NOT_ACTION_SELECT_ONE_FORWARD_TIME_TEMPORAL_CHIRALITY_SECTOR",
+  "classification": "EXISTING_COMPLETE_EVENT_TO_CHILD_RELATION_IS_FORMAL_REFLECTION_EQUIVARIANT_WITHIN_THE_SINGLE_FORWARD_TIME_DOMAIN",
   "involution": "R(q,v,log_lapse,shift)=(q,-v,log_lapse,-shift)",
   "row_parity": {
     "attachment_and_configuration_trace": "EVEN",
@@ -12,47 +12,51 @@
     "shift_constraints": "ODD"
   },
   "zero_set_result": {
-    "continuum_graph_equivariance": "C_infinity(R*E)=R*C_infinity(E)_WHERE_BOTH_LOCAL_SECTIONS_ARE_DEFINED",
+    "continuum_relation_equivariance": "MATHFRAK_C_infinity(R*E)=R*MATHFRAK_C_infinity(E)_WHERE_BOTH_LOCAL_RELATIONS_ARE_DEFINED",
     "finite_order_relation": "F_N(E,C)=0_IMPLIES_F_N(R*E,R*C)=0",
     "global_branch_uniqueness_claimed": false
   },
   "physical_domain": {
     "BHSM_physical_time": "ORIENTED_AND_FORWARD",
+    "number_of_physical_time_orientations": 1,
+    "forward_clock_domain": "dt>0,_N_boundary>0,_d_tau=N_boundary*dt>0",
     "eta_metric_lapse_gauge_and_rank_preserved": true,
     "formal_reversal_is_gauge": false,
     "fixed_spatial_degree_orientation_FR_parity_incidence_and_boundary_identity_are_temporal_separators": false,
     "positive_duration_removes_formally_reflected_Cauchy_state": false,
     "reflected_state_has_its_own_forward_positive_duration_solution": true,
+    "reflected_state_is_a_second_temporal_orientation": false,
+    "action_selection_of_time_orientation_required": false,
     "R_related_states_physically_identified": false
   },
   "action_selection_consequence": {
-    "action_proves_two_sectors_physically_equivalent": false,
+    "action_proves_chiral_state_pair_physically_equivalent": false,
     "current_map_contains_outgoing_momentum_sign_gate": false,
     "current_map_contains_signed_event_crossing_gate": false,
     "ordinary_event_derivative_De_ord_times_V_is_defined_at_exact_event": false,
     "singular_hitting_product_is_a_local_label_on_nonzero_simple_components": true,
     "singular_hitting_product_sign_imposed_by_current_rows": false,
     "new_sign_gate_allowed": false,
-    "one_temporal_chirality_sector_action_selected_by_current_equations": false,
+    "physical_time_orientation_already_fixed_by_domain": true,
     "formal_reversal_may_exchange_distinct_global_components": true,
-    "temporal_chirality_sectors_quotiented": false
+    "chiral_state_pair_quotiented": false
   },
   "shortest_owned_flagship_path": {
-    "active_object": "ACTION_OWNED_ONE_SIDED_SINGULAR_ORDERED_EVENT_HITTING_AND_EVENT_TO_CHILD_RESET_REGULARITY",
-    "existence_lemma": "DERIVE_AND_CERTIFY_THE_EXISTING_ACTION_OWNED_ONE_SIDED_SINGULAR_ORDERED_EVENT_HITTING_LAW_AND_ITS_EVENT_TO_CHILD_RESET_REGULARITY_OR_LOCALIZE_THE_FIRST_RETAINED_ACTION_FAILURE",
+    "active_object": "GLOBAL_FORWARD_REACHABILITY_OF_THE_CERTIFIED_TERMINAL_SINGULAR_EVENT_CHART",
+    "existence_lemma": "PROVE_THAT_AT_LEAST_ONE_EXISTING_FORWARD_COMPLETE_CHILD_HISTORY_REACHES_THE_CERTIFIED_TERMINAL_SINGULAR_EVENT_CHART_BEFORE_ANY_EXISTING_PHYSICAL_DOMAIN_EXIT_OR_PROVE_THAT_NO_SUCH_HISTORY_DOES",
     "numerical_crossing_orientation_may_select_state": false,
-    "downstream_observable_requires_action_selected_chiral_sector_or_pair_invariance": true,
+    "downstream_observable_requires_action_selected_history": true,
     "formal_reflection_retained_as_distinct_forward_time_partner": true
   },
   "inputs": {
-    "artifacts/intrinsic_state_selection/BHSM_N12_ORDERED_EVENT_TIME_REVERSAL_OBSTRUCTION.json": "488FE042EA678B423C5065B199A9AA82E584BF2ED81108166C0FD79BC1353F27",
+    "artifacts/intrinsic_state_selection/BHSM_N12_ORDERED_EVENT_TIME_REVERSAL_OBSTRUCTION.json": "D1BFD6227CABCDB519282D1AC0BD88DDED78DAB309569D8D64A236B1C0C71BCA",
     "artifacts/n12_continuum_majorant_effectiveness/BHSM_CONTINUUM_EVENT_CHILD_CERTIFICATE.json": "429FDDAE87C257F27DE419FE8903493470CDB8F56F344F6B0BD6DC889C17F350",
     "artifacts/n12_direct_checkpoint/BHSM_N12_POSITIVE_DURATION_PERSISTENCE_WITNESS.json": "BB2C471C0CE71A9C4DDB0F936F02362D0E5E5DA6A5AE474075F043656458DD8F",
     "scripts/measure_n6_n12_joint_schur_chord_cover.py": "4748860F2891515E33CCD15310E76880BF373101B8D6303E58D2CABA2339A90B",
     "src/bhsm/interface/aether_constraint_consistent_sobolev_lift_v15_84.py": "E3724E9BFB51E28EEB8F3776D03F2246ECDB9F244D74ED8923CD980495C1BC02",
     "src/bhsm/interface/aether_high_precision_velocity_jet.py": "AC92C7B5A11CB0EB733AEBE7E62B67A83C066973A7B88FB4C6BB94E4279264F2",
     "src/bhsm/interface/aether_n3_exact_full_local_action_jet_v17_60.py": "2EA05905143C27E2465450A92CFBC27D87EA1D12C39931821CD4D6E51ED44EEC",
-    "theory/n12_event_child_time_reversal_equivariance.md": "CA6C2FE1C429D0060FB815436A2996F7CD4B94024D02A1DCB33EF7F5F7B15B55"
+    "theory/n12_event_child_time_reversal_equivariance.md": "708046AAF56A8045E4BC7B84B95A4B84FF56966FE604D2D9737D292ABB4E4382"
   },
   "validation": {
     "complete_event_child_rows_exhausted": true,
@@ -62,7 +66,8 @@
     "singular_hitting_label_does_not_become_a_gate": true,
     "no_new_equation_gate_orientation_selector_or_parent": true,
     "row_parities_follow_from_exact_retained_action": true,
-    "reflected_forward_time_physical_states_not_discarded": true
+    "reflected_forward_time_physical_states_not_discarded": true,
+    "single_forward_time_orientation_not_misclassified_as_two_sectors": true
   },
   "validation_passed": true
 }

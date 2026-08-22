@@ -26,13 +26,14 @@ def test_post_parent_flagship_observable_gate_fails_closed() -> None:
         "sigma_scale": 0.5,
     }
     route = payload["shortest_nonfabricated_flagship_route"]
-    assert "ONE_SIDED_SINGULAR_ORDERED_EVENT_HITTING" in route[
+    assert "COMPACT_FORWARD_TRAPPING" in route[
         "first_missing_object"
     ]
     assert "ACTION_SELECTED_INVARIANT_COMPLETE_CHILD_HISTORY" in route[
         "after_first_return_domain"
     ]
-    assert route["temporal_chirality_sectors_may_be_quotiented"] is False
+    assert route["chiral_state_pair_may_be_quotiented"] is False
     assert route[
-        "temporal_chirality_may_be_selected_by_solver_or_event_sign_gate"
+        "chiral_state_may_be_selected_by_solver_or_event_sign_gate"
     ] is False
+    assert route["physical_time_orientation_selection_is_not_open"] is True

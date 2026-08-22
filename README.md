@@ -21,49 +21,53 @@ margin gives `K <= 9.818810450848289e18`, linear correction
 higher-resolution root, new equation, gate, fitted coefficient, event change,
 or empirical input is used.
 
-`CONTINUUM_EVENT_CHILD_CERTIFIED = TRUE`. The next physical readout remains
-fail closed. The retained N12 state/action API has no action-owned matched-parent
-restriction `R_P: Phi_(P+C) -> Phi_P^matched`, and the event half is not a
-parent-only reference. The available local Legendre energy is therefore not
-`Q_xi`, `Delta H`, mass, or a prediction. To retain that particular readout
-route, BHSM would have to derive the action-selected parent-only locus and a single-valued,
-gauge-quotiented stationary section of the existing v7.1 correspondence over
-one common interface, generator, clock, domain, orientation, and subtraction
-convention; the boundary-improved covariant charge follows.
+`CONTINUUM_EVENT_CHILD_CERTIFIED = TRUE`. The action-owned pole decomposition
+now also certifies the local one-sided singular hitting law. The represented
+event has `c_psi b_psi < 0` and is forward-terminal; the reflected Cauchy state
+has the forward-emergent boundary role. These are boundary-dynamics labels,
+not choices of physical time. BHSM has one existing physical clock orientation:
+`dt > 0`, positive boundary lapse, and `d_tau = N_boundary dt > 0`.
 
-The first missing datum inside that dependency is an action-owned realization
-of the abstract empty-event identity as an invariant parent-only field/domain
-with the comparison interface data preserved. The certified N12 normal inverse
-cannot substitute for the resulting parent bordered-Hessian inverse because
-the two operators have different domains and codomains.
-Forward evolution from the reduced N12 event tuple is not a substitute: the
-ordered zero-eigenvalue threshold does not select the restoration branch, and
-the tuple is not the complete stratified parent state.
+The fixed-event N12 child block has rank 31 in 98 child variables, so the
+event-to-complete-child reset is a regular set-valued relation with a
+67-dimensional local fiber, or 66 dimensions after the existing whole-system
+time quotient. The numerical normal chart is a reproducible representative,
+not an action-owned physical selector. The local hitting factors, hard gap,
+and reset submersion transfer to the certified continuum graph.
 
-After excluding that shortcut, no current child-only number is yet a blind
-physical observable: the available quantities are mathematical certificate
-data, internal scale ratios without an external observable map, or values
-conditional on an unselected state, charge, cycle, or domain. The shortest
-nonfabricated flagship route is therefore to derive an action-selected
-intrinsic physical state and observable map on the certified continuum child.
-The matched-parent route may resume only if the retained action supplies its
-missing parent domain and section.
+Global forward reachability is still fail closed. The certified child starts
+on the positive event side and the first analytic interval is event-free. The
+retained maximal-flow theorem does not yet choose terminal-chart entry versus
+physical-domain exit, blowup, or Dirac/eigenline degeneration. The
+constraint-reduced energy is identically zero, the unreduced energy is
+noncoercive, and no compact invariant child shell or component-restricted
+integrated event-transport estimate is currently owned. This localizes the
+first global-control obstruction without proving that no returning history
+exists.
+
+The matched-parent `Q_xi / Delta H` route remains unavailable because no
+action-owned parent-only restriction exists. No local energy, reset-chart
+representative, or formal reflection may substitute for that missing object.
 
 | Scientific gate | Status |
 | --- | --- |
 | `N12 COMPLETE PERSISTENT CHILD` | **YES** |
 | `CONTINUUM_EVENT_CHILD_CERTIFIED` | **YES** |
+| Local continuum singular hitting/reset relation | **CERTIFIED** |
+| Single forward physical-time domain | **CERTIFIED** |
+| Global forward terminal-chart reachability | **OPEN -- global control obstruction localized** |
 | `Q_xi / Delta H` | **OPEN -- matched-parent restriction absent** |
 | `FULL_BHSM_COMPLETE` | **FALSE** |
 
 Evidence: [`continuum certificate`](artifacts/n12_continuum_majorant_effectiveness/BHSM_CONTINUUM_EVENT_CHILD_CERTIFICATE.json),
-[`Q_xi ownership audit`](artifacts/qxi_relative_energy_preparation/BHSM_N12_MATCHED_PARENT_QXI_OWNERSHIP.json),
-[`reuse table`](artifacts/qxi_relative_energy_preparation/BHSM_QXI_RELATIVE_ENERGY_REUSE_TABLE.json),
+[`singular hitting/reset certificate`](artifacts/intrinsic_state_selection/BHSM_N12_CONTINUUM_SINGULAR_HITTING_RESET_RELATION.json),
+[`forward-time domain audit`](artifacts/intrinsic_state_selection/BHSM_N12_FORWARD_TIME_DOMAIN_ORIENTATION_AUDIT.json),
+[`reachability gate`](artifacts/intrinsic_state_selection/BHSM_N12_FORWARD_TERMINAL_CHART_REACHABILITY_GATE.json),
 and [`post-parent observable audit`](artifacts/qxi_relative_energy_preparation/BHSM_POST_PARENT_FLAGSHIP_OBSERVABLE_GATE.json).
 
 Exact next object:
 
-`ACTION_SELECTED_INTRINSIC_PHYSICAL_STATE_AND_OBSERVABLE_MAP_ON_THE_CERTIFIED_CONTINUUM_CHILD`
+`DERIVE_AN_ACTION_OWNED_COMPACT_FORWARD_TRAPPING_OR_COMPONENT_RESTRICTED_INTEGRATED_EVENT_TRANSPORT_ESTIMATE_ON_AT_LEAST_ONE_FORWARD_ORIENTED_COMPLETE_CHILD_COMPONENT_OR_CERTIFY_ITS_FIRST_EXISTING_PHYSICAL_DOMAIN_EXIT`
 
 ## Prior N12 source-tail checkpoint (superseded by the continuum certificate above)
 

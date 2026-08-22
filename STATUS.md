@@ -17,30 +17,30 @@ the summed correction lies inside the existing eta, event, Dirac, boundary,
 and persistence neighborhood. No higher-N root or altered physical gate is
 used. `CONTINUUM_EVENT_CHILD_CERTIFIED = TRUE`.
 
-The matched-parent charge gate is open at one exact action-owned object: the
-current retained state/action API does not define the matched-parent restriction
-`R_P: Phi_(P+C) -> Phi_P^matched`. The event-side Cauchy state cannot be
-substituted for that parent-only reference. Consequently `Q_xi`, `Delta H`,
-mass, action-selected families, and a blind observable remain open;
-`FULL_BHSM_COMPLETE = FALSE`.
+The local continuum singular-event dependency is now closed. The retained
+pole law gives `d(e_ord^2)/dt -> 2 c_psi b_psi`, with nonzero factors and hard
+gap on the certified continuum graph. The fixed-event child derivative has
+rank 31 in 98 variables, so reset is a regular set-valued correspondence with
+fiber dimension 67, or 66 after the existing whole-system time quotient. It
+is not an action-owned single-valued selector.
 
-The v7.1 covariant `R_8to5` and `R_5to4` correspondences are retained and
-closed; they are noninjective/set-valued and do not select a unique matched
-parent. Exact next object:
-`DERIVE_ACTION_SELECTED_PARENT_ONLY_LOCUS_AND_SINGLE_VALUED_GAUGE_QUOTIENTED_STATIONARY_SECTION`.
-The first missing datum is the action-owned realization of the abstract
-empty-event identity as an invariant parent-only field/domain; no current
-retained invariant distinguishes that domain from the complete-child sector.
-The event-forward shortcut is also open: the N12 event is a reduced
-zero-eigenvalue threshold, not an action-selected positive-duration
-non-encapsulating parent branch.
+BHSM physical time has one admissible orientation already built into the
+child domain: `dt>0`, `N_boundary>0`, and
+`d_tau=N_boundary dt>0`. Formal reversal is an algebraic/chiral pairing of
+Cauchy states in that same domain, not backward physical evolution or a second
+temporal sector. It remains non-gauge and unquotiented.
 
-No current alternative is executable as a blind physical prediction. Internal
-scale ratios lack an absolute anchor/particle map; nonzero charge, a stable
-clock cycle, and the flavor matrix are not action-selected. The shortest
-nonfabricated flagship dependency is now
-`ACTION_SELECTED_INTRINSIC_PHYSICAL_STATE_AND_OBSERVABLE_MAP_ON_THE_CERTIFIED_CONTINUUM_CHILD`.
-The matched-parent route remains open but is not assumed.
+Global reachability is the active blocker. The certified child starts on the
+positive ordered-event side and the first analytic continuum interval is
+event-free. Current retained-action assets do not select terminal-chart entry
+versus physical-domain exit: the reduced energy is identically zero, the
+unreduced energy is noncoercive, and no compact trapping shell or
+component-restricted integrated event-transport bound is available. This is
+an obstruction to the current proof route, not proof of nonreturn.
+
+`Q_xi`, `Delta H`, mass, action-selected families, and a blind observable
+remain open; `FULL_BHSM_COMPLETE = FALSE`. Exact next object:
+`DERIVE_AN_ACTION_OWNED_COMPACT_FORWARD_TRAPPING_OR_COMPONENT_RESTRICTED_INTEGRATED_EVENT_TRANSPORT_ESTIMATE_ON_AT_LEAST_ONE_FORWARD_ORIENTED_COMPLETE_CHILD_COMPONENT_OR_CERTIFY_ITS_FIRST_EXISTING_PHYSICAL_DOMAIN_EXIT`.
 
 ## Prior N12 source-tail checkpoint (superseded)
 
