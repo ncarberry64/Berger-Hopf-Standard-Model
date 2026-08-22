@@ -5,8 +5,8 @@ evidence, not competing public status pages.
 
 ## Current public summary
 
-Current identifier: **N12 source-restricted positive-duration closed-range
-checkpoint**. It is a development checkpoint, not a release version.
+Current identifier: **N16 coupled-tail hard-response diagnostic from the
+certified N12 anchor**. It is a development checkpoint, not a release version.
 
 Complete persistent children are validated at N3, N4, N5, N6, and now direct
 N12 under their unchanged retained finite-resolution maps. The corrected N12
@@ -16,6 +16,19 @@ has radius `1e-11`; ordered-event, eta, boundary/Dirac, rank, and
 positive-duration persistence conditions remain inside their existing
 neighborhoods. The persistence witness includes nonzero relative evolution.
 No equation, gate, field, coefficient, scale, or acceptance rule changed.
+
+At N16, the constraint-only source lift is not a complete-child correction:
+its coupled merit is `0.9618557665898765` and is momentum dominated. In the
+existing constraint/boundary tangent kernel, paired exact slopes close the
+finite hard momentum response and reduce exact full weak merit to
+`0.35386295232775206`. Eta minima remain `0.7130707999034018` (event) and
+`1.000549190019197` (child), and the ordered-event neighbor gap remains
+`6.763897075659092e-09`. The hard constraint/boundary norm temporarily rises
+from `0.12021432656497034` to `0.14718333891190302`; this is permitted because
+the unchanged coupled merit is authoritative. The remaining soft source
+projection is `0.08926177036476479` against paired response
+`0.00043277842426231244`. The soft line remains category 2, not tangent and
+not a demonstrated uniform failure. N16 is diagnostic only, not a root.
 
 The authoritative branch is the same-action N6 index-12 to N12 index-24
 ordered-event correction. The public manifest hash-locks the N12 state,
@@ -74,6 +87,9 @@ family, and new frozen blind observable remain open.
 
 Exact next object:
 `ENCLOSE_THE_SOURCE_RESTRICTED_N12_TO_INFINITY_NONLINEAR_EVENT_CHILD_RADII_POLYNOMIAL_WITH_EXPLICIT_ACTION_OWNED_C_r_K_M2_AND_EXISTING_ETA_EVENT_DIRAC_PERSISTENCE_NEIGHBORHOODS`.
+
+The first missing quantitative object inside it is a validated
+source-restricted positive-duration soft normal right-inverse bound `K`.
 
 ### Historical corrected-Rayleigh N3 snapshot
 

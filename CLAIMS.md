@@ -2,10 +2,9 @@
 
 ## Current public claim boundary
 
-Current public identifier: **N12 source-restricted positive-duration
-closed-range
-checkpoint**. This is not a release and does not claim continuum or BHSM
-completion.
+Current public identifier: **N16 coupled-tail hard-response diagnostic from
+the certified N12 anchor**. This is not a release and does not claim an N16
+root, continuum closure, or BHSM completion.
 
 Supported now: N3, N4, N5, N6, and direct N12 reconstruct complete persistent
 children under their retained finite-resolution equations. The corrected N12
@@ -20,6 +19,18 @@ index-24 ordered-event correction. The durable manifest records byte hashes
 for the state, exact residual, radii proof, physical gates, exact normal data,
 and persistence witness. No new physical equation, coefficient, scale, event
 definition, or acceptance gate was introduced.
+
+Supported finite diagnostic: the unchanged N16 coupled map rejects the
+constraint-only lift as a complete-child correction. The existing paired
+exact hard momentum test reduces full weak merit from `0.9618557665898765` to
+`0.35386295232775206` with admissible eta and an isolated ordered branch. Its
+hard constraint/boundary block is allowed to worsen from
+`0.12021432656497034` to `0.14718333891190302`; no componentwise monotonicity
+is claimed or required. The remaining soft source projection is
+`0.08926177036476479` and its paired response is
+`0.00043277842426231244`. It remains a category-2 dynamically controlled
+normal line. This does not prove a quantitative uniform inverse or an N16
+root.
 
 Supported finite diagnostic: the gauge-fixed N12 event/child Calderon boundary
 symbol has gap `0.029146859835472938`; doubled quadrature agrees to
@@ -66,6 +77,9 @@ validation, or `FULL_BHSM_COMPLETE = TRUE`.
 
 Active dependency:
 `ENCLOSE_THE_SOURCE_RESTRICTED_N12_TO_INFINITY_NONLINEAR_EVENT_CHILD_RADII_POLYNOMIAL_WITH_EXPLICIT_ACTION_OWNED_C_r_K_M2_AND_EXISTING_ETA_EVENT_DIRAC_PERSISTENCE_NEIGHBORHOODS`.
+
+Its first missing explicit constant is the validated source-restricted
+positive-duration soft normal right-inverse bound `K`.
 
 ### Historical corrected-Rayleigh N3 claim boundary
 

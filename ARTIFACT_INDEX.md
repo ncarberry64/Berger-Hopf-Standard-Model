@@ -1,5 +1,23 @@
 # BHSM Artifact Index
 
+## Current N16 coupled momentum-response diagnostic
+
+- [`BHSM_N16_COUPLED_MOMENTUM_RESPONSE_CHECKPOINT_MANIFEST.json`](artifacts/n16_coupled_momentum_response/BHSM_N16_COUPLED_MOMENTUM_RESPONSE_CHECKPOINT_MANIFEST.json)
+- [`BHSM_N16_COUPLED_MOMENTUM_RESPONSE_AUDIT.json`](artifacts/n16_coupled_momentum_response/BHSM_N16_COUPLED_MOMENTUM_RESPONSE_AUDIT.json)
+- [`BHSM_N16_FULL_QVM_SOURCE_TAIL_AUDIT.json`](artifacts/n16_coupled_momentum_response/BHSM_N16_FULL_QVM_SOURCE_TAIL_AUDIT.json)
+- [`BHSM_N16_FULL_QVM_LINEAR_SOURCE_CANDIDATE.npz`](artifacts/n16_coupled_momentum_response/BHSM_N16_FULL_QVM_LINEAR_SOURCE_CANDIDATE.npz)
+- [`BHSM_N16_HARD_RESPONSE_CANDIDATE.npz`](artifacts/n16_coupled_momentum_response/BHSM_N16_HARD_RESPONSE_CANDIDATE.npz)
+- Reproduction: [`audit_n16_complete_child_candidate.py`](scripts/audit_n16_complete_child_candidate.py)
+- Focused test: [`test_bhsm_n16_coupled_momentum_response.py`](tests/test_bhsm_n16_coupled_momentum_response.py)
+
+The unchanged N16 audit closes the finite paired hard momentum response and
+retains the remaining soft line as a category-2 dynamically controlled normal
+direction. It explicitly rejects the constraint-only lift as a complete-child
+correction. Neither stored N16 state is a root or continuum background. The
+first missing explicit constant in the existing nonlinear continuum-radius
+dependency is the source-restricted positive-duration soft normal inverse
+bound `K`.
+
 ## Current N12 source-restricted positive-duration checkpoint
 
 - [`BHSM_N12_SOURCE_RESTRICTED_POSITIVE_DURATION_CHECKPOINT_MANIFEST.json`](artifacts/n12_source_restricted_positive_duration/BHSM_N12_SOURCE_RESTRICTED_POSITIVE_DURATION_CHECKPOINT_MANIFEST.json)

@@ -1,0 +1,56 @@
+{
+  "checkpoint": "N16_COUPLED_MOMENTUM_RESPONSE_FINITE_DIAGNOSTIC",
+  "scientific_base_commit": "10086ca6a62279dab18e20c99d4c2e2108b57105",
+  "classification": "FINITE_N16_HARD_MOMENTUM_RESPONSE_CLOSED_SOFT_CHANNEL_REMAINS_DYNAMICALLY_CONTROLLED_NORMAL",
+  "claims": {
+    "hard_channel_exact_full_weak_norm_before": 0.9618557665898765,
+    "hard_channel_exact_full_weak_norm_after": 0.35386295232775206,
+    "hard_constraint_boundary_norm_before": 0.12021432656497034,
+    "hard_constraint_boundary_norm_after": 0.14718333891190302,
+    "eta_event_minimum_after": 0.7130707999034018,
+    "eta_child_minimum_after": 1.000549190019197,
+    "ordered_event_neighbor_gap_after": 6.763897075659092e-09,
+    "paired_hard_response": 18.377867631104454,
+    "paired_soft_response": 0.00043277842426231244,
+    "soft_source_projection": 0.08926177036476479,
+    "soft_channel_classification": "NORMAL_DIRECTION_CONTROLLED_BY_THE_EXISTING_POSITIVE_DURATION_GAUGE_FIXED_JACOBI_EVOLUTION",
+    "N16_COMPLETE_PERSISTENT_CHILD_CERTIFIED": false,
+    "CONTINUUM_EVENT_CHILD_CERTIFIED": false,
+    "FULL_BHSM_COMPLETE": false
+  },
+  "interpretation": {
+    "constraint_only_candidate_is_a_complete_child_root": false,
+    "hard_response_is_a_finite_N_structural_result": true,
+    "soft_channel_is_a_child_manifold_tangent": false,
+    "uniform_closed_range_failure_proved": false,
+    "componentwise_monotonicity_required": false,
+    "new_physics_equation_constraint_gate_scale_or_event_definition": false,
+    "first_missing_constant_in_existing_dependency": "VALIDATED_SOURCE_RESTRICTED_POSITIVE_DURATION_SOFT_NORMAL_RIGHT_INVERSE_BOUND_K_FOR_THE_N12_TO_INFINITY_NONLINEAR_EVENT_CHILD_RADII_POLYNOMIAL"
+  },
+  "reproduction": [
+    "$env:PYTHONPATH='src'; $env:BHSM_N12_FULL_QVM_ORDERS='16,16'; $env:BHSM_N12_FULL_QVM_RESULT='artifacts/n16_coupled_momentum_response/BHSM_N16_FULL_QVM_SOURCE_TAIL_AUDIT.json'; $env:BHSM_N12_FULL_QVM_CORRECTION_CHECKPOINT='artifacts/n16_coupled_momentum_response/BHSM_N16_FULL_QVM_LINEAR_SOURCE_CANDIDATE.npz'; python scripts/audit_n12_full_qvm_constraint_tail.py",
+    "$env:PYTHONPATH='src'; $env:BHSM_N16_COMPLETE_CHILD_AUDIT='artifacts/n16_coupled_momentum_response/BHSM_N16_COUPLED_MOMENTUM_RESPONSE_AUDIT.json'; $env:BHSM_N16_COUPLED_CANDIDATE='artifacts/n16_coupled_momentum_response/BHSM_N16_HARD_RESPONSE_CANDIDATE.npz'; python scripts/audit_n16_complete_child_candidate.py"
+  ],
+  "files": [
+    {
+      "path": "artifacts/n16_coupled_momentum_response/BHSM_N16_FULL_QVM_SOURCE_TAIL_AUDIT.json",
+      "bytes": 48091,
+      "sha256": "917a07ee1edb4136bb54162c6ea6eedbbb20930e6a6e1b5bf964895ed798e454"
+    },
+    {
+      "path": "artifacts/n16_coupled_momentum_response/BHSM_N16_FULL_QVM_LINEAR_SOURCE_CANDIDATE.npz",
+      "bytes": 7448,
+      "sha256": "6cd359bb27a98a59a6fde4ac46ca1d240dfcdbe792ee65f90b3f8642affbcced"
+    },
+    {
+      "path": "artifacts/n16_coupled_momentum_response/BHSM_N16_COUPLED_MOMENTUM_RESPONSE_AUDIT.json",
+      "bytes": 26337,
+      "sha256": "7e5c380255999dccfe2001b497007b80f37d5868e27911c7198b1bc504aadbdd"
+    },
+    {
+      "path": "artifacts/n16_coupled_momentum_response/BHSM_N16_HARD_RESPONSE_CANDIDATE.npz",
+      "bytes": 3112,
+      "sha256": "a03031fc4401f54823d347af99ee15f12be466681b3304198235167869679978"
+    }
+  ]
+}
