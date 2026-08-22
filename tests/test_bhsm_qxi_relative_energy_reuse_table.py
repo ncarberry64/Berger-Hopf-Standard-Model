@@ -23,6 +23,9 @@ def test_qxi_reuse_table_preserves_the_continuum_gate() -> None:
     assert rows["matched_parent_positive_duration_history"][
         "current_implementation"
     ] is None
+    assert rows["matched_parent_stationary_section"][
+        "N12_normal_inverse_may_be_substituted"
+    ] is False
     assert rows["local_canonical_energy"]["scope"] == (
         "NOT_Q_xi_NOT_DeltaH_NOT_MASS"
     )

@@ -16,8 +16,16 @@
 - `DELTA_H`, mass, action-selected family, and new blind prediction: `OPEN`.
 - `FULL_BHSM_COMPLETE`: `FALSE`.
 - Existing v7.1 covariant `R_8to5`/`R_5to4` correspondence: `CLOSED_BUT_NONINJECTIVE_AND_SET_VALUED`.
-- Exact next dependency:
-  `DERIVE_ACTION_SELECTED_PARENT_ONLY_LOCUS_AND_SINGLE_VALUED_GAUGE_QUOTIENTED_STATIONARY_SECTION`.
+- First missing datum inside the active dependency:
+  `ACTION_OWNED_REALIZATION_OF_THE_ABSTRACT_EMPTY_EVENT_IDENTITY_AS_AN_INVARIANT_PARENT_ONLY_FIELD_DOMAIN_D_P_WITH_PRESERVED_INTERFACE_DATA`.
+- Current N12 57-row normal inverse as the parent bordered-Hessian inverse:
+  `INVALID_DOMAIN_AND_CODOMAIN_MISMATCH`.
+- Reduced-event forward evolution as the matched parent:
+  `NOT_DERIVED_RESTORATION_BRANCH_UNSELECTED_AND_GLOBAL_PARENT_LIFT_ABSENT`.
+- Current alternative child-only blind physical observable:
+  `NOT_EXECUTABLE_STATE_CHARGE_CLOCK_OR_DOMAIN_NOT_ACTION_SELECTED`.
+- Exact next flagship dependency:
+  `ACTION_SELECTED_INTRINSIC_PHYSICAL_STATE_AND_OBSERVABLE_MAP_ON_THE_CERTIFIED_CONTINUUM_CHILD`.
 
 ## Prior N12 dynamic-Calderon continuum gates (superseded)
 

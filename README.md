@@ -2,13 +2,13 @@
 
 [![CI](https://github.com/ncarberry64/Berger-Hopf-Standard-Model/actions/workflows/ci.yml/badge.svg)](https://github.com/ncarberry64/Berger-Hopf-Standard-Model/actions/workflows/ci.yml)
 [![Latest archival release](https://img.shields.io/github/v/release/ncarberry64/Berger-Hopf-Standard-Model?label=archival%20release)](https://github.com/ncarberry64/Berger-Hopf-Standard-Model/releases/latest)
-[![Current research status](https://img.shields.io/badge/current%20research-continuum%20child%20certified%3B%20Qxi%20reference%20open-orange)](docs/current_bhsm_status.md)
+[![Current research status](https://img.shields.io/badge/current%20research-continuum%20child%20certified%3B%20observable%20selection%20open-orange)](docs/current_bhsm_status.md)
 [![Python 3.10+](https://img.shields.io/badge/python-3.10%2B-3776AB)](https://www.python.org/)
 [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.20663419.svg)](https://doi.org/10.5281/zenodo.20663419)
 
 BHSM is an independent artifact-backed computational framework and mathematical-physics research program investigating whether Standard Model structure and particle-like dynamics can be derived from Berger-Hopf boundary/envelopment geometry and a common action architecture.
 
-## Current Research Frontier -- continuum child certified; matched-parent Qxi open
+## Current Research Frontier -- continuum child certified; physical readout open
 
 BHSM now has a certified resolution-independent event-to-complete-child
 construction. The direct N12 complete persistent child is the finite anchor;
@@ -25,11 +25,29 @@ or empirical input is used.
 fail closed. The retained N12 state/action API has no action-owned matched-parent
 restriction `R_P: Phi_(P+C) -> Phi_P^matched`, and the event half is not a
 parent-only reference. The available local Legendre energy is therefore not
-`Q_xi`, `Delta H`, mass, or a prediction. The first open action-owned dependency
-is to derive the action-selected parent-only locus and a single-valued,
+`Q_xi`, `Delta H`, mass, or a prediction. To retain that particular readout
+route, BHSM would have to derive the action-selected parent-only locus and a single-valued,
 gauge-quotiented stationary section of the existing v7.1 correspondence over
 one common interface, generator, clock, domain, orientation, and subtraction
 convention; the boundary-improved covariant charge follows.
+
+The first missing datum inside that dependency is an action-owned realization
+of the abstract empty-event identity as an invariant parent-only field/domain
+with the comparison interface data preserved. The certified N12 normal inverse
+cannot substitute for the resulting parent bordered-Hessian inverse because
+the two operators have different domains and codomains.
+Forward evolution from the reduced N12 event tuple is not a substitute: the
+ordered zero-eigenvalue threshold does not select the restoration branch, and
+the tuple is not the complete stratified parent state.
+
+After excluding that shortcut, no current child-only number is yet a blind
+physical observable: the available quantities are mathematical certificate
+data, internal scale ratios without an external observable map, or values
+conditional on an unselected state, charge, cycle, or domain. The shortest
+nonfabricated flagship route is therefore to derive an action-selected
+intrinsic physical state and observable map on the certified continuum child.
+The matched-parent route may resume only if the retained action supplies its
+missing parent domain and section.
 
 | Scientific gate | Status |
 | --- | --- |
@@ -40,11 +58,12 @@ convention; the boundary-improved covariant charge follows.
 
 Evidence: [`continuum certificate`](artifacts/n12_continuum_majorant_effectiveness/BHSM_CONTINUUM_EVENT_CHILD_CERTIFICATE.json),
 [`Q_xi ownership audit`](artifacts/qxi_relative_energy_preparation/BHSM_N12_MATCHED_PARENT_QXI_OWNERSHIP.json),
-and [`reuse table`](artifacts/qxi_relative_energy_preparation/BHSM_QXI_RELATIVE_ENERGY_REUSE_TABLE.json).
+[`reuse table`](artifacts/qxi_relative_energy_preparation/BHSM_QXI_RELATIVE_ENERGY_REUSE_TABLE.json),
+and [`post-parent observable audit`](artifacts/qxi_relative_energy_preparation/BHSM_POST_PARENT_FLAGSHIP_OBSERVABLE_GATE.json).
 
 Exact next object:
 
-`DERIVE_ACTION_SELECTED_PARENT_ONLY_LOCUS_AND_SINGLE_VALUED_GAUGE_QUOTIENTED_STATIONARY_SECTION`
+`ACTION_SELECTED_INTRINSIC_PHYSICAL_STATE_AND_OBSERVABLE_MAP_ON_THE_CERTIFIED_CONTINUUM_CHILD`
 
 ## Prior N12 source-tail checkpoint (superseded by the continuum certificate above)
 
