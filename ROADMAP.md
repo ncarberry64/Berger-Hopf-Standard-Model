@@ -9,20 +9,21 @@
 2. Preserve the corrected radial-diffeomorphism Ward identity: the exact shift
    source is geometric momentum plus the retained eta-clock current. The
    eta-free static-cokernel annihilation statement is invalidated.
-3. Prove the source-restricted positive-duration gauge-fixed Jacobi--Calderon
-   right inverse and strong-graph compactness for the eta-completed Ward source.
-   Use that dynamic estimate to control the unchanged ordered-event projector;
-   the principal static submatrix shortcut is invalidated by the collapsing
-   shifted w/shift inverse. Then enclose the inverse-square tail and nonlinear
-   Hessian remainder inside the existing eta, event, boundary/Dirac, and
-   persistence neighborhoods.
-4. Promote a resolution-independent child only after the analytic tail and
+3. Preserve the proved qualitative source-restricted positive-duration
+   Jacobi--Calderon right inverse and strong-graph compactness for the
+   eta-completed Ward source. It applies to the action-selected normal bundle,
+   not arbitrary Jacobi data; the collapsing static w/shift shortcut remains
+   invalid.
+4. Enclose the explicit action-owned Ward-source constant, finite-core-plus-tail
+   inverse, full-action Hessian remainder, and existing physical-neighborhood
+   radii in one nonlinear N12-to-infinity event-child radii polynomial.
+5. Promote a resolution-independent child only after the analytic tail and
    nonlinear radius close. Do not promote zero-padded probes as roots.
-5. Construct the existing complete composite-minus-matched-parent `Q_xi` on a
+6. Construct the existing complete composite-minus-matched-parent `Q_xi` on a
    paired continuum parent/child history and close the action-selected
    relative-periodic/Floquet BVP. The reduced local canonical energy is not a
    substitute for this object.
-6. Resume action-selected family-cycle ownership, relative quasi-energy mass
+7. Resume action-selected family-cycle ownership, relative quasi-energy mass
    ratios, absolute scale, and returned-family current dependencies without
    reopening closed sectors or retuning frozen predictions.
 

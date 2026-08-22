@@ -2,13 +2,13 @@
 
 [![CI](https://github.com/ncarberry64/Berger-Hopf-Standard-Model/actions/workflows/ci.yml/badge.svg)](https://github.com/ncarberry64/Berger-Hopf-Standard-Model/actions/workflows/ci.yml)
 [![Latest archival release](https://img.shields.io/github/v/release/ncarberry64/Berger-Hopf-Standard-Model?label=archival%20release)](https://github.com/ncarberry64/Berger-Hopf-Standard-Model/releases/latest)
-[![Current research status](https://img.shields.io/badge/current%20research-N12%20dynamic%20Calderon-orange)](docs/current_bhsm_status.md)
+[![Current research status](https://img.shields.io/badge/current%20research-N12%20source--restricted%20closed%20range-orange)](docs/current_bhsm_status.md)
 [![Python 3.10+](https://img.shields.io/badge/python-3.10%2B-3776AB)](https://www.python.org/)
 [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.20663419.svg)](https://doi.org/10.5281/zenodo.20663419)
 
 BHSM is an independent artifact-backed computational framework and mathematical-physics research program investigating whether Standard Model structure and particle-like dynamics can be derived from Berger-Hopf boundary/envelopment geometry and a common action architecture.
 
-## Current Research Frontier -- N12 source-restricted dynamic Calderon control
+## Current Research Frontier -- N12 source-restricted positive-duration closure
 
 BHSM now has a directly corrected `N=12` complete persistent child under the
 unchanged retained 57-row finite-resolution map. Its independently evaluated
@@ -39,20 +39,24 @@ The unchanged positive-duration event/child Calderon symbol has finite gap
 `0.029146859835472938` at the certified N12 state. Source-restricted linear
 probes remain transverse at N48 (`0.00922485414794376`, 192-point quadrature)
 and N64 (`0.0038382679025004396`, 96-point quadrature), with admissible eta.
-These are diagnostic probes, not complete-child roots or an N-uniform theorem.
-The continuum claim therefore remains fail closed. `Q_xi`, relative `Delta H`,
-action-selected families, and any new blind observable remain downstream and
-open. Frozen predictions are unchanged.
+These remain diagnostic probes, not complete-child roots. The retained
+inverse-square eta-completed Ward source, gauge-fixed principal gap, and
+positive-duration Jacobi evolution now close a qualitative strong-graph and
+closed-range theorem on the source-selected soft normal bundle. It does not
+cover arbitrary Jacobi data and does not supply the explicit nonlinear-radius
+majorants. The continuum claim therefore remains fail closed. `Q_xi`, relative
+`Delta H`, action-selected families, and any new blind observable remain open.
 
 The retained-action N12-to-N64 full q-v-m tail audit now separates the exact
 omitted source from the worst static normal direction. After routing the
 existing weak boundary reaction, the source has inverse-square shell decay;
 the N48-to-N64 event/child correction distances are action-small (`0.00183`,
 `0.00108`) while their strong `H2_q x H1_v x H2_m` distances remain `0.279`
-and `0.176`. Sampled strong norms remain bounded (`<=0.675`), but strong-graph
-Cauchy closure is not proved. The worst instantaneous inverse grows rapidly,
-so the naive generic-inverse proof remains invalid. These states are linear
-zero-padded probes, not nonlinear complete-child roots or a continuum proof.
+and `0.176`. Those finite samples alone do not prove convergence. The new
+theorem instead uses the action-derived `n^-2` source restriction: the
+one-derivative-stronger shell is `O(n^-1)` and square summable, which excludes
+high-mode graph escape on the selected normal line. The worst instantaneous
+generic inverse remains invalid, and the probes remain non-root diagnostics.
 
 The retained radial-diffeomorphism Ward identity is now corrected. Because
 `x_eta = x_spatial - (beta/N)^2`, the eta clock supplies a nonzero shift
@@ -80,7 +84,7 @@ No equation, gate, or acceptance rule changed.
 
 Exact next object:
 
-`PROVE_THE_SOURCE_RESTRICTED_POSITIVE_DURATION_GAUGE_FIXED_JACOBI_CALDERON_RIGHT_INVERSE_AND_STRONG_GRAPH_COMPACTNESS_FOR_THE_ETA_COMPLETED_WARD_SOURCE;_USE_IT_TO_CONTROL_THE_UNCHANGED_ORDERED_EVENT_PROJECTOR_AND_CLOSE_THE_NONLINEAR_N12_TO_INFINITY_EVENT_CHILD_RADIUS_WITH_EXISTING_ETA_EVENT_DIRAC_PERSISTENCE_GATES`
+`ENCLOSE_THE_SOURCE_RESTRICTED_N12_TO_INFINITY_NONLINEAR_EVENT_CHILD_RADII_POLYNOMIAL_WITH_EXPLICIT_ACTION_OWNED_C_r_K_M2_AND_EXISTING_ETA_EVENT_DIRAC_PERSISTENCE_NEIGHBORHOODS`
 
 ## Historical corrected-Rayleigh N=3 snapshot
 

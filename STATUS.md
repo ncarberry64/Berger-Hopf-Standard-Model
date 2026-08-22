@@ -5,7 +5,7 @@ evidence, not competing public status pages.
 
 ## Current public summary
 
-Current identifier: **N12 source-restricted dynamic-Calderon provenance
+Current identifier: **N12 source-restricted positive-duration closed-range
 checkpoint**. It is a development checkpoint, not a release version.
 
 Complete persistent children are validated at N3, N4, N5, N6, and now direct
@@ -29,8 +29,14 @@ At the certified state, the existing boundary-compatible gauge-fixed
 event/child Calderon symbol has gap `0.029146859835472938`. The same unchanged
 dynamic symbol remains transverse on source-restricted linear probes at N48
 (`0.00922485414794376`, 192 points) and N64 (`0.0038382679025004396`, 96
-points). They are not corrected roots and do not establish a uniform continuum
-estimate. Accordingly `CONTINUUM_EVENT_CHILD_CERTIFIED = FALSE` and
+points). They are not corrected roots and are not used as a uniform lower
+bound. The action-derived inverse-square eta-completed Ward source now gives
+square-summable strong shells on the selected soft normal line. Together with
+the gauge-fixed principal gap, Mosco/Trotter-Kato passage, and the existing
+unit boundary-acceleration normalization, this proves qualitative strong-graph
+compactness, excludes a nonzero zero-observation limit, and closes the
+source-restricted normal right inverse. It does not enclose the nonlinear
+continuum radius. Accordingly `CONTINUUM_EVENT_CHILD_CERTIFIED = FALSE` and
 `FULL_BHSM_COMPLETE = FALSE`.
 
 The exact full q-v-m retained-action audit through N64 reclassifies the tail.
@@ -39,9 +45,10 @@ omitted source has inverse-square shell decay. From N48 to N64 the event/child
 action-coordinate correction distances are `0.0018305896390707417` and
 `0.0010832491904661818`, but the corresponding strong-graph distances are
 `0.2789519506622375` and `0.1755558333355768`. Sampled strong norms remain
-bounded by `0.6748061644458057`; strong-graph Cauchy closure is not established.
-The worst instantaneous static inverse still grows faster than the summability
-threshold. This is finite linear evidence only.
+bounded by `0.6748061644458057`, but the samples are finite evidence only. The
+restricted theorem uses the analytic shell law rather than extrapolating those
+samples. The worst instantaneous static inverse is still not a valid generic
+continuum argument.
 
 The retained radial-diffeomorphism Ward identity is now corrected and closed
 algebraically. Since `x_eta=x_spatial-(beta/N)^2`, the retained eta clock and
@@ -66,7 +73,7 @@ An executable composite-minus-matched-parent `Q_xi`, action-selected state or
 family, and new frozen blind observable remain open.
 
 Exact next object:
-`PROVE_THE_SOURCE_RESTRICTED_POSITIVE_DURATION_GAUGE_FIXED_JACOBI_CALDERON_RIGHT_INVERSE_AND_STRONG_GRAPH_COMPACTNESS_FOR_THE_ETA_COMPLETED_WARD_SOURCE;_USE_IT_TO_CONTROL_THE_UNCHANGED_ORDERED_EVENT_PROJECTOR_AND_CLOSE_THE_NONLINEAR_N12_TO_INFINITY_EVENT_CHILD_RADIUS_WITH_EXISTING_ETA_EVENT_DIRAC_PERSISTENCE_GATES`.
+`ENCLOSE_THE_SOURCE_RESTRICTED_N12_TO_INFINITY_NONLINEAR_EVENT_CHILD_RADII_POLYNOMIAL_WITH_EXPLICIT_ACTION_OWNED_C_r_K_M2_AND_EXISTING_ETA_EVENT_DIRAC_PERSISTENCE_NEIGHBORHOODS`.
 
 ### Historical corrected-Rayleigh N3 snapshot
 

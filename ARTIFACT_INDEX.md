@@ -1,6 +1,21 @@
 # BHSM Artifact Index
 
-## Current N12 source-restricted dynamic-Calderon checkpoint
+## Current N12 source-restricted positive-duration checkpoint
+
+- [`BHSM_N12_SOURCE_RESTRICTED_POSITIVE_DURATION_CHECKPOINT_MANIFEST.json`](artifacts/n12_source_restricted_positive_duration/BHSM_N12_SOURCE_RESTRICTED_POSITIVE_DURATION_CHECKPOINT_MANIFEST.json)
+- [`BHSM_N12_SOURCE_RESTRICTED_POSITIVE_DURATION_THEOREM.json`](artifacts/n12_source_restricted_positive_duration/BHSM_N12_SOURCE_RESTRICTED_POSITIVE_DURATION_THEOREM.json)
+- Source: [`n12_source_restricted_positive_duration.py`](src/bhsm/interface/n12_source_restricted_positive_duration.py)
+- Reproduction: [`materialize_n12_source_restricted_positive_duration.py`](scripts/materialize_n12_source_restricted_positive_duration.py)
+- Focused test: [`test_bhsm_n12_source_restricted_positive_duration.py`](tests/test_bhsm_n12_source_restricted_positive_duration.py)
+
+The eta-completed Ward-source inverse-square tail, gauge-fixed principal gap,
+and retained positive-duration Jacobi evolution close qualitative strong-graph
+compactness and the normal right inverse on the source-selected soft bundle.
+Arbitrary Jacobi data are outside the theorem. The explicit nonlinear
+N12-to-infinity radius remains open, so no continuum child or downstream
+physical readout is promoted.
+
+## Prior N12 source-restricted dynamic-Calderon checkpoint
 
 - [`BHSM_N12_DYNAMIC_CALDERON_CHECKPOINT_MANIFEST.json`](artifacts/n12_dynamic_calderon_checkpoint/BHSM_N12_DYNAMIC_CALDERON_CHECKPOINT_MANIFEST.json)
 - [`BHSM_N12_N48_ORDERED_EVENT_FESHBACH_EQUIVALENCE_AUDIT.json`](artifacts/n12_dynamic_calderon_checkpoint/BHSM_N12_N48_ORDERED_EVENT_FESHBACH_EQUIVALENCE_AUDIT.json)

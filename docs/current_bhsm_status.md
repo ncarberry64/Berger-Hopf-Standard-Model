@@ -1,6 +1,6 @@
 # Current BHSM status
 
-## Authoritative frontier: N12 source-restricted dynamic Calderon control
+## Authoritative frontier: N12 source-restricted positive-duration closure
 
 The unchanged retained N12 57-row event/child map now has a directly corrected
 complete persistent child. Its independently evaluated residual is
@@ -24,7 +24,12 @@ The gauge-fixed N12 event/child Calderon boundary symbol has finite gap
 source-restricted linear probes, the unchanged dynamic graph symbol remains
 transverse at N48 (`0.00922485414794376`, 192 points) and N64
 (`0.0038382679025004396`, 96 points). These are diagnostics rather than
-corrected roots and do not prove uniform continuum closure.
+corrected roots and are not used as a uniform bound. The retained inverse-square
+eta-completed Ward source gives square-summable strong shells on the selected
+normal line. The gauge-fixed principal gap, Mosco/Trotter-Kato limit, and the
+existing unit boundary-acceleration normalization therefore close qualitative
+strong-graph compactness and the source-restricted positive-duration normal
+right inverse. This theorem does not cover arbitrary Jacobi data.
 
 The unchanged full q-v-m retained-action tail audit through N64 further shows
 that, after routing the existing weak boundary reaction, the exact omitted
@@ -32,9 +37,10 @@ source has inverse-square shells. From N48 to N64 the event/child action
 distances are `0.0018305896390707417` and `0.0010832491904661818`; their
 strong `H2_q x H1_v x H2_m` distances remain `0.2789519506622375` and
 `0.1755558333355768`. Sampled strong norms remain bounded by
-`0.6748061644458057`, but strong-graph Cauchy closure is open. The worst
-instantaneous static inverse grows too rapidly for the naive generic-inverse
-proof. These are zero-padded linear probes, not corrected roots.
+`0.6748061644458057`, but finite sampling is not the proof. The restricted
+theorem uses the analytic `n^-2` source law; the worst instantaneous static
+inverse remains invalid as a generic-inverse proof. These are zero-padded
+linear probes, not corrected roots.
 
 The retained radial-diffeomorphism Ward identity now closes only after the
 eta-clock shift current is included. The eta-free static-cokernel annihilation
@@ -51,7 +57,7 @@ invalidated. No category-3 history collapse sequence has been constructed, so
 the soft channel remains category 2: a dynamically controlled normal line.
 
 Exact next dependency:
-`PROVE_THE_SOURCE_RESTRICTED_POSITIVE_DURATION_GAUGE_FIXED_JACOBI_CALDERON_RIGHT_INVERSE_AND_STRONG_GRAPH_COMPACTNESS_FOR_THE_ETA_COMPLETED_WARD_SOURCE;_USE_IT_TO_CONTROL_THE_UNCHANGED_ORDERED_EVENT_PROJECTOR_AND_CLOSE_THE_NONLINEAR_N12_TO_INFINITY_EVENT_CHILD_RADIUS_WITH_EXISTING_ETA_EVENT_DIRAC_PERSISTENCE_GATES`.
+`ENCLOSE_THE_SOURCE_RESTRICTED_N12_TO_INFINITY_NONLINEAR_EVENT_CHILD_RADII_POLYNOMIAL_WITH_EXPLICIT_ACTION_OWNED_C_r_K_M2_AND_EXISTING_ETA_EVENT_DIRAC_PERSISTENCE_NEIGHBORHOODS`.
 
 `Q_xi`, relative `Delta H`, action-selected families, and a new frozen blind
 observable remain downstream and open. The following v21.37 discussion is
