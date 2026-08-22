@@ -32,6 +32,9 @@ def test_forward_time_temporal_chirality_gate_does_not_quotient_or_select() -> N
     assert artifact["candidate_invariant_audit"]["ordered_event_transport"][
         "status"
     ] == "ACTION_OWNED_LABEL_NOT_ACTION_SELECTED_SIGN"
+    assert artifact["candidate_invariant_audit"]["ordered_event_transport"][
+        "former_label_status"
+    ] == "UNDEFINED_AT_EXACT_SINGULAR_EVENT"
     assert artifact["flagship_consequence"]["numerical_campaign_authorized"] is False
 
 

@@ -125,8 +125,11 @@ def main() -> None:
             "promoted_as_analytic_bound": False,
         },
         "consequence": {
-            "conditional_first_return_landing_chirality": "NEGATIVE",
-            "condition": "IF_A_FINITE_SIMPLE_TRANSVERSE_FIRST_FORWARD_RETURN_EXISTS",
+            "future_singular_hit_orientation_not_implied_by_initial_side": True,
+            "reason": (
+                "THE_EVENT_VECTOR_FIELD_IS_SINGULAR_AND_THE_ONE_SIDED_HITTING_"
+                "ORIENTATION_IS_SIGN(C_PSI*B_PSI),_NOT_SIGN(D_T_E_ORD)"
+            ),
             "return_exists": False,
             "return_domain_nonempty": False,
             "new_acceptance_condition": False,

@@ -69,6 +69,12 @@ def test_event_forward_shortcut_gate_is_fail_closed() -> None:
         "formal_reflection_sectors_physically_quotiented"
     ] is False
     assert artifact["component_scope"]["one_sector_action_selected"] is False
+    assert artifact["event_transport"][
+        "ordinary_De_ord_times_V_at_exact_event_is_defined"
+    ] is False
+    assert artifact["event_transport"][
+        "singular_hitting_label_is_selected_by_current_event_equation"
+    ] is False
     assert artifact["involution"]["is_gauge"] is False
     assert artifact["flagship_chain"][
         "event_forward_shortcut_adjudicated"

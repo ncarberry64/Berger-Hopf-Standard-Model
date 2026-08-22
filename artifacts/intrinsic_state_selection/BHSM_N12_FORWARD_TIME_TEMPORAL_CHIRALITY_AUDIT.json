@@ -28,8 +28,11 @@
       "selects_initial_velocity_momentum_or_shift_sign": false
     },
     "ordered_event_transport": {
-      "label": "CHI_TEMP(E)=SIGN(G(E));_G(E)=D_E_ORD(E)V(E)",
-      "locally_constant_on_simple_transverse_event_components": true,
+      "former_label": "SIGN(D_E_ORD(E)V(E))",
+      "former_label_status": "UNDEFINED_AT_EXACT_SINGULAR_EVENT",
+      "label": "CHI_HIT(E)=SIGN(C_PSI(E)*B_PSI(E))",
+      "locally_constant_on_nonzero_simple_singular_event_components": true,
+      "one_sided_squared_eigenvalue_rate": "LIM_D_DT(E_ORD^2)=2*C_PSI*B_PSI",
       "parity": "ODD",
       "positive_reparametrization_invariant": true,
       "sign_imposed_by_event_equation": false,
@@ -45,7 +48,7 @@
     "two_sectors_may_be_quotiented": false
   },
   "flagship_consequence": {
-    "first_missing_object": "PROVE_EXISTENCE_OF_A_FIXED_PERIODIC_OR_RELATIVE_PERIODIC_COMPLETE_CHILD_HISTORY_ON_THE_EXISTING_FORWARD_TIME_RETURN_RELATION_WITH_FORMAL_REVERSAL_RETAINED_AS_A_DISTINCT_CHIRAL_PAIRING_OR_LOCALIZE_THE_FIRST_RETAINED_ACTION_FAILURE",
+    "first_missing_object": "DERIVE_AND_CERTIFY_THE_EXISTING_ACTION_OWNED_ONE_SIDED_SINGULAR_ORDERED_EVENT_HITTING_LAW_AND_ITS_EVENT_TO_CHILD_RESET_REGULARITY_OR_LOCALIZE_THE_FIRST_RETAINED_ACTION_FAILURE",
     "matched_parent_available": false,
     "numerical_campaign_authorized": false,
     "prediction_frozen": false,
@@ -62,10 +65,11 @@
     "artifacts/BHSM_aether_event_flux_sigma_trace_v15_27.json": "4BFDDCB4C242E63A10A8D1C6FEA8C73472109270FE369C4BB26E772C1EB7AAC6",
     "artifacts/BHSM_aether_internal_clock_skin_phase_v15_14.json": "2ED0B557975B746D5DBCA07BC1C5A67F106B9F456345A0EC18D7C338EDDC2CBE",
     "artifacts/BHSM_eta_orientation_chirality_flavor_audit_v14_0.json": "D2B5DFF86957CDA0BA6BB5EBE0F9926E6FB12CDF250293D88693F120976979DA",
-    "artifacts/intrinsic_state_selection/BHSM_N12_EVENT_CHILD_TIME_REVERSAL_EQUIVARIANCE_GATE.json": "C6A5D392FF82FE28B4E24687211A069521A31AB5EBA6F7E22CCDD77C44C98FD6",
-    "artifacts/intrinsic_state_selection/BHSM_N12_ORDERED_EVENT_TIME_REVERSAL_OBSTRUCTION.json": "55B6E71BE92C6AE5AC84E348F6294FDC4EFBA71DEA91435971BA860FECA85DDD",
+    "artifacts/intrinsic_state_selection/BHSM_N12_EVENT_CHILD_TIME_REVERSAL_EQUIVARIANCE_GATE.json": "17F93ACD64F3D8B46095E75118F44CEF229F0AA9A5FB158A4327E4A4D9CF8F93",
+    "artifacts/intrinsic_state_selection/BHSM_N12_ORDERED_EVENT_TIME_REVERSAL_OBSTRUCTION.json": "488FE042EA678B423C5065B199A9AA82E584BF2ED81108166C0FD79BC1353F27",
+    "artifacts/intrinsic_state_selection/BHSM_N12_SINGULAR_EVENT_TEMPORAL_CHIRALITY.json": "029755CC064CA6051A34CDD478BDA574920DBD013836EDEB2ACE9E9706B6B0DF",
     "artifacts/n12_continuum_source_compatibility_checkpoint/BHSM_N12_RADIAL_DIFFEO_NOETHER_COMPATIBILITY_AUDIT.json": "6332971342D0AA06578CFF091CDA5431BE71F3C3D7C7D0CA6836FAD23DAEC601",
-    "theory/n12_forward_time_temporal_chirality_audit.md": "EE370F42F0A1A7C29244C356A61D23849402D878EB896C8BF09692578413BC55"
+    "theory/n12_forward_time_temporal_chirality_audit.md": "0C8911728666FEB856200CAD0864F95FBBD482BF9FDDA0835D040B111745470D"
   },
   "physical_time": {
     "R_related_Cauchy_states_are_automatically_equivalent": false,
@@ -85,7 +89,9 @@
     "global_event_sign_shortcut_remains_invalidated": true,
     "matched_parent_not_fabricated": true,
     "no_new_equation_constraint_gate_scale_fit_or_observable": true,
+    "ordinary_event_vector_field_claim_retracted": true,
     "outgoing_contact_momentum_sign_remains_unselected": true,
+    "singular_hitting_label_action_derived": true,
     "spatial_degree_components_are_distinct": true
   },
   "validation_passed": true

@@ -26,7 +26,7 @@ def test_post_parent_flagship_observable_gate_fails_closed() -> None:
         "sigma_scale": 0.5,
     }
     route = payload["shortest_nonfabricated_flagship_route"]
-    assert "FINITE_SIMPLE_TRANSVERSE_FIRST_FORWARD_RETURN" in route[
+    assert "ONE_SIDED_SINGULAR_ORDERED_EVENT_HITTING" in route[
         "first_missing_object"
     ]
     assert "ACTION_SELECTED_INVARIANT_COMPLETE_CHILD_HISTORY" in route[

@@ -27,10 +27,14 @@ def test_intrinsic_state_return_section_gate_fails_closed() -> None:
     assert "C_infinity" in payload["derived_first_return_section"]["map"]
     assert len(payload["derived_first_return_section"][
         "required_existing_properties_to_close"
-    ]) == 5
+    ]) == 6
     assert payload["derived_first_return_section"][
-        "conditional_regular_map_theorem"
-    ].startswith("PROVED_BY_THE_IMPLICIT_FUNCTION_THEOREM")
+        "ordinary_Poincare_map_theorem"
+    ] == "RETRACTED_AT_SINGULAR_EVENT"
+    assert payload["derived_first_return_section"][
+        "conditional_singular_boundary_hitting_reset_theorem"
+    ] == "NOT_YET_PROVED"
+    assert payload["derived_first_return_section"]["return_time_derivative"] is None
     assert payload["derived_first_return_section"][
         "new_clock_period_event_equation_constraint_or_gate_added"
     ] is False

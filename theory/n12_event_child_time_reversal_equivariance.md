@@ -51,13 +51,19 @@ the certified Galerkin limit is consequently
 This equation is a covariance statement, not a uniqueness statement across
 disconnected global branches.
 
-The existing map contains no time-reversal-odd sign condition.  In
+The existing map contains no formal-reflection-odd sign condition.  In
 particular, it imposes momentum matching but not the sign of an outgoing
-momentum or of
+momentum or of the action-owned singular hitting product
 
 \[
-G(E)=D e_{\rm ord}(E)V(E).
+K(E)=D^3L[(0,\psi)^3]\,\langle\psi,b_{\rm ED}\rangle.
 \]
+
+The older expression \(D e_{\rm ord}(E)V(E)\) is not defined at the exact
+event: the event equation nulls the same Dirac block that the regular
+Euler--Dirac vector field would have to invert.  The finite quantity \(K\)
+instead controls the one-sided limit of
+\(\tfrac12d(e_{\rm ord}^2)/dt\).
 
 Positive coordinate duration chooses forward evolution from a supplied
 Cauchy state.  It does not remove the formally reflected Cauchy state, which
@@ -66,10 +72,11 @@ orientation, FR parity, incidence, and boundary identity are unchanged by
 \(\mathcal R\) and therefore do not supply a temporal-chirality selector.
 
 It follows that the present event-to-child correspondence does not
-action-select one forward-time temporal-chirality sector.  The sign of the
-transverse event derivative \(G\), when nonzero, is a valid local label for
-the two reflected simple-event components, but the zero-set equations impose
-neither sign.  Adding the sign of momentum or \(G\) as an acceptance rule
+action-select one forward-time temporal-chirality sector.  The sign of \(K\),
+when nonzero and when the one-sided hard-limit hypotheses hold, is a valid
+local hitting-orientation label for the two reflected simple-event components,
+but the zero-set equations impose neither sign.  Adding the sign of momentum
+or \(K\) as an acceptance rule
 would be a new gate and is not authorized.  Equivariance is not physical
 equivalence, so the two sectors are retained rather than quotiented.
 

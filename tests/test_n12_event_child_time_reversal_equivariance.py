@@ -72,6 +72,12 @@ def test_event_child_equivariance_gate_is_fail_closed() -> None:
         "temporal_chirality_sectors_quotiented"
     ] is False
     assert artifact["action_selection_consequence"]["new_sign_gate_allowed"] is False
+    assert artifact["action_selection_consequence"][
+        "ordinary_event_derivative_De_ord_times_V_is_defined_at_exact_event"
+    ] is False
+    assert artifact["action_selection_consequence"][
+        "singular_hitting_product_sign_imposed_by_current_rows"
+    ] is False
     assert artifact["shortest_owned_flagship_path"][
         "numerical_crossing_orientation_may_select_state"
     ] is False

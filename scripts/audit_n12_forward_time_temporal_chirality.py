@@ -16,6 +16,10 @@ ORDERED_REVERSAL = ROOT / (
     "artifacts/intrinsic_state_selection/"
     "BHSM_N12_ORDERED_EVENT_TIME_REVERSAL_OBSTRUCTION.json"
 )
+SINGULAR_EVENT = ROOT / (
+    "artifacts/intrinsic_state_selection/"
+    "BHSM_N12_SINGULAR_EVENT_TEMPORAL_CHIRALITY.json"
+)
 ETA_WARD = ROOT / (
     "artifacts/n12_continuum_source_compatibility_checkpoint/"
     "BHSM_N12_RADIAL_DIFFEO_NOETHER_COMPATIBILITY_AUDIT.json"
@@ -42,7 +46,7 @@ def _load(path: Path) -> dict[str, object]:
 def main() -> None:
     inputs = (
         BOUNDARY, EVENT_FLUX, CLOCK, SPATIAL_ORIENTATION,
-        EVENT_EQUIVARIANCE, ORDERED_REVERSAL, ETA_WARD, THEORY,
+        EVENT_EQUIVARIANCE, ORDERED_REVERSAL, SINGULAR_EVENT, ETA_WARD, THEORY,
     )
     missing = [str(path) for path in inputs if not path.is_file()]
     if missing:
@@ -54,6 +58,7 @@ def main() -> None:
     spatial = _load(SPATIAL_ORIENTATION)
     equivariance = _load(EVENT_EQUIVARIANCE)
     ordered = _load(ORDERED_REVERSAL)
+    singular = _load(SINGULAR_EVENT)
     eta_ward = _load(ETA_WARD)
 
     eta_identity = eta_ward["derived_Ward_identity"]
@@ -67,6 +72,15 @@ def main() -> None:
         ),
         "all_requested_existing_orientation_candidates_audited": True,
         "action_owned_label_distinguished_from_action_selector": True,
+        "ordinary_event_vector_field_claim_retracted": (
+            singular["ordinary_event_transport_correction"]["status"]
+            == "UNDEFINED_AT_THE_EXACT_EVENT_BECAUSE_D(E)_HAS_KERNEL_PSI"
+        ),
+        "singular_hitting_label_action_derived": (
+            singular["validation"][
+                "one_sided_squared_eigenvalue_rate_derived_from_existing_action"
+            ] is True
+        ),
         "event_child_equations_unchanged": True,
         "matched_parent_not_fabricated": True,
         "no_new_equation_constraint_gate_scale_fit_or_observable": True,
@@ -135,10 +149,15 @@ def main() -> None:
                 ),
             },
             "ordered_event_transport": {
-                "label": "CHI_TEMP(E)=SIGN(G(E));_G(E)=D_E_ORD(E)V(E)",
+                "former_label": "SIGN(D_E_ORD(E)V(E))",
+                "former_label_status": "UNDEFINED_AT_EXACT_SINGULAR_EVENT",
+                "label": "CHI_HIT(E)=SIGN(C_PSI(E)*B_PSI(E))",
                 "parity": "ODD",
                 "positive_reparametrization_invariant": True,
-                "locally_constant_on_simple_transverse_event_components": True,
+                "one_sided_squared_eigenvalue_rate": (
+                    "LIM_D_DT(E_ORD^2)=2*C_PSI*B_PSI"
+                ),
+                "locally_constant_on_nonzero_simple_singular_event_components": True,
                 "sign_imposed_by_event_equation": False,
                 "status": "ACTION_OWNED_LABEL_NOT_ACTION_SELECTED_SIGN",
             },
@@ -169,12 +188,7 @@ def main() -> None:
                 "WITH_FORMAL_REFLECTION_RETAINED_AS_DISTINCT_CHIRAL_PARTNER_TO_"
                 "REFLECTION_INVARIANT_DIMENSIONLESS_OBSERVABLE_TO_BLIND_FREEZE"
             ),
-            "first_missing_object": (
-                "PROVE_EXISTENCE_OF_A_FIXED_PERIODIC_OR_RELATIVE_PERIODIC_"
-                "COMPLETE_CHILD_HISTORY_ON_THE_EXISTING_FORWARD_TIME_RETURN_"
-                "RELATION_WITH_FORMAL_REVERSAL_RETAINED_AS_A_DISTINCT_CHIRAL_"
-                "PAIRING_OR_LOCALIZE_THE_FIRST_RETAINED_ACTION_FAILURE"
-            ),
+            "first_missing_object": singular["exact_next_dependency"],
             "numerical_campaign_authorized": False,
             "prediction_frozen": False,
         },

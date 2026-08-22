@@ -1,7 +1,8 @@
 # Forward invariant-history existence gate
 
-Status: **the conditional first-return map is derived, but its forward domain
-has not been proved nonempty; no invariant child history is yet selected**.
+Status: **the candidate forward boundary-return relation is typed, but its
+singular hitting/reset theorem and forward domain remain open; no invariant
+child history is selected**.
 
 This audit keeps BHSM physical time oriented and forward.  Formal reversal is
 not a quotient and cannot manufacture a positive-time return.
@@ -20,37 +21,44 @@ where \(\varphi_t\) is the retained forward Euler--Dirac flow.  The domain of
 the already-derived first-return map is exactly the set of \(E\) for which:
 
 1. \(\mathcal C_\infty(E)\) is defined in the certified child chart;
-2. the maximal forward solution remains in the existing eta, metric, lapse,
-   inertia, gauge, trace, and Dirac domain through some finite \(\tau>0\);
+2. the maximal regular forward solution remains in the existing eta, metric,
+   lapse, inertia, gauge, trace, and invertible-Dirac domain for
+   \(0\le t<\tau\);
 3. \(f_E(t)\ne0\) for \(0<t<\tau\) and \(f_E(\tau)=0\);
-4. the returned event is simple and transverse, \(f_E'(\tau)\ne0\);
-5. \(\mathcal C_\infty\) is defined at the returned event.
+4. the one-sided state has a limit \(E'\) in the simple ordered-event locus;
+5. the action-owned singular hitting product
+   \(c_\psi b_\psi\) is nonzero and the boundary-hitting limit is regular;
+6. \(\mathcal C_\infty\) is defined at \(E'\), with a regular reset
+   composition.
 
 Only then is
 
 \[
-\mathcal P(E)=\mathcal C_\infty\!\left(\varphi_\tau(
-\mathcal C_\infty(E))\right)
+\mathcal P(E)=\mathcal C_\infty(E'),\qquad
+E'=\lim_{t\uparrow\tau}\varphi_t(\mathcal C_\infty(E))
 \]
 
 defined on the existing gauge and whole-system time-translation quotient.
 No formal-reversal quotient is taken.
 
-## 2. Forward landing-chirality lemma
+## 2. Forward singular-hitting orientation
 
-There is one exact chirality statement that does not require a new sign gate.
-If \(f_E(0)\ne0\), a finite first zero \(\tau\) exists, and that zero is
-transverse, then continuity and the definition of first return imply
+The ordinary derivative \(f_E'(\tau)\) is not available: at the event the
+same Dirac block inverted by the Euler--Dirac vector field has kernel
+\(\psi\).  On a regular one-sided approach the retained action instead gives
 
 \[
-\operatorname{sgn} f_E'(\tau)=-\operatorname{sgn} f_E(0).
+\lim_{t\uparrow\tau}\frac12\frac d{dt}f_E(t)^2
+=c_\psi b_\psi,
+\quad
+c_\psi=D^3L[(0,\psi)^3],
+\quad
+b_\psi=\langle\psi,b_{\rm ED}\rangle.
 \]
 
-Indeed, \(f_E\) keeps its initial sign on \([0,\tau)\); at a differentiable
-transverse first zero it must cross toward the opposite side.  Thus the
-forward landing chirality is selected *conditionally by a proved first
-return and the action-evaluated initial child side*.  It is not an acceptance
-condition.
+The sign of this product labels terminal versus emergent event sides.  Formal
+reflection flips it, while the current event-to-child rows impose neither
+sign.  This is not an acceptance condition.
 
 The tracked child eigenline is now certified on the complete N12 root ball.
 Its center value is \(1.430742563850721\times10^{-9}\), its entire root-ball
@@ -70,9 +78,9 @@ than \(8.61\times10^{-73}\).  Thus the continuum child independently satisfies
 \(f_E(0)>0\).  The 96, 192, and 384 point evaluations are retained only as
 cross-quadrature diagnostics, not as the analytic bound.
 
-Consequently, if a finite simple transverse first forward return exists, its
-landing derivative is negative.  This remains a conditional consequence and
-does not establish that the return domain is nonempty.
+The positive initial child side and the event-free first local interval remain
+valid.  They do not determine the sign of a future singular hit or establish
+that the return domain is nonempty.
 
 The existing local continuum-flow certificate also excludes an event zero on
 its entire first interval.  The finite-core third-variation bound and certified
@@ -98,7 +106,7 @@ through the certified coordinate duration
 after exit from this first action ball.  This is an analytic enclosure of the
 already-certified local flow, not a new trajectory sample or acceptance gate.
 
-Formal reversal changes the sign of \(G=De_{\rm ord}V\), but the identity
+Formal reversal changes the sign of \(c_\psi b_\psi\), but the identity
 \(\mathcal R\varphi_t=\varphi_{-t}\mathcal R\) relates positive time to
 negative time.  It therefore does not turn an unproved forward return into a
 second forward return.  Event-to-child graph equivariance and forward-return
@@ -112,16 +120,18 @@ whole-system time translation.  Before any fixed-point or periodic-point
 argument can be invoked, the following are required:
 
 - a nonempty forward return domain;
-- return into the certified continuum child chart;
-- a controlled domain on which the relevant iterate of \(\mathcal P\) is
+- a regular one-sided singular hit and return into the certified continuum
+  child chart;
+- a controlled domain on which the reset composition \(\mathcal P\) is
   continuous;
 - a compact trapping set, a nonzero return degree/index, or another
   action-owned existence mechanism.
 
 The repository currently supplies none of these global ingredients.  It
-supplies an event-free first local continuum interval, a maximal
-continuation-or-domain-exit alternative, and conditional differentiability of
-\(\mathcal P\).  The one stored persistence history records no return.  The constraint energy is zero,
+supplies an event-free first local continuum interval and a maximal
+continuation-or-domain-exit alternative.  It does not yet supply regularity of
+the singular hitting/reset composition \(\mathcal P\).  The one stored
+persistence history records no return.  The constraint energy is zero,
 the unreduced energy is noncoercive, the child boundary Hamiltonian is absent,
 and no compact invariant energy shell or stable reference cycle is available.
 Consequently recurrence, Schauder/Lefschetz degree, and a variational periodic
@@ -131,13 +141,14 @@ orbit theorem cannot presently be invoked.
 
 The earliest failure is not the absence of a better nonlinear solver.  It is
 
-`NONEMPTY_ADMISSIBLE_FORWARD_FIRST_RETURN_DOMAIN_NOT_ESTABLISHED`.
+`ONE_SIDED_SINGULAR_ORDERED_EVENT_HITTING_AND_RESET_REGULARITY_NOT_ESTABLISHED`.
 
 This is not a proof that the return domain is empty or that no invariant child
-history exists.  It is the first missing hypothesis in the exact existing
-state-selection construction.  The next mathematical dependency is:
+history exists.  It is the first missing theorem in the exact existing
+state-selection construction.  Nonemptiness is downstream.  The next
+mathematical dependency is:
 
-`PROVE_THAT_AT_LEAST_ONE_EXISTING_COMPLETE_EVENT_HAS_A_FINITE_SIMPLE_TRANSVERSE_FIRST_FORWARD_RETURN_WHOSE_HISTORY_REMAINS_IN_THE_EXISTING_CONTINUUM_CHILD_DOMAIN_AND_LANDS_INSIDE_THE_CERTIFIED_EVENT_TO_CHILD_CHART_OR_PROVE_THAT_EVERY_SUCH_FORWARD_HISTORY_EXITS_OR_NEVER_RETURNS`.
+`DERIVE_AND_CERTIFY_THE_EXISTING_ACTION_OWNED_ONE_SIDED_SINGULAR_ORDERED_EVENT_HITTING_LAW_AND_ITS_EVENT_TO_CHILD_RESET_REGULARITY_OR_LOCALIZE_THE_FIRST_RETAINED_ACTION_FAILURE`.
 
 The first interval is now rigorously covered; the next proof step is to extend
 the same analytic action-ball cover until a transverse return or an existing

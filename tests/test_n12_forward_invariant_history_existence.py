@@ -9,14 +9,14 @@ ARTIFACT = ROOT / (
 )
 
 
-def test_forward_return_existence_gate_fails_closed_at_first_missing_domain() -> None:
+def test_forward_return_existence_gate_fails_closed_at_singular_reset() -> None:
     payload = json.loads(ARTIFACT.read_text(encoding="utf-8"))
 
     assert payload["validation_passed"] is True
     assert payload["exact_return_domain"]["nonempty_proved"] is False
     assert payload["exact_return_domain"]["empty_proved"] is False
     assert payload["localized_failure"]["first_retained_action_failure"] == (
-        "NONEMPTY_ADMISSIBLE_FORWARD_FIRST_RETURN_DOMAIN_NOT_ESTABLISHED"
+        "ONE_SIDED_SINGULAR_ORDERED_EVENT_HITTING_AND_RESET_REGULARITY_NOT_ESTABLISHED"
     )
     assert payload["periodic_point_prerequisites"][
         "fixed_or_periodic_point_may_be_claimed"
@@ -25,12 +25,13 @@ def test_forward_return_existence_gate_fails_closed_at_first_missing_domain() ->
     assert payload["claim_boundaries"]["trajectory_sampling_is_proof"] is False
 
 
-def test_forward_landing_chirality_is_conditional_not_a_new_gate() -> None:
+def test_forward_singular_hitting_orientation_is_not_a_new_gate() -> None:
     payload = json.loads(ARTIFACT.read_text(encoding="utf-8"))
-    lemma = payload["forward_landing_chirality_lemma"]
+    lemma = payload["forward_singular_hitting_orientation"]
 
-    assert lemma["identity"] == "SIGN(D_T_F(TAU))=-SIGN(F(0))"
+    assert lemma["identity"] == "LIM_D_DT(F(T)^2)=2*C_PSI*B_PSI"
     assert lemma["new_sign_gate"] is False
     assert lemma["formal_reflection_creates_a_forward_return"] is False
+    assert lemma["formal_reflection_flips_hitting_orientation"] is True
     assert lemma["continuum_initial_child_side_independently_enclosed"] is True
     assert float(lemma["continuum_initial_child_event_value_lower"]) > 0.0

@@ -45,28 +45,38 @@ continuously selected simple eigenline,
 e_{\rm ord}(\mathcal RY)=e_{\rm ord}(Y).
 \]
 
-The Euler--Dirac equations obey the formal conjugacy
+Away from the ordered-event kernel, the regular Euler--Dirac equations obey
+the formal conjugacy
 
 \[
 \mathcal R\Phi_t(Y)=\Phi_{-t}(\mathcal RY).
 \]
 
 where negative time is used only in the mathematical identity, not as a
-physical identification.  Differentiating the even event scalar along the
-forward vector field gives
+physical identification.  At the exact ordered event the unbordered vector
+field is not defined, because the event nulls the Dirac block being inverted.
+Thus the formerly used derivative \(De_{\rm ord}V\) is not an event invariant.
+
+Let \(\psi\) span the simple event kernel, let \(b_{\rm ED}\) be the retained
+Euler--Dirac right-hand side, and put
 
 \[
-G(Y):=De_{\rm ord}(Y)V(Y),
-\qquad G(\mathcal RY)=-G(Y).
+K(Y):=D^3L[(0,\psi)^3]\,\langle\psi,b_{\rm ED}\rangle.
 \]
 
-Consequently no strictly one-signed global event-transport bound can hold on
-the union of both action-admissible reflected sectors.  On the simple
-transverse event locus, \(\operatorname{sgn}G\) is a valid locally constant
-temporal-chirality label and \(\mathcal R\) exchanges its signs.  This makes
-the sectors distinct; it does not select either one.  A component-restricted
-sign may be used only after action ownership of that component is proved, and
-it may not be selected numerically.
+On a regular one-sided approach, the soft solve gives
+
+\[
+\lim_{e_{\rm ord}\to0}\frac12\frac d{dt}e_{\rm ord}^2=K.
+\]
+
+Exact action parity makes the cubic factor even and the Fredholm forcing odd,
+so \(K(\mathcal RY)=-K(Y)\).  Consequently no strictly one-signed global
+event-hitting bound can hold on the union of both action-admissible reflected
+sectors.  On a simple nondegenerate singular-event component,
+\(\operatorname{sgn}K\) is a temporal-chirality label and \(\mathcal R\)
+exchanges its signs.  This makes the sectors distinct; it does not select
+either one.
 
 The certified N12 persistence endpoints show a positive local event secant
 on the stored forward history.  That measurement is consistent with the
@@ -75,14 +85,13 @@ to a global Lyapunov or monotonicity statement from the action alone.
 
 Thus the event-forward shortcut is invalid as a global shortcut.  The complete
 event-to-child audit shows that its zero-set equations are equivariant but do
-not impose a sign of \(G\), canonical momentum, or shift current.  The two
+not impose a sign of \(K\), canonical momentum, or shift current.  The two
 forward-time chiral sectors remain distinct and unquotiented.  The exact
 remaining return dependency is to prove either:
 
-1. that one existing forward-time temporal-chirality component is selected by
-   the retained action and admits an integrated event-transport bound forcing
-   a transverse zero; or
-2. that the ordered event stays nonzero until the already-classified
+1. derive the one-sided singular hitting law and event-to-child reset
+   regularity from the existing action; then prove a finite boundary hit; or
+2. prove that the ordered event stays nonzero until the already-classified
    continuum physical/strong-domain exit.
 
 The current action does not supply the selection required by item 1.  The

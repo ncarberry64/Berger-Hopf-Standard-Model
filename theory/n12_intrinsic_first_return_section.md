@@ -1,6 +1,7 @@
 # N12 intrinsic first-return section
 
-Status: **conditional regularity theorem proved; nonempty return domain open**.
+Status: **the candidate boundary-return relation is typed; its singular
+hitting/reset regularity and nonempty domain are open**.
 
 This note uses only the retained Euler–Dirac flow, the existing ordered-event
 functional, the certified event-to-complete-child relation, and the existing
@@ -38,7 +39,7 @@ Thus the certified continuum child is an action-defined local solution
 manifold with a certified normal representative. A physical point or orbit on
 that manifold is not yet action-selected.
 
-## 2. Action-owned first-return map
+## 2. Action-owned boundary-return candidate
 
 Let \(\varphi_t\) be the retained gauge-fixed Euler–Dirac flow on its existing
 eta/Dirac-admissible domain. Let \(e_{\rm ord}\) be the already-selected simple
@@ -55,8 +56,8 @@ manifold. For a complete pair \([E,C(E)]\), define, when it exists,
 \tau(Y)=\inf\{t>0:e_{\rm ord}(\varphi_t(C(E)))=0\}.
 \]
 
-Writing \(E'=\varphi_{\tau(Y)}(C(E))\), the only action-owned return candidate
-is
+Writing \(E'=\lim_{t\uparrow\tau(Y)}\varphi_t(C(E))\), when that limit exists
+in the certified event chart, the only action-owned return candidate is
 
 \[
 \mathcal P([E,C(E)])=[E',\mathcal C_\infty(E')],
@@ -67,40 +68,33 @@ reconstruction. The brackets quotient only the already-existing gauge and
 whole-system time-translation equivalences. The use of the first positive
 ordered event removes any arbitrary solver-time or externally chosen period.
 
-## 3. Conditional regularity theorem
+## 3. Why the ordinary section theorem is unavailable
 
-Assume for one \(Y\in\Sigma\):
+The ordered event is a simple zero eigenvalue of the same Dirac block that the
+regular Euler--Dirac vector field inverts.  Hence \(V(E')\) and
+\(D e_{\rm ord}(E')V(E')\) are not defined by the unbordered retained
+equations.  The ordinary Poincare-section implicit-function formula previously
+written here is therefore retracted.
 
-1. the retained child flow exists and remains inside the existing
-   eta/Dirac/persistence domain for \(0\leq t\leq\tau(Y)\);
-2. \(0<\tau(Y)<\infty\);
-3. the returned event is simple and transverse,
-   \(D e_{\rm ord}(E')V(E')\neq0\), where \(V\) is the retained vector field;
-4. the continuum event-to-child normal section is defined near \(E'\).
-
-Then the implicit-function theorem applied to
-
-\[
-G(t,Y)=e_{\rm ord}(\varphi_t(C(E)))
-\]
-
-gives a locally unique differentiable first-return time. For a tangent
-variation \(h\),
+On the regular side, let \(\psi\) be the selected eigenvector,
+\(b_\psi=\langle\psi,b_{\rm ED}\rangle\), and
+\(c_\psi=D^3L[(0,\psi)^3]\).  Under the existing hard-inverse and coefficient
+limit hypotheses,
 
 \[
-D\tau_Yh=-\frac{D e_{\rm ord}(E')D\varphi_{\tau(Y)}h}
-{D e_{\rm ord}(E')V(E')}.
+\frac d{dt}e_{\rm ord}^2\longrightarrow 2c_\psi b_\psi .
 \]
 
-Consequently \(\mathcal P\) is differentiable on the existing quotient, with
+A regular boundary-hitting/reset theorem must now prove:
 
-\[
-D\mathcal P_Yh=D\mathcal C_\infty(E')
-\left(D\varphi_{\tau(Y)}h+V(E')D\tau_Yh\right).
-\]
+1. a one-sided admissible flow with a finite event limit;
+2. nonzero \(c_\psi b_\psi\) and the associated square-root hitting law;
+3. controlled dependence of the hitting time and limiting event on initial
+   data in the appropriate desingularized coordinates;
+4. landing inside the certified continuum event-to-child chart; and
+5. regularity of the composition with \(\mathcal C_\infty\).
 
-The derivative uses the already-owned positive-duration Jacobi evolution and
-event-to-child differential. No new dynamical law is introduced.
+No new dynamics or sign gate is introduced by these proof obligations.
 
 ## 4. Exact remaining dependency
 
@@ -110,7 +104,7 @@ monodromy. Therefore the domain of \(\mathcal P\) has not been shown nonempty.
 
 The exact next dependency is:
 
-`PROVE_EXISTENCE_TRANSVERSALITY_AND_CONTINUUM_WELL_POSEDNESS_OF_THE_FIRST_POSITIVE_COMPLETE_EVENT_RETURN_MAP_ON_THE_EXISTING_GAUGE_TIME_QUOTIENTED_CHILD_MANIFOLD_OR_PROVE_ITS_RETURN_DOMAIN_EMPTY`.
+`DERIVE_AND_CERTIFY_THE_EXISTING_ACTION_OWNED_ONE_SIDED_SINGULAR_ORDERED_EVENT_HITTING_LAW_AND_ITS_EVENT_TO_CHILD_RESET_REGULARITY_OR_LOCALIZE_THE_FIRST_RETAINED_ACTION_FAILURE`.
 
 Only after that result may fixed points or primitive periodic orbits be
 classified as action-selected intrinsic states. No observable, mass, family,
@@ -128,11 +122,12 @@ constraints and eta admissibility. The result is recorded in
 
 Consequently the existing local persistence artifact records no state that
 executes the first-return map. Because its intermediate states were not stored,
-the endpoint audit does not exclude an interior crossing; nor can it establish
-that no later return exists. The remaining issue is the global retained-flow
-theorem: prove or disprove a finite transverse first positive complete-event
-return without inventing a parent section or using numerical continuation as
-a selection rule.
+the endpoint audit does not exclude an interior singular hit; nor can it
+establish that no later hit exists.  The remaining issue first is the
+one-sided singular hitting/reset theorem and then the global retained-flow
+theorem: prove or disprove a finite regular first positive complete-event
+boundary hit without inventing a parent section or using numerical
+continuation as a selection rule.
 
 ## 6. Earliest analytic ownership lemma
 
@@ -142,17 +137,24 @@ For a normalized simple ordered eigenpair
 H(Y)\psi(Y)=e_{\rm ord}(Y)\psi(Y),
 \]
 
-and the retained child vector field \(\dot Y=V(Y)\), standard simple-eigenvalue
-perturbation gives the exact action-owned transport identity
+and the retained child vector field \(\dot Y=V(Y)\) on the regular
+\(e_{\rm ord}\ne0\) domain, standard simple-eigenvalue perturbation gives
 
 \[
 \frac{d}{dt}e_{\rm ord}(Y(t))
 =\langle\psi(Y),D H(Y)[V(Y)]\psi(Y)\rangle .
 \]
 
-Here \(D H\) is the third variation of the retained action on the existing
-constraint- and gauge-reduced domain. This is a lemma in the return proof, not
-a new physical equation.
+Here \(D H\) is the third variation of the retained action.  This identity may
+be integrated only before the singular event.  Its finite event replacement is
+the one-sided identity
+
+\[
+\lim_{e_{\rm ord}\to0}\frac12\frac d{dt}e_{\rm ord}^2
+=D^3L[(0,\psi)^3]\langle\psi,b_{\rm ED}\rangle .
+\]
+
+Both are lemmas in the return proof, not new physical equations.
 
 The currently certified continuum result transfers the static complete-child
 normal tail and a positive-duration admissible neighborhood. It does not give

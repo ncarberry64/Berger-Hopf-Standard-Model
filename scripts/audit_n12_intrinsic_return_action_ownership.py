@@ -34,9 +34,9 @@ PERSISTENCE_DEFINITION = ROOT / (
 )
 CLOCK = ROOT / "artifacts/BHSM_aether_joint_hamiltonian_selection_v15_2.json"
 RELATIVE_PERIODIC = ROOT / "artifacts/BHSM_relative_periodic_persistence_v15_7.json"
-POST_PARENT = ROOT / (
+MATCHED_PARENT = ROOT / (
     "artifacts/qxi_relative_energy_preparation/"
-    "BHSM_POST_PARENT_FLAGSHIP_OBSERVABLE_GATE.json"
+    "BHSM_N12_MATCHED_PARENT_STATIONARY_SECTION_GATE.json"
 )
 FINITE_FLOW = ROOT / (
     "artifacts/intrinsic_state_selection/"
@@ -91,7 +91,7 @@ def _load(path: Path) -> dict[str, object]:
 def main() -> None:
     inputs = (
         CONTINUUM, DIRECT, PERSISTENCE, RETURN, INTRINSIC, ETA_EXIT,
-        PERSISTENCE_DEFINITION, CLOCK, RELATIVE_PERIODIC, POST_PARENT,
+        PERSISTENCE_DEFINITION, CLOCK, RELATIVE_PERIODIC, MATCHED_PARENT,
         FINITE_FLOW, COERCIVE, EVENT_EQUIVARIANCE, CHIRALITY,
         ORDERED_REVERSAL, CHILD_BOUNDARY, CONSTRAINT_ENERGY, CONTINUUM_FLOW,
         INVARIANT_HISTORY,
@@ -108,7 +108,7 @@ def main() -> None:
     persistence_definition = _load(PERSISTENCE_DEFINITION)
     clock = _load(CLOCK)
     relative_periodic = _load(RELATIVE_PERIODIC)
-    post_parent = _load(POST_PARENT)
+    matched_parent = _load(MATCHED_PARENT)
     finite_flow = _load(FINITE_FLOW)
     coercive = _load(COERCIVE)
     event_equivariance = _load(EVENT_EQUIVARIANCE)
@@ -162,9 +162,11 @@ def main() -> None:
         "relative_periodic_orbit_is_absent": relative_periodic[
             "action_selected_orbit"
         ] is None,
-        "matched_parent_route_remains_closed": post_parent[
-            "candidate_chain_audit"
-        ][0]["status"] == "NOT_EXECUTABLE",
+        "matched_parent_route_remains_closed": (
+            matched_parent["R_P_executable"] is False
+            and matched_parent["Q_xi_evaluated"] is False
+            and matched_parent["Delta_H_evaluated"] is False
+        ),
         "finite_N12_maximal_flow_dichotomy_is_closed": (
             finite_flow["validation_passed"] is True
             and finite_flow["theorem"]["unique_maximal_N12_solution_exists"]
@@ -182,9 +184,9 @@ def main() -> None:
                 "one_temporal_chirality_sector_action_selected"
             ] is False
         ),
-        "temporal_chirality_label_sign_G_is_derived_on_simple_transverse_events": (
+        "singular_hitting_chirality_is_derived_on_nonzero_simple_events": (
             chirality["candidate_invariant_audit"]["ordered_event_transport"][
-                "locally_constant_on_simple_transverse_event_components"
+                "locally_constant_on_nonzero_simple_singular_event_components"
             ] is True
         ),
         "temporal_chirality_sectors_are_not_quotiented": (
@@ -222,7 +224,7 @@ def main() -> None:
         "artifact": "BHSM_N12_INTRINSIC_RETURN_ACTION_OWNERSHIP_GATE",
         "classification": (
             "FIRST_RETURN_NOT_YET_ACTION_EXECUTABLE;_EARLIEST_RETAINED_ACTION_"
-            "FAILURE_IS_A_NONEMPTY_ADMISSIBLE_FORWARD_FIRST_RETURN_DOMAIN"
+            "FAILURE_IS_SINGULAR_EVENT_HITTING_RESET_REGULARITY"
         ),
         "inputs": {
             str(path.relative_to(ROOT)).replace("\\", "/"): _sha256(path)
@@ -240,11 +242,15 @@ def main() -> None:
                 "derived_first_return_section"
             ]["map"],
         },
-        "exact_event_transport_identity": {
+        "regular_side_and_singular_event_transport": {
             "simple_eigenpair": "H(Y)psi(Y)=e_ord(Y)psi(Y);_norm(psi)=1",
-            "retained_flow": "dY/dt=V(Y)",
-            "derivative": (
+            "retained_flow_domain": "dY/dt=V(Y)_ONLY_WHERE_THE_DIRAC_BLOCK_IS_INVERTIBLE",
+            "regular_side_derivative": (
                 "d_e_ord(Y(t))/dt=<psi(Y),D_H(Y)[V(Y)]psi(Y)>"
+            ),
+            "ordinary_event_derivative": "UNDEFINED_AT_E_ORD=0",
+            "singular_hitting_identity": (
+                "LIM_D_DT(E_ORD^2)=2*D3L[(0,PSI)^3]*<PSI,B_ED>"
             ),
             "action_form": (
                 "D_H_IS_THE_RETAINED_ACTION_THIRD_VARIATION_WITH_THE_EXISTING_"
@@ -288,12 +294,13 @@ def main() -> None:
                 "BACKWARD_EVOLUTION"
             ),
             "then": (
-                "BOUND_OR_INTEGRATE_<psi,D_H[V]psi>_UNTIL_THE_FIRST_OF_"
-                "ORDERED_EVENT_RETURN_OR_EXISTING_PHYSICAL_DOMAIN_EXIT"
+                "AFTER_SINGULAR_HITTING_RESET_REGULARITY_CLOSES,_BOUND_THE_"
+                "FORWARD_FLOW_UNTIL_THE_FIRST_EVENT_BOUNDARY_HIT_OR_EXISTING_"
+                "PHYSICAL_DOMAIN_EXIT"
             ),
             "return_outcome": (
-                "PROVE_A_FINITE_SIMPLE_TRANSVERSE_ZERO_AND_APPLY_THE_ALREADY_"
-                "DERIVED_CONDITIONAL_FIRST_RETURN_THEOREM"
+                "PROVE_A_FINITE_REGULAR_ONE_SIDED_SINGULAR_HIT_AND_APPLY_THE_"
+                "CERTIFIED_EVENT_TO_CHILD_RESET"
             ),
             "no_return_outcome": (
                 "PROVE_THE_ORDERED_EVENT_STAYS_NONZERO_UNTIL_A_CERTIFIED_"

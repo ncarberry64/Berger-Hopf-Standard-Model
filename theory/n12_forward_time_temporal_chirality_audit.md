@@ -44,23 +44,26 @@ reflection changes the sign of the row and preserves its zero set.  There is no
 retained inequality selecting outgoing normal momentum.  The historical
 contact/ejection ledger explicitly records that its sign is unselected.
 
-### Ordered-event derivative
+### Singular ordered-event hitting orientation
 
-For the existing simple ordered event,
+The event equation nulls the same Dirac block used in the regular
+Euler--Dirac solve.  Therefore \(V(E)\) is not defined by the unbordered
+equations and the earlier candidate \(D e_{\rm ord}(E)V(E)\) must not be used.
+For a normalized kernel vector \(\psi\), define instead
 
 \[
-\chi_{\rm temp}(E)=\operatorname{sgn}G(E),
-\qquad
-G(E)=D e_{\rm ord}(E)V(E),
+\chi_{\rm hit}(E)=\operatorname{sgn}\left(
+D^3L[(0,\psi)^3]\langle\psi,b_{\rm ED}\rangle\right).
 \]
 
-is the sharpest existing temporal-chirality label.  It is invariant under
-positive reparametrization, flips under \(\mathcal R\), and is locally constant
-on each connected component of the simple transverse event locus.  It can
-change only through \(G=0\), loss of event simplicity, or physical-domain exit.
-But the event equation is only \(e_{\rm ord}=0\); it contains no sign condition
-on \(G\).  Thus \(\chi_{\rm temp}\) labels sectors but the action does not select
-one through the current event-to-child correspondence.
+On a regular one-sided approach this is the sign of the finite limit of
+\(\tfrac12d(e_{\rm ord}^2)/dt\).  The cubic factor is even under
+\(\mathcal R\), the soft Fredholm forcing is odd, and hence
+\(\chi_{\rm hit}\) flips.  The retained N12 representative has negative
+product while its formal reflection has positive product.  But the event
+equation contains no sign condition on either factor, so this labels the two
+sectors without selecting one through the current event-to-child
+correspondence.
 
 ### Hopf, boundary, attachment, and topological orientation
 
@@ -84,8 +87,9 @@ orientation could provide that missing selection.
 
 ## Result
 
-The existing retained action owns a temporal-chirality **label**,
-\(\operatorname{sgn}G\), on simple transverse event components, and owns odd
+The existing retained action owns a one-sided temporal-chirality **label**,
+\(\operatorname{sgn}(c_\psi b_\psi)\), on nondegenerate simple singular-event
+components, and owns odd
 canonical/shift covectors that confirm the two sectors are distinct.  It owns
 no term, constraint, boundary row, topological correlation, or clock rule that
 selects one sign.  Therefore
@@ -98,14 +102,13 @@ is equivariance between two candidate forward-time sectors, not an equivalence
 relation.  Neither sector is discarded or quotiented.  Choosing one from a
 trajectory, solver basin, or desired observable would be a new physical gate.
 
-The matched-parent route remains unavailable.  The shortest nonfabricated
-flagship route is consequently to obtain an action-selected invariant child
-history while retaining its reflected chiral partner.  A first observable may
-be promoted without an additional chirality selector only if it is defined on
-that action-selected pair and is invariant under the reflection.  The exact
-analytic dependency is
+The matched-parent route remains unavailable.  Before an invariant history can
+be selected by a return relation, the event must be treated as a singular
+boundary hit followed by the already-certified event-to-child reconstruction,
+not as an ordinary transverse Poincare section.  The exact analytic dependency
+is
 
-`PROVE_EXISTENCE_OF_A_FIXED_PERIODIC_OR_RELATIVE_PERIODIC_COMPLETE_CHILD_HISTORY_ON_THE_EXISTING_FORWARD_TIME_RETURN_RELATION_WITH_FORMAL_REVERSAL_RETAINED_AS_A_DISTINCT_CHIRAL_PAIRING_OR_LOCALIZE_THE_FIRST_RETAINED_ACTION_FAILURE`.
+`DERIVE_AND_CERTIFY_THE_EXISTING_ACTION_OWNED_ONE_SIDED_SINGULAR_ORDERED_EVENT_HITTING_LAW_AND_ITS_EVENT_TO_CHILD_RESET_REGULARITY_OR_LOCALIZE_THE_FIRST_RETAINED_ACTION_FAILURE`.
 
 The previously proposed globally one-signed event-forward estimate cannot
 prove this, and no numerical campaign is authorized as a substitute.

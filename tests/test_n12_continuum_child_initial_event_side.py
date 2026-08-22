@@ -20,6 +20,9 @@ def test_continuum_child_initial_event_side_is_positive_without_new_gate() -> No
     assert payload["consequence"]["return_exists"] is False
     assert payload["consequence"]["return_domain_nonempty"] is False
     assert payload["consequence"]["new_acceptance_condition"] is False
+    assert payload["consequence"][
+        "future_singular_hit_orientation_not_implied_by_initial_side"
+    ] is True
     assert payload["cross_quadrature_diagnostic"][
         "promoted_as_analytic_bound"
     ] is False
