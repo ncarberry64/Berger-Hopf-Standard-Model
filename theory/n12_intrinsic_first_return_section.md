@@ -133,3 +133,38 @@ that no later return exists. The remaining issue is the global retained-flow
 theorem: prove or disprove a finite transverse first positive complete-event
 return without inventing a parent section or using numerical continuation as
 a selection rule.
+
+## 6. Earliest analytic ownership lemma
+
+For a normalized simple ordered eigenpair
+
+\[
+H(Y)\psi(Y)=e_{\rm ord}(Y)\psi(Y),
+\]
+
+and the retained child vector field \(\dot Y=V(Y)\), standard simple-eigenvalue
+perturbation gives the exact action-owned transport identity
+
+\[
+\frac{d}{dt}e_{\rm ord}(Y(t))
+=\langle\psi(Y),D H(Y)[V(Y)]\psi(Y)\rangle .
+\]
+
+Here \(D H\) is the third variation of the retained action on the existing
+constraint- and gauge-reduced domain. This is a lemma in the return proof, not
+a new physical equation.
+
+The currently certified continuum result transfers the static complete-child
+normal tail and a positive-duration admissible neighborhood. It does not give
+a global continuum flow bound. In particular, the existing N3 retained-action
+history crosses the eta-Legendre boundary transversely; this prevents treating
+eta-domain invariance as an automatic consequence of the action architecture,
+although it does not prove that the N12/continuum anchor exits.
+
+The first analytic obligation is therefore a continuation-or-exit dichotomy
+for the continuum retained child flow with uniform action-graph, eta, Dirac,
+constraint, and ordered-eigenline control. Only on that controlled interval
+may the displayed transport identity be bounded or integrated to prove either
+a finite transverse return or nonreturn up to physical-domain exit. No
+compact invariant finite-measure child set or action-selected reference cycle
+is currently available, so recurrence is not a valid shortcut.
