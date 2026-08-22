@@ -23,15 +23,13 @@ def test_forward_time_temporal_chirality_gate_does_not_quotient_or_select() -> N
     assert artifact["validation_passed"] is True
     assert artifact["physical_time"]["orientation"] == "FORWARD"
     assert artifact["physical_time"]["formal_reversal_is_gauge"] is False
+    assert artifact["physical_time"]["number_of_admissible_orientations"] == 1
     assert artifact["event_to_child_conclusion"][
-        "one_temporal_chirality_sector_action_selected"
-    ] is False
-    assert artifact["event_to_child_conclusion"][
-        "two_sectors_may_be_quotiented"
+        "second_temporal_sector_exists"
     ] is False
     assert artifact["candidate_invariant_audit"]["ordered_event_transport"][
         "status"
-    ] == "ACTION_OWNED_LABEL_NOT_ACTION_SELECTED_SIGN"
+    ] == "ACTION_OWNED_TERMINAL_EMERGENT_LABEL_NOT_TIME_ORIENTATION_SELECTOR"
     assert artifact["candidate_invariant_audit"]["ordered_event_transport"][
         "former_label_status"
     ] == "UNDEFINED_AT_EXACT_SINGULAR_EVENT"
@@ -49,7 +47,7 @@ def test_requested_orientation_candidates_have_fail_closed_classification() -> N
 
     assert audit["eta_clock_shift_current"]["sign_selected_by_shift_constraint"] is False
     assert audit["canonical_momentum_and_symplectic_orientation"][
-        "distinguishes_forward_time_sectors"
+        "distinguishes_chiral_Cauchy_states"
     ] is True
     assert audit["canonical_momentum_and_symplectic_orientation"][
         "outgoing_sign_selected"

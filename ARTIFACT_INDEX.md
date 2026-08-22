@@ -8,14 +8,20 @@
 - [`BHSM_N12_MATCHED_PARENT_QXI_OWNERSHIP.json`](artifacts/qxi_relative_energy_preparation/BHSM_N12_MATCHED_PARENT_QXI_OWNERSHIP.json)
 - [`BHSM_N12_MATCHED_PARENT_STATIONARY_SECTION_GATE.json`](artifacts/qxi_relative_energy_preparation/BHSM_N12_MATCHED_PARENT_STATIONARY_SECTION_GATE.json)
 - [`BHSM_POST_PARENT_FLAGSHIP_OBSERVABLE_GATE.json`](artifacts/qxi_relative_energy_preparation/BHSM_POST_PARENT_FLAGSHIP_OBSERVABLE_GATE.json)
+- [`BHSM_N12_CONTINUUM_SINGULAR_HITTING_RESET_RELATION.json`](artifacts/intrinsic_state_selection/BHSM_N12_CONTINUUM_SINGULAR_HITTING_RESET_RELATION.json)
+- [`BHSM_N12_FORWARD_TIME_DOMAIN_ORIENTATION_AUDIT.json`](artifacts/intrinsic_state_selection/BHSM_N12_FORWARD_TIME_DOMAIN_ORIENTATION_AUDIT.json)
+- [`BHSM_N12_FORWARD_TERMINAL_CHART_REACHABILITY_GATE.json`](artifacts/intrinsic_state_selection/BHSM_N12_FORWARD_TERMINAL_CHART_REACHABILITY_GATE.json)
 - [`BHSM_QXI_RELATIVE_ENERGY_REUSE_TABLE.json`](artifacts/qxi_relative_energy_preparation/BHSM_QXI_RELATIVE_ENERGY_REUSE_TABLE.json)
-- Reproduction: [`certify_n12_continuum_event_child.py`](scripts/certify_n12_continuum_event_child.py), [`audit_n12_matched_parent_qxi_ownership.py`](scripts/audit_n12_matched_parent_qxi_ownership.py), [`audit_n12_matched_parent_stationary_section.py`](scripts/audit_n12_matched_parent_stationary_section.py), [`audit_post_parent_flagship_observable_chain.py`](scripts/audit_post_parent_flagship_observable_chain.py), and [`materialize_qxi_relative_energy_reuse_table.py`](scripts/materialize_qxi_relative_energy_reuse_table.py)
-- Focused tests: [`test_bhsm_continuum_event_child_certificate.py`](tests/test_bhsm_continuum_event_child_certificate.py), [`test_bhsm_n12_matched_parent_qxi_ownership.py`](tests/test_bhsm_n12_matched_parent_qxi_ownership.py), [`test_bhsm_n12_matched_parent_stationary_section.py`](tests/test_bhsm_n12_matched_parent_stationary_section.py), [`test_bhsm_post_parent_flagship_observable_chain.py`](tests/test_bhsm_post_parent_flagship_observable_chain.py), and [`test_bhsm_qxi_relative_energy_reuse_table.py`](tests/test_bhsm_qxi_relative_energy_reuse_table.py)
+- Reproduction: [`certify_n12_continuum_event_child.py`](scripts/certify_n12_continuum_event_child.py), [`certify_n12_continuum_singular_hitting_reset_relation.py`](scripts/certify_n12_continuum_singular_hitting_reset_relation.py), [`audit_n12_forward_time_domain_orientation.py`](scripts/audit_n12_forward_time_domain_orientation.py), [`audit_n12_forward_terminal_chart_reachability.py`](scripts/audit_n12_forward_terminal_chart_reachability.py), and [`audit_post_parent_flagship_observable_chain.py`](scripts/audit_post_parent_flagship_observable_chain.py)
+- Focused tests: [`test_bhsm_continuum_event_child_certificate.py`](tests/test_bhsm_continuum_event_child_certificate.py), [`test_n12_continuum_singular_hitting_reset_relation.py`](tests/test_n12_continuum_singular_hitting_reset_relation.py), [`test_n12_forward_time_domain_orientation.py`](tests/test_n12_forward_time_domain_orientation.py), [`test_n12_forward_terminal_chart_reachability.py`](tests/test_n12_forward_terminal_chart_reachability.py), and [`test_bhsm_post_parent_flagship_observable_chain.py`](tests/test_bhsm_post_parent_flagship_observable_chain.py)
 
 The N12 anchor plus the exact action-Galerkin tail and nonlinear radius certify
-a resolution-independent child. The downstream charge remains fail closed at
-the absent action-owned matched-parent restriction; no local energy is promoted
-to `Q_xi`, `Delta H`, mass, or a prediction.
+a resolution-independent child. The local singular hitting law and regular
+set-valued reset relation are now certified in the single forward physical-time
+domain. Global terminal-chart reachability is open at the localized absence of
+an action-owned compact trap or integrated component transport estimate. The
+downstream matched-parent charge remains unavailable; no local energy is
+promoted to `Q_xi`, `Delta H`, mass, or a prediction.
 
 ## Prior N12 correlated-root finite-core and inverse-square checkpoint
 

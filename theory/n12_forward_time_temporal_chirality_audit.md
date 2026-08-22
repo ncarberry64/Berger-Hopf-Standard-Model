@@ -1,7 +1,8 @@
-# Forward-time temporal-chirality audit
+# Forward-time domain and chiral-reflection audit
 
-Status: **the two formal-reversal sectors are physically distinct candidates;
-the present retained action does not select one of them**.
+Status: **BHSM has one forward physical-time orientation; formal reversal is
+an algebraic/chiral pairing of Cauchy states, not a competing temporal
+orientation**.
 
 BHSM physical time is oriented and always forward.  Define only as an algebraic
 field reflection
@@ -10,10 +11,13 @@ field reflection
 \mathcal R(q,v,\ell,s)=(q,-v,\ell,-s).
 \]
 
-It is not a gauge transformation and is not physical backward evolution.  It
-maps one set of forward-time Cauchy data to another.  The exact retained action
-nevertheless obeys \(L_N(\mathcal RY)=L_N(Y)\), so action ownership must be
-audited for a quantity that both distinguishes these sectors and selects one.
+It is not a gauge transformation and is not physical backward evolution. It
+maps one set of Cauchy data to another. The existing clock domain already fixes
+\(dt>0\), positive boundary lapse, and
+\(d\tau=N_{\rm boundary}dt>0\). Since the reflection does not act on \(dt\)
+or lapse, the re-expressed reflected state has its own forward solution and
+lies in the same single time-oriented domain. There is no forward-versus-
+backward action-selection problem.
 
 ## Existing candidate invariants
 
@@ -27,7 +31,7 @@ X_\eta=X_{\rm spatial}-(\beta/N)^2,
 \frac{\partial X_\eta}{\partial\beta}=-2\beta/N^2.
 \]
 
-Hence its shift current is odd under \(\mathcal R\).  This is an action-owned
+Hence its shift current is odd under \(\mathcal R\). This is an action-owned
 covector in the radial diffeomorphism Ward identity, not a positive conserved
 clock charge.  Its retained modal coefficients have both signs even within one
 evaluated state.  The shift constraint changes sign with the current, so its
@@ -37,8 +41,8 @@ parametrization do not impose a sign on this spatial shift current.
 ### Canonical and symplectic orientation
 
 The canonical momentum satisfies \(p(\mathcal RY)=-p(Y)\), and \(\mathcal R\)
-is anti-symplectic for the reduced canonical form.  This proves that the two
-forward-time sectors must not be identified without an additional theorem.
+is anti-symplectic for the reduced canonical form. This distinguishes the two
+Cauchy states; it does not give them opposite physical time orientations.
 The complete-child row is momentum *matching*, \(p_C-p_E=0\); simultaneous
 reflection changes the sign of the row and preserves its zero set.  There is no
 retained inequality selecting outgoing normal momentum.  The historical
@@ -87,28 +91,29 @@ orientation could provide that missing selection.
 
 ## Result
 
-The existing retained action owns a one-sided temporal-chirality **label**,
+The existing retained action owns a one-sided terminal/emergent boundary
+**label**,
 \(\operatorname{sgn}(c_\psi b_\psi)\), on nondegenerate simple singular-event
-components, and owns odd
-canonical/shift covectors that confirm the two sectors are distinct.  It owns
-no term, constraint, boundary row, topological correlation, or clock rule that
-selects one sign.  Therefore
+components, and owns odd canonical/shift covectors that distinguish the paired
+Cauchy states. The existing positive clock domain already supplies the unique
+physical time orientation. Therefore
 
 \[
 \mathcal C_\infty(\mathcal RE)=\mathcal R\mathcal C_\infty(E)
 \]
 
-is equivariance between two candidate forward-time sectors, not an equivalence
-relation.  Neither sector is discarded or quotiented.  Choosing one from a
-trajectory, solver basin, or desired observable would be a new physical gate.
+is equivariance between forward-oriented chiral state partners, not an
+equivalence relation and not a second temporal orientation. Neither state is
+discarded or quotiented. Choosing a physical state or family from a trajectory,
+solver basin, or desired observable would still be a new physical gate, but no
+choice of time direction remains open.
 
-The matched-parent route remains unavailable.  Before an invariant history can
-be selected by a return relation, the event must be treated as a singular
-boundary hit followed by the already-certified event-to-child reconstruction,
-not as an ordinary transverse Poincare section.  The exact analytic dependency
-is
+The matched-parent route remains unavailable. The event is now certified
+locally as a singular boundary hit followed by a regular, set-valued
+event-to-child relation, not an ordinary transverse Poincare section. The
+exact analytic dependency is
 
-`DERIVE_AND_CERTIFY_THE_EXISTING_ACTION_OWNED_ONE_SIDED_SINGULAR_ORDERED_EVENT_HITTING_LAW_AND_ITS_EVENT_TO_CHILD_RESET_REGULARITY_OR_LOCALIZE_THE_FIRST_RETAINED_ACTION_FAILURE`.
+`PROVE_THAT_AT_LEAST_ONE_EXISTING_FORWARD_COMPLETE_CHILD_HISTORY_REACHES_THE_CERTIFIED_TERMINAL_SINGULAR_EVENT_CHART_BEFORE_ANY_EXISTING_PHYSICAL_DOMAIN_EXIT_OR_PROVE_THAT_NO_SUCH_HISTORY_DOES`.
 
 The previously proposed globally one-signed event-forward estimate cannot
 prove this, and no numerical campaign is authorized as a substitute.

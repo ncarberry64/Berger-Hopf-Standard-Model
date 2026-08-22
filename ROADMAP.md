@@ -5,16 +5,20 @@
 1. Preserve the certified N3/N4/N5/N6/N12 finite children and the now-certified
    resolution-independent event-child construction. Do not reopen the closed
    action-Galerkin/compact-tail/nonlinear-radius proof unless contradicted.
-2. On the retained v7.1 noninjective/set-valued reduction correspondence,
-   derive an action-selected parent-only locus and single-valued,
-   gauge-quotiented stationary section `R_P: Phi_(P+C) -> Phi_P^matched`,
-   preserving one interface, generator, clock, domain, orientation, and
-   subtraction convention. The event-side state is not this reference.
-3. Complete the boundary-improved covariant `Q_xi` assembler, evolve the
+2. Preserve the certified local one-sided singular hitting law, regular
+   set-valued reset relation, and the single existing forward clock domain.
+   Derive an action-owned compact forward trap or component-restricted
+   integrated event-transport estimate which proves terminal-chart entry or
+   certifies the first existing physical-domain exit.
+3. Prove an action-selected invariant forward child history on the resulting
+   hybrid flow/relation without quotienting the chiral Cauchy-state pairing or
+   selecting a numerical chart representative.
+4. If the retained action supplies it, derive the parent-only stationary
+   section `R_P: Phi_(P+C) -> Phi_P^matched`; then complete the
+   boundary-improved covariant `Q_xi` assembler and evolve the
    matched parent and composite on the same history, and evaluate
    `Delta H = Q_xi[P+C] - Q_xi[P matched]` with continuum error control. The
    reduced local Legendre energy is not a substitute.
-4. Close the action-selected relative-periodic/Floquet state/family BVP.
 5. Resume action-selected family-cycle ownership, relative quasi-energy mass
    ratios, absolute scale, and returned-family current dependencies without
    reopening closed sectors or retuning frozen predictions.

@@ -74,6 +74,18 @@ INVARIANT_HISTORY = ROOT / (
     "artifacts/intrinsic_state_selection/"
     "BHSM_N12_FORWARD_INVARIANT_HISTORY_EXISTENCE_GATE.json"
 )
+SINGULAR_RESET = ROOT / (
+    "artifacts/intrinsic_state_selection/"
+    "BHSM_N12_CONTINUUM_SINGULAR_HITTING_RESET_RELATION.json"
+)
+TIME_DOMAIN = ROOT / (
+    "artifacts/intrinsic_state_selection/"
+    "BHSM_N12_FORWARD_TIME_DOMAIN_ORIENTATION_AUDIT.json"
+)
+REACHABILITY = ROOT / (
+    "artifacts/intrinsic_state_selection/"
+    "BHSM_N12_FORWARD_TERMINAL_CHART_REACHABILITY_GATE.json"
+)
 RESULT = ROOT / (
     "artifacts/intrinsic_state_selection/"
     "BHSM_N12_INTRINSIC_RETURN_ACTION_OWNERSHIP_GATE.json"
@@ -94,7 +106,7 @@ def main() -> None:
         PERSISTENCE_DEFINITION, CLOCK, RELATIVE_PERIODIC, MATCHED_PARENT,
         FINITE_FLOW, COERCIVE, EVENT_EQUIVARIANCE, CHIRALITY,
         ORDERED_REVERSAL, CHILD_BOUNDARY, CONSTRAINT_ENERGY, CONTINUUM_FLOW,
-        INVARIANT_HISTORY,
+        INVARIANT_HISTORY, SINGULAR_RESET, TIME_DOMAIN, REACHABILITY,
     )
     missing = [str(path) for path in inputs if not path.is_file()]
     if missing:
@@ -118,14 +130,15 @@ def main() -> None:
     constraint_energy = _load(CONSTRAINT_ENERGY)
     continuum_flow = _load(CONTINUUM_FLOW)
     invariant_history = _load(INVARIANT_HISTORY)
+    singular_reset = _load(SINGULAR_RESET)
+    time_domain = _load(TIME_DOMAIN)
+    reachability = _load(REACHABILITY)
 
     eta_boundary = eta_exit["boundary_transversality"]
     child_domain = persistence_definition["persistence_and_decay_contract"][
         "persistence_domain_B_child"
     ]
-    first_missing = invariant_history["localized_failure"][
-        "exact_next_dependency"
-    ]
+    first_missing = reachability["exact_next_mathematical_lemma"]
     validation = {
         "continuum_event_child_remains_certified": continuum[
             "CONTINUUM_EVENT_CHILD_CERTIFIED"
@@ -179,9 +192,12 @@ def main() -> None:
         "formal_reflection_is_not_gauge": (
             chirality["physical_time"]["formal_reversal_is_gauge"] is False
         ),
-        "one_temporal_chirality_sector_is_not_action_selected": (
-            chirality["event_to_child_conclusion"][
-                "one_temporal_chirality_sector_action_selected"
+        "single_forward_time_orientation_is_not_a_selection_problem": (
+            time_domain["admissible_clock_domain"][
+                "number_of_physical_time_orientations"
+            ] == 1
+            and time_domain["formal_reflection_reclassification"][
+                "requires_action_selection_of_time_orientation"
             ] is False
         ),
         "singular_hitting_chirality_is_derived_on_nonzero_simple_events": (
@@ -189,9 +205,9 @@ def main() -> None:
                 "locally_constant_on_nonzero_simple_singular_event_components"
             ] is True
         ),
-        "temporal_chirality_sectors_are_not_quotiented": (
+        "chiral_state_pair_is_not_quotiented": (
             chirality["event_to_child_conclusion"][
-                "two_sectors_may_be_quotiented"
+                "chiral_state_pair_may_be_quotiented"
             ] is False
         ),
         "event_forward_global_sign_shortcut_is_invalidated": (
@@ -219,12 +235,22 @@ def main() -> None:
         "forward_first_return_domain_nonempty_not_proved": (
             invariant_history["exact_return_domain"]["nonempty_proved"] is False
         ),
+        "local_singular_hitting_and_reset_relation_closed": (
+            singular_reset["validation_passed"] is True
+            and singular_reset["reset_correspondence"][
+                "regular_local_continuum_correspondence_proved"
+            ] is True
+        ),
+        "global_reachability_obstruction_is_localized_without_nonreturn_claim": (
+            reachability["validation_passed"] is True
+            and reachability["global_outcome"]["outcome_selected"] is False
+        ),
     }
     payload = {
         "artifact": "BHSM_N12_INTRINSIC_RETURN_ACTION_OWNERSHIP_GATE",
         "classification": (
             "FIRST_RETURN_NOT_YET_ACTION_EXECUTABLE;_EARLIEST_RETAINED_ACTION_"
-            "FAILURE_IS_SINGULAR_EVENT_HITTING_RESET_REGULARITY"
+            "FAILURE_IS_GLOBAL_FORWARD_TERMINAL_CHART_REACHABILITY"
         ),
         "inputs": {
             str(path.relative_to(ROOT)).replace("\\", "/"): _sha256(path)
@@ -290,13 +316,12 @@ def main() -> None:
         "return_or_no_return_proof_obligations": {
             "first": first_missing,
             "formal_reflection_status": (
-                "DISTINCT_FORWARD_TIME_CHIRAL_PAIRING_NOT_GAUGE_OR_PHYSICAL_"
-                "BACKWARD_EVOLUTION"
+                "ALGEBRAIC_CHIRAL_PAIRING_INSIDE_THE_SINGLE_FORWARD_TIME_"
+                "DOMAIN_NOT_GAUGE_OR_PHYSICAL_BACKWARD_EVOLUTION"
             ),
             "then": (
-                "AFTER_SINGULAR_HITTING_RESET_REGULARITY_CLOSES,_BOUND_THE_"
-                "FORWARD_FLOW_UNTIL_THE_FIRST_EVENT_BOUNDARY_HIT_OR_EXISTING_"
-                "PHYSICAL_DOMAIN_EXIT"
+                "AFTER_TERMINAL_CHART_REACHABILITY_CLOSES,_APPLY_THE_ALREADY_"
+                "CERTIFIED_LOCAL_HITTING_AND_REGULAR_RESET_RELATION"
             ),
             "return_outcome": (
                 "PROVE_A_FINITE_REGULAR_ONE_SIDED_SINGULAR_HIT_AND_APPLY_THE_"
@@ -321,8 +346,9 @@ def main() -> None:
                 "PARTNER_TO_REFLECTION_INVARIANT_DIMENSIONLESS_READOUT"
             ),
             "numerical_trajectory_search_authorized_as_substitute": False,
-            "temporal_chirality_sector_may_be_selected_numerically": False,
-            "temporal_chirality_sectors_quotiented": False,
+            "physical_time_orientation_is_already_fixed": True,
+            "chiral_state_may_be_selected_numerically": False,
+            "chiral_state_pair_quotiented": False,
             "prediction_frozen": False,
             "held_out_comparison_performed": False,
         },

@@ -207,11 +207,9 @@ def main() -> None:
                 "global-flow return-or-no-return theorem"
             ),
         },
-        "first_missing_action_owned_object": (
-            "PROVE_OR_DISPROVE_A_FINITE_TRANSVERSE_FIRST_POSITIVE_COMPLETE_"
-            "EVENT_RETURN_FOR_THE_RETAINED_CONTINUUM_CHILD_FLOW_WITHOUT_"
-            "INTRODUCING_A_PARENT_SECTION_OR_NUMERICAL_SELECTION_RULE"
-        ),
+        "first_missing_action_owned_object": intrinsic[
+            "first_missing_action_owned_object"
+        ],
         "prediction_frozen": False,
         "held_out_comparison_performed": False,
         "FULL_BHSM_COMPLETE": False,

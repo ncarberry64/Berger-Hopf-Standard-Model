@@ -1,41 +1,42 @@
 # Forward invariant-history existence gate
 
-Status: **the candidate forward boundary-return relation is typed, but its
-singular hitting/reset theorem and forward domain remain open; no invariant
-child history is selected**.
+Status: **the local singular hitting/reset relation is certified, but global
+forward reachability remains open; no invariant child history is selected**.
 
-This audit keeps BHSM physical time oriented and forward.  Formal reversal is
-not a quotient and cannot manufacture a positive-time return.
+This audit uses the single existing forward clock domain
+\(dt>0\), \(N_{\rm boundary}>0\), and
+\(d\tau=N_{\rm boundary}dt>0\). Formal reversal is an algebraic/chiral state
+pairing inside that domain, not a second temporal orientation or quotient, and
+cannot manufacture a positive-time return.
 
 ## 1. Exact forward return domain
 
 Let \(\Sigma\) be the existing simple ordered-event section and
-\(\mathcal C_\infty\) the certified local continuum event-to-child
-reconstruction.  For \(E\in\Sigma\), put
+\(\mathfrak C_\infty\) the certified regular local continuum event-to-child
+relation. For \(E\in\Sigma\) and \(C\in\mathfrak C_\infty(E)\), put
 
 \[
-f_E(t)=e_{\rm ord}\!\left(\varphi_t(\mathcal C_\infty(E))\right),
+f_{E,C}(t)=e_{\rm ord}\!\left(\varphi_t(C)\right),
 \]
 
 where \(\varphi_t\) is the retained forward Euler--Dirac flow.  The domain of
 the already-derived first-return map is exactly the set of \(E\) for which:
 
-1. \(\mathcal C_\infty(E)\) is defined in the certified child chart;
+1. \(C\in\mathfrak C_\infty(E)\) lies in the certified child chart;
 2. the maximal regular forward solution remains in the existing eta, metric,
    lapse, inertia, gauge, trace, and invertible-Dirac domain for
    \(0\le t<\tau\);
-3. \(f_E(t)\ne0\) for \(0<t<\tau\) and \(f_E(\tau)=0\);
+3. \(f_{E,C}(t)\ne0\) for \(0<t<\tau\) and \(f_{E,C}(\tau)=0\);
 4. the one-sided state has a limit \(E'\) in the simple ordered-event locus;
 5. the action-owned singular hitting product
    \(c_\psi b_\psi\) is nonzero and the boundary-hitting limit is regular;
-6. \(\mathcal C_\infty\) is defined at \(E'\), with a regular reset
-   composition.
+6. the regular relation \(\mathfrak C_\infty(E')\) is defined.
 
 Only then is
 
 \[
-\mathcal P(E)=\mathcal C_\infty(E'),\qquad
-E'=\lim_{t\uparrow\tau}\varphi_t(\mathcal C_\infty(E))
+\mathcal P(E,C)=\{(E',C'):C'\in\mathfrak C_\infty(E')\},\qquad
+E'=\lim_{t\uparrow\tau}\varphi_t(C)
 \]
 
 defined on the existing gauge and whole-system time-translation quotient.
@@ -127,10 +128,10 @@ argument can be invoked, the following are required:
 - a compact trapping set, a nonzero return degree/index, or another
   action-owned existence mechanism.
 
-The repository currently supplies none of these global ingredients.  It
-supplies an event-free first local continuum interval and a maximal
-continuation-or-domain-exit alternative.  It does not yet supply regularity of
-the singular hitting/reset composition \(\mathcal P\).  The one stored
+The repository now supplies the local hitting theorem and regular reset
+relation, but none of the remaining global ingredients. It supplies an
+event-free first local continuum interval and a maximal
+continuation-or-domain-exit alternative. The one stored
 persistence history records no return.  The constraint energy is zero,
 the unreduced energy is noncoercive, the child boundary Hamiltonian is absent,
 and no compact invariant energy shell or stable reference cycle is available.
@@ -139,16 +140,16 @@ orbit theorem cannot presently be invoked.
 
 ## 4. Localized retained-action failure
 
-The earliest failure is not the absence of a better nonlinear solver.  It is
+The earliest failure is not the absence of a better nonlinear solver. It is
 
-`ONE_SIDED_SINGULAR_ORDERED_EVENT_HITTING_AND_RESET_REGULARITY_NOT_ESTABLISHED`.
+`GLOBAL_FORWARD_REACHABILITY_OF_THE_CERTIFIED_TERMINAL_SINGULAR_EVENT_CHART_BEFORE_PHYSICAL_DOMAIN_EXIT_NOT_ESTABLISHED`.
 
 This is not a proof that the return domain is empty or that no invariant child
 history exists.  It is the first missing theorem in the exact existing
 state-selection construction.  Nonemptiness is downstream.  The next
 mathematical dependency is:
 
-`DERIVE_AND_CERTIFY_THE_EXISTING_ACTION_OWNED_ONE_SIDED_SINGULAR_ORDERED_EVENT_HITTING_LAW_AND_ITS_EVENT_TO_CHILD_RESET_REGULARITY_OR_LOCALIZE_THE_FIRST_RETAINED_ACTION_FAILURE`.
+`PROVE_THAT_AT_LEAST_ONE_EXISTING_FORWARD_COMPLETE_CHILD_HISTORY_REACHES_THE_CERTIFIED_TERMINAL_SINGULAR_EVENT_CHART_BEFORE_ANY_EXISTING_PHYSICAL_DOMAIN_EXIT_OR_PROVE_THAT_NO_SUCH_HISTORY_DOES`.
 
 The first interval is now rigorously covered; the next proof step is to extend
 the same analytic action-ball cover until a transverse return or an existing

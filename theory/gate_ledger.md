@@ -24,17 +24,25 @@
   `NOT_DERIVED_RESTORATION_BRANCH_UNSELECTED_AND_GLOBAL_PARENT_LIFT_ABSENT`.
 - Current alternative child-only blind physical observable:
   `NOT_EXECUTABLE_STATE_CHARGE_CLOCK_OR_DOMAIN_NOT_ACTION_SELECTED`.
-- BHSM time: `ORIENTED_AND_FORWARD`; formal reversal is a distinct candidate
-  chiral reflection, `NOT_GAUGE_NOT_PHYSICAL_BACKWARD_EVOLUTION`.
+- BHSM time: one admissible orientation,
+  `dt>0, N_boundary>0, d_tau=N_boundary*dt>0`.
+- Formal reversal: `ALGEBRAIC_CHIRAL_PAIRING_INSIDE_THE_SAME_FORWARD_TIME_DOMAIN`,
+  not physical backward evolution and not gauge.
 - Ordinary event derivative `D_E_ORD(E)V(E)`: `RETRACTED_UNDEFINED_AT_THE_EXACT_EVENT_DIRAC_KERNEL`.
 - Action-owned singular hitting label:
   `CHI_HIT=SIGN(D3L[(0,PSI)^3]*<PSI,B_ED>)`.
 - Retained N12 representative/reflection hitting products:
   `-3.757616928173632E-15 / +3.7576169281780605E-15`.
-- Event-to-child correspondence action-selects one hitting sign: `FALSE`.
-- Formal-reflection sectors physically equivalent or quotiented: `FALSE`.
+- Event-to-child correspondence selects one terminal/emergent hitting sign:
+  `FALSE`; this sign is not a physical-time orientation selector.
+- Chiral reflection partners physically equivalent or quotiented: `FALSE`.
+- Continuum local one-sided singular hitting law: `CERTIFIED`.
+- Event-to-complete-child reset: `REGULAR_SET_VALUED_RELATION`, with fixed-event
+  N12 child rank `31`, fiber dimension `67`, and dimension `66` after the
+  existing whole-system time quotient.
+- Single-valued action-owned physical reset selector: `ABSENT`.
 - Exact next flagship dependency:
-  `DERIVE_AND_CERTIFY_THE_EXISTING_ACTION_OWNED_ONE_SIDED_SINGULAR_ORDERED_EVENT_HITTING_LAW_AND_ITS_EVENT_TO_CHILD_RESET_REGULARITY_OR_LOCALIZE_THE_FIRST_RETAINED_ACTION_FAILURE`.
+  `DERIVE_AN_ACTION_OWNED_COMPACT_FORWARD_TRAPPING_OR_COMPONENT_RESTRICTED_INTEGRATED_EVENT_TRANSPORT_ESTIMATE_ON_AT_LEAST_ONE_FORWARD_ORIENTED_COMPLETE_CHILD_COMPONENT_OR_CERTIFY_ITS_FIRST_EXISTING_PHYSICAL_DOMAIN_EXIT`.
 
 ## Prior N12 dynamic-Calderon continuum gates (superseded)
 
