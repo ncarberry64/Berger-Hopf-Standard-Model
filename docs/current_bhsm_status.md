@@ -25,8 +25,17 @@ N16--N48 probes retain positive gaps, with observed minimum
 `0.00912893612489853`, but are diagnostics rather than corrected roots. They
 do not prove uniform continuum closure.
 
+The unchanged full q-v-m retained-action tail audit through N48 further shows
+that, after routing the existing weak boundary reaction, the exact omitted
+source has inverse-square shells. Its minimum-action linear corrections are
+common-mode Cauchy with sampled `N^2 * distance <= 1.4876792803344001` and
+remain bounded in `H2_q x H1_v x H2_m` by `0.6486315875453534`. The worst
+instantaneous static inverse grows too rapidly for the naive generic-inverse
+proof, but the exact source decouples from that increasingly shift-owned soft
+line. These are zero-padded linear probes, not corrected roots.
+
 Exact next dependency:
-`DERIVE_AN_EXPLICIT_N12_TO_INFINITY_RETAINED_ACTION_BOUND_ON_THE_GAUGE_FIXED_EVENT_CHILD_CALDERON_GRAPH_PROJECTOR_TAIL_AND_CLOSE_THE_NONLINEAR_INVERSE_SQUARE_CORRECTION_RADIUS`.
+`PROVE_THE_RADIAL_DIFFEO_NOETHER_COMPATIBILITY_IDENTITY_FOR_THE_EXACT_OMITTED_SOURCE_AND_CLOSE_THE_SOURCE_RESTRICTED_MIXED_EULER_DIRAC_N12_TO_INFINITY_NONLINEAR_RADIUS`.
 
 `Q_xi`, relative `Delta H`, action-selected families, and a new frozen blind
 observable remain downstream and open. The following v21.37 discussion is

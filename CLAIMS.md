@@ -26,6 +26,16 @@ symbol has gap `0.029146859835472938`; doubled quadrature agrees to
 observed minimum `0.00912893612489853`. These probes are not complete-child
 roots and cannot establish an N-uniform theorem.
 
+Also supported as a finite diagnostic: after the existing weak boundary
+reaction is routed, the exact omitted bulk source has inverse-square shell
+decay. Its N16--N48 minimum-action linear corrections are common-mode Cauchy
+with sampled `N^2 * distance <= 1.4876792803344001` and sampled
+`H2_q x H1_v x H2_m` norm at most `0.6486315875453534`. The worst static
+right inverse is not uniformly bounded and cannot be multiplied by a generic
+inverse-square source to prove summability. The exact source's decreasing
+projection onto that shift-owned soft line does not itself prove the nonlinear
+continuum theorem.
+
 Not supported: a continuum/resolution-independent child, a uniform Calderon
 projector-tail bound, the reduced local energy as `Delta H` or mass, an
 executable matched-parent `Q_xi`, action-selected particle families, absolute
@@ -33,7 +43,7 @@ scale, physical masses or mixing, a new blind observable, empirical
 validation, or `FULL_BHSM_COMPLETE = TRUE`.
 
 Active dependency:
-`DERIVE_AN_EXPLICIT_N12_TO_INFINITY_RETAINED_ACTION_BOUND_ON_THE_GAUGE_FIXED_EVENT_CHILD_CALDERON_GRAPH_PROJECTOR_TAIL_AND_CLOSE_THE_NONLINEAR_INVERSE_SQUARE_CORRECTION_RADIUS`.
+`PROVE_THE_RADIAL_DIFFEO_NOETHER_COMPATIBILITY_IDENTITY_FOR_THE_EXACT_OMITTED_SOURCE_AND_CLOSE_THE_SOURCE_RESTRICTED_MIXED_EULER_DIRAC_N12_TO_INFINITY_NONLINEAR_RADIUS`.
 
 ### Historical corrected-Rayleigh N3 claim boundary
 

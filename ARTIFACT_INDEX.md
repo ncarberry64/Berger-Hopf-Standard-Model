@@ -9,6 +9,8 @@
 - [`BHSM_N12_POSITIVE_DURATION_PERSISTENCE.json`](artifacts/n12_direct_checkpoint/BHSM_N12_POSITIVE_DURATION_PERSISTENCE.json)
 - Reproduction/promoter: [`promote_n12_public_checkpoint.py`](scripts/promote_n12_public_checkpoint.py)
 - Event/child symbol audit: [`audit_n12_event_child_calderon_symbol.py`](scripts/audit_n12_event_child_calderon_symbol.py)
+- Full q-v-m source-tail audit: [`BHSM_N12_FULL_QVM_CONSTRAINT_TAIL_DIAGNOSTIC.json`](artifacts/n12_direct_checkpoint/BHSM_N12_FULL_QVM_CONSTRAINT_TAIL_DIAGNOSTIC.json)
+- Reproduction: [`audit_n12_full_qvm_constraint_tail.py`](scripts/audit_n12_full_qvm_constraint_tail.py)
 
 The unchanged 57-row N12 map closes at
 `||F12|| = 2.1479968882829104e-14` inside a certified `1e-11`
@@ -17,6 +19,13 @@ positive-duration persistence gates pass. The manifest byte-hashes 26
 authoritative files. Finite zero-padded N16--N48 symbol probes are explicitly
 diagnostic, not roots; continuum closure and all downstream physical readouts
 remain open.
+
+The full q-v-m audit routes the already-defined weak boundary reaction before
+measuring the bulk tail. It validates finite N16--N48 inverse-square source
+decay, action-Cauchy source-specific corrections, and bounded sampled S2 graph
+norms. It also invalidates the naive use of the worst static inverse as the
+continuum proof. The exact source-restricted Noether compatibility identity and
+unchanged nonlinear joint event-child radius remain open.
 
 ## Historical fixed-chart endpoint-rank checkpoint (v21.37)
 

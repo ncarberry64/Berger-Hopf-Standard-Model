@@ -6,11 +6,12 @@
    children and the unchanged finite-resolution maps and gates that produced
    them. The authoritative direct N12 state closes all 57 rows at
    `2.1479968882829104e-14` inside a certified `1e-11` action-coordinate ball.
-2. Derive an explicit retained-action bound on the N12-to-infinity
-   gauge-fixed event/child Calderon graph-projector tail. The finite N12 symbol
-   gap and zero-padded N16--N48 probes are evidence only, not the theorem.
-3. Combine that projector bound with the existing inverse-square weak shell law,
-   controlled normal inverse, and nonlinear Hessian remainder. Certify that the
+2. Prove the retained radial-diffeomorphism/Noether compatibility identity
+   that annihilates the collapsing static shift cokernel on the exact omitted
+   source. The N16--N48 source corrections are action-Cauchy and S2-bounded,
+   but remain finite linear probes.
+3. Enclose the resulting source-restricted mixed Euler--Dirac Schur correction,
+   inverse-square tail, and nonlinear Hessian remainder. Certify that the
    summed correction remains inside the existing eta, ordered-event,
    boundary/Dirac, and persistence neighborhoods.
 4. Promote a resolution-independent child only after the analytic tail and
