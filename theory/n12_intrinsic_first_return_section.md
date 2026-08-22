@@ -115,3 +115,21 @@ The exact next dependency is:
 Only after that result may fixed points or primitive periodic orbits be
 classified as action-selected intrinsic states. No observable, mass, family,
 prediction, or held-out comparison is promoted here.
+
+## 5. Existing positive-duration witness
+
+The already-certified N12 persistence history gives one bounded adjudication;
+it is not a return search. Its stored initial and final child states were
+evaluated with the existing ordered eigenline. Both endpoints are strictly off
+the complete-event section, and the final endpoint is farther from zero across
+96-, 192-, and 384-point quadrature. The certified history itself preserves
+constraints and eta admissibility. The result is recorded in
+`BHSM_N12_EXISTING_PERSISTENCE_EVENT_RETURN_AUDIT.json`.
+
+Consequently the existing local persistence artifact records no state that
+executes the first-return map. Because its intermediate states were not stored,
+the endpoint audit does not exclude an interior crossing; nor can it establish
+that no later return exists. The remaining issue is the global retained-flow
+theorem: prove or disprove a finite transverse first positive complete-event
+return without inventing a parent section or using numerical continuation as
+a selection rule.
