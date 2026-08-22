@@ -12,7 +12,7 @@ BHSM is an independent artifact-backed computational framework and mathematical-
 
 BHSM now has a directly corrected `N=12` complete persistent child under the
 unchanged retained 57-row finite-resolution map. Its independently evaluated
-exact residual is `||F12|| = 2.1479968882829104e-14`; the certified
+exact residual is `||F12|| = 1.5155497333590932e-13`; the certified
 action-coordinate root ball has radius `1e-11`. The ordered event, eta domain,
 boundary/Dirac neighborhood, and positive-duration persistence gates all pass.
 No physical row, coefficient, event definition, child criterion, or gate was
@@ -30,17 +30,17 @@ the hard trial allows the coupled constraint/boundary norm to move from
 evaluated total merit falls. No componentwise monotonicity was imposed.
 
 The contraction-correlated exact-root Calderon problem is now closed. The
-first Picard center lies within `5.57567776096209e-18` action coordinates of
+first Picard center lies within `1.244833612865511e-15` action coordinates of
 the exact root; directed interval action jets give normalized graph gap
-`0.0016229286468592938`. A whole action-coordinate ball of radius
+`0.0016147930860920538`. A whole action-coordinate ball of radius
 `7.62939453125e-17` about each enclosed exact root retains graph gap
-`0.0008481866624639198`. On that ball, the retained gauge-fixed
+`0.0008325142235529747`. On that ball, the retained gauge-fixed
 Euler--Dirac/Jacobi evolution gives a positive-duration finite-core observation
-modulus `c_M0 >= 2.0753723606658987e-19`.
+modulus `c_M0 >= 2.036906619199693e-19`.
 
 The unchanged action also now supplies an explicit, outward-rounded,
 non-fitted inverse-square bulk source constant
-`C_r,event-child <= 6476.158172228676`. This certifies the shell law
+`C_r,event-child <= 6476.1581744767345`. This certifies the shell law
 `||r_n||_weak <= C_r n^-2`; the standard-model boundary Casimir covector stays
 in the existing weak conormal reaction relation. These results do not yet
 certify a continuum child. The N12-to-infinity observation perturbation still
@@ -65,8 +65,14 @@ ball, physical neighborhood, persistence witness, exact normal data, and
 retained-action tail diagnostics. The corrected branch is the same-action
 `N6` index-12 to `N12` index-24 ordered-event branch.
 
+The execution-provenance audit also hash-locks the retained-action source
+files resolved from this checkout. Lower-precision binary eigenvalue/lift
+residuals belong to a different measurement era and are not a physical
+regression chronology. The corrected high-precision solve returned within
+`1.799193285874061e-13` action coordinates of the prior public state.
+
 The unchanged positive-duration event/child Calderon symbol has finite gap
-`0.029146859835472938` at the certified N12 state. Source-restricted linear
+`0.029146859835358096` at the certified N12 state. Source-restricted linear
 probes remain transverse at N48 (`0.00922485414794376`, 192-point quadrature)
 and N64 (`0.0038382679025004396`, 96-point quadrature), with admissible eta.
 These remain diagnostic probes, not complete-child roots. The retained

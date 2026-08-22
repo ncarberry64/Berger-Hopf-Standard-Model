@@ -3,7 +3,7 @@
   "claims": {
     "CONTINUUM_EVENT_CHILD_CERTIFIED": false,
     "FULL_BHSM_COMPLETE": false,
-    "N12_static_Calderon_gap": 0.029146859835472938,
+    "N12_static_Calderon_gap": 0.029146859835358096,
     "category_3_collapse_sequence_constructed": false,
     "minimum_sampled_positive_duration_gap": 0.02882113423436863,
     "principal_high_tail_bound_is_the_full_inverse_K": false,
@@ -23,7 +23,7 @@
     {
       "bytes": 3513,
       "path": "artifacts/n12_continuum_majorant_effectiveness/BHSM_N12_CONTINUUM_MAJORANT_OWNERSHIP_AUDIT.json",
-      "sha256": "8ea2551a97aa09fe0632ca3e9bca5f97fa30ac4d5807ee7462b435f46489cef6"
+      "sha256": "e39c045add9ae544830109ca6abbef78f54b2112d304854c7c6a5b48b8566986"
     },
     {
       "bytes": 3816,
@@ -31,9 +31,9 @@
       "sha256": "653f86d026755ecace17897487b111422826aa0465d526e04520c8ab96f75025"
     },
     {
-      "bytes": 2669,
+      "bytes": 2678,
       "path": "artifacts/n12_continuum_majorant_effectiveness/BHSM_N12_POSITIVE_DURATION_CALDERON_HISTORY.json",
-      "sha256": "c80017e7644aa951c35bf733d17d1f67ca156a91b3858a074306bd21c98d4bb6"
+      "sha256": "b3077a3da6648c95f6505d34aaac2d06da2cb193f565809537af340b00ea969e"
     }
   ],
   "promotion_boundary": "THIS_CHECKPOINT LOCALIZES THE FIRST NON_EFFECTIVE CONSTANT. IT DOES NOT CERTIFY A CONTINUUM CHILD, Q_XI, DELTA_H, MASS, FAMILY SELECTION, OR A PREDICTION.",
@@ -43,5 +43,5 @@
     "$env:PYTHONPATH='src'; $env:BHSM_N12_HISTORY_CALDERON_RESULT='artifacts/n12_continuum_majorant_effectiveness/BHSM_N12_POSITIVE_DURATION_CALDERON_HISTORY.json'; python scripts/audit_n12_positive_duration_calderon_history.py",
     "$env:PYTHONPATH='src'; python scripts/materialize_n12_continuum_majorant_checkpoint.py"
   ],
-  "scientific_base_commit": "f535417134b9b8c0dc3819a46dfd449177e9ecd0"
+  "scientific_base_commit": "ba33d3465d02bf32c563f08be1de562f44993022"
 }

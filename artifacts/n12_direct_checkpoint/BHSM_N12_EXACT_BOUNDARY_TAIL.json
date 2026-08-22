@@ -1,9 +1,9 @@
 {
   "classification": "N12_EXACT_TRACE_ATTACHMENT_HIGH_SHELL_MODULUS_DERIVED",
-  "source_checkpoint": ".tmp_direct_n12_high_precision_action_center.npz",
-  "source_checkpoint_SHA256": "93E00A944C756B658FB82E56BC6A5C694E03B9760BB4084545E10D963A9AA230",
-  "source_promotion": ".tmp_direct_n12_high_precision_complete_persistent_child_promotion.json",
-  "source_promotion_SHA256": "C94C1F1E479841CD2FC14B6606138DFABB38017A54FBE441E9B80B53458876DF",
+  "source_checkpoint": ".tmp_n12_corrected_recert\\.tmp_direct_n12_high_precision_action_center.npz",
+  "source_checkpoint_SHA256": "8AEE33C46C320A36384C83E6B9BDE387AE3E565D99C7D49C606895229B796890",
+  "source_promotion": ".tmp_n12_corrected_recert\\.tmp_direct_n12_high_precision_complete_persistent_child_promotion.json",
+  "source_promotion_SHA256": "729DF0BD36039E43D0A4C5A283E66CDC0170040F4B4E55C36083474103CEB41E",
   "basis_series": {
     "positive_mode_identity": "sum_(n>=1)(1+16*n^2)^-1=((pi/4)*coth(pi/4)-1)/2",
     "u_tail_starts_at_mode": 13,
@@ -12,12 +12,12 @@
     "windowed_tail_sum": 0.005430514369619721
   },
   "boundary_state_data": {
-    "event_tanh_two_v_boundary": 0.00420702245769987,
-    "child_tanh_two_v_boundary": 0.004207022457699868
+    "event_tanh_two_v_boundary": 0.0042070224577670946,
+    "child_tanh_two_v_boundary": 0.0042070224577671666
   },
   "joint_child_minus_event_tail": {
-    "raw_action_H1_to_boundary_operator_norm": 0.20812878293528145,
-    "existing_normalized_boundary_operator_norm": 0.3263719672129126,
+    "raw_action_H1_to_boundary_operator_norm": 0.20812878293528142,
+    "existing_normalized_boundary_operator_norm": 0.32637196721291295,
     "raw_row_gram": [
       [
         0.020854378519693628,
@@ -29,45 +29,45 @@
         0.009993349780454186,
         0.020854378519693628,
         -0.0008676789587852562,
-        -0.009947657188634482
+        -0.009947657188633751
       ],
       [
         0.009993349780454186,
         -0.0008676789587852562,
         0.020854378519693628,
-        -0.01003904237227389
+        -0.01003904237227462
       ],
       [
         -0.009993349780454186,
-        -0.009947657188634482,
-        -0.01003904237227389,
-        0.009993542010214122
+        -0.009947657188633751,
+        -0.01003904237227462,
+        0.009993542010214128
       ]
     ],
     "normalized_row_gram": [
       [
-        0.009724212957374771,
-        -0.0006384923806515299,
-        -0.0006771977050515647,
-        -0.011012197728622677
+        0.009724212957374767,
+        -0.0006384923806512225,
+        -0.0006771977050518764,
+        -0.011012197728622681
       ],
       [
-        -0.0006384923806515292,
-        0.008420184249876887,
-        -0.001571400138706729,
-        -0.01653204937682871
+        -0.0006384923806512237,
+        0.008420184249877819,
+        -0.0015714001387067411,
+        -0.016532049376831223
       ],
       [
-        -0.0006771977050515655,
-        -0.0015714001387067285,
-        0.008304922877140387,
-        -0.016218477774110358
+        -0.0006771977050518771,
+        -0.0015714001387067415,
+        0.008304922877139468,
+        -0.016218477774107846
       ],
       [
-        -0.011012197728622677,
-        -0.016532049376828707,
-        -0.01621847777411036,
-        0.09993615588558419
+        -0.011012197728622683,
+        -0.016532049376831223,
+        -0.016218477774107846,
+        0.09993615588558433
       ]
     ]
   },

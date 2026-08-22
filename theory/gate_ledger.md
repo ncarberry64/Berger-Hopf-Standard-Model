@@ -3,7 +3,10 @@
 ## Current N12 dynamic-Calderon continuum gates
 
 - `N12_COMPLETE_PERSISTENT_CHILD`: `CERTIFIED`, unchanged 57-row residual
-  `2.1479968882829104E-14`, action-coordinate root ball `1E-11`.
+  `1.5155497333590932E-13`, action-coordinate root ball `1E-11`.
+- `N12_CORRECTED_ACTION_EXECUTION_PROVENANCE`: `VALIDATED`; retained-action
+  modules resolve from the reviewed checkout, and lower-precision binary
+  eigenvalue/lift diagnostics are not the promotion evaluator.
 - `PRINCIPAL_STATIC_SUBMATRIX_AS_ORDERED_EVENT_DEFINITION`: `INVALIDATED`.
 - `EXACT_FESHBACH_EQUIVALENCE`: `FINITE_ALGEBRAIC_IDENTITY_REQUIRING_SHIFTED_W_SHIFT_INVERSE`.
 - Sampled shifted w/shift gap: `8.877056607545721E-6` at N12 and
@@ -17,13 +20,13 @@
 - `N64_COMPLETE_CHILD_ROOT`: `NOT_CLAIMED_LINEAR_PROBE_ONLY`.
 - Soft channel: `CATEGORY_2_DYNAMICALLY_CONTROLLED_NORMAL`; category 3 has not
   been demonstrated.
-- Correlated exact-root Calderon graph gap: `1.6229286468592938E-3`.
+- Correlated exact-root Calderon graph gap: `1.6147930860920538E-3`.
 - Whole action-ball graph gap/radius:
-  `8.481866624639198E-4 / 7.62939453125E-17`.
+  `8.325142235529747E-4 / 7.62939453125E-17`.
 - Finite-core positive-duration modulus:
-  `c_M0 >= 2.0753723606658987E-19`.
+  `c_M0 >= 2.036906619199693E-19`.
 - Explicit action-derived joint inverse-square source constant:
-  `C_r <= 6476.158172228676`; no fitted constant or exponent.
+  `C_r <= 6476.1581744767345`; no fitted constant or exponent.
 - `UNIFORM_COMPACT_N12_TO_INFINITY_OBSERVATION_TAIL_MODULUS`: `OPEN` for the
   lower-order Euler--Dirac, ordered-event projector, momentum/flux, and
   Gauss-consistency blocks.

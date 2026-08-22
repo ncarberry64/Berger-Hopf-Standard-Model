@@ -54,7 +54,7 @@ def main() -> None:
             "POSITIVE_DURATION_OBSERVATION_MODULUS"
         ),
         "claims": {
-            "N12_static_Calderon_gap": 0.029146859835472938,
+            "N12_static_Calderon_gap": 0.029146859835358096,
             "minimum_sampled_positive_duration_gap": 0.02882113423436863,
             "sampled_duration": 1.0e-10,
             "sampled_history_is_an_interval_proof": False,

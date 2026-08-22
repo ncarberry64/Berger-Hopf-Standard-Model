@@ -5,7 +5,7 @@
 1. Preserve the validated N3/N4/N5/N6 and direct N12 complete persistent
    children and the unchanged finite-resolution maps and gates that produced
    them. The authoritative direct N12 state closes all 57 rows at
-   `2.1479968882829104e-14` inside a certified `1e-11` action-coordinate ball.
+   `1.5155497333590932e-13` inside a certified `1e-11` action-coordinate ball.
 2. Preserve the corrected radial-diffeomorphism Ward identity: the exact shift
    source is geometric momentum plus the retained eta-clock current. The
    eta-free static-cokernel annihilation statement is invalidated.

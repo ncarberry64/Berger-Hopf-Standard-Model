@@ -81,7 +81,8 @@ BHSM_N48_LINEAR_CANDIDATE_CHECKPOINT=artifacts/n12_dynamic_calderon_checkpoint/B
 ## Current direct N12 checkpoint
 
 ```bash
-python scripts/promote_n12_public_checkpoint.py
+PYTHONPATH=src python scripts/audit_n12_corrected_action_execution_provenance.py --verify artifacts/n12_direct_checkpoint/BHSM_N12_CORRECTED_ACTION_EXECUTION_PROVENANCE.json
+BHSM_N12_CHECKPOINT=artifacts/n12_direct_checkpoint/BHSM_N12_COMPLETE_PERSISTENT_CHILD_STATE.npz BHSM_N12_RESULT=n12_residual_replay.json BHSM_N12_RESIDUAL_ONLY_DIAGNOSTIC=1 BHSM_CHORD_PROPOSAL_STEPS=0 PYTHONPATH=src python scripts/measure_n6_n12_joint_schur_chord_cover.py
 python -m pytest -q tests/test_bhsm_n12_direct_checkpoint.py tests/test_engine_invariant_preservation.py tests/test_engine_physics_status_separation.py
 python tools/audit_forbidden_claims.py
 python tools/audit_bhsm_status.py
@@ -91,7 +92,8 @@ git diff --check
 
 Inspect the [N12 checkpoint manifest](../artifacts/n12_direct_checkpoint/BHSM_N12_SCIENTIFIC_CHECKPOINT_MANIFEST.json).
 It verifies hashes for the exact state, residual, radii proof, physical
-neighborhoods, exact normals, persistence witness, and tail diagnostics.
+neighborhoods, exact normals, persistence witness, tail diagnostics, and the
+retained-action source modules loaded by the corrected high-precision run.
 The direct N12 child is finite-resolution evidence; the higher-order zero-padded
 or source-corrected Calderon states through N64 are probes and must not be
 reported as roots or a continuum certificate.
