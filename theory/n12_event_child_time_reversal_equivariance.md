@@ -8,9 +8,11 @@ Let
 
 be the exact retained-action formal reversal, with \(\ell\) the log-lapse
 coefficients and \(s\) the shift coefficients.  BHSM physical time is kept
-oriented and forward.  Thus \(\mathcal R\) is not quotiented as physical
-backward evolution or as gauge; it is a candidate chiral reflection between
-distinct forward-time Cauchy sectors.  The retained action is invariant under
+oriented and forward, with \(dt>0\), positive lapse, and
+\(d\tau=N_{\rm boundary}dt>0\). Thus \(\mathcal R\) is not physical backward
+evolution or gauge; re-expressed at the same positive clock orientation it is
+an algebraic/chiral reflection between Cauchy states in the same time domain.
+The retained action is invariant under
 \(\mathcal R\).
 
 The unchanged complete event-to-child equations inherit the following row
@@ -38,8 +40,9 @@ F_N(\mathcal RE,\mathcal RC)=0.
 \]
 
 The eta, positive metric/lapse, gauge, rank, and local positive-duration
-persistence domains are also preserved.  This preservation does not identify
-the two states physically.  The continuum event-to-child graph obtained from
+persistence domains are also preserved. This is precisely why the reflected
+state has its own forward solution; it is not a second temporal orientation.
+The preservation does not identify the two states physically. The continuum event-to-child graph obtained from
 the certified Galerkin limit is consequently
 \(\mathcal R\)-equivariant wherever both local sections are defined:
 
@@ -69,23 +72,25 @@ Positive coordinate duration chooses forward evolution from a supplied
 Cauchy state.  It does not remove the formally reflected Cauchy state, which
 has its own positive-duration local solution.  The fixed spatial degree,
 orientation, FR parity, incidence, and boundary identity are unchanged by
-\(\mathcal R\) and therefore do not supply a temporal-chirality selector.
+\(\mathcal R\) and therefore distinguish neither the paired Cauchy states nor
+the already-fixed physical time orientation.
 
-It follows that the present event-to-child correspondence does not
-action-select one forward-time temporal-chirality sector.  The sign of \(K\),
+It follows that no action selection of forward versus backward time remains:
+the positive clock domain already fixes physical time. The sign of \(K\),
 when nonzero and when the one-sided hard-limit hypotheses hold, is a valid
 local hitting-orientation label for the two reflected simple-event components,
 but the zero-set equations impose neither sign.  Adding the sign of momentum
 or \(K\) as an acceptance rule
 would be a new gate and is not authorized.  Equivariance is not physical
-equivalence, so the two sectors are retained rather than quotiented.
+equivalence, so the paired chiral states are retained rather than quotiented.
 
-The state-selection problem must therefore preserve the reflected pair.  The
+The state-selection problem must therefore preserve the reflected pair without
+mistaking it for a time-orientation choice. The
 shortest action-owned target is an invariant complete-child history (fixed,
 periodic, or relative-periodic under the already allowed gauge and whole-system
 time-translation equivalences), with its formally reflected forward-time
 history retained as a distinct chiral partner when it exists.  A downstream
-observable can avoid an arbitrary sector choice only if it is evaluated on an
-action-selected history and is invariant under this pairing, or if the action
-later supplies an independent chiral selector.  Numerical crossing orientation
+observable may be evaluated only on an action-selected history; any chiral
+pairing dependence must be reported as state/family structure, not clock
+orientation. Numerical crossing orientation
 cannot supply either result.

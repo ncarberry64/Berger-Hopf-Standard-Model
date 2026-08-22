@@ -1,7 +1,7 @@
 # N12 intrinsic first-return section
 
-Status: **the candidate boundary-return relation is typed; its singular
-hitting/reset regularity and nonempty domain are open**.
+Status: **the local singular hitting/reset relation is certified; global
+forward reachability and the nonempty return domain are open**.
 
 This note uses only the retained Euler–Dirac flow, the existing ordered-event
 functional, the certified event-to-complete-child relation, and the existing
@@ -50,21 +50,25 @@ ordered Euler–Dirac eigenvalue, and let
 \]
 
 denote the existing complete-event section in the continuum complete-child
-manifold. For a complete pair \([E,C(E)]\), define, when it exists,
+manifold. For a complete pair \([E,C]\), with
+\(C\in\mathfrak C_\infty(E)\), define, when it exists,
 
 \[
-\tau(Y)=\inf\{t>0:e_{\rm ord}(\varphi_t(C(E)))=0\}.
+\tau(Y)=\inf\{t>0:e_{\rm ord}(\varphi_t(C))=0\}.
 \]
 
-Writing \(E'=\lim_{t\uparrow\tau(Y)}\varphi_t(C(E))\), when that limit exists
+Writing \(E'=\lim_{t\uparrow\tau(Y)}\varphi_t(C)\), when that limit exists
 in the certified event chart, the only action-owned return candidate is
 
 \[
-\mathcal P([E,C(E)])=[E',\mathcal C_\infty(E')],
+\mathcal P([E,C])=\{[E',C']:C'\in\mathfrak C_\infty(E')\},
 \]
 
-where \(\mathcal C_\infty\) is the existing continuum event-to-complete-child
-reconstruction. The brackets quotient only the already-existing gauge and
+where \(\mathfrak C_\infty\) is the certified regular continuum
+event-to-complete-child relation. Its fixed-event fiber is 67-dimensional,
+or 66-dimensional after the existing whole-system time quotient. The
+numerical normal chart chooses a reproducible representative; it is not an
+action-owned physical selector. The brackets quotient only the existing gauge and
 whole-system time-translation equivalences. The use of the first positive
 ordered event removes any arbitrary solver-time or externally chosen period.
 
@@ -85,16 +89,19 @@ limit hypotheses,
 \frac d{dt}e_{\rm ord}^2\longrightarrow 2c_\psi b_\psi .
 \]
 
-A regular boundary-hitting/reset theorem must now prove:
+A regular boundary-hitting/reset theorem requires:
 
 1. a one-sided admissible flow with a finite event limit;
 2. nonzero \(c_\psi b_\psi\) and the associated square-root hitting law;
 3. controlled dependence of the hitting time and limiting event on initial
    data in the appropriate desingularized coordinates;
 4. landing inside the certified continuum event-to-child chart; and
-5. regularity of the composition with \(\mathcal C_\infty\).
+5. regularity of the composition with \(\mathfrak C_\infty\).
 
-No new dynamics or sign gate is introduced by these proof obligations.
+The retained pole decomposition proves these obligations locally on the
+certified terminal chart, and the full-action/tail bounds transfer them to the
+continuum child graph. No new dynamics or sign gate is introduced. This local
+theorem does not prove that an existing forward child reaches that chart.
 
 ## 4. Exact remaining dependency
 
@@ -104,7 +111,7 @@ monodromy. Therefore the domain of \(\mathcal P\) has not been shown nonempty.
 
 The exact next dependency is:
 
-`DERIVE_AND_CERTIFY_THE_EXISTING_ACTION_OWNED_ONE_SIDED_SINGULAR_ORDERED_EVENT_HITTING_LAW_AND_ITS_EVENT_TO_CHILD_RESET_REGULARITY_OR_LOCALIZE_THE_FIRST_RETAINED_ACTION_FAILURE`.
+`PROVE_THAT_AT_LEAST_ONE_EXISTING_FORWARD_COMPLETE_CHILD_HISTORY_REACHES_THE_CERTIFIED_TERMINAL_SINGULAR_EVENT_CHART_BEFORE_ANY_EXISTING_PHYSICAL_DOMAIN_EXIT_OR_PROVE_THAT_NO_SUCH_HISTORY_DOES`.
 
 Only after that result may fixed points or primitive periodic orbits be
 classified as action-selected intrinsic states. No observable, mass, family,
@@ -121,13 +128,13 @@ constraints and eta admissibility. The result is recorded in
 `BHSM_N12_EXISTING_PERSISTENCE_EVENT_RETURN_AUDIT.json`.
 
 Consequently the existing local persistence artifact records no state that
-executes the first-return map. Because its intermediate states were not stored,
-the endpoint audit does not exclude an interior singular hit; nor can it
-establish that no later hit exists.  The remaining issue first is the
-one-sided singular hitting/reset theorem and then the global retained-flow
-theorem: prove or disprove a finite regular first positive complete-event
-boundary hit without inventing a parent section or using numerical
-continuation as a selection rule.
+executes the first-return relation. Because its intermediate states were not
+stored, the endpoint audit does not exclude an interior singular hit; nor can
+it establish that no later hit exists. The local singular hitting/reset
+theorem is now closed. The remaining issue is the global retained-flow theorem:
+prove or disprove that an existing forward complete-child history reaches its
+terminal chart before a physical-domain exit, without inventing a parent
+section or using numerical continuation as a selection rule.
 
 ## 6. Earliest analytic ownership lemma
 

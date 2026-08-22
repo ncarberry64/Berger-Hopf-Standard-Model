@@ -1,4 +1,4 @@
-# Singular ordered-event temporal chirality
+# Singular ordered-event boundary orientation
 
 Status: **the retained action supplies a one-sided hitting orientation, but the
 event-to-child equations do not select its sign and formal reflection is not a
@@ -52,7 +52,7 @@ perturbation gives
  \frac{d}{dt}\lambda^2\longrightarrow 2c_\psi b_\psi.
 \]
 
-Thus the finite action-owned temporal-orientation candidate at a singular
+Thus the finite action-owned terminal/emergent boundary label at a singular
 event is
 
 \[
@@ -75,7 +75,8 @@ and hence (c_\psi b_\psi=-3.757616928173632\times10^{-15}).  The same signs
 persist in the 192- and 384-point cross-quadrature evaluations.  Existing
 action-ball, simple-eigenline, and radii-polynomial bounds keep both factors
 away from zero on a (2\times10^{-13}) root enclosure.  These finite-N values
-identify the represented sector; they are not used to select it.
+identify the represented boundary role; they are not used as an event gate or
+physical-time selector.
 
 ## 3. Formal-reflection parity
 
@@ -102,8 +103,9 @@ It follows that (b_\psi) is odd, (c_\psi) is even, and
 
 The canonical momentum and shift current are likewise odd, while the Hopf
 degree, spatial boundary orientation, attachment configuration, and ordered
-event eigenvalue are even.  These structures distinguish the two candidate
-forward-time sectors but do not identify them.
+event eigenvalue are even. These structures distinguish chiral Cauchy-state
+partners within the single forward-time domain. They do not create a second
+physical time orientation.
 
 ## 4. Event-to-child conclusion
 
@@ -116,9 +118,11 @@ so
 
 The continuum graph inherits the same local equivariance.  No retained row
 requires (c_\psi b_\psi<0), (c_\psi b_\psi>0), an outgoing momentum sign,
-or a signed shift current.  Therefore the correspondence does **not**
-action-select one temporal-chirality sector, and equivariance does **not** prove
-physical equivalence.  Neither sector may be quotiented.
+or a signed shift current. Therefore the correspondence does **not** select a
+terminal/emergent boundary role, and equivariance does **not** prove physical
+equivalence of the paired Cauchy states. Neither state is quotiented. The
+physical clock orientation is already fixed by positive lapse and positive
+proper duration and requires no additional action selection.
 
 The corrected next mathematical dependency precedes an ordinary return-map
 theorem:

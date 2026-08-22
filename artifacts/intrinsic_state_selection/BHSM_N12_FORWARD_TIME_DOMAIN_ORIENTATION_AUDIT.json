@@ -1,0 +1,59 @@
+{
+  "FULL_BHSM_COMPLETE": false,
+  "admissible_clock_domain": {
+    "boundary_lapse": "N_boundary>0",
+    "coordinate_parameter": "dt>0",
+    "incorporated_manifold": "M_child_plus=M_child_INTERSECT_{dt>0,N_boundary>0,d_tau_child>0}",
+    "new_condition_added": false,
+    "number_of_physical_time_orientations": 1,
+    "physical_orientation": "d_tau_child>0",
+    "proper_time_relation": "d_tau_child=N_boundary*dt"
+  },
+  "artifact": "BHSM_N12_FORWARD_TIME_DOMAIN_ORIENTATION_AUDIT",
+  "classification": "ONE_PHYSICAL_FORWARD_TIME_ORIENTATION_ALREADY_OWNED_BY_THE_POSITIVE_LAPSE_POSITIVE_DURATION_CHILD_DOMAIN",
+  "formal_reflection_reclassification": {
+    "acts_on_dt": false,
+    "independently_satisfies_same_forward_domain_at_certified_N12_root": true,
+    "is_gauge_or_quotiented": false,
+    "reexpressed_as_new_Cauchy_data_at_dt_positive": true,
+    "requires_action_selection_of_time_orientation": false,
+    "role": "ALGEBRAIC_OR_CHIRAL_PAIRING_WITHIN_ONE_FORWARD_TIME_DOMAIN",
+    "second_physical_temporal_orientation": false,
+    "state_map": "R(q,v,log_lapse,shift)=(q,-v,log_lapse,-shift)",
+    "with_t_to_minus_t_is_admissible_physical_evolution": false
+  },
+  "inputs": {
+    "artifacts/BHSM_aether_internal_clock_skin_phase_v15_14.json": "2ED0B557975B746D5DBCA07BC1C5A67F106B9F456345A0EC18D7C338EDDC2CBE",
+    "artifacts/BHSM_aether_persistent_nonequilibrium_child_v17_87.json": "A87E1E4ADA0EB91667F29FD9D9C65A6ADE3DF7180534BACB40261BE8B7739058",
+    "artifacts/intrinsic_state_selection/BHSM_N12_CONTINUUM_SINGULAR_HITTING_RESET_RELATION.json": "FAE8BFFDBF19FA71F33340AB00B5C708779D475E935C505203D2B31BA3A3988D",
+    "artifacts/intrinsic_state_selection/BHSM_N12_EVENT_CHILD_TIME_REVERSAL_EQUIVARIANCE_GATE.json": "645B2A5CDCA4A2AD7F0E1FE3CD0A83109AC08F8BCFDA35BD2075BEA5CC9AB805",
+    "artifacts/n12_direct_checkpoint/BHSM_N12_POSITIVE_DURATION_PERSISTENCE_WITNESS.json": "BB2C471C0CE71A9C4DDB0F936F02362D0E5E5DA6A5AE474075F043656458DD8F",
+    "theory/n12_forward_time_domain_orientation.md": "7869E88FDA150BA7F1C35394BDB1C5AF2709CB711C5776DAE89BD251358B5367"
+  },
+  "intrinsic_state_consequence": {
+    "action_selected_intrinsic_forward_history_proved": false,
+    "action_selection_of_forward_vs_backward_required": false,
+    "artificial_two_temporal_sector_ambiguity_removed": true,
+    "chiral_or_state_pair_may_remain_physically_distinct": true,
+    "remaining_blocker": "PROVE_THAT_AT_LEAST_ONE_EXISTING_FORWARD_COMPLETE_CHILD_HISTORY_REACHES_THE_CERTIFIED_TERMINAL_SINGULAR_EVENT_CHART_BEFORE_ANY_EXISTING_PHYSICAL_DOMAIN_EXIT_OR_PROVE_THAT_NO_SUCH_HISTORY_DOES"
+  },
+  "singular_boundary_label": {
+    "label": "SIGN(C_PSI*B_PSI)",
+    "meaning": "FORWARD_TERMINAL_VERSUS_FORWARD_EMERGENT_BOUNDARY_ROLE",
+    "new_event_gate": false,
+    "physical_time_orientation_selector": false
+  },
+  "validation": {
+    "certified_boundary_lapse_is_positive": true,
+    "certified_proper_duration_is_positive": true,
+    "existing_clock_relation_is_positive_lapse_times_dt": true,
+    "formal_reflection_is_not_gauge": true,
+    "formal_reflection_preserves_static_physical_domain": true,
+    "local_hitting_reset_theorem_preserves_forward_time": true,
+    "no_new_equation_gate_selector_clock_or_quotient": true,
+    "persistence_domain_already_requires_positive_lapse": true,
+    "proper_clock_is_action_owned_on_existing_worldtube": true,
+    "reflected_reexpressed_state_has_forward_solution": true
+  },
+  "validation_passed": true
+}

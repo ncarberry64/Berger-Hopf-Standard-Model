@@ -23,8 +23,14 @@ def test_intrinsic_state_return_section_gate_fails_closed() -> None:
     assert payload["action_selection_status"][
         "one_intrinsic_physical_point_or_orbit_selected"
     ] is False
+    assert payload["action_selection_status"][
+        "physical_time_orientation_already_fixed"
+    ] is True
+    assert payload["action_selection_status"][
+        "temporal_orientation_selection_open"
+    ] is False
     assert payload["derived_first_return_section"]["map_executable"] is False
-    assert "C_infinity" in payload["derived_first_return_section"]["map"]
+    assert "MATHFRAK_C_INFINITY" in payload["derived_first_return_section"]["map"]
     assert len(payload["derived_first_return_section"][
         "required_existing_properties_to_close"
     ]) == 6
@@ -33,7 +39,10 @@ def test_intrinsic_state_return_section_gate_fails_closed() -> None:
     ] == "RETRACTED_AT_SINGULAR_EVENT"
     assert payload["derived_first_return_section"][
         "conditional_singular_boundary_hitting_reset_theorem"
-    ] == "NOT_YET_PROVED"
+    ] == "PROVED_LOCALLY_ON_THE_CERTIFIED_TERMINAL_CHART"
+    assert payload["derived_first_return_section"]["reset_object_type"] == (
+        "REGULAR_SET_VALUED_RELATION_NOT_SINGLE_VALUED_MAP"
+    )
     assert payload["derived_first_return_section"]["return_time_derivative"] is None
     assert payload["derived_first_return_section"][
         "new_clock_period_event_equation_constraint_or_gate_added"

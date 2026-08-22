@@ -50,6 +50,10 @@ SINGULAR_EVENT = ROOT / (
     "artifacts/intrinsic_state_selection/"
     "BHSM_N12_SINGULAR_EVENT_TEMPORAL_CHIRALITY.json"
 )
+SINGULAR_RESET = ROOT / (
+    "artifacts/intrinsic_state_selection/"
+    "BHSM_N12_CONTINUUM_SINGULAR_HITTING_RESET_RELATION.json"
+)
 THEORY = ROOT / "theory/n12_forward_invariant_history_existence_gate.md"
 RESULT = ROOT / (
     "artifacts/intrinsic_state_selection/"
@@ -69,7 +73,7 @@ def main() -> None:
     inputs = (
         INTRINSIC, EVENT_RETURN, LOCAL_FLOW, MAXIMAL_FLOW, CHIRALITY,
         COERCIVE, CLOCK, RELATIVE_PERIODIC, CONTINUUM, INITIAL_SIDE,
-        LOCAL_NO_RETURN, SINGULAR_EVENT, THEORY,
+        LOCAL_NO_RETURN, SINGULAR_EVENT, SINGULAR_RESET, THEORY,
     )
     missing = [str(path) for path in inputs if not path.is_file()]
     if missing:
@@ -87,6 +91,7 @@ def main() -> None:
     initial_side = _load(INITIAL_SIDE)
     local_no_return = _load(LOCAL_NO_RETURN)
     singular = _load(SINGULAR_EVENT)
+    singular_reset = _load(SINGULAR_RESET)
 
     conclusion = event_return["action_ownership_conclusion"]
     validation = {
@@ -102,10 +107,18 @@ def main() -> None:
                 "ordinary_Poincare_map_theorem"
             ] == "RETRACTED_AT_SINGULAR_EVENT"
         ),
-        "singular_boundary_hitting_reset_theorem_open": (
+        "singular_boundary_hitting_reset_theorem_closed_locally": (
             intrinsic["derived_first_return_section"][
                 "conditional_singular_boundary_hitting_reset_theorem"
-            ] == "NOT_YET_PROVED"
+            ] == "PROVED_LOCALLY_ON_THE_CERTIFIED_TERMINAL_CHART"
+        ),
+        "reset_is_regular_relation_not_single_valued_map": (
+            singular_reset["reset_correspondence"][
+                "regular_local_continuum_correspondence_proved"
+            ] is True
+            and singular_reset["reset_correspondence"][
+                "single_valued_physical_reset_map_proved"
+            ] is False
         ),
         "first_return_map_not_executable": (
             intrinsic["derived_first_return_section"]["map_executable"] is False
@@ -159,31 +172,29 @@ def main() -> None:
     payload = {
         "artifact": "BHSM_N12_FORWARD_INVARIANT_HISTORY_EXISTENCE_GATE",
         "classification": (
-            "SINGULAR_EVENT_HITTING_RESET_REGULARITY_NOT_PROVED;_NO_ACTION_"
-            "SELECTED_FORWARD_RETURN_OR_INVARIANT_CHILD_HISTORY_YET"
+            "LOCAL_SINGULAR_EVENT_HITTING_RESET_RELATION_CERTIFIED;_GLOBAL_"
+            "FORWARD_REACHABILITY_AND_INVARIANT_CHILD_HISTORY_OPEN"
         ),
         "exact_return_domain": {
-            "start": "C_INFINITY(E)_FOR_E_IN_THE_EXISTING_SIMPLE_ORDERED_EVENT_SECTION",
+            "start": "C_IN_MATHFRAK_C_INFINITY(E)_FOR_E_IN_THE_EXISTING_SIMPLE_ORDERED_EVENT_SECTION",
             "flow": "THE_EXISTING_FORWARD_RETAINED_CONTINUUM_EULER_DIRAC_FLOW",
             "required_history": (
                 "REMAINS_IN_ETA_METRIC_LAPSE_INERTIA_GAUGE_TRACE_DIRAC_AND_"
                 "CHILD_DOMAINS_UNTIL_A_FINITE_FIRST_POSITIVE_EVENT_ZERO"
             ),
             "required_landing": (
-                "REGULAR_ONE_SIDED_SINGULAR_EVENT_LIMIT_INSIDE_THE_CERTIFIED_"
-                "CONTINUUM_EVENT_TO_CHILD_CHART_WITH_REGULAR_RESET"
+                "CERTIFIED_ONE_SIDED_SINGULAR_EVENT_LIMIT_INSIDE_THE_REGULAR_"
+                "CONTINUUM_EVENT_TO_CHILD_RELATION"
             ),
             "nonempty_proved": False,
             "empty_proved": False,
             "first_certified_local_interval_event_free": True,
+            "local_terminal_hitting_and_reset_relation_certified": True,
         },
         "forward_singular_hitting_orientation": {
-            "hypotheses": (
-                "SIMPLE_EVENT_LINE_HARD_INVERSE_AND_COEFFICIENT_LIMITS_EXIST_"
-                "AND_C_PSI*B_PSI_IS_NONZERO"
-            ),
+            "hypotheses": "CERTIFIED_ON_THE_LOCAL_TERMINAL_EVENT_CHART",
             "identity": "LIM_D_DT(F(T)^2)=2*C_PSI*B_PSI",
-            "F": "F(t)=E_ORD(FLOW_t(C_INFINITY(E)))",
+            "F": "F(t)=E_ORD(FLOW_t(C))_FOR_C_IN_MATHFRAK_C_INFINITY(E)",
             "new_sign_gate": False,
             "N12_initial_child_side": "POSITIVE_AT_96_192_AND_384_POINT_QUADRATURE",
             "continuum_initial_child_side_independently_enclosed": True,
@@ -195,10 +206,12 @@ def main() -> None:
             ]["hitting_product"],
             "formal_reflection_flips_hitting_orientation": True,
             "formal_reflection_creates_a_forward_return": False,
+            "local_terminal_hitting_theorem_certified": True,
         },
         "periodic_point_prerequisites": {
             "nonempty_return_domain": False,
-            "return_into_certified_child_chart": False,
+            "local_reset_relation_regular": True,
+            "global_return_into_certified_child_chart": False,
             "continuous_return_map_on_controlled_iterate_domain": False,
             "compact_trapping_set": False,
             "nonzero_return_degree_or_index": False,
@@ -207,11 +220,11 @@ def main() -> None:
         },
         "localized_failure": {
             "first_retained_action_failure": (
-                "ONE_SIDED_SINGULAR_ORDERED_EVENT_HITTING_AND_RESET_"
-                "REGULARITY_NOT_ESTABLISHED"
+                "GLOBAL_FORWARD_REACHABILITY_OF_THE_CERTIFIED_TERMINAL_"
+                "SINGULAR_EVENT_CHART_BEFORE_PHYSICAL_DOMAIN_EXIT_NOT_ESTABLISHED"
             ),
             "no_return_or_no_orbit_proved": False,
-            "exact_next_dependency": singular["exact_next_dependency"],
+            "exact_next_dependency": singular_reset["exact_next_dependency"],
             "after_nonempty_return": (
                 "PROVE_A_PERIODIC_POINT_BY_AN_ACTION_OWNED_COMPACT_TRAPPING_"
                 "DEGREE_INDEX_OR_EQUIVALENT_EXISTENCE_MECHANISM"

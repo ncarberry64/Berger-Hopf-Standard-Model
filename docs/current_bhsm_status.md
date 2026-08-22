@@ -14,39 +14,41 @@ scale, coefficient, or event definition is used.
 
 - `N12 COMPLETE PERSISTENT CHILD = YES`
 - `CONTINUUM_EVENT_CHILD_CERTIFIED = TRUE`
+- `LOCAL CONTINUUM SINGULAR HITTING/RESET RELATION = CERTIFIED`
+- `PHYSICAL TIME ORIENTATION = ONE, FORWARD`
+- `GLOBAL TERMINAL-CHART REACHABILITY = OPEN`
 - `Q_xi / Delta H = OPEN`
 - `FULL_BHSM_COMPLETE = FALSE`
 
-The matched-parent readout dependency is not another continuum estimate. The
-retained N12 state/action API has no action-owned matched-parent restriction
-`R_P: Phi_(P+C) -> Phi_P^matched`; the event-side Cauchy state is not a
-parent-only reference. The complete common-reference covariant charge also
-requires the retained symplectic boundary improvement. Local Legendre energy
-is therefore diagnostic only and is not `Q_xi`, `Delta H`, mass, or a
-prediction.
+The local singular event is now action-owned: the pole decomposition certifies
+the one-sided terminal hitting law, and the fixed-event child derivative has
+rank 31 in 98 child variables. Reset is therefore a regular set-valued
+continuum relation with fiber dimension 67, or 66 after the existing
+whole-system time quotient. No numerical normal chart is promoted as a
+physical selector.
 
-The v7.1 `R_8to5` and `R_5to4` maps already close the covariant correspondence;
-they are noninjective/set-valued and do not select a unique matched parent.
-Exact next object:
-`DERIVE_ACTION_SELECTED_PARENT_ONLY_LOCUS_AND_SINGLE_VALUED_GAUGE_QUOTIENTED_STATIONARY_SECTION`.
-The first missing datum is the action-owned realization of the abstract
-empty-event identity as an invariant parent-only field/domain. The N12
-event-child normal inverse does not act on the absent parent KKT operator and
-cannot establish this section.
-The reduced N12 event tuple cannot be promoted to the matched parent by forward
-evolution: the retained formation audit leaves restoration versus encapsulation
-unselected, and the existing positive-duration diagnostic evolves the event
-backward rather than certifying a forward parent history.
+The retained positive-duration domain already fixes the unique physical clock
+orientation `dt>0`, `N_boundary>0`, `d_tau=N_boundary dt>0`. Formal reversal,
+when re-expressed as admissible Cauchy data, is a chiral partner evolved in the
+same forward domain. It is not a second temporal sector, backward evolution,
+or gauge.
 
-The post-parent audit finds no executable blind physical observable among the
-currently owned alternatives. Internal scale ratios have no absolute
-anchor/particle map; nonzero charge, a stable clock cycle, and flavor states
-remain unselected. The shortest nonfabricated flagship dependency is
-`ACTION_SELECTED_INTRINSIC_PHYSICAL_STATE_AND_OBSERVABLE_MAP_ON_THE_CERTIFIED_CONTINUUM_CHILD`.
+The active obstruction is global forward reachability. The first certified
+interval stays on the positive event side, while the maximal-flow theorem does
+not select event-chart entry versus an existing domain exit. The reduced
+energy is identically zero, the unreduced energy is noncoercive, and no compact
+forward trap or component-restricted integrated event-transport estimate is
+owned. This does not prove nonreturn.
+
+The matched-parent route also remains unavailable because the retained API has
+no action-owned parent-only restriction; no local energy is `Q_xi`, `Delta H`,
+mass, or a prediction. Exact next object:
+`DERIVE_AN_ACTION_OWNED_COMPACT_FORWARD_TRAPPING_OR_COMPONENT_RESTRICTED_INTEGRATED_EVENT_TRANSPORT_ESTIMATE_ON_AT_LEAST_ONE_FORWARD_ORIENTED_COMPLETE_CHILD_COMPONENT_OR_CERTIFY_ITS_FIRST_EXISTING_PHYSICAL_DOMAIN_EXIT`.
 
 Evidence: [`continuum certificate`](../artifacts/n12_continuum_majorant_effectiveness/BHSM_CONTINUUM_EVENT_CHILD_CERTIFICATE.json),
-[`Q_xi ownership audit`](../artifacts/qxi_relative_energy_preparation/BHSM_N12_MATCHED_PARENT_QXI_OWNERSHIP.json),
-[`matched-parent stationary-section gate`](../artifacts/qxi_relative_energy_preparation/BHSM_N12_MATCHED_PARENT_STATIONARY_SECTION_GATE.json),
+[`singular hitting/reset certificate`](../artifacts/intrinsic_state_selection/BHSM_N12_CONTINUUM_SINGULAR_HITTING_RESET_RELATION.json),
+[`forward-time domain audit`](../artifacts/intrinsic_state_selection/BHSM_N12_FORWARD_TIME_DOMAIN_ORIENTATION_AUDIT.json),
+[`reachability gate`](../artifacts/intrinsic_state_selection/BHSM_N12_FORWARD_TERMINAL_CHART_REACHABILITY_GATE.json),
 and [`post-parent observable audit`](../artifacts/qxi_relative_energy_preparation/BHSM_POST_PARENT_FLAGSHIP_OBSERVABLE_GATE.json).
 
 ## Prior N12 source-tail frontier (superseded)

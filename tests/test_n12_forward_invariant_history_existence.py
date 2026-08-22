@@ -9,15 +9,19 @@ ARTIFACT = ROOT / (
 )
 
 
-def test_forward_return_existence_gate_fails_closed_at_singular_reset() -> None:
+def test_forward_return_existence_gate_fails_closed_at_global_reachability() -> None:
     payload = json.loads(ARTIFACT.read_text(encoding="utf-8"))
 
     assert payload["validation_passed"] is True
     assert payload["exact_return_domain"]["nonempty_proved"] is False
     assert payload["exact_return_domain"]["empty_proved"] is False
     assert payload["localized_failure"]["first_retained_action_failure"] == (
-        "ONE_SIDED_SINGULAR_ORDERED_EVENT_HITTING_AND_RESET_REGULARITY_NOT_ESTABLISHED"
+        "GLOBAL_FORWARD_REACHABILITY_OF_THE_CERTIFIED_TERMINAL_SINGULAR_EVENT_"
+        "CHART_BEFORE_PHYSICAL_DOMAIN_EXIT_NOT_ESTABLISHED"
     )
+    assert payload["exact_return_domain"][
+        "local_terminal_hitting_and_reset_relation_certified"
+    ] is True
     assert payload["periodic_point_prerequisites"][
         "fixed_or_periodic_point_may_be_claimed"
     ] is False

@@ -315,8 +315,8 @@ def main() -> None:
     payload = {
         "artifact": "BHSM_N12_SINGULAR_EVENT_TEMPORAL_CHIRALITY",
         "classification": (
-            "ACTION_OWNED_SINGULAR_HITTING_CHIRALITY_IDENTIFIED;_"
-            "EVENT_TO_CHILD_CORRESPONDENCE_DOES_NOT_SELECT_ONE_SECTOR"
+            "ACTION_OWNED_SINGULAR_TERMINAL_EMERGENT_BOUNDARY_LABEL_IDENTIFIED;_"
+            "NOT_A_PHYSICAL_TIME_ORIENTATION_SELECTOR"
         ),
         "physical_time": "ORIENTED_AND_FORWARD",
         "formal_reflection_is_gauge": False,
@@ -332,7 +332,7 @@ def main() -> None:
             "soft_cubic": "C_PSI=D3L[(0,PSI),(0,PSI),(0,PSI)]",
             "limit": "LIM_(LAMBDA_TO_0)_LAMBDA*LAMBDA_DOT=C_PSI*B_PSI",
             "squared_limit": "LIM_D_DT(LAMBDA^2)=2*C_PSI*B_PSI",
-            "temporal_chirality_label": "CHI_HIT=SIGN(C_PSI*B_PSI)",
+            "singular_boundary_orientation_label": "CHI_HIT=SIGN(C_PSI*B_PSI)",
             "negative_interpretation": "FORWARD_TERMINAL_APPROACH",
             "positive_interpretation": "FORWARD_EMERGENT_SIDE",
             "new_event_gate": False,
@@ -357,11 +357,13 @@ def main() -> None:
                 equivariance["zero_set_result"]["global_branch_uniqueness_claimed"] is False
                 and equivariance["physical_domain"]["R_related_states_physically_identified"] is False
             ),
-            "one_temporal_chirality_sector_action_selected": False,
-            "two_sectors_action_proved_physically_equivalent": False,
-            "two_sectors_quotiented": False,
-            "represented_N12_event_sector": "FORWARD_TERMINAL_APPROACH",
-            "reflected_sector": "FORWARD_EMERGENT_SIDE",
+            "number_of_physical_time_orientations": 1,
+            "boundary_role_sign_selected_by_event_rows": False,
+            "reflected_state_is_second_temporal_orientation": False,
+            "chiral_state_pair_action_proved_physically_equivalent": False,
+            "chiral_state_pair_quotiented": False,
+            "represented_N12_event_role": "FORWARD_TERMINAL_APPROACH",
+            "reflected_event_role": "FORWARD_EMERGENT_SIDE",
         },
         "exact_next_dependency": (
             "DERIVE_AND_CERTIFY_THE_EXISTING_ACTION_OWNED_ONE_SIDED_SINGULAR_"
@@ -385,7 +387,7 @@ def main() -> None:
         "center_hitting_product": center["hitting_product"],
         "forcing_absolute_lower": forcing_abs_lower,
         "cubic_absolute_lower": cubic_abs_lower,
-        "event_to_child_selects_one_sector": False,
+        "event_rows_select_terminal_or_emergent_role": False,
         "validation_passed": payload["validation_passed"],
     }, indent=2, sort_keys=True))
 

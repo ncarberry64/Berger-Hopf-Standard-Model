@@ -26,7 +26,9 @@ def test_singular_event_orientation_is_action_owned_but_not_selected() -> None:
     assert payload["center_and_cross_quadrature"]["96"]["hitting_product"] < 0.0
     assert payload["formal_reflection"]["hitting_product_reflected"] > 0.0
     conclusion = payload["event_to_child_conclusion"]
-    assert conclusion["one_temporal_chirality_sector_action_selected"] is False
-    assert conclusion["two_sectors_action_proved_physically_equivalent"] is False
-    assert conclusion["two_sectors_quotiented"] is False
+    assert conclusion["number_of_physical_time_orientations"] == 1
+    assert conclusion["boundary_role_sign_selected_by_event_rows"] is False
+    assert conclusion["reflected_state_is_second_temporal_orientation"] is False
+    assert conclusion["chiral_state_pair_action_proved_physically_equivalent"] is False
+    assert conclusion["chiral_state_pair_quotiented"] is False
 

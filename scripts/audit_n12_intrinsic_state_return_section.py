@@ -42,6 +42,14 @@ SINGULAR_EVENT = ROOT / (
     "artifacts/intrinsic_state_selection/"
     "BHSM_N12_SINGULAR_EVENT_TEMPORAL_CHIRALITY.json"
 )
+SINGULAR_RESET = ROOT / (
+    "artifacts/intrinsic_state_selection/"
+    "BHSM_N12_CONTINUUM_SINGULAR_HITTING_RESET_RELATION.json"
+)
+TIME_DOMAIN = ROOT / (
+    "artifacts/intrinsic_state_selection/"
+    "BHSM_N12_FORWARD_TIME_DOMAIN_ORIENTATION_AUDIT.json"
+)
 RESULT = ROOT / (
     "artifacts/intrinsic_state_selection/"
     "BHSM_N12_INTRINSIC_STATE_RETURN_SECTION_GATE.json"
@@ -56,7 +64,8 @@ def _sha256(path: Path) -> str:
 def main() -> None:
     inputs = (
         STATE, DIRECT, CONTINUUM, NORMAL, CROSS, COLLECTIVE, CLOCK,
-        NORMAN, RELATIVE_PERIODIC, SINGULAR_EVENT, THEOREM,
+        NORMAN, RELATIVE_PERIODIC, SINGULAR_EVENT, SINGULAR_RESET,
+        TIME_DOMAIN, THEOREM,
     )
     missing = [str(path) for path in inputs if not path.is_file()]
     if missing:
@@ -83,6 +92,8 @@ def main() -> None:
     norman = json.loads(NORMAN.read_text(encoding="utf-8"))
     relative_periodic = json.loads(RELATIVE_PERIODIC.read_text(encoding="utf-8"))
     singular = json.loads(SINGULAR_EVENT.read_text(encoding="utf-8"))
+    singular_reset = json.loads(SINGULAR_RESET.read_text(encoding="utf-8"))
+    time_domain = json.loads(TIME_DOMAIN.read_text(encoding="utf-8"))
 
     scope = cross["normal_section_S2_compactness_scope"]
     cycle = cross["N6_reduced_local_energy_readout_reconnaissance"]
@@ -129,10 +140,28 @@ def main() -> None:
             singular["ordinary_event_transport_correction"]["status"]
             == "UNDEFINED_AT_THE_EXACT_EVENT_BECAUSE_D(E)_HAS_KERNEL_PSI"
         ),
-        "singular_hitting_reset_regularization_remains_open": True,
+        "local_singular_hitting_reset_relation_is_certified": (
+            singular_reset["validation_passed"] is True
+            and singular_reset["reset_correspondence"][
+                "regular_local_continuum_correspondence_proved"
+            ] is True
+        ),
+        "reset_relation_is_not_a_physical_single_valued_selector": (
+            singular_reset["reset_correspondence"][
+                "single_valued_physical_reset_map_proved"
+            ] is False
+        ),
+        "single_forward_physical_time_orientation_is_already_fixed": (
+            time_domain["admissible_clock_domain"][
+                "number_of_physical_time_orientations"
+            ] == 1
+            and time_domain["formal_reflection_reclassification"][
+                "requires_action_selection_of_time_orientation"
+            ] is False
+        ),
     }
 
-    first_missing = singular["exact_next_dependency"]
+    first_missing = singular_reset["exact_next_dependency"]
     payload = {
         "artifact": "BHSM_N12_INTRINSIC_STATE_RETURN_SECTION_GATE",
         "classification": (
@@ -174,6 +203,8 @@ def main() -> None:
                 "existing_physical_gates"
             ]["corrected_action_owned_ordered_branch"],
             "one_complete_child_normal_representative_certified": True,
+            "physical_time_orientation_already_fixed": True,
+            "temporal_orientation_selection_open": False,
             "one_intrinsic_physical_point_or_orbit_selected": False,
             "reason": (
                 "the retained physical tangent moduli are not fixed by the normal "
@@ -196,8 +227,9 @@ def main() -> None:
             ),
             "reuse_conclusion": (
                 "THE_CANDIDATE_BOUNDARY_RETURN_RELATION_HAS_THE_EXISTING_"
-                "PERSISTENCE_TYPE;_ITS_SINGULAR_HITTING_RESET_REGULARITY_IS_"
-                "NOT_YET_PROVED_AND_FORMATION_OR_DE_ENVELOPMENT_IS_NOT_REOPENED"
+                "PERSISTENCE_TYPE;_ITS_LOCAL_SINGULAR_HITTING_AND_RESET_"
+                "RELATION_ARE_CERTIFIED_BUT_FORWARD_REACHABILITY_IS_OPEN_AND_"
+                "FORMATION_OR_DE_ENVELOPMENT_IS_NOT_REOPENED"
             ),
         },
         "derived_first_return_section": {
@@ -210,12 +242,13 @@ def main() -> None:
                 "E_ord(Y)=THE_ALREADY_SELECTED_SIMPLE_ORDERED_EULER_DIRAC_"
                 "EIGENVALUE_EQUALS_ZERO"
             ),
-            "existing_event_to_child_map": (
-                "C_infinity:E_prime_TO_THE_CERTIFIED_COMPLETE_PERSISTENT_CHILD_"
-                "RECONSTRUCTION_AT_E_prime"
+            "existing_event_to_child_relation": (
+                "MATHFRAK_C_INFINITY(E_prime)=THE_REGULAR_CERTIFIED_COMPLETE_"
+                "PERSISTENT_CHILD_FIBER_AT_E_prime"
             ),
             "map": (
-                "P([E,C(E)])=[E_prime,C_infinity(E_prime)]_WHERE_"
+                "P([E,C])_IS_THE_RELATION_[E_prime,C_prime]_WITH_C_prime_IN_"
+                "MATHFRAK_C_INFINITY(E_prime)_WHERE_"
                 "E_prime=LIM_t_UP_TO_tau_Flow_retained^t(C(E))_AND_tau_IS_"
                 "THE_FIRST_STRICTLY_POSITIVE_SINGULAR_EVENT_HIT"
             ),
@@ -229,9 +262,9 @@ def main() -> None:
             "required_existing_properties_to_close": [
                 "RETAINED_CHILD_FLOW_EXISTS_AND_REMAINS_ETA_DIRAC_ADMISSIBLE_UNTIL_tau",
                 "A_FINITE_STRICTLY_POSITIVE_FIRST_SINGULAR_HIT_tau_EXISTS",
-                "THE_ONE_SIDED_HITTING_PRODUCT_C_PSI_B_PSI_IS_NONZERO",
-                "THE_HITTING_LIMIT_AND_RESET_DEPEND_REGULARLY_ON_INITIAL_DATA",
-                "THE_CERTIFIED_CONTINUUM_EVENT_TO_CHILD_MAP_APPLIES_AT_E_prime",
+                "THE_CERTIFIED_LOCAL_ONE_SIDED_HITTING_THEOREM_APPLIES_AT_THE_TERMINAL_CHART",
+                "THE_REGULAR_CONTINUUM_RESET_RELATION_APPLIES_AT_E_prime",
+                "AN_ACTION_OWNED_ORBIT_SELECTION_MECHANISM_ACTS_ON_THE_RELATION",
                 "THE_RESULT_DESCENDS_TO_THE_EXISTING_GAUGE_TIME_QUOTIENT",
             ],
             "return_existence_or_transversality_proved": False,
@@ -239,7 +272,10 @@ def main() -> None:
             "new_clock_period_event_equation_constraint_or_gate_added": False,
             "ordinary_Poincare_map_theorem": "RETRACTED_AT_SINGULAR_EVENT",
             "reason": "D_E_ORD(E_PRIME)V(E_PRIME)_IS_UNDEFINED_BECAUSE_D(E_PRIME)_IS_SINGULAR",
-            "conditional_singular_boundary_hitting_reset_theorem": "NOT_YET_PROVED",
+            "conditional_singular_boundary_hitting_reset_theorem": (
+                "PROVED_LOCALLY_ON_THE_CERTIFIED_TERMINAL_CHART"
+            ),
+            "reset_object_type": "REGULAR_SET_VALUED_RELATION_NOT_SINGLE_VALUED_MAP",
             "one_sided_action_identity": "LIM_D_DT(E_ORD^2)=2*C_PSI*B_PSI",
             "return_time_derivative": None,
             "proof": "theory/n12_intrinsic_first_return_section.md",
