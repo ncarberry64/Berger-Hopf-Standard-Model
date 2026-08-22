@@ -25,8 +25,10 @@ requires the retained symplectic boundary improvement. Local Legendre energy
 is therefore diagnostic only and is not `Q_xi`, `Delta H`, mass, or a
 prediction.
 
+The v7.1 `R_8to5` and `R_5to4` maps already close the covariant correspondence;
+they are noninjective/set-valued and do not select a unique matched parent.
 Exact next object:
-`DERIVE_THE_ACTION_OWNED_MATCHED_PARENT_RESTRICTION_R_P_FROM_THE_COMPLETE_PARENT_COMPOSITE_ACTION`.
+`DERIVE_ACTION_SELECTED_PARENT_ONLY_LOCUS_AND_SINGLE_VALUED_GAUGE_QUOTIENTED_STATIONARY_SECTION`.
 
 Evidence: [`continuum certificate`](../artifacts/n12_continuum_majorant_effectiveness/BHSM_CONTINUUM_EVENT_CHILD_CERTIFICATE.json)
 and [`Q_xi ownership audit`](../artifacts/qxi_relative_energy_preparation/BHSM_N12_MATCHED_PARENT_QXI_OWNERSHIP.json).

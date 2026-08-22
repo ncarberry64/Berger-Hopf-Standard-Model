@@ -26,9 +26,10 @@ fail closed. The retained N12 state/action API has no action-owned matched-paren
 restriction `R_P: Phi_(P+C) -> Phi_P^matched`, and the event half is not a
 parent-only reference. The available local Legendre energy is therefore not
 `Q_xi`, `Delta H`, mass, or a prediction. The first open action-owned dependency
-is to derive `R_P` from the complete parent-composite action with one common
-interface, generator, clock, domain, orientation, and subtraction convention;
-the boundary-improved covariant charge follows.
+is to derive the action-selected parent-only locus and a single-valued,
+gauge-quotiented stationary section of the existing v7.1 correspondence over
+one common interface, generator, clock, domain, orientation, and subtraction
+convention; the boundary-improved covariant charge follows.
 
 | Scientific gate | Status |
 | --- | --- |
@@ -43,7 +44,7 @@ and [`reuse table`](artifacts/qxi_relative_energy_preparation/BHSM_QXI_RELATIVE_
 
 Exact next object:
 
-`DERIVE_THE_ACTION_OWNED_MATCHED_PARENT_RESTRICTION_R_P_FROM_THE_COMPLETE_PARENT_COMPOSITE_ACTION`
+`DERIVE_ACTION_SELECTED_PARENT_ONLY_LOCUS_AND_SINGLE_VALUED_GAUGE_QUOTIENTED_STATIONARY_SECTION`
 
 ## Prior N12 source-tail checkpoint (superseded by the continuum certificate above)
 

@@ -5,8 +5,9 @@
 1. Preserve the certified N3/N4/N5/N6/N12 finite children and the now-certified
    resolution-independent event-child construction. Do not reopen the closed
    action-Galerkin/compact-tail/nonlinear-radius proof unless contradicted.
-2. Derive the action-owned matched-parent restriction
-   `R_P: Phi_(P+C) -> Phi_P^matched` from the complete parent-composite action,
+2. On the retained v7.1 noninjective/set-valued reduction correspondence,
+   derive an action-selected parent-only locus and single-valued,
+   gauge-quotiented stationary section `R_P: Phi_(P+C) -> Phi_P^matched`,
    preserving one interface, generator, clock, domain, orientation, and
    subtraction convention. The event-side state is not this reference.
 3. Complete the boundary-improved covariant `Q_xi` assembler, evolve the

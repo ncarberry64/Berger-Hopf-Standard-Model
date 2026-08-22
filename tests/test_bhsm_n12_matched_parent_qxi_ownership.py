@@ -25,12 +25,18 @@ def test_qxi_ownership_gate_is_precisely_fail_closed():
     assert payload["required_boundary_improved_charge"][
         "complete_common_reference_Q_xi_assembler_available"
     ] is False
-    assert payload["upstream_parent_composite_action_provenance"][
-        "master_action_closed"
-    ] is False
-    assert payload["upstream_parent_composite_action_provenance"][
-        "exact_missing_object"
-    ] == "COVARIANT_BULK_BOUNDARY_REDUCTION_FUNCTOR"
+    provenance = payload["upstream_parent_composite_action_provenance"]
+    assert provenance["stratified_master_action_closed"] is True
+    assert provenance["R_8to5_defined"] is True
+    assert provenance["R_5to4_defined"] is True
+    assert provenance["R_8to5_discarded_component"] == "Phi_perp"
+    assert provenance["R_5to4_global_uniqueness_claimed"] is False
+    assert provenance["Lyapunov_Schmidt_coordinates_retained"] is True
+    assert provenance["boundary_localized_parent_maps"] == {
+        "A_SM": None,
+        "H": None,
+        "Psi": None,
+    }
     assert all(
         row["is_Q_xi"] is False and row["is_Delta_H"] is False
         for row in payload["available_local_diagnostic_only"]
