@@ -2,13 +2,13 @@
 
 [![CI](https://github.com/ncarberry64/Berger-Hopf-Standard-Model/actions/workflows/ci.yml/badge.svg)](https://github.com/ncarberry64/Berger-Hopf-Standard-Model/actions/workflows/ci.yml)
 [![Latest archival release](https://img.shields.io/github/v/release/ncarberry64/Berger-Hopf-Standard-Model?label=archival%20release)](https://github.com/ncarberry64/Berger-Hopf-Standard-Model/releases/latest)
-[![Current research status](https://img.shields.io/badge/current%20research-N16%20coupled%20tail%20diagnostic-orange)](docs/current_bhsm_status.md)
+[![Current research status](https://img.shields.io/badge/current%20research-N12%20continuum%20majorant%20localized-orange)](docs/current_bhsm_status.md)
 [![Python 3.10+](https://img.shields.io/badge/python-3.10%2B-3776AB)](https://www.python.org/)
 [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.20663419.svg)](https://doi.org/10.5281/zenodo.20663419)
 
 BHSM is an independent artifact-backed computational framework and mathematical-physics research program investigating whether Standard Model structure and particle-like dynamics can be derived from Berger-Hopf boundary/envelopment geometry and a common action architecture.
 
-## Current Research Frontier -- N16 coupled-tail diagnostic from the certified N12 anchor
+## Current Research Frontier -- N12 continuum-majorant effectiveness from the certified anchor
 
 BHSM now has a directly corrected `N=12` complete persistent child under the
 unchanged retained 57-row finite-resolution map. Its independently evaluated
@@ -28,6 +28,19 @@ normal direction. This is a finite structural diagnostic, not an N16 root;
 the hard trial allows the coupled constraint/boundary norm to move from
 `0.12021432656497034` to `0.14718333891190302` while the independently
 evaluated total merit falls. No componentwise monotonicity was imposed.
+
+The subsequent effectiveness audit now localizes the first non-numerical
+constant required by the continuum radii proof. The qualitative
+source-restricted closed-range theorem remains valid, but its principal gap,
+compactness, index zero, and kernel exclusion do not determine a numerical
+right-inverse bound `K`. A rank-one compact counterfamily proves that logical
+gap without asserting a BHSM obstruction. On the certified N12 history, the
+unchanged doubled Calderon symbol remains transverse over the sampled
+positive duration, with gap `0.029146859835472938` at the event and
+`0.02882113423436863` after `1e-10` coordinate time. Those samples are not an
+interval proof. The missing action-owned object is an effective observation
+modulus: a finite-core whole-interval lower bound `c_M0` plus an explicit
+source-tail observation perturbation `epsilon_obs(M0) < c_M0`.
 
 | Scientific gate | Status |
 | --- | --- |
@@ -97,9 +110,11 @@ Exact next object:
 
 `ENCLOSE_THE_SOURCE_RESTRICTED_N12_TO_INFINITY_NONLINEAR_EVENT_CHILD_RADII_POLYNOMIAL_WITH_EXPLICIT_ACTION_OWNED_C_r_K_M2_AND_EXISTING_ETA_EVENT_DIRAC_PERSISTENCE_NEIGHBORHOODS`
 
-The first missing explicit constant inside that unchanged dependency is the
-validated source-restricted positive-duration soft normal right-inverse bound
-`K`. The N16 probe is not promoted as a complete child or continuum state.
+The first missing object inside that unchanged dependency is the effective
+source-restricted positive-duration observation compactness modulus. It must
+produce `K <= 1/(c_M0-epsilon_obs(M0))` from retained-action bounds, not from
+finite-probe fitting. The N16 probe and sampled N12 history are not promoted
+as complete children, continuum states, or interval certificates.
 
 ## Historical corrected-Rayleigh N=3 snapshot
 

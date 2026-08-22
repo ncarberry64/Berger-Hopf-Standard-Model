@@ -1,6 +1,6 @@
 # Current BHSM status
 
-## Authoritative frontier: N16 coupled-tail diagnostic from the certified N12 anchor
+## Authoritative frontier: N12 continuum-majorant effectiveness localization
 
 The unchanged retained N12 57-row event/child map now has a directly corrected
 complete persistent child. Its independently evaluated residual is
@@ -19,6 +19,18 @@ to improve componentwise and moves from `0.12021432656497034` to
 `0.08926177036476479` with paired response `0.00043277842426231244`.
 It remains category 2, a dynamically controlled normal direction. The N16
 state is a diagnostic proposal, not a complete-child root.
+
+The subsequent effectiveness audit identifies why the existing qualitative
+closed-range theorem does not yet evaluate the nonlinear continuum radius.
+The principal gap, compact lower-order part, index zero, and kernel exclusion
+do not numerically bound the inverse; an explicit rank-one compact
+counterfamily demonstrates this without invalidating BHSM's qualitative
+theorem. The required retained-action datum is an effective positive-duration
+observation modulus. On the certified N12 pair, the unchanged doubled
+Calderon gap remains positive from `0.029146859835472938` to
+`0.02882113423436863` over the sampled `1e-10` parent-backward/child-forward
+history while constraints and eta remain admissible. The samples are not
+promoted as a whole-interval enclosure.
 
 - `N3 COMPLETE PERSISTENT CHILD = YES`
 - `N4 COMPLETE PERSISTENT CHILD = YES`
@@ -70,8 +82,10 @@ the soft channel remains category 2: a dynamically controlled normal line.
 Exact next dependency:
 `ENCLOSE_THE_SOURCE_RESTRICTED_N12_TO_INFINITY_NONLINEAR_EVENT_CHILD_RADII_POLYNOMIAL_WITH_EXPLICIT_ACTION_OWNED_C_r_K_M2_AND_EXISTING_ETA_EVENT_DIRAC_PERSISTENCE_NEIGHBORHOODS`.
 
-The first missing quantitative constant inside this dependency is a validated
-source-restricted positive-duration soft normal right-inverse bound `K`.
+The first missing quantitative object is an action-owned whole-interval
+finite-core lower bound `c_M0` together with a source-tail observation
+perturbation `epsilon_obs(M0) < c_M0`. These give the required explicit
+right-inverse bound `K <= 1/(c_M0-epsilon_obs(M0))`.
 
 `Q_xi`, relative `Delta H`, action-selected families, and a new frozen blind
 observable remain downstream and open. The following v21.37 discussion is

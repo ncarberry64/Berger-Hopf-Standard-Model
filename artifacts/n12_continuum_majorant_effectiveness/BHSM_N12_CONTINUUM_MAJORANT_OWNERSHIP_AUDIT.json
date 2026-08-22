@@ -1,0 +1,81 @@
+{
+  "CONTINUUM_EVENT_CHILD_CERTIFIED": false,
+  "FULL_BHSM_COMPLETE": false,
+  "classification": "N12_TO_INFINITY_RADII_CONSTANT_OWNERSHIP_AUDITED;_QUALITATIVE_CLOSED_RANGE_IS_NON_EFFECTIVE_AND_THE_FIRST_MISSING_OBJECT_IS_THE_POSITIVE_DURATION_OBSERVATION_COMPACTNESS_MODULUS",
+  "constants": {
+    "C_r": {
+      "analytic_exponent_owned": true,
+      "explicit_validated_upper_bound": null,
+      "finite_samples_are_an_upper_bound": false,
+      "owned_law": "norm(r_n)_weak<=C_r*n^-2",
+      "sampled_lower_bounds_on_any_valid_C_r": {
+        "child": {
+          "mode": 12,
+          "probe_order": 64,
+          "value": 4.662397193359537
+        },
+        "event": {
+          "mode": 13,
+          "probe_order": 64,
+          "value": 3.041249588097654
+        }
+      },
+      "status": "OPEN_NON_EFFECTIVE_CONSTANT"
+    },
+    "K": {
+      "N16_instantaneous_paired_soft_reciprocal": 2310.6512338375896,
+      "N16_instantaneous_paired_soft_response": 0.00043277842426231244,
+      "N16_map_is_the_positive_duration_continuum_observation_map": false,
+      "explicit_positive_duration_continuum_inverse_bound": null,
+      "finite_static_Calderon_inverse_diagnostics": {
+        "N12": 34.30901324001149,
+        "N48_source_corrected_probe": 108.40279791555318,
+        "N64_source_corrected_probe": 260.5341850548134
+      },
+      "finite_static_gaps_used_as_uniform_K": false,
+      "principal_compact_cutoff_explicitly_enclosed": false,
+      "principal_formula": "4/(sqrt(29)-5)",
+      "principal_high_tail_bound": 10.385164807134512,
+      "status": "OPEN_NON_EFFECTIVE_COMPACTNESS_MODULUS"
+    },
+    "M2": {
+      "finite_N12_ball_radius": 1e-11,
+      "finite_N12_local_Z2": 687225838.7567053,
+      "finite_N12_local_bound_promoted_as_continuum_bound": false,
+      "status": "OPEN_CONTINUUM_MAJORANT",
+      "uniform_source_restricted_continuum_M2": null
+    },
+    "physical_neighborhood": {
+      "continuum_tail_transfer_radius": null,
+      "finite_N12_action_radius": 1e-11,
+      "finite_N12_eta_lower_bound": 0.9999998807924174,
+      "finite_N12_root_ball_promoted_as_tail_neighborhood": false,
+      "status": "OPEN_CONTINUUM_TRANSFER"
+    }
+  },
+  "effective_compactness_lemma": {
+    "conclusion": "c_infinity>=c_M0-epsilon_obs(M0)>0_AND_K<=1/(c_M0-epsilon_obs(M0))",
+    "is_a_lemma_in_the_existing_closed_range_proof": true,
+    "missing_first_input": "EXPLICIT_RATE_FROM_THE_INVERSE_SQUARE_SOURCE_RESTRICTED_S2_TAIL_TO_THE_POSITIVE_DURATION_OBSERVATION_OPERATOR",
+    "name": "EFFECTIVE_SOURCE_RESTRICTED_POSITIVE_DURATION_COMPACTNESS_MODULUS",
+    "new_proxy_theorem": false,
+    "required_construction": [
+      "CHOOSE_A_FINITE_ACTION_OWNED_CUTOFF_M0",
+      "ENCLOSE_THE_SOURCE_SELECTED_POSITIVE_DURATION_OBSERVATION_LOWER_BOUND_c_M0_ON_THE_EXISTING_NORMAL_QUOTIENT",
+      "DERIVE_AN_EXPLICIT_ACTION_OWNED_TAIL_PERTURBATION_epsilon_obs(M0)_FROM_C_r_AND_THE_STRONG_GRAPH_PROPAGATOR_RATE",
+      "PROVE_epsilon_obs(M0)<c_M0"
+    ]
+  },
+  "radii_polynomial_rigorously_evaluable": false,
+  "validation": {
+    "N16_hard_response_remains_closed": true,
+    "N16_soft_channel_remains_category_2": true,
+    "conditional_high_tail_inverse_reproduced": true,
+    "incompatible_map_constants_not_multiplied": true,
+    "no_finite_probe_fit_promoted": true,
+    "no_new_equation_constraint_gate_scale_fit_or_event_definition": true,
+    "nonlinear_continuum_radii_not_evaluated_with_missing_inputs": true,
+    "principal_gap_reproduced": true
+  },
+  "validation_passed": true
+}

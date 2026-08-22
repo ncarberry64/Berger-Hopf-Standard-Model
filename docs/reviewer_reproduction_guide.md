@@ -1,6 +1,33 @@
 # Reviewer Reproduction Guide
 
-## Current N16 coupled momentum-response diagnostic
+## Current N12 continuum-majorant effectiveness checkpoint
+
+Run the focused deterministic checkpoint first:
+
+```bash
+python -m pytest -q tests/test_bhsm_n12_effective_inverse_localization.py tests/test_bhsm_n12_continuum_majorant_checkpoint.py
+python tools/audit_forbidden_claims.py
+python tools/audit_bhsm_status.py
+python tools/audit_frozen_prediction_integrity.py
+git diff --check
+```
+
+Inspect the [continuum-majorant checkpoint manifest](../artifacts/n12_continuum_majorant_effectiveness/BHSM_N12_CONTINUUM_MAJORANT_CHECKPOINT_MANIFEST.json).
+It hash-locks the constant-ownership audit, effective-inverse localization,
+and positive-duration N12 symbol history. Reproducing the three JSON files
+twice must give byte-identical output. The history is a sampled diagnostic,
+not a whole-interval proof; the checkpoint does not certify a continuum child.
+
+The deterministic PowerShell replay is:
+
+```powershell
+$env:PYTHONPATH='src'; $env:BHSM_N12_CONTINUUM_MAJORANT_OWNERSHIP_RESULT='artifacts/n12_continuum_majorant_effectiveness/BHSM_N12_CONTINUUM_MAJORANT_OWNERSHIP_AUDIT.json'; python scripts/audit_n12_continuum_majorant_ownership.py
+python scripts/materialize_n12_effective_inverse_localization.py
+$env:BHSM_N12_HISTORY_CALDERON_RESULT='artifacts/n12_continuum_majorant_effectiveness/BHSM_N12_POSITIVE_DURATION_CALDERON_HISTORY.json'; python scripts/audit_n12_positive_duration_calderon_history.py
+python scripts/materialize_n12_continuum_majorant_checkpoint.py
+```
+
+## Prior N16 coupled momentum-response diagnostic
 
 Run the hash-locked finite diagnostic first:
 

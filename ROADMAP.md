@@ -17,9 +17,13 @@
 4. Enclose the explicit action-owned Ward-source constant, finite-core-plus-tail
    inverse, full-action Hessian remainder, and existing physical-neighborhood
    radii in one nonlinear N12-to-infinity event-child radii polynomial. The
-   N16 paired audit closes the finite hard momentum response; obtain the
-   explicit source-restricted positive-duration soft normal inverse bound `K`
-   without treating the N16 probe as a root.
+   N16 paired audit closes the finite hard momentum response. The effectiveness
+   audit proves that qualitative compactness does not numerically determine
+   `K`; now enclose a finite-core whole-interval observation bound `c_M0` and
+   an inverse-square-tail observation perturbation
+   `epsilon_obs(M0) < c_M0`, so that
+   `K <= 1/(c_M0-epsilon_obs(M0))`. Do not treat finite probes as roots or fit
+   the missing constants from them.
 5. Promote a resolution-independent child only after the analytic tail and
    nonlinear radius close. Do not promote zero-padded probes as roots.
 6. Construct the existing complete composite-minus-matched-parent `Q_xi` on a

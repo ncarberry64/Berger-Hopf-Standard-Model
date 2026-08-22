@@ -1,6 +1,24 @@
 # BHSM Artifact Index
 
-## Current N16 coupled momentum-response diagnostic
+## Current N12 continuum-majorant effectiveness checkpoint
+
+- [`BHSM_N12_CONTINUUM_MAJORANT_CHECKPOINT_MANIFEST.json`](artifacts/n12_continuum_majorant_effectiveness/BHSM_N12_CONTINUUM_MAJORANT_CHECKPOINT_MANIFEST.json)
+- [`BHSM_N12_CONTINUUM_MAJORANT_OWNERSHIP_AUDIT.json`](artifacts/n12_continuum_majorant_effectiveness/BHSM_N12_CONTINUUM_MAJORANT_OWNERSHIP_AUDIT.json)
+- [`BHSM_N12_EFFECTIVE_INVERSE_LOCALIZATION.json`](artifacts/n12_continuum_majorant_effectiveness/BHSM_N12_EFFECTIVE_INVERSE_LOCALIZATION.json)
+- [`BHSM_N12_POSITIVE_DURATION_CALDERON_HISTORY.json`](artifacts/n12_continuum_majorant_effectiveness/BHSM_N12_POSITIVE_DURATION_CALDERON_HISTORY.json)
+- Reproduction: [`audit_n12_continuum_majorant_ownership.py`](scripts/audit_n12_continuum_majorant_ownership.py), [`materialize_n12_effective_inverse_localization.py`](scripts/materialize_n12_effective_inverse_localization.py), and [`audit_n12_positive_duration_calderon_history.py`](scripts/audit_n12_positive_duration_calderon_history.py)
+- Focused tests: [`test_bhsm_n12_effective_inverse_localization.py`](tests/test_bhsm_n12_effective_inverse_localization.py) and [`test_bhsm_n12_continuum_majorant_checkpoint.py`](tests/test_bhsm_n12_continuum_majorant_checkpoint.py)
+
+The checkpoint preserves the qualitative source-restricted closed-range
+theorem and localizes its first non-effective constant. Qualitative compactness
+and the principal gap do not determine a numerical continuum inverse. The
+sampled N12 positive-duration symbol remains transverse but is not a rigorous
+interval enclosure. The exact next lemma must supply an action-owned
+finite-core observation lower bound and a smaller inverse-square-tail
+observation perturbation. No continuum child or downstream readout is
+promoted.
+
+## Prior N16 coupled momentum-response diagnostic
 
 - [`BHSM_N16_COUPLED_MOMENTUM_RESPONSE_CHECKPOINT_MANIFEST.json`](artifacts/n16_coupled_momentum_response/BHSM_N16_COUPLED_MOMENTUM_RESPONSE_CHECKPOINT_MANIFEST.json)
 - [`BHSM_N16_COUPLED_MOMENTUM_RESPONSE_AUDIT.json`](artifacts/n16_coupled_momentum_response/BHSM_N16_COUPLED_MOMENTUM_RESPONSE_AUDIT.json)

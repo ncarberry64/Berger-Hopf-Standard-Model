@@ -1,0 +1,47 @@
+{
+  "checkpoint": "N12_CONTINUUM_MAJORANT_EFFECTIVENESS_LOCALIZED",
+  "claims": {
+    "CONTINUUM_EVENT_CHILD_CERTIFIED": false,
+    "FULL_BHSM_COMPLETE": false,
+    "N12_static_Calderon_gap": 0.029146859835472938,
+    "category_3_collapse_sequence_constructed": false,
+    "minimum_sampled_positive_duration_gap": 0.02882113423436863,
+    "principal_high_tail_bound_is_the_full_inverse_K": false,
+    "qualitative_source_restricted_closed_range_invalidated": false,
+    "sampled_duration": 1e-10,
+    "sampled_history_is_an_interval_proof": false,
+    "soft_channel_classification": "CATEGORY_2_DYNAMICALLY_CONTROLLED_NORMAL_DIRECTION"
+  },
+  "classification": "QUALITATIVE_SOURCE_RESTRICTED_CLOSED_RANGE_RETAINED;_NUMERICAL_CONTINUUM_RADIUS_REQUIRES_AN_EFFECTIVE_POSITIVE_DURATION_OBSERVATION_MODULUS",
+  "effective_dependency": {
+    "conclusion_if_closed": "K<=1/(c_M0-epsilon_obs(M0))_WHEN_epsilon_obs(M0)<c_M0",
+    "finite_core_lemma": "ENCLOSE_THE_N12_POSITIVE_DURATION_CALDERON_SYMBOL_GAP_ON_A_WHOLE_INTERVAL_WITH_AN_ACTION_OWNED_TIME_LIPSCHITZ_MAJORANT",
+    "first_missing_object": "EFFECTIVE_SOURCE_RESTRICTED_POSITIVE_DURATION_OBSERVATION_COMPACTNESS_MODULUS",
+    "tail_lemma": "BOUND_THE_INVERSE_SQUARE_SOURCE_RESTRICTED_STRONG_GRAPH_TAIL_IN_THE_POSITIVE_DURATION_OBSERVATION_NORM"
+  },
+  "files": [
+    {
+      "bytes": 3513,
+      "path": "artifacts/n12_continuum_majorant_effectiveness/BHSM_N12_CONTINUUM_MAJORANT_OWNERSHIP_AUDIT.json",
+      "sha256": "8ea2551a97aa09fe0632ca3e9bca5f97fa30ac4d5807ee7462b435f46489cef6"
+    },
+    {
+      "bytes": 3816,
+      "path": "artifacts/n12_continuum_majorant_effectiveness/BHSM_N12_EFFECTIVE_INVERSE_LOCALIZATION.json",
+      "sha256": "653f86d026755ecace17897487b111422826aa0465d526e04520c8ab96f75025"
+    },
+    {
+      "bytes": 2669,
+      "path": "artifacts/n12_continuum_majorant_effectiveness/BHSM_N12_POSITIVE_DURATION_CALDERON_HISTORY.json",
+      "sha256": "c80017e7644aa951c35bf733d17d1f67ca156a91b3858a074306bd21c98d4bb6"
+    }
+  ],
+  "promotion_boundary": "THIS_CHECKPOINT LOCALIZES THE FIRST NON_EFFECTIVE CONSTANT. IT DOES NOT CERTIFY A CONTINUUM CHILD, Q_XI, DELTA_H, MASS, FAMILY SELECTION, OR A PREDICTION.",
+  "reproduction": [
+    "$env:PYTHONPATH='src'; $env:BHSM_N12_CONTINUUM_MAJORANT_OWNERSHIP_RESULT='artifacts/n12_continuum_majorant_effectiveness/BHSM_N12_CONTINUUM_MAJORANT_OWNERSHIP_AUDIT.json'; python scripts/audit_n12_continuum_majorant_ownership.py",
+    "$env:PYTHONPATH='src'; python scripts/materialize_n12_effective_inverse_localization.py",
+    "$env:PYTHONPATH='src'; $env:BHSM_N12_HISTORY_CALDERON_RESULT='artifacts/n12_continuum_majorant_effectiveness/BHSM_N12_POSITIVE_DURATION_CALDERON_HISTORY.json'; python scripts/audit_n12_positive_duration_calderon_history.py",
+    "$env:PYTHONPATH='src'; python scripts/materialize_n12_continuum_majorant_checkpoint.py"
+  ],
+  "scientific_base_commit": "f535417134b9b8c0dc3819a46dfd449177e9ecd0"
+}
