@@ -42,8 +42,8 @@ from bhsm.interface.aether_sobolev_metric_soft_mode_lift_v16_07 import (
 
 
 ORDER = 12
-POINTS = 96
-PRECISION = 80
+POINTS = int(os.environ.get("BHSM_N12_HIGH_PRECISION_POINTS", "96"))
+PRECISION = int(os.environ.get("BHSM_N12_HIGH_PRECISION_DIGITS", "80"))
 CHECKPOINT = Path(os.environ.get(
     "BHSM_N12_CHECKPOINT",
     ".tmp_direct_n12_exact_identity_constraint_proposal.npz",

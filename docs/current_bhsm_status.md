@@ -4,7 +4,7 @@
 
 The unchanged retained N12 57-row event/child map now has a directly corrected
 complete persistent child. Its independently evaluated residual is
-`2.1479968882829104e-14`, and the full action-norm radii construction certifies
+`1.5155497333590932e-13`, and the full action-norm radii construction certifies
 a root ball of radius `1e-11`. The corrected N6 index-12 to N12 index-24
 ordered-event branch passes the existing eta, ordered-event, boundary/Dirac,
 rank, and positive-duration persistence gates with nonzero relative evolution.
@@ -21,13 +21,13 @@ It remains category 2, a dynamically controlled normal direction. The N16
 state is a diagnostic proposal, not a complete-child root.
 
 The contraction-correlated first Picard enclosure closes the exact-root
-Calderon graph with normalized gap `0.0016229286468592938`; its root-distance
-bound is `5.57567776096209e-18`. A whole action-coordinate ball of radius
-`7.62939453125e-17` retains graph gap `0.0008481866624639198`. The unchanged
+Calderon graph with normalized gap `0.0016147930860920538`; its root-distance
+bound is `1.244833612865511e-15`. A whole action-coordinate ball of radius
+`7.62939453125e-17` retains graph gap `0.0008325142235529747`. The unchanged
 gauge-fixed positive-duration Jacobi evolution on that ball gives
-`c_M0 >= 2.0753723606658987e-19`. An outward-rounded endpoint-safe action
+`c_M0 >= 2.036906619199693e-19`. An outward-rounded endpoint-safe action
 calculation independently gives the non-fitted joint inverse-square source
-constant `C_r <= 6476.158172228676`.
+constant `C_r <= 6476.1581744767345`.
 
 The continuum promotion remains fail closed because no explicit uniform
 graph-norm tail modulus yet covers the interior lower-order Euler--Dirac,
@@ -46,8 +46,12 @@ obstruction.
 
 Evidence is hash-locked by the
 [`N12 scientific checkpoint manifest`](../artifacts/n12_direct_checkpoint/BHSM_N12_SCIENTIFIC_CHECKPOINT_MANIFEST.json).
+Its execution-provenance record verifies that all retained-action modules were
+loaded from the reviewed checkout. Lower-precision binary eigenvalue/lift
+diagnostics are a separate measurement era; the high-precision corrected solve
+returns within `1.799193285874061e-13` action coordinates of the prior state.
 The gauge-fixed N12 event/child Calderon boundary symbol has finite gap
-`0.029146859835472938`; doubled quadrature agrees to `7.44e-13`. On the
+`0.029146859835358096`; doubled quadrature agrees to `7.44e-13`. On the
 source-restricted linear probes, the unchanged dynamic graph symbol remains
 transverse at N48 (`0.00922485414794376`, 192 points) and N64
 (`0.0038382679025004396`, 96 points). These are diagnostics rather than

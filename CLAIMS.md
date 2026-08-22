@@ -10,7 +10,7 @@ BHSM completion.
 Supported now: N3, N4, N5, N6, and direct N12 reconstruct complete persistent
 children under their retained finite-resolution equations. The corrected N12
 state closes the unchanged 57-row map at
-`||F12|| = 2.1479968882829104e-14`, lies in a certified action-coordinate ball
+`||F12|| = 1.5155497333590932e-13`, lies in a certified action-coordinate ball
 of radius `1e-11`, remains eta-admissible, preserves the ordered event and
 boundary/Dirac neighborhoods, and passes positive-duration persistence with
 nonzero relative evolution.
@@ -18,8 +18,11 @@ nonzero relative evolution.
 Supported provenance: the branch is the same-action N6 index-12 to N12
 index-24 ordered-event correction. The durable manifest records byte hashes
 for the state, exact residual, radii proof, physical gates, exact normal data,
-and persistence witness. No new physical equation, coefficient, scale, event
-definition, or acceptance gate was introduced.
+and persistence witness. It also records the exact retained-action source
+files loaded from the reviewed checkout and separates lower-precision binary
+eigenvalue/lift diagnostics from the high-precision promotion evaluator. No
+new physical equation, coefficient, scale, event definition, or acceptance
+gate was introduced.
 
 Supported finite diagnostic: the unchanged N16 coupled map rejects the
 constraint-only lift as a complete-child correction. The existing paired
@@ -40,24 +43,24 @@ counterfamily localizes the missing retained-action input to an effective
 positive-duration observation separation/convergence modulus; it does not
 invalidate the qualitative BHSM closed-range theorem or construct a category-3
 collapse sequence. The certified N12 parent-backward/child-forward diagnostic
-keeps the unchanged symbol gap positive (`0.029146859835472938` to
+keeps the unchanged symbol gap positive (`0.029146859835358096` to
 `0.02882113423436863` over `1e-10`) with admissible eta and closed constraints,
 but sampled time points are not promoted as a whole-interval bound.
 
 Supported exact-root and finite-core result: the contraction-correlated first
-Picard center lies within `5.57567776096209e-18` action coordinates of the
+Picard center lies within `1.244833612865511e-15` action coordinates of the
 exact root. Directed interval action jets certify normalized graph gap
-`0.0016229286468592938`; a whole action ball of radius
-`7.62939453125e-17` retains gap `0.0008481866624639198`. The retained
+`0.0016147930860920538`; a whole action ball of radius
+`7.62939453125e-17` retains gap `0.0008325142235529747`. The retained
 positive-duration Jacobi evolution gives
-`c_M0 >= 2.0753723606658987e-19`. An independent outward-rounded action
-calculation certifies `C_r,event-child <= 6476.158172228676` in the shell law
+`c_M0 >= 2.036906619199693e-19`. An independent outward-rounded action
+calculation certifies `C_r,event-child <= 6476.1581744767345` in the shell law
 `||r_n||_weak <= C_r n^-2`, without fitting. None of these results supplies
 the still-missing uniform compact observation-tail modulus or promotes a
 continuum child.
 
 Supported finite diagnostic: the gauge-fixed N12 event/child Calderon boundary
-symbol has gap `0.029146859835472938`; doubled quadrature agrees to
+symbol has gap `0.029146859835358096`; doubled quadrature agrees to
 `7.44e-13`. The source-restricted linear N48 and N64 probes retain positive
 unchanged dynamic-symbol gaps `0.00922485414794376` and
 `0.0038382679025004396`. These probes are not complete-child roots and are not

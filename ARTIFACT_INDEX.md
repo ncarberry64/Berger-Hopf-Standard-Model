@@ -104,6 +104,7 @@ finite coupled corrector and continuum radius are open.
 - [`BHSM_N12_SCIENTIFIC_CHECKPOINT_MANIFEST.json`](artifacts/n12_direct_checkpoint/BHSM_N12_SCIENTIFIC_CHECKPOINT_MANIFEST.json)
 - [`BHSM_N12_COMPLETE_PERSISTENT_CHILD_STATE.npz`](artifacts/n12_direct_checkpoint/BHSM_N12_COMPLETE_PERSISTENT_CHILD_STATE.npz)
 - [`BHSM_N12_COMPLETE_PERSISTENT_CHILD_CERTIFICATE.json`](artifacts/n12_direct_checkpoint/BHSM_N12_COMPLETE_PERSISTENT_CHILD_CERTIFICATE.json)
+- [`BHSM_N12_CORRECTED_ACTION_EXECUTION_PROVENANCE.json`](artifacts/n12_direct_checkpoint/BHSM_N12_CORRECTED_ACTION_EXECUTION_PROVENANCE.json)
 - [`BHSM_N12_FULL_ACTION_RADII_CERTIFICATE.json`](artifacts/n12_direct_checkpoint/BHSM_N12_FULL_ACTION_RADII_CERTIFICATE.json)
 - [`BHSM_N12_POSITIVE_DURATION_PERSISTENCE.json`](artifacts/n12_direct_checkpoint/BHSM_N12_POSITIVE_DURATION_PERSISTENCE.json)
 - Reproduction/promoter: [`promote_n12_public_checkpoint.py`](scripts/promote_n12_public_checkpoint.py)
@@ -112,10 +113,11 @@ finite coupled corrector and continuum radius are open.
 - Reproduction: [`audit_n12_full_qvm_constraint_tail.py`](scripts/audit_n12_full_qvm_constraint_tail.py)
 
 The unchanged 57-row N12 map closes at
-`||F12|| = 2.1479968882829104e-14` inside a certified `1e-11`
+`||F12|| = 1.5155497333590932e-13` inside a certified `1e-11`
 action-coordinate ball. Existing ordered-event, eta, boundary/Dirac, and
-positive-duration persistence gates pass. The manifest byte-hashes 26
-authoritative files. Finite zero-padded N16--N48 symbol probes are explicitly
+positive-duration persistence gates pass. The manifest byte-hashes 27
+authoritative files, including the corrected-action execution-provenance record.
+Finite zero-padded N16--N48 symbol probes are explicitly
 diagnostic, not roots; continuum closure and all downstream physical readouts
 remain open.
 

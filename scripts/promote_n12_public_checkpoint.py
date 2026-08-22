@@ -10,14 +10,18 @@ from __future__ import annotations
 
 import hashlib
 import json
+import os
 import shutil
 from pathlib import Path
 
 
 TARGET = Path("artifacts/n12_direct_checkpoint")
 MANIFEST = TARGET / "BHSM_N12_SCIENTIFIC_CHECKPOINT_MANIFEST.json"
+SOURCE = Path(os.environ.get("BHSM_N12_PUBLIC_PROMOTION_SOURCE_DIR", "."))
 
 FILES = {
+    ".tmp_n12_corrected_action_execution_provenance.json":
+        "BHSM_N12_CORRECTED_ACTION_EXECUTION_PROVENANCE.json",
     ".tmp_direct_n12_high_precision_action_center.npz":
         "BHSM_N12_COMPLETE_PERSISTENT_CHILD_STATE.npz",
     ".tmp_direct_n12_high_precision_complete_persistent_child_promotion.json":
@@ -82,12 +86,13 @@ def sha256(path: Path) -> str:
 
 
 def main() -> None:
-    missing = [source for source in FILES if not Path(source).is_file()]
+    missing = [source for source in FILES if not (SOURCE / source).is_file()]
     if missing:
         raise FileNotFoundError("missing promotion inputs: " + ", ".join(missing))
-    promotion = json.loads(Path(
+    promotion_path = SOURCE / (
         ".tmp_direct_n12_high_precision_complete_persistent_child_promotion.json"
-    ).read_text(encoding="utf-8"))
+    )
+    promotion = json.loads(promotion_path.read_text(encoding="utf-8"))
     if not promotion.get("DIRECT_N12_COMPLETE_PERSISTENT_CHILD_CERTIFIED"):
         raise RuntimeError("N12 promotion certificate is not validated")
     if promotion.get("CONTINUUM_EVENT_CHILD_CERTIFIED") is not False:
@@ -98,7 +103,7 @@ def main() -> None:
     TARGET.mkdir(parents=True, exist_ok=True)
     entries = []
     for source_name, target_name in FILES.items():
-        source = Path(source_name)
+        source = SOURCE / source_name
         target = TARGET / target_name
         if source.suffix.lower() == ".json":
             # Match the repository's canonical JSON representation so hashes
@@ -114,16 +119,28 @@ def main() -> None:
             "byte_identical_to_source": sha256(target) == sha256(source),
         })
 
+    calderon = json.loads((SOURCE / (
+        ".tmp_direct_n12_high_precision_event_child_calderon_symbol.json"
+    )).read_text(encoding="utf-8"))
+    calderon_n48 = json.loads((SOURCE / (
+        ".tmp_direct_n12_high_precision_event_child_calderon_symbol_n48.json"
+    )).read_text(encoding="utf-8"))
     manifest = {
         "classification": "BHSM_N12_DIRECT_ROOT_PUBLIC_PROVENANCE_CHECKPOINT",
         "scientific_status": {
             "DIRECT_N12_COMPLETE_PERSISTENT_CHILD_CERTIFIED": True,
-            "exact_F12_norm": 2.1479968882829104e-14,
-            "certified_action_coordinate_root_ball_radius": 1.0e-11,
+            "exact_F12_norm": promotion["certified_root_ball"][
+                "center_exact_F12_norm"
+            ],
+            "certified_action_coordinate_root_ball_radius": promotion[
+                "certified_root_ball"
+            ]["radius"],
             "corrected_ordered_event_branch": "N6_INDEX_12_TO_N12_INDEX_24",
-            "N12_event_child_Calderon_symbol_gap": 0.029146859835472938,
+            "N12_event_child_Calderon_symbol_gap": calderon[
+                "N12_minimum_seven_by_seven_symbol_gap"
+            ],
             "minimum_zero_padded_probe_symbol_gap_N12_to_N48": (
-                0.00912893612489853
+                calderon_n48["minimum_probe_symbol_gap"]
             ),
             "CONTINUUM_EVENT_CHILD_CERTIFIED": False,
             "FULL_BHSM_COMPLETE": False,
@@ -144,16 +161,18 @@ def main() -> None:
         "reproduction": {
             "python": "Python 3.10+ with the repository benchmark extra",
             "focused_commands": [
-                "python scripts/audit_n12_high_precision_coupled_residual.py",
-                "python scripts/derive_n12_exact_normal_jacobian.py",
-                "python scripts/certify_n12_full_action_radii.py",
-                "python scripts/certify_n12_candidate_positive_duration_persistence.py",
-                "python scripts/audit_n12_event_child_calderon_symbol.py",
+                "PYTHONPATH=src python scripts/audit_n12_corrected_action_execution_provenance.py --verify artifacts/n12_direct_checkpoint/BHSM_N12_CORRECTED_ACTION_EXECUTION_PROVENANCE.json",
+                "BHSM_N12_CHECKPOINT=artifacts/n12_direct_checkpoint/BHSM_N12_COMPLETE_PERSISTENT_CHILD_STATE.npz BHSM_N12_RESULT=n12_residual_replay.json BHSM_N12_RESIDUAL_ONLY_DIAGNOSTIC=1 BHSM_CHORD_PROPOSAL_STEPS=0 PYTHONPATH=src python scripts/measure_n6_n12_joint_schur_chord_cover.py",
+                "PYTHONPATH=src python scripts/derive_n12_exact_normal_jacobian.py",
+                "PYTHONPATH=src python scripts/certify_n12_full_action_radii.py",
+                "PYTHONPATH=src python scripts/certify_n12_candidate_positive_duration_persistence.py",
+                "PYTHONPATH=src python scripts/audit_n12_event_child_calderon_symbol.py",
             ],
             "note": (
                 "The public state and certificate inputs are stored in this "
                 "directory; scripts accept BHSM_N12_* environment overrides "
-                "for durable paths."
+                "for durable paths. Set PYTHONPATH=src so execution resolves "
+                "the retained action from the reviewed checkout."
             ),
         },
         "new_equation_constraint_gate_scale_fit_or_prediction": False,

@@ -11,7 +11,7 @@ modulus open**. It is a development checkpoint, not a release version.
 Complete persistent children are validated at N3, N4, N5, N6, and now direct
 N12 under their unchanged retained finite-resolution maps. The corrected N12
 branch closes all 57 physical rows with independently evaluated
-`||F12|| = 2.1479968882829104e-14`. Its certified action-coordinate root ball
+`||F12|| = 1.5155497333590932e-13`. Its certified action-coordinate root ball
 has radius `1e-11`; ordered-event, eta, boundary/Dirac, rank, and
 positive-duration persistence conditions remain inside their existing
 neighborhoods. The persistence witness includes nonzero relative evolution.
@@ -32,15 +32,15 @@ not a demonstrated uniform failure. N16 is diagnostic only, not a root.
 
 The contraction-correlated interval audit now closes the coupled exact-root
 graph. The first Picard root distance is at most
-`5.57567776096209e-18`; the normalized graph gap is
-`0.0016229286468592938`. A whole action-coordinate ball of radius
-`7.62939453125e-17` retains gap `0.0008481866624639198`. The unchanged
+`1.244833612865511e-15`; the normalized graph gap is
+`0.0016147930860920538`. A whole action-coordinate ball of radius
+`7.62939453125e-17` retains gap `0.0008325142235529747`. The unchanged
 gauge-fixed Euler--Dirac/Jacobi evolution on this ball gives the finite-core
-positive-duration modulus `c_M0 >= 2.0753723606658987e-19` and finite-core
+positive-duration modulus `c_M0 >= 2.036906619199693e-19` and finite-core
 normal inverse bound `4.818412440354282e18`.
 
 An endpoint-safe interval rewrite of the retained action also certifies the
-non-fitted joint source constant `C_r <= 6476.158172228676` and hence
+non-fitted joint source constant `C_r <= 6476.1581744767345` and hence
 `||r_n||_weak <= C_r n^-2`. The boundary Casimir remains routed to the existing
 weak reaction. The four compact N12-to-tail blocks still lack explicit uniform
 graph-norm moduli, so the observation perturbation `epsilon_obs(M0)` and the
@@ -55,8 +55,15 @@ endpoint-rank theorem remains valid as a statement about that attempted N6
 injection proof architecture; it is not an obstruction to the separately
 corrected direct N12 root.
 
+The execution-provenance artifact verifies that the retained action, full
+action, and high-precision velocity jet all resolved from the reviewed
+checkout. Lower-precision binary eigenvalue/lift values are separated as a
+different measurement era, not interpreted as a physical residual increase.
+The rebuilt state is only `1.799193285874061e-13` action coordinates from the
+prior public checkpoint.
+
 At the certified state, the existing boundary-compatible gauge-fixed
-event/child Calderon symbol has gap `0.029146859835472938`. The same unchanged
+event/child Calderon symbol has gap `0.029146859835358096`. The same unchanged
 dynamic symbol remains transverse on source-restricted linear probes at N48
 (`0.00922485414794376`, 192 points) and N64 (`0.0038382679025004396`, 96
 points). They are not corrected roots and are not used as a uniform lower
