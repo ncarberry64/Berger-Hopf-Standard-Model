@@ -1,0 +1,116 @@
+{
+  "FULL_BHSM_COMPLETE": false,
+  "artifact": "BHSM_N12_SINGULAR_EVENT_TEMPORAL_CHIRALITY",
+  "center_and_cross_quadrature": {
+    "192": {
+      "action": 3.3745498749856124,
+      "hitting_product": -3.7575906845747096e-15,
+      "rhs_norm": 1355.0815981685585,
+      "selected_eigenvalue": 1.4752191667056286e-13,
+      "selected_index": 24,
+      "soft_Fredholm_forcing": -0.00011191143913213963,
+      "soft_cubic": 3.357646647844397e-11,
+      "squared_eigenvalue_rate_limit": -7.515181369149419e-15
+    },
+    "384": {
+      "action": 3.374549874986282,
+      "hitting_product": -3.75763657477319e-15,
+      "rhs_norm": 1355.0815981685703,
+      "selected_eigenvalue": -4.0882586703042305e-14,
+      "selected_index": 24,
+      "soft_Fredholm_forcing": -0.00011191258234388712,
+      "soft_cubic": 3.357653354139083e-11,
+      "squared_eigenvalue_rate_limit": -7.51527314954638e-15
+    },
+    "96": {
+      "action": 3.3745498749860077,
+      "hitting_product": -3.757616928173632e-15,
+      "rhs_norm": 1355.0815981685664,
+      "selected_eigenvalue": -4.865848032126471e-15,
+      "selected_index": 24,
+      "soft_Fredholm_forcing": -0.00011191241572294786,
+      "soft_cubic": 3.35764079785039e-11,
+      "squared_eigenvalue_rate_limit": -7.515233856347264e-15
+    }
+  },
+  "classification": "ACTION_OWNED_SINGULAR_HITTING_CHIRALITY_IDENTIFIED;_EVENT_TO_CHILD_CORRESPONDENCE_DOES_NOT_SELECT_ONE_SECTOR",
+  "event_to_child_conclusion": {
+    "finite_relation_and_continuum_graph_are_equivariant": true,
+    "one_temporal_chirality_sector_action_selected": false,
+    "reflected_sector": "FORWARD_EMERGENT_SIDE",
+    "represented_N12_event_sector": "FORWARD_TERMINAL_APPROACH",
+    "two_sectors_action_proved_physically_equivalent": false,
+    "two_sectors_quotiented": false
+  },
+  "exact_next_dependency": "DERIVE_AND_CERTIFY_THE_EXISTING_ACTION_OWNED_ONE_SIDED_SINGULAR_ORDERED_EVENT_HITTING_LAW_AND_ITS_EVENT_TO_CHILD_RESET_REGULARITY_OR_LOCALIZE_THE_FIRST_RETAINED_ACTION_FAILURE",
+  "formal_reflection": {
+    "Dirac_similarity_defect": 0.0,
+    "Euler_Dirac_rhs_odd_covariance_defect": 0.0,
+    "action_even_defect": 0.0,
+    "exact_parity": {
+      "b_psi": "ODD",
+      "c_psi": "EVEN",
+      "c_psi_times_b_psi": "ODD"
+    },
+    "hitting_product_reflected": 3.7576169281780605e-15,
+    "soft_Fredholm_forcing_reflected": 0.00011191241572309272,
+    "soft_cubic_reflected": 3.3576407978500015e-11
+  },
+  "formal_reflection_is_gauge": false,
+  "inputs": {
+    "artifacts/intrinsic_state_selection/BHSM_N12_EVENT_CHILD_TIME_REVERSAL_EQUIVARIANCE_GATE.json": "17F93ACD64F3D8B46095E75118F44CEF229F0AA9A5FB158A4327E4A4D9CF8F93",
+    "artifacts/n12_direct_checkpoint/BHSM_N12_ACTION_MAJORANTS.json": "06943C2077C9A8736B3CCFF5A004EB5870AA6CF88A31403D531005768D8F631E",
+    "artifacts/n12_direct_checkpoint/BHSM_N12_COMPLETE_PERSISTENT_CHILD_CERTIFICATE.json": "F5DC5D969410FBCD32DD8466BB2FB2A1BF78B67D5BC39215778D618DF5CF155B",
+    "artifacts/n12_direct_checkpoint/BHSM_N12_COMPLETE_PERSISTENT_CHILD_STATE.npz": "8AEE33C46C320A36384C83E6B9BDE387AE3E565D99C7D49C606895229B796890",
+    "artifacts/n12_direct_checkpoint/BHSM_N12_ORDERED_EVENT_EIGENLINE_BALL.json": "5619F3AA48A718CCD0865F0BB1412BE955E91674101262B02000F86CFB3F17C5",
+    "artifacts/n12_direct_checkpoint/BHSM_N12_ORDERED_EVENT_MIXED_MAJORANT.json": "6CF20220901A9DDF75CC4F39DA040F0E2E36EE859D75DF2A0B151706EFFE7C9A",
+    "artifacts/n12_direct_checkpoint/BHSM_N12_THIRD_VARIATIONS.npz": "2E5200593D4ECFB03473C08D6A1E00B5942212AAAF278714F56B9786A09F46BF",
+    "theory/n12_singular_event_temporal_chirality.md": "FCAB59F920F8FA9DAAADAC28A713EA4B47353987EF27C3659837E69F0688E409"
+  },
+  "one_sided_action_identity": {
+    "limit": "LIM_(LAMBDA_TO_0)_LAMBDA*LAMBDA_DOT=C_PSI*B_PSI",
+    "negative_interpretation": "FORWARD_TERMINAL_APPROACH",
+    "new_event_gate": false,
+    "positive_interpretation": "FORWARD_EMERGENT_SIDE",
+    "soft_cubic": "C_PSI=D3L[(0,PSI),(0,PSI),(0,PSI)]",
+    "soft_forcing": "B_PSI=<PSI,B_ED>",
+    "squared_limit": "LIM_D_DT(LAMBDA^2)=2*C_PSI*B_PSI",
+    "temporal_chirality_label": "CHI_HIT=SIGN(C_PSI*B_PSI)"
+  },
+  "ordinary_event_transport_correction": {
+    "Fredholm_compatibility_at_event": "<PSI,B_ED>=0",
+    "existing_time_dynamics_border_or_compatibility_row": false,
+    "former_expression": "G(E)=D_E_ORD(E)V(E)",
+    "status": "UNDEFINED_AT_THE_EXACT_EVENT_BECAUSE_D(E)_HAS_KERNEL_PSI",
+    "unbordered_Euler_Dirac_solve": "D(Y)ZD0T=B_ED(Y)"
+  },
+  "physical_time": "ORIENTED_AND_FORWARD",
+  "refined_root_ball_enclosure": {
+    "D4_normal_selected_selected_selected_majorant": 4.289105986957605e-05,
+    "cubic_absolute_lower": 3.35618726730126e-11,
+    "cubic_first_derivative_majorant": 0.0038614947136499976,
+    "cubic_second_derivative_majorant": 688150327355.7412,
+    "cubic_shift_upper": 1.4535305491298356e-14,
+    "existing_radii_polynomial_at_radius_upper": -2.0147886646290497e-14,
+    "forcing_absolute_lower": 0.00011191241090022129,
+    "forcing_gradient_norm_center": 6.675152985252025,
+    "forcing_second_derivative_majorant": 174384798865073.8,
+    "forcing_shift_upper": 4.8227265748341556e-12,
+    "joint_action_coordinate_radius": 2e-13
+  },
+  "validation": {
+    "authoritative_checkpoint_hash_matches_root_certificate": true,
+    "cross_quadrature_signs_agree": true,
+    "event_child_map_does_not_select_one_sign": true,
+    "formal_reflection_not_quotiented": true,
+    "formal_reflection_parity_derived_from_action": true,
+    "no_new_equation_constraint_gate_selector_or_physics": true,
+    "one_sided_squared_eigenvalue_rate_derived_from_existing_action": true,
+    "ordinary_De_ord_times_V_at_exact_event_is_not_defined": true,
+    "refined_radius_has_negative_existing_radii_polynomial": true,
+    "same_retained_Dirac_block_is_event_block_and_regular_flow_solve_block": true,
+    "soft_Fredholm_forcing_nonzero_on_refined_root_ball": true,
+    "soft_cubic_nonzero_on_refined_root_ball": true
+  },
+  "validation_passed": true
+}

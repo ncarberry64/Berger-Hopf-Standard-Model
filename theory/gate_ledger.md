@@ -10,22 +10,31 @@
 - Higher-resolution complete-child roots used: `NONE`.
 - Equations, event definition, coefficients, scale, or physical gates changed:
   `FALSE`.
-- `MATCHED_PARENT_RESTRICTION_R_P`: `OPEN_NOT_DEFINED_BY_CURRENT_RETAINED_N12_STATE_OR_ACTION_API`.
+- `MATCHED_PARENT_RESTRICTION_R_P`: `NO_ACTION_OWNED_SECTION_IN_CURRENT_RETAINED_MODEL`.
 - Event-side Cauchy state as matched parent-only reference: `FORBIDDEN_NOT_DERIVED`.
-- Complete boundary-improved common-reference `Q_XI`: `OPEN`.
+- Complete boundary-improved common-reference `Q_XI`: `NOT_EXECUTABLE_WITHOUT_AN_ACTION_OWNED_PARENT_SECTION`.
 - `DELTA_H`, mass, action-selected family, and new blind prediction: `OPEN`.
 - `FULL_BHSM_COMPLETE`: `FALSE`.
 - Existing v7.1 covariant `R_8to5`/`R_5to4` correspondence: `CLOSED_BUT_NONINJECTIVE_AND_SET_VALUED`.
-- First missing datum inside the active dependency:
-  `ACTION_OWNED_REALIZATION_OF_THE_ABSTRACT_EMPTY_EVENT_IDENTITY_AS_AN_INVARIANT_PARENT_ONLY_FIELD_DOMAIN_D_P_WITH_PRESERVED_INTERFACE_DATA`.
+- Constraint-reduced local Legendre energy: `IDENTICALLY_ZERO_NOT_MASS`.
+- Child-only boundary Hamiltonian: `NOT_EXECUTABLE_FULL_THETA_Q_XI_BOUNDARY_ENSEMBLE_AND_SUPPORT_CORE_ATTACHMENT_MISSING`.
 - Current N12 57-row normal inverse as the parent bordered-Hessian inverse:
   `INVALID_DOMAIN_AND_CODOMAIN_MISMATCH`.
 - Reduced-event forward evolution as the matched parent:
   `NOT_DERIVED_RESTORATION_BRANCH_UNSELECTED_AND_GLOBAL_PARENT_LIFT_ABSENT`.
 - Current alternative child-only blind physical observable:
   `NOT_EXECUTABLE_STATE_CHARGE_CLOCK_OR_DOMAIN_NOT_ACTION_SELECTED`.
+- BHSM time: `ORIENTED_AND_FORWARD`; formal reversal is a distinct candidate
+  chiral reflection, `NOT_GAUGE_NOT_PHYSICAL_BACKWARD_EVOLUTION`.
+- Ordinary event derivative `D_E_ORD(E)V(E)`: `RETRACTED_UNDEFINED_AT_THE_EXACT_EVENT_DIRAC_KERNEL`.
+- Action-owned singular hitting label:
+  `CHI_HIT=SIGN(D3L[(0,PSI)^3]*<PSI,B_ED>)`.
+- Retained N12 representative/reflection hitting products:
+  `-3.757616928173632E-15 / +3.7576169281780605E-15`.
+- Event-to-child correspondence action-selects one hitting sign: `FALSE`.
+- Formal-reflection sectors physically equivalent or quotiented: `FALSE`.
 - Exact next flagship dependency:
-  `ACTION_SELECTED_INTRINSIC_PHYSICAL_STATE_AND_OBSERVABLE_MAP_ON_THE_CERTIFIED_CONTINUUM_CHILD`.
+  `DERIVE_AND_CERTIFY_THE_EXISTING_ACTION_OWNED_ONE_SIDED_SINGULAR_ORDERED_EVENT_HITTING_LAW_AND_ITS_EVENT_TO_CHILD_RESET_REGULARITY_OR_LOCALIZE_THE_FIRST_RETAINED_ACTION_FAILURE`.
 
 ## Prior N12 dynamic-Calderon continuum gates (superseded)
 

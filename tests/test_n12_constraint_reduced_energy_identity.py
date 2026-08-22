@@ -31,7 +31,7 @@ def test_constraint_reduced_legendre_energy_identity_is_fail_closed() -> None:
     ] is True
 
 
-def test_aggregate_points_to_oriented_component_return_or_exit_bound() -> None:
+def test_aggregate_preserves_forward_time_chiral_pair_without_quotient() -> None:
     aggregate = json.loads(
         (ROOT / "artifacts" / "intrinsic_state_selection"
          / "BHSM_N12_INTRINSIC_RETURN_ACTION_OWNERSHIP_GATE.json").read_text(
@@ -40,7 +40,7 @@ def test_aggregate_points_to_oriented_component_return_or_exit_bound() -> None:
     )
 
     assert aggregate["validation_passed"] is True
-    assert "POST_EVENT_COMPLETE_CHILD_COMPONENT" in aggregate[
+    assert "ONE_SIDED_SINGULAR_ORDERED_EVENT_HITTING" in aggregate[
         "first_missing_action_owned_object"
     ]
     assert aggregate["validation"][
@@ -51,6 +51,9 @@ def test_aggregate_points_to_oriented_component_return_or_exit_bound() -> None:
     ] is True
     assert aggregate["validation"][
         "event_forward_global_sign_shortcut_is_invalidated"
+    ] is True
+    assert aggregate["validation"][
+        "temporal_chirality_sectors_are_not_quotiented"
     ] is True
     assert aggregate["validation"][
         "constraint_reduced_Legendre_energy_zero_identity_is_closed"

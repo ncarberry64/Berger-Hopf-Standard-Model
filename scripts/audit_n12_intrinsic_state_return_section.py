@@ -38,9 +38,9 @@ COLLECTIVE = ROOT / "artifacts/BHSM_aether_collective_symplectic_manifold_v15_22
 CLOCK = ROOT / "artifacts/BHSM_aether_joint_hamiltonian_selection_v15_2.json"
 NORMAN = ROOT / "artifacts/BHSM_norman_cycle_ontology_v15_6.json"
 RELATIVE_PERIODIC = ROOT / "artifacts/BHSM_relative_periodic_persistence_v15_7.json"
-POST_PARENT = ROOT / (
-    "artifacts/qxi_relative_energy_preparation/"
-    "BHSM_POST_PARENT_FLAGSHIP_OBSERVABLE_GATE.json"
+SINGULAR_EVENT = ROOT / (
+    "artifacts/intrinsic_state_selection/"
+    "BHSM_N12_SINGULAR_EVENT_TEMPORAL_CHIRALITY.json"
 )
 RESULT = ROOT / (
     "artifacts/intrinsic_state_selection/"
@@ -56,7 +56,7 @@ def _sha256(path: Path) -> str:
 def main() -> None:
     inputs = (
         STATE, DIRECT, CONTINUUM, NORMAL, CROSS, COLLECTIVE, CLOCK,
-        NORMAN, RELATIVE_PERIODIC, POST_PARENT, THEOREM,
+        NORMAN, RELATIVE_PERIODIC, SINGULAR_EVENT, THEOREM,
     )
     missing = [str(path) for path in inputs if not path.is_file()]
     if missing:
@@ -82,7 +82,7 @@ def main() -> None:
     clock = json.loads(CLOCK.read_text(encoding="utf-8"))
     norman = json.loads(NORMAN.read_text(encoding="utf-8"))
     relative_periodic = json.loads(RELATIVE_PERIODIC.read_text(encoding="utf-8"))
-    post_parent = json.loads(POST_PARENT.read_text(encoding="utf-8"))
+    singular = json.loads(SINGULAR_EVENT.read_text(encoding="utf-8"))
 
     scope = cross["normal_section_S2_compactness_scope"]
     cycle = cross["N6_reduced_local_energy_readout_reconnaissance"]
@@ -124,17 +124,15 @@ def main() -> None:
             and norman["morphisms"][1]["action_derived_map"] is False
             and relative_periodic["action_selected_orbit"] is None
         ),
-        "no_observable_or_prediction_promoted": (
-            post_parent["prediction_frozen"] is False
-            and post_parent["held_out_comparison_performed"] is False
+        "no_observable_or_prediction_promoted_by_this_audit": True,
+        "ordinary_event_vector_field_is_not_used_at_the_singular_event": (
+            singular["ordinary_event_transport_correction"]["status"]
+            == "UNDEFINED_AT_THE_EXACT_EVENT_BECAUSE_D(E)_HAS_KERNEL_PSI"
         ),
+        "singular_hitting_reset_regularization_remains_open": True,
     }
 
-    first_missing = (
-        "PROVE_EXISTENCE_TRANSVERSALITY_AND_CONTINUUM_WELL_POSEDNESS_OF_"
-        "THE_FIRST_POSITIVE_COMPLETE_EVENT_RETURN_MAP_ON_THE_EXISTING_"
-        "GAUGE_TIME_QUOTIENTED_CHILD_MANIFOLD_OR_PROVE_ITS_RETURN_DOMAIN_EMPTY"
-    )
+    first_missing = singular["exact_next_dependency"]
     payload = {
         "artifact": "BHSM_N12_INTRINSIC_STATE_RETURN_SECTION_GATE",
         "classification": (
@@ -197,9 +195,9 @@ def main() -> None:
                 relative_periodic["action_selected_orbit"]
             ),
             "reuse_conclusion": (
-                "THE_CURRENT_FIRST_RETURN_SECTION_INSTANTIATES_THE_EXISTING_"
-                "PERSISTENCE_THEOREM_CLASS_ON_THE_CERTIFIED_CONTINUUM_CHILD;_"
-                "FORMATION_OR_DE_ENVELOPMENT_IS_NOT_REOPENED"
+                "THE_CANDIDATE_BOUNDARY_RETURN_RELATION_HAS_THE_EXISTING_"
+                "PERSISTENCE_TYPE;_ITS_SINGULAR_HITTING_RESET_REGULARITY_IS_"
+                "NOT_YET_PROVED_AND_FORMATION_OR_DE_ENVELOPMENT_IS_NOT_REOPENED"
             ),
         },
         "derived_first_return_section": {
@@ -218,33 +216,32 @@ def main() -> None:
             ),
             "map": (
                 "P([E,C(E)])=[E_prime,C_infinity(E_prime)]_WHERE_"
-                "E_prime=Flow_retained^tau(E,C)(C)_AND_tau_IS_THE_FIRST_"
-                "STRICTLY_POSITIVE_TIME_WITH_E_ord(E_prime)=0"
+                "E_prime=LIM_t_UP_TO_tau_Flow_retained^t(C(E))_AND_tau_IS_"
+                "THE_FIRST_STRICTLY_POSITIVE_SINGULAR_EVENT_HIT"
             ),
             "quotient": "EXISTING_GAUGE_AND_WHOLE_SYSTEM_TIME_TRANSLATION_ONLY",
             "domain": (
                 "states_for_which_the_existing_admissible_persistent_flow_has_a_"
-                "finite_transverse_first_positive_complete_event_return"
+                "finite_regular_one_sided_singular_complete_event_hit_and_"
+                "certified_event_to_child_reset"
             ),
             "fixed_or_periodic_orbits_would_be_action_selected_states": True,
             "required_existing_properties_to_close": [
                 "RETAINED_CHILD_FLOW_EXISTS_AND_REMAINS_ETA_DIRAC_ADMISSIBLE_UNTIL_tau",
-                "A_FINITE_STRICTLY_POSITIVE_FIRST_RETURN_tau_EXISTS",
-                "THE_RETURNED_ORDERED_EVENT_IS_SIMPLE_AND_TRANSVERSE",
+                "A_FINITE_STRICTLY_POSITIVE_FIRST_SINGULAR_HIT_tau_EXISTS",
+                "THE_ONE_SIDED_HITTING_PRODUCT_C_PSI_B_PSI_IS_NONZERO",
+                "THE_HITTING_LIMIT_AND_RESET_DEPEND_REGULARLY_ON_INITIAL_DATA",
                 "THE_CERTIFIED_CONTINUUM_EVENT_TO_CHILD_MAP_APPLIES_AT_E_prime",
                 "THE_RESULT_DESCENDS_TO_THE_EXISTING_GAUGE_TIME_QUOTIENT",
             ],
             "return_existence_or_transversality_proved": False,
             "map_executable": False,
             "new_clock_period_event_equation_constraint_or_gate_added": False,
-            "conditional_regular_map_theorem": (
-                "PROVED_BY_THE_IMPLICIT_FUNCTION_THEOREM_AT_ANY_FINITE_"
-                "SIMPLE_TRANSVERSE_ADMISSIBLE_FIRST_RETURN"
-            ),
-            "return_time_derivative": (
-                "D_tau[h]=-D_E_ord(E_prime)D_Flow_tau[h]/"
-                "(D_E_ord(E_prime)V(E_prime))"
-            ),
+            "ordinary_Poincare_map_theorem": "RETRACTED_AT_SINGULAR_EVENT",
+            "reason": "D_E_ORD(E_PRIME)V(E_PRIME)_IS_UNDEFINED_BECAUSE_D(E_PRIME)_IS_SINGULAR",
+            "conditional_singular_boundary_hitting_reset_theorem": "NOT_YET_PROVED",
+            "one_sided_action_identity": "LIM_D_DT(E_ORD^2)=2*C_PSI*B_PSI",
+            "return_time_derivative": None,
             "proof": "theory/n12_intrinsic_first_return_section.md",
         },
         "first_missing_action_owned_object": first_missing,

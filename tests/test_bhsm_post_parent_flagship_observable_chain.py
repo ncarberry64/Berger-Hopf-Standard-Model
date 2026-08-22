@@ -25,7 +25,14 @@ def test_post_parent_flagship_observable_gate_fails_closed() -> None:
         "R_BH_over_ell_star": 2.0,
         "sigma_scale": 0.5,
     }
-    assert payload["shortest_nonfabricated_flagship_route"]["first_missing_object"] == (
-        "ACTION_SELECTED_INTRINSIC_PHYSICAL_STATE_AND_OBSERVABLE_MAP_ON_"
-        "THE_CERTIFIED_CONTINUUM_CHILD"
-    )
+    route = payload["shortest_nonfabricated_flagship_route"]
+    assert "ONE_SIDED_SINGULAR_ORDERED_EVENT_HITTING" in route[
+        "first_missing_object"
+    ]
+    assert "ACTION_SELECTED_INVARIANT_COMPLETE_CHILD_HISTORY" in route[
+        "after_first_return_domain"
+    ]
+    assert route["temporal_chirality_sectors_may_be_quotiented"] is False
+    assert route[
+        "temporal_chirality_may_be_selected_by_solver_or_event_sign_gate"
+    ] is False
