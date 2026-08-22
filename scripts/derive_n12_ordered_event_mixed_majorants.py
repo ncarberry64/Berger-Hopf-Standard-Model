@@ -1,4 +1,4 @@
-"""Derive mixed retained-action majorants for the N12 event eigenline."""
+"""Derive mixed retained-action majorants for an N12 tracked eigenline."""
 
 from __future__ import annotations
 
@@ -28,6 +28,7 @@ RESULT = Path(os.environ.get(
     "BHSM_N12_ORDERED_MIXED_MAJORANT_RESULT",
     ".tmp_direct_n12_ordered_event_mixed_majorants.json",
 ))
+SIDE = os.environ.get("BHSM_N12_EIGENLINE_SIDE", "event").strip().lower()
 
 
 def _sha256(path: Path) -> str:
@@ -39,22 +40,25 @@ def _sha256(path: Path) -> str:
 
 
 def main() -> None:
+    if SIDE not in {"event", "child"}:
+        raise ValueError("BHSM_N12_EIGENLINE_SIDE must be event or child")
     size = dimensions(ORDER)
     qdim = size["coordinates"]
     state_dimension = 2 * qdim + size["multipliers"]
     checkpoint = np.load(CHECKPOINT)
     state = np.asarray(checkpoint["state"], dtype=float)
-    event = state[:state_dimension]
+    offset = 0 if SIDE == "event" else state_dimension
+    sector_state = state[offset:offset + state_dimension]
     reference = np.asarray(checkpoint["branch_reference"], dtype=float)
     jacobian = np.asarray(checkpoint["paired_jacobian"], dtype=float)
     _, singular, vh = np.linalg.svd(jacobian, full_matrices=False)
-    event_normal = vh.T[:state_dimension]
+    sector_normal = vh.T[offset:offset + state_dimension]
 
     hessian = np.asarray(exact_action_jet_at_state(
         ORDER,
-        event[:qdim],
-        event[qdim:2 * qdim],
-        event[2 * qdim:],
+        sector_state[:qdim],
+        sector_state[qdim:2 * qdim],
+        sector_state[2 * qdim:],
         points=POINTS,
     ).hessian, dtype=float)
     eigenvalues, eigenvectors = np.linalg.eigh(hessian)
@@ -83,54 +87,55 @@ def main() -> None:
 
     specifications = {
         "D3_normal_raw_reduced_raw_reduced": [
-            event_normal,
+            sector_normal,
             reduced_raw_unit_action_subspace,
             reduced_raw_unit_action_subspace,
         ],
         "D4_normal_normal_raw_reduced_raw_reduced": [
-            event_normal,
-            event_normal,
+            sector_normal,
+            sector_normal,
             reduced_raw_unit_action_subspace,
             reduced_raw_unit_action_subspace,
         ],
         "D4_normal_normal_selected_selected": [
-            event_normal,
-            event_normal,
+            sector_normal,
+            sector_normal,
             selected_action_direction,
             selected_action_direction,
         ],
         "D4_normal_normal_selected_complement": [
-            event_normal,
-            event_normal,
+            sector_normal,
+            sector_normal,
             selected_action_direction,
             complement_action_subspace,
         ],
         "D5_normal_normal_selected_selected_normal": [
-            event_normal,
-            event_normal,
+            sector_normal,
+            sector_normal,
             selected_action_direction,
             selected_action_direction,
-            event_normal,
+            sector_normal,
         ],
         "D5_normal_normal_selected_complement_normal": [
-            event_normal,
-            event_normal,
+            sector_normal,
+            sector_normal,
             selected_action_direction,
             complement_action_subspace,
-            event_normal,
+            sector_normal,
         ],
     }
     bounds = {}
     for name, directions in specifications.items():
         bound = action_bound(
-            event,
-            projection=event_normal,
+            sector_state,
+            projection=sector_normal,
             mixed_directions=directions,
         )
         bounds[name] = float(bound.d[-1])
 
     payload = {
         "classification": "N12_ORDERED_EVENT_MIXED_ACTION_MAJORANTS_DERIVED",
+        "sector": SIDE,
         "order": ORDER,
         "points": POINTS,
         "checkpoint": str(CHECKPOINT),

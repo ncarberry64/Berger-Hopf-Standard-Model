@@ -32,4 +32,5 @@ def test_forward_landing_chirality_is_conditional_not_a_new_gate() -> None:
     assert lemma["identity"] == "SIGN(D_T_F(TAU))=-SIGN(F(0))"
     assert lemma["new_sign_gate"] is False
     assert lemma["formal_reflection_creates_a_forward_return"] is False
-    assert lemma["continuum_initial_child_side_independently_enclosed"] is False
+    assert lemma["continuum_initial_child_side_independently_enclosed"] is True
+    assert float(lemma["continuum_initial_child_event_value_lower"]) > 0.0

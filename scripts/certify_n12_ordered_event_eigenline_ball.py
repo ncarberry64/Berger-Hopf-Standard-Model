@@ -1,4 +1,4 @@
-"""Certify the corrected N12 ordered-event eigenline on an action ball.
+"""Certify a tracked N12 retained-action eigenline on an action ball.
 
 The selected line is fixed by the validated repaired N6 branch record.  This
 script proves a local block-Schur separation estimate for that same line; it
@@ -46,6 +46,7 @@ RESULT = Path(os.environ.get(
     "BHSM_N12_ORDERED_EIGENLINE_BALL_RESULT",
     ".tmp_direct_n12_ordered_event_eigenline_ball_88.json",
 ))
+SIDE = os.environ.get("BHSM_N12_EIGENLINE_SIDE", "event").strip().lower()
 
 
 def _up(value: float) -> float:
@@ -65,6 +66,8 @@ def _sha256(path: Path) -> str:
 
 
 def main() -> None:
+    if SIDE not in {"event", "child"}:
+        raise ValueError("BHSM_N12_EIGENLINE_SIDE must be event or child")
     size = dimensions(ORDER)
     qdim = size["coordinates"]
     state_dimension = 2 * qdim + size["multipliers"]
@@ -82,14 +85,15 @@ def main() -> None:
     )
     jacobian = np.asarray(checkpoint["paired_jacobian"], dtype=float)
     _, singular, vh = np.linalg.svd(jacobian, full_matrices=False)
-    event_normal = vh.T[:state_dimension]
+    offset = 0 if SIDE == "event" else state_dimension
+    sector_normal = vh.T[offset:offset + state_dimension]
 
     third_payload = np.load(THIRD_VARIATION)
     if not np.array_equal(
         state, np.asarray(third_payload["center_state"], dtype=float)
     ):
         raise ValueError("third variation does not belong to this checkpoint")
-    third = np.asarray(third_payload["event"], dtype=float)
+    third = np.asarray(third_payload[SIDE], dtype=float)
 
     majorant = json.loads(ACTION_MAJORANT.read_text(encoding="utf-8"))
     if majorant.get("validation_passed") is not True:
@@ -108,12 +112,12 @@ def main() -> None:
         "D4_normal_normal_selected_selected"
     ])
 
-    event = state[:state_dimension]
+    sector_state = state[offset:offset + state_dimension]
     hessian = np.asarray(exact_action_jet_at_state(
         ORDER,
-        event[:qdim],
-        event[qdim:2 * qdim],
-        event[2 * qdim:],
+        sector_state[:qdim],
+        sector_state[qdim:2 * qdim],
+        sector_state[2 * qdim:],
         points=POINTS,
     ).hessian, dtype=float)
     eigenvalues, eigenvectors = np.linalg.eigh(hessian)
@@ -132,9 +136,9 @@ def main() -> None:
 
     reduced_indices = np.arange(qdim, state_dimension)
     hessian_derivatives = []
-    for column in range(event_normal.shape[1]):
+    for column in range(sector_normal.shape[1]):
         full_derivative = np.tensordot(
-            third, event_normal[:, column], axes=(2, 0)
+            third, sector_normal[:, column], axes=(2, 0)
         )
         # The stored third variation is action-normalized in all slots,
         # whereas the ordered event is the eigenvalue of the raw reduced
@@ -367,6 +371,7 @@ def main() -> None:
             if certified else
             "N12_ORDERED_EVENT_EIGENLINE_BALL_CERTIFICATE_FAILED"
         ),
+        "sector": SIDE,
         "order": ORDER,
         "points": POINTS,
         "action_coordinate_ball_radius": radius,

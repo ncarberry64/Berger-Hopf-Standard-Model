@@ -52,12 +52,27 @@ forward landing chirality is selected *conditionally by a proved first
 return and the action-evaluated initial child side*.  It is not an acceptance
 condition.
 
-The stored N12 child has \(f_E(0)>0\) at 96, 192, and 384 point quadrature.
-The existing persistence endpoint remains positive and moves farther from
-zero.  These are finite-anchor facts.  The audited continuum artifacts do not
-separately enclose the sign of \(e_{\rm ord}\) evaluated on the continuum
-child rather than on the event state, so this note does not promote the N12
-sign to an independent continuum theorem.
+The tracked child eigenline is now certified on the complete N12 root ball.
+Its center value is \(1.430742563850721\times10^{-9}\), its entire root-ball
+shift is at most \(3.377961828824433\times10^{-15}\), and hence the exact N12
+root has value at least \(1.430739185888892\times10^{-9}>0\).  Transferring
+through the existing continuum action-graph correction and the already
+certified complete compact observation coefficient uses
+
+\[
+|De_{\rm ord}(Y)[h]|
+=|\langle\psi,DH(Y)[h]\psi\rangle|
+\le C_{\rm compact}\|h\|_G
+\]
+
+on the existing source-restricted action ball and changes the value by less
+than \(8.61\times10^{-73}\).  Thus the continuum child independently satisfies
+\(f_E(0)>0\).  The 96, 192, and 384 point evaluations are retained only as
+cross-quadrature diagnostics, not as the analytic bound.
+
+Consequently, if a finite simple transverse first forward return exists, its
+landing derivative is negative.  This remains a conditional consequence and
+does not establish that the return domain is nonempty.
 
 Formal reversal changes the sign of \(G=De_{\rm ord}V\), but the identity
 \(\mathcal R\varphi_t=\varphi_{-t}\mathcal R\) relates positive time to

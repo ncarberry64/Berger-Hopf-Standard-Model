@@ -38,6 +38,10 @@ CONTINUUM = ROOT / (
     "artifacts/n12_continuum_majorant_effectiveness/"
     "BHSM_CONTINUUM_EVENT_CHILD_CERTIFICATE.json"
 )
+INITIAL_SIDE = ROOT / (
+    "artifacts/intrinsic_state_selection/"
+    "BHSM_N12_CONTINUUM_CHILD_INITIAL_EVENT_SIDE.json"
+)
 THEORY = ROOT / "theory/n12_forward_invariant_history_existence_gate.md"
 RESULT = ROOT / (
     "artifacts/intrinsic_state_selection/"
@@ -56,7 +60,7 @@ def _load(path: Path) -> dict[str, object]:
 def main() -> None:
     inputs = (
         INTRINSIC, EVENT_RETURN, LOCAL_FLOW, MAXIMAL_FLOW, CHIRALITY,
-        COERCIVE, CLOCK, RELATIVE_PERIODIC, CONTINUUM, THEORY,
+        COERCIVE, CLOCK, RELATIVE_PERIODIC, CONTINUUM, INITIAL_SIDE, THEORY,
     )
     missing = [str(path) for path in inputs if not path.is_file()]
     if missing:
@@ -71,6 +75,7 @@ def main() -> None:
     clock = _load(CLOCK)
     relative_periodic = _load(RELATIVE_PERIODIC)
     continuum = _load(CONTINUUM)
+    initial_side = _load(INITIAL_SIDE)
 
     conclusion = event_return["action_ownership_conclusion"]
     validation = {
@@ -119,6 +124,10 @@ def main() -> None:
             relative_periodic["action_selected_orbit"] is None
         ),
         "no_new_equation_gate_parent_selector_or_numerical_campaign": True,
+        "continuum_initial_child_side_certified_positive": (
+            initial_side["validation_passed"] is True
+            and initial_side["continuum_transfer"]["sign"] == "POSITIVE"
+        ),
     }
 
     payload = {
@@ -147,7 +156,10 @@ def main() -> None:
             "F": "F(t)=E_ORD(FLOW_t(C_INFINITY(E)))",
             "new_sign_gate": False,
             "N12_initial_child_side": "POSITIVE_AT_96_192_AND_384_POINT_QUADRATURE",
-            "continuum_initial_child_side_independently_enclosed": False,
+            "continuum_initial_child_side_independently_enclosed": True,
+            "continuum_initial_child_event_value_lower": initial_side[
+                "continuum_transfer"
+            ]["continuum_initial_child_event_value_lower"],
             "formal_reflection_creates_a_forward_return": False,
         },
         "periodic_point_prerequisites": {
