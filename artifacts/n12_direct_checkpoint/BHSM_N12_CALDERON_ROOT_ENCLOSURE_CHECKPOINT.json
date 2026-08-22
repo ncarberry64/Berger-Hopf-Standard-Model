@@ -1,0 +1,38 @@
+{
+  "CONTINUUM_EVENT_CHILD_CERTIFIED": false,
+  "FULL_BHSM_COMPLETE": false,
+  "claim_boundary": "THE_BINARY_CENTER_SYMBOL_IS_DIAGNOSTICALLY_TRANSVERSE_AND_THE_TWO_GAUGE_FIXED_SECTOR_INVERSES_ARE_CERTIFIED_ON_THE_EXACT_ROOT_BOX;_THE_COUPLED_GRAPH_SYMBOL_IS_NOT_CERTIFIED_ON_THAT_BOX,_SO_c_M0,_CONTINUUM_CHILD,_Q_xi,_AND_DELTA_H_REMAIN_OPEN",
+  "classification": "N12_EXACT_ROOT_CALDERON_ENCLOSURE_BLOCKER_LOCALIZED_TO_LOSS_OF_CONTRACTION_CORRELATIONS_IN_THE_INDEPENDENT_COORDINATE_BOX",
+  "exact_next_dependency": "ENCLOSE_THE_CALDERON_GRAPH_ON_THE_CONTRACTION_CORRELATED_N12_ROOT_CORRECTION_SET_WITHOUT_REPLACING_IT_BY_THE_INDEPENDENT_PER_COORDINATE_BOX",
+  "inputs": {
+    "artifacts/n12_direct_checkpoint/BHSM_N12_CALDERON_ACTION_BALL.json": "389D1C5F20FA62A9F7B3E78321E632E831F0E5C2C0FDA5B3EA457D5785EEA1F8",
+    "artifacts/n12_direct_checkpoint/BHSM_N12_CALDERON_DIRECTED_CENTER.json": "2936BFC78BA0394895E8B57F243AE57976981B2DC5AF6DA1A829F046EDCCE490",
+    "artifacts/n12_direct_checkpoint/BHSM_N12_DIRECTED_ROUNDING_CERTIFICATE.json": "CB77D17C28E89A8D4D1AC5B8CC61707115C59B68E2D47EF38001CE4FAFF8B1B0",
+    "scripts/certify_n12_calderon_action_ball.py": "EAE0EF2E6891345E5CC903B624354AE4A53B60FF541A37391A24655051A80404",
+    "scripts/certify_n12_calderon_directed_center.py": "A6D12454C3C24ACC599B919DC0E2078E2880FFD443416677293C45A49C249C61"
+  },
+  "reproduction": [
+    "python scripts/certify_n12_calderon_directed_center.py",
+    "python scripts/certify_n12_calderon_action_ball.py",
+    "python scripts/materialize_n12_calderon_root_enclosure_checkpoint.py"
+  ],
+  "scientific_result": {
+    "coupled_graph_symbol_interval_inverse_defect": 973.1878770810439,
+    "exact_root_action_coordinate_distance_upper": 8.110557782071137e-16,
+    "gauge_fixed_sector_interval_inverse_defects": {
+      "child": 2.53230111144797e-06,
+      "event": 1.548150137972519e-05
+    },
+    "numerical_overenclosure_localized": true,
+    "retained_action_obstruction_demonstrated": false
+  },
+  "validation": {
+    "both_gauge_fixed_sector_inverses_remain_contractive": true,
+    "certified_direct_N12_root_enclosure_consumed": true,
+    "continuum_and_full_BHSM_remain_false": true,
+    "coupled_graph_box_failure_recorded_fail_closed": true,
+    "isotropic_action_ball_does_not_claim_root_inclusion": true,
+    "no_new_equation_constraint_gate_scale_fit_or_event_definition": true
+  },
+  "validation_passed": true
+}

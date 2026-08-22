@@ -19,7 +19,10 @@
    radii in one nonlinear N12-to-infinity event-child radii polynomial. The
    N16 paired audit closes the finite hard momentum response. The effectiveness
    audit proves that qualitative compactness does not numerically determine
-   `K`; now enclose a finite-core whole-interval observation bound `c_M0` and
+   `K`. First preserve the contractive 57-row root-correction correlations and
+   certify the coupled N12 Calderon graph at the exact root; the independent
+   coordinate-box enclosure is too wide although both sector inverses remain
+   contractive. Then enclose a finite-core whole-interval bound `c_M0` and
    an inverse-square-tail observation perturbation
    `epsilon_obs(M0) < c_M0`, so that
    `K <= 1/(c_M0-epsilon_obs(M0))`. Do not treat finite probes as roots or fit

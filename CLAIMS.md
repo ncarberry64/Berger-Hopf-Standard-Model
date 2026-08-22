@@ -2,9 +2,9 @@
 
 ## Current public claim boundary
 
-Current public identifier: **N12 continuum-majorant effectiveness localization
-from the certified N12 anchor**. This is not a release and does not claim an
-N16 root, continuum closure, or BHSM completion.
+Current public identifier: **N12 exact-root Calderon enclosure localization**.
+This is not a release and does not claim an N16 root, continuum closure, or
+BHSM completion.
 
 Supported now: N3, N4, N5, N6, and direct N12 reconstruct complete persistent
 children under their retained finite-resolution equations. The corrected N12
@@ -42,6 +42,15 @@ collapse sequence. The certified N12 parent-backward/child-forward diagnostic
 keeps the unchanged symbol gap positive (`0.029146859835472938` to
 `0.02882113423436863` over `1e-10`) with admissible eta and closed constraints,
 but sampled time points are not promoted as a whole-interval bound.
+
+Supported exact-root enclosure result: the certified N12 root lies within
+`8.11055778207114e-16` action coordinates of the stored center. Directed
+interval action replay keeps the existing gauge-fixed event and child sector
+inverses contractive on the enclosing coordinate box (defects
+`1.54815013797252e-5` and `2.53230111144797e-6`). The coupled graph-symbol box
+defect is `973.187877081044`, so no exact-root Calderon gap is promoted. This
+localizes loss of the root-map correlations; it does not demonstrate a
+retained-action obstruction.
 
 Supported finite diagnostic: the gauge-fixed N12 event/child Calderon boundary
 symbol has gap `0.029146859835472938`; doubled quadrature agrees to
@@ -89,10 +98,9 @@ validation, or `FULL_BHSM_COMPLETE = TRUE`.
 Active dependency:
 `ENCLOSE_THE_SOURCE_RESTRICTED_N12_TO_INFINITY_NONLINEAR_EVENT_CHILD_RADII_POLYNOMIAL_WITH_EXPLICIT_ACTION_OWNED_C_r_K_M2_AND_EXISTING_ETA_EVENT_DIRAC_PERSISTENCE_NEIGHBORHOODS`.
 
-Its first missing object is the effective source-restricted positive-duration
-observation compactness modulus: retained-action bounds must establish
-`epsilon_obs(M0) < c_M0` and hence
-`K <= 1/(c_M0-epsilon_obs(M0))`.
+Its first missing object is a coupled Calderon enclosure on the
+contraction-correlated N12 root-correction set. The finite-core observation
+modulus and `epsilon_obs(M0) < c_M0` follow only after that enclosure closes.
 
 ### Historical corrected-Rayleigh N3 claim boundary
 
