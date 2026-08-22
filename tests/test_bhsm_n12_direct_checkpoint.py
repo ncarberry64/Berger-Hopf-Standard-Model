@@ -80,6 +80,9 @@ def test_direct_n12_corrected_action_source_provenance() -> None:
         assert record["inside_current_repository_src"] is True
         source = ROOT / record["path"]
         assert source.is_file()
-        with source.open("rb") as handle:
-            digest = hashlib.sha256(handle.read()).hexdigest().upper()
+        content = source.read_bytes().replace(b"\r\n", b"\n").replace(
+            b"\r", b"\n"
+        )
+        digest = hashlib.sha256(content).hexdigest().upper()
+        assert record["hash_basis"] == "SOURCE_BYTES_WITH_LF_LINE_ENDINGS"
         assert digest == record["SHA256"]

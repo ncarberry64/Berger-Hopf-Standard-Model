@@ -82,13 +82,20 @@ def sha256(path: Path) -> str:
     return digest.hexdigest().upper()
 
 
+def source_sha256(path: Path) -> str:
+    """Hash source text canonically so checkout line endings do not matter."""
+    content = path.read_bytes().replace(b"\r\n", b"\n").replace(b"\r", b"\n")
+    return hashlib.sha256(content).hexdigest().upper()
+
+
 def source_record(module: object) -> dict[str, object]:
     path = Path(inspect.getfile(module)).resolve()
     repository_src = (ROOT / "src").resolve()
     inside = path.is_relative_to(repository_src)
     return {
         "path": path.relative_to(ROOT).as_posix() if inside else str(path),
-        "SHA256": sha256(path),
+        "SHA256": source_sha256(path),
+        "hash_basis": "SOURCE_BYTES_WITH_LF_LINE_ENDINGS",
         "inside_current_repository_src": inside,
     }
 
