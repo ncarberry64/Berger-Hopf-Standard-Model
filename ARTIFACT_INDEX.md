@@ -14,8 +14,10 @@ The contraction-correlated first Picard enclosure certifies the exact-root
 Calderon graph, a positive graph gap on a whole action-coordinate ball, and a
 finite-core positive-duration observation modulus. The retained action also
 supplies an outward-rounded non-fitted constant for the inverse-square bulk
-source law. The uniform N12-to-infinity compact observation-tail modulus is
-still open, so `CONTINUUM_EVENT_CHILD_CERTIFIED = FALSE`.
+source law and a sharp four-integration-by-parts N12-to-infinity source-tail
+enclosure. The source constant and tail are now effective; the normal inverse
+has no explicit retained-action compact cutoff `M_star`, so
+`CONTINUUM_EVENT_CHILD_CERTIFIED = FALSE`.
 
 ## Current N12 continuum-majorant effectiveness checkpoint
 
@@ -27,12 +29,12 @@ still open, so `CONTINUUM_EVENT_CHILD_CERTIFIED = FALSE`.
 - Focused tests: [`test_bhsm_n12_effective_inverse_localization.py`](tests/test_bhsm_n12_effective_inverse_localization.py) and [`test_bhsm_n12_continuum_majorant_checkpoint.py`](tests/test_bhsm_n12_continuum_majorant_checkpoint.py)
 
 The checkpoint preserves the qualitative source-restricted closed-range
-theorem and localizes its first non-effective constant. Qualitative compactness
-and the principal gap do not determine a numerical continuum inverse. The
-sampled N12 positive-duration symbol remains transverse but is not a rigorous
-interval enclosure. The exact next lemma must supply an action-owned
-finite-core observation lower bound and a smaller inverse-square-tail
-observation perturbation. No continuum child or downstream readout is
+theorem and now consumes the explicit retained-action source constant and
+sharp tail. Qualitative compactness and the principal gap still do not
+determine a numerical continuum inverse. The exact next lemma must derive an
+explicit retained-action compact cutoff `M_star` for the gauge-reduced
+high-shell normal inverse and then bound the ordered-event and momentum/flux
+observation perturbations. No continuum child or downstream readout is
 promoted.
 
 ## Prior N16 coupled momentum-response diagnostic

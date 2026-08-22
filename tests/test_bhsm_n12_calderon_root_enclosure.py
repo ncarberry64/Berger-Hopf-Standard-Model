@@ -23,11 +23,31 @@ def test_n12_correlated_root_and_finite_core_close_fail_closed():
     assert result["whole_action_ball_radius"] > 0.0
     assert result["c_M0_observation_norm_lower"] > 0.0
     assert result["C_r_event_child_product"] > 0.0
+    assert result["sharp_N12_to_infinity_weak_source_tail_upper"] > 0.0
+    assert result["sharp_N12_to_infinity_one_extra_weighted_source_tail_upper"] > 0.0
+    assert result["sharp_source_tail_has_applied_the_normal_inverse"] is False
     assert result["that_cutoff_is_not_a_continuum_certificate"] is True
     assert result["retained_action_obstruction_demonstrated"] is False
     assert len(payload["localized_open_operator_blocks"]) == 4
     assert payload["CONTINUUM_EVENT_CHILD_CERTIFIED"] is False
     assert payload["FULL_BHSM_COMPLETE"] is False
+
+
+def test_n12_sharp_source_tail_is_action_owned_and_fail_closed():
+    source = json.loads((ROOT / (
+        "artifacts/n12_direct_checkpoint/"
+        "BHSM_N12_INVERSE_SQUARE_SOURCE_CONSTANT.json"
+    )).read_text(encoding="utf-8"))
+    sharp = source["sharp_N12_to_infinity_source_tail"]
+    table = sharp["action_owned_tail_vs_retained_cutoff"]
+    weak = [table[str(order)]["joint_weak_source_tail_norm_upper"]
+            for order in (12, 16, 24, 32, 48, 64, 96, 128, 256, 512, 1024)]
+    assert source["validation_passed"] is True
+    assert sharp["normal_inverse_applied"] is False
+    assert all(left > right for left, right in zip(weak, weak[1:]))
+    assert all(row["cutoff_is_a_complete_child_root"] is False
+               for row in table.values())
+    assert source["CONTINUUM_EVENT_CHILD_CERTIFIED"] is False
 
 
 def test_n12_calderon_root_enclosure_manifest_hashes_reproduce():

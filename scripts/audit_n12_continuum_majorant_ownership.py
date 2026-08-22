@@ -71,6 +71,10 @@ def main() -> None:
         "artifacts/n12_direct_checkpoint/"
         "BHSM_N12_PHYSICAL_NEIGHBORHOOD_CERTIFICATE.json"
     )
+    source_constant = _load(
+        "artifacts/n12_direct_checkpoint/"
+        "BHSM_N12_INVERSE_SQUARE_SOURCE_CONSTANT.json"
+    )
 
     beta = float(theorem["action_owned_constants"]["principal_modulus_gap"])
     tail_inverse = float(
@@ -92,15 +96,25 @@ def main() -> None:
         side: _maximum_sampled_n2_shell(source_n64, side)
         for side in ("event", "child")
     }
+    exact_cr = float(source_constant["C_r_event_child_product"])
+    sharp_tail = source_constant["sharp_N12_to_infinity_source_tail"]
 
     constants = {
         "C_r": {
             "owned_law": "norm(r_n)_weak<=C_r*n^-2",
             "analytic_exponent_owned": True,
-            "explicit_validated_upper_bound": None,
+            "explicit_validated_upper_bound": exact_cr,
+            "sharp_N12_to_infinity_weak_source_tail_upper": float(
+                sharp_tail["joint_event_child_weak_source_tail_norm_upper"]
+            ),
+            "sharp_N12_to_infinity_one_extra_weighted_source_tail_upper": float(
+                sharp_tail[
+                    "joint_event_child_one_extra_weighted_source_tail_norm_upper"
+                ]
+            ),
             "sampled_lower_bounds_on_any_valid_C_r": sampled_cr,
             "finite_samples_are_an_upper_bound": False,
-            "status": "OPEN_NON_EFFECTIVE_CONSTANT",
+            "status": "CLOSED_EXPLICIT_RETAINED_ACTION_CONSTANT",
         },
         "K": {
             "principal_high_tail_bound": tail_inverse,
@@ -160,8 +174,9 @@ def main() -> None:
         "is_a_lemma_in_the_existing_closed_range_proof": True,
         "new_proxy_theorem": False,
         "missing_first_input": (
-            "EXPLICIT_RATE_FROM_THE_INVERSE_SQUARE_SOURCE_RESTRICTED_"
-            "S2_TAIL_TO_THE_POSITIVE_DURATION_OBSERVATION_OPERATOR"
+            "EXPLICIT_RETAINED_ACTION_COMPACT_CUTOFF_M_STAR_FOR_THE_"
+            "GAUGE_REDUCED_HIGH_SHELL_NORMAL_INVERSE,_FOLLOWED_BY_"
+            "ORDERED_EVENT_AND_MOMENTUM_FLUX_OBSERVATION_TAIL_MODULI"
         ),
     }
 
@@ -189,6 +204,12 @@ def main() -> None:
             == "NORMAL_DIRECTION_CONTROLLED_BY_THE_EXISTING_POSITIVE_"
             "DURATION_GAUGE_FIXED_JACOBI_EVOLUTION"
         ),
+        "explicit_source_constant_certificate_consumed": bool(
+            source_constant["validation_passed"] and exact_cr > 0.0
+        ),
+        "sharp_source_tail_does_not_assume_the_missing_inverse": bool(
+            sharp_tail["normal_inverse_applied"] is False
+        ),
         "no_finite_probe_fit_promoted": True,
         "incompatible_map_constants_not_multiplied": True,
         "nonlinear_continuum_radii_not_evaluated_with_missing_inputs": not radii_ready,
@@ -196,10 +217,10 @@ def main() -> None:
     }
     output = {
         "classification": (
-            "N12_TO_INFINITY_RADII_CONSTANT_OWNERSHIP_AUDITED;_"
-            "QUALITATIVE_CLOSED_RANGE_IS_NON_EFFECTIVE_AND_THE_FIRST_"
-            "MISSING_OBJECT_IS_THE_POSITIVE_DURATION_OBSERVATION_"
-            "COMPACTNESS_MODULUS"
+            "N12_TO_INFINITY_SOURCE_CONSTANT_AND_SHARP_TAIL_CLOSED;_"
+            "QUALITATIVE_CLOSED_RANGE_REMAINS_NON_EFFECTIVE_AND_THE_"
+            "FIRST_MISSING_OBJECT_IS_AN_EXPLICIT_RETAINED_ACTION_"
+            "COMPACT_CUTOFF_FOR_THE_HIGH_SHELL_NORMAL_INVERSE"
         ),
         "constants": constants,
         "effective_compactness_lemma": effective_lemma,

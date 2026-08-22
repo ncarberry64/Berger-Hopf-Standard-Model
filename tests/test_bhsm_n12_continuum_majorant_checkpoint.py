@@ -20,6 +20,15 @@ def test_continuum_majorant_checkpoint_fails_closed() -> None:
 
     assert ownership["validation_passed"] is True
     assert ownership["radii_polynomial_rigorously_evaluable"] is False
+    assert ownership["constants"]["C_r"]["status"] == (
+        "CLOSED_EXPLICIT_RETAINED_ACTION_CONSTANT"
+    )
+    assert ownership["constants"]["C_r"][
+        "explicit_validated_upper_bound"
+    ] > 0.0
+    assert ownership["constants"]["K"][
+        "explicit_positive_duration_continuum_inverse_bound"
+    ] is None
     assert localization["validation_passed"] is True
     assert localization["BHSM_interpretation"][
         "qualitative_closed_range_invalidated"

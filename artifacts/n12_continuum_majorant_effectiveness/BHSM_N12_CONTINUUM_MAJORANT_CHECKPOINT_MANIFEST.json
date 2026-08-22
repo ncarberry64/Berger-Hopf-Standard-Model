@@ -2,6 +2,7 @@
   "checkpoint": "N12_CONTINUUM_MAJORANT_EFFECTIVENESS_LOCALIZED",
   "claims": {
     "CONTINUUM_EVENT_CHILD_CERTIFIED": false,
+    "C_r_event_child_product": 6472.790577608341,
     "FULL_BHSM_COMPLETE": false,
     "N12_static_Calderon_gap": 0.029146859835358096,
     "category_3_collapse_sequence_constructed": false,
@@ -10,20 +11,22 @@
     "qualitative_source_restricted_closed_range_invalidated": false,
     "sampled_duration": 1e-10,
     "sampled_history_is_an_interval_proof": false,
+    "sharp_N12_to_infinity_weak_source_tail_upper": 0.6235945114875246,
+    "sharp_source_tail_has_applied_the_normal_inverse": false,
     "soft_channel_classification": "CATEGORY_2_DYNAMICALLY_CONTROLLED_NORMAL_DIRECTION"
   },
-  "classification": "QUALITATIVE_SOURCE_RESTRICTED_CLOSED_RANGE_RETAINED;_NUMERICAL_CONTINUUM_RADIUS_REQUIRES_AN_EFFECTIVE_POSITIVE_DURATION_OBSERVATION_MODULUS",
+  "classification": "EXPLICIT_RETAINED_ACTION_SOURCE_CONSTANT_AND_SHARP_TAIL_CLOSED;_NUMERICAL_CONTINUUM_RADIUS_REQUIRES_AN_EXPLICIT_HIGH_SHELL_COMPACT_CUTOFF_AND_OBSERVATION_MODULUS",
   "effective_dependency": {
     "conclusion_if_closed": "K<=1/(c_M0-epsilon_obs(M0))_WHEN_epsilon_obs(M0)<c_M0",
     "finite_core_lemma": "ENCLOSE_THE_N12_POSITIVE_DURATION_CALDERON_SYMBOL_GAP_ON_A_WHOLE_INTERVAL_WITH_AN_ACTION_OWNED_TIME_LIPSCHITZ_MAJORANT",
-    "first_missing_object": "EFFECTIVE_SOURCE_RESTRICTED_POSITIVE_DURATION_OBSERVATION_COMPACTNESS_MODULUS",
-    "tail_lemma": "BOUND_THE_INVERSE_SQUARE_SOURCE_RESTRICTED_STRONG_GRAPH_TAIL_IN_THE_POSITIVE_DURATION_OBSERVATION_NORM"
+    "first_missing_object": "EXPLICIT_RETAINED_ACTION_COMPACT_CUTOFF_M_STAR_FOR_THE_GAUGE_REDUCED_HIGH_SHELL_NORMAL_INVERSE",
+    "tail_lemma": "APPLY_THE_NOW_EXPLICIT_SHARP_SOURCE_TAIL_AFTER_M_STAR_AND_BOUND_THE_ORDERED_EVENT_AND_MOMENTUM_FLUX_OBSERVATION_PERTURBATIONS"
   },
   "files": [
     {
-      "bytes": 3513,
+      "bytes": 3913,
       "path": "artifacts/n12_continuum_majorant_effectiveness/BHSM_N12_CONTINUUM_MAJORANT_OWNERSHIP_AUDIT.json",
-      "sha256": "e39c045add9ae544830109ca6abbef78f54b2112d304854c7c6a5b48b8566986"
+      "sha256": "3e78b9e996b3f5e14f3520c3238d07abfc9643aec171497971134aff986fe9ad"
     },
     {
       "bytes": 3816,
@@ -36,12 +39,25 @@
       "sha256": "b3077a3da6648c95f6505d34aaac2d06da2cb193f565809537af340b00ea969e"
     }
   ],
+  "input_dependencies": [
+    {
+      "bytes": 9556,
+      "path": "artifacts/n12_direct_checkpoint/BHSM_N12_INVERSE_SQUARE_SOURCE_CONSTANT.json",
+      "sha256": "5014512926197a55edd843d04e77013de06895e086abcec1081565be7a981346"
+    },
+    {
+      "bytes": 32904,
+      "path": "scripts/derive_n12_inverse_square_source_constant.py",
+      "sha256": "6dce141712d7e5bceb0928ab76b1ad83437230d3cd8db88852cf77db7655877f"
+    }
+  ],
   "promotion_boundary": "THIS_CHECKPOINT LOCALIZES THE FIRST NON_EFFECTIVE CONSTANT. IT DOES NOT CERTIFY A CONTINUUM CHILD, Q_XI, DELTA_H, MASS, FAMILY SELECTION, OR A PREDICTION.",
   "reproduction": [
     "$env:PYTHONPATH='src'; $env:BHSM_N12_CONTINUUM_MAJORANT_OWNERSHIP_RESULT='artifacts/n12_continuum_majorant_effectiveness/BHSM_N12_CONTINUUM_MAJORANT_OWNERSHIP_AUDIT.json'; python scripts/audit_n12_continuum_majorant_ownership.py",
     "$env:PYTHONPATH='src'; python scripts/materialize_n12_effective_inverse_localization.py",
     "$env:PYTHONPATH='src'; $env:BHSM_N12_HISTORY_CALDERON_RESULT='artifacts/n12_continuum_majorant_effectiveness/BHSM_N12_POSITIVE_DURATION_CALDERON_HISTORY.json'; python scripts/audit_n12_positive_duration_calderon_history.py",
-    "$env:PYTHONPATH='src'; python scripts/materialize_n12_continuum_majorant_checkpoint.py"
+    "$env:PYTHONPATH='src'; python scripts/materialize_n12_continuum_majorant_checkpoint.py",
+    "$env:PYTHONPATH='src'; python scripts/derive_n12_inverse_square_source_constant.py"
   ],
-  "scientific_base_commit": "ba33d3465d02bf32c563f08be1de562f44993022"
+  "scientific_base_commit": "ce62c65260bb72773c0a9d9382b21bc0f8bf2cff"
 }

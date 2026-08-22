@@ -2,13 +2,13 @@
 
 [![CI](https://github.com/ncarberry64/Berger-Hopf-Standard-Model/actions/workflows/ci.yml/badge.svg)](https://github.com/ncarberry64/Berger-Hopf-Standard-Model/actions/workflows/ci.yml)
 [![Latest archival release](https://img.shields.io/github/v/release/ncarberry64/Berger-Hopf-Standard-Model?label=archival%20release)](https://github.com/ncarberry64/Berger-Hopf-Standard-Model/releases/latest)
-[![Current research status](https://img.shields.io/badge/current%20research-N12%20finite--core%20closed%3B%20tail%20modulus%20open-orange)](docs/current_bhsm_status.md)
+[![Current research status](https://img.shields.io/badge/current%20research-N12%20sharp%20source%20tail%20closed%3B%20normal%20cutoff%20open-orange)](docs/current_bhsm_status.md)
 [![Python 3.10+](https://img.shields.io/badge/python-3.10%2B-3776AB)](https://www.python.org/)
 [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.20663419.svg)](https://doi.org/10.5281/zenodo.20663419)
 
 BHSM is an independent artifact-backed computational framework and mathematical-physics research program investigating whether Standard Model structure and particle-like dynamics can be derived from Berger-Hopf boundary/envelopment geometry and a common action architecture.
 
-## Current Research Frontier -- N12 finite core closed, continuum tail open
+## Current Research Frontier -- N12 sharp source tail closed, normal cutoff open
 
 BHSM now has a directly corrected `N=12` complete persistent child under the
 unchanged retained 57-row finite-resolution map. Its independently evaluated
@@ -40,13 +40,18 @@ modulus `c_M0 >= 2.036906619199693e-19`.
 
 The unchanged action also now supplies an explicit, outward-rounded,
 non-fitted inverse-square bulk source constant
-`C_r,event-child <= 6476.1581744767345`. This certifies the shell law
+`C_r,event-child <= 6472.790577608341`. Four integrations by parts sharpen
+the complete N12-to-infinity weak source-tail bound to
+`0.6235945114875246` (one-extra-weighted bound `33.41402289587693`). This certifies the shell law
 `||r_n||_weak <= C_r n^-2`; the standard-model boundary Casimir covector stays
 in the existing weak conormal reaction relation. These results do not yet
 certify a continuum child. The N12-to-infinity observation perturbation still
-lacks explicit uniform graph-norm moduli for four compact blocks: interior
+lacks an explicit retained-action compact cutoff `M_star` for the gauge-reduced
+high-shell normal inverse, followed by graph-norm moduli for the interior
 lower-order Euler--Dirac, ordered-event projector, canonical momentum/dynamic
-flux, and Gauss-consistency. No retained-action obstruction has been found.
+flux, and Gauss-consistency blocks. The sharp tail does not assume that inverse,
+and its cutoff table does not promote higher cutoffs as roots. No retained-action
+obstruction has been found.
 
 | Scientific gate | Status |
 | --- | --- |

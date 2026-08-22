@@ -43,6 +43,7 @@ def main() -> None:
 
     beta = math.sqrt(29.0) - 5.0
     c_r = float(source["C_r_event_child_product"])
+    sharp_tail = source["sharp_N12_to_infinity_source_tail"]
     radius = float(action_ball["action_coordinate_ball_radius_per_sector"])
     tail_at_12 = 4.0 * c_r / (beta * 12.0)
     radius_only_cutoff = math.ceil(8.0 * c_r / (beta * radius))
@@ -65,6 +66,9 @@ def main() -> None:
         ),
         "explicit_nonfitted_inverse_square_source_constant_certified": (
             c_r > 0.0
+        ),
+        "sharp_source_tail_does_not_assume_missing_normal_inverse": (
+            sharp_tail["normal_inverse_applied"] is False
         ),
         "finite_core_not_promoted_to_uniform_tail_inverse": True,
         "missing_compact_tail_modulus_recorded_fail_closed": True,
@@ -97,6 +101,17 @@ def main() -> None:
                 "finite_core_normal_inverse_bound_1_over_c_M0"
             ],
             "C_r_event_child_product": c_r,
+            "sharp_N12_to_infinity_weak_source_tail_upper": sharp_tail[
+                "joint_event_child_weak_source_tail_norm_upper"
+            ],
+            "sharp_N12_to_infinity_one_extra_weighted_source_tail_upper": (
+                sharp_tail[
+                    "joint_event_child_one_extra_weighted_source_tail_norm_upper"
+                ]
+            ),
+            "sharp_source_tail_has_applied_the_normal_inverse": sharp_tail[
+                "normal_inverse_applied"
+            ],
             "asymptotic_high_tail_inverse_bound": 4.0 / beta,
             "formal_inverse_square_correction_tail_bound_at_M0_12": tail_at_12,
             "radius_only_cutoff_if_the_uniform_compact_remainder_bound_"
@@ -115,11 +130,11 @@ def main() -> None:
             "REMAIN_OPEN"
         ),
         "exact_next_dependency": (
-            "DERIVE_EXPLICIT_ACTION_GRAPH_NORM_TAIL_MODULI_FOR_THE_"
-            "INTERIOR_LOWER_ORDER_EULER_DIRAC,_ORDERED_EVENT_PROJECTOR,_"
-            "CANONICAL_MOMENTUM_FLUX,_AND_GAUSS_CONSISTENCY_BLOCKS;_"
-            "THEN_VERIFY_epsilon_obs_M0_LT_c_M0_AND_CLOSE_THE_"
-            "NONLINEAR_CONTINUUM_RADII_POLYNOMIAL"
+            "DERIVE_AN_EXPLICIT_RETAINED_ACTION_COMPACT_CUTOFF_M_STAR_"
+            "FOR_THE_GAUGE_REDUCED_HIGH_SHELL_NORMAL_INVERSE;_THEN_"
+            "APPLY_THE_SHARP_SOURCE_TAIL_AND_BOUND_THE_ORDERED_EVENT,_"
+            "CANONICAL_MOMENTUM_FLUX,_AND_OBSERVATION_PERTURBATIONS_"
+            "BEFORE_CLOSING_THE_NONLINEAR_CONTINUUM_RADII_POLYNOMIAL"
         ),
         "reproduction": [
             "python scripts/certify_n12_calderon_directed_center.py",
