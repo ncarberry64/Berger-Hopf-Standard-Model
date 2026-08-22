@@ -1,4 +1,8 @@
-# Time-reversal obstruction to a global event-forward shortcut
+# Formal-reversal obstruction to a global event-forward shortcut
+
+BHSM physical time is oriented and forward.  The involution below is therefore
+used only as a formal reflection between candidate forward-time Cauchy sectors.
+It is not physical backward evolution and is not quotiented as gauge.
 
 Write the retained phase variables as
 
@@ -7,7 +11,7 @@ Y=(q,v,\ell,s),
 \]
 
 where \(\ell\) are log-lapse coefficients and \(s\) are shift coefficients.
-Define the involution
+Define the algebraic involution
 
 \[
 \mathcal R(q,v,\ell,s)=(q,-v,\ell,-s).
@@ -41,13 +45,15 @@ continuously selected simple eigenline,
 e_{\rm ord}(\mathcal RY)=e_{\rm ord}(Y).
 \]
 
-The Euler--Dirac flow is reversible,
+The Euler--Dirac equations obey the formal conjugacy
 
 \[
 \mathcal R\Phi_t(Y)=\Phi_{-t}(\mathcal RY).
 \]
 
-Differentiating the even event scalar along this flow gives
+where negative time is used only in the mathematical identity, not as a
+physical identification.  Differentiating the even event scalar along the
+forward vector field gives
 
 \[
 G(Y):=De_{\rm ord}(Y)V(Y),
@@ -55,24 +61,30 @@ G(Y):=De_{\rm ord}(Y)V(Y),
 \]
 
 Consequently no strictly one-signed global event-transport bound can hold on
-an admissible set invariant under \(\mathcal R\).  If time reversal maps one
-connected component to a distinct component, a component-restricted sign is
-not ruled out, but the separation and orientation must be proved from the
-existing event-to-child correspondence; it may not be selected numerically.
+the union of both action-admissible reflected sectors.  On the simple
+transverse event locus, \(\operatorname{sgn}G\) is a valid locally constant
+temporal-chirality label and \(\mathcal R\) exchanges its signs.  This makes
+the sectors distinct; it does not select either one.  A component-restricted
+sign may be used only after action ownership of that component is proved, and
+it may not be selected numerically.
 
 The certified N12 persistence endpoints show a positive local event secant
 on the stored forward history.  That measurement is consistent with the
 identity above and remains useful local evidence, but it cannot be extended
 to a global Lyapunov or monotonicity statement from the action alone.
 
-Thus the event-forward shortcut is invalid as a global shortcut.  The exact
+Thus the event-forward shortcut is invalid as a global shortcut.  The complete
+event-to-child audit shows that its zero-set equations are equivariant but do
+not impose a sign of \(G\), canonical momentum, or shift current.  The two
+forward-time chiral sectors remain distinct and unquotiented.  The exact
 remaining return dependency is to prove either:
 
-1. that the existing post-event complete-child component is separated from
-   its time reverse and admits an action-derived integrated event-transport
-   bound forcing a transverse zero; or
+1. that one existing forward-time temporal-chirality component is selected by
+   the retained action and admits an integrated event-transport bound forcing
+   a transverse zero; or
 2. that the ordered event stays nonzero until the already-classified
    continuum physical/strong-domain exit.
 
-This is a theorem about the existing oriented event-child component.  It is
-not authorization for a new trajectory campaign or a new orientation gate.
+The current action does not supply the selection required by item 1.  The
+formal reflection may not be quotiented to create it.  This is not
+authorization for a new trajectory campaign or a new orientation gate.

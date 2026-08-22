@@ -26,6 +26,10 @@ CHARGE = ROOT / "artifacts/BHSM_action_selected_charge_current_shape_schur_gate_
 CLOCK = ROOT / "artifacts/BHSM_aether_joint_hamiltonian_selection_v15_2.json"
 FLAVOR = ROOT / "artifacts/BHSM_action_selected_8d_vacuum_flavor_completion_v9_0.json"
 TRANSPORT = ROOT / "artifacts/BHSM_common_scheme_observable_transport_v7_2.json"
+CHIRALITY = ROOT / (
+    "artifacts/intrinsic_state_selection/"
+    "BHSM_N12_FORWARD_TIME_TEMPORAL_CHIRALITY_AUDIT.json"
+)
 RESULT = ROOT / (
     "artifacts/qxi_relative_energy_preparation/"
     "BHSM_POST_PARENT_FLAGSHIP_OBSERVABLE_GATE.json"
@@ -37,7 +41,10 @@ def _sha256(path: Path) -> str:
 
 
 def main() -> None:
-    inputs = (CONTINUUM, PARENT, ABSOLUTE_UNIT, CHARGE, CLOCK, FLAVOR, TRANSPORT)
+    inputs = (
+        CONTINUUM, PARENT, ABSOLUTE_UNIT, CHARGE, CLOCK, FLAVOR, TRANSPORT,
+        CHIRALITY,
+    )
     missing = [str(path) for path in inputs if not path.is_file()]
     if missing:
         raise FileNotFoundError("missing flagship-observable inputs: " + ", ".join(missing))
@@ -49,6 +56,7 @@ def main() -> None:
     clock = json.loads(CLOCK.read_text(encoding="utf-8"))
     flavor = json.loads(FLAVOR.read_text(encoding="utf-8"))
     transport = json.loads(TRANSPORT.read_text(encoding="utf-8"))
+    chirality = json.loads(CHIRALITY.read_text(encoding="utf-8"))
 
     ratios = absolute_unit["unit_anchor"]["preserved_relative_ratios"]
     validation = {
@@ -72,6 +80,14 @@ def main() -> None:
             == "ABSENCE_OF_DISTINCT_ACTION_DERIVED_FALSIFIABLE_PREDICTION"
         ),
         "no_prediction_frozen_or_compared": True,
+        "formal_reflection_is_not_gauge": (
+            chirality["physical_time"]["formal_reversal_is_gauge"] is False
+        ),
+        "one_temporal_chirality_sector_is_not_action_selected": (
+            chirality["event_to_child_conclusion"][
+                "one_temporal_chirality_sector_action_selected"
+            ] is False
+        ),
     }
     payload = {
         "artifact": "BHSM_POST_PARENT_FLAGSHIP_OBSERVABLE_GATE",
@@ -119,12 +135,14 @@ def main() -> None:
         ],
         "shortest_nonfabricated_flagship_route": {
             "route": (
-                "CERTIFIED_CONTINUUM_CHILD_TO_ACTION_SELECTED_INTRINSIC_CHILD_STATE_"
-                "AND_OBSERVABLE_MAP_TO_DIMENSIONLESS_BLIND_PREDICTION"
+                "CERTIFIED_CONTINUUM_CHILD_TO_ACTION_SELECTED_FORWARD_TIME_"
+                "INVARIANT_HISTORY_WITH_DISTINCT_CHIRAL_PARTNER_TO_REFLECTION_"
+                "INVARIANT_DIMENSIONLESS_OBSERVABLE_TO_BLIND_PREDICTION"
             ),
             "first_missing_object": (
-                "ACTION_SELECTED_INTRINSIC_PHYSICAL_STATE_AND_OBSERVABLE_MAP_ON_"
-                "THE_CERTIFIED_CONTINUUM_CHILD"
+                "ACTION_SELECTED_INVARIANT_COMPLETE_CHILD_HISTORY_WITH_FORMAL_"
+                "REVERSAL_RETAINED_AS_A_DISTINCT_FORWARD_TIME_CHIRAL_PAIRING_AND_"
+                "A_PAIR_INVARIANT_OBSERVABLE_MAP"
             ),
             "why_this_precedes_numerical_evaluation": (
                 "all presently located child-only numbers are either mathematical "
@@ -132,6 +150,8 @@ def main() -> None:
                 "or values conditional on an unselected state, charge, cycle, or domain"
             ),
             "matched_parent_route_may_resume_only_if_action_owned": True,
+            "temporal_chirality_may_be_selected_by_solver_or_event_sign_gate": False,
+            "temporal_chirality_sectors_may_be_quotiented": False,
         },
         "prediction_frozen": False,
         "held_out_comparison_performed": False,

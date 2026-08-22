@@ -46,6 +46,30 @@ COERCIVE = ROOT / (
     "artifacts/intrinsic_state_selection/"
     "BHSM_N12_GLOBAL_FLOW_COERCIVE_CONTROL_GATE.json"
 )
+EVENT_EQUIVARIANCE = ROOT / (
+    "artifacts/intrinsic_state_selection/"
+    "BHSM_N12_EVENT_CHILD_TIME_REVERSAL_EQUIVARIANCE_GATE.json"
+)
+CHIRALITY = ROOT / (
+    "artifacts/intrinsic_state_selection/"
+    "BHSM_N12_FORWARD_TIME_TEMPORAL_CHIRALITY_AUDIT.json"
+)
+ORDERED_REVERSAL = ROOT / (
+    "artifacts/intrinsic_state_selection/"
+    "BHSM_N12_ORDERED_EVENT_TIME_REVERSAL_OBSTRUCTION.json"
+)
+CHILD_BOUNDARY = ROOT / (
+    "artifacts/intrinsic_state_selection/"
+    "BHSM_N12_CHILD_BOUNDARY_HAMILTONIAN_OWNERSHIP_GATE.json"
+)
+CONSTRAINT_ENERGY = ROOT / (
+    "artifacts/intrinsic_state_selection/"
+    "BHSM_N12_CONSTRAINT_REDUCED_ENERGY_IDENTITY_GATE.json"
+)
+CONTINUUM_FLOW = ROOT / (
+    "artifacts/intrinsic_state_selection/"
+    "BHSM_N12_CONTINUUM_MAXIMAL_FLOW_DICHOTOMY.json"
+)
 RESULT = ROOT / (
     "artifacts/intrinsic_state_selection/"
     "BHSM_N12_INTRINSIC_RETURN_ACTION_OWNERSHIP_GATE.json"
@@ -64,7 +88,8 @@ def main() -> None:
     inputs = (
         CONTINUUM, DIRECT, PERSISTENCE, RETURN, INTRINSIC, ETA_EXIT,
         PERSISTENCE_DEFINITION, CLOCK, RELATIVE_PERIODIC, POST_PARENT,
-        FINITE_FLOW, COERCIVE,
+        FINITE_FLOW, COERCIVE, EVENT_EQUIVARIANCE, CHIRALITY,
+        ORDERED_REVERSAL, CHILD_BOUNDARY, CONSTRAINT_ENERGY, CONTINUUM_FLOW,
     )
     missing = [str(path) for path in inputs if not path.is_file()]
     if missing:
@@ -81,14 +106,18 @@ def main() -> None:
     post_parent = _load(POST_PARENT)
     finite_flow = _load(FINITE_FLOW)
     coercive = _load(COERCIVE)
+    event_equivariance = _load(EVENT_EQUIVARIANCE)
+    chirality = _load(CHIRALITY)
+    ordered_reversal = _load(ORDERED_REVERSAL)
+    child_boundary = _load(CHILD_BOUNDARY)
+    constraint_energy = _load(CONSTRAINT_ENERGY)
+    continuum_flow = _load(CONTINUUM_FLOW)
 
     eta_boundary = eta_exit["boundary_transversality"]
     child_domain = persistence_definition["persistence_and_decay_contract"][
         "persistence_domain_B_child"
     ]
-    first_missing = coercive["global_flow_consequence"][
-        "first_missing_action_owned_object"
-    ]
+    first_missing = chirality["flagship_consequence"]["first_missing_object"]
     validation = {
         "continuum_event_child_remains_certified": continuum[
             "CONTINUUM_EVENT_CHILD_CERTIFIED"
@@ -137,12 +166,53 @@ def main() -> None:
             "validation_passed"
         ] is True,
         "no_new_evolution_selector_observable_or_prediction": True,
+        "formal_reflection_is_not_gauge": (
+            chirality["physical_time"]["formal_reversal_is_gauge"] is False
+        ),
+        "one_temporal_chirality_sector_is_not_action_selected": (
+            chirality["event_to_child_conclusion"][
+                "one_temporal_chirality_sector_action_selected"
+            ] is False
+        ),
+        "temporal_chirality_label_sign_G_is_derived_on_simple_transverse_events": (
+            chirality["candidate_invariant_audit"]["ordered_event_transport"][
+                "locally_constant_on_simple_transverse_event_components"
+            ] is True
+        ),
+        "temporal_chirality_sectors_are_not_quotiented": (
+            chirality["event_to_child_conclusion"][
+                "two_sectors_may_be_quotiented"
+            ] is False
+        ),
+        "event_forward_global_sign_shortcut_is_invalidated": (
+            ordered_reversal["flagship_chain"][
+                "event_forward_shortcut_adjudicated"
+            ] is True
+        ),
+        "event_child_formal_equivariance_is_closed": (
+            event_equivariance["validation_passed"] is True
+        ),
+        "child_boundary_H_xi_ownership_no_go_is_localized": (
+            child_boundary["validation_passed"] is True
+            and child_boundary["action_owned_inventory"][
+                "complete_covariant_symplectic_potential"
+            ] is False
+        ),
+        "constraint_reduced_Legendre_energy_zero_identity_is_closed": (
+            constraint_energy["validation_passed"] is True
+            and constraint_energy["exact_identity"]["restricted_identity"]
+            == "E_N|C_N_inverse_0=0"
+        ),
+        "continuum_maximal_flow_dichotomy_is_closed": (
+            continuum_flow["validation_passed"] is True
+        ),
     }
     payload = {
         "artifact": "BHSM_N12_INTRINSIC_RETURN_ACTION_OWNERSHIP_GATE",
         "classification": (
-            "FIRST_RETURN_NOT_YET_ACTION_EXECUTABLE;_EARLIEST_BLOCKER_IS_"
-            "GLOBAL_CONTINUUM_CHILD_FLOW_DOMAIN_CONTROL"
+            "FIRST_RETURN_NOT_YET_ACTION_EXECUTABLE;_FORMAL_REVERSAL_LABELS_"
+            "TWO_DISTINCT_FORWARD_TIME_TEMPORAL_CHIRALITY_SECTORS_BUT_THE_"
+            "CURRENT_ACTION_SELECTS_NEITHER"
         ),
         "inputs": {
             str(path.relative_to(ROOT)).replace("\\", "/"): _sha256(path)
@@ -174,6 +244,7 @@ def main() -> None:
         },
         "global_flow_audit": {
             "finite_N12_maximal_flow_dichotomy_proved": True,
+            "continuum_maximal_flow_dichotomy_proved": True,
             "local_continuum_anchor_flow_certified": finite_flow[
                 "continuum_transfer"
             ]["local_continuum_flow_on_anchor_action_ball_closed"],
@@ -201,7 +272,16 @@ def main() -> None:
             ],
         },
         "return_or_no_return_proof_obligations": {
-            "first": first_missing,
+            "first": (
+                "PROVE_EXISTENCE_OF_AN_ACTION_SELECTED_INVARIANT_HISTORY_ON_"
+                "THE_FORWARD_TIME_RETURN_RELATION_WITHOUT_QUOTIENTING_OR_"
+                "NUMERICALLY_CHOOSING_THE_FORMALLY_REFLECTED_TEMPORAL_"
+                "CHIRALITY_SECTORS"
+            ),
+            "formal_reflection_status": (
+                "DISTINCT_FORWARD_TIME_CHIRAL_PAIRING_NOT_GAUGE_OR_PHYSICAL_"
+                "BACKWARD_EVOLUTION"
+            ),
             "then": (
                 "BOUND_OR_INTEGRATE_<psi,D_H[V]psi>_UNTIL_THE_FIRST_OF_"
                 "ORDERED_EVENT_RETURN_OR_EXISTING_PHYSICAL_DOMAIN_EXIT"
@@ -224,11 +304,13 @@ def main() -> None:
             "matched_parent_Q_xi_or_Delta_H_authorized": False,
             "intrinsic_return_observable_executable": False,
             "shortest_action_owned_route": (
-                "CONTINUUM_CHILD_FLOW_CONTINUATION_OR_EXIT_TO_ORDERED_EVENT_"
-                "RETURN_OR_NO_RETURN_TO_ACTION_SELECTED_INVARIANT_STATE_OR_"
-                "EXIT_READOUT"
+                "CONTINUUM_CHILD_TO_ACTION_SELECTED_INVARIANT_FORWARD_TIME_"
+                "HISTORY_WITH_FORMAL_REFLECTION_RETAINED_AS_DISTINCT_CHIRAL_"
+                "PARTNER_TO_REFLECTION_INVARIANT_DIMENSIONLESS_READOUT"
             ),
             "numerical_trajectory_search_authorized_as_substitute": False,
+            "temporal_chirality_sector_may_be_selected_numerically": False,
+            "temporal_chirality_sectors_quotiented": False,
             "prediction_frozen": False,
             "held_out_comparison_performed": False,
         },

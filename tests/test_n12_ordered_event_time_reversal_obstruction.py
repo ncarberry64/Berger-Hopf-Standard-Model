@@ -65,6 +65,11 @@ def test_event_forward_shortcut_gate_is_fail_closed() -> None:
     assert artifact["component_scope"][
         "component_restricted_sign_disproved_without_component_topology"
     ] is False
+    assert artifact["component_scope"][
+        "formal_reflection_sectors_physically_quotiented"
+    ] is False
+    assert artifact["component_scope"]["one_sector_action_selected"] is False
+    assert artifact["involution"]["is_gauge"] is False
     assert artifact["flagship_chain"][
         "event_forward_shortcut_adjudicated"
     ] is True
