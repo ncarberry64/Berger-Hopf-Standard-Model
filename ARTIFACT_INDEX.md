@@ -1,18 +1,21 @@
 # BHSM Artifact Index
 
-## Current N12 exact-root Calderon enclosure checkpoint
+## Current N12 correlated-root finite-core and inverse-square checkpoint
 
 - [`BHSM_N12_CALDERON_ROOT_ENCLOSURE_CHECKPOINT.json`](artifacts/n12_direct_checkpoint/BHSM_N12_CALDERON_ROOT_ENCLOSURE_CHECKPOINT.json)
 - [`BHSM_N12_CALDERON_DIRECTED_CENTER.json`](artifacts/n12_direct_checkpoint/BHSM_N12_CALDERON_DIRECTED_CENTER.json)
 - [`BHSM_N12_CALDERON_ACTION_BALL.json`](artifacts/n12_direct_checkpoint/BHSM_N12_CALDERON_ACTION_BALL.json)
-- Reproduction: [`certify_n12_calderon_directed_center.py`](scripts/certify_n12_calderon_directed_center.py), [`certify_n12_calderon_action_ball.py`](scripts/certify_n12_calderon_action_ball.py), and [`materialize_n12_calderon_root_enclosure_checkpoint.py`](scripts/materialize_n12_calderon_root_enclosure_checkpoint.py)
+- [`BHSM_N12_POSITIVE_DURATION_OBSERVATION.json`](artifacts/n12_direct_checkpoint/BHSM_N12_POSITIVE_DURATION_OBSERVATION.json)
+- [`BHSM_N12_INVERSE_SQUARE_SOURCE_CONSTANT.json`](artifacts/n12_direct_checkpoint/BHSM_N12_INVERSE_SQUARE_SOURCE_CONSTANT.json)
+- Reproduction: [`certify_n12_calderon_directed_center.py`](scripts/certify_n12_calderon_directed_center.py), [`certify_n12_calderon_action_ball.py`](scripts/certify_n12_calderon_action_ball.py), [`certify_n12_positive_duration_observation.py`](scripts/certify_n12_positive_duration_observation.py), [`derive_n12_inverse_square_source_constant.py`](scripts/derive_n12_inverse_square_source_constant.py), and [`materialize_n12_calderon_root_enclosure_checkpoint.py`](scripts/materialize_n12_calderon_root_enclosure_checkpoint.py)
 - Focused test: [`test_bhsm_n12_calderon_root_enclosure.py`](tests/test_bhsm_n12_calderon_root_enclosure.py)
 
-The exact N12 root enclosure preserves contractive event and child
-gauge-fixed sector inverses, but the independent coordinate box loses the
-coupled root-map correlations and does not certify the graph symbol. This is a
-fail-closed numerical-enclosure localization, not a retained-action
-obstruction. `CONTINUUM_EVENT_CHILD_CERTIFIED = FALSE`.
+The contraction-correlated first Picard enclosure certifies the exact-root
+Calderon graph, a positive graph gap on a whole action-coordinate ball, and a
+finite-core positive-duration observation modulus. The retained action also
+supplies an outward-rounded non-fitted constant for the inverse-square bulk
+source law. The uniform N12-to-infinity compact observation-tail modulus is
+still open, so `CONTINUUM_EVENT_CHILD_CERTIFIED = FALSE`.
 
 ## Current N12 continuum-majorant effectiveness checkpoint
 

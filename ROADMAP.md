@@ -14,19 +14,15 @@
    eta-completed Ward source. It applies to the action-selected normal bundle,
    not arbitrary Jacobi data; the collapsing static w/shift shortcut remains
    invalid.
-4. Enclose the explicit action-owned Ward-source constant, finite-core-plus-tail
-   inverse, full-action Hessian remainder, and existing physical-neighborhood
-   radii in one nonlinear N12-to-infinity event-child radii polynomial. The
-   N16 paired audit closes the finite hard momentum response. The effectiveness
-   audit proves that qualitative compactness does not numerically determine
-   `K`. First preserve the contractive 57-row root-correction correlations and
-   certify the coupled N12 Calderon graph at the exact root; the independent
-   coordinate-box enclosure is too wide although both sector inverses remain
-   contractive. Then enclose a finite-core whole-interval bound `c_M0` and
-   an inverse-square-tail observation perturbation
-   `epsilon_obs(M0) < c_M0`, so that
-   `K <= 1/(c_M0-epsilon_obs(M0))`. Do not treat finite probes as roots or fit
-   the missing constants from them.
+4. Preserve the now-certified contraction-correlated exact-root graph, whole
+   action-ball graph gap, finite-core positive-duration modulus `c_M0`, and
+   explicit non-fitted inverse-square source constant `C_r`. Derive explicit
+   action-graph tail moduli for the four remaining compact blocks: interior
+   lower-order Euler--Dirac, ordered-event projector, canonical momentum/flux,
+   and Gauss consistency. Then prove `epsilon_obs(M0) < c_M0`, evaluate `K`,
+   and close the unchanged nonlinear N12-to-infinity radii polynomial inside
+   the existing physical neighborhoods. Do not treat finite probes as roots or
+   fit missing constants from them.
 5. Promote a resolution-independent child only after the analytic tail and
    nonlinear radius close. Do not promote zero-padded probes as roots.
 6. Construct the existing complete composite-minus-matched-parent `Q_xi` on a

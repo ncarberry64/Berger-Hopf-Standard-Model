@@ -17,11 +17,21 @@
 - `N64_COMPLETE_CHILD_ROOT`: `NOT_CLAIMED_LINEAR_PROBE_ONLY`.
 - Soft channel: `CATEGORY_2_DYNAMICALLY_CONTROLLED_NORMAL`; category 3 has not
   been demonstrated.
+- Correlated exact-root Calderon graph gap: `1.6229286468592938E-3`.
+- Whole action-ball graph gap/radius:
+  `8.481866624639198E-4 / 7.62939453125E-17`.
+- Finite-core positive-duration modulus:
+  `c_M0 >= 2.0753723606658987E-19`.
+- Explicit action-derived joint inverse-square source constant:
+  `C_r <= 6476.158172228676`; no fitted constant or exponent.
+- `UNIFORM_COMPACT_N12_TO_INFINITY_OBSERVATION_TAIL_MODULUS`: `OPEN` for the
+  lower-order Euler--Dirac, ordered-event projector, momentum/flux, and
+  Gauss-consistency blocks.
 - `CONTINUUM_EVENT_CHILD_CERTIFIED`: `FALSE`.
 - `Q_XI`, `DELTA_H`, action-selected family, and new blind prediction: `OPEN`.
 - `FULL_BHSM_COMPLETE`: `FALSE`.
 - Exact next dependency:
-  `PROVE_THE_SOURCE_RESTRICTED_POSITIVE_DURATION_GAUGE_FIXED_JACOBI_CALDERON_RIGHT_INVERSE_AND_STRONG_GRAPH_COMPACTNESS_FOR_THE_ETA_COMPLETED_WARD_SOURCE;_USE_IT_TO_CONTROL_THE_UNCHANGED_ORDERED_EVENT_PROJECTOR_AND_CLOSE_THE_NONLINEAR_N12_TO_INFINITY_EVENT_CHILD_RADIUS_WITH_EXISTING_ETA_EVENT_DIRAC_PERSISTENCE_GATES`.
+  `DERIVE_EXPLICIT_ACTION_GRAPH_NORM_TAIL_MODULI_FOR_THE_FOUR_RETAINED_COMPACT_BLOCKS;_VERIFY_epsilon_obs(M0)<c_M0;_THEN_CLOSE_THE_NONLINEAR_CONTINUUM_RADII_POLYNOMIAL`.
 
 ## Corrected-Rayleigh N=3 rolling checkpoint gates
 

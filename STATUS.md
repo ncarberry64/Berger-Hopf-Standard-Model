@@ -5,8 +5,8 @@ evidence, not competing public status pages.
 
 ## Current public summary
 
-Current identifier: **N12 exact-root Calderon enclosure localization**. It is
-a development checkpoint, not a release version.
+Current identifier: **N12 finite-core Calderon closure; uniform compact tail
+modulus open**. It is a development checkpoint, not a release version.
 
 Complete persistent children are validated at N3, N4, N5, N6, and now direct
 N12 under their unchanged retained finite-resolution maps. The corrected N12
@@ -30,16 +30,22 @@ projection is `0.08926177036476479` against paired response
 `0.00043277842426231244`. The soft line remains category 2, not tangent and
 not a demonstrated uniform failure. N16 is diagnostic only, not a root.
 
-The new directed interval audit encloses the certified N12 root within
-`8.11055778207114e-16` action coordinates of its numerical center. The
-existing gauge-fixed event and child sector inverses remain contractive on the
-resulting independent coordinate box, with defects `1.54815013797252e-5` and
-`2.53230111144797e-6`. The coupled graph-symbol interval inverse does not: its
-defect is `973.187877081044`. The box has discarded correlations supplied by
-the contractive 57-row root map, so this is a localized certificate
-overestimate, not evidence of a retained-action obstruction. The earlier
-sampled ungauge-fixed history remains diagnostic only and is not promoted to
-a positive-duration proof.
+The contraction-correlated interval audit now closes the coupled exact-root
+graph. The first Picard root distance is at most
+`5.57567776096209e-18`; the normalized graph gap is
+`0.0016229286468592938`. A whole action-coordinate ball of radius
+`7.62939453125e-17` retains gap `0.0008481866624639198`. The unchanged
+gauge-fixed Euler--Dirac/Jacobi evolution on this ball gives the finite-core
+positive-duration modulus `c_M0 >= 2.0753723606658987e-19` and finite-core
+normal inverse bound `4.818412440354282e18`.
+
+An endpoint-safe interval rewrite of the retained action also certifies the
+non-fitted joint source constant `C_r <= 6476.158172228676` and hence
+`||r_n||_weak <= C_r n^-2`. The boundary Casimir remains routed to the existing
+weak reaction. The four compact N12-to-tail blocks still lack explicit uniform
+graph-norm moduli, so the observation perturbation `epsilon_obs(M0)` and the
+nonlinear continuum radius cannot yet be certified. This is an open estimate,
+not a demonstrated retained-action obstruction.
 
 The authoritative branch is the same-action N6 index-12 to N12 index-24
 ordered-event correction. The public manifest hash-locks the N12 state,
@@ -97,13 +103,7 @@ An executable composite-minus-matched-parent `Q_xi`, action-selected state or
 family, and new frozen blind observable remain open.
 
 Exact next object:
-`ENCLOSE_THE_SOURCE_RESTRICTED_N12_TO_INFINITY_NONLINEAR_EVENT_CHILD_RADII_POLYNOMIAL_WITH_EXPLICIT_ACTION_OWNED_C_r_K_M2_AND_EXISTING_ETA_EVENT_DIRAC_PERSISTENCE_NEIGHBORHOODS`.
-
-The first missing object is now the contraction-correlated exact-root graph
-enclosure. It must certify the coupled Calderon symbol without replacing the
-57-row root-correction set by an independent coordinate box. Only then may the
-finite-core bound `c_M0`, tail perturbation `epsilon_obs(M0)`, and
-`K <= 1/(c_M0-epsilon_obs(M0))` be evaluated.
+`DERIVE_EXPLICIT_ACTION_GRAPH_NORM_TAIL_MODULI_FOR_THE_INTERIOR_LOWER_ORDER_EULER_DIRAC,_ORDERED_EVENT_PROJECTOR,_CANONICAL_MOMENTUM_FLUX,_AND_GAUSS_CONSISTENCY_BLOCKS;_THEN_VERIFY_epsilon_obs(M0)<c_M0_AND_CLOSE_THE_NONLINEAR_CONTINUUM_RADII_POLYNOMIAL`.
 
 ### Historical corrected-Rayleigh N3 snapshot
 

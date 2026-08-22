@@ -1,6 +1,6 @@
 # Current BHSM status
 
-## Authoritative frontier: N12 exact-root Calderon enclosure localization
+## Authoritative frontier: N12 finite core closed; uniform compact tail open
 
 The unchanged retained N12 57-row event/child map now has a directly corrected
 complete persistent child. Its independently evaluated residual is
@@ -20,16 +20,21 @@ to improve componentwise and moves from `0.12021432656497034` to
 It remains category 2, a dynamically controlled normal direction. The N16
 state is a diagnostic proposal, not a complete-child root.
 
-The directed exact-root audit now encloses the N12 root within
-`8.11055778207114e-16` action coordinates. The existing gauge-fixed event and
-child sector inverses remain contractive on the corresponding independent
-coordinate box, with interval defects `1.54815013797252e-5` and
-`2.53230111144797e-6`. The coupled graph-symbol inverse defect is
-`973.187877081044`, so that box does not certify transversality. It erased the
-correlations imposed by the contractive 57-row root correction; this is a
-localized numerical overenclosure rather than a retained-action obstruction.
-The sampled ungauge-fixed history remains diagnostic and is not an interval
-or positive-duration proof.
+The contraction-correlated first Picard enclosure closes the exact-root
+Calderon graph with normalized gap `0.0016229286468592938`; its root-distance
+bound is `5.57567776096209e-18`. A whole action-coordinate ball of radius
+`7.62939453125e-17` retains graph gap `0.0008481866624639198`. The unchanged
+gauge-fixed positive-duration Jacobi evolution on that ball gives
+`c_M0 >= 2.0753723606658987e-19`. An outward-rounded endpoint-safe action
+calculation independently gives the non-fitted joint inverse-square source
+constant `C_r <= 6476.158172228676`.
+
+The continuum promotion remains fail closed because no explicit uniform
+graph-norm tail modulus yet covers the interior lower-order Euler--Dirac,
+ordered-event projector, canonical momentum/dynamic-flux, and Gauss-consistency
+blocks. Consequently `epsilon_obs(M0)`, the continuum inverse `K`, and the
+nonlinear continuum radius are not certified. This is not a retained-action
+obstruction.
 
 - `N3 COMPLETE PERSISTENT CHILD = YES`
 - `N4 COMPLETE PERSISTENT CHILD = YES`
@@ -79,12 +84,7 @@ invalidated. No category-3 history collapse sequence has been constructed, so
 the soft channel remains category 2: a dynamically controlled normal line.
 
 Exact next dependency:
-`ENCLOSE_THE_SOURCE_RESTRICTED_N12_TO_INFINITY_NONLINEAR_EVENT_CHILD_RADII_POLYNOMIAL_WITH_EXPLICIT_ACTION_OWNED_C_r_K_M2_AND_EXISTING_ETA_EVENT_DIRAC_PERSISTENCE_NEIGHBORHOODS`.
-
-The first missing object is a directed coupled-graph enclosure on the
-contraction-correlated N12 root-correction set. Once that closes, the
-positive-duration finite-core bound `c_M0`, source-tail perturbation
-`epsilon_obs(M0)`, and explicit inverse bound `K` become the next lemma.
+`DERIVE_EXPLICIT_ACTION_GRAPH_NORM_TAIL_MODULI_FOR_THE_FOUR_RETAINED_COMPACT_BLOCKS;_VERIFY_epsilon_obs(M0)<c_M0;_THEN_CLOSE_THE_NONLINEAR_CONTINUUM_RADII_POLYNOMIAL`.
 
 `Q_xi`, relative `Delta H`, action-selected families, and a new frozen blind
 observable remain downstream and open. The following v21.37 discussion is

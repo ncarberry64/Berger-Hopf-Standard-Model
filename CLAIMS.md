@@ -2,7 +2,8 @@
 
 ## Current public claim boundary
 
-Current public identifier: **N12 exact-root Calderon enclosure localization**.
+Current public identifier: **N12 finite-core Calderon closure; uniform compact
+tail modulus open**.
 This is not a release and does not claim an N16 root, continuum closure, or
 BHSM completion.
 
@@ -43,14 +44,17 @@ keeps the unchanged symbol gap positive (`0.029146859835472938` to
 `0.02882113423436863` over `1e-10`) with admissible eta and closed constraints,
 but sampled time points are not promoted as a whole-interval bound.
 
-Supported exact-root enclosure result: the certified N12 root lies within
-`8.11055778207114e-16` action coordinates of the stored center. Directed
-interval action replay keeps the existing gauge-fixed event and child sector
-inverses contractive on the enclosing coordinate box (defects
-`1.54815013797252e-5` and `2.53230111144797e-6`). The coupled graph-symbol box
-defect is `973.187877081044`, so no exact-root Calderon gap is promoted. This
-localizes loss of the root-map correlations; it does not demonstrate a
-retained-action obstruction.
+Supported exact-root and finite-core result: the contraction-correlated first
+Picard center lies within `5.57567776096209e-18` action coordinates of the
+exact root. Directed interval action jets certify normalized graph gap
+`0.0016229286468592938`; a whole action ball of radius
+`7.62939453125e-17` retains gap `0.0008481866624639198`. The retained
+positive-duration Jacobi evolution gives
+`c_M0 >= 2.0753723606658987e-19`. An independent outward-rounded action
+calculation certifies `C_r,event-child <= 6476.158172228676` in the shell law
+`||r_n||_weak <= C_r n^-2`, without fitting. None of these results supplies
+the still-missing uniform compact observation-tail modulus or promotes a
+continuum child.
 
 Supported finite diagnostic: the gauge-fixed N12 event/child Calderon boundary
 symbol has gap `0.029146859835472938`; doubled quadrature agrees to
@@ -95,12 +99,16 @@ executable matched-parent `Q_xi`, action-selected particle families, absolute
 scale, physical masses or mixing, a new blind observable, empirical
 validation, or `FULL_BHSM_COMPLETE = TRUE`.
 
-Active dependency:
-`ENCLOSE_THE_SOURCE_RESTRICTED_N12_TO_INFINITY_NONLINEAR_EVENT_CHILD_RADII_POLYNOMIAL_WITH_EXPLICIT_ACTION_OWNED_C_r_K_M2_AND_EXISTING_ETA_EVENT_DIRAC_PERSISTENCE_NEIGHBORHOODS`.
+Supported finite-core theorem: the contraction-correlated exact N12 root has a
+positive Calderon graph gap on a whole action ball, the retained
+positive-duration evolution gives `c_M0 > 0`, and the retained action gives an
+explicit non-fitted joint source constant for `||r_n||_weak <= C_r n^-2`.
 
-Its first missing object is a coupled Calderon enclosure on the
-contraction-correlated N12 root-correction set. The finite-core observation
-modulus and `epsilon_obs(M0) < c_M0` follow only after that enclosure closes.
+Active dependency:
+`DERIVE_EXPLICIT_ACTION_GRAPH_NORM_TAIL_MODULI_FOR_THE_FOUR_RETAINED_COMPACT_BLOCKS;_VERIFY_epsilon_obs(M0)<c_M0;_THEN_CLOSE_THE_NONLINEAR_CONTINUUM_RADII_POLYNOMIAL`.
+
+Not supported: a continuum child, `Q_xi`, `Delta H`, mass, an action-selected
+family, or a new blind observable.
 
 ### Historical corrected-Rayleigh N3 claim boundary
 
