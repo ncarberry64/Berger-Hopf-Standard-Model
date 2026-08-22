@@ -5,8 +5,9 @@ evidence, not competing public status pages.
 
 ## Current public summary
 
-Current identifier: **N12 finite-core Calderon closure; uniform compact tail
-modulus open**. It is a development checkpoint, not a release version.
+Current identifier: **N12 sharp retained-action source tail closed; explicit
+high-shell normal cutoff open**. It is a development checkpoint, not a release
+version.
 
 Complete persistent children are validated at N3, N4, N5, N6, and now direct
 N12 under their unchanged retained finite-resolution maps. The corrected N12
@@ -40,12 +41,16 @@ positive-duration modulus `c_M0 >= 2.036906619199693e-19` and finite-core
 normal inverse bound `4.818412440354282e18`.
 
 An endpoint-safe interval rewrite of the retained action also certifies the
-non-fitted joint source constant `C_r <= 6476.1581744767345` and hence
-`||r_n||_weak <= C_r n^-2`. The boundary Casimir remains routed to the existing
-weak reaction. The four compact N12-to-tail blocks still lack explicit uniform
-graph-norm moduli, so the observation perturbation `epsilon_obs(M0)` and the
-nonlinear continuum radius cannot yet be certified. This is an open estimate,
-not a demonstrated retained-action obstruction.
+non-fitted joint source constant `C_r <= 6472.790577608341` and hence
+`||r_n||_weak <= C_r n^-2`. Four integrations by parts give the explicit
+N12-to-infinity weak source-tail bound `0.6235945114875246` and
+one-extra-weighted bound `33.41402289587693`. The boundary Casimir remains
+routed to the existing weak reaction. The first missing object is now an
+explicit retained-action compact cutoff `M_star` for the gauge-reduced
+high-shell normal inverse; ordered-event, momentum/flux, and observation-tail
+moduli remain downstream. Therefore `epsilon_obs(M0)` and the nonlinear
+continuum radius cannot yet be certified. This is an open estimate, not a
+demonstrated retained-action obstruction.
 
 The authoritative branch is the same-action N6 index-12 to N12 index-24
 ordered-event correction. The public manifest hash-locks the N12 state,
@@ -110,7 +115,7 @@ An executable composite-minus-matched-parent `Q_xi`, action-selected state or
 family, and new frozen blind observable remain open.
 
 Exact next object:
-`DERIVE_EXPLICIT_ACTION_GRAPH_NORM_TAIL_MODULI_FOR_THE_INTERIOR_LOWER_ORDER_EULER_DIRAC,_ORDERED_EVENT_PROJECTOR,_CANONICAL_MOMENTUM_FLUX,_AND_GAUSS_CONSISTENCY_BLOCKS;_THEN_VERIFY_epsilon_obs(M0)<c_M0_AND_CLOSE_THE_NONLINEAR_CONTINUUM_RADII_POLYNOMIAL`.
+`DERIVE_AN_EXPLICIT_RETAINED_ACTION_COMPACT_CUTOFF_M_STAR_FOR_THE_GAUGE_REDUCED_HIGH_SHELL_NORMAL_INVERSE;_THEN_APPLY_THE_SHARP_SOURCE_TAIL_AND_BOUND_THE_ORDERED_EVENT_AND_MOMENTUM_FLUX_OBSERVATION_PERTURBATIONS`.
 
 ### Historical corrected-Rayleigh N3 snapshot
 

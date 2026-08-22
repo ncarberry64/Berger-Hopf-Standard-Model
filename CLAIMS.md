@@ -2,8 +2,8 @@
 
 ## Current public claim boundary
 
-Current public identifier: **N12 finite-core Calderon closure; uniform compact
-tail modulus open**.
+Current public identifier: **N12 sharp retained-action source tail closed;
+explicit high-shell normal cutoff open**.
 This is not a release and does not claim an N16 root, continuum closure, or
 BHSM completion.
 
@@ -54,10 +54,13 @@ exact root. Directed interval action jets certify normalized graph gap
 `7.62939453125e-17` retains gap `0.0008325142235529747`. The retained
 positive-duration Jacobi evolution gives
 `c_M0 >= 2.036906619199693e-19`. An independent outward-rounded action
-calculation certifies `C_r,event-child <= 6476.1581744767345` in the shell law
-`||r_n||_weak <= C_r n^-2`, without fitting. None of these results supplies
-the still-missing uniform compact observation-tail modulus or promotes a
-continuum child.
+calculation certifies `C_r,event-child <= 6472.790577608341` in the shell law
+`||r_n||_weak <= C_r n^-2`, without fitting. A four-integration-by-parts
+enclosure gives an N12-to-infinity weak source-tail bound
+`0.6235945114875246` and one-extra-weighted bound `33.41402289587693`.
+The bound does not apply the still-missing normal inverse and does not treat
+any higher cutoff as a root. None of these results supplies the explicit
+high-shell compact cutoff or promotes a continuum child.
 
 Supported finite diagnostic: the gauge-fixed N12 event/child Calderon boundary
 symbol has gap `0.029146859835358096`; doubled quadrature agrees to

@@ -1,6 +1,6 @@
 {
   "CONTINUUM_EVENT_CHILD_CERTIFIED": false,
-  "C_r_event_child_product": 6476.1581744767345,
+  "C_r_event_child_product": 6472.790577608341,
   "FULL_BHSM_COMPLETE": false,
   "binary_checkpoint_to_full_root_neighborhood_action_radius": 1.8115903002665652e-13,
   "classification": "N12_RETAINED_ACTION_INVERSE_SQUARE_BULK_SOURCE_CONSTANT_CERTIFIED",
@@ -9,9 +9,11 @@
     "C_beta": "(|E_beta(0)|+|E_beta(pi/4)|)/3+5||E_beta''||_L1/36",
     "C_r_sector": "sqrt(C_N^2+C_beta^2)",
     "bulk_boundary_split": "THE_STANDARD_MODEL_CASIMIR_BOUNDARY_COVECTOR_REMAINS_IN_THE_EXISTING_WEAK_CONORMAL_REACTION_RELATION",
-    "density": "UNCHANGED_RETAINED_LOCAL_ACTION_PLUS_THE_EXACT_COLLECTIVE_INERTIA_VARIATION_COEFFICIENT"
+    "density": "UNCHANGED_RETAINED_LOCAL_ACTION_PLUS_THE_EXACT_COLLECTIVE_INERTIA_VARIATION_COEFFICIENT",
+    "sharp_lapse_shell": "A_N*n^-2+B_N*n^-4_FROM_ENDPOINT_E_N_PRIME,_ENDPOINT_E_N_THIRD,_AND_L1_E_N_FOURTH",
+    "sharp_shift_shell": "THE_EXACT_WINDOWED_SINE_(j-1,j+1)_BOUND_FROM_ENDPOINT_E_BETA,_ENDPOINT_E_BETA_SECOND,_AND_L1_E_BETA_FOURTH"
   },
-  "exact_next_dependency": "COMBINE_C_r_WITH_THE_ACTION_OWNED_HIGH_TAIL_NORMAL_INVERSE_AND_OBSERVATION_PROPAGATOR_TO_BOUND_epsilon_obs_M0_AND_COMPARE_IT_WITH_c_M0",
+  "exact_next_dependency": "DERIVE_AN_EXPLICIT_RETAINED_ACTION_COMPACT_CUTOFF_M_STAR_FOR_THE_GAUGE_REDUCED_HIGH_SHELL_NORMAL_INVERSE;_THEN_APPLY_IT_TO_THE_SHARP_SOURCE_TAIL_AND_BOUND_THE_ORDERED_EVENT_AND_MOMENTUM_FLUX_OBSERVATION_PERTURBATIONS",
   "finite_value_identity_checks": [
     {
       "finite_value_only_cross_check": true,
@@ -34,61 +36,186 @@
   "proved_shell_law": "norm(r_n,event_child)_weak<=C_r_event_child_product*n^-2",
   "sectors": {
     "child": {
-      "C_N": 954.9171890335717,
-      "C_beta": 4371.44742258343,
-      "C_r": 4474.530076592525,
+      "C_N": 955.0302009768794,
+      "C_beta": 4370.246404862017,
+      "C_r": 4473.380860601446,
+      "E_N_fourth_derivative_L1_bound": 31916987.609518893,
       "E_N_prime_endpoint_absolute_bounds": [
-        1.656968606767559e-08,
-        83.11563094042619
+        2.7749592845804924e-08,
+        83.11563096884788
       ],
-      "E_N_second_derivative_L1_bound": 15195.559393577094,
+      "E_N_second_derivative_L1_bound": 15197.367584630414,
+      "E_N_third_derivative_endpoint_absolute_bounds": [
+        17573.604237956453,
+        83545.08455977324
+      ],
       "E_beta_endpoint_absolute_bounds": [
-        9.7945e-319,
-        50.470822172020775
+        1.50503e-318,
+        50.47082217952381
       ],
-      "E_beta_second_derivative_L1_bound": 31353.29146938154,
+      "E_beta_fourth_derivative_L1_bound": 66260820.03761738,
+      "E_beta_second_derivative_L1_bound": 31344.644141769364,
+      "E_beta_second_derivative_endpoint_absolute_bounds": [
+        3.422316581237743e-07,
+        7433.847024710997
+      ],
       "collective_inertia_variation_coefficient_interval": [
-        2.3224140636940293e-09,
-        2.4764553329468115e-09
+        2.322414063580446e-09,
+        2.476455333067887e-09
       ],
       "inertia_interval": [
-        18.23392964777283,
-        18.828932477627458
+        18.233929647327095,
+        18.828932478087896
       ]
     },
     "event": {
-      "C_N": 831.3756379955124,
-      "C_beta": 4607.387529070319,
-      "C_r": 4681.795093176754,
+      "C_N": 831.6511227216591,
+      "C_beta": 4603.720011863258,
+      "C_r": 4678.234874133961,
+      "E_N_fourth_derivative_L1_bound": 27454118.44418576,
       "E_N_prime_endpoint_absolute_bounds": [
-        3.254660896347044e-08,
-        86.39664038059456
+        5.295328264767096e-08,
+        86.3966404092555
       ],
-      "E_N_second_derivative_L1_bound": 13215.613567512395,
+      "E_N_second_derivative_L1_bound": 13220.021323081673,
+      "E_N_third_derivative_endpoint_absolute_bounds": [
+        17948.92481644862,
+        31453.47495101143
+      ],
       "E_beta_endpoint_absolute_bounds": [
-        5.82726e-319,
-        43.31092262622346
+        8.8969e-319,
+        43.31092263715891
       ],
-      "E_beta_second_derivative_L1_bound": 33069.24399499672,
+      "E_beta_fourth_derivative_L1_bound": 68186208.814498,
+      "E_beta_second_derivative_L1_bound": 33042.83787107964,
+      "E_beta_second_derivative_endpoint_absolute_bounds": [
+        2.0703623704329507e-07,
+        4407.896928370879
+      ],
       "collective_inertia_variation_coefficient_interval": [
-        1.4033698318172835e-09,
-        1.512674902715441e-09
+        1.4033698317520715e-09,
+        1.512674902785992e-09
       ],
       "inertia_interval": [
-        23.330428946636403,
-        24.221969685266018
+        23.33042894609234,
+        24.221969685828793
       ]
+    }
+  },
+  "sharp_N12_to_infinity_source_tail": {
+    "action_owned_tail_vs_retained_cutoff": {
+      "1024": {
+        "cutoff_is_a_complete_child_root": false,
+        "joint_one_extra_weighted_source_tail_norm_upper": 0.6317538229976815,
+        "joint_weak_source_tail_norm_upper": 7.346257803389474e-05,
+        "normal_inverse_applied": false
+      },
+      "12": {
+        "cutoff_is_a_complete_child_root": false,
+        "joint_one_extra_weighted_source_tail_norm_upper": 33.41402289587192,
+        "joint_weak_source_tail_norm_upper": 0.6235945114874311,
+        "normal_inverse_applied": false
+      },
+      "128": {
+        "cutoff_is_a_complete_child_root": false,
+        "joint_one_extra_weighted_source_tail_norm_upper": 1.5197745000561944,
+        "joint_weak_source_tail_norm_upper": 0.0016764527442241909,
+        "normal_inverse_applied": false
+      },
+      "16": {
+        "cutoff_is_a_complete_child_root": false,
+        "joint_one_extra_weighted_source_tail_norm_upper": 13.532708081864403,
+        "joint_weak_source_tail_norm_upper": 0.1816367325417995,
+        "normal_inverse_applied": false
+      },
+      "24": {
+        "cutoff_is_a_complete_child_root": false,
+        "joint_one_extra_weighted_source_tail_norm_upper": 5.3108122523387475,
+        "joint_weak_source_tail_norm_upper": 0.0417308017604189,
+        "normal_inverse_applied": false
+      },
+      "256": {
+        "cutoff_is_a_complete_child_root": false,
+        "joint_one_extra_weighted_source_tail_norm_upper": 1.1008236230118056,
+        "joint_weak_source_tail_norm_upper": 0.0005880826381625637,
+        "normal_inverse_applied": false
+      },
+      "32": {
+        "cutoff_is_a_complete_child_root": false,
+        "joint_one_extra_weighted_source_tail_norm_upper": 3.5891803777809628,
+        "joint_weak_source_tail_norm_upper": 0.018867443066239095,
+        "normal_inverse_applied": false
+      },
+      "48": {
+        "cutoff_is_a_complete_child_root": false,
+        "joint_one_extra_weighted_source_tail_norm_upper": 2.5721366139596866,
+        "joint_weak_source_tail_norm_upper": 0.008133070561852024,
+        "normal_inverse_applied": false
+      },
+      "512": {
+        "cutoff_is_a_complete_child_root": false,
+        "joint_one_extra_weighted_source_tail_norm_upper": 0.8182473915366781,
+        "joint_weak_source_tail_norm_upper": 0.00020753285674828296,
+        "normal_inverse_applied": false
+      },
+      "64": {
+        "cutoff_is_a_complete_child_root": false,
+        "joint_one_extra_weighted_source_tail_norm_upper": 2.1644070013989114,
+        "joint_weak_source_tail_norm_upper": 0.004958125552367431,
+        "normal_inverse_applied": false
+      },
+      "96": {
+        "cutoff_is_a_complete_child_root": false,
+        "joint_one_extra_weighted_source_tail_norm_upper": 1.7501516048201684,
+        "joint_weak_source_tail_norm_upper": 0.0026059680111735306,
+        "normal_inverse_applied": false
+      }
+    },
+    "joint_event_child_one_extra_weighted_source_tail_norm_upper": 33.41402289587693,
+    "joint_event_child_weak_source_tail_norm_upper": 0.6235945114875246,
+    "method": "FOUR_INTEGRATIONS_BY_PARTS_SEPARATE_THE_ACTION_OWNED_ENDPOINT_ASYMPTOTE_FROM_THE_FOURTH_DERIVATIVE_REMAINDER",
+    "normal_inverse_applied": false,
+    "reason_normal_inverse_not_applied": "THE_EXISTING_4_OVER_BETA_PRINCIPAL_BOUND_HAS_NO_EXPLICIT_RETAINED_ACTION_COMPACT_CUTOFF_M_STAR_AT_OR_BELOW_N12",
+    "sectors": {
+      "child": {
+        "analytic_remainder_bounds": {
+          "one_extra_weighted_squared": 0.09021701284118025,
+          "weak_squared": 1.768961036423599e-11
+        },
+        "finite_sum_cutoff": 10000,
+        "first_omitted_lapse_bound": 0.08478839738362089,
+        "first_omitted_shift_bound": 0.30200453613143585,
+        "lapse_first_omitted_mode": 13,
+        "one_extra_weighted_source_tail_norm_upper": 23.69166535496149,
+        "shift_first_omitted_mode": 12,
+        "weak_source_tail_norm_upper": 0.44101865462808987
+      },
+      "event": {
+        "analytic_remainder_bounds": {
+          "one_extra_weighted_squared": 0.06643585904987075,
+          "weak_squared": 1.3026639032865037e-11
+        },
+        "finite_sum_cutoff": 10000,
+        "first_omitted_lapse_bound": 0.07293981004752763,
+        "first_omitted_shift_bound": 0.3063741331852572,
+        "lapse_first_omitted_mode": 13,
+        "one_extra_weighted_source_tail_norm_upper": 23.562723076808638,
+        "shift_first_omitted_mode": 12,
+        "weak_source_tail_norm_upper": 0.440877149586228
+      }
     }
   },
   "validation": {
     "boundary_Casimir_routed_only_to_existing_weak_reaction": true,
     "endpoint_safe_density_is_algebraically_the_retained_action": true,
     "finite_action_derived_constants": true,
+    "fourth_derivative_endpoint_remainder_separation_enclosed": true,
     "inverse_square_constant_not_fitted": true,
     "no_higher_N_root_or_observed_particle_data_used": true,
     "no_new_equation_constraint_gate_scale_fit_or_event_definition": true,
     "outward_rounded_partition_enclosures_used": true,
     "positive_inertia_enclosed_in_both_sectors": true,
+    "sharp_tail_normal_inverse_not_assumed_without_explicit_cutoff": true,
     "validated_exact_N12_root_neighborhood_consumed": true,
     "whole_action_coordinate_ball_consumed": true
   },

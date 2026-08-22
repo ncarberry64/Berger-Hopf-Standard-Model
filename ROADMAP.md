@@ -16,13 +16,15 @@
    invalid.
 4. Preserve the now-certified contraction-correlated exact-root graph, whole
    action-ball graph gap, finite-core positive-duration modulus `c_M0`, and
-   explicit non-fitted inverse-square source constant `C_r`. Derive explicit
-   action-graph tail moduli for the four remaining compact blocks: interior
-   lower-order Euler--Dirac, ordered-event projector, canonical momentum/flux,
-   and Gauss consistency. Then prove `epsilon_obs(M0) < c_M0`, evaluate `K`,
-   and close the unchanged nonlinear N12-to-infinity radii polynomial inside
-   the existing physical neighborhoods. Do not treat finite probes as roots or
-   fit missing constants from them.
+   explicit non-fitted inverse-square source constant `C_r`, and sharp
+   N12-to-infinity source-tail enclosure. Derive the explicit retained-action
+   compact cutoff `M_star` for the gauge-reduced high-shell normal inverse;
+   then bound the interior Euler--Dirac, ordered-event projector,
+   canonical momentum/flux, Gauss-consistency, and observation perturbations.
+   Prove `epsilon_obs(M0) < c_M0`, evaluate `K`, and close the unchanged
+   nonlinear N12-to-infinity radii polynomial inside the existing physical
+   neighborhoods. Do not treat finite probes as roots or fit missing constants
+   from them.
 5. Promote a resolution-independent child only after the analytic tail and
    nonlinear radius close. Do not promote zero-padded probes as roots.
 6. Construct the existing complete composite-minus-matched-parent `Q_xi` on a

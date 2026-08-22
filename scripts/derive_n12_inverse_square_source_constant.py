@@ -11,6 +11,7 @@ from __future__ import annotations
 import hashlib
 import json
 import math
+import os
 from dataclasses import dataclass
 from pathlib import Path
 
@@ -33,6 +34,7 @@ from bhsm.interface.aether_sobolev_metric_soft_mode_lift_v16_07 import (
 
 ORDER = 12
 PARTITIONS = 512
+SPATIAL_JET_SIZE = 6
 INFLATION = 1.0 + 2.0e-13
 ROOT = Path(__file__).resolve().parents[1]
 STATE = ROOT / (
@@ -46,10 +48,13 @@ DIRECTED = ROOT / (
 ACTION_BALL = ROOT / (
     "artifacts/n12_direct_checkpoint/BHSM_N12_CALDERON_ACTION_BALL.json"
 )
-RESULT = ROOT / (
-    "artifacts/n12_direct_checkpoint/"
-    "BHSM_N12_INVERSE_SQUARE_SOURCE_CONSTANT.json"
-)
+RESULT = Path(os.environ.get(
+    "BHSM_N12_INVERSE_SQUARE_SOURCE_CONSTANT",
+    ROOT / (
+        "artifacts/n12_direct_checkpoint/"
+        "BHSM_N12_INVERSE_SQUARE_SOURCE_CONSTANT.json"
+    ),
+))
 
 
 def _down(x: float) -> float:
@@ -155,11 +160,13 @@ def _trig_interval(kind: str, frequency: float, lo: float, hi: float) -> I:
 
 @dataclass(frozen=True)
 class J:
-    d: tuple[I, I, I, I]
+    d: tuple[I, ...]
 
     @staticmethod
     def constant(value: float | I) -> "J":
-        return J((as_i(value), I.point(0), I.point(0), I.point(0)))
+        return J((as_i(value),) + tuple(
+            I.point(0) for _ in range(SPATIAL_JET_SIZE - 1)
+        ))
 
     def __add__(self, other: float | I | "J") -> "J":
         if isinstance(other, D):
@@ -184,25 +191,28 @@ class J:
         if isinstance(other, D):
             return NotImplemented
         other = as_j(other)
-        a, b = self.d, other.d
-        return J((
-            a[0] * b[0],
-            a[1] * b[0] + a[0] * b[1],
-            a[2] * b[0] + 2 * a[1] * b[1] + a[0] * b[2],
-            a[3] * b[0] + 3 * a[2] * b[1]
-            + 3 * a[1] * b[2] + a[0] * b[3],
+        return J(tuple(
+            sum(
+                (math.comb(order, left) * self.d[left]
+                 * other.d[order - left] for left in range(order + 1)),
+                I.point(0),
+            )
+            for order in range(SPATIAL_JET_SIZE)
         ))
 
     __rmul__ = __mul__
 
     def reciprocal(self) -> "J":
-        x, x1, x2, x3 = self.d
-        return J((
-            1 / x,
-            -x1 / x**2,
-            2 * x1**2 / x**3 - x2 / x**2,
-            -6 * x1**3 / x**4 + 6 * x1 * x2 / x**3 - x3 / x**2,
-        ))
+        output = [1 / self.d[0]]
+        for order in range(1, SPATIAL_JET_SIZE):
+            convolution = sum(
+                (math.comb(order, left) * self.d[left]
+                 * output[order - left]
+                 for left in range(1, order + 1)),
+                I.point(0),
+            )
+            output.append(-convolution / self.d[0])
+        return J(tuple(output))
 
     def __truediv__(self, other: float | I | "J") -> "J":
         if isinstance(other, D):
@@ -226,14 +236,16 @@ class J:
         return result
 
     def exp(self) -> "J":
-        x, x1, x2, x3 = self.d
-        ex = x.exp()
-        return J((
-            ex,
-            ex * x1,
-            ex * (x2 + x1**2),
-            ex * (x3 + 3 * x1 * x2 + x1**3),
-        ))
+        output = [self.d[0].exp()]
+        for order in range(1, SPATIAL_JET_SIZE):
+            derivative = sum(
+                (math.comb(order - 1, left - 1) * self.d[left]
+                 * output[order - left]
+                 for left in range(1, order + 1)),
+                I.point(0),
+            )
+            output.append(derivative)
+        return J(tuple(output))
 
 
 def as_j(value: float | I | J) -> J:
@@ -243,7 +255,7 @@ def as_j(value: float | I | J) -> J:
 def trig_jet(kind: str, frequency: float, lo: float, hi: float,
              derivative: int = 0) -> J:
     intervals = []
-    for order in range(derivative, derivative + 4):
+    for order in range(derivative, derivative + SPATIAL_JET_SIZE):
         phase = order % 4
         factor = frequency**order
         if kind == "cos":
@@ -405,7 +417,9 @@ def _background(q: list[I], velocity: list[I], multipliers: list[I],
     n_prime = series_cos(multipliers[:ORDER], ks, lo, hi, 1)
     beta = series_shift(multipliers[ORDER:], lo, hi)
     beta_prime = series_shift(multipliers[ORDER:], lo, hi, 1)
-    chi = J((I.hull(lo, hi), I.point(1), I.point(0), I.point(0)))
+    chi = J((I.hull(lo, hi), I.point(1)) + tuple(
+        I.point(0) for _ in range(SPATIAL_JET_SIZE - 2)
+    ))
     sigma = -0.5 + 2.0 * chi / math.pi - (
         trig_jet("sin", 4.0, lo, hi) / (2.0 * math.pi)
     )
@@ -507,6 +521,8 @@ def _sector_constant(state: np.ndarray, radius: float) -> dict[str, object]:
     length = math.pi / 4.0
     en_second_l1 = 0.0
     eb_second_l1 = 0.0
+    en_fourth_l1 = 0.0
+    eb_fourth_l1 = 0.0
     for index in range(PARTITIONS):
         lo = length * index / PARTITIONS
         hi = length * (index + 1) / PARTITIONS
@@ -517,15 +533,25 @@ def _sector_constant(state: np.ndarray, radius: float) -> dict[str, object]:
         p_log_n, p_n_prime, p_beta, p_beta_prime = density.gradient
         en_second = p_log_n.d[2] - p_n_prime.d[3]
         eb_second = p_beta.d[2] - p_beta_prime.d[3]
+        en_fourth = p_log_n.d[4] - p_n_prime.d[5]
+        eb_fourth = p_beta.d[4] - p_beta_prime.d[5]
         en_second_l1 = _up(
             en_second_l1 + (hi - lo) * en_second.abs_upper()
         )
         eb_second_l1 = _up(
             eb_second_l1 + (hi - lo) * eb_second.abs_upper()
         )
+        en_fourth_l1 = _up(
+            en_fourth_l1 + (hi - lo) * en_fourth.abs_upper()
+        )
+        eb_fourth_l1 = _up(
+            eb_fourth_l1 + (hi - lo) * eb_fourth.abs_upper()
+        )
 
     endpoint_en_prime = []
+    endpoint_en_third = []
     endpoint_eb = []
+    endpoint_eb_second = []
     for point in (0.0, length):
         density = _local_density(
             _background(q, velocity, multipliers, point, point),
@@ -535,8 +561,14 @@ def _sector_constant(state: np.ndarray, radius: float) -> dict[str, object]:
         endpoint_en_prime.append(
             (p_log_n.d[1] - p_n_prime.d[2]).abs_upper()
         )
+        endpoint_en_third.append(
+            (p_log_n.d[3] - p_n_prime.d[4]).abs_upper()
+        )
         endpoint_eb.append(
             (p_beta.d[0] - p_beta_prime.d[1]).abs_upper()
+        )
+        endpoint_eb_second.append(
+            (p_beta.d[2] - p_beta_prime.d[3]).abs_upper()
         )
     c_n = _up((sum(endpoint_en_prime) + en_second_l1) / 16.0)
     c_beta = _up(sum(endpoint_eb) / 3.0 + 5.0 * eb_second_l1 / 36.0)
@@ -548,11 +580,202 @@ def _sector_constant(state: np.ndarray, radius: float) -> dict[str, object]:
         ],
         "E_N_prime_endpoint_absolute_bounds": endpoint_en_prime,
         "E_N_second_derivative_L1_bound": en_second_l1,
+        "E_N_third_derivative_endpoint_absolute_bounds": endpoint_en_third,
+        "E_N_fourth_derivative_L1_bound": en_fourth_l1,
         "E_beta_endpoint_absolute_bounds": endpoint_eb,
         "E_beta_second_derivative_L1_bound": eb_second_l1,
+        "E_beta_second_derivative_endpoint_absolute_bounds": (
+            endpoint_eb_second
+        ),
+        "E_beta_fourth_derivative_L1_bound": eb_fourth_l1,
         "C_N": c_n,
         "C_beta": c_beta,
         "C_r": c_r,
+    }
+
+
+def _sharp_lapse_bound(record: dict[str, object], mode: np.ndarray) -> np.ndarray:
+    """Four-fold integration-by-parts H^-1 lapse-shell bound."""
+
+    endpoint_first = sum(record["E_N_prime_endpoint_absolute_bounds"])
+    endpoint_third = sum(
+        record["E_N_third_derivative_endpoint_absolute_bounds"]
+    )
+    fourth_l1 = float(record["E_N_fourth_derivative_L1_bound"])
+    n = np.asarray(mode, dtype=float)
+    raw_coefficient_bound = (
+        endpoint_first / (16.0 * n**2)
+        + (endpoint_third + fourth_l1) / (256.0 * n**4)
+    )
+    row_weight = np.sqrt(1.0 + 16.0 * n**2)
+    return INFLATION * raw_coefficient_bound / row_weight
+
+
+def _sharp_shift_bound(record: dict[str, object], mode: np.ndarray) -> np.ndarray:
+    """Four-fold integration-by-parts H^-1 windowed-shift bound."""
+
+    endpoint_value = sum(record["E_beta_endpoint_absolute_bounds"])
+    endpoint_second = sum(
+        record["E_beta_second_derivative_endpoint_absolute_bounds"]
+    )
+    fourth_l1 = float(record["E_beta_fourth_derivative_L1_bound"])
+    j = np.asarray(mode, dtype=float)
+    left = j - 1.0
+    right = j + 1.0
+
+    def sine_bound(frequency_index: np.ndarray) -> np.ndarray:
+        return (
+            endpoint_value / (4.0 * frequency_index)
+            + endpoint_second / (64.0 * frequency_index**3)
+            + fourth_l1 / (256.0 * frequency_index**4)
+        )
+
+    row_weight = np.sqrt(1.0 + 16.0 * j**2)
+    return INFLATION * 0.5 * (
+        sine_bound(left) + sine_bound(right)
+    ) / row_weight
+
+
+def _sharp_tail_summary(sectors: dict[str, dict[str, object]]) -> dict[str, object]:
+    """Sum the explicit two-term source tail with an analytic remainder."""
+
+    cutoff = 10_000
+    lapse_modes = np.arange(ORDER + 1, cutoff + 1, dtype=float)
+    shift_modes = np.arange(ORDER, cutoff + 1, dtype=float)
+    weak_squared = 0.0
+    one_extra_squared = 0.0
+    sector_rows = {}
+    sector_sequences: dict[str, dict[str, np.ndarray | float]] = {}
+    for name, record in sectors.items():
+        lapse = _sharp_lapse_bound(record, lapse_modes)
+        shift = _sharp_shift_bound(record, shift_modes)
+        lapse_weak = float(lapse @ lapse)
+        shift_weak = float(shift @ shift)
+        lapse_extra = float(np.sum((1.0 + 16.0 * lapse_modes**2) * lapse**2))
+        shift_extra = float(np.sum((1.0 + 16.0 * shift_modes**2) * shift**2))
+
+        a_lapse = sum(record["E_N_prime_endpoint_absolute_bounds"]) / 16.0
+        b_lapse = (
+            sum(record["E_N_third_derivative_endpoint_absolute_bounds"])
+            + float(record["E_N_fourth_derivative_L1_bound"])
+        ) / 256.0
+        e0 = sum(record["E_beta_endpoint_absolute_bounds"])
+        e2 = sum(record["E_beta_second_derivative_endpoint_absolute_bounds"])
+        e4 = float(record["E_beta_fourth_derivative_L1_bound"])
+        # For j>=2, j-1>=j/2 and j^2-1>=3j^2/4.
+        a_shift = e0 / 12.0
+        b_shift = e2 / 32.0
+        c_shift = e4 / 64.0
+        n0 = float(cutoff)
+        # The lapse weak row has the exact H^-1 divisor
+        # sqrt(1+16*n^2).  Conversely, the one-extra-weighted norm cancels
+        # that divisor and is the square sum of the raw coefficient bound.
+        lapse_weak_remainder = INFLATION * (
+            a_lapse**2 / (40.0 * n0**5)
+            + b_lapse**2 / (72.0 * n0**9)
+        )
+        lapse_extra_remainder = INFLATION * (
+            2.0 * a_lapse**2 / (3.0 * n0**3)
+            + 2.0 * b_lapse**2 / (7.0 * n0**7)
+        )
+        shift_weak_remainder = INFLATION * 3.0 * (
+            a_shift**2 / (3.0 * n0**3)
+            + b_shift**2 / (7.0 * n0**7)
+            + c_shift**2 / (9.0 * n0**9)
+        )
+        shift_extra_remainder = INFLATION * 51.0 * (
+            a_shift**2 / n0
+            + b_shift**2 / (5.0 * n0**5)
+            + c_shift**2 / (7.0 * n0**7)
+        )
+        sector_weak_squared = _up(
+            lapse_weak + shift_weak
+            + lapse_weak_remainder + shift_weak_remainder
+        )
+        sector_extra_squared = _up(
+            lapse_extra + shift_extra
+            + lapse_extra_remainder + shift_extra_remainder
+        )
+        weak_squared = _up(weak_squared + sector_weak_squared)
+        one_extra_squared = _up(
+            one_extra_squared + sector_extra_squared
+        )
+        sector_rows[name] = {
+            "lapse_first_omitted_mode": ORDER + 1,
+            "shift_first_omitted_mode": ORDER,
+            "finite_sum_cutoff": cutoff,
+            "weak_source_tail_norm_upper": _up(math.sqrt(sector_weak_squared)),
+            "one_extra_weighted_source_tail_norm_upper": _up(
+                math.sqrt(sector_extra_squared)
+            ),
+            "first_omitted_lapse_bound": float(lapse[0]),
+            "first_omitted_shift_bound": float(shift[0]),
+            "analytic_remainder_bounds": {
+                "weak_squared": _up(
+                    lapse_weak_remainder + shift_weak_remainder
+                ),
+                "one_extra_weighted_squared": _up(
+                    lapse_extra_remainder + shift_extra_remainder
+                ),
+            },
+        }
+        sector_sequences[name] = {
+            "lapse_modes": lapse_modes,
+            "shift_modes": shift_modes,
+            "lapse": lapse,
+            "shift": shift,
+            "weak_remainder": lapse_weak_remainder + shift_weak_remainder,
+            "extra_remainder": lapse_extra_remainder + shift_extra_remainder,
+        }
+
+    cutoff_table = {}
+    for retained in (12, 16, 24, 32, 48, 64, 96, 128, 256, 512, 1024):
+        table_weak_squared = 0.0
+        table_extra_squared = 0.0
+        for sequence in sector_sequences.values():
+            lapse_mask = sequence["lapse_modes"] >= retained + 1
+            shift_mask = sequence["shift_modes"] >= retained
+            lapse = sequence["lapse"][lapse_mask]
+            shift = sequence["shift"][shift_mask]
+            lapse_modes_here = sequence["lapse_modes"][lapse_mask]
+            shift_modes_here = sequence["shift_modes"][shift_mask]
+            table_weak_squared += (
+                float(lapse @ lapse) + float(shift @ shift)
+                + float(sequence["weak_remainder"])
+            )
+            table_extra_squared += (
+                float(np.sum((1.0 + 16.0 * lapse_modes_here**2) * lapse**2))
+                + float(np.sum((1.0 + 16.0 * shift_modes_here**2) * shift**2))
+                + float(sequence["extra_remainder"])
+            )
+        cutoff_table[str(retained)] = {
+            "joint_weak_source_tail_norm_upper": _up(
+                math.sqrt(_up(table_weak_squared))
+            ),
+            "joint_one_extra_weighted_source_tail_norm_upper": _up(
+                math.sqrt(_up(table_extra_squared))
+            ),
+            "cutoff_is_a_complete_child_root": False,
+            "normal_inverse_applied": False,
+        }
+    return {
+        "method": (
+            "FOUR_INTEGRATIONS_BY_PARTS_SEPARATE_THE_ACTION_OWNED_"
+            "ENDPOINT_ASYMPTOTE_FROM_THE_FOURTH_DERIVATIVE_REMAINDER"
+        ),
+        "sectors": sector_rows,
+        "joint_event_child_weak_source_tail_norm_upper": _up(
+            math.sqrt(weak_squared)
+        ),
+        "joint_event_child_one_extra_weighted_source_tail_norm_upper": _up(
+            math.sqrt(one_extra_squared)
+        ),
+        "action_owned_tail_vs_retained_cutoff": cutoff_table,
+        "normal_inverse_applied": False,
+        "reason_normal_inverse_not_applied": (
+            "THE_EXISTING_4_OVER_BETA_PRINCIPAL_BOUND_HAS_NO_EXPLICIT_"
+            "RETAINED_ACTION_COMPACT_CUTOFF_M_STAR_AT_OR_BELOW_N12"
+        ),
     }
 
 
@@ -586,6 +809,7 @@ def main() -> None:
         float(sectors["event"]["C_r"]),
         float(sectors["child"]["C_r"]),
     ))
+    sharp_tail = _sharp_tail_summary(sectors)
 
     # Algebraic density identity check at the retained binary center.  The
     # interval source proof itself does not depend on this floating check.
@@ -614,6 +838,10 @@ def main() -> None:
             for name in sectors
         ),
         "inverse_square_constant_not_fitted": True,
+        "fourth_derivative_endpoint_remainder_separation_enclosed": True,
+        "sharp_tail_normal_inverse_not_assumed_without_explicit_cutoff": (
+            sharp_tail["normal_inverse_applied"] is False
+        ),
         "boundary_Casimir_routed_only_to_existing_weak_reaction": True,
         "endpoint_safe_density_is_algebraically_the_retained_action": True,
         "outward_rounded_partition_enclosures_used": True,
@@ -635,6 +863,7 @@ def main() -> None:
         "binary_checkpoint_to_full_root_neighborhood_action_radius": radius,
         "sectors": sectors,
         "C_r_event_child_product": c_product,
+        "sharp_N12_to_infinity_source_tail": sharp_tail,
         "proved_shell_law": (
             "norm(r_n,event_child)_weak<=C_r_event_child_product*n^-2"
         ),
@@ -645,6 +874,14 @@ def main() -> None:
                 "5||E_beta''||_L1/36"
             ),
             "C_r_sector": "sqrt(C_N^2+C_beta^2)",
+            "sharp_lapse_shell": (
+                "A_N*n^-2+B_N*n^-4_FROM_ENDPOINT_E_N_PRIME,_"
+                "ENDPOINT_E_N_THIRD,_AND_L1_E_N_FOURTH"
+            ),
+            "sharp_shift_shell": (
+                "THE_EXACT_WINDOWED_SINE_(j-1,j+1)_BOUND_FROM_ENDPOINT_"
+                "E_BETA,_ENDPOINT_E_BETA_SECOND,_AND_L1_E_BETA_FOURTH"
+            ),
             "density": (
                 "UNCHANGED_RETAINED_LOCAL_ACTION_PLUS_THE_EXACT_"
                 "COLLECTIVE_INERTIA_VARIATION_COEFFICIENT"
@@ -656,9 +893,10 @@ def main() -> None:
         },
         "finite_value_identity_checks": identity_rows,
         "exact_next_dependency": (
-            "COMBINE_C_r_WITH_THE_ACTION_OWNED_HIGH_TAIL_NORMAL_INVERSE_"
-            "AND_OBSERVATION_PROPAGATOR_TO_BOUND_epsilon_obs_M0_AND_"
-            "COMPARE_IT_WITH_c_M0"
+            "DERIVE_AN_EXPLICIT_RETAINED_ACTION_COMPACT_CUTOFF_M_STAR_"
+            "FOR_THE_GAUGE_REDUCED_HIGH_SHELL_NORMAL_INVERSE;_THEN_APPLY_"
+            "IT_TO_THE_SHARP_SOURCE_TAIL_AND_BOUND_THE_ORDERED_EVENT_AND_"
+            "MOMENTUM_FLUX_OBSERVATION_PERTURBATIONS"
         ),
         "CONTINUUM_EVENT_CHILD_CERTIFIED": False,
         "FULL_BHSM_COMPLETE": False,

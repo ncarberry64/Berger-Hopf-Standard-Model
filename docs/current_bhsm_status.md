@@ -1,6 +1,6 @@
 # Current BHSM status
 
-## Authoritative frontier: N12 finite core closed; uniform compact tail open
+## Authoritative frontier: N12 sharp source tail closed; normal cutoff open
 
 The unchanged retained N12 57-row event/child map now has a directly corrected
 complete persistent child. Its independently evaluated residual is
@@ -27,14 +27,18 @@ bound is `1.244833612865511e-15`. A whole action-coordinate ball of radius
 gauge-fixed positive-duration Jacobi evolution on that ball gives
 `c_M0 >= 2.036906619199693e-19`. An outward-rounded endpoint-safe action
 calculation independently gives the non-fitted joint inverse-square source
-constant `C_r <= 6476.1581744767345`.
+constant `C_r <= 6472.790577608341`. Four integrations by parts give an
+explicit N12-to-infinity weak source-tail bound `0.6235945114875246` and
+one-extra-weighted bound `33.41402289587693`, without applying a normal
+inverse.
 
-The continuum promotion remains fail closed because no explicit uniform
-graph-norm tail modulus yet covers the interior lower-order Euler--Dirac,
-ordered-event projector, canonical momentum/dynamic-flux, and Gauss-consistency
-blocks. Consequently `epsilon_obs(M0)`, the continuum inverse `K`, and the
-nonlinear continuum radius are not certified. This is not a retained-action
-obstruction.
+The continuum promotion remains fail closed because the gauge-reduced
+high-shell normal inverse has no explicit retained-action compact cutoff
+`M_star`. The interior lower-order Euler--Dirac, ordered-event projector,
+canonical momentum/dynamic-flux, and Gauss-consistency moduli therefore cannot
+yet be combined with the sharp source tail. Consequently `epsilon_obs(M0)`,
+the continuum inverse `K`, and the nonlinear continuum radius are not
+certified. This is not a retained-action obstruction.
 
 - `N3 COMPLETE PERSISTENT CHILD = YES`
 - `N4 COMPLETE PERSISTENT CHILD = YES`
@@ -88,7 +92,7 @@ invalidated. No category-3 history collapse sequence has been constructed, so
 the soft channel remains category 2: a dynamically controlled normal line.
 
 Exact next dependency:
-`DERIVE_EXPLICIT_ACTION_GRAPH_NORM_TAIL_MODULI_FOR_THE_FOUR_RETAINED_COMPACT_BLOCKS;_VERIFY_epsilon_obs(M0)<c_M0;_THEN_CLOSE_THE_NONLINEAR_CONTINUUM_RADII_POLYNOMIAL`.
+`DERIVE_AN_EXPLICIT_RETAINED_ACTION_COMPACT_CUTOFF_M_STAR_FOR_THE_GAUGE_REDUCED_HIGH_SHELL_NORMAL_INVERSE;_THEN_APPLY_THE_SHARP_SOURCE_TAIL_AND_BOUND_THE_ORDERED_EVENT_AND_MOMENTUM_FLUX_OBSERVATION_PERTURBATIONS`.
 
 `Q_xi`, relative `Delta H`, action-selected families, and a new frozen blind
 observable remain downstream and open. The following v21.37 discussion is
