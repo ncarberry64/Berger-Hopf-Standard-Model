@@ -74,6 +74,30 @@ Consequently, if a finite simple transverse first forward return exists, its
 landing derivative is negative.  This remains a conditional consequence and
 does not establish that the return domain is nonempty.
 
+The existing local continuum-flow certificate also excludes an event zero on
+its entire first interval.  The finite-core third-variation bound and certified
+action path give
+
+\[
+\Delta e_{\rm core}
+\le 8.180992616262165\times10^6
+   (3.814697264862058\times10^{-17})
+<3.121\times10^{-10}.
+\]
+
+The two-endpoint Galerkin/projector correction is below
+\(2.79\times10^{-85}\).  Therefore
+
+\[
+e_{\rm ord}(Y(t))
+\ge 1.118659084317772\times10^{-9}>0
+\]
+
+through the certified coordinate duration
+\(6.019140402936717\times10^{-32}\).  Any first forward return must occur
+after exit from this first action ball.  This is an analytic enclosure of the
+already-certified local flow, not a new trajectory sample or acceptance gate.
+
 Formal reversal changes the sign of \(G=De_{\rm ord}V\), but the identity
 \(\mathcal R\varphi_t=\varphi_{-t}\mathcal R\) relates positive time to
 negative time.  It therefore does not turn an unproved forward return into a
@@ -95,9 +119,9 @@ argument can be invoked, the following are required:
   action-owned existence mechanism.
 
 The repository currently supplies none of these global ingredients.  It
-supplies a local continuum flow, a maximal continuation-or-domain-exit
-alternative, and conditional differentiability of \(\mathcal P\).  The one
-stored persistence history records no return.  The constraint energy is zero,
+supplies an event-free first local continuum interval, a maximal
+continuation-or-domain-exit alternative, and conditional differentiability of
+\(\mathcal P\).  The one stored persistence history records no return.  The constraint energy is zero,
 the unreduced energy is noncoercive, the child boundary Hamiltonian is absent,
 and no compact invariant energy shell or stable reference cycle is available.
 Consequently recurrence, Schauder/Lefschetz degree, and a variational periodic
@@ -115,6 +139,8 @@ state-selection construction.  The next mathematical dependency is:
 
 `PROVE_THAT_AT_LEAST_ONE_EXISTING_COMPLETE_EVENT_HAS_A_FINITE_SIMPLE_TRANSVERSE_FIRST_FORWARD_RETURN_WHOSE_HISTORY_REMAINS_IN_THE_EXISTING_CONTINUUM_CHILD_DOMAIN_AND_LANDS_INSIDE_THE_CERTIFIED_EVENT_TO_CHILD_CHART_OR_PROVE_THAT_EVERY_SUCH_FORWARD_HISTORY_EXITS_OR_NEVER_RETURNS`.
 
-Only after a nonempty return domain is proved may a periodic-point mechanism
+The first interval is now rigorously covered; the next proof step is to extend
+the same analytic action-ball cover until a transverse return or an existing
+physical-domain exit is certified.  Only after a nonempty return domain is proved may a periodic-point mechanism
 be established.  Numerical trajectory sampling, formal reversal, a new event
 sign, or a fabricated parent section cannot substitute for this theorem.

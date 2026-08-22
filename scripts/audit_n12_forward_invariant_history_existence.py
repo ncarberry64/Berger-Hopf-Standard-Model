@@ -42,6 +42,10 @@ INITIAL_SIDE = ROOT / (
     "artifacts/intrinsic_state_selection/"
     "BHSM_N12_CONTINUUM_CHILD_INITIAL_EVENT_SIDE.json"
 )
+LOCAL_NO_RETURN = ROOT / (
+    "artifacts/intrinsic_state_selection/"
+    "BHSM_N12_LOCAL_CONTINUUM_NO_EVENT_RETURN.json"
+)
 THEORY = ROOT / "theory/n12_forward_invariant_history_existence_gate.md"
 RESULT = ROOT / (
     "artifacts/intrinsic_state_selection/"
@@ -60,7 +64,8 @@ def _load(path: Path) -> dict[str, object]:
 def main() -> None:
     inputs = (
         INTRINSIC, EVENT_RETURN, LOCAL_FLOW, MAXIMAL_FLOW, CHIRALITY,
-        COERCIVE, CLOCK, RELATIVE_PERIODIC, CONTINUUM, INITIAL_SIDE, THEORY,
+        COERCIVE, CLOCK, RELATIVE_PERIODIC, CONTINUUM, INITIAL_SIDE,
+        LOCAL_NO_RETURN, THEORY,
     )
     missing = [str(path) for path in inputs if not path.is_file()]
     if missing:
@@ -76,6 +81,7 @@ def main() -> None:
     relative_periodic = _load(RELATIVE_PERIODIC)
     continuum = _load(CONTINUUM)
     initial_side = _load(INITIAL_SIDE)
+    local_no_return = _load(LOCAL_NO_RETURN)
 
     conclusion = event_return["action_ownership_conclusion"]
     validation = {
@@ -128,6 +134,12 @@ def main() -> None:
             initial_side["validation_passed"] is True
             and initial_side["continuum_transfer"]["sign"] == "POSITIVE"
         ),
+        "certified_first_local_interval_contains_no_event_return": (
+            local_no_return["validation_passed"] is True
+            and local_no_return["consequence"][
+                "first_forward_return_inside_certified_local_interval"
+            ] is False
+        ),
     }
 
     payload = {
@@ -149,6 +161,7 @@ def main() -> None:
             ),
             "nonempty_proved": False,
             "empty_proved": False,
+            "first_certified_local_interval_event_free": True,
         },
         "forward_landing_chirality_lemma": {
             "hypotheses": "F(0)_NONZERO_AND_FINITE_FIRST_ZERO_TAU_IS_TRANSVERSE",
