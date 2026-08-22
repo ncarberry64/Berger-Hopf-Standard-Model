@@ -43,6 +43,16 @@ and not an N-uniform theorem. The continuum claim therefore remains fail
 closed. `Q_xi`, relative `Delta H`, action-selected families, and any new blind
 observable remain downstream and open. Frozen predictions are unchanged.
 
+The retained-action N12-to-N48 full q-v-m tail audit now separates the exact
+omitted source from the worst static normal direction. After routing the
+existing weak boundary reaction, the source has inverse-square shell decay;
+its common-mode linear corrections are action-Cauchy with sampled
+`N^2 * distance <= 1.4876792803344001` and remain bounded in the required
+`H2_q x H1_v x H2_m` compactness graph (`<= 0.6486315875453534`). The worst
+instantaneous inverse nevertheless grows much faster than `N`, so the naive
+generic-inverse proof is invalid. These N16--N48 states remain linear
+zero-padded probes, not nonlinear complete-child roots or a continuum proof.
+
 N6 provenance was re-audited before this checkpoint. The earlier N5-projected
 N6 seed had ordered-event value `1.645981691e-6`, outside the existing `1e-9`
 tolerance. Using the unchanged retained action-energy fiber and ordered-event
@@ -53,7 +63,7 @@ No equation, gate, or acceptance rule changed.
 
 Exact next object:
 
-`DERIVE_AN_EXPLICIT_N12_TO_INFINITY_RETAINED_ACTION_BOUND_ON_THE_GAUGE_FIXED_EVENT_CHILD_CALDERON_GRAPH_PROJECTOR_TAIL_AND_CLOSE_THE_NONLINEAR_INVERSE_SQUARE_CORRECTION_RADIUS`
+`PROVE_THE_RADIAL_DIFFEO_NOETHER_COMPATIBILITY_IDENTITY_FOR_THE_EXACT_OMITTED_SOURCE_AND_CLOSE_THE_SOURCE_RESTRICTED_MIXED_EULER_DIRAC_N12_TO_INFINITY_NONLINEAR_RADIUS`
 
 ## Historical corrected-Rayleigh N=3 snapshot
 

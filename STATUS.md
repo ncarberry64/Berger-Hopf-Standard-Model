@@ -33,12 +33,22 @@ not corrected roots and do not establish a uniform continuum estimate.
 Accordingly `CONTINUUM_EVENT_CHILD_CERTIFIED = FALSE` and
 `FULL_BHSM_COMPLETE = FALSE`.
 
+The exact full q-v-m retained-action audit through N48 reclassifies the tail.
+After the existing weak boundary reaction is removed from the bulk rows, the
+omitted source has inverse-square shell decay and its minimum-action linear
+corrections are common-mode Cauchy with sampled `N^2 * distance <=
+1.4876792803344001`. Their sampled `H2_q x H1_v x H2_m` norms stay below
+`0.6486315875453534`. In contrast, the worst instantaneous static inverse
+grows faster than the summability threshold. Thus a generic worst-inverse
+argument is invalid, while the exact source remains asymptotically decoupled
+from that shift-owned soft line. This is finite linear evidence only.
+
 The reduced local energy remains a diagnostic, not `Delta H`, mass, or scale.
 An executable composite-minus-matched-parent `Q_xi`, action-selected state or
 family, and new frozen blind observable remain open.
 
 Exact next object:
-`DERIVE_AN_EXPLICIT_N12_TO_INFINITY_RETAINED_ACTION_BOUND_ON_THE_GAUGE_FIXED_EVENT_CHILD_CALDERON_GRAPH_PROJECTOR_TAIL_AND_CLOSE_THE_NONLINEAR_INVERSE_SQUARE_CORRECTION_RADIUS`.
+`PROVE_THE_RADIAL_DIFFEO_NOETHER_COMPATIBILITY_IDENTITY_FOR_THE_EXACT_OMITTED_SOURCE_AND_CLOSE_THE_SOURCE_RESTRICTED_MIXED_EULER_DIRAC_N12_TO_INFINITY_NONLINEAR_RADIUS`.
 
 ### Historical corrected-Rayleigh N3 snapshot
 
