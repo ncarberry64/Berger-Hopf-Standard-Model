@@ -40,7 +40,7 @@ def test_aggregate_preserves_forward_time_chiral_pair_without_quotient() -> None
     )
 
     assert aggregate["validation_passed"] is True
-    assert "FIXED_PERIODIC_OR_RELATIVE_PERIODIC_COMPLETE_CHILD_HISTORY" in aggregate[
+    assert "FINITE_SIMPLE_TRANSVERSE_FIRST_FORWARD_RETURN" in aggregate[
         "first_missing_action_owned_object"
     ]
     assert aggregate["validation"][

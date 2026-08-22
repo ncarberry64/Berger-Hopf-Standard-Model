@@ -70,6 +70,10 @@ CONTINUUM_FLOW = ROOT / (
     "artifacts/intrinsic_state_selection/"
     "BHSM_N12_CONTINUUM_MAXIMAL_FLOW_DICHOTOMY.json"
 )
+INVARIANT_HISTORY = ROOT / (
+    "artifacts/intrinsic_state_selection/"
+    "BHSM_N12_FORWARD_INVARIANT_HISTORY_EXISTENCE_GATE.json"
+)
 RESULT = ROOT / (
     "artifacts/intrinsic_state_selection/"
     "BHSM_N12_INTRINSIC_RETURN_ACTION_OWNERSHIP_GATE.json"
@@ -90,6 +94,7 @@ def main() -> None:
         PERSISTENCE_DEFINITION, CLOCK, RELATIVE_PERIODIC, POST_PARENT,
         FINITE_FLOW, COERCIVE, EVENT_EQUIVARIANCE, CHIRALITY,
         ORDERED_REVERSAL, CHILD_BOUNDARY, CONSTRAINT_ENERGY, CONTINUUM_FLOW,
+        INVARIANT_HISTORY,
     )
     missing = [str(path) for path in inputs if not path.is_file()]
     if missing:
@@ -112,12 +117,15 @@ def main() -> None:
     child_boundary = _load(CHILD_BOUNDARY)
     constraint_energy = _load(CONSTRAINT_ENERGY)
     continuum_flow = _load(CONTINUUM_FLOW)
+    invariant_history = _load(INVARIANT_HISTORY)
 
     eta_boundary = eta_exit["boundary_transversality"]
     child_domain = persistence_definition["persistence_and_decay_contract"][
         "persistence_domain_B_child"
     ]
-    first_missing = chirality["flagship_consequence"]["first_missing_object"]
+    first_missing = invariant_history["localized_failure"][
+        "exact_next_dependency"
+    ]
     validation = {
         "continuum_event_child_remains_certified": continuum[
             "CONTINUUM_EVENT_CHILD_CERTIFIED"
@@ -206,13 +214,15 @@ def main() -> None:
         "continuum_maximal_flow_dichotomy_is_closed": (
             continuum_flow["validation_passed"] is True
         ),
+        "forward_first_return_domain_nonempty_not_proved": (
+            invariant_history["exact_return_domain"]["nonempty_proved"] is False
+        ),
     }
     payload = {
         "artifact": "BHSM_N12_INTRINSIC_RETURN_ACTION_OWNERSHIP_GATE",
         "classification": (
-            "FIRST_RETURN_NOT_YET_ACTION_EXECUTABLE;_FORMAL_REVERSAL_LABELS_"
-            "TWO_DISTINCT_FORWARD_TIME_TEMPORAL_CHIRALITY_SECTORS_BUT_THE_"
-            "CURRENT_ACTION_SELECTS_NEITHER"
+            "FIRST_RETURN_NOT_YET_ACTION_EXECUTABLE;_EARLIEST_RETAINED_ACTION_"
+            "FAILURE_IS_A_NONEMPTY_ADMISSIBLE_FORWARD_FIRST_RETURN_DOMAIN"
         ),
         "inputs": {
             str(path.relative_to(ROOT)).replace("\\", "/"): _sha256(path)
@@ -272,12 +282,7 @@ def main() -> None:
             ],
         },
         "return_or_no_return_proof_obligations": {
-            "first": (
-                "PROVE_EXISTENCE_OF_AN_ACTION_SELECTED_INVARIANT_HISTORY_ON_"
-                "THE_FORWARD_TIME_RETURN_RELATION_WITHOUT_QUOTIENTING_OR_"
-                "NUMERICALLY_CHOOSING_THE_FORMALLY_REFLECTED_TEMPORAL_"
-                "CHIRALITY_SECTORS"
-            ),
+            "first": first_missing,
             "formal_reflection_status": (
                 "DISTINCT_FORWARD_TIME_CHIRAL_PAIRING_NOT_GAUGE_OR_PHYSICAL_"
                 "BACKWARD_EVOLUTION"

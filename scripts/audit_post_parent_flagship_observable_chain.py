@@ -30,6 +30,10 @@ CHIRALITY = ROOT / (
     "artifacts/intrinsic_state_selection/"
     "BHSM_N12_FORWARD_TIME_TEMPORAL_CHIRALITY_AUDIT.json"
 )
+INVARIANT_HISTORY = ROOT / (
+    "artifacts/intrinsic_state_selection/"
+    "BHSM_N12_FORWARD_INVARIANT_HISTORY_EXISTENCE_GATE.json"
+)
 RESULT = ROOT / (
     "artifacts/qxi_relative_energy_preparation/"
     "BHSM_POST_PARENT_FLAGSHIP_OBSERVABLE_GATE.json"
@@ -43,7 +47,7 @@ def _sha256(path: Path) -> str:
 def main() -> None:
     inputs = (
         CONTINUUM, PARENT, ABSOLUTE_UNIT, CHARGE, CLOCK, FLAVOR, TRANSPORT,
-        CHIRALITY,
+        CHIRALITY, INVARIANT_HISTORY,
     )
     missing = [str(path) for path in inputs if not path.is_file()]
     if missing:
@@ -57,6 +61,9 @@ def main() -> None:
     flavor = json.loads(FLAVOR.read_text(encoding="utf-8"))
     transport = json.loads(TRANSPORT.read_text(encoding="utf-8"))
     chirality = json.loads(CHIRALITY.read_text(encoding="utf-8"))
+    invariant_history = json.loads(
+        INVARIANT_HISTORY.read_text(encoding="utf-8")
+    )
 
     ratios = absolute_unit["unit_anchor"]["preserved_relative_ratios"]
     validation = {
@@ -87,6 +94,9 @@ def main() -> None:
             chirality["event_to_child_conclusion"][
                 "one_temporal_chirality_sector_action_selected"
             ] is False
+        ),
+        "forward_first_return_domain_nonempty_not_proved": (
+            invariant_history["exact_return_domain"]["nonempty_proved"] is False
         ),
     }
     payload = {
@@ -140,9 +150,12 @@ def main() -> None:
                 "INVARIANT_DIMENSIONLESS_OBSERVABLE_TO_BLIND_PREDICTION"
             ),
             "first_missing_object": (
+                invariant_history["localized_failure"]["exact_next_dependency"]
+            ),
+            "after_first_return_domain": (
                 "ACTION_SELECTED_INVARIANT_COMPLETE_CHILD_HISTORY_WITH_FORMAL_"
-                "REVERSAL_RETAINED_AS_A_DISTINCT_FORWARD_TIME_CHIRAL_PAIRING_AND_"
-                "A_PAIR_INVARIANT_OBSERVABLE_MAP"
+                "REVERSAL_RETAINED_AS_A_DISTINCT_FORWARD_TIME_CHIRAL_PAIRING_"
+                "AND_A_PAIR_INVARIANT_OBSERVABLE_MAP"
             ),
             "why_this_precedes_numerical_evaluation": (
                 "all presently located child-only numbers are either mathematical "
