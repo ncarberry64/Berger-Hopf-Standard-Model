@@ -89,3 +89,18 @@ def test_recovered_owner_ontology_is_complete_and_not_action_derived() -> None:
     ):
         assert ontology[canonical_id]["current_status"].startswith("OWNER_AUTHORIZED")
         assert "ACTION_DERIVED" not in ontology[canonical_id]["current_status"]
+
+
+def test_source_dini_is_canonical_and_strict_power_excess_is_not_compulsory() -> None:
+    registries = _load()
+    formula = next(
+        row for row in registries["BHSM_CURRENT_FORMULA_REGISTRY.json"]["records"]
+        if row["canonical_id"] == "SOURCE_WEIGHTED_THRESHOLD_MEASURE"
+    )
+    assert formula["formula"] == "integral_(0,1]_lambda^(-1)*d|nu_h|(lambda)<infinity"
+    assert formula["current_status"] == "DINI_CRITERION_CURRENT_INTEGRABLE_AND_LINEAR_TAILS_CLOSED"
+    deprecation = next(
+        row for row in registries["BHSM_FORMULA_DEPRECATION_LEDGER.json"]["records"]
+        if row["canonical_id"] == "DEPRECATE_STRICT_POWER_EXCESS"
+    )
+    assert deprecation["current_status"] == "SUFFICIENT_NOT_NECESSARY_AFTER_CRITICAL_BESSEL_THEOREM"

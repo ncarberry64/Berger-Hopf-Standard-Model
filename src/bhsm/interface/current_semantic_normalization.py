@@ -97,7 +97,7 @@ def _basis() -> list[dict[str, Any]]:
     p_weyl = "artifacts/flagship_integration/BHSM_N12_FORWARD_GAUGE_WEYL_READOUT_FAMILY.json"
     p_e1 = "artifacts/flagship_integration/BHSM_N12_FORWARD_E1_SOURCE_MEASURE_CRITERION.json"
     p_nf = "artifacts/flagship_integration/BHSM_N12_GATE7_AE2_NONFERMION_THRESHOLD_MARGIN.json"
-    p_fac = "artifacts/flagship_integration/BHSM_N12_GATE7_AE2_INTEGRABLE_RADIUS_THRESHOLD_ROUTE.json"
+    p_fac = "artifacts/flagship_integration/BHSM_N12_GATE7_AE2_LINEAR_RADIUS_TAIL_THEOREM.json"
     return [
         record(
             "ACTION_VERSION_TUPLE",
@@ -226,15 +226,15 @@ def _basis() -> list[dict[str, Any]]:
         ),
         record(
             "SOURCE_WEIGHTED_THRESHOLD_MEASURE",
-            "|nu_h|([0,Lambda])<=C_h*Lambda^(1+epsilon_h), epsilon_h>0",
+            "integral_(0,1]_lambda^(-1)*d|nu_h|(lambda)<infinity",
             "SOURCE_CONTRACTED_SPECTRAL_MEASURE_BOUND",
             "BHSM_ONTOLOGY",
-            "The abstract implication and integrable-radius route are closed; the realized infinite end needs reciprocal-radius integrability or a direct non-L1 supersymmetric-tail theorem.",
+            "Exact source-Dini criterion; strict power excess and the critical Lambda/log^2 law are sufficient representations.",
             "each realized factorized AE2 Weyl channel near lambda=0",
             [p_e1, p_fac],
-            equivalent_forms=["|<psi_k,D_x mathcal_K_C psi_k>|<=C*k^2 with 1D counting", "O(Lambda^(3/2)) witness"],
+            equivalent_forms=["|nu_h|([0,Lambda])<=C*Lambda^(1+epsilon), epsilon>0", "|nu_h|([0,Lambda])=O(Lambda/abs(log Lambda)^2)", "|<psi_k,D_x mathcal_K_C psi_k>|<=C*k^2 with 1D counting"],
             source_weighting_required=True,
-            current_status="INTEGRABLE_RADIUS_ROUTE_CLOSED_REALIZED_TAIL_DICHOTOMY_OPEN",
+            current_status="DINI_CRITERION_CURRENT_INTEGRABLE_AND_LINEAR_TAILS_CLOSED",
             downstream_consumers=["E1_SOURCE_MEASURE_FINITE", "HIGH_ENERGY_ANGULAR_TAIL"],
             forbidden_interpretations=["strict spectral gap is necessary", "zero resonance automatically diverges"],
         ),
@@ -345,6 +345,7 @@ def _deprecations() -> list[dict[str, Any]]:
         ("DEPRECATE_TERMINAL_RETURN", "mandatory terminal return", "NOT_REQUIRED", "conditional event reset or canonical stop"),
         ("DEPRECATE_GENERIC_OPERATOR_HISTORY", "generic operator-valued exterior history", "SUPERSEDED_IN_FIXED_CHANNEL_SCOPE", "x(tau) fixed-channel coefficients"),
         ("DEPRECATE_D5_NATIVE_BLOCKER", "D5/Kato interval sign as native Gate7 blocker", "OPTIONAL_ENDPOINT_ROUTE", "factorized source-weighted LAP"),
+        ("DEPRECATE_STRICT_POWER_EXCESS", "epsilon_h>0 power excess is compulsory", "SUFFICIENT_NOT_NECESSARY_AFTER_CRITICAL_BESSEL_THEOREM", "exact source-Dini integrability"),
         ("DEPRECATE_FAR_END_BIRTH_SELECTION", "far Friedrichs closure selects birth graph", "FORBIDDEN", "AE2 glued birth domain"),
         ("DEPRECATE_LOCAL_ENERGY_MASS", "local energy=m_phys", "FORBIDDEN", "observable plus physical scale map"),
     ]
@@ -425,7 +426,7 @@ GATE_CHAIN = [
     ("G7_02_FIXED_CHANNEL", "fixed-channel forward operator", "CLOSED"),
     ("G7_03_SECTOR_CLASS", "sectorwise threshold classification", "CLOSED"),
     ("G7_04_NONFERMION", "nonfermionic threshold closure", "CLOSED"),
-    ("G7_05_FACTORIZED_LAP", "prove integral(d_tau/R4)<infinity on the realized infinite end or close the direct non-L1 supersymmetric-tail source bound", "OPEN_CURRENT_OWNER"),
+    ("G7_05_FACTORIZED_LAP", "derive the realized R4 asymptotic class or prove the source-Dini bound for the remaining sublinear/nonasymptotic tail class", "OPEN_CURRENT_OWNER"),
     ("G7_06_E1_FINITE", "E1 source-measure finiteness", "PENDING"),
     ("G7_07_ANGULAR_TAIL", "higher-energy and angular tail control", "PENDING"),
     ("G7_08_FORCE", "zero-source geometry force", "PENDING"),
@@ -443,7 +444,7 @@ def _gates() -> list[dict[str, Any]]:
         "G7_02_FIXED_CHANNEL": "artifacts/flagship_integration/BHSM_N12_FORWARD_FIXED_CHANNEL_TRANSFER.json",
         "G7_03_SECTOR_CLASS": "artifacts/flagship_integration/BHSM_N12_GATE7_AE2_THRESHOLD_SUPERSESSION.json",
         "G7_04_NONFERMION": "artifacts/flagship_integration/BHSM_N12_GATE7_AE2_NONFERMION_THRESHOLD_MARGIN.json",
-        "G7_05_FACTORIZED_LAP": "artifacts/flagship_integration/BHSM_N12_GATE7_AE2_INTEGRABLE_RADIUS_THRESHOLD_ROUTE.json",
+        "G7_05_FACTORIZED_LAP": "artifacts/flagship_integration/BHSM_N12_GATE7_AE2_LINEAR_RADIUS_TAIL_THEOREM.json",
     }
     fallback = "artifacts/flagship_integration/BHSM_N12_GATE7_AE2_THRESHOLD_SUPERSESSION.json"
     rows = []
@@ -558,7 +559,7 @@ def validate_registries(registries: Mapping[str, Mapping[str, Any]]) -> None:
 
     formula_rows = registries["BHSM_CURRENT_FORMULA_REGISTRY.json"]["records"]
     by_id = {row["canonical_id"]: row for row in formula_rows}
-    if by_id["SOURCE_WEIGHTED_THRESHOLD_MEASURE"]["current_status"] != "INTEGRABLE_RADIUS_ROUTE_CLOSED_REALIZED_TAIL_DICHOTOMY_OPEN":
+    if by_id["SOURCE_WEIGHTED_THRESHOLD_MEASURE"]["current_status"] != "DINI_CRITERION_CURRENT_INTEGRABLE_AND_LINEAR_TAILS_CLOSED":
         raise ValueError("factorized source-measure reduction status regressed")
     if by_id["NONFERMION_THRESHOLD_CLOSURE"]["current_status"] != "CLOSED_DO_NOT_REOPEN_WITHOUT_CONTRADICTION":
         raise ValueError("nonfermion threshold closure was reopened")

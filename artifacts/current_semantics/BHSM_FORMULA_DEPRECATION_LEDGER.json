@@ -14,6 +14,7 @@
     "artifacts/flagship_integration/BHSM_N12_GATE7_AE2_FACTORIZED_THRESHOLD_RECLASSIFICATION.json": "DBDFBF1A3D86BE5E2F93B126E92EF1BA0023D3771E6DCC5824EE0634A38546E1",
     "artifacts/flagship_integration/BHSM_N12_GATE7_AE2_GLOBAL_SPIN_MATTER_DOMAIN.json": "5697192CCFBC6814B9EEAF5E5A01DD89BD4A70E287B5DFE171F0BBA132E15CFC",
     "artifacts/flagship_integration/BHSM_N12_GATE7_AE2_INTEGRABLE_RADIUS_THRESHOLD_ROUTE.json": "E4A6F774089A3B88E448BA5EDAA51FD7ADEB7826FCC3F6BB6109DB9F15EFD5E3",
+    "artifacts/flagship_integration/BHSM_N12_GATE7_AE2_LINEAR_RADIUS_TAIL_THEOREM.json": "8A1C4DC6C4D1979D0D2E479CCD30D60C7F2071074704ABD996A54D841175459E",
     "artifacts/flagship_integration/BHSM_N12_GATE7_AE2_NONFERMION_THRESHOLD_MARGIN.json": "A4E4C05991402FB74FC0C584B122EF887B4A89CCB7FAA6D85560E3934872E7D2",
     "artifacts/flagship_integration/BHSM_N12_GATE7_AE2_THRESHOLD_SUPERSESSION.json": "1C30C3003E74B48F873CCCBE3F54AAC9780D26FC1408A74C12D933A253FD2613",
     "artifacts/frozen_constants_v2.json": "9D601C03992C5ADF34E7D438C8A9A15598138E26D0022A94B1B09CCA52092C7D",
@@ -242,6 +243,38 @@
       "source_weighting_required": false,
       "superseded_meanings": [
         "D5/Kato interval sign as native Gate7 blocker"
+      ],
+      "tests": [
+        "test_required_fields"
+      ]
+    },
+    {
+      "action_version": "BHSM-AE-2.0.0",
+      "artifact_hashes": {
+        "artifacts/flagship_integration/BHSM_N12_GATE7_AE2_THRESHOLD_SUPERSESSION.json": "1C30C3003E74B48F873CCCBE3F54AAC9780D26FC1408A74C12D933A253FD2613"
+      },
+      "canonical_id": "DEPRECATE_STRICT_POWER_EXCESS",
+      "current_status": "SUFFICIENT_NOT_NECESSARY_AFTER_CRITICAL_BESSEL_THEOREM",
+      "dimensions": "DIMENSIONLESS_OR_OPERATOR_TYPED",
+      "domain": "current AE2/Gate7",
+      "downstream_consumers": [],
+      "equivalent_forms": [],
+      "forbidden_interpretations": [
+        "epsilon_h>0 power excess is compulsory"
+      ],
+      "formula": "epsilon_h>0 power excess is compulsory",
+      "frozen_output_status": "NOT_FROZEN_OUTPUT",
+      "mathematical_class": "DEPRECATION_RECORD",
+      "observable_status": "NOT_AN_OBSERVABLE",
+      "ontology_version": "BHSM-AE2-ONTOLOGY-1.0.0",
+      "physical_meaning": "exact source-Dini integrability",
+      "provenance": [
+        "artifacts/flagship_integration/BHSM_N12_GATE7_AE2_THRESHOLD_SUPERSESSION.json"
+      ],
+      "semantic_layer": "BHSM_ONTOLOGY",
+      "source_weighting_required": false,
+      "superseded_meanings": [
+        "epsilon_h>0 power excess is compulsory"
       ],
       "tests": [
         "test_required_fields"

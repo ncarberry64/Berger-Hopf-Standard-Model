@@ -1,0 +1,249 @@
+{
+  "FLAGSHIP_READY": false,
+  "FULL_BHSM_COMPLETE": false,
+  "action_version": "BHSM-AE-2.0.0",
+  "artifact": "BHSM_N12_GATE7_AE2_LINEAR_RADIUS_TAIL_THEOREM",
+  "claim_boundary": {
+    "FULL_BHSM_COMPLETE": false,
+    "Gate7": "ACTIVE_NOT_CLOSED",
+    "Gate8": "LOCKED",
+    "actual_N12_radius_asymptotic_class": "OPEN",
+    "chord_03_authorized": false,
+    "exact_linear_radius_tail_theorem": "CLOSED",
+    "frozen_predictions_changed": false,
+    "general_sublinear_or_nonasymptotic_tail": "OPEN"
+  },
+  "classification": "FOR_AN_EXACT_LINEAR_RADIUS_TAIL_THE_FACTORIZED_SUPERPOTENTIAL_IS_s_chi=chi*beta/x_AND_THE_NATURAL_BIRTH_GRAPH_REDUCES_THE_CONTINUUM_STATES_TO_EXACT_BESSEL_COMBINATIONS;_THE_POSITIVE_CHIRALITY_CUMULATIVE_SOURCE_MEASURE_IS_O(Lambda^(1+abs(beta-1/2)))_OFF_CRITICALITY_AND_O(Lambda/abs(log_Lambda)^2)_AT_beta=1/2,_WHILE_THE_NEGATIVE_CHIRALITY_HAS_O(Lambda^(beta+3/2));_ALL_CASES_HAVE_FINITE_E1_THRESHOLD_INTEGRAL",
+  "exact_next_dependency": "DERIVE_AN_ACTION_OWNED_ASYMPTOTIC_CLASS_FOR_R4_ON_THE_UNIQUE_INFINITE_REGULAR_MAXIMAL_FORWARD_HISTORY;_INTEGRABLE_SUPERLINEAR_AND_EXACT_LINEAR_TAILS_ARE_NOW_CLOSED,_SO_ONLY_SUBLINEAR_OR_NONASYMPTOTIC_POSITIVE_RADIUS_TAILS_REQUIRE_A_NEW_SOURCE_DINI_THEOREM",
+  "frontier_sharpening": {
+    "exact_linear_radius_tail": "CLOSED_HERE",
+    "finite_event_or_canonical_stop": "CLOSED_BY_COMPACT_RESOLVENT_BRANCH",
+    "integrable_superlinear_radius_tail": "CLOSED_BY_PRIOR_ROUTE",
+    "remaining_actual_tail_owner": "DERIVE_FROM_THE_RETAINED_ACTION_WHICH_RADIUS_ASYMPTOTIC_CLASS_THE_UNIQUE_INFINITE_REGULAR_HISTORY_HAS,_OR_PROVE_THE_SOURCE_DINI_BOUND_FOR_THE_REMAINING_SUBLINEAR_OR_NONASYMPTOTIC_POSITIVE_RADIUS_TAIL_CLASS"
+  },
+  "inputs": {
+    "artifacts/flagship_integration/BHSM_N12_FORWARD_FIXED_CHANNEL_TRANSFER.json": "F83BE1866D44FE0D0F273A2B73AAEF13B272BE6B1174B3644E37E8A8AE91C786",
+    "artifacts/flagship_integration/BHSM_N12_GATE7_AE2_FACTORIZED_SOURCE_MEASURE_REDUCTION.json": "4E4A016D28E520B09C4AC76253A29D9DD713DFD727A818FD529DB17D9621DE38",
+    "artifacts/flagship_integration/BHSM_N12_GATE7_AE2_INTEGRABLE_RADIUS_THRESHOLD_ROUTE.json": "E4A6F774089A3B88E448BA5EDAA51FD7ADEB7826FCC3F6BB6109DB9F15EFD5E3",
+    "scripts/derive_n12_gate7_ae2_linear_radius_tail_theorem.py": "A1C0614F110140E5AB9573AB93322530C9491D93C46B4AAB734D2F52ED0D3117",
+    "src/bhsm/interface/action_extension_ae2_linear_radius_tail.py": "93179D1B88DC5A15409652AD2738DB5E479EA3A7A95AD80D3BB35BEF226D26C4"
+  },
+  "status": "EXACT_LINEAR_RADIUS_NON_L1_FACTORIZED_TAIL_E1_THRESHOLD_CLOSED",
+  "theorem": {
+    "E1_Dini_test": "integral_(0,1)_lambda^(-1)*dabs(nu_h)(lambda)<infinity_IN_ALL_beta>=0_CASES",
+    "delta_normalized_Bessel_state": "psi_k(x)=sqrt(k*x)/D_m(k)*(Y_m(k)*J_nu(k*x)-J_m(k)*Y_nu(k*x)),_D_m(k)=sqrt(J_m(k)^2+Y_m(k)^2)",
+    "dimensionless_strength": "beta=abs(mu)/v",
+    "factor_image_identity": "(d_x+chi*beta/x)[sqrt(x)*Z_nu(k*x)]=sign_chi*k*sqrt(x)*Z_m(k*x)",
+    "natural_graph": "(d_x+chi*beta/x)u(1)=0",
+    "negative_chirality_law": "abs(nu_h)([0,Lambda])=O(Lambda^(beta+3/2))",
+    "negative_chirality_operator": "-d_x^2+beta*(beta-1)/x^2",
+    "negative_orders": "nu=abs(beta-1/2),_m=beta+1/2_IF_beta>=1/2_ELSE_m=-(beta+1/2)",
+    "numerical_rows": [
+      {
+        "beta": 0.25,
+        "chirality": 1,
+        "compact_source_weights": [
+          3.3308024868679416e-05,
+          5.150244487991637e-06,
+          9.606778945935575e-07,
+          1.5483420096081367e-07,
+          2.950445195544227e-08
+        ],
+        "final_slope_residual": 0.009007066996052249,
+        "law": {
+          "E1_threshold_integrable": true,
+          "beta": 0.25,
+          "chirality": 1,
+          "critical_log_Dini_case": false,
+          "cumulative_Lambda_exponent": 1.25,
+          "cumulative_source_measure_law": "O(Lambda^1.25)",
+          "first_source_weight_law": "O(k^1.5)",
+          "power_exponent": 1.5
+        },
+        "successive_log_slopes": [
+          1.5504952947014392,
+          1.5284375641740569,
+          1.5160511065643243,
+          1.5090070669960522
+        ],
+        "threshold_wave_numbers": [
+          0.01,
+          0.003,
+          0.001,
+          0.0003,
+          0.0001
+        ]
+      },
+      {
+        "beta": 0.5,
+        "chirality": 1,
+        "compact_source_weights": [
+          9.70394145301311e-05,
+          1.918035986756246e-05,
+          4.6376162745608085e-06,
+          1.0271682083624657e-06,
+          2.68569301529099e-07
+        ],
+        "critical_scaled_weights": [
+          0.20579723541569275,
+          0.2157543843696958,
+          0.22129352066896035,
+          0.22529268069166528,
+          0.22782833156954124
+        ],
+        "law": {
+          "E1_threshold_integrable": true,
+          "beta": 0.5,
+          "chirality": 1,
+          "critical_log_Dini_case": true,
+          "cumulative_Lambda_exponent": null,
+          "cumulative_source_measure_law": "O(Lambda/abs(log(Lambda))^2)",
+          "first_source_weight_law": "O(k/abs(log(k))^2)",
+          "power_exponent": null
+        },
+        "successive_log_slopes": [
+          1.346567292535701,
+          1.292254188551119,
+          1.2520173140231732,
+          1.2210422271730477
+        ],
+        "threshold_wave_numbers": [
+          0.01,
+          0.003,
+          0.001,
+          0.0003,
+          0.0001
+        ]
+      },
+      {
+        "beta": 0.75,
+        "chirality": 1,
+        "compact_source_weights": [
+          7.930136007489546e-05,
+          1.2261992613369636e-05,
+          2.2872367960296114e-06,
+          3.6863812056740604e-07,
+          7.024588677194733e-08
+        ],
+        "final_slope_residual": 0.009007064326988834,
+        "law": {
+          "E1_threshold_integrable": true,
+          "beta": 0.75,
+          "chirality": 1,
+          "critical_log_Dini_case": false,
+          "cumulative_Lambda_exponent": 1.25,
+          "cumulative_source_measure_law": "O(Lambda^1.25)",
+          "first_source_weight_law": "O(k^1.5)",
+          "power_exponent": 1.5
+        },
+        "successive_log_slopes": [
+          1.5504925242943326,
+          1.5284372972684102,
+          1.51605107886072,
+          1.5090070643269888
+        ],
+        "threshold_wave_numbers": [
+          0.01,
+          0.003,
+          0.001,
+          0.0003,
+          0.0001
+        ]
+      },
+      {
+        "beta": 1.25,
+        "chirality": 1,
+        "compact_source_weights": [
+          4.107833349695352e-06,
+          2.0280045127483544e-07,
+          1.3012894662730294e-08,
+          6.415035426211644e-10,
+          4.115280680892347e-11
+        ],
+        "final_slope_residual": 7.417751248794957e-06,
+        "law": {
+          "E1_threshold_integrable": true,
+          "beta": 1.25,
+          "chirality": 1,
+          "critical_log_Dini_case": false,
+          "cumulative_Lambda_exponent": 1.75,
+          "cumulative_source_measure_law": "O(Lambda^1.75)",
+          "first_source_weight_law": "O(k^2.5)",
+          "power_exponent": 2.5
+        },
+        "successive_log_slopes": [
+          2.498751213665595,
+          2.4997733616063305,
+          2.499957909941426,
+          2.499992582248751
+        ],
+        "threshold_wave_numbers": [
+          0.01,
+          0.003,
+          0.001,
+          0.0003,
+          0.0001
+        ]
+      },
+      {
+        "beta": 0.75,
+        "chirality": -1,
+        "compact_source_weights": [
+          6.038589021725723e-08,
+          8.931926799884414e-10,
+          1.9099783219700348e-11,
+          2.824578916559891e-13,
+          6.0398951539284235e-15
+        ],
+        "final_slope_residual": 1.6395391311263552e-07,
+        "law": {
+          "E1_threshold_integrable": true,
+          "beta": 0.75,
+          "chirality": -1,
+          "critical_log_Dini_case": false,
+          "cumulative_Lambda_exponent": 2.25,
+          "cumulative_source_measure_law": "O(Lambda^2.25)",
+          "first_source_weight_law": "O(k^3.5)",
+          "power_exponent": 3.5
+        },
+        "successive_log_slopes": [
+          3.4998368826536383,
+          3.4999839152480132,
+          3.4999983103306787,
+          3.499999836046087
+        ],
+        "threshold_wave_numbers": [
+          0.01,
+          0.003,
+          0.001,
+          0.0003,
+          0.0001
+        ]
+      }
+    ],
+    "positive_chirality_law": {
+      "beta_above_half": "abs(nu_h)([0,Lambda])=O(Lambda^(beta+1/2))",
+      "beta_below_half": "abs(nu_h)([0,Lambda])=O(Lambda^(3/2-beta))",
+      "beta_equal_half": "abs(nu_h)([0,Lambda])=O(Lambda/abs(log_Lambda)^2)"
+    },
+    "positive_chirality_operator": "-d_x^2+beta*(beta+1)/x^2",
+    "positive_orders": "nu=beta+1/2,_m=beta-1/2",
+    "spectral_semantics": "k=sqrt(lambda)_IS_A_BESSEL_PROOF_VARIABLE_ONLY_AND_IS_NOT_A_PHYSICAL_MOMENTUM_MAP_FOR_z",
+    "tail_geometry": "R4(tau)=v*(tau+tau0),_v>0"
+  },
+  "validation": {
+    "FULL_BHSM_COMPLETE_false": true,
+    "actual_N12_linear_asymptotic_not_fabricated": true,
+    "all_exact_laws_are_E1_integrable": true,
+    "all_inputs_validated": true,
+    "all_power_rows_converge_to_exact_exponent": true,
+    "both_chiralities_covered": true,
+    "critical_beta_half_E1_integral_converges": true,
+    "critical_beta_half_has_log_Dini_scaling": true,
+    "fixed_factorized_transfer_retained": true,
+    "integrable_radius_route_left_non_L1_open": true,
+    "no_SM_observable_scale_fit_selector_or_new_action_term": true,
+    "threshold_k_not_identified_as_physical_momentum": true
+  },
+  "validation_passed": true
+}

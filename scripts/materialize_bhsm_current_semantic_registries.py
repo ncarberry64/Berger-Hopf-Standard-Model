@@ -27,6 +27,7 @@ SOURCES = (
     "artifacts/flagship_integration/BHSM_N12_GATE7_AE2_FACTORIZED_THRESHOLD_RECLASSIFICATION.json",
     "artifacts/flagship_integration/BHSM_N12_GATE7_AE2_FACTORIZED_SOURCE_MEASURE_REDUCTION.json",
     "artifacts/flagship_integration/BHSM_N12_GATE7_AE2_INTEGRABLE_RADIUS_THRESHOLD_ROUTE.json",
+    "artifacts/flagship_integration/BHSM_N12_GATE7_AE2_LINEAR_RADIUS_TAIL_THEOREM.json",
     "artifacts/flagship_integration/BHSM_N12_GATE7_AE2_THRESHOLD_SUPERSESSION.json",
     "artifacts/BHSM_alpha_i_update_v4_2.json",
     "theory/bhsm_prediction_ledger.json",
@@ -61,6 +62,7 @@ def verify_current_lineage() -> None:
     factorized = loaded["artifacts/flagship_integration/BHSM_N12_GATE7_AE2_FACTORIZED_THRESHOLD_RECLASSIFICATION.json"]
     reduction = loaded["artifacts/flagship_integration/BHSM_N12_GATE7_AE2_FACTORIZED_SOURCE_MEASURE_REDUCTION.json"]
     radius_route = loaded["artifacts/flagship_integration/BHSM_N12_GATE7_AE2_INTEGRABLE_RADIUS_THRESHOLD_ROUTE.json"]
+    linear_tail = loaded["artifacts/flagship_integration/BHSM_N12_GATE7_AE2_LINEAR_RADIUS_TAIL_THEOREM.json"]
     frontier = loaded["artifacts/flagship_integration/BHSM_N12_GATE7_AE2_THRESHOLD_SUPERSESSION.json"]
     if ae2.get("action_version") != "BHSM-AE-2.0.0":
         raise RuntimeError("AE2 action version mismatch")
@@ -83,6 +85,13 @@ def verify_current_lineage() -> None:
         and radius_route["claim_boundary"]["direct_nonintegrable_tail_theorem"] == "OPEN"
     ):
         raise RuntimeError("realized infinite-tail dichotomy is not the current live owner")
+    if linear_tail["claim_boundary"]["exact_linear_radius_tail_theorem"] != "CLOSED":
+        raise RuntimeError("exact linear-radius tail theorem is not closed")
+    if not (
+        linear_tail["claim_boundary"]["actual_N12_radius_asymptotic_class"] == "OPEN"
+        and linear_tail["claim_boundary"]["general_sublinear_or_nonasymptotic_tail"] == "OPEN"
+    ):
+        raise RuntimeError("remaining radius-tail class is not the current live owner")
 
 
 def materialize() -> list[Path]:

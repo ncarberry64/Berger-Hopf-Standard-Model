@@ -163,6 +163,17 @@
   no global coercive strong bound or superlinear lower growth theorem for
   `R4`. The exact co-owner is a direct non-`L1` supersymmetric-tail source
   normalization theorem.
+- Exact linear-radius non-`L1` factorized tail: `CLOSED_BY_BESSEL_THEOREM`.
+  Positive chirality has cumulative law
+  `Lambda^(1+abs(beta-1/2))` off criticality and
+  `Lambda/abs(log Lambda)^2` at `beta=1/2`; negative chirality has
+  `Lambda^(beta+3/2)`. All satisfy the exact E1 source-Dini integral.
+- Strict `epsilon_h>0` power excess as a universal E1 requirement:
+  `RECLASSIFIED_SUFFICIENT_NOT_NECESSARY`. The canonical condition is
+  `integral_(0,1] lambda^-1 dabs(nu_h)(lambda)<infinity`.
+- Current infinite-tail owner: derive the realized `R4` asymptotic class or
+  prove the source-Dini bound for sublinear/nonasymptotic positive-radius
+  tails.
 - Retained transverse-gauge normal boundary quadratic form:
   `ACTION_DERIVED_BY_v15_66`.
 - Retained normal matter junction action: `ZERO_BY_v15_13`; this does not
