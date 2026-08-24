@@ -190,6 +190,17 @@
 - Sharpened current owner: assemble a uniform retained angular/channel sum of
   the fixed-channel low- and high-energy source trace-norm bounds. The spatial
   Galerkin tail remains spatial and is not a temporal-tail substitute.
+- Angular-uniformity counterexample: `R4(tau)=exp(tau)` is smooth, positive,
+  monotone, and has bounded logarithmic derivative, but finite optical length
+  `I_R=1`. For positive Weyl level `mu_n=n+3/2`, exact zero-transfer
+  normalization forces the compact-source Dini coefficient to grow at least
+  as `c*exp(2*mu_n*I_R)`. With degeneracy `48(n+1)(n+2)`, the absolute angular
+  terms do not tend to zero. This preserves every fixed-channel closure.
+- Necessary infinite-history angular exclusion:
+  `integral_0^infinity d_tau/R4(tau)=infinity`. Optical completeness alone is
+  not yet proved sufficient for arbitrary nonasymptotic tails. The current
+  owner is a quantitative optical-complete angular barrier theorem, an
+  already action-owned relative trace, or the retained finite endpoint branch.
 - Retained transverse-gauge normal boundary quadratic form:
   `ACTION_DERIVED_BY_v15_66`.
 - Retained normal matter junction action: `ZERO_BY_v15_13`; this does not

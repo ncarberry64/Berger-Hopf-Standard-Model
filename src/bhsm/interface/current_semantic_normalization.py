@@ -428,7 +428,7 @@ GATE_CHAIN = [
     ("G7_04_NONFERMION", "nonfermionic threshold closure", "CLOSED"),
     ("G7_05_FACTORIZED_LAP", "all admissible positive far tails source-Dini by compact Volterra trace-class theorem", "CLOSED"),
     ("G7_06_E1_FINITE", "fixed-channel E1 source-measure finiteness", "CLOSED"),
-    ("G7_07_ANGULAR_TAIL", "assemble the retained higher-energy and angular channel sum", "OPEN_CURRENT_OWNER"),
+    ("G7_07_ANGULAR_TAIL", "prove optical-complete angular uniformity or an action-owned relative trace; finite optical length is excluded", "OPEN_CURRENT_OWNER"),
     ("G7_08_FORCE", "zero-source geometry force", "PENDING"),
     ("G7_09_SADDLE", "same-action saddle", "PENDING"),
     ("G7_10_HESSIAN", "pair-plus-contact Hessian", "PENDING"),
@@ -446,6 +446,7 @@ def _gates() -> list[dict[str, Any]]:
         "G7_04_NONFERMION": "artifacts/flagship_integration/BHSM_N12_GATE7_AE2_NONFERMION_THRESHOLD_MARGIN.json",
         "G7_05_FACTORIZED_LAP": "artifacts/flagship_integration/BHSM_N12_GATE7_AE2_COMPACT_SOURCE_DINI_CLOSURE.json",
         "G7_06_E1_FINITE": "artifacts/flagship_integration/BHSM_N12_GATE7_AE2_COMPACT_SOURCE_DINI_CLOSURE.json",
+        "G7_07_ANGULAR_TAIL": "artifacts/flagship_integration/BHSM_N12_GATE7_AE2_ANGULAR_DINI_UNIFORMITY_AUDIT.json",
     }
     fallback = "artifacts/flagship_integration/BHSM_N12_GATE7_AE2_THRESHOLD_SUPERSESSION.json"
     rows = []

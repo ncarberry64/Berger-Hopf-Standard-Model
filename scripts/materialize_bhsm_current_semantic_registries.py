@@ -30,6 +30,7 @@ SOURCES = (
     "artifacts/flagship_integration/BHSM_N12_GATE7_AE2_LINEAR_RADIUS_TAIL_THEOREM.json",
     "artifacts/flagship_integration/BHSM_N12_GATE7_AE2_POWER_RADIUS_TAIL_CLOSURE.json",
     "artifacts/flagship_integration/BHSM_N12_GATE7_AE2_COMPACT_SOURCE_DINI_CLOSURE.json",
+    "artifacts/flagship_integration/BHSM_N12_GATE7_AE2_ANGULAR_DINI_UNIFORMITY_AUDIT.json",
     "artifacts/flagship_integration/BHSM_N12_GATE7_AE2_THRESHOLD_SUPERSESSION.json",
     "artifacts/BHSM_alpha_i_update_v4_2.json",
     "theory/bhsm_prediction_ledger.json",
@@ -67,6 +68,7 @@ def verify_current_lineage() -> None:
     linear_tail = loaded["artifacts/flagship_integration/BHSM_N12_GATE7_AE2_LINEAR_RADIUS_TAIL_THEOREM.json"]
     power_tail = loaded["artifacts/flagship_integration/BHSM_N12_GATE7_AE2_POWER_RADIUS_TAIL_CLOSURE.json"]
     compact_dini = loaded["artifacts/flagship_integration/BHSM_N12_GATE7_AE2_COMPACT_SOURCE_DINI_CLOSURE.json"]
+    angular_dini = loaded["artifacts/flagship_integration/BHSM_N12_GATE7_AE2_ANGULAR_DINI_UNIFORMITY_AUDIT.json"]
     frontier = loaded["artifacts/flagship_integration/BHSM_N12_GATE7_AE2_THRESHOLD_SUPERSESSION.json"]
     if ae2.get("action_version") != "BHSM-AE-2.0.0":
         raise RuntimeError("AE2 action version mismatch")
@@ -107,6 +109,10 @@ def verify_current_lineage() -> None:
         raise RuntimeError("compact-source factorization theorem is not closed")
     if compact_dini["claim_boundary"]["angular_sum"] != "OPEN_CURRENT_OWNER":
         raise RuntimeError("angular channel sum is not the current live owner")
+    if angular_dini["adjudication"]["fixed_channel_source_Dini"] != "CLOSED_DO_NOT_REOPEN":
+        raise RuntimeError("angular audit reopened the fixed-channel theorem")
+    if angular_dini["adjudication"]["arbitrary_positive_tail_angular_sum"] != "FALSE":
+        raise RuntimeError("angular audit did not retain its exact counterexample")
 
 
 def materialize() -> list[Path]:
