@@ -63,6 +63,7 @@ INPUTS = (
     "artifacts/flagship_integration/BHSM_N12_FORWARD_COMMON_SOURCE_INCIDENCE.json",
     "artifacts/flagship_integration/BHSM_N12_GATE7_AE2_COMPACT_SOURCE_DINI_CLOSURE.json",
     "artifacts/flagship_integration/BHSM_N12_GATE7_AE2_ANGULAR_DINI_UNIFORMITY_AUDIT.json",
+    "artifacts/current_semantics/BHSM_CURRENT_COMPLETION_DAG.json",
     "src/bhsm/interface/action_extension_ae2_neutrino_photon_propagation.py",
     "scripts/audit_bhsm_ae2_photon_neutrino_propagation.py",
 )
@@ -124,6 +125,15 @@ def build_payloads() -> dict[str, dict[str, Any]]:
     incidence = _load(INPUTS[22])
     compact_dini = _load(INPUTS[23])
     angular = _load(INPUTS[24])
+    completion_dag = _load(INPUTS[25])
+
+    gate7_angular_nodes = [
+        record for record in completion_dag["records"]
+        if record.get("canonical_id") == "G7_07_ANGULAR_TAIL"
+    ]
+    if len(gate7_angular_nodes) != 1:
+        raise RuntimeError("current DAG must contain exactly one G7_07 node")
+    gate7_angular_node = gate7_angular_nodes[0]
 
     source_hashes = _inputs()
     raw_seed = neutral_seed_spectrum(neutral_seed["K_nu"])
@@ -495,6 +505,16 @@ def build_payloads() -> dict[str, dict[str, Any]]:
         "no_neutrino_stiffness_transferred_to_Gate7": stiffness["positive_propagation_stiffness_matrix"] is None,
         "fixed_channel_Dini_remains_closed": angular["adjudication"]["fixed_channel_source_Dini"] == "CLOSED_DO_NOT_REOPEN",
         "Gate7_angular_owner_unchanged": angular["frontier_sharpening"]["G7_07_angular_tail"] == "OPEN_CURRENT_OWNER",
+        "current_completion_DAG_consumed": (
+            completion_dag["action_version"] == ACTION_VERSION
+            and completion_dag["validation_passed"] is True
+            and gate7_angular_node["current_status"] == "OPEN_CURRENT_OWNER"
+        ),
+        "neutral_reconnaissance_does_not_replace_current_DAG_owner": all(
+            "NEUTRINO" not in record.get("canonical_id", "")
+            and "PHOTON" not in record.get("canonical_id", "")
+            for record in completion_dag["records"]
+        ),
         "frozen_predictions_unchanged": True,
         "full_BHSM_false": adjudication["FULL_BHSM_COMPLETE"] is False,
     }
@@ -523,7 +543,9 @@ def build_payloads() -> dict[str, dict[str, Any]]:
             "any p, E, group velocity, mass, or oscillation interpretation",
         ],
         "Gate7_status": "ACTIVE_NOT_CLOSED",
-        "Gate7_current_owner": "G7_07_ANGULAR_UNIFORMITY",
+        "Gate7_current_owner": "G7_07_ANGULAR_TAIL",
+        "Gate7_current_owner_detail": angular["exact_next_dependency"],
+        "completion_DAG_dependency_changed_by_this_sprint": False,
         "Gate7_changed_by_this_sprint": False,
         "final_adjudication": adjudication,
         "inputs": source_hashes,

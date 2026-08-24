@@ -98,8 +98,12 @@ shared geometry. It does not establish the missing three-slot neutral
 projector or allow any historical neutrino matrix, momentum interpretation,
 or CP seed to be transferred into Gate 7.
 
-Gate 7 is unchanged and remains active at `G7_07_ANGULAR_UNIFORMITY`. Frozen
-predictions are unchanged. `FULL_BHSM_COMPLETE = FALSE`.
+Gate 7 is unchanged and remains active at `G7_07_ANGULAR_TAIL`. The current
+completion DAG and the later radius-history audits sharpen that owner to an
+action-derived outward Osgood envelope (or the retained finite
+event/canonical-stop branch). The neutral reconnaissance supplies no theorem
+that changes or bypasses that dependency. Frozen predictions are unchanged.
+`FULL_BHSM_COMPLETE = FALSE`.
 
 The highest-upstream newly exposed dependency is an action-derived neutral
 rank-three invariant-subundle projector commuting with (D_{AE2}),
