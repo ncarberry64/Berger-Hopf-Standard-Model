@@ -14,6 +14,7 @@
     "exact_power_tail_fixed_channel_results": "PRESERVED_DO_NOT_REOPEN",
     "finite_optical_length_compatible_with_absolute_angular_sum": false,
     "fixed_channel_source_Dini": "CLOSED_DO_NOT_REOPEN",
+    "leading_ADM_cosmological_balance_excludes_constant_positive_log_rate": false,
     "optical_completeness_proved_by_retained_action": false,
     "optical_completeness_proved_sufficient_for_every_nonasymptotic_tail": false,
     "radius_monotonicity_required": false,
@@ -441,11 +442,11 @@
     "source_hypothesis": "h>=0_AND_H=int_delta^L_h(t)*r(t)dt>0",
     "zero_transfer_normalization": "N_mu^2=(2/pi)*exp(2*mu*I)"
   },
-  "exact_next_dependency": "DERIVE_FROM_THE_RETAINED_CONTINUUM_ACTION_THE_OUTWARD_OSGOOD_ENVELOPE_abs(D_tau_R4)<=a+b*log(R4/R_L)_ON_THE_UNIQUE_INFINITE_REGULAR_HISTORY,_OR_ANY_NONDECREASING_omega_WITH_omega(R)=o(R)_AND_int^infinity_dR/(R*omega(R))=infinity,_OR_USE_THE_FINITE_EVENT_CANONICAL_STOP_BRANCH;_THE_EXISTING_REFERENCE_AND_CP_Z6_ROUTES_ARE_ALREADY_AUDITED_AND_DO_NOT_CLOSE_THIS_OWNER",
+  "exact_next_dependency": "CONTROL_THE_LOWER_WEIGHT_AND_TRANSVERSE_REMAINDERS_IN_THE_FULL_CONSTRAINT_REDUCED_RADIUS_EQUATION_STRONGLY_ENOUGH_TO_EXCLUDE_OR_DESTABILIZE_THE_EXACT_WEIGHT_SEVEN_EXPANDING_EQUILIBRIUM_D_tau_log_R4=sqrt(kappa0/42)_AND_FORCE_AN_OUTWARD_OSGOOD_ENVELOPE,_OR_PROVE_THAT_THIS_BRANCH_REACHES_AN_EXISTING_EVENT_OR_CANONICAL_STOP;_THE_LEADING_ADM_COSMOLOGICAL_SECTOR_ALONE_CANNOT_CLOSE_G7_07",
   "frontier_sharpening": {
     "G7_07_angular_tail": "OPEN_CURRENT_OWNER",
     "finite_branch": "USE_THE_RETAINED_COMPACT_RESOLVENT_OPERATOR_IF_THE_ACTUAL_HISTORY_REACHES_EVENT_OR_CANONICAL_STOP",
-    "first_branch": "PROVE_THE_ACTUAL_INFINITE_REGULAR_HISTORY_SATISFIES_THE_WEAKER_OUTWARD_SPEED_ENVELOPE_abs(D_tau_R4)<=a+b*log(R4/R_L),_WHICH_CLOSES_THE_LOW_ENERGY_ANGULAR_BARRIER_SUM_WITHOUT_MONOTONICITY_OR_BOUNDED_SPEED",
+    "first_branch": "PROVE_THAT_THE_LOWER_WEIGHT_AND_TRANSVERSE_RETAINED_EQUATIONS_DESTABILIZE_OR_EXCLUDE_THE_WEIGHT_SEVEN_CONSTANT_POSITIVE_LOG_RATE_BALANCE_AND_FORCE_THE_OUTWARD_OSGOOD_ENVELOPE_abs(D_tau_R4)<=a+b*log(R4/R_L)",
     "second_branch": "DERIVE_AN_ALREADY_ACTION_OWNED_FORWARD_RELATIVE_REFERENCE_AND_PROVE_SOURCE_CONTRACTED_RELATIVE_TRACE_CLASS"
   },
   "inputs": {
@@ -455,12 +456,13 @@
     "artifacts/flagship_integration/BHSM_N12_FORWARD_HEAT_TRACE_CLASS_AUDIT.json": "80CC27BC0DDD23620CBC4AFB4EE4CF35C51F74A5CD80630A256AEF20B2D2D804",
     "artifacts/flagship_integration/BHSM_N12_FORWARD_SOURCE_TAIL_OWNERSHIP_AUDIT.json": "059B26ED8B865BAA5DF66E5E64536DBCF2DE9381A314F4916CCFCCCC1B3912AB",
     "artifacts/flagship_integration/BHSM_N12_GATE7_AE2_COMPACT_SOURCE_DINI_CLOSURE.json": "E1E735CBA8FC9D5FBC28B2AB93B0EA17803191D69F081C7A194224360A18CF27",
+    "artifacts/intrinsic_state_selection/BHSM_N12_CONSTRAINT_REDUCED_ENERGY_IDENTITY_GATE.json": "EB907DF96C8C9E0A66014D6A6463B853E92F1A5D0CBA2B269789FA28706501D1",
     "artifacts/intrinsic_state_selection/BHSM_N12_CONTINUUM_MAXIMAL_FLOW_DICHOTOMY.json": "F75E3CEE4EE4D0768027770FEFECAC1A17994B4297AE344E3FC2D83F86B002A9",
     "artifacts/intrinsic_state_selection/BHSM_N12_GLOBAL_FLOW_COERCIVE_CONTROL_GATE.json": "0A6C1BED930316B8EFF8BBE110078AE1C582E638E6BC42445330CC276EC2A2C4",
-    "scripts/derive_n12_gate7_ae2_angular_dini_uniformity.py": "900814B4C76B8D650B36416CA879DE676F5285C0D4D25BCFB1AAD0F7E34EE9B6",
-    "src/bhsm/interface/action_extension_ae2_angular_dini_uniformity.py": "33EE6C5AE7C2E45D3D82563D36DBC10E74D110F73A5B7567146CB348A57FABC5",
+    "scripts/derive_n12_gate7_ae2_angular_dini_uniformity.py": "9BEE1F83E4A86500D186965AD30745EDFA20B421C80F462C375083D6F2C03A59",
+    "src/bhsm/interface/action_extension_ae2_angular_dini_uniformity.py": "EE7D2507BE3F003E42ADD71874FA7C416FCF442CA7FC579F50BD1F889EC7C0D5",
     "src/bhsm/interface/aether_n3_exact_full_local_action_jet_v17_60.py": "2EA05905143C27E2465450A92CFBC27D87EA1D12C39931821CD4D6E51ED44EEC",
-    "theory/bhsm_action_ae2_angular_dini_uniformity.md": "E104D04A4387E73F5231FDBB808EF406D07D7EC8E45BB6C6BF2D22630C90473F"
+    "theory/bhsm_action_ae2_angular_dini_uniformity.md": "C79A12BAC936E902B4DDCCC380EC4D9E1CA15896E1C47569DE1D07353ABA3A08"
   },
   "minimal_requirement": {
     "bounded_logarithmic_derivative_sufficient": false,
@@ -472,6 +474,68 @@
     "optical_completeness_alone_proved_sufficient": false,
     "remaining_sufficient_route": "quantitative optical-completeness/barrier estimate uniform in the angular level, or an already action-owned relative trace",
     "smoothness_or_local_BV_sufficient": false
+  },
+  "retained_action_dominant_round_radius_balance": {
+    "consequence": "THE_LEADING_RETAINED_EQUATIONS_DO_NOT_FORCE_D_tau_log_R4_TO_ZERO_AND_ARE_COMPATIBLE_WITH_FINITE_OPTICAL_LENGTH",
+    "full_action_large_scale_replay": {
+      "action_limit_errors_strictly_decrease": true,
+      "ansatz": "q=(q0,0,...),_v=(sqrt(kappa0/42),0,...),_multipliers=0",
+      "normalized_energy_magnitudes_strictly_decrease": true,
+      "normalized_scale_EL_residuals_strictly_decrease": true,
+      "observed_relative_remainder_weight": "R^-2_CONSISTENT_WITH_NEXT_SCALE_WEIGHT_5",
+      "quadrature_points": 96,
+      "rows": [
+        {
+          "absolute_action_limit_error": 0.0034421013230795383,
+          "normalized_constant_rate_scale_EL_residual_over_R7": -0.01721053786038212,
+          "normalized_full_action_over_R7": -0.26374164034515435,
+          "normalized_reduced_energy_over_R7": -0.0034421013230794876,
+          "predicted_weight_seven_limit": -0.2671837416682339,
+          "proper_log_radius_rate": 0.3907383060443644,
+          "q0": 2.0
+        },
+        {
+          "absolute_action_limit_error": 6.304438023030379e-05,
+          "normalized_constant_rate_scale_EL_residual_over_R7": -0.00031522190115504335,
+          "normalized_full_action_over_R7": -0.2671206972880036,
+          "normalized_reduced_energy_over_R7": -6.3044380230168e-05,
+          "predicted_weight_seven_limit": -0.2671837416682339,
+          "proper_log_radius_rate": 0.3907383060443644,
+          "q0": 4.0
+        },
+        {
+          "absolute_action_limit_error": 1.1546981024679326e-06,
+          "normalized_constant_rate_scale_EL_residual_over_R7": -5.773490512182635e-06,
+          "normalized_full_action_over_R7": -0.2671825869701314,
+          "normalized_reduced_energy_over_R7": -1.1546981022804274e-06,
+          "predicted_weight_seven_limit": -0.2671837416682339,
+          "proper_log_radius_rate": 0.3907383060443644,
+          "q0": 6.0
+        }
+      ]
+    },
+    "not_claimed": "EXISTENCE_OF_A_FULL_RETAINED_EXPONENTIAL_HISTORY_OR_INCOMPATIBILITY_OF_THE_RETAINED_ACTION",
+    "result": {
+      "ADM_trace_coefficient": -21.0,
+      "claim": "EXACT_WEIGHT_SEVEN_DOMINANT_BALANCE_OBSTRUCTS_ANY_PROOF_OF_OSGOOD_DECAY_FROM_THE_LEADING_ADM_COSMOLOGICAL_SECTOR_ALONE",
+      "contracting_equilibrium_log_rate": -0.3907383060443644,
+      "cosmological_coefficient": 6.412409800037613,
+      "dominant_balance_forces_log_rate_decay": false,
+      "dominant_balance_is_compatible_with_finite_optical_length": true,
+      "expanding_dominant_optical_length": "INTEGRAL_0^infinity_d_tau/R4=1/(R_star*sqrt(kappa0/42))",
+      "expanding_dominant_radius_class": "R4(tau)=R_star*exp(sqrt(kappa0/42)*tau)",
+      "expanding_equilibrium_log_rate": 0.3907383060443644,
+      "full_retained_history_with_this_asymptotic_proved": false,
+      "lower_weight_and_transverse_remainders_controlled": false,
+      "proper_time_scale_equation": "D_tau^2_log_R4=kappa0/12-(7/2)*(D_tau_log_R4)^2",
+      "round_volume_integral": 0.041666666666666664,
+      "scale_equation_residual_at_equilibrium": 0.0,
+      "weight_seven_reduced_action": "L7=(R^7/24)*(-21*q0_dot^2/N-(kappa0/2)*N)",
+      "zero_energy_constraint_residual_at_equilibrium": -4.440892098500626e-16,
+      "zero_reduced_energy_constraint": "21*(D_tau_log_R4)^2-kappa0/2=0"
+    },
+    "scope": "ROUND_COMMON_SCALE_ANSATZ_AND_COMPLETE_WEIGHT_SEVEN_ADM_PLUS_COSMOLOGICAL_SECTOR",
+    "status": "EXACT_WEIGHT_SEVEN_BALANCE_PERMITS_NONZERO_LOG_RATE_FULL_HISTORY_OPEN"
   },
   "retained_action_uniform_scale_ownership_audit": {
     "Osgood_requirement": "omega(R)=o(R)_REQUIRES_D_tau_log_R4->0_ALONG_UNBOUNDED_OUTWARD_RADIUS",
@@ -527,12 +591,16 @@
     "barrier_beats_local_exponential_and_polynomial_growth": true,
     "both_chiralities_have_direct_mu_log_mu_barrier_without_monotonicity": true,
     "conditional_angular_series_root_test_closes": true,
+    "constraint_reduced_energy_identity_consumed": true,
     "counterexample_has_bounded_log_derivative": true,
     "counterexample_has_finite_optical_length": true,
     "counterexample_is_positive_smooth_and_non_power": true,
+    "dominant_balance_does_not_prove_full_exponential_history": true,
     "every_fixed_channel_remains_Dini_finite": true,
+    "exact_weight_seven_energy_and_scale_equations_have_nonzero_expanding_equilibrium": true,
     "fixed_channel_Dini_closure_preserved": true,
     "frozen_predictions_unchanged": true,
+    "full_action_large_scale_replay_converges_to_weight_seven_balance": true,
     "high_energy_fixed_sector_theorem_preserved": true,
     "logarithmic_speed_Osgood_barrier_allows_unbounded_speed": true,
     "logarithmic_speed_barrier_beats_local_exponential_growth": true,

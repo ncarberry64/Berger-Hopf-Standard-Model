@@ -134,6 +134,43 @@ have weight `7`.  Hence there is no scale-weight coercive separation that can
 force the logarithmic rate to vanish.  Such a conclusion must come from the
 actual constraint-reduced Euler--Dirac flow, not from dimensional scaling.
 
+The complete weight-seven round-radius balance sharpens this obstruction.
+On the retained common-scale round ansatz, let `h=q0_dot`. A uniform lapse
+symbol `N` is used only to display the conversion to proper time; the owned
+constraint below is the zero reduced Legendre energy, not variation of a
+constant lapse mode. Since
+
+`integral_0^(pi/4) cos(chi)^3 sin(chi)^3 dchi = 1/24`,
+
+the unchanged ADM plus cosmological sector reduces exactly at weight seven
+to
+
+`L7=(R^7/24)(-21 h^2/N-(kappa0/2)N)`.
+
+The already-certified zero reduced Legendre energy and the common-scale
+Euler--Lagrange equation give
+
+`21(D_tau log R4)^2-kappa0/2=0`,
+
+`D_tau^2 log R4=kappa0/12-(7/2)(D_tau log R4)^2`.
+
+They have the nonzero expanding equilibrium
+
+`D_tau log R4=sqrt(kappa0/42)`.
+
+Its dominant radius law is exponential and has finite optical length. Thus
+the leading retained equations do not merely fail to prove Osgood decay;
+they admit the opposite dominant balance. This is not a full-history
+existence theorem. A 96-point replay of the complete retained action at
+`q0=2,4,6` confirms convergence of the action, zero-energy residual, and
+constant-rate scale Euler--Lagrange residual to this weight-seven balance.
+The lower weights `5,3,1,-1`, the inverse-inertia and
+boundary terms, the transverse equations, and all regular-domain margins
+remain uncontrolled asymptotic remainders. The exact next analytic question
+is whether those retained remainders exclude or destabilize this expanding
+balance, force an Osgood envelope, or instead drive the history to an
+existing event/canonical stop.
+
 This is a conditional angular-barrier theorem, not a theorem about the actual
 N12 history.  The current retained action still does not prove even the
 weaker outward Osgood envelope: the maximal-flow dichotomy selects no outcome

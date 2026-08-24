@@ -15,6 +15,19 @@ The nonfermion threshold obstruction is closed in its proved AE2 scope. The fact
 
 Historical `1:2:7` gauge, CKM, `1/16`, `eta_l`, `rho_ch`, `Z_virt^(u,2)=1/2`, and physical mass-scale formulas remain classified as historical, conditional, frozen output, or not derived. They are not AE2 action inputs and no frozen prediction changes here.
 
+The radius-history obstruction is sharper than scale bookkeeping alone. On
+the round common-scale ansatz, the complete weight-seven ADM plus
+cosmological action is
+`(R^7/24)(-21 q0_dot^2/N-(kappa0/2)N)`. Its zero-energy constraint and scale
+equation admit the expanding equilibrium
+`D_tau log R4=sqrt(kappa0/42)`, whose dominant radius is exponential and has
+finite optical length. This is not a full retained-history existence theorem:
+lower-weight, inverse-inertia, boundary, transverse, and domain-margin
+remainders remain open. It proves that the leading sector cannot supply the
+needed Osgood decay. The live action dependency is now control of those full
+remainders strongly enough to exclude or destabilize the expanding balance,
+force an Osgood envelope, or reach an existing event/canonical stop.
+
 The recovered Norman owner ontology is recorded as an owner-authorized semantic layer, never as an action-derived equation. It fixes geometry-first emergence, persistent mode/history particle classes, the base-plus-two-excitations generation architecture, action-owned response mass with a universal dimensional origin, propagation-locked neutrino mass, CKM as relative response-basis orientation, strict bare/dressed separation, and the irreversible dependency direction `action -> theorem -> observable -> frozen comparison`.
 
 The executable guardrails reject semantic regression, including `z=p^2`, a compulsory strict gap, terminal recurrence, reopening the nonfermion threshold without contradiction, replacing the current owner by D5/Kato interval-sign work, symbol collisions, or importing frozen outputs into the current action.

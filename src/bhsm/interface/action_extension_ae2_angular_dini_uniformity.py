@@ -443,6 +443,68 @@ def uniform_scale_shift_osgood_audit(
     }
 
 
+def dominant_round_radius_balance(
+    *, cosmological_coefficient: float,
+) -> dict[str, float | bool | str]:
+    """Derive the exact weight-seven round-radius Euler--Lagrange balance.
+
+    On the retained round common-scale ansatz, write ``h=q0_dot`` in the
+    fixed unit-average lapse gauge. Since
+    ``integral_0^(pi/4) cos(chi)^3 sin(chi)^3 dchi=1/24``, the complete
+    weight-seven part of the unchanged local action is
+
+    ``L7=(R^7/24)*(-21*h^2/N-(kappa0/2)*N)``.
+
+    The already-owned zero reduced Legendre energy and the common-scale
+    Euler--Lagrange equation admit the expanding proper-time equilibrium
+    ``D_tau log(R4)=sqrt(kappa0/42)``.  This is an exact dominant-balance
+    statement, not an existence theorem for a full retained history: all
+    lower scale weights and transverse equations still have to be controlled.
+    """
+
+    kappa0 = float(cosmological_coefficient)
+    if not math.isfinite(kappa0) or kappa0 <= 0.0:
+        raise ValueError("positive finite cosmological coefficient required")
+    volume_coefficient = 1.0 / 24.0
+    expansion_rate = math.sqrt(kappa0 / 42.0)
+    return {
+        "round_volume_integral": volume_coefficient,
+        "ADM_trace_coefficient": -21.0,
+        "cosmological_coefficient": kappa0,
+        "weight_seven_reduced_action": (
+            "L7=(R^7/24)*(-21*q0_dot^2/N-(kappa0/2)*N)"
+        ),
+        "zero_reduced_energy_constraint": (
+            "21*(D_tau_log_R4)^2-kappa0/2=0"
+        ),
+        "proper_time_scale_equation": (
+            "D_tau^2_log_R4=kappa0/12-(7/2)*(D_tau_log_R4)^2"
+        ),
+        "expanding_equilibrium_log_rate": expansion_rate,
+        "contracting_equilibrium_log_rate": -expansion_rate,
+        "zero_energy_constraint_residual_at_equilibrium": (
+            21.0 * expansion_rate**2 - 0.5 * kappa0
+        ),
+        "scale_equation_residual_at_equilibrium": (
+            kappa0 / 12.0 - 3.5 * expansion_rate**2
+        ),
+        "expanding_dominant_radius_class": (
+            "R4(tau)=R_star*exp(sqrt(kappa0/42)*tau)"
+        ),
+        "expanding_dominant_optical_length": (
+            "INTEGRAL_0^infinity_d_tau/R4=1/(R_star*sqrt(kappa0/42))"
+        ),
+        "dominant_balance_forces_log_rate_decay": False,
+        "dominant_balance_is_compatible_with_finite_optical_length": True,
+        "full_retained_history_with_this_asymptotic_proved": False,
+        "lower_weight_and_transverse_remainders_controlled": False,
+        "claim": (
+            "EXACT_WEIGHT_SEVEN_DOMINANT_BALANCE_OBSTRUCTS_ANY_PROOF_OF_"
+            "OSGOOD_DECAY_FROM_THE_LEADING_ADM_COSMOLOGICAL_SECTOR_ALONE"
+        ),
+    }
+
+
 def at_most_linear_angular_series_witness(
     *,
     first_level: int = 8,
@@ -522,6 +584,7 @@ __all__ = [
     "at_most_linear_angular_series_witness",
     "at_most_linear_radius_agmon_bound",
     "angular_uniformity_requirement",
+    "dominant_round_radius_balance",
     "exponential_radius_angular_counterexample",
     "integrable_optical_tail_dini_coefficient_lower",
     "logarithmic_radius_speed_agmon_bound",

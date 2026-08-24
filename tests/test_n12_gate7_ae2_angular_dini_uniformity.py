@@ -13,6 +13,7 @@ from bhsm.interface.action_extension_ae2_angular_dini_uniformity import (
     at_most_linear_angular_series_witness,
     at_most_linear_radius_agmon_bound,
     angular_uniformity_requirement,
+    dominant_round_radius_balance,
     exponential_radius_angular_counterexample,
     integrable_optical_tail_dini_coefficient_lower,
     logarithmic_radius_speed_agmon_bound,
@@ -145,6 +146,21 @@ def test_uniform_scale_shift_does_not_kinematically_supply_osgood_decay() -> Non
     assert row["positive_radius_and_lapse_domain_alone_proves_Osgood_envelope"] is False
 
 
+def test_weight_seven_radius_balance_permits_exponential_expansion() -> None:
+    kappa0 = 15.0 * 5.0 ** (1.0 / 3.0) / 4.0
+    row = dominant_round_radius_balance(cosmological_coefficient=kappa0)
+    assert row["round_volume_integral"] == pytest.approx(1.0 / 24.0)
+    assert row["ADM_trace_coefficient"] == -21.0
+    assert row["expanding_equilibrium_log_rate"] == pytest.approx(
+        math.sqrt(kappa0 / 42.0)
+    )
+    assert row["zero_energy_constraint_residual_at_equilibrium"] == pytest.approx(0.0)
+    assert row["scale_equation_residual_at_equilibrium"] == pytest.approx(0.0)
+    assert row["dominant_balance_forces_log_rate_decay"] is False
+    assert row["dominant_balance_is_compatible_with_finite_optical_length"] is True
+    assert row["full_retained_history_with_this_asymptotic_proved"] is False
+
+
 def test_at_most_linear_root_test_beats_compact_source_growth() -> None:
     row = at_most_linear_angular_series_witness(
         source_exponential_rate=3.0,
@@ -207,6 +223,20 @@ def test_artifact_is_validated_and_deterministic() -> None:
     assert payload["adjudication"]["eventual_logarithmic_speed_Osgood_radius_proved_by_action"] is False
     assert payload["conditional_logarithmic_speed_Osgood_class"]["allows_unbounded_radius_speed"] is True
     assert payload["retained_action_uniform_scale_ownership_audit"]["status"] == "EXACT_SCALE_WEIGHTS_DERIVED_NO_OSGOOD_DECAY_THEOREM"
+    dominant = payload["retained_action_dominant_round_radius_balance"]
+    assert dominant["result"]["expanding_equilibrium_log_rate"] > 0.0
+    assert dominant["result"]["full_retained_history_with_this_asymptotic_proved"] is False
+    replay = dominant["full_action_large_scale_replay"]
+    assert replay["action_limit_errors_strictly_decrease"] is True
+    assert replay["normalized_energy_magnitudes_strictly_decrease"] is True
+    assert replay["normalized_scale_EL_residuals_strictly_decrease"] is True
+    assert replay["rows"][-1]["absolute_action_limit_error"] < 2.0e-6
+    assert abs(
+        replay["rows"][-1][
+            "normalized_constant_rate_scale_EL_residual_over_R7"
+        ]
+    ) < 1.0e-5
+    assert payload["adjudication"]["leading_ADM_cosmological_balance_excludes_constant_positive_log_rate"] is False
     assert payload["conditional_action_state_control_reduction"]["retained_action_supplies_global_velocity_bound"] is False
     assert payload["frontier_sharpening"]["G7_07_angular_tail"] == "OPEN_CURRENT_OWNER"
     assert payload["FULL_BHSM_COMPLETE"] is False

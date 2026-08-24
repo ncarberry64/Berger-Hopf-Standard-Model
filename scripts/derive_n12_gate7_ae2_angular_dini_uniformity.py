@@ -9,6 +9,8 @@ from pathlib import Path
 import sys
 from typing import Any
 
+import numpy as np
+
 
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT / "src"))
@@ -17,12 +19,19 @@ from bhsm.interface.action_extension_ae2_angular_dini_uniformity import (  # noq
     at_most_linear_angular_series_witness,
     at_most_linear_radius_agmon_bound,
     angular_uniformity_requirement,
+    dominant_round_radius_balance,
     exponential_radius_angular_counterexample,
     logarithmic_radius_speed_agmon_bound,
     radius_speed_bound_from_state_controls,
     uniform_scale_shift_osgood_audit,
 )
 from bhsm.interface.aether_diagonal_sp1_m4_attachment_v15_50 import RADIUS0  # noqa: E402
+from bhsm.interface.aether_n3_exact_full_local_action_jet_v17_60 import (  # noqa: E402
+    exact_full_action_jet_at_state,
+)
+from bhsm.interface.aether_sobolev_galerkin_pencil_lift_v15_81 import (  # noqa: E402
+    dimensions,
+)
 
 
 TARGET = ROOT / "artifacts/flagship_integration/BHSM_N12_GATE7_AE2_ANGULAR_DINI_UNIFORMITY_AUDIT.json"
@@ -35,6 +44,7 @@ INPUTS = (
     ROOT / "artifacts/flagship_integration/BHSM_N12_FORWARD_BOUNDARY_RADIUS_ACTION_PROJECTION.json",
     ROOT / "artifacts/intrinsic_state_selection/BHSM_N12_CONTINUUM_MAXIMAL_FLOW_DICHOTOMY.json",
     ROOT / "artifacts/intrinsic_state_selection/BHSM_N12_GLOBAL_FLOW_COERCIVE_CONTROL_GATE.json",
+    ROOT / "artifacts/intrinsic_state_selection/BHSM_N12_CONSTRAINT_REDUCED_ENERGY_IDENTITY_GATE.json",
     ROOT / "src/bhsm/interface/action_extension_ae2_angular_dini_uniformity.py",
     ROOT / "scripts/derive_n12_gate7_ae2_angular_dini_uniformity.py",
     ROOT / "theory/bhsm_action_ae2_angular_dini_uniformity.md",
@@ -50,15 +60,78 @@ def _sha256(path: Path) -> str:
     return hashlib.sha256(path.read_bytes()).hexdigest().upper()
 
 
+def _large_scale_round_replay(kappa0: float) -> dict[str, Any]:
+    """Replay the weight-seven limit against the complete retained action."""
+
+    dims = dimensions(12)
+    qdim = dims["coordinates"]
+    h = math.sqrt(kappa0 / 42.0)
+    predicted = -kappa0 / 24.0
+    rows = []
+    for scale in (2.0, 4.0, 6.0):
+        q = np.zeros(qdim)
+        velocity = np.zeros(qdim)
+        multipliers = np.zeros(dims["multipliers"])
+        q[0] = scale
+        velocity[0] = h
+        jet = exact_full_action_jet_at_state(
+            12, q, velocity, multipliers, points=96
+        )
+        radius = RADIUS0 * math.exp(scale)
+        radius7 = radius**7
+        normalized_action = float(np.real(jet.value)) / radius7
+        momentum = np.asarray(
+            np.real(jet.gradient[qdim:2 * qdim]), dtype=float
+        )
+        normalized_energy = (
+            float(velocity @ momentum - np.real(jet.value)) / radius7
+        )
+        normalized_scale_EL_residual = float(np.real(
+            jet.hessian[qdim, 0] * h - jet.gradient[0]
+        )) / radius7
+        rows.append({
+            "q0": scale,
+            "proper_log_radius_rate": h,
+            "normalized_full_action_over_R7": normalized_action,
+            "predicted_weight_seven_limit": predicted,
+            "absolute_action_limit_error": abs(normalized_action - predicted),
+            "normalized_reduced_energy_over_R7": normalized_energy,
+            "normalized_constant_rate_scale_EL_residual_over_R7": (
+                normalized_scale_EL_residual
+            ),
+        })
+    return {
+        "ansatz": "q=(q0,0,...),_v=(sqrt(kappa0/42),0,...),_multipliers=0",
+        "quadrature_points": 96,
+        "rows": rows,
+        "action_limit_errors_strictly_decrease": all(
+            later["absolute_action_limit_error"]
+            < earlier["absolute_action_limit_error"]
+            for earlier, later in zip(rows, rows[1:])
+        ),
+        "normalized_energy_magnitudes_strictly_decrease": all(
+            abs(later["normalized_reduced_energy_over_R7"])
+            < abs(earlier["normalized_reduced_energy_over_R7"])
+            for earlier, later in zip(rows, rows[1:])
+        ),
+        "normalized_scale_EL_residuals_strictly_decrease": all(
+            abs(later["normalized_constant_rate_scale_EL_residual_over_R7"])
+            < abs(earlier["normalized_constant_rate_scale_EL_residual_over_R7"])
+            for earlier, later in zip(rows, rows[1:])
+        ),
+        "observed_relative_remainder_weight": "R^-2_CONSISTENT_WITH_NEXT_SCALE_WEIGHT_5",
+    }
+
+
 def build_payload() -> dict[str, Any]:
     if not all(path.is_file() for path in INPUTS):
         raise FileNotFoundError("angular Dini audit inputs required")
-    compact, high, ownership, brst, heat_trace, radius, flow, coercive = (
-        _load(path) for path in INPUTS[:8]
+    compact, high, ownership, brst, heat_trace, radius, flow, coercive, energy = (
+        _load(path) for path in INPUTS[:9]
     )
     if not all(
         payload.get("validation_passed") is True
-        for payload in (compact, high, ownership, brst, heat_trace, radius, flow, coercive)
+        for payload in (compact, high, ownership, brst, heat_trace, radius, flow, coercive, energy)
     ):
         raise RuntimeError("validated angular-tail lineage required")
     counterexample = exponential_radius_angular_counterexample()
@@ -105,6 +178,12 @@ def build_payload() -> dict[str, Any]:
         radius=1.25,
         proper_log_radius_rate=0.1,
     )
+    dominant_balance = dominant_round_radius_balance(
+        cosmological_coefficient=15.0 * 5.0 ** (1.0 / 3.0) / 4.0,
+    )
+    large_scale_replay = _large_scale_round_replay(
+        float(dominant_balance["cosmological_coefficient"])
+    )
     summability = at_most_linear_angular_series_witness()
     rows = counterexample["rows"]
     validation = {
@@ -132,6 +211,10 @@ def build_payload() -> dict[str, Any]:
         "logarithmic_speed_barrier_beats_local_exponential_growth": logarithmic_barrier["beats_exp(C*mu)*mu^d_for_every_fixed_C_and_d"] is True and "mu*log(log(mu))" in logarithmic_barrier["asymptotic_action_class"],
         "uniform_scale_shift_preserves_log_rate_and_scales_radius_speed_linearly": math.isclose(scale_shift["translated_proper_log_radius_rate"], scale_shift["base_proper_log_radius_rate"], rel_tol=0.0, abs_tol=0.0) and math.isclose(scale_shift["translated_absolute_proper_radius_speed"] / scale_shift["base_absolute_proper_radius_speed"], scale_shift["radius_scale_factor"], rel_tol=1.0e-15, abs_tol=0.0),
         "retained_action_has_same_leading_scale_weight_for_kinetic_and_algebraic_terms": scale_shift["leading_ADM_kinetic_scale_weight"] == 7 and scale_shift["leading_algebraic_scale_weight"] == 7 and scale_shift["scale_weights_alone_force_log_rate_decay"] is False,
+        "constraint_reduced_energy_identity_consumed": "IDENTICALLY_ZERO" in energy["classification"],
+        "exact_weight_seven_energy_and_scale_equations_have_nonzero_expanding_equilibrium": math.isclose(dominant_balance["zero_energy_constraint_residual_at_equilibrium"], 0.0, rel_tol=0.0, abs_tol=1.0e-14) and math.isclose(dominant_balance["scale_equation_residual_at_equilibrium"], 0.0, rel_tol=0.0, abs_tol=1.0e-14) and dominant_balance["expanding_equilibrium_log_rate"] > 0.0,
+        "dominant_balance_does_not_prove_full_exponential_history": dominant_balance["full_retained_history_with_this_asymptotic_proved"] is False and dominant_balance["lower_weight_and_transverse_remainders_controlled"] is False,
+        "full_action_large_scale_replay_converges_to_weight_seven_balance": large_scale_replay["action_limit_errors_strictly_decrease"] is True and large_scale_replay["normalized_energy_magnitudes_strictly_decrease"] is True and large_scale_replay["normalized_scale_EL_residuals_strictly_decrease"] is True and large_scale_replay["rows"][-1]["absolute_action_limit_error"] < 2.0e-6 and abs(large_scale_replay["rows"][-1]["normalized_constant_rate_scale_EL_residual_over_R7"]) < 1.0e-5,
         "conditional_angular_series_root_test_closes": summability["angular_series_absolutely_summable"] is True and summability["analytic_root_test_limit"] == "minus_infinity",
         "no_relative_reference_inserted": True,
         "strict_gap_power_tail_terminal_recurrence_and_chord3_not_reopened": True,
@@ -215,6 +298,14 @@ def build_payload() -> dict[str, Any]:
             "conclusion": "POSITIVE_RADIUS_LAPSE_AND_SCALE_WEIGHTS_DO_NOT_FORCE_OSGOOD;_A_CONSTRAINT_REDUCED_FLOW_ESTIMATE_IS_REQUIRED",
             "witness": scale_shift,
         },
+        "retained_action_dominant_round_radius_balance": {
+            "status": "EXACT_WEIGHT_SEVEN_BALANCE_PERMITS_NONZERO_LOG_RATE_FULL_HISTORY_OPEN",
+            "scope": "ROUND_COMMON_SCALE_ANSATZ_AND_COMPLETE_WEIGHT_SEVEN_ADM_PLUS_COSMOLOGICAL_SECTOR",
+            "result": dominant_balance,
+            "full_action_large_scale_replay": large_scale_replay,
+            "consequence": "THE_LEADING_RETAINED_EQUATIONS_DO_NOT_FORCE_D_tau_log_R4_TO_ZERO_AND_ARE_COMPATIBLE_WITH_FINITE_OPTICAL_LENGTH",
+            "not_claimed": "EXISTENCE_OF_A_FULL_RETAINED_EXPONENTIAL_HISTORY_OR_INCOMPATIBILITY_OF_THE_RETAINED_ACTION",
+        },
         "adjudication": {
             "fixed_channel_source_Dini": "CLOSED_DO_NOT_REOPEN",
             "exact_power_tail_fixed_channel_results": "PRESERVED_DO_NOT_REOPEN",
@@ -228,13 +319,14 @@ def build_payload() -> dict[str, Any]:
             "radius_monotonicity_required": False,
             "eventual_two_sided_Lipschitz_radius_proved_by_action": False,
             "eventual_logarithmic_speed_Osgood_radius_proved_by_action": False,
+            "leading_ADM_cosmological_balance_excludes_constant_positive_log_rate": False,
             "action_owned_forward_relative_reference_available": False,
             "BRST_grading_closes_physical_tail": False,
             "spatial_Galerkin_tail_used_as_angular_or_temporal_tail": False,
         },
         "frontier_sharpening": {
             "G7_07_angular_tail": "OPEN_CURRENT_OWNER",
-            "first_branch": "PROVE_THE_ACTUAL_INFINITE_REGULAR_HISTORY_SATISFIES_THE_WEAKER_OUTWARD_SPEED_ENVELOPE_abs(D_tau_R4)<=a+b*log(R4/R_L),_WHICH_CLOSES_THE_LOW_ENERGY_ANGULAR_BARRIER_SUM_WITHOUT_MONOTONICITY_OR_BOUNDED_SPEED",
+            "first_branch": "PROVE_THAT_THE_LOWER_WEIGHT_AND_TRANSVERSE_RETAINED_EQUATIONS_DESTABILIZE_OR_EXCLUDE_THE_WEIGHT_SEVEN_CONSTANT_POSITIVE_LOG_RATE_BALANCE_AND_FORCE_THE_OUTWARD_OSGOOD_ENVELOPE_abs(D_tau_R4)<=a+b*log(R4/R_L)",
             "second_branch": "DERIVE_AN_ALREADY_ACTION_OWNED_FORWARD_RELATIVE_REFERENCE_AND_PROVE_SOURCE_CONTRACTED_RELATIVE_TRACE_CLASS",
             "finite_branch": "USE_THE_RETAINED_COMPACT_RESOLVENT_OPERATOR_IF_THE_ACTUAL_HISTORY_REACHES_EVENT_OR_CANONICAL_STOP",
         },
@@ -246,7 +338,7 @@ def build_payload() -> dict[str, Any]:
             "frozen_predictions_changed": False,
             "FULL_BHSM_COMPLETE": False,
         },
-        "exact_next_dependency": "DERIVE_FROM_THE_RETAINED_CONTINUUM_ACTION_THE_OUTWARD_OSGOOD_ENVELOPE_abs(D_tau_R4)<=a+b*log(R4/R_L)_ON_THE_UNIQUE_INFINITE_REGULAR_HISTORY,_OR_ANY_NONDECREASING_omega_WITH_omega(R)=o(R)_AND_int^infinity_dR/(R*omega(R))=infinity,_OR_USE_THE_FINITE_EVENT_CANONICAL_STOP_BRANCH;_THE_EXISTING_REFERENCE_AND_CP_Z6_ROUTES_ARE_ALREADY_AUDITED_AND_DO_NOT_CLOSE_THIS_OWNER",
+        "exact_next_dependency": "CONTROL_THE_LOWER_WEIGHT_AND_TRANSVERSE_REMAINDERS_IN_THE_FULL_CONSTRAINT_REDUCED_RADIUS_EQUATION_STRONGLY_ENOUGH_TO_EXCLUDE_OR_DESTABILIZE_THE_EXACT_WEIGHT_SEVEN_EXPANDING_EQUILIBRIUM_D_tau_log_R4=sqrt(kappa0/42)_AND_FORCE_AN_OUTWARD_OSGOOD_ENVELOPE,_OR_PROVE_THAT_THIS_BRANCH_REACHES_AN_EXISTING_EVENT_OR_CANONICAL_STOP;_THE_LEADING_ADM_COSMOLOGICAL_SECTOR_ALONE_CANNOT_CLOSE_G7_07",
         "inputs": {path.relative_to(ROOT).as_posix(): _sha256(path) for path in INPUTS},
         "validation": validation,
         "validation_passed": all(validation.values()),

@@ -227,6 +227,16 @@
   both have leading scale weight seven. Therefore an Osgood envelope with
   `omega=o(R)` requires a genuine constraint-reduced flow theorem forcing
   `D_tau log R4->0`; positive radius/lapse and scale weights alone do not.
+- Exact dominant round-radius obstruction: the complete retained
+  weight-seven ADM plus cosmological reduction is
+  `L7=(R^7/24)(-21*q0_dot^2/N-(kappa0/2)*N)`. Its zero-energy constraint and
+  common-scale equation admit
+  `D_tau log R4=sqrt(kappa0/42)>0`, an exponential dominant radius with
+  finite optical length. This is not a full-history existence theorem; the
+  lower weights, inverse-inertia, boundary, transverse equations, and domain
+  margins remain uncontrolled. Gate 7 therefore requires those remainders to
+  exclude/destabilize this balance and force Osgood behavior, or to force an
+  existing event/canonical stop.
 - Component-restricted finite branch: the ordered-event transport is exactly
   `D_t e_ord=G0+<alpha,D^(-1)b>`, with selected pole plus hard exterior
   remainder. Uniform action scaling assigns both the pole and remainder
