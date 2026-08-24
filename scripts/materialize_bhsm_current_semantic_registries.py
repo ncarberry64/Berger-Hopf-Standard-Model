@@ -1,0 +1,87 @@
+"""Materialize the nine authoritative AE2/Gate-7 normalization registries."""
+
+from __future__ import annotations
+
+import hashlib
+import json
+from pathlib import Path
+import sys
+from typing import Any
+
+
+ROOT = Path(__file__).resolve().parents[1]
+sys.path.insert(0, str(ROOT / "src"))
+
+from bhsm.interface.current_semantic_normalization import build_registries  # noqa: E402
+
+
+TARGET = ROOT / "artifacts/current_semantics"
+SOURCES = (
+    "artifacts/action_extension/BHSM_ACTION_AE2_GLOBAL_SPIN_RESET_ACTION.json",
+    "artifacts/flagship_integration/BHSM_N12_FORWARD_PROPER_TIME_FORM_OWNERSHIP.json",
+    "artifacts/flagship_integration/BHSM_N12_FORWARD_FIXED_CHANNEL_TRANSFER.json",
+    "artifacts/flagship_integration/BHSM_N12_FORWARD_GAUGE_WEYL_READOUT_FAMILY.json",
+    "artifacts/flagship_integration/BHSM_N12_FORWARD_E1_SOURCE_MEASURE_CRITERION.json",
+    "artifacts/flagship_integration/BHSM_N12_GATE7_AE2_GLOBAL_SPIN_MATTER_DOMAIN.json",
+    "artifacts/flagship_integration/BHSM_N12_GATE7_AE2_NONFERMION_THRESHOLD_MARGIN.json",
+    "artifacts/flagship_integration/BHSM_N12_GATE7_AE2_FACTORIZED_THRESHOLD_RECLASSIFICATION.json",
+    "artifacts/flagship_integration/BHSM_N12_GATE7_AE2_THRESHOLD_SUPERSESSION.json",
+    "artifacts/BHSM_alpha_i_update_v4_2.json",
+    "theory/bhsm_prediction_ledger.json",
+    "artifacts/frozen_constants_v2.json",
+    "artifacts/BHSM_rho_ch_action_audit_v1_9.json",
+    "artifacts/intrinsic_state_selection/BHSM_N12_CONSTRAINT_REDUCED_ENERGY_IDENTITY_GATE.json",
+)
+
+
+def sha256(path: Path) -> str:
+    return hashlib.sha256(path.read_bytes()).hexdigest().upper()
+
+
+def deterministic_bytes(payload: dict[str, Any]) -> bytes:
+    return (json.dumps(payload, indent=2, sort_keys=True) + "\n").encode("utf-8")
+
+
+def verify_current_lineage() -> None:
+    """Verify the rebuilt DAG statuses against the newest stored theorems."""
+
+    loaded = {item: json.loads((ROOT / item).read_text(encoding="utf-8")) for item in SOURCES}
+    theorem_sources = [item for item in SOURCES if item.startswith("artifacts/flagship_integration/")]
+    if not all(loaded[item].get("validation_passed") is True for item in theorem_sources):
+        raise RuntimeError("every current Gate7 theorem input must be validated")
+    ae2 = loaded["artifacts/flagship_integration/BHSM_N12_GATE7_AE2_GLOBAL_SPIN_MATTER_DOMAIN.json"]
+    nonfermion = loaded["artifacts/flagship_integration/BHSM_N12_GATE7_AE2_NONFERMION_THRESHOLD_MARGIN.json"]
+    factorized = loaded["artifacts/flagship_integration/BHSM_N12_GATE7_AE2_FACTORIZED_THRESHOLD_RECLASSIFICATION.json"]
+    frontier = loaded["artifacts/flagship_integration/BHSM_N12_GATE7_AE2_THRESHOLD_SUPERSESSION.json"]
+    if ae2.get("action_version") != "BHSM-AE-2.0.0":
+        raise RuntimeError("AE2 action version mismatch")
+    if nonfermion["claim_boundary"]["nonfermion_critical_zero_graph_excluded"] is not True:
+        raise RuntimeError("disk does not close the nonfermion threshold obstruction")
+    if factorized["claim_boundary"]["factorized_N12_low_energy_source_measure"] != "OPEN":
+        raise RuntimeError("disk no longer identifies factorized source measure as open")
+    if factorized["claim_boundary"]["strict_product_Dirac_Wronskian_required_in_advance"] is not False:
+        raise RuntimeError("disk still requires the superseded strict Wronskian premise")
+    if frontier["preserved_open_objects"]["realized_factorized_source_weighted_limiting_absorption"] != "OPEN":
+        raise RuntimeError("disk frontier does not identify the current live owner")
+
+
+def materialize() -> list[Path]:
+    source_paths = [ROOT / item for item in SOURCES]
+    missing = [path for path in source_paths if not path.is_file()]
+    if missing:
+        raise FileNotFoundError(f"normalization inputs missing: {missing}")
+    verify_current_lineage()
+    hashes = {item: sha256(ROOT / item) for item in SOURCES}
+    registries = build_registries(hashes)
+    TARGET.mkdir(parents=True, exist_ok=True)
+    output = []
+    for name, payload in sorted(registries.items()):
+        path = TARGET / name
+        path.write_bytes(deterministic_bytes(payload))
+        output.append(path)
+    return output
+
+
+if __name__ == "__main__":
+    for result in materialize():
+        print(result)

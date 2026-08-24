@@ -1,0 +1,554 @@
+"""Canonical AE2/Gate-7 semantic registries and regression guardrails."""
+
+from __future__ import annotations
+
+from copy import deepcopy
+from typing import Any, Iterable, Mapping
+
+
+ACTION_VERSION = "BHSM-AE-2.0.0"
+ONTOLOGY_VERSION = "BHSM-AE2-ONTOLOGY-1.0.0"
+REQUIRED_RECORD_FIELDS = (
+    "canonical_id",
+    "formula",
+    "mathematical_class",
+    "semantic_layer",
+    "physical_meaning",
+    "action_version",
+    "ontology_version",
+    "domain",
+    "provenance",
+    "equivalent_forms",
+    "dimensions",
+    "current_status",
+    "source_weighting_required",
+    "observable_status",
+    "frozen_output_status",
+    "superseded_meanings",
+    "forbidden_interpretations",
+    "downstream_consumers",
+    "artifact_hashes",
+    "tests",
+)
+
+
+def record(
+    canonical_id: str,
+    formula: str,
+    mathematical_class: str,
+    semantic_layer: str,
+    physical_meaning: str,
+    domain: str,
+    provenance: Iterable[str],
+    *,
+    equivalent_forms: Iterable[str] = (),
+    dimensions: str = "DIMENSIONLESS_OR_OPERATOR_TYPED",
+    current_status: str = "CURRENT",
+    source_weighting_required: bool = False,
+    observable_status: str = "NOT_AN_OBSERVABLE",
+    frozen_output_status: str = "NOT_FROZEN_OUTPUT",
+    superseded_meanings: Iterable[str] = (),
+    forbidden_interpretations: Iterable[str] = (),
+    downstream_consumers: Iterable[str] = (),
+    artifact_hashes: Mapping[str, str] | None = None,
+    tests: Iterable[str] = ("test_required_fields",),
+) -> dict[str, Any]:
+    """Return a complete normalized formula/object record."""
+
+    return {
+        "canonical_id": canonical_id,
+        "formula": formula,
+        "mathematical_class": mathematical_class,
+        "semantic_layer": semantic_layer,
+        "physical_meaning": physical_meaning,
+        "action_version": ACTION_VERSION,
+        "ontology_version": ONTOLOGY_VERSION,
+        "domain": domain,
+        "provenance": list(provenance),
+        "equivalent_forms": list(equivalent_forms),
+        "dimensions": dimensions,
+        "current_status": current_status,
+        "source_weighting_required": source_weighting_required,
+        "observable_status": observable_status,
+        "frozen_output_status": frozen_output_status,
+        "superseded_meanings": list(superseded_meanings),
+        "forbidden_interpretations": list(forbidden_interpretations),
+        "downstream_consumers": list(downstream_consumers),
+        "artifact_hashes": dict(artifact_hashes or {}),
+        "tests": list(tests),
+    }
+
+
+def _with_hashes(rows: Iterable[dict[str, Any]], hashes: Mapping[str, str]) -> list[dict[str, Any]]:
+    output = []
+    for row in rows:
+        copy = deepcopy(row)
+        copy["artifact_hashes"] = {
+            source: hashes[source] for source in copy["provenance"] if source in hashes
+        }
+        output.append(copy)
+    return output
+
+
+def _basis() -> list[dict[str, Any]]:
+    p_ae2 = "artifacts/action_extension/BHSM_ACTION_AE2_GLOBAL_SPIN_RESET_ACTION.json"
+    p_proper = "artifacts/flagship_integration/BHSM_N12_FORWARD_PROPER_TIME_FORM_OWNERSHIP.json"
+    p_fixed = "artifacts/flagship_integration/BHSM_N12_FORWARD_FIXED_CHANNEL_TRANSFER.json"
+    p_weyl = "artifacts/flagship_integration/BHSM_N12_FORWARD_GAUGE_WEYL_READOUT_FAMILY.json"
+    p_e1 = "artifacts/flagship_integration/BHSM_N12_FORWARD_E1_SOURCE_MEASURE_CRITERION.json"
+    p_nf = "artifacts/flagship_integration/BHSM_N12_GATE7_AE2_NONFERMION_THRESHOLD_MARGIN.json"
+    p_fac = "artifacts/flagship_integration/BHSM_N12_GATE7_AE2_FACTORIZED_THRESHOLD_RECLASSIFICATION.json"
+    return [
+        record(
+            "ACTION_VERSION_TUPLE",
+            "A_v=(C_v,S_v,D_v,B_v,O_v)",
+            "VERSIONED_PHYSICAL_THEORY_TUPLE",
+            "BHSM_ONTOLOGY",
+            "A physical action version includes ontology, action, domains, boundary graphs, and observable maps.",
+            "BHSM action-version space",
+            [p_ae2],
+            downstream_consumers=["AE2_GLOBAL_DOMAIN", "CURRENT_GATE7_DAG"],
+            forbidden_interpretations=["Same bulk integrand implies same physical theory."],
+        ),
+        record(
+            "QUOTIENT_RADIUS",
+            "R4=A*B/sqrt(A^2+B^2)",
+            "GEOMETRIC_QUOTIENT",
+            "MATHEMATICAL_OBJECT",
+            "Retained Berger-Hopf quotient radius.",
+            "A>0, B>0",
+            [p_proper],
+            dimensions="LENGTH",
+            downstream_consumers=["LOG_RADIUS"],
+        ),
+        record(
+            "LOG_RADIUS",
+            "x(tau)=log(R4(tau))",
+            "CANONICAL_HISTORY_COORDINATE",
+            "BHSM_ONTOLOGY",
+            "The single current scalar history coefficient after proper-time reduction.",
+            "maximal regular forward history with R4>0",
+            [p_proper],
+            equivalent_forms=["R4^-1=exp(-x)", "R4^-2=exp(-2*x)"],
+            downstream_consumers=["FIXED_CHANNEL_OPERATOR", "ACTION_VERTEX"],
+        ),
+        record(
+            "PROPER_TIME",
+            "d_tau=N_boundary*dt, N_boundary>0, dt>0",
+            "ORIENTED_TIME_REPARAMETRIZATION",
+            "BHSM_ONTOLOGY",
+            "One positive physical time orientation.",
+            "positive-lapse regular forward domain",
+            [p_proper],
+            dimensions="TIME",
+            forbidden_interpretations=["Formal reflection is a second physical time."],
+            downstream_consumers=["TEMPORAL_LAPLACIAN", "FIXED_CHANNEL_OPERATOR"],
+        ),
+        record(
+            "TEMPORAL_LAPLACIAN",
+            "Delta_tau=D_tau^dagger*D_tau",
+            "FACTORIZED_NONNEGATIVE_OPERATOR",
+            "MATHEMATICAL_OBJECT",
+            "Canonical temporal second-order operator; not independent of D_tau.",
+            "AE2 physical operator domain",
+            [p_proper],
+            downstream_consumers=["FIXED_CHANNEL_OPERATOR"],
+        ),
+        record(
+            "FIXED_CHANNEL_OPERATOR",
+            "mathcal_K_C-z=-D_tau^2*I+V(x(tau))-z*I",
+            "FIXED_SPATIAL_CHANNEL_OPERATOR",
+            "MATHEMATICAL_OBJECT",
+            "Nonperiodic forward source operator on fixed round-spatial eigenspaces.",
+            "AE2 glued birth domain and maximal forward far-end domain",
+            [p_fixed, p_weyl],
+            equivalent_forms=["2x2 transfer system", "Riccati equation", "Weyl admittance", "Mobius transfer"],
+            downstream_consumers=["RESOLVENT", "WEYL_MAP", "SOURCE_RESPONSE"],
+            forbidden_interpretations=["Generic moving operator-valued spatial history."],
+        ),
+        record(
+            "NEUTRAL_SPECTRAL_PARAMETER",
+            "z in C\\sigma(mathcal_K_C)",
+            "RESOLVENT_PARAMETER",
+            "MATHEMATICAL_OBJECT",
+            "Neutral spectral parameter with no action-owned momentum interpretation.",
+            "resolvent set of mathcal_K_C",
+            [p_weyl],
+            forbidden_interpretations=["z=p^2", "periodic S1 Fourier readout"],
+            downstream_consumers=["RESOLVENT", "WEYL_MAP"],
+        ),
+        record(
+            "RESOLVENT",
+            "script_R_C(z)=(mathcal_K_C-z)^(-1)",
+            "OPERATOR_RESOLVENT",
+            "MATHEMATICAL_OBJECT",
+            "Physical AE2 forward resolvent.",
+            "z in resolvent set",
+            [p_weyl],
+            equivalent_forms=["Schur-compressed core resolvent with Weyl/Calderon exterior response"],
+            downstream_consumers=["SOURCE_RESPONSE", "E1_FIRST_VARIATION"],
+        ),
+        record(
+            "WEYL_MAP",
+            "M_C^Weyl(z)*a=Gamma1_birth(gamma_C(z)*a)",
+            "BOUNDARY_WEYL_CALDERON_MAP",
+            "MATHEMATICAL_OBJECT",
+            "Exterior response pulled to the AE2 birth interface.",
+            "fixed channel maximal forward domain",
+            [p_weyl, p_fixed],
+            equivalent_forms=["channel admittance m_j(z)", "Mobius-pulled far-end admittance"],
+            downstream_consumers=["SOURCE_RESPONSE", "ZERO_SOURCE_FORCE"],
+        ),
+        record(
+            "SOURCE_RESPONSE",
+            "H_ij(z)=<a_i,script_R_C(z)a_j>+H_ij^contact(z)",
+            "PAIR_PLUS_CONTACT_RESPONSE",
+            "OBSERVABLE_REPRESENTATION",
+            "Action-weighted pair plus retained contact response; not a bare eigenvalue.",
+            "AE2 source domain",
+            [p_weyl, p_e1],
+            equivalent_forms=["heat Frechet/Duhamel representation"],
+            source_weighting_required=True,
+            observable_status="PRE_OBSERVABLE_REQUIRES_SCALAR_MAP",
+            downstream_consumers=["E1_FIRST_VARIATION", "PAIR_CONTACT_HESSIAN"],
+        ),
+        record(
+            "E1_FIRST_VARIATION",
+            "E1=D_Phi Gamma_Q[deltaPhi]",
+            "SOURCE_CONTRACTED_FIRST_VARIATION",
+            "BHSM_ONTOLOGY",
+            "First physical source/geometry variation, not an absolute infinite-volume determinant.",
+            "zero-source AE2 maximal forward reference history",
+            [p_e1],
+            source_weighting_required=True,
+            downstream_consumers=["ZERO_SOURCE_FORCE", "SAME_ACTION_SADDLE"],
+            forbidden_interpretations=["absolute determinant is required", "unweighted density is the E1 measure"],
+        ),
+        record(
+            "SOURCE_WEIGHTED_THRESHOLD_MEASURE",
+            "|nu_h|([0,Lambda])<=C_h*Lambda^(1+epsilon_h), epsilon_h>0",
+            "SOURCE_CONTRACTED_SPECTRAL_MEASURE_BOUND",
+            "BHSM_ONTOLOGY",
+            "Weakest current infrared criterion sufficient for E1 finiteness.",
+            "each realized factorized AE2 Weyl channel near lambda=0",
+            [p_e1, p_fac],
+            equivalent_forms=["|<psi_k,D_x mathcal_K_C psi_k>|<=C*k^2 with 1D counting", "O(Lambda^(3/2)) witness"],
+            source_weighting_required=True,
+            current_status="HIGHEST_UPSTREAM_OPEN_THEOREM",
+            downstream_consumers=["E1_SOURCE_MEASURE_FINITE", "HIGH_ENERGY_ANGULAR_TAIL"],
+            forbidden_interpretations=["strict spectral gap is necessary", "zero resonance automatically diverges"],
+        ),
+        record(
+            "NONFERMION_THRESHOLD_CLOSURE",
+            "nonfermion_zero_threshold_obstruction=closed",
+            "SECTORWISE_THRESHOLD_THEOREM",
+            "BHSM_ONTOLOGY",
+            "Scalar/de Rham/ghost and transverse-gauge AE2 threshold obstruction is closed in theorem scope.",
+            "certified AE2 nonfermion seam blocks",
+            [p_nf],
+            source_weighting_required=True,
+            current_status="CLOSED_DO_NOT_REOPEN_WITHOUT_CONTRADICTION",
+            downstream_consumers=["FACTORIZED_WEYL_THRESHOLD"],
+        ),
+    ]
+
+
+def _historical() -> list[dict[str, Any]]:
+    gauge = "artifacts/BHSM_alpha_i_update_v4_2.json"
+    pred = "theory/bhsm_prediction_ledger.json"
+    frozen = "artifacts/frozen_constants_v2.json"
+    rho = "artifacts/BHSM_rho_ch_action_audit_v1_9.json"
+    energy = "artifacts/intrinsic_state_selection/BHSM_N12_CONSTRAINT_REDUCED_ENERGY_IDENTITY_GATE.json"
+    rows = [
+        ("GAUGE_127_PATTERN", "alpha_i=w_i/(6*pi^2), w=(1,2,7)", gauge, "HISTORICAL_NOT_ACTION_DERIVED"),
+        ("CKM_FROZEN_OUTPUT", "V_CKM=V_CKM^frozen", pred, "FROZEN_OUTPUT_NOT_ACTION_INPUT"),
+        ("CKM_EXPONENT_1_16", "s23_candidate=s23_frozen*(Z_virt^(u,2))^(1/16)", pred, "CANDIDATE_NOT_DERIVED"),
+        ("CHARGED_ETA_L", "eta_l", rho, "CONDITIONAL_OR_FITTED_NOT_DERIVED"),
+        ("CHARGED_RHO_CH", "rho_ch", rho, "OPEN_LOCALIZABLE_NOT_DERIVED"),
+        ("Z_VIRT_U2", "Z_virt^(u,2)=1/2", frozen, "FROZEN_CONDITIONAL_OUTPUT"),
+        ("LOCAL_ENERGY", "E_energy=Legendre_energy_on_constraint_surface", energy, "ACTION_DERIVED_LOCAL_ENERGY_NOT_MASS"),
+        ("PHYSICAL_MASS", "m_phys=observable_map(scale_map,geometric_response)", pred, "NOT_DERIVED_UNTIL_OBSERVABLE_AND_SCALE_MAP"),
+        ("NEUTRINO_PHYSICAL_SCALE", "m_nu[eV/GeV]", pred, "NOT_DERIVED"),
+    ]
+    return [
+        record(
+            cid,
+            formula,
+            "HISTORICAL_OR_DOWNSTREAM_FORMULA",
+            "SM_EXPERIMENTAL_INTERPRETATION",
+            status.replace("_", " ").lower(),
+            "historical prediction ledger only",
+            [source],
+            current_status=status,
+            observable_status="HISTORICAL_OR_UNVALIDATED_OBSERVABLE_MAP",
+            frozen_output_status="FROZEN_OUTPUT" if "FROZEN" in status else "NOT_FROZEN_OUTPUT",
+            forbidden_interpretations=["Use as a current AE2 action input."],
+            downstream_consumers=[],
+        )
+        for cid, formula, source, status in rows
+    ]
+
+
+def _symbols() -> list[dict[str, Any]]:
+    definitions = [
+        ("SYMBOL_MATHCAL_K_C", "mathcal_K_C", "SOURCE_OPERATOR"),
+        ("SYMBOL_K_HIT", "K_hit=c_psi*b_psi", "SINGULAR_HITTING_PRODUCT"),
+        ("SYMBOL_K_GEOM", "K_geom", "CURVATURE_ONLY"),
+        ("SYMBOL_RESET", "mathcal_R_reset", "RESET_RELATION"),
+        ("SYMBOL_RESOLVENT", "script_R_C(z)", "RESOLVENT"),
+        ("SYMBOL_R4", "R4", "QUOTIENT_RADIUS"),
+        ("SYMBOL_WEYL", "M_C^Weyl(z)", "WEYL_MAP"),
+        ("SYMBOL_ADMITTANCE", "m_j(z)", "CHANNEL_ADMITTANCE"),
+        ("SYMBOL_MASS", "m_phys", "PHYSICAL_MASS_AFTER_OBSERVABLE_MAP"),
+        ("SYMBOL_EVENT", "e_ord", "ORDERED_EVENT_COORDINATE"),
+        ("SYMBOL_EVENT_SQUARED", "u_evt=e_ord^2", "SQUARED_EVENT_COORDINATE"),
+        ("SYMBOL_SPECTRAL_MEASURE", "E_spec(lambda)", "SPECTRAL_MEASURE"),
+        ("SYMBOL_ENERGY", "E_energy", "ENERGY"),
+        ("SYMBOL_PARAMETER", "z", "NEUTRAL_SPECTRAL_PARAMETER"),
+    ]
+    source = "artifacts/flagship_integration/BHSM_N12_FORWARD_GAUGE_WEYL_READOUT_FAMILY.json"
+    return [
+        record(
+            cid, symbol, "CANONICAL_SYMBOL", "MATHEMATICAL_OBJECT", meaning,
+            "current AE2 notation", [source], current_status="CANONICAL_UNIQUE_NAMESPACE",
+            forbidden_interpretations=["Reuse this symbol for a different object class."],
+        )
+        for cid, symbol, meaning in definitions
+    ]
+
+
+def _equivalences() -> list[dict[str, Any]]:
+    source = "artifacts/flagship_integration/BHSM_N12_FORWARD_FIXED_CHANNEL_TRANSFER.json"
+    rows = [
+        ("EQ_RADIUS_INVERSE", "R4^-1 <=> exp(-x)", ["R4^-1", "exp(-x)"]),
+        ("EQ_RADIUS_SQUARED_INVERSE", "R4^-2 <=> exp(-2*x)", ["R4^-2", "exp(-2*x)"]),
+        ("EQ_CHANNEL_DYNAMICS", "second_order <=> transfer_2x2 <=> Riccati <=> Weyl_admittance <=> Mobius_transfer", ["second-order channel equation", "2x2 trace-zero transfer", "Riccati equation", "Weyl admittance", "Mobius transfer"]),
+        ("EQ_EXTERIOR_RESPONSE", "bulk_resolvent <=> Schur_core_resolvent <=> Weyl_Calderon_response", ["bulk resolvent", "Schur-compressed core resolvent", "Weyl/Calderon exterior response"]),
+        ("EQ_SOURCE_VARIATION", "source_Frechet_derivative <=> resolvent_insertion <=> heat_Duhamel", ["source Frechet derivative", "resolvent insertion", "heat Duhamel representation"]),
+    ]
+    return [
+        record(cid, formula, "MATHEMATICAL_EQUIVALENCE_CLASS", "MATHEMATICAL_OBJECT",
+               "Equivalent proof/computation representations of one physical law.", "overlap of stated representation domains", [source],
+               equivalent_forms=forms, current_status="EQUIVALENT_NOT_INDEPENDENT_PHYSICS",
+               forbidden_interpretations=["Count equivalent forms as independent laws."])
+        for cid, formula, forms in rows
+    ]
+
+
+def _deprecations() -> list[dict[str, Any]]:
+    source = "artifacts/flagship_integration/BHSM_N12_GATE7_AE2_THRESHOLD_SUPERSESSION.json"
+    rows = [
+        ("DEPRECATE_STRICT_GAP", "strict universal threshold gap", "SUPERSEDED_AS_NECESSARY", "source-weighted threshold measure"),
+        ("DEPRECATE_ZERO_RESONANCE_DIVERGENCE", "zero resonance => infrared divergence", "FALSE_IN_GENERAL", "source vertex determines weighted response"),
+        ("DEPRECATE_P2", "z=p^2", "FORBIDDEN_WITHOUT_ACTION_MAP", "neutral z"),
+        ("DEPRECATE_PERIODIC_READOUT", "periodic S1 Fourier readout", "HISTORICAL", "nonperiodic forward resolvent"),
+        ("DEPRECATE_TERMINAL_RETURN", "mandatory terminal return", "NOT_REQUIRED", "conditional event reset or canonical stop"),
+        ("DEPRECATE_GENERIC_OPERATOR_HISTORY", "generic operator-valued exterior history", "SUPERSEDED_IN_FIXED_CHANNEL_SCOPE", "x(tau) fixed-channel coefficients"),
+        ("DEPRECATE_D5_NATIVE_BLOCKER", "D5/Kato interval sign as native Gate7 blocker", "OPTIONAL_ENDPOINT_ROUTE", "factorized source-weighted LAP"),
+        ("DEPRECATE_FAR_END_BIRTH_SELECTION", "far Friedrichs closure selects birth graph", "FORBIDDEN", "AE2 glued birth domain"),
+        ("DEPRECATE_LOCAL_ENERGY_MASS", "local energy=m_phys", "FORBIDDEN", "observable plus physical scale map"),
+    ]
+    return [
+        record(cid, old, "DEPRECATION_RECORD", "BHSM_ONTOLOGY", replacement,
+               "current AE2/Gate7", [source], current_status=status,
+               superseded_meanings=[old], forbidden_interpretations=[old])
+        for cid, old, status, replacement in rows
+    ]
+
+
+def _dimensions() -> list[dict[str, Any]]:
+    source = "artifacts/flagship_integration/BHSM_N12_FORWARD_PROPER_TIME_FORM_OWNERSHIP.json"
+    rows = [
+        ("DIM_R4", "[R4]=L", "LENGTH"),
+        ("DIM_X", "[x]=1", "DIMENSIONLESS_LOG_RADIUS"),
+        ("DIM_TAU", "[tau]=T", "TIME"),
+        ("DIM_DTAU", "[D_tau]=T^-1", "INVERSE_TIME"),
+        ("DIM_KC", "[mathcal_K_C]=T^-2", "INVERSE_TIME_SQUARED"),
+        ("DIM_Z", "[z]=[mathcal_K_C]", "OPERATOR_SPECTRAL_DIMENSION"),
+        ("DIM_RESOLVENT", "[script_R_C]=[mathcal_K_C]^-1", "INVERSE_OPERATOR"),
+        ("DIM_E_SPEC", "[E_spec]=1", "PROJECTION_MEASURE"),
+        ("DIM_E_ENERGY", "[E_energy]=ENERGY", "ENERGY"),
+        ("DIM_M_PHYS", "[m_phys]=MASS", "PHYSICAL_MASS_AFTER_SCALE_MAP"),
+    ]
+    return [
+        record(cid, formula, "DIMENSION_SCALE_RECORD", "MATHEMATICAL_OBJECT", meaning,
+               "current AE2 units", [source], dimensions=meaning, current_status="DIMENSIONALLY_NORMALIZED")
+        for cid, formula, meaning in rows
+    ]
+
+
+def _ontology() -> list[dict[str, Any]]:
+    ae2 = "artifacts/action_extension/BHSM_ACTION_AE2_GLOBAL_SPIN_RESET_ACTION.json"
+    rows = [
+        ("ONTOLOGY_MAXIMAL_FORWARD_HISTORY", "H_max^+", "Primary dynamical object is a maximal forward geometric history.", "ACTION_REQUIRED"),
+        ("ONTOLOGY_SINGLE_TIME", "dt>0 and d_tau>0", "Physical time has one orientation.", "INTERNAL_CONSISTENCY_REQUIRED"),
+        ("ONTOLOGY_REFLECTION", "reflection(H^+) != physical second orientation", "Formal reflection is a non-gauge Cauchy-state pairing.", "INTERPRETIVE_CORRECTION"),
+        ("ONTOLOGY_CONDITIONAL_RESET", "event_hit => mathcal_R_reset", "Reset is applied if the certified event is reached.", "ACTION_REQUIRED"),
+        ("ONTOLOGY_AE2_DOMAIN", "Spin x G_SM reset-glued bundle", "Owner-authorized AE2 global event-child matter domain.", "OWNER_AUTHORIZED_THEORY_VERSION_DECISION"),
+        ("ONTOLOGY_AE2_TRANSMISSION", "delta S_AE2=0 => transmission law", "Transmission laws derived on AE2 may be action-derived within AE2.", "ACTION_DERIVED_WITHIN_AE2"),
+        ("ONTOLOGY_FAR_END", "event reset if hit; Friedrichs otherwise where applicable", "Far-end completion does not select the birth graph.", "ACTION_DOMAIN_REQUIRED"),
+    ]
+    return [
+        record(cid, formula, "ONTOLOGY_RECORD", "BHSM_ONTOLOGY", meaning,
+               "AE2 maximal forward domain", [ae2], current_status=status,
+               forbidden_interpretations=["Call owner-authorized AE2 ontology itself action-derived."] if cid == "ONTOLOGY_AE2_DOMAIN" else [])
+        for cid, formula, meaning, status in rows
+    ]
+
+
+GATE_CHAIN = [
+    ("G7_01_AE2_DOMAIN", "AE2 glued matter domain", "CLOSED"),
+    ("G7_02_FIXED_CHANNEL", "fixed-channel forward operator", "CLOSED"),
+    ("G7_03_SECTOR_CLASS", "sectorwise threshold classification", "CLOSED"),
+    ("G7_04_NONFERMION", "nonfermionic threshold closure", "CLOSED"),
+    ("G7_05_FACTORIZED_LAP", "factorized resonance-compatible source-weighted limiting absorption", "OPEN_CURRENT_OWNER"),
+    ("G7_06_E1_FINITE", "E1 source-measure finiteness", "PENDING"),
+    ("G7_07_ANGULAR_TAIL", "higher-energy and angular tail control", "PENDING"),
+    ("G7_08_FORCE", "zero-source geometry force", "PENDING"),
+    ("G7_09_SADDLE", "same-action saddle", "PENDING"),
+    ("G7_10_HESSIAN", "pair-plus-contact Hessian", "PENDING"),
+    ("G7_11_WARD_TRACE", "Ward/BRST and source-contracted relative trace", "PENDING"),
+    ("G7_12_SCALAR_MAP", "basis-independent physical scalar map", "PENDING"),
+    ("G7_13_CLOSE", "Gate 7 closure", "PENDING"),
+]
+
+
+def _gates() -> list[dict[str, Any]]:
+    sources = {
+        "G7_01_AE2_DOMAIN": "artifacts/flagship_integration/BHSM_N12_GATE7_AE2_GLOBAL_SPIN_MATTER_DOMAIN.json",
+        "G7_02_FIXED_CHANNEL": "artifacts/flagship_integration/BHSM_N12_FORWARD_FIXED_CHANNEL_TRANSFER.json",
+        "G7_03_SECTOR_CLASS": "artifacts/flagship_integration/BHSM_N12_GATE7_AE2_THRESHOLD_SUPERSESSION.json",
+        "G7_04_NONFERMION": "artifacts/flagship_integration/BHSM_N12_GATE7_AE2_NONFERMION_THRESHOLD_MARGIN.json",
+        "G7_05_FACTORIZED_LAP": "artifacts/flagship_integration/BHSM_N12_GATE7_AE2_FACTORIZED_THRESHOLD_RECLASSIFICATION.json",
+    }
+    fallback = "artifacts/flagship_integration/BHSM_N12_GATE7_AE2_THRESHOLD_SUPERSESSION.json"
+    rows = []
+    for index, (cid, meaning, status) in enumerate(GATE_CHAIN):
+        predecessor = [] if index == 0 else [GATE_CHAIN[index - 1][0]]
+        rows.append(record(
+            cid, f"{predecessor or ['START']} -> {cid}", "GATE_DAG_NODE", "BHSM_ONTOLOGY", meaning,
+            "current AE2 Gate7", [sources.get(cid, fallback)], current_status=status,
+            source_weighting_required=cid in {"G7_05_FACTORIZED_LAP", "G7_06_E1_FINITE", "G7_11_WARD_TRACE"},
+            downstream_consumers=[] if index == len(GATE_CHAIN) - 1 else [GATE_CHAIN[index + 1][0]],
+            forbidden_interpretations=["Universal terminal return is a prerequisite.", "Chord 3 is a prerequisite."],
+        ))
+    return rows
+
+
+def build_registries(input_hashes: Mapping[str, str]) -> dict[str, dict[str, Any]]:
+    """Build all nine deterministic current registries from verified disk lineage."""
+
+    basis = _with_hashes(_basis(), input_hashes)
+    historical = _with_hashes(_historical(), input_hashes)
+    gates = _with_hashes(_gates(), input_hashes)
+    registries = {
+        "BHSM_CURRENT_MATHEMATICAL_BASIS.json": {"records": basis},
+        "BHSM_CURRENT_FORMULA_REGISTRY.json": {"records": basis + historical},
+        "BHSM_FORMULA_EQUIVALENCE_GRAPH.json": {"records": _with_hashes(_equivalences(), input_hashes)},
+        "BHSM_SYMBOL_NAMESPACE_REGISTRY.json": {"records": _with_hashes(_symbols(), input_hashes)},
+        "BHSM_FORMULA_DEPRECATION_LEDGER.json": {"records": _with_hashes(_deprecations(), input_hashes)},
+        "BHSM_DIMENSION_SCALE_LEDGER.json": {"records": _with_hashes(_dimensions(), input_hashes)},
+        "BHSM_CURRENT_ONTOLOGY_REGISTRY.json": {"records": _with_hashes(_ontology(), input_hashes)},
+        "BHSM_CURRENT_GATE_LEDGER.json": {"records": gates},
+        "BHSM_CURRENT_COMPLETION_DAG.json": {"records": gates},
+    }
+    for name, payload in registries.items():
+        payload.update({
+            "artifact": name.removesuffix(".json"),
+            "action_version": ACTION_VERSION,
+            "ontology_version": ONTOLOGY_VERSION,
+            "schema": "BHSM_CURRENT_SEMANTIC_RECORD_V1",
+            "input_hashes": dict(sorted(input_hashes.items())),
+            "validation_passed": False,
+            "FULL_BHSM_COMPLETE": False,
+        })
+    validate_registries(registries)
+    for payload in registries.values():
+        payload["validation_passed"] = True
+    return registries
+
+
+def _active_text(registries: Mapping[str, Mapping[str, Any]]) -> str:
+    parts = []
+    active_names = {
+        "BHSM_CURRENT_MATHEMATICAL_BASIS.json",
+        "BHSM_CURRENT_FORMULA_REGISTRY.json",
+        "BHSM_CURRENT_GATE_LEDGER.json",
+        "BHSM_CURRENT_COMPLETION_DAG.json",
+    }
+    for name, payload in registries.items():
+        if name not in active_names:
+            continue
+        for row in payload["records"]:
+            parts.extend([
+                str(row["formula"]), str(row["physical_meaning"]), str(row["current_status"]),
+                " ".join(row["downstream_consumers"]),
+            ])
+    return "\n".join(parts).lower()
+
+
+def validate_registries(registries: Mapping[str, Mapping[str, Any]]) -> None:
+    """Fail on incomplete records or a forbidden current semantic regression."""
+
+    expected = {
+        "BHSM_CURRENT_MATHEMATICAL_BASIS.json", "BHSM_CURRENT_FORMULA_REGISTRY.json",
+        "BHSM_FORMULA_EQUIVALENCE_GRAPH.json", "BHSM_SYMBOL_NAMESPACE_REGISTRY.json",
+        "BHSM_FORMULA_DEPRECATION_LEDGER.json", "BHSM_DIMENSION_SCALE_LEDGER.json",
+        "BHSM_CURRENT_ONTOLOGY_REGISTRY.json", "BHSM_CURRENT_GATE_LEDGER.json",
+        "BHSM_CURRENT_COMPLETION_DAG.json",
+    }
+    if set(registries) != expected:
+        raise ValueError("exactly nine current registries are required")
+    ids: dict[str, str] = {}
+    for name, payload in registries.items():
+        for row in payload.get("records", []):
+            missing = set(REQUIRED_RECORD_FIELDS) - set(row)
+            if missing:
+                raise ValueError(f"{name}:{row.get('canonical_id')} missing {sorted(missing)}")
+            cid = row["canonical_id"]
+            if name == "BHSM_SYMBOL_NAMESPACE_REGISTRY.json":
+                symbol = row["formula"]
+                prior = ids.get(symbol)
+                if prior is not None and prior != row["physical_meaning"]:
+                    raise ValueError(f"symbol collision: {symbol}")
+                ids[symbol] = row["physical_meaning"]
+
+    current = _active_text(registries)
+    forbidden_active = {
+        "z=p^2": "z may not be identified with p^2",
+        "strict gap required": "strict gap may not be a Gate7 requirement",
+        "zero resonance => infrared divergence": "zero resonance is not automatic divergence",
+        "terminal return required": "terminal recurrence is not required",
+        "d5/kato interval sign ->": "D5/Kato is not the native Gate7 owner",
+        "periodic fourier object required": "periodic Fourier objects are not current Gate7 inputs",
+        "far friedrichs selects birth": "far-end closure cannot select the birth graph",
+        "ae2 ontology is action-derived": "AE2 ontology is owner-authorized, not action-derived",
+        "local energy is physical mass": "local energy is not physical mass",
+        "full trace-class theorem required": "source-contracted relative trace control is sufficient",
+        "generic operator-valued history required": "fixed-channel reduction is canonical",
+        "equivalent forms are independent laws": "equivalent representations are not independent physics",
+    }
+    for phrase, message in forbidden_active.items():
+        if phrase in current:
+            raise ValueError(message)
+
+    formula_rows = registries["BHSM_CURRENT_FORMULA_REGISTRY.json"]["records"]
+    by_id = {row["canonical_id"]: row for row in formula_rows}
+    if by_id["SOURCE_WEIGHTED_THRESHOLD_MEASURE"]["current_status"] != "HIGHEST_UPSTREAM_OPEN_THEOREM":
+        raise ValueError("factorized source-weighted threshold theorem must remain the live owner")
+    if by_id["NONFERMION_THRESHOLD_CLOSURE"]["current_status"] != "CLOSED_DO_NOT_REOPEN_WITHOUT_CONTRADICTION":
+        raise ValueError("nonfermion threshold closure was reopened")
+    if any(row["current_status"] == "CURRENT_ACTION_INPUT" for row in formula_rows if row["canonical_id"] in {
+        "GAUGE_127_PATTERN", "CKM_FROZEN_OUTPUT", "CKM_EXPONENT_1_16", "CHARGED_ETA_L", "CHARGED_RHO_CH", "Z_VIRT_U2"
+    }):
+        raise ValueError("historical/frozen output became an AE2 action input")
+    ontology = {row["canonical_id"]: row for row in registries["BHSM_CURRENT_ONTOLOGY_REGISTRY.json"]["records"]}
+    if ontology["ONTOLOGY_AE2_DOMAIN"]["current_status"] != "OWNER_AUTHORIZED_THEORY_VERSION_DECISION":
+        raise ValueError("AE2 ontology was misclassified as action-derived")
+    equivalences = registries["BHSM_FORMULA_EQUIVALENCE_GRAPH.json"]["records"]
+    if any(row["current_status"] != "EQUIVALENT_NOT_INDEPENDENT_PHYSICS" for row in equivalences):
+        raise ValueError("equivalent forms were promoted to independent laws")
+    dag = registries["BHSM_CURRENT_COMPLETION_DAG.json"]["records"]
+    open_nodes = [row["canonical_id"] for row in dag if row["current_status"] == "OPEN_CURRENT_OWNER"]
+    if open_nodes != ["G7_05_FACTORIZED_LAP"]:
+        raise ValueError("completion DAG has the wrong current owner")

@@ -1,0 +1,453 @@
+{
+  "FULL_BHSM_COMPLETE": false,
+  "action_version": "BHSM-AE-2.0.0",
+  "artifact": "BHSM_CURRENT_GATE_LEDGER",
+  "input_hashes": {
+    "artifacts/BHSM_alpha_i_update_v4_2.json": "6DCBE29A734C54FFB2B567E48C90B1AA531BD9A10F46CD2F7C433B937ED86416",
+    "artifacts/BHSM_rho_ch_action_audit_v1_9.json": "24D863B79D9ECDE9137BD7B25DAE00442F5FBF25BF1DC99738E46C5353D8D7CB",
+    "artifacts/action_extension/BHSM_ACTION_AE2_GLOBAL_SPIN_RESET_ACTION.json": "4C756145A9E303F6E4F7F9536CF5639957D010C1A97AF6BE9299830C549B82DC",
+    "artifacts/flagship_integration/BHSM_N12_FORWARD_E1_SOURCE_MEASURE_CRITERION.json": "E6976D1A49B536044FC2B7A1B25DB3B422F2ED8A9DEBF05DBFDEDD2544A0D9D8",
+    "artifacts/flagship_integration/BHSM_N12_FORWARD_FIXED_CHANNEL_TRANSFER.json": "F83BE1866D44FE0D0F273A2B73AAEF13B272BE6B1174B3644E37E8A8AE91C786",
+    "artifacts/flagship_integration/BHSM_N12_FORWARD_GAUGE_WEYL_READOUT_FAMILY.json": "452134D1EA925FEBE2DA99483926F70AFEC6DEF09731B268ECB2A2A6FCE280AE",
+    "artifacts/flagship_integration/BHSM_N12_FORWARD_PROPER_TIME_FORM_OWNERSHIP.json": "C56D4B49F58DF4FF58D6725899261B5D08C5E38F8860B0C74D2725DC920D2BB4",
+    "artifacts/flagship_integration/BHSM_N12_GATE7_AE2_FACTORIZED_THRESHOLD_RECLASSIFICATION.json": "DBDFBF1A3D86BE5E2F93B126E92EF1BA0023D3771E6DCC5824EE0634A38546E1",
+    "artifacts/flagship_integration/BHSM_N12_GATE7_AE2_GLOBAL_SPIN_MATTER_DOMAIN.json": "5697192CCFBC6814B9EEAF5E5A01DD89BD4A70E287B5DFE171F0BBA132E15CFC",
+    "artifacts/flagship_integration/BHSM_N12_GATE7_AE2_NONFERMION_THRESHOLD_MARGIN.json": "A4E4C05991402FB74FC0C584B122EF887B4A89CCB7FAA6D85560E3934872E7D2",
+    "artifacts/flagship_integration/BHSM_N12_GATE7_AE2_THRESHOLD_SUPERSESSION.json": "1C30C3003E74B48F873CCCBE3F54AAC9780D26FC1408A74C12D933A253FD2613",
+    "artifacts/frozen_constants_v2.json": "9D601C03992C5ADF34E7D438C8A9A15598138E26D0022A94B1B09CCA52092C7D",
+    "artifacts/intrinsic_state_selection/BHSM_N12_CONSTRAINT_REDUCED_ENERGY_IDENTITY_GATE.json": "EB907DF96C8C9E0A66014D6A6463B853E92F1A5D0CBA2B269789FA28706501D1",
+    "theory/bhsm_prediction_ledger.json": "CCD1EE7A578923ADB513F70641C6E4C27F17305C002728D85CCBAFA48CC9F4D8"
+  },
+  "ontology_version": "BHSM-AE2-ONTOLOGY-1.0.0",
+  "records": [
+    {
+      "action_version": "BHSM-AE-2.0.0",
+      "artifact_hashes": {
+        "artifacts/flagship_integration/BHSM_N12_GATE7_AE2_GLOBAL_SPIN_MATTER_DOMAIN.json": "5697192CCFBC6814B9EEAF5E5A01DD89BD4A70E287B5DFE171F0BBA132E15CFC"
+      },
+      "canonical_id": "G7_01_AE2_DOMAIN",
+      "current_status": "CLOSED",
+      "dimensions": "DIMENSIONLESS_OR_OPERATOR_TYPED",
+      "domain": "current AE2 Gate7",
+      "downstream_consumers": [
+        "G7_02_FIXED_CHANNEL"
+      ],
+      "equivalent_forms": [],
+      "forbidden_interpretations": [
+        "Universal terminal return is a prerequisite.",
+        "Chord 3 is a prerequisite."
+      ],
+      "formula": "['START'] -> G7_01_AE2_DOMAIN",
+      "frozen_output_status": "NOT_FROZEN_OUTPUT",
+      "mathematical_class": "GATE_DAG_NODE",
+      "observable_status": "NOT_AN_OBSERVABLE",
+      "ontology_version": "BHSM-AE2-ONTOLOGY-1.0.0",
+      "physical_meaning": "AE2 glued matter domain",
+      "provenance": [
+        "artifacts/flagship_integration/BHSM_N12_GATE7_AE2_GLOBAL_SPIN_MATTER_DOMAIN.json"
+      ],
+      "semantic_layer": "BHSM_ONTOLOGY",
+      "source_weighting_required": false,
+      "superseded_meanings": [],
+      "tests": [
+        "test_required_fields"
+      ]
+    },
+    {
+      "action_version": "BHSM-AE-2.0.0",
+      "artifact_hashes": {
+        "artifacts/flagship_integration/BHSM_N12_FORWARD_FIXED_CHANNEL_TRANSFER.json": "F83BE1866D44FE0D0F273A2B73AAEF13B272BE6B1174B3644E37E8A8AE91C786"
+      },
+      "canonical_id": "G7_02_FIXED_CHANNEL",
+      "current_status": "CLOSED",
+      "dimensions": "DIMENSIONLESS_OR_OPERATOR_TYPED",
+      "domain": "current AE2 Gate7",
+      "downstream_consumers": [
+        "G7_03_SECTOR_CLASS"
+      ],
+      "equivalent_forms": [],
+      "forbidden_interpretations": [
+        "Universal terminal return is a prerequisite.",
+        "Chord 3 is a prerequisite."
+      ],
+      "formula": "['G7_01_AE2_DOMAIN'] -> G7_02_FIXED_CHANNEL",
+      "frozen_output_status": "NOT_FROZEN_OUTPUT",
+      "mathematical_class": "GATE_DAG_NODE",
+      "observable_status": "NOT_AN_OBSERVABLE",
+      "ontology_version": "BHSM-AE2-ONTOLOGY-1.0.0",
+      "physical_meaning": "fixed-channel forward operator",
+      "provenance": [
+        "artifacts/flagship_integration/BHSM_N12_FORWARD_FIXED_CHANNEL_TRANSFER.json"
+      ],
+      "semantic_layer": "BHSM_ONTOLOGY",
+      "source_weighting_required": false,
+      "superseded_meanings": [],
+      "tests": [
+        "test_required_fields"
+      ]
+    },
+    {
+      "action_version": "BHSM-AE-2.0.0",
+      "artifact_hashes": {
+        "artifacts/flagship_integration/BHSM_N12_GATE7_AE2_THRESHOLD_SUPERSESSION.json": "1C30C3003E74B48F873CCCBE3F54AAC9780D26FC1408A74C12D933A253FD2613"
+      },
+      "canonical_id": "G7_03_SECTOR_CLASS",
+      "current_status": "CLOSED",
+      "dimensions": "DIMENSIONLESS_OR_OPERATOR_TYPED",
+      "domain": "current AE2 Gate7",
+      "downstream_consumers": [
+        "G7_04_NONFERMION"
+      ],
+      "equivalent_forms": [],
+      "forbidden_interpretations": [
+        "Universal terminal return is a prerequisite.",
+        "Chord 3 is a prerequisite."
+      ],
+      "formula": "['G7_02_FIXED_CHANNEL'] -> G7_03_SECTOR_CLASS",
+      "frozen_output_status": "NOT_FROZEN_OUTPUT",
+      "mathematical_class": "GATE_DAG_NODE",
+      "observable_status": "NOT_AN_OBSERVABLE",
+      "ontology_version": "BHSM-AE2-ONTOLOGY-1.0.0",
+      "physical_meaning": "sectorwise threshold classification",
+      "provenance": [
+        "artifacts/flagship_integration/BHSM_N12_GATE7_AE2_THRESHOLD_SUPERSESSION.json"
+      ],
+      "semantic_layer": "BHSM_ONTOLOGY",
+      "source_weighting_required": false,
+      "superseded_meanings": [],
+      "tests": [
+        "test_required_fields"
+      ]
+    },
+    {
+      "action_version": "BHSM-AE-2.0.0",
+      "artifact_hashes": {
+        "artifacts/flagship_integration/BHSM_N12_GATE7_AE2_NONFERMION_THRESHOLD_MARGIN.json": "A4E4C05991402FB74FC0C584B122EF887B4A89CCB7FAA6D85560E3934872E7D2"
+      },
+      "canonical_id": "G7_04_NONFERMION",
+      "current_status": "CLOSED",
+      "dimensions": "DIMENSIONLESS_OR_OPERATOR_TYPED",
+      "domain": "current AE2 Gate7",
+      "downstream_consumers": [
+        "G7_05_FACTORIZED_LAP"
+      ],
+      "equivalent_forms": [],
+      "forbidden_interpretations": [
+        "Universal terminal return is a prerequisite.",
+        "Chord 3 is a prerequisite."
+      ],
+      "formula": "['G7_03_SECTOR_CLASS'] -> G7_04_NONFERMION",
+      "frozen_output_status": "NOT_FROZEN_OUTPUT",
+      "mathematical_class": "GATE_DAG_NODE",
+      "observable_status": "NOT_AN_OBSERVABLE",
+      "ontology_version": "BHSM-AE2-ONTOLOGY-1.0.0",
+      "physical_meaning": "nonfermionic threshold closure",
+      "provenance": [
+        "artifacts/flagship_integration/BHSM_N12_GATE7_AE2_NONFERMION_THRESHOLD_MARGIN.json"
+      ],
+      "semantic_layer": "BHSM_ONTOLOGY",
+      "source_weighting_required": false,
+      "superseded_meanings": [],
+      "tests": [
+        "test_required_fields"
+      ]
+    },
+    {
+      "action_version": "BHSM-AE-2.0.0",
+      "artifact_hashes": {
+        "artifacts/flagship_integration/BHSM_N12_GATE7_AE2_FACTORIZED_THRESHOLD_RECLASSIFICATION.json": "DBDFBF1A3D86BE5E2F93B126E92EF1BA0023D3771E6DCC5824EE0634A38546E1"
+      },
+      "canonical_id": "G7_05_FACTORIZED_LAP",
+      "current_status": "OPEN_CURRENT_OWNER",
+      "dimensions": "DIMENSIONLESS_OR_OPERATOR_TYPED",
+      "domain": "current AE2 Gate7",
+      "downstream_consumers": [
+        "G7_06_E1_FINITE"
+      ],
+      "equivalent_forms": [],
+      "forbidden_interpretations": [
+        "Universal terminal return is a prerequisite.",
+        "Chord 3 is a prerequisite."
+      ],
+      "formula": "['G7_04_NONFERMION'] -> G7_05_FACTORIZED_LAP",
+      "frozen_output_status": "NOT_FROZEN_OUTPUT",
+      "mathematical_class": "GATE_DAG_NODE",
+      "observable_status": "NOT_AN_OBSERVABLE",
+      "ontology_version": "BHSM-AE2-ONTOLOGY-1.0.0",
+      "physical_meaning": "factorized resonance-compatible source-weighted limiting absorption",
+      "provenance": [
+        "artifacts/flagship_integration/BHSM_N12_GATE7_AE2_FACTORIZED_THRESHOLD_RECLASSIFICATION.json"
+      ],
+      "semantic_layer": "BHSM_ONTOLOGY",
+      "source_weighting_required": true,
+      "superseded_meanings": [],
+      "tests": [
+        "test_required_fields"
+      ]
+    },
+    {
+      "action_version": "BHSM-AE-2.0.0",
+      "artifact_hashes": {
+        "artifacts/flagship_integration/BHSM_N12_GATE7_AE2_THRESHOLD_SUPERSESSION.json": "1C30C3003E74B48F873CCCBE3F54AAC9780D26FC1408A74C12D933A253FD2613"
+      },
+      "canonical_id": "G7_06_E1_FINITE",
+      "current_status": "PENDING",
+      "dimensions": "DIMENSIONLESS_OR_OPERATOR_TYPED",
+      "domain": "current AE2 Gate7",
+      "downstream_consumers": [
+        "G7_07_ANGULAR_TAIL"
+      ],
+      "equivalent_forms": [],
+      "forbidden_interpretations": [
+        "Universal terminal return is a prerequisite.",
+        "Chord 3 is a prerequisite."
+      ],
+      "formula": "['G7_05_FACTORIZED_LAP'] -> G7_06_E1_FINITE",
+      "frozen_output_status": "NOT_FROZEN_OUTPUT",
+      "mathematical_class": "GATE_DAG_NODE",
+      "observable_status": "NOT_AN_OBSERVABLE",
+      "ontology_version": "BHSM-AE2-ONTOLOGY-1.0.0",
+      "physical_meaning": "E1 source-measure finiteness",
+      "provenance": [
+        "artifacts/flagship_integration/BHSM_N12_GATE7_AE2_THRESHOLD_SUPERSESSION.json"
+      ],
+      "semantic_layer": "BHSM_ONTOLOGY",
+      "source_weighting_required": true,
+      "superseded_meanings": [],
+      "tests": [
+        "test_required_fields"
+      ]
+    },
+    {
+      "action_version": "BHSM-AE-2.0.0",
+      "artifact_hashes": {
+        "artifacts/flagship_integration/BHSM_N12_GATE7_AE2_THRESHOLD_SUPERSESSION.json": "1C30C3003E74B48F873CCCBE3F54AAC9780D26FC1408A74C12D933A253FD2613"
+      },
+      "canonical_id": "G7_07_ANGULAR_TAIL",
+      "current_status": "PENDING",
+      "dimensions": "DIMENSIONLESS_OR_OPERATOR_TYPED",
+      "domain": "current AE2 Gate7",
+      "downstream_consumers": [
+        "G7_08_FORCE"
+      ],
+      "equivalent_forms": [],
+      "forbidden_interpretations": [
+        "Universal terminal return is a prerequisite.",
+        "Chord 3 is a prerequisite."
+      ],
+      "formula": "['G7_06_E1_FINITE'] -> G7_07_ANGULAR_TAIL",
+      "frozen_output_status": "NOT_FROZEN_OUTPUT",
+      "mathematical_class": "GATE_DAG_NODE",
+      "observable_status": "NOT_AN_OBSERVABLE",
+      "ontology_version": "BHSM-AE2-ONTOLOGY-1.0.0",
+      "physical_meaning": "higher-energy and angular tail control",
+      "provenance": [
+        "artifacts/flagship_integration/BHSM_N12_GATE7_AE2_THRESHOLD_SUPERSESSION.json"
+      ],
+      "semantic_layer": "BHSM_ONTOLOGY",
+      "source_weighting_required": false,
+      "superseded_meanings": [],
+      "tests": [
+        "test_required_fields"
+      ]
+    },
+    {
+      "action_version": "BHSM-AE-2.0.0",
+      "artifact_hashes": {
+        "artifacts/flagship_integration/BHSM_N12_GATE7_AE2_THRESHOLD_SUPERSESSION.json": "1C30C3003E74B48F873CCCBE3F54AAC9780D26FC1408A74C12D933A253FD2613"
+      },
+      "canonical_id": "G7_08_FORCE",
+      "current_status": "PENDING",
+      "dimensions": "DIMENSIONLESS_OR_OPERATOR_TYPED",
+      "domain": "current AE2 Gate7",
+      "downstream_consumers": [
+        "G7_09_SADDLE"
+      ],
+      "equivalent_forms": [],
+      "forbidden_interpretations": [
+        "Universal terminal return is a prerequisite.",
+        "Chord 3 is a prerequisite."
+      ],
+      "formula": "['G7_07_ANGULAR_TAIL'] -> G7_08_FORCE",
+      "frozen_output_status": "NOT_FROZEN_OUTPUT",
+      "mathematical_class": "GATE_DAG_NODE",
+      "observable_status": "NOT_AN_OBSERVABLE",
+      "ontology_version": "BHSM-AE2-ONTOLOGY-1.0.0",
+      "physical_meaning": "zero-source geometry force",
+      "provenance": [
+        "artifacts/flagship_integration/BHSM_N12_GATE7_AE2_THRESHOLD_SUPERSESSION.json"
+      ],
+      "semantic_layer": "BHSM_ONTOLOGY",
+      "source_weighting_required": false,
+      "superseded_meanings": [],
+      "tests": [
+        "test_required_fields"
+      ]
+    },
+    {
+      "action_version": "BHSM-AE-2.0.0",
+      "artifact_hashes": {
+        "artifacts/flagship_integration/BHSM_N12_GATE7_AE2_THRESHOLD_SUPERSESSION.json": "1C30C3003E74B48F873CCCBE3F54AAC9780D26FC1408A74C12D933A253FD2613"
+      },
+      "canonical_id": "G7_09_SADDLE",
+      "current_status": "PENDING",
+      "dimensions": "DIMENSIONLESS_OR_OPERATOR_TYPED",
+      "domain": "current AE2 Gate7",
+      "downstream_consumers": [
+        "G7_10_HESSIAN"
+      ],
+      "equivalent_forms": [],
+      "forbidden_interpretations": [
+        "Universal terminal return is a prerequisite.",
+        "Chord 3 is a prerequisite."
+      ],
+      "formula": "['G7_08_FORCE'] -> G7_09_SADDLE",
+      "frozen_output_status": "NOT_FROZEN_OUTPUT",
+      "mathematical_class": "GATE_DAG_NODE",
+      "observable_status": "NOT_AN_OBSERVABLE",
+      "ontology_version": "BHSM-AE2-ONTOLOGY-1.0.0",
+      "physical_meaning": "same-action saddle",
+      "provenance": [
+        "artifacts/flagship_integration/BHSM_N12_GATE7_AE2_THRESHOLD_SUPERSESSION.json"
+      ],
+      "semantic_layer": "BHSM_ONTOLOGY",
+      "source_weighting_required": false,
+      "superseded_meanings": [],
+      "tests": [
+        "test_required_fields"
+      ]
+    },
+    {
+      "action_version": "BHSM-AE-2.0.0",
+      "artifact_hashes": {
+        "artifacts/flagship_integration/BHSM_N12_GATE7_AE2_THRESHOLD_SUPERSESSION.json": "1C30C3003E74B48F873CCCBE3F54AAC9780D26FC1408A74C12D933A253FD2613"
+      },
+      "canonical_id": "G7_10_HESSIAN",
+      "current_status": "PENDING",
+      "dimensions": "DIMENSIONLESS_OR_OPERATOR_TYPED",
+      "domain": "current AE2 Gate7",
+      "downstream_consumers": [
+        "G7_11_WARD_TRACE"
+      ],
+      "equivalent_forms": [],
+      "forbidden_interpretations": [
+        "Universal terminal return is a prerequisite.",
+        "Chord 3 is a prerequisite."
+      ],
+      "formula": "['G7_09_SADDLE'] -> G7_10_HESSIAN",
+      "frozen_output_status": "NOT_FROZEN_OUTPUT",
+      "mathematical_class": "GATE_DAG_NODE",
+      "observable_status": "NOT_AN_OBSERVABLE",
+      "ontology_version": "BHSM-AE2-ONTOLOGY-1.0.0",
+      "physical_meaning": "pair-plus-contact Hessian",
+      "provenance": [
+        "artifacts/flagship_integration/BHSM_N12_GATE7_AE2_THRESHOLD_SUPERSESSION.json"
+      ],
+      "semantic_layer": "BHSM_ONTOLOGY",
+      "source_weighting_required": false,
+      "superseded_meanings": [],
+      "tests": [
+        "test_required_fields"
+      ]
+    },
+    {
+      "action_version": "BHSM-AE-2.0.0",
+      "artifact_hashes": {
+        "artifacts/flagship_integration/BHSM_N12_GATE7_AE2_THRESHOLD_SUPERSESSION.json": "1C30C3003E74B48F873CCCBE3F54AAC9780D26FC1408A74C12D933A253FD2613"
+      },
+      "canonical_id": "G7_11_WARD_TRACE",
+      "current_status": "PENDING",
+      "dimensions": "DIMENSIONLESS_OR_OPERATOR_TYPED",
+      "domain": "current AE2 Gate7",
+      "downstream_consumers": [
+        "G7_12_SCALAR_MAP"
+      ],
+      "equivalent_forms": [],
+      "forbidden_interpretations": [
+        "Universal terminal return is a prerequisite.",
+        "Chord 3 is a prerequisite."
+      ],
+      "formula": "['G7_10_HESSIAN'] -> G7_11_WARD_TRACE",
+      "frozen_output_status": "NOT_FROZEN_OUTPUT",
+      "mathematical_class": "GATE_DAG_NODE",
+      "observable_status": "NOT_AN_OBSERVABLE",
+      "ontology_version": "BHSM-AE2-ONTOLOGY-1.0.0",
+      "physical_meaning": "Ward/BRST and source-contracted relative trace",
+      "provenance": [
+        "artifacts/flagship_integration/BHSM_N12_GATE7_AE2_THRESHOLD_SUPERSESSION.json"
+      ],
+      "semantic_layer": "BHSM_ONTOLOGY",
+      "source_weighting_required": true,
+      "superseded_meanings": [],
+      "tests": [
+        "test_required_fields"
+      ]
+    },
+    {
+      "action_version": "BHSM-AE-2.0.0",
+      "artifact_hashes": {
+        "artifacts/flagship_integration/BHSM_N12_GATE7_AE2_THRESHOLD_SUPERSESSION.json": "1C30C3003E74B48F873CCCBE3F54AAC9780D26FC1408A74C12D933A253FD2613"
+      },
+      "canonical_id": "G7_12_SCALAR_MAP",
+      "current_status": "PENDING",
+      "dimensions": "DIMENSIONLESS_OR_OPERATOR_TYPED",
+      "domain": "current AE2 Gate7",
+      "downstream_consumers": [
+        "G7_13_CLOSE"
+      ],
+      "equivalent_forms": [],
+      "forbidden_interpretations": [
+        "Universal terminal return is a prerequisite.",
+        "Chord 3 is a prerequisite."
+      ],
+      "formula": "['G7_11_WARD_TRACE'] -> G7_12_SCALAR_MAP",
+      "frozen_output_status": "NOT_FROZEN_OUTPUT",
+      "mathematical_class": "GATE_DAG_NODE",
+      "observable_status": "NOT_AN_OBSERVABLE",
+      "ontology_version": "BHSM-AE2-ONTOLOGY-1.0.0",
+      "physical_meaning": "basis-independent physical scalar map",
+      "provenance": [
+        "artifacts/flagship_integration/BHSM_N12_GATE7_AE2_THRESHOLD_SUPERSESSION.json"
+      ],
+      "semantic_layer": "BHSM_ONTOLOGY",
+      "source_weighting_required": false,
+      "superseded_meanings": [],
+      "tests": [
+        "test_required_fields"
+      ]
+    },
+    {
+      "action_version": "BHSM-AE-2.0.0",
+      "artifact_hashes": {
+        "artifacts/flagship_integration/BHSM_N12_GATE7_AE2_THRESHOLD_SUPERSESSION.json": "1C30C3003E74B48F873CCCBE3F54AAC9780D26FC1408A74C12D933A253FD2613"
+      },
+      "canonical_id": "G7_13_CLOSE",
+      "current_status": "PENDING",
+      "dimensions": "DIMENSIONLESS_OR_OPERATOR_TYPED",
+      "domain": "current AE2 Gate7",
+      "downstream_consumers": [],
+      "equivalent_forms": [],
+      "forbidden_interpretations": [
+        "Universal terminal return is a prerequisite.",
+        "Chord 3 is a prerequisite."
+      ],
+      "formula": "['G7_12_SCALAR_MAP'] -> G7_13_CLOSE",
+      "frozen_output_status": "NOT_FROZEN_OUTPUT",
+      "mathematical_class": "GATE_DAG_NODE",
+      "observable_status": "NOT_AN_OBSERVABLE",
+      "ontology_version": "BHSM-AE2-ONTOLOGY-1.0.0",
+      "physical_meaning": "Gate 7 closure",
+      "provenance": [
+        "artifacts/flagship_integration/BHSM_N12_GATE7_AE2_THRESHOLD_SUPERSESSION.json"
+      ],
+      "semantic_layer": "BHSM_ONTOLOGY",
+      "source_weighting_required": false,
+      "superseded_meanings": [],
+      "tests": [
+        "test_required_fields"
+      ]
+    }
+  ],
+  "schema": "BHSM_CURRENT_SEMANTIC_RECORD_V1",
+  "validation_passed": true
+}

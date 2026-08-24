@@ -1,0 +1,468 @@
+{
+  "FULL_BHSM_COMPLETE": false,
+  "action_version": "BHSM-AE-2.0.0",
+  "artifact": "BHSM_CURRENT_MATHEMATICAL_BASIS",
+  "input_hashes": {
+    "artifacts/BHSM_alpha_i_update_v4_2.json": "6DCBE29A734C54FFB2B567E48C90B1AA531BD9A10F46CD2F7C433B937ED86416",
+    "artifacts/BHSM_rho_ch_action_audit_v1_9.json": "24D863B79D9ECDE9137BD7B25DAE00442F5FBF25BF1DC99738E46C5353D8D7CB",
+    "artifacts/action_extension/BHSM_ACTION_AE2_GLOBAL_SPIN_RESET_ACTION.json": "4C756145A9E303F6E4F7F9536CF5639957D010C1A97AF6BE9299830C549B82DC",
+    "artifacts/flagship_integration/BHSM_N12_FORWARD_E1_SOURCE_MEASURE_CRITERION.json": "E6976D1A49B536044FC2B7A1B25DB3B422F2ED8A9DEBF05DBFDEDD2544A0D9D8",
+    "artifacts/flagship_integration/BHSM_N12_FORWARD_FIXED_CHANNEL_TRANSFER.json": "F83BE1866D44FE0D0F273A2B73AAEF13B272BE6B1174B3644E37E8A8AE91C786",
+    "artifacts/flagship_integration/BHSM_N12_FORWARD_GAUGE_WEYL_READOUT_FAMILY.json": "452134D1EA925FEBE2DA99483926F70AFEC6DEF09731B268ECB2A2A6FCE280AE",
+    "artifacts/flagship_integration/BHSM_N12_FORWARD_PROPER_TIME_FORM_OWNERSHIP.json": "C56D4B49F58DF4FF58D6725899261B5D08C5E38F8860B0C74D2725DC920D2BB4",
+    "artifacts/flagship_integration/BHSM_N12_GATE7_AE2_FACTORIZED_THRESHOLD_RECLASSIFICATION.json": "DBDFBF1A3D86BE5E2F93B126E92EF1BA0023D3771E6DCC5824EE0634A38546E1",
+    "artifacts/flagship_integration/BHSM_N12_GATE7_AE2_GLOBAL_SPIN_MATTER_DOMAIN.json": "5697192CCFBC6814B9EEAF5E5A01DD89BD4A70E287B5DFE171F0BBA132E15CFC",
+    "artifacts/flagship_integration/BHSM_N12_GATE7_AE2_NONFERMION_THRESHOLD_MARGIN.json": "A4E4C05991402FB74FC0C584B122EF887B4A89CCB7FAA6D85560E3934872E7D2",
+    "artifacts/flagship_integration/BHSM_N12_GATE7_AE2_THRESHOLD_SUPERSESSION.json": "1C30C3003E74B48F873CCCBE3F54AAC9780D26FC1408A74C12D933A253FD2613",
+    "artifacts/frozen_constants_v2.json": "9D601C03992C5ADF34E7D438C8A9A15598138E26D0022A94B1B09CCA52092C7D",
+    "artifacts/intrinsic_state_selection/BHSM_N12_CONSTRAINT_REDUCED_ENERGY_IDENTITY_GATE.json": "EB907DF96C8C9E0A66014D6A6463B853E92F1A5D0CBA2B269789FA28706501D1",
+    "theory/bhsm_prediction_ledger.json": "CCD1EE7A578923ADB513F70641C6E4C27F17305C002728D85CCBAFA48CC9F4D8"
+  },
+  "ontology_version": "BHSM-AE2-ONTOLOGY-1.0.0",
+  "records": [
+    {
+      "action_version": "BHSM-AE-2.0.0",
+      "artifact_hashes": {
+        "artifacts/action_extension/BHSM_ACTION_AE2_GLOBAL_SPIN_RESET_ACTION.json": "4C756145A9E303F6E4F7F9536CF5639957D010C1A97AF6BE9299830C549B82DC"
+      },
+      "canonical_id": "ACTION_VERSION_TUPLE",
+      "current_status": "CURRENT",
+      "dimensions": "DIMENSIONLESS_OR_OPERATOR_TYPED",
+      "domain": "BHSM action-version space",
+      "downstream_consumers": [
+        "AE2_GLOBAL_DOMAIN",
+        "CURRENT_GATE7_DAG"
+      ],
+      "equivalent_forms": [],
+      "forbidden_interpretations": [
+        "Same bulk integrand implies same physical theory."
+      ],
+      "formula": "A_v=(C_v,S_v,D_v,B_v,O_v)",
+      "frozen_output_status": "NOT_FROZEN_OUTPUT",
+      "mathematical_class": "VERSIONED_PHYSICAL_THEORY_TUPLE",
+      "observable_status": "NOT_AN_OBSERVABLE",
+      "ontology_version": "BHSM-AE2-ONTOLOGY-1.0.0",
+      "physical_meaning": "A physical action version includes ontology, action, domains, boundary graphs, and observable maps.",
+      "provenance": [
+        "artifacts/action_extension/BHSM_ACTION_AE2_GLOBAL_SPIN_RESET_ACTION.json"
+      ],
+      "semantic_layer": "BHSM_ONTOLOGY",
+      "source_weighting_required": false,
+      "superseded_meanings": [],
+      "tests": [
+        "test_required_fields"
+      ]
+    },
+    {
+      "action_version": "BHSM-AE-2.0.0",
+      "artifact_hashes": {
+        "artifacts/flagship_integration/BHSM_N12_FORWARD_PROPER_TIME_FORM_OWNERSHIP.json": "C56D4B49F58DF4FF58D6725899261B5D08C5E38F8860B0C74D2725DC920D2BB4"
+      },
+      "canonical_id": "QUOTIENT_RADIUS",
+      "current_status": "CURRENT",
+      "dimensions": "LENGTH",
+      "domain": "A>0, B>0",
+      "downstream_consumers": [
+        "LOG_RADIUS"
+      ],
+      "equivalent_forms": [],
+      "forbidden_interpretations": [],
+      "formula": "R4=A*B/sqrt(A^2+B^2)",
+      "frozen_output_status": "NOT_FROZEN_OUTPUT",
+      "mathematical_class": "GEOMETRIC_QUOTIENT",
+      "observable_status": "NOT_AN_OBSERVABLE",
+      "ontology_version": "BHSM-AE2-ONTOLOGY-1.0.0",
+      "physical_meaning": "Retained Berger-Hopf quotient radius.",
+      "provenance": [
+        "artifacts/flagship_integration/BHSM_N12_FORWARD_PROPER_TIME_FORM_OWNERSHIP.json"
+      ],
+      "semantic_layer": "MATHEMATICAL_OBJECT",
+      "source_weighting_required": false,
+      "superseded_meanings": [],
+      "tests": [
+        "test_required_fields"
+      ]
+    },
+    {
+      "action_version": "BHSM-AE-2.0.0",
+      "artifact_hashes": {
+        "artifacts/flagship_integration/BHSM_N12_FORWARD_PROPER_TIME_FORM_OWNERSHIP.json": "C56D4B49F58DF4FF58D6725899261B5D08C5E38F8860B0C74D2725DC920D2BB4"
+      },
+      "canonical_id": "LOG_RADIUS",
+      "current_status": "CURRENT",
+      "dimensions": "DIMENSIONLESS_OR_OPERATOR_TYPED",
+      "domain": "maximal regular forward history with R4>0",
+      "downstream_consumers": [
+        "FIXED_CHANNEL_OPERATOR",
+        "ACTION_VERTEX"
+      ],
+      "equivalent_forms": [
+        "R4^-1=exp(-x)",
+        "R4^-2=exp(-2*x)"
+      ],
+      "forbidden_interpretations": [],
+      "formula": "x(tau)=log(R4(tau))",
+      "frozen_output_status": "NOT_FROZEN_OUTPUT",
+      "mathematical_class": "CANONICAL_HISTORY_COORDINATE",
+      "observable_status": "NOT_AN_OBSERVABLE",
+      "ontology_version": "BHSM-AE2-ONTOLOGY-1.0.0",
+      "physical_meaning": "The single current scalar history coefficient after proper-time reduction.",
+      "provenance": [
+        "artifacts/flagship_integration/BHSM_N12_FORWARD_PROPER_TIME_FORM_OWNERSHIP.json"
+      ],
+      "semantic_layer": "BHSM_ONTOLOGY",
+      "source_weighting_required": false,
+      "superseded_meanings": [],
+      "tests": [
+        "test_required_fields"
+      ]
+    },
+    {
+      "action_version": "BHSM-AE-2.0.0",
+      "artifact_hashes": {
+        "artifacts/flagship_integration/BHSM_N12_FORWARD_PROPER_TIME_FORM_OWNERSHIP.json": "C56D4B49F58DF4FF58D6725899261B5D08C5E38F8860B0C74D2725DC920D2BB4"
+      },
+      "canonical_id": "PROPER_TIME",
+      "current_status": "CURRENT",
+      "dimensions": "TIME",
+      "domain": "positive-lapse regular forward domain",
+      "downstream_consumers": [
+        "TEMPORAL_LAPLACIAN",
+        "FIXED_CHANNEL_OPERATOR"
+      ],
+      "equivalent_forms": [],
+      "forbidden_interpretations": [
+        "Formal reflection is a second physical time."
+      ],
+      "formula": "d_tau=N_boundary*dt, N_boundary>0, dt>0",
+      "frozen_output_status": "NOT_FROZEN_OUTPUT",
+      "mathematical_class": "ORIENTED_TIME_REPARAMETRIZATION",
+      "observable_status": "NOT_AN_OBSERVABLE",
+      "ontology_version": "BHSM-AE2-ONTOLOGY-1.0.0",
+      "physical_meaning": "One positive physical time orientation.",
+      "provenance": [
+        "artifacts/flagship_integration/BHSM_N12_FORWARD_PROPER_TIME_FORM_OWNERSHIP.json"
+      ],
+      "semantic_layer": "BHSM_ONTOLOGY",
+      "source_weighting_required": false,
+      "superseded_meanings": [],
+      "tests": [
+        "test_required_fields"
+      ]
+    },
+    {
+      "action_version": "BHSM-AE-2.0.0",
+      "artifact_hashes": {
+        "artifacts/flagship_integration/BHSM_N12_FORWARD_PROPER_TIME_FORM_OWNERSHIP.json": "C56D4B49F58DF4FF58D6725899261B5D08C5E38F8860B0C74D2725DC920D2BB4"
+      },
+      "canonical_id": "TEMPORAL_LAPLACIAN",
+      "current_status": "CURRENT",
+      "dimensions": "DIMENSIONLESS_OR_OPERATOR_TYPED",
+      "domain": "AE2 physical operator domain",
+      "downstream_consumers": [
+        "FIXED_CHANNEL_OPERATOR"
+      ],
+      "equivalent_forms": [],
+      "forbidden_interpretations": [],
+      "formula": "Delta_tau=D_tau^dagger*D_tau",
+      "frozen_output_status": "NOT_FROZEN_OUTPUT",
+      "mathematical_class": "FACTORIZED_NONNEGATIVE_OPERATOR",
+      "observable_status": "NOT_AN_OBSERVABLE",
+      "ontology_version": "BHSM-AE2-ONTOLOGY-1.0.0",
+      "physical_meaning": "Canonical temporal second-order operator; not independent of D_tau.",
+      "provenance": [
+        "artifacts/flagship_integration/BHSM_N12_FORWARD_PROPER_TIME_FORM_OWNERSHIP.json"
+      ],
+      "semantic_layer": "MATHEMATICAL_OBJECT",
+      "source_weighting_required": false,
+      "superseded_meanings": [],
+      "tests": [
+        "test_required_fields"
+      ]
+    },
+    {
+      "action_version": "BHSM-AE-2.0.0",
+      "artifact_hashes": {
+        "artifacts/flagship_integration/BHSM_N12_FORWARD_FIXED_CHANNEL_TRANSFER.json": "F83BE1866D44FE0D0F273A2B73AAEF13B272BE6B1174B3644E37E8A8AE91C786",
+        "artifacts/flagship_integration/BHSM_N12_FORWARD_GAUGE_WEYL_READOUT_FAMILY.json": "452134D1EA925FEBE2DA99483926F70AFEC6DEF09731B268ECB2A2A6FCE280AE"
+      },
+      "canonical_id": "FIXED_CHANNEL_OPERATOR",
+      "current_status": "CURRENT",
+      "dimensions": "DIMENSIONLESS_OR_OPERATOR_TYPED",
+      "domain": "AE2 glued birth domain and maximal forward far-end domain",
+      "downstream_consumers": [
+        "RESOLVENT",
+        "WEYL_MAP",
+        "SOURCE_RESPONSE"
+      ],
+      "equivalent_forms": [
+        "2x2 transfer system",
+        "Riccati equation",
+        "Weyl admittance",
+        "Mobius transfer"
+      ],
+      "forbidden_interpretations": [
+        "Generic moving operator-valued spatial history."
+      ],
+      "formula": "mathcal_K_C-z=-D_tau^2*I+V(x(tau))-z*I",
+      "frozen_output_status": "NOT_FROZEN_OUTPUT",
+      "mathematical_class": "FIXED_SPATIAL_CHANNEL_OPERATOR",
+      "observable_status": "NOT_AN_OBSERVABLE",
+      "ontology_version": "BHSM-AE2-ONTOLOGY-1.0.0",
+      "physical_meaning": "Nonperiodic forward source operator on fixed round-spatial eigenspaces.",
+      "provenance": [
+        "artifacts/flagship_integration/BHSM_N12_FORWARD_FIXED_CHANNEL_TRANSFER.json",
+        "artifacts/flagship_integration/BHSM_N12_FORWARD_GAUGE_WEYL_READOUT_FAMILY.json"
+      ],
+      "semantic_layer": "MATHEMATICAL_OBJECT",
+      "source_weighting_required": false,
+      "superseded_meanings": [],
+      "tests": [
+        "test_required_fields"
+      ]
+    },
+    {
+      "action_version": "BHSM-AE-2.0.0",
+      "artifact_hashes": {
+        "artifacts/flagship_integration/BHSM_N12_FORWARD_GAUGE_WEYL_READOUT_FAMILY.json": "452134D1EA925FEBE2DA99483926F70AFEC6DEF09731B268ECB2A2A6FCE280AE"
+      },
+      "canonical_id": "NEUTRAL_SPECTRAL_PARAMETER",
+      "current_status": "CURRENT",
+      "dimensions": "DIMENSIONLESS_OR_OPERATOR_TYPED",
+      "domain": "resolvent set of mathcal_K_C",
+      "downstream_consumers": [
+        "RESOLVENT",
+        "WEYL_MAP"
+      ],
+      "equivalent_forms": [],
+      "forbidden_interpretations": [
+        "z=p^2",
+        "periodic S1 Fourier readout"
+      ],
+      "formula": "z in C\\sigma(mathcal_K_C)",
+      "frozen_output_status": "NOT_FROZEN_OUTPUT",
+      "mathematical_class": "RESOLVENT_PARAMETER",
+      "observable_status": "NOT_AN_OBSERVABLE",
+      "ontology_version": "BHSM-AE2-ONTOLOGY-1.0.0",
+      "physical_meaning": "Neutral spectral parameter with no action-owned momentum interpretation.",
+      "provenance": [
+        "artifacts/flagship_integration/BHSM_N12_FORWARD_GAUGE_WEYL_READOUT_FAMILY.json"
+      ],
+      "semantic_layer": "MATHEMATICAL_OBJECT",
+      "source_weighting_required": false,
+      "superseded_meanings": [],
+      "tests": [
+        "test_required_fields"
+      ]
+    },
+    {
+      "action_version": "BHSM-AE-2.0.0",
+      "artifact_hashes": {
+        "artifacts/flagship_integration/BHSM_N12_FORWARD_GAUGE_WEYL_READOUT_FAMILY.json": "452134D1EA925FEBE2DA99483926F70AFEC6DEF09731B268ECB2A2A6FCE280AE"
+      },
+      "canonical_id": "RESOLVENT",
+      "current_status": "CURRENT",
+      "dimensions": "DIMENSIONLESS_OR_OPERATOR_TYPED",
+      "domain": "z in resolvent set",
+      "downstream_consumers": [
+        "SOURCE_RESPONSE",
+        "E1_FIRST_VARIATION"
+      ],
+      "equivalent_forms": [
+        "Schur-compressed core resolvent with Weyl/Calderon exterior response"
+      ],
+      "forbidden_interpretations": [],
+      "formula": "script_R_C(z)=(mathcal_K_C-z)^(-1)",
+      "frozen_output_status": "NOT_FROZEN_OUTPUT",
+      "mathematical_class": "OPERATOR_RESOLVENT",
+      "observable_status": "NOT_AN_OBSERVABLE",
+      "ontology_version": "BHSM-AE2-ONTOLOGY-1.0.0",
+      "physical_meaning": "Physical AE2 forward resolvent.",
+      "provenance": [
+        "artifacts/flagship_integration/BHSM_N12_FORWARD_GAUGE_WEYL_READOUT_FAMILY.json"
+      ],
+      "semantic_layer": "MATHEMATICAL_OBJECT",
+      "source_weighting_required": false,
+      "superseded_meanings": [],
+      "tests": [
+        "test_required_fields"
+      ]
+    },
+    {
+      "action_version": "BHSM-AE-2.0.0",
+      "artifact_hashes": {
+        "artifacts/flagship_integration/BHSM_N12_FORWARD_FIXED_CHANNEL_TRANSFER.json": "F83BE1866D44FE0D0F273A2B73AAEF13B272BE6B1174B3644E37E8A8AE91C786",
+        "artifacts/flagship_integration/BHSM_N12_FORWARD_GAUGE_WEYL_READOUT_FAMILY.json": "452134D1EA925FEBE2DA99483926F70AFEC6DEF09731B268ECB2A2A6FCE280AE"
+      },
+      "canonical_id": "WEYL_MAP",
+      "current_status": "CURRENT",
+      "dimensions": "DIMENSIONLESS_OR_OPERATOR_TYPED",
+      "domain": "fixed channel maximal forward domain",
+      "downstream_consumers": [
+        "SOURCE_RESPONSE",
+        "ZERO_SOURCE_FORCE"
+      ],
+      "equivalent_forms": [
+        "channel admittance m_j(z)",
+        "Mobius-pulled far-end admittance"
+      ],
+      "forbidden_interpretations": [],
+      "formula": "M_C^Weyl(z)*a=Gamma1_birth(gamma_C(z)*a)",
+      "frozen_output_status": "NOT_FROZEN_OUTPUT",
+      "mathematical_class": "BOUNDARY_WEYL_CALDERON_MAP",
+      "observable_status": "NOT_AN_OBSERVABLE",
+      "ontology_version": "BHSM-AE2-ONTOLOGY-1.0.0",
+      "physical_meaning": "Exterior response pulled to the AE2 birth interface.",
+      "provenance": [
+        "artifacts/flagship_integration/BHSM_N12_FORWARD_GAUGE_WEYL_READOUT_FAMILY.json",
+        "artifacts/flagship_integration/BHSM_N12_FORWARD_FIXED_CHANNEL_TRANSFER.json"
+      ],
+      "semantic_layer": "MATHEMATICAL_OBJECT",
+      "source_weighting_required": false,
+      "superseded_meanings": [],
+      "tests": [
+        "test_required_fields"
+      ]
+    },
+    {
+      "action_version": "BHSM-AE-2.0.0",
+      "artifact_hashes": {
+        "artifacts/flagship_integration/BHSM_N12_FORWARD_E1_SOURCE_MEASURE_CRITERION.json": "E6976D1A49B536044FC2B7A1B25DB3B422F2ED8A9DEBF05DBFDEDD2544A0D9D8",
+        "artifacts/flagship_integration/BHSM_N12_FORWARD_GAUGE_WEYL_READOUT_FAMILY.json": "452134D1EA925FEBE2DA99483926F70AFEC6DEF09731B268ECB2A2A6FCE280AE"
+      },
+      "canonical_id": "SOURCE_RESPONSE",
+      "current_status": "CURRENT",
+      "dimensions": "DIMENSIONLESS_OR_OPERATOR_TYPED",
+      "domain": "AE2 source domain",
+      "downstream_consumers": [
+        "E1_FIRST_VARIATION",
+        "PAIR_CONTACT_HESSIAN"
+      ],
+      "equivalent_forms": [
+        "heat Frechet/Duhamel representation"
+      ],
+      "forbidden_interpretations": [],
+      "formula": "H_ij(z)=<a_i,script_R_C(z)a_j>+H_ij^contact(z)",
+      "frozen_output_status": "NOT_FROZEN_OUTPUT",
+      "mathematical_class": "PAIR_PLUS_CONTACT_RESPONSE",
+      "observable_status": "PRE_OBSERVABLE_REQUIRES_SCALAR_MAP",
+      "ontology_version": "BHSM-AE2-ONTOLOGY-1.0.0",
+      "physical_meaning": "Action-weighted pair plus retained contact response; not a bare eigenvalue.",
+      "provenance": [
+        "artifacts/flagship_integration/BHSM_N12_FORWARD_GAUGE_WEYL_READOUT_FAMILY.json",
+        "artifacts/flagship_integration/BHSM_N12_FORWARD_E1_SOURCE_MEASURE_CRITERION.json"
+      ],
+      "semantic_layer": "OBSERVABLE_REPRESENTATION",
+      "source_weighting_required": true,
+      "superseded_meanings": [],
+      "tests": [
+        "test_required_fields"
+      ]
+    },
+    {
+      "action_version": "BHSM-AE-2.0.0",
+      "artifact_hashes": {
+        "artifacts/flagship_integration/BHSM_N12_FORWARD_E1_SOURCE_MEASURE_CRITERION.json": "E6976D1A49B536044FC2B7A1B25DB3B422F2ED8A9DEBF05DBFDEDD2544A0D9D8"
+      },
+      "canonical_id": "E1_FIRST_VARIATION",
+      "current_status": "CURRENT",
+      "dimensions": "DIMENSIONLESS_OR_OPERATOR_TYPED",
+      "domain": "zero-source AE2 maximal forward reference history",
+      "downstream_consumers": [
+        "ZERO_SOURCE_FORCE",
+        "SAME_ACTION_SADDLE"
+      ],
+      "equivalent_forms": [],
+      "forbidden_interpretations": [
+        "absolute determinant is required",
+        "unweighted density is the E1 measure"
+      ],
+      "formula": "E1=D_Phi Gamma_Q[deltaPhi]",
+      "frozen_output_status": "NOT_FROZEN_OUTPUT",
+      "mathematical_class": "SOURCE_CONTRACTED_FIRST_VARIATION",
+      "observable_status": "NOT_AN_OBSERVABLE",
+      "ontology_version": "BHSM-AE2-ONTOLOGY-1.0.0",
+      "physical_meaning": "First physical source/geometry variation, not an absolute infinite-volume determinant.",
+      "provenance": [
+        "artifacts/flagship_integration/BHSM_N12_FORWARD_E1_SOURCE_MEASURE_CRITERION.json"
+      ],
+      "semantic_layer": "BHSM_ONTOLOGY",
+      "source_weighting_required": true,
+      "superseded_meanings": [],
+      "tests": [
+        "test_required_fields"
+      ]
+    },
+    {
+      "action_version": "BHSM-AE-2.0.0",
+      "artifact_hashes": {
+        "artifacts/flagship_integration/BHSM_N12_FORWARD_E1_SOURCE_MEASURE_CRITERION.json": "E6976D1A49B536044FC2B7A1B25DB3B422F2ED8A9DEBF05DBFDEDD2544A0D9D8",
+        "artifacts/flagship_integration/BHSM_N12_GATE7_AE2_FACTORIZED_THRESHOLD_RECLASSIFICATION.json": "DBDFBF1A3D86BE5E2F93B126E92EF1BA0023D3771E6DCC5824EE0634A38546E1"
+      },
+      "canonical_id": "SOURCE_WEIGHTED_THRESHOLD_MEASURE",
+      "current_status": "HIGHEST_UPSTREAM_OPEN_THEOREM",
+      "dimensions": "DIMENSIONLESS_OR_OPERATOR_TYPED",
+      "domain": "each realized factorized AE2 Weyl channel near lambda=0",
+      "downstream_consumers": [
+        "E1_SOURCE_MEASURE_FINITE",
+        "HIGH_ENERGY_ANGULAR_TAIL"
+      ],
+      "equivalent_forms": [
+        "|<psi_k,D_x mathcal_K_C psi_k>|<=C*k^2 with 1D counting",
+        "O(Lambda^(3/2)) witness"
+      ],
+      "forbidden_interpretations": [
+        "strict spectral gap is necessary",
+        "zero resonance automatically diverges"
+      ],
+      "formula": "|nu_h|([0,Lambda])<=C_h*Lambda^(1+epsilon_h), epsilon_h>0",
+      "frozen_output_status": "NOT_FROZEN_OUTPUT",
+      "mathematical_class": "SOURCE_CONTRACTED_SPECTRAL_MEASURE_BOUND",
+      "observable_status": "NOT_AN_OBSERVABLE",
+      "ontology_version": "BHSM-AE2-ONTOLOGY-1.0.0",
+      "physical_meaning": "Weakest current infrared criterion sufficient for E1 finiteness.",
+      "provenance": [
+        "artifacts/flagship_integration/BHSM_N12_FORWARD_E1_SOURCE_MEASURE_CRITERION.json",
+        "artifacts/flagship_integration/BHSM_N12_GATE7_AE2_FACTORIZED_THRESHOLD_RECLASSIFICATION.json"
+      ],
+      "semantic_layer": "BHSM_ONTOLOGY",
+      "source_weighting_required": true,
+      "superseded_meanings": [],
+      "tests": [
+        "test_required_fields"
+      ]
+    },
+    {
+      "action_version": "BHSM-AE-2.0.0",
+      "artifact_hashes": {
+        "artifacts/flagship_integration/BHSM_N12_GATE7_AE2_NONFERMION_THRESHOLD_MARGIN.json": "A4E4C05991402FB74FC0C584B122EF887B4A89CCB7FAA6D85560E3934872E7D2"
+      },
+      "canonical_id": "NONFERMION_THRESHOLD_CLOSURE",
+      "current_status": "CLOSED_DO_NOT_REOPEN_WITHOUT_CONTRADICTION",
+      "dimensions": "DIMENSIONLESS_OR_OPERATOR_TYPED",
+      "domain": "certified AE2 nonfermion seam blocks",
+      "downstream_consumers": [
+        "FACTORIZED_WEYL_THRESHOLD"
+      ],
+      "equivalent_forms": [],
+      "forbidden_interpretations": [],
+      "formula": "nonfermion_zero_threshold_obstruction=closed",
+      "frozen_output_status": "NOT_FROZEN_OUTPUT",
+      "mathematical_class": "SECTORWISE_THRESHOLD_THEOREM",
+      "observable_status": "NOT_AN_OBSERVABLE",
+      "ontology_version": "BHSM-AE2-ONTOLOGY-1.0.0",
+      "physical_meaning": "Scalar/de Rham/ghost and transverse-gauge AE2 threshold obstruction is closed in theorem scope.",
+      "provenance": [
+        "artifacts/flagship_integration/BHSM_N12_GATE7_AE2_NONFERMION_THRESHOLD_MARGIN.json"
+      ],
+      "semantic_layer": "BHSM_ONTOLOGY",
+      "source_weighting_required": true,
+      "superseded_meanings": [],
+      "tests": [
+        "test_required_fields"
+      ]
+    }
+  ],
+  "schema": "BHSM_CURRENT_SEMANTIC_RECORD_V1",
+  "validation_passed": true
+}
