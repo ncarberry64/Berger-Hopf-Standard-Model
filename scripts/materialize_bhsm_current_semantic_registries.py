@@ -35,6 +35,7 @@ SOURCES = (
     "artifacts/flagship_integration/BHSM_N12_FINITE_ENDPOINT_ZERO_SOURCE_FORCE_FUNCTIONAL.json",
     "artifacts/flagship_integration/BHSM_N12_FINITE_HISTORY_FORCE_DOMAIN_AUDIT.json",
     "artifacts/flagship_integration/BHSM_N12_EVENT_NORMAL_WEYL_RICCATI.json",
+    "artifacts/flagship_integration/BHSM_N12_EVENT_NORMAL_TWO_SIDED_SEAM_CORRECTION.json",
     "artifacts/intrinsic_state_selection/BHSM_N12_FINITE_ENCAPSULATION_LOCAL_BRANCH.json",
     "artifacts/flagship_integration/BHSM_N12_GATE7_AE2_THRESHOLD_SUPERSESSION.json",
     "artifacts/BHSM_alpha_i_update_v4_2.json",
@@ -78,6 +79,7 @@ def verify_current_lineage() -> None:
     finite_force = loaded["artifacts/flagship_integration/BHSM_N12_FINITE_ENDPOINT_ZERO_SOURCE_FORCE_FUNCTIONAL.json"]
     force_domain = loaded["artifacts/flagship_integration/BHSM_N12_FINITE_HISTORY_FORCE_DOMAIN_AUDIT.json"]
     event_weyl = loaded["artifacts/flagship_integration/BHSM_N12_EVENT_NORMAL_WEYL_RICCATI.json"]
+    seam_correction = loaded["artifacts/flagship_integration/BHSM_N12_EVENT_NORMAL_TWO_SIDED_SEAM_CORRECTION.json"]
     frontier = loaded["artifacts/flagship_integration/BHSM_N12_GATE7_AE2_THRESHOLD_SUPERSESSION.json"]
     if ae2.get("action_version") != "BHSM-AE-2.0.0":
         raise RuntimeError("AE2 action version mismatch")
@@ -147,9 +149,16 @@ def verify_current_lineage() -> None:
         raise RuntimeError("an arbitrary force-domain cutoff was restored")
     if not (
         event_weyl["claim_boundary"]["event_normal_Weyl_initial_condition"] == "DERIVED"
-        and event_weyl["claim_boundary"]["actual_N12_exterior_Weyl_value_and_jet"] == "OPEN"
+        and seam_correction["supersession"]["superseded_claim"]
+        == "M(0,z)=W_phys_AS_THE_PHYSICAL_AE2_EVENT_INITIAL_VALUE"
+        and seam_correction["claim_boundary"]["physical_AE2_event_initial_value"]
+        == "OPEN"
+        and seam_correction["claim_boundary"][
+            "child_arm_Calderon_value_and_geometry_jets"
+        ]
+        == "OPEN"
     ):
-        raise RuntimeError("event-normal Weyl continuation is not the current force frontier")
+        raise RuntimeError("two-sided AE2 Calderon seam is not the current force frontier")
 
 
 def materialize() -> list[Path]:

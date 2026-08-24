@@ -6,6 +6,7 @@
     "artifacts/BHSM_alpha_i_update_v4_2.json": "6DCBE29A734C54FFB2B567E48C90B1AA531BD9A10F46CD2F7C433B937ED86416",
     "artifacts/BHSM_rho_ch_action_audit_v1_9.json": "24D863B79D9ECDE9137BD7B25DAE00442F5FBF25BF1DC99738E46C5353D8D7CB",
     "artifacts/action_extension/BHSM_ACTION_AE2_GLOBAL_SPIN_RESET_ACTION.json": "4C756145A9E303F6E4F7F9536CF5639957D010C1A97AF6BE9299830C549B82DC",
+    "artifacts/flagship_integration/BHSM_N12_EVENT_NORMAL_TWO_SIDED_SEAM_CORRECTION.json": "D575E60A442C19CE0EE34EDBB8BBAC1D90A8895D46D6ACE16317BFBD2CBE894F",
     "artifacts/flagship_integration/BHSM_N12_EVENT_NORMAL_WEYL_RICCATI.json": "40232FD566213EA7A97B1C34AB73432A9E8F02BEAEC37FFC8E4537ACDE1C38FF",
     "artifacts/flagship_integration/BHSM_N12_FINITE_ENDPOINT_ZERO_SOURCE_FORCE_FUNCTIONAL.json": "6BC1FC78190437347813117A63D252C96115B2B67619D893144526A5DDD4E931",
     "artifacts/flagship_integration/BHSM_N12_FINITE_HISTORY_FORCE_DOMAIN_AUDIT.json": "827A30D38BBB0920C8577DAA586E621845F3BE928774214374FCED9E2171E227",
@@ -347,6 +348,40 @@
       "source_weighting_required": false,
       "superseded_meanings": [
         "local energy=m_phys"
+      ],
+      "tests": [
+        "test_required_fields"
+      ]
+    },
+    {
+      "action_version": "BHSM-AE-2.0.0",
+      "artifact_hashes": {
+        "artifacts/flagship_integration/BHSM_N12_EVENT_NORMAL_TWO_SIDED_SEAM_CORRECTION.json": "D575E60A442C19CE0EE34EDBB8BBAC1D90A8895D46D6ACE16317BFBD2CBE894F"
+      },
+      "canonical_id": "DEPRECATE_W_ONLY_EVENT_INITIALIZATION",
+      "current_status": "SUPERSEDED_BY_TWO_SIDED_AE2_SEAM",
+      "dimensions": "DIMENSIONLESS_OR_OPERATOR_TYPED",
+      "domain": "physical AE2 finite event-child operator",
+      "downstream_consumers": [
+        "G7_08_FORCE"
+      ],
+      "equivalent_forms": [],
+      "forbidden_interpretations": [
+        "W_phys=0 implies zero child Calderon response"
+      ],
+      "formula": "M(0,z)=W_phys as the physical AE2 event datum",
+      "frozen_output_status": "NOT_FROZEN_OUTPUT",
+      "mathematical_class": "DEPRECATION_RECORD",
+      "observable_status": "NOT_AN_OBSERVABLE",
+      "ontology_version": "BHSM-AE2-ONTOLOGY-1.0.0",
+      "physical_meaning": "Use U_R^dagger*M_child(z)*U_R+W_phys after opposite-arm elimination, or solve the joint two-sided seam.",
+      "provenance": [
+        "artifacts/flagship_integration/BHSM_N12_EVENT_NORMAL_TWO_SIDED_SEAM_CORRECTION.json"
+      ],
+      "semantic_layer": "MATHEMATICAL_OBJECT",
+      "source_weighting_required": false,
+      "superseded_meanings": [
+        "one-sided W-only terminal wall"
       ],
       "tests": [
         "test_required_fields"

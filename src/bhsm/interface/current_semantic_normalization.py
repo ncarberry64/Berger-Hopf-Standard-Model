@@ -95,6 +95,7 @@ def _basis() -> list[dict[str, Any]]:
     p_proper = "artifacts/flagship_integration/BHSM_N12_FORWARD_PROPER_TIME_FORM_OWNERSHIP.json"
     p_fixed = "artifacts/flagship_integration/BHSM_N12_FORWARD_FIXED_CHANNEL_TRANSFER.json"
     p_weyl = "artifacts/flagship_integration/BHSM_N12_FORWARD_GAUGE_WEYL_READOUT_FAMILY.json"
+    p_seam = "artifacts/flagship_integration/BHSM_N12_EVENT_NORMAL_TWO_SIDED_SEAM_CORRECTION.json"
     p_e1 = "artifacts/flagship_integration/BHSM_N12_FORWARD_E1_SOURCE_MEASURE_CRITERION.json"
     p_nf = "artifacts/flagship_integration/BHSM_N12_GATE7_AE2_NONFERMION_THRESHOLD_MARGIN.json"
     p_fac = "artifacts/flagship_integration/BHSM_N12_GATE7_AE2_COMPACT_SOURCE_DINI_CLOSURE.json"
@@ -197,6 +198,19 @@ def _basis() -> list[dict[str, Any]]:
             "fixed channel maximal forward domain",
             [p_weyl, p_fixed],
             equivalent_forms=["channel admittance m_j(z)", "Mobius-pulled far-end admittance"],
+            downstream_consumers=["SOURCE_RESPONSE", "ZERO_SOURCE_FORCE"],
+        ),
+        record(
+            "AE2_SEAM_OPERATOR",
+            "S_AE2(z)=M_event(z)+U_R^dagger*M_child(z)*U_R+W_phys",
+            "TWO_SIDED_CALDERON_WENTZELL_SEAM",
+            "MATHEMATICAL_OBJECT",
+            "Physical AE2 event-child response; neither arm may be omitted from the force domain.",
+            "finite encapsulation event glued immediately to child decay/evolution",
+            [p_ae2, p_weyl, p_seam],
+            current_status="OPEN_CHILD_ARM_VALUE_AND_GEOMETRY_JETS",
+            equivalent_forms=["B_event=U_R^dagger*M_child*U_R+W_phys after child-arm elimination"],
+            forbidden_interpretations=["M(0,z)=W_phys alone is the physical AE2 seam datum", "W_phys=0 implies zero child response"],
             downstream_consumers=["SOURCE_RESPONSE", "ZERO_SOURCE_FORCE"],
         ),
         record(
@@ -337,6 +351,7 @@ def _equivalences() -> list[dict[str, Any]]:
 
 def _deprecations() -> list[dict[str, Any]]:
     source = "artifacts/flagship_integration/BHSM_N12_GATE7_AE2_THRESHOLD_SUPERSESSION.json"
+    seam_source = "artifacts/flagship_integration/BHSM_N12_EVENT_NORMAL_TWO_SIDED_SEAM_CORRECTION.json"
     rows = [
         ("DEPRECATE_STRICT_GAP", "strict universal threshold gap", "SUPERSEDED_AS_NECESSARY", "source-weighted threshold measure"),
         ("DEPRECATE_ZERO_RESONANCE_DIVERGENCE", "zero resonance => infrared divergence", "FALSE_IN_GENERAL", "source vertex determines weighted response"),
@@ -354,6 +369,20 @@ def _deprecations() -> list[dict[str, Any]]:
                "current AE2/Gate7", [source], current_status=status,
                superseded_meanings=[old], forbidden_interpretations=[old])
         for cid, old, status, replacement in rows
+    ] + [
+        record(
+            "DEPRECATE_W_ONLY_EVENT_INITIALIZATION",
+            "M(0,z)=W_phys as the physical AE2 event datum",
+            "DEPRECATION_RECORD",
+            "MATHEMATICAL_OBJECT",
+            "Use U_R^dagger*M_child(z)*U_R+W_phys after opposite-arm elimination, or solve the joint two-sided seam.",
+            "physical AE2 finite event-child operator",
+            [seam_source],
+            current_status="SUPERSEDED_BY_TWO_SIDED_AE2_SEAM",
+            superseded_meanings=["one-sided W-only terminal wall"],
+            forbidden_interpretations=["W_phys=0 implies zero child Calderon response"],
+            downstream_consumers=["G7_08_FORCE"],
+        )
     ]
 
 
@@ -434,7 +463,7 @@ GATE_CHAIN = [
     ("G7_05_FACTORIZED_LAP", "all admissible positive far tails source-Dini by compact Volterra trace-class theorem", "CLOSED"),
     ("G7_06_E1_FINITE", "fixed-channel E1 source-measure finiteness", "CLOSED"),
     ("G7_07_ANGULAR_TAIL", "finite-endpoint compact-resolvent/source-trace control on the realized finite-encapsulation domain; infinite nonencapsulating tails remain nonrealized mathematical histories", "CLOSED_BY_OWNER_PHYSICAL_SCOPE_AND_LOCAL_ACTION_EXISTENCE"),
-    ("G7_08_FORCE", "heat-minus-zeta force functional and event-normal Weyl/Riccati initial system derived; certify the pole-free N12 coefficient and geometry-jet continuation", "OPEN_CURRENT_OWNER"),
+    ("G7_08_FORCE", "heat-minus-zeta force functional derived; construct the two-sided AE2 event-child Calderon value and full geometry/reset-lift jets before conditional Riccati transfer", "OPEN_CURRENT_OWNER"),
     ("G7_09_SADDLE", "same-action saddle", "PENDING"),
     ("G7_10_HESSIAN", "pair-plus-contact Hessian", "PENDING"),
     ("G7_11_WARD_TRACE", "Ward/BRST and source-contracted relative trace", "PENDING"),
@@ -452,7 +481,7 @@ def _gates() -> list[dict[str, Any]]:
         "G7_05_FACTORIZED_LAP": "artifacts/flagship_integration/BHSM_N12_GATE7_AE2_COMPACT_SOURCE_DINI_CLOSURE.json",
         "G7_06_E1_FINITE": "artifacts/flagship_integration/BHSM_N12_GATE7_AE2_COMPACT_SOURCE_DINI_CLOSURE.json",
         "G7_07_ANGULAR_TAIL": "artifacts/flagship_integration/BHSM_N12_GATE7_FINITE_ENCAPSULATION_PHYSICAL_DOMAIN_AUDIT.json",
-        "G7_08_FORCE": "artifacts/flagship_integration/BHSM_N12_EVENT_NORMAL_WEYL_RICCATI.json",
+        "G7_08_FORCE": "artifacts/flagship_integration/BHSM_N12_EVENT_NORMAL_TWO_SIDED_SEAM_CORRECTION.json",
     }
     fallback = "artifacts/flagship_integration/BHSM_N12_GATE7_AE2_THRESHOLD_SUPERSESSION.json"
     rows = []

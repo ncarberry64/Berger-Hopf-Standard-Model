@@ -279,13 +279,18 @@
   is the action-owned finite-history operator/geometry-jet realization, with
   reset-fiber variables solved jointly at the same-action saddle or removed
   by a separately proved force-invariance theorem.
-- The finite event graph now fixes the exterior Weyl initial value
-  `M(0,z)=W_phys`.  Inward event-normal continuation obeys
-  `D_s M=L_spatial(Y(s))-zI-M^2`; its exact geometry jet obeys
-  `D_s(delta M)=delta L-M delta M-delta M M`.  The scalar closed-form and
-  centered geometry finite-difference checks pass.  The current dependency
-  is the pole-free N12 coefficient/jet pullback and interval Riccati
-  enclosure, not a hand-selected Robin or validation-cover endpoint.
+- The event-normal identities
+  `D_s M=L_spatial(Y(s))-zI-M^2` and
+  `D_s(delta M)=delta L-M delta M-delta M M` remain exact arm-transfer
+  equations.  The physical AE2 event is a two-sided seam, however, with
+  `S_AE2=M_event+U_R^dagger M_child U_R+W_phys`.  Therefore the earlier
+  initialization `M(0,z)=W_phys` is superseded: after child-arm elimination
+  the effective datum is `U_R^dagger M_child U_R+W_phys`, including the
+  derivatives of `M_child`, `U_R`, and `W_phys`.  For AE2 fermions
+  `W_phys=0` does not make the child response zero.  The current dependency
+  is the child-arm Calderon value and full geometry/reset-lift jets, or the
+  equivalent joint two-sided finite-history operator, not a hand-selected
+  Robin or validation-cover endpoint.
 - Component-restricted finite branch: the ordered-event transport is exactly
   `D_t e_ord=G0+<alpha,D^(-1)b>`, with selected pole plus hard exterior
   remainder. Uniform action scaling assigns both the pole and remainder

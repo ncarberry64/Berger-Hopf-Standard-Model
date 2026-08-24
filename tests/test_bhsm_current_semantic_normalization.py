@@ -105,3 +105,23 @@ def test_source_dini_is_canonical_and_strict_power_excess_is_not_compulsory() ->
         if row["canonical_id"] == "DEPRECATE_STRICT_POWER_EXCESS"
     )
     assert deprecation["current_status"] == "SUFFICIENT_NOT_NECESSARY_AFTER_CRITICAL_BESSEL_THEOREM"
+
+
+def test_one_sided_w_only_event_initialization_is_superseded() -> None:
+    registries = _load()
+    basis = {
+        row["canonical_id"]: row
+        for row in registries["BHSM_CURRENT_MATHEMATICAL_BASIS.json"]["records"]
+    }
+    seam = basis["AE2_SEAM_OPERATOR"]
+    assert seam["formula"] == (
+        "S_AE2(z)=M_event(z)+U_R^dagger*M_child(z)*U_R+W_phys"
+    )
+    assert seam["current_status"] == "OPEN_CHILD_ARM_VALUE_AND_GEOMETRY_JETS"
+    deprecations = {
+        row["canonical_id"]: row
+        for row in registries["BHSM_FORMULA_DEPRECATION_LEDGER.json"]["records"]
+    }
+    assert deprecations["DEPRECATE_W_ONLY_EVENT_INITIALIZATION"][
+        "current_status"
+    ] == "SUPERSEDED_BY_TWO_SIDED_AE2_SEAM"
