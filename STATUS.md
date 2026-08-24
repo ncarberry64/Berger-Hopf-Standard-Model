@@ -101,11 +101,17 @@ The proof uses the action-owned factorization `A_lambda^* A_lambda`, a
 piecewise-linear Dirichlet trial, and relative-form coercivity; it does not
 expand the operator into an `s'` potential. Both scalar/de Rham and
 product-Dirac channel families therefore have broad parametric bounds at
-`z=-1`. Combining them with pair/contact incidence and the certified spatial
-tail is still open.
+`z=-1`. The certified continuum child tail cannot close their angular sum:
+it controls the cohomogeneity-one event/child action-graph correction, whereas
+the source Hessian is indexed by internal `S3` Dirac/de Rham levels and carrier
+sectors. The authoritative rank-16, de Rham, and gauge-ownership artifacts
+explicitly leave source-level convergence and its continuum/relative-trace
+bound open. Combining the channel bounds with pair/contact incidence therefore
+requires a new theorem in that already retained source domain, not a relabeling
+of the child tail.
 
 `FULL_BHSM_COMPLETE = FALSE`. Exact next object:
-`COMBINE_THE_PARAMETRIC_SCALAR_DERHAM_AND_PRODUCT_DIRAC_POISSON_BOUNDS_WITH_THE_ACTION_OWNED_COMMON_PAIR_CONTACT_INCIDENCE_AND_CERTIFIED_SPATIAL_GALERKIN_TAIL;_ASSEMBLE_AND_ADJUDICATE_THE_ZERO_SOURCE_WEAK_GEOMETRY_FORCE_AT_z_MINUS_1`.
+`DERIVE_A_COMMON_SOURCE_ANGULAR_LEVEL_TAIL_OR_ACTION_OWNED_BRST_RELATIVE_TRACE_SUBTRACTION_BOUND_FOR_THE_PAIR_PLUS_CONTACT_HESSIAN_ON_THE_SAME_MAXIMAL_FORWARD_DOMAIN;_THEN_COMBINE_IT_WITH_THE_PER_CHANNEL_z_MINUS_1_POISSON_BOUNDS_AND_ASSEMBLE_THE_ZERO_SOURCE_WEAK_GEOMETRY_FORCE`.
 
 ## Prior N12 source-tail checkpoint (superseded)
 

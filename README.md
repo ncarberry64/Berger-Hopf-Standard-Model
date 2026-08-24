@@ -90,7 +90,11 @@ separate factorized-form estimate: a Dirichlet trial controls each base Weyl
 value and relative-form coercivity controls its core-supported weak jets,
 without fabricating the derivative of the Dirac superpotential. The channel
 bounds remain broad and have not yet been assembled with pair/contact
-incidence or the certified spatial tail.
+incidence. A provenance audit now shows that the certified spatial Galerkin
+tail belongs to the cohomogeneity-one event/child action-graph correction,
+not the distinct internal `S3` Dirac/de Rham/carrier level sum of the source
+Hessian. The rank-16 and non-Abelian source artifacts explicitly leave that
+angular tail open, so no cross-domain tail transfer is made.
 
 The matched-parent `Q_xi / Delta H` route remains unavailable because no
 action-owned parent-only restriction exists. No local energy, reset-chart
@@ -114,6 +118,7 @@ representative, or formal reflection may substitute for that missing object.
 | Fixed-channel transfer/Weyl variation equations | **DERIVED** |
 | Two-chord scalar/de Rham Weyl and core-supported weak jets at `z=-1` | **ENCLOSED BROADLY** |
 | Two-chord product-Dirac Weyl and core-supported weak jets at `z=-1` | **ENCLOSED BROADLY** |
+| Certified event/child spatial tail as Gate-7 source-Hessian tail | **NOT TRANSFERABLE; DISTINCT GALERKIN DOMAIN** |
 | Physical `R4` action projection and coordinate jets | **DERIVED** |
 | Local first/second Euler--Dirac Jacobi/radius tube | **CERTIFIED; MAXIMAL COVER OPEN** |
 | Finite regular pre-stop Jacobi/transfer cover | **AUTOMATIC BY COMPACTNESS** |
@@ -139,11 +144,12 @@ Evidence: [`continuum certificate`](artifacts/n12_continuum_majorant_effectivene
 [`compact-support Weyl variations`](artifacts/flagship_integration/BHSM_N12_FORWARD_COMPACT_SUPPORT_WEYL_VARIATIONS.json),
 [`two-chord scalar/de Rham Weyl enclosures`](artifacts/flagship_integration/BHSM_N12_FORWARD_TWO_CHORD_SCALAR_WEYL_ENCLOSURES.json),
 [`two-chord product-Dirac Weyl enclosures`](artifacts/flagship_integration/BHSM_N12_FORWARD_TWO_CHORD_PRODUCT_DIRAC_WEYL_ENCLOSURES.json),
+[`forward source-tail ownership audit`](artifacts/flagship_integration/BHSM_N12_FORWARD_SOURCE_TAIL_OWNERSHIP_AUDIT.json),
 and [`post-parent observable audit`](artifacts/qxi_relative_energy_preparation/BHSM_POST_PARENT_FLAGSHIP_OBSERVABLE_GATE.json).
 
 Exact next object:
 
-`COMBINE_THE_PARAMETRIC_SCALAR_DERHAM_AND_PRODUCT_DIRAC_POISSON_BOUNDS_WITH_THE_ACTION_OWNED_COMMON_PAIR_CONTACT_INCIDENCE_AND_CERTIFIED_SPATIAL_GALERKIN_TAIL;_ASSEMBLE_AND_ADJUDICATE_THE_ZERO_SOURCE_WEAK_GEOMETRY_FORCE_AT_z_MINUS_1`
+`DERIVE_A_COMMON_SOURCE_ANGULAR_LEVEL_TAIL_OR_ACTION_OWNED_BRST_RELATIVE_TRACE_SUBTRACTION_BOUND_FOR_THE_PAIR_PLUS_CONTACT_HESSIAN_ON_THE_SAME_MAXIMAL_FORWARD_DOMAIN;_THEN_COMBINE_IT_WITH_THE_PER_CHANNEL_z_MINUS_1_POISSON_BOUNDS_AND_ASSEMBLE_THE_ZERO_SOURCE_WEAK_GEOMETRY_FORCE`
 
 ## Prior N12 source-tail checkpoint (superseded by the continuum certificate above)
 

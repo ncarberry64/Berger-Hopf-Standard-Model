@@ -86,11 +86,15 @@
 - Product-Dirac base Weyl values and first/mixed log-radius contractions
   supported inside the certified two-chord core:
   `ENCLOSED_BROADLY_BY_FACTORIZED_DIRICHLET_TRIAL_AND_RELATIVE_FORM_BOUNDS`.
-- Common pair/contact terms and certified spatial-tail assembly: `OPEN`.
+- Certified continuum spatial Galerkin tail:
+  `TRUE_FOR_COHOMOGENEITY_ONE_EVENT_CHILD_ACTION_GRAPH_CORRECTION`.
+- That child tail as a Gate-7 internal `S3` source-Hessian angular tail:
+  `INVALID_DOMAIN_AND_OPERATOR_MISMATCH_WITH_NO_TRANSFER_THEOREM`.
+- Common pair/contact source-level tail or BRST relative-trace bound: `OPEN`.
 - Zero-source force, same-action saddle, physical pair-plus-contact Hessian,
   Ward/BRST closure, and basis-independent scalar observable map: `OPEN`.
 - Exact next flagship dependency:
-  `COMBINE_THE_PARAMETRIC_SCALAR_DERHAM_AND_PRODUCT_DIRAC_POISSON_BOUNDS_WITH_THE_ACTION_OWNED_COMMON_PAIR_CONTACT_INCIDENCE_AND_CERTIFIED_SPATIAL_GALERKIN_TAIL;_ASSEMBLE_AND_ADJUDICATE_THE_ZERO_SOURCE_WEAK_GEOMETRY_FORCE_AT_z_MINUS_1`.
+  `DERIVE_A_COMMON_SOURCE_ANGULAR_LEVEL_TAIL_OR_ACTION_OWNED_BRST_RELATIVE_TRACE_SUBTRACTION_BOUND_FOR_THE_PAIR_PLUS_CONTACT_HESSIAN_ON_THE_SAME_MAXIMAL_FORWARD_DOMAIN;_THEN_COMBINE_IT_WITH_THE_PER_CHANNEL_z_MINUS_1_POISSON_BOUNDS_AND_ASSEMBLE_THE_ZERO_SOURCE_WEAK_GEOMETRY_FORCE`.
 
 ## Prior N12 dynamic-Calderon continuum gates (superseded)
 
