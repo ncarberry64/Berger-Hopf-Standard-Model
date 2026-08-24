@@ -201,6 +201,19 @@
   not yet proved sufficient for arbitrary nonasymptotic tails. The current
   owner is a quantitative optical-complete angular barrier theorem, an
   already action-owned relative trace, or the retained finite endpoint branch.
+- Conditional non-power angular sufficient class:
+  `0<=D_tau R4<=v<infinity` after the compact source gives
+  `R4<=R_L+v(tau-L)` and Agmon action
+  `A_plus,mu(k)>=(sqrt(3)mu/(2v))log(mu/(2kR_L))`; negative chirality obeys
+  `A_minus,mu(k)>=(mu/(2v))log(mu/(2kR_L))` for `mu>=2v`. Their `mu log(mu)` decay beats
+  the retained local `exp(C mu)mu^d` growth and quadratic Weyl degeneracy.
+  The bounded-radius case is the already-gapped limit. No exact power law or
+  regular variation is assumed.
+- Current angular owner after that theorem:
+  derive the eventual action-owned bound `0<=D_tau R4<=v` on the actual
+  infinite regular history, use the finite event/canonical-stop branch, or
+  derive an already action-owned forward relative trace. The retained action
+  has not yet supplied the global radius-speed bound.
 - Retained transverse-gauge normal boundary quadratic form:
   `ACTION_DERIVED_BY_v15_66`.
 - Retained normal matter junction action: `ZERO_BY_v15_13`; this does not

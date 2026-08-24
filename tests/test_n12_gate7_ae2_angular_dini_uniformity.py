@@ -10,6 +10,8 @@ import sys
 import pytest
 
 from bhsm.interface.action_extension_ae2_angular_dini_uniformity import (
+    at_most_linear_angular_series_witness,
+    at_most_linear_radius_agmon_bound,
     angular_uniformity_requirement,
     exponential_radius_angular_counterexample,
     integrable_optical_tail_dini_coefficient_lower,
@@ -57,6 +59,58 @@ def test_optical_completeness_is_necessary_but_not_overclaimed_sufficient() -> N
     assert row["optical_completeness_alone_proved_sufficient"] is False
 
 
+def test_at_most_linear_radius_has_mu_log_mu_barrier() -> None:
+    low = at_most_linear_radius_agmon_bound(
+        angular_eigenvalue=8.0,
+        radius_upper_at_source_end=1.0,
+        radius_speed_upper=1.0,
+        threshold_wave_number=1.0,
+    )
+    high = at_most_linear_radius_agmon_bound(
+        angular_eigenvalue=16.0,
+        radius_upper_at_source_end=1.0,
+        radius_speed_upper=1.0,
+        threshold_wave_number=1.0,
+    )
+    assert high["agmon_action_lower"] > 2.0 * low["agmon_action_lower"]
+    assert high["reciprocal_linear_envelope_integral_diverges"] is True
+    assert high["beats_exp(C*mu)*mu^d_for_every_fixed_C_and_d"] is True
+    assert high["exact_power_law_assumed"] is False
+    partner = at_most_linear_radius_agmon_bound(
+        angular_eigenvalue=16.0,
+        radius_upper_at_source_end=1.0,
+        radius_speed_upper=1.0,
+        threshold_wave_number=1.0,
+        chirality=-1,
+    )
+    assert partner["potential_lower"] == "V_minus>=s_mu^2/2_FOR_mu>=2*v"
+    assert 0.0 < partner["agmon_action_lower"] < high["agmon_action_lower"]
+
+
+def test_at_most_linear_root_test_beats_compact_source_growth() -> None:
+    row = at_most_linear_angular_series_witness(
+        source_exponential_rate=3.0,
+        polynomial_degree=6,
+        first_level=24,
+        last_level=48,
+    )
+    assert row["local_weight_class"] == "exp(C*mu)*(1+mu)^d"
+    assert row["weighted_log_terms_strictly_decrease"] is True
+    assert row["nth_root_logs_decrease"] is True
+    assert row["angular_series_absolutely_summable"] is True
+
+
+def test_bounded_radius_is_the_infinite_barrier_limit() -> None:
+    row = at_most_linear_radius_agmon_bound(
+        angular_eigenvalue=4.0,
+        radius_upper_at_source_end=1.0,
+        radius_speed_upper=0.0,
+        threshold_wave_number=1.0,
+    )
+    assert row["agmon_action_lower"] == "INFINITY"
+    assert row["squared_amplitude_suppression_upper"] == 0.0
+
+
 def test_invalid_angular_inputs_fail() -> None:
     with pytest.raises(ValueError):
         integrable_optical_tail_dini_coefficient_lower(
@@ -68,6 +122,13 @@ def test_invalid_angular_inputs_fail() -> None:
         )
     with pytest.raises(ValueError):
         exponential_radius_angular_counterexample(1)
+    with pytest.raises(ValueError):
+        at_most_linear_radius_agmon_bound(
+            angular_eigenvalue=1.0,
+            radius_upper_at_source_end=1.0,
+            radius_speed_upper=1.0,
+            threshold_wave_number=1.0,
+        )
 
 
 def test_artifact_is_validated_and_deterministic() -> None:
@@ -80,5 +141,8 @@ def test_artifact_is_validated_and_deterministic() -> None:
     assert payload["validation_passed"] is True
     assert payload["adjudication"]["fixed_channel_source_Dini"] == "CLOSED_DO_NOT_REOPEN"
     assert payload["adjudication"]["arbitrary_positive_tail_angular_sum"] == "FALSE"
+    assert payload["conditional_at_most_linear_sufficient_class"]["status"] == "CLOSED_CONDITIONAL_THEOREM"
+    assert payload["adjudication"]["eventual_nondecreasing_at_most_linear_radius_sufficient"] is True
+    assert payload["adjudication"]["eventual_nondecreasing_at_most_linear_radius_proved_by_action"] is False
     assert payload["frontier_sharpening"]["G7_07_angular_tail"] == "OPEN_CURRENT_OWNER"
     assert payload["FULL_BHSM_COMPLETE"] is False

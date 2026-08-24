@@ -35,10 +35,44 @@ regular history.  The necessary geometric condition exposed here is
 `integral_0^infinity d_tau/R4(tau)=infinity`.
 
 This audit does not yet prove that optical completeness alone is sufficient
-for every positive nonasymptotic tail; a quantitative angular barrier estimate
-is still needed.  Nor does the current retained action prove optical
-completeness: the maximal-flow dichotomy selects no outcome and supplies no
-global `S2`, speed, or domain-margin bound.
+for every positive nonasymptotic tail.
+
+It does close a strictly weaker-than-power-law sufficient class.  Suppose
+that, after the compact source interval, the proper-time radius obeys
+
+`0 <= D_tau R4 <= v < infinity`.
+
+Then `R4(tau)<=R_L+v(tau-L)`, so the optical length diverges.  For positive
+chirality,
+
+`V_plus=s_mu^2-D_tau s_mu=s_mu^2+mu(D_tau R4)/R4^2 >= s_mu^2`.
+
+Until the linear envelope reaches `mu/(2k)`, one has `s_mu>=2k`.  The
+one-dimensional Agmon comparison therefore gives
+
+`A_plus,mu(k)>=(sqrt(3)mu/(2v))log(mu/(2kR_L))`.
+
+For negative chirality and `mu>=2v`,
+
+`V_minus=s_mu^2+D_tau s_mu>=s_mu^2/2`.
+
+On the same range `s_mu>=2k`, this gives the direct partner bound
+
+`A_minus,mu(k)>=(mu/(2v))log(mu/(2kR_L))`.
+
+The compact-source transfer and every retained finite-order vertex contribute
+at worst `exp(C_source mu)(1+mu)^d`.  The squared barrier factor is
+`exp(-2A_mu(k))`, whose root-test logarithm tends to minus infinity.  It thus
+beats the quadratic Weyl degeneracy, every fixed polynomial vertex loss, and
+every compact-source exponential `exp(C_source mu)` in both chiralities. A
+bounded radius (`v=0`) is the already-gapped limiting case. No exact power law
+or regular variation is assumed.
+
+This is a conditional angular-barrier theorem, not a theorem about the actual
+N12 history.  The current retained action still does not prove the eventual
+sign and upper bound `0<=D_tau R4<=v`: the maximal-flow dichotomy selects no
+outcome and supplies no global `S2`, speed, or domain-margin bound.  Gate 7
+therefore remains open at the action-to-radius-history edge.
 
 The other native route would be an already action-owned forward relative
 reference with a source-contracted relative trace-class theorem.  The current

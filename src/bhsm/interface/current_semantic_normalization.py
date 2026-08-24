@@ -428,7 +428,7 @@ GATE_CHAIN = [
     ("G7_04_NONFERMION", "nonfermionic threshold closure", "CLOSED"),
     ("G7_05_FACTORIZED_LAP", "all admissible positive far tails source-Dini by compact Volterra trace-class theorem", "CLOSED"),
     ("G7_06_E1_FINITE", "fixed-channel E1 source-measure finiteness", "CLOSED"),
-    ("G7_07_ANGULAR_TAIL", "prove optical-complete angular uniformity or an action-owned relative trace; finite optical length is excluded", "OPEN_CURRENT_OWNER"),
+    ("G7_07_ANGULAR_TAIL", "derive the actual eventual bound 0<=D_tau R4<=v, which closes the conditional angular barrier theorem, or derive an action-owned relative trace; finite optical length is excluded", "OPEN_CURRENT_OWNER"),
     ("G7_08_FORCE", "zero-source geometry force", "PENDING"),
     ("G7_09_SADDLE", "same-action saddle", "PENDING"),
     ("G7_10_HESSIAN", "pair-plus-contact Hessian", "PENDING"),

@@ -113,6 +113,13 @@ def verify_current_lineage() -> None:
         raise RuntimeError("angular audit reopened the fixed-channel theorem")
     if angular_dini["adjudication"]["arbitrary_positive_tail_angular_sum"] != "FALSE":
         raise RuntimeError("angular audit did not retain its exact counterexample")
+    if angular_dini["conditional_at_most_linear_sufficient_class"]["status"] != "CLOSED_CONDITIONAL_THEOREM":
+        raise RuntimeError("at-most-linear angular barrier theorem is not closed conditionally")
+    if not (
+        angular_dini["adjudication"]["eventual_nondecreasing_at_most_linear_radius_sufficient"] is True
+        and angular_dini["adjudication"]["eventual_nondecreasing_at_most_linear_radius_proved_by_action"] is False
+    ):
+        raise RuntimeError("current angular owner is not the action-to-radius bound")
 
 
 def materialize() -> list[Path]:
