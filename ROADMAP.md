@@ -34,6 +34,11 @@
    by compactness. Prove relative-form `C1/C2` control, or an equivalent
    integrable fixed-channel Riccati variation bound, for every infinite regular
    Friedrichs end.
+   Compactly supported weak variations at such ends are now closed directly by
+   relative-form/resolvent identities. Evaluate or enclose their actual
+   fixed-channel Poisson contractions and the common pair/contact terms, then
+   assemble the zero-source weak force before addressing noncompact saddle
+   variations.
    Do not identify (z) with momentum squared.
 4. Evaluate the zero-source weak geometry force, solve and certify the
    same-action saddle if it is nonzero, evaluate the physical pair-plus-contact

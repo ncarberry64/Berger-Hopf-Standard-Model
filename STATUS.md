@@ -84,9 +84,14 @@ flow makes the trajectory image compact and gives finite `B_T` and positive
 Jacobi/radius/transfer cover automatically. Only the `C1/C2` Weyl limit at an
 infinite regular Friedrichs end still needs a global relative-form or
 integrable Riccati-variation estimate.
+For compactly supported weak geometry tests, the infinite-end `C1/C2` issue is
+also closed: the endpoint domain does not move, and the first/mixed Weyl
+derivatives are finite Poisson--form and Dirichlet-resolvent contractions at
+real `z<0`. This proves the variation formulas, not their actual maximal-
+history values or the zero-source force.
 
 `FULL_BHSM_COMPLETE = FALSE`. Exact next object:
-`PROVE_C1_C2_RELATIVE_FORM_CONTROL_OR_AN_EQUIVALENT_INTEGRABLE_FIXED_CHANNEL_RICCATI_TRANSFER_VARIATION_BOUND_AT_EVERY_INFINITE_REGULAR_FRIEDRICHS_END;_FINITE_REGULAR_PRESTOP_INTERVALS_REQUIRE_NO_ADDITIONAL_GLOBAL_COVER`.
+`EVALUATE_OR_RIGOROUSLY_ENCLOSE_THE_FIXED_CHANNEL_POISSON_WEYL_CONTRACTIONS_AND_COMMON_PAIR_CONTACT_TERMS_FOR_THE_ACTUAL_MAXIMAL_HISTORY_ON_A_NONEMPTY_NEGATIVE_z_REGION;_ASSEMBLE_THE_ZERO_SOURCE_WEAK_GEOMETRY_FORCE_BEFORE_ANY_GLOBAL_SADDLE_VARIATION`.
 
 ## Prior N12 source-tail checkpoint (superseded)
 

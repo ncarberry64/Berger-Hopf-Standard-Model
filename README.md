@@ -75,6 +75,11 @@ component a priori ball is not required on finite regular intervals: trajectory
 compactness and positive retained margins automatically give a finite
 recentring cover. The open exterior case is the first/second Weyl limit at an
 infinite regular Friedrichs end.
+For the compactly supported weak geometry variations that define the
+zero-source Euler--Lagrange force, even that infinite-end differentiability is
+now closed: the Friedrichs domain is fixed and negative-`z` coercivity gives
+the exact first/second Poisson--resolvent contractions. Their actual values
+and the assembled force remain open.
 
 The matched-parent `Q_xi / Delta H` route remains unavailable because no
 action-owned parent-only restriction exists. No local energy, reset-chart
@@ -99,6 +104,7 @@ representative, or formal reflection may substitute for that missing object.
 | Physical `R4` action projection and coordinate jets | **DERIVED** |
 | Local first/second Euler--Dirac Jacobi/radius tube | **CERTIFIED; MAXIMAL COVER OPEN** |
 | Finite regular pre-stop Jacobi/transfer cover | **AUTOMATIC BY COMPACTNESS** |
+| Infinite-Friedrichs compact-support Weyl `C1/C2` | **DERIVED; VALUES OPEN** |
 | `Q_xi / Delta H` | **OPEN -- matched-parent restriction absent** |
 | `FULL_BHSM_COMPLETE` | **FALSE** |
 
@@ -117,11 +123,12 @@ Evidence: [`continuum certificate`](artifacts/n12_continuum_majorant_effectivene
 [`boundary-radius action projection`](artifacts/flagship_integration/BHSM_N12_FORWARD_BOUNDARY_RADIUS_ACTION_PROJECTION.json),
 [`Euler--Dirac variation bounds`](artifacts/flagship_integration/BHSM_N12_FORWARD_EULER_DIRAC_VARIATION_BOUNDS.json),
 [`compact-interval recentering`](artifacts/flagship_integration/BHSM_N12_FORWARD_COMPACT_INTERVAL_RECENTERING.json),
+[`compact-support Weyl variations`](artifacts/flagship_integration/BHSM_N12_FORWARD_COMPACT_SUPPORT_WEYL_VARIATIONS.json),
 and [`post-parent observable audit`](artifacts/qxi_relative_energy_preparation/BHSM_POST_PARENT_FLAGSHIP_OBSERVABLE_GATE.json).
 
 Exact next object:
 
-`PROVE_C1_C2_RELATIVE_FORM_CONTROL_OR_AN_EQUIVALENT_INTEGRABLE_FIXED_CHANNEL_RICCATI_TRANSFER_VARIATION_BOUND_AT_EVERY_INFINITE_REGULAR_FRIEDRICHS_END;_FINITE_REGULAR_PRESTOP_INTERVALS_REQUIRE_NO_ADDITIONAL_GLOBAL_COVER`
+`EVALUATE_OR_RIGOROUSLY_ENCLOSE_THE_FIXED_CHANNEL_POISSON_WEYL_CONTRACTIONS_AND_COMMON_PAIR_CONTACT_TERMS_FOR_THE_ACTUAL_MAXIMAL_HISTORY_ON_A_NONEMPTY_NEGATIVE_z_REGION;_ASSEMBLE_THE_ZERO_SOURCE_WEAK_GEOMETRY_FORCE_BEFORE_ANY_GLOBAL_SADDLE_VARIATION`
 
 ## Prior N12 source-tail checkpoint (superseded by the continuum certificate above)
 

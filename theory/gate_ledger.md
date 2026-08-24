@@ -76,11 +76,15 @@
 - Finite regular pre-stop state-Jacobi/radius/transfer recentering cover:
   `AUTOMATIC_BY_TRAJECTORY_COMPACTNESS_AND_POSITIVE_EXISTING_MARGINS`.
 - Infinite regular Friedrichs-end Weyl `C1/C2` limit and regular chart
-  enclosure: `OPEN`.
+  enclosure for general noncompact variations: `OPEN_IF_REQUIRED_BY_SADDLE`.
+- Infinite-Friedrichs compact-support weak Weyl first/mixed variations:
+  `DERIVED_BY_RELATIVE_FORM_AND_DIRICHLET_RESOLVENT_IDENTITIES`.
+- Actual fixed-channel Poisson/Weyl contraction values and common pair/contact
+  terms on a negative-`z` region: `OPEN`.
 - Zero-source force, same-action saddle, physical pair-plus-contact Hessian,
   Ward/BRST closure, and basis-independent scalar observable map: `OPEN`.
 - Exact next flagship dependency:
-  `PROVE_C1_C2_RELATIVE_FORM_CONTROL_OR_AN_EQUIVALENT_INTEGRABLE_FIXED_CHANNEL_RICCATI_TRANSFER_VARIATION_BOUND_AT_EVERY_INFINITE_REGULAR_FRIEDRICHS_END;_FINITE_REGULAR_PRESTOP_INTERVALS_REQUIRE_NO_ADDITIONAL_GLOBAL_COVER`.
+  `EVALUATE_OR_RIGOROUSLY_ENCLOSE_THE_FIXED_CHANNEL_POISSON_WEYL_CONTRACTIONS_AND_COMMON_PAIR_CONTACT_TERMS_FOR_THE_ACTUAL_MAXIMAL_HISTORY_ON_A_NONEMPTY_NEGATIVE_z_REGION;_ASSEMBLE_THE_ZERO_SOURCE_WEAK_GEOMETRY_FORCE_BEFORE_ANY_GLOBAL_SADDLE_VARIATION`.
 
 ## Prior N12 dynamic-Calderon continuum gates (superseded)
 
