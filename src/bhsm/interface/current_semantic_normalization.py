@@ -97,6 +97,7 @@ def _basis() -> list[dict[str, Any]]:
     p_weyl = "artifacts/flagship_integration/BHSM_N12_FORWARD_GAUGE_WEYL_READOUT_FAMILY.json"
     p_seam = "artifacts/flagship_integration/BHSM_N12_EVENT_NORMAL_TWO_SIDED_SEAM_CORRECTION.json"
     p_seam_enclosure = "artifacts/flagship_integration/BHSM_N12_AE2_COVARIANT_SEAM_ENCLOSURE_Z_MINUS_1.json"
+    p_seam_family = "artifacts/flagship_integration/BHSM_N12_AE2_NEGATIVE_AXIS_SEAM_FAMILY.json"
     p_e1 = "artifacts/flagship_integration/BHSM_N12_FORWARD_E1_SOURCE_MEASURE_CRITERION.json"
     p_nf = "artifacts/flagship_integration/BHSM_N12_GATE7_AE2_NONFERMION_THRESHOLD_MARGIN.json"
     p_fac = "artifacts/flagship_integration/BHSM_N12_GATE7_AE2_COMPACT_SOURCE_DINI_CLOSURE.json"
@@ -208,8 +209,8 @@ def _basis() -> list[dict[str, Any]]:
             "MATHEMATICAL_OBJECT",
             "Physical AE2 event-child response; neither arm may be omitted from the force domain.",
             "finite encapsulation event glued immediately to child decay/evolution",
-            [p_ae2, p_weyl, p_seam, p_seam_enclosure],
-            current_status="ENCLOSED_AT_Z_MINUS_1_COMPLETE_SPECTRAL_FAMILY_OPEN",
+            [p_ae2, p_weyl, p_seam, p_seam_enclosure, p_seam_family],
+            current_status="BROADLY_ENCLOSED_FULL_NEGATIVE_AXIS_ACTUAL_TRACE_OPEN",
             equivalent_forms=["B_event=U_R^dagger*M_child*U_R+W_phys after child-arm elimination"],
             forbidden_interpretations=["M(0,z)=W_phys alone is the physical AE2 seam datum", "W_phys=0 implies zero child response"],
             downstream_consumers=["SOURCE_RESPONSE", "ZERO_SOURCE_FORCE"],
@@ -464,7 +465,7 @@ GATE_CHAIN = [
     ("G7_05_FACTORIZED_LAP", "all admissible positive far tails source-Dini by compact Volterra trace-class theorem", "CLOSED"),
     ("G7_06_E1_FINITE", "fixed-channel E1 source-measure finiteness", "CLOSED"),
     ("G7_07_ANGULAR_TAIL", "finite-endpoint compact-resolvent/source-trace control on the realized finite-encapsulation domain; infinite nonencapsulating tails remain nonrealized mathematical histories", "CLOSED_BY_OWNER_PHYSICAL_SCOPE_AND_LOCAL_ACTION_EXISTENCE"),
-    ("G7_08_FORCE", "heat-minus-zeta force functional derived; two-sided covariant seam value and compact jets broadly enclosed at z=-1, complete heat spectral force oracle open", "OPEN_CURRENT_OWNER"),
+    ("G7_08_FORCE", "heat-minus-zeta force functional derived; two-sided covariant seam broadly enclosed on the full negative real resolvent axis, actual trace value/sign and reset-fiber saddle open", "OPEN_CURRENT_OWNER"),
     ("G7_09_SADDLE", "same-action saddle", "PENDING"),
     ("G7_10_HESSIAN", "pair-plus-contact Hessian", "PENDING"),
     ("G7_11_WARD_TRACE", "Ward/BRST and source-contracted relative trace", "PENDING"),
@@ -482,7 +483,7 @@ def _gates() -> list[dict[str, Any]]:
         "G7_05_FACTORIZED_LAP": "artifacts/flagship_integration/BHSM_N12_GATE7_AE2_COMPACT_SOURCE_DINI_CLOSURE.json",
         "G7_06_E1_FINITE": "artifacts/flagship_integration/BHSM_N12_GATE7_AE2_COMPACT_SOURCE_DINI_CLOSURE.json",
         "G7_07_ANGULAR_TAIL": "artifacts/flagship_integration/BHSM_N12_GATE7_FINITE_ENCAPSULATION_PHYSICAL_DOMAIN_AUDIT.json",
-        "G7_08_FORCE": "artifacts/flagship_integration/BHSM_N12_AE2_COVARIANT_SEAM_ENCLOSURE_Z_MINUS_1.json",
+        "G7_08_FORCE": "artifacts/flagship_integration/BHSM_N12_AE2_NEGATIVE_AXIS_SEAM_FAMILY.json",
     }
     fallback = "artifacts/flagship_integration/BHSM_N12_GATE7_AE2_THRESHOLD_SUPERSESSION.json"
     rows = []

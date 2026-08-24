@@ -118,7 +118,7 @@ def test_one_sided_w_only_event_initialization_is_superseded() -> None:
         "S_AE2(z)=M_event(z)+U_R^dagger*M_child(z)*U_R+W_phys"
     )
     assert seam["current_status"] == (
-        "ENCLOSED_AT_Z_MINUS_1_COMPLETE_SPECTRAL_FAMILY_OPEN"
+        "BROADLY_ENCLOSED_FULL_NEGATIVE_AXIS_ACTUAL_TRACE_OPEN"
     )
     deprecations = {
         row["canonical_id"]: row

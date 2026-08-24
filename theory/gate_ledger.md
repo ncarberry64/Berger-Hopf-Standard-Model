@@ -290,11 +290,16 @@
   `W_phys=0` does not make the child response zero.  The reset lift is
   covariantly parallel and its frame motion is absorbed into the pulled-back
   child-response jet; relative event-child orientation is not erased.  The
-  retained two-chord comparison theorems now give broad child-load and
-  compact first/mixed jet enclosures at the native probe `z=-1`.  The open
-  object is the complete spectral functional required by the heat force, or
-  the equivalent joint two-sided finite-history operator, not a hand-selected
-  Robin or validation-cover endpoint.
+  retained comparison theorems now give broad child-load and compact
+  first/mixed jet enclosures for every neutral negative probe
+  `z=-kappa^2`, `kappa>0`.  Optimizing the zero-extended product-Dirac trial
+  inside the certified core improves its high-probe load bound from the
+  fixed-core `O(kappa^2)` artifact to `O(kappa)`.  Low-energy source-Dini and
+  high-energy trace control remain closed, but the intervals are too broad to
+  determine the nonlinear heat trace or its reset-fiber dependence.  The open
+  object is an actual joint finite-history operator or a decisive
+  trace-functional enclosure, not a hand-selected Robin or validation-cover
+  endpoint.
 - Component-restricted finite branch: the ordered-event transport is exactly
   `D_t e_ord=G0+<alpha,D^(-1)b>`, with selected pole plus hard exterior
   remainder. Uniform action scaling assigns both the pole and remainder
