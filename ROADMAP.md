@@ -49,6 +49,11 @@
    of the maximal-forward Weyl/spectral family (or bound the heat semigroup
    directly). A single `z=-1` Weyl probe does not determine the retained
    functional.
+   Close the infrared end of that synthesis: certify a finite-endpoint
+   spectrum if an actual finite maximal outcome occurs, or prove low-energy
+   spectral-measure/relative-heat control on an infinite Friedrichs history.
+   The current comparison bounds diverge as `z` approaches zero and do not
+   supply this step.
    Do not identify (z) with momentum squared.
 4. Evaluate the zero-source weak geometry force, solve and certify the
    same-action saddle if it is nonzero, evaluate the physical pair-plus-contact
@@ -67,7 +72,7 @@
 `FULL_BHSM_COMPLETE = FALSE`.
 
 Exact next flagship object:
-`DERIVE_A_CONTROLLED_ACTION_OWNED_FUNCTIONAL_CALCULUS_SYNTHESIS_OF_THE_E1_HEAT_VARIATIONS_FROM_THE_MAXIMAL_FORWARD_WEYL_OR_SPECTRAL_FAMILY_TOGETHER_WITH_THE_COMMON_SOURCE_BRST_ANGULAR_RELATIVE_TRACE_TAIL;_THEN_ASSEMBLE_THE_ZERO_SOURCE_WEAK_FORCE`.
+`DERIVE_LOW_ENERGY_MAXIMAL_FORWARD_SPECTRAL_MEASURE_CONTROL_OR_AN_ACTION_OWNED_RELATIVE_HEAT_TRACE_CANCELLATION_SUFFICIENT_TO_INTEGRATE_THE_E1_FIRST_AND_SECOND_VARIATIONS;_KEEP_THE_ACTUAL_FINITE_ENDPOINT_OPERATOR_AS_THE_OPTIONAL_ALTERNATIVE`.
 
 ## Current corrected-Rayleigh N=3 critical path
 

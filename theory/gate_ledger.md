@@ -96,10 +96,15 @@
 - Scalar/de Rham and product-Dirac `z=-1` rows: `VALID_BROAD_WITNESSES_NOT_A_HEAT_FUNCTIONAL_SYNTHESIS`.
 - Controlled maximal-forward Weyl/spectral-to-heat functional calculus:
   `OPEN`.
+- Retained `E1` first multiplier near zero: `ASYMPTOTIC_TO_1_OVER_2lambda`.
+- Current scalar/de Rham and product-Dirac weak comparison bounds as
+  `z=-kappa^2` approaches zero: `DIVERGE_THROUGH_1_OVER_kappa_OR_kappa2_COERCIVITY_FACTORS`.
+- Uniform global positive source gap or low-energy maximal-forward spectral
+  measure control: `NOT_CERTIFIED`.
 - Zero-source force, same-action saddle, physical pair-plus-contact Hessian,
   Ward/BRST closure, and basis-independent scalar observable map: `OPEN`.
 - Exact next flagship dependency:
-  `DERIVE_A_CONTROLLED_ACTION_OWNED_FUNCTIONAL_CALCULUS_SYNTHESIS_OF_THE_E1_HEAT_VARIATIONS_FROM_THE_MAXIMAL_FORWARD_WEYL_OR_SPECTRAL_FAMILY_TOGETHER_WITH_THE_COMMON_SOURCE_BRST_ANGULAR_RELATIVE_TRACE_TAIL;_THEN_ASSEMBLE_THE_ZERO_SOURCE_WEAK_FORCE`.
+  `DERIVE_LOW_ENERGY_MAXIMAL_FORWARD_SPECTRAL_MEASURE_CONTROL_OR_AN_ACTION_OWNED_RELATIVE_HEAT_TRACE_CANCELLATION_SUFFICIENT_TO_INTEGRATE_THE_E1_FIRST_AND_SECOND_VARIATIONS;_KEEP_THE_ACTUAL_FINITE_ENDPOINT_OPERATOR_AS_THE_OPTIONAL_ALTERNATIVE`.
 
 ## Prior N12 dynamic-Calderon continuum gates (superseded)
 

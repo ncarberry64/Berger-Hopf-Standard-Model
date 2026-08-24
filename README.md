@@ -101,6 +101,12 @@ An exact positive-matrix counterexample now proves that equal birth Weyl data
 at `z=-1` can coexist with different regulated heat functionals. Thus the
 per-channel `z=-1` intervals remain valid but require a controlled
 Weyl/spectral-to-heat synthesis before they can enter the zero-source force.
+That synthesis has an explicit infrared obligation: the retained first
+multiplier behaves as `1/(2 lambda)` near zero, while the present Poisson
+variation bounds grow as `z` approaches zero from below. No uniform global
+source gap or low-energy spectral-measure bound is certified. A finite actual
+maximal endpoint can still supply a finite-interval spectral route; an
+infinite Friedrichs history requires relative-heat or low-energy control.
 
 The matched-parent `Q_xi / Delta H` route remains unavailable because no
 action-owned parent-only restriction exists. No local energy, reset-chart
@@ -126,6 +132,7 @@ representative, or formal reflection may substitute for that missing object.
 | Two-chord product-Dirac Weyl and core-supported weak jets at `z=-1` | **ENCLOSED BROADLY** |
 | Certified event/child spatial tail as Gate-7 source-Hessian tail | **NOT TRANSFERABLE; DISTINCT GALERKIN DOMAIN** |
 | Single `z=-1` Weyl probe as retained `E1` heat functional | **INSUFFICIENT BY EXACT COUNTEREXAMPLE** |
+| `E1` infrared synthesis from current two-chord bounds | **OPEN; SMALL-NEGATIVE-`z` BOUNDS DIVERGE** |
 | Physical `R4` action projection and coordinate jets | **DERIVED** |
 | Local first/second Euler--Dirac Jacobi/radius tube | **CERTIFIED; MAXIMAL COVER OPEN** |
 | Finite regular pre-stop Jacobi/transfer cover | **AUTOMATIC BY COMPACTNESS** |
@@ -153,11 +160,12 @@ Evidence: [`continuum certificate`](artifacts/n12_continuum_majorant_effectivene
 [`two-chord product-Dirac Weyl enclosures`](artifacts/flagship_integration/BHSM_N12_FORWARD_TWO_CHORD_PRODUCT_DIRAC_WEYL_ENCLOSURES.json),
 [`forward source-tail ownership audit`](artifacts/flagship_integration/BHSM_N12_FORWARD_SOURCE_TAIL_OWNERSHIP_AUDIT.json),
 [`resolvent-to-heat synthesis audit`](artifacts/flagship_integration/BHSM_N12_FORWARD_RESOLVENT_HEAT_SYNTHESIS_AUDIT.json),
+[`E1` infrared-control audit](artifacts/flagship_integration/BHSM_N12_FORWARD_E1_INFRARED_CONTROL_AUDIT.json),
 and [`post-parent observable audit`](artifacts/qxi_relative_energy_preparation/BHSM_POST_PARENT_FLAGSHIP_OBSERVABLE_GATE.json).
 
 Exact next object:
 
-`DERIVE_A_CONTROLLED_ACTION_OWNED_FUNCTIONAL_CALCULUS_SYNTHESIS_OF_THE_E1_HEAT_VARIATIONS_FROM_THE_MAXIMAL_FORWARD_WEYL_OR_SPECTRAL_FAMILY_TOGETHER_WITH_THE_COMMON_SOURCE_BRST_ANGULAR_RELATIVE_TRACE_TAIL;_THEN_ASSEMBLE_THE_ZERO_SOURCE_WEAK_FORCE`
+`DERIVE_LOW_ENERGY_MAXIMAL_FORWARD_SPECTRAL_MEASURE_CONTROL_OR_AN_ACTION_OWNED_RELATIVE_HEAT_TRACE_CANCELLATION_SUFFICIENT_TO_INTEGRATE_THE_E1_FIRST_AND_SECOND_VARIATIONS;_KEEP_THE_ACTUAL_FINITE_ENDPOINT_OPERATOR_AS_THE_OPTIONAL_ALTERNATIVE`
 
 ## Prior N12 source-tail checkpoint (superseded by the continuum certificate above)
 

@@ -116,9 +116,17 @@ equivalent spectral integrals. Two explicit positive `2x2` operators with the
 same `M(-1)=11/4` have different regulated traces, proving that one probe is
 insufficient. The Weyl compression route remains valid, but now has an exact
 functional-calculus synthesis obligation.
+The obstruction is specifically infrared. As `z=-kappa^2` approaches zero,
+the current scalar/de Rham Poisson bounds contain `1/kappa^2`, while the
+factorized product-Dirac first/mixed estimates contain `1/kappa` and
+`1/kappa^2`. The retained `E1` multiplier itself behaves as
+`1/(2 lambda)`. Because the actual maximal outcome, uniform global radius/gap,
+and low-energy spectral measure are unknown, these estimates do not control
+the heat integral near zero. A finite retained endpoint and an infinite
+Friedrichs history remain separate valid routes.
 
 `FULL_BHSM_COMPLETE = FALSE`. Exact next object:
-`DERIVE_A_CONTROLLED_ACTION_OWNED_FUNCTIONAL_CALCULUS_SYNTHESIS_OF_THE_E1_HEAT_VARIATIONS_FROM_THE_MAXIMAL_FORWARD_WEYL_OR_SPECTRAL_FAMILY_TOGETHER_WITH_THE_COMMON_SOURCE_BRST_ANGULAR_RELATIVE_TRACE_TAIL;_THEN_ASSEMBLE_THE_ZERO_SOURCE_WEAK_FORCE`.
+`DERIVE_LOW_ENERGY_MAXIMAL_FORWARD_SPECTRAL_MEASURE_CONTROL_OR_AN_ACTION_OWNED_RELATIVE_HEAT_TRACE_CANCELLATION_SUFFICIENT_TO_INTEGRATE_THE_E1_FIRST_AND_SECOND_VARIATIONS;_KEEP_THE_ACTUAL_FINITE_ENDPOINT_OPERATOR_AS_THE_OPTIONAL_ALTERNATIVE`.
 
 ## Prior N12 source-tail checkpoint (superseded)
 
