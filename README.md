@@ -176,6 +176,17 @@ promoted to the complete fixed-regulator `E1` integral, so only a full actual-
 history theorem covering the entire Cayley family could still replace the
 missing generator.
 
+This now reaches the retained-action campaign's canonical terminal condition.
+The repository definition of done requires complete configurations and
+variational domains for Tier-A completion. The reconciled v6.7 matter action
+is only conditional-effective and explicitly retired its unique self-adjoint-
+domain claim. Because the surviving continuous phase family is action
+unselected and spectrally inequivalent, the unchanged retained action cannot
+satisfy that necessary internal condition—even if one fixed-regulator
+observable happened to cancel accidentally. This is a theorem-level no-go for
+the unchanged action, not for an explicitly versioned future action extension.
+No such extension or phase choice is authorized here.
+
 The matched-parent `Q_xi / Delta H` route remains unavailable because no
 action-owned parent-only restriction exists. No local energy, reset-chart
 representative, or formal reflection may substitute for that missing object.
@@ -208,6 +219,7 @@ representative, or formal reflection may substitute for that missing object.
 | Full physical zero-energy birth/Wronskian margin | **REQUIRED; SECTOR-RESOLVED NONZERO GRAPH UNASSEMBLED** |
 | Unique retained matter birth domain | **FALSE; CONTINUOUS `U(1)_p x U(1)_c` ACTION-DOMAIN FAMILY** |
 | Gate-7 resolvent independence across that family | **FALSE IN THE RESOLVENT THEOREM CLASS; FULL GRADED CANCELLATION UNPROVED** |
+| Complete physical variational domain from unchanged retained action | **CANONICAL NO-GO; REQUIRED TIER-A CONDITION UNSATISFIED** |
 | Physical `R4` action projection and coordinate jets | **DERIVED** |
 | Local first/second Euler--Dirac Jacobi/radius tube | **CERTIFIED; MAXIMAL COVER OPEN** |
 | Finite regular pre-stop Jacobi/transfer cover | **AUTOMATIC BY COMPACTNESS** |
@@ -243,11 +255,12 @@ Evidence: [`continuum certificate`](artifacts/n12_continuum_majorant_effectivene
 [`birth threshold-margin audit`](artifacts/flagship_integration/BHSM_N12_FORWARD_BIRTH_THRESHOLD_MARGIN_AUDIT.json),
 [`matter-domain no-go`](artifacts/flagship_integration/BHSM_N12_FORWARD_MATTER_DOMAIN_NO_GO.json),
 [`graded phase-independence no-go`](artifacts/flagship_integration/BHSM_N12_FORWARD_GRADED_PHASE_INDEPENDENCE_NO_GO.json),
+[`retained-action completion no-go`](artifacts/flagship_integration/BHSM_RETAINED_ACTION_COMPLETION_NO_GO.json),
 and [`post-parent observable audit`](artifacts/qxi_relative_energy_preparation/BHSM_POST_PARENT_FLAGSHIP_OBSERVABLE_GATE.json).
 
-Exact next object:
+Retained-action campaign terminal result:
 
-`DERIVE_THE_NORMAL_MATTER_BOUNDARY_GENERATOR_FROM_EXISTING_RETAINED_ACTION_TERMS;_THE_UNIVERSAL_WARD_BRST_PHASE_INDEPENDENCE_ROUTE_IS_INVALIDATED._ONLY_AN_ACTUAL_FULL_HISTORY_FIXED_REGULATOR_THEOREM_COVERING_THE_ENTIRE_SURVIVING_CAYLEY_FAMILY_COULD_REPLACE_THAT_GENERATOR`
+`TERMINAL_CANONICAL_NO_GO_FOR_UNCHANGED_RETAINED_ACTION;_FUTURE_CONTINUATION_REQUIRES_AN_EXPLICITLY_VERSIONED_NORMAL_MATTER_BOUNDARY_ACTION_AND_PHYSICAL_AUTHORIZATION`
 
 ## Prior N12 source-tail checkpoint (superseded by the continuum certificate above)
 

@@ -188,8 +188,19 @@ not exclude an actual full-history cancellation after the one fixed `E1`
 integration; that remaining alternative now requires a theorem over the
 entire surviving Cayley family.
 
-`FULL_BHSM_COMPLETE = FALSE`. Exact next object:
-`DERIVE_THE_NORMAL_MATTER_BOUNDARY_GENERATOR_FROM_EXISTING_RETAINED_ACTION_TERMS;_THE_UNIVERSAL_WARD_BRST_PHASE_INDEPENDENCE_ROUTE_IS_INVALIDATED._ONLY_AN_ACTUAL_FULL_HISTORY_FIXED_REGULATOR_THEOREM_COVERING_THE_ENTIRE_SURVIVING_CAYLEY_FAMILY_COULD_REPLACE_THAT_GENERATOR`.
+The repository-native definition of done independently requires complete
+configurations and variational domains for Tier-A completion. The reconciled
+v6.7 matter action is `CONDITIONAL_EFFECTIVE_ACTION` and explicitly retires
+the unique self-adjoint-domain claim. The exact domain and heat witnesses show
+that the remaining family is not a gauge redundancy. Consequently the
+unchanged retained action cannot satisfy a necessary internal completion
+condition. The master campaign has reached terminal condition 2: a canonical
+theorem-level no-go for the unchanged retained action. A future explicitly
+versioned normal matter boundary action could change the theory, but no such
+action or phase is selected in this lineage.
+
+`FULL_BHSM_COMPLETE = FALSE`. Retained-action campaign terminal result:
+`TERMINAL_CANONICAL_NO_GO_FOR_UNCHANGED_RETAINED_ACTION;_FUTURE_CONTINUATION_REQUIRES_AN_EXPLICITLY_VERSIONED_NORMAL_MATTER_BOUNDARY_ACTION_AND_PHYSICAL_AUTHORIZATION`.
 
 ## Prior N12 source-tail checkpoint (superseded)
 

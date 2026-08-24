@@ -146,12 +146,19 @@
   `FALSE_BY_EXACT_ROBIN_RELATIVE_HEAT_TIMES_HS_WEYL_SUPERTRACE_WITNESS`.
 - Actual full-history fixed-regulator `E1` cancellation over the entire phase
   family: `NOT_PROVED_AND_NOT_EXCLUDED_BY_ONE_HEAT_TIME`.
+- Tier-A complete configurations and variational domains:
+  `REQUIRED_BY_REPOSITORY_DEFINITION_OF_DONE_INDEPENDENTLY_OF_OBSERVABLE_CANCELLATION`.
+- Reconciled v6.7 matter action unique self-adjoint-domain claim: `RETIRED`;
+  action status `CONDITIONAL_EFFECTIVE_ACTION`.
+- Unchanged retained action satisfies the required complete-domain condition:
+  `FALSE_TERMINAL_CANONICAL_NO_GO`.
+- Master campaign terminal condition: `2_CANONICAL_RETAINED_ACTION_NO_GO`.
 - Strict physical matrix Wronskian margin against critical cancellation:
   `OPEN_ACTION_REQUIRED_THRESHOLD_DATUM`.
 - Zero-source force, same-action saddle, physical pair-plus-contact Hessian,
   Ward/BRST closure, and basis-independent scalar observable map: `OPEN`.
-- Exact next flagship dependency:
-  `DERIVE_THE_NORMAL_MATTER_BOUNDARY_GENERATOR_FROM_EXISTING_RETAINED_ACTION_TERMS;_THE_UNIVERSAL_WARD_BRST_PHASE_INDEPENDENCE_ROUTE_IS_INVALIDATED._ONLY_AN_ACTUAL_FULL_HISTORY_FIXED_REGULATOR_THEOREM_COVERING_THE_ENTIRE_SURVIVING_CAYLEY_FAMILY_COULD_REPLACE_THAT_GENERATOR`.
+- Retained-action campaign terminal result:
+  `TERMINAL_CANONICAL_NO_GO_FOR_UNCHANGED_RETAINED_ACTION;_FUTURE_CONTINUATION_REQUIRES_AN_EXPLICITLY_VERSIONED_NORMAL_MATTER_BOUNDARY_ACTION_AND_PHYSICAL_AUTHORIZATION`.
 
 ## Prior N12 dynamic-Calderon continuum gates (superseded)
 

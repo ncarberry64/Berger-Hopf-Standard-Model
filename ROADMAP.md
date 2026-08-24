@@ -94,6 +94,13 @@
    supertrace is strictly nonzero on a common Cayley theorem-class subfamily.
    Only an actual full-history, fixed-regulator independence theorem over the
    whole surviving phase family remains as an alternative to the generator.
+   The repository definition of done requires a complete physical variational
+   domain independently of observable cancellation. Because the reconciled
+   retained matter action explicitly retires its unique-domain claim, the
+   unchanged-action path terminates here in a canonical no-go. Steps 4 and
+   later remain locked. Continuing would require an explicitly versioned
+   normal matter boundary action and physical authorization; it is not a
+   routine proof or numerical continuation of the retained theory.
 4. Evaluate the zero-source weak geometry force, solve and certify the
    same-action saddle if it is nonzero, evaluate the physical pair-plus-contact
    Hessian, and close Ward/BRST, continuum/relative-trace, and basis-independent
@@ -110,8 +117,8 @@
 
 `FULL_BHSM_COMPLETE = FALSE`.
 
-Exact next flagship object:
-`DERIVE_THE_NORMAL_MATTER_BOUNDARY_GENERATOR_FROM_EXISTING_RETAINED_ACTION_TERMS;_THE_UNIVERSAL_WARD_BRST_PHASE_INDEPENDENCE_ROUTE_IS_INVALIDATED._ONLY_AN_ACTUAL_FULL_HISTORY_FIXED_REGULATOR_THEOREM_COVERING_THE_ENTIRE_SURVIVING_CAYLEY_FAMILY_COULD_REPLACE_THAT_GENERATOR`.
+Retained-action campaign terminal result:
+`TERMINAL_CANONICAL_NO_GO_FOR_UNCHANGED_RETAINED_ACTION;_FUTURE_CONTINUATION_REQUIRES_AN_EXPLICITLY_VERSIONED_NORMAL_MATTER_BOUNDARY_ACTION_AND_PHYSICAL_AUTHORIZATION`.
 
 ## Current corrected-Rayleigh N=3 critical path
 
