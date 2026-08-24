@@ -127,14 +127,28 @@
 - Weakest certified positive two-chord child impedance:
   `6.37052204298831E-8`; this is not the full event-plus-child Wronskian.
 - Sector-resolved nonzero event flux plus `W_phys` zero-energy birth matrix:
-  `NOT_ASSEMBLED`; the zero-background graph and domain-parametric local
-  incidence do not supply it.
+  `PARTIALLY_CLOSED_IN_BHSM_AE_2_0_0`.  The nonfermionic scalar/de Rham,
+  ghost, and transverse-gauge blocks have a strict quadratic-form seam margin;
+  the factorized Weyl block and complete Calderon jets remain open.
+- BHSM-AE-2.0.0 positive scalar/de Rham seam lower bound:
+  `6.370522E-8`, inherited from the certified child core because the event and
+  child DtN forms and retained Wentzell block are nonnegative.
+- BHSM-AE-2.0.0 minimum transverse-gauge Wentzell lower bound on the retained
+  core: `650.6279735413212`; the total seam lower is
+  `650.6279736050265`.
+- Nonfermion critical zero graph on the AE2 global transmission domain:
+  `EXCLUDED`; constant scalar radius modes have zero first vertex and the
+  global gauge zero mode is quotiented.
+- AE2 factorized product-Dirac two-sided zero-threshold margin and
+  boundary-uniform limiting absorption: `OPEN`.
 - Retained transverse-gauge normal boundary quadratic form:
   `ACTION_DERIVED_BY_v15_66`.
 - Retained normal matter junction action: `ZERO_BY_v15_13`; this does not
   select Neumann.
 - Boundary-identity-preserving matter domain family:
-  `CONTINUOUS_U1_PARENT_TIMES_U1_CHILD`.
+  `CONTINUOUS_U1_PARENT_TIMES_U1_CHILD_FOR_THE_UNCHANGED_RETAINED_ACTION`.
+- BHSM-AE-2.0.0 normal-matter domain:
+  `ONE_RESET_GLUED_GLOBAL_SPIN_TIMES_G_SM_TRANSMISSION_DOMAIN_WITH_NO_INDEPENDENT_CAYLEY_PHASE_OR_SURFACE_MATTER_COEFFICIENT`.
 - v17.96--v17.99 complete-child closure as a nonzero fluctuation matrix:
   `FALSE`; it closes the classical zero-background point and persistence.
 - Compact-source resolvent independence across the surviving Cayley family:
