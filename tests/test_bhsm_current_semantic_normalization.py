@@ -117,7 +117,9 @@ def test_one_sided_w_only_event_initialization_is_superseded() -> None:
     assert seam["formula"] == (
         "S_AE2(z)=M_event(z)+U_R^dagger*M_child(z)*U_R+W_phys"
     )
-    assert seam["current_status"] == "OPEN_CHILD_ARM_VALUE_AND_GEOMETRY_JETS"
+    assert seam["current_status"] == (
+        "ENCLOSED_AT_Z_MINUS_1_COMPLETE_SPECTRAL_FAMILY_OPEN"
+    )
     deprecations = {
         row["canonical_id"]: row
         for row in registries["BHSM_FORMULA_DEPRECATION_LEDGER.json"]["records"]

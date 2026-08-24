@@ -36,6 +36,7 @@ SOURCES = (
     "artifacts/flagship_integration/BHSM_N12_FINITE_HISTORY_FORCE_DOMAIN_AUDIT.json",
     "artifacts/flagship_integration/BHSM_N12_EVENT_NORMAL_WEYL_RICCATI.json",
     "artifacts/flagship_integration/BHSM_N12_EVENT_NORMAL_TWO_SIDED_SEAM_CORRECTION.json",
+    "artifacts/flagship_integration/BHSM_N12_AE2_COVARIANT_SEAM_ENCLOSURE_Z_MINUS_1.json",
     "artifacts/intrinsic_state_selection/BHSM_N12_FINITE_ENCAPSULATION_LOCAL_BRANCH.json",
     "artifacts/flagship_integration/BHSM_N12_GATE7_AE2_THRESHOLD_SUPERSESSION.json",
     "artifacts/BHSM_alpha_i_update_v4_2.json",
@@ -80,6 +81,7 @@ def verify_current_lineage() -> None:
     force_domain = loaded["artifacts/flagship_integration/BHSM_N12_FINITE_HISTORY_FORCE_DOMAIN_AUDIT.json"]
     event_weyl = loaded["artifacts/flagship_integration/BHSM_N12_EVENT_NORMAL_WEYL_RICCATI.json"]
     seam_correction = loaded["artifacts/flagship_integration/BHSM_N12_EVENT_NORMAL_TWO_SIDED_SEAM_CORRECTION.json"]
+    seam_enclosure = loaded["artifacts/flagship_integration/BHSM_N12_AE2_COVARIANT_SEAM_ENCLOSURE_Z_MINUS_1.json"]
     frontier = loaded["artifacts/flagship_integration/BHSM_N12_GATE7_AE2_THRESHOLD_SUPERSESSION.json"]
     if ae2.get("action_version") != "BHSM-AE-2.0.0":
         raise RuntimeError("AE2 action version mismatch")
@@ -157,8 +159,12 @@ def verify_current_lineage() -> None:
             "child_arm_Calderon_value_and_geometry_jets"
         ]
         == "OPEN"
+        and seam_enclosure["claim_boundary"]["two_sided_child_load_at_z_minus_1"]
+        == "ENCLOSED_BROADLY"
+        and seam_enclosure["claim_boundary"]["complete_heat_spectral_family"]
+        == "OPEN"
     ):
-        raise RuntimeError("two-sided AE2 Calderon seam is not the current force frontier")
+        raise RuntimeError("complete two-sided AE2 spectral force oracle is not current")
 
 
 def materialize() -> list[Path]:
