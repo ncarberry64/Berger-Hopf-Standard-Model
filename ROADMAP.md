@@ -22,6 +22,10 @@
    terminal/Friedrichs graph jets, and regular Weyl-chart cover. The local
    `log R4` coefficient jets and proper-time temporal form ownership are already
    derived; `D_tau` and `Delta_tau` are not independent coefficient histories.
+   The physical radius is also an exact action-coordinate projection, so
+   assemble and enclose `DV,D2V` of the retained Euler--Dirac vector field,
+   propagate the state Jacobi cocycles, and pull them back through the closed
+   radius jets before the channel transfer variations.
    Do not identify (z) with momentum squared.
 4. Evaluate the zero-source weak geometry force, solve and certify the
    same-action saddle if it is nonzero, evaluate the physical pair-plus-contact

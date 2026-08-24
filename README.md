@@ -64,6 +64,10 @@ exterior oracle to finite `2x2` transfer/Weyl systems driven only by
 an exact finite triangular transfer system; endpoint/domain motion is isolated
 in the terminal/Friedrichs admittance jets. The zero-source force and
 same-action saddle follow before any scalar physical coupling readout.
+The driving radius is itself closed as the action projection
+`R4=(RADIUS0/2) exp(q0+u_L-(1/2)log cosh(2v_L))`; its first and mixed-second
+jets are exact pullbacks of the state Jacobi fields, so no independent radius
+history variable is introduced.
 
 The matched-parent `Q_xi / Delta H` route remains unavailable because no
 action-owned parent-only restriction exists. No local energy, reset-chart
@@ -85,6 +89,7 @@ representative, or formal reflection may substitute for that missing object.
 | Proper-time `D_tau`/`Delta_tau` form ownership | **DERIVED** |
 | Fixed spatial-channel transfer reduction | **DERIVED** |
 | Fixed-channel transfer/Weyl variation equations | **DERIVED; ACTION-DATA ENCLOSURES OPEN** |
+| Physical `R4` action projection and coordinate jets | **DERIVED** |
 | `Q_xi / Delta H` | **OPEN -- matched-parent restriction absent** |
 | `FULL_BHSM_COMPLETE` | **FALSE** |
 
@@ -100,11 +105,12 @@ Evidence: [`continuum certificate`](artifacts/n12_continuum_majorant_effectivene
 [`proper-time form ownership`](artifacts/flagship_integration/BHSM_N12_FORWARD_PROPER_TIME_FORM_OWNERSHIP.json),
 [`fixed-channel transfer reduction`](artifacts/flagship_integration/BHSM_N12_FORWARD_FIXED_CHANNEL_TRANSFER.json),
 [`fixed-channel transfer variations`](artifacts/flagship_integration/BHSM_N12_FORWARD_CHANNEL_TRANSFER_VARIATIONS.json),
+[`boundary-radius action projection`](artifacts/flagship_integration/BHSM_N12_FORWARD_BOUNDARY_RADIUS_ACTION_PROJECTION.json),
 and [`post-parent observable audit`](artifacts/qxi_relative_energy_preparation/BHSM_POST_PARENT_FLAGSHIP_OBSERVABLE_GATE.json).
 
 Exact next object:
 
-`DERIVE_OR_ENCLOSE_THE_ACTION_OWNED_MAXIMAL_FORWARD_x,_x_h,_x_k,_x_hk_AND_TERMINAL_FRIEDRICHS_GRAPH_JETS,_THEN_PROPAGATE_THE_FINITE_TRIANGULAR_SYSTEMS_WITH_A_REGULAR_WEYL_CHART_COVER`
+`ASSEMBLE_DV_AND_D2V_OF_THE_RETAINED_EULER_DIRAC_VECTOR_FIELD_FROM_THE_EXISTING_ACTION_D3_D4_AND_DIRAC_INVERSE_IDENTITIES;_ENCLOSE_THE_STATE_JACOBI_COCYCLES_ON_BOUNDED_MARGIN_COMPONENTS;_THEN_PULL_BACK_BY_THE_CLOSED_R4_JETS_AND_PROPAGATE_THE_CHANNEL_TRANSFER_VARIATIONS`
 
 ## Prior N12 source-tail checkpoint (superseded by the continuum certificate above)
 

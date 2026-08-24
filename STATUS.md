@@ -68,9 +68,14 @@ mixed-second transfer equations and induced Möbius quotient jets are now
 derived. Their remaining inputs are the action-owned maximal-forward
 `x,x_h,x_k,x_hk` histories, terminal/Friedrichs graph jets, and a regular
 Weyl-chart margin or finite chart cover.
+The physical radius driving those systems is exactly the retained attachment
+functional `R4=(RADIUS0/2) exp(q0+u_L-(1/2)log cosh(2v_L))`. Its coordinate
+gradient and Hessian are globally bounded in every finite-N chart, and its
+first/mixed action jets are exact pullbacks of the state Jacobi cocycles. No
+independent radius-history degree of freedom remains open.
 
 `FULL_BHSM_COMPLETE = FALSE`. Exact next object:
-`DERIVE_OR_ENCLOSE_THE_ACTION_OWNED_MAXIMAL_FORWARD_x,_x_h,_x_k,_x_hk_AND_TERMINAL_FRIEDRICHS_GRAPH_JETS,_THEN_PROPAGATE_THE_FINITE_TRIANGULAR_SYSTEMS_WITH_A_REGULAR_WEYL_CHART_COVER`.
+`ASSEMBLE_DV_AND_D2V_OF_THE_RETAINED_EULER_DIRAC_VECTOR_FIELD_FROM_THE_EXISTING_ACTION_D3_D4_AND_DIRAC_INVERSE_IDENTITIES;_ENCLOSE_THE_STATE_JACOBI_COCYCLES_ON_BOUNDED_MARGIN_COMPONENTS;_THEN_PULL_BACK_BY_THE_CLOSED_R4_JETS_AND_PROPAGATE_THE_CHANNEL_TRANSFER_VARIATIONS`.
 
 ## Prior N12 source-tail checkpoint (superseded)
 
