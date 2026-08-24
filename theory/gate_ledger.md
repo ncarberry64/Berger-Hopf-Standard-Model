@@ -227,6 +227,15 @@
   both have leading scale weight seven. Therefore an Osgood envelope with
   `omega=o(R)` requires a genuine constraint-reduced flow theorem forcing
   `D_tau log R4->0`; positive radius/lapse and scale weights alone do not.
+- Component-restricted finite branch: the ordered-event transport is exactly
+  `D_t e_ord=G0+<alpha,D^(-1)b>`, with selected pole plus hard exterior
+  remainder. Uniform action scaling assigns both the pole and remainder
+  leading weight seven, so it forces no sign. Moreover, the certified
+  existing witness has a positive endpoint change in `e_ord` over `1e-7`,
+  robust at 96, 192, and 384 quadrature points. A negative finite-hitting
+  inequality therefore cannot begin at reset; the live finite branch must
+  first prove later entry into a forward trapping/terminal region, certify a
+  different reset history, or reach an existing canonical stop.
 - Retained transverse-gauge normal boundary quadratic form:
   `ACTION_DERIVED_BY_v15_66`.
 - Retained normal matter junction action: `ZERO_BY_v15_13`; this does not

@@ -125,3 +125,32 @@ now precise: outside the terminal chart, control the signed combination
 \(c_\psi b_\psi/e_{\rm ord}+R_{\rm ext}\) strongly enough to force chart
 entry while preserving the hard gap and existing chart margins, certify an
 existing stop, or prove a global event-free lower bound.
+
+The certified existing witness rules out applying such a negative inequality
+from the reset time. At 96-point quadrature its ordered event value changes
+from `1.430742563850721e-9` to `1.4323623709471605e-9` over coordinate time
+`1e-7`; the positive endpoint change is robust at 96, 192, and 384 points.
+By differentiability, the transport is positive somewhere on that interval.
+This does not exclude a later return, an interior oscillation, or another
+reset history. It proves that the surviving finite-hitting route must first
+establish entry, after an allowed outward excursion, into a forward trapping
+or terminal region and only then apply the negative Osgood estimate.
+
+## Uniform-scale weight audit
+
+The exact retained action also rules out a tempting large-radius shortcut.
+Under the common scale shift `q0 -> q0+sigma`, the leading ADM kinetic and
+algebraic action terms both have weight seven. On a regular simple leading
+Euler--Dirac block this gives the weight table
+
+`D:7`, `b:7`, `D^(-1):-7`, `a=D^(-1)b:0`,
+`alpha:7`, `G0:7`, and `Q=alpha(a):7`.
+
+The selected eigenvalue, pole term `c_psi*b_psi/e_ord`, hard-complement term,
+and full exterior remainder all have the same leading weight seven. The
+normalized transport `D_t log(abs(e_ord))` has weight zero. Therefore large
+uniform radius supplies neither pole dominance nor a transport sign. A
+finite-hitting proof must compare the actual signed leading coefficients or
+derive a constraint-reduced inequality; scale homogeneity alone cannot force
+terminal-chart entry. This is leading-weight bookkeeping, not an assumed
+asymptotic history or an incompatibility claim.

@@ -60,6 +60,10 @@ INPUTS = {
         "artifacts/intrinsic_state_selection/"
         "BHSM_N12_INTRINSIC_RETURN_ACTION_OWNERSHIP_GATE.json"
     ),
+    "existing_witness_return": ROOT / (
+        "artifacts/intrinsic_state_selection/"
+        "BHSM_N12_EXISTING_PERSISTENCE_EVENT_RETURN_AUDIT.json"
+    ),
     "action_jet_source": ROOT / (
         "src/bhsm/interface/"
         "aether_n3_exact_full_local_action_jet_v17_60.py"
@@ -122,6 +126,33 @@ def _exact_algebra_replay() -> dict[str, object]:
     }
 
 
+def _uniform_scale_transport_weights() -> dict[str, object]:
+    """Track the leading retained-action weights in the transport identity."""
+
+    return {
+        "uniform_shift": "q0->q0+sigma",
+        "leading_action_weight": 7,
+        "Euler_Dirac_block_D_weight": 7,
+        "Euler_Dirac_source_b_weight": 7,
+        "inverse_D_weight_on_a_simple_leading_block": -7,
+        "acceleration_D_inverse_b_weight": 0,
+        "event_covector_alpha_weight": 7,
+        "configuration_transport_G0_weight": 7,
+        "minimal_acceleration_scalar_Q_weight": 7,
+        "selected_event_eigenvalue_weight": 7,
+        "pole_term_c_psi_b_psi_over_e_ord_weight": 7,
+        "hard_complement_term_weight": 7,
+        "exterior_remainder_R_EXT_weight": 7,
+        "normalized_transport_D_t_log_abs_e_ord_weight": 0,
+        "pole_has_strict_scale_advantage_over_exterior_remainder": False,
+        "large_uniform_scale_forces_transport_sign": False,
+        "scope": (
+            "LEADING_WEIGHT_BOOKKEEPING_ON_A_REGULAR_SIMPLE_LEADING_"
+            "EULER_DIRAC_BLOCK;_NO_ASYMPTOTIC_HISTORY_ASSUMED"
+        ),
+    }
+
+
 def build_payload() -> dict[str, object]:
     if not all(path.is_file() for path in INPUTS.values()):
         raise FileNotFoundError("all minimal-event-transport inputs are required")
@@ -143,7 +174,9 @@ def build_payload() -> dict[str, object]:
     reflection = records["reflection"]
     energy = records["energy"]
     ownership = records["return_ownership"]
+    witness_return = records["existing_witness_return"]
     replay = _exact_algebra_replay()
+    scale_weights = _uniform_scale_transport_weights()
 
     split = {
         "state_split": "Y=(q,x)_WITH_x=(v,m)_AND_m=(log_lapse,shift)",
@@ -266,6 +299,37 @@ def build_payload() -> dict[str, object]:
             "THAT_CHART"
         ),
     }
+    existing_witness_transport = {
+        "certified_coordinate_interval": witness_return["scope"][
+            "coordinate_duration"
+        ],
+        "initial_ordered_event_at_96": witness_return["summary"][
+            "initial_child_ordered_eigenvalue_at_96"
+        ],
+        "final_ordered_event_at_96": witness_return["summary"][
+            "final_child_ordered_eigenvalue_at_96"
+        ],
+        "endpoint_delta_at_96": witness_return["summary"][
+            "endpoint_delta_at_96"
+        ],
+        "endpoint_secant_rate_at_96": witness_return["summary"][
+            "endpoint_secant_rate_at_96"
+        ],
+        "endpoint_move_away_cross_quadrature_robust": witness_return[
+            "summary"
+        ]["final_endpoint_farther_from_zero_at_all_quadratures"],
+        "strict_negative_transport_from_reset_compatible_with_endpoints": False,
+        "mean_value_consequence": (
+            "ON_THE_DIFFERENTIABLE_REGULAR_WITNESS_D_t_e_ord_IS_POSITIVE_"
+            "AT_LEAST_ONCE_BETWEEN_THE_TWO_ENDPOINTS"
+        ),
+        "finite_hitting_route_after_this_audit": (
+            "FIRST_PROVE_ENTRY_AFTER_AN_ALLOWED_OUTWARD_EXCURSION_INTO_A_"
+            "FORWARD_TRAPPING_OR_TERMINAL_REGION,_THEN_APPLY_A_FINITE_"
+            "OSGOOD_RATE;_OR_CERTIFY_ANOTHER_RESET_HISTORY_OR_CANONICAL_STOP"
+        ),
+        "interior_or_later_return_adjudicated": False,
+    }
 
     validation = {
         "all_repository_inputs_validated": True,
@@ -328,6 +392,30 @@ def build_payload() -> dict[str, object]:
             is True
         ),
         "Osgood_finite_hitting_test_distinguishes_p_less_than_1_from_p_at_least_1": True,
+        "uniform_scale_gives_no_pole_dominance_or_transport_sign": (
+            scale_weights[
+                "pole_term_c_psi_b_psi_over_e_ord_weight"
+            ]
+            == scale_weights["exterior_remainder_R_EXT_weight"]
+            == 7
+            and scale_weights[
+                "pole_has_strict_scale_advantage_over_exterior_remainder"
+            ]
+            is False
+            and scale_weights["large_uniform_scale_forces_transport_sign"]
+            is False
+        ),
+        "certified_witness_endpoints_exclude_strict_negative_transport_from_reset": (
+            existing_witness_transport[
+                "endpoint_move_away_cross_quadrature_robust"
+            ]
+            is True
+            and existing_witness_transport["endpoint_delta_at_96"] > 0.0
+            and existing_witness_transport[
+                "strict_negative_transport_from_reset_compatible_with_endpoints"
+            ]
+            is False
+        ),
         "three_prescribed_representations_reduce_to_same_scalar_owner": all(
             item["global_bound_or_sign_derived"] is False
             for item in representations.values()
@@ -343,13 +431,15 @@ def build_payload() -> dict[str, object]:
             "MINIMAL_ORDERED_EVENT_ACCELERATION_SCALAR_REDUCED_EXACTLY_TO_"
             "ADJOINT_PAIRING_BORDERED_SCHUR_AND_ACTION_JET_FORMS;_THE_"
             "SELECTED_EVENT_POLE_IS_ISOLATED_AND_ALREADY_LOCALLY_HITTING;_"
-            "ALL_THREE_SHARE_ONE_UNCONTROLLED_EXTERIOR_HARD_RESOLVENT_"
-            "REMAINDER_AND_NO_TERMINAL_CHART_ENTRY_RATE_IS_DERIVED"
+            "UNIFORM_SCALE_GIVES_NO_POLE_DOMINANCE_AND_THE_CERTIFIED_"
+            "WITNESS_INITIALLY_MOVES_AWAY_FROM_THE_EVENT;_A_LATER_FORWARD_"
+            "TRAPPING_OR_TERMINAL_REGION_ENTRY_THEOREM_IS_OPEN"
         ),
         "current_flagship_gate": 7,
         "transport_split": split,
         "three_representation_adjudication": representations,
         "exact_algebra_replay": replay,
+        "uniform_scale_transport_weight_audit": scale_weights,
         "canonical_uncontrolled_owner": {
             "scalar": (
                 "Q(Y)=<D(Y)^(-*)alpha_Y^sharp,b(Y)>="
@@ -371,11 +461,14 @@ def build_payload() -> dict[str, object]:
             "retained_action_incompatibility_proved": False,
         },
         "finite_hitting_adjudication": finite_hitting,
+        "existing_witness_transport_adjudication": existing_witness_transport,
         "canonical_no_go_scope": {
             "proved": (
                 "THE_CURRENT_AUDITED_ADJOINT_SCHUR_AND_ACTION_JET_"
                 "REPRESENTATIONS_DO_NOT_SUPPLY_A_GLOBAL_SIGN_OR_FINITE_"
-                "OSGOOD_RATE_FOR_G0+Q"
+                "OSGOOD_RATE_FOR_G0+Q;_UNIFORM_SCALE_DOES_NOT_MAKE_THE_"
+                "POLE_DOMINATE_R_EXT;_STRICT_NEGATIVE_TRANSPORT_FROM_THE_"
+                "CERTIFIED_RESET_IS_INCOMPATIBLE_WITH_THE_WITNESS_ENDPOINTS"
             ),
             "not_proved": (
                 "NO_SHARPER_ACTION_IDENTITY_OR_COMPONENT_RESTRICTED_"
@@ -383,11 +476,12 @@ def build_payload() -> dict[str, object]:
             ),
         },
         "exact_next_dependency": (
-            "DERIVE_ON_REACH_PLUS(C_RESET)_OUTSIDE_THE_EXISTING_TERMINAL_"
-            "CHART_A_SIGNED_BOUND_FOR_c_psi*b_psi/e_ord+R_EXT_OF_THE_FORM_"
-            "D_t_e_ord<=-phi(e_ord)_THAT_FORCES_CERTIFIED_CHART_ENTRY,_"
-            "WHILE_PRESERVING_THE_EXISTING_HARD_GAP_AND_CHART_MARGINS;_OR_"
-            "PROVE_AN_EXISTING_CANONICAL_STOP_OR_A_GLOBAL_EVENT_FREE_LOWER_BOUND"
+            "DERIVE_AFTER_THE_CERTIFIED_INITIAL_OUTWARD_EVENT_EXCURSION_AN_"
+            "ACTION_OWNED_ENTRY_INTO_A_FORWARD_TRAPPING_OR_TERMINAL_REGION_"
+            "ON_WHICH_c_psi*b_psi/e_ord+R_EXT<=-phi(e_ord)_HAS_FINITE_"
+            "OSGOOD_INTEGRAL,_WHILE_PRESERVING_HARD_GAP_AND_CHART_MARGINS;_"
+            "OR_CERTIFY_ANOTHER_RESET_HISTORY,_AN_EXISTING_CANONICAL_STOP,_"
+            "OR_A_GLOBAL_EVENT_FREE_LOWER_BOUND"
         ),
         "Gate7_status_changed": False,
         "two_chord_global_promotion_authorized": False,

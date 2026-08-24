@@ -64,6 +64,18 @@ def test_exact_algebra_replay_agrees() -> None:
     assert replay["all_three_equal_exactly"] is True
 
 
+def test_uniform_scale_does_not_force_pole_dominance() -> None:
+    weights = _record()["uniform_scale_transport_weight_audit"]
+    assert weights["Euler_Dirac_block_D_weight"] == 7
+    assert weights["Euler_Dirac_source_b_weight"] == 7
+    assert weights["acceleration_D_inverse_b_weight"] == 0
+    assert weights["minimal_acceleration_scalar_Q_weight"] == 7
+    assert weights["pole_term_c_psi_b_psi_over_e_ord_weight"] == 7
+    assert weights["exterior_remainder_R_EXT_weight"] == 7
+    assert weights["pole_has_strict_scale_advantage_over_exterior_remainder"] is False
+    assert weights["large_uniform_scale_forces_transport_sign"] is False
+
+
 def test_finite_hitting_discriminator_retains_infinite_branch() -> None:
     hitting = _record()["finite_hitting_adjudication"]
     assert hitting["power_law"]["phi(s)=c*s^p_with_p<1"] == (
@@ -82,6 +94,17 @@ def test_finite_hitting_discriminator_retains_infinite_branch() -> None:
     ] is False
 
 
+def test_existing_witness_excludes_strict_negative_transport_from_reset() -> None:
+    witness = _record()["existing_witness_transport_adjudication"]
+    assert witness["endpoint_delta_at_96"] > 0.0
+    assert witness["endpoint_secant_rate_at_96"] > 0.0
+    assert witness["endpoint_move_away_cross_quadrature_robust"] is True
+    assert witness[
+        "strict_negative_transport_from_reset_compatible_with_endpoints"
+    ] is False
+    assert witness["interior_or_later_return_adjudicated"] is False
+
+
 def test_gate_and_chord_claim_boundaries_remain_closed() -> None:
     record = _record()
     assert record["Gate7_status_changed"] is False
@@ -93,4 +116,4 @@ def test_gate_and_chord_claim_boundaries_remain_closed() -> None:
 
 def test_minimal_transport_scalar_artifact_is_content_addressable() -> None:
     digest = hashlib.sha256(ARTIFACT.read_bytes()).hexdigest().upper()
-    assert digest == "83CA81A77EC8C3CD7AFD7302DA2A7F9240FF80E598A6F0C77895B8CF8C8DEFBD"
+    assert digest == "1CF578073FC4FF2C1D89BD7D717CB94F0F52AD9159B484E5C459D9EEBAF4E2BC"
