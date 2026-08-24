@@ -1,0 +1,154 @@
+{
+  "FULL_BHSM_COMPLETE": false,
+  "action_version": "BHSM-AE-2.0.0",
+  "artifact": "BHSM_AE2_PHOTON_NEUTRINO_PROPAGATION_PROVENANCE",
+  "audit_type": "READ_ONLY_ACTION_PROVENANCE_AND_OPERATOR_TYPE_CHECK",
+  "classification_vocabulary": [
+    "ACTION_DERIVED",
+    "GEOMETRY_DERIVED",
+    "OWNER_ONTOLOGY",
+    "BOUNDARY_SEED",
+    "FROZEN_OUTPUT",
+    "CONDITIONAL",
+    "HISTORICAL",
+    "SUPERSEDED",
+    "NOT_DERIVED"
+  ],
+  "empirical_derivation_inputs_used": false,
+  "frozen_predictions_changed": false,
+  "guardrails": {
+    "Gate7_z_is_p_squared": false,
+    "massless_neutrino_forced": false,
+    "neutrino_electromagnetic_charge_added": false,
+    "oscillation_causes_mass": false,
+    "positive_Wentzell_margin_is_photon_mass": false,
+    "raw_K_nu_is_physical_mass_matrix": false
+  },
+  "inputs": {
+    "artifacts/BHSM_PMNS_geometric_transport_attachment_v6_6_0.json": "D312FD485D06C74291B9E6329803B27E6CEC8D0E54F00D93C9CA35B4C132FE13",
+    "artifacts/BHSM_PMNS_neutral_eigenbasis_attachment_v6_7_0.json": "9EAF2C65A56F64094F1C87F5659D64D097EB491E9E9F704A0DCFEFF75E8EE0D0",
+    "artifacts/BHSM_aether_rank16_u1_hs_vertex_matrices_v16_01.json": "034F33BB92162EE130789AF8DF658089BE34BAF47CBAE6AA4DE5BDA99E957AE9",
+    "artifacts/BHSM_classical_mode_stress_incidence_v8_3.json": "754B677C716218F2ACAA3C8EEEECBE652CEC061F46A1371638B0D9FC0377B284",
+    "artifacts/BHSM_cp_holonomy_attachment_resolution_attempt_v1_0.json": "086009EE70B64E685E1C9C800135CBA3AB40F8C585D6DD10F77546AC7D4E361E",
+    "artifacts/BHSM_cp_holonomy_o_int_attachment_theorem_v1_1.json": "96AFBB87B9E7EF8CE6DD1D9E3795B429EEF34B2D1ACA270D737CFA022C5C4399",
+    "artifacts/BHSM_electromagnetic_surviving_generator_v6_3_0.json": "8245D5514E3B153083800A3AB9FD24E9E10C3E8B20D72BFF018AE6A6428F6667",
+    "artifacts/BHSM_gauge_boson_mass_matrix_v6_4_0.json": "FD41E8BD6E6EF85C16557BE70921DA7282BD24D0F06A50BAEB6F1C7A9A7A0C04",
+    "artifacts/BHSM_gauge_mass_matrix_global_audit_v6_5_0.json": "F401DDD9934417C65BE90AAED6C5E77A6BA06C44F4CAB2B61432344375693A15",
+    "artifacts/BHSM_generation_projector_action_attachment_v8_2.json": "ECA91239E1C9C471F3A13602FBE28804D8979A1AE44E50621C18FD0B18106E58",
+    "artifacts/BHSM_neutral_L_over_E_phase_law_v6_6_0.json": "FCF127C208EA4A92E1EB3056368FC2CC0F4C9DAF50854F22BF87CE11CB790F9D",
+    "artifacts/BHSM_neutral_compact_operator_reduction_v6_7_0.json": "3F14BB8C95AC1ABFE00B3C389B5F455924FEF413F53F12024F3D67F653991C5F",
+    "artifacts/BHSM_neutral_high_energy_propagation_operator_v6_6_0.json": "26DB54D9CA3B1B621AF5870F828CACB9E3B6C3FACB977615C3F071D94CB6D641",
+    "artifacts/BHSM_neutral_phase_law_v6_7_0.json": "963704BA871AC01D0963586BB55B927C89D9C6F92DE8DF0FB957C2CC3551DE0E",
+    "artifacts/BHSM_neutral_spectral_report_v1_3.json": "3124F4CABAB19DA2BFF9130FE812101A1830F8BBA2086C46985E5D82D9CF0E51",
+    "artifacts/BHSM_neutrino_curvature_threshold_v0_9.json": "11B7CB2348C9A0D703A9A80AB75D5BBEA1A5BED66ABD4CE360BF5A723EDDCDCD",
+    "artifacts/CP_no_fit_holonomy_output_v1.json": "5C898AAE3A18850BF01134D263D5E32D9F5F093830D3FDD8A8AB46AFC49E8BA0",
+    "artifacts/PMNS_no_fit_operator_output_v1.json": "5E8A7E858024EAA7AC6120F70F859FBCE11858D332BEC261B61DC61AC4662EE8",
+    "artifacts/action_extension/BHSM_ACTION_AE2_GLOBAL_SPIN_RESET_ACTION.json": "4C756145A9E303F6E4F7F9536CF5639957D010C1A97AF6BE9299830C549B82DC",
+    "artifacts/flagship_integration/BHSM_N12_FORWARD_COMMON_SOURCE_INCIDENCE.json": "943359A4649960D7D2293B396D5C3B661B6D6F2C8D36A68FC6E36895141CEF33",
+    "artifacts/flagship_integration/BHSM_N12_FORWARD_FIXED_CHANNEL_TRANSFER.json": "F83BE1866D44FE0D0F273A2B73AAEF13B272BE6B1174B3644E37E8A8AE91C786",
+    "artifacts/flagship_integration/BHSM_N12_GATE7_AE2_ANGULAR_DINI_UNIFORMITY_AUDIT.json": "E26B5816B76FCE7584C9A26038875FE61C56A28B5A536412D773F40AD3E91646",
+    "artifacts/flagship_integration/BHSM_N12_GATE7_AE2_COMPACT_SOURCE_DINI_CLOSURE.json": "E1E735CBA8FC9D5FBC28B2AB93B0EA17803191D69F081C7A194224360A18CF27",
+    "artifacts/neutral_operator_no_fit_output_v1.json": "C7AD8F161EB772E2618D88DA970BFF63AAEB782BECDF46D0A50CAA7391BFF772",
+    "artifacts/neutrino_bedrock_dynamic_layer_v1.json": "747A165B2DA879709228E2982AD9FE080E60312EB0DADC2E7A6393B0D697DC23",
+    "scripts/audit_bhsm_ae2_photon_neutrino_propagation.py": "8B104E2D324CB09B7282E0E0552DF4E6F2EF1C30FBAC0F317CF0660A132C46CE",
+    "src/bhsm/interface/action_extension_ae2_neutrino_photon_propagation.py": "91AACCD0D9D9573FA87D6D8877D1989403BE787A0C03B42ADD662A302830F14B"
+  },
+  "new_action_term_added": false,
+  "new_physical_scale_added": false,
+  "objects": [
+    {
+      "classification": "CONDITIONAL",
+      "finding": "Q_em=T_n+Y_BH and its representation null direction are derived, but the current action has not traced that direction through the complete transverse quotient/domain as a physical photon.",
+      "object": "transverse physical EM/U1em carrier",
+      "qualified_classifications": [
+        "GEOMETRY_DERIVED",
+        "CONDITIONAL"
+      ],
+      "source": "artifacts/BHSM_electromagnetic_surviving_generator_v6_3_0.json"
+    },
+    {
+      "classification": "ACTION_DERIVED",
+      "finding": "The canonically normalized Dirac action and reset-glued self-adjoint domain are owned by BHSM-AE-2.0.0.",
+      "object": "current AE2 matter Dirac carrier",
+      "qualified_classifications": [
+        "ACTION_DERIVED"
+      ],
+      "source": "artifacts/action_extension/BHSM_ACTION_AE2_GLOBAL_SPIN_RESET_ACTION.json"
+    },
+    {
+      "classification": "NOT_DERIVED",
+      "finding": "A finite neutral representation label P_nu exists, but a physical invariant neutral propagation subbundle/operator is not derived.",
+      "object": "neutral neutrino carrier",
+      "qualified_classifications": [
+        "GEOMETRY_DERIVED",
+        "CONDITIONAL",
+        "NOT_DERIVED"
+      ],
+      "source": "src/charged_kf_generator.py plus current AE2/family artifacts"
+    },
+    {
+      "classification": "NOT_DERIVED",
+      "finding": "Three slots are frozen ontology/conditional geometry, while the attached action modules are F_l direct_sum F_u direct_sum F_d and contain no F_nu.",
+      "object": "three-family/three-slot neutral carrier",
+      "qualified_classifications": [
+        "OWNER_ONTOLOGY",
+        "CONDITIONAL",
+        "NOT_DERIVED"
+      ],
+      "source": "artifacts/BHSM_generation_projector_action_attachment_v8_2.json"
+    },
+    {
+      "classification": "BOUNDARY_SEED",
+      "finding": "The raw seed is indefinite and is not a physical mass or stiffness matrix.",
+      "object": "historical neutral K_nu boundary seed",
+      "qualified_classifications": [
+        "BOUNDARY_SEED",
+        "HISTORICAL"
+      ],
+      "source": "artifacts/neutral_operator_no_fit_output_v1.json"
+    },
+    {
+      "classification": "ACTION_DERIVED",
+      "finding": "Each retained fermion channel is A_lambda^*A_lambda on the AE2 domain with native resolvent variable z, not p^2.",
+      "object": "current factorized Gate7 product-Dirac",
+      "qualified_classifications": [
+        "ACTION_DERIVED"
+      ],
+      "source": "artifacts/flagship_integration/BHSM_N12_FORWARD_FIXED_CHANNEL_TRANSFER.json"
+    },
+    {
+      "classification": "FROZEN_OUTPUT",
+      "finding": "The stored matrix uses a canonical charged-diagonal convention and fixed angles; it is not U_l^dagger U_nu from action operators.",
+      "object": "current PMNS artifact",
+      "qualified_classifications": [
+        "FROZEN_OUTPUT",
+        "CONDITIONAL",
+        "HISTORICAL"
+      ],
+      "source": "artifacts/PMNS_no_fit_operator_output_v1.json"
+    },
+    {
+      "classification": "BOUNDARY_SEED",
+      "finding": "exp(i*pi/3) is a flavor/relative-holonomy seed; its standalone interaction operator and neutrino propagation attachment are absent.",
+      "object": "current Z6/pi3 CP holonomy",
+      "qualified_classifications": [
+        "BOUNDARY_SEED",
+        "FROZEN_OUTPUT",
+        "CONDITIONAL"
+      ],
+      "source": "artifacts/CP_no_fit_holonomy_output_v1.json"
+    }
+  ],
+  "status": "PROVENANCE_SPLIT_COMPLETED_NO_HISTORICAL_PROMOTION",
+  "validation": {
+    "AE2_action_version_current": true,
+    "AE2_has_no_new_field_or_scale": true,
+    "CP_standalone_operator_open": true,
+    "PMNS_uses_charged_diagonal_convention": true,
+    "classification_vocabulary_exact": true,
+    "family_modules_exclude_neutral_module": true,
+    "family_selection_imported_not_rederived": true,
+    "raw_K_nu_indefinite": true
+  },
+  "validation_passed": true
+}
