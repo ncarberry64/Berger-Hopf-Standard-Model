@@ -145,6 +145,16 @@
   `C*k^2+o(k^2)` and cumulative `C/3*Lambda^(3/2)+o(Lambda^(3/2))`.
 - Actual AE2 factorized resonance-compatible source-weighted limiting
   absorption and boundary Weyl estimate: `OPEN`.
+- Abstract AE2 factorized zero-resonance transfer-to-source-measure theorem:
+  `CLOSED`; analyticity in `lambda=k^2`, `A u_0=0`, and a uniform
+  near-threshold generalized-eigenstate normalization scalar imply first
+  source weight `O(k^2)` and cumulative measure `O(Lambda^(3/2))`.
+- Finite regular event/canonical-stop factorized endpoints:
+  `COMPACT_RESOLVENT_BRANCH_NO_CONTINUOUS_LAP_REQUIRED`; a zero atom has
+  exactly zero first form weight.
+- Highest-upstream realized infinite-end factorized input:
+  `FINITE_UNIFORM_NEAR_THRESHOLD_SUM_OF_SQUARED_GENERALIZED_EIGENSTATE_NORMALIZATIONS_ON_COMPACT_SOURCE_SUPPORT_OPEN`;
+  a strict gap and full operator-norm limiting absorption are not required.
 - Retained transverse-gauge normal boundary quadratic form:
   `ACTION_DERIVED_BY_v15_66`.
 - Retained normal matter junction action: `ZERO_BY_v15_13`; this does not

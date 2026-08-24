@@ -97,7 +97,7 @@ def _basis() -> list[dict[str, Any]]:
     p_weyl = "artifacts/flagship_integration/BHSM_N12_FORWARD_GAUGE_WEYL_READOUT_FAMILY.json"
     p_e1 = "artifacts/flagship_integration/BHSM_N12_FORWARD_E1_SOURCE_MEASURE_CRITERION.json"
     p_nf = "artifacts/flagship_integration/BHSM_N12_GATE7_AE2_NONFERMION_THRESHOLD_MARGIN.json"
-    p_fac = "artifacts/flagship_integration/BHSM_N12_GATE7_AE2_FACTORIZED_THRESHOLD_RECLASSIFICATION.json"
+    p_fac = "artifacts/flagship_integration/BHSM_N12_GATE7_AE2_FACTORIZED_SOURCE_MEASURE_REDUCTION.json"
     return [
         record(
             "ACTION_VERSION_TUPLE",
@@ -229,12 +229,12 @@ def _basis() -> list[dict[str, Any]]:
             "|nu_h|([0,Lambda])<=C_h*Lambda^(1+epsilon_h), epsilon_h>0",
             "SOURCE_CONTRACTED_SPECTRAL_MEASURE_BOUND",
             "BHSM_ONTOLOGY",
-            "Weakest current infrared criterion sufficient for E1 finiteness.",
+            "The abstract factorized implication is closed; realized infinite ends require only a uniform near-threshold normalization scalar bound.",
             "each realized factorized AE2 Weyl channel near lambda=0",
             [p_e1, p_fac],
             equivalent_forms=["|<psi_k,D_x mathcal_K_C psi_k>|<=C*k^2 with 1D counting", "O(Lambda^(3/2)) witness"],
             source_weighting_required=True,
-            current_status="HIGHEST_UPSTREAM_OPEN_THEOREM",
+            current_status="ABSTRACT_THEOREM_CLOSED_REALIZED_NORMALIZATION_OPEN",
             downstream_consumers=["E1_SOURCE_MEASURE_FINITE", "HIGH_ENERGY_ANGULAR_TAIL"],
             forbidden_interpretations=["strict spectral gap is necessary", "zero resonance automatically diverges"],
         ),
@@ -401,7 +401,7 @@ GATE_CHAIN = [
     ("G7_02_FIXED_CHANNEL", "fixed-channel forward operator", "CLOSED"),
     ("G7_03_SECTOR_CLASS", "sectorwise threshold classification", "CLOSED"),
     ("G7_04_NONFERMION", "nonfermionic threshold closure", "CLOSED"),
-    ("G7_05_FACTORIZED_LAP", "factorized resonance-compatible source-weighted limiting absorption", "OPEN_CURRENT_OWNER"),
+    ("G7_05_FACTORIZED_LAP", "realized infinite-end uniform near-threshold generalized-eigenstate normalization bound", "OPEN_CURRENT_OWNER"),
     ("G7_06_E1_FINITE", "E1 source-measure finiteness", "PENDING"),
     ("G7_07_ANGULAR_TAIL", "higher-energy and angular tail control", "PENDING"),
     ("G7_08_FORCE", "zero-source geometry force", "PENDING"),
@@ -419,7 +419,7 @@ def _gates() -> list[dict[str, Any]]:
         "G7_02_FIXED_CHANNEL": "artifacts/flagship_integration/BHSM_N12_FORWARD_FIXED_CHANNEL_TRANSFER.json",
         "G7_03_SECTOR_CLASS": "artifacts/flagship_integration/BHSM_N12_GATE7_AE2_THRESHOLD_SUPERSESSION.json",
         "G7_04_NONFERMION": "artifacts/flagship_integration/BHSM_N12_GATE7_AE2_NONFERMION_THRESHOLD_MARGIN.json",
-        "G7_05_FACTORIZED_LAP": "artifacts/flagship_integration/BHSM_N12_GATE7_AE2_FACTORIZED_THRESHOLD_RECLASSIFICATION.json",
+        "G7_05_FACTORIZED_LAP": "artifacts/flagship_integration/BHSM_N12_GATE7_AE2_FACTORIZED_SOURCE_MEASURE_REDUCTION.json",
     }
     fallback = "artifacts/flagship_integration/BHSM_N12_GATE7_AE2_THRESHOLD_SUPERSESSION.json"
     rows = []
@@ -534,8 +534,8 @@ def validate_registries(registries: Mapping[str, Mapping[str, Any]]) -> None:
 
     formula_rows = registries["BHSM_CURRENT_FORMULA_REGISTRY.json"]["records"]
     by_id = {row["canonical_id"]: row for row in formula_rows}
-    if by_id["SOURCE_WEIGHTED_THRESHOLD_MEASURE"]["current_status"] != "HIGHEST_UPSTREAM_OPEN_THEOREM":
-        raise ValueError("factorized source-weighted threshold theorem must remain the live owner")
+    if by_id["SOURCE_WEIGHTED_THRESHOLD_MEASURE"]["current_status"] != "ABSTRACT_THEOREM_CLOSED_REALIZED_NORMALIZATION_OPEN":
+        raise ValueError("factorized source-measure reduction status regressed")
     if by_id["NONFERMION_THRESHOLD_CLOSURE"]["current_status"] != "CLOSED_DO_NOT_REOPEN_WITHOUT_CONTRADICTION":
         raise ValueError("nonfermion threshold closure was reopened")
     if any(row["current_status"] == "CURRENT_ACTION_INPUT" for row in formula_rows if row["canonical_id"] in {

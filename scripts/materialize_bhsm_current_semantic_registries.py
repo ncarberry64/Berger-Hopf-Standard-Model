@@ -25,6 +25,7 @@ SOURCES = (
     "artifacts/flagship_integration/BHSM_N12_GATE7_AE2_GLOBAL_SPIN_MATTER_DOMAIN.json",
     "artifacts/flagship_integration/BHSM_N12_GATE7_AE2_NONFERMION_THRESHOLD_MARGIN.json",
     "artifacts/flagship_integration/BHSM_N12_GATE7_AE2_FACTORIZED_THRESHOLD_RECLASSIFICATION.json",
+    "artifacts/flagship_integration/BHSM_N12_GATE7_AE2_FACTORIZED_SOURCE_MEASURE_REDUCTION.json",
     "artifacts/flagship_integration/BHSM_N12_GATE7_AE2_THRESHOLD_SUPERSESSION.json",
     "artifacts/BHSM_alpha_i_update_v4_2.json",
     "theory/bhsm_prediction_ledger.json",
@@ -52,6 +53,7 @@ def verify_current_lineage() -> None:
     ae2 = loaded["artifacts/flagship_integration/BHSM_N12_GATE7_AE2_GLOBAL_SPIN_MATTER_DOMAIN.json"]
     nonfermion = loaded["artifacts/flagship_integration/BHSM_N12_GATE7_AE2_NONFERMION_THRESHOLD_MARGIN.json"]
     factorized = loaded["artifacts/flagship_integration/BHSM_N12_GATE7_AE2_FACTORIZED_THRESHOLD_RECLASSIFICATION.json"]
+    reduction = loaded["artifacts/flagship_integration/BHSM_N12_GATE7_AE2_FACTORIZED_SOURCE_MEASURE_REDUCTION.json"]
     frontier = loaded["artifacts/flagship_integration/BHSM_N12_GATE7_AE2_THRESHOLD_SUPERSESSION.json"]
     if ae2.get("action_version") != "BHSM-AE-2.0.0":
         raise RuntimeError("AE2 action version mismatch")
@@ -63,6 +65,10 @@ def verify_current_lineage() -> None:
         raise RuntimeError("disk still requires the superseded strict Wronskian premise")
     if frontier["preserved_open_objects"]["realized_factorized_source_weighted_limiting_absorption"] != "OPEN":
         raise RuntimeError("disk frontier does not identify the current live owner")
+    if reduction["claim_boundary"]["abstract_factorized_transfer_to_source_measure_theorem"] != "CLOSED":
+        raise RuntimeError("factorized source-measure reduction is not closed")
+    if reduction["claim_boundary"]["actual_N12_infinite_end_threshold_normalization"] != "OPEN":
+        raise RuntimeError("realized infinite-end normalization is not the current live owner")
 
 
 def materialize() -> list[Path]:
