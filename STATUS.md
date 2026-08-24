@@ -109,9 +109,16 @@ explicitly leave source-level convergence and its continuum/relative-trace
 bound open. Combining the channel bounds with pair/contact incidence therefore
 requires a new theorem in that already retained source domain, not a relabeling
 of the child tail.
+Moreover, the materialized channel intervals at `z=-1` are not themselves the
+retained quantum functional. The action uses
+`-(1/2) STr E1(ell_kappa^2 K_C)`, whose force and Hessian are heat-semigroup or
+equivalent spectral integrals. Two explicit positive `2x2` operators with the
+same `M(-1)=11/4` have different regulated traces, proving that one probe is
+insufficient. The Weyl compression route remains valid, but now has an exact
+functional-calculus synthesis obligation.
 
 `FULL_BHSM_COMPLETE = FALSE`. Exact next object:
-`DERIVE_A_COMMON_SOURCE_ANGULAR_LEVEL_TAIL_OR_ACTION_OWNED_BRST_RELATIVE_TRACE_SUBTRACTION_BOUND_FOR_THE_PAIR_PLUS_CONTACT_HESSIAN_ON_THE_SAME_MAXIMAL_FORWARD_DOMAIN;_THEN_COMBINE_IT_WITH_THE_PER_CHANNEL_z_MINUS_1_POISSON_BOUNDS_AND_ASSEMBLE_THE_ZERO_SOURCE_WEAK_GEOMETRY_FORCE`.
+`DERIVE_A_CONTROLLED_ACTION_OWNED_FUNCTIONAL_CALCULUS_SYNTHESIS_OF_THE_E1_HEAT_VARIATIONS_FROM_THE_MAXIMAL_FORWARD_WEYL_OR_SPECTRAL_FAMILY_TOGETHER_WITH_THE_COMMON_SOURCE_BRST_ANGULAR_RELATIVE_TRACE_TAIL;_THEN_ASSEMBLE_THE_ZERO_SOURCE_WEAK_FORCE`.
 
 ## Prior N12 source-tail checkpoint (superseded)
 

@@ -45,6 +45,10 @@
    tail acts on the separate cohomogeneity-one child action graph and cannot
    be transferred to this source sum without such a theorem. Then assemble
    the zero-source weak force before addressing noncompact saddle variations.
+   Also synthesize the retained `E1` heat variations from a controlled region
+   of the maximal-forward Weyl/spectral family (or bound the heat semigroup
+   directly). A single `z=-1` Weyl probe does not determine the retained
+   functional.
    Do not identify (z) with momentum squared.
 4. Evaluate the zero-source weak geometry force, solve and certify the
    same-action saddle if it is nonzero, evaluate the physical pair-plus-contact
@@ -63,7 +67,7 @@
 `FULL_BHSM_COMPLETE = FALSE`.
 
 Exact next flagship object:
-`DERIVE_A_COMMON_SOURCE_ANGULAR_LEVEL_TAIL_OR_ACTION_OWNED_BRST_RELATIVE_TRACE_SUBTRACTION_BOUND_FOR_THE_PAIR_PLUS_CONTACT_HESSIAN_ON_THE_SAME_MAXIMAL_FORWARD_DOMAIN;_THEN_COMBINE_IT_WITH_THE_PER_CHANNEL_z_MINUS_1_POISSON_BOUNDS_AND_ASSEMBLE_THE_ZERO_SOURCE_WEAK_GEOMETRY_FORCE`.
+`DERIVE_A_CONTROLLED_ACTION_OWNED_FUNCTIONAL_CALCULUS_SYNTHESIS_OF_THE_E1_HEAT_VARIATIONS_FROM_THE_MAXIMAL_FORWARD_WEYL_OR_SPECTRAL_FAMILY_TOGETHER_WITH_THE_COMMON_SOURCE_BRST_ANGULAR_RELATIVE_TRACE_TAIL;_THEN_ASSEMBLE_THE_ZERO_SOURCE_WEAK_FORCE`.
 
 ## Current corrected-Rayleigh N=3 critical path
 

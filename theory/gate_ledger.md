@@ -91,10 +91,15 @@
 - That child tail as a Gate-7 internal `S3` source-Hessian angular tail:
   `INVALID_DOMAIN_AND_OPERATOR_MISMATCH_WITH_NO_TRANSFER_THEOREM`.
 - Common pair/contact source-level tail or BRST relative-trace bound: `OPEN`.
+- Retained `E1` heat functional determined by one birth Weyl value at `z=-1`:
+  `FALSE_BY_EXACT_POSITIVE_TWO_BLOCK_COUNTEREXAMPLE`.
+- Scalar/de Rham and product-Dirac `z=-1` rows: `VALID_BROAD_WITNESSES_NOT_A_HEAT_FUNCTIONAL_SYNTHESIS`.
+- Controlled maximal-forward Weyl/spectral-to-heat functional calculus:
+  `OPEN`.
 - Zero-source force, same-action saddle, physical pair-plus-contact Hessian,
   Ward/BRST closure, and basis-independent scalar observable map: `OPEN`.
 - Exact next flagship dependency:
-  `DERIVE_A_COMMON_SOURCE_ANGULAR_LEVEL_TAIL_OR_ACTION_OWNED_BRST_RELATIVE_TRACE_SUBTRACTION_BOUND_FOR_THE_PAIR_PLUS_CONTACT_HESSIAN_ON_THE_SAME_MAXIMAL_FORWARD_DOMAIN;_THEN_COMBINE_IT_WITH_THE_PER_CHANNEL_z_MINUS_1_POISSON_BOUNDS_AND_ASSEMBLE_THE_ZERO_SOURCE_WEAK_GEOMETRY_FORCE`.
+  `DERIVE_A_CONTROLLED_ACTION_OWNED_FUNCTIONAL_CALCULUS_SYNTHESIS_OF_THE_E1_HEAT_VARIATIONS_FROM_THE_MAXIMAL_FORWARD_WEYL_OR_SPECTRAL_FAMILY_TOGETHER_WITH_THE_COMMON_SOURCE_BRST_ANGULAR_RELATIVE_TRACE_TAIL;_THEN_ASSEMBLE_THE_ZERO_SOURCE_WEAK_FORCE`.
 
 ## Prior N12 dynamic-Calderon continuum gates (superseded)
 

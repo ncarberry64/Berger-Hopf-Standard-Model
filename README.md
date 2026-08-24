@@ -95,6 +95,12 @@ tail belongs to the cohomogeneity-one event/child action-graph correction,
 not the distinct internal `S3` Dirac/de Rham/carrier level sum of the source
 Hessian. The rank-16 and non-Abelian source artifacts explicitly leave that
 angular tail open, so no cross-domain tail transfer is made.
+The retained quantum functional is
+`-(1/2) STr E1(ell_kappa^2 K_C)`, not the resolvent evaluated at one point.
+An exact positive-matrix counterexample now proves that equal birth Weyl data
+at `z=-1` can coexist with different regulated heat functionals. Thus the
+per-channel `z=-1` intervals remain valid but require a controlled
+Weyl/spectral-to-heat synthesis before they can enter the zero-source force.
 
 The matched-parent `Q_xi / Delta H` route remains unavailable because no
 action-owned parent-only restriction exists. No local energy, reset-chart
@@ -119,6 +125,7 @@ representative, or formal reflection may substitute for that missing object.
 | Two-chord scalar/de Rham Weyl and core-supported weak jets at `z=-1` | **ENCLOSED BROADLY** |
 | Two-chord product-Dirac Weyl and core-supported weak jets at `z=-1` | **ENCLOSED BROADLY** |
 | Certified event/child spatial tail as Gate-7 source-Hessian tail | **NOT TRANSFERABLE; DISTINCT GALERKIN DOMAIN** |
+| Single `z=-1` Weyl probe as retained `E1` heat functional | **INSUFFICIENT BY EXACT COUNTEREXAMPLE** |
 | Physical `R4` action projection and coordinate jets | **DERIVED** |
 | Local first/second Euler--Dirac Jacobi/radius tube | **CERTIFIED; MAXIMAL COVER OPEN** |
 | Finite regular pre-stop Jacobi/transfer cover | **AUTOMATIC BY COMPACTNESS** |
@@ -145,11 +152,12 @@ Evidence: [`continuum certificate`](artifacts/n12_continuum_majorant_effectivene
 [`two-chord scalar/de Rham Weyl enclosures`](artifacts/flagship_integration/BHSM_N12_FORWARD_TWO_CHORD_SCALAR_WEYL_ENCLOSURES.json),
 [`two-chord product-Dirac Weyl enclosures`](artifacts/flagship_integration/BHSM_N12_FORWARD_TWO_CHORD_PRODUCT_DIRAC_WEYL_ENCLOSURES.json),
 [`forward source-tail ownership audit`](artifacts/flagship_integration/BHSM_N12_FORWARD_SOURCE_TAIL_OWNERSHIP_AUDIT.json),
+[`resolvent-to-heat synthesis audit`](artifacts/flagship_integration/BHSM_N12_FORWARD_RESOLVENT_HEAT_SYNTHESIS_AUDIT.json),
 and [`post-parent observable audit`](artifacts/qxi_relative_energy_preparation/BHSM_POST_PARENT_FLAGSHIP_OBSERVABLE_GATE.json).
 
 Exact next object:
 
-`DERIVE_A_COMMON_SOURCE_ANGULAR_LEVEL_TAIL_OR_ACTION_OWNED_BRST_RELATIVE_TRACE_SUBTRACTION_BOUND_FOR_THE_PAIR_PLUS_CONTACT_HESSIAN_ON_THE_SAME_MAXIMAL_FORWARD_DOMAIN;_THEN_COMBINE_IT_WITH_THE_PER_CHANNEL_z_MINUS_1_POISSON_BOUNDS_AND_ASSEMBLE_THE_ZERO_SOURCE_WEAK_GEOMETRY_FORCE`
+`DERIVE_A_CONTROLLED_ACTION_OWNED_FUNCTIONAL_CALCULUS_SYNTHESIS_OF_THE_E1_HEAT_VARIATIONS_FROM_THE_MAXIMAL_FORWARD_WEYL_OR_SPECTRAL_FAMILY_TOGETHER_WITH_THE_COMMON_SOURCE_BRST_ANGULAR_RELATIVE_TRACE_TAIL;_THEN_ASSEMBLE_THE_ZERO_SOURCE_WEAK_FORCE`
 
 ## Prior N12 source-tail checkpoint (superseded by the continuum certificate above)
 
