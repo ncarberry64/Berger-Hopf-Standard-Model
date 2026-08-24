@@ -107,6 +107,11 @@ variation bounds grow as `z` approaches zero from below. No uniform global
 source gap or low-energy spectral-measure bound is certified. A finite actual
 maximal endpoint can still supply a finite-interval spectral route; an
 infinite Friedrichs history requires relative-heat or low-energy control.
+The existing BRST grading does not supply that control: the longitudinal/
+ghost pair cancels exactly, but the retained transverse-gauge plus four-HS
+minus 48-Weyl spatial heat trace has the nonzero leading coefficient
+`-5 sqrt(pi) a^(-3/2)` for `a=s/R4^2`. Universal physical-sector heat-tail
+cancellation is therefore ruled out without removing any retained sector.
 
 The matched-parent `Q_xi / Delta H` route remains unavailable because no
 action-owned parent-only restriction exists. No local energy, reset-chart
@@ -133,6 +138,7 @@ representative, or formal reflection may substitute for that missing object.
 | Certified event/child spatial tail as Gate-7 source-Hessian tail | **NOT TRANSFERABLE; DISTINCT GALERKIN DOMAIN** |
 | Single `z=-1` Weyl probe as retained `E1` heat functional | **INSUFFICIENT BY EXACT COUNTEREXAMPLE** |
 | `E1` infrared synthesis from current two-chord bounds | **OPEN; SMALL-NEGATIVE-`z` BOUNDS DIVERGE** |
+| BRST grading as complete physical heat-tail cancellation | **FALSE; LEADING COEFFICIENT `-5 sqrt(pi)`** |
 | Physical `R4` action projection and coordinate jets | **DERIVED** |
 | Local first/second Euler--Dirac Jacobi/radius tube | **CERTIFIED; MAXIMAL COVER OPEN** |
 | Finite regular pre-stop Jacobi/transfer cover | **AUTOMATIC BY COMPACTNESS** |
@@ -161,11 +167,12 @@ Evidence: [`continuum certificate`](artifacts/n12_continuum_majorant_effectivene
 [`forward source-tail ownership audit`](artifacts/flagship_integration/BHSM_N12_FORWARD_SOURCE_TAIL_OWNERSHIP_AUDIT.json),
 [`resolvent-to-heat synthesis audit`](artifacts/flagship_integration/BHSM_N12_FORWARD_RESOLVENT_HEAT_SYNTHESIS_AUDIT.json),
 [`E1` infrared-control audit](artifacts/flagship_integration/BHSM_N12_FORWARD_E1_INFRARED_CONTROL_AUDIT.json),
+[`BRST` heat-tail cancellation audit](artifacts/flagship_integration/BHSM_N12_FORWARD_BRST_HEAT_TAIL_CANCELLATION_AUDIT.json),
 and [`post-parent observable audit`](artifacts/qxi_relative_energy_preparation/BHSM_POST_PARENT_FLAGSHIP_OBSERVABLE_GATE.json).
 
 Exact next object:
 
-`DERIVE_LOW_ENERGY_MAXIMAL_FORWARD_SPECTRAL_MEASURE_CONTROL_OR_AN_ACTION_OWNED_RELATIVE_HEAT_TRACE_CANCELLATION_SUFFICIENT_TO_INTEGRATE_THE_E1_FIRST_AND_SECOND_VARIATIONS;_KEEP_THE_ACTUAL_FINITE_ENDPOINT_OPERATOR_AS_THE_OPTIONAL_ALTERNATIVE`
+`DERIVE_AN_ACTION_OWNED_RELATIVE_HEAT_REFERENCE_OR_LOW_ENERGY_SPECTRAL_MEASURE_BOUND_FOR_THE_NONCANCELLING_PHYSICAL_SECTORS,_OR_EVALUATE_THE_ACTUAL_FINITE_MAXIMAL_ENDPOINT_OPERATOR;_BRST_GRADING_ALONE_IS_EXHAUSTED`
 
 ## Prior N12 source-tail checkpoint (superseded by the continuum certificate above)
 

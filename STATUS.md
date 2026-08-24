@@ -124,9 +124,14 @@ factorized product-Dirac first/mixed estimates contain `1/kappa` and
 and low-energy spectral measure are unknown, these estimates do not control
 the heat integral near zero. A finite retained endpoint and an infinite
 Friedrichs history remain separate valid routes.
+The retained graded spectrum does not cancel the latter obstruction. The
+longitudinal gauge/ghost pair cancels exactly, but the high-level physical
+sector has degeneracy coefficient `4+24-48=-20`, hence leading spatial heat
+coefficient `-5 sqrt(pi)`. BRST grading alone is exhausted as an angular or
+infrared relative-trace mechanism.
 
 `FULL_BHSM_COMPLETE = FALSE`. Exact next object:
-`DERIVE_LOW_ENERGY_MAXIMAL_FORWARD_SPECTRAL_MEASURE_CONTROL_OR_AN_ACTION_OWNED_RELATIVE_HEAT_TRACE_CANCELLATION_SUFFICIENT_TO_INTEGRATE_THE_E1_FIRST_AND_SECOND_VARIATIONS;_KEEP_THE_ACTUAL_FINITE_ENDPOINT_OPERATOR_AS_THE_OPTIONAL_ALTERNATIVE`.
+`DERIVE_AN_ACTION_OWNED_RELATIVE_HEAT_REFERENCE_OR_LOW_ENERGY_SPECTRAL_MEASURE_BOUND_FOR_THE_NONCANCELLING_PHYSICAL_SECTORS,_OR_EVALUATE_THE_ACTUAL_FINITE_MAXIMAL_ENDPOINT_OPERATOR;_BRST_GRADING_ALONE_IS_EXHAUSTED`.
 
 ## Prior N12 source-tail checkpoint (superseded)
 

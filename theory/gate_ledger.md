@@ -101,10 +101,14 @@
   `z=-kappa^2` approaches zero: `DIVERGE_THROUGH_1_OVER_kappa_OR_kappa2_COERCIVITY_FACTORS`.
 - Uniform global positive source gap or low-energy maximal-forward spectral
   measure control: `NOT_CERTIFIED`.
+- Longitudinal gauge/complex-ghost heat contribution:
+  `CANCELS_MODE_BY_MODE`.
+- Complete physical transverse-gauge/HS/Weyl leading heat coefficient:
+  `-5*sqrt(pi)_NONZERO`; BRST grading does not close the angular/infrared tail.
 - Zero-source force, same-action saddle, physical pair-plus-contact Hessian,
   Ward/BRST closure, and basis-independent scalar observable map: `OPEN`.
 - Exact next flagship dependency:
-  `DERIVE_LOW_ENERGY_MAXIMAL_FORWARD_SPECTRAL_MEASURE_CONTROL_OR_AN_ACTION_OWNED_RELATIVE_HEAT_TRACE_CANCELLATION_SUFFICIENT_TO_INTEGRATE_THE_E1_FIRST_AND_SECOND_VARIATIONS;_KEEP_THE_ACTUAL_FINITE_ENDPOINT_OPERATOR_AS_THE_OPTIONAL_ALTERNATIVE`.
+  `DERIVE_AN_ACTION_OWNED_RELATIVE_HEAT_REFERENCE_OR_LOW_ENERGY_SPECTRAL_MEASURE_BOUND_FOR_THE_NONCANCELLING_PHYSICAL_SECTORS,_OR_EVALUATE_THE_ACTUAL_FINITE_MAXIMAL_ENDPOINT_OPERATOR;_BRST_GRADING_ALONE_IS_EXHAUSTED`.
 
 ## Prior N12 dynamic-Calderon continuum gates (superseded)
 

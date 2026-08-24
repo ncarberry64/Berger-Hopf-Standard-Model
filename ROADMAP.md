@@ -54,6 +54,9 @@
    spectral-measure/relative-heat control on an infinite Friedrichs history.
    The current comparison bounds diverge as `z` approaches zero and do not
    supply this step.
+   Do not reuse BRST grading as the missing tail theorem: after exact
+   longitudinal/ghost cancellation, the retained transverse-gauge/HS/Weyl
+   supertrace has nonzero leading heat coefficient `-5 sqrt(pi)`.
    Do not identify (z) with momentum squared.
 4. Evaluate the zero-source weak geometry force, solve and certify the
    same-action saddle if it is nonzero, evaluate the physical pair-plus-contact
@@ -72,7 +75,7 @@
 `FULL_BHSM_COMPLETE = FALSE`.
 
 Exact next flagship object:
-`DERIVE_LOW_ENERGY_MAXIMAL_FORWARD_SPECTRAL_MEASURE_CONTROL_OR_AN_ACTION_OWNED_RELATIVE_HEAT_TRACE_CANCELLATION_SUFFICIENT_TO_INTEGRATE_THE_E1_FIRST_AND_SECOND_VARIATIONS;_KEEP_THE_ACTUAL_FINITE_ENDPOINT_OPERATOR_AS_THE_OPTIONAL_ALTERNATIVE`.
+`DERIVE_AN_ACTION_OWNED_RELATIVE_HEAT_REFERENCE_OR_LOW_ENERGY_SPECTRAL_MEASURE_BOUND_FOR_THE_NONCANCELLING_PHYSICAL_SECTORS,_OR_EVALUATE_THE_ACTUAL_FINITE_MAXIMAL_ENDPOINT_OPERATOR;_BRST_GRADING_ALONE_IS_EXHAUSTED`.
 
 ## Current corrected-Rayleigh N=3 critical path
 
