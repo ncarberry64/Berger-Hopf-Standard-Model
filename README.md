@@ -138,6 +138,17 @@ weighted spectral measure gives
 This is an existence bound, not yet an explicit numerical N12 angular-tail
 enclosure. The continuous low-energy exponent and force evaluation remain
 open.
+An exact constant-barrier counterfamily now proves why the remaining
+low-energy step cannot be discharged from core positivity and global form
+nonnegativity alone. The critical graph
+`h_crit=-a tanh(a T)` cancels the child zero-energy impedance, remains
+nonnegative by a ground-state transform, and changes compact counting from
+`Lambda^(3/2)` to `Lambda^(1/2)`. The weakest actual two-chord child margin is
+`6.37052204298831e-8`, but the sector-resolved nonzero event flux plus
+`W_phys` birth matrix that must be compared with it is not assembled. The
+zero-background graph and domain-parametric local incidence do not supply
+that matrix, and the derived gauge Wentzell block cannot be assigned to every
+matter sector.
 
 The matched-parent `Q_xi / Delta H` route remains unavailable because no
 action-owned parent-only restriction exists. No local energy, reset-chart
@@ -168,6 +179,7 @@ representative, or formal reflection may substitute for that missing object.
 | Source-weighted spectral criterion sufficient for first `E1` force | **DERIVED; N12 CONSTANTS OPEN** |
 | Two-chord scalar threshold margin / product-Dirac zero-atom weight | **DERIVED; CONTINUOUS THRESHOLD OPEN** |
 | Compact weak `E1` high-energy integrability | **DERIVED BY HEAT-SANDWICH TRACE NORM; NUMERIC TAIL OPEN** |
+| Full physical zero-energy birth/Wronskian margin | **REQUIRED; SECTOR-RESOLVED NONZERO GRAPH UNASSEMBLED** |
 | Physical `R4` action projection and coordinate jets | **DERIVED** |
 | Local first/second Euler--Dirac Jacobi/radius tube | **CERTIFIED; MAXIMAL COVER OPEN** |
 | Finite regular pre-stop Jacobi/transfer cover | **AUTOMATIC BY COMPACTNESS** |
@@ -200,11 +212,12 @@ Evidence: [`continuum certificate`](artifacts/n12_continuum_majorant_effectivene
 [`E1` source-weighted measure criterion](artifacts/flagship_integration/BHSM_N12_FORWARD_E1_SOURCE_MEASURE_CRITERION.json),
 [`threshold source-measure audit`](artifacts/flagship_integration/BHSM_N12_FORWARD_THRESHOLD_SOURCE_MEASURE_AUDIT.json),
 [`E1` high-energy trace-norm theorem](artifacts/flagship_integration/BHSM_N12_FORWARD_E1_HIGH_ENERGY_TRACE_NORM.json),
+[`birth threshold-margin audit`](artifacts/flagship_integration/BHSM_N12_FORWARD_BIRTH_THRESHOLD_MARGIN_AUDIT.json),
 and [`post-parent observable audit`](artifacts/qxi_relative_energy_preparation/BHSM_POST_PARENT_FLAGSHIP_OBSERVABLE_GATE.json).
 
 Exact next object:
 
-`PROVE_THE_ACTION_OWNED_CONTINUOUS_LOW_ENERGY_LIMITING_ABSORPTION_OR_WEYL_THRESHOLD_ESTIMATE_WITH_STRICTLY_SUPERLINEAR_SOURCE_WEIGHTED_COUNTING;_THEN_COMPUTE_OR_ENCLOSE_THE_GRADED_FIXED_CHANNEL_AND_ANGULAR_SUM_TO_SIGN_ADJUDICATE_THE_ZERO_SOURCE_FORCE`
+`ASSEMBLE_THE_SECTOR_RESOLVED_NONZERO_EVENT_FLUX_PLUS_W_phys_BIRTH_GRAPH_AT_ZERO_ENERGY_AND_PROVE_A_STRICT_MATRIX_WRONSKIAN_MARGIN_AGAINST_THE_CHILD_WEYL_MAP,_OR_PROVE_A_BOUNDARY_UNIFORM_LIMITING_ABSORPTION_ESTIMATE_EXCLUDING_THE_CRITICAL_COUNTERGRAPH;_THEN_DERIVE_SUPERLINEAR_COUNTING_AND_EVALUATE_THE_FORCE`
 
 ## Prior N12 source-tail checkpoint (superseded by the continuum certificate above)
 

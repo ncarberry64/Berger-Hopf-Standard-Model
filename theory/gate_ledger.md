@@ -122,10 +122,19 @@
   N12 angular-tail enclosure remains `OPEN`.
 - Actual N12 low-energy `C_h,epsilon_h`, numerical tail enclosure, and
   zero-source force sign: `OPEN`.
+- Core positivity plus global operator nonnegativity excludes a zero-threshold
+  resonance: `FALSE_BY_EXACT_CRITICAL_BARRIER_GRAPH`.
+- Weakest certified positive two-chord child impedance:
+  `6.37052204298831E-8`; this is not the full event-plus-child Wronskian.
+- Sector-resolved nonzero event flux plus `W_phys` zero-energy birth matrix:
+  `NOT_ASSEMBLED`; the zero-background graph and domain-parametric local
+  incidence do not supply it.
+- Strict physical matrix Wronskian margin against critical cancellation:
+  `OPEN_ACTION_REQUIRED_THRESHOLD_DATUM`.
 - Zero-source force, same-action saddle, physical pair-plus-contact Hessian,
   Ward/BRST closure, and basis-independent scalar observable map: `OPEN`.
 - Exact next flagship dependency:
-  `PROVE_THE_ACTION_OWNED_CONTINUOUS_LOW_ENERGY_LIMITING_ABSORPTION_OR_WEYL_THRESHOLD_ESTIMATE_WITH_STRICTLY_SUPERLINEAR_SOURCE_WEIGHTED_COUNTING;_THEN_COMPUTE_OR_ENCLOSE_THE_GRADED_FIXED_CHANNEL_AND_ANGULAR_SUM_TO_SIGN_ADJUDICATE_THE_ZERO_SOURCE_FORCE`.
+  `ASSEMBLE_THE_SECTOR_RESOLVED_NONZERO_EVENT_FLUX_PLUS_W_phys_BIRTH_GRAPH_AT_ZERO_ENERGY_AND_PROVE_A_STRICT_MATRIX_WRONSKIAN_MARGIN_AGAINST_THE_CHILD_WEYL_MAP,_OR_PROVE_A_BOUNDARY_UNIFORM_LIMITING_ABSORPTION_ESTIMATE_EXCLUDING_THE_CRITICAL_COUNTERGRAPH;_THEN_DERIVE_SUPERLINEAR_COUNTING_AND_EVALUATE_THE_FORCE`.
 
 ## Prior N12 dynamic-Calderon continuum gates (superseded)
 

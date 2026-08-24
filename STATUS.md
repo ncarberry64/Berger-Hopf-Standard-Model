@@ -152,9 +152,20 @@ actual N12 angular tail or make the unperturbed infinite-volume heat trace
 finite. The active analytic obstruction is now the continuous low-energy
 threshold law; the active computational obligation after it is a numerical
 fixed-channel/angular enclosure and force sign.
+The low-energy dependency is now localized exactly at the physical birth
+graph. A constant positive barrier has a critical Robin value
+`-a tanh(a T)` that cancels its child impedance. The resulting operator is
+still nonnegative but has resonant `Lambda^(1/2)` local counting instead of
+the required `Lambda^(3/2)`. For N12 the weakest certified child impedance is
+`6.37052204298831e-8`. Disk provenance shows that the zero-background graph
+does not derive the nonzero fluctuation matrices, the common local incidence
+does not select a temporal graph, and the forward graph record still leaves
+the complete sector-resolved nonzero event-flux/`W_phys` graph unassembled.
+Thus a strict full birth Wronskian margin—not another chord—is the first
+missing action-owned object.
 
 `FULL_BHSM_COMPLETE = FALSE`. Exact next object:
-`PROVE_THE_ACTION_OWNED_CONTINUOUS_LOW_ENERGY_LIMITING_ABSORPTION_OR_WEYL_THRESHOLD_ESTIMATE_WITH_STRICTLY_SUPERLINEAR_SOURCE_WEIGHTED_COUNTING;_THEN_COMPUTE_OR_ENCLOSE_THE_GRADED_FIXED_CHANNEL_AND_ANGULAR_SUM_TO_SIGN_ADJUDICATE_THE_ZERO_SOURCE_FORCE`.
+`ASSEMBLE_THE_SECTOR_RESOLVED_NONZERO_EVENT_FLUX_PLUS_W_phys_BIRTH_GRAPH_AT_ZERO_ENERGY_AND_PROVE_A_STRICT_MATRIX_WRONSKIAN_MARGIN_AGAINST_THE_CHILD_WEYL_MAP,_OR_PROVE_A_BOUNDARY_UNIFORM_LIMITING_ABSORPTION_ESTIMATE_EXCLUDING_THE_CRITICAL_COUNTERGRAPH;_THEN_DERIVE_SUPERLINEAR_COUNTING_AND_EVALUATE_THE_FORCE`.
 
 ## Prior N12 source-tail checkpoint (superseded)
 

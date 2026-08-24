@@ -72,6 +72,13 @@
    the trace-class heat sandwich. What remains at high energy is an explicit
    computable angular-tail enclosure for sign adjudication, not existence of
    the E1 integral.
+   Before promoting any threshold exponent, assemble the sector-resolved
+   nonzero event flux plus `W_phys` birth graph and prove its zero-energy
+   matrix Wronskian stays strictly away from the critical cancellation of the
+   child Weyl map. Core positivity and total-form nonnegativity are
+   insufficient by the exact barrier counterfamily. A boundary-uniform
+   limiting-absorption theorem excluding that critical graph is an equivalent
+   route. Do not assign the gauge Wentzell block to the Weyl or HS sectors.
    Do not identify (z) with momentum squared.
 4. Evaluate the zero-source weak geometry force, solve and certify the
    same-action saddle if it is nonzero, evaluate the physical pair-plus-contact
@@ -90,7 +97,7 @@
 `FULL_BHSM_COMPLETE = FALSE`.
 
 Exact next flagship object:
-`PROVE_THE_ACTION_OWNED_CONTINUOUS_LOW_ENERGY_LIMITING_ABSORPTION_OR_WEYL_THRESHOLD_ESTIMATE_WITH_STRICTLY_SUPERLINEAR_SOURCE_WEIGHTED_COUNTING;_THEN_COMPUTE_OR_ENCLOSE_THE_GRADED_FIXED_CHANNEL_AND_ANGULAR_SUM_TO_SIGN_ADJUDICATE_THE_ZERO_SOURCE_FORCE`.
+`ASSEMBLE_THE_SECTOR_RESOLVED_NONZERO_EVENT_FLUX_PLUS_W_phys_BIRTH_GRAPH_AT_ZERO_ENERGY_AND_PROVE_A_STRICT_MATRIX_WRONSKIAN_MARGIN_AGAINST_THE_CHILD_WEYL_MAP,_OR_PROVE_A_BOUNDARY_UNIFORM_LIMITING_ABSORPTION_ESTIMATE_EXCLUDING_THE_CRITICAL_COUNTERGRAPH;_THEN_DERIVE_SUPERLINEAR_COUNTING_AND_EVALUATE_THE_FORCE`.
 
 ## Current corrected-Rayleigh N=3 critical path
 
