@@ -155,6 +155,14 @@
 - Highest-upstream realized infinite-end factorized input:
   `FINITE_UNIFORM_NEAR_THRESHOLD_SUM_OF_SQUARED_GENERALIZED_EIGENSTATE_NORMALIZATIONS_ON_COMPACT_SOURCE_SUPPORT_OPEN`;
   a strict gap and full operator-norm limiting absorption are not required.
+- Geometry-first sufficient route for that normalization:
+  `I_R=integral d_tau/R4<infinity` gives
+  `N_plus^2+N_minus^2=(4/pi)cosh(2*mu*I_R)` per event/child
+  multiplicity and therefore closes the fixed-channel threshold measure.
+- Actual infinite-history `I_R` bound: `OPEN`; the retained action ledger has
+  no global coercive strong bound or superlinear lower growth theorem for
+  `R4`. The exact co-owner is a direct non-`L1` supersymmetric-tail source
+  normalization theorem.
 - Retained transverse-gauge normal boundary quadratic form:
   `ACTION_DERIVED_BY_v15_66`.
 - Retained normal matter junction action: `ZERO_BY_v15_13`; this does not

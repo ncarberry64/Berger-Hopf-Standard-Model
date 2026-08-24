@@ -107,8 +107,74 @@ def endpoint_threshold_dichotomy(
     }
 
 
+def integrable_reciprocal_radius_normalization(
+    absolute_unit_radius_dirac_eigenvalue: float,
+    reciprocal_radius_integral_upper: float,
+    channel_multiplicity: int = 1,
+    event_child_side_count: int = 2,
+) -> dict[str, float]:
+    """Return the two-chirality threshold normalization bound from ``int 1/R4``.
+
+    For ``s_chi=chi*mu/R4`` and finite ``I_R=int d_tau/R4``, the zero
+    transfer solution tends to ``exp(-chi*mu*I_R)``.  Relative to free
+    half-line delta normalization, the squared threshold amplitudes are
+    bounded by ``(2/pi)*exp(2*chi*mu*I_R)``.  Summing both chiralities,
+    multiplicity, and the retained event/child sides gives the scalar below.
+    """
+
+    eigenvalue = float(absolute_unit_radius_dirac_eigenvalue)
+    integral = float(reciprocal_radius_integral_upper)
+    multiplicity = int(channel_multiplicity)
+    sides = int(event_child_side_count)
+    if not math.isfinite(eigenvalue) or eigenvalue < 0.0:
+        raise ValueError("finite nonnegative Dirac eigenvalue required")
+    if not math.isfinite(integral) or integral < 0.0:
+        raise ValueError("finite nonnegative reciprocal-radius integral required")
+    if multiplicity < 1 or sides < 1:
+        raise ValueError("positive channel multiplicity and side count required")
+    exponent = 2.0 * eigenvalue * integral
+    positive = (2.0 / math.pi) * math.exp(exponent)
+    negative = (2.0 / math.pi) * math.exp(-exponent)
+    total = multiplicity * sides * (positive + negative)
+    return {
+        "absolute_unit_radius_dirac_eigenvalue": eigenvalue,
+        "reciprocal_radius_integral_upper": integral,
+        "positive_chirality_normalization_squared_upper": positive,
+        "negative_chirality_normalization_squared_upper": negative,
+        "chirality_event_child_multiplicity": float(multiplicity * sides),
+        "uniform_near_threshold_normalization_squared_sum_upper": total,
+    }
+
+
+def reciprocal_radius_integral_from_power_growth(
+    initial_radius_lower: float,
+    growth_time_scale: float,
+    excess_power: float,
+) -> dict[str, float]:
+    """Integrate a sufficient geometric lower growth law for ``R4``.
+
+    If ``R4(tau)>=R0*(1+tau/T0)**(1+delta)``, then
+    ``integral_0^infinity d_tau/R4 <= T0/(R0*delta)``.
+    """
+
+    radius = float(initial_radius_lower)
+    scale = float(growth_time_scale)
+    delta = float(excess_power)
+    if not all(math.isfinite(value) and value > 0.0 for value in (radius, scale, delta)):
+        raise ValueError("finite positive radius-growth inputs required")
+    return {
+        "radius_lower_law": "R4(tau)>=R0*(1+tau/T0)^(1+delta)",
+        "initial_radius_lower": radius,
+        "growth_time_scale": scale,
+        "excess_power": delta,
+        "reciprocal_radius_integral_upper": scale / (radius * delta),
+    }
+
+
 __all__ = [
     "endpoint_threshold_dichotomy",
     "exact_constant_resonance_coefficient",
+    "integrable_reciprocal_radius_normalization",
+    "reciprocal_radius_integral_from_power_growth",
     "resonant_transfer_majorant",
 ]

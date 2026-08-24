@@ -77,3 +77,15 @@ def test_builder_rejects_missing_registry() -> None:
     registries.pop("BHSM_CURRENT_GATE_LEDGER.json")
     with pytest.raises(ValueError, match="nine"):
         validate_registries(registries)
+
+
+def test_recovered_owner_ontology_is_complete_and_not_action_derived() -> None:
+    ontology = {row["canonical_id"]: row for row in _load()["BHSM_CURRENT_ONTOLOGY_REGISTRY.json"]["records"]}
+    for canonical_id in (
+        "ONTOLOGY_GEOMETRY_FIRST", "ONTOLOGY_PARTICLE_CLASS", "ONTOLOGY_GENERATIONS",
+        "ONTOLOGY_MASS_READOUT", "ONTOLOGY_NEUTRINO_MASS", "ONTOLOGY_CKM",
+        "ONTOLOGY_GAUGE_127", "ONTOLOGY_BARE_DRESSED", "ONTOLOGY_FROZEN_NO_RETUNE",
+        "ONTOLOGY_FULL_COMPLETION",
+    ):
+        assert ontology[canonical_id]["current_status"].startswith("OWNER_AUTHORIZED")
+        assert "ACTION_DERIVED" not in ontology[canonical_id]["current_status"]

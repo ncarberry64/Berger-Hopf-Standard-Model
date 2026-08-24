@@ -97,7 +97,7 @@ def _basis() -> list[dict[str, Any]]:
     p_weyl = "artifacts/flagship_integration/BHSM_N12_FORWARD_GAUGE_WEYL_READOUT_FAMILY.json"
     p_e1 = "artifacts/flagship_integration/BHSM_N12_FORWARD_E1_SOURCE_MEASURE_CRITERION.json"
     p_nf = "artifacts/flagship_integration/BHSM_N12_GATE7_AE2_NONFERMION_THRESHOLD_MARGIN.json"
-    p_fac = "artifacts/flagship_integration/BHSM_N12_GATE7_AE2_FACTORIZED_SOURCE_MEASURE_REDUCTION.json"
+    p_fac = "artifacts/flagship_integration/BHSM_N12_GATE7_AE2_INTEGRABLE_RADIUS_THRESHOLD_ROUTE.json"
     return [
         record(
             "ACTION_VERSION_TUPLE",
@@ -229,12 +229,12 @@ def _basis() -> list[dict[str, Any]]:
             "|nu_h|([0,Lambda])<=C_h*Lambda^(1+epsilon_h), epsilon_h>0",
             "SOURCE_CONTRACTED_SPECTRAL_MEASURE_BOUND",
             "BHSM_ONTOLOGY",
-            "The abstract factorized implication is closed; realized infinite ends require only a uniform near-threshold normalization scalar bound.",
+            "The abstract implication and integrable-radius route are closed; the realized infinite end needs reciprocal-radius integrability or a direct non-L1 supersymmetric-tail theorem.",
             "each realized factorized AE2 Weyl channel near lambda=0",
             [p_e1, p_fac],
             equivalent_forms=["|<psi_k,D_x mathcal_K_C psi_k>|<=C*k^2 with 1D counting", "O(Lambda^(3/2)) witness"],
             source_weighting_required=True,
-            current_status="ABSTRACT_THEOREM_CLOSED_REALIZED_NORMALIZATION_OPEN",
+            current_status="INTEGRABLE_RADIUS_ROUTE_CLOSED_REALIZED_TAIL_DICHOTOMY_OPEN",
             downstream_consumers=["E1_SOURCE_MEASURE_FINITE", "HIGH_ENERGY_ANGULAR_TAIL"],
             forbidden_interpretations=["strict spectral gap is necessary", "zero resonance automatically diverges"],
         ),
@@ -379,6 +379,7 @@ def _dimensions() -> list[dict[str, Any]]:
 
 def _ontology() -> list[dict[str, Any]]:
     ae2 = "artifacts/action_extension/BHSM_ACTION_AE2_GLOBAL_SPIN_RESET_ACTION.json"
+    owner = "theory/norman_owner_ontology_recovered.md"
     rows = [
         ("ONTOLOGY_MAXIMAL_FORWARD_HISTORY", "H_max^+", "Primary dynamical object is a maximal forward geometric history.", "ACTION_REQUIRED"),
         ("ONTOLOGY_SINGLE_TIME", "dt>0 and d_tau>0", "Physical time has one orientation.", "INTERNAL_CONSISTENCY_REQUIRED"),
@@ -387,11 +388,34 @@ def _ontology() -> list[dict[str, Any]]:
         ("ONTOLOGY_AE2_DOMAIN", "Spin x G_SM reset-glued bundle", "Owner-authorized AE2 global event-child matter domain.", "OWNER_AUTHORIZED_THEORY_VERSION_DECISION"),
         ("ONTOLOGY_AE2_TRANSMISSION", "delta S_AE2=0 => transmission law", "Transmission laws derived on AE2 may be action-derived within AE2.", "ACTION_DERIVED_WITHIN_AE2"),
         ("ONTOLOGY_FAR_END", "event reset if hit; Friedrichs otherwise where applicable", "Far-end completion does not select the birth graph.", "ACTION_DOMAIN_REQUIRED"),
+        ("ONTOLOGY_GEOMETRY_FIRST", "geometry -> emergent SM interpretation", "Geometry is microscopic and Standard Model language is downstream.", "OWNER_AUTHORIZED_ONTOLOGY"),
+        ("ONTOLOGY_NO_OBSERVABLE_UPSTREAM", "action -> theorem -> observable -> frozen comparison", "Advertised observables must be derived and never inserted upstream.", "OWNER_AUTHORIZED_DEPENDENCY_DIRECTION"),
+        ("ONTOLOGY_PARTICLE_CLASS", "particle=[persistent geometric mode/history]", "Particles are persistent geometric mode/history equivalence classes.", "OWNER_AUTHORIZED_ONTOLOGY"),
+        ("ONTOLOGY_GENERATIONS", "generation_slots=(base,excitation_1,excitation_2)", "Three generations are one base mode plus two excitation slots of one architecture.", "OWNER_AUTHORIZED_ONTOLOGY"),
+        ("ONTOLOGY_MASS_READOUT", "m_phys=action_owned_response_plus_universal_scale_map", "Mass is a geometric propagation/boundary response readout, not primitive or local energy.", "OWNER_AUTHORIZED_OBSERVABLE_SEMANTICS"),
+        ("ONTOLOGY_UNIVERSAL_SCALE", "physical_scale=universal_action_derived_origin", "Sector differences reside in dimensionless geometric responses, not free sector scales.", "OWNER_AUTHORIZED_DIMENSIONAL_SEMANTICS"),
+        ("ONTOLOGY_NEUTRINO_MASS", "m_nu=propagation_locked_curvature_response", "Neutrino mass is a propagation response rather than primitive static rest mass.", "OWNER_AUTHORIZED_OBSERVABLE_SEMANTICS"),
+        ("ONTOLOGY_CKM", "V_CKM=relative_orientation(up_response_basis,down_response_basis)", "CKM is the mismatch of action-selected up/down geometric response sectors.", "OWNER_AUTHORIZED_OBSERVABLE_SEMANTICS"),
+        ("ONTOLOGY_GAUGE_127", "1:2:7=frozen_candidate_geometric_structure", "The gauge pattern is important but is not an action axiom.", "OWNER_AUTHORIZED_CANDIDATE_STATUS"),
+        ("ONTOLOGY_AE2_NO_CHILD_SELECTION", "AE2_glue != arbitrary_child_Cauchy_selector", "AE2 unifies event/child matter traces without selecting a child state by hand.", "OWNER_AUTHORIZED_DOMAIN_SEMANTICS"),
+        ("ONTOLOGY_BARE_DRESSED", "dressed=derived_dressing_map(bare)", "Bare and dressed quantities are separate layers and dressing is not fitting freedom.", "OWNER_AUTHORIZED_LAYER_SEPARATION"),
+        ("ONTOLOGY_FROZEN_NO_RETUNE", "new_derivation_disagreement => audit", "Frozen predictions never retune.", "OWNER_AUTHORIZED_FREEZE_RULE"),
+        ("ONTOLOGY_FULL_COMPLETION", "complete=all_claimed_sectors+scale+domains+BRST+continuum+frozen_reproduction", "Full completion requires reproducible closure from one coherent current action.", "OWNER_AUTHORIZED_COMPLETION_RULE"),
     ]
     return [
         record(cid, formula, "ONTOLOGY_RECORD", "BHSM_ONTOLOGY", meaning,
-               "AE2 maximal forward domain", [ae2], current_status=status,
-               forbidden_interpretations=["Call owner-authorized AE2 ontology itself action-derived."] if cid == "ONTOLOGY_AE2_DOMAIN" else [])
+               "current BHSM ontology", [owner] if cid.startswith("ONTOLOGY_") and cid not in {
+                   "ONTOLOGY_MAXIMAL_FORWARD_HISTORY", "ONTOLOGY_SINGLE_TIME", "ONTOLOGY_REFLECTION",
+                   "ONTOLOGY_CONDITIONAL_RESET", "ONTOLOGY_AE2_DOMAIN", "ONTOLOGY_AE2_TRANSMISSION", "ONTOLOGY_FAR_END"
+               } else [ae2], current_status=status,
+               forbidden_interpretations=(
+                   ["Call owner-authorized AE2 ontology itself action-derived."] if cid == "ONTOLOGY_AE2_DOMAIN" else
+                   ["Insert downstream Standard Model observables into the action."] if cid == "ONTOLOGY_NO_OBSERVABLE_UPSTREAM" else
+                   ["Treat particles as primitive point substances."] if cid == "ONTOLOGY_PARTICLE_CLASS" else
+                   ["Use independent freely chosen sector scales."] if cid == "ONTOLOGY_UNIVERSAL_SCALE" else
+                   ["Use dressing as fitting freedom."] if cid == "ONTOLOGY_BARE_DRESSED" else
+                   ["Retune a frozen prediction."] if cid == "ONTOLOGY_FROZEN_NO_RETUNE" else []
+               ))
         for cid, formula, meaning, status in rows
     ]
 
@@ -401,7 +425,7 @@ GATE_CHAIN = [
     ("G7_02_FIXED_CHANNEL", "fixed-channel forward operator", "CLOSED"),
     ("G7_03_SECTOR_CLASS", "sectorwise threshold classification", "CLOSED"),
     ("G7_04_NONFERMION", "nonfermionic threshold closure", "CLOSED"),
-    ("G7_05_FACTORIZED_LAP", "realized infinite-end uniform near-threshold generalized-eigenstate normalization bound", "OPEN_CURRENT_OWNER"),
+    ("G7_05_FACTORIZED_LAP", "prove integral(d_tau/R4)<infinity on the realized infinite end or close the direct non-L1 supersymmetric-tail source bound", "OPEN_CURRENT_OWNER"),
     ("G7_06_E1_FINITE", "E1 source-measure finiteness", "PENDING"),
     ("G7_07_ANGULAR_TAIL", "higher-energy and angular tail control", "PENDING"),
     ("G7_08_FORCE", "zero-source geometry force", "PENDING"),
@@ -419,7 +443,7 @@ def _gates() -> list[dict[str, Any]]:
         "G7_02_FIXED_CHANNEL": "artifacts/flagship_integration/BHSM_N12_FORWARD_FIXED_CHANNEL_TRANSFER.json",
         "G7_03_SECTOR_CLASS": "artifacts/flagship_integration/BHSM_N12_GATE7_AE2_THRESHOLD_SUPERSESSION.json",
         "G7_04_NONFERMION": "artifacts/flagship_integration/BHSM_N12_GATE7_AE2_NONFERMION_THRESHOLD_MARGIN.json",
-        "G7_05_FACTORIZED_LAP": "artifacts/flagship_integration/BHSM_N12_GATE7_AE2_FACTORIZED_SOURCE_MEASURE_REDUCTION.json",
+        "G7_05_FACTORIZED_LAP": "artifacts/flagship_integration/BHSM_N12_GATE7_AE2_INTEGRABLE_RADIUS_THRESHOLD_ROUTE.json",
     }
     fallback = "artifacts/flagship_integration/BHSM_N12_GATE7_AE2_THRESHOLD_SUPERSESSION.json"
     rows = []
@@ -534,7 +558,7 @@ def validate_registries(registries: Mapping[str, Mapping[str, Any]]) -> None:
 
     formula_rows = registries["BHSM_CURRENT_FORMULA_REGISTRY.json"]["records"]
     by_id = {row["canonical_id"]: row for row in formula_rows}
-    if by_id["SOURCE_WEIGHTED_THRESHOLD_MEASURE"]["current_status"] != "ABSTRACT_THEOREM_CLOSED_REALIZED_NORMALIZATION_OPEN":
+    if by_id["SOURCE_WEIGHTED_THRESHOLD_MEASURE"]["current_status"] != "INTEGRABLE_RADIUS_ROUTE_CLOSED_REALIZED_TAIL_DICHOTOMY_OPEN":
         raise ValueError("factorized source-measure reduction status regressed")
     if by_id["NONFERMION_THRESHOLD_CLOSURE"]["current_status"] != "CLOSED_DO_NOT_REOPEN_WITHOUT_CONTRADICTION":
         raise ValueError("nonfermion threshold closure was reopened")
@@ -545,6 +569,17 @@ def validate_registries(registries: Mapping[str, Mapping[str, Any]]) -> None:
     ontology = {row["canonical_id"]: row for row in registries["BHSM_CURRENT_ONTOLOGY_REGISTRY.json"]["records"]}
     if ontology["ONTOLOGY_AE2_DOMAIN"]["current_status"] != "OWNER_AUTHORIZED_THEORY_VERSION_DECISION":
         raise ValueError("AE2 ontology was misclassified as action-derived")
+    required_owner_ontology = {
+        "ONTOLOGY_GEOMETRY_FIRST", "ONTOLOGY_NO_OBSERVABLE_UPSTREAM", "ONTOLOGY_PARTICLE_CLASS",
+        "ONTOLOGY_GENERATIONS", "ONTOLOGY_MASS_READOUT", "ONTOLOGY_UNIVERSAL_SCALE",
+        "ONTOLOGY_NEUTRINO_MASS", "ONTOLOGY_CKM", "ONTOLOGY_GAUGE_127",
+        "ONTOLOGY_AE2_NO_CHILD_SELECTION", "ONTOLOGY_BARE_DRESSED",
+        "ONTOLOGY_FROZEN_NO_RETUNE", "ONTOLOGY_FULL_COMPLETION",
+    }
+    if not required_owner_ontology <= set(ontology):
+        raise ValueError("recovered Norman owner ontology is incomplete")
+    if any(not ontology[cid]["current_status"].startswith("OWNER_AUTHORIZED") for cid in required_owner_ontology):
+        raise ValueError("owner ontology was downgraded or reclassified as action-derived")
     equivalences = registries["BHSM_FORMULA_EQUIVALENCE_GRAPH.json"]["records"]
     if any(row["current_status"] != "EQUIVALENT_NOT_INDEPENDENT_PHYSICS" for row in equivalences):
         raise ValueError("equivalent forms were promoted to independent laws")

@@ -26,12 +26,14 @@ SOURCES = (
     "artifacts/flagship_integration/BHSM_N12_GATE7_AE2_NONFERMION_THRESHOLD_MARGIN.json",
     "artifacts/flagship_integration/BHSM_N12_GATE7_AE2_FACTORIZED_THRESHOLD_RECLASSIFICATION.json",
     "artifacts/flagship_integration/BHSM_N12_GATE7_AE2_FACTORIZED_SOURCE_MEASURE_REDUCTION.json",
+    "artifacts/flagship_integration/BHSM_N12_GATE7_AE2_INTEGRABLE_RADIUS_THRESHOLD_ROUTE.json",
     "artifacts/flagship_integration/BHSM_N12_GATE7_AE2_THRESHOLD_SUPERSESSION.json",
     "artifacts/BHSM_alpha_i_update_v4_2.json",
     "theory/bhsm_prediction_ledger.json",
     "artifacts/frozen_constants_v2.json",
     "artifacts/BHSM_rho_ch_action_audit_v1_9.json",
     "artifacts/intrinsic_state_selection/BHSM_N12_CONSTRAINT_REDUCED_ENERGY_IDENTITY_GATE.json",
+    "theory/norman_owner_ontology_recovered.md",
 )
 
 
@@ -46,7 +48,11 @@ def deterministic_bytes(payload: dict[str, Any]) -> bytes:
 def verify_current_lineage() -> None:
     """Verify the rebuilt DAG statuses against the newest stored theorems."""
 
-    loaded = {item: json.loads((ROOT / item).read_text(encoding="utf-8")) for item in SOURCES}
+    loaded = {
+        item: json.loads((ROOT / item).read_text(encoding="utf-8"))
+        for item in SOURCES
+        if item.endswith(".json")
+    }
     theorem_sources = [item for item in SOURCES if item.startswith("artifacts/flagship_integration/")]
     if not all(loaded[item].get("validation_passed") is True for item in theorem_sources):
         raise RuntimeError("every current Gate7 theorem input must be validated")
@@ -54,6 +60,7 @@ def verify_current_lineage() -> None:
     nonfermion = loaded["artifacts/flagship_integration/BHSM_N12_GATE7_AE2_NONFERMION_THRESHOLD_MARGIN.json"]
     factorized = loaded["artifacts/flagship_integration/BHSM_N12_GATE7_AE2_FACTORIZED_THRESHOLD_RECLASSIFICATION.json"]
     reduction = loaded["artifacts/flagship_integration/BHSM_N12_GATE7_AE2_FACTORIZED_SOURCE_MEASURE_REDUCTION.json"]
+    radius_route = loaded["artifacts/flagship_integration/BHSM_N12_GATE7_AE2_INTEGRABLE_RADIUS_THRESHOLD_ROUTE.json"]
     frontier = loaded["artifacts/flagship_integration/BHSM_N12_GATE7_AE2_THRESHOLD_SUPERSESSION.json"]
     if ae2.get("action_version") != "BHSM-AE-2.0.0":
         raise RuntimeError("AE2 action version mismatch")
@@ -69,6 +76,13 @@ def verify_current_lineage() -> None:
         raise RuntimeError("factorized source-measure reduction is not closed")
     if reduction["claim_boundary"]["actual_N12_infinite_end_threshold_normalization"] != "OPEN":
         raise RuntimeError("realized infinite-end normalization is not the current live owner")
+    if radius_route["claim_boundary"]["conditional_integrable_radius_threshold_theorem"] != "CLOSED":
+        raise RuntimeError("integrable reciprocal-radius threshold route is not closed")
+    if not (
+        radius_route["claim_boundary"]["actual_N12_reciprocal_radius_integrability"] == "OPEN"
+        and radius_route["claim_boundary"]["direct_nonintegrable_tail_theorem"] == "OPEN"
+    ):
+        raise RuntimeError("realized infinite-tail dichotomy is not the current live owner")
 
 
 def materialize() -> list[Path]:
