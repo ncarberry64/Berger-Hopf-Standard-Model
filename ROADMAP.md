@@ -57,6 +57,10 @@
    Do not reuse BRST grading as the missing tail theorem: after exact
    longitudinal/ghost cancellation, the retained transverse-gauge/HS/Weyl
    supertrace has nonzero leading heat coefficient `-5 sqrt(pi)`.
+   For the first weak force, use the weaker derived source-weighted criterion:
+   prove superlinear low-energy vanishing and a finite `E1`-weighted
+   high-energy tail for each retained geometry direction. Do not require a
+   full operator gap if these contractions close.
    Do not identify (z) with momentum squared.
 4. Evaluate the zero-source weak geometry force, solve and certify the
    same-action saddle if it is nonzero, evaluate the physical pair-plus-contact
@@ -75,7 +79,7 @@
 `FULL_BHSM_COMPLETE = FALSE`.
 
 Exact next flagship object:
-`DERIVE_AN_ACTION_OWNED_RELATIVE_HEAT_REFERENCE_OR_LOW_ENERGY_SPECTRAL_MEASURE_BOUND_FOR_THE_NONCANCELLING_PHYSICAL_SECTORS,_OR_EVALUATE_THE_ACTUAL_FINITE_MAXIMAL_ENDPOINT_OPERATOR;_BRST_GRADING_ALONE_IS_EXHAUSTED`.
+`BOUND_THE_ACTUAL_N12_SOURCE_WEIGHTED_GRADED_SPECTRAL_COUNTING_FUNCTION_NEAR_ZERO_AND_ITS_E1_WEIGHTED_HIGH_ENERGY_TAIL_FOR_EACH_RETAINED_WEAK_GEOMETRY_DIRECTION;_THEN_ASSEMBLE_AND_SIGN_ADJUDICATE_THE_ZERO_SOURCE_FORCE`.
 
 ## Current corrected-Rayleigh N=3 critical path
 

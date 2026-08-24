@@ -105,10 +105,13 @@
   `CANCELS_MODE_BY_MODE`.
 - Complete physical transverse-gauge/HS/Weyl leading heat coefficient:
   `-5*sqrt(pi)_NONZERO`; BRST grading does not close the angular/infrared tail.
+- Sufficient first-force source-weighted spectral criterion:
+  `DERIVED_BY_DYADIC_SUM_IF_abs(nu_h)([0,Lambda])<=C_h*Lambda^(1+epsilon_h)_WITH_epsilon_h>0_AND_FINITE_E1_WEIGHTED_HIGH_TAIL`.
+- Actual N12 `C_h,epsilon_h,H_h` and zero-source force sign: `OPEN`.
 - Zero-source force, same-action saddle, physical pair-plus-contact Hessian,
   Ward/BRST closure, and basis-independent scalar observable map: `OPEN`.
 - Exact next flagship dependency:
-  `DERIVE_AN_ACTION_OWNED_RELATIVE_HEAT_REFERENCE_OR_LOW_ENERGY_SPECTRAL_MEASURE_BOUND_FOR_THE_NONCANCELLING_PHYSICAL_SECTORS,_OR_EVALUATE_THE_ACTUAL_FINITE_MAXIMAL_ENDPOINT_OPERATOR;_BRST_GRADING_ALONE_IS_EXHAUSTED`.
+  `BOUND_THE_ACTUAL_N12_SOURCE_WEIGHTED_GRADED_SPECTRAL_COUNTING_FUNCTION_NEAR_ZERO_AND_ITS_E1_WEIGHTED_HIGH_ENERGY_TAIL_FOR_EACH_RETAINED_WEAK_GEOMETRY_DIRECTION;_THEN_ASSEMBLE_AND_SIGN_ADJUDICATE_THE_ZERO_SOURCE_FORCE`.
 
 ## Prior N12 dynamic-Calderon continuum gates (superseded)
 

@@ -129,9 +129,15 @@ longitudinal gauge/ghost pair cancels exactly, but the high-level physical
 sector has degeneracy coefficient `4+24-48=-20`, hence leading spatial heat
 coefficient `-5 sqrt(pi)`. BRST grading alone is exhausted as an angular or
 infrared relative-trace mechanism.
+For the first geometry force, a full uniform gap is nevertheless stronger
+than necessary. A new dyadic theorem shows that the source-weighted graded
+measure is sufficient if its low-energy counting function is
+`O(Lambda^(1+epsilon))` for some positive `epsilon` and its `E1`-weighted
+high-energy tail is finite. This criterion is action-native and contraction
+specific; the actual N12 constants and force sign are not yet derived.
 
 `FULL_BHSM_COMPLETE = FALSE`. Exact next object:
-`DERIVE_AN_ACTION_OWNED_RELATIVE_HEAT_REFERENCE_OR_LOW_ENERGY_SPECTRAL_MEASURE_BOUND_FOR_THE_NONCANCELLING_PHYSICAL_SECTORS,_OR_EVALUATE_THE_ACTUAL_FINITE_MAXIMAL_ENDPOINT_OPERATOR;_BRST_GRADING_ALONE_IS_EXHAUSTED`.
+`BOUND_THE_ACTUAL_N12_SOURCE_WEIGHTED_GRADED_SPECTRAL_COUNTING_FUNCTION_NEAR_ZERO_AND_ITS_E1_WEIGHTED_HIGH_ENERGY_TAIL_FOR_EACH_RETAINED_WEAK_GEOMETRY_DIRECTION;_THEN_ASSEMBLE_AND_SIGN_ADJUDICATE_THE_ZERO_SOURCE_FORCE`.
 
 ## Prior N12 source-tail checkpoint (superseded)
 
