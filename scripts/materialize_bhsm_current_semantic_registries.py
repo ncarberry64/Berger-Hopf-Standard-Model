@@ -28,6 +28,7 @@ SOURCES = (
     "artifacts/flagship_integration/BHSM_N12_GATE7_AE2_FACTORIZED_SOURCE_MEASURE_REDUCTION.json",
     "artifacts/flagship_integration/BHSM_N12_GATE7_AE2_INTEGRABLE_RADIUS_THRESHOLD_ROUTE.json",
     "artifacts/flagship_integration/BHSM_N12_GATE7_AE2_LINEAR_RADIUS_TAIL_THEOREM.json",
+    "artifacts/flagship_integration/BHSM_N12_GATE7_AE2_POWER_RADIUS_TAIL_CLOSURE.json",
     "artifacts/flagship_integration/BHSM_N12_GATE7_AE2_THRESHOLD_SUPERSESSION.json",
     "artifacts/BHSM_alpha_i_update_v4_2.json",
     "theory/bhsm_prediction_ledger.json",
@@ -63,6 +64,7 @@ def verify_current_lineage() -> None:
     reduction = loaded["artifacts/flagship_integration/BHSM_N12_GATE7_AE2_FACTORIZED_SOURCE_MEASURE_REDUCTION.json"]
     radius_route = loaded["artifacts/flagship_integration/BHSM_N12_GATE7_AE2_INTEGRABLE_RADIUS_THRESHOLD_ROUTE.json"]
     linear_tail = loaded["artifacts/flagship_integration/BHSM_N12_GATE7_AE2_LINEAR_RADIUS_TAIL_THEOREM.json"]
+    power_tail = loaded["artifacts/flagship_integration/BHSM_N12_GATE7_AE2_POWER_RADIUS_TAIL_CLOSURE.json"]
     frontier = loaded["artifacts/flagship_integration/BHSM_N12_GATE7_AE2_THRESHOLD_SUPERSESSION.json"]
     if ae2.get("action_version") != "BHSM-AE-2.0.0":
         raise RuntimeError("AE2 action version mismatch")
@@ -92,6 +94,13 @@ def verify_current_lineage() -> None:
         and linear_tail["claim_boundary"]["general_sublinear_or_nonasymptotic_tail"] == "OPEN"
     ):
         raise RuntimeError("remaining radius-tail class is not the current live owner")
+    if power_tail["claim_boundary"]["all_exact_nonnegative_power_radius_tails"] != "CLOSED":
+        raise RuntimeError("exact power-radius tail family is not closed")
+    if not (
+        power_tail["claim_boundary"]["actual_N12_radius_asymptotic_class"] == "OPEN"
+        and power_tail["claim_boundary"]["general_nonasymptotic_tail"] == "OPEN"
+    ):
+        raise RuntimeError("nonasymptotic radius tail is not the current live owner")
 
 
 def materialize() -> list[Path]:

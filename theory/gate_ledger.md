@@ -174,6 +174,13 @@
 - Current infinite-tail owner: derive the realized `R4` asymptotic class or
   prove the source-Dini bound for sublinear/nonasymptotic positive-radius
   tails.
+- Exact power-law radius tails `R4=c(tau+tau0)^a`, every `a>=0`:
+  `CLOSED_FOR_FACTORIZED_E1`. Constant tails are gapped, `0<a<1` has
+  `exp(-C*k^(-(1-a)/a))` Agmon suppression, `a=1` is Bessel/Dini, and
+  `a>1` has integrable reciprocal radius.
+- Sharpened current owner: derive a controlled power/regularly-varying
+  asymptotic from the retained action, or prove source-Dini control for an
+  arbitrary positive nonasymptotic `R4` tail.
 - Retained transverse-gauge normal boundary quadratic form:
   `ACTION_DERIVED_BY_v15_66`.
 - Retained normal matter junction action: `ZERO_BY_v15_13`; this does not

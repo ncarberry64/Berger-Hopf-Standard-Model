@@ -1,0 +1,136 @@
+{
+  "FLAGSHIP_READY": false,
+  "FULL_BHSM_COMPLETE": false,
+  "action_version": "BHSM-AE-2.0.0",
+  "artifact": "BHSM_N12_GATE7_AE2_POWER_RADIUS_TAIL_CLOSURE",
+  "claim_boundary": {
+    "FULL_BHSM_COMPLETE": false,
+    "Gate7": "ACTIVE_NOT_CLOSED",
+    "Gate8": "LOCKED",
+    "actual_N12_radius_asymptotic_class": "OPEN",
+    "all_exact_nonnegative_power_radius_tails": "CLOSED",
+    "chord_03_authorized": false,
+    "frozen_predictions_changed": false,
+    "general_nonasymptotic_tail": "OPEN"
+  },
+  "classification": "FOR_EXACT_RADIUS_TAILS_R4_ASYMPTOTIC_TO_c*x^a_WITH_a>=0,_a=0_HAS_A_CONSTANT_SUPERPOTENTIAL_CONTINUUM_GAP,_0<a<1_HAS_STRETCHED_EXPONENTIAL_COMPACT_SOURCE_SUPPRESSION_FROM_AN_EXPLICIT_AGMON_BARRIER,_a=1_IS_CLOSED_BY_THE_BESSEL_SOURCE_DINI_THEOREM,_AND_a>1_IS_CLOSED_BY_RECIPROCAL_RADIUS_INTEGRABILITY;_THE_NEGATIVE_CHIRALITY_NONZERO_SPECTRUM_IS_THE_SUPERSYMMETRIC_PARTNER_AND_ZERO_ATOMS_HAVE_ZERO_FIRST_FORM_WEIGHT",
+  "exact_next_dependency": "DERIVE_FROM_THE_RETAINED_ACTION_THAT_THE_UNIQUE_INFINITE_REGULAR_R4_HISTORY_HAS_AN_EXACT_OR_CONTROLLED_REGULARLY_VARYING_POWER_ASYMPTOTIC,_OR_PROVE_THE_SOURCE_DINI_BOUND_FOR_ARBITRARY_POSITIVE_NONASYMPTOTIC_R4_TAILS",
+  "frontier_sharpening": {
+    "actual_N12_radius_asymptotic_class": "OPEN",
+    "exact_power_law_radius_tails": "CLOSED_FOR_ALL_a>=0",
+    "remaining_tail_class": "POSITIVE_NONASYMPTOTIC_OR_NON_POWER_REGULARLY_VARYING_HISTORY_ONLY"
+  },
+  "inputs": {
+    "artifacts/flagship_integration/BHSM_N12_GATE7_AE2_FACTORIZED_SOURCE_MEASURE_REDUCTION.json": "4E4A016D28E520B09C4AC76253A29D9DD713DFD727A818FD529DB17D9621DE38",
+    "artifacts/flagship_integration/BHSM_N12_GATE7_AE2_INTEGRABLE_RADIUS_THRESHOLD_ROUTE.json": "E4A6F774089A3B88E448BA5EDAA51FD7ADEB7826FCC3F6BB6109DB9F15EFD5E3",
+    "artifacts/flagship_integration/BHSM_N12_GATE7_AE2_LINEAR_RADIUS_TAIL_THEOREM.json": "8A1C4DC6C4D1979D0D2E479CCD30D60C7F2071074704ABD996A54D841175459E",
+    "scripts/derive_n12_gate7_ae2_power_radius_tail_closure.py": "5B4FA40142CCA4C06BEEAC5479C8A105F678E8B638DC288863ABFCEAD1E1B0D2",
+    "src/bhsm/interface/action_extension_ae2_sublinear_radius_tail.py": "AD2B8BAA2A4F7C2803CE69015FBB64AE2B2A84DE6E7B7CDB1E78CBC391E22E96"
+  },
+  "status": "ALL_EXACT_NONNEGATIVE_POWER_RADIUS_TAIL_CLASSES_FACTORIZED_E1_THRESHOLD_CLOSED",
+  "theorem": {
+    "agmon_witness_rows": [
+      {
+        "agmon_action_lower": 192.25763964014538,
+        "barrier_endpoint_lower": 5625.0,
+        "beta": 1.5,
+        "radius_power": 0.5,
+        "squared_amplitude_suppression_upper": 1.0165669851134559e-167,
+        "stretched_exponential_power": 1.0,
+        "threshold_wave_number": 0.01
+      },
+      {
+        "agmon_action_lower": 646.9209766269757,
+        "barrier_endpoint_lower": 62500.0,
+        "beta": 1.5,
+        "radius_power": 0.5,
+        "squared_amplitude_suppression_upper": 0.0,
+        "stretched_exponential_power": 1.0,
+        "threshold_wave_number": 0.003
+      },
+      {
+        "agmon_action_lower": 1945.9590823036337,
+        "barrier_endpoint_lower": 562500.0,
+        "beta": 1.5,
+        "radius_power": 0.5,
+        "squared_amplitude_suppression_upper": 0.0,
+        "stretched_exponential_power": 1.0,
+        "threshold_wave_number": 0.001
+      },
+      {
+        "agmon_action_lower": 6492.592452171937,
+        "barrier_endpoint_lower": 6250000.0,
+        "beta": 1.5,
+        "radius_power": 0.5,
+        "squared_amplitude_suppression_upper": 0.0,
+        "stretched_exponential_power": 1.0,
+        "threshold_wave_number": 0.0003
+      }
+    ],
+    "class_rows": [
+      {
+        "factorized_E1_threshold_integrable": true,
+        "radius_power": 0.0,
+        "threshold_route": "ASYMPTOTIC_CONSTANT_SUPERPOTENTIAL_GAP"
+      },
+      {
+        "factorized_E1_threshold_integrable": true,
+        "radius_power": 0.25,
+        "threshold_route": "SUBLINEAR_STRETCHED_EXPONENTIAL_AGMON_SUPPRESSION"
+      },
+      {
+        "factorized_E1_threshold_integrable": true,
+        "radius_power": 0.5,
+        "threshold_route": "SUBLINEAR_STRETCHED_EXPONENTIAL_AGMON_SUPPRESSION"
+      },
+      {
+        "factorized_E1_threshold_integrable": true,
+        "radius_power": 0.75,
+        "threshold_route": "SUBLINEAR_STRETCHED_EXPONENTIAL_AGMON_SUPPRESSION"
+      },
+      {
+        "factorized_E1_threshold_integrable": true,
+        "radius_power": 1.0,
+        "threshold_route": "EXACT_LINEAR_BESSEL_SOURCE_DINI_THEOREM"
+      },
+      {
+        "factorized_E1_threshold_integrable": true,
+        "radius_power": 1.25,
+        "threshold_route": "INTEGRABLE_RECIPROCAL_RADIUS_THEOREM"
+      },
+      {
+        "factorized_E1_threshold_integrable": true,
+        "radius_power": 2.0,
+        "threshold_route": "INTEGRABLE_RECIPROCAL_RADIUS_THEOREM"
+      }
+    ],
+    "constant_tail": "a=0_IMPLIES_ESSENTIAL_THRESHOLD_GAP_beta^2_WITH_ZERO_ATOM_WEIGHT_ZERO_WHERE_PRESENT",
+    "factorized_superpotential": "s_chi=chi*beta*x^(-a)",
+    "linear_tail": "a=1_CLOSED_BY_EXACT_BESSEL_SOURCE_DINI_THEOREM",
+    "sublinear_tail": {
+      "agmon_lower": "A_k>=sqrt(3)*beta/(2*(1-a))*(x_k^(1-a)-1)",
+      "barrier_endpoint": "x_k=(beta/(2k))^(1/a)",
+      "negative_chirality": "A_Astar_SUPERSYMMETRIC_PARTNER_ON_NONZERO_SPECTRUM",
+      "positive_chirality": "DIRECT_AGMON_BOUND",
+      "range": "0<a<1",
+      "suppression": "exp(-2*A_k)=O(exp(-C*k^(-(1-a)/a)))_WHICH_BEATS_EVERY_POWER"
+    },
+    "superlinear_tail": "a>1_IMPLIES_integral_d_tau/R4<infinity",
+    "tail_family": "R4(tau)=c*(tau+tau0)^a,_c>0,_a>=0"
+  },
+  "validation": {
+    "FULL_BHSM_COMPLETE_false": true,
+    "actual_N12_power_asymptotic_not_fabricated": true,
+    "all_inputs_validated": true,
+    "all_nonnegative_power_classes_E1_integrable": true,
+    "linear_route_closed": true,
+    "negative_chirality_inherited_by_supersymmetric_intertwining": true,
+    "no_SM_observable_scale_fit_selector_or_new_action_term": true,
+    "sublinear_agmon_action_increases_toward_threshold": true,
+    "sublinear_suppression_beats_tested_powers": true,
+    "sublinear_suppression_decreases_toward_threshold": true,
+    "superlinear_route_closed": true,
+    "zero_atom_first_form_weight_remains_zero": true
+  },
+  "validation_passed": true
+}

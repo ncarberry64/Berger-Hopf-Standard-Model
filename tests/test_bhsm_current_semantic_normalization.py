@@ -98,7 +98,7 @@ def test_source_dini_is_canonical_and_strict_power_excess_is_not_compulsory() ->
         if row["canonical_id"] == "SOURCE_WEIGHTED_THRESHOLD_MEASURE"
     )
     assert formula["formula"] == "integral_(0,1]_lambda^(-1)*d|nu_h|(lambda)<infinity"
-    assert formula["current_status"] == "DINI_CRITERION_CURRENT_INTEGRABLE_AND_LINEAR_TAILS_CLOSED"
+    assert formula["current_status"] == "DINI_CRITERION_EXACT_POWER_TAILS_CLOSED_ACTUAL_ASYMPTOTIC_OPEN"
     deprecation = next(
         row for row in registries["BHSM_FORMULA_DEPRECATION_LEDGER.json"]["records"]
         if row["canonical_id"] == "DEPRECATE_STRICT_POWER_EXCESS"
