@@ -12,12 +12,15 @@ import pytest
 from bhsm.interface.forward_finite_endpoint_heat_force import (
     direct_sum_heat_value_and_force,
     heat_regulator_value_and_force,
+    replacement_heat_minus_zeta_force,
+    zeta_casimir_value_and_force,
 )
 from scripts.derive_n12_finite_endpoint_zero_source_force_functional import (
     basis_covariance_witness,
     build_payload,
     finite_difference_witness,
     historical_operator_level_witness,
+    historical_zeta_witness,
     reset_fiber_geometry_variation_witness,
 )
 
@@ -40,6 +43,20 @@ def test_force_is_basis_covariant() -> None:
 
 def test_historical_engine_matches_only_at_shared_operator_level() -> None:
     assert historical_operator_level_witness()["maximum_force_residual"] < 1.0e-12
+
+
+def test_zeta_casimir_force_and_replacement_subtraction() -> None:
+    assert max(historical_zeta_witness().values()) < 1.0e-10
+    radii = np.asarray([1.0, 2.0])
+    directions = {"h": np.asarray([0.2, -0.3])}
+    zeta = zeta_casimir_value_and_force(
+        radii, np.asarray([0.1, 0.1]), directions
+    )
+    heat = {"Gamma_heat": 2.0, "forces": {"h": 0.7}}
+    replacement = replacement_heat_minus_zeta_force(heat, zeta)
+    assert replacement["forces"]["h"] == pytest.approx(
+        0.7 - zeta["forces"]["h"]
+    )
 
 
 def test_reset_fiber_does_not_hold_geometry_fixed() -> None:

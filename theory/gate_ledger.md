@@ -267,6 +267,11 @@
   `D Gamma_heat(P)[delta P]=(1/2)Tr(exp(-ell^2 P)P^-1 delta P)` on each
   positive quotient block, with retained direct-sum signs and multiplicities.
   Noncommuting geometry jets are allowed.
+- The actual same-action replacement residual is the heat-minus-zeta force,
+  `D_Phi Gamma_heat-D_Phi Gamma_SM^zeta`, because the certified local root
+  already extremizes the attached-zeta action.  Here
+  `Gamma_SM^zeta=-(59/30)integral d_tau/R4`; the zeta variation is retained
+  explicitly and is not absorbed into the heat term.
 - This formula does not evaluate the current N12 force, and the historical
   periodic value is not transferred.  The fixed-event child fiber has
   dimension 67 and rank 33 in child geometry coordinates (at least 32 after

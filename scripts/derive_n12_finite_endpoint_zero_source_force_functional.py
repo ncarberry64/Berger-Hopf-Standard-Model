@@ -24,6 +24,8 @@ from bhsm.interface.aether_replacement_geometry_force_v16_06 import (  # noqa: E
 )
 from bhsm.interface.forward_finite_endpoint_heat_force import (  # noqa: E402
     heat_regulator_value_and_force,
+    replacement_heat_minus_zeta_force,
+    zeta_casimir_value_and_force,
 )
 
 
@@ -142,6 +144,38 @@ def historical_operator_level_witness() -> dict[str, float]:
     }
 
 
+def historical_zeta_witness() -> dict[str, float]:
+    radii = np.asarray([1.0, 1.04, 0.98, 1.02, 1.01, 0.99])
+    step = 0.07
+    directions = {
+        f"node_{index}": np.eye(len(radii))[index]
+        for index in range(len(radii))
+    }
+    result = zeta_casimir_value_and_force(
+        radii, np.full(len(radii), step), directions
+    )
+    expected_force = step * (59.0 / 30.0) / radii
+    actual_force = np.asarray([
+        result["forces"][f"node_{index}"] for index in range(len(radii))
+    ])
+    epsilon = 1.0e-6
+    direction = np.linspace(-0.2, 0.3, len(radii))
+    plus = zeta_casimir_value_and_force(
+        radii * np.exp(epsilon * direction),
+        np.full(len(radii), step),
+        {},
+    )["Gamma_SM_zeta"]
+    minus = zeta_casimir_value_and_force(
+        radii * np.exp(-epsilon * direction),
+        np.full(len(radii), step),
+        {},
+    )["Gamma_SM_zeta"]
+    finite = (plus - minus) / (2.0 * epsilon)
+    analytic = float(expected_force @ direction)
+    return {
+        "force_maximum_residual": float(np.max(np.abs(actual_force - expected_force))),
+        "directional_finite_difference_residual": abs(finite - analytic),
+    }
 def reset_fiber_geometry_variation_witness() -> dict[str, Any]:
     checkpoint = np.load(INPUTS[-1])
     jacobian = np.asarray(checkpoint["paired_jacobian"], dtype=float)
@@ -192,6 +226,7 @@ def build_payload() -> dict[str, Any]:
     fd = finite_difference_witness()
     covariance = basis_covariance_witness()
     shared = historical_operator_level_witness()
+    zeta = historical_zeta_witness()
     fiber = reset_fiber_geometry_variation_witness()
     validation = {
         "finite_physical_domain_and_local_existence_consumed": (
@@ -216,6 +251,7 @@ def build_payload() -> dict[str, Any]:
         "historical_engine_matches_only_at_shared_operator_level": (
             shared["maximum_force_residual"] < 1.0e-12
         ),
+        "zeta_casimir_force_identity_verified": max(zeta.values()) < 1.0e-10,
         "historical_periodic_value_not_promoted": (
             historical["claim_boundary"]["heat_geometry_force_evaluated"]
             is True
@@ -243,7 +279,7 @@ def build_payload() -> dict[str, Any]:
             "AND_ITS_GEOMETRY_JET_ARE_REALIZED"
         ),
         "exact_force_theorem": {
-            "functional": "Gamma_heat(P)=Tr[-(1/2)*E1(ell^2*P)]",
+            "heat_functional": "Gamma_heat(P)=Tr[-(1/2)*E1(ell^2*P)]",
             "first_variation": (
                 "D_Gamma_heat(P)[delta_P]=(1/2)*Tr["
                 "exp(-ell^2*P)*P^(-1)*delta_P]"
@@ -251,6 +287,16 @@ def build_payload() -> dict[str, Any]:
             "direct_sum": (
                 "F_h=(1/2)*sum_C_s_C*m_C*Tr[exp(-ell^2*P_C)*"
                 "P_C^(-1)*D_h_P_C]"
+            ),
+            "zeta_functional": (
+                "Gamma_SM_zeta=-(59/30)*integral_I_d_tau/R4"
+            ),
+            "zeta_first_variation": (
+                "D_Gamma_SM_zeta[h]=(59/30)*integral_I_h*d_tau/R4"
+            ),
+            "replacement_correction_at_certified_local_action_root": (
+                "D_Phi_Gamma_replacement=D_Phi_Gamma_heat-"
+                "D_Phi_Gamma_SM_zeta"
             ),
             "noncommuting_delta_P_allowed": True,
             "basis_independent": True,
@@ -285,6 +331,7 @@ def build_payload() -> dict[str, Any]:
             "noncommuting_finite_difference": fd,
             "basis_covariance": covariance,
             "historical_shared_operator_level": shared,
+            "historical_zeta_identity": zeta,
             "reset_fiber_geometry_variation": fiber,
         },
         "exact_next_dependency": (
@@ -298,6 +345,7 @@ def build_payload() -> dict[str, Any]:
         "claim_boundary": {
             "Gate7": "ACTIVE_FORCE_REALIZATION_OPEN",
             "zero_source_force_functional": "DERIVED",
+            "heat_minus_zeta_replacement_force_functional": "DERIVED",
             "zero_source_force_value": "OPEN",
             "zero_source_force_sign": "OPEN",
             "same_action_saddle": "WAITING_ON_FORCE_REALIZATION",

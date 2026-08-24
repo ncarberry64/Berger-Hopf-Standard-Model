@@ -115,7 +115,68 @@ def direct_sum_heat_value_and_force(
     }
 
 
+def zeta_casimir_value_and_force(
+    radii: np.ndarray,
+    measure_weights: np.ndarray,
+    log_radius_directions: Mapping[str, np.ndarray],
+    *,
+    coefficient: float = 59.0 / 30.0,
+) -> dict[str, Any]:
+    """Evaluate the retained local zeta/Casimir term and its radius force.
+
+    ``Gamma_SM_zeta=-c*sum_j w_j/R_j`` and therefore
+    ``D Gamma_SM_zeta[h]=c*sum_j w_j*h_j/R_j`` for ``delta log R=h``.
+    The weights are supplied by the action-owned proper-time quadrature.
+    """
+
+    r = np.asarray(radii, dtype=float)
+    weights = np.asarray(measure_weights, dtype=float)
+    if (
+        r.ndim != 1
+        or weights.shape != r.shape
+        or np.any(r <= 0.0)
+        or not np.all(np.isfinite(r))
+        or not np.all(np.isfinite(weights))
+    ):
+        raise ValueError("finite positive radii and matching finite weights required")
+    if not math.isfinite(coefficient):
+        raise ValueError("zeta coefficient must be finite")
+    density = coefficient * weights / r
+    forces: dict[str, float] = {}
+    for name, value in log_radius_directions.items():
+        direction = np.asarray(value, dtype=float)
+        if direction.shape != r.shape or not np.all(np.isfinite(direction)):
+            raise ValueError("every log-radius direction must match the radii")
+        forces[str(name)] = float(density @ direction)
+    return {
+        "Gamma_SM_zeta": float(-np.sum(density)),
+        "forces": forces,
+        "coefficient": float(coefficient),
+    }
+
+
+def replacement_heat_minus_zeta_force(
+    heat: Mapping[str, Any], zeta: Mapping[str, Any],
+) -> dict[str, Any]:
+    """Return the replacement correction ``Gamma_heat-Gamma_SM_zeta``."""
+
+    heat_forces = {str(k): float(v) for k, v in heat["forces"].items()}
+    zeta_forces = {str(k): float(v) for k, v in zeta["forces"].items()}
+    if set(heat_forces) != set(zeta_forces):
+        raise ValueError("heat and zeta force directions must agree")
+    return {
+        "Gamma_heat_minus_zeta": float(heat["Gamma_heat"])
+        - float(zeta["Gamma_SM_zeta"]),
+        "forces": {
+            name: heat_forces[name] - zeta_forces[name]
+            for name in heat_forces
+        },
+    }
+
+
 __all__ = [
     "heat_regulator_value_and_force",
     "direct_sum_heat_value_and_force",
+    "zeta_casimir_value_and_force",
+    "replacement_heat_minus_zeta_force",
 ]

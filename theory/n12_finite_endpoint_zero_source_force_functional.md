@@ -18,6 +18,24 @@ The formula is basis independent.  Compact resolvent and the positive
 nonzero-sector quotient gap make it finite on the owner-authorized finite
 encapsulation domain.
 
+The replacement-action stationarity correction is not the heat force alone.
+The certified local action already contains the attached zeta/Casimir term,
+while the retained replacement accounting is
+
+`Gamma_Q=Gamma_attached^zeta-Gamma_SM^zeta+Gamma_SM^heat`.
+
+Consequently, at the certified local-action root,
+
+`D_Phi Gamma_replacement=D_Phi Gamma_heat-D_Phi Gamma_SM^zeta`,
+
+where
+
+`Gamma_SM^zeta=-(59/30) integral d_tau/R4`
+
+and
+
+`D Gamma_SM^zeta[h]=(59/30) integral h d_tau/R4`.
+
 The implementation is checked three ways: against a noncommuting centered
 finite difference, under a nontrivial unitary change of basis, and against the
 historical force engine on one identical periodic matrix block.  The last

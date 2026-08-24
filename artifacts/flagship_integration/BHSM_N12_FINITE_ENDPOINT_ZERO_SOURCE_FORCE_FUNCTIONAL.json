@@ -8,6 +8,7 @@
     "Gate8": "LOCKED",
     "chord_03_authorized": false,
     "frozen_predictions_changed": false,
+    "heat_minus_zeta_replacement_force_functional": "DERIVED",
     "pair_plus_contact_Hessian": "OPEN_AFTER_SADDLE",
     "same_action_saddle": "WAITING_ON_FORCE_REALIZATION",
     "zero_source_force_functional": "DERIVED",
@@ -33,10 +34,13 @@
     "direct_sum": "F_h=(1/2)*sum_C_s_C*m_C*Tr[exp(-ell^2*P_C)*P_C^(-1)*D_h_P_C]",
     "finite_by_compact_elliptic_resolvent_positive_quotient_gap_and_finite_order_action_jet": true,
     "first_variation": "D_Gamma_heat(P)[delta_P]=(1/2)*Tr[exp(-ell^2*P)*P^(-1)*delta_P]",
-    "functional": "Gamma_heat(P)=Tr[-(1/2)*E1(ell^2*P)]",
     "geometry_variation_retained": true,
+    "heat_functional": "Gamma_heat(P)=Tr[-(1/2)*E1(ell^2*P)]",
     "noncommuting_delta_P_allowed": true,
-    "zero_source_means": "GAUGE_AND_HS_EXTERNAL_SOURCES_SET_TO_ZERO"
+    "replacement_correction_at_certified_local_action_root": "D_Phi_Gamma_replacement=D_Phi_Gamma_heat-D_Phi_Gamma_SM_zeta",
+    "zero_source_means": "GAUGE_AND_HS_EXTERNAL_SOURCES_SET_TO_ZERO",
+    "zeta_first_variation": "D_Gamma_SM_zeta[h]=(59/30)*integral_I_h*d_tau/R4",
+    "zeta_functional": "Gamma_SM_zeta=-(59/30)*integral_I_d_tau/R4"
   },
   "exact_next_dependency": "CONSTRUCT_FROM_THE_RETAINED_EULER_DIRAC_BRANCH_AND_EVENT_CHILD_GRAPH_A_VALIDATED_FINITE_HISTORY_OPERATOR_COEFFICIENT_ORACLE_WITH_D_TAU,_THE_ACTION_OWNED_ENDPOINT_FORM,_AND_D_PHI_P;_THEN_EVALUATE_THE_TRACE_FORCE_WITHOUT_SELECTING_A_RESET_FIBER_MEMBER_BY_HAND,_EITHER_BY_A_JOINT_SADDLE_SOLVE_OR_BY_PROVING_RESET_FIBER_INVARIANCE",
   "historical_transfer_boundary": {
@@ -65,7 +69,8 @@
     "historical_periodic_value_not_promoted": true,
     "no_reset_selector_endpoint_parameter_contour_scale_fit_or_gate_added": true,
     "noncommuting_finite_difference_verified": true,
-    "reset_fiber_geometry_variation_certified": true
+    "reset_fiber_geometry_variation_certified": true,
+    "zeta_casimir_force_identity_verified": true
   },
   "validation_passed": true,
   "witnesses": {
@@ -76,6 +81,10 @@
     "historical_shared_operator_level": {
       "current_force_norm": 5.621215738230667e-05,
       "maximum_force_residual": 6.776263578034403e-21
+    },
+    "historical_zeta_identity": {
+      "directional_finite_difference_residual": 2.2967877599811004e-12,
+      "force_maximum_residual": 0.0
     },
     "noncommuting_finite_difference": {
       "absolute_residual": 4.021158406253278e-13,
