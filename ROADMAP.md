@@ -15,8 +15,10 @@
    ((M_C,D_\Phi M_C,D_\Phi^2M_C)) and pair-plus-contact response on the same
    maximal-forward domain. The lower-gap/Friedrichs shortcut and a universal
    Ward/BRST force cancellation are invalidated; derive a common action-owned
-   form/coefficient tube through second variation or calculate the oracle
-   directly. Do not identify (z) with momentum squared.
+   maximal-forward tube for `(log R4,D_tau,Delta_tau)` and its first/second
+   geometry variations, or calculate the oracle directly. The local
+   `log R4` coefficient jets are already derived. Do not identify (z) with
+   momentum squared.
 4. Evaluate the zero-source weak geometry force, solve and certify the
    same-action saddle if it is nonzero, evaluate the physical pair-plus-contact
    Hessian, and close Ward/BRST, continuum/relative-trace, and basis-independent

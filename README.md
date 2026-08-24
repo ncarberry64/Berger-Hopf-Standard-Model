@@ -54,7 +54,10 @@ first open object is an enclosure of the exterior oracle bundle
 the same domain. A positive lower sector gap plus the Friedrichs endpoint
 rule is now proved insufficient to evaluate that bundle; it guarantees
 coercive existence but not a finite uniform Weyl-value bound. Ward/BRST also
-does not cancel the physical-sector geometry force. The zero-source force and
+does not cancel the physical-sector geometry force. Exact first and mixed
+second log-radius jets of every retained forward source block are derived;
+the remaining coefficient owner is the maximal-forward tube for
+`(log R4,D_tau,Delta_tau)` and its variations. The zero-source force and
 same-action saddle follow before any scalar physical coupling readout.
 
 The matched-parent `Q_xi / Delta H` route remains unavailable because no
@@ -73,6 +76,7 @@ representative, or formal reflection may substitute for that missing object.
 | Native (K_C) resolvent/Weyl family and BRST source incidence | **DERIVED ABSTRACTLY** |
 | Exterior oracle bundle and pair-plus-contact value | **OPEN** |
 | Positive-gap/Friedrichs oracle shortcut | **RIGOROUSLY INSUFFICIENT** |
+| Local first/second `log R4` source-operator jets | **DERIVED** |
 | `Q_xi / Delta H` | **OPEN -- matched-parent restriction absent** |
 | `FULL_BHSM_COMPLETE` | **FALSE** |
 
@@ -84,11 +88,12 @@ Evidence: [`continuum certificate`](artifacts/n12_continuum_majorant_effectivene
 [`native resolvent/Weyl family`](artifacts/flagship_integration/BHSM_N12_FORWARD_GAUGE_WEYL_READOUT_FAMILY.json),
 [`forward common-source incidence`](artifacts/flagship_integration/BHSM_N12_FORWARD_COMMON_SOURCE_INCIDENCE.json),
 [`gap-oracle route adjudication`](artifacts/flagship_integration/BHSM_N12_FORWARD_EXTERIOR_GAP_ORACLE_AUDIT.json),
+[`common-source geometry jets`](artifacts/flagship_integration/BHSM_N12_FORWARD_COMMON_SOURCE_GEOMETRY_JETS.json),
 and [`post-parent observable audit`](artifacts/qxi_relative_energy_preparation/BHSM_POST_PARENT_FLAGSHIP_OBSERVABLE_GATE.json).
 
 Exact next object:
 
-`DERIVE_FROM_THE_RETAINED_ACTION_A_COMMON_MAXIMAL_FORWARD_FORM_COMPARISON_OR_COEFFICIENT_TUBE_THROUGH_SECOND_GEOMETRY_VARIATION_FOR_P_C(Phi,A),_OR_COMPUTE_THE_EQUIVALENT_M_C,D_Phi_M_C,D_Phi2_M_C_ORACLE_DIRECTLY`
+`DERIVE_AN_ACTION_OWNED_MAXIMAL_FORWARD_TUBE_FOR_log_R4,D_tau,Delta_tau_AND_THEIR_REQUIRED_FIRST_AND_SECOND_GEOMETRY_VARIATIONS,_OR_ENCLOSE_THE_EQUIVALENT_WEYL_ORACLE_BUNDLE_DIRECTLY`
 
 ## Prior N12 source-tail checkpoint (superseded by the continuum certificate above)
 

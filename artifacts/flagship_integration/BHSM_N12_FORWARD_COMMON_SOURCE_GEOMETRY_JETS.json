@@ -1,0 +1,77 @@
+{
+  "FLAGSHIP_READY": false,
+  "FULL_BHSM_COMPLETE": false,
+  "artifact": "BHSM_N12_FORWARD_COMMON_SOURCE_GEOMETRY_JETS",
+  "claim_boundary": {
+    "FLAGSHIP_READY": false,
+    "FULL_BHSM_COMPLETE": false,
+    "Gate_7": "ACTIVE_NOT_CLOSED",
+    "Gate_8": "LOCKED",
+    "chord_03": "NOT_AUTHORIZED"
+  },
+  "classification": "THE_RETAINED_DOMAIN_PARAMETRIC_FORWARD_SOURCE_BLOCKS_HAVE_EXACT_FIRST_AND_MIXED_SECOND_LOG_R4_JETS:_DIRAC_AND_SOURCE_BLOCKS_SCALE_AS_R4^-1,_LAPLACE_DERHAM_BLOCKS_AS_R4^-2,_AND_CONTACT_BLOCKS_HAVE_ZERO_RADIUS_JET;_THE_LOCAL_RADIUS_VARIATION_ALGEBRA_IS_CLOSED_WHILE_THE_MAXIMAL_HISTORY_TEMPORAL_GRAPH_AND_GLOBAL_COEFFICIENT_ENVELOPE_REMAIN_OPEN",
+  "current_flagship_gate": 7,
+  "exact_next_dependency": "DERIVE_AN_ACTION_OWNED_MAXIMAL_FORWARD_TUBE_FOR_log_R4,D_tau,_Delta_tau_AND_THEIR_REQUIRED_FIRST_AND_SECOND_GEOMETRY_VARIATIONS,_OR_ENCLOSE_THE_EQUIVALENT_WEYL_ORACLE_BUNDLE_DIRECTLY",
+  "exact_scaling_theorem": {
+    "Dirac_and_source_vertex": {
+      "base_scaling": "exp(-x)",
+      "first": "D_x[h]=-h*D_spatial",
+      "mixed_second": "D_x2[h,k]=h*k*D_spatial"
+    },
+    "Laplacian_and_deRham_operator": {
+      "base_scaling": "exp(-2*x)",
+      "first": "D_x[h]=-2*h*L_spatial",
+      "mixed_second": "D_x2[h,k]=4*h*k*L_spatial"
+    },
+    "Weyl_squared_product_rule": "D_h(D^2)=D_hD*D+D*D_hD;_D_hk(D^2)=D_hkD*D+D_hD*D_kD+D_kD*D_hD+D*D_hkD",
+    "contact_vertex": {
+      "base_scaling": "radius_independent",
+      "first": "0",
+      "mixed_second": "0"
+    },
+    "geometry_coordinate": "x(tau)=log(R4(tau))"
+  },
+  "finite_difference_witnesses": {
+    "complex_HS_scalar": {
+      "first_max_abs_residual": 4.5142556359678565e-11,
+      "mixed_second_max_abs_residual": 2.504263374447646e-08
+    },
+    "oneform_minus_ghost": {
+      "first_max_abs_residual": 7.943845581337428e-11,
+      "mixed_second_max_abs_residual": 5.249813828100969e-08
+    },
+    "rank16_Weyl_HS": {
+      "first_max_abs_residual": 2.523741216009512e-10,
+      "mixed_second_max_abs_residual": 5.440699424319462e-08
+    }
+  },
+  "implemented_classes": [
+    "RANK16_WEYL_COEXACT_GAUGE_AND_UNIT_EC_HS",
+    "COMPLEX_HS_DOUBLET",
+    "NONABELIAN_ONEFORM_MINUS_TWO_COMPLEX_GHOST"
+  ],
+  "inputs": {
+    "artifacts/flagship_integration/BHSM_N12_FORWARD_COMMON_SOURCE_INCIDENCE.json": "A6A7DBE56D294F4DC01D3287947879C24BD00F6D206CB16150837D2A01801FBA",
+    "artifacts/flagship_integration/BHSM_N12_FORWARD_EXTERIOR_GAP_ORACLE_AUDIT.json": "5D319CBEAF56DDD9AC8BF195124B436352097D373D7A5C8AD2E574143C72342B",
+    "src/bhsm/interface/aether_forward_common_source_incidence.py": "F41C9465B84E233DFBC09C092CAAABA1E270B833A8CE0E95B584B1060F2A636F"
+  },
+  "scope": {
+    "exterior_Weyl_oracle_bundle": "OPEN",
+    "local_log_R4_first_and_mixed_second_variations": "DERIVED",
+    "maximal_forward_log_R4_history_and_variation_tube": "OPEN",
+    "same_action_saddle": "OPEN",
+    "supplied_temporal_D_tau_and_Delta_tau": "STILL_PARAMETERS",
+    "zero_source_force": "OPEN"
+  },
+  "status": "LOCAL_COMMON_SOURCE_LOG_RADIUS_JETS_DERIVED",
+  "validation": {
+    "all_inputs_validated": true,
+    "all_three_retained_incidence_classes_have_exact_radius_jets": true,
+    "contact_radius_jets_are_zero_by_exact_local_homogeneity": true,
+    "first_jet_finite_difference_residual_below_1e_minus_8": true,
+    "mixed_second_residual_below_1e_minus_6": true,
+    "no_endpoint_action_source_profile_p2_fit_or_prediction_added": true,
+    "temporal_graph_or_maximal_history_not_selected": true
+  },
+  "validation_passed": true
+}

@@ -54,10 +54,14 @@ open. A lower positive gap and Friedrichs closure do not determine or
 uniformly upper-bound the Weyl response: the exact family
 `-d_tau^2+Q`, `Q>=1`, has `M_Q(-1)=sqrt(Q+1)`. The two-chord scalar endpoint
 surrogate still carries uncertainty above `4.4e7`, and Ward/BRST cancels only
-the longitudinal/ghost pair, not the full geometry force.
+the longitudinal/ghost pair, not the full geometry force. The local spatial
+coefficient calculus is now closed through second variation: retained Dirac
+and source blocks scale as `R4^-1`, Laplace/de Rham blocks as `R4^-2`, and
+contact blocks have zero radius jet. The maximal-forward values and variations
+of `(log R4,D_tau,Delta_tau)` remain open.
 
 `FULL_BHSM_COMPLETE = FALSE`. Exact next object:
-`DERIVE_FROM_THE_RETAINED_ACTION_A_COMMON_MAXIMAL_FORWARD_FORM_COMPARISON_OR_COEFFICIENT_TUBE_THROUGH_SECOND_GEOMETRY_VARIATION_FOR_P_C(Phi,A),_OR_COMPUTE_THE_EQUIVALENT_M_C,D_Phi_M_C,D_Phi2_M_C_ORACLE_DIRECTLY`.
+`DERIVE_AN_ACTION_OWNED_MAXIMAL_FORWARD_TUBE_FOR_log_R4,D_tau,Delta_tau_AND_THEIR_REQUIRED_FIRST_AND_SECOND_GEOMETRY_VARIATIONS,_OR_ENCLOSE_THE_EQUIVALENT_WEYL_ORACLE_BUNDLE_DIRECTLY`.
 
 ## Prior N12 source-tail checkpoint (superseded)
 
