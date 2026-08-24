@@ -78,9 +78,15 @@ mixed order. Existing action `D3/D4`, velocity, right-hand-side, and
 Dirac-inverse majorants certify a finite local second state-Jacobi and
 `log R4` tube. These constants cover only the existing anchor action ball;
 they do not yet cover the maximal forward component.
+For every closed regular pre-stop interval, however, continuity of the strong
+flow makes the trajectory image compact and gives finite `B_T` and positive
+`delta_T`; the continuum recentering theorem therefore supplies a finite
+Jacobi/radius/transfer cover automatically. Only the `C1/C2` Weyl limit at an
+infinite regular Friedrichs end still needs a global relative-form or
+integrable Riccati-variation estimate.
 
 `FULL_BHSM_COMPLETE = FALSE`. Exact next object:
-`PROMOTE_THE_LOCAL_IMPLICIT_SOLVE_MAJORANTS_TO_EXPLICIT_C(B,delta)_BOUNDS_ON_THE_CONTINUUM_MAXIMAL_FLOW_BOUNDED_MARGIN_SETS;_PROPAGATE_THE_STATE_AND_R4_JACOBI_TUBES_THROUGH_A_FINITE_OR_CONDITIONAL_COMPONENT_COVER;_THEN_ENCLOSE_THE_FIXED_CHANNEL_WEYL_TRANSFER_AND_TERMINAL_FRIEDRICHS_GRAPH_JETS`.
+`PROVE_C1_C2_RELATIVE_FORM_CONTROL_OR_AN_EQUIVALENT_INTEGRABLE_FIXED_CHANNEL_RICCATI_TRANSFER_VARIATION_BOUND_AT_EVERY_INFINITE_REGULAR_FRIEDRICHS_END;_FINITE_REGULAR_PRESTOP_INTERVALS_REQUIRE_NO_ADDITIONAL_GLOBAL_COVER`.
 
 ## Prior N12 source-tail checkpoint (superseded)
 

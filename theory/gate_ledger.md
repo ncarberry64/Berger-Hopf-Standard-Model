@@ -73,12 +73,14 @@
   coordinate pullback jets: `DERIVED`.
 - Exact implicit Euler--Dirac `DV,D2V` solve identities and local certified
   second state-Jacobi/`log R4` tube: `DERIVED`.
-- Maximal bounded-margin state-Jacobi recentering cover, terminal/Friedrichs
-  graph jets, and regular Weyl-chart enclosure: `OPEN`.
+- Finite regular pre-stop state-Jacobi/radius/transfer recentering cover:
+  `AUTOMATIC_BY_TRAJECTORY_COMPACTNESS_AND_POSITIVE_EXISTING_MARGINS`.
+- Infinite regular Friedrichs-end Weyl `C1/C2` limit and regular chart
+  enclosure: `OPEN`.
 - Zero-source force, same-action saddle, physical pair-plus-contact Hessian,
   Ward/BRST closure, and basis-independent scalar observable map: `OPEN`.
 - Exact next flagship dependency:
-  `PROMOTE_THE_LOCAL_IMPLICIT_SOLVE_MAJORANTS_TO_EXPLICIT_C(B,delta)_BOUNDS_ON_THE_CONTINUUM_MAXIMAL_FLOW_BOUNDED_MARGIN_SETS;_PROPAGATE_THE_STATE_AND_R4_JACOBI_TUBES_THROUGH_A_FINITE_OR_CONDITIONAL_COMPONENT_COVER;_THEN_ENCLOSE_THE_FIXED_CHANNEL_WEYL_TRANSFER_AND_TERMINAL_FRIEDRICHS_GRAPH_JETS`.
+  `PROVE_C1_C2_RELATIVE_FORM_CONTROL_OR_AN_EQUIVALENT_INTEGRABLE_FIXED_CHANNEL_RICCATI_TRANSFER_VARIATION_BOUND_AT_EVERY_INFINITE_REGULAR_FRIEDRICHS_END;_FINITE_REGULAR_PRESTOP_INTERVALS_REQUIRE_NO_ADDITIONAL_GLOBAL_COVER`.
 
 ## Prior N12 dynamic-Calderon continuum gates (superseded)
 

@@ -71,7 +71,10 @@ history variable is introduced.
 Differentiating the retained implicit Euler--Dirac solve now also gives exact
 first/mixed vector-field jets and a certified local second-Jacobi/radius tube
 from the existing action `D3/D4` and Dirac-inverse majorants. A maximal-
-component recentering cover remains open.
+component a priori ball is not required on finite regular intervals: trajectory
+compactness and positive retained margins automatically give a finite
+recentring cover. The open exterior case is the first/second Weyl limit at an
+infinite regular Friedrichs end.
 
 The matched-parent `Q_xi / Delta H` route remains unavailable because no
 action-owned parent-only restriction exists. No local energy, reset-chart
@@ -95,6 +98,7 @@ representative, or formal reflection may substitute for that missing object.
 | Fixed-channel transfer/Weyl variation equations | **DERIVED; ACTION-DATA ENCLOSURES OPEN** |
 | Physical `R4` action projection and coordinate jets | **DERIVED** |
 | Local first/second Euler--Dirac Jacobi/radius tube | **CERTIFIED; MAXIMAL COVER OPEN** |
+| Finite regular pre-stop Jacobi/transfer cover | **AUTOMATIC BY COMPACTNESS** |
 | `Q_xi / Delta H` | **OPEN -- matched-parent restriction absent** |
 | `FULL_BHSM_COMPLETE` | **FALSE** |
 
@@ -112,11 +116,12 @@ Evidence: [`continuum certificate`](artifacts/n12_continuum_majorant_effectivene
 [`fixed-channel transfer variations`](artifacts/flagship_integration/BHSM_N12_FORWARD_CHANNEL_TRANSFER_VARIATIONS.json),
 [`boundary-radius action projection`](artifacts/flagship_integration/BHSM_N12_FORWARD_BOUNDARY_RADIUS_ACTION_PROJECTION.json),
 [`Euler--Dirac variation bounds`](artifacts/flagship_integration/BHSM_N12_FORWARD_EULER_DIRAC_VARIATION_BOUNDS.json),
+[`compact-interval recentering`](artifacts/flagship_integration/BHSM_N12_FORWARD_COMPACT_INTERVAL_RECENTERING.json),
 and [`post-parent observable audit`](artifacts/qxi_relative_energy_preparation/BHSM_POST_PARENT_FLAGSHIP_OBSERVABLE_GATE.json).
 
 Exact next object:
 
-`PROMOTE_THE_LOCAL_IMPLICIT_SOLVE_MAJORANTS_TO_EXPLICIT_C(B,delta)_BOUNDS_ON_THE_CONTINUUM_MAXIMAL_FLOW_BOUNDED_MARGIN_SETS;_PROPAGATE_THE_STATE_AND_R4_JACOBI_TUBES_THROUGH_A_FINITE_OR_CONDITIONAL_COMPONENT_COVER;_THEN_ENCLOSE_THE_FIXED_CHANNEL_WEYL_TRANSFER_AND_TERMINAL_FRIEDRICHS_GRAPH_JETS`
+`PROVE_C1_C2_RELATIVE_FORM_CONTROL_OR_AN_EQUIVALENT_INTEGRABLE_FIXED_CHANNEL_RICCATI_TRANSFER_VARIATION_BOUND_AT_EVERY_INFINITE_REGULAR_FRIEDRICHS_END;_FINITE_REGULAR_PRESTOP_INTERVALS_REQUIRE_NO_ADDITIONAL_GLOBAL_COVER`
 
 ## Prior N12 source-tail checkpoint (superseded by the continuum certificate above)
 

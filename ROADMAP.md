@@ -30,6 +30,10 @@
    second-Jacobi tube are now derived. Promote their constants to explicit
    bounded-margin `C(B,delta)` estimates and recenter them across the relevant
    maximal component.
+   On each finite regular pre-stop interval this recentering cover is automatic
+   by compactness. Prove relative-form `C1/C2` control, or an equivalent
+   integrable fixed-channel Riccati variation bound, for every infinite regular
+   Friedrichs end.
    Do not identify (z) with momentum squared.
 4. Evaluate the zero-source weak geometry force, solve and certify the
    same-action saddle if it is nonzero, evaluate the physical pair-plus-contact
