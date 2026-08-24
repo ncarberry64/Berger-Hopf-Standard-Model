@@ -1,0 +1,92 @@
+{
+  "FLAGSHIP_READY": false,
+  "FULL_BHSM_COMPLETE": false,
+  "adjudication": {
+    "chord_03_authorized": false,
+    "chord_03_has_proof_value_from_this_estimate": false,
+    "failure_class": "MISSING_GLOBAL_TEMPORAL_CONTROL_IDENTITY",
+    "finite_certified_core_valid": true,
+    "retained_action_obstruction_proved": false,
+    "spatial_Galerkin_tail_certified": true,
+    "temporal_state_or_source_tail_certified": false,
+    "two_chord_finite_core_promotable_to_complete_heat_response": false
+  },
+  "artifact": "BHSM_N12_GATE7_TWO_CHORD_HEAT_TAIL_AUDIT",
+  "certified_coordinate_time_end": 2e-08,
+  "chord_tube_enclosures": [
+    {
+      "Green_shadow_action_radius_upper": 0.01023290430204282,
+      "R4_boundary_lower": 0.9774445391426936,
+      "R4_boundary_midpoint": 1.002334220718352,
+      "R4_boundary_upper": 1.0278576940071251,
+      "boundary_lapse_lower": 1.1235489030309473,
+      "boundary_lapse_midpoint": 1.129415377147719,
+      "boundary_lapse_upper": 1.1353124823464753,
+      "chord": "chord_01",
+      "complete_action_tube_radius_upper": 0.017002435126480742,
+      "coordinate_time_interval": [
+        0.0,
+        1e-08
+      ],
+      "hermite_span_action_radius_upper": 0.006769530822737676,
+      "proper_duration_lower": 1.1235489029185923e-08,
+      "proper_duration_upper": 1.1353124824600068e-08
+    },
+    {
+      "Green_shadow_action_radius_upper": 0.010753917661661918,
+      "R4_boundary_lower": 0.9766928558375815,
+      "R4_boundary_midpoint": 1.0023342219361022,
+      "R4_boundary_upper": 1.0286487573441645,
+      "boundary_lapse_lower": 1.1233730099352486,
+      "boundary_lapse_midpoint": 1.1294185062120734,
+      "boundary_lapse_upper": 1.1354965366738126,
+      "chord": "chord_02",
+      "complete_action_tube_radius_upper": 0.01752263001725068,
+      "coordinate_time_interval": [
+        1e-08,
+        2e-08
+      ],
+      "hermite_span_action_radius_upper": 0.006768712353836499,
+      "proper_duration_lower": 1.1233730098229112e-08,
+      "proper_duration_upper": 1.1354965367873626e-08
+    }
+  ],
+  "classification": "TWO_CERTIFIED_CHORDS_EXTEND_THE_RIGOROUS_FORWARD_CORE_TO_2E-8_BUT_DO_NOT_CONTROL_THE_RETAINED_TEMPORAL_HEAT_TAIL;_EVEN_THE_MOST_OPTIMISTIC_CERTIFIED_ENDPOINT_BOUND_EXCEEDS_1E7",
+  "current_flagship_gate": 7,
+  "exact_next_dependency": "PROVE_A_TEMPORAL_ABSORBING_OR_INTEGRATED_TRANSPORT_BOUND_WITH_UNIFORM_EXISTING_DOMAIN_MARGINS,_OR_CERTIFY_A_FIRST_RETAINED_TERMINAL_EVENT_OR_PHYSICAL_DOMAIN_EXIT_AND_ITS_SOURCE_GRAPH",
+  "inputs": {
+    "artifacts/BHSM_aether_common_quantum_superdeterminant_v15_96.json": "8B545506D2864818E9E6413B716350B13B455558B8C2D732784C1FA301439137",
+    "artifacts/intrinsic_state_selection/BHSM_N12_CHORD_02_HERMITE_SPAN_DOMAIN.json": "CE64366B346E3C84E4E34904EA1F6952018850B2DD13CD28614844234824A538",
+    "artifacts/intrinsic_state_selection/BHSM_N12_CHORD_02_HIGH_PRECISION_HERMITE_CENTER.npz": "81293A147A0ADA14A09C39E3655F71EAB96203B03D4ADA18405FE5506BC66CE1",
+    "artifacts/intrinsic_state_selection/BHSM_N12_FIRST_CHORD_HERMITE_SPAN_DOMAIN.json": "B91AE37476C1D9E19B53269251094695C336CEEC34EE6EEA5E992EC8AAA8F495",
+    "artifacts/intrinsic_state_selection/BHSM_N12_FIRST_CHORD_HIGH_PRECISION_HERMITE_CENTER.npz": "301D467E459A25A964B6E3C50646D092E604BB2584403D991A68E8EE6C590B67",
+    "artifacts/intrinsic_state_selection/BHSM_N12_GATE7_CHORD_02_SIGNED_ALIGNED_GREEN.json": "7DCCE7038B78DB2DB0FD39B2F10CB342C798CD02175CB1D8A869B9752C93F726",
+    "artifacts/intrinsic_state_selection/BHSM_N12_GATE7_COMPLETE_PHYSICAL_U_GREEN_SHADOWING.json": "090900BB95B3325ADC1E5DF141B82996C538AE464397F8D5F4DBD543799BB435"
+  },
+  "two_chord_heat_test": {
+    "best_case_constant_gap_endpoint_bound_lower": 44037167.7263047,
+    "best_case_exp_minus_2_gap_T": 0.9999999534000392,
+    "boundary_lapse_trace_dual_norm": 0.30629696608422236,
+    "boundary_log_R4_global_trace_dual_norm": 1.4789191402458102,
+    "endpoint_bound_formula": "2*mu/(exp(2*mu*T)-1)",
+    "proper_duration_lower": 2.2469219125168108e-08,
+    "proper_duration_over_heat_length_upper": 2.2708090194744508e-08,
+    "proper_duration_upper": 2.2708090194744508e-08,
+    "retained_heat_length_in_ell_kappa_units": 1.0,
+    "smallest_nonzero_sector_gap_lower": 0.9721491352226663,
+    "smallest_nonzero_sector_gap_upper": 1.0238633303429165
+  },
+  "validation": {
+    "Hermite_and_Green_radii_combined_in_same_action_norm": true,
+    "best_case_endpoint_bound_remains_noninformative": true,
+    "best_case_exponential_suppression_is_negligible": true,
+    "both_chord_and_domain_artifacts_validate": true,
+    "chord_03_not_authorized_by_heat_tail_estimate": true,
+    "lapse_and_R4_trace_enclosures_finite": true,
+    "no_equation_gate_scale_fit_endpoint_or_physics_added": true,
+    "proper_duration_remains_below_one_heat_length": true,
+    "spatial_Galerkin_tail_not_relabelled_as_temporal_tail": true,
+    "two_certified_chords_consumed": true
+  },
+  "validation_passed": true
+}
