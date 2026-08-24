@@ -139,8 +139,12 @@
 - Nonfermion critical zero graph on the AE2 global transmission domain:
   `EXCLUDED`; constant scalar radius modes have zero first vertex and the
   global gauge zero mode is quotiented.
-- AE2 factorized product-Dirac two-sided zero-threshold margin and
-  boundary-uniform limiting absorption: `OPEN`.
+- AE2 factorized product-Dirac strict two-sided zero-threshold margin:
+  `SUFFICIENT_NOT_NECESSARY`.  An exact `A_s^*A_s` zero-resonance model has
+  zero Wronskian margin but log-radius source weight
+  `C*k^2+o(k^2)` and cumulative `C/3*Lambda^(3/2)+o(Lambda^(3/2))`.
+- Actual AE2 factorized resonance-compatible source-weighted limiting
+  absorption and boundary Weyl estimate: `OPEN`.
 - Retained transverse-gauge normal boundary quadratic form:
   `ACTION_DERIVED_BY_v15_66`.
 - Retained normal matter junction action: `ZERO_BY_v15_13`; this does not
