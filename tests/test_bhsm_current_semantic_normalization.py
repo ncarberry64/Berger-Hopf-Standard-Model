@@ -127,3 +127,27 @@ def test_one_sided_w_only_event_initialization_is_superseded() -> None:
     assert deprecations["DEPRECATE_W_ONLY_EVENT_INITIALIZATION"][
         "current_status"
     ] == "SUPERSEDED_BY_TWO_SIDED_AE2_SEAM"
+
+
+def test_replacement_force_is_constraint_projected_without_reset_selection() -> None:
+    registries = _load()
+    basis = {
+        row["canonical_id"]: row
+        for row in registries["BHSM_CURRENT_MATHEMATICAL_BASIS.json"]["records"]
+    }
+    projected = basis["CONSTRAINT_PROJECTED_REPLACEMENT_FORCE"]
+    assert projected["formula"].startswith("N^dagger*q_rep=0")
+    assert projected["current_status"] == (
+        "DERIVED_CRITERION_ACTUAL_PROJECTED_FORCE_AND_JOINT_SADDLE_OPEN"
+    )
+    assert "choose a reset-fiber representative by hand" in projected[
+        "forbidden_interpretations"
+    ]
+    dag = {
+        row["canonical_id"]: row
+        for row in registries["BHSM_CURRENT_COMPLETION_DAG.json"]["records"]
+    }
+    assert dag["G7_08_FORCE"]["current_status"] == "OPEN_CURRENT_OWNER"
+    assert dag["G7_09_SADDLE"]["current_status"] == (
+        "PENDING_COUPLED_TO_G7_08"
+    )

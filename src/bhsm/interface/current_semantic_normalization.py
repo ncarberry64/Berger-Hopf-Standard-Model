@@ -98,6 +98,7 @@ def _basis() -> list[dict[str, Any]]:
     p_seam = "artifacts/flagship_integration/BHSM_N12_EVENT_NORMAL_TWO_SIDED_SEAM_CORRECTION.json"
     p_seam_enclosure = "artifacts/flagship_integration/BHSM_N12_AE2_COVARIANT_SEAM_ENCLOSURE_Z_MINUS_1.json"
     p_seam_family = "artifacts/flagship_integration/BHSM_N12_AE2_NEGATIVE_AXIS_SEAM_FAMILY.json"
+    p_projected_saddle = "artifacts/flagship_integration/BHSM_N12_CONSTRAINT_PROJECTED_REPLACEMENT_SADDLE.json"
     p_e1 = "artifacts/flagship_integration/BHSM_N12_FORWARD_E1_SOURCE_MEASURE_CRITERION.json"
     p_nf = "artifacts/flagship_integration/BHSM_N12_GATE7_AE2_NONFERMION_THRESHOLD_MARGIN.json"
     p_fac = "artifacts/flagship_integration/BHSM_N12_GATE7_AE2_COMPACT_SOURCE_DINI_CLOSURE.json"
@@ -239,6 +240,19 @@ def _basis() -> list[dict[str, Any]]:
             source_weighting_required=True,
             downstream_consumers=["ZERO_SOURCE_FORCE", "SAME_ACTION_SADDLE"],
             forbidden_interpretations=["absolute determinant is required", "unweighted density is the E1 measure"],
+        ),
+        record(
+            "CONSTRAINT_PROJECTED_REPLACEMENT_FORCE",
+            "N^dagger*q_rep=0, q_rep=D_Gamma_heat-D_Gamma_SM_zeta, range(N)=ker(D_C)",
+            "CONSTRAINT_TANGENT_STATIONARITY_CRITERION",
+            "MATHEMATICAL_OBJECT",
+            "The same-action replacement force must vanish on the physical constraint tangent; a normal component is a KKT-multiplier shift.",
+            "finite event-child constraint surface at the zero-source replacement saddle",
+            [p_projected_saddle],
+            current_status="DERIVED_CRITERION_ACTUAL_PROJECTED_FORCE_AND_JOINT_SADDLE_OPEN",
+            equivalent_forms=["q_rep+D_C^dagger*(lambda_rep-lambda_class)=0"],
+            downstream_consumers=["G7_08_FORCE", "G7_09_SADDLE"],
+            forbidden_interpretations=["ambient q_rep=0 is necessary", "choose a reset-fiber representative by hand", "geometry KKT Hessian is the pair-plus-contact source Hessian"],
         ),
         record(
             "SOURCE_WEIGHTED_THRESHOLD_MEASURE",
@@ -465,8 +479,8 @@ GATE_CHAIN = [
     ("G7_05_FACTORIZED_LAP", "all admissible positive far tails source-Dini by compact Volterra trace-class theorem", "CLOSED"),
     ("G7_06_E1_FINITE", "fixed-channel E1 source-measure finiteness", "CLOSED"),
     ("G7_07_ANGULAR_TAIL", "finite-endpoint compact-resolvent/source-trace control on the realized finite-encapsulation domain; infinite nonencapsulating tails remain nonrealized mathematical histories", "CLOSED_BY_OWNER_PHYSICAL_SCOPE_AND_LOCAL_ACTION_EXISTENCE"),
-    ("G7_08_FORCE", "heat-minus-zeta force functional derived; two-sided covariant seam broadly enclosed on the full negative real resolvent axis, actual trace value/sign and reset-fiber saddle open", "OPEN_CURRENT_OWNER"),
-    ("G7_09_SADDLE", "same-action saddle", "PENDING"),
+    ("G7_08_FORCE", "heat-minus-zeta force functional and exact constraint-tangent criterion derived; actual projected trace covector and geometry/reset Hessian open", "OPEN_CURRENT_OWNER"),
+    ("G7_09_SADDLE", "same-action joint constrained saddle, mathematically coupled to G7_08 without adding a gate", "PENDING_COUPLED_TO_G7_08"),
     ("G7_10_HESSIAN", "pair-plus-contact Hessian", "PENDING"),
     ("G7_11_WARD_TRACE", "Ward/BRST and source-contracted relative trace", "PENDING"),
     ("G7_12_SCALAR_MAP", "basis-independent physical scalar map", "PENDING"),
@@ -483,7 +497,7 @@ def _gates() -> list[dict[str, Any]]:
         "G7_05_FACTORIZED_LAP": "artifacts/flagship_integration/BHSM_N12_GATE7_AE2_COMPACT_SOURCE_DINI_CLOSURE.json",
         "G7_06_E1_FINITE": "artifacts/flagship_integration/BHSM_N12_GATE7_AE2_COMPACT_SOURCE_DINI_CLOSURE.json",
         "G7_07_ANGULAR_TAIL": "artifacts/flagship_integration/BHSM_N12_GATE7_FINITE_ENCAPSULATION_PHYSICAL_DOMAIN_AUDIT.json",
-        "G7_08_FORCE": "artifacts/flagship_integration/BHSM_N12_AE2_NEGATIVE_AXIS_SEAM_FAMILY.json",
+        "G7_08_FORCE": "artifacts/flagship_integration/BHSM_N12_CONSTRAINT_PROJECTED_REPLACEMENT_SADDLE.json",
     }
     fallback = "artifacts/flagship_integration/BHSM_N12_GATE7_AE2_THRESHOLD_SUPERSESSION.json"
     rows = []

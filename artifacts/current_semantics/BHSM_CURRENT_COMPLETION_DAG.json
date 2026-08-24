@@ -8,6 +8,7 @@
     "artifacts/action_extension/BHSM_ACTION_AE2_GLOBAL_SPIN_RESET_ACTION.json": "4C756145A9E303F6E4F7F9536CF5639957D010C1A97AF6BE9299830C549B82DC",
     "artifacts/flagship_integration/BHSM_N12_AE2_COVARIANT_SEAM_ENCLOSURE_Z_MINUS_1.json": "7391274C597672BED6EEEC38AA694755621F8AA63EE725C3868E1E18B7BB318F",
     "artifacts/flagship_integration/BHSM_N12_AE2_NEGATIVE_AXIS_SEAM_FAMILY.json": "F2B489A187E84DF6614C07BEF199F45D8E291A685448F52A56262EC9D6AA1623",
+    "artifacts/flagship_integration/BHSM_N12_CONSTRAINT_PROJECTED_REPLACEMENT_SADDLE.json": "CEAA58BCD6DACF80E0DDB8C0AEA3D16D9A5FC65E78E93BC8DC1912F2F39E96FA",
     "artifacts/flagship_integration/BHSM_N12_EVENT_NORMAL_TWO_SIDED_SEAM_CORRECTION.json": "D575E60A442C19CE0EE34EDBB8BBAC1D90A8895D46D6ACE16317BFBD2CBE894F",
     "artifacts/flagship_integration/BHSM_N12_EVENT_NORMAL_WEYL_RICCATI.json": "40232FD566213EA7A97B1C34AB73432A9E8F02BEAEC37FFC8E4537ACDE1C38FF",
     "artifacts/flagship_integration/BHSM_N12_FINITE_ENDPOINT_ZERO_SOURCE_FORCE_FUNCTIONAL.json": "6BC1FC78190437347813117A63D252C96115B2B67619D893144526A5DDD4E931",
@@ -269,7 +270,7 @@
     {
       "action_version": "BHSM-AE-2.0.0",
       "artifact_hashes": {
-        "artifacts/flagship_integration/BHSM_N12_AE2_NEGATIVE_AXIS_SEAM_FAMILY.json": "F2B489A187E84DF6614C07BEF199F45D8E291A685448F52A56262EC9D6AA1623"
+        "artifacts/flagship_integration/BHSM_N12_CONSTRAINT_PROJECTED_REPLACEMENT_SADDLE.json": "CEAA58BCD6DACF80E0DDB8C0AEA3D16D9A5FC65E78E93BC8DC1912F2F39E96FA"
       },
       "canonical_id": "G7_08_FORCE",
       "current_status": "OPEN_CURRENT_OWNER",
@@ -288,9 +289,9 @@
       "mathematical_class": "GATE_DAG_NODE",
       "observable_status": "NOT_AN_OBSERVABLE",
       "ontology_version": "BHSM-AE2-ONTOLOGY-1.0.0",
-      "physical_meaning": "heat-minus-zeta force functional derived; two-sided covariant seam broadly enclosed on the full negative real resolvent axis, actual trace value/sign and reset-fiber saddle open",
+      "physical_meaning": "heat-minus-zeta force functional and exact constraint-tangent criterion derived; actual projected trace covector and geometry/reset Hessian open",
       "provenance": [
-        "artifacts/flagship_integration/BHSM_N12_AE2_NEGATIVE_AXIS_SEAM_FAMILY.json"
+        "artifacts/flagship_integration/BHSM_N12_CONSTRAINT_PROJECTED_REPLACEMENT_SADDLE.json"
       ],
       "semantic_layer": "BHSM_ONTOLOGY",
       "source_weighting_required": false,
@@ -305,7 +306,7 @@
         "artifacts/flagship_integration/BHSM_N12_GATE7_AE2_THRESHOLD_SUPERSESSION.json": "1C30C3003E74B48F873CCCBE3F54AAC9780D26FC1408A74C12D933A253FD2613"
       },
       "canonical_id": "G7_09_SADDLE",
-      "current_status": "PENDING",
+      "current_status": "PENDING_COUPLED_TO_G7_08",
       "dimensions": "DIMENSIONLESS_OR_OPERATOR_TYPED",
       "domain": "current AE2 Gate7",
       "downstream_consumers": [
@@ -321,7 +322,7 @@
       "mathematical_class": "GATE_DAG_NODE",
       "observable_status": "NOT_AN_OBSERVABLE",
       "ontology_version": "BHSM-AE2-ONTOLOGY-1.0.0",
-      "physical_meaning": "same-action saddle",
+      "physical_meaning": "same-action joint constrained saddle, mathematically coupled to G7_08 without adding a gate",
       "provenance": [
         "artifacts/flagship_integration/BHSM_N12_GATE7_AE2_THRESHOLD_SUPERSESSION.json"
       ],

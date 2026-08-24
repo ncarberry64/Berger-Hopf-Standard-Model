@@ -38,6 +38,7 @@ SOURCES = (
     "artifacts/flagship_integration/BHSM_N12_EVENT_NORMAL_TWO_SIDED_SEAM_CORRECTION.json",
     "artifacts/flagship_integration/BHSM_N12_AE2_COVARIANT_SEAM_ENCLOSURE_Z_MINUS_1.json",
     "artifacts/flagship_integration/BHSM_N12_AE2_NEGATIVE_AXIS_SEAM_FAMILY.json",
+    "artifacts/flagship_integration/BHSM_N12_CONSTRAINT_PROJECTED_REPLACEMENT_SADDLE.json",
     "artifacts/intrinsic_state_selection/BHSM_N12_FINITE_ENCAPSULATION_LOCAL_BRANCH.json",
     "artifacts/flagship_integration/BHSM_N12_GATE7_AE2_THRESHOLD_SUPERSESSION.json",
     "artifacts/BHSM_alpha_i_update_v4_2.json",
@@ -84,6 +85,7 @@ def verify_current_lineage() -> None:
     seam_correction = loaded["artifacts/flagship_integration/BHSM_N12_EVENT_NORMAL_TWO_SIDED_SEAM_CORRECTION.json"]
     seam_enclosure = loaded["artifacts/flagship_integration/BHSM_N12_AE2_COVARIANT_SEAM_ENCLOSURE_Z_MINUS_1.json"]
     seam_family = loaded["artifacts/flagship_integration/BHSM_N12_AE2_NEGATIVE_AXIS_SEAM_FAMILY.json"]
+    projected_saddle = loaded["artifacts/flagship_integration/BHSM_N12_CONSTRAINT_PROJECTED_REPLACEMENT_SADDLE.json"]
     frontier = loaded["artifacts/flagship_integration/BHSM_N12_GATE7_AE2_THRESHOLD_SUPERSESSION.json"]
     if ae2.get("action_version") != "BHSM-AE-2.0.0":
         raise RuntimeError("AE2 action version mismatch")
@@ -173,6 +175,21 @@ def verify_current_lineage() -> None:
         == "OPEN"
     ):
         raise RuntimeError("two-sided AE2 force value frontier is not current")
+    if not (
+        projected_saddle["claim_boundary"][
+            "constraint_tangent_force_criterion"
+        ] == "DERIVED"
+        and projected_saddle["claim_boundary"][
+            "ambient_force_zero_required"
+        ] is False
+        and projected_saddle["claim_boundary"][
+            "actual_projected_force_value"
+        ] == "OPEN"
+        and projected_saddle["claim_boundary"][
+            "same_action_saddle"
+        ] == "OPEN_COUPLED_TO_FORCE"
+    ):
+        raise RuntimeError("constraint-projected replacement saddle frontier is not current")
 
 
 def materialize() -> list[Path]:

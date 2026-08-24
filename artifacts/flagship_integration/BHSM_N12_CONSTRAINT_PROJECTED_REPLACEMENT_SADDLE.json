@@ -1,0 +1,89 @@
+{
+  "FLAGSHIP_READY": false,
+  "FULL_BHSM_COMPLETE": false,
+  "actual_N12_reset_witness": {
+    "boundary_log_R4_covector_ambient_norm": 3.6055807283231815,
+    "boundary_log_R4_covector_tangent_projection_norm": 0.18478629584857506,
+    "boundary_v": 0.002103523639057069,
+    "child_q_variation_rank_on_tangent": 33,
+    "constraint_rank": 31,
+    "constraint_tangent_kernel_residual_norm": 2.372363922325311e-13,
+    "constraint_tangent_orthonormality_residual_norm": 4.2964215147853386e-15,
+    "fixed_event_child_constraint_shape": [
+      31,
+      98
+    ],
+    "linearized_witness_maximum_tangent_eigenvalue": 1.9995722577857276,
+    "linearized_witness_minimum_tangent_eigenvalue": 1.1467038477493208,
+    "linearized_witness_positive_definite_on_tangent": true,
+    "linearized_witness_projected_residual_norm": 9.57942171082588e-17,
+    "normal_only_covector_ambient_norm": 192.72414227364158,
+    "normal_only_covector_tangent_projection_norm": 2.4014070621925737e-13,
+    "normal_only_multiplier_absorption_residual_norm": 3.754860454104093e-12,
+    "normal_only_shifted_force_residual_norm": 3.7548212306927235e-12,
+    "physical_tangent_dimension": 67
+  },
+  "artifact": "BHSM_N12_CONSTRAINT_PROJECTED_REPLACEMENT_SADDLE",
+  "claim_boundary": {
+    "FULL_BHSM_COMPLETE": false,
+    "Gate7": "ACTIVE_PROJECTED_FORCE_AND_JOINT_SADDLE_REALIZATION_OPEN",
+    "Gate8": "LOCKED",
+    "actual_projected_force_sign": "OPEN",
+    "actual_projected_force_value": "OPEN",
+    "ambient_force_zero_required": false,
+    "chord_03_authorized": false,
+    "constraint_normal_force_multiplier_absorption": "DERIVED",
+    "constraint_tangent_force_criterion": "DERIVED",
+    "frozen_predictions_changed": false,
+    "geometry_reset_KKT_Hessian": "OPEN",
+    "pair_plus_contact_Hessian": "PENDING_AFTER_ZERO_SOURCE_SADDLE",
+    "same_action_saddle": "OPEN_COUPLED_TO_FORCE"
+  },
+  "classification": "AT_A_CLASSICAL_CONSTRAINED_ROOT_THE_SAME_CONFIGURATION_IS_A_ROOT_OF_THE_HEAT_MINUS_ZETA_REPLACEMENT_ACTION_IF_AND_ONLY_IF_THE_REPLACEMENT_FORCE_COVECTOR_VANISHES_ON_THE_CONSTRAINT_TANGENT;_A_CONSTRAINT_NORMAL_FORCE_IS_ABSORBED_BY_A_KKT_MULTIPLIER_SHIFT;_THE_67_DIMENSIONAL_ACTION_OWNED_RESET_FIBER_THEREFORE_REQUIRES_A_PROJECTED_FORCE_OR_A_JOINT_CONSTRAINED_SADDLE,_NOT_AN_ARBITRARY_CHILD_REPRESENTATIVE",
+  "exact_next_dependency": "CONSTRUCT_THE_ACTUAL_JOINT_FINITE_HISTORY_HEAT_OPERATOR_AND_ITS_COMPLETE_GEOMETRY_RESET_JET_TO_EVALUATE_N_DAGGER_Q_rep,_AND_CONSTRUCT_THE_CONSTRAINT_REDUCED_GEOMETRY_KKT_HESSIAN_N_DAGGER_H_total_N;_THEN_CERTIFY_EITHER_DIRECT_TRANSFER_N_DAGGER_Q_rep=0_OR_THE_JOINT_NEW_SADDLE_WITHOUT_SELECTING_A_RESET_FIBER_REPRESENTATIVE_BY_HAND",
+  "exact_theorem": {
+    "ambient_zero_force": "SUFFICIENT_BUT_NOT_NECESSARY",
+    "constraint_surface": "C(y)=0_WITH_J=D_C(y)",
+    "equivalent_multiplier_statement": "q_rep+J^dagger*(lambda_rep-lambda_class)=0",
+    "hessian_distinction": "H_total_HERE_IS_THE_GEOMETRY_RESET_KKT_HESSIAN_NEEDED_TO_LOCATE_THE_ZERO_SOURCE_SADDLE;_IT_IS_NOT_THE_DOWNSTREAM_PAIR_PLUS_CONTACT_SOURCE_HESSIAN_D_A2_Gamma",
+    "if_projected_force_is_nonzero": "SOLVE_D_Gamma_total(y)+J(y)^dagger*lambda=0_AND_C(y)=0",
+    "linearized_tangent_equation": "(N^dagger*H_total*N)*delta_xi=-N^dagger*q_rep",
+    "normal_component": "(I-N*N^dagger)q_rep_IS_ABSORBED_BY_THE_KKT_MULTIPLIER",
+    "physical_tangent": "T_y=ker(J)_WITH_ORTHONORMAL_BASIS_N",
+    "replacement_force": "q_rep=D_y_Gamma_heat-D_y_Gamma_SM_zeta",
+    "required_nondegeneracy": "N^dagger*H_total*N_INVERTIBLE_ON_THE_RETAINED_PHYSICAL_TANGENT_AFTER_EXISTING_GAUGE_TIME_AND_SCALE_QUOTIENTS",
+    "same_configuration_transfer_criterion": "N^dagger*q_rep=0"
+  },
+  "inputs": {
+    "artifacts/BHSM_aether_quantum_functional_accounting_v16_00.json": "319B56C97D9198ED8E4E38E38E12333EBB90ADA8B923C0557C83F056199B1F46",
+    "artifacts/flagship_integration/BHSM_N12_AE2_NEGATIVE_AXIS_SEAM_FAMILY.json": "F2B489A187E84DF6614C07BEF199F45D8E291A685448F52A56262EC9D6AA1623",
+    "artifacts/flagship_integration/BHSM_N12_FINITE_ENDPOINT_ZERO_SOURCE_FORCE_FUNCTIONAL.json": "6BC1FC78190437347813117A63D252C96115B2B67619D893144526A5DDD4E931",
+    "artifacts/n12_direct_checkpoint/BHSM_N12_COMPLETE_PERSISTENT_CHILD_STATE.npz": "8AEE33C46C320A36384C83E6B9BDE387AE3E565D99C7D49C606895229B796890"
+  },
+  "stage_adjudication": {
+    "G7_08_closed": false,
+    "G7_08_force_and_G7_09_saddle_are_mathematically_coupled": true,
+    "G7_09_closed": false,
+    "actual_geometry_reset_KKT_Hessian_available": false,
+    "actual_projected_heat_minus_zeta_force_covector_available": false,
+    "actual_same_action_saddle_solved": false,
+    "force_value_or_sign_from_broad_seam_intervals": "NOT_DETERMINED",
+    "new_gate_introduced": false,
+    "pair_plus_contact_source_Hessian_is_downstream": true
+  },
+  "status": "EXACT_CONSTRAINT_TANGENT_FORCE_CRITERION_DERIVED_JOINT_PHYSICAL_SADDLE_OPEN",
+  "validation": {
+    "actual_boundary_log_radius_varies_on_reset_tangent": true,
+    "actual_reset_constraint_has_full_row_rank": true,
+    "actual_reset_tangent_basis_is_numerically_valid": true,
+    "actual_reset_tangent_dimension_is_67": true,
+    "exact_heat_minus_zeta_force_functional_consumed": true,
+    "full_negative_axis_broad_seam_enclosure_consumed": true,
+    "geometry_witness_not_promoted_to_quantum_force": true,
+    "no_reset_selector_new_gate_scale_fit_or_frozen_prediction_change": true,
+    "normal_nonzero_force_is_absorbed_by_multiplier": true,
+    "projected_linearized_saddle_identity_verified": true,
+    "same_replacement_action_accounting_consumed": true
+  },
+  "validation_passed": true
+}

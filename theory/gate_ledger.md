@@ -279,6 +279,21 @@
   is the action-owned finite-history operator/geometry-jet realization, with
   reset-fiber variables solved jointly at the same-action saddle or removed
   by a separately proved force-invariance theorem.
+- The exact constrained transfer criterion is now derived.  With
+  `J=D C(y)` and `range(N)=ker J`, the classical constrained root transfers
+  at the same configuration precisely when
+  `N^dagger(D Gamma_heat-D Gamma_SM^zeta)=0`.  Ambient zero force is
+  sufficient but not necessary: a component in `range(J^dagger)` is absorbed
+  by the KKT multiplier.  On the certified `31 x 98` fixed-event child
+  Jacobian the tangent dimension is 67, a constructed nonzero normal load is
+  multiplier-absorbed, and the boundary `log R4` covector has tangent norm
+  `0.1847862958485751`.  The latter is a geometry-direction witness, not an
+  evaluation of the quantum force.  If the projected force is nonzero, the
+  linearized joint correction requires
+  `(N^dagger H_total N)delta_xi=-N^dagger q_rep`.  This geometry/reset KKT
+  Hessian is distinct from the downstream pair-plus-contact source Hessian.
+  G7_08 and G7_09 are therefore coupled without adding a gate; both the
+  actual projected trace covector and joint saddle remain open.
 - The event-normal identities
   `D_s M=L_spatial(Y(s))-zI-M^2` and
   `D_s(delta M)=delta L-M delta M-delta M M` remain exact arm-transfer
