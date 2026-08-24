@@ -107,11 +107,21 @@
   `-5*sqrt(pi)_NONZERO`; BRST grading does not close the angular/infrared tail.
 - Sufficient first-force source-weighted spectral criterion:
   `DERIVED_BY_DYADIC_SUM_IF_abs(nu_h)([0,Lambda])<=C_h*Lambda^(1+epsilon_h)_WITH_epsilon_h>0_AND_FINITE_E1_WEIGHTED_HIGH_TAIL`.
+- Positive scalar/de Rham channel child impedance at zero on the certified
+  core: `STRICTLY_POSITIVE_BY_STURM_COMPARISON`; the constant scalar channel
+  has `ZERO_LOG_RADIUS_FIRST_VERTEX`.
+- Product-Dirac exact kernel atoms in the first geometry measure:
+  `ZERO_WEIGHT_BY_D_h_norm(Au)^2=2Re<Au,A_hu>`.
+- Free positive-Robin compact-source threshold law:
+  `Lambda^(3/2)_COMPARISON_ONLY`; free Neumann law:
+  `Lambda^(1/2)_INSUFFICIENT`.
+- Actual action-owned continuous threshold limiting-absorption/Weyl class:
+  `OPEN_NOT_INFERRED_FROM_THE_FREE_COMPARISON`.
 - Actual N12 `C_h,epsilon_h,H_h` and zero-source force sign: `OPEN`.
 - Zero-source force, same-action saddle, physical pair-plus-contact Hessian,
   Ward/BRST closure, and basis-independent scalar observable map: `OPEN`.
 - Exact next flagship dependency:
-  `BOUND_THE_ACTUAL_N12_SOURCE_WEIGHTED_GRADED_SPECTRAL_COUNTING_FUNCTION_NEAR_ZERO_AND_ITS_E1_WEIGHTED_HIGH_ENERGY_TAIL_FOR_EACH_RETAINED_WEAK_GEOMETRY_DIRECTION;_THEN_ASSEMBLE_AND_SIGN_ADJUDICATE_THE_ZERO_SOURCE_FORCE`.
+  `PROVE_AN_ACTION_OWNED_LIMITING_ABSORPTION_OR_WEYL_THRESHOLD_ESTIMATE_FOR_THE_CONTINUOUS_SOURCE_WEIGHTED_MEASURE,_BOUND_ITS_E1_WEIGHTED_HIGH_ENERGY_TAIL,_AND_ASSEMBLE_THE_GRADED_ANGULAR_SUM;_THEN_SIGN_ADJUDICATE_THE_ZERO_SOURCE_FORCE`.
 
 ## Prior N12 dynamic-Calderon continuum gates (superseded)
 

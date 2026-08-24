@@ -135,9 +135,18 @@ measure is sufficient if its low-energy counting function is
 `O(Lambda^(1+epsilon))` for some positive `epsilon` and its `E1`-weighted
 high-energy tail is finite. This criterion is action-native and contraction
 specific; the actual N12 constants and force sign are not yet derived.
+The certified core now supplies a positive child zero-energy impedance for
+every positive scalar/de Rham angular channel; the constant channel is
+log-radius silent. Exact product-Dirac kernel atoms are also silent in the
+first form derivative. These identities remove discrete zero-atom
+obstructions but do not control the continuous threshold. The canonical free
+half-line comparison shows the precise remaining dichotomy: positive regular
+Robin data give `Lambda^(3/2)`, while Neumann/resonant data give only
+`Lambda^(1/2)`. The actual N12 limiting-absorption/Weyl threshold class is
+still open and no free exterior has been selected.
 
 `FULL_BHSM_COMPLETE = FALSE`. Exact next object:
-`BOUND_THE_ACTUAL_N12_SOURCE_WEIGHTED_GRADED_SPECTRAL_COUNTING_FUNCTION_NEAR_ZERO_AND_ITS_E1_WEIGHTED_HIGH_ENERGY_TAIL_FOR_EACH_RETAINED_WEAK_GEOMETRY_DIRECTION;_THEN_ASSEMBLE_AND_SIGN_ADJUDICATE_THE_ZERO_SOURCE_FORCE`.
+`PROVE_AN_ACTION_OWNED_LIMITING_ABSORPTION_OR_WEYL_THRESHOLD_ESTIMATE_FOR_THE_CONTINUOUS_SOURCE_WEIGHTED_MEASURE,_BOUND_ITS_E1_WEIGHTED_HIGH_ENERGY_TAIL,_AND_ASSEMBLE_THE_GRADED_ANGULAR_SUM;_THEN_SIGN_ADJUDICATE_THE_ZERO_SOURCE_FORCE`.
 
 ## Prior N12 source-tail checkpoint (superseded)
 

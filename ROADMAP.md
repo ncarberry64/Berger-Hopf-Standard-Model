@@ -61,6 +61,13 @@
    prove superlinear low-energy vanishing and a finite `E1`-weighted
    high-energy tail for each retained geometry direction. Do not require a
    full operator gap if these contractions close.
+   The two-chord threshold audit already gives positive child zero-energy
+   impedance for every positive scalar/de Rham channel, makes the constant
+   scalar radius vertex zero, and proves that exact product-Dirac kernel atoms
+   have zero first form weight. Use these gains, but do not promote the free
+   positive-Robin `Lambda^(3/2)` comparison to the actual exterior. Prove the
+   action-owned continuous limiting-absorption/Weyl threshold estimate and
+   rule out the Neumann/resonant `Lambda^(1/2)` class on the physical graph.
    Do not identify (z) with momentum squared.
 4. Evaluate the zero-source weak geometry force, solve and certify the
    same-action saddle if it is nonzero, evaluate the physical pair-plus-contact
@@ -79,7 +86,7 @@
 `FULL_BHSM_COMPLETE = FALSE`.
 
 Exact next flagship object:
-`BOUND_THE_ACTUAL_N12_SOURCE_WEIGHTED_GRADED_SPECTRAL_COUNTING_FUNCTION_NEAR_ZERO_AND_ITS_E1_WEIGHTED_HIGH_ENERGY_TAIL_FOR_EACH_RETAINED_WEAK_GEOMETRY_DIRECTION;_THEN_ASSEMBLE_AND_SIGN_ADJUDICATE_THE_ZERO_SOURCE_FORCE`.
+`PROVE_AN_ACTION_OWNED_LIMITING_ABSORPTION_OR_WEYL_THRESHOLD_ESTIMATE_FOR_THE_CONTINUOUS_SOURCE_WEIGHTED_MEASURE,_BOUND_ITS_E1_WEIGHTED_HIGH_ENERGY_TAIL,_AND_ASSEMBLE_THE_GRADED_ANGULAR_SUM;_THEN_SIGN_ADJUDICATE_THE_ZERO_SOURCE_FORCE`.
 
 ## Current corrected-Rayleigh N=3 critical path
 

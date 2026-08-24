@@ -118,6 +118,17 @@ graded spectral measure satisfying
 `|nu_h|([0,Lambda]) <= C_h Lambda^(1+epsilon_h)` with `epsilon_h>0`, together
 with a finite `E1`-weighted high-energy tail. An exact dyadic sum then bounds
 the zero-source first variation. The actual N12 measure constants remain open.
+A threshold audit now removes two narrower obstructions. On the certified
+two-chord core every positive scalar/de Rham angular channel has child-side
+zero-energy impedance at least
+`a tanh(a T_lower)>0` (`a=sqrt(c)/R4_upper`); the constant scalar channel has
+exactly zero log-radius vertex. Exact kernel atoms of every factorized
+product-Dirac square also have zero first geometry weight because
+`D_h q[u]=2 Re<Au,A_hu>`. A regular positive-Robin free half-line comparison
+has the required `Lambda^(3/2)` compact-source counting law, whereas the
+Neumann threshold has only `Lambda^(1/2)`. The free comparison is not the N12
+exterior: continuous-threshold regularity of the action-owned physical graph,
+the high-energy tail, and the graded angular sum remain open.
 
 The matched-parent `Q_xi / Delta H` route remains unavailable because no
 action-owned parent-only restriction exists. No local energy, reset-chart
@@ -146,6 +157,7 @@ representative, or formal reflection may substitute for that missing object.
 | `E1` infrared synthesis from current two-chord bounds | **OPEN; SMALL-NEGATIVE-`z` BOUNDS DIVERGE** |
 | BRST grading as complete physical heat-tail cancellation | **FALSE; LEADING COEFFICIENT `-5 sqrt(pi)`** |
 | Source-weighted spectral criterion sufficient for first `E1` force | **DERIVED; N12 CONSTANTS OPEN** |
+| Two-chord scalar threshold margin / product-Dirac zero-atom weight | **DERIVED; CONTINUOUS THRESHOLD OPEN** |
 | Physical `R4` action projection and coordinate jets | **DERIVED** |
 | Local first/second Euler--Dirac Jacobi/radius tube | **CERTIFIED; MAXIMAL COVER OPEN** |
 | Finite regular pre-stop Jacobi/transfer cover | **AUTOMATIC BY COMPACTNESS** |
@@ -176,11 +188,12 @@ Evidence: [`continuum certificate`](artifacts/n12_continuum_majorant_effectivene
 [`E1` infrared-control audit](artifacts/flagship_integration/BHSM_N12_FORWARD_E1_INFRARED_CONTROL_AUDIT.json),
 [`BRST` heat-tail cancellation audit](artifacts/flagship_integration/BHSM_N12_FORWARD_BRST_HEAT_TAIL_CANCELLATION_AUDIT.json),
 [`E1` source-weighted measure criterion](artifacts/flagship_integration/BHSM_N12_FORWARD_E1_SOURCE_MEASURE_CRITERION.json),
+[`threshold source-measure audit`](artifacts/flagship_integration/BHSM_N12_FORWARD_THRESHOLD_SOURCE_MEASURE_AUDIT.json),
 and [`post-parent observable audit`](artifacts/qxi_relative_energy_preparation/BHSM_POST_PARENT_FLAGSHIP_OBSERVABLE_GATE.json).
 
 Exact next object:
 
-`BOUND_THE_ACTUAL_N12_SOURCE_WEIGHTED_GRADED_SPECTRAL_COUNTING_FUNCTION_NEAR_ZERO_AND_ITS_E1_WEIGHTED_HIGH_ENERGY_TAIL_FOR_EACH_RETAINED_WEAK_GEOMETRY_DIRECTION;_THEN_ASSEMBLE_AND_SIGN_ADJUDICATE_THE_ZERO_SOURCE_FORCE`
+`PROVE_AN_ACTION_OWNED_LIMITING_ABSORPTION_OR_WEYL_THRESHOLD_ESTIMATE_FOR_THE_CONTINUOUS_SOURCE_WEIGHTED_MEASURE,_BOUND_ITS_E1_WEIGHTED_HIGH_ENERGY_TAIL,_AND_ASSEMBLE_THE_GRADED_ANGULAR_SUM;_THEN_SIGN_ADJUDICATE_THE_ZERO_SOURCE_FORCE`
 
 ## Prior N12 source-tail checkpoint (superseded by the continuum certificate above)
 
