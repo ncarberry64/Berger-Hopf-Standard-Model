@@ -150,6 +150,21 @@ zero-background graph and domain-parametric local incidence do not supply
 that matrix, and the derived gauge Wentzell block cannot be assigned to every
 matter sector.
 
+The retained-action provenance is now sharper and yields a scoped canonical
+no-go. The transverse gauge DtN quadratic form is action derived, but the
+retained normal matter junction action is zero and boundary identity leaves a
+continuous `U(1)_parent x U(1)_child` maximal-isotropic phase family. The
+v17.96--v17.99 complete-child result closes the classical zero-background
+point; v17.97 explicitly does not derive the nonzero fluctuation matrices.
+For `K_h=-d^2/dx^2+m^2`, `u'(0)=h u(0)`, the compact source
+`f=1_[0,L]` separates two allowed phases exactly:
+`<f,(R_1-R_0)f>=-(1-exp(-1))^2/2` at unit decay rate and support length.
+Thus the unchanged retained action does not define a unique full Gate-7
+operator. Closure now requires either an action derivation of the normal
+matter boundary generator or a theorem proving the complete graded
+pair-plus-contact functional is independent of the entire surviving phase
+family. No phase or new action term is selected here.
+
 The matched-parent `Q_xi / Delta H` route remains unavailable because no
 action-owned parent-only restriction exists. No local energy, reset-chart
 representative, or formal reflection may substitute for that missing object.
@@ -180,6 +195,8 @@ representative, or formal reflection may substitute for that missing object.
 | Two-chord scalar threshold margin / product-Dirac zero-atom weight | **DERIVED; CONTINUOUS THRESHOLD OPEN** |
 | Compact weak `E1` high-energy integrability | **DERIVED BY HEAT-SANDWICH TRACE NORM; NUMERIC TAIL OPEN** |
 | Full physical zero-energy birth/Wronskian margin | **REQUIRED; SECTOR-RESOLVED NONZERO GRAPH UNASSEMBLED** |
+| Unique retained matter birth domain | **FALSE; CONTINUOUS `U(1)_p x U(1)_c` ACTION-DOMAIN FAMILY** |
+| Gate-7 resolvent independence across that family | **FALSE IN THE RESOLVENT THEOREM CLASS; FULL GRADED CANCELLATION UNPROVED** |
 | Physical `R4` action projection and coordinate jets | **DERIVED** |
 | Local first/second Euler--Dirac Jacobi/radius tube | **CERTIFIED; MAXIMAL COVER OPEN** |
 | Finite regular pre-stop Jacobi/transfer cover | **AUTOMATIC BY COMPACTNESS** |
@@ -213,11 +230,12 @@ Evidence: [`continuum certificate`](artifacts/n12_continuum_majorant_effectivene
 [`threshold source-measure audit`](artifacts/flagship_integration/BHSM_N12_FORWARD_THRESHOLD_SOURCE_MEASURE_AUDIT.json),
 [`E1` high-energy trace-norm theorem](artifacts/flagship_integration/BHSM_N12_FORWARD_E1_HIGH_ENERGY_TRACE_NORM.json),
 [`birth threshold-margin audit`](artifacts/flagship_integration/BHSM_N12_FORWARD_BIRTH_THRESHOLD_MARGIN_AUDIT.json),
+[`matter-domain no-go`](artifacts/flagship_integration/BHSM_N12_FORWARD_MATTER_DOMAIN_NO_GO.json),
 and [`post-parent observable audit`](artifacts/qxi_relative_energy_preparation/BHSM_POST_PARENT_FLAGSHIP_OBSERVABLE_GATE.json).
 
 Exact next object:
 
-`ASSEMBLE_THE_SECTOR_RESOLVED_NONZERO_EVENT_FLUX_PLUS_W_phys_BIRTH_GRAPH_AT_ZERO_ENERGY_AND_PROVE_A_STRICT_MATRIX_WRONSKIAN_MARGIN_AGAINST_THE_CHILD_WEYL_MAP,_OR_PROVE_A_BOUNDARY_UNIFORM_LIMITING_ABSORPTION_ESTIMATE_EXCLUDING_THE_CRITICAL_COUNTERGRAPH;_THEN_DERIVE_SUPERLINEAR_COUNTING_AND_EVALUATE_THE_FORCE`
+`DERIVE_FROM_EXISTING_RETAINED_TERMS_AN_ACTION_OWNED_NORMAL_MATTER_BOUNDARY_GENERATOR_FIXING_THE_SURVIVING_CAYLEY_PHASES,_OR_PROVE_THE_COMPLETE_GRADED_GATE7_PAIR_PLUS_CONTACT_FUNCTIONAL_IS_INDEPENDENT_OF_THE_ENTIRE_SURVIVING_U1_PARENT_TIMES_U1_CHILD_DOMAIN_FAMILY;_ABSENT_EITHER_THE_UNCHANGED_RETAINED_ACTION_CANNOT_CLOSE_GATE7`
 
 ## Prior N12 source-tail checkpoint (superseded by the continuum certificate above)
 

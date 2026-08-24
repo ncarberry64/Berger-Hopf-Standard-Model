@@ -129,12 +129,24 @@
 - Sector-resolved nonzero event flux plus `W_phys` zero-energy birth matrix:
   `NOT_ASSEMBLED`; the zero-background graph and domain-parametric local
   incidence do not supply it.
+- Retained transverse-gauge normal boundary quadratic form:
+  `ACTION_DERIVED_BY_v15_66`.
+- Retained normal matter junction action: `ZERO_BY_v15_13`; this does not
+  select Neumann.
+- Boundary-identity-preserving matter domain family:
+  `CONTINUOUS_U1_PARENT_TIMES_U1_CHILD`.
+- v17.96--v17.99 complete-child closure as a nonzero fluctuation matrix:
+  `FALSE`; it closes the classical zero-background point and persistence.
+- Compact-source resolvent independence across the surviving Cayley family:
+  `FALSE_BY_EXACT_HALF_LINE_RESOLVENT_SEPARATION`.
+- Unique full Gate-7 operator from the unchanged retained action:
+  `FALSE_CANONICAL_SCOPED_NO_GO`.
 - Strict physical matrix Wronskian margin against critical cancellation:
   `OPEN_ACTION_REQUIRED_THRESHOLD_DATUM`.
 - Zero-source force, same-action saddle, physical pair-plus-contact Hessian,
   Ward/BRST closure, and basis-independent scalar observable map: `OPEN`.
 - Exact next flagship dependency:
-  `ASSEMBLE_THE_SECTOR_RESOLVED_NONZERO_EVENT_FLUX_PLUS_W_phys_BIRTH_GRAPH_AT_ZERO_ENERGY_AND_PROVE_A_STRICT_MATRIX_WRONSKIAN_MARGIN_AGAINST_THE_CHILD_WEYL_MAP,_OR_PROVE_A_BOUNDARY_UNIFORM_LIMITING_ABSORPTION_ESTIMATE_EXCLUDING_THE_CRITICAL_COUNTERGRAPH;_THEN_DERIVE_SUPERLINEAR_COUNTING_AND_EVALUATE_THE_FORCE`.
+  `DERIVE_FROM_EXISTING_RETAINED_TERMS_AN_ACTION_OWNED_NORMAL_MATTER_BOUNDARY_GENERATOR_FIXING_THE_SURVIVING_CAYLEY_PHASES,_OR_PROVE_THE_COMPLETE_GRADED_GATE7_PAIR_PLUS_CONTACT_FUNCTIONAL_IS_INDEPENDENT_OF_THE_ENTIRE_SURVIVING_U1_PARENT_TIMES_U1_CHILD_DOMAIN_FAMILY;_ABSENT_EITHER_THE_UNCHANGED_RETAINED_ACTION_CANNOT_CLOSE_GATE7`.
 
 ## Prior N12 dynamic-Calderon continuum gates (superseded)
 

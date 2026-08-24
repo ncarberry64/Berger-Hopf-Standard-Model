@@ -80,6 +80,15 @@
    limiting-absorption theorem excluding that critical graph is an equivalent
    route. Do not assign the gauge Wentzell block to the Weyl or HS sectors.
    Do not identify (z) with momentum squared.
+   The provenance audit now proves that this graph is not merely unevaluated:
+   the retained transverse-gauge DtN block is explicit, but the normal matter
+   junction action is zero and the surviving `U(1)_parent x U(1)_child`
+   self-adjoint phases are unselected. The v17 complete-child map closes only
+   the zero-background point. Resolve the scoped unchanged-action no-go by
+   deriving a normal matter generator from existing retained terms, or prove
+   that the complete graded Gate-7 pair-plus-contact functional is independent
+   of the entire surviving phase family. Do not infer Neumann from a missing
+   term and do not insert a phase as policy.
 4. Evaluate the zero-source weak geometry force, solve and certify the
    same-action saddle if it is nonzero, evaluate the physical pair-plus-contact
    Hessian, and close Ward/BRST, continuum/relative-trace, and basis-independent
@@ -97,7 +106,7 @@
 `FULL_BHSM_COMPLETE = FALSE`.
 
 Exact next flagship object:
-`ASSEMBLE_THE_SECTOR_RESOLVED_NONZERO_EVENT_FLUX_PLUS_W_phys_BIRTH_GRAPH_AT_ZERO_ENERGY_AND_PROVE_A_STRICT_MATRIX_WRONSKIAN_MARGIN_AGAINST_THE_CHILD_WEYL_MAP,_OR_PROVE_A_BOUNDARY_UNIFORM_LIMITING_ABSORPTION_ESTIMATE_EXCLUDING_THE_CRITICAL_COUNTERGRAPH;_THEN_DERIVE_SUPERLINEAR_COUNTING_AND_EVALUATE_THE_FORCE`.
+`DERIVE_FROM_EXISTING_RETAINED_TERMS_AN_ACTION_OWNED_NORMAL_MATTER_BOUNDARY_GENERATOR_FIXING_THE_SURVIVING_CAYLEY_PHASES,_OR_PROVE_THE_COMPLETE_GRADED_GATE7_PAIR_PLUS_CONTACT_FUNCTIONAL_IS_INDEPENDENT_OF_THE_ENTIRE_SURVIVING_U1_PARENT_TIMES_U1_CHILD_DOMAIN_FAMILY;_ABSENT_EITHER_THE_UNCHANGED_RETAINED_ACTION_CANNOT_CLOSE_GATE7`.
 
 ## Current corrected-Rayleigh N=3 critical path
 

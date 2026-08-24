@@ -164,8 +164,21 @@ the complete sector-resolved nonzero event-flux/`W_phys` graph unassembled.
 Thus a strict full birth Wronskian margin—not another chord—is the first
 missing action-owned object.
 
+The surviving object is now localized at action provenance, not numerical
+assembly. v15.13 proves that the retained normal matter junction action is
+zero and that boundary identity leaves a continuous
+`U(1)_parent x U(1)_child` self-adjoint phase family. The later complete-child
+lineage evaluates the zero-background point but explicitly leaves the nonzero
+fluctuation Calderon matrices underived. An exact half-line resolvent identity
+shows that the compact source `1_[0,1]` distinguishes the allowed `h=0` and
+`h=1` Cayley phases by `-(1-exp(-1))^2/2`. Consequently the unchanged retained
+action does not determine a unique full Gate-7 operator or pair term. This is
+a scoped canonical unchanged-action no-go, not an adoption of either phase and
+not a claim against an explicitly versioned action extension or a proof of
+complete graded phase independence.
+
 `FULL_BHSM_COMPLETE = FALSE`. Exact next object:
-`ASSEMBLE_THE_SECTOR_RESOLVED_NONZERO_EVENT_FLUX_PLUS_W_phys_BIRTH_GRAPH_AT_ZERO_ENERGY_AND_PROVE_A_STRICT_MATRIX_WRONSKIAN_MARGIN_AGAINST_THE_CHILD_WEYL_MAP,_OR_PROVE_A_BOUNDARY_UNIFORM_LIMITING_ABSORPTION_ESTIMATE_EXCLUDING_THE_CRITICAL_COUNTERGRAPH;_THEN_DERIVE_SUPERLINEAR_COUNTING_AND_EVALUATE_THE_FORCE`.
+`DERIVE_FROM_EXISTING_RETAINED_TERMS_AN_ACTION_OWNED_NORMAL_MATTER_BOUNDARY_GENERATOR_FIXING_THE_SURVIVING_CAYLEY_PHASES,_OR_PROVE_THE_COMPLETE_GRADED_GATE7_PAIR_PLUS_CONTACT_FUNCTIONAL_IS_INDEPENDENT_OF_THE_ENTIRE_SURVIVING_U1_PARENT_TIMES_U1_CHILD_DOMAIN_FAMILY;_ABSENT_EITHER_THE_UNCHANGED_RETAINED_ACTION_CANNOT_CLOSE_GATE7`.
 
 ## Prior N12 source-tail checkpoint (superseded)
 
