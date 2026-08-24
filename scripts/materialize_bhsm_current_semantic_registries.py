@@ -29,6 +29,7 @@ SOURCES = (
     "artifacts/flagship_integration/BHSM_N12_GATE7_AE2_INTEGRABLE_RADIUS_THRESHOLD_ROUTE.json",
     "artifacts/flagship_integration/BHSM_N12_GATE7_AE2_LINEAR_RADIUS_TAIL_THEOREM.json",
     "artifacts/flagship_integration/BHSM_N12_GATE7_AE2_POWER_RADIUS_TAIL_CLOSURE.json",
+    "artifacts/flagship_integration/BHSM_N12_GATE7_AE2_COMPACT_SOURCE_DINI_CLOSURE.json",
     "artifacts/flagship_integration/BHSM_N12_GATE7_AE2_THRESHOLD_SUPERSESSION.json",
     "artifacts/BHSM_alpha_i_update_v4_2.json",
     "theory/bhsm_prediction_ledger.json",
@@ -65,6 +66,7 @@ def verify_current_lineage() -> None:
     radius_route = loaded["artifacts/flagship_integration/BHSM_N12_GATE7_AE2_INTEGRABLE_RADIUS_THRESHOLD_ROUTE.json"]
     linear_tail = loaded["artifacts/flagship_integration/BHSM_N12_GATE7_AE2_LINEAR_RADIUS_TAIL_THEOREM.json"]
     power_tail = loaded["artifacts/flagship_integration/BHSM_N12_GATE7_AE2_POWER_RADIUS_TAIL_CLOSURE.json"]
+    compact_dini = loaded["artifacts/flagship_integration/BHSM_N12_GATE7_AE2_COMPACT_SOURCE_DINI_CLOSURE.json"]
     frontier = loaded["artifacts/flagship_integration/BHSM_N12_GATE7_AE2_THRESHOLD_SUPERSESSION.json"]
     if ae2.get("action_version") != "BHSM-AE-2.0.0":
         raise RuntimeError("AE2 action version mismatch")
@@ -100,7 +102,11 @@ def verify_current_lineage() -> None:
         power_tail["claim_boundary"]["actual_N12_radius_asymptotic_class"] == "OPEN"
         and power_tail["claim_boundary"]["general_nonasymptotic_tail"] == "OPEN"
     ):
-        raise RuntimeError("nonasymptotic radius tail is not the current live owner")
+        raise RuntimeError("power-tail predecessor does not preserve its pre-closure frontier")
+    if compact_dini["factorization_only_test"]["answer"] != "YES_WITHIN_THE_RETAINED_ADMISSIBLE_CLASS":
+        raise RuntimeError("compact-source factorization theorem is not closed")
+    if compact_dini["claim_boundary"]["angular_sum"] != "OPEN_CURRENT_OWNER":
+        raise RuntimeError("angular channel sum is not the current live owner")
 
 
 def materialize() -> list[Path]:

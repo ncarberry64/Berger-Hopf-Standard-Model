@@ -57,8 +57,8 @@ def test_guardrail_rejects_wrong_live_owner() -> None:
     registries = _load()
     bad = deepcopy(registries)
     dag = bad["BHSM_CURRENT_COMPLETION_DAG.json"]["records"]
-    next(row for row in dag if row["canonical_id"] == "G7_05_FACTORIZED_LAP")["current_status"] = "CLOSED"
-    next(row for row in dag if row["canonical_id"] == "G7_06_E1_FINITE")["current_status"] = "OPEN_CURRENT_OWNER"
+    next(row for row in dag if row["canonical_id"] == "G7_07_ANGULAR_TAIL")["current_status"] = "CLOSED"
+    next(row for row in dag if row["canonical_id"] == "G7_08_FORCE")["current_status"] = "OPEN_CURRENT_OWNER"
     with pytest.raises(ValueError, match="wrong current owner"):
         validate_registries(bad)
 
@@ -98,7 +98,7 @@ def test_source_dini_is_canonical_and_strict_power_excess_is_not_compulsory() ->
         if row["canonical_id"] == "SOURCE_WEIGHTED_THRESHOLD_MEASURE"
     )
     assert formula["formula"] == "integral_(0,1]_lambda^(-1)*d|nu_h|(lambda)<infinity"
-    assert formula["current_status"] == "DINI_CRITERION_EXACT_POWER_TAILS_CLOSED_ACTUAL_ASYMPTOTIC_OPEN"
+    assert formula["current_status"] == "DINI_CLOSED_ALL_ADMISSIBLE_TAILS_BY_COMPACT_VOL_TERRA_TRACE_CLASS"
     deprecation = next(
         row for row in registries["BHSM_FORMULA_DEPRECATION_LEDGER.json"]["records"]
         if row["canonical_id"] == "DEPRECATE_STRICT_POWER_EXCESS"

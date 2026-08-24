@@ -152,9 +152,9 @@
 - Finite regular event/canonical-stop factorized endpoints:
   `COMPACT_RESOLVENT_BRANCH_NO_CONTINUOUS_LAP_REQUIRED`; a zero atom has
   exactly zero first form weight.
-- Highest-upstream realized infinite-end factorized input:
-  `FINITE_UNIFORM_NEAR_THRESHOLD_SUM_OF_SQUARED_GENERALIZED_EIGENSTATE_NORMALIZATIONS_ON_COMPACT_SOURCE_SUPPORT_OPEN`;
-  a strict gap and full operator-norm limiting absorption are not required.
+- The former near-threshold generalized-eigenstate normalization supremum is
+  `SUPERSEDED_AS_REQUIRED_BY_COMPACT_SOURCE_TRACE_CLASS_THEOREM`; a strict gap
+  and full operator-norm limiting absorption remain unnecessary.
 - Geometry-first sufficient route for that normalization:
   `I_R=integral d_tau/R4<infinity` gives
   `N_plus^2+N_minus^2=(4/pi)cosh(2*mu*I_R)` per event/child
@@ -171,16 +171,25 @@
 - Strict `epsilon_h>0` power excess as a universal E1 requirement:
   `RECLASSIFIED_SUFFICIENT_NOT_NECESSARY`. The canonical condition is
   `integral_(0,1] lambda^-1 dabs(nu_h)(lambda)<infinity`.
-- Current infinite-tail owner: derive the realized `R4` asymptotic class or
-  prove the source-Dini bound for sublinear/nonasymptotic positive-radius
-  tails.
+- Current infinite-tail owner: `CLOSED_FOR_EVERY_ADMISSIBLE_POSITIVE_TAIL`.
+  The natural factorized graph gives `A u_lambda=-lambda T_s u_lambda` on the
+  compact source interval. With `F=exp(2S) delta_s` locally BV, the quotient
+  vertex is a trace-class symmetrized Volterra operator and
+  `integral_(0,1] lambda^-1 dabs(nu_h)<=norm_1(C_h)<infinity`, independent of
+  the far tail.
 - Exact power-law radius tails `R4=c(tau+tau0)^a`, every `a>=0`:
   `CLOSED_FOR_FACTORIZED_E1`. Constant tails are gapped, `0<a<1` has
   `exp(-C*k^(-(1-a)/a))` Agmon suppression, `a=1` is Bessel/Dini, and
   `a>1` has integrable reciprocal radius.
-- Sharpened current owner: derive a controlled power/regularly-varying
-  asymptotic from the retained action, or prove source-Dini control for an
-  arbitrary positive nonasymptotic `R4` tail.
+- Exact power-law tail results remain valid cross-checks, but an action-owned
+  power/regular-variation theorem is not required for E1.
+- The retained `exp(i*pi/3)` holonomy does not act on the threshold transfer
+  denominator: AE2 has no independent Cayley phase, and a common reset-frame
+  unitary multiplies trace and conormal together, cancelling from admittance
+  and norm/Wronskian denominators.
+- Sharpened current owner: assemble a uniform retained angular/channel sum of
+  the fixed-channel low- and high-energy source trace-norm bounds. The spatial
+  Galerkin tail remains spatial and is not a temporal-tail substitute.
 - Retained transverse-gauge normal boundary quadratic form:
   `ACTION_DERIVED_BY_v15_66`.
 - Retained normal matter junction action: `ZERO_BY_v15_13`; this does not
