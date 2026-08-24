@@ -20,6 +20,7 @@ from bhsm.interface.action_extension_ae2_angular_dini_uniformity import (  # noq
     exponential_radius_angular_counterexample,
     logarithmic_radius_speed_agmon_bound,
     radius_speed_bound_from_state_controls,
+    uniform_scale_shift_osgood_audit,
 )
 from bhsm.interface.aether_diagonal_sp1_m4_attachment_v15_50 import RADIUS0  # noqa: E402
 
@@ -37,6 +38,7 @@ INPUTS = (
     ROOT / "src/bhsm/interface/action_extension_ae2_angular_dini_uniformity.py",
     ROOT / "scripts/derive_n12_gate7_ae2_angular_dini_uniformity.py",
     ROOT / "theory/bhsm_action_ae2_angular_dini_uniformity.md",
+    ROOT / "src/bhsm/interface/aether_n3_exact_full_local_action_jet_v17_60.py",
 )
 
 
@@ -98,6 +100,11 @@ def build_payload() -> dict[str, Any]:
         threshold_wave_number=1.0,
         chirality=-1,
     )
+    scale_shift = uniform_scale_shift_osgood_audit(
+        scale_shift=2.0,
+        radius=1.25,
+        proper_log_radius_rate=0.1,
+    )
     summability = at_most_linear_angular_series_witness()
     rows = counterexample["rows"]
     validation = {
@@ -123,6 +130,8 @@ def build_payload() -> dict[str, Any]:
         "state_control_reduction_is_finite_and_two_sided": math.isfinite(state_control_reduction["proper_radius_speed_upper"]) and state_control_reduction["requires_radius_monotonicity"] is False,
         "logarithmic_speed_Osgood_barrier_allows_unbounded_speed": logarithmic_barrier["allows_unbounded_radius_speed"] is True and logarithmic_partner["allows_unbounded_radius_speed"] is True,
         "logarithmic_speed_barrier_beats_local_exponential_growth": logarithmic_barrier["beats_exp(C*mu)*mu^d_for_every_fixed_C_and_d"] is True and "mu*log(log(mu))" in logarithmic_barrier["asymptotic_action_class"],
+        "uniform_scale_shift_preserves_log_rate_and_scales_radius_speed_linearly": math.isclose(scale_shift["translated_proper_log_radius_rate"], scale_shift["base_proper_log_radius_rate"], rel_tol=0.0, abs_tol=0.0) and math.isclose(scale_shift["translated_absolute_proper_radius_speed"] / scale_shift["base_absolute_proper_radius_speed"], scale_shift["radius_scale_factor"], rel_tol=1.0e-15, abs_tol=0.0),
+        "retained_action_has_same_leading_scale_weight_for_kinetic_and_algebraic_terms": scale_shift["leading_ADM_kinetic_scale_weight"] == 7 and scale_shift["leading_algebraic_scale_weight"] == 7 and scale_shift["scale_weights_alone_force_log_rate_decay"] is False,
         "conditional_angular_series_root_test_closes": summability["angular_series_absolutely_summable"] is True and summability["analytic_root_test_limit"] == "minus_infinity",
         "no_relative_reference_inserted": True,
         "strict_gap_power_tail_terminal_recurrence_and_chord3_not_reopened": True,
@@ -195,6 +204,16 @@ def build_payload() -> dict[str, Any]:
                 "positive_chirality": logarithmic_barrier,
                 "negative_chirality": logarithmic_partner,
             },
+        },
+        "retained_action_uniform_scale_ownership_audit": {
+            "status": "EXACT_SCALE_WEIGHTS_DERIVED_NO_OSGOOD_DECAY_THEOREM",
+            "uniform_shift": "q0->q0+sigma_WITH_OTHER_COORDINATES_VELOCITIES_AND_LAPSE_SHIFT_FIXED",
+            "kinematic_consequence": "R4->exp(sigma)*R4,_D_tau_log_R4_UNCHANGED,_abs(D_tau_R4)->exp(sigma)*abs(D_tau_R4)",
+            "Osgood_requirement": "omega(R)=o(R)_REQUIRES_D_tau_log_R4->0_ALONG_UNBOUNDED_OUTWARD_RADIUS",
+            "action_scale_structure": "PRE_QUOTIENT_BULK_WEIGHTS_{7,5,3,1,-1};_INERTIA_WEIGHTS_{7,5,3,1};_BOUNDARY_CASIMIR_WEIGHT_-1",
+            "leading_balance": "ADM_KINETIC_AND_ALGEBRAIC_TERMS_BOTH_HAVE_WEIGHT_7",
+            "conclusion": "POSITIVE_RADIUS_LAPSE_AND_SCALE_WEIGHTS_DO_NOT_FORCE_OSGOOD;_A_CONSTRAINT_REDUCED_FLOW_ESTIMATE_IS_REQUIRED",
+            "witness": scale_shift,
         },
         "adjudication": {
             "fixed_channel_source_Dini": "CLOSED_DO_NOT_REOPEN",

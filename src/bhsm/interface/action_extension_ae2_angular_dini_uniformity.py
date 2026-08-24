@@ -385,6 +385,64 @@ def logarithmic_radius_speed_agmon_bound(
     }
 
 
+def uniform_scale_shift_osgood_audit(
+    *,
+    scale_shift: float,
+    radius: float,
+    proper_log_radius_rate: float,
+) -> dict[str, float | bool | str | list[int]]:
+    """Expose the exact retained uniform-scale obstruction to Osgood control.
+
+    Shift only the retained common scale coordinate by ``sigma`` while
+    holding the other coordinates, velocities, and lapse/shift coefficients
+    fixed. Then ``x=log(R4)`` shifts by ``sigma``, ``D_tau x`` is unchanged,
+    and both ``R4`` and ``abs(D_tau R4)`` scale by ``exp(sigma)``.
+
+    The retained radial action has the following exact scale weights before
+    the inverse-inertia quotient is taken. Volume/ADM and algebraic terms
+    have leading weight seven; spatial curvature has weight five; expanding
+    the retained ``x_eta`` polynomial gives weights seven through minus one
+    in steps of two. The inertia polynomial has weights seven, five, three,
+    and one, its reciprocal is asymptotically weight minus seven when its
+    leading coefficient is nonzero, and the boundary Casimir has weight
+    minus one. Thus the action contains same-order leading kinetic and
+    algebraic terms, not a scale-weight coercive separation that would by
+    itself force ``D_tau x`` to vanish.
+    """
+
+    sigma = float(scale_shift)
+    base_radius = float(radius)
+    log_rate = float(proper_log_radius_rate)
+    if not all(math.isfinite(value) for value in (sigma, base_radius, log_rate)):
+        raise ValueError("finite scale-shift inputs required")
+    if base_radius <= 0.0:
+        raise ValueError("positive radius required")
+    factor = math.exp(sigma)
+    base_speed = abs(base_radius * log_rate)
+    translated_radius = factor * base_radius
+    translated_speed = factor * base_speed
+    return {
+        "scale_shift": sigma,
+        "radius_scale_factor": factor,
+        "base_radius": base_radius,
+        "translated_radius": translated_radius,
+        "base_proper_log_radius_rate": log_rate,
+        "translated_proper_log_radius_rate": log_rate,
+        "base_absolute_proper_radius_speed": base_speed,
+        "translated_absolute_proper_radius_speed": translated_speed,
+        "speed_to_radius_ratio": abs(log_rate),
+        "pre_inverse_inertia_bulk_scale_weights": [7, 5, 3, 1, -1],
+        "inertia_polynomial_scale_weights": [7, 5, 3, 1],
+        "inverse_inertia_leading_scale_weight": -7,
+        "boundary_Casimir_scale_weight": -1,
+        "leading_ADM_kinetic_scale_weight": 7,
+        "leading_algebraic_scale_weight": 7,
+        "scale_weights_alone_force_log_rate_decay": False,
+        "Osgood_sublinear_speed_requires_proper_log_rate_tends_to_zero": True,
+        "positive_radius_and_lapse_domain_alone_proves_Osgood_envelope": False,
+    }
+
+
 def at_most_linear_angular_series_witness(
     *,
     first_level: int = 8,
@@ -468,4 +526,5 @@ __all__ = [
     "integrable_optical_tail_dini_coefficient_lower",
     "logarithmic_radius_speed_agmon_bound",
     "radius_speed_bound_from_state_controls",
+    "uniform_scale_shift_osgood_audit",
 ]

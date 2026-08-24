@@ -221,6 +221,12 @@
   necessary global velocity-growth and positive-lapse controls. The existing
   matched-reference and CP/Z6 routes have already been audited and do not
   regularize this denominator.
+- Exact action-scale obstruction: `q0->q0+sigma` sends
+  `R4,abs(D_tau R4)->exp(sigma)*(R4,abs(D_tau R4))` while leaving
+  `D_tau log R4` fixed. The retained ADM kinetic and algebraic action terms
+  both have leading scale weight seven. Therefore an Osgood envelope with
+  `omega=o(R)` requires a genuine constraint-reduced flow theorem forcing
+  `D_tau log R4->0`; positive radius/lapse and scale weights alone do not.
 - Retained transverse-gauge normal boundary quadratic form:
   `ACTION_DERIVED_BY_v15_66`.
 - Retained normal matter junction action: `ZERO_BY_v15_13`; this does not

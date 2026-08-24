@@ -115,6 +115,25 @@ It permits unbounded radius speed, while
 Thus the barrier is of order `mu log log mu`, still sufficient by the root
 test.  No monotonicity or bounded speed is assumed.
 
+The exact retained uniform-scale structure shows why this weaker condition is
+still not kinematic.  Under `q0 -> q0+sigma`, with all non-scale coordinates,
+velocities, and lapse/shift coefficients fixed,
+
+`R4 -> exp(sigma) R4`, `D_tau log R4 -> D_tau log R4`, and
+`abs(D_tau R4) -> exp(sigma) abs(D_tau R4)`.
+
+Thus an Osgood envelope with `omega(R)=o(R)` requires the dynamical decay
+`D_tau log R4 -> 0` along an unbounded outward history.  Positivity of radius
+and lapse alone does not give that decay.
+
+This conclusion is also visible directly in the retained action weights.
+Before the inverse-inertia quotient, a uniform scale shift gives bulk weights
+`7,5,3,1,-1`; the inertia polynomial has weights `7,5,3,1`, the boundary
+Casimir has weight `-1`, and the leading ADM kinetic and algebraic terms both
+have weight `7`.  Hence there is no scale-weight coercive separation that can
+force the logarithmic rate to vanish.  Such a conclusion must come from the
+actual constraint-reduced Euler--Dirac flow, not from dimensional scaling.
+
 This is a conditional angular-barrier theorem, not a theorem about the actual
 N12 history.  The current retained action still does not prove even the
 weaker outward Osgood envelope: the maximal-flow dichotomy selects no outcome

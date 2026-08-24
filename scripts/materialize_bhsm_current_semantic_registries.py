@@ -123,6 +123,8 @@ def verify_current_lineage() -> None:
         and angular_dini["adjudication"]["eventual_logarithmic_speed_Osgood_radius_proved_by_action"] is False
     ):
         raise RuntimeError("current angular owner is not the action-to-radius bound")
+    if angular_dini["retained_action_uniform_scale_ownership_audit"]["status"] != "EXACT_SCALE_WEIGHTS_DERIVED_NO_OSGOOD_DECAY_THEOREM":
+        raise RuntimeError("uniform-scale Osgood ownership audit is not current")
 
 
 def materialize() -> list[Path]:

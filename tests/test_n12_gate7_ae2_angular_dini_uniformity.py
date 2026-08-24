@@ -17,6 +17,7 @@ from bhsm.interface.action_extension_ae2_angular_dini_uniformity import (
     integrable_optical_tail_dini_coefficient_lower,
     logarithmic_radius_speed_agmon_bound,
     radius_speed_bound_from_state_controls,
+    uniform_scale_shift_osgood_audit,
 )
 
 
@@ -130,6 +131,20 @@ def test_unbounded_logarithmic_speed_still_has_superlinear_angular_action() -> N
     assert "mu*log(log(mu))" in row["asymptotic_action_class"]
 
 
+def test_uniform_scale_shift_does_not_kinematically_supply_osgood_decay() -> None:
+    row = uniform_scale_shift_osgood_audit(
+        scale_shift=2.0,
+        radius=1.25,
+        proper_log_radius_rate=0.1,
+    )
+    assert row["translated_radius"] / row["base_radius"] == pytest.approx(math.exp(2.0))
+    assert row["translated_absolute_proper_radius_speed"] / row["base_absolute_proper_radius_speed"] == pytest.approx(math.exp(2.0))
+    assert row["translated_proper_log_radius_rate"] == row["base_proper_log_radius_rate"]
+    assert row["leading_ADM_kinetic_scale_weight"] == row["leading_algebraic_scale_weight"] == 7
+    assert row["scale_weights_alone_force_log_rate_decay"] is False
+    assert row["positive_radius_and_lapse_domain_alone_proves_Osgood_envelope"] is False
+
+
 def test_at_most_linear_root_test_beats_compact_source_growth() -> None:
     row = at_most_linear_angular_series_witness(
         source_exponential_rate=3.0,
@@ -191,6 +206,7 @@ def test_artifact_is_validated_and_deterministic() -> None:
     assert payload["adjudication"]["eventual_two_sided_Lipschitz_radius_proved_by_action"] is False
     assert payload["adjudication"]["eventual_logarithmic_speed_Osgood_radius_proved_by_action"] is False
     assert payload["conditional_logarithmic_speed_Osgood_class"]["allows_unbounded_radius_speed"] is True
+    assert payload["retained_action_uniform_scale_ownership_audit"]["status"] == "EXACT_SCALE_WEIGHTS_DERIVED_NO_OSGOOD_DECAY_THEOREM"
     assert payload["conditional_action_state_control_reduction"]["retained_action_supplies_global_velocity_bound"] is False
     assert payload["frontier_sharpening"]["G7_07_angular_tail"] == "OPEN_CURRENT_OWNER"
     assert payload["FULL_BHSM_COMPLETE"] is False

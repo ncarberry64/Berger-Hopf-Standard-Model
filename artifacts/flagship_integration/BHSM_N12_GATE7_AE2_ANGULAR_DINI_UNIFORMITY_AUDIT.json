@@ -457,9 +457,10 @@
     "artifacts/flagship_integration/BHSM_N12_GATE7_AE2_COMPACT_SOURCE_DINI_CLOSURE.json": "E1E735CBA8FC9D5FBC28B2AB93B0EA17803191D69F081C7A194224360A18CF27",
     "artifacts/intrinsic_state_selection/BHSM_N12_CONTINUUM_MAXIMAL_FLOW_DICHOTOMY.json": "F75E3CEE4EE4D0768027770FEFECAC1A17994B4297AE344E3FC2D83F86B002A9",
     "artifacts/intrinsic_state_selection/BHSM_N12_GLOBAL_FLOW_COERCIVE_CONTROL_GATE.json": "0A6C1BED930316B8EFF8BBE110078AE1C582E638E6BC42445330CC276EC2A2C4",
-    "scripts/derive_n12_gate7_ae2_angular_dini_uniformity.py": "5C0D4AF9A40031EFA45BF99504F33F6C7E09A051353CC4ABB6B88909456B2D5B",
-    "src/bhsm/interface/action_extension_ae2_angular_dini_uniformity.py": "4ADC804DE4315C2CBE1AAAA99FBD19CBE8AE8242427D3281BAEC892012D24820",
-    "theory/bhsm_action_ae2_angular_dini_uniformity.md": "E4BABD653F83FFA835658B5BDD627A9E3AA5D96647C1FFD8EEA5F6A3CC2956C7"
+    "scripts/derive_n12_gate7_ae2_angular_dini_uniformity.py": "900814B4C76B8D650B36416CA879DE676F5285C0D4D25BCFB1AAD0F7E34EE9B6",
+    "src/bhsm/interface/action_extension_ae2_angular_dini_uniformity.py": "33EE6C5AE7C2E45D3D82563D36DBC10E74D110F73A5B7567146CB348A57FABC5",
+    "src/bhsm/interface/aether_n3_exact_full_local_action_jet_v17_60.py": "2EA05905143C27E2465450A92CFBC27D87EA1D12C39931821CD4D6E51ED44EEC",
+    "theory/bhsm_action_ae2_angular_dini_uniformity.md": "E104D04A4387E73F5231FDBB808EF406D07D7EC8E45BB6C6BF2D22630C90473F"
   },
   "minimal_requirement": {
     "bounded_logarithmic_derivative_sufficient": false,
@@ -471,6 +472,46 @@
     "optical_completeness_alone_proved_sufficient": false,
     "remaining_sufficient_route": "quantitative optical-completeness/barrier estimate uniform in the angular level, or an already action-owned relative trace",
     "smoothness_or_local_BV_sufficient": false
+  },
+  "retained_action_uniform_scale_ownership_audit": {
+    "Osgood_requirement": "omega(R)=o(R)_REQUIRES_D_tau_log_R4->0_ALONG_UNBOUNDED_OUTWARD_RADIUS",
+    "action_scale_structure": "PRE_QUOTIENT_BULK_WEIGHTS_{7,5,3,1,-1};_INERTIA_WEIGHTS_{7,5,3,1};_BOUNDARY_CASIMIR_WEIGHT_-1",
+    "conclusion": "POSITIVE_RADIUS_LAPSE_AND_SCALE_WEIGHTS_DO_NOT_FORCE_OSGOOD;_A_CONSTRAINT_REDUCED_FLOW_ESTIMATE_IS_REQUIRED",
+    "kinematic_consequence": "R4->exp(sigma)*R4,_D_tau_log_R4_UNCHANGED,_abs(D_tau_R4)->exp(sigma)*abs(D_tau_R4)",
+    "leading_balance": "ADM_KINETIC_AND_ALGEBRAIC_TERMS_BOTH_HAVE_WEIGHT_7",
+    "status": "EXACT_SCALE_WEIGHTS_DERIVED_NO_OSGOOD_DECAY_THEOREM",
+    "uniform_shift": "q0->q0+sigma_WITH_OTHER_COORDINATES_VELOCITIES_AND_LAPSE_SHIFT_FIXED",
+    "witness": {
+      "Osgood_sublinear_speed_requires_proper_log_rate_tends_to_zero": true,
+      "base_absolute_proper_radius_speed": 0.125,
+      "base_proper_log_radius_rate": 0.1,
+      "base_radius": 1.25,
+      "boundary_Casimir_scale_weight": -1,
+      "inertia_polynomial_scale_weights": [
+        7,
+        5,
+        3,
+        1
+      ],
+      "inverse_inertia_leading_scale_weight": -7,
+      "leading_ADM_kinetic_scale_weight": 7,
+      "leading_algebraic_scale_weight": 7,
+      "positive_radius_and_lapse_domain_alone_proves_Osgood_envelope": false,
+      "pre_inverse_inertia_bulk_scale_weights": [
+        7,
+        5,
+        3,
+        1,
+        -1
+      ],
+      "radius_scale_factor": 7.38905609893065,
+      "scale_shift": 2.0,
+      "scale_weights_alone_force_log_rate_decay": false,
+      "speed_to_radius_ratio": 0.1,
+      "translated_absolute_proper_radius_speed": 0.9236320123663313,
+      "translated_proper_log_radius_rate": 0.1,
+      "translated_radius": 9.236320123663313
+    }
   },
   "status": "FIXED_CHANNEL_DINI_CLOSED_ANGULAR_UNIFORMITY_REDUCED_TO_OPTICAL_COMPLETENESS_OR_ACTION_OWNED_RELATIVE_TRACE",
   "validation": {
@@ -497,10 +538,12 @@
     "logarithmic_speed_barrier_beats_local_exponential_growth": true,
     "maximal_flow_dichotomy_does_not_select_infinite_tail_class": true,
     "no_relative_reference_inserted": true,
+    "retained_action_has_same_leading_scale_weight_for_kinetic_and_algebraic_terms": true,
     "retained_forward_reference_is_not_executable": true,
     "spatial_Galerkin_tail_not_repurposed": true,
     "state_control_reduction_is_finite_and_two_sided": true,
-    "strict_gap_power_tail_terminal_recurrence_and_chord3_not_reopened": true
+    "strict_gap_power_tail_terminal_recurrence_and_chord3_not_reopened": true,
+    "uniform_scale_shift_preserves_log_rate_and_scales_radius_speed_linearly": true
   },
   "validation_passed": true
 }
