@@ -35,15 +35,27 @@ time quotient. The numerical normal chart is a reproducible representative,
 not an action-owned physical selector. The local hitting factors, hard gap,
 and reset submersion transfer to the certified continuum graph.
 
-Global forward reachability is still fail closed. The certified child starts
-on the positive event side and the first analytic interval is event-free. The
-retained maximal-flow theorem does not yet choose terminal-chart entry versus
-physical-domain exit, blowup, or Dirac/eigenline degeneration. The
-constraint-reduced energy is identically zero, the unreduced energy is
-noncoercive, and no compact invariant child shell or component-restricted
-integrated event-transport estimate is currently owned. This localizes the
-first global-control obstruction without proving that no returning history
-exists.
+The maximal-flow theorem still does not choose terminal reset, finite
+physical/domain/Dirac exit, or an infinite regular history. That outcome is
+not the native Gate-7 prerequisite. The action-owned source operator uses the
+existing reset graph only if a reset is actually hit and the Friedrichs form
+closure at every infinite or excluded maximal end. Terminal return and the
+recent event-transport work are retained as an optional finite-endpoint route.
+
+Gate 7 is now the maximal-forward physical source functional. The inherited
+momentum-space (p^2) readout is classified as a retired periodic-Fourier
+artifact: neither a retained translation generator nor an asymptotic
+measurement map derives it. The physical operator (K_C), its resolvent
+(R_C(z)), spectral measure, birth-boundary Weyl--Calderón family (M_C(z)),
+and supplied-section BRST gauge/ghost/rank-16/HS incidence are derived without
+identifying the neutral spectral parameter (z) with momentum squared. The
+first open object is an enclosure of the exterior oracle bundle
+((M_C,D_\Phi M_C,D_\Phi^2M_C)) and the common pair-plus-contact response on
+the same domain. A positive lower sector gap plus the Friedrichs endpoint
+rule is now proved insufficient to evaluate that bundle; it guarantees
+coercive existence but not a finite uniform Weyl-value bound. Ward/BRST also
+does not cancel the physical-sector geometry force. The zero-source force and
+same-action saddle follow before any scalar physical coupling readout.
 
 The matched-parent `Q_xi / Delta H` route remains unavailable because no
 action-owned parent-only restriction exists. No local energy, reset-chart
@@ -55,19 +67,28 @@ representative, or formal reflection may substitute for that missing object.
 | `CONTINUUM_EVENT_CHILD_CERTIFIED` | **YES** |
 | Local continuum singular hitting/reset relation | **CERTIFIED** |
 | Single forward physical-time domain | **CERTIFIED** |
-| Global forward terminal-chart reachability | **OPEN -- global control obstruction localized** |
+| Global forward terminal-chart reachability | **OPTIONAL FINITE-ENDPOINT ROUTE -- not a native Gate-7 prerequisite** |
+| Maximal-forward source domain | **ACTION OWNED -- reset if hit, Friedrichs otherwise** |
+| Inherited (p^2) readout | **RETIRED PERIODIC-FOURIER ARTIFACT** |
+| Native (K_C) resolvent/Weyl family and BRST source incidence | **DERIVED ABSTRACTLY** |
+| Exterior oracle bundle and pair-plus-contact value | **OPEN** |
+| Positive-gap/Friedrichs oracle shortcut | **RIGOROUSLY INSUFFICIENT** |
 | `Q_xi / Delta H` | **OPEN -- matched-parent restriction absent** |
 | `FULL_BHSM_COMPLETE` | **FALSE** |
 
 Evidence: [`continuum certificate`](artifacts/n12_continuum_majorant_effectiveness/BHSM_CONTINUUM_EVENT_CHILD_CERTIFICATE.json),
 [`singular hitting/reset certificate`](artifacts/intrinsic_state_selection/BHSM_N12_CONTINUUM_SINGULAR_HITTING_RESET_RELATION.json),
 [`forward-time domain audit`](artifacts/intrinsic_state_selection/BHSM_N12_FORWARD_TIME_DOMAIN_ORIENTATION_AUDIT.json),
-[`reachability gate`](artifacts/intrinsic_state_selection/BHSM_N12_FORWARD_TERMINAL_CHART_REACHABILITY_GATE.json),
+[`maximal-forward source domain`](artifacts/flagship_integration/BHSM_N12_MAXIMAL_FORWARD_SOURCE_DOMAIN.json),
+[`readout-symbol provenance`](artifacts/flagship_integration/BHSM_N12_GATE7_READOUT_SYMBOL_PROVENANCE_AUDIT.json),
+[`native resolvent/Weyl family`](artifacts/flagship_integration/BHSM_N12_FORWARD_GAUGE_WEYL_READOUT_FAMILY.json),
+[`forward common-source incidence`](artifacts/flagship_integration/BHSM_N12_FORWARD_COMMON_SOURCE_INCIDENCE.json),
+[`gap-oracle route adjudication`](artifacts/flagship_integration/BHSM_N12_FORWARD_EXTERIOR_GAP_ORACLE_AUDIT.json),
 and [`post-parent observable audit`](artifacts/qxi_relative_energy_preparation/BHSM_POST_PARENT_FLAGSHIP_OBSERVABLE_GATE.json).
 
 Exact next object:
 
-`DERIVE_AN_ACTION_OWNED_COMPACT_FORWARD_TRAPPING_OR_COMPONENT_RESTRICTED_INTEGRATED_EVENT_TRANSPORT_ESTIMATE_ON_AT_LEAST_ONE_FORWARD_ORIENTED_COMPLETE_CHILD_COMPONENT_OR_CERTIFY_ITS_FIRST_EXISTING_PHYSICAL_DOMAIN_EXIT`
+`DERIVE_FROM_THE_RETAINED_ACTION_A_COMMON_MAXIMAL_FORWARD_FORM_COMPARISON_OR_COEFFICIENT_TUBE_THROUGH_SECOND_GEOMETRY_VARIATION_FOR_P_C(Phi,A),_OR_COMPUTE_THE_EQUIVALENT_M_C,D_Phi_M_C,D_Phi2_M_C_ORACLE_DIRECTLY`
 
 ## Prior N12 source-tail checkpoint (superseded by the continuum certificate above)
 

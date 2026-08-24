@@ -30,17 +30,34 @@ child domain: `dt>0`, `N_boundary>0`, and
 Cauchy states in that same domain, not backward physical evolution or a second
 temporal sector. It remains non-gauge and unquotiented.
 
-Global reachability is the active blocker. The certified child starts on the
-positive ordered-event side and the first analytic continuum interval is
-event-free. Current retained-action assets do not select terminal-chart entry
-versus physical-domain exit: the reduced energy is identically zero, the
-unreduced energy is noncoercive, and no compact trapping shell or
-component-restricted integrated event-transport bound is available. This is
-an obstruction to the current proof route, not proof of nonreturn.
+Global terminal reachability is no longer the active native blocker. The
+maximal-flow outcome remains history dependent, but the source domain is
+action owned for every retained outcome: use the existing reset graph if an
+actual reset is hit and the Friedrichs closure at an infinite or excluded
+maximal end. Terminal return is one optional finite-endpoint route, not a
+universal or existential prerequisite of the Gate-7 Hessian.
 
-`Q_xi`, `Delta H`, mass, action-selected families, and a blind observable
-remain open; `FULL_BHSM_COMPLETE = FALSE`. Exact next object:
-`DERIVE_AN_ACTION_OWNED_COMPACT_FORWARD_TRAPPING_OR_COMPONENT_RESTRICTED_INTEGRATED_EVENT_TRANSPORT_ESTIMATE_ON_AT_LEAST_ONE_FORWARD_ORIENTED_COMPLETE_CHILD_COMPONENT_OR_CERTIFY_ITS_FIRST_EXISTING_PHYSICAL_DOMAIN_EXIT`.
+The inherited (p^2), (K_A(p)), and (a_i(p)) readout is not executable on
+that domain and is classified as a retired periodic-Fourier artifact. The
+native replacement is the physical maximal-forward operator (K_C), its
+resolvent/spectral measure, and the birth Weyl--Calderón response (M_C(z))
+with neutral spectral parameter (z). The nonzero supplied-section BRST
+gauge/ghost/rank-16/HS pair-plus-contact incidence is assembled. Exact Green
+identities also reduce the exterior part of the weak geometry force to
+(D_\Phi M_C(z)), without requiring a pointwise exterior-history
+representation.
+
+The exterior oracle values and geometry variations, zero-source force,
+same-action saddle, Ward/BRST closure, scalar observable map, `Q_xi`,
+`Delta H`, mass, action-selected families, and a blind observable remain
+open. A lower positive gap and Friedrichs closure do not determine or
+uniformly upper-bound the Weyl response: the exact family
+`-d_tau^2+Q`, `Q>=1`, has `M_Q(-1)=sqrt(Q+1)`. The two-chord scalar endpoint
+surrogate still carries uncertainty above `4.4e7`, and Ward/BRST cancels only
+the longitudinal/ghost pair, not the full geometry force.
+
+`FULL_BHSM_COMPLETE = FALSE`. Exact next object:
+`DERIVE_FROM_THE_RETAINED_ACTION_A_COMMON_MAXIMAL_FORWARD_FORM_COMPARISON_OR_COEFFICIENT_TUBE_THROUGH_SECOND_GEOMETRY_VARIATION_FOR_P_C(Phi,A),_OR_COMPUTE_THE_EQUIVALENT_M_C,D_Phi_M_C,D_Phi2_M_C_ORACLE_DIRECTLY`.
 
 ## Prior N12 source-tail checkpoint (superseded)
 

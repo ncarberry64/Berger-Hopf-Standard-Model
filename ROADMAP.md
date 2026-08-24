@@ -6,22 +6,30 @@
    resolution-independent event-child construction. Do not reopen the closed
    action-Galerkin/compact-tail/nonlinear-radius proof unless contradicted.
 2. Preserve the certified local one-sided singular hitting law, regular
-   set-valued reset relation, and the single existing forward clock domain.
-   Derive an action-owned compact forward trap or component-restricted
-   integrated event-transport estimate which proves terminal-chart entry or
-   certifies the first existing physical-domain exit.
-3. Prove an action-selected invariant forward child history on the resulting
-   hybrid flow/relation without quotienting the chiral Cauchy-state pairing or
-   selecting a numerical chart representative.
-4. If the retained action supplies it, derive the parent-only stationary
+   set-valued reset relation, single forward clock domain, and maximal-flow
+   endpoint alternatives. Keep terminal return/event transport as an optional
+   finite-endpoint route; do not require recurrence or authorize chord 3.
+3. Continue Gate 7 from the derived action-owned (K_C) resolvent/spectral
+   measure, birth Weyl--Calderón family (M_C(z)), and supplied-section BRST
+   source incidence. Enclose the exterior oracle bundle
+   ((M_C,D_\Phi M_C,D_\Phi^2M_C)) and pair-plus-contact response on the same
+   maximal-forward domain. The lower-gap/Friedrichs shortcut and a universal
+   Ward/BRST force cancellation are invalidated; derive a common action-owned
+   form/coefficient tube through second variation or calculate the oracle
+   directly. Do not identify (z) with momentum squared.
+4. Evaluate the zero-source weak geometry force, solve and certify the
+   same-action saddle if it is nonzero, evaluate the physical pair-plus-contact
+   Hessian, and close Ward/BRST, continuum/relative-trace, and basis-independent
+   scalar-readout obligations. Only then close Gate 7.
+5. If the retained action supplies it, derive the parent-only stationary
    section `R_P: Phi_(P+C) -> Phi_P^matched`; then complete the
    boundary-improved covariant `Q_xi` assembler and evolve the
    matched parent and composite on the same history, and evaluate
    `Delta H = Q_xi[P+C] - Q_xi[P matched]` with continuum error control. The
    reduced local Legendre energy is not a substitute.
-5. Resume action-selected family-cycle ownership, relative quasi-energy mass
-   ratios, absolute scale, and returned-family current dependencies without
-   reopening closed sectors or retuning frozen predictions.
+6. Resume action-selected family ownership, physical mass/readout, absolute
+   scale, gauge normalization, flavor, and neutrino dependencies without
+   reopening retired periodic-cycle machinery or retuning frozen predictions.
 
 `FULL_BHSM_COMPLETE = FALSE`.
 

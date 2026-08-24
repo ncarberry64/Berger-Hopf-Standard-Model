@@ -41,8 +41,30 @@
   N12 child rank `31`, fiber dimension `67`, and dimension `66` after the
   existing whole-system time quotient.
 - Single-valued action-owned physical reset selector: `ABSENT`.
+- Universal terminal-event reachability: `NOT_REQUIRED_AND_NOT_DERIVED`.
+- Terminal-event return/event transport:
+  `OPTIONAL_FINITE_RESET_ENDPOINT_ROUTE`.
+- Maximal-forward Gate-7 source domain:
+  `ACTION_OWNED_RESET_GRAPH_IF_HIT_FRIEDRICHS_AT_INFINITE_OR_EXCLUDED_END`.
+- Inherited advertised `p^2` readout:
+  `D_RETIRED_PERIODIC_FOURIER_ARTIFACT`.
+- Native spectral parameter `z` identified with momentum squared: `FALSE`.
+- Physical maximal-forward operator `K_C`, resolvent, and spectral measure:
+  `DERIVED_ABSTRACTLY`.
+- Birth Weyl--Calderón family `M_C(z)` and its exact spectral/geometry
+  variation identities: `DERIVED_ABSTRACTLY`.
+- Supplied-section BRST gauge/ghost/rank-16/HS pair-plus-contact incidence:
+  `ASSEMBLED_DOMAIN_PARAMETRIC`.
+- Exterior oracle bundle `(M_C,D_Phi M_C,D_Phi^2 M_C)` values:
+  `OPEN`.
+- Positive lower gap plus Friedrichs endpoint determines or uniformly bounds
+  the exterior Weyl value: `FALSE_BY_EXACT_HALF_LINE_COUNTERFAMILY`.
+- Ward/BRST forces the complete zero-source geometry response to vanish:
+  `FALSE_AS_A_STRUCTURAL_IDENTITY`; only the longitudinal/ghost pair cancels.
+- Zero-source force, same-action saddle, physical pair-plus-contact Hessian,
+  Ward/BRST closure, and basis-independent scalar observable map: `OPEN`.
 - Exact next flagship dependency:
-  `DERIVE_AN_ACTION_OWNED_COMPACT_FORWARD_TRAPPING_OR_COMPONENT_RESTRICTED_INTEGRATED_EVENT_TRANSPORT_ESTIMATE_ON_AT_LEAST_ONE_FORWARD_ORIENTED_COMPLETE_CHILD_COMPONENT_OR_CERTIFY_ITS_FIRST_EXISTING_PHYSICAL_DOMAIN_EXIT`.
+  `DERIVE_FROM_THE_RETAINED_ACTION_A_COMMON_MAXIMAL_FORWARD_FORM_COMPARISON_OR_COEFFICIENT_TUBE_THROUGH_SECOND_GEOMETRY_VARIATION_FOR_P_C(Phi,A),_OR_COMPUTE_THE_EQUIVALENT_M_C,D_Phi_M_C,D_Phi2_M_C_ORACLE_DIRECTLY`.
 
 ## Prior N12 dynamic-Calderon continuum gates (superseded)
 
