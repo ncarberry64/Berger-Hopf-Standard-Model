@@ -1,0 +1,203 @@
+{
+  "FLAGSHIP_READY": false,
+  "FULL_BHSM_COMPLETE": false,
+  "adjudication": {
+    "all_channel_pair_contact_incidence_assembly": "OPEN",
+    "certified_spatial_tail_assembly": "OPEN",
+    "product_Dirac_base_Weyl_at_z_minus_1": "ENCLOSED_BROADLY",
+    "product_Dirac_core_supported_weak_jets": "ENCLOSED_BROADLY",
+    "scalar_and_deRham_enclosures": "INHERITED_VALIDATED",
+    "zero_source_force": "OPEN"
+  },
+  "artifact": "BHSM_N12_FORWARD_TWO_CHORD_PRODUCT_DIRAC_WEYL_ENCLOSURES",
+  "certified_core": {
+    "R4_lower": 0.9766928558375815,
+    "coordinate_time_end": 2e-08,
+    "proper_duration_lower": 2.2469219125168108e-08,
+    "proper_duration_upper": 2.2708090194744508e-08
+  },
+  "claim_boundary": {
+    "FLAGSHIP_READY": false,
+    "FULL_BHSM_COMPLETE": false,
+    "Gate_7": "ACTIVE_NOT_CLOSED",
+    "Gate_8": "LOCKED",
+    "chord_03_authorized": false,
+    "terminal_event_reachability_required": false
+  },
+  "classification": "THE_ACTION_OWNED_FACTORIZATION_A_lambda_STAR_A_lambda_AND_A_PIECEWISE_LINEAR_DIRICHLET_TRIAL_ON_THE_CERTIFIED_TWO_CHORD_CORE_GIVE_A_FUTURE_INDEPENDENT_BROAD_PRODUCT_DIRAC_BIRTH_WEYL_ENCLOSURE_AT_z_MINUS_1;_RELATIVE_FORM_COERCIVITY_GIVES_FINITE_CORE_SUPPORTED_FIRST_AND_MIXED_LOG_RADIUS_JET_BOUNDS_WITHOUT_INTRODUCING_s_PRIME_OR_SELECTING_A_TERMINAL_EVENT",
+  "exact_next_dependency": "COMBINE_THE_PARAMETRIC_SCALAR_DERHAM_AND_PRODUCT_DIRAC_POISSON_BOUNDS_WITH_THE_ACTION_OWNED_COMMON_PAIR_CONTACT_INCIDENCE_AND_CERTIFIED_SPATIAL_GALERKIN_TAIL;_ASSEMBLE_AND_ADJUDICATE_THE_ZERO_SOURCE_WEAK_GEOMETRY_FORCE_AT_z_MINUS_1",
+  "factorized_comparison_theorem": {
+    "Dirichlet_trial": "u(tau)=1-tau/T_lower_ON_[0,T_lower]",
+    "birth_conormal_sign": "M=-A_lambda*u(0)/u(0)",
+    "bound": "0<=M<=1/T_lower+S+(S^2+kappa^2)*T_lower/3,_S=abs(lambda)/R4_lower",
+    "factor": "A_lambda=d_tau+s_lambda,_s_lambda=chirality*lambda/R4",
+    "form_at_z_minus_kappa_squared": "norm(A_lambda*u)^2+kappa^2*norm(u)^2",
+    "reason_s_prime_is_absent": "THE_ESTIMATE_IS_PERFORMED_IN_THE_ACTION_OWNED_FACTORIZED_QUADRATIC_FORM_NOT_IN_AN_EXPANDED_SCHRODINGER_POTENTIAL",
+    "terminal_hypothesis": "THE_RETAINED_UNKNOWN_FUTURE_INDUCES_A_NONNEGATIVE_INWARD_GRAPH_-A_lambda*u(T)/u(T)>=0",
+    "weak_jet_support": "INSIDE_THE_CERTIFIED_TWO_CHORD_CORE"
+  },
+  "inputs": {
+    "artifacts/flagship_integration/BHSM_N12_FORWARD_COMPACT_SUPPORT_WEYL_VARIATIONS.json": "ADC522A6D3081A9747F4D348E25815DC6F2D2C0098D4108A9860917FBCD2DED8",
+    "artifacts/flagship_integration/BHSM_N12_FORWARD_FIXED_CHANNEL_TRANSFER.json": "F83BE1866D44FE0D0F273A2B73AAEF13B272BE6B1174B3644E37E8A8AE91C786",
+    "artifacts/flagship_integration/BHSM_N12_FORWARD_TWO_CHORD_SCALAR_WEYL_ENCLOSURES.json": "CE05B638FC8955614FAA56E021F2D8C6706BA31847B83F70F9392A7BE75B0E62",
+    "artifacts/flagship_integration/BHSM_N12_GATE7_TWO_CHORD_HEAT_TAIL_AUDIT.json": "0EB80019EFE710FC45BFB66A094345C7B253F07D5530CD3F373375CD20A4E6E1",
+    "src/bhsm/interface/aether_forward_product_dirac_weyl_enclosures.py": "C0526F2E004B5B05DA4CE560739E34C37C6C92F9DE4993E2E65263214E801378"
+  },
+  "representative_retained_low_levels": {
+    "levels": [
+      0,
+      1,
+      2,
+      3
+    ],
+    "rows": [
+      {
+        "Dirichlet_trial_decomposition": {
+          "trial_cross_bound": 1.535794995360795,
+          "trial_derivative_energy": 44505329.46558365,
+          "trial_potential_and_probe_bound": 2.5155536112984323e-08
+        },
+        "absolute_unit_radius_eigenvalue": 1.5,
+        "birth_Weyl_interval_at_z_minus_1": [
+          0.0,
+          44505331.00137867
+        ],
+        "occurrences": [
+          {
+            "level": 0,
+            "multiplicity": 2,
+            "signed_unit_radius_eigenvalue": 1.5
+          },
+          {
+            "level": 1,
+            "multiplicity": 1,
+            "signed_unit_radius_eigenvalue": -1.5
+          }
+        ],
+        "superpotential_absolute_upper_on_certified_core": 1.535794995360795,
+        "unit_compact_log_radius_direction_bounds": {
+          "Poisson_A_norm_squared_upper": 44505331.00137867,
+          "Poisson_L2_norm_squared_upper": 44505331.00137867,
+          "direct_mixed_form_bound": 346648575.1758352,
+          "first_Weyl_variation_bound": 136702129.237586,
+          "mixed_Weyl_variation_bound": 1186434358.928832,
+          "two_resolvent_pair_bound": 839785783.7529968
+        }
+      },
+      {
+        "Dirichlet_trial_decomposition": {
+          "trial_cross_bound": 2.559658325601325,
+          "trial_derivative_energy": 44505329.46558365,
+          "trial_potential_and_probe_bound": 5.656139638781978e-08
+        },
+        "absolute_unit_radius_eigenvalue": 2.5,
+        "birth_Weyl_interval_at_z_minus_1": [
+          0.0,
+          44505332.02524204
+        ],
+        "occurrences": [
+          {
+            "level": 1,
+            "multiplicity": 3,
+            "signed_unit_radius_eigenvalue": 2.5
+          },
+          {
+            "level": 2,
+            "multiplicity": 2,
+            "signed_unit_radius_eigenvalue": -2.5
+          }
+        ],
+        "superpotential_absolute_upper_on_certified_core": 2.559658325601325,
+        "unit_compact_log_radius_direction_bounds": {
+          "Poisson_A_norm_squared_upper": 44505332.02524204,
+          "Poisson_L2_norm_squared_upper": 44505332.02524204,
+          "direct_mixed_form_bound": 811021472.7712162,
+          "first_Weyl_variation_bound": 227836887.30412412,
+          "mixed_Weyl_variation_bound": 3143759814.6395845,
+          "two_resolvent_pair_bound": 2332738341.868368
+        }
+      },
+      {
+        "Dirichlet_trial_decomposition": {
+          "trial_cross_bound": 3.583521655841855,
+          "trial_derivative_energy": 44505329.46558365,
+          "trial_potential_and_probe_bound": 1.0367018680007298e-07
+        },
+        "absolute_unit_radius_eigenvalue": 3.5,
+        "birth_Weyl_interval_at_z_minus_1": [
+          0.0,
+          44505333.04910541
+        ],
+        "occurrences": [
+          {
+            "level": 2,
+            "multiplicity": 4,
+            "signed_unit_radius_eigenvalue": 3.5
+          },
+          {
+            "level": 3,
+            "multiplicity": 3,
+            "signed_unit_radius_eigenvalue": -3.5
+          }
+        ],
+        "superpotential_absolute_upper_on_certified_core": 3.583521655841855,
+        "unit_compact_log_radius_direction_bounds": {
+          "Poisson_A_norm_squared_upper": 44505333.04910541,
+          "Poisson_L2_norm_squared_upper": 44505333.04910541,
+          "direct_mixed_form_bound": 1462013463.3754914,
+          "first_Weyl_variation_bound": 318971649.5638469,
+          "mixed_Weyl_variation_bound": 6034180718.622069,
+          "two_resolvent_pair_bound": 4572167255.246578
+        }
+      },
+      {
+        "Dirichlet_trial_decomposition": {
+          "trial_cross_bound": 4.607384986082385,
+          "trial_derivative_energy": 44505329.46558365,
+          "trial_potential_and_probe_bound": 1.6648190734974396e-07
+        },
+        "absolute_unit_radius_eigenvalue": 4.5,
+        "birth_Weyl_interval_at_z_minus_1": [
+          0.0,
+          44505334.0729688
+        ],
+        "occurrences": [
+          {
+            "level": 3,
+            "multiplicity": 5,
+            "signed_unit_radius_eigenvalue": 4.5
+          }
+        ],
+        "superpotential_absolute_upper_on_certified_core": 4.607384986082385,
+        "unit_compact_log_radius_direction_bounds": {
+          "Poisson_A_norm_squared_upper": 44505334.0729688,
+          "Poisson_L2_norm_squared_upper": 44505334.0729688,
+          "direct_mixed_form_bound": 2299624559.8684063,
+          "first_Weyl_variation_bound": 410106416.01675457,
+          "mixed_Weyl_variation_bound": 9857697135.275013,
+          "two_resolvent_pair_bound": 7558072575.406607
+        }
+      }
+    ],
+    "scope": "EXACT_ROWS_FOR_THE_STORED_ROUND_DIRAC_BLOCKS_THROUGH_LEVEL_3;_THE_BOUND_IS_PARAMETRIC_IN_EVERY_ABSOLUTE_UNIT_RADIUS_DIRAC_EIGENVALUE"
+  },
+  "spectral_probe": {
+    "negative_spectral_magnitude_kappa_squared": 1.0,
+    "role": "RESOLVENT_PROBE_NOT_MOMENTUM_SQUARED",
+    "z": -1.0
+  },
+  "status": "TWO_CHORD_PRODUCT_DIRAC_WEYL_AND_COMPACT_WEAK_JETS_ENCLOSED_BROADLY",
+  "validation": {
+    "all_inputs_validated": true,
+    "every_interval_is_nonnegative_and_ordered": true,
+    "factorized_rows_are_finite": true,
+    "low_level_round_Dirac_absolute_spectrum_is_action_derived": true,
+    "no_future_endpoint_event_chord3_or_momentum_selected": true,
+    "no_superpotential_derivative_introduced": true,
+    "pair_contact_tail_and_force_not_claimed": true,
+    "proper_duration_and_radius_are_positive": true,
+    "same_certified_two_chord_core_consumed": true,
+    "signed_Dirac_branches_present_and_bound_is_sign_independent": true
+  },
+  "validation_passed": true
+}

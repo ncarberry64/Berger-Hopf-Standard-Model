@@ -94,11 +94,18 @@ Sturm-comparison intervals for the maximal-history birth Weyl values, because
 the unknown retained nonnegative future enters only through a nonnegative
 inward graph. They also bound first/mixed log-radius contractions for
 directions supported inside that known core. The constant-channel upper bound
-remains above `4e7`; product-Dirac channels, pair/contact assembly, the spatial
-tail combination, and the zero-source force remain open.
+remains above `4e7`; pair/contact assembly, the spatial-tail combination, and
+the zero-source force remain open.
+The product-Dirac base and core-supported weak jets are now enclosed as well.
+The proof uses the action-owned factorization `A_lambda^* A_lambda`, a
+piecewise-linear Dirichlet trial, and relative-form coercivity; it does not
+expand the operator into an `s'` potential. Both scalar/de Rham and
+product-Dirac channel families therefore have broad parametric bounds at
+`z=-1`. Combining them with pair/contact incidence and the certified spatial
+tail is still open.
 
 `FULL_BHSM_COMPLETE = FALSE`. Exact next object:
-`DERIVE_THE_PRODUCT_DIRAC_FIXED_CHANNEL_COMPARISON_ENCLOSURE_AND_COMBINE_ALL_RETAINED_CHANNEL_POISSON_BOUNDS_WITH_THE_COMMON_PAIR_CONTACT_INCIDENCE_AND_CERTIFIED_SPATIAL_TAIL;_THEN_ASSEMBLE_THE_ZERO_SOURCE_WEAK_FORCE`.
+`COMBINE_THE_PARAMETRIC_SCALAR_DERHAM_AND_PRODUCT_DIRAC_POISSON_BOUNDS_WITH_THE_ACTION_OWNED_COMMON_PAIR_CONTACT_INCIDENCE_AND_CERTIFIED_SPATIAL_GALERKIN_TAIL;_ASSEMBLE_AND_ADJUDICATE_THE_ZERO_SOURCE_WEAK_GEOMETRY_FORCE_AT_z_MINUS_1`.
 
 ## Prior N12 source-tail checkpoint (superseded)
 

@@ -83,12 +83,14 @@
   `ENCLOSED_BROADLY_BY_STURM_COMPARISON_WITH_NONNEGATIVE_FUTURE_GRAPH`.
 - Scalar/de Rham first/mixed log-radius contractions supported inside the
   certified two-chord core: `ENCLOSED_BROADLY_BY_POISSON_ENERGY_AND_RESOLVENT_BOUNDS`.
-- Product-Dirac fixed-channel enclosures, common pair/contact terms, and
-  certified spatial-tail assembly: `OPEN`.
+- Product-Dirac base Weyl values and first/mixed log-radius contractions
+  supported inside the certified two-chord core:
+  `ENCLOSED_BROADLY_BY_FACTORIZED_DIRICHLET_TRIAL_AND_RELATIVE_FORM_BOUNDS`.
+- Common pair/contact terms and certified spatial-tail assembly: `OPEN`.
 - Zero-source force, same-action saddle, physical pair-plus-contact Hessian,
   Ward/BRST closure, and basis-independent scalar observable map: `OPEN`.
 - Exact next flagship dependency:
-  `DERIVE_THE_PRODUCT_DIRAC_FIXED_CHANNEL_COMPARISON_ENCLOSURE_AND_COMBINE_ALL_RETAINED_CHANNEL_POISSON_BOUNDS_WITH_THE_COMMON_PAIR_CONTACT_INCIDENCE_AND_CERTIFIED_SPATIAL_TAIL;_THEN_ASSEMBLE_THE_ZERO_SOURCE_WEAK_FORCE`.
+  `COMBINE_THE_PARAMETRIC_SCALAR_DERHAM_AND_PRODUCT_DIRAC_POISSON_BOUNDS_WITH_THE_ACTION_OWNED_COMMON_PAIR_CONTACT_INCIDENCE_AND_CERTIFIED_SPATIAL_GALERKIN_TAIL;_ASSEMBLE_AND_ADJUDICATE_THE_ZERO_SOURCE_WEAK_GEOMETRY_FORCE_AT_z_MINUS_1`.
 
 ## Prior N12 dynamic-Calderon continuum gates (superseded)
 
