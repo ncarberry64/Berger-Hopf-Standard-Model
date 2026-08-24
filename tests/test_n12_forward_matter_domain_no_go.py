@@ -22,5 +22,11 @@ def test_matter_domain_no_go_payload() -> None:
         "retained_action_defines_unique_full_Gate7_operator"
     ] is False
     assert payload["exact_resolvent_separation"]["nonzero"] is True
+    assert payload["endpoint_scope_reconciliation"][
+        "normal_matter_birth_generator_present"
+    ] is False
+    assert payload["validation"][
+        "far_endpoint_Friedrichs_rule_does_not_supply_birth_graph"
+    ] is True
     assert payload["claim_boundary"]["new_action_term_added"] is False
     assert payload["claim_boundary"]["FULL_BHSM_COMPLETE"] is False

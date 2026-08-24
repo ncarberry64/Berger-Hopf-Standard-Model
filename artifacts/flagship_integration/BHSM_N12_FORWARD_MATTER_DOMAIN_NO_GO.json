@@ -27,6 +27,32 @@
     "phase_selected": false
   },
   "classification": "THE_RETAINED_ACTION_DERIVES_THE_TRANSVERSE_GAUGE_DtN_BLOCK_BUT_CONTAINS_NO_NORMAL_MATTER_JUNCTION_GENERATOR;_BOUNDARY_IDENTITY_THEREFORE_LEAVES_A_CONTINUOUS_U1_PARENT_TIMES_U1_CHILD_DOMAIN_FAMILY._THE_LATER_COMPLETE_CHILD_RESULT_CLOSES_THE_CLASSICAL_ZERO_BACKGROUND_POINT_ONLY._AN_EXACT_COMPACT_SOURCE_RESOLVENT_WITNESS_SEPARATES_TWO_ALLOWED_NONNEGATIVE_SELF_ADJOINT_PHASES,_SO_THE_GATE7_OPERATOR_AND_SOURCE_FUNCTIONAL_ARE_NOT_UNIQUELY_DEFINED_BY_THE_UNCHANGED_RETAINED_ACTION",
+  "endpoint_scope_reconciliation": {
+    "action_derived_nonzero_boundary_block": "TRANSVERSE_GAUGE_ONLY",
+    "birth_W_phys_physical_blocks_action_derived": false,
+    "birth_interface_rule": {
+      "conormal": "Gamma1_event(U)+Gamma1_child(U)+W_phys*Gamma0(U)=0",
+      "trace": "Gamma0_event(U)-Gamma0_child(U)=0"
+    },
+    "conclusion": "NO_CONTRADICTION:_ABSTRACT_FAR_ENDPOINT_FRIEDRICHS_OWNERSHIP_DOES_NOT_CLOSE_THE_ACTION_UNSELECTED_NORMAL_MATTER_BIRTH_GRAPH",
+    "far_endpoint_Friedrichs_scope": "THE_CLOSURE_RULE_SELECTS_THE_OPERATOR_AT_AN_INFINITE_OR_EXCLUDED_MAXIMAL_FORWARD_END;_IT_DOES_NOT_SUPPLY_THE_DISTINCT_LEFT_BIRTH_EVENT_INTERFACE_GRAPH",
+    "far_maximal_endpoint_rule": {
+      "arbitrary_Robin_parameter_allowed": false,
+      "arbitrary_finite_cover_endpoint_is_physical_terminal": false,
+      "birth_graph": {
+        "conormal": "Gamma1_event(U)+Gamma1_child(U)+W_phys*Gamma0(U)=0",
+        "trace": "Gamma0_event(U)-Gamma0_child(U)=0"
+      },
+      "current_finite_validation_cover_is_such_a_terminal": false,
+      "if_Tmax_is_infinite": "CLOSE_THE_NONNEGATIVE_MINIMAL_FORM_BY_ITS_FRIEDRICHS_CLOSURE",
+      "if_existing_terminal_event_reset_chart_is_hit": "USE_THE_ALREADY_RETAINED_TERMINAL_EVENT_RESET_TRACE_CONORMAL_RELATION_AT_THE_FIRST_CERTIFIED_HIT",
+      "if_finite_strong_blowup_domain_exit_or_Dirac_exit": "CLOSE_THE_NONNEGATIVE_MINIMAL_FORM_BY_ITS_FRIEDRICHS_CLOSURE",
+      "particle_interval": "I_C=[0,T_max(C))_WITH_FORWARD_ORIENTATION",
+      "regular_free_Neumann_rule_used_only_for_an_actual_regular_action_terminal": true
+    },
+    "local_source_incidence_selects_temporal_graph": false,
+    "normal_matter_birth_generator_present": false
+  },
   "exact_next_dependency": "DERIVE_FROM_EXISTING_RETAINED_TERMS_AN_ACTION_OWNED_NORMAL_MATTER_BOUNDARY_GENERATOR_FIXING_THE_SURVIVING_CAYLEY_PHASES,_OR_PROVE_THE_COMPLETE_GRADED_GATE7_PAIR_PLUS_CONTACT_FUNCTIONAL_IS_INDEPENDENT_OF_THE_ENTIRE_SURVIVING_U1_PARENT_TIMES_U1_CHILD_DOMAIN_FAMILY;_ABSENT_EITHER_THE_UNCHANGED_RETAINED_ACTION_CANNOT_CLOSE_GATE7",
   "exact_resolvent_separation": {
     "Cayley_phase_chordal_distance": 1.4142135623730951,
@@ -72,6 +98,7 @@
     "artifacts/BHSM_tensor_attachment_incidence_v14_69.json": "6DAF3FF52B6EEB70520DBB1616AC39F235BF32F5D505FAC21D31A64C09975F26",
     "artifacts/flagship_integration/BHSM_N12_FORWARD_BIRTH_THRESHOLD_MARGIN_AUDIT.json": "2E6BAD1E680B82B57AC05DB870641C67D5951187956588CCA02447886C1746DB",
     "artifacts/flagship_integration/BHSM_N12_FORWARD_COMMON_SOURCE_INCIDENCE.json": "943359A4649960D7D2293B396D5C3B661B6D6F2C8D36A68FC6E36895141CEF33",
+    "artifacts/flagship_integration/BHSM_N12_MAXIMAL_FORWARD_SOURCE_DOMAIN.json": "61642A88D01B81C7685C5355149C08F01F9C4B089CF715D544CF690A136A6E0A",
     "src/bhsm/interface/aether_forward_boundary_phase_resolvent.py": "68593C926439A004F89A197F8FA85B3380C4E156C36F2D83BC1A79FDC868394F"
   },
   "provenance_classification": {
@@ -149,7 +176,8 @@
       "PROMOTE_THE_ZERO_BACKGROUND_POINT_TO_A_NONZERO_GRAPH",
       "TENSOR_THE_GAUGE_DtN_BLOCK_ON_ALL_MATTER_SECTORS",
       "TENSOR_THE_v14_67_ATTACHMENT_RESPONSE_WITHOUT_PHYSICAL_INCIDENCE",
-      "USE_SELF_ADJOINTNESS_OR_NONNEGATIVITY_TO_SELECT_THE_PHASE"
+      "USE_SELF_ADJOINTNESS_OR_NONNEGATIVITY_TO_SELECT_THE_PHASE",
+      "USE_FAR_ENDPOINT_FRIEDRICHS_CLOSURE_TO_SUPPLY_THE_MISSING_BIRTH_INTERFACE_GRAPH"
     ],
     "scope": "NO_GO_FOR_COMPLETING_GATE7_FROM_THE_UNCHANGED_RETAINED_ACTION;_NOT_A_NO_GO_FOR_AN_EXPLICITLY_VERSIONED_ACTION_EXTENSION_OR_FOR_A_THEOREM_PROVING_PHASE_INDEPENDENCE_OF_THE_FULL_GRADED_OBSERVABLE",
     "statement": "DISTINCT_ALLOWED_SELF_ADJOINT_BOUNDARY_PHASES_DEFINE_DISTINCT_RESOLVENTS;_THE_EXPLICIT_COMPACT_SOURCE_WITNESS_PROVES_THE_DIFFERENCE_IS_PHYSICALLY_VISIBLE_TO_THE_NATIVE_PAIR_TERM._SINCE_THE_RETAINED_LOCAL_CONTACT_TERM_CONTAINS_NO_SELECTED_MATTER_PHASE,_IT_CANNOT_DEFINE_A_UNIQUE_PAIR_PLUS_CONTACT_FUNCTIONAL_ACROSS_THE_FAMILY"
@@ -159,6 +187,7 @@
     "all_required_inputs_present": true,
     "compact_source_resolvent_separation_is_exact": true,
     "continuous_identity_preserving_domain_family_survives": true,
+    "far_endpoint_Friedrichs_rule_does_not_supply_birth_graph": true,
     "gauge_block_is_not_used_as_universal_matter_graph": true,
     "later_classical_closure_is_zero_background_only": true,
     "local_source_incidence_does_not_select_temporal_graph": true,

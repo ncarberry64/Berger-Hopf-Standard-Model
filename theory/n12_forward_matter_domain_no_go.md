@@ -9,6 +9,15 @@ retained matter-boundary theorem leaves a continuous
 matter junction action is zero.  Boundary identity removes crosswise sewing;
 it does not select the two remaining phases.
 
+This does not contradict the earlier maximal-forward Friedrichs theorem.
+Friedrichs closure fixes an infinite or excluded **far maximal endpoint** of
+the nonnegative source form.  The missing object here is the distinct
+**left birth/interface graph**.  The maximal-domain artifact lists that graph
+as a separate input, v17.84 says its physical `W_phys` blocks are not yet
+action-derived, and the local source-incidence artifact does not select its
+temporal graph.  A closure prescription at the far end cannot manufacture
+the missing matter law at birth.
+
 The v17.96–v17.99 child lineage does not supersede that result.  It closes the
 gravity/eta/scalar classical reset, the zero-field value `(trace,flux)=(0,0)`
 in the gauge, Weyl, ghost and HS blocks, and a positive-duration classical

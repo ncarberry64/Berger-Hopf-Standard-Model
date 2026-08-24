@@ -38,6 +38,7 @@ CLASSICAL = ROOT / "artifacts/BHSM_aether_n3_firewall_core_child_ownership_v17_9
 PERSISTENCE = ROOT / "artifacts/BHSM_aether_n3_complete_child_persistence_v17_99.json"
 INCIDENCE = FLAGSHIP / "BHSM_N12_FORWARD_COMMON_SOURCE_INCIDENCE.json"
 THRESHOLD = FLAGSHIP / "BHSM_N12_FORWARD_BIRTH_THRESHOLD_MARGIN_AUDIT.json"
+MAXIMAL = FLAGSHIP / "BHSM_N12_MAXIMAL_FORWARD_SOURCE_DOMAIN.json"
 MODULE = ROOT / "src/bhsm/interface/aether_forward_boundary_phase_resolvent.py"
 RESULT = FLAGSHIP / "BHSM_N12_FORWARD_MATTER_DOMAIN_NO_GO.json"
 INPUTS = (
@@ -56,6 +57,7 @@ INPUTS = (
     PERSISTENCE,
     INCIDENCE,
     THRESHOLD,
+    MAXIMAL,
     MODULE,
 )
 
@@ -101,6 +103,7 @@ def build_payload() -> dict[str, Any]:
         persistence,
         incidence,
         threshold,
+        maximal,
     ) = (
         json.loads(path.read_text(encoding="utf-8"))
         for path in INPUTS[:-1]
@@ -117,6 +120,7 @@ def build_payload() -> dict[str, Any]:
         persistence,
         incidence,
         threshold,
+        maximal,
     ):
         if record.get("validation_passed") is not True:
             raise RuntimeError("validated retained inputs are required")
@@ -127,6 +131,28 @@ def build_payload() -> dict[str, Any]:
     event = correspondence["event_to_complete_child_correspondence"]
     zero_scope = zero["zero_background_calderon_closure"]["scope"]
     retained = classical["firewall_core_child_ownership"]["complete_retained_F_child"]
+
+    endpoint_scope_reconciliation = {
+        "far_maximal_endpoint_rule": maximal["endpoint_rule"],
+        "far_endpoint_Friedrichs_scope": (
+            "THE_CLOSURE_RULE_SELECTS_THE_OPERATOR_AT_AN_INFINITE_OR_EXCLUDED_"
+            "MAXIMAL_FORWARD_END;_IT_DOES_NOT_SUPPLY_THE_DISTINCT_LEFT_BIRTH_"
+            "EVENT_INTERFACE_GRAPH"
+        ),
+        "birth_interface_rule": maximal["endpoint_rule"]["birth_graph"],
+        "birth_W_phys_physical_blocks_action_derived": event[
+            "physical_block_provenance"
+        ]["physical_blocks_action_derived"],
+        "local_source_incidence_selects_temporal_graph": incidence["incidence"][
+            "temporal_graph_selected_by_this_assembly"
+        ],
+        "action_derived_nonzero_boundary_block": "TRANSVERSE_GAUGE_ONLY",
+        "normal_matter_birth_generator_present": False,
+        "conclusion": (
+            "NO_CONTRADICTION:_ABSTRACT_FAR_ENDPOINT_FRIEDRICHS_OWNERSHIP_"
+            "DOES_NOT_CLOSE_THE_ACTION_UNSELECTED_NORMAL_MATTER_BIRTH_GRAPH"
+        ),
+    }
 
     kappa = 1.0
     length = 1.0
@@ -290,6 +316,18 @@ def build_payload() -> dict[str, Any]:
         "local_source_incidence_does_not_select_temporal_graph": incidence[
             "incidence"
         ]["temporal_graph_selected_by_this_assembly"] is False,
+        "far_endpoint_Friedrichs_rule_does_not_supply_birth_graph": (
+            maximal["ownership"]["abstract_forward_source_domain_action_owned"]
+            and maximal["endpoint_rule"]["if_Tmax_is_infinite"]
+            == "CLOSE_THE_NONNEGATIVE_MINIMAL_FORM_BY_ITS_FRIEDRICHS_CLOSURE"
+            and "W_phys" in maximal["endpoint_rule"]["birth_graph"]["conormal"]
+            and not event["physical_block_provenance"][
+                "physical_blocks_action_derived"
+            ]
+            and not incidence["incidence"][
+                "temporal_graph_selected_by_this_assembly"
+            ]
+        ),
         "prior_threshold_obstruction_preserved": threshold["adjudication"][
             "continuous_low_energy_source_measure_exponent"
         ] == "OPEN",
@@ -317,6 +355,7 @@ def build_payload() -> dict[str, Any]:
             "arbitrary_phase_selection": "FORBIDDEN_INTERPRETIVE_INPUT",
         },
         "sector_ledger": sector_ledger,
+        "endpoint_scope_reconciliation": endpoint_scope_reconciliation,
         "exact_resolvent_separation": witness,
         "theorem": {
             "statement": (
@@ -339,6 +378,7 @@ def build_payload() -> dict[str, Any]:
                 "TENSOR_THE_GAUGE_DtN_BLOCK_ON_ALL_MATTER_SECTORS",
                 "TENSOR_THE_v14_67_ATTACHMENT_RESPONSE_WITHOUT_PHYSICAL_INCIDENCE",
                 "USE_SELF_ADJOINTNESS_OR_NONNEGATIVITY_TO_SELECT_THE_PHASE",
+                "USE_FAR_ENDPOINT_FRIEDRICHS_CLOSURE_TO_SUPPLY_THE_MISSING_BIRTH_INTERFACE_GRAPH",
             ],
         },
         "adjudication": {

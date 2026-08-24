@@ -198,6 +198,9 @@ condition. The master campaign has reached terminal condition 2: a canonical
 theorem-level no-go for the unchanged retained action. A future explicitly
 versioned normal matter boundary action could change the theory, but no such
 action or phase is selected in this lineage.
+The maximal-forward Friedrichs closure applies only at an infinite or excluded
+far endpoint; it does not select the distinct action-unresolved matter graph
+at the birth interface.
 
 `FULL_BHSM_COMPLETE = FALSE`. Retained-action campaign terminal result:
 `TERMINAL_CANONICAL_NO_GO_FOR_UNCHANGED_RETAINED_ACTION;_FUTURE_CONTINUATION_REQUIRES_AN_EXPLICITLY_VERSIONED_NORMAL_MATTER_BOUNDARY_ACTION_AND_PHYSICAL_AUTHORIZATION`.

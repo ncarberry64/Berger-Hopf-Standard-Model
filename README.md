@@ -186,6 +186,9 @@ satisfy that necessary internal condition—even if one fixed-regulator
 observable happened to cancel accidentally. This is a theorem-level no-go for
 the unchanged action, not for an explicitly versioned future action extension.
 No such extension or phase choice is authorized here.
+The maximal-forward Friedrichs rule does not evade this result: it governs an
+infinite or excluded far endpoint, whereas the missing matter law is the
+separate left birth/interface graph.
 
 The matched-parent `Q_xi / Delta H` route remains unavailable because no
 action-owned parent-only restriction exists. No local energy, reset-chart

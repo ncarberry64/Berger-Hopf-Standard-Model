@@ -81,6 +81,9 @@ def build_payload() -> dict[str, Any]:
         "native_compact_source_resolvent_separates_domains": domain[
             "exact_resolvent_separation"
         ]["nonzero"],
+        "far_endpoint_Friedrichs_does_not_select_matter_birth_graph": domain[
+            "validation"
+        ]["far_endpoint_Friedrichs_rule_does_not_supply_birth_graph"],
         "universal_graded_phase_identity_is_invalidated": not graded[
             "adjudication"
         ]["universal_Ward_BRST_phase_independence_identity"],
@@ -133,13 +136,18 @@ def build_payload() -> dict[str, Any]:
             },
             {
                 "step": 5,
+                "fact": "FAR_ENDPOINT_FRIEDRICHS_CLOSURE_DOES_NOT_SELECT_THE_BIRTH_INTERFACE_GRAPH",
+                "evidence": domain["endpoint_scope_reconciliation"]["conclusion"],
+            },
+            {
+                "step": 6,
                 "fact": "THE_ALLOWED_DOMAINS_DEFINE_DISTINCT_RESOLVENTS",
                 "evidence": domain["exact_resolvent_separation"][
                     "compact_source_resolvent_difference"
                 ],
             },
             {
-                "step": 6,
+                "step": 7,
                 "fact": "WARD_BRST_IS_NOT_A_UNIVERSAL_PHASE_INDEPENDENCE_IDENTITY",
                 "evidence": graded[
                     "graded_heat_integrand_phase_difference"

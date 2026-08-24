@@ -20,6 +20,12 @@ consistency condition, not an optional observable convention.
    Cayley theorem-class subfamily, so Ward/BRST is not a universal domain-
    independence identity.
 
+The earlier maximal-forward Friedrichs theorem does not remove this
+obstruction.  It closes the form at an infinite or excluded far endpoint;
+the action-unselected matter graph is the separate birth/interface input.
+v17.84 explicitly withholds action derivation of the physical `W_phys` blocks,
+and the local source-incidence audit does not select the temporal graph.
+
 Therefore the unchanged retained action cannot provide the complete physical
 variational domain required by the repository's own definition of done. A
 deterministic completion gate cannot legitimately set
