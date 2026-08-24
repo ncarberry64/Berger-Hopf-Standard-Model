@@ -58,10 +58,15 @@ the longitudinal/ghost pair, not the full geometry force. The local spatial
 coefficient calculus is now closed through second variation: retained Dirac
 and source blocks scale as `R4^-1`, Laplace/de Rham blocks as `R4^-2`, and
 contact blocks have zero radius jet. The maximal-forward values and variations
-of `(log R4,D_tau,Delta_tau)` remain open.
+of `log R4` remain open. The temporal factors are no longer separate missing
+coefficients: on the positive proper-time clock, `D_tau` is canonical and
+`Delta_tau=D_tau^*D_tau` with the same retained endpoint form. Fixed round
+spatial eigenspaces then reduce the exterior problem to finite trace-zero
+`2x2` channel transfers and their Möbius action on terminal/Friedrichs Weyl
+data; no moving eigenbasis is required.
 
 `FULL_BHSM_COMPLETE = FALSE`. Exact next object:
-`DERIVE_AN_ACTION_OWNED_MAXIMAL_FORWARD_TUBE_FOR_log_R4,D_tau,Delta_tau_AND_THEIR_REQUIRED_FIRST_AND_SECOND_GEOMETRY_VARIATIONS,_OR_ENCLOSE_THE_EQUIVALENT_WEYL_ORACLE_BUNDLE_DIRECTLY`.
+`ENCLOSE_THE_FINITE_FIXED_CHANNEL_WEYL_TRANSFER_MAPS_AND_THEIR_FIRST_SECOND_ACTION_VARIATIONS_FOR_THE_MAXIMAL_FORWARD_x(tau)=log_R4(tau)_FLOW,_WITHOUT_REQUIRING_TERMINAL_RETURN`.
 
 ## Prior N12 source-tail checkpoint (superseded)
 

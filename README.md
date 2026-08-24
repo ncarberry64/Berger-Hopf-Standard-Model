@@ -56,9 +56,12 @@ rule is now proved insufficient to evaluate that bundle; it guarantees
 coercive existence but not a finite uniform Weyl-value bound. Ward/BRST also
 does not cancel the physical-sector geometry force. Exact first and mixed
 second log-radius jets of every retained forward source block are derived;
-the remaining coefficient owner is the maximal-forward tube for
-`(log R4,D_tau,Delta_tau)` and its variations. The zero-source force and
-same-action saddle follow before any scalar physical coupling readout.
+proper-time form ownership further proves that `Delta_tau=D_tau^*D_tau` on
+the same retained endpoint domain, so neither is an independent history
+coefficient. The round spatial blocks have fixed channels, reducing the
+exterior oracle to finite `2x2` transfer/Weyl systems driven only by
+`x(tau)=log R4(tau)`. The zero-source force and same-action saddle follow
+before any scalar physical coupling readout.
 
 The matched-parent `Q_xi / Delta H` route remains unavailable because no
 action-owned parent-only restriction exists. No local energy, reset-chart
@@ -77,6 +80,8 @@ representative, or formal reflection may substitute for that missing object.
 | Exterior oracle bundle and pair-plus-contact value | **OPEN** |
 | Positive-gap/Friedrichs oracle shortcut | **RIGOROUSLY INSUFFICIENT** |
 | Local first/second `log R4` source-operator jets | **DERIVED** |
+| Proper-time `D_tau`/`Delta_tau` form ownership | **DERIVED** |
+| Fixed spatial-channel transfer reduction | **DERIVED** |
 | `Q_xi / Delta H` | **OPEN -- matched-parent restriction absent** |
 | `FULL_BHSM_COMPLETE` | **FALSE** |
 
@@ -89,11 +94,13 @@ Evidence: [`continuum certificate`](artifacts/n12_continuum_majorant_effectivene
 [`forward common-source incidence`](artifacts/flagship_integration/BHSM_N12_FORWARD_COMMON_SOURCE_INCIDENCE.json),
 [`gap-oracle route adjudication`](artifacts/flagship_integration/BHSM_N12_FORWARD_EXTERIOR_GAP_ORACLE_AUDIT.json),
 [`common-source geometry jets`](artifacts/flagship_integration/BHSM_N12_FORWARD_COMMON_SOURCE_GEOMETRY_JETS.json),
+[`proper-time form ownership`](artifacts/flagship_integration/BHSM_N12_FORWARD_PROPER_TIME_FORM_OWNERSHIP.json),
+[`fixed-channel transfer reduction`](artifacts/flagship_integration/BHSM_N12_FORWARD_FIXED_CHANNEL_TRANSFER.json),
 and [`post-parent observable audit`](artifacts/qxi_relative_energy_preparation/BHSM_POST_PARENT_FLAGSHIP_OBSERVABLE_GATE.json).
 
 Exact next object:
 
-`DERIVE_AN_ACTION_OWNED_MAXIMAL_FORWARD_TUBE_FOR_log_R4,D_tau,Delta_tau_AND_THEIR_REQUIRED_FIRST_AND_SECOND_GEOMETRY_VARIATIONS,_OR_ENCLOSE_THE_EQUIVALENT_WEYL_ORACLE_BUNDLE_DIRECTLY`
+`ENCLOSE_THE_FINITE_FIXED_CHANNEL_WEYL_TRANSFER_MAPS_AND_THEIR_FIRST_SECOND_ACTION_VARIATIONS_FOR_THE_MAXIMAL_FORWARD_x(tau)=log_R4(tau)_FLOW,_WITHOUT_REQUIRING_TERMINAL_RETURN`
 
 ## Prior N12 source-tail checkpoint (superseded by the continuum certificate above)
 

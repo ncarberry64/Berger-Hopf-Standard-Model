@@ -1,0 +1,113 @@
+{
+  "FLAGSHIP_READY": false,
+  "FULL_BHSM_COMPLETE": false,
+  "artifact": "BHSM_N12_FORWARD_FIXED_CHANNEL_TRANSFER",
+  "claim_boundary": {
+    "FLAGSHIP_READY": false,
+    "FULL_BHSM_COMPLETE": false,
+    "Gate_7": "ACTIVE_NOT_CLOSED",
+    "Gate_8": "LOCKED",
+    "channel_Weyl_values": "OPEN",
+    "chord_03": "NOT_AUTHORIZED",
+    "same_action_saddle": "OPEN",
+    "zero_source_force": "OPEN"
+  },
+  "classification": "THE_CURRENT_RETAINED_ROUND_FORWARD_SOURCE_OPERATOR_HAS_A_FIXED_SPATIAL_CHANNEL_BASIS:_DIRAC_AND_PAIR_VERTICES_SCALE_AS_exp(-x),_LAPLACE_DERHAM_BLOCKS_AS_exp(-2x),_AND_CONTACT_BLOCKS_ARE_x_INDEPENDENT_FOR_x=log_R4;_THE_EXTERIOR_WEYL_ORACLE_REDUCES_TO_FINITE_TWO_BY_TWO_CHANNEL_TRANSFER_SYSTEMS_DRIVEN_BY_ONE_SCALAR_HISTORY_x(tau)_WITH_NO_MOVING_EIGENLINE_OR_INDEPENDENT_TEMPORAL_COEFFICIENT_ORACLE",
+  "current_flagship_gate": 7,
+  "dependency_reduction": {
+    "equivalent_sufficient_object": "THE_FINITE_CHANNEL_TRANSFER_OR_WEYL_M_FUNCTIONS_AND_THEIR_FIRST_SECOND_ACTION_VARIATIONS",
+    "full_pointwise_x_history_logically_required": false,
+    "generic_operator_coefficient_history_required": false,
+    "independent_D_tau_or_Delta_tau_oracle_required": false,
+    "moving_spatial_eigenbasis_transport_required": false,
+    "one_scalar_maximal_history_required": "x(tau)=log_R4(tau)"
+  },
+  "exact_next_dependency": "ENCLOSE_THE_FINITE_FIXED_CHANNEL_WEYL_TRANSFER_MAPS_AND_THEIR_FIRST_SECOND_ACTION_VARIATIONS_FOR_THE_MAXIMAL_FORWARD_x(tau)=log_R4(tau)_FLOW,_WITHOUT_REQUIRING_TERMINAL_RETURN",
+  "fixed_channel_theorem": {
+    "Weyl_propagation": "EACH_TERMINAL_OR_FRIEDRICHS_CHANNEL_ADMITTANCE_PULLS_BACK_TO_BIRTH_BY_THE_EXACT_TRANSFER_MOBIUS_ACTION",
+    "geometry_variations": "FIRST_AND_MIXED_SECOND_TRANSFER_GENERATOR_JETS_FOLLOW_EXACTLY_FROM_D_x_exp(-x)_AND_D_x_exp(-2x)",
+    "rank16_product_Dirac_channel": {
+      "factor": "A_lambda=d_tau+s_lambda",
+      "flux": "v=A_lambda*u",
+      "s_lambda": "chirality*lambda*exp(-x(tau))",
+      "transfer": "d_tau[u,v]^T=[[-s,1],[-z,s]]*[u,v]^T"
+    },
+    "scalar_and_deRham_channel": {
+      "flux": "v=d_tau*u",
+      "potential": "V_c(tau)=c*exp(-2*x(tau))",
+      "transfer": "d_tau[u,v]^T=[[0,1],[V_c-z,0]]*[u,v]^T"
+    },
+    "source_incidence": "FINITE_FIXED_CHANNEL_MATRICES_WITH_exp(-x)_PAIR_VERTICES_AND_x_INDEPENDENT_CONTACTS",
+    "spatial_basis": "ONE_tau_INDEPENDENT_ORTHONORMAL_BASIS_PER_RETAINED_ROUND_DIRAC_SCALAR_AND_DERHAM_LEVEL"
+  },
+  "homogeneity_witnesses": {
+    "maximum_Dirac_R_inverse_residual": 6.473657049138938e-16,
+    "maximum_deRham_residuals": {
+      "curl_R_inverse": 0.0,
+      "gradient_R_inverse": 0.0,
+      "scalar_contact_R_zero": 0.0,
+      "scalar_operator_R_inverse2": 6.153480596427404e-15,
+      "scalar_vertex_R_inverse": 0.0,
+      "temporal_spatial_injection_R_zero": 0.0,
+      "vector_contact_R_zero": 0.0,
+      "vector_operator_R_inverse2": 1.3000517256771047e-14,
+      "vector_vertex_R_inverse": 0.0
+    },
+    "tested_levels": [
+      0,
+      1,
+      2,
+      3
+    ],
+    "tested_radii": [
+      0.8,
+      1.7
+    ]
+  },
+  "inputs": {
+    "artifacts/flagship_integration/BHSM_N12_FORWARD_COMMON_SOURCE_GEOMETRY_JETS.json": "A372FD0204C274051312254FA65EFA4C65D5BBC6262BD13147386D3700B229F5",
+    "artifacts/flagship_integration/BHSM_N12_FORWARD_COMMON_SOURCE_INCIDENCE.json": "943359A4649960D7D2293B396D5C3B661B6D6F2C8D36A68FC6E36895141CEF33",
+    "artifacts/flagship_integration/BHSM_N12_FORWARD_PROPER_TIME_FORM_OWNERSHIP.json": "C56D4B49F58DF4FF58D6725899261B5D08C5E38F8860B0C74D2725DC920D2BB4",
+    "src/bhsm/interface/aether_forward_channel_transfer.py": "45E6B329BE98C488A782114B04C9F24D527A4751DB96C19A9C36261127832CDF",
+    "src/bhsm/interface/aether_forward_common_source_incidence.py": "9A925A5C64E863E6008EB692CE20AC67099137880A435CE1752DEE59DFBA7347"
+  },
+  "status": "FIXED_CHANNEL_TRANSFER_REDUCTION_DERIVED",
+  "transfer_witness": {
+    "backward_Mobius_recovery_residual": 1.1102230246251565e-16,
+    "birth_admittance": 0.7,
+    "product_Dirac_generator": [
+      [
+        2.0468268826949547,
+        1.0
+      ],
+      [
+        1.0,
+        -2.0468268826949547
+      ]
+    ],
+    "product_Dirac_generator_trace": 0.0,
+    "scalar_generator": [
+      [
+        0.0,
+        1.0
+      ],
+      [
+        4.351600230178197,
+        0.0
+      ]
+    ],
+    "scalar_generator_trace": 0.0,
+    "terminal_admittance": 0.722972972972973
+  },
+  "validation": {
+    "Dirac_transfer_generator_has_zero_trace": true,
+    "Weyl_Mobius_pullback_recovers_birth_graph": true,
+    "all_deRham_operator_vertex_contact_scalings_close_to_1e_minus_12": true,
+    "all_inputs_validated": true,
+    "no_history_endpoint_periodicity_p2_profile_fit_or_prediction_added": true,
+    "no_moving_spatial_basis_required": true,
+    "round_Dirac_blocks_scale_as_R_inverse_to_1e_minus_12": true,
+    "scalar_transfer_generator_has_zero_trace": true
+  },
+  "validation_passed": true
+}

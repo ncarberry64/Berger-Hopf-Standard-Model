@@ -14,11 +14,12 @@
    source incidence. Enclose the exterior oracle bundle
    ((M_C,D_\Phi M_C,D_\Phi^2M_C)) and pair-plus-contact response on the same
    maximal-forward domain. The lower-gap/Friedrichs shortcut and a universal
-   Ward/BRST force cancellation are invalidated; derive a common action-owned
-   maximal-forward tube for `(log R4,D_tau,Delta_tau)` and its first/second
-   geometry variations, or calculate the oracle directly. The local
-   `log R4` coefficient jets are already derived. Do not identify (z) with
-   momentum squared.
+   Ward/BRST force cancellation are invalidated; enclose the finite fixed-
+   channel Weyl/transfer maps for `x(tau)=log R4(tau)` and their first/second
+   action variations, or calculate the oracle directly. The local `log R4`
+   coefficient jets and proper-time temporal form ownership are already
+   derived; `D_tau` and `Delta_tau` are not independent coefficient histories.
+   Do not identify (z) with momentum squared.
 4. Evaluate the zero-source weak geometry force, solve and certify the
    same-action saddle if it is nonzero, evaluate the physical pair-plus-contact
    Hessian, and close Ward/BRST, continuum/relative-trace, and basis-independent

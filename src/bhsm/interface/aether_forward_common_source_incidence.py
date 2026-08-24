@@ -34,6 +34,53 @@ def _temporal_matrix(value: np.ndarray, points: int, name: str) -> np.ndarray:
     return matrix
 
 
+def canonical_temporal_form_laplacian(
+    temporal_first_derivative: np.ndarray,
+    endpoint_form: np.ndarray | None = None,
+) -> np.ndarray:
+    """Return the form-owned temporal Laplacian on one realized graph.
+
+    The proper-time bulk form owns ``D_tau^* D_tau``.  An endpoint matrix is
+    admissible only when it is the Hermitian nonnegative form induced by the
+    retained reset/Wentzell graph; it is not a second freely chosen temporal
+    operator.
+    """
+
+    derivative = np.asarray(temporal_first_derivative, dtype=complex)
+    if (
+        derivative.ndim != 2
+        or derivative.shape[0] != derivative.shape[1]
+        or not np.all(np.isfinite(derivative))
+    ):
+        raise ValueError("finite square temporal first derivative required")
+    laplacian = derivative.conj().T @ derivative
+    if endpoint_form is None:
+        return laplacian
+    boundary = np.asarray(endpoint_form, dtype=complex)
+    if boundary.shape != derivative.shape or not np.all(np.isfinite(boundary)):
+        raise ValueError("endpoint form must match the temporal derivative")
+    if not np.allclose(boundary, boundary.conj().T, rtol=0.0, atol=1.0e-12):
+        raise ValueError("endpoint form must be Hermitian")
+    if float(np.min(np.linalg.eigvalsh(boundary))) < -1.0e-12:
+        raise ValueError("endpoint form must be nonnegative")
+    return laplacian + boundary
+
+
+def temporal_form_pair_residual(
+    temporal_first_derivative: np.ndarray,
+    temporal_laplacian: np.ndarray,
+    endpoint_form: np.ndarray | None = None,
+) -> float:
+    """Return the spectral norm residual of the proper-time form identity."""
+
+    derivative = np.asarray(temporal_first_derivative, dtype=complex)
+    laplacian = np.asarray(temporal_laplacian, dtype=complex)
+    if laplacian.shape != derivative.shape or not np.all(np.isfinite(laplacian)):
+        raise ValueError("temporal Laplacian must match the first derivative")
+    owned = canonical_temporal_form_laplacian(derivative, endpoint_form)
+    return float(np.linalg.norm(laplacian - owned, ord=2))
+
+
 def _log_radius_directions(
     radii: np.ndarray,
     first: np.ndarray,
@@ -458,6 +505,8 @@ def forward_oneform_ghost_log_radius_jets(
 
 
 __all__ = [
+    "canonical_temporal_form_laplacian",
+    "temporal_form_pair_residual",
     "forward_weyl_squared_operator_and_vertices",
     "forward_weyl_log_radius_jets",
     "forward_hs_scalar_operator_and_gauge_vertices",

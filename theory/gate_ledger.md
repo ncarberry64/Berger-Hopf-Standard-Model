@@ -63,12 +63,16 @@
   `FALSE_AS_A_STRUCTURAL_IDENTITY`; only the longitudinal/ghost pair cancels.
 - Local first and mixed-second `log R4` jets of the rank-16 Weyl/HS,
   complex-HS, and one-form/ghost source blocks: `DERIVED`.
-- Maximal-forward tube for `(log R4,D_tau,Delta_tau)` and its required
-  first/second geometry variations: `OPEN`.
+- Proper-time `D_tau` and `Delta_tau=D_tau^*D_tau` with the retained endpoint
+  form: `ACTION_OWNED_KINEMATICS_NOT_INDEPENDENT_HISTORY_COEFFICIENTS`.
+- Fixed round spatial-channel reduction to finite trace-zero `2x2` transfer
+  systems and Weyl Möbius propagation: `DERIVED`.
+- Maximal-forward fixed-channel Weyl maps for `x(tau)=log R4(tau)` and their
+  first/second action variations: `OPEN`.
 - Zero-source force, same-action saddle, physical pair-plus-contact Hessian,
   Ward/BRST closure, and basis-independent scalar observable map: `OPEN`.
 - Exact next flagship dependency:
-  `DERIVE_AN_ACTION_OWNED_MAXIMAL_FORWARD_TUBE_FOR_log_R4,D_tau,Delta_tau_AND_THEIR_REQUIRED_FIRST_AND_SECOND_GEOMETRY_VARIATIONS,_OR_ENCLOSE_THE_EQUIVALENT_WEYL_ORACLE_BUNDLE_DIRECTLY`.
+  `ENCLOSE_THE_FINITE_FIXED_CHANNEL_WEYL_TRANSFER_MAPS_AND_THEIR_FIRST_SECOND_ACTION_VARIATIONS_FOR_THE_MAXIMAL_FORWARD_x(tau)=log_R4(tau)_FLOW,_WITHOUT_REQUIRING_TERMINAL_RETURN`.
 
 ## Prior N12 dynamic-Calderon continuum gates (superseded)
 
