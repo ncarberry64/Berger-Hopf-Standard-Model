@@ -63,10 +63,14 @@ coefficients: on the positive proper-time clock, `D_tau` is canonical and
 `Delta_tau=D_tau^*D_tau` with the same retained endpoint form. Fixed round
 spatial eigenspaces then reduce the exterior problem to finite trace-zero
 `2x2` channel transfers and their Möbius action on terminal/Friedrichs Weyl
-data; no moving eigenbasis is required.
+data; no moving eigenbasis is required. The exact base, tangent, and
+mixed-second transfer equations and induced Möbius quotient jets are now
+derived. Their remaining inputs are the action-owned maximal-forward
+`x,x_h,x_k,x_hk` histories, terminal/Friedrichs graph jets, and a regular
+Weyl-chart margin or finite chart cover.
 
 `FULL_BHSM_COMPLETE = FALSE`. Exact next object:
-`ENCLOSE_THE_FINITE_FIXED_CHANNEL_WEYL_TRANSFER_MAPS_AND_THEIR_FIRST_SECOND_ACTION_VARIATIONS_FOR_THE_MAXIMAL_FORWARD_x(tau)=log_R4(tau)_FLOW,_WITHOUT_REQUIRING_TERMINAL_RETURN`.
+`DERIVE_OR_ENCLOSE_THE_ACTION_OWNED_MAXIMAL_FORWARD_x,_x_h,_x_k,_x_hk_AND_TERMINAL_FRIEDRICHS_GRAPH_JETS,_THEN_PROPAGATE_THE_FINITE_TRIANGULAR_SYSTEMS_WITH_A_REGULAR_WEYL_CHART_COVER`.
 
 ## Prior N12 source-tail checkpoint (superseded)
 

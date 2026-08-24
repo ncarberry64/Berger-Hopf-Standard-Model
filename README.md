@@ -60,8 +60,10 @@ proper-time form ownership further proves that `Delta_tau=D_tau^*D_tau` on
 the same retained endpoint domain, so neither is an independent history
 coefficient. The round spatial blocks have fixed channels, reducing the
 exterior oracle to finite `2x2` transfer/Weyl systems driven only by
-`x(tau)=log R4(tau)`. The zero-source force and same-action saddle follow
-before any scalar physical coupling readout.
+`x(tau)=log R4(tau)`. Their first and mixed-second action variations now obey
+an exact finite triangular transfer system; endpoint/domain motion is isolated
+in the terminal/Friedrichs admittance jets. The zero-source force and
+same-action saddle follow before any scalar physical coupling readout.
 
 The matched-parent `Q_xi / Delta H` route remains unavailable because no
 action-owned parent-only restriction exists. No local energy, reset-chart
@@ -82,6 +84,7 @@ representative, or formal reflection may substitute for that missing object.
 | Local first/second `log R4` source-operator jets | **DERIVED** |
 | Proper-time `D_tau`/`Delta_tau` form ownership | **DERIVED** |
 | Fixed spatial-channel transfer reduction | **DERIVED** |
+| Fixed-channel transfer/Weyl variation equations | **DERIVED; ACTION-DATA ENCLOSURES OPEN** |
 | `Q_xi / Delta H` | **OPEN -- matched-parent restriction absent** |
 | `FULL_BHSM_COMPLETE` | **FALSE** |
 
@@ -96,11 +99,12 @@ Evidence: [`continuum certificate`](artifacts/n12_continuum_majorant_effectivene
 [`common-source geometry jets`](artifacts/flagship_integration/BHSM_N12_FORWARD_COMMON_SOURCE_GEOMETRY_JETS.json),
 [`proper-time form ownership`](artifacts/flagship_integration/BHSM_N12_FORWARD_PROPER_TIME_FORM_OWNERSHIP.json),
 [`fixed-channel transfer reduction`](artifacts/flagship_integration/BHSM_N12_FORWARD_FIXED_CHANNEL_TRANSFER.json),
+[`fixed-channel transfer variations`](artifacts/flagship_integration/BHSM_N12_FORWARD_CHANNEL_TRANSFER_VARIATIONS.json),
 and [`post-parent observable audit`](artifacts/qxi_relative_energy_preparation/BHSM_POST_PARENT_FLAGSHIP_OBSERVABLE_GATE.json).
 
 Exact next object:
 
-`ENCLOSE_THE_FINITE_FIXED_CHANNEL_WEYL_TRANSFER_MAPS_AND_THEIR_FIRST_SECOND_ACTION_VARIATIONS_FOR_THE_MAXIMAL_FORWARD_x(tau)=log_R4(tau)_FLOW,_WITHOUT_REQUIRING_TERMINAL_RETURN`
+`DERIVE_OR_ENCLOSE_THE_ACTION_OWNED_MAXIMAL_FORWARD_x,_x_h,_x_k,_x_hk_AND_TERMINAL_FRIEDRICHS_GRAPH_JETS,_THEN_PROPAGATE_THE_FINITE_TRIANGULAR_SYSTEMS_WITH_A_REGULAR_WEYL_CHART_COVER`
 
 ## Prior N12 source-tail checkpoint (superseded by the continuum certificate above)
 

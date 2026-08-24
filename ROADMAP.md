@@ -16,8 +16,11 @@
    maximal-forward domain. The lower-gap/Friedrichs shortcut and a universal
    Ward/BRST force cancellation are invalidated; enclose the finite fixed-
    channel Weyl/transfer maps for `x(tau)=log R4(tau)` and their first/second
-   action variations, or calculate the oracle directly. The local `log R4`
-   coefficient jets and proper-time temporal form ownership are already
+   action variations, or calculate the oracle directly. Their exact finite
+   triangular first/mixed-second transfer and Möbius variation equations are
+   derived. Enclose the remaining action-owned `x,x_h,x_k,x_hk` histories,
+   terminal/Friedrichs graph jets, and regular Weyl-chart cover. The local
+   `log R4` coefficient jets and proper-time temporal form ownership are already
    derived; `D_tau` and `Delta_tau` are not independent coefficient histories.
    Do not identify (z) with momentum squared.
 4. Evaluate the zero-source weak geometry force, solve and certify the

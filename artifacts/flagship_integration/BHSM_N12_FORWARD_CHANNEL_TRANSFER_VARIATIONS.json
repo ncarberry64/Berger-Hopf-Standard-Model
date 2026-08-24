@@ -1,0 +1,62 @@
+{
+  "FLAGSHIP_READY": false,
+  "FULL_BHSM_COMPLETE": false,
+  "Weyl_variation_theorem": {
+    "birth_value": "m=(c-mu*a)/(mu*b-d)_FOR_T=[[a,b],[c,d]]",
+    "endpoint_owner": "ALL_ENDPOINT_OR_FRIEDRICHS_DOMAIN_VARIATION_ENTERS_THROUGH_THE_TERMINAL_ADMITTANCE_JETS,_NOT_A_SECOND_BULK_OPERATOR",
+    "first_and_mixed_jets": "EXACT_QUOTIENT_JETS_FROM_T,_T_h,_T_k,_T_hk_AND_mu,_mu_h,_mu_k,_mu_hk",
+    "regularity_condition": "abs(mu*b-d)>0_ON_THE_SELECTED_WEYL_CHART"
+  },
+  "artifact": "BHSM_N12_FORWARD_CHANNEL_TRANSFER_VARIATIONS",
+  "claim_boundary": {
+    "FLAGSHIP_READY": false,
+    "FULL_BHSM_COMPLETE": false,
+    "Gate_7": "ACTIVE_NOT_CLOSED",
+    "Gate_8": "LOCKED",
+    "channel_Weyl_enclosures": "OPEN",
+    "chord_03": "NOT_AUTHORIZED",
+    "same_action_saddle": "OPEN",
+    "zero_source_force": "OPEN"
+  },
+  "classification": "THE_FIRST_AND_MIXED_SECOND_ACTION_VARIATIONS_OF_EVERY_RETAINED_FIXED_CHANNEL_TRANSFER_AND_ITS_BIRTH_WEYL_VALUE_SATISFY_AN_EXACT_FINITE_TRIANGULAR_SYSTEM;_BULK_VARIATION_IS_OWNED_ONLY_BY_x_h,_x_k,_x_hk_AND_TERMINAL_DOMAIN_VARIATION_ONLY_BY_THE_TERMINAL_ADMITTANCE_JETS",
+  "exact_next_dependency": "DERIVE_OR_ENCLOSE_THE_ACTION_OWNED_MAXIMAL_FORWARD_x,_x_h,_x_k,_x_hk_AND_TERMINAL_FRIEDRICHS_GRAPH_JETS,_THEN_PROPAGATE_THE_FINITE_TRIANGULAR_SYSTEMS_WITH_A_REGULAR_WEYL_CHART_COVER",
+  "inputs": {
+    "artifacts/flagship_integration/BHSM_N12_FORWARD_FIXED_CHANNEL_TRANSFER.json": "F83BE1866D44FE0D0F273A2B73AAEF13B272BE6B1174B3644E37E8A8AE91C786",
+    "src/bhsm/interface/aether_forward_channel_transfer.py": "176E20120BD14B23A66E7D9380A7D7EEFBDBBF3D22401A74C513B5D333EB1AE2"
+  },
+  "remaining_action_owned_data": {
+    "first_Jacobi_histories": "x_h(tau)_FOR_RETAINED_ACTION_DIRECTIONS",
+    "maximal_forward_base_history": "x(tau)=log_R4(tau)",
+    "mixed_second_Jacobi_histories": "x_hk(tau)",
+    "terminal_or_Friedrichs_graph_jets": "mu,_mu_h,_mu_k,_mu_hk",
+    "uniform_regular_Weyl_chart_margin": "inf_tau_abs(mu*b-d)>0_OR_CHART_COVER"
+  },
+  "status": "FIXED_CHANNEL_TRANSFER_AND_WEYL_VARIATION_EQUATIONS_DERIVED",
+  "transfer_variation_theorem": {
+    "base": "T'=G*T",
+    "bulk_generator_data": "x,_x_h,_x_k,_x_hk_ALONG_THE_MAXIMAL_FORWARD_DOMAIN",
+    "first_left": "T_h'=G*T_h+G_h*T",
+    "first_right": "T_k'=G*T_k+G_k*T",
+    "fixed_birth_frame": "T=I,_T_h=T_k=T_hk=0_AT_THE_RESET_TRACE",
+    "mixed_second": "T_hk'=G*T_hk+G_h*T_k+G_k*T_h+G_hk*T"
+  },
+  "validation": {
+    "Weyl_first_jets_close_to_1e_minus_9": true,
+    "Weyl_mixed_jet_closes_to_1e_minus_7": true,
+    "fixed_channel_input_validated": true,
+    "mixed_generator_chain_rule_closes_to_1e_minus_7": true,
+    "no_new_selector_coupling_threshold_gate_or_prediction": true,
+    "terminal_return_not_assumed": true,
+    "triangular_transfer_product_rule_is_exact": true
+  },
+  "validation_passed": true,
+  "witnesses": {
+    "Weyl_jet_residuals": {
+      "first_left_residual": 2.681480038013717e-12,
+      "first_right_residual": 8.585077093670179e-13,
+      "mixed_second_residual": 2.5650455093284563e-09
+    },
+    "mixed_generator_chain_rule_residual": 2.353221928430571e-08,
+    "triangular_rhs_residual": 0.0
+  }
+}

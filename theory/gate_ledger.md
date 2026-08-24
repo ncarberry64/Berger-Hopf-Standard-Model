@@ -67,12 +67,14 @@
   form: `ACTION_OWNED_KINEMATICS_NOT_INDEPENDENT_HISTORY_COEFFICIENTS`.
 - Fixed round spatial-channel reduction to finite trace-zero `2x2` transfer
   systems and Weyl Möbius propagation: `DERIVED`.
-- Maximal-forward fixed-channel Weyl maps for `x(tau)=log R4(tau)` and their
-  first/second action variations: `OPEN`.
+- Exact triangular base/first/mixed-second fixed-channel transfer equations and
+  induced Weyl Möbius quotient jets: `DERIVED`.
+- Action-owned maximal-forward `x,x_h,x_k,x_hk` histories,
+  terminal/Friedrichs graph jets, and regular Weyl-chart enclosure: `OPEN`.
 - Zero-source force, same-action saddle, physical pair-plus-contact Hessian,
   Ward/BRST closure, and basis-independent scalar observable map: `OPEN`.
 - Exact next flagship dependency:
-  `ENCLOSE_THE_FINITE_FIXED_CHANNEL_WEYL_TRANSFER_MAPS_AND_THEIR_FIRST_SECOND_ACTION_VARIATIONS_FOR_THE_MAXIMAL_FORWARD_x(tau)=log_R4(tau)_FLOW,_WITHOUT_REQUIRING_TERMINAL_RETURN`.
+  `DERIVE_OR_ENCLOSE_THE_ACTION_OWNED_MAXIMAL_FORWARD_x,_x_h,_x_k,_x_hk_AND_TERMINAL_FRIEDRICHS_GRAPH_JETS,_THEN_PROPAGATE_THE_FINITE_TRIANGULAR_SYSTEMS_WITH_A_REGULAR_WEYL_CHART_COVER`.
 
 ## Prior N12 dynamic-Calderon continuum gates (superseded)
 
