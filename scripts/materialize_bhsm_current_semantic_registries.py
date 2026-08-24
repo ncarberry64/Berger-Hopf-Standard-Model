@@ -31,6 +31,8 @@ SOURCES = (
     "artifacts/flagship_integration/BHSM_N12_GATE7_AE2_POWER_RADIUS_TAIL_CLOSURE.json",
     "artifacts/flagship_integration/BHSM_N12_GATE7_AE2_COMPACT_SOURCE_DINI_CLOSURE.json",
     "artifacts/flagship_integration/BHSM_N12_GATE7_AE2_ANGULAR_DINI_UNIFORMITY_AUDIT.json",
+    "artifacts/flagship_integration/BHSM_N12_GATE7_FINITE_ENCAPSULATION_PHYSICAL_DOMAIN_AUDIT.json",
+    "artifacts/intrinsic_state_selection/BHSM_N12_FINITE_ENCAPSULATION_LOCAL_BRANCH.json",
     "artifacts/flagship_integration/BHSM_N12_GATE7_AE2_THRESHOLD_SUPERSESSION.json",
     "artifacts/BHSM_alpha_i_update_v4_2.json",
     "theory/bhsm_prediction_ledger.json",
@@ -69,6 +71,7 @@ def verify_current_lineage() -> None:
     power_tail = loaded["artifacts/flagship_integration/BHSM_N12_GATE7_AE2_POWER_RADIUS_TAIL_CLOSURE.json"]
     compact_dini = loaded["artifacts/flagship_integration/BHSM_N12_GATE7_AE2_COMPACT_SOURCE_DINI_CLOSURE.json"]
     angular_dini = loaded["artifacts/flagship_integration/BHSM_N12_GATE7_AE2_ANGULAR_DINI_UNIFORMITY_AUDIT.json"]
+    finite_domain = loaded["artifacts/flagship_integration/BHSM_N12_GATE7_FINITE_ENCAPSULATION_PHYSICAL_DOMAIN_AUDIT.json"]
     frontier = loaded["artifacts/flagship_integration/BHSM_N12_GATE7_AE2_THRESHOLD_SUPERSESSION.json"]
     if ae2.get("action_version") != "BHSM-AE-2.0.0":
         raise RuntimeError("AE2 action version mismatch")
@@ -125,6 +128,10 @@ def verify_current_lineage() -> None:
         raise RuntimeError("current angular owner is not the action-to-radius bound")
     if angular_dini["retained_action_uniform_scale_ownership_audit"]["status"] != "EXACT_SCALE_WEIGHTS_DERIVED_NO_OSGOOD_DECAY_THEOREM":
         raise RuntimeError("uniform-scale Osgood ownership audit is not current")
+    if finite_domain["claim_boundary"]["finite_encapsulation_existence"] != "CLOSED_LOCAL_ACTION_THEOREM":
+        raise RuntimeError("finite-encapsulation existence is not closed locally")
+    if finite_domain["claim_boundary"]["zero_source_force"] != "NEXT_CURRENT_OWNER":
+        raise RuntimeError("zero-source force is not the current Gate7 owner")
 
 
 def materialize() -> list[Path]:

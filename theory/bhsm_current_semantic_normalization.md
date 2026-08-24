@@ -11,11 +11,14 @@ The normalization makes four controlling distinctions.
 3. E1 is the first source/geometry variation, not an absolute infinite-volume determinant. Its infrared object is source-weighted spectral measure, not unweighted density of states.
 4. A zero resonance does not by itself imply E1 divergence. The exact factorized witness has a zero Wronskian and cumulative first-vertex measure proportional to `Lambda^(3/2)`.
 
-The nonfermion threshold obstruction is closed in its proved AE2 scope. The factorized infrared problem is now closed for every admissible positive far tail by the compact-source Volterra trace-class theorem: the exact identity `A u_lambda=-lambda T_s u_lambda` turns the first vertex divided by `lambda` into a trace-class operator whenever the retained compact source coefficient is locally BV. The bound uses no far-tail datum, so no exact radius asymptotic is required. The earlier exact power-tail results remain valid cross-checks. Finite event or canonical-stop channels remain in the compact-resolvent branch. The canonical infrared criterion is `integral lambda^-1 d|nu_h|<infinity`; strict power excess is sufficient but not necessary. The highest-upstream open Gate-7 object is the angular direct sum: the smooth non-power witness `R4=exp(tau)` shows that bounded logarithmic derivative, monotonicity, and fixed-channel Dini do not give angular uniformity when `integral d_tau/R4<infinity`. A two-sided Lipschitz radius gives a `mu log(mu)` barrier, but bounded speed is not minimal. The Osgood comparison closes every outward envelope `abs(D_tau R4)<=omega(R4)` with `omega=o(R)` and `integral dR/(R omega)=infinity`; the explicit unbounded-speed class `omega=a+b log(R/R_L)` gives a `mu log log(mu)` action for both chiralities without monotonicity or a power law. Exact uniform action scaling leaves `D_tau log R4` unchanged while scaling both radius and radius speed by `exp(sigma)`, and its ADM kinetic and algebraic terms share leading weight seven. Thus positivity and scale weights do not imply the required log-rate decay. On the finite branch, pole and hard transport terms likewise share leading weight seven, while the existing certified witness initially moves away from the terminal event; a negative hitting law cannot start at reset and requires a later action-derived trapping-region entry. The live owner is specifically one of these constraint-reduced flow estimates or an existing canonical stop. The action-owned reference and CP/Z6 denominator routes have already been audited and do not close it. The dependency chain then proceeds through zero-source force, same-action saddle, pair-plus-contact Hessian, Ward/BRST and relative-trace control, and a basis-independent scalar observable map.
+The nonfermion threshold obstruction and the fixed-channel factorized infrared problem are closed in their proved AE2 scopes. The canonical criterion remains `integral lambda^-1 d|nu_h|<infinity`; strict power excess is sufficient but not necessary. The infinite angular counterexample remains mathematically valid, but Norman's finite-encapsulation ontology excludes a regular forever-expanding nonencapsulating history from the realized particle observable domain. On the realized finite branch, the retained compact-resolvent zero-atom and compact-source trace theorems supply the required angular/source control.
+
+The chronology is `pre-event formation -> singular encapsulation event -> complete-child reset -> decay/evolution`. The reset image is post-encapsulation data and is not required to hit the event again. The desingularized event normal form, with the selected eigenvalue as independent variable, proves existence of at least one local pre-event constrained branch reaching the event in finite positive time. This is an action-derived local existence theorem, not universal reachability and not a child selector. The current Gate-7 owner is therefore G7_08: evaluate the zero-source weak geometry force on the retained finite event/child operator. The dependency chain then proceeds through the same-action saddle, pair-plus-contact Hessian, Ward/BRST and relative-trace control, and a basis-independent scalar observable map.
 
 Historical `1:2:7` gauge, CKM, `1/16`, `eta_l`, `rho_ch`, `Z_virt^(u,2)=1/2`, and physical mass-scale formulas remain classified as historical, conditional, frozen output, or not derived. They are not AE2 action inputs and no frozen prediction changes here.
 
-The radius-history obstruction is sharper than scale bookkeeping alone. On
+The radius-history obstruction remains a valid classification of the
+nonrealized infinite mathematical branch. On
 the round common-scale ansatz, the complete weight-seven ADM plus
 cosmological action is
 `(R^7/24)(-21 q0_dot^2/N-(kappa0/2)N)`. Its zero-energy constraint and scale
@@ -27,9 +30,10 @@ multiplier residual approaches zero with relative `R^-2` behavior, so the
 round trajectory solves the full weight-seven system at dominant order.
 Lower-weight corrections, transverse linearized stability, inverse-inertia,
 boundary, and domain-margin control remain open. The live action dependency
-is now the stability/remainder system about this expanding balance: it must
-force an Osgood envelope or an existing event/canonical stop to close the
-native route.
+is not the current physical Gate-7 owner under the finite-encapsulation
+ontology. Its transverse stability/remainder problem remains open as a
+mathematical branch analysis and must not be promoted into a realized
+particle observable without finite encapsulation.
 
 The recovered Norman owner ontology is recorded as an owner-authorized semantic layer, never as an action-derived equation. It fixes geometry-first emergence, persistent mode/history particle classes, the base-plus-two-excitations generation architecture, action-owned response mass with a universal dimensional origin, propagation-locked neutrino mass, CKM as relative response-basis orientation, strict bare/dressed separation, and the irreversible dependency direction `action -> theorem -> observable -> frozen comparison`.
 

@@ -45,15 +45,22 @@ def test_finite_endpoint_trace_branch_is_already_closed() -> None:
     ] is True
 
 
-def test_only_finite_encapsulation_existence_is_routed_next() -> None:
+def test_finite_encapsulation_exists_without_post_event_recurrence() -> None:
     payload = build_payload()
-    missing = payload["localized_missing_action_theorem"]
-    assert missing["name"] == "FINITE_POSITIVE_TIME_COMPLETED_ENCAPSULATION_EXISTENCE"
-    assert missing["quantifier"] == "EXISTENCE_OF_AT_LEAST_ONE_NOT_UNIVERSAL_REACHABILITY"
-    assert missing["current_status"] == "OPEN"
-    assert missing["owner_ontology_alone_proves_existence"] is False
+    theorem = payload["finite_encapsulation_action_theorem"]
+    assert theorem["name"] == "FINITE_POSITIVE_TIME_COMPLETED_ENCAPSULATION_EXISTENCE"
+    assert theorem["quantifier"] == "EXISTENCE_OF_AT_LEAST_ONE_NOT_UNIVERSAL_REACHABILITY"
+    assert theorem["current_status"] == "CLOSED_BY_DESINGULARIZED_LOCAL_BRANCH"
+    assert theorem["owner_ontology_alone_proves_existence"] is False
+    assert theorem["action_normal_form_proves_existence"] is True
+    assert payload["physical_domain"][
+        "post_event_return_to_encapsulation_required"
+    ] is False
     assert payload["routing"]["arbitrary_infinite_tail_analysis"] == "DO_NOT_REOPEN"
-    assert payload["claim_boundary"]["Gate7"] == "ACTIVE_NOT_CLOSED"
+    assert payload["routing"]["current_owner"] == (
+        "FINITE_ENDPOINT_ZERO_SOURCE_WEAK_GEOMETRY_FORCE"
+    )
+    assert payload["claim_boundary"]["Gate7"] == "ACTIVE_ZERO_SOURCE_FORCE_NEXT"
 
 
 def test_artifact_is_validated_and_deterministic() -> None:

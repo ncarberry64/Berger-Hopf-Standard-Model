@@ -381,6 +381,7 @@ def _dimensions() -> list[dict[str, Any]]:
 def _ontology() -> list[dict[str, Any]]:
     ae2 = "artifacts/action_extension/BHSM_ACTION_AE2_GLOBAL_SPIN_RESET_ACTION.json"
     owner = "theory/norman_owner_ontology_recovered.md"
+    finite = "artifacts/flagship_integration/BHSM_N12_GATE7_FINITE_ENCAPSULATION_PHYSICAL_DOMAIN_AUDIT.json"
     rows = [
         ("ONTOLOGY_MAXIMAL_FORWARD_HISTORY", "H_max^+", "Primary dynamical object is a maximal forward geometric history.", "ACTION_REQUIRED"),
         ("ONTOLOGY_SINGLE_TIME", "dt>0 and d_tau>0", "Physical time has one orientation.", "INTERNAL_CONSISTENCY_REQUIRED"),
@@ -402,10 +403,14 @@ def _ontology() -> list[dict[str, Any]]:
         ("ONTOLOGY_BARE_DRESSED", "dressed=derived_dressing_map(bare)", "Bare and dressed quantities are separate layers and dressing is not fitting freedom.", "OWNER_AUTHORIZED_LAYER_SEPARATION"),
         ("ONTOLOGY_FROZEN_NO_RETUNE", "new_derivation_disagreement => audit", "Frozen predictions never retune.", "OWNER_AUTHORIZED_FREEZE_RULE"),
         ("ONTOLOGY_FULL_COMPLETION", "complete=all_claimed_sectors+scale+domains+BRST+continuum+frozen_reproduction", "Full completion requires reproducible closure from one coherent current action.", "OWNER_AUTHORIZED_COMPLETION_RULE"),
+        ("ONTOLOGY_FINITE_ENCAPSULATION", "realized_particle => 0<T_enc<infinity", "A realized particle completes encapsulation in finite positive physical time; infinite nonencapsulating histories remain mathematical but nonrealized.", "OWNER_AUTHORIZED_PHYSICAL_DOMAIN"),
+        ("ONTOLOGY_ENCAPSULATION_CHRONOLOGY", "formation -> singular_event -> complete_child_reset -> decay_or_evolution", "Encapsulation is completed by the pre-event history at the singular event; the reset image is post-encapsulation child data and is not required to return.", "OWNER_AUTHORIZED_PHYSICAL_DOMAIN"),
     ]
     return [
         record(cid, formula, "ONTOLOGY_RECORD", "BHSM_ONTOLOGY", meaning,
-               "current BHSM ontology", [owner] if cid.startswith("ONTOLOGY_") and cid not in {
+               "current BHSM ontology", [finite] if cid in {
+                   "ONTOLOGY_FINITE_ENCAPSULATION", "ONTOLOGY_ENCAPSULATION_CHRONOLOGY"
+               } else [owner] if cid.startswith("ONTOLOGY_") and cid not in {
                    "ONTOLOGY_MAXIMAL_FORWARD_HISTORY", "ONTOLOGY_SINGLE_TIME", "ONTOLOGY_REFLECTION",
                    "ONTOLOGY_CONDITIONAL_RESET", "ONTOLOGY_AE2_DOMAIN", "ONTOLOGY_AE2_TRANSMISSION", "ONTOLOGY_FAR_END"
                } else [ae2], current_status=status,
@@ -428,8 +433,8 @@ GATE_CHAIN = [
     ("G7_04_NONFERMION", "nonfermionic threshold closure", "CLOSED"),
     ("G7_05_FACTORIZED_LAP", "all admissible positive far tails source-Dini by compact Volterra trace-class theorem", "CLOSED"),
     ("G7_06_E1_FINITE", "fixed-channel E1 source-measure finiteness", "CLOSED"),
-    ("G7_07_ANGULAR_TAIL", "derive from the constraint-reduced flow the log-radius-rate decay needed for an outward Osgood envelope; uniform action scaling leaves D_tau log R4 unchanged, so positivity and scale weights do not supply it", "OPEN_CURRENT_OWNER"),
-    ("G7_08_FORCE", "zero-source geometry force", "PENDING"),
+    ("G7_07_ANGULAR_TAIL", "finite-endpoint compact-resolvent/source-trace control on the realized finite-encapsulation domain; infinite nonencapsulating tails remain nonrealized mathematical histories", "CLOSED_BY_OWNER_PHYSICAL_SCOPE_AND_LOCAL_ACTION_EXISTENCE"),
+    ("G7_08_FORCE", "zero-source geometry force on the retained finite event/child operator", "OPEN_CURRENT_OWNER"),
     ("G7_09_SADDLE", "same-action saddle", "PENDING"),
     ("G7_10_HESSIAN", "pair-plus-contact Hessian", "PENDING"),
     ("G7_11_WARD_TRACE", "Ward/BRST and source-contracted relative trace", "PENDING"),
@@ -446,7 +451,8 @@ def _gates() -> list[dict[str, Any]]:
         "G7_04_NONFERMION": "artifacts/flagship_integration/BHSM_N12_GATE7_AE2_NONFERMION_THRESHOLD_MARGIN.json",
         "G7_05_FACTORIZED_LAP": "artifacts/flagship_integration/BHSM_N12_GATE7_AE2_COMPACT_SOURCE_DINI_CLOSURE.json",
         "G7_06_E1_FINITE": "artifacts/flagship_integration/BHSM_N12_GATE7_AE2_COMPACT_SOURCE_DINI_CLOSURE.json",
-        "G7_07_ANGULAR_TAIL": "artifacts/flagship_integration/BHSM_N12_GATE7_AE2_ANGULAR_DINI_UNIFORMITY_AUDIT.json",
+        "G7_07_ANGULAR_TAIL": "artifacts/flagship_integration/BHSM_N12_GATE7_FINITE_ENCAPSULATION_PHYSICAL_DOMAIN_AUDIT.json",
+        "G7_08_FORCE": "artifacts/flagship_integration/BHSM_N12_GATE7_FINITE_ENCAPSULATION_PHYSICAL_DOMAIN_AUDIT.json",
     }
     fallback = "artifacts/flagship_integration/BHSM_N12_GATE7_AE2_THRESHOLD_SUPERSESSION.json"
     rows = []
@@ -578,6 +584,7 @@ def validate_registries(registries: Mapping[str, Mapping[str, Any]]) -> None:
         "ONTOLOGY_NEUTRINO_MASS", "ONTOLOGY_CKM", "ONTOLOGY_GAUGE_127",
         "ONTOLOGY_AE2_NO_CHILD_SELECTION", "ONTOLOGY_BARE_DRESSED",
         "ONTOLOGY_FROZEN_NO_RETUNE", "ONTOLOGY_FULL_COMPLETION",
+        "ONTOLOGY_FINITE_ENCAPSULATION", "ONTOLOGY_ENCAPSULATION_CHRONOLOGY",
     }
     if not required_owner_ontology <= set(ontology):
         raise ValueError("recovered Norman owner ontology is incomplete")
@@ -588,5 +595,5 @@ def validate_registries(registries: Mapping[str, Mapping[str, Any]]) -> None:
         raise ValueError("equivalent forms were promoted to independent laws")
     dag = registries["BHSM_CURRENT_COMPLETION_DAG.json"]["records"]
     open_nodes = [row["canonical_id"] for row in dag if row["current_status"] == "OPEN_CURRENT_OWNER"]
-    if open_nodes != ["G7_07_ANGULAR_TAIL"]:
+    if open_nodes != ["G7_08_FORCE"]:
         raise ValueError("completion DAG has the wrong current owner")

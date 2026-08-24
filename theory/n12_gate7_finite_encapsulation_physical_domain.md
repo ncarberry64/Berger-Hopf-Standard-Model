@@ -1,7 +1,7 @@
 # Gate 7 finite-encapsulation physical-domain audit
 
 Status:
-`INFINITE_ANGULAR_BRANCH_CLOSED_BY_PHYSICAL_DOMAIN_RESTRICTION_FINITE_ENCAPSULATION_EXISTENCE_THEOREM_OPEN`.
+`FINITE_ENCAPSULATION_EXISTENCE_CLOSED_LOCALLY_ZERO_SOURCE_FORCE_NEXT`.
 
 Norman's owner ontology now restricts a physically realized BHSM child to a
 forward formation history that completes geometric encapsulation in finite
@@ -29,22 +29,35 @@ the realized physical domain by scope, not by a new action estimate.  It must
 not be reopened to prove an Osgood radius envelope, terminal recurrence, or
 universal reachability.
 
-One action theorem is still missing.  BHSM must prove that at least one datum
-in the certified reset image has a regular retained Euler--Dirac history that
-reaches the existing completed-encapsulation event at some
+The event/reset chronology is essential.  The certified complete-child reset
+image is post-encapsulation data, so requiring it to reach encapsulation again
+would incorrectly restore recurrence.  Formation is pre-event; the singular
+event completes encapsulation; the reset produces the child; its certified
+positive-duration flow is the decay/evolution phase.
+
+The later one-sided singular-event theorem closes the required existence
+quantifier locally.  With `lambda` as independent variable, the pole in the
+Euler--Dirac flow cancels:
+
+`dY/dlambda=(b_psi Psi+lambda V_hard)/(c_psi b_psi+lambda R)`.
+
+The certified event has `c_psi b_psi<0`, nonzero soft factors, and an
+invertible hard complement.  Hence this is a regular local ODE through the
+event.  It yields a pre-event terminal-side branch whose physical time obeys
+
+`tau_E-tau(lambda)=lambda^2/(-2c_psi(E)b_psi(E))+o(lambda^2)>0`.
+
+Thus at least one retained history reaches completed encapsulation at
 
 `0 < T_enc < infinity`
 
-before any canonical stop, with constraints, domain margins, event-energy
-accounting, and the retained terminal trace/conormal graph closing at the hit.
-The required quantifier is existence of at least one realized history, not
-terminal reachability for every mathematical history.  The v14.94 retained
-action audit explicitly records `FINITE_TIME_ENCAPSULATION_EVENT_DERIVED=false`
-and localizes its missing construction to a constraint-solved nonhomogeneous
-Lorentzian incoming packet with quasilocal flux and a local physical tangent
-propagator.
+with constraints and all other margins preserved.  The certified regular
+event-to-complete-child relation is nonempty and the selected child persists
+for positive proper time.  This supersedes the older v14.94 open statement at
+the current N12 continuum level without proving universal formation
+reachability or any post-event return.
 
-Until that existence theorem closes, there is no realized history on which to
-evaluate the finite-endpoint zero-source force, same-action saddle, or
-pair-plus-contact Hessian.  Gate 7 therefore remains active; Gate 8 remains
-locked; chord 3 remains unauthorized; frozen predictions are unchanged.
+The next Gate-7 owner is therefore the finite-endpoint zero-source weak
+geometry force, followed by the same-action saddle and pair-plus-contact
+Hessian.  Gate 8 remains locked; chord 3 remains unauthorized; frozen
+predictions are unchanged.

@@ -57,8 +57,8 @@ def test_guardrail_rejects_wrong_live_owner() -> None:
     registries = _load()
     bad = deepcopy(registries)
     dag = bad["BHSM_CURRENT_COMPLETION_DAG.json"]["records"]
-    next(row for row in dag if row["canonical_id"] == "G7_07_ANGULAR_TAIL")["current_status"] = "CLOSED"
-    next(row for row in dag if row["canonical_id"] == "G7_08_FORCE")["current_status"] = "OPEN_CURRENT_OWNER"
+    next(row for row in dag if row["canonical_id"] == "G7_07_ANGULAR_TAIL")["current_status"] = "OPEN_CURRENT_OWNER"
+    next(row for row in dag if row["canonical_id"] == "G7_08_FORCE")["current_status"] = "PENDING"
     with pytest.raises(ValueError, match="wrong current owner"):
         validate_registries(bad)
 
@@ -86,6 +86,7 @@ def test_recovered_owner_ontology_is_complete_and_not_action_derived() -> None:
         "ONTOLOGY_MASS_READOUT", "ONTOLOGY_NEUTRINO_MASS", "ONTOLOGY_CKM",
         "ONTOLOGY_GAUGE_127", "ONTOLOGY_BARE_DRESSED", "ONTOLOGY_FROZEN_NO_RETUNE",
         "ONTOLOGY_FULL_COMPLETION",
+        "ONTOLOGY_FINITE_ENCAPSULATION", "ONTOLOGY_ENCAPSULATION_CHRONOLOGY",
     ):
         assert ontology[canonical_id]["current_status"].startswith("OWNER_AUTHORIZED")
         assert "ACTION_DERIVED" not in ontology[canonical_id]["current_status"]

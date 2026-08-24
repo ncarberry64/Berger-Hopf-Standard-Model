@@ -3,9 +3,10 @@
 The finite-encapsulation rule is owner-authorized ontology, not a theorem of
 the retained action.  This audit preserves mathematically admissible infinite
 histories while excluding them from realized particle/child observables.  It
-then traces the already-retained finite-endpoint compact-resolvent theorem and
-localizes the one remaining action theorem: existence of a finite completed
-encapsulation history (or certification of a canonical stop).
+then traces the already-retained finite-endpoint compact-resolvent theorem.
+The later one-sided singular-event normal form closes existence locally once
+the chronology is stated correctly: formation is pre-event, while the reset
+image is the post-encapsulation child.
 """
 
 from __future__ import annotations
@@ -27,6 +28,10 @@ INPUTS = (
     ARTIFACTS / (
         "intrinsic_state_selection/"
         "BHSM_N12_CONTINUUM_MAXIMAL_FLOW_DICHOTOMY.json"
+    ),
+    ARTIFACTS / (
+        "intrinsic_state_selection/"
+        "BHSM_N12_FINITE_ENCAPSULATION_LOCAL_BRANCH.json"
     ),
     ARTIFACTS / (
         "flagship_integration/BHSM_N12_FORWARD_E1_HIGH_ENERGY_TRACE_NORM.json"
@@ -80,6 +85,7 @@ def build_payload() -> dict[str, Any]:
     high_energy = records["BHSM_N12_FORWARD_E1_HIGH_ENERGY_TRACE_NORM.json"]
     spatial = records["BHSM_N12_FORWARD_SOURCE_TAIL_OWNERSHIP_AUDIT.json"]
     domain = records["BHSM_N12_MAXIMAL_FORWARD_SOURCE_DOMAIN.json"]
+    local_branch = records["BHSM_N12_FINITE_ENCAPSULATION_LOCAL_BRANCH.json"]
 
     validation = {
         "owner_ontology_not_mislabeled_action_theorem": True,
@@ -102,8 +108,15 @@ def build_payload() -> dict[str, Any]:
                 "may_be_used_as_internal_source_level_tail_without_new_theorem"
             ] is False
         ),
-        "finite_encapsulation_existence_not_fabricated": (
+        "v14_94_open_result_preserved_as_historical_scope": (
             old_encapsulation["FINITE_TIME_ENCAPSULATION_EVENT_DERIVED"] is False
+        ),
+        "later_local_branch_closes_existence_without_recurrence": (
+            local_branch["adjudication"][
+                "finite_positive_time_completed_encapsulation_exists"
+            ] is True
+            and local_branch["adjudication"]["return_or_recurrence_required"]
+            is False
         ),
         "existing_endpoint_graph_preserved": (
             domain["endpoint_rule"][
@@ -114,7 +127,7 @@ def build_payload() -> dict[str, Any]:
             angular["adjudication"]["arbitrary_positive_tail_angular_sum"]
             == "FALSE"
         ),
-        "Gate7_not_closed_without_realized_history": True,
+        "Gate7_advances_to_finite_endpoint_force_not_full_closure": True,
         "frozen_predictions_unchanged": True,
         "no_action_term_selector_scale_time_direction_or_gate_added": True,
     }
@@ -122,19 +135,21 @@ def build_payload() -> dict[str, Any]:
         "artifact": "BHSM_N12_GATE7_FINITE_ENCAPSULATION_PHYSICAL_DOMAIN_AUDIT",
         "action_version": "BHSM-AE-2.0.0_UNCHANGED",
         "authority": "NORMAN_OWNER_AUTHORIZED_PHYSICAL_ONTOLOGY_NOT_ACTION_DERIVED",
-        "status": "INFINITE_ANGULAR_BRANCH_CLOSED_BY_PHYSICAL_DOMAIN_RESTRICTION_FINITE_ENCAPSULATION_EXISTENCE_THEOREM_OPEN",
+        "status": "FINITE_ENCAPSULATION_EXISTENCE_CLOSED_LOCALLY_ZERO_SOURCE_FORCE_NEXT",
         "classification": (
             "REALIZED_GATE7_READOUTS_ARE_RESTRICTED_TO_FINITE_POSITIVE_TIME_"
             "COMPLETED_ENCAPSULATION_HISTORIES_OR_ALREADY_RETAINED_CANONICAL_"
             "STOPS;_THE_EXISTING_FINITE_ENDPOINT_COMPACT_RESOLVENT_ZERO_ATOM_"
             "AND_COMPACT_SOURCE_TRACE_THEOREMS_CLOSE_THE_INFINITE_ANGULAR_"
-            "OBSTRUCTION_ON_THAT_DOMAIN,_BUT_THE_RETAINED_ACTION_HAS_NOT_"
-            "PROVED_EXISTENCE_OF_A_FINITE_COMPLETED_ENCAPSULATION_HISTORY"
+            "OBSTRUCTION_ON_THAT_DOMAIN;_THE_DESINGULARIZED_ONE_SIDED_EVENT_"
+            "NORMAL_FORM_NOW_PROVES_A_NONEMPTY_LOCAL_PRE_EVENT_HISTORY_"
+            "COMPLETES_ENCAPSULATION_IN_FINITE_POSITIVE_TIME_AND_RESETS_TO_"
+            "THE_CERTIFIED_POSITIVE_DURATION_COMPLETE_CHILD"
         ),
         "physical_domain": {
             "realized_formation_history": (
-                "FORWARD_HISTORY_WITH_0<T_enc<infinity_THAT_REACHES_THE_"
-                "EXISTING_COMPLETED_ENCAPSULATION_ENDPOINT_BEFORE_ANY_STOP"
+                "PRE_EVENT_FORWARD_HISTORY_WITH_0<T_enc<infinity_THAT_"
+                "REACHES_THE_CERTIFIED_SINGULAR_ENCAPSULATION_EVENT"
             ),
             "canonical_stop_history": (
                 "FORWARD_HISTORY_REACHING_AN_ALREADY_RETAINED_FINITE_"
@@ -145,6 +160,10 @@ def build_payload() -> dict[str, Any]:
                 "OUTSIDE_THE_PHYSICAL_PARTICLE_OBSERVABLE_DOMAIN"
             ),
             "post_encapsulation": "IMMEDIATE_ENTRY_INTO_DECAY_OR_EVOLUTION_PHASE",
+            "post_encapsulation_object": (
+                "CERTIFIED_EVENT_TO_COMPLETE_CHILD_RESET_IMAGE"
+            ),
+            "post_event_return_to_encapsulation_required": False,
             "universal_terminal_reachability_required": False,
         },
         "infinite_branch_reclassification": {
@@ -183,26 +202,25 @@ def build_payload() -> dict[str, Any]:
             ),
             "conclusion": "FINITE_ENDPOINT_ANGULAR_AND_SOURCE_TRACE_BRANCH_CLOSED",
         },
-        "localized_missing_action_theorem": {
+        "finite_encapsulation_action_theorem": {
             "name": "FINITE_POSITIVE_TIME_COMPLETED_ENCAPSULATION_EXISTENCE",
             "statement": (
-                "PROVE_THAT_AT_LEAST_ONE_INITIAL_DATUM_IN_THE_CERTIFIED_"
-                "COMPLETE_CHILD_RESET_IMAGE_HAS_A_REGULAR_FORWARD_RETAINED_"
-                "EULER_DIRAC_HISTORY_REACHING_THE_EXISTING_COMPLETED_"
-                "ENCAPSULATION_EVENT_AT_SOME_0<T_enc<infinity_BEFORE_ANY_"
-                "CANONICAL_STOP,_WITH_CONSTRAINTS,_DOMAIN_MARGINS,_EVENT_"
-                "ENERGY_ACCOUNTING,_AND_THE_RETAINED_TERMINAL_TRACE_CONORMAL_"
-                "GRAPH_ALL_CLOSING_AT_THE_HIT"
+                "THERE_EXISTS_A_REGULAR_PRE_EVENT_TERMINAL_SIDE_DATUM_WHOSE_"
+                "FORWARD_RETAINED_EULER_DIRAC_HISTORY_REACHES_THE_CERTIFIED_"
+                "SINGULAR_ENCAPSULATION_EVENT_AT_0<T_enc<infinity,_WITH_"
+                "CONSTRAINTS_AND_ALL_OTHER_MARGINS_PRESERVED,_THEN_ENTERS_"
+                "THE_CERTIFIED_EVENT_TO_COMPLETE_CHILD_RELATION"
             ),
             "quantifier": "EXISTENCE_OF_AT_LEAST_ONE_NOT_UNIVERSAL_REACHABILITY",
-            "current_status": "OPEN",
+            "current_status": "CLOSED_BY_DESINGULARIZED_LOCAL_BRANCH",
+            "proof_artifact": "BHSM_N12_FINITE_ENCAPSULATION_LOCAL_BRANCH",
             "old_action_evidence": old_encapsulation["PATH_A_STATUS"],
             "old_exact_next_object": old_encapsulation["exact_next_object"],
             "owner_ontology_alone_proves_existence": False,
-            "if_no_such_history_exists": (
-                "THE_MATHEMATICAL_FORMATION_FLOW_MAY_EXIST_BUT_THE_RETAINED_"
-                "THEORY_HAS_NO_REALIZED_CHILD_ON_WHICH_TO_CLAIM_PARTICLE_"
-                "GATE7_OBSERVABLES"
+            "action_normal_form_proves_existence": True,
+            "incorrect_recurrence_formulation_retired": (
+                "DO_NOT_REQUIRE_A_POST_EVENT_RESET_DATUM_TO_HIT_"
+                "ENCAPSULATION_AGAIN"
             ),
         },
         "routing": {
@@ -211,8 +229,9 @@ def build_payload() -> dict[str, Any]:
                 "PRESERVED_AS_MATHEMATICAL_BRANCH_ANALYSIS_BUT_NOT_THE_"
                 "CURRENT_PHYSICAL_GATE7_OWNER"
             ),
-            "current_owner": "FINITE_POSITIVE_TIME_COMPLETED_ENCAPSULATION_EXISTENCE",
-            "after_theorem": [
+            "finite_encapsulation_owner": "CLOSED",
+            "current_owner": "FINITE_ENDPOINT_ZERO_SOURCE_WEAK_GEOMETRY_FORCE",
+            "next_sequence": [
                 "REALIZE_THE_RETAINED_FINITE_ENDPOINT_OPERATOR_ON_THAT_HISTORY",
                 "EVALUATE_THE_ZERO_SOURCE_WEAK_GEOMETRY_FORCE",
                 "CERTIFY_THE_SAME_ACTION_SADDLE",
@@ -221,12 +240,12 @@ def build_payload() -> dict[str, Any]:
             ],
         },
         "claim_boundary": {
-            "Gate7": "ACTIVE_NOT_CLOSED",
+            "Gate7": "ACTIVE_ZERO_SOURCE_FORCE_NEXT",
             "Gate8": "LOCKED",
             "infinite_angular_branch": "CLOSED_BY_OWNER_PHYSICAL_SCOPE",
             "finite_endpoint_operator_trace_control": "CLOSED_CONDITIONALLY_ON_ACTUAL_FINITE_HIT",
-            "finite_encapsulation_existence": "OPEN_ACTION_THEOREM",
-            "zero_source_force": "OPEN_BLOCKED_BY_MISSING_REALIZED_HISTORY",
+            "finite_encapsulation_existence": "CLOSED_LOCAL_ACTION_THEOREM",
+            "zero_source_force": "NEXT_CURRENT_OWNER",
             "same_action_saddle": "OPEN",
             "pair_plus_contact_Hessian": "OPEN",
             "chord_03_authorized": False,
@@ -234,10 +253,10 @@ def build_payload() -> dict[str, Any]:
             "FULL_BHSM_COMPLETE": False,
         },
         "exact_next_dependency": (
-            "PROVE_FINITE_POSITIVE_TIME_COMPLETED_ENCAPSULATION_EXISTENCE_FOR_"
-            "AT_LEAST_ONE_CERTIFIED_FORWARD_RESET_DATUM_WITH_THE_RETAINED_"
-            "CONSTRAINTS,_EVENT_ENERGY,_DOMAIN_MARGINS,_AND_TERMINAL_GRAPH;_"
-            "DO_NOT_REOPEN_INFINITE_TAIL_OR_UNIVERSAL_REACHABILITY"
+            "REALIZE_THE_RETAINED_FINITE_EVENT_CHILD_OPERATOR_ON_THE_"
+            "DESINGULARIZED_LOCAL_ENCAPSULATION_BRANCH_AND_EVALUATE_THE_"
+            "ZERO_SOURCE_WEAK_GEOMETRY_FORCE;_DO_NOT_REQUIRE_POST_EVENT_"
+            "RETURN_OR_UNIVERSAL_REACHABILITY"
         ),
         "inputs": {
             path.relative_to(ROOT).as_posix(): _sha256(path) for path in INPUTS

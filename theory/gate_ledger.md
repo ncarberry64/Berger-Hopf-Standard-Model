@@ -251,12 +251,18 @@
   angular/source trace obligation on that finite physical domain. Therefore
   the infinite-angular branch is `CLOSED_BY_PHYSICAL_SCOPE`, without
   falsifying the expanding solution or deriving an Osgood envelope. The exact
-  current action owner is now only
-  `FINITE_POSITIVE_TIME_COMPLETED_ENCAPSULATION_EXISTENCE_FOR_AT_LEAST_ONE_CERTIFIED_RESET_DATUM`.
-  V14.94 records this theorem as open; universal terminal reachability is not
-  required. Gate 7 remains active until one such realized history and its
-  retained terminal graph are certified, after which the zero-source force,
-  same-action saddle, and pair-plus-contact Hessian may be evaluated.
+  reset image is post-encapsulation and must not be required to hit the event
+  again.  The certified one-sided event law is regular after reparameterizing
+  by its simple eigenvalue:
+  `dY/dlambda=(b_psi Psi+lambda V_hard)/(c_psi b_psi+lambda R)`.
+  Since `c_psi b_psi<0`, this produces a nonempty local pre-event branch with
+  finite positive hitting time
+  `tau_E-tau=lambda^2/(-2c_psi(E)b_psi(E))+o(lambda^2)`.  The certified event
+  relation then supplies at least one complete child with positive-duration
+  post-event persistence.  Thus finite encapsulation existence is
+  `CLOSED_LOCALLY`; universal reachability and post-event recurrence are not
+  required.  The current Gate-7 owner is the finite-endpoint zero-source weak
+  geometry force, then the same-action saddle and pair-plus-contact Hessian.
 - Component-restricted finite branch: the ordered-event transport is exactly
   `D_t e_ord=G0+<alpha,D^(-1)b>`, with selected pole plus hard exterior
   remainder. Uniform action scaling assigns both the pole and remainder

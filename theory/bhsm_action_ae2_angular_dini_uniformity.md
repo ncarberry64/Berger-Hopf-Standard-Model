@@ -207,5 +207,7 @@ The later Norman owner ontology restricts realized particle readouts to
 finite positive-time completed encapsulation histories or retained canonical
 stops.  Accordingly, this infinite-history angular obstruction remains true
 mathematically but is closed by scope for physical Gate-7 observables.  The
-current action owner is the existence of at least one finite completed
-encapsulation history, not further arbitrary-tail or transverse analysis.
+later desingularized local event branch closes existence of at least one
+finite completed-encapsulation history without requiring post-event return.
+The current owner is the finite-endpoint zero-source weak geometry force, not
+further arbitrary-tail or transverse analysis.
