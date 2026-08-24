@@ -232,11 +232,14 @@
   `L7=(R^7/24)(-21*q0_dot^2/N-(kappa0/2)*N)`. Its zero-energy constraint and
   common-scale equation admit
   `D_tau log R4=sqrt(kappa0/42)>0`, an exponential dominant radius with
-  finite optical length. This is not a full-history existence theorem; the
-  lower weights, inverse-inertia, boundary, transverse equations, and domain
-  margins remain uncontrolled. Gate 7 therefore requires those remainders to
-  exclude/destabilize this balance and force Osgood behavior, or to force an
-  existing event/canonical stop.
+  finite optical length. The complete-action replay shows all normalized
+  coordinate Euler--Lagrange and multiplier residuals converging to zero at
+  relative `R^-2`, so the round trajectory solves the full weight-seven
+  system at dominant order. This is not a full-history existence theorem;
+  lower weights, transverse stability, inverse-inertia, boundary, and domain
+  margins remain uncontrolled. Gate 7 therefore requires that stability and
+  remainder system to force Osgood behavior or an existing event/canonical
+  stop.
 - Component-restricted finite branch: the ordered-event transport is exactly
   `D_t e_ord=G0+<alpha,D^(-1)b>`, with selected pole plus hard exterior
   remainder. Uniform action scaling assigns both the pole and remainder

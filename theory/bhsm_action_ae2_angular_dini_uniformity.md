@@ -162,12 +162,15 @@ Its dominant radius law is exponential and has finite optical length. Thus
 the leading retained equations do not merely fail to prove Osgood decay;
 they admit the opposite dominant balance. This is not a full-history
 existence theorem. A 96-point replay of the complete retained action at
-`q0=2,4,6` confirms convergence of the action, zero-energy residual, and
-constant-rate scale Euler--Lagrange residual to this weight-seven balance.
-The lower weights `5,3,1,-1`, the inverse-inertia and
-boundary terms, the transverse equations, and all regular-domain margins
-remain uncontrolled asymptotic remainders. The exact next analytic question
-is whether those retained remainders exclude or destabilize this expanding
+`q0=2,4,6` confirms convergence of the action, zero-energy residual, every
+coordinate Euler--Lagrange residual, and every lapse/shift multiplier
+constraint to this weight-seven balance. The largest transverse and
+multiplier residuals decay with the same relative `R^-2` behavior. Thus the
+round trajectory solves the complete weight-seven system at dominant order,
+not only its scalar projection. The lower weights `5,3,1,-1`, the
+inverse-inertia and boundary terms, transverse linearized stability, and all
+regular-domain margins remain uncontrolled. The exact next analytic question
+is whether those retained corrections exclude or destabilize this expanding
 balance, force an Osgood envelope, or instead drive the history to an
 existing event/canonical stop.
 

@@ -230,12 +230,21 @@ def test_artifact_is_validated_and_deterministic() -> None:
     assert replay["action_limit_errors_strictly_decrease"] is True
     assert replay["normalized_energy_magnitudes_strictly_decrease"] is True
     assert replay["normalized_scale_EL_residuals_strictly_decrease"] is True
+    assert replay["full_coordinate_EL_residuals_strictly_decrease"] is True
+    assert replay["transverse_coordinate_EL_residuals_strictly_decrease"] is True
+    assert replay["multiplier_constraint_residuals_strictly_decrease"] is True
     assert replay["rows"][-1]["absolute_action_limit_error"] < 2.0e-6
     assert abs(
         replay["rows"][-1][
             "normalized_constant_rate_scale_EL_residual_over_R7"
         ]
     ) < 1.0e-5
+    assert replay["rows"][-1][
+        "maximum_absolute_normalized_transverse_coordinate_EL_residual"
+    ] < 5.0e-6
+    assert replay["rows"][-1][
+        "maximum_absolute_normalized_multiplier_constraint_residual"
+    ] < 1.0e-6
     assert payload["adjudication"]["leading_ADM_cosmological_balance_excludes_constant_positive_log_rate"] is False
     assert payload["conditional_action_state_control_reduction"]["retained_action_supplies_global_velocity_bound"] is False
     assert payload["frontier_sharpening"]["G7_07_angular_tail"] == "OPEN_CURRENT_OWNER"

@@ -89,6 +89,13 @@ def _large_scale_round_replay(kappa0: float) -> dict[str, Any]:
         normalized_scale_EL_residual = float(np.real(
             jet.hessian[qdim, 0] * h - jet.gradient[0]
         )) / radius7
+        coordinate_EL = (
+            np.real(jet.hessian[qdim:2 * qdim, 0]) * h
+            - np.real(jet.gradient[:qdim])
+        ) / radius7
+        multiplier_constraints = (
+            np.real(jet.gradient[2 * qdim:]) / radius7
+        )
         rows.append({
             "q0": scale,
             "proper_log_radius_rate": h,
@@ -98,6 +105,15 @@ def _large_scale_round_replay(kappa0: float) -> dict[str, Any]:
             "normalized_reduced_energy_over_R7": normalized_energy,
             "normalized_constant_rate_scale_EL_residual_over_R7": (
                 normalized_scale_EL_residual
+            ),
+            "maximum_absolute_normalized_coordinate_EL_residual": float(
+                np.max(np.abs(coordinate_EL))
+            ),
+            "maximum_absolute_normalized_transverse_coordinate_EL_residual": (
+                float(np.max(np.abs(coordinate_EL[1:])))
+            ),
+            "maximum_absolute_normalized_multiplier_constraint_residual": (
+                float(np.max(np.abs(multiplier_constraints)))
             ),
         })
     return {
@@ -117,6 +133,21 @@ def _large_scale_round_replay(kappa0: float) -> dict[str, Any]:
         "normalized_scale_EL_residuals_strictly_decrease": all(
             abs(later["normalized_constant_rate_scale_EL_residual_over_R7"])
             < abs(earlier["normalized_constant_rate_scale_EL_residual_over_R7"])
+            for earlier, later in zip(rows, rows[1:])
+        ),
+        "full_coordinate_EL_residuals_strictly_decrease": all(
+            later["maximum_absolute_normalized_coordinate_EL_residual"]
+            < earlier["maximum_absolute_normalized_coordinate_EL_residual"]
+            for earlier, later in zip(rows, rows[1:])
+        ),
+        "transverse_coordinate_EL_residuals_strictly_decrease": all(
+            later["maximum_absolute_normalized_transverse_coordinate_EL_residual"]
+            < earlier["maximum_absolute_normalized_transverse_coordinate_EL_residual"]
+            for earlier, later in zip(rows, rows[1:])
+        ),
+        "multiplier_constraint_residuals_strictly_decrease": all(
+            later["maximum_absolute_normalized_multiplier_constraint_residual"]
+            < earlier["maximum_absolute_normalized_multiplier_constraint_residual"]
             for earlier, later in zip(rows, rows[1:])
         ),
         "observed_relative_remainder_weight": "R^-2_CONSISTENT_WITH_NEXT_SCALE_WEIGHT_5",
@@ -214,7 +245,7 @@ def build_payload() -> dict[str, Any]:
         "constraint_reduced_energy_identity_consumed": "IDENTICALLY_ZERO" in energy["classification"],
         "exact_weight_seven_energy_and_scale_equations_have_nonzero_expanding_equilibrium": math.isclose(dominant_balance["zero_energy_constraint_residual_at_equilibrium"], 0.0, rel_tol=0.0, abs_tol=1.0e-14) and math.isclose(dominant_balance["scale_equation_residual_at_equilibrium"], 0.0, rel_tol=0.0, abs_tol=1.0e-14) and dominant_balance["expanding_equilibrium_log_rate"] > 0.0,
         "dominant_balance_does_not_prove_full_exponential_history": dominant_balance["full_retained_history_with_this_asymptotic_proved"] is False and dominant_balance["lower_weight_and_transverse_remainders_controlled"] is False,
-        "full_action_large_scale_replay_converges_to_weight_seven_balance": large_scale_replay["action_limit_errors_strictly_decrease"] is True and large_scale_replay["normalized_energy_magnitudes_strictly_decrease"] is True and large_scale_replay["normalized_scale_EL_residuals_strictly_decrease"] is True and large_scale_replay["rows"][-1]["absolute_action_limit_error"] < 2.0e-6 and abs(large_scale_replay["rows"][-1]["normalized_constant_rate_scale_EL_residual_over_R7"]) < 1.0e-5,
+        "full_action_large_scale_replay_converges_to_weight_seven_balance": large_scale_replay["action_limit_errors_strictly_decrease"] is True and large_scale_replay["normalized_energy_magnitudes_strictly_decrease"] is True and large_scale_replay["normalized_scale_EL_residuals_strictly_decrease"] is True and large_scale_replay["full_coordinate_EL_residuals_strictly_decrease"] is True and large_scale_replay["transverse_coordinate_EL_residuals_strictly_decrease"] is True and large_scale_replay["multiplier_constraint_residuals_strictly_decrease"] is True and large_scale_replay["rows"][-1]["absolute_action_limit_error"] < 2.0e-6 and abs(large_scale_replay["rows"][-1]["normalized_constant_rate_scale_EL_residual_over_R7"]) < 1.0e-5 and large_scale_replay["rows"][-1]["maximum_absolute_normalized_transverse_coordinate_EL_residual"] < 5.0e-6 and large_scale_replay["rows"][-1]["maximum_absolute_normalized_multiplier_constraint_residual"] < 1.0e-6,
         "conditional_angular_series_root_test_closes": summability["angular_series_absolutely_summable"] is True and summability["analytic_root_test_limit"] == "minus_infinity",
         "no_relative_reference_inserted": True,
         "strict_gap_power_tail_terminal_recurrence_and_chord3_not_reopened": True,
@@ -303,7 +334,7 @@ def build_payload() -> dict[str, Any]:
             "scope": "ROUND_COMMON_SCALE_ANSATZ_AND_COMPLETE_WEIGHT_SEVEN_ADM_PLUS_COSMOLOGICAL_SECTOR",
             "result": dominant_balance,
             "full_action_large_scale_replay": large_scale_replay,
-            "consequence": "THE_LEADING_RETAINED_EQUATIONS_DO_NOT_FORCE_D_tau_log_R4_TO_ZERO_AND_ARE_COMPATIBLE_WITH_FINITE_OPTICAL_LENGTH",
+            "consequence": "THE_COMPLETE_WEIGHT_SEVEN_COORDINATE_AND_MULTIPLIER_EQUATIONS_ADMIT_THE_ROUND_NONZERO_LOG_RATE_DOMINANT_BALANCE_AND_ARE_COMPATIBLE_WITH_FINITE_OPTICAL_LENGTH",
             "not_claimed": "EXISTENCE_OF_A_FULL_RETAINED_EXPONENTIAL_HISTORY_OR_INCOMPATIBILITY_OF_THE_RETAINED_ACTION",
         },
         "adjudication": {
@@ -326,7 +357,7 @@ def build_payload() -> dict[str, Any]:
         },
         "frontier_sharpening": {
             "G7_07_angular_tail": "OPEN_CURRENT_OWNER",
-            "first_branch": "PROVE_THAT_THE_LOWER_WEIGHT_AND_TRANSVERSE_RETAINED_EQUATIONS_DESTABILIZE_OR_EXCLUDE_THE_WEIGHT_SEVEN_CONSTANT_POSITIVE_LOG_RATE_BALANCE_AND_FORCE_THE_OUTWARD_OSGOOD_ENVELOPE_abs(D_tau_R4)<=a+b*log(R4/R_L)",
+            "first_branch": "PROVE_THAT_THE_LOWER_WEIGHT_RETAINED_CORRECTIONS_OR_THE_LINEARIZED_TRANSVERSE_DYNAMICS_DESTABILIZE_OR_EXCLUDE_THE_FULL_WEIGHT_SEVEN_ROUND_CONSTANT_POSITIVE_LOG_RATE_BALANCE_AND_FORCE_THE_OUTWARD_OSGOOD_ENVELOPE_abs(D_tau_R4)<=a+b*log(R4/R_L)",
             "second_branch": "DERIVE_AN_ALREADY_ACTION_OWNED_FORWARD_RELATIVE_REFERENCE_AND_PROVE_SOURCE_CONTRACTED_RELATIVE_TRACE_CLASS",
             "finite_branch": "USE_THE_RETAINED_COMPACT_RESOLVENT_OPERATOR_IF_THE_ACTUAL_HISTORY_REACHES_EVENT_OR_CANONICAL_STOP",
         },
@@ -338,7 +369,7 @@ def build_payload() -> dict[str, Any]:
             "frozen_predictions_changed": False,
             "FULL_BHSM_COMPLETE": False,
         },
-        "exact_next_dependency": "CONTROL_THE_LOWER_WEIGHT_AND_TRANSVERSE_REMAINDERS_IN_THE_FULL_CONSTRAINT_REDUCED_RADIUS_EQUATION_STRONGLY_ENOUGH_TO_EXCLUDE_OR_DESTABILIZE_THE_EXACT_WEIGHT_SEVEN_EXPANDING_EQUILIBRIUM_D_tau_log_R4=sqrt(kappa0/42)_AND_FORCE_AN_OUTWARD_OSGOOD_ENVELOPE,_OR_PROVE_THAT_THIS_BRANCH_REACHES_AN_EXISTING_EVENT_OR_CANONICAL_STOP;_THE_LEADING_ADM_COSMOLOGICAL_SECTOR_ALONE_CANNOT_CLOSE_G7_07",
+        "exact_next_dependency": "DERIVE_THE_LINEARIZED_TRANSVERSE_STABILITY_AND_NONLINEAR_LOWER_WEIGHT_REMAINDER_SYSTEM_ABOUT_THE_FULL_WEIGHT_SEVEN_ROUND_EXPANDING_BALANCE;_EITHER_PROVE_THAT_IT_IS_EXCLUDED_OR_DESTABILIZED_STRONGLY_ENOUGH_TO_FORCE_AN_OUTWARD_OSGOOD_ENVELOPE_OR_SHOW_THAT_THE_BRANCH_REACHES_AN_EXISTING_EVENT_OR_CANONICAL_STOP;_THE_COMPLETE_WEIGHT_SEVEN_COORDINATE_AND_MULTIPLIER_EQUATIONS_ALONE_CANNOT_CLOSE_G7_07",
         "inputs": {path.relative_to(ROOT).as_posix(): _sha256(path) for path in INPUTS},
         "validation": validation,
         "validation_passed": all(validation.values()),
