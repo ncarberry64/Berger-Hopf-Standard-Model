@@ -32,6 +32,7 @@ SOURCES = (
     "artifacts/flagship_integration/BHSM_N12_GATE7_AE2_COMPACT_SOURCE_DINI_CLOSURE.json",
     "artifacts/flagship_integration/BHSM_N12_GATE7_AE2_ANGULAR_DINI_UNIFORMITY_AUDIT.json",
     "artifacts/flagship_integration/BHSM_N12_GATE7_FINITE_ENCAPSULATION_PHYSICAL_DOMAIN_AUDIT.json",
+    "artifacts/flagship_integration/BHSM_N12_FINITE_ENDPOINT_ZERO_SOURCE_FORCE_FUNCTIONAL.json",
     "artifacts/intrinsic_state_selection/BHSM_N12_FINITE_ENCAPSULATION_LOCAL_BRANCH.json",
     "artifacts/flagship_integration/BHSM_N12_GATE7_AE2_THRESHOLD_SUPERSESSION.json",
     "artifacts/BHSM_alpha_i_update_v4_2.json",
@@ -72,6 +73,7 @@ def verify_current_lineage() -> None:
     compact_dini = loaded["artifacts/flagship_integration/BHSM_N12_GATE7_AE2_COMPACT_SOURCE_DINI_CLOSURE.json"]
     angular_dini = loaded["artifacts/flagship_integration/BHSM_N12_GATE7_AE2_ANGULAR_DINI_UNIFORMITY_AUDIT.json"]
     finite_domain = loaded["artifacts/flagship_integration/BHSM_N12_GATE7_FINITE_ENCAPSULATION_PHYSICAL_DOMAIN_AUDIT.json"]
+    finite_force = loaded["artifacts/flagship_integration/BHSM_N12_FINITE_ENDPOINT_ZERO_SOURCE_FORCE_FUNCTIONAL.json"]
     frontier = loaded["artifacts/flagship_integration/BHSM_N12_GATE7_AE2_THRESHOLD_SUPERSESSION.json"]
     if ae2.get("action_version") != "BHSM-AE-2.0.0":
         raise RuntimeError("AE2 action version mismatch")
@@ -132,6 +134,11 @@ def verify_current_lineage() -> None:
         raise RuntimeError("finite-encapsulation existence is not closed locally")
     if finite_domain["claim_boundary"]["zero_source_force"] != "NEXT_CURRENT_OWNER":
         raise RuntimeError("zero-source force is not the current Gate7 owner")
+    if not (
+        finite_force["claim_boundary"]["zero_source_force_functional"] == "DERIVED"
+        and finite_force["claim_boundary"]["zero_source_force_value"] == "OPEN"
+    ):
+        raise RuntimeError("finite-endpoint force frontier is not current")
 
 
 def materialize() -> list[Path]:

@@ -263,6 +263,17 @@
   `CLOSED_LOCALLY`; universal reachability and post-event recurrence are not
   required.  The current Gate-7 owner is the finite-endpoint zero-source weak
   geometry force, then the same-action saddle and pair-plus-contact Hessian.
+- The finite-endpoint heat-force functional is exact and basis independent:
+  `D Gamma_heat(P)[delta P]=(1/2)Tr(exp(-ell^2 P)P^-1 delta P)` on each
+  positive quotient block, with retained direct-sum signs and multiplicities.
+  Noncommuting geometry jets are allowed.
+- This formula does not evaluate the current N12 force, and the historical
+  periodic value is not transferred.  The fixed-event child fiber has
+  dimension 67 and rank 33 in child geometry coordinates (at least 32 after
+  any one time quotient); boundary `log R4` varies along it.  The next object
+  is the action-owned finite-history operator/geometry-jet realization, with
+  reset-fiber variables solved jointly at the same-action saddle or removed
+  by a separately proved force-invariance theorem.
 - Component-restricted finite branch: the ordered-event transport is exactly
   `D_t e_ord=G0+<alpha,D^(-1)b>`, with selected pole plus hard exterior
   remainder. Uniform action scaling assigns both the pole and remainder
