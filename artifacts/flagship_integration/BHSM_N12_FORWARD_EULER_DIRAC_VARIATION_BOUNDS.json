@@ -1,0 +1,80 @@
+{
+  "FLAGSHIP_READY": false,
+  "FULL_BHSM_COMPLETE": false,
+  "action_derivative_ownership": {
+    "D": "L_zz",
+    "D_h_owned_by": "D3_L",
+    "D_hk_owned_by": "D4_L_FOR_STRAIGHT_DIRECTIONS",
+    "Dirac_inverse_bound": 793978.6136978746,
+    "action_Hessian_bound": 408147.9730903543,
+    "action_fourth_variation_bound": 168898707.09202424,
+    "action_third_variation_bound": 8180992.616262165,
+    "b": "E*L_q-L_zq*v",
+    "b_hk_unit_straight_bound": "3*norm(D3_L)+norm(D4_L)*norm(v)",
+    "configuration_rate_bound": 18.62938025386575,
+    "rhs_mixed_second_bound": 3171021216.652398
+  },
+  "artifact": "BHSM_N12_FORWARD_EULER_DIRAC_VARIATION_BOUNDS",
+  "claim_boundary": {
+    "FLAGSHIP_READY": false,
+    "FULL_BHSM_COMPLETE": false,
+    "Gate_7": "ACTIVE_NOT_CLOSED",
+    "Gate_8": "LOCKED",
+    "chord_03": "NOT_AUTHORIZED",
+    "global_channel_Weyl_enclosures": "OPEN"
+  },
+  "classification": "DIFFERENTIATING_THE_RETAINED_IMPLICIT_EULER_DIRAC_SOLVE_D(Y)s(Y)=b(Y)_CLOSES_THE_FIRST_AND_MIXED_SECOND_VECTOR_FIELD_JETS_BY_ONE_REUSED_DIRAC_SOLVE;_THE_EXISTING_N12_ACTION_D3_D4_AND_DIRAC_INVERSE_MAJORANTS_THEREFORE_GIVE_A_FINITE_LOCAL_SECOND_STATE_JACOBI_AND_LOG_RADIUS_TUBE",
+  "exact_next_dependency": "PROMOTE_THE_LOCAL_IMPLICIT_SOLVE_MAJORANTS_TO_EXPLICIT_C(B,delta)_BOUNDS_ON_THE_CONTINUUM_MAXIMAL_FLOW_BOUNDED_MARGIN_SETS;_PROPAGATE_THE_STATE_AND_R4_JACOBI_TUBES_THROUGH_A_FINITE_OR_CONDITIONAL_COMPONENT_COVER;_THEN_ENCLOSE_THE_FIXED_CHANNEL_WEYL_TRANSFER_AND_TERMINAL_FRIEDRICHS_GRAPH_JETS",
+  "implicit_solve_theorem": {
+    "base": "s=D^-1*b",
+    "explicit_inverse_differentiated": false,
+    "first_left": "s_h=D^-1*(b_h-D_h*s)",
+    "first_right": "s_k=D^-1*(b_k-D_k*s)",
+    "mixed_second": "s_hk=D^-1*(b_hk-D_hk*s-D_h*s_k-D_k*s_h)",
+    "same_D_factorization_reused": true
+  },
+  "inputs": {
+    "artifacts/flagship_integration/BHSM_N12_FORWARD_BOUNDARY_RADIUS_ACTION_PROJECTION.json": "5B69F7F93E97D7D2DA7E547C6F73B0662E863259974CBA4D623F4EDA7F96F8EE",
+    "artifacts/flagship_integration/BHSM_N12_FORWARD_CHANNEL_TRANSFER_VARIATIONS.json": "1A1FCB295DDBE303667E70117EE38537417AF0047301BADCE46BD504AE1781F5",
+    "artifacts/n12_direct_checkpoint/BHSM_N12_ACTION_MAJORANTS.json": "06943C2077C9A8736B3CCFF5A004EB5870AA6CF88A31403D531005768D8F631E",
+    "artifacts/n12_direct_checkpoint/BHSM_N12_POSITIVE_DURATION_OBSERVATION.json": "6D60505F4DB2EC6428FEB5818B5E4AB304DCC662B55A389869481AE0C6B91560",
+    "src/bhsm/interface/aether_forward_euler_dirac_variations.py": "20D66DCC3DBCAF562729F4D8BE407F56C8A42ABBFAC4D342134D43FDAD89F121"
+  },
+  "local_Euler_Dirac_solve_bounds": {
+    "base": 6053267497083.203,
+    "first_left": 3.931919985144466e+25,
+    "first_right": 3.931919985144466e+25,
+    "mixed_second": 5.107983341888882e+38
+  },
+  "local_log_R4_tube": {
+    "unit_first_variation_bound": 5.001239078138395,
+    "uses_closed_action_radius_pullback": true,
+    "zero_initial_mixed_variation_bound": 16100935405.601225
+  },
+  "local_state_Jacobi_tube": {
+    "D2V_bound": 5.107983341888882e+38,
+    "DV_bound": 3.931919986324045e+25,
+    "duration": 6.301881201051695e-30,
+    "unit_first_Jacobi_bound": 1.000247815627679,
+    "zero_initial_mixed_Jacobi_bound": 3220187076.317866
+  },
+  "scope_boundary": {
+    "global_D3_D4_and_Dirac_inverse_envelopes": "OPEN_AS_EXPLICIT_CONSTANTS",
+    "local_anchor_action_ball": "CERTIFIED",
+    "maximal_forward_component_cover": "OPEN",
+    "regular_Weyl_chart_cover": "OPEN",
+    "terminal_or_Friedrichs_graph_jets": "OPEN"
+  },
+  "status": "LOCAL_SECOND_STATE_JACOBI_AND_LOG_RADIUS_TUBE_DERIVED",
+  "validation": {
+    "all_inputs_validated": true,
+    "finite_local_first_and_mixed_log_R4_bounds": true,
+    "finite_local_first_and_mixed_state_Jacobi_bounds": true,
+    "finite_second_Euler_Dirac_variation_bound": true,
+    "implicit_first_bound_is_dominated_by_existing_Jacobi_generator": true,
+    "implicit_solve_base_bound_matches_existing_reduced_rate": true,
+    "no_terminal_return_new_gate_selector_or_prediction": true,
+    "scope_remains_existing_local_N12_action_ball": true
+  },
+  "validation_passed": true
+}

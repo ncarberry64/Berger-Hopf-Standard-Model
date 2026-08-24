@@ -26,6 +26,10 @@
    assemble and enclose `DV,D2V` of the retained Euler--Dirac vector field,
    propagate the state Jacobi cocycles, and pull them back through the closed
    radius jets before the channel transfer variations.
+   The exact implicit-solve first/mixed formulas and one certified local N12
+   second-Jacobi tube are now derived. Promote their constants to explicit
+   bounded-margin `C(B,delta)` estimates and recenter them across the relevant
+   maximal component.
    Do not identify (z) with momentum squared.
 4. Evaluate the zero-source weak geometry force, solve and certify the
    same-action saddle if it is nonzero, evaluate the physical pair-plus-contact

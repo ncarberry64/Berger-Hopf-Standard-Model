@@ -71,12 +71,14 @@
   induced Weyl Möbius quotient jets: `DERIVED`.
 - Physical `R4=(RADIUS0/2)exp(q_W)` action projection and exact first/mixed
   coordinate pullback jets: `DERIVED`.
-- Maximal-forward state Jacobi cocycles from `DV,D2V`, terminal/Friedrichs
+- Exact implicit Euler--Dirac `DV,D2V` solve identities and local certified
+  second state-Jacobi/`log R4` tube: `DERIVED`.
+- Maximal bounded-margin state-Jacobi recentering cover, terminal/Friedrichs
   graph jets, and regular Weyl-chart enclosure: `OPEN`.
 - Zero-source force, same-action saddle, physical pair-plus-contact Hessian,
   Ward/BRST closure, and basis-independent scalar observable map: `OPEN`.
 - Exact next flagship dependency:
-  `ASSEMBLE_DV_AND_D2V_OF_THE_RETAINED_EULER_DIRAC_VECTOR_FIELD_FROM_THE_EXISTING_ACTION_D3_D4_AND_DIRAC_INVERSE_IDENTITIES;_ENCLOSE_THE_STATE_JACOBI_COCYCLES_ON_BOUNDED_MARGIN_COMPONENTS;_THEN_PULL_BACK_BY_THE_CLOSED_R4_JETS_AND_PROPAGATE_THE_CHANNEL_TRANSFER_VARIATIONS`.
+  `PROMOTE_THE_LOCAL_IMPLICIT_SOLVE_MAJORANTS_TO_EXPLICIT_C(B,delta)_BOUNDS_ON_THE_CONTINUUM_MAXIMAL_FLOW_BOUNDED_MARGIN_SETS;_PROPAGATE_THE_STATE_AND_R4_JACOBI_TUBES_THROUGH_A_FINITE_OR_CONDITIONAL_COMPONENT_COVER;_THEN_ENCLOSE_THE_FIXED_CHANNEL_WEYL_TRANSFER_AND_TERMINAL_FRIEDRICHS_GRAPH_JETS`.
 
 ## Prior N12 dynamic-Calderon continuum gates (superseded)
 

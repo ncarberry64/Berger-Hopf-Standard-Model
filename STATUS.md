@@ -73,9 +73,14 @@ functional `R4=(RADIUS0/2) exp(q0+u_L-(1/2)log cosh(2v_L))`. Its coordinate
 gradient and Hessian are globally bounded in every finite-N chart, and its
 first/mixed action jets are exact pullbacks of the state Jacobi cocycles. No
 independent radius-history degree of freedom remains open.
+The implicit Euler--Dirac solve has now been differentiated exactly through
+mixed order. Existing action `D3/D4`, velocity, right-hand-side, and
+Dirac-inverse majorants certify a finite local second state-Jacobi and
+`log R4` tube. These constants cover only the existing anchor action ball;
+they do not yet cover the maximal forward component.
 
 `FULL_BHSM_COMPLETE = FALSE`. Exact next object:
-`ASSEMBLE_DV_AND_D2V_OF_THE_RETAINED_EULER_DIRAC_VECTOR_FIELD_FROM_THE_EXISTING_ACTION_D3_D4_AND_DIRAC_INVERSE_IDENTITIES;_ENCLOSE_THE_STATE_JACOBI_COCYCLES_ON_BOUNDED_MARGIN_COMPONENTS;_THEN_PULL_BACK_BY_THE_CLOSED_R4_JETS_AND_PROPAGATE_THE_CHANNEL_TRANSFER_VARIATIONS`.
+`PROMOTE_THE_LOCAL_IMPLICIT_SOLVE_MAJORANTS_TO_EXPLICIT_C(B,delta)_BOUNDS_ON_THE_CONTINUUM_MAXIMAL_FLOW_BOUNDED_MARGIN_SETS;_PROPAGATE_THE_STATE_AND_R4_JACOBI_TUBES_THROUGH_A_FINITE_OR_CONDITIONAL_COMPONENT_COVER;_THEN_ENCLOSE_THE_FIXED_CHANNEL_WEYL_TRANSFER_AND_TERMINAL_FRIEDRICHS_GRAPH_JETS`.
 
 ## Prior N12 source-tail checkpoint (superseded)
 
