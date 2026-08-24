@@ -1,0 +1,64 @@
+{
+  "FLAGSHIP_READY": false,
+  "FULL_BHSM_COMPLETE": false,
+  "artifact": "BHSM_N12_EVENT_NORMAL_WEYL_RICCATI",
+  "claim_boundary": {
+    "FULL_BHSM_COMPLETE": false,
+    "Gate7": "ACTIVE_WEYL_COEFFICIENT_CONTINUATION_OPEN",
+    "Gate8": "LOCKED",
+    "actual_N12_exterior_Weyl_value_and_jet": "OPEN",
+    "chord_03_authorized": false,
+    "event_normal_Weyl_initial_condition": "DERIVED",
+    "event_normal_geometry_jet_system": "DERIVED",
+    "same_action_saddle": "WAITING_ON_WEYL_CONTINUATION",
+    "zero_source_force_value": "OPEN"
+  },
+  "classification": "THE_CERTIFIED_FINITE_EVENT_GRAPH_INITIALIZES_THE_EXTERIOR_WEYL_ORACLE_WITH_M(0,z)=W_phys;_INWARD_EVENT_NORMAL_CONTINUATION_OBEYS_THE_EXACT_MATRIX_RICCATI_SYSTEM_D_s_M=L(Y(s))-zI-M^2,_AND_ITS_GEOMETRY_JET_OBEYS_THE_LINEARIZED_SYSTEM;_THE_ACTUAL_N12_COEFFICIENT_CONTINUATION_REMAINS_TO_BE_CERTIFIED",
+  "event_normal_system": {
+    "Riccati_equation": "D_s_M=(L_spatial(Y(s))-zI)-M^2",
+    "arbitrary_Robin_or_regular_cover_endpoint_used": false,
+    "coercive_region": "REAL_z<0",
+    "coordinate": "s=NONNEGATIVE_PHYSICAL_DISTANCE_FROM_THE_CERTIFIED_TERMINAL_EVENT_INTO_THE_REALIZED_FINITE_EXTERIOR",
+    "geometry_initial_value": "D_Phi_M(0,z)=D_Phi_W_phys",
+    "geometry_jet_equation": "D_s(delta_M)=delta_L-M*delta_M-delta_M*M",
+    "small_s_expansion": "M(s,z)=W_phys+s*(L_event-zI-W_phys^2)+O(s^2)",
+    "terminal_value": "M(0,z)=W_phys"
+  },
+  "exact_next_dependency": "PULL_BACK_THE_RETAINED_SPATIAL_OPERATOR_AND_ITS_GEOMETRY_JET_TO_THE_DESINGULARIZED_EVENT_NORMAL_BRANCH,_THEN_CERTIFY_A_POLE_FREE_INTERVAL_RICCATI_ENCLOSURE_FROM_W_phys_TO_THE_ACTION_OWNED_SOURCE_BOUNDARY",
+  "force_transfer": {
+    "heat_minus_zeta_force_value_evaluated": false,
+    "identity": "<a,D_Phi_M_C(z)[deltaPhi]b>_boundary=<gamma_C(z)a,D_Phi_P_C[deltaPhi]gamma_C(z)b>_bulk_PLUS_THE_RETAINED_EXPLICIT_BOUNDARY_CONTACT_VARIATION",
+    "required_oracle": "D_Phi_M(z)_ON_THE_RETAINED_SOURCE_BOUNDARY",
+    "why": "THE_EVENT_INITIAL_VALUE_IS_NOW_FIXED_BUT_THE_ACTION_OWNED_L_spatial(Y(s)),_D_Phi_L,_AND_DISTANCE_TO_THE_SOURCE_BOUNDARY_HAVE_NOT_YET_BEEN_CONTINUED_OR_ENCLOSED"
+  },
+  "inputs": {
+    "artifacts/flagship_integration/BHSM_N12_FINITE_ENDPOINT_ZERO_SOURCE_FORCE_FUNCTIONAL.json": "6BC1FC78190437347813117A63D252C96115B2B67619D893144526A5DDD4E931",
+    "artifacts/flagship_integration/BHSM_N12_FINITE_HISTORY_FORCE_DOMAIN_AUDIT.json": "827A30D38BBB0920C8577DAA586E621845F3BE928774214374FCED9E2171E227",
+    "artifacts/flagship_integration/BHSM_N12_FORWARD_GAUGE_WEYL_READOUT_FAMILY.json": "452134D1EA925FEBE2DA99483926F70AFEC6DEF09731B268ECB2A2A6FCE280AE",
+    "artifacts/intrinsic_state_selection/BHSM_N12_FINITE_ENCAPSULATION_LOCAL_BRANCH.json": "280AAECD38DE340C1D40F8B374B96BA7A5C6DAE6F8F5B518B60A49CBBE14CB63"
+  },
+  "status": "EVENT_NORMAL_WEYL_INITIAL_VALUE_SYSTEM_DERIVED_COEFFICIENT_CONTINUATION_OPEN",
+  "validation": {
+    "desingularized_event_branch_consumed": true,
+    "event_normal_orientation_matches_closed_form": true,
+    "finite_domain_cutoff_audit_consumed": true,
+    "geometry_jet_Riccati_equation_verified": true,
+    "heat_minus_zeta_force_dependency_consumed": true,
+    "native_Weyl_family_consumed": true,
+    "no_endpoint_source_profile_p2_selector_scale_fit_or_gate_added": true
+  },
+  "validation_passed": true,
+  "witnesses": {
+    "geometry_jet": {
+      "absolute_residual": 1.3031367651628045e-11,
+      "analytic_geometry_jet": 0.08159708521275634,
+      "finite_difference_geometry_jet": 0.08159708519972497
+    },
+    "scalar_orientation": {
+      "closed_form": 1.4596975067078952,
+      "first_order_terminal_residual_over_s_squared": 2.1205259770340494,
+      "integrated": 1.4596975067077314,
+      "integration_residual": 1.638689184346731e-13
+    }
+  }
+}

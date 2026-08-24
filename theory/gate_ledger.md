@@ -279,6 +279,13 @@
   is the action-owned finite-history operator/geometry-jet realization, with
   reset-fiber variables solved jointly at the same-action saddle or removed
   by a separately proved force-invariance theorem.
+- The finite event graph now fixes the exterior Weyl initial value
+  `M(0,z)=W_phys`.  Inward event-normal continuation obeys
+  `D_s M=L_spatial(Y(s))-zI-M^2`; its exact geometry jet obeys
+  `D_s(delta M)=delta L-M delta M-delta M M`.  The scalar closed-form and
+  centered geometry finite-difference checks pass.  The current dependency
+  is the pole-free N12 coefficient/jet pullback and interval Riccati
+  enclosure, not a hand-selected Robin or validation-cover endpoint.
 - Component-restricted finite branch: the ordered-event transport is exactly
   `D_t e_ord=G0+<alpha,D^(-1)b>`, with selected pole plus hard exterior
   remainder. Uniform action scaling assigns both the pole and remainder
