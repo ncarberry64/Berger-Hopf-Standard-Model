@@ -295,6 +295,96 @@ def radius_speed_bound_from_state_controls(
     }
 
 
+def logarithmic_radius_speed_agmon_bound(
+    *,
+    angular_eigenvalue: float,
+    radius_at_source_end: float,
+    speed_offset: float,
+    speed_log_coefficient: float,
+    threshold_wave_number: float,
+    chirality: int = 1,
+) -> dict[str, float | bool | str]:
+    """Return the barrier under an unbounded logarithmic speed envelope.
+
+    On every outward passage from ``R_L`` to ``R>=R_L``, assume only
+
+    ``abs(R4') <= a+b*log(R4/R_L)``, with ``a>0`` and ``b>=0``.
+
+    No monotonicity of the full history is required. Put
+    ``R_turn=mu/(2k)``. If ``mu>=2*(a+b*log(R_turn/R_L))``, both squared
+    chiral factors obey ``V_chi>=s_mu^2/2`` before that turning radius.
+    The chain-rule/Osgood comparison gives
+
+    ``int d_tau/R4 >= int_(R_L)^R_turn dR/(R*(a+b*log(R/R_L)))``.
+
+    The integral is ``log(R_turn/R_L)/a`` for ``b=0`` and
+    ``log(1+(b/a)log(R_turn/R_L))/b`` for ``b>0``. Thus the latter permits
+    an unbounded radius speed yet yields an action of order
+    ``mu*log(log(mu))``, still beating every ``exp(C*mu)*mu^d`` local loss.
+    """
+
+    mu = float(angular_eigenvalue)
+    radius = float(radius_at_source_end)
+    offset = float(speed_offset)
+    coefficient = float(speed_log_coefficient)
+    k = float(threshold_wave_number)
+    sign = int(chirality)
+    values = (mu, radius, offset, coefficient, k)
+    if not all(math.isfinite(value) for value in values):
+        raise ValueError("finite logarithmic-speed barrier inputs required")
+    if (
+        mu <= 0.0
+        or radius <= 0.0
+        or offset <= 0.0
+        or coefficient < 0.0
+        or k <= 0.0
+        or sign not in (-1, 1)
+    ):
+        raise ValueError(
+            "positive mu, radius, offset and k, nonnegative log coefficient, "
+            "and chirality +/-1 required"
+        )
+    ratio = mu / (2.0 * k * radius)
+    if ratio <= 1.0:
+        raise ValueError("angular level must place a barrier beyond the source")
+    log_ratio = math.log(ratio)
+    speed_at_turning = offset + coefficient * log_ratio
+    if mu < 2.0 * speed_at_turning:
+        raise ValueError("angular level below the two-chirality Osgood range")
+    if coefficient == 0.0:
+        optical_lower = log_ratio / offset
+        action_class = "(1/(2*a))*mu*log(mu)+O(mu)"
+        speed_unbounded = False
+    else:
+        optical_lower = math.log1p(coefficient * log_ratio / offset) / coefficient
+        action_class = "(1/(2*b))*mu*log(log(mu))+O(mu)"
+        speed_unbounded = True
+    action = 0.5 * mu * optical_lower
+    log_suppression = -2.0 * action
+    suppression = math.exp(log_suppression) if log_suppression > -745.0 else 0.0
+    return {
+        "angular_eigenvalue": mu,
+        "radius_at_source_end": radius,
+        "speed_offset": offset,
+        "speed_log_coefficient": coefficient,
+        "threshold_wave_number": k,
+        "chirality": sign,
+        "turning_radius": mu / (2.0 * k),
+        "speed_envelope_at_turning_radius": speed_at_turning,
+        "two_chirality_high_angular_condition": "mu>=2*omega(mu/(2*k))",
+        "Osgood_optical_integral_lower": optical_lower,
+        "agmon_action_lower": action,
+        "log_squared_amplitude_suppression_upper": log_suppression,
+        "squared_amplitude_suppression_upper": suppression,
+        "potential_lower": "V_chi>=s_mu^2/2",
+        "asymptotic_action_class": action_class,
+        "allows_unbounded_radius_speed": speed_unbounded,
+        "radius_monotonicity_assumed": False,
+        "exact_power_law_assumed": False,
+        "beats_exp(C*mu)*mu^d_for_every_fixed_C_and_d": True,
+    }
+
+
 def at_most_linear_angular_series_witness(
     *,
     first_level: int = 8,
@@ -376,5 +466,6 @@ __all__ = [
     "angular_uniformity_requirement",
     "exponential_radius_angular_counterexample",
     "integrable_optical_tail_dini_coefficient_lower",
+    "logarithmic_radius_speed_agmon_bound",
     "radius_speed_bound_from_state_controls",
 ]

@@ -210,11 +210,17 @@
   The constant-radius case is the already-gapped limit. No monotonicity,
   exact power law, or regular variation is assumed.
 - Current angular owner after that theorem:
-  derive the eventual action-owned bound `abs(D_tau R4)<=v` on the actual
-  infinite regular history, use the finite event/canonical-stop branch, or
-  derive an already action-owned forward relative trace. The retained action
-  has not yet supplied the global coordinate, velocity, and positive-lapse
-  controls that imply this radius-speed bound.
+  bounded speed is not minimal. For any nondecreasing outward envelope
+  `abs(D_tau R4)<=omega(R4)` with `omega(R)=o(R)` and
+  `integral^infinity dR/(R omega(R))=infinity`, the Agmon action is `mu`
+  times a divergent Osgood integral. In particular
+  `omega(R)=a+b log(R/R_L)` permits unbounded speed and yields
+  `A_chi=Omega(mu log log mu)`, still closing the angular sum. The live owner
+  is to derive this weaker envelope from the actual action, or use the finite
+  event/canonical-stop branch. The retained action has not supplied the
+  necessary global velocity-growth and positive-lapse controls. The existing
+  matched-reference and CP/Z6 routes have already been audited and do not
+  regularize this denominator.
 - Retained transverse-gauge normal boundary quadratic form:
   `ACTION_DERIVED_BY_v15_66`.
 - Retained normal matter junction action: `ZERO_BY_v15_13`; this does not

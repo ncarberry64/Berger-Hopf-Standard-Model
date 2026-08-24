@@ -15,6 +15,7 @@ from bhsm.interface.action_extension_ae2_angular_dini_uniformity import (
     angular_uniformity_requirement,
     exponential_radius_angular_counterexample,
     integrable_optical_tail_dini_coefficient_lower,
+    logarithmic_radius_speed_agmon_bound,
     radius_speed_bound_from_state_controls,
 )
 
@@ -104,6 +105,31 @@ def test_state_controls_give_exact_two_sided_radius_speed_bound() -> None:
     assert row["global_state_controls_proved_by_retained_action"] is False
 
 
+def test_unbounded_logarithmic_speed_still_has_superlinear_angular_action() -> None:
+    row = logarithmic_radius_speed_agmon_bound(
+        angular_eigenvalue=128.0,
+        radius_at_source_end=1.0,
+        speed_offset=1.0,
+        speed_log_coefficient=0.5,
+        threshold_wave_number=1.0,
+    )
+    partner = logarithmic_radius_speed_agmon_bound(
+        angular_eigenvalue=128.0,
+        radius_at_source_end=1.0,
+        speed_offset=1.0,
+        speed_log_coefficient=0.5,
+        threshold_wave_number=1.0,
+        chirality=-1,
+    )
+    expected_optical = 2.0 * math.log1p(0.5 * math.log(64.0))
+    assert row["Osgood_optical_integral_lower"] == pytest.approx(expected_optical)
+    assert row["agmon_action_lower"] == pytest.approx(64.0 * expected_optical)
+    assert partner["agmon_action_lower"] == row["agmon_action_lower"]
+    assert row["allows_unbounded_radius_speed"] is True
+    assert row["radius_monotonicity_assumed"] is False
+    assert "mu*log(log(mu))" in row["asymptotic_action_class"]
+
+
 def test_at_most_linear_root_test_beats_compact_source_growth() -> None:
     row = at_most_linear_angular_series_witness(
         source_exponential_rate=3.0,
@@ -160,8 +186,11 @@ def test_artifact_is_validated_and_deterministic() -> None:
     assert payload["adjudication"]["arbitrary_positive_tail_angular_sum"] == "FALSE"
     assert payload["conditional_at_most_linear_sufficient_class"]["status"] == "CLOSED_CONDITIONAL_THEOREM"
     assert payload["adjudication"]["eventual_two_sided_Lipschitz_radius_sufficient"] is True
+    assert payload["adjudication"]["eventual_logarithmic_speed_Osgood_radius_sufficient"] is True
     assert payload["adjudication"]["radius_monotonicity_required"] is False
     assert payload["adjudication"]["eventual_two_sided_Lipschitz_radius_proved_by_action"] is False
+    assert payload["adjudication"]["eventual_logarithmic_speed_Osgood_radius_proved_by_action"] is False
+    assert payload["conditional_logarithmic_speed_Osgood_class"]["allows_unbounded_radius_speed"] is True
     assert payload["conditional_action_state_control_reduction"]["retained_action_supplies_global_velocity_bound"] is False
     assert payload["frontier_sharpening"]["G7_07_angular_tail"] == "OPEN_CURRENT_OWNER"
     assert payload["FULL_BHSM_COMPLETE"] is False

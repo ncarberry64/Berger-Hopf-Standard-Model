@@ -83,10 +83,42 @@ and `N_boundary^(-1) <= exp(sqrt(N) M)`.  Hence
 This is an exact conditional reduction of the radius-speed problem to the
 action state and lapse controls; it does not manufacture those controls.
 
+Bounded speed is itself not minimal.  Let `omega` be a nondecreasing outward
+speed envelope and suppose, on every outward passage after the source,
+
+`abs(D_tau R4) <= omega(R4)`.
+
+At `R_turn=mu/(2k)`, the two factor potentials obey `V_chi>=s_mu^2/2`
+provided `mu>=2 omega(R_turn)`.  On a passage from `R_L` to `R_turn`, the
+chain rule gives the Osgood optical estimate
+
+`integral d_tau/R4 >= integral_(R_L)^R_turn dR/(R omega(R))`.
+
+Consequently any envelope satisfying
+
+`omega(R)=o(R)` and `integral^infinity dR/(R omega(R))=infinity`
+
+produces an angular action `mu` times a factor tending to infinity and hence
+beats every local `exp(C_source mu)(1+mu)^d` loss.  This is the sharp general
+growth condition exposed by this comparison route; oscillations and inward
+passages do not invalidate it because only the final outward passage to the
+turning radius is used.
+
+An explicit strictly weaker-than-Lipschitz example is
+
+`omega(R)=a+b log(R/R_L)`, with `a>0` and `b>0`.
+
+It permits unbounded radius speed, while
+
+`A_chi,mu(k) >= (mu/(2b)) log(1+(b/a)log(mu/(2kR_L)))`.
+
+Thus the barrier is of order `mu log log mu`, still sufficient by the root
+test.  No monotonicity or bounded speed is assumed.
+
 This is a conditional angular-barrier theorem, not a theorem about the actual
-N12 history.  The current retained action still does not prove the eventual
-two-sided bound `abs(D_tau R4)<=v`: the maximal-flow dichotomy selects no
-outcome and supplies no global `S2`, velocity, or positive-lapse/domain-margin
+N12 history.  The current retained action still does not prove even the
+weaker outward Osgood envelope: the maximal-flow dichotomy selects no outcome
+and supplies no global `S2`, velocity-growth, or positive-lapse/domain-margin
 bound.  Gate 7 therefore remains open at the action-to-radius-history edge.
 
 The other native route would be an already action-owned forward relative

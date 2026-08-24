@@ -7,6 +7,8 @@
     "action_owned_forward_relative_reference_available": false,
     "arbitrary_positive_tail_angular_sum": "FALSE",
     "bounded_log_derivative_monotonicity_and_smoothness_suffice": false,
+    "eventual_logarithmic_speed_Osgood_radius_proved_by_action": false,
+    "eventual_logarithmic_speed_Osgood_radius_sufficient": true,
     "eventual_two_sided_Lipschitz_radius_proved_by_action": false,
     "eventual_two_sided_Lipschitz_radius_sufficient": true,
     "exact_power_tail_fixed_channel_results": "PRESERVED_DO_NOT_REOPEN",
@@ -269,6 +271,64 @@
     "two_chirality_potential": "V_chi=s_mu^2+/-mu*(D_tau_R4)/R4^2>=s_mu^2/2_FOR_mu>=2*v",
     "two_sided_direct_bound": "abs(D_tau_R4)<=v_IMPLIES_V_plus_AND_V_minus>=s_mu^2/2_FOR_mu>=2*v;_ON_s_mu>=2*k_THIS_GIVES_sqrt(V_chi-k^2)>=s_mu/2"
   },
+  "conditional_logarithmic_speed_Osgood_class": {
+    "Osgood_optical_lower": "int_d_tau/R4>=int_(R_L)^R_turn_dR/(R*(a+b*log(R/R_L)))",
+    "agmon_action_for_b_positive": "A_chi_mu(k)>=(mu/(2*b))*log(1+(b/a)*log(mu/(2*k*R_L)))",
+    "allows_unbounded_radius_speed": true,
+    "asymptotic_action_class": "mu*log(log(mu))",
+    "exact_power_law_assumed": false,
+    "high_angular_range": "mu>=2*(a+b*log(R_turn/R_L))",
+    "hypothesis": "ON_EVERY_OUTWARD_PASSAGE_abs(D_tau_R4)<=a+b*log(R4/R_L),_a>0,_b>=0",
+    "radius_monotonicity_required": false,
+    "status": "CLOSED_CONDITIONAL_THEOREM",
+    "summability": "exp(C_source*mu)*(1+mu)^d*exp(-2*A_chi_mu(k))_IS_SUMMABLE_BY_ROOT_TEST",
+    "turning_radius": "R_turn=mu/(2*k)",
+    "two_chirality_potential": "V_chi>=s_mu^2/2",
+    "witnesses": {
+      "negative_chirality": {
+        "Osgood_optical_integral_lower": 2.2494965258180724,
+        "agmon_action_lower": 143.96777765235663,
+        "allows_unbounded_radius_speed": true,
+        "angular_eigenvalue": 128.0,
+        "asymptotic_action_class": "(1/(2*b))*mu*log(log(mu))+O(mu)",
+        "beats_exp(C*mu)*mu^d_for_every_fixed_C_and_d": true,
+        "chirality": -1,
+        "exact_power_law_assumed": false,
+        "log_squared_amplitude_suppression_upper": -287.93555530471326,
+        "potential_lower": "V_chi>=s_mu^2/2",
+        "radius_at_source_end": 1.0,
+        "radius_monotonicity_assumed": false,
+        "speed_envelope_at_turning_radius": 3.0794415416798357,
+        "speed_log_coefficient": 0.5,
+        "speed_offset": 1.0,
+        "squared_amplitude_suppression_upper": 8.936700169906168e-126,
+        "threshold_wave_number": 1.0,
+        "turning_radius": 64.0,
+        "two_chirality_high_angular_condition": "mu>=2*omega(mu/(2*k))"
+      },
+      "positive_chirality": {
+        "Osgood_optical_integral_lower": 2.2494965258180724,
+        "agmon_action_lower": 143.96777765235663,
+        "allows_unbounded_radius_speed": true,
+        "angular_eigenvalue": 128.0,
+        "asymptotic_action_class": "(1/(2*b))*mu*log(log(mu))+O(mu)",
+        "beats_exp(C*mu)*mu^d_for_every_fixed_C_and_d": true,
+        "chirality": 1,
+        "exact_power_law_assumed": false,
+        "log_squared_amplitude_suppression_upper": -287.93555530471326,
+        "potential_lower": "V_chi>=s_mu^2/2",
+        "radius_at_source_end": 1.0,
+        "radius_monotonicity_assumed": false,
+        "speed_envelope_at_turning_radius": 3.0794415416798357,
+        "speed_log_coefficient": 0.5,
+        "speed_offset": 1.0,
+        "squared_amplitude_suppression_upper": 8.936700169906168e-126,
+        "threshold_wave_number": 1.0,
+        "turning_radius": 64.0,
+        "two_chirality_high_angular_condition": "mu>=2*omega(mu/(2*k))"
+      }
+    }
+  },
   "counterexample": {
     "absolute_angular_source_Dini_sum_finite": false,
     "degeneracy_weighted_terms_tend_to_zero": false,
@@ -381,11 +441,11 @@
     "source_hypothesis": "h>=0_AND_H=int_delta^L_h(t)*r(t)dt>0",
     "zero_transfer_normalization": "N_mu^2=(2/pi)*exp(2*mu*I)"
   },
-  "exact_next_dependency": "DERIVE_FROM_THE_RETAINED_CONTINUUM_ACTION_UNIFORM_GLOBAL_COORDINATE_VELOCITY_AND_POSITIVE_LAPSE_MARGIN_CONTROL_SUFFICIENT_FOR_abs(D_tau_R4)<=v_ON_THE_UNIQUE_INFINITE_REGULAR_HISTORY,_OR_PROVE_THE_ABSOLUTE_SPEED_BOUND_DIRECTLY,_OR_USE_THE_FINITE_EVENT_CANONICAL_STOP_BRANCH;_IN_PARALLEL_AUDIT_WHETHER_THE_EXISTING_QUANTUM_REPLACEMENT_IDENTITY_ALREADY_OWNS_A_FORWARD_REFERENCE_OPERATOR_WITHOUT_ADDING_A_COUNTERTERM_OR_NEW_ACTION_TERM",
+  "exact_next_dependency": "DERIVE_FROM_THE_RETAINED_CONTINUUM_ACTION_THE_OUTWARD_OSGOOD_ENVELOPE_abs(D_tau_R4)<=a+b*log(R4/R_L)_ON_THE_UNIQUE_INFINITE_REGULAR_HISTORY,_OR_ANY_NONDECREASING_omega_WITH_omega(R)=o(R)_AND_int^infinity_dR/(R*omega(R))=infinity,_OR_USE_THE_FINITE_EVENT_CANONICAL_STOP_BRANCH;_THE_EXISTING_REFERENCE_AND_CP_Z6_ROUTES_ARE_ALREADY_AUDITED_AND_DO_NOT_CLOSE_THIS_OWNER",
   "frontier_sharpening": {
     "G7_07_angular_tail": "OPEN_CURRENT_OWNER",
     "finite_branch": "USE_THE_RETAINED_COMPACT_RESOLVENT_OPERATOR_IF_THE_ACTUAL_HISTORY_REACHES_EVENT_OR_CANONICAL_STOP",
-    "first_branch": "PROVE_THE_ACTUAL_INFINITE_REGULAR_HISTORY_EVENTUALLY_SATISFIES_abs(D_tau_R4)<=v,_WHICH_NOW_CLOSES_THE_LOW_ENERGY_ANGULAR_BARRIER_SUM_WITHOUT_MONOTONICITY",
+    "first_branch": "PROVE_THE_ACTUAL_INFINITE_REGULAR_HISTORY_SATISFIES_THE_WEAKER_OUTWARD_SPEED_ENVELOPE_abs(D_tau_R4)<=a+b*log(R4/R_L),_WHICH_CLOSES_THE_LOW_ENERGY_ANGULAR_BARRIER_SUM_WITHOUT_MONOTONICITY_OR_BOUNDED_SPEED",
     "second_branch": "DERIVE_AN_ALREADY_ACTION_OWNED_FORWARD_RELATIVE_REFERENCE_AND_PROVE_SOURCE_CONTRACTED_RELATIVE_TRACE_CLASS"
   },
   "inputs": {
@@ -397,9 +457,9 @@
     "artifacts/flagship_integration/BHSM_N12_GATE7_AE2_COMPACT_SOURCE_DINI_CLOSURE.json": "E1E735CBA8FC9D5FBC28B2AB93B0EA17803191D69F081C7A194224360A18CF27",
     "artifacts/intrinsic_state_selection/BHSM_N12_CONTINUUM_MAXIMAL_FLOW_DICHOTOMY.json": "F75E3CEE4EE4D0768027770FEFECAC1A17994B4297AE344E3FC2D83F86B002A9",
     "artifacts/intrinsic_state_selection/BHSM_N12_GLOBAL_FLOW_COERCIVE_CONTROL_GATE.json": "0A6C1BED930316B8EFF8BBE110078AE1C582E638E6BC42445330CC276EC2A2C4",
-    "scripts/derive_n12_gate7_ae2_angular_dini_uniformity.py": "C49F979BC7698C5311D139876A90CE092D9768EB1D05AA31E3CB28DA681DC8CD",
-    "src/bhsm/interface/action_extension_ae2_angular_dini_uniformity.py": "6F1041D87E96041498319F7EAE9C0A448F41042680FE65A40623C1F786F0796C",
-    "theory/bhsm_action_ae2_angular_dini_uniformity.md": "57923224EB50E9A853C9B45588B971B35BECA929F355F26C8AA8807FE65EAF24"
+    "scripts/derive_n12_gate7_ae2_angular_dini_uniformity.py": "5C0D4AF9A40031EFA45BF99504F33F6C7E09A051353CC4ABB6B88909456B2D5B",
+    "src/bhsm/interface/action_extension_ae2_angular_dini_uniformity.py": "4ADC804DE4315C2CBE1AAAA99FBD19CBE8AE8242427D3281BAEC892012D24820",
+    "theory/bhsm_action_ae2_angular_dini_uniformity.md": "E4BABD653F83FFA835658B5BDD627A9E3AA5D96647C1FFD8EEA5F6A3CC2956C7"
   },
   "minimal_requirement": {
     "bounded_logarithmic_derivative_sufficient": false,
@@ -433,6 +493,8 @@
     "fixed_channel_Dini_closure_preserved": true,
     "frozen_predictions_unchanged": true,
     "high_energy_fixed_sector_theorem_preserved": true,
+    "logarithmic_speed_Osgood_barrier_allows_unbounded_speed": true,
+    "logarithmic_speed_barrier_beats_local_exponential_growth": true,
     "maximal_flow_dichotomy_does_not_select_infinite_tail_class": true,
     "no_relative_reference_inserted": true,
     "retained_forward_reference_is_not_executable": true,

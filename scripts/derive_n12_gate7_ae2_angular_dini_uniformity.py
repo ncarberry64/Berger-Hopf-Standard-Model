@@ -18,6 +18,7 @@ from bhsm.interface.action_extension_ae2_angular_dini_uniformity import (  # noq
     at_most_linear_radius_agmon_bound,
     angular_uniformity_requirement,
     exponential_radius_angular_counterexample,
+    logarithmic_radius_speed_agmon_bound,
     radius_speed_bound_from_state_controls,
 )
 from bhsm.interface.aether_diagonal_sp1_m4_attachment_v15_50 import RADIUS0  # noqa: E402
@@ -81,6 +82,22 @@ def build_payload() -> dict[str, Any]:
         multiplier_norm_upper=0.1,
         reference_radius=RADIUS0,
     )
+    logarithmic_barrier = logarithmic_radius_speed_agmon_bound(
+        angular_eigenvalue=128.0,
+        radius_at_source_end=1.0,
+        speed_offset=1.0,
+        speed_log_coefficient=0.5,
+        threshold_wave_number=1.0,
+        chirality=1,
+    )
+    logarithmic_partner = logarithmic_radius_speed_agmon_bound(
+        angular_eigenvalue=128.0,
+        radius_at_source_end=1.0,
+        speed_offset=1.0,
+        speed_log_coefficient=0.5,
+        threshold_wave_number=1.0,
+        chirality=-1,
+    )
     summability = at_most_linear_angular_series_witness()
     rows = counterexample["rows"]
     validation = {
@@ -104,6 +121,8 @@ def build_payload() -> dict[str, Any]:
         "barrier_beats_local_exponential_and_polynomial_growth": barrier["beats_exp(C*mu)*mu^d_for_every_fixed_C_and_d"] is True,
         "both_chiralities_have_direct_mu_log_mu_barrier_without_monotonicity": barrier["potential_lower"] == "V_plus>=s_mu^2/2_FOR_mu>=2*v" and partner_barrier["potential_lower"] == "V_minus>=s_mu^2/2_FOR_mu>=2*v" and barrier["radius_monotonicity_assumed"] is False and "mu*log(mu)" in partner_barrier["asymptotic_action_class"],
         "state_control_reduction_is_finite_and_two_sided": math.isfinite(state_control_reduction["proper_radius_speed_upper"]) and state_control_reduction["requires_radius_monotonicity"] is False,
+        "logarithmic_speed_Osgood_barrier_allows_unbounded_speed": logarithmic_barrier["allows_unbounded_radius_speed"] is True and logarithmic_partner["allows_unbounded_radius_speed"] is True,
+        "logarithmic_speed_barrier_beats_local_exponential_growth": logarithmic_barrier["beats_exp(C*mu)*mu^d_for_every_fixed_C_and_d"] is True and "mu*log(log(mu))" in logarithmic_barrier["asymptotic_action_class"],
         "conditional_angular_series_root_test_closes": summability["angular_series_absolutely_summable"] is True and summability["analytic_root_test_limit"] == "minus_infinity",
         "no_relative_reference_inserted": True,
         "strict_gap_power_tail_terminal_recurrence_and_chord3_not_reopened": True,
@@ -159,6 +178,24 @@ def build_payload() -> dict[str, Any]:
             "retained_action_supplies_global_velocity_bound": False,
             "retained_action_supplies_uniform_positive_lapse_margin": False,
         },
+        "conditional_logarithmic_speed_Osgood_class": {
+            "status": "CLOSED_CONDITIONAL_THEOREM",
+            "hypothesis": "ON_EVERY_OUTWARD_PASSAGE_abs(D_tau_R4)<=a+b*log(R4/R_L),_a>0,_b>=0",
+            "turning_radius": "R_turn=mu/(2*k)",
+            "high_angular_range": "mu>=2*(a+b*log(R_turn/R_L))",
+            "two_chirality_potential": "V_chi>=s_mu^2/2",
+            "Osgood_optical_lower": "int_d_tau/R4>=int_(R_L)^R_turn_dR/(R*(a+b*log(R/R_L)))",
+            "agmon_action_for_b_positive": "A_chi_mu(k)>=(mu/(2*b))*log(1+(b/a)*log(mu/(2*k*R_L)))",
+            "asymptotic_action_class": "mu*log(log(mu))",
+            "summability": "exp(C_source*mu)*(1+mu)^d*exp(-2*A_chi_mu(k))_IS_SUMMABLE_BY_ROOT_TEST",
+            "allows_unbounded_radius_speed": True,
+            "radius_monotonicity_required": False,
+            "exact_power_law_assumed": False,
+            "witnesses": {
+                "positive_chirality": logarithmic_barrier,
+                "negative_chirality": logarithmic_partner,
+            },
+        },
         "adjudication": {
             "fixed_channel_source_Dini": "CLOSED_DO_NOT_REOPEN",
             "exact_power_tail_fixed_channel_results": "PRESERVED_DO_NOT_REOPEN",
@@ -168,15 +205,17 @@ def build_payload() -> dict[str, Any]:
             "optical_completeness_proved_by_retained_action": False,
             "optical_completeness_proved_sufficient_for_every_nonasymptotic_tail": False,
             "eventual_two_sided_Lipschitz_radius_sufficient": True,
+            "eventual_logarithmic_speed_Osgood_radius_sufficient": True,
             "radius_monotonicity_required": False,
             "eventual_two_sided_Lipschitz_radius_proved_by_action": False,
+            "eventual_logarithmic_speed_Osgood_radius_proved_by_action": False,
             "action_owned_forward_relative_reference_available": False,
             "BRST_grading_closes_physical_tail": False,
             "spatial_Galerkin_tail_used_as_angular_or_temporal_tail": False,
         },
         "frontier_sharpening": {
             "G7_07_angular_tail": "OPEN_CURRENT_OWNER",
-            "first_branch": "PROVE_THE_ACTUAL_INFINITE_REGULAR_HISTORY_EVENTUALLY_SATISFIES_abs(D_tau_R4)<=v,_WHICH_NOW_CLOSES_THE_LOW_ENERGY_ANGULAR_BARRIER_SUM_WITHOUT_MONOTONICITY",
+            "first_branch": "PROVE_THE_ACTUAL_INFINITE_REGULAR_HISTORY_SATISFIES_THE_WEAKER_OUTWARD_SPEED_ENVELOPE_abs(D_tau_R4)<=a+b*log(R4/R_L),_WHICH_CLOSES_THE_LOW_ENERGY_ANGULAR_BARRIER_SUM_WITHOUT_MONOTONICITY_OR_BOUNDED_SPEED",
             "second_branch": "DERIVE_AN_ALREADY_ACTION_OWNED_FORWARD_RELATIVE_REFERENCE_AND_PROVE_SOURCE_CONTRACTED_RELATIVE_TRACE_CLASS",
             "finite_branch": "USE_THE_RETAINED_COMPACT_RESOLVENT_OPERATOR_IF_THE_ACTUAL_HISTORY_REACHES_EVENT_OR_CANONICAL_STOP",
         },
@@ -188,7 +227,7 @@ def build_payload() -> dict[str, Any]:
             "frozen_predictions_changed": False,
             "FULL_BHSM_COMPLETE": False,
         },
-        "exact_next_dependency": "DERIVE_FROM_THE_RETAINED_CONTINUUM_ACTION_UNIFORM_GLOBAL_COORDINATE_VELOCITY_AND_POSITIVE_LAPSE_MARGIN_CONTROL_SUFFICIENT_FOR_abs(D_tau_R4)<=v_ON_THE_UNIQUE_INFINITE_REGULAR_HISTORY,_OR_PROVE_THE_ABSOLUTE_SPEED_BOUND_DIRECTLY,_OR_USE_THE_FINITE_EVENT_CANONICAL_STOP_BRANCH;_IN_PARALLEL_AUDIT_WHETHER_THE_EXISTING_QUANTUM_REPLACEMENT_IDENTITY_ALREADY_OWNS_A_FORWARD_REFERENCE_OPERATOR_WITHOUT_ADDING_A_COUNTERTERM_OR_NEW_ACTION_TERM",
+        "exact_next_dependency": "DERIVE_FROM_THE_RETAINED_CONTINUUM_ACTION_THE_OUTWARD_OSGOOD_ENVELOPE_abs(D_tau_R4)<=a+b*log(R4/R_L)_ON_THE_UNIQUE_INFINITE_REGULAR_HISTORY,_OR_ANY_NONDECREASING_omega_WITH_omega(R)=o(R)_AND_int^infinity_dR/(R*omega(R))=infinity,_OR_USE_THE_FINITE_EVENT_CANONICAL_STOP_BRANCH;_THE_EXISTING_REFERENCE_AND_CP_Z6_ROUTES_ARE_ALREADY_AUDITED_AND_DO_NOT_CLOSE_THIS_OWNER",
         "inputs": {path.relative_to(ROOT).as_posix(): _sha256(path) for path in INPUTS},
         "validation": validation,
         "validation_passed": all(validation.values()),
