@@ -16,6 +16,7 @@ ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT / "src"))
 
 from bhsm.interface.constraint_projected_replacement_saddle import (  # noqa: E402
+    bordered_kkt_correction,
     kkt_force_decomposition,
     linearized_tangent_correction,
     projected_force,
@@ -82,6 +83,9 @@ def reset_tangent_witness() -> dict[str, Any]:
     linearized = linearized_tangent_correction(
         hessian, log_radius_covector, jacobian
     )
+    bordered = bordered_kkt_correction(
+        hessian, log_radius_covector, jacobian
+    )
     tangent_basis = geometry["tangent_basis"]
     geometry_map = tangent_basis[:37, :]
     geometry_singular_values = np.linalg.svd(geometry_map, compute_uv=False)
@@ -122,6 +126,24 @@ def reset_tangent_witness() -> dict[str, Any]:
         "linearized_witness_positive_definite_on_tangent": linearized[
             "positive_definite_on_tangent"
         ],
+        "bordered_KKT_minimum_singular_value": bordered[
+            "minimum_bordered_singular_value"
+        ],
+        "bordered_KKT_condition_number": bordered[
+            "bordered_condition_number"
+        ],
+        "bordered_KKT_stationarity_residual_norm": bordered[
+            "stationarity_residual_norm"
+        ],
+        "bordered_KKT_constraint_residual_norm": bordered[
+            "constraint_residual_norm"
+        ],
+        "nullspace_bordered_ambient_correction_residual_norm": float(
+            np.linalg.norm(
+                linearized["ambient_correction"]
+                - bordered["ambient_correction"]
+            )
+        ),
     }
 
 
@@ -175,6 +197,13 @@ def build_payload() -> dict[str, Any]:
             witness["linearized_witness_positive_definite_on_tangent"] is True
             and witness["linearized_witness_projected_residual_norm"] < 1.0e-12
         ),
+        "nullspace_and_bordered_KKT_crosscheck_verified": (
+            witness["bordered_KKT_stationarity_residual_norm"] < 1.0e-12
+            and witness["bordered_KKT_constraint_residual_norm"] < 1.0e-12
+            and witness[
+                "nullspace_bordered_ambient_correction_residual_norm"
+            ] < 1.0e-12
+        ),
         "geometry_witness_not_promoted_to_quantum_force": True,
         "no_reset_selector_new_gate_scale_fit_or_frozen_prediction_change": True,
     }
@@ -210,6 +239,11 @@ def build_payload() -> dict[str, Any]:
             "linearized_tangent_equation": (
                 "(N^dagger*H_total*N)*delta_xi=-N^dagger*q_rep"
             ),
+            "bordered_equivalent": (
+                "[[H_total,J^dagger],[J,0]]*[delta_y,delta_lambda]="
+                "[-q_rep,0]"
+            ),
+            "ill_conditioned_H_inverse_formed": False,
             "required_nondegeneracy": (
                 "N^dagger*H_total*N_INVERTIBLE_ON_THE_RETAINED_PHYSICAL_"
                 "TANGENT_AFTER_EXISTING_GAUGE_TIME_AND_SCALE_QUOTIENTS"

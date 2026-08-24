@@ -9,6 +9,7 @@ import numpy as np
 import pytest
 
 from bhsm.interface.constraint_projected_replacement_saddle import (
+    bordered_kkt_correction,
     constraint_tangent_basis,
     kkt_force_decomposition,
     linearized_tangent_correction,
@@ -68,6 +69,21 @@ def test_linearized_correction_solves_projected_newton_equation() -> None:
     assert result["positive_definite_on_tangent"] is True
     assert result["center_eigenvalue_count"] == 0
     assert result["projected_linearized_residual_norm"] < 1.0e-14
+
+
+def test_bordered_and_nullspace_corrections_agree_without_hessian_inverse() -> None:
+    jacobian = np.asarray([[1.0, 0.0, 1.0], [0.0, 1.0, -1.0]])
+    hessian = np.asarray(
+        [[2.0, 0.2, 0.0], [0.2, 3.0, -0.1], [0.0, -0.1, 4.0]]
+    )
+    force = np.asarray([0.2, -0.7, 1.1])
+    quotient = linearized_tangent_correction(hessian, force, jacobian)
+    bordered = bordered_kkt_correction(hessian, force, jacobian)
+    assert np.linalg.norm(
+        quotient["ambient_correction"] - bordered["ambient_correction"]
+    ) < 1.0e-14
+    assert bordered["stationarity_residual_norm"] < 1.0e-14
+    assert bordered["constraint_residual_norm"] < 1.0e-14
 
 
 def test_linearized_correction_rejects_center_or_nonhermitian_hessian() -> None:

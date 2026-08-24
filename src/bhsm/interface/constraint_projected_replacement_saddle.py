@@ -194,7 +194,77 @@ def linearized_tangent_correction(
     }
 
 
+def bordered_kkt_correction(
+    hessian: Any,
+    force_covector: Any,
+    constraint_jacobian: Any,
+    *,
+    hermitian_tolerance: float = 1.0e-11,
+    invertibility_tolerance: float = 1.0e-12,
+) -> dict[str, Any]:
+    """Solve the bordered linearized KKT system without inverting ``H``.
+
+    The system is
+
+    ``[[H,J^*],[J,0]] [delta_y,delta_lambda]^T=[-q,0]^T``.
+
+    No inverse of the kinetic/Hessian block is formed.  A unique bordered
+    solve requires independent constraint rows and a nonsingular reduced
+    Hessian.  The nullspace implementation remains the primary quotient
+    formulation; this routine supplies an algebraically independent
+    cross-check.
+    """
+
+    jacobian = _matrix(constraint_jacobian, "constraint_jacobian")
+    force = _vector(force_covector, jacobian.shape[1], "force_covector")
+    hess = _matrix(hessian, "hessian")
+    dimension = jacobian.shape[1]
+    constraints = jacobian.shape[0]
+    if hess.shape != (dimension, dimension):
+        raise ValueError("hessian has the wrong square shape")
+    hermitian_residual = float(np.linalg.norm(hess - hess.conj().T))
+    scale = max(1.0, float(np.linalg.norm(hess)))
+    if hermitian_residual > hermitian_tolerance * scale:
+        raise ValueError("hessian must be Hermitian within tolerance")
+    singular_values = np.linalg.svd(jacobian, compute_uv=False)
+    row_scale = max(1.0, float(singular_values[0]) if singular_values.size else 1.0)
+    rank = int(np.sum(singular_values > invertibility_tolerance * row_scale))
+    if rank != constraints:
+        raise np.linalg.LinAlgError("constraint rows are not certified independent")
+    zero = np.zeros((constraints, constraints), dtype=np.result_type(hess, jacobian))
+    bordered = np.block([[hess, jacobian.conj().T], [jacobian, zero]])
+    rhs = np.concatenate((
+        -force,
+        np.zeros(constraints, dtype=np.result_type(force, jacobian)),
+    ))
+    bordered_singular_values = np.linalg.svd(bordered, compute_uv=False)
+    bordered_scale = max(1.0, float(bordered_singular_values[0]))
+    minimum = float(bordered_singular_values[-1])
+    if minimum <= invertibility_tolerance * bordered_scale:
+        raise np.linalg.LinAlgError("bordered KKT system is not certified invertible")
+    solution = np.linalg.solve(bordered, rhs)
+    correction = solution[:dimension]
+    multiplier = solution[dimension:]
+    stationarity_residual = hess @ correction + jacobian.conj().T @ multiplier + force
+    constraint_residual = jacobian @ correction
+    return {
+        "ambient_correction": correction,
+        "multiplier_correction": multiplier,
+        "stationarity_residual": stationarity_residual,
+        "constraint_residual": constraint_residual,
+        "stationarity_residual_norm": float(np.linalg.norm(stationarity_residual)),
+        "constraint_residual_norm": float(np.linalg.norm(constraint_residual)),
+        "constraint_rank": rank,
+        "minimum_bordered_singular_value": minimum,
+        "bordered_condition_number": float(
+            bordered_singular_values[0] / bordered_singular_values[-1]
+        ),
+        "hermitian_residual_norm": hermitian_residual,
+    }
+
+
 __all__ = [
+    "bordered_kkt_correction",
     "constraint_tangent_basis",
     "kkt_force_decomposition",
     "linearized_tangent_correction",

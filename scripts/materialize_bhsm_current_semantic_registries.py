@@ -39,6 +39,7 @@ SOURCES = (
     "artifacts/flagship_integration/BHSM_N12_AE2_COVARIANT_SEAM_ENCLOSURE_Z_MINUS_1.json",
     "artifacts/flagship_integration/BHSM_N12_AE2_NEGATIVE_AXIS_SEAM_FAMILY.json",
     "artifacts/flagship_integration/BHSM_N12_CONSTRAINT_PROJECTED_REPLACEMENT_SADDLE.json",
+    "artifacts/flagship_integration/BHSM_N12_JOINT_FINITE_HISTORY_OPERATOR_DATA_GATE.json",
     "artifacts/intrinsic_state_selection/BHSM_N12_FINITE_ENCAPSULATION_LOCAL_BRANCH.json",
     "artifacts/flagship_integration/BHSM_N12_GATE7_AE2_THRESHOLD_SUPERSESSION.json",
     "artifacts/BHSM_alpha_i_update_v4_2.json",
@@ -86,6 +87,7 @@ def verify_current_lineage() -> None:
     seam_enclosure = loaded["artifacts/flagship_integration/BHSM_N12_AE2_COVARIANT_SEAM_ENCLOSURE_Z_MINUS_1.json"]
     seam_family = loaded["artifacts/flagship_integration/BHSM_N12_AE2_NEGATIVE_AXIS_SEAM_FAMILY.json"]
     projected_saddle = loaded["artifacts/flagship_integration/BHSM_N12_CONSTRAINT_PROJECTED_REPLACEMENT_SADDLE.json"]
+    operator_data_gate = loaded["artifacts/flagship_integration/BHSM_N12_JOINT_FINITE_HISTORY_OPERATOR_DATA_GATE.json"]
     frontier = loaded["artifacts/flagship_integration/BHSM_N12_GATE7_AE2_THRESHOLD_SUPERSESSION.json"]
     if ae2.get("action_version") != "BHSM-AE-2.0.0":
         raise RuntimeError("AE2 action version mismatch")
@@ -190,6 +192,21 @@ def verify_current_lineage() -> None:
         ] == "OPEN_COUPLED_TO_FORCE"
     ):
         raise RuntimeError("constraint-projected replacement saddle frontier is not current")
+    if not (
+        operator_data_gate["claim_boundary"][
+            "complete_action_owned_exterior_oracle"
+        ] == "OPEN_CURRENT_OWNER"
+        and operator_data_gate["claim_boundary"][
+            "projected_KKT_solver"
+        ] == "DERIVED"
+        and operator_data_gate["logical_boundary"][
+            "persistence_validation_endpoint_may_be_promoted"
+        ] is False
+        and operator_data_gate["logical_boundary"][
+            "infinite_nonencapsulating_formation_tail_reopened"
+        ] is False
+    ):
+        raise RuntimeError("joint finite-history operator data frontier is not current")
 
 
 def materialize() -> list[Path]:

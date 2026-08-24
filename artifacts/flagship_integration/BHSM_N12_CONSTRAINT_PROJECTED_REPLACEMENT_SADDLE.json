@@ -2,6 +2,10 @@
   "FLAGSHIP_READY": false,
   "FULL_BHSM_COMPLETE": false,
   "actual_N12_reset_witness": {
+    "bordered_KKT_condition_number": 9873307.770467885,
+    "bordered_KKT_constraint_residual_norm": 5.763266503220187e-14,
+    "bordered_KKT_minimum_singular_value": 7.39289546982403e-05,
+    "bordered_KKT_stationarity_residual_norm": 1.012453854192299e-13,
     "boundary_log_R4_covector_ambient_norm": 3.6055807283231815,
     "boundary_log_R4_covector_tangent_projection_norm": 0.18478629584857506,
     "boundary_v": 0.002103523639057069,
@@ -21,6 +25,7 @@
     "normal_only_covector_tangent_projection_norm": 2.4014070621925737e-13,
     "normal_only_multiplier_absorption_residual_norm": 3.754860454104093e-12,
     "normal_only_shifted_force_residual_norm": 3.7548212306927235e-12,
+    "nullspace_bordered_ambient_correction_residual_norm": 8.50872506884178e-13,
     "physical_tangent_dimension": 67
   },
   "artifact": "BHSM_N12_CONSTRAINT_PROJECTED_REPLACEMENT_SADDLE",
@@ -43,10 +48,12 @@
   "exact_next_dependency": "CONSTRUCT_THE_ACTUAL_JOINT_FINITE_HISTORY_HEAT_OPERATOR_AND_ITS_COMPLETE_GEOMETRY_RESET_JET_TO_EVALUATE_N_DAGGER_Q_rep,_AND_CONSTRUCT_THE_CONSTRAINT_REDUCED_GEOMETRY_KKT_HESSIAN_N_DAGGER_H_total_N;_THEN_CERTIFY_EITHER_DIRECT_TRANSFER_N_DAGGER_Q_rep=0_OR_THE_JOINT_NEW_SADDLE_WITHOUT_SELECTING_A_RESET_FIBER_REPRESENTATIVE_BY_HAND",
   "exact_theorem": {
     "ambient_zero_force": "SUFFICIENT_BUT_NOT_NECESSARY",
+    "bordered_equivalent": "[[H_total,J^dagger],[J,0]]*[delta_y,delta_lambda]=[-q_rep,0]",
     "constraint_surface": "C(y)=0_WITH_J=D_C(y)",
     "equivalent_multiplier_statement": "q_rep+J^dagger*(lambda_rep-lambda_class)=0",
     "hessian_distinction": "H_total_HERE_IS_THE_GEOMETRY_RESET_KKT_HESSIAN_NEEDED_TO_LOCATE_THE_ZERO_SOURCE_SADDLE;_IT_IS_NOT_THE_DOWNSTREAM_PAIR_PLUS_CONTACT_SOURCE_HESSIAN_D_A2_Gamma",
     "if_projected_force_is_nonzero": "SOLVE_D_Gamma_total(y)+J(y)^dagger*lambda=0_AND_C(y)=0",
+    "ill_conditioned_H_inverse_formed": false,
     "linearized_tangent_equation": "(N^dagger*H_total*N)*delta_xi=-N^dagger*q_rep",
     "normal_component": "(I-N*N^dagger)q_rep_IS_ABSORBED_BY_THE_KKT_MULTIPLIER",
     "physical_tangent": "T_y=ker(J)_WITH_ORTHONORMAL_BASIS_N",
@@ -82,6 +89,7 @@
     "geometry_witness_not_promoted_to_quantum_force": true,
     "no_reset_selector_new_gate_scale_fit_or_frozen_prediction_change": true,
     "normal_nonzero_force_is_absorbed_by_multiplier": true,
+    "nullspace_and_bordered_KKT_crosscheck_verified": true,
     "projected_linearized_saddle_identity_verified": true,
     "same_replacement_action_accounting_consumed": true
   },

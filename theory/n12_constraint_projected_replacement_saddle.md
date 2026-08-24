@@ -42,6 +42,13 @@ Its linearized tangent correction obeys
 
 `(N^dagger H_total N) delta_xi=-N^dagger q_rep`.
 
+The independently assembled bordered system
+
+`[[H_total,J^dagger],[J,0]][delta_y,delta_lambda]^T=[-q_rep,0]^T`
+
+produces the same ambient correction on the certified reset Jacobian.  This
+cross-check never forms an inverse of the ambient Hessian or kinetic block.
+
 The required `H_total` is the geometry/reset KKT Hessian used to locate the
 zero-source saddle.  It is distinct from the downstream pair-plus-contact
 source Hessian `D_A^2 Gamma`.  Gate stages G7_08 and G7_09 are therefore

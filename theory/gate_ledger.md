@@ -294,6 +294,20 @@
   Hessian is distinct from the downstream pair-plus-contact source Hessian.
   G7_08 and G7_09 are therefore coupled without adding a gate; both the
   actual projected trace covector and joint saddle remain open.
+- Current operator-data inventory: the durable endpoint checkpoint contains
+  one 196-component event-child state and a `57 x 196` first constraint
+  Jacobian, but no proper-time coefficient path, `D_tau`, endpoint form,
+  geometry operator jet, replacement-force covector, or geometry/reset
+  Hessian.  The `1e-7` positive-duration child witness is explicitly a
+  persistence test: its rows store domain/residual norms rather than states
+  or radii, and its validation end is neither a terminal event nor canonical
+  stop.  Domain-parametric assembly and both KKT solvers are already derived.
+  Hence the single highest-upstream missing object is an action-owned
+  complete event-reaching physical-history operator realization on the
+  finite-encapsulation domain or an equivalent actual exterior
+  Weyl--Calderon oracle with its geometry jet, not another algebraic solver.
+  The finite-encapsulation scope is preserved and arbitrary infinite
+  nonencapsulating formation-tail analysis is not reopened.
 - The event-normal identities
   `D_s M=L_spatial(Y(s))-zI-M^2` and
   `D_s(delta M)=delta L-M delta M-delta M M` remain exact arm-transfer
