@@ -177,8 +177,19 @@ a scoped canonical unchanged-action no-go, not an adoption of either phase and
 not a claim against an explicitly versioned action extension or a proof of
 complete graded phase independence.
 
+The structural graded escape route is now separately invalidated. For the
+common scalar Cayley theorem-class subfamily, the exact Robin-minus-Neumann
+temporal relative heat trace at unit heat time is `-0.28620821192209656`.
+The retained four-HS minus 48-Weyl spatial supertrace at unit scaled heat time
+is below `-8.9` with analytic tail below `1e-150`, making the graded response
+difference strictly greater than `2.5`. Thus Ward/BRST does not make the heat
+response phase independent mode by mode or heat time by heat time. This does
+not exclude an actual full-history cancellation after the one fixed `E1`
+integration; that remaining alternative now requires a theorem over the
+entire surviving Cayley family.
+
 `FULL_BHSM_COMPLETE = FALSE`. Exact next object:
-`DERIVE_FROM_EXISTING_RETAINED_TERMS_AN_ACTION_OWNED_NORMAL_MATTER_BOUNDARY_GENERATOR_FIXING_THE_SURVIVING_CAYLEY_PHASES,_OR_PROVE_THE_COMPLETE_GRADED_GATE7_PAIR_PLUS_CONTACT_FUNCTIONAL_IS_INDEPENDENT_OF_THE_ENTIRE_SURVIVING_U1_PARENT_TIMES_U1_CHILD_DOMAIN_FAMILY;_ABSENT_EITHER_THE_UNCHANGED_RETAINED_ACTION_CANNOT_CLOSE_GATE7`.
+`DERIVE_THE_NORMAL_MATTER_BOUNDARY_GENERATOR_FROM_EXISTING_RETAINED_ACTION_TERMS;_THE_UNIVERSAL_WARD_BRST_PHASE_INDEPENDENCE_ROUTE_IS_INVALIDATED._ONLY_AN_ACTUAL_FULL_HISTORY_FIXED_REGULATOR_THEOREM_COVERING_THE_ENTIRE_SURVIVING_CAYLEY_FAMILY_COULD_REPLACE_THAT_GENERATOR`.
 
 ## Prior N12 source-tail checkpoint (superseded)
 

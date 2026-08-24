@@ -165,6 +165,17 @@ matter boundary generator or a theorem proving the complete graded
 pair-plus-contact functional is independent of the entire surviving phase
 family. No phase or new action term is selected here.
 
+The universal graded-cancellation escape route is also now excluded. On the
+common scalar Cayley theorem-class subfamily, the exact Robin-minus-Neumann
+temporal relative heat trace at `t=h=1` is `-0.28620821192209656`. The
+retained four-HS minus 48-Weyl spatial supertrace at `t/R4^2=1` is enclosed
+below `-8.9` with Gaussian tail below `1e-150`; their graded heat-response
+difference is therefore above `2.5`. Ward/BRST is not a heat-time or
+mode-by-mode phase-independence identity. This one-time witness is not
+promoted to the complete fixed-regulator `E1` integral, so only a full actual-
+history theorem covering the entire Cayley family could still replace the
+missing generator.
+
 The matched-parent `Q_xi / Delta H` route remains unavailable because no
 action-owned parent-only restriction exists. No local energy, reset-chart
 representative, or formal reflection may substitute for that missing object.
@@ -231,11 +242,12 @@ Evidence: [`continuum certificate`](artifacts/n12_continuum_majorant_effectivene
 [`E1` high-energy trace-norm theorem](artifacts/flagship_integration/BHSM_N12_FORWARD_E1_HIGH_ENERGY_TRACE_NORM.json),
 [`birth threshold-margin audit`](artifacts/flagship_integration/BHSM_N12_FORWARD_BIRTH_THRESHOLD_MARGIN_AUDIT.json),
 [`matter-domain no-go`](artifacts/flagship_integration/BHSM_N12_FORWARD_MATTER_DOMAIN_NO_GO.json),
+[`graded phase-independence no-go`](artifacts/flagship_integration/BHSM_N12_FORWARD_GRADED_PHASE_INDEPENDENCE_NO_GO.json),
 and [`post-parent observable audit`](artifacts/qxi_relative_energy_preparation/BHSM_POST_PARENT_FLAGSHIP_OBSERVABLE_GATE.json).
 
 Exact next object:
 
-`DERIVE_FROM_EXISTING_RETAINED_TERMS_AN_ACTION_OWNED_NORMAL_MATTER_BOUNDARY_GENERATOR_FIXING_THE_SURVIVING_CAYLEY_PHASES,_OR_PROVE_THE_COMPLETE_GRADED_GATE7_PAIR_PLUS_CONTACT_FUNCTIONAL_IS_INDEPENDENT_OF_THE_ENTIRE_SURVIVING_U1_PARENT_TIMES_U1_CHILD_DOMAIN_FAMILY;_ABSENT_EITHER_THE_UNCHANGED_RETAINED_ACTION_CANNOT_CLOSE_GATE7`
+`DERIVE_THE_NORMAL_MATTER_BOUNDARY_GENERATOR_FROM_EXISTING_RETAINED_ACTION_TERMS;_THE_UNIVERSAL_WARD_BRST_PHASE_INDEPENDENCE_ROUTE_IS_INVALIDATED._ONLY_AN_ACTUAL_FULL_HISTORY_FIXED_REGULATOR_THEOREM_COVERING_THE_ENTIRE_SURVIVING_CAYLEY_FAMILY_COULD_REPLACE_THAT_GENERATOR`
 
 ## Prior N12 source-tail checkpoint (superseded by the continuum certificate above)
 

@@ -104,6 +104,75 @@ def phase_angle(robin_parameter: float) -> float:
     return cmath.phase(cayley_phase(robin_parameter))
 
 
+def robin_neumann_relative_heat_trace(
+    heat_time: float,
+    robin_parameter: float,
+) -> float:
+    """Return the half-line Robin-minus-Neumann relative heat trace.
+
+    For finite ``x=h*sqrt(t)`` the exact value is
+    ``(exp(x**2)*erfc(x)-1)/2``.  The audit uses ``x=1``; the conservative
+    range guard avoids an overflow-prone representation at very large ``x``.
+    """
+
+    time = _positive(heat_time, "heat time")
+    h = _nonnegative(robin_parameter, "Robin parameter")
+    x = h * math.sqrt(time)
+    if x > 25.0:
+        raise ValueError("scaled Robin heat argument exceeds stable range")
+    return 0.5 * (math.exp(x * x) * math.erfc(x) - 1.0)
+
+
+def _gaussian_second_moment_tail(lower: float, scale: float) -> float:
+    """Return ``integral_lower^infinity x^2 exp(-scale*x^2) dx``."""
+
+    point = _positive(lower, "Gaussian tail lower endpoint")
+    a = _positive(scale, "Gaussian scale")
+    return (
+        point * math.exp(-a * point * point) / (2.0 * a)
+        + math.sqrt(math.pi) * math.erfc(math.sqrt(a) * point)
+        / (4.0 * a**1.5)
+    )
+
+
+def hs_weyl_spatial_supertrace_enclosure(
+    dimensionless_heat_time: float,
+    cutoff: int = 20,
+) -> dict[str, float]:
+    """Enclose the retained four-HS minus 48-Weyl spatial heat trace.
+
+    The exact series is
+    ``4 sum_(m>=1)m^2 exp(-a*m^2)``
+    ``-48 sum_(n>=0)(n+1)(n+2) exp(-a*(n+3/2)^2)``.
+    For a decreasing tail, the integral test gives the stated absolute
+    remainder bound.  ``cutoff>=max(2,ceil(1/sqrt(a)))`` enforces that regime.
+    """
+
+    a = _positive(dimensionless_heat_time, "dimensionless heat time")
+    if not isinstance(cutoff, int) or cutoff < max(2, math.ceil(1.0 / math.sqrt(a))):
+        raise ValueError("cutoff must reach the decreasing Gaussian tail")
+    hs_partial = 4.0 * sum(
+        m * m * math.exp(-a * m * m) for m in range(1, cutoff + 1)
+    )
+    weyl_partial = -48.0 * sum(
+        (n + 1) * (n + 2) * math.exp(-a * (n + 1.5) ** 2)
+        for n in range(cutoff + 1)
+    )
+    hs_tail = 4.0 * _gaussian_second_moment_tail(float(cutoff), a)
+    # (n+1)(n+2)=(n+3/2)^2-1/4 <= (n+3/2)^2.
+    weyl_tail = 48.0 * _gaussian_second_moment_tail(cutoff + 1.5, a)
+    partial = hs_partial + weyl_partial
+    remainder = hs_tail + weyl_tail
+    return {
+        "HS_partial": hs_partial,
+        "Weyl_partial": weyl_partial,
+        "graded_partial": partial,
+        "absolute_tail_upper": remainder,
+        "graded_lower": partial - remainder,
+        "graded_upper": partial + remainder,
+    }
+
+
 __all__ = [
     "cayley_phase",
     "half_line_reflection_coefficient",
@@ -111,4 +180,6 @@ __all__ = [
     "compact_indicator_neumann_to_robin_difference",
     "phase_distance",
     "phase_angle",
+    "robin_neumann_relative_heat_trace",
+    "hs_weyl_spatial_supertrace_enclosure",
 ]

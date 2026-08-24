@@ -89,6 +89,11 @@
    that the complete graded Gate-7 pair-plus-contact functional is independent
    of the entire surviving phase family. Do not infer Neumann from a missing
    term and do not insert a phase as policy.
+   Ward/BRST cannot provide a universal replacement: an exact unit-heat-time
+   Robin relative trace times the retained four-HS-minus-48-Weyl spatial
+   supertrace is strictly nonzero on a common Cayley theorem-class subfamily.
+   Only an actual full-history, fixed-regulator independence theorem over the
+   whole surviving phase family remains as an alternative to the generator.
 4. Evaluate the zero-source weak geometry force, solve and certify the
    same-action saddle if it is nonzero, evaluate the physical pair-plus-contact
    Hessian, and close Ward/BRST, continuum/relative-trace, and basis-independent
@@ -106,7 +111,7 @@
 `FULL_BHSM_COMPLETE = FALSE`.
 
 Exact next flagship object:
-`DERIVE_FROM_EXISTING_RETAINED_TERMS_AN_ACTION_OWNED_NORMAL_MATTER_BOUNDARY_GENERATOR_FIXING_THE_SURVIVING_CAYLEY_PHASES,_OR_PROVE_THE_COMPLETE_GRADED_GATE7_PAIR_PLUS_CONTACT_FUNCTIONAL_IS_INDEPENDENT_OF_THE_ENTIRE_SURVIVING_U1_PARENT_TIMES_U1_CHILD_DOMAIN_FAMILY;_ABSENT_EITHER_THE_UNCHANGED_RETAINED_ACTION_CANNOT_CLOSE_GATE7`.
+`DERIVE_THE_NORMAL_MATTER_BOUNDARY_GENERATOR_FROM_EXISTING_RETAINED_ACTION_TERMS;_THE_UNIVERSAL_WARD_BRST_PHASE_INDEPENDENCE_ROUTE_IS_INVALIDATED._ONLY_AN_ACTUAL_FULL_HISTORY_FIXED_REGULATOR_THEOREM_COVERING_THE_ENTIRE_SURVIVING_CAYLEY_FAMILY_COULD_REPLACE_THAT_GENERATOR`.
 
 ## Current corrected-Rayleigh N=3 critical path
 

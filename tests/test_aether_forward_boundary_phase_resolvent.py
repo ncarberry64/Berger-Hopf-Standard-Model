@@ -7,7 +7,9 @@ from bhsm.interface.aether_forward_boundary_phase_resolvent import (
     compact_indicator_neumann_to_robin_difference,
     compact_indicator_resolvent_difference,
     half_line_reflection_coefficient,
+    hs_weyl_spatial_supertrace_enclosure,
     phase_distance,
+    robin_neumann_relative_heat_trace,
 )
 
 
@@ -26,6 +28,15 @@ def test_compact_source_resolvent_difference_exact() -> None:
     assert half_line_reflection_coefficient(1.0, 1.0) == 0.0
     assert direct == pytest.approx(expected)
     assert closed == pytest.approx(expected)
+
+
+def test_graded_relative_heat_factors_are_strictly_nonzero() -> None:
+    temporal = robin_neumann_relative_heat_trace(1.0, 1.0)
+    spatial = hs_weyl_spatial_supertrace_enclosure(1.0, cutoff=20)
+    assert temporal == pytest.approx(-0.2862082119220965)
+    assert spatial["graded_upper"] < -8.9
+    assert spatial["absolute_tail_upper"] < 1.0e-150
+    assert temporal * spatial["graded_upper"] > 2.5
 
 
 @pytest.mark.parametrize(
