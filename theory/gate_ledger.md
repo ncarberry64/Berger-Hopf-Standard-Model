@@ -240,6 +240,23 @@
   margins remain uncontrolled. Gate 7 therefore requires that stability and
   remainder system to force Osgood behavior or an existing event/canonical
   stop.
+- Norman finite-encapsulation physical-domain reclassification:
+  `OWNER_AUTHORIZED_NOT_ACTION_DERIVED`. A forward history that expands
+  forever without completing encapsulation remains a mathematically
+  admissible but nonrealized formation history and carries no physical
+  particle Gate-7 readout at its infinite end. The retained finite-event or
+  canonical-stop operator is already in the compact-resolvent branch; its
+  zero atom has zero first-form weight, and the existing fixed-channel Dini,
+  compact-source high-energy, and spatial Galerkin controls close the
+  angular/source trace obligation on that finite physical domain. Therefore
+  the infinite-angular branch is `CLOSED_BY_PHYSICAL_SCOPE`, without
+  falsifying the expanding solution or deriving an Osgood envelope. The exact
+  current action owner is now only
+  `FINITE_POSITIVE_TIME_COMPLETED_ENCAPSULATION_EXISTENCE_FOR_AT_LEAST_ONE_CERTIFIED_RESET_DATUM`.
+  V14.94 records this theorem as open; universal terminal reachability is not
+  required. Gate 7 remains active until one such realized history and its
+  retained terminal graph are certified, after which the zero-source force,
+  same-action saddle, and pair-plus-contact Hessian may be evaluated.
 - Component-restricted finite branch: the ordered-event transport is exactly
   `D_t e_ord=G0+<alpha,D^(-1)b>`, with selected pole plus hard exterior
   remainder. Uniform action scaling assigns both the pole and remainder

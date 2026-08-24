@@ -174,6 +174,20 @@ is whether those retained corrections exclude or destabilize this expanding
 balance, force an Osgood envelope, or instead drive the history to an
 existing event/canonical stop.
 
+The exact quadratic replay also exposes twelve analytic local-time gauge
+generators
+
+`z_k=(delta v_u_k=sqrt(kappa0/42), delta log(N)_k=1)`.
+
+They annihilate the weight-seven Euler--Dirac velocity/multiplier block to
+machine precision at 96, 192, and 384 quadrature points.  The quadratic
+extractor includes the retained response-normal contribution
+`+(localization/2)*volume*(beta/N)^2`, which vanishes on the round solution
+but is part of the exact transverse Hessian.  The full retained action lifts
+the twelve time-gauge kernel directions at relative order `R^-2` (weight
+five).  Therefore an ordinary inverse of the leading block is undefined and
+cannot be used to promote contamination-scale stability rates.
+
 This is a conditional angular-barrier theorem, not a theorem about the actual
 N12 history.  The current retained action still does not prove even the
 weaker outward Osgood envelope: the maximal-flow dichotomy selects no outcome
@@ -188,3 +202,10 @@ Galerkin tail is a different index and norm.  No reference, counterterm,
 phase, selector, or action term is inserted here.
 
 `FULL_BHSM_COMPLETE=false`.
+
+The later Norman owner ontology restricts realized particle readouts to
+finite positive-time completed encapsulation histories or retained canonical
+stops.  Accordingly, this infinite-history angular obstruction remains true
+mathematically but is closed by scope for physical Gate-7 observables.  The
+current action owner is the existence of at least one finite completed
+encapsulation history, not further arbitrary-tail or transverse analysis.

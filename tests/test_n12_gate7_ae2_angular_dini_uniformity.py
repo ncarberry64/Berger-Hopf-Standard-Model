@@ -245,6 +245,16 @@ def test_artifact_is_validated_and_deterministic() -> None:
     assert replay["rows"][-1][
         "maximum_absolute_normalized_multiplier_constraint_residual"
     ] < 1.0e-6
+    kernel = dominant["weight_seven_kernel_and_weight_five_lift"]
+    assert kernel["kernel_dimension_exhibited"] == 12
+    assert kernel["weight_seven_Euler_Dirac_block_invertible"] is False
+    assert kernel["ordinary_leading_inverse_stability_analysis_authorized"] is False
+    assert all(
+        row["maximum_weight_seven_kernel_residual"] < 1.0e-13
+        for row in kernel["leading_cross_quadrature"]
+    )
+    assert kernel["rescaled_operator_norm_relative_spread"] < 1.0e-5
+    assert kernel["rescaled_minimum_singular_value_relative_spread"] < 1.0e-5
     assert payload["adjudication"]["leading_ADM_cosmological_balance_excludes_constant_positive_log_rate"] is False
     assert payload["conditional_action_state_control_reduction"]["retained_action_supplies_global_velocity_bound"] is False
     assert payload["frontier_sharpening"]["G7_07_angular_tail"] == "OPEN_CURRENT_OWNER"

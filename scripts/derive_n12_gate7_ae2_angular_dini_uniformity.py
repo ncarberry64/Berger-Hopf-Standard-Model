@@ -28,6 +28,7 @@ from bhsm.interface.action_extension_ae2_angular_dini_uniformity import (  # noq
 from bhsm.interface.aether_diagonal_sp1_m4_attachment_v15_50 import RADIUS0  # noqa: E402
 from bhsm.interface.aether_n3_exact_full_local_action_jet_v17_60 import (  # noqa: E402
     exact_full_action_jet_at_state,
+    exact_weight_seven_action_jet_at_state,
 )
 from bhsm.interface.aether_sobolev_galerkin_pencil_lift_v15_81 import (  # noqa: E402
     dimensions,
@@ -154,6 +155,110 @@ def _large_scale_round_replay(kappa0: float) -> dict[str, Any]:
     }
 
 
+def _weight_seven_kernel_and_lift_replay(kappa0: float) -> dict[str, Any]:
+    """Expose the exact lapse/common-velocity kernel and its weight-five lift."""
+
+    order = 12
+    dims = dimensions(order)
+    qdim = dims["coordinates"]
+    mdim = dims["multipliers"]
+    h = math.sqrt(kappa0 / 42.0)
+    q = np.zeros(qdim)
+    velocity = np.zeros(qdim)
+    multipliers = np.zeros(mdim)
+    velocity[0] = h
+    radius7 = RADIUS0**7
+    kernel = np.zeros((qdim + mdim, order))
+    for mode in range(order):
+        kernel[1 + mode, mode] = h
+        kernel[qdim + mode, mode] = 1.0
+    orthonormal_kernel = np.linalg.qr(kernel)[0]
+    leading_rows = []
+    for points in (96, 192, 384):
+        jet = exact_weight_seven_action_jet_at_state(
+            order, q, velocity, multipliers, points=points
+        )
+        gradient = np.real(jet.gradient)
+        hessian = np.real(jet.hessian)
+        block = hessian[qdim:, qdim:] / radius7
+        coordinate_EL = (
+            hessian[qdim:2 * qdim, 0] * h - gradient[:qdim]
+        ) / radius7
+        constraints = gradient[2 * qdim:] / radius7
+        kernel_residuals = [
+            float(np.linalg.norm(block @ kernel[:, mode])
+                  / np.linalg.norm(kernel[:, mode]))
+            for mode in range(order)
+        ]
+        leading_rows.append({
+            "quadrature_points": points,
+            "normalized_action": float(np.real(jet.value)) / radius7,
+            "predicted_normalized_action": -kappa0 / 24.0,
+            "normalized_zero_energy_residual": float(
+                velocity @ gradient[qdim:2 * qdim] - np.real(jet.value)
+            ) / radius7,
+            "maximum_absolute_normalized_coordinate_EL_residual": float(
+                np.max(np.abs(coordinate_EL))
+            ),
+            "maximum_absolute_normalized_multiplier_constraint_residual": (
+                float(np.max(np.abs(constraints)))
+            ),
+            "maximum_weight_seven_kernel_residual": max(kernel_residuals),
+        })
+    lift_rows = []
+    for scale in (2.0, 4.0, 6.0):
+        q_scale = q.copy()
+        q_scale[0] = scale
+        jet = exact_full_action_jet_at_state(
+            order, q_scale, velocity, multipliers, points=192
+        )
+        radius = RADIUS0 * math.exp(scale)
+        full_block = np.real(jet.hessian[qdim:, qdim:]) / radius**7
+        projected = orthonormal_kernel.T @ full_block @ orthonormal_kernel
+        singular = np.linalg.svd(projected, compute_uv=False)
+        lift_rows.append({
+            "q0": scale,
+            "projected_lift_operator_norm": float(singular[0]),
+            "projected_lift_minimum_singular_value": float(singular[-1]),
+            "R_squared_rescaled_operator_norm": float(
+                math.exp(2.0 * scale) * singular[0]
+            ),
+            "R_squared_rescaled_minimum_singular_value": float(
+                math.exp(2.0 * scale) * singular[-1]
+            ),
+        })
+    max_rescaled = [row["R_squared_rescaled_operator_norm"] for row in lift_rows]
+    min_rescaled = [
+        row["R_squared_rescaled_minimum_singular_value"] for row in lift_rows
+    ]
+    return {
+        "kernel_dimension_exhibited": order,
+        "kernel_vectors": (
+            "z_k=(delta_v_u_k=sqrt(kappa0/42),_delta_log_lapse_k=1),_"
+            "k=1,...,12"
+        ),
+        "kernel_origin": (
+            "LOCAL_TIME_REPARAMETRIZATION_CANCELLATION_OF_THE_COMMON_"
+            "EXTRINSIC_CURVATURE_RATE_AT_ZERO_REDUCED_ENERGY"
+        ),
+        "leading_cross_quadrature": leading_rows,
+        "full_action_kernel_lift": lift_rows,
+        "rescaled_operator_norm_relative_spread": (
+            (max(max_rescaled) - min(max_rescaled)) / max(max_rescaled)
+        ),
+        "rescaled_minimum_singular_value_relative_spread": (
+            (max(min_rescaled) - min(min_rescaled)) / max(min_rescaled)
+        ),
+        "lift_scale": "D_FULL_ON_KERNEL/R7=exp(-2*q0)*K5_PLUS_LOWER_WEIGHTS",
+        "weight_seven_Euler_Dirac_block_invertible": False,
+        "ordinary_leading_inverse_stability_analysis_authorized": False,
+        "required_reduction": (
+            "SINGULAR_FESHBACH_OR_DIRAC_REDUCTION_USING_THE_WEIGHT_FIVE_"
+            "KERNEL_LIFT_BEFORE_TRANSVERSE_STABILITY_CAN_BE_ADJUDICATED"
+        ),
+    }
+
+
 def build_payload() -> dict[str, Any]:
     if not all(path.is_file() for path in INPUTS):
         raise FileNotFoundError("angular Dini audit inputs required")
@@ -215,6 +320,9 @@ def build_payload() -> dict[str, Any]:
     large_scale_replay = _large_scale_round_replay(
         float(dominant_balance["cosmological_coefficient"])
     )
+    kernel_lift = _weight_seven_kernel_and_lift_replay(
+        float(dominant_balance["cosmological_coefficient"])
+    )
     summability = at_most_linear_angular_series_witness()
     rows = counterexample["rows"]
     validation = {
@@ -246,6 +354,8 @@ def build_payload() -> dict[str, Any]:
         "exact_weight_seven_energy_and_scale_equations_have_nonzero_expanding_equilibrium": math.isclose(dominant_balance["zero_energy_constraint_residual_at_equilibrium"], 0.0, rel_tol=0.0, abs_tol=1.0e-14) and math.isclose(dominant_balance["scale_equation_residual_at_equilibrium"], 0.0, rel_tol=0.0, abs_tol=1.0e-14) and dominant_balance["expanding_equilibrium_log_rate"] > 0.0,
         "dominant_balance_does_not_prove_full_exponential_history": dominant_balance["full_retained_history_with_this_asymptotic_proved"] is False and dominant_balance["lower_weight_and_transverse_remainders_controlled"] is False,
         "full_action_large_scale_replay_converges_to_weight_seven_balance": large_scale_replay["action_limit_errors_strictly_decrease"] is True and large_scale_replay["normalized_energy_magnitudes_strictly_decrease"] is True and large_scale_replay["normalized_scale_EL_residuals_strictly_decrease"] is True and large_scale_replay["full_coordinate_EL_residuals_strictly_decrease"] is True and large_scale_replay["transverse_coordinate_EL_residuals_strictly_decrease"] is True and large_scale_replay["multiplier_constraint_residuals_strictly_decrease"] is True and large_scale_replay["rows"][-1]["absolute_action_limit_error"] < 2.0e-6 and abs(large_scale_replay["rows"][-1]["normalized_constant_rate_scale_EL_residual_over_R7"]) < 1.0e-5 and large_scale_replay["rows"][-1]["maximum_absolute_normalized_transverse_coordinate_EL_residual"] < 5.0e-6 and large_scale_replay["rows"][-1]["maximum_absolute_normalized_multiplier_constraint_residual"] < 1.0e-6,
+        "exact_weight_seven_full_system_and_kernel_replay_close": all(row["maximum_absolute_normalized_coordinate_EL_residual"] < 1.0e-13 and row["maximum_absolute_normalized_multiplier_constraint_residual"] < 1.0e-13 and row["maximum_weight_seven_kernel_residual"] < 1.0e-13 for row in kernel_lift["leading_cross_quadrature"]),
+        "weight_five_kernel_lift_has_exact_relative_R_minus_two_scaling": kernel_lift["rescaled_operator_norm_relative_spread"] < 1.0e-5 and kernel_lift["rescaled_minimum_singular_value_relative_spread"] < 1.0e-5,
         "conditional_angular_series_root_test_closes": summability["angular_series_absolutely_summable"] is True and summability["analytic_root_test_limit"] == "minus_infinity",
         "no_relative_reference_inserted": True,
         "strict_gap_power_tail_terminal_recurrence_and_chord3_not_reopened": True,
@@ -334,6 +444,7 @@ def build_payload() -> dict[str, Any]:
             "scope": "ROUND_COMMON_SCALE_ANSATZ_AND_COMPLETE_WEIGHT_SEVEN_ADM_PLUS_COSMOLOGICAL_SECTOR",
             "result": dominant_balance,
             "full_action_large_scale_replay": large_scale_replay,
+            "weight_seven_kernel_and_weight_five_lift": kernel_lift,
             "consequence": "THE_COMPLETE_WEIGHT_SEVEN_COORDINATE_AND_MULTIPLIER_EQUATIONS_ADMIT_THE_ROUND_NONZERO_LOG_RATE_DOMINANT_BALANCE_AND_ARE_COMPATIBLE_WITH_FINITE_OPTICAL_LENGTH",
             "not_claimed": "EXISTENCE_OF_A_FULL_RETAINED_EXPONENTIAL_HISTORY_OR_INCOMPATIBILITY_OF_THE_RETAINED_ACTION",
         },
@@ -351,13 +462,14 @@ def build_payload() -> dict[str, Any]:
             "eventual_two_sided_Lipschitz_radius_proved_by_action": False,
             "eventual_logarithmic_speed_Osgood_radius_proved_by_action": False,
             "leading_ADM_cosmological_balance_excludes_constant_positive_log_rate": False,
+            "weight_seven_Euler_Dirac_block_invertible": False,
             "action_owned_forward_relative_reference_available": False,
             "BRST_grading_closes_physical_tail": False,
             "spatial_Galerkin_tail_used_as_angular_or_temporal_tail": False,
         },
         "frontier_sharpening": {
             "G7_07_angular_tail": "OPEN_CURRENT_OWNER",
-            "first_branch": "PROVE_THAT_THE_LOWER_WEIGHT_RETAINED_CORRECTIONS_OR_THE_LINEARIZED_TRANSVERSE_DYNAMICS_DESTABILIZE_OR_EXCLUDE_THE_FULL_WEIGHT_SEVEN_ROUND_CONSTANT_POSITIVE_LOG_RATE_BALANCE_AND_FORCE_THE_OUTWARD_OSGOOD_ENVELOPE_abs(D_tau_R4)<=a+b*log(R4/R_L)",
+            "first_branch": "PERFORM_THE_SINGULAR_FESHBACH_DIRAC_REDUCTION_ON_THE_EXACT_12_DIMENSIONAL_WEIGHT_SEVEN_KERNEL_USING_ITS_WEIGHT_FIVE_LIFT,_THEN_TEST_WHETHER_THE_REDUCED_TRANSVERSE_DYNAMICS_EXCLUDE_THE_ROUND_EXPANDING_BRANCH_OR_FORCE_THE_OUTWARD_OSGOOD_ENVELOPE",
             "second_branch": "DERIVE_AN_ALREADY_ACTION_OWNED_FORWARD_RELATIVE_REFERENCE_AND_PROVE_SOURCE_CONTRACTED_RELATIVE_TRACE_CLASS",
             "finite_branch": "USE_THE_RETAINED_COMPACT_RESOLVENT_OPERATOR_IF_THE_ACTUAL_HISTORY_REACHES_EVENT_OR_CANONICAL_STOP",
         },
@@ -369,7 +481,7 @@ def build_payload() -> dict[str, Any]:
             "frozen_predictions_changed": False,
             "FULL_BHSM_COMPLETE": False,
         },
-        "exact_next_dependency": "DERIVE_THE_LINEARIZED_TRANSVERSE_STABILITY_AND_NONLINEAR_LOWER_WEIGHT_REMAINDER_SYSTEM_ABOUT_THE_FULL_WEIGHT_SEVEN_ROUND_EXPANDING_BALANCE;_EITHER_PROVE_THAT_IT_IS_EXCLUDED_OR_DESTABILIZED_STRONGLY_ENOUGH_TO_FORCE_AN_OUTWARD_OSGOOD_ENVELOPE_OR_SHOW_THAT_THE_BRANCH_REACHES_AN_EXISTING_EVENT_OR_CANONICAL_STOP;_THE_COMPLETE_WEIGHT_SEVEN_COORDINATE_AND_MULTIPLIER_EQUATIONS_ALONE_CANNOT_CLOSE_G7_07",
+        "exact_next_dependency": "DERIVE_THE_SINGULAR_FESHBACH_DIRAC_REDUCTION_OF_THE_LINEARIZED_FLOW_ABOUT_THE_FULL_WEIGHT_SEVEN_ROUND_EXPANDING_BALANCE_ON_THE_EXACT_12_DIMENSIONAL_KERNEL_z_k=(delta_v_u_k=sqrt(kappa0/42),delta_log_lapse_k=1),_USING_THE_WEIGHT_FIVE_R_MINUS_TWO_LIFT;_THEN_CERTIFY_THE_REDUCED_CENTER_STABILITY_OR_AN_EXISTING_EVENT_CANONICAL_STOP;_AN_ORDINARY_INVERSE_OF_THE_LEADING_EULER_DIRAC_BLOCK_IS_NOT_DEFINED",
         "inputs": {path.relative_to(ROOT).as_posix(): _sha256(path) for path in INPUTS},
         "validation": validation,
         "validation_passed": all(validation.values()),
