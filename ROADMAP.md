@@ -35,10 +35,12 @@
    integrable fixed-channel Riccati variation bound, for every infinite regular
    Friedrichs end.
    Compactly supported weak variations at such ends are now closed directly by
-   relative-form/resolvent identities. Evaluate or enclose their actual
-   fixed-channel Poisson contractions and the common pair/contact terms, then
-   assemble the zero-source weak force before addressing noncompact saddle
-   variations.
+   relative-form/resolvent identities. The certified two-chord core now gives
+   broad scalar/de Rham Weyl and core-supported first/mixed contraction bounds
+   at `z=-1`. Derive the corresponding product-Dirac comparison enclosure,
+   combine all retained-channel Poisson bounds with the common pair/contact
+   incidence and certified spatial tail, then assemble the zero-source weak
+   force before addressing noncompact saddle variations.
    Do not identify (z) with momentum squared.
 4. Evaluate the zero-source weak geometry force, solve and certify the
    same-action saddle if it is nonzero, evaluate the physical pair-plus-contact
@@ -55,6 +57,9 @@
    reopening retired periodic-cycle machinery or retuning frozen predictions.
 
 `FULL_BHSM_COMPLETE = FALSE`.
+
+Exact next flagship object:
+`DERIVE_THE_PRODUCT_DIRAC_FIXED_CHANNEL_COMPARISON_ENCLOSURE_AND_COMBINE_ALL_RETAINED_CHANNEL_POISSON_BOUNDS_WITH_THE_COMMON_PAIR_CONTACT_INCIDENCE_AND_CERTIFIED_SPATIAL_TAIL;_THEN_ASSEMBLE_THE_ZERO_SOURCE_WEAK_FORCE`.
 
 ## Current corrected-Rayleigh N=3 critical path
 

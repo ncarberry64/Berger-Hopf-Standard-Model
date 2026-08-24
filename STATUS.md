@@ -88,10 +88,17 @@ For compactly supported weak geometry tests, the infinite-end `C1/C2` issue is
 also closed: the endpoint domain does not move, and the first/mixed Weyl
 derivatives are finite Poisson--form and Dirichlet-resolvent contractions at
 real `z<0`. This proves the variation formulas, not their actual maximal-
-history values or the zero-source force.
+history values or the zero-source force. At the concrete probe `z=-1`, the
+two certified chords nevertheless give rigorous scalar/de Rham
+Sturm-comparison intervals for the maximal-history birth Weyl values, because
+the unknown retained nonnegative future enters only through a nonnegative
+inward graph. They also bound first/mixed log-radius contractions for
+directions supported inside that known core. The constant-channel upper bound
+remains above `4e7`; product-Dirac channels, pair/contact assembly, the spatial
+tail combination, and the zero-source force remain open.
 
 `FULL_BHSM_COMPLETE = FALSE`. Exact next object:
-`EVALUATE_OR_RIGOROUSLY_ENCLOSE_THE_FIXED_CHANNEL_POISSON_WEYL_CONTRACTIONS_AND_COMMON_PAIR_CONTACT_TERMS_FOR_THE_ACTUAL_MAXIMAL_HISTORY_ON_A_NONEMPTY_NEGATIVE_z_REGION;_ASSEMBLE_THE_ZERO_SOURCE_WEAK_GEOMETRY_FORCE_BEFORE_ANY_GLOBAL_SADDLE_VARIATION`.
+`DERIVE_THE_PRODUCT_DIRAC_FIXED_CHANNEL_COMPARISON_ENCLOSURE_AND_COMBINE_ALL_RETAINED_CHANNEL_POISSON_BOUNDS_WITH_THE_COMMON_PAIR_CONTACT_INCIDENCE_AND_CERTIFIED_SPATIAL_TAIL;_THEN_ASSEMBLE_THE_ZERO_SOURCE_WEAK_FORCE`.
 
 ## Prior N12 source-tail checkpoint (superseded)
 

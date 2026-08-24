@@ -79,12 +79,16 @@
   enclosure for general noncompact variations: `OPEN_IF_REQUIRED_BY_SADDLE`.
 - Infinite-Friedrichs compact-support weak Weyl first/mixed variations:
   `DERIVED_BY_RELATIVE_FORM_AND_DIRICHLET_RESOLVENT_IDENTITIES`.
-- Actual fixed-channel Poisson/Weyl contraction values and common pair/contact
-  terms on a negative-`z` region: `OPEN`.
+- Two-chord scalar/de Rham birth Weyl intervals at `z=-1`:
+  `ENCLOSED_BROADLY_BY_STURM_COMPARISON_WITH_NONNEGATIVE_FUTURE_GRAPH`.
+- Scalar/de Rham first/mixed log-radius contractions supported inside the
+  certified two-chord core: `ENCLOSED_BROADLY_BY_POISSON_ENERGY_AND_RESOLVENT_BOUNDS`.
+- Product-Dirac fixed-channel enclosures, common pair/contact terms, and
+  certified spatial-tail assembly: `OPEN`.
 - Zero-source force, same-action saddle, physical pair-plus-contact Hessian,
   Ward/BRST closure, and basis-independent scalar observable map: `OPEN`.
 - Exact next flagship dependency:
-  `EVALUATE_OR_RIGOROUSLY_ENCLOSE_THE_FIXED_CHANNEL_POISSON_WEYL_CONTRACTIONS_AND_COMMON_PAIR_CONTACT_TERMS_FOR_THE_ACTUAL_MAXIMAL_HISTORY_ON_A_NONEMPTY_NEGATIVE_z_REGION;_ASSEMBLE_THE_ZERO_SOURCE_WEAK_GEOMETRY_FORCE_BEFORE_ANY_GLOBAL_SADDLE_VARIATION`.
+  `DERIVE_THE_PRODUCT_DIRAC_FIXED_CHANNEL_COMPARISON_ENCLOSURE_AND_COMBINE_ALL_RETAINED_CHANNEL_POISSON_BOUNDS_WITH_THE_COMMON_PAIR_CONTACT_INCIDENCE_AND_CERTIFIED_SPATIAL_TAIL;_THEN_ASSEMBLE_THE_ZERO_SOURCE_WEAK_FORCE`.
 
 ## Prior N12 dynamic-Calderon continuum gates (superseded)
 
