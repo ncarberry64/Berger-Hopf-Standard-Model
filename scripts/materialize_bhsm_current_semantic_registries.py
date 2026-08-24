@@ -116,8 +116,9 @@ def verify_current_lineage() -> None:
     if angular_dini["conditional_at_most_linear_sufficient_class"]["status"] != "CLOSED_CONDITIONAL_THEOREM":
         raise RuntimeError("at-most-linear angular barrier theorem is not closed conditionally")
     if not (
-        angular_dini["adjudication"]["eventual_nondecreasing_at_most_linear_radius_sufficient"] is True
-        and angular_dini["adjudication"]["eventual_nondecreasing_at_most_linear_radius_proved_by_action"] is False
+        angular_dini["adjudication"]["eventual_two_sided_Lipschitz_radius_sufficient"] is True
+        and angular_dini["adjudication"]["radius_monotonicity_required"] is False
+        and angular_dini["adjudication"]["eventual_two_sided_Lipschitz_radius_proved_by_action"] is False
     ):
         raise RuntimeError("current angular owner is not the action-to-radius bound")
 

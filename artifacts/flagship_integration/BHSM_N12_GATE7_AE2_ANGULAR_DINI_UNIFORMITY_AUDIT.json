@@ -7,13 +7,14 @@
     "action_owned_forward_relative_reference_available": false,
     "arbitrary_positive_tail_angular_sum": "FALSE",
     "bounded_log_derivative_monotonicity_and_smoothness_suffice": false,
-    "eventual_nondecreasing_at_most_linear_radius_proved_by_action": false,
-    "eventual_nondecreasing_at_most_linear_radius_sufficient": true,
+    "eventual_two_sided_Lipschitz_radius_proved_by_action": false,
+    "eventual_two_sided_Lipschitz_radius_sufficient": true,
     "exact_power_tail_fixed_channel_results": "PRESERVED_DO_NOT_REOPEN",
     "finite_optical_length_compatible_with_absolute_angular_sum": false,
     "fixed_channel_source_Dini": "CLOSED_DO_NOT_REOPEN",
     "optical_completeness_proved_by_retained_action": false,
     "optical_completeness_proved_sufficient_for_every_nonasymptotic_tail": false,
+    "radius_monotonicity_required": false,
     "spatial_Galerkin_tail_used_as_angular_or_temporal_tail": false
   },
   "artifact": "BHSM_N12_GATE7_AE2_ANGULAR_DINI_UNIFORMITY_AUDIT",
@@ -26,10 +27,33 @@
     "zero_source_force": "OPEN"
   },
   "classification": "THE_COMPACT_VOL_TERRA_THEOREM_CLOSES_EVERY_FIXED_FACTORIZED_CHANNEL_BUT_IS_NOT_UNIFORM_IN_THE_SIGNED_S3_DIRAC_LEVEL;_THE_SMOOTH_POSITIVE_NON_POWER_HISTORY_R4=exp(tau)_HAS_BOUNDED_LOG_DERIVATIVE_AND_FINITE_OPTICAL_LENGTH,_AND_THE_EXACT_POSITIVE_CHIRALITY_ZERO_TRANSFER_NORMALIZATION_FORCES_THE_LEVEL_n_SOURCE_DINI_COEFFICIENT_TO_GROW_AT_LEAST_AS_exp(2*(n+3/2));_WITH_QUADRATIC_WEYL_DEGENERACY_THE_ABSOLUTE_ANGULAR_TERMS_DO_NOT_TEND_TO_ZERO",
+  "conditional_action_state_control_reduction": {
+    "identity": "abs(D_tau_R4)=R4*abs(D_q_x[v])/N_boundary",
+    "result": "abs(D_tau_R4)<=(R0/2)*exp(sqrt(1+N)*Q+sqrt(N)*M)*sqrt(1+2N)*V",
+    "retained_action_supplies_global_coordinate_bound": false,
+    "retained_action_supplies_global_velocity_bound": false,
+    "retained_action_supplies_uniform_positive_lapse_margin": false,
+    "status": "EXACT_FINITE_N_REDUCTION_GLOBAL_HYPOTHESES_OPEN",
+    "uniform_hypotheses": "sup_norm(q)<=Q,_sup_norm(v)<=V,_sup_norm(multipliers)<=M",
+    "witness": {
+      "bound": "abs(D_tau_R4)<=(R0/2)*exp(sqrt(1+N)*Q+sqrt(N)*M)*sqrt(1+2N)*V",
+      "coordinate_norm_upper": 0.25,
+      "galerkin_order": 12,
+      "global_state_controls_proved_by_retained_action": false,
+      "inverse_boundary_lapse_upper": 1.4139824580805163,
+      "log_radius_coordinate_rate_numerator_upper": 2.5,
+      "multiplier_norm_upper": 0.1,
+      "proper_radius_speed_upper": 8.807969654104516,
+      "radius_upper": 2.491677206819482,
+      "reference_radius": 2.0232708255441265,
+      "requires_radius_monotonicity": false,
+      "velocity_norm_upper": 0.5
+    }
+  },
   "conditional_at_most_linear_sufficient_class": {
     "agmon_action_lower": {
       "negative_chirality": "A_minus_mu(k)>=(mu/(2*v))*log(mu/(2*k*R_L))_FOR_mu>=2*v",
-      "positive_chirality": "A_plus_mu(k)>=(sqrt(3)*mu/(2*v))*log(mu/(2*k*R_L))"
+      "positive_chirality": "A_plus_mu(k)>=(mu/(2*v))*log(mu/(2*k*R_L))_FOR_mu>=2*v"
     },
     "barrier_range": "R_L+v*(tau-L)<=mu/(2*k)",
     "barrier_witnesses": {
@@ -44,6 +68,7 @@
         "exact_power_law_assumed": false,
         "log_squared_amplitude_suppression_upper": -20.117973905426254,
         "potential_lower": "V_minus>=s_mu^2/2_FOR_mu>=2*v",
+        "radius_monotonicity_assumed": false,
         "radius_speed_upper": 1.0,
         "radius_upper_at_source_end": 1.25,
         "reciprocal_linear_envelope_integral_diverges": true,
@@ -51,29 +76,29 @@
         "threshold_wave_number": 1.0
       },
       "positive_chirality": {
-        "agmon_action_lower": 17.42267647477157,
+        "agmon_action_lower": 10.058986952713127,
         "angular_eigenvalue": 12.5,
-        "asymptotic_action_class": "(0.8660254037844386/v)*mu*log(mu)+O(mu)",
+        "asymptotic_action_class": "(0.5/v)*mu*log(mu)+O(mu)",
         "beats_every_fixed_polynomial_multiplicity": true,
         "beats_exp(C*mu)*mu^d_for_every_fixed_C_and_d": true,
         "chirality": 1,
         "envelope_turning_distance": 5.0,
         "exact_power_law_assumed": false,
-        "log_squared_amplitude_suppression_upper": -34.84535294954314,
-        "potential_lower": "V_plus>=s_mu^2",
+        "log_squared_amplitude_suppression_upper": -20.117973905426254,
+        "potential_lower": "V_plus>=s_mu^2/2_FOR_mu>=2*v",
+        "radius_monotonicity_assumed": false,
         "radius_speed_upper": 1.0,
         "radius_upper_at_source_end": 1.25,
         "reciprocal_linear_envelope_integral_diverges": true,
-        "squared_amplitude_suppression_upper": 7.359621747089245e-16,
+        "squared_amplitude_suppression_upper": 1.8317868871678289e-09,
         "threshold_wave_number": 1.0
       }
     },
     "exact_power_law_assumed": false,
-    "hypothesis": "AFTER_COMPACT_SOURCE_0<=D_tau_R4<=v<infinity",
+    "hypothesis": "AFTER_COMPACT_SOURCE_abs(D_tau_R4)<=v<infinity",
     "local_source_growth_class": "exp(C_source*mu)*(1+mu)^d",
-    "negative_chirality": "DIRECT_BOUND:_V_minus=s_mu^2+D_tau_s_mu=s_mu^2-mu*(D_tau_R4)/R4^2>=s_mu^2/2_FOR_mu>=2*v;_ON_s_mu>=2*k_THIS_GIVES_sqrt(V_minus-k^2)>=s_mu/2",
+    "monotonicity_required": false,
     "optical_consequence": "integral_L^infinity_d_tau/R4=infinity",
-    "positive_chirality_potential": "V_plus=s_mu^2-D_tau_s_mu=s_mu^2+mu*(D_tau_R4)/R4^2>=s_mu^2",
     "radius_envelope": "R4(tau)<=R_L+v*(tau-L)",
     "root_test_witness": {
       "analytic_root_test_limit": "minus_infinity",
@@ -89,7 +114,7 @@
           "log_weighted_tail_term_upper": 15.722990894696679,
           "negative_chirality_log_suppression_upper": -12.68251013395723,
           "nth_root_log_upper": 1.746998988299631,
-          "positive_chirality_log_suppression_upper": -21.96675191952109
+          "positive_chirality_log_suppression_upper": -12.68251013395723
         },
         {
           "angular_eigenvalue": 10.5,
@@ -98,7 +123,7 @@
           "log_weighted_tail_term_upper": 15.701000625938928,
           "negative_chirality_log_suppression_upper": -15.06838751553789,
           "nth_root_log_upper": 1.5701000625938928,
-          "positive_chirality_log_suppression_upper": -26.09921276504819
+          "positive_chirality_log_suppression_upper": -15.06838751553789
         },
         {
           "angular_eigenvalue": 11.5,
@@ -107,7 +132,7 @@
           "log_weighted_tail_term_upper": 15.553267087039956,
           "negative_chirality_log_suppression_upper": -17.549647490193067,
           "nth_root_log_upper": 1.413933371549087,
-          "positive_chirality_log_suppression_upper": -30.396881107938018
+          "positive_chirality_log_suppression_upper": -17.549647490193067
         },
         {
           "angular_eigenvalue": 12.5,
@@ -116,7 +141,7 @@
           "log_weighted_tail_term_upper": 15.29278483635128,
           "negative_chirality_log_suppression_upper": -20.117973905426254,
           "nth_root_log_upper": 1.2743987363626068,
-          "positive_chirality_log_suppression_upper": -34.84535294954314
+          "positive_chirality_log_suppression_upper": -20.117973905426254
         },
         {
           "angular_eigenvalue": 13.5,
@@ -125,7 +150,7 @@
           "log_weighted_tail_term_upper": 14.930208724508027,
           "negative_chirality_log_suppression_upper": -22.76638587319809,
           "nth_root_log_upper": 1.1484775941929253,
-          "positive_chirality_log_suppression_upper": -39.432537037097426
+          "positive_chirality_log_suppression_upper": -22.76638587319809
         },
         {
           "angular_eigenvalue": 14.5,
@@ -134,7 +159,7 @@
           "log_weighted_tail_term_upper": 14.47442029119139,
           "negative_chirality_log_suppression_upper": -25.488939804509418,
           "nth_root_log_upper": 1.0338871636565279,
-          "positive_chirality_log_suppression_upper": -44.148138772475036
+          "positive_chirality_log_suppression_upper": -25.488939804509418
         },
         {
           "angular_eigenvalue": 15.5,
@@ -143,7 +168,7 @@
           "log_weighted_tail_term_upper": 13.932927496834925,
           "negative_chirality_log_suppression_upper": -28.280514026791213,
           "nth_root_log_upper": 0.9288618331223283,
-          "positive_chirality_log_suppression_upper": -48.98328715856668
+          "positive_chirality_log_suppression_upper": -28.280514026791213
         },
         {
           "angular_eigenvalue": 16.5,
@@ -152,7 +177,7 @@
           "log_weighted_tail_term_upper": 13.312154314683607,
           "negative_chirality_log_suppression_upper": -31.136649209034264,
           "nth_root_log_upper": 0.8320096446677254,
-          "positive_chirality_log_suppression_upper": -53.93025840749664
+          "positive_chirality_log_suppression_upper": -31.136649209034264
         },
         {
           "angular_eigenvalue": 17.5,
@@ -161,7 +186,7 @@
           "log_weighted_tail_term_upper": 12.61765531986913,
           "negative_chirality_log_suppression_upper": -34.053427608467985,
           "nth_root_log_upper": 0.7422150188158312,
-          "positive_chirality_log_suppression_upper": -58.98226678973526
+          "positive_chirality_log_suppression_upper": -34.053427608467985
         },
         {
           "angular_eigenvalue": 18.5,
@@ -170,7 +195,7 @@
           "log_weighted_tail_term_upper": 11.854277858391498,
           "negative_chirality_log_suppression_upper": -37.0273800038873,
           "nth_root_log_upper": 0.658570992132861,
-          "positive_chirality_log_suppression_upper": -64.13330343789269
+          "positive_chirality_log_suppression_upper": -37.0273800038873
         },
         {
           "angular_eigenvalue": 19.5,
@@ -179,7 +204,7 @@
           "log_weighted_tail_term_upper": 11.026286737514297,
           "negative_chirality_log_suppression_upper": -40.05541280706315,
           "nth_root_log_upper": 0.5803308809218052,
-          "positive_chirality_log_suppression_upper": -69.37801009997848
+          "positive_chirality_log_suppression_upper": -40.05541280706315
         },
         {
           "angular_eigenvalue": 20.5,
@@ -188,7 +213,7 @@
           "log_weighted_tail_term_upper": 10.13746157799521,
           "negative_chirality_log_suppression_upper": -43.134750162539255,
           "nth_root_log_upper": 0.5068730788997605,
-          "positive_chirality_log_suppression_upper": -74.71157885330787
+          "positive_chirality_log_suppression_upper": -43.134750162539255
         },
         {
           "angular_eigenvalue": 21.5,
@@ -197,7 +222,7 @@
           "log_weighted_tail_term_upper": 9.191173866763066,
           "negative_chirality_log_suppression_upper": -46.26288737007843,
           "nth_root_log_upper": 0.43767494603633644,
-          "positive_chirality_log_suppression_upper": -80.12967142981235
+          "positive_chirality_log_suppression_upper": -46.26288737007843
         },
         {
           "angular_eigenvalue": 22.5,
@@ -206,7 +231,7 @@
           "log_weighted_tail_term_upper": 8.190448694535519,
           "negative_chirality_log_suppression_upper": -49.43755299006494,
           "nth_root_log_upper": 0.37229312247888724,
-          "positive_chirality_log_suppression_upper": -85.62835358067115
+          "positive_chirality_log_suppression_upper": -49.43755299006494
         },
         {
           "angular_eigenvalue": 23.5,
@@ -215,7 +240,7 @@
           "log_weighted_tail_term_upper": 7.138014772217701,
           "negative_chirality_log_suppression_upper": -52.656677697985025,
           "nth_root_log_upper": 0.31034846835729135,
-          "positive_chirality_log_suppression_upper": -91.20404113068905
+          "positive_chirality_log_suppression_upper": -52.656677697985025
         },
         {
           "angular_eigenvalue": 24.5,
@@ -224,7 +249,7 @@
           "log_weighted_tail_term_upper": 6.036345359582626,
           "negative_chirality_log_suppression_upper": -55.9183684490749,
           "nth_root_log_upper": 0.2515143899826094,
-          "positive_chirality_log_suppression_upper": -96.8534552301542
+          "positive_chirality_log_suppression_upper": -55.9183684490749
         },
         {
           "angular_eigenvalue": 25.5,
@@ -233,14 +258,16 @@
           "log_weighted_tail_term_upper": 4.887692064567965,
           "negative_chirality_log_suppression_upper": -59.22088686740074,
           "nth_root_log_upper": 0.19550768258271858,
-          "positive_chirality_log_suppression_upper": -102.57358492362657
+          "positive_chirality_log_suppression_upper": -59.22088686740074
         }
       ],
       "source_exponential_rate": 2.0,
       "weighted_log_terms_strictly_decrease": true
     },
     "status": "CLOSED_CONDITIONAL_THEOREM",
-    "summability": "exp(C_source*mu)*(1+mu)^d*exp(-2*A_mu(k))_IS_SUMMABLE_IN_mu_BY_ROOT_TEST"
+    "summability": "exp(C_source*mu)*(1+mu)^d*exp(-2*A_mu(k))_IS_SUMMABLE_IN_mu_BY_ROOT_TEST",
+    "two_chirality_potential": "V_chi=s_mu^2+/-mu*(D_tau_R4)/R4^2>=s_mu^2/2_FOR_mu>=2*v",
+    "two_sided_direct_bound": "abs(D_tau_R4)<=v_IMPLIES_V_plus_AND_V_minus>=s_mu^2/2_FOR_mu>=2*v;_ON_s_mu>=2*k_THIS_GIVES_sqrt(V_chi-k^2)>=s_mu/2"
   },
   "counterexample": {
     "absolute_angular_source_Dini_sum_finite": false,
@@ -354,11 +381,11 @@
     "source_hypothesis": "h>=0_AND_H=int_delta^L_h(t)*r(t)dt>0",
     "zero_transfer_normalization": "N_mu^2=(2/pi)*exp(2*mu*I)"
   },
-  "exact_next_dependency": "DERIVE_FROM_THE_RETAINED_CONTINUUM_ACTION_AN_EVENTUAL_GLOBAL_BOUND_0<=D_tau_R4<=v_ON_THE_UNIQUE_INFINITE_REGULAR_HISTORY,_OR_USE_THE_FINITE_EVENT_CANONICAL_STOP_BRANCH;_IN_PARALLEL_AUDIT_WHETHER_THE_EXISTING_QUANTUM_REPLACEMENT_IDENTITY_ALREADY_OWNS_A_FORWARD_REFERENCE_OPERATOR_WITHOUT_ADDING_A_COUNTERTERM_OR_NEW_ACTION_TERM",
+  "exact_next_dependency": "DERIVE_FROM_THE_RETAINED_CONTINUUM_ACTION_UNIFORM_GLOBAL_COORDINATE_VELOCITY_AND_POSITIVE_LAPSE_MARGIN_CONTROL_SUFFICIENT_FOR_abs(D_tau_R4)<=v_ON_THE_UNIQUE_INFINITE_REGULAR_HISTORY,_OR_PROVE_THE_ABSOLUTE_SPEED_BOUND_DIRECTLY,_OR_USE_THE_FINITE_EVENT_CANONICAL_STOP_BRANCH;_IN_PARALLEL_AUDIT_WHETHER_THE_EXISTING_QUANTUM_REPLACEMENT_IDENTITY_ALREADY_OWNS_A_FORWARD_REFERENCE_OPERATOR_WITHOUT_ADDING_A_COUNTERTERM_OR_NEW_ACTION_TERM",
   "frontier_sharpening": {
     "G7_07_angular_tail": "OPEN_CURRENT_OWNER",
     "finite_branch": "USE_THE_RETAINED_COMPACT_RESOLVENT_OPERATOR_IF_THE_ACTUAL_HISTORY_REACHES_EVENT_OR_CANONICAL_STOP",
-    "first_branch": "PROVE_THE_ACTUAL_INFINITE_REGULAR_HISTORY_EVENTUALLY_SATISFIES_0<=D_tau_R4<=v,_WHICH_NOW_CLOSES_THE_LOW_ENERGY_ANGULAR_BARRIER_SUM",
+    "first_branch": "PROVE_THE_ACTUAL_INFINITE_REGULAR_HISTORY_EVENTUALLY_SATISFIES_abs(D_tau_R4)<=v,_WHICH_NOW_CLOSES_THE_LOW_ENERGY_ANGULAR_BARRIER_SUM_WITHOUT_MONOTONICITY",
     "second_branch": "DERIVE_AN_ALREADY_ACTION_OWNED_FORWARD_RELATIVE_REFERENCE_AND_PROVE_SOURCE_CONTRACTED_RELATIVE_TRACE_CLASS"
   },
   "inputs": {
@@ -370,9 +397,9 @@
     "artifacts/flagship_integration/BHSM_N12_GATE7_AE2_COMPACT_SOURCE_DINI_CLOSURE.json": "E1E735CBA8FC9D5FBC28B2AB93B0EA17803191D69F081C7A194224360A18CF27",
     "artifacts/intrinsic_state_selection/BHSM_N12_CONTINUUM_MAXIMAL_FLOW_DICHOTOMY.json": "F75E3CEE4EE4D0768027770FEFECAC1A17994B4297AE344E3FC2D83F86B002A9",
     "artifacts/intrinsic_state_selection/BHSM_N12_GLOBAL_FLOW_COERCIVE_CONTROL_GATE.json": "0A6C1BED930316B8EFF8BBE110078AE1C582E638E6BC42445330CC276EC2A2C4",
-    "scripts/derive_n12_gate7_ae2_angular_dini_uniformity.py": "B66EE72014E6A54DF11FBAC0485126330988BF27F045F5F53193FC106D35D8FE",
-    "src/bhsm/interface/action_extension_ae2_angular_dini_uniformity.py": "110117A7EE4164C322709CF1C889E4CBC65D930DECCF0958389EF73EADDA67B1",
-    "theory/bhsm_action_ae2_angular_dini_uniformity.md": "B912F5BBB417BF037B1058E1713430A49FB25337EFEA4C338ADB0FF5436001C3"
+    "scripts/derive_n12_gate7_ae2_angular_dini_uniformity.py": "C49F979BC7698C5311D139876A90CE092D9768EB1D05AA31E3CB28DA681DC8CD",
+    "src/bhsm/interface/action_extension_ae2_angular_dini_uniformity.py": "6F1041D87E96041498319F7EAE9C0A448F41042680FE65A40623C1F786F0796C",
+    "theory/bhsm_action_ae2_angular_dini_uniformity.md": "57923224EB50E9A853C9B45588B971B35BECA929F355F26C8AA8807FE65EAF24"
   },
   "minimal_requirement": {
     "bounded_logarithmic_derivative_sufficient": false,
@@ -390,13 +417,14 @@
     "BRST_physical_leading_coefficient_nonzero": true,
     "FULL_BHSM_COMPLETE_false": true,
     "absolute_angular_sum_is_not_closed_for_arbitrary_tails": true,
-    "action_does_not_currently_prove_global_radius_speed_sign_or_bound": true,
+    "action_does_not_currently_prove_global_absolute_radius_speed_bound": true,
     "action_does_not_currently_prove_optical_completeness": true,
     "all_inputs_validated": true,
     "angular_terms_fail_even_to_tend_to_zero": true,
     "at_most_linear_barrier_has_mu_log_mu_action": true,
     "at_most_linear_radius_implies_optical_completeness": true,
     "barrier_beats_local_exponential_and_polynomial_growth": true,
+    "both_chiralities_have_direct_mu_log_mu_barrier_without_monotonicity": true,
     "conditional_angular_series_root_test_closes": true,
     "counterexample_has_bounded_log_derivative": true,
     "counterexample_has_finite_optical_length": true,
@@ -406,10 +434,10 @@
     "frozen_predictions_unchanged": true,
     "high_energy_fixed_sector_theorem_preserved": true,
     "maximal_flow_dichotomy_does_not_select_infinite_tail_class": true,
-    "negative_chirality_has_direct_mu_log_mu_barrier": true,
     "no_relative_reference_inserted": true,
     "retained_forward_reference_is_not_executable": true,
     "spatial_Galerkin_tail_not_repurposed": true,
+    "state_control_reduction_is_finite_and_two_sided": true,
     "strict_gap_power_tail_terminal_recurrence_and_chord3_not_reopened": true
   },
   "validation_passed": true

@@ -157,14 +157,17 @@ def at_most_linear_radius_agmon_bound(
 ) -> dict[str, float | bool | str]:
     """Return the high-angular barrier from an at-most-linear radius envelope.
 
-    Assume after the compact source that ``0<=R4'<=v``. Then
-    ``R4(t)<=R_L+v(t-L)``. For positive chirality, ``s=mu/R4`` and
-    ``K=A* A=-d2+s^2-s'`` has ``V_plus>=s^2``. For negative chirality,
-    ``A A*`` has ``V_minus=s^2+s'>=s^2/2`` once ``mu>=2v``. Up to the
-    envelope turning point ``R_L+v(t-L)=mu/(2k)``, one has ``s>=2k``.
-    Thus the forbidden-region square roots are at least
-    ``sqrt(3)*s/2`` and ``s/2``, respectively. Integrating the reciprocal
-    linear envelope gives the stated ``mu*log(mu)`` actions.
+    Assume after the compact source that ``abs(R4')<=v``. Then
+    ``R4(t)<=R_L+v(t-L)``. For either chirality, ``s=mu/R4`` and the
+    corresponding squared factor has
+
+    ``V_chi=s^2+/-mu*R4'/R4^2 >= s^2/2``
+
+    once ``mu>=2v``. Up to the envelope turning point
+    ``R_L+v(t-L)=mu/(2k)``, one has ``s>=2k``. Thus the forbidden-region
+    square root is at least ``s/2`` for both chiralities. Integrating the
+    reciprocal linear envelope gives the stated ``mu*log(mu)`` action.
+    No monotonicity hypothesis is used.
     """
 
     mu = float(angular_eigenvalue)
@@ -198,15 +201,16 @@ def at_most_linear_radius_agmon_bound(
             "beats_exp(C*mu)*mu^d_for_every_fixed_C_and_d": True,
             "reciprocal_linear_envelope_integral_diverges": True,
             "exact_power_law_assumed": False,
+            "radius_monotonicity_assumed": False,
         }
-    if sign == 1:
-        action_factor = math.sqrt(3.0) / 2.0
-        potential_lower = "V_plus>=s_mu^2"
-    else:
-        if mu < 2.0 * speed:
-            raise ValueError("negative-chirality bound requires mu>=2*v")
-        action_factor = 0.5
-        potential_lower = "V_minus>=s_mu^2/2_FOR_mu>=2*v"
+    if mu < 2.0 * speed:
+        raise ValueError("two-sided Lipschitz bound requires mu>=2*v")
+    action_factor = 0.5
+    potential_lower = (
+        "V_plus>=s_mu^2/2_FOR_mu>=2*v"
+        if sign == 1
+        else "V_minus>=s_mu^2/2_FOR_mu>=2*v"
+    )
     action = action_factor * mu * math.log(ratio) / speed
     turning_distance = (mu / (2.0 * k) - radius) / speed
     log_suppression = -2.0 * action
@@ -227,6 +231,67 @@ def at_most_linear_radius_agmon_bound(
         "beats_exp(C*mu)*mu^d_for_every_fixed_C_and_d": True,
         "reciprocal_linear_envelope_integral_diverges": True,
         "exact_power_law_assumed": False,
+        "radius_monotonicity_assumed": False,
+    }
+
+
+def radius_speed_bound_from_state_controls(
+    *,
+    galerkin_order: int,
+    coordinate_norm_upper: float,
+    velocity_norm_upper: float,
+    multiplier_norm_upper: float,
+    reference_radius: float,
+) -> dict[str, float | bool | str]:
+    """Reduce a proper-radius speed bound to retained state controls.
+
+    In the exact N-mode attachment chart,
+
+    ``R4=(R0/2)exp(q0+u_L-(1/2)log(cosh(2v_L)))``
+
+    and ``D_tau R4=R4*(D_q x . qdot)/N_boundary``. Euclidean Cauchy--
+    Schwarz and ``log(cosh)>=0`` therefore give
+
+    ``R4 <= (R0/2)exp(sqrt(1+N) Q)``,
+    ``abs(D_q x . qdot) <= sqrt(1+2N) V``, and
+    ``N_boundary^-1 <= exp(sqrt(N) M)``.
+
+    Here ``Q,V,M`` uniformly bound the coordinate, velocity, and multiplier
+    coefficient norms. The returned product is a sufficient two-sided
+    proper-radius Lipschitz constant. This is a conditional reduction, not a
+    claim that the retained action supplies the three global bounds.
+    """
+
+    order = int(galerkin_order)
+    q_bound = float(coordinate_norm_upper)
+    v_bound = float(velocity_norm_upper)
+    m_bound = float(multiplier_norm_upper)
+    radius0 = float(reference_radius)
+    values = (q_bound, v_bound, m_bound, radius0)
+    if order < 1 or not all(math.isfinite(value) for value in values):
+        raise ValueError("positive order and finite state-control inputs required")
+    if q_bound < 0.0 or v_bound < 0.0 or m_bound < 0.0 or radius0 <= 0.0:
+        raise ValueError("nonnegative norm bounds and positive reference radius required")
+    radius_upper = 0.5 * radius0 * math.exp(math.sqrt(1.0 + order) * q_bound)
+    inverse_lapse_upper = math.exp(math.sqrt(float(order)) * m_bound)
+    log_rate_numerator_upper = math.sqrt(1.0 + 2.0 * order) * v_bound
+    speed_upper = radius_upper * inverse_lapse_upper * log_rate_numerator_upper
+    return {
+        "galerkin_order": order,
+        "coordinate_norm_upper": q_bound,
+        "velocity_norm_upper": v_bound,
+        "multiplier_norm_upper": m_bound,
+        "reference_radius": radius0,
+        "radius_upper": radius_upper,
+        "inverse_boundary_lapse_upper": inverse_lapse_upper,
+        "log_radius_coordinate_rate_numerator_upper": log_rate_numerator_upper,
+        "proper_radius_speed_upper": speed_upper,
+        "bound": (
+            "abs(D_tau_R4)<=(R0/2)*exp(sqrt(1+N)*Q+sqrt(N)*M)"
+            "*sqrt(1+2N)*V"
+        ),
+        "requires_radius_monotonicity": False,
+        "global_state_controls_proved_by_retained_action": False,
     }
 
 
@@ -311,4 +376,5 @@ __all__ = [
     "angular_uniformity_requirement",
     "exponential_radius_angular_counterexample",
     "integrable_optical_tail_dini_coefficient_lower",
+    "radius_speed_bound_from_state_controls",
 ]

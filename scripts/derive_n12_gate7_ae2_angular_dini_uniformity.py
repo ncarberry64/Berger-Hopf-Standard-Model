@@ -4,6 +4,7 @@ from __future__ import annotations
 
 import hashlib
 import json
+import math
 from pathlib import Path
 import sys
 from typing import Any
@@ -17,7 +18,9 @@ from bhsm.interface.action_extension_ae2_angular_dini_uniformity import (  # noq
     at_most_linear_radius_agmon_bound,
     angular_uniformity_requirement,
     exponential_radius_angular_counterexample,
+    radius_speed_bound_from_state_controls,
 )
+from bhsm.interface.aether_diagonal_sp1_m4_attachment_v15_50 import RADIUS0  # noqa: E402
 
 
 TARGET = ROOT / "artifacts/flagship_integration/BHSM_N12_GATE7_AE2_ANGULAR_DINI_UNIFORMITY_AUDIT.json"
@@ -71,6 +74,13 @@ def build_payload() -> dict[str, Any]:
         threshold_wave_number=1.0,
         chirality=-1,
     )
+    state_control_reduction = radius_speed_bound_from_state_controls(
+        galerkin_order=12,
+        coordinate_norm_upper=0.25,
+        velocity_norm_upper=0.5,
+        multiplier_norm_upper=0.1,
+        reference_radius=RADIUS0,
+    )
     summability = at_most_linear_angular_series_witness()
     rows = counterexample["rows"]
     validation = {
@@ -87,12 +97,13 @@ def build_payload() -> dict[str, Any]:
         "BRST_physical_leading_coefficient_nonzero": brst["exact_asymptotic"]["leading_scaled_limit"] == "-5*sqrt(pi)",
         "retained_forward_reference_is_not_executable": heat_trace["source_audit"]["action_owned_forward_reference_operator_available"] is False and heat_trace["source_audit"]["relative_heat_trace_class_theorem_on_current_history_available"] is False,
         "action_does_not_currently_prove_optical_completeness": radius["claim_boundary"]["maximal_x_history_numerically_enclosed"] is False and coercive["owned_and_missing_energy_structure"]["coercive_S2_bound_on_continuum_child_component"] is False,
-        "action_does_not_currently_prove_global_radius_speed_sign_or_bound": coercive["validation"]["ADM_velocity_form_has_both_signs"] is True and radius["remaining_variational_owner"]["global_DV_and_D2V_enclosures_on_maximal_component"] == "OPEN",
+        "action_does_not_currently_prove_global_absolute_radius_speed_bound": coercive["validation"]["ADM_velocity_form_has_both_signs"] is True and radius["remaining_variational_owner"]["global_DV_and_D2V_enclosures_on_maximal_component"] == "OPEN",
         "maximal_flow_dichotomy_does_not_select_infinite_tail_class": flow["ordered_event"]["outcome_selected"] is False,
         "at_most_linear_radius_implies_optical_completeness": barrier["reciprocal_linear_envelope_integral_diverges"] is True,
         "at_most_linear_barrier_has_mu_log_mu_action": "mu*log(mu)" in barrier["asymptotic_action_class"],
         "barrier_beats_local_exponential_and_polynomial_growth": barrier["beats_exp(C*mu)*mu^d_for_every_fixed_C_and_d"] is True,
-        "negative_chirality_has_direct_mu_log_mu_barrier": partner_barrier["potential_lower"] == "V_minus>=s_mu^2/2_FOR_mu>=2*v" and "mu*log(mu)" in partner_barrier["asymptotic_action_class"],
+        "both_chiralities_have_direct_mu_log_mu_barrier_without_monotonicity": barrier["potential_lower"] == "V_plus>=s_mu^2/2_FOR_mu>=2*v" and partner_barrier["potential_lower"] == "V_minus>=s_mu^2/2_FOR_mu>=2*v" and barrier["radius_monotonicity_assumed"] is False and "mu*log(mu)" in partner_barrier["asymptotic_action_class"],
+        "state_control_reduction_is_finite_and_two_sided": math.isfinite(state_control_reduction["proper_radius_speed_upper"]) and state_control_reduction["requires_radius_monotonicity"] is False,
         "conditional_angular_series_root_test_closes": summability["angular_series_absolutely_summable"] is True and summability["analytic_root_test_limit"] == "minus_infinity",
         "no_relative_reference_inserted": True,
         "strict_gap_power_tail_terminal_recurrence_and_chord3_not_reopened": True,
@@ -118,24 +129,35 @@ def build_payload() -> dict[str, Any]:
         "minimal_requirement": requirement,
         "conditional_at_most_linear_sufficient_class": {
             "status": "CLOSED_CONDITIONAL_THEOREM",
-            "hypothesis": "AFTER_COMPACT_SOURCE_0<=D_tau_R4<=v<infinity",
+            "hypothesis": "AFTER_COMPACT_SOURCE_abs(D_tau_R4)<=v<infinity",
             "radius_envelope": "R4(tau)<=R_L+v*(tau-L)",
             "optical_consequence": "integral_L^infinity_d_tau/R4=infinity",
-            "positive_chirality_potential": "V_plus=s_mu^2-D_tau_s_mu=s_mu^2+mu*(D_tau_R4)/R4^2>=s_mu^2",
+            "two_chirality_potential": "V_chi=s_mu^2+/-mu*(D_tau_R4)/R4^2>=s_mu^2/2_FOR_mu>=2*v",
             "barrier_range": "R_L+v*(tau-L)<=mu/(2*k)",
             "agmon_action_lower": {
-                "positive_chirality": "A_plus_mu(k)>=(sqrt(3)*mu/(2*v))*log(mu/(2*k*R_L))",
+                "positive_chirality": "A_plus_mu(k)>=(mu/(2*v))*log(mu/(2*k*R_L))_FOR_mu>=2*v",
                 "negative_chirality": "A_minus_mu(k)>=(mu/(2*v))*log(mu/(2*k*R_L))_FOR_mu>=2*v",
             },
             "local_source_growth_class": "exp(C_source*mu)*(1+mu)^d",
             "summability": "exp(C_source*mu)*(1+mu)^d*exp(-2*A_mu(k))_IS_SUMMABLE_IN_mu_BY_ROOT_TEST",
-            "negative_chirality": "DIRECT_BOUND:_V_minus=s_mu^2+D_tau_s_mu=s_mu^2-mu*(D_tau_R4)/R4^2>=s_mu^2/2_FOR_mu>=2*v;_ON_s_mu>=2*k_THIS_GIVES_sqrt(V_minus-k^2)>=s_mu/2",
+            "monotonicity_required": False,
+            "two_sided_direct_bound": "abs(D_tau_R4)<=v_IMPLIES_V_plus_AND_V_minus>=s_mu^2/2_FOR_mu>=2*v;_ON_s_mu>=2*k_THIS_GIVES_sqrt(V_chi-k^2)>=s_mu/2",
             "exact_power_law_assumed": False,
             "barrier_witnesses": {
                 "positive_chirality": barrier,
                 "negative_chirality": partner_barrier,
             },
             "root_test_witness": summability,
+        },
+        "conditional_action_state_control_reduction": {
+            "status": "EXACT_FINITE_N_REDUCTION_GLOBAL_HYPOTHESES_OPEN",
+            "identity": "abs(D_tau_R4)=R4*abs(D_q_x[v])/N_boundary",
+            "uniform_hypotheses": "sup_norm(q)<=Q,_sup_norm(v)<=V,_sup_norm(multipliers)<=M",
+            "result": "abs(D_tau_R4)<=(R0/2)*exp(sqrt(1+N)*Q+sqrt(N)*M)*sqrt(1+2N)*V",
+            "witness": state_control_reduction,
+            "retained_action_supplies_global_coordinate_bound": False,
+            "retained_action_supplies_global_velocity_bound": False,
+            "retained_action_supplies_uniform_positive_lapse_margin": False,
         },
         "adjudication": {
             "fixed_channel_source_Dini": "CLOSED_DO_NOT_REOPEN",
@@ -145,15 +167,16 @@ def build_payload() -> dict[str, Any]:
             "finite_optical_length_compatible_with_absolute_angular_sum": False,
             "optical_completeness_proved_by_retained_action": False,
             "optical_completeness_proved_sufficient_for_every_nonasymptotic_tail": False,
-            "eventual_nondecreasing_at_most_linear_radius_sufficient": True,
-            "eventual_nondecreasing_at_most_linear_radius_proved_by_action": False,
+            "eventual_two_sided_Lipschitz_radius_sufficient": True,
+            "radius_monotonicity_required": False,
+            "eventual_two_sided_Lipschitz_radius_proved_by_action": False,
             "action_owned_forward_relative_reference_available": False,
             "BRST_grading_closes_physical_tail": False,
             "spatial_Galerkin_tail_used_as_angular_or_temporal_tail": False,
         },
         "frontier_sharpening": {
             "G7_07_angular_tail": "OPEN_CURRENT_OWNER",
-            "first_branch": "PROVE_THE_ACTUAL_INFINITE_REGULAR_HISTORY_EVENTUALLY_SATISFIES_0<=D_tau_R4<=v,_WHICH_NOW_CLOSES_THE_LOW_ENERGY_ANGULAR_BARRIER_SUM",
+            "first_branch": "PROVE_THE_ACTUAL_INFINITE_REGULAR_HISTORY_EVENTUALLY_SATISFIES_abs(D_tau_R4)<=v,_WHICH_NOW_CLOSES_THE_LOW_ENERGY_ANGULAR_BARRIER_SUM_WITHOUT_MONOTONICITY",
             "second_branch": "DERIVE_AN_ALREADY_ACTION_OWNED_FORWARD_RELATIVE_REFERENCE_AND_PROVE_SOURCE_CONTRACTED_RELATIVE_TRACE_CLASS",
             "finite_branch": "USE_THE_RETAINED_COMPACT_RESOLVENT_OPERATOR_IF_THE_ACTUAL_HISTORY_REACHES_EVENT_OR_CANONICAL_STOP",
         },
@@ -165,7 +188,7 @@ def build_payload() -> dict[str, Any]:
             "frozen_predictions_changed": False,
             "FULL_BHSM_COMPLETE": False,
         },
-        "exact_next_dependency": "DERIVE_FROM_THE_RETAINED_CONTINUUM_ACTION_AN_EVENTUAL_GLOBAL_BOUND_0<=D_tau_R4<=v_ON_THE_UNIQUE_INFINITE_REGULAR_HISTORY,_OR_USE_THE_FINITE_EVENT_CANONICAL_STOP_BRANCH;_IN_PARALLEL_AUDIT_WHETHER_THE_EXISTING_QUANTUM_REPLACEMENT_IDENTITY_ALREADY_OWNS_A_FORWARD_REFERENCE_OPERATOR_WITHOUT_ADDING_A_COUNTERTERM_OR_NEW_ACTION_TERM",
+        "exact_next_dependency": "DERIVE_FROM_THE_RETAINED_CONTINUUM_ACTION_UNIFORM_GLOBAL_COORDINATE_VELOCITY_AND_POSITIVE_LAPSE_MARGIN_CONTROL_SUFFICIENT_FOR_abs(D_tau_R4)<=v_ON_THE_UNIQUE_INFINITE_REGULAR_HISTORY,_OR_PROVE_THE_ABSOLUTE_SPEED_BOUND_DIRECTLY,_OR_USE_THE_FINITE_EVENT_CANONICAL_STOP_BRANCH;_IN_PARALLEL_AUDIT_WHETHER_THE_EXISTING_QUANTUM_REPLACEMENT_IDENTITY_ALREADY_OWNS_A_FORWARD_REFERENCE_OPERATOR_WITHOUT_ADDING_A_COUNTERTERM_OR_NEW_ACTION_TERM",
         "inputs": {path.relative_to(ROOT).as_posix(): _sha256(path) for path in INPUTS},
         "validation": validation,
         "validation_passed": all(validation.values()),

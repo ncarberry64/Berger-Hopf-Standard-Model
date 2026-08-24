@@ -15,6 +15,7 @@ from bhsm.interface.action_extension_ae2_angular_dini_uniformity import (
     angular_uniformity_requirement,
     exponential_radius_angular_counterexample,
     integrable_optical_tail_dini_coefficient_lower,
+    radius_speed_bound_from_state_controls,
 )
 
 
@@ -83,8 +84,24 @@ def test_at_most_linear_radius_has_mu_log_mu_barrier() -> None:
         threshold_wave_number=1.0,
         chirality=-1,
     )
+    assert high["potential_lower"] == "V_plus>=s_mu^2/2_FOR_mu>=2*v"
     assert partner["potential_lower"] == "V_minus>=s_mu^2/2_FOR_mu>=2*v"
-    assert 0.0 < partner["agmon_action_lower"] < high["agmon_action_lower"]
+    assert partner["agmon_action_lower"] == high["agmon_action_lower"]
+    assert high["radius_monotonicity_assumed"] is False
+
+
+def test_state_controls_give_exact_two_sided_radius_speed_bound() -> None:
+    row = radius_speed_bound_from_state_controls(
+        galerkin_order=3,
+        coordinate_norm_upper=0.25,
+        velocity_norm_upper=0.5,
+        multiplier_norm_upper=0.125,
+        reference_radius=2.0,
+    )
+    expected = math.exp(2.0 * 0.25 + math.sqrt(3.0) * 0.125) * math.sqrt(7.0) * 0.5
+    assert row["proper_radius_speed_upper"] == pytest.approx(expected)
+    assert row["requires_radius_monotonicity"] is False
+    assert row["global_state_controls_proved_by_retained_action"] is False
 
 
 def test_at_most_linear_root_test_beats_compact_source_growth() -> None:
@@ -142,7 +159,9 @@ def test_artifact_is_validated_and_deterministic() -> None:
     assert payload["adjudication"]["fixed_channel_source_Dini"] == "CLOSED_DO_NOT_REOPEN"
     assert payload["adjudication"]["arbitrary_positive_tail_angular_sum"] == "FALSE"
     assert payload["conditional_at_most_linear_sufficient_class"]["status"] == "CLOSED_CONDITIONAL_THEOREM"
-    assert payload["adjudication"]["eventual_nondecreasing_at_most_linear_radius_sufficient"] is True
-    assert payload["adjudication"]["eventual_nondecreasing_at_most_linear_radius_proved_by_action"] is False
+    assert payload["adjudication"]["eventual_two_sided_Lipschitz_radius_sufficient"] is True
+    assert payload["adjudication"]["radius_monotonicity_required"] is False
+    assert payload["adjudication"]["eventual_two_sided_Lipschitz_radius_proved_by_action"] is False
+    assert payload["conditional_action_state_control_reduction"]["retained_action_supplies_global_velocity_bound"] is False
     assert payload["frontier_sharpening"]["G7_07_angular_tail"] == "OPEN_CURRENT_OWNER"
     assert payload["FULL_BHSM_COMPLETE"] is False
