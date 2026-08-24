@@ -129,6 +129,15 @@ has the required `Lambda^(3/2)` compact-source counting law, whereas the
 Neumann threshold has only `Lambda^(1/2)`. The free comparison is not the N12
 exterior: continuous-threshold regularity of the action-owned physical graph,
 the high-energy tail, and the graded angular sum remain open.
+The high-energy **integrability** part is now closed for the retained compact
+weak class. The heat sandwich
+`T_h=exp(-K/2) P_h exp(-K/2)` is trace class because the local vertices have
+finite differential order and the unit-time heat operator is smoothing. Its
+weighted spectral measure gives
+`H_h <= ||T_h||_1 < infinity` without a global heat trace or spectral gap.
+This is an existence bound, not yet an explicit numerical N12 angular-tail
+enclosure. The continuous low-energy exponent and force evaluation remain
+open.
 
 The matched-parent `Q_xi / Delta H` route remains unavailable because no
 action-owned parent-only restriction exists. No local energy, reset-chart
@@ -158,6 +167,7 @@ representative, or formal reflection may substitute for that missing object.
 | BRST grading as complete physical heat-tail cancellation | **FALSE; LEADING COEFFICIENT `-5 sqrt(pi)`** |
 | Source-weighted spectral criterion sufficient for first `E1` force | **DERIVED; N12 CONSTANTS OPEN** |
 | Two-chord scalar threshold margin / product-Dirac zero-atom weight | **DERIVED; CONTINUOUS THRESHOLD OPEN** |
+| Compact weak `E1` high-energy integrability | **DERIVED BY HEAT-SANDWICH TRACE NORM; NUMERIC TAIL OPEN** |
 | Physical `R4` action projection and coordinate jets | **DERIVED** |
 | Local first/second Euler--Dirac Jacobi/radius tube | **CERTIFIED; MAXIMAL COVER OPEN** |
 | Finite regular pre-stop Jacobi/transfer cover | **AUTOMATIC BY COMPACTNESS** |
@@ -189,11 +199,12 @@ Evidence: [`continuum certificate`](artifacts/n12_continuum_majorant_effectivene
 [`BRST` heat-tail cancellation audit](artifacts/flagship_integration/BHSM_N12_FORWARD_BRST_HEAT_TAIL_CANCELLATION_AUDIT.json),
 [`E1` source-weighted measure criterion](artifacts/flagship_integration/BHSM_N12_FORWARD_E1_SOURCE_MEASURE_CRITERION.json),
 [`threshold source-measure audit`](artifacts/flagship_integration/BHSM_N12_FORWARD_THRESHOLD_SOURCE_MEASURE_AUDIT.json),
+[`E1` high-energy trace-norm theorem](artifacts/flagship_integration/BHSM_N12_FORWARD_E1_HIGH_ENERGY_TRACE_NORM.json),
 and [`post-parent observable audit`](artifacts/qxi_relative_energy_preparation/BHSM_POST_PARENT_FLAGSHIP_OBSERVABLE_GATE.json).
 
 Exact next object:
 
-`PROVE_AN_ACTION_OWNED_LIMITING_ABSORPTION_OR_WEYL_THRESHOLD_ESTIMATE_FOR_THE_CONTINUOUS_SOURCE_WEIGHTED_MEASURE,_BOUND_ITS_E1_WEIGHTED_HIGH_ENERGY_TAIL,_AND_ASSEMBLE_THE_GRADED_ANGULAR_SUM;_THEN_SIGN_ADJUDICATE_THE_ZERO_SOURCE_FORCE`
+`PROVE_THE_ACTION_OWNED_CONTINUOUS_LOW_ENERGY_LIMITING_ABSORPTION_OR_WEYL_THRESHOLD_ESTIMATE_WITH_STRICTLY_SUPERLINEAR_SOURCE_WEIGHTED_COUNTING;_THEN_COMPUTE_OR_ENCLOSE_THE_GRADED_FIXED_CHANNEL_AND_ANGULAR_SUM_TO_SIGN_ADJUDICATE_THE_ZERO_SOURCE_FORCE`
 
 ## Prior N12 source-tail checkpoint (superseded by the continuum certificate above)
 

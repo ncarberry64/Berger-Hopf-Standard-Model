@@ -144,9 +144,17 @@ half-line comparison shows the precise remaining dichotomy: positive regular
 Robin data give `Lambda^(3/2)`, while Neumann/resonant data give only
 `Lambda^(1/2)`. The actual N12 limiting-absorption/Weyl threshold class is
 still open and no free exterior has been selected.
+For compactly supported weak directions, high-energy integrability is no
+longer an independent hypothesis. The unit heat sandwich
+`exp(-K/2) P_h exp(-K/2)` is trace class, so the `E1`-weighted tail above
+unit spectral energy is bounded by its trace norm. This does not evaluate the
+actual N12 angular tail or make the unperturbed infinite-volume heat trace
+finite. The active analytic obstruction is now the continuous low-energy
+threshold law; the active computational obligation after it is a numerical
+fixed-channel/angular enclosure and force sign.
 
 `FULL_BHSM_COMPLETE = FALSE`. Exact next object:
-`PROVE_AN_ACTION_OWNED_LIMITING_ABSORPTION_OR_WEYL_THRESHOLD_ESTIMATE_FOR_THE_CONTINUOUS_SOURCE_WEIGHTED_MEASURE,_BOUND_ITS_E1_WEIGHTED_HIGH_ENERGY_TAIL,_AND_ASSEMBLE_THE_GRADED_ANGULAR_SUM;_THEN_SIGN_ADJUDICATE_THE_ZERO_SOURCE_FORCE`.
+`PROVE_THE_ACTION_OWNED_CONTINUOUS_LOW_ENERGY_LIMITING_ABSORPTION_OR_WEYL_THRESHOLD_ESTIMATE_WITH_STRICTLY_SUPERLINEAR_SOURCE_WEIGHTED_COUNTING;_THEN_COMPUTE_OR_ENCLOSE_THE_GRADED_FIXED_CHANNEL_AND_ANGULAR_SUM_TO_SIGN_ADJUDICATE_THE_ZERO_SOURCE_FORCE`.
 
 ## Prior N12 source-tail checkpoint (superseded)
 

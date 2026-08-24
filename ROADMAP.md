@@ -68,6 +68,10 @@
    positive-Robin `Lambda^(3/2)` comparison to the actual exterior. Prove the
    action-owned continuous limiting-absorption/Weyl threshold estimate and
    rule out the Neumann/resonant `Lambda^(1/2)` class on the physical graph.
+   High-energy integrability for this compact weak class is already closed by
+   the trace-class heat sandwich. What remains at high energy is an explicit
+   computable angular-tail enclosure for sign adjudication, not existence of
+   the E1 integral.
    Do not identify (z) with momentum squared.
 4. Evaluate the zero-source weak geometry force, solve and certify the
    same-action saddle if it is nonzero, evaluate the physical pair-plus-contact
@@ -86,7 +90,7 @@
 `FULL_BHSM_COMPLETE = FALSE`.
 
 Exact next flagship object:
-`PROVE_AN_ACTION_OWNED_LIMITING_ABSORPTION_OR_WEYL_THRESHOLD_ESTIMATE_FOR_THE_CONTINUOUS_SOURCE_WEIGHTED_MEASURE,_BOUND_ITS_E1_WEIGHTED_HIGH_ENERGY_TAIL,_AND_ASSEMBLE_THE_GRADED_ANGULAR_SUM;_THEN_SIGN_ADJUDICATE_THE_ZERO_SOURCE_FORCE`.
+`PROVE_THE_ACTION_OWNED_CONTINUOUS_LOW_ENERGY_LIMITING_ABSORPTION_OR_WEYL_THRESHOLD_ESTIMATE_WITH_STRICTLY_SUPERLINEAR_SOURCE_WEIGHTED_COUNTING;_THEN_COMPUTE_OR_ENCLOSE_THE_GRADED_FIXED_CHANNEL_AND_ANGULAR_SUM_TO_SIGN_ADJUDICATE_THE_ZERO_SOURCE_FORCE`.
 
 ## Current corrected-Rayleigh N=3 critical path
 

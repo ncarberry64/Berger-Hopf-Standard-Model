@@ -117,11 +117,15 @@
   `Lambda^(1/2)_INSUFFICIENT`.
 - Actual action-owned continuous threshold limiting-absorption/Weyl class:
   `OPEN_NOT_INFERRED_FROM_THE_FREE_COMPARISON`.
-- Actual N12 `C_h,epsilon_h,H_h` and zero-source force sign: `OPEN`.
+- Compact weak `E1` high-energy integrability:
+  `DERIVED_WITH_H_h<=norm(exp(-K/2)P_h exp(-K/2))_1`; an explicit numerical
+  N12 angular-tail enclosure remains `OPEN`.
+- Actual N12 low-energy `C_h,epsilon_h`, numerical tail enclosure, and
+  zero-source force sign: `OPEN`.
 - Zero-source force, same-action saddle, physical pair-plus-contact Hessian,
   Ward/BRST closure, and basis-independent scalar observable map: `OPEN`.
 - Exact next flagship dependency:
-  `PROVE_AN_ACTION_OWNED_LIMITING_ABSORPTION_OR_WEYL_THRESHOLD_ESTIMATE_FOR_THE_CONTINUOUS_SOURCE_WEIGHTED_MEASURE,_BOUND_ITS_E1_WEIGHTED_HIGH_ENERGY_TAIL,_AND_ASSEMBLE_THE_GRADED_ANGULAR_SUM;_THEN_SIGN_ADJUDICATE_THE_ZERO_SOURCE_FORCE`.
+  `PROVE_THE_ACTION_OWNED_CONTINUOUS_LOW_ENERGY_LIMITING_ABSORPTION_OR_WEYL_THRESHOLD_ESTIMATE_WITH_STRICTLY_SUPERLINEAR_SOURCE_WEIGHTED_COUNTING;_THEN_COMPUTE_OR_ENCLOSE_THE_GRADED_FIXED_CHANNEL_AND_ANGULAR_SUM_TO_SIGN_ADJUDICATE_THE_ZERO_SOURCE_FORCE`.
 
 ## Prior N12 dynamic-Calderon continuum gates (superseded)
 
