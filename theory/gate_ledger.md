@@ -337,6 +337,14 @@
   weight-seven balance, not an exact gauge of the complete action: retained
   weights `5,3,1,-1` and the boundary Casimir break uniform scale invariance.
   It remains in the replacement force and geometry/reset Hessian.
+- Executable oracle interface: on any supplied fixed finite stratum, the
+  Weyl value and first two directional geometry jets are now evaluated by
+  three coercive interior solves, with no explicit inverse and no
+  Euler--Dirac kinetic-block inversion.  The implementation is Hermitian and
+  block-unitary covariant.  The tracked two-chord paths are not missed
+  physical inputs: despite exact shadowing through `2e-8`, they reach neither
+  event nor canonical stop and the strictly additive zeta force forbids using
+  that cutoff.  Actual parametric finite-stratum action data remain open.
 - The event-normal identities
   `D_s M=L_spatial(Y(s))-zI-M^2` and
   `D_s(delta M)=delta L-M delta M-delta M M` remain exact arm-transfer

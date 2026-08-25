@@ -43,6 +43,7 @@ SOURCES = (
     "artifacts/flagship_integration/BHSM_N12_JOINT_FINITE_HISTORY_OPERATOR_DATA_GATE.json",
     "artifacts/flagship_integration/BHSM_N12_PARAMETRIC_RESET_FIBER_EXTERIOR_ORACLE_THEOREM.json",
     "artifacts/flagship_integration/BHSM_N12_RESET_FIBER_RADIUS_JET_AND_SCALE_CENTER_AUDIT.json",
+    "artifacts/flagship_integration/BHSM_N12_PARAMETRIC_EXTERIOR_ORACLE_EXECUTABLE_INTERFACE.json",
     "artifacts/intrinsic_state_selection/BHSM_N12_FINITE_ENCAPSULATION_LOCAL_BRANCH.json",
     "artifacts/flagship_integration/BHSM_N12_GATE7_AE2_THRESHOLD_SUPERSESSION.json",
     "artifacts/BHSM_alpha_i_update_v4_2.json",
@@ -94,6 +95,7 @@ def verify_current_lineage() -> None:
     operator_data_gate = loaded["artifacts/flagship_integration/BHSM_N12_JOINT_FINITE_HISTORY_OPERATOR_DATA_GATE.json"]
     parametric_oracle = loaded["artifacts/flagship_integration/BHSM_N12_PARAMETRIC_RESET_FIBER_EXTERIOR_ORACLE_THEOREM.json"]
     radius_jet = loaded["artifacts/flagship_integration/BHSM_N12_RESET_FIBER_RADIUS_JET_AND_SCALE_CENTER_AUDIT.json"]
+    executable_oracle = loaded["artifacts/flagship_integration/BHSM_N12_PARAMETRIC_EXTERIOR_ORACLE_EXECUTABLE_INTERFACE.json"]
     frontier = loaded["artifacts/flagship_integration/BHSM_N12_GATE7_AE2_THRESHOLD_SUPERSESSION.json"]
     if ae2.get("action_version") != "BHSM-AE-2.0.0":
         raise RuntimeError("AE2 action version mismatch")
@@ -257,6 +259,21 @@ def verify_current_lineage() -> None:
         ] is True
     ):
         raise RuntimeError("reset-fiber radius-jet and scale-center frontier is not current")
+    if not (
+        executable_oracle["claim_boundary"][
+            "stable_Weyl_value_first_second_jet_solver"
+        ] == "DERIVED"
+        and executable_oracle["claim_boundary"][
+            "actual_parametric_exterior_oracle"
+        ] == "OPEN_CURRENT_OWNER"
+        and executable_oracle["claim_boundary"][
+            "two_chord_core_as_complete_force_domain"
+        ] is False
+        and executable_oracle["solver_contract"][
+            "ill_conditioned_Euler_Dirac_kinetic_block_inverted"
+        ] is False
+    ):
+        raise RuntimeError("executable parametric exterior interface is not current")
 
 
 def materialize() -> list[Path]:

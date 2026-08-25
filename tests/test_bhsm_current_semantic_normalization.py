@@ -158,6 +158,13 @@ def test_replacement_force_is_constraint_projected_without_reset_selection() -> 
     assert "common scale is an exact gauge of the complete retained action" in (
         radius_jet["forbidden_interpretations"]
     )
+    solver = basis["FINITE_STRATUM_WEYL_JET_SOLVER"]
+    assert solver["current_status"] == (
+        "DERIVED_ACTUAL_PARAMETRIC_FINITE_STRATUM_DATA_OPEN"
+    )
+    assert "the two-chord validation cutoff is a physical force endpoint" in (
+        solver["forbidden_interpretations"]
+    )
     dag = {
         row["canonical_id"]: row
         for row in registries["BHSM_CURRENT_COMPLETION_DAG.json"]["records"]
