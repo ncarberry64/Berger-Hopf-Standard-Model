@@ -89,6 +89,12 @@ def build_payload() -> dict[str, Any]:
                 np.asarray(channel["D_proper_duration_Weyl"]) @ h
             ),
             "D_log_R4_uniform_shift": float(np.sum(channel["D_log_R4_node_Weyl"])),
+            "D_duration_weighted_uniform_scale_decimal": channel[
+                "D_duration_weighted_uniform_scale_decimal"
+            ],
+            "D_log_R4_uniform_shift_decimal": channel[
+                "D_log_R4_uniform_shift_decimal"
+            ],
             "minimum_backward_impedance": float(np.min(channel["backward_impedance_values"])),
             "all_backward_impedances_positive": bool(np.all(
                 np.asarray(channel["backward_impedance_values"]) > 0.0
@@ -107,13 +113,13 @@ def build_payload() -> dict[str, Any]:
     minus_decimal = Decimal(channels[
         "product_Dirac_lambda1_5_chirality_minus"
     ]["Weyl_birth_value_decimal"])
-    paired_uniform_x = (
-        summaries["product_Dirac_lambda1_5_chirality_plus"][
-            "D_log_R4_uniform_shift"
-        ]
-        + summaries["product_Dirac_lambda1_5_chirality_minus"][
-            "D_log_R4_uniform_shift"
-        ]
+    paired_uniform_x_decimal = (
+        Decimal(summaries["product_Dirac_lambda1_5_chirality_plus"][
+            "D_log_R4_uniform_shift_decimal"
+        ])
+        + Decimal(summaries["product_Dirac_lambda1_5_chirality_minus"][
+            "D_log_R4_uniform_shift_decimal"
+        ])
     )
     validation = {
         "full_1064_segment_descriptor_consumed": descriptor["coefficient_path"]["segment_count"] == 1064,
@@ -127,8 +133,9 @@ def build_payload() -> dict[str, Any]:
             plus_decimal != minus_decimal
             and abs(plus_decimal - minus_decimal) > Decimal(1)
         ),
-        "paired_product_Dirac_uniform_log_radius_boundary_cotangent_cancels": (
-            abs(paired_uniform_x) < 1.0e-12
+        "paired_product_Dirac_order_one_uniform_log_radius_terms_cancel_but_residual_is_retained": (
+            abs(paired_uniform_x_decimal) < Decimal("1e-12")
+            and paired_uniform_x_decimal != Decimal(0)
         ),
         "all_coefficient_cotangents_are_finite": all(
             all(np.all(np.isfinite(channel[key])) for key in (
@@ -163,8 +170,13 @@ def build_payload() -> dict[str, Any]:
         "channels_at_z_minus_1": summaries,
         "paired_product_Dirac_audit": {
             "high_precision_Weyl_chirality_split": str(plus_decimal - minus_decimal),
-            "paired_uniform_log_radius_cotangent": paired_uniform_x,
-            "status": "FIXED_CORE_Z_MINUS_1_BOUNDARY_CHIRALITY_TERM_CANCELS",
+            "paired_uniform_log_radius_cotangent_decimal": str(
+                paired_uniform_x_decimal
+            ),
+            "status": (
+                "FIXED_CORE_Z_MINUS_1_ORDER_ONE_BOUNDARY_CHIRALITY_TERMS_"
+                "CANCEL_WITH_NONZERO_HIGH_PRECISION_REMAINDER"
+            ),
             "not_promoted_to_full_heat_or_maximal_tail": True,
         },
         "inverse_free_identity": {

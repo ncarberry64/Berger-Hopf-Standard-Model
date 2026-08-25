@@ -126,6 +126,16 @@ def finite_core_weyl_and_coefficient_cotangent(
             gradient_duration_mp[index] = adjoint * d_h_mp[index]
             adjoint *= d_terminal_mp[index]
         weyl_decimal = mp.nstr(starts_mp[0], n=int(decimal_precision))
+        uniform_log_radius_decimal = mp.nstr(
+            mp.fsum(gradient_x_mid_mp), n=int(decimal_precision)
+        )
+        duration_weighted_decimal = mp.nstr(
+            mp.fsum(
+                gradient_duration_mp[index] * mp.mpf(str(float(h[index])))
+                for index in range(count)
+            ),
+            n=int(decimal_precision),
+        )
         starts = np.asarray([float(item) for item in starts_mp])
         gradient_x_mid = np.asarray([float(item) for item in gradient_x_mid_mp])
         gradient_duration = np.asarray([float(item) for item in gradient_duration_mp])
@@ -142,6 +152,8 @@ def finite_core_weyl_and_coefficient_cotangent(
         "D_x_mid_Weyl": gradient_x_mid,
         "D_log_R4_node_Weyl": node_gradient,
         "D_proper_duration_Weyl": gradient_duration,
+        "D_log_R4_uniform_shift_decimal": uniform_log_radius_decimal,
+        "D_duration_weighted_uniform_scale_decimal": duration_weighted_decimal,
         "terminal_Dirichlet_form_core": True,
         "explicit_matrix_inverse_formed": False,
         "decimal_precision": int(decimal_precision),

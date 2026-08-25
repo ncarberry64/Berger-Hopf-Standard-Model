@@ -28,9 +28,11 @@ forming an inverse or an ill-conditioned Schur subtraction.
 
 At this probe the two product-Dirac channels retain an order-one Weyl split of
 `-3.015327765989...` that binary64 cannot resolve against the common
-`1.6177e31` impedance.  Their uniform log-radius boundary cotangents are equal
-and opposite, so the paired fixed-core boundary contribution cancels.  This is
-a retained chirality-pair identity at `z=-1`; it is not promoted to a full
+`1.6177e31` impedance.  Their order-one uniform log-radius boundary
+cotangents are equal and opposite.  The paired remainder is nonzero at
+arbitrary precision, however, and is retained as a decimal rather than rounded
+to binary64 zero.  Thus the leading chiral boundary term cancels, not the full
+fixed-core response.  No fixed-probe statement is promoted to a full
 negative-axis heat cancellation or maximal-tail theorem.
 
 The result is not yet the physical heat-minus-zeta force.  One negative probe
