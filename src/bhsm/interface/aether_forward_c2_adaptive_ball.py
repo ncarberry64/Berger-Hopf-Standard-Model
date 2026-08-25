@@ -177,6 +177,8 @@ def derived_adaptive_ball(
     lower_ball: dict[str, Any] | None = None
     for _ in range(1024):
         lower_probe = math.nextafter(lower_probe, 1.0)
+        if not lower_probe < 1.0:
+            break
         candidate = build(lower_probe)
         if float(candidate["derived_local_radius"]) > float(tube):
             lower_ball = candidate

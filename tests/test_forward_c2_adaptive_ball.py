@@ -1,5 +1,6 @@
 from __future__ import annotations
 
+import pytest
 import numpy as np
 
 from bhsm.interface.aether_forward_c2_adaptive_ball import (
@@ -93,3 +94,22 @@ def test_lower_probe_advances_past_multiplication_rounding_equality() -> None:
     )
     assert ball["derived_local_radius"] > 0.4
     assert ball["allocation_selected_midpoint"] > ball["allocation_lower_necessity"]
+
+
+def test_lower_probe_reaching_one_is_classified_as_arithmetic_exhaustion() -> None:
+    pf, launch, line, weights, coefficient = _fixtures()
+    with pytest.raises(
+        ArithmeticError,
+        match="no representable allocation strictly contains the incoming tube",
+    ):
+        derived_adaptive_ball(
+            center_path=0.0,
+            tube=np.nextafter(0.5, 0.0),
+            pf=pf,
+            launch_ball=launch,
+            line=line,
+            parent_radius=1.0,
+            root_state=np.zeros(98),
+            weights=weights,
+            coefficient_enclosure=coefficient,
+        )
