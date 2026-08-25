@@ -381,6 +381,18 @@
   forward--adjoint boundary-value solve are equivalent implementations at a
   regular root.  The equations are derived; no finite endpoint solution or
   unique saddle is yet certified.
+- Forward--adjoint KKT existence gate: the full first-order equations and
+  endpoint domain class are owned, but the repository contains no certified
+  nonempty post-reset finite endpoint stratum carrying a quotient KKT root.
+  The local pre-event formation branch proves finite encapsulation without
+  recurrence; it does not supply that post-reset stratum.  The two chords
+  have neither endpoint nor temporal-tail authority, the maximal-flow theorem
+  selects no outcome, and the restricted Legendre energy is zero rather than
+  coercive.  The exact live lemma is therefore existence/certification of one
+  regular finite-endpoint KKT root, by validated boundary-value solution,
+  direct compactness/coercivity or degree, or the equivalent parametric Weyl
+  covector root.  Universal terminal reachability is not required, and no
+  action incompatibility is proved.
 - Current operator-data inventory: the durable endpoint checkpoint contains
   one 196-component event-child state and a `57 x 196` first constraint
   Jacobian, but no proper-time coefficient path, `D_tau`, endpoint form,

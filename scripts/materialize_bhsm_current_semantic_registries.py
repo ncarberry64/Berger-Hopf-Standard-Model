@@ -51,6 +51,7 @@ SOURCES = (
     "artifacts/flagship_integration/BHSM_N12_FORCE_FIRST_JET_CRITICAL_PATH.json",
     "artifacts/flagship_integration/BHSM_N12_FORCE_ADJOINT_PULLBACK.json",
     "artifacts/flagship_integration/BHSM_N12_FINITE_ENDPOINT_FORWARD_ADJOINT_KKT.json",
+    "artifacts/flagship_integration/BHSM_N12_FORWARD_ADJOINT_KKT_EXISTENCE_GATE.json",
     "artifacts/flagship_integration/BHSM_N12_WEIGHT_SEVEN_TRANSVERSE_DESCRIPTOR.json",
     "artifacts/flagship_integration/BHSM_N12_WEIGHT_FIVE_CENTER_MODULATION.json",
     "artifacts/flagship_integration/BHSM_N12_WEIGHT_FIVE_MULTIPRECISION_NONPROMOTION.json",
@@ -116,6 +117,7 @@ def verify_current_lineage() -> None:
     force_first_jet = loaded["artifacts/flagship_integration/BHSM_N12_FORCE_FIRST_JET_CRITICAL_PATH.json"]
     force_adjoint = loaded["artifacts/flagship_integration/BHSM_N12_FORCE_ADJOINT_PULLBACK.json"]
     forward_adjoint_kkt = loaded["artifacts/flagship_integration/BHSM_N12_FINITE_ENDPOINT_FORWARD_ADJOINT_KKT.json"]
+    kkt_existence = loaded["artifacts/flagship_integration/BHSM_N12_FORWARD_ADJOINT_KKT_EXISTENCE_GATE.json"]
     weight_seven_descriptor = loaded["artifacts/flagship_integration/BHSM_N12_WEIGHT_SEVEN_TRANSVERSE_DESCRIPTOR.json"]
     weight_five_modulation = loaded["artifacts/flagship_integration/BHSM_N12_WEIGHT_FIVE_CENTER_MODULATION.json"]
     weight_five_mp_audit = loaded["artifacts/flagship_integration/BHSM_N12_WEIGHT_FIVE_MULTIPRECISION_NONPROMOTION.json"]
@@ -182,6 +184,17 @@ def verify_current_lineage() -> None:
         ] is False
     ):
         raise RuntimeError("finite-endpoint forward-adjoint KKT frontier is not current")
+    if not (
+        kkt_existence["claim_boundary"]["finite_endpoint_KKT_root"]
+        == "OPEN_CURRENT_OWNER"
+        and kkt_existence["failure_classification"][
+            "missing_existential_or_validated_global_temporal_control"
+        ] is True
+        and kkt_existence["failure_classification"][
+            "retained_action_incompatibility_proved"
+        ] is False
+    ):
+        raise RuntimeError("forward-adjoint KKT existence gate is not current")
     if nonfermion["claim_boundary"]["nonfermion_critical_zero_graph_excluded"] is not True:
         raise RuntimeError("disk does not close the nonfermion threshold obstruction")
     if factorized["claim_boundary"]["factorized_N12_low_energy_source_measure"] != "OPEN":
