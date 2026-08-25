@@ -49,6 +49,7 @@ SOURCES = (
     "artifacts/flagship_integration/BHSM_N12_ACTION_OWNED_ENDPOINT_LOAD_REDUCTION.json",
     "artifacts/flagship_integration/BHSM_N12_RESET_STRATUM_MOVING_ENDPOINT_JETS.json",
     "artifacts/flagship_integration/BHSM_N12_FORCE_FIRST_JET_CRITICAL_PATH.json",
+    "artifacts/flagship_integration/BHSM_N12_FORCE_ADJOINT_PULLBACK.json",
     "artifacts/flagship_integration/BHSM_N12_WEIGHT_SEVEN_TRANSVERSE_DESCRIPTOR.json",
     "artifacts/flagship_integration/BHSM_N12_WEIGHT_FIVE_CENTER_MODULATION.json",
     "artifacts/flagship_integration/BHSM_N12_WEIGHT_FIVE_MULTIPRECISION_NONPROMOTION.json",
@@ -112,6 +113,7 @@ def verify_current_lineage() -> None:
     endpoint_load_reduction = loaded["artifacts/flagship_integration/BHSM_N12_ACTION_OWNED_ENDPOINT_LOAD_REDUCTION.json"]
     moving_endpoint_jets = loaded["artifacts/flagship_integration/BHSM_N12_RESET_STRATUM_MOVING_ENDPOINT_JETS.json"]
     force_first_jet = loaded["artifacts/flagship_integration/BHSM_N12_FORCE_FIRST_JET_CRITICAL_PATH.json"]
+    force_adjoint = loaded["artifacts/flagship_integration/BHSM_N12_FORCE_ADJOINT_PULLBACK.json"]
     weight_seven_descriptor = loaded["artifacts/flagship_integration/BHSM_N12_WEIGHT_SEVEN_TRANSVERSE_DESCRIPTOR.json"]
     weight_five_modulation = loaded["artifacts/flagship_integration/BHSM_N12_WEIGHT_FIVE_CENTER_MODULATION.json"]
     weight_five_mp_audit = loaded["artifacts/flagship_integration/BHSM_N12_WEIGHT_FIVE_MULTIPRECISION_NONPROMOTION.json"]
@@ -156,6 +158,15 @@ def verify_current_lineage() -> None:
         ] == "D4_L"
     ):
         raise RuntimeError("force first-jet critical path is not current")
+    if not (
+        force_adjoint["claim_boundary"]["G7_08_force_adjoint_pullback"]
+        == "DERIVED"
+        and force_adjoint["computational_consequence"][
+            "forward_Jacobi_columns_required"
+        ] == 0
+        and force_adjoint["claim_boundary"]["maximal_base_history"] == "OPEN"
+    ):
+        raise RuntimeError("force adjoint-pullback frontier is not current")
     if nonfermion["claim_boundary"]["nonfermion_critical_zero_graph_excluded"] is not True:
         raise RuntimeError("disk does not close the nonfermion threshold obstruction")
     if factorized["claim_boundary"]["factorized_N12_low_energy_source_measure"] != "OPEN":

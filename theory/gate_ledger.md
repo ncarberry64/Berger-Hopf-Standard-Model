@@ -358,6 +358,18 @@
   saddle; if it vanishes, the classical configuration transfers and the
   pair-plus-contact Hessian follows.  No later claim is deleted and no reset
   representative is selected.
+- Force adjoint-pullback reduction: because G7_08 asks for a covector rather
+  than the full tangent propagator, the complete physical reset-quotient
+  force can be obtained by a nested backward adjoint.  If
+  `Pi_T=I-V tensor De/(De V)` is the moving-endpoint projection, solve
+  `-p'=DV^dagger p+q` with `p(T)=Pi_T^dagger g_T`, then apply
+  `N_phys^dagger B_reset^dagger p(0)` together with the direct zeta term.
+  The implicit Euler--Dirac pullback uses the transposed retained Dirac solve,
+  not its explicit inverse.  This removes the need for 66 separate forward
+  Jacobi columns and leaves the maximal action-selected base history plus
+  endpoint operator cotangent as the immediate owner.  It does not make the
+  two finite chords into an endpoint, authorize chord 3, or remove later
+  second-jet/Hessian obligations.
 - Current operator-data inventory: the durable endpoint checkpoint contains
   one 196-component event-child state and a `57 x 196` first constraint
   Jacobian, but no proper-time coefficient path, `D_tau`, endpoint form,
