@@ -177,6 +177,20 @@ with the physical state propagator; a finite later event or canonical stop
 uses the existing compact-endpoint angular/source theorem. Dimension
 counting and a single reset representative have no promotion authority.
 
+The asymptotic NHIM route is now adjudicated at the full graded force level.
+Its proved `H4 -> H0>0` and exact `epsilon'= -2 H4 epsilon` imply finite
+optical length on every captured infinite history. The retained
+positive-chirality transfer lower bound then makes the absolute angular
+source-Dini terms grow at least as `d_n exp(2 mu_n I)`; they do not tend to
+zero. Fixed-channel source-Dini remains closed, and the mathematical NHIM and
+its Friedrichs operator remain valid, but this particular infinite child
+route cannot carry the required absolute graded heat-force covector. No reset
+entry is assumed and no new stop is declared. The preferred current owner is
+therefore an actual finite later-event or retained canonical-stop stratum and
+its already-derived compact-endpoint force; an independent action-owned
+optically complete or relative-trace infinite route would be a distinct
+future theorem, not an arbitrary-tail reopening.
+
 The recovered Norman owner ontology is recorded as an owner-authorized semantic layer, never as an action-derived equation. It fixes geometry-first emergence, persistent mode/history particle classes, the base-plus-two-excitations generation architecture, action-owned response mass with a universal dimensional origin, propagation-locked neutrino mass, CKM as relative response-basis orientation, strict bare/dressed separation, and the irreversible dependency direction `action -> theorem -> observable -> frozen comparison`.
 
 The executable guardrails reject semantic regression, including `z=p^2`, a compulsory strict gap, terminal recurrence, reopening the nonfermion threshold without contradiction, replacing the current owner by D5/Kato interval-sign work, symbol collisions, or importing frozen outputs into the current action.

@@ -2013,3 +2013,25 @@ Exact next object:
 - Universal or post-event terminal reachability: `NOT_REQUIRED`.
 - Gate 7: `ACTIVE`; Gate 8: `LOCKED`; chord 3: `UNAUTHORIZED`;
   `FULL_BHSM_COMPLETE=FALSE`.
+
+## N=12 asymptotic-NHIM angular-force no-go
+
+- Captured asymptotic child history: `H4 -> H0>0` and
+  `epsilon'= -2 H4 epsilon`, with `epsilon=R4^-2`.
+- Optical length on every captured infinite history: `FINITE`, because
+  `1/R4(t)<=sqrt(epsilon(T))*exp(-H0*(t-T)/2)` eventually.
+- Fixed-channel source-Dini: `CLOSED_DO_NOT_REOPEN`.
+- Absolute retained positive-chirality angular source sum:
+  `DIVERGES_TERMS_DO_NOT_TEND_TO_ZERO`, from
+  `C_mu>=c_h exp(2 mu I)`, `mu_n=n+3/2`, and
+  `d_n=48(n+1)(n+2)`.
+- BRST cancellation of that absolute physical tail: `FALSE`.
+- Mathematical NHIM and Friedrichs value deleted: `FALSE`.
+- Reset-to-NHIM connection assumed or required for the route no-go: `FALSE`.
+- New canonical stop declared: `FALSE`.
+- Preferred current owner: certify an actual finite later-event or retained
+  canonical-stop reset stratum and evaluate the existing compact-endpoint
+  heat-minus-zeta quotient force. Do not reopen the finite-optical NHIM route
+  or arbitrary infinite tails.
+- Gate 7: `ACTIVE`; Gate 8: `LOCKED`; chord 3: `UNAUTHORIZED`;
+  `FULL_BHSM_COMPLETE=FALSE`.

@@ -170,6 +170,16 @@ def test_replacement_force_is_constraint_projected_without_reset_selection() -> 
         for row in registries["BHSM_CURRENT_COMPLETION_DAG.json"]["records"]
     }
     assert dag["G7_08_FORCE"]["current_status"] == "OPEN_CURRENT_OWNER"
+    assert (
+        "finite optical length" in dag["G7_08_FORCE"]["physical_meaning"]
+        and "cannot supply the physical force through the currently proved absolute source class"
+        in dag["G7_08_FORCE"]["physical_meaning"]
+    )
+    assert (
+        "artifacts/flagship_integration/"
+        "BHSM_N12_ASYMPTOTIC_NHIM_ANGULAR_FORCE_NO_GO.json"
+        in dag["G7_08_FORCE"]["provenance"]
+    )
     assert dag["G7_09_SADDLE"]["current_status"] == (
         "PENDING_COUPLED_TO_G7_08"
     )

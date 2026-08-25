@@ -56,6 +56,10 @@ SOURCES = (
     "artifacts/flagship_integration/BHSM_N12_DIRECT_KKT_EXISTENCE_PRECONDITIONS.json",
     "artifacts/flagship_integration/BHSM_N12_GATE7_FORMATION_DECAY_CHRONOLOGY_SUPERSESSION.json",
     "artifacts/flagship_integration/BHSM_N12_ASYMPTOTIC_CHILD_EXTERIOR_CONNECTION_PRECONDITIONS.json",
+    "artifacts/flagship_integration/BHSM_N12_ASYMPTOTIC_NHIM_CAPTURE_BASIN.json",
+    "artifacts/flagship_integration/BHSM_N12_MAXIMAL_FRIEDRICHS_WEYL_EXHAUSTION.json",
+    "artifacts/flagship_integration/BHSM_N12_MAXIMAL_FORWARD_ADJOINT_EXHAUSTION.json",
+    "artifacts/flagship_integration/BHSM_N12_ASYMPTOTIC_NHIM_ANGULAR_FORCE_NO_GO.json",
     "artifacts/flagship_integration/BHSM_N12_WEIGHT_SEVEN_TRANSVERSE_DESCRIPTOR.json",
     "artifacts/flagship_integration/BHSM_N12_WEIGHT_FIVE_CENTER_MODULATION.json",
     "artifacts/flagship_integration/BHSM_N12_WEIGHT_FIVE_MULTIPRECISION_NONPROMOTION.json",
@@ -126,6 +130,10 @@ def verify_current_lineage() -> None:
     direct_existence = loaded["artifacts/flagship_integration/BHSM_N12_DIRECT_KKT_EXISTENCE_PRECONDITIONS.json"]
     chronology = loaded["artifacts/flagship_integration/BHSM_N12_GATE7_FORMATION_DECAY_CHRONOLOGY_SUPERSESSION.json"]
     asymptotic_connection = loaded["artifacts/flagship_integration/BHSM_N12_ASYMPTOTIC_CHILD_EXTERIOR_CONNECTION_PRECONDITIONS.json"]
+    asymptotic_nhim = loaded["artifacts/flagship_integration/BHSM_N12_ASYMPTOTIC_NHIM_CAPTURE_BASIN.json"]
+    maximal_weyl = loaded["artifacts/flagship_integration/BHSM_N12_MAXIMAL_FRIEDRICHS_WEYL_EXHAUSTION.json"]
+    maximal_adjoint = loaded["artifacts/flagship_integration/BHSM_N12_MAXIMAL_FORWARD_ADJOINT_EXHAUSTION.json"]
+    nhim_angular_no_go = loaded["artifacts/flagship_integration/BHSM_N12_ASYMPTOTIC_NHIM_ANGULAR_FORCE_NO_GO.json"]
     weight_seven_descriptor = loaded["artifacts/flagship_integration/BHSM_N12_WEIGHT_SEVEN_TRANSVERSE_DESCRIPTOR.json"]
     weight_five_modulation = loaded["artifacts/flagship_integration/BHSM_N12_WEIGHT_FIVE_CENTER_MODULATION.json"]
     weight_five_mp_audit = loaded["artifacts/flagship_integration/BHSM_N12_WEIGHT_FIVE_MULTIPRECISION_NONPROMOTION.json"]
@@ -261,6 +269,25 @@ def verify_current_lineage() -> None:
         ] is False
     ):
         raise RuntimeError("asymptotic child-exterior connection audit is not current")
+    if not (
+        asymptotic_nhim["capture_theorem"]["H4_limit"] == "H0>0"
+        and asymptotic_nhim["scope"]["AE2_reset_entry_certified"] is False
+        and maximal_weyl["closed_here"][
+            "Friedrichs_negative_z_Weyl_value_uniqueness"
+        ] is True
+        and maximal_adjoint["validation"]["fixed_channel_source_Dini_is_closed"]
+        is True
+        and maximal_adjoint["claim_boundary"]["actual_weighted_load"]
+        == "OPEN_CURRENT_OWNER"
+        and nhim_angular_no_go["claim_boundary"][
+            "asymptotic_NHIM_absolute_graded_force_route"
+        ] == "CLOSED_NO_GO"
+        and nhim_angular_no_go["claim_boundary"]["actual_finite_stratum"]
+        == "OPEN_CURRENT_OWNER"
+        and nhim_angular_no_go["route_adjudication"]["new_canonical_stop_declared"]
+        is False
+    ):
+        raise RuntimeError("maximal-adjoint/NHIM angular-force frontier is not current")
     if nonfermion["claim_boundary"]["nonfermion_critical_zero_graph_excluded"] is not True:
         raise RuntimeError("disk does not close the nonfermion threshold obstruction")
     if factorized["claim_boundary"]["factorized_N12_low_energy_source_measure"] != "OPEN":
