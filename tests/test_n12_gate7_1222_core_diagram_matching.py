@@ -19,6 +19,10 @@ def test_gate7_1222_core_diagram_matching() -> None:
     assert verdicts["COMMON_SCALE_HEAT_MINUS_ZETA_SOURCE_CONTRACTION"].startswith(
         "VALID_MATCH_FORMULA_CLOSED"
     )
+    assert verdicts["C2_STORED_FIXED_CHANNEL_FINITE_CORE_HEAT_INCREMENT"].startswith(
+        "VALID_MATCH_REPRESENTATIVE_INCREMENT_SUPPRESSED"
+    )
     assert verdicts["PAIR_CONTACT_AND_GRADED_SOURCE_INCIDENCE"] == "VALID_MATCH_CONDITIONAL_CONSUMER"
     assert payload["adjudication"]["finite_event_or_canonical_stop"] == "NOT_REACHED"
+    assert payload["adjudication"]["stored_fixed_channel_1064_to_1222_heat_increment"] == "CERTIFIED_SUPPRESSED_IN_LOG_SPACE"
     assert payload["claim_boundary"]["zero_source_force"] == "OPEN"

@@ -231,6 +231,79 @@ def common_scale_zeta_value_and_force(
     }
 
 
+def finite_core_heat_trace_log_upper_bound(
+    *,
+    dimension: int,
+    proper_duration_upper: float,
+    heat_length: float = 1.0,
+    scalar_potential_lower: float = 0.0,
+    factorization_coefficient_upper: float | None = None,
+) -> dict[str, Any]:
+    """Bound a mixed-boundary finite-core heat trace without inversion.
+
+    A piecewise-linear form-core vector vanishes at the artificial far edge
+    and is free at the retained birth edge.  The sharp one-sided Poincare
+    inequality therefore gives ``||u'|| >= pi ||u||/(2T)``.  For a scalar
+    Schrodinger form this adds to a supplied nonnegative potential lower
+    bound.  For a factorized form ``||u' + W u||^2``, the reverse triangle
+    inequality gives ``(pi/(2T)-||W||_infinity)_+^2``.
+
+    The result is returned primarily in log space because the BHSM C2 cores
+    can make the certified bound far smaller than binary64 can represent.
+    No generalized mass matrix or kinetic/Dirac block is inverted.
+    """
+
+    size = int(dimension)
+    duration = float(proper_duration_upper)
+    ell = float(heat_length)
+    potential = float(scalar_potential_lower)
+    if size < 1:
+        raise ValueError("dimension must be a positive integer")
+    if not math.isfinite(duration) or duration <= 0.0:
+        raise ValueError("proper_duration_upper must be positive and finite")
+    if not math.isfinite(ell) or ell <= 0.0:
+        raise ValueError("heat_length must be positive and finite")
+    if not math.isfinite(potential) or potential < 0.0:
+        raise ValueError("scalar_potential_lower must be finite and nonnegative")
+
+    poincare_rate = math.pi / (2.0 * duration)
+    if factorization_coefficient_upper is None:
+        gap_lower = poincare_rate**2 + potential
+        form_class = "SCALAR_SCHRODINGER"
+        coefficient_upper = None
+    else:
+        coefficient_upper = float(factorization_coefficient_upper)
+        if not math.isfinite(coefficient_upper) or coefficient_upper < 0.0:
+            raise ValueError(
+                "factorization_coefficient_upper must be finite and nonnegative"
+            )
+        gap_lower = max(0.0, poincare_rate - coefficient_upper) ** 2
+        form_class = "FIRST_ORDER_FACTORIZATION"
+
+    log_upper = math.log(size) - ell**2 * gap_lower
+    log10_upper = log_upper / math.log(10.0)
+    exponential_exponent = -ell**2 * gap_lower
+    return {
+        "form_class": form_class,
+        "dimension": size,
+        "proper_duration_upper": duration,
+        "heat_length": ell,
+        "poincare_rate_lower": poincare_rate,
+        "scalar_potential_lower": potential,
+        "factorization_coefficient_upper": coefficient_upper,
+        "generalized_gap_lower": gap_lower,
+        "heat_trace_upper_bound_prefactor": size,
+        "heat_trace_upper_bound_exponent": exponential_exponent,
+        "heat_trace_upper_bound_expression": (
+            f"{size}*exp({exponential_exponent:.17e})"
+        ),
+        "log_heat_trace_upper_bound": log_upper,
+        "log10_heat_trace_upper_bound": log10_upper,
+        "upper_bound_underflows_binary64": log_upper < math.log(np.finfo(float).tiny),
+        "explicit_matrix_inverse_formed": False,
+    }
+
+
 def replacement_heat_minus_zeta_force(
     heat: Mapping[str, Any], zeta: Mapping[str, Any],
 ) -> dict[str, Any]:
@@ -256,5 +329,6 @@ __all__ = [
     "common_scale_heat_value_and_force",
     "zeta_casimir_value_and_force",
     "common_scale_zeta_value_and_force",
+    "finite_core_heat_trace_log_upper_bound",
     "replacement_heat_minus_zeta_force",
 ]

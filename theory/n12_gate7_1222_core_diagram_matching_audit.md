@@ -27,6 +27,15 @@ variations cancel in the local zeta term.  Its N12 value remains open until
 the sharp joint graded operator is realized; no probe is promoted to that
 trace.
 
+The three descriptor channels stored at both resolutions admit an additional
+inverse-free check.  The mixed birth-free/far-Dirichlet Poincare inequality,
+evaluated with the certified proper-duration upper endpoints and radius
+tubes, bounds their 1064-to-1222 absolute heat-trace increment by
+`3*(1064 exp(-3.5705e62)+1222 exp(-1.1047e54))`.  This removes dense generalized diagonalization of
+those three representative pencils from the live dependency.  It does not
+sum the full angular ledger, supply its multiplicities, realize the incoming
+seam, or control the maximal tail beyond the artificial 1,222-core edge.
+
 The remaining unmatched data are geometric and pathwise.  Modulo the closed
 common-scale direction, the reset radius Cauchy jet is a valid birth germ but
 is not the noncompact geometry pullback through the maximal coefficient

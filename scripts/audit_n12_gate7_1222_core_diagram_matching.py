@@ -25,8 +25,9 @@ ADJOINT = BASE / "BHSM_N12_FORCE_ADJOINT_PULLBACK.json"
 CAUCHY = BASE / "BHSM_N12_C2_PROJECTED_ADJOINT_CAUCHY_CRITERION.json"
 COMMON_SCALE = BASE / "BHSM_N12_C2_COMMON_SCALE_WEYL_COVARIANCE.json"
 COMMON_SCALE_WARD = BASE / "BHSM_N12_GATE7_COMMON_SCALE_HEAT_ZETA_WARD.json"
+FIXED_CHANNEL_HEAT = BASE / "BHSM_N12_GATE7_FIXED_CHANNEL_FINITE_CORE_HEAT_BOUND.json"
 THEORY = ROOT / "theory" / "n12_gate7_1222_core_diagram_matching_audit.md"
-INPUTS = (OLD, CORE, FAMILY, NESTED, MAXIMAL, BIRTH, COMPACT, SEAM, INCIDENCE, FORCE, ADJOINT, CAUCHY, COMMON_SCALE, COMMON_SCALE_WARD, THEORY)
+INPUTS = (OLD, CORE, FAMILY, NESTED, MAXIMAL, BIRTH, COMPACT, SEAM, INCIDENCE, FORCE, ADJOINT, CAUCHY, COMMON_SCALE, COMMON_SCALE_WARD, FIXED_CHANNEL_HEAT, THEORY)
 
 
 def _sha256(path: Path) -> str:
@@ -44,11 +45,11 @@ def build_payload() -> dict[str, Any]:
     missing = [str(path) for path in INPUTS if not path.is_file()]
     if missing:
         raise FileNotFoundError("missing 1222 matching inputs: " + ", ".join(missing))
-    old, core, family, nested, maximal, birth, compact, seam, incidence, force, adjoint, cauchy, common_scale, common_scale_ward = (
+    old, core, family, nested, maximal, birth, compact, seam, incidence, force, adjoint, cauchy, common_scale, common_scale_ward, fixed_channel_heat = (
         _load(path) for path in INPUTS[:-1]
     )
     if not all(record.get("validation_passed") is True for record in (
-        old, core, family, nested, maximal, birth, compact, seam, incidence, force, adjoint, cauchy, common_scale, common_scale_ward,
+        old, core, family, nested, maximal, birth, compact, seam, incidence, force, adjoint, cauchy, common_scale, common_scale_ward, fixed_channel_heat,
     )):
         raise RuntimeError("validated diagram parents required")
 
@@ -108,6 +109,14 @@ def build_payload() -> dict[str, Any]:
             "dimension_domain_check": "VALID_FOR_EVERY_POSITIVE_SELF_ADJOINT_JOINT_REALIZATION_WITH_THE_RETAINED_PARENT_HEAT_LENGTH",
             "provenance_check": "VALID_GRADED_ACTION_AND_SIMULTANEOUS_RADIUS_PROPER_DURATION_SCALING",
             "verdict": "VALID_MATCH_FORMULA_CLOSED_NUMERIC_TRACE_OPEN",
+        },
+        {
+            "diagram_slot": "C2_STORED_FIXED_CHANNEL_FINITE_CORE_HEAT_INCREMENT",
+            "required_type": "INVERSE_FREE_CONTROL_OF_THE_ACTUALLY_STORED_1064_AND_1222_REPRESENTATIVE_PENCILS_AT_THE_RETAINED_HEAT_LENGTH",
+            "candidate": "BHSM_N12_GATE7_FIXED_CHANNEL_FINITE_CORE_HEAT_BOUND",
+            "dimension_domain_check": "VALID_FOR_SCALAR_c3_AND_BOTH_lambda1_5_FACTORIZED_DIRAC_CORES_USING_CERTIFIED_DURATION_AND_RADIUS_TUBES",
+            "provenance_check": "VALID_MIXED_BOUNDARY_POINCARE_AND_REVERSE_TRIANGLE_FORM_BOUNDS",
+            "verdict": "VALID_MATCH_REPRESENTATIVE_INCREMENT_SUPPRESSED_FULL_GRADED_TRACE_STILL_OPEN",
         },
         {
             "diagram_slot": "INCOMING_C1_RESPONSE_M_f",
@@ -178,6 +187,14 @@ def build_payload() -> dict[str, Any]:
             and common_scale_ward["adjudication"]["actual_common_scale_numeric_force"]
             .startswith("OPEN")
         ),
+        "stored_fixed_channel_heat_increment_is_suppressed_without_overclaim": (
+            fixed_channel_heat["claim_boundary"]
+            ["stored_fixed_channel_finite_core_increment"] == "CERTIFIED_SUPPRESSED"
+            and fixed_channel_heat["claim_boundary"]
+            ["actual_joint_graded_heat_trace"] == "OPEN"
+            and fixed_channel_heat["claim_boundary"]
+            ["maximal_tail_beyond_1222"] == "OPEN"
+        ),
         "compact_incoming_operator_is_only_executable_until_path_supplied": compact["claim_boundary"]["actual_family_M_C_value"] == "OPEN_AFTER_COEFFICIENT_PATH",
         "broad_seam_intervals_do_not_decide_force": seam["force_adjudication"]["broad_intervals_decide_heat_minus_zeta_force_sign"] is False,
         "source_incidence_is_a_valid_conditional_consumer": incidence["claim_boundary"]["domain_parametric_nonzero_local_incidence"] == "DERIVED",
@@ -202,6 +219,7 @@ def build_payload() -> dict[str, Any]:
             "finite_core_backward_operator_cotangent": "CLOSED",
             "physical_common_scale_geometry_pullback": "CLOSED_BY_EXACT_COVARIANCE",
             "physical_common_scale_source_contraction_formula": "CLOSED_BY_HEAT_ZETA_WARD_IDENTITY",
+            "stored_fixed_channel_1064_to_1222_heat_increment": "CERTIFIED_SUPPRESSED_IN_LOG_SPACE",
             "physical_common_scale_numeric_force": "OPEN_WITH_JOINT_GRADED_HEAT_TRACE",
             "non_scale_pathwise_reset_quotient_geometry_pullback_sector": "ACTUALLY_MISSING",
             "projected_heat_minus_zeta_force_net_and_tail": "ACTUALLY_MISSING",
@@ -210,7 +228,7 @@ def build_payload() -> dict[str, Any]:
             "Gate8": "LOCKED",
         },
         "validated_invalidated_open": {
-            "VALIDATED": ["C2 1222-core coefficient slot", "C2 complete negative-axis finite-core response", "finite-core backward operator cotangent semigroup", "physical common-scale pullback including moving duration", "common-scale heat-zeta source contraction formula", "maximal abstract Weyl value", "source and force consumer formulas"],
+            "VALIDATED": ["C2 1222-core coefficient slot", "C2 complete negative-axis finite-core response", "finite-core backward operator cotangent semigroup", "physical common-scale pullback including moving duration", "common-scale heat-zeta source contraction formula", "stored fixed-channel 1064-to-1222 heat increment suppression", "maximal abstract Weyl value", "source and force consumer formulas"],
             "INVALIDATED": ["new C2 theory is required", "a full pathwise Jacobi is required for the common-scale component", "fixed-duration radius-only zeta derivative is the physical common-scale force", "birth jet alone is the remaining non-scale pathwise reset jet", "broad seam intervals or probes determine the force", "proof edge is an endpoint"],
             "OPEN": ["sharp incoming M_f realization", "non-scale pathwise reset quotient geometry pullback sector", "actual projected force net and Cauchy tail"],
         },
