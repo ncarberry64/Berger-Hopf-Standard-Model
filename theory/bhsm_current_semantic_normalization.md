@@ -191,6 +191,17 @@ its already-derived compact-endpoint force; an independent action-owned
 optically complete or relative-trace infinite route would be a distinct
 future theorem, not an arbitrary-tail reopening.
 
+The certified local reset chart does not close that finite-stratum owner.
+On the 67-dimensional fixed-event child kernel, the exact center jets give
+best linearized action distances about `6.66e-2` to the ordered-event surface
+and `1.60e-1` to reversal of the soft event forcing.  These are respectively
+about `6.66e9` and `1.60e10` times the existing `1e-11` direct root radius;
+the continuum transfer neighborhood is smaller still.  This is a fail-closed
+certificate-scope result, not a global nonexistence theorem.  It forbids
+extrapolating the local reset IFT or choosing a favorable child and narrows
+the live owner to a global action-owned reset-stratum continuation/nonzero-
+degree theorem or an independently certified finite event/stop stratum.
+
 The recovered Norman owner ontology is recorded as an owner-authorized semantic layer, never as an action-derived equation. It fixes geometry-first emergence, persistent mode/history particle classes, the base-plus-two-excitations generation architecture, action-owned response mass with a universal dimensional origin, propagation-locked neutrino mass, CKM as relative response-basis orientation, strict bare/dressed separation, and the irreversible dependency direction `action -> theorem -> observable -> frozen comparison`.
 
 The executable guardrails reject semantic regression, including `z=p^2`, a compulsory strict gap, terminal recurrence, reopening the nonfermion threshold without contradiction, replacing the current owner by D5/Kato interval-sign work, symbol collisions, or importing frozen outputs into the current action.

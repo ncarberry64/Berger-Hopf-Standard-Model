@@ -60,6 +60,7 @@ SOURCES = (
     "artifacts/flagship_integration/BHSM_N12_MAXIMAL_FRIEDRICHS_WEYL_EXHAUSTION.json",
     "artifacts/flagship_integration/BHSM_N12_MAXIMAL_FORWARD_ADJOINT_EXHAUSTION.json",
     "artifacts/flagship_integration/BHSM_N12_ASYMPTOTIC_NHIM_ANGULAR_FORCE_NO_GO.json",
+    "artifacts/flagship_integration/BHSM_N12_LOCAL_RESET_TERMINAL_TRANSVERSALITY_AUDIT.json",
     "artifacts/flagship_integration/BHSM_N12_WEIGHT_SEVEN_TRANSVERSE_DESCRIPTOR.json",
     "artifacts/flagship_integration/BHSM_N12_WEIGHT_FIVE_CENTER_MODULATION.json",
     "artifacts/flagship_integration/BHSM_N12_WEIGHT_FIVE_MULTIPRECISION_NONPROMOTION.json",
@@ -134,6 +135,7 @@ def verify_current_lineage() -> None:
     maximal_weyl = loaded["artifacts/flagship_integration/BHSM_N12_MAXIMAL_FRIEDRICHS_WEYL_EXHAUSTION.json"]
     maximal_adjoint = loaded["artifacts/flagship_integration/BHSM_N12_MAXIMAL_FORWARD_ADJOINT_EXHAUSTION.json"]
     nhim_angular_no_go = loaded["artifacts/flagship_integration/BHSM_N12_ASYMPTOTIC_NHIM_ANGULAR_FORCE_NO_GO.json"]
+    local_reset_terminal = loaded["artifacts/flagship_integration/BHSM_N12_LOCAL_RESET_TERMINAL_TRANSVERSALITY_AUDIT.json"]
     weight_seven_descriptor = loaded["artifacts/flagship_integration/BHSM_N12_WEIGHT_SEVEN_TRANSVERSE_DESCRIPTOR.json"]
     weight_five_modulation = loaded["artifacts/flagship_integration/BHSM_N12_WEIGHT_FIVE_CENTER_MODULATION.json"]
     weight_five_mp_audit = loaded["artifacts/flagship_integration/BHSM_N12_WEIGHT_FIVE_MULTIPRECISION_NONPROMOTION.json"]
@@ -286,8 +288,18 @@ def verify_current_lineage() -> None:
         == "OPEN_CURRENT_OWNER"
         and nhim_angular_no_go["route_adjudication"]["new_canonical_stop_declared"]
         is False
+        and local_reset_terminal["claim_boundary"][
+            "local_reset_terminal_transversality_route"
+        ] == "CLOSED_INSUFFICIENT"
+        and local_reset_terminal["claim_boundary"]["actual_finite_stratum"]
+        == "OPEN_CURRENT_OWNER"
+        and local_reset_terminal["route_adjudication"][
+            "global_reset_quotient_finite_stratum_disproved"
+        ] is False
     ):
-        raise RuntimeError("maximal-adjoint/NHIM angular-force frontier is not current")
+        raise RuntimeError(
+            "maximal-adjoint/NHIM/local-reset finite-stratum frontier is not current"
+        )
     if nonfermion["claim_boundary"]["nonfermion_critical_zero_graph_excluded"] is not True:
         raise RuntimeError("disk does not close the nonfermion threshold obstruction")
     if factorized["claim_boundary"]["factorized_N12_low_energy_source_measure"] != "OPEN":
