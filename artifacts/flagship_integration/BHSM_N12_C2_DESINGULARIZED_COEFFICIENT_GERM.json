@@ -1,0 +1,96 @@
+{
+  "FLAGSHIP_READY": false,
+  "FULL_BHSM_COMPLETE": false,
+  "artifact": "BHSM_N12_C2_DESINGULARIZED_COEFFICIENT_GERM",
+  "certified_intervals": {
+    "D_t_log_R4": [
+      0.06220279869309308,
+      0.0622027986975972
+    ],
+    "D_t_u": [
+      1.6852628717141802e-13,
+      1.882942069815106e-13
+    ],
+    "D_tau_log_R4": [
+      0.08877816766912414,
+      0.08877816767551922
+    ],
+    "D_tau_u": [
+      2.4052703887123957e-13,
+      2.6874055556579773e-13
+    ],
+    "b_psi": [
+      0.0004290329380756292,
+      0.00042918240484211606
+    ],
+    "c_psi": [
+      1.9640250458079105e-10,
+      2.1936384723271526e-10
+    ],
+    "d_log_R4_du": [
+      330348977221.5936,
+      369098493425.69965
+    ],
+    "d_tau_du": [
+      3721060998384.2305,
+      4157536735548.9966
+    ],
+    "lapse_N": [
+      0.7006542298205867,
+      0.70065422982085
+    ]
+  },
+  "claim_boundary": {
+    "FULL_BHSM_COMPLETE": false,
+    "Gate7": "ACTIVE_EXPLICIT_C2_u_CHART_NEIGHBORHOOD_BOUND",
+    "abstract_nonzero_outgoing_C2_segment": "CERTIFIED_LOCAL",
+    "actual_C2_desingularized_coefficient_germ": "CERTIFIED",
+    "chord_03_authorized": false,
+    "complete_M_C2_and_second_jet": "OPEN",
+    "explicit_validated_C2_segment": "OPEN",
+    "frozen_predictions_changed": false,
+    "physical_Hessian": "OPEN_AFTER_SADDLE",
+    "same_action_saddle": "OPEN_AFTER_FORCE",
+    "zero_source_force": "OPEN_AFTER_COMPLETE_C2_REALIZATION"
+  },
+  "classification": "THE_EXISTING_PHYSICAL_EVENT_COORDINATE_u=lambda_event^2_HAS_STRICTLY_POSITIVE_COORDINATE_AND_PROPER_TIME_RATES_AT_THE_ACTUAL_C2_BIRTH,_SO_u_IS_A_ONE_SIDED_INTRINSIC_LOCAL_PARAMETER_AND_log_R4_HAS_A_STRICTLY_POSITIVE_CERTIFIED_DERIVATIVE_WITH_RESPECT_TO_u;_THE_NEXT_MISSING_DATA_ARE_NEIGHBORHOOD_REMAINDER_BOUNDS_NOT_NEW_C2_PHYSICS",
+  "exact_identities": {
+    "coefficient": "x(u)=x0+[N*H/(2*c_psi*b_psi)]*u+o(u)",
+    "coordinate_time": "D_t_u(0)=2*c_psi*b_psi",
+    "physical_event_coordinate": "u=lambda_event^2",
+    "proper_time": "D_tau_u(0)=2*c_psi*b_psi/N",
+    "proper_time_conversion": "d_tau=N*dt",
+    "transfer": "T(u)=I+[N/(2*c_psi*b_psi)]*u*G0+o(u)"
+  },
+  "exact_next_dependency": "CERTIFY_ON_AN_EXPLICIT_C2_u_CHART_NEIGHBORHOOD_THE_POLE_CANCELLED_VECTOR_FIELD_AND_FIRST_PHYSICAL_QUOTIENT_JACOBI_BOUNDS,_INCLUDING_VARIATION_OF_2*c_psi*b_psi/N,_H,_THE_SELECTED_EIGENLINE,_AND_ALL_RETAINED_DOMAIN_MARGINS;_THEN_INTEGRATE_THE_ACTUAL_SEGMENT_TRANSFER_WITH_REMAINDER_CONTROL",
+  "inputs": {
+    "artifacts/flagship_integration/BHSM_N12_C2_BIRTH_COEFFICIENT_QUOTIENT_JET.json": "A6595ACAD2A9865F31EE69F6DA7C067F8C0C00886B5D8A57A915D3537FF4ED7D",
+    "artifacts/flagship_integration/BHSM_N12_C2_OUTGOING_LOCAL_TRANSFER_GERM.json": "A717C846F08CBAF486FFE4574C25E311AD1E8E3C0895ABCC252F71EEF0C7AFA7",
+    "artifacts/flagship_integration/BHSM_N12_FINITE_TERMINAL_TWO_SIDED_FORWARD_INTERFACE.json": "0BA9D5C8FDF495CBF0565B5F1703907EDB9F4450C28D0557C0AEC9B79A5CF8F7",
+    "theory/n12_c2_desingularized_coefficient_germ.md": "85ED6B931D804131AB0E0DAC0DFB4446BEF1CA1DFBD792F5FDEEE8BFBEA500E4"
+  },
+  "local_consequence": {
+    "R4_is_strictly_increasing_on_some_local_segment": true,
+    "complete_C2_history_or_response_claimed": false,
+    "one_sided_nonzero_outgoing_C2_segment_exists": true,
+    "segment_length_selected_or_claimed": false,
+    "u_is_strictly_increasing_on_some_local_segment": true,
+    "validation_edge_promoted_to_physical_endpoint": false
+  },
+  "status": "C2_PHYSICAL_EVENT_U_COEFFICIENT_GERM_STRICTLY_OUTGOING",
+  "validation": {
+    "coordinate_and_proper_time_rates_not_conflated": true,
+    "coordinate_u_rate_interval_is_strictly_positive": true,
+    "local_inverse_function_theorem_applies_one_sided": true,
+    "log_radius_per_u_interval_is_strictly_positive": true,
+    "no_explicit_segment_edge_or_future_endpoint_promoted": true,
+    "no_history_member_selector_scale_action_term_recurrence_gate_or_chord_added": true,
+    "outgoing_b_psi_interval_is_strictly_positive": true,
+    "outgoing_c_psi_interval_is_strictly_positive": true,
+    "pole_cancelled_event_identity_at_lambda_zero_consumed": true,
+    "proper_time_per_u_interval_is_strictly_positive": true,
+    "proper_u_rate_interval_is_strictly_positive": true,
+    "validated_actual_C2_birth_orientation_and_transfer_consumed": true
+  },
+  "validation_passed": true
+}
