@@ -1923,15 +1923,25 @@ Exact next object:
 
 - Complete analytic infinite branch: `DERIVED_LOCALLY`, with
   `H4 -> sqrt(kappa0/42)>0`.
-- Candidate role: `POSSIBLE_INFINITE_FRIEDRICHS_CHILD_EXTERIOR`.
+- Exact nonlinear leading center family:
+  `24_SHAPES + 1_COMMON_SCALE_ORBIT_PHASE`.
 - Weight-seven finite roots: `25_STABLE + 25_CENTER + 0_UNSTABLE`.
-- No unstable finite root as proof of an open nonlinear basin: `FALSE`.
-- Briot--Bouquet branch as a certified center-stable manifold: `FALSE`.
-- Reset-image intersection or forward entry into the asymptotic neighborhood:
-  `OPEN`.
+- Twelve polynomial time--lapse chains: `EXACT_GAUGE_QUOTIENTED`.
+- Exact center family plus normal splitting and analytic compactification:
+  `FINITE_N12_EXISTENTIAL_OPEN_CAPTURE_BASIN_DERIVED`.
+- Compactified boundary splitting:
+  `24_CENTER + 25_STABLE_VELOCITY + 1_STABLE_RADIAL`.
+- Capture radii `epsilon_star,delta_star`: `EXIST_POSITIVE_NOT_QUANTIFIED`.
+- Reset-image intersection or forward entry into a quantified capture surface:
+  `OPEN_CURRENT_OWNER`.
 - Stored reset representative promoted to the analytic branch: `FALSE`.
+- Certified reset location: `R4=1.0023342201094778`,
+  `epsilon=R4^-2 approximately 0.99535`.
+- Calderon reset ball versus asymptotic capture radius:
+  `NOT_DIRECTLY_COMPARABLE_DIFFERENT_CENTERS_CHARTS_AND_NORMS`.
 - Current narrowed dependency:
-  `RESET_TO_ASYMPTOTIC_CONNECTION_WITH_QUOTIENT_JETS_AND_DOMAIN_MARGINS_`
+  `QUANTITATIVE_CAPTURE_SURFACE_PLUS_RESET_COMPONENT_FORWARD_COVER_`
+  `WITH_FIRST_AND_MIXED_SECOND_QUOTIENT_JETS_AND_DOMAIN_MARGINS_`
   `OR_A_CERTIFIED_LATER_EVENT_OR_CANONICAL_EXIT`.
 - Chord 3 finite proof obligation: `FALSE`.
 - Gate 7: `ACTIVE`; Gate 8: `LOCKED`; `FULL_BHSM_COMPLETE=FALSE`.
