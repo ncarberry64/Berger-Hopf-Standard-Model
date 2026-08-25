@@ -171,8 +171,7 @@ def test_replacement_force_is_constraint_projected_without_reset_selection() -> 
     }
     assert dag["G7_08_FORCE"]["current_status"] == "OPEN_CURRENT_OWNER"
     assert (
-        "finite optical length" in dag["G7_08_FORCE"]["physical_meaning"]
-        and "cannot supply the physical force through the currently proved absolute source class"
+        "infinite nonencapsulating NHIM histories are preserved as nonrealized mathematics"
         in dag["G7_08_FORCE"]["physical_meaning"]
     )
     assert (
@@ -180,18 +179,17 @@ def test_replacement_force_is_constraint_projected_without_reset_selection() -> 
         "BHSM_N12_ASYMPTOTIC_NHIM_ANGULAR_FORCE_NO_GO.json"
         in dag["G7_08_FORCE"]["provenance"]
     )
-    assert "analytic full 57 by 196 reset Jacobian" in dag[
+    assert "analytic full 57 by 196 historical reset Jacobian" in dag[
         "G7_08_FORCE"
     ]["physical_meaning"]
-    assert "58-row child terminal-event candidate" in dag[
+    assert "event block has certified rank 32" in dag[
         "G7_08_FORCE"
     ]["physical_meaning"]
-    assert "close a contractive terminal root ball" in dag[
+    assert "projection onto the 73-dimensional constrained child manifold is submersive" in dag[
         "G7_08_FORCE"
     ]["physical_meaning"]
-    assert "c_psi<0<b_psi" in dag["G7_08_FORCE"]["physical_meaning"]
-    assert "T=0 reset/event incidence" in dag["G7_08_FORCE"]["physical_meaning"]
-    assert "positive-duration connecting BVP" in dag[
+    assert "E0 -> C1 ->[T>0] E1 -> C2" in dag["G7_08_FORCE"]["physical_meaning"]
+    assert "positive-duration local existence is now closed" in dag[
         "G7_08_FORCE"
     ]["physical_meaning"]
     assert (
@@ -212,6 +210,11 @@ def test_replacement_force_is_constraint_projected_without_reset_selection() -> 
     assert (
         "artifacts/flagship_integration/"
         "BHSM_N12_FINITE_TERMINAL_FORWARD_COMPONENT_COMPATIBILITY.json"
+        in dag["G7_08_FORCE"]["provenance"]
+    )
+    assert (
+        "artifacts/flagship_integration/"
+        "BHSM_N12_FINITE_TERMINAL_TWO_SIDED_FORWARD_INTERFACE.json"
         in dag["G7_08_FORCE"]["provenance"]
     )
     assert dag["G7_09_SADDLE"]["current_status"] == (

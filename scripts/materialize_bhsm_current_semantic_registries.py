@@ -69,6 +69,8 @@ SOURCES = (
     "artifacts/flagship_integration/BHSM_N12_FINITE_TERMINAL_MARGIN_TRANSFER.json",
     "artifacts/flagship_integration/BHSM_N12_FINITE_TERMINAL_ORIENTATION_CERTIFICATE.json",
     "artifacts/flagship_integration/BHSM_N12_FINITE_TERMINAL_FORWARD_COMPONENT_COMPATIBILITY.json",
+    "artifacts/flagship_integration/BHSM_N12_FINITE_TERMINAL_EVENT_EIGENLINE_SOLUTION_BALL.json",
+    "artifacts/flagship_integration/BHSM_N12_FINITE_TERMINAL_TWO_SIDED_FORWARD_INTERFACE.json",
     "artifacts/flagship_integration/BHSM_N12_WEIGHT_SEVEN_TRANSVERSE_DESCRIPTOR.json",
     "artifacts/flagship_integration/BHSM_N12_WEIGHT_FIVE_CENTER_MODULATION.json",
     "artifacts/flagship_integration/BHSM_N12_WEIGHT_FIVE_MULTIPRECISION_NONPROMOTION.json",
@@ -152,6 +154,7 @@ def verify_current_lineage() -> None:
     terminal_margin = loaded["artifacts/flagship_integration/BHSM_N12_FINITE_TERMINAL_MARGIN_TRANSFER.json"]
     terminal_orientation = loaded["artifacts/flagship_integration/BHSM_N12_FINITE_TERMINAL_ORIENTATION_CERTIFICATE.json"]
     terminal_component = loaded["artifacts/flagship_integration/BHSM_N12_FINITE_TERMINAL_FORWARD_COMPONENT_COMPATIBILITY.json"]
+    terminal_two_sided = loaded["artifacts/flagship_integration/BHSM_N12_FINITE_TERMINAL_TWO_SIDED_FORWARD_INTERFACE.json"]
     weight_seven_descriptor = loaded["artifacts/flagship_integration/BHSM_N12_WEIGHT_SEVEN_TRANSVERSE_DESCRIPTOR.json"]
     weight_five_modulation = loaded["artifacts/flagship_integration/BHSM_N12_WEIGHT_FIVE_CENTER_MODULATION.json"]
     weight_five_mp_audit = loaded["artifacts/flagship_integration/BHSM_N12_WEIGHT_FIVE_MULTIPRECISION_NONPROMOTION.json"]
@@ -348,6 +351,17 @@ def verify_current_lineage() -> None:
         ] == "OPEN_CURRENT_OWNER"
         and terminal_component["claim_boundary"]["actual_projected_force"]
         == "OPEN_AFTER_OPERATOR"
+        and terminal_two_sided["claim_boundary"][
+            "positive_duration_forward_child_history"
+        ] == "CERTIFIED_LOCAL_EXISTENCE"
+        and terminal_two_sided["exact_local_theorem"]["physical_chronology"]
+        == "E0_TO_C1_TO_[T>0]_E1_TO_C2"
+        and terminal_two_sided["exact_local_theorem"][
+            "same_event_recurrence_required"
+        ] is False
+        and terminal_two_sided["claim_boundary"][
+            "compact_finite_endpoint_operator"
+        ] == "OPEN_CURRENT_OWNER"
     ):
         raise RuntimeError(
             "maximal-adjoint/NHIM/certified-terminal frontier is not current"

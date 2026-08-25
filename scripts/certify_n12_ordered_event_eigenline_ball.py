@@ -58,11 +58,10 @@ def _down(value: float) -> float:
 
 
 def _sha256(path: Path) -> str:
-    digest = hashlib.sha256()
-    with path.open("rb") as handle:
-        for block in iter(lambda: handle.read(1024 * 1024), b""):
-            digest.update(block)
-    return digest.hexdigest().upper()
+    payload = path.read_bytes()
+    if path.suffix.lower() == ".json":
+        payload = payload.replace(b"\r\n", b"\n")
+    return hashlib.sha256(payload).hexdigest().upper()
 
 
 def main() -> None:
@@ -480,7 +479,11 @@ def main() -> None:
         "DIRECT_N12_COMPLETE_PERSISTENT_CHILD_CERTIFIED": False,
         "FULL_BHSM_COMPLETE": False,
     }
-    RESULT.write_text(json.dumps(payload, indent=2) + "\n", encoding="utf-8")
+    RESULT.write_text(
+        json.dumps(payload, indent=2) + "\n",
+        encoding="utf-8",
+        newline="\n",
+    )
     print(json.dumps(payload, indent=2))
 
 
