@@ -39,6 +39,7 @@ SOURCES = (
     "artifacts/flagship_integration/BHSM_N12_AE2_COVARIANT_SEAM_ENCLOSURE_Z_MINUS_1.json",
     "artifacts/flagship_integration/BHSM_N12_AE2_NEGATIVE_AXIS_SEAM_FAMILY.json",
     "artifacts/flagship_integration/BHSM_N12_CONSTRAINT_PROJECTED_REPLACEMENT_SADDLE.json",
+    "artifacts/flagship_integration/BHSM_N12_RESET_TIME_QUOTIENT_GENERATOR_AUDIT.json",
     "artifacts/flagship_integration/BHSM_N12_JOINT_FINITE_HISTORY_OPERATOR_DATA_GATE.json",
     "artifacts/intrinsic_state_selection/BHSM_N12_FINITE_ENCAPSULATION_LOCAL_BRANCH.json",
     "artifacts/flagship_integration/BHSM_N12_GATE7_AE2_THRESHOLD_SUPERSESSION.json",
@@ -87,6 +88,7 @@ def verify_current_lineage() -> None:
     seam_enclosure = loaded["artifacts/flagship_integration/BHSM_N12_AE2_COVARIANT_SEAM_ENCLOSURE_Z_MINUS_1.json"]
     seam_family = loaded["artifacts/flagship_integration/BHSM_N12_AE2_NEGATIVE_AXIS_SEAM_FAMILY.json"]
     projected_saddle = loaded["artifacts/flagship_integration/BHSM_N12_CONSTRAINT_PROJECTED_REPLACEMENT_SADDLE.json"]
+    time_quotient = loaded["artifacts/flagship_integration/BHSM_N12_RESET_TIME_QUOTIENT_GENERATOR_AUDIT.json"]
     operator_data_gate = loaded["artifacts/flagship_integration/BHSM_N12_JOINT_FINITE_HISTORY_OPERATOR_DATA_GATE.json"]
     frontier = loaded["artifacts/flagship_integration/BHSM_N12_GATE7_AE2_THRESHOLD_SUPERSESSION.json"]
     if ae2.get("action_version") != "BHSM-AE-2.0.0":
@@ -192,6 +194,19 @@ def verify_current_lineage() -> None:
         ] == "OPEN_COUPLED_TO_FORCE"
     ):
         raise RuntimeError("constraint-projected replacement saddle frontier is not current")
+    if not (
+        time_quotient["claim_boundary"]["raw_reset_tangent_dimension"]
+        == "DERIVED_67"
+        and time_quotient["claim_boundary"][
+            "post_time_quotient_dimension_count"
+        ] == "RETAINED_66"
+        and time_quotient["claim_boundary"]["explicit_time_generator"]
+        == "OPEN"
+        and time_quotient["force_and_saddle_consequence"][
+            "raw_boundary_log_R4_projection_promoted_to_physical_quotient"
+        ] is False
+    ):
+        raise RuntimeError("reset time-quotient generator frontier is not current")
     if not (
         operator_data_gate["claim_boundary"][
             "complete_action_owned_exterior_oracle"

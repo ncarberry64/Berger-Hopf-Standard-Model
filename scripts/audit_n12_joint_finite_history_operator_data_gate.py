@@ -32,6 +32,9 @@ INPUTS = (
         "intrinsic_state_selection/BHSM_N12_FINITE_ENCAPSULATION_LOCAL_BRANCH.json"
     ),
     ARTIFACTS / (
+        "flagship_integration/BHSM_N12_RESET_TIME_QUOTIENT_GENERATOR_AUDIT.json"
+    ),
+    ARTIFACTS / (
         "n12_direct_checkpoint/BHSM_N12_COMPLETE_PERSISTENT_CHILD_CERTIFICATE.json"
     ),
     ARTIFACTS / (
@@ -71,6 +74,7 @@ def checkpoint_inventory() -> dict[str, Any]:
         "geometry_operator_jets",
         "geometry_reset_hessian",
         "replacement_force_covector",
+        "whole_system_time_generator",
     }
     return {
         "arrays": arrays,
@@ -120,7 +124,16 @@ def build_payload() -> dict[str, Any]:
     records = [_load(path) for path in INPUTS[:-1]]
     if not all(record.get("validation_passed") is True for record in records):
         raise RuntimeError("validated joint finite-history inputs required")
-    force_domain, incidence, seam, projected, branch, certificate, persistence = records
+    (
+        force_domain,
+        incidence,
+        seam,
+        projected,
+        branch,
+        time_quotient,
+        certificate,
+        persistence,
+    ) = records
     checkpoint = checkpoint_inventory()
     persistence_data = persistence_inventory(persistence)
     validation = {
@@ -172,6 +185,15 @@ def build_payload() -> dict[str, Any]:
                 "geometry_reset_KKT_Hessian"
             ] == "OPEN"
         ),
+        "raw_reset_tangent_not_confused_with_physical_time_quotient": (
+            time_quotient["claim_boundary"]["raw_reset_tangent_dimension"]
+            == "DERIVED_67"
+            and time_quotient["claim_boundary"][
+                "post_time_quotient_dimension_count"
+            ] == "RETAINED_66"
+            and time_quotient["claim_boundary"]["explicit_time_generator"]
+            == "OPEN"
+        ),
         "no_endpoint_selector_periodicity_scale_fit_new_gate_or_prediction_added": True,
     }
     return {
@@ -196,6 +218,7 @@ def build_payload() -> dict[str, Any]:
             "two_sided_negative_axis_seam_intervals": "BROADLY_ENCLOSED",
             "constraint_tangent_force_criterion": "DERIVED",
             "nullspace_and_bordered_KKT_linear_solvers": "DERIVED_AND_CROSSCHECKED",
+            "whole_system_time_quotient_dimension_count": "RETAINED_66",
         },
         "data_inventories": {
             "endpoint_checkpoint": checkpoint,
@@ -209,10 +232,12 @@ def build_payload() -> dict[str, Any]:
             "complete_geometry_operator_first_jet": True,
             "constraint_reduced_geometry_reset_Hessian": True,
             "actual_projected_heat_minus_zeta_force_covector": True,
+            "explicit_coupled_hybrid_time_quotient_generator_or_intrinsic_quotient": True,
         },
         "logical_boundary": {
             "failure_is_an_action_theorem_or_operator_data_gap": True,
             "failure_is_not_a_numerical_linear_solver_gap": True,
+            "raw_67_dimensional_kernel_is_final_physical_quotient": False,
             "endpoint_checkpoint_alone_determines_nonlocal_heat_force": False,
             "broad_seam_intervals_alone_determine_nonlocal_heat_force": False,
             "persistence_validation_endpoint_may_be_promoted": False,

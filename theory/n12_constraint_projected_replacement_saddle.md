@@ -26,7 +26,12 @@ arbitrary child representative and testing an ambient component would add a
 selector not owned by the action.
 
 The actual fixed-event child reset Jacobian is `31 x 98`, has rank 31, and
-has a 67-dimensional tangent kernel.  Its boundary `log R4` covector has
+has a 67-dimensional raw constraint-tangent kernel.  The already-retained
+whole-system time quotient reduces this to dimension 66.  The durable
+checkpoint does not store the explicit time-generator vector, so the
+numerical nullspace witness is not relabelled as the final physical quotient.
+The theorem descends to that quotient once its generator is supplied.  The
+raw boundary `log R4` covector has
 tangent projection norm `0.1847862958485751`.  This proves that the reset
 fiber contains genuine geometry-changing directions; it does not establish
 the value or sign of the unknown quantum force.  A constructed nonzero row-

@@ -18,6 +18,12 @@ proper-time state path, a radius path, `D_tau`, `Delta_tau`, an endpoint form,
 geometry operator jets, a replacement-force covector, or a geometry/reset
 Hessian.
 
+The checkpoint also does not supply the explicit whole-system time generator.
+The raw fixed-event reset kernel has dimension 67 and the retained quotient
+count is 66, but the local child flow is not tangent to the fixed-event reset
+relation.  Consequently it cannot be projected by hand to define the missing
+hybrid phase slice.
+
 The positive-duration child witness does not fill this gap.  It certifies
 post-reset persistence over `1e-7` coordinate time and stores norm/domain
 diagnostics at its time rows plus a final state.  Its validation end is not a

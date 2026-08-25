@@ -26,7 +26,7 @@
     "normal_only_multiplier_absorption_residual_norm": 3.754860454104093e-12,
     "normal_only_shifted_force_residual_norm": 3.7548212306927235e-12,
     "nullspace_bordered_ambient_correction_residual_norm": 8.50872506884178e-13,
-    "physical_tangent_dimension": 67
+    "raw_constraint_tangent_dimension": 67
   },
   "artifact": "BHSM_N12_CONSTRAINT_PROJECTED_REPLACEMENT_SADDLE",
   "claim_boundary": {
@@ -56,15 +56,24 @@
     "ill_conditioned_H_inverse_formed": false,
     "linearized_tangent_equation": "(N^dagger*H_total*N)*delta_xi=-N^dagger*q_rep",
     "normal_component": "(I-N*N^dagger)q_rep_IS_ABSORBED_BY_THE_KKT_MULTIPLIER",
-    "physical_tangent": "T_y=ker(J)_WITH_ORTHONORMAL_BASIS_N",
+    "physical_tangent_quotient": "T_phys=T_raw/MOD_EXISTING_GAUGE_TIME_AND_SCALE_CENTERS",
+    "raw_constraint_tangent": "T_raw=ker(J)_WITH_ORTHONORMAL_BASIS_N_raw",
     "replacement_force": "q_rep=D_y_Gamma_heat-D_y_Gamma_SM_zeta",
     "required_nondegeneracy": "N^dagger*H_total*N_INVERTIBLE_ON_THE_RETAINED_PHYSICAL_TANGENT_AFTER_EXISTING_GAUGE_TIME_AND_SCALE_QUOTIENTS",
     "same_configuration_transfer_criterion": "N^dagger*q_rep=0"
+  },
+  "existing_quotient_audit": {
+    "after_existing_whole_system_time_quotient_dimension": 66,
+    "explicit_time_generator_vector_in_current_checkpoint": false,
+    "raw_fixed_event_child_tangent_dimension": 67,
+    "raw_nullspace_crosscheck_is_final_physical_quotient": false,
+    "theorem_descends_to_any_declared_orthogonal_physical_quotient": true
   },
   "inputs": {
     "artifacts/BHSM_aether_quantum_functional_accounting_v16_00.json": "319B56C97D9198ED8E4E38E38E12333EBB90ADA8B923C0557C83F056199B1F46",
     "artifacts/flagship_integration/BHSM_N12_AE2_NEGATIVE_AXIS_SEAM_FAMILY.json": "F2B489A187E84DF6614C07BEF199F45D8E291A685448F52A56262EC9D6AA1623",
     "artifacts/flagship_integration/BHSM_N12_FINITE_ENDPOINT_ZERO_SOURCE_FORCE_FUNCTIONAL.json": "6BC1FC78190437347813117A63D252C96115B2B67619D893144526A5DDD4E931",
+    "artifacts/intrinsic_state_selection/BHSM_N12_CONTINUUM_SINGULAR_HITTING_RESET_RELATION.json": "FAE8BFFDBF19FA71F33340AB00B5C708779D475E935C505203D2B31BA3A3988D",
     "artifacts/n12_direct_checkpoint/BHSM_N12_COMPLETE_PERSISTENT_CHILD_STATE.npz": "8AEE33C46C320A36384C83E6B9BDE387AE3E565D99C7D49C606895229B796890"
   },
   "stage_adjudication": {
@@ -81,9 +90,9 @@
   "status": "EXACT_CONSTRAINT_TANGENT_FORCE_CRITERION_DERIVED_JOINT_PHYSICAL_SADDLE_OPEN",
   "validation": {
     "actual_boundary_log_radius_varies_on_reset_tangent": true,
+    "actual_raw_reset_tangent_dimension_is_67": true,
     "actual_reset_constraint_has_full_row_rank": true,
     "actual_reset_tangent_basis_is_numerically_valid": true,
-    "actual_reset_tangent_dimension_is_67": true,
     "exact_heat_minus_zeta_force_functional_consumed": true,
     "full_negative_axis_broad_seam_enclosure_consumed": true,
     "geometry_witness_not_promoted_to_quantum_force": true,

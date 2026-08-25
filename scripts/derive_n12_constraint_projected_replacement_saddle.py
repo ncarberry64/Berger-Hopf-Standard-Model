@@ -36,6 +36,9 @@ INPUTS = (
     ),
     ARTIFACTS / "BHSM_aether_quantum_functional_accounting_v16_00.json",
     ARTIFACTS / (
+        "intrinsic_state_selection/BHSM_N12_CONTINUUM_SINGULAR_HITTING_RESET_RELATION.json"
+    ),
+    ARTIFACTS / (
         "n12_direct_checkpoint/BHSM_N12_COMPLETE_PERSISTENT_CHILD_STATE.npz"
     ),
 )
@@ -93,7 +96,7 @@ def reset_tangent_witness() -> dict[str, Any]:
     return {
         "fixed_event_child_constraint_shape": list(jacobian.shape),
         "constraint_rank": int(np.linalg.matrix_rank(jacobian)),
-        "physical_tangent_dimension": int(tangent_basis.shape[1]),
+        "raw_constraint_tangent_dimension": int(tangent_basis.shape[1]),
         "constraint_tangent_kernel_residual_norm": geometry[
             "kernel_residual_norm"
         ],
@@ -150,7 +153,7 @@ def reset_tangent_witness() -> dict[str, Any]:
 def build_payload() -> dict[str, Any]:
     if not all(path.is_file() for path in INPUTS):
         raise FileNotFoundError("constraint-projected replacement inputs required")
-    force, seam, accounting = (_load(path) for path in INPUTS[:-1])
+    force, seam, accounting, reset = (_load(path) for path in INPUTS[:-1])
     if not all(record.get("validation_passed") is True for record in (
         force, seam, accounting
     )):
@@ -172,8 +175,11 @@ def build_payload() -> dict[str, Any]:
                 "complete_spectral_parameter_coverage"
             ] == "CLOSED_ON_NEGATIVE_REAL_AXIS"
         ),
-        "actual_reset_tangent_dimension_is_67": (
-            witness["physical_tangent_dimension"] == 67
+        "actual_raw_reset_tangent_dimension_is_67": (
+            witness["raw_constraint_tangent_dimension"] == 67
+            and reset["reset_correspondence"][
+                "after_existing_whole_system_time_quotient"
+            ] == 66
         ),
         "actual_reset_constraint_has_full_row_rank": (
             witness["constraint_rank"] == 31
@@ -221,7 +227,10 @@ def build_payload() -> dict[str, Any]:
         ),
         "exact_theorem": {
             "constraint_surface": "C(y)=0_WITH_J=D_C(y)",
-            "physical_tangent": "T_y=ker(J)_WITH_ORTHONORMAL_BASIS_N",
+            "raw_constraint_tangent": "T_raw=ker(J)_WITH_ORTHONORMAL_BASIS_N_raw",
+            "physical_tangent_quotient": (
+                "T_phys=T_raw/MOD_EXISTING_GAUGE_TIME_AND_SCALE_CENTERS"
+            ),
             "replacement_force": (
                 "q_rep=D_y_Gamma_heat-D_y_Gamma_SM_zeta"
             ),
@@ -255,6 +264,15 @@ def build_payload() -> dict[str, Any]:
             ),
         },
         "actual_N12_reset_witness": witness,
+        "existing_quotient_audit": {
+            "raw_fixed_event_child_tangent_dimension": 67,
+            "after_existing_whole_system_time_quotient_dimension": reset[
+                "reset_correspondence"
+            ]["after_existing_whole_system_time_quotient"],
+            "explicit_time_generator_vector_in_current_checkpoint": False,
+            "raw_nullspace_crosscheck_is_final_physical_quotient": False,
+            "theorem_descends_to_any_declared_orthogonal_physical_quotient": True,
+        },
         "stage_adjudication": {
             "G7_08_force_and_G7_09_saddle_are_mathematically_coupled": True,
             "new_gate_introduced": False,

@@ -104,7 +104,13 @@ def test_actual_n12_reset_fiber_adjudication_is_conservative() -> None:
     payload = _payload()
     assert payload["validation_passed"] is True
     witness = payload["actual_N12_reset_witness"]
-    assert witness["physical_tangent_dimension"] == 67
+    assert witness["raw_constraint_tangent_dimension"] == 67
+    assert payload["existing_quotient_audit"][
+        "after_existing_whole_system_time_quotient_dimension"
+    ] == 66
+    assert payload["existing_quotient_audit"][
+        "raw_nullspace_crosscheck_is_final_physical_quotient"
+    ] is False
     assert witness["boundary_log_R4_covector_tangent_projection_norm"] > 0.18
     assert payload["claim_boundary"][
         "constraint_tangent_force_criterion"

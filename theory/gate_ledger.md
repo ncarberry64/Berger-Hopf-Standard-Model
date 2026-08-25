@@ -308,6 +308,18 @@
   Weyl--Calderon oracle with its geometry jet, not another algebraic solver.
   The finite-encapsulation scope is preserved and arbitrary infinite
   nonencapsulating formation-tail analysis is not reopened.
+- Quotient provenance correction: the fixed-event child Jacobian kernel is
+  67-dimensional before the retained whole-system time quotient; the
+  post-quotient count is 66.  The child Euler--Dirac flow at the reset is not
+  the missing hybrid generator: across 48, 96, and 192 quadrature points its
+  relative fixed-event reset residual is stably about `0.01135975`, and its
+  relative distance to the raw kernel is about `0.00358421`.  Projecting it
+  into the kernel would manufacture a gauge slice.  The raw nullspace and
+  bordered KKT calculations remain valid algebraic checks, but neither the
+  raw `log R4` projection nor the raw 67-dimensional basis is promoted to the
+  final physical quotient.  The coupled 196-dimensional event-child phase
+  generator or an intrinsic quotient formulation is part of the same open
+  exterior-operator realization.
 - The event-normal identities
   `D_s M=L_spatial(Y(s))-zI-M^2` and
   `D_s(delta M)=delta L-M delta M-delta M M` remain exact arm-transfer
