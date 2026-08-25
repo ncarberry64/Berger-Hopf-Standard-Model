@@ -405,6 +405,14 @@
   physical N12 histories; the counterpair closes only the proposed
   history-independent algebraic sign shortcut.  The actual finite-history
   coefficient path/seam oracle and physical first jet remain necessary.
+- Whole-negative-axis synthesis no-go: the current broad seam comparison
+  class contains both the Neumann and Dirichlet regular far-load families for
+  every `kappa>0`.  At the same `R4=1` and `T=3`, with the same retained
+  graded spatial ledger, their certified replacement forces are respectively
+  strictly positive (`>3.46484200887244`) and strictly negative
+  (`<-4.10073296251316`).  Therefore integrating or adding probes to the same
+  broad class cannot decide the physical force.  The action-owned endpoint
+  load must be sharpened or the equivalent complete operator materialized.
 - The event-normal identities
   `D_s M=L_spatial(Y(s))-zI-M^2` and
   `D_s(delta M)=delta L-M delta M-delta M M` remain exact arm-transfer

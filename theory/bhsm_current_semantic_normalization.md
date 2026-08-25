@@ -29,6 +29,16 @@ The reference pair is not an N12 Euler--Dirac history and is not a physical
 force evaluation; it proves only that the actual coefficient path and seam
 geometry jet cannot be bypassed by an operator-algebra sign assertion.
 
+The full negative-axis seam enclosure also cannot be converted into a
+decisive force interval without new action data.  Its scalar and product
+comparison classes contain both canonical Neumann and Dirichlet far-load
+families over the whole negative axis.  At identical `R4=1` and `T=3`, these
+families have rigorously opposite replacement-force signs.  Low-energy
+source-Dini and high-energy trace control remain closed, but more probes or
+quadrature inside the same broad class have no proof value.  The remaining
+owner is specifically the action-owned endpoint load/maximal finite history,
+or the equivalent complete joint operator and geometry jet.
+
 Historical `1:2:7` gauge, CKM, `1/16`, `eta_l`, `rho_ch`, `Z_virt^(u,2)=1/2`, and physical mass-scale formulas remain classified as historical, conditional, frozen output, or not derived. They are not AE2 action inputs and no frozen prediction changes here.
 
 The radius-history obstruction remains a valid classification of the

@@ -76,16 +76,24 @@ def _sector_rows(radius: mp.mpf) -> tuple[list[tuple[str, int, mp.mpf, mp.mpf]],
     return rows, angular_tail
 
 
-def force_interval(radius_text: str, duration_text: str = "3") -> dict[str, str]:
+def force_interval(
+    radius_text: str,
+    duration_text: str = "3",
+    *,
+    endpoint: str = "DIRICHLET",
+) -> dict[str, str]:
     radius = mp.mpf(radius_text)
     duration = mp.mpf(duration_text)
+    if endpoint not in {"DIRICHLET", "NEUMANN"}:
+        raise ValueError("endpoint must be DIRICHLET or NEUMANN")
+    first_temporal_mode = 1 if endpoint == "DIRICHLET" else 0
     rows, angular_tail = _sector_rows(radius)
     temporal_tail = _temporal_tail(duration)
     value = mp.mpf("0")
     retained_abs_angular_sum = mp.mpf("0")
     for _name, force_sign, degeneracy, spatial in rows:
         retained_abs_angular_sum += degeneracy * mp.exp(-spatial)
-        for k in range(1, TEMPORAL_CUTOFF):
+        for k in range(first_temporal_mode, TEMPORAL_CUTOFF):
             temporal = (mp.pi * k / duration) ** 2
             eigenvalue = temporal + spatial
             value += (
@@ -101,10 +109,13 @@ def force_interval(radius_text: str, duration_text: str = "3") -> dict[str, str]
     # factorizes.  The two omitted rectangles are bounded without relying on
     # cancellation.  sum_(k>=1) exp(-(pi*k/T)^2) <= T/(2*sqrt(pi)).
     all_temporal_bound = duration / (2 * mp.sqrt(mp.pi))
+    if endpoint == "NEUMANN":
+        all_temporal_bound += 1
     error = angular_tail * all_temporal_bound + retained_abs_angular_sum * temporal_tail
     return {
         "radius": mp.nstr(radius, 30),
         "duration": mp.nstr(duration, 30),
+        "endpoint": endpoint,
         "force_midpoint": mp.nstr(value, 80),
         "absolute_error_upper": mp.nstr(error, 20),
         "force_lower": mp.nstr(value - error, 80),
