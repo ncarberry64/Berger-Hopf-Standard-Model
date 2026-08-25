@@ -21,6 +21,14 @@ On the event-child constraint surface `C(y)=0`, the exact physical replacement t
 
 A reproducible data inventory shows that the endpoint checkpoint contains the state and first constraint Jacobian but no complete coefficient path, temporal form, endpoint load, geometry operator jet, projected force, or geometry/reset Hessian. The positive-duration child persistence witness ends at a validation time and cannot be promoted to an action-owned force endpoint. The two tracked certified chords likewise end at `2e-8` without an event or canonical stop and cannot be promoted because the zeta extension force is strictly additive. On each fixed regular finite endpoint or canonical-stop stratum, common-domain C^2 form dependence and a uniform negative-probe coercivity margin imply C^2 dependence of the resolvent, Poisson operator, and Weyl--Calderón map. An inverse-free, block-covariant solver now evaluates the Weyl value and first two geometry jets from any supplied stratum pencil using three interior solves. One stored reset representative still cannot determine the physical force or Hessian unless the action proves reset-fiber invariance. The rank-two radius Cauchy jet and non-gauge common scale exclude reset kinematics, time translation, and scale symmetry as sources of such invariance; only a separate quantum trace-cancellation theorem could supply that shortcut. Thus the single current owner is the actual parametric finite-stratum action data and physical quotient. Arbitrary infinite nonencapsulating formation tails and terminal recurrence are not reopened. G7_08 and G7_09 remain coupled; the later pair-plus-contact source Hessian is a distinct downstream object. The dependency chain then proceeds through that response Hessian, Ward/BRST and relative-trace control, and a basis-independent scalar observable map.
 
+Finite-endpoint positivity and the retained graded sector ledger do not supply
+a force-sign shortcut.  A certified counterpair on the same finite
+Dirichlet/Friedrichs reference class at `T=3` has replacement force negative
+at `R4=0.5` and positive at `R4=2`, with uncancelled Gaussian tail bounds.
+The reference pair is not an N12 Euler--Dirac history and is not a physical
+force evaluation; it proves only that the actual coefficient path and seam
+geometry jet cannot be bypassed by an operator-algebra sign assertion.
+
 Historical `1:2:7` gauge, CKM, `1/16`, `eta_l`, `rho_ch`, `Z_virt^(u,2)=1/2`, and physical mass-scale formulas remain classified as historical, conditional, frozen output, or not derived. They are not AE2 action inputs and no frozen prediction changes here.
 
 The radius-history obstruction remains a valid classification of the

@@ -396,6 +396,15 @@
   physical inputs: despite exact shadowing through `2e-8`, they reach neither
   event nor canonical stop and the strictly additive zeta force forbids using
   that cutoff.  Actual parametric finite-stratum action data remain open.
+- Force-sign shortcut no-go: finite-endpoint compact resolvent and positivity
+  make the replacement force finite but do not fix its sign.  On the same
+  retained Dirichlet/Friedrichs reference class at proper duration `T=3`,
+  the exact round graded heat-minus-zeta force is strictly negative at
+  `R4=0.5` and strictly positive at `R4=2`, with uncancelled Gaussian tail
+  errors below `2.7e-120`.  These reference operators are not promoted to
+  physical N12 histories; the counterpair closes only the proposed
+  history-independent algebraic sign shortcut.  The actual finite-history
+  coefficient path/seam oracle and physical first jet remain necessary.
 - The event-normal identities
   `D_s M=L_spatial(Y(s))-zI-M^2` and
   `D_s(delta M)=delta L-M delta M-delta M M` remain exact arm-transfer
