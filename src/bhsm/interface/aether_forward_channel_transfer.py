@@ -9,9 +9,12 @@ endpoint, spectral-to-momentum map, or source profile.
 
 from __future__ import annotations
 
+from collections.abc import Callable
 import math
+from typing import Any
 
 import numpy as np
+from scipy.integrate import solve_ivp
 
 
 def scalar_channel_transfer_generator(
@@ -167,6 +170,230 @@ def transfer_variation_rhs(
     }
 
 
+def integrate_transfer_jets(
+    generator_jet_builder: Callable[[float], dict[str, np.ndarray]],
+    proper_time_interval: tuple[float, float],
+    *,
+    relative_tolerance: float = 2.0e-11,
+    absolute_tolerance: float = 2.0e-13,
+    maximum_step: float | None = None,
+) -> dict[str, Any]:
+    """Integrate the fundamental transfer and two geometry directions.
+
+    ``generator_jet_builder(tau)`` supplies the action-owned base, left,
+    right, and mixed generator jets.  The birth frame is the identity and is
+    independent of geometry.  This realizes the triangular first-jet system
+    without inverting a kinetic, Dirac, or transfer block.
+
+    The interval must have strictly positive proper duration.  Its two ends
+    remain boundary traces; this routine imposes no endpoint load or boundary
+    condition.
+    """
+
+    start, stop = (float(value) for value in proper_time_interval)
+    rtol = float(relative_tolerance)
+    atol = float(absolute_tolerance)
+    if (
+        not math.isfinite(start)
+        or not math.isfinite(stop)
+        or stop <= start
+        or not math.isfinite(rtol)
+        or not math.isfinite(atol)
+        or rtol <= 0.0
+        or atol <= 0.0
+    ):
+        raise ValueError(
+            "a finite positive proper-time interval and tolerances are required"
+        )
+    if maximum_step is None:
+        max_step = np.inf
+    else:
+        max_step = float(maximum_step)
+        if not math.isfinite(max_step) or max_step <= 0.0:
+            raise ValueError("maximum_step must be positive and finite")
+
+    keys = ("base", "first_left", "first_right", "mixed_second")
+    initial = {
+        "base": np.eye(2, dtype=complex),
+        "first_left": np.zeros((2, 2), dtype=complex),
+        "first_right": np.zeros((2, 2), dtype=complex),
+        "mixed_second": np.zeros((2, 2), dtype=complex),
+    }
+
+    def pack(record: dict[str, np.ndarray]) -> np.ndarray:
+        return np.concatenate(
+            [np.asarray(record[key], dtype=complex).ravel() for key in keys]
+        )
+
+    def unpack(vector: np.ndarray) -> dict[str, np.ndarray]:
+        return {
+            key: np.asarray(vector[4 * index : 4 * (index + 1)]).reshape(2, 2)
+            for index, key in enumerate(keys)
+        }
+
+    def rhs(tau: float, vector: np.ndarray) -> np.ndarray:
+        generator = generator_jet_builder(float(tau))
+        return pack(transfer_variation_rhs(generator, unpack(vector)))
+
+    solution = solve_ivp(
+        rhs,
+        (start, stop),
+        pack(initial),
+        method="DOP853",
+        rtol=rtol,
+        atol=atol,
+        max_step=max_step,
+    )
+    if not solution.success or not np.all(np.isfinite(solution.y[:, -1])):
+        raise RuntimeError(f"transfer jet integration failed: {solution.message}")
+    transfer = unpack(solution.y[:, -1])
+    determinant = np.linalg.det(transfer["base"])
+    return {
+        **transfer,
+        "proper_time_interval": (start, stop),
+        "proper_duration": stop - start,
+        "function_evaluations": int(solution.nfev),
+        "accepted_steps": int(len(solution.t) - 1),
+        "base_determinant": determinant,
+        "base_Wronskian_residual": float(abs(determinant - 1.0)),
+        "explicit_matrix_inverse_formed": False,
+        "endpoint_condition_imposed": False,
+    }
+
+
+def two_boundary_weyl_from_transfer_jets(
+    transfer_jets: dict[str, np.ndarray],
+    *,
+    chart_tolerance: float = 1.0e-14,
+) -> dict[str, Any]:
+    """Return the compact two-boundary Weyl matrix and its exact jets.
+
+    For ``(u_1,p_1)^T=T(u_0,p_0)^T`` and outward conormals
+    ``(-p_0,p_1)``, the endpoint response is
+
+    ``M=[[a/b,-1/b],[c-da/b,d/b]]``.
+
+    Both endpoint values ``(u_0,u_1)`` are free boundary variables.  Thus the
+    construction is the two-sided Calderon graph on the regular ``b != 0``
+    chart, not a terminal boundary condition.  The same formula applies to a
+    scalar channel with ``p=u'`` and a factorized product-Dirac channel with
+    ``p=A u``.
+    """
+
+    keys = ("base", "first_left", "first_right", "mixed_second")
+    if not all(key in transfer_jets for key in keys):
+        raise KeyError("base, first_left, first_right, and mixed_second required")
+    matrices = {
+        key: np.asarray(transfer_jets[key], dtype=complex) for key in keys
+    }
+    if any(value.shape != (2, 2) for value in matrices.values()) or any(
+        not np.all(np.isfinite(value)) for value in matrices.values()
+    ):
+        raise ValueError("finite 2x2 transfer jets required")
+    tolerance = float(chart_tolerance)
+    if not math.isfinite(tolerance) or tolerance <= 0.0:
+        raise ValueError("chart_tolerance must be positive and finite")
+
+    def entry(row: int, column: int) -> tuple[complex, complex, complex, complex]:
+        return tuple(  # type: ignore[return-value]
+            matrices[key][row, column] for key in keys
+        )
+
+    def add(
+        left: tuple[complex, complex, complex, complex],
+        right: tuple[complex, complex, complex, complex],
+    ) -> tuple[complex, complex, complex, complex]:
+        return tuple(  # type: ignore[return-value]
+            a + b for a, b in zip(left, right, strict=True)
+        )
+
+    def scale(
+        value: tuple[complex, complex, complex, complex], coefficient: complex
+    ) -> tuple[complex, complex, complex, complex]:
+        return tuple(coefficient * item for item in value)  # type: ignore[return-value]
+
+    def multiply(
+        left: tuple[complex, complex, complex, complex],
+        right: tuple[complex, complex, complex, complex],
+    ) -> tuple[complex, complex, complex, complex]:
+        a, ah, ak, ahk = left
+        b, bh, bk, bhk = right
+        return (
+            a * b,
+            ah * b + a * bh,
+            ak * b + a * bk,
+            ahk * b + ah * bk + ak * bh + a * bhk,
+        )
+
+    def reciprocal(
+        value: tuple[complex, complex, complex, complex]
+    ) -> tuple[complex, complex, complex, complex]:
+        b, bh, bk, bhk = value
+        if abs(b) <= tolerance:
+            raise ZeroDivisionError(
+                "two-boundary Weyl chart has singular transfer b block"
+            )
+        inverse = 1.0 / b
+        return (
+            inverse,
+            -bh * inverse**2,
+            -bk * inverse**2,
+            2.0 * bh * bk * inverse**3 - bhk * inverse**2,
+        )
+
+    a, b, c, d = entry(0, 0), entry(0, 1), entry(1, 0), entry(1, 1)
+    inverse_b = reciprocal(b)
+    a_over_b = multiply(a, inverse_b)
+    d_over_b = multiply(d, inverse_b)
+    lower_left = add(c, scale(multiply(d, a_over_b), -1.0))
+    upper_right = scale(inverse_b, -1.0)
+    determinant = add(multiply(a, d), scale(multiply(b, c), -1.0))
+
+    output: dict[str, Any] = {}
+    for index, key in enumerate(keys):
+        output[key] = np.asarray(
+            [
+                [a_over_b[index], upper_right[index]],
+                [lower_left[index], d_over_b[index]],
+            ],
+            dtype=complex,
+        )
+    output.update(
+        {
+            "transfer_determinant_jets": {
+                key: determinant[index] for index, key in enumerate(keys)
+            },
+            "transfer_b": b[0],
+            "chart_margin": float(abs(b[0])),
+            "base_Wronskian_residual": float(abs(determinant[0] - 1.0)),
+            "base_Hermitian_residual": float(
+                np.linalg.norm(output["base"] - output["base"].conj().T)
+            ),
+            "first_left_Hermitian_residual": float(
+                np.linalg.norm(
+                    output["first_left"] - output["first_left"].conj().T
+                )
+            ),
+            "first_right_Hermitian_residual": float(
+                np.linalg.norm(
+                    output["first_right"] - output["first_right"].conj().T
+                )
+            ),
+            "mixed_second_Hermitian_residual": float(
+                np.linalg.norm(
+                    output["mixed_second"]
+                    - output["mixed_second"].conj().T
+                )
+            ),
+            "endpoint_partition": ("birth", "new_event"),
+            "outward_conormal_orientation": ("minus_birth", "plus_new_event"),
+            "endpoint_condition_imposed": False,
+            "explicit_matrix_inverse_formed": False,
+        }
+    )
+    return output
+
+
 def backward_weyl_mobius(
     transfer_birth_to_terminal: np.ndarray,
     terminal_admittance: complex,
@@ -260,6 +487,8 @@ __all__ = [
     "product_dirac_channel_transfer_generator",
     "product_dirac_channel_log_radius_jets",
     "transfer_variation_rhs",
+    "integrate_transfer_jets",
+    "two_boundary_weyl_from_transfer_jets",
     "backward_weyl_mobius",
     "backward_weyl_mobius_jets",
 ]
