@@ -2,6 +2,9 @@
 
 Status: `UNIFORM_NONLINEAR_GRAPH_DEFECT_CERTIFIED_EXISTENCE_SCALE`.
 
+Scope: supplementary quantitative refinement of the nonrealized expanding
+formation branch; not the physical Gate-7 owner.
+
 This theorem closes the operator-defect part of the asymptotic capture owner
 on a positive, deliberately conservative subball.  It does not close the
 inhomogeneous lower-weight remainder or reset entry.
@@ -58,8 +61,11 @@ fallback.  It proves uniform bordered invertibility and a strict nonlinear
 relative graph-defect margin without forming any inverse.  A useful radius
 still calls for a structured repeated-solve `D4` refinement.
 
-The next completion-critical owner is the lower-weight inhomogeneous
-full-action remainder on a positive subball of this domain.  Until that is
-absorbed, no invariant capture surface or reset-to-capture overlap is
-promoted.  No selector, scale, fit, endpoint, action term, time direction,
-gate, or chord is added.
+The retained analytic Briot--Bouquet theorem already absorbs every positive
+epsilon lower weight and proves `H4->H0>0` on this mathematical branch.  The
+branch is a nonrealized formation history under owner finite-encapsulation
+ontology, so no invariant formation-capture surface or reset-to-capture
+overlap is a physical Gate-7 requirement.  The completion-critical owner is
+instead the event-generated maximal-child Calderon/Weyl family and its
+heat-minus-zeta physical-quotient covector root.  No selector, scale, fit,
+endpoint, action term, time direction, gate, or chord is added.

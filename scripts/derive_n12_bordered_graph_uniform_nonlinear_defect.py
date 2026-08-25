@@ -22,6 +22,8 @@ INPUTS = (
     ROOT / "artifacts/flagship_integration/BHSM_N12_ASYMPTOTIC_GEOMETRIC_PRODUCT_BALL.json",
     ROOT / "artifacts/flagship_integration/BHSM_N12_BORDERED_GRAPH_PRODUCT_NORM_EQUIVALENCE.json",
     ROOT / "artifacts/flagship_integration/BHSM_N12_BORDERED_GRAPH_FIRST_VARIATION.json",
+    ROOT / "artifacts/flagship_integration/BHSM_N12_FULL_RETAINED_ASYMPTOTIC_BRANCH.json",
+    ROOT / "artifacts/flagship_integration/BHSM_N12_GATE7_FORMATION_DECAY_CHRONOLOGY_SUPERSESSION.json",
     ROOT / "src/bhsm/interface/interval_weight_seven_graph_first_variation.py",
     THEORY,
 )
@@ -123,6 +125,12 @@ def build_payload() -> dict[str, object]:
         for record in (geometry, equivalence, first)
     ):
         raise RuntimeError("validated nonlinear-defect parents required")
+    full_branch, chronology = (_load(path) for path in INPUTS[3:5])
+    if not all(
+        record.get("validation_passed") is True
+        for record in (full_branch, chronology)
+    ):
+        raise RuntimeError("validated formation-scope parents required")
     local_audit = _exact_local_action_audit()
 
     rho_geom = Decimal(geometry["radius"]["rho_geom_decimal"])
@@ -222,18 +230,32 @@ def build_payload() -> dict[str, object]:
         ),
         "explicit_bordered_or_Euler_Dirac_inverse_not_formed": True,
         "inhomogeneous_remainder_not_overpromoted": True,
+        "full_action_lower_weights_already_absorbed_by_analytic_branch_theorem": (
+            full_branch["validation"]["analytic_uniform_remainder_exists_locally"]
+            and full_branch["nonlinear_consequence"][
+                "a_preserves_H4_to_H_inf_positive"
+            ]
+        ),
+        "formation_decay_chronology_restores_maximal_child_force_owner": (
+            chronology["supersession"]["correct_current_owner"]
+            == "PARAMETRIC_EVENT_GENERATED_MAXIMAL_CHILD_CALDERON_WEYL_FAMILY_AND_PHYSICAL_QUOTIENT_HEAT_MINUS_ZETA_COVECTOR_ROOT"
+        ),
         "no_selector_scale_fit_endpoint_action_term_or_chord_added": True,
     }
     return {
         "artifact": "BHSM_N12_BORDERED_GRAPH_UNIFORM_NONLINEAR_DEFECT",
-        "status": "UNIFORM_NONLINEAR_GRAPH_DEFECT_CERTIFIED_EXISTENCE_SCALE",
+        "status": (
+            "UNIFORM_NONLINEAR_GRAPH_DEFECT_CERTIFIED_EXISTENCE_SCALE_"
+            "NONREALIZED_FORMATION_REFINEMENT"
+        ),
         "classification": (
             "THE_EXACT_WEIGHT_SEVEN_LOCAL_ACTION_HAS_99_NONZERO_SYMMETRIC_"
             "FOURTH_VARIATION_COEFFICIENTS;_ELEMENTARY_GEOMETRIC_BALL_"
             "BOUNDS_AND_THE_DIRECTED_DETERMINANT_GRAPH_EQUIVALENCE_CERTIFY_"
             "A_POSITIVE_SUBBALL_WITH_UNIFORM_RELATIVE_GRAPH_DEFECT_AT_MOST_"
             "ONE_HALF;_THE_RESULT_IS_AN_EXISTENCE_SCALE_NEAR_1E_MINUS603_"
-            "AND_THE_INHOMOGENEOUS_LOWER_WEIGHT_REMAINDER_REMAINS_OPEN"
+            "WHILE_THE_EXISTING_ANALYTIC_BRANCH_THEOREM_ABSORBS_ALL_LOWER_"
+            "WEIGHTS_AND_PHYSICAL_GATE7_RETURNS_TO_THE_MAXIMAL_CHILD_FORCE"
         ),
         "order": 12,
         "descriptor_dimension": 74,
@@ -278,18 +300,25 @@ def build_payload() -> dict[str, object]:
             "explicit_inverse_formed": False,
         },
         "exact_next_dependency": (
-            "BOUND_THE_LOWER_WEIGHT_FULL_ACTION_INHOMOGENEOUS_REMAINDER_"
-            "IN_THE_SAME_GRAPH_NORM_ON_A_POSITIVE_SUBBALL_AND_PROVE_THE_"
-            "RESULTING_VECTOR_FIELD_POINTS_INWARD_BEFORE_TESTING_RESET_ENTRY"
+            "RETURN_TO_THE_PHYSICAL_GATE7_OWNER:_CERTIFY_THE_EVENT_GENERATED_"
+            "MAXIMAL_CHILD_CALDERON_WEYL_FAMILY_AND_ITS_REQUIRED_QUOTIENT_"
+            "GEOMETRY_JET,_THEN_CERTIFY_A_ROOT_OF_THE_HEAT_MINUS_ZETA_"
+            "PHYSICAL_QUOTIENT_COVECTOR"
         ),
         "claim_boundary": {
-            "Gate7": "ACTIVE_INHOMOGENEOUS_GRAPH_REMAINDER",
+            "Gate7": "ACTIVE_MAXIMAL_CHILD_CALDERON_WEYL_FORCE_ROOT",
             "Gate8": "LOCKED",
             "uniform_nonlinear_relative_graph_defect": "CERTIFIED",
             "radius_quality": "POSITIVE_DETERMINANT_FALLBACK_EXISTENCE_SCALE",
-            "lower_weight_inhomogeneous_remainder": "OPEN_CURRENT_OWNER",
-            "invariant_capture_surface": "OPEN",
-            "reset_to_capture_overlap": "NOT_CERTIFIED",
+            "lower_weight_inhomogeneous_remainder": (
+                "ANALYTICALLY_ABSORBED_FOR_NONREALIZED_FORMATION_BRANCH"
+            ),
+            "invariant_capture_surface": (
+                "NOT_A_PHYSICAL_GATE7_REQUIREMENT_FOR_NONREALIZED_FORMATION"
+            ),
+            "reset_to_capture_overlap": (
+                "NOT_REQUIRED_BY_FORMATION_DECAY_CHRONOLOGY"
+            ),
             "chord_03_authorized": False,
             "frozen_predictions_changed": False,
             "FLAGSHIP_READY": False,

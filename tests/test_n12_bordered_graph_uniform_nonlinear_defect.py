@@ -31,6 +31,9 @@ def test_n12_bordered_graph_uniform_nonlinear_defect() -> None:
     ] == "CERTIFIED"
     assert payload["claim_boundary"][
         "lower_weight_inhomogeneous_remainder"
-    ] == "OPEN_CURRENT_OWNER"
+    ] == "ANALYTICALLY_ABSORBED_FOR_NONREALIZED_FORMATION_BRANCH"
+    assert payload["claim_boundary"]["Gate7"] == (
+        "ACTIVE_MAXIMAL_CHILD_CALDERON_WEYL_FORCE_ROOT"
+    )
     assert payload["claim_boundary"]["Gate8"] == "LOCKED"
     assert payload["FULL_BHSM_COMPLETE"] is False

@@ -42,5 +42,8 @@ def test_n12_bordered_graph_first_variation() -> None:
     assert payload["claim_boundary"]["uniform_D4_graph_remainder"] == (
         "OPEN_CURRENT_OWNER"
     )
+    assert payload["claim_boundary"]["Gate7"] == (
+        "ACTIVE_MAXIMAL_CHILD_CALDERON_WEYL_FORCE_ROOT"
+    )
     assert payload["claim_boundary"]["Gate8"] == "LOCKED"
     assert payload["FULL_BHSM_COMPLETE"] is False

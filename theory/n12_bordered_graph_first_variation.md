@@ -43,7 +43,12 @@ fallback and proves that the structured first nonlinear jet is finite.  It
 does not certify the full nonlinear defect on that ball.  The next theorem
 must supply a uniform action-owned `D4 L7` (and lower-weight full-action)
 remainder whose contribution is strictly below the unused one-half budget.
-Until then no quantitative capture surface or reset overlap is promoted.
+Until then no quantitative formation-branch capture surface is promoted.  By
+owner finite-encapsulation chronology this is a supplementary refinement of
+the mathematically admissible, nonrealized forever-expanding formation
+branch.  It is not the physical Gate-7 owner.  That owner remains the
+event-generated maximal-child Calderon/Weyl family and the heat-minus-zeta
+physical-quotient covector root.
 
 No selector, scale, fitted threshold, endpoint, action term, time direction,
 gate, or chord is introduced.  Gate 7 remains active, Gate 8 remains locked,

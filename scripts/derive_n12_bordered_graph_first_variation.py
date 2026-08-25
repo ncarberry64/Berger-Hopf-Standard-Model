@@ -155,16 +155,19 @@ def build_payload() -> dict[str, object]:
             "full_nonlinear_theta_below_one_certified": False,
         },
         "exact_next_dependency": (
-            "CERTIFY_A_UNIFORM_ACTION_OWNED_D4_L7_BORDERED_GRAPH_REMAINDER_"
-            "PLUS_THE_LOWER_WEIGHT_FULL_ACTION_REMAINDER_ON_A_POSITIVE_"
-            "SUBBALL_AND_FIT_THEIR_SUM_STRICTLY_INSIDE_THE_UNUSED_ONE_HALF_"
-            "CONTRACTION_BUDGET"
+            "FOR_QUANTITATIVE_NONREALIZED_FORMATION_REFINEMENT,_CERTIFY_A_"
+            "UNIFORM_D4_L7_GRAPH_REMAINDER;_THE_PHYSICAL_GATE7_OWNER_"
+            "REMAINS_THE_EVENT_GENERATED_MAXIMAL_CHILD_CALDERON_WEYL_FAMILY_"
+            "AND_HEAT_MINUS_ZETA_QUOTIENT_COVECTOR_ROOT"
         ),
         "claim_boundary": {
-            "Gate7": "ACTIVE_D4_GRAPH_REMAINDER_MAJORANT",
+            "Gate7": "ACTIVE_MAXIMAL_CHILD_CALDERON_WEYL_FORCE_ROOT",
             "Gate8": "LOCKED",
             "structured_D3_graph_first_jet": "CERTIFIED",
             "uniform_D4_graph_remainder": "OPEN_CURRENT_OWNER",
+            "uniform_D4_graph_remainder_scope": (
+                "SUPPLEMENTARY_NONREALIZED_FORMATION_REFINEMENT"
+            ),
             "lower_weight_inhomogeneous_remainder": "OPEN",
             "quantitative_capture_surface": "OPEN",
             "reset_to_capture_overlap": "NOT_CERTIFIED",
