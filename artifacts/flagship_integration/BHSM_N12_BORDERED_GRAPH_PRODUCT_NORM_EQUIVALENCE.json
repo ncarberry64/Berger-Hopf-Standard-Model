@@ -1,0 +1,64 @@
+{
+  "FLAGSHIP_READY": false,
+  "FULL_BHSM_COMPLETE": false,
+  "artifact": "BHSM_N12_BORDERED_GRAPH_PRODUCT_NORM_EQUIVALENCE",
+  "claim_boundary": {
+    "FLAGSHIP_READY": false,
+    "FULL_BHSM_COMPLETE": false,
+    "Gate7": "ACTIVE_BORDERED_RELATIVE_GRAPH_DEFECT_MAJORANT",
+    "Gate8": "LOCKED",
+    "chord_03_authorized": false,
+    "frozen_predictions_changed": false,
+    "positive_graph_product_equivalence": "DERIVED",
+    "quantitative_capture_surface": "OPEN",
+    "reset_to_capture_overlap": "NOT_CERTIFIED",
+    "useful_repeated_solve_relative_bound": "OPEN_CURRENT_OWNER"
+  },
+  "classification": "THE_DIRECTED_SCALED_BORDERED_DETERMINANT_EXCLUDES_ZERO_AND_A_FROBENIUS_PRODUCT_BOUND_GIVES_A_STRICTLY_POSITIVE_LOWER_BOUND_FOR_sigma_min(W^-1*B_minus2*W^-1),_HENCE_AN_EXPLICIT_GRAPH_TO_PRODUCT_NORM_EQUIVALENCE_WITHOUT_FORMING_ANY_COMBINED_INVERSE;_THE_BOUND_IS_EXTREMELY_CONSERVATIVE_AND_THE_NONLINEAR_RELATIVE_GRAPH_DEFECT_REMAINS_OPEN",
+  "definition": {
+    "determinant_bound": "sigma_min>=abs(det(B_tilde))/norm(B_tilde)_F^73",
+    "explicit_inverse_formed": false,
+    "norm_consequence": "norm(X)_product<=sigma_min_lower^-1*norm(X)_graph",
+    "scaled_operator": "B_tilde=W^-1*B_minus2*W^-1"
+  },
+  "directed_certificate": {
+    "determinant_contains_zero": false,
+    "determinant_relative_accuracy_bits": 276,
+    "graph_to_product_equivalence_upper": "[4.895144120081080475350742624274814476780091938855175149885817475558130204516353249454402794246689934164541271488617818518068009055263347271898156e+1142 +/- 6.39e+997]",
+    "scaled_absolute_determinant_lower": "[1.817776138745256328946822062191831245540975963845359187160897489265597645218606851132980215157650728451418671233534118419247454660499529638124681e-1098 +/- 3.46e-1243]",
+    "scaled_determinant_ball": "[1.8177761387452563289468220621918312455409759638453591871608974892655976452186068511e-1098 +/- 5.11e-1181]",
+    "scaled_frobenius_ball": "[4.1280401834298203376354831386329177049555782777275249046382926849323138750248862742976243978880464870389 +/- 4.17e-104]",
+    "scaled_frobenius_upper": "[4.128040183429820337635483138632917704955578277727524904638292684932313875024886274297624397888046487038881816859993631716000372908414726287109031 +/- 3.36e-145]",
+    "sigma_min_determinant_lower": "[2.042840773365088482630758569695718413882223899462235893434611578705739112715646194319781199791311168514553863449122862898673132280133546018480871e-1143 +/- 2.12e-1288]"
+  },
+  "exact_next_dependency": "COMPUTE_THE_LEADING_NONLINEAR_BORDERED_DERIVATIVE_TENSORS_AND_BOUND_THEIR_GRAPH_RELATIVE_ACTION_BY_CERTIFIED_REPEATED_SOLVES;_USE_THE_DETERMINANT_EQUIVALENCE_ONLY_AS_A_POSITIVE_FALLBACK_FOR_THE_REMAINDER_NOT_RESOLVED_BY_STRUCTURE",
+  "inputs": {
+    "artifacts/flagship_integration/BHSM_N12_ASYMPTOTIC_BORDERED_GRAPH_NORM.json": "7B2A03A1D27B022A7EB412ED58DCE0D847D41C839ABDFA38E8D71BDBCFDEC385",
+    "artifacts/flagship_integration/BHSM_N12_COMPACTIFIED_ASYMPTOTIC_COMMON_CHART.json": "B261926767E6F7FE28E454849E81F553C3AACFC2020801D7B2A5281B3CD6C2F4",
+    "src/bhsm/interface/interval_weight_five_center_lift.py": "BFC64427C19945C8B0C1920746C927EC1932CC70A5FB224647B39AB4459D34AC",
+    "theory/n12_bordered_graph_product_norm_equivalence.md": "D992ADC5ABBF8ACD531110E41CF8D42E3840F9AB699DABA9329D4462032A0B56"
+  },
+  "magnitude_diagnostic": {
+    "binary_actual_sigma_min_diagnostic": 5.810017231126665e-27,
+    "binary_diagnostic_has_proof_authority": false,
+    "equivalence_upper_log10": 1142.6897654825814,
+    "interpretation": "DETERMINANT_FROBENIUS_IS_A_POSITIVE_FALLBACK;_A_USEFUL_RADIUS_REQUIRES_CERTIFIED_REPEATED_SOLVE_GRAPH_BOUNDS",
+    "sigma_min_lower_log10": -1142.6897654825814
+  },
+  "status": "POSITIVE_DIRECTED_GRAPH_TO_PRODUCT_EQUIVALENCE_DERIVED_CONSERVATIVE",
+  "validation": {
+    "determinant_lower_is_strictly_positive": true,
+    "directed_determinant_excludes_zero": true,
+    "directed_determinant_has_at_least_200_accuracy_bits": true,
+    "explicit_bordered_inverse_not_formed": true,
+    "frobenius_upper_is_finite_positive": true,
+    "graph_product_equivalence_upper_is_finite_positive": true,
+    "ill_conditioned_kinetic_Dirac_block_not_inverted": true,
+    "no_selector_scale_fit_endpoint_action_term_or_chord_added": true,
+    "nonlinear_defect_and_capture_not_overpromoted": true,
+    "python_flint_version_pinned_to_0_9_0": true,
+    "scaled_bordered_matrix_is_74_by_74": true,
+    "sigma_min_lower_is_strictly_positive": true
+  },
+  "validation_passed": true
+}
