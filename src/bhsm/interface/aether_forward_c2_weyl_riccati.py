@@ -96,7 +96,9 @@ def finite_core_weyl_and_coefficient_cotangent(
         starts_mp: list[mp.mpf] = [mp.mpf(0)] * count
         d_x_mp: list[mp.mpf] = [mp.mpf(0)] * count
         d_h_mp: list[mp.mpf] = [mp.mpf(0)] * count
+        d_z_mp: list[mp.mpf] = [mp.mpf(0)] * count
         d_terminal_mp: list[mp.mpf] = [mp.mpf(0)] * count
+        z_mp = mp.mpf(str(z))
         terminal: mp.mpf | None = (
             None if load_text is None else mp.mpf(load_text)
         )
@@ -120,6 +122,13 @@ def finite_core_weyl_and_coefficient_cotangent(
                 ),
                 hi,
             )
+            d_z_mp[index] = mp.diff(
+                lambda zz: _map(
+                    terminal, xi, hi,
+                    channel=kind, value=value, z=zz, chirality=sign,
+                ),
+                z_mp,
+            )
             if terminal is not None:
                 d_terminal_mp[index] = mp.diff(
                     lambda zz: _map(
@@ -133,10 +142,12 @@ def finite_core_weyl_and_coefficient_cotangent(
 
         gradient_x_mid_mp: list[mp.mpf] = [mp.mpf(0)] * count
         gradient_duration_mp: list[mp.mpf] = [mp.mpf(0)] * count
+        spectral_derivative_mp = mp.mpf(0)
         adjoint = mp.mpf(1)
         for index in range(count):
             gradient_x_mid_mp[index] = adjoint * d_x_mp[index]
             gradient_duration_mp[index] = adjoint * d_h_mp[index]
+            spectral_derivative_mp += adjoint * d_z_mp[index]
             adjoint *= d_terminal_mp[index]
         weyl_decimal = mp.nstr(starts_mp[0], n=int(decimal_precision))
         uniform_log_radius_decimal = mp.nstr(
@@ -148,6 +159,9 @@ def finite_core_weyl_and_coefficient_cotangent(
                 for index in range(count)
             ),
             n=int(decimal_precision),
+        )
+        spectral_derivative_decimal = mp.nstr(
+            spectral_derivative_mp, n=int(decimal_precision)
         )
         terminal_load_sensitivity_decimal = (
             None if load_text is None else mp.nstr(adjoint, n=int(decimal_precision))
@@ -178,6 +192,8 @@ def finite_core_weyl_and_coefficient_cotangent(
         "D_proper_duration_Weyl": gradient_duration,
         "D_log_R4_uniform_shift_decimal": uniform_log_radius_decimal,
         "D_duration_weighted_uniform_scale_decimal": duration_weighted_decimal,
+        "D_spectral_parameter_Weyl": float(spectral_derivative_mp),
+        "D_spectral_parameter_Weyl_decimal": spectral_derivative_decimal,
         "terminal_Dirichlet_form_core": load_text is None,
         "terminal_nonnegative_load": (
             None if load_text is None else float(load_probe)

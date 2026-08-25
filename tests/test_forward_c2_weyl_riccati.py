@@ -48,3 +48,28 @@ def test_reverse_uniform_x_derivative_matches_complex_step() -> None:
     finite = (plus - minus) / (2.0 * epsilon)
     analytic = float(np.sum(base["D_log_R4_node_Weyl"]))
     assert np.isclose(analytic, finite, rtol=2.0e-8, atol=1.0e-9)
+
+
+def test_common_scale_covariance_identity() -> None:
+    x = np.asarray([0.02, 0.03, 0.01, 0.04])
+    h = np.asarray([0.11, 0.07, 0.09])
+    for channel, chirality in (("scalar", 1), ("product_Dirac", -1), ("product_Dirac", 1)):
+        result = finite_core_weyl_and_coefficient_cotangent(
+            log_radii=x,
+            proper_durations=h,
+            channel=channel,
+            unit_channel_value=3.0 if channel == "scalar" else 1.5,
+            spectral_parameter=-1.0,
+            chirality=chirality,
+            decimal_precision=90,
+        )
+        common_scale = (
+            float(result["D_log_R4_uniform_shift_decimal"])
+            + float(result["D_duration_weighted_uniform_scale_decimal"])
+        )
+        expected = (
+            -float(result["Weyl_birth_value_decimal"])
+            + 2.0 * result["spectral_parameter"]
+            * float(result["D_spectral_parameter_Weyl_decimal"])
+        )
+        assert np.isclose(common_scale, expected, rtol=2.0e-14, atol=2.0e-14)

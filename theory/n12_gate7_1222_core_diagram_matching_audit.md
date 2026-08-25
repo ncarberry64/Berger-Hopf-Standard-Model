@@ -13,19 +13,23 @@ missing.
 
 The exact 1064/158 split additionally proves that this backward operator
 cotangent obeys the inverse-free adjoint semigroup rule.  The finite-core
-operator adjoint is therefore assembled; what remains missing is the
-action-owned reset-quotient geometry Jacobian that pulls this cotangent back
-through the realized maximal history.
+operator adjoint is therefore assembled.  Exact common-scale covariance now
+closes the mandatory physical common-scale pullback, including its moving
+proper-duration term, without differentiating the nonphysical adaptive proof
+centers.  What remains missing is only the independent non-scale
+reset-quotient geometry adjoint through the realized maximal history.
 
-The remaining unmatched data are geometric and pathwise.  The reset radius
-Cauchy jet is a valid birth germ but is not the noncompact geometry pullback through the
-maximal coefficient family.  The compact incoming response supplies the
+The remaining unmatched data are geometric and pathwise.  Modulo the closed
+common-scale direction, the reset radius Cauchy jet is a valid birth germ but
+is not the noncompact geometry pullback through the maximal coefficient
+family.  The compact incoming response supplies the
 correct `M_f` type, but no sharp action-owned negative-axis realization on the
 physical incoming history is stored.  The common pair/contact incidence and
 heat-minus-zeta trace functional are valid conditional consumers; broad seam
 intervals and isolated probes cannot replace their realized inputs.
 
 Accordingly the next construction must instantiate the incoming response and
-the pathwise reset pullback, then form the projected finite-core force net and
-test its maximal Cauchy tail.  The 1,222-core edge remains an artificial
+the non-scale pathwise reset pullback, combine it with the exact common-scale
+component, then form the projected finite-core force net and test its maximal
+Cauchy tail.  The 1,222-core edge remains an artificial
 Friedrichs exhaustion edge, not an event or canonical stop.

@@ -8,7 +8,8 @@
     "finite_event_or_canonical_stop": "NOT_REACHED",
     "more_scalar_C2_boxes_are_the_owner": false,
     "new_C2_response_theory_required": false,
-    "pathwise_reset_quotient_geometry_pullback": "ACTUALLY_MISSING",
+    "non_scale_pathwise_reset_quotient_geometry_pullback": "ACTUALLY_MISSING",
+    "physical_common_scale_geometry_pullback": "CLOSED_BY_EXACT_COVARIANCE",
     "projected_heat_minus_zeta_force_net_and_tail": "ACTUALLY_MISSING",
     "sharp_incoming_M_f_realization": "ACTUALLY_MISSING"
   },
@@ -21,8 +22,8 @@
     "same_action_saddle": "WAITING_ON_FORCE",
     "zero_source_force": "OPEN"
   },
-  "classification": "C2_FINITE_CORE_NEGATIVE_AXIS_RESPONSE_AND_BACKWARD_OPERATOR_COTANGENT_SLOTS_ARE_VALID_MATCHES;_M_f_AND_THE_RESET_GEOMETRY_PULLBACK_REMAIN_MISSING_AS_REALIZED_DATA,_WHILE_INCIDENCE_FORCE_AND_CAUCHY_THEOREMS_ARE_VALID_CONDITIONAL_CONSUMERS",
-  "exact_next_dependency": "INSTANTIATE_THE_ACTION_OWNED_INCOMING_M_f_NEGATIVE_AXIS_REALIZATION_AND_CHAIN_THE_NOW_CLOSED_BACKWARD_OPERATOR_COTANGENT_THROUGH_THE_NONCOMPACT_RESET_QUOTIENT_GEOMETRY_JACOBIAN,_THEN_CONTRACT_THE_ALREADY_DERIVED_SOURCE_AND_FORCE_FUNCTIONALS_AND_TEST_THE_PROJECTED_CAUCHY_TAIL",
+  "classification": "C2_FINITE_CORE_NEGATIVE_AXIS_RESPONSE,_BACKWARD_OPERATOR_COTANGENT,_AND_PHYSICAL_COMMON_SCALE_PULLBACK_SLOTS_ARE_VALID_MATCHES;_M_f_AND_THE_NON_SCALE_RESET_GEOMETRY_PULLBACK_REMAIN_MISSING_AS_REALIZED_DATA,_WHILE_INCIDENCE_FORCE_AND_CAUCHY_THEOREMS_ARE_VALID_CONDITIONAL_CONSUMERS",
+  "exact_next_dependency": "INSTANTIATE_THE_ACTION_OWNED_INCOMING_M_f_NEGATIVE_AXIS_REALIZATION_AND_CHAIN_THE_NOW_CLOSED_BACKWARD_OPERATOR_COTANGENT_THROUGH_ONLY_THE_REMAINING_NON_SCALE_RESET_QUOTIENT_GEOMETRY_ADJOINT,_THEN_COMBINE_IT_WITH_THE_CLOSED_COMMON_SCALE_COMPONENT,_CONTRACT_THE_SOURCE_AND_FORCE_FUNCTIONALS,_AND_TEST_THE_PROJECTED_CAUCHY_TAIL",
   "forward_event_diagram": "C1 --M_f--> E1 --(U_R,W_phys)--> C2 --M_C2--> MAXIMAL_ENDPOINT",
   "hindsight": {
     "classification": "PROOF_CHART_LIMIT_REMOVED;_OPERATOR_DATA_GAP_REMAINS",
@@ -34,6 +35,7 @@
     "artifacts/flagship_integration/BHSM_N12_C2_1222_SEGMENT_FINITE_CORE_DESCRIPTOR.json": "0CDC9B9EF09AFA70AA7F5E225F6D49A4FCD27CADAD5CDFA4A062FBE04B960445",
     "artifacts/flagship_integration/BHSM_N12_C2_1222_SEGMENT_NEGATIVE_AXIS_WEYL_FAMILY.json": "EFB92817AD7E4FC2793B0AB879AA69C0B9AE697FD1B55F7418798A7011BCA59E",
     "artifacts/flagship_integration/BHSM_N12_C2_BIRTH_COEFFICIENT_QUOTIENT_JET.json": "A6595ACAD2A9865F31EE69F6DA7C067F8C0C00886B5D8A57A915D3537FF4ED7D",
+    "artifacts/flagship_integration/BHSM_N12_C2_COMMON_SCALE_WEYL_COVARIANCE.json": "BA8DD4F69924A33E1B171F8EEB733D9A38B543B1D85716F4216D95F3EDDD2BFF",
     "artifacts/flagship_integration/BHSM_N12_C2_PROJECTED_ADJOINT_CAUCHY_CRITERION.json": "473465E4A2369638204FE869E291997A82B958979B4DD060767C7BD12808EA65",
     "artifacts/flagship_integration/BHSM_N12_COMPACT_FINITE_HISTORY_OPERATOR.json": "E597DDB6EBE292643F33A0AC8EDCEC617F5FC963B526BCF9D40BD48EC678DD41",
     "artifacts/flagship_integration/BHSM_N12_FINITE_ENDPOINT_ZERO_SOURCE_FORCE_FUNCTIONAL.json": "6BC1FC78190437347813117A63D252C96115B2B67619D893144526A5DDD4E931",
@@ -41,7 +43,7 @@
     "artifacts/flagship_integration/BHSM_N12_FORWARD_COMMON_SOURCE_INCIDENCE.json": "943359A4649960D7D2293B396D5C3B661B6D6F2C8D36A68FC6E36895141CEF33",
     "artifacts/flagship_integration/BHSM_N12_GATE7_C2_DIAGRAM_SLOT_MATCHING_AUDIT.json": "6B43CD9C225735E4DB4B73D67A43FF2BD8B8B4CFA2A7290397B8C8E076B63FA8",
     "artifacts/flagship_integration/BHSM_N12_MAXIMAL_FRIEDRICHS_WEYL_EXHAUSTION.json": "ADD797EAE0D9DB94D1BA0C58687AF114598331662B92B13579408361D95D9E5B",
-    "theory/n12_gate7_1222_core_diagram_matching_audit.md": "84DB3B2DC5543A4F473E735EF4C9A1FFE88560BF3A3DDC876AE415840CB5AFE8"
+    "theory/n12_gate7_1222_core_diagram_matching_audit.md": "E3CDC995E9D7D8F79A67FD3645A187565EE83707D4177E95AE64E16308D6AD82"
   },
   "matching_audit": [
     {
@@ -77,12 +79,20 @@
       "verdict": "VALID_MATCH_OPERATOR_COTANGENT_GEOMETRY_PULLBACK_STILL_OPEN"
     },
     {
-      "candidate": "BIRTH_RANK_TWO_CAUCHY_JET_PLUS_FORCE_ADJOINT_IDENTITY",
-      "diagram_slot": "C2_RESET_QUOTIENT_FIRST_JET",
-      "dimension_domain_check": "BIRTH_GERM_AND_ALGEBRA_VALID_BUT_NO_MAXIMAL_PATHWISE_SOLUTION",
-      "provenance_check": "VALID_PARTIAL_ACTION_DATA",
+      "candidate": "BHSM_N12_C2_COMMON_SCALE_WEYL_COVARIANCE",
+      "diagram_slot": "C2_PHYSICAL_COMMON_SCALE_FIRST_JET",
+      "dimension_domain_check": "VALID_ON_EVERY_FINITE_POSITIVE_DURATION_CORE_AND_EVERY_REAL_z_NEGATIVE",
+      "provenance_check": "EXACT_RETAINED_FORM_HOMOGENEITY_WITH_COMMON_SCALE_KEPT_PHYSICAL",
+      "required_type": "COMMON_SCALE_PULLBACK_INCLUDING_MOVING_PROPER_DURATION",
+      "verdict": "VALID_MATCH_CLOSED_WITHOUT_PATHWISE_JACOBI"
+    },
+    {
+      "candidate": "BIRTH_RANK_TWO_CAUCHY_JET_MOD_COMMON_SCALE_PLUS_FORCE_ADJOINT_IDENTITY",
+      "diagram_slot": "C2_NON_SCALE_RESET_QUOTIENT_FIRST_JET",
+      "dimension_domain_check": "BIRTH_GERM_AND_ALGEBRA_VALID_BUT_NO_MAXIMAL_NON_SCALE_PATHWISE_SOLUTION",
+      "provenance_check": "VALID_PARTIAL_ACTION_DATA_AFTER_EXACT_COMMON_SCALE_REDUCTION",
       "required_type": "NONCOMPACT_PATHWISE_JACOBI_OR_EQUIVALENT_BACKWARD_ADJOINT_PULLBACK",
-      "verdict": "ACTUALLY_MISSING_REALIZED_PATHWISE_PULLBACK"
+      "verdict": "ACTUALLY_MISSING_REALIZED_NON_SCALE_PULLBACK"
     },
     {
       "candidate": "COMPACT_TWO_BOUNDARY_OPERATOR_AND_M_f_SCHUR_TYPE",
@@ -129,19 +139,21 @@
   "validated_invalidated_open": {
     "INVALIDATED": [
       "new C2 theory is required",
-      "birth jet alone is the pathwise reset jet",
+      "a full pathwise Jacobi is required for the common-scale component",
+      "birth jet alone is the remaining non-scale pathwise reset jet",
       "broad seam intervals or probes determine the force",
       "proof edge is an endpoint"
     ],
     "OPEN": [
       "sharp incoming M_f realization",
-      "pathwise reset quotient geometry pullback",
+      "non-scale pathwise reset quotient geometry pullback",
       "actual projected force net and Cauchy tail"
     ],
     "VALIDATED": [
       "C2 1222-core coefficient slot",
       "C2 complete negative-axis finite-core response",
       "finite-core backward operator cotangent semigroup",
+      "physical common-scale pullback including moving duration",
       "maximal abstract Weyl value",
       "source and force consumer formulas"
     ]
@@ -160,6 +172,8 @@
     "maximal_value_exists_abstractly": true,
     "no_probe_interval_prefix_or_proof_edge_promoted_to_force_or_endpoint": true,
     "no_selector_scale_fit_recurrence_gate_or_chord_added": true,
+    "non_scale_pathwise_pullback_is_not_overclaimed": true,
+    "physical_common_scale_pullback_is_closed_exactly": true,
     "source_incidence_is_a_valid_conditional_consumer": true
   },
   "validation_passed": true
