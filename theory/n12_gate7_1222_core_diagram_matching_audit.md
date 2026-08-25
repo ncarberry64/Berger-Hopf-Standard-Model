@@ -16,8 +16,9 @@ cotangent obeys the inverse-free adjoint semigroup rule.  The finite-core
 operator adjoint is therefore assembled.  Exact common-scale covariance now
 closes the mandatory physical common-scale pullback, including its moving
 proper-duration term, without differentiating the nonphysical adaptive proof
-centers.  What remains missing is only the independent non-scale
-reset-quotient geometry adjoint through the realized maximal history.
+centers.  What remains missing is the non-scale reset-quotient geometry
+adjoint sector through the realized maximal history.  The rank-two birth
+radius Cauchy map is not used to discard other child-history directions.
 
 The remaining unmatched data are geometric and pathwise.  Modulo the closed
 common-scale direction, the reset radius Cauchy jet is a valid birth germ but
@@ -29,7 +30,7 @@ heat-minus-zeta trace functional are valid conditional consumers; broad seam
 intervals and isolated probes cannot replace their realized inputs.
 
 Accordingly the next construction must instantiate the incoming response and
-the non-scale pathwise reset pullback, combine it with the exact common-scale
-component, then form the projected finite-core force net and test its maximal
+the non-scale pathwise reset pullback sector, combine it with the exact
+common-scale component, then form the projected finite-core force net and test its maximal
 Cauchy tail.  The 1,222-core edge remains an artificial
 Friedrichs exhaustion edge, not an event or canonical stop.

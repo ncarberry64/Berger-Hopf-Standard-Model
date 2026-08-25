@@ -137,7 +137,7 @@ def build_payload() -> dict[str, Any]:
             Decimal(row["D_weighted_duration_decimal"]) != 0 for row in rows
         ),
         "no_pathwise_proof_center_Jacobian_is_used": True,
-        "non_scale_reset_direction_is_not_claimed_closed": True,
+        "non_scale_reset_quotient_sector_is_not_claimed_closed": True,
         "no_selector_endpoint_scale_fit_recurrence_gate_or_chord_added": True,
     }
     validation = {key: bool(value) for key, value in validation.items()}
@@ -175,7 +175,7 @@ def build_payload() -> dict[str, Any]:
             "physical_common_scale_geometry_pullback": "CLOSED",
             "moving_duration_contribution": "INCLUDED_EXACTLY",
             "proof_center_adaptive_step_derivative": "NOT_USED_NOT_PHYSICAL",
-            "non_scale_reset_quotient_geometry_pullback": "OPEN",
+            "non_scale_reset_quotient_geometry_pullback_sector": "OPEN",
             "incoming_M_f_sharp_realization": "OPEN",
             "complete_projected_heat_minus_zeta_force": "OPEN",
             "Gate7": "G7_08_OPEN",
@@ -192,7 +192,7 @@ def build_payload() -> dict[str, Any]:
                 "adaptive proof-center steps may be differentiated as physical histories",
             ],
             "OPEN": [
-                "non-scale reset quotient pullback",
+                "non-scale reset quotient pullback sector",
                 "sharp incoming M_f realization",
                 "complete source contraction and maximal Cauchy tail",
             ],
@@ -203,7 +203,7 @@ def build_payload() -> dict[str, Any]:
         },
         "exact_next_dependency": (
             "USE_THE_INTRINSIC_ADJOINT_ONLY_FOR_THE_REMAINING_NON_SCALE_"
-            "RESET_QUOTIENT_DIRECTION,_INSTANTIATE_THE_SHARP_INCOMING_M_f,_"
+            "RESET_QUOTIENT_SECTOR,_INSTANTIATE_THE_SHARP_INCOMING_M_f,_"
             "AND_FORM_THE_FULL_SOURCE_CONTRACTED_HEAT_MINUS_ZETA_NET"
         ),
         "inputs": {path.relative_to(ROOT).as_posix(): _sha256(path) for path in INPUTS},

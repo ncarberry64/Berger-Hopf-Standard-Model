@@ -7,7 +7,7 @@
     "complete_projected_heat_minus_zeta_force": "OPEN",
     "incoming_M_f_sharp_realization": "OPEN",
     "moving_duration_contribution": "INCLUDED_EXACTLY",
-    "non_scale_reset_quotient_geometry_pullback": "OPEN",
+    "non_scale_reset_quotient_geometry_pullback_sector": "OPEN",
     "physical_common_scale_geometry_pullback": "CLOSED",
     "proof_center_adaptive_step_derivative": "NOT_USED_NOT_PHYSICAL"
   },
@@ -20,7 +20,7 @@
     "finite_transformation": "M(x+a,exp(a)h,exp(-2a)z)=exp(-a)M(x,h,z)",
     "fixed_z_physical_common_scale": "D_common_scale_M=-M+2*z*D_z_M"
   },
-  "exact_next_dependency": "USE_THE_INTRINSIC_ADJOINT_ONLY_FOR_THE_REMAINING_NON_SCALE_RESET_QUOTIENT_DIRECTION,_INSTANTIATE_THE_SHARP_INCOMING_M_f,_AND_FORM_THE_FULL_SOURCE_CONTRACTED_HEAT_MINUS_ZETA_NET",
+  "exact_next_dependency": "USE_THE_INTRINSIC_ADJOINT_ONLY_FOR_THE_REMAINING_NON_SCALE_RESET_QUOTIENT_SECTOR,_INSTANTIATE_THE_SHARP_INCOMING_M_f,_AND_FORM_THE_FULL_SOURCE_CONTRACTED_HEAT_MINUS_ZETA_NET",
   "hindsight": {
     "classification": "IMPORTED_OR_OVERSTRONG_JACOBI_REQUIREMENT_REMOVED_FOR_COMMON_SCALE",
     "obstruction_physical": false
@@ -33,7 +33,7 @@
     "artifacts/flagship_integration/BHSM_N12_C2_1222_SEGMENT_FINITE_CORE_DESCRIPTOR.npz": "90E0F02751031F879C82C4EA8ED3ACEBBF278900ED4FBD47C5612CD13F91AF11",
     "artifacts/flagship_integration/BHSM_N12_RESET_FIBER_RADIUS_JET_AND_SCALE_CENTER_AUDIT.json": "F245D549B6C5247BE5E0730C33C4840AEFADB8A68B28B222B8D0E34BEF1A85A7",
     "src/bhsm/interface/aether_forward_c2_weyl_riccati.py": "69D72607C643CCBF00DA7D1D3885CB1E6683EECA96F8BE066C3BDB535549441A",
-    "theory/n12_c2_common_scale_weyl_covariance.md": "E0E62056087ECDDB880E80D1A3815C54F6668B7C625F09906781FB7BD03BA84F"
+    "theory/n12_c2_common_scale_weyl_covariance.md": "DFA37619CE07C0902BCF06EB422FE5B6ADCB16ED793BC3F9D8E7C1135B422A11"
   },
   "maximum_absolute_residual_decimal": "4.0387493780776385036867868543929E-47",
   "maximum_relative_residual_decimal": "2.4965947076647553145233127049073112716105445886272718467241768909980943110548243443997922379285086074054591863E-78",
@@ -280,7 +280,7 @@
       "adaptive proof-center steps may be differentiated as physical histories"
     ],
     "OPEN": [
-      "non-scale reset quotient pullback",
+      "non-scale reset quotient pullback sector",
       "sharp incoming M_f realization",
       "complete source contraction and maximal Cauchy tail"
     ],
@@ -299,7 +299,7 @@
     "moving_duration_term_is_included": true,
     "no_pathwise_proof_center_Jacobian_is_used": true,
     "no_selector_endpoint_scale_fit_recurrence_gate_or_chord_added": true,
-    "non_scale_reset_direction_is_not_claimed_closed": true
+    "non_scale_reset_quotient_sector_is_not_claimed_closed": true
   },
   "validation_passed": true
 }

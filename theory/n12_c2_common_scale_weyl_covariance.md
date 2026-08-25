@@ -34,8 +34,10 @@ identity to the recorded decimal residual.  The proof itself is parametric
 for every real `z<0`; the probes are crosschecks, not a heat quadrature.
 
 This closes only the common-scale part of the reset geometry pullback.  The
-independent non-scale reset quotient direction, the sharp incoming `M_f`,
-and the complete source-contracted heat-minus-zeta Cauchy tail remain open.
+non-scale reset quotient sector, the sharp incoming `M_f`, and the complete
+source-contracted heat-minus-zeta Cauchy tail remain open.  Rank two of the
+birth radius Cauchy map does not assert that all other child-history tangent
+directions are operator-invisible; no such dimension reduction is used here.
 
 HINDSIGHT: requiring a full pathwise Jacobi for the common-scale component
 was overstrong.  Exact form covariance supplies the weaker action-owned

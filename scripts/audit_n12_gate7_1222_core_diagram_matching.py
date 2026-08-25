@@ -158,7 +158,7 @@ def build_payload() -> dict[str, Any]:
             == "INCLUDED_EXACTLY"
         ),
         "non_scale_pathwise_pullback_is_not_overclaimed": (
-            common_scale["adjudication"]["non_scale_reset_quotient_geometry_pullback"]
+            common_scale["adjudication"]["non_scale_reset_quotient_geometry_pullback_sector"]
             == "OPEN"
         ),
         "compact_incoming_operator_is_only_executable_until_path_supplied": compact["claim_boundary"]["actual_family_M_C_value"] == "OPEN_AFTER_COEFFICIENT_PATH",
@@ -184,7 +184,7 @@ def build_payload() -> dict[str, Any]:
             "sharp_incoming_M_f_realization": "ACTUALLY_MISSING",
             "finite_core_backward_operator_cotangent": "CLOSED",
             "physical_common_scale_geometry_pullback": "CLOSED_BY_EXACT_COVARIANCE",
-            "non_scale_pathwise_reset_quotient_geometry_pullback": "ACTUALLY_MISSING",
+            "non_scale_pathwise_reset_quotient_geometry_pullback_sector": "ACTUALLY_MISSING",
             "projected_heat_minus_zeta_force_net_and_tail": "ACTUALLY_MISSING",
             "finite_event_or_canonical_stop": "NOT_REACHED",
             "Gate7": "G7_08_OPEN",
@@ -193,10 +193,10 @@ def build_payload() -> dict[str, Any]:
         "validated_invalidated_open": {
             "VALIDATED": ["C2 1222-core coefficient slot", "C2 complete negative-axis finite-core response", "finite-core backward operator cotangent semigroup", "physical common-scale pullback including moving duration", "maximal abstract Weyl value", "source and force consumer formulas"],
             "INVALIDATED": ["new C2 theory is required", "a full pathwise Jacobi is required for the common-scale component", "birth jet alone is the remaining non-scale pathwise reset jet", "broad seam intervals or probes determine the force", "proof edge is an endpoint"],
-            "OPEN": ["sharp incoming M_f realization", "non-scale pathwise reset quotient geometry pullback", "actual projected force net and Cauchy tail"],
+            "OPEN": ["sharp incoming M_f realization", "non-scale pathwise reset quotient geometry pullback sector", "actual projected force net and Cauchy tail"],
         },
         "hindsight": {"classification": "PROOF_CHART_LIMIT_REMOVED;_OPERATOR_DATA_GAP_REMAINS", "obstruction_physical": False},
-        "exact_next_dependency": "INSTANTIATE_THE_ACTION_OWNED_INCOMING_M_f_NEGATIVE_AXIS_REALIZATION_AND_CHAIN_THE_NOW_CLOSED_BACKWARD_OPERATOR_COTANGENT_THROUGH_ONLY_THE_REMAINING_NON_SCALE_RESET_QUOTIENT_GEOMETRY_ADJOINT,_THEN_COMBINE_IT_WITH_THE_CLOSED_COMMON_SCALE_COMPONENT,_CONTRACT_THE_SOURCE_AND_FORCE_FUNCTIONALS,_AND_TEST_THE_PROJECTED_CAUCHY_TAIL",
+        "exact_next_dependency": "INSTANTIATE_THE_ACTION_OWNED_INCOMING_M_f_NEGATIVE_AXIS_REALIZATION_AND_CHAIN_THE_NOW_CLOSED_BACKWARD_OPERATOR_COTANGENT_THROUGH_THE_REMAINING_NON_SCALE_RESET_QUOTIENT_GEOMETRY_ADJOINT_SECTOR,_THEN_COMBINE_IT_WITH_THE_CLOSED_COMMON_SCALE_COMPONENT,_CONTRACT_THE_SOURCE_AND_FORCE_FUNCTIONALS,_AND_TEST_THE_PROJECTED_CAUCHY_TAIL",
         "claim_boundary": {
             "Gate7": "G7_08_OPEN_REALIZED_PARENT_PULLBACK_AND_PROJECTED_TAIL",
             "Gate8": "LOCKED",
