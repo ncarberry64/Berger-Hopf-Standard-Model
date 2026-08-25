@@ -1,0 +1,72 @@
+{
+  "FLAGSHIP_READY": false,
+  "FULL_BHSM_COMPLETE": false,
+  "artifact": "BHSM_N12_C2_FRESH_DESCRIPTOR_FIBER_EIGENLINE_CHART",
+  "center": {
+    "binary64_selected_eigenvalue_not_used_as_descriptor": 6.799169801012878e-14,
+    "center_hard_gap": 2.5937425871476495e-07,
+    "lambda_gradient_action_norm": 6.16564907091586e-06,
+    "preconditioned_hard_block_first_variation": 9869521.916012783,
+    "preconditioned_selected_line_first_variation": 94.66446861020464,
+    "selected_branch": 24,
+    "selected_to_complement_first_variation": 0.3449388372449837
+  },
+  "chart_semantics": {
+    "ambient_ball_role": "UNIFORM_BRANCH_GAP_AND_DOMAIN_CERTIFICATE_ONLY",
+    "arbitrary_normal_motion_allowed": false,
+    "physical_propagation_domain": "EXACT_lambda_event_EQUALS_s_DESCRIPTOR_FIBER",
+    "proof_chart_boundary_is_physical_stop": false
+  },
+  "data": "artifacts/flagship_integration/BHSM_N12_C2_FRESH_DESCRIPTOR_FIBER_EIGENLINE_CHART.npz",
+  "data_SHA256": "114B8C3CA2E44F8D72313CEA32B665C7C710E96929456A290EEFAD5F6D9E1B63",
+  "exact_next_dependency": "TRANSFER_THE_FIXED_s_BIRTH_AND_UNIFORM_HARD_RESPONSE_BOUNDS_TO_THIS_FRESH_CHART_AND_CONTINUE_THE_SAME_C2_HISTORY",
+  "hindsight": {
+    "classification": "PROOF_CHART_LIMIT_REMOVED_BY_FRESH_FIBER_CHART",
+    "obstruction_physical": false,
+    "result": "VALIDATED"
+  },
+  "inputs": {
+    "artifacts/flagship_integration/BHSM_N12_C2_UNIFORM_GAP_CONTINUATION.json": "26691BBF3B4B873F079C84BB6744BCB89E9C81D6D55A20F5FD819191E343C827",
+    "artifacts/flagship_integration/BHSM_N12_C2_UNIFORM_GAP_CONTINUATION.npz": "FA420F040D705D3F985FA7DCD74867EB4F85E2DF7A6750289F72D8284F65CDD5",
+    "artifacts/flagship_integration/BHSM_N12_FINITE_TERMINAL_EVENT_EIGENLINE_BALL.json": "974DD80F2725F9FFA62A98110CA771BF367F7316F0AFEFE385D32D7652585463",
+    "theory/n12_c2_fresh_descriptor_fiber_eigenline_chart.md": "3F2BC57D1F2FDDED55BE49BFD5AED7C19017234EC2A940473CC2C4B6AE5E6E6D"
+  },
+  "radius_derivation": {
+    "failed_upper_D4_bounds": {
+      "D4_XXCC": 105773189.26769511,
+      "D4_XXPC": 9718.329621296,
+      "D4_XXPP": 1.0558548533070504
+    },
+    "first_failed_intrinsic_upper_radius": 1.024e-07,
+    "incoming_endpoint_tube_upper": 2.4616807001259725e-11,
+    "maximal_feasible_radius_lower": 4.574699810731429e-08,
+    "selected_chart_bounds": {
+      "D_tau_log_R4_lower": 0.08877804831998795,
+      "Schur_correction_upper": 1.4174753190710722e-13,
+      "complement_inverse_upper": 5777375.003887629,
+      "coupling_upper": 7.896748851524543e-09,
+      "eigenline_gap_lower": 1.5729520841151525e-07,
+      "feasible": true,
+      "graph_norm_upper": 1.7950112705631597e-05,
+      "lapse_lower": 0.7006542249092267,
+      "relative_hard_perturbation": 0.3326670497200137,
+      "scalar_shift_upper": 1.4138236486509923e-13,
+      "weighted_coupling_upper": 1.197869188407912e-05
+    },
+    "selected_fresh_chart_radius": 2.2885807457157775e-08,
+    "selection_is_proof_midpoint_only": true
+  },
+  "status": "C2_FRESH_DESCRIPTOR_FIBER_EIGENLINE_CHART_CERTIFIED",
+  "validation": {
+    "ambient_ball_used_only_for_uniform_spectral_and_domain_control": true,
+    "branch_24_replayed": true,
+    "first_intrinsic_upper_failure_was_localized": true,
+    "fresh_chart_radius_strictly_exceeds_incoming_tube": true,
+    "fresh_uniform_hard_gap_is_positive": true,
+    "incoming_1192_endpoint_tube_consumed": true,
+    "lapse_and_radius_rate_remain_positive": true,
+    "no_validation_cutoff_selector_recurrence_scale_gate_or_chord_added": true,
+    "propagation_chart_is_exact_fixed_descriptor_fiber": true
+  },
+  "validation_passed": true
+}
