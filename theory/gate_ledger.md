@@ -393,6 +393,16 @@
   direct compactness/coercivity or degree, or the equivalent parametric Weyl
   covector root.  Universal terminal reachability is not required, and no
   action incompatibility is proved.
+- Same-action continuation precondition audit: the interpolation
+  `Gamma_s=Gamma_local_zeta+s(Gamma_heat-Gamma_SM_zeta)` is legitimate in
+  principle, but no implicit-function or degree continuation can start from
+  current data.  The positive tangent Hessian in the projected-saddle
+  artifact is a synthetic solver cross-check, not the physical KKT Hessian;
+  the v15.93 zero Hessian differentiates a constant reconstruction map, not
+  the current AE2 reset stratum.  The actual complete-history quotient KKT
+  Hessian, replacement force, inverse bound, and uniform endpoint/domain
+  margins remain open.  Direct validated solution of the forward--adjoint
+  boundary-value system remains the independent route.
 - Current operator-data inventory: the durable endpoint checkpoint contains
   one 196-component event-child state and a `57 x 196` first constraint
   Jacobian, but no proper-time coefficient path, `D_tau`, endpoint form,
@@ -1887,3 +1897,24 @@ Exact next object:
 - Simultaneous N=3 closure: `ACTIVE_MATERIALLY_ADVANCED`.
 - Full BHSM completion: `FALSE`.
 <!-- /BHSM_V17_19_TO_V17_22_GATES -->
+
+## N=12 Gate-7 direct KKT existence audit
+
+- Retained heat regulator:
+  `f(lambda)=-(1/2)E1(ell_kappa^2 lambda)`, with
+  `f'(lambda)=exp(-ell_kappa^2 lambda)/(2 lambda)>0`.
+- Infrared/ultraviolet limits: `-infinity` at gap closure and `0^-` under
+  high spectral scaling.
+- Heat regulator alone as a proper/coercive operator exhaustion: `FALSE`.
+- Constraint-reduced Legendre energy as a coercive norm:
+  `FALSE_IDENTICALLY_ZERO`.
+- Existing weighted principal inf-sup certificate as global nonlinear
+  reset-quotient KKT compactness: `FALSE_LOCAL_LINEAR_ROOT_BALL_ONLY`.
+- Current direct compactness/Palais--Smale theorem: `OPEN`.
+- Current nonzero Brouwer/Leray--Schauder/Fredholm KKT degree: `OPEN`.
+- Direct existence route invalid in principle: `FALSE`.
+- Retained-action incompatibility or new-action justification: `NOT_PROVED`.
+- Current owner: `ONE_REGULAR_FINITE_ENDPOINT_FORWARD_ADJOINT_KKT_ROOT_BY_`
+  `VALIDATED_BVP_OR_AN_INDEPENDENT_ACTION_OWNED_GLOBAL_COMPACTNESS_DEGREE_THEOREM`.
+- Gate 7: `ACTIVE`; Gate 8: `LOCKED`; chord 3: `UNAUTHORIZED`;
+  `FULL_BHSM_COMPLETE=FALSE`.

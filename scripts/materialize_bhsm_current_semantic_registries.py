@@ -52,6 +52,8 @@ SOURCES = (
     "artifacts/flagship_integration/BHSM_N12_FORCE_ADJOINT_PULLBACK.json",
     "artifacts/flagship_integration/BHSM_N12_FINITE_ENDPOINT_FORWARD_ADJOINT_KKT.json",
     "artifacts/flagship_integration/BHSM_N12_FORWARD_ADJOINT_KKT_EXISTENCE_GATE.json",
+    "artifacts/flagship_integration/BHSM_N12_SAME_ACTION_CONTINUATION_PRECONDITIONS.json",
+    "artifacts/flagship_integration/BHSM_N12_DIRECT_KKT_EXISTENCE_PRECONDITIONS.json",
     "artifacts/flagship_integration/BHSM_N12_WEIGHT_SEVEN_TRANSVERSE_DESCRIPTOR.json",
     "artifacts/flagship_integration/BHSM_N12_WEIGHT_FIVE_CENTER_MODULATION.json",
     "artifacts/flagship_integration/BHSM_N12_WEIGHT_FIVE_MULTIPRECISION_NONPROMOTION.json",
@@ -118,6 +120,8 @@ def verify_current_lineage() -> None:
     force_adjoint = loaded["artifacts/flagship_integration/BHSM_N12_FORCE_ADJOINT_PULLBACK.json"]
     forward_adjoint_kkt = loaded["artifacts/flagship_integration/BHSM_N12_FINITE_ENDPOINT_FORWARD_ADJOINT_KKT.json"]
     kkt_existence = loaded["artifacts/flagship_integration/BHSM_N12_FORWARD_ADJOINT_KKT_EXISTENCE_GATE.json"]
+    continuation = loaded["artifacts/flagship_integration/BHSM_N12_SAME_ACTION_CONTINUATION_PRECONDITIONS.json"]
+    direct_existence = loaded["artifacts/flagship_integration/BHSM_N12_DIRECT_KKT_EXISTENCE_PRECONDITIONS.json"]
     weight_seven_descriptor = loaded["artifacts/flagship_integration/BHSM_N12_WEIGHT_SEVEN_TRANSVERSE_DESCRIPTOR.json"]
     weight_five_modulation = loaded["artifacts/flagship_integration/BHSM_N12_WEIGHT_FIVE_CENTER_MODULATION.json"]
     weight_five_mp_audit = loaded["artifacts/flagship_integration/BHSM_N12_WEIGHT_FIVE_MULTIPRECISION_NONPROMOTION.json"]
@@ -195,6 +199,37 @@ def verify_current_lineage() -> None:
         ] is False
     ):
         raise RuntimeError("forward-adjoint KKT existence gate is not current")
+    if not (
+        continuation["adjudication"][
+            "local_implicit_function_theorem_applicable_now"
+        ] is False
+        and continuation["adjudication"][
+            "continuation_route_invalid_in_principle"
+        ] is False
+        and continuation["claim_boundary"]["synthetic_Hessian_promoted"]
+        is False
+        and continuation["claim_boundary"][
+            "historical_constant_reset_Hessian_promoted"
+        ] is False
+    ):
+        raise RuntimeError("same-action continuation precondition audit is not current")
+    if not (
+        direct_existence["claim_boundary"]["finite_endpoint_KKT_root"]
+        == "OPEN_CURRENT_OWNER"
+        and direct_existence["adjudication"][
+            "heat_regulator_alone_closes_direct_method"
+        ] is False
+        and direct_existence["adjudication"][
+            "local_principal_coercivity_closes_global_KKT_existence"
+        ] is False
+        and direct_existence["adjudication"][
+            "direct_existence_route_invalid_in_principle"
+        ] is False
+        and direct_existence["adjudication"][
+            "retained_action_incompatibility_proved"
+        ] is False
+    ):
+        raise RuntimeError("direct KKT existence precondition audit is not current")
     if nonfermion["claim_boundary"]["nonfermion_critical_zero_graph_excluded"] is not True:
         raise RuntimeError("disk does not close the nonfermion threshold obstruction")
     if factorized["claim_boundary"]["factorized_N12_low_energy_source_measure"] != "OPEN":
