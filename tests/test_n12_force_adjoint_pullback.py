@@ -31,6 +31,8 @@ def test_force_covector_does_not_require_forward_column_family() -> None:
     consequence = payload["computational_consequence"]
     assert consequence["forward_Jacobi_columns_required"] == 0
     assert consequence["required_base_history"] is True
+    assert consequence["required_parametric_base_history_or_joint_KKT_solve"] is True
+    assert consequence["one_fixed_reset_parameter_closes_physical_saddle"] is False
     assert consequence["second_state_or_operator_jet_required_before_first_force"] is False
     assert payload["inverse_free_Euler_Dirac_adjoint"][
         "highest_action_derivative_before_first_force"

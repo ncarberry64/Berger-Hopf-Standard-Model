@@ -176,24 +176,25 @@ def build_payload() -> dict[str, object]:
             "forward_Jacobi_columns_required": 0,
             "one_column_per_raw_or_physical_reset_direction_required": False,
             "required_base_history": True,
+            "required_parametric_base_history_or_joint_KKT_solve": True,
+            "one_fixed_reset_parameter_closes_physical_saddle": False,
             "required_nested_backward_covector_solves": True,
             "second_state_or_operator_jet_required_before_first_force": False,
             "reset_representative_selected": False,
         },
         "exact_next_dependency": (
-            "CERTIFY_THE_ACTION_SELECTED_MAXIMAL_BASE_HISTORY_TO_ITS_RETAINED_"
-            "ENDPOINT_CLASS;_ASSEMBLE_THE_HEAT_MINUS_ZETA_OPERATOR_COTANGENT_"
-            "ON_THAT_HISTORY;_RUN_THE_FIXED_CHANNEL_AND_TRANSPOSED_"
-            "EULER_DIRAC_ADJOINTS_WITH_THE_MOVING_ENDPOINT_PROJECTION;_THEN_"
-            "EVALUATE_N_phys^dagger*(B_reset^dagger*p(0)+q_direct)_WITHOUT_"
-            "CHORD_3_OR_A_RESET_SELECTOR"
+            "EITHER_CERTIFY_A_PARAMETRIC_MAXIMAL_BASE_HISTORY_ORACLE_ON_A_"
+            "REGULAR_FINITE_ENDPOINT_STRATUM_AND_ROOT_THE_ADJOINT_COVECTOR_"
+            "ON_THE_PHYSICAL_QUOTIENT,_OR_SOLVE_THE_EQUIVALENT_COUPLED_"
+            "FINITE_ENDPOINT_FORWARD_ADJOINT_KKT_SYSTEM;_A_SINGLE_FIXED_"
+            "RESET_PARAMETER_DOES_NOT_CLOSE_THE_SET_VALUED_RESET"
         ),
         "claim_boundary": {
-            "Gate7": "ACTIVE_MAXIMAL_BASE_HISTORY_AND_ADJOINT_EVALUATION_OPEN",
+            "Gate7": "ACTIVE_PARAMETRIC_BASE_OR_FORWARD_ADJOINT_KKT_OPEN",
             "G7_08_force_functional": "DERIVED",
             "G7_08_force_adjoint_pullback": "DERIVED",
             "G7_08_actual_projected_force": "OPEN_CURRENT_OWNER",
-            "maximal_base_history": "OPEN",
+            "parametric_maximal_base_history_or_joint_KKT": "OPEN",
             "second_operator_jet": "PENDING_CONDITIONAL",
             "same_action_saddle": "PENDING_ON_FORCE_RESULT",
             "Gate8": "LOCKED",

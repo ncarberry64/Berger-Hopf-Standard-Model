@@ -370,6 +370,17 @@
   endpoint operator cotangent as the immediate owner.  It does not make the
   two finite chords into an endpoint, authorize chord 3, or remove later
   second-jet/Hessian obligations.
+- No-selector KKT correction: the adjoint eliminates tangent columns only at
+  a fixed reset parameter; it does not collapse the set-valued AE2 reset to a
+  preferred history.  The current intrinsic system couples
+  `Y(0)=R_AE2(xi)`, the retained forward flow, the first finite event or
+  canonical-stop graph, the action-owned operator cotangent, the backward
+  adjoint, and
+  `N_phys^dagger(D_xi R_AE2^dagger p(0)+q_direct)=0`.  A parametric
+  finite-stratum oracle followed by a quotient root and a simultaneous
+  forward--adjoint boundary-value solve are equivalent implementations at a
+  regular root.  The equations are derived; no finite endpoint solution or
+  unique saddle is yet certified.
 - Current operator-data inventory: the durable endpoint checkpoint contains
   one 196-component event-child state and a `57 x 196` first constraint
   Jacobian, but no proper-time coefficient path, `D_tau`, endpoint form,

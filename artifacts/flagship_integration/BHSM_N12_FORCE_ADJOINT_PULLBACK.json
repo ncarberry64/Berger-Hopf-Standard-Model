@@ -7,11 +7,11 @@
     "G7_08_actual_projected_force": "OPEN_CURRENT_OWNER",
     "G7_08_force_adjoint_pullback": "DERIVED",
     "G7_08_force_functional": "DERIVED",
-    "Gate7": "ACTIVE_MAXIMAL_BASE_HISTORY_AND_ADJOINT_EVALUATION_OPEN",
+    "Gate7": "ACTIVE_PARAMETRIC_BASE_OR_FORWARD_ADJOINT_KKT_OPEN",
     "Gate8": "LOCKED",
     "chord_03_authorized": false,
     "frozen_predictions_changed": false,
-    "maximal_base_history": "OPEN",
+    "parametric_maximal_base_history_or_joint_KKT": "OPEN",
     "same_action_saddle": "PENDING_ON_FORCE_RESULT",
     "second_operator_jet": "PENDING_CONDITIONAL"
   },
@@ -19,8 +19,10 @@
   "computational_consequence": {
     "forward_Jacobi_columns_required": 0,
     "one_column_per_raw_or_physical_reset_direction_required": false,
+    "one_fixed_reset_parameter_closes_physical_saddle": false,
     "required_base_history": true,
     "required_nested_backward_covector_solves": true,
+    "required_parametric_base_history_or_joint_KKT_solve": true,
     "reset_representative_selected": false,
     "second_state_or_operator_jet_required_before_first_force": false
   },
@@ -33,7 +35,7 @@
     "reset_pullback": "q_xi=B_reset^dagger*p(0)+q_direct",
     "state_generator": "A(t)=D_V(Y(t))"
   },
-  "exact_next_dependency": "CERTIFY_THE_ACTION_SELECTED_MAXIMAL_BASE_HISTORY_TO_ITS_RETAINED_ENDPOINT_CLASS;_ASSEMBLE_THE_HEAT_MINUS_ZETA_OPERATOR_COTANGENT_ON_THAT_HISTORY;_RUN_THE_FIXED_CHANNEL_AND_TRANSPOSED_EULER_DIRAC_ADJOINTS_WITH_THE_MOVING_ENDPOINT_PROJECTION;_THEN_EVALUATE_N_phys^dagger*(B_reset^dagger*p(0)+q_direct)_WITHOUT_CHORD_3_OR_A_RESET_SELECTOR",
+  "exact_next_dependency": "EITHER_CERTIFY_A_PARAMETRIC_MAXIMAL_BASE_HISTORY_ORACLE_ON_A_REGULAR_FINITE_ENDPOINT_STRATUM_AND_ROOT_THE_ADJOINT_COVECTOR_ON_THE_PHYSICAL_QUOTIENT,_OR_SOLVE_THE_EQUIVALENT_COUPLED_FINITE_ENDPOINT_FORWARD_ADJOINT_KKT_SYSTEM;_A_SINGLE_FIXED_RESET_PARAMETER_DOES_NOT_CLOSE_THE_SET_VALUED_RESET",
   "inputs": {
     "artifacts/flagship_integration/BHSM_N12_CONSTRAINT_PROJECTED_REPLACEMENT_SADDLE.json": "E5C0340FC39BFF9C83F338B8AFA7270F71A6699A56A5B0996F754FB99B65DAD1",
     "artifacts/flagship_integration/BHSM_N12_FINITE_ENDPOINT_ZERO_SOURCE_FORCE_FUNCTIONAL.json": "6BC1FC78190437347813117A63D252C96115B2B67619D893144526A5DDD4E931",

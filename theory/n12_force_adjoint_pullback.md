@@ -44,6 +44,10 @@ action derivative before the first force remains `D3 L`.  `D4 L`, second
 operator jets, reset curvature, and the geometry KKT Hessian remain required
 on the later nonzero-force/Hessian branch.
 
-The adjoint theorem shortens evaluation but does not manufacture the missing
-maximal base history or its endpoint class.  Gate 7 remains active, Gate 8 is
-locked, chord 3 remains unauthorized, and frozen predictions are unchanged.
+The adjoint theorem shortens evaluation at each reset parameter but does not
+turn the set-valued reset into one action-selected representative.  Closing
+the physical saddle still requires either a parametric maximal-base oracle on
+a regular finite endpoint stratum followed by a quotient root solve, or the
+equivalent coupled forward--adjoint KKT boundary-value solve.  Gate 7 remains
+active, Gate 8 is locked, chord 3 remains unauthorized, and frozen
+predictions are unchanged.
