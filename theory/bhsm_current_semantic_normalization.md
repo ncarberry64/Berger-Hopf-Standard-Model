@@ -164,14 +164,16 @@ domain, and none is claimed. The maximal negative-`z` Weyl value is now
 uniquely action-owned as the operator-norm limit of nested finite Dirichlet
 form-core exhaustions on every Friedrichs route. The artificial far edges are
 approximation devices and are not physical endpoints. The noncompact
-reset-Jacobi matrix is also not intrinsically required: finite-core adjoint
-pullbacks converge directly to the physical reset covector whenever the
-action-owned weighted load
-`integral ||U(t,0)|| ||q_heat-minus-zeta(t)|| dt` is finite. The current owner
-is correspondingly narrowed to proving or enclosing that weighted maximal
-adjoint load on a nonempty regular reset quotient stratum, or certifying a
-finite later-event/canonical-stop stratum where the finite adjoint theorem
-already applies. Fixed-channel E1 source-Dini and independent high-energy
+reset-Jacobi matrix is also not intrinsically required. For nested finite
+cores, the exact Gate-7 owner is Cauchy convergence of
+`N_phys^dagger(B_reset^dagger p_T(0)+q_direct,T)` in the physical reset
+quotient dual. The action-owned weighted load
+`integral ||U(t,0)|| ||q_heat-minus-zeta(t)|| dt` is a strong sufficient
+condition, not a necessary one, because only the retained physical pullback
+is observable. The current owner is correspondingly narrowed to proving the
+actual quotient-Cauchy tail on the one certified C2 class, including the full
+graded heat and direct zeta loads, or certifying a finite later-event/canonical-
+stop stratum where the finite adjoint theorem already applies. Fixed-channel E1 source-Dini and independent high-energy
 trace control are already closed and must not be reopened. On an infinite
 post-reset route, the remaining source-side question is the retained graded
 angular assembly of the actual heat cotangent and its weighted contraction

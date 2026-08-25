@@ -1982,12 +1982,17 @@ Exact next object:
 - Intrinsic whole-system time quotient after the limit: `DERIVED`.
 - Negative-resolvent Weyl exhaustion alone implies adjoint-load convergence:
   `FALSE`.
-- Actual N12 weighted propagator/load bound including heat and direct zeta:
-  `OPEN_CURRENT_OWNER`.
+- Exact maximal-force convergence criterion: the finite-core force net
+  `N_phys^dagger(B_reset^dagger p_T(0)+q_direct,T)` is Cauchy in the physical
+  reset quotient dual: `DERIVED`.
+- Ambient absolute weighted propagator/load bound including heat and direct
+  zeta: `SUFFICIENT_NOT_NECESSARY`.
+- Actual N12 physical quotient-Cauchy tail including the maximal propagator,
+  full graded heat cotangent, and direct zeta term: `OPEN_CURRENT_OWNER`.
 - Fixed-channel E1 source-Dini and independent high-energy trace control:
   `CLOSED_DO_NOT_REOPEN`.
 - Infinite post-reset graded angular heat-cotangent assembly:
-  `OPEN_INSIDE_ACTUAL_WEIGHTED_LOAD`; this is distinct from the owner-scoped
+  `OPEN_INSIDE_ACTUAL_QUOTIENT_CAUCHY_TAIL`; this is distinct from the owner-scoped
   exclusion of infinite nonencapsulating formation histories.
 - Finite later-event/canonical-stop stratum:
   `ALTERNATIVE_USING_EXISTING_FINITE_ENDPOINT_ADJOINT_THEOREM`.

@@ -59,6 +59,8 @@ SOURCES = (
     "artifacts/flagship_integration/BHSM_N12_ASYMPTOTIC_NHIM_CAPTURE_BASIN.json",
     "artifacts/flagship_integration/BHSM_N12_MAXIMAL_FRIEDRICHS_WEYL_EXHAUSTION.json",
     "artifacts/flagship_integration/BHSM_N12_MAXIMAL_FORWARD_ADJOINT_EXHAUSTION.json",
+    "artifacts/flagship_integration/BHSM_N12_C2_CLASS_REDUCED_MAXIMAL_RESPONSE.json",
+    "artifacts/flagship_integration/BHSM_N12_C2_PROJECTED_ADJOINT_CAUCHY_CRITERION.json",
     "artifacts/flagship_integration/BHSM_N12_ASYMPTOTIC_NHIM_ANGULAR_FORCE_NO_GO.json",
     "artifacts/flagship_integration/BHSM_N12_LOCAL_RESET_TERMINAL_TRANSVERSALITY_AUDIT.json",
     "artifacts/flagship_integration/BHSM_N12_CANONICAL_MOMENTUM_ACTION_JACOBIAN.json",
@@ -144,6 +146,8 @@ def verify_current_lineage() -> None:
     asymptotic_nhim = loaded["artifacts/flagship_integration/BHSM_N12_ASYMPTOTIC_NHIM_CAPTURE_BASIN.json"]
     maximal_weyl = loaded["artifacts/flagship_integration/BHSM_N12_MAXIMAL_FRIEDRICHS_WEYL_EXHAUSTION.json"]
     maximal_adjoint = loaded["artifacts/flagship_integration/BHSM_N12_MAXIMAL_FORWARD_ADJOINT_EXHAUSTION.json"]
+    c2_maximal = loaded["artifacts/flagship_integration/BHSM_N12_C2_CLASS_REDUCED_MAXIMAL_RESPONSE.json"]
+    projected_cauchy = loaded["artifacts/flagship_integration/BHSM_N12_C2_PROJECTED_ADJOINT_CAUCHY_CRITERION.json"]
     nhim_angular_no_go = loaded["artifacts/flagship_integration/BHSM_N12_ASYMPTOTIC_NHIM_ANGULAR_FORCE_NO_GO.json"]
     local_reset_terminal = loaded["artifacts/flagship_integration/BHSM_N12_LOCAL_RESET_TERMINAL_TRANSVERSALITY_AUDIT.json"]
     momentum_jacobian = loaded["artifacts/flagship_integration/BHSM_N12_CANONICAL_MOMENTUM_ACTION_JACOBIAN.json"]
@@ -300,6 +304,16 @@ def verify_current_lineage() -> None:
         is True
         and maximal_adjoint["claim_boundary"]["actual_weighted_load"]
         == "OPEN_CURRENT_OWNER"
+        and c2_maximal["adjudication"][
+            "abstract_M_C2_value_definition_exists_and_is_unique"
+        ] is True
+        and projected_cauchy["claim_boundary"]["projected_Cauchy_criterion"]
+        == "DERIVED"
+        and projected_cauchy["claim_boundary"]["actual_projected_Cauchy_tail"]
+        == "OPEN_CURRENT_OWNER"
+        and projected_cauchy["validation"][
+            "absolute_weighted_norm_is_only_sufficient"
+        ] is True
         and nhim_angular_no_go["claim_boundary"][
             "asymptotic_NHIM_absolute_graded_force_route"
         ] == "CLOSED_NO_GO"
