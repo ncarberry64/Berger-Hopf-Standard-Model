@@ -23,10 +23,11 @@ def test_gate7_1222_core_diagram_matching() -> None:
         "VALID_MATCH_REPRESENTATIVE_INCREMENT_SUPPRESSED"
     )
     assert verdicts["INCOMING_C1_RESPONSE_M_f"].startswith(
-        "VALID_MATCH_IDENTITY_AND_ACTION_OWNED_GERM"
+        "VALID_MATCH_IDENTITY_ACTION_GERM_AND_COEFFICIENT_PATH_QUADRATIC_GERM"
     )
     assert verdicts["PAIR_CONTACT_AND_GRADED_SOURCE_INCIDENCE"] == "VALID_MATCH_CONDITIONAL_CONSUMER"
     assert payload["adjudication"]["finite_event_or_canonical_stop"] == "NOT_REACHED"
     assert payload["adjudication"]["stored_fixed_channel_1064_to_1222_heat_increment"] == "CERTIFIED_SUPPRESSED_IN_LOG_SPACE"
     assert payload["adjudication"]["incoming_M_f_identity_and_action_owned_germ"].startswith("CLOSED")
+    assert payload["adjudication"]["incoming_normalized_coefficient_path_quadratic_germ"] == "CLOSED_INVERSE_FREE"
     assert payload["claim_boundary"]["zero_source_force"] == "OPEN"

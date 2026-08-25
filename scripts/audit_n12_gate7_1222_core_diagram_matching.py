@@ -27,8 +27,9 @@ COMMON_SCALE = BASE / "BHSM_N12_C2_COMMON_SCALE_WEYL_COVARIANCE.json"
 COMMON_SCALE_WARD = BASE / "BHSM_N12_GATE7_COMMON_SCALE_HEAT_ZETA_WARD.json"
 FIXED_CHANNEL_HEAT = BASE / "BHSM_N12_GATE7_FIXED_CHANNEL_FINITE_CORE_HEAT_BOUND.json"
 INCOMING_MATCH = BASE / "BHSM_N12_INCOMING_MF_COMPACT_MATCH.json"
+INCOMING_PATH_GERM = BASE / "BHSM_N12_INCOMING_COEFFICIENT_PATH_QUADRATIC_GERM.json"
 THEORY = ROOT / "theory" / "n12_gate7_1222_core_diagram_matching_audit.md"
-INPUTS = (OLD, CORE, FAMILY, NESTED, MAXIMAL, BIRTH, COMPACT, SEAM, INCIDENCE, FORCE, ADJOINT, CAUCHY, COMMON_SCALE, COMMON_SCALE_WARD, FIXED_CHANNEL_HEAT, INCOMING_MATCH, THEORY)
+INPUTS = (OLD, CORE, FAMILY, NESTED, MAXIMAL, BIRTH, COMPACT, SEAM, INCIDENCE, FORCE, ADJOINT, CAUCHY, COMMON_SCALE, COMMON_SCALE_WARD, FIXED_CHANNEL_HEAT, INCOMING_MATCH, INCOMING_PATH_GERM, THEORY)
 
 
 def _sha256(path: Path) -> str:
@@ -46,11 +47,11 @@ def build_payload() -> dict[str, Any]:
     missing = [str(path) for path in INPUTS if not path.is_file()]
     if missing:
         raise FileNotFoundError("missing 1222 matching inputs: " + ", ".join(missing))
-    old, core, family, nested, maximal, birth, compact, seam, incidence, force, adjoint, cauchy, common_scale, common_scale_ward, fixed_channel_heat, incoming_match = (
+    old, core, family, nested, maximal, birth, compact, seam, incidence, force, adjoint, cauchy, common_scale, common_scale_ward, fixed_channel_heat, incoming_match, incoming_path_germ = (
         _load(path) for path in INPUTS[:-1]
     )
     if not all(record.get("validation_passed") is True for record in (
-        old, core, family, nested, maximal, birth, compact, seam, incidence, force, adjoint, cauchy, common_scale, common_scale_ward, fixed_channel_heat, incoming_match,
+        old, core, family, nested, maximal, birth, compact, seam, incidence, force, adjoint, cauchy, common_scale, common_scale_ward, fixed_channel_heat, incoming_match, incoming_path_germ,
     )):
         raise RuntimeError("validated diagram parents required")
 
@@ -122,10 +123,10 @@ def build_payload() -> dict[str, Any]:
         {
             "diagram_slot": "INCOMING_C1_RESPONSE_M_f",
             "required_type": "SHARP_ACTION_OWNED_NEGATIVE_AXIS_INCOMING_WEYL_RESPONSE_ON_THE_PHYSICAL_C1_TO_E1_HISTORY",
-            "candidate": "BHSM_N12_INCOMING_MF_COMPACT_MATCH",
-            "dimension_domain_check": "VALID_ZERO_BIRTH_SOURCE_RESTRICTION_TO_THE_NEW_EVENT_BLOCK;_COMPLETE_FINITE_DURATION_COEFFICIENT_PATH_NOT_STORED",
-            "provenance_check": "VALID_COMPACT_ACTION_CALDERON_MAP,_ENDPOINT_ROLE,_FORMATION_SCHUR_IDENTITY,_AND_TERMINAL_LAURENT_GERM",
-            "verdict": "VALID_MATCH_IDENTITY_AND_ACTION_OWNED_GERM_COMPLETE_FINITE_DURATION_REALIZATION_OPEN",
+            "candidate": "BHSM_N12_INCOMING_MF_COMPACT_MATCH_PLUS_INCOMING_COEFFICIENT_PATH_QUADRATIC_GERM",
+            "dimension_domain_check": "VALID_ZERO_BIRTH_SOURCE_RESTRICTION_TO_THE_NEW_EVENT_BLOCK_AND_UNIFORM_NORMALIZED_PATH_THROUGH_lambda_0_SQUARED;_FINITE_POSITIVE_AMPLITUDE_REMAINDER_NOT_STORED",
+            "provenance_check": "VALID_COMPACT_ACTION_CALDERON_MAP,_ENDPOINT_ROLE,_FORMATION_SCHUR_IDENTITY,_TERMINAL_CAUCHY_JET,_POSITIVE_DURATION_LAW,_AND_TERMINAL_LAURENT_GERM",
+            "verdict": "VALID_MATCH_IDENTITY_ACTION_GERM_AND_COEFFICIENT_PATH_QUADRATIC_GERM_FULL_REMAINDER_OPEN",
         },
         {
             "diagram_slot": "E1_TO_C2_SEAM",
@@ -205,6 +206,14 @@ def build_payload() -> dict[str, Any]:
             and incoming_match["claim_boundary"]
             ["complete_finite_duration_incoming_Mf_family"].startswith("OPEN")
         ),
+        "incoming_coefficient_path_germ_is_closed_without_Euler_Dirac_inverse": (
+            incoming_path_germ["claim_boundary"]
+            ["incoming_normalized_log_radius_path_germ"].startswith("CERTIFIED")
+            and incoming_path_germ["claim_boundary"]
+            ["complete_finite_positive_amplitude_path"].startswith("OPEN")
+            and incoming_path_germ["validation"]
+            ["no_Euler_Dirac_inverse_or_acceleration_used"] is True
+        ),
         "broad_seam_intervals_do_not_decide_force": seam["force_adjudication"]["broad_intervals_decide_heat_minus_zeta_force_sign"] is False,
         "source_incidence_is_a_valid_conditional_consumer": incidence["claim_boundary"]["domain_parametric_nonzero_local_incidence"] == "DERIVED",
         "force_functional_is_derived_but_value_open": force["claim_boundary"]["zero_source_force_functional"] == "DERIVED" and force["claim_boundary"]["zero_source_force_value"] == "OPEN",
@@ -218,13 +227,14 @@ def build_payload() -> dict[str, Any]:
     return {
         "artifact": "BHSM_N12_GATE7_1222_CORE_DIAGRAM_MATCHING_AUDIT",
         "status": "GATE7_1222_CORE_SLOTS_MATCHED_REALIZED_PARENT_PULLBACK_AND_PROJECTED_TAIL_OPEN" if passed else "GATE7_1222_CORE_MATCHING_NOT_VALIDATED",
-        "classification": "C2_FINITE_CORE_NEGATIVE_AXIS_RESPONSE,_BACKWARD_OPERATOR_COTANGENT,_INCOMING_M_f_COMPACT_BLOCK_AND_GERM,_AND_PHYSICAL_COMMON_SCALE_PULLBACK_SLOTS_ARE_VALID_MATCHES;_THE_COMPLETE_INCOMING_COEFFICIENT_PATH_AND_NON_SCALE_RESET_GEOMETRY_PULLBACK_REMAIN_MISSING_AS_REALIZED_DATA,_WHILE_INCIDENCE_FORCE_AND_CAUCHY_THEOREMS_ARE_VALID_CONDITIONAL_CONSUMERS",
+        "classification": "C2_FINITE_CORE_NEGATIVE_AXIS_RESPONSE,_BACKWARD_OPERATOR_COTANGENT,_INCOMING_M_f_COMPACT_BLOCK_AND_LAURENT_GERM,_INCOMING_COEFFICIENT_PATH_QUADRATIC_GERM,_AND_PHYSICAL_COMMON_SCALE_PULLBACK_SLOTS_ARE_VALID_MATCHES;_THE_UNIFORM_FINITE_AMPLITUDE_INCOMING_REMAINDER_AND_NON_SCALE_RESET_GEOMETRY_PULLBACK_REMAIN_MISSING_AS_REALIZED_DATA,_WHILE_INCIDENCE_FORCE_AND_CAUCHY_THEOREMS_ARE_VALID_CONDITIONAL_CONSUMERS",
         "forward_event_diagram": "C1 --M_f--> E1 --(U_R,W_phys)--> C2 --M_C2--> MAXIMAL_ENDPOINT",
         "matching_audit": slots,
         "adjudication": {
             "new_C2_response_theory_required": False,
             "more_scalar_C2_boxes_are_the_owner": False,
             "incoming_M_f_identity_and_action_owned_germ": "CLOSED_EXISTING_COMPACT_TERMINAL_BLOCK",
+            "incoming_normalized_coefficient_path_quadratic_germ": "CLOSED_INVERSE_FREE",
             "complete_finite_duration_incoming_M_f_realization": "OPEN_COEFFICIENT_PATH",
             "finite_core_backward_operator_cotangent": "CLOSED",
             "physical_common_scale_geometry_pullback": "CLOSED_BY_EXACT_COVARIANCE",
@@ -238,12 +248,12 @@ def build_payload() -> dict[str, Any]:
             "Gate8": "LOCKED",
         },
         "validated_invalidated_open": {
-            "VALIDATED": ["C2 1222-core coefficient slot", "C2 complete negative-axis finite-core response", "finite-core backward operator cotangent semigroup", "incoming M_f compact terminal-block identity and Laurent germ", "physical common-scale pullback including moving duration", "common-scale heat-zeta source contraction formula", "stored fixed-channel 1064-to-1222 heat increment suppression", "maximal abstract Weyl value", "source and force consumer formulas"],
+            "VALIDATED": ["C2 1222-core coefficient slot", "C2 complete negative-axis finite-core response", "finite-core backward operator cotangent semigroup", "incoming M_f compact terminal-block identity and Laurent germ", "incoming normalized coefficient path through lambda_0 squared", "physical common-scale pullback including moving duration", "common-scale heat-zeta source contraction formula", "stored fixed-channel 1064-to-1222 heat increment suppression", "maximal abstract Weyl value", "source and force consumer formulas"],
             "INVALIDATED": ["new C2 theory is required", "a new C1 operator theory is required for M_f", "a second birth exterior response is required", "a full pathwise Jacobi is required for the common-scale component", "fixed-duration radius-only zeta derivative is the physical common-scale force", "birth jet alone is the remaining non-scale pathwise reset jet", "broad seam intervals or probes determine the force", "proof edge is an endpoint"],
-            "OPEN": ["complete finite-duration incoming coefficient path and joint seam realization", "non-scale pathwise reset quotient geometry pullback sector", "actual projected force net and Cauchy tail"],
+            "OPEN": ["uniform inverse-free finite-amplitude incoming remainder and joint seam realization", "non-scale pathwise reset quotient geometry pullback sector", "actual projected force net and Cauchy tail"],
         },
         "hindsight": {"classification": "PROOF_CHART_LIMIT_REMOVED;_OPERATOR_DATA_GAP_REMAINS", "obstruction_physical": False},
-        "exact_next_dependency": "COMPLETE_THE_FINITE_DURATION_INCOMING_COEFFICIENT_PATH_PARAMETRICALLY_IN_THE_ACTION_OWNED_FORMATION_AMPLITUDE_AND_GLUE_THE_NOW_IDENTIFIED_M_f_BLOCK_TO_THE_C2_SEAM;_CHAIN_THE_CLOSED_BACKWARD_OPERATOR_COTANGENT_THROUGH_THE_REMAINING_NON_SCALE_RESET_QUOTIENT_GEOMETRY_ADJOINT_SECTOR,_CONTRACT_THE_SOURCE_AND_FORCE_FUNCTIONALS,_AND_TEST_THE_PROJECTED_CAUCHY_TAIL",
+        "exact_next_dependency": "CERTIFY_THE_UNIFORM_INVERSE_FREE_FINITE_AMPLITUDE_REMAINDER_ABOUT_THE_CLOSED_INCOMING_COEFFICIENT_PATH_QUADRATIC_GERM_AND_GLUE_THE_NOW_IDENTIFIED_M_f_BLOCK_TO_THE_C2_SEAM;_CHAIN_THE_CLOSED_BACKWARD_OPERATOR_COTANGENT_THROUGH_THE_REMAINING_NON_SCALE_RESET_QUOTIENT_GEOMETRY_ADJOINT_SECTOR,_CONTRACT_THE_SOURCE_AND_FORCE_FUNCTIONALS,_AND_TEST_THE_PROJECTED_CAUCHY_TAIL",
         "claim_boundary": {
             "Gate7": "G7_08_OPEN_REALIZED_PARENT_PULLBACK_AND_PROJECTED_TAIL",
             "Gate8": "LOCKED",

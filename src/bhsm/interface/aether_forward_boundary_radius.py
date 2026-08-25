@@ -116,9 +116,86 @@ def proper_time_log_radius_rate(
     return float(jets["first_left"]) / lapse
 
 
+def normalized_incoming_log_radius_quadratic_germ(
+    normalized_times: np.ndarray,
+    *,
+    terminal_log_radius: float,
+    terminal_proper_rate_interval: tuple[float, float],
+    duration_quadratic_coefficient_interval: tuple[float, float],
+) -> dict[str, np.ndarray | float | str | bool]:
+    """Return the inverse-free normalized short-history coefficient germ.
+
+    If a regular incoming history reaches its fixed terminal event with
+    proper-radius rate ``v_E`` and its action amplitude obeys
+    ``T(lambda_0)=a lambda_0^2+o(lambda_0^2)``, continuity of the retained
+    flow gives, uniformly for ``s in [0,1]``,
+
+    ``x(s,lambda_0)=x_E-(1-s)*a*v_E*lambda_0^2+o(lambda_0^2)``.
+
+    Only certified positive intervals for ``a`` and ``v_E`` are used.  No
+    Euler--Dirac block, acceleration, or history member is solved for.
+    """
+
+    times = np.asarray(normalized_times, dtype=float)
+    x_terminal = float(terminal_log_radius)
+    rate_lower, rate_upper = (
+        float(value) for value in terminal_proper_rate_interval
+    )
+    time_lower, time_upper = (
+        float(value) for value in duration_quadratic_coefficient_interval
+    )
+    if (
+        times.ndim != 1
+        or not np.all(np.isfinite(times))
+        or np.any(times < 0.0)
+        or np.any(times > 1.0)
+        or not math.isfinite(x_terminal)
+        or not (0.0 < rate_lower <= rate_upper)
+        or not (0.0 < time_lower <= time_upper)
+    ):
+        raise ValueError("finite normalized times and positive ordered intervals required")
+    factor = 1.0 - times
+    product_lower = time_lower * rate_lower
+    product_upper = time_upper * rate_upper
+    log_radius_coefficient_interval = np.column_stack((
+        -factor * product_upper,
+        -factor * product_lower,
+    ))
+    scalar_relative_potential_coefficient_interval = np.column_stack((
+        2.0 * factor * product_lower,
+        2.0 * factor * product_upper,
+    ))
+    dirac_relative_superpotential_coefficient_interval = np.column_stack((
+        factor * product_lower,
+        factor * product_upper,
+    ))
+    return {
+        "normalized_times": times,
+        "terminal_log_radius": x_terminal,
+        "duration_rate_product_interval": np.asarray(
+            (product_lower, product_upper)
+        ),
+        "log_radius_lambda0_squared_coefficient_interval": (
+            log_radius_coefficient_interval
+        ),
+        "scalar_relative_potential_lambda0_squared_coefficient_interval": (
+            scalar_relative_potential_coefficient_interval
+        ),
+        "dirac_relative_superpotential_lambda0_squared_coefficient_interval": (
+            dirac_relative_superpotential_coefficient_interval
+        ),
+        "uniform_asymptotic": (
+            "x(s,lambda_0)=x_E-(1-s)*a*v_E*lambda_0^2+o(lambda_0^2)"
+        ),
+        "explicit_Euler_Dirac_inverse_formed": False,
+        "acceleration_required": False,
+    }
+
+
 __all__ = [
     "boundary_log_radius",
     "boundary_log_radius_jets",
     "boundary_log_lapse",
     "proper_time_log_radius_rate",
+    "normalized_incoming_log_radius_quadratic_germ",
 ]
