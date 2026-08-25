@@ -1967,6 +1967,25 @@ Exact next object:
 - Gate 7: `ACTIVE`; Gate 8: `LOCKED`; chord 3: `UNAUTHORIZED`;
   `FULL_BHSM_COMPLETE=FALSE`.
 
+## N=12 maximal forward-adjoint exhaustion
+
+- Finite-core reset-force pullback:
+  `p_T(0)=integral_0^T U(t,0)^dagger q(t) dt`.
+- Sufficient infinite-route convergence condition:
+  `integral_0^Tmax ||U(t,0)|| ||q(t)|| dt < infinity`.
+- All noncompact reset-Jacobi columns required: `FALSE`.
+- Explicit noncompact `D_xi M_C` required when the adjoint limit is certified:
+  `FALSE`.
+- Intrinsic whole-system time quotient after the limit: `DERIVED`.
+- Negative-resolvent Weyl exhaustion alone implies adjoint-load convergence:
+  `FALSE`.
+- Actual N12 weighted propagator/load bound including heat and direct zeta:
+  `OPEN_CURRENT_OWNER`.
+- Finite later-event/canonical-stop stratum:
+  `ALTERNATIVE_USING_EXISTING_FINITE_ENDPOINT_ADJOINT_THEOREM`.
+- Gate 7: `ACTIVE`; Gate 8: `LOCKED`; chord 3: `UNAUTHORIZED`;
+  `FULL_BHSM_COMPLETE=FALSE`.
+
 ## N=12 Gate-7 formation/decay chronology supersession
 
 - Physical chronology:

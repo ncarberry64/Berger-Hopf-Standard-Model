@@ -1,0 +1,100 @@
+{
+  "FLAGSHIP_READY": false,
+  "FULL_BHSM_COMPLETE": false,
+  "artifact": "BHSM_N12_MAXIMAL_FORWARD_ADJOINT_EXHAUSTION",
+  "claim_boundary": {
+    "FLAGSHIP_READY": false,
+    "FULL_BHSM_COMPLETE": false,
+    "Gate7": "ACTIVE_WEIGHTED_MAXIMAL_ADJOINT_LOAD_OR_FINITE_STRATUM",
+    "Gate8": "LOCKED",
+    "actual_projected_force": "OPEN",
+    "actual_weighted_load": "OPEN_CURRENT_OWNER",
+    "chord_03_authorized": false,
+    "frozen_predictions_changed": false,
+    "infinite_adjoint_exhaustion_criterion": "DERIVED"
+  },
+  "classification": "THE_PHYSICAL_RESET_FORCE_COVECTOR_ON_AN_INFINITE_FRIEDRICHS_ROUTE_IS_THE_LIMIT_OF_FINITE_CORE_ADJOINT_PULLBACKS_WHEN_INTEGRAL_norm(U(t,0))*norm(q(t))_dt_IS_FINITE;_THIS_REPLACES_ALL_NONCOMPACT_RESET_JACOBI_COLUMNS_BY_ONE_ADJOINT_LIMIT,_BUT_THE_ACTUAL_N12_WEIGHTED_PROPAGATOR_LOAD_BOUND_REMAINS_OPEN",
+  "criterion": {
+    "all_forward_Jacobi_columns_required": false,
+    "explicit_noncompact_D_xi_M_required": false,
+    "finite_core_pullback": "p_T(0)=integral_0^T U(t,0)^dagger*q(t)_dt",
+    "finite_endpoint_route_requires_infinite_bound": false,
+    "intrinsic_time_quotient_applies_after_limit": true,
+    "maximal_force": "F(h)=<B_reset^dagger*p(0)+q_direct,h>",
+    "sufficient_bound": "integral_0^Tmax norm(U(t,0))*norm(q(t))_dt<infinity"
+  },
+  "exact_next_dependency": "PROVE_OR_ENCLOSE_THE_ACTION_OWNED_WEIGHTED_MAXIMAL_ADJOINT_LOAD_INTEGRAL_norm(U(t,0))*norm(q_heat_minus_zeta(t))_dt_ON_A_NONEMPTY_REGULAR_RESET_QUOTIENT_STRATUM,_OR_CERTIFY_A_FINITE_LATER_EVENT_OR_CANONICAL_STOP_STRATUM;_THEN_EVALUATE_THE_INTRINSIC_PHYSICAL_FORCE_ROOT",
+  "exact_witness": {
+    "divergent_model": {
+      "U(t,0)": "1",
+      "finite_core_adjoint_pullback": "T",
+      "infinite_limit_exists": false,
+      "q(t)": "1"
+    },
+    "stable_model": {
+      "U(t,0)": "exp(-alpha*t)",
+      "alpha": 2.0,
+      "beta": 0.5,
+      "q(t)": "exp(-beta*t)",
+      "rows": [
+        {
+          "duration": 0.5,
+          "finite_core_adjoint_pullback": 0.2853980812559239,
+          "infinite_limit": 0.4
+        },
+        {
+          "duration": 1.0,
+          "finite_core_adjoint_pullback": 0.36716600055044046,
+          "infinite_limit": 0.4
+        },
+        {
+          "duration": 2.0,
+          "finite_core_adjoint_pullback": 0.3973048212003658,
+          "infinite_limit": 0.4
+        },
+        {
+          "duration": 4.0,
+          "finite_core_adjoint_pullback": 0.399981840028095,
+          "infinite_limit": 0.4
+        },
+        {
+          "duration": 8.0,
+          "finite_core_adjoint_pullback": 0.3999999991755386,
+          "infinite_limit": 0.4
+        }
+      ],
+      "weighted_integral": "1/(alpha+beta)",
+      "weighted_integral_value": 0.4
+    }
+  },
+  "inputs": {
+    "artifacts/flagship_integration/BHSM_N12_FORCE_ADJOINT_PULLBACK.json": "CD8A55728672AE5CACEC16268AF5B00A267A06F4A0A92BE5F10989CD58189CDF",
+    "artifacts/flagship_integration/BHSM_N12_FORWARD_E1_SOURCE_MEASURE_CRITERION.json": "E6976D1A49B536044FC2B7A1B25DB3B422F2ED8A9DEBF05DBFDEDD2544A0D9D8",
+    "artifacts/flagship_integration/BHSM_N12_INTRINSIC_TIME_QUOTIENT_FORCE_ROOT.json": "CF0B9488F06D21BBEBDDB5F5880BCAA893392D0B07F654680E86BA2D2AA26487",
+    "artifacts/flagship_integration/BHSM_N12_MAXIMAL_FRIEDRICHS_WEYL_EXHAUSTION.json": "ADD797EAE0D9DB94D1BA0C58687AF114598331662B92B13579408361D95D9E5B",
+    "artifacts/intrinsic_state_selection/BHSM_N12_CONTINUUM_MAXIMAL_FLOW_DICHOTOMY.json": "F75E3CEE4EE4D0768027770FEFECAC1A17994B4297AE344E3FC2D83F86B002A9",
+    "theory/n12_maximal_forward_adjoint_exhaustion.md": "F2B4EDC8926697658DC0A79BD29652AFD65AA8F930246C1AE8818A0EA9129AF1"
+  },
+  "open_after_theorem": {
+    "actual_E1_operator_cotangent_load": true,
+    "actual_N12_state_propagator_weight": true,
+    "direct_zeta_load_integrability": true,
+    "graded_angular_contractions": true,
+    "physical_force_root": true,
+    "reset_to_NHIM_connection_if_used": true
+  },
+  "status": "INFINITE_MAXIMAL_ADJOINT_EXHAUSTION_CRITERION_DERIVED_ACTUAL_WEIGHTED_LOAD_OPEN",
+  "validation": {
+    "E1_source_measure_criterion_is_available": true,
+    "actual_N12_weighted_load_not_assumed": true,
+    "all_inputs_validated": true,
+    "divergent_model_blocks_false_automatic_promotion": true,
+    "finite_endpoint_adjoint_pullback_is_derived": true,
+    "intrinsic_time_quotient_root_equivalence_is_derived": true,
+    "negative_z_Friedrichs_value_exhaustion_is_derived": true,
+    "no_selector_endpoint_return_contour_scale_fit_or_chord_added": true,
+    "noncompact_reset_Jacobi_matrix_not_required_by_the_criterion": true,
+    "stable_model_converges_to_exact_weighted_integral": true
+  },
+  "validation_passed": true
+}

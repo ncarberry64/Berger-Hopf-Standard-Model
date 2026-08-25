@@ -161,14 +161,18 @@ reset-to-asymptotic intersection is required merely to define that maximal
 domain, and none is claimed. The maximal negative-`z` Weyl value is now
 uniquely action-owned as the operator-norm limit of nested finite Dirichlet
 form-core exhaustions on every Friedrichs route. The artificial far edges are
-approximation devices and are not physical endpoints. The current owner is
-correspondingly narrowed to a validated N12 enclosure of that exhaustion and
-the first noncompact physical reset-quotient geometry jet on a nonempty
-regular event-generated stratum; the derived operator cotangent and intrinsic
-quotient KKT test can then evaluate the E1 heat-minus-zeta force after the
-low-energy source measure and graded angular contractions are controlled.
-Dimension counting and a single reset representative have no promotion
-authority.
+approximation devices and are not physical endpoints. The noncompact
+reset-Jacobi matrix is also not intrinsically required: finite-core adjoint
+pullbacks converge directly to the physical reset covector whenever the
+action-owned weighted load
+`integral ||U(t,0)|| ||q_heat-minus-zeta(t)|| dt` is finite. The current owner
+is correspondingly narrowed to proving or enclosing that weighted maximal
+adjoint load on a nonempty regular reset quotient stratum, or certifying a
+finite later-event/canonical-stop stratum where the finite adjoint theorem
+already applies. The E1 low-energy source measure and graded angular
+contractions must be included in the actual load before the intrinsic
+quotient KKT root is evaluated. Dimension counting and a single reset
+representative have no promotion authority.
 
 The recovered Norman owner ontology is recorded as an owner-authorized semantic layer, never as an action-derived equation. It fixes geometry-first emergence, persistent mode/history particle classes, the base-plus-two-excitations generation architecture, action-owned response mass with a universal dimensional origin, propagation-locked neutrino mass, CKM as relative response-basis orientation, strict bare/dressed separation, and the irreversible dependency direction `action -> theorem -> observable -> frozen comparison`.
 
