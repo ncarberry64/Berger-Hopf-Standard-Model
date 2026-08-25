@@ -406,6 +406,7 @@ def assemble_interval_weight_five_lift(
             "expansion_rate": h,
             "quadrature_remainder": remainder_ball.rad(),
             "matrix": matrix_ball,
+            "action_hessian": arb_mat(hessian),
             "right_hand_side": rhs_ball,
             "solution": solution,
             "q0_coefficient": solution[0, 0],
