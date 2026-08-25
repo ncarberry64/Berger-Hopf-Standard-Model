@@ -1,0 +1,56 @@
+{
+  "FLAGSHIP_READY": false,
+  "FULL_BHSM_COMPLETE": false,
+  "artifact": "BHSM_N12_C2_POLE_FREE_REGULARIZED_JACOBI",
+  "bounds": {
+    "Delta_action_derivative_upper": 0.006009142469574981,
+    "action_radius": 1e-12,
+    "center_hard_rate_raw_norm": 13530.858170063697,
+    "coupling_upper": 0.34493874766810423,
+    "hard_D3_upper": 21105.313264032848,
+    "hard_Jacobi_action_upper": 5.754921207954123e+16,
+    "hard_rate_action_upper": 707171.3353915208,
+    "hard_remainder_Lipschitz_upper": 354878090276.62366,
+    "improvement_factor_lower": 1613344.9984381977,
+    "pole_free_regularized_Jacobi_upper": 1.4547607162728523e+21,
+    "rhs_raw_derivative_upper": 31835.912005382776,
+    "structured_b_psi_Lipschitz_upper": 36916.70108188257,
+    "superseded_crude_regularized_Jacobi_upper": 2.347030925523176e+27
+  },
+  "claim_boundary": {
+    "FULL_BHSM_COMPLETE": false,
+    "complete_M_C2_maximal_response": "OPEN_AFTER_CONTINUATION",
+    "pole_free_first_C2_Jacobi": "CERTIFIED",
+    "recenterable_endpoint_tube": "OPEN_NEXT",
+    "zero_source_force": "OPEN_AFTER_COMPLETE_M_C2"
+  },
+  "classification": "THE_COVARIANT_HARD_VARIATION_QD^{-1}Q_AND_THE_DIFFERENTIATED_SOFT_SOURCE_IDENTITY_REMOVE_THE_CANCELLATION_DESTROYING_PROJECTOR_TIMES_FULL_RHS_AND_INVERSE_SQUARED_BOUNDS;_THE_RESULTING_SIGNED_EIGENVALUE_REPARAMETRIZED_C2_JACOBI_BOUND_IS_FINITE,_POLE_FREE,_AND_STRICTLY_SHARPER",
+  "exact_next_dependency": "REISSUE_THE_EXPLICIT_C2_LAUNCH_LENGTH_WITH_THIS_POLE_FREE_JACOBI_BOUND_AND_THE_REFINED_ROOT_CENTER,_THEN_CLOSE_A_RECENTERABLE_ENDPOINT_TUBE_AND_CONTINUE_THE_SAME_ACTION_FLOW",
+  "inputs": {
+    "artifacts/flagship_integration/BHSM_N12_C2_LAUNCH_ACTION_MAJORANTS.json": "CC4B25D41D188B99402D3AD501672CD887B56939DF597B1942192E8D797D0B6E",
+    "artifacts/flagship_integration/BHSM_N12_C2_LAUNCH_EVENT_EIGENLINE_BALL.json": "1C3440FCD487DACF32C45305C69C5BEAF13B1290B8D762626F5BAD3AF586C177",
+    "artifacts/flagship_integration/BHSM_N12_C2_REFINED_RESET_ROOT_CENTER.json": "DA620CB57D84CD3552669D3F590F4E25F46C335D38F06FA3A2CC5C397FD43B55",
+    "artifacts/flagship_integration/BHSM_N12_C2_REGULARIZED_LAUNCH_SEGMENT.json": "32755FD84E61A806202D83F92EADEDA58A906FC188BCE63704671C7CA4E56DE9",
+    "artifacts/flagship_integration/BHSM_N12_FINITE_TERMINAL_RESET_STRATUM_CANDIDATE.npz": "303BEBE80E6033D398278935C9AD01CD1A8C72EDEE208D52C0005A252119D0CD",
+    "theory/n12_c2_pole_free_regularized_jacobi.md": "8C95F2D356889EC4EC47C008B8172A00D47EDF73743C7FCE4CC31F9D1C9FBE4B"
+  },
+  "status": "C2_POLE_FREE_COVARIANT_REGULARIZED_JACOBI_BOUND_CERTIFIED",
+  "structural_identities": {
+    "hard_covariant_variation": "nabla_delta_r_h=D_h^-1*Q*(delta_b-delta_D*r_h-delta_P*P*b)",
+    "hard_rate": "r_h=(Q*D*Q)^-1*Q*b",
+    "inverse_soft_eigenvalue_powers": 0,
+    "soft_source_variation": "delta_b_psi=<psi,delta_b>-<Q*delta_D*psi,r_h>-lambda*<Q*delta_D*psi,(D_h-lambda)^-1*r_h>"
+  },
+  "validation": {
+    "actual_C2_branch_24_used": true,
+    "hard_Jacobi_self_consistency_closes": true,
+    "hard_block_stays_uniformly_invertible": true,
+    "no_selector_equation_scale_fit_gate_or_chord_added": true,
+    "pole_free_bound_improves_crude_bound": true,
+    "pole_free_hard_Jacobi_is_finite": true,
+    "refined_same_root_center_consumed": true,
+    "regularized_Jacobi_contains_no_inverse_soft_eigenvalue": true,
+    "soft_source_derivative_uses_structural_identity": true
+  },
+  "validation_passed": true
+}
