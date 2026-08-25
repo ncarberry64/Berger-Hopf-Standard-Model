@@ -697,6 +697,141 @@ def backward_weyl_mobius_jets(
     }
 
 
+def reduce_two_boundary_weyl_with_terminal_load_jets(
+    two_boundary_weyl_jets: dict[str, np.ndarray],
+    terminal_load_jets: dict[str, np.ndarray],
+    *,
+    minimum_singular_value: float = 0.0,
+) -> dict[str, Any]:
+    """Eliminate an action-owned terminal load by bordered linear solves.
+
+    Write the two-boundary response in endpoint blocks as
+
+    ``[n_0,n_1]^T=[[M00,M01],[M10,M11]] [u_0,u_1]^T``.
+
+    The terminal variational graph is ``n_1+B u_1=0``.  On a regular graph
+    chart, the reduced birth response is therefore
+
+    ``M_red=M00-M01 X``, where ``(M11+B) X=M10``.
+
+    The base, first-left, first-right, and mixed-second systems are solved
+    triangularly.  No inverse of the terminal block, transfer matrix, or
+    Euler--Dirac block is formed.  ``B`` is an input owned by the endpoint
+    action (for an AE2 event it includes the pulled-back child response); the
+    routine does not choose or manufacture a boundary condition.
+    """
+
+    keys = ("base", "first_left", "first_right", "mixed_second")
+    if not all(key in two_boundary_weyl_jets for key in keys) or not all(
+        key in terminal_load_jets for key in keys
+    ):
+        raise KeyError("base, first_left, first_right, and mixed_second required")
+    weyl = {
+        key: np.asarray(two_boundary_weyl_jets[key], dtype=complex)
+        for key in keys
+    }
+    load = {
+        key: np.asarray(terminal_load_jets[key], dtype=complex)
+        for key in keys
+    }
+    base_shape = weyl["base"].shape
+    if (
+        len(base_shape) != 2
+        or base_shape[0] != base_shape[1]
+        or base_shape[0] % 2 != 0
+        or any(matrix.shape != base_shape for matrix in weyl.values())
+        or any(not np.all(np.isfinite(matrix)) for matrix in weyl.values())
+    ):
+        raise ValueError("finite even-dimensional square Weyl jets required")
+    block_size = base_shape[0] // 2
+    load_shape = (block_size, block_size)
+    if any(matrix.shape != load_shape for matrix in load.values()) or any(
+        not np.all(np.isfinite(matrix)) for matrix in load.values()
+    ):
+        raise ValueError("finite square terminal-load jets of endpoint size required")
+    threshold = float(minimum_singular_value)
+    if not math.isfinite(threshold) or threshold < 0.0:
+        raise ValueError("minimum_singular_value must be finite and nonnegative")
+
+    def blocks(matrix: np.ndarray) -> tuple[np.ndarray, ...]:
+        n = block_size
+        return (
+            matrix[:n, :n],
+            matrix[:n, n:],
+            matrix[n:, :n],
+            matrix[n:, n:],
+        )
+
+    a, c, d, e = blocks(weyl["base"])
+    ah, ch, dh, eh = blocks(weyl["first_left"])
+    ak, ck, dk, ek = blocks(weyl["first_right"])
+    ahk, chk, dhk, ehk = blocks(weyl["mixed_second"])
+    b, bh, bk, bhk = (load[key] for key in keys)
+    graph = e + b
+    graph_h = eh + bh
+    graph_k = ek + bk
+    graph_hk = ehk + bhk
+    singular_values = np.linalg.svd(graph, compute_uv=False)
+    smallest = float(np.min(singular_values))
+    largest = float(np.max(singular_values))
+    if smallest <= threshold:
+        raise np.linalg.LinAlgError(
+            "terminal graph is outside the certified regular solve chart"
+        )
+
+    x = np.linalg.solve(graph, d)
+    xh = np.linalg.solve(graph, dh - graph_h @ x)
+    xk = np.linalg.solve(graph, dk - graph_k @ x)
+    xhk = np.linalg.solve(
+        graph,
+        dhk - graph_hk @ x - graph_h @ xk - graph_k @ xh,
+    )
+    reduced = a - c @ x
+    reduced_h = ah - ch @ x - c @ xh
+    reduced_k = ak - ck @ x - c @ xk
+    reduced_hk = (
+        ahk - chk @ x - ch @ xk - ck @ xh - c @ xhk
+    )
+    residuals = {
+        "base": float(np.linalg.norm(graph @ x - d)),
+        "first_left": float(
+            np.linalg.norm(graph @ xh + graph_h @ x - dh)
+        ),
+        "first_right": float(
+            np.linalg.norm(graph @ xk + graph_k @ x - dk)
+        ),
+        "mixed_second": float(
+            np.linalg.norm(
+                graph @ xhk
+                + graph_hk @ x
+                + graph_h @ xk
+                + graph_k @ xh
+                - dhk
+            )
+        ),
+    }
+    return {
+        "base": reduced,
+        "first_left": reduced_h,
+        "first_right": reduced_k,
+        "mixed_second": reduced_hk,
+        "terminal_trace_solutions": {
+            "base": x,
+            "first_left": xh,
+            "first_right": xk,
+            "mixed_second": xhk,
+        },
+        "terminal_graph_smallest_singular_value": smallest,
+        "terminal_graph_condition_number": largest / smallest,
+        "bordered_solve_residuals": residuals,
+        "base_Hermitian_residual": float(
+            np.linalg.norm(reduced - reduced.conj().T)
+        ),
+        "explicit_matrix_inverse_formed": False,
+        "terminal_load_selected_by_routine": False,
+    }
+
+
 __all__ = [
     "scalar_channel_transfer_generator",
     "scalar_channel_log_radius_jets",
@@ -712,4 +847,5 @@ __all__ = [
     "product_dirac_compact_weyl_terminal_germ",
     "backward_weyl_mobius",
     "backward_weyl_mobius_jets",
+    "reduce_two_boundary_weyl_with_terminal_load_jets",
 ]
