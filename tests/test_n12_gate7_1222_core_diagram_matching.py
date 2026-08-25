@@ -23,7 +23,7 @@ def test_gate7_1222_core_diagram_matching() -> None:
         "VALID_MATCH_REPRESENTATIVE_INCREMENT_SUPPRESSED"
     )
     assert verdicts["INCOMING_C1_RESPONSE_M_f"].startswith(
-        "VALID_MATCH_IDENTITY_ACTION_GERM_AND_COEFFICIENT_PATH_QUADRATIC_GERM"
+        "VALID_MATCH_IDENTITY_AND_FINITE_AMPLITUDE_COEFFICIENT_FAMILY"
     )
     assert verdicts["PAIR_CONTACT_AND_GRADED_SOURCE_INCIDENCE"] == "VALID_MATCH_CONDITIONAL_CONSUMER"
     assert payload["adjudication"]["finite_event_or_canonical_stop"] == "NOT_REACHED"
