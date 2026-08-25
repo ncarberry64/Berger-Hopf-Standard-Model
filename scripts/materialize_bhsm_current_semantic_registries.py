@@ -48,6 +48,7 @@ SOURCES = (
     "artifacts/flagship_integration/BHSM_N12_WEIGHT_FIVE_CENTER_MODULATION.json",
     "artifacts/flagship_integration/BHSM_N12_WEIGHT_FIVE_MULTIPRECISION_NONPROMOTION.json",
     "artifacts/flagship_integration/BHSM_N12_ANALYTIC_LOCAL_BLOCK_CENTER_LIFT.json",
+    "artifacts/flagship_integration/BHSM_N12_INTERVAL_WEIGHT_FIVE_CENTER_LIFT.json",
     "artifacts/intrinsic_state_selection/BHSM_N12_FINITE_ENCAPSULATION_LOCAL_BRANCH.json",
     "artifacts/flagship_integration/BHSM_N12_GATE7_AE2_THRESHOLD_SUPERSESSION.json",
     "artifacts/BHSM_alpha_i_update_v4_2.json",
@@ -104,6 +105,7 @@ def verify_current_lineage() -> None:
     weight_five_modulation = loaded["artifacts/flagship_integration/BHSM_N12_WEIGHT_FIVE_CENTER_MODULATION.json"]
     weight_five_mp_audit = loaded["artifacts/flagship_integration/BHSM_N12_WEIGHT_FIVE_MULTIPRECISION_NONPROMOTION.json"]
     analytic_center_lift = loaded["artifacts/flagship_integration/BHSM_N12_ANALYTIC_LOCAL_BLOCK_CENTER_LIFT.json"]
+    interval_center_lift = loaded["artifacts/flagship_integration/BHSM_N12_INTERVAL_WEIGHT_FIVE_CENTER_LIFT.json"]
     frontier = loaded["artifacts/flagship_integration/BHSM_N12_GATE7_AE2_THRESHOLD_SUPERSESSION.json"]
     if ae2.get("action_version") != "BHSM-AE-2.0.0":
         raise RuntimeError("AE2 action version mismatch")
@@ -348,6 +350,24 @@ def verify_current_lineage() -> None:
         ] == "OPEN"
     ):
         raise RuntimeError("analytic local-block center-lift frontier is not current")
+    if not (
+        interval_center_lift["claim_boundary"][
+            "directed_weight_five_center_lift"
+        ] == "CERTIFIED"
+        and interval_center_lift["common_scale_interval"][
+            "strictly_positive"
+        ] is True
+        and interval_center_lift["common_scale_rate_interval"][
+            "strictly_negative"
+        ] is True
+        and interval_center_lift["claim_boundary"][
+            "uniform_full_remainder_outcome"
+        ] == "OPEN"
+        and interval_center_lift["claim_boundary"][
+            "physical_finite_history_zero_source_force"
+        ] == "OPEN"
+    ):
+        raise RuntimeError("directed interval center-lift frontier is not current")
 
 
 def materialize() -> list[Path]:

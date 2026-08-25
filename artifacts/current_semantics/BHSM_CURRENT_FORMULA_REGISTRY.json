@@ -29,6 +29,7 @@
     "artifacts/flagship_integration/BHSM_N12_GATE7_AE2_POWER_RADIUS_TAIL_CLOSURE.json": "09463B0A59178AF5EB318C5DBC5673BE51F4C4166610C9B38F4E2B0381D5035B",
     "artifacts/flagship_integration/BHSM_N12_GATE7_AE2_THRESHOLD_SUPERSESSION.json": "1C30C3003E74B48F873CCCBE3F54AAC9780D26FC1408A74C12D933A253FD2613",
     "artifacts/flagship_integration/BHSM_N12_GATE7_FINITE_ENCAPSULATION_PHYSICAL_DOMAIN_AUDIT.json": "2F6BF031EAAC90D060A8D81DB093FF19B3C1875278C2CE18747CC1804A1E9F3B",
+    "artifacts/flagship_integration/BHSM_N12_INTERVAL_WEIGHT_FIVE_CENTER_LIFT.json": "6A12FC6D66A3A538AD38D67E797BA64442326EC3FA54518AD26ED004D312314A",
     "artifacts/flagship_integration/BHSM_N12_JOINT_FINITE_HISTORY_OPERATOR_DATA_GATE.json": "6668D3057D767E5F2D3AAF4C040D1FBD4264EA2D0CA792D3815EA4130BDED05D",
     "artifacts/flagship_integration/BHSM_N12_PARAMETRIC_EXTERIOR_ORACLE_EXECUTABLE_INTERFACE.json": "3ED83437F9FA9F2558E1D3AC96CED75EE68455B03F87E42AAF0C96B0FD9DCBCE",
     "artifacts/flagship_integration/BHSM_N12_PARAMETRIC_RESET_FIBER_EXTERIOR_ORACLE_THEOREM.json": "1A789C7916626C7AA96B8718690A7B347C0766181FC7E5246E911CED40A4301F",
@@ -648,10 +649,11 @@
         "artifacts/flagship_integration/BHSM_N12_WEIGHT_FIVE_CENTER_MODULATION.json": "47FEC9975254408080949DA85313E9EE253B9F4E50391845BD9C159923D20AD8"
       },
       "canonical_id": "WEIGHT_FIVE_CENTER_MODULATION",
-      "current_status": "DERIVED_OPERATOR_HIGH_PRECISION_COEFFICIENT_AND_UNIFORM_REMAINDER_OPEN",
+      "current_status": "DERIVED_OPERATOR_AND_DIRECTED_LEADING_VECTOR_UNIFORM_REMAINDER_OPEN",
       "dimensions": "DIMENSIONLESS_OR_OPERATOR_TYPED",
       "domain": "round expanding mathematical branch on the weight-seven physical tangent quotient",
       "downstream_consumers": [
+        "INTERVAL_WEIGHT_FIVE_CENTER_LIFT",
         "MATHEMATICAL_BRANCH_REMAINDER_ADJUDICATION"
       ],
       "equivalent_forms": [],
@@ -665,7 +667,7 @@
       "mathematical_class": "SINGULAR_FESHBACH_BORDERED_KKT_CENTER_LIFT",
       "observable_status": "NOT_AN_OBSERVABLE",
       "ontology_version": "BHSM-AE2-ONTOLOGY-1.0.0",
-      "physical_meaning": "Exact first lower-weight center-force operator; its ill-conditioned coefficient representation is not yet a certified modulation value.",
+      "physical_meaning": "Exact first lower-weight center-force operator; its complete 74-component leading modulation vector now has a directed Arb enclosure, while the uniform full retained remainder remains open.",
       "provenance": [
         "artifacts/flagship_integration/BHSM_N12_WEIGHT_FIVE_CENTER_MODULATION.json"
       ],
@@ -716,11 +718,11 @@
         "artifacts/flagship_integration/BHSM_N12_ANALYTIC_LOCAL_BLOCK_CENTER_LIFT.json": "7A0EC5168457672FBE57819D5F7319047ACB5A7F3A476781FD43B6A48E46B499"
       },
       "canonical_id": "ANALYTIC_WEIGHT_FIVE_LOCAL_BLOCK_LIFT",
-      "current_status": "DERIVED_CONVERGED_DIRECTED_INTERVAL_AND_UNIFORM_REMAINDER_OPEN",
+      "current_status": "DERIVED_CONVERGED_AND_INDEPENDENTLY_CROSSCHECKED_INTERVAL_CERTIFICATE_DOWNSTREAM",
       "dimensions": "DIMENSIONLESS_OR_OPERATOR_TYPED",
       "domain": "N12 round expanding mathematical branch physical tangent quotient",
       "downstream_consumers": [
-        "WEIGHT_FIVE_CENTER_MODULATION"
+        "INTERVAL_WEIGHT_FIVE_CENTER_LIFT"
       ],
       "equivalent_forms": [],
       "forbidden_interpretations": [
@@ -733,9 +735,43 @@
       "mathematical_class": "ANALYTIC_PRECONDITIONED_FESHBACH_ASSEMBLY",
       "observable_status": "NOT_AN_OBSERVABLE",
       "ontology_version": "BHSM-AE2-ONTOLOGY-1.0.0",
-      "physical_meaning": "Genuine 70-digit local-block integration converges the represented common-scale coefficient while withholding interval/full-remainder promotion.",
+      "physical_meaning": "Genuine high-precision local-block integration converges the represented coefficient and agrees with the independent 98-variable jet; its value is enclosed by the downstream directed Arb certificate.",
       "provenance": [
         "artifacts/flagship_integration/BHSM_N12_ANALYTIC_LOCAL_BLOCK_CENTER_LIFT.json"
+      ],
+      "semantic_layer": "MATHEMATICAL_OBJECT",
+      "source_weighting_required": false,
+      "superseded_meanings": [],
+      "tests": [
+        "test_required_fields"
+      ]
+    },
+    {
+      "action_version": "BHSM-AE-2.0.0",
+      "artifact_hashes": {
+        "artifacts/flagship_integration/BHSM_N12_INTERVAL_WEIGHT_FIVE_CENTER_LIFT.json": "6A12FC6D66A3A538AD38D67E797BA64442326EC3FA54518AD26ED004D312314A"
+      },
+      "canonical_id": "INTERVAL_WEIGHT_FIVE_CENTER_LIFT",
+      "current_status": "DIRECTED_LEADING_WEIGHT_FIVE_VECTOR_CERTIFIED_UNIFORM_FULL_REMAINDER_OPEN",
+      "dimensions": "DIMENSIONLESS_OR_OPERATOR_TYPED",
+      "domain": "N12 round expanding mathematical branch physical tangent quotient",
+      "downstream_consumers": [
+        "MATHEMATICAL_BRANCH_REMAINDER_ADJUDICATION"
+      ],
+      "equivalent_forms": [],
+      "forbidden_interpretations": [
+        "the leading negative rate alone proves nonlinear H4 decay",
+        "the mathematical infinite branch is a realized particle",
+        "the interval certificate closes the finite-history zero-source force"
+      ],
+      "formula": "X5 in solve_ball(A7+2*H0*E7,(0,-D_q_phys*L5,-D_m*L5)); Gauss remainder <= exact rational E_128",
+      "frozen_output_status": "NOT_FROZEN_OUTPUT",
+      "mathematical_class": "DIRECTED_ARB_BORDERED_CENTER_MODULATION_CERTIFICATE",
+      "observable_status": "NOT_AN_OBSERVABLE",
+      "ontology_version": "BHSM-AE2-ONTOLOGY-1.0.0",
+      "physical_meaning": "Certified Legendre balls, an exact rational quadrature remainder, and a preconditioned 74 by 74 Arb solve rigorously enclose the complete leading center modulation vector and make its common-scale rate correction strictly negative.",
+      "provenance": [
+        "artifacts/flagship_integration/BHSM_N12_INTERVAL_WEIGHT_FIVE_CENTER_LIFT.json"
       ],
       "semantic_layer": "MATHEMATICAL_OBJECT",
       "source_weighting_required": false,

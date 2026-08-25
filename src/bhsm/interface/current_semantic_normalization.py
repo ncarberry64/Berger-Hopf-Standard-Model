@@ -106,6 +106,7 @@ def _basis() -> list[dict[str, Any]]:
     p_w5_modulation = "artifacts/flagship_integration/BHSM_N12_WEIGHT_FIVE_CENTER_MODULATION.json"
     p_w5_mp_audit = "artifacts/flagship_integration/BHSM_N12_WEIGHT_FIVE_MULTIPRECISION_NONPROMOTION.json"
     p_w5_analytic = "artifacts/flagship_integration/BHSM_N12_ANALYTIC_LOCAL_BLOCK_CENTER_LIFT.json"
+    p_w5_interval = "artifacts/flagship_integration/BHSM_N12_INTERVAL_WEIGHT_FIVE_CENTER_LIFT.json"
     p_e1 = "artifacts/flagship_integration/BHSM_N12_FORWARD_E1_SOURCE_MEASURE_CRITERION.json"
     p_nf = "artifacts/flagship_integration/BHSM_N12_GATE7_AE2_NONFERMION_THRESHOLD_MARGIN.json"
     p_fac = "artifacts/flagship_integration/BHSM_N12_GATE7_AE2_COMPACT_SOURCE_DINI_CLOSURE.json"
@@ -315,11 +316,11 @@ def _basis() -> list[dict[str, Any]]:
             "(A7+2*H0*E7)X5=(0,-D_q_phys*L5,-D_m*L5), epsilon=R4^-2",
             "SINGULAR_FESHBACH_BORDERED_KKT_CENTER_LIFT",
             "MATHEMATICAL_OBJECT",
-            "Exact first lower-weight center-force operator; its ill-conditioned coefficient representation is not yet a certified modulation value.",
+            "Exact first lower-weight center-force operator; its complete 74-component leading modulation vector now has a directed Arb enclosure, while the uniform full retained remainder remains open.",
             "round expanding mathematical branch on the weight-seven physical tangent quotient",
             [p_w5_modulation],
-            current_status="DERIVED_OPERATOR_HIGH_PRECISION_COEFFICIENT_AND_UNIFORM_REMAINDER_OPEN",
-            downstream_consumers=["MATHEMATICAL_BRANCH_REMAINDER_ADJUDICATION"],
+            current_status="DERIVED_OPERATOR_AND_DIRECTED_LEADING_VECTOR_UNIFORM_REMAINDER_OPEN",
+            downstream_consumers=["INTERVAL_WEIGHT_FIVE_CENTER_LIFT", "MATHEMATICAL_BRANCH_REMAINDER_ADJUDICATION"],
             forbidden_interpretations=["float64 R^-2 coefficients are certified eigenvalues", "formal H4 limit is a full retained-history theorem", "the infinite branch is a realized particle"],
         ),
         record(
@@ -339,12 +340,24 @@ def _basis() -> list[dict[str, Any]]:
             "exact_local_H7^(10x10)+exact_local_D_L5^(8) -> 74x74 bordered physical lift",
             "ANALYTIC_PRECONDITIONED_FESHBACH_ASSEMBLY",
             "MATHEMATICAL_OBJECT",
-            "Genuine 70-digit local-block integration converges the represented common-scale coefficient while withholding interval/full-remainder promotion.",
+            "Genuine high-precision local-block integration converges the represented coefficient and agrees with the independent 98-variable jet; its value is enclosed by the downstream directed Arb certificate.",
             "N12 round expanding mathematical branch physical tangent quotient",
             [p_w5_analytic],
-            current_status="DERIVED_CONVERGED_DIRECTED_INTERVAL_AND_UNIFORM_REMAINDER_OPEN",
-            downstream_consumers=["WEIGHT_FIVE_CENTER_MODULATION"],
+            current_status="DERIVED_CONVERGED_AND_INDEPENDENTLY_CROSSCHECKED_INTERVAL_CERTIFICATE_DOWNSTREAM",
+            downstream_consumers=["INTERVAL_WEIGHT_FIVE_CENTER_LIFT"],
             forbidden_interpretations=["empirical 40-digit convergence is directed rounding", "negative correction proves H4 tends to zero", "the mathematical infinite branch is a realized particle"],
+        ),
+        record(
+            "INTERVAL_WEIGHT_FIVE_CENTER_LIFT",
+            "X5 in solve_ball(A7+2*H0*E7,(0,-D_q_phys*L5,-D_m*L5)); Gauss remainder <= exact rational E_128",
+            "DIRECTED_ARB_BORDERED_CENTER_MODULATION_CERTIFICATE",
+            "MATHEMATICAL_OBJECT",
+            "Certified Legendre balls, an exact rational quadrature remainder, and a preconditioned 74 by 74 Arb solve rigorously enclose the complete leading center modulation vector and make its common-scale rate correction strictly negative.",
+            "N12 round expanding mathematical branch physical tangent quotient",
+            [p_w5_interval],
+            current_status="DIRECTED_LEADING_WEIGHT_FIVE_VECTOR_CERTIFIED_UNIFORM_FULL_REMAINDER_OPEN",
+            downstream_consumers=["MATHEMATICAL_BRANCH_REMAINDER_ADJUDICATION"],
+            forbidden_interpretations=["the leading negative rate alone proves nonlinear H4 decay", "the mathematical infinite branch is a realized particle", "the interval certificate closes the finite-history zero-source force"],
         ),
         record(
             "SOURCE_WEIGHTED_THRESHOLD_MEASURE",
