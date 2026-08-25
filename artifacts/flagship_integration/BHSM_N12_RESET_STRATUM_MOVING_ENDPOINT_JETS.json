@@ -1,0 +1,87 @@
+{
+  "FLAGSHIP_READY": false,
+  "FULL_BHSM_COMPLETE": false,
+  "artifact": "BHSM_N12_RESET_STRATUM_MOVING_ENDPOINT_JETS",
+  "claim_boundary": {
+    "FULL_BHSM_COMPLETE": false,
+    "Gate7": "ACTIVE_MAXIMAL_RESET_STRATUM_JACOBI_PROPAGATION_OPEN",
+    "Gate8": "LOCKED",
+    "actual_maximal_history": "OPEN",
+    "actual_projected_force": "OPEN",
+    "chord_03_authorized": false,
+    "endpoint_domain_ownership": "CLOSED",
+    "frozen_predictions_changed": false,
+    "moving_endpoint_two_jet_chain_rule": "DERIVED",
+    "same_action_saddle": "OPEN_AFTER_ORACLE"
+  },
+  "classification": "FOR_A_TRANSVERSE_ACTION_OWNED_EVENT_OR_REGULAR_STOP,_THE_RESET_STRATUM_FIRST_AND_MIXED_SECOND_STATE_JACOBI_FIELDS_DETERMINE_THE_ENDPOINT_TIME,_ENDPOINT_STATE,_AND_TERMINAL_GRAPH_JETS_BY_EXACT_CHAIN_RULES;_AUTONOMOUS_TIME_TRANSLATION_CANCELS_IDENTICALLY_IN_THE_MOVING_ENDPOINT_STATE,_SO_NO_SEPARATE_ENDPOINT_SELECTOR_OR_HAND_PROJECTED_TIME_DIRECTION_IS_REQUIRED;_THE_ACTUAL_MAXIMAL_HISTORY_PROPAGATION_AND_ENDPOINT_OUTCOME_REMAIN_OPEN",
+  "exact_next_dependency": "PROPAGATE_THE_RESET_STRATUM_Y,J_h,J_k,K_hk_FAMILY_WITH_CERTIFIED_CONTINUUM_AND_DOMAIN_MARGINS_TO_THE_FIRST_ACTION_OWNED_EVENT_OR_CANONICAL_STOP;_THEN_APPLY_THE_DERIVED_MOVING_ENDPOINT_CHAIN_RULE_AND_FIXED_CHANNEL_WEYL_TRANSFER",
+  "inputs": {
+    "artifacts/flagship_integration/BHSM_N12_ACTION_OWNED_ENDPOINT_LOAD_REDUCTION.json": "8B9EBFE886CA4EBDD1E29D4C503803043700C7CB47BF540FD517623EA3F55D9E",
+    "artifacts/flagship_integration/BHSM_N12_FORWARD_CHANNEL_TRANSFER_VARIATIONS.json": "1A1FCB295DDBE303667E70117EE38537417AF0047301BADCE46BD504AE1781F5",
+    "artifacts/flagship_integration/BHSM_N12_FORWARD_EULER_DIRAC_VARIATION_BOUNDS.json": "14BDEA36AE74F01D44A4865D45398A183A84CB692FE42D8060E5685C2E4E6BBF",
+    "artifacts/flagship_integration/BHSM_N12_PARAMETRIC_RESET_FIBER_EXTERIOR_ORACLE_THEOREM.json": "1A789C7916626C7AA96B8718690A7B347C0766181FC7E5246E911CED40A4301F",
+    "artifacts/intrinsic_state_selection/BHSM_N12_CONTINUUM_SINGULAR_HITTING_RESET_RELATION.json": "FAE8BFFDBF19FA71F33340AB00B5C708779D475E935C505203D2B31BA3A3988D"
+  },
+  "moving_endpoint_system": {
+    "event": "e(Y(T(xi),xi))=0",
+    "first_state": "Z_h=J_h+V*T_h",
+    "first_time": "T_h=-De*J_h/alpha",
+    "mixed_state": "Z_hk=K_hk+DV*J_h*T_k+DV*J_k*T_h+DV*V*T_h*T_k+V*T_hk",
+    "mixed_time": "T_hk=-[De*(K_hk+DV*J_h*T_k+DV*J_k*T_h+DV*V*T_h*T_k)+D2e[Z_h,Z_k]]/alpha",
+    "terminal_graph": "mu_h=Dmu*Z_h,_mu_hk=Dmu*Z_hk+D2mu[Z_h,Z_k]",
+    "transversality": "alpha=De(Y_E)*V(Y_E)_IS_NONZERO"
+  },
+  "state_Jacobi_system": {
+    "Euler_Dirac_implicit_solve": "DV_AND_D2V_USE_THE_ALREADY_DERIVED_REUSED_DIRAC_SOLVES_WITHOUT_FORMING_THE_ILL_CONDITIONED_INVERSE",
+    "base": "D_tau_Y=V(Y)",
+    "first": "D_tau_J_h=DV(Y)*J_h",
+    "initial_data": "J_h(0)=D_h_Y_reset,_K_hk(0)=D_hk_Y_reset",
+    "mixed_second": "D_tau_K_hk=DV(Y)*K_hk+D2V(Y)[J_h,J_k]"
+  },
+  "status": "RESET_STRATUM_TO_MOVING_ENDPOINT_TWO_JET_CHAIN_RULE_DERIVED",
+  "time_quotient_consequence": {
+    "autonomous_shift": "J=c*V,_T_h=-c_IMPLIES_Z_h=0",
+    "mixed_shift": "K=c^2*DV*V,_T_hk=0_IMPLIES_Z_hk=0",
+    "scope": "MOVING_ENDPOINT_STATE_AND_GRAPH_ONLY;_THE_FULL_EVENT_CHILD_HISTORY_QUOTIENT_STILL_REQUIRES_THE_RETAINED_HYBRID_FORMULATION"
+  },
+  "validation": {
+    "all_inputs_validated": true,
+    "autonomous_time_translation_is_annihilated_at_moving_endpoint": true,
+    "endpoint_graph_composition_jets_cancel": true,
+    "first_and_mixed_endpoint_time_chain_rule_exact": true,
+    "fixed_event_state_jets_cancel": true,
+    "maximal_history_or_endpoint_outcome_not_fabricated": true,
+    "no_selector_action_term_endpoint_scale_fit_new_gate_or_prediction_added": true,
+    "state_Jacobi_system_is_triangular": true
+  },
+  "validation_passed": true,
+  "witness": {
+    "Jacobi_rhs_finite": true,
+    "computed_endpoint_time_jets": [
+      -0.4117647058823529,
+      0.23529411764705882,
+      -0.2823529411764706
+    ],
+    "exact_endpoint_time_jets": [
+      -0.4117647058823529,
+      0.23529411764705885,
+      -0.2823529411764706
+    ],
+    "maximum_endpoint_observable_jet": 0.0,
+    "maximum_endpoint_state_jet": 0.0,
+    "maximum_time_jet_residual": 2.7755575615628914e-17,
+    "model": "y'=a*y,_y0(xi,eta)=1+p*xi+q*eta+r*xi*eta,_event_y=Ystar",
+    "parameters": {
+      "Ystar": 2.3,
+      "a": 1.7,
+      "p": 0.7,
+      "q": -0.4,
+      "r": 0.2
+    },
+    "time_shift_first_endpoint_norm": 0.0,
+    "time_shift_mixed_endpoint_norm": 0.0,
+    "time_shift_time_first_residual": 0.0,
+    "time_shift_time_mixed": -0.0
+  }
+}

@@ -422,6 +422,13 @@
   reset-quotient stratum, or an equivalent complete two-sided operator.
   One stored reset representative is sufficient only after action-derived
   fiber invariance is proved.
+- Reset-stratum moving-endpoint jets: for `Y'=V(Y)`, the first and mixed
+  second Jacobi systems are triangular.  At a transverse retained endpoint,
+  exact implicit hitting-time chain rules convert those fixed-time fields
+  into endpoint-state and terminal-graph two-jets.  An autonomous time-shift
+  direction cancels identically in the moving endpoint, so no endpoint-time
+  selector is missing.  The remaining owner is the certified maximal
+  propagation of this reset-stratum family, not another algebraic formula.
 - The event-normal identities
   `D_s M=L_spatial(Y(s))-zI-M^2` and
   `D_s(delta M)=delta L-M delta M-delta M M` remain exact arm-transfer

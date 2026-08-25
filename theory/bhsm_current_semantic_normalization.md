@@ -48,6 +48,14 @@ Weyl jets on a nonempty regular reset stratum, or the equivalent complete
 two-sided operator.  A single stored reset representative cannot be promoted
 unless action-derived fiber invariance is proved.
 
+The reset-stratum-to-endpoint differential coupling is now exact.  The base,
+first, and mixed second state-Jacobi fields form a triangular variational
+system, and transverse implicit hitting-time formulas yield the endpoint
+state and terminal-graph two-jets.  Autonomous time translation cancels in
+the moving endpoint state, so no hand-selected endpoint-time direction is
+needed.  What remains is certified maximal propagation of that family to the
+first actual event or canonical stop, followed by the existing Weyl transfer.
+
 Historical `1:2:7` gauge, CKM, `1/16`, `eta_l`, `rho_ch`, `Z_virt^(u,2)=1/2`, and physical mass-scale formulas remain classified as historical, conditional, frozen output, or not derived. They are not AE2 action inputs and no frozen prediction changes here.
 
 The radius-history obstruction remains a valid classification of the

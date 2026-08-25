@@ -597,7 +597,7 @@ GATE_CHAIN = [
     ("G7_05_FACTORIZED_LAP", "all admissible positive far tails source-Dini by compact Volterra trace-class theorem", "CLOSED"),
     ("G7_06_E1_FINITE", "fixed-channel E1 source-measure finiteness", "CLOSED"),
     ("G7_07_ANGULAR_TAIL", "finite-endpoint compact-resolvent/source-trace control on the realized finite-encapsulation domain; infinite nonencapsulating tails remain nonrealized mathematical histories", "CLOSED_BY_OWNER_PHYSICAL_SCOPE_AND_LOCAL_ACTION_EXISTENCE"),
-    ("G7_08_FORCE", "heat-minus-zeta functional, physical quotient criterion, fixed-stratum regularity, quotient-robust radius variation, and inverse-free Weyl two-jet solver derived; neither finite-endpoint positivity nor synthesis of the current broad whole-negative-axis seam family fixes its sign; endpoint-domain ownership is closed and the maximal child Weyl family or equivalent complete operator remains open", "OPEN_CURRENT_OWNER"),
+    ("G7_08_FORCE", "heat-minus-zeta functional, physical quotient criterion, fixed-stratum regularity, quotient-robust radius variation, moving-endpoint Jacobi chain rules, and inverse-free Weyl two-jet solver derived; neither finite-endpoint positivity nor synthesis of the current broad whole-negative-axis seam family fixes its sign; endpoint-domain ownership is closed and certified maximal reset-stratum Jacobi propagation to the child Weyl family remains open", "OPEN_CURRENT_OWNER"),
     ("G7_09_SADDLE", "same-action joint constrained saddle, mathematically coupled to G7_08 without adding a gate", "PENDING_COUPLED_TO_G7_08"),
     ("G7_10_HESSIAN", "pair-plus-contact Hessian", "PENDING"),
     ("G7_11_WARD_TRACE", "Ward/BRST and source-contracted relative trace", "PENDING"),
@@ -620,6 +620,7 @@ def _gates() -> list[dict[str, Any]]:
             "artifacts/flagship_integration/BHSM_N12_FINITE_ENDPOINT_FORCE_SIGN_SHORTCUT_NO_GO.json",
             "artifacts/flagship_integration/BHSM_N12_NEGATIVE_AXIS_SEAM_HEAT_SYNTHESIS_NO_GO.json",
             "artifacts/flagship_integration/BHSM_N12_ACTION_OWNED_ENDPOINT_LOAD_REDUCTION.json",
+            "artifacts/flagship_integration/BHSM_N12_RESET_STRATUM_MOVING_ENDPOINT_JETS.json",
         ],
     }
     fallback = "artifacts/flagship_integration/BHSM_N12_GATE7_AE2_THRESHOLD_SUPERSESSION.json"
