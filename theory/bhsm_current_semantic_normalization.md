@@ -34,10 +34,15 @@ finite optical length. This is not a full retained-history existence theorem:
 the complete-action replay shows that every normalized coordinate and
 multiplier residual approaches zero with relative `R^-2` behavior, so the
 round trajectory solves the full weight-seven system at dominant order.
-Lower-weight corrections, transverse linearized stability, inverse-inertia,
-boundary, and domain-margin control remain open. The live action dependency
-is not the current physical Gate-7 owner under the finite-encapsulation
-ontology. Its transverse stability/remainder problem remains open as a
+The exact inverse-free transverse descriptor is now derived. Its twelve local
+time--lapse gauge chains quotient to a bordered physical pencil with 25
+center roots, 25 roots at `-7*sqrt(kappa0/42)`, 24 algebraic infinite modes,
+and no weight-seven unstable finite root. The physical common-scale center is
+retained. Every center first feels the coupled weight-five force at relative
+order `R^-2`; its sign, uniform remainder bound, inverse-inertia, boundary,
+and domain-margin consequences remain open, and eigenvalues of that order are
+not promoted. This live lower-weight dependency is not the current physical
+Gate-7 owner under the finite-encapsulation ontology. It remains a
 mathematical branch analysis and must not be promoted into a realized
 particle observable without finite encapsulation.
 

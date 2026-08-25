@@ -240,6 +240,22 @@
   margins remain uncontrolled. Gate 7 therefore requires that stability and
   remainder system to force Osgood behavior or an existing event/canonical
   stop.
+- Exact weight-seven transverse descriptor: the unquotiented first-order DAE
+  pencil is `98 x 98` and has twelve polynomial local time--lapse gauge
+  chains.  Quotienting those chains while retaining the physical common
+  scale gives an inverse-free bordered `74 x 74` KKT pencil with 24 algebraic
+  infinite modes, 25 finite center roots `sigma=0`, 25 stable roots
+  `sigma=-7*sqrt(kappa0/42)`, and no weight-seven unstable root.  The maximum
+  polynomial gauge residual is `1.27057E-14`; a separate constraint-solved
+  Schur cross-check has residual `7.27151E-15` and the same finite
+  multiplicities without forming the singular combined Euler--Dirac inverse.
+  Constant time translation and common-scale translation are collinear on
+  the exact exponential leading orbit, but the common scale remains physical
+  because lower weights and the Casimir break full-action scale invariance.
+  All 25 centers first feel the coupled relative-`R^-2` weight-five force.
+  Its sign and uniform remainder control remain open, so no root of that size
+  is promoted and none of positive limiting `H4`, Osgood decay, or an
+  event/stop is inferred for the nonrealized infinite mathematical branch.
 - Norman finite-encapsulation physical-domain reclassification:
   `OWNER_AUTHORIZED_NOT_ACTION_DERIVED`. A forward history that expands
   forever without completing encapsulation remains a mathematically

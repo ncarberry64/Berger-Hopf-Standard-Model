@@ -33,6 +33,7 @@
     "artifacts/flagship_integration/BHSM_N12_PARAMETRIC_RESET_FIBER_EXTERIOR_ORACLE_THEOREM.json": "1A789C7916626C7AA96B8718690A7B347C0766181FC7E5246E911CED40A4301F",
     "artifacts/flagship_integration/BHSM_N12_RESET_FIBER_RADIUS_JET_AND_SCALE_CENTER_AUDIT.json": "F245D549B6C5247BE5E0730C33C4840AEFADB8A68B28B222B8D0E34BEF1A85A7",
     "artifacts/flagship_integration/BHSM_N12_RESET_TIME_QUOTIENT_GENERATOR_AUDIT.json": "CAB2DA9A4BF5A5489241CF3C49F4C67C9EB93E4B6C567B6A425E67B0D6D895C8",
+    "artifacts/flagship_integration/BHSM_N12_WEIGHT_SEVEN_TRANSVERSE_DESCRIPTOR.json": "44C88B6588E92B002A6E882108DCFBB1B04CA296CF662E58AD9CA459C4D78C74",
     "artifacts/frozen_constants_v2.json": "9D601C03992C5ADF34E7D438C8A9A15598138E26D0022A94B1B09CCA52092C7D",
     "artifacts/intrinsic_state_selection/BHSM_N12_CONSTRAINT_REDUCED_ENERGY_IDENTITY_GATE.json": "EB907DF96C8C9E0A66014D6A6463B853E92F1A5D0CBA2B269789FA28706501D1",
     "artifacts/intrinsic_state_selection/BHSM_N12_FINITE_ENCAPSULATION_LOCAL_BRANCH.json": "280AAECD38DE340C1D40F8B374B96BA7A5C6DAE6F8F5B518B60A49CBBE14CB63",
@@ -593,6 +594,43 @@
       "physical_meaning": "The action-owned exterior value and two quotient-geometry jets needed to evaluate the replacement force and joint saddle without choosing a reset member.",
       "provenance": [
         "artifacts/flagship_integration/BHSM_N12_PARAMETRIC_RESET_FIBER_EXTERIOR_ORACLE_THEOREM.json"
+      ],
+      "semantic_layer": "MATHEMATICAL_OBJECT",
+      "source_weighting_required": false,
+      "superseded_meanings": [],
+      "tests": [
+        "test_required_fields"
+      ]
+    },
+    {
+      "action_version": "BHSM-AE-2.0.0",
+      "artifact_hashes": {
+        "artifacts/flagship_integration/BHSM_N12_WEIGHT_SEVEN_TRANSVERSE_DESCRIPTOR.json": "44C88B6588E92B002A6E882108DCFBB1B04CA296CF662E58AD9CA459C4D78C74"
+      },
+      "canonical_id": "WEIGHT_SEVEN_TRANSVERSE_DESCRIPTOR",
+      "current_status": "DERIVED_LOWER_WEIGHT_R_MINUS_2_CENTER_FORCE_OPEN",
+      "dimensions": "DIMENSIONLESS_OR_OPERATOR_TYPED",
+      "domain": "nonrealized round expanding weight-seven mathematical branch",
+      "downstream_consumers": [
+        "WEIGHT_FIVE_CENTER_MODULATION"
+      ],
+      "equivalent_forms": [
+        "74x74 bordered KKT pencil with 24 algebraic infinite modes",
+        "constraint-solved physical quadratic pencil"
+      ],
+      "forbidden_interpretations": [
+        "R^-2 numerical roots are weight-seven eigenvalues",
+        "the common-scale center is an exact full-action gauge",
+        "this mathematical branch is a realized particle readout"
+      ],
+      "formula": "sigma_phys in {0,-7*sqrt(kappa0/42)} with multiplicities 25 and 25 after the 12-chain local time/lapse quotient",
+      "frozen_output_status": "NOT_FROZEN_OUTPUT",
+      "mathematical_class": "CONSTRAINT_REDUCED_GENERALIZED_DESCRIPTOR_PENCIL",
+      "observable_status": "NOT_AN_OBSERVABLE",
+      "ontology_version": "BHSM-AE2-ONTOLOGY-1.0.0",
+      "physical_meaning": "The round expanding dominant system has 25 physical centers and 25 stable velocity transients, with the common-scale center retained and no weight-seven unstable finite mode.",
+      "provenance": [
+        "artifacts/flagship_integration/BHSM_N12_WEIGHT_SEVEN_TRANSVERSE_DESCRIPTOR.json"
       ],
       "semantic_layer": "MATHEMATICAL_OBJECT",
       "source_weighting_required": false,

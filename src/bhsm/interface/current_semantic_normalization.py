@@ -102,6 +102,7 @@ def _basis() -> list[dict[str, Any]]:
     p_parametric_oracle = "artifacts/flagship_integration/BHSM_N12_PARAMETRIC_RESET_FIBER_EXTERIOR_ORACLE_THEOREM.json"
     p_radius_jet = "artifacts/flagship_integration/BHSM_N12_RESET_FIBER_RADIUS_JET_AND_SCALE_CENTER_AUDIT.json"
     p_executable_oracle = "artifacts/flagship_integration/BHSM_N12_PARAMETRIC_EXTERIOR_ORACLE_EXECUTABLE_INTERFACE.json"
+    p_w7_descriptor = "artifacts/flagship_integration/BHSM_N12_WEIGHT_SEVEN_TRANSVERSE_DESCRIPTOR.json"
     p_e1 = "artifacts/flagship_integration/BHSM_N12_FORWARD_E1_SOURCE_MEASURE_CRITERION.json"
     p_nf = "artifacts/flagship_integration/BHSM_N12_GATE7_AE2_NONFERMION_THRESHOLD_MARGIN.json"
     p_fac = "artifacts/flagship_integration/BHSM_N12_GATE7_AE2_COMPACT_SOURCE_DINI_CLOSURE.json"
@@ -292,6 +293,19 @@ def _basis() -> list[dict[str, Any]]:
             current_status="REGULARITY_THEOREM_DERIVED_ACTUAL_PARAMETRIC_ORACLE_OR_FIBER_INVARIANCE_OPEN",
             downstream_consumers=["G7_08_FORCE", "G7_09_SADDLE"],
             forbidden_interpretations=["one reset representative determines the fiber force", "smoothness across endpoint outcome switches is automatic", "infinite nonencapsulating histories are physical readout histories"],
+        ),
+        record(
+            "WEIGHT_SEVEN_TRANSVERSE_DESCRIPTOR",
+            "sigma_phys in {0,-7*sqrt(kappa0/42)} with multiplicities 25 and 25 after the 12-chain local time/lapse quotient",
+            "CONSTRAINT_REDUCED_GENERALIZED_DESCRIPTOR_PENCIL",
+            "MATHEMATICAL_OBJECT",
+            "The round expanding dominant system has 25 physical centers and 25 stable velocity transients, with the common-scale center retained and no weight-seven unstable finite mode.",
+            "nonrealized round expanding weight-seven mathematical branch",
+            [p_w7_descriptor],
+            current_status="DERIVED_LOWER_WEIGHT_R_MINUS_2_CENTER_FORCE_OPEN",
+            equivalent_forms=["74x74 bordered KKT pencil with 24 algebraic infinite modes", "constraint-solved physical quadratic pencil"],
+            downstream_consumers=["WEIGHT_FIVE_CENTER_MODULATION"],
+            forbidden_interpretations=["R^-2 numerical roots are weight-seven eigenvalues", "the common-scale center is an exact full-action gauge", "this mathematical branch is a realized particle readout"],
         ),
         record(
             "SOURCE_WEIGHTED_THRESHOLD_MEASURE",
