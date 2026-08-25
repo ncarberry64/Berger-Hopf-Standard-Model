@@ -539,8 +539,9 @@ def scalar_compact_weyl_terminal_germ(
 
     ``M_C=T^-1 L+T*(c exp(-2x_E)-z) A+O(T^2)``.
 
-    The fixed-duration physical common-scale derivative is the derivative of
-    this germ under ``D x_E=1``.
+    The fixed-duration common-scale coefficient derivative is the derivative
+    of this germ under ``D x_E=1``.  A total physical derivative must also
+    include the independently supplied action-owned duration jet.
     """
 
     c = float(spatial_eigenvalue_at_unit_radius)
@@ -570,7 +571,7 @@ def product_dirac_compact_weyl_terminal_germ(
     *,
     chirality: int = 1,
 ) -> dict[str, np.ndarray | float]:
-    """Return product-Dirac terminal Laurent and common-scale coefficients."""
+    """Return product-Dirac terminal Laurent and fixed-duration scale jets."""
 
     eigenvalue = float(dirac_eigenvalue_at_unit_radius)
     x = float(terminal_log_radius)

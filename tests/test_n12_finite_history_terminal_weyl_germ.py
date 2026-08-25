@@ -27,6 +27,9 @@ def test_terminal_weyl_germ_builds_validated_payload() -> None:
     payload = _module().build_payload()
     assert payload["validation_passed"] is True
     assert payload["claim_boundary"]["terminal_M_C_Laurent_germ"] == "CERTIFIED"
+    assert payload["claim_boundary"][
+        "total_physical_D_common_scale_M_C"
+    ].startswith("OPEN")
     assert payload["claim_boundary"]["zero_source_force_value"].startswith("OPEN")
     pair_constant = np.asarray(
         payload["weyl_Laurent_germs"][

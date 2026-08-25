@@ -223,7 +223,8 @@ def build_payload() -> dict[str, Any]:
         "classification": (
             "THE_CERTIFIED_TERMINAL_RADIUS_CAUCHY_JET_DETERMINES_THE_"
             "ACTUAL_SMALL_POSITIVE_DURATION_LAURENT_GERMS_OF_M_C_AND_"
-            "ITS_PHYSICAL_COMMON_SCALE_DERIVATIVE_IN_SCALAR_AND_FACTORIZED_"
+            "THE_FIXED_DURATION_COEFFICIENT_PART_OF_ITS_PHYSICAL_COMMON_"
+            "SCALE_DERIVATIVE_IN_SCALAR_AND_FACTORIZED_"
             "PRODUCT_DIRAC_CHANNELS;_THE_RESPONSE_IS_NONTRIVIAL_AFTER_"
             "CHIRALITY_PAIRING_BUT_THE_COMPLETE_HEAT_MINUS_ZETA_TRACE_IS_"
             "NOT_EQUAL_TO_ONE_WEYL_PROBE_AND_REMAINS_TO_BE_ASSEMBLED"
@@ -264,7 +265,8 @@ def build_payload() -> dict[str, Any]:
         "claim_boundary": {
             "Gate7": "ACTIVE_COMPLETE_SPECTRAL_FORCE_ASSEMBLY",
             "terminal_M_C_Laurent_germ": "CERTIFIED",
-            "terminal_D_common_scale_M_C_Laurent_germ": "CERTIFIED",
+            "terminal_fixed_duration_D_common_scale_M_C_germ": "CERTIFIED",
+            "total_physical_D_common_scale_M_C": "OPEN_DURATION_JET_CONTRIBUTION",
             "complete_finite_duration_M_C_family": "OPEN_BEYOND_GERM",
             "zero_source_force_functional": "DERIVED",
             "zero_source_force_value": "OPEN_COMPLETE_SPECTRAL_TRACE",

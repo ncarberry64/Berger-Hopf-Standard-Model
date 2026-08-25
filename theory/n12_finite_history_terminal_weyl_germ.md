@@ -19,7 +19,8 @@ Direct expansion of the inverse-free transfer equation and the regular
 
 `M_C(T,z)=T^(-1)L+T q_E A+O(T^2)`.
 
-In the retained fixed-duration common-scale direction `D x=1`,
+The fixed-duration coefficient contribution in the retained common-scale
+direction `D x=1` is
 
 `D M_C(T,z)=-2T c exp(-2x_E) A+O(T^2)`.
 
@@ -36,12 +37,14 @@ where
 `B_11=(q_E-s_dot_E)/3`, and
 `B_01=B_10=(q_E-s_dot_E)/6`.
 
-The common-scale derivative has constant term `diag(s_E,-s_E)` and the
+Its fixed-duration common-scale coefficient derivative has constant term
+`diag(s_E,-s_E)` and the
 duration coefficient obtained from `D s_E=-s_E`,
 `D s_dot_E=-s_dot_E`, and `D q_E=-2s_E^2`.  The constant terms cancel
 between a chirality pair, while the paired duration response is nonzero.
 
-These are actual action-owned `M_C` and `D M_C` Laurent germs on the
+These are actual action-owned `M_C` and fixed-duration coefficient parts of
+the `D M_C` Laurent germs on the
 nonempty positive-duration family; no value of the desingularized history
 parameter is selected.  They certify nontrivial operator response, but they
 do not by themselves evaluate the zero-source heat-minus-zeta force.  That
@@ -52,6 +55,10 @@ forward-operator-adjoint KKT solve) on the same action-owned family.
 
 HINDSIGHT: the Laurent germ and common-scale response are action required.
 A single resolvent probe, a terminal boundary condition, and a selected
-positive duration are not substitutes for the complete force trace.
+positive duration are not substitutes for the complete force trace.  The
+total physical derivative additionally contains the action-owned moving-
+duration term.  For `M=T^(-1)L+C+TB+...`, it is
+
+`D M=-T_h T^(-2)L+D C+T_h B+T D B+...`.
 
 `FULL_BHSM_COMPLETE=false`.
