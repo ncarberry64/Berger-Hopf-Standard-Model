@@ -46,6 +46,15 @@ Gate-7 owner under the finite-encapsulation ontology. It remains a
 mathematical branch analysis and must not be promoted into a realized
 particle observable without finite encapsulation.
 
+The complete weight-five action component is now extracted exactly. Its
+first center lift is the inverse-free bordered equation
+`(A7+2H0 E7)X5=(0,-D_q_phys L5,-D_m L5)`. The current N12 coefficient matrix
+has condition number about `3.69e11`, so no float64 coefficient solution or
+`R^-2` root is promoted. Formally, uniform continuation without a stop would
+give `D_tau log R4=H0+O(R4^-2)`, but a high-precision/preconditioned lift and
+uniform full-remainder theorem are still required before that is a retained
+history conclusion.
+
 The recovered Norman owner ontology is recorded as an owner-authorized semantic layer, never as an action-derived equation. It fixes geometry-first emergence, persistent mode/history particle classes, the base-plus-two-excitations generation architecture, action-owned response mass with a universal dimensional origin, propagation-locked neutrino mass, CKM as relative response-basis orientation, strict bare/dressed separation, and the irreversible dependency direction `action -> theorem -> observable -> frozen comparison`.
 
 The executable guardrails reject semantic regression, including `z=p^2`, a compulsory strict gap, terminal recurrence, reopening the nonfermion threshold without contradiction, replacing the current owner by D5/Kato interval-sign work, symbol collisions, or importing frozen outputs into the current action.

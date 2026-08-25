@@ -1,0 +1,115 @@
+{
+  "FLAGSHIP_READY": false,
+  "FULL_BHSM_COMPLETE": false,
+  "artifact": "BHSM_N12_WEIGHT_FIVE_CENTER_MODULATION",
+  "center_force": {
+    "coefficient_solution_evaluated": false,
+    "condition_number_float64": 368978675573.5126,
+    "equation": "(A7+2H0*E7)X5=(0,-D_q_phys_L5,-D_m_L5)",
+    "largest_singular_value_float64": 3.7471263783980366,
+    "matrix_shape": [
+      74,
+      74
+    ],
+    "particular_descriptor_exponent": "sigma=-2H0",
+    "reason": "CONDITION_NUMBER_ABOUT_3.69E11_MAKES_THE_COEFFICIENT_SOLUTION_AND_ANY_sigma=O(R4^-2)_ROOT_NONPROMOTABLE_WITH_THE_CURRENT_FLOAT64_QUADRATURE",
+    "right_hand_side_norm": 4.69420924800453,
+    "small_parameter": "epsilon=R4^-2",
+    "smallest_singular_value_float64": 1.0155400911919332e-11
+  },
+  "claim_boundary": {
+    "FULL_BHSM_COMPLETE": false,
+    "Gate7": "ACTIVE_PHYSICAL_FINITE_ORACLE_AND_MATHEMATICAL_REMAINDER_OPEN",
+    "Gate8": "LOCKED",
+    "chord_03_authorized": false,
+    "constraint_reduced_center_force_operator": "DERIVED",
+    "exact_weight_five_action": "DERIVED",
+    "uniform_full_remainder_outcome": "OPEN",
+    "weight_five_center_coefficient": "OPEN_HIGH_PRECISION"
+  },
+  "classification": "THE_COMPLETE_SCALE_WEIGHT_FIVE_PART_OF_THE_RETAINED_ACTION_IS_EXTRACTED_EXACTLY;_ITS_FIRST_CENTER_LIFT_IS_THE_BORDERED_FESHBACH_KKT_EQUATION_AT_sigma=-2H0,_BUT_THE_N12_COEFFICIENT_MATRIX_IS_TOO_ILL_CONDITIONED_FOR_A_FLOAT64_SOLUTION_TO_BE_PROMOTED_AS_A_PHYSICAL_MODULATION_OR_STABILITY_EIGENVALUE",
+  "exact_next_dependency": "BUILD_A_CERTIFIED_HIGH_PRECISION_OR_ANALYTICALLY_PRECONDITIONED_NULLSPACE_AND_BORDERED_KKT_EVALUATION_OF_THE_WEIGHT_FIVE_LIFT,_THEN_PROVE_A_UNIFORM_NONLINEAR_REMAINDER_OR_AN_EXISTING_EVENT_STOP;_DO_NOT_PROMOTE_FLOAT64_R_MINUS_2_ROOTS",
+  "exact_weight_five_action": {
+    "ADM_kinetic_or_cosmological_term_included": false,
+    "full_decomposition_rows": [
+      {
+        "absolute_remainder_over_R5": 0.00046955008183041734,
+        "q0": 1.0
+      },
+      {
+        "absolute_remainder_over_R5": 1.16389829724179e-06,
+        "q0": 2.0
+      },
+      {
+        "absolute_remainder_over_R5": 2.8853343006565615e-09,
+        "q0": 3.0
+      },
+      {
+        "absolute_remainder_over_R5": 8.58806063970418e-12,
+        "q0": 4.0
+      }
+    ],
+    "inverse_inertia_or_boundary_Casimir_included": false,
+    "scale_crosscheck_rows": [
+      {
+        "gradient_norm_over_R5": 5.199867168825706,
+        "hessian_norm_over_R5": 2500.8414241897967,
+        "q0": 0.0,
+        "value_over_R5": 0.7693257580974797
+      },
+      {
+        "gradient_norm_over_R5": 5.199867168825702,
+        "hessian_norm_over_R5": 2500.8414241897976,
+        "q0": 1.0,
+        "value_over_R5": 0.7693257580974798
+      },
+      {
+        "gradient_norm_over_R5": 5.199867168825703,
+        "hessian_norm_over_R5": 2500.841424189798,
+        "q0": 2.0,
+        "value_over_R5": 0.7693257580974795
+      },
+      {
+        "gradient_norm_over_R5": 5.199867168825704,
+        "hessian_norm_over_R5": 2500.841424189798,
+        "q0": 3.0,
+        "value_over_R5": 0.7693257580974783
+      }
+    ],
+    "terms": [
+      "3*(A^3*B^3/C)*N*(n_prime*(a_prime+b_prime)+a_prime^2+b_prime^2+3*a_prime*b_prime)",
+      "N*C*A^3*B^3*(3/A^2+3/B^2)",
+      "-(1/2)*N*C*A^3*B^3*localization*x_spatial"
+    ],
+    "uniform_scale_weight": 5,
+    "velocity_dependence": false
+  },
+  "inputs": {
+    "artifacts/flagship_integration/BHSM_N12_GATE7_FINITE_ENCAPSULATION_PHYSICAL_DOMAIN_AUDIT.json": "2F6BF031EAAC90D060A8D81DB093FF19B3C1875278C2CE18747CC1804A1E9F3B",
+    "artifacts/flagship_integration/BHSM_N12_WEIGHT_SEVEN_TRANSVERSE_DESCRIPTOR.json": "44C88B6588E92B002A6E882108DCFBB1B04CA296CF662E58AD9CA459C4D78C74"
+  },
+  "nonlinear_consequence": {
+    "Osgood_H4_to_zero_proved": false,
+    "event_or_stop_excluded": false,
+    "formal_if_uniform_expansion_exists": "D_tau_log_R4=H0+O(R4^-2)_AND_CENTER_AMPLITUDES_HAVE_FINITE_O(R4^-2)_DRIFT,_SO_THE_FORMAL_MATHEMATICAL_BRANCH_HAS_H4_TO_H0>0",
+    "owner_scope": "AN_INFINITE_NONENCAPSULATING_REALIZATION_IS_EXCLUDED_FROM_THE_PHYSICAL_PARTICLE_DOMAIN_WITHOUT_DELETING_THIS_MATHEMATICAL_FORMAL_BRANCH",
+    "physical_promotion": false,
+    "positive_H4_limit_for_full_retained_history_proved": false,
+    "uniform_full_remainder_theorem": "OPEN"
+  },
+  "status": "EXACT_WEIGHT_FIVE_CENTER_FORCE_OPERATOR_DERIVED_COEFFICIENT_SOLUTION_AND_UNIFORM_REMAINDER_OPEN",
+  "validation": {
+    "R_minus_2_coefficient_solution_not_promoted": true,
+    "exact_retained_weight_five_terms_only": true,
+    "full_minus_weight7_minus_weight5_decays_below_R5": true,
+    "ill_conditioned_coefficient_system_not_inverted": true,
+    "no_gate_selector_scale_fit_or_new_time_direction_added": true,
+    "owner_finite_encapsulation_scope_preserved": true,
+    "physical_Feshbach_KKT_system_has_expected_shape": true,
+    "weight_five_gradient_scale_covariance": true,
+    "weight_five_hessian_scale_covariance": true,
+    "weight_five_value_scale_covariance": true,
+    "weight_five_velocity_gradient_exactly_zero": true
+  },
+  "validation_passed": true
+}

@@ -103,6 +103,7 @@ def _basis() -> list[dict[str, Any]]:
     p_radius_jet = "artifacts/flagship_integration/BHSM_N12_RESET_FIBER_RADIUS_JET_AND_SCALE_CENTER_AUDIT.json"
     p_executable_oracle = "artifacts/flagship_integration/BHSM_N12_PARAMETRIC_EXTERIOR_ORACLE_EXECUTABLE_INTERFACE.json"
     p_w7_descriptor = "artifacts/flagship_integration/BHSM_N12_WEIGHT_SEVEN_TRANSVERSE_DESCRIPTOR.json"
+    p_w5_modulation = "artifacts/flagship_integration/BHSM_N12_WEIGHT_FIVE_CENTER_MODULATION.json"
     p_e1 = "artifacts/flagship_integration/BHSM_N12_FORWARD_E1_SOURCE_MEASURE_CRITERION.json"
     p_nf = "artifacts/flagship_integration/BHSM_N12_GATE7_AE2_NONFERMION_THRESHOLD_MARGIN.json"
     p_fac = "artifacts/flagship_integration/BHSM_N12_GATE7_AE2_COMPACT_SOURCE_DINI_CLOSURE.json"
@@ -306,6 +307,18 @@ def _basis() -> list[dict[str, Any]]:
             equivalent_forms=["74x74 bordered KKT pencil with 24 algebraic infinite modes", "constraint-solved physical quadratic pencil"],
             downstream_consumers=["WEIGHT_FIVE_CENTER_MODULATION"],
             forbidden_interpretations=["R^-2 numerical roots are weight-seven eigenvalues", "the common-scale center is an exact full-action gauge", "this mathematical branch is a realized particle readout"],
+        ),
+        record(
+            "WEIGHT_FIVE_CENTER_MODULATION",
+            "(A7+2*H0*E7)X5=(0,-D_q_phys*L5,-D_m*L5), epsilon=R4^-2",
+            "SINGULAR_FESHBACH_BORDERED_KKT_CENTER_LIFT",
+            "MATHEMATICAL_OBJECT",
+            "Exact first lower-weight center-force operator; its ill-conditioned coefficient representation is not yet a certified modulation value.",
+            "round expanding mathematical branch on the weight-seven physical tangent quotient",
+            [p_w5_modulation],
+            current_status="DERIVED_OPERATOR_HIGH_PRECISION_COEFFICIENT_AND_UNIFORM_REMAINDER_OPEN",
+            downstream_consumers=["MATHEMATICAL_BRANCH_REMAINDER_ADJUDICATION"],
+            forbidden_interpretations=["float64 R^-2 coefficients are certified eigenvalues", "formal H4 limit is a full retained-history theorem", "the infinite branch is a realized particle"],
         ),
         record(
             "SOURCE_WEIGHTED_THRESHOLD_MEASURE",

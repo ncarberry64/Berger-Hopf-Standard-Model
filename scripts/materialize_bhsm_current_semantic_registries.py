@@ -45,6 +45,7 @@ SOURCES = (
     "artifacts/flagship_integration/BHSM_N12_RESET_FIBER_RADIUS_JET_AND_SCALE_CENTER_AUDIT.json",
     "artifacts/flagship_integration/BHSM_N12_PARAMETRIC_EXTERIOR_ORACLE_EXECUTABLE_INTERFACE.json",
     "artifacts/flagship_integration/BHSM_N12_WEIGHT_SEVEN_TRANSVERSE_DESCRIPTOR.json",
+    "artifacts/flagship_integration/BHSM_N12_WEIGHT_FIVE_CENTER_MODULATION.json",
     "artifacts/intrinsic_state_selection/BHSM_N12_FINITE_ENCAPSULATION_LOCAL_BRANCH.json",
     "artifacts/flagship_integration/BHSM_N12_GATE7_AE2_THRESHOLD_SUPERSESSION.json",
     "artifacts/BHSM_alpha_i_update_v4_2.json",
@@ -98,6 +99,7 @@ def verify_current_lineage() -> None:
     radius_jet = loaded["artifacts/flagship_integration/BHSM_N12_RESET_FIBER_RADIUS_JET_AND_SCALE_CENTER_AUDIT.json"]
     executable_oracle = loaded["artifacts/flagship_integration/BHSM_N12_PARAMETRIC_EXTERIOR_ORACLE_EXECUTABLE_INTERFACE.json"]
     weight_seven_descriptor = loaded["artifacts/flagship_integration/BHSM_N12_WEIGHT_SEVEN_TRANSVERSE_DESCRIPTOR.json"]
+    weight_five_modulation = loaded["artifacts/flagship_integration/BHSM_N12_WEIGHT_FIVE_CENTER_MODULATION.json"]
     frontier = loaded["artifacts/flagship_integration/BHSM_N12_GATE7_AE2_THRESHOLD_SUPERSESSION.json"]
     if ae2.get("action_version") != "BHSM-AE-2.0.0":
         raise RuntimeError("AE2 action version mismatch")
@@ -297,6 +299,21 @@ def verify_current_lineage() -> None:
         ] == "OPEN"
     ):
         raise RuntimeError("weight-seven transverse descriptor frontier is not current")
+    if not (
+        weight_five_modulation["claim_boundary"][
+            "exact_weight_five_action"
+        ] == "DERIVED"
+        and weight_five_modulation["claim_boundary"][
+            "constraint_reduced_center_force_operator"
+        ] == "DERIVED"
+        and weight_five_modulation["center_force"][
+            "coefficient_solution_evaluated"
+        ] is False
+        and weight_five_modulation["claim_boundary"][
+            "uniform_full_remainder_outcome"
+        ] == "OPEN"
+    ):
+        raise RuntimeError("weight-five center modulation frontier is not current")
 
 
 def materialize() -> list[Path]:

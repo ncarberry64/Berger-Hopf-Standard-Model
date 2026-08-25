@@ -265,6 +265,105 @@ def exact_weight_seven_action_jet_at_state(
     return leading
 
 
+def exact_weight_five_action_jet_at_state(
+    order: int, coordinates: np.ndarray, velocities: np.ndarray,
+    multipliers: np.ndarray, *, points: int = 44,
+) -> Jet:
+    """Return the exact scale-weight-five action jet at vanishing shift.
+
+    The complete weight-five component of the retained local action is the
+    spatial-gravity term together with ``3/A**2+3/B**2`` and the part
+    ``-localization*x_spatial/2`` of the identity response.  ADM kinetic and
+    the cosmological term have weight seven.  The remaining response powers,
+    inverse inertia, and boundary Casimir have weights at most three after
+    their exact scale decomposition.  As for the weight-seven helper, the
+    returned two-jet is the exact jet about vanishing shift and is not a new
+    truncated physical action.
+    """
+
+    size = dimensions(order)
+    q = np.asarray(coordinates)
+    velocity = np.asarray(velocities)
+    multipliers = np.asarray(multipliers)
+    qdim = size["coordinates"]
+    mdim = size["multipliers"]
+    if (
+        q.shape != (qdim,)
+        or velocity.shape != (qdim,)
+        or multipliers.shape != (mdim,)
+    ):
+        raise ValueError("state dimensions do not match order")
+    total = 2 * qdim + mdim
+    qj = _variables(q, 0, total)
+    vj = _variables(velocity, qdim, total)
+    mj = _variables(multipliers, 2 * qdim, total)
+    nodes, quadrature = np.polynomial.legendre.leggauss(points)
+    chi = (nodes + 1.0) * math.pi / 8.0
+    quadrature = quadrature * math.pi / 8.0
+    ks = np.arange(1, order + 1, dtype=float)
+    js = np.arange(order, dtype=float)
+    cos_k = np.cos(4.0 * np.outer(ks, chi))
+    sin_k = np.sin(4.0 * np.outer(ks, chi))
+    cos_j = np.cos(4.0 * np.outer(js, chi))
+    sin_j = np.sin(4.0 * np.outer(js, chi))
+    localization = identity_response_localization(chi)
+    u_coeff = qj[1:1 + order]
+    w_coeff = qj[1 + order:1 + 2 * order]
+    b_coeff = qj[1 + 2 * order:1 + 3 * order]
+    radius = RADIUS0 * qj[0].exp()
+    weight_five = Jet.constant(0.0, total)
+    for index, coordinate in enumerate(chi):
+        window = math.sin(2.0 * coordinate) ** 2
+        window_prime = 2.0 * math.sin(4.0 * coordinate)
+        u = _linear(u_coeff, cos_k[:, index])
+        up = _linear(u_coeff, -4.0 * ks * sin_k[:, index])
+        w = window * _linear(w_coeff, cos_j[:, index])
+        b = window * _linear(b_coeff, cos_j[:, index])
+        wp = _linear(
+            w_coeff,
+            window_prime * cos_j[:, index]
+            + window * (-4.0 * js * sin_j[:, index]),
+        )
+        bp_shape = _linear(
+            b_coeff,
+            window_prime * cos_j[:, index]
+            + window * (-4.0 * js * sin_j[:, index]),
+        )
+        C = radius * (u + w).exp()
+        A = radius * (u + b).exp() * math.cos(coordinate)
+        B = radius * (u - b).exp() * math.sin(coordinate)
+        ap = up + bp_shape - math.tan(coordinate)
+        bp = up - bp_shape + 1.0 / math.tan(coordinate)
+        volume = C * A**3 * B**3
+        spatial_volume = A**3 * B**3
+        lapse_coeff = np.zeros(mdim)
+        lapse_coeff[:order] = cos_k[:, index]
+        lapse_prime_coeff = np.zeros(mdim)
+        lapse_prime_coeff[:order] = -4.0 * ks * sin_k[:, index]
+        log_n = _linear(mj, lapse_coeff)
+        n_prime = _linear(mj, lapse_prime_coeff)
+        N = log_n.exp()
+        x_spatial = (
+            1.0 / C**2
+            + 3.0 * math.cos(coordinate) ** 2 / A**2
+            + 3.0 * math.sin(coordinate) ** 2 / B**2
+        )
+        fixed_gravity = ap**2 + bp**2 + 3.0 * ap * bp
+        spatial_gravity = (
+            3.0 * spatial_volume / C * N
+            * (n_prime * (ap + bp) + fixed_gravity)
+        )
+        algebraic = N * volume * (
+            3.0 / A**2
+            + 3.0 / B**2
+            - 0.5 * localization[index] * x_spatial
+        )
+        weight_five = weight_five + quadrature[index] * (
+            spatial_gravity + algebraic
+        )
+    return weight_five
+
+
 def exact_full_local_action_jet_audit() -> dict[str, Any]:
     unpacked = unpack_reduced(v17_53_selected_raw_vector())
     q = np.asarray(unpacked["coordinates"])[-1]
@@ -316,4 +415,4 @@ def materialize(directory: str | Path) -> Path:
     target=Path(directory);target.mkdir(parents=True,exist_ok=True);path=target/"BHSM_aether_n3_exact_full_local_action_jet_v17_60.json";path.write_text(deterministic_json(completion_payload()),encoding="utf-8");return path
 
 
-__all__=["VERSION","CLASSIFICATION","FULL_BHSM_COMPLETE","exact_full_action_jet_at_state","exact_weight_seven_action_jet_at_state","exact_full_local_action_jet_audit","completion_payload","materialize"]
+__all__=["VERSION","CLASSIFICATION","FULL_BHSM_COMPLETE","exact_full_action_jet_at_state","exact_weight_seven_action_jet_at_state","exact_weight_five_action_jet_at_state","exact_full_local_action_jet_audit","completion_payload","materialize"]

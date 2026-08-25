@@ -16,6 +16,7 @@ import numpy as np
 from scipy.linalg import eig, solve, svdvals
 
 from bhsm.interface.aether_n3_exact_full_local_action_jet_v17_60 import (
+    exact_weight_five_action_jet_at_state,
     exact_weight_seven_action_jet_at_state,
 )
 from bhsm.interface.aether_post_cut_nonround_lorentzian_cap_v15_48 import (
@@ -249,6 +250,57 @@ def cluster_residuals(values: np.ndarray) -> dict[str, float | int]:
     }
 
 
+def weight_five_center_lift_system(
+    *, order: int = 12, points: int = 384
+) -> dict[str, np.ndarray | float]:
+    """Return the exact first lower-weight Feshbach/KKT lift equation.
+
+    Put ``epsilon=R4^-2`` on the round weight-seven orbit.  A scale-weight
+    five particular correction has the form ``epsilon*X5`` and hence
+    descriptor exponent ``sigma=-2*H0``.  The weight-five action contains no
+    velocities, so its coordinate Euler--Lagrange residual is ``-D_q L5``
+    and its algebraic residual is ``D_m L5``.  On the physical quotient,
+
+    ``(A7+2*H0*E7) X5 = (0, -D_q_phys L5, -D_m L5)``.
+
+    The matrix and right-hand side are returned without solving the badly
+    conditioned coefficient-basis system.
+    """
+
+    dims = dimensions(order)
+    qdim = dims["coordinates"]
+    mdim = dims["multipliers"]
+    coordinates = np.zeros(qdim)
+    velocities = np.zeros(qdim)
+    velocities[0] = ROUND_EXPANSION_RATE
+    multipliers = np.zeros(mdim)
+    jet = exact_weight_five_action_jet_at_state(
+        order, coordinates, velocities, multipliers, points=points
+    )
+    gradient = np.real(jet.gradient) / RADIUS0**5
+    data = descriptor_data(order=order, points=points)
+    A, E = bordered_physical_pencil(data, order=order)
+    physical = physical_coordinate_indices(order)
+    right_hand_side = np.concatenate(
+        (
+            np.zeros(physical.size),
+            -gradient[physical],
+            -gradient[2 * qdim :],
+        )
+    )
+    matrix = A + 2.0 * ROUND_EXPANSION_RATE * E
+    singular_values = svdvals(matrix)
+    return {
+        "matrix": matrix,
+        "right_hand_side": right_hand_side,
+        "weight_five_gradient": gradient,
+        "smallest_singular_value": float(singular_values[-1]),
+        "largest_singular_value": float(singular_values[0]),
+        "condition_number": float(singular_values[0] / singular_values[-1]),
+        "descriptor_exponent": -2.0 * ROUND_EXPANSION_RATE,
+    }
+
+
 __all__ = [
     "KAPPA0",
     "ROUND_EXPANSION_RATE",
@@ -260,4 +312,5 @@ __all__ = [
     "homogeneous_spectrum",
     "physical_coordinate_indices",
     "time_gauge_vector",
+    "weight_five_center_lift_system",
 ]

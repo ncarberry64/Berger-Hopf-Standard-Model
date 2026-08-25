@@ -256,6 +256,17 @@
   Its sign and uniform remainder control remain open, so no root of that size
   is promoted and none of positive limiting `H4`, Osgood decay, or an
   event/stop is inferred for the nonrealized infinite mathematical branch.
+- Exact weight-five center-force operator: the complete scale-weight-five
+  action is the retained spatial-gravity, `3/A^2+3/B^2`, and linear
+  identity-response curvature contribution.  It has no velocity dependence.
+  With `epsilon=R4^-2`, its first physical lift is uniquely defined by the
+  inverse-free bordered equation
+  `(A7+2H0 E7)X5=(0,-D_q_phys L5,-D_m L5)`.  The represented `74 x 74`
+  coefficient matrix has condition number `3.689786755735126E11`; therefore
+  neither its float64 solution nor an `O(R^-2)` eigenvalue is promoted.
+  Formally a uniform no-stop expansion would have
+  `D_tau log R4=H0+O(R4^-2)` and finite center drift, but the high-precision
+  coefficient and uniform nonlinear remainder theorem remain open.
 - Norman finite-encapsulation physical-domain reclassification:
   `OWNER_AUTHORIZED_NOT_ACTION_DERIVED`. A forward history that expands
   forever without completing encapsulation remains a mathematically
