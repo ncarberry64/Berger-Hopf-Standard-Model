@@ -1,0 +1,75 @@
+{
+  "FLAGSHIP_READY": false,
+  "FULL_BHSM_COMPLETE": false,
+  "artifact": "BHSM_N12_ASYMPTOTIC_BORDERED_GRAPH_NORM",
+  "claim_boundary": {
+    "FLAGSHIP_READY": false,
+    "FULL_BHSM_COMPLETE": false,
+    "Gate7": "ACTIVE_BORDERED_RELATIVE_GRAPH_DEFECT_MAJORANT",
+    "Gate8": "LOCKED",
+    "bordered_graph_preconditioner": "DERIVED",
+    "chord_03_authorized": false,
+    "frozen_predictions_changed": false,
+    "nonlinear_relative_graph_defect": "OPEN_CURRENT_OWNER",
+    "quantitative_capture_surface": "OPEN",
+    "reset_to_capture_overlap": "NOT_CERTIFIED"
+  },
+  "classification": "THE_PHYSICAL_BORDERED_RECURRENCE_PENCIL_B_MINUS2=A7+2H0E7_DEFINES_AN_ACTION_OWNED_GRAPH_NORM_WITHOUT_FORMING_THE_COMBINED_EULER_DIRAC_INVERSE;_THE_DIRECTED_FIRST_LIFT_GRAPH_NORM_EQUALS_THE_DUAL_SOURCE_NORM_AND_IS_ABOUT_3.94_WHILE_ITS_H6_H5_H6_PRODUCT_NORM_IS_ABOUT_5.68E13,_EXPOSING_THE_WEAK_GEOMETRIC_DIRECTIONS_THAT_REQUIRE_A_RELATIVE_GRAPH_DEFECT_BOUND",
+  "definition": {
+    "bordered_operator": "B_minus2=A7+2*H0*E7",
+    "domain": "PHYSICAL_25q_PLUS_25v_PLUS_24_MULTIPLIERS",
+    "dual_source_norm": "norm(W^-1*b5)_2",
+    "explicit_B_minus2_inverse_formed": false,
+    "graph_norm": "norm(W^-1*B_minus2*X)_2",
+    "ill_conditioned_kinetic_Dirac_block_inverted": false,
+    "weight_map": "W_FOR_H6q_CROSS_H5v_CROSS_H6m"
+  },
+  "directed_first_lift_graph_norm": {
+    "ball": "[3.94299097994958939270495016712237633395271929022992138434555465430292769929932366061181868229615633636810 +/- 5.68e-105]",
+    "dominant_dual_source_row": 25,
+    "dominant_dual_source_square_ball": "[14.7965530518062848140673242373940627820538475076023347706622276074229537123956843682608847981255609886192 +/- 3.21e-104]",
+    "lower": "[3.9429909799495893927049501671223763339527192902299213843455546543029276992993236606118186822961563363680943242 +/- 2.79e-110]",
+    "midpoint": "[3.9429909799495893927049501671223763339527192902299213843455546543029276992993236606118186822961563363680975300 +/- 2.07e-110]",
+    "radius": "[3.2057485806790821008460577640935256430460491659327305248571973280886446852510848982465540318602537014725124221e-105 +/- 3.52e-215]",
+    "relative_accuracy_bits": 348,
+    "upper": "[3.9429909799495893927049501671223763339527192902299213843455546543029276992993236606118186822961563363681007357 +/- 3.08e-110]"
+  },
+  "exact_next_dependency": "DERIVE_A_DIRECTED_BOUND_theta<1_FOR_THE_BORDERED_RELATIVE_OPERATOR_DEFECT_ON_A_POSITIVE_INTERSECTION_BALL_AND_BOUND_THE_FULL_INHOMOGENEOUS_REMAINDER_THERE,_USING_CERTIFIED_REPEATED_SOLVES_OR_KRAWCZYK_RESIDUALS_WITHOUT_FORMING_THE_COMBINED_INVERSE",
+  "inputs": {
+    "artifacts/flagship_integration/BHSM_N12_ASYMPTOTIC_GEOMETRIC_PRODUCT_BALL.json": "881965B77E0D856EBA3AD3600620B7BB36D2F841F748A50EBFD4F47D099C1EA2",
+    "artifacts/flagship_integration/BHSM_N12_COMPACTIFIED_ASYMPTOTIC_COMMON_CHART.json": "B261926767E6F7FE28E454849E81F553C3AACFC2020801D7B2A5281B3CD6C2F4",
+    "artifacts/flagship_integration/BHSM_N12_INTERVAL_WEIGHT_FIVE_CENTER_LIFT.json": "CF4A6345F0E84F40DD7F3884D061B65A19A45B99F21799426FFD6274EFBBBE57",
+    "src/bhsm/interface/interval_weight_five_center_lift.py": "BFC64427C19945C8B0C1920746C927EC1932CC70A5FB224647B39AB4459D34AC",
+    "theory/n12_asymptotic_bordered_graph_norm.md": "5F9BE8C222009DAABC34054E97C545071B407D94A696267A6A87A9010787AF0E"
+  },
+  "norm_comparison": {
+    "graph_to_product_ratio_lower": "6.942441146891914845781142430371607963792315418880325239149678944097456812834127054383304624322357515E-14",
+    "graph_to_product_ratio_upper": "6.942441146891914845781142430371607963792315418880325239149678944097456812834127054383304624446942319E-14",
+    "interpretation": "THE_LARGE_PRODUCT_COEFFICIENT_NORM_IS_A_WEAK_DIRECTION_AMPLIFICATION,_NOT_A_LARGE_ACTION_SOURCE_NORM",
+    "product_norm_lower": "56795454171258.48408629304688643311868883314384352555011088384265478763110868485863935671972013378504",
+    "product_norm_upper": "56795454171258.48408629304688643311868883314384352555011088384265478763110868485863935671972115300153"
+  },
+  "required_nonlinear_certificate": {
+    "certified_repeated_solves_allowed": true,
+    "domain": "INTERSECTION_OF_THE_EXPLICIT_GEOMETRIC_PRODUCT_BALL_AND_A_BORDERED_GRAPH_BALL",
+    "explicit_combined_inverse_allowed": false,
+    "inhomogeneous_remainder": "norm(W^-1*r_full(Y,epsilon))_2<=M_full(epsilon,rho)",
+    "relative_defect_theta_certified": false,
+    "relative_operator_defect": "norm(W^-1*(B(Y)-B_minus2)*X)_2<=theta*norm(W^-1*B_minus2*X)_2_WITH_theta<1"
+  },
+  "status": "ACTION_OWNED_BORDERED_GRAPH_PRECONDITIONER_DERIVED_NONLINEAR_RELATIVE_BOUND_OPEN",
+  "validation": {
+    "algebraic_multiplier_block_rigorously_invertible": true,
+    "bordered_graph_dimension_is_74": true,
+    "combined_Euler_Dirac_inverse_not_used": true,
+    "directed_source_graph_norm_has_at_least_250_accuracy_bits": true,
+    "directed_source_graph_norm_is_strictly_positive": true,
+    "first_lift_equation_residual_balls_contain_zero": true,
+    "graph_to_product_ratio_is_below_7e_minus_14": true,
+    "no_selector_scale_fit_endpoint_action_term_or_chord_added": true,
+    "nonlinear_graph_relative_defect_not_overpromoted": true,
+    "python_flint_version_pinned_to_0_9_0": true,
+    "same_H6_H5_H6_squared_weights_used": true
+  },
+  "validation_passed": true
+}
