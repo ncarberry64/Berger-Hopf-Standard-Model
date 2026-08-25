@@ -191,6 +191,9 @@ def test_replacement_force_is_constraint_projected_without_reset_selection() -> 
     assert "common-scale Jacobi zeta optical Cauchy tail" in dag[
         "G7_08_FORCE"
     ]["physical_meaning"]
+    assert "without separate zeta convergence" in dag["G7_08_FORCE"][
+        "physical_meaning"
+    ]
     assert (
         "artifacts/flagship_integration/"
         "BHSM_N12_C2_INFINITE_HEAT_ZETA_COMPATIBILITY.json"

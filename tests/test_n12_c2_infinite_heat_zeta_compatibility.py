@@ -20,8 +20,12 @@ def test_c2_infinite_heat_zeta_compatibility() -> None:
     assert payload["validation_passed"] is True
     assert payload["claim_boundary"]["finite_optical_infinite_route"] == "CLOSED_NO_GO"
     assert payload["claim_boundary"]["infinite_optical_common_scale_zeta_criterion"] == "DERIVED"
-    assert payload["claim_boundary"]["actual_common_scale_zeta_tail"] == "OPEN_CURRENT_OWNER"
-    assert payload["claim_boundary"]["actual_full_graded_heat_tail"] == "OPEN_CURRENT_OWNER"
+    assert payload["claim_boundary"]["separate_common_scale_zeta_tail_required"] is False
+    assert payload["claim_boundary"]["actual_common_scale_zeta_tail"] == "OPEN_TERMWISE_ROUTE"
+    assert payload["claim_boundary"]["actual_full_graded_heat_tail"] == "OPEN_TERMWISE_ROUTE"
+    assert payload["claim_boundary"]["direct_joint_replacement_Cauchy_criterion"] == "DERIVED"
+    assert payload["claim_boundary"]["actual_joint_replacement_Cauchy_tail"] == "OPEN_CURRENT_OWNER"
+    assert payload["validation"]["replacement_accounting_identity_exact"] is True
     assert payload["route_dichotomy"]["finite_later_event_or_canonical_stop"]["infinite_tail_conditions"] == "NOT_REQUIRED"
     assert payload["validation"]["common_scale_is_physical_not_gauge"] is True
     assert payload["claim_boundary"]["chord_03_authorized"] is False
@@ -37,4 +41,3 @@ def test_optical_witness_separates_radius_from_modulation() -> None:
     assert all(a < b for a, b in zip(decaying, decaying[1:]))
     assert witness["persistent_common_scale"]["limit"] == "infinity"
     assert witness["decaying_common_scale"]["limit"] == 4.0
-

@@ -19,10 +19,11 @@ SCALE = BASE / "BHSM_N12_RESET_FIBER_RADIUS_JET_AND_SCALE_CENTER_AUDIT.json"
 NHIM_NO_GO = BASE / "BHSM_N12_ASYMPTOTIC_NHIM_ANGULAR_FORCE_NO_GO.json"
 FULL_BRANCH = BASE / "BHSM_N12_FULL_RETAINED_ASYMPTOTIC_BRANCH.json"
 FINITE_ENDPOINT = BASE / "BHSM_N12_FINITE_ENDPOINT_FORWARD_ADJOINT_KKT.json"
+ACCOUNTING = ROOT / "artifacts/BHSM_aether_quantum_functional_accounting_v16_00.json"
 THEORY = ROOT / "theory/n12_c2_infinite_heat_zeta_compatibility.md"
 INPUTS = (
     CAUCHY, ANGULAR, FORCE, SCALE, NHIM_NO_GO, FULL_BRANCH,
-    FINITE_ENDPOINT, THEORY,
+    FINITE_ENDPOINT, ACCOUNTING, THEORY,
 )
 
 
@@ -70,7 +71,10 @@ def build_payload() -> dict[str, Any]:
     records = [_load(path) for path in INPUTS[:-1]]
     if not all(record.get("validation_passed") is True for record in records):
         raise RuntimeError("validated heat-zeta compatibility parents required")
-    cauchy, angular, force, scale, nhim_no_go, full_branch, finite_endpoint = records
+    (
+        cauchy, angular, force, scale, nhim_no_go, full_branch,
+        finite_endpoint, accounting,
+    ) = records
     witness = _optical_witness()
     divergent = witness["persistent_common_scale"]["truncated_zeta_integrals"]
     decaying = witness["decaying_common_scale"]["truncated_zeta_integrals"]
@@ -108,6 +112,13 @@ def build_payload() -> dict[str, Any]:
             finite_endpoint["claim_boundary"]["G7_09_joint_system"]
             == "DERIVED_UNSOLVED"
         ),
+        "replacement_accounting_identity_exact": (
+            accounting["determinant_accounting"]["physical_quantum_functional"]
+            == "Gamma_Q=Gamma_parent+Gamma_SM_heat"
+            and accounting["determinant_accounting"]["equivalent_replacement_form"].startswith(
+                "Gamma_Q=Gamma_attached_zeta-Gamma_SM_zeta"
+            )
+        ),
         "persistent_common_scale_witness_diverges": (
             all(left < right for left, right in zip(divergent, divergent[1:]))
             and divergent[-1] > 4.0
@@ -124,17 +135,17 @@ def build_payload() -> dict[str, Any]:
     return {
         "artifact": "BHSM_N12_C2_INFINITE_HEAT_ZETA_COMPATIBILITY",
         "status": (
-            "INFINITE_C2_HEAT_ZETA_COMPATIBILITY_REDUCED_TO_COMMON_SCALE_OPTICAL_CAUCHY_AND_GRADED_HEAT_TAIL"
+            "INFINITE_C2_HEAT_ZETA_COMPATIBILITY_REDUCED_TO_COMBINED_PROJECTED_REPLACEMENT_CAUCHY_TAIL"
             if passed else "INFINITE_C2_HEAT_ZETA_COMPATIBILITY_NOT_REDUCED"
         ),
         "classification": (
             "FINITE_OPTICAL_LENGTH_IS_EXCLUDED_BY_THE_EXACT_GRADED_ANGULAR_"
             "HEAT_NO_GO,_WHILE_INFINITE_OPTICAL_LENGTH_REQUIRES_THE_RETAINED_"
             "PHYSICAL_COMMON_SCALE_JACOBI_MODULATION_TO_HAVE_A_CAUCHY_ZETA_"
-            "OPTICAL_INTEGRAL;_NO_CURRENT_ACTION_THEOREM_PROVES_THAT_ACTUAL_"
-            "C2_MODULATION_TAIL"
+            "OPTICAL_INTEGRAL_FOR_A_TERMWISE_CONSTRUCTION;_THE_EXACT_WEAKEST_"
+            "OWNER_IS_THE_COMBINED_PROJECTED_q_heat_MINUS_q_zeta_CAUCHY_TAIL"
         ),
-        "exact_zeta_domain": {
+        "termwise_zeta_domain": {
             "functional": force["exact_force_theorem"]["zeta_functional"],
             "variation": force["exact_force_theorem"]["zeta_first_variation"],
             "optical_measure": "d_s_opt=d_tau/R4(tau)",
@@ -149,7 +160,9 @@ def build_payload() -> dict[str, Any]:
                 "IF_optical_length=infinity_AND_h_cs->c_nonzero_EVENTUALLY_"
                 "ONE_SIDED_THEN_ZETA_VARIATION_DIVERGES"
             ),
+            "logically_required_for_combined_replacement_force": False,
         },
+        "replacement_accounting": accounting["determinant_accounting"],
         "route_dichotomy": {
             "finite_optical_length": {
                 "bounded_zeta_variation": "FINITE",
@@ -158,8 +171,10 @@ def build_payload() -> dict[str, Any]:
             },
             "infinite_optical_length": {
                 "graded_heat": "CONDITIONAL_ON_ACTION_OWNED_UNIFORM_BARRIER_OR_RELATIVE_TRACE",
-                "zeta_common_scale": "REQUIRES_h_cs_OPTICAL_CAUCHY_DECAY",
-                "actual_C2_joint_tail": "OPEN_CURRENT_OWNER",
+                "termwise_zeta_common_scale": "REQUIRES_h_cs_OPTICAL_CAUCHY_DECAY",
+                "direct_replacement_route": "PROVE_PROJECTED_q_heat_MINUS_q_zeta_CAUCHY_TAIL",
+                "separate_zeta_convergence_required_on_direct_route": False,
+                "actual_C2_combined_tail": "OPEN_CURRENT_OWNER",
             },
             "finite_later_event_or_canonical_stop": {
                 "infinite_tail_conditions": "NOT_REQUIRED",
@@ -172,7 +187,7 @@ def build_payload() -> dict[str, Any]:
                 "diagram_slot": "ZETA_HISTORY_VERTEX",
                 "required_type": "FIRST_VARIATION_DENSITY_ON_THE_ACTUAL_HISTORY",
                 "candidate": "(59/30)*h*d_tau/R4",
-                "verdict": "VALID_MATCH_EXACT",
+                "verdict": "VALID_MATCH_EXACT_TERMWISE_VERTEX",
             },
             {
                 "diagram_slot": "PHYSICAL_COMMON_SCALE_LEG",
@@ -184,7 +199,7 @@ def build_payload() -> dict[str, Any]:
                 "diagram_slot": "INFINITE_ZETA_LOAD",
                 "required_type": "SCALAR_OPTICAL_CAUCHY_TAIL_FOR_h_cs",
                 "candidate": "NONE_ACTION_CERTIFIED_ON_Phi_C2",
-                "verdict": "ACTUALLY_MISSING",
+                "verdict": "ACTUALLY_MISSING_FOR_TERMWISE_ROUTE_NOT_SEPARATELY_NECESSARY",
             },
             {
                 "diagram_slot": "INFINITE_GRADED_HEAT_LOAD",
@@ -206,11 +221,12 @@ def build_payload() -> dict[str, Any]:
                 "radius optical behavior alone determines zeta-force convergence",
                 "the physical time quotient removes the common-scale test direction",
                 "fixed-channel source-Dini closes the joint heat-zeta infinite route",
+                "separate common-scale zeta convergence is necessary for a direct combined replacement proof",
             ],
             "OPEN": [
                 "actual C2 common-scale Jacobi optical Cauchy tail",
                 "actual C2 full graded heat cotangent tail",
-                "joint projected force limit or finite later endpoint",
+                "direct combined q_rep projected force limit or finite later endpoint",
             ],
         },
         "hindsight": {
@@ -220,19 +236,22 @@ def build_payload() -> dict[str, Any]:
             "difficulty_type": "JOINT_HISTORY_DUAL_DOMAIN_NOT_ENCLOSURE_CLASSIFICATION",
         },
         "exact_next_dependency": (
-            "ON_AN_INFINITE_C2_ROUTE_PROVE_THE_ACTION_OWNED_OPTICAL_CAUCHY_"
-            "TAIL_OF_THE_PHYSICAL_COMMON_SCALE_JACOBI_MODULATION_TOGETHER_"
-            "WITH_THE_FULL_GRADED_HEAT_COTANGENT_TAIL,_OR_CERTIFY_A_FINITE_"
-            "LATER_EVENT_OR_CANONICAL_STOP;_DO_NOT_REOPEN_FIXED_CHANNEL_DINI_"
-            "OR_PROJECT_AWAY_COMMON_SCALE"
+            "ON_AN_INFINITE_C2_ROUTE_PROVE_THE_COMBINED_ACTION_OWNED_PROJECTED_"
+            "q_heat_MINUS_q_zeta_CAUCHY_TAIL_DIRECTLY,_OR_PROVE_BOTH_THE_"
+            "TERMWISE_COMMON_SCALE_ZETA_OPTICAL_TAIL_AND_FULL_GRADED_HEAT_"
+            "TAIL,_OR_CERTIFY_A_FINITE_LATER_EVENT_OR_CANONICAL_STOP;_DO_NOT_"
+            "REOPEN_FIXED_CHANNEL_DINI_OR_PROJECT_AWAY_COMMON_SCALE"
         ),
         "claim_boundary": {
             "Gate7": "ACTIVE_JOINT_C2_HEAT_ZETA_TAIL_OR_FINITE_ENDPOINT",
             "Gate8": "LOCKED",
             "finite_optical_infinite_route": "CLOSED_NO_GO",
             "infinite_optical_common_scale_zeta_criterion": "DERIVED",
-            "actual_common_scale_zeta_tail": "OPEN_CURRENT_OWNER",
-            "actual_full_graded_heat_tail": "OPEN_CURRENT_OWNER",
+            "separate_common_scale_zeta_tail_required": False,
+            "actual_common_scale_zeta_tail": "OPEN_TERMWISE_ROUTE",
+            "actual_full_graded_heat_tail": "OPEN_TERMWISE_ROUTE",
+            "direct_joint_replacement_Cauchy_criterion": "DERIVED",
+            "actual_joint_replacement_Cauchy_tail": "OPEN_CURRENT_OWNER",
             "zero_source_force": "OPEN",
             "chord_03_authorized": False,
             "frozen_predictions_changed": False,
@@ -258,11 +277,9 @@ def main() -> None:
     print(json.dumps({
         "status": payload["status"],
         "validation_passed": payload["validation_passed"],
-        "common_scale_zeta_tail": payload["claim_boundary"]["actual_common_scale_zeta_tail"],
-        "graded_heat_tail": payload["claim_boundary"]["actual_full_graded_heat_tail"],
+        "joint_replacement_tail": payload["claim_boundary"]["actual_joint_replacement_Cauchy_tail"],
     }, indent=2))
 
 
 if __name__ == "__main__":
     main()
-

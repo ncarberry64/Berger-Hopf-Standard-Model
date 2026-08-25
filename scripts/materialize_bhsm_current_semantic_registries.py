@@ -321,7 +321,9 @@ def verify_current_lineage() -> None:
         and heat_zeta["claim_boundary"][
             "infinite_optical_common_scale_zeta_criterion"
         ] == "DERIVED"
-        and heat_zeta["claim_boundary"]["actual_common_scale_zeta_tail"]
+        and heat_zeta["claim_boundary"]["separate_common_scale_zeta_tail_required"]
+        is False
+        and heat_zeta["claim_boundary"]["actual_joint_replacement_Cauchy_tail"]
         == "OPEN_CURRENT_OWNER"
         and nhim_angular_no_go["claim_boundary"][
             "asymptotic_NHIM_absolute_graded_force_route"
