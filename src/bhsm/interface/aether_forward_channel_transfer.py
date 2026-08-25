@@ -832,6 +832,51 @@ def reduce_two_boundary_weyl_with_terminal_load_jets(
     }
 
 
+def restrict_two_boundary_weyl_to_dirichlet_birth_jets(
+    two_boundary_weyl_jets: dict[str, np.ndarray],
+) -> dict[str, Any]:
+    """Restrict a two-boundary Calderon graph to zero birth trace.
+
+    With endpoint order ``(birth, new_event)`` and
+
+    ``[n_0,n_1]^T = [[M00,M01],[M10,M11]] [u_0,u_1]^T``,
+
+    the retained zero-source Dirichlet reference is ``u_0=0``.  The incoming
+    formation response at the new event is therefore exactly ``M_f=M11``.
+    The operation is a boundary-space restriction, not an endpoint load or a
+    Schur solve, and applies componentwise to all supplied jets.
+    """
+
+    keys = ("base", "first_left", "first_right", "mixed_second")
+    if not all(key in two_boundary_weyl_jets for key in keys):
+        raise KeyError("base, first_left, first_right, and mixed_second required")
+    matrices = {
+        key: np.asarray(two_boundary_weyl_jets[key], dtype=complex)
+        for key in keys
+    }
+    base_shape = matrices["base"].shape
+    if (
+        len(base_shape) != 2
+        or base_shape[0] != base_shape[1]
+        or base_shape[0] % 2 != 0
+        or any(matrix.shape != base_shape for matrix in matrices.values())
+        or any(not np.all(np.isfinite(matrix)) for matrix in matrices.values())
+    ):
+        raise ValueError("finite even-dimensional square Weyl jets required")
+    block_size = base_shape[0] // 2
+    return {
+        key: matrix[block_size:, block_size:].copy()
+        for key, matrix in matrices.items()
+    } | {
+        "endpoint_partition": ("birth", "new_event"),
+        "birth_trace": "ZERO_SOURCE_DIRICHLET_REFERENCE",
+        "response": "M_f=M11",
+        "block_size": block_size,
+        "explicit_matrix_inverse_formed": False,
+        "endpoint_load_imposed": False,
+    }
+
+
 __all__ = [
     "scalar_channel_transfer_generator",
     "scalar_channel_log_radius_jets",
@@ -848,4 +893,5 @@ __all__ = [
     "backward_weyl_mobius",
     "backward_weyl_mobius_jets",
     "reduce_two_boundary_weyl_with_terminal_load_jets",
+    "restrict_two_boundary_weyl_to_dirichlet_birth_jets",
 ]

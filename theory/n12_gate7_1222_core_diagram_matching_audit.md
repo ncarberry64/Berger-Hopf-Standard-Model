@@ -36,17 +36,25 @@ those three representative pencils from the live dependency.  It does not
 sum the full angular ledger, supply its multiplicities, realize the incoming
 seam, or control the maximal tail beyond the artificial 1,222-core edge.
 
+The incoming `M_f` slot is now matched more sharply.  On the retained zero
+birth-source Dirichlet reference it is exactly the new-event block of the
+existing compact formation Calderon map, equivalently the stored formation
+Schur complement.  The terminal Laurent germ therefore supplies an
+action-owned parametric `M_f` germ.  No new C1 operator or second birth
+exterior is missing.  Its complete finite-duration coefficient path remains
+open and must stay parametric in the action-owned formation amplitude rather
+than selecting a positive history member.
+
 The remaining unmatched data are geometric and pathwise.  Modulo the closed
 common-scale direction, the reset radius Cauchy jet is a valid birth germ but
 is not the noncompact geometry pullback through the maximal coefficient
-family.  The compact incoming response supplies the
-correct `M_f` type, but no sharp action-owned negative-axis realization on the
-physical incoming history is stored.  The common pair/contact incidence and
+family.  The common pair/contact incidence and
 heat-minus-zeta trace functional are valid conditional consumers; broad seam
 intervals and isolated probes cannot replace their realized inputs.
 
-Accordingly the next construction must instantiate the incoming response and
-the non-scale pathwise reset pullback sector, combine it with the exact
-common-scale component, then form the projected finite-core force net and test its maximal
-Cauchy tail.  The 1,222-core edge remains an artificial
+Accordingly the next construction must complete the finite-duration incoming
+coefficient path, glue its identified response block to the C2 seam, and
+solve the non-scale pathwise reset pullback sector.  It must then combine
+that sector with the exact common-scale component, form the projected
+finite-core force net, and test its maximal Cauchy tail.  The 1,222-core edge remains an artificial
 Friedrichs exhaustion edge, not an event or canonical stop.
