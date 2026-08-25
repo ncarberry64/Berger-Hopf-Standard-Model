@@ -267,15 +267,21 @@
   Formally a uniform no-stop expansion would have
   `D_tau log R4=H0+O(R4^-2)` and finite center drift, but the high-precision
   coefficient and uniform nonlinear remainder theorem remain open.
-- Multiprecision nonpromotion: genuine high-precision action jets and
-  70-digit bordered solves reduce linear-solve residuals below `1E-70`.
-  Nevertheless the common-scale coefficients at 48, 64, and 80 Gauss nodes
-  are `66.494409659373`, `66.494452982548`, and `66.494334392983`; the
-  64-to-80 change exceeds the 48-to-64 change.  Thus a tiny solve residual
-  does not enclose the quadrature-sensitive coefficient.  Its observed rate
-  correction is negative on all three rows but is not action-promoted.  The
-  next rigorous route is analytic small-local-block integration in a
-  preconditioned physical basis or directed-rounding interval quadrature.
+- Generic precision-scope correction: the earlier audit used high-precision
+  nodes and 70-digit final solves but only default 15-digit generic action-jet
+  arithmetic.  Its nonpromotion decision was conservative, but its rows are
+  superseded and are not described as 70-digit action jets.
+- Analytic local-block lift: the exact ten-variable weight-seven Hessian and
+  exact eight-variable weight-five gradient map directly to the physical
+  `74 x 74` bordered pencil.  With all integration and solving at 70 digits,
+  the 64/80/96/128-node common-scale coefficients agree within
+  `3.708068425E-44`, giving
+  `X5_q0=66.494327736840793193242388023117925357510087982407...` and rate
+  correction
+  `-51.963761962903932051564000772817373661146975456095...`.  This is a
+  reproducibly converged coefficient, not yet a directed-rounding interval.
+  Its negative sign, any full `H4` outcome, and an `R^-2` stability label
+  remain unpromoted pending interval and uniform nonlinear remainder control.
 - Norman finite-encapsulation physical-domain reclassification:
   `OWNER_AUTHORIZED_NOT_ACTION_DERIVED`. A forward history that expands
   forever without completing encapsulation remains a mathematically

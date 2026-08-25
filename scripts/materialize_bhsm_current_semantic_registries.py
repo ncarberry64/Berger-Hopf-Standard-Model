@@ -47,6 +47,7 @@ SOURCES = (
     "artifacts/flagship_integration/BHSM_N12_WEIGHT_SEVEN_TRANSVERSE_DESCRIPTOR.json",
     "artifacts/flagship_integration/BHSM_N12_WEIGHT_FIVE_CENTER_MODULATION.json",
     "artifacts/flagship_integration/BHSM_N12_WEIGHT_FIVE_MULTIPRECISION_NONPROMOTION.json",
+    "artifacts/flagship_integration/BHSM_N12_ANALYTIC_LOCAL_BLOCK_CENTER_LIFT.json",
     "artifacts/intrinsic_state_selection/BHSM_N12_FINITE_ENCAPSULATION_LOCAL_BRANCH.json",
     "artifacts/flagship_integration/BHSM_N12_GATE7_AE2_THRESHOLD_SUPERSESSION.json",
     "artifacts/BHSM_alpha_i_update_v4_2.json",
@@ -102,6 +103,7 @@ def verify_current_lineage() -> None:
     weight_seven_descriptor = loaded["artifacts/flagship_integration/BHSM_N12_WEIGHT_SEVEN_TRANSVERSE_DESCRIPTOR.json"]
     weight_five_modulation = loaded["artifacts/flagship_integration/BHSM_N12_WEIGHT_FIVE_CENTER_MODULATION.json"]
     weight_five_mp_audit = loaded["artifacts/flagship_integration/BHSM_N12_WEIGHT_FIVE_MULTIPRECISION_NONPROMOTION.json"]
+    analytic_center_lift = loaded["artifacts/flagship_integration/BHSM_N12_ANALYTIC_LOCAL_BLOCK_CENTER_LIFT.json"]
     frontier = loaded["artifacts/flagship_integration/BHSM_N12_GATE7_AE2_THRESHOLD_SUPERSESSION.json"]
     if ae2.get("action_version") != "BHSM-AE-2.0.0":
         raise RuntimeError("AE2 action version mismatch")
@@ -319,7 +321,7 @@ def verify_current_lineage() -> None:
     if not (
         weight_five_mp_audit["claim_boundary"][
             "multiprecision_bordered_solve"
-        ] == "DERIVED"
+        ] == "DERIVED_HISTORICAL"
         and weight_five_mp_audit["claim_boundary"][
             "weight_five_coefficient"
         ] == "OPEN_NOT_PROMOTED"
@@ -331,6 +333,21 @@ def verify_current_lineage() -> None:
         ] is False
     ):
         raise RuntimeError("weight-five multiprecision nonpromotion frontier is not current")
+    if not (
+        analytic_center_lift["claim_boundary"][
+            "analytic_preconditioned_local_block_lift"
+        ] == "DERIVED"
+        and analytic_center_lift["converged_tail"][
+            "directed_interval_certified"
+        ] is False
+        and analytic_center_lift["adjudication"][
+            "sign_promoted_as_rigorous_action_theorem"
+        ] is False
+        and analytic_center_lift["claim_boundary"][
+            "uniform_full_remainder_outcome"
+        ] == "OPEN"
+    ):
+        raise RuntimeError("analytic local-block center-lift frontier is not current")
 
 
 def materialize() -> list[Path]:

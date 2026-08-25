@@ -294,6 +294,14 @@ def weight_five_center_lift_system(
     conditioned coefficient-basis system.
     """
 
+    if extended_precision:
+        import mpmath as mp
+
+        if mp.mp.dps < 80:
+            with mp.workdps(80):
+                return weight_five_center_lift_system(
+                    order=order, points=points, extended_precision=True
+                )
     dims = dimensions(order)
     qdim = dims["coordinates"]
     mdim = dims["multipliers"]

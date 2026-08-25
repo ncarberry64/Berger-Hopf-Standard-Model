@@ -105,6 +105,7 @@ def _basis() -> list[dict[str, Any]]:
     p_w7_descriptor = "artifacts/flagship_integration/BHSM_N12_WEIGHT_SEVEN_TRANSVERSE_DESCRIPTOR.json"
     p_w5_modulation = "artifacts/flagship_integration/BHSM_N12_WEIGHT_FIVE_CENTER_MODULATION.json"
     p_w5_mp_audit = "artifacts/flagship_integration/BHSM_N12_WEIGHT_FIVE_MULTIPRECISION_NONPROMOTION.json"
+    p_w5_analytic = "artifacts/flagship_integration/BHSM_N12_ANALYTIC_LOCAL_BLOCK_CENTER_LIFT.json"
     p_e1 = "artifacts/flagship_integration/BHSM_N12_FORWARD_E1_SOURCE_MEASURE_CRITERION.json"
     p_nf = "artifacts/flagship_integration/BHSM_N12_GATE7_AE2_NONFERMION_THRESHOLD_MARGIN.json"
     p_fac = "artifacts/flagship_integration/BHSM_N12_GATE7_AE2_COMPACT_SOURCE_DINI_CLOSURE.json"
@@ -323,15 +324,27 @@ def _basis() -> list[dict[str, Any]]:
         ),
         record(
             "WEIGHT_FIVE_MULTIPRECISION_AUDIT",
-            "mpmath_action_jet+70_digit_bordered_solve; quadrature coefficient remains unenclosed",
+            "high_precision_nodes+15_digit_generic_action_jet+70_digit_solve; superseded",
             "REPRODUCIBILITY_NONPROMOTION_CERTIFICATE",
             "MATHEMATICAL_OBJECT",
-            "Multiprecision closes linear-solve error but exposes nonmonotone quadrature sensitivity, so the R^-2 coefficient remains unpromoted.",
+            "Historical generic-jet rows conservatively withheld promotion but used only default 15-digit action arithmetic and are superseded.",
             "N12 weight-five physical quotient coefficient representation",
             [p_w5_mp_audit],
-            current_status="SOLVE_PRECISION_CLOSED_ANALYTIC_PRECONDITIONED_ASSEMBLY_OPEN",
+            current_status="SUPERSEDED_PRECISION_SCOPE_CORRECTED",
             downstream_consumers=["WEIGHT_FIVE_CENTER_MODULATION"],
             forbidden_interpretations=["small solve residual certifies quadrature", "empirically stable sign is an action theorem", "more brute-force nodes replace an enclosure"],
+        ),
+        record(
+            "ANALYTIC_WEIGHT_FIVE_LOCAL_BLOCK_LIFT",
+            "exact_local_H7^(10x10)+exact_local_D_L5^(8) -> 74x74 bordered physical lift",
+            "ANALYTIC_PRECONDITIONED_FESHBACH_ASSEMBLY",
+            "MATHEMATICAL_OBJECT",
+            "Genuine 70-digit local-block integration converges the represented common-scale coefficient while withholding interval/full-remainder promotion.",
+            "N12 round expanding mathematical branch physical tangent quotient",
+            [p_w5_analytic],
+            current_status="DERIVED_CONVERGED_DIRECTED_INTERVAL_AND_UNIFORM_REMAINDER_OPEN",
+            downstream_consumers=["WEIGHT_FIVE_CENTER_MODULATION"],
+            forbidden_interpretations=["empirical 40-digit convergence is directed rounding", "negative correction proves H4 tends to zero", "the mathematical infinite branch is a realized particle"],
         ),
         record(
             "SOURCE_WEIGHTED_THRESHOLD_MEASURE",

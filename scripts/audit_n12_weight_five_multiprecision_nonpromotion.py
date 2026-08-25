@@ -1,10 +1,9 @@
-"""Audit multiprecision quadrature sensitivity of the weight-five lift.
+"""Historical generic-jet precision audit, superseded by local blocks.
 
-The stored rows are the deterministic record of full 70--80 decimal digit
-jobs performed on 2026-08-24.  Passing ``--recompute`` rebuilds every row
-from the retained action; this is deliberately audit-only because the generic
-98-variable object-jet path takes roughly 16 minutes for all four rows on the
-reference Windows host.
+The stored rows used high-precision Gauss nodes and 70-digit final solves, but
+the generic action-jet arithmetic ran at mpmath's then-default 15 digits. This
+scope correction is retained explicitly. The later analytic local-block audit
+supersedes these rows.
 """
 
 from __future__ import annotations
@@ -115,7 +114,7 @@ def build_payload(rows: list[dict[str, object]] | None = None) -> dict[str, Any]
     diff_48_64 = abs(q0[1] - q0[0])
     diff_64_80 = abs(q0[2] - q0[1])
     validation = {
-        "genuine_mpmath_action_jet_and_solve_path_available": True,
+        "precision_scope_corrected_high_precision_nodes_15_digit_action_70_digit_solve": True,
         "all_tail_common_scale_coefficients_positive": all(x > 0 for x in q0),
         "all_tail_rate_coefficients_negative": all(x < 0 for x in rate),
         "64_to_80_change_exceeds_48_to_64_change": diff_64_80 > diff_48_64,
@@ -129,14 +128,13 @@ def build_payload(rows: list[dict[str, object]] | None = None) -> dict[str, Any]
     }
     return {
         "artifact": "BHSM_N12_WEIGHT_FIVE_MULTIPRECISION_NONPROMOTION",
-        "status": "MULTIPRECISION_SOLVE_CLOSED_QUADRATURE_STABILITY_OPEN_COEFFICIENT_NOT_PROMOTED",
+        "status": "SUPERSEDED_GENERIC_JET_PRECISION_SCOPE_CORRECTED_COEFFICIENT_WAS_NOT_PROMOTED",
         "classification": (
-            "SEVENTY_DIGIT_BORDERED_SOLVES_HAVE_RESIDUALS_BELOW_1E-70,_BUT_"
-            "THE_48_64_80_POINT_HIGH_PRECISION_ACTION_QUADRATURE_SEQUENCE_"
-            "IS_NOT_MONOTONE_AND_THE_64_TO_80_CHANGE_EXCEEDS_THE_48_TO_64_"
-            "CHANGE;_THE_R_MINUS_2_COEFFICIENT_AND_STABILITY_LABEL_REMAIN_"
-            "UNPROMOTED_PENDING_ANALYTIC_LOCAL_BLOCK_INTEGRATION_OR_A_"
-            "RIGOROUS_QUADRATURE_ENCLOSURE"
+            "THE_STORED_ROWS_USED_HIGH_PRECISION_GAUSS_NODES_AND_70_DIGIT_"
+            "SOLVES_BUT_ONLY_DEFAULT_15_DIGIT_GENERIC_ACTION_JET_ARITHMETIC;_"
+            "THEIR_NONPROMOTION_CONCLUSION_WAS_CONSERVATIVE_AND_REMAINS_"
+            "VALID,_BUT_THE_ROWS_ARE_SUPERSEDED_BY_THE_GENUINE_70_DIGIT_"
+            "ANALYTIC_LOCAL_BLOCK_ASSEMBLY"
         ),
         "multiprecision_rows": rows,
         "tail_diagnostics": {
@@ -149,21 +147,20 @@ def build_payload(rows: list[dict[str, object]] | None = None) -> dict[str, Any]
         },
         "adjudication": {
             "linear_solve_precision": "CLOSED_TO_BELOW_1E-70_RESIDUAL",
-            "generic_action_quadrature_precision": "OPEN_SENSITIVITY_AMPLIFIED_BY_CONDITIONING",
+            "generic_action_arithmetic_precision": "CORRECTED_TO_15_DECIMAL_DIGITS_NOT_70",
             "common_scale_rate_correction_sign_empirically_robust": True,
             "common_scale_rate_correction_sign_promoted_as_theorem": False,
             "weight_five_coefficient_promoted": False,
             "full_remainder_outcome_promoted": False,
         },
         "exact_next_dependency": (
-            "ASSEMBLE_THE_WEIGHT_SEVEN_LOCAL_HESSIAN_AND_WEIGHT_FIVE_FORCE_"
-            "FROM_ANALYTIC_SMALL_LOCAL_BLOCKS_IN_A_PRECONDITIONED_PHYSICAL_"
-            "BASIS,_OR_SUPPLY_A_RIGOROUS_INTERVAL_GAUSS_BOUND;_THEN_SOLVE_"
-            "THE_BORDERED_LIFT_WITH_DIRECTED_ROUNDING"
+            "USE_THE_SUPERSEDING_GENUINE_MULTIPRECISION_ANALYTIC_LOCAL_BLOCK_"
+            "ASSEMBLY_AND_THEN_ADD_DIRECTED_ROUNDING_FOR_FINAL_INTERVAL_"
+            "PROMOTION"
         ),
         "claim_boundary": {
             "Gate7": "ACTIVE",
-            "multiprecision_bordered_solve": "DERIVED",
+            "multiprecision_bordered_solve": "DERIVED_HISTORICAL",
             "weight_five_coefficient": "OPEN_NOT_PROMOTED",
             "uniform_full_remainder_outcome": "OPEN",
             "Gate8": "LOCKED",
