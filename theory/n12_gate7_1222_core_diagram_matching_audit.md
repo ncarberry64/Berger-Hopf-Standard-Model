@@ -50,7 +50,12 @@ nonzero branch-23 parameter box.  The sign-safe regularized tube keeps
 factorized-Dirac coefficient paths in log space for every positive amplitude
 in the box.  The box remains parametric in the action-owned formation
 amplitude and does not select a history member.  Evaluating the already
-identified compact block and contracting it with the C2 seam remain open.
+identified compact block can now be replaced by direct form comparison: the
+incoming `M_f` is enclosed pointwise for every negative real resolvent probe
+and every positive amplitude in the box.  In the fermion AE2 sector the C2
+load is nonnegative and `W_phys=0`, so the joint seam is strictly invertible
+on the whole negative axis.  Its exact value and graded spectral trace remain
+open.
 
 The remaining unmatched data are geometric and pathwise.  Modulo the closed
 common-scale direction, the reset radius Cauchy jet is a valid birth germ but
@@ -59,9 +64,9 @@ family.  The common pair/contact incidence and
 heat-minus-zeta trace functional are valid conditional consumers; broad seam
 intervals and isolated probes cannot replace their realized inputs.
 
-Accordingly the next construction must evaluate or enclose the compact
-incoming block on the certified coefficient family, glue that response to the
-C2 seam, and solve the non-scale pathwise reset pullback sector.  It must then combine
+Accordingly the next construction must propagate the non-scale pathwise reset
+pullback through the now-invertible fermion seam and assemble or enclose the
+exact joint graded spectral trace.  It must then combine
 that sector with the exact common-scale component, form the projected
 finite-core force net, and test its maximal Cauchy tail.  The 1,222-core edge remains an artificial
 Friedrichs exhaustion edge, not an event or canonical stop.

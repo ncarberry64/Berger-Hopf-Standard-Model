@@ -877,6 +877,132 @@ def restrict_two_boundary_weyl_to_dirichlet_birth_jets(
     }
 
 
+def _positive_finite_interval(
+    lower: float, upper: float, name: str
+) -> tuple[float, float]:
+    lo = float(lower)
+    hi = float(upper)
+    if not all(math.isfinite(value) for value in (lo, hi)) or not (
+        0.0 < lo <= hi
+    ):
+        raise ValueError(f"ordered positive finite {name} interval required")
+    return lo, hi
+
+
+def _rate_coth_duration(rate: float, duration: float) -> float:
+    """Evaluate ``rate*coth(rate*duration)`` without a tiny-argument loss."""
+
+    k = float(rate)
+    length = float(duration)
+    if not math.isfinite(k) or k <= 0.0 or not math.isfinite(length) or length <= 0.0:
+        raise ValueError("positive finite rate and duration required")
+    argument = k * length
+    if argument < 1.0e-4:
+        # coth(x)=1/x+x/3-x^3/45+2x^5/945+O(x^7).
+        squared = argument * argument
+        correction = 1.0 + squared / 3.0 - squared**2 / 45.0
+        correction += 2.0 * squared**3 / 945.0
+        return correction / length
+    return k / math.tanh(argument)
+
+
+def scalar_dirichlet_birth_terminal_weyl_bounds(
+    proper_duration_lower: float,
+    proper_duration_upper: float,
+    potential_upper: float,
+    negative_spectral_magnitude: float,
+) -> dict[str, float]:
+    """Enclose the event response with zero birth trace.
+
+    For ``-u''+V u=-kappa^2 u``, ``u(0)=0`` and ``u(T)=1``, form
+    monotonicity between ``V=0`` and ``V=Vmax`` gives
+
+    ``kappa*coth(kappa*T_upper) <= M_f``
+
+    and
+
+    ``M_f <= K*coth(K*T_lower)``, ``K^2=kappa^2+Vmax``.
+
+    The endpoint duration is allowed to range over the supplied certified
+    interval; no terminal load or matrix inverse is introduced.
+    """
+
+    duration_lower, duration_upper = _positive_finite_interval(
+        proper_duration_lower, proper_duration_upper, "proper duration"
+    )
+    vmax = float(potential_upper)
+    kappa2 = float(negative_spectral_magnitude)
+    if not math.isfinite(vmax) or vmax < 0.0:
+        raise ValueError("finite nonnegative potential upper bound required")
+    if not math.isfinite(kappa2) or kappa2 <= 0.0:
+        raise ValueError("positive finite negative spectral magnitude required")
+    kappa = math.sqrt(kappa2)
+    maximum_rate = math.sqrt(kappa2 + vmax)
+    lower = _rate_coth_duration(kappa, duration_upper)
+    upper = _rate_coth_duration(maximum_rate, duration_lower)
+    return {
+        "lower": lower,
+        "upper": upper,
+        "width": upper - lower,
+        "proper_duration_lower": duration_lower,
+        "proper_duration_upper": duration_upper,
+        "potential_upper": vmax,
+        "kappa": kappa,
+        "maximum_rate": maximum_rate,
+        "inverse_free_form_comparison": True,
+    }
+
+
+def product_dirac_dirichlet_birth_terminal_weyl_bounds(
+    proper_duration_lower: float,
+    proper_duration_upper: float,
+    superpotential_absolute_upper: float,
+    negative_spectral_magnitude: float,
+) -> dict[str, float]:
+    """Enclose a factorized event response with zero birth trace.
+
+    Write ``A=d_tau+W`` and ``w=exp(integral W)u``.  Weighted Cauchy--Schwarz
+    gives ``||Au||^2 >= exp(-4*S*T)/T`` when ``|W|<=S``.  The linear trial
+    ``u=tau/T`` supplies the upper bound.  Both statements are made directly
+    in the factorized form and never introduce ``W'``.
+    """
+
+    duration_lower, duration_upper = _positive_finite_interval(
+        proper_duration_lower, proper_duration_upper, "proper duration"
+    )
+    superpotential = float(superpotential_absolute_upper)
+    kappa2 = float(negative_spectral_magnitude)
+    if not math.isfinite(superpotential) or superpotential < 0.0:
+        raise ValueError("finite nonnegative superpotential bound required")
+    if not math.isfinite(kappa2) or kappa2 <= 0.0:
+        raise ValueError("positive finite negative spectral magnitude required")
+    lower_log_correction = -4.0 * superpotential * duration_upper
+    lower = math.exp(lower_log_correction) / duration_upper
+
+    def trial(duration: float) -> float:
+        return (
+            1.0 / duration
+            + superpotential
+            + (superpotential**2 + kappa2) * duration / 3.0
+        )
+
+    trial_at_lower = trial(duration_lower)
+    trial_at_upper = trial(duration_upper)
+    upper = max(trial_at_lower, trial_at_upper)
+    return {
+        "lower": lower,
+        "upper": upper,
+        "width": upper - lower,
+        "proper_duration_lower": duration_lower,
+        "proper_duration_upper": duration_upper,
+        "superpotential_absolute_upper": superpotential,
+        "negative_spectral_magnitude": kappa2,
+        "lower_log_weight_correction": lower_log_correction,
+        "linear_trial_at_duration_lower": trial_at_lower,
+        "linear_trial_at_duration_upper": trial_at_upper,
+        "factorized_form_used_without_superpotential_derivative": True,
+        "inverse_free_form_comparison": True,
+    }
 __all__ = [
     "scalar_channel_transfer_generator",
     "scalar_channel_log_radius_jets",
@@ -894,4 +1020,6 @@ __all__ = [
     "backward_weyl_mobius_jets",
     "reduce_two_boundary_weyl_with_terminal_load_jets",
     "restrict_two_boundary_weyl_to_dirichlet_birth_jets",
+    "scalar_dirichlet_birth_terminal_weyl_bounds",
+    "product_dirac_dirichlet_birth_terminal_weyl_bounds",
 ]

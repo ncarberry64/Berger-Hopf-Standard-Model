@@ -4,7 +4,9 @@
   "adjudication": {
     "Gate7": "G7_08_OPEN",
     "Gate8": "LOCKED",
-    "complete_finite_duration_incoming_M_f_realization": "OPEN_COMPACT_BLOCK_EVALUATION",
+    "complete_finite_duration_incoming_M_f_realization": "CLOSED_PARAMETRIC_NEGATIVE_AXIS_ENCLOSURE",
+    "exact_joint_spectral_trace": "OPEN",
+    "fermion_AE2_joint_seam_invertibility": "CLOSED_ON_WHOLE_NEGATIVE_AXIS",
     "finite_core_backward_operator_cotangent": "CLOSED",
     "finite_event_or_canonical_stop": "NOT_REACHED",
     "incoming_M_f_identity_and_action_owned_germ": "CLOSED_EXISTING_COMPACT_TERMINAL_BLOCK",
@@ -28,8 +30,8 @@
     "same_action_saddle": "WAITING_ON_FORCE",
     "zero_source_force": "OPEN"
   },
-  "classification": "C2_FINITE_CORE_NEGATIVE_AXIS_RESPONSE,_BACKWARD_OPERATOR_COTANGENT,_INCOMING_M_f_COMPACT_BLOCK_IDENTITY,_EXPLICIT_INCOMING_FINITE_AMPLITUDE_COEFFICIENT_FAMILY,_AND_PHYSICAL_COMMON_SCALE_PULLBACK_SLOTS_ARE_VALID_MATCHES;_COMPACT_M_f_EVALUATION,_JOINT_SEAM_CONTRACTION,_AND_NON_SCALE_RESET_GEOMETRY_PULLBACK_REMAIN_MISSING_AS_REALIZED_DATA,_WHILE_INCIDENCE_FORCE_AND_CAUCHY_THEOREMS_ARE_VALID_CONDITIONAL_CONSUMERS",
-  "exact_next_dependency": "EVALUATE_OR_ENCLOSE_THE_EXISTING_COMPACT_M_f_BLOCK_ON_THE_NOW_CERTIFIED_FINITE_AMPLITUDE_COEFFICIENT_FAMILY_AND_GLUE_IT_TO_THE_C2_SEAM;_CHAIN_THE_CLOSED_BACKWARD_OPERATOR_COTANGENT_THROUGH_THE_REMAINING_NON_SCALE_RESET_QUOTIENT_GEOMETRY_ADJOINT_SECTOR,_CONTRACT_THE_SOURCE_AND_FORCE_FUNCTIONALS,_AND_TEST_THE_PROJECTED_CAUCHY_TAIL",
+  "classification": "C2_FINITE_CORE_NEGATIVE_AXIS_RESPONSE,_BACKWARD_OPERATOR_COTANGENT,_INCOMING_M_f_WHOLE_NEGATIVE_AXIS_FORM_ENCLOSURE,_FERMION_AE2_SEAM_INVERTIBILITY,_EXPLICIT_INCOMING_FINITE_AMPLITUDE_COEFFICIENT_FAMILY,_AND_PHYSICAL_COMMON_SCALE_PULLBACK_SLOTS_ARE_VALID_MATCHES;_THE_EXACT_JOINT_SPECTRAL_TRACE_AND_NON_SCALE_RESET_GEOMETRY_PULLBACK_REMAIN_MISSING_AS_REALIZED_DATA,_WHILE_INCIDENCE_FORCE_AND_CAUCHY_THEOREMS_ARE_VALID_CONDITIONAL_CONSUMERS",
+  "exact_next_dependency": "CHAIN_THE_CLOSED_BACKWARD_OPERATOR_COTANGENT_THROUGH_THE_REMAINING_NON_SCALE_RESET_QUOTIENT_GEOMETRY_ADJOINT_SECTOR_AND_THE_NOW_INVERTIBLE_FERMION_SEAM,_ASSEMBLE_OR_ENCLOSE_THE_EXACT_JOINT_GRADED_SPECTRAL_TRACE,_CONTRACT_THE_SOURCE_AND_FORCE_FUNCTIONALS,_AND_TEST_THE_PROJECTED_CAUCHY_TAIL",
   "forward_event_diagram": "C1 --M_f--> E1 --(U_R,W_phys)--> C2 --M_C2--> MAXIMAL_ENDPOINT",
   "hindsight": {
     "classification": "PROOF_CHART_LIMIT_REMOVED;_OPERATOR_DATA_GAP_REMAINS",
@@ -53,9 +55,10 @@
     "artifacts/flagship_integration/BHSM_N12_INCOMING_COEFFICIENT_PATH_QUADRATIC_GERM.json": "299C4F5ED8252E50584C80DC9348AB41A1EE61B767BE79F89729131833AF6BF2",
     "artifacts/flagship_integration/BHSM_N12_INCOMING_FINITE_AMPLITUDE_COEFFICIENT_ENCLOSURE.json": "40C22A60A17597900D972D02F107B12E621EED1020A839E71D5D2B97B629D194",
     "artifacts/flagship_integration/BHSM_N12_INCOMING_MF_COMPACT_MATCH.json": "0FB27367F58FBF75C6C0B384F41AE7644515FBCFCA0AABAAA6544B47B05EEC33",
+    "artifacts/flagship_integration/BHSM_N12_INCOMING_MF_NEGATIVE_AXIS_ENCLOSURE.json": "59B718CC574103B05AE2D184506A06F51617450D958B2E5E856D8B5C9753633C",
     "artifacts/flagship_integration/BHSM_N12_INCOMING_REGULARIZED_TERMINAL_SEGMENT.json": "DDFDCBD0632F9C99A1E7C3DB97F98793BBB12E139610A16730A2C33E23984485",
     "artifacts/flagship_integration/BHSM_N12_MAXIMAL_FRIEDRICHS_WEYL_EXHAUSTION.json": "ADD797EAE0D9DB94D1BA0C58687AF114598331662B92B13579408361D95D9E5B",
-    "theory/n12_gate7_1222_core_diagram_matching_audit.md": "2E847DCB33D92A5A099F5867082E028C11645A35DC734F694D365BC1792900B2"
+    "theory/n12_gate7_1222_core_diagram_matching_audit.md": "FC7023BBCD601E787B926BF267D10AA906DC223DBCEAD782931EF18B74DD2EA8"
   },
   "matching_audit": [
     {
@@ -123,12 +126,12 @@
       "verdict": "VALID_MATCH_REPRESENTATIVE_INCREMENT_SUPPRESSED_FULL_GRADED_TRACE_STILL_OPEN"
     },
     {
-      "candidate": "BHSM_N12_INCOMING_MF_COMPACT_MATCH_PLUS_EXPLICIT_REGULARIZED_SEGMENT_AND_FINITE_AMPLITUDE_COEFFICIENT_ENCLOSURE",
+      "candidate": "BHSM_N12_INCOMING_MF_COMPACT_MATCH_PLUS_EXPLICIT_REGULARIZED_SEGMENT,_FINITE_AMPLITUDE_COEFFICIENT_ENCLOSURE,_AND_NEGATIVE_AXIS_FORM_COMPARISON",
       "diagram_slot": "INCOMING_C1_RESPONSE_M_f",
       "dimension_domain_check": "VALID_ZERO_BIRTH_SOURCE_RESTRICTION_TO_THE_NEW_EVENT_BLOCK_AND_UNIFORM_NORMALIZED_PATH_FOR_EVERY_0<lambda<=1.33025636847111862E-30",
       "provenance_check": "VALID_COMPACT_ACTION_CALDERON_MAP,_ENDPOINT_ROLE,_FORMATION_SCHUR_IDENTITY,_TERMINAL_CAUCHY_JET,_NEGATIVE_Delta_TUBE,_FIRST_JACOBI_BOUND,_AND_LOG_SPACE_COEFFICIENT_ENCLOSURE",
       "required_type": "SHARP_ACTION_OWNED_NEGATIVE_AXIS_INCOMING_WEYL_RESPONSE_ON_THE_PHYSICAL_C1_TO_E1_HISTORY",
-      "verdict": "VALID_MATCH_IDENTITY_AND_FINITE_AMPLITUDE_COEFFICIENT_FAMILY_COMPACT_BLOCK_EVALUATION_OPEN"
+      "verdict": "VALID_MATCH_INCOMING_M_f_PARAMETRICALLY_ENCLOSED_ON_WHOLE_NEGATIVE_AXIS"
     },
     {
       "candidate": "AE2_COVARIANT_SEAM_IDENTITY_AND_BROAD_NEGATIVE_AXIS_INTERVALS",
@@ -176,7 +179,7 @@
       "proof edge is an endpoint"
     ],
     "OPEN": [
-      "compact incoming M_f block evaluation and joint seam contraction",
+      "exact joint spectral trace and nonfermion seam value",
       "non-scale pathwise reset quotient geometry pullback sector",
       "actual projected force net and Cauchy tail"
     ],
@@ -188,6 +191,8 @@
       "incoming normalized coefficient path through lambda_0 squared",
       "explicit incoming regularized finite-amplitude segment and first Jacobi bound",
       "uniform finite-amplitude incoming coefficient family",
+      "incoming M_f parametric whole-negative-axis enclosure",
+      "fermion AE2 joint-seam invertibility",
       "physical common-scale pullback including moving duration",
       "common-scale heat-zeta source contraction formula",
       "stored fixed-channel 1064-to-1222 heat increment suppression",
@@ -207,6 +212,7 @@
     "compact_incoming_operator_is_only_executable_until_path_supplied": true,
     "finite_core_backward_cotangent_semigroup_is_matched": true,
     "force_functional_is_derived_but_value_open": true,
+    "incoming_Mf_and_fermion_seam_invertibility_are_enclosed": true,
     "incoming_Mf_is_existing_compact_terminal_block_not_new_theory": true,
     "incoming_coefficient_path_germ_is_closed_without_Euler_Dirac_inverse": true,
     "incoming_finite_amplitude_path_is_closed_on_explicit_nonzero_box": true,
