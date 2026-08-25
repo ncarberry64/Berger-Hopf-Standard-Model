@@ -597,8 +597,8 @@ GATE_CHAIN = [
     ("G7_05_FACTORIZED_LAP", "all admissible positive far tails source-Dini by compact Volterra trace-class theorem", "CLOSED"),
     ("G7_06_E1_FINITE", "fixed-channel E1 source-measure finiteness", "CLOSED"),
     ("G7_07_ANGULAR_TAIL", "finite-endpoint compact-resolvent/source-trace control on the realized finite-encapsulation domain; infinite nonencapsulating tails remain nonrealized mathematical histories", "CLOSED_BY_OWNER_PHYSICAL_SCOPE_AND_LOCAL_ACTION_EXISTENCE"),
-    ("G7_08_FORCE", "heat-minus-zeta functional, physical quotient criterion, fixed-stratum regularity, quotient-robust radius variation, moving-endpoint chain rules, inverse-free Weyl solver, and nested channel/Euler-Dirac adjoint pullback derived; neither finite-endpoint positivity nor synthesis of the current broad whole-negative-axis seam family fixes its sign; endpoint-domain ownership is closed, and one backward D3-L adjoint yields the complete force covector at each reset parameter without 66 forward Jacobi columns; because the reset is set-valued, the immediate owner is existence and certification of a nonempty regular finite-endpoint root of the coupled forward-adjoint quotient KKT system or its equivalent parametric-oracle covector root; the current disk has no such root, compactness/coercivity/degree theorem, selected maximal-flow outcome, or actual KKT Hessian and force needed to initialize same-action homotopy continuation", "OPEN_CURRENT_OWNER"),
-    ("G7_09_SADDLE", "same-action finite-endpoint forward-adjoint quotient KKT equations derived but unsolved; mathematically coupled to G7_08 without adding a gate", "PENDING_COUPLED_TO_G7_08"),
+    ("G7_08_FORCE", "heat-minus-zeta functional, physical quotient criterion, fixed-stratum regularity, quotient-robust radius variation, moving-endpoint chain rules, inverse-free Weyl solver, and nested channel/Euler-Dirac adjoint pullback derived; neither finite-endpoint positivity nor synthesis of the current broad whole-negative-axis seam family fixes its sign; finite encapsulation applies to the incoming pre-event formation arm, while the post-event child decay/evolution arm may end at a later event, a canonical exit, or an infinite Friedrichs end; the immediate owner is the parametric event-generated maximal-child Calderon/Weyl family and a root of its physical heat-minus-zeta quotient covector; the finite-endpoint KKT system remains a valid sufficient subroute, while the analytic R4-to-infinity branch is only a candidate Friedrichs exterior because no reset-to-asymptotic basin or intersection theorem is proved", "OPEN_CURRENT_OWNER"),
+    ("G7_09_SADDLE", "same-action finite-endpoint forward-adjoint quotient KKT equations derived but unsolved as one sufficient stratum; the native saddle must use the actual event-generated maximal child domain, including a permitted infinite Friedrichs exterior; mathematically coupled to G7_08 without adding a gate", "PENDING_COUPLED_TO_G7_08"),
     ("G7_10_HESSIAN", "pair-plus-contact Hessian", "PENDING"),
     ("G7_11_WARD_TRACE", "Ward/BRST and source-contracted relative trace", "PENDING"),
     ("G7_12_SCALAR_MAP", "basis-independent physical scalar map", "PENDING"),
@@ -627,6 +627,8 @@ def _gates() -> list[dict[str, Any]]:
             "artifacts/flagship_integration/BHSM_N12_FORWARD_ADJOINT_KKT_EXISTENCE_GATE.json",
             "artifacts/flagship_integration/BHSM_N12_SAME_ACTION_CONTINUATION_PRECONDITIONS.json",
             "artifacts/flagship_integration/BHSM_N12_DIRECT_KKT_EXISTENCE_PRECONDITIONS.json",
+            "artifacts/flagship_integration/BHSM_N12_GATE7_FORMATION_DECAY_CHRONOLOGY_SUPERSESSION.json",
+            "artifacts/flagship_integration/BHSM_N12_ASYMPTOTIC_CHILD_EXTERIOR_CONNECTION_PRECONDITIONS.json",
         ],
         "G7_09_SADDLE": [
             "artifacts/flagship_integration/BHSM_N12_CONSTRAINT_PROJECTED_REPLACEMENT_SADDLE.json",
@@ -634,6 +636,8 @@ def _gates() -> list[dict[str, Any]]:
             "artifacts/flagship_integration/BHSM_N12_FORWARD_ADJOINT_KKT_EXISTENCE_GATE.json",
             "artifacts/flagship_integration/BHSM_N12_SAME_ACTION_CONTINUATION_PRECONDITIONS.json",
             "artifacts/flagship_integration/BHSM_N12_DIRECT_KKT_EXISTENCE_PRECONDITIONS.json",
+            "artifacts/flagship_integration/BHSM_N12_GATE7_FORMATION_DECAY_CHRONOLOGY_SUPERSESSION.json",
+            "artifacts/flagship_integration/BHSM_N12_ASYMPTOTIC_CHILD_EXTERIOR_CONNECTION_PRECONDITIONS.json",
         ],
     }
     fallback = "artifacts/flagship_integration/BHSM_N12_GATE7_AE2_THRESHOLD_SUPERSESSION.json"

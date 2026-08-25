@@ -127,6 +127,34 @@ not disprove a retained-action root or invalidate a direct theorem in
 principle; it narrows the live owner to a validated finite-endpoint BVP root
 or an independent action-owned global compactness/degree estimate.
 
+The finite-endpoint root is now superseded as the *sole* current owner after
+reconciling formation/decay chronology with the retained maximal source
+domain. Finite encapsulation applies to the incoming pre-event formation
+history. The post-event complete child immediately enters decay/evolution and
+is not required to hit a second event in finite time. Its action-owned source
+domain may terminate at a later retained event, at a finite canonical
+strong/domain/Dirac exit with Friedrichs closure, or at an infinite/excluded
+Friedrichs end. The finite-endpoint forward--adjoint KKT equations remain a
+valid sufficient subroute, and their continuation/direct-method audits remain
+valid in that scope. The native current owner is the event-generated maximal
+child Calderon/Weyl family and its quotient geometry jet on a nonempty reset
+stratum, followed by a root of the physical heat-minus-zeta covector. This
+correction introduces neither post-event recurrence nor a hand-selected
+endpoint.
+
+The complete analytic `R4 -> infinity`, `H4 -> H0>0` branch is a candidate
+infinite Friedrichs child exterior, but it is not yet the required oracle.
+Its Briot--Bouquet theorem constructs one local invariant branch; the
+weight-seven pencil still has 25 physical center roots, so the absence of
+unstable finite roots does not prove an open nonlinear trapping basin. No
+validated connection or transverse intersection between the set-valued AE2
+reset image and that asymptotic branch has been proved, and the reset quotient
+retains genuine radius-Cauchy-jet variation. The exact narrowed dependency is
+therefore a reset-to-asymptotic connection with quotient geometry jets and
+all domain margins, or the already-valid finite event/canonical-exit route.
+Dimension counting and a single reset representative have no promotion
+authority.
+
 The recovered Norman owner ontology is recorded as an owner-authorized semantic layer, never as an action-derived equation. It fixes geometry-first emergence, persistent mode/history particle classes, the base-plus-two-excitations generation architecture, action-owned response mass with a universal dimensional origin, propagation-locked neutrino mass, CKM as relative response-basis orientation, strict bare/dressed separation, and the irreversible dependency direction `action -> theorem -> observable -> frozen comparison`.
 
 The executable guardrails reject semantic regression, including `z=p^2`, a compulsory strict gap, terminal recurrence, reopening the nonfermion threshold without contradiction, replacing the current owner by D5/Kato interval-sign work, symbol collisions, or importing frozen outputs into the current action.

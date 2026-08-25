@@ -54,6 +54,8 @@ SOURCES = (
     "artifacts/flagship_integration/BHSM_N12_FORWARD_ADJOINT_KKT_EXISTENCE_GATE.json",
     "artifacts/flagship_integration/BHSM_N12_SAME_ACTION_CONTINUATION_PRECONDITIONS.json",
     "artifacts/flagship_integration/BHSM_N12_DIRECT_KKT_EXISTENCE_PRECONDITIONS.json",
+    "artifacts/flagship_integration/BHSM_N12_GATE7_FORMATION_DECAY_CHRONOLOGY_SUPERSESSION.json",
+    "artifacts/flagship_integration/BHSM_N12_ASYMPTOTIC_CHILD_EXTERIOR_CONNECTION_PRECONDITIONS.json",
     "artifacts/flagship_integration/BHSM_N12_WEIGHT_SEVEN_TRANSVERSE_DESCRIPTOR.json",
     "artifacts/flagship_integration/BHSM_N12_WEIGHT_FIVE_CENTER_MODULATION.json",
     "artifacts/flagship_integration/BHSM_N12_WEIGHT_FIVE_MULTIPRECISION_NONPROMOTION.json",
@@ -122,6 +124,8 @@ def verify_current_lineage() -> None:
     kkt_existence = loaded["artifacts/flagship_integration/BHSM_N12_FORWARD_ADJOINT_KKT_EXISTENCE_GATE.json"]
     continuation = loaded["artifacts/flagship_integration/BHSM_N12_SAME_ACTION_CONTINUATION_PRECONDITIONS.json"]
     direct_existence = loaded["artifacts/flagship_integration/BHSM_N12_DIRECT_KKT_EXISTENCE_PRECONDITIONS.json"]
+    chronology = loaded["artifacts/flagship_integration/BHSM_N12_GATE7_FORMATION_DECAY_CHRONOLOGY_SUPERSESSION.json"]
+    asymptotic_connection = loaded["artifacts/flagship_integration/BHSM_N12_ASYMPTOTIC_CHILD_EXTERIOR_CONNECTION_PRECONDITIONS.json"]
     weight_seven_descriptor = loaded["artifacts/flagship_integration/BHSM_N12_WEIGHT_SEVEN_TRANSVERSE_DESCRIPTOR.json"]
     weight_five_modulation = loaded["artifacts/flagship_integration/BHSM_N12_WEIGHT_FIVE_CENTER_MODULATION.json"]
     weight_five_mp_audit = loaded["artifacts/flagship_integration/BHSM_N12_WEIGHT_FIVE_MULTIPRECISION_NONPROMOTION.json"]
@@ -230,6 +234,33 @@ def verify_current_lineage() -> None:
         ] is False
     ):
         raise RuntimeError("direct KKT existence precondition audit is not current")
+    if not (
+        chronology["claim_boundary"]["maximal_child_exterior_oracle"]
+        == "OPEN_CURRENT_OWNER"
+        and chronology["claim_boundary"]["finite_endpoint_KKT_root"]
+        == "OPTIONAL_SUFFICIENT_SUBROUTE_OPEN"
+        and chronology["adjudication"][
+            "post_event_finite_terminal_reachability_required"
+        ] is False
+        and chronology["adjudication"][
+            "infinite_Friedrichs_child_exterior_allowed"
+        ] is True
+    ):
+        raise RuntimeError("formation/decay chronology supersession is not current")
+    if not (
+        asymptotic_connection["claim_boundary"]["maximal_child_exterior_oracle"]
+        == "OPEN_CURRENT_OWNER"
+        and asymptotic_connection["adjudication"][
+            "analytic_branch_is_current_exterior_oracle"
+        ] is False
+        and asymptotic_connection["adjudication"][
+            "infinite_Friedrichs_route_invalid_in_principle"
+        ] is False
+        and asymptotic_connection["adjudication"][
+            "chord_03_has_finite_proof_obligation"
+        ] is False
+    ):
+        raise RuntimeError("asymptotic child-exterior connection audit is not current")
     if nonfermion["claim_boundary"]["nonfermion_critical_zero_graph_excluded"] is not True:
         raise RuntimeError("disk does not close the nonfermion threshold obstruction")
     if factorized["claim_boundary"]["factorized_N12_low_energy_source_measure"] != "OPEN":

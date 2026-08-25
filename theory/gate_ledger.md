@@ -1918,3 +1918,40 @@ Exact next object:
   `VALIDATED_BVP_OR_AN_INDEPENDENT_ACTION_OWNED_GLOBAL_COMPACTNESS_DEGREE_THEOREM`.
 - Gate 7: `ACTIVE`; Gate 8: `LOCKED`; chord 3: `UNAUTHORIZED`;
   `FULL_BHSM_COMPLETE=FALSE`.
+
+## N=12 asymptotic child-exterior connection audit
+
+- Complete analytic infinite branch: `DERIVED_LOCALLY`, with
+  `H4 -> sqrt(kappa0/42)>0`.
+- Candidate role: `POSSIBLE_INFINITE_FRIEDRICHS_CHILD_EXTERIOR`.
+- Weight-seven finite roots: `25_STABLE + 25_CENTER + 0_UNSTABLE`.
+- No unstable finite root as proof of an open nonlinear basin: `FALSE`.
+- Briot--Bouquet branch as a certified center-stable manifold: `FALSE`.
+- Reset-image intersection or forward entry into the asymptotic neighborhood:
+  `OPEN`.
+- Stored reset representative promoted to the analytic branch: `FALSE`.
+- Current narrowed dependency:
+  `RESET_TO_ASYMPTOTIC_CONNECTION_WITH_QUOTIENT_JETS_AND_DOMAIN_MARGINS_`
+  `OR_A_CERTIFIED_LATER_EVENT_OR_CANONICAL_EXIT`.
+- Chord 3 finite proof obligation: `FALSE`.
+- Gate 7: `ACTIVE`; Gate 8: `LOCKED`; `FULL_BHSM_COMPLETE=FALSE`.
+
+## N=12 Gate-7 formation/decay chronology supersession
+
+- Physical chronology:
+  `PRE_EVENT_FORMATION -> FINITE_ENCAPSULATION_EVENT -> AE2_RESET -> CHILD_DECAY_EVOLUTION`.
+- Finite encapsulation transferred into a requirement that the post-event
+  child reach a second finite terminal: `FALSE`.
+- Post-event maximal-child endpoint alternatives:
+  `LATER_RETAINED_EVENT`, `FINITE_CANONICAL_EXIT_WITH_FRIEDRICHS`, or
+  `INFINITE_EXCLUDED_END_WITH_FRIEDRICHS`.
+- Finite-endpoint forward--adjoint KKT root:
+  `VALID_SUFFICIENT_SUBROUTE_NOT_NATIVE_NECESSITY`.
+- Same-action continuation and direct heat-coercivity audits:
+  `PRESERVED_WITHIN_FINITE_ENDPOINT_SCOPE`.
+- Current Gate-7 owner:
+  `EVENT_GENERATED_MAXIMAL_CHILD_CALDERON_WEYL_FAMILY_PLUS_PHYSICAL_`
+  `HEAT_MINUS_ZETA_QUOTIENT_COVECTOR_ROOT`.
+- Universal or post-event terminal reachability: `NOT_REQUIRED`.
+- Gate 7: `ACTIVE`; Gate 8: `LOCKED`; chord 3: `UNAUTHORIZED`;
+  `FULL_BHSM_COMPLETE=FALSE`.
