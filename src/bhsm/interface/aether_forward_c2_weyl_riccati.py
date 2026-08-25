@@ -47,6 +47,7 @@ def finite_core_weyl_and_coefficient_cotangent(
     spectral_parameter: float,
     chirality: int = 1,
     decimal_precision: int = 80,
+    terminal_load: float | None = None,
 ) -> dict[str, Any]:
     """Return the birth Weyl scalar and exact reverse coefficient cotangent.
 
@@ -65,11 +66,13 @@ def finite_core_weyl_and_coefficient_cotangent(
     value = float(unit_channel_value)
     z = float(spectral_parameter)
     sign = int(chirality)
+    load = None if terminal_load is None else float(terminal_load)
     if (
         x.ndim != 1 or h.ndim != 1 or x.size != h.size + 1 or h.size < 1
         or not np.all(np.isfinite(x)) or not np.all(np.isfinite(h))
         or np.any(h <= 0.0) or not math.isfinite(value) or value < 0.0
         or not math.isfinite(z) or z >= 0.0
+        or (load is not None and (not math.isfinite(load) or load < 0.0))
     ):
         raise ValueError("finite coefficients, positive durations, and real z<0 required")
     if kind not in {"scalar", "product_Dirac"}:
@@ -86,7 +89,9 @@ def finite_core_weyl_and_coefficient_cotangent(
         d_x_mp: list[mp.mpf] = [mp.mpf(0)] * count
         d_h_mp: list[mp.mpf] = [mp.mpf(0)] * count
         d_terminal_mp: list[mp.mpf] = [mp.mpf(0)] * count
-        terminal: mp.mpf | None = None
+        terminal: mp.mpf | None = (
+            None if load is None else mp.mpf(str(load))
+        )
         for index in range(count - 1, -1, -1):
             xi = mp.mpf(str(float(x_mid[index])))
             hi = mp.mpf(str(float(h[index])))
@@ -136,6 +141,9 @@ def finite_core_weyl_and_coefficient_cotangent(
             ),
             n=int(decimal_precision),
         )
+        terminal_load_sensitivity_decimal = (
+            None if load is None else mp.nstr(adjoint, n=int(decimal_precision))
+        )
         starts = np.asarray([float(item) for item in starts_mp])
         gradient_x_mid = np.asarray([float(item) for item in gradient_x_mid_mp])
         gradient_duration = np.asarray([float(item) for item in gradient_duration_mp])
@@ -154,7 +162,9 @@ def finite_core_weyl_and_coefficient_cotangent(
         "D_proper_duration_Weyl": gradient_duration,
         "D_log_R4_uniform_shift_decimal": uniform_log_radius_decimal,
         "D_duration_weighted_uniform_scale_decimal": duration_weighted_decimal,
-        "terminal_Dirichlet_form_core": True,
+        "terminal_Dirichlet_form_core": load is None,
+        "terminal_nonnegative_load": load,
+        "D_terminal_load_Weyl_decimal": terminal_load_sensitivity_decimal,
         "explicit_matrix_inverse_formed": False,
         "decimal_precision": int(decimal_precision),
     }
