@@ -190,6 +190,10 @@ def test_replacement_force_is_constraint_projected_without_reset_selection() -> 
         "G7_08_FORCE"
     ]["physical_meaning"]
     assert "c_psi<0<b_psi" in dag["G7_08_FORCE"]["physical_meaning"]
+    assert "T=0 reset/event incidence" in dag["G7_08_FORCE"]["physical_meaning"]
+    assert "positive-duration connecting BVP" in dag[
+        "G7_08_FORCE"
+    ]["physical_meaning"]
     assert (
         "artifacts/flagship_integration/"
         "BHSM_N12_LOCAL_RESET_TERMINAL_TRANSVERSALITY_AUDIT.json"
@@ -203,6 +207,11 @@ def test_replacement_force_is_constraint_projected_without_reset_selection() -> 
     assert (
         "artifacts/flagship_integration/"
         "BHSM_N12_FINITE_TERMINAL_ORIENTATION_CERTIFICATE.json"
+        in dag["G7_08_FORCE"]["provenance"]
+    )
+    assert (
+        "artifacts/flagship_integration/"
+        "BHSM_N12_FINITE_TERMINAL_FORWARD_COMPONENT_COMPATIBILITY.json"
         in dag["G7_08_FORCE"]["provenance"]
     )
     assert dag["G7_09_SADDLE"]["current_status"] == (
