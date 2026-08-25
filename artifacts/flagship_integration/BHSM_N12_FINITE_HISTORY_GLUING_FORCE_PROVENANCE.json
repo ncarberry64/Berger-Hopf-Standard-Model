@@ -1,0 +1,81 @@
+{
+  "FLAGSHIP_READY": false,
+  "FULL_BHSM_COMPLETE": false,
+  "adjudication": {
+    "fixing_C2_state_removes_M_C2_value_from_force": false,
+    "fixing_C2_state_sets_D_M_C2_to_zero": true,
+    "one_segment_M_C_suffices_for_zero_source_force": false,
+    "relative_determinant_localizes_formation_force_without_child_oracle": false,
+    "terminal_child_response_or_joint_operator_still_required": true
+  },
+  "artifact": "BHSM_N12_FINITE_HISTORY_GLUING_FORCE_PROVENANCE",
+  "claim_boundary": {
+    "FULL_BHSM_COMPLETE": false,
+    "Gate7": "ACTIVE_AE2_CHILD_RESPONSE_OR_JOINT_OPERATOR_OPEN",
+    "finite_history_gluing_identity": "DERIVED",
+    "formation_only_heat_force_localization": "INVALIDATED",
+    "frozen_predictions_changed": false,
+    "physical_Hessian": "OPEN_AFTER_SADDLE",
+    "same_action_saddle": "OPEN_AFTER_FORCE",
+    "zero_source_force_value": "OPEN"
+  },
+  "classification": "THE_EXACT_TWO_SIDED_BLOCK_DETERMINANT_FACTORS_INTO_FORMATION_DIRICHLET_CHILD_DIRICHLET_AND_AE2_SEAM_FACTORS;_EVEN_WHEN_A_FORMATION_VARIATION_FIXES_THE_TERMINAL_C2_STATE,_ITS_FORCE_CONTAINS_TRACE_OF_S_AE2_INVERSE_TIMES_D_M_FORMATION_AND_THEREFORE_STILL_DEPENDS_ON_THE_VALUE_OF_M_C2",
+  "exact_identities": {
+    "child_response": "M_c=G-E_DAGGER*F^-1*E",
+    "determinant": "det(P_joint)=det(A)*det(F)*det(S_AE2)",
+    "formation_only_variation": "D_logdet(P_joint)=D_logdet(A)+Tr(S_AE2^-1*D_M_f)",
+    "formation_response": "M_f=H-C_DAGGER*A^-1*C",
+    "resolvent_heat_consequence": "THE_SAME_SEAM_INVERSE_DEPENDENCE_OCCURS_POINTWISE_IN_THE_RESOLVENT_REPRESENTATION_OF_THE_HEAT_FORCE",
+    "seam": "S_AE2=M_f+U_R_DAGGER*M_c*U_R+W_phys"
+  },
+  "exact_next_dependency": "ASSEMBLE_THE_ACTION_OWNED_C2_CHILD_CALDERON_FAMILY_M_C2(z;xi)_AND_ITS_FIRST_TWO_COVARIANT_RESET_QUOTIENT_JETS,_OR_THE_EQUIVALENT_JOINT_TWO_SIDED_FINITE_HISTORY_OPERATOR;_THEN_USE_THE_CERTIFIED_BORDERED_REDUCTION_TO_FORM_P,D_xi_P_AND_EVALUATE_THE_ZERO_SOURCE_FORCE",
+  "formation_force_gap_between_child_witnesses": 0.023376623376623384,
+  "information_sufficiency_witnesses_not_candidate_endpoint_theories": [
+    {
+      "child_Calderon": 3.8,
+      "child_Dirichlet_factor": 4.999999999999999,
+      "determinant_direct": 69.99999999999996,
+      "determinant_glued": 69.99999999999999,
+      "determinant_residual": 2.842170943040401e-14,
+      "formation_Calderon": 2.5,
+      "formation_Dirichlet_factor": 2.0,
+      "formation_only_log_determinant_variation_direct": 0.1642857142857143,
+      "formation_only_log_determinant_variation_glued": 0.16428571428571428,
+      "seam": 7.0,
+      "variation_residual": 2.7755575615628914e-17
+    },
+    {
+      "child_Calderon": 7.8,
+      "child_Dirichlet_factor": 4.999999999999999,
+      "determinant_direct": 109.99999999999994,
+      "determinant_glued": 110.0,
+      "determinant_residual": 5.684341886080802e-14,
+      "formation_Calderon": 2.5,
+      "formation_Dirichlet_factor": 2.0,
+      "formation_only_log_determinant_variation_direct": 0.14090909090909093,
+      "formation_only_log_determinant_variation_glued": 0.1409090909090909,
+      "seam": 11.0,
+      "variation_residual": 2.7755575615628914e-17
+    }
+  ],
+  "inputs": {
+    "artifacts/flagship_integration/BHSM_N12_EVENT_NORMAL_TWO_SIDED_SEAM_CORRECTION.json": "D575E60A442C19CE0EE34EDBB8BBAC1D90A8895D46D6ACE16317BFBD2CBE894F",
+    "artifacts/flagship_integration/BHSM_N12_FINITE_ENDPOINT_ZERO_SOURCE_FORCE_FUNCTIONAL.json": "6BC1FC78190437347813117A63D252C96115B2B67619D893144526A5DDD4E931",
+    "artifacts/flagship_integration/BHSM_N12_FINITE_HISTORY_SPECTRAL_REALIZATION_PROVENANCE.json": "59F3F2360F79FC6A0583D267295F1D116EB2E2AC4F3695C8833C9672E2C4A896",
+    "artifacts/flagship_integration/BHSM_N12_HISTORICAL_RELATIVE_DETERMINANT_REUSE_AUDIT.json": "BDD598A57F7A4C37B1828C32F5B2430C8BA09D99D2126B7D9AAAD0BDF148E1AF",
+    "theory/n12_finite_history_gluing_force_provenance.md": "A48739A51904B6E08F65528F94DAEDDAF4ACE3A480C935CDC2D37DACC6C5AC40"
+  },
+  "status": "GLUING_IDENTITY_DERIVED_CHILD_RESPONSE_DOES_NOT_LOCALIZE_OUT",
+  "validation": {
+    "both_determinant_identities_close": true,
+    "both_variation_identities_close": true,
+    "fixed_formation_force_depends_on_child_response_value": true,
+    "heat_force_functional_scope_preserved": true,
+    "historical_relative_determinant_not_promoted": true,
+    "no_explicit_inverse_required_by_identity": true,
+    "no_recurrence_reset_semantics_periodic_endpoint_selector_cutoff_or_external_force_added": true,
+    "spectral_realization_dependency_consumed": true,
+    "two_sided_seam_formula_consumed": true
+  },
+  "validation_passed": true
+}
