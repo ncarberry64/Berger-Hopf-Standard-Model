@@ -14,6 +14,18 @@ multipliers. All quadrature, trigonometry, block accumulation, and bordered
 solving run inside one 70-digit context. No combined Euler--Dirac inverse is
 formed.
 
+An independent full 98-variable object-jet assembly now cross-checks the
+analytic map at 48 Gauss nodes with the entire action integration and solve
+inside an 80-digit context. Two binary64 leaks in the generic realization
+were removed: coefficient vectors were being allocated as float arrays, and
+the scalar subtraction in `a'=...-tan(chi)` passed through the legacy Jet's
+`float()` coercion. After correcting those numerical-realization defects,
+the generic and analytic matrices agree within `1.35e-79`, their sources
+within `1.69e-80`, and their `X5_q0` values within `1.64e-69`. The generic
+relative solve residual is `8.59e-81`. The earlier generic 48-node number is
+therefore superseded as float-cast contaminated; no action term or physical
+claim changed.
+
 The 64-, 80-, 96-, and 128-node rows agree below `1e-40`:
 
 `X5_q0=66.494327736840793193242388023117925357510087982407...`,

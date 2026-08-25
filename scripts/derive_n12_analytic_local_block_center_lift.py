@@ -17,6 +17,9 @@ sys.path.insert(0, str(ROOT / "src"))
 from bhsm.interface.analytic_weight_five_center_lift import (  # noqa: E402
     assemble_weight_five_lift,
 )
+from bhsm.interface.weight_seven_transverse_descriptor import (  # noqa: E402
+    weight_five_center_lift_system,
+)
 
 
 RESULT = ROOT / (
@@ -51,6 +54,75 @@ def _row(points: int) -> dict[str, object]:
         }
 
 
+def _generic_crosscheck(points: int = 48) -> dict[str, object]:
+    """Compare the full 98-variable jet with the analytic local blocks."""
+
+    with mp.workdps(80):
+        generic = weight_five_center_lift_system(
+            points=points, extended_precision=True
+        )
+        generic_matrix = mp.matrix(generic["matrix"].tolist())
+        generic_rhs = mp.matrix(generic["right_hand_side"].tolist())
+        generic_solution = mp.lu_solve(generic_matrix, generic_rhs)
+        analytic = assemble_weight_five_lift(
+            points=points, decimal_digits=80
+        )
+        matrix_difference = max(
+            abs(generic_matrix[row, column] - analytic["matrix"][row, column])
+            for row in range(generic_matrix.rows)
+            for column in range(generic_matrix.cols)
+        )
+        rhs_difference = max(
+            abs(generic_rhs[row] - analytic["right_hand_side"][row])
+            for row in range(generic_rhs.rows)
+        )
+        q0_difference = abs(
+            generic_solution[0] - analytic["q0_coefficient"]
+        )
+        rate_difference = abs(
+            -2 * analytic["expansion_rate"] * generic_solution[0]
+            - analytic["q0_rate_coefficient"]
+        )
+        generic_norm = mp.norm(generic_solution)
+        norm_difference = abs(generic_norm - analytic["solution_norm"])
+        residual = (
+            mp.norm(generic_matrix * generic_solution - generic_rhs)
+            / mp.norm(generic_rhs)
+        )
+        return {
+            "points": points,
+            "decimal_digits": 80,
+            "generic_q0_coefficient": mp.nstr(generic_solution[0], 70),
+            "analytic_q0_coefficient": mp.nstr(
+                analytic["q0_coefficient"], 70
+            ),
+            "q0_absolute_difference": mp.nstr(q0_difference, 35),
+            "generic_q0_rate_coefficient": mp.nstr(
+                -2 * analytic["expansion_rate"] * generic_solution[0], 70
+            ),
+            "analytic_q0_rate_coefficient": mp.nstr(
+                analytic["q0_rate_coefficient"], 70
+            ),
+            "rate_absolute_difference": mp.nstr(rate_difference, 35),
+            "generic_solution_norm": mp.nstr(generic_norm, 50),
+            "analytic_solution_norm": mp.nstr(
+                analytic["solution_norm"], 50
+            ),
+            "solution_norm_absolute_difference": mp.nstr(
+                norm_difference, 35
+            ),
+            "generic_relative_solve_residual": mp.nstr(residual, 35),
+            "matrix_maximum_absolute_difference": mp.nstr(
+                matrix_difference, 35
+            ),
+            "source_maximum_absolute_difference": mp.nstr(
+                rhs_difference, 35
+            ),
+            "generic_combined_Euler_Dirac_inverse_used": False,
+            "directed_interval_certified": False,
+        }
+
+
 def build_payload() -> dict[str, Any]:
     if not all(path.is_file() for path in INPUTS):
         raise FileNotFoundError("analytic lift inputs required")
@@ -58,6 +130,7 @@ def build_payload() -> dict[str, Any]:
     if not all(parent.get("validation_passed") is True for parent in parents):
         raise RuntimeError("validated analytic-lift lineage required")
     rows = [_row(points) for points in (32, 48, 64, 80, 96, 128)]
+    generic_crosscheck = _generic_crosscheck()
     with mp.workdps(70):
         q0 = [mp.mpf(row["q0_coefficient"]) for row in rows]
         rate = [mp.mpf(row["q0_rate_coefficient"]) for row in rows]
@@ -88,6 +161,22 @@ def build_payload() -> dict[str, Any]:
         "directed_rounding_interval_still_required_for_formal_promotion": True,
         "no_R_minus_2_stability_eigenvalue_or_full_remainder_promoted": True,
         "no_action_gate_scale_selector_or_physics_changed": True,
+        "generic_98_variable_matrix_agrees_below_1e_minus_60": (
+            mp.mpf(generic_crosscheck["matrix_maximum_absolute_difference"])
+            < mp.mpf("1e-60")
+        ),
+        "generic_98_variable_source_agrees_below_1e_minus_60": (
+            mp.mpf(generic_crosscheck["source_maximum_absolute_difference"])
+            < mp.mpf("1e-60")
+        ),
+        "generic_and_analytic_q0_agree_below_1e_minus_60": (
+            mp.mpf(generic_crosscheck["q0_absolute_difference"])
+            < mp.mpf("1e-60")
+        ),
+        "generic_98_variable_solve_residual_below_1e_minus_60": (
+            mp.mpf(generic_crosscheck["generic_relative_solve_residual"])
+            < mp.mpf("1e-60")
+        ),
     }
     return {
         "artifact": "BHSM_N12_ANALYTIC_LOCAL_BLOCK_CENTER_LIFT",
@@ -96,7 +185,9 @@ def build_payload() -> dict[str, Any]:
             "THE_WEIGHT_SEVEN_HESSIAN_IS_ASSEMBLED_FROM_ITS_EXACT_TEN_"
             "VARIABLE_LOCAL_BLOCK_AND_THE_WEIGHT_FIVE_FORCE_FROM_ITS_EXACT_"
             "EIGHT_VARIABLE_LOCAL_GRADIENT;_THE_64_80_96_128_POINT_70_DIGIT_"
-            "ROWS_AGREE_BELOW_1E-40_AND_GIVE_A_NEGATIVE_COMMON_SCALE_RATE_"
+            "ROWS_AGREE_BELOW_1E-40,_AND_AN_INDEPENDENT_80_DIGIT_98_VARIABLE_"
+            "JET_AGREES_WITH_THE_ANALYTIC_48_POINT_ASSEMBLY_BELOW_1E-60;_"
+            "THEY_GIVE_A_NEGATIVE_COMMON_SCALE_RATE_"
             "CORRECTION,_BUT_DIRECTED_ROUNDING_AND_THE_UNIFORM_NONLINEAR_"
             "REMAINDER_REMAIN_REQUIRED_FOR_FULL_THEOREM_PROMOTION"
         ),
@@ -114,6 +205,7 @@ def build_payload() -> dict[str, Any]:
             "ordinary_combined_Euler_Dirac_inverse_used": False,
         },
         "convergence_rows": rows,
+        "independent_generic_98_variable_crosscheck": generic_crosscheck,
         "converged_tail": {
             "q0_coefficient": rows[-1]["q0_coefficient"],
             "q0_rate_coefficient": rows[-1]["q0_rate_coefficient"],
@@ -124,6 +216,8 @@ def build_payload() -> dict[str, Any]:
         "adjudication": {
             "historical_generic_multiprecision_rows": "SUPERSEDED_PRECISION_SCOPE_CORRECTED",
             "analytic_local_block_value": "CONVERGED_REPRODUCIBLY_NOT_YET_DIRECTED_INTERVAL",
+            "independent_generic_98_variable_crosscheck": "PASSED_AT_80_DECIMAL_DIGITS",
+            "previous_generic_48_point_value": "SUPERSEDED_FLOAT_CAST_CONTAMINATION",
             "common_scale_rate_correction_observed_sign": "NEGATIVE",
             "sign_promoted_as_rigorous_action_theorem": False,
             "full_H4_to_positive_limit_proved": False,

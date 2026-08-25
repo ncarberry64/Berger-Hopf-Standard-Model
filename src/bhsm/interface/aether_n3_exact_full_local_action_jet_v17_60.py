@@ -288,6 +288,7 @@ def exact_weight_seven_action_jet_at_state(
         kappa0 = 15.0 * 5.0 ** (1.0 / 3.0) / 4.0
     radius = qj[0].exp() * radius0
     leading = Jet.constant(0.0, total)
+    coefficient_dtype = object if extended_precision else float
     for index, coordinate in enumerate(chi):
         window = _sin(2.0 * coordinate) ** 2
         window_prime = 2.0 * _sin(4.0 * coordinate)
@@ -309,12 +310,14 @@ def exact_weight_seven_action_jet_at_state(
         A = radius * (u + b).exp() * _cos(coordinate)
         B = radius * (u - b).exp() * _sin(coordinate)
         cp = up + wp
-        ap = up + bp_shape - _tan(coordinate)
+        # Jet.__sub__ historically coerces a scalar through float().  Use
+        # addition here so the extended-precision tangent remains an mpf.
+        ap = up + bp_shape + (-_tan(coordinate))
         bp = up - bp_shape + 1.0 / _tan(coordinate)
         volume = C * A**3 * B**3
-        lc_coeff = np.zeros(qdim)
-        la_coeff = np.zeros(qdim)
-        lb_coeff = np.zeros(qdim)
+        lc_coeff = np.zeros(qdim, dtype=coefficient_dtype)
+        la_coeff = np.zeros(qdim, dtype=coefficient_dtype)
+        lb_coeff = np.zeros(qdim, dtype=coefficient_dtype)
         lc_coeff[0] = la_coeff[0] = lb_coeff[0] = 1.0
         lc_coeff[1:1 + order] = cos_k[:, index]
         la_coeff[1:1 + order] = cos_k[:, index]
@@ -322,13 +325,13 @@ def exact_weight_seven_action_jet_at_state(
         lc_coeff[1 + order:1 + 2 * order] = window * cos_j[:, index]
         la_coeff[1 + 2 * order:1 + 3 * order] = window * cos_j[:, index]
         lb_coeff[1 + 2 * order:1 + 3 * order] = -window * cos_j[:, index]
-        lapse_coeff = np.zeros(mdim)
+        lapse_coeff = np.zeros(mdim, dtype=coefficient_dtype)
         lapse_coeff[:order] = cos_k[:, index]
-        shift_coeff = np.zeros(mdim)
+        shift_coeff = np.zeros(mdim, dtype=coefficient_dtype)
         shift_coeff[order:2 * order] = (
             _sin(4.0 * coordinate) * cos_j[:, index]
         )
-        shift_prime_coeff = np.zeros(mdim)
+        shift_prime_coeff = np.zeros(mdim, dtype=coefficient_dtype)
         shift_prime_coeff[order:2 * order] = (
             4.0 * _cos(4.0 * coordinate) * cos_j[:, index]
             + _sin(4.0 * coordinate)
@@ -415,6 +418,7 @@ def exact_weight_five_action_jet_at_state(
         radius0 = RADIUS0
     radius = qj[0].exp() * radius0
     weight_five = Jet.constant(0.0, total)
+    coefficient_dtype = object if extended_precision else float
     for index, coordinate in enumerate(chi):
         window = _sin(2.0 * coordinate) ** 2
         window_prime = 2.0 * _sin(4.0 * coordinate)
@@ -435,13 +439,14 @@ def exact_weight_five_action_jet_at_state(
         C = radius * (u + w).exp()
         A = radius * (u + b).exp() * _cos(coordinate)
         B = radius * (u - b).exp() * _sin(coordinate)
-        ap = up + bp_shape - _tan(coordinate)
+        # Preserve the mpf tangent in the extended-precision realization.
+        ap = up + bp_shape + (-_tan(coordinate))
         bp = up - bp_shape + 1.0 / _tan(coordinate)
         volume = C * A**3 * B**3
         spatial_volume = A**3 * B**3
-        lapse_coeff = np.zeros(mdim)
+        lapse_coeff = np.zeros(mdim, dtype=coefficient_dtype)
         lapse_coeff[:order] = cos_k[:, index]
-        lapse_prime_coeff = np.zeros(mdim)
+        lapse_prime_coeff = np.zeros(mdim, dtype=coefficient_dtype)
         lapse_prime_coeff[:order] = -4.0 * ks * sin_k[:, index]
         log_n = _linear(mj, lapse_coeff)
         n_prime = _linear(mj, lapse_prime_coeff)
