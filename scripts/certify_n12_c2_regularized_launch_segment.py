@@ -304,9 +304,16 @@ def build_payload() -> dict[str, Any]:
     )
 
     path_fraction = 0.25
-    lambda_segment = _down(
+    path_limited_lambda = _down(
         path_fraction * dynamic_margin / regularized_speed_upper
     )
+    Jacobi_exponent_cap = 0.5
+    Jacobi_limited_lambda = _down(
+        Jacobi_exponent_cap / regularized_jacobi_upper
+    )
+    lambda_segment = _down(min(
+        path_limited_lambda, Jacobi_limited_lambda
+    ))
     u_segment = _down(lambda_segment**2)
     coordinate_time_lower = _down(u_segment / (2.0 * denominator_upper))
     coordinate_time_upper = _up(u_segment / (2.0 * denominator_lower))
@@ -351,6 +358,10 @@ def build_payload() -> dict[str, Any]:
             regularized_speed_upper * lambda_segment
             < dynamic_margin
         ),
+        "first_Jacobi_growth_uses_derived_exponent_cap": (
+            regularized_jacobi_upper * lambda_segment
+            <= Jacobi_exponent_cap
+        ),
         "boundary_lapse_and_radius_rate_remain_positive": (
             lapse_lower > 0.0
             and coefficient_ball["root_D_tau_log_R4_interval"][0] > 0.0
@@ -392,6 +403,9 @@ def build_payload() -> dict[str, Any]:
             "derived_root_relative_tube_radius": dynamic_margin,
             "Delta_loss_slope_upper": denominator_loss_slope,
             "path_fraction_used": path_fraction,
+            "Jacobi_exponent_cap": Jacobi_exponent_cap,
+            "path_limited_lambda_upper": path_limited_lambda,
+            "Jacobi_limited_lambda_upper": Jacobi_limited_lambda,
             "selected_eigenline_gap_lower": hard_gap_lower,
             "lambda_Lipschitz_upper": lambda_lipschitz,
             "selected_line_Lipschitz_upper": line_lipschitz,
@@ -403,6 +417,7 @@ def build_payload() -> dict[str, Any]:
             "hard_rate_action_upper": hard_rate_action_upper,
             "R_upper": remainder_upper,
             "Delta_interval": [denominator_lower, denominator_upper],
+            "Delta_action_derivative_upper": denominator_lipschitz,
             "regularized_state_speed_upper": regularized_speed_upper,
             "regularized_first_Jacobi_generator_upper": regularized_jacobi_upper,
             "first_Jacobi_growth_upper": jacobi_growth_upper,
@@ -418,6 +433,9 @@ def build_payload() -> dict[str, Any]:
             ),
             "D_tau_log_R4_interval_on_launch_ball": coefficient_ball[
                 "root_D_tau_log_R4_interval"
+            ],
+            "log_R4_interval_on_launch_ball": coefficient_ball[
+                "root_log_R4_interval"
             ],
             "lapse_interval_on_launch_ball": [lapse_lower, lapse_upper],
             "future_endpoint_selected": False,

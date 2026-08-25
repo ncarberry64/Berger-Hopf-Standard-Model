@@ -31,22 +31,26 @@
       0.08877816766710656,
       0.0887781676775368
     ],
-    "action_path_use_upper": 1.1971322972290128e-15,
+    "action_path_use_upper": 2.171616734727893e-18,
     "coordinate_time_interval": [
-      5.060138699124535e-38,
-      1.6367502809091268e-37
+      1.66511596602697e-43,
+      5.3859769211710325e-43
     ],
     "future_endpoint_selected": false,
     "lapse_interval_on_launch_ball": [
       0.7006542298205037,
       0.7006542298209328
     ],
-    "physical_u_end_lower": 1.3791779980620297e-50,
-    "proper_time_interval": [
-      3.5454075826654853e-38,
-      1.1467960075942595e-37
+    "log_R4_interval_on_launch_ball": [
+      -0.005096247374246046,
+      -0.005096247372154149
     ],
-    "signed_lambda_end_lower": 1.1743840931313519e-25
+    "physical_u_end_lower": 4.538395963263853e-56,
+    "proper_time_interval": [
+      1.1666705446217833e-43,
+      3.7737075119137805e-43
+    ],
+    "signed_lambda_end_lower": 2.1303511362490675e-28
   },
   "inputs": {
     "artifacts/flagship_integration/BHSM_N12_C2_BIRTH_COEFFICIENT_QUOTIENT_JET.json": "A6595ACAD2A9865F31EE69F6DA7C067F8C0C00886B5D8A57A915D3537FF4ED7D",
@@ -57,15 +61,18 @@
     "artifacts/flagship_integration/BHSM_N12_FINITE_TERMINAL_RADII_CERTIFICATE.json": "83A17916069B72895CCE651263F61664F3EC77E63BE68F2292D15E084D24D217",
     "artifacts/flagship_integration/BHSM_N12_FINITE_TERMINAL_RESET_STRATUM_CANDIDATE.npz": "303BEBE80E6033D398278935C9AD01CD1A8C72EDEE208D52C0005A252119D0CD",
     "artifacts/flagship_integration/BHSM_N12_FINITE_TERMINAL_TWO_SIDED_FORWARD_INTERFACE.json": "0BA9D5C8FDF495CBF0565B5F1703907EDB9F4450C28D0557C0AEC9B79A5CF8F7",
-    "theory/n12_c2_regularized_launch_segment.md": "70EBB006753CC7CFACB63120806737656694003CBED393BA7CF0D566D72C26C4"
+    "theory/n12_c2_regularized_launch_segment.md": "05119D9CCDB9AC268C80E2E83624D04C7AA15ACA0F475F53E8FA59377B022A06"
   },
   "launch_ball": {
+    "Delta_action_derivative_upper": 9700.359165857155,
     "Delta_interval": [
       4.213159497470465e-14,
       1.3627867534171803e-13
     ],
     "Delta_loss_slope_upper": 8.798436872377522,
     "Delta_positivity_radius_lower": 9.57705837878981e-15,
+    "Jacobi_exponent_cap": 0.5,
+    "Jacobi_limited_lambda_upper": 2.130351136462103e-28,
     "R_upper": 1426019.832960968,
     "action_radius": 1e-12,
     "available_dynamic_margin_lower": 3.8687086727518336e-13,
@@ -81,11 +88,12 @@
     ],
     "derived_root_relative_tube_radius": 4.788529188916051e-15,
     "exact_root_distance_upper": 6.131291326861295e-13,
-    "first_Jacobi_growth_upper": 5.073101853679135e+119,
+    "first_Jacobi_growth_upper": 1.6487212707001282,
     "hard_rate_action_upper": 231282032291.3728,
     "lambda_Lipschitz_upper": 6.165718186353711e-06,
     "lambda_upper": 2.952472150893776e-20,
     "path_fraction_used": 0.25,
+    "path_limited_lambda_upper": 1.1743840931313519e-25,
     "regularized_first_Jacobi_generator_upper": 2.347030925523176e+27,
     "regularized_state_speed_upper": 10193703270.599419,
     "selected_eigenline_gap_lower": 2.593710753465858e-07,
@@ -106,6 +114,7 @@
     "explicit_coordinate_and_proper_durations_are_positive": true,
     "explicit_physical_u_segment_is_nonzero": true,
     "explicit_signed_lambda_segment_is_nonzero": true,
+    "first_Jacobi_growth_uses_derived_exponent_cap": true,
     "first_regularized_Jacobi_generator_is_bounded": true,
     "launch_path_uses_strict_fraction_of_available_action_margin": true,
     "no_endpoint_selector_recurrence_scale_action_term_gate_or_chord_added": true,

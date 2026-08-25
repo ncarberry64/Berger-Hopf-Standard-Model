@@ -27,7 +27,10 @@ the selected line, hard inverse, and eigenvalue derivatives.  The
 root-relative tube radius is derived from the inequality keeping `Delta` at
 least half of its certified birth product; it is not an imported validation
 cutoff.  A strict fraction of that tube then gives an explicit nonzero signed
-`s` interval, hence positive `u`, coordinate-time, and proper-time intervals.
+`s` interval.  The interval is shortened further, when necessary, by the
+derived first-Jacobi generator so its Gronwall exponent is at most one half.
+This gives positive `u`, coordinate-time, and proper-time intervals together
+with a useful finite quotient-Jacobi enclosure.
 The quotient-rule bound for the regularized vector field supplies the first
 Jacobi generator and its exponential growth enclosure.
 
