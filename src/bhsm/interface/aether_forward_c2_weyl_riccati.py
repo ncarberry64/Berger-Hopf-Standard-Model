@@ -48,6 +48,7 @@ def finite_core_weyl_and_coefficient_cotangent(
     chirality: int = 1,
     decimal_precision: int = 80,
     terminal_load: float | str | mp.mpf | None = None,
+    return_decimal_cotangent: bool = False,
 ) -> dict[str, Any]:
     """Return the birth Weyl scalar and exact reverse coefficient cotangent.
 
@@ -151,13 +152,21 @@ def finite_core_weyl_and_coefficient_cotangent(
         terminal_load_sensitivity_decimal = (
             None if load_text is None else mp.nstr(adjoint, n=int(decimal_precision))
         )
+        gradient_x_mid_decimal = (
+            [mp.nstr(item, n=int(decimal_precision)) for item in gradient_x_mid_mp]
+            if return_decimal_cotangent else None
+        )
+        gradient_duration_decimal = (
+            [mp.nstr(item, n=int(decimal_precision)) for item in gradient_duration_mp]
+            if return_decimal_cotangent else None
+        )
         starts = np.asarray([float(item) for item in starts_mp])
         gradient_x_mid = np.asarray([float(item) for item in gradient_x_mid_mp])
         gradient_duration = np.asarray([float(item) for item in gradient_duration_mp])
     node_gradient = np.zeros(count + 1)
     node_gradient[:-1] += 0.5 * gradient_x_mid
     node_gradient[1:] += 0.5 * gradient_x_mid
-    return {
+    result = {
         "channel": kind,
         "chirality": sign if kind == "product_Dirac" else None,
         "spectral_parameter": z,
@@ -178,6 +187,10 @@ def finite_core_weyl_and_coefficient_cotangent(
         "explicit_matrix_inverse_formed": False,
         "decimal_precision": int(decimal_precision),
     }
+    if return_decimal_cotangent:
+        result["D_x_mid_Weyl_decimal"] = gradient_x_mid_decimal
+        result["D_proper_duration_Weyl_decimal"] = gradient_duration_decimal
+    return result
 
 
 __all__ = ["finite_core_weyl_and_coefficient_cotangent"]

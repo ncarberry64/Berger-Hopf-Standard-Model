@@ -4,10 +4,11 @@
   "adjudication": {
     "Gate7": "G7_08_OPEN",
     "Gate8": "LOCKED",
+    "finite_core_backward_operator_cotangent": "CLOSED",
     "finite_event_or_canonical_stop": "NOT_REACHED",
     "more_scalar_C2_boxes_are_the_owner": false,
     "new_C2_response_theory_required": false,
-    "pathwise_reset_quotient_adjoint": "ACTUALLY_MISSING",
+    "pathwise_reset_quotient_geometry_pullback": "ACTUALLY_MISSING",
     "projected_heat_minus_zeta_force_net_and_tail": "ACTUALLY_MISSING",
     "sharp_incoming_M_f_realization": "ACTUALLY_MISSING"
   },
@@ -20,8 +21,8 @@
     "same_action_saddle": "WAITING_ON_FORCE",
     "zero_source_force": "OPEN"
   },
-  "classification": "C2_FINITE_CORE_AND_NEGATIVE_AXIS_RESPONSE_SLOTS_ARE_NOW_VALID_MATCHES;_M_f_AND_THE_RESET_QUOTIENT_ADJOINT_REMAIN_MISSING_AS_REALIZED_DATA,_WHILE_INCIDENCE_FORCE_AND_CAUCHY_THEOREMS_ARE_VALID_CONDITIONAL_CONSUMERS",
-  "exact_next_dependency": "INSTANTIATE_THE_ACTION_OWNED_INCOMING_M_f_NEGATIVE_AXIS_REALIZATION_AND_THE_NONCOMPACT_RESET_QUOTIENT_BACKWARD_ADJOINT_ON_THE_MAXIMAL_C2_COEFFICIENT_FAMILY,_THEN_CONTRACT_THE_ALREADY_DERIVED_SOURCE_AND_FORCE_FUNCTIONALS_AND_TEST_THE_PROJECTED_CAUCHY_TAIL",
+  "classification": "C2_FINITE_CORE_NEGATIVE_AXIS_RESPONSE_AND_BACKWARD_OPERATOR_COTANGENT_SLOTS_ARE_VALID_MATCHES;_M_f_AND_THE_RESET_GEOMETRY_PULLBACK_REMAIN_MISSING_AS_REALIZED_DATA,_WHILE_INCIDENCE_FORCE_AND_CAUCHY_THEOREMS_ARE_VALID_CONDITIONAL_CONSUMERS",
+  "exact_next_dependency": "INSTANTIATE_THE_ACTION_OWNED_INCOMING_M_f_NEGATIVE_AXIS_REALIZATION_AND_CHAIN_THE_NOW_CLOSED_BACKWARD_OPERATOR_COTANGENT_THROUGH_THE_NONCOMPACT_RESET_QUOTIENT_GEOMETRY_JACOBIAN,_THEN_CONTRACT_THE_ALREADY_DERIVED_SOURCE_AND_FORCE_FUNCTIONALS_AND_TEST_THE_PROJECTED_CAUCHY_TAIL",
   "forward_event_diagram": "C1 --M_f--> E1 --(U_R,W_phys)--> C2 --M_C2--> MAXIMAL_ENDPOINT",
   "hindsight": {
     "classification": "PROOF_CHART_LIMIT_REMOVED;_OPERATOR_DATA_GAP_REMAINS",
@@ -29,8 +30,9 @@
   },
   "inputs": {
     "artifacts/flagship_integration/BHSM_N12_AE2_NEGATIVE_AXIS_SEAM_FAMILY.json": "F2B489A187E84DF6614C07BEF199F45D8E291A685448F52A56262EC9D6AA1623",
+    "artifacts/flagship_integration/BHSM_N12_C2_1064_TO_1222_NESTED_WEYL_INCREMENT.json": "7315B1E019CF46D0FDDD1A185EBF2802326C0035B8EB6421A29DF43581CE816C",
     "artifacts/flagship_integration/BHSM_N12_C2_1222_SEGMENT_FINITE_CORE_DESCRIPTOR.json": "0CDC9B9EF09AFA70AA7F5E225F6D49A4FCD27CADAD5CDFA4A062FBE04B960445",
-    "artifacts/flagship_integration/BHSM_N12_C2_1222_SEGMENT_NEGATIVE_AXIS_WEYL_FAMILY.json": "8883C012634DCBA971524A95DF60C4C1537B1A6A33B1DE60E0623731AED2D29B",
+    "artifacts/flagship_integration/BHSM_N12_C2_1222_SEGMENT_NEGATIVE_AXIS_WEYL_FAMILY.json": "EFB92817AD7E4FC2793B0AB879AA69C0B9AE697FD1B55F7418798A7011BCA59E",
     "artifacts/flagship_integration/BHSM_N12_C2_BIRTH_COEFFICIENT_QUOTIENT_JET.json": "A6595ACAD2A9865F31EE69F6DA7C067F8C0C00886B5D8A57A915D3537FF4ED7D",
     "artifacts/flagship_integration/BHSM_N12_C2_PROJECTED_ADJOINT_CAUCHY_CRITERION.json": "473465E4A2369638204FE869E291997A82B958979B4DD060767C7BD12808EA65",
     "artifacts/flagship_integration/BHSM_N12_COMPACT_FINITE_HISTORY_OPERATOR.json": "E597DDB6EBE292643F33A0AC8EDCEC617F5FC963B526BCF9D40BD48EC678DD41",
@@ -39,7 +41,7 @@
     "artifacts/flagship_integration/BHSM_N12_FORWARD_COMMON_SOURCE_INCIDENCE.json": "943359A4649960D7D2293B396D5C3B661B6D6F2C8D36A68FC6E36895141CEF33",
     "artifacts/flagship_integration/BHSM_N12_GATE7_C2_DIAGRAM_SLOT_MATCHING_AUDIT.json": "6B43CD9C225735E4DB4B73D67A43FF2BD8B8B4CFA2A7290397B8C8E076B63FA8",
     "artifacts/flagship_integration/BHSM_N12_MAXIMAL_FRIEDRICHS_WEYL_EXHAUSTION.json": "ADD797EAE0D9DB94D1BA0C58687AF114598331662B92B13579408361D95D9E5B",
-    "theory/n12_gate7_1222_core_diagram_matching_audit.md": "F103154DFBBDC5DFD84C2E0122EB9AEC0CDEB22C13B583FB4B40271DC22D7A3D"
+    "theory/n12_gate7_1222_core_diagram_matching_audit.md": "84DB3B2DC5543A4F473E735EF4C9A1FFE88560BF3A3DDC876AE415840CB5AFE8"
   },
   "matching_audit": [
     {
@@ -65,6 +67,14 @@
       "provenance_check": "VALID_MONOTONE_MOSCO_FORM_THEOREM",
       "required_type": "UNIQUE_ACTION_OWNED_MAXIMAL_FRIEDRICHS_CORE_EXHAUSTION_LIMIT",
       "verdict": "VALID_MATCH_ABSTRACT_VALUE_NUMERIC_LIMIT_OPEN"
+    },
+    {
+      "candidate": "BHSM_N12_C2_1064_TO_1222_NESTED_WEYL_INCREMENT",
+      "diagram_slot": "C2_FINITE_CORE_BACKWARD_OPERATOR_COTANGENT",
+      "dimension_domain_check": "VALID_1064_PREFIX_PLUS_158_SEGMENT_TAIL_FOR_EVERY_REAL_z_NEGATIVE",
+      "provenance_check": "VALID_SAME_ACTION_MOBIUS_CHAIN_RULE_WITH_ARBITRARY_PRECISION_LOAD",
+      "required_type": "INVERSE_FREE_ADJOINT_SEMIGROUP_ACROSS_NESTED_FORM_CORES",
+      "verdict": "VALID_MATCH_OPERATOR_COTANGENT_GEOMETRY_PULLBACK_STILL_OPEN"
     },
     {
       "candidate": "BIRTH_RANK_TWO_CAUCHY_JET_PLUS_FORCE_ADJOINT_IDENTITY",
@@ -125,12 +135,13 @@
     ],
     "OPEN": [
       "sharp incoming M_f realization",
-      "pathwise reset quotient adjoint",
+      "pathwise reset quotient geometry pullback",
       "actual projected force net and Cauchy tail"
     ],
     "VALIDATED": [
       "C2 1222-core coefficient slot",
       "C2 complete negative-axis finite-core response",
+      "finite-core backward operator cotangent semigroup",
       "maximal abstract Weyl value",
       "source and force consumer formulas"
     ]
@@ -144,6 +155,7 @@
     "birth_jet_is_not_promoted_to_pathwise_jet": true,
     "broad_seam_intervals_do_not_decide_force": true,
     "compact_incoming_operator_is_only_executable_until_path_supplied": true,
+    "finite_core_backward_cotangent_semigroup_is_matched": true,
     "force_functional_is_derived_but_value_open": true,
     "maximal_value_exists_abstractly": true,
     "no_probe_interval_prefix_or_proof_edge_promoted_to_force_or_endpoint": true,

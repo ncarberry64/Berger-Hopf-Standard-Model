@@ -17,6 +17,9 @@ def test_nested_weyl_increment_certificate() -> None:
     )
     assert payload["core_split"]["added_segment_count"] == 158
     assert Decimal(payload["maximum_composition_absolute_residual_decimal"]) <= Decimal("1e-70")
+    assert Decimal(
+        payload["maximum_cotangent_semigroup_relative_residual_decimal"]
+    ) <= Decimal("1e-25")
     assert payload["adjudication"]["physical_projected_heat_minus_zeta_force_tail"] == "OPEN"
     assert payload["hindsight"]["obstruction_physical"] is False
     for row in payload["sampled_crosschecks"]:
@@ -26,3 +29,6 @@ def test_nested_weyl_increment_certificate() -> None:
             old = Decimal(channel["old_1064_Dirichlet_Weyl_decimal"])
             assert zero < full < old
             assert Decimal(channel["composition_absolute_residual_decimal"]) <= Decimal("1e-70")
+            assert Decimal(
+                channel["cotangent_semigroup_maximum_relative_residual_decimal"]
+            ) <= Decimal("1e-25")

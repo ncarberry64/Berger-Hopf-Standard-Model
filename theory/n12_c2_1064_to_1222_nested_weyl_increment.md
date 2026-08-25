@@ -16,6 +16,17 @@ associativity gives
 
 `M_1222^D(z)=Phi_0_1064(z;L_1064_to_1222(z))`.
 
+Differentiating this identity gives the exact backward-cotangent split
+
+`D_prefix M_1222^D=D_prefix Phi_0_1064`,
+
+`D_tail M_1222^D=(D_L Phi_0_1064) D_tail L_1064_to_1222`.
+
+Thus the inverse-free operator adjoint composes across the stored core split
+without a forward column solve.  This closes the finite-core transfer
+cotangent algebra; it does not supply the still-missing action-owned map from
+reset-quotient directions to coefficient and duration histories.
+
 Positivity of every local impedance map and its strictly positive Möbius
 determinant gives the strict bracket
 
@@ -33,7 +44,10 @@ The nesting replay also exposes a numerical artifact in the earlier engine:
 an arbitrary-precision downstream load was converted to binary64 before
 composition.  The inverse-free interface now accepts a decimal load without
 that conversion, so split-core composition replays to the declared decimal
-precision.  No kinetic or Dirac block inverse is formed.
+precision.  The same arbitrary-precision replay is applied componentwise to
+the coefficient and duration cotangents; the stored crosschecks retain more
+than 25 relative decimal digits across the full probe range.  No kinetic or
+Dirac block inverse is formed.
 
 Neither the Dirichlet truncation increment nor its sample grid is the
 physical heat-minus-zeta force.  The far edge remains a form-core

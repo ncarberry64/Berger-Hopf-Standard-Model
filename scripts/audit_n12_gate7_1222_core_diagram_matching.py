@@ -14,6 +14,7 @@ RESULT = BASE / "BHSM_N12_GATE7_1222_CORE_DIAGRAM_MATCHING_AUDIT.json"
 OLD = BASE / "BHSM_N12_GATE7_C2_DIAGRAM_SLOT_MATCHING_AUDIT.json"
 CORE = BASE / "BHSM_N12_C2_1222_SEGMENT_FINITE_CORE_DESCRIPTOR.json"
 FAMILY = BASE / "BHSM_N12_C2_1222_SEGMENT_NEGATIVE_AXIS_WEYL_FAMILY.json"
+NESTED = BASE / "BHSM_N12_C2_1064_TO_1222_NESTED_WEYL_INCREMENT.json"
 MAXIMAL = BASE / "BHSM_N12_MAXIMAL_FRIEDRICHS_WEYL_EXHAUSTION.json"
 BIRTH = BASE / "BHSM_N12_C2_BIRTH_COEFFICIENT_QUOTIENT_JET.json"
 COMPACT = BASE / "BHSM_N12_COMPACT_FINITE_HISTORY_OPERATOR.json"
@@ -23,7 +24,7 @@ FORCE = BASE / "BHSM_N12_FINITE_ENDPOINT_ZERO_SOURCE_FORCE_FUNCTIONAL.json"
 ADJOINT = BASE / "BHSM_N12_FORCE_ADJOINT_PULLBACK.json"
 CAUCHY = BASE / "BHSM_N12_C2_PROJECTED_ADJOINT_CAUCHY_CRITERION.json"
 THEORY = ROOT / "theory" / "n12_gate7_1222_core_diagram_matching_audit.md"
-INPUTS = (OLD, CORE, FAMILY, MAXIMAL, BIRTH, COMPACT, SEAM, INCIDENCE, FORCE, ADJOINT, CAUCHY, THEORY)
+INPUTS = (OLD, CORE, FAMILY, NESTED, MAXIMAL, BIRTH, COMPACT, SEAM, INCIDENCE, FORCE, ADJOINT, CAUCHY, THEORY)
 
 
 def _sha256(path: Path) -> str:
@@ -41,11 +42,11 @@ def build_payload() -> dict[str, Any]:
     missing = [str(path) for path in INPUTS if not path.is_file()]
     if missing:
         raise FileNotFoundError("missing 1222 matching inputs: " + ", ".join(missing))
-    old, core, family, maximal, birth, compact, seam, incidence, force, adjoint, cauchy = (
+    old, core, family, nested, maximal, birth, compact, seam, incidence, force, adjoint, cauchy = (
         _load(path) for path in INPUTS[:-1]
     )
     if not all(record.get("validation_passed") is True for record in (
-        old, core, family, maximal, birth, compact, seam, incidence, force, adjoint, cauchy,
+        old, core, family, nested, maximal, birth, compact, seam, incidence, force, adjoint, cauchy,
     )):
         raise RuntimeError("validated diagram parents required")
 
@@ -73,6 +74,14 @@ def build_payload() -> dict[str, Any]:
             "dimension_domain_check": "VALID_AT_FIXED_CHANNEL_AND_GALERKIN_LEVEL",
             "provenance_check": "VALID_MONOTONE_MOSCO_FORM_THEOREM",
             "verdict": "VALID_MATCH_ABSTRACT_VALUE_NUMERIC_LIMIT_OPEN",
+        },
+        {
+            "diagram_slot": "C2_FINITE_CORE_BACKWARD_OPERATOR_COTANGENT",
+            "required_type": "INVERSE_FREE_ADJOINT_SEMIGROUP_ACROSS_NESTED_FORM_CORES",
+            "candidate": "BHSM_N12_C2_1064_TO_1222_NESTED_WEYL_INCREMENT",
+            "dimension_domain_check": "VALID_1064_PREFIX_PLUS_158_SEGMENT_TAIL_FOR_EVERY_REAL_z_NEGATIVE",
+            "provenance_check": "VALID_SAME_ACTION_MOBIUS_CHAIN_RULE_WITH_ARBITRARY_PRECISION_LOAD",
+            "verdict": "VALID_MATCH_OPERATOR_COTANGENT_GEOMETRY_PULLBACK_STILL_OPEN",
         },
         {
             "diagram_slot": "C2_RESET_QUOTIENT_FIRST_JET",
@@ -127,6 +136,10 @@ def build_payload() -> dict[str, Any]:
         "all_parents_validate": True,
         "1222_core_slot_is_now_matched": core["coefficient_path"]["segment_count"] == 1222,
         "C2_negative_axis_family_slot_is_now_matched": family["claim_boundary"]["finite_core_complete_negative_axis_family"].startswith("DERIVED"),
+        "finite_core_backward_cotangent_semigroup_is_matched": (
+            nested["adjudication"]["nested_form_core_inverse_free_value_and_backward_cotangent_composition"]
+            == "CLOSED"
+        ),
         "maximal_value_exists_abstractly": maximal["closed_here"]["Friedrichs_negative_z_Weyl_value_existence"] is True,
         "birth_jet_is_not_promoted_to_pathwise_jet": birth["diagram_feed"]["future_coefficient_path"] == "OPEN",
         "compact_incoming_operator_is_only_executable_until_path_supplied": compact["claim_boundary"]["actual_family_M_C_value"] == "OPEN_AFTER_COEFFICIENT_PATH",
@@ -143,26 +156,27 @@ def build_payload() -> dict[str, Any]:
     return {
         "artifact": "BHSM_N12_GATE7_1222_CORE_DIAGRAM_MATCHING_AUDIT",
         "status": "GATE7_1222_CORE_SLOTS_MATCHED_REALIZED_PARENT_PULLBACK_AND_PROJECTED_TAIL_OPEN" if passed else "GATE7_1222_CORE_MATCHING_NOT_VALIDATED",
-        "classification": "C2_FINITE_CORE_AND_NEGATIVE_AXIS_RESPONSE_SLOTS_ARE_NOW_VALID_MATCHES;_M_f_AND_THE_RESET_QUOTIENT_ADJOINT_REMAIN_MISSING_AS_REALIZED_DATA,_WHILE_INCIDENCE_FORCE_AND_CAUCHY_THEOREMS_ARE_VALID_CONDITIONAL_CONSUMERS",
+        "classification": "C2_FINITE_CORE_NEGATIVE_AXIS_RESPONSE_AND_BACKWARD_OPERATOR_COTANGENT_SLOTS_ARE_VALID_MATCHES;_M_f_AND_THE_RESET_GEOMETRY_PULLBACK_REMAIN_MISSING_AS_REALIZED_DATA,_WHILE_INCIDENCE_FORCE_AND_CAUCHY_THEOREMS_ARE_VALID_CONDITIONAL_CONSUMERS",
         "forward_event_diagram": "C1 --M_f--> E1 --(U_R,W_phys)--> C2 --M_C2--> MAXIMAL_ENDPOINT",
         "matching_audit": slots,
         "adjudication": {
             "new_C2_response_theory_required": False,
             "more_scalar_C2_boxes_are_the_owner": False,
             "sharp_incoming_M_f_realization": "ACTUALLY_MISSING",
-            "pathwise_reset_quotient_adjoint": "ACTUALLY_MISSING",
+            "finite_core_backward_operator_cotangent": "CLOSED",
+            "pathwise_reset_quotient_geometry_pullback": "ACTUALLY_MISSING",
             "projected_heat_minus_zeta_force_net_and_tail": "ACTUALLY_MISSING",
             "finite_event_or_canonical_stop": "NOT_REACHED",
             "Gate7": "G7_08_OPEN",
             "Gate8": "LOCKED",
         },
         "validated_invalidated_open": {
-            "VALIDATED": ["C2 1222-core coefficient slot", "C2 complete negative-axis finite-core response", "maximal abstract Weyl value", "source and force consumer formulas"],
+            "VALIDATED": ["C2 1222-core coefficient slot", "C2 complete negative-axis finite-core response", "finite-core backward operator cotangent semigroup", "maximal abstract Weyl value", "source and force consumer formulas"],
             "INVALIDATED": ["new C2 theory is required", "birth jet alone is the pathwise reset jet", "broad seam intervals or probes determine the force", "proof edge is an endpoint"],
-            "OPEN": ["sharp incoming M_f realization", "pathwise reset quotient adjoint", "actual projected force net and Cauchy tail"],
+            "OPEN": ["sharp incoming M_f realization", "pathwise reset quotient geometry pullback", "actual projected force net and Cauchy tail"],
         },
         "hindsight": {"classification": "PROOF_CHART_LIMIT_REMOVED;_OPERATOR_DATA_GAP_REMAINS", "obstruction_physical": False},
-        "exact_next_dependency": "INSTANTIATE_THE_ACTION_OWNED_INCOMING_M_f_NEGATIVE_AXIS_REALIZATION_AND_THE_NONCOMPACT_RESET_QUOTIENT_BACKWARD_ADJOINT_ON_THE_MAXIMAL_C2_COEFFICIENT_FAMILY,_THEN_CONTRACT_THE_ALREADY_DERIVED_SOURCE_AND_FORCE_FUNCTIONALS_AND_TEST_THE_PROJECTED_CAUCHY_TAIL",
+        "exact_next_dependency": "INSTANTIATE_THE_ACTION_OWNED_INCOMING_M_f_NEGATIVE_AXIS_REALIZATION_AND_CHAIN_THE_NOW_CLOSED_BACKWARD_OPERATOR_COTANGENT_THROUGH_THE_NONCOMPACT_RESET_QUOTIENT_GEOMETRY_JACOBIAN,_THEN_CONTRACT_THE_ALREADY_DERIVED_SOURCE_AND_FORCE_FUNCTIONALS_AND_TEST_THE_PROJECTED_CAUCHY_TAIL",
         "claim_boundary": {
             "Gate7": "G7_08_OPEN_REALIZED_PARENT_PULLBACK_AND_PROJECTED_TAIL",
             "Gate8": "LOCKED",

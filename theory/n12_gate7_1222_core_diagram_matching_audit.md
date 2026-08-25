@@ -11,8 +11,14 @@ maximal Friedrichs theorem supplies the unique abstract core-exhaustion limit.
 Thus neither a new C2 theory nor another scalar continuation reserve is
 missing.
 
-The remaining unmatched data are pathwise.  The reset radius Cauchy jet is a
-valid birth germ but is not the noncompact Jacobi/adjoint pullback through the
+The exact 1064/158 split additionally proves that this backward operator
+cotangent obeys the inverse-free adjoint semigroup rule.  The finite-core
+operator adjoint is therefore assembled; what remains missing is the
+action-owned reset-quotient geometry Jacobian that pulls this cotangent back
+through the realized maximal history.
+
+The remaining unmatched data are geometric and pathwise.  The reset radius
+Cauchy jet is a valid birth germ but is not the noncompact geometry pullback through the
 maximal coefficient family.  The compact incoming response supplies the
 correct `M_f` type, but no sharp action-owned negative-axis realization on the
 physical incoming history is stored.  The common pair/contact incidence and
@@ -23,4 +29,3 @@ Accordingly the next construction must instantiate the incoming response and
 the pathwise reset pullback, then form the projected finite-core force net and
 test its maximal Cauchy tail.  The 1,222-core edge remains an artificial
 Friedrichs exhaustion edge, not an event or canonical stop.
-
