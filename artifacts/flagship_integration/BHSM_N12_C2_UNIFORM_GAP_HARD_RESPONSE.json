@@ -1,0 +1,83 @@
+{
+  "FLAGSHIP_READY": false,
+  "FULL_BHSM_COMPLETE": false,
+  "adjudication": {
+    "Gate7": "OPEN_CONTINUATION",
+    "Gate8": "LOCKED",
+    "actual_event_or_canonical_stop": "NOT_REACHED",
+    "finite_s_correction": "CERTIFIED_ON_CURRENT_PHYSICAL_TUBE",
+    "hard_denominator_collapse": "REDUNDANT_SECOND_INVERTIBILITY_PROOF_NOT_A_PHYSICAL_STOP"
+  },
+  "artifact": "BHSM_N12_C2_UNIFORM_GAP_HARD_RESPONSE",
+  "exact_next_dependency": "REISSUE_THE_C2_FRESH_CENTER_CONTINUATION_WITH_THE_UNIFORM_GAP_HARD_RESPONSE_AND_COMPLETE_FIXED_s_OPERATOR_BOUND",
+  "finite_s_correction": {
+    "Delta_interval": [
+      8.886015433069137e-14,
+      8.95488653344652e-14
+    ],
+    "b_interval": [
+      0.00042856152363356424,
+      0.00042965457785793865
+    ],
+    "birth_limit_full_ball_operator_upper": 2.085666961798158e+19,
+    "c_interval": [
+      2.073451700221205e-10,
+      2.0842058317822888e-10
+    ],
+    "complete_fixed_s_operator_upper": 2.08567040940319e+19,
+    "correction_Jacobi_before_s_upper": 4.91554588077323e+34,
+    "correction_norm_upper": 5.9191293337171514e+23,
+    "covered_descriptor_horizon": 5.788228284267072e-22,
+    "covered_full_ball_growth_upper": 1.0121455013371734,
+    "descriptor_upper": 7.01325254165382e-22,
+    "matrix_center_total_radius": 1.5058677074539435e-11,
+    "physical_tube_radius": 1.2272129527135805e-11,
+    "s_times_correction_Jacobi_upper": 34473964645396.223
+  },
+  "hard_response": {
+    "center_hard_rate_raw_norm": 13530.855900913639,
+    "covariant_Gronwall_exponent_upper": 0.9998259880459752,
+    "covariant_Gronwall_factor_upper": 2.7178088563508838,
+    "hard_Jacobi_action_upper": 1.438575188657088e+17,
+    "hard_rate_action_upper": 1765672.9171586838,
+    "old_redundant_Neumann_denominator_lower": 0.00017400505954279222,
+    "old_redundant_inflation_factor": 5746.959328237665,
+    "structured_b_derivative_upper": 44534.00431179047,
+    "uniform_gap_lower": 2.5905223541066634e-07,
+    "uniform_inverse_upper": 3860225.3268138585
+  },
+  "hindsight": {
+    "classification": "REDUNDANT_INVERTIBILITY_PROOF",
+    "obstruction_physical": false,
+    "result": "VALIDATED"
+  },
+  "inputs": {
+    "artifacts/flagship_integration/BHSM_N12_C2_ADAPTIVE_CENTER_RECENTER.json": "11D421910F7DF4194E990FA7DFE553BB990A7C14655C8E74FFE1FADD9E9B5B34",
+    "artifacts/flagship_integration/BHSM_N12_C2_BIRTH_LIMIT_CONJUGATED_TANGENT_REMAINDER.json": "A00FE84A4DB6A8EAFA485237671A9489098A5DBB9DAA5693AA0684DAFD218699",
+    "artifacts/flagship_integration/BHSM_N12_C2_DESCRIPTOR_FIBER_CANCELLED_CONTINUATION.json": "E331F2AA300804CE65FEFEE24A1176D1B1BE81F1CA1CB9CF65E5D05F86CD20B9",
+    "artifacts/flagship_integration/BHSM_N12_C2_DESCRIPTOR_FIBER_CANCELLED_CONTINUATION.npz": "B7371AABB9A85F401A0E1929A40B37165C585FE7CF1D3126B919A55125E77F47",
+    "artifacts/flagship_integration/BHSM_N12_FINITE_TERMINAL_EVENT_EIGENLINE_BALL.json": "974DD80F2725F9FFA62A98110CA771BF367F7316F0AFEFE385D32D7652585463",
+    "theory/n12_c2_uniform_gap_hard_response.md": "A5354B5B13CDDEB0C5081AC47CDDEDBDC789C0209DD7AB29E34B64045377DC20"
+  },
+  "matching_audit": {
+    "diagram_slot": "C2_FINITE_s_HARD_RESPONSE",
+    "equivalence": "BORDERED_KKT_OR_ORTHOGONAL_SCHUR_COMPLEMENT",
+    "match": "VALID_MATCH",
+    "matched_BHSM_object": "CERTIFIED_ORDERED_EVENT_EIGENLINE_GAP_ON_THE_FULL_ACTION_BALL",
+    "required_type": "UNIFORM_INVERSE_OF_THE_SELECTED_LINE_COMPLEMENT_BLOCK"
+  },
+  "status": "C2_UNIFORM_GAP_HARD_RESPONSE_AND_FINITE_s_JACOBI_CERTIFIED",
+  "validation": {
+    "branch_24_replayed": true,
+    "c_b_and_Delta_stay_positive": true,
+    "complete_fixed_s_operator_and_growth_are_finite": true,
+    "finite_s_correction_jacobi_is_finite": true,
+    "no_selector_recurrence_scale_gate_or_chord_added": true,
+    "old_exhausted_denominator_is_positive_but_tiny": true,
+    "old_second_Neumann_denominator_is_not_used": true,
+    "uniform_hard_inverse_uses_line_theorem_once": true,
+    "uniform_hard_rate_and_jacobi_are_finite": true,
+    "uniform_line_gap_is_strict": true
+  },
+  "validation_passed": true
+}
