@@ -272,10 +272,18 @@ def build_payload() -> dict[str, Any]:
         "bounds": {
             "action_radius": RADIUS,
             "center_hard_rate_raw_norm": float(np.linalg.norm(hard_rate)),
+            "rhs_raw_derivative_center": rhs_derivative_raw_center,
+            "rhs_raw_second_derivative_upper": (
+                maximum_reduced_weight * rhs_second_action
+            ),
+            "hard_D3_center": hard_D3_center,
+            "coupling_center": coupling_center,
             "hard_rate_action_upper": hard_rate_action_upper,
             "rhs_raw_derivative_upper": rhs_derivative_upper,
             "hard_D3_upper": hard_D3_upper,
             "coupling_upper": coupling_upper,
+            "D4_full_hard_hard_upper": d4_xxcc,
+            "D4_full_selected_hard_upper": d4_xxpc,
             "hard_Jacobi_action_upper": hard_Jacobi_action,
             "structured_b_psi_Lipschitz_upper": b_lipschitz_structured,
             "hard_remainder_Lipschitz_upper": remainder_lipschitz,
