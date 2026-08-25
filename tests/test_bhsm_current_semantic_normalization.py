@@ -180,13 +180,16 @@ def test_replacement_force_is_constraint_projected_without_reset_selection() -> 
         "BHSM_N12_ASYMPTOTIC_NHIM_ANGULAR_FORCE_NO_GO.json"
         in dag["G7_08_FORCE"]["provenance"]
     )
-    assert "billions of certified radii" in dag["G7_08_FORCE"]["physical_meaning"]
+    assert "analytic full 57 by 196 reset Jacobian" in dag[
+        "G7_08_FORCE"
+    ]["physical_meaning"]
     assert "58-row child terminal-event candidate" in dag[
         "G7_08_FORCE"
     ]["physical_meaning"]
-    assert "directed-rounding root-ball certification" in dag[
+    assert "close a contractive terminal root ball" in dag[
         "G7_08_FORCE"
     ]["physical_meaning"]
+    assert "c_psi<0<b_psi" in dag["G7_08_FORCE"]["physical_meaning"]
     assert (
         "artifacts/flagship_integration/"
         "BHSM_N12_LOCAL_RESET_TERMINAL_TRANSVERSALITY_AUDIT.json"
@@ -195,6 +198,11 @@ def test_replacement_force_is_constraint_projected_without_reset_selection() -> 
     assert (
         "artifacts/flagship_integration/"
         "BHSM_N12_FINITE_TERMINAL_RESET_STRATUM_CANDIDATE.json"
+        in dag["G7_08_FORCE"]["provenance"]
+    )
+    assert (
+        "artifacts/flagship_integration/"
+        "BHSM_N12_FINITE_TERMINAL_ORIENTATION_CERTIFICATE.json"
         in dag["G7_08_FORCE"]["provenance"]
     )
     assert dag["G7_09_SADDLE"]["current_status"] == (

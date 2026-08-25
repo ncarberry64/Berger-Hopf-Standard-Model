@@ -13,8 +13,14 @@ import hashlib
 import json
 import os
 from pathlib import Path
+from concurrent.futures import ProcessPoolExecutor
+import sys
 
 import numpy as np
+
+
+ROOT = Path(__file__).resolve().parents[1]
+sys.path.insert(0, str(ROOT / "src"))
 
 from bhsm.interface.aether_cross_resolution_reconnaissance_v21_35 import (
     _canonical_pair_at_order,
@@ -33,6 +39,7 @@ OUTER_STEP = 1.0e-20
 FORWARD_STEP = float(os.environ.get(
     "BHSM_N12_MOMENTUM_HESSIAN_FORWARD_STEP", "1e-10"
 ))
+WORKERS = int(os.environ.get("BHSM_N12_MOMENTUM_HESSIAN_WORKERS", "1"))
 CHECKPOINT = Path(os.environ.get(
     "BHSM_N12_CHECKPOINT", ".tmp_direct_n12_corrected_branch_state.npz"
 ))
@@ -94,20 +101,41 @@ def _sector_hessian(
     center_jacobian = _momentum_jacobian(state, raw_directions, qdim)
     columns = normal.shape[1]
     result = np.empty((2, columns, columns))
-    for second in range(columns):
-        shifted = state + FORWARD_STEP * raw_directions[:, second]
-        shifted_jacobian = _momentum_jacobian(
-            shifted, raw_directions, qdim
-        )
-        result[:, :, second] = (
-            shifted_jacobian - center_jacobian
-        ) / FORWARD_STEP
+    arguments = [(
+        state,
+        raw_directions,
+        qdim,
+        center_jacobian,
+        second,
+    ) for second in range(columns)]
+    if WORKERS == 1:
+        derived = map(_sector_hessian_column, arguments)
+    else:
+        executor = ProcessPoolExecutor(max_workers=WORKERS)
+        derived = executor.map(_sector_hessian_column, arguments)
+    try:
+        for second, column in derived:
+            result[:, :, second] = column
+    finally:
+        if WORKERS != 1:
+            executor.shutdown()
     return result, center_jacobian
+
+
+def _sector_hessian_column(
+    argument: tuple[np.ndarray, np.ndarray, int, np.ndarray, int],
+) -> tuple[int, np.ndarray]:
+    state, raw_directions, qdim, center_jacobian, second = argument
+    shifted = state + FORWARD_STEP * raw_directions[:, second]
+    shifted_jacobian = _momentum_jacobian(shifted, raw_directions, qdim)
+    return second, (shifted_jacobian - center_jacobian) / FORWARD_STEP
 
 
 def main() -> None:
     if FORWARD_STEP <= 0.0 or OUTER_STEP <= 0.0:
         raise ValueError("positive differentiation steps required")
+    if WORKERS <= 0:
+        raise ValueError("positive worker count required")
     size = dimensions(ORDER)
     qdim = size["coordinates"]
     state_dimension = 2 * qdim + size["multipliers"]
@@ -147,6 +175,7 @@ def main() -> None:
         "order": ORDER,
         "points": POINTS,
         "forward_action_coordinate_step": FORWARD_STEP,
+        "parallel_workers": WORKERS,
         "outer_complex_step": OUTER_STEP,
         "checkpoint": str(CHECKPOINT),
         "checkpoint_SHA256": _sha256(CHECKPOINT),

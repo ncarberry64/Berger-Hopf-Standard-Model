@@ -112,11 +112,18 @@ def main() -> None:
     jacobian = np.asarray(checkpoint["paired_jacobian"], dtype=float)
     _, singular, vh = np.linalg.svd(jacobian, full_matrices=False)
     normal_basis = vh.T
-    if singular[-1] <= 0.0 or normal_basis.shape != (2 * state_dimension, 57):
+    normal_dimension = jacobian.shape[0]
+    if (
+        singular[-1] <= 0.0
+        or normal_basis.shape != (2 * state_dimension, normal_dimension)
+    ):
         raise ValueError("full-rank paired N12 normal Jacobian required")
 
     third_payload = np.load(THIRD_VARIATION)
-    third_center = np.asarray(third_payload["center_state"], dtype=float)
+    third_center_key = (
+        "center_state" if "center_state" in third_payload.files else "state"
+    )
+    third_center = np.asarray(third_payload[third_center_key], dtype=float)
     if not np.array_equal(state, third_center):
         raise ValueError("third variation does not belong to this checkpoint")
     if not np.array_equal(
@@ -147,7 +154,10 @@ def main() -> None:
             / state_weights[:, None]
             / state_weights[None, :]
         )
-        third = np.asarray(third_payload[sector], dtype=float)
+        third_key = (
+            sector if sector in third_payload.files else f"{sector}_third"
+        )
+        third = np.asarray(third_payload[third_key], dtype=float)
         sector_normal = normal_basis[offset:offset + state_dimension]
         attachment = _attachment_jacobian_at_order(ORDER, coordinates)
         boundary_scaling = _symmetric_power(

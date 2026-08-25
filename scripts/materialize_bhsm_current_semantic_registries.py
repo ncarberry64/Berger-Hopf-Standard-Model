@@ -64,6 +64,10 @@ SOURCES = (
     "artifacts/flagship_integration/BHSM_N12_CANONICAL_MOMENTUM_ACTION_JACOBIAN.json",
     "artifacts/flagship_integration/BHSM_N12_FULL_RESET_ACTION_JACOBIAN.json",
     "artifacts/flagship_integration/BHSM_N12_FINITE_TERMINAL_RESET_STRATUM_CANDIDATE.json",
+    "artifacts/flagship_integration/BHSM_N12_FINITE_TERMINAL_DIRECTED_CENTER.json",
+    "artifacts/flagship_integration/BHSM_N12_FINITE_TERMINAL_RADII_CERTIFICATE.json",
+    "artifacts/flagship_integration/BHSM_N12_FINITE_TERMINAL_MARGIN_TRANSFER.json",
+    "artifacts/flagship_integration/BHSM_N12_FINITE_TERMINAL_ORIENTATION_CERTIFICATE.json",
     "artifacts/flagship_integration/BHSM_N12_WEIGHT_SEVEN_TRANSVERSE_DESCRIPTOR.json",
     "artifacts/flagship_integration/BHSM_N12_WEIGHT_FIVE_CENTER_MODULATION.json",
     "artifacts/flagship_integration/BHSM_N12_WEIGHT_FIVE_MULTIPRECISION_NONPROMOTION.json",
@@ -142,6 +146,10 @@ def verify_current_lineage() -> None:
     momentum_jacobian = loaded["artifacts/flagship_integration/BHSM_N12_CANONICAL_MOMENTUM_ACTION_JACOBIAN.json"]
     full_reset_jacobian = loaded["artifacts/flagship_integration/BHSM_N12_FULL_RESET_ACTION_JACOBIAN.json"]
     terminal_candidate = loaded["artifacts/flagship_integration/BHSM_N12_FINITE_TERMINAL_RESET_STRATUM_CANDIDATE.json"]
+    terminal_center = loaded["artifacts/flagship_integration/BHSM_N12_FINITE_TERMINAL_DIRECTED_CENTER.json"]
+    terminal_radii = loaded["artifacts/flagship_integration/BHSM_N12_FINITE_TERMINAL_RADII_CERTIFICATE.json"]
+    terminal_margin = loaded["artifacts/flagship_integration/BHSM_N12_FINITE_TERMINAL_MARGIN_TRANSFER.json"]
+    terminal_orientation = loaded["artifacts/flagship_integration/BHSM_N12_FINITE_TERMINAL_ORIENTATION_CERTIFICATE.json"]
     weight_seven_descriptor = loaded["artifacts/flagship_integration/BHSM_N12_WEIGHT_SEVEN_TRANSVERSE_DESCRIPTOR.json"]
     weight_five_modulation = loaded["artifacts/flagship_integration/BHSM_N12_WEIGHT_FIVE_CENTER_MODULATION.json"]
     weight_five_mp_audit = loaded["artifacts/flagship_integration/BHSM_N12_WEIGHT_FIVE_MULTIPRECISION_NONPROMOTION.json"]
@@ -314,9 +322,24 @@ def verify_current_lineage() -> None:
         ] is False
         and terminal_candidate["claim_boundary"]["Gate7"]
         == "ACTIVE_TERMINAL_ROOT_BALL_CERTIFICATION"
+        and terminal_center["directed_Y_upper"] < 1.0e-12
+        and terminal_center["directed_Z0_upper"] < 1.0e-5
+        and terminal_radii["radii_polynomial"]["root_ball_closed"] is True
+        and terminal_radii["radii_polynomial"][
+            "contraction_bound_Z0_plus_Z2_r"
+        ] < 1.0
+        and "SUPERSEDED" in terminal_margin["status"]
+        and terminal_orientation["root_cubic_transfer"][
+            "root_c_psi_upper"
+        ] < 0.0
+        and terminal_orientation["root_forcing_transfer"][
+            "root_b_psi_lower"
+        ] > 0.0
+        and terminal_orientation["claim_boundary"]["Gate7"]
+        == "ACTIVE_FINITE_ENDPOINT_ZERO_SOURCE_FORCE"
     ):
         raise RuntimeError(
-            "maximal-adjoint/NHIM/terminal-candidate frontier is not current"
+            "maximal-adjoint/NHIM/certified-terminal frontier is not current"
         )
     if nonfermion["claim_boundary"]["nonfermion_critical_zero_graph_excluded"] is not True:
         raise RuntimeError("disk does not close the nonfermion threshold obstruction")

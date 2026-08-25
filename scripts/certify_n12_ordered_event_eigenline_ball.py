@@ -89,11 +89,15 @@ def main() -> None:
     sector_normal = vh.T[offset:offset + state_dimension]
 
     third_payload = np.load(THIRD_VARIATION)
+    third_center_key = (
+        "center_state" if "center_state" in third_payload.files else "state"
+    )
     if not np.array_equal(
-        state, np.asarray(third_payload["center_state"], dtype=float)
+        state, np.asarray(third_payload[third_center_key], dtype=float)
     ):
         raise ValueError("third variation does not belong to this checkpoint")
-    third = np.asarray(third_payload[SIDE], dtype=float)
+    third_key = SIDE if SIDE in third_payload.files else f"{SIDE}_third"
+    third = np.asarray(third_payload[third_key], dtype=float)
 
     majorant = json.loads(ACTION_MAJORANT.read_text(encoding="utf-8"))
     if majorant.get("validation_passed") is not True:
