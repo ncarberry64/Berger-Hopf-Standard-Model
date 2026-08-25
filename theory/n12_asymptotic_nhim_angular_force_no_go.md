@@ -34,9 +34,17 @@ only the required absolute direct sum over retained internal angular levels.
 The retained BRST pairing does not cure this failure.  It cancels the
 longitudinal--ghost pair, but the physical transverse/HS/Weyl graded leading
 coefficient is nonzero, and Gate 7 has no action-owned relative reference
-that replaces the absolute source class.  The heat part already fails the
-absolute graded differentiability requirement, so adding the finite direct
-zeta variation cannot make this route an admissible force root.
+that replaces the absolute source class.  The retained subtraction is
+explicitly local:
+
+`D Gamma_SM^zeta[h]=(59/30) integral h d_tau/R4`.
+
+For the compact source above and finite optical length this is one finite
+number.  Subtracting it cannot turn an absolute angular series whose positive
+terms fail to tend to zero into a convergent absolute series.  Thus the heat
+part already fails the absolute graded differentiability requirement, and the
+existing zeta subtraction does not make this route an admissible force root
+in that class.
 
 This is a conditional-route no-go, not a claim that the certified reset image
 enters the asymptotic basin.  That connection remains unproved, but it is no

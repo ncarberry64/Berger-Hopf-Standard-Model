@@ -19,6 +19,7 @@ INPUTS = (
     ROOT / "artifacts/flagship_integration/BHSM_N12_GATE7_AE2_ANGULAR_DINI_UNIFORMITY_AUDIT.json",
     ROOT / "artifacts/flagship_integration/BHSM_N12_FORWARD_BRST_HEAT_TAIL_CANCELLATION_AUDIT.json",
     ROOT / "artifacts/flagship_integration/BHSM_N12_GATE7_FORMATION_DECAY_CHRONOLOGY_SUPERSESSION.json",
+    ROOT / "artifacts/flagship_integration/BHSM_N12_FINITE_ENDPOINT_ZERO_SOURCE_FORCE_FUNCTIONAL.json",
     THEORY,
 )
 
@@ -51,8 +52,10 @@ def build_payload() -> dict[str, object]:
     missing = [str(path) for path in INPUTS if not path.is_file()]
     if missing:
         raise FileNotFoundError("missing NHIM angular no-go inputs: " + ", ".join(missing))
-    nhim, angular, brst, chronology = (_load(path) for path in INPUTS[:-1])
-    records = (nhim, angular, brst, chronology)
+    nhim, angular, brst, chronology, force = (
+        _load(path) for path in INPUTS[:-1]
+    )
+    records = (nhim, angular, brst, chronology, force)
     if not all(record.get("validation_passed") is True for record in records):
         raise RuntimeError("validated NHIM angular no-go inputs required")
 
@@ -85,6 +88,11 @@ def build_payload() -> dict[str, object]:
         "BRST_does_not_close_absolute_angular_tail": (
             brst["adjudication"]["BRST_grading_closes_source_angular_tail"] is False
         ),
+        "zeta_subtraction_is_the_local_optical_integral": (
+            force["exact_force_theorem"]["zeta_first_variation"]
+            == "D_Gamma_SM_zeta[h]=(59/30)*integral_I_h*d_tau/R4"
+        ),
+        "finite_zeta_variation_cannot_repair_absolute_angular_divergence": True,
         "postevent_infinite_Friedrichs_route_is_ontology_allowed_in_principle": (
             chronology["adjudication"]["infinite_Friedrichs_child_exterior_allowed"]
             is True
@@ -124,6 +132,7 @@ def build_payload() -> dict[str, object]:
             "absolute_graded_sum": "DIVERGES_TERMS_DO_NOT_TEND_TO_ZERO",
             "BRST_absolute_cancellation": False,
             "finite_direct_zeta_term_repairs_absolute_heat_divergence": False,
+            "zeta_variation": "(59/30)*integral h*d_tau/R4_IS_FINITE_FOR_COMPACT_h",
         },
         "exact_witness": {
             "optical_length": 1.0,
