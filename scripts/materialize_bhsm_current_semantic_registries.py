@@ -46,6 +46,7 @@ SOURCES = (
     "artifacts/flagship_integration/BHSM_N12_PARAMETRIC_EXTERIOR_ORACLE_EXECUTABLE_INTERFACE.json",
     "artifacts/flagship_integration/BHSM_N12_FINITE_ENDPOINT_FORCE_SIGN_SHORTCUT_NO_GO.json",
     "artifacts/flagship_integration/BHSM_N12_NEGATIVE_AXIS_SEAM_HEAT_SYNTHESIS_NO_GO.json",
+    "artifacts/flagship_integration/BHSM_N12_ACTION_OWNED_ENDPOINT_LOAD_REDUCTION.json",
     "artifacts/flagship_integration/BHSM_N12_WEIGHT_SEVEN_TRANSVERSE_DESCRIPTOR.json",
     "artifacts/flagship_integration/BHSM_N12_WEIGHT_FIVE_CENTER_MODULATION.json",
     "artifacts/flagship_integration/BHSM_N12_WEIGHT_FIVE_MULTIPRECISION_NONPROMOTION.json",
@@ -106,6 +107,7 @@ def verify_current_lineage() -> None:
     executable_oracle = loaded["artifacts/flagship_integration/BHSM_N12_PARAMETRIC_EXTERIOR_ORACLE_EXECUTABLE_INTERFACE.json"]
     force_sign_no_go = loaded["artifacts/flagship_integration/BHSM_N12_FINITE_ENDPOINT_FORCE_SIGN_SHORTCUT_NO_GO.json"]
     seam_synthesis_no_go = loaded["artifacts/flagship_integration/BHSM_N12_NEGATIVE_AXIS_SEAM_HEAT_SYNTHESIS_NO_GO.json"]
+    endpoint_load_reduction = loaded["artifacts/flagship_integration/BHSM_N12_ACTION_OWNED_ENDPOINT_LOAD_REDUCTION.json"]
     weight_seven_descriptor = loaded["artifacts/flagship_integration/BHSM_N12_WEIGHT_SEVEN_TRANSVERSE_DESCRIPTOR.json"]
     weight_five_modulation = loaded["artifacts/flagship_integration/BHSM_N12_WEIGHT_FIVE_CENTER_MODULATION.json"]
     weight_five_mp_audit = loaded["artifacts/flagship_integration/BHSM_N12_WEIGHT_FIVE_MULTIPRECISION_NONPROMOTION.json"]
@@ -119,6 +121,16 @@ def verify_current_lineage() -> None:
         raise RuntimeError("finite-endpoint force-sign shortcut was not closed invalid")
     if seam_synthesis_no_go["claim_boundary"]["broad_negative_axis_synthesis_route"] != "CLOSED_INVALID":
         raise RuntimeError("broad negative-axis synthesis route was not closed invalid")
+    if not (
+        endpoint_load_reduction["claim_boundary"]["endpoint_domain_ownership"]
+        == "CLOSED"
+        and endpoint_load_reduction["claim_boundary"]["actual_projected_force"]
+        == "OPEN"
+        and endpoint_load_reduction["minimal_maximal_history_theorem"][
+            "universal_terminal_reachability_required"
+        ] is False
+    ):
+        raise RuntimeError("action-owned endpoint-load reduction is not current")
     if nonfermion["claim_boundary"]["nonfermion_critical_zero_graph_excluded"] is not True:
         raise RuntimeError("disk does not close the nonfermion threshold obstruction")
     if factorized["claim_boundary"]["factorized_N12_low_energy_source_measure"] != "OPEN":

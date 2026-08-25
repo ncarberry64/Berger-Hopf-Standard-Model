@@ -413,6 +413,15 @@
   (`<-4.10073296251316`).  Therefore integrating or adding probes to the same
   broad class cannot decide the physical force.  The action-owned endpoint
   load must be sharpened or the equivalent complete operator materialized.
+- Endpoint-load reduction: the sharpening is an evaluation theorem, not a
+  boundary-condition choice.  AE2 already assigns the two-sided reset/Wentzell
+  graph at an actual event and Friedrichs closure at a canonical stop.
+  Proper-time `D_tau` and `Delta_tau=D_tau^star D_tau` are form-owned.  The
+  minimal remaining object is therefore the maximal `log R4(tau;xi)` child
+  family and its first two action-Jacobi/Weyl jets on a nonempty regular
+  reset-quotient stratum, or an equivalent complete two-sided operator.
+  One stored reset representative is sufficient only after action-derived
+  fiber invariance is proved.
 - The event-normal identities
   `D_s M=L_spatial(Y(s))-zI-M^2` and
   `D_s(delta M)=delta L-M delta M-delta M M` remain exact arm-transfer
