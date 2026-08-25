@@ -1,0 +1,62 @@
+{
+  "classification": "N12_RETAINED_ACTION_BALL_DERIVATIVE_MAJORANTS",
+  "order": 12,
+  "points": 96,
+  "action_coordinate_ball_radius": 2e-10,
+  "rounding_inflation_factor_per_bound_operation": 1.0000000001,
+  "sectors": [
+    {
+      "sector": "event",
+      "action_value": 3.3653342081224205,
+      "action_value_interval": [
+        3.3653339753203744,
+        3.3653344409244528
+      ],
+      "derivative_operator_majorants_0_through_5": [
+        982.3303263384618,
+        20461.801577590068,
+        421310.3438159781,
+        8633993.267548798,
+        179836486.0007541,
+        4005674561.9359193
+      ],
+      "exact_center_action_gradient_norm": 99.88562044054147,
+      "exact_center_action_hessian_norm": 1069.4301121617,
+      "value_enclosed": true,
+      "gradient_bound_dominates_exact_center": true,
+      "hessian_bound_dominates_exact_center": true
+    },
+    {
+      "sector": "child",
+      "action_value": 2.016489998089027,
+      "action_value_interval": [
+        2.0164897351128457,
+        2.0164902610652033
+      ],
+      "derivative_operator_majorants_0_through_5": [
+        931.1986028970841,
+        18731.54189285973,
+        374927.34624687687,
+        7534974.455309392,
+        156376844.80154398,
+        3590326147.603856
+      ],
+      "exact_center_action_gradient_norm": 101.64962204090286,
+      "exact_center_action_hessian_norm": 1014.3911297000022,
+      "value_enclosed": true,
+      "gradient_bound_dominates_exact_center": true,
+      "hessian_bound_dominates_exact_center": true
+    }
+  ],
+  "scope": "SCALAR_RETAINED_ACTION_DERIVATIVE_MAJORANTS_ONLY;_THE_BORDERED_LIFT_AND_EIGENPROJECTOR_COMPOSITION_BOUNDS_REMAIN",
+  "validation": {
+    "unchanged_retained_action_expression": true,
+    "event_value_enclosed": true,
+    "child_value_enclosed": true,
+    "event_first_two_center_derivatives_dominated": true,
+    "child_first_two_center_derivatives_dominated": true,
+    "no_equation_gate_or_physics_changed": true
+  },
+  "validation_passed": true,
+  "FULL_BHSM_COMPLETE": false
+}

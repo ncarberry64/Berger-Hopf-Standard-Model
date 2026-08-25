@@ -13,10 +13,15 @@ sys.path.insert(0, str(ROOT / "scripts"))
 os.environ["BHSM_N12_CHECKPOINT"] = str(
     ROOT / "artifacts/flagship_integration/BHSM_N12_FINITE_TERMINAL_RESET_STRATUM_CANDIDATE.npz"
 )
-os.environ["BHSM_N12_ACTION_MAJORANT_RESULT"] = str(
-    ROOT / "artifacts/flagship_integration/BHSM_N12_C2_TERMINAL_PARENT_ACTION_MAJORANTS_1P5E10.json"
+radius = os.environ.get("BHSM_N12_C2_PARENT_RADIUS", "1.5e-10")
+result_name = os.environ.get(
+    "BHSM_N12_C2_PARENT_RESULT",
+    "BHSM_N12_C2_TERMINAL_PARENT_ACTION_MAJORANTS_1P5E10.json",
 )
-os.environ["BHSM_N12_CERTIFICATE_BALL"] = "1.5e-10"
+os.environ["BHSM_N12_ACTION_MAJORANT_RESULT"] = str(
+    ROOT / "artifacts/flagship_integration" / result_name
+)
+os.environ["BHSM_N12_CERTIFICATE_BALL"] = radius
 
 from derive_n12_action_ball_majorants import main  # noqa: E402
 

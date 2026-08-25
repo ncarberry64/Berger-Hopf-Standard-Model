@@ -10,8 +10,8 @@ def _load(name: str) -> dict:
     return json.loads((BASE / name).read_text(encoding="utf-8"))
 
 
-def test_parameterized_lohner_iterations_through_1218() -> None:
-    for segment in (1216, 1217):
+def test_parameterized_lohner_iterations_through_1219() -> None:
+    for segment in (1216, 1217, 1218):
         recenter = _load(f"BHSM_N12_C2_LOHNER_RECENTER_{segment}.json")
         growth = _load(f"BHSM_N12_C2_LOHNER_GROWTH_{segment}.json")
         bordered = _load(f"BHSM_N12_C2_LOHNER_BORDERED_MATRIX_{segment}.json")
@@ -26,7 +26,7 @@ def test_parameterized_lohner_iterations_through_1218() -> None:
             "relative_second_variation_self_consistency"
         ] < 1.0
 
-    for segment in (1217, 1218):
+    for segment in (1217, 1218, 1219):
         step = _load(f"BHSM_N12_C2_LOHNER_STEP_{segment}.json")
         assert step["validation_passed"] is True
         assert step["segment"]["total_certified_segments"] == segment
