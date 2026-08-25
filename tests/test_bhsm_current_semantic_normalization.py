@@ -151,6 +151,13 @@ def test_replacement_force_is_constraint_projected_without_reset_selection() -> 
     assert "one reset representative determines the fiber force" in oracle[
         "forbidden_interpretations"
     ]
+    radius_jet = basis["RESET_FIBER_RADIUS_CAUCHY_JET"]
+    assert radius_jet["current_status"] == (
+        "DERIVED_PARAMETRIC_EXTERIOR_ORACLE_STILL_OPEN"
+    )
+    assert "common scale is an exact gauge of the complete retained action" in (
+        radius_jet["forbidden_interpretations"]
+    )
     dag = {
         row["canonical_id"]: row
         for row in registries["BHSM_CURRENT_COMPLETION_DAG.json"]["records"]

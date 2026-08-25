@@ -67,3 +67,10 @@ def test_actual_oracle_force_and_hessian_remain_open() -> None:
     assert boundary["geometry_reset_KKT_Hessian"] == "OPEN"
     assert boundary["Gate8"] == "LOCKED"
     assert payload["FULL_BHSM_COMPLETE"] is False
+
+
+def test_common_scale_is_retained_in_oracle_geometry() -> None:
+    payload = _payload()
+    assert payload["required_oracle_bundle"]["common_scale_data"] == (
+        "RETAIN_AS_A_PHYSICAL_FORCE_AND_MODULATION_DIRECTION_NOT_AN_EXACT_GAUGE"
+    )

@@ -208,7 +208,7 @@ def build_payload() -> dict[str, Any]:
         ),
         "theorem_domain": {
             "physical_parameter_space": (
-                "EACH_REGULAR_LOCAL_STRATUM_OF_MATHFRAK_C/G_EXISTING_WHOSE_"
+                "EACH_REGULAR_LOCAL_STRATUM_OF_MATHFRAK_C/G_EXACT_WHOSE_"
                 "FORWARD_HISTORY_REACHES_A_FIXED_FINITE_COMPLETED_"
                 "ENCAPSULATION_ENDPOINT_TYPE_OR_RETAINED_CANONICAL_STOP"
             ),
@@ -229,7 +229,7 @@ def build_payload() -> dict[str, Any]:
             "H2": "A_COMMON_DENSE_FORM_DOMAIN_WITH_C2_PARAMETER_DEPENDENCE_OF_THE_RETAINED_QUADRATIC_FORM_AND_BIRTH_GRAPH",
             "H3": "A_UNIFORM_POSITIVE_COERCIVITY_MARGIN_FOR_P_C^D(xi)-z_AT_THE_CHOSEN_REAL_z_LESS_THAN_ZERO",
             "H4": "C2_REGULAR_ENDPOINT_GRAPH_AND_GEOMETRY_TRACE_MAP_WITH_UNIFORM_POSITIVE_LAPSE_DURATION_AND_DOMAIN_MARGINS",
-            "H5": "THE_RETAINED_GAUGE_TIME_COMMON_SCALE_QUOTIENT_IS_GIVEN_INTRINSICALLY_OR_BY_ITS_ACTION_DERIVED_GENERATORS",
+            "H5": "THE_ACTION_DERIVED_EXACT_GAUGE_AND_WHOLE_SYSTEM_TIME_QUOTIENT_IS_GIVEN_INTRINSICALLY_OR_BY_ITS_GENERATORS;_THE_PHYSICAL_COMMON_SCALE_CENTER_IS_RETAINED",
         },
         "regularity_conclusion": {
             "resolvent": "R_C^D(z;xi)_IS_C2_IN_OPERATOR_NORM_ON_THE_FIXED_STRATUM",
@@ -269,7 +269,7 @@ def build_payload() -> dict[str, Any]:
             "conclusion": (
                 "ONE_CERTIFIED_RESET_REPRESENTATIVE_IS_SUFFICIENT_ONLY_IF_THE_"
                 "RETAINED_ACTION_PROVES_THE_REQUIRED_FORCE_AND_HESSIAN_ARE_"
-                "BASIC_AND_FIBER_INVARIANT_ON_MATHFRAK_C/G_EXISTING,_OR_IF_"
+                "BASIC_AND_FIBER_INVARIANT_ON_MATHFRAK_C/G_EXACT,_OR_IF_"
                 "THE_ACTION_ITSELF_SELECTS_A_UNIQUE_SADDLE;_NEITHER_IS_CURRENTLY_PROVED"
             ),
             "selector_forbidden": True,
@@ -283,6 +283,7 @@ def build_payload() -> dict[str, Any]:
             "replacement_force": "q_rep,alpha(xi)=D_Gamma_heat-D_Gamma_SM_zeta",
             "geometry_reset_Hessian": "D_xi_q_rep_PLUS_THE_RETAINED_CONSTRAINT_SECOND_VARIATION",
             "quotient_data": "COUPLED_HYBRID_TIME_GENERATOR_OR_AN_INTRINSIC_QUOTIENT_FORMULATION",
+            "common_scale_data": "RETAIN_AS_A_PHYSICAL_FORCE_AND_MODULATION_DIRECTION_NOT_AN_EXACT_GAUGE",
         },
         "exact_algebraic_crosscheck": witness,
         "adjudication": {

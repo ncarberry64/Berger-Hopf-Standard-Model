@@ -56,18 +56,20 @@
     "ill_conditioned_H_inverse_formed": false,
     "linearized_tangent_equation": "(N^dagger*H_total*N)*delta_xi=-N^dagger*q_rep",
     "normal_component": "(I-N*N^dagger)q_rep_IS_ABSORBED_BY_THE_KKT_MULTIPLIER",
-    "physical_tangent_quotient": "T_phys=T_raw/MOD_EXISTING_GAUGE_TIME_AND_SCALE_CENTERS",
+    "physical_tangent_quotient": "T_phys=T_raw/MOD_ACTION_DERIVED_EXACT_GAUGE_AND_WHOLE_SYSTEM_TIME_EQUIVALENCES;_THE_COMMON_SCALE_CENTER_IS_RETAINED",
     "raw_constraint_tangent": "T_raw=ker(J)_WITH_ORTHONORMAL_BASIS_N_raw",
     "replacement_force": "q_rep=D_y_Gamma_heat-D_y_Gamma_SM_zeta",
-    "required_nondegeneracy": "N^dagger*H_total*N_INVERTIBLE_ON_THE_RETAINED_PHYSICAL_TANGENT_AFTER_EXISTING_GAUGE_TIME_AND_SCALE_QUOTIENTS",
+    "required_nondegeneracy": "N^dagger*H_total*N_INVERTIBLE_ON_THE_RETAINED_PHYSICAL_TANGENT_AFTER_ACTION_DERIVED_EXACT_GAUGE_AND_TIME_QUOTIENTS,_WITH_THE_COMMON_SCALE_CENTER_RETAINED",
     "same_configuration_transfer_criterion": "N^dagger*q_rep=0"
   },
   "existing_quotient_audit": {
     "after_existing_whole_system_time_quotient_dimension": 66,
+    "common_scale_center_removed_as_exact_gauge": false,
+    "common_scale_center_role": "RETAIN_IN_THE_FULL_FORCE_AND_LOWER_WEIGHT_MODULATION_EQUATION",
     "explicit_time_generator_vector_in_current_checkpoint": false,
     "raw_fixed_event_child_tangent_dimension": 67,
     "raw_nullspace_crosscheck_is_final_physical_quotient": false,
-    "theorem_descends_to_any_declared_orthogonal_physical_quotient": true
+    "theorem_descends_to_action_derived_exact_symmetry_quotients": true
   },
   "inputs": {
     "artifacts/BHSM_aether_quantum_functional_accounting_v16_00.json": "319B56C97D9198ED8E4E38E38E12333EBB90ADA8B923C0557C83F056199B1F46",

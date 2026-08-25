@@ -329,6 +329,14 @@
   final physical quotient.  The coupled 196-dimensional event-child phase
   generator or an intrinsic quotient formulation is part of the same open
   exterior-operator realization.
+- Radius-jet and scale-center correction: the map from the raw reset tangent
+  to `(delta log R4, delta D_tau log R4)` has rank two, with singular values
+  `2.6101789046984036` and `0.1844169233100172`.  Hence any one-dimensional
+  whole-time quotient leaves at least one fixed-channel coefficient-history
+  variation.  Common scale is a physical center/modulation direction of the
+  weight-seven balance, not an exact gauge of the complete action: retained
+  weights `5,3,1,-1` and the boundary Casimir break uniform scale invariance.
+  It remains in the replacement force and geometry/reset Hessian.
 - The event-normal identities
   `D_s M=L_spatial(Y(s))-zI-M^2` and
   `D_s(delta M)=delta L-M delta M-delta M M` remain exact arm-transfer

@@ -111,6 +111,9 @@ def test_actual_n12_reset_fiber_adjudication_is_conservative() -> None:
     assert payload["existing_quotient_audit"][
         "raw_nullspace_crosscheck_is_final_physical_quotient"
     ] is False
+    assert payload["existing_quotient_audit"][
+        "common_scale_center_removed_as_exact_gauge"
+    ] is False
     assert witness["boundary_log_R4_covector_tangent_projection_norm"] > 0.18
     assert payload["claim_boundary"][
         "constraint_tangent_force_criterion"

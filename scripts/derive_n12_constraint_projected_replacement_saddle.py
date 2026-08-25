@@ -229,7 +229,8 @@ def build_payload() -> dict[str, Any]:
             "constraint_surface": "C(y)=0_WITH_J=D_C(y)",
             "raw_constraint_tangent": "T_raw=ker(J)_WITH_ORTHONORMAL_BASIS_N_raw",
             "physical_tangent_quotient": (
-                "T_phys=T_raw/MOD_EXISTING_GAUGE_TIME_AND_SCALE_CENTERS"
+                "T_phys=T_raw/MOD_ACTION_DERIVED_EXACT_GAUGE_AND_WHOLE_"
+                "SYSTEM_TIME_EQUIVALENCES;_THE_COMMON_SCALE_CENTER_IS_RETAINED"
             ),
             "replacement_force": (
                 "q_rep=D_y_Gamma_heat-D_y_Gamma_SM_zeta"
@@ -255,7 +256,8 @@ def build_payload() -> dict[str, Any]:
             "ill_conditioned_H_inverse_formed": False,
             "required_nondegeneracy": (
                 "N^dagger*H_total*N_INVERTIBLE_ON_THE_RETAINED_PHYSICAL_"
-                "TANGENT_AFTER_EXISTING_GAUGE_TIME_AND_SCALE_QUOTIENTS"
+                "TANGENT_AFTER_ACTION_DERIVED_EXACT_GAUGE_AND_TIME_"
+                "QUOTIENTS,_WITH_THE_COMMON_SCALE_CENTER_RETAINED"
             ),
             "hessian_distinction": (
                 "H_total_HERE_IS_THE_GEOMETRY_RESET_KKT_HESSIAN_NEEDED_TO_"
@@ -271,7 +273,11 @@ def build_payload() -> dict[str, Any]:
             ]["after_existing_whole_system_time_quotient"],
             "explicit_time_generator_vector_in_current_checkpoint": False,
             "raw_nullspace_crosscheck_is_final_physical_quotient": False,
-            "theorem_descends_to_any_declared_orthogonal_physical_quotient": True,
+            "theorem_descends_to_action_derived_exact_symmetry_quotients": True,
+            "common_scale_center_removed_as_exact_gauge": False,
+            "common_scale_center_role": (
+                "RETAIN_IN_THE_FULL_FORCE_AND_LOWER_WEIGHT_MODULATION_EQUATION"
+            ),
         },
         "stage_adjudication": {
             "G7_08_force_and_G7_09_saddle_are_mathematically_coupled": True,

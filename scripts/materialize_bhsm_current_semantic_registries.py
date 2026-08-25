@@ -42,6 +42,7 @@ SOURCES = (
     "artifacts/flagship_integration/BHSM_N12_RESET_TIME_QUOTIENT_GENERATOR_AUDIT.json",
     "artifacts/flagship_integration/BHSM_N12_JOINT_FINITE_HISTORY_OPERATOR_DATA_GATE.json",
     "artifacts/flagship_integration/BHSM_N12_PARAMETRIC_RESET_FIBER_EXTERIOR_ORACLE_THEOREM.json",
+    "artifacts/flagship_integration/BHSM_N12_RESET_FIBER_RADIUS_JET_AND_SCALE_CENTER_AUDIT.json",
     "artifacts/intrinsic_state_selection/BHSM_N12_FINITE_ENCAPSULATION_LOCAL_BRANCH.json",
     "artifacts/flagship_integration/BHSM_N12_GATE7_AE2_THRESHOLD_SUPERSESSION.json",
     "artifacts/BHSM_alpha_i_update_v4_2.json",
@@ -92,6 +93,7 @@ def verify_current_lineage() -> None:
     time_quotient = loaded["artifacts/flagship_integration/BHSM_N12_RESET_TIME_QUOTIENT_GENERATOR_AUDIT.json"]
     operator_data_gate = loaded["artifacts/flagship_integration/BHSM_N12_JOINT_FINITE_HISTORY_OPERATOR_DATA_GATE.json"]
     parametric_oracle = loaded["artifacts/flagship_integration/BHSM_N12_PARAMETRIC_RESET_FIBER_EXTERIOR_ORACLE_THEOREM.json"]
+    radius_jet = loaded["artifacts/flagship_integration/BHSM_N12_RESET_FIBER_RADIUS_JET_AND_SCALE_CENTER_AUDIT.json"]
     frontier = loaded["artifacts/flagship_integration/BHSM_N12_GATE7_AE2_THRESHOLD_SUPERSESSION.json"]
     if ae2.get("action_version") != "BHSM-AE-2.0.0":
         raise RuntimeError("AE2 action version mismatch")
@@ -242,6 +244,19 @@ def verify_current_lineage() -> None:
         ] is False
     ):
         raise RuntimeError("parametric reset-fiber exterior frontier is not current")
+    if not (
+        radius_jet["claim_boundary"][
+            "radius_Cauchy_jet_variation_after_time_quotient"
+        ] == "NONZERO"
+        and radius_jet["claim_boundary"]["common_scale_full_action_gauge"]
+        is False
+        and radius_jet["claim_boundary"]["common_scale_physical_modulation"]
+        == "RETAIN"
+        and radius_jet["fiber_invariance_adjudication"][
+            "actual_parametric_exterior_oracle_still_required"
+        ] is True
+    ):
+        raise RuntimeError("reset-fiber radius-jet and scale-center frontier is not current")
 
 
 def materialize() -> list[Path]:

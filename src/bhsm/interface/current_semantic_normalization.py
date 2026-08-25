@@ -100,6 +100,7 @@ def _basis() -> list[dict[str, Any]]:
     p_seam_family = "artifacts/flagship_integration/BHSM_N12_AE2_NEGATIVE_AXIS_SEAM_FAMILY.json"
     p_projected_saddle = "artifacts/flagship_integration/BHSM_N12_CONSTRAINT_PROJECTED_REPLACEMENT_SADDLE.json"
     p_parametric_oracle = "artifacts/flagship_integration/BHSM_N12_PARAMETRIC_RESET_FIBER_EXTERIOR_ORACLE_THEOREM.json"
+    p_radius_jet = "artifacts/flagship_integration/BHSM_N12_RESET_FIBER_RADIUS_JET_AND_SCALE_CENTER_AUDIT.json"
     p_e1 = "artifacts/flagship_integration/BHSM_N12_FORWARD_E1_SOURCE_MEASURE_CRITERION.json"
     p_nf = "artifacts/flagship_integration/BHSM_N12_GATE7_AE2_NONFERMION_THRESHOLD_MARGIN.json"
     p_fac = "artifacts/flagship_integration/BHSM_N12_GATE7_AE2_COMPACT_SOURCE_DINI_CLOSURE.json"
@@ -244,10 +245,10 @@ def _basis() -> list[dict[str, Any]]:
         ),
         record(
             "CONSTRAINT_PROJECTED_REPLACEMENT_FORCE",
-            "N_phys^dagger*q_rep=0, q_rep=D_Gamma_heat-D_Gamma_SM_zeta, range(N_phys)=ker(D_C)/G_existing",
+            "N_phys^dagger*q_rep=0, q_rep=D_Gamma_heat-D_Gamma_SM_zeta, range(N_phys)=ker(D_C)/G_exact with the physical common-scale center retained",
             "CONSTRAINT_TANGENT_STATIONARITY_CRITERION",
             "MATHEMATICAL_OBJECT",
-            "The same-action replacement force must vanish on the constraint tangent after the retained gauge/time/scale quotient; a constraint-normal component is a KKT-multiplier shift.",
+            "The same-action replacement force must vanish on the constraint tangent after exact gauge and whole-system time equivalences; the common-scale center remains physical, and a constraint-normal component is a KKT-multiplier shift.",
             "finite event-child constraint surface at the zero-source replacement saddle",
             [p_projected_saddle],
             current_status="DERIVED_CRITERION_ACTUAL_PROJECTED_FORCE_AND_JOINT_SADDLE_OPEN",
@@ -256,8 +257,20 @@ def _basis() -> list[dict[str, Any]]:
             forbidden_interpretations=["ambient q_rep=0 is necessary", "choose a reset-fiber representative by hand", "geometry KKT Hessian is the pair-plus-contact source Hessian"],
         ),
         record(
+            "RESET_FIBER_RADIUS_CAUCHY_JET",
+            "A(delta_y)=(delta_log_R4,delta_D_tau_log_R4), rank(A|ker(D_C))=2 and rank after any one time quotient is at least 1",
+            "QUOTIENT_ROBUST_GEOMETRY_JET",
+            "MATHEMATICAL_OBJECT",
+            "At least one fixed-channel coefficient-history direction survives the retained one-dimensional whole-system time quotient; common scale is a physical modulation center, not an exact full-action gauge.",
+            "certified fixed-event complete-child reset tangent",
+            [p_radius_jet],
+            current_status="DERIVED_PARAMETRIC_EXTERIOR_ORACLE_STILL_OPEN",
+            downstream_consumers=["PARAMETRIC_RESET_FIBER_EXTERIOR_ORACLE", "G7_08_FORCE"],
+            forbidden_interpretations=["time translation removes the whole radius history jet", "common scale is an exact gauge of the complete retained action", "the leading weight-seven center may be deleted from the replacement saddle"],
+        ),
+        record(
             "PARAMETRIC_RESET_FIBER_EXTERIOR_ORACLE",
-            "xi -> (M_C(z;xi),D_xi*M_C(z;xi),D_xi^2*M_C(z;xi)) on each fixed regular finite endpoint stratum of mathfrak_C/G_existing",
+            "xi -> (M_C(z;xi),D_xi*M_C(z;xi),D_xi^2*M_C(z;xi)) on each fixed regular finite endpoint stratum of mathfrak_C/G_exact with common scale retained",
             "STRATIFIED_OPERATOR_FAMILY_AND_GEOMETRY_JET",
             "MATHEMATICAL_OBJECT",
             "The action-owned exterior value and two quotient-geometry jets needed to evaluate the replacement force and joint saddle without choosing a reset member.",
@@ -492,7 +505,7 @@ GATE_CHAIN = [
     ("G7_05_FACTORIZED_LAP", "all admissible positive far tails source-Dini by compact Volterra trace-class theorem", "CLOSED"),
     ("G7_06_E1_FINITE", "fixed-channel E1 source-measure finiteness", "CLOSED"),
     ("G7_07_ANGULAR_TAIL", "finite-endpoint compact-resolvent/source-trace control on the realized finite-encapsulation domain; infinite nonencapsulating tails remain nonrealized mathematical histories", "CLOSED_BY_OWNER_PHYSICAL_SCOPE_AND_LOCAL_ACTION_EXISTENCE"),
-    ("G7_08_FORCE", "heat-minus-zeta functional, physical quotient criterion, and fixed-stratum oracle regularity derived; actual parametric exterior oracle or action-derived fiber invariance remains open", "OPEN_CURRENT_OWNER"),
+    ("G7_08_FORCE", "heat-minus-zeta functional, physical quotient criterion, fixed-stratum oracle regularity, and quotient-robust radius-jet variation derived; actual parametric exterior oracle remains open", "OPEN_CURRENT_OWNER"),
     ("G7_09_SADDLE", "same-action joint constrained saddle, mathematically coupled to G7_08 without adding a gate", "PENDING_COUPLED_TO_G7_08"),
     ("G7_10_HESSIAN", "pair-plus-contact Hessian", "PENDING"),
     ("G7_11_WARD_TRACE", "Ward/BRST and source-contracted relative trace", "PENDING"),
@@ -510,7 +523,7 @@ def _gates() -> list[dict[str, Any]]:
         "G7_05_FACTORIZED_LAP": "artifacts/flagship_integration/BHSM_N12_GATE7_AE2_COMPACT_SOURCE_DINI_CLOSURE.json",
         "G7_06_E1_FINITE": "artifacts/flagship_integration/BHSM_N12_GATE7_AE2_COMPACT_SOURCE_DINI_CLOSURE.json",
         "G7_07_ANGULAR_TAIL": "artifacts/flagship_integration/BHSM_N12_GATE7_FINITE_ENCAPSULATION_PHYSICAL_DOMAIN_AUDIT.json",
-        "G7_08_FORCE": "artifacts/flagship_integration/BHSM_N12_PARAMETRIC_RESET_FIBER_EXTERIOR_ORACLE_THEOREM.json",
+        "G7_08_FORCE": "artifacts/flagship_integration/BHSM_N12_RESET_FIBER_RADIUS_JET_AND_SCALE_CENTER_AUDIT.json",
     }
     fallback = "artifacts/flagship_integration/BHSM_N12_GATE7_AE2_THRESHOLD_SUPERSESSION.json"
     rows = []

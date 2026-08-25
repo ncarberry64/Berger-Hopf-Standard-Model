@@ -14,7 +14,8 @@ reach one finite completed-encapsulation endpoint type or one retained
 canonical stop, assume the retained forms have a common local form domain,
 depend `C2` on the reset parameter, and have a uniform coercivity margin at a
 real probe `z<0`.  Assume also that the endpoint graph, trace trivialization,
-and retained gauge/time/common-scale quotient are `C2`.  The second resolvent
+and retained exact gauge/time quotient are `C2`; the physical common-scale
+center is retained.  The second resolvent
 identity then gives operator-norm `C2` dependence of the Dirichlet resolvent.
 The trace lift and Schur complement give `C2` dependence of the Poisson and
 Weyl--Calderón maps.  Therefore the heat-minus-zeta force is a covector field

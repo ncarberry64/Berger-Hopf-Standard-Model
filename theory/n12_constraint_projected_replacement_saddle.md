@@ -30,7 +30,11 @@ has a 67-dimensional raw constraint-tangent kernel.  The already-retained
 whole-system time quotient reduces this to dimension 66.  The durable
 checkpoint does not store the explicit time-generator vector, so the
 numerical nullspace witness is not relabelled as the final physical quotient.
-The theorem descends to that quotient once its generator is supplied.  The
+The theorem descends to that quotient once its generator is supplied.  Only
+action-derived exact gauge equivalences and whole-system time translation
+are quotiented.  The common-scale center is retained in the full force and
+lower-weight modulation equation: the complete action's mixed scale weights
+and boundary Casimir make it a physical direction, not an exact gauge.  The
 raw boundary `log R4` covector has
 tangent projection norm `0.1847862958485751`.  This proves that the reset
 fiber contains genuine geometry-changing directions; it does not establish
