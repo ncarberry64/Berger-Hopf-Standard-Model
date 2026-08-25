@@ -1,0 +1,72 @@
+{
+  "FLAGSHIP_READY": false,
+  "FULL_BHSM_COMPLETE": false,
+  "artifact": "BHSM_N12_C2_DESCRIPTOR_FIBER_CENTER_MATRIX",
+  "center": {
+    "Kato_line_motion_correction_action_norm": 2.2740777812728307e-06,
+    "action_difference_scheme": "SYMMETRIC_CENTRAL",
+    "action_difference_step": 5e-12,
+    "binary64_selected_eigenvalue_not_used_as_descriptor": -6.778890217125542e-14,
+    "birth_limit_matrix_2_norm": 52913354328175.03,
+    "birth_limit_matrix_numerical_abscissa": 26457498730179.137,
+    "c_gradient_action_central_difference_norm": 2.285127461372292e-06,
+    "c_psi": 2.0788287660012092e-10,
+    "complex_step": 1e-20,
+    "fixed_line_D4_gradient_action_central_difference_norm": 3.1171022372190183e-08,
+    "fixed_s_tangent_matrix_2_norm": 799372048580.516,
+    "fixed_s_tangent_numerical_abscissa": 399911994597.6563,
+    "fixed_s_tangent_spectral_abscissa": 576724086.2654548,
+    "lambda_gradient_action_norm": 6.16564043793013e-06,
+    "selected_branch": 24
+  },
+  "data": "artifacts/flagship_integration/BHSM_N12_C2_DESCRIPTOR_FIBER_CENTER_MATRIX_HALFSTEP.npz",
+  "data_SHA256": "E382642B29E639994EAD18EC16980589C1ADA56C568333BECCE3D585F2C8CEFF",
+  "diagnosis": {
+    "exact_next_lemma": "ENCLOSE_THE_CONJUGATED_FIXED_s_TANGENT_REMAINDER_PHI_0_MINUS_ONE_TIMES_DF_s(Y)_MINUS_A_0_TIMES_PHI_0_USING_RETAINED_D4_D5_AND_KATO_HARD_BUNDLE_BOUNDS",
+    "proof_authority": "CENTER_DIAGNOSTIC_ONLY",
+    "scalar_first_box_Jacobi_growth_upper": 1.3284645462222624
+  },
+  "growth_profile": [
+    {
+      "fixed_s_tangent_fundamental_2_norm": 1.0000000000004,
+      "fixed_s_tangent_inverse_2_norm": 1.0000000000003995,
+      "signed_descriptor_horizon": 1e-24
+    },
+    {
+      "fixed_s_tangent_fundamental_2_norm": 1.0000000000039992,
+      "fixed_s_tangent_inverse_2_norm": 1.0000000000039946,
+      "signed_descriptor_horizon": 1e-23
+    },
+    {
+      "fixed_s_tangent_fundamental_2_norm": 1.0000000000399911,
+      "fixed_s_tangent_inverse_2_norm": 1.000000000039946,
+      "signed_descriptor_horizon": 1e-22
+    },
+    {
+      "fixed_s_tangent_fundamental_2_norm": 1.0000000003999119,
+      "fixed_s_tangent_inverse_2_norm": 1.0000000003994605,
+      "signed_descriptor_horizon": 1e-21
+    },
+    {
+      "fixed_s_tangent_fundamental_2_norm": 1.0000000039991201,
+      "fixed_s_tangent_inverse_2_norm": 1.0000000039946033,
+      "signed_descriptor_horizon": 1e-20
+    }
+  ],
+  "inputs": {
+    "artifacts/flagship_integration/BHSM_N12_C2_DESCRIPTOR_FIBER_DENOMINATOR.json": "C2CA0C21AD8F076F89513A03EC4BBCB776CCCE659623B44AAFF048556622B023",
+    "artifacts/flagship_integration/BHSM_N12_C2_RECENTERED_ADAPTIVE_CONTINUATION.json": "ED9D5ADC75A0ED6CCEEE473DFCDB9DD5BC6C386F0A3BEBD1827E8198345FDA5C",
+    "artifacts/flagship_integration/BHSM_N12_C2_RECENTERED_ADAPTIVE_CONTINUATION.npz": "C3D8FAEAEAF6D310D90BF4A0AAC5850ECBB879FA6B109EEA12DBD3025C0B593E"
+  },
+  "status": "FIXED_S_TANGENT_CENTER_MATRIX_MEASURED;_CONJUGATED_INTERVAL_REMAINDER_OPEN",
+  "validation": {
+    "branch_24_and_certified_eigenline_ball_consumed": true,
+    "center_birth_matrix_and_fundamentals_are_finite": true,
+    "finite_difference_center_matrix_not_promoted_to_interval_authority": true,
+    "fixed_s_tangent_basis_has_codimension_one": true,
+    "lambda_gradient_is_nonzero": true,
+    "no_equation_selector_recurrence_scale_gate_or_chord_added": true,
+    "validated_descriptor_fiber_center_consumed": true
+  },
+  "validation_passed": true
+}
