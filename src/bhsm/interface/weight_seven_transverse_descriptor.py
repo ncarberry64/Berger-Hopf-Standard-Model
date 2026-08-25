@@ -43,23 +43,39 @@ class DescriptorData:
     expansion_rate: float
 
 
-def _normalized_hessian(order: int, points: int) -> np.ndarray:
+def _normalized_hessian(
+    order: int, points: int, *, extended_precision: bool = False
+) -> np.ndarray:
     dims = dimensions(order)
     qdim = dims["coordinates"]
     mdim = dims["multipliers"]
-    coordinates = np.zeros(qdim)
-    velocities = np.zeros(qdim)
-    velocities[0] = ROUND_EXPANSION_RATE
-    multipliers = np.zeros(mdim)
+    if extended_precision:
+        import mpmath as mp
+
+        coordinates = np.asarray([mp.mpf(0)] * qdim, dtype=object)
+        velocities = np.asarray([mp.mpf(0)] * qdim, dtype=object)
+        velocities[0] = mp.sqrt(mp.mpf(15) * mp.root(5, 3) / (4 * 42))
+        multipliers = np.asarray([mp.mpf(0)] * mdim, dtype=object)
+        radius0 = mp.mpf(str(RADIUS0))
+    else:
+        coordinates = np.zeros(qdim)
+        velocities = np.zeros(qdim)
+        velocities[0] = ROUND_EXPANSION_RATE
+        multipliers = np.zeros(mdim)
+        radius0 = RADIUS0
     jet = exact_weight_seven_action_jet_at_state(
-        order, coordinates, velocities, multipliers, points=points
+        order, coordinates, velocities, multipliers, points=points,
+        extended_precision=extended_precision,
     )
     # q0=0 at the represented round state, so RADIUS0**7 removes the common
     # scale factor and leaves the constant co-moving quadratic coefficients.
-    return np.real(jet.hessian) / RADIUS0**7
+    return jet.hessian / radius0**7
 
 
-def descriptor_data(*, order: int = 12, points: int = 384) -> DescriptorData:
+def descriptor_data(
+    *, order: int = 12, points: int = 384,
+    extended_precision: bool = False,
+) -> DescriptorData:
     """Return ``A-E*sigma`` for the complete weight-seven DAE.
 
     For the normalized Hessian blocks ``H_ab`` and ``h=H0``, the linearized
@@ -75,7 +91,17 @@ def descriptor_data(*, order: int = 12, points: int = 384) -> DescriptorData:
     dims = dimensions(order)
     qdim = dims["coordinates"]
     mdim = dims["multipliers"]
-    hessian = _normalized_hessian(order, points)
+    hessian = _normalized_hessian(
+        order, points, extended_precision=extended_precision
+    )
+    if extended_precision:
+        import mpmath as mp
+
+        expansion_rate = mp.sqrt(
+            mp.mpf(15) * mp.root(5, 3) / (4 * 42)
+        )
+    else:
+        expansion_rate = ROUND_EXPANSION_RATE
     q = slice(0, qdim)
     v = slice(qdim, 2 * qdim)
     m = slice(2 * qdim, 2 * qdim + mdim)
@@ -89,17 +115,17 @@ def descriptor_data(*, order: int = 12, points: int = 384) -> DescriptorData:
     hmv = hessian[m, v]
     hmm = hessian[m, m]
     total = 2 * qdim + mdim
-    A = np.zeros((total, total))
-    E = np.zeros((total, total))
+    A = np.zeros((total, total), dtype=hessian.dtype)
+    E = np.zeros((total, total), dtype=hessian.dtype)
     # sigma*q=xi
     A[q, v] = np.eye(qdim)
     E[q, q] = np.eye(qdim)
     # sigma*(Hvv*xi+Hvm*m) = the remaining negative EL terms.
-    A[v, q] = -(7.0 * ROUND_EXPANSION_RATE * hvq - hqq)
+    A[v, q] = -(7.0 * expansion_rate * hvq - hqq)
     A[v, v] = -(
-        7.0 * ROUND_EXPANSION_RATE * hvv + hvq - hqv
+        7.0 * expansion_rate * hvv + hvq - hqv
     )
-    A[v, m] = -(7.0 * ROUND_EXPANSION_RATE * hvm - hqm)
+    A[v, m] = -(7.0 * expansion_rate * hvm - hqm)
     E[v, v] = hvv
     E[v, m] = hvm
     # Linearized lapse/shift constraints.
@@ -112,7 +138,7 @@ def descriptor_data(*, order: int = 12, points: int = 384) -> DescriptorData:
         hessian=hessian,
         coordinate_dimension=qdim,
         multiplier_dimension=mdim,
-        expansion_rate=ROUND_EXPANSION_RATE,
+        expansion_rate=expansion_rate,
     )
 
 
@@ -251,7 +277,8 @@ def cluster_residuals(values: np.ndarray) -> dict[str, float | int]:
 
 
 def weight_five_center_lift_system(
-    *, order: int = 12, points: int = 384
+    *, order: int = 12, points: int = 384,
+    extended_precision: bool = False,
 ) -> dict[str, np.ndarray | float]:
     """Return the exact first lower-weight Feshbach/KKT lift equation.
 
@@ -270,15 +297,31 @@ def weight_five_center_lift_system(
     dims = dimensions(order)
     qdim = dims["coordinates"]
     mdim = dims["multipliers"]
-    coordinates = np.zeros(qdim)
-    velocities = np.zeros(qdim)
-    velocities[0] = ROUND_EXPANSION_RATE
-    multipliers = np.zeros(mdim)
+    if extended_precision:
+        import mpmath as mp
+
+        coordinates = np.asarray([mp.mpf(0)] * qdim, dtype=object)
+        velocities = np.asarray([mp.mpf(0)] * qdim, dtype=object)
+        velocities[0] = mp.sqrt(mp.mpf(15) * mp.root(5, 3) / (4 * 42))
+        multipliers = np.asarray([mp.mpf(0)] * mdim, dtype=object)
+        radius0 = mp.mpf(str(RADIUS0))
+        expansion_rate = velocities[0]
+    else:
+        coordinates = np.zeros(qdim)
+        velocities = np.zeros(qdim)
+        velocities[0] = ROUND_EXPANSION_RATE
+        multipliers = np.zeros(mdim)
+        radius0 = RADIUS0
+        expansion_rate = ROUND_EXPANSION_RATE
     jet = exact_weight_five_action_jet_at_state(
-        order, coordinates, velocities, multipliers, points=points
+        order, coordinates, velocities, multipliers, points=points,
+        extended_precision=extended_precision,
     )
-    gradient = np.real(jet.gradient) / RADIUS0**5
-    data = descriptor_data(order=order, points=points)
+    gradient = jet.gradient / radius0**5
+    data = descriptor_data(
+        order=order, points=points,
+        extended_precision=extended_precision,
+    )
     A, E = bordered_physical_pencil(data, order=order)
     physical = physical_coordinate_indices(order)
     right_hand_side = np.concatenate(
@@ -288,8 +331,10 @@ def weight_five_center_lift_system(
             -gradient[2 * qdim :],
         )
     )
-    matrix = A + 2.0 * ROUND_EXPANSION_RATE * E
-    singular_values = svdvals(matrix)
+    matrix = A + 2.0 * expansion_rate * E
+    # LAPACK consumes float64.  The extended matrices themselves retain their
+    # wider assembly precision for export to an arbitrary-precision solve.
+    singular_values = svdvals(np.asarray(matrix, dtype=np.float64))
     return {
         "matrix": matrix,
         "right_hand_side": right_hand_side,
@@ -297,7 +342,7 @@ def weight_five_center_lift_system(
         "smallest_singular_value": float(singular_values[-1]),
         "largest_singular_value": float(singular_values[0]),
         "condition_number": float(singular_values[0] / singular_values[-1]),
-        "descriptor_exponent": -2.0 * ROUND_EXPANSION_RATE,
+        "descriptor_exponent": -2.0 * expansion_rate,
     }
 
 

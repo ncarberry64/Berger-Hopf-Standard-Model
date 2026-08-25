@@ -267,6 +267,15 @@
   Formally a uniform no-stop expansion would have
   `D_tau log R4=H0+O(R4^-2)` and finite center drift, but the high-precision
   coefficient and uniform nonlinear remainder theorem remain open.
+- Multiprecision nonpromotion: genuine high-precision action jets and
+  70-digit bordered solves reduce linear-solve residuals below `1E-70`.
+  Nevertheless the common-scale coefficients at 48, 64, and 80 Gauss nodes
+  are `66.494409659373`, `66.494452982548`, and `66.494334392983`; the
+  64-to-80 change exceeds the 48-to-64 change.  Thus a tiny solve residual
+  does not enclose the quadrature-sensitive coefficient.  Its observed rate
+  correction is negative on all three rows but is not action-promoted.  The
+  next rigorous route is analytic small-local-block integration in a
+  preconditioned physical basis or directed-rounding interval quadrature.
 - Norman finite-encapsulation physical-domain reclassification:
   `OWNER_AUTHORIZED_NOT_ACTION_DERIVED`. A forward history that expands
   forever without completing encapsulation remains a mathematically

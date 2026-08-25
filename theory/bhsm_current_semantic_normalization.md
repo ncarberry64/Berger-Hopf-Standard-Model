@@ -55,6 +55,14 @@ give `D_tau log R4=H0+O(R4^-2)`, but a high-precision/preconditioned lift and
 uniform full-remainder theorem are still required before that is a retained
 history conclusion.
 
+Genuine multiprecision action jets and 70-digit bordered solves now separate
+solve error from assembly error. Solve residuals are below `1e-70`, but the
+48/64/80-node common-scale coefficients are nonmonotone and the last change
+is larger than the preceding one. Consequently the `R^-2` coefficient and
+its observed negative rate-correction sign remain unpromoted. The next
+mathematical object is analytic local-block integration in a preconditioned
+physical basis or a directed-rounding quadrature enclosure.
+
 The recovered Norman owner ontology is recorded as an owner-authorized semantic layer, never as an action-derived equation. It fixes geometry-first emergence, persistent mode/history particle classes, the base-plus-two-excitations generation architecture, action-owned response mass with a universal dimensional origin, propagation-locked neutrino mass, CKM as relative response-basis orientation, strict bare/dressed separation, and the irreversible dependency direction `action -> theorem -> observable -> frozen comparison`.
 
 The executable guardrails reject semantic regression, including `z=p^2`, a compulsory strict gap, terminal recurrence, reopening the nonfermion threshold without contradiction, replacing the current owner by D5/Kato interval-sign work, symbol collisions, or importing frozen outputs into the current action.

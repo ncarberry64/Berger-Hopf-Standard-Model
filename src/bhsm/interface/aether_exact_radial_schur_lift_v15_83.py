@@ -50,7 +50,10 @@ class Jet:
 
     @classmethod
     def constant(cls, value: float, size: int) -> "Jet":
-        dtype = np.result_type(value, float)
+        try:
+            dtype = np.result_type(value, float)
+        except TypeError:
+            dtype = object
         return cls(
             value,
             np.zeros(size, dtype=dtype),
@@ -135,7 +138,12 @@ class Jet:
         return result
 
     def exp(self) -> "Jet":
-        value = np.exp(self.value)
+        if self.gradient.dtype == object or getattr(self.value, "_mpf_", None) is not None:
+            import mpmath as mp
+
+            value = mp.exp(self.value)
+        else:
+            value = np.exp(self.value)
         return Jet(
             value,
             value * self.gradient,

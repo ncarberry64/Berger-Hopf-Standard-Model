@@ -46,6 +46,7 @@ SOURCES = (
     "artifacts/flagship_integration/BHSM_N12_PARAMETRIC_EXTERIOR_ORACLE_EXECUTABLE_INTERFACE.json",
     "artifacts/flagship_integration/BHSM_N12_WEIGHT_SEVEN_TRANSVERSE_DESCRIPTOR.json",
     "artifacts/flagship_integration/BHSM_N12_WEIGHT_FIVE_CENTER_MODULATION.json",
+    "artifacts/flagship_integration/BHSM_N12_WEIGHT_FIVE_MULTIPRECISION_NONPROMOTION.json",
     "artifacts/intrinsic_state_selection/BHSM_N12_FINITE_ENCAPSULATION_LOCAL_BRANCH.json",
     "artifacts/flagship_integration/BHSM_N12_GATE7_AE2_THRESHOLD_SUPERSESSION.json",
     "artifacts/BHSM_alpha_i_update_v4_2.json",
@@ -100,6 +101,7 @@ def verify_current_lineage() -> None:
     executable_oracle = loaded["artifacts/flagship_integration/BHSM_N12_PARAMETRIC_EXTERIOR_ORACLE_EXECUTABLE_INTERFACE.json"]
     weight_seven_descriptor = loaded["artifacts/flagship_integration/BHSM_N12_WEIGHT_SEVEN_TRANSVERSE_DESCRIPTOR.json"]
     weight_five_modulation = loaded["artifacts/flagship_integration/BHSM_N12_WEIGHT_FIVE_CENTER_MODULATION.json"]
+    weight_five_mp_audit = loaded["artifacts/flagship_integration/BHSM_N12_WEIGHT_FIVE_MULTIPRECISION_NONPROMOTION.json"]
     frontier = loaded["artifacts/flagship_integration/BHSM_N12_GATE7_AE2_THRESHOLD_SUPERSESSION.json"]
     if ae2.get("action_version") != "BHSM-AE-2.0.0":
         raise RuntimeError("AE2 action version mismatch")
@@ -314,6 +316,21 @@ def verify_current_lineage() -> None:
         ] == "OPEN"
     ):
         raise RuntimeError("weight-five center modulation frontier is not current")
+    if not (
+        weight_five_mp_audit["claim_boundary"][
+            "multiprecision_bordered_solve"
+        ] == "DERIVED"
+        and weight_five_mp_audit["claim_boundary"][
+            "weight_five_coefficient"
+        ] == "OPEN_NOT_PROMOTED"
+        and weight_five_mp_audit["tail_diagnostics"][
+            "tight_coefficient_enclosure_certified"
+        ] is False
+        and weight_five_mp_audit["adjudication"][
+            "full_remainder_outcome_promoted"
+        ] is False
+    ):
+        raise RuntimeError("weight-five multiprecision nonpromotion frontier is not current")
 
 
 def materialize() -> list[Path]:

@@ -1,0 +1,80 @@
+{
+  "FLAGSHIP_READY": false,
+  "FULL_BHSM_COMPLETE": false,
+  "adjudication": {
+    "common_scale_rate_correction_sign_empirically_robust": true,
+    "common_scale_rate_correction_sign_promoted_as_theorem": false,
+    "full_remainder_outcome_promoted": false,
+    "generic_action_quadrature_precision": "OPEN_SENSITIVITY_AMPLIFIED_BY_CONDITIONING",
+    "linear_solve_precision": "CLOSED_TO_BELOW_1E-70_RESIDUAL",
+    "weight_five_coefficient_promoted": false
+  },
+  "artifact": "BHSM_N12_WEIGHT_FIVE_MULTIPRECISION_NONPROMOTION",
+  "claim_boundary": {
+    "FULL_BHSM_COMPLETE": false,
+    "Gate7": "ACTIVE",
+    "Gate8": "LOCKED",
+    "chord_03_authorized": false,
+    "multiprecision_bordered_solve": "DERIVED",
+    "uniform_full_remainder_outcome": "OPEN",
+    "weight_five_coefficient": "OPEN_NOT_PROMOTED"
+  },
+  "classification": "SEVENTY_DIGIT_BORDERED_SOLVES_HAVE_RESIDUALS_BELOW_1E-70,_BUT_THE_48_64_80_POINT_HIGH_PRECISION_ACTION_QUADRATURE_SEQUENCE_IS_NOT_MONOTONE_AND_THE_64_TO_80_CHANGE_EXCEEDS_THE_48_TO_64_CHANGE;_THE_R_MINUS_2_COEFFICIENT_AND_STABILITY_LABEL_REMAIN_UNPROMOTED_PENDING_ANALYTIC_LOCAL_BLOCK_INTEGRATION_OR_A_RIGOROUS_QUADRATURE_ENCLOSURE",
+  "exact_next_dependency": "ASSEMBLE_THE_WEIGHT_SEVEN_LOCAL_HESSIAN_AND_WEIGHT_FIVE_FORCE_FROM_ANALYTIC_SMALL_LOCAL_BLOCKS_IN_A_PRECONDITIONED_PHYSICAL_BASIS,_OR_SUPPLY_A_RIGOROUS_INTERVAL_GAUSS_BOUND;_THEN_SOLVE_THE_BORDERED_LIFT_WITH_DIRECTED_ROUNDING",
+  "inputs": {
+    "artifacts/flagship_integration/BHSM_N12_WEIGHT_FIVE_CENTER_MODULATION.json": "47FEC9975254408080949DA85313E9EE253B9F4E50391845BD9C159923D20AD8"
+  },
+  "multiprecision_rows": [
+    {
+      "points": 32,
+      "q0_coefficient": "66.517579294464621925438868196913683302883640258568",
+      "q0_rate_coefficient": "-51.98193251138158552392445718140179524496263518694",
+      "seconds": 134.3200306892395,
+      "solution_norm": "124719.36226266647243472601977"
+    },
+    {
+      "points": 48,
+      "q0_coefficient": "66.494409659373344100479002837486761939572856577327",
+      "q0_rate_coefficient": "-51.963825983447121605498386370280584120188686317495",
+      "relative_solve_residual": "9.698890548e-71",
+      "seconds": 198.5036063194275,
+      "solution_norm": "124686.786623973548826756877032"
+    },
+    {
+      "points": 64,
+      "q0_coefficient": "66.494452982548247449792743121292066926232755268183",
+      "q0_rate_coefficient": "-51.963859839495070002359193420268403480296988304983",
+      "relative_solve_residual": "8.452298848e-71",
+      "seconds": 265.0776946544647,
+      "solution_norm": "124686.838201158230723803499253"
+    },
+    {
+      "points": 80,
+      "q0_coefficient": "66.494334392983139592544955934981622462384518203278",
+      "q0_rate_coefficient": "-51.963767164523500438357375992150874038076474897853",
+      "relative_solve_residual": "6.925556925e-71",
+      "seconds": 341.9832458496094,
+      "solution_norm": "124686.697514319030703234676464"
+    }
+  ],
+  "status": "MULTIPRECISION_SOLVE_CLOSED_QUADRATURE_STABILITY_OPEN_COEFFICIENT_NOT_PROMOTED",
+  "tail_diagnostics": {
+    "absolute_q0_change_48_to_64": "0.0000433231749070728255901485681534",
+    "absolute_q0_change_64_to_80": "0.000118589565119009421323426067829",
+    "q0_rate_sign_on_all_tail_rows": "NEGATIVE",
+    "q0_tail_maximum_48_64_80": "66.4944529825482533169633825309574604034423828125",
+    "q0_tail_minimum_48_64_80": "66.4943343929831343075420591048896312713623046875",
+    "tight_coefficient_enclosure_certified": false
+  },
+  "validation": {
+    "64_to_80_change_exceeds_48_to_64_change": true,
+    "all_tail_common_scale_coefficients_positive": true,
+    "all_tail_rate_coefficients_negative": true,
+    "coefficient_not_promoted_without_quadrature_enclosure": true,
+    "genuine_mpmath_action_jet_and_solve_path_available": true,
+    "multiprecision_solve_residuals_below_1e_minus_60": true,
+    "no_R_minus_2_stability_eigenvalue_promoted": true,
+    "no_action_gate_scale_selector_or_physics_changed": true
+  },
+  "validation_passed": true
+}

@@ -34,6 +34,7 @@
     "artifacts/flagship_integration/BHSM_N12_RESET_FIBER_RADIUS_JET_AND_SCALE_CENTER_AUDIT.json": "F245D549B6C5247BE5E0730C33C4840AEFADB8A68B28B222B8D0E34BEF1A85A7",
     "artifacts/flagship_integration/BHSM_N12_RESET_TIME_QUOTIENT_GENERATOR_AUDIT.json": "CAB2DA9A4BF5A5489241CF3C49F4C67C9EB93E4B6C567B6A425E67B0D6D895C8",
     "artifacts/flagship_integration/BHSM_N12_WEIGHT_FIVE_CENTER_MODULATION.json": "47FEC9975254408080949DA85313E9EE253B9F4E50391845BD9C159923D20AD8",
+    "artifacts/flagship_integration/BHSM_N12_WEIGHT_FIVE_MULTIPRECISION_NONPROMOTION.json": "A46B430C564D4038A68B2DC5260B4015C0FC6126FF8AD81B0433294FCCB5F074",
     "artifacts/flagship_integration/BHSM_N12_WEIGHT_SEVEN_TRANSVERSE_DESCRIPTOR.json": "44C88B6588E92B002A6E882108DCFBB1B04CA296CF662E58AD9CA459C4D78C74",
     "artifacts/frozen_constants_v2.json": "9D601C03992C5ADF34E7D438C8A9A15598138E26D0022A94B1B09CCA52092C7D",
     "artifacts/intrinsic_state_selection/BHSM_N12_CONSTRAINT_REDUCED_ENERGY_IDENTITY_GATE.json": "EB907DF96C8C9E0A66014D6A6463B853E92F1A5D0CBA2B269789FA28706501D1",
@@ -666,6 +667,40 @@
       "physical_meaning": "Exact first lower-weight center-force operator; its ill-conditioned coefficient representation is not yet a certified modulation value.",
       "provenance": [
         "artifacts/flagship_integration/BHSM_N12_WEIGHT_FIVE_CENTER_MODULATION.json"
+      ],
+      "semantic_layer": "MATHEMATICAL_OBJECT",
+      "source_weighting_required": false,
+      "superseded_meanings": [],
+      "tests": [
+        "test_required_fields"
+      ]
+    },
+    {
+      "action_version": "BHSM-AE-2.0.0",
+      "artifact_hashes": {
+        "artifacts/flagship_integration/BHSM_N12_WEIGHT_FIVE_MULTIPRECISION_NONPROMOTION.json": "A46B430C564D4038A68B2DC5260B4015C0FC6126FF8AD81B0433294FCCB5F074"
+      },
+      "canonical_id": "WEIGHT_FIVE_MULTIPRECISION_AUDIT",
+      "current_status": "SOLVE_PRECISION_CLOSED_ANALYTIC_PRECONDITIONED_ASSEMBLY_OPEN",
+      "dimensions": "DIMENSIONLESS_OR_OPERATOR_TYPED",
+      "domain": "N12 weight-five physical quotient coefficient representation",
+      "downstream_consumers": [
+        "WEIGHT_FIVE_CENTER_MODULATION"
+      ],
+      "equivalent_forms": [],
+      "forbidden_interpretations": [
+        "small solve residual certifies quadrature",
+        "empirically stable sign is an action theorem",
+        "more brute-force nodes replace an enclosure"
+      ],
+      "formula": "mpmath_action_jet+70_digit_bordered_solve; quadrature coefficient remains unenclosed",
+      "frozen_output_status": "NOT_FROZEN_OUTPUT",
+      "mathematical_class": "REPRODUCIBILITY_NONPROMOTION_CERTIFICATE",
+      "observable_status": "NOT_AN_OBSERVABLE",
+      "ontology_version": "BHSM-AE2-ONTOLOGY-1.0.0",
+      "physical_meaning": "Multiprecision closes linear-solve error but exposes nonmonotone quadrature sensitivity, so the R^-2 coefficient remains unpromoted.",
+      "provenance": [
+        "artifacts/flagship_integration/BHSM_N12_WEIGHT_FIVE_MULTIPRECISION_NONPROMOTION.json"
       ],
       "semantic_layer": "MATHEMATICAL_OBJECT",
       "source_weighting_required": false,

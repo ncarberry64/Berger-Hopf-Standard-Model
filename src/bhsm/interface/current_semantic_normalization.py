@@ -104,6 +104,7 @@ def _basis() -> list[dict[str, Any]]:
     p_executable_oracle = "artifacts/flagship_integration/BHSM_N12_PARAMETRIC_EXTERIOR_ORACLE_EXECUTABLE_INTERFACE.json"
     p_w7_descriptor = "artifacts/flagship_integration/BHSM_N12_WEIGHT_SEVEN_TRANSVERSE_DESCRIPTOR.json"
     p_w5_modulation = "artifacts/flagship_integration/BHSM_N12_WEIGHT_FIVE_CENTER_MODULATION.json"
+    p_w5_mp_audit = "artifacts/flagship_integration/BHSM_N12_WEIGHT_FIVE_MULTIPRECISION_NONPROMOTION.json"
     p_e1 = "artifacts/flagship_integration/BHSM_N12_FORWARD_E1_SOURCE_MEASURE_CRITERION.json"
     p_nf = "artifacts/flagship_integration/BHSM_N12_GATE7_AE2_NONFERMION_THRESHOLD_MARGIN.json"
     p_fac = "artifacts/flagship_integration/BHSM_N12_GATE7_AE2_COMPACT_SOURCE_DINI_CLOSURE.json"
@@ -319,6 +320,18 @@ def _basis() -> list[dict[str, Any]]:
             current_status="DERIVED_OPERATOR_HIGH_PRECISION_COEFFICIENT_AND_UNIFORM_REMAINDER_OPEN",
             downstream_consumers=["MATHEMATICAL_BRANCH_REMAINDER_ADJUDICATION"],
             forbidden_interpretations=["float64 R^-2 coefficients are certified eigenvalues", "formal H4 limit is a full retained-history theorem", "the infinite branch is a realized particle"],
+        ),
+        record(
+            "WEIGHT_FIVE_MULTIPRECISION_AUDIT",
+            "mpmath_action_jet+70_digit_bordered_solve; quadrature coefficient remains unenclosed",
+            "REPRODUCIBILITY_NONPROMOTION_CERTIFICATE",
+            "MATHEMATICAL_OBJECT",
+            "Multiprecision closes linear-solve error but exposes nonmonotone quadrature sensitivity, so the R^-2 coefficient remains unpromoted.",
+            "N12 weight-five physical quotient coefficient representation",
+            [p_w5_mp_audit],
+            current_status="SOLVE_PRECISION_CLOSED_ANALYTIC_PRECONDITIONED_ASSEMBLY_OPEN",
+            downstream_consumers=["WEIGHT_FIVE_CENTER_MODULATION"],
+            forbidden_interpretations=["small solve residual certifies quadrature", "empirically stable sign is an action theorem", "more brute-force nodes replace an enclosure"],
         ),
         record(
             "SOURCE_WEIGHTED_THRESHOLD_MEASURE",
