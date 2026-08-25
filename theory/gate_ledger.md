@@ -1994,6 +1994,13 @@ Exact next object:
 - Infinite post-reset graded angular heat-cotangent assembly:
   `OPEN_INSIDE_ACTUAL_QUOTIENT_CAUCHY_TAIL`; this is distinct from the owner-scoped
   exclusion of infinite nonencapsulating formation histories.
+- Infinite-route heat--zeta compatibility: finite optical length is
+  `CLOSED_NO_GO` for the absolute graded heat force.  On an infinite-optical
+  route the retained physical common-scale Jacobi mode must separately satisfy
+  `lim_(S,T->infinity) integral_S^T h_cs d_tau/R4=0`; that action-owned Cauchy
+  tail and the full graded heat tail are both `OPEN_CURRENT_OWNER`.
+- Common scale may be removed by the time quotient to avoid the zeta tail:
+  `FALSE`; its radius Cauchy jet survives and it is a retained physical center.
 - Finite later-event/canonical-stop stratum:
   `ALTERNATIVE_USING_EXISTING_FINITE_ENDPOINT_ADJOINT_THEOREM`.
 - Gate 7: `ACTIVE`; Gate 8: `LOCKED`; chord 3: `UNAUTHORIZED`;

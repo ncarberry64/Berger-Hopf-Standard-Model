@@ -188,6 +188,14 @@ def test_replacement_force_is_constraint_projected_without_reset_selection() -> 
         "BHSM_N12_C2_PROJECTED_ADJOINT_CAUCHY_CRITERION.json"
         in dag["G7_08_FORCE"]["provenance"]
     )
+    assert "common-scale Jacobi zeta optical Cauchy tail" in dag[
+        "G7_08_FORCE"
+    ]["physical_meaning"]
+    assert (
+        "artifacts/flagship_integration/"
+        "BHSM_N12_C2_INFINITE_HEAT_ZETA_COMPATIBILITY.json"
+        in dag["G7_08_FORCE"]["provenance"]
+    )
     assert "analytic full 57 by 196 historical reset Jacobian" in dag[
         "G7_08_FORCE"
     ]["physical_meaning"]
