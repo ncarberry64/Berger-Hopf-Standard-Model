@@ -302,10 +302,19 @@
   persistence test: its rows store domain/residual norms rather than states
   or radii, and its validation end is neither a terminal event nor canonical
   stop.  Domain-parametric assembly and both KKT solvers are already derived.
-  Hence the single highest-upstream missing object is an action-owned
-  complete event-reaching physical-history operator realization on the
-  finite-encapsulation domain or an equivalent actual exterior
-  Weyl--Calderon oracle with its geometry jet, not another algebraic solver.
+  A fixed-stratum regularity theorem now proves that a common-domain `C^2`
+  retained form family with a uniform negative-probe coercivity margin gives
+  `C^2` resolvent, Poisson, and Weyl--Calderon dependence on the physical reset
+  quotient.  One stored reset representative is insufficient unless the
+  action proves the force and Hessian are fiber invariant.  The actual
+  parametric oracle (or that invariance theorem), including the coupled time
+  quotient, remains the single current owner; no smoothness is claimed across
+  endpoint-outcome switches and no infinite nonencapsulating tail is reopened.
+  Hence the single highest-upstream missing object is an actual parametric
+  finite-history/Weyl--Calderon oracle with its first two quotient-geometry
+  jets on a nonempty regular finite stratum, or an action-derived proof that
+  the force and Hessian are reset-fiber invariant, not another algebraic
+  solver.
   The finite-encapsulation scope is preserved and arbitrary infinite
   nonencapsulating formation-tail analysis is not reopened.
 - Quotient provenance correction: the fixed-event child Jacobian kernel is

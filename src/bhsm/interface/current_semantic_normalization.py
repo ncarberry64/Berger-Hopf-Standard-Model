@@ -99,6 +99,7 @@ def _basis() -> list[dict[str, Any]]:
     p_seam_enclosure = "artifacts/flagship_integration/BHSM_N12_AE2_COVARIANT_SEAM_ENCLOSURE_Z_MINUS_1.json"
     p_seam_family = "artifacts/flagship_integration/BHSM_N12_AE2_NEGATIVE_AXIS_SEAM_FAMILY.json"
     p_projected_saddle = "artifacts/flagship_integration/BHSM_N12_CONSTRAINT_PROJECTED_REPLACEMENT_SADDLE.json"
+    p_parametric_oracle = "artifacts/flagship_integration/BHSM_N12_PARAMETRIC_RESET_FIBER_EXTERIOR_ORACLE_THEOREM.json"
     p_e1 = "artifacts/flagship_integration/BHSM_N12_FORWARD_E1_SOURCE_MEASURE_CRITERION.json"
     p_nf = "artifacts/flagship_integration/BHSM_N12_GATE7_AE2_NONFERMION_THRESHOLD_MARGIN.json"
     p_fac = "artifacts/flagship_integration/BHSM_N12_GATE7_AE2_COMPACT_SOURCE_DINI_CLOSURE.json"
@@ -253,6 +254,18 @@ def _basis() -> list[dict[str, Any]]:
             equivalent_forms=["q_rep+D_C^dagger*(lambda_rep-lambda_class)=0 before the retained symmetry quotient"],
             downstream_consumers=["G7_08_FORCE", "G7_09_SADDLE"],
             forbidden_interpretations=["ambient q_rep=0 is necessary", "choose a reset-fiber representative by hand", "geometry KKT Hessian is the pair-plus-contact source Hessian"],
+        ),
+        record(
+            "PARAMETRIC_RESET_FIBER_EXTERIOR_ORACLE",
+            "xi -> (M_C(z;xi),D_xi*M_C(z;xi),D_xi^2*M_C(z;xi)) on each fixed regular finite endpoint stratum of mathfrak_C/G_existing",
+            "STRATIFIED_OPERATOR_FAMILY_AND_GEOMETRY_JET",
+            "MATHEMATICAL_OBJECT",
+            "The action-owned exterior value and two quotient-geometry jets needed to evaluate the replacement force and joint saddle without choosing a reset member.",
+            "regular finite completed-encapsulation or canonical-stop strata of the physical reset quotient",
+            [p_parametric_oracle],
+            current_status="REGULARITY_THEOREM_DERIVED_ACTUAL_PARAMETRIC_ORACLE_OR_FIBER_INVARIANCE_OPEN",
+            downstream_consumers=["G7_08_FORCE", "G7_09_SADDLE"],
+            forbidden_interpretations=["one reset representative determines the fiber force", "smoothness across endpoint outcome switches is automatic", "infinite nonencapsulating histories are physical readout histories"],
         ),
         record(
             "SOURCE_WEIGHTED_THRESHOLD_MEASURE",
@@ -479,7 +492,7 @@ GATE_CHAIN = [
     ("G7_05_FACTORIZED_LAP", "all admissible positive far tails source-Dini by compact Volterra trace-class theorem", "CLOSED"),
     ("G7_06_E1_FINITE", "fixed-channel E1 source-measure finiteness", "CLOSED"),
     ("G7_07_ANGULAR_TAIL", "finite-endpoint compact-resolvent/source-trace control on the realized finite-encapsulation domain; infinite nonencapsulating tails remain nonrealized mathematical histories", "CLOSED_BY_OWNER_PHYSICAL_SCOPE_AND_LOCAL_ACTION_EXISTENCE"),
-    ("G7_08_FORCE", "heat-minus-zeta functional and raw constraint/KKT algebra derived; action-owned exterior oracle, geometry jet, and explicit coupled time quotient open", "OPEN_CURRENT_OWNER"),
+    ("G7_08_FORCE", "heat-minus-zeta functional, physical quotient criterion, and fixed-stratum oracle regularity derived; actual parametric exterior oracle or action-derived fiber invariance remains open", "OPEN_CURRENT_OWNER"),
     ("G7_09_SADDLE", "same-action joint constrained saddle, mathematically coupled to G7_08 without adding a gate", "PENDING_COUPLED_TO_G7_08"),
     ("G7_10_HESSIAN", "pair-plus-contact Hessian", "PENDING"),
     ("G7_11_WARD_TRACE", "Ward/BRST and source-contracted relative trace", "PENDING"),
@@ -497,7 +510,7 @@ def _gates() -> list[dict[str, Any]]:
         "G7_05_FACTORIZED_LAP": "artifacts/flagship_integration/BHSM_N12_GATE7_AE2_COMPACT_SOURCE_DINI_CLOSURE.json",
         "G7_06_E1_FINITE": "artifacts/flagship_integration/BHSM_N12_GATE7_AE2_COMPACT_SOURCE_DINI_CLOSURE.json",
         "G7_07_ANGULAR_TAIL": "artifacts/flagship_integration/BHSM_N12_GATE7_FINITE_ENCAPSULATION_PHYSICAL_DOMAIN_AUDIT.json",
-        "G7_08_FORCE": "artifacts/flagship_integration/BHSM_N12_JOINT_FINITE_HISTORY_OPERATOR_DATA_GATE.json",
+        "G7_08_FORCE": "artifacts/flagship_integration/BHSM_N12_PARAMETRIC_RESET_FIBER_EXTERIOR_ORACLE_THEOREM.json",
     }
     fallback = "artifacts/flagship_integration/BHSM_N12_GATE7_AE2_THRESHOLD_SUPERSESSION.json"
     rows = []

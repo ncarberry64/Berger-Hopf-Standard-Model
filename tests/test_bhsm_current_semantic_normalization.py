@@ -136,11 +136,19 @@ def test_replacement_force_is_constraint_projected_without_reset_selection() -> 
         for row in registries["BHSM_CURRENT_MATHEMATICAL_BASIS.json"]["records"]
     }
     projected = basis["CONSTRAINT_PROJECTED_REPLACEMENT_FORCE"]
-    assert projected["formula"].startswith("N^dagger*q_rep=0")
+    assert projected["formula"].startswith("N_phys^dagger*q_rep=0")
     assert projected["current_status"] == (
         "DERIVED_CRITERION_ACTUAL_PROJECTED_FORCE_AND_JOINT_SADDLE_OPEN"
     )
     assert "choose a reset-fiber representative by hand" in projected[
+        "forbidden_interpretations"
+    ]
+    oracle = basis["PARAMETRIC_RESET_FIBER_EXTERIOR_ORACLE"]
+    assert oracle["current_status"] == (
+        "REGULARITY_THEOREM_DERIVED_ACTUAL_PARAMETRIC_ORACLE_OR_"
+        "FIBER_INVARIANCE_OPEN"
+    )
+    assert "one reset representative determines the fiber force" in oracle[
         "forbidden_interpretations"
     ]
     dag = {

@@ -45,4 +45,9 @@ replacement force, construct the constraint-reduced geometry KKT Hessian,
 and solve the joint same-action saddle.  No endpoint, periodic continuation,
 reset representative, scale, or gate is added here.
 
+The subsequent parametric reset-fiber theorem sharpens this dependency.  A
+single stored representative is insufficient unless the action proves fiber
+invariance; otherwise the value and first two quotient-geometry jets are
+needed on each fixed regular finite endpoint/canonical-stop stratum.
+
 `FULL_BHSM_COMPLETE=false`.

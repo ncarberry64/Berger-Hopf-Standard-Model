@@ -41,6 +41,7 @@ SOURCES = (
     "artifacts/flagship_integration/BHSM_N12_CONSTRAINT_PROJECTED_REPLACEMENT_SADDLE.json",
     "artifacts/flagship_integration/BHSM_N12_RESET_TIME_QUOTIENT_GENERATOR_AUDIT.json",
     "artifacts/flagship_integration/BHSM_N12_JOINT_FINITE_HISTORY_OPERATOR_DATA_GATE.json",
+    "artifacts/flagship_integration/BHSM_N12_PARAMETRIC_RESET_FIBER_EXTERIOR_ORACLE_THEOREM.json",
     "artifacts/intrinsic_state_selection/BHSM_N12_FINITE_ENCAPSULATION_LOCAL_BRANCH.json",
     "artifacts/flagship_integration/BHSM_N12_GATE7_AE2_THRESHOLD_SUPERSESSION.json",
     "artifacts/BHSM_alpha_i_update_v4_2.json",
@@ -90,6 +91,7 @@ def verify_current_lineage() -> None:
     projected_saddle = loaded["artifacts/flagship_integration/BHSM_N12_CONSTRAINT_PROJECTED_REPLACEMENT_SADDLE.json"]
     time_quotient = loaded["artifacts/flagship_integration/BHSM_N12_RESET_TIME_QUOTIENT_GENERATOR_AUDIT.json"]
     operator_data_gate = loaded["artifacts/flagship_integration/BHSM_N12_JOINT_FINITE_HISTORY_OPERATOR_DATA_GATE.json"]
+    parametric_oracle = loaded["artifacts/flagship_integration/BHSM_N12_PARAMETRIC_RESET_FIBER_EXTERIOR_ORACLE_THEOREM.json"]
     frontier = loaded["artifacts/flagship_integration/BHSM_N12_GATE7_AE2_THRESHOLD_SUPERSESSION.json"]
     if ae2.get("action_version") != "BHSM-AE-2.0.0":
         raise RuntimeError("AE2 action version mismatch")
@@ -222,6 +224,24 @@ def verify_current_lineage() -> None:
         ] is False
     ):
         raise RuntimeError("joint finite-history operator data frontier is not current")
+    if not (
+        parametric_oracle["claim_boundary"][
+            "finite_endpoint_oracle_regularity_theorem"
+        ] == "DERIVED_CONDITIONAL"
+        and parametric_oracle["claim_boundary"][
+            "actual_parametric_exterior_oracle"
+        ] == "OPEN_CURRENT_OWNER"
+        and parametric_oracle["adjudication"][
+            "single_hand_selected_reset_history_sufficient"
+        ] is False
+        and parametric_oracle["adjudication"][
+            "global_smoothness_across_endpoint_switches_claimed"
+        ] is False
+        and parametric_oracle["adjudication"][
+            "infinite_tail_analysis_reopened"
+        ] is False
+    ):
+        raise RuntimeError("parametric reset-fiber exterior frontier is not current")
 
 
 def materialize() -> list[Path]:
