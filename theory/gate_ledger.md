@@ -253,9 +253,7 @@
   the exact exponential leading orbit, but the common scale remains physical
   because lower weights and the Casimir break full-action scale invariance.
   All 25 centers first feel the coupled relative-`R^-2` weight-five force.
-  Its sign and uniform remainder control remain open, so no root of that size
-  is promoted and none of positive limiting `H4`, Osgood decay, or an
-  event/stop is inferred for the nonrealized infinite mathematical branch.
+  No root of that size is promoted.
 - Exact weight-five center-force operator: the complete scale-weight-five
   action is the retained spatial-gravity, `3/A^2+3/B^2`, and linear
   identity-response curvature contribution.  It has no velocity dependence.
@@ -264,9 +262,8 @@
   `(A7+2H0 E7)X5=(0,-D_q_phys L5,-D_m L5)`.  The represented `74 x 74`
   coefficient matrix has condition number `3.689786755735126E11`; therefore
   neither its float64 solution nor an `O(R^-2)` eigenvalue is promoted.
-  Formally a uniform no-stop expansion would have
-  `D_tau log R4=H0+O(R4^-2)` and finite center drift, but the high-precision
-  coefficient and uniform nonlinear remainder theorem remain open.
+  The downstream analytic and Arb assemblies certify its complete leading
+  vector; this operator record retains the original float64 nonpromotion.
 - Generic precision-scope correction: the earlier audit used high-precision
   nodes and 70-digit final solves but only default 15-digit generic action-jet
   arithmetic.  Its nonpromotion decision was conservative, but its rows are
@@ -279,9 +276,21 @@
   `X5_q0=66.494327736840793193242388023117925357510087982407...` and rate
   correction
   `-51.963761962903932051564000772817373661146975456095...`.  This is a
-  reproducibly converged coefficient, not yet a directed-rounding interval.
-  Its negative sign, any full `H4` outcome, and an `R^-2` stability label
-  remain unpromoted pending interval and uniform nonlinear remainder control.
+  reproducibly converged coefficient and independently matches the full
+  98-variable object jet.
+- Directed leading center lift: certified Legendre balls plus an exact
+  rational Gauss remainder below `2.52E-105` enclose the complete 74-component
+  vector. The common-scale rate is strictly negative, all 74 residual balls
+  and twelve omitted gauge-chain residual balls contain zero, and the
+  algebraic multiplier block is rigorously invertible.
+- Full retained asymptotic branch: the exact normalized action is analytic in
+  `epsilon=R4^-2`; every positive-integer recurrence pencil is nonresonant
+  because `-2kH0` cannot equal `0` or `-7H0` for integer `k>=1`. Hence an
+  analytic branch `Z=epsilon X5+epsilon^2 R(epsilon)` has uniformly bounded
+  local remainder and `H4->H0>0`. This is outcome (a) only for the
+  mathematical forever-expanding branch, which remains nonrealized. It does
+  not close backward event reachability or the finite-history zero-source
+  force, and it promotes no `R^-2` eigenvalue.
 - Norman finite-encapsulation physical-domain reclassification:
   `OWNER_AUTHORIZED_NOT_ACTION_DERIVED`. A forward history that expands
   forever without completing encapsulation remains a mathematically

@@ -171,6 +171,35 @@ def _sparse_maps(x: object, arb: type) -> tuple[
     return seven, five
 
 
+def _omitted_u_maps(
+    x: object, arb: type
+) -> tuple[list[list[object]], list[list[object]], list[list[object]]]:
+    """Maps for the twelve omitted time/lapse-chain coordinate equations."""
+
+    q_maps = [[arb(0) for _ in range(10)] for _ in range(ORDER)]
+    v_maps = [[arb(0) for _ in range(10)] for _ in range(ORDER)]
+    five_maps = [[arb(0) for _ in range(8)] for _ in range(ORDER)]
+    for mode in range(1, ORDER + 1):
+        angle = 4 * mode * x
+        value = angle.cos()
+        derivative = -4 * mode * angle.sin()
+        index = mode - 1
+        q_maps[index][0] = 7 * value
+        q_maps[index][1] = derivative
+        q_maps[index][2] = derivative
+        q_maps[index][3] = derivative
+        v_maps[index][4] = value
+        v_maps[index][5] = value
+        v_maps[index][6] = value
+        five_maps[index][0] = value
+        five_maps[index][1] = value
+        five_maps[index][2] = value
+        five_maps[index][3] = derivative
+        five_maps[index][4] = derivative
+        five_maps[index][5] = derivative
+    return q_maps, v_maps, five_maps
+
+
 def gauss_remainder_bound(points: int) -> Fraction:
     """Exact global error radius for every scalar coefficient integral."""
 
@@ -218,6 +247,13 @@ def assemble_interval_weight_five_lift(
             for _ in range(DESCRIPTOR)
         ]
         force = [arb(0) for _ in range(PHYSICAL + MULTIPLIERS)]
+        hessian_q_u = [
+            [arb(0) for _ in range(DESCRIPTOR)] for _ in range(ORDER)
+        ]
+        hessian_v_u = [
+            [arb(0) for _ in range(DESCRIPTOR)] for _ in range(ORDER)
+        ]
+        force_u = [arb(0) for _ in range(ORDER)]
         hessian_terms, gradient_terms = _local_blocks()
         for index in range(points):
             node, gauss_weight = arb.legendre_p_root(
@@ -233,6 +269,7 @@ def assemble_interval_weight_five_lift(
             tangent = x.tan()
             cotangent = 1 / tangent
             seven, five = _sparse_maps(x, arb)
+            q_u_maps, v_u_maps, five_u_maps = _omitted_u_maps(x, arb)
             common = weight * density
             for row, column, function in hessian_terms:
                 coefficient = common * function(
@@ -241,6 +278,21 @@ def assemble_interval_weight_five_lift(
                 _add_outer(
                     hessian, seven[row], seven[column], coefficient
                 )
+                for mode in range(ORDER):
+                    if q_u_maps[mode][row] != 0:
+                        for selected_column, value in seven[column].items():
+                            hessian_q_u[mode][selected_column] += (
+                                coefficient
+                                * q_u_maps[mode][row]
+                                * value
+                            )
+                    if v_u_maps[mode][row] != 0:
+                        for selected_column, value in seven[column].items():
+                            hessian_v_u[mode][selected_column] += (
+                                coefficient
+                                * v_u_maps[mode][row]
+                                * value
+                            )
             local_gradient = [
                 function(
                     tangent, cotangent, cosine, sine, localization
@@ -254,6 +306,10 @@ def assemble_interval_weight_five_lift(
                         column if column < PHYSICAL else column - PHYSICAL
                     )
                     force[force_column] += coefficient * value
+                for mode in range(ORDER):
+                    force_u[mode] += (
+                        coefficient * five_u_maps[mode][local_row]
+                    )
 
         remainder = gauss_remainder_bound(points)
         remainder_ball = arb(
@@ -264,6 +320,11 @@ def assemble_interval_weight_five_lift(
                 hessian[row][column] += remainder_ball
         for row in range(PHYSICAL + MULTIPLIERS):
             force[row] += remainder_ball
+        for mode in range(ORDER):
+            force_u[mode] += remainder_ball
+            for column in range(DESCRIPTOR):
+                hessian_q_u[mode][column] += remainder_ball
+                hessian_v_u[mode][column] += remainder_ball
 
         matrix = [
             [arb(0) for _ in range(DESCRIPTOR)]
@@ -302,6 +363,15 @@ def assemble_interval_weight_five_lift(
                 ][2 * PHYSICAL + j]
 
         matrix_ball = arb_mat(matrix)
+        multiplier_block = arb_mat([
+            [
+                hessian[2 * PHYSICAL + row][2 * PHYSICAL + column]
+                for column in range(MULTIPLIERS)
+            ]
+            for row in range(MULTIPLIERS)
+        ])
+        # Arb raises if zero cannot be excluded from the determinant.
+        multiplier_block.inv()
         rhs = [arb(0)] * PHYSICAL + [
             -force[index] for index in range(PHYSICAL)
         ] + [
@@ -310,6 +380,25 @@ def assemble_interval_weight_five_lift(
         rhs_ball = arb_mat(DESCRIPTOR, 1, rhs)
         solution = matrix_ball.solve(rhs_ball, algorithm="precond")
         residual = matrix_ball * solution - rhs_ball
+        omitted_residuals = []
+        for mode in range(ORDER):
+            value = force_u[mode]
+            for column in range(PHYSICAL):
+                value += -(
+                    7 * h * hessian_v_u[mode][column]
+                    - hessian_q_u[mode][column]
+                ) * solution[column, 0]
+                value += -(
+                    5 * h * hessian_v_u[mode][PHYSICAL + column]
+                    + hessian_v_u[mode][column]
+                    - hessian_q_u[mode][PHYSICAL + column]
+                ) * solution[PHYSICAL + column, 0]
+            for column in range(MULTIPLIERS):
+                value += -(
+                    5 * h * hessian_v_u[mode][2 * PHYSICAL + column]
+                    - hessian_q_u[mode][2 * PHYSICAL + column]
+                ) * solution[2 * PHYSICAL + column, 0]
+            omitted_residuals.append(value)
         rate = -2 * h * solution[0, 0]
         return {
             "points": points,
@@ -325,9 +414,14 @@ def assemble_interval_weight_five_lift(
                 residual[row, 0].contains(0)
                 for row in range(DESCRIPTOR)
             ),
+            "omitted_gauge_chain_residuals": omitted_residuals,
+            "omitted_gauge_chain_residuals_contain_zero": all(
+                value.contains(0) for value in omitted_residuals
+            ),
             "q0_strictly_positive": bool(solution[0, 0] > 0),
             "q0_rate_strictly_negative": bool(rate < 0),
             "combined_Euler_Dirac_inverse_used": False,
+            "algebraic_multiplier_block_rigorously_invertible": True,
         }
     finally:
         ctx.dps = prior_digits

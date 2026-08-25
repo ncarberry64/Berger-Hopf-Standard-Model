@@ -39,9 +39,10 @@ time--lapse gauge chains quotient to a bordered physical pencil with 25
 center roots, 25 roots at `-7*sqrt(kappa0/42)`, 24 algebraic infinite modes,
 and no weight-seven unstable finite root. The physical common-scale center is
 retained. Every center first feels the coupled weight-five force at relative
-order `R^-2`; its sign, uniform remainder bound, inverse-inertia, boundary,
-and domain-margin consequences remain open, and eigenvalues of that order are
-not promoted. This live lower-weight dependency is not the current physical
+order `R^-2`; no eigenvalue of that order is promoted. The complete leading
+vector is now enclosed by directed Arb arithmetic, including the twelve
+omitted gauge-chain compatibility equations and a rigorously invertible
+algebraic multiplier block. This mathematical dependency is not the current physical
 Gate-7 owner under the finite-encapsulation ontology. It remains a
 mathematical branch analysis and must not be promoted into a realized
 particle observable without finite encapsulation.
@@ -50,10 +51,8 @@ The complete weight-five action component is now extracted exactly. Its
 first center lift is the inverse-free bordered equation
 `(A7+2H0 E7)X5=(0,-D_q_phys L5,-D_m L5)`. The current N12 coefficient matrix
 has condition number about `3.69e11`, so no float64 coefficient solution or
-`R^-2` root is promoted. Formally, uniform continuation without a stop would
-give `D_tau log R4=H0+O(R4^-2)`, but a high-precision/preconditioned lift and
-uniform full-remainder theorem are still required before that is a retained
-history conclusion.
+`R^-2` root is promoted. The downstream analytic and interval assemblies
+replace that binary64 realization without changing the operator.
 
 The earlier generic precision audit is corrected: its nodes and final solve
 were high precision, but its generic action arithmetic remained at 15 digits.
@@ -62,8 +61,21 @@ exact ten-variable weight-seven local Hessian and eight-variable weight-five
 local gradient now assemble the physical bordered lift entirely at 70 digits.
 The 64/80/96/128-node common-scale coefficients agree within `3.71e-44` and
 give rate correction `-51.963761962903932051564...`. This is reproducibly
-converged but not yet a directed-rounding interval, so the sign and every full
-remainder outcome remain unpromoted.
+converged and independently matches the full 98-variable object jet. The
+downstream 128-node Arb certificate gives an exact-rational quadrature
+remainder below `2.52e-105`, a strictly negative common-scale rate interval,
+and at least 299 relative-accuracy bits across all 74 components.
+
+The complete normalized retained action is analytic in `epsilon=R4^-2` with
+relative bulk powers zero through four and inverse-inertia power seven. The
+positive-integer recurrence pencils `A7+2kH0E7` are all nonresonant because
+the only finite leading roots are `0` and `-7H0`, while a collision would
+require `k=7/2`. The finite-dimensional analytic Briot--Bouquet theorem gives
+`Z=epsilon X5+epsilon^2 R(epsilon)` with uniformly bounded local remainder
+and `H4->H0>0`. This closes outcome (a) only on the mathematical
+forever-expanding branch, which remains nonrealized by owner ontology. It
+does not prove backward event reachability or the physical finite-history
+zero-source force.
 
 The recovered Norman owner ontology is recorded as an owner-authorized semantic layer, never as an action-derived equation. It fixes geometry-first emergence, persistent mode/history particle classes, the base-plus-two-excitations generation architecture, action-owned response mass with a universal dimensional origin, propagation-locked neutrino mass, CKM as relative response-basis orientation, strict bare/dressed separation, and the irreversible dependency direction `action -> theorem -> observable -> frozen comparison`.
 

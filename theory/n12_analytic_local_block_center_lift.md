@@ -1,6 +1,11 @@
 # N12 analytic local-block center lift
 
-Status: `GENUINE_70_DIGIT_ANALYTIC_LOCAL_BLOCK_LIFT_CONVERGED_DIRECTED_INTERVAL_AND_UNIFORM_REMAINDER_OPEN`.
+Historical analytic status: `GENUINE_HIGH_PRECISION_LOCAL_BLOCK_LIFT_CONVERGED`.
+
+Downstream update: directed Arb rounding encloses the complete leading vector,
+and the full retained local analytic branch theorem closes the mathematical
+consequence as `H4->H0>0`. This document preserves the analytic and
+independent-generic provenance preceding those certificates.
 
 The generic precision audit is corrected: it used high-precision nodes and a
 70-digit final solve, but its action-jet arithmetic ran at the then-default
@@ -33,11 +38,10 @@ The 64-, 80-, 96-, and 128-node rows agree below `1e-40`:
 `(D_tau q0)_5=-51.963761962903932051564000772817373661146975456095...`.
 
 This converges the represented coefficient reproducibly and establishes a
-robust negative observed common-scale rate correction. A directed-rounding
-interval wrapper is still required before promoting the sign as a rigorous
-action theorem. A uniform nonlinear remainder theorem or existing
-event/canonical-stop theorem is still required before selecting among the
-full-history `H4` outcomes.
+robust negative observed common-scale rate correction. The downstream Arb
+wrapper certifies that sign rigorously. The subsequent Briot--Bouquet theorem
+uses the exact scale decomposition and integer nonresonance to obtain a
+uniform local full-action remainder and select mathematical outcome (a).
 
 The infinite nonencapsulating branch remains mathematical and nonrealized;
 the physical finite-history Calderon force remains a separate Gate-7 owner.

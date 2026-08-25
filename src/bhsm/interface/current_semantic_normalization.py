@@ -107,6 +107,7 @@ def _basis() -> list[dict[str, Any]]:
     p_w5_mp_audit = "artifacts/flagship_integration/BHSM_N12_WEIGHT_FIVE_MULTIPRECISION_NONPROMOTION.json"
     p_w5_analytic = "artifacts/flagship_integration/BHSM_N12_ANALYTIC_LOCAL_BLOCK_CENTER_LIFT.json"
     p_w5_interval = "artifacts/flagship_integration/BHSM_N12_INTERVAL_WEIGHT_FIVE_CENTER_LIFT.json"
+    p_full_asymptotic = "artifacts/flagship_integration/BHSM_N12_FULL_RETAINED_ASYMPTOTIC_BRANCH.json"
     p_e1 = "artifacts/flagship_integration/BHSM_N12_FORWARD_E1_SOURCE_MEASURE_CRITERION.json"
     p_nf = "artifacts/flagship_integration/BHSM_N12_GATE7_AE2_NONFERMION_THRESHOLD_MARGIN.json"
     p_fac = "artifacts/flagship_integration/BHSM_N12_GATE7_AE2_COMPACT_SOURCE_DINI_CLOSURE.json"
@@ -320,7 +321,7 @@ def _basis() -> list[dict[str, Any]]:
             "round expanding mathematical branch on the weight-seven physical tangent quotient",
             [p_w5_modulation],
             current_status="DERIVED_OPERATOR_AND_DIRECTED_LEADING_VECTOR_UNIFORM_REMAINDER_OPEN",
-            downstream_consumers=["INTERVAL_WEIGHT_FIVE_CENTER_LIFT", "MATHEMATICAL_BRANCH_REMAINDER_ADJUDICATION"],
+            downstream_consumers=["INTERVAL_WEIGHT_FIVE_CENTER_LIFT", "FULL_RETAINED_ASYMPTOTIC_BRANCH"],
             forbidden_interpretations=["float64 R^-2 coefficients are certified eigenvalues", "formal H4 limit is a full retained-history theorem", "the infinite branch is a realized particle"],
         ),
         record(
@@ -355,9 +356,21 @@ def _basis() -> list[dict[str, Any]]:
             "Certified Legendre balls, an exact rational quadrature remainder, and a preconditioned 74 by 74 Arb solve rigorously enclose the complete leading center modulation vector and make its common-scale rate correction strictly negative.",
             "N12 round expanding mathematical branch physical tangent quotient",
             [p_w5_interval],
-            current_status="DIRECTED_LEADING_WEIGHT_FIVE_VECTOR_CERTIFIED_UNIFORM_FULL_REMAINDER_OPEN",
-            downstream_consumers=["MATHEMATICAL_BRANCH_REMAINDER_ADJUDICATION"],
+            current_status="DIRECTED_LEADING_WEIGHT_FIVE_VECTOR_CERTIFIED_FULL_ASYMPTOTIC_BRANCH_DOWNSTREAM",
+            downstream_consumers=["FULL_RETAINED_ASYMPTOTIC_BRANCH"],
             forbidden_interpretations=["the leading negative rate alone proves nonlinear H4 decay", "the mathematical infinite branch is a realized particle", "the interval certificate closes the finite-history zero-source force"],
+        ),
+        record(
+            "FULL_RETAINED_ASYMPTOTIC_BRANCH",
+            "Z(epsilon)=epsilon*X5+epsilon^2*R(epsilon), H4=H0+epsilon*h1+epsilon^2*r_H(epsilon), epsilon=R4^-2",
+            "ANALYTIC_BRIOT_BOUQUET_FULL_ACTION_BRANCH_THEOREM",
+            "MATHEMATICAL_OBJECT",
+            "Exact retained scale weights, the rigorously invertible algebraic block, first-order gauge compatibility, and positive-integer descriptor nonresonance give a local analytic full-action branch with uniformly bounded remainder and H4 tending to H0>0.",
+            "nonrealized forever-expanding N12 mathematical formation branch near epsilon=0",
+            [p_full_asymptotic],
+            current_status="CLOSED_OUTCOME_A_H4_TO_H0_POSITIVE_NONREALIZED_SCOPE",
+            downstream_consumers=["PHYSICAL_FINITE_HISTORY_ZERO_SOURCE_FORCE"],
+            forbidden_interpretations=["local infinity analyticity proves backward event reachability", "the nonrealized branch is a physical particle", "outcome A closes the finite-history zero-source force", "a lower-weight coefficient is a new eigenvalue"],
         ),
         record(
             "SOURCE_WEIGHTED_THRESHOLD_MEASURE",

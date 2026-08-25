@@ -34,9 +34,11 @@ def test_arb_center_lift_has_strict_signs_and_verified_residual():
     assert result["residual_contains_zero"] is True
     assert result["q0_strictly_positive"] is True
     assert result["q0_rate_strictly_negative"] is True
+    assert result["omitted_gauge_chain_residuals_contain_zero"] is True
     assert result["q0_coefficient"].rel_accuracy_bits() >= 250
     assert result["q0_rate_coefficient"].rel_accuracy_bits() >= 250
     assert result["combined_Euler_Dirac_inverse_used"] is False
+    assert result["algebraic_multiplier_block_rigorously_invertible"] is True
 
 
 def test_interval_artifact_preserves_claim_boundary():
@@ -45,6 +47,9 @@ def test_interval_artifact_preserves_claim_boundary():
     assert payload["common_scale_interval"]["strictly_positive"] is True
     assert payload["common_scale_rate_interval"]["strictly_negative"] is True
     assert len(payload["complete_leading_modulation_vector"]) == 74
+    assert payload["omitted_weight_seven_gauge_chain_compatibility"][
+        "all_contain_zero"
+    ] is True
     assert payload["claim_boundary"]["uniform_full_remainder_outcome"] == "OPEN"
     assert payload["claim_boundary"]["Gate7"] == "ACTIVE"
     assert payload["FULL_BHSM_COMPLETE"] is False

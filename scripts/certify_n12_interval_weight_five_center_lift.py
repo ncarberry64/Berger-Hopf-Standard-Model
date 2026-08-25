@@ -96,6 +96,10 @@ def build_payload() -> dict[str, Any]:
             item["relative_accuracy_bits"]
             for item in solution_intervals.values()
         )
+        omitted_residuals = [
+            str(value)
+            for value in interval["omitted_gauge_chain_residuals"]
+        ]
         q0_data = {
             "ball": str(q0),
             "midpoint": str(q0.mid()),
@@ -150,6 +154,9 @@ def build_payload() -> dict[str, Any]:
         "all_74_residual_balls_contain_zero": interval[
             "residual_contains_zero"
         ],
+        "all_12_omitted_gauge_chain_residual_balls_contain_zero": interval[
+            "omitted_gauge_chain_residuals_contain_zero"
+        ],
         "all_74_solution_components_have_at_least_250_accuracy_bits": (
             minimum_accuracy >= 250
         ),
@@ -163,6 +170,9 @@ def build_payload() -> dict[str, Any]:
         ],
         "combined_Euler_Dirac_inverse_absent": not interval[
             "combined_Euler_Dirac_inverse_used"
+        ],
+        "algebraic_multiplier_block_rigorously_invertible": interval[
+            "algebraic_multiplier_block_rigorously_invertible"
         ],
         "no_action_gate_scale_selector_or_physics_changed": True,
         "uniform_nonlinear_remainder_not_overpromoted": True,
@@ -203,6 +213,13 @@ def build_payload() -> dict[str, Any]:
         "common_scale_interval": q0_data,
         "common_scale_rate_interval": rate_data,
         "complete_leading_modulation_vector": solution_intervals,
+        "omitted_weight_seven_gauge_chain_compatibility": {
+            "residual_balls": omitted_residuals,
+            "all_contain_zero": interval[
+                "omitted_gauge_chain_residuals_contain_zero"
+            ],
+            "interpretation": "THE_PHYSICAL_QUOTIENT_LIFT_SATISFIES_THE_TWELVE_OMITTED_FIRST_ORDER_COORDINATE_EQUATIONS",
+        },
         "minimum_solution_relative_accuracy_bits": minimum_accuracy,
         "adjudication": {
             "analytic_local_block_value": "DIRECTED_INTERVAL_CERTIFIED",

@@ -49,6 +49,7 @@ SOURCES = (
     "artifacts/flagship_integration/BHSM_N12_WEIGHT_FIVE_MULTIPRECISION_NONPROMOTION.json",
     "artifacts/flagship_integration/BHSM_N12_ANALYTIC_LOCAL_BLOCK_CENTER_LIFT.json",
     "artifacts/flagship_integration/BHSM_N12_INTERVAL_WEIGHT_FIVE_CENTER_LIFT.json",
+    "artifacts/flagship_integration/BHSM_N12_FULL_RETAINED_ASYMPTOTIC_BRANCH.json",
     "artifacts/intrinsic_state_selection/BHSM_N12_FINITE_ENCAPSULATION_LOCAL_BRANCH.json",
     "artifacts/flagship_integration/BHSM_N12_GATE7_AE2_THRESHOLD_SUPERSESSION.json",
     "artifacts/BHSM_alpha_i_update_v4_2.json",
@@ -106,6 +107,7 @@ def verify_current_lineage() -> None:
     weight_five_mp_audit = loaded["artifacts/flagship_integration/BHSM_N12_WEIGHT_FIVE_MULTIPRECISION_NONPROMOTION.json"]
     analytic_center_lift = loaded["artifacts/flagship_integration/BHSM_N12_ANALYTIC_LOCAL_BLOCK_CENTER_LIFT.json"]
     interval_center_lift = loaded["artifacts/flagship_integration/BHSM_N12_INTERVAL_WEIGHT_FIVE_CENTER_LIFT.json"]
+    full_asymptotic_branch = loaded["artifacts/flagship_integration/BHSM_N12_FULL_RETAINED_ASYMPTOTIC_BRANCH.json"]
     frontier = loaded["artifacts/flagship_integration/BHSM_N12_GATE7_AE2_THRESHOLD_SUPERSESSION.json"]
     if ae2.get("action_version") != "BHSM-AE-2.0.0":
         raise RuntimeError("AE2 action version mismatch")
@@ -368,6 +370,21 @@ def verify_current_lineage() -> None:
         ] == "OPEN"
     ):
         raise RuntimeError("directed interval center-lift frontier is not current")
+    if not (
+        full_asymptotic_branch["claim_boundary"][
+            "mathematical_transverse_nonlinear_modulation_consequence"
+        ] == "CLOSED_OUTCOME_A"
+        and full_asymptotic_branch["nonlinear_consequence"][
+            "a_preserves_H4_to_H_inf_positive"
+        ] is True
+        and full_asymptotic_branch["nonlinear_consequence"][
+            "physical_particle_statement"
+        ] is False
+        and full_asymptotic_branch["claim_boundary"][
+            "physical_finite_history_zero_source_force"
+        ] == "OPEN"
+    ):
+        raise RuntimeError("full retained asymptotic-branch frontier is not current")
 
 
 def materialize() -> list[Path]:

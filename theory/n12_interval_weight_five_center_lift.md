@@ -36,6 +36,12 @@ second strictly negative. This is a rigorous sign theorem for the represented
 leading weight-five center modulation, without forming the combined
 Euler--Dirac inverse.
 
+Lifting the ball solution back through the full local maps also encloses the
+twelve coordinate equations omitted by the leading time/lapse-chain quotient.
+All twelve residual balls contain zero, with radii below `3.2e-88`. Thus the
+first lower-weight source satisfies the required Noether/gauge compatibility;
+the quotient solve has not silently discarded a first-order equation.
+
 This does not yet promote a full `R4^-2` stability label. Such a label still
 requires a uniform bound for the complete retained lower-weight and nonlinear
 remainder on the finite physical-history domain, or an already canonical
