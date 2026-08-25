@@ -527,6 +527,88 @@ def product_dirac_compact_history_weyl_jets(
     }
 
 
+def scalar_compact_weyl_terminal_germ(
+    spatial_eigenvalue_at_unit_radius: float,
+    terminal_log_radius: float,
+    spectral_parameter: float,
+) -> dict[str, np.ndarray | float]:
+    """Return the exact ``T -> 0+`` scalar Weyl Laurent coefficients.
+
+    With ``L=[[1,-1],[-1,1]]`` and
+    ``A=[[1/3,1/6],[1/6,1/3]]``, a smooth terminal coefficient has
+
+    ``M_C=T^-1 L+T*(c exp(-2x_E)-z) A+O(T^2)``.
+
+    The fixed-duration physical common-scale derivative is the derivative of
+    this germ under ``D x_E=1``.
+    """
+
+    c = float(spatial_eigenvalue_at_unit_radius)
+    x = float(terminal_log_radius)
+    z = float(spectral_parameter)
+    if not math.isfinite(c) or c < 0.0 or not math.isfinite(x) or not math.isfinite(z):
+        raise ValueError("finite nonnegative channel and finite terminal data required")
+    potential = c * math.exp(-2.0 * x)
+    q = potential - z
+    leading = np.asarray([[1.0, -1.0], [-1.0, 1.0]])
+    first = np.asarray([[1.0 / 3.0, 1.0 / 6.0], [1.0 / 6.0, 1.0 / 3.0]])
+    return {
+        "inverse_duration": leading,
+        "duration": q * first,
+        "common_scale_constant": np.zeros((2, 2)),
+        "common_scale_duration": -2.0 * potential * first,
+        "potential_at_terminal": potential,
+        "shifted_potential_at_terminal": q,
+    }
+
+
+def product_dirac_compact_weyl_terminal_germ(
+    dirac_eigenvalue_at_unit_radius: float,
+    terminal_log_radius: float,
+    terminal_proper_log_radius_rate: float,
+    spectral_parameter: float,
+    *,
+    chirality: int = 1,
+) -> dict[str, np.ndarray | float]:
+    """Return product-Dirac terminal Laurent and common-scale coefficients."""
+
+    eigenvalue = float(dirac_eigenvalue_at_unit_radius)
+    x = float(terminal_log_radius)
+    rate = float(terminal_proper_log_radius_rate)
+    z = float(spectral_parameter)
+    sign = int(chirality)
+    if not all(math.isfinite(value) for value in (eigenvalue, x, rate, z)) or sign not in (-1, 1):
+        raise ValueError("finite terminal data and chirality +/-1 required")
+    s = sign * eigenvalue * math.exp(-x)
+    s_dot = -s * rate
+    q = s**2 - z
+    leading = np.asarray([[1.0, -1.0], [-1.0, 1.0]])
+    constant = np.asarray([[-s, 0.0], [0.0, s]])
+    duration = np.asarray(
+        [
+            [(q + 2.0 * s_dot) / 3.0, (q - s_dot) / 6.0],
+            [(q - s_dot) / 6.0, (q - s_dot) / 3.0],
+        ]
+    )
+    common_constant = np.asarray([[s, 0.0], [0.0, -s]])
+    common_duration = np.asarray(
+        [
+            [(-2.0 * s**2 - 2.0 * s_dot) / 3.0, (-2.0 * s**2 + s_dot) / 6.0],
+            [(-2.0 * s**2 + s_dot) / 6.0, (-2.0 * s**2 + s_dot) / 3.0],
+        ]
+    )
+    return {
+        "inverse_duration": leading,
+        "constant": constant,
+        "duration": duration,
+        "common_scale_constant": common_constant,
+        "common_scale_duration": common_duration,
+        "superpotential_at_terminal": s,
+        "proper_superpotential_rate_at_terminal": s_dot,
+        "shifted_squared_superpotential_at_terminal": q,
+    }
+
+
 def backward_weyl_mobius(
     transfer_birth_to_terminal: np.ndarray,
     terminal_admittance: complex,
@@ -625,6 +707,8 @@ __all__ = [
     "two_boundary_weyl_from_transfer_jets",
     "scalar_compact_history_weyl_jets",
     "product_dirac_compact_history_weyl_jets",
+    "scalar_compact_weyl_terminal_germ",
+    "product_dirac_compact_weyl_terminal_germ",
     "backward_weyl_mobius",
     "backward_weyl_mobius_jets",
 ]

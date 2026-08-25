@@ -1,3 +1,5 @@
+from collections.abc import Callable
+
 import numpy as np
 from scipy.linalg import expm
 
@@ -6,10 +8,12 @@ from bhsm.interface.aether_forward_channel_transfer import (
     backward_weyl_mobius_jets,
     integrate_transfer_jets,
     product_dirac_compact_history_weyl_jets,
+    product_dirac_compact_weyl_terminal_germ,
     product_dirac_channel_log_radius_jets,
     product_dirac_channel_transfer_generator,
     proper_duration_scaled_generator_jets,
     scalar_compact_history_weyl_jets,
+    scalar_compact_weyl_terminal_germ,
     scalar_channel_log_radius_jets,
     scalar_channel_transfer_generator,
     transfer_variation_rhs,
@@ -379,3 +383,100 @@ def test_product_dirac_compact_history_wrapper_preserves_chirality() -> None:
     assert result["channel"] == "product_Dirac"
     assert result["chirality"] == -1
     assert result["weyl"]["base_Hermitian_residual"] < 2.0e-11
+
+
+def _terminal_affine_radius(
+    duration: float,
+    terminal_log_radius: float,
+    terminal_proper_rate: float,
+) -> Callable[[float], dict[str, float]]:
+    def radius(normalized_time: float) -> dict[str, float]:
+        return {
+            "base": terminal_log_radius
+            + duration * terminal_proper_rate * (normalized_time - 1.0),
+            "first_left": 1.0,
+            "first_right": 0.0,
+            "mixed_second": 0.0,
+        }
+
+    return radius
+
+
+def test_scalar_terminal_weyl_germ_matches_compact_history() -> None:
+    terminal_x = -0.0050962473732
+    terminal_rate = 0.1066145859563
+    germ = scalar_compact_weyl_terminal_germ(3.0, terminal_x, -1.0)
+    leading = germ["inverse_duration"]
+
+    residuals = []
+    derivative_residuals = []
+    for duration in (1.0e-3, 5.0e-4):
+        result = scalar_compact_history_weyl_jets(
+            3.0,
+            -1.0,
+            _terminal_affine_radius(duration, terminal_x, terminal_rate),
+            {
+                "base": duration,
+                "first_left": 0.0,
+                "first_right": 0.0,
+                "mixed_second": 0.0,
+            },
+            relative_tolerance=1.0e-12,
+            absolute_tolerance=1.0e-14,
+        )["weyl"]
+        approximation = leading / duration + duration * germ["duration"]
+        derivative_approximation = (
+            germ["common_scale_constant"]
+            + duration * germ["common_scale_duration"]
+        )
+        residuals.append(np.linalg.norm(result["base"].real - approximation))
+        derivative_residuals.append(
+            np.linalg.norm(result["first_left"].real - derivative_approximation)
+        )
+
+    assert residuals[1] < 0.3 * residuals[0]
+    assert derivative_residuals[1] < 0.3 * derivative_residuals[0]
+
+
+def test_product_dirac_terminal_weyl_germ_matches_compact_history() -> None:
+    terminal_x = -0.0050962473732
+    terminal_rate = 0.1066145859563
+    for chirality in (-1, 1):
+        germ = product_dirac_compact_weyl_terminal_germ(
+            1.5, terminal_x, terminal_rate, -1.0, chirality=chirality
+        )
+        residuals = []
+        derivative_residuals = []
+        for duration in (1.0e-3, 5.0e-4):
+            result = product_dirac_compact_history_weyl_jets(
+                1.5,
+                -1.0,
+                _terminal_affine_radius(duration, terminal_x, terminal_rate),
+                {
+                    "base": duration,
+                    "first_left": 0.0,
+                    "first_right": 0.0,
+                    "mixed_second": 0.0,
+                },
+                chirality=chirality,
+                relative_tolerance=1.0e-12,
+                absolute_tolerance=1.0e-14,
+            )["weyl"]
+            approximation = (
+                germ["inverse_duration"] / duration
+                + germ["constant"]
+                + duration * germ["duration"]
+            )
+            derivative_approximation = (
+                germ["common_scale_constant"]
+                + duration * germ["common_scale_duration"]
+            )
+            residuals.append(np.linalg.norm(result["base"].real - approximation))
+            derivative_residuals.append(
+                np.linalg.norm(
+                    result["first_left"].real - derivative_approximation
+                )
+            )
+
+        assert residuals[1] < 0.3 * residuals[0]
+        assert derivative_residuals[1] < 0.3 * derivative_residuals[0]
