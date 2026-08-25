@@ -158,12 +158,17 @@ encapsulation applies to the pre-event formation arm, while the post-event
 child uses the already-retained maximal source domain and may end at a later
 event, a canonical finite exit, or an infinite/excluded Friedrichs end. No
 reset-to-asymptotic intersection is required merely to define that maximal
-domain, and none is claimed. The current owner remains the action-owned
-maximal-history coefficient realization and first reset-quotient geometry
-jet on a nonempty regular event-generated stratum; the derived operator
-cotangent and intrinsic quotient KKT test can then evaluate the physical
-heat-minus-zeta force. Dimension counting and a single reset representative
-have no promotion authority.
+domain, and none is claimed. The maximal negative-`z` Weyl value is now
+uniquely action-owned as the operator-norm limit of nested finite Dirichlet
+form-core exhaustions on every Friedrichs route. The artificial far edges are
+approximation devices and are not physical endpoints. The current owner is
+correspondingly narrowed to a validated N12 enclosure of that exhaustion and
+the first noncompact physical reset-quotient geometry jet on a nonempty
+regular event-generated stratum; the derived operator cotangent and intrinsic
+quotient KKT test can then evaluate the E1 heat-minus-zeta force after the
+low-energy source measure and graded angular contractions are controlled.
+Dimension counting and a single reset representative have no promotion
+authority.
 
 The recovered Norman owner ontology is recorded as an owner-authorized semantic layer, never as an action-derived equation. It fixes geometry-first emergence, persistent mode/history particle classes, the base-plus-two-excitations generation architecture, action-owned response mass with a universal dimensional origin, propagation-locked neutrino mass, CKM as relative response-basis orientation, strict bare/dressed separation, and the irreversible dependency direction `action -> theorem -> observable -> frozen comparison`.
 

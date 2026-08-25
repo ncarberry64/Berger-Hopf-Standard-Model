@@ -1947,6 +1947,26 @@ Exact next object:
 - Chord 3 finite proof obligation: `FALSE`.
 - Gate 7: `ACTIVE`; Gate 8: `LOCKED`; `FULL_BHSM_COMPLETE=FALSE`.
 
+## N=12 maximal Friedrichs Weyl exhaustion
+
+- Later retained event: `USE_EXISTING_RESET_GRAPH`.
+- Finite canonical exit or infinite/excluded maximal end:
+  `USE_EXISTING_MINIMAL_FORM_FRIEDRICHS_CLOSURE`.
+- For every fixed real `z=-kappa^2<0`, finite Dirichlet form-core
+  exhaustions converge to the maximal birth Weyl map:
+  `OPERATOR_NORM_AT_FIXED_CHANNEL_AND_GALERKIN_LEVEL`.
+- Artificial far edge promoted to a physical endpoint: `FALSE`.
+- Global upper bound for `R4` required for this negative-`z` value theorem:
+  `FALSE`.
+- Compact-support weak first and mixed-second Weyl jets on the same
+  exhaustion: `DERIVED`.
+- Validated numerical N12 limit and noncompact physical reset-quotient first
+  jet: `OPEN_CURRENT_OWNER`.
+- E1 zero-threshold source measure and graded angular contractions:
+  `OPEN_AFTER_FIRST_JET_REALIZATION`.
+- Gate 7: `ACTIVE`; Gate 8: `LOCKED`; chord 3: `UNAUTHORIZED`;
+  `FULL_BHSM_COMPLETE=FALSE`.
+
 ## N=12 Gate-7 formation/decay chronology supersession
 
 - Physical chronology:
