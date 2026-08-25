@@ -1,0 +1,97 @@
+{
+  "FLAGSHIP_READY": false,
+  "FULL_BHSM_COMPLETE": false,
+  "artifact": "BHSM_N12_EXACT_WEIGHT_SEVEN_CENTER_FAMILY",
+  "claim_boundary": {
+    "FLAGSHIP_READY": false,
+    "FULL_BHSM_COMPLETE": false,
+    "Gate7": "ACTIVE_NONLINEAR_NORMAL_ATTRACTION_OR_TRAPPING_OWNER",
+    "Gate8": "LOCKED",
+    "chord_03_authorized": false,
+    "frozen_predictions_changed": false
+  },
+  "classification": "FOR_EVERY_REGULAR_FIXED_RETAINED_SHAPE,_COMMON_SCALE_EXPANSION_AT_H0_WITH_UNIT_LAPSE_AND_ZERO_SHIFT_SOLVES_THE_COMPLETE_NONLINEAR_WEIGHT_SEVEN_EULER_LAGRANGE_AND_CONSTRAINT_SYSTEM;_AFTER_THE_TIME_LAPSE_QUOTIENT_THE_24_SHAPE_PARAMETERS_PLUS_ONE_COMMON_SCALE_ORBIT_PHASE_EXHAUST_THE_25_LINEAR_CENTER_ROOTS",
+  "exact_family": {
+    "ADM_identity": "K7=-42*H0^2=-kappa0",
+    "balance": "H0^2=kappa0/42",
+    "configuration": "q0=q0_bar+H0*tau;_all_retained_shapes_fixed",
+    "multipliers": "log_lapse=0_AND_shift=0",
+    "physical_parameters": {
+      "common_scale_orbit_phase": 1,
+      "total": 25,
+      "w_and_b_shape_parameters": 24
+    },
+    "velocity": "qdot=H0*e0"
+  },
+  "exact_variational_identities": {
+    "consequence": "N7(a,0)=0_ON_THE_EXACT_CENTER_FAMILY",
+    "coordinate": "D_tau(-6*H0*V*s)-(-kappa0*V*s)=0_BECAUSE_D_tau*V=7*H0*V_AND_42*H0^2=kappa0",
+    "lapse": "V*(-kappa0/2-K7/2)=0",
+    "response_beta_squared_first_variation": 0,
+    "shift": "delta_beta*L7=6*H0*(V*beta)'_WITH_ZERO_ADMISSIBLE_BOUNDARY_TERM"
+  },
+  "inputs": {
+    "artifacts/flagship_integration/BHSM_N12_ASYMPTOTIC_CAPTURE_BASIN_PRECONDITIONS.json": "D304918A9AC162FCDA77BF3F5EA27C679B093C8997104EB4783B75291E81E337",
+    "artifacts/flagship_integration/BHSM_N12_WEIGHT_SEVEN_TRANSVERSE_DESCRIPTOR.json": "44C88B6588E92B002A6E882108DCFBB1B04CA296CF662E58AD9CA459C4D78C74",
+    "src/bhsm/interface/aether_n3_exact_full_local_action_jet_v17_60.py": "301C0F62E571E83605707FF816DF64D0FA27EB915CB242861B26B7D22905B9C2",
+    "theory/n12_exact_weight_seven_center_family.md": "971EE2EDEEB18B203CE6A0F55398B2B5976952E04F0BCD1F5602D31C26FF3B4E"
+  },
+  "numerical_crosscheck": {
+    "maximum_constraint_residual": 1.0645376100035926e-14,
+    "maximum_coordinate_EL_residual": 2.220446049250313e-15,
+    "purpose": "ROUND_OFF_CHECK_OF_THE_EXACT_ALGEBRAIC_IDENTITIES",
+    "quadrature_points": 192,
+    "rows": [
+      {
+        "maximum_coordinate_EL_residual": 8.881784197001252e-16,
+        "maximum_lapse_shift_constraint_residual": 5.508340680116897e-15,
+        "shape_amplitude": 0.0
+      },
+      {
+        "maximum_coordinate_EL_residual": 4.440892098500626e-16,
+        "maximum_lapse_shift_constraint_residual": 5.400723771524431e-15,
+        "shape_amplitude": 0.0001
+      },
+      {
+        "maximum_coordinate_EL_residual": 6.661338147750939e-16,
+        "maximum_lapse_shift_constraint_residual": 5.6323323113018975e-15,
+        "shape_amplitude": 0.001
+      },
+      {
+        "maximum_coordinate_EL_residual": 8.881784197001252e-16,
+        "maximum_lapse_shift_constraint_residual": 4.192993403823643e-15,
+        "shape_amplitude": 0.01
+      },
+      {
+        "maximum_coordinate_EL_residual": 2.220446049250313e-15,
+        "maximum_lapse_shift_constraint_residual": 1.0645376100035926e-14,
+        "shape_amplitude": 0.05
+      }
+    ]
+  },
+  "remaining_basin_owner": {
+    "nonlinear_normal_attraction_or_trapping_bound": "OPEN_CURRENT_OWNER",
+    "positive_H4_and_domain_margin": "OPEN_QUANTITATIVE",
+    "positive_epsilon_remainder_absorption": "OPEN_AFTER_NORMAL_BOUND",
+    "reset_to_capture_connection": "OPEN_AFTER_CAPTURE_THEOREM",
+    "uniform_constraint_reduction_near_family": "OPEN"
+  },
+  "status": "EXACT_LEADING_WEIGHT_CENTER_FAMILY_DERIVED_NORMAL_ATTRACTION_NOT_YET_PROMOTED",
+  "supersession": {
+    "one_analytic_infinity_branch": "PRESERVED",
+    "open_capture_basin": "NOT_YET_DERIVED",
+    "precondition_N7_a_0_identity": "CLOSED_BY_EXACT_ACTION_IDENTITY"
+  },
+  "validation": {
+    "coordinate_EL_variation_cancels_by_volume_rate": true,
+    "lapse_variation_cancels_pointwise": true,
+    "no_basin_reset_connection_chord_or_action_extension_promoted": true,
+    "physical_family_dimension_matches_center_count": true,
+    "pointwise_ADM_scalar_is_minus_kappa0": true,
+    "round_balance_identity_42_H0_squared_equals_kappa0": true,
+    "sampled_complete_nonlinear_constraint_residual_below_5e_12": true,
+    "sampled_complete_nonlinear_coordinate_residual_below_5e_12": true,
+    "shift_variation_is_admissible_total_derivative": true
+  },
+  "validation_passed": true
+}
