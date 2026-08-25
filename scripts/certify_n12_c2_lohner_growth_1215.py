@@ -3,6 +3,7 @@
 from __future__ import annotations
 
 import json
+import os
 from pathlib import Path
 import sys
 
@@ -15,10 +16,11 @@ import certify_n12_c2_fresh_chart_fixed_s_growth as growth  # noqa: E402
 
 
 BASE = ROOT / "artifacts" / "flagship_integration"
-CHART = BASE / "BHSM_N12_C2_LOHNER_RECENTER_1215.json"
-CHART_DATA = BASE / "BHSM_N12_C2_LOHNER_RECENTER_1215.npz"
-CONTINUATION = BASE / "BHSM_N12_C2_LOHNER_RECENTER_1215_INPUT.json"
-RESULT = BASE / "BHSM_N12_C2_LOHNER_GROWTH_1215.json"
+SEGMENT = int(os.environ.get("BHSM_N12_C2_LOHNER_SEGMENT", "1215"))
+CHART = BASE / f"BHSM_N12_C2_LOHNER_RECENTER_{SEGMENT}.json"
+CHART_DATA = BASE / f"BHSM_N12_C2_LOHNER_RECENTER_{SEGMENT}.npz"
+CONTINUATION = BASE / f"BHSM_N12_C2_LOHNER_RECENTER_{SEGMENT}_INPUT.json"
+RESULT = BASE / f"BHSM_N12_C2_LOHNER_GROWTH_{SEGMENT}.json"
 THEORY = ROOT / "theory" / "n12_c2_lohner_growth_1215.md"
 
 
@@ -34,10 +36,10 @@ def main() -> None:
     growth.THEORY = THEORY
     growth.INPUTS = inputs
     payload = growth.build_payload()
-    payload["artifact"] = "BHSM_N12_C2_LOHNER_GROWTH_1215"
+    payload["artifact"] = f"BHSM_N12_C2_LOHNER_GROWTH_{SEGMENT}"
     payload["status"] = (
-        "C2_LOHNER_SEGMENT_1215_FIXED_s_GROWTH_CERTIFIED"
-        if payload["validation_passed"] else "C2_LOHNER_GROWTH_1215_INVALID"
+        f"C2_LOHNER_SEGMENT_{SEGMENT}_FIXED_s_GROWTH_CERTIFIED"
+        if payload["validation_passed"] else f"C2_LOHNER_GROWTH_{SEGMENT}_INVALID"
     )
     payload["exact_next_dependency"] = (
         "ASSEMBLE_THE_1215_BORDERED_RESPONSE,_EXACT_FIXED_s_FIELD_MATRIX,_"

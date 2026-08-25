@@ -3,6 +3,7 @@
 from __future__ import annotations
 
 import json
+import os
 from pathlib import Path
 import sys
 
@@ -18,16 +19,20 @@ import audit_n12_c2_exact_center_fixed_s_field_matrix as field  # noqa: E402
 
 
 BASE = ROOT / "artifacts" / "flagship_integration"
-PRIOR = BASE / "BHSM_N12_C2_CANCELLED_FIELD_LOHNER_STEP.json"
-PRIOR_DATA = BASE / "BHSM_N12_C2_CANCELLED_FIELD_LOHNER_STEP.npz"
-CHART = BASE / "BHSM_N12_C2_LOHNER_RECENTER_1215.json"
-GROWTH = BASE / "BHSM_N12_C2_LOHNER_GROWTH_1215.json"
-ADAPTER = BASE / "BHSM_N12_C2_LOHNER_CENTER_1215_INPUT.json"
-ADAPTER_DATA = BASE / "BHSM_N12_C2_LOHNER_CENTER_1215_INPUT.npz"
-BORDERED_RESULT = BASE / "BHSM_N12_C2_LOHNER_BORDERED_MATRIX_1215.json"
-BORDERED_RESULT_DATA = BASE / "BHSM_N12_C2_LOHNER_BORDERED_MATRIX_1215.npz"
-FIELD_RESULT = BASE / "BHSM_N12_C2_LOHNER_FIXED_S_FIELD_1215.json"
-FIELD_RESULT_DATA = BASE / "BHSM_N12_C2_LOHNER_FIXED_S_FIELD_1215.npz"
+SEGMENT = int(os.environ.get("BHSM_N12_C2_LOHNER_SEGMENT", "1215"))
+PRIOR = BASE / (
+    "BHSM_N12_C2_CANCELLED_FIELD_LOHNER_STEP.json" if SEGMENT == 1215
+    else f"BHSM_N12_C2_LOHNER_STEP_{SEGMENT}.json"
+)
+PRIOR_DATA = PRIOR.with_suffix(".npz")
+CHART = BASE / f"BHSM_N12_C2_LOHNER_RECENTER_{SEGMENT}.json"
+GROWTH = BASE / f"BHSM_N12_C2_LOHNER_GROWTH_{SEGMENT}.json"
+ADAPTER = BASE / f"BHSM_N12_C2_LOHNER_CENTER_{SEGMENT}_INPUT.json"
+ADAPTER_DATA = BASE / f"BHSM_N12_C2_LOHNER_CENTER_{SEGMENT}_INPUT.npz"
+BORDERED_RESULT = BASE / f"BHSM_N12_C2_LOHNER_BORDERED_MATRIX_{SEGMENT}.json"
+BORDERED_RESULT_DATA = BASE / f"BHSM_N12_C2_LOHNER_BORDERED_MATRIX_{SEGMENT}.npz"
+FIELD_RESULT = BASE / f"BHSM_N12_C2_LOHNER_FIXED_S_FIELD_{SEGMENT}.json"
+FIELD_RESULT_DATA = BASE / f"BHSM_N12_C2_LOHNER_FIXED_S_FIELD_{SEGMENT}.npz"
 THEORY = ROOT / "theory" / "n12_c2_lohner_center_1215.md"
 
 
@@ -48,7 +53,7 @@ def main() -> None:
         weights = np.asarray(data["state_weights"], dtype=float)
         reference = np.asarray(data["branch_reference"], dtype=float)
     ADAPTER.write_text(json.dumps({
-        "artifact": "BHSM_N12_C2_LOHNER_CENTER_1215_INPUT",
+        "artifact": f"BHSM_N12_C2_LOHNER_CENTER_{SEGMENT}_INPUT",
         "continuation": {
             "final_signed_lambda_decimal": prior["segment"]["signed_descriptor_end"],
             "final_endpoint_tube_radius_upper": prior["segment"]["endpoint_tube_radius_upper"],
@@ -77,11 +82,11 @@ def main() -> None:
     bordered.THEORY = THEORY
     bordered.INPUTS = (ADAPTER, ADAPTER_DATA, CHART, GROWTH, THEORY)
     bordered_payload = bordered.build_payload()
-    bordered_payload["artifact"] = "BHSM_N12_C2_LOHNER_BORDERED_MATRIX_1215"
+    bordered_payload["artifact"] = f"BHSM_N12_C2_LOHNER_BORDERED_MATRIX_{SEGMENT}"
     bordered_payload["status"] = (
-        "C2_LOHNER_1215_BORDERED_HARD_RESPONSE_CENTER_MATRIX_CERTIFIED;_"
+        f"C2_LOHNER_{SEGMENT}_BORDERED_HARD_RESPONSE_CENTER_MATRIX_CERTIFIED;_"
         "SECOND_VARIATION_REMAINDER_OPEN"
-        if bordered_payload["validation_passed"] else "C2_LOHNER_BORDERED_MATRIX_1215_INVALID"
+        if bordered_payload["validation_passed"] else f"C2_LOHNER_BORDERED_MATRIX_{SEGMENT}_INVALID"
     )
     bordered_payload["exact_next_dependency"] = (
         "ASSEMBLE_THE_COMPLETE_FIXED_s_FIELD_AND_RELATIVE_TANGENT_TENSOR_AT_1215"
@@ -100,11 +105,11 @@ def main() -> None:
     field.THEORY = THEORY
     field.INPUTS = (BORDERED_RESULT, BORDERED_RESULT_DATA, ADAPTER, GROWTH, THEORY)
     field_payload = field.build_payload()
-    field_payload["artifact"] = "BHSM_N12_C2_LOHNER_FIXED_S_FIELD_1215"
+    field_payload["artifact"] = f"BHSM_N12_C2_LOHNER_FIXED_S_FIELD_{SEGMENT}"
     field_payload["status"] = (
-        "C2_LOHNER_1215_CANCELLATION_PRESERVING_FIXED_s_CENTER_MATRIX_"
+        f"C2_LOHNER_{SEGMENT}_CANCELLATION_PRESERVING_FIXED_s_CENTER_MATRIX_"
         "CERTIFIED;_CONJUGATED_INTERVAL_REMAINDER_OPEN"
-        if field_payload["validation_passed"] else "C2_LOHNER_FIXED_s_FIELD_1215_INVALID"
+        if field_payload["validation_passed"] else f"C2_LOHNER_FIXED_s_FIELD_{SEGMENT}_INVALID"
     )
     field_payload["exact_next_dependency"] = (
         "CERTIFY_THE_1215_BORDERED_RESPONSE_AND_CANCELLED_FULL_FIELD_SECOND_"

@@ -1,0 +1,57 @@
+{
+  "FLAGSHIP_READY": false,
+  "FULL_BHSM_COMPLETE": false,
+  "adjudication": {
+    "Gate7": "G7_08_OPEN",
+    "Gate8": "LOCKED",
+    "actual_event_or_canonical_stop": "NOT_REACHED",
+    "b_psi_positivity": "CERTIFIED_ON_INCOMING_FIXED_DESCRIPTOR_TUBE",
+    "full_fixed_s_field_interval": "OPEN_CONJUGATED_QUOTIENT_REMAINDER",
+    "hard_response_second_variation": "CERTIFIED_ON_INCOMING_FIXED_DESCRIPTOR_TUBE"
+  },
+  "artifact": "BHSM_N12_C2_LOHNER_RESPONSE_BALL_1217",
+  "ball": {
+    "b_psi_center": 0.0004291081889522157,
+    "b_psi_first_variation_center_upper": 6.284531134934878,
+    "b_psi_interval": [
+      0.00042876164663679245,
+      0.0004294547312677082
+    ],
+    "b_psi_second_variation_upper": 173861432200900.72,
+    "bordered_K_second_variation_upper": 277064367331.9604,
+    "center_relative_tangent_tensor_upper": 51372311.6691904,
+    "incoming_tube_radius": 6.310195953785474e-11,
+    "relative_second_variation_self_consistency": 0.020520644915469347,
+    "relative_tangent_tensor_ball_upper": 162599109.9460785,
+    "response_center_norm": 13530.855129125586,
+    "response_first_variation_upper": 1553677716099.052,
+    "response_norm_upper": 13677.911897995884,
+    "response_second_variation_upper": 2.461999720036625e+22,
+    "uniform_bordered_inverse_upper": 6361886.465462
+  },
+  "exact_next_dependency": "TAKE_CANCELLED_FIXED_s_MATRIX_LOHNER_SEGMENT_1216",
+  "hindsight": {
+    "classification": "HARD_RESPONSE_PROOF_ARTIFACT_REMOVED",
+    "obstruction_physical": false,
+    "result": "VALIDATED"
+  },
+  "inputs": {
+    "artifacts/flagship_integration/BHSM_N12_C2_LOHNER_BORDERED_MATRIX_1217.json": "5A38A9ED9D486A8EDF9F8927F4235698D9AF87312A3EBA151DD264DB252974BB",
+    "artifacts/flagship_integration/BHSM_N12_C2_LOHNER_BORDERED_MATRIX_1217.npz": "6BAD67598106477F73DA1C866094589F9496005EBC46925F047971F687775263",
+    "artifacts/flagship_integration/BHSM_N12_C2_LOHNER_FIXED_S_FIELD_1217.json": "3770D6A82E9CD6B960935EBEFEB45F882DA03765DBA706189D265CFF491B12FB",
+    "artifacts/flagship_integration/BHSM_N12_C2_LOHNER_FIXED_S_FIELD_1217.npz": "2D123E90ABB749B0F4C2DD6FB6AA78D63B2D71546EF3347156225E1DE78E5254",
+    "artifacts/flagship_integration/BHSM_N12_C2_LOHNER_GROWTH_1217.json": "E2913EDAD3D0CC167BA949F8B7E5843195D2029D163A119DA4D3F801B574BBCF",
+    "theory/n12_c2_lohner_step_1216.md": "20882EB0009A8C1676027B0B0AFBF32B339D57083C33E2921267813B1706B854"
+  },
+  "status": "C2_LOHNER_1217_BORDERED_RESPONSE_SECOND_VARIATION_BALL_CERTIFIED",
+  "validation": {
+    "bordered_response_radius_fixed_point_converged": true,
+    "full_field_quotient_remainder_not_claimed_here": true,
+    "hard_response_first_and_second_variations_are_finite": true,
+    "no_selector_recurrence_scale_gate_or_chord_added": true,
+    "relative_second_variation_self_consistency_is_strict": true,
+    "structured_b_interval_is_strictly_positive": true,
+    "uniform_bordered_inverse_uses_certified_hard_gap": true
+  },
+  "validation_passed": true
+}

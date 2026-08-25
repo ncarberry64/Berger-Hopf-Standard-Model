@@ -4,6 +4,7 @@ from __future__ import annotations
 
 import hashlib
 import json
+import os
 from pathlib import Path
 import sys
 
@@ -18,13 +19,20 @@ import certify_n12_c2_fresh_descriptor_fiber_eigenline_chart as chart  # noqa: E
 
 
 BASE = ROOT / "artifacts" / "flagship_integration"
-PRIOR = BASE / "BHSM_N12_C2_CANCELLED_FIELD_LOHNER_STEP.json"
-PRIOR_DATA = BASE / "BHSM_N12_C2_CANCELLED_FIELD_LOHNER_STEP.npz"
-ADAPTER = BASE / "BHSM_N12_C2_LOHNER_RECENTER_1215_INPUT.json"
-ADAPTER_DATA = BASE / "BHSM_N12_C2_LOHNER_RECENTER_1215_INPUT.npz"
-PRIOR_LINE = BASE / "BHSM_N12_C2_FRESH_DESCRIPTOR_FIBER_EIGENLINE_CHART.json"
-RESULT = BASE / "BHSM_N12_C2_LOHNER_RECENTER_1215.json"
-DATA_RESULT = BASE / "BHSM_N12_C2_LOHNER_RECENTER_1215.npz"
+SEGMENT = int(os.environ.get("BHSM_N12_C2_LOHNER_SEGMENT", "1215"))
+PRIOR = BASE / (
+    "BHSM_N12_C2_CANCELLED_FIELD_LOHNER_STEP.json" if SEGMENT == 1215
+    else f"BHSM_N12_C2_LOHNER_STEP_{SEGMENT}.json"
+)
+PRIOR_DATA = PRIOR.with_suffix(".npz")
+ADAPTER = BASE / f"BHSM_N12_C2_LOHNER_RECENTER_{SEGMENT}_INPUT.json"
+ADAPTER_DATA = BASE / f"BHSM_N12_C2_LOHNER_RECENTER_{SEGMENT}_INPUT.npz"
+PRIOR_LINE = BASE / (
+    "BHSM_N12_C2_FRESH_DESCRIPTOR_FIBER_EIGENLINE_CHART.json"
+    if SEGMENT == 1215 else f"BHSM_N12_C2_LOHNER_RECENTER_{SEGMENT - 1}.json"
+)
+RESULT = BASE / f"BHSM_N12_C2_LOHNER_RECENTER_{SEGMENT}.json"
+DATA_RESULT = BASE / f"BHSM_N12_C2_LOHNER_RECENTER_{SEGMENT}.npz"
 THEORY = ROOT / "theory" / "n12_c2_lohner_recenter_1215.md"
 
 
@@ -49,7 +57,7 @@ def main() -> None:
         weights = np.asarray(data["state_weights"], dtype=float)
         reference = np.asarray(data["branch_reference"], dtype=float)
     ADAPTER.write_text(json.dumps({
-        "artifact": "BHSM_N12_C2_LOHNER_RECENTER_1215_INPUT",
+        "artifact": f"BHSM_N12_C2_LOHNER_RECENTER_{SEGMENT}_INPUT",
         "continuation": {
             "final_endpoint_tube_radius_upper": prior["segment"]["endpoint_tube_radius_upper"],
             "total_certified_segments": prior["segment"]["total_certified_segments"],
@@ -71,13 +79,13 @@ def main() -> None:
     chart.THEORY = THEORY
     chart.INPUTS = (ADAPTER, ADAPTER_DATA, PRIOR_LINE, THEORY)
     payload = chart.build_payload()
-    payload["artifact"] = "BHSM_N12_C2_LOHNER_RECENTER_1215"
+    payload["artifact"] = f"BHSM_N12_C2_LOHNER_RECENTER_{SEGMENT}"
     payload["status"] = (
-        "C2_LOHNER_SEGMENT_1215_FRESH_DESCRIPTOR_FIBER_CHART_CERTIFIED"
-        if payload["validation_passed"] else "C2_LOHNER_RECENTER_1215_INVALID"
+        f"C2_LOHNER_SEGMENT_{SEGMENT}_FRESH_DESCRIPTOR_FIBER_CHART_CERTIFIED"
+        if payload["validation_passed"] else f"C2_LOHNER_RECENTER_{SEGMENT}_INVALID"
     )
     validation = payload["validation"]
-    validation["incoming_1215_endpoint_tube_consumed"] = validation.pop(
+    validation[f"incoming_{SEGMENT}_endpoint_tube_consumed"] = validation.pop(
         "incoming_1192_endpoint_tube_consumed"
     )
     payload["exact_next_dependency"] = (
@@ -85,7 +93,7 @@ def main() -> None:
         "1215_PREDICTOR_AND_ITERATE_THE_MATRIX_LOHNER_STEP"
     )
     payload["recenter_provenance"] = {
-        "prior_segment": 1215,
+        "prior_segment": SEGMENT,
         "prior_result_SHA256": _sha256(PRIOR),
         "prior_data_SHA256": _sha256(PRIOR_DATA),
     }

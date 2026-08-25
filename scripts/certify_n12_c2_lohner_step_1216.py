@@ -3,6 +3,7 @@
 from __future__ import annotations
 
 import json
+import os
 from pathlib import Path
 import sys
 
@@ -16,16 +17,21 @@ import certify_n12_c2_cancelled_field_lohner_step as step  # noqa: E402
 
 
 BASE = ROOT / "artifacts" / "flagship_integration"
-PRIOR = BASE / "BHSM_N12_C2_CANCELLED_FIELD_LOHNER_STEP.json"
-CENTER = BASE / "BHSM_N12_C2_LOHNER_FIXED_S_FIELD_1215.json"
-CENTER_DATA = BASE / "BHSM_N12_C2_LOHNER_FIXED_S_FIELD_1215.npz"
-BORDERED = BASE / "BHSM_N12_C2_LOHNER_BORDERED_MATRIX_1215.json"
-BORDERED_DATA = BASE / "BHSM_N12_C2_LOHNER_BORDERED_MATRIX_1215.npz"
-GROWTH = BASE / "BHSM_N12_C2_LOHNER_GROWTH_1215.json"
-CONTINUATION = BASE / "BHSM_N12_C2_LOHNER_STEP_1216_INPUT.json"
-RESPONSE_RESULT = BASE / "BHSM_N12_C2_LOHNER_RESPONSE_BALL_1215.json"
-RESULT = BASE / "BHSM_N12_C2_LOHNER_STEP_1216.json"
-ENDPOINT = BASE / "BHSM_N12_C2_LOHNER_STEP_1216.npz"
+PRIOR_SEGMENT = int(os.environ.get("BHSM_N12_C2_LOHNER_SEGMENT", "1215"))
+NEXT_SEGMENT = PRIOR_SEGMENT + 1
+PRIOR = BASE / (
+    "BHSM_N12_C2_CANCELLED_FIELD_LOHNER_STEP.json" if PRIOR_SEGMENT == 1215
+    else f"BHSM_N12_C2_LOHNER_STEP_{PRIOR_SEGMENT}.json"
+)
+CENTER = BASE / f"BHSM_N12_C2_LOHNER_FIXED_S_FIELD_{PRIOR_SEGMENT}.json"
+CENTER_DATA = BASE / f"BHSM_N12_C2_LOHNER_FIXED_S_FIELD_{PRIOR_SEGMENT}.npz"
+BORDERED = BASE / f"BHSM_N12_C2_LOHNER_BORDERED_MATRIX_{PRIOR_SEGMENT}.json"
+BORDERED_DATA = BASE / f"BHSM_N12_C2_LOHNER_BORDERED_MATRIX_{PRIOR_SEGMENT}.npz"
+GROWTH = BASE / f"BHSM_N12_C2_LOHNER_GROWTH_{PRIOR_SEGMENT}.json"
+CONTINUATION = BASE / f"BHSM_N12_C2_LOHNER_STEP_{NEXT_SEGMENT}_INPUT.json"
+RESPONSE_RESULT = BASE / f"BHSM_N12_C2_LOHNER_RESPONSE_BALL_{PRIOR_SEGMENT}.json"
+RESULT = BASE / f"BHSM_N12_C2_LOHNER_STEP_{NEXT_SEGMENT}.json"
+ENDPOINT = BASE / f"BHSM_N12_C2_LOHNER_STEP_{NEXT_SEGMENT}.npz"
 PARENT = BASE / "BHSM_N12_C2_TERMINAL_PARENT_ACTION_MAJORANTS_1P5E10.json"
 TERMINAL = BASE / "BHSM_N12_FINITE_TERMINAL_RESET_STRATUM_CANDIDATE.npz"
 PARENT_DRIVER = ROOT / "scripts" / "materialize_n12_c2_terminal_parent_action_majorants.py"
@@ -42,7 +48,7 @@ def main() -> None:
     if not prior["validation_passed"] or not center_record["validation_passed"]:
         raise RuntimeError("validated segment 1215 and recentered field required")
     CONTINUATION.write_text(json.dumps({
-        "artifact": "BHSM_N12_C2_LOHNER_STEP_1216_INPUT",
+        "artifact": f"BHSM_N12_C2_LOHNER_STEP_{NEXT_SEGMENT}_INPUT",
         "continuation": {
             "total_certified_segments": prior["segment"]["total_certified_segments"],
             "final_endpoint_tube_radius_upper": prior["segment"]["endpoint_tube_radius_upper"],
@@ -62,10 +68,10 @@ def main() -> None:
     response.THEORY = THEORY
     response.INPUTS = (CENTER, CENTER_DATA, BORDERED, BORDERED_DATA, GROWTH, THEORY)
     response_payload = response.build_payload()
-    response_payload["artifact"] = "BHSM_N12_C2_LOHNER_RESPONSE_BALL_1215"
+    response_payload["artifact"] = f"BHSM_N12_C2_LOHNER_RESPONSE_BALL_{PRIOR_SEGMENT}"
     response_payload["status"] = (
-        "C2_LOHNER_1215_BORDERED_RESPONSE_SECOND_VARIATION_BALL_CERTIFIED"
-        if response_payload["validation_passed"] else "C2_LOHNER_RESPONSE_BALL_1215_INVALID"
+        f"C2_LOHNER_{PRIOR_SEGMENT}_BORDERED_RESPONSE_SECOND_VARIATION_BALL_CERTIFIED"
+        if response_payload["validation_passed"] else f"C2_LOHNER_RESPONSE_BALL_{PRIOR_SEGMENT}_INVALID"
     )
     response_payload["exact_next_dependency"] = (
         "TAKE_CANCELLED_FIXED_s_MATRIX_LOHNER_SEGMENT_1216"
@@ -92,10 +98,10 @@ def main() -> None:
         CONTINUATION, PARENT, TERMINAL, THEORY, PARENT_DRIVER,
     )
     payload = step.build_payload()
-    payload["artifact"] = "BHSM_N12_C2_LOHNER_STEP_1216"
+    payload["artifact"] = f"BHSM_N12_C2_LOHNER_STEP_{NEXT_SEGMENT}"
     payload["status"] = (
-        "C2_CANCELLED_FIXED_s_MATRIX_LOHNER_SEGMENT_1216_CERTIFIED"
-        if payload["validation_passed"] else "C2_LOHNER_STEP_1216_INVALID"
+        f"C2_CANCELLED_FIXED_s_MATRIX_LOHNER_SEGMENT_{NEXT_SEGMENT}_CERTIFIED"
+        if payload["validation_passed"] else f"C2_LOHNER_STEP_{NEXT_SEGMENT}_INVALID"
     )
     payload["exact_next_dependency"] = (
         "RECENTER_BRANCH_24_AND_THE_BORDERED_FIXED_s_MATRIX_AT_THE_1216_"

@@ -1,0 +1,64 @@
+{
+  "FLAGSHIP_READY": false,
+  "FULL_BHSM_COMPLETE": false,
+  "artifact": "BHSM_N12_C2_LOHNER_FIXED_S_FIELD_1216",
+  "center_field": {
+    "Delta": 8.920471547389461e-14,
+    "Dlambda_field": 0.999999999999952,
+    "R_Dlambda_Vhard": 3.8100318447041405e-05,
+    "b_psi": 0.00042910819473002376,
+    "field_action_norm": 4813594349.426889,
+    "moving_cubic_direct_fixed_line_D3": 2.0788397099039866e-10,
+    "moving_cubic_from_Dlambda_Psi": 2.0788397091635473e-10,
+    "signed_descriptor_decimal": "1.75552963653482372029013654704889761589391514433836914866884211594285929097823525830675688617516715641796875E-20"
+  },
+  "comparison": {
+    "diagnosis": "THE_EXACT_DESCRIPTOR_IDENTITY_AND_BORDERED_RESPONSE_CANCEL_BEFORE_PROJECTION;_THE_SCALAR_JACOBI_BOUND_IS_NOT_THE_CENTER_TANGENT_GENERATOR",
+    "matrix_to_scalar_ratio": 3.002975432603967e-13,
+    "prior_scalar_fixed_s_Jacobi_upper": 2.5646519250254787e+24
+  },
+  "data": "artifacts/flagship_integration/BHSM_N12_C2_LOHNER_FIXED_S_FIELD_1216.npz",
+  "data_SHA256": "4DE4ECB7E74D4880ADDDAD24FA05302334C0E590B27845BAB86A383D0CD061F4",
+  "exact_next_dependency": "CERTIFY_THE_1215_BORDERED_RESPONSE_AND_CANCELLED_FULL_FIELD_SECOND_VARIATION_BALL,_THEN_TAKE_THE_NEXT_MATRIX_LOHNER_STEP",
+  "fixed_descriptor_matrix": {
+    "bordered_relative_tangent_tensor_Frobenius_upper": 51372360.432406574,
+    "c_gradient_field_matrix_uncertainty_upper": 82394183656.40332,
+    "center_tangent_numerical_abscissa_upper": 432245572564.7209,
+    "fixed_D4_D5_truncation_operator_upper": 1.2677557638073072e-14,
+    "fixed_D4_slope_disagreement_2_norm": 7.116664931695702e-09,
+    "incoming_endpoint_tube_radius": 6.163772848222266e-11,
+    "omitted_D2lambda_V_field_matrix_upper": 12932771577.988583,
+    "partial_tangent_numerical_abscissa": 336918617277.57166,
+    "partial_tangent_operator_2_norm": 674831717082.2577,
+    "partial_tangent_spectral_abscissa": 444476851.4409324,
+    "relative_second_variation_self_consistency": 0.006332951208280407,
+    "total_center_matrix_remainder_upper": 95326955243.92462
+  },
+  "hindsight": {
+    "classification": "NUMERICAL_CONDITIONING;_FULL_CENTER_MATRIX_RECOVERED",
+    "obstruction_physical": false,
+    "result": "OPEN"
+  },
+  "inputs": {
+    "artifacts/flagship_integration/BHSM_N12_C2_LOHNER_BORDERED_MATRIX_1216.json": "2E7FD6846287141C580F585F382FCC815ADCC97557A5FDBB999DBB4F16B90026",
+    "artifacts/flagship_integration/BHSM_N12_C2_LOHNER_BORDERED_MATRIX_1216.npz": "35564015E2BA71C696A658556F86BEF135DB42DBB0D89A83BC6D23030E2396D6",
+    "artifacts/flagship_integration/BHSM_N12_C2_LOHNER_CENTER_1216_INPUT.json": "E0FB8064E974E5205F347989FC45A8C228616E6AB65EF7902963BCBCFA85E1B2",
+    "artifacts/flagship_integration/BHSM_N12_C2_LOHNER_GROWTH_1216.json": "28B21801C96EE8B0BFBF9EDA4C131EC9B695BA617D1E9F99E611362A45CB24DA",
+    "theory/n12_c2_lohner_center_1215.md": "1C61E9CD44626E4037EE5818DBFE0C9F89CF334D586D7BA5177523039893137C"
+  },
+  "status": "C2_LOHNER_1216_CANCELLATION_PRESERVING_FIXED_s_CENTER_MATRIX_CERTIFIED;_CONJUGATED_INTERVAL_REMAINDER_OPEN",
+  "validation": {
+    "D5_controls_one_sided_fixed_line_D4_slopes": true,
+    "Delta_is_strictly_positive": true,
+    "branch_24_bordered_parent_consumed": true,
+    "center_field_and_matrix_are_finite": true,
+    "center_matrix_not_promoted_to_interval_flow_box": true,
+    "descriptor_field_identity_is_close_to_one": true,
+    "fixed_descriptor_tangent_has_codimension_one": true,
+    "lambda_Hessian_contraction_is_retained_as_remainder": true,
+    "moving_cubic_identity_matches_direct_D3": true,
+    "no_selector_recurrence_scale_gate_or_chord_added": true,
+    "signed_descriptor_is_strictly_positive": true
+  },
+  "validation_passed": true
+}
