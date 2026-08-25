@@ -1,0 +1,142 @@
+{
+  "FLAGSHIP_READY": false,
+  "FULL_BHSM_COMPLETE": false,
+  "Jacobi_provenance": {
+    "block_segment_counts": {
+      "descriptor_fiber_cancelled": 64,
+      "extended_descriptor": 434,
+      "matrix_Lohner": 8,
+      "outer_margin": 1,
+      "replayed_adaptive": 340,
+      "replayed_compensated": 15,
+      "replayed_recentered_adaptive": 273,
+      "second_uniform_gap": 22,
+      "translated_second": 1,
+      "uniform_gap": 64
+    },
+    "node_count": 1223,
+    "replay_crosscheck": {
+      "all_replayed_values_finite_positive": true,
+      "maximum_absolute_replay_residual": 0.0,
+      "replayed_segment_count": 1062
+    },
+    "segment_count": 1222,
+    "terminal_log10_state_Jacobi_growth_upper": 2.2701841094697315,
+    "terminal_log_state_Jacobi_growth_upper": 5.2272920888169665,
+    "terminal_state_Jacobi_growth_upper": 186.2876694363927
+  },
+  "adjudication": {
+    "actual_zero_source_force": "OPEN",
+    "fixed_node_radius_reset_pullback": "CERTIFIED_ON_1222_FINITE_CORE",
+    "full_1222_D_xi_M_C": "OPEN_ONLY_AFTER_MOVING_DURATION_AND_GRADED_SOURCE_CONTRACTION",
+    "moving_duration_reset_pullback": "OPEN_CURRENT_FINITE_CORE_SLOT",
+    "physical_Hessian": "WAITING_ON_SADDLE",
+    "same_action_saddle": "WAITING_ON_FORCE"
+  },
+  "artifact": "BHSM_N12_C2_1222_RESET_QUOTIENT_RADIUS_PULLBACK_ENCLOSURE",
+  "claim_boundary": {
+    "FLAGSHIP_READY": false,
+    "FULL_BHSM_COMPLETE": false,
+    "Gate7": "ACTIVE_MOVING_DURATION_PULLBACK_AND_GRADED_FORCE_CONTRACTION",
+    "Gate8": "LOCKED",
+    "actual_projected_zero_source_force": "OPEN",
+    "chord_03_authorized": false,
+    "fixed_node_radius_pullback": "CERTIFIED",
+    "frozen_predictions_changed": false,
+    "moving_duration_pullback": "OPEN"
+  },
+  "classification": "THE_OMITTED_LOCAL_JACOBI_FACTORS_ARE_REPLAYED_FROM_THEIR_ACTION_OWNED_BALLS_AND_THE_1222_CORE_FIXED_NODE_LOG_RADIUS_WEYL_COTANGENT_HAS_A_FINITE_OPERATOR_NORM_PULLBACK_ON_EVERY_UNIT_C2_RESET_IMAGE_DIRECTION;_THE_MOVING_PROPER_DURATION_COTANGENT_IS_NONZERO_AND_REMAINS_OUTSIDE_THIS_CERTIFICATE",
+  "data": "artifacts/flagship_integration/BHSM_N12_C2_1222_RESET_QUOTIENT_RADIUS_PULLBACK_ENCLOSURE.npz",
+  "data_SHA256": "A55F929DCCAD223B63A1EAF3CE04A617DB1F6D1789419EC757D044C59B576ADA",
+  "exact_next_dependency": "DERIVE_THE_ACTION_OWNED_MOVING_PROPER_DURATION_ADJOINT_ON_THE_SAME_1222_FIXED_s_COVER_AND_CONTRACT_IT_WITH_THE_STORED_D_proper_duration_WEYL_COTANGENT;_DO_NOT_REOPEN_RESET_RECURRENCE_FIXED_CHANNEL_DINI_TERMINAL_RECURRENCE_OR_CHORD3",
+  "fixed_node_radius_pullback": {
+    "product_Dirac_lambda1_5_chirality_minus": {
+      "fixed_node_radius_cotangent_l1_norm": 1.507663882994568,
+      "log10_reset_image_operator_norm_upper": 1.8301439960613468,
+      "log_reset_image_operator_norm_upper": 4.214062283363411,
+      "moving_duration_reset_pullback_included": false,
+      "moving_proper_duration_cotangent_l1_norm": 7.755962936731153e+56,
+      "reset_image_operator_norm_upper": 67.63071767825684
+    },
+    "product_Dirac_lambda1_5_chirality_plus": {
+      "fixed_node_radius_cotangent_l1_norm": 1.507663882994568,
+      "log10_reset_image_operator_norm_upper": 1.8301439960613468,
+      "log_reset_image_operator_norm_upper": 4.214062283363411,
+      "moving_duration_reset_pullback_included": false,
+      "moving_proper_duration_cotangent_l1_norm": 7.755962936731153e+56,
+      "reset_image_operator_norm_upper": 67.63071767825684
+    },
+    "scalar_c3": {
+      "fixed_node_radius_cotangent_l1_norm": 2.5361461697357784e-27,
+      "log10_reset_image_operator_norm_upper": -24.964311446687603,
+      "log_reset_image_operator_norm_upper": -57.4824513940035,
+      "moving_duration_reset_pullback_included": false,
+      "moving_proper_duration_cotangent_l1_norm": 7.755962936731153e+56,
+      "reset_image_operator_norm_upper": 1.0856467917895695e-25
+    }
+  },
+  "inputs": {
+    "artifacts/flagship_integration/BHSM_N12_C2_1222_SEGMENT_FINITE_CORE_DESCRIPTOR.json": "0CDC9B9EF09AFA70AA7F5E225F6D49A4FCD27CADAD5CDFA4A062FBE04B960445",
+    "artifacts/flagship_integration/BHSM_N12_C2_1222_SEGMENT_FINITE_CORE_DESCRIPTOR.npz": "90E0F02751031F879C82C4EA8ED3ACEBBF278900ED4FBD47C5612CD13F91AF11",
+    "artifacts/flagship_integration/BHSM_N12_C2_1222_SEGMENT_WEYL_COEFFICIENT_COTANGENT.json": "6919218F92D5E5A45641004B1F94E64E93E11BB4A3A89A42D236FD62CBBF1D37",
+    "artifacts/flagship_integration/BHSM_N12_C2_1222_SEGMENT_WEYL_COEFFICIENT_COTANGENT.npz": "A248797F83A4DEB799DE28E615535E8CB4F903ED348607EE815866821EB4A8FA",
+    "artifacts/flagship_integration/BHSM_N12_C2_ADAPTIVE_BALL_CONTINUATION.json": "EC77749EE4B3458D37FEB6EB73B494F36376A0898B8BA0C652983E32674AA9E1",
+    "artifacts/flagship_integration/BHSM_N12_C2_ADAPTIVE_BALL_CONTINUATION.npz": "DEE6CC69C68E209C697760B5E9DACFB9746B57FFAFFC93574B199EDEC8C406F2",
+    "artifacts/flagship_integration/BHSM_N12_C2_ADAPTIVE_CENTER_RECENTER.json": "11D421910F7DF4194E990FA7DFE553BB990A7C14655C8E74FFE1FADD9E9B5B34",
+    "artifacts/flagship_integration/BHSM_N12_C2_ADAPTIVE_CENTER_RECENTER.npz": "57F8B34A2C0E0AF3EFDB5F32CA3D7580D43DA87383316DB387310648F545DBF1",
+    "artifacts/flagship_integration/BHSM_N12_C2_BIRTH_COEFFICIENT_QUOTIENT_JET.json": "A6595ACAD2A9865F31EE69F6DA7C067F8C0C00886B5D8A57A915D3537FF4ED7D",
+    "artifacts/flagship_integration/BHSM_N12_C2_CANCELLED_FIELD_LOHNER_STEP.json": "7091C2977A09DF413371306801DC5246BBDBAE55F1634EEF6B0D64BDF7677E33",
+    "artifacts/flagship_integration/BHSM_N12_C2_COMPENSATED_DESCRIPTOR_CONTINUATION.json": "5895C6D73AEBAAF85F8319D8C85C17FC61CE2EC8AD2EE3C9810C7B44D4959056",
+    "artifacts/flagship_integration/BHSM_N12_C2_COMPENSATED_DESCRIPTOR_CONTINUATION.npz": "CC42A7A80BD443A3E20A167F89D9DF1B974010310D28DB8477A8310D187E3E82",
+    "artifacts/flagship_integration/BHSM_N12_C2_DESCRIPTOR_FIBER_CANCELLED_CONTINUATION.json": "E331F2AA300804CE65FEFEE24A1176D1B1BE81F1CA1CB9CF65E5D05F86CD20B9",
+    "artifacts/flagship_integration/BHSM_N12_C2_EXTENDED_DESCRIPTOR_RESOLUTION_AUDIT.json": "FA79AE19EDD0E968C5A214814C78E40527ACD79EDDCE09A843565004B33A30EC",
+    "artifacts/flagship_integration/BHSM_N12_C2_LOHNER_STEP_1216.json": "D28A35953EB8BCD4D39FB7500412DAD31A3A28ED647ED626ADD875AEF177A6B6",
+    "artifacts/flagship_integration/BHSM_N12_C2_LOHNER_STEP_1217.json": "DB7BA9AA45AE3B601EC90263A7F0CE716401A1256FEDE024A3454A3D69D360E3",
+    "artifacts/flagship_integration/BHSM_N12_C2_LOHNER_STEP_1218.json": "BAE7710360CB536A08D7E0DD846FAAA3EA10FCC57EA79B582351F756603B60C5",
+    "artifacts/flagship_integration/BHSM_N12_C2_LOHNER_STEP_1219.json": "3BDE908B2C34CF3961AFCBB1AA65A8291C8588AC3E5A47BC6C59E7BDAE4EE4D6",
+    "artifacts/flagship_integration/BHSM_N12_C2_LOHNER_STEP_1220.json": "EF29428C85CB5E27FF94FF5C599E0CAA9E50A7184D13F01E3CD6E387CF552B3B",
+    "artifacts/flagship_integration/BHSM_N12_C2_LOHNER_STEP_1221.json": "C465CC0414A4E435A8553B9553C5F3B9A2EE37E2CEEA0700F9425B38D5B32E1F",
+    "artifacts/flagship_integration/BHSM_N12_C2_LOHNER_STEP_1222.json": "5EC231EF5D66376BE5F39CC95F57B74C9B20BC29F77E5BDBC07D7859F5C8F294",
+    "artifacts/flagship_integration/BHSM_N12_C2_POLE_FREE_OUTER_MARGIN_EXTENSION.json": "EE4A1F3F640258061924E8278F7B101DEBB86B358AF30DF965A76239953A4919",
+    "artifacts/flagship_integration/BHSM_N12_C2_POLE_FREE_REGULARIZED_JACOBI.json": "E2442FE76E3A7AB07195788B773B58412FA4AA5EA901F1A8ABC4385338A99654",
+    "artifacts/flagship_integration/BHSM_N12_C2_RECENTERED_ADAPTIVE_CONTINUATION.json": "ED9D5ADC75A0ED6CCEEE473DFCDB9DD5BC6C386F0A3BEBD1827E8198345FDA5C",
+    "artifacts/flagship_integration/BHSM_N12_C2_RECENTERED_ADAPTIVE_CONTINUATION.npz": "C3D8FAEAEAF6D310D90BF4A0AAC5850ECBB879FA6B109EEA12DBD3025C0B593E",
+    "artifacts/flagship_integration/BHSM_N12_C2_REGULARIZED_LAUNCH_SEGMENT.json": "32755FD84E61A806202D83F92EADEDA58A906FC188BCE63704671C7CA4E56DE9",
+    "artifacts/flagship_integration/BHSM_N12_C2_SECOND_UNIFORM_GAP_CONTINUATION.json": "03F0E2F5860F101E5E7DC5F37A71D4B33164E91910636C946E15DD1C3139F952",
+    "artifacts/flagship_integration/BHSM_N12_C2_TRANSLATED_POLE_FREE_SEGMENT.json": "AA87CDE2A7784D21ED2D276E47AF6933B47B54E5CE7C961DBCF625275E4B7939",
+    "artifacts/flagship_integration/BHSM_N12_C2_UNIFORM_GAP_CONTINUATION.json": "26691BBF3B4B873F079C84BB6744BCB89E9C81D6D55A20F5FD819191E343C827",
+    "artifacts/flagship_integration/BHSM_N12_FINITE_TERMINAL_ACTION_BALL_MAJORANTS.json": "C437DED4E36A057AF957E8DD6BEB11541EB613F190331E7512310BC8199F99F7",
+    "artifacts/flagship_integration/BHSM_N12_FINITE_TERMINAL_EVENT_EIGENLINE_BALL.json": "974DD80F2725F9FFA62A98110CA771BF367F7316F0AFEFE385D32D7652585463",
+    "artifacts/flagship_integration/BHSM_N12_FINITE_TERMINAL_RESET_STRATUM_CANDIDATE.npz": "303BEBE80E6033D398278935C9AD01CD1A8C72EDEE208D52C0005A252119D0CD",
+    "theory/n12_c2_1222_reset_quotient_radius_pullback_enclosure.md": "F301BE5B34E03C5867E8AE62F6CD7DC3F5FC6CA98B9568E57B3E8E045D9557D5"
+  },
+  "open_term": {
+    "exact_formula": "D_h_i=integral_segment_i D_Y(N_boundary*s/Delta)[J_h] ds_PLUS_THE_TRANSVERSE_MOVING_EDGE_TERM",
+    "name": "MOVING_PROPER_DURATION_RESET_COTANGENT",
+    "not_permitted_substitution": "DURATION_INTERVAL_WIDTH_OR_PROOF_TUBE_IS_NOT_A_DURATION_FIRST_JET",
+    "required_object": "D_h_i_COMPOSE_D_RESET_AND_THE_FIXED_s_STATE_PROPAGATOR_FOR_ALL_1222_SEGMENTS",
+    "why_not_closed_here": "THE_COEFFICIENT_COTANGENT_CONTAINS_NONZERO_D_proper_duration_WEIGHTS;_THE_STORED_DURATION_INTERVALS_AND_LOCAL_STATE_GROWTH_BOUNDS_DO_NOT_BY_THEMSELVES_SUPPLY_THE_SIGNED_MOVING_TIME_FIRST_JET"
+  },
+  "status": "C2_1222_FIXED_NODE_RADIUS_RESET_PULLBACK_CERTIFIED_DURATION_PULLBACK_OPEN",
+  "theorem": {
+    "channel_bound": "norm(sum_i c_i*D_Y0_logR4_i)<=sum_i|c_i|*radius_dual_i*product_(e<i)G_e",
+    "node_state_bound": "norm(D_Y0_Y_i)<=product_(e<i) G_e",
+    "physical_quotient_rule": "ORTHOGONAL_GAUGE_TIME_PROJECTION_CANNOT_INCREASE_THIS_AMBIENT_C2_IMAGE_BOUND",
+    "radius_covector_bound": "norm(D_Y_logR4)_action_dual<=norm(D_logR4(center))_dual+2*norm(b_signs)_dual^2*tube",
+    "reset_image_rule": "THE_C2_BLOCK_OF_A_UNIT_ORTHONORMAL_RESET_TANGENT_DIRECTION_HAS_ACTION_NORM_AT_MOST_ONE"
+  },
+  "validation": {
+    "actual_C2_reset_image_is_certified": true,
+    "all_node_radius_covector_bounds_are_finite_positive": true,
+    "every_local_growth_factor_is_finite_and_at_least_one": true,
+    "exactly_1222_local_growth_factors_assembled": true,
+    "exactly_1223_node_growth_bounds_assembled": true,
+    "far_core_edge_not_promoted_to_event_or_stop": true,
+    "fixed_node_radius_cotangent_pullbacks_are_finite_in_log_space": true,
+    "moving_duration_term_not_silently_dropped": true,
+    "no_selector_recurrence_scale_fit_action_term_gate_or_chord_added": true,
+    "replayed_1064_prefix_middle_has_1062_segments": true,
+    "replayed_ball_data_match_stored_rows": true
+  },
+  "validation_passed": true
+}

@@ -16,9 +16,22 @@ cotangent obeys the inverse-free adjoint semigroup rule.  The finite-core
 operator adjoint is therefore assembled.  Exact common-scale covariance now
 closes the mandatory physical common-scale pullback, including its moving
 proper-duration term, without differentiating the nonphysical adaptive proof
-centers.  What remains missing is the non-scale reset-quotient geometry
-adjoint sector through the realized maximal history.  The rank-two birth
-radius Cauchy map is not used to discard other child-history directions.
+centers.  The non-scale finite-core slot is now partially closed as well.
+Replaying every retained local action-Jacobi ball gives all 1,222 state-growth
+factors, including 628 factors that the continuation used but did not
+serialize.  Their terminal product is bounded by `186.2876694363927`.
+Contracting those factors with the inverse-free coefficient cotangent gives
+fixed-node log-radius reset-image norm bounds `67.63071767825684` in each
+factorized-Dirac chirality and `1.0856467917895695e-25` in the scalar channel.
+The rank-two birth radius Cauchy map is not used to discard other child-history
+directions: these are ambient unit-C2-image bounds, so orthogonal gauge/time
+projection cannot enlarge them.
+
+The remaining non-scale finite-core datum is narrower: the Weyl cotangent has
+a nonzero moving-proper-duration part, while stored duration intervals and
+proof tubes are not duration first jets.  Its same-action moving-time adjoint
+must still be propagated.  Beyond the finite core, the maximal reset-quotient
+tail also remains open.
 
 The complete moving-duration common-scale source contraction is also closed
 at the formula level.  The heat part reduces to
@@ -58,14 +71,15 @@ on the whole negative axis.  Its exact value and graded spectral trace remain
 open.
 
 The remaining unmatched data are geometric and pathwise.  Modulo the closed
-common-scale direction, the reset radius Cauchy jet is a valid birth germ but
-is not the noncompact geometry pullback through the maximal coefficient
-family.  The common pair/contact incidence and
+common-scale direction, the fixed-node radius contribution is certified on
+the 1,222 core, but the non-scale moving-duration contribution and the
+noncompact maximal tail are not.  The common pair/contact incidence and
 heat-minus-zeta trace functional are valid conditional consumers; broad seam
 intervals and isolated probes cannot replace their realized inputs.
 
-Accordingly the next construction must propagate the non-scale pathwise reset
-pullback through the now-invertible fermion seam and assemble or enclose the
+Accordingly the next construction must derive and contract the non-scale
+moving-duration adjoint on the same fixed-descriptor cover, then propagate the
+complete finite-core pullback through the now-invertible fermion seam and assemble or enclose the
 exact joint graded spectral trace.  It must then combine
 that sector with the exact common-scale component, form the projected
 finite-core force net, and test its maximal Cauchy tail.  The 1,222-core edge remains an artificial

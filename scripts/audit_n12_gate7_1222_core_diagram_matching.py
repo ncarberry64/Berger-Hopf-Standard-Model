@@ -31,8 +31,9 @@ INCOMING_PATH_GERM = BASE / "BHSM_N12_INCOMING_COEFFICIENT_PATH_QUADRATIC_GERM.j
 INCOMING_SEGMENT = BASE / "BHSM_N12_INCOMING_REGULARIZED_TERMINAL_SEGMENT.json"
 INCOMING_FINITE_PATH = BASE / "BHSM_N12_INCOMING_FINITE_AMPLITUDE_COEFFICIENT_ENCLOSURE.json"
 INCOMING_MF_ENCLOSURE = BASE / "BHSM_N12_INCOMING_MF_NEGATIVE_AXIS_ENCLOSURE.json"
+RADIUS_PULLBACK = BASE / "BHSM_N12_C2_1222_RESET_QUOTIENT_RADIUS_PULLBACK_ENCLOSURE.json"
 THEORY = ROOT / "theory" / "n12_gate7_1222_core_diagram_matching_audit.md"
-INPUTS = (OLD, CORE, FAMILY, NESTED, MAXIMAL, BIRTH, COMPACT, SEAM, INCIDENCE, FORCE, ADJOINT, CAUCHY, COMMON_SCALE, COMMON_SCALE_WARD, FIXED_CHANNEL_HEAT, INCOMING_MATCH, INCOMING_PATH_GERM, INCOMING_SEGMENT, INCOMING_FINITE_PATH, INCOMING_MF_ENCLOSURE, THEORY)
+INPUTS = (OLD, CORE, FAMILY, NESTED, MAXIMAL, BIRTH, COMPACT, SEAM, INCIDENCE, FORCE, ADJOINT, CAUCHY, COMMON_SCALE, COMMON_SCALE_WARD, FIXED_CHANNEL_HEAT, INCOMING_MATCH, INCOMING_PATH_GERM, INCOMING_SEGMENT, INCOMING_FINITE_PATH, INCOMING_MF_ENCLOSURE, RADIUS_PULLBACK, THEORY)
 
 
 def _sha256(path: Path) -> str:
@@ -50,11 +51,11 @@ def build_payload() -> dict[str, Any]:
     missing = [str(path) for path in INPUTS if not path.is_file()]
     if missing:
         raise FileNotFoundError("missing 1222 matching inputs: " + ", ".join(missing))
-    old, core, family, nested, maximal, birth, compact, seam, incidence, force, adjoint, cauchy, common_scale, common_scale_ward, fixed_channel_heat, incoming_match, incoming_path_germ, incoming_segment, incoming_finite_path, incoming_mf_enclosure = (
+    old, core, family, nested, maximal, birth, compact, seam, incidence, force, adjoint, cauchy, common_scale, common_scale_ward, fixed_channel_heat, incoming_match, incoming_path_germ, incoming_segment, incoming_finite_path, incoming_mf_enclosure, radius_pullback = (
         _load(path) for path in INPUTS[:-1]
     )
     if not all(record.get("validation_passed") is True for record in (
-        old, core, family, nested, maximal, birth, compact, seam, incidence, force, adjoint, cauchy, common_scale, common_scale_ward, fixed_channel_heat, incoming_match, incoming_path_germ, incoming_segment, incoming_finite_path, incoming_mf_enclosure,
+        old, core, family, nested, maximal, birth, compact, seam, incidence, force, adjoint, cauchy, common_scale, common_scale_ward, fixed_channel_heat, incoming_match, incoming_path_germ, incoming_segment, incoming_finite_path, incoming_mf_enclosure, radius_pullback,
     )):
         raise RuntimeError("validated diagram parents required")
 
@@ -102,10 +103,10 @@ def build_payload() -> dict[str, Any]:
         {
             "diagram_slot": "C2_NON_SCALE_RESET_QUOTIENT_FIRST_JET",
             "required_type": "NONCOMPACT_PATHWISE_JACOBI_OR_EQUIVALENT_BACKWARD_ADJOINT_PULLBACK",
-            "candidate": "BIRTH_RANK_TWO_CAUCHY_JET_MOD_COMMON_SCALE_PLUS_FORCE_ADJOINT_IDENTITY",
-            "dimension_domain_check": "BIRTH_GERM_AND_ALGEBRA_VALID_BUT_NO_MAXIMAL_NON_SCALE_PATHWISE_SOLUTION",
-            "provenance_check": "VALID_PARTIAL_ACTION_DATA_AFTER_EXACT_COMMON_SCALE_REDUCTION",
-            "verdict": "ACTUALLY_MISSING_REALIZED_NON_SCALE_PULLBACK",
+            "candidate": "BHSM_N12_C2_1222_RESET_QUOTIENT_RADIUS_PULLBACK_ENCLOSURE_PLUS_FORCE_ADJOINT_IDENTITY",
+            "dimension_domain_check": "VALID_FIXED_NODE_RADIUS_PART_ON_1223_NODES;_MOVING_DURATION_AND_MAXIMAL_TAIL_OPEN",
+            "provenance_check": "VALID_REPLAYED_ACTION_JACOBI_BALLS_AND_INVERSE_FREE_WEYL_COTANGENT",
+            "verdict": "PARTIAL_MATCH_FIXED_NODE_RADIUS_CERTIFIED_MOVING_DURATION_MISSING",
         },
         {
             "diagram_slot": "COMMON_SCALE_HEAT_MINUS_ZETA_SOURCE_CONTRACTION",
@@ -183,6 +184,10 @@ def build_payload() -> dict[str, Any]:
         "non_scale_pathwise_pullback_is_not_overclaimed": (
             common_scale["adjudication"]["non_scale_reset_quotient_geometry_pullback_sector"]
             == "OPEN"
+            and radius_pullback["claim_boundary"]["fixed_node_radius_pullback"]
+            == "CERTIFIED"
+            and radius_pullback["claim_boundary"]["moving_duration_pullback"]
+            == "OPEN"
         ),
         "common_scale_source_contraction_formula_is_closed": (
             common_scale_ward["adjudication"]["common_scale_source_contraction_formula"]
@@ -250,7 +255,7 @@ def build_payload() -> dict[str, Any]:
     return {
         "artifact": "BHSM_N12_GATE7_1222_CORE_DIAGRAM_MATCHING_AUDIT",
         "status": "GATE7_1222_CORE_SLOTS_MATCHED_REALIZED_PARENT_PULLBACK_AND_PROJECTED_TAIL_OPEN" if passed else "GATE7_1222_CORE_MATCHING_NOT_VALIDATED",
-        "classification": "C2_FINITE_CORE_NEGATIVE_AXIS_RESPONSE,_BACKWARD_OPERATOR_COTANGENT,_INCOMING_M_f_WHOLE_NEGATIVE_AXIS_FORM_ENCLOSURE,_FERMION_AE2_SEAM_INVERTIBILITY,_EXPLICIT_INCOMING_FINITE_AMPLITUDE_COEFFICIENT_FAMILY,_AND_PHYSICAL_COMMON_SCALE_PULLBACK_SLOTS_ARE_VALID_MATCHES;_THE_EXACT_JOINT_SPECTRAL_TRACE_AND_NON_SCALE_RESET_GEOMETRY_PULLBACK_REMAIN_MISSING_AS_REALIZED_DATA,_WHILE_INCIDENCE_FORCE_AND_CAUCHY_THEOREMS_ARE_VALID_CONDITIONAL_CONSUMERS",
+        "classification": "C2_FINITE_CORE_NEGATIVE_AXIS_RESPONSE,_BACKWARD_OPERATOR_COTANGENT,_INCOMING_M_f_WHOLE_NEGATIVE_AXIS_FORM_ENCLOSURE,_FERMION_AE2_SEAM_INVERTIBILITY,_EXPLICIT_INCOMING_FINITE_AMPLITUDE_COEFFICIENT_FAMILY,_PHYSICAL_COMMON_SCALE_PULLBACK,_AND_THE_1222_FIXED_NODE_NON_SCALE_RADIUS_PULLBACK_ARE_VALID_MATCHES;_THE_NON_SCALE_MOVING_DURATION_PULLBACK_AND_EXACT_JOINT_SPECTRAL_TRACE_REMAIN_MISSING_AS_REALIZED_DATA,_WHILE_INCIDENCE_FORCE_AND_CAUCHY_THEOREMS_ARE_VALID_CONDITIONAL_CONSUMERS",
         "forward_event_diagram": "C1 --M_f--> E1 --(U_R,W_phys)--> C2 --M_C2--> MAXIMAL_ENDPOINT",
         "matching_audit": slots,
         "adjudication": {
@@ -267,19 +272,21 @@ def build_payload() -> dict[str, Any]:
             "physical_common_scale_source_contraction_formula": "CLOSED_BY_HEAT_ZETA_WARD_IDENTITY",
             "stored_fixed_channel_1064_to_1222_heat_increment": "CERTIFIED_SUPPRESSED_IN_LOG_SPACE",
             "physical_common_scale_numeric_force": "OPEN_WITH_JOINT_GRADED_HEAT_TRACE",
-            "non_scale_pathwise_reset_quotient_geometry_pullback_sector": "ACTUALLY_MISSING",
+            "non_scale_fixed_node_radius_reset_pullback": "CERTIFIED_ON_1222_FINITE_CORE",
+            "non_scale_moving_duration_reset_pullback": "ACTUALLY_MISSING",
+            "non_scale_pathwise_reset_quotient_geometry_pullback_sector": "PARTIALLY_MATCHED_DURATION_AND_MAXIMAL_TAIL_OPEN",
             "projected_heat_minus_zeta_force_net_and_tail": "ACTUALLY_MISSING",
             "finite_event_or_canonical_stop": "NOT_REACHED",
             "Gate7": "G7_08_OPEN",
             "Gate8": "LOCKED",
         },
         "validated_invalidated_open": {
-            "VALIDATED": ["C2 1222-core coefficient slot", "C2 complete negative-axis finite-core response", "finite-core backward operator cotangent semigroup", "incoming M_f compact terminal-block identity and Laurent germ", "incoming normalized coefficient path through lambda_0 squared", "explicit incoming regularized finite-amplitude segment and first Jacobi bound", "uniform finite-amplitude incoming coefficient family", "incoming M_f parametric whole-negative-axis enclosure", "fermion AE2 joint-seam invertibility", "physical common-scale pullback including moving duration", "common-scale heat-zeta source contraction formula", "stored fixed-channel 1064-to-1222 heat increment suppression", "maximal abstract Weyl value", "source and force consumer formulas"],
-            "INVALIDATED": ["new C2 theory is required", "a new C1 operator theory is required for M_f", "a second birth exterior response is required", "a full pathwise Jacobi is required for the common-scale component", "fixed-duration radius-only zeta derivative is the physical common-scale force", "birth jet alone is the remaining non-scale pathwise reset jet", "broad seam intervals or probes determine the force", "proof edge is an endpoint"],
-            "OPEN": ["exact joint spectral trace and nonfermion seam value", "non-scale pathwise reset quotient geometry pullback sector", "actual projected force net and Cauchy tail"],
+            "VALIDATED": ["C2 1222-core coefficient slot", "C2 complete negative-axis finite-core response", "finite-core backward operator cotangent semigroup", "1222-segment state-Jacobi growth provenance", "fixed-node non-scale radius reset pullback", "incoming M_f compact terminal-block identity and Laurent germ", "incoming normalized coefficient path through lambda_0 squared", "explicit incoming regularized finite-amplitude segment and first Jacobi bound", "uniform finite-amplitude incoming coefficient family", "incoming M_f parametric whole-negative-axis enclosure", "fermion AE2 joint-seam invertibility", "physical common-scale pullback including moving duration", "common-scale heat-zeta source contraction formula", "stored fixed-channel 1064-to-1222 heat increment suppression", "maximal abstract Weyl value", "source and force consumer formulas"],
+            "INVALIDATED": ["new C2 theory is required", "a new C1 operator theory is required for M_f", "a second birth exterior response is required", "a full pathwise Jacobi is required for the common-scale component", "all non-scale pathwise reset geometry data are absent", "fixed-duration radius-only zeta derivative is the physical common-scale force", "birth jet alone is the remaining non-scale pathwise reset jet", "a duration interval or proof tube is a duration first jet", "broad seam intervals or probes determine the force", "proof edge is an endpoint"],
+            "OPEN": ["exact joint spectral trace and nonfermion seam value", "non-scale moving-duration reset pullback", "maximal non-scale reset-quotient tail", "actual projected force net and Cauchy tail"],
         },
         "hindsight": {"classification": "PROOF_CHART_LIMIT_REMOVED;_OPERATOR_DATA_GAP_REMAINS", "obstruction_physical": False},
-        "exact_next_dependency": "CHAIN_THE_CLOSED_BACKWARD_OPERATOR_COTANGENT_THROUGH_THE_REMAINING_NON_SCALE_RESET_QUOTIENT_GEOMETRY_ADJOINT_SECTOR_AND_THE_NOW_INVERTIBLE_FERMION_SEAM,_ASSEMBLE_OR_ENCLOSE_THE_EXACT_JOINT_GRADED_SPECTRAL_TRACE,_CONTRACT_THE_SOURCE_AND_FORCE_FUNCTIONALS,_AND_TEST_THE_PROJECTED_CAUCHY_TAIL",
+        "exact_next_dependency": "DERIVE_AND_CONTRACT_THE_NON_SCALE_MOVING_PROPER_DURATION_ADJOINT_ON_THE_SAME_1222_FIXED_s_COVER,_THEN_CHAIN_THE_COMPLETE_FINITE_CORE_PULLBACK_THROUGH_THE_NOW_INVERTIBLE_FERMION_SEAM,_ASSEMBLE_OR_ENCLOSE_THE_EXACT_JOINT_GRADED_SPECTRAL_TRACE,_AND_TEST_THE_PROJECTED_CAUCHY_TAIL",
         "claim_boundary": {
             "Gate7": "G7_08_OPEN_REALIZED_PARENT_PULLBACK_AND_PROJECTED_TAIL",
             "Gate8": "LOCKED",

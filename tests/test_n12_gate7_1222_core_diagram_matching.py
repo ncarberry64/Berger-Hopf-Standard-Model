@@ -15,7 +15,7 @@ def test_gate7_1222_core_diagram_matching() -> None:
         "VALID_MATCH_OPERATOR_COTANGENT"
     )
     assert verdicts["C2_PHYSICAL_COMMON_SCALE_FIRST_JET"].startswith("VALID_MATCH_CLOSED")
-    assert verdicts["C2_NON_SCALE_RESET_QUOTIENT_FIRST_JET"].startswith("ACTUALLY_MISSING")
+    assert verdicts["C2_NON_SCALE_RESET_QUOTIENT_FIRST_JET"].startswith("PARTIAL_MATCH")
     assert verdicts["COMMON_SCALE_HEAT_MINUS_ZETA_SOURCE_CONTRACTION"].startswith(
         "VALID_MATCH_FORMULA_CLOSED"
     )
@@ -28,6 +28,8 @@ def test_gate7_1222_core_diagram_matching() -> None:
     assert verdicts["PAIR_CONTACT_AND_GRADED_SOURCE_INCIDENCE"] == "VALID_MATCH_CONDITIONAL_CONSUMER"
     assert payload["adjudication"]["finite_event_or_canonical_stop"] == "NOT_REACHED"
     assert payload["adjudication"]["stored_fixed_channel_1064_to_1222_heat_increment"] == "CERTIFIED_SUPPRESSED_IN_LOG_SPACE"
+    assert payload["adjudication"]["non_scale_fixed_node_radius_reset_pullback"] == "CERTIFIED_ON_1222_FINITE_CORE"
+    assert payload["adjudication"]["non_scale_moving_duration_reset_pullback"] == "ACTUALLY_MISSING"
     assert payload["adjudication"]["incoming_M_f_identity_and_action_owned_germ"].startswith("CLOSED")
     assert payload["adjudication"]["incoming_normalized_coefficient_path_quadratic_germ"] == "CLOSED_INVERSE_FREE"
     assert payload["claim_boundary"]["zero_source_force"] == "OPEN"
