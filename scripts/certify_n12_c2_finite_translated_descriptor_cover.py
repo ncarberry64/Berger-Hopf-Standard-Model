@@ -58,7 +58,13 @@ def _load(path: Path) -> dict[str, Any]:
     return json.loads(path.read_text(encoding="utf-8"))
 
 
-def build_payload() -> dict[str, Any]:
+def build_payload(
+    *,
+    max_additional_boxes: int = 96,
+    data_result: Path = DATA_RESULT,
+) -> dict[str, Any]:
+    if max_additional_boxes <= 0:
+        raise ValueError("positive translated-cover safety limit required")
     if not all(path.is_file() for path in INPUTS):
         raise FileNotFoundError("complete finite translated cover inputs required")
     start_ball, start_segment, extension, pole_free, launch, line_record, action, margins = (
@@ -90,8 +96,9 @@ def build_payload() -> dict[str, Any]:
     centers = [center.copy()]
     signed_values = [signed_s]
     exhaustion = "COMPUTATIONAL_SAFETY_LIMIT_NOT_REACHED"
+    resolution_witness: dict[str, float | int] | None = None
 
-    for index in range(96):
+    for index in range(max_additional_boxes):
         ball = translated_ball_bounds(
             center_path=center_path,
             tube=tube,
@@ -136,6 +143,21 @@ def build_payload() -> dict[str, Any]:
             exhaustion = "CURRENT_JACOBI_EULER_MAJORANT_DOES_NOT_CLOSE_NEXT_TUBE"
             break
         signed_end = signed_s + signed_step
+        if not signed_end > signed_s:
+            ulp = math.nextafter(signed_s, math.inf) - signed_s
+            resolution_witness = {
+                "attempted_cover_index_after_two_segment_prefix": index + 1,
+                "signed_lambda_start": signed_s,
+                "certified_signed_lambda_step": signed_step,
+                "binary64_signed_lambda_ulp": ulp,
+                "step_to_ulp_ratio": signed_step / ulp,
+                "binary64_signed_lambda_end": signed_end,
+                "binary64_physical_u_increment": signed_end**2 - signed_s**2,
+            }
+            exhaustion = (
+                "CURRENT_BINARY64_SIGNED_DESCRIPTOR_INCREMENT_NOT_RESOLVED"
+            )
+            break
         physical_u_increment = signed_end**2 - signed_s**2
         Delta_lower, Delta_upper = (
             float(value) for value in ball["Delta_interval"]
@@ -189,7 +211,7 @@ def build_payload() -> dict[str, Any]:
         exhaustion = "COMPUTATIONAL_SAFETY_LIMIT_REACHED_WITH_CONTINUATION_STILL_OPEN"
 
     np.savez_compressed(
-        DATA_RESULT,
+        data_result,
         C2_predictor_centers=np.asarray(centers),
         state_weights=weights,
         branch_reference=reference,
@@ -246,8 +268,12 @@ def build_payload() -> dict[str, Any]:
             "final_endpoint_tube_radius_upper": tube,
             "exhaustion_classification": exhaustion,
             "exhaustion_is_canonical_stop": False,
-            "data": DATA_RESULT.relative_to(ROOT).as_posix(),
-            "data_SHA256": _sha256(DATA_RESULT),
+            "data": data_result.relative_to(ROOT).as_posix(),
+            "data_SHA256": _sha256(data_result),
+            **(
+                {"resolution_witness": resolution_witness}
+                if resolution_witness is not None else {}
+            ),
         },
         "adjudication": {
             "physical_encapsulation_endpoint_reached": False,
