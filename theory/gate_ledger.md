@@ -345,6 +345,19 @@
   Hessian is distinct from the downstream pair-plus-contact source Hessian.
   G7_08 and G7_09 are therefore coupled without adding a gate; both the
   actual projected trace covector and joint saddle remain open.
+- Force first-jet critical-path correction: the exact heat-minus-zeta force
+  is a first operator variation.  Its earliest evaluation therefore requires
+  the maximal child base operator and first physical reset-quotient
+  Jacobi/Weyl jet, but not the second operator jet or reset-stratum curvature.
+  At the evolution level the first implicit Euler--Dirac jet uses `D3 L`,
+  while `D4 L` first enters the mixed second jet.  Thus the current owner is
+  certified base-plus-first-Jacobi propagation to the action-owned finite
+  endpoint, followed by the existing inverse-free first Weyl solve.  If the
+  projected force is nonzero, `D4 L`, the second operator jet, reset
+  curvature, and geometry KKT Hessian remain mandatory to relocate the joint
+  saddle; if it vanishes, the classical configuration transfers and the
+  pair-plus-contact Hessian follows.  No later claim is deleted and no reset
+  representative is selected.
 - Current operator-data inventory: the durable endpoint checkpoint contains
   one 196-component event-child state and a `57 x 196` first constraint
   Jacobian, but no proper-time coefficient path, `D_tau`, endpoint form,
