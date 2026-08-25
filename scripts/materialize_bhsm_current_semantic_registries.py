@@ -61,6 +61,9 @@ SOURCES = (
     "artifacts/flagship_integration/BHSM_N12_MAXIMAL_FORWARD_ADJOINT_EXHAUSTION.json",
     "artifacts/flagship_integration/BHSM_N12_ASYMPTOTIC_NHIM_ANGULAR_FORCE_NO_GO.json",
     "artifacts/flagship_integration/BHSM_N12_LOCAL_RESET_TERMINAL_TRANSVERSALITY_AUDIT.json",
+    "artifacts/flagship_integration/BHSM_N12_CANONICAL_MOMENTUM_ACTION_JACOBIAN.json",
+    "artifacts/flagship_integration/BHSM_N12_FULL_RESET_ACTION_JACOBIAN.json",
+    "artifacts/flagship_integration/BHSM_N12_FINITE_TERMINAL_RESET_STRATUM_CANDIDATE.json",
     "artifacts/flagship_integration/BHSM_N12_WEIGHT_SEVEN_TRANSVERSE_DESCRIPTOR.json",
     "artifacts/flagship_integration/BHSM_N12_WEIGHT_FIVE_CENTER_MODULATION.json",
     "artifacts/flagship_integration/BHSM_N12_WEIGHT_FIVE_MULTIPRECISION_NONPROMOTION.json",
@@ -136,6 +139,9 @@ def verify_current_lineage() -> None:
     maximal_adjoint = loaded["artifacts/flagship_integration/BHSM_N12_MAXIMAL_FORWARD_ADJOINT_EXHAUSTION.json"]
     nhim_angular_no_go = loaded["artifacts/flagship_integration/BHSM_N12_ASYMPTOTIC_NHIM_ANGULAR_FORCE_NO_GO.json"]
     local_reset_terminal = loaded["artifacts/flagship_integration/BHSM_N12_LOCAL_RESET_TERMINAL_TRANSVERSALITY_AUDIT.json"]
+    momentum_jacobian = loaded["artifacts/flagship_integration/BHSM_N12_CANONICAL_MOMENTUM_ACTION_JACOBIAN.json"]
+    full_reset_jacobian = loaded["artifacts/flagship_integration/BHSM_N12_FULL_RESET_ACTION_JACOBIAN.json"]
+    terminal_candidate = loaded["artifacts/flagship_integration/BHSM_N12_FINITE_TERMINAL_RESET_STRATUM_CANDIDATE.json"]
     weight_seven_descriptor = loaded["artifacts/flagship_integration/BHSM_N12_WEIGHT_SEVEN_TRANSVERSE_DESCRIPTOR.json"]
     weight_five_modulation = loaded["artifacts/flagship_integration/BHSM_N12_WEIGHT_FIVE_CENTER_MODULATION.json"]
     weight_five_mp_audit = loaded["artifacts/flagship_integration/BHSM_N12_WEIGHT_FIVE_MULTIPRECISION_NONPROMOTION.json"]
@@ -296,9 +302,21 @@ def verify_current_lineage() -> None:
         and local_reset_terminal["route_adjudication"][
             "global_reset_quotient_finite_stratum_disproved"
         ] is False
+        and momentum_jacobian["continuation_consequence"][
+            "intrinsic_reset_tangent_recenter_now_analytic"
+        ] is True
+        and full_reset_jacobian["dimensions"]["rank"] == 57
+        and full_reset_jacobian["dimensions"]["physical_tangent_nullity"] == 139
+        and terminal_candidate["terminal_normal_block"]["rank"] == 58
+        and terminal_candidate["center"]["child"]["hitting_product"] < 0.0
+        and terminal_candidate["proof_boundary"][
+            "finite_terminal_stratum_certified"
+        ] is False
+        and terminal_candidate["claim_boundary"]["Gate7"]
+        == "ACTIVE_TERMINAL_ROOT_BALL_CERTIFICATION"
     ):
         raise RuntimeError(
-            "maximal-adjoint/NHIM/local-reset finite-stratum frontier is not current"
+            "maximal-adjoint/NHIM/terminal-candidate frontier is not current"
         )
     if nonfermion["claim_boundary"]["nonfermion_critical_zero_graph_excluded"] is not True:
         raise RuntimeError("disk does not close the nonfermion threshold obstruction")

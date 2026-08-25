@@ -1,0 +1,99 @@
+{
+  "FLAGSHIP_READY": false,
+  "FULL_BHSM_COMPLETE": false,
+  "artifact": "BHSM_N12_FINITE_TERMINAL_RESET_STRATUM_CANDIDATE",
+  "center": {
+    "Legendre_minima": {
+      "child": {
+        "192": 1.0001209310285466,
+        "384": 1.0001209310285466,
+        "96": 1.0001209310285466
+      },
+      "event": {
+        "192": 0.8401355676008748,
+        "384": 0.8401355676008748,
+        "96": 0.840135567600876
+      }
+    },
+    "child": {
+      "b_psi": 9.999951445231258e-05,
+      "c_psi": -2.294594133942685e-11,
+      "hitting_product": -2.2945829925939318e-15,
+      "selected_eigenvalue": 3.5821399523362645e-22,
+      "selected_index": 23,
+      "selected_spectral_gap": 2.9762111123422472e-08
+    },
+    "event": {
+      "b_psi": 0.00042910767145887263,
+      "c_psi": 2.0788317347580525e-10,
+      "hitting_product": 8.920426450568366e-14,
+      "selected_eigenvalue": -1.5025264219647812e-18,
+      "selected_index": 24,
+      "selected_spectral_gap": 2.593742948888047e-07
+    },
+    "event_child_action_distance_from_certified_reset": 0.27102256608878694,
+    "high_precision_reset_residual_maximum": 4.2810328332001094e-13,
+    "high_precision_reset_residual_norm": 4.2830028364638865e-13
+  },
+  "claim_boundary": {
+    "FLAGSHIP_READY": false,
+    "FULL_BHSM_COMPLETE": false,
+    "Gate7": "ACTIVE_TERMINAL_ROOT_BALL_CERTIFICATION",
+    "Gate8": "LOCKED",
+    "actual_finite_terminal_stratum": "NUMERICAL_CANDIDATE_NOT_CERTIFIED",
+    "actual_projected_force": "OPEN_AFTER_TERMINAL_CERTIFICATION",
+    "chord_03_authorized": false,
+    "frozen_predictions_changed": false
+  },
+  "classification": "THE_UNCHANGED_FULL_EVENT_CHILD_RESET_RELATION_HAS_A_HIGH_PRECISION_NUMERICAL_CHILD_EVENT_CENTER_WITH_STRICTLY_NEGATIVE_FORWARD_HITTING_PRODUCT_AND_A_FULL_RANK_58_ROW_TERMINAL_NORMAL_BLOCK;_DIRECTED_ROUNDING_ROOT_BALL_CERTIFICATION_REMAINS_OPEN",
+  "data": {
+    "SHA256": "303BEBE80E6033D398278935C9AD01CD1A8C72EDEE208D52C0005A252119D0CD",
+    "path": "artifacts/flagship_integration/BHSM_N12_FINITE_TERMINAL_RESET_STRATUM_CANDIDATE.npz"
+  },
+  "exact_next_dependency": "BUILD_THE_58_ROW_DIRECTED_ROUNDING_RADII_POLYNOMIAL_AT_THIS_CENTER_WITH_RETAINED_ACTION_DERIVATIVE_MAJORANTS,_THEN_TRANSFER_SELECTED_LINE_SIMPLICITY,_LEGENDRE,_BOUNDARY,_CANONICAL_LIFT,_AND_STRICT_NEGATIVE_HITTING_PRODUCT_MARGINS_TO_THE_CERTIFIED_ROOT_BALL",
+  "inputs": {
+    "artifacts/BHSM_AETHER_CROSS_RESOLUTION_RECONNAISSANCE_V21_35.json": "C670EF5D74B282E49C16F782F3937FFF5B79C37A5CE8EFF22FFB8924910F0FC8",
+    "artifacts/flagship_integration/BHSM_N12_FINITE_TERMINAL_RESET_STRATUM_CANDIDATE.npz": "303BEBE80E6033D398278935C9AD01CD1A8C72EDEE208D52C0005A252119D0CD",
+    "artifacts/flagship_integration/BHSM_N12_FULL_RESET_ACTION_JACOBIAN.json": "6F669531A372F9BCC9D04AC26DB4F53A25DE38867036D0A8C1B779B7CB1C477B",
+    "artifacts/n12_direct_checkpoint/BHSM_N12_COMPLETE_PERSISTENT_CHILD_STATE.npz": "8AEE33C46C320A36384C83E6B9BDE387AE3E565D99C7D49C606895229B796890",
+    "artifacts/n12_direct_checkpoint/BHSM_N12_EXACT_ROOT_RESIDUAL.json": "E4AF91D5681E6F11AD5BE99FD1F586D61AD41DDF512095255ED8F01951691176",
+    "theory/n12_finite_terminal_reset_stratum_candidate.md": "8565BC1ED6FA50C79A2D520663B43F7EE8697C0C10A1E825D42329A96B9B83A0"
+  },
+  "proof_boundary": {
+    "candidate_used_as_observable_readout": false,
+    "finite_terminal_stratum_certified": false,
+    "finite_terminal_stratum_numerical_candidate": true,
+    "global_uniqueness_claimed": false,
+    "physical_child_selected": false,
+    "universal_reachability_claimed": false
+  },
+  "status": "HIGH_PRECISION_FINITE_TERMINAL_RESET_STRATUM_CANDIDATE_DERIVED",
+  "terminal_normal_block": {
+    "ambient_action_dimension": 196,
+    "child_event_gradient_scale_on_reset_tangent": 4.814695585310095e-08,
+    "condition_number": 188701.10837568913,
+    "largest_singular_value": 1444.4560630522947,
+    "normal_Newton_correction_norm": 6.088068017677698e-13,
+    "normalized_augmented_residual_norm": 4.283648990878115e-13,
+    "rank": 58,
+    "reset_rows": 57,
+    "smallest_singular_value": 0.007654730146981944,
+    "terminal_rows": 58,
+    "terminal_tangent_dimension": 138
+  },
+  "validation": {
+    "child_hitting_product_is_strictly_negative": true,
+    "child_selected_eigenvalue_is_numerically_zero": true,
+    "child_selected_event_is_branch_23": true,
+    "event_and_child_Legendre_margins_are_positive": true,
+    "event_and_child_selected_lines_remain_simple": true,
+    "event_selected_row_remains_branch_24": true,
+    "high_precision_reset_residual_below_1e_11": true,
+    "no_child_selector_observable_value_action_term_scale_gate_or_chord_added": true,
+    "normal_Newton_correction_is_below_1e_9": true,
+    "reset_Jacobian_has_rank_57": true,
+    "stored_third_variation_matches_candidate_center": true,
+    "terminal_augmented_Jacobian_has_rank_58": true
+  },
+  "validation_passed": true
+}

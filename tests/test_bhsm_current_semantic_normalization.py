@@ -181,9 +181,20 @@ def test_replacement_force_is_constraint_projected_without_reset_selection() -> 
         in dag["G7_08_FORCE"]["provenance"]
     )
     assert "billions of certified radii" in dag["G7_08_FORCE"]["physical_meaning"]
+    assert "58-row child terminal-event candidate" in dag[
+        "G7_08_FORCE"
+    ]["physical_meaning"]
+    assert "directed-rounding root-ball certification" in dag[
+        "G7_08_FORCE"
+    ]["physical_meaning"]
     assert (
         "artifacts/flagship_integration/"
         "BHSM_N12_LOCAL_RESET_TERMINAL_TRANSVERSALITY_AUDIT.json"
+        in dag["G7_08_FORCE"]["provenance"]
+    )
+    assert (
+        "artifacts/flagship_integration/"
+        "BHSM_N12_FINITE_TERMINAL_RESET_STRATUM_CANDIDATE.json"
         in dag["G7_08_FORCE"]["provenance"]
     )
     assert dag["G7_09_SADDLE"]["current_status"] == (

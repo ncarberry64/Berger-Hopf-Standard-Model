@@ -597,8 +597,8 @@ GATE_CHAIN = [
     ("G7_05_FACTORIZED_LAP", "all admissible positive far tails source-Dini by compact Volterra trace-class theorem", "CLOSED"),
     ("G7_06_E1_FINITE", "fixed-channel E1 source-measure finiteness", "CLOSED"),
     ("G7_07_ANGULAR_TAIL", "finite-endpoint compact-resolvent/source-trace control on the realized finite-encapsulation domain; infinite nonencapsulating tails remain nonrealized mathematical histories", "CLOSED_BY_OWNER_PHYSICAL_SCOPE_AND_LOCAL_ACTION_EXISTENCE"),
-    ("G7_08_FORCE", "heat-minus-zeta functional, physical quotient criterion, fixed-stratum regularity, quotient-robust radius variation, moving-endpoint chain rules, inverse-free Weyl solver, maximal Friedrichs value exhaustion, and nested channel/Euler-Dirac adjoint pullback are derived; fixed-channel source-Dini and high-energy trace control remain closed; every history captured by the proved H4-to-H0-positive asymptotic NHIM has finite optical length and therefore fails the required absolute graded angular source sum, so that infinite NHIM route cannot supply the physical force through the currently proved absolute source class even if reset entry were proved; the certified local reset chart also cannot supply a later event or canonical stop because its best linearized event and orientation targets lie billions of certified radii away; the current owner is therefore a global action-owned finite-reset-stratum continuation or nonzero-degree theorem, followed by a root of its compact-endpoint heat-minus-zeta quotient covector; another infinite route would require independently action-owned optical-complete or relative-trace structure", "OPEN_CURRENT_OWNER"),
-    ("G7_09_SADDLE", "same-action finite-endpoint forward-adjoint quotient KKT equations are derived but unsolved; after exclusion of the finite-optical asymptotic NHIM force route and the insufficiency of the certified local reset chart, the preferred saddle route requires an actual globally certified finite later-event or retained canonical-stop maximal child stratum and remains mathematically coupled to G7_08 without adding a gate", "PENDING_COUPLED_TO_G7_08"),
+    ("G7_08_FORCE", "heat-minus-zeta functional, physical quotient criterion, fixed-stratum regularity, quotient-robust radius variation, moving-endpoint chain rules, inverse-free Weyl solver, maximal Friedrichs value exhaustion, and nested channel/Euler-Dirac adjoint pullback are derived; fixed-channel source-Dini and high-energy trace control remain closed; every history captured by the proved H4-to-H0-positive asymptotic NHIM has finite optical length and therefore fails the required absolute graded angular source sum, so that infinite NHIM route cannot supply the physical force through the currently proved absolute source class even if reset entry were proved; the earlier certified local reset chart alone could not supply a later event because its linearized targets lay billions of certified radii away, but the newly analytic full 57 by 196 reset Jacobian has now enabled intrinsic continuation to a high-precision 58-row child terminal-event candidate with strictly negative hitting product; the current owner has narrowed to independent directed-rounding root-ball certification and margin transfer at that candidate, followed by evaluation and a root of its compact-endpoint heat-minus-zeta quotient covector; no physical child is selected by the numerical continuation", "OPEN_CURRENT_OWNER"),
+    ("G7_09_SADDLE", "same-action finite-endpoint forward-adjoint quotient KKT equations are derived but unsolved; after exclusion of the finite-optical asymptotic NHIM force route, intrinsic full-reset continuation supplies a terminal-stratum numerical candidate but not yet its directed-rounding root ball; the preferred saddle route therefore awaits that finite later-event certification and remains mathematically coupled to G7_08 without adding a gate", "PENDING_COUPLED_TO_G7_08"),
     ("G7_10_HESSIAN", "pair-plus-contact Hessian", "PENDING"),
     ("G7_11_WARD_TRACE", "Ward/BRST and source-contracted relative trace", "PENDING"),
     ("G7_12_SCALAR_MAP", "basis-independent physical scalar map", "PENDING"),
@@ -634,6 +634,9 @@ def _gates() -> list[dict[str, Any]]:
             "artifacts/flagship_integration/BHSM_N12_MAXIMAL_FORWARD_ADJOINT_EXHAUSTION.json",
             "artifacts/flagship_integration/BHSM_N12_ASYMPTOTIC_NHIM_ANGULAR_FORCE_NO_GO.json",
             "artifacts/flagship_integration/BHSM_N12_LOCAL_RESET_TERMINAL_TRANSVERSALITY_AUDIT.json",
+            "artifacts/flagship_integration/BHSM_N12_CANONICAL_MOMENTUM_ACTION_JACOBIAN.json",
+            "artifacts/flagship_integration/BHSM_N12_FULL_RESET_ACTION_JACOBIAN.json",
+            "artifacts/flagship_integration/BHSM_N12_FINITE_TERMINAL_RESET_STRATUM_CANDIDATE.json",
         ],
         "G7_09_SADDLE": [
             "artifacts/flagship_integration/BHSM_N12_CONSTRAINT_PROJECTED_REPLACEMENT_SADDLE.json",
@@ -645,6 +648,7 @@ def _gates() -> list[dict[str, Any]]:
             "artifacts/flagship_integration/BHSM_N12_ASYMPTOTIC_CHILD_EXTERIOR_CONNECTION_PRECONDITIONS.json",
             "artifacts/flagship_integration/BHSM_N12_ASYMPTOTIC_NHIM_ANGULAR_FORCE_NO_GO.json",
             "artifacts/flagship_integration/BHSM_N12_LOCAL_RESET_TERMINAL_TRANSVERSALITY_AUDIT.json",
+            "artifacts/flagship_integration/BHSM_N12_FINITE_TERMINAL_RESET_STRATUM_CANDIDATE.json",
         ],
     }
     fallback = "artifacts/flagship_integration/BHSM_N12_GATE7_AE2_THRESHOLD_SUPERSESSION.json"
