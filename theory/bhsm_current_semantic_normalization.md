@@ -142,30 +142,28 @@ stratum, followed by a root of the physical heat-minus-zeta covector. This
 correction introduces neither post-event recurrence nor a hand-selected
 endpoint.
 
-The complete weight-seven action now supplies more than one analytic
-`R4 -> infinity` history. For every nearby regular fixed retained shape,
-common expansion at `H0=sqrt(kappa0/42)` is an exact nonlinear solution. Its
-24 shape parameters plus the common-scale orbit phase exhaust the 25 physical
-center roots, while all 25 complementary finite roots are `-7H0` and the
-twelve polynomial time--lapse chains are gauge. After analytic constraint
-reduction and compactification by `epsilon=R4^-2`, the boundary family has 24
-center directions and 26 stable normal directions, including the radial root
-`-2H0`. The finite-dimensional stable-foliation theorem therefore gives an
-existential open local capture basin for the full retained finite-N12 flow,
-with `epsilon -> 0`, `H4 -> H0>0`, vanishing normal velocities, and convergent
-shape variables.
+The complete weight-seven action also supplies an exact nonlinear expanding
+center family. Its 24 shape parameters plus the common-scale orbit phase
+exhaust the 25 physical center roots, while all 25 complementary finite roots
+are `-7H0` and the twelve polynomial time--lapse chains are gauge. After
+analytic constraint reduction and compactification by `epsilon=R4^-2`, the
+finite-N12 stable-foliation theorem gives an existential open local basin with
+`epsilon -> 0`, `H4 -> H0>0`, vanishing normal velocities, and convergent
+shape variables. The subsequent graph estimates certify a positive, highly
+conservative nonlinear regularity radius for this mathematical asymptotic
+regime.
 
-That theorem does not provide numerical lower bounds for its capture radii
-and does not connect the set-valued AE2 reset image to the basin. The
-certified reset has `R4=1.0023342201094778` and `epsilon` about `0.99535`,
-whereas the Calderon root ball and the asymptotic capture neighborhood use
-different centers, charts, and norms. No comparison or intersection follows
-without a validated transition-map bound. The exact narrowed dependency is
-therefore a quantitative compactified capture surface and a forward cover of
-a nonempty physical reset quotient stratum into it, with first and mixed
-second quotient jets and all domain margins, or the already-valid later
-event/canonical-exit route. Dimension counting and a single reset
-representative have no promotion authority.
+This basin is supplementary rather than the physical Gate-7 owner. Finite
+encapsulation applies to the pre-event formation arm, while the post-event
+child uses the already-retained maximal source domain and may end at a later
+event, a canonical finite exit, or an infinite/excluded Friedrichs end. No
+reset-to-asymptotic intersection is required merely to define that maximal
+domain, and none is claimed. The current owner remains the action-owned
+maximal-history coefficient realization and first reset-quotient geometry
+jet on a nonempty regular event-generated stratum; the derived operator
+cotangent and intrinsic quotient KKT test can then evaluate the physical
+heat-minus-zeta force. Dimension counting and a single reset representative
+have no promotion authority.
 
 The recovered Norman owner ontology is recorded as an owner-authorized semantic layer, never as an action-derived equation. It fixes geometry-first emergence, persistent mode/history particle classes, the base-plus-two-excitations generation architecture, action-owned response mass with a universal dimensional origin, propagation-locked neutrino mass, CKM as relative response-basis orientation, strict bare/dressed separation, and the irreversible dependency direction `action -> theorem -> observable -> frozen comparison`.
 

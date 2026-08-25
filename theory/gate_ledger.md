@@ -1931,18 +1931,19 @@ Exact next object:
   `FINITE_N12_EXISTENTIAL_OPEN_CAPTURE_BASIN_DERIVED`.
 - Compactified boundary splitting:
   `24_CENTER + 25_STABLE_VELOCITY + 1_STABLE_RADIAL`.
-- Capture radii `epsilon_star,delta_star`: `EXIST_POSITIVE_NOT_QUANTIFIED`.
-- Reset-image intersection or forward entry into a quantified capture surface:
-  `OPEN_CURRENT_OWNER`.
+- Positive nonlinear graph-regularity subball:
+  `CERTIFIED_CONSERVATIVE_EXISTENCE_SCALE`.
+- Asymptotic capture as the physical Gate-7 owner:
+  `FALSE_SUPPLEMENTARY_POSTEVENT_OR_NONREALIZED_FORMATION_REFINEMENT`.
+- Reset-image intersection with the asymptotic basin required to define the
+  maximal child source domain: `FALSE`.
 - Stored reset representative promoted to the analytic branch: `FALSE`.
-- Certified reset location: `R4=1.0023342201094778`,
-  `epsilon=R4^-2 approximately 0.99535`.
-- Calderon reset ball versus asymptotic capture radius:
-  `NOT_DIRECTLY_COMPARABLE_DIFFERENT_CENTERS_CHARTS_AND_NORMS`.
-- Current narrowed dependency:
-  `QUANTITATIVE_CAPTURE_SURFACE_PLUS_RESET_COMPONENT_FORWARD_COVER_`
-  `WITH_FIRST_AND_MIXED_SECOND_QUOTIENT_JETS_AND_DOMAIN_MARGINS_`
-  `OR_A_CERTIFIED_LATER_EVENT_OR_CANONICAL_EXIT`.
+- Current physical Gate-7 owner:
+  `ACTION_OWNED_MAXIMAL_HISTORY_COEFFICIENT_REALIZATION_AND_FIRST_RESET_`
+  `QUOTIENT_GEOMETRY_JET_ON_A_NONEMPTY_REGULAR_EVENT_GENERATED_STRATUM`.
+- Downstream after that input:
+  `EVALUATE_HEAT_MINUS_ZETA_PHYSICAL_QUOTIENT_FORCE_ROOT,_THEN_SECOND_`
+  `OPERATOR_JET_AND_INTRINSIC_KKT_HESSIAN_IF_THE_FORCE_IS_NONZERO`.
 - Chord 3 finite proof obligation: `FALSE`.
 - Gate 7: `ACTIVE`; Gate 8: `LOCKED`; `FULL_BHSM_COMPLETE=FALSE`.
 
