@@ -195,14 +195,27 @@
     "scalar_conormal": "p=D_tau*u"
   },
   "exact_next_dependency": "EVALUATE_THE_ACTION_GENERATED_x_xi(tau)_AND_ITS_FIRST_JACOBI_PATH_ON_THE_CERTIFIED_LOCAL_FINITE_HISTORY_STRATUM,_FEED_THEM_TO_THE_NOW_EXECUTABLE_TRANSFER_WEYL_JET,_AND_ASSEMBLE_THE_ZERO_SOURCE_HEAT_MINUS_ZETA_COVECTOR",
+  "hindsight": {
+    "action_required": [
+      "COMPACT_TWO_BOUNDARY_QUADRATIC_FORM",
+      "COEFFICIENT_AND_MOVING_DURATION_JETS",
+      "PHYSICAL_COMMON_SCALE_RESPONSE"
+    ],
+    "historical_or_imported_and_superseded": [
+      "FREE_TERMINAL_BOUNDARY_CONDITION",
+      "PERIODIC_ENDPOINT",
+      "TERMINAL_RECURRENCE"
+    ],
+    "not_required_for_first_force": "AN_EXPLICIT_TIME_SLICE_GENERATOR_BEYOND_THE_INTRINSIC_PROPER_TIME_ENDPOINT_LABELLED_QUOTIENT"
+  },
   "inputs": {
     "artifacts/flagship_integration/BHSM_N12_FINITE_TERMINAL_RADII_CERTIFICATE.json": "83A17916069B72895CCE651263F61664F3EC77E63BE68F2292D15E084D24D217",
     "artifacts/flagship_integration/BHSM_N12_FINITE_TERMINAL_RESET_STRATUM_CANDIDATE.npz": "303BEBE80E6033D398278935C9AD01CD1A8C72EDEE208D52C0005A252119D0CD",
     "artifacts/flagship_integration/BHSM_N12_FINITE_TERMINAL_TWO_SIDED_FORWARD_INTERFACE.json": "0BA9D5C8FDF495CBF0565B5F1703907EDB9F4450C28D0557C0AEC9B79A5CF8F7",
     "artifacts/flagship_integration/BHSM_N12_INTRINSIC_TIME_QUOTIENT_FORCE_ROOT.json": "CF0B9488F06D21BBEBDDB5F5880BCAA893392D0B07F654680E86BA2D2AA26487",
     "artifacts/flagship_integration/BHSM_N12_RESET_FIBER_RADIUS_JET_AND_SCALE_CENTER_AUDIT.json": "F245D549B6C5247BE5E0730C33C4840AEFADB8A68B28B222B8D0E34BEF1A85A7",
-    "src/bhsm/interface/aether_forward_channel_transfer.py": "9A482AC7C47A715F29A4FD4D4104E4488D49B3F183BA833EF89291CAD656A981",
-    "theory/n12_compact_finite_history_operator.md": "3D39A1C75A871CC774C2C3D7746DC68AA69402CCD1DDAE04BBF44A6207BAB8F0"
+    "src/bhsm/interface/aether_forward_channel_transfer.py": "699CC0CA909CE8F14FC1F8933E381BAC89A849D9D5B23838E4B9A448E30FE8AC",
+    "theory/n12_compact_finite_history_operator.md": "E429163655D1B24EB64C7F21FF0F1C4C4EE49F9CBF60F12990551EB081EA5FAC"
   },
   "intrinsic_quotient": {
     "child_projection_dimension": 73,
@@ -242,6 +255,8 @@
     "explicit_matrix_inverse_formed": false,
     "fundamental_transfer": "(u1,p1)^T=[[a,b],[c,d]]*(u0,p0)^T",
     "mixed_D_xi_D_eta_M_C": "EXACTLY_IMPLEMENTED",
+    "moving_duration_jet": "D_hD_k(T*G)=T_hk*G+T_h*G_k+T_k*G_h+T*G_hk",
+    "normalized_proper_time_domain": "s_IN_[0,1],_tau=T(xi)*s",
     "regular_chart": "b_NOT_EQUAL_0"
   }
 }

@@ -170,6 +170,48 @@ def transfer_variation_rhs(
     }
 
 
+def proper_duration_scaled_generator_jets(
+    generator_jets: dict[str, np.ndarray],
+    proper_duration_jets: dict[str, float],
+) -> dict[str, np.ndarray]:
+    """Pull a proper-time generator back to the fixed interval ``[0,1]``.
+
+    If ``tau=T(xi)*s``, the normalized generator is ``T G``.  This exact
+    product jet is what carries moving physical endpoint duration into the
+    Calderon derivative while leaving the endpoint labels fixed.
+    """
+
+    keys = ("base", "first_left", "first_right", "mixed_second")
+    if not all(key in generator_jets and key in proper_duration_jets for key in keys):
+        raise KeyError("base, first_left, first_right, and mixed_second required")
+    g, gh, gk, ghk = (
+        np.asarray(generator_jets[key], dtype=complex) for key in keys
+    )
+    if any(value.shape != (2, 2) for value in (g, gh, gk, ghk)) or any(
+        not np.all(np.isfinite(value)) for value in (g, gh, gk, ghk)
+    ):
+        raise ValueError("finite 2x2 generator jets required")
+    duration, duration_h, duration_k, duration_hk = (
+        float(proper_duration_jets[key]) for key in keys
+    )
+    if not all(
+        math.isfinite(value)
+        for value in (duration, duration_h, duration_k, duration_hk)
+    ) or duration <= 0.0:
+        raise ValueError("finite duration jets with positive base required")
+    return {
+        "base": duration * g,
+        "first_left": duration_h * g + duration * gh,
+        "first_right": duration_k * g + duration * gk,
+        "mixed_second": (
+            duration_hk * g
+            + duration_h * gk
+            + duration_k * gh
+            + duration * ghk
+        ),
+    }
+
+
 def integrate_transfer_jets(
     generator_jet_builder: Callable[[float], dict[str, np.ndarray]],
     proper_time_interval: tuple[float, float],
@@ -394,6 +436,97 @@ def two_boundary_weyl_from_transfer_jets(
     return output
 
 
+def scalar_compact_history_weyl_jets(
+    spatial_eigenvalue_at_unit_radius: float,
+    spectral_parameter: complex,
+    log_radius_jets: Callable[[float], dict[str, float]],
+    proper_duration_jets: dict[str, float],
+    **integration_options: Any,
+) -> dict[str, Any]:
+    """Evaluate ``M_C`` and its jets on a supplied scalar BHSM history.
+
+    The history is parameterized by normalized proper time ``s in [0,1]``.
+    Both its log-radius jet and its physical-duration jet are supplied by the
+    action flow/Jacobi family.  No endpoint condition is added.
+    """
+
+    keys = ("base", "first_left", "first_right", "mixed_second")
+
+    def builder(normalized_time: float) -> dict[str, np.ndarray]:
+        radius = log_radius_jets(float(normalized_time))
+        if not all(key in radius for key in keys):
+            raise KeyError("all four log-radius jet fields are required")
+        generator = scalar_channel_log_radius_jets(
+            spatial_eigenvalue_at_unit_radius,
+            float(radius["base"]),
+            spectral_parameter,
+            float(radius["first_left"]),
+            float(radius["first_right"]),
+            float(radius["mixed_second"]),
+        )
+        return proper_duration_scaled_generator_jets(
+            generator, proper_duration_jets
+        )
+
+    transfer = integrate_transfer_jets(
+        builder, (0.0, 1.0), **integration_options
+    )
+    return {
+        "transfer": transfer,
+        "weyl": two_boundary_weyl_from_transfer_jets(transfer),
+        "proper_duration_jets": {
+            key: float(proper_duration_jets[key]) for key in keys
+        },
+        "channel": "scalar",
+        "endpoint_condition_imposed": False,
+    }
+
+
+def product_dirac_compact_history_weyl_jets(
+    dirac_eigenvalue_at_unit_radius: float,
+    spectral_parameter: complex,
+    log_radius_jets: Callable[[float], dict[str, float]],
+    proper_duration_jets: dict[str, float],
+    *,
+    chirality: int = 1,
+    **integration_options: Any,
+) -> dict[str, Any]:
+    """Evaluate the factorized product-Dirac compact Weyl history jet."""
+
+    keys = ("base", "first_left", "first_right", "mixed_second")
+
+    def builder(normalized_time: float) -> dict[str, np.ndarray]:
+        radius = log_radius_jets(float(normalized_time))
+        if not all(key in radius for key in keys):
+            raise KeyError("all four log-radius jet fields are required")
+        generator = product_dirac_channel_log_radius_jets(
+            dirac_eigenvalue_at_unit_radius,
+            float(radius["base"]),
+            spectral_parameter,
+            float(radius["first_left"]),
+            float(radius["first_right"]),
+            chirality=chirality,
+            mixed_second_direction=float(radius["mixed_second"]),
+        )
+        return proper_duration_scaled_generator_jets(
+            generator, proper_duration_jets
+        )
+
+    transfer = integrate_transfer_jets(
+        builder, (0.0, 1.0), **integration_options
+    )
+    return {
+        "transfer": transfer,
+        "weyl": two_boundary_weyl_from_transfer_jets(transfer),
+        "proper_duration_jets": {
+            key: float(proper_duration_jets[key]) for key in keys
+        },
+        "channel": "product_Dirac",
+        "chirality": int(chirality),
+        "endpoint_condition_imposed": False,
+    }
+
+
 def backward_weyl_mobius(
     transfer_birth_to_terminal: np.ndarray,
     terminal_admittance: complex,
@@ -487,8 +620,11 @@ __all__ = [
     "product_dirac_channel_transfer_generator",
     "product_dirac_channel_log_radius_jets",
     "transfer_variation_rhs",
+    "proper_duration_scaled_generator_jets",
     "integrate_transfer_jets",
     "two_boundary_weyl_from_transfer_jets",
+    "scalar_compact_history_weyl_jets",
+    "product_dirac_compact_history_weyl_jets",
     "backward_weyl_mobius",
     "backward_weyl_mobius_jets",
 ]

@@ -46,6 +46,15 @@ obtained by scalar products and solves on the `b` chart, without forming an
 operator inverse.  The Wronskian identity `ad-bc=1` makes this matrix
 Hermitian on a real negative-axis resolvent probe.
 
+Endpoint-time motion is part of the physical jet.  On normalized proper time
+`s in [0,1]`, `tau=T(xi)s` and the generator is `T(xi)G(xi,s)`.  Its mixed jet
+is
+
+`D_hD_k(TG)=T_hk G+T_h G_k+T_k G_h+T G_hk`.
+
+Thus varying duration is carried by the same action family; it is neither a
+cutoff nor a fixed external parameter.
+
 Exact internal gauge directions have zero induced coefficient and endpoint
 variation.  A common translation of the proper-time origin is absent from
 this intrinsically endpoint-labelled representation, so the construction is
@@ -60,5 +69,12 @@ actual value of `M_C(xi)` is the action-generated coefficient path
 `x_xi(tau)` and its Jacobi path on this already-proved finite-history family.
 That is an operator-realization task, not a reopening of history existence or
 reset/recurrence semantics.
+
+HINDSIGHT: the compact two-boundary action form, its moving-duration jet, and
+the physical common-scale response are BHSM-action requirements.  A separate
+explicit time-slice generator is not required for the first force because the
+proper-time endpoint-labelled representation is already intrinsic.  A free
+terminal boundary condition and recurrence were historical/imported
+requirements and are not part of this operator.
 
 `FULL_BHSM_COMPLETE=false`.

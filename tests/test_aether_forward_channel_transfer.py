@@ -5,8 +5,11 @@ from bhsm.interface.aether_forward_channel_transfer import (
     backward_weyl_mobius,
     backward_weyl_mobius_jets,
     integrate_transfer_jets,
+    product_dirac_compact_history_weyl_jets,
     product_dirac_channel_log_radius_jets,
     product_dirac_channel_transfer_generator,
+    proper_duration_scaled_generator_jets,
+    scalar_compact_history_weyl_jets,
     scalar_channel_log_radius_jets,
     scalar_channel_transfer_generator,
     transfer_variation_rhs,
@@ -265,3 +268,114 @@ def test_product_dirac_two_boundary_weyl_uses_factorized_conormal() -> None:
     assert weyl["base_Hermitian_residual"] < 2.0e-12
     assert weyl["first_left_Hermitian_residual"] < 2.0e-11
     assert weyl["first_right_Hermitian_residual"] < 2.0e-11
+
+
+def test_duration_scaled_generator_uses_full_mixed_product_rule() -> None:
+    generator = scalar_channel_log_radius_jets(
+        4.0, 0.12, -0.8, 0.2, -0.1, 0.07
+    )
+    duration = {
+        "base": 0.5,
+        "first_left": 0.03,
+        "first_right": -0.04,
+        "mixed_second": 0.02,
+    }
+    scaled = proper_duration_scaled_generator_jets(generator, duration)
+    expected = (
+        duration["mixed_second"] * generator["base"]
+        + duration["first_left"] * generator["first_right"]
+        + duration["first_right"] * generator["first_left"]
+        + duration["base"] * generator["mixed_second"]
+    )
+    assert np.allclose(scaled["mixed_second"], expected)
+
+
+def test_compact_history_weyl_jets_include_endpoint_duration_motion() -> None:
+    duration = {
+        "base": 0.43,
+        "first_left": 0.05,
+        "first_right": -0.03,
+        "mixed_second": 0.02,
+    }
+
+    def radius(s: float) -> dict[str, float]:
+        return {
+            "base": 0.08 + 0.04 * s,
+            "first_left": 0.2 - 0.03 * s,
+            "first_right": -0.1 + 0.05 * s,
+            "mixed_second": 0.07 * (1.0 - s),
+        }
+
+    result = scalar_compact_history_weyl_jets(3.0, -0.9, radius, duration)
+    assert result["endpoint_condition_imposed"] is False
+    assert result["weyl"]["base_Hermitian_residual"] < 2.0e-11
+
+    zero_duration = {
+        "first_left": 0.0,
+        "first_right": 0.0,
+        "mixed_second": 0.0,
+    }
+
+    def value(left: float, right: float) -> np.ndarray:
+        shifted_duration = (
+            duration["base"]
+            + left * duration["first_left"]
+            + right * duration["first_right"]
+            + left * right * duration["mixed_second"]
+        )
+
+        def shifted_radius(s: float) -> dict[str, float]:
+            base = radius(s)
+            return {
+                "base": (
+                    base["base"]
+                    + left * base["first_left"]
+                    + right * base["first_right"]
+                    + left * right * base["mixed_second"]
+                ),
+                "first_left": 0.0,
+                "first_right": 0.0,
+                "mixed_second": 0.0,
+            }
+
+        shifted = scalar_compact_history_weyl_jets(
+            3.0,
+            -0.9,
+            shifted_radius,
+            {"base": shifted_duration, **zero_duration},
+        )
+        return shifted["weyl"]["base"]
+
+    eps = 2.0e-4
+    first_left = (value(eps, 0.0) - value(-eps, 0.0)) / (2.0 * eps)
+    first_right = (value(0.0, eps) - value(0.0, -eps)) / (2.0 * eps)
+    mixed = (
+        value(eps, eps)
+        - value(eps, -eps)
+        - value(-eps, eps)
+        + value(-eps, -eps)
+    ) / (4.0 * eps**2)
+    assert np.allclose(result["weyl"]["first_left"], first_left, atol=2.0e-8)
+    assert np.allclose(result["weyl"]["first_right"], first_right, atol=2.0e-8)
+    assert np.allclose(result["weyl"]["mixed_second"], mixed, atol=3.0e-7)
+
+
+def test_product_dirac_compact_history_wrapper_preserves_chirality() -> None:
+    radius = lambda _: {
+        "base": -0.03,
+        "first_left": 0.1,
+        "first_right": -0.2,
+        "mixed_second": 0.0,
+    }
+    duration = {
+        "base": 0.31,
+        "first_left": 0.0,
+        "first_right": 0.0,
+        "mixed_second": 0.0,
+    }
+    result = product_dirac_compact_history_weyl_jets(
+        2.5, -1.0, radius, duration, chirality=-1
+    )
+    assert result["channel"] == "product_Dirac"
+    assert result["chirality"] == -1
+    assert result["weyl"]["base_Hermitian_residual"] < 2.0e-11

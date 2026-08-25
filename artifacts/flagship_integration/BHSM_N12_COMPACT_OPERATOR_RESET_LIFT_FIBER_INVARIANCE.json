@@ -1,0 +1,71 @@
+{
+  "FLAGSHIP_READY": false,
+  "FULL_BHSM_COMPLETE": false,
+  "artifact": "BHSM_N12_COMPACT_OPERATOR_RESET_LIFT_FIBER_INVARIANCE",
+  "claim_boundary": {
+    "FULL_BHSM_COMPLETE": false,
+    "Gate7": "ACTIVE_CHILD_HISTORY_OPERATOR_FORCE",
+    "frozen_predictions_changed": false,
+    "full_child_projection_force": "OPEN_AFTER_M_C",
+    "physical_Hessian": "OPEN_AFTER_SADDLE",
+    "reset_lift_kernel_force_invariance": "CERTIFIED",
+    "same_action_saddle": "OPEN_ON_NONINVARIANT_CHILD_DIRECTIONS"
+  },
+  "classification": "THE_66_DIMENSIONAL_KERNEL_OF_THE_CHILD_PROJECTION_ON_THE_139_DIMENSIONAL_RESET_TANGENT_CHANGES_ONLY_THE_PRIOR_EVENT_LIFT;_THE_CHILD_INITIAL_STATE,_ITS_ACTION_FLOW,_THE_COMPACT_OPERATOR,_AND_THE_UNITARY_INVARIANT_AE2_SPECTRAL_TRACE_ARE_UNCHANGED,_SO_THE_ZERO_SOURCE_FORCE_ANNIHILATES_THIS_KERNEL",
+  "exact_next_dependency": "PROPAGATE_THE_TERMINAL_COEFFICIENT_AND_JACOBI_PATH_ONLY_ON_THE_73_DIMENSIONAL_CHILD_PROJECTION,_THEN_TEST_FORCE_INVARIANCE_OR_SOLVE_THE_SADDLE_ON_ITS_INTRINSIC_TIME_QUOTIENT",
+  "factorization_theorem": {
+    "AE2_covariance": "nabla_U_R=0_AND_UNITARY_CONJUGATION_LEAVES_THE_SUPERTRACE_INVARIANT",
+    "force_consequence": "F0(v)=0_ON_THE_66_DIMENSIONAL_LIFT_KERNEL",
+    "history_map": "H_fin=Flow_forward(pi_child(E0,C1))",
+    "kernel": "ker(D*pi_child|T_Creset)",
+    "kernel_derivative": "D_v*K=D_v*M_C=0_FOR_v_IN_ker(D*pi_child)",
+    "operator_factorization": "K=K_tilde*C1_history*pi_child",
+    "projection": "pi_child:(E0,C1)_IN_C_reset_TO_C1",
+    "weyl_factorization": "M_C=M_tilde*C1_history*pi_child"
+  },
+  "hindsight": {
+    "action_required": "CHILD_HISTORY_DEPENDENCE_AND_AE2_COVARIANCE",
+    "selector_introduced": false,
+    "unnecessary_historical_requirement": "EVALUATING_THE_FORCE_ON_ARBITRARY_PRIOR_EVENT_LIFTS"
+  },
+  "inputs": {
+    "artifacts/flagship_integration/BHSM_N12_COMPACT_FINITE_HISTORY_OPERATOR.json": "E597DDB6EBE292643F33A0AC8EDCEC617F5FC963B526BCF9D40BD48EC678DD41",
+    "artifacts/flagship_integration/BHSM_N12_FINITE_TERMINAL_CERTIFICATE_CHECKPOINT.npz": "07D5CC2E76E62B97559388C2BCE62ACAC92B708E47A995F3FAC0146AABC5ACA1",
+    "artifacts/flagship_integration/BHSM_N12_FINITE_TERMINAL_TWO_SIDED_FORWARD_INTERFACE.json": "0BA9D5C8FDF495CBF0565B5F1703907EDB9F4450C28D0557C0AEC9B79A5CF8F7",
+    "artifacts/flagship_integration/BHSM_N12_GATE7_AE2_GLOBAL_SPIN_MATTER_DOMAIN.json": "5697192CCFBC6814B9EEAF5E5A01DD89BD4A70E287B5DFE171F0BBA132E15CFC",
+    "src/bhsm/interface/ae2_covariant_seam_response.py": "3F1357D10BA6BB0ACC49393DB1CBA78B499A790719A7E0BE7FB6E26F50D048DC"
+  },
+  "linearized_geometry": {
+    "ambient_event_child_dimension": 196,
+    "child_projection_rank": 73,
+    "event_block_rank": 32,
+    "lifted_kernel_child_projection_residual_norm": 0.0,
+    "lifted_kernel_reset_residual_norm": 7.997855358896302e-13,
+    "reset_lift_kernel_dimension": 66,
+    "reset_normal_rank": 57,
+    "reset_tangent_dimension": 139
+  },
+  "reduced_force_domain": {
+    "operator_relevant_child_projection": 73,
+    "physical_common_scale": "RETAINED",
+    "raw_reset_tangent": 139,
+    "remaining_force_equations": "ON_GENUINE_CHILD_HISTORY_DIRECTIONS_ONLY;_THE_66_LIFT_DIRECTIONS_REQUIRE_NO_SADDLE_EQUATION",
+    "whole_time_translation": "QUOTIENT_INTRINSICALLY"
+  },
+  "status": "RESET_LIFT_KERNEL_FORCE_INVARIANCE_CERTIFIED",
+  "validation": {
+    "AE2_reset_lift_is_covariant_not_independent_source": true,
+    "all_parent_artifacts_validate": true,
+    "child_projection_rank_is_73": true,
+    "common_scale_not_removed": true,
+    "compact_operator_depends_on_child_history_not_prior_event_lift": true,
+    "event_block_rank_is_32": true,
+    "full_reset_rank_is_57": true,
+    "lifted_kernel_has_zero_child_projection": true,
+    "lifted_kernel_is_reset_tangent": true,
+    "no_child_selector_gauge_slice_endpoint_condition_or_recurrence_added": true,
+    "reset_lift_kernel_dimension_is_66": true,
+    "reset_tangent_dimension_is_139": true
+  },
+  "validation_passed": true
+}

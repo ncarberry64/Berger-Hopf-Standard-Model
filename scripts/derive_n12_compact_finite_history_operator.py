@@ -189,6 +189,10 @@ def build_payload() -> dict[str, Any]:
             "D_xi_M_C": "EXACT_PRODUCT_AND_RECIPROCAL_JET_OF_THE_TRIANGULAR_TRANSFER_VARIATION",
             "mixed_D_xi_D_eta_M_C": "EXACTLY_IMPLEMENTED",
             "explicit_matrix_inverse_formed": False,
+            "moving_duration_jet": (
+                "D_hD_k(T*G)=T_hk*G+T_h*G_k+T_k*G_h+T*G_hk"
+            ),
+            "normalized_proper_time_domain": "s_IN_[0,1],_tau=T(xi)*s",
         },
         "intrinsic_quotient": {
             "exact_internal_gauge": (
@@ -216,6 +220,22 @@ def build_payload() -> dict[str, Any]:
                 "ACTUAL_CERTIFIED_TERMINAL_COEFFICIENT_AND_PHYSICAL_COMMON_"
                 "SCALE_JET;_NOT_A_SELECTED_POSITIVE_DURATION_HISTORY_MEMBER"
             ),
+        },
+        "hindsight": {
+            "action_required": [
+                "COMPACT_TWO_BOUNDARY_QUADRATIC_FORM",
+                "COEFFICIENT_AND_MOVING_DURATION_JETS",
+                "PHYSICAL_COMMON_SCALE_RESPONSE",
+            ],
+            "not_required_for_first_force": (
+                "AN_EXPLICIT_TIME_SLICE_GENERATOR_BEYOND_THE_INTRINSIC_"
+                "PROPER_TIME_ENDPOINT_LABELLED_QUOTIENT"
+            ),
+            "historical_or_imported_and_superseded": [
+                "FREE_TERMINAL_BOUNDARY_CONDITION",
+                "PERIODIC_ENDPOINT",
+                "TERMINAL_RECURRENCE",
+            ],
         },
         "exact_next_dependency": (
             "EVALUATE_THE_ACTION_GENERATED_x_xi(tau)_AND_ITS_FIRST_JACOBI_"
