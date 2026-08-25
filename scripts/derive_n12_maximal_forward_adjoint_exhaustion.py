@@ -19,6 +19,9 @@ INPUTS = (
     ROOT / "artifacts/flagship_integration/BHSM_N12_INTRINSIC_TIME_QUOTIENT_FORCE_ROOT.json",
     ROOT / "artifacts/flagship_integration/BHSM_N12_MAXIMAL_FRIEDRICHS_WEYL_EXHAUSTION.json",
     ROOT / "artifacts/flagship_integration/BHSM_N12_FORWARD_E1_SOURCE_MEASURE_CRITERION.json",
+    ROOT / "artifacts/flagship_integration/BHSM_N12_GATE7_AE2_COMPACT_SOURCE_DINI_CLOSURE.json",
+    ROOT / "artifacts/flagship_integration/BHSM_N12_GATE7_AE2_ANGULAR_DINI_UNIFORMITY_AUDIT.json",
+    ROOT / "artifacts/flagship_integration/BHSM_N12_GATE7_FINITE_ENCAPSULATION_PHYSICAL_DOMAIN_AUDIT.json",
     ROOT / "artifacts/intrinsic_state_selection/BHSM_N12_CONTINUUM_MAXIMAL_FLOW_DICHOTOMY.json",
     THEORY,
 )
@@ -87,6 +90,25 @@ def build_payload() -> dict[str, object]:
             is True
         ),
         "E1_source_measure_criterion_is_available": records[3]["validation_passed"] is True,
+        "fixed_channel_source_Dini_is_closed": (
+            records[4]["validation"]["arbitrary_positive_admissible_tail_closed"] is True
+            and records[5]["adjudication"]["fixed_channel_source_Dini"]
+            == "CLOSED_DO_NOT_REOPEN"
+        ),
+        "fixed_channel_high_energy_trace_is_closed": (
+            records[5]["validation"]["high_energy_fixed_sector_theorem_preserved"]
+            is True
+            and records[6]["validation"][
+                "high_energy_compact_source_trace_norm_already_closed"
+            ]
+            is True
+        ),
+        "finite_formation_infinite_angular_obstruction_is_closed_by_scope": (
+            records[6]["validation"]["infinite_angular_counterexample_not_deleted"]
+            is True
+            and records[6]["claim_boundary"]["infinite_angular_branch"]
+            == "CLOSED_BY_OWNER_PHYSICAL_SCOPE"
+        ),
         "stable_model_converges_to_exact_weighted_integral": (
             errors[-1] < 1.0e-8
             and all(left > right for left, right in zip(errors, errors[1:]))
@@ -120,10 +142,12 @@ def build_payload() -> dict[str, object]:
         "exact_witness": witness,
         "open_after_theorem": {
             "actual_N12_state_propagator_weight": True,
-            "actual_E1_operator_cotangent_load": True,
+            "fixed_channel_E1_source_Dini": False,
+            "fixed_channel_high_energy_trace": False,
+            "actual_assembled_heat_operator_cotangent_load": True,
             "direct_zeta_load_integrability": True,
             "reset_to_NHIM_connection_if_used": True,
-            "graded_angular_contractions": True,
+            "post_reset_infinite_route_graded_angular_contraction": True,
             "physical_force_root": True,
         },
         "exact_next_dependency": (
@@ -131,7 +155,8 @@ def build_payload() -> dict[str, object]:
             "INTEGRAL_norm(U(t,0))*norm(q_heat_minus_zeta(t))_dt_ON_A_"
             "NONEMPTY_REGULAR_RESET_QUOTIENT_STRATUM,_OR_CERTIFY_A_FINITE_"
             "LATER_EVENT_OR_CANONICAL_STOP_STRATUM;_THEN_EVALUATE_THE_"
-            "INTRINSIC_PHYSICAL_FORCE_ROOT"
+            "INTRINSIC_PHYSICAL_FORCE_ROOT;_DO_NOT_REOPEN_FIXED_CHANNEL_"
+            "SOURCE_DINI_OR_HIGH_ENERGY_TRACE_CONTROL"
         ),
         "claim_boundary": {
             "Gate7": "ACTIVE_WEIGHTED_MAXIMAL_ADJOINT_LOAD_OR_FINITE_STRATUM",

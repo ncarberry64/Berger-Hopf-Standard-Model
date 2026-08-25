@@ -169,10 +169,13 @@ action-owned weighted load
 is correspondingly narrowed to proving or enclosing that weighted maximal
 adjoint load on a nonempty regular reset quotient stratum, or certifying a
 finite later-event/canonical-stop stratum where the finite adjoint theorem
-already applies. The E1 low-energy source measure and graded angular
-contractions must be included in the actual load before the intrinsic
-quotient KKT root is evaluated. Dimension counting and a single reset
-representative have no promotion authority.
+already applies. Fixed-channel E1 source-Dini and independent high-energy
+trace control are already closed and must not be reopened. On an infinite
+post-reset route, the remaining source-side question is the retained graded
+angular assembly of the actual heat cotangent and its weighted contraction
+with the physical state propagator; a finite later event or canonical stop
+uses the existing compact-endpoint angular/source theorem. Dimension
+counting and a single reset representative have no promotion authority.
 
 The recovered Norman owner ontology is recorded as an owner-authorized semantic layer, never as an action-derived equation. It fixes geometry-first emergence, persistent mode/history particle classes, the base-plus-two-excitations generation architecture, action-owned response mass with a universal dimensional origin, propagation-locked neutrino mass, CKM as relative response-basis orientation, strict bare/dressed separation, and the irreversible dependency direction `action -> theorem -> observable -> frozen comparison`.
 

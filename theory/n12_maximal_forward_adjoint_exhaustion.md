@@ -49,5 +49,18 @@ existing finite-N12 NHIM theorem could supply its asymptotic half only after
 a reset-to-basin connection and quantitative tangent bounds; neither is
 promoted here.
 
+This remaining load theorem does not reopen the E1 infrared analysis.  The
+AE2 compact-source Volterra theorem already proves the canonical source-Dini
+condition in every fixed factorized channel for every positive admissible
+far tail, and the independent fixed-sector high-energy trace theorem remains
+closed.  Norman's finite-encapsulation ontology also closes the old infinite
+angular counterexample by scope on a nonencapsulating *formation* history.
+The distinct open issue on an infinite post-reset decay/evolution route is
+whether the retained graded angular direct sum can be assembled into the
+actual heat cotangent and whether that complete cotangent, together with the
+direct zeta load, is integrable after multiplication by the physical state
+propagator.  On a finite later event or canonical stop, the existing compact
+endpoint trace theorem supplies that angular/source control.
+
 No selector, endpoint, terminal return, contour, scale, fit, recurrence,
 gate, or chord is added.  Gate 7 remains active and Gate 8 remains locked.

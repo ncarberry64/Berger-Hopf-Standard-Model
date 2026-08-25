@@ -23,5 +23,14 @@ def test_maximal_forward_adjoint_exhaustion() -> None:
     assert criterion["explicit_noncompact_D_xi_M_required"] is False
     assert criterion["finite_endpoint_route_requires_infinite_bound"] is False
     assert payload["open_after_theorem"]["actual_N12_state_propagator_weight"] is True
+    assert payload["open_after_theorem"]["fixed_channel_E1_source_Dini"] is False
+    assert payload["open_after_theorem"]["fixed_channel_high_energy_trace"] is False
+    assert payload["validation"]["fixed_channel_source_Dini_is_closed"] is True
+    assert payload["validation"]["fixed_channel_high_energy_trace_is_closed"] is True
+    assert (
+        payload["open_after_theorem"]
+        ["post_reset_infinite_route_graded_angular_contraction"]
+        is True
+    )
     assert payload["claim_boundary"]["actual_weighted_load"] == "OPEN_CURRENT_OWNER"
     assert payload["claim_boundary"]["chord_03_authorized"] is False

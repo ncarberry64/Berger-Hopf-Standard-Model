@@ -1962,8 +1962,11 @@ Exact next object:
   exhaustion: `DERIVED`.
 - Validated numerical N12 limit and noncompact physical reset-quotient first
   jet: `OPEN_CURRENT_OWNER`.
-- E1 zero-threshold source measure and graded angular contractions:
-  `OPEN_AFTER_FIRST_JET_REALIZATION`.
+- Fixed-channel E1 zero-threshold source-Dini and independent high-energy
+  trace control: `CLOSED_DO_NOT_REOPEN`.
+- Graded angular assembly on an infinite post-reset route:
+  `OPEN_AFTER_FIRST_JET_REALIZATION`; finite later-event/canonical-stop
+  strata use the existing compact-endpoint theorem.
 - Gate 7: `ACTIVE`; Gate 8: `LOCKED`; chord 3: `UNAUTHORIZED`;
   `FULL_BHSM_COMPLETE=FALSE`.
 
@@ -1981,6 +1984,11 @@ Exact next object:
   `FALSE`.
 - Actual N12 weighted propagator/load bound including heat and direct zeta:
   `OPEN_CURRENT_OWNER`.
+- Fixed-channel E1 source-Dini and independent high-energy trace control:
+  `CLOSED_DO_NOT_REOPEN`.
+- Infinite post-reset graded angular heat-cotangent assembly:
+  `OPEN_INSIDE_ACTUAL_WEIGHTED_LOAD`; this is distinct from the owner-scoped
+  exclusion of infinite nonencapsulating formation histories.
 - Finite later-event/canonical-stop stratum:
   `ALTERNATIVE_USING_EXISTING_FINITE_ENDPOINT_ADJOINT_THEOREM`.
 - Gate 7: `ACTIVE`; Gate 8: `LOCKED`; chord 3: `UNAUTHORIZED`;
