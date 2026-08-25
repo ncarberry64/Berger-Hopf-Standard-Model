@@ -115,6 +115,59 @@ def direct_sum_heat_value_and_force(
     }
 
 
+def common_scale_heat_value_and_force(
+    blocks: Sequence[Mapping[str, Any]],
+    *,
+    heat_length: float = 1.0,
+    gap_tolerance: float = 1.0e-12,
+) -> dict[str, Any]:
+    """Evaluate the exact common-scale Ward derivative of the heat sum.
+
+    On the normalized proper-time domain the simultaneous physical scaling
+    ``R -> exp(a) R`` and ``d tau -> exp(a) d tau`` gives
+    ``P(a)=exp(-2a)P``.  With the retained parent heat length fixed,
+
+        d/da[-STr E1(ell^2 P(a))/2] = -STr exp(-ell^2 P).
+
+    ``coefficient`` on each block carries its existing supertrace sign and
+    multiplicity.
+    """
+
+    if not math.isfinite(heat_length) or heat_length <= 0.0:
+        raise ValueError("heat_length must be positive and finite")
+    if not math.isfinite(gap_tolerance) or gap_tolerance < 0.0:
+        raise ValueError("gap_tolerance must be finite and nonnegative")
+    total_value = 0.0
+    total_force = 0.0
+    rows = []
+    for index, block in enumerate(blocks):
+        coefficient = float(block.get("coefficient", 1.0))
+        if not math.isfinite(coefficient):
+            raise ValueError("direct-sum coefficient must be finite")
+        matrix = _hermitian(np.asarray(block["operator"]), f"operator {index}")
+        eigenvalues = np.linalg.eigvalsh(matrix)
+        gap = float(eigenvalues[0])
+        if gap <= gap_tolerance:
+            raise ValueError("strictly positive quotient operator required")
+        scaled = heat_length**2 * eigenvalues
+        value = float(np.sum(-0.5 * exp1(scaled)))
+        force = float(-np.sum(np.exp(-scaled)))
+        total_value += coefficient * value
+        total_force += coefficient * force
+        rows.append({
+            "index": index,
+            "coefficient": coefficient,
+            "dimension": int(matrix.shape[0]),
+            "minimum_eigenvalue": gap,
+            "common_scale_heat_force": coefficient * force,
+        })
+    return {
+        "Gamma_heat": total_value,
+        "common_scale_heat_force": total_force,
+        "blocks": rows,
+    }
+
+
 def zeta_casimir_value_and_force(
     radii: np.ndarray,
     measure_weights: np.ndarray,
@@ -155,6 +208,29 @@ def zeta_casimir_value_and_force(
     }
 
 
+def common_scale_zeta_value_and_force(
+    radii: np.ndarray,
+    measure_weights: np.ndarray,
+    *,
+    coefficient: float = 59.0 / 30.0,
+) -> dict[str, Any]:
+    """Evaluate the zeta term and its simultaneous radius/measure scale force.
+
+    Since ``Gamma_SM_zeta=-c*sum(w_j/R_j)``, scaling both the proper-time
+    weights and radii by ``exp(a)`` leaves the action term invariant.  This is
+    the moving-duration completion of the fixed-measure radius derivative.
+    """
+
+    base = zeta_casimir_value_and_force(
+        radii, measure_weights, {}, coefficient=coefficient
+    )
+    return {
+        "Gamma_SM_zeta": base["Gamma_SM_zeta"],
+        "common_scale_zeta_force": 0.0,
+        "coefficient": float(coefficient),
+    }
+
+
 def replacement_heat_minus_zeta_force(
     heat: Mapping[str, Any], zeta: Mapping[str, Any],
 ) -> dict[str, Any]:
@@ -177,6 +253,8 @@ def replacement_heat_minus_zeta_force(
 __all__ = [
     "heat_regulator_value_and_force",
     "direct_sum_heat_value_and_force",
+    "common_scale_heat_value_and_force",
     "zeta_casimir_value_and_force",
+    "common_scale_zeta_value_and_force",
     "replacement_heat_minus_zeta_force",
 ]

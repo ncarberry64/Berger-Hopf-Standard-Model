@@ -10,6 +10,8 @@ import numpy as np
 import pytest
 
 from bhsm.interface.forward_finite_endpoint_heat_force import (
+    common_scale_heat_value_and_force,
+    common_scale_zeta_value_and_force,
     direct_sum_heat_value_and_force,
     heat_regulator_value_and_force,
     replacement_heat_minus_zeta_force,
@@ -80,6 +82,41 @@ def test_direct_sum_coefficients_are_applied_exactly() -> None:
     ])
     assert result["Gamma_heat"] == pytest.approx(2.0 * single["Gamma_heat"])
     assert result["forces"]["h"] == pytest.approx(2.0 * single["forces"]["h"])
+
+
+def test_complete_common_scale_ward_force_includes_moving_duration() -> None:
+    operator = np.diag([1.5, 2.0, 3.0])
+    blocks = [{"operator": operator, "coefficient": 2.0}]
+    analytic = common_scale_heat_value_and_force(blocks)
+    epsilon = 1.0e-6
+    plus = direct_sum_heat_value_and_force([
+        {
+            "operator": np.exp(-2.0 * epsilon) * operator,
+            "geometry_jets": {},
+            "coefficient": 2.0,
+        }
+    ])["Gamma_heat"]
+    minus = direct_sum_heat_value_and_force([
+        {
+            "operator": np.exp(2.0 * epsilon) * operator,
+            "geometry_jets": {},
+            "coefficient": 2.0,
+        }
+    ])["Gamma_heat"]
+    assert analytic["common_scale_heat_force"] == pytest.approx(
+        (plus - minus) / (2.0 * epsilon), rel=2.0e-10
+    )
+    radii = np.asarray([1.0, 1.4, 0.9])
+    weights = np.asarray([0.2, 0.3, 0.25])
+    zeta = common_scale_zeta_value_and_force(radii, weights)
+    assert zeta["common_scale_zeta_force"] == 0.0
+    plus_zeta = zeta_casimir_value_and_force(
+        np.exp(epsilon) * radii, np.exp(epsilon) * weights, {}
+    )["Gamma_SM_zeta"]
+    minus_zeta = zeta_casimir_value_and_force(
+        np.exp(-epsilon) * radii, np.exp(-epsilon) * weights, {}
+    )["Gamma_SM_zeta"]
+    assert (plus_zeta - minus_zeta) / (2.0 * epsilon) == pytest.approx(0.0, abs=1.0e-12)
 
 
 def test_nonpositive_or_nonhermitian_operator_is_rejected() -> None:

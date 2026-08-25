@@ -20,6 +20,13 @@ centers.  What remains missing is the non-scale reset-quotient geometry
 adjoint sector through the realized maximal history.  The rank-two birth
 radius Cauchy map is not used to discard other child-history directions.
 
+The complete moving-duration common-scale source contraction is also closed
+at the formula level.  The heat part reduces to
+`-STr exp(-ell_kappa^2 P)`, while the simultaneous proper-measure and radius
+variations cancel in the local zeta term.  Its N12 value remains open until
+the sharp joint graded operator is realized; no probe is promoted to that
+trace.
+
 The remaining unmatched data are geometric and pathwise.  Modulo the closed
 common-scale direction, the reset radius Cauchy jet is a valid birth germ but
 is not the noncompact geometry pullback through the maximal coefficient

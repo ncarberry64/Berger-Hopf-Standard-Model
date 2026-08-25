@@ -16,6 +16,9 @@ def test_gate7_1222_core_diagram_matching() -> None:
     )
     assert verdicts["C2_PHYSICAL_COMMON_SCALE_FIRST_JET"].startswith("VALID_MATCH_CLOSED")
     assert verdicts["C2_NON_SCALE_RESET_QUOTIENT_FIRST_JET"].startswith("ACTUALLY_MISSING")
+    assert verdicts["COMMON_SCALE_HEAT_MINUS_ZETA_SOURCE_CONTRACTION"].startswith(
+        "VALID_MATCH_FORMULA_CLOSED"
+    )
     assert verdicts["PAIR_CONTACT_AND_GRADED_SOURCE_INCIDENCE"] == "VALID_MATCH_CONDITIONAL_CONSUMER"
     assert payload["adjudication"]["finite_event_or_canonical_stop"] == "NOT_REACHED"
     assert payload["claim_boundary"]["zero_source_force"] == "OPEN"
