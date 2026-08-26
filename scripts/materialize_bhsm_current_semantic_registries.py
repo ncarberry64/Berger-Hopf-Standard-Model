@@ -88,6 +88,7 @@ SOURCES = (
     "artifacts/flagship_integration/BHSM_N12_GATE7_INCOMING_ZERO_AMPLITUDE_HEAT_ZETA_COMPARISON.json",
     "artifacts/flagship_integration/BHSM_N12_GATE7_INCOMING_FINITE_AMPLITUDE_HEAT_ZETA_COMPARISON.json",
     "artifacts/flagship_integration/BHSM_N12_GATE7_MAXIMAL_COMPLIANCE_SEAM_CONTRACTION.json",
+    "artifacts/flagship_integration/BHSM_N12_GATE7_MAXIMAL_FIXED_CHANNEL_RELATIVE_HEAT_COTANGENT.json",
     "artifacts/flagship_integration/BHSM_N12_C2_SIGNED_DURATION_INCIDENCE_OWNER.json",
     "artifacts/flagship_integration/BHSM_N12_C2_SIGNED_DDELTA_SEED_TRANSPORT_AUDIT.json",
     "artifacts/flagship_integration/BHSM_N12_C2_DIRECT_DDELTA_ROW_RECONNAISSANCE.json",
@@ -208,6 +209,7 @@ def verify_current_lineage() -> None:
     incoming_zero_comparison = loaded["artifacts/flagship_integration/BHSM_N12_GATE7_INCOMING_ZERO_AMPLITUDE_HEAT_ZETA_COMPARISON.json"]
     incoming_finite_comparison = loaded["artifacts/flagship_integration/BHSM_N12_GATE7_INCOMING_FINITE_AMPLITUDE_HEAT_ZETA_COMPARISON.json"]
     maximal_compliance = loaded["artifacts/flagship_integration/BHSM_N12_GATE7_MAXIMAL_COMPLIANCE_SEAM_CONTRACTION.json"]
+    maximal_relative_heat = loaded["artifacts/flagship_integration/BHSM_N12_GATE7_MAXIMAL_FIXED_CHANNEL_RELATIVE_HEAT_COTANGENT.json"]
     duration_incidence = loaded["artifacts/flagship_integration/BHSM_N12_C2_SIGNED_DURATION_INCIDENCE_OWNER.json"]
     ddelta_transport = loaded["artifacts/flagship_integration/BHSM_N12_C2_SIGNED_DDELTA_SEED_TRANSPORT_AUDIT.json"]
     ddelta_row = loaded["artifacts/flagship_integration/BHSM_N12_C2_DIRECT_DDELTA_ROW_RECONNAISSANCE.json"]
@@ -473,6 +475,18 @@ def verify_current_lineage() -> None:
         and maximal_compliance["claim_boundary"][
             "actual_projected_Cauchy_tail"
         ] == "OPEN_CURRENT_OWNER"
+        and maximal_relative_heat["claim_boundary"][
+            "maximal_fixed_channel_relative_heat_cotangent"
+        ] == "DERIVED"
+        and maximal_relative_heat["adjudication"][
+            "separate_maximal_child_amplitude_jet_required"
+        ] is False
+        and maximal_relative_heat["adjudication"][
+            "complete_graded_angular_sum"
+        ] == "OPEN_CURRENT_OWNER"
+        and maximal_relative_heat["claim_boundary"][
+            "actual_projected_KKT_root"
+        ] == "OPEN"
     ):
         raise RuntimeError("joint Gate7 source/cotangent frontier is not current")
     if force_sign_no_go["claim_boundary"]["universal_force_sign_shortcut"] != "CLOSED_INVALID":

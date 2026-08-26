@@ -432,6 +432,18 @@
   not transfer the finite-core heat sign to the maximal operator: the actual
   full graded source-contracted seam spectral measure and its physical
   quotient-Cauchy tail remain open.
+- Maximal fixed-channel relative heat cotangent:
+  `MAXIMAL_FIXED_CHANNEL_INCOMING_RELATIVE_HEAT_COTANGENT_DERIVED`. Taking
+  the maximal C2 Friedrichs operator with zero seam trace as a boundary-triple
+  reference, Krein's formula makes the incoming attachment resolvent
+  difference rank one in every fixed retained channel. Its fixed-terminal
+  derivative is
+  `-gamma(D C_f)(1+C_f L)^-2 gamma_bar^dagger`; hence the relative heat
+  cotangent is trace class, has a one-sided `C_f=0` limit, and is
+  `O(lambda)` without an arbitrary far endpoint or an absolute infinite-
+  volume heat trace. The reference is not a second action determinant. The
+  retained graded angular direct sum remains open, so neither the maximal
+  projected tail nor the KKT root is promoted.
 - The actual same-action replacement residual is the heat-minus-zeta force,
   `D_Phi Gamma_heat-D_Phi Gamma_SM^zeta`, because the certified local root
   already extremizes the attached-zeta action.  Here
