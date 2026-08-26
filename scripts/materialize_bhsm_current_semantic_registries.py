@@ -73,6 +73,7 @@ SOURCES = (
     "artifacts/flagship_integration/BHSM_N12_GATE7_BIRTH_TRACE_MF_SUPERSESSION_AUDIT.json",
     "artifacts/flagship_integration/BHSM_N12_GATE7_BIRTH_GRAPH_LOAD_MATCHING_AUDIT.json",
     "artifacts/flagship_integration/BHSM_N12_GATE7_TWO_SEAM_CLOSED_OPERATOR_ASSEMBLY.json",
+    "artifacts/flagship_integration/BHSM_N12_GATE7_E0_EVENT_SIDE_RESPONSE_PROVENANCE_AUDIT.json",
     "artifacts/flagship_integration/BHSM_N12_GATE7_JOINT_HEAT_COTANGENT_REVERSE_SEED.json",
     "artifacts/flagship_integration/BHSM_N12_GATE7_1222_CORE_DIAGRAM_MATCHING_AUDIT.json",
     "artifacts/flagship_integration/BHSM_N12_GATE7_MAXIMAL_GRADED_COTANGENT_MATCHING_AUDIT.json",
@@ -181,6 +182,7 @@ def verify_current_lineage() -> None:
     birth_mf_audit = loaded["artifacts/flagship_integration/BHSM_N12_GATE7_BIRTH_TRACE_MF_SUPERSESSION_AUDIT.json"]
     birth_load_audit = loaded["artifacts/flagship_integration/BHSM_N12_GATE7_BIRTH_GRAPH_LOAD_MATCHING_AUDIT.json"]
     two_seam = loaded["artifacts/flagship_integration/BHSM_N12_GATE7_TWO_SEAM_CLOSED_OPERATOR_ASSEMBLY.json"]
+    e0_provenance = loaded["artifacts/flagship_integration/BHSM_N12_GATE7_E0_EVENT_SIDE_RESPONSE_PROVENANCE_AUDIT.json"]
     joint_heat_seed = loaded["artifacts/flagship_integration/BHSM_N12_GATE7_JOINT_HEAT_COTANGENT_REVERSE_SEED.json"]
     core_diagram = loaded["artifacts/flagship_integration/BHSM_N12_GATE7_1222_CORE_DIAGRAM_MATCHING_AUDIT.json"]
     graded_cotangent = loaded["artifacts/flagship_integration/BHSM_N12_GATE7_MAXIMAL_GRADED_COTANGENT_MATCHING_AUDIT.json"]
@@ -353,6 +355,10 @@ def verify_current_lineage() -> None:
         == "CLOSED"
         and two_seam["closed_operator"]["zero_source_effect"]
         == "REMOVE_LINEAR_COUPLING_BUT_RETAIN_BOTH_ROWS_AND_COLUMNS"
+        and e0_provenance["status"]
+        == "E0_EVENT_SIDE_PROVENANCE_EXHAUSTED_REALIZED_PARENT_ARM_OPEN"
+        and e0_provenance["adjudication"]["new_operator_theory_required"]
+        is False
         and joint_heat_seed["adjudication"]["joint_reverse_seed_formula"]
         == "CLOSED"
         and joint_heat_seed["adjudication"][

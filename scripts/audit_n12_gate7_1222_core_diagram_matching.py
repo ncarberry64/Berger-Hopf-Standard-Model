@@ -34,6 +34,7 @@ INCOMING_MF_ENCLOSURE = BASE / "BHSM_N12_INCOMING_MF_NEGATIVE_AXIS_ENCLOSURE.jso
 BIRTH_MF_AUDIT = BASE / "BHSM_N12_GATE7_BIRTH_TRACE_MF_SUPERSESSION_AUDIT.json"
 BIRTH_LOAD_AUDIT = BASE / "BHSM_N12_GATE7_BIRTH_GRAPH_LOAD_MATCHING_AUDIT.json"
 TWO_SEAM = BASE / "BHSM_N12_GATE7_TWO_SEAM_CLOSED_OPERATOR_ASSEMBLY.json"
+E0_PROVENANCE = BASE / "BHSM_N12_GATE7_E0_EVENT_SIDE_RESPONSE_PROVENANCE_AUDIT.json"
 RADIUS_PULLBACK = BASE / "BHSM_N12_C2_1222_RESET_QUOTIENT_RADIUS_PULLBACK_ENCLOSURE.json"
 DURATION_PULLBACK = BASE / "BHSM_N12_C2_1222_MOVING_DURATION_PULLBACK_ENCLOSURE.json"
 COMPLETE_PULLBACK = BASE / "BHSM_N12_C2_1222_COMPLETE_GEOMETRY_PULLBACK_NORM.json"
@@ -45,7 +46,7 @@ SOURCE_ONTOLOGY = BASE / "BHSM_N12_GATE7_CLOSED_SYSTEM_ZERO_EXTERNAL_SOURCE_ONTO
 JOINT_SEED = BASE / "BHSM_N12_GATE7_JOINT_HEAT_COTANGENT_REVERSE_SEED.json"
 GRADED_COTANGENT = BASE / "BHSM_N12_GATE7_MAXIMAL_GRADED_COTANGENT_MATCHING_AUDIT.json"
 THEORY = ROOT / "theory" / "n12_gate7_1222_core_diagram_matching_audit.md"
-INPUTS = (OLD, CORE, FAMILY, NESTED, MAXIMAL, BIRTH, COMPACT, SEAM, INCIDENCE, FORCE, ADJOINT, CAUCHY, COMMON_SCALE, COMMON_SCALE_WARD, FIXED_CHANNEL_HEAT, INCOMING_MATCH, INCOMING_PATH_GERM, INCOMING_SEGMENT, INCOMING_FINITE_PATH, INCOMING_MF_ENCLOSURE, BIRTH_MF_AUDIT, BIRTH_LOAD_AUDIT, TWO_SEAM, RADIUS_PULLBACK, DURATION_PULLBACK, COMPLETE_PULLBACK, EXACT_FIELD, PARAMETRIC, INTERVAL_ACTIONS, SIGNED_ADJOINT, SOURCE_ONTOLOGY, JOINT_SEED, GRADED_COTANGENT, THEORY)
+INPUTS = (OLD, CORE, FAMILY, NESTED, MAXIMAL, BIRTH, COMPACT, SEAM, INCIDENCE, FORCE, ADJOINT, CAUCHY, COMMON_SCALE, COMMON_SCALE_WARD, FIXED_CHANNEL_HEAT, INCOMING_MATCH, INCOMING_PATH_GERM, INCOMING_SEGMENT, INCOMING_FINITE_PATH, INCOMING_MF_ENCLOSURE, BIRTH_MF_AUDIT, BIRTH_LOAD_AUDIT, TWO_SEAM, E0_PROVENANCE, RADIUS_PULLBACK, DURATION_PULLBACK, COMPLETE_PULLBACK, EXACT_FIELD, PARAMETRIC, INTERVAL_ACTIONS, SIGNED_ADJOINT, SOURCE_ONTOLOGY, JOINT_SEED, GRADED_COTANGENT, THEORY)
 
 
 def _sha256(path: Path) -> str:
@@ -63,11 +64,11 @@ def build_payload() -> dict[str, Any]:
     missing = [str(path) for path in INPUTS if not path.is_file()]
     if missing:
         raise FileNotFoundError("missing 1222 matching inputs: " + ", ".join(missing))
-    old, core, family, nested, maximal, birth, compact, seam, incidence, force, adjoint, cauchy, common_scale, common_scale_ward, fixed_channel_heat, incoming_match, incoming_path_germ, incoming_segment, incoming_finite_path, incoming_mf_enclosure, birth_mf_audit, birth_load_audit, two_seam, radius_pullback, duration_pullback, complete_pullback, exact_field, parametric, interval_actions, signed_adjoint, source_ontology, joint_seed, graded_cotangent = (
+    old, core, family, nested, maximal, birth, compact, seam, incidence, force, adjoint, cauchy, common_scale, common_scale_ward, fixed_channel_heat, incoming_match, incoming_path_germ, incoming_segment, incoming_finite_path, incoming_mf_enclosure, birth_mf_audit, birth_load_audit, two_seam, e0_provenance, radius_pullback, duration_pullback, complete_pullback, exact_field, parametric, interval_actions, signed_adjoint, source_ontology, joint_seed, graded_cotangent = (
         _load(path) for path in INPUTS[:-1]
     )
     if not all(record.get("validation_passed") is True for record in (
-        old, core, family, nested, maximal, birth, compact, seam, incidence, force, adjoint, cauchy, common_scale, common_scale_ward, fixed_channel_heat, incoming_match, incoming_path_germ, incoming_segment, incoming_finite_path, incoming_mf_enclosure, birth_mf_audit, birth_load_audit, two_seam, radius_pullback, duration_pullback, complete_pullback, exact_field, parametric, interval_actions, signed_adjoint, source_ontology, joint_seed, graded_cotangent,
+        old, core, family, nested, maximal, birth, compact, seam, incidence, force, adjoint, cauchy, common_scale, common_scale_ward, fixed_channel_heat, incoming_match, incoming_path_germ, incoming_segment, incoming_finite_path, incoming_mf_enclosure, birth_mf_audit, birth_load_audit, two_seam, e0_provenance, radius_pullback, duration_pullback, complete_pullback, exact_field, parametric, interval_actions, signed_adjoint, source_ontology, joint_seed, graded_cotangent,
     )):
         raise RuntimeError("validated diagram parents required")
 
@@ -354,6 +355,12 @@ def build_payload() -> dict[str, Any]:
             ["direct_Schur_first_variation_equivalence"]
             == "VALID_MATCH_DERIVED"
         ),
+        "E0_provenance_is_localized_to_parent_history_realization": (
+            e0_provenance["status"]
+            == "E0_EVENT_SIDE_PROVENANCE_EXHAUSTED_REALIZED_PARENT_ARM_OPEN"
+            and e0_provenance["adjudication"]["new_operator_theory_required"]
+            is False
+        ),
         "broad_seam_intervals_do_not_decide_force": seam["force_adjudication"]["broad_intervals_decide_heat_minus_zeta_force_sign"] is False,
         "incidence_is_a_valid_internal_variation_vertex_consumer": incidence["claim_boundary"]["domain_parametric_nonzero_local_incidence"] == "DERIVED",
         "force_functional_is_derived_but_value_open": force["claim_boundary"]["zero_source_force_functional"] == "DERIVED" and force["claim_boundary"]["zero_source_force_value"] == "OPEN",
@@ -375,7 +382,7 @@ def build_payload() -> dict[str, Any]:
             "more_scalar_C2_boxes_are_the_owner": False,
             "incoming_M11_identity_and_action_owned_germ": "CLOSED_CONDITIONAL_DIRICHLET_REFERENCE",
             "physical_zero_source_incoming_M_f": "TOPOLOGY_CLOSED_VALUES_OPEN",
-            "E0_event_side_Calderon_and_birth_load": "OPEN_CURRENT_OPERATOR_OWNER",
+            "E0_event_side_Calderon_and_birth_load": "OPEN_PARENT_HISTORY_REALIZATION",
             "complete_two_seam_operator_topology": "CLOSED",
             "incoming_normalized_coefficient_path_quadratic_germ": "CLOSED_INVERSE_FREE",
             "incoming_explicit_finite_amplitude_coefficient_family": "CLOSED_ON_NONZERO_PARAMETRIC_BOX",

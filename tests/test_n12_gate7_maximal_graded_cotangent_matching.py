@@ -43,7 +43,7 @@ def test_maximal_graded_cotangent_matching_audit() -> None:
         "ACTUALLY_MISSING_BIRTH_GRAPH_REDUCTION"
     )
     assert payload["matching_audit"]["E0_event_side_Calderon_and_first_jet"] == (
-        "ACTUALLY_MISSING"
+        "OPEN_PARENT_HISTORY_REALIZATION"
     )
     assert payload["adjudication"]["new_grading_required"] is False
     assert payload["adjudication"]["new_external_or_seam_source_required"] is False

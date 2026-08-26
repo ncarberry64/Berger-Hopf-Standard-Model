@@ -821,6 +821,7 @@ def _gates() -> list[dict[str, Any]]:
             "artifacts/flagship_integration/BHSM_N12_GATE7_BIRTH_TRACE_MF_SUPERSESSION_AUDIT.json",
             "artifacts/flagship_integration/BHSM_N12_GATE7_BIRTH_GRAPH_LOAD_MATCHING_AUDIT.json",
             "artifacts/flagship_integration/BHSM_N12_GATE7_TWO_SEAM_CLOSED_OPERATOR_ASSEMBLY.json",
+            "artifacts/flagship_integration/BHSM_N12_GATE7_E0_EVENT_SIDE_RESPONSE_PROVENANCE_AUDIT.json",
             "artifacts/flagship_integration/BHSM_N12_GATE7_JOINT_HEAT_COTANGENT_REVERSE_SEED.json",
             "artifacts/flagship_integration/BHSM_N12_GATE7_1222_CORE_DIAGRAM_MATCHING_AUDIT.json",
             "artifacts/flagship_integration/BHSM_N12_GATE7_MAXIMAL_GRADED_COTANGENT_MATCHING_AUDIT.json",

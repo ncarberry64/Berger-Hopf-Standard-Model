@@ -21,6 +21,7 @@ INCOMING = BASE / "BHSM_N12_INCOMING_MF_NEGATIVE_AXIS_ENCLOSURE.json"
 BIRTH_AUDIT = BASE / "BHSM_N12_GATE7_BIRTH_TRACE_MF_SUPERSESSION_AUDIT.json"
 BIRTH_LOAD = BASE / "BHSM_N12_GATE7_BIRTH_GRAPH_LOAD_MATCHING_AUDIT.json"
 TWO_SEAM = BASE / "BHSM_N12_GATE7_TWO_SEAM_CLOSED_OPERATOR_ASSEMBLY.json"
+E0_PROVENANCE = BASE / "BHSM_N12_GATE7_E0_EVENT_SIDE_RESPONSE_PROVENANCE_AUDIT.json"
 CHILD = BASE / "BHSM_N12_C2_1222_SEGMENT_NEGATIVE_AXIS_WEYL_FAMILY.json"
 FINITE_HEAT = BASE / "BHSM_N12_GATE7_FIXED_CHANNEL_FINITE_CORE_HEAT_BOUND.json"
 ADJOINT = BASE / "BHSM_N12_C2_1222_SIGNED_ADJOINT_ASSEMBLY.json"
@@ -28,7 +29,7 @@ CAUCHY = BASE / "BHSM_N12_C2_PROJECTED_ADJOINT_CAUCHY_CRITERION.json"
 THEORY = ROOT / "theory" / "n12_gate7_maximal_graded_cotangent_matching_audit.md"
 INPUTS = (
     LEDGER, BRST, FUNCTIONAL, ONTOLOGY, SEED, DOMAIN, INCOMING, BIRTH_AUDIT,
-    BIRTH_LOAD, TWO_SEAM, CHILD,
+    BIRTH_LOAD, TWO_SEAM, E0_PROVENANCE, CHILD,
     FINITE_HEAT, ADJOINT, CAUCHY, THEORY,
 )
 
@@ -82,12 +83,12 @@ def build_payload() -> dict[str, Any]:
         )
     (
         ledger, brst, functional, ontology, seed, domain, incoming, birth_audit,
-        birth_load, two_seam, child,
+        birth_load, two_seam, e0_provenance, child,
         finite_heat, adjoint, cauchy,
     ) = map(_load, INPUTS[:-1])
     records = (
         ledger, brst, functional, ontology, seed, domain, incoming, birth_audit,
-        birth_load, two_seam, child,
+        birth_load, two_seam, e0_provenance, child,
         finite_heat, adjoint, cauchy,
     )
     if not all(record.get("validation_passed") is True for record in records):
@@ -164,6 +165,12 @@ def build_payload() -> dict[str, Any]:
             and two_seam["closed_operator"]["zero_source_effect"]
             == "REMOVE_LINEAR_COUPLING_BUT_RETAIN_BOTH_ROWS_AND_COLUMNS"
         ),
+        "E0_candidate_provenance_is_exhausted_to_parent_history_realization": (
+            e0_provenance["status"]
+            == "E0_EVENT_SIDE_PROVENANCE_EXHAUSTED_REALIZED_PARENT_ARM_OPEN"
+            and e0_provenance["adjudication"]["new_operator_theory_required"]
+            is False
+        ),
         "child_whole_axis_family_is_finite_core_only": (
             child["claim_boundary"]["finite_core_complete_negative_axis_family"]
             == "DERIVED_EXECUTABLE_THROUGH_1222"
@@ -231,7 +238,7 @@ def build_payload() -> dict[str, Any]:
             "incoming_M11_whole_axis_class": "VALID_CONDITIONAL_DIRICHLET_REFERENCE_ONLY",
             "physical_zero_source_incoming_Mf": "ACTUALLY_MISSING_BIRTH_GRAPH_REDUCTION",
             "birth_graph_B_birth_and_first_jet": "ACTUALLY_MISSING_OR_NOT_YET_INSTANTIATED",
-            "E0_event_side_Calderon_and_first_jet": "ACTUALLY_MISSING",
+            "E0_event_side_Calderon_and_first_jet": "OPEN_PARENT_HISTORY_REALIZATION",
             "outgoing_M_C2_whole_axis_1222_core": "VALID_FINITE_CORE_MATCH",
             "all_1222_transposed_reverse_actions": "VALID_MATCH",
             "physical_quotient_and_Cauchy_criterion": "VALID_MATCH",
