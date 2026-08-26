@@ -118,6 +118,7 @@ def _basis() -> list[dict[str, Any]]:
     p_rank72_relative_form = "artifacts/flagship_integration/BHSM_N12_GATE7_RANK72_RELATIVE_FORM_TAIL.json"
     p_rank72_route_adjudication = "artifacts/flagship_integration/BHSM_N12_GATE7_RANK72_MAXIMAL_TAIL_ROUTE_ADJUDICATION.json"
     p_ae2_boundary_hamiltonian = "artifacts/flagship_integration/BHSM_N12_AE2_CHILD_BOUNDARY_HAMILTONIAN_NON_SUPERSESSION.json"
+    p_nhim_rank72_relative_tail = "artifacts/flagship_integration/BHSM_N12_GATE7_NHIM_RANK72_RELATIVE_TAIL_THEOREM.json"
     p_parametric_base = "artifacts/flagship_integration/BHSM_N12_C2_1222_PARAMETRIC_BASE_FAMILY.json"
     p_signed_adjoint = "artifacts/flagship_integration/BHSM_N12_C2_1222_SIGNED_ADJOINT_ASSEMBLY.json"
     p_duration_incidence = "artifacts/flagship_integration/BHSM_N12_C2_SIGNED_DURATION_INCIDENCE_OWNER.json"
@@ -436,6 +437,18 @@ def _basis() -> list[dict[str, Any]]:
             current_status="AE2_FERMION_DOMAIN_CLOSED_CHILD_BOUNDARY_HAMILTONIAN_NOT_ACTION_EXECUTABLE",
             downstream_consumers=["G7_08_FORCE", "G7_09_SADDLE"],
             forbidden_interpretations=["relabel the zero reduced constraint energy as H_xi", "treat the global Dirac domain as a localized seam charge", "add a child boundary ensemble for positivity", "zero an internal child or contact response"],
+        ),
+        record(
+            "GATE7_CAPTURED_NHIM_RANK72_RELATIVE_TAIL",
+            "epsilon<=epsilon_0 exp(-H0*t), Ds_mu=O(mu exp(-H0*t/2)), DV_mu=O(mu^2 exp(-H0*t)); g_T-g_S->0 on captured families",
+            "CAPTURED_FAMILY_SOURCE_CONTRACTED_RELATIVE_TAIL_THEOREM",
+            "MATHEMATICAL_OBJECT",
+            "On every open finite-N12 family captured by the retained analytic NHIM, bounded center Jacobi fields and decaying normal fields make all fixed-channel coefficient jets temporally integrable; the certified first C2 collar then makes the full graded rank-72 relative tail angularly summable. The absolute NHIM heat-trace no-go is preserved.",
+            "regular finite-N12 post-event C2 families contained in the open NHIM capture basin",
+            [p_nhim_rank72_relative_tail],
+            current_status="CAPTURED_RANK72_TAIL_CLOSED_RESET_TO_CAPTURE_CONNECTION_OPEN",
+            downstream_consumers=["G7_08_FORCE", "G7_09_SADDLE"],
+            forbidden_interpretations=["the AE2 reset image is already proved to enter the basin", "the absolute infinite-volume heat trace converges", "all arbitrary maximal histories are controlled", "select a favorable reset member by hand"],
         ),
         record(
             "C2_1222_PARAMETRIC_BASE_FAMILY",
@@ -898,6 +911,7 @@ def _gates() -> list[dict[str, Any]]:
             "artifacts/flagship_integration/BHSM_N12_GATE7_RANK72_RELATIVE_FORM_TAIL.json",
             "artifacts/flagship_integration/BHSM_N12_GATE7_RANK72_MAXIMAL_TAIL_ROUTE_ADJUDICATION.json",
             "artifacts/flagship_integration/BHSM_N12_AE2_CHILD_BOUNDARY_HAMILTONIAN_NON_SUPERSESSION.json",
+            "artifacts/flagship_integration/BHSM_N12_GATE7_NHIM_RANK72_RELATIVE_TAIL_THEOREM.json",
             "artifacts/flagship_integration/BHSM_N12_C2_1222_PARAMETRIC_BASE_FAMILY.json",
             "artifacts/flagship_integration/BHSM_N12_C2_1222_SIGNED_ADJOINT_ASSEMBLY.json",
             "artifacts/flagship_integration/BHSM_N12_C2_1222_TRANSPOSED_DURATION_ACTION_COVERAGE.json",
@@ -992,7 +1006,12 @@ def _gates() -> list[dict[str, Any]]:
                 "term; the remaining noncompact tail is therefore the rank-72 reset-"
                 "generated outgoing C2 seed image; AE2 closes only the fermion "
                 "transmission domain and supplies no complete child boundary "
-                "Hamiltonian or coercive charge"
+                "Hamiltonian or coercive charge; on every open family actually "
+                "captured by the analytic finite-N12 NHIM, its bounded center and "
+                "decaying normal Jacobi fields combine with the exact exp(-x) and "
+                "exp(-2x) weights and the first-C2-collar Agmon factor to make the "
+                "signed rank-72 relative tail Cauchy, so the current geometric "
+                "owner is reset-to-capture connection or an actual later stop"
             )
         predecessor = [] if index == 0 else [GATE_CHAIN[index - 1][0]]
         provenance = sources.get(cid, fallback)

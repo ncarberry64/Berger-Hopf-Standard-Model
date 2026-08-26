@@ -88,6 +88,7 @@
     "artifacts/flagship_integration/BHSM_N12_GATE7_MAXIMAL_GRADED_COTANGENT_MATCHING_AUDIT.json": "C4A18905F11993ACDBEEC38A44B6CA563CC7D191A784424633D76A0BFD96B25B",
     "artifacts/flagship_integration/BHSM_N12_GATE7_MAXIMAL_GRADED_INCOMING_RELATIVE_HEAT_COTANGENT.json": "7328CB30824B1954B2394E1D53DEE0925F29653B249B815366DDD2457ECE1BB0",
     "artifacts/flagship_integration/BHSM_N12_GATE7_MAXIMAL_TAIL_SUPPORT_REDUCTION.json": "150BE9D7C1EADE81C263CC805AE0700C1D703073B95CB01FF0001A03C8442CEC",
+    "artifacts/flagship_integration/BHSM_N12_GATE7_NHIM_RANK72_RELATIVE_TAIL_THEOREM.json": "FA36F13C0075A46A973DE82B817C44CD204682981E1FB843A17445E8B6158E33",
     "artifacts/flagship_integration/BHSM_N12_GATE7_ONE_SEAM_FULL_GRADED_FINITE_CORE_HEAT_BOUND.json": "934DCD800EE09583E3A214A5F7B4E2AF1686C08D45A278E75880B144DBE582BD",
     "artifacts/flagship_integration/BHSM_N12_GATE7_OUTGOING_FLOW_TAIL_CLOSURE.json": "BFB82254E72FB36886F4F403A9C79AF401E74AD97EC71AA8A90C4BADD62999E4",
     "artifacts/flagship_integration/BHSM_N12_GATE7_RANK72_MAXIMAL_TAIL_ROUTE_ADJUDICATION.json": "2BFD3D7C606B3C5B6741F957AF4C34FD8D289EBAF5C231CF9E2313907815E8F2",
@@ -1029,6 +1030,42 @@
       "physical_meaning": "AE2 closes the fermion transmission domain but adds no complete child covariant symplectic potential, Noether charge assembler, differentiability counterterm/ensemble, or coercive boundary charge; the earlier child-Hamiltonian ownership no-go therefore remains current.",
       "provenance": [
         "artifacts/flagship_integration/BHSM_N12_AE2_CHILD_BOUNDARY_HAMILTONIAN_NON_SUPERSESSION.json"
+      ],
+      "semantic_layer": "MATHEMATICAL_OBJECT",
+      "source_weighting_required": false,
+      "superseded_meanings": [],
+      "tests": [
+        "test_required_fields"
+      ]
+    },
+    {
+      "action_version": "BHSM-AE-2.0.0",
+      "artifact_hashes": {
+        "artifacts/flagship_integration/BHSM_N12_GATE7_NHIM_RANK72_RELATIVE_TAIL_THEOREM.json": "FA36F13C0075A46A973DE82B817C44CD204682981E1FB843A17445E8B6158E33"
+      },
+      "canonical_id": "GATE7_CAPTURED_NHIM_RANK72_RELATIVE_TAIL",
+      "current_status": "CAPTURED_RANK72_TAIL_CLOSED_RESET_TO_CAPTURE_CONNECTION_OPEN",
+      "dimensions": "DIMENSIONLESS_OR_OPERATOR_TYPED",
+      "domain": "regular finite-N12 post-event C2 families contained in the open NHIM capture basin",
+      "downstream_consumers": [
+        "G7_08_FORCE",
+        "G7_09_SADDLE"
+      ],
+      "equivalent_forms": [],
+      "forbidden_interpretations": [
+        "the AE2 reset image is already proved to enter the basin",
+        "the absolute infinite-volume heat trace converges",
+        "all arbitrary maximal histories are controlled",
+        "select a favorable reset member by hand"
+      ],
+      "formula": "epsilon<=epsilon_0 exp(-H0*t), Ds_mu=O(mu exp(-H0*t/2)), DV_mu=O(mu^2 exp(-H0*t)); g_T-g_S->0 on captured families",
+      "frozen_output_status": "NOT_FROZEN_OUTPUT",
+      "mathematical_class": "CAPTURED_FAMILY_SOURCE_CONTRACTED_RELATIVE_TAIL_THEOREM",
+      "observable_status": "NOT_AN_OBSERVABLE",
+      "ontology_version": "BHSM-AE2-ONTOLOGY-1.3.0",
+      "physical_meaning": "On every open finite-N12 family captured by the retained analytic NHIM, bounded center Jacobi fields and decaying normal fields make all fixed-channel coefficient jets temporally integrable; the certified first C2 collar then makes the full graded rank-72 relative tail angularly summable. The absolute NHIM heat-trace no-go is preserved.",
+      "provenance": [
+        "artifacts/flagship_integration/BHSM_N12_GATE7_NHIM_RANK72_RELATIVE_TAIL_THEOREM.json"
       ],
       "semantic_layer": "MATHEMATICAL_OBJECT",
       "source_weighting_required": false,
