@@ -14,10 +14,12 @@
     "artifacts/flagship_integration/BHSM_N12_ASYMPTOTIC_NHIM_ANGULAR_FORCE_NO_GO.json": "8CADFCD9FDD2D5174ACF37C167E88DD73091391D834027CDBBF8FD9CEF768B01",
     "artifacts/flagship_integration/BHSM_N12_ASYMPTOTIC_NHIM_CAPTURE_BASIN.json": "A2FE14D141A18B39CF27F568A4B9417246DD49DA95158CDDF5489EB303F53FA4",
     "artifacts/flagship_integration/BHSM_N12_C2_CLASS_REDUCED_MAXIMAL_RESPONSE.json": "DA82F5036004E115A13E53B369B51A92FD9A21B81FFEF44A0656C4DB11FF38B8",
+    "artifacts/flagship_integration/BHSM_N12_C2_EXACT_FIXED_S_FIELD_ORACLE.json": "4265D468E865D68AAA126AA3E27368043FCD24499A5CDE41340A9228F0D4E7FF",
     "artifacts/flagship_integration/BHSM_N12_C2_INFINITE_HEAT_ZETA_COMPATIBILITY.json": "9AFA86530D09A8C6A14F8F0FE95E60A3A7127498678185A10B83C3252F3E24E7",
     "artifacts/flagship_integration/BHSM_N12_C2_PROJECTED_ADJOINT_CAUCHY_CRITERION.json": "473465E4A2369638204FE869E291997A82B958979B4DD060767C7BD12808EA65",
     "artifacts/flagship_integration/BHSM_N12_CANONICAL_MOMENTUM_ACTION_JACOBIAN.json": "0B1BE86ECDC049B363C2C0E665CAB0CE9C216FD5CEFB5AE813DA157F18909733",
     "artifacts/flagship_integration/BHSM_N12_CONSTRAINT_PROJECTED_REPLACEMENT_SADDLE.json": "E5C0340FC39BFF9C83F338B8AFA7270F71A6699A56A5B0996F754FB99B65DAD1",
+    "artifacts/flagship_integration/BHSM_N12_CORE_TRANSMITTED_PHYSICAL_MANIFOLD_AUDIT.json": "007C16DDC4D44747358B71219738158F77F12ADAA60EE91EF28985179B6D1AD9",
     "artifacts/flagship_integration/BHSM_N12_DIRECT_KKT_EXISTENCE_PRECONDITIONS.json": "1D680BF2DE86E8FF28861F342BC6D9441F73077165BAB275494FD5A67EAF4BF6",
     "artifacts/flagship_integration/BHSM_N12_EVENT_NORMAL_TWO_SIDED_SEAM_CORRECTION.json": "D575E60A442C19CE0EE34EDBB8BBAC1D90A8895D46D6ACE16317BFBD2CBE894F",
     "artifacts/flagship_integration/BHSM_N12_EVENT_NORMAL_WEYL_RICCATI.json": "40232FD566213EA7A97B1C34AB73432A9E8F02BEAEC37FFC8E4537ACDE1C38FF",
@@ -73,7 +75,7 @@
     "artifacts/intrinsic_state_selection/BHSM_N12_CONSTRAINT_REDUCED_ENERGY_IDENTITY_GATE.json": "EB907DF96C8C9E0A66014D6A6463B853E92F1A5D0CBA2B269789FA28706501D1",
     "artifacts/intrinsic_state_selection/BHSM_N12_FINITE_ENCAPSULATION_LOCAL_BRANCH.json": "280AAECD38DE340C1D40F8B374B96BA7A5C6DAE6F8F5B518B60A49CBBE14CB63",
     "theory/bhsm_prediction_ledger.json": "CCD1EE7A578923ADB513F70641C6E4C27F17305C002728D85CCBAFA48CC9F4D8",
-    "theory/norman_owner_ontology_recovered.md": "646A95A009ABA4789F9BCF16D60C5A0EC9F62022D9A047D7B72994F81D1A7E4D"
+    "theory/norman_owner_ontology_recovered.md": "E7463E3EBD38145D221873DFFA7D2C2B69BE1A202C70EA93B8E5E5B9227BFBD0"
   },
   "ontology_version": "BHSM-AE2-ONTOLOGY-1.0.0",
   "records": [
@@ -631,6 +633,76 @@
         "artifacts/flagship_integration/BHSM_N12_PARAMETRIC_RESET_FIBER_EXTERIOR_ORACLE_THEOREM.json"
       ],
       "semantic_layer": "MATHEMATICAL_OBJECT",
+      "source_weighting_required": false,
+      "superseded_meanings": [],
+      "tests": [
+        "test_required_fields"
+      ]
+    },
+    {
+      "action_version": "BHSM-AE-2.0.0",
+      "artifact_hashes": {
+        "artifacts/flagship_integration/BHSM_N12_C2_EXACT_FIXED_S_FIELD_ORACLE.json": "4265D468E865D68AAA126AA3E27368043FCD24499A5CDE41340A9228F0D4E7FF"
+      },
+      "canonical_id": "EXACT_FIXED_S_C2_FIELD",
+      "current_status": "CERTIFIED_PARAMETRIC_BASE_OR_COUPLED_KKT_STILL_OPEN",
+      "dimensions": "DIMENSIONLESS_OR_OPERATOR_TYPED",
+      "domain": "regular C2 selected-line chart with s>=0 and positive denominator",
+      "downstream_consumers": [
+        "PARAMETRIC_RESET_FIBER_EXTERIOR_ORACLE",
+        "G7_08_FORCE"
+      ],
+      "equivalent_forms": [],
+      "forbidden_interpretations": [
+        "invert the full Euler-Dirac block",
+        "promote proof centers to physical histories",
+        "select one reset member by hand"
+      ],
+      "formula": "F_s=(s*qdot,b_psi*Psi+s*V_hard)/(c_psi*b_psi+s*Dlambda[V_hard]), Dlambda[F_s]=1",
+      "frozen_output_status": "NOT_FROZEN_OUTPUT",
+      "mathematical_class": "DESINGULARIZED_ACTION_VECTOR_FIELD_ORACLE",
+      "observable_status": "NOT_AN_OBSERVABLE",
+      "ontology_version": "BHSM-AE2-ONTOLOGY-1.0.0",
+      "physical_meaning": "Exact cancellation-preserving C2 generator on every regular simple selected-line chart; only the hard complement is solved.",
+      "provenance": [
+        "artifacts/flagship_integration/BHSM_N12_C2_EXACT_FIXED_S_FIELD_ORACLE.json"
+      ],
+      "semantic_layer": "MATHEMATICAL_OBJECT",
+      "source_weighting_required": false,
+      "superseded_meanings": [],
+      "tests": [
+        "test_required_fields"
+      ]
+    },
+    {
+      "action_version": "BHSM-AE-2.0.0",
+      "artifact_hashes": {
+        "artifacts/flagship_integration/BHSM_N12_CORE_TRANSMITTED_PHYSICAL_MANIFOLD_AUDIT.json": "007C16DDC4D44747358B71219738158F77F12ADAA60EE91EF28985179B6D1AD9"
+      },
+      "canonical_id": "CORE_TRANSMISSION_NONSELECTION",
+      "current_status": "OWNER_HYPOTHESIS_NOT_ACTION_DERIVED_NO_SELECTOR_AUTHORITY",
+      "dimensions": "DIMENSIONLESS_OR_OPERATOR_TYPED",
+      "domain": "BHSM-AE-2.0.0 regular event-child domain",
+      "downstream_consumers": [
+        "PARAMETRIC_RESET_FIBER_EXTERIOR_ORACLE",
+        "G7_08_FORCE"
+      ],
+      "equivalent_forms": [],
+      "forbidden_interpretations": [
+        "U_R is a pregeometric core transfer",
+        "core ontology reduces the 139/73/67/66 ledger",
+        "a=1/118 selects a reset state"
+      ],
+      "formula": "T_core_to_reset=NOT_ACTION_DERIVED",
+      "frozen_output_status": "NOT_FROZEN_OUTPUT",
+      "mathematical_class": "PROVENANCE_AND_DOMAIN_NONEXISTENCE_AUDIT",
+      "observable_status": "NOT_AN_OBSERVABLE",
+      "ontology_version": "BHSM-AE2-ONTOLOGY-1.0.0",
+      "physical_meaning": "AE2 U_R glues regular event and child traces but supplies no pregeometric core-to-reset population projector or extra quotient reduction.",
+      "provenance": [
+        "artifacts/flagship_integration/BHSM_N12_CORE_TRANSMITTED_PHYSICAL_MANIFOLD_AUDIT.json"
+      ],
+      "semantic_layer": "BHSM_ONTOLOGY",
       "source_weighting_required": false,
       "superseded_meanings": [],
       "tests": [

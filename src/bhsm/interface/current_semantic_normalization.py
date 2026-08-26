@@ -108,6 +108,8 @@ def _basis() -> list[dict[str, Any]]:
     p_w5_analytic = "artifacts/flagship_integration/BHSM_N12_ANALYTIC_LOCAL_BLOCK_CENTER_LIFT.json"
     p_w5_interval = "artifacts/flagship_integration/BHSM_N12_INTERVAL_WEIGHT_FIVE_CENTER_LIFT.json"
     p_full_asymptotic = "artifacts/flagship_integration/BHSM_N12_FULL_RETAINED_ASYMPTOTIC_BRANCH.json"
+    p_exact_field = "artifacts/flagship_integration/BHSM_N12_C2_EXACT_FIXED_S_FIELD_ORACLE.json"
+    p_core_audit = "artifacts/flagship_integration/BHSM_N12_CORE_TRANSMITTED_PHYSICAL_MANIFOLD_AUDIT.json"
     p_e1 = "artifacts/flagship_integration/BHSM_N12_FORWARD_E1_SOURCE_MEASURE_CRITERION.json"
     p_nf = "artifacts/flagship_integration/BHSM_N12_GATE7_AE2_NONFERMION_THRESHOLD_MARGIN.json"
     p_fac = "artifacts/flagship_integration/BHSM_N12_GATE7_AE2_COMPACT_SOURCE_DINI_CLOSURE.json"
@@ -298,6 +300,30 @@ def _basis() -> list[dict[str, Any]]:
             current_status="REGULARITY_THEOREM_DERIVED_ACTUAL_PARAMETRIC_ORACLE_OR_FIBER_INVARIANCE_OPEN",
             downstream_consumers=["G7_08_FORCE", "G7_09_SADDLE"],
             forbidden_interpretations=["one reset representative determines the fiber force", "smoothness across endpoint outcome switches is automatic", "infinite nonencapsulating histories are physical readout histories"],
+        ),
+        record(
+            "EXACT_FIXED_S_C2_FIELD",
+            "F_s=(s*qdot,b_psi*Psi+s*V_hard)/(c_psi*b_psi+s*Dlambda[V_hard]), Dlambda[F_s]=1",
+            "DESINGULARIZED_ACTION_VECTOR_FIELD_ORACLE",
+            "MATHEMATICAL_OBJECT",
+            "Exact cancellation-preserving C2 generator on every regular simple selected-line chart; only the hard complement is solved.",
+            "regular C2 selected-line chart with s>=0 and positive denominator",
+            [p_exact_field],
+            current_status="CERTIFIED_PARAMETRIC_BASE_OR_COUPLED_KKT_STILL_OPEN",
+            downstream_consumers=["PARAMETRIC_RESET_FIBER_EXTERIOR_ORACLE", "G7_08_FORCE"],
+            forbidden_interpretations=["invert the full Euler-Dirac block", "promote proof centers to physical histories", "select one reset member by hand"],
+        ),
+        record(
+            "CORE_TRANSMISSION_NONSELECTION",
+            "T_core_to_reset=NOT_ACTION_DERIVED",
+            "PROVENANCE_AND_DOMAIN_NONEXISTENCE_AUDIT",
+            "BHSM_ONTOLOGY",
+            "AE2 U_R glues regular event and child traces but supplies no pregeometric core-to-reset population projector or extra quotient reduction.",
+            "BHSM-AE-2.0.0 regular event-child domain",
+            [p_core_audit],
+            current_status="OWNER_HYPOTHESIS_NOT_ACTION_DERIVED_NO_SELECTOR_AUTHORITY",
+            downstream_consumers=["PARAMETRIC_RESET_FIBER_EXTERIOR_ORACLE", "G7_08_FORCE"],
+            forbidden_interpretations=["U_R is a pregeometric core transfer", "core ontology reduces the 139/73/67/66 ledger", "a=1/118 selects a reset state"],
         ),
         record(
             "WEIGHT_SEVEN_TRANSVERSE_DESCRIPTOR",
@@ -562,6 +588,7 @@ def _ontology() -> list[dict[str, Any]]:
         ("ONTOLOGY_NEUTRINO_MASS", "m_nu=propagation_locked_curvature_response", "Neutrino mass is a propagation response rather than primitive static rest mass.", "OWNER_AUTHORIZED_OBSERVABLE_SEMANTICS"),
         ("ONTOLOGY_CKM", "V_CKM=relative_orientation(up_response_basis,down_response_basis)", "CKM is the mismatch of action-selected up/down geometric response sectors.", "OWNER_AUTHORIZED_OBSERVABLE_SEMANTICS"),
         ("ONTOLOGY_GAUGE_127", "1:2:7=frozen_candidate_geometric_structure", "The gauge pattern is important but is not an action axiom.", "OWNER_AUTHORIZED_CANDIDATE_STATUS"),
+        ("ONTOLOGY_FINE_STRUCTURE_CANDIDATE", "a_UV?=1/(12*pi^2) approximately 1/118.435; historical shorthand a?=1/118", "The fine-structure number is a historical geometric candidate only; its exact AE2 attachment, coupling normalization, and bare-to-dressed running remain underived.", "OWNER_AUTHORIZED_CANDIDATE_QUARANTINED"),
         ("ONTOLOGY_AE2_NO_CHILD_SELECTION", "AE2_glue != arbitrary_child_Cauchy_selector", "AE2 unifies event/child matter traces without selecting a child state by hand.", "OWNER_AUTHORIZED_DOMAIN_SEMANTICS"),
         ("ONTOLOGY_BARE_DRESSED", "dressed=derived_dressing_map(bare)", "Bare and dressed quantities are separate layers and dressing is not fitting freedom.", "OWNER_AUTHORIZED_LAYER_SEPARATION"),
         ("ONTOLOGY_FROZEN_NO_RETUNE", "new_derivation_disagreement => audit", "Frozen predictions never retune.", "OWNER_AUTHORIZED_FREEZE_RULE"),
@@ -583,7 +610,8 @@ def _ontology() -> list[dict[str, Any]]:
                    ["Treat particles as primitive point substances."] if cid == "ONTOLOGY_PARTICLE_CLASS" else
                    ["Use independent freely chosen sector scales."] if cid == "ONTOLOGY_UNIVERSAL_SCALE" else
                    ["Use dressing as fitting freedom."] if cid == "ONTOLOGY_BARE_DRESSED" else
-                   ["Retune a frozen prediction."] if cid == "ONTOLOGY_FROZEN_NO_RETUNE" else []
+                   ["Retune a frozen prediction."] if cid == "ONTOLOGY_FROZEN_NO_RETUNE" else
+                   ["Insert 1/118 or 1/(12*pi^2) into AE2.", "Fit the dressing map to alpha inverse 137.036.", "Use the candidate as a reset selector."] if cid == "ONTOLOGY_FINE_STRUCTURE_CANDIDATE" else []
                ))
         for cid, formula, meaning, status in rows
     ]
@@ -635,6 +663,8 @@ def _gates() -> list[dict[str, Any]]:
             "artifacts/flagship_integration/BHSM_N12_C2_CLASS_REDUCED_MAXIMAL_RESPONSE.json",
             "artifacts/flagship_integration/BHSM_N12_C2_PROJECTED_ADJOINT_CAUCHY_CRITERION.json",
             "artifacts/flagship_integration/BHSM_N12_C2_INFINITE_HEAT_ZETA_COMPATIBILITY.json",
+            "artifacts/flagship_integration/BHSM_N12_C2_EXACT_FIXED_S_FIELD_ORACLE.json",
+            "artifacts/flagship_integration/BHSM_N12_CORE_TRANSMITTED_PHYSICAL_MANIFOLD_AUDIT.json",
             "artifacts/flagship_integration/BHSM_N12_ASYMPTOTIC_NHIM_ANGULAR_FORCE_NO_GO.json",
             "artifacts/flagship_integration/BHSM_N12_LOCAL_RESET_TERMINAL_TRANSVERSALITY_AUDIT.json",
             "artifacts/flagship_integration/BHSM_N12_CANONICAL_MOMENTUM_ACTION_JACOBIAN.json",

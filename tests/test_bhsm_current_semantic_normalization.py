@@ -84,12 +84,19 @@ def test_recovered_owner_ontology_is_complete_and_not_action_derived() -> None:
     for canonical_id in (
         "ONTOLOGY_GEOMETRY_FIRST", "ONTOLOGY_PARTICLE_CLASS", "ONTOLOGY_GENERATIONS",
         "ONTOLOGY_MASS_READOUT", "ONTOLOGY_NEUTRINO_MASS", "ONTOLOGY_CKM",
-        "ONTOLOGY_GAUGE_127", "ONTOLOGY_BARE_DRESSED", "ONTOLOGY_FROZEN_NO_RETUNE",
+        "ONTOLOGY_GAUGE_127", "ONTOLOGY_FINE_STRUCTURE_CANDIDATE",
+        "ONTOLOGY_BARE_DRESSED", "ONTOLOGY_FROZEN_NO_RETUNE",
         "ONTOLOGY_FULL_COMPLETION",
         "ONTOLOGY_FINITE_ENCAPSULATION", "ONTOLOGY_ENCAPSULATION_CHRONOLOGY",
     ):
         assert ontology[canonical_id]["current_status"].startswith("OWNER_AUTHORIZED")
         assert "ACTION_DERIVED" not in ontology[canonical_id]["current_status"]
+    fine = ontology["ONTOLOGY_FINE_STRUCTURE_CANDIDATE"]
+    assert "1/(12*pi^2)" in fine["formula"]
+    assert "1/118.435" in fine["formula"]
+    assert "Insert 1/118 or 1/(12*pi^2) into AE2." in fine[
+        "forbidden_interpretations"
+    ]
 
 
 def test_source_dini_is_canonical_and_strict_power_excess_is_not_compulsory() -> None:
@@ -164,6 +171,14 @@ def test_replacement_force_is_constraint_projected_without_reset_selection() -> 
     )
     assert "the two-chord validation cutoff is a physical force endpoint" in (
         solver["forbidden_interpretations"]
+    )
+    exact_field = basis["EXACT_FIXED_S_C2_FIELD"]
+    assert exact_field["current_status"] == (
+        "CERTIFIED_PARAMETRIC_BASE_OR_COUPLED_KKT_STILL_OPEN"
+    )
+    core = basis["CORE_TRANSMISSION_NONSELECTION"]
+    assert core["current_status"] == (
+        "OWNER_HYPOTHESIS_NOT_ACTION_DERIVED_NO_SELECTOR_AUTHORITY"
     )
     dag = {
         row["canonical_id"]: row

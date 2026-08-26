@@ -17,3 +17,4 @@ Status: `OWNER_AUTHORIZED_ONTOLOGY`; it is not an action-derived equation.
 13. The dependency direction is `ACTION -> THEOREM -> OBSERVABLE -> FROZEN COMPARISON`.
 14. `FULL_BHSM_COMPLETE` requires every completion-critical advertised sector, the physical scale/readout, domains, Ward/BRST, continuum control, and frozen predictions to close reproducibly from one coherent current action.
 15. These ontology questions are settled unless new mathematics leaves multiple inequivalent theories that the rules cannot distinguish.
+16. The statement that `a` may be `1/118` is an owner-authorized candidate, now historically traceable to the rounded geometric proposal `1/(12*pi^2)`. It is not an exact equality, an AE2 action coefficient, a reset selector, or a dressed low-energy prediction. Any future use must derive the coupling map and dressing/running without fitting the observed fine-structure constant.
