@@ -2432,3 +2432,24 @@ Exact next object:
   retained stop.  A center sign change is not promoted.
 - Gate 7: `ACTIVE`; Gate 8: `LOCKED`; chord 3: `UNAUTHORIZED`;
   frozen predictions unchanged; `FULL_BHSM_COMPLETE=FALSE`.
+
+## N=12 first cancelled-theta interval extension
+
+- Reproducibility base: fully tracked 1,221 fixed-`s` prefix and its retained
+  bordered response/growth parents.
+- Exact scaled generator: `G_theta=Delta F_s`; quotient cancellation occurs
+  before all operator norms.
+- Center bounds: `||G_theta||<4.294e-4`, `||DG_theta||_2<6.289`, and complete
+  center first-variation remainder `<0.05`.
+- Complete response fixed-point self-consistency: `<0.042` on a ball strictly
+  containing the inherited tube.
+- Strict positive `theta` step, signed-descriptor interval, lapse, proper
+  duration, branch-24 replay, and tube inclusion: `CERTIFIED`.
+- Binary64 eigenvalue substituted for signed descriptor: `FALSE`.
+- `Delta>0` imposed as a domain condition: `FALSE`.
+- Predictor promoted to a physical endpoint or selected reset member: `FALSE`.
+- Current proof owner: recenter and iterate the cancelled field until the
+  signed descriptor supports efficient log-`s` continuation, then reach the
+  strict capture tube or a genuine retained stop.
+- Gate 7: `ACTIVE`; Gate 8: `LOCKED`; chord 3: `UNAUTHORIZED`;
+  frozen predictions unchanged; `FULL_BHSM_COMPLETE=FALSE`.
