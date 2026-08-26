@@ -120,6 +120,7 @@ def _basis() -> list[dict[str, Any]]:
     p_ae2_boundary_hamiltonian = "artifacts/flagship_integration/BHSM_N12_AE2_CHILD_BOUNDARY_HAMILTONIAN_NON_SUPERSESSION.json"
     p_nhim_rank72_relative_tail = "artifacts/flagship_integration/BHSM_N12_GATE7_NHIM_RANK72_RELATIVE_TAIL_THEOREM.json"
     p_quantitative_capture_bridge = "artifacts/flagship_integration/BHSM_N12_GATE7_QUANTITATIVE_CAPTURE_BRIDGE_RECOMBINATION.json"
+    p_full_lower_weight_krawczyk = "artifacts/flagship_integration/BHSM_N12_GATE7_FULL_LOWER_WEIGHT_KRAWCZYK_CLOSURE.json"
     p_parametric_base = "artifacts/flagship_integration/BHSM_N12_C2_1222_PARAMETRIC_BASE_FAMILY.json"
     p_signed_adjoint = "artifacts/flagship_integration/BHSM_N12_C2_1222_SIGNED_ADJOINT_ASSEMBLY.json"
     p_duration_incidence = "artifacts/flagship_integration/BHSM_N12_C2_SIGNED_DURATION_INCIDENCE_OWNER.json"
@@ -462,6 +463,18 @@ def _basis() -> list[dict[str, Any]]:
             current_status="LEADING_BORDERED_INVERSE_CLOSED_FULL_TRAPPING_AND_RESET_COVER_OPEN",
             downstream_consumers=["G7_08_FORCE", "G7_09_SADDLE"],
             forbidden_interpretations=["the tiny determinant radius is already a capture surface", "the reset image is already connected", "the conservative R4 scale is a new physical threshold", "form a separate combined Euler-Dirac inverse"],
+        ),
+        record(
+            "GATE7_FULL_LOWER_WEIGHT_KRAWCZYK_CLOSURE",
+            "epsilon<=7/(64*7.4e1314); theta_full<9/32+2e-7366<1/2",
+            "FULL_RETAINED_INVERSE_FREE_KRAWCZYK_GRAPH_THEOREM",
+            "MATHEMATICAL_OBJECT",
+            "The exact retained scale polynomial, a positive leading-inertia bound, and inflated fourth-jet ledger certify a unique full 74-dimensional asymptotic descriptor graph with all lower weights, inverse inertia, and algebraic multipliers on an explicit epsilon interval. Dynamical stable-cone trapping, integrated center drift, and reset-family entry remain open.",
+            "common physical asymptotic product ball with epsilon=R4^-2 at or below the certified Krawczyk scale",
+            [p_full_lower_weight_krawczyk],
+            current_status="FULL_DESCRIPTOR_GRAPH_QUANTIFIED_STABLE_CONE_AND_RESET_COVER_OPEN",
+            downstream_consumers=["G7_08_FORCE", "G7_09_SADDLE"],
+            forbidden_interpretations=["the Krawczyk graph is already a trapping tube", "the reset image reaches the graph", "the conservative R4 proof radius is a physical scale", "form an explicit combined Euler-Dirac inverse"],
         ),
         record(
             "C2_1222_PARAMETRIC_BASE_FAMILY",
@@ -926,6 +939,7 @@ def _gates() -> list[dict[str, Any]]:
             "artifacts/flagship_integration/BHSM_N12_AE2_CHILD_BOUNDARY_HAMILTONIAN_NON_SUPERSESSION.json",
             "artifacts/flagship_integration/BHSM_N12_GATE7_NHIM_RANK72_RELATIVE_TAIL_THEOREM.json",
             "artifacts/flagship_integration/BHSM_N12_GATE7_QUANTITATIVE_CAPTURE_BRIDGE_RECOMBINATION.json",
+            "artifacts/flagship_integration/BHSM_N12_GATE7_FULL_LOWER_WEIGHT_KRAWCZYK_CLOSURE.json",
             "artifacts/flagship_integration/BHSM_N12_C2_1222_PARAMETRIC_BASE_FAMILY.json",
             "artifacts/flagship_integration/BHSM_N12_C2_1222_SIGNED_ADJOINT_ASSEMBLY.json",
             "artifacts/flagship_integration/BHSM_N12_C2_1222_TRANSPOSED_DURATION_ACTION_COVERAGE.json",
@@ -1029,9 +1043,12 @@ def _gates() -> list[dict[str, Any]]:
                 "the combined 74-dimensional leading bordered inverse is already "
                 "certified on a positive subball with relative defect at most "
                 "one sixteenth, superseding separate leading constraint and "
-                "kinetic inverse obligations; the exact remaining analytic owner "
-                "is the full epsilon-dependent defect, inhomogeneous correction, "
-                "stable-cone trapping estimate, and reset-family forward cover"
+                "kinetic inverse obligations; the exact retained scale polynomial "
+                "and positive leading-inertia bound now absorb the full epsilon-"
+                "dependent defect and inhomogeneous correction in an inverse-free "
+                "Krawczyk ball; the exact remaining analytic owner is the stable-"
+                "cone trapping estimate, integrated center drift, retained-domain "
+                "margins, and reset-family forward cover"
             )
         predecessor = [] if index == 0 else [GATE_CHAIN[index - 1][0]]
         provenance = sources.get(cid, fallback)
