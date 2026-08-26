@@ -17,13 +17,12 @@
   "data_SHA256": "AFB33845B7E0F70D56F4AAD5865ECB60A28759C8C372A2C2C9D934BDD631A1E8",
   "exact_next_dependency": "REISSUE_THIS_SAME_FIXED_DESCRIPTOR_TRANSPOSED_DURATION_ACTION_ON_THE_PRECEDING_CERTIFIED_SEGMENTS_AND_ASSEMBLE_THE_EXISTING_SIGNED_REVERSE_SWEEP",
   "inputs": {
-    "artifacts/flagship_integration/BHSM_N12_C2_1222_SIGNED_ADJOINT_ASSEMBLY.json": "2FCA1DC258F0FC70230813DAEC9A72E85280F7D1371990EB4C63DEC71332736C",
     "artifacts/flagship_integration/BHSM_N12_C2_COMMON_SCALE_WEYL_COVARIANCE.json": "E534478F712202CC0120AEC3FCA110B0B486C1466E0AF0996DB8C9256D3E5A9B",
     "artifacts/flagship_integration/BHSM_N12_C2_SECOND_UNIFORM_GAP_CONTINUATION.json": "03F0E2F5860F101E5E7DC5F37A71D4B33164E91910636C946E15DD1C3139F952",
     "artifacts/flagship_integration/BHSM_N12_C2_SEGMENT1214_JOINT_DURATION_DENSITY_COVECTOR.json": "891BACB719A84F79C8AFE800E294DA88A34A678978BCE52AF1AB686F7C17BD50",
     "artifacts/flagship_integration/BHSM_N12_C2_SEGMENT1214_JOINT_DURATION_DENSITY_COVECTOR.npz": "D35E1697D431F94A5F3011ACEE5DEF996E153F2AC967851806C535A966027F33",
-    "scripts/certify_n12_c2_segment1214_transposed_duration_action.py": "BDE1A4718B95409F5D9A25ECB9227444BB24108D159523D19C0160CC74F35B15",
-    "theory/n12_c2_segment1214_transposed_duration_action.md": "568064BB04F88BCF758A983278EDBE66BED8C5024FEE8B304AB0149539A0AA44"
+    "scripts/certify_n12_c2_segment1214_transposed_duration_action.py": "6B97A8AE9F2DC6F2606179A2644FA83B0E55B63422C8AE17501475757FF79DC8",
+    "theory/n12_c2_segment1214_transposed_duration_action.md": "33DF15DCEADEFEA1AFAC04D1D2DD10B287B6329351B224F317C97CFB2F752348"
   },
   "segment": {
     "Jacobi_growth_upper": 1.0006544028115931,
@@ -55,6 +54,7 @@
   },
   "validation": {
     "adopted_growth_dominates_stored_and_generator_exponential": true,
+    "certificate_is_independent_of_downstream_reverse_sweep": true,
     "common_scale_action_is_closed_separately_by_exact_covariance": true,
     "fixed_descriptor_step_is_strictly_positive": true,
     "independent_reverse_triangle_lower_bound_is_positive": true,
@@ -64,7 +64,6 @@
     "no_inverse_selector_recurrence_scale_fit_gate_or_chord_added": true,
     "segment1214_joint_duration_density_is_certified": true,
     "segment1214_record_is_unique": true,
-    "signed_reverse_sweep_is_ready_for_this_covector": true,
     "stored_and_recomputed_growth_are_numerically_consistent": true
   },
   "validation_passed": true

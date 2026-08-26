@@ -1,6 +1,6 @@
 # N12 C2 signed finite-core adjoint assembly
 
-Status: `SIGNED_FINITE_CORE_HEAT_MINUS_ZETA_SEED_ASSEMBLED_TRANSITION_ADJOINT_OPEN`.
+Status: `SIGNED_FINITE_CORE_ZETA_PULLBACK_BALL_CLOSED_HEAT_AND_UPSTREAM_OPEN`.
 
 For an exact member of the reset-generated finite-core family, write
 
@@ -38,10 +38,16 @@ as a nonzero log-space enclosure whose base-10 upper bound is below
 `-1.9e54`.  Thus the finite-core heat-minus-zeta seed is assembled without
 rounding heat to zero.
 
+The existing accumulated node-radius actions and 1,222 transposed duration
+actions also pull the zeta seed all the way to the C2 reset image as an
+action-dual norm ball. This closes the zeta state-transition pullback without
+constructing a transition matrix. The ball is zero-centered and contains
+zero, so its signed center and any KKT zero-exclusion remain open.
+
 Thus the signed assembly pattern and its finite-core coefficient seed are
 complete on every exact finite-core family member.  The stored proof centers
 still cannot be substituted for that member.  The current repository does not
-yet supply a validated numerical or interval state-transition reverse sweep or
-the signed internal upstream-history covector.  Accordingly no numerical
-zero-external-source force value, saddle, endpoint, or maximal-tail claim
-follows from this theorem.
+yet supply a signed or zero-excluding zeta reset covector, the non-scale
+geometry contraction of the suppressed heat seed, or the signed internal
+upstream-history covector. Accordingly no numerical zero-external-source force
+value, saddle, endpoint, or maximal-tail claim follows from this theorem.

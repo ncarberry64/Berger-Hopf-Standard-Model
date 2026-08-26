@@ -43,10 +43,13 @@ def test_maximal_graded_cotangent_matching_audit() -> None:
         "full_graded_finite_core_heat_cotangent_seed"
     ] == "VALID_TRACE_NORM_LOG_SPACE_ENCLOSURE"
     assert payload["matching_audit"]["actual_finite_core_graded_cotangent_seed"] == (
-        "CLOSED_ZETA_PLUS_UNIFORM_HEAT_TRACE_NORM_ENCLOSURE"
+        "ZETA_RESET_BALL_CLOSED_PLUS_UNIFORM_HEAT_TRACE_NORM_ENCLOSURE"
     )
     assert payload["matching_audit"]["direct_zeta_covector"] == (
         "CLOSED_COMPONENTWISE_FINITE_CORE_MATCH"
+    )
+    assert payload["matching_audit"]["C2_zeta_reset_cotangent_pullback"] == (
+        "CERTIFIED_ACTION_DUAL_NORM_BALL"
     )
     assert payload["matching_audit"]["joint_internal_seam_assembly"] == (
         "VALID_MATCH_ONE_E1_C2_SEAM"

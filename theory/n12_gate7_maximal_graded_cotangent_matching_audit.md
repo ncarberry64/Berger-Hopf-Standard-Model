@@ -13,8 +13,10 @@ Poincare estimate and the global AE2 factorization now sum all retained
 angular levels absolutely and enclose the complete finite-core heat seed in
 log space. The zeta node-radius and moving-duration covectors are now exact on
 each linear element and enclosed componentwise on the whole family. The open
-finite-core datum is their validated state-transition and upstream pullback,
-not the existence of the coefficient seed.
+finite-core zeta pullback is now also certified as an action-dual norm ball
+using accumulated radius actions and all transposed duration actions. Its
+signed center, the heat geometry contraction, and upstream pullback remain
+open.
 
 The retained BRST/statistics ledger already fixes every coefficient in the
 physical heat direct sum.  After the longitudinal gauge/complex-ghost pair is
@@ -85,15 +87,16 @@ The repository matching result is sharp:
   `-1.9e54`; binary64 underflow is retained as a bound, not promoted to exact
   zero;
 - the direct zeta coefficient covector is closed on all 1,223 node radii and
-  all 1,222 moving durations. The numerical or interval state-transition
-  pullback, upstream history covector, and maximal tail remain open.
+  all 1,222 moving durations. Its C2 reset pullback norm ball is certified
+  without a transition matrix. The signed center, heat contraction, upstream
+  history covector, and maximal tail remain open.
 
 Thus neither a new grading, a new external source, more isolated negative-axis
-probes, nor a new response theory is required. The explicit zeta covector and
-separately suppressed heat seed are next pulled through a validated interval
-state-transition adjoint and composed with the upstream `C1` history
-covector. The existing physical quotient then tests the maximal Cauchy tail
-before the same-action KKT root.
+probes, nor a new response theory is required. The certified zeta reset ball
+is sharpened only if the KKT test requires a signed center; the separately
+suppressed heat seed is contracted and composed with the upstream `C1`
+history covector. The existing physical quotient then tests the maximal
+Cauchy tail before the same-action KKT root.
 
 Gate 7 remains open, Gate 8 remains locked, chord 3 remains unauthorized, and
 `FULL_BHSM_COMPLETE=false`.

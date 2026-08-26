@@ -35,6 +35,7 @@ JOINT_SEED = BASE / "BHSM_N12_GATE7_JOINT_HEAT_COTANGENT_REVERSE_SEED.json"
 DIRECT_ZETA = BASE / "BHSM_N12_GATE7_DIRECT_ZETA_COEFFICIENT_COTANGENT.json"
 DIRECT_ZETA_DATA = DIRECT_ZETA.with_suffix(".npz")
 FULL_HEAT = BASE / "BHSM_N12_GATE7_ONE_SEAM_FULL_GRADED_FINITE_CORE_HEAT_BOUND.json"
+ZETA_PULLBACK = BASE / "BHSM_N12_GATE7_C2_FINITE_CORE_ZETA_RESET_COTANGENT_ENCLOSURE.json"
 MODULE = ROOT / "src" / "bhsm" / "interface" / "aether_forward_c2_signed_coefficient_adjoint.py"
 THEORY = ROOT / "theory" / "n12_c2_1222_signed_adjoint_assembly.md"
 INPUTS = (
@@ -52,6 +53,7 @@ INPUTS = (
     DIRECT_ZETA,
     DIRECT_ZETA_DATA,
     FULL_HEAT,
+    ZETA_PULLBACK,
     MODULE,
     THEORY,
 )
@@ -120,6 +122,7 @@ def build_payload() -> dict[str, Any]:
     (
         parametric, cotangent, complete_norm, force, launch, owner, incidence,
         interval_actions, source_ontology, joint_seed, direct_zeta, full_heat,
+        zeta_pullback,
     ) = (
         _load(path)
         for path in (
@@ -135,11 +138,13 @@ def build_payload() -> dict[str, Any]:
             JOINT_SEED,
             DIRECT_ZETA,
             FULL_HEAT,
+            ZETA_PULLBACK,
         )
     )
     if not all(record.get("validation_passed") is True for record in (
         parametric, cotangent, complete_norm, force, launch, owner, incidence,
         interval_actions, source_ontology, joint_seed, direct_zeta, full_heat,
+        zeta_pullback,
     )):
         raise RuntimeError("validated signed-adjoint lineage required")
     channel_shapes: dict[str, Any] = {}
@@ -235,6 +240,14 @@ def build_payload() -> dict[str, Any]:
                 "binary64_underflow_is_exact_zero"
             ] is False
         ),
+        "C2_zeta_state_transition_pullback_norm_ball_is_certified": (
+            zeta_pullback["claim_boundary"][
+                "C2_finite_core_zeta_reset_cotangent_norm_ball"
+            ] == "CERTIFIED"
+            and zeta_pullback["theorem"][
+                "transition_matrix_constructed_or_inverted"
+            ] is False
+        ),
         "no_internal_response_is_zeroed_or_reintroduced_as_a_seam_source": (
             source_ontology["adjudication"]["internal_response_zeroing"] == "FORBIDDEN"
             and joint_seed["adjudication"]["additional_seam_source"] == "FORBIDDEN"
@@ -248,7 +261,7 @@ def build_payload() -> dict[str, Any]:
     return {
         "artifact": "BHSM_N12_C2_1222_SIGNED_ADJOINT_ASSEMBLY",
         "status": (
-            "SIGNED_FINITE_CORE_HEAT_MINUS_ZETA_SEED_ASSEMBLED_TRANSITION_ADJOINT_OPEN"
+            "SIGNED_FINITE_CORE_ZETA_PULLBACK_BALL_CLOSED_HEAT_AND_UPSTREAM_OPEN"
             if passed else "SIGNED_FINITE_CORE_ADJOINT_NOT_ASSEMBLED"
         ),
         "classification": (
@@ -259,8 +272,10 @@ def build_payload() -> dict[str, Any]:
             "ADJOINT_AND_THE_COMPLETE_INTERNAL_UPSTREAM_INTERFACE_COVECTOR;_"
             "ALL_1222_INTERVAL_TRANSPOSED_DURATION_ACTIONS,_THE_DIRECT_ZETA_"
             "COEFFICIENT_COTANGENT,_AND_THE_RIGOROUSLY_SUPPRESSED_FULL_GRADED_"
-            "HEAT_SEED_ARE_NOW_CLOSED,_WHILE_THE_NUMERICAL_PARAMETRIC_OR_"
-            "INTERVAL_STATE_TRANSITION_ADJOINT_AND_UPSTREAM_PULLBACK_REMAIN_OPEN"
+            "HEAT_SEED_ARE_NOW_CLOSED;_THE_C2_ZETA_STATE_TRANSITION_PULLBACK_"
+            "IS_CERTIFIED_AS_A_RESET_COTANGENT_NORM_BALL_WITHOUT_TRANSITION_"
+            "MATRICES,_WHILE_ITS_SIGNED_VALUE,_THE_HEAT_GEOMETRY_CONTRACTION,_"
+            "AND_THE_UPSTREAM_PULLBACK_REMAIN_OPEN"
         ),
         "exact_recurrence": {
             "history": "Y_(j+1)=Phi_j(Y_j),_x_j=log_R4(Y_j),_h_j=H_j(Y_j)",
@@ -287,12 +302,13 @@ def build_payload() -> dict[str, Any]:
             "joint_heat_cotangent_reverse_seed": "CLOSED",
             "direct_zeta_coefficient_cotangent": "CLOSED_COMPONENTWISE_ON_FINITE_CORE_FAMILY",
             "full_graded_heat_cotangent_seed": "CERTIFIED_SUPPRESSED_NOT_ZEROED",
+            "C2_zeta_state_transition_pullback": "CERTIFIED_NORM_BALL_SIGNED_VALUE_OPEN",
             "zero_external_source_semantics": "CLOSED_ONLY_J_ext",
             "moving_duration_included": True,
             "proof_center_used_as_physical_history": False,
-            "numerical_parametric_or_interval_BHSM_adjoint": "OPEN_CURRENT_OWNER",
+            "numerical_parametric_or_interval_BHSM_adjoint": "ZETA_NORM_PULLBACK_CLOSED_SIGNED_CENTER_OPEN",
             "complete_internal_upstream_history_covector": "OPEN_CURRENT_OWNER",
-            "actual_joint_graded_heat_minus_zeta_cotangent": "FINITE_CORE_SEED_ENCLOSED_TRANSITION_PULLBACK_OPEN",
+            "actual_joint_graded_heat_minus_zeta_cotangent": "ZETA_RESET_BALL_CLOSED_HEAT_GEOMETRY_CONTRACTION_OPEN",
             "maximal_projected_tail": "OPEN_AFTER_FINITE_CORE_FORCE_NET",
             "actual_projected_zero_source_force": "OPEN",
         },
@@ -305,6 +321,7 @@ def build_payload() -> dict[str, Any]:
                 "single closed-system joint heat cotangent reverse seed",
                 "direct finite-core zeta node-radius and moving-duration cotangent",
                 "full graded finite-core heat seed as a nonzero log-space enclosure",
+                "C2 finite-core zeta state-transition pullback as an action-dual norm ball",
                 "only external J_ext is zeroed after joint differentiation",
             ],
             "INVALIDATED": [
@@ -315,14 +332,15 @@ def build_payload() -> dict[str, Any]:
             "OPEN": [
                 "numerical parametric or interval BHSM reverse sweep",
                 "complete upstream C1-to-E1 signed covector",
-                "numerical state-transition pullback of the enclosed heat-minus-zeta seed",
+                "signed or zero-excluding center of the C2 zeta reset-cotangent ball",
+                "non-scale geometry contraction of the suppressed heat seed",
                 "maximal projected force tail or finite later stop",
             ],
         },
         "exact_next_dependency": (
-            "FEED_THE_EXPLICIT_ZETA_COVECTOR_AND_SEPARATELY_SUPPRESSED_HEAT_"
-            "SEED_TO_A_VALIDATED_PARAMETRIC_OR_INTERVAL_STATE_TRANSITION_"
-            "ADJOINT_USING_THE_CERTIFIED_1222_DURATION_ACTIONS,_COMPLETE_"
+            "USE_THE_CERTIFIED_C2_ZETA_RESET_COTANGENT_BALL_AND_SHARPEN_ITS_"
+            "SIGNED_CENTER_ONLY_IF_REQUIRED_BY_THE_KKT_TEST,_CONTRACT_THE_"
+            "SEPARATELY_SUPPRESSED_HEAT_SEED,_COMPLETE_"
             "THE_INTERNAL_UPSTREAM_AND_CHILD_REVERSE SWEEP_ONCE,_THEN_APPLY_"
             "THE_EXISTING_RESET_AND_PHYSICAL_QUOTIENT_PULLBACKS"
         ),

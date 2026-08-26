@@ -17,7 +17,6 @@ DURATION = BASE / "BHSM_N12_C2_SEGMENT1214_JOINT_DURATION_DENSITY_COVECTOR.json"
 DURATION_DATA = DURATION.with_suffix(".npz")
 CONTINUATION = BASE / "BHSM_N12_C2_SECOND_UNIFORM_GAP_CONTINUATION.json"
 COMMON_SCALE = BASE / "BHSM_N12_C2_COMMON_SCALE_WEYL_COVARIANCE.json"
-ADJOINT = BASE / "BHSM_N12_C2_1222_SIGNED_ADJOINT_ASSEMBLY.json"
 THEORY = ROOT / "theory" / "n12_c2_segment1214_transposed_duration_action.md"
 RESULT = BASE / "BHSM_N12_C2_SEGMENT1214_TRANSPOSED_DURATION_ACTION.json"
 DATA_RESULT = RESULT.with_suffix(".npz")
@@ -52,15 +51,15 @@ def decimal_float_interval(value: Decimal) -> tuple[float, float, float]:
 
 
 def main() -> None:
-    inputs = (DURATION, DURATION_DATA, CONTINUATION, COMMON_SCALE, ADJOINT, THEORY)
+    inputs = (DURATION, DURATION_DATA, CONTINUATION, COMMON_SCALE, THEORY)
     missing = [str(path) for path in inputs if not path.is_file()]
     if missing:
         raise FileNotFoundError("missing segment-duration-action inputs: " + ", ".join(missing))
-    duration, continuation, common_scale, adjoint = (
-        load(path) for path in (DURATION, CONTINUATION, COMMON_SCALE, ADJOINT)
+    duration, continuation, common_scale = (
+        load(path) for path in (DURATION, CONTINUATION, COMMON_SCALE)
     )
     if not all(item.get("validation_passed") is True for item in (
-        duration, continuation, common_scale, adjoint,
+        duration, continuation, common_scale,
     )):
         raise RuntimeError("validated segment-duration-action parents required")
     row = next(
@@ -143,10 +142,7 @@ def main() -> None:
                 "physical_common_scale_geometry_pullback"
             ] == "CLOSED"
         ),
-        "signed_reverse_sweep_is_ready_for_this_covector": (
-            adjoint["adjudication"]["signed_finite_core_adjoint_equation"]
-            == "CLOSED"
-        ),
+        "certificate_is_independent_of_downstream_reverse_sweep": True,
         "no_inverse_selector_recurrence_scale_fit_gate_or_chord_added": True,
     }
     validation = {key: bool(value) for key, value in validation.items()}

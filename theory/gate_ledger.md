@@ -349,7 +349,16 @@
   contraction cancels exactly.  The incoming formation contribution is
   routed through the upstream history adjoint, not added as a seam source.
   Together with the separately suppressed nonzero heat enclosure this closes
-  the finite-core coefficient seed.  The validated state-transition pullback,
+  the finite-core coefficient seed. Its C2 reset pullback is recorded in the
+  next theorem; the signed center and upstream/maximal pieces remain open.
+- C2 finite-core zeta reset-cotangent enclosure:
+  `C2_FINITE_CORE_ZETA_RESET_COTANGENT_BALL_CERTIFIED`. The 1,223 accumulated
+  node-radius action bounds and 1,222 transposed exact duration-action balls
+  contract directly with the zeta coefficient intervals. This yields an
+  ambient action-dual radius `6.135151598985376e-15`, which also bounds the
+  orthogonally projected physical quotient. No transition matrix is formed or
+  inverted. The zero-centered ball contains zero and is not a zero-force
+  claim; its signed center, the suppressed-heat non-scale contraction,
   upstream `C1` covector, and maximal projected tail remain open.
 - The actual same-action replacement residual is the heat-minus-zeta force,
   `D_Phi Gamma_heat-D_Phi Gamma_SM^zeta`, because the certified local root

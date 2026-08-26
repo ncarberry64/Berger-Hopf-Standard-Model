@@ -75,8 +75,10 @@ all 1,222 linear elements, exact exponential moments give the 1,223
 node-radius and 1,222 moving-duration components. They are enclosed
 componentwise on the certified family and satisfy the common-scale Ward
 identity. Together with the separately retained nonzero log-space heat
-enclosure, this closes the finite-core coefficient seed. It does not perform
-the state-transition reverse pullback.
+enclosure, this closes the finite-core coefficient seed. The accumulated node
+actions and all transposed duration actions then pull the zeta part to the C2
+reset image as a certified action-dual norm ball without constructing a
+transition matrix. The ball contains zero, so its signed center remains open.
 
 The owner-authorized source ontology now fixes the remaining terminology.
 Only the external birth/Cauchy datum `J_ext` is zeroed, after the complete
@@ -149,14 +151,14 @@ nonnegative and `W_phys=0`. The complete graded seam trace remains open.
 The remaining unmatched data are geometric and pathwise.  Modulo the closed
 common-scale direction, the complete radius-plus-duration first-jet norm and
 finite-core heat-minus-zeta coefficient seed are certified, but the validated
-state-transition backward-adjoint covector, upstream-history pullback, and the
-noncompact maximal tail are not.  The common pair/contact incidence and
+signed zeta center, suppressed-heat geometry contraction, upstream-history
+pullback, and the noncompact maximal tail are not. The common pair/contact incidence and
 heat-minus-zeta trace functional are valid conditional consumers; broad seam
 intervals and isolated probes cannot replace their realized inputs.
 
-Accordingly the next construction pulls the explicit zeta covector and
-separately suppressed heat seed through a validated interval state-transition
-adjoint using the already-certified duration actions, composes the complete
-upstream `C1` covector and exact common-scale component, and tests the result
-as a projected finite-core Cauchy net. The 1,222-core edge remains an
+Accordingly the next construction uses the certified zeta reset ball,
+sharpens its signed center only if required by the KKT test, contracts the
+separately suppressed heat seed, composes the complete upstream `C1` covector
+and exact common-scale component, and tests the result as a projected
+finite-core Cauchy net. The 1,222-core edge remains an
 artificial Friedrichs exhaustion edge, not an event or canonical stop.

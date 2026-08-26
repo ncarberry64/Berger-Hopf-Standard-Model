@@ -360,7 +360,7 @@ def test_replacement_force_is_constraint_projected_without_reset_selection() -> 
     assert "direct zeta node-radius and moving-duration cotangent is componentwise closed" in dag[
         "G7_08_FORCE"
     ]["physical_meaning"]
-    assert "validated state-transition reverse pullback" in dag[
+    assert "certify the C2 zeta reset-cotangent norm ball without a transition matrix" in dag[
         "G7_08_FORCE"
     ]["physical_meaning"]
     assert "neither grading nor multiplicity is missing" in dag[
@@ -377,6 +377,11 @@ def test_replacement_force_is_constraint_projected_without_reset_selection() -> 
     assert (
         "artifacts/flagship_integration/"
         "BHSM_N12_GATE7_DIRECT_ZETA_COEFFICIENT_COTANGENT.json"
+        in dag["G7_08_FORCE"]["provenance"]
+    )
+    assert (
+        "artifacts/flagship_integration/"
+        "BHSM_N12_GATE7_C2_FINITE_CORE_ZETA_RESET_COTANGENT_ENCLOSURE.json"
         in dag["G7_08_FORCE"]["provenance"]
     )
     assert (

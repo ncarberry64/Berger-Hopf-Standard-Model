@@ -27,3 +27,8 @@ of `Delta_s` are all retained in the action-dual radius.
 This closes only segment 1214.  It neither substitutes a proof center for a
 physical history nor claims the remaining 1,221 segment actions, the complete
 signed reverse sweep, the graded heat-minus-zeta force, or Gate 7.
+
+The certificate is an upstream input to the all-segment duration coverage and
+the signed reverse-adjoint assembly.  It therefore has no dependency on either
+downstream artifact; this acyclic provenance order is part of the reproducible
+claim.

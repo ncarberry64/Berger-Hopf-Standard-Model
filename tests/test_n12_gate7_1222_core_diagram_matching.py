@@ -42,7 +42,10 @@ def test_gate7_1222_core_diagram_matching() -> None:
         "VALID_MATCH_COMPLETE_FINITE_CORE_SEED_SUPPRESSED"
     )
     assert verdicts["DIRECT_ZETA_NODE_AND_MOVING_DURATION_COTANGENT"] == (
-        "VALID_MATCH_COMPONENTWISE_CLOSED_TRANSITION_PULLBACK_OPEN"
+        "VALID_MATCH_COMPONENTWISE_COEFFICIENT_CLOSED"
+    )
+    assert verdicts["C2_ZETA_RESET_COTANGENT_PULLBACK"] == (
+        "VALID_MATCH_NORM_BALL_CLOSED_SIGNED_CENTER_OPEN"
     )
     assert payload["adjudication"]["finite_event_or_canonical_stop"] == "NOT_REACHED"
     assert payload["adjudication"]["stored_fixed_channel_1064_to_1222_heat_increment"] == "CERTIFIED_SUPPRESSED_IN_LOG_SPACE"
@@ -62,8 +65,11 @@ def test_gate7_1222_core_diagram_matching() -> None:
     assert payload["adjudication"][
         "direct_zeta_finite_core_coefficient_cotangent"
     ] == "CERTIFIED_COMPONENTWISE"
+    assert payload["adjudication"]["C2_zeta_reset_cotangent_pullback"] == (
+        "CERTIFIED_NORM_BALL_SIGNED_CENTER_OPEN"
+    )
     assert payload["adjudication"]["finite_core_heat_minus_zeta_seed"] == (
-        "CLOSED_ENCLOSURE_TRANSITION_PULLBACK_OPEN"
+        "ZETA_PULLBACK_BALL_CLOSED_HEAT_CONTRACTION_OPEN"
     )
     assert payload["adjudication"][
         "actual_per_level_joint_operator_family"

@@ -26,6 +26,13 @@ def test_segment1214_transposed_duration_action() -> None:
     assert payload["adjudication"]["remaining_1221_segment_duration_actions"] == (
         "OPEN"
     )
+    assert payload["validation"][
+        "certificate_is_independent_of_downstream_reverse_sweep"
+    ] is True
+    assert not any(
+        "SIGNED_ADJOINT_ASSEMBLY" in relative
+        for relative in payload["inputs"]
+    )
     assert payload["adjudication"]["Gate7"] == "OPEN"
     assert payload["FULL_BHSM_COMPLETE"] is False
     for relative, digest in payload["inputs"].items():
