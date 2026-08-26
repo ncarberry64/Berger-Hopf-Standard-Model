@@ -14,13 +14,20 @@ import sys
 
 ROOT = Path(__file__).resolve().parents[1]
 BASE = ROOT / "artifacts" / "flagship_integration"
-ROW_ENGINE = ROOT / "scripts" / "audit_n12_c2_reduced_ddelta_operator_majorant.py"
+ENDPOINT_ROW_ENGINE = (
+    ROOT / "scripts" / "audit_n12_c2_reduced_ddelta_operator_majorant.py"
+)
+SEGMENT_ROW_ENGINE = (
+    ROOT / "scripts" / "audit_n12_c2_segment1214_joint_ddelta_operator_majorant.py"
+)
 ONE_AXIS = (
     ROOT / "src" / "bhsm" / "interface"
     / "aether_retained_action_one_axis_interval.py"
 )
-ROW_DIRECTORY = BASE / ".n12_c2_complete_cb_rows"
-RADIUS = 5.5104723095444935e-11
+ENDPOINT_ROW_DIRECTORY = BASE / ".n12_c2_complete_cb_rows"
+SEGMENT_ROW_DIRECTORY = BASE / ".n12_c2_segment1214_joint_cb_rows"
+ENDPOINT_RADIUS = 5.5104723095444935e-11
+SEGMENT_RADIUS = 5.5212888273161885e-11
 
 
 def sha256(path: Path) -> str:
@@ -30,7 +37,7 @@ def sha256(path: Path) -> str:
     return hashlib.sha256(payload).hexdigest().upper()
 
 
-def provenance_paths() -> list[Path]:
+def provenance_paths(row_engine: Path) -> list[Path]:
     names = [
         "BHSM_N12_C2_BORDERED_HARD_RESPONSE_MATRIX.json",
         "BHSM_N12_C2_BORDERED_HARD_RESPONSE_MATRIX.npz",
@@ -44,7 +51,10 @@ def provenance_paths() -> list[Path]:
         "BHSM_N12_C2_SIGNED_FIRST_COEFFICIENT_VECTORS.npz",
         "BHSM_N12_C2_COMMON_SCALE_WEYL_COVARIANCE.json",
     ]
-    return [BASE / name for name in names] + [ROW_ENGINE, ONE_AXIS]
+    engines = [row_engine, ONE_AXIS]
+    if row_engine == SEGMENT_ROW_ENGINE:
+        engines.insert(0, ENDPOINT_ROW_ENGINE)
+    return [BASE / name for name in names] + engines
 
 
 def parse_rows(specification: str) -> list[int]:
@@ -69,9 +79,18 @@ def main() -> None:
     parser.add_argument("--rows", default="1:98")
     parser.add_argument("--result")
     parser.add_argument("--no-reuse", action="store_true")
+    parser.add_argument(
+        "--profile", choices=("endpoint", "segment1214"), default="endpoint"
+    )
     args = parser.parse_args()
     rows = parse_rows(args.rows)
-    paths = provenance_paths()
+    segment_profile = args.profile == "segment1214"
+    row_engine = SEGMENT_ROW_ENGINE if segment_profile else ENDPOINT_ROW_ENGINE
+    row_directory = (
+        SEGMENT_ROW_DIRECTORY if segment_profile else ENDPOINT_ROW_DIRECTORY
+    )
+    radius = SEGMENT_RADIUS if segment_profile else ENDPOINT_RADIUS
+    paths = provenance_paths(row_engine)
     missing = [str(path) for path in paths if not path.is_file()]
     if missing:
         raise FileNotFoundError("missing cb row-sweep inputs: " + ", ".join(missing))
@@ -79,14 +98,17 @@ def main() -> None:
     fingerprint = hashlib.sha256(
         json.dumps(inputs, sort_keys=True).encode("utf-8")
     ).hexdigest().upper()
-    ROW_DIRECTORY.mkdir(parents=True, exist_ok=True)
+    row_directory.mkdir(parents=True, exist_ok=True)
     result_path = (
         Path(args.result).resolve() if args.result else
-        BASE / f".tmp_BHSM_N12_C2_COMPLETE_CB_ROWS_{rows[0]:03d}_{rows[-1]:03d}.json"
+        BASE / (
+            f".tmp_BHSM_N12_C2_{'SEGMENT1214_JOINT_' if segment_profile else ''}"
+            f"COMPLETE_CB_ROWS_{rows[0]:03d}_{rows[-1]:03d}.json"
+        )
     )
     records: list[dict[str, object]] = []
     for count, row in enumerate(rows, start=1):
-        row_path = ROW_DIRECTORY / f"row_{row:03d}.json"
+        row_path = row_directory / f"row_{row:03d}.json"
         reusable = False
         if row_path.is_file() and not args.no_reuse:
             stored = json.loads(row_path.read_text(encoding="utf-8"))
@@ -104,7 +126,7 @@ def main() -> None:
             environment["BHSM_C2_DIAGNOSTIC_ROW_RESULT"] = str(row_path)
             completed = subprocess.run(
                 [
-                    sys.executable, str(ROW_ENGINE), "--signed-row", str(row),
+                    sys.executable, str(row_engine), "--signed-row", str(row),
                     "--cb-only",
                 ],
                 cwd=ROOT,
@@ -152,13 +174,15 @@ def main() -> None:
                 float(item["c_i_radius_needed"]) for item in records
             ),
             "lambda_i_radius_needed_global": math.nextafter(
-                986.016684739049 * RADIUS, math.inf
+                986.016684739049 * radius, math.inf
             ),
             "common_scale_row_0": (
                 "EXCLUDED_FROM_PATHWISE_JACOBI_BY_CERTIFIED_EXACT_"
                 "COMMON_SCALE_WEYL_COVARIANCE"
             ),
             "sweep_input_fingerprint": fingerprint,
+            "profile": args.profile,
+            "state_action_radius": radius,
             "inputs": inputs,
             "rows": records,
             "validation_passed": True,

@@ -13,6 +13,7 @@ from __future__ import annotations
 import hashlib
 import json
 import math
+import os
 from pathlib import Path
 
 import numpy as np
@@ -27,13 +28,24 @@ BORDERED_DATA = BORDERED.with_suffix(".npz")
 GROWTH = BASE / "BHSM_N12_C2_FRESH_CHART_FIXED_S_GROWTH.json"
 RESPONSE = BASE / "BHSM_N12_C2_CANCELLED_FIELD_LOHNER_STEP.json"
 FIELD = BASE / "BHSM_N12_C2_EXACT_CENTER_FIXED_S_FIELD_MATRIX.json"
-SECOND_ROW = BASE / "BHSM_N12_C2_SUPPRESSED_HARD_RESPONSE_ROW_CERTIFICATE.json"
-THEORY = ROOT / "theory" / "n12_c2_complete_suppressed_r_operator.md"
-RESULT = BASE / "BHSM_N12_C2_COMPLETE_SUPPRESSED_R_OPERATOR.json"
+SECOND_ROW = Path(os.environ.get(
+    "BHSM_C2_SUPPRESSED_ROW_INPUT",
+    BASE / "BHSM_N12_C2_SUPPRESSED_HARD_RESPONSE_ROW_CERTIFICATE.json",
+)).resolve()
+THEORY = Path(os.environ.get(
+    "BHSM_C2_COMPLETE_SUPPRESSED_R_THEORY",
+    ROOT / "theory" / "n12_c2_complete_suppressed_r_operator.md",
+)).resolve()
+RESULT = Path(os.environ.get(
+    "BHSM_C2_COMPLETE_SUPPRESSED_R_RESULT",
+    BASE / "BHSM_N12_C2_COMPLETE_SUPPRESSED_R_OPERATOR.json",
+)).resolve()
 
 QDIM = 37
 TOTAL = 98
-TUBE_RADIUS = 5.5104723095444935e-11
+TUBE_RADIUS = float(os.environ.get(
+    "BHSM_C2_TUBE_RADIUS", "5.5104723095444935e-11"
+))
 PSI_RADIUS = 6.0e-9
 HARD_RADIUS = 40.0
 INFLATION = 1.0 + 1.0e-12

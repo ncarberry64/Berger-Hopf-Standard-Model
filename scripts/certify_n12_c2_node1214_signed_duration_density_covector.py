@@ -5,6 +5,7 @@ from __future__ import annotations
 import hashlib
 import json
 import math
+import os
 from pathlib import Path
 import sys
 
@@ -30,6 +31,9 @@ THEORY = ROOT / "theory" / "n12_c2_node1214_signed_duration_density_covector.md"
 RESULT = BASE / "BHSM_N12_C2_NODE1214_SIGNED_DURATION_DENSITY_COVECTOR.json"
 DATA_RESULT = RESULT.with_suffix(".npz")
 INFLATION = 1.0 + 1.0e-12
+EXPECTED_RADIUS = float(os.environ.get(
+    "BHSM_C2_TUBE_RADIUS", "5.5104723095444935e-11"
+))
 
 
 def _up(value: float) -> float:
@@ -133,7 +137,7 @@ def main() -> None:
             ddelta["adjudication"]["signed_D_Y_Delta_on_exact_node_1214_family"]
             == "CERTIFIED_ZERO_EXCLUDING_ACTION_DUAL_BALL"
         ),
-        "same_node_1214_tube_is_used": radius == 5.5104723095444935e-11,
+        "expected_action_tube_is_used": radius == EXPECTED_RADIUS,
         "transported_Delta_value_stays_positive": delta_interval[0] > 0.0,
         "proper_duration_density_stays_positive": q_interval[0] > 0.0,
         "signed_centered_duration_covector_ball_excludes_zero": ball_margin > 0.0,

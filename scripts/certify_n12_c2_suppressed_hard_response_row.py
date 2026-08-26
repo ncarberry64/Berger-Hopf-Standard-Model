@@ -29,9 +29,18 @@ BORDERED_DATA = BORDERED.with_suffix(".npz")
 RESPONSE_BALL = BASE / "BHSM_N12_C2_CANCELLED_FIELD_LOHNER_STEP.json"
 GROWTH = BASE / "BHSM_N12_C2_FRESH_CHART_FIXED_S_GROWTH.json"
 FIELD = BASE / "BHSM_N12_C2_EXACT_CENTER_FIXED_S_FIELD_MATRIX.json"
-DOMINANT = BASE / "BHSM_N12_C2_FULLY_REDUCED_SIGNED_ROW_CERTIFICATE.json"
-THEORY = ROOT / "theory" / "n12_c2_suppressed_hard_response_row.md"
-RESULT = BASE / "BHSM_N12_C2_SUPPRESSED_HARD_RESPONSE_ROW_CERTIFICATE.json"
+DOMINANT = Path(os.environ.get(
+    "BHSM_C2_REDUCED_ROW_INPUT",
+    BASE / "BHSM_N12_C2_FULLY_REDUCED_SIGNED_ROW_CERTIFICATE.json",
+)).resolve()
+THEORY = Path(os.environ.get(
+    "BHSM_C2_SUPPRESSED_ROW_THEORY",
+    ROOT / "theory" / "n12_c2_suppressed_hard_response_row.md",
+)).resolve()
+RESULT = Path(os.environ.get(
+    "BHSM_C2_SUPPRESSED_ROW_RESULT",
+    BASE / "BHSM_N12_C2_SUPPRESSED_HARD_RESPONSE_ROW_CERTIFICATE.json",
+)).resolve()
 INTERVAL_SOURCE = (
     ROOT / "src" / "bhsm" / "interface"
     / "aether_retained_action_tensor_interval.py"
@@ -40,9 +49,13 @@ INTERVAL_SOURCE = (
 QDIM = 37
 TOTAL = 98
 REDUCED = 61
-DECISIVE_INDEX = 86
+DECISIVE_INDEX = int(os.environ.get("BHSM_C2_ROW_INDEX", "86"))
+if not 0 <= DECISIVE_INDEX < TOTAL:
+    raise ValueError("BHSM_C2_ROW_INDEX is outside the 98-dimensional state")
 POINTS = 96
-RADIUS = 5.5104723095444935e-11
+RADIUS = float(os.environ.get(
+    "BHSM_C2_TUBE_RADIUS", "5.5104723095444935e-11"
+))
 PSI_RADIUS = 6.0e-9
 PSI_I_RADIUS = 1.0e-2
 V_RADIUS = 40.0
@@ -312,6 +325,7 @@ payload = {
         "whole_hard_second": "W_ih=E*(V_hard)_ih",
     },
     "tube": {
+        "row_index": DECISIVE_INDEX,
         "reference_node": 1214,
         "state_action_radius": RADIUS,
         "Psi_radius": PSI_RADIUS,

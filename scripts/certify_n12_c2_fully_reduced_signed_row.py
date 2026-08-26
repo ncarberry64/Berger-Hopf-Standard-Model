@@ -11,7 +11,9 @@ import numpy as np
 
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT / "src"))
-RADIUS = 5.5104723095444935e-11
+RADIUS = float(os.environ.get(
+    "BHSM_C2_TUBE_RADIUS", "5.5104723095444935e-11"
+))
 from bhsm.interface.aether_retained_action_tensor_interval import (
     DirectedInterval as IntervalValue,
     interval_tensor_norm_upper,
@@ -19,13 +21,19 @@ from bhsm.interface.aether_retained_action_tensor_interval import (
 )
 
 B = ROOT / "artifacts" / "flagship_integration"
-RESULT = B / "BHSM_N12_C2_FULLY_REDUCED_SIGNED_ROW_CERTIFICATE.json"
+RESULT = Path(os.environ.get(
+    "BHSM_C2_REDUCED_ROW_RESULT",
+    B / "BHSM_N12_C2_FULLY_REDUCED_SIGNED_ROW_CERTIFICATE.json",
+)).resolve()
 RECON = B / "BHSM_N12_C2_DIRECT_DDELTA_ROW_RECONNAISSANCE.json"
 GROWTH = B / "BHSM_N12_C2_FRESH_CHART_FIXED_S_GROWTH.json"
 CANCELLED = B / "BHSM_N12_C2_CANCELLED_FIELD_LOHNER_STEP.json"
 BORDERED = B / "BHSM_N12_C2_BORDERED_HARD_RESPONSE_MATRIX.json"
 BORDERED_DATA = BORDERED.with_suffix(".npz")
 RECON_DATA = RECON.with_suffix(".npz")
+FIRST = B / "BHSM_N12_C2_SIGNED_FIRST_COEFFICIENT_VECTORS.json"
+FIRST_DATA = FIRST.with_suffix(".npz")
+SEGMENT_DOMAIN = B / "BHSM_N12_C2_SECOND_UNIFORM_GAP_CONTINUATION.json"
 
 
 def sha256(path: Path) -> str:
@@ -38,6 +46,7 @@ def sha256(path: Path) -> str:
 def provenance_inputs() -> list[Path]:
     return [
         RECON, RECON_DATA, GROWTH, CANCELLED, BORDERED, BORDERED_DATA,
+        FIRST, FIRST_DATA, SEGMENT_DOMAIN,
         ROOT / "src" / "bhsm" / "interface" / "aether_retained_action_tensor_interval.py",
         ROOT / "theory" / "n12_c2_fully_reduced_signed_row_certificate.md",
         Path(__file__),
@@ -62,7 +71,10 @@ if os.environ.get("BHSM_REUSE_STORED_REDUCED_ROW") == "1" and RESULT.is_file():
     }, indent=2, sort_keys=True))
     raise SystemExit(0)
 
-q, n, m, iidx = 37, 98, 61, 86
+q, n, m = 37, 98, 61
+iidx = int(os.environ.get("BHSM_C2_ROW_INDEX", "86"))
+if not 0 <= iidx < n:
+    raise ValueError("BHSM_C2_ROW_INDEX is outside the 98-dimensional state")
 with np.load(BORDERED_DATA) as d:
     x = np.asarray(d["center_state"], float)
     wt = np.asarray(d["state_weights"], float)
@@ -71,6 +83,13 @@ with np.load(BORDERED_DATA) as d:
     response = np.asarray(d["bordered_response"], float)
 with np.load(RECON_DATA) as d:
     z = np.asarray(d["third_variation_hard_adjoint"], float)
+with np.load(FIRST_DATA) as d:
+    b_first_center_lo = np.asarray(d["b_first_action_lower"], float)
+    b_first_center_hi = np.asarray(d["b_first_action_upper"], float)
+    c_first_center_lo = np.asarray(d["c_first_action_lower"], float)
+    c_first_center_hi = np.asarray(d["c_first_action_upper"], float)
+    lambda_first_center_lo = np.asarray(d["lambda_first_action_lower"], float)
+    lambda_first_center_hi = np.asarray(d["lambda_first_action_upper"], float)
 
 rw = wt[q:]
 I = np.eye(n)
@@ -161,16 +180,11 @@ def Fh(v, radius):
 
 
 # Certified scalar coefficient intervals.  b and c come from the existing
-# cancelled-field ball; bi and ci are initialized by the stress enclosure and
-# will be tightened after the reduced row is assembled.
+# cancelled-field ball.  The row-specific first coefficients are extracted
+# below from the same outward-rounded first-variation vectors.
 cancelled = json.loads(CANCELLED.read_text(encoding="utf-8"))
 biv = IntervalValue(*cancelled["domain"]["b_psi_interval"])
 civ = IntervalValue(*cancelled["domain"]["c_interval"])
-bi0 = -0.7673819501234217
-ci0 = -1.5164171347435222e-06
-bi_iv = scalar_interval(bi0, 0.08)
-ci_iv = scalar_interval(ci0, 2.0e-06)
-li_iv = scalar_interval(4.108000543207467e-06, 1.0e-7)
 
 pi=P[:,iidx]
 Ptz=lin(P.T, IntervalValue(np.nextafter(z-ZR,-np.inf),np.nextafter(z+ZR,np.inf)))
@@ -191,6 +205,18 @@ pfh=(
     -iv(variable(pb),fixed(Umap),out=1)
 )
 bh=pfh-iv(fixed(I),variable(pb),variable(Vb),out=0)
+bi_iv = IntervalValue(
+    math.nextafter(float(b_first_center_lo[iidx]) - 0.08, -math.inf),
+    math.nextafter(float(b_first_center_hi[iidx]) + 0.08, math.inf),
+)
+ci_iv = IntervalValue(
+    math.nextafter(float(c_first_center_lo[iidx]) - 2.0e-6, -math.inf),
+    math.nextafter(float(c_first_center_hi[iidx]) + 2.0e-6, math.inf),
+)
+li_iv = IntervalValue(
+    math.nextafter(float(lambda_first_center_lo[iidx]) - 1.0e-5, -math.inf),
+    math.nextafter(float(lambda_first_center_hi[iidx]) + 1.0e-5, math.inf),
+)
 
 c2_terms=[
     iv(fixed(i),fixed(I),variable(pb),variable(pb),variable(pb),out=1),
@@ -249,6 +275,14 @@ b2_perr=PDELTA*(
     +absli*Vn+fi_norm
 )
 row_perr=absb*c2_perr+absc*b2_perr
+lambda2_fixed = (
+    iv(fixed(i), fixed(I), variable(pb), variable(pb), out=1)
+    + 2.0 * iv(fixed(i), fixed(EP), variable(pb), out=1)
+)
+lambda2_perr = 2.0 * PDELTA * norm_upper(
+    iv(fixed(i), fixed(R), variable(pb), out=1)
+)
+lambda2_row_upper = norm_upper(lambda2_fixed) + lambda2_perr
 
 fixed = {
     "c_first_row_2_norm_upper": norm_upper(ch),
@@ -266,6 +300,11 @@ total = fixed["cb_row_2_norm_upper"] + perror["cb_row_2_norm_upper"]
 recon = json.loads(RECON.read_text(encoding="utf-8"))
 growth = json.loads(GROWTH.read_text(encoding="utf-8"))
 bordered = json.loads(BORDERED.read_text(encoding="utf-8"))
+segment_domain = json.loads(SEGMENT_DOMAIN.read_text(encoding="utf-8"))
+segment_1214 = next(
+    item for item in segment_domain["continuation"]["rows"]
+    if int(item["global_segment_index"]) == 1214
+)
 ceiling = float(recon["reference_replay"]["rigorous_resolving_row_norm_ceiling"])
 p_second = float(growth["fresh_line_bounds"][
     "selected_line_second_variation_coefficient_upper"
@@ -286,12 +325,15 @@ bi_radius_needed = (fixed["b_second_row_2_norm_upper"] + perror[
 ci_radius_needed = (fixed["c_second_row_2_norm_upper"] + perror[
     "c_second_row_2_norm_upper"
 ]) * RADIUS
+li_radius_needed = lambda2_row_upper * RADIUS
 
 
 validation = {
     "retained_action_tensor_interval_is_outward_rounded": True,
-    "exact_node_1214_state_tube_used": RADIUS == float(
-        recon["reference_replay"]["exact_state_tube_action_radius_upper"]
+    "state_tube_is_within_certified_segment1214_joint_domain": (
+        RADIUS
+        >= float(recon["reference_replay"]["exact_state_tube_action_radius_upper"])
+        and RADIUS <= float(segment_1214["joint_feasibility_upper_radius"])
     ),
     "selected_line_matrix_motion_fits_radius": p_delta_derived < PDELTA,
     "selected_line_value_motion_fits_radius": p_radius_derived < PR,
@@ -302,6 +344,7 @@ validation = {
     "hard_response_motion_fits_radius": v_radius_derived < VR,
     "b_i_interval_is_self_consistent": bi_radius_needed < 0.08,
     "c_i_interval_is_self_consistent": ci_radius_needed < 2.0e-6,
+    "lambda_i_interval_is_self_consistent": li_radius_needed < 1.0e-5,
     "fully_reduced_cb_row_is_below_resolving_ceiling": total < ceiling,
     "nested_hard_adjoint_tubes_not_used": True,
     "s_suppressed_hard_response_row_not_promoted_without_certificate": True,
@@ -319,6 +362,7 @@ payload = {
         "HARD_ADJOINTS_ELIMINATED"
     ),
     "tube": {
+        "row_index": iidx,
         "reference_node": 1214,
         "state_action_radius": RADIUS,
         "Psi_radius": PR,
@@ -342,6 +386,10 @@ payload = {
         "V_hard_radius_derived": v_radius_derived,
         "b_i_radius_needed_from_certified_b_second_row": bi_radius_needed,
         "c_i_radius_needed_from_certified_c_second_row": ci_radius_needed,
+        "lambda_i_radius_needed_from_certified_lambda_second_row": (
+            li_radius_needed
+        ),
+        "lambda_second_row_2_norm_upper": lambda2_row_upper,
         "local_composed_majorant_authority": (
             "Psi_i_and_z_bounds_round_up the cancellation-preserving fixed-"
             "complement majorants 1.4664e7 and 1.6439e7 to 2e7"

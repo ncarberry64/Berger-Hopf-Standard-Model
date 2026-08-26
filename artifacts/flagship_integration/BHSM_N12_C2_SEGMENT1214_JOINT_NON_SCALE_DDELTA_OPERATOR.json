@@ -9,45 +9,53 @@
     "complete_non_scale_D2Delta_operator": "CERTIFIED",
     "complete_non_scale_cb_operator": "CERTIFIED",
     "complete_non_scale_sR_operator": "CERTIFIED",
+    "segment1214_joint_non_scale_D2Delta_operator": "CERTIFIED",
+    "segment1214_joint_non_scale_cb_operator": "CERTIFIED",
+    "segment1214_joint_non_scale_sR_operator": "CERTIFIED",
     "signed_D_Y_Delta_on_exact_node_1214_family": "CERTIFIED_ZERO_EXCLUDING_ACTION_DUAL_BALL",
     "transposed_exact_segment_map_action": "OPEN_CURRENT_OWNER"
   },
-  "artifact": "BHSM_N12_C2_COMPLETE_NON_SCALE_DDELTA_OPERATOR",
-  "classification": "OUTWARD_ROUNDED_COMPLETE_INTRINSIC_QUOTIENT_OPERATOR_WITH_EXACT_COMMON_SCALE_COVARIANCE_SEPARATION",
+  "artifact": "BHSM_N12_C2_SEGMENT1214_JOINT_NON_SCALE_DDELTA_OPERATOR",
+  "classification": "OUTWARD_ROUNDED_COMPLETE_INTRINSIC_QUOTIENT_OPERATOR_ON_THE_FULL_SEGMENT1214_JOINT_DOMAIN",
   "common_scale_direction": {
     "coordinate": 0,
     "numerically_deleted": false,
     "status": "CLOSED_BY_EXACT_PATHWISE_WEYL_COVARIANCE"
   },
-  "data": "artifacts/flagship_integration/BHSM_N12_C2_COMPLETE_NON_SCALE_DDELTA_OPERATOR.npz",
-  "data_SHA256": "F3D47A676B14B8E4C8C5E554E8436DCF7B293B32BA75A8649186C44D2D74FAF9",
+  "data": "artifacts/flagship_integration/BHSM_N12_C2_SEGMENT1214_JOINT_NON_SCALE_DDELTA_OPERATOR.npz",
+  "data_SHA256": "A502D374CC356B419A9391F5FA04DED5A65734CAFC2C2A5F144F9585FC4A7A7B",
   "decomposition": {
-    "complete_non_scale_D2Delta_operator_2_norm_upper": 14.467177203489637,
-    "global_s_suppressed_R_operator_2_norm_upper": 0.04714349493400576,
+    "complete_non_scale_D2Delta_operator_2_norm_upper": 14.467254971356827,
+    "global_s_suppressed_R_operator_2_norm_upper": 0.04722126273036268,
     "identity": "D2Delta=D2(cb)+s*D2R_ON_THE_FIXED_s_FIBER",
-    "non_scale_cb_operator_2_norm_upper": 14.420033708541162
+    "non_scale_cb_operator_2_norm_upper": 14.420033708611994
   },
-  "exact_next_dependency": "APPLY_THIS_ZERO_EXCLUDING_SIGNED_DURATION_SEED_THROUGH_THE_TRANSPOSED_EXACT_FIXED_s_SEGMENT_VARIATIONAL_ACTION_AND_ASSEMBLE_THE_EXISTING_SIGNED_REVERSE_SWEEP",
+  "exact_next_dependency": "DERIVE_THE_SIGNED_DURATION_DENSITY_COVECTOR_ON_THIS_SAME_JOINT_DOMAIN_THEN_APPLY_THE_TRANSPOSED_EXACT_SEGMENT_VARIATIONAL_ACTION",
   "inputs": {
     "artifacts/flagship_integration/BHSM_N12_C2_COMMON_SCALE_WEYL_COVARIANCE.json": "E534478F712202CC0120AEC3FCA110B0B486C1466E0AF0996DB8C9256D3E5A9B",
-    "artifacts/flagship_integration/BHSM_N12_C2_COMPLETE_NON_SCALE_CB_OPERATOR.json": "43188FF7562C1B555D65BA7BFBAD5C2C403125BB9179330EECF1A39698FF3445",
-    "artifacts/flagship_integration/BHSM_N12_C2_COMPLETE_NON_SCALE_CB_OPERATOR.npz": "08A9D2AD80FEEEA447AFEECC3EFA1C7114B725B28B876A15BCAFE1D2B71C7680",
-    "artifacts/flagship_integration/BHSM_N12_C2_COMPLETE_SUPPRESSED_R_OPERATOR.json": "FC167B90D8577E37BC8020319CC17C36D02698E78757C743DFD8A8DC2BE0B911",
     "artifacts/flagship_integration/BHSM_N12_C2_EXACT_CENTER_FIXED_S_FIELD_MATRIX.json": "7962A9051821633517A47DB91EF73EAF2EAD0E5C15BD3E7F2EA707B6E0DC40CA",
     "artifacts/flagship_integration/BHSM_N12_C2_EXACT_CENTER_FIXED_S_FIELD_MATRIX.npz": "163383CD903538866E579BD87366333B8DA04877EFA587F0F999DA00AC1FFDCD",
+    "artifacts/flagship_integration/BHSM_N12_C2_SEGMENT1214_JOINT_COMPLETE_SUPPRESSED_R_OPERATOR.json": "0BA0290488029A32904EF6C87B6AB9B3C4C421BF5BE8D54416C87848407D3B76",
+    "artifacts/flagship_integration/BHSM_N12_C2_SEGMENT1214_JOINT_NON_SCALE_CB_OPERATOR.json": "8A3127CF8CD0EB1CB9292D58E6A892E3E157938DDA98AD530AC814AEF13688F8",
+    "artifacts/flagship_integration/BHSM_N12_C2_SEGMENT1214_JOINT_NON_SCALE_CB_OPERATOR.npz": "970F0CC4EEC4F3F2A4C7AC89375A5B4A668DCDDA39B50235A6CA23E5B0210AF3",
     "scripts/certify_n12_c2_complete_non_scale_ddelta_operator.py": "23662385A4A61EA56AB4FBB7C1CC513A089AAFBBD07C0D0BBB6B6E272EB0E0B3",
-    "theory/n12_c2_complete_non_scale_ddelta_operator.md": "42B2ACB17983494E7B277A5FA1A707AB2FFF0716109ADB5F4C87AD8597769B0A"
+    "scripts/certify_n12_c2_segment1214_joint_non_scale_ddelta_operator.py": "B8C595F16BF37C6A4782C03212CB8502BF5E34BECC1A10F85FBF950F6E09C01C",
+    "theory/n12_c2_segment1214_joint_domain_extension.md": "4FB55C15A76366FF27A30C34194E669E65BAE74FB390AEDA5635F3532F68F210"
   },
-  "status": "C2_COMPLETE_NON_SCALE_DDELTA_COVECTOR_TRANSPORT_CERTIFIED",
+  "status": "C2_SEGMENT1214_JOINT_NON_SCALE_DDELTA_COVECTOR_TRANSPORT_CERTIFIED",
   "transport": {
-    "complete_operator_transport_ceiling": 28.269145704266464,
+    "complete_operator_transport_ceiling": 28.213764845473488,
     "enclosure": "DDelta_non_scale(Y_exact)_IN_DDelta_partial_non_scale(Y_1214)+CLOSED_ACTION_DUAL_BALL(seed_remainder+B_D2Delta*r_tube)",
     "reference_node": 1214,
     "reference_non_scale_partial_DDelta_action_norm": 1.5622300413301646e-09,
     "reference_seed_remainder_action_norm_upper": 4.466595150216365e-12,
-    "state_action_radius": 5.5104723095444935e-11,
-    "transported_action_dual_ball_radius_upper": 8.01676388922048e-10,
-    "transported_covector_zero_exclusion_margin_lower": 7.605536524073559e-10
+    "segment": [
+      1214,
+      1215
+    ],
+    "state_action_radius": 5.5212888273161885e-11,
+    "transported_action_dual_ball_radius_upper": 8.0324552750389e-10,
+    "transported_covector_zero_exclusion_margin_lower": 7.589845138255155e-10
   },
   "validation": {
     "common_scale_is_closed_by_exact_covariance": true,

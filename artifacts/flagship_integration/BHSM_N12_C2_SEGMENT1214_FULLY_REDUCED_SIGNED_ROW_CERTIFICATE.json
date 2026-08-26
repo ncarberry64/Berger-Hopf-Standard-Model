@@ -11,43 +11,43 @@
     "s_suppressed_hard_response_row": "OPEN",
     "signed_D_Y_Delta_on_exact_family": "OPEN_PENDING_s_HARD_ROW"
   },
-  "artifact": "BHSM_N12_C2_FULLY_REDUCED_SIGNED_ROW_CERTIFICATE",
+  "artifact": "BHSM_N12_C2_SEGMENT1214_FULLY_REDUCED_SIGNED_ROW_CERTIFICATE",
   "b_second_term_2_norm_upper": [
     2.477621180299861,
-    2056.847456638005,
-    913010.6042456819,
-    6272602.027172822,
-    3.3901740658637713,
-    27279.64740919793,
-    194.75204149404075,
-    10.819654003656131
+    2056.8474566506934,
+    913010.6042516334,
+    6272602.027216654,
+    3.390174066473293,
+    27279.6474095989,
+    194.7520416537331,
+    10.819654003929001
   ],
   "c_second_term_2_norm_upper": [
-    1.9673275290685176e-07,
-    0.0007502547870737389,
-    0.00012731706028063186,
-    0.30401990507589527,
-    136.54194915008907,
-    931.0523401851641,
-    1.3798048224580498e-05,
+    1.9673275291310376e-07,
+    0.0007502547870856296,
+    0.00012731706028660047,
+    0.3040199050777781,
+    136.5419491509783,
+    931.05234019166,
+    1.37980482263427e-05,
     4.4433058127929565e-06,
-    0.33516908109346305
+    0.335169081101703
   ],
   "classification": "OUTWARD_ROUNDED_RETAINED_ACTION_TENSOR_INTERVAL_WITH_ALL_NESTED_HARD_ADJOINTS_ELIMINATED",
   "exact_next_dependency": "OUTWARD_ROUND_THE_s_SUPPRESSED_HARD_RESPONSE_D2lambda_ROW_ON_THE_SAME_NODE_1214_TUBE_AND_PROVE_IT_BELOW_THE_REMAINING_ROW_BUDGET",
   "first_jacobi_matrix_motion_correction": {
-    "b_second_row_2_norm_upper": 32134213.50046352,
-    "c_second_row_2_norm_upper": 4833.858299374709,
-    "cb_row_2_norm_upper": 2.084058791453492
+    "b_second_row_2_norm_upper": 32134213.500649605,
+    "c_second_row_2_norm_upper": 4833.858299402753,
+    "cb_row_2_norm_upper": 2.0840587914655826
   },
   "fixed_first_jacobi_matrix_interval": {
-    "b_first_row_2_norm_upper": 1224.2073343915365,
-    "b_second_row_2_norm_upper": 6900323.995439582,
-    "c_first_row_2_norm_upper": 0.18268938311582295,
-    "c_second_row_2_norm_upper": 1023.0346490681096,
-    "cb_row_2_norm_upper": 0.5947116352916251
+    "b_first_row_2_norm_upper": 1224.2073344013222,
+    "b_second_row_2_norm_upper": 6900323.995487656,
+    "c_first_row_2_norm_upper": 0.18268938311726668,
+    "c_second_row_2_norm_upper": 1023.034649075168,
+    "cb_row_2_norm_upper": 0.594711635295982
   },
-  "fully_reduced_cb_row_2_norm_upper": 2.6787704267451167,
+  "fully_reduced_cb_row_2_norm_upper": 2.678770426761565,
   "inputs": {
     "artifacts/flagship_integration/BHSM_N12_C2_BORDERED_HARD_RESPONSE_MATRIX.json": "7D36311E1127291DDEF6F778E2F2C21E9F2B2544DBAF74BC743B8E47BC3814AB",
     "artifacts/flagship_integration/BHSM_N12_C2_BORDERED_HARD_RESPONSE_MATRIX.npz": "BC1EEB01C2BFB1A358B7DB14906009DF05CEFAC713749395937F0E5DE0E5AB9E",
@@ -59,29 +59,39 @@
     "artifacts/flagship_integration/BHSM_N12_C2_SIGNED_FIRST_COEFFICIENT_VECTORS.json": "14C1670044DCFE30917BED19CC000AD602A1C0C6F7947B0F0A62297745CA02BF",
     "artifacts/flagship_integration/BHSM_N12_C2_SIGNED_FIRST_COEFFICIENT_VECTORS.npz": "C23A735EE30042855AE56635C3AD110554410B9185649487C45BBAC6A49DA3FA",
     "scripts/certify_n12_c2_fully_reduced_signed_row.py": "A916B404ED1475786F2DC6CD09E2ADE736D421F590E645BFFC9AD5747730FA5B",
+    "scripts/certify_n12_c2_segment1214_joint_suppressed_chain.py": "F77AF9E6E810C4E9A028F1E17AE72D99D218CC619E80C8AF9073197A03D8A853",
     "src/bhsm/interface/aether_retained_action_tensor_interval.py": "0CA4AD7209E7B8C98DBA580B7EA6E0A93953A8A8BF61E7DA00027418C2718C6B",
-    "theory/n12_c2_fully_reduced_signed_row_certificate.md": "EB915F6215F59D263C1AF200E180AC85C8A920982816CFE8FF9A94EED3E928EF"
+    "theory/n12_c2_fully_reduced_signed_row_certificate.md": "EB915F6215F59D263C1AF200E180AC85C8A920982816CFE8FF9A94EED3E928EF",
+    "theory/n12_c2_segment1214_joint_domain_extension.md": "4FB55C15A76366FF27A30C34194E669E65BAE74FB390AEDA5635F3532F68F210"
   },
   "radius_majorants": {
-    "Psi_h_operator_radius_derived": 7.618856105709876,
+    "Psi_h_operator_radius_derived": 7.633811174502193,
     "Psi_i_derivative_operator_upper": 20000000.0,
-    "Psi_i_radius_derived": 0.0011020944619088988,
-    "Psi_radius_derived": 5.657296456442384e-09,
+    "Psi_i_radius_derived": 0.0011042577654632377,
+    "Psi_radius_derived": 5.668401175643107e-09,
     "V_hard_first_derivative_operator": 101032491.62618028,
-    "V_hard_radius_derived": 37.22744053239217,
+    "V_hard_radius_derived": 37.37372066329664,
     "V_hard_second_derivative_operator_upper": 2.451605414396035e+22,
-    "b_i_radius_needed_from_certified_b_second_row": 0.002150987379870503,
-    "c_i_radius_needed_from_certified_c_second_row": 3.2274246412360554e-07,
-    "lambda_i_radius_needed_from_certified_lambda_second_row": 3.4747380544686274e-11,
-    "lambda_second_row_2_norm_upper": 0.6305699147512559,
+    "b_i_radius_needed_from_certified_b_second_row": 0.002155209557568775,
+    "c_i_radius_needed_from_certified_c_second_row": 3.2337597599218113e-07,
+    "lambda_i_radius_needed_from_certified_lambda_second_row": 3.481558625461166e-11,
+    "lambda_second_row_2_norm_upper": 0.6305699148061952,
     "local_composed_majorant_authority": "Psi_i_and_z_bounds_round_up the cancellation-preserving fixed-complement majorants 1.4664e7 and 1.6439e7 to 2e7",
     "z_derivative_operator_upper": 20000000.0,
-    "z_radius_derived": 0.0011020944619088988
+    "z_radius_derived": 0.0011042577654632377
   },
-  "remaining_row_budget": 11.943694223897669,
+  "remaining_row_budget": 11.94369422388122,
   "rigorous_resolving_row_norm_ceiling": 14.622464650642785,
-  "row_to_ceiling_ratio": 0.18319554813403918,
-  "status": "C2_DOMINANT_FULLY_REDUCED_cb_ROW_CERTIFIED;_s_HARD_ROW_OPEN",
+  "row_to_ceiling_ratio": 0.18319554813516403,
+  "segment_joint_domain": {
+    "segment": [
+      1214,
+      1215
+    ],
+    "state_action_radius": 5.5212888273161885e-11,
+    "strict_extension_of_endpoint_tube": true
+  },
+  "status": "C2_SEGMENT1214_DOMINANT_FULLY_REDUCED_cb_ROW_CERTIFIED;_s_HARD_ROW_OPEN",
   "tube": {
     "Psi_h_operator_radius": 8.0,
     "Psi_i_radius": 0.01,
@@ -92,7 +102,7 @@
     "lambda_i_radius": 1e-05,
     "reference_node": 1214,
     "row_index": 86,
-    "state_action_radius": 5.5104723095444935e-11,
+    "state_action_radius": 5.5212888273161885e-11,
     "z_radius": 0.002
   },
   "validation": {
