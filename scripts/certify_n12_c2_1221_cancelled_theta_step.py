@@ -6,6 +6,7 @@ from decimal import Decimal, localcontext
 import hashlib
 import json
 import math
+import os
 from pathlib import Path
 import sys
 
@@ -35,7 +36,15 @@ STEP = BASE / "BHSM_N12_C2_LOHNER_STEP_1221.json"
 RESULT = BASE / "BHSM_N12_C2_CANCELLED_THETA_STEP_FROM_1221.json"
 DATA = RESULT.with_suffix(".npz")
 INFLATION = 1.0 + 1.0e-10
-INPUTS = (CENTER, CENTER_DATA, BORDERED, BORDERED_DATA, GROWTH, STEP)
+EXPANDED = os.environ.get("BHSM_N12_EXPANDED_CANCELLED_THETA", "0") == "1"
+LINE = BASE / "BHSM_N12_C2_1221_FULL_ACTION_EIGENLINE_BALL_R1E8.json"
+ACTION = BASE / "BHSM_N12_C2_1221_CANCELLED_CHART_ACTION_MAJORANTS_R1E8.json"
+if EXPANDED:
+    RESULT = BASE / "BHSM_N12_C2_EXPANDED_CANCELLED_THETA_STEP_FROM_1221.json"
+    DATA = RESULT.with_suffix(".npz")
+INPUTS = (CENTER, CENTER_DATA, BORDERED, BORDERED_DATA, GROWTH, STEP) + (
+    (LINE, ACTION) if EXPANDED else ()
+)
 
 
 def _up(value: float) -> float:
@@ -90,13 +99,34 @@ def build_payload() -> dict:
     radius = 0.5 * (incoming + outer)
     fresh = growth["fresh_line_bounds"]
     pf = growth["fresh_pole_free_bounds"]
-    inverse = _up(1.0 / float(fresh["eigenline_gap_lower"]))
-    p1 = float(fresh["weighted_selected_to_complement_first_variation_on_ball"])
-    p2 = float(fresh["selected_line_second_variation_coefficient_upper"])
-    K2 = _up(
-        float(pf["D4_full_hard_hard_upper"])
-        + float(fresh["selected_eigenvalue_raw_Hessian_bound"]) + 2.0 * p2
-    )
+    if EXPANDED:
+        line = json.loads(LINE.read_text(encoding="utf-8"))
+        if line.get("validation_passed") is not True:
+            raise RuntimeError("validated expanded full-action line required")
+        line_bounds = line["bounds"]
+        inverse = _up(1.0 / float(line_bounds["eigenline_gap_lower"]))
+        p1 = float(
+            line_bounds["weighted_selected_to_complement_first_variation_on_ball"]
+        )
+        p2 = float(line_bounds["selected_line_second_variation_coefficient_upper"])
+        lambda_one = float(line_bounds["selected_eigenvalue_first_derivative_bound"])
+        lambda_two = float(line_bounds["selected_eigenvalue_raw_Hessian_bound"])
+        K2 = _up(
+            float(line_bounds["D4_ambient_ambient_raw_reduced_raw_reduced"])
+            + lambda_two + 2.0 * p2
+        )
+        outer = 2.0 * incoming
+        radius = outer
+    else:
+        inverse = _up(1.0 / float(fresh["eigenline_gap_lower"]))
+        p1 = float(fresh["weighted_selected_to_complement_first_variation_on_ball"])
+        p2 = float(fresh["selected_line_second_variation_coefficient_upper"])
+        lambda_one = float(fresh["selected_eigenvalue_first_derivative_bound"])
+        lambda_two = float(fresh["selected_eigenvalue_raw_Hessian_bound"])
+        K2 = _up(
+            float(pf["D4_full_hard_hard_upper"])
+            + lambda_two + 2.0 * p2
+        )
     relative_center = float(center_record["fixed_descriptor_matrix"][
         "bordered_relative_tangent_tensor_Frobenius_upper"
     ])
@@ -154,7 +184,29 @@ def build_payload() -> dict:
     c0 = float(growth["moving_cubic"]["center_value"])
     c1 = float(growth["moving_cubic"]["center_complete_first_derivative_upper"])
     c2 = float(growth["moving_cubic"]["second_derivative_upper"])
-    R2 = float(prior["second_variation"]["R_second_variation_upper"])
+    if EXPANDED:
+        action = json.loads(ACTION.read_text(encoding="utf-8"))
+        derivatives = next(
+            row["derivative_operator_majorants_0_through_5"]
+            for row in action["sectors"] if row["sector"] == "child"
+        )
+        d3, d4, d5 = map(float, derivatives[3:6])
+        lambda_three = _up(
+            d5 + 6.0 * d4 * p1 + 6.0 * d3 * p1**2 + 2.0 * d3 * p2
+        )
+        configuration = _up(
+            float(np.linalg.norm(q_weights * center[37:74]))
+            + maximum_q_weight * radius
+        )
+        hard_zero = _up(math.hypot(configuration, maximum_reduced_weight * x_bound))
+        hard_one = _up(math.hypot(maximum_q_weight, maximum_reduced_weight * x1_ball))
+        hard_two = _up(maximum_reduced_weight * x2_ball)
+        R2 = _up(
+            lambda_three * hard_zero + 2.0 * lambda_two * hard_one
+            + lambda_one * hard_two
+        )
+    else:
+        R2 = float(prior["second_variation"]["R_second_variation_upper"])
     Delta2 = _up(
         c2 * b_upper + 2.0 * c1 * (b1 + b2 * radius)
         + (abs(c0) + c1 * radius + 0.5 * c2 * radius**2) * b2
@@ -243,12 +295,21 @@ def build_payload() -> dict:
     validation = {key: bool(value) for key, value in validation.items()}
     passed = all(validation.values())
     return {
-        "artifact": "BHSM_N12_C2_CANCELLED_THETA_STEP_FROM_1221",
-        "status": "C2_CANCELLED_THETA_EXTENSION_FROM_1221_CERTIFIED" if passed else "C2_CANCELLED_THETA_STEP_FAILED",
+        "artifact": (
+            "BHSM_N12_C2_EXPANDED_CANCELLED_THETA_STEP_FROM_1221"
+            if EXPANDED else "BHSM_N12_C2_CANCELLED_THETA_STEP_FROM_1221"
+        ),
+        "status": (
+            "C2_EXPANDED_CANCELLED_THETA_EXTENSION_FROM_1221_CERTIFIED"
+            if passed and EXPANDED else
+            "C2_CANCELLED_THETA_EXTENSION_FROM_1221_CERTIFIED"
+            if passed else "C2_CANCELLED_THETA_STEP_FAILED"
+        ),
         "domain": {
             "incoming_tube_radius": incoming,
             "selected_radius": radius,
             "response_self_consistency": response_self,
+            "expanded_full_action_line_consumed": EXPANDED,
             "b_psi_interval": [b_lower, b_upper],
             "Delta_absolute_upper": Delta_abs,
             "lapse_interval": coefficient["root_lapse_interval"],

@@ -2469,3 +2469,24 @@ Exact next object:
   bordered-response and cancelled-field tube closure remain the next step.
 - Gate 7: `ACTIVE`; Gate 8: `LOCKED`; chord 3: `UNAUTHORIZED`;
   frozen predictions unchanged; `FULL_BHSM_COMPLETE=FALSE`.
+
+## N=12 expanded cancelled-theta finite cover
+
+- Expanded response ball radius: `1.9006e-10`.
+- Complete bordered-response self-consistency: `<0.062`.
+- Certified forward cancelled-theta segments: `16`.
+- Signed descriptor center:
+  `1.7736e-20 -> 2.3003e-20`.
+- Final joint center-path plus tube use: `<1.245e-10`, strictly inside the
+  expanded ball.
+- Branch 24, positive lapse, positive signed descriptor, and positive proper
+  duration on every segment: `CERTIFIED`.
+- `Delta>0` required: `FALSE`.
+- Final lower descriptor interval approaches zero because the independent
+  absolute-`Delta` scalar enclosure loses descriptor--state correlation:
+  `PROOF_WRAPPING_NOT_A_CANONICAL_STOP`.
+- Exact next owner: a sheared/coupled descriptor tube preserving the
+  fixed-fiber incidence, then recentered repetition toward capture or a
+  genuine retained stop.
+- Gate 7: `ACTIVE`; Gate 8: `LOCKED`; chord 3: `UNAUTHORIZED`;
+  frozen predictions unchanged; `FULL_BHSM_COMPLETE=FALSE`.
