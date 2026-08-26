@@ -18,6 +18,10 @@ def test_direct_delta_identity_and_one_row_reduction_are_fail_closed() -> None:
     payload = _payload()
     assert payload["validation_passed"] is True
     assert payload["adjudication"]["direct_signed_Delta_recombination"] == "DERIVED"
+    assert payload["adjudication"]["selected_line_b_psi_inverse_free_identity"] == "DERIVED"
+    assert payload["adjudication"]["hard_response_evaluation"] == (
+        "SPECTRAL_COMPLEMENT_NOT_BORDERED_SOLVE"
+    )
     assert payload["adjudication"]["full_98_by_98_D2Delta_norm_required"] is False
     assert payload["adjudication"]["one_dominant_D2Delta_row_sufficient"] is True
     assert payload["adjudication"]["rigorous_dominant_row_enclosure_on_exact_tube"] == "OPEN"
@@ -30,6 +34,10 @@ def test_two_mesh_row_is_only_diagnostic() -> None:
     assert diagnostic["authority"] == "DIAGNOSTIC_ONLY_NOT_AN_INTERVAL_OR_ANALYTIC_BOUND"
     assert diagnostic["relative_mesh_discrepancy"] < 0.02
     assert diagnostic["fine_row_to_rigorous_ceiling_ratio"] < 1.0e-4
+    replay = payload["reference_replay"]
+    assert replay["stored_minus_inverse_free_b_psi"] > 0.0
+    assert replay["certified_Delta_interval"][0] < replay["direct_Dlambda_N_Delta"]
+    assert replay["direct_Dlambda_N_Delta"] < replay["certified_Delta_interval"][1]
     with np.load(DATA) as data:
         rows = np.asarray(data["direct_D2Delta_rows"], dtype=float)
         assert rows.shape == (2, 98)

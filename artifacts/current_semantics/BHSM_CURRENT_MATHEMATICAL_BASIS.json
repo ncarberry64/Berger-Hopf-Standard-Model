@@ -16,7 +16,7 @@
     "artifacts/flagship_integration/BHSM_N12_C2_1222_PARAMETRIC_BASE_FAMILY.json": "FE013A1E27EC733B931CD136F2597C2AD2DF815EF3999A735ABA238359DA87D7",
     "artifacts/flagship_integration/BHSM_N12_C2_1222_SIGNED_ADJOINT_ASSEMBLY.json": "2FCA1DC258F0FC70230813DAEC9A72E85280F7D1371990EB4C63DEC71332736C",
     "artifacts/flagship_integration/BHSM_N12_C2_CLASS_REDUCED_MAXIMAL_RESPONSE.json": "DA82F5036004E115A13E53B369B51A92FD9A21B81FFEF44A0656C4DB11FF38B8",
-    "artifacts/flagship_integration/BHSM_N12_C2_DIRECT_DDELTA_ROW_RECONNAISSANCE.json": "D1788DB8C290DA450BD171A1CC8AF87D0D879594EBF7B43101DD5892FCE280E8",
+    "artifacts/flagship_integration/BHSM_N12_C2_DIRECT_DDELTA_ROW_RECONNAISSANCE.json": "DE2DDCDB298B196823909E2E373A53128E3047C603D38424914DB24CCCF9C625",
     "artifacts/flagship_integration/BHSM_N12_C2_EXACT_FIXED_S_FIELD_ORACLE.json": "DCE35195F9F6AE9E485F1462FF1F611DB6F4CF266C2CF10C9E49344255A66C88",
     "artifacts/flagship_integration/BHSM_N12_C2_FIXED_SEED_UPSTREAM_FORCE_OWNER.json": "396F39A4F98ECE7F903221EFD01A1C126479EE56DC4F8A72C976501D0D4F8A71",
     "artifacts/flagship_integration/BHSM_N12_C2_INFINITE_HEAT_ZETA_COMPATIBILITY.json": "9AFA86530D09A8C6A14F8F0FE95E60A3A7127498678185A10B83C3252F3E24E7",
@@ -938,10 +938,10 @@
     {
       "action_version": "BHSM-AE-2.0.0",
       "artifact_hashes": {
-        "artifacts/flagship_integration/BHSM_N12_C2_DIRECT_DDELTA_ROW_RECONNAISSANCE.json": "D1788DB8C290DA450BD171A1CC8AF87D0D879594EBF7B43101DD5892FCE280E8"
+        "artifacts/flagship_integration/BHSM_N12_C2_DIRECT_DDELTA_ROW_RECONNAISSANCE.json": "DE2DDCDB298B196823909E2E373A53128E3047C603D38424914DB24CCCF9C625"
       },
       "canonical_id": "C2_DIRECT_DDELTA_ROW_RECONNAISSANCE",
-      "current_status": "DIRECT_IDENTITY_AND_ONE_ROW_SUFFICIENCY_DERIVED_RIGOROUS_ROW_86_REMAINDER_OPEN",
+      "current_status": "INVERSE_FREE_b_AND_DIRECT_DELTA_ONE_ROW_SUFFICIENCY_DERIVED_RIGOROUS_ROW_86_REMAINDER_OPEN",
       "dimensions": "DIMENSIONLESS_OR_OPERATOR_TYPED",
       "domain": "first matrix-Lohner chart around stored proof node 1214",
       "downstream_consumers": [
@@ -955,12 +955,12 @@
         "a full 98 by 98 D2Delta norm remains necessary",
         "proof node 1214 is an exact physical history"
       ],
-      "formula": "Delta=Dlambda[b_Psi*Psi+s*V_hard]; abs(D_i*Delta_exact)>=abs(D_i*Delta_center)-r_seed-sup_row_i*(D2Delta)*r_tube",
+      "formula": "b_Psi=<Psi,f>; V_hard=sum_(a!=selected) Psi_a<Psi_a,f>/(lambda_a-lambda); Delta=Dlambda[b_Psi*Psi+s*V_hard]",
       "frozen_output_status": "NOT_FROZEN_OUTPUT",
       "mathematical_class": "CANCELLATION_PRESERVING_ONE_ROW_REDUCTION",
       "observable_status": "NOT_AN_OBSERVABLE",
       "ontology_version": "BHSM-AE2-ONTOLOGY-1.0.0",
-      "physical_meaning": "The signed denominator recombines exactly before norms, and zero exclusion needs only the dominant action-coordinate Hessian row. Two direct meshes place that diagnostic row about 8.6e5 below the rigorous resolving ceiling, but mesh agreement is not an interval remainder theorem.",
+      "physical_meaning": "The selected-line coefficient is the inverse-free local contraction <Psi,f>, the hard response is confined to the spectral complement, and the signed denominator recombines exactly before norms. Zero exclusion needs only the dominant action-coordinate Hessian row. Two direct meshes place that diagnostic row about 8.6e5 below the rigorous resolving ceiling, but mesh agreement is not an interval remainder theorem.",
       "provenance": [
         "artifacts/flagship_integration/BHSM_N12_C2_DIRECT_DDELTA_ROW_RECONNAISSANCE.json"
       ],

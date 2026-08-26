@@ -16,6 +16,28 @@ c = D lambda[Psi],
 R = D lambda[V_hard].
 ```
 
+The selected-line coefficient itself is inverse-free.  If
+
+```text
+(H-lambda) V_hard + b Psi = f,   <Psi,V_hard>=0,
+```
+
+then multiplication by `Psi^dagger` gives
+
+```text
+b = <Psi,f>.
+```
+
+The hard response is evaluated on the spectral complement,
+
+```text
+V_hard = sum_(a != selected) Psi_a <Psi_a,f>/(lambda_a-lambda),
+```
+
+so a binary eigensystem residual multiplied by the large hard vector cannot
+contaminate `b`.  This is an algebraic identity, not an extra inverse or a new
+physical choice.
+
 This identity is evaluated before any absolute value or operator norm.  It
 therefore preserves the cancellation between the selected-line and hard
 complement contributions that is lost in the earlier product majorant.

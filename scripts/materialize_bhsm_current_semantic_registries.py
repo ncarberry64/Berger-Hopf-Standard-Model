@@ -253,6 +253,10 @@ def verify_current_lineage() -> None:
         == "OPEN_NOT_RESOLVED_BY_COARSE_BOUND"
         and ddelta_row["adjudication"]["direct_signed_Delta_recombination"]
         == "DERIVED"
+        and ddelta_row["adjudication"]["selected_line_b_psi_inverse_free_identity"]
+        == "DERIVED"
+        and ddelta_row["adjudication"]["hard_response_evaluation"]
+        == "SPECTRAL_COMPLEMENT_NOT_BORDERED_SOLVE"
         and ddelta_row["adjudication"]["full_98_by_98_D2Delta_norm_required"]
         is False
         and ddelta_row["adjudication"]["one_dominant_D2Delta_row_sufficient"]

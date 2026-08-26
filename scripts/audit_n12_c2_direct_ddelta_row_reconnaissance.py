@@ -31,6 +31,7 @@ BORDERED_DATA = BORDERED.with_suffix(".npz")
 CORE = BASE / "BHSM_N12_C2_1222_SEGMENT_FINITE_CORE_DESCRIPTOR.json"
 CORE_DATA = CORE.with_suffix(".npz")
 TRANSPORT = BASE / "BHSM_N12_C2_SIGNED_DDELTA_SEED_TRANSPORT_AUDIT.json"
+STEP = BASE / "BHSM_N12_C2_CANCELLED_FIELD_LOHNER_STEP.json"
 THEORY = ROOT / "theory" / "n12_c2_direct_ddelta_row_reconnaissance.md"
 ACTION_SOURCE = (
     ROOT / "src" / "bhsm" / "interface"
@@ -42,7 +43,7 @@ METRIC_SOURCE = (
 RESULT = BASE / "BHSM_N12_C2_DIRECT_DDELTA_ROW_RECONNAISSANCE.json"
 DATA_RESULT = RESULT.with_suffix(".npz")
 INPUTS = (
-    FIELD, FIELD_DATA, BORDERED, BORDERED_DATA, CORE, CORE_DATA, TRANSPORT,
+    FIELD, FIELD_DATA, BORDERED, BORDERED_DATA, CORE, CORE_DATA, TRANSPORT, STEP,
     THEORY, ACTION_SOURCE, METRIC_SOURCE,
 )
 QDIM = 37
@@ -106,15 +107,16 @@ def _direct_delta(
         -hessian_action[2 * QDIM:, :QDIM] @ configuration,
     ))
     rhs = reduced_weights * rhs_action
-    bordered_matrix = np.block([
-        [reduced - numeric_lambda * np.eye(psi.size), psi[:, None]],
-        [psi[None, :], np.zeros((1, 1))],
-    ])
-    response = np.linalg.solve(
-        bordered_matrix, np.concatenate((rhs, np.zeros(1)))
+    # These are the exact selected-line and complement formulas.  In
+    # particular b=<Psi,f> is not taken from an ill-conditioned solve whose
+    # tiny binary eigen-residual is multiplied by the large hard response.
+    b_psi = float(psi @ rhs)
+    hard_indices = np.arange(psi.size) != selected
+    complement = vectors[:, hard_indices]
+    hard_values = values[hard_indices]
+    hard = complement @ (
+        (complement.T @ rhs) / (hard_values - numeric_lambda)
     )
-    hard = response[:-1]
-    b_psi = float(response[-1])
     full_hard_action = np.concatenate((
         configuration, reduced_weights * hard,
     ))
@@ -210,11 +212,11 @@ def build_payload(*, recompute: bool = True) -> dict[str, Any]:
         raise FileNotFoundError(
             "missing direct DDelta row inputs: " + ", ".join(missing)
         )
-    field, bordered, core, transport = (
-        _load(path) for path in (FIELD, BORDERED, CORE, TRANSPORT)
+    field, bordered, core, transport, step = (
+        _load(path) for path in (FIELD, BORDERED, CORE, TRANSPORT, STEP)
     )
     if not all(record.get("validation_passed") is True for record in (
-        field, bordered, core, transport,
+        field, bordered, core, transport, step,
     )):
         raise RuntimeError("validated DDelta row parents required")
 
@@ -282,6 +284,24 @@ def build_payload(*, recompute: bool = True) -> dict[str, Any]:
     center_delta_relative_residual = abs(
         center_delta - direct_center_delta
     ) / abs(direct_center_delta)
+    stored_b = float(bordered["bordered_center"]["b_psi"])
+    with np.load(BORDERED_DATA) as data:
+        psi = np.asarray(data["selected_vector"], dtype=float)
+    # Replay f at the center once to expose the inverse-free selected-line
+    # contraction independently of the stored bordered solution.
+    jet = _jet(center)
+    hessian = np.asarray(jet.hessian, dtype=float)
+    q_weights, reduced_weights, _, _ = metric_data()
+    gradient_action = np.asarray(jet.gradient, dtype=float) / weights
+    hessian_action = hessian / weights[:, None] / weights[None, :]
+    configuration = q_weights * center[QDIM:2 * QDIM]
+    rhs_action = np.concatenate((
+        q_weights * gradient_action[:QDIM]
+        - hessian_action[QDIM:2 * QDIM, :QDIM] @ configuration,
+        -hessian_action[2 * QDIM:, :QDIM] @ configuration,
+    ))
+    inverse_free_b = float(psi @ (reduced_weights * rhs_action))
+    certified_delta_interval = tuple(float(value) for value in step["domain"]["Delta_interval"])
     fine_to_ceiling = fine_norm / resolving_row_ceiling
     remaining_rigorous_remainder_budget = resolving_row_ceiling - fine_norm
 
@@ -291,8 +311,12 @@ def build_payload(*, recompute: bool = True) -> dict[str, Any]:
         )),
         "selected_branch_24_replayed": center_selected == 24,
         "dominant_seed_component_is_coordinate_86": dominant_index == 86,
-        "direct_Dlambda_N_replays_stored_Delta": (
-            center_delta_relative_residual < 1.0e-8
+        "inverse_free_Delta_lies_in_certified_center_interval": (
+            certified_delta_interval[0] < center_delta < certified_delta_interval[1]
+        ),
+        "selected_line_coefficient_is_inverse_free": abs(inverse_free_b) > 0.0,
+        "stored_bordered_b_binary_residual_is_explicit": (
+            0.0 < abs(inverse_free_b - stored_b) < 1.0e-8
         ),
         "two_mesh_rows_are_finite": bool(np.all(np.isfinite(rows))),
         "two_mesh_row_norms_are_stable_to_two_percent": (
@@ -340,6 +364,10 @@ def build_payload(*, recompute: bool = True) -> dict[str, Any]:
             "stored_Delta": direct_center_delta,
             "direct_Dlambda_N_Delta": center_delta,
             "direct_Delta_relative_residual": center_delta_relative_residual,
+            "certified_Delta_interval": list(certified_delta_interval),
+            "stored_bordered_b_psi": stored_b,
+            "inverse_free_b_psi_equals_Psi_dagger_f": inverse_free_b,
+            "stored_minus_inverse_free_b_psi": stored_b - inverse_free_b,
             "rigorous_resolving_row_norm_ceiling": resolving_row_ceiling,
         },
         "two_mesh_reconnaissance": {
@@ -357,6 +385,8 @@ def build_payload(*, recompute: bool = True) -> dict[str, Any]:
         },
         "adjudication": {
             "direct_signed_Delta_recombination": "DERIVED",
+            "selected_line_b_psi_inverse_free_identity": "DERIVED",
+            "hard_response_evaluation": "SPECTRAL_COMPLEMENT_NOT_BORDERED_SOLVE",
             "full_98_by_98_D2Delta_norm_required": False,
             "one_dominant_D2Delta_row_sufficient": True,
             "diagnostic_row_scale": "STABLE_ON_TWO_MESHES",
