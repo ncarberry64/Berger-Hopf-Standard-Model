@@ -114,6 +114,7 @@ def _basis() -> list[dict[str, Any]]:
     p_fixed_seed_owner = "artifacts/flagship_integration/BHSM_N12_C2_FIXED_SEED_UPSTREAM_FORCE_OWNER.json"
     p_tail_support = "artifacts/flagship_integration/BHSM_N12_GATE7_MAXIMAL_TAIL_SUPPORT_REDUCTION.json"
     p_flow_tail = "artifacts/flagship_integration/BHSM_N12_GATE7_OUTGOING_FLOW_TAIL_CLOSURE.json"
+    p_seed_ward_gauge = "artifacts/flagship_integration/BHSM_N12_GATE7_SEED_IMAGE_WARD_GAUGE_AUDIT.json"
     p_parametric_base = "artifacts/flagship_integration/BHSM_N12_C2_1222_PARAMETRIC_BASE_FAMILY.json"
     p_signed_adjoint = "artifacts/flagship_integration/BHSM_N12_C2_1222_SIGNED_ADJOINT_ASSEMBLY.json"
     p_duration_incidence = "artifacts/flagship_integration/BHSM_N12_C2_SIGNED_DURATION_INCIDENCE_OWNER.json"
@@ -384,6 +385,18 @@ def _basis() -> list[dict[str, Any]]:
             current_status="OUTGOING_FLOW_TAIL_CLOSED_SEED_IMAGE_RANK_72_OPEN",
             downstream_consumers=["G7_08_FORCE", "G7_09_SADDLE"],
             forbidden_interpretations=["F0 is discarded from the local force", "F0 is declared a new gauge direction", "the superseded one-sided W_phys initialization is restored", "the rank-72 seed-image tail is convergent without proof"],
+        ),
+        record(
+            "GATE7_SEED_IMAGE_WARD_GAUGE_AUDIT",
+            "range(B_seed)=ker(J_reset[0:26,0:98]), dim=72; BRST_longitudinal+ghost=0 but physical leading heat coefficient=-5 sqrt(pi)",
+            "RESET_SEED_IMAGE_AND_WARD_GAUGE_NONREDUCTION_THEOREM",
+            "MATHEMATICAL_OBJECT",
+            "The complete outgoing seed image is the 72-dimensional constraint-and-ordered-event tangent. No tracked global 98-state gauge generator is available, and neither the principal Calderon slice nor BRST grading annihilates this geometric seed image, so the rank-72 projected Cauchy tail remains the exact owner.",
+            "certified N12 reset Jacobian, launch image, principal-gauge audit, BRST ledger, and intrinsic time-root theorem",
+            [p_seed_ward_gauge],
+            current_status="WARD_GAUGE_SHORTCUTS_CLOSED_INVALID_RANK_72_TAIL_OPEN",
+            downstream_consumers=["G7_08_FORCE", "G7_09_SADDLE"],
+            forbidden_interpretations=["subtract a gauge dimension by count", "promote the principal delta-w delta-beta slice to a global Cauchy quotient", "use BRST grading as a universal zero-force identity", "infer tail convergence from time-root equivalence"],
         ),
         record(
             "C2_1222_PARAMETRIC_BASE_FAMILY",
@@ -842,6 +855,7 @@ def _gates() -> list[dict[str, Any]]:
             "artifacts/flagship_integration/BHSM_N12_C2_FIXED_SEED_UPSTREAM_FORCE_OWNER.json",
             "artifacts/flagship_integration/BHSM_N12_GATE7_MAXIMAL_TAIL_SUPPORT_REDUCTION.json",
             "artifacts/flagship_integration/BHSM_N12_GATE7_OUTGOING_FLOW_TAIL_CLOSURE.json",
+            "artifacts/flagship_integration/BHSM_N12_GATE7_SEED_IMAGE_WARD_GAUGE_AUDIT.json",
             "artifacts/flagship_integration/BHSM_N12_C2_1222_PARAMETRIC_BASE_FAMILY.json",
             "artifacts/flagship_integration/BHSM_N12_C2_1222_SIGNED_ADJOINT_ASSEMBLY.json",
             "artifacts/flagship_integration/BHSM_N12_C2_1222_TRANSPOSED_DURATION_ACTION_COVERAGE.json",

@@ -89,6 +89,7 @@
     "artifacts/flagship_integration/BHSM_N12_GATE7_MAXIMAL_TAIL_SUPPORT_REDUCTION.json": "150BE9D7C1EADE81C263CC805AE0700C1D703073B95CB01FF0001A03C8442CEC",
     "artifacts/flagship_integration/BHSM_N12_GATE7_ONE_SEAM_FULL_GRADED_FINITE_CORE_HEAT_BOUND.json": "934DCD800EE09583E3A214A5F7B4E2AF1686C08D45A278E75880B144DBE582BD",
     "artifacts/flagship_integration/BHSM_N12_GATE7_OUTGOING_FLOW_TAIL_CLOSURE.json": "BFB82254E72FB36886F4F403A9C79AF401E74AD97EC71AA8A90C4BADD62999E4",
+    "artifacts/flagship_integration/BHSM_N12_GATE7_SEED_IMAGE_WARD_GAUGE_AUDIT.json": "D4E82792C554AA939D6077363478E81B54CEBDAF4C6559467AF3E0E73579A37D",
     "artifacts/flagship_integration/BHSM_N12_GATE7_TWO_SEAM_CLOSED_OPERATOR_ASSEMBLY.json": "ED9296981EE926B0570194077F3728E606D4B1A53A8A8BEAE8BB3B4FE9B6C13E",
     "artifacts/flagship_integration/BHSM_N12_INTERVAL_WEIGHT_FIVE_CENTER_LIFT.json": "CF4A6345F0E84F40DD7F3884D061B65A19A45B99F21799426FFD6274EFBBBE57",
     "artifacts/flagship_integration/BHSM_N12_JOINT_FINITE_HISTORY_OPERATOR_DATA_GATE.json": "6668D3057D767E5F2D3AAF4C040D1FBD4264EA2D0CA792D3815EA4130BDED05D",
@@ -881,6 +882,42 @@
       "physical_meaning": "The transverse F0 launch direction moves the birth section along one exact action orbit. Its maximal Weyl and zeta jets are local moving-boundary terms, so only the 72 reset-generated outgoing seed-image directions retain a noncompact coefficient-Jacobi tail.",
       "provenance": [
         "artifacts/flagship_integration/BHSM_N12_GATE7_OUTGOING_FLOW_TAIL_CLOSURE.json"
+      ],
+      "semantic_layer": "MATHEMATICAL_OBJECT",
+      "source_weighting_required": false,
+      "superseded_meanings": [],
+      "tests": [
+        "test_required_fields"
+      ]
+    },
+    {
+      "action_version": "BHSM-AE-2.0.0",
+      "artifact_hashes": {
+        "artifacts/flagship_integration/BHSM_N12_GATE7_SEED_IMAGE_WARD_GAUGE_AUDIT.json": "D4E82792C554AA939D6077363478E81B54CEBDAF4C6559467AF3E0E73579A37D"
+      },
+      "canonical_id": "GATE7_SEED_IMAGE_WARD_GAUGE_AUDIT",
+      "current_status": "WARD_GAUGE_SHORTCUTS_CLOSED_INVALID_RANK_72_TAIL_OPEN",
+      "dimensions": "DIMENSIONLESS_OR_OPERATOR_TYPED",
+      "domain": "certified N12 reset Jacobian, launch image, principal-gauge audit, BRST ledger, and intrinsic time-root theorem",
+      "downstream_consumers": [
+        "G7_08_FORCE",
+        "G7_09_SADDLE"
+      ],
+      "equivalent_forms": [],
+      "forbidden_interpretations": [
+        "subtract a gauge dimension by count",
+        "promote the principal delta-w delta-beta slice to a global Cauchy quotient",
+        "use BRST grading as a universal zero-force identity",
+        "infer tail convergence from time-root equivalence"
+      ],
+      "formula": "range(B_seed)=ker(J_reset[0:26,0:98]), dim=72; BRST_longitudinal+ghost=0 but physical leading heat coefficient=-5 sqrt(pi)",
+      "frozen_output_status": "NOT_FROZEN_OUTPUT",
+      "mathematical_class": "RESET_SEED_IMAGE_AND_WARD_GAUGE_NONREDUCTION_THEOREM",
+      "observable_status": "NOT_AN_OBSERVABLE",
+      "ontology_version": "BHSM-AE2-ONTOLOGY-1.3.0",
+      "physical_meaning": "The complete outgoing seed image is the 72-dimensional constraint-and-ordered-event tangent. No tracked global 98-state gauge generator is available, and neither the principal Calderon slice nor BRST grading annihilates this geometric seed image, so the rank-72 projected Cauchy tail remains the exact owner.",
+      "provenance": [
+        "artifacts/flagship_integration/BHSM_N12_GATE7_SEED_IMAGE_WARD_GAUGE_AUDIT.json"
       ],
       "semantic_layer": "MATHEMATICAL_OBJECT",
       "source_weighting_required": false,

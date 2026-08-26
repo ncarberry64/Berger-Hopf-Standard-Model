@@ -92,6 +92,7 @@ SOURCES = (
     "artifacts/flagship_integration/BHSM_N12_GATE7_MAXIMAL_GRADED_INCOMING_RELATIVE_HEAT_COTANGENT.json",
     "artifacts/flagship_integration/BHSM_N12_GATE7_MAXIMAL_TAIL_SUPPORT_REDUCTION.json",
     "artifacts/flagship_integration/BHSM_N12_GATE7_OUTGOING_FLOW_TAIL_CLOSURE.json",
+    "artifacts/flagship_integration/BHSM_N12_GATE7_SEED_IMAGE_WARD_GAUGE_AUDIT.json",
     "artifacts/flagship_integration/BHSM_N12_C2_SIGNED_DURATION_INCIDENCE_OWNER.json",
     "artifacts/flagship_integration/BHSM_N12_C2_SIGNED_DDELTA_SEED_TRANSPORT_AUDIT.json",
     "artifacts/flagship_integration/BHSM_N12_C2_DIRECT_DDELTA_ROW_RECONNAISSANCE.json",
@@ -216,6 +217,7 @@ def verify_current_lineage() -> None:
     maximal_graded_incoming = loaded["artifacts/flagship_integration/BHSM_N12_GATE7_MAXIMAL_GRADED_INCOMING_RELATIVE_HEAT_COTANGENT.json"]
     maximal_tail_support = loaded["artifacts/flagship_integration/BHSM_N12_GATE7_MAXIMAL_TAIL_SUPPORT_REDUCTION.json"]
     outgoing_flow_tail = loaded["artifacts/flagship_integration/BHSM_N12_GATE7_OUTGOING_FLOW_TAIL_CLOSURE.json"]
+    seed_ward_gauge = loaded["artifacts/flagship_integration/BHSM_N12_GATE7_SEED_IMAGE_WARD_GAUGE_AUDIT.json"]
     duration_incidence = loaded["artifacts/flagship_integration/BHSM_N12_C2_SIGNED_DURATION_INCIDENCE_OWNER.json"]
     ddelta_transport = loaded["artifacts/flagship_integration/BHSM_N12_C2_SIGNED_DDELTA_SEED_TRANSPORT_AUDIT.json"]
     ddelta_row = loaded["artifacts/flagship_integration/BHSM_N12_C2_DIRECT_DDELTA_ROW_RECONNAISSANCE.json"]
@@ -524,6 +526,16 @@ def verify_current_lineage() -> None:
             "remaining_reset_generated_seed_image_tail"
         ] == "OPEN_CURRENT_OWNER"
         and outgoing_flow_tail["claim_boundary"][
+            "remaining_noncompact_tail_dimension_upper"
+        ] == 72
+        and seed_ward_gauge["claim_boundary"]["Ward_BRST_shortcut"]
+        == "CLOSED_INVALID"
+        and seed_ward_gauge["claim_boundary"]["principal_gauge_slice_shortcut"]
+        == "CLOSED_INVALID"
+        and seed_ward_gauge["claim_boundary"][
+            "remaining_reset_generated_seed_image_tail"
+        ] == "OPEN_CURRENT_OWNER"
+        and seed_ward_gauge["claim_boundary"][
             "remaining_noncompact_tail_dimension_upper"
         ] == 72
     ):
