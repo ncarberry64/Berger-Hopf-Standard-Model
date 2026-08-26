@@ -325,6 +325,15 @@ def test_replacement_force_is_constraint_projected_without_reset_selection() -> 
     )
     assert "b_Psi=<Psi,f>" in ddelta_row["formula"]
     assert "w3,w5,wI,wN,wVI,wfi" in ddelta_row["formula"]
+    reduced_row = basis["C2_FULLY_REDUCED_SIGNED_ROW_CERTIFICATE"]
+    assert reduced_row["current_status"] == (
+        "DOMINANT_bc_ROW_CERTIFIED_s_HARD_ROW_OPEN"
+    )
+    assert "14.622464650642785" in reduced_row["formula"]
+    assert any(
+        "bc-row certificate alone" in item
+        for item in reduced_row["forbidden_interpretations"]
+    )
     assert any(
         "two-mesh agreement" in item
         for item in ddelta_row["forbidden_interpretations"]
