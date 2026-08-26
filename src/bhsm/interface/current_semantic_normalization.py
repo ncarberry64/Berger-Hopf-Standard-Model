@@ -117,6 +117,7 @@ def _basis() -> list[dict[str, Any]]:
     p_seed_ward_gauge = "artifacts/flagship_integration/BHSM_N12_GATE7_SEED_IMAGE_WARD_GAUGE_AUDIT.json"
     p_rank72_relative_form = "artifacts/flagship_integration/BHSM_N12_GATE7_RANK72_RELATIVE_FORM_TAIL.json"
     p_rank72_route_adjudication = "artifacts/flagship_integration/BHSM_N12_GATE7_RANK72_MAXIMAL_TAIL_ROUTE_ADJUDICATION.json"
+    p_ae2_boundary_hamiltonian = "artifacts/flagship_integration/BHSM_N12_AE2_CHILD_BOUNDARY_HAMILTONIAN_NON_SUPERSESSION.json"
     p_parametric_base = "artifacts/flagship_integration/BHSM_N12_C2_1222_PARAMETRIC_BASE_FAMILY.json"
     p_signed_adjoint = "artifacts/flagship_integration/BHSM_N12_C2_1222_SIGNED_ADJOINT_ASSEMBLY.json"
     p_duration_incidence = "artifacts/flagship_integration/BHSM_N12_C2_SIGNED_DURATION_INCIDENCE_OWNER.json"
@@ -423,6 +424,18 @@ def _basis() -> list[dict[str, Any]]:
             current_status="FINITE_PREFIX_AND_FINITE_OPTICAL_SHORTCUTS_EXHAUSTED_RANK72_PROJECTED_TAIL_OR_LATER_STOP_OPEN",
             downstream_consumers=["G7_08_FORCE", "G7_09_SADDLE"],
             forbidden_interpretations=["extrapolate a finite-core Poincare gap to the maximal end", "treat another artificial Dirichlet edge as a physical stop", "infer convergence from a small finite-core heat value", "declare the signed relative-trace route impossible from the absolute NHIM no-go"],
+        ),
+        record(
+            "AE2_CHILD_BOUNDARY_HAMILTONIAN_NON_SUPERSESSION",
+            "S_Sigma,F^AE2=0 and delta H_xi^child=integral_boundary(delta Q_xi-i_xi Theta_retained)-delta B_xi^child remains non-executable",
+            "ACTION_VERSION_DEPENDENCY_NON_SUPERSESSION_THEOREM",
+            "MATHEMATICAL_OBJECT",
+            "AE2 closes the fermion transmission domain but adds no complete child covariant symplectic potential, Noether charge assembler, differentiability counterterm/ensemble, or coercive boundary charge; the earlier child-Hamiltonian ownership no-go therefore remains current.",
+            "BHSM-AE-2.0.0 global spin-reset action and retained child boundary ownership ledger",
+            [p_ae2_boundary_hamiltonian],
+            current_status="AE2_FERMION_DOMAIN_CLOSED_CHILD_BOUNDARY_HAMILTONIAN_NOT_ACTION_EXECUTABLE",
+            downstream_consumers=["G7_08_FORCE", "G7_09_SADDLE"],
+            forbidden_interpretations=["relabel the zero reduced constraint energy as H_xi", "treat the global Dirac domain as a localized seam charge", "add a child boundary ensemble for positivity", "zero an internal child or contact response"],
         ),
         record(
             "C2_1222_PARAMETRIC_BASE_FAMILY",
@@ -884,6 +897,7 @@ def _gates() -> list[dict[str, Any]]:
             "artifacts/flagship_integration/BHSM_N12_GATE7_SEED_IMAGE_WARD_GAUGE_AUDIT.json",
             "artifacts/flagship_integration/BHSM_N12_GATE7_RANK72_RELATIVE_FORM_TAIL.json",
             "artifacts/flagship_integration/BHSM_N12_GATE7_RANK72_MAXIMAL_TAIL_ROUTE_ADJUDICATION.json",
+            "artifacts/flagship_integration/BHSM_N12_AE2_CHILD_BOUNDARY_HAMILTONIAN_NON_SUPERSESSION.json",
             "artifacts/flagship_integration/BHSM_N12_C2_1222_PARAMETRIC_BASE_FAMILY.json",
             "artifacts/flagship_integration/BHSM_N12_C2_1222_SIGNED_ADJOINT_ASSEMBLY.json",
             "artifacts/flagship_integration/BHSM_N12_C2_1222_TRANSPOSED_DURATION_ACTION_COVERAGE.json",
@@ -976,7 +990,9 @@ def _gates() -> list[dict[str, Any]]:
                 "one maximal child orbit, so its Weyl derivative is the local "
                 "Riccati/Lie derivative and its zeta derivative is a moving-boundary "
                 "term; the remaining noncompact tail is therefore the rank-72 reset-"
-                "generated outgoing C2 seed image"
+                "generated outgoing C2 seed image; AE2 closes only the fermion "
+                "transmission domain and supplies no complete child boundary "
+                "Hamiltonian or coercive charge"
             )
         predecessor = [] if index == 0 else [GATE_CHAIN[index - 1][0]]
         provenance = sources.get(cid, fallback)

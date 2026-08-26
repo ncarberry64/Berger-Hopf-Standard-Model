@@ -95,6 +95,7 @@ SOURCES = (
     "artifacts/flagship_integration/BHSM_N12_GATE7_SEED_IMAGE_WARD_GAUGE_AUDIT.json",
     "artifacts/flagship_integration/BHSM_N12_GATE7_RANK72_RELATIVE_FORM_TAIL.json",
     "artifacts/flagship_integration/BHSM_N12_GATE7_RANK72_MAXIMAL_TAIL_ROUTE_ADJUDICATION.json",
+    "artifacts/flagship_integration/BHSM_N12_AE2_CHILD_BOUNDARY_HAMILTONIAN_NON_SUPERSESSION.json",
     "artifacts/flagship_integration/BHSM_N12_C2_SIGNED_DURATION_INCIDENCE_OWNER.json",
     "artifacts/flagship_integration/BHSM_N12_C2_SIGNED_DDELTA_SEED_TRANSPORT_AUDIT.json",
     "artifacts/flagship_integration/BHSM_N12_C2_DIRECT_DDELTA_ROW_RECONNAISSANCE.json",
@@ -222,6 +223,7 @@ def verify_current_lineage() -> None:
     seed_ward_gauge = loaded["artifacts/flagship_integration/BHSM_N12_GATE7_SEED_IMAGE_WARD_GAUGE_AUDIT.json"]
     rank72_relative_form = loaded["artifacts/flagship_integration/BHSM_N12_GATE7_RANK72_RELATIVE_FORM_TAIL.json"]
     rank72_route_adjudication = loaded["artifacts/flagship_integration/BHSM_N12_GATE7_RANK72_MAXIMAL_TAIL_ROUTE_ADJUDICATION.json"]
+    ae2_boundary_hamiltonian = loaded["artifacts/flagship_integration/BHSM_N12_AE2_CHILD_BOUNDARY_HAMILTONIAN_NON_SUPERSESSION.json"]
     duration_incidence = loaded["artifacts/flagship_integration/BHSM_N12_C2_SIGNED_DURATION_INCIDENCE_OWNER.json"]
     ddelta_transport = loaded["artifacts/flagship_integration/BHSM_N12_C2_SIGNED_DDELTA_SEED_TRANSPORT_AUDIT.json"]
     ddelta_row = loaded["artifacts/flagship_integration/BHSM_N12_C2_DIRECT_DDELTA_ROW_RECONNAISSANCE.json"]
@@ -562,6 +564,12 @@ def verify_current_lineage() -> None:
         ] == "CLOSED_NO_GO"
         and rank72_route_adjudication["claim_boundary"][
             "rank72_signed_relative_form_tail"
+        ] == "OPEN_CURRENT_OWNER"
+        and ae2_boundary_hamiltonian["claim_boundary"][
+            "AE2_child_boundary_H_xi"
+        ] == "NOT_ACTION_EXECUTABLE"
+        and ae2_boundary_hamiltonian["claim_boundary"][
+            "rank72_joint_heat_minus_zeta_tail"
         ] == "OPEN_CURRENT_OWNER"
     ):
         raise RuntimeError("joint Gate7 source/cotangent frontier is not current")
