@@ -278,6 +278,14 @@ def test_replacement_force_is_constraint_projected_without_reset_selection() -> 
         "BHSM_N12_GATE7_RANK72_RELATIVE_FORM_TAIL.json"
         in dag["G7_08_FORCE"]["provenance"]
     )
+    assert (
+        "artifacts/flagship_integration/"
+        "BHSM_N12_GATE7_RANK72_MAXIMAL_TAIL_ROUTE_ADJUDICATION.json"
+        in dag["G7_08_FORCE"]["provenance"]
+    )
+    assert "finite-core heat suppression is not uniform" in dag["G7_08_FORCE"][
+        "physical_meaning"
+    ]
     assert "does not delete the nonzero common-scale heat trace" in dag["G7_08_FORCE"][
         "physical_meaning"
     ]

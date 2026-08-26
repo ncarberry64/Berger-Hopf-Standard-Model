@@ -94,6 +94,7 @@ SOURCES = (
     "artifacts/flagship_integration/BHSM_N12_GATE7_OUTGOING_FLOW_TAIL_CLOSURE.json",
     "artifacts/flagship_integration/BHSM_N12_GATE7_SEED_IMAGE_WARD_GAUGE_AUDIT.json",
     "artifacts/flagship_integration/BHSM_N12_GATE7_RANK72_RELATIVE_FORM_TAIL.json",
+    "artifacts/flagship_integration/BHSM_N12_GATE7_RANK72_MAXIMAL_TAIL_ROUTE_ADJUDICATION.json",
     "artifacts/flagship_integration/BHSM_N12_C2_SIGNED_DURATION_INCIDENCE_OWNER.json",
     "artifacts/flagship_integration/BHSM_N12_C2_SIGNED_DDELTA_SEED_TRANSPORT_AUDIT.json",
     "artifacts/flagship_integration/BHSM_N12_C2_DIRECT_DDELTA_ROW_RECONNAISSANCE.json",
@@ -220,6 +221,7 @@ def verify_current_lineage() -> None:
     outgoing_flow_tail = loaded["artifacts/flagship_integration/BHSM_N12_GATE7_OUTGOING_FLOW_TAIL_CLOSURE.json"]
     seed_ward_gauge = loaded["artifacts/flagship_integration/BHSM_N12_GATE7_SEED_IMAGE_WARD_GAUGE_AUDIT.json"]
     rank72_relative_form = loaded["artifacts/flagship_integration/BHSM_N12_GATE7_RANK72_RELATIVE_FORM_TAIL.json"]
+    rank72_route_adjudication = loaded["artifacts/flagship_integration/BHSM_N12_GATE7_RANK72_MAXIMAL_TAIL_ROUTE_ADJUDICATION.json"]
     duration_incidence = loaded["artifacts/flagship_integration/BHSM_N12_C2_SIGNED_DURATION_INCIDENCE_OWNER.json"]
     ddelta_transport = loaded["artifacts/flagship_integration/BHSM_N12_C2_SIGNED_DDELTA_SEED_TRANSPORT_AUDIT.json"]
     ddelta_row = loaded["artifacts/flagship_integration/BHSM_N12_C2_DIRECT_DDELTA_ROW_RECONNAISSANCE.json"]
@@ -552,6 +554,15 @@ def verify_current_lineage() -> None:
         and rank72_relative_form["availability_audit"][
             "rank72_maximal_relative_form_bound"
         ] == "ACTUALLY_MISSING"
+        and rank72_route_adjudication["claim_boundary"][
+            "finite_core_shortcut"
+        ] == "CLOSED_INSUFFICIENT"
+        and rank72_route_adjudication["claim_boundary"][
+            "finite_optical_NHIM_absolute_route"
+        ] == "CLOSED_NO_GO"
+        and rank72_route_adjudication["claim_boundary"][
+            "rank72_signed_relative_form_tail"
+        ] == "OPEN_CURRENT_OWNER"
     ):
         raise RuntimeError("joint Gate7 source/cotangent frontier is not current")
     if force_sign_no_go["claim_boundary"]["universal_force_sign_shortcut"] != "CLOSED_INVALID":
