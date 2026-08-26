@@ -29,13 +29,15 @@ FINITE_HEAT = BASE / "BHSM_N12_GATE7_FIXED_CHANNEL_FINITE_CORE_HEAT_BOUND.json"
 FULL_GRADED_HEAT = BASE / "BHSM_N12_GATE7_ONE_SEAM_FULL_GRADED_FINITE_CORE_HEAT_BOUND.json"
 DIRECT_ZETA = BASE / "BHSM_N12_GATE7_DIRECT_ZETA_COEFFICIENT_COTANGENT.json"
 ZETA_PULLBACK = BASE / "BHSM_N12_GATE7_C2_FINITE_CORE_ZETA_RESET_COTANGENT_ENCLOSURE.json"
+KKT_INFO = BASE / "BHSM_N12_GATE7_JOINT_KKT_INFORMATION_GATE.json"
 ADJOINT = BASE / "BHSM_N12_C2_1222_SIGNED_ADJOINT_ASSEMBLY.json"
 CAUCHY = BASE / "BHSM_N12_C2_PROJECTED_ADJOINT_CAUCHY_CRITERION.json"
 THEORY = ROOT / "theory" / "n12_gate7_maximal_graded_cotangent_matching_audit.md"
 INPUTS = (
     LEDGER, BRST, FUNCTIONAL, ONTOLOGY, SEED, DOMAIN, INCOMING, BIRTH_AUDIT,
     BIRTH_LOAD, TWO_SEAM, E0_PROVENANCE, SOURCE_ROLE, ONE_SEAM, CHILD,
-    FINITE_HEAT, FULL_GRADED_HEAT, DIRECT_ZETA, ZETA_PULLBACK, ADJOINT, CAUCHY, THEORY,
+    FINITE_HEAT, FULL_GRADED_HEAT, DIRECT_ZETA, ZETA_PULLBACK, KKT_INFO,
+    ADJOINT, CAUCHY, THEORY,
 )
 
 
@@ -89,12 +91,14 @@ def build_payload() -> dict[str, Any]:
     (
         ledger, brst, functional, ontology, seed, domain, incoming, birth_audit,
         birth_load, two_seam, e0_provenance, source_role, one_seam, child,
-        finite_heat, full_graded_heat, direct_zeta, zeta_pullback, adjoint, cauchy,
+        finite_heat, full_graded_heat, direct_zeta, zeta_pullback, kkt_info,
+        adjoint, cauchy,
     ) = map(_load, INPUTS[:-1])
     records = (
         ledger, brst, functional, ontology, seed, domain, incoming, birth_audit,
         birth_load, two_seam, e0_provenance, source_role, one_seam, child,
-        finite_heat, full_graded_heat, direct_zeta, zeta_pullback, adjoint, cauchy,
+        finite_heat, full_graded_heat, direct_zeta, zeta_pullback, kkt_info,
+        adjoint, cauchy,
     )
     if not all(record.get("validation_passed") is True for record in records):
         raise RuntimeError("validated graded-cotangent parents required")
@@ -225,6 +229,14 @@ def build_payload() -> dict[str, Any]:
                 "actual_joint_graded_heat_minus_zeta_cotangent"
             ] == "ZETA_RESET_BALL_CLOSED_HEAT_GEOMETRY_CONTRACTION_OPEN"
         ),
+        "componentwise_zero_tests_are_retired_in_favor_of_joint_KKT_covector": (
+            kkt_info["adjudication"][
+                "separate_C2_zeta_zero_or_zero_exclusion_gate"
+            ].startswith("RETIRED")
+            and kkt_info["adjudication"][
+                "complete_joint_signed_finite_core_covector"
+            ] == "OPEN_CURRENT_OWNER"
+        ),
         "projected_Cauchy_criterion_is_derived": (
             cauchy["claim_boundary"]["projected_Cauchy_criterion"]
             == "DERIVED"
@@ -248,8 +260,9 @@ def build_payload() -> dict[str, Any]:
             "AND_FIRST_JET_TYPES_ARE_EXECUTABLE,_THE_DIRECT_ZETA_COVECTOR_IS_"
             "COMPONENTWISE_CLOSED,_AND_THE_COMPLETE_FINITE_CORE_GRADED_HEAT_"
             "SEED_IS_UNIFORMLY_SUPPRESSED_IN_LOG_SPACE;_THE_C2_ZETA_RESET_"
-            "PULLBACK_NORM_BALL_IS_CERTIFIED,_WHILE_ITS_SIGNED_VALUE,_THE_HEAT_"
-            "CONTRACTION,_C2_MAXIMAL_TAIL,_AND_PROJECTED_FORCE_ARE_OPEN"
+            "PULLBACK_NORM_BALL_IS_CERTIFIED,_BUT_NO_INTERNAL_COMPONENT_IS_"
+            "SEPARATELY_REQUIRED_TO_VANISH_OR_EXCLUDE_ZERO;_THE_COMPLETE_JOINT_"
+            "SIGNED_COVECTOR,_C2_MAXIMAL_TAIL,_AND_PROJECTED_FORCE_ARE_OPEN"
         ),
         "retained_graded_sector_ledger": weights,
         "exact_cotangent_contract": {
@@ -276,6 +289,7 @@ def build_payload() -> dict[str, Any]:
             "heat_Frechet_cotangent": "VALID_MATCH",
             "direct_zeta_covector": "CLOSED_COMPONENTWISE_FINITE_CORE_MATCH",
             "C2_zeta_reset_cotangent_pullback": "CERTIFIED_ACTION_DUAL_NORM_BALL",
+            "joint_KKT_information_gate": "COMPONENTWISE_ZERO_TESTS_RETIRED",
             "joint_internal_seam_assembly": "VALID_MATCH_ONE_E1_C2_SEAM",
             "incoming_M11_whole_axis_class": "VALID_PHYSICAL_ZERO_SOURCE_M_f",
             "physical_zero_source_incoming_Mf": "VALID_MATCH_M11",
@@ -300,16 +314,15 @@ def build_payload() -> dict[str, Any]:
             "proof_center_may_be_promoted_to_physical_history": False,
             "finite_1222_edge_may_be_promoted_to_endpoint": False,
             "actual_joint_operator_or_decisive_trace_enclosure": "FINITE_CORE_HEAT_SEED_CLOSED",
-            "signed_reverse_value": "WAITING_ON_ZETA_SIGNED_CENTER_HEAT_CONTRACTION_AND_UPSTREAM_PULLBACK",
+            "signed_reverse_value": "WAITING_ON_ONE_COMBINED_HEAT_ZETA_UPSTREAM_INTERFACE_COVECTOR",
             "projected_Cauchy_tail": "WAITING_ON_FINITE_CORE_FORCE_NET",
             "same_action_KKT_root": "WAITING_ON_PROJECTED_FORCE",
             "Gate7": "OPEN",
             "Gate8": "LOCKED",
         },
         "exact_next_dependency": (
-            "USE_THE_CERTIFIED_C2_ZETA_RESET_COTANGENT_BALL_AND_SHARPEN_ITS_"
-            "SIGNED_CENTER_ONLY_IF_NEEDED,_CONTRACT_THE_SEPARATELY_SUPPRESSED_"
-            "HEAT_SEED,_COMPOSE_THE_UPSTREAM_C1_COVECTOR,_AND_PROVE_"
+            "ASSEMBLE_ONE_SIGNED_INTERVAL_COVECTOR_FOR_THE_COMPLETE_INTERNAL_"
+            "HEAT_MINUS_ZETA_FUNCTIONAL_WITH_CANCELLATIONS_BEFORE_NORMS,_AND_PROVE_"
             "THE_MAXIMAL_PROJECTED_CAUCHY_TAIL_OR_CERTIFY_A_FINITE_STOP"
         ),
         "validation": validation,

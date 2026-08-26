@@ -150,15 +150,18 @@ nonnegative and `W_phys=0`. The complete graded seam trace remains open.
 
 The remaining unmatched data are geometric and pathwise.  Modulo the closed
 common-scale direction, the complete radius-plus-duration first-jet norm and
-finite-core heat-minus-zeta coefficient seed are certified, but the validated
-signed zeta center, suppressed-heat geometry contraction, upstream-history
-pullback, and the noncompact maximal tail are not. The common pair/contact incidence and
-heat-minus-zeta trace functional are valid conditional consumers; broad seam
-intervals and isolated probes cannot replace their realized inputs.
+finite-core heat-minus-zeta coefficient seed are certified, but the complete
+signed joint covector and the noncompact maximal tail are not. The common
+pair/contact incidence and heat-minus-zeta trace functional are valid
+conditional consumers; broad seam intervals and isolated probes cannot
+replace their realized inputs.
 
-Accordingly the next construction uses the certified zeta reset ball,
-sharpens its signed center only if required by the KKT test, contracts the
-separately suppressed heat seed, composes the complete upstream `C1` covector
-and exact common-scale component, and tests the result as a projected
+The launch projection maps the certified C2 zeta reset ball to a
+73-dimensional ball of the same radius containing both zero and nonzero
+covectors. Under the closed-system source ontology, neither a separate zero
+nor a separate zero-exclusion test on this internal component is a physical
+KKT condition. Accordingly the next construction assembles the signed heat,
+zeta, upstream `C1`, and interface/contact covectors once, preserves their
+cancellations before taking norms, and tests that joint object as a projected
 finite-core Cauchy net. The 1,222-core edge remains an
 artificial Friedrichs exhaustion edge, not an event or canonical stop.

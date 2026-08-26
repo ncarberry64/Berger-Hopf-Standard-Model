@@ -81,6 +81,7 @@ SOURCES = (
     "artifacts/flagship_integration/BHSM_N12_GATE7_ONE_SEAM_FULL_GRADED_FINITE_CORE_HEAT_BOUND.json",
     "artifacts/flagship_integration/BHSM_N12_GATE7_DIRECT_ZETA_COEFFICIENT_COTANGENT.json",
     "artifacts/flagship_integration/BHSM_N12_GATE7_C2_FINITE_CORE_ZETA_RESET_COTANGENT_ENCLOSURE.json",
+    "artifacts/flagship_integration/BHSM_N12_GATE7_JOINT_KKT_INFORMATION_GATE.json",
     "artifacts/flagship_integration/BHSM_N12_C2_SIGNED_DURATION_INCIDENCE_OWNER.json",
     "artifacts/flagship_integration/BHSM_N12_C2_SIGNED_DDELTA_SEED_TRANSPORT_AUDIT.json",
     "artifacts/flagship_integration/BHSM_N12_C2_DIRECT_DDELTA_ROW_RECONNAISSANCE.json",
@@ -194,6 +195,7 @@ def verify_current_lineage() -> None:
     full_graded_heat = loaded["artifacts/flagship_integration/BHSM_N12_GATE7_ONE_SEAM_FULL_GRADED_FINITE_CORE_HEAT_BOUND.json"]
     direct_zeta = loaded["artifacts/flagship_integration/BHSM_N12_GATE7_DIRECT_ZETA_COEFFICIENT_COTANGENT.json"]
     zeta_pullback = loaded["artifacts/flagship_integration/BHSM_N12_GATE7_C2_FINITE_CORE_ZETA_RESET_COTANGENT_ENCLOSURE.json"]
+    joint_kkt_info = loaded["artifacts/flagship_integration/BHSM_N12_GATE7_JOINT_KKT_INFORMATION_GATE.json"]
     duration_incidence = loaded["artifacts/flagship_integration/BHSM_N12_C2_SIGNED_DURATION_INCIDENCE_OWNER.json"]
     ddelta_transport = loaded["artifacts/flagship_integration/BHSM_N12_C2_SIGNED_DDELTA_SEED_TRANSPORT_AUDIT.json"]
     ddelta_row = loaded["artifacts/flagship_integration/BHSM_N12_C2_DIRECT_DDELTA_ROW_RECONNAISSANCE.json"]
@@ -403,6 +405,12 @@ def verify_current_lineage() -> None:
         and zeta_pullback["claim_boundary"][
             "signed_C2_zeta_reset_cotangent_value"
         ] == "OPEN"
+        and joint_kkt_info["adjudication"][
+            "separate_C2_zeta_zero_or_zero_exclusion_gate"
+        ].startswith("RETIRED")
+        and joint_kkt_info["adjudication"][
+            "complete_joint_signed_finite_core_covector"
+        ] == "OPEN_CURRENT_OWNER"
     ):
         raise RuntimeError("joint Gate7 source/cotangent frontier is not current")
     if force_sign_no_go["claim_boundary"]["universal_force_sign_shortcut"] != "CLOSED_INVALID":

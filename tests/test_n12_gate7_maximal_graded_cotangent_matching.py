@@ -51,6 +51,9 @@ def test_maximal_graded_cotangent_matching_audit() -> None:
     assert payload["matching_audit"]["C2_zeta_reset_cotangent_pullback"] == (
         "CERTIFIED_ACTION_DUAL_NORM_BALL"
     )
+    assert payload["matching_audit"]["joint_KKT_information_gate"] == (
+        "COMPONENTWISE_ZERO_TESTS_RETIRED"
+    )
     assert payload["matching_audit"]["joint_internal_seam_assembly"] == (
         "VALID_MATCH_ONE_E1_C2_SEAM"
     )

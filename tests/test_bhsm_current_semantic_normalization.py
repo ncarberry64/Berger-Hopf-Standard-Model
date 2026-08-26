@@ -386,6 +386,14 @@ def test_replacement_force_is_constraint_projected_without_reset_selection() -> 
     )
     assert (
         "artifacts/flagship_integration/"
+        "BHSM_N12_GATE7_JOINT_KKT_INFORMATION_GATE.json"
+        in dag["G7_08_FORCE"]["provenance"]
+    )
+    assert "retires every separate zero or zero-exclusion requirement" in dag[
+        "G7_08_FORCE"
+    ]["physical_meaning"]
+    assert (
+        "artifacts/flagship_integration/"
         "BHSM_N12_C2_SIGNED_DURATION_INCIDENCE_OWNER.json"
         in dag["G7_08_FORCE"]["provenance"]
     )

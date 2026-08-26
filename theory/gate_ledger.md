@@ -360,6 +360,15 @@
   inverted. The zero-centered ball contains zero and is not a zero-force
   claim; its signed center, the suppressed-heat non-scale contraction,
   upstream `C1` covector, and maximal projected tail remain open.
+- Joint projected KKT information gate:
+  `JOINT_KKT_REQUIRES_COMBINED_SIGNED_COVECTOR_COMPONENT_ZERO_TESTS_RETIRED`.
+  The orthonormal 98-to-73 launch pullback preserves the zeta-ball radius and
+  the projected ball contains both zero and nonzero covectors. Gate 7 tests
+  only the sum of all internal heat, zeta, upstream, and interface/contact
+  covectors after one joint differentiation. Therefore no internal component
+  is separately required to vanish or exclude zero. The live owner is one
+  combined signed interval covector, followed by the projected Cauchy-tail and
+  intrinsic/bordered KKT tests.
 - The actual same-action replacement residual is the heat-minus-zeta force,
   `D_Phi Gamma_heat-D_Phi Gamma_SM^zeta`, because the certified local root
   already extremizes the attached-zeta action.  Here

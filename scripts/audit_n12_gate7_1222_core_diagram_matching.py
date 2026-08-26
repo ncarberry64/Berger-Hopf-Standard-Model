@@ -50,8 +50,9 @@ ONE_SEAM = BASE / "BHSM_N12_GATE7_AE2_ONE_SEAM_DIRECT_DESCRIPTOR.json"
 FULL_GRADED_HEAT = BASE / "BHSM_N12_GATE7_ONE_SEAM_FULL_GRADED_FINITE_CORE_HEAT_BOUND.json"
 DIRECT_ZETA = BASE / "BHSM_N12_GATE7_DIRECT_ZETA_COEFFICIENT_COTANGENT.json"
 ZETA_PULLBACK = BASE / "BHSM_N12_GATE7_C2_FINITE_CORE_ZETA_RESET_COTANGENT_ENCLOSURE.json"
+KKT_INFO = BASE / "BHSM_N12_GATE7_JOINT_KKT_INFORMATION_GATE.json"
 THEORY = ROOT / "theory" / "n12_gate7_1222_core_diagram_matching_audit.md"
-INPUTS = (OLD, CORE, FAMILY, NESTED, MAXIMAL, BIRTH, COMPACT, SEAM, INCIDENCE, FORCE, ADJOINT, CAUCHY, COMMON_SCALE, COMMON_SCALE_WARD, FIXED_CHANNEL_HEAT, INCOMING_MATCH, INCOMING_PATH_GERM, INCOMING_SEGMENT, INCOMING_FINITE_PATH, INCOMING_MF_ENCLOSURE, BIRTH_MF_AUDIT, BIRTH_LOAD_AUDIT, TWO_SEAM, E0_PROVENANCE, SOURCE_ROLE, RADIUS_PULLBACK, DURATION_PULLBACK, COMPLETE_PULLBACK, EXACT_FIELD, PARAMETRIC, INTERVAL_ACTIONS, SIGNED_ADJOINT, SOURCE_ONTOLOGY, JOINT_SEED, GRADED_COTANGENT, ONE_SEAM, FULL_GRADED_HEAT, DIRECT_ZETA, ZETA_PULLBACK, THEORY)
+INPUTS = (OLD, CORE, FAMILY, NESTED, MAXIMAL, BIRTH, COMPACT, SEAM, INCIDENCE, FORCE, ADJOINT, CAUCHY, COMMON_SCALE, COMMON_SCALE_WARD, FIXED_CHANNEL_HEAT, INCOMING_MATCH, INCOMING_PATH_GERM, INCOMING_SEGMENT, INCOMING_FINITE_PATH, INCOMING_MF_ENCLOSURE, BIRTH_MF_AUDIT, BIRTH_LOAD_AUDIT, TWO_SEAM, E0_PROVENANCE, SOURCE_ROLE, RADIUS_PULLBACK, DURATION_PULLBACK, COMPLETE_PULLBACK, EXACT_FIELD, PARAMETRIC, INTERVAL_ACTIONS, SIGNED_ADJOINT, SOURCE_ONTOLOGY, JOINT_SEED, GRADED_COTANGENT, ONE_SEAM, FULL_GRADED_HEAT, DIRECT_ZETA, ZETA_PULLBACK, KKT_INFO, THEORY)
 
 
 def _sha256(path: Path) -> str:
@@ -69,11 +70,11 @@ def build_payload() -> dict[str, Any]:
     missing = [str(path) for path in INPUTS if not path.is_file()]
     if missing:
         raise FileNotFoundError("missing 1222 matching inputs: " + ", ".join(missing))
-    old, core, family, nested, maximal, birth, compact, seam, incidence, force, adjoint, cauchy, common_scale, common_scale_ward, fixed_channel_heat, incoming_match, incoming_path_germ, incoming_segment, incoming_finite_path, incoming_mf_enclosure, birth_mf_audit, birth_load_audit, two_seam, e0_provenance, source_role, radius_pullback, duration_pullback, complete_pullback, exact_field, parametric, interval_actions, signed_adjoint, source_ontology, joint_seed, graded_cotangent, one_seam, full_graded_heat, direct_zeta, zeta_pullback = (
+    old, core, family, nested, maximal, birth, compact, seam, incidence, force, adjoint, cauchy, common_scale, common_scale_ward, fixed_channel_heat, incoming_match, incoming_path_germ, incoming_segment, incoming_finite_path, incoming_mf_enclosure, birth_mf_audit, birth_load_audit, two_seam, e0_provenance, source_role, radius_pullback, duration_pullback, complete_pullback, exact_field, parametric, interval_actions, signed_adjoint, source_ontology, joint_seed, graded_cotangent, one_seam, full_graded_heat, direct_zeta, zeta_pullback, kkt_info = (
         _load(path) for path in INPUTS[:-1]
     )
     if not all(record.get("validation_passed") is True for record in (
-        old, core, family, nested, maximal, birth, compact, seam, incidence, force, adjoint, cauchy, common_scale, common_scale_ward, fixed_channel_heat, incoming_match, incoming_path_germ, incoming_segment, incoming_finite_path, incoming_mf_enclosure, birth_mf_audit, birth_load_audit, two_seam, e0_provenance, source_role, radius_pullback, duration_pullback, complete_pullback, exact_field, parametric, interval_actions, signed_adjoint, source_ontology, joint_seed, graded_cotangent, one_seam, full_graded_heat, direct_zeta, zeta_pullback,
+        old, core, family, nested, maximal, birth, compact, seam, incidence, force, adjoint, cauchy, common_scale, common_scale_ward, fixed_channel_heat, incoming_match, incoming_path_germ, incoming_segment, incoming_finite_path, incoming_mf_enclosure, birth_mf_audit, birth_load_audit, two_seam, e0_provenance, source_role, radius_pullback, duration_pullback, complete_pullback, exact_field, parametric, interval_actions, signed_adjoint, source_ontology, joint_seed, graded_cotangent, one_seam, full_graded_heat, direct_zeta, zeta_pullback, kkt_info,
     )):
         raise RuntimeError("validated diagram parents required")
 
@@ -239,6 +240,14 @@ def build_payload() -> dict[str, Any]:
             "verdict": "VALID_MATCH_NORM_BALL_CLOSED_SIGNED_CENTER_OPEN",
         },
         {
+            "diagram_slot": "JOINT_PROJECTED_KKT_INFORMATION_TEST",
+            "required_type": "ONE_SIGNED_PHYSICAL_COVECTOR_AFTER_ALL_INTERNAL_TERMS_ARE_SUMMED",
+            "candidate": "BHSM_N12_GATE7_JOINT_KKT_INFORMATION_GATE",
+            "dimension_domain_check": "VALID_98_TO_73_ORTHOGONAL_LAUNCH_PULLBACK",
+            "provenance_check": "VALID_OWNER_SOURCE_ONTOLOGY_AND_INTRINSIC_KKT_EQUIVALENCE",
+            "verdict": "VALID_MATCH_COMPONENTWISE_ZERO_TESTS_RETIRED_JOINT_VALUE_OPEN",
+        },
+        {
             "diagram_slot": "HEAT_MINUS_ZETA_FORCE_FUNCTIONAL",
             "required_type": "BASIS_INDEPENDENT_FIRST_VARIATION_ON_POSITIVE_SELF_ADJOINT_PHYSICAL_QUOTIENT",
             "candidate": "BHSM_N12_FINITE_ENDPOINT_ZERO_SOURCE_FORCE_FUNCTIONAL",
@@ -348,6 +357,12 @@ def build_payload() -> dict[str, Any]:
             and zeta_pullback["claim_boundary"][
                 "signed_C2_zeta_reset_cotangent_value"
             ] == "OPEN"
+        ),
+        "joint_KKT_gate_retires_componentwise_zero_tests": (
+            kkt_info["adjudication"][
+                "separate_C2_zeta_zero_or_zero_exclusion_gate"
+            ].startswith("RETIRED")
+            and kkt_info["projected_component_ball"]["launch_dimension"] == 73
         ),
         "direct_one_seam_operator_and_first_jet_generators_are_closed": (
             one_seam["claim_boundary"]["finite_core_joint_operator_type"]
@@ -484,6 +499,7 @@ def build_payload() -> dict[str, Any]:
             "full_graded_finite_core_heat_cotangent_seed": "CERTIFIED_SUPPRESSED_IN_LOG_SPACE",
             "direct_zeta_finite_core_coefficient_cotangent": "CERTIFIED_COMPONENTWISE",
             "C2_zeta_reset_cotangent_pullback": "CERTIFIED_NORM_BALL_SIGNED_CENTER_OPEN",
+            "joint_projected_KKT_information_gate": "COMPONENTWISE_ZERO_TESTS_RETIRED",
             "finite_core_heat_minus_zeta_seed": "ZETA_PULLBACK_BALL_CLOSED_HEAT_CONTRACTION_OPEN",
             "finite_core_direct_one_seam_operator_and_first_jet": "CLOSED_EXECUTABLE_GENERATOR",
             "actual_per_level_joint_operator_family": "DIRECT_GENERATOR_CLOSED_ACTUAL_PARAMETRIC_VALUES_AND_MAXIMAL_TAIL_OPEN",
@@ -497,10 +513,10 @@ def build_payload() -> dict[str, Any]:
         "validated_invalidated_open": {
             "VALIDATED": ["C2 1222-core coefficient slot", "local 73-parameter exact C2 family through the finite core", "C2 complete negative-axis finite-core response", "finite-core backward operator cotangent semigroup", "direct one-seam finite-core operator and first-jet generators", "complete full-graded finite-core heat trace and cotangent-seed suppression", "all 1222 interval transposed-duration actions", "signed finite-core reverse equation", "only the external birth trace is zeroed after differentiation", "nonzero internal M_f=M11 at zero external source", "single E1/C2 internal seam topology", "single joint heat cotangent reverse seed", "exact retained gauge/Weyl/HS grading weights and longitudinal-ghost cancellation", "1222-segment state-Jacobi growth provenance", "fixed-node non-scale radius reset pullback", "moving-duration non-scale reset pullback norm", "complete finite-core non-scale geometry first-jet norm", "exact fixed-s action field oracle", "incoming M11 compact Dirichlet-reference identity and Laurent germ", "incoming normalized coefficient path through lambda_0 squared", "explicit incoming regularized finite-amplitude segment and first Jacobi bound", "uniform finite-amplitude incoming coefficient family", "incoming M11 parametric whole-negative-axis enclosure", "fermion AE2 joint-seam invertibility", "physical common-scale pullback including moving duration", "common-scale heat-zeta contraction formula", "stored fixed-channel 1064-to-1222 heat increment suppression", "maximal abstract Weyl value", "internal incidence and force consumer formulas"],
             "INVALIDATED": ["a pre-E0 M_E0 arm is a current Gate7 diagram slot", "a dynamical integrated birth trace replaces the external Cauchy source", "new C2 theory is required", "a new C1 bulk operator theory is required for M_f", "a second external birth source is required", "a full pathwise Jacobi is required for the common-scale component", "all non-scale pathwise reset geometry data are absent", "fixed-duration radius-only zeta derivative is the physical common-scale force", "birth jet alone is the remaining non-scale pathwise reset jet", "a duration interval or proof tube is a duration first jet", "broad seam intervals or probes determine the force", "proof edge is an endpoint"],
-            "OPEN": ["signed or zero-excluding center of the C2 zeta reset-cotangent ball", "non-scale contraction of the suppressed heat seed", "complete upstream C1-to-E1 signed covector", "maximal non-scale reset-quotient tail", "actual projected force net and Cauchy tail"],
+            "OPEN": ["one combined signed finite-core heat-minus-zeta-upstream-interface covector", "maximal non-scale reset-quotient tail", "actual projected force net and Cauchy tail"],
         },
         "hindsight": {"classification": "PROOF_CHART_LIMIT_REMOVED;_OPERATOR_DATA_GAP_REMAINS", "obstruction_physical": False},
-        "exact_next_dependency": "USE_THE_CERTIFIED_C2_ZETA_RESET_COTANGENT_BALL_AND_SHARPEN_ITS_SIGNED_CENTER_ONLY_IF_REQUIRED,_CONTRACT_THE_SEPARATELY_SUPPRESSED_HEAT_SEED,_COMPOSE_THE_COMPLETE_UPSTREAM_C1_COVECTOR,_AND_TEST_THE_MAXIMAL_PROJECTED_CAUCHY_TAIL_OR_ACTUAL_FINITE_STOP;_DO_NOT_REOPEN_M_f_OR_ADD_A_SEAM_SOURCE",
+        "exact_next_dependency": "ASSEMBLE_ONE_SIGNED_INTERVAL_COVECTOR_FOR_THE_COMPLETE_C1_E1_C2_INTERNAL_HEAT_MINUS_ZETA_FUNCTIONAL_WITH_CANCELLATIONS_BEFORE_NORMS,_THEN_TEST_THE_INTRINSIC_OR_BORDERED_KKT_ROOT_AND_MAXIMAL_PROJECTED_CAUCHY_TAIL_OR_ACTUAL_FINITE_STOP;_DO_NOT_REOPEN_M_f_OR_ADD_A_SEAM_SOURCE",
         "claim_boundary": {
             "Gate7": "G7_08_OPEN_E1_C2_GRADED_COTANGENT_AND_PROJECTED_TAIL",
             "Gate8": "LOCKED",

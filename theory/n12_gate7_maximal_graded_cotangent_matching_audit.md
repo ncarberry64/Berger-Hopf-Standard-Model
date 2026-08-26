@@ -88,15 +88,18 @@ The repository matching result is sharp:
   zero;
 - the direct zeta coefficient covector is closed on all 1,223 node radii and
   all 1,222 moving durations. Its C2 reset pullback norm ball is certified
-  without a transition matrix. The signed center, heat contraction, upstream
-  history covector, and maximal tail remain open.
+  without a transition matrix. Its orthogonal launch projection is a
+  73-dimensional ball of the same radius containing both zero and nonzero
+  covectors.
 
 Thus neither a new grading, a new external source, more isolated negative-axis
-probes, nor a new response theory is required. The certified zeta reset ball
-is sharpened only if the KKT test requires a signed center; the separately
-suppressed heat seed is contracted and composed with the upstream `C1`
-history covector. The existing physical quotient then tests the maximal
-Cauchy tail before the same-action KKT root.
+probes, nor a new response theory is required. The KKT condition applies only
+to the sum of all signed internal covectors. A separate zero or zero-exclusion
+test on the C2 zeta component is therefore retired: it would decide neither
+the joint force nor its cancellation with the upstream, interface, and heat
+terms. The live object is one combined signed interval covector assembled
+before norms. The existing physical quotient then tests its maximal Cauchy
+tail and the same-action KKT root.
 
 Gate 7 remains open, Gate 8 remains locked, chord 3 remains unauthorized, and
 `FULL_BHSM_COMPLETE=false`.

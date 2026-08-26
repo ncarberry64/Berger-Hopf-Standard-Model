@@ -47,6 +47,9 @@ def test_gate7_1222_core_diagram_matching() -> None:
     assert verdicts["C2_ZETA_RESET_COTANGENT_PULLBACK"] == (
         "VALID_MATCH_NORM_BALL_CLOSED_SIGNED_CENTER_OPEN"
     )
+    assert verdicts["JOINT_PROJECTED_KKT_INFORMATION_TEST"].startswith(
+        "VALID_MATCH_COMPONENTWISE_ZERO_TESTS_RETIRED"
+    )
     assert payload["adjudication"]["finite_event_or_canonical_stop"] == "NOT_REACHED"
     assert payload["adjudication"]["stored_fixed_channel_1064_to_1222_heat_increment"] == "CERTIFIED_SUPPRESSED_IN_LOG_SPACE"
     assert payload["adjudication"]["non_scale_fixed_node_radius_reset_pullback"] == "CERTIFIED_ON_1222_FINITE_CORE"
@@ -67,6 +70,9 @@ def test_gate7_1222_core_diagram_matching() -> None:
     ] == "CERTIFIED_COMPONENTWISE"
     assert payload["adjudication"]["C2_zeta_reset_cotangent_pullback"] == (
         "CERTIFIED_NORM_BALL_SIGNED_CENTER_OPEN"
+    )
+    assert payload["adjudication"]["joint_projected_KKT_information_gate"] == (
+        "COMPONENTWISE_ZERO_TESTS_RETIRED"
     )
     assert payload["adjudication"]["finite_core_heat_minus_zeta_seed"] == (
         "ZETA_PULLBACK_BALL_CLOSED_HEAT_CONTRACTION_OPEN"

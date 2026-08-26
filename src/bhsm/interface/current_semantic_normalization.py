@@ -829,6 +829,7 @@ def _gates() -> list[dict[str, Any]]:
             "artifacts/flagship_integration/BHSM_N12_GATE7_ONE_SEAM_FULL_GRADED_FINITE_CORE_HEAT_BOUND.json",
             "artifacts/flagship_integration/BHSM_N12_GATE7_DIRECT_ZETA_COEFFICIENT_COTANGENT.json",
             "artifacts/flagship_integration/BHSM_N12_GATE7_C2_FINITE_CORE_ZETA_RESET_COTANGENT_ENCLOSURE.json",
+            "artifacts/flagship_integration/BHSM_N12_GATE7_JOINT_KKT_INFORMATION_GATE.json",
             "artifacts/flagship_integration/BHSM_N12_C2_SIGNED_DURATION_INCIDENCE_OWNER.json",
             "artifacts/flagship_integration/BHSM_N12_C2_SIGNED_DDELTA_SEED_TRANSPORT_AUDIT.json",
             "artifacts/flagship_integration/BHSM_N12_C2_DIRECT_DDELTA_ROW_RECONNAISSANCE.json",
@@ -875,9 +876,12 @@ def _gates() -> list[dict[str, Any]]:
                 "row; the complete ten-term hard-response enclosure now bounds that "
                 "row by 0.005348168974427062 and the combined signed D2Delta row by "
                 "2.684118590455544, zero-excluding the local D_Y Delta component; "
-                "Gate 7 remains open for the signed zeta center if required, the "
-                "suppressed-heat geometry contraction, upstream-history pullback, and the maximal "
-                "projected tail or an actual finite stop"
+                "the 98-to-73 orthogonal launch projection preserves the certified "
+                "C2 zeta-ball radius and contains both zero and nonzero covectors; "
+                "under the closed-system source ontology this retires every separate "
+                "zero or zero-exclusion requirement on an internal component, so Gate 7 "
+                "remains open for one combined signed heat-zeta-upstream-interface "
+                "covector and the maximal projected tail or an actual finite stop"
             )
         predecessor = [] if index == 0 else [GATE_CHAIN[index - 1][0]]
         provenance = sources.get(cid, fallback)
