@@ -25,11 +25,12 @@ HIGH = BASE / "BHSM_N12_FORWARD_E1_HIGH_ENERGY_TRACE_NORM.json"
 FINITE_ENDPOINT = BASE / "BHSM_N12_FINITE_ENDPOINT_FORWARD_ADJOINT_KKT.json"
 SEAM_NO_GO = BASE / "BHSM_N12_NEGATIVE_AXIS_SEAM_HEAT_SYNTHESIS_NO_GO.json"
 NHIM_NO_GO = BASE / "BHSM_N12_ASYMPTOTIC_NHIM_ANGULAR_FORCE_NO_GO.json"
+SOURCE_ONTOLOGY = BASE / "BHSM_N12_GATE7_CLOSED_SYSTEM_ZERO_EXTERNAL_SOURCE_ONTOLOGY.json"
 THEORY = ROOT / "theory/n12_c2_projected_adjoint_cauchy_criterion.md"
 INPUTS = (
     C2, ADJOINT, PULLBACK, QUOTIENT, FINITE_CORE, PARAMETRIC,
     INTERVAL_ACTIONS, DINI, ANGULAR, HIGH,
-    FINITE_ENDPOINT, SEAM_NO_GO, NHIM_NO_GO, THEORY,
+    FINITE_ENDPOINT, SEAM_NO_GO, NHIM_NO_GO, SOURCE_ONTOLOGY, THEORY,
 )
 
 
@@ -93,7 +94,7 @@ def build_payload() -> dict[str, Any]:
     (
         c2, adjoint, pullback, quotient, finite_core, parametric,
         interval_actions, dini, angular, high, finite_endpoint, seam_no_go,
-        nhim_no_go,
+        nhim_no_go, source_ontology,
     ) = records
     witness = _witnesses()
     rows = witness["stable_rate_pair"]["rows"]
@@ -101,6 +102,22 @@ def build_payload() -> dict[str, Any]:
     errors = [abs(row["projected_force"] - limit) for row in rows]
 
     slot_audit = [
+        {
+            "diagram_slot": "ZERO_EXTERNAL_BIRTH_CAUCHY_DATUM",
+            "required_type": "EXTERNAL_LINEAR_DATUM_J_ext_ONLY",
+            "candidate": "OWNER_AUTHORIZED_CLOSED_SYSTEM_SOURCE_PARTITION",
+            "domain_check": "VALID_AFTER_JOINT_OPERATOR_DIFFERENTIATION",
+            "provenance_check": "VALID_OWNER_PHYSICAL_ONTOLOGY_NOT_ACTION_DERIVATION",
+            "verdict": "VALID_MATCH_ONLY_J_ext_IS_ZEROED",
+        },
+        {
+            "diagram_slot": "JOINT_INTERNAL_AE2_OPERATOR",
+            "required_type": "M_f_PLUS_U_R_DAGGER_M_C2_U_R_PLUS_W_phys_WITH_INTERNAL_CONTACTS",
+            "candidate": "CLOSED_SYSTEM_SOURCE_ONTOLOGY_AND_GLUING_IDENTITY",
+            "domain_check": "ASSEMBLY_RULE_VALID_COMPLETE_NUMERICAL_REALIZATION_OPEN",
+            "provenance_check": "VALID_ACTION_BLOCKS_AND_OWNER_SOURCE_PARTITION",
+            "verdict": "VALID_MATCH_ASSEMBLY_COMPLETE_COTANGENT_MISSING",
+        },
         {
             "diagram_slot": "C2_MAXIMAL_HISTORY_AND_DOMAIN",
             "required_type": "ACTION_OWNED_MAXIMAL_FORWARD_HISTORY_WITH_ENDPOINT_CLASS",
@@ -152,7 +169,7 @@ def build_payload() -> dict[str, Any]:
         {
             "diagram_slot": "NUMERICAL_ZERO_SOURCE_FORCE",
             "required_type": "LIMIT_IN_PHYSICAL_RESET_QUOTIENT_DUAL",
-            "candidate": "FINITE_CORE_FORCE_NET_F_T",
+            "candidate": "CLOSED_SYSTEM_FINITE_CORE_FORCE_NET_F_T_AT_J_ext_EQUALS_ZERO",
             "domain_check": "1222_SEGMENT_PREFIX_ONLY",
             "provenance_check": "VALID_BUT_INCOMPLETE",
             "verdict": "ACTUALLY_MISSING",
@@ -161,6 +178,13 @@ def build_payload() -> dict[str, Any]:
 
     validation = {
         "all_inputs_validated": True,
+        "zero_source_means_only_zero_external_Cauchy_datum": (
+            source_ontology["external_internal_partition"]["set_to_zero"] == ["J_ext"]
+        ),
+        "all_seam_responses_remain_internal_and_are_counted_once": (
+            source_ontology["adjudication"]["internal_response_zeroing"] == "FORBIDDEN"
+            and source_ontology["adjudication"]["additional_independent_seam_force"] == "FORBIDDEN"
+        ),
         "C2_maximal_family_instantiated": (
             c2["adjudication"]["abstract_M_C2_value_definition_exists_and_is_unique"]
             is True
@@ -274,6 +298,8 @@ def build_payload() -> dict[str, Any]:
         },
         "logical_witnesses": witness,
         "adjudication": {
+            "zero_external_source_semantics": "CLOSED_ONLY_J_ext_IS_ZEROED_AFTER_JOINT_DIFFERENTIATION",
+            "internal_seam_response_semantics": "CLOSED_INTERNAL_BLOCKS_NOT_SEPARATE_SOURCES",
             "class_and_domain_slot": "CLOSED",
             "physical_pullback_and_quotient_slot": "CLOSED",
             "fixed_channel_source_Dini_slot": "CLOSED_DO_NOT_REOPEN",
@@ -315,9 +341,10 @@ def build_payload() -> dict[str, Any]:
             "difficulty_type": "CONTINUOUS_MAXIMAL_HISTORY_OPERATOR_AND_DUAL_LIMIT_NOT_CLASSIFICATION",
         },
         "exact_next_dependency": (
-            "PROVE_THE_ACTION_OWNED_QUOTIENT_CAUCHY_TAIL_FOR_THE_ACTUAL_C2_"
-            "FINITE_CORE_FORCE_NET,_INCLUDING_U,_THE_FULL_GRADED_q_heat,_AND_"
-            "q_zeta,_OR_CERTIFY_A_FINITE_LATER_EVENT_OR_CANONICAL_STOP;_THE_"
+            "ASSEMBLE_THE_COMPLETE_JOINT_INTERNAL_M_f_PLUS_TRANSPORTED_M_C2_PLUS_"
+            "W_phys_HEAT_MINUS_ZETA_COTANGENT,_SET_ONLY_J_ext_TO_ZERO_AFTER_"
+            "DIFFERENTIATION,_AND_PROVE_THE_ACTION_OWNED_QUOTIENT_CAUCHY_TAIL_"
+            "OR_CERTIFY_A_FINITE_LATER_EVENT_OR_CANONICAL_STOP;_THE_"
             "STRONGER_AMBIENT_ABSOLUTE_WEIGHTED_NORM_BOUND_IS_OPTIONAL,_AND_"
             "FIXED_CHANNEL_DINI_HIGH_ENERGY_RESET_SEMANTICS_RECURRENCE_AND_"
             "CHORD3_MUST_NOT_BE_REOPENED"

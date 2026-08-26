@@ -36,6 +36,13 @@ only.  Fixed-channel source-Dini and compact-source high-energy smoothing close
 two spectral slots, but neither is a temporal estimate for the product above,
 and the infinite-route angular contraction and direct zeta tail remain open.
 
+Under the owner-authorized source ontology, `q_rep` is the derivative of the
+complete closed-system functional after assembling `M_f`, transported `M_C2`,
+`U_R`, `W_phys`, and every retained contact block exactly once.  Only the
+external birth/Cauchy datum `J_ext` is then set to zero.  None of those internal
+responses is a separate source, and no additional seam-force covector may be
+added to the Cauchy net.
+
 On a certified finite later-event or canonical-stop stratum, the retained
 finite-endpoint operator/adjoint theorem supplies the criterion automatically.
 On an infinite Friedrichs route, the next action theorem may prove the quotient

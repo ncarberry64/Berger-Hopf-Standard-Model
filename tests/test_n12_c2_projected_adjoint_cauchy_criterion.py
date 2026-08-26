@@ -32,6 +32,8 @@ def test_c2_projected_adjoint_cauchy_criterion() -> None:
     assert payload["adjudication"][
         "finite_prefix_interval_duration_action_slot"
     ] == "CLOSED_THROUGH_1222"
+    assert payload["adjudication"]["zero_external_source_semantics"].startswith("CLOSED_ONLY_J_ext")
+    assert payload["adjudication"]["internal_seam_response_semantics"].startswith("CLOSED_INTERNAL")
     assert payload["claim_boundary"]["chord_03_authorized"] is False
 
 
@@ -39,6 +41,8 @@ def test_matching_audit_has_no_false_complete_maximal_slot() -> None:
     subprocess.run([sys.executable, str(SCRIPT)], cwd=ROOT, check=True)
     payload = json.loads(RESULT.read_text(encoding="utf-8"))
     verdicts = {row["diagram_slot"]: row["verdict"] for row in payload["matching_audit"]}
+    assert verdicts["ZERO_EXTERNAL_BIRTH_CAUCHY_DATUM"] == "VALID_MATCH_ONLY_J_ext_IS_ZEROED"
+    assert verdicts["JOINT_INTERNAL_AE2_OPERATOR"] == "VALID_MATCH_ASSEMBLY_COMPLETE_COTANGENT_MISSING"
     assert verdicts["PHYSICAL_RESET_PULLBACK"] == "VALID_MATCH"
     assert verdicts["STATE_PROPAGATOR_U"] == "ACTUALLY_MISSING_ON_MAXIMAL_TAIL"
     assert verdicts["NUMERICAL_ZERO_SOURCE_FORCE"] == "ACTUALLY_MISSING"
