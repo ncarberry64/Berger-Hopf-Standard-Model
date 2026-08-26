@@ -395,8 +395,8 @@
   `D_lambda Gamma_heat=lambda H_heat(lambda)` with uniformly finite
   `H_heat`, and differentiation may pass through the graded supertrace. The
   sharp coefficient and its comparison with the strict zeta coefficient are
-  closed at zero amplitude by the next theorem; the finite-amplitude remainder
-  remains open.
+  closed at zero amplitude by the next theorem and on the whole stored box by
+  the finite-amplitude theorem below.
 - Incoming zero-amplitude heat--zeta comparison:
   `FINITE_CORE_ZERO_AMPLITUDE_HEAT_COEFFICIENT_STRICTLY_DOMINATED_BY_ZETA`.
   Schur elimination of the vanishing incoming element gives the exact
@@ -404,9 +404,23 @@
   Gershgorin bound and half-heat Gaussian sum enclose the complete graded heat
   coefficient with natural-log upper bound `-4.418838786084337e54`; the
   replacement-zeta coefficient has log lower bound `33.80468708349772`.
-  Hence the complete finite-core amplitude covector is strictly positive on
-  some punctured neighborhood of zero. The neighborhood radius and entire
-  stored amplitude box remain open pending the compliance Schur remainder.
+  Hence this theorem by itself makes the complete finite-core amplitude
+  covector strictly positive on some punctured neighborhood of zero. Its
+  formerly open compliance remainder is closed by the next theorem.
+- Incoming finite-amplitude heat--zeta comparison:
+  `FINITE_CORE_CERTIFIED_AMPLITUDE_BOX_HEAT_STRICTLY_DOMINATED_BY_ZETA`.
+  On the fixed-terminal family, the seam row gives
+  `|u_0|<=8h|b(rho)|/sqrt(m_0)` below
+  `R(h)=1/(8h(M_00^child+h/3))`, cancelling the raw short-arm Laurent jet.
+  Above that split, the action-owned heat exponential dominates every
+  remaining Laurent power and the half-heat angular Gaussian sums the full
+  grading. The stored high-mode coefficient log bound is
+  `-7.34175792230651e75`; the low-mode bound differs from the certified
+  zero-amplitude majorant by only a finite explicit factor. Thus the complete
+  finite-core replacement amplitude covector is strictly positive on the
+  entire certified open amplitude box. This is one joint contraction, not a
+  componentwise KKT equation; the maximal C2 projected tail and physical KKT
+  root remain open.
 - The actual same-action replacement residual is the heat-minus-zeta force,
   `D_Phi Gamma_heat-D_Phi Gamma_SM^zeta`, because the certified local root
   already extremizes the attached-zeta action.  Here

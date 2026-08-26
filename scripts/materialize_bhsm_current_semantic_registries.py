@@ -86,6 +86,7 @@ SOURCES = (
     "artifacts/flagship_integration/BHSM_N12_GATE7_INCOMING_COMPLIANCE_REGULAR_CHART.json",
     "artifacts/flagship_integration/BHSM_N12_GATE7_INCOMING_GRADED_HEAT_DIFFERENTIABILITY.json",
     "artifacts/flagship_integration/BHSM_N12_GATE7_INCOMING_ZERO_AMPLITUDE_HEAT_ZETA_COMPARISON.json",
+    "artifacts/flagship_integration/BHSM_N12_GATE7_INCOMING_FINITE_AMPLITUDE_HEAT_ZETA_COMPARISON.json",
     "artifacts/flagship_integration/BHSM_N12_C2_SIGNED_DURATION_INCIDENCE_OWNER.json",
     "artifacts/flagship_integration/BHSM_N12_C2_SIGNED_DDELTA_SEED_TRANSPORT_AUDIT.json",
     "artifacts/flagship_integration/BHSM_N12_C2_DIRECT_DDELTA_ROW_RECONNAISSANCE.json",
@@ -204,6 +205,7 @@ def verify_current_lineage() -> None:
     incoming_compliance = loaded["artifacts/flagship_integration/BHSM_N12_GATE7_INCOMING_COMPLIANCE_REGULAR_CHART.json"]
     incoming_graded_heat = loaded["artifacts/flagship_integration/BHSM_N12_GATE7_INCOMING_GRADED_HEAT_DIFFERENTIABILITY.json"]
     incoming_zero_comparison = loaded["artifacts/flagship_integration/BHSM_N12_GATE7_INCOMING_ZERO_AMPLITUDE_HEAT_ZETA_COMPARISON.json"]
+    incoming_finite_comparison = loaded["artifacts/flagship_integration/BHSM_N12_GATE7_INCOMING_FINITE_AMPLITUDE_HEAT_ZETA_COMPARISON.json"]
     duration_incidence = loaded["artifacts/flagship_integration/BHSM_N12_C2_SIGNED_DURATION_INCIDENCE_OWNER.json"]
     ddelta_transport = loaded["artifacts/flagship_integration/BHSM_N12_C2_SIGNED_DDELTA_SEED_TRANSPORT_AUDIT.json"]
     ddelta_row = loaded["artifacts/flagship_integration/BHSM_N12_C2_DIRECT_DDELTA_ROW_RECONNAISSANCE.json"]
@@ -447,6 +449,15 @@ def verify_current_lineage() -> None:
         ] == "CERTIFIED_EXISTENTIAL"
         and incoming_zero_comparison["claim_boundary"][
             "entire_amplitude_box_joint_sign"
+        ] == "OPEN"
+        and incoming_finite_comparison["claim_boundary"][
+            "finite_amplitude_compliance_remainder"
+        ] == "CERTIFIED_ON_FULL_BOX"
+        and incoming_finite_comparison["claim_boundary"][
+            "finite_core_entire_amplitude_box_joint_sign"
+        ] == "CERTIFIED_STRICT_POSITIVE"
+        and incoming_finite_comparison["claim_boundary"][
+            "maximal_projected_tail"
         ] == "OPEN"
     ):
         raise RuntimeError("joint Gate7 source/cotangent frontier is not current")
