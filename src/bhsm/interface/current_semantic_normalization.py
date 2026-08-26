@@ -830,6 +830,8 @@ def _gates() -> list[dict[str, Any]]:
             "artifacts/flagship_integration/BHSM_N12_GATE7_DIRECT_ZETA_COEFFICIENT_COTANGENT.json",
             "artifacts/flagship_integration/BHSM_N12_GATE7_C2_FINITE_CORE_ZETA_RESET_COTANGENT_ENCLOSURE.json",
             "artifacts/flagship_integration/BHSM_N12_GATE7_JOINT_KKT_INFORMATION_GATE.json",
+            "artifacts/flagship_integration/BHSM_N12_GATE7_INCOMING_AMPLITUDE_ZETA_COTANGENT.json",
+            "artifacts/flagship_integration/BHSM_N12_GATE7_INCOMING_COMPLIANCE_REGULAR_CHART.json",
             "artifacts/flagship_integration/BHSM_N12_C2_SIGNED_DURATION_INCIDENCE_OWNER.json",
             "artifacts/flagship_integration/BHSM_N12_C2_SIGNED_DDELTA_SEED_TRANSPORT_AUDIT.json",
             "artifacts/flagship_integration/BHSM_N12_C2_DIRECT_DDELTA_ROW_RECONNAISSANCE.json",
@@ -881,7 +883,13 @@ def _gates() -> list[dict[str, Any]]:
                 "under the closed-system source ontology this retires every separate "
                 "zero or zero-exclusion requirement on an internal component, so Gate 7 "
                 "remains open for one combined signed heat-zeta-upstream-interface "
-                "covector and the maximal projected tail or an actual finite stop"
+                "covector and the maximal projected tail or an actual finite stop; "
+                "on the fixed-terminal incoming amplitude family the formation-zeta "
+                "covector has an exact strict sign for every positive amplitude; the "
+                "equivalent compliance chart C_f=M_f^-1=b/d removes the apparent "
+                "M_f Laurent-jet singularity and makes each fixed-channel heat jet "
+                "O(lambda), while uniform summable domination of the full graded "
+                "heat derivative remains open before any joint sign or KKT claim"
             )
         predecessor = [] if index == 0 else [GATE_CHAIN[index - 1][0]]
         provenance = sources.get(cid, fallback)

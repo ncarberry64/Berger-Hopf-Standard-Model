@@ -369,6 +369,23 @@
   is separately required to vanish or exclude zero. The live owner is one
   combined signed interval covector, followed by the projected Cauchy-tail and
   intrinsic/bordered KKT tests.
+- Incoming-amplitude zeta cotangent:
+  `INCOMING_AMPLITUDE_ZETA_COTANGENT_STRICT_SIGN_CERTIFIED`. On the certified
+  family that varies the incoming C1 prefix while keeping `E1=C_*` and
+  `C2=E_*` fixed, the fundamental theorem of calculus gives
+  `D_lambda Gamma_form^zeta=-(59/30)exp(-x)lambda/(-Delta)<0` for every
+  positive amplitude. The replacement-zeta component is therefore strictly
+  positive, but tends to zero linearly and is not imposed as a separate KKT
+  equation.
+- Incoming compliance regular chart:
+  `INCOMING_COMPLIANCE_REGULAR_CHART_AND_LINEAR_AMPLITUDE_JET_CERTIFIED`.
+  For compact transfer `Phi_f=[[a,b],[c,d]]`, the pole chart is `M_f=d/b`
+  while the equivalent regular chart is `C_f=M_f^-1=b/d`. The exact reverse
+  identity `D C_f=-C_f(D M_f)C_f` cancels the apparent `O(lambda^-3)` DtN
+  derivative, giving `D_lambda C_f=lambda/(-Delta)+O(lambda^3)` and hence a
+  pointwise `O(lambda)` heat sensitivity in every fixed channel. The remaining
+  comparison is precisely uniform summable domination over the retained
+  graded angular supertrace; it is not yet a joint-force sign theorem.
 - The actual same-action replacement residual is the heat-minus-zeta force,
   `D_Phi Gamma_heat-D_Phi Gamma_SM^zeta`, because the certified local root
   already extremizes the attached-zeta action.  Here

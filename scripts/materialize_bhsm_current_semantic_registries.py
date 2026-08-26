@@ -82,6 +82,8 @@ SOURCES = (
     "artifacts/flagship_integration/BHSM_N12_GATE7_DIRECT_ZETA_COEFFICIENT_COTANGENT.json",
     "artifacts/flagship_integration/BHSM_N12_GATE7_C2_FINITE_CORE_ZETA_RESET_COTANGENT_ENCLOSURE.json",
     "artifacts/flagship_integration/BHSM_N12_GATE7_JOINT_KKT_INFORMATION_GATE.json",
+    "artifacts/flagship_integration/BHSM_N12_GATE7_INCOMING_AMPLITUDE_ZETA_COTANGENT.json",
+    "artifacts/flagship_integration/BHSM_N12_GATE7_INCOMING_COMPLIANCE_REGULAR_CHART.json",
     "artifacts/flagship_integration/BHSM_N12_C2_SIGNED_DURATION_INCIDENCE_OWNER.json",
     "artifacts/flagship_integration/BHSM_N12_C2_SIGNED_DDELTA_SEED_TRANSPORT_AUDIT.json",
     "artifacts/flagship_integration/BHSM_N12_C2_DIRECT_DDELTA_ROW_RECONNAISSANCE.json",
@@ -196,6 +198,8 @@ def verify_current_lineage() -> None:
     direct_zeta = loaded["artifacts/flagship_integration/BHSM_N12_GATE7_DIRECT_ZETA_COEFFICIENT_COTANGENT.json"]
     zeta_pullback = loaded["artifacts/flagship_integration/BHSM_N12_GATE7_C2_FINITE_CORE_ZETA_RESET_COTANGENT_ENCLOSURE.json"]
     joint_kkt_info = loaded["artifacts/flagship_integration/BHSM_N12_GATE7_JOINT_KKT_INFORMATION_GATE.json"]
+    incoming_zeta = loaded["artifacts/flagship_integration/BHSM_N12_GATE7_INCOMING_AMPLITUDE_ZETA_COTANGENT.json"]
+    incoming_compliance = loaded["artifacts/flagship_integration/BHSM_N12_GATE7_INCOMING_COMPLIANCE_REGULAR_CHART.json"]
     duration_incidence = loaded["artifacts/flagship_integration/BHSM_N12_C2_SIGNED_DURATION_INCIDENCE_OWNER.json"]
     ddelta_transport = loaded["artifacts/flagship_integration/BHSM_N12_C2_SIGNED_DDELTA_SEED_TRANSPORT_AUDIT.json"]
     ddelta_row = loaded["artifacts/flagship_integration/BHSM_N12_C2_DIRECT_DDELTA_ROW_RECONNAISSANCE.json"]
@@ -411,6 +415,20 @@ def verify_current_lineage() -> None:
         and joint_kkt_info["adjudication"][
             "complete_joint_signed_finite_core_covector"
         ] == "OPEN_CURRENT_OWNER"
+        and incoming_zeta["claim_boundary"][
+            "incoming_amplitude_zeta_covector"
+        ] == "CERTIFIED_STRICT_SIGN"
+        and incoming_zeta["claim_boundary"]["joint_amplitude_force"]
+        == "OPEN"
+        and incoming_compliance["claim_boundary"][
+            "incoming_compliance_regular_chart"
+        ] == "CERTIFIED"
+        and incoming_compliance["claim_boundary"][
+            "fixed_channel_amplitude_heat_jet_regularity"
+        ] == "CERTIFIED_POINTWISE"
+        and incoming_compliance["claim_boundary"][
+            "uniform_graded_heat_amplitude_covector"
+        ] == "OPEN"
     ):
         raise RuntimeError("joint Gate7 source/cotangent frontier is not current")
     if force_sign_no_go["claim_boundary"]["universal_force_sign_shortcut"] != "CLOSED_INVALID":
