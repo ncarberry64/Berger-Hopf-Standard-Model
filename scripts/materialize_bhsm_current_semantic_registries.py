@@ -261,6 +261,10 @@ def verify_current_lineage() -> None:
         is False
         and ddelta_row["adjudication"]["one_dominant_D2Delta_row_sufficient"]
         is True
+        and ddelta_row["adjudication"]["mixed_second_eigenline_vector_required"]
+        is False
+        and ddelta_row["adjudication"]["mixed_second_eigenline_contraction"]
+        == "REDUCED_TO_ONE_HARD_ADJOINT_AND_LOCAL_SOURCE"
         and ddelta_row["adjudication"][
             "rigorous_dominant_row_enclosure_on_exact_tube"
         ]

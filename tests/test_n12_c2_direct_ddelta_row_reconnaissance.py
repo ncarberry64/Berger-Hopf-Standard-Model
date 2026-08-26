@@ -24,6 +24,10 @@ def test_direct_delta_identity_and_one_row_reduction_are_fail_closed() -> None:
     )
     assert payload["adjudication"]["full_98_by_98_D2Delta_norm_required"] is False
     assert payload["adjudication"]["one_dominant_D2Delta_row_sufficient"] is True
+    assert payload["adjudication"]["mixed_second_eigenline_vector_required"] is False
+    assert payload["adjudication"]["mixed_second_eigenline_contraction"] == (
+        "REDUCED_TO_ONE_HARD_ADJOINT_AND_LOCAL_SOURCE"
+    )
     assert payload["adjudication"]["rigorous_dominant_row_enclosure_on_exact_tube"] == "OPEN"
     assert payload["adjudication"]["physical_event_stop_or_zero_force_found"] is False
 
@@ -42,6 +46,18 @@ def test_two_mesh_row_is_only_diagnostic() -> None:
         rows = np.asarray(data["direct_D2Delta_rows"], dtype=float)
         assert rows.shape == (2, 98)
         assert int(data["dominant_index"]) == 86
+
+
+def test_second_eigenline_contraction_uses_small_hard_adjoint() -> None:
+    reduction = _payload()["second_eigenline_adjoint_reduction"]
+    assert reduction["authority"].startswith("EXACT_ANALYTIC_IDENTITY")
+    assert reduction["defining_equation_residual_2_norm"] < 1.0e-14
+    assert reduction["spectral_to_gap_only_ratio"] < 1.0e-3
+    assert reduction["spectral_hard_adjoint_2_norm"] < 0.01
+    with np.load(DATA) as data:
+        assert data["third_variation_covector"].shape == (61,)
+        assert data["third_variation_hard_adjoint"].shape == (61,)
+        assert int(data["adjoint_selected_branch"]) == 24
 
 
 def test_gate_and_downstream_claims_remain_open() -> None:

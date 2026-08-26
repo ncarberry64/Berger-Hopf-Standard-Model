@@ -6,6 +6,8 @@
     "direct_signed_Delta_recombination": "DERIVED",
     "full_98_by_98_D2Delta_norm_required": false,
     "hard_response_evaluation": "SPECTRAL_COMPLEMENT_NOT_BORDERED_SOLVE",
+    "mixed_second_eigenline_contraction": "REDUCED_TO_ONE_HARD_ADJOINT_AND_LOCAL_SOURCE",
+    "mixed_second_eigenline_vector_required": false,
     "one_dominant_D2Delta_row_sufficient": true,
     "physical_event_stop_or_zero_force_found": false,
     "prior_coarse_product_ball": "VALID_BUT_SUPERSEDED_AS_NEXT_ROUTE",
@@ -26,14 +28,17 @@
   },
   "classification": "DELTA_RECOMBINES_EXACTLY_AS_Dlambda_OF_bPsi_PLUS_sVhard_BEFORE_NORMS;_ZERO_EXCLUSION_REQUIRES_ONLY_THE_DOMINANT_HESSIAN_ROW,_NOT_THE_FULL_D2DELTA_OPERATOR;_TWO_MESH_VALUES_ARE_DIAGNOSTIC_UNTIL_A_CANCELLATION_PRESERVING_INTERVAL_REMAINDER_IS_PROVED",
   "data": "artifacts/flagship_integration/BHSM_N12_C2_DIRECT_DDELTA_ROW_RECONNAISSANCE.npz",
-  "data_SHA256": "A176D088399D989CCCE41C31F63A8D36391DD04460D674078CF7F16599362EE2",
+  "data_SHA256": "E5E82F0EC65D1A23ADC36E02BBA8E01BD6C2A50E898484D68C48E666023E2814",
   "exact_identity": {
     "Delta": "Delta=Dlambda[N]=c*b_psi+s*R",
+    "adjoint_contraction": "D3S[Psi_ih,Psi,Psi]=<z,G_ih>-c*<Psi_i,Psi_h>",
     "dominant_component_transport": "abs(D_i_Delta_exact)>=abs(D_i_Delta_center)-r_seed-sup_row_norm_i(D2Delta)*r_tube",
+    "hard_adjoint": "z=S*Q*g,_g(v)=D3S[v,Psi,Psi]",
     "numerator": "N=b_psi*Psi+s*V_hard",
+    "second_eigenline_derivative": "Psi_ih=S*Q*G_ih-<Psi_i,Psi_h>*Psi,_S=(lambda-H)_hard^{-1}",
     "sufficient_row_test": "sup_row_norm_i(D2Delta)<(abs(D_i_Delta_center)-r_seed)/r_tube"
   },
-  "exact_next_dependency": "ENCLOSE_ONLY_ACTION_ROW_86_OF_D2DELTA_ON_THE_NODE_1214_EXACT_STATE_TUBE_USING_THE_DIRECT_Dlambda_OF_N_IDENTITY_AND_PROVE_ITS_TOTAL_ROW_NORM_BELOW_THE_REPORTED_RIGOROUS_CEILING;_DO_NOT_REQUIRE_A_FULL_D2DELTA_OPERATOR_NORM",
+  "exact_next_dependency": "OUTWARD_ROUND_THE_LOCAL_G_86h_SOURCE_CONTRACTION_AGAINST_THE_HARD_ADJOINT_AND_THE_INVERSE_FREE_b_Psi_SECOND_VARIATION_ON_THE_NODE_1214_EXACT_TUBE,_THEN_ADD_THE_s_SUPPRESSED_HARD_RESPONSE_ROW_AND_PROVE_THE_TOTAL_BELOW_14.6225",
   "inputs": {
     "artifacts/flagship_integration/BHSM_N12_C2_1222_SEGMENT_FINITE_CORE_DESCRIPTOR.json": "0CDC9B9EF09AFA70AA7F5E225F6D49A4FCD27CADAD5CDFA4A062FBE04B960445",
     "artifacts/flagship_integration/BHSM_N12_C2_1222_SEGMENT_FINITE_CORE_DESCRIPTOR.npz": "90E0F02751031F879C82C4EA8ED3ACEBBF278900ED4FBD47C5612CD13F91AF11",
@@ -45,7 +50,7 @@
     "artifacts/flagship_integration/BHSM_N12_C2_SIGNED_DDELTA_SEED_TRANSPORT_AUDIT.json": "DADC6DB8D100EA250C598A52C59FEE2E847C30DB9C094CD9E913B393BDF53ABB",
     "src/bhsm/interface/aether_forward_c2_descriptor_cover.py": "A5A9D9425ECACE2C672B94BB3E4507389F935C7FA473D8B7C3FD986E81ADAB3A",
     "src/bhsm/interface/aether_n3_exact_full_local_action_jet_v17_60.py": "51114F2A47CA1743B8FA1D942F2DD80322929BE1DD4AEB9CAB08C45E3D795F7C",
-    "theory/n12_c2_direct_ddelta_row_reconnaissance.md": "01834A9B7D2C2E775D38907CCA1DDC9C6D1D4139401DDA5C9B1FD60911D38143"
+    "theory/n12_c2_direct_ddelta_row_reconnaissance.md": "890A61EF46F02FFD3AEE2ADDF7D263BE85EE876B6554804E7E9E10A65017D1C3"
   },
   "reference_replay": {
     "certified_Delta_interval": [
@@ -65,6 +70,17 @@
     "stored_bordered_b_psi": 0.00042910818866374314,
     "stored_minus_inverse_free_b_psi": 1.804499658963725e-10
   },
+  "second_eigenline_adjoint_reduction": {
+    "authority": "EXACT_ANALYTIC_IDENTITY_WITH_BINARY64_CENTER_REPLAY;_TUBE_REMAINDER_NOT_YET_INTERVAL_CERTIFIED",
+    "center_hard_gap": 2.593742665019184e-07,
+    "defining_equation_residual_2_norm": 4.779962981395545e-16,
+    "gap_only_hard_adjoint_2_norm_upper": 45.90740946326846,
+    "moving_cubic_c": 2.078833031060716e-10,
+    "raw_D3_selected_selected_covector_2_norm": 1.1907200658353163e-05,
+    "raw_D3_selected_selected_hard_covector_2_norm": 1.1907200656538485e-05,
+    "spectral_hard_adjoint_2_norm": 0.005148589943947896,
+    "spectral_to_gap_only_ratio": 0.00011215161134429503
+  },
   "status": "DIRECT_DDELTA_INVARIANT_AND_ONE_ROW_REDUCTION_DERIVED;_TWO_MESH_RECONNAISSANCE_STABLE;_RIGOROUS_ROW_REMAINDER_OPEN",
   "two_mesh_reconnaissance": {
     "authority": "DIAGNOSTIC_ONLY_NOT_AN_INTERVAL_OR_ANALYTIC_BOUND",
@@ -81,8 +97,10 @@
     "row_mesh_discrepancy_2_norm": 2.697007343033626e-07
   },
   "validation": {
+    "adjoint_selected_branch_24_replayed": true,
     "diagnostic_fine_row_is_far_below_resolving_ceiling": true,
     "dominant_seed_component_is_coordinate_86": true,
+    "hard_adjoint_defining_equation_replayed": true,
     "inverse_free_Delta_lies_in_certified_center_interval": true,
     "mesh_agreement_not_promoted_to_interval_remainder": true,
     "no_selector_recurrence_scale_fit_gate_or_chord_added": true,
@@ -91,6 +109,7 @@
     "selected_branch_24_replayed": true,
     "selected_line_coefficient_is_inverse_free": true,
     "stored_bordered_b_binary_residual_is_explicit": true,
+    "structured_adjoint_is_smaller_than_gap_only_bound": true,
     "two_mesh_row_norms_are_stable_to_two_percent": true,
     "two_mesh_rows_are_finite": true
   },

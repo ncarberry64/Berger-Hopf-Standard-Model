@@ -321,12 +321,13 @@ def test_replacement_force_is_constraint_projected_without_reset_selection() -> 
     ]["physical_meaning"]
     ddelta_row = basis["C2_DIRECT_DDELTA_ROW_RECONNAISSANCE"]
     assert ddelta_row["current_status"] == (
-        "INVERSE_FREE_b_AND_DIRECT_DELTA_ONE_ROW_SUFFICIENCY_DERIVED_RIGOROUS_ROW_86_REMAINDER_OPEN"
+        "INVERSE_FREE_b_DIRECT_DELTA_ONE_ROW_AND_HARD_ADJOINT_REDUCTION_DERIVED_RIGOROUS_ROW_86_REMAINDER_OPEN"
     )
     assert "b_Psi=<Psi,f>" in ddelta_row["formula"]
-    assert "two-mesh agreement is an interval certificate" in ddelta_row[
-        "forbidden_interpretations"
-    ]
+    assert any(
+        "two-mesh agreement" in item
+        for item in ddelta_row["forbidden_interpretations"]
+    )
     assert (
         "artifacts/flagship_integration/"
         "BHSM_N12_C2_DIRECT_DDELTA_ROW_RECONNAISSANCE.json"

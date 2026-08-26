@@ -70,3 +70,47 @@ bound for this one row on the node-1214 exact-state tube.
 
 This reduction introduces no selector, recurrence, scale, fitted value,
 physical stopping locus, gate, or chord.
+
+## Hard-adjoint removal of the mixed second eigenline
+
+Let `Q=I-Psi Psi^dagger` and let
+
+```text
+S = (lambda-H)_hard^{-1} Q.
+```
+
+For two state directions `u,h`, differentiated eigenline normalization and
+the twice-differentiated eigenvalue equation give
+
+```text
+Psi_uh = S Q G_uh - <Psi_u,Psi_h> Psi,
+G_uh = H_uh Psi + (H_u-lambda_u)Psi_h
+                    + (H_h-lambda_h)Psi_u.
+```
+
+Define the raw reduced covector `g` by
+
+```text
+<g,v> = D3 S_action[v,Psi,Psi]
+```
+
+and solve only the hard adjoint
+
+```text
+z = S Q g.
+```
+
+Self-adjointness of the hard resolvent then gives the exact contraction
+
+```text
+D3 S_action[Psi_uh,Psi,Psi]
+  = <z,G_uh> - c <Psi_u,Psi_h>,
+c = <g,Psi>.
+```
+
+Consequently the large vector `Psi_uh` never needs to be enclosed.  The
+decisive row requires one local mixed source paired with one hard adjoint.
+At the reference center the structured adjoint is orders of magnitude below
+the gap-only estimate.  That center replay validates the algebra and exposes
+the right proof variable; it does not replace the still-required outward-
+rounded tube enclosure.

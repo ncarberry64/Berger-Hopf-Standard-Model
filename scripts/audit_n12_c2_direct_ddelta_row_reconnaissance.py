@@ -6,6 +6,7 @@ from decimal import Decimal
 import hashlib
 import json
 import math
+import os
 from pathlib import Path
 import sys
 import time
@@ -206,6 +207,49 @@ def _row(
     return row
 
 
+def _third_variation_covector_and_adjoint(
+    state: np.ndarray,
+    *,
+    reference: np.ndarray,
+) -> tuple[np.ndarray, np.ndarray, float, float, int]:
+    """Return the raw reduced D3[.,Psi,Psi] covector and its hard adjoint.
+
+    The complex step differentiates the retained action Hessian itself.  The
+    hard adjoint uses the spectral expansion of ``(lambda-H)^{-1} Q`` and
+    therefore never forms or inverts the ill-conditioned bordered matrix.
+    """
+
+    jet = _jet(state)
+    reduced = np.asarray(jet.hessian)[QDIM:, QDIM:]
+    values, vectors = np.linalg.eigh(np.asarray(reduced, dtype=float))
+    selected = int(np.argmax(np.abs(vectors.T @ reference)))
+    psi = vectors[:, selected]
+    if float(psi @ reference) < 0.0:
+        psi = -psi
+
+    covector = np.empty(psi.size)
+    for index in range(psi.size):
+        shifted = state.astype(complex)
+        shifted[QDIM + index] += 1j * COMPLEX_STEP
+        derivative = (
+            np.imag(np.asarray(_jet(shifted).hessian)[QDIM:, QDIM:])
+            / COMPLEX_STEP
+        )
+        covector[index] = float(psi @ derivative @ psi)
+
+    selected_component = float(psi @ covector)
+    hard_indices = np.arange(psi.size) != selected
+    complement = vectors[:, hard_indices]
+    hard_values = values[hard_indices]
+    hard_covector = covector - selected_component * psi
+    adjoint = complement @ (
+        (complement.T @ hard_covector)
+        / (values[selected] - hard_values)
+    )
+    gap = float(np.min(np.abs(values[selected] - hard_values)))
+    return covector, adjoint, selected_component, gap, selected
+
+
 def build_payload(*, recompute: bool = True) -> dict[str, Any]:
     missing = [str(path) for path in INPUTS if not path.is_file()]
     if missing:
@@ -261,6 +305,16 @@ def build_payload(*, recompute: bool = True) -> dict[str, Any]:
             )
             for step in OUTER_STEPS
         ])
+        (
+            third_covector,
+            hard_adjoint,
+            cubic,
+            center_gap,
+            adjoint_selected,
+        ) = _third_variation_covector_and_adjoint(
+            center,
+            reference=reference,
+        )
         np.savez_compressed(
             DATA_RESULT,
             center_state=center,
@@ -269,12 +323,26 @@ def build_payload(*, recompute: bool = True) -> dict[str, Any]:
             inner_step=np.asarray(INNER_STEP),
             dominant_index=np.asarray(dominant_index),
             direct_D2Delta_rows=rows,
+            third_variation_covector=third_covector,
+            third_variation_hard_adjoint=hard_adjoint,
+            moving_cubic=np.asarray(cubic),
+            center_hard_gap=np.asarray(center_gap),
+            adjoint_selected_branch=np.asarray(adjoint_selected),
         )
     else:
         if not DATA_RESULT.is_file():
             raise FileNotFoundError("stored direct DDelta row data required")
         with np.load(DATA_RESULT) as data:
             rows = np.asarray(data["direct_D2Delta_rows"], dtype=float)
+            third_covector = np.asarray(
+                data["third_variation_covector"], dtype=float
+            )
+            hard_adjoint = np.asarray(
+                data["third_variation_hard_adjoint"], dtype=float
+            )
+            cubic = float(data["moving_cubic"])
+            center_gap = float(data["center_hard_gap"])
+            adjoint_selected = int(data["adjoint_selected_branch"])
 
     coarse_row, fine_row = rows
     coarse_norm = float(np.linalg.norm(coarse_row))
@@ -304,12 +372,27 @@ def build_payload(*, recompute: bool = True) -> dict[str, Any]:
     certified_delta_interval = tuple(float(value) for value in step["domain"]["Delta_interval"])
     fine_to_ceiling = fine_norm / resolving_row_ceiling
     remaining_rigorous_remainder_budget = resolving_row_ceiling - fine_norm
+    hard_covector = third_covector - cubic * psi
+    hard_covector_norm = float(np.linalg.norm(hard_covector))
+    hard_adjoint_norm = float(np.linalg.norm(hard_adjoint))
+    gap_only_adjoint_bound = hard_covector_norm / center_gap
+    # Replay the defining equation with the actual reduced Hessian.
+    reduced_hessian = np.asarray(_jet(center).hessian, dtype=float)[
+        QDIM:, QDIM:
+    ]
+    values = np.linalg.eigvalsh(reduced_hessian)
+    selected_lambda = float(values[adjoint_selected])
+    adjoint_residual = float(np.linalg.norm(
+        (selected_lambda * np.eye(psi.size) - reduced_hessian) @ hard_adjoint
+        - hard_covector
+    ))
 
     validation = {
         "reference_center_is_stored_node_1214": bool(np.array_equal(
             center, proof_centers[REFERENCE_NODE]
         )),
         "selected_branch_24_replayed": center_selected == 24,
+        "adjoint_selected_branch_24_replayed": adjoint_selected == 24,
         "dominant_seed_component_is_coordinate_86": dominant_index == 86,
         "inverse_free_Delta_lies_in_certified_center_interval": (
             certified_delta_interval[0] < center_delta < certified_delta_interval[1]
@@ -324,6 +407,10 @@ def build_payload(*, recompute: bool = True) -> dict[str, Any]:
         ),
         "diagnostic_fine_row_is_far_below_resolving_ceiling": (
             fine_to_ceiling < 1.0e-4
+        ),
+        "hard_adjoint_defining_equation_replayed": adjoint_residual < 1.0e-14,
+        "structured_adjoint_is_smaller_than_gap_only_bound": (
+            hard_adjoint_norm < 1.0e-3 * gap_only_adjoint_bound
         ),
         "mesh_agreement_not_promoted_to_interval_remainder": True,
         "proof_center_not_promoted_to_exact_history": True,
@@ -354,6 +441,15 @@ def build_payload(*, recompute: bool = True) -> dict[str, Any]:
                 "sup_row_norm_i(D2Delta)<"
                 "(abs(D_i_Delta_center)-r_seed)/r_tube"
             ),
+            "second_eigenline_derivative": (
+                "Psi_ih=S*Q*G_ih-<Psi_i,Psi_h>*Psi,_"
+                "S=(lambda-H)_hard^{-1}"
+            ),
+            "hard_adjoint": "z=S*Q*g,_g(v)=D3S[v,Psi,Psi]",
+            "adjoint_contraction": (
+                "D3S[Psi_ih,Psi,Psi]=<z,G_ih>-"
+                "c*<Psi_i,Psi_h>"
+            ),
         },
         "reference_replay": {
             "reference_node": REFERENCE_NODE,
@@ -383,6 +479,24 @@ def build_payload(*, recompute: bool = True) -> dict[str, Any]:
             ),
             "authority": "DIAGNOSTIC_ONLY_NOT_AN_INTERVAL_OR_ANALYTIC_BOUND",
         },
+        "second_eigenline_adjoint_reduction": {
+            "moving_cubic_c": cubic,
+            "raw_D3_selected_selected_covector_2_norm": float(
+                np.linalg.norm(third_covector)
+            ),
+            "raw_D3_selected_selected_hard_covector_2_norm": hard_covector_norm,
+            "center_hard_gap": center_gap,
+            "gap_only_hard_adjoint_2_norm_upper": gap_only_adjoint_bound,
+            "spectral_hard_adjoint_2_norm": hard_adjoint_norm,
+            "spectral_to_gap_only_ratio": (
+                hard_adjoint_norm / gap_only_adjoint_bound
+            ),
+            "defining_equation_residual_2_norm": adjoint_residual,
+            "authority": (
+                "EXACT_ANALYTIC_IDENTITY_WITH_BINARY64_CENTER_REPLAY;_"
+                "TUBE_REMAINDER_NOT_YET_INTERVAL_CERTIFIED"
+            ),
+        },
         "adjudication": {
             "direct_signed_Delta_recombination": "DERIVED",
             "selected_line_b_psi_inverse_free_identity": "DERIVED",
@@ -390,15 +504,19 @@ def build_payload(*, recompute: bool = True) -> dict[str, Any]:
             "full_98_by_98_D2Delta_norm_required": False,
             "one_dominant_D2Delta_row_sufficient": True,
             "diagnostic_row_scale": "STABLE_ON_TWO_MESHES",
+            "mixed_second_eigenline_vector_required": False,
+            "mixed_second_eigenline_contraction": (
+                "REDUCED_TO_ONE_HARD_ADJOINT_AND_LOCAL_SOURCE"
+            ),
             "rigorous_dominant_row_enclosure_on_exact_tube": "OPEN",
             "physical_event_stop_or_zero_force_found": False,
             "prior_coarse_product_ball": "VALID_BUT_SUPERSEDED_AS_NEXT_ROUTE",
         },
         "exact_next_dependency": (
-            "ENCLOSE_ONLY_ACTION_ROW_86_OF_D2DELTA_ON_THE_NODE_1214_"
-            "EXACT_STATE_TUBE_USING_THE_DIRECT_Dlambda_OF_N_IDENTITY_AND_"
-            "PROVE_ITS_TOTAL_ROW_NORM_BELOW_THE_REPORTED_RIGOROUS_CEILING;_"
-            "DO_NOT_REQUIRE_A_FULL_D2DELTA_OPERATOR_NORM"
+            "OUTWARD_ROUND_THE_LOCAL_G_86h_SOURCE_CONTRACTION_AGAINST_THE_"
+            "HARD_ADJOINT_AND_THE_INVERSE_FREE_b_Psi_SECOND_VARIATION_ON_"
+            "THE_NODE_1214_EXACT_TUBE,_THEN_ADD_THE_s_SUPPRESSED_HARD_"
+            "RESPONSE_ROW_AND_PROVE_THE_TOTAL_BELOW_14.6225"
         ),
         "claim_boundary": {
             "Gate7": "G7_08_OPEN_ONE_DIRECT_D2DELTA_ROW_REMAINDER_SEGMENT_ACTION_SOURCE_AND_TAIL",
@@ -425,7 +543,9 @@ def build_payload(*, recompute: bool = True) -> dict[str, Any]:
 
 
 def main() -> None:
-    payload = build_payload(recompute=True)
+    payload = build_payload(
+        recompute=os.environ.get("BHSM_REUSE_STORED_DDELTA_ROW") != "1"
+    )
     RESULT.write_text(
         json.dumps(payload, indent=2, sort_keys=True) + "\n",
         encoding="utf-8",
@@ -435,6 +555,9 @@ def main() -> None:
         "status": payload["status"],
         "reference_replay": payload["reference_replay"],
         "two_mesh_reconnaissance": payload["two_mesh_reconnaissance"],
+        "second_eigenline_adjoint_reduction": (
+            payload["second_eigenline_adjoint_reduction"]
+        ),
         "validation_passed": payload["validation_passed"],
     }, indent=2, sort_keys=True))
 
