@@ -40,8 +40,9 @@ INTERVAL_ACTIONS = BASE / "BHSM_N12_C2_1222_TRANSPOSED_DURATION_ACTION_COVERAGE.
 SIGNED_ADJOINT = BASE / "BHSM_N12_C2_1222_SIGNED_ADJOINT_ASSEMBLY.json"
 SOURCE_ONTOLOGY = BASE / "BHSM_N12_GATE7_CLOSED_SYSTEM_ZERO_EXTERNAL_SOURCE_ONTOLOGY.json"
 JOINT_SEED = BASE / "BHSM_N12_GATE7_JOINT_HEAT_COTANGENT_REVERSE_SEED.json"
+GRADED_COTANGENT = BASE / "BHSM_N12_GATE7_MAXIMAL_GRADED_COTANGENT_MATCHING_AUDIT.json"
 THEORY = ROOT / "theory" / "n12_gate7_1222_core_diagram_matching_audit.md"
-INPUTS = (OLD, CORE, FAMILY, NESTED, MAXIMAL, BIRTH, COMPACT, SEAM, INCIDENCE, FORCE, ADJOINT, CAUCHY, COMMON_SCALE, COMMON_SCALE_WARD, FIXED_CHANNEL_HEAT, INCOMING_MATCH, INCOMING_PATH_GERM, INCOMING_SEGMENT, INCOMING_FINITE_PATH, INCOMING_MF_ENCLOSURE, RADIUS_PULLBACK, DURATION_PULLBACK, COMPLETE_PULLBACK, EXACT_FIELD, PARAMETRIC, INTERVAL_ACTIONS, SIGNED_ADJOINT, SOURCE_ONTOLOGY, JOINT_SEED, THEORY)
+INPUTS = (OLD, CORE, FAMILY, NESTED, MAXIMAL, BIRTH, COMPACT, SEAM, INCIDENCE, FORCE, ADJOINT, CAUCHY, COMMON_SCALE, COMMON_SCALE_WARD, FIXED_CHANNEL_HEAT, INCOMING_MATCH, INCOMING_PATH_GERM, INCOMING_SEGMENT, INCOMING_FINITE_PATH, INCOMING_MF_ENCLOSURE, RADIUS_PULLBACK, DURATION_PULLBACK, COMPLETE_PULLBACK, EXACT_FIELD, PARAMETRIC, INTERVAL_ACTIONS, SIGNED_ADJOINT, SOURCE_ONTOLOGY, JOINT_SEED, GRADED_COTANGENT, THEORY)
 
 
 def _sha256(path: Path) -> str:
@@ -59,11 +60,11 @@ def build_payload() -> dict[str, Any]:
     missing = [str(path) for path in INPUTS if not path.is_file()]
     if missing:
         raise FileNotFoundError("missing 1222 matching inputs: " + ", ".join(missing))
-    old, core, family, nested, maximal, birth, compact, seam, incidence, force, adjoint, cauchy, common_scale, common_scale_ward, fixed_channel_heat, incoming_match, incoming_path_germ, incoming_segment, incoming_finite_path, incoming_mf_enclosure, radius_pullback, duration_pullback, complete_pullback, exact_field, parametric, interval_actions, signed_adjoint, source_ontology, joint_seed = (
+    old, core, family, nested, maximal, birth, compact, seam, incidence, force, adjoint, cauchy, common_scale, common_scale_ward, fixed_channel_heat, incoming_match, incoming_path_germ, incoming_segment, incoming_finite_path, incoming_mf_enclosure, radius_pullback, duration_pullback, complete_pullback, exact_field, parametric, interval_actions, signed_adjoint, source_ontology, joint_seed, graded_cotangent = (
         _load(path) for path in INPUTS[:-1]
     )
     if not all(record.get("validation_passed") is True for record in (
-        old, core, family, nested, maximal, birth, compact, seam, incidence, force, adjoint, cauchy, common_scale, common_scale_ward, fixed_channel_heat, incoming_match, incoming_path_germ, incoming_segment, incoming_finite_path, incoming_mf_enclosure, radius_pullback, duration_pullback, complete_pullback, exact_field, parametric, interval_actions, signed_adjoint, source_ontology, joint_seed,
+        old, core, family, nested, maximal, birth, compact, seam, incidence, force, adjoint, cauchy, common_scale, common_scale_ward, fixed_channel_heat, incoming_match, incoming_path_germ, incoming_segment, incoming_finite_path, incoming_mf_enclosure, radius_pullback, duration_pullback, complete_pullback, exact_field, parametric, interval_actions, signed_adjoint, source_ontology, joint_seed, graded_cotangent,
     )):
         raise RuntimeError("validated diagram parents required")
 
@@ -181,6 +182,14 @@ def build_payload() -> dict[str, Any]:
             "verdict": "VALID_MATCH_SEED_CLOSED_NUMERICAL_COTANGENT_OPEN",
         },
         {
+            "diagram_slot": "MAXIMAL_GRADED_SECTOR_COTANGENT_CONTRACT",
+            "required_type": "FULL_BRST_STATISTICS_MULTIPLICITY_HEAT_MINUS_ZETA_DIRECT_SUM_ON_THE_FORWARD_JOINT_DOMAIN",
+            "candidate": "BHSM_N12_GATE7_MAXIMAL_GRADED_COTANGENT_MATCHING_AUDIT",
+            "dimension_domain_check": "EXACT_GAUGE_WEYL_HS_LEVEL_WEIGHTS_AND_LONGITUDINAL_GHOST_CANCELLATION_MATCH;_ACTUAL_PER_LEVEL_JOINT_OPERATOR_VALUES_OPEN",
+            "provenance_check": "VALID_RETAINED_STATISTICS_LEDGER_CURRENT_FORWARD_DOMAIN_AND_CLOSED_SYSTEM_SOURCE_ONTOLOGY",
+            "verdict": "VALID_MATCH_TYPE_AND_WEIGHTS_CLOSED_ACTUAL_OPERATOR_FAMILY_OPEN",
+        },
+        {
             "diagram_slot": "HEAT_MINUS_ZETA_FORCE_FUNCTIONAL",
             "required_type": "BASIS_INDEPENDENT_FIRST_VARIATION_ON_POSITIVE_SELF_ADJOINT_PHYSICAL_QUOTIENT",
             "candidate": "BHSM_N12_FINITE_ENDPOINT_ZERO_SOURCE_FORCE_FUNCTIONAL",
@@ -249,6 +258,14 @@ def build_payload() -> dict[str, Any]:
             joint_seed["adjudication"]["joint_reverse_seed_formula"] == "CLOSED"
             and joint_seed["adjudication"]["additional_seam_source"] == "FORBIDDEN"
         ),
+        "maximal_graded_cotangent_type_and_weights_are_closed": (
+            graded_cotangent["status"]
+            == "MAXIMAL_GRADED_COTANGENT_TYPE_CLOSED_ACTUAL_OPERATOR_FAMILY_OPEN"
+            and graded_cotangent["adjudication"]["new_grading_required"] is False
+            and graded_cotangent["matching_audit"][
+                "actual_per_level_joint_operator_family"
+            ] == "ACTUALLY_MISSING"
+        ),
         "common_scale_source_contraction_formula_is_closed": (
             common_scale_ward["adjudication"]["common_scale_source_contraction_formula"]
             == "CLOSED"
@@ -315,7 +332,7 @@ def build_payload() -> dict[str, Any]:
     return {
         "artifact": "BHSM_N12_GATE7_1222_CORE_DIAGRAM_MATCHING_AUDIT",
         "status": "GATE7_1222_CORE_SLOTS_MATCHED_REALIZED_PARENT_PULLBACK_AND_PROJECTED_TAIL_OPEN" if passed else "GATE7_1222_CORE_MATCHING_NOT_VALIDATED",
-        "classification": "THE_LOCAL_73_PARAMETER_C2_FAMILY,_ALL_1222_INTERVAL_TRANSPOSED_DURATION_ACTIONS,_SIGNED_REVERSE_EQUATION,_CLOSED_SYSTEM_ZERO_EXTERNAL_SOURCE_PARTITION,_AND_SINGLE_JOINT_HEAT_COTANGENT_SEED_ARE_VALID_MATCHES;_THE_ACTUAL_JOINT_GRADED_SPECTRAL_COTANGENT,_SIGNED_REVERSE_VALUE,_AND_MAXIMAL_PROJECTED_TAIL_REMAIN_MISSING_AS_REALIZED_DATA",
+        "classification": "THE_LOCAL_73_PARAMETER_C2_FAMILY,_ALL_1222_INTERVAL_TRANSPOSED_DURATION_ACTIONS,_SIGNED_REVERSE_EQUATION,_CLOSED_SYSTEM_ZERO_EXTERNAL_SOURCE_PARTITION,_SINGLE_JOINT_HEAT_COTANGENT_SEED,_AND_EXACT_RETAINED_GRADED_LEVEL_WEIGHTS_ARE_VALID_MATCHES;_THE_ACTION_REALIZED_PER_LEVEL_JOINT_OPERATOR_FAMILY,_ACTUAL_GRADED_SPECTRAL_COTANGENT,_SIGNED_REVERSE_VALUE,_AND_MAXIMAL_PROJECTED_TAIL_REMAIN_MISSING_AS_REALIZED_DATA",
         "forward_event_diagram": "C1 --M_f--> E1 --(U_R,W_phys)--> C2 --M_C2--> MAXIMAL_ENDPOINT",
         "matching_audit": slots,
         "adjudication": {
@@ -341,6 +358,8 @@ def build_payload() -> dict[str, Any]:
             "signed_finite_core_reverse_equation": "CLOSED",
             "zero_external_source_semantics": "CLOSED_ONLY_J_ext_AFTER_JOINT_DIFFERENTIATION",
             "joint_heat_cotangent_reverse_seed": "CLOSED",
+            "graded_sector_weights_and_cotangent_contract": "CLOSED",
+            "actual_per_level_joint_operator_family": "ACTUALLY_MISSING",
             "signed_non_scale_backward_center_adjoint_value": "ACTUALLY_MISSING_NUMERICAL_VALUE",
             "non_scale_pathwise_reset_quotient_geometry_pullback_sector": "FINITE_CORE_NORM_MATCHED_SIGNED_VALUE_AND_MAXIMAL_TAIL_OPEN",
             "projected_heat_minus_zeta_force_net_and_tail": "ACTUALLY_MISSING",
@@ -349,7 +368,7 @@ def build_payload() -> dict[str, Any]:
             "Gate8": "LOCKED",
         },
         "validated_invalidated_open": {
-            "VALIDATED": ["C2 1222-core coefficient slot", "local 73-parameter exact C2 family through the finite core", "C2 complete negative-axis finite-core response", "finite-core backward operator cotangent semigroup", "all 1222 interval transposed-duration actions", "signed finite-core reverse equation", "only external J_ext is zeroed after joint differentiation", "single joint heat cotangent reverse seed", "1222-segment state-Jacobi growth provenance", "fixed-node non-scale radius reset pullback", "moving-duration non-scale reset pullback norm", "complete finite-core non-scale geometry first-jet norm", "exact fixed-s action field oracle", "incoming M_f compact terminal-block identity and Laurent germ", "incoming normalized coefficient path through lambda_0 squared", "explicit incoming regularized finite-amplitude segment and first Jacobi bound", "uniform finite-amplitude incoming coefficient family", "incoming M_f parametric whole-negative-axis enclosure", "fermion AE2 joint-seam invertibility", "physical common-scale pullback including moving duration", "common-scale heat-zeta contraction formula", "stored fixed-channel 1064-to-1222 heat increment suppression", "maximal abstract Weyl value", "internal incidence and force consumer formulas"],
+            "VALIDATED": ["C2 1222-core coefficient slot", "local 73-parameter exact C2 family through the finite core", "C2 complete negative-axis finite-core response", "finite-core backward operator cotangent semigroup", "all 1222 interval transposed-duration actions", "signed finite-core reverse equation", "only external J_ext is zeroed after joint differentiation", "single joint heat cotangent reverse seed", "exact retained gauge/Weyl/HS grading weights and longitudinal-ghost cancellation", "1222-segment state-Jacobi growth provenance", "fixed-node non-scale radius reset pullback", "moving-duration non-scale reset pullback norm", "complete finite-core non-scale geometry first-jet norm", "exact fixed-s action field oracle", "incoming M_f compact terminal-block identity and Laurent germ", "incoming normalized coefficient path through lambda_0 squared", "explicit incoming regularized finite-amplitude segment and first Jacobi bound", "uniform finite-amplitude incoming coefficient family", "incoming M_f parametric whole-negative-axis enclosure", "fermion AE2 joint-seam invertibility", "physical common-scale pullback including moving duration", "common-scale heat-zeta contraction formula", "stored fixed-channel 1064-to-1222 heat increment suppression", "maximal abstract Weyl value", "internal incidence and force consumer formulas"],
             "INVALIDATED": ["new C2 theory is required", "a new C1 operator theory is required for M_f", "a second birth exterior response is required", "a full pathwise Jacobi is required for the common-scale component", "all non-scale pathwise reset geometry data are absent", "fixed-duration radius-only zeta derivative is the physical common-scale force", "birth jet alone is the remaining non-scale pathwise reset jet", "a duration interval or proof tube is a duration first jet", "broad seam intervals or probes determine the force", "proof edge is an endpoint"],
             "OPEN": ["actual joint graded spectral cotangent and nonfermion seam value", "numerical signed non-scale backward center-adjoint covector on the parametric family", "maximal non-scale reset-quotient tail", "actual projected force net and Cauchy tail"],
         },

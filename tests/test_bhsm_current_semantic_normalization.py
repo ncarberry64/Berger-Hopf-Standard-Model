@@ -346,6 +346,11 @@ def test_replacement_force_is_constraint_projected_without_reset_selection() -> 
         "BHSM_N12_GATE7_1222_CORE_DIAGRAM_MATCHING_AUDIT.json"
         in dag["G7_08_FORCE"]["provenance"]
     )
+    assert (
+        "artifacts/flagship_integration/"
+        "BHSM_N12_GATE7_MAXIMAL_GRADED_COTANGENT_MATCHING_AUDIT.json"
+        in dag["G7_08_FORCE"]["provenance"]
+    )
     assert "all 1222 interval transposed exact moving-duration actions are now certified" in dag[
         "G7_08_FORCE"
     ]["physical_meaning"]
@@ -353,6 +358,12 @@ def test_replacement_force_is_constraint_projected_without_reset_selection() -> 
         "G7_08_FORCE"
     ]["physical_meaning"]
     assert "actual complete joint graded spectral cotangent" in dag[
+        "G7_08_FORCE"
+    ]["physical_meaning"]
+    assert "neither grading nor multiplicity is missing" in dag[
+        "G7_08_FORCE"
+    ]["physical_meaning"]
+    assert "action-realized per-level complete joint operator family" in dag[
         "G7_08_FORCE"
     ]["physical_meaning"]
     assert (

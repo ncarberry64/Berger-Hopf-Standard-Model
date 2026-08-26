@@ -29,6 +29,9 @@ def test_gate7_1222_core_diagram_matching() -> None:
     assert verdicts["PAIR_CONTACT_AND_GRADED_INTERNAL_INCIDENCE"].startswith("VALID_MATCH_INTERNAL")
     assert verdicts["ZERO_EXTERNAL_BIRTH_CAUCHY_SOURCE"] == "VALID_MATCH_ONLY_J_ext_IS_ZEROED"
     assert verdicts["COMPLETE_JOINT_HEAT_COTANGENT_REVERSE_SEED"].startswith("VALID_MATCH_SEED_CLOSED")
+    assert verdicts["MAXIMAL_GRADED_SECTOR_COTANGENT_CONTRACT"] == (
+        "VALID_MATCH_TYPE_AND_WEIGHTS_CLOSED_ACTUAL_OPERATOR_FAMILY_OPEN"
+    )
     assert payload["adjudication"]["finite_event_or_canonical_stop"] == "NOT_REACHED"
     assert payload["adjudication"]["stored_fixed_channel_1064_to_1222_heat_increment"] == "CERTIFIED_SUPPRESSED_IN_LOG_SPACE"
     assert payload["adjudication"]["non_scale_fixed_node_radius_reset_pullback"] == "CERTIFIED_ON_1222_FINITE_CORE"
@@ -38,6 +41,12 @@ def test_gate7_1222_core_diagram_matching() -> None:
     assert payload["adjudication"]["local_73_parameter_reset_family_through_1222"] == "CLOSED_EXISTENCE_ONLY"
     assert payload["adjudication"]["all_1222_interval_transposed_duration_actions"] == "CERTIFIED"
     assert payload["adjudication"]["joint_heat_cotangent_reverse_seed"] == "CLOSED"
+    assert payload["adjudication"][
+        "graded_sector_weights_and_cotangent_contract"
+    ] == "CLOSED"
+    assert payload["adjudication"][
+        "actual_per_level_joint_operator_family"
+    ] == "ACTUALLY_MISSING"
     assert payload["adjudication"]["incoming_M_f_identity_and_action_owned_germ"].startswith("CLOSED")
     assert payload["adjudication"]["incoming_normalized_coefficient_path_quadratic_germ"] == "CLOSED_INVERSE_FREE"
     assert payload["claim_boundary"]["zero_source_force"] == "OPEN"

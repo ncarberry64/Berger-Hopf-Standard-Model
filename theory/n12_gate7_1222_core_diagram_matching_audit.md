@@ -71,6 +71,14 @@ joint heat functional supplies one cotangent seed and one reverse sweep;
 adding a separate seam source or combining direct and Schur routes would
 double count the same closed operator.
 
+The full grading slot is now matched as well.  The retained nonzero level
+weights are `+24(m^2-1)` for transverse gauge, `-48(n+1)(n+2)` for Weyl, and
+`+4m^2` for HS; the longitudinal/complex-ghost pair cancels mode by mode.
+These weights are independent of the retired periodic temporal domain.  Thus
+neither grading nor multiplicity is missing.  What remains missing is the
+action-realized per-level complete joint operator family and first jet (or a
+decisive trace-functional enclosure) on which those fixed weights act.
+
 The three descriptor channels stored at both resolutions admit an additional
 inverse-free check.  The mixed birth-free/far-Dirichlet Poincare inequality,
 evaluated with the certified proper-duration upper endpoints and radius
@@ -108,7 +116,8 @@ noncompact maximal tail are not.  The common pair/contact incidence and
 heat-minus-zeta trace functional are valid conditional consumers; broad seam
 intervals and isolated probes cannot replace their realized inputs.
 
-Accordingly the next construction is the actual complete joint graded
+Accordingly the next construction is the action-realized per-level joint
+operator family and then the actual complete joint graded
 heat-minus-zeta spectral cotangent on the local parametric family.  It is fed
 to the already-certified interval actions and the single signed reverse
 equation, combined with the exact common-scale component, and tested as a
