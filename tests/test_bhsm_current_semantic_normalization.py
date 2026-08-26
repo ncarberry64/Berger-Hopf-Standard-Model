@@ -216,7 +216,7 @@ def test_replacement_force_is_constraint_projected_without_reset_selection() -> 
     )
     duration_incidence = basis["C2_SIGNED_DURATION_INCIDENCE_OWNER"]
     assert duration_incidence["current_status"] == (
-        "DERIVED_SIGNED_D_Y_DELTA_AND_TRANSPOSED_SEGMENT_ACTION_OPEN"
+        "DERIVED_REFERENCE_D_Y_DELTA_BALL_CERTIFIED_FAMILY_TRANSPORT_AND_SEGMENT_ACTION_OPEN"
     )
     assert "D_Y Delta/Delta" in duration_incidence["formula"]
     assert "a norm bound supplies the sign of D_Y Delta" in (
@@ -316,7 +316,7 @@ def test_replacement_force_is_constraint_projected_without_reset_selection() -> 
     assert "one inverse-free reverse state sweep" in dag["G7_08_FORCE"][
         "physical_meaning"
     ]
-    assert "localizing the remaining moving-duration datum" in dag[
+    assert "transport of that seed ball onto the exact parametric family" in dag[
         "G7_08_FORCE"
     ]["physical_meaning"]
     assert (

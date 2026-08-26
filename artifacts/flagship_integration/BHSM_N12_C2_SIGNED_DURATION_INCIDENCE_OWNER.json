@@ -6,6 +6,7 @@
     "actual_segment_duration_covector": "OPEN_AFTER_DDELTA_AND_SEGMENT_ACTION",
     "proof_center_used_as_physical_history": false,
     "signed_D_Y_Delta_on_exact_parametric_family": "OPEN_CURRENT_OWNER",
+    "signed_D_Y_Delta_reference_center_ball": "CERTIFIED_LOCAL_SEED",
     "signed_log_lapse_incidence": "CLOSED",
     "signed_log_radius_incidence": "CLOSED",
     "signed_proper_duration_incidence_formula": "CLOSED",
@@ -22,28 +23,34 @@
     "chord_03_authorized": false,
     "frozen_predictions_changed": false,
     "signed_D_Y_Delta": "OPEN",
+    "signed_D_Y_Delta_reference_center_ball": "CERTIFIED_LOCAL_SEED",
     "signed_radius_lapse_duration_incidence_formula": "DERIVED"
   },
-  "classification": "THE_EXACT_ACTION_DUAL_DlogR4_AND_DlogN_COVECTORS_AND_THE_SIGNED_D(Ns/Delta)=Ns/Delta*(DlogN-DDelta/Delta)_INCIDENCE_ARE_DERIVED;_THE_COMMITTED_CONTINUATION_DATA_SUPPLY_ONLY_A_NORM_BOUND_FOR_DDelta,_SO_THE_SIGNED_SELECTED_LINE_HARD_COMPLEMENT_DDelta_COVECTOR_IS_THE_MINIMAL_LOCAL_MOVING_DURATION_GAP",
+  "classification": "THE_EXACT_ACTION_DUAL_DlogR4_AND_DlogN_COVECTORS_AND_THE_SIGNED_D(Ns/Delta)=Ns/Delta*(DlogN-DDelta/Delta)_INCIDENCE_ARE_DERIVED;_THE_SELECTED_LINE_HARD_COMPLEMENT_CALCULATION_SUPPLIES_A_SIGNED_DDelta_PARTIAL_PLUS_CONTROLLED_REMAINDER_BALL_AT_THE_REFERENCE_CENTER;_TRANSPORT_OF_THAT_BALL_TO_THE_EXACT_PARAMETRIC_FAMILY_IS_THE_MINIMAL_LOCAL_MOVING_DURATION_GAP",
   "exact_incidence": {
+    "D_Y_Delta_center_partial_action_norm": 1.6027259765507991e-09,
+    "D_Y_Delta_center_relative_remainder_upper": 0.002786873873367207,
+    "D_Y_Delta_center_remainder_action_norm_upper": 4.466595150216365e-12,
+    "D_q_tau_center_partial_action_norm": 0.002438828409040986,
+    "D_q_tau_center_remainder_action_norm_upper": 6.796707521467283e-06,
+    "center_ball_scope": "PROOF_CENTER_SEED_BALL_NOT_EXACT_FAMILY_OR_PHYSICAL_HISTORY_VALUE",
     "first_variation": "D_Y q_tau=q_tau*(D_Y log N_boundary-D_Y Delta/Delta)",
-    "formula_witness_DDelta": "ZERO_ONLY_FOR_ALGEBRAIC_CROSSCHECK_NOT_BHSM_VALUE",
     "log_lapse_action_dual_norm_at_formula_witness": 0.30629696608422236,
     "log_radius_action_dual_norm_at_formula_witness": 1.0459491100665805,
-    "positive_s_formula_witness_density": 1.3574017435159527e-07,
+    "positive_s_center_density": 1.3574017435159527e-07,
     "proper_duration_density": "q_tau=N_boundary(Y)*s/Delta(Y,s)",
     "segment_duration_covector": "h_Y,j=integral_segment_j D_Y q_tau*J ds"
   },
-  "exact_next_dependency": "DERIVE_OR_INTERVAL_ENCLOSE_THE_SIGNED_ACTION_DUAL_D_Y_Delta_FROM_THE_SELECTED_LINE_AND_HARD_COMPLEMENT_FIRST_VARIATIONS_ON_THE_CERTIFIED_PARAMETRIC_FAMILY,_THEN_INTEGRATE_THE_TRANSPOSED_SEGMENT_ACTION_TO_SUPPLY_h_Y,j_TO_THE_EXISTING_SIGNED_ADJOINT",
+  "exact_next_dependency": "TRANSPORT_THE_CERTIFIED_SIGNED_REFERENCE_CENTER_D_Y_Delta_BALL_WITH_THE_SELECTED_LINE_HARD_COMPLEMENT_SECOND_VARIATION_BOUNDS_ONTO_THE_EXACT_PARAMETRIC_FAMILY,_THEN_INTEGRATE_THE_TRANSPOSED_SEGMENT_ACTION_TO_SUPPLY_h_Y,j_TO_THE_EXISTING_SIGNED_ADJOINT",
   "inputs": {
     "artifacts/flagship_integration/BHSM_N12_C2_1222_MOVING_DURATION_PULLBACK_ENCLOSURE.json": "D31EF9D8E919A27D3069F5DFDC6CEDE42E78C649CD24FAEAF4A910730EE1A918",
-    "artifacts/flagship_integration/BHSM_N12_C2_1222_PARAMETRIC_BASE_FAMILY.json": "289B6E8C686D19980F4F6416C124818A573369C291CBB5CE72E2A01153C0C910",
-    "artifacts/flagship_integration/BHSM_N12_C2_1222_SIGNED_ADJOINT_ASSEMBLY.json": "762E424B73F281E84B0B0C5E4091093E9AF66C9A92D4F49CAD9520C79E8BFDEA",
-    "artifacts/flagship_integration/BHSM_N12_C2_EXACT_CENTER_FIXED_S_FIELD_MATRIX.json": "DDC20099E6B856F9127ADC60DF645BC5D0DFF3563436075CB5F0C2909A97AD00",
-    "artifacts/flagship_integration/BHSM_N12_C2_EXACT_CENTER_FIXED_S_FIELD_MATRIX.npz": "1C16759A03868EE7ED576CBF153EA5CBA7741746740AB8D219A11FED3DEA3D64",
-    "artifacts/flagship_integration/BHSM_N12_C2_EXACT_FIXED_S_FIELD_ORACLE.json": "4265D468E865D68AAA126AA3E27368043FCD24499A5CDE41340A9228F0D4E7FF",
+    "artifacts/flagship_integration/BHSM_N12_C2_1222_PARAMETRIC_BASE_FAMILY.json": "FE013A1E27EC733B931CD136F2597C2AD2DF815EF3999A735ABA238359DA87D7",
+    "artifacts/flagship_integration/BHSM_N12_C2_1222_SIGNED_ADJOINT_ASSEMBLY.json": "2FCA1DC258F0FC70230813DAEC9A72E85280F7D1371990EB4C63DEC71332736C",
+    "artifacts/flagship_integration/BHSM_N12_C2_EXACT_CENTER_FIXED_S_FIELD_MATRIX.json": "7962A9051821633517A47DB91EF73EAF2EAD0E5C15BD3E7F2EA707B6E0DC40CA",
+    "artifacts/flagship_integration/BHSM_N12_C2_EXACT_CENTER_FIXED_S_FIELD_MATRIX.npz": "163383CD903538866E579BD87366333B8DA04877EFA587F0F999DA00AC1FFDCD",
+    "artifacts/flagship_integration/BHSM_N12_C2_EXACT_FIXED_S_FIELD_ORACLE.json": "DCE35195F9F6AE9E485F1462FF1F611DB6F4CF266C2CF10C9E49344255A66C88",
     "src/bhsm/interface/aether_forward_c2_geometry_incidence.py": "517EF5751810384347B6C8ADD9F2F282BC3EF7ACECB3B6C15AA7F58EF8F68C0E",
-    "theory/n12_c2_signed_duration_incidence_owner.md": "50EF534CA3E1F28F1213A8F5AB39F3479870071E1F037AF0C8B6AC1BD6A37C53"
+    "theory/n12_c2_signed_duration_incidence_owner.md": "56596BD9C6F5393515D6667252060DA2E4157DCF9679E3FCBF9A5883E496DC96"
   },
   "matching_audit": [
     {
@@ -57,9 +64,9 @@
       "verdict": "VALID_MATCH_EXACT"
     },
     {
-      "candidate": "STORED_Delta_ACTION_DERIVATIVE_UPPER_BOUNDS",
+      "candidate": "SIGNED_PARTIAL_PLUS_CONTROLLED_REMAINDER_AT_REFERENCE_CENTER",
       "diagram_slot": "SIGNED_D_Y_Delta_ALONG_EXACT_C2_FAMILY",
-      "verdict": "INVALID_MATCH_NORM_HAS_NO_SIGN_OR_DIRECTION"
+      "verdict": "VALID_LOCAL_SEED_BALL_NOT_YET_TRANSPORTED_TO_EXACT_FAMILY"
     },
     {
       "candidate": "EXACT_INCIDENCE_PLUS_SIGNED_D_Y_Delta_AND_TRANSPOSED_SEGMENT_MAP",
@@ -67,8 +74,9 @@
       "verdict": "CONDITIONAL_MATCH_D_Y_Delta_AND_SEGMENT_ACTION_OPEN"
     }
   ],
-  "status": "SIGNED_RADIUS_LAPSE_AND_DURATION_INCIDENCE_FORMULA_DERIVED_DDELTA_OPEN",
+  "status": "SIGNED_DURATION_INCIDENCE_AND_REFERENCE_DDELTA_BALL_CERTIFIED_FAMILY_TRANSPORT_OPEN",
   "validation": {
+    "center_DDelta_ball_is_not_a_family_or_physical_history_value": true,
     "exact_fixed_s_field_returns_positive_Delta": true,
     "exact_log_radius_and_log_lapse_covectors_are_finite": true,
     "existing_duration_parent_contains_only_a_norm_bound": true,
@@ -76,8 +84,8 @@
     "parametric_family_exists_on_every_finite_core_prefix": true,
     "positive_s_center_has_positive_proper_duration_density": true,
     "proof_center_not_promoted_to_physical_history": true,
-    "signed_reverse_sweep_is_ready_to_consume_duration_covector": true,
-    "zero_DDelta_witness_is_only_an_algebraic_formula_crosscheck": true
+    "signed_center_DDelta_ball_is_certified_and_nontrivial": true,
+    "signed_reverse_sweep_is_ready_to_consume_duration_covector": true
   },
   "validation_passed": true
 }

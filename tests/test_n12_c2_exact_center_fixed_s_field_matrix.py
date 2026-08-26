@@ -11,6 +11,17 @@ def test_exact_center_fixed_s_field_matrix() -> None:
     assert payload["validation_passed"] is True
     assert payload["center_field"]["Delta"] > 0.0
     assert abs(payload["center_field"]["Dlambda_field"] - 1.0) < 1.0e-8
+    assert payload["center_field"]["Delta_first_partial_action_norm"] > 0.0
+    assert (
+        payload["center_field"][
+            "Delta_first_total_remainder_action_norm_upper"
+        ]
+        / payload["center_field"]["Delta_first_partial_action_norm"]
+        < 2.8e-3
+    )
+    assert "CLOSED_EUCLIDEAN_BALL" in payload["center_field"][
+        "Delta_first_signed_center_ball"
+    ]
     assert payload["comparison"]["matrix_to_scalar_ratio"] < 1.0e-8
     assert payload["fixed_descriptor_matrix"][
         "relative_second_variation_self_consistency"

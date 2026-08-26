@@ -232,6 +232,10 @@ def verify_current_lineage() -> None:
             "signed_radius_lapse_duration_incidence_formula"
         ]
         == "DERIVED"
+        and duration_incidence["claim_boundary"][
+            "signed_D_Y_Delta_reference_center_ball"
+        ]
+        == "CERTIFIED_LOCAL_SEED"
         and duration_incidence["claim_boundary"]["signed_D_Y_Delta"] == "OPEN"
         and duration_incidence["adjudication"]["proof_center_used_as_physical_history"]
         is False

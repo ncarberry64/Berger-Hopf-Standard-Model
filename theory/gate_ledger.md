@@ -2024,8 +2024,11 @@ Exact next object:
 - Proper-time density: `q_tau=N_boundary*s/Delta`.
 - Exact incidence:
   `D q_tau=q_tau*(D log N_boundary-D Delta/Delta)`.
-- Existing committed `D Delta` data: finite operator-norm bounds only.
-- Signed `D_Y Delta` on the exact parametric family:
+- Reference-center signed `D_Y Delta`:
+  partial norm `1.6027259765507991e-9`, remainder norm upper
+  `4.466595150216365e-12`, relative radius `<2.79e-3`.
+- Reference-center object status: `CERTIFIED_LOCAL_SEED_NOT_PHYSICAL_VALUE`.
+- Transported signed `D_Y Delta` on the exact parametric family:
   `OPEN_CURRENT_OWNER`.
 - Transposed exact segment-map action and integrated `h_Y,j`:
   `OPEN_CURRENT_OWNER`.

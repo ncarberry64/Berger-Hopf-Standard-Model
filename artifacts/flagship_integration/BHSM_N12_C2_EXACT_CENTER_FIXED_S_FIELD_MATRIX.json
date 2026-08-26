@@ -4,6 +4,11 @@
   "artifact": "BHSM_N12_C2_EXACT_CENTER_FIXED_S_FIELD_MATRIX",
   "center_field": {
     "Delta": 8.920442766345066e-14,
+    "Delta_first_c_gradient_remainder_norm_upper": 4.230957067191647e-12,
+    "Delta_first_partial_action_norm": 1.6027259765507991e-09,
+    "Delta_first_selected_eigenvalue_Hessian_remainder_norm_upper": 2.356380825780576e-13,
+    "Delta_first_signed_center_ball": "D_Y_Delta_IN_Delta_first_partial_action_PLUS_CLOSED_EUCLIDEAN_BALL(total_remainder_upper)",
+    "Delta_first_total_remainder_action_norm_upper": 4.466595150216365e-12,
     "Dlambda_field": 1.0000000000000246,
     "R_Dlambda_Vhard": 3.810025154678796e-05,
     "b_psi": 0.00042910818866374314,
@@ -18,7 +23,7 @@
     "prior_scalar_fixed_s_Jacobi_upper": 2.5646519250254787e+24
   },
   "data": "artifacts/flagship_integration/BHSM_N12_C2_EXACT_CENTER_FIXED_S_FIELD_MATRIX.npz",
-  "data_SHA256": "1C16759A03868EE7ED576CBF153EA5CBA7741746740AB8D219A11FED3DEA3D64",
+  "data_SHA256": "163383CD903538866E579BD87366333B8DA04877EFA587F0F999DA00AC1FFDCD",
   "exact_next_dependency": "ENCLOSE_PHI_CENTER_INVERSE_TIMES_DF_s_OF_Y_MINUS_A_CENTER_TIMES_PHI_CENTER_ON_A_FIXED_DESCRIPTOR_ELLIPSOID_USING_THE_RETAINED_D4_D5_BOUNDS",
   "fixed_descriptor_matrix": {
     "bordered_relative_tangent_tensor_Frobenius_upper": 51372353.97648559,
@@ -58,6 +63,7 @@
     "lambda_Hessian_contraction_is_retained_as_remainder": true,
     "moving_cubic_identity_matches_direct_D3": true,
     "no_selector_recurrence_scale_gate_or_chord_added": true,
+    "signed_Delta_first_partial_and_remainder_ball_are_finite": true,
     "signed_descriptor_is_strictly_positive": true
   },
   "validation_passed": true

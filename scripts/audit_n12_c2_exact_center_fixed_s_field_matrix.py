@@ -184,6 +184,16 @@ def build_payload() -> dict[str, Any]:
     c_gradient_uncertainty = _up(
         fixed_D4_truncation_upper + 0.5 * fixed_slope_disagreement
     )
+    Delta_lambda_Hessian_remainder_upper = _up(
+        signed_s * lambda_hessian_V_upper
+    )
+    Delta_c_gradient_remainder_upper = _up(
+        abs(b_psi) * c_gradient_uncertainty
+    )
+    Delta_first_total_remainder_upper = _up(
+        Delta_lambda_Hessian_remainder_upper
+        + Delta_c_gradient_remainder_upper
+    )
     c_uncertainty_field_matrix_upper = _up(
         float(np.linalg.norm(field)) * abs(b_psi) * c_gradient_uncertainty / Delta
     )
@@ -222,6 +232,10 @@ def build_payload() -> dict[str, Any]:
         exact_center_field_action=field,
         fixed_line_c_gradient_action=fixed_c_first,
         moving_c_gradient_action=c_first,
+        Delta_first_partial_action=Delta_first_partial,
+        Delta_first_total_remainder_action_norm_upper=np.asarray(
+            Delta_first_total_remainder_upper
+        ),
         fixed_s_field_matrix_partial_action=field_first_partial,
         fixed_s_tangent_matrix_partial=tangent_matrix,
         bordered_relative_tangent_tensor=relative_tangent,
@@ -238,6 +252,11 @@ def build_payload() -> dict[str, Any]:
         ),
         "lambda_Hessian_contraction_is_retained_as_remainder": omitted_field_matrix_upper > 0.0,
         "D5_controls_one_sided_fixed_line_D4_slopes": fixed_D4_truncation_upper > 0.0,
+        "signed_Delta_first_partial_and_remainder_ball_are_finite": (
+            np.all(np.isfinite(Delta_first_partial))
+            and math.isfinite(Delta_first_total_remainder_upper)
+            and Delta_first_total_remainder_upper > 0.0
+        ),
         "center_matrix_not_promoted_to_interval_flow_box": True,
         "no_selector_recurrence_scale_gate_or_chord_added": True,
     }
@@ -257,6 +276,22 @@ def build_payload() -> dict[str, Any]:
             "b_psi": b_psi,
             "R_Dlambda_Vhard": R_center,
             "Delta": Delta,
+            "Delta_first_partial_action_norm": float(
+                np.linalg.norm(Delta_first_partial)
+            ),
+            "Delta_first_selected_eigenvalue_Hessian_remainder_norm_upper": (
+                Delta_lambda_Hessian_remainder_upper
+            ),
+            "Delta_first_c_gradient_remainder_norm_upper": (
+                Delta_c_gradient_remainder_upper
+            ),
+            "Delta_first_total_remainder_action_norm_upper": (
+                Delta_first_total_remainder_upper
+            ),
+            "Delta_first_signed_center_ball": (
+                "D_Y_Delta_IN_Delta_first_partial_action_PLUS_"
+                "CLOSED_EUCLIDEAN_BALL(total_remainder_upper)"
+            ),
             "field_action_norm": float(np.linalg.norm(field)),
             "Dlambda_field": descriptor_identity,
         },

@@ -68,13 +68,22 @@ def build_payload() -> dict[str, Any]:
     with np.load(FIELD_DATA) as data:
         center = np.asarray(data["center_state"], dtype=float)
         weights = np.asarray(data["state_weights"], dtype=float)
+        delta_partial = np.asarray(data["Delta_first_partial_action"], dtype=float)
+        delta_remainder = float(
+            data["Delta_first_total_remainder_action_norm_upper"]
+        )
     geometry = boundary_geometry_action_covectors(state=center, weights=weights)
-    zero_delta_witness = proper_duration_density_and_action_covector(
+    center_ball = proper_duration_density_and_action_covector(
         state=center,
         weights=weights,
         signed_descriptor=float(field["center_field"]["signed_descriptor_decimal"]),
         Delta=float(field["center_field"]["Delta"]),
-        D_Delta_action_dual=np.zeros(98),
+        D_Delta_action_dual=delta_partial,
+    )
+    duration_remainder = (
+        center_ball["proper_duration_density"]
+        * delta_remainder
+        / float(field["center_field"]["Delta"])
     )
     validation = {
         "parametric_family_exists_on_every_finite_core_prefix": (
@@ -89,9 +98,16 @@ def build_payload() -> dict[str, Any]:
             np.all(np.isfinite(geometry["D_log_R4_action_dual"]))
             and np.all(np.isfinite(geometry["D_log_lapse_action_dual"]))
         ),
-        "positive_s_center_has_positive_proper_duration_density": (
-            zero_delta_witness["proper_duration_density"] > 0.0
-        ),
+            "positive_s_center_has_positive_proper_duration_density": (
+                center_ball["proper_duration_density"] > 0.0
+            ),
+            "signed_center_DDelta_ball_is_certified_and_nontrivial": (
+                field["validation"][
+                    "signed_Delta_first_partial_and_remainder_ball_are_finite"
+                ]
+                is True
+                and np.linalg.norm(delta_partial) > delta_remainder > 0.0
+            ),
         "existing_duration_parent_contains_only_a_norm_bound": (
             duration["claim_boundary"]["moving_duration_reset_pullback_norm"]
             .startswith("CERTIFIED")
@@ -102,7 +118,7 @@ def build_payload() -> dict[str, Any]:
             adjoint["claim_boundary"]["signed_finite_core_adjoint_assembly"]
             == "DERIVED"
         ),
-        "zero_DDelta_witness_is_only_an_algebraic_formula_crosscheck": True,
+        "center_DDelta_ball_is_not_a_family_or_physical_history_value": True,
         "proof_center_not_promoted_to_physical_history": True,
         "no_inverse_selector_endpoint_recurrence_scale_fit_gate_or_chord_added": True,
     }
@@ -111,15 +127,16 @@ def build_payload() -> dict[str, Any]:
     return {
         "artifact": "BHSM_N12_C2_SIGNED_DURATION_INCIDENCE_OWNER",
         "status": (
-            "SIGNED_RADIUS_LAPSE_AND_DURATION_INCIDENCE_FORMULA_DERIVED_DDELTA_OPEN"
+            "SIGNED_DURATION_INCIDENCE_AND_REFERENCE_DDELTA_BALL_CERTIFIED_FAMILY_TRANSPORT_OPEN"
             if passed else "SIGNED_DURATION_INCIDENCE_NOT_DERIVED"
         ),
         "classification": (
             "THE_EXACT_ACTION_DUAL_DlogR4_AND_DlogN_COVECTORS_AND_THE_SIGNED_"
             "D(Ns/Delta)=Ns/Delta*(DlogN-DDelta/Delta)_INCIDENCE_ARE_"
-            "DERIVED;_THE_COMMITTED_CONTINUATION_DATA_SUPPLY_ONLY_A_NORM_"
-            "BOUND_FOR_DDelta,_SO_THE_SIGNED_SELECTED_LINE_HARD_COMPLEMENT_"
-            "DDelta_COVECTOR_IS_THE_MINIMAL_LOCAL_MOVING_DURATION_GAP"
+            "DERIVED;_THE_SELECTED_LINE_HARD_COMPLEMENT_CALCULATION_SUPPLIES_"
+            "A_SIGNED_DDelta_PARTIAL_PLUS_CONTROLLED_REMAINDER_BALL_AT_THE_"
+            "REFERENCE_CENTER;_TRANSPORT_OF_THAT_BALL_TO_THE_EXACT_PARAMETRIC_"
+            "FAMILY_IS_THE_MINIMAL_LOCAL_MOVING_DURATION_GAP"
         ),
         "exact_incidence": {
             "proper_duration_density": "q_tau=N_boundary(Y)*s/Delta(Y,s)",
@@ -133,10 +150,25 @@ def build_payload() -> dict[str, Any]:
             "log_lapse_action_dual_norm_at_formula_witness": float(
                 np.linalg.norm(geometry["D_log_lapse_action_dual"])
             ),
-            "positive_s_formula_witness_density": float(
-                zero_delta_witness["proper_duration_density"]
+            "positive_s_center_density": float(
+                center_ball["proper_duration_density"]
             ),
-            "formula_witness_DDelta": "ZERO_ONLY_FOR_ALGEBRAIC_CROSSCHECK_NOT_BHSM_VALUE",
+            "D_Y_Delta_center_partial_action_norm": float(
+                np.linalg.norm(delta_partial)
+            ),
+            "D_Y_Delta_center_remainder_action_norm_upper": delta_remainder,
+            "D_Y_Delta_center_relative_remainder_upper": float(
+                delta_remainder / np.linalg.norm(delta_partial)
+            ),
+            "D_q_tau_center_partial_action_norm": float(
+                np.linalg.norm(
+                    center_ball["D_proper_duration_density_action_dual"]
+                )
+            ),
+            "D_q_tau_center_remainder_action_norm_upper": float(
+                duration_remainder
+            ),
+            "center_ball_scope": "PROOF_CENTER_SEED_BALL_NOT_EXACT_FAMILY_OR_PHYSICAL_HISTORY_VALUE",
         },
         "matching_audit": [
             {
@@ -151,8 +183,8 @@ def build_payload() -> dict[str, Any]:
             },
             {
                 "diagram_slot": "SIGNED_D_Y_Delta_ALONG_EXACT_C2_FAMILY",
-                "candidate": "STORED_Delta_ACTION_DERIVATIVE_UPPER_BOUNDS",
-                "verdict": "INVALID_MATCH_NORM_HAS_NO_SIGN_OR_DIRECTION",
+                "candidate": "SIGNED_PARTIAL_PLUS_CONTROLLED_REMAINDER_AT_REFERENCE_CENTER",
+                "verdict": "VALID_LOCAL_SEED_BALL_NOT_YET_TRANSPORTED_TO_EXACT_FAMILY",
             },
             {
                 "diagram_slot": "SIGNED_SEGMENT_DURATION_COVECTOR",
@@ -164,6 +196,7 @@ def build_payload() -> dict[str, Any]:
             "signed_log_radius_incidence": "CLOSED",
             "signed_log_lapse_incidence": "CLOSED",
             "signed_proper_duration_incidence_formula": "CLOSED",
+            "signed_D_Y_Delta_reference_center_ball": "CERTIFIED_LOCAL_SEED",
             "signed_D_Y_Delta_on_exact_parametric_family": "OPEN_CURRENT_OWNER",
             "transposed_exact_segment_map_action": "OPEN_CURRENT_OWNER",
             "actual_segment_duration_covector": "OPEN_AFTER_DDELTA_AND_SEGMENT_ACTION",
@@ -171,15 +204,16 @@ def build_payload() -> dict[str, Any]:
             "actual_projected_zero_source_force": "OPEN",
         },
         "exact_next_dependency": (
-            "DERIVE_OR_INTERVAL_ENCLOSE_THE_SIGNED_ACTION_DUAL_D_Y_Delta_"
-            "FROM_THE_SELECTED_LINE_AND_HARD_COMPLEMENT_FIRST_VARIATIONS_ON_"
-            "THE_CERTIFIED_PARAMETRIC_FAMILY,_THEN_INTEGRATE_THE_TRANSPOSED_"
+            "TRANSPORT_THE_CERTIFIED_SIGNED_REFERENCE_CENTER_D_Y_Delta_BALL_"
+            "WITH_THE_SELECTED_LINE_HARD_COMPLEMENT_SECOND_VARIATION_BOUNDS_"
+            "ONTO_THE_EXACT_PARAMETRIC_FAMILY,_THEN_INTEGRATE_THE_TRANSPOSED_"
             "SEGMENT_ACTION_TO_SUPPLY_h_Y,j_TO_THE_EXISTING_SIGNED_ADJOINT"
         ),
         "claim_boundary": {
             "Gate7": "G7_08_OPEN_SIGNED_DDELTA_SEGMENT_ACTION_SOURCE_AND_TAIL",
             "Gate8": "LOCKED",
             "signed_radius_lapse_duration_incidence_formula": "DERIVED",
+            "signed_D_Y_Delta_reference_center_ball": "CERTIFIED_LOCAL_SEED",
             "signed_D_Y_Delta": "OPEN",
             "actual_signed_duration_covector": "OPEN",
             "actual_projected_zero_source_force": "OPEN",
