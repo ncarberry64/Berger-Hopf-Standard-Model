@@ -19,13 +19,16 @@ SEED = BASE / "BHSM_N12_GATE7_JOINT_HEAT_COTANGENT_REVERSE_SEED.json"
 DOMAIN = BASE / "BHSM_N12_GATE7_AE2_GLOBAL_SPIN_MATTER_DOMAIN.json"
 INCOMING = BASE / "BHSM_N12_INCOMING_MF_NEGATIVE_AXIS_ENCLOSURE.json"
 BIRTH_AUDIT = BASE / "BHSM_N12_GATE7_BIRTH_TRACE_MF_SUPERSESSION_AUDIT.json"
+BIRTH_LOAD = BASE / "BHSM_N12_GATE7_BIRTH_GRAPH_LOAD_MATCHING_AUDIT.json"
+TWO_SEAM = BASE / "BHSM_N12_GATE7_TWO_SEAM_CLOSED_OPERATOR_ASSEMBLY.json"
 CHILD = BASE / "BHSM_N12_C2_1222_SEGMENT_NEGATIVE_AXIS_WEYL_FAMILY.json"
 FINITE_HEAT = BASE / "BHSM_N12_GATE7_FIXED_CHANNEL_FINITE_CORE_HEAT_BOUND.json"
 ADJOINT = BASE / "BHSM_N12_C2_1222_SIGNED_ADJOINT_ASSEMBLY.json"
 CAUCHY = BASE / "BHSM_N12_C2_PROJECTED_ADJOINT_CAUCHY_CRITERION.json"
 THEORY = ROOT / "theory" / "n12_gate7_maximal_graded_cotangent_matching_audit.md"
 INPUTS = (
-    LEDGER, BRST, FUNCTIONAL, ONTOLOGY, SEED, DOMAIN, INCOMING, BIRTH_AUDIT, CHILD,
+    LEDGER, BRST, FUNCTIONAL, ONTOLOGY, SEED, DOMAIN, INCOMING, BIRTH_AUDIT,
+    BIRTH_LOAD, TWO_SEAM, CHILD,
     FINITE_HEAT, ADJOINT, CAUCHY, THEORY,
 )
 
@@ -78,11 +81,13 @@ def build_payload() -> dict[str, Any]:
             "missing maximal graded-cotangent inputs: " + ", ".join(missing)
         )
     (
-        ledger, brst, functional, ontology, seed, domain, incoming, birth_audit, child,
+        ledger, brst, functional, ontology, seed, domain, incoming, birth_audit,
+        birth_load, two_seam, child,
         finite_heat, adjoint, cauchy,
     ) = map(_load, INPUTS[:-1])
     records = (
-        ledger, brst, functional, ontology, seed, domain, incoming, birth_audit, child,
+        ledger, brst, functional, ontology, seed, domain, incoming, birth_audit,
+        birth_load, two_seam, child,
         finite_heat, adjoint, cauchy,
     )
     if not all(record.get("validation_passed") is True for record in records):
@@ -144,6 +149,21 @@ def build_payload() -> dict[str, Any]:
             and birth_audit["matching_audit"]["B_birth_and_first_action_jet"]
             == "ACTUALLY_MISSING_OR_NOT_YET_INSTANTIATED"
         ),
+        "birth_load_is_exactly_typed_to_the_missing_E0_event_response": (
+            birth_load["exact_birth_load"]["load"]
+            == "B_birth=U_R0*(M_E0+W_E0)*U_R0^dagger"
+            and birth_load["matching_audit"]
+            ["M_E0_nonzero_event_side_Calderon_family"] == "ACTUALLY_MISSING"
+        ),
+        "complete_two_seam_operator_topology_and_first_variation_are_closed": (
+            two_seam["adjudication"]["complete_internal_operator_topology"]
+            == "CLOSED"
+            and two_seam["matching_audit"]
+            ["direct_Schur_first_variation_equivalence"]
+            == "VALID_MATCH_DERIVED"
+            and two_seam["closed_operator"]["zero_source_effect"]
+            == "REMOVE_LINEAR_COUPLING_BUT_RETAIN_BOTH_ROWS_AND_COLUMNS"
+        ),
         "child_whole_axis_family_is_finite_core_only": (
             child["claim_boundary"]["finite_core_complete_negative_axis_family"]
             == "DERIVED_EXECUTABLE_THROUGH_1222"
@@ -171,7 +191,7 @@ def build_payload() -> dict[str, Any]:
     return {
         "artifact": "BHSM_N12_GATE7_MAXIMAL_GRADED_COTANGENT_MATCHING_AUDIT",
         "status": (
-            "MAXIMAL_GRADED_COTANGENT_TYPE_CLOSED_BIRTH_LOADED_OPERATOR_FAMILY_OPEN"
+            "MAXIMAL_GRADED_COTANGENT_TYPE_AND_TWO_SEAM_TOPOLOGY_CLOSED_VALUES_OPEN"
             if passed else "MAXIMAL_GRADED_COTANGENT_MATCHING_NOT_CLOSED"
         ),
         "classification": (
@@ -179,8 +199,9 @@ def build_payload() -> dict[str, Any]:
             "REVERSE_ORDER_AND_PROJECTED_CAUCHY_CRITERION_ARE_ALL_EXISTING_"
             "VALID_MATCHES;_THE_OLD_ZERO_TRACE_INCOMING_M_f_IDENTIFICATION_IS_"
             "SUPERSEDED,_AND_THE_ACTUALLY_MISSING_DATUM_IS_THE_ACTION_REALIZED_"
-            "BIRTH_GRAPH_LOADED_PER_LEVEL_COMPLETE_JOINT_OPERATOR_FAMILY_AND_ITS_"
-            "FIRST_JET_OR_AN_EQUIVALENT_DECISIVE_TRACE_FUNCTIONAL_ENCLOSURE"
+            "TWO_SEAM_TOPOLOGY_IS_CLOSED,_BUT_THE_ACTION_REALIZED_E0_BLOCK,_THE_"
+            "PER_LEVEL_COMPLETE_JOINT_OPERATOR_VALUES_AND_THEIR_FIRST_JETS_OR_AN_"
+            "EQUIVALENT_DECISIVE_TRACE_FUNCTIONAL_ENCLOSURE_ARE_OPEN"
         ),
         "retained_graded_sector_ledger": weights,
         "exact_cotangent_contract": {
@@ -206,15 +227,16 @@ def build_payload() -> dict[str, Any]:
             "grading_signs_and_multiplicities": "VALID_MATCH",
             "heat_Frechet_cotangent": "VALID_MATCH",
             "direct_zeta_covector": "VALID_MATCH",
-            "joint_internal_seam_assembly": "VALID_MATCH",
+            "joint_internal_seam_assembly": "VALID_MATCH_TWO_SEAM_TOPOLOGY_DERIVED",
             "incoming_M11_whole_axis_class": "VALID_CONDITIONAL_DIRICHLET_REFERENCE_ONLY",
             "physical_zero_source_incoming_Mf": "ACTUALLY_MISSING_BIRTH_GRAPH_REDUCTION",
             "birth_graph_B_birth_and_first_jet": "ACTUALLY_MISSING_OR_NOT_YET_INSTANTIATED",
+            "E0_event_side_Calderon_and_first_jet": "ACTUALLY_MISSING",
             "outgoing_M_C2_whole_axis_1222_core": "VALID_FINITE_CORE_MATCH",
             "all_1222_transposed_reverse_actions": "VALID_MATCH",
             "physical_quotient_and_Cauchy_criterion": "VALID_MATCH",
-            "actual_per_level_joint_operator_family": "ACTUALLY_MISSING",
-            "actual_per_level_joint_operator_first_jet": "ACTUALLY_MISSING",
+            "actual_per_level_joint_operator_family": "OPEN_UNINSTANTIATED_TWO_SEAM_VALUES",
+            "actual_per_level_joint_operator_first_jet": "OPEN_UNINSTANTIATED_TWO_SEAM_VALUES",
             "actual_maximal_graded_cotangent_value": "ACTUALLY_MISSING",
         },
         "adjudication": {
@@ -231,7 +253,8 @@ def build_payload() -> dict[str, Any]:
             "Gate8": "LOCKED",
         },
         "exact_next_dependency": (
-            "INSTANTIATE_THE_RETAINED_BIRTH_GRAPH_OR_KEEP_THE_BIRTH_TRACE_EXPLICIT,_"
+            "REALIZE_THE_E0_EVENT_SIDE_CALDERON_AND_BIRTH_LOAD_OR_KEEP_THE_E0_ARM_"
+            "AND_BIRTH_TRACE_EXPLICIT,_"
             "THEN_REALIZE_OR_SHARPLY_ENCLOSE_FOR_EACH_RETAINED_GRADED_LEVEL_THE_"
             "COMPLETE_JOINT_EVENT_CHILD_OPERATOR_AND_FIRST_ACTION_JET_ON_THE_"
             "LOCAL_73_PARAMETER_FAMILY_OR_AT_AN_ACTUAL_FINITE_STOP;_THEN_"

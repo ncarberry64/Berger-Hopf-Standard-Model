@@ -1,6 +1,12 @@
 # Gate-7 maximal graded cotangent matching audit
 
-Status: `MAXIMAL_GRADED_COTANGENT_TYPE_CLOSED_BIRTH_LOADED_OPERATOR_FAMILY_OPEN`.
+Status: `MAXIMAL_GRADED_COTANGENT_TYPE_AND_TWO_SEAM_TOPOLOGY_CLOSED_VALUES_OPEN`.
+
+The complete E0/C1--E1/C2 trace topology is now the derived two-seam block
+`S_01`; direct and birth-reduced Schur representations have identical
+determinants and first variations.  Thus the operator assembly is no longer a
+missing type.  Its action-realized `M_E0` block, per-level values, first jets,
+and the C2 maximal tail remain open.
 
 The retained BRST/statistics ledger already fixes every coefficient in the
 physical heat direct sum.  After the longitudinal gauge/complex-ghost pair is
@@ -58,8 +64,10 @@ The repository matching result is sharp:
 - the 1,222-segment reverse actions are certified, but the finite proof edge
   is not a physical endpoint;
 - no scalar at a proof center represents the physical family;
-- the actually missing datum begins with the retained birth graph `B_birth`
-  and its first jet, or an unreduced operator that keeps the birth trace, and
+- the birth graph is now exactly typed as
+  `B_birth=U_R0(M_E0+W_E0)U_R0^dagger`; its missing datum is the realized
+  nonzero E0 event-side Calderón response and first jet, or an unreduced
+  operator that keeps the E0 arm and C1 birth trace, and
   then the sharp per-level joint operator family `P_C,k^joint(xi)` and its
   first action jet, or an equivalent decisive trace-functional enclosure, on
   the action-realized maximal history or an actual finite event/canonical

@@ -23,8 +23,9 @@ def test_gate7_1222_core_diagram_matching() -> None:
     assert verdicts["C2_STORED_FIXED_CHANNEL_FINITE_CORE_HEAT_INCREMENT"].startswith(
         "VALID_MATCH_REPRESENTATIVE_INCREMENT_SUPPRESSED"
     )
-    assert verdicts["INCOMING_C1_RESPONSE_M_f"].startswith(
-        "ACTUALLY_MISSING_BIRTH_GRAPH_LOADED"
+    assert verdicts["INCOMING_C1_RESPONSE_M_f"].startswith("VALID_MATCH_TOPOLOGY")
+    assert verdicts["COMPLETE_E0_C1_E1_C2_TWO_SEAM_OPERATOR"].startswith(
+        "VALID_MATCH_TOPOLOGY"
     )
     assert verdicts["PAIR_CONTACT_AND_GRADED_INTERNAL_INCIDENCE"].startswith("VALID_MATCH_INTERNAL")
     assert verdicts["ZERO_EXTERNAL_BIRTH_CAUCHY_SOURCE"] == "VALID_MATCH_ONLY_J_ext_IS_ZEROED"
@@ -46,8 +47,12 @@ def test_gate7_1222_core_diagram_matching() -> None:
     ] == "CLOSED"
     assert payload["adjudication"][
         "actual_per_level_joint_operator_family"
-    ] == "ACTUALLY_MISSING"
+    ] == "OPEN_UNINSTANTIATED_TWO_SEAM_VALUES"
+    assert payload["adjudication"]["complete_two_seam_operator_topology"] == "CLOSED"
     assert payload["adjudication"]["incoming_M11_identity_and_action_owned_germ"].startswith("CLOSED")
-    assert payload["adjudication"]["physical_zero_source_incoming_M_f"].startswith("OPEN")
+    assert payload["adjudication"]["physical_zero_source_incoming_M_f"] == (
+        "TOPOLOGY_CLOSED_VALUES_OPEN"
+    )
+    assert payload["adjudication"]["E0_event_side_Calderon_and_birth_load"].startswith("OPEN")
     assert payload["adjudication"]["incoming_normalized_coefficient_path_quadratic_germ"] == "CLOSED_INVERSE_FREE"
     assert payload["claim_boundary"]["zero_source_force"] == "OPEN"

@@ -1,5 +1,11 @@
 # Gate-7 diagram matching after the 1,222-core C2 realization
 
+The E0/C1--E1/C2 internal seam slot is now matched by the exact two-seam
+trace block. Its direct and Schur forms have the same determinant and first
+variation, and `J_ext=0` leaves both internal trace rows intact. The remaining
+gap is realization of `M_E0` and its jet, per-level block values, and the C2
+maximal tail—not operator topology.
+
 The live assembly is
 
 `C1 --M_f--> E1 --(U_R,W_phys)--> C2 --M_C2--> maximal end`.
@@ -102,8 +108,14 @@ then the physical response is the inverse-free reduction
 `M_f^phys=M11-M10 X_birth`.
 
 Thus no new C1 bulk theory or second external birth source is missing, but
-the action-owned `B_birth` and its first jet must be instantiated, or the
-birth trace must remain explicit in the unreduced joint operator.  The
+the action-owned load
+
+`B_birth=U_R0(M_E0+W_E0)U_R0^dagger`
+
+and its first jet must be instantiated.  The AE2 lift and local contact types
+are available; the nonzero E0 event-side Calderón response and jet are not.
+Equivalently, the E0 arm and birth trace may remain explicit in the unreduced
+joint operator.  The
 terminal Laurent germ remains valid for `M11`.  The certified duration law
 and terminal Cauchy jet also
 fix the normalized coefficient path through order `lambda_0^2`, uniformly in

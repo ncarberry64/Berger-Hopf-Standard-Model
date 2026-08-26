@@ -71,6 +71,8 @@ SOURCES = (
     "artifacts/flagship_integration/BHSM_N12_C2_1222_TRANSPOSED_DURATION_ACTION_COVERAGE.json",
     "artifacts/flagship_integration/BHSM_N12_GATE7_CLOSED_SYSTEM_ZERO_EXTERNAL_SOURCE_ONTOLOGY.json",
     "artifacts/flagship_integration/BHSM_N12_GATE7_BIRTH_TRACE_MF_SUPERSESSION_AUDIT.json",
+    "artifacts/flagship_integration/BHSM_N12_GATE7_BIRTH_GRAPH_LOAD_MATCHING_AUDIT.json",
+    "artifacts/flagship_integration/BHSM_N12_GATE7_TWO_SEAM_CLOSED_OPERATOR_ASSEMBLY.json",
     "artifacts/flagship_integration/BHSM_N12_GATE7_JOINT_HEAT_COTANGENT_REVERSE_SEED.json",
     "artifacts/flagship_integration/BHSM_N12_GATE7_1222_CORE_DIAGRAM_MATCHING_AUDIT.json",
     "artifacts/flagship_integration/BHSM_N12_GATE7_MAXIMAL_GRADED_COTANGENT_MATCHING_AUDIT.json",
@@ -177,6 +179,8 @@ def verify_current_lineage() -> None:
     duration_coverage = loaded["artifacts/flagship_integration/BHSM_N12_C2_1222_TRANSPOSED_DURATION_ACTION_COVERAGE.json"]
     source_ontology = loaded["artifacts/flagship_integration/BHSM_N12_GATE7_CLOSED_SYSTEM_ZERO_EXTERNAL_SOURCE_ONTOLOGY.json"]
     birth_mf_audit = loaded["artifacts/flagship_integration/BHSM_N12_GATE7_BIRTH_TRACE_MF_SUPERSESSION_AUDIT.json"]
+    birth_load_audit = loaded["artifacts/flagship_integration/BHSM_N12_GATE7_BIRTH_GRAPH_LOAD_MATCHING_AUDIT.json"]
+    two_seam = loaded["artifacts/flagship_integration/BHSM_N12_GATE7_TWO_SEAM_CLOSED_OPERATOR_ASSEMBLY.json"]
     joint_heat_seed = loaded["artifacts/flagship_integration/BHSM_N12_GATE7_JOINT_HEAT_COTANGENT_REVERSE_SEED.json"]
     core_diagram = loaded["artifacts/flagship_integration/BHSM_N12_GATE7_1222_CORE_DIAGRAM_MATCHING_AUDIT.json"]
     graded_cotangent = loaded["artifacts/flagship_integration/BHSM_N12_GATE7_MAXIMAL_GRADED_COTANGENT_MATCHING_AUDIT.json"]
@@ -341,6 +345,14 @@ def verify_current_lineage() -> None:
         and birth_mf_audit["matching_audit"]
         ["physical_zero_source_incoming_M_f"]
         == "ACTUALLY_MISSING_BIRTH_GRAPH_REDUCTION"
+        and birth_load_audit["exact_birth_load"]["load"]
+        == "B_birth=U_R0*(M_E0+W_E0)*U_R0^dagger"
+        and birth_load_audit["matching_audit"]
+        ["M_E0_nonzero_event_side_Calderon_family"] == "ACTUALLY_MISSING"
+        and two_seam["adjudication"]["complete_internal_operator_topology"]
+        == "CLOSED"
+        and two_seam["closed_operator"]["zero_source_effect"]
+        == "REMOVE_LINEAR_COUPLING_BUT_RETAIN_BOTH_ROWS_AND_COLUMNS"
         and joint_heat_seed["adjudication"]["joint_reverse_seed_formula"]
         == "CLOSED"
         and joint_heat_seed["adjudication"][
@@ -356,7 +368,7 @@ def verify_current_lineage() -> None:
         and graded_cotangent["adjudication"]["new_grading_required"] is False
         and graded_cotangent["matching_audit"][
             "actual_per_level_joint_operator_family"
-        ] == "ACTUALLY_MISSING"
+        ] == "OPEN_UNINSTANTIATED_TWO_SEAM_VALUES"
     ):
         raise RuntimeError("joint Gate7 source/cotangent frontier is not current")
     if force_sign_no_go["claim_boundary"]["universal_force_sign_shortcut"] != "CLOSED_INVALID":
