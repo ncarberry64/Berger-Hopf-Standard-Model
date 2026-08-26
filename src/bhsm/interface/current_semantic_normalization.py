@@ -832,6 +832,7 @@ def _gates() -> list[dict[str, Any]]:
             "artifacts/flagship_integration/BHSM_N12_GATE7_JOINT_KKT_INFORMATION_GATE.json",
             "artifacts/flagship_integration/BHSM_N12_GATE7_INCOMING_AMPLITUDE_ZETA_COTANGENT.json",
             "artifacts/flagship_integration/BHSM_N12_GATE7_INCOMING_COMPLIANCE_REGULAR_CHART.json",
+            "artifacts/flagship_integration/BHSM_N12_GATE7_INCOMING_GRADED_HEAT_DIFFERENTIABILITY.json",
             "artifacts/flagship_integration/BHSM_N12_C2_SIGNED_DURATION_INCIDENCE_OWNER.json",
             "artifacts/flagship_integration/BHSM_N12_C2_SIGNED_DDELTA_SEED_TRANSPORT_AUDIT.json",
             "artifacts/flagship_integration/BHSM_N12_C2_DIRECT_DDELTA_ROW_RECONNAISSANCE.json",
@@ -888,8 +889,10 @@ def _gates() -> list[dict[str, Any]]:
                 "covector has an exact strict sign for every positive amplitude; the "
                 "equivalent compliance chart C_f=M_f^-1=b/d removes the apparent "
                 "M_f Laurent-jet singularity and makes each fixed-channel heat jet "
-                "O(lambda), while uniform summable domination of the full graded "
-                "heat derivative remains open before any joint sign or KKT claim"
+                "O(lambda); the finite-core Gaussian angular weights dominate the "
+                "fixed polynomial transfer-jet loss, certifying differentiation "
+                "through the full graded supertrace; its sharp heat coefficient, "
+                "the joint sign, and the KKT root remain open"
             )
         predecessor = [] if index == 0 else [GATE_CHAIN[index - 1][0]]
         provenance = sources.get(cid, fallback)

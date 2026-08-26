@@ -84,6 +84,7 @@ SOURCES = (
     "artifacts/flagship_integration/BHSM_N12_GATE7_JOINT_KKT_INFORMATION_GATE.json",
     "artifacts/flagship_integration/BHSM_N12_GATE7_INCOMING_AMPLITUDE_ZETA_COTANGENT.json",
     "artifacts/flagship_integration/BHSM_N12_GATE7_INCOMING_COMPLIANCE_REGULAR_CHART.json",
+    "artifacts/flagship_integration/BHSM_N12_GATE7_INCOMING_GRADED_HEAT_DIFFERENTIABILITY.json",
     "artifacts/flagship_integration/BHSM_N12_C2_SIGNED_DURATION_INCIDENCE_OWNER.json",
     "artifacts/flagship_integration/BHSM_N12_C2_SIGNED_DDELTA_SEED_TRANSPORT_AUDIT.json",
     "artifacts/flagship_integration/BHSM_N12_C2_DIRECT_DDELTA_ROW_RECONNAISSANCE.json",
@@ -200,6 +201,7 @@ def verify_current_lineage() -> None:
     joint_kkt_info = loaded["artifacts/flagship_integration/BHSM_N12_GATE7_JOINT_KKT_INFORMATION_GATE.json"]
     incoming_zeta = loaded["artifacts/flagship_integration/BHSM_N12_GATE7_INCOMING_AMPLITUDE_ZETA_COTANGENT.json"]
     incoming_compliance = loaded["artifacts/flagship_integration/BHSM_N12_GATE7_INCOMING_COMPLIANCE_REGULAR_CHART.json"]
+    incoming_graded_heat = loaded["artifacts/flagship_integration/BHSM_N12_GATE7_INCOMING_GRADED_HEAT_DIFFERENTIABILITY.json"]
     duration_incidence = loaded["artifacts/flagship_integration/BHSM_N12_C2_SIGNED_DURATION_INCIDENCE_OWNER.json"]
     ddelta_transport = loaded["artifacts/flagship_integration/BHSM_N12_C2_SIGNED_DDELTA_SEED_TRANSPORT_AUDIT.json"]
     ddelta_row = loaded["artifacts/flagship_integration/BHSM_N12_C2_DIRECT_DDELTA_ROW_RECONNAISSANCE.json"]
@@ -428,6 +430,12 @@ def verify_current_lineage() -> None:
         ] == "CERTIFIED_POINTWISE"
         and incoming_compliance["claim_boundary"][
             "uniform_graded_heat_amplitude_covector"
+        ] == "OPEN"
+        and incoming_graded_heat["claim_boundary"][
+            "incoming_uniform_graded_heat_differentiability"
+        ] == "CERTIFIED"
+        and incoming_graded_heat["claim_boundary"][
+            "incoming_heat_amplitude_coefficient"
         ] == "OPEN"
     ):
         raise RuntimeError("joint Gate7 source/cotangent frontier is not current")

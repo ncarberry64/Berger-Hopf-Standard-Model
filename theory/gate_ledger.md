@@ -384,8 +384,18 @@
   identity `D C_f=-C_f(D M_f)C_f` cancels the apparent `O(lambda^-3)` DtN
   derivative, giving `D_lambda C_f=lambda/(-Delta)+O(lambda^3)` and hence a
   pointwise `O(lambda)` heat sensitivity in every fixed channel. The remaining
-  comparison is precisely uniform summable domination over the retained
-  graded angular supertrace; it is not yet a joint-force sign theorem.
+  angular comparison is closed by the next theorem; this chart alone is not a
+  joint-force sign theorem.
+- Incoming graded heat differentiability:
+  `INCOMING_SHRINKING_ARM_GRADED_HEAT_DIFFERENTIABILITY_CERTIFIED`. The
+  regular compliance first jet has a fixed polynomial angular loss times a
+  linear exponential transfer factor. The certified finite-core Gaussian
+  heat weights dominate that loss in the HS, transverse-gauge, and paired-Weyl
+  sums; the stored absolute majorant total is `712.552804415619`. Therefore
+  `D_lambda Gamma_heat=lambda H_heat(lambda)` with uniformly finite
+  `H_heat`, and differentiation may pass through the graded supertrace. The
+  sharp coefficient and its comparison with the strict zeta coefficient are
+  still open.
 - The actual same-action replacement residual is the heat-minus-zeta force,
   `D_Phi Gamma_heat-D_Phi Gamma_SM^zeta`, because the certified local root
   already extremizes the attached-zeta action.  Here

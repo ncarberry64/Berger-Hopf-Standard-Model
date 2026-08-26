@@ -1,0 +1,72 @@
+{
+  "FLAGSHIP_READY": false,
+  "FULL_BHSM_COMPLETE": false,
+  "absolute_angular_derivative_majorants": {
+    "Hubbard_Strattonovich": 47.129324723239456,
+    "Hubbard_Strattonovich_binary64_cutoff": 35,
+    "Weyl": 557.3423210993939,
+    "Weyl_binary64_cutoff": 33,
+    "gauge_transverse": 108.08115859298566,
+    "gauge_transverse_binary64_cutoff": 35,
+    "total": 712.552804415619
+  },
+  "adjudication": {
+    "Gate7": "OPEN",
+    "Gate8": "LOCKED",
+    "chord_03_authorized": false,
+    "componentwise_KKT_condition_added": false,
+    "heat_amplitude_coefficient_sign": "OPEN",
+    "heat_amplitude_coefficient_value": "OPEN_SHARP_CONTRACTION",
+    "joint_amplitude_force_sign": "OPEN_UNTIL_COEFFICIENT_COMPARISON",
+    "uniform_graded_heat_amplitude_differentiability": "CLOSED",
+    "zeta_amplitude_coefficient_sign": "CERTIFIED_STRICT"
+  },
+  "artifact": "BHSM_N12_GATE7_INCOMING_GRADED_HEAT_DIFFERENTIABILITY",
+  "claim_boundary": {
+    "FULL_BHSM_COMPLETE": false,
+    "Gate7": "OPEN",
+    "Gate8": "LOCKED",
+    "actual_projected_KKT_root": "OPEN",
+    "chord_03_authorized": false,
+    "incoming_heat_amplitude_coefficient": "OPEN",
+    "incoming_uniform_graded_heat_differentiability": "CERTIFIED",
+    "joint_amplitude_force": "OPEN",
+    "maximal_projected_tail": "OPEN"
+  },
+  "classification": "THE_REGULAR_COMPLIANCE_AMPLITUDE_JET_HAS_ONLY_FIXED_POLYNOMIAL_ANGULAR_LOSS_TIMES_A_LINEAR_EXPONENTIAL_TRANSFER_FACTOR;_THE_CERTIFIED_FINITE_CORE_GAUSSIAN_ANGULAR_HEAT_WEIGHT_DOMINATES_THIS_LOSS_UNIFORMLY_ON_THE_POSITIVE_AMPLITUDE_BOX",
+  "domination_theorem": {
+    "Weyl_linear_coefficient_after_transfer": 0.10715930711127171,
+    "Weyl_linear_coefficient_before_transfer": 0.10715930711127171,
+    "amplitude_derivative": "D_lambda_Gamma_heat=lambda*H_heat(lambda)",
+    "common_vertex_polynomial_power": 4,
+    "differentiation_through_graded_supertrace": "CERTIFIED",
+    "polynomial_power_role": "CONSERVATIVE_GENERATOR_DEGREE_ENVELOPE_NOT_A_FIT",
+    "root_test_limit": "minus_infinity",
+    "spatial_quadratic_coefficient": 1.0102446149342432,
+    "transfer_linear_loss": 7.478874489141155e-45,
+    "uniform_conclusion": "sup_(0<lambda<=lambda_star)|H_heat(lambda)|<infinity"
+  },
+  "exact_next_dependency": "SHARPLY_CONTRACT_THE_UNIFORMLY_DOMINATED_GRADED_HEAT_JET_IN_THE_REGULAR_COMPLIANCE_CHART_AND_COMPARE_ITS_O_lambda_COEFFICIENT_WITH_THE_CERTIFIED_ZETA_COEFFICIENT_INTERVAL",
+  "inputs": {
+    "artifacts/flagship_integration/BHSM_N12_COMPACT_FINITE_HISTORY_OPERATOR.json": "E597DDB6EBE292643F33A0AC8EDCEC617F5FC963B526BCF9D40BD48EC678DD41",
+    "artifacts/flagship_integration/BHSM_N12_FORWARD_WEAK_HEAT_VARIATIONS.json": "9B6912D5C3CD4280C3E8530C2EE839B0396600F91F3046D81712B4F9F686FBBF",
+    "artifacts/flagship_integration/BHSM_N12_GATE7_INCOMING_COMPLIANCE_REGULAR_CHART.json": "E5193DF5B5A471EFA202E79927817BF12AE216E9E547A15767F631CE70512494",
+    "artifacts/flagship_integration/BHSM_N12_GATE7_ONE_SEAM_FULL_GRADED_FINITE_CORE_HEAT_BOUND.json": "D1E6A58D0586A8995288FF4139C9F24DBF2411532EEA9E2D833B8AA5B60149B3",
+    "artifacts/flagship_integration/BHSM_N12_INCOMING_FINITE_AMPLITUDE_COEFFICIENT_ENCLOSURE.json": "40C22A60A17597900D972D02F107B12E621EED1020A839E71D5D2B97B629D194",
+    "theory/n12_gate7_incoming_graded_heat_differentiability.md": "618FC92D545C442FD92995B73EA8FDE779BAEC7BEEE162F98EF63A749F75140B"
+  },
+  "status": "INCOMING_SHRINKING_ARM_GRADED_HEAT_DIFFERENTIABILITY_CERTIFIED",
+  "validation": {
+    "all_three_absolute_derivative_majorants_converge": true,
+    "compact_operator_generators_are_executable": true,
+    "fixed_channel_compliance_jet_is_O_lambda": true,
+    "formation_duration_is_uniformly_finite": true,
+    "heat_coefficient_value_or_sign_not_overclaimed": true,
+    "longitudinal_complex_ghost_cancellation_is_unchanged": true,
+    "no_internal_response_zeroed_or_source_selector_cutoff_endpoint_recurrence_scale_gate_or_chord_added": true,
+    "quadratic_gaussian_coefficient_remains_positive": true,
+    "transfer_loss_changes_only_the_linear_angular_coefficient": true,
+    "weak_heat_first_variation_is_trace_class_on_compact_support": true
+  },
+  "validation_passed": true
+}
