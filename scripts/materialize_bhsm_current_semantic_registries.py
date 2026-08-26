@@ -70,6 +70,7 @@ SOURCES = (
     "artifacts/flagship_integration/BHSM_N12_C2_1222_SIGNED_ADJOINT_ASSEMBLY.json",
     "artifacts/flagship_integration/BHSM_N12_C2_SIGNED_DURATION_INCIDENCE_OWNER.json",
     "artifacts/flagship_integration/BHSM_N12_C2_SIGNED_DDELTA_SEED_TRANSPORT_AUDIT.json",
+    "artifacts/flagship_integration/BHSM_N12_C2_DIRECT_DDELTA_ROW_RECONNAISSANCE.json",
     "artifacts/flagship_integration/BHSM_N12_CORE_TRANSMITTED_PHYSICAL_MANIFOLD_AUDIT.json",
     "artifacts/flagship_integration/BHSM_N12_ASYMPTOTIC_NHIM_ANGULAR_FORCE_NO_GO.json",
     "artifacts/flagship_integration/BHSM_N12_LOCAL_RESET_TERMINAL_TRANSVERSALITY_AUDIT.json",
@@ -167,6 +168,7 @@ def verify_current_lineage() -> None:
     signed_adjoint = loaded["artifacts/flagship_integration/BHSM_N12_C2_1222_SIGNED_ADJOINT_ASSEMBLY.json"]
     duration_incidence = loaded["artifacts/flagship_integration/BHSM_N12_C2_SIGNED_DURATION_INCIDENCE_OWNER.json"]
     ddelta_transport = loaded["artifacts/flagship_integration/BHSM_N12_C2_SIGNED_DDELTA_SEED_TRANSPORT_AUDIT.json"]
+    ddelta_row = loaded["artifacts/flagship_integration/BHSM_N12_C2_DIRECT_DDELTA_ROW_RECONNAISSANCE.json"]
     core_audit = loaded["artifacts/flagship_integration/BHSM_N12_CORE_TRANSMITTED_PHYSICAL_MANIFOLD_AUDIT.json"]
     nhim_angular_no_go = loaded["artifacts/flagship_integration/BHSM_N12_ASYMPTOTIC_NHIM_ANGULAR_FORCE_NO_GO.json"]
     local_reset_terminal = loaded["artifacts/flagship_integration/BHSM_N12_LOCAL_RESET_TERMINAL_TRANSVERSALITY_AUDIT.json"]
@@ -249,6 +251,18 @@ def verify_current_lineage() -> None:
             "signed_DDelta_on_exact_parametric_family"
         ]
         == "OPEN_NOT_RESOLVED_BY_COARSE_BOUND"
+        and ddelta_row["adjudication"]["direct_signed_Delta_recombination"]
+        == "DERIVED"
+        and ddelta_row["adjudication"]["full_98_by_98_D2Delta_norm_required"]
+        is False
+        and ddelta_row["adjudication"]["one_dominant_D2Delta_row_sufficient"]
+        is True
+        and ddelta_row["adjudication"][
+            "rigorous_dominant_row_enclosure_on_exact_tube"
+        ]
+        == "OPEN"
+        and ddelta_row["adjudication"]["physical_event_stop_or_zero_force_found"]
+        is False
         and core_audit["claim_boundary"]["core_transmitted_physical_manifold"]
         == "OWNER_HYPOTHESIS_NOT_ACTION_DERIVED"
         and core_audit["claim_boundary"]["a_equals_1_over_118"]

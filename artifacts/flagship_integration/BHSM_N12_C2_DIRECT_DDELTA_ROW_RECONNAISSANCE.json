@@ -1,0 +1,86 @@
+{
+  "FLAGSHIP_READY": false,
+  "FULL_BHSM_COMPLETE": false,
+  "adjudication": {
+    "diagnostic_row_scale": "STABLE_ON_TWO_MESHES",
+    "direct_signed_Delta_recombination": "DERIVED",
+    "full_98_by_98_D2Delta_norm_required": false,
+    "one_dominant_D2Delta_row_sufficient": true,
+    "physical_event_stop_or_zero_force_found": false,
+    "prior_coarse_product_ball": "VALID_BUT_SUPERSEDED_AS_NEXT_ROUTE",
+    "rigorous_dominant_row_enclosure_on_exact_tube": "OPEN"
+  },
+  "artifact": "BHSM_N12_C2_DIRECT_DDELTA_ROW_RECONNAISSANCE",
+  "claim_boundary": {
+    "FLAGSHIP_READY": false,
+    "FULL_BHSM_COMPLETE": false,
+    "Gate7": "G7_08_OPEN_ONE_DIRECT_D2DELTA_ROW_REMAINDER_SEGMENT_ACTION_SOURCE_AND_TAIL",
+    "Gate8": "LOCKED",
+    "actual_projected_zero_source_force": "OPEN",
+    "actual_signed_duration_covector": "OPEN",
+    "chord_03_authorized": false,
+    "frozen_predictions_changed": false,
+    "signed_D_Y_Delta": "OPEN_PENDING_RIGOROUS_ROW_REMAINDER"
+  },
+  "classification": "DELTA_RECOMBINES_EXACTLY_AS_Dlambda_OF_bPsi_PLUS_sVhard_BEFORE_NORMS;_ZERO_EXCLUSION_REQUIRES_ONLY_THE_DOMINANT_HESSIAN_ROW,_NOT_THE_FULL_D2DELTA_OPERATOR;_TWO_MESH_VALUES_ARE_DIAGNOSTIC_UNTIL_A_CANCELLATION_PRESERVING_INTERVAL_REMAINDER_IS_PROVED",
+  "data": "artifacts/flagship_integration/BHSM_N12_C2_DIRECT_DDELTA_ROW_RECONNAISSANCE.npz",
+  "data_SHA256": "E7C625432346D63F39368D8AC9153835564741E17CB83FB3900D3BF1E5C78C6E",
+  "exact_identity": {
+    "Delta": "Delta=Dlambda[N]=c*b_psi+s*R",
+    "dominant_component_transport": "abs(D_i_Delta_exact)>=abs(D_i_Delta_center)-r_seed-sup_row_norm_i(D2Delta)*r_tube",
+    "numerator": "N=b_psi*Psi+s*V_hard",
+    "sufficient_row_test": "sup_row_norm_i(D2Delta)<(abs(D_i_Delta_center)-r_seed)/r_tube"
+  },
+  "exact_next_dependency": "ENCLOSE_ONLY_ACTION_ROW_86_OF_D2DELTA_ON_THE_NODE_1214_EXACT_STATE_TUBE_USING_THE_DIRECT_Dlambda_OF_N_IDENTITY_AND_PROVE_ITS_TOTAL_ROW_NORM_BELOW_THE_REPORTED_RIGOROUS_CEILING;_DO_NOT_REQUIRE_A_FULL_D2DELTA_OPERATOR_NORM",
+  "inputs": {
+    "artifacts/flagship_integration/BHSM_N12_C2_1222_SEGMENT_FINITE_CORE_DESCRIPTOR.json": "0CDC9B9EF09AFA70AA7F5E225F6D49A4FCD27CADAD5CDFA4A062FBE04B960445",
+    "artifacts/flagship_integration/BHSM_N12_C2_1222_SEGMENT_FINITE_CORE_DESCRIPTOR.npz": "90E0F02751031F879C82C4EA8ED3ACEBBF278900ED4FBD47C5612CD13F91AF11",
+    "artifacts/flagship_integration/BHSM_N12_C2_BORDERED_HARD_RESPONSE_MATRIX.json": "7D36311E1127291DDEF6F778E2F2C21E9F2B2544DBAF74BC743B8E47BC3814AB",
+    "artifacts/flagship_integration/BHSM_N12_C2_BORDERED_HARD_RESPONSE_MATRIX.npz": "BC1EEB01C2BFB1A358B7DB14906009DF05CEFAC713749395937F0E5DE0E5AB9E",
+    "artifacts/flagship_integration/BHSM_N12_C2_EXACT_CENTER_FIXED_S_FIELD_MATRIX.json": "7962A9051821633517A47DB91EF73EAF2EAD0E5C15BD3E7F2EA707B6E0DC40CA",
+    "artifacts/flagship_integration/BHSM_N12_C2_EXACT_CENTER_FIXED_S_FIELD_MATRIX.npz": "163383CD903538866E579BD87366333B8DA04877EFA587F0F999DA00AC1FFDCD",
+    "artifacts/flagship_integration/BHSM_N12_C2_SIGNED_DDELTA_SEED_TRANSPORT_AUDIT.json": "DADC6DB8D100EA250C598A52C59FEE2E847C30DB9C094CD9E913B393BDF53ABB",
+    "src/bhsm/interface/aether_forward_c2_descriptor_cover.py": "A5A9D9425ECACE2C672B94BB3E4507389F935C7FA473D8B7C3FD986E81ADAB3A",
+    "src/bhsm/interface/aether_n3_exact_full_local_action_jet_v17_60.py": "51114F2A47CA1743B8FA1D942F2DD80322929BE1DD4AEB9CAB08C45E3D795F7C",
+    "theory/n12_c2_direct_ddelta_row_reconnaissance.md": "CE3126D0CF16BD534B190E8338F96CDA2D7E6D6C599F810668ED1D80135B61A2"
+  },
+  "reference_replay": {
+    "direct_Delta_relative_residual": 3.0464649720398984e-10,
+    "direct_Dlambda_N_Delta": 8.920442769062647e-14,
+    "dominant_DDelta_seed_component": -8.102334606968189e-10,
+    "dominant_action_coordinate": 86,
+    "exact_state_tube_action_radius_upper": 5.5104723095444935e-11,
+    "reference_node": 1214,
+    "rigorous_resolving_row_norm_ceiling": 14.622464650642785,
+    "seed_total_remainder_action_norm_upper": 4.466595150216365e-12,
+    "stored_Delta": 8.920442766345066e-14
+  },
+  "status": "DIRECT_DDELTA_INVARIANT_AND_ONE_ROW_REDUCTION_DERIVED;_TWO_MESH_RECONNAISSANCE_STABLE;_RIGOROUS_ROW_REMAINDER_OPEN",
+  "two_mesh_reconnaissance": {
+    "authority": "DIAGNOSTIC_ONLY_NOT_AN_INTERVAL_OR_ANALYTIC_BOUND",
+    "coarse_row_2_norm": 1.706732463384341e-05,
+    "fine_row_2_norm": 1.6918615071231627e-05,
+    "fine_row_to_rigorous_ceiling_ratio": 1.1570289602640897e-06,
+    "inner_action_step": 3e-06,
+    "outer_action_steps": [
+      3e-05,
+      1e-05
+    ],
+    "relative_mesh_discrepancy": 0.015809013974738686,
+    "remaining_rigorous_row_remainder_budget": 14.622447732027714,
+    "row_mesh_discrepancy_2_norm": 2.6746662209432535e-07
+  },
+  "validation": {
+    "diagnostic_fine_row_is_far_below_resolving_ceiling": true,
+    "direct_Dlambda_N_replays_stored_Delta": true,
+    "dominant_seed_component_is_coordinate_86": true,
+    "mesh_agreement_not_promoted_to_interval_remainder": true,
+    "no_selector_recurrence_scale_fit_gate_or_chord_added": true,
+    "proof_center_not_promoted_to_exact_history": true,
+    "reference_center_is_stored_node_1214": true,
+    "selected_branch_24_replayed": true,
+    "two_mesh_row_norms_are_stable_to_two_percent": true,
+    "two_mesh_rows_are_finite": true
+  },
+  "validation_passed": true
+}

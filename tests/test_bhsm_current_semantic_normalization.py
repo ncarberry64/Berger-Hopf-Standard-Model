@@ -316,9 +316,22 @@ def test_replacement_force_is_constraint_projected_without_reset_selection() -> 
     assert "one inverse-free reverse state sweep" in dag["G7_08_FORCE"][
         "physical_meaning"
     ]
-    assert "transport of that seed ball onto the exact parametric family" in dag[
+    assert "reduces the exact-family zero-exclusion task" in dag[
         "G7_08_FORCE"
     ]["physical_meaning"]
+    ddelta_row = basis["C2_DIRECT_DDELTA_ROW_RECONNAISSANCE"]
+    assert ddelta_row["current_status"] == (
+        "DIRECT_IDENTITY_AND_ONE_ROW_SUFFICIENCY_DERIVED_RIGOROUS_ROW_86_REMAINDER_OPEN"
+    )
+    assert "Delta=Dlambda" in ddelta_row["formula"]
+    assert "two-mesh agreement is an interval certificate" in ddelta_row[
+        "forbidden_interpretations"
+    ]
+    assert (
+        "artifacts/flagship_integration/"
+        "BHSM_N12_C2_DIRECT_DDELTA_ROW_RECONNAISSANCE.json"
+        in dag["G7_08_FORCE"]["provenance"]
+    )
     assert (
         "artifacts/flagship_integration/"
         "BHSM_N12_LOCAL_RESET_TERMINAL_TRANSVERSALITY_AUDIT.json"
