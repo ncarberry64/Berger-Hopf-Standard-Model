@@ -1,0 +1,80 @@
+{
+  "FLAGSHIP_READY": false,
+  "FULL_BHSM_COMPLETE": false,
+  "adjudication": {
+    "Gate7": "OPEN",
+    "Gate8": "LOCKED",
+    "actual_graded_heat_minus_zeta_coefficient_cotangent": "OPEN",
+    "all_1222_interval_transposed_duration_actions": "CERTIFIED",
+    "chord_03_authorized": false,
+    "complete_signed_joint_reverse_sweep": "OPEN_AFTER_GRADED_SOURCE",
+    "remaining_1221_sharp_signed_refinements": "OPTIONAL_AFTER_ACTUAL_GRADED_SOURCE_IDENTIFIES_NEEDED_PRECISION",
+    "segment1214_sharp_signed_action": "CERTIFIED"
+  },
+  "artifact": "BHSM_N12_C2_1222_TRANSPOSED_DURATION_ACTION_COVERAGE",
+  "classification": "THE_EXISTING_MOVING_DURATION_FIRST_JET_CERTIFICATE_ALREADY_ENCLOSES_THE_TRANSPOSED_EXACT_ACTION_ON_EACH_OF_1222_SEGMENTS;_SEGMENT1214_IS_A_SHARP_SIGNED_REFINEMENT_NOT_A_MISSING_NORM_THEOREM",
+  "coverage": {
+    "maximum_action_dual_radius_upper": 1.9229660537995455e-15,
+    "minimum_action_dual_radius_upper": 5.32636410842222e-38,
+    "segment1214_array_index": 1213,
+    "segment1214_coarse_radius_upper": 2.1611907349138888e-18,
+    "segment1214_refinement_ratio": 4.2511594084891804e-13,
+    "segment1214_signed_ball_outer_radius_upper": 9.187566326268825e-31,
+    "segments": 1222,
+    "state_dimension": 98
+  },
+  "data": "artifacts/flagship_integration/BHSM_N12_C2_1222_TRANSPOSED_DURATION_ACTION_COVERAGE.npz",
+  "data_SHA256": "9F672FE98ACBFDA26A0F0B5DAEDE22FCB8A3E2E64F6AC15C7180F396993C8892",
+  "exact_next_dependency": "SYNTHESIZE_OR_RIGOROUSLY_ENCLOSE_THE_ACTUAL_GRADED_HEAT_MINUS_ZETA_COEFFICIENT_COTANGENT_FROM_THE_COMPLETE_ACTION_OWNED_SEAM_FAMILY,_THEN_USE_THE_CERTIFIED_INTERVAL_ACTIONS_AND_ONLY_SHARPEN_SEGMENTS_REQUIRED_BY_THE_RESULTING_FORCE_PRECISION",
+  "hindsight": {
+    "classification": "REDUNDANT_NORM_PROOF_REMOVED_FROM_LIVE_DAG",
+    "obstruction_physical": false
+  },
+  "inputs": {
+    "artifacts/flagship_integration/BHSM_N12_C2_1222_MOVING_DURATION_PULLBACK_ENCLOSURE.json": "D31EF9D8E919A27D3069F5DFDC6CEDE42E78C649CD24FAEAF4A910730EE1A918",
+    "artifacts/flagship_integration/BHSM_N12_C2_1222_MOVING_DURATION_PULLBACK_ENCLOSURE.npz": "4390E61A0B2672EAB3F3B649536A6B71BEFC86289AD5C6E1F5FF67D775D909D1",
+    "artifacts/flagship_integration/BHSM_N12_C2_1222_SEGMENT_FINITE_CORE_DESCRIPTOR.json": "0CDC9B9EF09AFA70AA7F5E225F6D49A4FCD27CADAD5CDFA4A062FBE04B960445",
+    "artifacts/flagship_integration/BHSM_N12_C2_1222_SEGMENT_FINITE_CORE_DESCRIPTOR.npz": "90E0F02751031F879C82C4EA8ED3ACEBBF278900ED4FBD47C5612CD13F91AF11",
+    "artifacts/flagship_integration/BHSM_N12_C2_SEGMENT1214_TRANSPOSED_DURATION_ACTION.json": "A1DECAB010A48B0FE6DA2B33DFFEBCA651FD8DD10C00254E502CA27207EDF980",
+    "artifacts/flagship_integration/BHSM_N12_C2_SEGMENT1214_TRANSPOSED_DURATION_ACTION.npz": "AFB33845B7E0F70D56F4AAD5865ECB60A28759C8C372A2C2C9D934BDD631A1E8",
+    "artifacts/flagship_integration/BHSM_N12_FORWARD_RESOLVENT_HEAT_SYNTHESIS_AUDIT.json": "F2752BBC60DE7342BA61DF6ABC793AAEB6F59D87B6F5616FDB71B92679C0D7D6",
+    "scripts/derive_n12_c2_1222_transposed_duration_action_coverage.py": "88004833FDBDC4DF57440D91B76C34F28912970F49DA8FCC971D94E94758359C",
+    "theory/n12_c2_1222_transposed_duration_action_coverage.md": "D30A39F3D9286077E33C868F4975F6F43FE80CAC595FB2CBF66BFF91EA690EC3"
+  },
+  "status": "C2_1222_INTERVAL_TRANSPOSED_DURATION_ACTIONS_CERTIFIED",
+  "theorem": {
+    "exact_action": "D_Ye_h_e=integral_D_Y_q_tau(Y(s),s)*J_e(s)_ds",
+    "full_transition_matrix_inverted": false,
+    "interval_action": "D_Ye_h_e_IN_CLOSED_ACTION_DUAL_BALL(0,B_e)",
+    "proof_center_selected_as_physical_history": false,
+    "stored_radius": "B_e=h_e^+*G_e*(norm(DlogN)+DDelta_e^+/Delta_e^- )"
+  },
+  "validated_invalidated_open": {
+    "INVALIDATED": [
+      "1221 additional sharp DDelta row sweeps are required before any interval reverse action exists",
+      "the z=-1 Weyl cotangent is the retained heat-minus-zeta source"
+    ],
+    "OPEN": [
+      "actual graded heat-minus-zeta coefficient cotangent",
+      "signed joint upstream/C2 reverse sweep",
+      "maximal projected force tail or finite later stop"
+    ],
+    "VALIDATED": [
+      "1222 interval transposed duration actions",
+      "inverse-free first-jet coverage",
+      "segment1214 sharp signed refinement containment"
+    ]
+  },
+  "validation": {
+    "all_1222_proper_duration_intervals_are_positive": true,
+    "all_interval_action_radii_are_finite_positive": true,
+    "exactly_1222_interval_actions_are_present": true,
+    "no_transition_inverse_selector_endpoint_scale_fit_gate_or_chord_added": true,
+    "parent_bound_is_the_exact_transposed_action_norm_inequality": true,
+    "parent_records_duration_first_jet_not_value_only": true,
+    "segment1214_global_label_maps_to_array_index_1213": true,
+    "segment1214_signed_refinement_is_strictly_contained": true,
+    "z_minus_one_probe_is_not_promoted_to_heat_source": true
+  },
+  "validation_passed": true
+}
