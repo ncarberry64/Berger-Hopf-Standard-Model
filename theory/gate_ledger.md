@@ -444,6 +444,20 @@
   volume heat trace. The reference is not a second action determinant. The
   retained graded angular direct sum remains open, so neither the maximal
   projected tail nor the KKT root is promoted.
+- Maximal graded incoming relative heat cotangent:
+  `MAXIMAL_GRADED_INCOMING_RELATIVE_HEAT_COTANGENT_SUMMABLE`. The first
+  certified positive C2 collar supplies a two-chirality Agmon barrier below
+  `E_mu=exp(-2x_max)mu^2/4`; its two Poisson factors decay like
+  `exp(-ell_0 mu/R4_max)`. The stored rate
+  `ell_0/R4_max=1.2713266890487666e-32` strictly exceeds the incoming transfer
+  loss `7.478874489141155e-45`. Above the split, the heat Gaussian has rate
+  `0.2525611537335608`. These factors dominate the quadratic angular
+  multiplicities and degree-four generator loss, so the maximal incoming
+  full-graded relative cotangent is absolutely summable without the unknown
+  far C2 tail. This is specific to the boundary-local compliance direction
+  and does not reopen the interior-source angular counterexample. Its value
+  and sign, the other physical cotangent directions, projected reverse tail,
+  and KKT root remain open.
 - The actual same-action replacement residual is the heat-minus-zeta force,
   `D_Phi Gamma_heat-D_Phi Gamma_SM^zeta`, because the certified local root
   already extremizes the attached-zeta action.  Here
