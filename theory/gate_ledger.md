@@ -318,6 +318,18 @@
   `D Gamma_heat(P)[delta P]=(1/2)Tr(exp(-ell^2 P)P^-1 delta P)` on each
   positive quotient block, with retained direct-sum signs and multiplicities.
   Noncommuting geometry jets are allowed.
+- Gate-7 AE2 one-seam direct descriptor:
+  `ONE_SEAM_DIRECT_DESCRIPTOR_AND_SCHUR_EQUIVALENCE_DERIVED`.  Holding the
+  external E0 birth trace fixed and then setting it to zero makes E0 the
+  Dirichlet reference but leaves `M_f=M11` as a nonzero internal response.
+  Direct Galerkin assembly therefore retains E1/C2 as one internal node,
+  includes `W_phys` once, and eliminates only E0 and the far C2 Friedrichs
+  proof edge.  Its scalar and factorized-Dirac element generators expose
+  `D_x K`, `D_h K`, and `D_h M` without a kinetic/Euler--Dirac inverse.
+  Independent Schur elimination reproduces
+  `M_f+U_R^dagger M_C2 U_R+W_phys` and the factorized determinant.  This
+  closes the finite-core operator/first-jet type, not the actual parametric
+  graded value or maximal projected Cauchy tail.
 - The actual same-action replacement residual is the heat-minus-zeta force,
   `D_Phi Gamma_heat-D_Phi Gamma_SM^zeta`, because the certified local root
   already extremizes the attached-zeta action.  Here

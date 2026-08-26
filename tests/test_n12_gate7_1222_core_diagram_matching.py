@@ -32,6 +32,9 @@ def test_gate7_1222_core_diagram_matching() -> None:
     assert verdicts["PAIR_CONTACT_AND_GRADED_INTERNAL_INCIDENCE"].startswith("VALID_MATCH_INTERNAL")
     assert verdicts["ZERO_EXTERNAL_BIRTH_CAUCHY_SOURCE"] == "VALID_MATCH_ONLY_J_ext_IS_ZEROED"
     assert verdicts["COMPLETE_JOINT_HEAT_COTANGENT_REVERSE_SEED"].startswith("VALID_MATCH_SEED_CLOSED")
+    assert verdicts[
+        "DIRECT_FINITE_CORE_E0_TO_E1_TO_C2_OPERATOR_AND_FIRST_JET"
+    ].startswith("VALID_MATCH_GENERATOR")
     assert verdicts["MAXIMAL_GRADED_SECTOR_COTANGENT_CONTRACT"] == (
         "VALID_MATCH_TYPE_AND_WEIGHTS_CLOSED_ACTUAL_OPERATOR_FAMILY_OPEN"
     )
@@ -49,7 +52,7 @@ def test_gate7_1222_core_diagram_matching() -> None:
     ] == "CLOSED"
     assert payload["adjudication"][
         "actual_per_level_joint_operator_family"
-    ] == "OPEN_E1_C2_GRADED_VALUES_AND_MAXIMAL_TAIL"
+    ] == "DIRECT_GENERATOR_CLOSED_ACTUAL_PARAMETRIC_VALUES_AND_MAXIMAL_TAIL_OPEN"
     assert payload["adjudication"]["complete_internal_seam_topology"] == (
         "CLOSED_ONE_E1_C2_SEAM"
     )

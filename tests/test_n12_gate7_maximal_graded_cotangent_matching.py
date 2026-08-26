@@ -23,7 +23,7 @@ def test_maximal_graded_cotangent_matching_audit() -> None:
     payload = json.loads(_run())
     assert payload["validation_passed"] is True
     assert payload["status"] == (
-        "MAXIMAL_GRADED_COTANGENT_TYPE_AND_E1_C2_SEAM_CLOSED_VALUES_TAIL_OPEN"
+        "MAXIMAL_GRADED_COTANGENT_TYPE_AND_FINITE_CORE_DIRECT_OPERATOR_CLOSED_VALUES_TAIL_OPEN"
     )
     ledger = payload["retained_graded_sector_ledger"]
     assert ledger["gauge_transverse"]["samples"]["2"] == 72
@@ -35,7 +35,10 @@ def test_maximal_graded_cotangent_matching_audit() -> None:
     )
     assert payload["matching_audit"][
         "actual_per_level_joint_operator_family"
-    ] == "OPEN_E1_C2_GRADED_VALUES_AND_MAXIMAL_TAIL"
+    ] == "DIRECT_GENERATOR_CLOSED_ACTUAL_PARAMETRIC_VALUES_AND_MAXIMAL_TAIL_OPEN"
+    assert payload["matching_audit"][
+        "finite_core_direct_joint_operator_generator"
+    ] == "VALID_MATCH"
     assert payload["matching_audit"]["joint_internal_seam_assembly"] == (
         "VALID_MATCH_ONE_E1_C2_SEAM"
     )

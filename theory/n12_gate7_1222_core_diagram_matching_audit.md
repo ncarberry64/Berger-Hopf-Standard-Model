@@ -3,8 +3,9 @@
 The external zero birth trace selects the compact-history Dirichlet reference
 and leaves its internal response `M_f=M11` nonzero. The physical Gate-7
 operator therefore has one internal `E1/C2` seam; the earlier pre-E0 two-seam
-application is superseded. The remaining gap is the per-level graded seam
-cotangent and C2 maximal tail.
+application is superseded. The direct finite-core operator and first-jet
+generator are now executable; the remaining gap is their actual parametric
+graded value and the C2 maximal tail.
 
 The live assembly is
 
@@ -77,13 +78,21 @@ joint heat functional supplies one cotangent seed and one reverse sweep;
 adding a separate seam source or combining direct and Schur routes would
 double count the same closed operator.
 
+The direct AE2 descriptor realizes that same topology without first
+eliminating either arm. E0 and the far C2 proof edge are Dirichlet, while the
+E1/C2 trace is one internal node carrying `W_phys` exactly once. Its retained
+scalar and factorized-Dirac element forms expose `D_x K`, `D_h K`, and
+`D_h M`. A Schur elimination performed only as a cross-check reproduces
+`M_f+U_R^dagger M_C2 U_R+W_phys` and the factorized determinant.
+
 The full grading slot is now matched as well.  The retained nonzero level
 weights are `+24(m^2-1)` for transverse gauge, `-48(n+1)(n+2)` for Weyl, and
 `+4m^2` for HS; the longitudinal/complex-ghost pair cancels mode by mode.
 These weights are independent of the retired periodic temporal domain.  Thus
-neither grading nor multiplicity is missing.  What remains missing is the
-action-realized per-level complete joint operator family and first jet (or a
-decisive trace-functional enclosure) on which those fixed weights act.
+neither grading, multiplicity, nor finite-core per-level generator is missing.
+What remains missing is the interval value of that generator on the
+action-owned incoming/C2 parameter family (or a decisive trace-functional
+enclosure) and its maximal projected tail.
 
 The three descriptor channels stored at both resolutions admit an additional
 inverse-free check.  The mixed birth-free/far-Dirichlet Poincare inequality,
@@ -125,9 +134,9 @@ noncompact maximal tail are not.  The common pair/contact incidence and
 heat-minus-zeta trace functional are valid conditional consumers; broad seam
 intervals and isolated probes cannot replace their realized inputs.
 
-Accordingly the next construction is the action-realized per-level E1/C2
-joint operator family and then the actual complete joint graded
-heat-minus-zeta spectral cotangent on the local parametric family.  It is fed
+Accordingly the next construction interval-assembles the direct per-level
+E1/C2 operator on the incoming and C2 parameter families and evaluates the
+actual complete joint graded heat-minus-zeta spectral cotangent. It is fed
 to the already-certified interval actions and the single signed reverse
 equation, combined with the exact common-scale component, and tested as a
 projected finite-core Cauchy net.  The 1,222-core edge remains an artificial

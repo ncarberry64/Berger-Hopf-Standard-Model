@@ -23,6 +23,7 @@ BIRTH_LOAD = BASE / "BHSM_N12_GATE7_BIRTH_GRAPH_LOAD_MATCHING_AUDIT.json"
 TWO_SEAM = BASE / "BHSM_N12_GATE7_TWO_SEAM_CLOSED_OPERATOR_ASSEMBLY.json"
 E0_PROVENANCE = BASE / "BHSM_N12_GATE7_E0_EVENT_SIDE_RESPONSE_PROVENANCE_AUDIT.json"
 SOURCE_ROLE = BASE / "BHSM_N12_GATE7_EXTERNAL_BIRTH_SOURCE_ROLE_SUPERSESSION.json"
+ONE_SEAM = BASE / "BHSM_N12_GATE7_AE2_ONE_SEAM_DIRECT_DESCRIPTOR.json"
 CHILD = BASE / "BHSM_N12_C2_1222_SEGMENT_NEGATIVE_AXIS_WEYL_FAMILY.json"
 FINITE_HEAT = BASE / "BHSM_N12_GATE7_FIXED_CHANNEL_FINITE_CORE_HEAT_BOUND.json"
 ADJOINT = BASE / "BHSM_N12_C2_1222_SIGNED_ADJOINT_ASSEMBLY.json"
@@ -30,7 +31,7 @@ CAUCHY = BASE / "BHSM_N12_C2_PROJECTED_ADJOINT_CAUCHY_CRITERION.json"
 THEORY = ROOT / "theory" / "n12_gate7_maximal_graded_cotangent_matching_audit.md"
 INPUTS = (
     LEDGER, BRST, FUNCTIONAL, ONTOLOGY, SEED, DOMAIN, INCOMING, BIRTH_AUDIT,
-    BIRTH_LOAD, TWO_SEAM, E0_PROVENANCE, SOURCE_ROLE, CHILD,
+    BIRTH_LOAD, TWO_SEAM, E0_PROVENANCE, SOURCE_ROLE, ONE_SEAM, CHILD,
     FINITE_HEAT, ADJOINT, CAUCHY, THEORY,
 )
 
@@ -84,12 +85,12 @@ def build_payload() -> dict[str, Any]:
         )
     (
         ledger, brst, functional, ontology, seed, domain, incoming, birth_audit,
-        birth_load, two_seam, e0_provenance, source_role, child,
+        birth_load, two_seam, e0_provenance, source_role, one_seam, child,
         finite_heat, adjoint, cauchy,
     ) = map(_load, INPUTS[:-1])
     records = (
         ledger, brst, functional, ontology, seed, domain, incoming, birth_audit,
-        birth_load, two_seam, e0_provenance, source_role, child,
+        birth_load, two_seam, e0_provenance, source_role, one_seam, child,
         finite_heat, adjoint, cauchy,
     )
     if not all(record.get("validation_passed") is True for record in records):
@@ -167,6 +168,14 @@ def build_payload() -> dict[str, Any]:
             == "E0_EVENT_SIDE_PROVENANCE_EXHAUSTED_REALIZED_PARENT_ARM_OPEN"
             and source_role["adjudication"]["M_E0_required"] is False
         ),
+        "direct_one_seam_finite_core_operator_and_jet_types_are_closed": (
+            one_seam["claim_boundary"]["finite_core_joint_operator_type"]
+            == "DERIVED_EXECUTABLE"
+            and one_seam["claim_boundary"]["finite_core_joint_first_jet_type"]
+            == "DERIVED_EXECUTABLE"
+            and one_seam["matching_audit"]["actual_graded_cotangent_value"]
+            == "OPEN"
+        ),
         "child_whole_axis_family_is_finite_core_only": (
             child["claim_boundary"]["finite_core_complete_negative_axis_family"]
             == "DERIVED_EXECUTABLE_THROUGH_1222"
@@ -194,7 +203,7 @@ def build_payload() -> dict[str, Any]:
     return {
         "artifact": "BHSM_N12_GATE7_MAXIMAL_GRADED_COTANGENT_MATCHING_AUDIT",
         "status": (
-            "MAXIMAL_GRADED_COTANGENT_TYPE_AND_E1_C2_SEAM_CLOSED_VALUES_TAIL_OPEN"
+            "MAXIMAL_GRADED_COTANGENT_TYPE_AND_FINITE_CORE_DIRECT_OPERATOR_CLOSED_VALUES_TAIL_OPEN"
             if passed else "MAXIMAL_GRADED_COTANGENT_MATCHING_NOT_CLOSED"
         ),
         "classification": (
@@ -202,8 +211,10 @@ def build_payload() -> dict[str, Any]:
             "REVERSE_ORDER_AND_PROJECTED_CAUCHY_CRITERION_ARE_ALL_EXISTING_"
             "VALID_MATCHES;_THE_EXTERNAL_ZERO_BIRTH_TRACE_SELECTS_THE_DIRICHLET_"
             "REFERENCE_WITH_NONZERO_INTERNAL_M_f_EQUALS_M11,_AND_THE_ONLY_"
-            "PHYSICAL_INTERNAL_SEAM_IS_E1_C2;_THE_COMPLETE_GRADED_SEAM_VALUES,_"
-            "C2_MAXIMAL_TAIL,_AND_DECISIVE_TRACE_FUNCTIONAL_ENCLOSURE_ARE_OPEN"
+            "PHYSICAL_INTERNAL_SEAM_IS_E1_C2;_THE_DIRECT_FINITE_CORE_OPERATOR_"
+            "AND_FIRST_JET_TYPES_ARE_EXECUTABLE,_WHILE_THE_ACTUAL_PARAMETRIC_"
+            "GRADED_VALUES,_C2_MAXIMAL_TAIL,_AND_DECISIVE_TRACE_FUNCTIONAL_"
+            "ENCLOSURE_ARE_OPEN"
         ),
         "retained_graded_sector_ledger": weights,
         "exact_cotangent_contract": {
@@ -237,8 +248,10 @@ def build_payload() -> dict[str, Any]:
             "outgoing_M_C2_whole_axis_1222_core": "VALID_FINITE_CORE_MATCH",
             "all_1222_transposed_reverse_actions": "VALID_MATCH",
             "physical_quotient_and_Cauchy_criterion": "VALID_MATCH",
-            "actual_per_level_joint_operator_family": "OPEN_E1_C2_GRADED_VALUES_AND_MAXIMAL_TAIL",
-            "actual_per_level_joint_operator_first_jet": "OPEN_E1_C2_GRADED_VALUES_AND_MAXIMAL_TAIL",
+            "finite_core_direct_joint_operator_generator": "VALID_MATCH",
+            "finite_core_direct_joint_first_jet_generator": "VALID_MATCH",
+            "actual_per_level_joint_operator_family": "DIRECT_GENERATOR_CLOSED_ACTUAL_PARAMETRIC_VALUES_AND_MAXIMAL_TAIL_OPEN",
+            "actual_per_level_joint_operator_first_jet": "DIRECT_GENERATOR_CLOSED_ACTUAL_PARAMETRIC_VALUES_AND_MAXIMAL_TAIL_OPEN",
             "actual_maximal_graded_cotangent_value": "ACTUALLY_MISSING",
         },
         "adjudication": {
@@ -255,10 +268,9 @@ def build_payload() -> dict[str, Any]:
             "Gate8": "LOCKED",
         },
         "exact_next_dependency": (
-            "USE_THE_REAFFIRMED_INTERNAL_M_f_EQUALS_M11_AND_REALIZE_OR_SHARPLY_"
-            "ENCLOSE_FOR_EACH_RETAINED_GRADED_LEVEL_THE_COMPLETE_E1_C2_EVENT_"
-            "CHILD_OPERATOR_AND_FIRST_ACTION_JET_ON_THE_"
-            "LOCAL_73_PARAMETER_FAMILY_OR_AT_AN_ACTUAL_FINITE_STOP;_THEN_"
+            "INTERVAL_ASSEMBLE_THE_DERIVED_DIRECT_ONE_SEAM_DESCRIPTOR_FOR_EACH_"
+            "RETAINED_GRADED_LEVEL_ON_THE_INCOMING_AMPLITUDE_AND_LOCAL_73_"
+            "PARAMETER_C2_FAMILIES_OR_AT_AN_ACTUAL_FINITE_STOP;_THEN_"
             "EVALUATE_THE_FIXED_COTANGENT_CONTRACT_AND_RUN_THE_EXISTING_SINGLE_"
             "REVERSE_SWEEP"
         ),

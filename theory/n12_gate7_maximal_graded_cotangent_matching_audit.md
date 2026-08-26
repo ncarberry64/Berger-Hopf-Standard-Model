@@ -1,12 +1,14 @@
 # Gate-7 maximal graded cotangent matching audit
 
-Status: `MAXIMAL_GRADED_COTANGENT_TYPE_AND_E1_C2_SEAM_CLOSED_VALUES_TAIL_OPEN`.
+Status: `MAXIMAL_GRADED_COTANGENT_TYPE_AND_FINITE_CORE_DIRECT_OPERATOR_CLOSED_VALUES_TAIL_OPEN`.
 
 The external zero birth trace selects the compact-history Dirichlet reference
 without zeroing its nonzero internal response `M_f=M11`. The current physical
 operator has the single internal `E1/C2` seam
-`S_AE2=M_f+U_R^dagger M_C2 U_R+W_phys`. The complete graded seam values,
-first jets, and C2 maximal tail remain open; a pre-E0 response is not required.
+`S_AE2=M_f+U_R^dagger M_C2 U_R+W_phys`. The direct finite-core operator and
+its elementwise first-jet generator are now executable with that seam node
+represented once. The actual parametric graded values and C2 maximal tail
+remain open; a pre-E0 response is not required.
 
 The retained BRST/statistics ledger already fixes every coefficient in the
 physical heat direct sum.  After the longitudinal gauge/complex-ghost pair is
@@ -21,9 +23,10 @@ cancelled mode by mode, the nonzero weights are
 These weights survive the retirement of the periodic proper-cycle domain.
 They are representation/statistics data, not temporal boundary conditions.
 The current temporal domain is the forward AE2 event--child graph on the
-action-realized history.  The initial birth trace remains a degree of freedom
-in the closed operator when `J_ext=0`; it is not replaced by a Dirichlet
-condition.
+action-realized history.  The external birth trace is held fixed while the
+closed operator is differentiated and is then set to zero. This selects the
+E0 Dirichlet reference, while the resulting internal response `M_f=M11`
+remains generally nonzero.
 
 For every level `k` and every member `xi` of the certified local history
 family, let `P_C,k^joint(xi)` be the complete positive self-adjoint joint
@@ -64,11 +67,13 @@ The repository matching result is sharp:
   is not a physical endpoint;
 - no scalar at a proof center represents the physical family;
 - the current diagram has one internal `E1/C2` seam; `B_birth` and `M_E0` are
-  not Gate-7 slots. The remaining datum is the sharp per-level joint operator
-  family `P_C,k^joint(xi)` and its
-  first action jet, or an equivalent decisive trace-functional enclosure, on
-  the action-realized maximal history or an actual finite event/canonical
-  stop.
+  not Gate-7 slots;
+- direct one-seam finite-element assembly supplies the per-level joint
+  operator and coefficient-jet type without a response-map inversion and is
+  exactly Schur-equivalent to the displayed seam sum. The remaining datum is
+  its interval value on the action-owned incoming/C2 parameter family and the
+  maximal projected tail, or an equivalent decisive trace-functional
+  enclosure at an actual finite event/canonical stop.
 
 Thus neither a new grading, a new external source, more isolated negative-axis
 probes, nor a new response theory is required. Once the actual E1/C2
