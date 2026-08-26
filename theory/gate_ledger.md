@@ -2390,3 +2390,21 @@ Exact next object:
   inclusion, or the first retained canonical stop.
 - Gate 7: `ACTIVE`; Gate 8: `LOCKED`; chord 3: `UNAUTHORIZED`;
   frozen predictions unchanged; `FULL_BHSM_COMPLETE=FALSE`.
+
+## N=12 logarithmic-descriptor connection chart
+
+- Positive regular descriptor coordinate: `r=log s`.
+- Exact same-action generator: `G_r=s F_s`.
+- Orientation identities: `Dlambda[G_r]=s>0` and
+  `d tau/dr=N_boundary*s^2/Delta>0`.
+- Near-birth linear-`s` microscopic step obstruction: `PROOF_ARTIFACT`;
+  at the 1,222-core edge the logarithmic field norm is below `1e-10`.
+- Large logarithmic boxes automatically certified: `FALSE`; each recentered
+  interval still requires action-derivative and domain-margin enclosures.
+- Numerical `Delta`-loss candidate near `s~1e-9`: `RECONNAISSANCE_ONLY`,
+  not a physical threshold or certified stop.
+- Current proof owner: recentered interval multiple shooting or a degree
+  certificate in `r`, ending at strict tube inclusion or the first retained
+  canonical stop.
+- Gate 7: `ACTIVE`; Gate 8: `LOCKED`; chord 3: `UNAUTHORIZED`;
+  frozen predictions unchanged; `FULL_BHSM_COMPLETE=FALSE`.
