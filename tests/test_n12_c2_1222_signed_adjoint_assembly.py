@@ -9,6 +9,10 @@ def test_signed_finite_core_adjoint_is_assembled() -> None:
     ] == "DERIVED"
     assert payload["exact_recurrence"]["forward_Jacobi_columns_required"] == 0
     assert payload["adjudication"]["moving_duration_included"] is True
+    assert payload["adjudication"][
+        "all_1222_interval_transposed_duration_actions"
+    ] == "CLOSED"
+    assert payload["adjudication"]["joint_heat_cotangent_reverse_seed"] == "CLOSED"
     assert len(payload["actual_1222_coefficient_inputs"]) == 3
 
 
@@ -19,9 +23,10 @@ def test_assembly_does_not_promote_centers_source_force_or_tail() -> None:
     assert adjudication["numerical_parametric_or_interval_BHSM_adjoint"].startswith(
         "OPEN"
     )
-    assert adjudication["complete_upstream_history_covector"].startswith("OPEN")
-    assert adjudication["actual_graded_heat_minus_zeta_contraction"].startswith(
+    assert adjudication["complete_internal_upstream_history_covector"].startswith("OPEN")
+    assert adjudication["actual_joint_graded_heat_minus_zeta_cotangent"].startswith(
         "OPEN"
     )
+    assert payload["exact_recurrence"]["additional_seam_source"] == "FORBIDDEN"
     assert payload["claim_boundary"]["actual_BHSM_signed_covector"] == "OPEN"
     assert payload["claim_boundary"]["FULL_BHSM_COMPLETE"] is False

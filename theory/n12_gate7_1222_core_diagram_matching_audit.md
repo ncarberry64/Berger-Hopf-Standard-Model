@@ -44,11 +44,17 @@ It uses the exact N12 action Hessian, selected eigenline, uniformly invertible
 bordered complement response, and Hellmann--Feynman directional derivatives;
 it forms no full Euler--Dirac inverse and satisfies `D lambda(F_s)=1`.  At the
 independently stored 1214 center it reproduces the prior exact field within
-`3.533e-10` relative numerical realization error.  The remaining base-history
-gap is therefore not the differential equation: it is the actual parametric
-reset-family multiple-shooting solution.  The stored coefficient nodes remain
+`3.533e-10` relative numerical realization error.  Finite-time smooth
+dependence now supplies a local 73-parameter exact reset-generated family
+through all 1,222 segments.  This is existence on the finite core, not a
+selected member or maximal endpoint.  The stored coefficient nodes remain
 proof centers and cannot be differentiated as though they selected a physical
 reset member.
+
+All 1,222 transposed moving-duration actions are also certified as interval
+dual balls.  The signed reverse recurrence is therefore complete at the
+equation level.  The segment-1214 sharp result is only a refinement; 1,221
+additional sharp row sweeps are not prerequisites.
 
 The complete moving-duration common-scale source contraction is also closed
 at the formula level.  The heat part reduces to
@@ -56,6 +62,14 @@ at the formula level.  The heat part reduces to
 variations cancel in the local zeta term.  Its N12 value remains open until
 the sharp joint graded operator is realized; no probe is promoted to that
 trace.
+
+The owner-authorized source ontology now fixes the remaining terminology.
+Only the external birth/Cauchy datum `J_ext` is zeroed, after the complete
+joint operator is assembled and differentiated.  `M_f`, transported `M_C2`,
+`U_R`, `W_phys`, and all retained contact/incidence blocks are internal.  The
+joint heat functional supplies one cotangent seed and one reverse sweep;
+adding a separate seam source or combining direct and Schur routes would
+double count the same closed operator.
 
 The three descriptor channels stored at both resolutions admit an additional
 inverse-free check.  The mixed birth-free/far-Dirichlet Poincare inequality,
@@ -94,11 +108,9 @@ noncompact maximal tail are not.  The common pair/contact incidence and
 heat-minus-zeta trace functional are valid conditional consumers; broad seam
 intervals and isolated probes cannot replace their realized inputs.
 
-Accordingly the next construction must use the exact field in a parametric
-reset-chart multiple-shooting or equivalent coupled forward-adjoint KKT base
-solve, evaluate the signed non-scale backward center adjoint, then propagate that
-finite-core covector through the now-invertible fermion seam and assemble or enclose the
-exact joint graded spectral trace.  It must then combine
-that sector with the exact common-scale component, form the projected
-finite-core force net, and test its maximal Cauchy tail.  The 1,222-core edge remains an artificial
+Accordingly the next construction is the actual complete joint graded
+heat-minus-zeta spectral cotangent on the local parametric family.  It is fed
+to the already-certified interval actions and the single signed reverse
+equation, combined with the exact common-scale component, and tested as a
+projected finite-core Cauchy net.  The 1,222-core edge remains an artificial
 Friedrichs exhaustion edge, not an event or canonical stop.

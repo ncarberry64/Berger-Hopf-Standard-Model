@@ -22,11 +22,17 @@ no inverse of the full Euler--Dirac block.
 At the reset seam, the downstream result composes with the existing launch
 adjoint:
 
-`g_reset=Z^dagger d_upstream_interface+B^dagger p_C2,0`.
+`g_reset=Z^dagger p_Mf+B^dagger p_C2,0+p_retained_contacts`.
+
+Under the owner-authorized source ontology these are all internal reverse
+contributions from one closed joint operator.  Only the external birth/Cauchy
+datum `J_ext` is set to zero, after differentiation.  No additional seam
+source is present.  The joint heat-cotangent theorem now supplies the unique
+block seed, and all 1,222 interval transposed-duration actions are certified.
 
 Thus the signed assembly pattern is complete on every exact finite-core
 family member.  The stored proof centers still cannot be substituted for
 that member.  The current repository also does not yet supply the actual
-graded heat-minus-zeta spectral contraction or the signed upstream-history
-covector.  Accordingly no numerical zero-force value, saddle, endpoint, or
-maximal-tail claim follows from this theorem.
+joint graded heat-minus-zeta spectral cotangent or the signed internal
+upstream-history covector.  Accordingly no numerical zero-external-source
+force value, saddle, endpoint, or maximal-tail claim follows from this theorem.

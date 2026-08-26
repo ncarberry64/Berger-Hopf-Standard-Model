@@ -43,14 +43,17 @@
     }
   },
   "adjudication": {
-    "actual_graded_heat_minus_zeta_contraction": "OPEN_CURRENT_OWNER",
+    "actual_joint_graded_heat_minus_zeta_cotangent": "OPEN_CURRENT_OWNER",
     "actual_projected_zero_source_force": "OPEN",
-    "complete_upstream_history_covector": "OPEN_CURRENT_OWNER",
+    "all_1222_interval_transposed_duration_actions": "CLOSED",
+    "complete_internal_upstream_history_covector": "OPEN_CURRENT_OWNER",
+    "joint_heat_cotangent_reverse_seed": "CLOSED",
     "maximal_projected_tail": "OPEN_AFTER_FINITE_CORE_FORCE_NET",
     "moving_duration_included": true,
     "numerical_parametric_or_interval_BHSM_adjoint": "OPEN_CURRENT_OWNER",
     "proof_center_used_as_physical_history": false,
-    "signed_finite_core_adjoint_equation": "CLOSED"
+    "signed_finite_core_adjoint_equation": "CLOSED",
+    "zero_external_source_semantics": "CLOSED_ONLY_J_ext"
   },
   "artifact": "BHSM_N12_C2_1222_SIGNED_ADJOINT_ASSEMBLY",
   "claim_boundary": {
@@ -65,7 +68,7 @@
     "same_action_saddle": "WAITING_ON_FORCE",
     "signed_finite_core_adjoint_assembly": "DERIVED"
   },
-  "classification": "ON_EVERY_EXACT_MEMBER_OF_THE_CERTIFIED_LOCAL_73_PARAMETER_C2_FAMILY_THE_SIGNED_WEYL_COEFFICIENT_COTANGENT_PULLS_BACK_BY_ONE_INVERSE_FREE_REVERSE_STATE_SWEEP_INCLUDING_MOVING_PROPER_DURATION;_THE_RESULT_COMPOSES_WITH_THE_EXISTING_RESET_LAUNCH_ADJOINT_AND_THE_COMPLETE_UPSTREAM_INTERFACE_COVECTOR;_THE_ACTUAL_GRADED_SOURCE_AND_NUMERICAL_PARAMETRIC_OR_INTERVAL_REALIZATION_REMAIN_OPEN",
+  "classification": "ON_EVERY_EXACT_MEMBER_OF_THE_CERTIFIED_LOCAL_73_PARAMETER_C2_FAMILY_THE_SIGNED_WEYL_COEFFICIENT_COTANGENT_PULLS_BACK_BY_ONE_INVERSE_FREE_REVERSE_STATE_SWEEP_INCLUDING_MOVING_PROPER_DURATION;_THE_RESULT_COMPOSES_WITH_THE_EXISTING_RESET_LAUNCH_ADJOINT_AND_THE_COMPLETE_INTERNAL_UPSTREAM_INTERFACE_COVECTOR;_ALL_1222_INTERVAL_TRANSPOSED_DURATION_ACTIONS_AND_THE_SINGLE_JOINT_HEAT_COTANGENT_SEED_ARE_NOW_CLOSED,_WHILE_THE_ACTUAL_JOINT_GRADED_SPECTRAL_COTANGENT_AND_NUMERICAL_PARAMETRIC_OR_INTERVAL_REALIZATION_REMAIN_OPEN",
   "crosscheck": {
     "crosscheck_passed": true,
     "forward_reverse_residual": 1.2080532582046505e-14,
@@ -73,28 +76,33 @@
     "segments": 9,
     "state_dimension": 6
   },
-  "exact_next_dependency": "REALIZE_THE_TRANSPOSED_EXACT_FIXED_s_SEGMENT_MAP_AND_MOVING_DURATION_COVECTOR_AS_PARAMETRIC_OR_INTERVAL_ACTIONS_ON_THE_CERTIFIED_FAMILY,_CONTRACT_THE_ACTUAL_GRADED_HEAT_MINUS_ZETA_SOURCE_AND_COMPLETE_UPSTREAM_HISTORY_COVECTOR,_THEN_APPLY_THE_EXISTING_RESET_AND_PHYSICAL_QUOTIENT_PULLBACKS",
+  "exact_next_dependency": "REALIZE_OR_SHARPLY_ENCLOSE_THE_ACTUAL_COMPLETE_JOINT_GRADED_HEAT_MINUS_ZETA_SPECTRAL_COTANGENT_ON_THE_PARAMETRIC_FAMILY,_FEED_IT_TO_THE_ALREADY_CERTIFIED_1222_INTERVAL_ACTIONS,_COMPLETE_THE_INTERNAL_UPSTREAM_AND_CHILD_REVERSE SWEEP_ONCE,_THEN_APPLY_THE_EXISTING_RESET_AND_PHYSICAL_QUOTIENT_PULLBACKS",
   "exact_recurrence": {
     "C2_initial_covector": "p_C2,0=p_0",
+    "additional_seam_source": "FORBIDDEN",
     "backward": "p_j=C_x,j*x_Y,j+C_h,j*h_Y,j+Phi_Y,j^dagger*p_(j+1)",
     "forward_Jacobi_columns_required": 0,
     "full_Euler_Dirac_inverse_formed": false,
     "history": "Y_(j+1)=Phi_j(Y_j),_x_j=log_R4(Y_j),_h_j=H_j(Y_j)",
-    "joint_reset_pullback": "g_reset=Z^dagger*d_upstream_interface+B^dagger*p_C2,0",
+    "joint_reset_pullback": "g_reset=Z^dagger*p_Mf+B^dagger*p_C2,0+p_retained_contacts",
     "physical_force": "g_phys=N_phys^dagger*g_reset",
-    "terminal": "p_N=C_x,N*x_Y,N+g_T"
+    "terminal": "p_N=C_x,N*x_Y,N+g_T",
+    "zero_external_source_rule": "SET_J_ext=0_ONLY_AFTER_THE_COMPLETE_JOINT_REVERSE_SWEEP"
   },
   "inputs": {
     "artifacts/flagship_integration/BHSM_N12_C2_1222_COMPLETE_GEOMETRY_PULLBACK_NORM.json": "57455450C64FFE9EE57DEBAB12036F3ADBC83544ADE78B456302F7BD69D7F8F9",
     "artifacts/flagship_integration/BHSM_N12_C2_1222_PARAMETRIC_BASE_FAMILY.json": "FE013A1E27EC733B931CD136F2597C2AD2DF815EF3999A735ABA238359DA87D7",
     "artifacts/flagship_integration/BHSM_N12_C2_1222_SEGMENT_WEYL_COEFFICIENT_COTANGENT.json": "6919218F92D5E5A45641004B1F94E64E93E11BB4A3A89A42D236FD62CBBF1D37",
     "artifacts/flagship_integration/BHSM_N12_C2_1222_SEGMENT_WEYL_COEFFICIENT_COTANGENT.npz": "A248797F83A4DEB799DE28E615535E8CB4F903ED348607EE815866821EB4A8FA",
+    "artifacts/flagship_integration/BHSM_N12_C2_1222_TRANSPOSED_DURATION_ACTION_COVERAGE.json": "1C87EC6D6E7A7025DD8E8AEC26A6775D29EB10E23EED1B8CE46603B3FB92B9DC",
     "artifacts/flagship_integration/BHSM_N12_C2_FIXED_SEED_UPSTREAM_FORCE_OWNER.json": "396F39A4F98ECE7F903221EFD01A1C126479EE56DC4F8A72C976501D0D4F8A71",
     "artifacts/flagship_integration/BHSM_N12_C2_RESET_LAUNCH_ADJOINT_INTERFACE.json": "834744FE503761891F7922CAADBF3187F8484EE6587049A0A624D9F78C2B3ABD",
     "artifacts/flagship_integration/BHSM_N12_FORCE_ADJOINT_PULLBACK.json": "CD8A55728672AE5CACEC16268AF5B00A267A06F4A0A92BE5F10989CD58189CDF",
     "artifacts/flagship_integration/BHSM_N12_FORWARD_COMMON_SOURCE_INCIDENCE.json": "943359A4649960D7D2293B396D5C3B661B6D6F2C8D36A68FC6E36895141CEF33",
+    "artifacts/flagship_integration/BHSM_N12_GATE7_CLOSED_SYSTEM_ZERO_EXTERNAL_SOURCE_ONTOLOGY.json": "59DC2EABF1B85886D76F60134D01FDE65E368E4C8EBD576D9123555E67613BE2",
+    "artifacts/flagship_integration/BHSM_N12_GATE7_JOINT_HEAT_COTANGENT_REVERSE_SEED.json": "13DC52A9BEFCA69812411A2C45F1F76D1D97270E355AEF78C1F4D48FB542F3CF",
     "src/bhsm/interface/aether_forward_c2_signed_coefficient_adjoint.py": "D77CA93CB22E50EAF59199806034F5173A73B19371B1BE8565F17CCB5A16B9F7",
-    "theory/n12_c2_1222_signed_adjoint_assembly.md": "82B2905CBBAFB63B51EACF85B5A589FB71C6756C59A2F29355A0E6E25DD0C39E"
+    "theory/n12_c2_1222_signed_adjoint_assembly.md": "63FE09CAFEFEF61F1B6B547AC714521FB01FDAEDE2CF72CA3C0562E58C2A7ABB"
   },
   "status": "SIGNED_FINITE_CORE_COEFFICIENT_ADJOINT_ASSEMBLED_ACTUAL_FORCE_OPEN",
   "validated_invalidated_open": {
@@ -106,17 +114,21 @@
     "OPEN": [
       "numerical parametric or interval BHSM reverse sweep",
       "complete upstream C1-to-E1 signed covector",
-      "actual graded heat-minus-zeta source contraction",
+      "actual joint graded heat-minus-zeta spectral cotangent",
       "maximal projected force tail or finite later stop"
     ],
     "VALIDATED": [
       "signed coefficient-to-state adjoint recurrence",
       "moving-duration term in the same reverse sweep",
-      "composition with reset launch and upstream covectors"
+      "composition with reset launch and upstream covectors",
+      "all 1222 interval transposed duration actions",
+      "single closed-system joint heat cotangent reverse seed",
+      "only external J_ext is zeroed after joint differentiation"
     ]
   },
   "validation": {
     "actual_BHSM_signed_covector_is_not_claimed_from_proof_centers": true,
+    "all_1222_interval_transposed_duration_actions_are_certified": true,
     "all_stored_signed_coefficient_cotangents_are_nonzero": true,
     "all_three_actual_coefficient_cotangent_shapes_match_1222_core": true,
     "continuous_adjoint_parent_is_derived": true,
@@ -124,9 +136,12 @@
     "finite_core_first_jet_norm_parent_is_certified": true,
     "forward_and_reverse_pairings_crosscheck": true,
     "graded_source_incidence_is_available_as_conditional_consumer": true,
+    "joint_heat_cotangent_reverse_seed_is_derived": true,
     "launch_adjoint_composition_is_derived": true,
+    "no_internal_response_is_zeroed_or_reintroduced_as_a_seam_source": true,
     "no_inverse_selector_endpoint_recurrence_scale_fit_gate_or_chord_added": true,
-    "upstream_fixed_seed_owner_is_not_discarded": true
+    "upstream_fixed_seed_owner_is_not_discarded": true,
+    "zero_source_means_only_zero_external_birth_Cauchy_datum": true
   },
   "validation_passed": true
 }

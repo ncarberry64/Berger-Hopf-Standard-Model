@@ -29,6 +29,9 @@ FORCE_ADJOINT = BASE / "BHSM_N12_FORCE_ADJOINT_PULLBACK.json"
 LAUNCH_ADJOINT = BASE / "BHSM_N12_C2_RESET_LAUNCH_ADJOINT_INTERFACE.json"
 FIXED_OWNER = BASE / "BHSM_N12_C2_FIXED_SEED_UPSTREAM_FORCE_OWNER.json"
 INCIDENCE = BASE / "BHSM_N12_FORWARD_COMMON_SOURCE_INCIDENCE.json"
+INTERVAL_ACTIONS = BASE / "BHSM_N12_C2_1222_TRANSPOSED_DURATION_ACTION_COVERAGE.json"
+SOURCE_ONTOLOGY = BASE / "BHSM_N12_GATE7_CLOSED_SYSTEM_ZERO_EXTERNAL_SOURCE_ONTOLOGY.json"
+JOINT_SEED = BASE / "BHSM_N12_GATE7_JOINT_HEAT_COTANGENT_REVERSE_SEED.json"
 MODULE = ROOT / "src" / "bhsm" / "interface" / "aether_forward_c2_signed_coefficient_adjoint.py"
 THEORY = ROOT / "theory" / "n12_c2_1222_signed_adjoint_assembly.md"
 INPUTS = (
@@ -40,6 +43,9 @@ INPUTS = (
     LAUNCH_ADJOINT,
     FIXED_OWNER,
     INCIDENCE,
+    INTERVAL_ACTIONS,
+    SOURCE_ONTOLOGY,
+    JOINT_SEED,
     MODULE,
     THEORY,
 )
@@ -105,7 +111,10 @@ def build_payload() -> dict[str, Any]:
     missing = [str(path) for path in INPUTS if not path.is_file()]
     if missing:
         raise FileNotFoundError("missing signed-adjoint inputs: " + ", ".join(missing))
-    parametric, cotangent, complete_norm, force, launch, owner, incidence = (
+    (
+        parametric, cotangent, complete_norm, force, launch, owner, incidence,
+        interval_actions, source_ontology, joint_seed,
+    ) = (
         _load(path)
         for path in (
             PARAMETRIC,
@@ -115,10 +124,14 @@ def build_payload() -> dict[str, Any]:
             LAUNCH_ADJOINT,
             FIXED_OWNER,
             INCIDENCE,
+            INTERVAL_ACTIONS,
+            SOURCE_ONTOLOGY,
+            JOINT_SEED,
         )
     )
     if not all(record.get("validation_passed") is True for record in (
         parametric, cotangent, complete_norm, force, launch, owner, incidence,
+        interval_actions, source_ontology, joint_seed,
     )):
         raise RuntimeError("validated signed-adjoint lineage required")
     channel_shapes: dict[str, Any] = {}
@@ -171,6 +184,21 @@ def build_payload() -> dict[str, Any]:
             incidence["claim_boundary"]["domain_parametric_nonzero_local_incidence"]
             == "DERIVED"
         ),
+        "all_1222_interval_transposed_duration_actions_are_certified": (
+            interval_actions["adjudication"][
+                "all_1222_interval_transposed_duration_actions"
+            ] == "CERTIFIED"
+        ),
+        "zero_source_means_only_zero_external_birth_Cauchy_datum": (
+            source_ontology["external_internal_partition"]["set_to_zero"] == ["J_ext"]
+        ),
+        "joint_heat_cotangent_reverse_seed_is_derived": (
+            joint_seed["adjudication"]["joint_reverse_seed_formula"] == "CLOSED"
+        ),
+        "no_internal_response_is_zeroed_or_reintroduced_as_a_seam_source": (
+            source_ontology["adjudication"]["internal_response_zeroing"] == "FORBIDDEN"
+            and joint_seed["adjudication"]["additional_seam_source"] == "FORBIDDEN"
+        ),
         "forward_and_reverse_pairings_crosscheck": crosscheck["crosscheck_passed"],
         "actual_BHSM_signed_covector_is_not_claimed_from_proof_centers": True,
         "no_inverse_selector_endpoint_recurrence_scale_fit_gate_or_chord_added": True,
@@ -188,8 +216,10 @@ def build_payload() -> dict[str, Any]:
             "FAMILY_THE_SIGNED_WEYL_COEFFICIENT_COTANGENT_PULLS_BACK_BY_ONE_"
             "INVERSE_FREE_REVERSE_STATE_SWEEP_INCLUDING_MOVING_PROPER_"
             "DURATION;_THE_RESULT_COMPOSES_WITH_THE_EXISTING_RESET_LAUNCH_"
-            "ADJOINT_AND_THE_COMPLETE_UPSTREAM_INTERFACE_COVECTOR;_THE_"
-            "ACTUAL_GRADED_SOURCE_AND_NUMERICAL_PARAMETRIC_OR_INTERVAL_"
+            "ADJOINT_AND_THE_COMPLETE_INTERNAL_UPSTREAM_INTERFACE_COVECTOR;_"
+            "ALL_1222_INTERVAL_TRANSPOSED_DURATION_ACTIONS_AND_THE_SINGLE_"
+            "JOINT_HEAT_COTANGENT_SEED_ARE_NOW_CLOSED,_WHILE_THE_ACTUAL_JOINT_"
+            "GRADED_SPECTRAL_COTANGENT_AND_NUMERICAL_PARAMETRIC_OR_INTERVAL_"
             "REALIZATION_REMAIN_OPEN"
         ),
         "exact_recurrence": {
@@ -200,8 +230,10 @@ def build_payload() -> dict[str, Any]:
             ),
             "C2_initial_covector": "p_C2,0=p_0",
             "joint_reset_pullback": (
-                "g_reset=Z^dagger*d_upstream_interface+B^dagger*p_C2,0"
+                "g_reset=Z^dagger*p_Mf+B^dagger*p_C2,0+p_retained_contacts"
             ),
+            "zero_external_source_rule": "SET_J_ext=0_ONLY_AFTER_THE_COMPLETE_JOINT_REVERSE_SWEEP",
+            "additional_seam_source": "FORBIDDEN",
             "physical_force": "g_phys=N_phys^dagger*g_reset",
             "full_Euler_Dirac_inverse_formed": False,
             "forward_Jacobi_columns_required": 0,
@@ -210,11 +242,14 @@ def build_payload() -> dict[str, Any]:
         "crosscheck": crosscheck,
         "adjudication": {
             "signed_finite_core_adjoint_equation": "CLOSED",
+            "all_1222_interval_transposed_duration_actions": "CLOSED",
+            "joint_heat_cotangent_reverse_seed": "CLOSED",
+            "zero_external_source_semantics": "CLOSED_ONLY_J_ext",
             "moving_duration_included": True,
             "proof_center_used_as_physical_history": False,
             "numerical_parametric_or_interval_BHSM_adjoint": "OPEN_CURRENT_OWNER",
-            "complete_upstream_history_covector": "OPEN_CURRENT_OWNER",
-            "actual_graded_heat_minus_zeta_contraction": "OPEN_CURRENT_OWNER",
+            "complete_internal_upstream_history_covector": "OPEN_CURRENT_OWNER",
+            "actual_joint_graded_heat_minus_zeta_cotangent": "OPEN_CURRENT_OWNER",
             "maximal_projected_tail": "OPEN_AFTER_FINITE_CORE_FORCE_NET",
             "actual_projected_zero_source_force": "OPEN",
         },
@@ -223,6 +258,9 @@ def build_payload() -> dict[str, Any]:
                 "signed coefficient-to-state adjoint recurrence",
                 "moving-duration term in the same reverse sweep",
                 "composition with reset launch and upstream covectors",
+                "all 1222 interval transposed duration actions",
+                "single closed-system joint heat cotangent reverse seed",
+                "only external J_ext is zeroed after joint differentiation",
             ],
             "INVALIDATED": [
                 "73 forward Jacobi columns are required for one scalar force",
@@ -232,16 +270,16 @@ def build_payload() -> dict[str, Any]:
             "OPEN": [
                 "numerical parametric or interval BHSM reverse sweep",
                 "complete upstream C1-to-E1 signed covector",
-                "actual graded heat-minus-zeta source contraction",
+                "actual joint graded heat-minus-zeta spectral cotangent",
                 "maximal projected force tail or finite later stop",
             ],
         },
         "exact_next_dependency": (
-            "REALIZE_THE_TRANSPOSED_EXACT_FIXED_s_SEGMENT_MAP_AND_MOVING_"
-            "DURATION_COVECTOR_AS_PARAMETRIC_OR_INTERVAL_ACTIONS_ON_THE_"
-            "CERTIFIED_FAMILY,_CONTRACT_THE_ACTUAL_GRADED_HEAT_MINUS_ZETA_"
-            "SOURCE_AND_COMPLETE_UPSTREAM_HISTORY_COVECTOR,_THEN_APPLY_THE_"
-            "EXISTING_RESET_AND_PHYSICAL_QUOTIENT_PULLBACKS"
+            "REALIZE_OR_SHARPLY_ENCLOSE_THE_ACTUAL_COMPLETE_JOINT_GRADED_"
+            "HEAT_MINUS_ZETA_SPECTRAL_COTANGENT_ON_THE_PARAMETRIC_FAMILY,_"
+            "FEED_IT_TO_THE_ALREADY_CERTIFIED_1222_INTERVAL_ACTIONS,_COMPLETE_"
+            "THE_INTERNAL_UPSTREAM_AND_CHILD_REVERSE SWEEP_ONCE,_THEN_APPLY_"
+            "THE_EXISTING_RESET_AND_PHYSICAL_QUOTIENT_PULLBACKS"
         ),
         "claim_boundary": {
             "Gate7": "G7_08_OPEN_NUMERICAL_JOINT_SOURCE_ADJOINT_AND_MAXIMAL_TAIL",
