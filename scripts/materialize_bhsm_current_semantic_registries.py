@@ -69,6 +69,7 @@ SOURCES = (
     "artifacts/flagship_integration/BHSM_N12_C2_1222_PARAMETRIC_BASE_FAMILY.json",
     "artifacts/flagship_integration/BHSM_N12_C2_1222_SIGNED_ADJOINT_ASSEMBLY.json",
     "artifacts/flagship_integration/BHSM_N12_C2_SIGNED_DURATION_INCIDENCE_OWNER.json",
+    "artifacts/flagship_integration/BHSM_N12_C2_SIGNED_DDELTA_SEED_TRANSPORT_AUDIT.json",
     "artifacts/flagship_integration/BHSM_N12_CORE_TRANSMITTED_PHYSICAL_MANIFOLD_AUDIT.json",
     "artifacts/flagship_integration/BHSM_N12_ASYMPTOTIC_NHIM_ANGULAR_FORCE_NO_GO.json",
     "artifacts/flagship_integration/BHSM_N12_LOCAL_RESET_TERMINAL_TRANSVERSALITY_AUDIT.json",
@@ -165,6 +166,7 @@ def verify_current_lineage() -> None:
     parametric_base = loaded["artifacts/flagship_integration/BHSM_N12_C2_1222_PARAMETRIC_BASE_FAMILY.json"]
     signed_adjoint = loaded["artifacts/flagship_integration/BHSM_N12_C2_1222_SIGNED_ADJOINT_ASSEMBLY.json"]
     duration_incidence = loaded["artifacts/flagship_integration/BHSM_N12_C2_SIGNED_DURATION_INCIDENCE_OWNER.json"]
+    ddelta_transport = loaded["artifacts/flagship_integration/BHSM_N12_C2_SIGNED_DDELTA_SEED_TRANSPORT_AUDIT.json"]
     core_audit = loaded["artifacts/flagship_integration/BHSM_N12_CORE_TRANSMITTED_PHYSICAL_MANIFOLD_AUDIT.json"]
     nhim_angular_no_go = loaded["artifacts/flagship_integration/BHSM_N12_ASYMPTOTIC_NHIM_ANGULAR_FORCE_NO_GO.json"]
     local_reset_terminal = loaded["artifacts/flagship_integration/BHSM_N12_LOCAL_RESET_TERMINAL_TRANSVERSALITY_AUDIT.json"]
@@ -239,6 +241,14 @@ def verify_current_lineage() -> None:
         and duration_incidence["claim_boundary"]["signed_D_Y_Delta"] == "OPEN"
         and duration_incidence["adjudication"]["proof_center_used_as_physical_history"]
         is False
+        and ddelta_transport["status"]
+        == "COARSE_DDELTA_TRANSPORT_CERTIFIED_BUT_NOT_SIGN_RESOLVING"
+        and ddelta_transport["adjudication"]["physical_obstruction_found"]
+        is False
+        and ddelta_transport["adjudication"][
+            "signed_DDelta_on_exact_parametric_family"
+        ]
+        == "OPEN_NOT_RESOLVED_BY_COARSE_BOUND"
         and core_audit["claim_boundary"]["core_transmitted_physical_manifold"]
         == "OWNER_HYPOTHESIS_NOT_ACTION_DERIVED"
         and core_audit["claim_boundary"]["a_equals_1_over_118"]

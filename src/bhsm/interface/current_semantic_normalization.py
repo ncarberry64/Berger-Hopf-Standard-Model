@@ -115,6 +115,7 @@ def _basis() -> list[dict[str, Any]]:
     p_parametric_base = "artifacts/flagship_integration/BHSM_N12_C2_1222_PARAMETRIC_BASE_FAMILY.json"
     p_signed_adjoint = "artifacts/flagship_integration/BHSM_N12_C2_1222_SIGNED_ADJOINT_ASSEMBLY.json"
     p_duration_incidence = "artifacts/flagship_integration/BHSM_N12_C2_SIGNED_DURATION_INCIDENCE_OWNER.json"
+    p_ddelta_transport = "artifacts/flagship_integration/BHSM_N12_C2_SIGNED_DDELTA_SEED_TRANSPORT_AUDIT.json"
     p_core_audit = "artifacts/flagship_integration/BHSM_N12_CORE_TRANSMITTED_PHYSICAL_MANIFOLD_AUDIT.json"
     p_e1 = "artifacts/flagship_integration/BHSM_N12_FORWARD_E1_SOURCE_MEASURE_CRITERION.json"
     p_nf = "artifacts/flagship_integration/BHSM_N12_GATE7_AE2_NONFERMION_THRESHOLD_MARGIN.json"
@@ -390,6 +391,18 @@ def _basis() -> list[dict[str, Any]]:
             current_status="DERIVED_REFERENCE_D_Y_DELTA_BALL_CERTIFIED_FAMILY_TRANSPORT_AND_SEGMENT_ACTION_OPEN",
             downstream_consumers=["C2_1222_SIGNED_ADJOINT_ASSEMBLY", "G7_08_FORCE"],
             forbidden_interpretations=["a norm bound supplies the sign of D_Y Delta", "differentiate the adaptive proof-center algorithm as a physical history", "proper duration is an independent fitted coefficient", "the zero-DDelta formula witness is a BHSM value"],
+        ),
+        record(
+            "C2_SIGNED_DDELTA_SEED_TRANSPORT_AUDIT",
+            "DDelta(Y_exact) in DDelta(Y_1214)+Ball(0,r_seed+B_D2Delta*r_tube)",
+            "CANCELLATION_RESOLUTION_AUDIT",
+            "MATHEMATICAL_OBJECT",
+            "The retained product majorants certify a valid local D2Delta transport ball, but that ball contains zero already across the node-1214 exact-state tube; this is a proof-resolution artifact and does not define a physical stop.",
+            "first matrix-Lohner chart around stored proof node 1214",
+            [p_ddelta_transport],
+            current_status="COARSE_TRANSPORT_CERTIFIED_DIRECT_CANCELLATION_PRESERVING_D2DELTA_OR_TIGHTER_LOCALIZATION_OPEN",
+            downstream_consumers=["C2_SIGNED_DURATION_INCIDENCE_OWNER", "G7_08_FORCE"],
+            forbidden_interpretations=["the coarse D2Delta ball is the physical signed force", "a ball containing zero proves the force vanishes", "coarse transport failure is an event or canonical stop", "proof node 1214 is an exact physical history"],
         ),
         record(
             "CORE_TRANSMISSION_NONSELECTION",
@@ -748,6 +761,7 @@ def _gates() -> list[dict[str, Any]]:
             "artifacts/flagship_integration/BHSM_N12_C2_1222_PARAMETRIC_BASE_FAMILY.json",
             "artifacts/flagship_integration/BHSM_N12_C2_1222_SIGNED_ADJOINT_ASSEMBLY.json",
             "artifacts/flagship_integration/BHSM_N12_C2_SIGNED_DURATION_INCIDENCE_OWNER.json",
+            "artifacts/flagship_integration/BHSM_N12_C2_SIGNED_DDELTA_SEED_TRANSPORT_AUDIT.json",
             "artifacts/flagship_integration/BHSM_N12_CORE_TRANSMITTED_PHYSICAL_MANIFOLD_AUDIT.json",
             "artifacts/flagship_integration/BHSM_N12_ASYMPTOTIC_NHIM_ANGULAR_FORCE_NO_GO.json",
             "artifacts/flagship_integration/BHSM_N12_LOCAL_RESET_TERMINAL_TRANSVERSALITY_AUDIT.json",

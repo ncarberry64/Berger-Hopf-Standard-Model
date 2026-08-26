@@ -2036,6 +2036,24 @@ Exact next object:
 - Gate 7: `ACTIVE`; Gate 8: `LOCKED`; chord 3: `UNAUTHORIZED`;
   `FULL_BHSM_COMPLETE=FALSE`.
 
+## N=12 C2 signed `DDelta` seed-transport audit
+
+- Reference proof center: stored node `1214`, exact storage match.
+- Certified incoming exact-state tube: `5.5104723095444935e-11` in the
+  retained action norm.
+- Coarse selected-line/hard-complement second-variation bound:
+  `||D2 Delta|| <= 1.1386491743822757e7`.
+- Transported covector-ball radius: `6.274494791012632e-4`, versus the
+  signed partial seed norm `1.6027259765507991e-9`.
+- Maximum tube radius that would exclude zero using this coarse bound:
+  `1.4036451414173716e-16`.
+- Coarse transport theorem: `CERTIFIED_BUT_NOT_SIGN_RESOLVING`.
+- Physical singularity, event, or canonical stop inferred: `FALSE`.
+- Exact missing theorem: direct cancellation-preserving `D2 Delta`, or an
+  exact-state localization roughly `3.93e5` times tighter.
+- Gate 7: `ACTIVE`; Gate 8: `LOCKED`; chord 3: `UNAUTHORIZED`;
+  `FULL_BHSM_COMPLETE=FALSE`.
+
 ## N=12 asymptotic child-exterior connection audit
 
 - Complete analytic infinite branch: `DERIVED_LOCALLY`, with
