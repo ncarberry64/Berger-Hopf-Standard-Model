@@ -2370,3 +2370,23 @@ Exact next object:
 - Another microscopic chord as the only authorized route: `FALSE`.
 - Gate 7: `ACTIVE`; Gate 8: `LOCKED`; chord 3: `UNAUTHORIZED`;
   frozen predictions unchanged; `FULL_BHSM_COMPLETE=FALSE`.
+
+## N=12 asymptotic terminal-chart projection
+
+- Exact nonlinear scale coordinate: `log epsilon=-2 log R4`.
+- Physical center coordinates:
+  `a=(q0-log_R4+log(RADIUS0/2),w_0..w_11,b_0..b_11)`.
+- Velocity normals:
+  `eta=(q0_dot-DlogR4[qdot],dot_w_0..dot_w_11,dot_b_0..dot_b_11)`.
+- Algebraic coordinates: all 24 retained lapse/shift multipliers.
+- Output dimension: `25+25+24=74`, matching the bordered physical pencil.
+- First and mixed-second descriptor and normalized-epsilon jets:
+  `DERIVED_EXECUTABLE`.
+- Binary64 evaluation of `epsilon` at the capture surface required: `FALSE`;
+  the log coordinate and normalized jets preserve the certified exponent.
+- Nonlinear terminal transition block: `CLOSED`.
+- Sole remaining geometric connection block: validated nonempty reset-set
+  propagation or a nonzero-degree/intersection certificate to strict tube
+  inclusion, or the first retained canonical stop.
+- Gate 7: `ACTIVE`; Gate 8: `LOCKED`; chord 3: `UNAUTHORIZED`;
+  frozen predictions unchanged; `FULL_BHSM_COMPLETE=FALSE`.
