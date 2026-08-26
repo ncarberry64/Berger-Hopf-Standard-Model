@@ -91,6 +91,7 @@ SOURCES = (
     "artifacts/flagship_integration/BHSM_N12_GATE7_MAXIMAL_FIXED_CHANNEL_RELATIVE_HEAT_COTANGENT.json",
     "artifacts/flagship_integration/BHSM_N12_GATE7_MAXIMAL_GRADED_INCOMING_RELATIVE_HEAT_COTANGENT.json",
     "artifacts/flagship_integration/BHSM_N12_GATE7_MAXIMAL_TAIL_SUPPORT_REDUCTION.json",
+    "artifacts/flagship_integration/BHSM_N12_GATE7_OUTGOING_FLOW_TAIL_CLOSURE.json",
     "artifacts/flagship_integration/BHSM_N12_C2_SIGNED_DURATION_INCIDENCE_OWNER.json",
     "artifacts/flagship_integration/BHSM_N12_C2_SIGNED_DDELTA_SEED_TRANSPORT_AUDIT.json",
     "artifacts/flagship_integration/BHSM_N12_C2_DIRECT_DDELTA_ROW_RECONNAISSANCE.json",
@@ -214,6 +215,7 @@ def verify_current_lineage() -> None:
     maximal_relative_heat = loaded["artifacts/flagship_integration/BHSM_N12_GATE7_MAXIMAL_FIXED_CHANNEL_RELATIVE_HEAT_COTANGENT.json"]
     maximal_graded_incoming = loaded["artifacts/flagship_integration/BHSM_N12_GATE7_MAXIMAL_GRADED_INCOMING_RELATIVE_HEAT_COTANGENT.json"]
     maximal_tail_support = loaded["artifacts/flagship_integration/BHSM_N12_GATE7_MAXIMAL_TAIL_SUPPORT_REDUCTION.json"]
+    outgoing_flow_tail = loaded["artifacts/flagship_integration/BHSM_N12_GATE7_OUTGOING_FLOW_TAIL_CLOSURE.json"]
     duration_incidence = loaded["artifacts/flagship_integration/BHSM_N12_C2_SIGNED_DURATION_INCIDENCE_OWNER.json"]
     ddelta_transport = loaded["artifacts/flagship_integration/BHSM_N12_C2_SIGNED_DDELTA_SEED_TRANSPORT_AUDIT.json"]
     ddelta_row = loaded["artifacts/flagship_integration/BHSM_N12_C2_DIRECT_DDELTA_ROW_RECONNAISSANCE.json"]
@@ -515,6 +517,15 @@ def verify_current_lineage() -> None:
         and maximal_tail_support["adjudication"][
             "remaining_noncompact_tail_dimension_upper"
         ] == 73
+        and outgoing_flow_tail["claim_boundary"][
+            "outgoing_descriptor_flow_full_graded_maximal_tail"
+        ] == "CERTIFIED_CAUCHY"
+        and outgoing_flow_tail["claim_boundary"][
+            "remaining_reset_generated_seed_image_tail"
+        ] == "OPEN_CURRENT_OWNER"
+        and outgoing_flow_tail["claim_boundary"][
+            "remaining_noncompact_tail_dimension_upper"
+        ] == 72
     ):
         raise RuntimeError("joint Gate7 source/cotangent frontier is not current")
     if force_sign_no_go["claim_boundary"]["universal_force_sign_shortcut"] != "CLOSED_INVALID":

@@ -113,6 +113,7 @@ def _basis() -> list[dict[str, Any]]:
     p_launch_adjoint = "artifacts/flagship_integration/BHSM_N12_C2_RESET_LAUNCH_ADJOINT_INTERFACE.json"
     p_fixed_seed_owner = "artifacts/flagship_integration/BHSM_N12_C2_FIXED_SEED_UPSTREAM_FORCE_OWNER.json"
     p_tail_support = "artifacts/flagship_integration/BHSM_N12_GATE7_MAXIMAL_TAIL_SUPPORT_REDUCTION.json"
+    p_flow_tail = "artifacts/flagship_integration/BHSM_N12_GATE7_OUTGOING_FLOW_TAIL_CLOSURE.json"
     p_parametric_base = "artifacts/flagship_integration/BHSM_N12_C2_1222_PARAMETRIC_BASE_FAMILY.json"
     p_signed_adjoint = "artifacts/flagship_integration/BHSM_N12_C2_1222_SIGNED_ADJOINT_ASSEMBLY.json"
     p_duration_incidence = "artifacts/flagship_integration/BHSM_N12_C2_SIGNED_DURATION_INCIDENCE_OWNER.json"
@@ -371,6 +372,18 @@ def _basis() -> list[dict[str, Any]]:
             current_status="FIXED_C2_AND_INCOMING_TAILS_CLOSED_OUTGOING_73_BLOCK_OPEN",
             downstream_consumers=["G7_08_FORCE", "G7_09_SADDLE"],
             forbidden_interpretations=["the incoming amplitude spans the fixed-seed reset kernel", "all physical cotangent directions are now closed", "an internal seam component is zero", "the 73-dimensional outgoing tail is convergent without proof"],
+        ),
+        record(
+            "GATE7_OUTGOING_FLOW_TAIL_CLOSURE",
+            "D_s M_C2^max=(d tau/ds)*(L_spatial-zI-(M_C2^max)^2) along D_sY=F_s; remaining noncompact tail=range(P_C2 Z), rank 72",
+            "LOCAL_RICCATI_LIE_DERIVATIVE_AND_TAIL_SUPPORT_REDUCTION",
+            "MATHEMATICAL_OBJECT",
+            "The transverse F0 launch direction moves the birth section along one exact action orbit. Its maximal Weyl and zeta jets are local moving-boundary terms, so only the 72 reset-generated outgoing seed-image directions retain a noncompact coefficient-Jacobi tail.",
+            "regular branch-24 outgoing descriptor chart and maximal C2 Friedrichs form-core exhaustion",
+            [p_flow_tail],
+            current_status="OUTGOING_FLOW_TAIL_CLOSED_SEED_IMAGE_RANK_72_OPEN",
+            downstream_consumers=["G7_08_FORCE", "G7_09_SADDLE"],
+            forbidden_interpretations=["F0 is discarded from the local force", "F0 is declared a new gauge direction", "the superseded one-sided W_phys initialization is restored", "the rank-72 seed-image tail is convergent without proof"],
         ),
         record(
             "C2_1222_PARAMETRIC_BASE_FAMILY",
@@ -828,6 +841,7 @@ def _gates() -> list[dict[str, Any]]:
             "artifacts/flagship_integration/BHSM_N12_C2_RESET_LAUNCH_ADJOINT_INTERFACE.json",
             "artifacts/flagship_integration/BHSM_N12_C2_FIXED_SEED_UPSTREAM_FORCE_OWNER.json",
             "artifacts/flagship_integration/BHSM_N12_GATE7_MAXIMAL_TAIL_SUPPORT_REDUCTION.json",
+            "artifacts/flagship_integration/BHSM_N12_GATE7_OUTGOING_FLOW_TAIL_CLOSURE.json",
             "artifacts/flagship_integration/BHSM_N12_C2_1222_PARAMETRIC_BASE_FAMILY.json",
             "artifacts/flagship_integration/BHSM_N12_C2_1222_SIGNED_ADJOINT_ASSEMBLY.json",
             "artifacts/flagship_integration/BHSM_N12_C2_1222_TRANSPOSED_DURATION_ACTION_COVERAGE.json",
@@ -916,6 +930,11 @@ def _gates() -> list[dict[str, Any]]:
                 "coordinate now have full-graded maximal Cauchy tails by boundary-local "
                 "functional calculus, so the remaining noncompact coefficient-Jacobi "
                 "tail is supported only on the outgoing 72+1 C2 launch block"
+                "; the extra F0 launch direction is the exact descriptor flow along "
+                "one maximal child orbit, so its Weyl derivative is the local "
+                "Riccati/Lie derivative and its zeta derivative is a moving-boundary "
+                "term; the remaining noncompact tail is therefore the rank-72 reset-"
+                "generated outgoing C2 seed image"
             )
         predecessor = [] if index == 0 else [GATE_CHAIN[index - 1][0]]
         provenance = sources.get(cid, fallback)

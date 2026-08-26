@@ -472,6 +472,17 @@
   tail is supported only on the 72 reset-generated outgoing seed directions
   plus `F_0`, an upper-dimensional 73 launch block.  Its actual projected
   limit and the KKT root remain open.
+- Outgoing descriptor-flow tail closure:
+  `OUTGOING_DESCRIPTOR_FLOW_MAXIMAL_TAIL_CLOSED`.  The extra `F_0` direction
+  in the `72+1` launch chart moves the birth section along the same exact
+  desingularized C2 action orbit.  Its maximal Weyl derivative is therefore
+  the local Riccati/Lie derivative
+  `(d tau/ds)(L_spatial-zI-M^2)`, not a noncompact reset Jacobi field.  The
+  corresponding heat variation is boundary-local and full-graded Cauchy by
+  the first-collar estimate; its zeta variation is the local moving-lower-end
+  term.  The physical local `F_0` force value is retained, but the unresolved
+  noncompact tail is now supported only on the rank-72 reset-generated
+  outgoing seed image.  Its projected limit and the KKT root remain open.
 - The actual same-action replacement residual is the heat-minus-zeta force,
   `D_Phi Gamma_heat-D_Phi Gamma_SM^zeta`, because the certified local root
   already extremizes the attached-zeta action.  Here

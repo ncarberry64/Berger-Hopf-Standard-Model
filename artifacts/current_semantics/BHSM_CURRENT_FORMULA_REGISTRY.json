@@ -88,6 +88,7 @@
     "artifacts/flagship_integration/BHSM_N12_GATE7_MAXIMAL_GRADED_INCOMING_RELATIVE_HEAT_COTANGENT.json": "7328CB30824B1954B2394E1D53DEE0925F29653B249B815366DDD2457ECE1BB0",
     "artifacts/flagship_integration/BHSM_N12_GATE7_MAXIMAL_TAIL_SUPPORT_REDUCTION.json": "150BE9D7C1EADE81C263CC805AE0700C1D703073B95CB01FF0001A03C8442CEC",
     "artifacts/flagship_integration/BHSM_N12_GATE7_ONE_SEAM_FULL_GRADED_FINITE_CORE_HEAT_BOUND.json": "934DCD800EE09583E3A214A5F7B4E2AF1686C08D45A278E75880B144DBE582BD",
+    "artifacts/flagship_integration/BHSM_N12_GATE7_OUTGOING_FLOW_TAIL_CLOSURE.json": "BFB82254E72FB36886F4F403A9C79AF401E74AD97EC71AA8A90C4BADD62999E4",
     "artifacts/flagship_integration/BHSM_N12_GATE7_TWO_SEAM_CLOSED_OPERATOR_ASSEMBLY.json": "ED9296981EE926B0570194077F3728E606D4B1A53A8A8BEAE8BB3B4FE9B6C13E",
     "artifacts/flagship_integration/BHSM_N12_INTERVAL_WEIGHT_FIVE_CENTER_LIFT.json": "CF4A6345F0E84F40DD7F3884D061B65A19A45B99F21799426FFD6274EFBBBE57",
     "artifacts/flagship_integration/BHSM_N12_JOINT_FINITE_HISTORY_OPERATOR_DATA_GATE.json": "6668D3057D767E5F2D3AAF4C040D1FBD4264EA2D0CA792D3815EA4130BDED05D",
@@ -844,6 +845,42 @@
       "physical_meaning": "The full-graded maximal tail is Cauchy on the entire fixed-C2 upstream/interface block and on the separate fixed-terminal incoming-amplitude coordinate; only the outgoing 72+1 C2 launch block retains a noncompact coefficient-Jacobi tail.",
       "provenance": [
         "artifacts/flagship_integration/BHSM_N12_GATE7_MAXIMAL_TAIL_SUPPORT_REDUCTION.json"
+      ],
+      "semantic_layer": "MATHEMATICAL_OBJECT",
+      "source_weighting_required": false,
+      "superseded_meanings": [],
+      "tests": [
+        "test_required_fields"
+      ]
+    },
+    {
+      "action_version": "BHSM-AE-2.0.0",
+      "artifact_hashes": {
+        "artifacts/flagship_integration/BHSM_N12_GATE7_OUTGOING_FLOW_TAIL_CLOSURE.json": "BFB82254E72FB36886F4F403A9C79AF401E74AD97EC71AA8A90C4BADD62999E4"
+      },
+      "canonical_id": "GATE7_OUTGOING_FLOW_TAIL_CLOSURE",
+      "current_status": "OUTGOING_FLOW_TAIL_CLOSED_SEED_IMAGE_RANK_72_OPEN",
+      "dimensions": "DIMENSIONLESS_OR_OPERATOR_TYPED",
+      "domain": "regular branch-24 outgoing descriptor chart and maximal C2 Friedrichs form-core exhaustion",
+      "downstream_consumers": [
+        "G7_08_FORCE",
+        "G7_09_SADDLE"
+      ],
+      "equivalent_forms": [],
+      "forbidden_interpretations": [
+        "F0 is discarded from the local force",
+        "F0 is declared a new gauge direction",
+        "the superseded one-sided W_phys initialization is restored",
+        "the rank-72 seed-image tail is convergent without proof"
+      ],
+      "formula": "D_s M_C2^max=(d tau/ds)*(L_spatial-zI-(M_C2^max)^2) along D_sY=F_s; remaining noncompact tail=range(P_C2 Z), rank 72",
+      "frozen_output_status": "NOT_FROZEN_OUTPUT",
+      "mathematical_class": "LOCAL_RICCATI_LIE_DERIVATIVE_AND_TAIL_SUPPORT_REDUCTION",
+      "observable_status": "NOT_AN_OBSERVABLE",
+      "ontology_version": "BHSM-AE2-ONTOLOGY-1.3.0",
+      "physical_meaning": "The transverse F0 launch direction moves the birth section along one exact action orbit. Its maximal Weyl and zeta jets are local moving-boundary terms, so only the 72 reset-generated outgoing seed-image directions retain a noncompact coefficient-Jacobi tail.",
+      "provenance": [
+        "artifacts/flagship_integration/BHSM_N12_GATE7_OUTGOING_FLOW_TAIL_CLOSURE.json"
       ],
       "semantic_layer": "MATHEMATICAL_OBJECT",
       "source_weighting_required": false,
