@@ -458,6 +458,20 @@
   and does not reopen the interior-source angular counterexample. Its value
   and sign, the other physical cotangent directions, projected reverse tail,
   and KKT root remain open.
+- Maximal-tail support reduction:
+  `FIXED_C2_UPSTREAM_INTERFACE_MAXIMAL_TAIL_CLOSED`.  In the forward-swapped
+  reset coordinates, the 67-dimensional kernel of the outgoing C2 seed
+  projection is exactly `{0}_C2 direct-sum ker(J_E1)`.  Its C2 differential
+  expression and maximal Weyl map therefore have zero geometry jet.  Only
+  the compact incoming arm and local AE2 boundary/contact blocks vary; their
+  finite-rank relative heat derivatives are full-graded Cauchy by the same
+  strict first-collar Agmon/Gaussian domination, while their zeta variation
+  is compactly supported.  The fixed-terminal formation amplitude is a
+  separate coordinate, not a reset-fiber tangent, and its maximal boundary
+  cotangent is already Cauchy.  Thus the open noncompact coefficient-Jacobi
+  tail is supported only on the 72 reset-generated outgoing seed directions
+  plus `F_0`, an upper-dimensional 73 launch block.  Its actual projected
+  limit and the KKT root remain open.
 - The actual same-action replacement residual is the heat-minus-zeta force,
   `D_Phi Gamma_heat-D_Phi Gamma_SM^zeta`, because the certified local root
   already extremizes the attached-zeta action.  Here

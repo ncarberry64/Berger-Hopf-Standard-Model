@@ -112,6 +112,7 @@ def _basis() -> list[dict[str, Any]]:
     p_launch_chart = "artifacts/flagship_integration/BHSM_N12_C2_RESET_GENERATED_LAUNCH_CHART.json"
     p_launch_adjoint = "artifacts/flagship_integration/BHSM_N12_C2_RESET_LAUNCH_ADJOINT_INTERFACE.json"
     p_fixed_seed_owner = "artifacts/flagship_integration/BHSM_N12_C2_FIXED_SEED_UPSTREAM_FORCE_OWNER.json"
+    p_tail_support = "artifacts/flagship_integration/BHSM_N12_GATE7_MAXIMAL_TAIL_SUPPORT_REDUCTION.json"
     p_parametric_base = "artifacts/flagship_integration/BHSM_N12_C2_1222_PARAMETRIC_BASE_FAMILY.json"
     p_signed_adjoint = "artifacts/flagship_integration/BHSM_N12_C2_1222_SIGNED_ADJOINT_ASSEMBLY.json"
     p_duration_incidence = "artifacts/flagship_integration/BHSM_N12_C2_SIGNED_DURATION_INCIDENCE_OWNER.json"
@@ -358,6 +359,18 @@ def _basis() -> list[dict[str, Any]]:
             current_status="DERIVED_ACTUAL_JOINT_BASE_AND_ADJOINT_OPEN",
             downstream_consumers=["G7_08_FORCE", "G7_09_SADDLE"],
             forbidden_interpretations=["the 67 directions are new local seam degrees of freedom", "the zero AE2 fermion surface action makes the upstream force vanish", "M_f invertibility supplies the full incoming heat force", "project the child flow by hand to define the time quotient"],
+        ),
+        record(
+            "GATE7_MAXIMAL_TAIL_SUPPORT_REDUCTION",
+            "ker(P_C2 Z)=K_fixedC2, dim K_fixedC2=67; tail_noncompact is supported on range(P_C2 Z) direct_sum span{F0}, dim<=72+1=73",
+            "PHYSICAL_COTANGENT_CAUCHY_SUPPORT_DECOMPOSITION",
+            "MATHEMATICAL_OBJECT",
+            "The full-graded maximal tail is Cauchy on the entire fixed-C2 upstream/interface block and on the separate fixed-terminal incoming-amplitude coordinate; only the outgoing 72+1 C2 launch block retains a noncompact coefficient-Jacobi tail.",
+            "certified forward-swapped reset stratum, fixed maximal C2 Friedrichs history, and one internal AE2 seam",
+            [p_tail_support],
+            current_status="FIXED_C2_AND_INCOMING_TAILS_CLOSED_OUTGOING_73_BLOCK_OPEN",
+            downstream_consumers=["G7_08_FORCE", "G7_09_SADDLE"],
+            forbidden_interpretations=["the incoming amplitude spans the fixed-seed reset kernel", "all physical cotangent directions are now closed", "an internal seam component is zero", "the 73-dimensional outgoing tail is convergent without proof"],
         ),
         record(
             "C2_1222_PARAMETRIC_BASE_FAMILY",
@@ -814,6 +827,7 @@ def _gates() -> list[dict[str, Any]]:
             "artifacts/flagship_integration/BHSM_N12_C2_RESET_GENERATED_LAUNCH_CHART.json",
             "artifacts/flagship_integration/BHSM_N12_C2_RESET_LAUNCH_ADJOINT_INTERFACE.json",
             "artifacts/flagship_integration/BHSM_N12_C2_FIXED_SEED_UPSTREAM_FORCE_OWNER.json",
+            "artifacts/flagship_integration/BHSM_N12_GATE7_MAXIMAL_TAIL_SUPPORT_REDUCTION.json",
             "artifacts/flagship_integration/BHSM_N12_C2_1222_PARAMETRIC_BASE_FAMILY.json",
             "artifacts/flagship_integration/BHSM_N12_C2_1222_SIGNED_ADJOINT_ASSEMBLY.json",
             "artifacts/flagship_integration/BHSM_N12_C2_1222_TRANSPOSED_DURATION_ACTION_COVERAGE.json",
@@ -897,7 +911,11 @@ def _gates() -> list[dict[str, Any]]:
                 "finite-core heat coefficient strictly smaller than the zeta "
                 "coefficient, proving positive joint amplitude sign on an "
                 "unquantified punctured neighborhood; the full-box remainder, "
-                "projected KKT root, and maximal tail remain open"
+                "projected KKT root, and maximal tail remain open; the 67-dimensional "
+                "fixed-C2 upstream/interface block and the separate incoming-amplitude "
+                "coordinate now have full-graded maximal Cauchy tails by boundary-local "
+                "functional calculus, so the remaining noncompact coefficient-Jacobi "
+                "tail is supported only on the outgoing 72+1 C2 launch block"
             )
         predecessor = [] if index == 0 else [GATE_CHAIN[index - 1][0]]
         provenance = sources.get(cid, fallback)
