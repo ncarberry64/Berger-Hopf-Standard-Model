@@ -2453,3 +2453,19 @@ Exact next object:
   strict capture tube or a genuine retained stop.
 - Gate 7: `ACTIVE`; Gate 8: `LOCKED`; chord 3: `UNAUTHORIZED`;
   frozen predictions unchanged; `FULL_BHSM_COMPLETE=FALSE`.
+
+## N=12 expanded full-action selected-line chart
+
+- Center: fully tracked C2 1,221 endpoint.
+- Ambient action-coordinate radius: `1e-8`.
+- Full-local-action hard-complement relative perturbation: `<0.120`.
+- Certified branch-24 selected-line gap: `>2.057e-7`.
+- Selected-line second variation coefficient: finite and explicit.
+- Old fixed-descriptor `c_psi>0` or `Delta>0` reserve required for this line
+  theorem: `FALSE`.
+- Binary64 selected eigenvalue used as the propagated signed descriptor:
+  `FALSE`.
+- Propagation across the entire enlarged ball claimed: `FALSE`; complete
+  bordered-response and cancelled-field tube closure remain the next step.
+- Gate 7: `ACTIVE`; Gate 8: `LOCKED`; chord 3: `UNAUTHORIZED`;
+  frozen predictions unchanged; `FULL_BHSM_COMPLETE=FALSE`.
