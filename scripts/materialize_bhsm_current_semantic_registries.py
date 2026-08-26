@@ -63,6 +63,7 @@ SOURCES = (
     "artifacts/flagship_integration/BHSM_N12_C2_PROJECTED_ADJOINT_CAUCHY_CRITERION.json",
     "artifacts/flagship_integration/BHSM_N12_C2_INFINITE_HEAT_ZETA_COMPATIBILITY.json",
     "artifacts/flagship_integration/BHSM_N12_C2_EXACT_FIXED_S_FIELD_ORACLE.json",
+    "artifacts/flagship_integration/BHSM_N12_C2_RESET_GENERATED_LAUNCH_CHART.json",
     "artifacts/flagship_integration/BHSM_N12_CORE_TRANSMITTED_PHYSICAL_MANIFOLD_AUDIT.json",
     "artifacts/flagship_integration/BHSM_N12_ASYMPTOTIC_NHIM_ANGULAR_FORCE_NO_GO.json",
     "artifacts/flagship_integration/BHSM_N12_LOCAL_RESET_TERMINAL_TRANSVERSALITY_AUDIT.json",
@@ -153,6 +154,7 @@ def verify_current_lineage() -> None:
     projected_cauchy = loaded["artifacts/flagship_integration/BHSM_N12_C2_PROJECTED_ADJOINT_CAUCHY_CRITERION.json"]
     heat_zeta = loaded["artifacts/flagship_integration/BHSM_N12_C2_INFINITE_HEAT_ZETA_COMPATIBILITY.json"]
     exact_field = loaded["artifacts/flagship_integration/BHSM_N12_C2_EXACT_FIXED_S_FIELD_ORACLE.json"]
+    launch_chart = loaded["artifacts/flagship_integration/BHSM_N12_C2_RESET_GENERATED_LAUNCH_CHART.json"]
     core_audit = loaded["artifacts/flagship_integration/BHSM_N12_CORE_TRANSMITTED_PHYSICAL_MANIFOLD_AUDIT.json"]
     nhim_angular_no_go = loaded["artifacts/flagship_integration/BHSM_N12_ASYMPTOTIC_NHIM_ANGULAR_FORCE_NO_GO.json"]
     local_reset_terminal = loaded["artifacts/flagship_integration/BHSM_N12_LOCAL_RESET_TERMINAL_TRANSVERSALITY_AUDIT.json"]
@@ -175,12 +177,19 @@ def verify_current_lineage() -> None:
     if not (
         exact_field["claim_boundary"]["exact_fixed_s_field_oracle"] == "CERTIFIED"
         and exact_field["claim_boundary"]["actual_parametric_base_history"] == "OPEN"
+        and launch_chart["claim_boundary"]["local_C2_launch_manifold"]
+        == "CERTIFIED_73_DIMENSIONAL"
+        and launch_chart["dimension_theorem"]["swapped_C2_seed_image"] == 72
+        and launch_chart["dimension_theorem"]["fixed_C2_seed_lift_kernel"] == 67
+        and launch_chart["dimension_theorem"]["C2_launch_manifold"] == 73
+        and launch_chart["adjudication"]["reset_member_selected"] is False
+        and launch_chart["claim_boundary"]["maximal_C2_response"] == "OPEN"
         and core_audit["claim_boundary"]["core_transmitted_physical_manifold"]
         == "OWNER_HYPOTHESIS_NOT_ACTION_DERIVED"
         and core_audit["claim_boundary"]["a_equals_1_over_118"]
         == "OWNER_CANDIDATE_NOT_DERIVED"
     ):
-        raise RuntimeError("exact C2 field/core-nonselection frontier is not current")
+        raise RuntimeError("exact C2 launch/core-nonselection frontier is not current")
     if ae2.get("action_version") != "BHSM-AE-2.0.0":
         raise RuntimeError("AE2 action version mismatch")
     if force_sign_no_go["claim_boundary"]["universal_force_sign_shortcut"] != "CLOSED_INVALID":

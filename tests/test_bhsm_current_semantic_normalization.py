@@ -176,6 +176,14 @@ def test_replacement_force_is_constraint_projected_without_reset_selection() -> 
     assert exact_field["current_status"] == (
         "CERTIFIED_PARAMETRIC_BASE_OR_COUPLED_KKT_STILL_OPEN"
     )
+    launch = basis["RESET_GENERATED_C2_LAUNCH_CHART"]
+    assert launch["current_status"] == (
+        "CERTIFIED_LOCAL_73_DIMENSIONAL_MAXIMAL_TAIL_OPEN"
+    )
+    assert "dim(T_launch)=72+1=73" in launch["formula"]
+    assert "the 67-dimensional fixed-seed lift kernel annihilates the full two-sided seam force" in (
+        launch["forbidden_interpretations"]
+    )
     core = basis["CORE_TRANSMISSION_NONSELECTION"]
     assert core["current_status"] == (
         "OWNER_HYPOTHESIS_NOT_ACTION_DERIVED_NO_SELECTOR_AUTHORITY"
@@ -227,6 +235,15 @@ def test_replacement_force_is_constraint_projected_without_reset_selection() -> 
     assert "positive-duration local existence is now closed" in dag[
         "G7_08_FORCE"
     ]["physical_meaning"]
+    assert "72+1=73 local C2 launch chart" in dag["G7_08_FORCE"]["physical_meaning"]
+    assert "not full two-sided seam-force invariance" in dag["G7_08_FORCE"][
+        "physical_meaning"
+    ]
+    assert (
+        "artifacts/flagship_integration/"
+        "BHSM_N12_C2_RESET_GENERATED_LAUNCH_CHART.json"
+        in dag["G7_08_FORCE"]["provenance"]
+    )
     assert (
         "artifacts/flagship_integration/"
         "BHSM_N12_LOCAL_RESET_TERMINAL_TRANSVERSALITY_AUDIT.json"

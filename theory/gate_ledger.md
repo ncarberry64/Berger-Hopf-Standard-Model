@@ -1919,6 +1919,24 @@ Exact next object:
 - Gate 7: `ACTIVE`; Gate 8: `LOCKED`; chord 3: `UNAUTHORIZED`;
   `FULL_BHSM_COMPLETE=FALSE`.
 
+## N=12 reset-generated C2 launch chart
+
+- Full historical reset Jacobian: `57 x 196`, rank `57`; reset tangent
+  dimension: `139`.
+- Forward-swapped reset tangent projected to the outgoing C2 event seed:
+  rank `72`, with fixed-seed lift kernel dimension `67`, so `139=72+67`.
+- Exact fixed-`s` action field at the ordered event: `Dlambda[F_0]=1`, hence
+  transverse to the 72-dimensional event-image tangent.
+- Local reset-generated C2 launch chart: `72+1=73`, equal to the constrained
+  child-manifold dimension, with no reset-member selector.
+- The 67-dimensional kernel is only a kernel of the outgoing C2 seed
+  projection; full two-sided seam-force invariance: `NOT_PROVED`.
+- Maximal C2 coefficient/Jacobi propagation, a finite later event/canonical
+  stop, or the physical quotient-Cauchy heat-minus-zeta force tail:
+  `OPEN_CURRENT_OWNER`.
+- Gate 7: `ACTIVE`; Gate 8: `LOCKED`; chord 3: `UNAUTHORIZED`;
+  `FULL_BHSM_COMPLETE=FALSE`.
+
 ## N=12 asymptotic child-exterior connection audit
 
 - Complete analytic infinite branch: `DERIVED_LOCALLY`, with

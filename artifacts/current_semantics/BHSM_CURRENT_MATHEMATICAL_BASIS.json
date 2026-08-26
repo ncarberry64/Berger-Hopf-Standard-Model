@@ -17,6 +17,7 @@
     "artifacts/flagship_integration/BHSM_N12_C2_EXACT_FIXED_S_FIELD_ORACLE.json": "4265D468E865D68AAA126AA3E27368043FCD24499A5CDE41340A9228F0D4E7FF",
     "artifacts/flagship_integration/BHSM_N12_C2_INFINITE_HEAT_ZETA_COMPATIBILITY.json": "9AFA86530D09A8C6A14F8F0FE95E60A3A7127498678185A10B83C3252F3E24E7",
     "artifacts/flagship_integration/BHSM_N12_C2_PROJECTED_ADJOINT_CAUCHY_CRITERION.json": "473465E4A2369638204FE869E291997A82B958979B4DD060767C7BD12808EA65",
+    "artifacts/flagship_integration/BHSM_N12_C2_RESET_GENERATED_LAUNCH_CHART.json": "570BC1093194BA6CA8ED91F6FE657D3BF965F76B30EC34CFC40704697BE10842",
     "artifacts/flagship_integration/BHSM_N12_CANONICAL_MOMENTUM_ACTION_JACOBIAN.json": "0B1BE86ECDC049B363C2C0E665CAB0CE9C216FD5CEFB5AE813DA157F18909733",
     "artifacts/flagship_integration/BHSM_N12_CONSTRAINT_PROJECTED_REPLACEMENT_SADDLE.json": "E5C0340FC39BFF9C83F338B8AFA7270F71A6699A56A5B0996F754FB99B65DAD1",
     "artifacts/flagship_integration/BHSM_N12_CORE_TRANSMITTED_PHYSICAL_MANIFOLD_AUDIT.json": "007C16DDC4D44747358B71219738158F77F12ADAA60EE91EF28985179B6D1AD9",
@@ -666,6 +667,42 @@
       "physical_meaning": "Exact cancellation-preserving C2 generator on every regular simple selected-line chart; only the hard complement is solved.",
       "provenance": [
         "artifacts/flagship_integration/BHSM_N12_C2_EXACT_FIXED_S_FIELD_ORACLE.json"
+      ],
+      "semantic_layer": "MATHEMATICAL_OBJECT",
+      "source_weighting_required": false,
+      "superseded_meanings": [],
+      "tests": [
+        "test_required_fields"
+      ]
+    },
+    {
+      "action_version": "BHSM-AE-2.0.0",
+      "artifact_hashes": {
+        "artifacts/flagship_integration/BHSM_N12_C2_RESET_GENERATED_LAUNCH_CHART.json": "570BC1093194BA6CA8ED91F6FE657D3BF965F76B30EC34CFC40704697BE10842"
+      },
+      "canonical_id": "RESET_GENERATED_C2_LAUNCH_CHART",
+      "current_status": "CERTIFIED_LOCAL_73_DIMENSIONAL_MAXIMAL_TAIL_OPEN",
+      "dimensions": "DIMENSIONLESS_OR_OPERATOR_TYPED",
+      "domain": "certified double-event reset root, regular branch-24 selected-line chart, s>=0",
+      "downstream_consumers": [
+        "PARAMETRIC_RESET_FIBER_EXTERIOR_ORACLE",
+        "G7_08_FORCE"
+      ],
+      "equivalent_forms": [],
+      "forbidden_interpretations": [
+        "139 arbitrary outgoing C2 launch dimensions are required",
+        "the numerical proof center is a selected physical member",
+        "the 67-dimensional fixed-seed lift kernel annihilates the full two-sided seam force",
+        "the local launch theorem controls the maximal C2 tail"
+      ],
+      "formula": "T_launch=D_pi_event(ker D_Creset) direct_sum span{F_0}, dim(T_launch)=72+1=73",
+      "frozen_output_status": "NOT_FROZEN_OUTPUT",
+      "mathematical_class": "NO_SELECTOR_LOCAL_FORWARD_LAUNCH_MANIFOLD",
+      "observable_status": "NOT_AN_OBSERVABLE",
+      "ontology_version": "BHSM-AE2-ONTOLOGY-1.0.0",
+      "physical_meaning": "The forward-swapped reset event image supplies 72 outgoing seed directions and the exact action field supplies one transverse descriptor direction; the resulting local C2 launch family has the full constrained-child dimension without selecting a reset member.",
+      "provenance": [
+        "artifacts/flagship_integration/BHSM_N12_C2_RESET_GENERATED_LAUNCH_CHART.json"
       ],
       "semantic_layer": "MATHEMATICAL_OBJECT",
       "source_weighting_required": false,
