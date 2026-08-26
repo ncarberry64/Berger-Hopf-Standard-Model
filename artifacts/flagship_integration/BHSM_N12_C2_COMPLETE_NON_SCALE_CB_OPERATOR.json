@@ -1,0 +1,90 @@
+{
+  "FLAGSHIP_READY": false,
+  "FULL_BHSM_COMPLETE": false,
+  "adjudication": {
+    "Gate7": "OPEN",
+    "Gate8": "LOCKED",
+    "chord_03_authorized": false,
+    "complete_non_scale_D2Delta_operator": "OPEN_PENDING_sR",
+    "complete_non_scale_cb_operator": "CERTIFIED",
+    "complete_non_scale_sR_operator": "OPEN",
+    "transposed_exact_segment_map_action": "OPEN"
+  },
+  "artifact": "BHSM_N12_C2_COMPLETE_NON_SCALE_CB_OPERATOR",
+  "bootstrap": {
+    "b_i_radius_available": 0.08,
+    "c_i_radius_available": 2e-06,
+    "lambda_i_radius_available": 1e-05,
+    "lambda_i_radius_needed_global": 5.4334176380033923e-08,
+    "maximum_b_i_radius_needed": 0.003909369131235133,
+    "maximum_b_i_radius_row": 1,
+    "maximum_c_i_radius_needed": 5.854136191449102e-07,
+    "maximum_c_i_radius_row": 1
+  },
+  "classification": "OUTWARD_ROUNDED_SIGNED_ONE_AXIS_ROW_SWEEP_ON_THE_INTRINSIC_NON_SCALE_SECTOR_WITH_EXACT_COMMON_SCALE_COVARIANCE_SEPARATION",
+  "common_scale_row_0": {
+    "authority": "artifacts/flagship_integration/BHSM_N12_C2_COMMON_SCALE_WEYL_COVARIANCE.json",
+    "pathwise_Jacobi_required": false,
+    "status": "CLOSED_BY_EXACT_COVARIANCE"
+  },
+  "data": "artifacts/flagship_integration/BHSM_N12_C2_COMPLETE_NON_SCALE_CB_OPERATOR.npz",
+  "data_SHA256": "08A9D2AD80FEEEA447AFEECC3EFA1C7114B725B28B876A15BCAFE1D2B71C7680",
+  "exact_next_dependency": "ADD_THE_ONE_TIME_GLOBAL_sR_OPERATOR_CONTRACTIONS_TO_THE_CERTIFIED_NON_SCALE_cb_FROBENIUS_BOUND_AND_TEST_THE_COMPLETE_NON_SCALE_DDELTA_TRANSPORT_CEILING",
+  "inputs": {
+    "artifacts/flagship_integration/BHSM_N12_C2_COMMON_SCALE_WEYL_COVARIANCE.json": "E534478F712202CC0120AEC3FCA110B0B486C1466E0AF0996DB8C9256D3E5A9B",
+    "artifacts/flagship_integration/BHSM_N12_C2_EXACT_CENTER_FIXED_S_FIELD_MATRIX.json": "7962A9051821633517A47DB91EF73EAF2EAD0E5C15BD3E7F2EA707B6E0DC40CA",
+    "artifacts/flagship_integration/BHSM_N12_C2_EXACT_CENTER_FIXED_S_FIELD_MATRIX.npz": "163383CD903538866E579BD87366333B8DA04877EFA587F0F999DA00AC1FFDCD",
+    "artifacts/flagship_integration/BHSM_N12_C2_FULLY_REDUCED_SIGNED_ROW_CERTIFICATE.json": "C2C53ADFD834F3AF04E0824A6A549C93961B2E1633D043F270E6B3D2CF479180",
+    "scripts/assemble_n12_c2_complete_cb_row_sweep.py": "4DA66036F8D6959F5508B6D77CDB828B790AF85B2DB08F4A160C87DE8315D99F",
+    "theory/n12_c2_complete_non_scale_cb_operator.md": "2D7DD26C8B559CB51F3A4FA93E92F1A29063F0DB2FCF4A0D2BA7E11009EC6D03"
+  },
+  "operator": {
+    "maximum_row_index": 1,
+    "maximum_row_upper": 4.640511142425764,
+    "non_scale_cb_Frobenius_upper": 14.42003370852674,
+    "row_86_clean_upper": 2.6785518385557405,
+    "row_86_general_tensor_reference_upper": 2.6787704214811163
+  },
+  "row_count": 97,
+  "row_range": [
+    1,
+    97
+  ],
+  "status": "C2_COMPLETE_NON_SCALE_CB_OPERATOR_CERTIFIED",
+  "sweep_input_fingerprint": "85383CEB945ADBD4FF2AE5E557CC55B297B64F5C156E664CE289C2F4BED33667",
+  "sweep_inputs": {
+    "artifacts/flagship_integration/BHSM_N12_C2_BORDERED_HARD_RESPONSE_MATRIX.json": "7D36311E1127291DDEF6F778E2F2C21E9F2B2544DBAF74BC743B8E47BC3814AB",
+    "artifacts/flagship_integration/BHSM_N12_C2_BORDERED_HARD_RESPONSE_MATRIX.npz": "BC1EEB01C2BFB1A358B7DB14906009DF05CEFAC713749395937F0E5DE0E5AB9E",
+    "artifacts/flagship_integration/BHSM_N12_C2_CANCELLED_FIELD_LOHNER_STEP.json": "7091C2977A09DF413371306801DC5246BBDBAE55F1634EEF6B0D64BDF7677E33",
+    "artifacts/flagship_integration/BHSM_N12_C2_COMMON_SCALE_WEYL_COVARIANCE.json": "E534478F712202CC0120AEC3FCA110B0B486C1466E0AF0996DB8C9256D3E5A9B",
+    "artifacts/flagship_integration/BHSM_N12_C2_DIRECT_DDELTA_ROW_RECONNAISSANCE.json": "48109D006F8E92760BC45A170133AFE969C9C740FA3CE0FC4B5AE8A256367FA3",
+    "artifacts/flagship_integration/BHSM_N12_C2_DIRECT_DDELTA_ROW_RECONNAISSANCE.npz": "E5E82F0EC65D1A23ADC36E02BBA8E01BD6C2A50E898484D68C48E666023E2814",
+    "artifacts/flagship_integration/BHSM_N12_C2_EXACT_CENTER_FIXED_S_FIELD_MATRIX.json": "7962A9051821633517A47DB91EF73EAF2EAD0E5C15BD3E7F2EA707B6E0DC40CA",
+    "artifacts/flagship_integration/BHSM_N12_C2_EXACT_CENTER_FIXED_S_FIELD_MATRIX.npz": "163383CD903538866E579BD87366333B8DA04877EFA587F0F999DA00AC1FFDCD",
+    "artifacts/flagship_integration/BHSM_N12_C2_FRESH_CHART_FIXED_S_GROWTH.json": "D84370EEFC8B5F6681C14BEBC33839F8A9AFAB1887DDF7D1D75FD527145227B5",
+    "artifacts/flagship_integration/BHSM_N12_C2_SIGNED_FIRST_COEFFICIENT_VECTORS.json": "14C1670044DCFE30917BED19CC000AD602A1C0C6F7947B0F0A62297745CA02BF",
+    "artifacts/flagship_integration/BHSM_N12_C2_SIGNED_FIRST_COEFFICIENT_VECTORS.npz": "C23A735EE30042855AE56635C3AD110554410B9185649487C45BBAC6A49DA3FA",
+    "scripts/audit_n12_c2_reduced_ddelta_operator_majorant.py": "9171536D91964AB2EE36BA69F1936F80502979EB14D6E2E9BB923A941B0158BC",
+    "src/bhsm/interface/aether_retained_action_one_axis_interval.py": "7468FC096AE186221E238496E175993052FE89CD673E6E2AC01D33F25B0619A2"
+  },
+  "transport_budget_before_sR": {
+    "cb_remaining_budget": 13.849111995739637,
+    "non_scale_DDelta_partial_action_norm": 1.562230041328602e-09,
+    "pre_sR_operator_ceiling": 28.26914570426638,
+    "seed_remainder_action_norm_upper": 4.466595150216365e-12,
+    "state_action_radius": 5.5104723095444935e-11
+  },
+  "validation": {
+    "all_97_non_scale_rows_are_present": true,
+    "all_b_i_radii_close": true,
+    "all_c_i_radii_close": true,
+    "all_row_bootstrap_validations_pass": true,
+    "all_rows_share_one_current_input_fingerprint": true,
+    "clean_row_86_is_bounded_by_general_tensor_reference": true,
+    "common_scale_pathwise_Jacobi_is_closed_by_exact_covariance": true,
+    "global_lambda_i_radius_closes": true,
+    "no_selector_recurrence_scale_fit_gate_or_chord_added": true,
+    "non_scale_cb_operator_fits_pre_sR_transport_ceiling": true
+  },
+  "validation_passed": true
+}

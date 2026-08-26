@@ -1,0 +1,64 @@
+{
+  "FLAGSHIP_READY": false,
+  "FULL_BHSM_COMPLETE": false,
+  "adjudication": {
+    "Gate7": "OPEN",
+    "Gate8": "LOCKED",
+    "actual_segment_duration_covector": "OPEN_AFTER_SEGMENT_ACTION",
+    "chord_03_authorized": false,
+    "complete_non_scale_D2Delta_operator": "CERTIFIED",
+    "complete_non_scale_cb_operator": "CERTIFIED",
+    "complete_non_scale_sR_operator": "CERTIFIED",
+    "signed_D_Y_Delta_on_exact_node_1214_family": "CERTIFIED_ZERO_EXCLUDING_ACTION_DUAL_BALL",
+    "transposed_exact_segment_map_action": "OPEN_CURRENT_OWNER"
+  },
+  "artifact": "BHSM_N12_C2_COMPLETE_NON_SCALE_DDELTA_OPERATOR",
+  "classification": "OUTWARD_ROUNDED_COMPLETE_INTRINSIC_QUOTIENT_OPERATOR_WITH_EXACT_COMMON_SCALE_COVARIANCE_SEPARATION",
+  "common_scale_direction": {
+    "coordinate": 0,
+    "numerically_deleted": false,
+    "status": "CLOSED_BY_EXACT_PATHWISE_WEYL_COVARIANCE"
+  },
+  "data": "artifacts/flagship_integration/BHSM_N12_C2_COMPLETE_NON_SCALE_DDELTA_OPERATOR.npz",
+  "data_SHA256": "F3D47A676B14B8E4C8C5E554E8436DCF7B293B32BA75A8649186C44D2D74FAF9",
+  "decomposition": {
+    "complete_non_scale_D2Delta_operator_2_norm_upper": 14.467177203489637,
+    "global_s_suppressed_R_operator_2_norm_upper": 0.04714349493400576,
+    "identity": "D2Delta=D2(cb)+s*D2R_ON_THE_FIXED_s_FIBER",
+    "non_scale_cb_operator_2_norm_upper": 14.420033708541162
+  },
+  "exact_next_dependency": "APPLY_THIS_ZERO_EXCLUDING_SIGNED_DURATION_SEED_THROUGH_THE_TRANSPOSED_EXACT_FIXED_s_SEGMENT_VARIATIONAL_ACTION_AND_ASSEMBLE_THE_EXISTING_SIGNED_REVERSE_SWEEP",
+  "inputs": {
+    "artifacts/flagship_integration/BHSM_N12_C2_COMMON_SCALE_WEYL_COVARIANCE.json": "E534478F712202CC0120AEC3FCA110B0B486C1466E0AF0996DB8C9256D3E5A9B",
+    "artifacts/flagship_integration/BHSM_N12_C2_COMPLETE_NON_SCALE_CB_OPERATOR.json": "76AD6B68752CD11AA94603CA7E9A1634C0173E287FD21B9C923871F3F6C69E11",
+    "artifacts/flagship_integration/BHSM_N12_C2_COMPLETE_NON_SCALE_CB_OPERATOR.npz": "08A9D2AD80FEEEA447AFEECC3EFA1C7114B725B28B876A15BCAFE1D2B71C7680",
+    "artifacts/flagship_integration/BHSM_N12_C2_COMPLETE_SUPPRESSED_R_OPERATOR.json": "45E50AF4191DDC18DACDF253B0BE9C04DA4E82105AE09D5EEE9D364456D628CF",
+    "artifacts/flagship_integration/BHSM_N12_C2_EXACT_CENTER_FIXED_S_FIELD_MATRIX.json": "7962A9051821633517A47DB91EF73EAF2EAD0E5C15BD3E7F2EA707B6E0DC40CA",
+    "artifacts/flagship_integration/BHSM_N12_C2_EXACT_CENTER_FIXED_S_FIELD_MATRIX.npz": "163383CD903538866E579BD87366333B8DA04877EFA587F0F999DA00AC1FFDCD",
+    "scripts/certify_n12_c2_complete_non_scale_ddelta_operator.py": "23662385A4A61EA56AB4FBB7C1CC513A089AAFBBD07C0D0BBB6B6E272EB0E0B3",
+    "theory/n12_c2_complete_non_scale_ddelta_operator.md": "42B2ACB17983494E7B277A5FA1A707AB2FFF0716109ADB5F4C87AD8597769B0A"
+  },
+  "status": "C2_COMPLETE_NON_SCALE_DDELTA_COVECTOR_TRANSPORT_CERTIFIED",
+  "transport": {
+    "complete_operator_transport_ceiling": 28.269145704266464,
+    "enclosure": "DDelta_non_scale(Y_exact)_IN_DDelta_partial_non_scale(Y_1214)+CLOSED_ACTION_DUAL_BALL(seed_remainder+B_D2Delta*r_tube)",
+    "reference_node": 1214,
+    "reference_non_scale_partial_DDelta_action_norm": 1.5622300413301646e-09,
+    "reference_seed_remainder_action_norm_upper": 4.466595150216365e-12,
+    "state_action_radius": 5.5104723095444935e-11,
+    "transported_action_dual_ball_radius_upper": 8.01676388922048e-10,
+    "transported_covector_zero_exclusion_margin_lower": 7.605536524073559e-10
+  },
+  "validation": {
+    "common_scale_is_closed_by_exact_covariance": true,
+    "complete_global_sR_operator_is_certified": true,
+    "complete_non_scale_cb_operator_is_certified": true,
+    "complete_operator_fits_transport_ceiling": true,
+    "no_inverse_selector_recurrence_scale_fit_gate_or_chord_added": true,
+    "proof_center_is_not_selected_as_a_physical_history": true,
+    "same_node_1214_tube_is_used": true,
+    "suppressed_contribution_is_added_exactly_once": true,
+    "transported_non_scale_covector_ball_excludes_zero": true
+  },
+  "validation_passed": true
+}
