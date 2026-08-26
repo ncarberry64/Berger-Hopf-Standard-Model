@@ -99,6 +99,7 @@ SOURCES = (
     "artifacts/flagship_integration/BHSM_N12_GATE7_NHIM_RANK72_RELATIVE_TAIL_THEOREM.json",
     "artifacts/flagship_integration/BHSM_N12_GATE7_QUANTITATIVE_CAPTURE_BRIDGE_RECOMBINATION.json",
     "artifacts/flagship_integration/BHSM_N12_GATE7_FULL_LOWER_WEIGHT_KRAWCZYK_CLOSURE.json",
+    "artifacts/flagship_integration/BHSM_N12_GATE7_QUANTITATIVE_STABLE_CAPTURE_TUBE.json",
     "artifacts/flagship_integration/BHSM_N12_C2_SIGNED_DURATION_INCIDENCE_OWNER.json",
     "artifacts/flagship_integration/BHSM_N12_C2_SIGNED_DDELTA_SEED_TRANSPORT_AUDIT.json",
     "artifacts/flagship_integration/BHSM_N12_C2_DIRECT_DDELTA_ROW_RECONNAISSANCE.json",
@@ -233,6 +234,9 @@ def verify_current_lineage() -> None:
     ]
     full_lower_weight_krawczyk = loaded[
         "artifacts/flagship_integration/BHSM_N12_GATE7_FULL_LOWER_WEIGHT_KRAWCZYK_CLOSURE.json"
+    ]
+    quantitative_stable_capture = loaded[
+        "artifacts/flagship_integration/BHSM_N12_GATE7_QUANTITATIVE_STABLE_CAPTURE_TUBE.json"
     ]
     duration_incidence = loaded["artifacts/flagship_integration/BHSM_N12_C2_SIGNED_DURATION_INCIDENCE_OWNER.json"]
     ddelta_transport = loaded["artifacts/flagship_integration/BHSM_N12_C2_SIGNED_DDELTA_SEED_TRANSPORT_AUDIT.json"]
@@ -604,6 +608,12 @@ def verify_current_lineage() -> None:
         ] == "OPEN"
         and full_lower_weight_krawczyk["claim_boundary"][
             "AE2_reset_image_enters_capture_basin"
+        ] == "OPEN_CURRENT_OWNER"
+        and quantitative_stable_capture["claim_boundary"][
+            "quantitative_capture_tube"
+        ] == "CERTIFIED"
+        and quantitative_stable_capture["claim_boundary"][
+            "AE2_reset_image_enters_capture_tube"
         ] == "OPEN_CURRENT_OWNER"
     ):
         raise RuntimeError("joint Gate7 source/cotangent frontier is not current")

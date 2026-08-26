@@ -121,6 +121,7 @@ def _basis() -> list[dict[str, Any]]:
     p_nhim_rank72_relative_tail = "artifacts/flagship_integration/BHSM_N12_GATE7_NHIM_RANK72_RELATIVE_TAIL_THEOREM.json"
     p_quantitative_capture_bridge = "artifacts/flagship_integration/BHSM_N12_GATE7_QUANTITATIVE_CAPTURE_BRIDGE_RECOMBINATION.json"
     p_full_lower_weight_krawczyk = "artifacts/flagship_integration/BHSM_N12_GATE7_FULL_LOWER_WEIGHT_KRAWCZYK_CLOSURE.json"
+    p_quantitative_stable_capture = "artifacts/flagship_integration/BHSM_N12_GATE7_QUANTITATIVE_STABLE_CAPTURE_TUBE.json"
     p_parametric_base = "artifacts/flagship_integration/BHSM_N12_C2_1222_PARAMETRIC_BASE_FAMILY.json"
     p_signed_adjoint = "artifacts/flagship_integration/BHSM_N12_C2_1222_SIGNED_ADJOINT_ASSEMBLY.json"
     p_duration_incidence = "artifacts/flagship_integration/BHSM_N12_C2_SIGNED_DURATION_INCIDENCE_OWNER.json"
@@ -475,6 +476,18 @@ def _basis() -> list[dict[str, Any]]:
             current_status="FULL_DESCRIPTOR_GRAPH_QUANTIFIED_STABLE_CONE_AND_RESET_COVER_OPEN",
             downstream_consumers=["G7_08_FORCE", "G7_09_SADDLE"],
             forbidden_interpretations=["the Krawczyk graph is already a trapping tube", "the reset image reaches the graph", "the conservative R4 proof radius is a physical scale", "form an explicit combined Euler-Dirac inverse"],
+        ),
+        record(
+            "GATE7_QUANTITATIVE_STABLE_CAPTURE_TUBE",
+            "rho_flow=h0_minus/(64*1e830); epsilon_tube=rho_flow*(h0_minus/2)/(64*2e1316)",
+            "INVERSE_FREE_STABLE_NORMAL_CONE_AND_CENTER_DRIFT_THEOREM",
+            "MATHEMATICAL_OBJECT",
+            "A directed 49-dimensional physical flow-Dirac determinant bound, the exact nonlinear weight-seven center family, and the retained derivative ledgers certify a strictly inward stable-normal tube with positive expansion and finite integrated center drift. Every regular history entering the tube is captured; reset-family entry or a canonical stop remains open.",
+            "regular simple-line component of the physical quotient at the explicit asymptotic proof scale",
+            [p_quantitative_stable_capture],
+            current_status="QUANTITATIVE_CAPTURE_TUBE_CERTIFIED_RESET_ENTRY_OPEN",
+            downstream_consumers=["G7_08_FORCE", "G7_09_SADDLE"],
+            forbidden_interpretations=["the reset image has entered the tube", "the proof radius is a physical threshold", "selected-line loss is excluded globally", "an explicit Euler-Dirac inverse was formed"],
         ),
         record(
             "C2_1222_PARAMETRIC_BASE_FAMILY",
@@ -940,6 +953,7 @@ def _gates() -> list[dict[str, Any]]:
             "artifacts/flagship_integration/BHSM_N12_GATE7_NHIM_RANK72_RELATIVE_TAIL_THEOREM.json",
             "artifacts/flagship_integration/BHSM_N12_GATE7_QUANTITATIVE_CAPTURE_BRIDGE_RECOMBINATION.json",
             "artifacts/flagship_integration/BHSM_N12_GATE7_FULL_LOWER_WEIGHT_KRAWCZYK_CLOSURE.json",
+            "artifacts/flagship_integration/BHSM_N12_GATE7_QUANTITATIVE_STABLE_CAPTURE_TUBE.json",
             "artifacts/flagship_integration/BHSM_N12_C2_1222_PARAMETRIC_BASE_FAMILY.json",
             "artifacts/flagship_integration/BHSM_N12_C2_1222_SIGNED_ADJOINT_ASSEMBLY.json",
             "artifacts/flagship_integration/BHSM_N12_C2_1222_TRANSPOSED_DURATION_ACTION_COVERAGE.json",
@@ -1046,9 +1060,11 @@ def _gates() -> list[dict[str, Any]]:
                 "kinetic inverse obligations; the exact retained scale polynomial "
                 "and positive leading-inertia bound now absorb the full epsilon-"
                 "dependent defect and inhomogeneous correction in an inverse-free "
-                "Krawczyk ball; the exact remaining analytic owner is the stable-"
-                "cone trapping estimate, integrated center drift, retained-domain "
-                "margins, and reset-family forward cover"
+                "Krawczyk ball; a directed physical flow-Dirac determinant and "
+                "retained derivative ledger now certify an explicit inward stable "
+                "capture tube, positive expansion, and finite integrated center "
+                "drift; the exact remaining geometric owner is the reset-family "
+                "forward cover into that tube or a genuine later canonical stop"
             )
         predecessor = [] if index == 0 else [GATE_CHAIN[index - 1][0]]
         provenance = sources.get(cid, fallback)
