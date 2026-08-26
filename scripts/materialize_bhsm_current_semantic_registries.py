@@ -97,6 +97,7 @@ SOURCES = (
     "artifacts/flagship_integration/BHSM_N12_GATE7_RANK72_MAXIMAL_TAIL_ROUTE_ADJUDICATION.json",
     "artifacts/flagship_integration/BHSM_N12_AE2_CHILD_BOUNDARY_HAMILTONIAN_NON_SUPERSESSION.json",
     "artifacts/flagship_integration/BHSM_N12_GATE7_NHIM_RANK72_RELATIVE_TAIL_THEOREM.json",
+    "artifacts/flagship_integration/BHSM_N12_GATE7_QUANTITATIVE_CAPTURE_BRIDGE_RECOMBINATION.json",
     "artifacts/flagship_integration/BHSM_N12_C2_SIGNED_DURATION_INCIDENCE_OWNER.json",
     "artifacts/flagship_integration/BHSM_N12_C2_SIGNED_DDELTA_SEED_TRANSPORT_AUDIT.json",
     "artifacts/flagship_integration/BHSM_N12_C2_DIRECT_DDELTA_ROW_RECONNAISSANCE.json",
@@ -226,6 +227,9 @@ def verify_current_lineage() -> None:
     rank72_route_adjudication = loaded["artifacts/flagship_integration/BHSM_N12_GATE7_RANK72_MAXIMAL_TAIL_ROUTE_ADJUDICATION.json"]
     ae2_boundary_hamiltonian = loaded["artifacts/flagship_integration/BHSM_N12_AE2_CHILD_BOUNDARY_HAMILTONIAN_NON_SUPERSESSION.json"]
     nhim_rank72_relative_tail = loaded["artifacts/flagship_integration/BHSM_N12_GATE7_NHIM_RANK72_RELATIVE_TAIL_THEOREM.json"]
+    quantitative_capture_bridge = loaded[
+        "artifacts/flagship_integration/BHSM_N12_GATE7_QUANTITATIVE_CAPTURE_BRIDGE_RECOMBINATION.json"
+    ]
     duration_incidence = loaded["artifacts/flagship_integration/BHSM_N12_C2_SIGNED_DURATION_INCIDENCE_OWNER.json"]
     ddelta_transport = loaded["artifacts/flagship_integration/BHSM_N12_C2_SIGNED_DDELTA_SEED_TRANSPORT_AUDIT.json"]
     ddelta_row = loaded["artifacts/flagship_integration/BHSM_N12_C2_DIRECT_DDELTA_ROW_RECONNAISSANCE.json"]
@@ -577,6 +581,15 @@ def verify_current_lineage() -> None:
             "captured_NHIM_rank72_signed_relative_tail"
         ] == "CERTIFIED_CAUCHY"
         and nhim_rank72_relative_tail["claim_boundary"][
+            "AE2_reset_image_enters_capture_basin"
+        ] == "OPEN_CURRENT_OWNER"
+        and quantitative_capture_bridge["claim_boundary"][
+            "leading_weight_combined_bordered_inverse"
+        ] == "CERTIFIED"
+        and quantitative_capture_bridge["claim_boundary"][
+            "quantitative_capture_surface"
+        ] == "OPEN"
+        and quantitative_capture_bridge["claim_boundary"][
             "AE2_reset_image_enters_capture_basin"
         ] == "OPEN_CURRENT_OWNER"
     ):

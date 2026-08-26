@@ -119,6 +119,7 @@ def _basis() -> list[dict[str, Any]]:
     p_rank72_route_adjudication = "artifacts/flagship_integration/BHSM_N12_GATE7_RANK72_MAXIMAL_TAIL_ROUTE_ADJUDICATION.json"
     p_ae2_boundary_hamiltonian = "artifacts/flagship_integration/BHSM_N12_AE2_CHILD_BOUNDARY_HAMILTONIAN_NON_SUPERSESSION.json"
     p_nhim_rank72_relative_tail = "artifacts/flagship_integration/BHSM_N12_GATE7_NHIM_RANK72_RELATIVE_TAIL_THEOREM.json"
+    p_quantitative_capture_bridge = "artifacts/flagship_integration/BHSM_N12_GATE7_QUANTITATIVE_CAPTURE_BRIDGE_RECOMBINATION.json"
     p_parametric_base = "artifacts/flagship_integration/BHSM_N12_C2_1222_PARAMETRIC_BASE_FAMILY.json"
     p_signed_adjoint = "artifacts/flagship_integration/BHSM_N12_C2_1222_SIGNED_ADJOINT_ASSEMBLY.json"
     p_duration_incidence = "artifacts/flagship_integration/BHSM_N12_C2_SIGNED_DURATION_INCIDENCE_OWNER.json"
@@ -449,6 +450,18 @@ def _basis() -> list[dict[str, Any]]:
             current_status="CAPTURED_RANK72_TAIL_CLOSED_RESET_TO_CAPTURE_CONNECTION_OPEN",
             downstream_consumers=["G7_08_FORCE", "G7_09_SADDLE"],
             forbidden_interpretations=["the AE2 reset image is already proved to enter the basin", "the absolute infinite-volume heat trace converges", "all arbitrary maximal histories are controlled", "select a favorable reset member by hand"],
+        ),
+        record(
+            "GATE7_QUANTITATIVE_CAPTURE_BRIDGE_RECOMBINATION",
+            "rho_bridge=rho_nl/2; theta_7(rho_bridge)<=1/16; epsilon*C_X5<=rho_bridge/2",
+            "INVERSE_FREE_CAPTURE_BRIDGE_RECOMBINATION_THEOREM",
+            "MATHEMATICAL_OBJECT",
+            "The existing determinant graph equivalence and uniform weight-seven defect already certify the combined 74-dimensional leading bordered map on a positive subball, superseding separate leading constraint and kinetic inverse obligations. The full epsilon-dependent defect, inhomogeneous correction, stable-cone trapping estimate, and reset-family forward cover remain open.",
+            "common H6-coordinate x H5-velocity x H6-multiplier chart near the finite-N12 asymptotic NHIM",
+            [p_quantitative_capture_bridge],
+            current_status="LEADING_BORDERED_INVERSE_CLOSED_FULL_TRAPPING_AND_RESET_COVER_OPEN",
+            downstream_consumers=["G7_08_FORCE", "G7_09_SADDLE"],
+            forbidden_interpretations=["the tiny determinant radius is already a capture surface", "the reset image is already connected", "the conservative R4 scale is a new physical threshold", "form a separate combined Euler-Dirac inverse"],
         ),
         record(
             "C2_1222_PARAMETRIC_BASE_FAMILY",
@@ -912,6 +925,7 @@ def _gates() -> list[dict[str, Any]]:
             "artifacts/flagship_integration/BHSM_N12_GATE7_RANK72_MAXIMAL_TAIL_ROUTE_ADJUDICATION.json",
             "artifacts/flagship_integration/BHSM_N12_AE2_CHILD_BOUNDARY_HAMILTONIAN_NON_SUPERSESSION.json",
             "artifacts/flagship_integration/BHSM_N12_GATE7_NHIM_RANK72_RELATIVE_TAIL_THEOREM.json",
+            "artifacts/flagship_integration/BHSM_N12_GATE7_QUANTITATIVE_CAPTURE_BRIDGE_RECOMBINATION.json",
             "artifacts/flagship_integration/BHSM_N12_C2_1222_PARAMETRIC_BASE_FAMILY.json",
             "artifacts/flagship_integration/BHSM_N12_C2_1222_SIGNED_ADJOINT_ASSEMBLY.json",
             "artifacts/flagship_integration/BHSM_N12_C2_1222_TRANSPOSED_DURATION_ACTION_COVERAGE.json",
@@ -1011,7 +1025,13 @@ def _gates() -> list[dict[str, Any]]:
                 "decaying normal Jacobi fields combine with the exact exp(-x) and "
                 "exp(-2x) weights and the first-C2-collar Agmon factor to make the "
                 "signed rank-72 relative tail Cauchy, so the current geometric "
-                "owner is reset-to-capture connection or an actual later stop"
+                "owner is reset-to-capture connection or an actual later stop; "
+                "the combined 74-dimensional leading bordered inverse is already "
+                "certified on a positive subball with relative defect at most "
+                "one sixteenth, superseding separate leading constraint and "
+                "kinetic inverse obligations; the exact remaining analytic owner "
+                "is the full epsilon-dependent defect, inhomogeneous correction, "
+                "stable-cone trapping estimate, and reset-family forward cover"
             )
         predecessor = [] if index == 0 else [GATE_CHAIN[index - 1][0]]
         provenance = sources.get(cid, fallback)
