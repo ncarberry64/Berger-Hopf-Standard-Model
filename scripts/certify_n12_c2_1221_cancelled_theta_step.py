@@ -216,6 +216,9 @@ def build_payload() -> dict:
         abs(Delta) + (float(np.linalg.norm(delta_first)) + delta_first_error) * radius
         + 0.5 * Delta2 * radius**2
     )
+    Delta_first_center_error = _up(
+        float(np.linalg.norm(delta_first)) + delta_first_error
+    )
     coefficient = _coefficient_enclosure(center, weights, radius)
     Gnorm = _up(float(np.linalg.norm(G)))
     upper = min(
@@ -312,6 +315,9 @@ def build_payload() -> dict:
             "expanded_full_action_line_consumed": EXPANDED,
             "b_psi_interval": [b_lower, b_upper],
             "Delta_absolute_upper": Delta_abs,
+            "Delta_center": Delta,
+            "Delta_first_variation_center_plus_error_upper": Delta_first_center_error,
+            "Delta_second_variation_upper": Delta2,
             "lapse_interval": coefficient["root_lapse_interval"],
         },
         "cancelled_field": {

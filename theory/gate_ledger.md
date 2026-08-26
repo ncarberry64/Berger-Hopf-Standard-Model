@@ -2490,3 +2490,19 @@ Exact next object:
   genuine retained stop.
 - Gate 7: `ACTIVE`; Gate 8: `LOCKED`; chord 3: `UNAUTHORIZED`;
   frozen predictions unchanged; `FULL_BHSM_COMPLETE=FALSE`.
+
+## N=12 realized-cover Delta monotonicity
+
+- Signed `Delta` Taylor enclosure evaluated on the actual sixteen-segment
+  tube-plus-center subball: `STRICTLY_POSITIVE`.
+- Descriptor behavior on that cover: `MONOTONE_INCREASING`.
+- Independently accumulated absolute-`Delta` interval with near-zero lower
+  edge: `SUPERSEDED_AS_SCALAR_WRAPPING`.
+- Correlated descriptor interval retains a lower endpoint above the initial
+  positive descriptor: `CERTIFIED`.
+- `Delta` turning point, event, canonical stop, or expanded-parent exhaustion:
+  `NOT_REACHED`.
+- Exact next owner: recenter the signed `Delta` and complete cancelled response
+  at the final cover predictor using the sharpened interval.
+- Gate 7: `ACTIVE`; Gate 8: `LOCKED`; chord 3: `UNAUTHORIZED`;
+  frozen predictions unchanged; `FULL_BHSM_COMPLETE=FALSE`.
