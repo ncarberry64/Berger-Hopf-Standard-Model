@@ -4,8 +4,10 @@
   "adjudication": {
     "Gate7": "G7_08_OPEN",
     "Gate8": "LOCKED",
+    "actual_parametric_reset_family_base_history": "ACTUALLY_MISSING",
     "complete_finite_duration_incoming_M_f_realization": "CLOSED_PARAMETRIC_NEGATIVE_AXIS_ENCLOSURE",
     "complete_non_scale_geometry_pullback_norm": "CERTIFIED_ON_1222_FINITE_CORE",
+    "exact_fixed_s_state_generator": "CERTIFIED",
     "exact_joint_spectral_trace": "OPEN",
     "fermion_AE2_joint_seam_invertibility": "CLOSED_ON_WHOLE_NEGATIVE_AXIS",
     "finite_core_backward_operator_cotangent": "CLOSED",
@@ -35,7 +37,7 @@
     "zero_source_force": "OPEN"
   },
   "classification": "C2_FINITE_CORE_NEGATIVE_AXIS_RESPONSE,_BACKWARD_OPERATOR_COTANGENT,_INCOMING_M_f_WHOLE_NEGATIVE_AXIS_FORM_ENCLOSURE,_FERMION_AE2_SEAM_INVERTIBILITY,_EXPLICIT_INCOMING_FINITE_AMPLITUDE_COEFFICIENT_FAMILY,_PHYSICAL_COMMON_SCALE_PULLBACK,_AND_THE_COMPLETE_1222_NON_SCALE_GEOMETRY_FIRST_JET_NORM_ARE_VALID_MATCHES;_THE_SIGNED_BACKWARD_CENTER_ADJOINT,_EXACT_JOINT_SPECTRAL_TRACE,_AND_MAXIMAL_TAIL_REMAIN_MISSING_AS_REALIZED_DATA,_WHILE_INCIDENCE_FORCE_AND_CAUCHY_THEOREMS_ARE_VALID_CONDITIONAL_CONSUMERS",
-  "exact_next_dependency": "EVALUATE_THE_SIGNED_NON_SCALE_BACKWARD_CENTER_ADJOINT_ON_THE_1222_CORE,_CHAIN_IT_THROUGH_THE_NOW_INVERTIBLE_FERMION_SEAM,_ASSEMBLE_OR_ENCLOSE_THE_EXACT_JOINT_GRADED_SPECTRAL_TRACE,_AND_TEST_THE_PROJECTED_CAUCHY_TAIL;_DO_NOT_BUILD_MORE_NORM_ONLY_GEOMETRY_CERTIFICATES",
+  "exact_next_dependency": "USE_THE_CERTIFIED_EXACT_FIXED_s_FIELD_IN_A_PARAMETRIC_RESET_CHART_MULTIPLE_SHOOTING_OR_EQUIVALENT_COUPLED_FORWARD_ADJOINT_KKT_BASE_SOLVE,_THEN_EVALUATE_THE_SIGNED_COVECTOR,_CHAIN_IT_THROUGH_THE_NOW_INVERTIBLE_FERMION_SEAM,_AND_TEST_THE_GRADED_PROJECTED_FORCE_AND_MAXIMAL_TAIL;_DO_NOT_DIFFERENTIATE_THE_PROOF_CENTER_ALGORITHM",
   "forward_event_diagram": "C1 --M_f--> E1 --(U_R,W_phys)--> C2 --M_C2--> MAXIMAL_ENDPOINT",
   "hindsight": {
     "classification": "PROOF_CHART_LIMIT_REMOVED;_OPERATOR_DATA_GAP_REMAINS",
@@ -51,6 +53,7 @@
     "artifacts/flagship_integration/BHSM_N12_C2_1222_SEGMENT_NEGATIVE_AXIS_WEYL_FAMILY.json": "EFB92817AD7E4FC2793B0AB879AA69C0B9AE697FD1B55F7418798A7011BCA59E",
     "artifacts/flagship_integration/BHSM_N12_C2_BIRTH_COEFFICIENT_QUOTIENT_JET.json": "A6595ACAD2A9865F31EE69F6DA7C067F8C0C00886B5D8A57A915D3537FF4ED7D",
     "artifacts/flagship_integration/BHSM_N12_C2_COMMON_SCALE_WEYL_COVARIANCE.json": "E534478F712202CC0120AEC3FCA110B0B486C1466E0AF0996DB8C9256D3E5A9B",
+    "artifacts/flagship_integration/BHSM_N12_C2_EXACT_FIXED_S_FIELD_ORACLE.json": "4265D468E865D68AAA126AA3E27368043FCD24499A5CDE41340A9228F0D4E7FF",
     "artifacts/flagship_integration/BHSM_N12_C2_PROJECTED_ADJOINT_CAUCHY_CRITERION.json": "473465E4A2369638204FE869E291997A82B958979B4DD060767C7BD12808EA65",
     "artifacts/flagship_integration/BHSM_N12_COMPACT_FINITE_HISTORY_OPERATOR.json": "E597DDB6EBE292643F33A0AC8EDCEC617F5FC963B526BCF9D40BD48EC678DD41",
     "artifacts/flagship_integration/BHSM_N12_FINITE_ENDPOINT_ZERO_SOURCE_FORCE_FUNCTIONAL.json": "6BC1FC78190437347813117A63D252C96115B2B67619D893144526A5DDD4E931",
@@ -65,7 +68,7 @@
     "artifacts/flagship_integration/BHSM_N12_INCOMING_MF_NEGATIVE_AXIS_ENCLOSURE.json": "59B718CC574103B05AE2D184506A06F51617450D958B2E5E856D8B5C9753633C",
     "artifacts/flagship_integration/BHSM_N12_INCOMING_REGULARIZED_TERMINAL_SEGMENT.json": "DDFDCBD0632F9C99A1E7C3DB97F98793BBB12E139610A16730A2C33E23984485",
     "artifacts/flagship_integration/BHSM_N12_MAXIMAL_FRIEDRICHS_WEYL_EXHAUSTION.json": "ADD797EAE0D9DB94D1BA0C58687AF114598331662B92B13579408361D95D9E5B",
-    "theory/n12_gate7_1222_core_diagram_matching_audit.md": "35CBC5EE0D76AE2279622FF7A35385E8406A973BF49D5F3ED6DBA7C6B079906E"
+    "theory/n12_gate7_1222_core_diagram_matching_audit.md": "0D2E935B583A6677E52A8AD5FCEE288AFD430BD11EFF9E3B320B19FDCDE56E52"
   },
   "matching_audit": [
     {
@@ -99,6 +102,14 @@
       "provenance_check": "VALID_SAME_ACTION_MOBIUS_CHAIN_RULE_WITH_ARBITRARY_PRECISION_LOAD",
       "required_type": "INVERSE_FREE_ADJOINT_SEMIGROUP_ACROSS_NESTED_FORM_CORES",
       "verdict": "VALID_MATCH_OPERATOR_COTANGENT_GEOMETRY_PULLBACK_STILL_OPEN"
+    },
+    {
+      "candidate": "BHSM_N12_C2_EXACT_FIXED_S_FIELD_ORACLE",
+      "diagram_slot": "C2_EXACT_FIXED_s_STATE_GENERATOR",
+      "dimension_domain_check": "VALID_ON_REGULAR_SIMPLE_SELECTED_LINE_POSITIVE_Delta_CHART",
+      "provenance_check": "VALID_EXACT_ACTION_JET_AND_BORDERED_COMPLEMENT_RESPONSE",
+      "required_type": "ACTION_OWNED_DESINGULARIZED_VECTOR_FIELD_FOR_PARAMETRIC_MULTIPLE_SHOOTING_AND_ADJOINT",
+      "verdict": "VALID_MATCH_PARAMETRIC_BASE_HISTORY_STILL_OPEN"
     },
     {
       "candidate": "BHSM_N12_C2_COMMON_SCALE_WEYL_COVARIANCE",
@@ -188,6 +199,7 @@
       "proof edge is an endpoint"
     ],
     "OPEN": [
+      "actual parametric reset-family base history or coupled forward-adjoint KKT base",
       "exact joint spectral trace and nonfermion seam value",
       "signed non-scale backward center-adjoint covector",
       "maximal non-scale reset-quotient tail",
@@ -201,6 +213,7 @@
       "fixed-node non-scale radius reset pullback",
       "moving-duration non-scale reset pullback norm",
       "complete finite-core non-scale geometry first-jet norm",
+      "exact fixed-s action field oracle",
       "incoming M_f compact terminal-block identity and Laurent germ",
       "incoming normalized coefficient path through lambda_0 squared",
       "explicit incoming regularized finite-amplitude segment and first Jacobi bound",
@@ -224,6 +237,7 @@
     "broad_seam_intervals_do_not_decide_force": true,
     "common_scale_source_contraction_formula_is_closed": true,
     "compact_incoming_operator_is_only_executable_until_path_supplied": true,
+    "exact_fixed_s_field_oracle_is_available_without_selecting_a_history": true,
     "finite_core_backward_cotangent_semigroup_is_matched": true,
     "force_functional_is_derived_but_value_open": true,
     "incoming_Mf_and_fermion_seam_invertibility_are_enclosed": true,

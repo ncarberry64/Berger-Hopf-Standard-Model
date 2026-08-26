@@ -39,6 +39,17 @@ promoted to the signed covector: that value still requires the inverse-free
 backward center adjoint.  Beyond the finite core, the maximal reset-quotient
 tail also remains open.
 
+The exact fixed-`s` state generator needed by that adjoint is now executable.
+It uses the exact N12 action Hessian, selected eigenline, uniformly invertible
+bordered complement response, and Hellmann--Feynman directional derivatives;
+it forms no full Euler--Dirac inverse and satisfies `D lambda(F_s)=1`.  At the
+independently stored 1214 center it reproduces the prior exact field within
+`3.533e-10` relative numerical realization error.  The remaining base-history
+gap is therefore not the differential equation: it is the actual parametric
+reset-family multiple-shooting solution.  The stored coefficient nodes remain
+proof centers and cannot be differentiated as though they selected a physical
+reset member.
+
 The complete moving-duration common-scale source contraction is also closed
 at the formula level.  The heat part reduces to
 `-STr exp(-ell_kappa^2 P)`, while the simultaneous proper-measure and radius
@@ -83,8 +94,9 @@ noncompact maximal tail are not.  The common pair/contact incidence and
 heat-minus-zeta trace functional are valid conditional consumers; broad seam
 intervals and isolated probes cannot replace their realized inputs.
 
-Accordingly the next construction must evaluate the signed non-scale backward
-center adjoint on the same fixed-descriptor cover, then propagate that
+Accordingly the next construction must use the exact field in a parametric
+reset-chart multiple-shooting or equivalent coupled forward-adjoint KKT base
+solve, evaluate the signed non-scale backward center adjoint, then propagate that
 finite-core covector through the now-invertible fermion seam and assemble or enclose the
 exact joint graded spectral trace.  It must then combine
 that sector with the exact common-scale component, form the projected
