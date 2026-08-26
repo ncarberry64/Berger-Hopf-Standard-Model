@@ -31,8 +31,15 @@ def test_direct_delta_identity_and_one_row_reduction_are_fail_closed() -> None:
     assert payload["adjudication"][
         "moving_eigenline_derivative_matrix_required_for_cb_row"
     ] is False
+    assert payload["adjudication"][
+        "nested_hard_adjoint_vectors_required_for_cb_row"
+    ] is False
+    assert payload["adjudication"]["fully_reduced_interval_representation"] == (
+        "LOCAL_ACTION_AND_SOURCE_JETS_PLUS_Psi_Psi_h_Psi_i_z_Vhard"
+    )
     assert payload["adjudication"]["complete_cb_row_assembly"] == (
-        "FINITE_LOCAL_ACTION_SOURCE_JETS_AND_HARD_ADJOINTS_ONLY"
+        "FINITE_LOCAL_ACTION_SOURCE_JETS_AND_ONE_FIRST_EIGENLINE_JACOBI_"
+        "MATRIX_ONLY"
     )
     assert payload["adjudication"]["rigorous_dominant_row_enclosure_on_exact_tube"] == "OPEN"
     assert payload["adjudication"]["physical_event_stop_or_zero_force_found"] is False
@@ -64,6 +71,20 @@ def test_second_eigenline_contraction_uses_small_hard_adjoint() -> None:
         assert data["third_variation_covector"].shape == (61,)
         assert data["third_variation_hard_adjoint"].shape == (61,)
         assert int(data["adjoint_selected_branch"]) == 24
+
+
+def test_all_nested_hard_adjoints_are_eliminated_from_reduced_row() -> None:
+    identities = _payload()["exact_identity"]
+    assert identities["nested_adjoint_pairing_identity"].startswith(
+        "D3S[h,Psi,SQ*r]=<Psi_h,r>"
+    )
+    reduced_c = identities["fully_reduced_c_second_row"]
+    reduced_b = identities["fully_reduced_b_second_row"]
+    for nested in ("w3", "w5", "wI", "wN", "wVI", "wfi"):
+        assert nested not in reduced_c
+        assert nested not in reduced_b
+    assert "6D3S[Psi_h,Psi_i,Psi]" in reduced_c
+    assert "<Psi_h,f_i>" in reduced_b
 
 
 def test_gate_and_downstream_claims_remain_open() -> None:

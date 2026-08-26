@@ -470,6 +470,24 @@ def build_payload(*, recompute: bool = True) -> dict[str, Any]:
                 "<V_hard,Psi_i>D3S[h,Psi,Psi]+<Psi_i,f_h>+"
                 "D3S[h,Psi,wfi]+<Psi,f_ih>"
             ),
+            "nested_adjoint_pairing_identity": (
+                "D3S[h,Psi,SQ*r]=<Psi_h,r>,_"
+                "Psi_h=SQ*A_h*Psi"
+            ),
+            "fully_reduced_c_second_row": (
+                "c_ih=D5S[i,h,Psi^3]+3D4S[h,Psi_i,Psi^2]+"
+                "3D4S[i,Psi_h,Psi^2]+3D4S[i,h,Psi,z]+"
+                "3(D3S[i,Psi_h,z]-lambda_i<Psi_h,z>)+"
+                "3D3S[h,z,Psi_i]-3<z,Psi_i>D3S[h,Psi,Psi]-"
+                "3c<Psi_h,Psi_i>+6D3S[Psi_h,Psi_i,Psi]"
+            ),
+            "fully_reduced_b_second_row": (
+                "b_ih=-b<Psi_h,Psi_i>-D4S[i,h,Psi,V_hard]-"
+                "D3S[i,Psi_h,V_hard]+lambda_i<Psi_h,V_hard>-"
+                "D3S[h,V_hard,Psi_i]+<V_hard,Psi_i>"
+                "D3S[h,Psi,Psi]+<Psi_i,f_h>+<Psi_h,f_i>+"
+                "<Psi,f_ih>"
+            ),
         },
         "reference_replay": {
             "reference_node": REFERENCE_NODE,
@@ -529,18 +547,23 @@ def build_payload(*, recompute: bool = True) -> dict[str, Any]:
                 "REDUCED_TO_ONE_HARD_ADJOINT_AND_LOCAL_SOURCE"
             ),
             "moving_eigenline_derivative_matrix_required_for_cb_row": False,
+            "nested_hard_adjoint_vectors_required_for_cb_row": False,
+            "fully_reduced_interval_representation": (
+                "LOCAL_ACTION_AND_SOURCE_JETS_PLUS_Psi_Psi_h_Psi_i_z_Vhard"
+            ),
             "complete_cb_row_assembly": (
-                "FINITE_LOCAL_ACTION_SOURCE_JETS_AND_HARD_ADJOINTS_ONLY"
+                "FINITE_LOCAL_ACTION_SOURCE_JETS_AND_ONE_FIRST_EIGENLINE_"
+                "JACOBI_MATRIX_ONLY"
             ),
             "rigorous_dominant_row_enclosure_on_exact_tube": "OPEN",
             "physical_event_stop_or_zero_force_found": False,
             "prior_coarse_product_ball": "VALID_BUT_SUPERSEDED_AS_NEXT_ROUTE",
         },
         "exact_next_dependency": (
-            "OUTWARD_ROUND_THE_FINITE_LOCAL_ACTION_SOURCE_JETS_AND_HARD_"
-            "ADJOINTS_IN_THE_EXACT_c_86h_AND_b_86h_FORMULAS_ON_THE_NODE_"
-            "1214_TUBE,_THEN_ADD_THE_s_SUPPRESSED_HARD_RESPONSE_ROW_AND_"
-            "PROVE_THE_TOTAL_BELOW_14.6225"
+            "OUTWARD_ROUND_THE_FINITE_LOCAL_ACTION_SOURCE_JETS_AND_THE_"
+            "FIRST_EIGENLINE_JACOBI_MATRIX_IN_THE_FULLY_REDUCED_c_86h_AND_"
+            "b_86h_FORMULAS_ON_THE_NODE_1214_TUBE,_THEN_ADD_THE_s_"
+            "SUPPRESSED_HARD_RESPONSE_ROW_AND_PROVE_THE_TOTAL_BELOW_14.6225"
         ),
         "claim_boundary": {
             "Gate7": "G7_08_OPEN_ONE_DIRECT_D2DELTA_ROW_REMAINDER_SEGMENT_ACTION_SOURCE_AND_TAIL",

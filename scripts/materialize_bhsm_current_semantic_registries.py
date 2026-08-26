@@ -269,8 +269,14 @@ def verify_current_lineage() -> None:
             "moving_eigenline_derivative_matrix_required_for_cb_row"
         ]
         is False
+        and ddelta_row["adjudication"][
+            "nested_hard_adjoint_vectors_required_for_cb_row"
+        ]
+        is False
+        and ddelta_row["adjudication"]["fully_reduced_interval_representation"]
+        == "LOCAL_ACTION_AND_SOURCE_JETS_PLUS_Psi_Psi_h_Psi_i_z_Vhard"
         and ddelta_row["adjudication"]["complete_cb_row_assembly"]
-        == "FINITE_LOCAL_ACTION_SOURCE_JETS_AND_HARD_ADJOINTS_ONLY"
+        == "FINITE_LOCAL_ACTION_SOURCE_JETS_AND_ONE_FIRST_EIGENLINE_JACOBI_MATRIX_ONLY"
         and ddelta_row["adjudication"][
             "rigorous_dominant_row_enclosure_on_exact_tube"
         ]

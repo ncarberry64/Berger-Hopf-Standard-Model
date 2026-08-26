@@ -182,3 +182,52 @@ contains only finite local action/source jets and a finite list of hard
 adjoints.  Neither the full moving first-eigenline matrix nor any mixed
 second-eigenline vector is an input to the interval proof.  This is an exact
 same-action recombination; it adds no inverse, selector, or physical datum.
+
+## Elimination of every nested hard adjoint
+
+The finite list of nested adjoints is itself unnecessary.  Self-adjointness
+of the same hard resolvent gives, for every hard source `r`,
+
+```text
+D3 S_action[h,Psi,S Q r] = <Psi_h,r>,
+Psi_h = S Q A_h Psi.
+```
+
+Applying this identity to `w3`, `wI`, `wN`, `w5`, `wVI`, and `wfi` reduces
+the two second rows to
+
+```text
+c_ih = D5S[i,h,Psi^3]
+     + 3 D4S[h,Psi_i,Psi^2]
+     + 3 D4S[i,Psi_h,Psi^2]
+     + 3 D4S[i,h,Psi,z]
+     + 3 (D3S[i,Psi_h,z] - lambda_i <Psi_h,z>)
+     + 3 D3S[h,z,Psi_i]
+     - 3 <z,Psi_i> D3S[h,Psi,Psi]
+     - 3 c <Psi_h,Psi_i>
+     + 6 D3S[Psi_h,Psi_i,Psi],
+
+b_ih = -b <Psi_h,Psi_i>
+       - D4S[i,h,Psi,V_hard]
+       - D3S[i,Psi_h,V_hard]
+       + lambda_i <Psi_h,V_hard>
+       - D3S[h,V_hard,Psi_i]
+       + <V_hard,Psi_i> D3S[h,Psi,Psi]
+       + <Psi_i,f_h> + <Psi_h,f_i> + <Psi,f_ih>.
+```
+
+For example,
+
+```text
+D3S[h,Psi,w5]  = D3S[Psi_h,Psi_i,Psi],
+D3S[h,Psi,wVI] = D3S[i,Psi_h,V_hard]
+                  - lambda_i <Psi_h,V_hard>.
+```
+
+Thus the cancellation-preserving interval representation needs only the
+selected line, its existing first Jacobi matrix, the fixed decisive column
+`Psi_i`, the single small adjoint `z`, the hard response, and local action and
+source jets.  No tube for any of `w3,w5,wI,wN,wVI,wfi` is required.  The
+fully reduced center replay has the same `cb` row norm as the nine/eight-term
+representation, approximately `1.68954153e-5`; this remains a binary64 center
+replay rather than the required outward-rounded tube enclosure.

@@ -321,9 +321,10 @@ def test_replacement_force_is_constraint_projected_without_reset_selection() -> 
     ]["physical_meaning"]
     ddelta_row = basis["C2_DIRECT_DDELTA_ROW_RECONNAISSANCE"]
     assert ddelta_row["current_status"] == (
-        "COMPLETE_LOCAL_ADJOINT_bc_ROW_ASSEMBLY_DERIVED_RIGOROUS_ROW_86_REMAINDER_OPEN"
+        "ALL_NESTED_HARD_ADJOINTS_ELIMINATED_RIGOROUS_ROW_86_REMAINDER_OPEN"
     )
     assert "b_Psi=<Psi,f>" in ddelta_row["formula"]
+    assert "w3,w5,wI,wN,wVI,wfi" in ddelta_row["formula"]
     assert any(
         "two-mesh agreement" in item
         for item in ddelta_row["forbidden_interpretations"]
