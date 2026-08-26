@@ -13,11 +13,11 @@ def c2_launch_adjoint_pullback(
     event_image_basis: np.ndarray,
     outgoing_field_action: np.ndarray,
     state_covector_action_dual: np.ndarray,
-    direct_seam_covector_action_dual: np.ndarray,
+    direct_upstream_interface_covector_action_dual: np.ndarray,
     state_dimension: int,
     rank_threshold: float = 1.0e-8,
 ) -> dict[str, Any]:
-    """Split a full reset-tangent force into seam and outgoing C2 pieces.
+    """Split a reset-tangent force into upstream/interface and C2 pieces.
 
     The first half of the reset product is the outgoing C2 seed after the
     certified forward swap.  All arrays use the stored action-normalized
@@ -28,7 +28,9 @@ def c2_launch_adjoint_pullback(
     image_basis = np.asarray(event_image_basis, dtype=float)
     field = np.asarray(outgoing_field_action, dtype=float)
     state_covector = np.asarray(state_covector_action_dual, dtype=float)
-    direct_covector = np.asarray(direct_seam_covector_action_dual, dtype=float)
+    direct_covector = np.asarray(
+        direct_upstream_interface_covector_action_dual, dtype=float
+    )
     product_dimension, tangent_dimension = tangent.shape
     if product_dimension != 2 * state_dimension:
         raise ValueError("reset tangent has the wrong product dimension")
@@ -39,7 +41,9 @@ def c2_launch_adjoint_pullback(
     ):
         raise ValueError("field and state covector must use the C2 state space")
     if direct_covector.shape != (product_dimension,):
-        raise ValueError("direct seam covector must use the reset product space")
+        raise ValueError(
+            "direct upstream/interface covector must use the reset product space"
+        )
     if not all(
         np.all(np.isfinite(value))
         for value in (tangent, image_basis, field, state_covector, direct_covector)

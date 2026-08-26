@@ -2,9 +2,9 @@
   "FLAGSHIP_READY": false,
   "FULL_BHSM_COMPLETE": false,
   "adjudication": {
-    "67_kernel_direct_seam_stationarity": "OPEN_ACTUAL_EVALUATION",
     "67_kernel_directions_may_be_discarded_from_full_seam_saddle": false,
     "67_kernel_downstream_C2_contribution": "IDENTICALLY_ZERO",
+    "67_kernel_upstream_interface_stationarity": "OPEN_ACTUAL_EVALUATION",
     "73_coordinate_C2_launch_force": "OPEN_ACTUAL_ADJOINT",
     "73_forward_Jacobi_columns_required_for_scalar_force": false,
     "one_C2_adjoint_covector_required": true,
@@ -19,12 +19,12 @@
     "Gate8": "LOCKED",
     "actual_zero_source_force": "OPEN",
     "chord_03_authorized": false,
-    "fixed_seed_kernel_seam_force": "OPEN_ACTUAL_EVALUATION",
+    "fixed_seed_kernel_upstream_interface_force": "OPEN_ACTUAL_EVALUATION",
     "frozen_predictions_changed": false,
     "launch_adjoint_interface": "DERIVED",
     "same_action_saddle": "WAITING_ON_FORCE"
   },
-  "classification": "THE_DOWNSTREAM_C2_ADJOINT_PULLBACK_FACTORS_THROUGH_THE_72_DIMENSIONAL_RESET_SEED_IMAGE_AND_ANNIHILATES_ITS_67_DIMENSIONAL_KERNEL;_THE_KERNEL_STATIONARITY_EQUATION_IS_THEREFORE_PURELY_A_DIRECT_TWO_SIDED_SEAM_CONDITION,_WHILE_ONE_ADJOINT_COVECTOR_SUPPLIES_THE_73_COORDINATE_OUTGOING_LAUNCH_FORCE",
+  "classification": "THE_DOWNSTREAM_C2_ADJOINT_PULLBACK_FACTORS_THROUGH_THE_72_DIMENSIONAL_RESET_SEED_IMAGE_AND_ANNIHILATES_ITS_67_DIMENSIONAL_KERNEL;_THE_KERNEL_STATIONARITY_EQUATION_IS_THEREFORE_PURELY_AN_UPSTREAM_HISTORY_PLUS_RETAINED_INTERFACE_CONDITION,_WHILE_ONE_ADJOINT_COVECTOR_SUPPLIES_THE_73_COORDINATE_OUTGOING_LAUNCH_FORCE",
   "dimension_ledger": {
     "fixed_C2_seed_lift_kernel": 67,
     "full_reset_tangent": 139,
@@ -36,17 +36,17 @@
     "outgoing_C2_seed_image": 72,
     "outgoing_descriptor_direction": 1
   },
-  "exact_next_dependency": "ASSEMBLE_THE_ACTUAL_DIRECT_TWO_SIDED_SEAM_COVECTOR_AND_TEST_ITS_67_DIMENSIONAL_FIXED_SEED_KERNEL_PROJECTION;_IN_PARALLEL_SOLVE_ONE_ACTUAL_C2_HEAT_MINUS_ZETA_ADJOINT_ON_THE_MAXIMAL_HISTORY_OR_A_CERTIFIED_FINITE_LATER_ENDPOINT_AND_PULL_IT_TO_THE_73_COORDINATE_LAUNCH_CHART",
+  "exact_next_dependency": "REALIZE_THE_COMPLETE_UPSTREAM_AND_C2 BASE_HISTORY_AND_SOLVE_ONE_JOINT_HEAT_MINUS_ZETA_ADJOINT,_THEN_PULL_ITS_UPSTREAM_INTERFACE_AND_C2_BLOCKS_TO_THE_INTRINSIC_RESET_QUOTIENT",
   "exact_split": {
     "downstream_pullback": "g_C2=B^dagger*p_0",
     "fixed_seed_kernel": "K:R67_TO_ker(B)",
     "kernel_annihilation": "K^dagger*g_C2=0",
-    "kernel_stationarity": "K^dagger*g_total=(Z*K)^dagger*d_seam=0",
+    "kernel_stationarity": "K^dagger*g_total=(Z*K)^dagger*d_upstream_interface=0",
     "launch_force": "g_launch=(Q^dagger*p_0,<F_0,p_0>)",
     "natural_launch_map": "B_launch=[Q,F_0]:R73_TO_R98",
     "outgoing_seed_map": "B=P_C2*Z:R139_TO_R98,_rank(B)=72",
     "reset_tangent_basis": "Z:R139_TO_ker(D_Creset)_SUBSET_R196",
-    "total_reset_force": "g_total=Z^dagger*d_seam+B^dagger*p_0"
+    "total_reset_force": "g_total=Z^dagger*d_upstream_interface+B^dagger*p_0"
   },
   "inputs": {
     "artifacts/flagship_integration/BHSM_N12_C2_RESET_GENERATED_LAUNCH_CHART.json": "570BC1093194BA6CA8ED91F6FE657D3BF965F76B30EC34CFC40704697BE10842",
@@ -54,8 +54,8 @@
     "artifacts/flagship_integration/BHSM_N12_FORCE_ADJOINT_PULLBACK.json": "CD8A55728672AE5CACEC16268AF5B00A267A06F4A0A92BE5F10989CD58189CDF",
     "artifacts/flagship_integration/BHSM_N12_FULL_RESET_ACTION_JACOBIAN.json": "6F669531A372F9BCC9D04AC26DB4F53A25DE38867036D0A8C1B779B7CB1C477B",
     "artifacts/flagship_integration/BHSM_N12_FULL_RESET_ACTION_JACOBIAN.npz": "35BB2B67FF784206D3A5B9DC82881F5FFD8F844B55342F2032D29CDAFB38A67A",
-    "src/bhsm/interface/aether_c2_launch_adjoint_pullback.py": "B9703DD5AA0ADA85075F3B499309094A44CB51C96F18C4C18910306415719F3A",
-    "theory/n12_c2_reset_launch_adjoint_interface.md": "814721AD76FB00A95540A4C172D7548F7519C9F16713134090E54B8CD965C291"
+    "src/bhsm/interface/aether_c2_launch_adjoint_pullback.py": "4D3A9EE51FEC12C77870ECC1A185480DC8CE63EDF8FD12D659DA4593B3EC00B2",
+    "theory/n12_c2_reset_launch_adjoint_interface.md": "B27C8D9B27318CE3AED2532057A810B6358943CD0155D6E8B9E469E123BD8CDB"
   },
   "matching_audit": [
     {
@@ -65,10 +65,10 @@
       "verdict": "VALID_MATCH_ONE_ADJOINT_NO_FORWARD_COLUMN_FAMILY"
     },
     {
-      "candidate": "(Z*K)^dagger*d_seam",
+      "candidate": "(Z*K)^dagger*d_upstream_interface",
       "diagram_slot": "FIXED_C2_SEED_RESET_KERNEL_FORCE",
-      "required_type": "LOCAL_TWO_SIDED_EVENT_SEAM_COVECTOR",
-      "verdict": "TYPE_AND_DOMAIN_MATCH_FORMULA_DERIVED_ACTUAL_VALUE_OPEN"
+      "required_type": "UPSTREAM_HISTORY_PLUS_RETAINED_INTERFACE_COVECTOR",
+      "verdict": "ALGEBRAIC_TYPE_MATCH_OWNER_IDENTIFIED_BY_THE_FIXED_SEED_HISTORY_AUDIT"
     },
     {
       "candidate": "RETAINED_ADJOINT_THEOREM",
@@ -93,7 +93,7 @@
     "downstream_C2_pullback_annihilates_fixed_seed_kernel": true,
     "event_image_spans_seed_map": true,
     "fixed_seed_kernel_dimension_is_67": true,
-    "full_kernel_force_reduces_to_direct_seam_covector": true,
+    "full_kernel_force_reduces_to_upstream_interface_covector": true,
     "launch_coordinate_change_is_invertible": true,
     "natural_and_orthonormal_launch_pullbacks_agree": true,
     "natural_launch_dimension_is_73": true,

@@ -15,10 +15,11 @@
     "artifacts/flagship_integration/BHSM_N12_ASYMPTOTIC_NHIM_CAPTURE_BASIN.json": "A2FE14D141A18B39CF27F568A4B9417246DD49DA95158CDDF5489EB303F53FA4",
     "artifacts/flagship_integration/BHSM_N12_C2_CLASS_REDUCED_MAXIMAL_RESPONSE.json": "DA82F5036004E115A13E53B369B51A92FD9A21B81FFEF44A0656C4DB11FF38B8",
     "artifacts/flagship_integration/BHSM_N12_C2_EXACT_FIXED_S_FIELD_ORACLE.json": "4265D468E865D68AAA126AA3E27368043FCD24499A5CDE41340A9228F0D4E7FF",
+    "artifacts/flagship_integration/BHSM_N12_C2_FIXED_SEED_UPSTREAM_FORCE_OWNER.json": "396F39A4F98ECE7F903221EFD01A1C126479EE56DC4F8A72C976501D0D4F8A71",
     "artifacts/flagship_integration/BHSM_N12_C2_INFINITE_HEAT_ZETA_COMPATIBILITY.json": "9AFA86530D09A8C6A14F8F0FE95E60A3A7127498678185A10B83C3252F3E24E7",
     "artifacts/flagship_integration/BHSM_N12_C2_PROJECTED_ADJOINT_CAUCHY_CRITERION.json": "473465E4A2369638204FE869E291997A82B958979B4DD060767C7BD12808EA65",
     "artifacts/flagship_integration/BHSM_N12_C2_RESET_GENERATED_LAUNCH_CHART.json": "570BC1093194BA6CA8ED91F6FE657D3BF965F76B30EC34CFC40704697BE10842",
-    "artifacts/flagship_integration/BHSM_N12_C2_RESET_LAUNCH_ADJOINT_INTERFACE.json": "FCB616D64D48195CE3D780D1D7BD59C1DED7D245F7F5846BE2BC06BF3CF9CE96",
+    "artifacts/flagship_integration/BHSM_N12_C2_RESET_LAUNCH_ADJOINT_INTERFACE.json": "834744FE503761891F7922CAADBF3187F8484EE6587049A0A624D9F78C2B3ABD",
     "artifacts/flagship_integration/BHSM_N12_CANONICAL_MOMENTUM_ACTION_JACOBIAN.json": "0B1BE86ECDC049B363C2C0E665CAB0CE9C216FD5CEFB5AE813DA157F18909733",
     "artifacts/flagship_integration/BHSM_N12_CONSTRAINT_PROJECTED_REPLACEMENT_SADDLE.json": "E5C0340FC39BFF9C83F338B8AFA7270F71A6699A56A5B0996F754FB99B65DAD1",
     "artifacts/flagship_integration/BHSM_N12_CORE_TRANSMITTED_PHYSICAL_MANIFOLD_AUDIT.json": "007C16DDC4D44747358B71219738158F77F12ADAA60EE91EF28985179B6D1AD9",
@@ -715,10 +716,10 @@
     {
       "action_version": "BHSM-AE-2.0.0",
       "artifact_hashes": {
-        "artifacts/flagship_integration/BHSM_N12_C2_RESET_LAUNCH_ADJOINT_INTERFACE.json": "FCB616D64D48195CE3D780D1D7BD59C1DED7D245F7F5846BE2BC06BF3CF9CE96"
+        "artifacts/flagship_integration/BHSM_N12_C2_RESET_LAUNCH_ADJOINT_INTERFACE.json": "834744FE503761891F7922CAADBF3187F8484EE6587049A0A624D9F78C2B3ABD"
       },
       "canonical_id": "C2_LAUNCH_ADJOINT_AND_SEAM_SPLIT",
-      "current_status": "DERIVED_ACTUAL_SEAM_AND_C2_ADJOINT_COVECTORS_OPEN",
+      "current_status": "DERIVED_ACTUAL_JOINT_HISTORY_ADJOINT_OPEN",
       "dimensions": "DIMENSIONLESS_OR_OPERATOR_TYPED",
       "domain": "certified reset tangent and local branch-24 C2 launch chart",
       "downstream_consumers": [
@@ -727,19 +728,56 @@
       ],
       "equivalent_forms": [],
       "forbidden_interpretations": [
-        "discard the 67 fixed-seed kernel from the full seam saddle",
+        "discard the 67 fixed-seed kernel from the full saddle",
+        "invent a new local seam force for the 67 kernel",
         "propagate 73 forward Jacobi columns for one scalar force",
         "a broad seam enclosure supplies its signed covector",
         "the algebraic split evaluates the zero-source force"
       ],
-      "formula": "g_total=Z^dagger*d_seam+B^dagger*p_0; K^dagger*B^dagger*p_0=0; g_launch=(Q^dagger*p_0,<F_0,p_0>)",
+      "formula": "g_total=Z^dagger*d_upstream_interface+B^dagger*p_0; K^dagger*B^dagger*p_0=0; g_launch=(Q^dagger*p_0,<F_0,p_0>)",
       "frozen_output_status": "NOT_FROZEN_OUTPUT",
       "mathematical_class": "RESET_TANGENT_COTANGENT_FACTOR_AND_KERNEL_COMPATIBILITY",
       "observable_status": "NOT_AN_OBSERVABLE",
       "ontology_version": "BHSM-AE2-ONTOLOGY-1.0.0",
-      "physical_meaning": "The downstream C2 force factors through the 72-dimensional seed image and one exact transverse launch direction, while stationarity on the 67-dimensional fixed-seed lift kernel is purely a direct two-sided seam condition.",
+      "physical_meaning": "The downstream C2 force factors through the 72-dimensional seed image and one exact transverse launch direction, while stationarity on the 67-dimensional fixed-seed lift kernel belongs to the complete upstream-history and retained-interface force block.",
       "provenance": [
         "artifacts/flagship_integration/BHSM_N12_C2_RESET_LAUNCH_ADJOINT_INTERFACE.json"
+      ],
+      "semantic_layer": "MATHEMATICAL_OBJECT",
+      "source_weighting_required": false,
+      "superseded_meanings": [],
+      "tests": [
+        "test_required_fields"
+      ]
+    },
+    {
+      "action_version": "BHSM-AE-2.0.0",
+      "artifact_hashes": {
+        "artifacts/flagship_integration/BHSM_N12_C2_FIXED_SEED_UPSTREAM_FORCE_OWNER.json": "396F39A4F98ECE7F903221EFD01A1C126479EE56DC4F8A72C976501D0D4F8A71"
+      },
+      "canonical_id": "C2_FIXED_SEED_UPSTREAM_FORCE_OWNER",
+      "current_status": "DERIVED_ACTUAL_JOINT_BASE_AND_ADJOINT_OPEN",
+      "dimensions": "DIMENSIONLESS_OR_OPERATOR_TYPED",
+      "domain": "certified forward-swapped reset stratum and AE2 full-history operator domain",
+      "downstream_consumers": [
+        "G7_08_FORCE",
+        "G7_09_SADDLE"
+      ],
+      "equivalent_forms": [],
+      "forbidden_interpretations": [
+        "the 67 directions are new local seam degrees of freedom",
+        "the zero AE2 fermion surface action makes the upstream force vanish",
+        "M_f invertibility supplies the full incoming heat force",
+        "project the child flow by hand to define the time quotient"
+      ],
+      "formula": "K_fixedC2={0}_C2 direct_sum ker(J_E1), dim(K_fixedC2)=98-rank(J_E1)=67",
+      "frozen_output_status": "NOT_FROZEN_OUTPUT",
+      "mathematical_class": "FORWARD_HISTORY_TANGENT_AND_FORCE_PROVENANCE_IDENTITY",
+      "observable_status": "NOT_AN_OBSERVABLE",
+      "ontology_version": "BHSM-AE2-ONTOLOGY-1.0.0",
+      "physical_meaning": "The C2 fixed-seed kernel is exactly the raw preceding-event tangent. Its force owner is the complete upstream C1-to-E1 heat-minus-zeta history plus retained interface contacts, not a new surface force; one joint history adjoint is the equivalent assembly.",
+      "provenance": [
+        "artifacts/flagship_integration/BHSM_N12_C2_FIXED_SEED_UPSTREAM_FORCE_OWNER.json"
       ],
       "semantic_layer": "MATHEMATICAL_OBJECT",
       "source_weighting_required": false,

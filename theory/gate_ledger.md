@@ -1944,16 +1944,38 @@ Exact next object:
 - Downstream C2 cotangent pullback: `g_C2=B^dagger p_0`, hence
   `K^dagger g_C2=0` exactly.
 - Full reset-tangent force:
-  `g_total=Z^dagger d_seam+B^dagger p_0`.
+  `g_total=Z^dagger d_upstream_interface+B^dagger p_0`.
 - Fixed-seed-kernel stationarity:
-  `K^dagger g_total=(ZK)^dagger d_seam=0`; actual signed seam covector:
-  `OPEN`.
+  `K^dagger g_total=(ZK)^dagger d_upstream_interface=0`; actual signed
+  full-history covector: `OPEN`.
 - Natural outgoing launch force:
   `g_launch=(Q^dagger p_0,<F_0,p_0>)`; actual maximal/finite-endpoint C2
   adjoint: `OPEN_CURRENT_OWNER`.
 - Forward Jacobi columns required for this scalar force: `0`; one backward
   C2 adjoint covector is sufficient after the base history is realized.
 - The 67 fixed-seed directions discarded from the full seam saddle: `FALSE`.
+- Gate 7: `ACTIVE`; Gate 8: `LOCKED`; chord 3: `UNAUTHORIZED`;
+  `FULL_BHSM_COMPLETE=FALSE`.
+
+## N=12 C2 fixed-seed upstream force ownership
+
+- Certified forward variable order: `(C2,E1)`, with
+  `J_R=[J_C2,J_E1]`.
+- Analytic block ranks: `rank(J_C2)=32`, `rank(J_E1)=31`.
+- Exact fixed-C2 tangent:
+  `K_fixedC2={0}_C2 direct-sum ker(J_E1)`, dimension `98-31=67`.
+- Stored launch-kernel projector versus embedded `E1`-kernel projector:
+  operator residual `<3.4e-12`; stored C2 component `<5.8e-15`.
+- These are the already-known raw preceding-event directions, not new local
+  seam degrees of freedom.
+- Independent AE2 fermion surface action: `0`; missing force supplied by that
+  zero term: `FALSE`.
+- `M_f` terminal response and seam invertibility as the full incoming bulk
+  heat-minus-zeta force: `FALSE`.
+- Exact force owner: complete `C1 -> E1 -> C2` operator and one joint backward
+  adjoint, including retained interface/contact and moving-endpoint terms.
+- Retained time-quotient count: `66`; explicit hybrid generator:
+  `OPEN_OR_USE_INTRINSIC_QUOTIENT`.
 - Gate 7: `ACTIVE`; Gate 8: `LOCKED`; chord 3: `UNAUTHORIZED`;
   `FULL_BHSM_COMPLETE=FALSE`.
 

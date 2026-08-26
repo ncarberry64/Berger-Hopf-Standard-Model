@@ -13,7 +13,7 @@ def test_launch_adjoint_split_dimensions_and_kernel_identity() -> None:
         "downstream_C2_pullback_annihilates_fixed_seed_kernel"
     ] is True
     assert payload["validation"][
-        "full_kernel_force_reduces_to_direct_seam_covector"
+        "full_kernel_force_reduces_to_upstream_interface_covector"
     ] is True
 
 
@@ -23,7 +23,9 @@ def test_one_adjoint_supplies_the_launch_force_without_closing_gate7() -> None:
     assert adjudication["73_forward_Jacobi_columns_required_for_scalar_force"] is False
     assert adjudication["one_C2_adjoint_covector_required"] is True
     assert adjudication["67_kernel_directions_may_be_discarded_from_full_seam_saddle"] is False
-    assert adjudication["67_kernel_direct_seam_stationarity"] == "OPEN_ACTUAL_EVALUATION"
+    assert adjudication["67_kernel_upstream_interface_stationarity"] == (
+        "OPEN_ACTUAL_EVALUATION"
+    )
     assert payload["claim_boundary"]["C2_maximal_or_finite_endpoint_adjoint"] == (
         "OPEN_CURRENT_OWNER"
     )

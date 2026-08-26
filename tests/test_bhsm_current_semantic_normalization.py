@@ -185,12 +185,18 @@ def test_replacement_force_is_constraint_projected_without_reset_selection() -> 
         launch["forbidden_interpretations"]
     )
     launch_adjoint = basis["C2_LAUNCH_ADJOINT_AND_SEAM_SPLIT"]
-    assert launch_adjoint["current_status"] == (
-        "DERIVED_ACTUAL_SEAM_AND_C2_ADJOINT_COVECTORS_OPEN"
-    )
+    assert launch_adjoint["current_status"] == "DERIVED_ACTUAL_JOINT_HISTORY_ADJOINT_OPEN"
     assert "K^dagger*B^dagger*p_0=0" in launch_adjoint["formula"]
-    assert "discard the 67 fixed-seed kernel from the full seam saddle" in (
+    assert "discard the 67 fixed-seed kernel from the full saddle" in (
         launch_adjoint["forbidden_interpretations"]
+    )
+    fixed_seed_owner = basis["C2_FIXED_SEED_UPSTREAM_FORCE_OWNER"]
+    assert fixed_seed_owner["current_status"] == (
+        "DERIVED_ACTUAL_JOINT_BASE_AND_ADJOINT_OPEN"
+    )
+    assert "98-rank(J_E1)=67" in fixed_seed_owner["formula"]
+    assert "M_f invertibility supplies the full incoming heat force" in (
+        fixed_seed_owner["forbidden_interpretations"]
     )
     core = basis["CORE_TRANSMISSION_NONSELECTION"]
     assert core["current_status"] == (
@@ -247,7 +253,7 @@ def test_replacement_force_is_constraint_projected_without_reset_selection() -> 
     assert "not full two-sided seam-force invariance" in dag["G7_08_FORCE"][
         "physical_meaning"
     ]
-    assert "force problem splits into an actual direct two-sided seam covector" in dag[
+    assert "kernel is exactly {0}_C2 direct sum ker(J_E1)" in dag[
         "G7_08_FORCE"
     ]["physical_meaning"]
     assert (
@@ -258,6 +264,11 @@ def test_replacement_force_is_constraint_projected_without_reset_selection() -> 
     assert (
         "artifacts/flagship_integration/"
         "BHSM_N12_C2_RESET_LAUNCH_ADJOINT_INTERFACE.json"
+        in dag["G7_08_FORCE"]["provenance"]
+    )
+    assert (
+        "artifacts/flagship_integration/"
+        "BHSM_N12_C2_FIXED_SEED_UPSTREAM_FORCE_OWNER.json"
         in dag["G7_08_FORCE"]["provenance"]
     )
     assert (

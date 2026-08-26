@@ -65,6 +65,7 @@ SOURCES = (
     "artifacts/flagship_integration/BHSM_N12_C2_EXACT_FIXED_S_FIELD_ORACLE.json",
     "artifacts/flagship_integration/BHSM_N12_C2_RESET_GENERATED_LAUNCH_CHART.json",
     "artifacts/flagship_integration/BHSM_N12_C2_RESET_LAUNCH_ADJOINT_INTERFACE.json",
+    "artifacts/flagship_integration/BHSM_N12_C2_FIXED_SEED_UPSTREAM_FORCE_OWNER.json",
     "artifacts/flagship_integration/BHSM_N12_CORE_TRANSMITTED_PHYSICAL_MANIFOLD_AUDIT.json",
     "artifacts/flagship_integration/BHSM_N12_ASYMPTOTIC_NHIM_ANGULAR_FORCE_NO_GO.json",
     "artifacts/flagship_integration/BHSM_N12_LOCAL_RESET_TERMINAL_TRANSVERSALITY_AUDIT.json",
@@ -157,6 +158,7 @@ def verify_current_lineage() -> None:
     exact_field = loaded["artifacts/flagship_integration/BHSM_N12_C2_EXACT_FIXED_S_FIELD_ORACLE.json"]
     launch_chart = loaded["artifacts/flagship_integration/BHSM_N12_C2_RESET_GENERATED_LAUNCH_CHART.json"]
     launch_adjoint = loaded["artifacts/flagship_integration/BHSM_N12_C2_RESET_LAUNCH_ADJOINT_INTERFACE.json"]
+    fixed_seed_owner = loaded["artifacts/flagship_integration/BHSM_N12_C2_FIXED_SEED_UPSTREAM_FORCE_OWNER.json"]
     core_audit = loaded["artifacts/flagship_integration/BHSM_N12_CORE_TRANSMITTED_PHYSICAL_MANIFOLD_AUDIT.json"]
     nhim_angular_no_go = loaded["artifacts/flagship_integration/BHSM_N12_ASYMPTOTIC_NHIM_ANGULAR_FORCE_NO_GO.json"]
     local_reset_terminal = loaded["artifacts/flagship_integration/BHSM_N12_LOCAL_RESET_TERMINAL_TRANSVERSALITY_AUDIT.json"]
@@ -192,6 +194,18 @@ def verify_current_lineage() -> None:
         and launch_adjoint["adjudication"]["67_kernel_directions_may_be_discarded_from_full_seam_saddle"]
         is False
         and launch_adjoint["claim_boundary"]["actual_zero_source_force"] == "OPEN"
+        and fixed_seed_owner["claim_boundary"]["fixed_C2_kernel_identification"]
+        == "DERIVED"
+        and fixed_seed_owner["adjudication"][
+            "67_kernel_is_the_raw_fixed_C2_preceding_E1_tangent"
+        ]
+        is True
+        and fixed_seed_owner["adjudication"][
+            "separate_arbitrary_direct_seam_covector_should_be_invented"
+        ]
+        is False
+        and fixed_seed_owner["claim_boundary"]["actual_joint_base_history_and_adjoint"]
+        == "OPEN_CURRENT_OWNER"
         and core_audit["claim_boundary"]["core_transmitted_physical_manifold"]
         == "OWNER_HYPOTHESIS_NOT_ACTION_DERIVED"
         and core_audit["claim_boundary"]["a_equals_1_over_118"]

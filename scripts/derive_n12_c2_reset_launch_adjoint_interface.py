@@ -71,7 +71,7 @@ def build_payload() -> dict[str, Any]:
         event_image_basis=event_image,
         outgoing_field_action=outgoing_field,
         state_covector_action_dual=state_covector,
-        direct_seam_covector_action_dual=direct_covector,
+        direct_upstream_interface_covector_action_dual=direct_covector,
         state_dimension=STATE_DIMENSION,
         rank_threshold=RANK_THRESHOLD,
     )
@@ -85,7 +85,7 @@ def build_payload() -> dict[str, Any]:
         "downstream_C2_pullback_annihilates_fixed_seed_kernel": (
             split["downstream_kernel_annihilation_residual_norm"] < 1.0e-12
         ),
-        "full_kernel_force_reduces_to_direct_seam_covector": (
+        "full_kernel_force_reduces_to_upstream_interface_covector": (
             split["kernel_split_residual_norm"] < 1.0e-12
         ),
         "natural_and_orthonormal_launch_pullbacks_agree": (
@@ -111,8 +111,9 @@ def build_payload() -> dict[str, Any]:
         "classification": (
             "THE_DOWNSTREAM_C2_ADJOINT_PULLBACK_FACTORS_THROUGH_THE_72_"
             "DIMENSIONAL_RESET_SEED_IMAGE_AND_ANNIHILATES_ITS_67_DIMENSIONAL_"
-            "KERNEL;_THE_KERNEL_STATIONARITY_EQUATION_IS_THEREFORE_PURELY_A_"
-            "DIRECT_TWO_SIDED_SEAM_CONDITION,_WHILE_ONE_ADJOINT_COVECTOR_"
+            "KERNEL;_THE_KERNEL_STATIONARITY_EQUATION_IS_THEREFORE_PURELY_AN_"
+            "UPSTREAM_HISTORY_PLUS_RETAINED_INTERFACE_CONDITION,_WHILE_ONE_"
+            "ADJOINT_COVECTOR_"
             "SUPPLIES_THE_73_COORDINATE_OUTGOING_LAUNCH_FORCE"
         ),
         "exact_split": {
@@ -121,8 +122,8 @@ def build_payload() -> dict[str, Any]:
             "fixed_seed_kernel": "K:R67_TO_ker(B)",
             "downstream_pullback": "g_C2=B^dagger*p_0",
             "kernel_annihilation": "K^dagger*g_C2=0",
-            "total_reset_force": "g_total=Z^dagger*d_seam+B^dagger*p_0",
-            "kernel_stationarity": "K^dagger*g_total=(Z*K)^dagger*d_seam=0",
+            "total_reset_force": "g_total=Z^dagger*d_upstream_interface+B^dagger*p_0",
+            "kernel_stationarity": "K^dagger*g_total=(Z*K)^dagger*d_upstream_interface=0",
             "natural_launch_map": "B_launch=[Q,F_0]:R73_TO_R98",
             "launch_force": "g_launch=(Q^dagger*p_0,<F_0,p_0>)",
         },
@@ -166,9 +167,9 @@ def build_payload() -> dict[str, Any]:
             },
             {
                 "diagram_slot": "FIXED_C2_SEED_RESET_KERNEL_FORCE",
-                "required_type": "LOCAL_TWO_SIDED_EVENT_SEAM_COVECTOR",
-                "candidate": "(Z*K)^dagger*d_seam",
-                "verdict": "TYPE_AND_DOMAIN_MATCH_FORMULA_DERIVED_ACTUAL_VALUE_OPEN",
+                "required_type": "UPSTREAM_HISTORY_PLUS_RETAINED_INTERFACE_COVECTOR",
+                "candidate": "(Z*K)^dagger*d_upstream_interface",
+                "verdict": "ALGEBRAIC_TYPE_MATCH_OWNER_IDENTIFIED_BY_THE_FIXED_SEED_HISTORY_AUDIT",
             },
             {
                 "diagram_slot": "MAXIMAL_OR_FINITE_ENDPOINT_C2_ADJOINT_p_0",
@@ -182,22 +183,20 @@ def build_payload() -> dict[str, Any]:
             "one_C2_adjoint_covector_required": True,
             "67_kernel_directions_may_be_discarded_from_full_seam_saddle": False,
             "67_kernel_downstream_C2_contribution": "IDENTICALLY_ZERO",
-            "67_kernel_direct_seam_stationarity": "OPEN_ACTUAL_EVALUATION",
+            "67_kernel_upstream_interface_stationarity": "OPEN_ACTUAL_EVALUATION",
             "73_coordinate_C2_launch_force": "OPEN_ACTUAL_ADJOINT",
             "zero_source_force": "OPEN",
         },
         "exact_next_dependency": (
-            "ASSEMBLE_THE_ACTUAL_DIRECT_TWO_SIDED_SEAM_COVECTOR_AND_TEST_ITS_"
-            "67_DIMENSIONAL_FIXED_SEED_KERNEL_PROJECTION;_IN_PARALLEL_SOLVE_ONE_"
-            "ACTUAL_C2_HEAT_MINUS_ZETA_ADJOINT_ON_THE_MAXIMAL_HISTORY_OR_A_"
-            "CERTIFIED_FINITE_LATER_ENDPOINT_AND_PULL_IT_TO_THE_73_COORDINATE_"
-            "LAUNCH_CHART"
+            "REALIZE_THE_COMPLETE_UPSTREAM_AND_C2 BASE_HISTORY_AND_SOLVE_ONE_"
+            "JOINT_HEAT_MINUS_ZETA_ADJOINT,_THEN_PULL_ITS_UPSTREAM_INTERFACE_"
+            "AND_C2_BLOCKS_TO_THE_INTRINSIC_RESET_QUOTIENT"
         ),
         "claim_boundary": {
             "Gate7": "G7_08_OPEN_TWO_COMPLEMENTARY_FORCE_BLOCKS",
             "Gate8": "LOCKED",
             "launch_adjoint_interface": "DERIVED",
-            "fixed_seed_kernel_seam_force": "OPEN_ACTUAL_EVALUATION",
+            "fixed_seed_kernel_upstream_interface_force": "OPEN_ACTUAL_EVALUATION",
             "C2_maximal_or_finite_endpoint_adjoint": "OPEN_CURRENT_OWNER",
             "actual_zero_source_force": "OPEN",
             "same_action_saddle": "WAITING_ON_FORCE",
