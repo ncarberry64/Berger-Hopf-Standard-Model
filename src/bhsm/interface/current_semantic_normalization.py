@@ -7,7 +7,7 @@ from typing import Any, Iterable, Mapping
 
 
 ACTION_VERSION = "BHSM-AE-2.0.0"
-ONTOLOGY_VERSION = "BHSM-AE2-ONTOLOGY-1.2.0"
+ONTOLOGY_VERSION = "BHSM-AE2-ONTOLOGY-1.3.0"
 REQUIRED_RECORD_FIELDS = (
     "canonical_id",
     "formula",
@@ -642,7 +642,7 @@ def _equivalences() -> list[dict[str, Any]]:
 def _deprecations() -> list[dict[str, Any]]:
     source = "artifacts/flagship_integration/BHSM_N12_GATE7_AE2_THRESHOLD_SUPERSESSION.json"
     seam_source = "artifacts/flagship_integration/BHSM_N12_EVENT_NORMAL_TWO_SIDED_SEAM_CORRECTION.json"
-    birth_source = "artifacts/flagship_integration/BHSM_N12_GATE7_BIRTH_TRACE_MF_SUPERSESSION_AUDIT.json"
+    birth_source = "artifacts/flagship_integration/BHSM_N12_GATE7_EXTERNAL_BIRTH_SOURCE_ROLE_SUPERSESSION.json"
     rows = [
         ("DEPRECATE_STRICT_GAP", "strict universal threshold gap", "SUPERSEDED_AS_NECESSARY", "source-weighted threshold measure"),
         ("DEPRECATE_ZERO_RESONANCE_DIVERGENCE", "zero resonance => infrared divergence", "FALSE_IN_GENERAL", "source vertex determines weighted response"),
@@ -675,16 +675,16 @@ def _deprecations() -> list[dict[str, Any]]:
             downstream_consumers=["G7_08_FORCE"],
         ),
         record(
-            "DEPRECATE_ZERO_SOURCE_DIRICHLET_MF",
-            "J_ext=0 => u_birth=0 => M_f=M11",
+            "DEPRECATE_DYNAMIC_BIRTH_TRACE_MF_REDUCTION",
+            "Treat the external birth trace as a dynamical integrated E0 seam and require B_birth or M_E0",
             "DEPRECATION_RECORD",
             "MATHEMATICAL_OBJECT",
-            "Use the action-owned birth graph solve (M00+B_birth)X=M01 and M_f=M11-M10X, or keep the birth trace in the unreduced joint operator.",
+            "At fixed external birth trace, differentiate the complete E1/C2 functional and then set the trace to zero; the nonzero internal response is M_f=M11.",
             "physical Gate-7 zero-external-source joint operator",
             [birth_source],
-            current_status="SUPERSEDED_BY_BIRTH_GRAPH_REDUCTION",
-            superseded_meanings=["zero external source is homogeneous Dirichlet birth trace"],
-            forbidden_interpretations=["Promote the M11 Dirichlet-reference enclosure to the physical zero-source incoming response."],
+            current_status="SUPERSEDED_BY_EXTERNAL_BIRTH_TRACE_ROLE",
+            superseded_meanings=["the external Cauchy source is an integrated dynamical birth seam"],
+            forbidden_interpretations=["Reopen M_f by inventing a pre-E0 response arm."],
             downstream_consumers=["G7_08_FORCE"],
         ),
     ]
@@ -715,7 +715,7 @@ def _ontology() -> list[dict[str, Any]]:
     ae2 = "artifacts/action_extension/BHSM_ACTION_AE2_GLOBAL_SPIN_RESET_ACTION.json"
     owner = "theory/norman_owner_ontology_recovered.md"
     finite = "artifacts/flagship_integration/BHSM_N12_GATE7_FINITE_ENCAPSULATION_PHYSICAL_DOMAIN_AUDIT.json"
-    source_ontology = "artifacts/flagship_integration/BHSM_N12_GATE7_CLOSED_SYSTEM_ZERO_EXTERNAL_SOURCE_ONTOLOGY.json"
+    source_ontology = "artifacts/flagship_integration/BHSM_N12_GATE7_EXTERNAL_BIRTH_SOURCE_ROLE_SUPERSESSION.json"
     rows = [
         ("ONTOLOGY_MAXIMAL_FORWARD_HISTORY", "H_max^+", "Primary dynamical object is a maximal forward geometric history.", "ACTION_REQUIRED"),
         ("ONTOLOGY_SINGLE_TIME", "dt>0 and d_tau>0", "Physical time has one orientation.", "INTERNAL_CONSISTENCY_REQUIRED"),
@@ -740,7 +740,7 @@ def _ontology() -> list[dict[str, Any]]:
         ("ONTOLOGY_FULL_COMPLETION", "complete=all_claimed_sectors+scale+domains+BRST+continuum+frozen_reproduction", "Full completion requires reproducible closure from one coherent current action.", "OWNER_AUTHORIZED_COMPLETION_RULE"),
         ("ONTOLOGY_FINITE_ENCAPSULATION", "realized_particle => 0<T_enc<infinity", "A realized particle completes encapsulation in finite positive physical time; infinite nonencapsulating histories remain mathematical but nonrealized.", "OWNER_AUTHORIZED_PHYSICAL_DOMAIN"),
         ("ONTOLOGY_ENCAPSULATION_CHRONOLOGY", "pre_encapsulation -> E0 -> C1 -> forward_evolution -> E1 -> C2", "Encapsulation completes at E0, which creates C1; after positive-duration forward evolution a later collision/de-encapsulation is a distinct event E1 creating a distinct child C2. There is no physical reset or return.", "OWNER_AUTHORIZED_PHYSICAL_DOMAIN"),
-        ("ONTOLOGY_GATE7_ZERO_EXTERNAL_SOURCE", "D_xi Gamma_closed[P_joint] evaluated before J_ext=0", "Only the external birth/Cauchy linear datum is zero. Incoming M_f, transported M_C2, U_R, W_phys, and retained contact/incidence blocks remain internal, are assembled and differentiated exactly once, and are not independently zeroed. Zero external source does not impose a zero birth trace or a homogeneous Dirichlet condition; the physical incoming response uses the retained birth graph M_f=M11-M10*(M00+B_birth)^(-1)*M01, evaluated inverse-free, or keeps that trace unreduced.", "OWNER_AUTHORIZED_PHYSICAL_SOURCE_SEMANTICS"),
+        ("ONTOLOGY_GATE7_ZERO_EXTERNAL_SOURCE", "D_xi Gamma_closed[P_joint;j_birth] at fixed j_birth, then j_birth=0", "Only the external BRST-quotiented Cauchy/birth trace is zero. Incoming M_f, transported M_C2, U_R, W_phys, and retained contact/incidence blocks remain nonzero internal responses, assembled and differentiated exactly once. Zero external source selects the retained Dirichlet reference at E0, so M_f=M11; it does not set M_f or any internal child/contact block to zero and does not add a pre-E0 response arm.", "OWNER_AUTHORIZED_PHYSICAL_SOURCE_SEMANTICS"),
     ]
     return [
         record(cid, formula, "ONTOLOGY_RECORD", "BHSM_ONTOLOGY", meaning,
@@ -751,7 +751,7 @@ def _ontology() -> list[dict[str, Any]]:
                    "ONTOLOGY_CONDITIONAL_RESET", "ONTOLOGY_AE2_DOMAIN", "ONTOLOGY_AE2_TRANSMISSION", "ONTOLOGY_FAR_END"
                } else [ae2], current_status=status,
                forbidden_interpretations=(
-                   ["Set an internal response block to zero.", "Add an independent seam source or force.", "Impose a homogeneous Dirichlet birth trace.", "Count both the direct and Schur determinant routes."] if cid == "ONTOLOGY_GATE7_ZERO_EXTERNAL_SOURCE" else
+                   ["Set an internal response block to zero.", "Add an independent seam source or force.", "Treat the external birth trace as a dynamical integrated seam.", "Add a pre-E0 response arm."] if cid == "ONTOLOGY_GATE7_ZERO_EXTERNAL_SOURCE" else
                    ["Call owner-authorized AE2 ontology itself action-derived."] if cid == "ONTOLOGY_AE2_DOMAIN" else
                    ["Insert downstream Standard Model observables into the action."] if cid == "ONTOLOGY_NO_OBSERVABLE_UPSTREAM" else
                    ["Treat particles as primitive point substances."] if cid == "ONTOLOGY_PARTICLE_CLASS" else
@@ -822,6 +822,7 @@ def _gates() -> list[dict[str, Any]]:
             "artifacts/flagship_integration/BHSM_N12_GATE7_BIRTH_GRAPH_LOAD_MATCHING_AUDIT.json",
             "artifacts/flagship_integration/BHSM_N12_GATE7_TWO_SEAM_CLOSED_OPERATOR_ASSEMBLY.json",
             "artifacts/flagship_integration/BHSM_N12_GATE7_E0_EVENT_SIDE_RESPONSE_PROVENANCE_AUDIT.json",
+            "artifacts/flagship_integration/BHSM_N12_GATE7_EXTERNAL_BIRTH_SOURCE_ROLE_SUPERSESSION.json",
             "artifacts/flagship_integration/BHSM_N12_GATE7_JOINT_HEAT_COTANGENT_REVERSE_SEED.json",
             "artifacts/flagship_integration/BHSM_N12_GATE7_1222_CORE_DIAGRAM_MATCHING_AUDIT.json",
             "artifacts/flagship_integration/BHSM_N12_GATE7_MAXIMAL_GRADED_COTANGENT_MATCHING_AUDIT.json",
@@ -863,6 +864,13 @@ def _gates() -> list[dict[str, Any]]:
     rows = []
     for index, (cid, meaning, status) in enumerate(GATE_CHAIN):
         if cid == "G7_08_FORCE":
+            meaning = meaning.replace(
+                "only J_ext is set to zero after the complete joint internal operator has been graded and differentiated, which neither zeros an internal response nor imposes a zero birth trace; the old M_f=M11 reading is therefore superseded, and the physical incoming response requires the inverse-free retained birth-graph reduction M_f=M11-M10*(M00+B_birth)^(-1)*M01 or an unreduced joint operator retaining the birth trace;",
+                "only the external BRST-quotiented birth trace is set to zero after differentiation at fixed source, selecting the E0 Dirichlet reference while leaving the nonzero internal response M_f=M11 and every child/contact block intact; the pre-E0 M_E0 arm and B_birth reduction are therefore not current Gate-7 dependencies;",
+            ).replace(
+                "the birth-loaded action-realized per-level complete joint operator family and first jet, actual complete joint graded spectral cotangent, numerical signed reverse value, and maximal projected tail remain open;",
+                "the per-level E1/C2 graded seam cotangent, numerical signed reverse value, and maximal projected tail remain open;",
+            )
             meaning += (
                 "; superseding the earlier center-only row status, the outward-"
                 "rounded retained-action replay certifies the complete dominant "
@@ -1015,10 +1023,10 @@ def validate_registries(registries: Mapping[str, Mapping[str, Any]]) -> None:
     source_ontology = ontology["ONTOLOGY_GATE7_ZERO_EXTERNAL_SOURCE"]
     if not (
         source_ontology["formula"]
-        == "D_xi Gamma_closed[P_joint] evaluated before J_ext=0"
-        and "Only the external birth/Cauchy linear datum is zero."
+        == "D_xi Gamma_closed[P_joint;j_birth] at fixed j_birth, then j_birth=0"
+        and "Only the external BRST-quotiented Cauchy/birth trace is zero."
         in source_ontology["physical_meaning"]
-        and "does not impose a zero birth trace"
+        and "M_f=M11"
         in source_ontology["physical_meaning"]
     ):
         raise ValueError("Gate7 zero-external-source ontology regressed")

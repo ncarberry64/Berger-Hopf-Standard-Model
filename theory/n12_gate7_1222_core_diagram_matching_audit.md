@@ -1,10 +1,10 @@
 # Gate-7 diagram matching after the 1,222-core C2 realization
 
-The E0/C1--E1/C2 internal seam slot is now matched by the exact two-seam
-trace block. Its direct and Schur forms have the same determinant and first
-variation, and `J_ext=0` leaves both internal trace rows intact. The remaining
-gap is realization of `M_E0` and its jet, per-level block values, and the C2
-maximal tail—not operator topology.
+The external zero birth trace selects the compact-history Dirichlet reference
+and leaves its internal response `M_f=M11` nonzero. The physical Gate-7
+operator therefore has one internal `E1/C2` seam; the earlier pre-E0 two-seam
+application is superseded. The remaining gap is the per-level graded seam
+cotangent and C2 maximal tail.
 
 The live assembly is
 
@@ -94,29 +94,16 @@ those three representative pencils from the live dependency.  It does not
 sum the full angular ledger, supply its multiplicities, realize the incoming
 seam, or control the maximal tail beyond the artificial 1,222-core edge.
 
-The incoming `M_f` slot has been re-audited under the owner-authorized source
-ontology.  The old whole-axis enclosure is a valid enclosure of the
-Dirichlet-reference block `M11`, but `J_ext=0` does not impose a zero birth
-trace.  If the retained birth graph is written
+The incoming `M_f` slot has been re-audited under Norman's source ontology and
+the tracked endpoint-role theorem. The external BRST-quotiented birth trace
+is fixed while the complete internal operator is assembled and
+differentiated, and is then set to zero. This selects the Dirichlet reference
+at E0 without zeroing the generally nonzero internal response:
 
-`n_birth+B_birth u_birth=J_ext`,
+`M_f=M11`.
 
-then the physical response is the inverse-free reduction
-
-`(M00+B_birth)X_birth=M01`,
-
-`M_f^phys=M11-M10 X_birth`.
-
-Thus no new C1 bulk theory or second external birth source is missing, but
-the action-owned load
-
-`B_birth=U_R0(M_E0+W_E0)U_R0^dagger`
-
-and its first jet must be instantiated.  The AE2 lift and local contact types
-are available; the nonzero E0 event-side Calderón response and jet are not.
-Equivalently, the E0 arm and birth trace may remain explicit in the unreduced
-joint operator.  The
-terminal Laurent germ remains valid for `M11`.  The certified duration law
+Thus no new C1 bulk theory, second external source, birth load, or pre-E0 arm
+is missing. The terminal Laurent germ remains valid for physical `M_f`. The certified duration law
 and terminal Cauchy jet also
 fix the normalized coefficient path through order `lambda_0^2`, uniformly in
 normalized proper time and without an Euler--Dirac acceleration solve.  Its
@@ -127,11 +114,9 @@ factorized-Dirac coefficient paths in log space for every positive amplitude
 in the box.  The box remains parametric in the action-owned formation
 amplitude and does not select a history member.  Evaluating the already
 identified compact block can be bounded by direct form comparison.  Those
-bounds apply to the `M11` Dirichlet reference for every negative real
-resolvent probe and every positive amplitude in the box; they do not yet
-enclose `M_f^phys`.  In the fermion AE2 sector the C2 load is nonnegative and
-`W_phys=0`, but physical seam invertibility must be rechecked after the birth
-graph reduction.  Its exact value and graded spectral trace remain open.
+bounds apply to `M_f=M11` for every negative real resolvent probe and every
+positive amplitude in the box. In the fermion AE2 sector the C2 load is
+nonnegative and `W_phys=0`. The complete graded seam trace remains open.
 
 The remaining unmatched data are geometric and pathwise.  Modulo the closed
 common-scale direction, the complete radius-plus-duration first-jet norm is
@@ -140,9 +125,8 @@ noncompact maximal tail are not.  The common pair/contact incidence and
 heat-minus-zeta trace functional are valid conditional consumers; broad seam
 intervals and isolated probes cannot replace their realized inputs.
 
-Accordingly the next construction is the action-owned birth graph reduction,
-or the equivalent unreduced birth-trace operator, followed by the
-action-realized per-level joint operator family and then the actual complete joint graded
+Accordingly the next construction is the action-realized per-level E1/C2
+joint operator family and then the actual complete joint graded
 heat-minus-zeta spectral cotangent on the local parametric family.  It is fed
 to the already-certified interval actions and the single signed reverse
 equation, combined with the exact common-scale component, and tested as a

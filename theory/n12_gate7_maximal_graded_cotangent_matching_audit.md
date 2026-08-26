@@ -1,12 +1,12 @@
 # Gate-7 maximal graded cotangent matching audit
 
-Status: `MAXIMAL_GRADED_COTANGENT_TYPE_AND_TWO_SEAM_TOPOLOGY_CLOSED_VALUES_OPEN`.
+Status: `MAXIMAL_GRADED_COTANGENT_TYPE_AND_E1_C2_SEAM_CLOSED_VALUES_TAIL_OPEN`.
 
-The complete E0/C1--E1/C2 trace topology is now the derived two-seam block
-`S_01`; direct and birth-reduced Schur representations have identical
-determinants and first variations.  Thus the operator assembly is no longer a
-missing type.  Its action-realized `M_E0` block, per-level values, first jets,
-and the C2 maximal tail remain open.
+The external zero birth trace selects the compact-history Dirichlet reference
+without zeroing its nonzero internal response `M_f=M11`. The current physical
+operator has the single internal `E1/C2` seam
+`S_AE2=M_f+U_R^dagger M_C2 U_R+W_phys`. The complete graded seam values,
+first jets, and C2 maximal tail remain open; a pre-E0 response is not required.
 
 The retained BRST/statistics ledger already fixes every coefficient in the
 physical heat direct sum.  After the longitudinal gauge/complex-ghost pair is
@@ -54,27 +54,24 @@ The repository matching result is sharp:
 - the grading, multiplicities, heat Fréchet seed, zeta subtraction, block
   reverse order, reset pullback, and projected-Cauchy criterion are valid
   existing matches;
-- the old incoming whole-axis enclosure rigorously controls the Dirichlet
-  reference block `M11`, but its identification with the physical zero-source
-  `M_f` is superseded; the latter requires the action-owned birth-graph Schur
-  reduction or an unreduced joint operator retaining the birth trace;
+- the incoming whole-axis enclosure controls the Dirichlet-reference block
+  `M11`, which is the nonzero physical internal response `M_f` after the
+  external birth trace is set to zero;
 - the outgoing `M_C2` whole-axis object has a rigorous finite-core
   representation, but the broad enclosure does not fix the nonlinear heat
   functional;
 - the 1,222-segment reverse actions are certified, but the finite proof edge
   is not a physical endpoint;
 - no scalar at a proof center represents the physical family;
-- the birth graph is now exactly typed as
-  `B_birth=U_R0(M_E0+W_E0)U_R0^dagger`; its missing datum is the realized
-  nonzero E0 event-side Calderón response and first jet, or an unreduced
-  operator that keeps the E0 arm and C1 birth trace, and
-  then the sharp per-level joint operator family `P_C,k^joint(xi)` and its
+- the current diagram has one internal `E1/C2` seam; `B_birth` and `M_E0` are
+  not Gate-7 slots. The remaining datum is the sharp per-level joint operator
+  family `P_C,k^joint(xi)` and its
   first action jet, or an equivalent decisive trace-functional enclosure, on
   the action-realized maximal history or an actual finite event/canonical
   stop.
 
 Thus neither a new grading, a new external source, more isolated negative-axis
-probes, nor a new response theory is required.  Once the birth-loaded actual
+probes, nor a new response theory is required. Once the actual E1/C2
 joint family is supplied, the already-derived seed is evaluated, the single
 signed reverse sweep is run, and the existing physical quotient tests the
 Cauchy tail before the same-action KKT root.

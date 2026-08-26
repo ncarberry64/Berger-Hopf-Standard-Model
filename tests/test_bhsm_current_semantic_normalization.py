@@ -113,9 +113,9 @@ def test_recovered_owner_ontology_is_complete_and_not_action_derived() -> None:
     ]
     source = ontology["ONTOLOGY_GATE7_ZERO_EXTERNAL_SOURCE"]
     assert source["current_status"] == "OWNER_AUTHORIZED_PHYSICAL_SOURCE_SEMANTICS"
-    assert "before J_ext=0" in source["formula"]
-    assert "does not impose a zero birth trace" in source["physical_meaning"]
-    assert "Impose a homogeneous Dirichlet birth trace." in source[
+    assert "fixed j_birth" in source["formula"]
+    assert "M_f=M11" in source["physical_meaning"]
+    assert "Treat the external birth trace as a dynamical integrated seam." in source[
         "forbidden_interpretations"
     ]
 
@@ -354,18 +354,23 @@ def test_replacement_force_is_constraint_projected_without_reset_selection() -> 
     assert "all 1222 interval transposed exact moving-duration actions are now certified" in dag[
         "G7_08_FORCE"
     ]["physical_meaning"]
-    assert "neither zeros an internal response nor imposes a zero birth trace" in dag[
+    assert "selecting the E0 Dirichlet reference while leaving the nonzero internal response M_f=M11" in dag[
         "G7_08_FORCE"
     ]["physical_meaning"]
-    assert "actual complete joint graded spectral cotangent" in dag[
+    assert "per-level E1/C2 graded seam cotangent" in dag[
         "G7_08_FORCE"
     ]["physical_meaning"]
     assert "neither grading nor multiplicity is missing" in dag[
         "G7_08_FORCE"
     ]["physical_meaning"]
-    assert "action-realized per-level complete joint operator family" in dag[
-        "G7_08_FORCE"
-    ]["physical_meaning"]
+    assert "pre-E0 M_E0 arm and B_birth reduction are therefore not current" in (
+        dag["G7_08_FORCE"]["physical_meaning"]
+    )
+    assert (
+        "artifacts/flagship_integration/"
+        "BHSM_N12_GATE7_EXTERNAL_BIRTH_SOURCE_ROLE_SUPERSESSION.json"
+        in dag["G7_08_FORCE"]["provenance"]
+    )
     assert (
         "artifacts/flagship_integration/"
         "BHSM_N12_C2_SIGNED_DURATION_INCIDENCE_OWNER.json"

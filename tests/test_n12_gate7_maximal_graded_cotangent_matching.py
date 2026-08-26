@@ -23,7 +23,7 @@ def test_maximal_graded_cotangent_matching_audit() -> None:
     payload = json.loads(_run())
     assert payload["validation_passed"] is True
     assert payload["status"] == (
-        "MAXIMAL_GRADED_COTANGENT_TYPE_AND_TWO_SEAM_TOPOLOGY_CLOSED_VALUES_OPEN"
+        "MAXIMAL_GRADED_COTANGENT_TYPE_AND_E1_C2_SEAM_CLOSED_VALUES_TAIL_OPEN"
     )
     ledger = payload["retained_graded_sector_ledger"]
     assert ledger["gauge_transverse"]["samples"]["2"] == 72
@@ -35,15 +35,15 @@ def test_maximal_graded_cotangent_matching_audit() -> None:
     )
     assert payload["matching_audit"][
         "actual_per_level_joint_operator_family"
-    ] == "OPEN_UNINSTANTIATED_TWO_SEAM_VALUES"
+    ] == "OPEN_E1_C2_GRADED_VALUES_AND_MAXIMAL_TAIL"
     assert payload["matching_audit"]["joint_internal_seam_assembly"] == (
-        "VALID_MATCH_TWO_SEAM_TOPOLOGY_DERIVED"
+        "VALID_MATCH_ONE_E1_C2_SEAM"
     )
     assert payload["matching_audit"]["physical_zero_source_incoming_Mf"] == (
-        "ACTUALLY_MISSING_BIRTH_GRAPH_REDUCTION"
+        "VALID_MATCH_M11"
     )
     assert payload["matching_audit"]["E0_event_side_Calderon_and_first_jet"] == (
-        "OPEN_PARENT_HISTORY_REALIZATION"
+        "NOT_REQUIRED_CURRENT_GATE7"
     )
     assert payload["adjudication"]["new_grading_required"] is False
     assert payload["adjudication"]["new_external_or_seam_source_required"] is False

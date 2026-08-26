@@ -74,6 +74,7 @@ SOURCES = (
     "artifacts/flagship_integration/BHSM_N12_GATE7_BIRTH_GRAPH_LOAD_MATCHING_AUDIT.json",
     "artifacts/flagship_integration/BHSM_N12_GATE7_TWO_SEAM_CLOSED_OPERATOR_ASSEMBLY.json",
     "artifacts/flagship_integration/BHSM_N12_GATE7_E0_EVENT_SIDE_RESPONSE_PROVENANCE_AUDIT.json",
+    "artifacts/flagship_integration/BHSM_N12_GATE7_EXTERNAL_BIRTH_SOURCE_ROLE_SUPERSESSION.json",
     "artifacts/flagship_integration/BHSM_N12_GATE7_JOINT_HEAT_COTANGENT_REVERSE_SEED.json",
     "artifacts/flagship_integration/BHSM_N12_GATE7_1222_CORE_DIAGRAM_MATCHING_AUDIT.json",
     "artifacts/flagship_integration/BHSM_N12_GATE7_MAXIMAL_GRADED_COTANGENT_MATCHING_AUDIT.json",
@@ -183,6 +184,7 @@ def verify_current_lineage() -> None:
     birth_load_audit = loaded["artifacts/flagship_integration/BHSM_N12_GATE7_BIRTH_GRAPH_LOAD_MATCHING_AUDIT.json"]
     two_seam = loaded["artifacts/flagship_integration/BHSM_N12_GATE7_TWO_SEAM_CLOSED_OPERATOR_ASSEMBLY.json"]
     e0_provenance = loaded["artifacts/flagship_integration/BHSM_N12_GATE7_E0_EVENT_SIDE_RESPONSE_PROVENANCE_AUDIT.json"]
+    external_birth_role = loaded["artifacts/flagship_integration/BHSM_N12_GATE7_EXTERNAL_BIRTH_SOURCE_ROLE_SUPERSESSION.json"]
     joint_heat_seed = loaded["artifacts/flagship_integration/BHSM_N12_GATE7_JOINT_HEAT_COTANGENT_REVERSE_SEED.json"]
     core_diagram = loaded["artifacts/flagship_integration/BHSM_N12_GATE7_1222_CORE_DIAGRAM_MATCHING_AUDIT.json"]
     graded_cotangent = loaded["artifacts/flagship_integration/BHSM_N12_GATE7_MAXIMAL_GRADED_COTANGENT_MATCHING_AUDIT.json"]
@@ -359,6 +361,11 @@ def verify_current_lineage() -> None:
         == "E0_EVENT_SIDE_PROVENANCE_EXHAUSTED_REALIZED_PARENT_ARM_OPEN"
         and e0_provenance["adjudication"]["new_operator_theory_required"]
         is False
+        and external_birth_role["status"]
+        == "EXTERNAL_BIRTH_TRACE_DIRICHLET_REFERENCE_REAFFIRMED_E0_ARM_REMOVED"
+        and external_birth_role["adjudication"]["M_E0_required"] is False
+        and external_birth_role["adjudication"]
+        ["M_f_equals_M11_at_zero_external_birth_trace"] == "REAFFIRMED"
         and joint_heat_seed["adjudication"]["joint_reverse_seed_formula"]
         == "CLOSED"
         and joint_heat_seed["adjudication"][
@@ -374,7 +381,7 @@ def verify_current_lineage() -> None:
         and graded_cotangent["adjudication"]["new_grading_required"] is False
         and graded_cotangent["matching_audit"][
             "actual_per_level_joint_operator_family"
-        ] == "OPEN_UNINSTANTIATED_TWO_SEAM_VALUES"
+        ] == "OPEN_E1_C2_GRADED_VALUES_AND_MAXIMAL_TAIL"
     ):
         raise RuntimeError("joint Gate7 source/cotangent frontier is not current")
     if force_sign_no_go["claim_boundary"]["universal_force_sign_shortcut"] != "CLOSED_INVALID":
