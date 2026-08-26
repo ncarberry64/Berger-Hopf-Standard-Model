@@ -2506,3 +2506,17 @@ Exact next object:
   at the final cover predictor using the sharpened interval.
 - Gate 7: `ACTIVE`; Gate 8: `LOCKED`; chord 3: `UNAUTHORIZED`;
   frozen predictions unchanged; `FULL_BHSM_COMPLETE=FALSE`.
+
+## N=12 cancelled signed-descriptor graph
+
+- Extended same-action field: `(dY/dtheta,ds/dtheta)=(G_theta,Delta)`.
+- Exact incidence: `Dlambda[G_theta]=Delta`.
+- Descriptor graph defect: `E=s-lambda(Y)` with `dE/dtheta=0`.
+- Ambient extended coordinates: `99`; invariant graph dimension: `98`.
+- Additional physical descriptor degree of freedom: `FALSE`.
+- Independent absolute-`Delta` scalar tube: `RETIRED_AS_WRAPPING_SOURCE`.
+- Binary64 selected eigenvalue used as descriptor: `FALSE`.
+- Exact next owner: sheared Lohner/multiple shooting on the invariant graph,
+  with complete response recentering.
+- Gate 7: `ACTIVE`; Gate 8: `LOCKED`; chord 3: `UNAUTHORIZED`;
+  frozen predictions unchanged; `FULL_BHSM_COMPLETE=FALSE`.

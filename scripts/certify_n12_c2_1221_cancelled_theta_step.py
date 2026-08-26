@@ -115,7 +115,12 @@ def build_payload() -> dict:
             float(line_bounds["D4_ambient_ambient_raw_reduced_raw_reduced"])
             + lambda_two + 2.0 * p2
         )
-        outer = 2.0 * incoming
+        radius_multiplier = float(os.environ.get(
+            "BHSM_N12_EXPANDED_RADIUS_MULTIPLIER", "2.0"
+        ))
+        if not 1.0 < radius_multiplier <= 25.0:
+            raise ValueError("expanded radius multiplier must lie in (1,25]")
+        outer = radius_multiplier * incoming
         radius = outer
     else:
         inverse = _up(1.0 / float(fresh["eigenline_gap_lower"]))
