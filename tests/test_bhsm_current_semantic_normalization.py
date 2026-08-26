@@ -214,6 +214,14 @@ def test_replacement_force_is_constraint_projected_without_reset_selection() -> 
     assert "73 forward Jacobi columns are required for one scalar force" in (
         signed_adjoint["forbidden_interpretations"]
     )
+    duration_incidence = basis["C2_SIGNED_DURATION_INCIDENCE_OWNER"]
+    assert duration_incidence["current_status"] == (
+        "DERIVED_SIGNED_D_Y_DELTA_AND_TRANSPOSED_SEGMENT_ACTION_OPEN"
+    )
+    assert "D_Y Delta/Delta" in duration_incidence["formula"]
+    assert "a norm bound supplies the sign of D_Y Delta" in (
+        duration_incidence["forbidden_interpretations"]
+    )
     core = basis["CORE_TRANSMISSION_NONSELECTION"]
     assert core["current_status"] == (
         "OWNER_HYPOTHESIS_NOT_ACTION_DERIVED_NO_SELECTOR_AUTHORITY"
@@ -297,12 +305,20 @@ def test_replacement_force_is_constraint_projected_without_reset_selection() -> 
         "BHSM_N12_C2_1222_SIGNED_ADJOINT_ASSEMBLY.json"
         in dag["G7_08_FORCE"]["provenance"]
     )
+    assert (
+        "artifacts/flagship_integration/"
+        "BHSM_N12_C2_SIGNED_DURATION_INCIDENCE_OWNER.json"
+        in dag["G7_08_FORCE"]["provenance"]
+    )
     assert "absence of any parametric base history is no longer the blocker" in dag[
         "G7_08_FORCE"
     ]["physical_meaning"]
     assert "one inverse-free reverse state sweep" in dag["G7_08_FORCE"][
         "physical_meaning"
     ]
+    assert "localizing the remaining moving-duration datum" in dag[
+        "G7_08_FORCE"
+    ]["physical_meaning"]
     assert (
         "artifacts/flagship_integration/"
         "BHSM_N12_LOCAL_RESET_TERMINAL_TRANSVERSALITY_AUDIT.json"

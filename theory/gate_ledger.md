@@ -2018,6 +2018,21 @@ Exact next object:
 - Gate 7: `ACTIVE`; Gate 8: `LOCKED`; chord 3: `UNAUTHORIZED`;
   `FULL_BHSM_COMPLETE=FALSE`.
 
+## N=12 C2 signed moving-duration incidence owner
+
+- Exact boundary covectors: `D log R4` and `D log N_boundary`: `CLOSED`.
+- Proper-time density: `q_tau=N_boundary*s/Delta`.
+- Exact incidence:
+  `D q_tau=q_tau*(D log N_boundary-D Delta/Delta)`.
+- Existing committed `D Delta` data: finite operator-norm bounds only.
+- Signed `D_Y Delta` on the exact parametric family:
+  `OPEN_CURRENT_OWNER`.
+- Transposed exact segment-map action and integrated `h_Y,j`:
+  `OPEN_CURRENT_OWNER`.
+- Proof center or zero-`DDelta` formula witness promoted to BHSM value: `FALSE`.
+- Gate 7: `ACTIVE`; Gate 8: `LOCKED`; chord 3: `UNAUTHORIZED`;
+  `FULL_BHSM_COMPLETE=FALSE`.
+
 ## N=12 asymptotic child-exterior connection audit
 
 - Complete analytic infinite branch: `DERIVED_LOCALLY`, with

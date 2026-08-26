@@ -1,0 +1,83 @@
+{
+  "FLAGSHIP_READY": false,
+  "FULL_BHSM_COMPLETE": false,
+  "adjudication": {
+    "actual_projected_zero_source_force": "OPEN",
+    "actual_segment_duration_covector": "OPEN_AFTER_DDELTA_AND_SEGMENT_ACTION",
+    "proof_center_used_as_physical_history": false,
+    "signed_D_Y_Delta_on_exact_parametric_family": "OPEN_CURRENT_OWNER",
+    "signed_log_lapse_incidence": "CLOSED",
+    "signed_log_radius_incidence": "CLOSED",
+    "signed_proper_duration_incidence_formula": "CLOSED",
+    "transposed_exact_segment_map_action": "OPEN_CURRENT_OWNER"
+  },
+  "artifact": "BHSM_N12_C2_SIGNED_DURATION_INCIDENCE_OWNER",
+  "claim_boundary": {
+    "FLAGSHIP_READY": false,
+    "FULL_BHSM_COMPLETE": false,
+    "Gate7": "G7_08_OPEN_SIGNED_DDELTA_SEGMENT_ACTION_SOURCE_AND_TAIL",
+    "Gate8": "LOCKED",
+    "actual_projected_zero_source_force": "OPEN",
+    "actual_signed_duration_covector": "OPEN",
+    "chord_03_authorized": false,
+    "frozen_predictions_changed": false,
+    "signed_D_Y_Delta": "OPEN",
+    "signed_radius_lapse_duration_incidence_formula": "DERIVED"
+  },
+  "classification": "THE_EXACT_ACTION_DUAL_DlogR4_AND_DlogN_COVECTORS_AND_THE_SIGNED_D(Ns/Delta)=Ns/Delta*(DlogN-DDelta/Delta)_INCIDENCE_ARE_DERIVED;_THE_COMMITTED_CONTINUATION_DATA_SUPPLY_ONLY_A_NORM_BOUND_FOR_DDelta,_SO_THE_SIGNED_SELECTED_LINE_HARD_COMPLEMENT_DDelta_COVECTOR_IS_THE_MINIMAL_LOCAL_MOVING_DURATION_GAP",
+  "exact_incidence": {
+    "first_variation": "D_Y q_tau=q_tau*(D_Y log N_boundary-D_Y Delta/Delta)",
+    "formula_witness_DDelta": "ZERO_ONLY_FOR_ALGEBRAIC_CROSSCHECK_NOT_BHSM_VALUE",
+    "log_lapse_action_dual_norm_at_formula_witness": 0.30629696608422236,
+    "log_radius_action_dual_norm_at_formula_witness": 1.0459491100665805,
+    "positive_s_formula_witness_density": 1.3574017435159527e-07,
+    "proper_duration_density": "q_tau=N_boundary(Y)*s/Delta(Y,s)",
+    "segment_duration_covector": "h_Y,j=integral_segment_j D_Y q_tau*J ds"
+  },
+  "exact_next_dependency": "DERIVE_OR_INTERVAL_ENCLOSE_THE_SIGNED_ACTION_DUAL_D_Y_Delta_FROM_THE_SELECTED_LINE_AND_HARD_COMPLEMENT_FIRST_VARIATIONS_ON_THE_CERTIFIED_PARAMETRIC_FAMILY,_THEN_INTEGRATE_THE_TRANSPOSED_SEGMENT_ACTION_TO_SUPPLY_h_Y,j_TO_THE_EXISTING_SIGNED_ADJOINT",
+  "inputs": {
+    "artifacts/flagship_integration/BHSM_N12_C2_1222_MOVING_DURATION_PULLBACK_ENCLOSURE.json": "D31EF9D8E919A27D3069F5DFDC6CEDE42E78C649CD24FAEAF4A910730EE1A918",
+    "artifacts/flagship_integration/BHSM_N12_C2_1222_PARAMETRIC_BASE_FAMILY.json": "289B6E8C686D19980F4F6416C124818A573369C291CBB5CE72E2A01153C0C910",
+    "artifacts/flagship_integration/BHSM_N12_C2_1222_SIGNED_ADJOINT_ASSEMBLY.json": "762E424B73F281E84B0B0C5E4091093E9AF66C9A92D4F49CAD9520C79E8BFDEA",
+    "artifacts/flagship_integration/BHSM_N12_C2_EXACT_CENTER_FIXED_S_FIELD_MATRIX.json": "DDC20099E6B856F9127ADC60DF645BC5D0DFF3563436075CB5F0C2909A97AD00",
+    "artifacts/flagship_integration/BHSM_N12_C2_EXACT_CENTER_FIXED_S_FIELD_MATRIX.npz": "1C16759A03868EE7ED576CBF153EA5CBA7741746740AB8D219A11FED3DEA3D64",
+    "artifacts/flagship_integration/BHSM_N12_C2_EXACT_FIXED_S_FIELD_ORACLE.json": "4265D468E865D68AAA126AA3E27368043FCD24499A5CDE41340A9228F0D4E7FF",
+    "src/bhsm/interface/aether_forward_c2_geometry_incidence.py": "517EF5751810384347B6C8ADD9F2F282BC3EF7ACECB3B6C15AA7F58EF8F68C0E",
+    "theory/n12_c2_signed_duration_incidence_owner.md": "50EF534CA3E1F28F1213A8F5AB39F3479870071E1F037AF0C8B6AC1BD6A37C53"
+  },
+  "matching_audit": [
+    {
+      "candidate": "BHSM_BOUNDARY_RADIUS_ATTACHMENT_GRADIENT",
+      "diagram_slot": "SIGNED_D_log_R4",
+      "verdict": "VALID_MATCH_EXACT"
+    },
+    {
+      "candidate": "BHSM_BOUNDARY_LAPSE_LINEAR_ATTACHMENT",
+      "diagram_slot": "SIGNED_D_log_N_boundary",
+      "verdict": "VALID_MATCH_EXACT"
+    },
+    {
+      "candidate": "STORED_Delta_ACTION_DERIVATIVE_UPPER_BOUNDS",
+      "diagram_slot": "SIGNED_D_Y_Delta_ALONG_EXACT_C2_FAMILY",
+      "verdict": "INVALID_MATCH_NORM_HAS_NO_SIGN_OR_DIRECTION"
+    },
+    {
+      "candidate": "EXACT_INCIDENCE_PLUS_SIGNED_D_Y_Delta_AND_TRANSPOSED_SEGMENT_MAP",
+      "diagram_slot": "SIGNED_SEGMENT_DURATION_COVECTOR",
+      "verdict": "CONDITIONAL_MATCH_D_Y_Delta_AND_SEGMENT_ACTION_OPEN"
+    }
+  ],
+  "status": "SIGNED_RADIUS_LAPSE_AND_DURATION_INCIDENCE_FORMULA_DERIVED_DDELTA_OPEN",
+  "validation": {
+    "exact_fixed_s_field_returns_positive_Delta": true,
+    "exact_log_radius_and_log_lapse_covectors_are_finite": true,
+    "existing_duration_parent_contains_only_a_norm_bound": true,
+    "no_inverse_selector_endpoint_recurrence_scale_fit_gate_or_chord_added": true,
+    "parametric_family_exists_on_every_finite_core_prefix": true,
+    "positive_s_center_has_positive_proper_duration_density": true,
+    "proof_center_not_promoted_to_physical_history": true,
+    "signed_reverse_sweep_is_ready_to_consume_duration_covector": true,
+    "zero_DDelta_witness_is_only_an_algebraic_formula_crosscheck": true
+  },
+  "validation_passed": true
+}
