@@ -16,7 +16,9 @@ C2 = BASE / "BHSM_N12_C2_CLASS_REDUCED_MAXIMAL_RESPONSE.json"
 ADJOINT = BASE / "BHSM_N12_MAXIMAL_FORWARD_ADJOINT_EXHAUSTION.json"
 PULLBACK = BASE / "BHSM_N12_FORCE_ADJOINT_PULLBACK.json"
 QUOTIENT = BASE / "BHSM_N12_INTRINSIC_TIME_QUOTIENT_FORCE_ROOT.json"
-FINITE_CORE = BASE / "BHSM_N12_C2_FINITE_COVER_VOLTERRA_WEYL.json"
+FINITE_CORE = BASE / "BHSM_N12_C2_1222_SEGMENT_FINITE_CORE_DESCRIPTOR.json"
+PARAMETRIC = BASE / "BHSM_N12_C2_1222_PARAMETRIC_BASE_FAMILY.json"
+INTERVAL_ACTIONS = BASE / "BHSM_N12_C2_1222_TRANSPOSED_DURATION_ACTION_COVERAGE.json"
 DINI = BASE / "BHSM_N12_GATE7_AE2_COMPACT_SOURCE_DINI_CLOSURE.json"
 ANGULAR = BASE / "BHSM_N12_GATE7_AE2_ANGULAR_DINI_UNIFORMITY_AUDIT.json"
 HIGH = BASE / "BHSM_N12_FORWARD_E1_HIGH_ENERGY_TRACE_NORM.json"
@@ -25,7 +27,8 @@ SEAM_NO_GO = BASE / "BHSM_N12_NEGATIVE_AXIS_SEAM_HEAT_SYNTHESIS_NO_GO.json"
 NHIM_NO_GO = BASE / "BHSM_N12_ASYMPTOTIC_NHIM_ANGULAR_FORCE_NO_GO.json"
 THEORY = ROOT / "theory/n12_c2_projected_adjoint_cauchy_criterion.md"
 INPUTS = (
-    C2, ADJOINT, PULLBACK, QUOTIENT, FINITE_CORE, DINI, ANGULAR, HIGH,
+    C2, ADJOINT, PULLBACK, QUOTIENT, FINITE_CORE, PARAMETRIC,
+    INTERVAL_ACTIONS, DINI, ANGULAR, HIGH,
     FINITE_ENDPOINT, SEAM_NO_GO, NHIM_NO_GO, THEORY,
 )
 
@@ -88,8 +91,9 @@ def build_payload() -> dict[str, Any]:
     if not all(record.get("validation_passed") is True for record in records):
         raise RuntimeError("validated projected-adjoint parents required")
     (
-        c2, adjoint, pullback, quotient, finite_core, dini, angular, high,
-        finite_endpoint, seam_no_go, nhim_no_go,
+        c2, adjoint, pullback, quotient, finite_core, parametric,
+        interval_actions, dini, angular, high, finite_endpoint, seam_no_go,
+        nhim_no_go,
     ) = records
     witness = _witnesses()
     rows = witness["stable_rate_pair"]["rows"]
@@ -108,7 +112,7 @@ def build_payload() -> dict[str, Any]:
         {
             "diagram_slot": "STATE_PROPAGATOR_U",
             "required_type": "PHYSICAL_QUOTIENT_EULER_DIRAC_TANGENT_PROPAGATOR_ON_Phi_C2",
-            "candidate": "98_SEGMENT_STATE_JACOBI_PRODUCT",
+            "candidate": "1222_SEGMENT_PARAMETRIC_STATE_JACOBI_FAMILY",
             "domain_check": "VALID_ON_CERTIFIED_FINITE_PREFIX_ONLY",
             "provenance_check": "VALID_ACTION_LINEARIZATION",
             "verdict": "ACTUALLY_MISSING_ON_MAXIMAL_TAIL",
@@ -149,7 +153,7 @@ def build_payload() -> dict[str, Any]:
             "diagram_slot": "NUMERICAL_ZERO_SOURCE_FORCE",
             "required_type": "LIMIT_IN_PHYSICAL_RESET_QUOTIENT_DUAL",
             "candidate": "FINITE_CORE_FORCE_NET_F_T",
-            "domain_check": "98_SEGMENT_PREFIX_ONLY",
+            "domain_check": "1222_SEGMENT_PREFIX_ONLY",
             "provenance_check": "VALID_BUT_INCOMPLETE",
             "verdict": "ACTUALLY_MISSING",
         },
@@ -168,12 +172,18 @@ def build_payload() -> dict[str, Any]:
             quotient["claim_boundary"]["force_root_time_quotient_equivalence"]
             == "DERIVED"
         ),
-        "finite_prefix_propagator_bound_is_finite": (
-            math.isfinite(finite_core["finite_history_response"]["state_Jacobi_growth_upper"])
+        "finite_prefix_propagator_bound_is_finite": math.isfinite(
+            parametric["finite_cover_witness"]["complete_fixed_s_growth_upper"]
         ),
         "finite_prefix_not_promoted_to_maximal_tail": (
-            finite_core["claim_boundary"]["complete_M_C2_maximal_response"]
-            == "OPEN_AFTER_CONTINUATION"
+            finite_core["endpoint_event_child_partition"][
+                "far_core_edge_is_physical_endpoint"
+            ] is False
+        ),
+        "all_1222_interval_transposed_duration_actions_are_certified": (
+            interval_actions["adjudication"][
+                "all_1222_interval_transposed_duration_actions"
+            ] == "CERTIFIED"
         ),
         "fixed_channel_Dini_closed": (
             dini["validation"]["arbitrary_positive_admissible_tail_closed"]
@@ -224,7 +234,7 @@ def build_payload() -> dict[str, Any]:
             "THE_EXACT_GATE7_MAXIMAL_FORCE_OWNER_IS_CAUCHY_CONVERGENCE_OF_"
             "THE_FINITE_CORE_FORCE_NET_IN_THE_PHYSICAL_RESET_QUOTIENT_DUAL;_"
             "THE_AMBIENT_WEIGHTED_NORM_BOUND_IS_SUFFICIENT_NOT_NECESSARY,_"
-            "BUT_THE_CURRENT_C2_CLASS_AND_98_SEGMENT_PREFIX_DO_NOT_CLOSE_"
+            "BUT_THE_CURRENT_C2_CLASS_AND_1222_SEGMENT_PREFIX_DO_NOT_CLOSE_"
             "THE_ACTUAL_PROPAGATOR_FULL_GRADED_HEAT_OR_DIRECT_ZETA_TAILS"
         ),
         "theorem": {
@@ -252,9 +262,14 @@ def build_payload() -> dict[str, Any]:
         },
         "matching_audit": slot_audit,
         "finite_prefix_evidence": {
-            "segment_count": finite_core["finite_history_response"]["segment_count"],
-            "proper_duration_interval": finite_core["finite_history_response"]["proper_duration_interval"],
-            "state_Jacobi_growth_upper": finite_core["finite_history_response"]["state_Jacobi_growth_upper"],
+            "segment_count": finite_core["coefficient_path"]["segment_count"],
+            "proper_duration_interval": finite_core["coefficient_path"]["proper_duration_interval"],
+            "state_Jacobi_growth_upper": parametric["finite_cover_witness"][
+                "complete_fixed_s_growth_upper"
+            ],
+            "interval_transposed_duration_actions": interval_actions[
+                "adjudication"
+            ]["all_1222_interval_transposed_duration_actions"],
             "role": "FINITE_FORCE_NET_PREFIX_NOT_A_MAXIMAL_TAIL_BOUND_OR_ENDPOINT",
         },
         "logical_witnesses": witness,
@@ -263,6 +278,7 @@ def build_payload() -> dict[str, Any]:
             "physical_pullback_and_quotient_slot": "CLOSED",
             "fixed_channel_source_Dini_slot": "CLOSED_DO_NOT_REOPEN",
             "fixed_channel_high_energy_slot": "CLOSED_DO_NOT_REOPEN",
+            "finite_prefix_interval_duration_action_slot": "CLOSED_THROUGH_1222",
             "actual_maximal_state_propagator_tail": "OPEN",
             "actual_infinite_route_full_graded_heat_cotangent": "OPEN",
             "actual_direct_zeta_tail": "OPEN",

@@ -30,7 +30,8 @@ not be inserted as a selector.
 
 The C2 enclosure-class theorem fixes the class, history domain, channel set,
 and endpoint dichotomy.  It does not fix the continuous propagator or the
-graded cotangent.  The 98-segment certificate therefore bounds a finite prefix
+graded cotangent.  The 1,222-segment parametric-family certificate and its
+complete interval transposed-duration action cover therefore bound a finite prefix
 only.  Fixed-channel source-Dini and compact-source high-energy smoothing close
 two spectral slots, but neither is a temporal estimate for the product above,
 and the infinite-route angular contraction and direct zeta tail remain open.
@@ -41,4 +42,3 @@ On an infinite Friedrichs route, the next action theorem may prove the quotient
 Cauchy tail directly; it need not prove the stronger ambient absolute norm
 bound.  Until one of those alternatives is certified, the numerical C2 force,
 same-action saddle, and physical Hessian remain open.
-
