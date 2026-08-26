@@ -174,7 +174,7 @@ def test_replacement_force_is_constraint_projected_without_reset_selection() -> 
     )
     exact_field = basis["EXACT_FIXED_S_C2_FIELD"]
     assert exact_field["current_status"] == (
-        "CERTIFIED_PARAMETRIC_BASE_OR_COUPLED_KKT_STILL_OPEN"
+        "CERTIFIED_FINITE_CORE_PARAMETRIC_EXISTENCE_NUMERICAL_OR_INTERVAL_REALIZATION_OPEN"
     )
     launch = basis["RESET_GENERATED_C2_LAUNCH_CHART"]
     assert launch["current_status"] == (
@@ -205,6 +205,14 @@ def test_replacement_force_is_constraint_projected_without_reset_selection() -> 
     assert "D_s J_theta=D_Y F_s J_theta" in parametric_base["formula"]
     assert "the 1222 proof edge is an event or stop" in (
         parametric_base["forbidden_interpretations"]
+    )
+    signed_adjoint = basis["C2_1222_SIGNED_ADJOINT_ASSEMBLY"]
+    assert signed_adjoint["current_status"] == (
+        "DERIVED_NUMERICAL_PARAMETRIC_OR_INTERVAL_JOINT_SOURCE_ADJOINT_OPEN"
+    )
+    assert "C_h,j*h_Y,j" in signed_adjoint["formula"]
+    assert "73 forward Jacobi columns are required for one scalar force" in (
+        signed_adjoint["forbidden_interpretations"]
     )
     core = basis["CORE_TRANSMISSION_NONSELECTION"]
     assert core["current_status"] == (
@@ -284,9 +292,17 @@ def test_replacement_force_is_constraint_projected_without_reset_selection() -> 
         "BHSM_N12_C2_1222_PARAMETRIC_BASE_FAMILY.json"
         in dag["G7_08_FORCE"]["provenance"]
     )
+    assert (
+        "artifacts/flagship_integration/"
+        "BHSM_N12_C2_1222_SIGNED_ADJOINT_ASSEMBLY.json"
+        in dag["G7_08_FORCE"]["provenance"]
+    )
     assert "absence of any parametric base history is no longer the blocker" in dag[
         "G7_08_FORCE"
     ]["physical_meaning"]
+    assert "one inverse-free reverse state sweep" in dag["G7_08_FORCE"][
+        "physical_meaning"
+    ]
     assert (
         "artifacts/flagship_integration/"
         "BHSM_N12_LOCAL_RESET_TERMINAL_TRANSVERSALITY_AUDIT.json"

@@ -1998,6 +1998,26 @@ Exact next object:
 - Gate 7: `ACTIVE`; Gate 8: `LOCKED`; chord 3: `UNAUTHORIZED`;
   `FULL_BHSM_COMPLETE=FALSE`.
 
+## N=12 C2 signed finite-core adjoint assembly
+
+- Exact family scope: every member of the certified local 73-parameter C2
+  family through core 1222.
+- Signed coefficient inputs: `1223` node log-radius weights and `1222`
+  moving-proper-duration weights in each of the three stored channels.
+- Backward recurrence:
+  `p_j=C_x,j x_Y,j+C_h,j h_Y,j+Phi_Y,j^dagger p_(j+1)`.
+- Reset composition:
+  `g_reset=Z^dagger d_upstream_interface+B^dagger p_0`.
+- Forward Jacobi columns required for one scalar force: `0`.
+- Full Euler--Dirac inverse formed: `FALSE`.
+- Proof center used as a physical history: `FALSE`.
+- Signed assembly equation: `CLOSED`.
+- Numerical parametric/interval BHSM adjoint, complete upstream covector,
+  actual graded source contraction, and maximal projected tail:
+  `OPEN_CURRENT_OWNER`.
+- Gate 7: `ACTIVE`; Gate 8: `LOCKED`; chord 3: `UNAUTHORIZED`;
+  `FULL_BHSM_COMPLETE=FALSE`.
+
 ## N=12 asymptotic child-exterior connection audit
 
 - Complete analytic infinite branch: `DERIVED_LOCALLY`, with

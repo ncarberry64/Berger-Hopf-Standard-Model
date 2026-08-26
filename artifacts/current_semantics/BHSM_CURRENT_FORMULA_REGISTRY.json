@@ -14,6 +14,7 @@
     "artifacts/flagship_integration/BHSM_N12_ASYMPTOTIC_NHIM_ANGULAR_FORCE_NO_GO.json": "8CADFCD9FDD2D5174ACF37C167E88DD73091391D834027CDBBF8FD9CEF768B01",
     "artifacts/flagship_integration/BHSM_N12_ASYMPTOTIC_NHIM_CAPTURE_BASIN.json": "A2FE14D141A18B39CF27F568A4B9417246DD49DA95158CDDF5489EB303F53FA4",
     "artifacts/flagship_integration/BHSM_N12_C2_1222_PARAMETRIC_BASE_FAMILY.json": "289B6E8C686D19980F4F6416C124818A573369C291CBB5CE72E2A01153C0C910",
+    "artifacts/flagship_integration/BHSM_N12_C2_1222_SIGNED_ADJOINT_ASSEMBLY.json": "762E424B73F281E84B0B0C5E4091093E9AF66C9A92D4F49CAD9520C79E8BFDEA",
     "artifacts/flagship_integration/BHSM_N12_C2_CLASS_REDUCED_MAXIMAL_RESPONSE.json": "DA82F5036004E115A13E53B369B51A92FD9A21B81FFEF44A0656C4DB11FF38B8",
     "artifacts/flagship_integration/BHSM_N12_C2_EXACT_FIXED_S_FIELD_ORACLE.json": "4265D468E865D68AAA126AA3E27368043FCD24499A5CDE41340A9228F0D4E7FF",
     "artifacts/flagship_integration/BHSM_N12_C2_FIXED_SEED_UPSTREAM_FORCE_OWNER.json": "396F39A4F98ECE7F903221EFD01A1C126479EE56DC4F8A72C976501D0D4F8A71",
@@ -649,7 +650,7 @@
         "artifacts/flagship_integration/BHSM_N12_C2_EXACT_FIXED_S_FIELD_ORACLE.json": "4265D468E865D68AAA126AA3E27368043FCD24499A5CDE41340A9228F0D4E7FF"
       },
       "canonical_id": "EXACT_FIXED_S_C2_FIELD",
-      "current_status": "CERTIFIED_PARAMETRIC_BASE_OR_COUPLED_KKT_STILL_OPEN",
+      "current_status": "CERTIFIED_FINITE_CORE_PARAMETRIC_EXISTENCE_NUMERICAL_OR_INTERVAL_REALIZATION_OPEN",
       "dimensions": "DIMENSIONLESS_OR_OPERATOR_TYPED",
       "domain": "regular C2 selected-line chart with s>=0 and positive denominator",
       "downstream_consumers": [
@@ -815,6 +816,42 @@
       "physical_meaning": "A nonempty local 73-parameter family of exact reset-generated C2 histories and first Jacobi fields exists through every prefix of the 1222-segment regular finite core; proof centers remain enclosure data.",
       "provenance": [
         "artifacts/flagship_integration/BHSM_N12_C2_1222_PARAMETRIC_BASE_FAMILY.json"
+      ],
+      "semantic_layer": "MATHEMATICAL_OBJECT",
+      "source_weighting_required": false,
+      "superseded_meanings": [],
+      "tests": [
+        "test_required_fields"
+      ]
+    },
+    {
+      "action_version": "BHSM-AE-2.0.0",
+      "artifact_hashes": {
+        "artifacts/flagship_integration/BHSM_N12_C2_1222_SIGNED_ADJOINT_ASSEMBLY.json": "762E424B73F281E84B0B0C5E4091093E9AF66C9A92D4F49CAD9520C79E8BFDEA"
+      },
+      "canonical_id": "C2_1222_SIGNED_ADJOINT_ASSEMBLY",
+      "current_status": "DERIVED_NUMERICAL_PARAMETRIC_OR_INTERVAL_JOINT_SOURCE_ADJOINT_OPEN",
+      "dimensions": "DIMENSIONLESS_OR_OPERATOR_TYPED",
+      "domain": "exact member of the regular 1222-segment C2 family with action-owned segment-map and duration first jets",
+      "downstream_consumers": [
+        "G7_08_FORCE",
+        "G7_09_SADDLE"
+      ],
+      "equivalent_forms": [],
+      "forbidden_interpretations": [
+        "73 forward Jacobi columns are required for one scalar force",
+        "proof-center coefficient paths evaluate the physical signed force",
+        "the downstream adjoint replaces the complete upstream history covector",
+        "the signed recurrence supplies the graded heat-minus-zeta source"
+      ],
+      "formula": "p_N=C_x,N*x_Y,N+g_T; p_j=C_x,j*x_Y,j+C_h,j*h_Y,j+Phi_Y,j^dagger*p_(j+1); g_reset=Z^dagger*d_upstream_interface+B^dagger*p_0",
+      "frozen_output_status": "NOT_FROZEN_OUTPUT",
+      "mathematical_class": "INVERSE_FREE_SIGNED_HISTORY_COTANGENT_PULLBACK",
+      "observable_status": "NOT_AN_OBSERVABLE",
+      "ontology_version": "BHSM-AE2-ONTOLOGY-1.0.0",
+      "physical_meaning": "On every exact finite-core family member, one reverse sweep pulls the signed radius and moving-duration coefficient cotangent to the C2 seed and then through the reset seam; the complete upstream covector remains part of the same joint force.",
+      "provenance": [
+        "artifacts/flagship_integration/BHSM_N12_C2_1222_SIGNED_ADJOINT_ASSEMBLY.json"
       ],
       "semantic_layer": "MATHEMATICAL_OBJECT",
       "source_weighting_required": false,
