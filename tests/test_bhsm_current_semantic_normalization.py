@@ -321,7 +321,7 @@ def test_replacement_force_is_constraint_projected_without_reset_selection() -> 
     ]["physical_meaning"]
     ddelta_row = basis["C2_DIRECT_DDELTA_ROW_RECONNAISSANCE"]
     assert ddelta_row["current_status"] == (
-        "INVERSE_FREE_b_DIRECT_DELTA_ONE_ROW_AND_HARD_ADJOINT_REDUCTION_DERIVED_RIGOROUS_ROW_86_REMAINDER_OPEN"
+        "COMPLETE_LOCAL_ADJOINT_bc_ROW_ASSEMBLY_DERIVED_RIGOROUS_ROW_86_REMAINDER_OPEN"
     )
     assert "b_Psi=<Psi,f>" in ddelta_row["formula"]
     assert any(

@@ -114,3 +114,71 @@ At the reference center the structured adjoint is orders of magnitude below
 the gap-only estimate.  That center replay validates the algebra and exposes
 the right proof variable; it does not replace the still-required outward-
 rounded tube enclosure.
+
+## Complete local-adjoint assembly of the `bc` row
+
+The same self-adjoint hard-resolvent identity removes every moving
+`Psi_h` occurrence, not only `Psi_ih`.  Write `A_u=D_u H`, fix the decisive
+direction `i`, and define
+
+```text
+Psi_i = S Q A_i Psi,
+k_i(v) = D4 S_action[i,v,Psi,Psi],
+w3  = S Q k_i,
+w5  = S Q A_(Psi_i) Psi,
+wI  = S Q (A_i-lambda_i) z,
+wN  = S Psi_i.
+```
+
+Then the complete cubic Hessian row is
+
+```text
+c_ih = D5S[i,h,Psi^3]
+     + 3 D4S[h,Psi_i,Psi^2]
+     + 3 D3S[h,Psi,w3]
+     + 3 D4S[i,h,Psi,z]
+     + 3 D3S[h,Psi,wI]
+     + 3 D3S[h,z,Psi_i]
+     - 3 <z,Psi_i> D3S[h,Psi,Psi]
+     - 3 c D3S[h,Psi,wN]
+     + 6 D3S[h,Psi,w5].
+```
+
+For the inverse-free coefficient, use
+
+```text
+(H-lambda)V_hard + b Psi = f,
+wVI = S Q (A_i-lambda_i)V_hard,
+wfi = S Q f_i.
+```
+
+Differentiating `b=<Psi,f>` and eliminating `Psi_h` and `Psi_ih` gives
+
+```text
+b_ih = -b D3S[h,Psi,wN]
+       -D4S[i,h,Psi,V_hard]
+       -D3S[h,Psi,wVI]
+       -D3S[h,V_hard,Psi_i]
+       +<V_hard,Psi_i>D3S[h,Psi,Psi]
+       +<Psi_i,f_h>
+       +D3S[h,Psi,wfi]
+       +<Psi,f_ih>.
+```
+
+The first rows have the corresponding local forms
+
+```text
+c_h = D4S[h,Psi^3] + 3 D3S[h,Psi,z],
+b_h = <Psi,f_h> - D3S[h,Psi,V_hard].
+```
+
+Consequently
+
+```text
+D_ih(cb) = b c_ih + b_i c_h + c_i b_h + c b_ih
+```
+
+contains only finite local action/source jets and a finite list of hard
+adjoints.  Neither the full moving first-eigenline matrix nor any mixed
+second-eigenline vector is an input to the interval proof.  This is an exact
+same-action recombination; it adds no inverse, selector, or physical datum.

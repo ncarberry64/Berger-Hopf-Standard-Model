@@ -450,6 +450,26 @@ def build_payload(*, recompute: bool = True) -> dict[str, Any]:
                 "D3S[Psi_ih,Psi,Psi]=<z,G_ih>-"
                 "c*<Psi_i,Psi_h>"
             ),
+            "local_first_rows": (
+                "c_h=D4S[h,Psi^3]+3D3S[h,Psi,z];_"
+                "b_h=<Psi,f_h>-D3S[h,Psi,V_hard]"
+            ),
+            "local_product_row": (
+                "D_ih(cb)=b*c_ih+b_i*c_h+c_i*b_h+c*b_ih"
+            ),
+            "local_c_second_row": (
+                "c_ih=D5S[i,h,Psi^3]+3D4S[h,Psi_i,Psi^2]+"
+                "3D3S[h,Psi,w3]+3D4S[i,h,Psi,z]+"
+                "3D3S[h,Psi,wI]+3D3S[h,z,Psi_i]-"
+                "3<z,Psi_i>D3S[h,Psi,Psi]-3cD3S[h,Psi,wN]+"
+                "6D3S[h,Psi,w5]"
+            ),
+            "local_b_second_row": (
+                "b_ih=-bD3S[h,Psi,wN]-D4S[i,h,Psi,V_hard]-"
+                "D3S[h,Psi,wVI]-D3S[h,V_hard,Psi_i]+"
+                "<V_hard,Psi_i>D3S[h,Psi,Psi]+<Psi_i,f_h>+"
+                "D3S[h,Psi,wfi]+<Psi,f_ih>"
+            ),
         },
         "reference_replay": {
             "reference_node": REFERENCE_NODE,
@@ -508,15 +528,19 @@ def build_payload(*, recompute: bool = True) -> dict[str, Any]:
             "mixed_second_eigenline_contraction": (
                 "REDUCED_TO_ONE_HARD_ADJOINT_AND_LOCAL_SOURCE"
             ),
+            "moving_eigenline_derivative_matrix_required_for_cb_row": False,
+            "complete_cb_row_assembly": (
+                "FINITE_LOCAL_ACTION_SOURCE_JETS_AND_HARD_ADJOINTS_ONLY"
+            ),
             "rigorous_dominant_row_enclosure_on_exact_tube": "OPEN",
             "physical_event_stop_or_zero_force_found": False,
             "prior_coarse_product_ball": "VALID_BUT_SUPERSEDED_AS_NEXT_ROUTE",
         },
         "exact_next_dependency": (
-            "OUTWARD_ROUND_THE_LOCAL_G_86h_SOURCE_CONTRACTION_AGAINST_THE_"
-            "HARD_ADJOINT_AND_THE_INVERSE_FREE_b_Psi_SECOND_VARIATION_ON_"
-            "THE_NODE_1214_EXACT_TUBE,_THEN_ADD_THE_s_SUPPRESSED_HARD_"
-            "RESPONSE_ROW_AND_PROVE_THE_TOTAL_BELOW_14.6225"
+            "OUTWARD_ROUND_THE_FINITE_LOCAL_ACTION_SOURCE_JETS_AND_HARD_"
+            "ADJOINTS_IN_THE_EXACT_c_86h_AND_b_86h_FORMULAS_ON_THE_NODE_"
+            "1214_TUBE,_THEN_ADD_THE_s_SUPPRESSED_HARD_RESPONSE_ROW_AND_"
+            "PROVE_THE_TOTAL_BELOW_14.6225"
         ),
         "claim_boundary": {
             "Gate7": "G7_08_OPEN_ONE_DIRECT_D2DELTA_ROW_REMAINDER_SEGMENT_ACTION_SOURCE_AND_TAIL",

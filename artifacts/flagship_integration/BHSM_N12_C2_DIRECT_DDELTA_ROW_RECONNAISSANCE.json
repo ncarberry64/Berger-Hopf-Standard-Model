@@ -2,12 +2,14 @@
   "FLAGSHIP_READY": false,
   "FULL_BHSM_COMPLETE": false,
   "adjudication": {
+    "complete_cb_row_assembly": "FINITE_LOCAL_ACTION_SOURCE_JETS_AND_HARD_ADJOINTS_ONLY",
     "diagnostic_row_scale": "STABLE_ON_TWO_MESHES",
     "direct_signed_Delta_recombination": "DERIVED",
     "full_98_by_98_D2Delta_norm_required": false,
     "hard_response_evaluation": "SPECTRAL_COMPLEMENT_NOT_BORDERED_SOLVE",
     "mixed_second_eigenline_contraction": "REDUCED_TO_ONE_HARD_ADJOINT_AND_LOCAL_SOURCE",
     "mixed_second_eigenline_vector_required": false,
+    "moving_eigenline_derivative_matrix_required_for_cb_row": false,
     "one_dominant_D2Delta_row_sufficient": true,
     "physical_event_stop_or_zero_force_found": false,
     "prior_coarse_product_ball": "VALID_BUT_SUPERSEDED_AS_NEXT_ROUTE",
@@ -34,11 +36,15 @@
     "adjoint_contraction": "D3S[Psi_ih,Psi,Psi]=<z,G_ih>-c*<Psi_i,Psi_h>",
     "dominant_component_transport": "abs(D_i_Delta_exact)>=abs(D_i_Delta_center)-r_seed-sup_row_norm_i(D2Delta)*r_tube",
     "hard_adjoint": "z=S*Q*g,_g(v)=D3S[v,Psi,Psi]",
+    "local_b_second_row": "b_ih=-bD3S[h,Psi,wN]-D4S[i,h,Psi,V_hard]-D3S[h,Psi,wVI]-D3S[h,V_hard,Psi_i]+<V_hard,Psi_i>D3S[h,Psi,Psi]+<Psi_i,f_h>+D3S[h,Psi,wfi]+<Psi,f_ih>",
+    "local_c_second_row": "c_ih=D5S[i,h,Psi^3]+3D4S[h,Psi_i,Psi^2]+3D3S[h,Psi,w3]+3D4S[i,h,Psi,z]+3D3S[h,Psi,wI]+3D3S[h,z,Psi_i]-3<z,Psi_i>D3S[h,Psi,Psi]-3cD3S[h,Psi,wN]+6D3S[h,Psi,w5]",
+    "local_first_rows": "c_h=D4S[h,Psi^3]+3D3S[h,Psi,z];_b_h=<Psi,f_h>-D3S[h,Psi,V_hard]",
+    "local_product_row": "D_ih(cb)=b*c_ih+b_i*c_h+c_i*b_h+c*b_ih",
     "numerator": "N=b_psi*Psi+s*V_hard",
     "second_eigenline_derivative": "Psi_ih=S*Q*G_ih-<Psi_i,Psi_h>*Psi,_S=(lambda-H)_hard^{-1}",
     "sufficient_row_test": "sup_row_norm_i(D2Delta)<(abs(D_i_Delta_center)-r_seed)/r_tube"
   },
-  "exact_next_dependency": "OUTWARD_ROUND_THE_LOCAL_G_86h_SOURCE_CONTRACTION_AGAINST_THE_HARD_ADJOINT_AND_THE_INVERSE_FREE_b_Psi_SECOND_VARIATION_ON_THE_NODE_1214_EXACT_TUBE,_THEN_ADD_THE_s_SUPPRESSED_HARD_RESPONSE_ROW_AND_PROVE_THE_TOTAL_BELOW_14.6225",
+  "exact_next_dependency": "OUTWARD_ROUND_THE_FINITE_LOCAL_ACTION_SOURCE_JETS_AND_HARD_ADJOINTS_IN_THE_EXACT_c_86h_AND_b_86h_FORMULAS_ON_THE_NODE_1214_TUBE,_THEN_ADD_THE_s_SUPPRESSED_HARD_RESPONSE_ROW_AND_PROVE_THE_TOTAL_BELOW_14.6225",
   "inputs": {
     "artifacts/flagship_integration/BHSM_N12_C2_1222_SEGMENT_FINITE_CORE_DESCRIPTOR.json": "0CDC9B9EF09AFA70AA7F5E225F6D49A4FCD27CADAD5CDFA4A062FBE04B960445",
     "artifacts/flagship_integration/BHSM_N12_C2_1222_SEGMENT_FINITE_CORE_DESCRIPTOR.npz": "90E0F02751031F879C82C4EA8ED3ACEBBF278900ED4FBD47C5612CD13F91AF11",
@@ -50,7 +56,7 @@
     "artifacts/flagship_integration/BHSM_N12_C2_SIGNED_DDELTA_SEED_TRANSPORT_AUDIT.json": "DADC6DB8D100EA250C598A52C59FEE2E847C30DB9C094CD9E913B393BDF53ABB",
     "src/bhsm/interface/aether_forward_c2_descriptor_cover.py": "A5A9D9425ECACE2C672B94BB3E4507389F935C7FA473D8B7C3FD986E81ADAB3A",
     "src/bhsm/interface/aether_n3_exact_full_local_action_jet_v17_60.py": "51114F2A47CA1743B8FA1D942F2DD80322929BE1DD4AEB9CAB08C45E3D795F7C",
-    "theory/n12_c2_direct_ddelta_row_reconnaissance.md": "890A61EF46F02FFD3AEE2ADDF7D263BE85EE876B6554804E7E9E10A65017D1C3"
+    "theory/n12_c2_direct_ddelta_row_reconnaissance.md": "8457CC3AC7A9D8A1147DC1A19AC23554CA6BB08E345A9E5BC30F501FCC0AADB2"
   },
   "reference_replay": {
     "certified_Delta_interval": [

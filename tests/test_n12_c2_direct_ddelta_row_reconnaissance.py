@@ -28,6 +28,12 @@ def test_direct_delta_identity_and_one_row_reduction_are_fail_closed() -> None:
     assert payload["adjudication"]["mixed_second_eigenline_contraction"] == (
         "REDUCED_TO_ONE_HARD_ADJOINT_AND_LOCAL_SOURCE"
     )
+    assert payload["adjudication"][
+        "moving_eigenline_derivative_matrix_required_for_cb_row"
+    ] is False
+    assert payload["adjudication"]["complete_cb_row_assembly"] == (
+        "FINITE_LOCAL_ACTION_SOURCE_JETS_AND_HARD_ADJOINTS_ONLY"
+    )
     assert payload["adjudication"]["rigorous_dominant_row_enclosure_on_exact_tube"] == "OPEN"
     assert payload["adjudication"]["physical_event_stop_or_zero_force_found"] is False
 

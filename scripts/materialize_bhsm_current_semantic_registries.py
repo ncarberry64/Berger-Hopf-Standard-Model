@@ -266,6 +266,12 @@ def verify_current_lineage() -> None:
         and ddelta_row["adjudication"]["mixed_second_eigenline_contraction"]
         == "REDUCED_TO_ONE_HARD_ADJOINT_AND_LOCAL_SOURCE"
         and ddelta_row["adjudication"][
+            "moving_eigenline_derivative_matrix_required_for_cb_row"
+        ]
+        is False
+        and ddelta_row["adjudication"]["complete_cb_row_assembly"]
+        == "FINITE_LOCAL_ACTION_SOURCE_JETS_AND_HARD_ADJOINTS_ONLY"
+        and ddelta_row["adjudication"][
             "rigorous_dominant_row_enclosure_on_exact_tube"
         ]
         == "OPEN"
