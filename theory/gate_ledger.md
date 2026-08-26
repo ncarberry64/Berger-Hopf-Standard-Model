@@ -2349,3 +2349,24 @@ Exact next object:
   or arbitrary infinite tails.
 - Gate 7: `ACTIVE`; Gate 8: `LOCKED`; chord 3: `UNAUTHORIZED`;
   `FULL_BHSM_COMPLETE=FALSE`.
+
+## N=12 Gate-7 reset-to-capture diagram matching
+
+- Forward diagram: `AE2 reset chart -> fixed-s birth collar -> regular`
+  `proper-time flow -> compactified capture chart -> stable tube`.
+- Reset-generated launch domain: `72+1=73`, no selector: `CERTIFIED`.
+- Nonempty exact local family through every 1,222-core prefix: `CERTIFIED`.
+- Exact regular chart change for `s>0`:
+  `d tau/ds=N_boundary*s/Delta>0` and
+  `V_tau=(Delta/(N_boundary*s))*F_s`.
+- Separate post-collar physical vector-field derivation required: `FALSE`;
+  the proper-time callback is the same action orbit under an
+  orientation-preserving reparameterization.
+- Executable 98-state to 74-component nonlinear compactified capture map,
+  including intrinsic quotient, common-scale recentering, and first/mixed
+  second jets: `OPEN_CURRENT_OWNER`.
+- Validated nonempty reset-set propagation or nonzero degree into the strict
+  quantitative capture tube, with canonical-stop monitors: `OPEN_AFTER_MAP`.
+- Another microscopic chord as the only authorized route: `FALSE`.
+- Gate 7: `ACTIVE`; Gate 8: `LOCKED`; chord 3: `UNAUTHORIZED`;
+  frozen predictions unchanged; `FULL_BHSM_COMPLETE=FALSE`.
