@@ -184,6 +184,14 @@ def test_replacement_force_is_constraint_projected_without_reset_selection() -> 
     assert "the 67-dimensional fixed-seed lift kernel annihilates the full two-sided seam force" in (
         launch["forbidden_interpretations"]
     )
+    launch_adjoint = basis["C2_LAUNCH_ADJOINT_AND_SEAM_SPLIT"]
+    assert launch_adjoint["current_status"] == (
+        "DERIVED_ACTUAL_SEAM_AND_C2_ADJOINT_COVECTORS_OPEN"
+    )
+    assert "K^dagger*B^dagger*p_0=0" in launch_adjoint["formula"]
+    assert "discard the 67 fixed-seed kernel from the full seam saddle" in (
+        launch_adjoint["forbidden_interpretations"]
+    )
     core = basis["CORE_TRANSMISSION_NONSELECTION"]
     assert core["current_status"] == (
         "OWNER_HYPOTHESIS_NOT_ACTION_DERIVED_NO_SELECTOR_AUTHORITY"
@@ -239,9 +247,17 @@ def test_replacement_force_is_constraint_projected_without_reset_selection() -> 
     assert "not full two-sided seam-force invariance" in dag["G7_08_FORCE"][
         "physical_meaning"
     ]
+    assert "force problem splits into an actual direct two-sided seam covector" in dag[
+        "G7_08_FORCE"
+    ]["physical_meaning"]
     assert (
         "artifacts/flagship_integration/"
         "BHSM_N12_C2_RESET_GENERATED_LAUNCH_CHART.json"
+        in dag["G7_08_FORCE"]["provenance"]
+    )
+    assert (
+        "artifacts/flagship_integration/"
+        "BHSM_N12_C2_RESET_LAUNCH_ADJOINT_INTERFACE.json"
         in dag["G7_08_FORCE"]["provenance"]
     )
     assert (

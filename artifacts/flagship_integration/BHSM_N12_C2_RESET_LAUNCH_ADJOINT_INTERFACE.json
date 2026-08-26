@@ -1,0 +1,106 @@
+{
+  "FLAGSHIP_READY": false,
+  "FULL_BHSM_COMPLETE": false,
+  "adjudication": {
+    "67_kernel_direct_seam_stationarity": "OPEN_ACTUAL_EVALUATION",
+    "67_kernel_directions_may_be_discarded_from_full_seam_saddle": false,
+    "67_kernel_downstream_C2_contribution": "IDENTICALLY_ZERO",
+    "73_coordinate_C2_launch_force": "OPEN_ACTUAL_ADJOINT",
+    "73_forward_Jacobi_columns_required_for_scalar_force": false,
+    "one_C2_adjoint_covector_required": true,
+    "zero_source_force": "OPEN"
+  },
+  "artifact": "BHSM_N12_C2_RESET_LAUNCH_ADJOINT_INTERFACE",
+  "claim_boundary": {
+    "C2_maximal_or_finite_endpoint_adjoint": "OPEN_CURRENT_OWNER",
+    "FLAGSHIP_READY": false,
+    "FULL_BHSM_COMPLETE": false,
+    "Gate7": "G7_08_OPEN_TWO_COMPLEMENTARY_FORCE_BLOCKS",
+    "Gate8": "LOCKED",
+    "actual_zero_source_force": "OPEN",
+    "chord_03_authorized": false,
+    "fixed_seed_kernel_seam_force": "OPEN_ACTUAL_EVALUATION",
+    "frozen_predictions_changed": false,
+    "launch_adjoint_interface": "DERIVED",
+    "same_action_saddle": "WAITING_ON_FORCE"
+  },
+  "classification": "THE_DOWNSTREAM_C2_ADJOINT_PULLBACK_FACTORS_THROUGH_THE_72_DIMENSIONAL_RESET_SEED_IMAGE_AND_ANNIHILATES_ITS_67_DIMENSIONAL_KERNEL;_THE_KERNEL_STATIONARITY_EQUATION_IS_THEREFORE_PURELY_A_DIRECT_TWO_SIDED_SEAM_CONDITION,_WHILE_ONE_ADJOINT_COVECTOR_SUPPLIES_THE_73_COORDINATE_OUTGOING_LAUNCH_FORCE",
+  "dimension_ledger": {
+    "fixed_C2_seed_lift_kernel": 67,
+    "full_reset_tangent": 139,
+    "identities": [
+      "139=72+67",
+      "73=72+1"
+    ],
+    "natural_C2_launch": 73,
+    "outgoing_C2_seed_image": 72,
+    "outgoing_descriptor_direction": 1
+  },
+  "exact_next_dependency": "ASSEMBLE_THE_ACTUAL_DIRECT_TWO_SIDED_SEAM_COVECTOR_AND_TEST_ITS_67_DIMENSIONAL_FIXED_SEED_KERNEL_PROJECTION;_IN_PARALLEL_SOLVE_ONE_ACTUAL_C2_HEAT_MINUS_ZETA_ADJOINT_ON_THE_MAXIMAL_HISTORY_OR_A_CERTIFIED_FINITE_LATER_ENDPOINT_AND_PULL_IT_TO_THE_73_COORDINATE_LAUNCH_CHART",
+  "exact_split": {
+    "downstream_pullback": "g_C2=B^dagger*p_0",
+    "fixed_seed_kernel": "K:R67_TO_ker(B)",
+    "kernel_annihilation": "K^dagger*g_C2=0",
+    "kernel_stationarity": "K^dagger*g_total=(Z*K)^dagger*d_seam=0",
+    "launch_force": "g_launch=(Q^dagger*p_0,<F_0,p_0>)",
+    "natural_launch_map": "B_launch=[Q,F_0]:R73_TO_R98",
+    "outgoing_seed_map": "B=P_C2*Z:R139_TO_R98,_rank(B)=72",
+    "reset_tangent_basis": "Z:R139_TO_ker(D_Creset)_SUBSET_R196",
+    "total_reset_force": "g_total=Z^dagger*d_seam+B^dagger*p_0"
+  },
+  "inputs": {
+    "artifacts/flagship_integration/BHSM_N12_C2_RESET_GENERATED_LAUNCH_CHART.json": "570BC1093194BA6CA8ED91F6FE657D3BF965F76B30EC34CFC40704697BE10842",
+    "artifacts/flagship_integration/BHSM_N12_C2_RESET_GENERATED_LAUNCH_CHART.npz": "97ADFB0BF7B3C109E15330CD3A3C52E1C5C03B7756A6CEEBDF47A89BD22746B2",
+    "artifacts/flagship_integration/BHSM_N12_FORCE_ADJOINT_PULLBACK.json": "CD8A55728672AE5CACEC16268AF5B00A267A06F4A0A92BE5F10989CD58189CDF",
+    "artifacts/flagship_integration/BHSM_N12_FULL_RESET_ACTION_JACOBIAN.json": "6F669531A372F9BCC9D04AC26DB4F53A25DE38867036D0A8C1B779B7CB1C477B",
+    "artifacts/flagship_integration/BHSM_N12_FULL_RESET_ACTION_JACOBIAN.npz": "35BB2B67FF784206D3A5B9DC82881F5FFD8F844B55342F2032D29CDAFB38A67A",
+    "src/bhsm/interface/aether_c2_launch_adjoint_pullback.py": "B9703DD5AA0ADA85075F3B499309094A44CB51C96F18C4C18910306415719F3A",
+    "theory/n12_c2_reset_launch_adjoint_interface.md": "814721AD76FB00A95540A4C172D7548F7519C9F16713134090E54B8CD965C291"
+  },
+  "matching_audit": [
+    {
+      "candidate": "B^dagger*p_0_WITH_B=P_C2*Z",
+      "diagram_slot": "DOWNSTREAM_C2_HISTORY_FORCE_TO_RESET",
+      "required_type": "C2_INITIAL_STATE_COTANGENT_PULLBACK",
+      "verdict": "VALID_MATCH_ONE_ADJOINT_NO_FORWARD_COLUMN_FAMILY"
+    },
+    {
+      "candidate": "(Z*K)^dagger*d_seam",
+      "diagram_slot": "FIXED_C2_SEED_RESET_KERNEL_FORCE",
+      "required_type": "LOCAL_TWO_SIDED_EVENT_SEAM_COVECTOR",
+      "verdict": "TYPE_AND_DOMAIN_MATCH_FORMULA_DERIVED_ACTUAL_VALUE_OPEN"
+    },
+    {
+      "candidate": "RETAINED_ADJOINT_THEOREM",
+      "diagram_slot": "MAXIMAL_OR_FINITE_ENDPOINT_C2_ADJOINT_p_0",
+      "required_type": "ACTUAL_HEAT_MINUS_ZETA_C2_COTANGENT",
+      "verdict": "THEOREM_MATCH_ACTUAL_ACTION_DATA_STILL_MISSING"
+    }
+  ],
+  "numerical_identity_witness": {
+    "downstream_kernel_annihilation_residual_norm": 6.1120426636348195e-15,
+    "event_image_projection_residual_norm": 2.618917502778804e-15,
+    "kernel_split_residual_norm": 7.02965776493216e-15,
+    "natural_orthonormal_pullback_relative_residual": 4.085949076101689e-16,
+    "natural_orthonormal_pullback_residual_norm": 2.86102294921875e-06,
+    "role": "DETERMINISTIC_LINEAR_ALGEBRA_CROSSCHECK_NOT_A_PHYSICAL_FORCE",
+    "seed_map_largest_null_singular_value": 8.816228771418574e-16,
+    "seed_map_smallest_nonzero_singular_value": 0.4467449846231525,
+    "transverse_coordinate_scale": 141774.7483471441
+  },
+  "status": "C2_RESET_LAUNCH_ADJOINT_AND_FIXED_SEED_SEAM_SPLIT_DERIVED",
+  "validation": {
+    "downstream_C2_pullback_annihilates_fixed_seed_kernel": true,
+    "event_image_spans_seed_map": true,
+    "fixed_seed_kernel_dimension_is_67": true,
+    "full_kernel_force_reduces_to_direct_seam_covector": true,
+    "launch_coordinate_change_is_invertible": true,
+    "natural_and_orthonormal_launch_pullbacks_agree": true,
+    "natural_launch_dimension_is_73": true,
+    "no_inverse_selector_endpoint_force_scale_recurrence_gate_or_chord_added": true,
+    "one_adjoint_not_73_forward_columns": true,
+    "outgoing_seed_rank_is_72": true,
+    "reset_tangent_dimension_is_139": true
+  },
+  "validation_passed": true
+}

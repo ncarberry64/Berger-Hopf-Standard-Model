@@ -110,6 +110,7 @@ def _basis() -> list[dict[str, Any]]:
     p_full_asymptotic = "artifacts/flagship_integration/BHSM_N12_FULL_RETAINED_ASYMPTOTIC_BRANCH.json"
     p_exact_field = "artifacts/flagship_integration/BHSM_N12_C2_EXACT_FIXED_S_FIELD_ORACLE.json"
     p_launch_chart = "artifacts/flagship_integration/BHSM_N12_C2_RESET_GENERATED_LAUNCH_CHART.json"
+    p_launch_adjoint = "artifacts/flagship_integration/BHSM_N12_C2_RESET_LAUNCH_ADJOINT_INTERFACE.json"
     p_core_audit = "artifacts/flagship_integration/BHSM_N12_CORE_TRANSMITTED_PHYSICAL_MANIFOLD_AUDIT.json"
     p_e1 = "artifacts/flagship_integration/BHSM_N12_FORWARD_E1_SOURCE_MEASURE_CRITERION.json"
     p_nf = "artifacts/flagship_integration/BHSM_N12_GATE7_AE2_NONFERMION_THRESHOLD_MARGIN.json"
@@ -325,6 +326,18 @@ def _basis() -> list[dict[str, Any]]:
             current_status="CERTIFIED_LOCAL_73_DIMENSIONAL_MAXIMAL_TAIL_OPEN",
             downstream_consumers=["PARAMETRIC_RESET_FIBER_EXTERIOR_ORACLE", "G7_08_FORCE"],
             forbidden_interpretations=["139 arbitrary outgoing C2 launch dimensions are required", "the numerical proof center is a selected physical member", "the 67-dimensional fixed-seed lift kernel annihilates the full two-sided seam force", "the local launch theorem controls the maximal C2 tail"],
+        ),
+        record(
+            "C2_LAUNCH_ADJOINT_AND_SEAM_SPLIT",
+            "g_total=Z^dagger*d_seam+B^dagger*p_0; K^dagger*B^dagger*p_0=0; g_launch=(Q^dagger*p_0,<F_0,p_0>)",
+            "RESET_TANGENT_COTANGENT_FACTOR_AND_KERNEL_COMPATIBILITY",
+            "MATHEMATICAL_OBJECT",
+            "The downstream C2 force factors through the 72-dimensional seed image and one exact transverse launch direction, while stationarity on the 67-dimensional fixed-seed lift kernel is purely a direct two-sided seam condition.",
+            "certified reset tangent and local branch-24 C2 launch chart",
+            [p_launch_adjoint],
+            current_status="DERIVED_ACTUAL_SEAM_AND_C2_ADJOINT_COVECTORS_OPEN",
+            downstream_consumers=["G7_08_FORCE", "G7_09_SADDLE"],
+            forbidden_interpretations=["discard the 67 fixed-seed kernel from the full seam saddle", "propagate 73 forward Jacobi columns for one scalar force", "a broad seam enclosure supplies its signed covector", "the algebraic split evaluates the zero-source force"],
         ),
         record(
             "CORE_TRANSMISSION_NONSELECTION",
@@ -638,7 +651,7 @@ GATE_CHAIN = [
     ("G7_05_FACTORIZED_LAP", "all admissible positive far tails source-Dini by compact Volterra trace-class theorem", "CLOSED"),
     ("G7_06_E1_FINITE", "fixed-channel E1 source-measure finiteness", "CLOSED"),
     ("G7_07_ANGULAR_TAIL", "finite-endpoint compact-resolvent/source-trace control on the realized finite-encapsulation domain; infinite nonencapsulating tails remain nonrealized mathematical histories", "CLOSED_BY_OWNER_PHYSICAL_SCOPE_AND_LOCAL_ACTION_EXISTENCE"),
-    ("G7_08_FORCE", "heat-minus-zeta functional, physical quotient criterion, finite-stratum regularity, moving-endpoint chain rules, inverse-free Weyl solver, and nested channel/Euler-Dirac adjoint pullback are derived; fixed-channel source-Dini and high-energy trace control remain closed; infinite nonencapsulating NHIM histories are preserved as nonrealized mathematics; the analytic full 57 by 196 historical reset Jacobian has rank 57 and its event block has certified rank 32, so the projection onto the 73-dimensional constrained child manifold is submersive; the certified incoming child germ therefore lifts to a nonempty local family with forward chronology E0 -> C1 ->[T>0] E1 -> C2, where E1 is a new event and C2 a new child; after the forward swap, the reset tangent projects to 72 outgoing C2 seed directions with a 67-dimensional fixed-seed lift kernel, and the exact action field Dlambda[F_0]=1 adds the transverse descriptor direction, certifying a 72+1=73 local C2 launch chart without selecting a member; this kernel statement is not full two-sided seam-force invariance and the launch theorem does not control the maximal tail; the historical reset API is only the forward event-to-new-child glue, and no recurrence, universal reachability, or physical child selector is introduced; positive-duration local existence is now closed; the unique maximal M_C2 family is instantiated on the one certified C2 enclosure class, and the exact current owner is the quotient-Cauchy tail of the finite-core physical force net, or a finite later event/canonical stop; the ambient absolute weighted norm is sufficient but not necessary; finite-optical infinite routes fail the absolute graded heat domain, while an infinite-optical termwise route requires the physical common-scale Jacobi zeta optical Cauchy tail; exact replacement accounting also permits a direct combined q_heat-minus-q_zeta Cauchy proof without separate zeta convergence", "OPEN_CURRENT_OWNER"),
+    ("G7_08_FORCE", "heat-minus-zeta functional, physical quotient criterion, finite-stratum regularity, moving-endpoint chain rules, inverse-free Weyl solver, and nested channel/Euler-Dirac adjoint pullback are derived; fixed-channel source-Dini and high-energy trace control remain closed; infinite nonencapsulating NHIM histories are preserved as nonrealized mathematics; the analytic full 57 by 196 historical reset Jacobian has rank 57 and its event block has certified rank 32, so the projection onto the 73-dimensional constrained child manifold is submersive; the certified incoming child germ therefore lifts to a nonempty local family with forward chronology E0 -> C1 ->[T>0] E1 -> C2, where E1 is a new event and C2 a new child; after the forward swap, the reset tangent projects to 72 outgoing C2 seed directions with a 67-dimensional fixed-seed lift kernel, and the exact action field Dlambda[F_0]=1 adds the transverse descriptor direction, certifying a 72+1=73 local C2 launch chart without selecting a member; the kernel statement is not full two-sided seam-force invariance: the downstream C2 covector annihilates that 67-dimensional kernel exactly, so the force problem splits into an actual direct two-sided seam covector on the fixed-seed kernel and one actual C2 adjoint covector pulled to the 73-coordinate launch chart; neither covector value is supplied by this algebraic split, and the 67 kernel may not be discarded from the full seam saddle; the historical reset API is only the forward event-to-new-child glue, and no recurrence, universal reachability, or physical child selector is introduced; positive-duration local existence is now closed; the unique maximal M_C2 family is instantiated on the one certified C2 enclosure class, and the exact current owner is the quotient-Cauchy tail of the finite-core physical force net, or a finite later event/canonical stop; the ambient absolute weighted norm is sufficient but not necessary; finite-optical infinite routes fail the absolute graded heat domain, while an infinite-optical termwise route requires the physical common-scale Jacobi zeta optical Cauchy tail; exact replacement accounting also permits a direct combined q_heat-minus-q_zeta Cauchy proof without separate zeta convergence", "OPEN_CURRENT_OWNER"),
     ("G7_09_SADDLE", "same-action finite-endpoint forward-adjoint quotient KKT equations are derived but unsolved; a nonempty local positive-duration E0 -> C1 ->[T>0] E1 -> C2 family is certified, so the saddle route awaits the actual quotient-Cauchy heat-minus-zeta force limit or a finite later endpoint and remains mathematically coupled to G7_08 without adding a gate", "PENDING_COUPLED_TO_G7_08"),
     ("G7_10_HESSIAN", "pair-plus-contact Hessian", "PENDING"),
     ("G7_11_WARD_TRACE", "Ward/BRST and source-contracted relative trace", "PENDING"),
@@ -678,6 +691,7 @@ def _gates() -> list[dict[str, Any]]:
             "artifacts/flagship_integration/BHSM_N12_C2_INFINITE_HEAT_ZETA_COMPATIBILITY.json",
             "artifacts/flagship_integration/BHSM_N12_C2_EXACT_FIXED_S_FIELD_ORACLE.json",
             "artifacts/flagship_integration/BHSM_N12_C2_RESET_GENERATED_LAUNCH_CHART.json",
+            "artifacts/flagship_integration/BHSM_N12_C2_RESET_LAUNCH_ADJOINT_INTERFACE.json",
             "artifacts/flagship_integration/BHSM_N12_CORE_TRANSMITTED_PHYSICAL_MANIFOLD_AUDIT.json",
             "artifacts/flagship_integration/BHSM_N12_ASYMPTOTIC_NHIM_ANGULAR_FORCE_NO_GO.json",
             "artifacts/flagship_integration/BHSM_N12_LOCAL_RESET_TERMINAL_TRANSVERSALITY_AUDIT.json",

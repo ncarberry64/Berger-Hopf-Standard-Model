@@ -1937,6 +1937,26 @@ Exact next object:
 - Gate 7: `ACTIVE`; Gate 8: `LOCKED`; chord 3: `UNAUTHORIZED`;
   `FULL_BHSM_COMPLETE=FALSE`.
 
+## N=12 C2 launch-adjoint and fixed-seed seam split
+
+- Outgoing seed map: `B=P_C2 Z`, rank `72`, with
+  `K:R67 -> ker(B)`.
+- Downstream C2 cotangent pullback: `g_C2=B^dagger p_0`, hence
+  `K^dagger g_C2=0` exactly.
+- Full reset-tangent force:
+  `g_total=Z^dagger d_seam+B^dagger p_0`.
+- Fixed-seed-kernel stationarity:
+  `K^dagger g_total=(ZK)^dagger d_seam=0`; actual signed seam covector:
+  `OPEN`.
+- Natural outgoing launch force:
+  `g_launch=(Q^dagger p_0,<F_0,p_0>)`; actual maximal/finite-endpoint C2
+  adjoint: `OPEN_CURRENT_OWNER`.
+- Forward Jacobi columns required for this scalar force: `0`; one backward
+  C2 adjoint covector is sufficient after the base history is realized.
+- The 67 fixed-seed directions discarded from the full seam saddle: `FALSE`.
+- Gate 7: `ACTIVE`; Gate 8: `LOCKED`; chord 3: `UNAUTHORIZED`;
+  `FULL_BHSM_COMPLETE=FALSE`.
+
 ## N=12 asymptotic child-exterior connection audit
 
 - Complete analytic infinite branch: `DERIVED_LOCALLY`, with
