@@ -21,14 +21,22 @@ def test_cancelled_field_recombines_exact_fixed_s_field() -> None:
     state = np.asarray(data["last_positive_state"], dtype=float)
     weights = np.asarray(data["state_weights"], dtype=float)
     reference = np.asarray(data["branch_reference"], dtype=float)
+    import json
+    record = json.loads(
+        (ROOT / "artifacts" / "flagship_integration" /
+         "BHSM_N12_C2_LOG_DESCRIPTOR_DELTA_STOP_RECONNAISSANCE.json")
+        .read_text(encoding="utf-8")
+    )
+    descriptor = float(record["last_positive_signed_descriptor"])
     cancelled = exact_cancelled_euler_dirac_field_action(
         state=state, weights=weights, reference=reference,
+        signed_descriptor=descriptor,
     )
     fixed = exact_fixed_s_field_action(
         state=state,
         weights=weights,
         reference=reference,
-        signed_descriptor=float(cancelled["selected_eigenvalue"]),
+        signed_descriptor=descriptor,
     )
     assert cancelled["selected_branch"] == fixed["selected_branch"] == 24
     assert cancelled["selected_eigenline_gap"] > 0.0

@@ -23,6 +23,10 @@ are
 
 `d tau/dtheta=N_boundary s>0`.
 
+The propagated signed `s` is the descriptor coordinate owned by the interval
+continuation.  A binary64 eigensolve is used only to identify and orient the
+simple line; its tiny near-birth eigenvalue is not substituted for `s`.
+
 Consequently `Delta=0` is a turning point of the selected descriptor and a
 boundary of the fixed-`s` and log-`s` charts.  It is not by itself an
 Euler--Dirac singularity, event, physical boundary, or canonical stop.  The
@@ -36,4 +40,3 @@ The actual canonical Euler--Dirac stopping locus is `s=lambda(Y)=0`, not
 prove tube propagation and then reach either strict capture inclusion or a
 genuine retained stop.  Numerical centers on either side of `Delta=0` are
 only recentering seeds until that interval propagation is supplied.
-

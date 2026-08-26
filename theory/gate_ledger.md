@@ -2416,6 +2416,9 @@ Exact next object:
 - Exact incidence identities: `Dlambda[G_theta]=Delta`,
   `V_tau=G_theta/(N_boundary s)`, and
   `d tau/dtheta=N_boundary s>0` while `s,N_boundary>0`.
+- The interval-propagated signed descriptor is retained independently;
+  binary64 selected eigenvalues identify/orient the line but are never used
+  as the near-birth descriptor.
 - `Delta=0`: `FIXED_s_AND_LOG_s_CHART_TURNING_BOUNDARY`, not by itself an
   event, Euler--Dirac singularity, physical boundary, or canonical stop.
 - Actual Euler--Dirac stopping locus: `s=lambda(Y)=0`.

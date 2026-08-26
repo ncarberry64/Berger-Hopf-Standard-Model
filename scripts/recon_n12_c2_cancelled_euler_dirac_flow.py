@@ -31,10 +31,13 @@ SOURCE = BASE / "BHSM_N12_C2_LOG_DESCRIPTOR_DELTA_STOP_RECONNAISSANCE.npz"
 RESULT = BASE / "BHSM_N12_C2_CANCELLED_EULER_DIRAC_FLOW_RECONNAISSANCE.json"
 DATA = RESULT.with_suffix(".npz")
 ACTION_STEP = 0.25
-MAX_STEPS = 160
+MAX_STEPS = 80
 
 
-def _row(index: int, theta: float, state: np.ndarray, field: dict) -> dict:
+def _row(
+    index: int, theta: float, descriptor: float,
+    state: np.ndarray, field: dict,
+) -> dict:
     geometry = boundary_geometry_action_covectors(
         state=state, weights=WEIGHTS,
     )
@@ -44,7 +47,10 @@ def _row(index: int, theta: float, state: np.ndarray, field: dict) -> dict:
         "index": index,
         "theta": theta,
         "selected_branch": int(field["selected_branch"]),
-        "selected_eigenvalue": float(field["selected_eigenvalue"]),
+        "signed_descriptor": descriptor,
+        "numeric_selected_eigenvalue_not_used_as_descriptor": float(
+            field["numeric_selected_eigenvalue_not_used_as_descriptor"]
+        ),
         "selected_eigenline_gap": float(field["selected_eigenline_gap"]),
         "Delta": float(field["Delta"]),
         "cancelled_field_action_norm": float(np.linalg.norm(
@@ -53,7 +59,7 @@ def _row(index: int, theta: float, state: np.ndarray, field: dict) -> dict:
         "boundary_lapse": lapse,
         "boundary_radius": radius,
         "proper_time_density_d_tau_d_theta": (
-            lapse * float(field["selected_eigenvalue"])
+            lapse * descriptor
         ),
     }
 
@@ -62,22 +68,27 @@ with np.load(SOURCE) as source:
     INITIAL = np.asarray(source["last_positive_state"], dtype=float)
     WEIGHTS = np.asarray(source["state_weights"], dtype=float)
     REFERENCE = np.asarray(source["branch_reference"], dtype=float)
+SOURCE_RECORD = json.loads(SOURCE.with_suffix(".json").read_text(encoding="utf-8"))
+INITIAL_DESCRIPTOR = float(SOURCE_RECORD["last_positive_signed_descriptor"])
 
 
 def main() -> None:
     state = INITIAL.copy()
+    descriptor = INITIAL_DESCRIPTOR
     theta = 0.0
     centers = [state.copy()]
+    descriptors = [descriptor]
     rows = []
     first_nonpositive = None
     for index in range(MAX_STEPS + 1):
         field = exact_cancelled_euler_dirac_field_action(
             state=state, weights=WEIGHTS, reference=REFERENCE,
+            signed_descriptor=descriptor,
         )
-        row = _row(index, theta, state, field)
+        row = _row(index, theta, descriptor, state, field)
         rows.append(row)
         if (
-            row["selected_eigenvalue"] <= 0.0
+            descriptor <= 0.0
             or row["selected_eigenline_gap"] <= 0.0
             or row["boundary_lapse"] <= 0.0
             or row["boundary_radius"] <= 0.0
@@ -87,15 +98,18 @@ def main() -> None:
         norm = max(row["cancelled_field_action_norm"], 1.0e-300)
         step = ACTION_STEP / norm
         theta += step
+        descriptor += step * float(field["Delta"])
         state = state + step * np.asarray(
             field["cancelled_field_action"], dtype=float
         ) / WEIGHTS
         centers.append(state.copy())
+        descriptors.append(descriptor)
         if (index + 1) % 8 == 0:
             print(json.dumps(row), flush=True)
     np.savez_compressed(
         DATA,
         centers=np.asarray(centers),
+        signed_descriptors=np.asarray(descriptors),
         last_center=state,
         state=np.concatenate((state, state)),
         state_weights=WEIGHTS,

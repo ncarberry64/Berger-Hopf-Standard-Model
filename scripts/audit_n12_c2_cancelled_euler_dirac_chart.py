@@ -41,15 +41,22 @@ def _sha256(path: Path) -> str:
     return hashlib.sha256(payload).hexdigest().upper()
 
 
-def _witness(state: np.ndarray, weights: np.ndarray, reference: np.ndarray) -> dict[str, Any]:
+def _witness(
+    state: np.ndarray, weights: np.ndarray, reference: np.ndarray,
+    descriptor: float,
+) -> dict[str, Any]:
     field = exact_cancelled_euler_dirac_field_action(
         state=state, weights=weights, reference=reference,
+        signed_descriptor=descriptor,
     )
     geometry = boundary_geometry_action_covectors(state=state, weights=weights)
     lapse = math.exp(float(geometry["log_lapse"]))
     return {
         "selected_branch": int(field["selected_branch"]),
-        "selected_eigenvalue": float(field["selected_eigenvalue"]),
+        "signed_descriptor": descriptor,
+        "numeric_selected_eigenvalue_not_used_as_descriptor": float(
+            field["numeric_selected_eigenvalue_not_used_as_descriptor"]
+        ),
         "selected_eigenline_gap": float(field["selected_eigenline_gap"]),
         "Delta": float(field["Delta"]),
         "cancelled_field_action_norm": float(np.linalg.norm(
@@ -58,7 +65,7 @@ def _witness(state: np.ndarray, weights: np.ndarray, reference: np.ndarray) -> d
         "boundary_lapse": lapse,
         "boundary_radius": math.exp(float(geometry["log_R4"])),
         "proper_time_density_d_tau_d_theta": (
-            lapse * float(field["selected_eigenvalue"])
+            lapse * descriptor
         ),
     }
 
@@ -69,6 +76,8 @@ def build_payload() -> dict[str, Any]:
         raise FileNotFoundError("missing cancelled-chart inputs: " + ", ".join(missing))
     recon = json.loads(CANCELLED_RECON.read_text(encoding="utf-8"))
     negative_row = next(row for row in recon["rows"] if float(row["Delta"]) < 0.0)
+    fixed_record = json.loads(FIXED_RECON.with_suffix(".json").read_text(encoding="utf-8"))
+    positive_descriptor = float(fixed_record["last_positive_signed_descriptor"])
     with np.load(FIXED_RECON) as data:
         positive_state = np.asarray(data["last_positive_state"], dtype=float)
         weights = np.asarray(data["state_weights"], dtype=float)
@@ -79,19 +88,25 @@ def build_payload() -> dict[str, Any]:
         )
     positive = exact_cancelled_euler_dirac_field_action(
         state=positive_state, weights=weights, reference=reference,
+        signed_descriptor=positive_descriptor,
     )
     fixed = exact_fixed_s_field_action(
         state=positive_state,
         weights=weights,
         reference=reference,
-        signed_descriptor=float(positive["selected_eigenvalue"]),
+        signed_descriptor=positive_descriptor,
     )
     recombination_defect = float(np.linalg.norm(
         np.asarray(positive["cancelled_field_action"])
         - float(positive["Delta"]) * np.asarray(fixed["field_action"])
     ))
-    positive_witness = _witness(positive_state, weights, reference)
-    negative_witness = _witness(negative_state, weights, reference)
+    negative_descriptor = float(negative_row["signed_descriptor"])
+    positive_witness = _witness(
+        positive_state, weights, reference, positive_descriptor
+    )
+    negative_witness = _witness(
+        negative_state, weights, reference, negative_descriptor
+    )
     validation = {
         "exact_positive_chart_recombination_closes": recombination_defect < 1.0e-15,
         "same_branch_24_on_both_reconnaissance_seeds": (
@@ -100,7 +115,7 @@ def build_payload() -> dict[str, Any]:
         ),
         "negative_Delta_seed_retains_positive_simple_Euler_Dirac_line": (
             negative_witness["Delta"] < 0.0
-            and negative_witness["selected_eigenvalue"] > 0.0
+            and negative_witness["signed_descriptor"] > 0.0
             and negative_witness["selected_eigenline_gap"] > 0.0
         ),
         "negative_Delta_seed_retains_positive_lapse_radius_and_time_orientation": (
@@ -173,4 +188,3 @@ def main() -> None:
 
 if __name__ == "__main__":
     main()
-

@@ -134,19 +134,22 @@ def exact_fixed_s_field_action(
 
 def exact_cancelled_euler_dirac_field_action(
     *, state: np.ndarray, weights: np.ndarray, reference: np.ndarray,
+    signed_descriptor: float,
 ) -> dict[str, object]:
     """Evaluate the denominator-free selected-line Euler--Dirac field.
 
-    The field is ``G_theta=Delta*F_s`` with the signed descriptor set to the
-    action-owned simple eigenvalue ``lambda(Y)``.  It therefore remains
-    regular at a zero of ``Delta=Dlambda[G_theta]`` and changes only the
-    parametrization while ``lambda>0``.  It does not continue through the
-    Euler--Dirac singularity ``lambda=0``.
+    The field is ``G_theta=Delta*F_s`` on the propagated descriptor fiber.
+    The signed descriptor is supplied independently because the near-birth
+    value is far below the cancellation floor of a binary64 eigensolve.  It
+    remains regular at a zero of ``Delta=Dlambda[G_theta]`` and changes only
+    the parametrization while ``s>0``.  It does not continue through the
+    Euler--Dirac singularity ``s=0``.
     """
 
     y = np.asarray(state, dtype=float)
     w = np.asarray(weights, dtype=float)
     ref = np.asarray(reference, dtype=float)
+    s = float(signed_descriptor)
     if (
         y.shape != (STATE_DIMENSION,)
         or w.shape != (STATE_DIMENSION,)
@@ -155,8 +158,12 @@ def exact_cancelled_euler_dirac_field_action(
         or not np.all(np.isfinite(w))
         or np.any(w <= 0.0)
         or not np.all(np.isfinite(ref))
+        or not np.isfinite(s)
+        or s < 0.0
     ):
-        raise ValueError("finite N12 state, weights, and line reference required")
+        raise ValueError(
+            "finite N12 state, weights, line reference, and s>=0 required"
+        )
     jet = _jet(y)
     gradient_action = np.asarray(jet.gradient, dtype=float) / w
     hessian_raw = np.asarray(jet.hessian, dtype=float)
@@ -189,16 +196,17 @@ def exact_cancelled_euler_dirac_field_action(
     remainder = _eigenvalue_directional_derivative(
         y, psi, full_hard_action, w
     )
-    delta = c_psi * b_psi + eigenvalue * remainder
+    delta = c_psi * b_psi + s * remainder
     numerator = np.concatenate((
-        eigenvalue * configuration,
-        reduced_weights * (b_psi * psi + eigenvalue * hard_raw),
+        s * configuration,
+        reduced_weights * (b_psi * psi + s * hard_raw),
     ))
     hard_gap = float(np.min(np.abs(hard_values - eigenvalue)))
     return {
         "cancelled_field_action": numerator,
         "selected_branch": selected,
-        "selected_eigenvalue": eigenvalue,
+        "signed_descriptor": s,
+        "numeric_selected_eigenvalue_not_used_as_descriptor": eigenvalue,
         "selected_eigenline_gap": hard_gap,
         "b_psi": b_psi,
         "c_psi": c_psi,
