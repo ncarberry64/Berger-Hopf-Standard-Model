@@ -1,6 +1,6 @@
 # Gate-7 maximal graded cotangent matching audit
 
-Status: `MAXIMAL_GRADED_COTANGENT_TYPE_CLOSED_ACTUAL_OPERATOR_FAMILY_OPEN`.
+Status: `MAXIMAL_GRADED_COTANGENT_TYPE_CLOSED_BIRTH_LOADED_OPERATOR_FAMILY_OPEN`.
 
 The retained BRST/statistics ledger already fixes every coefficient in the
 physical heat direct sum.  After the longitudinal gauge/complex-ghost pair is
@@ -15,7 +15,9 @@ cancelled mode by mode, the nonzero weights are
 These weights survive the retirement of the periodic proper-cycle domain.
 They are representation/statistics data, not temporal boundary conditions.
 The current temporal domain is the forward AE2 event--child graph on the
-action-realized history.
+action-realized history.  The initial birth trace remains a degree of freedom
+in the closed operator when `J_ext=0`; it is not replaced by a Dirichlet
+condition.
 
 For every level `k` and every member `xi` of the certified local history
 family, let `P_C,k^joint(xi)` be the complete positive self-adjoint joint
@@ -46,22 +48,28 @@ The repository matching result is sharp:
 - the grading, multiplicities, heat Fréchet seed, zeta subtraction, block
   reverse order, reset pullback, and projected-Cauchy criterion are valid
   existing matches;
-- the incoming `M_f` and outgoing `M_C2` whole-axis objects have rigorous
-  parametric/enclosure representations, but the broad enclosures do not fix
-  the nonlinear heat functional;
+- the old incoming whole-axis enclosure rigorously controls the Dirichlet
+  reference block `M11`, but its identification with the physical zero-source
+  `M_f` is superseded; the latter requires the action-owned birth-graph Schur
+  reduction or an unreduced joint operator retaining the birth trace;
+- the outgoing `M_C2` whole-axis object has a rigorous finite-core
+  representation, but the broad enclosure does not fix the nonlinear heat
+  functional;
 - the 1,222-segment reverse actions are certified, but the finite proof edge
   is not a physical endpoint;
 - no scalar at a proof center represents the physical family;
-- the actually missing datum is the sharp per-level joint operator family
-  `P_C,k^joint(xi)` and its first action jet, or an equivalent decisive
-  trace-functional enclosure, on the action-realized maximal history or an
-  actual finite event/canonical stop.
+- the actually missing datum begins with the retained birth graph `B_birth`
+  and its first jet, or an unreduced operator that keeps the birth trace, and
+  then the sharp per-level joint operator family `P_C,k^joint(xi)` and its
+  first action jet, or an equivalent decisive trace-functional enclosure, on
+  the action-realized maximal history or an actual finite event/canonical
+  stop.
 
 Thus neither a new grading, a new external source, more isolated negative-axis
-probes, nor a new response theory is required.  Once the actual joint family
-is supplied, the already-derived seed is evaluated, the single signed reverse
-sweep is run, and the existing physical quotient tests the Cauchy tail before
-the same-action KKT root.
+probes, nor a new response theory is required.  Once the birth-loaded actual
+joint family is supplied, the already-derived seed is evaluated, the single
+signed reverse sweep is run, and the existing physical quotient tests the
+Cauchy tail before the same-action KKT root.
 
 Gate 7 remains open, Gate 8 remains locked, chord 3 remains unauthorized, and
 `FULL_BHSM_COMPLETE=false`.

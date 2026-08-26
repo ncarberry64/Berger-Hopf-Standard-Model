@@ -18,13 +18,14 @@ ONTOLOGY = BASE / "BHSM_N12_GATE7_CLOSED_SYSTEM_ZERO_EXTERNAL_SOURCE_ONTOLOGY.js
 SEED = BASE / "BHSM_N12_GATE7_JOINT_HEAT_COTANGENT_REVERSE_SEED.json"
 DOMAIN = BASE / "BHSM_N12_GATE7_AE2_GLOBAL_SPIN_MATTER_DOMAIN.json"
 INCOMING = BASE / "BHSM_N12_INCOMING_MF_NEGATIVE_AXIS_ENCLOSURE.json"
+BIRTH_AUDIT = BASE / "BHSM_N12_GATE7_BIRTH_TRACE_MF_SUPERSESSION_AUDIT.json"
 CHILD = BASE / "BHSM_N12_C2_1222_SEGMENT_NEGATIVE_AXIS_WEYL_FAMILY.json"
 FINITE_HEAT = BASE / "BHSM_N12_GATE7_FIXED_CHANNEL_FINITE_CORE_HEAT_BOUND.json"
 ADJOINT = BASE / "BHSM_N12_C2_1222_SIGNED_ADJOINT_ASSEMBLY.json"
 CAUCHY = BASE / "BHSM_N12_C2_PROJECTED_ADJOINT_CAUCHY_CRITERION.json"
 THEORY = ROOT / "theory" / "n12_gate7_maximal_graded_cotangent_matching_audit.md"
 INPUTS = (
-    LEDGER, BRST, FUNCTIONAL, ONTOLOGY, SEED, DOMAIN, INCOMING, CHILD,
+    LEDGER, BRST, FUNCTIONAL, ONTOLOGY, SEED, DOMAIN, INCOMING, BIRTH_AUDIT, CHILD,
     FINITE_HEAT, ADJOINT, CAUCHY, THEORY,
 )
 
@@ -77,11 +78,11 @@ def build_payload() -> dict[str, Any]:
             "missing maximal graded-cotangent inputs: " + ", ".join(missing)
         )
     (
-        ledger, brst, functional, ontology, seed, domain, incoming, child,
+        ledger, brst, functional, ontology, seed, domain, incoming, birth_audit, child,
         finite_heat, adjoint, cauchy,
     ) = map(_load, INPUTS[:-1])
     records = (
-        ledger, brst, functional, ontology, seed, domain, incoming, child,
+        ledger, brst, functional, ontology, seed, domain, incoming, birth_audit, child,
         finite_heat, adjoint, cauchy,
     )
     if not all(record.get("validation_passed") is True for record in records):
@@ -129,12 +130,19 @@ def build_payload() -> dict[str, Any]:
             domain["action_version"] == "BHSM-AE-2.0.0"
             and domain["source_domain"]["Cayley_phase_family"] is None
         ),
-        "incoming_Mf_is_enclosed_but_exact_trace_open": (
+        "old_incoming_M11_enclosure_is_only_a_conditional_Dirichlet_reference": (
             incoming["claim_boundary"][
                 "incoming_M_f_negative_axis_parametric_enclosure"
             ] == "CLOSED"
-            and incoming["claim_boundary"]["exact_joint_spectral_trace"]
-            == "OPEN"
+            and birth_audit["adjudication"][
+                "M_f_equals_M11_as_physical_zero_source_response"
+            ] == "SUPERSEDED"
+        ),
+        "physical_birth_graph_reduction_is_localized_and_open": (
+            birth_audit["matching_audit"]["physical_zero_source_incoming_M_f"]
+            == "ACTUALLY_MISSING_BIRTH_GRAPH_REDUCTION"
+            and birth_audit["matching_audit"]["B_birth_and_first_action_jet"]
+            == "ACTUALLY_MISSING_OR_NOT_YET_INSTANTIATED"
         ),
         "child_whole_axis_family_is_finite_core_only": (
             child["claim_boundary"]["finite_core_complete_negative_axis_family"]
@@ -163,15 +171,16 @@ def build_payload() -> dict[str, Any]:
     return {
         "artifact": "BHSM_N12_GATE7_MAXIMAL_GRADED_COTANGENT_MATCHING_AUDIT",
         "status": (
-            "MAXIMAL_GRADED_COTANGENT_TYPE_CLOSED_ACTUAL_OPERATOR_FAMILY_OPEN"
+            "MAXIMAL_GRADED_COTANGENT_TYPE_CLOSED_BIRTH_LOADED_OPERATOR_FAMILY_OPEN"
             if passed else "MAXIMAL_GRADED_COTANGENT_MATCHING_NOT_CLOSED"
         ),
         "classification": (
             "THE_RETAINED_GRADING_MULTIPLICITIES_HEAT_SEED_ZETA_SUBTRACTION_"
             "REVERSE_ORDER_AND_PROJECTED_CAUCHY_CRITERION_ARE_ALL_EXISTING_"
-            "VALID_MATCHES;_THE_ACTUALLY_MISSING_DATUM_IS_THE_ACTION_REALIZED_"
-            "PER_LEVEL_COMPLETE_JOINT_OPERATOR_FAMILY_AND_ITS_FIRST_JET_OR_AN_"
-            "EQUIVALENT_DECISIVE_TRACE_FUNCTIONAL_ENCLOSURE"
+            "VALID_MATCHES;_THE_OLD_ZERO_TRACE_INCOMING_M_f_IDENTIFICATION_IS_"
+            "SUPERSEDED,_AND_THE_ACTUALLY_MISSING_DATUM_IS_THE_ACTION_REALIZED_"
+            "BIRTH_GRAPH_LOADED_PER_LEVEL_COMPLETE_JOINT_OPERATOR_FAMILY_AND_ITS_"
+            "FIRST_JET_OR_AN_EQUIVALENT_DECISIVE_TRACE_FUNCTIONAL_ENCLOSURE"
         ),
         "retained_graded_sector_ledger": weights,
         "exact_cotangent_contract": {
@@ -198,7 +207,9 @@ def build_payload() -> dict[str, Any]:
             "heat_Frechet_cotangent": "VALID_MATCH",
             "direct_zeta_covector": "VALID_MATCH",
             "joint_internal_seam_assembly": "VALID_MATCH",
-            "incoming_Mf_whole_axis_class": "VALID_ENCLOSURE_NOT_EXACT_TRACE_VALUE",
+            "incoming_M11_whole_axis_class": "VALID_CONDITIONAL_DIRICHLET_REFERENCE_ONLY",
+            "physical_zero_source_incoming_Mf": "ACTUALLY_MISSING_BIRTH_GRAPH_REDUCTION",
+            "birth_graph_B_birth_and_first_jet": "ACTUALLY_MISSING_OR_NOT_YET_INSTANTIATED",
             "outgoing_M_C2_whole_axis_1222_core": "VALID_FINITE_CORE_MATCH",
             "all_1222_transposed_reverse_actions": "VALID_MATCH",
             "physical_quotient_and_Cauchy_criterion": "VALID_MATCH",
@@ -220,7 +231,8 @@ def build_payload() -> dict[str, Any]:
             "Gate8": "LOCKED",
         },
         "exact_next_dependency": (
-            "REALIZE_OR_SHARPLY_ENCLOSE_FOR_EACH_RETAINED_GRADED_LEVEL_THE_"
+            "INSTANTIATE_THE_RETAINED_BIRTH_GRAPH_OR_KEEP_THE_BIRTH_TRACE_EXPLICIT,_"
+            "THEN_REALIZE_OR_SHARPLY_ENCLOSE_FOR_EACH_RETAINED_GRADED_LEVEL_THE_"
             "COMPLETE_JOINT_EVENT_CHILD_OPERATOR_AND_FIRST_ACTION_JET_ON_THE_"
             "LOCAL_73_PARAMETER_FAMILY_OR_AT_AN_ACTUAL_FINITE_STOP;_THEN_"
             "EVALUATE_THE_FIXED_COTANGENT_CONTRACT_AND_RUN_THE_EXISTING_SINGLE_"
@@ -229,7 +241,7 @@ def build_payload() -> dict[str, Any]:
         "validation": validation,
         "validation_passed": passed,
         "claim_boundary": {
-            "Gate7": "ACTIVE_ACTUAL_PER_LEVEL_JOINT_OPERATOR_AND_COTANGENT",
+            "Gate7": "ACTIVE_BIRTH_LOADED_PER_LEVEL_JOINT_OPERATOR_AND_COTANGENT",
             "Gate8": "LOCKED",
             "chord_03_authorized": False,
             "FULL_BHSM_COMPLETE": False,

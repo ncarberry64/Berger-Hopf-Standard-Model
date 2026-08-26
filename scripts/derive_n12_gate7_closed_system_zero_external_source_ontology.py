@@ -103,7 +103,18 @@ def build_payload() -> dict[str, Any]:
         },
         "joint_assembly": {
             "operator": "P_joint=[[A,C,0],[C^dagger,H+G+W_phys,E^dagger],[0,E,F]]",
+            "formation_off_event_block": (
+                "A_INCLUDES_THE_DYNAMICAL_BIRTH_TRACE_AND_RETAINED_SELF_ADJOINT_"
+                "BIRTH_GRAPH;_A_IS_NOT_A_ZERO_BIRTH_TRACE_DIRICHLET_RESTRICTION"
+            ),
+            "two_boundary_identification": (
+                "A_TO_M00_PLUS_B_birth,_C_TO_M01,_C_DAGGER_TO_M10,_H_TO_M11"
+            ),
+            "zero_source_birth_solve": (
+                "(M00+B_birth)*X_birth=M01,_u_birth=-X_birth*u_event"
+            ),
             "formation_response": "M_f=H-C^dagger*A^(-1)*C",
+            "formation_response_two_boundary": "M_f=M11-M10*X_birth",
             "transported_child_response": "M_C2^R=U_R^dagger*M_C2*U_R",
             "seam_Schur_block": "S_AE2=M_f+M_C2^R+W_phys",
             "determinant_identity": "det(P_joint)=det(A)*det(F)*det(S_AE2)",
@@ -130,11 +141,17 @@ def build_payload() -> dict[str, Any]:
         "matching_audit": {
             "external_birth_Cauchy_source": "VALID_MATCH_J_ext_AND_ONLY_THIS_DATUM_IS_ZEROED",
             "birth_trace_domain": "VALID_RETAINED_SELF_ADJOINT_GRAPH_NOT_REPLACED_BY_DIRICHLET",
-            "incoming_M_f": "VALID_INTERNAL_RESPONSE_SLOT_NOT_AN_EXTERNAL_SOURCE",
+            "incoming_M_f": (
+                "VALID_INTERNAL_RESPONSE_TYPE_PHYSICAL_BIRTH_GRAPH_REDUCTION_OPEN"
+            ),
+            "Dirichlet_reference_M11": (
+                "VALID_REFERENCE_BLOCK_NOT_THE_PHYSICAL_ZERO_SOURCE_M_f"
+            ),
             "outgoing_M_C2": "VALID_INTERNAL_RESPONSE_SLOT_NOT_AN_EXTERNAL_SOURCE",
             "reset_transport_U_R": "VALID_INTERNAL_GLUE_SLOT",
             "W_phys": "VALID_INTERNAL_CONTACT_SLOT",
             "common_source_incidence": "VALID_INTERNAL_VARIATION_VERTEX_SLOT",
+            "birth_graph_B_birth_and_first_jet": "ACTUALLY_MISSING_OR_NOT_YET_INSTANTIATED",
             "complete_joint_graded_coefficient_cotangent": "ACTUALLY_MISSING",
             "maximal_projected_Cauchy_limit_or_finite_stop": "ACTUALLY_MISSING",
         },
@@ -152,14 +169,15 @@ def build_payload() -> dict[str, Any]:
             "Gate8": "LOCKED",
         },
         "exact_next_dependency": (
-            "ASSEMBLE_THE_COMPLETE_JOINT_GRADED_HEAT_MINUS_ZETA_COEFFICIENT_COTANGENT_"
+            "INSTANTIATE_THE_RETAINED_BIRTH_GRAPH_OR_KEEP_THE_BIRTH_TRACE_EXPLICIT,_"
+            "THEN_ASSEMBLE_THE_COMPLETE_JOINT_GRADED_HEAT_MINUS_ZETA_COEFFICIENT_COTANGENT_"
             "WITHOUT_ZEROING_OR_DOUBLE_COUNTING_ANY_INTERNAL_SEAM_BLOCK,_THEN_RUN_ONE_"
             "JOINT_REVERSE_ADJOINT_AND_TEST_ITS_PROJECTED_CAUCHY_LIMIT_OR_ACTUAL_FINITE_STOP"
         ),
         "validation": validation,
         "validation_passed": all(validation.values()),
         "claim_boundary": {
-            "Gate7": "ACTIVE_COMPLETE_JOINT_GRADED_COTANGENT",
+            "Gate7": "ACTIVE_BIRTH_LOADED_COMPLETE_JOINT_GRADED_COTANGENT",
             "Gate8": "LOCKED",
             "chord_03_authorized": False,
             "FULL_BHSM_COMPLETE": False,

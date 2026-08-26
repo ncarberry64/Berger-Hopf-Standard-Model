@@ -70,6 +70,7 @@ SOURCES = (
     "artifacts/flagship_integration/BHSM_N12_C2_1222_SIGNED_ADJOINT_ASSEMBLY.json",
     "artifacts/flagship_integration/BHSM_N12_C2_1222_TRANSPOSED_DURATION_ACTION_COVERAGE.json",
     "artifacts/flagship_integration/BHSM_N12_GATE7_CLOSED_SYSTEM_ZERO_EXTERNAL_SOURCE_ONTOLOGY.json",
+    "artifacts/flagship_integration/BHSM_N12_GATE7_BIRTH_TRACE_MF_SUPERSESSION_AUDIT.json",
     "artifacts/flagship_integration/BHSM_N12_GATE7_JOINT_HEAT_COTANGENT_REVERSE_SEED.json",
     "artifacts/flagship_integration/BHSM_N12_GATE7_1222_CORE_DIAGRAM_MATCHING_AUDIT.json",
     "artifacts/flagship_integration/BHSM_N12_GATE7_MAXIMAL_GRADED_COTANGENT_MATCHING_AUDIT.json",
@@ -175,6 +176,7 @@ def verify_current_lineage() -> None:
     signed_adjoint = loaded["artifacts/flagship_integration/BHSM_N12_C2_1222_SIGNED_ADJOINT_ASSEMBLY.json"]
     duration_coverage = loaded["artifacts/flagship_integration/BHSM_N12_C2_1222_TRANSPOSED_DURATION_ACTION_COVERAGE.json"]
     source_ontology = loaded["artifacts/flagship_integration/BHSM_N12_GATE7_CLOSED_SYSTEM_ZERO_EXTERNAL_SOURCE_ONTOLOGY.json"]
+    birth_mf_audit = loaded["artifacts/flagship_integration/BHSM_N12_GATE7_BIRTH_TRACE_MF_SUPERSESSION_AUDIT.json"]
     joint_heat_seed = loaded["artifacts/flagship_integration/BHSM_N12_GATE7_JOINT_HEAT_COTANGENT_REVERSE_SEED.json"]
     core_diagram = loaded["artifacts/flagship_integration/BHSM_N12_GATE7_1222_CORE_DIAGRAM_MATCHING_AUDIT.json"]
     graded_cotangent = loaded["artifacts/flagship_integration/BHSM_N12_GATE7_MAXIMAL_GRADED_COTANGENT_MATCHING_AUDIT.json"]
@@ -334,6 +336,11 @@ def verify_current_lineage() -> None:
         ] is True
         and source_ontology["adjudication"]["internal_response_zeroing"]
         == "FORBIDDEN"
+        and birth_mf_audit["adjudication"]
+        ["M_f_equals_M11_as_physical_zero_source_response"] == "SUPERSEDED"
+        and birth_mf_audit["matching_audit"]
+        ["physical_zero_source_incoming_M_f"]
+        == "ACTUALLY_MISSING_BIRTH_GRAPH_REDUCTION"
         and joint_heat_seed["adjudication"]["joint_reverse_seed_formula"]
         == "CLOSED"
         and joint_heat_seed["adjudication"][

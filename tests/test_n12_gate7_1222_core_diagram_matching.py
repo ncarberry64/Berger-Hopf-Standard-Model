@@ -24,7 +24,7 @@ def test_gate7_1222_core_diagram_matching() -> None:
         "VALID_MATCH_REPRESENTATIVE_INCREMENT_SUPPRESSED"
     )
     assert verdicts["INCOMING_C1_RESPONSE_M_f"].startswith(
-        "VALID_MATCH_INCOMING_M_f_PARAMETRICALLY_ENCLOSED"
+        "ACTUALLY_MISSING_BIRTH_GRAPH_LOADED"
     )
     assert verdicts["PAIR_CONTACT_AND_GRADED_INTERNAL_INCIDENCE"].startswith("VALID_MATCH_INTERNAL")
     assert verdicts["ZERO_EXTERNAL_BIRTH_CAUCHY_SOURCE"] == "VALID_MATCH_ONLY_J_ext_IS_ZEROED"
@@ -47,6 +47,7 @@ def test_gate7_1222_core_diagram_matching() -> None:
     assert payload["adjudication"][
         "actual_per_level_joint_operator_family"
     ] == "ACTUALLY_MISSING"
-    assert payload["adjudication"]["incoming_M_f_identity_and_action_owned_germ"].startswith("CLOSED")
+    assert payload["adjudication"]["incoming_M11_identity_and_action_owned_germ"].startswith("CLOSED")
+    assert payload["adjudication"]["physical_zero_source_incoming_M_f"].startswith("OPEN")
     assert payload["adjudication"]["incoming_normalized_coefficient_path_quadratic_germ"] == "CLOSED_INVERSE_FREE"
     assert payload["claim_boundary"]["zero_source_force"] == "OPEN"

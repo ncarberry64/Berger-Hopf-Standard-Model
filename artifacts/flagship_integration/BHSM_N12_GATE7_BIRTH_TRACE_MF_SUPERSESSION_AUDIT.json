@@ -1,0 +1,90 @@
+{
+  "FLAGSHIP_READY": false,
+  "FULL_BHSM_COMPLETE": false,
+  "adjudication": {
+    "Gate7": "OPEN",
+    "Gate8": "LOCKED",
+    "M_f_equals_M11_as_physical_zero_source_response": "SUPERSEDED",
+    "new_external_or_seam_source_required": false,
+    "physical_birth_graph_response": "OPEN_CURRENT_OPERATOR_OWNER",
+    "zero_source_Dirichlet_equivalence": "CLOSED_INVALID"
+  },
+  "artifact": "BHSM_N12_GATE7_BIRTH_TRACE_MF_SUPERSESSION_AUDIT",
+  "claim_boundary": {
+    "FULL_BHSM_COMPLETE": false,
+    "Gate7": "ACTIVE_BIRTH_GRAPH_LOADED_JOINT_OPERATOR",
+    "Gate8": "LOCKED",
+    "chord_03_authorized": false,
+    "frozen_predictions_changed": false,
+    "numerical_force_claimed": false,
+    "physical_incoming_M_f_claimed": false
+  },
+  "classification": "J_ext_EQUALS_ZERO_REMOVES_ONLY_THE_EXTERNAL_LINEAR_COUPLING_AND_DOES_NOT_SET_THE_BIRTH_TRACE_TO_ZERO;_THE_PHYSICAL_INCOMING_RESPONSE_IS_THE_ACTION_BIRTH_GRAPH_SCHUR_REDUCTION,_NOT_THE_DIRICHLET_TERMINAL_BLOCK_M11",
+  "deterministic_counterexample": {
+    "B_birth": "2",
+    "Dirichlet_M11": "4",
+    "J_ext": "0",
+    "M": "[[3,1],[1,4]]",
+    "M_is_positive_definite": true,
+    "physical_M_f": "19/5",
+    "responses_are_distinct": true,
+    "stationarity_residual": "0",
+    "stationary_u_0": "-1/5",
+    "u_1": "1"
+  },
+  "exact_next_dependency": "INSTANTIATE_THE_RETAINED_ACTION_OWNED_BIRTH_GRAPH_B_birth_AND_ITS_FIRST_JET_AND_APPLY_THE_BORDERED_REDUCTION,_OR_KEEP_THE_BIRTH_TRACE_IN_THE_COMPLETE_JOINT_OPERATOR;_THEN_REALIZE_THE_PER_LEVEL_GRADED_COTANGENT_WITHOUT_ZEROING_THE_BIRTH_TRACE_OR_ADDING_A_SOURCE_OR_SEAM_FORCE",
+  "exact_reduction": {
+    "Dirichlet_specialization": "u0=0_GIVES_M11_BUT_IS_NOT_IMPLIED_BY_J_ext=0",
+    "birth_graph": "n0+B_birth*u0=J_ext",
+    "explicit_inverse_formed": false,
+    "first_jet_response": "D_h_M_f_phys=M11,h-M10,h*X_birth-M10*X_birth,h",
+    "first_jet_solve": "H_birth*X_birth,h=M01,h-H_birth,h*X_birth",
+    "natural_free_specialization": "B_birth=0_ONLY_IF_PROVED_BY_THE_RETAINED_ACTION_VARIATION",
+    "physical_incoming_response": "M_f_phys=M11-M10*X_birth",
+    "two_boundary_response": "[n0,n1]^T=[[M00,M01],[M10,M11]]*[u0,u1]^T",
+    "zero_external_source_equation": "(M00+B_birth)*X_birth=M01,_u0=-X_birth*u1"
+  },
+  "inputs": {
+    "artifacts/action_extension/BHSM_ACTION_AE2_GLOBAL_SPIN_RESET_ACTION.json": "4C756145A9E303F6E4F7F9536CF5639957D010C1A97AF6BE9299830C549B82DC",
+    "artifacts/flagship_integration/BHSM_N12_COMPACT_FINITE_HISTORY_OPERATOR.json": "E597DDB6EBE292643F33A0AC8EDCEC617F5FC963B526BCF9D40BD48EC678DD41",
+    "artifacts/flagship_integration/BHSM_N12_COMPACT_HISTORY_ENDPOINT_ROLE_PROVENANCE.json": "ED55ED54617DA11F708ED6BA98F345FEF72BF1D0CFAD8BA94F8FD1A4103E1D37",
+    "artifacts/flagship_integration/BHSM_N12_GATE7_CLOSED_SYSTEM_ZERO_EXTERNAL_SOURCE_ONTOLOGY.json": "E9D4611C01C7243A7526F4AC47F473C68733E981D01EFA5013AA028177004A3F",
+    "artifacts/flagship_integration/BHSM_N12_INCOMING_MF_COMPACT_MATCH.json": "0FB27367F58FBF75C6C0B384F41AE7644515FBCFCA0AABAAA6544B47B05EEC33",
+    "artifacts/flagship_integration/BHSM_N12_INCOMING_MF_NEGATIVE_AXIS_ENCLOSURE.json": "59B718CC574103B05AE2D184506A06F51617450D958B2E5E856D8B5C9753633C",
+    "theory/n12_gate7_birth_trace_mf_supersession_audit.md": "58AD9A25845844388235F1F1541AA0A44FC3264B061CCE28FEDAA78C3A0676B0"
+  },
+  "matching_audit": {
+    "B_birth_and_first_action_jet": "ACTUALLY_MISSING_OR_NOT_YET_INSTANTIATED",
+    "external_J_ext": "VALID_MATCH_ONLY_EXTERNAL_DATUM_ZEROED",
+    "free_two_boundary_Calderon_map": "VALID_MATCH",
+    "old_M11_negative_axis_enclosure": "VALID_CONDITIONAL_DIRICHLET_REFERENCE_ONLY",
+    "physical_zero_source_incoming_M_f": "ACTUALLY_MISSING_BIRTH_GRAPH_REDUCTION",
+    "unreduced_complete_joint_operator_with_birth_trace": "EQUIVALENT_VALID_ROUTE_OPEN"
+  },
+  "status": "ZERO_SOURCE_DIRICHLET_MF_IDENTIFICATION_SUPERSEDED_BIRTH_GRAPH_REDUCTION_OPEN",
+  "supersession": {
+    "BHSM_N12_COMPACT_HISTORY_ENDPOINT_ROLE_PROVENANCE": "SUPERSEDED_ONLY_WHERE_ZERO_SOURCE_IS_IDENTIFIED_WITH_Gamma0_birth_U_EQUALS_ZERO",
+    "BHSM_N12_INCOMING_MF_COMPACT_MATCH": "PRESERVED_AS_DIRICHLET_REFERENCE_M11_NOT_PHYSICAL_ZERO_SOURCE_M_f",
+    "BHSM_N12_INCOMING_MF_NEGATIVE_AXIS_ENCLOSURE": "PRESERVED_AS_A_CONDITIONAL_M11_ENCLOSURE_NOT_A_PHYSICAL_M_f_ENCLOSURE",
+    "preserved": [
+      "compact two-boundary Calderon map and jets",
+      "incoming coefficient path and finite-amplitude form bounds",
+      "AE2 internal reset graph",
+      "joint heat-minus-zeta grading and single-reverse accounting"
+    ]
+  },
+  "validation": {
+    "AE2_retains_internal_reset_graph": true,
+    "compact_map_has_two_free_endpoint_traces": true,
+    "current_ontology_forbids_zero_trace_inference": true,
+    "inverse_free_birth_graph_reduction_is_exact": true,
+    "no_new_source_seam_force_selector_or_action_term_added": true,
+    "old_Mf_match_is_exactly_the_Dirichlet_terminal_block": true,
+    "old_endpoint_theorem_sets_birth_trace_to_zero": true,
+    "old_negative_axis_enclosure_depends_on_old_match": true,
+    "only_J_ext_is_zeroed": true,
+    "positive_witness_used": true,
+    "zero_source_and_Dirichlet_responses_are_distinct": true
+  },
+  "validation_passed": true
+}

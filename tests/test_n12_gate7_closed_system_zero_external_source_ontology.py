@@ -26,6 +26,12 @@ def test_closed_system_zero_external_source_ontology() -> None:
     assert "M_C2" in payload["external_internal_partition"]["internal_not_zeroed"]
     assert payload["physical_force"]["additional_seam_source_allowed"] is False
     assert payload["matching_audit"]["common_source_incidence"].startswith("VALID_INTERNAL")
+    assert payload["matching_audit"]["incoming_M_f"].endswith(
+        "PHYSICAL_BIRTH_GRAPH_REDUCTION_OPEN"
+    )
+    assert payload["joint_assembly"]["formation_response_two_boundary"] == (
+        "M_f=M11-M10*X_birth"
+    )
     assert payload["adjudication"]["internal_response_zeroing"] == "FORBIDDEN"
     assert payload["adjudication"]["complete_joint_graded_cotangent"] == "OPEN_CURRENT_OPERATOR_OWNER"
     assert payload["claim_boundary"]["finite_1222_core_promoted_to_endpoint"] is False

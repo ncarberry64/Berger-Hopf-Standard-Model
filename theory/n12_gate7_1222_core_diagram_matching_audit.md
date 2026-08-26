@@ -88,12 +88,24 @@ those three representative pencils from the live dependency.  It does not
 sum the full angular ledger, supply its multiplicities, realize the incoming
 seam, or control the maximal tail beyond the artificial 1,222-core edge.
 
-The incoming `M_f` slot is now matched more sharply.  On the retained zero
-birth-source Dirichlet reference it is exactly the new-event block of the
-existing compact formation Calderon map, equivalently the stored formation
-Schur complement.  The terminal Laurent germ therefore supplies an
-action-owned parametric `M_f` germ.  No new C1 operator or second birth
-exterior is missing.  The certified duration law and terminal Cauchy jet also
+The incoming `M_f` slot has been re-audited under the owner-authorized source
+ontology.  The old whole-axis enclosure is a valid enclosure of the
+Dirichlet-reference block `M11`, but `J_ext=0` does not impose a zero birth
+trace.  If the retained birth graph is written
+
+`n_birth+B_birth u_birth=J_ext`,
+
+then the physical response is the inverse-free reduction
+
+`(M00+B_birth)X_birth=M01`,
+
+`M_f^phys=M11-M10 X_birth`.
+
+Thus no new C1 bulk theory or second external birth source is missing, but
+the action-owned `B_birth` and its first jet must be instantiated, or the
+birth trace must remain explicit in the unreduced joint operator.  The
+terminal Laurent germ remains valid for `M11`.  The certified duration law
+and terminal Cauchy jet also
 fix the normalized coefficient path through order `lambda_0^2`, uniformly in
 normalized proper time and without an Euler--Dirac acceleration solve.  Its
 complete finite-positive-amplitude remainder is now closed on the explicit
@@ -102,12 +114,12 @@ nonzero branch-23 parameter box.  The sign-safe regularized tube keeps
 factorized-Dirac coefficient paths in log space for every positive amplitude
 in the box.  The box remains parametric in the action-owned formation
 amplitude and does not select a history member.  Evaluating the already
-identified compact block can now be replaced by direct form comparison: the
-incoming `M_f` is enclosed pointwise for every negative real resolvent probe
-and every positive amplitude in the box.  In the fermion AE2 sector the C2
-load is nonnegative and `W_phys=0`, so the joint seam is strictly invertible
-on the whole negative axis.  Its exact value and graded spectral trace remain
-open.
+identified compact block can be bounded by direct form comparison.  Those
+bounds apply to the `M11` Dirichlet reference for every negative real
+resolvent probe and every positive amplitude in the box; they do not yet
+enclose `M_f^phys`.  In the fermion AE2 sector the C2 load is nonnegative and
+`W_phys=0`, but physical seam invertibility must be rechecked after the birth
+graph reduction.  Its exact value and graded spectral trace remain open.
 
 The remaining unmatched data are geometric and pathwise.  Modulo the closed
 common-scale direction, the complete radius-plus-duration first-jet norm is
@@ -116,8 +128,9 @@ noncompact maximal tail are not.  The common pair/contact incidence and
 heat-minus-zeta trace functional are valid conditional consumers; broad seam
 intervals and isolated probes cannot replace their realized inputs.
 
-Accordingly the next construction is the action-realized per-level joint
-operator family and then the actual complete joint graded
+Accordingly the next construction is the action-owned birth graph reduction,
+or the equivalent unreduced birth-trace operator, followed by the
+action-realized per-level joint operator family and then the actual complete joint graded
 heat-minus-zeta spectral cotangent on the local parametric family.  It is fed
 to the already-certified interval actions and the single signed reverse
 equation, combined with the exact common-scale component, and tested as a

@@ -27,13 +27,33 @@ In one compatible event frame, write the joint quadratic pencil as
 `P_joint=[[A,C,0],[C^dagger,H+G+W_phys,E^dagger],[0,E,F]]`,
 
 with `U_R` used to transport the child trace and conormal data into that frame.
-Inverse-free elimination of the two Dirichlet interiors gives
+Here `A` is the complete formation off-event block, including the dynamical
+birth trace and its retained self-adjoint birth graph.  It is not obtained by
+setting that trace to zero.  In the free two-boundary Calderón representation,
+
+`A -> M00+B_birth`, `C -> M01`, `C^dagger -> M10`, `H -> M11`,
+
+where the birth stationarity law is
+
+`n_birth+B_birth u_birth=J_ext`.
+
+Inverse-free elimination of the two complete off-seam blocks gives
 
 `M_f=H-C^dagger A^(-1)C`,
 
 `M_C=G-E^dagger F^(-1)E`,
 
 `S_AE2=M_f+U_R^dagger M_C U_R+W_phys`.
+
+At `J_ext=0`, the equivalent compact-history formula is
+
+`(M00+B_birth)X_birth=M01`,
+
+`M_f=M11-M10 X_birth`.
+
+Thus the Dirichlet-reference identity `M_f=M11` is not the physical
+zero-source reduction.  The retained birth graph and its action jet must be
+instantiated, or the birth trace must be kept in the unreduced joint operator.
 
 These formulas are assembly identities.  The physical functional is first
 formed from the complete positive self-adjoint `P_joint`, with the retained
@@ -64,8 +84,9 @@ vertices.  They are not external Cauchy data.  It also removes any route that
 sets `M_C`, `M_f`, `W_phys`, or a retained contact response to zero before the
 joint functional is assembled.
 
-The remaining numerical owner is unchanged but more sharply typed: assemble
-the complete joint graded heat-minus-zeta coefficient cotangent, reverse it
+The remaining numerical owner is now more sharply typed: instantiate the
+retained birth graph (or keep its trace unreduced), assemble the complete
+joint graded heat-minus-zeta coefficient cotangent, reverse it
 once through the joint seam and both histories, take the projected Cauchy
 limit (or an actual finite event/canonical stop), and solve the same-action KKT
 root.  The 1,222-segment child prefix is valid input to this reverse assembly,
