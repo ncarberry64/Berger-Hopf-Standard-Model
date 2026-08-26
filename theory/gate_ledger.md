@@ -2408,3 +2408,24 @@ Exact next object:
   canonical stop.
 - Gate 7: `ACTIVE`; Gate 8: `LOCKED`; chord 3: `UNAUTHORIZED`;
   frozen predictions unchanged; `FULL_BHSM_COMPLETE=FALSE`.
+
+## N=12 cancelled Euler--Dirac connection chart
+
+- Exact denominator-free same-action field:
+  `G_theta=Delta F_s=[s V_q,b_psi Psi+s V_hard]`.
+- Exact incidence identities: `Dlambda[G_theta]=Delta`,
+  `V_tau=G_theta/(N_boundary s)`, and
+  `d tau/dtheta=N_boundary s>0` while `s,N_boundary>0`.
+- `Delta=0`: `FIXED_s_AND_LOG_s_CHART_TURNING_BOUNDARY`, not by itself an
+  event, Euler--Dirac singularity, physical boundary, or canonical stop.
+- Actual Euler--Dirac stopping locus: `s=lambda(Y)=0`.
+- Denominator-free field forms the full Euler--Dirac inverse: `FALSE`; only
+  the simple-line hard complement is solved.
+- Recenter seeds exist with `Delta<0`, positive branch-24 eigenvalue,
+  positive selected-line gap, lapse, radius, and proper-time orientation:
+  `RECONNAISSANCE_ONLY_NOT_AN_EXACT_HISTORY_CERTIFICATE`.
+- Current proof owner: validated interval propagation in `theta` or proper
+  time from the reset family to strict capture inclusion or a genuine
+  retained stop.  A center sign change is not promoted.
+- Gate 7: `ACTIVE`; Gate 8: `LOCKED`; chord 3: `UNAUTHORIZED`;
+  frozen predictions unchanged; `FULL_BHSM_COMPLETE=FALSE`.
