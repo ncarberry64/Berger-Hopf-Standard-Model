@@ -270,10 +270,15 @@ def test_replacement_force_is_constraint_projected_without_reset_selection() -> 
         "BHSM_N12_C2_PROJECTED_ADJOINT_CAUCHY_CRITERION.json"
         in dag["G7_08_FORCE"]["provenance"]
     )
-    assert "common-scale Jacobi zeta optical Cauchy tail" in dag[
+    assert "separate common-scale zeta core net identically zero" in dag[
         "G7_08_FORCE"
     ]["physical_meaning"]
-    assert "without separate zeta convergence" in dag["G7_08_FORCE"][
+    assert (
+        "artifacts/flagship_integration/"
+        "BHSM_N12_GATE7_RANK72_RELATIVE_FORM_TAIL.json"
+        in dag["G7_08_FORCE"]["provenance"]
+    )
+    assert "does not delete the nonzero common-scale heat trace" in dag["G7_08_FORCE"][
         "physical_meaning"
     ]
     assert (

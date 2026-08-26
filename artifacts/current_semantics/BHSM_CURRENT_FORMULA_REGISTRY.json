@@ -89,6 +89,7 @@
     "artifacts/flagship_integration/BHSM_N12_GATE7_MAXIMAL_TAIL_SUPPORT_REDUCTION.json": "150BE9D7C1EADE81C263CC805AE0700C1D703073B95CB01FF0001A03C8442CEC",
     "artifacts/flagship_integration/BHSM_N12_GATE7_ONE_SEAM_FULL_GRADED_FINITE_CORE_HEAT_BOUND.json": "934DCD800EE09583E3A214A5F7B4E2AF1686C08D45A278E75880B144DBE582BD",
     "artifacts/flagship_integration/BHSM_N12_GATE7_OUTGOING_FLOW_TAIL_CLOSURE.json": "BFB82254E72FB36886F4F403A9C79AF401E74AD97EC71AA8A90C4BADD62999E4",
+    "artifacts/flagship_integration/BHSM_N12_GATE7_RANK72_RELATIVE_FORM_TAIL.json": "60B68487BB45E2845CF852DE26B3B7D7C8AC0D5DDD829FBD8FBC1149F494375A",
     "artifacts/flagship_integration/BHSM_N12_GATE7_SEED_IMAGE_WARD_GAUGE_AUDIT.json": "D4E82792C554AA939D6077363478E81B54CEBDAF4C6559467AF3E0E73579A37D",
     "artifacts/flagship_integration/BHSM_N12_GATE7_TWO_SEAM_CLOSED_OPERATOR_ASSEMBLY.json": "ED9296981EE926B0570194077F3728E606D4B1A53A8A8BEAE8BB3B4FE9B6C13E",
     "artifacts/flagship_integration/BHSM_N12_INTERVAL_WEIGHT_FIVE_CENTER_LIFT.json": "CF4A6345F0E84F40DD7F3884D061B65A19A45B99F21799426FFD6274EFBBBE57",
@@ -918,6 +919,42 @@
       "physical_meaning": "The complete outgoing seed image is the 72-dimensional constraint-and-ordered-event tangent. No tracked global 98-state gauge generator is available, and neither the principal Calderon slice nor BRST grading annihilates this geometric seed image, so the rank-72 projected Cauchy tail remains the exact owner.",
       "provenance": [
         "artifacts/flagship_integration/BHSM_N12_GATE7_SEED_IMAGE_WARD_GAUGE_AUDIT.json"
+      ],
+      "semantic_layer": "MATHEMATICAL_OBJECT",
+      "source_weighting_required": false,
+      "superseded_meanings": [],
+      "tests": [
+        "test_required_fields"
+      ]
+    },
+    {
+      "action_version": "BHSM-AE-2.0.0",
+      "artifact_hashes": {
+        "artifacts/flagship_integration/BHSM_N12_GATE7_RANK72_RELATIVE_FORM_TAIL.json": "60B68487BB45E2845CF852DE26B3B7D7C8AC0D5DDD829FBD8FBC1149F494375A"
+      },
+      "canonical_id": "GATE7_RANK72_RELATIVE_FORM_TAIL",
+      "current_status": "SHARP_CRITERION_DERIVED_COMMON_SCALE_ZETA_TAIL_CLOSED_RANK72_JOINT_TAIL_OPEN",
+      "dimensions": "DIMENSIONLESS_OR_OPERATOR_TYPED",
+      "domain": "certified rank-72 reset seed image, complete closed-system heat-minus-zeta seed, and maximal Friedrichs core exhaustion",
+      "downstream_consumers": [
+        "G7_08_FORCE",
+        "G7_09_SADDLE"
+      ],
+      "equivalent_forms": [],
+      "forbidden_interpretations": [
+        "require convergence of the full ambient adjoint",
+        "remove a seed-image dimension without a generator-membership theorem",
+        "delete the nonzero common-scale heat trace",
+        "treat fixed-channel Dini or a finite prefix as a maximal temporal tail bound"
+      ],
+      "formula": "g_T-g_S=integral_S^T (U(t,0)B_seed)^dagger q_rep(t) dt+d_T-d_S; common-scale D_a integral(d_tau/R4)=0",
+      "frozen_output_status": "NOT_FROZEN_OUTPUT",
+      "mathematical_class": "SOURCE_CONTRACTED_HEAT_SMOOTHED_RELATIVE_FORM_CAUCHY_CRITERION",
+      "observable_status": "NOT_AN_OBSERVABLE",
+      "ontology_version": "BHSM-AE2-ONTOLOGY-1.3.0",
+      "physical_meaning": "The exact remaining maximal owner is a 72-vector heat-smoothed relative-form tail, not an ambient adjoint norm. The separate common-scale zeta optical-tail obligation is superseded by the moving-duration Ward identity, while the non-scale joint tail remains open.",
+      "provenance": [
+        "artifacts/flagship_integration/BHSM_N12_GATE7_RANK72_RELATIVE_FORM_TAIL.json"
       ],
       "semantic_layer": "MATHEMATICAL_OBJECT",
       "source_weighting_required": false,

@@ -93,6 +93,7 @@ SOURCES = (
     "artifacts/flagship_integration/BHSM_N12_GATE7_MAXIMAL_TAIL_SUPPORT_REDUCTION.json",
     "artifacts/flagship_integration/BHSM_N12_GATE7_OUTGOING_FLOW_TAIL_CLOSURE.json",
     "artifacts/flagship_integration/BHSM_N12_GATE7_SEED_IMAGE_WARD_GAUGE_AUDIT.json",
+    "artifacts/flagship_integration/BHSM_N12_GATE7_RANK72_RELATIVE_FORM_TAIL.json",
     "artifacts/flagship_integration/BHSM_N12_C2_SIGNED_DURATION_INCIDENCE_OWNER.json",
     "artifacts/flagship_integration/BHSM_N12_C2_SIGNED_DDELTA_SEED_TRANSPORT_AUDIT.json",
     "artifacts/flagship_integration/BHSM_N12_C2_DIRECT_DDELTA_ROW_RECONNAISSANCE.json",
@@ -218,6 +219,7 @@ def verify_current_lineage() -> None:
     maximal_tail_support = loaded["artifacts/flagship_integration/BHSM_N12_GATE7_MAXIMAL_TAIL_SUPPORT_REDUCTION.json"]
     outgoing_flow_tail = loaded["artifacts/flagship_integration/BHSM_N12_GATE7_OUTGOING_FLOW_TAIL_CLOSURE.json"]
     seed_ward_gauge = loaded["artifacts/flagship_integration/BHSM_N12_GATE7_SEED_IMAGE_WARD_GAUGE_AUDIT.json"]
+    rank72_relative_form = loaded["artifacts/flagship_integration/BHSM_N12_GATE7_RANK72_RELATIVE_FORM_TAIL.json"]
     duration_incidence = loaded["artifacts/flagship_integration/BHSM_N12_C2_SIGNED_DURATION_INCIDENCE_OWNER.json"]
     ddelta_transport = loaded["artifacts/flagship_integration/BHSM_N12_C2_SIGNED_DDELTA_SEED_TRANSPORT_AUDIT.json"]
     ddelta_row = loaded["artifacts/flagship_integration/BHSM_N12_C2_DIRECT_DDELTA_ROW_RECONNAISSANCE.json"]
@@ -538,6 +540,18 @@ def verify_current_lineage() -> None:
         and seed_ward_gauge["claim_boundary"][
             "remaining_noncompact_tail_dimension_upper"
         ] == 72
+        and rank72_relative_form["claim_boundary"][
+            "common_scale_separate_zeta_tail"
+        ] == "CLOSED_SUPERSEDED"
+        and rank72_relative_form["claim_boundary"][
+            "rank72_joint_heat_minus_zeta_tail"
+        ] == "OPEN_CURRENT_OWNER"
+        and rank72_relative_form["exact_criterion"][
+            "ambient_adjoint_limit_required"
+        ] is False
+        and rank72_relative_form["availability_audit"][
+            "rank72_maximal_relative_form_bound"
+        ] == "ACTUALLY_MISSING"
     ):
         raise RuntimeError("joint Gate7 source/cotangent frontier is not current")
     if force_sign_no_go["claim_boundary"]["universal_force_sign_shortcut"] != "CLOSED_INVALID":
