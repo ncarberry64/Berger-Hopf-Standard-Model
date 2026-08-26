@@ -208,6 +208,82 @@ def zeta_casimir_value_and_force(
     }
 
 
+def piecewise_linear_zeta_coefficient_cotangent(
+    log_radii: np.ndarray,
+    proper_durations: np.ndarray,
+    *,
+    coefficient: float = 59.0 / 30.0,
+) -> dict[str, Any]:
+    """Return the exact linear-element zeta value and coefficient cotangent.
+
+    On each segment ``x(s)=(1-s)x_j+s*x_(j+1)`` and
+    ``d tau=h_j ds``.  The function integrates ``exp(-x(s))`` analytically,
+    including a cancellation-safe power series when the endpoint difference
+    is small.  Both node-radius and moving-duration derivatives are returned.
+    """
+
+    x = np.asarray(log_radii, dtype=float)
+    h = np.asarray(proper_durations, dtype=float)
+    c = float(coefficient)
+    if (
+        x.ndim != 1
+        or h.ndim != 1
+        or x.size != h.size + 1
+        or h.size < 1
+        or not np.all(np.isfinite(x))
+        or not np.all(np.isfinite(h))
+        or np.any(h <= 0.0)
+        or not math.isfinite(c)
+    ):
+        raise ValueError("finite node log radii, positive durations, and finite coefficient required")
+
+    def moments(delta: float) -> tuple[float, float]:
+        if abs(delta) < 1.0e-5:
+            i0 = 0.0
+            i1 = 0.0
+            factorial = 1.0
+            power = 1.0
+            for order in range(24):
+                if order:
+                    factorial *= order
+                    power *= -delta
+                i0 += power / (factorial * (order + 1))
+                i1 += power / (factorial * (order + 2))
+            return i0, i1
+        exponential = math.exp(-delta)
+        i0 = -math.expm1(-delta) / delta
+        i1 = (1.0 - (1.0 + delta) * exponential) / (delta * delta)
+        return i0, i1
+
+    integral = 0.0
+    d_integral_x = np.zeros(x.size)
+    d_integral_h = np.zeros(h.size)
+    for index, duration in enumerate(h):
+        delta = float(x[index + 1] - x[index])
+        i0, i1 = moments(delta)
+        scale = math.exp(-float(x[index]))
+        phi = scale * i0
+        left = -scale * (i0 - i1)
+        right = -scale * i1
+        integral += duration * phi
+        d_integral_x[index] += duration * left
+        d_integral_x[index + 1] += duration * right
+        d_integral_h[index] = phi
+
+    d_gamma_x = -c * d_integral_x
+    d_gamma_h = -c * d_integral_h
+    common_scale_residual = float(d_gamma_x.sum() + d_gamma_h @ h)
+    return {
+        "integral_d_tau_over_R4": float(integral),
+        "Gamma_SM_zeta": float(-c * integral),
+        "D_log_R4_Gamma_SM_zeta": d_gamma_x,
+        "D_proper_duration_Gamma_SM_zeta": d_gamma_h,
+        "common_scale_zeta_force_residual": common_scale_residual,
+        "coefficient": c,
+        "quadrature": "EXACT_ON_EACH_PIECEWISE_LINEAR_LOG_RADIUS_ELEMENT",
+    }
+
+
 def common_scale_zeta_value_and_force(
     radii: np.ndarray,
     measure_weights: np.ndarray,
@@ -328,6 +404,7 @@ __all__ = [
     "direct_sum_heat_value_and_force",
     "common_scale_heat_value_and_force",
     "zeta_casimir_value_and_force",
+    "piecewise_linear_zeta_coefficient_cotangent",
     "common_scale_zeta_value_and_force",
     "finite_core_heat_trace_log_upper_bound",
     "replacement_heat_minus_zeta_force",

@@ -1,6 +1,6 @@
 # N12 C2 signed finite-core adjoint assembly
 
-Status: `SIGNED_FINITE_CORE_COEFFICIENT_ADJOINT_ASSEMBLED_ACTUAL_FORCE_OPEN`.
+Status: `SIGNED_FINITE_CORE_HEAT_MINUS_ZETA_SEED_ASSEMBLED_TRANSITION_ADJOINT_OPEN`.
 
 For an exact member of the reset-generated finite-core family, write
 
@@ -30,9 +30,18 @@ datum `J_ext` is set to zero, after differentiation.  No additional seam
 source is present.  The joint heat-cotangent theorem now supplies the unique
 block seed, and all 1,222 interval transposed-duration actions are certified.
 
-Thus the signed assembly pattern is complete on every exact finite-core
-family member.  The stored proof centers still cannot be substituted for
-that member.  The current repository also does not yet supply the actual
-joint graded heat-minus-zeta spectral cotangent or the signed internal
-upstream-history covector.  Accordingly no numerical zero-external-source
-force value, saddle, endpoint, or maximal-tail claim follows from this theorem.
+The coefficient source itself is no longer wholly open.  The retained
+`-(59/30) integral exp(-x) d tau` term supplies an exact piecewise-linear
+node-radius and moving-duration covector, enclosed componentwise on the whole
+1,222-segment family.  The complete graded heat covector is retained separately
+as a nonzero log-space enclosure whose base-10 upper bound is below
+`-1.9e54`.  Thus the finite-core heat-minus-zeta seed is assembled without
+rounding heat to zero.
+
+Thus the signed assembly pattern and its finite-core coefficient seed are
+complete on every exact finite-core family member.  The stored proof centers
+still cannot be substituted for that member.  The current repository does not
+yet supply a validated numerical or interval state-transition reverse sweep or
+the signed internal upstream-history covector.  Accordingly no numerical
+zero-external-source force value, saddle, endpoint, or maximal-tail claim
+follows from this theorem.

@@ -70,6 +70,14 @@ variations cancel in the local zeta term.  Its N12 value remains open until
 the sharp joint graded operator is realized; no probe is promoted to that
 trace.
 
+The retained zeta coefficient slot is now direct rather than schematic. On
+all 1,222 linear elements, exact exponential moments give the 1,223
+node-radius and 1,222 moving-duration components. They are enclosed
+componentwise on the certified family and satisfy the common-scale Ward
+identity. Together with the separately retained nonzero log-space heat
+enclosure, this closes the finite-core coefficient seed. It does not perform
+the state-transition reverse pullback.
+
 The owner-authorized source ontology now fixes the remaining terminology.
 Only the external birth/Cauchy datum `J_ext` is zeroed, after the complete
 joint operator is assembled and differentiated.  `M_f`, transported `M_C2`,
@@ -103,6 +111,17 @@ those three representative pencils from the live dependency.  It does not
 sum the full angular ledger, supply its multiplicities, realize the incoming
 seam, or control the maximal tail beyond the artificial 1,222-core edge.
 
+The direct one-seam domain now closes the first two of those qualifications
+for the finite core. Both exterior traces are Dirichlet, so the complete
+formation-plus-C2 duration supplies a global Poincare rate. For the Weyl
+blocks, integration by parts in the globally factorized AE2 form adds the
+quadratic angular term and subtracts only the certified linear
+`||D_tau log R4||_infinity` term. Summing the absolute gauge, Weyl, and HS
+weights gives a complete finite-core heat-trace and cotangent-seed bound with
+base-10 logarithm below `-1.9e54`. This is a rigorous log-space enclosure,
+not an assertion that floating-point underflow is exact zero. The signed
+non-scale geometry contraction and maximal tail remain open.
+
 The incoming `M_f` slot has been re-audited under Norman's source ontology and
 the tracked endpoint-role theorem. The external BRST-quotiented birth trace
 is fixed while the complete internal operator is assembled and
@@ -128,16 +147,16 @@ positive amplitude in the box. In the fermion AE2 sector the C2 load is
 nonnegative and `W_phys=0`. The complete graded seam trace remains open.
 
 The remaining unmatched data are geometric and pathwise.  Modulo the closed
-common-scale direction, the complete radius-plus-duration first-jet norm is
-certified on the 1,222 core, but the signed backward-adjoint covector and the
+common-scale direction, the complete radius-plus-duration first-jet norm and
+finite-core heat-minus-zeta coefficient seed are certified, but the validated
+state-transition backward-adjoint covector, upstream-history pullback, and the
 noncompact maximal tail are not.  The common pair/contact incidence and
 heat-minus-zeta trace functional are valid conditional consumers; broad seam
 intervals and isolated probes cannot replace their realized inputs.
 
-Accordingly the next construction interval-assembles the direct per-level
-E1/C2 operator on the incoming and C2 parameter families and evaluates the
-actual complete joint graded heat-minus-zeta spectral cotangent. It is fed
-to the already-certified interval actions and the single signed reverse
-equation, combined with the exact common-scale component, and tested as a
-projected finite-core Cauchy net.  The 1,222-core edge remains an artificial
-Friedrichs exhaustion edge, not an event or canonical stop.
+Accordingly the next construction pulls the explicit zeta covector and
+separately suppressed heat seed through a validated interval state-transition
+adjoint using the already-certified duration actions, composes the complete
+upstream `C1` covector and exact common-scale component, and tests the result
+as a projected finite-core Cauchy net. The 1,222-core edge remains an
+artificial Friedrichs exhaustion edge, not an event or canonical stop.

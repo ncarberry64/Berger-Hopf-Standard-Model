@@ -1,6 +1,6 @@
 # Gate-7 maximal graded cotangent matching audit
 
-Status: `MAXIMAL_GRADED_COTANGENT_TYPE_AND_FINITE_CORE_DIRECT_OPERATOR_CLOSED_VALUES_TAIL_OPEN`.
+Status: `MAXIMAL_GRADED_COTANGENT_FINITE_CORE_SEED_CLOSED_SIGNED_CONTRACTION_AND_TAIL_OPEN`.
 
 The external zero birth trace selects the compact-history Dirichlet reference
 without zeroing its nonzero internal response `M_f=M11`. The current physical
@@ -8,7 +8,13 @@ operator has the single internal `E1/C2` seam
 `S_AE2=M_f+U_R^dagger M_C2 U_R+W_phys`. The direct finite-core operator and
 its elementwise first-jet generator are now executable with that seam node
 represented once. The actual parametric graded values and C2 maximal tail
-remain open; a pre-E0 response is not required.
+remain open; a pre-E0 response is not required. The two-exterior-Dirichlet
+Poincare estimate and the global AE2 factorization now sum all retained
+angular levels absolutely and enclose the complete finite-core heat seed in
+log space. The zeta node-radius and moving-duration covectors are now exact on
+each linear element and enclosed componentwise on the whole family. The open
+finite-core datum is their validated state-transition and upstream pullback,
+not the existence of the coefficient seed.
 
 The retained BRST/statistics ledger already fixes every coefficient in the
 physical heat direct sum.  After the longitudinal gauge/complex-ghost pair is
@@ -74,12 +80,20 @@ The repository matching result is sharp:
   its interval value on the action-owned incoming/C2 parameter family and the
   maximal projected tail, or an equivalent decisive trace-functional
   enclosure at an actual finite event/canonical stop.
+- the complete finite-core angular heat trace and cotangent-seed trace norm
+  are uniformly bounded by a quantity whose base-10 logarithm is below
+  `-1.9e54`; binary64 underflow is retained as a bound, not promoted to exact
+  zero;
+- the direct zeta coefficient covector is closed on all 1,223 node radii and
+  all 1,222 moving durations. The numerical or interval state-transition
+  pullback, upstream history covector, and maximal tail remain open.
 
 Thus neither a new grading, a new external source, more isolated negative-axis
-probes, nor a new response theory is required. Once the actual E1/C2
-joint family is supplied, the already-derived seed is evaluated, the single
-signed reverse sweep is run, and the existing physical quotient tests the
-Cauchy tail before the same-action KKT root.
+probes, nor a new response theory is required. The explicit zeta covector and
+separately suppressed heat seed are next pulled through a validated interval
+state-transition adjoint and composed with the upstream `C1` history
+covector. The existing physical quotient then tests the maximal Cauchy tail
+before the same-action KKT root.
 
 Gate 7 remains open, Gate 8 remains locked, chord 3 remains unauthorized, and
 `FULL_BHSM_COMPLETE=false`.

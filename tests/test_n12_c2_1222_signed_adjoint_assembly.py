@@ -13,6 +13,14 @@ def test_signed_finite_core_adjoint_is_assembled() -> None:
         "all_1222_interval_transposed_duration_actions"
     ] == "CLOSED"
     assert payload["adjudication"]["joint_heat_cotangent_reverse_seed"] == "CLOSED"
+    assert payload["adjudication"][
+        "direct_zeta_coefficient_cotangent"
+    ].startswith("CLOSED")
+    assert payload["adjudication"][
+        "full_graded_heat_cotangent_seed"
+    ] == "CERTIFIED_SUPPRESSED_NOT_ZEROED"
+    assert payload["direct_zeta_coefficient_input"]["D_log_R4_shape"] == [1223]
+    assert payload["direct_zeta_coefficient_input"]["D_proper_duration_shape"] == [1222]
     assert len(payload["actual_1222_coefficient_inputs"]) == 3
 
 
@@ -24,8 +32,8 @@ def test_assembly_does_not_promote_centers_source_force_or_tail() -> None:
         "OPEN"
     )
     assert adjudication["complete_internal_upstream_history_covector"].startswith("OPEN")
-    assert adjudication["actual_joint_graded_heat_minus_zeta_cotangent"].startswith(
-        "OPEN"
+    assert adjudication["actual_joint_graded_heat_minus_zeta_cotangent"] == (
+        "FINITE_CORE_SEED_ENCLOSED_TRANSITION_PULLBACK_OPEN"
     )
     assert payload["exact_recurrence"]["additional_seam_source"] == "FORBIDDEN"
     assert payload["claim_boundary"]["actual_BHSM_signed_covector"] == "OPEN"

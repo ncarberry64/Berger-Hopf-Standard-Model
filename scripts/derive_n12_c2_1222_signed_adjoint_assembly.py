@@ -32,6 +32,9 @@ INCIDENCE = BASE / "BHSM_N12_FORWARD_COMMON_SOURCE_INCIDENCE.json"
 INTERVAL_ACTIONS = BASE / "BHSM_N12_C2_1222_TRANSPOSED_DURATION_ACTION_COVERAGE.json"
 SOURCE_ONTOLOGY = BASE / "BHSM_N12_GATE7_CLOSED_SYSTEM_ZERO_EXTERNAL_SOURCE_ONTOLOGY.json"
 JOINT_SEED = BASE / "BHSM_N12_GATE7_JOINT_HEAT_COTANGENT_REVERSE_SEED.json"
+DIRECT_ZETA = BASE / "BHSM_N12_GATE7_DIRECT_ZETA_COEFFICIENT_COTANGENT.json"
+DIRECT_ZETA_DATA = DIRECT_ZETA.with_suffix(".npz")
+FULL_HEAT = BASE / "BHSM_N12_GATE7_ONE_SEAM_FULL_GRADED_FINITE_CORE_HEAT_BOUND.json"
 MODULE = ROOT / "src" / "bhsm" / "interface" / "aether_forward_c2_signed_coefficient_adjoint.py"
 THEORY = ROOT / "theory" / "n12_c2_1222_signed_adjoint_assembly.md"
 INPUTS = (
@@ -46,6 +49,9 @@ INPUTS = (
     INTERVAL_ACTIONS,
     SOURCE_ONTOLOGY,
     JOINT_SEED,
+    DIRECT_ZETA,
+    DIRECT_ZETA_DATA,
+    FULL_HEAT,
     MODULE,
     THEORY,
 )
@@ -113,7 +119,7 @@ def build_payload() -> dict[str, Any]:
         raise FileNotFoundError("missing signed-adjoint inputs: " + ", ".join(missing))
     (
         parametric, cotangent, complete_norm, force, launch, owner, incidence,
-        interval_actions, source_ontology, joint_seed,
+        interval_actions, source_ontology, joint_seed, direct_zeta, full_heat,
     ) = (
         _load(path)
         for path in (
@@ -127,11 +133,13 @@ def build_payload() -> dict[str, Any]:
             INTERVAL_ACTIONS,
             SOURCE_ONTOLOGY,
             JOINT_SEED,
+            DIRECT_ZETA,
+            FULL_HEAT,
         )
     )
     if not all(record.get("validation_passed") is True for record in (
         parametric, cotangent, complete_norm, force, launch, owner, incidence,
-        interval_actions, source_ontology, joint_seed,
+        interval_actions, source_ontology, joint_seed, direct_zeta, full_heat,
     )):
         raise RuntimeError("validated signed-adjoint lineage required")
     channel_shapes: dict[str, Any] = {}
@@ -150,6 +158,21 @@ def build_payload() -> dict[str, Any]:
                     np.any(d_x != 0.0) or np.any(d_h != 0.0)
                 ),
             }
+    with np.load(DIRECT_ZETA_DATA) as data:
+        direct_zeta_shapes = {
+            "D_log_R4_shape": list(
+                np.asarray(data["C2_D_log_R4_Gamma_SM_zeta_center"]).shape
+            ),
+            "D_proper_duration_shape": list(
+                np.asarray(data["C2_D_proper_duration_Gamma_SM_zeta_center"]).shape
+            ),
+            "D_log_R4_interval_shape": list(
+                np.asarray(data["C2_D_log_R4_Gamma_SM_zeta_interval"]).shape
+            ),
+            "D_proper_duration_interval_shape": list(
+                np.asarray(data["C2_D_proper_duration_Gamma_SM_zeta_interval"]).shape
+            ),
+        }
     crosscheck = _crosscheck()
     validation = {
         "exact_parametric_family_exists_through_1222": (
@@ -195,6 +218,23 @@ def build_payload() -> dict[str, Any]:
         "joint_heat_cotangent_reverse_seed_is_derived": (
             joint_seed["adjudication"]["joint_reverse_seed_formula"] == "CLOSED"
         ),
+        "direct_zeta_coefficient_cotangent_is_certified": (
+            direct_zeta["claim_boundary"][
+                "direct_zeta_finite_core_coefficient_cotangent"
+            ] == "CERTIFIED"
+            and direct_zeta_shapes["D_log_R4_shape"] == [1223]
+            and direct_zeta_shapes["D_proper_duration_shape"] == [1222]
+            and direct_zeta_shapes["D_log_R4_interval_shape"] == [1223, 2]
+            and direct_zeta_shapes["D_proper_duration_interval_shape"] == [1222, 2]
+        ),
+        "full_graded_heat_seed_is_rigorously_suppressed_not_zeroed": (
+            full_heat["claim_boundary"][
+                "full_graded_finite_core_heat_cotangent_seed"
+            ] == "CERTIFIED_SUPPRESSED"
+            and full_heat["full_graded_bounds"][
+                "binary64_underflow_is_exact_zero"
+            ] is False
+        ),
         "no_internal_response_is_zeroed_or_reintroduced_as_a_seam_source": (
             source_ontology["adjudication"]["internal_response_zeroing"] == "FORBIDDEN"
             and joint_seed["adjudication"]["additional_seam_source"] == "FORBIDDEN"
@@ -208,7 +248,7 @@ def build_payload() -> dict[str, Any]:
     return {
         "artifact": "BHSM_N12_C2_1222_SIGNED_ADJOINT_ASSEMBLY",
         "status": (
-            "SIGNED_FINITE_CORE_COEFFICIENT_ADJOINT_ASSEMBLED_ACTUAL_FORCE_OPEN"
+            "SIGNED_FINITE_CORE_HEAT_MINUS_ZETA_SEED_ASSEMBLED_TRANSITION_ADJOINT_OPEN"
             if passed else "SIGNED_FINITE_CORE_ADJOINT_NOT_ASSEMBLED"
         ),
         "classification": (
@@ -217,10 +257,10 @@ def build_payload() -> dict[str, Any]:
             "INVERSE_FREE_REVERSE_STATE_SWEEP_INCLUDING_MOVING_PROPER_"
             "DURATION;_THE_RESULT_COMPOSES_WITH_THE_EXISTING_RESET_LAUNCH_"
             "ADJOINT_AND_THE_COMPLETE_INTERNAL_UPSTREAM_INTERFACE_COVECTOR;_"
-            "ALL_1222_INTERVAL_TRANSPOSED_DURATION_ACTIONS_AND_THE_SINGLE_"
-            "JOINT_HEAT_COTANGENT_SEED_ARE_NOW_CLOSED,_WHILE_THE_ACTUAL_JOINT_"
-            "GRADED_SPECTRAL_COTANGENT_AND_NUMERICAL_PARAMETRIC_OR_INTERVAL_"
-            "REALIZATION_REMAIN_OPEN"
+            "ALL_1222_INTERVAL_TRANSPOSED_DURATION_ACTIONS,_THE_DIRECT_ZETA_"
+            "COEFFICIENT_COTANGENT,_AND_THE_RIGOROUSLY_SUPPRESSED_FULL_GRADED_"
+            "HEAT_SEED_ARE_NOW_CLOSED,_WHILE_THE_NUMERICAL_PARAMETRIC_OR_"
+            "INTERVAL_STATE_TRANSITION_ADJOINT_AND_UPSTREAM_PULLBACK_REMAIN_OPEN"
         ),
         "exact_recurrence": {
             "history": "Y_(j+1)=Phi_j(Y_j),_x_j=log_R4(Y_j),_h_j=H_j(Y_j)",
@@ -239,17 +279,20 @@ def build_payload() -> dict[str, Any]:
             "forward_Jacobi_columns_required": 0,
         },
         "actual_1222_coefficient_inputs": channel_shapes,
+        "direct_zeta_coefficient_input": direct_zeta_shapes,
         "crosscheck": crosscheck,
         "adjudication": {
             "signed_finite_core_adjoint_equation": "CLOSED",
             "all_1222_interval_transposed_duration_actions": "CLOSED",
             "joint_heat_cotangent_reverse_seed": "CLOSED",
+            "direct_zeta_coefficient_cotangent": "CLOSED_COMPONENTWISE_ON_FINITE_CORE_FAMILY",
+            "full_graded_heat_cotangent_seed": "CERTIFIED_SUPPRESSED_NOT_ZEROED",
             "zero_external_source_semantics": "CLOSED_ONLY_J_ext",
             "moving_duration_included": True,
             "proof_center_used_as_physical_history": False,
             "numerical_parametric_or_interval_BHSM_adjoint": "OPEN_CURRENT_OWNER",
             "complete_internal_upstream_history_covector": "OPEN_CURRENT_OWNER",
-            "actual_joint_graded_heat_minus_zeta_cotangent": "OPEN_CURRENT_OWNER",
+            "actual_joint_graded_heat_minus_zeta_cotangent": "FINITE_CORE_SEED_ENCLOSED_TRANSITION_PULLBACK_OPEN",
             "maximal_projected_tail": "OPEN_AFTER_FINITE_CORE_FORCE_NET",
             "actual_projected_zero_source_force": "OPEN",
         },
@@ -260,6 +303,8 @@ def build_payload() -> dict[str, Any]:
                 "composition with reset launch and upstream covectors",
                 "all 1222 interval transposed duration actions",
                 "single closed-system joint heat cotangent reverse seed",
+                "direct finite-core zeta node-radius and moving-duration cotangent",
+                "full graded finite-core heat seed as a nonzero log-space enclosure",
                 "only external J_ext is zeroed after joint differentiation",
             ],
             "INVALIDATED": [
@@ -270,14 +315,14 @@ def build_payload() -> dict[str, Any]:
             "OPEN": [
                 "numerical parametric or interval BHSM reverse sweep",
                 "complete upstream C1-to-E1 signed covector",
-                "actual joint graded heat-minus-zeta spectral cotangent",
+                "numerical state-transition pullback of the enclosed heat-minus-zeta seed",
                 "maximal projected force tail or finite later stop",
             ],
         },
         "exact_next_dependency": (
-            "REALIZE_OR_SHARPLY_ENCLOSE_THE_ACTUAL_COMPLETE_JOINT_GRADED_"
-            "HEAT_MINUS_ZETA_SPECTRAL_COTANGENT_ON_THE_PARAMETRIC_FAMILY,_"
-            "FEED_IT_TO_THE_ALREADY_CERTIFIED_1222_INTERVAL_ACTIONS,_COMPLETE_"
+            "FEED_THE_EXPLICIT_ZETA_COVECTOR_AND_SEPARATELY_SUPPRESSED_HEAT_"
+            "SEED_TO_A_VALIDATED_PARAMETRIC_OR_INTERVAL_STATE_TRANSITION_"
+            "ADJOINT_USING_THE_CERTIFIED_1222_DURATION_ACTIONS,_COMPLETE_"
             "THE_INTERNAL_UPSTREAM_AND_CHILD_REVERSE SWEEP_ONCE,_THEN_APPLY_"
             "THE_EXISTING_RESET_AND_PHYSICAL_QUOTIENT_PULLBACKS"
         ),

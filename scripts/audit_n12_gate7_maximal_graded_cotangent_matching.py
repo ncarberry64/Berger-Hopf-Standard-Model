@@ -26,13 +26,15 @@ SOURCE_ROLE = BASE / "BHSM_N12_GATE7_EXTERNAL_BIRTH_SOURCE_ROLE_SUPERSESSION.jso
 ONE_SEAM = BASE / "BHSM_N12_GATE7_AE2_ONE_SEAM_DIRECT_DESCRIPTOR.json"
 CHILD = BASE / "BHSM_N12_C2_1222_SEGMENT_NEGATIVE_AXIS_WEYL_FAMILY.json"
 FINITE_HEAT = BASE / "BHSM_N12_GATE7_FIXED_CHANNEL_FINITE_CORE_HEAT_BOUND.json"
+FULL_GRADED_HEAT = BASE / "BHSM_N12_GATE7_ONE_SEAM_FULL_GRADED_FINITE_CORE_HEAT_BOUND.json"
+DIRECT_ZETA = BASE / "BHSM_N12_GATE7_DIRECT_ZETA_COEFFICIENT_COTANGENT.json"
 ADJOINT = BASE / "BHSM_N12_C2_1222_SIGNED_ADJOINT_ASSEMBLY.json"
 CAUCHY = BASE / "BHSM_N12_C2_PROJECTED_ADJOINT_CAUCHY_CRITERION.json"
 THEORY = ROOT / "theory" / "n12_gate7_maximal_graded_cotangent_matching_audit.md"
 INPUTS = (
     LEDGER, BRST, FUNCTIONAL, ONTOLOGY, SEED, DOMAIN, INCOMING, BIRTH_AUDIT,
     BIRTH_LOAD, TWO_SEAM, E0_PROVENANCE, SOURCE_ROLE, ONE_SEAM, CHILD,
-    FINITE_HEAT, ADJOINT, CAUCHY, THEORY,
+    FINITE_HEAT, FULL_GRADED_HEAT, DIRECT_ZETA, ADJOINT, CAUCHY, THEORY,
 )
 
 
@@ -86,12 +88,12 @@ def build_payload() -> dict[str, Any]:
     (
         ledger, brst, functional, ontology, seed, domain, incoming, birth_audit,
         birth_load, two_seam, e0_provenance, source_role, one_seam, child,
-        finite_heat, adjoint, cauchy,
+        finite_heat, full_graded_heat, direct_zeta, adjoint, cauchy,
     ) = map(_load, INPUTS[:-1])
     records = (
         ledger, brst, functional, ontology, seed, domain, incoming, birth_audit,
         birth_load, two_seam, e0_provenance, source_role, one_seam, child,
-        finite_heat, adjoint, cauchy,
+        finite_heat, full_graded_heat, direct_zeta, adjoint, cauchy,
     )
     if not all(record.get("validation_passed") is True for record in records):
         raise RuntimeError("validated graded-cotangent parents required")
@@ -185,12 +187,34 @@ def build_payload() -> dict[str, Any]:
             finite_heat["validation"]["full_graded_joint_trace_is_not_claimed"]
             is True
         ),
-        "signed_reverse_equation_is_closed_but_source_value_open": (
+        "full_graded_finite_core_heat_seed_is_uniformly_suppressed": (
+            full_graded_heat["claim_boundary"][
+                "full_graded_finite_core_heat_cotangent_seed"
+            ] == "CERTIFIED_SUPPRESSED"
+            and full_graded_heat["matching_audit"][
+                "signed_non_scale_geometry_contraction"
+            ] == "OPEN"
+            and full_graded_heat["matching_audit"]["maximal_C2_tail"] == "OPEN"
+        ),
+        "direct_zeta_and_suppressed_heat_seed_are_ready_for_reverse_pullback": (
+            direct_zeta["claim_boundary"][
+                "direct_zeta_finite_core_coefficient_cotangent"
+            ] == "CERTIFIED"
+            and direct_zeta["matching_audit"]["C2_zeta_reverse_source"]
+            == "READY_FOR_CERTIFIED_INTERVAL_ACTIONS"
+            and adjoint["adjudication"][
+                "direct_zeta_coefficient_cotangent"
+            ].startswith("CLOSED")
+            and adjoint["adjudication"][
+                "full_graded_heat_cotangent_seed"
+            ] == "CERTIFIED_SUPPRESSED_NOT_ZEROED"
+        ),
+        "signed_reverse_equation_is_closed_but_transition_pullback_open": (
             adjoint["adjudication"]["signed_finite_core_adjoint_equation"]
             == "CLOSED"
             and adjoint["adjudication"][
                 "actual_joint_graded_heat_minus_zeta_cotangent"
-            ] == "OPEN_CURRENT_OWNER"
+            ] == "FINITE_CORE_SEED_ENCLOSED_TRANSITION_PULLBACK_OPEN"
         ),
         "projected_Cauchy_criterion_is_derived": (
             cauchy["claim_boundary"]["projected_Cauchy_criterion"]
@@ -203,7 +227,7 @@ def build_payload() -> dict[str, Any]:
     return {
         "artifact": "BHSM_N12_GATE7_MAXIMAL_GRADED_COTANGENT_MATCHING_AUDIT",
         "status": (
-            "MAXIMAL_GRADED_COTANGENT_TYPE_AND_FINITE_CORE_DIRECT_OPERATOR_CLOSED_VALUES_TAIL_OPEN"
+            "MAXIMAL_GRADED_COTANGENT_FINITE_CORE_SEED_CLOSED_SIGNED_CONTRACTION_AND_TAIL_OPEN"
             if passed else "MAXIMAL_GRADED_COTANGENT_MATCHING_NOT_CLOSED"
         ),
         "classification": (
@@ -212,9 +236,10 @@ def build_payload() -> dict[str, Any]:
             "VALID_MATCHES;_THE_EXTERNAL_ZERO_BIRTH_TRACE_SELECTS_THE_DIRICHLET_"
             "REFERENCE_WITH_NONZERO_INTERNAL_M_f_EQUALS_M11,_AND_THE_ONLY_"
             "PHYSICAL_INTERNAL_SEAM_IS_E1_C2;_THE_DIRECT_FINITE_CORE_OPERATOR_"
-            "AND_FIRST_JET_TYPES_ARE_EXECUTABLE,_WHILE_THE_ACTUAL_PARAMETRIC_"
-            "GRADED_VALUES,_C2_MAXIMAL_TAIL,_AND_DECISIVE_TRACE_FUNCTIONAL_"
-            "ENCLOSURE_ARE_OPEN"
+            "AND_FIRST_JET_TYPES_ARE_EXECUTABLE,_THE_DIRECT_ZETA_COVECTOR_IS_"
+            "COMPONENTWISE_CLOSED,_AND_THE_COMPLETE_FINITE_CORE_GRADED_HEAT_"
+            "SEED_IS_UNIFORMLY_SUPPRESSED_IN_LOG_SPACE;_THE_STATE_TRANSITION_"
+            "PULLBACK,_C2_MAXIMAL_TAIL,_AND_PROJECTED_FORCE_ARE_OPEN"
         ),
         "retained_graded_sector_ledger": weights,
         "exact_cotangent_contract": {
@@ -239,7 +264,7 @@ def build_payload() -> dict[str, Any]:
         "matching_audit": {
             "grading_signs_and_multiplicities": "VALID_MATCH",
             "heat_Frechet_cotangent": "VALID_MATCH",
-            "direct_zeta_covector": "VALID_MATCH",
+            "direct_zeta_covector": "CLOSED_COMPONENTWISE_FINITE_CORE_MATCH",
             "joint_internal_seam_assembly": "VALID_MATCH_ONE_E1_C2_SEAM",
             "incoming_M11_whole_axis_class": "VALID_PHYSICAL_ZERO_SOURCE_M_f",
             "physical_zero_source_incoming_Mf": "VALID_MATCH_M11",
@@ -250,9 +275,12 @@ def build_payload() -> dict[str, Any]:
             "physical_quotient_and_Cauchy_criterion": "VALID_MATCH",
             "finite_core_direct_joint_operator_generator": "VALID_MATCH",
             "finite_core_direct_joint_first_jet_generator": "VALID_MATCH",
+            "full_graded_finite_core_heat_trace": "VALID_LOG_SPACE_ENCLOSURE",
+            "full_graded_finite_core_heat_cotangent_seed": "VALID_TRACE_NORM_LOG_SPACE_ENCLOSURE",
             "actual_per_level_joint_operator_family": "DIRECT_GENERATOR_CLOSED_ACTUAL_PARAMETRIC_VALUES_AND_MAXIMAL_TAIL_OPEN",
             "actual_per_level_joint_operator_first_jet": "DIRECT_GENERATOR_CLOSED_ACTUAL_PARAMETRIC_VALUES_AND_MAXIMAL_TAIL_OPEN",
-            "actual_maximal_graded_cotangent_value": "ACTUALLY_MISSING",
+            "actual_finite_core_graded_cotangent_seed": "CLOSED_ZETA_PLUS_UNIFORM_HEAT_TRACE_NORM_ENCLOSURE",
+            "actual_maximal_graded_cotangent_value": "FINITE_CORE_CLOSED_MAXIMAL_TAIL_OPEN",
         },
         "adjudication": {
             "new_grading_required": False,
@@ -260,19 +288,18 @@ def build_payload() -> dict[str, Any]:
             "more_isolated_negative_axis_probes_have_proof_value": False,
             "proof_center_may_be_promoted_to_physical_history": False,
             "finite_1222_edge_may_be_promoted_to_endpoint": False,
-            "actual_joint_operator_or_decisive_trace_enclosure": "OPEN_CURRENT_OWNER",
-            "signed_reverse_value": "WAITING_ON_ACTUAL_GRADED_COTANGENT",
+            "actual_joint_operator_or_decisive_trace_enclosure": "FINITE_CORE_HEAT_SEED_CLOSED",
+            "signed_reverse_value": "WAITING_ON_STATE_TRANSITION_AND_UPSTREAM_PULLBACK",
             "projected_Cauchy_tail": "WAITING_ON_FINITE_CORE_FORCE_NET",
             "same_action_KKT_root": "WAITING_ON_PROJECTED_FORCE",
             "Gate7": "OPEN",
             "Gate8": "LOCKED",
         },
         "exact_next_dependency": (
-            "INTERVAL_ASSEMBLE_THE_DERIVED_DIRECT_ONE_SEAM_DESCRIPTOR_FOR_EACH_"
-            "RETAINED_GRADED_LEVEL_ON_THE_INCOMING_AMPLITUDE_AND_LOCAL_73_"
-            "PARAMETER_C2_FAMILIES_OR_AT_AN_ACTUAL_FINITE_STOP;_THEN_"
-            "EVALUATE_THE_FIXED_COTANGENT_CONTRACT_AND_RUN_THE_EXISTING_SINGLE_"
-            "REVERSE_SWEEP"
+            "PULL_BACK_THE_EXPLICIT_ZETA_COVECTOR_AND_SEPARATELY_SUPPRESSED_"
+            "HEAT_SEED_THROUGH_A_VALIDATED_INTERVAL_STATE_TRANSITION_ADJOINT,_"
+            "COMPOSE_THE_UPSTREAM_C1_COVECTOR,_AND_PROVE_"
+            "THE_MAXIMAL_PROJECTED_CAUCHY_TAIL_OR_CERTIFY_A_FINITE_STOP"
         ),
         "validation": validation,
         "validation_passed": passed,

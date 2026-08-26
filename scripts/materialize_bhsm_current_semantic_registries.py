@@ -78,6 +78,8 @@ SOURCES = (
     "artifacts/flagship_integration/BHSM_N12_GATE7_JOINT_HEAT_COTANGENT_REVERSE_SEED.json",
     "artifacts/flagship_integration/BHSM_N12_GATE7_1222_CORE_DIAGRAM_MATCHING_AUDIT.json",
     "artifacts/flagship_integration/BHSM_N12_GATE7_MAXIMAL_GRADED_COTANGENT_MATCHING_AUDIT.json",
+    "artifacts/flagship_integration/BHSM_N12_GATE7_ONE_SEAM_FULL_GRADED_FINITE_CORE_HEAT_BOUND.json",
+    "artifacts/flagship_integration/BHSM_N12_GATE7_DIRECT_ZETA_COEFFICIENT_COTANGENT.json",
     "artifacts/flagship_integration/BHSM_N12_C2_SIGNED_DURATION_INCIDENCE_OWNER.json",
     "artifacts/flagship_integration/BHSM_N12_C2_SIGNED_DDELTA_SEED_TRANSPORT_AUDIT.json",
     "artifacts/flagship_integration/BHSM_N12_C2_DIRECT_DDELTA_ROW_RECONNAISSANCE.json",
@@ -188,6 +190,8 @@ def verify_current_lineage() -> None:
     joint_heat_seed = loaded["artifacts/flagship_integration/BHSM_N12_GATE7_JOINT_HEAT_COTANGENT_REVERSE_SEED.json"]
     core_diagram = loaded["artifacts/flagship_integration/BHSM_N12_GATE7_1222_CORE_DIAGRAM_MATCHING_AUDIT.json"]
     graded_cotangent = loaded["artifacts/flagship_integration/BHSM_N12_GATE7_MAXIMAL_GRADED_COTANGENT_MATCHING_AUDIT.json"]
+    full_graded_heat = loaded["artifacts/flagship_integration/BHSM_N12_GATE7_ONE_SEAM_FULL_GRADED_FINITE_CORE_HEAT_BOUND.json"]
+    direct_zeta = loaded["artifacts/flagship_integration/BHSM_N12_GATE7_DIRECT_ZETA_COEFFICIENT_COTANGENT.json"]
     duration_incidence = loaded["artifacts/flagship_integration/BHSM_N12_C2_SIGNED_DURATION_INCIDENCE_OWNER.json"]
     ddelta_transport = loaded["artifacts/flagship_integration/BHSM_N12_C2_SIGNED_DDELTA_SEED_TRANSPORT_AUDIT.json"]
     ddelta_row = loaded["artifacts/flagship_integration/BHSM_N12_C2_DIRECT_DDELTA_ROW_RECONNAISSANCE.json"]
@@ -377,11 +381,20 @@ def verify_current_lineage() -> None:
         and core_diagram["adjudication"]["joint_heat_cotangent_reverse_seed"]
         == "CLOSED"
         and core_diagram["adjudication"]["exact_joint_spectral_trace"]
-        == "OPEN"
+        == "FINITE_CORE_FULL_GRADED_LOG_SPACE_ENCLOSURE_CLOSED_MAXIMAL_TAIL_OPEN"
         and graded_cotangent["adjudication"]["new_grading_required"] is False
         and graded_cotangent["matching_audit"][
             "actual_per_level_joint_operator_family"
-        ] == "OPEN_E1_C2_GRADED_VALUES_AND_MAXIMAL_TAIL"
+        ] == "DIRECT_GENERATOR_CLOSED_ACTUAL_PARAMETRIC_VALUES_AND_MAXIMAL_TAIL_OPEN"
+        and full_graded_heat["claim_boundary"][
+            "full_graded_finite_core_heat_cotangent_seed"
+        ] == "CERTIFIED_SUPPRESSED"
+        and direct_zeta["claim_boundary"][
+            "direct_zeta_finite_core_coefficient_cotangent"
+        ] == "CERTIFIED"
+        and direct_zeta["claim_boundary"][
+            "full_heat_minus_zeta_signed_reverse_value"
+        ] == "OPEN"
     ):
         raise RuntimeError("joint Gate7 source/cotangent frontier is not current")
     if force_sign_no_go["claim_boundary"]["universal_force_sign_shortcut"] != "CLOSED_INVALID":

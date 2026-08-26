@@ -357,7 +357,10 @@ def test_replacement_force_is_constraint_projected_without_reset_selection() -> 
     assert "selecting the E0 Dirichlet reference while leaving the nonzero internal response M_f=M11" in dag[
         "G7_08_FORCE"
     ]["physical_meaning"]
-    assert "per-level E1/C2 graded seam cotangent" in dag[
+    assert "direct zeta node-radius and moving-duration cotangent is componentwise closed" in dag[
+        "G7_08_FORCE"
+    ]["physical_meaning"]
+    assert "validated state-transition reverse pullback" in dag[
         "G7_08_FORCE"
     ]["physical_meaning"]
     assert "neither grading nor multiplicity is missing" in dag[
@@ -369,6 +372,11 @@ def test_replacement_force_is_constraint_projected_without_reset_selection() -> 
     assert (
         "artifacts/flagship_integration/"
         "BHSM_N12_GATE7_EXTERNAL_BIRTH_SOURCE_ROLE_SUPERSESSION.json"
+        in dag["G7_08_FORCE"]["provenance"]
+    )
+    assert (
+        "artifacts/flagship_integration/"
+        "BHSM_N12_GATE7_DIRECT_ZETA_COEFFICIENT_COTANGENT.json"
         in dag["G7_08_FORCE"]["provenance"]
     )
     assert (

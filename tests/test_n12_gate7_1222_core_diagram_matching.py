@@ -38,6 +38,12 @@ def test_gate7_1222_core_diagram_matching() -> None:
     assert verdicts["MAXIMAL_GRADED_SECTOR_COTANGENT_CONTRACT"] == (
         "VALID_MATCH_TYPE_AND_WEIGHTS_CLOSED_ACTUAL_OPERATOR_FAMILY_OPEN"
     )
+    assert verdicts["FULL_GRADED_FINITE_CORE_HEAT_AND_COTANGENT_SEED"].startswith(
+        "VALID_MATCH_COMPLETE_FINITE_CORE_SEED_SUPPRESSED"
+    )
+    assert verdicts["DIRECT_ZETA_NODE_AND_MOVING_DURATION_COTANGENT"] == (
+        "VALID_MATCH_COMPONENTWISE_CLOSED_TRANSITION_PULLBACK_OPEN"
+    )
     assert payload["adjudication"]["finite_event_or_canonical_stop"] == "NOT_REACHED"
     assert payload["adjudication"]["stored_fixed_channel_1064_to_1222_heat_increment"] == "CERTIFIED_SUPPRESSED_IN_LOG_SPACE"
     assert payload["adjudication"]["non_scale_fixed_node_radius_reset_pullback"] == "CERTIFIED_ON_1222_FINITE_CORE"
@@ -50,6 +56,15 @@ def test_gate7_1222_core_diagram_matching() -> None:
     assert payload["adjudication"][
         "graded_sector_weights_and_cotangent_contract"
     ] == "CLOSED"
+    assert payload["adjudication"][
+        "full_graded_finite_core_heat_cotangent_seed"
+    ] == "CERTIFIED_SUPPRESSED_IN_LOG_SPACE"
+    assert payload["adjudication"][
+        "direct_zeta_finite_core_coefficient_cotangent"
+    ] == "CERTIFIED_COMPONENTWISE"
+    assert payload["adjudication"]["finite_core_heat_minus_zeta_seed"] == (
+        "CLOSED_ENCLOSURE_TRANSITION_PULLBACK_OPEN"
+    )
     assert payload["adjudication"][
         "actual_per_level_joint_operator_family"
     ] == "DIRECT_GENERATOR_CLOSED_ACTUAL_PARAMETRIC_VALUES_AND_MAXIMAL_TAIL_OPEN"

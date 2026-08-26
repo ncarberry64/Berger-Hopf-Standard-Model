@@ -330,6 +330,27 @@
   `M_f+U_R^dagger M_C2 U_R+W_phys` and the factorized determinant.  This
   closes the finite-core operator/first-jet type, not the actual parametric
   graded value or maximal projected Cauchy tail.
+- Full graded direct-core heat bound:
+  `FULL_GRADED_ONE_SEAM_FINITE_CORE_HEAT_SEED_SUPPRESSED_IN_LOG_SPACE`.
+  The two exterior Dirichlet traces give the complete-interval Poincare base;
+  the global factorized Weyl identity contributes
+  `lambda^2 exp(-2x_max)-lambda exp(-x_min)||D_tau x||_infinity`, and the
+  retained nonfermion contacts are nonnegative. Absolute summation of all
+  gauge, Weyl, and HS multiplicities closes the full finite-core angular heat
+  trace and heat-cotangent seed with a base-10 log bound below `-1.9e54`.
+  This does not set the heat term exactly to zero. The signed non-scale
+  contraction and maximal projected tail remain open.
+- Direct finite-core zeta coefficient cotangent:
+  `DIRECT_ZETA_COEFFICIENT_COTANGENT_CLOSED_ON_FINITE_CORE_FAMILY`.
+  Exact exponential moments on each linear log-radius element give all 1,223
+  node-radius and 1,222 moving-duration components of
+  `D Gamma_SM^zeta`.  The former are strictly positive and the latter strictly
+  negative throughout the certified family; their simultaneous common-scale
+  contraction cancels exactly.  The incoming formation contribution is
+  routed through the upstream history adjoint, not added as a seam source.
+  Together with the separately suppressed nonzero heat enclosure this closes
+  the finite-core coefficient seed.  The validated state-transition pullback,
+  upstream `C1` covector, and maximal projected tail remain open.
 - The actual same-action replacement residual is the heat-minus-zeta force,
   `D_Phi Gamma_heat-D_Phi Gamma_SM^zeta`, because the certified local root
   already extremizes the attached-zeta action.  Here
