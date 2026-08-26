@@ -7,7 +7,7 @@ from typing import Any, Iterable, Mapping
 
 
 ACTION_VERSION = "BHSM-AE-2.0.0"
-ONTOLOGY_VERSION = "BHSM-AE2-ONTOLOGY-1.0.0"
+ONTOLOGY_VERSION = "BHSM-AE2-ONTOLOGY-1.1.0"
 REQUIRED_RECORD_FIELDS = (
     "canonical_id",
     "formula",
@@ -701,6 +701,7 @@ def _ontology() -> list[dict[str, Any]]:
     ae2 = "artifacts/action_extension/BHSM_ACTION_AE2_GLOBAL_SPIN_RESET_ACTION.json"
     owner = "theory/norman_owner_ontology_recovered.md"
     finite = "artifacts/flagship_integration/BHSM_N12_GATE7_FINITE_ENCAPSULATION_PHYSICAL_DOMAIN_AUDIT.json"
+    source_ontology = "artifacts/flagship_integration/BHSM_N12_GATE7_CLOSED_SYSTEM_ZERO_EXTERNAL_SOURCE_ONTOLOGY.json"
     rows = [
         ("ONTOLOGY_MAXIMAL_FORWARD_HISTORY", "H_max^+", "Primary dynamical object is a maximal forward geometric history.", "ACTION_REQUIRED"),
         ("ONTOLOGY_SINGLE_TIME", "dt>0 and d_tau>0", "Physical time has one orientation.", "INTERNAL_CONSISTENCY_REQUIRED"),
@@ -725,16 +726,18 @@ def _ontology() -> list[dict[str, Any]]:
         ("ONTOLOGY_FULL_COMPLETION", "complete=all_claimed_sectors+scale+domains+BRST+continuum+frozen_reproduction", "Full completion requires reproducible closure from one coherent current action.", "OWNER_AUTHORIZED_COMPLETION_RULE"),
         ("ONTOLOGY_FINITE_ENCAPSULATION", "realized_particle => 0<T_enc<infinity", "A realized particle completes encapsulation in finite positive physical time; infinite nonencapsulating histories remain mathematical but nonrealized.", "OWNER_AUTHORIZED_PHYSICAL_DOMAIN"),
         ("ONTOLOGY_ENCAPSULATION_CHRONOLOGY", "pre_encapsulation -> E0 -> C1 -> forward_evolution -> E1 -> C2", "Encapsulation completes at E0, which creates C1; after positive-duration forward evolution a later collision/de-encapsulation is a distinct event E1 creating a distinct child C2. There is no physical reset or return.", "OWNER_AUTHORIZED_PHYSICAL_DOMAIN"),
+        ("ONTOLOGY_GATE7_ZERO_EXTERNAL_SOURCE", "D_xi Gamma_closed[P_joint] evaluated before J_ext=0", "Only the external birth/Cauchy linear datum is zero. Incoming M_f, transported M_C2, U_R, W_phys, and retained contact/incidence blocks remain internal, are assembled and differentiated exactly once, and are not independently zeroed. Zero external source does not impose a zero birth trace or a homogeneous Dirichlet condition.", "OWNER_AUTHORIZED_PHYSICAL_SOURCE_SEMANTICS"),
     ]
     return [
         record(cid, formula, "ONTOLOGY_RECORD", "BHSM_ONTOLOGY", meaning,
-               "current BHSM ontology", [finite] if cid in {
+               "current BHSM ontology", [source_ontology] if cid == "ONTOLOGY_GATE7_ZERO_EXTERNAL_SOURCE" else [finite] if cid in {
                    "ONTOLOGY_FINITE_ENCAPSULATION", "ONTOLOGY_ENCAPSULATION_CHRONOLOGY"
                } else [owner] if cid.startswith("ONTOLOGY_") and cid not in {
                    "ONTOLOGY_MAXIMAL_FORWARD_HISTORY", "ONTOLOGY_SINGLE_TIME", "ONTOLOGY_REFLECTION",
                    "ONTOLOGY_CONDITIONAL_RESET", "ONTOLOGY_AE2_DOMAIN", "ONTOLOGY_AE2_TRANSMISSION", "ONTOLOGY_FAR_END"
                } else [ae2], current_status=status,
                forbidden_interpretations=(
+                   ["Set an internal response block to zero.", "Add an independent seam source or force.", "Impose a homogeneous Dirichlet birth trace.", "Count both the direct and Schur determinant routes."] if cid == "ONTOLOGY_GATE7_ZERO_EXTERNAL_SOURCE" else
                    ["Call owner-authorized AE2 ontology itself action-derived."] if cid == "ONTOLOGY_AE2_DOMAIN" else
                    ["Insert downstream Standard Model observables into the action."] if cid == "ONTOLOGY_NO_OBSERVABLE_UPSTREAM" else
                    ["Treat particles as primitive point substances."] if cid == "ONTOLOGY_PARTICLE_CLASS" else
@@ -755,7 +758,7 @@ GATE_CHAIN = [
     ("G7_05_FACTORIZED_LAP", "all admissible positive far tails source-Dini by compact Volterra trace-class theorem", "CLOSED"),
     ("G7_06_E1_FINITE", "fixed-channel E1 source-measure finiteness", "CLOSED"),
     ("G7_07_ANGULAR_TAIL", "finite-endpoint compact-resolvent/source-trace control on the realized finite-encapsulation domain; infinite nonencapsulating tails remain nonrealized mathematical histories", "CLOSED_BY_OWNER_PHYSICAL_SCOPE_AND_LOCAL_ACTION_EXISTENCE"),
-    ("G7_08_FORCE", "heat-minus-zeta functional, physical quotient criterion, finite-stratum regularity, moving-endpoint chain rules, inverse-free Weyl solver, and nested channel/Euler-Dirac adjoint pullback are derived; fixed-channel source-Dini and high-energy trace control remain closed; infinite nonencapsulating NHIM histories are preserved as nonrealized mathematics; the analytic full 57 by 196 historical reset Jacobian has rank 57 and its event block has certified rank 32, so the projection onto the 73-dimensional constrained child manifold is submersive; the certified incoming child germ therefore lifts to a nonempty local family with forward chronology E0 -> C1 ->[T>0] E1 -> C2, where E1 is a new event and C2 a new child; after the forward swap, the reset tangent projects to 72 outgoing C2 seed directions with a 67-dimensional fixed-seed lift kernel, and the exact action field Dlambda[F_0]=1 adds the transverse descriptor direction, certifying a 72+1=73 local C2 launch chart without selecting a member; the kernel statement is not full two-sided seam-force invariance: the downstream C2 covector annihilates that kernel exactly, and the kernel is exactly {0}_C2 direct sum ker(J_E1), the already-known raw preceding-event tangent; its force owner is therefore the complete upstream C1-to-E1 heat-minus-zeta history plus retained AE2 interface contacts, not a new local seam force; the AE2 fermion surface action is exactly zero, but this does not make the upstream force vanish, and M_f value or seam invertibility does not supply the full incoming bulk functional; the efficient exact assembly is one joint full-history forward-adjoint KKT solve, with the retained 66-dimensional time quotient handled intrinsically until its hybrid generator is derived; the launch chart, exact C2 fixed-s field, strict regular margins, and compact 1222-segment cover imply a nonempty local 73-parameter family of exact C2 histories and Jacobi fields through every finite-core prefix, so absence of any parametric base history is no longer the blocker; on every exact family member the signed node-radius and moving-duration coefficient cotangents now pull back by one inverse-free reverse state sweep and compose with the reset launch and complete upstream covectors, so 73 forward Jacobi columns and a new C2 response theory are unnecessary; the exact signed log-radius and log-lapse covectors and D(Ns/Delta)=Ns/Delta*(DlogN-DDelta/Delta) incidence are explicit, and the selected-line/hard-complement calculation now certifies a signed D_Y Delta partial plus a relative 2.79e-3 remainder ball at the reference center; the coarse full-operator transport ball contains zero, but Delta recombines exactly as Dlambda[b_Psi*Psi+s*V_hard], and preserving that cancellation reduces the exact-family zero-exclusion task to a rigorous enclosure of action Hessian row 86 below 14.6225 rather than a full 98 by 98 D2Delta norm; self-adjointness now removes every nested hard adjoint w3,w5,wI,wN,wVI,wfi from that row, leaving only local action/source jets, the existing first eigenline Jacobi matrix, its decisive column, z, and V_hard; two direct meshes and the fully reduced center replay give a stable row norm near 1.69e-5, about 8.6e5 below the ceiling, but these center calculations are not promoted to an interval theorem; the rigorous row remainder and transposed exact segment-map action, rather than the whole proper-time geometry, are the remaining local duration data; the numerical parametric or interval joint-source adjoint, complete upstream heat-minus-zeta covector, actual graded source contraction, and maximal projected tail remain open; the historical reset API is only the forward event-to-new-child glue, and no recurrence, universal reachability, or physical child selector is introduced; positive-duration local existence is now closed; the unique maximal M_C2 family is instantiated on the one certified C2 enclosure class, and the exact current owner is the quotient-Cauchy tail of the finite-core physical force net, or a finite later event/canonical stop; the ambient absolute weighted norm is sufficient but not necessary; finite-optical infinite routes fail the absolute graded heat domain, while an infinite-optical termwise route requires the physical common-scale Jacobi zeta optical Cauchy tail; exact replacement accounting also permits a direct combined q_heat-minus-q_zeta Cauchy proof without separate zeta convergence", "OPEN_CURRENT_OWNER"),
+    ("G7_08_FORCE", "heat-minus-zeta functional, physical quotient criterion, finite-stratum regularity, moving-endpoint chain rules, inverse-free Weyl solver, and nested channel/Euler-Dirac adjoint pullback are derived; fixed-channel source-Dini and high-energy trace control remain closed; infinite nonencapsulating NHIM histories are preserved as nonrealized mathematics; the analytic full 57 by 196 historical reset Jacobian has rank 57 and its event block has certified rank 32, so the projection onto the 73-dimensional constrained child manifold is submersive; the certified incoming child germ therefore lifts to a nonempty local family with forward chronology E0 -> C1 ->[T>0] E1 -> C2, where E1 is a new event and C2 a new child; after the forward swap, the reset tangent projects to 72 outgoing C2 seed directions with a 67-dimensional fixed-seed lift kernel, and the exact action field Dlambda[F_0]=1 adds the transverse descriptor direction, certifying a 72+1=73 local C2 launch chart without selecting a member; the kernel statement is not full two-sided seam-force invariance: the downstream C2 covector annihilates that kernel exactly, and the kernel is exactly {0}_C2 direct sum ker(J_E1), the already-known raw preceding-event tangent; its force owner is therefore the complete upstream C1-to-E1 heat-minus-zeta history plus retained AE2 interface contacts, not a new local seam force; the AE2 fermion surface action is exactly zero, but this does not make the upstream force vanish, and M_f value or seam invertibility does not supply the full incoming bulk functional; the efficient exact assembly is one joint full-history forward-adjoint KKT solve, with the retained 66-dimensional time quotient handled intrinsically until its hybrid generator is derived; the launch chart, exact C2 fixed-s field, strict regular margins, and compact 1222-segment cover imply a nonempty local 73-parameter family of exact C2 histories and Jacobi fields through every finite-core prefix, so absence of any parametric base history is no longer the blocker; on every exact family member the signed node-radius and moving-duration coefficient cotangents now pull back by one inverse-free reverse state sweep and compose with the reset launch and complete upstream covectors, so 73 forward Jacobi columns and a new C2 response theory are unnecessary; the exact signed log-radius and log-lapse covectors and D(Ns/Delta)=Ns/Delta*(DlogN-DDelta/Delta) incidence are explicit, and the selected-line/hard-complement calculation now certifies a signed D_Y Delta partial plus a relative 2.79e-3 remainder ball at the reference center; the coarse full-operator transport ball contains zero, but Delta recombines exactly as Dlambda[b_Psi*Psi+s*V_hard], and preserving that cancellation reduces the exact-family zero-exclusion task to a rigorous enclosure of action Hessian row 86 below 14.6225 rather than a full 98 by 98 D2Delta norm; self-adjointness now removes every nested hard adjoint w3,w5,wI,wN,wVI,wfi from that row, leaving only local action/source jets, the existing first eigenline Jacobi matrix, its decisive column, z, and V_hard; two direct meshes and the fully reduced center replay give a stable row norm near 1.69e-5, about 8.6e5 below the ceiling, but these center calculations are not promoted to an interval theorem; the rigorous complete signed D2Delta row and all 1222 interval transposed exact moving-duration actions are now certified; only J_ext is set to zero after the complete joint internal operator has been graded and differentiated, which neither zeros an internal response nor imposes a zero birth trace; the single joint heat cotangent seed and signed reverse equation are derived; the actual complete joint graded spectral cotangent, numerical signed reverse value, and maximal projected tail remain open; the historical reset API is only the forward event-to-new-child glue, and no recurrence, universal reachability, or physical child selector is introduced; positive-duration local existence is now closed; the unique maximal M_C2 family is instantiated on the one certified C2 enclosure class, and the exact current owner is the quotient-Cauchy tail of the finite-core physical force net, or a finite later event/canonical stop; the ambient absolute weighted norm is sufficient but not necessary; finite-optical infinite routes fail the absolute graded heat domain, while an infinite-optical termwise route requires the physical common-scale Jacobi zeta optical Cauchy tail; exact replacement accounting also permits a direct combined q_heat-minus-q_zeta Cauchy proof without separate zeta convergence", "OPEN_CURRENT_OWNER"),
     ("G7_09_SADDLE", "same-action finite-endpoint forward-adjoint quotient KKT equations are derived but unsolved; a nonempty local positive-duration E0 -> C1 ->[T>0] E1 -> C2 family is certified, so the saddle route awaits the actual quotient-Cauchy heat-minus-zeta force limit or a finite later endpoint and remains mathematically coupled to G7_08 without adding a gate", "PENDING_COUPLED_TO_G7_08"),
     ("G7_10_HESSIAN", "pair-plus-contact Hessian", "PENDING"),
     ("G7_11_WARD_TRACE", "Ward/BRST and source-contracted relative trace", "PENDING"),
@@ -799,6 +802,10 @@ def _gates() -> list[dict[str, Any]]:
             "artifacts/flagship_integration/BHSM_N12_C2_FIXED_SEED_UPSTREAM_FORCE_OWNER.json",
             "artifacts/flagship_integration/BHSM_N12_C2_1222_PARAMETRIC_BASE_FAMILY.json",
             "artifacts/flagship_integration/BHSM_N12_C2_1222_SIGNED_ADJOINT_ASSEMBLY.json",
+            "artifacts/flagship_integration/BHSM_N12_C2_1222_TRANSPOSED_DURATION_ACTION_COVERAGE.json",
+            "artifacts/flagship_integration/BHSM_N12_GATE7_CLOSED_SYSTEM_ZERO_EXTERNAL_SOURCE_ONTOLOGY.json",
+            "artifacts/flagship_integration/BHSM_N12_GATE7_JOINT_HEAT_COTANGENT_REVERSE_SEED.json",
+            "artifacts/flagship_integration/BHSM_N12_GATE7_1222_CORE_DIAGRAM_MATCHING_AUDIT.json",
             "artifacts/flagship_integration/BHSM_N12_C2_SIGNED_DURATION_INCIDENCE_OWNER.json",
             "artifacts/flagship_integration/BHSM_N12_C2_SIGNED_DDELTA_SEED_TRANSPORT_AUDIT.json",
             "artifacts/flagship_integration/BHSM_N12_C2_DIRECT_DDELTA_ROW_RECONNAISSANCE.json",
@@ -845,8 +852,9 @@ def _gates() -> list[dict[str, Any]]:
                 "row; the complete ten-term hard-response enclosure now bounds that "
                 "row by 0.005348168974427062 and the combined signed D2Delta row by "
                 "2.684118590455544, zero-excluding the local D_Y Delta component; "
-                "Gate 7 remains open for the transposed exact segment-map action, "
-                "the complete upstream force covector, and the maximal projected tail"
+                "Gate 7 remains open for the actual complete joint graded spectral "
+                "cotangent, its numerical signed reverse value, and the maximal "
+                "projected tail or an actual finite stop"
             )
         predecessor = [] if index == 0 else [GATE_CHAIN[index - 1][0]]
         provenance = sources.get(cid, fallback)
@@ -979,11 +987,22 @@ def validate_registries(registries: Mapping[str, Mapping[str, Any]]) -> None:
         "ONTOLOGY_AE2_NO_CHILD_SELECTION", "ONTOLOGY_BARE_DRESSED",
         "ONTOLOGY_FROZEN_NO_RETUNE", "ONTOLOGY_FULL_COMPLETION",
         "ONTOLOGY_FINITE_ENCAPSULATION", "ONTOLOGY_ENCAPSULATION_CHRONOLOGY",
+        "ONTOLOGY_GATE7_ZERO_EXTERNAL_SOURCE",
     }
     if not required_owner_ontology <= set(ontology):
         raise ValueError("recovered Norman owner ontology is incomplete")
     if any(not ontology[cid]["current_status"].startswith("OWNER_AUTHORIZED") for cid in required_owner_ontology):
         raise ValueError("owner ontology was downgraded or reclassified as action-derived")
+    source_ontology = ontology["ONTOLOGY_GATE7_ZERO_EXTERNAL_SOURCE"]
+    if not (
+        source_ontology["formula"]
+        == "D_xi Gamma_closed[P_joint] evaluated before J_ext=0"
+        and "Only the external birth/Cauchy linear datum is zero."
+        in source_ontology["physical_meaning"]
+        and "does not impose a zero birth trace"
+        in source_ontology["physical_meaning"]
+    ):
+        raise ValueError("Gate7 zero-external-source ontology regressed")
     equivalences = registries["BHSM_FORMULA_EQUIVALENCE_GRAPH.json"]["records"]
     if any(row["current_status"] != "EQUIVALENT_NOT_INDEPENDENT_PHYSICS" for row in equivalences):
         raise ValueError("equivalent forms were promoted to independent laws")

@@ -68,6 +68,10 @@ SOURCES = (
     "artifacts/flagship_integration/BHSM_N12_C2_FIXED_SEED_UPSTREAM_FORCE_OWNER.json",
     "artifacts/flagship_integration/BHSM_N12_C2_1222_PARAMETRIC_BASE_FAMILY.json",
     "artifacts/flagship_integration/BHSM_N12_C2_1222_SIGNED_ADJOINT_ASSEMBLY.json",
+    "artifacts/flagship_integration/BHSM_N12_C2_1222_TRANSPOSED_DURATION_ACTION_COVERAGE.json",
+    "artifacts/flagship_integration/BHSM_N12_GATE7_CLOSED_SYSTEM_ZERO_EXTERNAL_SOURCE_ONTOLOGY.json",
+    "artifacts/flagship_integration/BHSM_N12_GATE7_JOINT_HEAT_COTANGENT_REVERSE_SEED.json",
+    "artifacts/flagship_integration/BHSM_N12_GATE7_1222_CORE_DIAGRAM_MATCHING_AUDIT.json",
     "artifacts/flagship_integration/BHSM_N12_C2_SIGNED_DURATION_INCIDENCE_OWNER.json",
     "artifacts/flagship_integration/BHSM_N12_C2_SIGNED_DDELTA_SEED_TRANSPORT_AUDIT.json",
     "artifacts/flagship_integration/BHSM_N12_C2_DIRECT_DDELTA_ROW_RECONNAISSANCE.json",
@@ -168,6 +172,10 @@ def verify_current_lineage() -> None:
     fixed_seed_owner = loaded["artifacts/flagship_integration/BHSM_N12_C2_FIXED_SEED_UPSTREAM_FORCE_OWNER.json"]
     parametric_base = loaded["artifacts/flagship_integration/BHSM_N12_C2_1222_PARAMETRIC_BASE_FAMILY.json"]
     signed_adjoint = loaded["artifacts/flagship_integration/BHSM_N12_C2_1222_SIGNED_ADJOINT_ASSEMBLY.json"]
+    duration_coverage = loaded["artifacts/flagship_integration/BHSM_N12_C2_1222_TRANSPOSED_DURATION_ACTION_COVERAGE.json"]
+    source_ontology = loaded["artifacts/flagship_integration/BHSM_N12_GATE7_CLOSED_SYSTEM_ZERO_EXTERNAL_SOURCE_ONTOLOGY.json"]
+    joint_heat_seed = loaded["artifacts/flagship_integration/BHSM_N12_GATE7_JOINT_HEAT_COTANGENT_REVERSE_SEED.json"]
+    core_diagram = loaded["artifacts/flagship_integration/BHSM_N12_GATE7_1222_CORE_DIAGRAM_MATCHING_AUDIT.json"]
     duration_incidence = loaded["artifacts/flagship_integration/BHSM_N12_C2_SIGNED_DURATION_INCIDENCE_OWNER.json"]
     ddelta_transport = loaded["artifacts/flagship_integration/BHSM_N12_C2_SIGNED_DDELTA_SEED_TRANSPORT_AUDIT.json"]
     ddelta_row = loaded["artifacts/flagship_integration/BHSM_N12_C2_DIRECT_DDELTA_ROW_RECONNAISSANCE.json"]
@@ -313,6 +321,31 @@ def verify_current_lineage() -> None:
         raise RuntimeError("exact C2 launch/core-nonselection frontier is not current")
     if ae2.get("action_version") != "BHSM-AE-2.0.0":
         raise RuntimeError("AE2 action version mismatch")
+    if not (
+        duration_coverage["adjudication"][
+            "all_1222_interval_transposed_duration_actions"
+        ] == "CERTIFIED"
+        and source_ontology["external_internal_partition"]["set_to_zero"]
+        == ["J_ext"]
+        and source_ontology["validation"][
+            "zero_external_source_does_not_impose_zero_birth_trace"
+        ] is True
+        and source_ontology["adjudication"]["internal_response_zeroing"]
+        == "FORBIDDEN"
+        and joint_heat_seed["adjudication"]["joint_reverse_seed_formula"]
+        == "CLOSED"
+        and joint_heat_seed["adjudication"][
+            "actual_joint_graded_coefficient_cotangent"
+        ] == "OPEN_CURRENT_NUMERICAL_OWNER"
+        and core_diagram["adjudication"][
+            "all_1222_interval_transposed_duration_actions"
+        ] == "CERTIFIED"
+        and core_diagram["adjudication"]["joint_heat_cotangent_reverse_seed"]
+        == "CLOSED"
+        and core_diagram["adjudication"]["exact_joint_spectral_trace"]
+        == "OPEN"
+    ):
+        raise RuntimeError("joint Gate7 source/cotangent frontier is not current")
     if force_sign_no_go["claim_boundary"]["universal_force_sign_shortcut"] != "CLOSED_INVALID":
         raise RuntimeError("finite-endpoint force-sign shortcut was not closed invalid")
     if seam_synthesis_no_go["claim_boundary"]["broad_negative_axis_synthesis_route"] != "CLOSED_INVALID":

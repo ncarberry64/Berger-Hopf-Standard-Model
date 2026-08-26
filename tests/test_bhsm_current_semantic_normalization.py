@@ -63,6 +63,19 @@ def test_guardrail_rejects_wrong_live_owner() -> None:
         validate_registries(bad)
 
 
+def test_guardrail_rejects_zero_source_as_zero_birth_trace() -> None:
+    registries = _load()
+    bad = deepcopy(registries)
+    ontology = bad["BHSM_CURRENT_ONTOLOGY_REGISTRY.json"]["records"]
+    row = next(
+        row for row in ontology
+        if row["canonical_id"] == "ONTOLOGY_GATE7_ZERO_EXTERNAL_SOURCE"
+    )
+    row["physical_meaning"] = "Zero source means zero birth trace."
+    with pytest.raises(ValueError, match="zero-external-source ontology regressed"):
+        validate_registries(bad)
+
+
 def test_guardrail_rejects_reopened_nonfermion_threshold() -> None:
     registries = _load()
     bad = deepcopy(registries)
@@ -88,6 +101,7 @@ def test_recovered_owner_ontology_is_complete_and_not_action_derived() -> None:
         "ONTOLOGY_BARE_DRESSED", "ONTOLOGY_FROZEN_NO_RETUNE",
         "ONTOLOGY_FULL_COMPLETION",
         "ONTOLOGY_FINITE_ENCAPSULATION", "ONTOLOGY_ENCAPSULATION_CHRONOLOGY",
+        "ONTOLOGY_GATE7_ZERO_EXTERNAL_SOURCE",
     ):
         assert ontology[canonical_id]["current_status"].startswith("OWNER_AUTHORIZED")
         assert "ACTION_DERIVED" not in ontology[canonical_id]["current_status"]
@@ -95,6 +109,13 @@ def test_recovered_owner_ontology_is_complete_and_not_action_derived() -> None:
     assert "1/(12*pi^2)" in fine["formula"]
     assert "1/118.435" in fine["formula"]
     assert "Insert 1/118 or 1/(12*pi^2) into AE2." in fine[
+        "forbidden_interpretations"
+    ]
+    source = ontology["ONTOLOGY_GATE7_ZERO_EXTERNAL_SOURCE"]
+    assert source["current_status"] == "OWNER_AUTHORIZED_PHYSICAL_SOURCE_SEMANTICS"
+    assert "before J_ext=0" in source["formula"]
+    assert "does not impose a zero birth trace" in source["physical_meaning"]
+    assert "Impose a homogeneous Dirichlet birth trace." in source[
         "forbidden_interpretations"
     ]
 
@@ -305,6 +326,35 @@ def test_replacement_force_is_constraint_projected_without_reset_selection() -> 
         "BHSM_N12_C2_1222_SIGNED_ADJOINT_ASSEMBLY.json"
         in dag["G7_08_FORCE"]["provenance"]
     )
+    assert (
+        "artifacts/flagship_integration/"
+        "BHSM_N12_C2_1222_TRANSPOSED_DURATION_ACTION_COVERAGE.json"
+        in dag["G7_08_FORCE"]["provenance"]
+    )
+    assert (
+        "artifacts/flagship_integration/"
+        "BHSM_N12_GATE7_CLOSED_SYSTEM_ZERO_EXTERNAL_SOURCE_ONTOLOGY.json"
+        in dag["G7_08_FORCE"]["provenance"]
+    )
+    assert (
+        "artifacts/flagship_integration/"
+        "BHSM_N12_GATE7_JOINT_HEAT_COTANGENT_REVERSE_SEED.json"
+        in dag["G7_08_FORCE"]["provenance"]
+    )
+    assert (
+        "artifacts/flagship_integration/"
+        "BHSM_N12_GATE7_1222_CORE_DIAGRAM_MATCHING_AUDIT.json"
+        in dag["G7_08_FORCE"]["provenance"]
+    )
+    assert "all 1222 interval transposed exact moving-duration actions are now certified" in dag[
+        "G7_08_FORCE"
+    ]["physical_meaning"]
+    assert "neither zeros an internal response nor imposes a zero birth trace" in dag[
+        "G7_08_FORCE"
+    ]["physical_meaning"]
+    assert "actual complete joint graded spectral cotangent" in dag[
+        "G7_08_FORCE"
+    ]["physical_meaning"]
     assert (
         "artifacts/flagship_integration/"
         "BHSM_N12_C2_SIGNED_DURATION_INCIDENCE_OWNER.json"

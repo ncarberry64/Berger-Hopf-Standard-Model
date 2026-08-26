@@ -11,6 +11,17 @@ transverse, scalar, topographic, Hubbard--Stratonovich, and ghost contact
 vertices are internal action-owned blocks.  None is an independent external
 source and none may be set to zero by the zero-source instruction.
 
+In the quadratic generating functional the external datum appears only as a
+linear coupling,
+
+`S_J[U]=(1/2)<U,P_joint U>-Re<J_ext,Gamma_birth U>`.
+
+Setting `J_ext=0` removes that linear term.  It does not impose
+`Gamma_birth U=0`, delete the birth trace degree of freedom, or replace the
+retained self-adjoint birth graph by a homogeneous Dirichlet condition.  The
+zero-source partition function still contains the determinant and response of
+the complete joint operator.
+
 In one compatible event frame, write the joint quadratic pencil as
 
 `P_joint=[[A,C,0],[C^dagger,H+G+W_phys,E^dagger],[0,E,F]]`,

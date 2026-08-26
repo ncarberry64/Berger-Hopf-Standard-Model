@@ -19,6 +19,10 @@ def test_closed_system_zero_external_source_ontology() -> None:
     assert payload["provenance"]["category"] == "OWNER_AUTHORIZED_PHYSICAL_ONTOLOGY"
     assert payload["provenance"]["action_derived"] is False
     assert payload["external_internal_partition"]["set_to_zero"] == ["J_ext"]
+    assert payload["external_internal_partition"]["zero_source_effect"].startswith("REMOVE_ONLY")
+    assert "HOMOGENEOUS_DIRICHLET_SELECTION" in payload[
+        "external_internal_partition"
+    ]["zero_source_is_not"]
     assert "M_C2" in payload["external_internal_partition"]["internal_not_zeroed"]
     assert payload["physical_force"]["additional_seam_source_allowed"] is False
     assert payload["matching_audit"]["common_source_incidence"].startswith("VALID_INTERNAL")

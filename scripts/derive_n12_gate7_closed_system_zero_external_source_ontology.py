@@ -43,6 +43,8 @@ def build_payload() -> dict[str, Any]:
     validation = {
         "owner_authorization_is_classified_as_physical_ontology_not_action_derivation": True,
         "only_external_birth_Cauchy_linear_datum_is_zeroed": True,
+        "zero_external_source_does_not_impose_zero_birth_trace": True,
+        "zero_external_source_preserves_the_self_adjoint_birth_graph": True,
         "formation_child_reset_and_contact_blocks_remain_internal": True,
         "joint_operator_precedes_grading_functional_and_differentiation": True,
         "internal_incidence_vertices_are_not_external_sources": True,
@@ -82,6 +84,13 @@ def build_payload() -> dict[str, Any]:
         "external_internal_partition": {
             "external_zero_datum": "J_ext_AT_THE_BIRTH_CAUCHY_LEG",
             "set_to_zero": ["J_ext"],
+            "source_coupling": "S_J[U]=(1/2)<U,P_joint*U>-Re<J_ext,Gamma_birth*U>",
+            "zero_source_effect": "REMOVE_ONLY_THE_LINEAR_J_ext_COUPLING",
+            "zero_source_is_not": [
+                "Gamma_birth*U=0",
+                "HOMOGENEOUS_DIRICHLET_SELECTION",
+                "DELETION_OF_THE_BIRTH_TRACE_DEGREE_OF_FREEDOM",
+            ],
             "internal_not_zeroed": [
                 "M_f", "M_C2", "U_R", "W_phys",
                 "gauge_transverse_contact_response",
@@ -120,6 +129,7 @@ def build_payload() -> dict[str, Any]:
         },
         "matching_audit": {
             "external_birth_Cauchy_source": "VALID_MATCH_J_ext_AND_ONLY_THIS_DATUM_IS_ZEROED",
+            "birth_trace_domain": "VALID_RETAINED_SELF_ADJOINT_GRAPH_NOT_REPLACED_BY_DIRICHLET",
             "incoming_M_f": "VALID_INTERNAL_RESPONSE_SLOT_NOT_AN_EXTERNAL_SOURCE",
             "outgoing_M_C2": "VALID_INTERNAL_RESPONSE_SLOT_NOT_AN_EXTERNAL_SOURCE",
             "reset_transport_U_R": "VALID_INTERNAL_GLUE_SLOT",
