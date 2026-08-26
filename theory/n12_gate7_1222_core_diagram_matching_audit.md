@@ -27,10 +27,16 @@ The rank-two birth radius Cauchy map is not used to discard other child-history
 directions: these are ambient unit-C2-image bounds, so orthogonal gauge/time
 projection cannot enlarge them.
 
-The remaining non-scale finite-core datum is narrower: the Weyl cotangent has
-a nonzero moving-proper-duration part, while stored duration intervals and
-proof tubes are not duration first jets.  Its same-action moving-time adjoint
-must still be propagated.  Beyond the finite core, the maximal reset-quotient
+The nonzero moving-proper-duration part is now closed at the first-jet norm
+level too.  On each fixed-descriptor segment, logarithmic differentiation of
+`N_boundary s/Delta`, followed by the same certified state-Jacobi product,
+gives a finite duration pullback.  The final eight denominator derivatives
+are reconstructed from the same matrix-Lohner first/second variation inputs.
+All replayed `Delta` lower bounds match their stored rows exactly.  Combining
+radius and duration gives a complete finite-core geometry pullback norm of
+about `10^40.79158319892658` per stored channel.  This is deliberately not
+promoted to the signed covector: that value still requires the inverse-free
+backward center adjoint.  Beyond the finite core, the maximal reset-quotient
 tail also remains open.
 
 The complete moving-duration common-scale source contraction is also closed
@@ -71,15 +77,15 @@ on the whole negative axis.  Its exact value and graded spectral trace remain
 open.
 
 The remaining unmatched data are geometric and pathwise.  Modulo the closed
-common-scale direction, the fixed-node radius contribution is certified on
-the 1,222 core, but the non-scale moving-duration contribution and the
+common-scale direction, the complete radius-plus-duration first-jet norm is
+certified on the 1,222 core, but the signed backward-adjoint covector and the
 noncompact maximal tail are not.  The common pair/contact incidence and
 heat-minus-zeta trace functional are valid conditional consumers; broad seam
 intervals and isolated probes cannot replace their realized inputs.
 
-Accordingly the next construction must derive and contract the non-scale
-moving-duration adjoint on the same fixed-descriptor cover, then propagate the
-complete finite-core pullback through the now-invertible fermion seam and assemble or enclose the
+Accordingly the next construction must evaluate the signed non-scale backward
+center adjoint on the same fixed-descriptor cover, then propagate that
+finite-core covector through the now-invertible fermion seam and assemble or enclose the
 exact joint graded spectral trace.  It must then combine
 that sector with the exact common-scale component, form the projected
 finite-core force net, and test its maximal Cauchy tail.  The 1,222-core edge remains an artificial
