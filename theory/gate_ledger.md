@@ -421,6 +421,17 @@
   entire certified open amplitude box. This is one joint contraction, not a
   componentwise KKT equation; the maximal C2 projected tail and physical KKT
   root remain open.
+- Maximal compliance-seam contraction:
+  `MAXIMAL_CHILD_LOAD_CANNOT_AMPLIFY_FIXED_TERMINAL_INCOMING_COMPLIANCE_COTANGENT`.
+  For every retained scalar channel and every `z=-kappa^2<0`, the fixed
+  maximal child/contact load is nonnegative and
+  `G_S=(M_f+L)^-1=C_f/(1+C_f L)`. Along the fixed-terminal incoming-amplitude
+  family, `D G_S=(D C_f)/(1+C_f L)^2`, so the unknown maximal load can only
+  contract the compliance cotangent and cannot restore the short-arm pole.
+  A separate `D_lambda M_C2^max` is not required in this direction. This does
+  not transfer the finite-core heat sign to the maximal operator: the actual
+  full graded source-contracted seam spectral measure and its physical
+  quotient-Cauchy tail remain open.
 - The actual same-action replacement residual is the heat-minus-zeta force,
   `D_Phi Gamma_heat-D_Phi Gamma_SM^zeta`, because the certified local root
   already extremizes the attached-zeta action.  Here
