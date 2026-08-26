@@ -1,0 +1,61 @@
+{
+  "FLAGSHIP_READY": false,
+  "FULL_BHSM_COMPLETE": false,
+  "artifact": "BHSM_N12_C2_1221_EXPANDED_ENDPOINT_BORDERED_MATRIX",
+  "bordered_center": {
+    "b_psi": 0.00042910819064008785,
+    "binary64_selected_eigenvalue_not_used_as_descriptor": 4.956934967336835e-15,
+    "bordered_condition_number": 5028598017.787924,
+    "bordered_inverse_2_norm_upper": 3855432.320987049,
+    "hard_equation_residual": 6.645151756946187e-11,
+    "hard_gap": 2.5937425882769774e-07,
+    "hard_rate_action_norm": 13828.04876995974,
+    "hard_rate_raw_norm": 13530.856404556958,
+    "minimum_bordered_singular_value": 2.5937428460525666e-07,
+    "selected_branch": 24,
+    "selected_line_orthogonality_residual": 1.4210854715202004e-12,
+    "solve_residual_upper": 6.650340501756147e-11
+  },
+  "comparison": {
+    "diagnosis": "THE_BORDERED_CENTER_RESPONSE_RETAINS_DIRECTIONAL_SPECTRAL_STRUCTURE;_THE_SCALAR_GRONWALL_EXPONENT_IS_NOT_THE_MATRIX_PROPAGATOR_AND_MUST_NOT_BE_USED_AS_A_PHYSICAL_STOP",
+    "last_scalar_Delta_lower": 8.490336263257696e-16,
+    "last_scalar_fixed_s_Jacobi_upper": 2.5646519250254787e+24,
+    "last_scalar_hard_Gronwall_exponent": 7.3985974666141106
+  },
+  "data": "artifacts/flagship_integration/BHSM_N12_C2_1221_EXPANDED_ENDPOINT_BORDERED_MATRIX.npz",
+  "data_SHA256": "DE5BB5B4D756882BBD6EF6F282019FBFDC5B56A5A4BA6F546ACAAA71FD6EB3D5",
+  "exact_next_dependency": "ASSEMBLE_THE_CANCELLED_CENTER_FIELD_AND_INVARIANT_GRAPH_TANGENT",
+  "hindsight": {
+    "classification": "NUMERICAL_CONDITIONING;_MATRIX_RESPONSE_RECOVERED",
+    "obstruction_physical": false,
+    "result": "OPEN"
+  },
+  "inputs": {
+    "artifacts/flagship_integration/BHSM_N12_C2_1221_EXPANDED_ENDPOINT_CENTER_INPUT.json": "7985BEC2B0ED127BA05F566C62CACD54A40134D7859988C90920EBF8112E53BE",
+    "artifacts/flagship_integration/BHSM_N12_C2_1221_EXPANDED_ENDPOINT_CENTER_INPUT.npz": "5CD7FF7DA4D519BD2E368F151522949DEBA2E4526E3290D02CF0214BA5C83291",
+    "artifacts/flagship_integration/BHSM_N12_C2_1221_EXPANDED_ENDPOINT_EIGENLINE_CHART.json": "2FA0C6141DF474BB4C3377E2F760CE6D5CCB4FF1E73C3697C9A2E6BCC00E2BDC",
+    "artifacts/flagship_integration/BHSM_N12_C2_1221_EXPANDED_ENDPOINT_GROWTH.json": "CA3656B5EC193A0F93C193EE18943AB5BE548E361093F31E64054697DBCB2E25",
+    "theory/n12_c2_1221_expanded_endpoint_recenter.md": "8D5499F6315B48E3E754B86C57A37E25194AC91531A9A052A07A2E93C44E3BED"
+  },
+  "status": "C2_EXPANDED_ENDPOINT_BORDERED_INTERNAL_RESPONSE_CERTIFIED",
+  "validation": {
+    "bordered_matrix_is_uniformly_invertible_at_center": true,
+    "bordered_solve_residual_is_small": true,
+    "branch_24_replayed": true,
+    "fixed_descriptor_tangent_has_codimension_one": true,
+    "hard_equation_residual_is_small": true,
+    "hard_response_is_selected_line_orthogonal": true,
+    "hard_response_variational_matrix_is_finite": true,
+    "matrix_is_diagnostic_until_second_variation_remainder_is_enclosed": true,
+    "no_soft_block_inverse_selector_recurrence_scale_gate_or_chord_added": true
+  },
+  "validation_passed": true,
+  "variational_matrix": {
+    "fixed_descriptor_b_psi_gradient_norm": 6.280242257111576,
+    "fixed_descriptor_hard_response_operator_norm": 107132426.85467796,
+    "fixed_descriptor_hard_response_smallest_nonzero_singular_value": 1.0555841699691748,
+    "full_b_psi_gradient_norm": 6.284531132472531,
+    "full_hard_response_action_operator_norm": 107160245.99153675,
+    "tangent_rank": 61
+  }
+}

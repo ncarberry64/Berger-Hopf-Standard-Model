@@ -2520,3 +2520,27 @@ Exact next object:
   with complete response recentering.
 - Gate 7: `ACTIVE`; Gate 8: `LOCKED`; chord 3: `UNAUTHORIZED`;
   frozen predictions unchanged; `FULL_BHSM_COMPLETE=FALSE`.
+
+## N=12 expanded-endpoint recenter and sheared forward block
+
+- The final sixteen-step predictor and its complete incoming tube are consumed
+  by the existing action-owned fresh-line, growth, bordered-response, and
+  cancellation-preserving field pipeline: `CERTIFIED`.
+- Fresh branch-24 line radius: `>2.2923e-8`; inherited endpoint tube:
+  `<9.9093e-11`; selected-line gap remains positive.
+- Endpoint cancelled tangent: `||DG_theta||_2<6.289`; numerical abscissa
+  `<3.145` before the interval remainder.
+- Complete graph second variation includes `D2(b_Psi Psi)` and
+  `D2(lambda V_hard)`, including `D2lambda V_hard` and
+  `2 Dlambda DV_hard`: `CERTIFIED`.
+- Recentered `Delta` interval:
+  `[2.4678e-14,1.5374e-13]`, strictly positive.
+- First recentered sheared-graph `theta` step: `>6.3685e-9`, with branch 24,
+  positive lapse, positive proper duration, correlated positive descriptor,
+  and strict tube inclusion: `CERTIFIED`.
+- Old expanded proof-ball edge as event/canonical stop: `INVALIDATED`.
+- Capture or a genuine retained stop reached: `FALSE`.
+- Exact next owner: iterate the same sheared recenter/forward construction to
+  strict NHIM capture inclusion or the first retained canonical stop.
+- Gate 7: `ACTIVE`; Gate 8: `LOCKED`; chord 3: `UNAUTHORIZED`;
+  frozen predictions unchanged; `FULL_BHSM_COMPLETE=FALSE`.

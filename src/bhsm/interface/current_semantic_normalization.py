@@ -122,6 +122,8 @@ def _basis() -> list[dict[str, Any]]:
     p_quantitative_capture_bridge = "artifacts/flagship_integration/BHSM_N12_GATE7_QUANTITATIVE_CAPTURE_BRIDGE_RECOMBINATION.json"
     p_full_lower_weight_krawczyk = "artifacts/flagship_integration/BHSM_N12_GATE7_FULL_LOWER_WEIGHT_KRAWCZYK_CLOSURE.json"
     p_quantitative_stable_capture = "artifacts/flagship_integration/BHSM_N12_GATE7_QUANTITATIVE_STABLE_CAPTURE_TUBE.json"
+    p_endpoint_recenter = "artifacts/flagship_integration/BHSM_N12_C2_1221_EXPANDED_ENDPOINT_RECENTER.json"
+    p_sheared_step = "artifacts/flagship_integration/BHSM_N12_C2_1221_EXPANDED_ENDPOINT_SHEARED_STEP.json"
     p_parametric_base = "artifacts/flagship_integration/BHSM_N12_C2_1222_PARAMETRIC_BASE_FAMILY.json"
     p_signed_adjoint = "artifacts/flagship_integration/BHSM_N12_C2_1222_SIGNED_ADJOINT_ASSEMBLY.json"
     p_duration_incidence = "artifacts/flagship_integration/BHSM_N12_C2_SIGNED_DURATION_INCIDENCE_OWNER.json"
@@ -488,6 +490,19 @@ def _basis() -> list[dict[str, Any]]:
             current_status="QUANTITATIVE_CAPTURE_TUBE_CERTIFIED_RESET_ENTRY_OPEN",
             downstream_consumers=["G7_08_FORCE", "G7_09_SADDLE"],
             forbidden_interpretations=["the reset image has entered the tube", "the proof radius is a physical threshold", "selected-line loss is excluded globally", "an explicit Euler-Dirac inverse was formed"],
+        ),
+        record(
+            "GATE7_C2_SHEARED_ENDPOINT_CONTINUATION",
+            "G_theta=b_Psi*Psi+lambda(Y)*V_hard; D2G=D2(b_Psi*Psi)+D2(lambda*V_hard)",
+            "INVARIANT_GRAPH_MATRIX_LOHNER_RECENTER_AND_FORWARD_STEP",
+            "MATHEMATICAL_OBJECT",
+            "The sixteen-step cancelled-theta endpoint admits a fresh action-owned branch-24 line, internal bordered response, and cancellation-preserving field. The complete graph second variation retains D2lambda*V_hard and 2*Dlambda*DV_hard; a correlated positive descriptor interval and positive Delta interval close the first recentered forward block. Capture or a retained stop remains open.",
+            "regular positive-lapse branch-24 C2 forward component at the expanded-cover endpoint",
+            [p_endpoint_recenter, p_sheared_step],
+            current_status="FIRST_SHEARED_RECENTERED_FORWARD_BLOCK_CERTIFIED_ITERATION_TO_CAPTURE_OR_STOP_OPEN",
+            downstream_consumers=["G7_08_FORCE", "G7_09_SADDLE"],
+            forbidden_interpretations=["the proof-chart edge is a canonical stop", "the signed descriptor is an independent physical degree of freedom", "the predictor selects a reset-family member", "Gate 7 is closed by one recentered block"],
+            tests=["test_n12_c2_1221_expanded_endpoint_recenter_and_sheared_step"],
         ),
         record(
             "C2_1222_PARAMETRIC_BASE_FAMILY",

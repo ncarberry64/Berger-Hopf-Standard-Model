@@ -1,0 +1,70 @@
+{
+  "FLAGSHIP_READY": false,
+  "FULL_BHSM_COMPLETE": false,
+  "artifact": "BHSM_N12_C2_1221_EXPANDED_ENDPOINT_FIXED_S_FIELD",
+  "center_field": {
+    "Delta": 8.920440025422962e-14,
+    "Delta_first_c_gradient_remainder_norm_upper": 3.8949432613946345e-12,
+    "Delta_first_partial_action_norm": 1.6030144200561534e-09,
+    "Delta_first_selected_eigenvalue_Hessian_remainder_norm_upper": 3.1443665581611626e-13,
+    "Delta_first_signed_center_ball": "D_Y_Delta_IN_Delta_first_partial_action_PLUS_CLOSED_EUCLIDEAN_BALL(total_remainder_upper)",
+    "Delta_first_total_remainder_action_norm_upper": 4.20937991763169e-12,
+    "Dlambda_field": 1.0000000000000364,
+    "R_Dlambda_Vhard": 3.8100251014482865e-05,
+    "b_psi": 0.00042910819064008785,
+    "field_action_norm": 4813611312.263209,
+    "moving_cubic_direct_fixed_line_D3": 2.078832381937441e-10,
+    "moving_cubic_from_Dlambda_Psi": 2.078832383047494e-10,
+    "signed_descriptor_decimal": "2.30026508021538670E-20"
+  },
+  "comparison": {
+    "diagnosis": "THE_EXACT_DESCRIPTOR_IDENTITY_AND_BORDERED_RESPONSE_CANCEL_BEFORE_PROJECTION;_THE_SCALAR_JACOBI_BOUND_IS_NOT_THE_CENTER_TANGENT_GENERATOR",
+    "matrix_to_scalar_ratio": 3.5587297550270385e-13,
+    "prior_scalar_fixed_s_Jacobi_upper": 2.5646519250254787e+24
+  },
+  "data": "artifacts/flagship_integration/BHSM_N12_C2_1221_EXPANDED_ENDPOINT_FIXED_S_FIELD.npz",
+  "data_SHA256": "4F33D53D9A233EF3D965B7330AA830417788371B789F404631AB2B3E6A9A3152",
+  "exact_next_dependency": "ENCLOSE_THE_INVARIANT_GRAPH_TANGENT_REMAINDER_AND_TAKE_THE_NEXT_MATRIX_LOHNER_BLOCK",
+  "fixed_descriptor_matrix": {
+    "bordered_relative_tangent_tensor_Frobenius_upper": 51372367.461883806,
+    "c_gradient_field_matrix_uncertainty_upper": 210177333071.45465,
+    "center_tangent_numerical_abscissa_upper": 569631330331.3092,
+    "fixed_D4_D5_truncation_operator_upper": 1.2677539572545229e-14,
+    "fixed_D4_slope_disagreement_2_norm": 1.8153640063451664e-08,
+    "incoming_endpoint_tube_radius": 9.909233916442739e-11,
+    "omitted_D2lambda_V_field_matrix_upper": 16967502041.525183,
+    "partial_tangent_numerical_abscissa": 342486495138.65155,
+    "partial_tangent_operator_2_norm": 685545476460.591,
+    "partial_tangent_spectral_abscissa": 405194755.6040395,
+    "relative_second_variation_self_consistency": 0.010181216121443291,
+    "total_center_matrix_remainder_upper": 227144835135.69434
+  },
+  "hindsight": {
+    "classification": "NUMERICAL_CONDITIONING;_FULL_CENTER_MATRIX_RECOVERED",
+    "obstruction_physical": false,
+    "result": "OPEN"
+  },
+  "inputs": {
+    "artifacts/flagship_integration/BHSM_N12_C2_1221_EXPANDED_ENDPOINT_BORDERED_MATRIX.json": "8E28E5C2595C72A1982253B80510B74E01A720135CA5E11E38720375F13E8B98",
+    "artifacts/flagship_integration/BHSM_N12_C2_1221_EXPANDED_ENDPOINT_BORDERED_MATRIX.npz": "DE5BB5B4D756882BBD6EF6F282019FBFDC5B56A5A4BA6F546ACAAA71FD6EB3D5",
+    "artifacts/flagship_integration/BHSM_N12_C2_1221_EXPANDED_ENDPOINT_CENTER_INPUT.json": "7985BEC2B0ED127BA05F566C62CACD54A40134D7859988C90920EBF8112E53BE",
+    "artifacts/flagship_integration/BHSM_N12_C2_1221_EXPANDED_ENDPOINT_GROWTH.json": "CA3656B5EC193A0F93C193EE18943AB5BE548E361093F31E64054697DBCB2E25",
+    "theory/n12_c2_1221_expanded_endpoint_recenter.md": "8D5499F6315B48E3E754B86C57A37E25194AC91531A9A052A07A2E93C44E3BED"
+  },
+  "status": "C2_EXPANDED_ENDPOINT_CANCELLED_CENTER_FIELD_CERTIFIED",
+  "validation": {
+    "D5_controls_one_sided_fixed_line_D4_slopes": true,
+    "Delta_is_strictly_positive": true,
+    "branch_24_bordered_parent_consumed": true,
+    "center_field_and_matrix_are_finite": true,
+    "center_matrix_not_promoted_to_interval_flow_box": true,
+    "descriptor_field_identity_is_close_to_one": true,
+    "fixed_descriptor_tangent_has_codimension_one": true,
+    "lambda_Hessian_contraction_is_retained_as_remainder": true,
+    "moving_cubic_identity_matches_direct_D3": true,
+    "no_selector_recurrence_scale_gate_or_chord_added": true,
+    "signed_Delta_first_partial_and_remainder_ball_are_finite": true,
+    "signed_descriptor_is_strictly_positive": true
+  },
+  "validation_passed": true
+}
