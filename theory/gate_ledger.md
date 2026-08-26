@@ -395,7 +395,18 @@
   `D_lambda Gamma_heat=lambda H_heat(lambda)` with uniformly finite
   `H_heat`, and differentiation may pass through the graded supertrace. The
   sharp coefficient and its comparison with the strict zeta coefficient are
-  still open.
+  closed at zero amplitude by the next theorem; the finite-amplitude remainder
+  remains open.
+- Incoming zero-amplitude heat--zeta comparison:
+  `FINITE_CORE_ZERO_AMPLITUDE_HEAT_COEFFICIENT_STRICTLY_DOMINATED_BY_ZETA`.
+  Schur elimination of the vanishing incoming element gives the exact
+  rank-one child-pencil derivative `-b(rho)b(rho)^dagger`. The child mass
+  Gershgorin bound and half-heat Gaussian sum enclose the complete graded heat
+  coefficient with natural-log upper bound `-4.418838786084337e54`; the
+  replacement-zeta coefficient has log lower bound `33.80468708349772`.
+  Hence the complete finite-core amplitude covector is strictly positive on
+  some punctured neighborhood of zero. The neighborhood radius and entire
+  stored amplitude box remain open pending the compliance Schur remainder.
 - The actual same-action replacement residual is the heat-minus-zeta force,
   `D_Phi Gamma_heat-D_Phi Gamma_SM^zeta`, because the certified local root
   already extremizes the attached-zeta action.  Here

@@ -833,6 +833,7 @@ def _gates() -> list[dict[str, Any]]:
             "artifacts/flagship_integration/BHSM_N12_GATE7_INCOMING_AMPLITUDE_ZETA_COTANGENT.json",
             "artifacts/flagship_integration/BHSM_N12_GATE7_INCOMING_COMPLIANCE_REGULAR_CHART.json",
             "artifacts/flagship_integration/BHSM_N12_GATE7_INCOMING_GRADED_HEAT_DIFFERENTIABILITY.json",
+            "artifacts/flagship_integration/BHSM_N12_GATE7_INCOMING_ZERO_AMPLITUDE_HEAT_ZETA_COMPARISON.json",
             "artifacts/flagship_integration/BHSM_N12_C2_SIGNED_DURATION_INCIDENCE_OWNER.json",
             "artifacts/flagship_integration/BHSM_N12_C2_SIGNED_DDELTA_SEED_TRANSPORT_AUDIT.json",
             "artifacts/flagship_integration/BHSM_N12_C2_DIRECT_DDELTA_ROW_RECONNAISSANCE.json",
@@ -891,8 +892,12 @@ def _gates() -> list[dict[str, Any]]:
                 "M_f Laurent-jet singularity and makes each fixed-channel heat jet "
                 "O(lambda); the finite-core Gaussian angular weights dominate the "
                 "fixed polynomial transfer-jet loss, certifying differentiation "
-                "through the full graded supertrace; its sharp heat coefficient, "
-                "the joint sign, and the KKT root remain open"
+                "through the full graded supertrace; at zero amplitude the exact "
+                "rank-one Schur-pencil derivative and child mass bound make the "
+                "finite-core heat coefficient strictly smaller than the zeta "
+                "coefficient, proving positive joint amplitude sign on an "
+                "unquantified punctured neighborhood; the full-box remainder, "
+                "projected KKT root, and maximal tail remain open"
             )
         predecessor = [] if index == 0 else [GATE_CHAIN[index - 1][0]]
         provenance = sources.get(cid, fallback)
