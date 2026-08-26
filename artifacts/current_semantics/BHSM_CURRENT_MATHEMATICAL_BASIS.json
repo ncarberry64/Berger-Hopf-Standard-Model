@@ -26,6 +26,7 @@
     "artifacts/flagship_integration/BHSM_N12_C2_RESET_LAUNCH_ADJOINT_INTERFACE.json": "834744FE503761891F7922CAADBF3187F8484EE6587049A0A624D9F78C2B3ABD",
     "artifacts/flagship_integration/BHSM_N12_C2_SIGNED_DDELTA_SEED_TRANSPORT_AUDIT.json": "DADC6DB8D100EA250C598A52C59FEE2E847C30DB9C094CD9E913B393BDF53ABB",
     "artifacts/flagship_integration/BHSM_N12_C2_SIGNED_DURATION_INCIDENCE_OWNER.json": "2A0E28A352A80F395FE4177428E5536375DC622BD813B9D697F17AC8E15F897F",
+    "artifacts/flagship_integration/BHSM_N12_C2_SUPPRESSED_HARD_RESPONSE_ROW_CERTIFICATE.json": "34471CB40CF1C5846CCFBABDD8CE562BA5BA5ADE0479D1ED0FE3715227D65F15",
     "artifacts/flagship_integration/BHSM_N12_CANONICAL_MOMENTUM_ACTION_JACOBIAN.json": "0B1BE86ECDC049B363C2C0E665CAB0CE9C216FD5CEFB5AE813DA157F18909733",
     "artifacts/flagship_integration/BHSM_N12_CONSTRAINT_PROJECTED_REPLACEMENT_SADDLE.json": "E5C0340FC39BFF9C83F338B8AFA7270F71A6699A56A5B0996F754FB99B65DAD1",
     "artifacts/flagship_integration/BHSM_N12_CORE_TRANSMITTED_PHYSICAL_MANIFOLD_AUDIT.json": "007C16DDC4D44747358B71219738158F77F12ADAA60EE91EF28985179B6D1AD9",
@@ -1000,6 +1001,42 @@
       "physical_meaning": "The retained 96-point action is replayed with primitive-level outward rounding on the exact node-1214 state tube. The complete dominant selected-line product row is certified below its resolving ceiling after a separate whole-matrix correction for the first eigenline Jacobi motion. This closes the dominant bc row only; the s-suppressed hard-response row remains open and Gate 7 is not promoted.",
       "provenance": [
         "artifacts/flagship_integration/BHSM_N12_C2_FULLY_REDUCED_SIGNED_ROW_CERTIFICATE.json"
+      ],
+      "semantic_layer": "MATHEMATICAL_OBJECT",
+      "source_weighting_required": false,
+      "superseded_meanings": [],
+      "tests": [
+        "test_required_fields"
+      ]
+    },
+    {
+      "action_version": "BHSM-AE-2.0.0",
+      "artifact_hashes": {
+        "artifacts/flagship_integration/BHSM_N12_C2_SUPPRESSED_HARD_RESPONSE_ROW_CERTIFICATE.json": "34471CB40CF1C5846CCFBABDD8CE562BA5BA5ADE0479D1ED0FE3715227D65F15"
+      },
+      "canonical_id": "C2_COMPLETE_SIGNED_D2DELTA_ROW_CERTIFICATE",
+      "current_status": "LOCAL_SIGNED_DURATION_DENOMINATOR_CERTIFIED_FORCE_PULLBACK_OPEN",
+      "dimensions": "DIMENSIONLESS_OR_OPERATOR_TYPED",
+      "domain": "first matrix-Lohner chart around stored proof node 1214",
+      "downstream_consumers": [
+        "C2_SIGNED_DURATION_INCIDENCE_OWNER",
+        "G7_08_FORCE"
+      ],
+      "equivalent_forms": [],
+      "forbidden_interpretations": [
+        "descriptor suppression permits omitting the hard row",
+        "local D_Y Delta zero exclusion is the complete upstream force",
+        "the proof center selects a physical history",
+        "Gate 7, Gate 8, or chord 3 is promoted by this local certificate"
+      ],
+      "formula": "sup_t ||row_86(D2 Delta)||_2 <= 2.684118590455544 < 14.622464650642785, with ||s row_86(D2 R)||_2 <= 0.005348168974427062",
+      "frozen_output_status": "NOT_FROZEN_OUTPUT",
+      "mathematical_class": "OUTWARD_ROUNDED_COMPLETE_SIGNED_DENOMINATOR_ROW_CERTIFICATE",
+      "observable_status": "NOT_AN_OBSERVABLE",
+      "ontology_version": "BHSM-AE2-ONTOLOGY-1.0.0",
+      "physical_meaning": "The ten-term product rule for R=D3S[Qdot+E*V_hard,Psi,Psi] is enclosed on the exact node-1214 tube. Certified second variations bound the response and eigenline first-matrix motions, including their bilinear cross term. The fixed positive descriptor suppresses the raw hard row enough that the complete signed D2Delta row stays strictly below the unchanged resolving ceiling. This zero-excludes the local signed D_Y Delta component on the exact family; the transposed exact segment-map action and complete physical force remain open.",
+      "provenance": [
+        "artifacts/flagship_integration/BHSM_N12_C2_SUPPRESSED_HARD_RESPONSE_ROW_CERTIFICATE.json"
       ],
       "semantic_layer": "MATHEMATICAL_OBJECT",
       "source_weighting_required": false,

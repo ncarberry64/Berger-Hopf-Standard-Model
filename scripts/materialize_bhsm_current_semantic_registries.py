@@ -72,6 +72,7 @@ SOURCES = (
     "artifacts/flagship_integration/BHSM_N12_C2_SIGNED_DDELTA_SEED_TRANSPORT_AUDIT.json",
     "artifacts/flagship_integration/BHSM_N12_C2_DIRECT_DDELTA_ROW_RECONNAISSANCE.json",
     "artifacts/flagship_integration/BHSM_N12_C2_FULLY_REDUCED_SIGNED_ROW_CERTIFICATE.json",
+    "artifacts/flagship_integration/BHSM_N12_C2_SUPPRESSED_HARD_RESPONSE_ROW_CERTIFICATE.json",
     "artifacts/flagship_integration/BHSM_N12_CORE_TRANSMITTED_PHYSICAL_MANIFOLD_AUDIT.json",
     "artifacts/flagship_integration/BHSM_N12_ASYMPTOTIC_NHIM_ANGULAR_FORCE_NO_GO.json",
     "artifacts/flagship_integration/BHSM_N12_LOCAL_RESET_TERMINAL_TRANSVERSALITY_AUDIT.json",
@@ -171,6 +172,7 @@ def verify_current_lineage() -> None:
     ddelta_transport = loaded["artifacts/flagship_integration/BHSM_N12_C2_SIGNED_DDELTA_SEED_TRANSPORT_AUDIT.json"]
     ddelta_row = loaded["artifacts/flagship_integration/BHSM_N12_C2_DIRECT_DDELTA_ROW_RECONNAISSANCE.json"]
     reduced_row = loaded["artifacts/flagship_integration/BHSM_N12_C2_FULLY_REDUCED_SIGNED_ROW_CERTIFICATE.json"]
+    suppressed_row = loaded["artifacts/flagship_integration/BHSM_N12_C2_SUPPRESSED_HARD_RESPONSE_ROW_CERTIFICATE.json"]
     core_audit = loaded["artifacts/flagship_integration/BHSM_N12_CORE_TRANSMITTED_PHYSICAL_MANIFOLD_AUDIT.json"]
     nhim_angular_no_go = loaded["artifacts/flagship_integration/BHSM_N12_ASYMPTOTIC_NHIM_ANGULAR_FORCE_NO_GO.json"]
     local_reset_terminal = loaded["artifacts/flagship_integration/BHSM_N12_LOCAL_RESET_TERMINAL_TRANSVERSALITY_AUDIT.json"]
@@ -294,6 +296,15 @@ def verify_current_lineage() -> None:
         and reduced_row["adjudication"]["signed_D_Y_Delta_on_exact_family"]
         == "OPEN_PENDING_s_HARD_ROW"
         and reduced_row["adjudication"]["Gate7"] == "OPEN"
+        and suppressed_row["adjudication"]["s_suppressed_hard_response_row"]
+        == "CERTIFIED"
+        and suppressed_row["adjudication"]["complete_signed_D2Delta_dominant_row"]
+        == "CERTIFIED_BELOW_RESOLVING_CEILING"
+        and suppressed_row["adjudication"]["signed_D_Y_Delta_on_exact_node_1214_family"]
+        == "ZERO_EXCLUDED"
+        and suppressed_row["adjudication"]["transposed_exact_segment_map_action"]
+        == "OPEN"
+        and suppressed_row["adjudication"]["Gate7"] == "OPEN"
         and core_audit["claim_boundary"]["core_transmitted_physical_manifold"]
         == "OWNER_HYPOTHESIS_NOT_ACTION_DERIVED"
         and core_audit["claim_boundary"]["a_equals_1_over_118"]

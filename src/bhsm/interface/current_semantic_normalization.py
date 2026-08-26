@@ -118,6 +118,7 @@ def _basis() -> list[dict[str, Any]]:
     p_ddelta_transport = "artifacts/flagship_integration/BHSM_N12_C2_SIGNED_DDELTA_SEED_TRANSPORT_AUDIT.json"
     p_ddelta_row = "artifacts/flagship_integration/BHSM_N12_C2_DIRECT_DDELTA_ROW_RECONNAISSANCE.json"
     p_reduced_row = "artifacts/flagship_integration/BHSM_N12_C2_FULLY_REDUCED_SIGNED_ROW_CERTIFICATE.json"
+    p_suppressed_row = "artifacts/flagship_integration/BHSM_N12_C2_SUPPRESSED_HARD_RESPONSE_ROW_CERTIFICATE.json"
     p_core_audit = "artifacts/flagship_integration/BHSM_N12_CORE_TRANSMITTED_PHYSICAL_MANIFOLD_AUDIT.json"
     p_e1 = "artifacts/flagship_integration/BHSM_N12_FORWARD_E1_SOURCE_MEASURE_CRITERION.json"
     p_nf = "artifacts/flagship_integration/BHSM_N12_GATE7_AE2_NONFERMION_THRESHOLD_MARGIN.json"
@@ -429,6 +430,18 @@ def _basis() -> list[dict[str, Any]]:
             current_status="DOMINANT_bc_ROW_CERTIFIED_s_HARD_ROW_OPEN",
             downstream_consumers=["C2_SIGNED_DURATION_INCIDENCE_OWNER", "G7_08_FORCE"],
             forbidden_interpretations=["small signed descriptor s makes the hard row zero without a bound", "the bc-row certificate alone closes signed D_Y Delta", "the interval proof center selects a physical history", "Gate 7 or Gate 8 is closed by this row alone"],
+        ),
+        record(
+            "C2_COMPLETE_SIGNED_D2DELTA_ROW_CERTIFICATE",
+            "sup_t ||row_86(D2 Delta)||_2 <= 2.684118590455544 < 14.622464650642785, with ||s row_86(D2 R)||_2 <= 0.005348168974427062",
+            "OUTWARD_ROUNDED_COMPLETE_SIGNED_DENOMINATOR_ROW_CERTIFICATE",
+            "MATHEMATICAL_OBJECT",
+            "The ten-term product rule for R=D3S[Qdot+E*V_hard,Psi,Psi] is enclosed on the exact node-1214 tube. Certified second variations bound the response and eigenline first-matrix motions, including their bilinear cross term. The fixed positive descriptor suppresses the raw hard row enough that the complete signed D2Delta row stays strictly below the unchanged resolving ceiling. This zero-excludes the local signed D_Y Delta component on the exact family; the transposed exact segment-map action and complete physical force remain open.",
+            "first matrix-Lohner chart around stored proof node 1214",
+            [p_suppressed_row],
+            current_status="LOCAL_SIGNED_DURATION_DENOMINATOR_CERTIFIED_FORCE_PULLBACK_OPEN",
+            downstream_consumers=["C2_SIGNED_DURATION_INCIDENCE_OWNER", "G7_08_FORCE"],
+            forbidden_interpretations=["descriptor suppression permits omitting the hard row", "local D_Y Delta zero exclusion is the complete upstream force", "the proof center selects a physical history", "Gate 7, Gate 8, or chord 3 is promoted by this local certificate"],
         ),
         record(
             "CORE_TRANSMISSION_NONSELECTION",
@@ -790,6 +803,7 @@ def _gates() -> list[dict[str, Any]]:
             "artifacts/flagship_integration/BHSM_N12_C2_SIGNED_DDELTA_SEED_TRANSPORT_AUDIT.json",
             "artifacts/flagship_integration/BHSM_N12_C2_DIRECT_DDELTA_ROW_RECONNAISSANCE.json",
             "artifacts/flagship_integration/BHSM_N12_C2_FULLY_REDUCED_SIGNED_ROW_CERTIFICATE.json",
+            "artifacts/flagship_integration/BHSM_N12_C2_SUPPRESSED_HARD_RESPONSE_ROW_CERTIFICATE.json",
             "artifacts/flagship_integration/BHSM_N12_CORE_TRANSMITTED_PHYSICAL_MANIFOLD_AUDIT.json",
             "artifacts/flagship_integration/BHSM_N12_ASYMPTOTIC_NHIM_ANGULAR_FORCE_NO_GO.json",
             "artifacts/flagship_integration/BHSM_N12_LOCAL_RESET_TERMINAL_TRANSVERSALITY_AUDIT.json",
@@ -828,7 +842,11 @@ def _gates() -> list[dict[str, Any]]:
                 "rounded retained-action replay certifies the complete dominant "
                 "bc row by 2.6787704214811163 < 14.622464650642785, leaving "
                 "11.943694229161668 for the sole local s-suppressed hard-response "
-                "row; Gate 7 remains open pending that row and the later force tail"
+                "row; the complete ten-term hard-response enclosure now bounds that "
+                "row by 0.005348168974427062 and the combined signed D2Delta row by "
+                "2.684118590455544, zero-excluding the local D_Y Delta component; "
+                "Gate 7 remains open for the transposed exact segment-map action, "
+                "the complete upstream force covector, and the maximal projected tail"
             )
         predecessor = [] if index == 0 else [GATE_CHAIN[index - 1][0]]
         provenance = sources.get(cid, fallback)

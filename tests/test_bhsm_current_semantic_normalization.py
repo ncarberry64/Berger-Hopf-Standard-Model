@@ -334,6 +334,15 @@ def test_replacement_force_is_constraint_projected_without_reset_selection() -> 
         "bc-row certificate alone" in item
         for item in reduced_row["forbidden_interpretations"]
     )
+    complete_row = basis["C2_COMPLETE_SIGNED_D2DELTA_ROW_CERTIFICATE"]
+    assert complete_row["current_status"] == (
+        "LOCAL_SIGNED_DURATION_DENOMINATOR_CERTIFIED_FORCE_PULLBACK_OPEN"
+    )
+    assert "2.684118590455544" in complete_row["formula"]
+    assert any(
+        "complete upstream force" in item
+        for item in complete_row["forbidden_interpretations"]
+    )
     assert any(
         "two-mesh agreement" in item
         for item in ddelta_row["forbidden_interpretations"]
