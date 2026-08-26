@@ -198,6 +198,14 @@ def test_replacement_force_is_constraint_projected_without_reset_selection() -> 
     assert "M_f invertibility supplies the full incoming heat force" in (
         fixed_seed_owner["forbidden_interpretations"]
     )
+    parametric_base = basis["C2_1222_PARAMETRIC_BASE_FAMILY"]
+    assert parametric_base["current_status"] == (
+        "DERIVED_SIGNED_PARAMETRIC_OR_INTERVAL_ADJOINT_OPEN"
+    )
+    assert "D_s J_theta=D_Y F_s J_theta" in parametric_base["formula"]
+    assert "the 1222 proof edge is an event or stop" in (
+        parametric_base["forbidden_interpretations"]
+    )
     core = basis["CORE_TRANSMISSION_NONSELECTION"]
     assert core["current_status"] == (
         "OWNER_HYPOTHESIS_NOT_ACTION_DERIVED_NO_SELECTOR_AUTHORITY"
@@ -271,6 +279,14 @@ def test_replacement_force_is_constraint_projected_without_reset_selection() -> 
         "BHSM_N12_C2_FIXED_SEED_UPSTREAM_FORCE_OWNER.json"
         in dag["G7_08_FORCE"]["provenance"]
     )
+    assert (
+        "artifacts/flagship_integration/"
+        "BHSM_N12_C2_1222_PARAMETRIC_BASE_FAMILY.json"
+        in dag["G7_08_FORCE"]["provenance"]
+    )
+    assert "absence of any parametric base history is no longer the blocker" in dag[
+        "G7_08_FORCE"
+    ]["physical_meaning"]
     assert (
         "artifacts/flagship_integration/"
         "BHSM_N12_LOCAL_RESET_TERMINAL_TRANSVERSALITY_AUDIT.json"

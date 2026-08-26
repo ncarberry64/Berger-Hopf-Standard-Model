@@ -1979,6 +1979,25 @@ Exact next object:
 - Gate 7: `ACTIVE`; Gate 8: `LOCKED`; chord 3: `UNAUTHORIZED`;
   `FULL_BHSM_COMPLETE=FALSE`.
 
+## N=12 C2 parametric base family through finite core 1222
+
+- Reset-generated launch dimension: `73`, without a selected member.
+- Exact regular field: `D_s Y=F_s(Y)`, `Dlambda[F_s]=1`.
+- Complete certified fixed-`s` growth: `<=1.0121455013371734`.
+- Finite core: `1222` positive-proper-duration segments, with strict
+  selected-line, hard-gap, `c`, `Delta`, and radius margins.
+- Smooth-dependence result: there exists `epsilon_1222>0` and a nonempty
+  local 73-parameter family `Y(s;theta)` of exact C2 histories and first
+  Jacobi fields through every finite-core prefix.
+- Numerical lower bound for `epsilon_1222`: `NOT_CLAIMED`.
+- Proof center selected as a physical history: `FALSE`.
+- Segment-1222 edge classified as an event/stop: `FALSE`.
+- Base-history nonexistence as the Gate-7 blocker: `INVALIDATED`.
+- Signed parametric/interval joint adjoint and graded force net:
+  `OPEN_CURRENT_OWNER`; maximal projected tail: `OPEN`.
+- Gate 7: `ACTIVE`; Gate 8: `LOCKED`; chord 3: `UNAUTHORIZED`;
+  `FULL_BHSM_COMPLETE=FALSE`.
+
 ## N=12 asymptotic child-exterior connection audit
 
 - Complete analytic infinite branch: `DERIVED_LOCALLY`, with

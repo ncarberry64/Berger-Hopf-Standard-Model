@@ -13,6 +13,7 @@
     "artifacts/flagship_integration/BHSM_N12_ASYMPTOTIC_CHILD_EXTERIOR_CONNECTION_PRECONDITIONS.json": "E3F85050789A9E155636C56D1418CC9A183F18DE19C2D2FD4994431F7BB7547D",
     "artifacts/flagship_integration/BHSM_N12_ASYMPTOTIC_NHIM_ANGULAR_FORCE_NO_GO.json": "8CADFCD9FDD2D5174ACF37C167E88DD73091391D834027CDBBF8FD9CEF768B01",
     "artifacts/flagship_integration/BHSM_N12_ASYMPTOTIC_NHIM_CAPTURE_BASIN.json": "A2FE14D141A18B39CF27F568A4B9417246DD49DA95158CDDF5489EB303F53FA4",
+    "artifacts/flagship_integration/BHSM_N12_C2_1222_PARAMETRIC_BASE_FAMILY.json": "289B6E8C686D19980F4F6416C124818A573369C291CBB5CE72E2A01153C0C910",
     "artifacts/flagship_integration/BHSM_N12_C2_CLASS_REDUCED_MAXIMAL_RESPONSE.json": "DA82F5036004E115A13E53B369B51A92FD9A21B81FFEF44A0656C4DB11FF38B8",
     "artifacts/flagship_integration/BHSM_N12_C2_EXACT_FIXED_S_FIELD_ORACLE.json": "4265D468E865D68AAA126AA3E27368043FCD24499A5CDE41340A9228F0D4E7FF",
     "artifacts/flagship_integration/BHSM_N12_C2_FIXED_SEED_UPSTREAM_FORCE_OWNER.json": "396F39A4F98ECE7F903221EFD01A1C126479EE56DC4F8A72C976501D0D4F8A71",
@@ -778,6 +779,42 @@
       "physical_meaning": "The C2 fixed-seed kernel is exactly the raw preceding-event tangent. Its force owner is the complete upstream C1-to-E1 heat-minus-zeta history plus retained interface contacts, not a new surface force; one joint history adjoint is the equivalent assembly.",
       "provenance": [
         "artifacts/flagship_integration/BHSM_N12_C2_FIXED_SEED_UPSTREAM_FORCE_OWNER.json"
+      ],
+      "semantic_layer": "MATHEMATICAL_OBJECT",
+      "source_weighting_required": false,
+      "superseded_meanings": [],
+      "tests": [
+        "test_required_fields"
+      ]
+    },
+    {
+      "action_version": "BHSM-AE-2.0.0",
+      "artifact_hashes": {
+        "artifacts/flagship_integration/BHSM_N12_C2_1222_PARAMETRIC_BASE_FAMILY.json": "289B6E8C686D19980F4F6416C124818A573369C291CBB5CE72E2A01153C0C910"
+      },
+      "canonical_id": "C2_1222_PARAMETRIC_BASE_FAMILY",
+      "current_status": "DERIVED_SIGNED_PARAMETRIC_OR_INTERVAL_ADJOINT_OPEN",
+      "dimensions": "DIMENSIONLESS_OR_OPERATOR_TYPED",
+      "domain": "regular simple-line positive-Delta fixed-s chart through finite core 1222",
+      "downstream_consumers": [
+        "G7_08_FORCE",
+        "G7_09_SADDLE"
+      ],
+      "equivalent_forms": [],
+      "forbidden_interpretations": [
+        "select a proof center as the physical history",
+        "the 1222 proof edge is an event or stop",
+        "finite-core family existence supplies the graded force value",
+        "finite-core smooth dependence closes the maximal tail"
+      ],
+      "formula": "Y(s;theta)=Phi_s(R_AE2_local(theta)), D_s J_theta=D_Y F_s J_theta",
+      "frozen_output_status": "NOT_FROZEN_OUTPUT",
+      "mathematical_class": "FINITE_CORE_SMOOTH_FLOW_FAMILY_THEOREM",
+      "observable_status": "NOT_AN_OBSERVABLE",
+      "ontology_version": "BHSM-AE2-ONTOLOGY-1.0.0",
+      "physical_meaning": "A nonempty local 73-parameter family of exact reset-generated C2 histories and first Jacobi fields exists through every prefix of the 1222-segment regular finite core; proof centers remain enclosure data.",
+      "provenance": [
+        "artifacts/flagship_integration/BHSM_N12_C2_1222_PARAMETRIC_BASE_FAMILY.json"
       ],
       "semantic_layer": "MATHEMATICAL_OBJECT",
       "source_weighting_required": false,
