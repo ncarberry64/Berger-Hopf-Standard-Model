@@ -13,6 +13,7 @@ from __future__ import annotations
 import argparse
 from functools import lru_cache
 import json
+import os
 from pathlib import Path
 import sys
 from typing import Any
@@ -27,7 +28,10 @@ import audit_n12_c2_stop_local_termwise_spectrum as local  # noqa: E402
 
 
 BASE = ROOT / "artifacts" / "flagship_integration"
-CENTER_DATA = BASE / "BHSM_N12_C2_STOP_MULTIPLE_SHOOTING_CENTER.npz"
+CENTER_DATA = Path(os.environ.get(
+    "BHSM_N12_STOP_CENTER_DATA",
+    str(BASE / "BHSM_N12_C2_STOP_MULTIPLE_SHOOTING_CENTER.npz"),
+))
 GROUPS = ((23,), (24,), (25, 26, 27))
 DISTANCE_BAND_RATIO = 4.0
 

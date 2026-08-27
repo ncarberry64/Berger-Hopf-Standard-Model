@@ -1,0 +1,68 @@
+{
+  "FULL_BHSM_COMPLETE": false,
+  "artifact": "BHSM_N12_HYBRID_GRAPH_JACOBIAN_EQUIVALENCE_AUDIT",
+  "rows": [
+    {
+      "descriptor_gradient_absolute_residual": 7.400214546564222e-16,
+      "descriptor_gradient_relative_residual": 1.2002316041667818e-10,
+      "graph_Jacobian_absolute_residual": 1.7346479985638103e-08,
+      "graph_Jacobian_relative_residual": 1.0853000603641994e-10,
+      "node": 0,
+      "selected_branch": 24
+    },
+    {
+      "descriptor_gradient_absolute_residual": 1.3640071526807509e-15,
+      "descriptor_gradient_relative_residual": 9.685069704482086e-10,
+      "graph_Jacobian_absolute_residual": 6.051370678580984e-08,
+      "graph_Jacobian_relative_residual": 1.032340913610453e-10,
+      "node": 11,
+      "selected_branch": 24
+    },
+    {
+      "descriptor_gradient_absolute_residual": 9.610929899587004e-16,
+      "descriptor_gradient_relative_residual": 4.849432249244774e-10,
+      "graph_Jacobian_absolute_residual": 4.7527924633376056e-08,
+      "graph_Jacobian_relative_residual": 8.004765768922312e-11,
+      "node": 23,
+      "selected_branch": 24
+    },
+    {
+      "descriptor_gradient_absolute_residual": 2.646449665517213e-16,
+      "descriptor_gradient_relative_residual": 8.700135114151946e-11,
+      "graph_Jacobian_absolute_residual": 8.103521374208433e-09,
+      "graph_Jacobian_relative_residual": 2.787572513183527e-11,
+      "node": 35,
+      "selected_branch": 24
+    },
+    {
+      "descriptor_gradient_absolute_residual": 6.309204049065187e-16,
+      "descriptor_gradient_relative_residual": 1.3479943275281555e-10,
+      "graph_Jacobian_absolute_residual": 2.0433242049764876e-08,
+      "graph_Jacobian_relative_residual": 6.451367804933469e-11,
+      "node": 47,
+      "selected_branch": 24
+    }
+  ],
+  "software": {
+    "backend": "cpu",
+    "jax": "0.11.1",
+    "jaxlib": "0.11.1",
+    "x64_enabled": true
+  },
+  "status": "HYBRID_GRAPH_JACOBIAN_RECONNAISSANCE_EQUIVALENT_TO_RETAINED_REPLAY",
+  "summary": {
+    "maximum_descriptor_gradient_absolute_residual": 1.3640071526807509e-15,
+    "maximum_descriptor_gradient_relative_residual": 9.685069704482086e-10,
+    "maximum_graph_Jacobian_absolute_residual": 6.051370678580984e-08,
+    "maximum_graph_Jacobian_relative_residual": 1.0853000603641994e-10
+  },
+  "validation": {
+    "descriptor_gradient_relative_residual_below_1e_minus_8": true,
+    "graph_Jacobian_relative_residual_below_1e_minus_4": true,
+    "hybrid_third_tensor_not_promoted_to_interval_authority": true,
+    "no_action_equation_stop_selector_scale_gate_or_chord_changed": true,
+    "retained_directional_replay_remains_certificate_authority": true,
+    "same_selected_branch_24": true
+  },
+  "validation_passed": true
+}
