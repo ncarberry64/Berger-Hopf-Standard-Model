@@ -1,0 +1,58 @@
+{
+  "FLAGSHIP_READY": false,
+  "FULL_BHSM_COMPLETE": false,
+  "artifact": "BHSM_N12_C2_STOP_MULTIPLE_SHOOTING_CENTER",
+  "center_defect_profile": {
+    "maximum_Hermite_midpoint_state_rate_defect_action_norm": 1.2884161962408744e-05,
+    "maximum_state_rate_defect_after_first_four_seams": 3.8189193984057584e-07,
+    "integrated_midpoint_state_defect_proxy": 4.692906258217994e-05,
+    "first_four_seam_fraction_of_integrated_defect_proxy": 0.7497030153591059,
+    "maximum_absolute_Hermite_midpoint_descriptor_rate_defect": 1.3017536154116308e-13,
+    "maximum_adjacent_tangent_turn_radians": 0.008585365855750721,
+    "total_adjacent_tangent_turn_radians": 0.09115311568352155,
+    "worst_descriptor_defect_seam": 0,
+    "worst_state_defect_seam": 0
+  },
+  "claim_boundary": {
+    "FULL_BHSM_COMPLETE": false,
+    "Gate7": "ACTIVE",
+    "Gate8": "LOCKED",
+    "Hermite_center_is_exact_flow": false,
+    "between_node_interval_remainder_certified": false,
+    "exact_node_and_midpoint_fields_evaluated": true,
+    "finite_reset_to_stop_witness_certified": false
+  },
+  "data": "artifacts/flagship_integration/BHSM_N12_C2_STOP_MULTIPLE_SHOOTING_CENTER.npz",
+  "data_SHA256": "0C9A1A5D069432ED39C0FC627676D99ACE09985FB4458A1FC0471C7C0F593454",
+  "exact_next_dependency": "BOUND_THE_BETWEEN_NODE_GREEN_HERMITE_REMAINDER_AND_THE_CONJUGATED_TRANSVERSE_PROPAGATOR_ON_THE_STORED_47_SEAM_CORRELATED_CENTER,_THEN_APPLY_THE_SCALAR_TERMINAL_INTERVAL_NEWTON",
+  "inputs": {
+    "artifacts/flagship_integration/BHSM_N12_C2_GLOBAL_CANONICAL_STOP_RECONNAISSANCE.json": "A106860B08256F95613FCBE7697FAAA72E1740E57F0A2BC07D8AD477739930CE",
+    "artifacts/flagship_integration/BHSM_N12_C2_GLOBAL_CANONICAL_STOP_RECONNAISSANCE.npz": "687F553940D1FB735E33C2260E19E7B388696F346F364E057A71BE9B60BF973F",
+    "artifacts/flagship_integration/BHSM_N12_C2_REFINED_CANONICAL_STOP_RECONNAISSANCE.json": "764D31FE911A78ECA4A3C155D53CBF5656972E641D8F975D2B9BFA375E2A847E",
+    "artifacts/flagship_integration/BHSM_N12_C2_REFINED_CANONICAL_STOP_RECONNAISSANCE.npz": "050AD2D0823FFDB32B33B002FD1556FE9E62F522ECF62A7DB74B441F1FA8FACC"
+  },
+  "mesh": {
+    "action_length_start": 0.0,
+    "action_length_stop": 92.3033209053828,
+    "maximum_step": 2.0,
+    "minimum_step": 0.30332090538280454,
+    "nodes": 48,
+    "seams": 47
+  },
+  "proof_assembly": {
+    "center_curve": "PIECEWISE_CUBIC_HERMITE_WITH_EXACT_ACTION_FIELD_NODE_RATES",
+    "full_Euler_Dirac_inverse_required": false,
+    "initial_inclusion": "CERTIFIED_1222_CORE_TUBE",
+    "required_enclosure": "ONE_BLOCK_LOWER_TRIANGULAR_GREEN_HERMITE_OR_SHEARED_LOHNER_KRAWCZYK_OPERATOR_ON_THE_47_CORRELATED_SEAMS",
+    "terminal_equation": "s=0_WITH_Ds[V]<0"
+  },
+  "sampled_domain_margins": {
+    "all_selected_branches_are_24": true,
+    "minimum_boundary_lapse": 0.7003486460991334,
+    "minimum_boundary_radius": 0.9949167164637879,
+    "minimum_field_action_norm": 0.00023257472984556459,
+    "minimum_selected_eigenline_gap": 1.7341678902683903e-07
+  },
+  "status": "FINITE_47_SEAM_HERMITE_STOP_CENTER_ASSEMBLED;_INTERVAL_SHADOWING_OPEN",
+  "validation_passed": false
+}

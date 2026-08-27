@@ -78,3 +78,24 @@ def test_flow_cylinder_reduces_gate7_to_one_existence_witness() -> None:
     assert record["claim_boundary"]["finite_reset_to_stop_witness"] == "OPEN_CURRENT_OWNER"
     assert record["validation_passed"] is True
     assert record["FULL_BHSM_COMPLETE"] is False
+
+
+def test_finite_stop_multiple_shooting_center_localizes_47_seams() -> None:
+    record = _load("BHSM_N12_C2_STOP_MULTIPLE_SHOOTING_CENTER.json")
+    mesh = record["mesh"]
+    defect = record["center_defect_profile"]
+    margins = record["sampled_domain_margins"]
+    assert mesh["nodes"] == 48
+    assert mesh["seams"] == 47
+    assert mesh["action_length_stop"] > 92.0
+    assert defect["worst_state_defect_seam"] == 0
+    assert defect["worst_descriptor_defect_seam"] == 0
+    assert defect["maximum_state_rate_defect_after_first_four_seams"] < 4.0e-7
+    assert defect["first_four_seam_fraction_of_integrated_defect_proxy"] > 0.7
+    assert margins["all_selected_branches_are_24"] is True
+    assert margins["minimum_selected_eigenline_gap"] > 0.0
+    assert margins["minimum_boundary_lapse"] > 0.0
+    assert margins["minimum_boundary_radius"] > 0.0
+    assert record["claim_boundary"]["between_node_interval_remainder_certified"] is False
+    assert record["validation_passed"] is False
+    assert record["FULL_BHSM_COMPLETE"] is False

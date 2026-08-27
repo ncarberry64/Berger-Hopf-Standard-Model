@@ -2634,3 +2634,35 @@ Exact next object:
 - Gate 7 remains `ACTIVE`; Gate 8 is `LOCKED`; chord 3 remains
   `UNAUTHORIZED`; frozen predictions are unchanged;
   `FULL_BHSM_COMPLETE=FALSE`.
+
+## N=12 C2 finite stop multiple-shooting center
+
+- The global path and refined transverse stop are assembled into one finite
+  cubic-Hermite center with `48` nodes and `47` seams over action length
+  `0<=a<=92.3033209053828`.
+- Exact retained-field rates are evaluated at every node and every Hermite
+  midpoint.  The maximum midpoint state-rate defect is
+  `1.2884161962408744e-5` on seam 0; after the first four seams the maximum
+  is `3.8189193984057584e-7`.
+- The first four seams carry about `0.7497030154` of the integrated midpoint
+  defect proxy.  The required proof mesh is therefore adaptively refined at
+  the start and uses a correlated moving frame; a uniform ambient hull is
+  again rejected.
+- Maximum adjacent tangent turn is `0.008585365855750721` radians and total
+  turn is `0.09115311568352155` radians.
+- All 95 node/midpoint evaluations retain branch 24.  Sampled minima are
+  selected-line gap `1.7341678902683903e-7`, lapse
+  `0.7003486460991334`, radius `0.9949167164637879`, and nonzero cancelled
+  field norm `0.00023257472984556459`.
+- The exact Green/variation-of-constants residual and block lower-bidiagonal
+  multiple-shooting operator are assembled without a full Euler--Dirac or
+  dense full-history inverse.  The prior first-chord certificate supplies
+  the proof pattern but not reusable numerical constants.
+- Scientific milestone:
+  `FINITE_47_SEAM_HERMITE_STOP_CENTER_ASSEMBLED; INTERVAL SHADOWING OPEN`.
+- Exact next owner: enclose the between-node Green/Hermite remainder and
+  conjugated transverse propagator on this mesh, then apply scalar interval
+  Newton to `s=0` with strict earlier boundary exclusion.
+- Gate 7 remains `ACTIVE`; Gate 8 is `LOCKED`; chord 3 remains
+  `UNAUTHORIZED`; frozen predictions are unchanged;
+  `FULL_BHSM_COMPLETE=FALSE`.
