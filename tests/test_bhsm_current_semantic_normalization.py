@@ -308,6 +308,11 @@ def test_replacement_force_is_constraint_projected_without_reset_selection() -> 
         "BHSM_N12_GATE7_QUANTITATIVE_STABLE_CAPTURE_TUBE.json"
         in dag["G7_08_FORCE"]["provenance"]
     )
+    assert (
+        "artifacts/flagship_integration/"
+        "BHSM_N12_GATE7_GLOBAL_CONNECTION_OBSTRUCTION.json"
+        in dag["G7_08_FORCE"]["provenance"]
+    )
     assert "supplies no complete child boundary Hamiltonian" in dag[
         "G7_08_FORCE"
     ]["physical_meaning"]
@@ -328,6 +333,9 @@ def test_replacement_force_is_constraint_projected_without_reset_selection() -> 
         "G7_08_FORCE"
     ]["physical_meaning"]
     assert "reset-family forward cover into that tube" in dag[
+        "G7_08_FORCE"
+    ]["physical_meaning"]
+    assert "compact boundary-controlled propagated reset-set map" in dag[
         "G7_08_FORCE"
     ]["physical_meaning"]
     assert "finite-core heat suppression is not uniform" in dag["G7_08_FORCE"][

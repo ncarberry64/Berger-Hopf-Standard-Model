@@ -100,6 +100,7 @@ SOURCES = (
     "artifacts/flagship_integration/BHSM_N12_GATE7_QUANTITATIVE_CAPTURE_BRIDGE_RECOMBINATION.json",
     "artifacts/flagship_integration/BHSM_N12_GATE7_FULL_LOWER_WEIGHT_KRAWCZYK_CLOSURE.json",
     "artifacts/flagship_integration/BHSM_N12_GATE7_QUANTITATIVE_STABLE_CAPTURE_TUBE.json",
+    "artifacts/flagship_integration/BHSM_N12_GATE7_GLOBAL_CONNECTION_OBSTRUCTION.json",
     "artifacts/flagship_integration/BHSM_N12_C2_SIGNED_DURATION_INCIDENCE_OWNER.json",
     "artifacts/flagship_integration/BHSM_N12_C2_SIGNED_DDELTA_SEED_TRANSPORT_AUDIT.json",
     "artifacts/flagship_integration/BHSM_N12_C2_DIRECT_DDELTA_ROW_RECONNAISSANCE.json",
@@ -237,6 +238,9 @@ def verify_current_lineage() -> None:
     ]
     quantitative_stable_capture = loaded[
         "artifacts/flagship_integration/BHSM_N12_GATE7_QUANTITATIVE_STABLE_CAPTURE_TUBE.json"
+    ]
+    global_connection_obstruction = loaded[
+        "artifacts/flagship_integration/BHSM_N12_GATE7_GLOBAL_CONNECTION_OBSTRUCTION.json"
     ]
     duration_incidence = loaded["artifacts/flagship_integration/BHSM_N12_C2_SIGNED_DURATION_INCIDENCE_OWNER.json"]
     ddelta_transport = loaded["artifacts/flagship_integration/BHSM_N12_C2_SIGNED_DDELTA_SEED_TRANSPORT_AUDIT.json"]
@@ -615,6 +619,20 @@ def verify_current_lineage() -> None:
         and quantitative_stable_capture["claim_boundary"][
             "AE2_reset_image_enters_capture_tube"
         ] == "OPEN_CURRENT_OWNER"
+        and global_connection_obstruction["status"]
+        == "EXACT_GLOBAL_CONNECTION_OBSTRUCTION_LOCALIZED"
+        and global_connection_obstruction["adjudication"][
+            "RESET_TO_CAPTURE_GLOBAL_CONNECTION_DERIVED"
+        ] is False
+        and global_connection_obstruction["adjudication"][
+            "RESET_TO_FIRST_RETAINED_STOP_DERIVED"
+        ] is False
+        and global_connection_obstruction["adjudication"][
+            "another_local_block_authorized_as_default_next_step"
+        ] is False
+        and global_connection_obstruction["adjudication"][
+            "connection_mathematically_impossible"
+        ] is False
     ):
         raise RuntimeError("joint Gate7 source/cotangent frontier is not current")
     if force_sign_no_go["claim_boundary"]["universal_force_sign_shortcut"] != "CLOSED_INVALID":

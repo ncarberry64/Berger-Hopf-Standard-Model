@@ -2544,3 +2544,33 @@ Exact next object:
   strict NHIM capture inclusion or the first retained canonical stop.
 - Gate 7: `ACTIVE`; Gate 8: `LOCKED`; chord 3: `UNAUTHORIZED`;
   frozen predictions unchanged; `FULL_BHSM_COMPLETE=FALSE`.
+
+## N=12 Gate-7 global connection obstruction
+
+- The sixteen-segment cancelled cover, endpoint recenter, and first sheared
+  block are now consumed as closed local inputs rather than an indefinitely
+  extensible proof strategy.
+- The cover step contracts from `1.3513380e-8` to `2.9531773e-10` with
+  successive ratio about `0.775`, while the enclosure tube grows; no uniform
+  future step lower bound or finite recenter count is certified.
+- Exact terminal projection of the stored centers leaves a
+  `4952.941297062192` gap in `log epsilon` to the quantitative capture scale;
+  the terminal product norm changes only by relative `1.3312e-12` on this
+  prefix.  This is diagnostic and is not promoted to a nonconnection proof.
+- Signed-descriptor monotonicity is local and is not a capture-distance
+  theorem.  Positive `H4`/epsilon decay is certified only after tube entry.
+- The endpoint sheared graph and asymptotic stable cone have no certified
+  connected overlap carrying one uniform cone inequality.
+- The 73-dimensional launch chart and 74-component terminal descriptor do
+  not by themselves define a degree: a compact reset-parameter domain,
+  propagated terminal map, square transverse map, and boundary exclusion are
+  absent.  The degree is `UNDEFINED`, not zero.
+- No later event or retained canonical stop is reached.
+- Scientific milestone: `EXACT_GLOBAL_CONNECTION_OBSTRUCTION_LOCALIZED`.
+- Exact next owner: one finite BHSM-native connector—a connected invariant
+  region forcing tube entry, a compact boundary-controlled reset-set
+  flow/first-hit map with strict inclusion or nonzero degree, or a transverse
+  first hit of an existing canonical stop.  Further local recentering is not
+  the default next step.
+- Gate 7: `ACTIVE`; Gate 8: `LOCKED`; chord 3: `UNAUTHORIZED`;
+  frozen predictions unchanged; `FULL_BHSM_COMPLETE=FALSE`.
