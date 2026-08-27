@@ -2736,3 +2736,29 @@ Exact next object:
 - Gate 7 remains `ACTIVE`; Gate 8 is `LOCKED`; chord 3 remains
   `UNAUTHORIZED`; frozen predictions are unchanged;
   `FULL_BHSM_COMPLETE=FALSE`.
+
+## N=12 C2 complete action-owned bordered response
+
+- The internal Euler--Lagrange right-hand side is assembled as one signed
+  closed-system object before preconditioning.  Only the external
+  Cauchy/birth source is zero; no child/contact term is separately zeroed and
+  no seam force is added.
+- The center spectral inverse is applied branchwise to the complete source,
+  after which retained `D2/D3/D4` bounds enclose only the response variation.
+- A fourfold proof refinement of the 64-way spectral mesh gives
+  `47*256=12032` response cells.  Every relative bordered perturbation is
+  below one.
+- Maximum relative perturbation: `0.8826360121338405`; maximum Neumann
+  factor: `8.52050120553494`; maximum complete response radius:
+  `1596665.024471732`, owned by seam 45, refined subspan 255.
+- The maximum binary64 direct-solve/preconditioned discrepancy
+  `0.005157922447324381` is inside the dimension-62 backward-error bound
+  `0.056117521234508166`.
+- Scientific milestone:
+  `ALL_12032_ACTION_OWNED_BORDERED_RHS_RESPONSE_TUBES_CERTIFIED`.
+- Exact next owner: differentiate the complete internal bordered system and
+  assemble its first-variation tube for the finite Green/Hermite shadowing
+  operator.
+- Gate 7 remains `ACTIVE`; Gate 8 is `LOCKED`; chord 3 remains
+  `UNAUTHORIZED`; frozen predictions are unchanged;
+  `FULL_BHSM_COMPLETE=FALSE`.

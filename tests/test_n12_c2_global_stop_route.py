@@ -173,3 +173,35 @@ def test_full_stop_bordered_hard_inverse_uses_spectral_identity() -> None:
     ] == "CERTIFIED"
     assert record["claim_boundary"]["action_owned_bordered_rhs_tube"] == "OPEN"
     assert record["FULL_BHSM_COMPLETE"] is False
+
+
+def test_full_stop_action_owned_bordered_response_closes_refined_mesh() -> None:
+    record = _load("BHSM_N12_C2_STOP_FULL_BORDERED_RHS_RESPONSE.json")
+    rows = record["rows"]
+    assert record["status"] == (
+        "ALL_12032_ACTION_OWNED_BORDERED_RHS_RESPONSE_TUBES_CERTIFIED"
+    )
+    assert record["mesh"]["macro_seams"] == 47
+    assert record["mesh"]["subspans_per_macro_seam"] == 256
+    assert record["mesh"]["total_subspans"] == 12032
+    assert len(rows) == 12032
+    assert all(row["selected_branch"] == 24 for row in rows)
+    assert all(row["center_internal_rhs_finite"] for row in rows)
+    assert all(row["center_preconditioned_source_matches_bordered_solve"] for row in rows)
+    assert all(row["relative_bordered_operator_perturbation_upper"] < 1.0 for row in rows)
+    assert all(row["bordered_response_tube_finite"] for row in rows)
+    summary = record["summary"]
+    assert summary["maximum_relative_bordered_operator_perturbation_upper"] < 0.89
+    assert math.isfinite(summary["maximum_complete_bordered_response_2_norm_upper"])
+    assert (
+        summary["maximum_center_preconditioned_solve_discrepancy"]
+        < summary["maximum_binary64_backward_error_upper"]
+    )
+    assert record["validation"][
+        "only_external_Cauchy_birth_source_zero_internal_rhs_retained"
+    ] is True
+    assert record["claim_boundary"][
+        "all_12032_bordered_hard_response_tubes"
+    ] == "CERTIFIED_FINITE"
+    assert record["claim_boundary"]["response_first_variation_tube"] == "OPEN"
+    assert record["FULL_BHSM_COMPLETE"] is False
