@@ -39,6 +39,18 @@ this adaptive cover is `1.6382875139534257e-7`; all cells retain branch 24 and
 all eight degree-seven Bernstein controls.
 
 This removes the former DOP853-to-cubic-Hermite transfer obligation for the
-selected-line spectrum.  It does not by itself prove shadowing: the selected
-projector, bordered response, correlated `Y,Z1,Z2`, and domain-margin transfer
-must all be evaluated on this identical adaptive dense-polynomial cover.
+selected-line spectrum.  The denominator-resolved Kato graph calculation has
+also now consumed the same 1,722 cells in the same order.  Every graph
+Neumann bound closes; the maximum selected-projector motion is
+`0.26738491116648233`.  The exact bordered identity
+
+`sigma(K_border)={1,1,|lambda_j-lambda_24|:j!=24}`
+
+then certifies the instantaneous bordered hard inverse on every cell without
+forming the kinetic, Dirac, or history inverse.  The minimum hard gap is
+`1.6382875139534257e-7`, and the largest charted bordered inverse bound is
+`8842347.821182095`.
+
+This does not by itself prove shadowing: the action-owned bordered response,
+correlated `Y,Z1,Z2`, and domain-margin transfer must still be evaluated on
+this identical adaptive dense-polynomial cover.
