@@ -2715,3 +2715,24 @@ Exact next object:
 - Gate 7 remains `ACTIVE`; Gate 8 is `LOCKED`; chord 3 remains
   `UNAUTHORIZED`; frozen predictions are unchanged;
   `FULL_BHSM_COMPLETE=FALSE`.
+
+## N=12 C2 complete finite-stop bordered hard inverse
+
+- In the instantaneous selected eigenbasis, the bordered descriptor matrix
+  has singular values `1,1` and the 60 selected-to-hard absolute gaps.
+  Therefore its inverse norm is exactly controlled by the certified minimum
+  gap; no kinetic/Dirac or dense history inverse is formed.
+- All 3008 cells have a finite bordered inverse.  The minimum gap is
+  `1.7274638520643627e-7`, the maximum instantaneous inverse bound is
+  `5788833.143483581`, and the maximum center-charted inverse bound is
+  `5944620.595773861`.
+- The maximum selected-projector chart factor is only
+  `1.028682589928863`; the inverse owner is seam 45, subspan 63.
+- Scientific milestone:
+  `ALL_3008_STOP_PATH_BORDERED_HARD_INVERSES_CERTIFIED`.
+- Exact next owner: assemble the complete action-owned internal bordered
+  right-hand side on the same finite mesh and apply this inverse tube.  No
+  internal child/contact response is set to zero.
+- Gate 7 remains `ACTIVE`; Gate 8 is `LOCKED`; chord 3 remains
+  `UNAUTHORIZED`; frozen predictions are unchanged;
+  `FULL_BHSM_COMPLETE=FALSE`.

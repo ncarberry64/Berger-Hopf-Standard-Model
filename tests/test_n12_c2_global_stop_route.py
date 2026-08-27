@@ -1,4 +1,5 @@
 import json
+import math
 from pathlib import Path
 
 
@@ -148,4 +149,27 @@ def test_full_stop_selected_projector_graph_is_uniformly_neumann_small() -> None
     ] == "CERTIFIED"
     assert record["claim_boundary"]["bordered_hard_response_tube"] == "OPEN"
     assert record["claim_boundary"]["Green_Hermite_shadowing"] == "OPEN"
+    assert record["FULL_BHSM_COMPLETE"] is False
+
+
+def test_full_stop_bordered_hard_inverse_uses_spectral_identity() -> None:
+    record = _load("BHSM_N12_C2_STOP_FULL_BORDERED_HARD_INVERSE.json")
+    rows = record["rows"]
+    assert record["status"] == (
+        "ALL_3008_STOP_PATH_BORDERED_HARD_INVERSES_CERTIFIED"
+    )
+    assert len(rows) == 3008
+    assert all(row["selected_branch"] == 24 for row in rows)
+    assert all(row["hard_dimension"] == 60 for row in rows)
+    assert all(row["bordered_dimension"] == 62 for row in rows)
+    assert all(row["certified_selected_to_hard_gap_lower"] > 0.0 for row in rows)
+    assert all(row["bordered_inverse_closed"] for row in rows)
+    summary = record["summary"]
+    assert summary["maximum_instantaneous_bordered_inverse_2_norm_upper"] > 1.0
+    assert summary["maximum_center_chart_condition_factor_upper"] < 1.03
+    assert math.isfinite(summary["maximum_center_chart_bordered_inverse_2_norm_upper"])
+    assert record["claim_boundary"][
+        "all_3008_instantaneous_bordered_hard_inverses"
+    ] == "CERTIFIED"
+    assert record["claim_boundary"]["action_owned_bordered_rhs_tube"] == "OPEN"
     assert record["FULL_BHSM_COMPLETE"] is False
