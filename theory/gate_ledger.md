@@ -2666,3 +2666,29 @@ Exact next object:
 - Gate 7 remains `ACTIVE`; Gate 8 is `LOCKED`; chord 3 remains
   `UNAUTHORIZED`; frozen predictions are unchanged;
   `FULL_BHSM_COMPLETE=FALSE`.
+
+## N=12 C2 complete finite-stop boundary-cluster spectrum
+
+- The retained first-chord correlated Hermite/Kato construction is expanded
+  to all `47*64=3008` finite stop-path subspans.
+- Hard branches 26 and 27 are treated inside the invariant positive hard
+  cluster `25:27`; their internal near meeting is not inserted into the
+  physical selected-line denominator.
+- Complementary Sylvester terms are partitioned into exhaustive proof-only
+  spectral-distance bands.  This pairs every retained `D4` response with its
+  own denominator and removes the invalid far-response/nearest-gap mixture.
+- Every subspan center selects branch 24; all three cluster quarter-gap
+  bootstraps and both selected-line boundary inequalities close.
+- Minimum selected-line boundary gap:
+  `1.7274638520643627e-7`; maximum selected-line shift:
+  `3.720698270373399e-12`.
+- Maximum negative- and positive-cluster shifts are, respectively,
+  `4.199354764378623e-9` and `1.2763237419902918e-8`.
+- Scientific milestone:
+  `ALL_3008_STOP_PATH_BOUNDARY_CLUSTER_DENOMINATORS_CERTIFIED`.
+- Exact next owner: assemble the denominator-resolved selected-projector
+  derivative and bordered hard response on the same 3008 subspans, then feed
+  them into the finite Green/Hermite shadowing operator.
+- Gate 7 remains `ACTIVE`; Gate 8 is `LOCKED`; chord 3 remains
+  `UNAUTHORIZED`; frozen predictions are unchanged;
+  `FULL_BHSM_COMPLETE=FALSE`.

@@ -99,3 +99,28 @@ def test_finite_stop_multiple_shooting_center_localizes_47_seams() -> None:
     assert record["claim_boundary"]["between_node_interval_remainder_certified"] is False
     assert record["validation_passed"] is False
     assert record["FULL_BHSM_COMPLETE"] is False
+
+
+def test_full_stop_boundary_cluster_spectrum_covers_all_3008_subspans() -> None:
+    record = _load("BHSM_N12_C2_STOP_FULL_BOUNDARY_CLUSTER_SPECTRUM.json")
+    rows = record["rows"]
+    assert record["status"] == (
+        "ALL_3008_STOP_PATH_BOUNDARY_CLUSTER_DENOMINATORS_CERTIFIED"
+    )
+    assert record["mesh"]["macro_seams"] == 47
+    assert record["mesh"]["subspans_per_macro_seam"] == 64
+    assert record["mesh"]["total_subspans"] == 3008
+    assert [(row["seam"], row["subspan"]) for row in rows] == [
+        (seam, subspan) for seam in range(47) for subspan in range(64)
+    ]
+    assert all(row["selected_branch"] == 24 for row in rows)
+    assert all(row["all_three_quarter_gap_bootstraps_closed"] for row in rows)
+    assert all(row["boundary_cluster_certificate_closed"] for row in rows)
+    assert record["summary"]["minimum_selected_line_boundary_gap_lower"] > 0.0
+    assert record["validation_passed"] is True
+    assert record["claim_boundary"][
+        "selected_line_on_reference_Hermite_stop_path"
+    ] == "CERTIFIED_SIMPLE"
+    assert record["claim_boundary"]["branchwise_selected_projector_tube"] == "OPEN"
+    assert record["claim_boundary"]["Green_Hermite_shadowing"] == "OPEN"
+    assert record["FULL_BHSM_COMPLETE"] is False
