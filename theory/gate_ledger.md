@@ -2574,3 +2574,33 @@ Exact next object:
   the default next step.
 - Gate 7: `ACTIVE`; Gate 8: `LOCKED`; chord 3: `UNAUTHORIZED`;
   frozen predictions unchanged; `FULL_BHSM_COMPLETE=FALSE`.
+
+## N=12 C2 finite global canonical-stop route localization
+
+- A fourth-order denominator-free coupled action-arclength reconnaissance now
+  propagates the signed descriptor correlatively from the certified sheared
+  core instead of reusing the earlier drifting fixed-`s` Heun centers.
+- The corrected center path has a descriptor maximum near weighted action
+  length `a=24`, remains on selected branch 24 with gap above
+  `1.7359e-7`, positive lapse above `0.70035`, and positive boundary radius
+  above `0.99491`, and brackets `s=0` between `a=92` and `a=94`.
+- `Delta=0` is not relabelled as a stop.  The candidate endpoint is the
+  already-retained Euler--Dirac singularity `s=0`.
+- The exact action identity
+  `d_a Delta=(d_a c)b+c(d_a b)+(Delta/||G||)R+s(d_a R)` is assembled with
+  inverse-free selected-line and hard-response derivatives.  At
+  `a=0,24,48,54,72,92`, all outward-rounded point action-tensor contractions
+  give strictly negative `d_a Delta`; the weakest sampled upper endpoint is
+  about `-3.3075e-17` at `a=54`.
+- An axis-aligned interval hull and a frozen principal ray are both rejected:
+  the former destroys the branch enclosure, while the latter misses the
+  action-selected eigenline curvature.  The finite proof domain must retain
+  the correlated moving-eigenline cone.
+- This is a global-route localization, not a first-hit certificate.  Binary
+  selected-line/bordered center solves and all motion between sample centers
+  still need one uniform interval moving-cone/Taylor enclosure on
+  `0<=a<=94`.
+- Gate 7 remains `ACTIVE`; the smallest owner is now the uniform scalar
+  `d_a Delta<0` moving-cone theorem followed by integration to the transverse
+  first hit `s=0`.  Gate 8 is `LOCKED`; chord 3 remains `UNAUTHORIZED`;
+  frozen predictions are unchanged; `FULL_BHSM_COMPLETE=FALSE`.
