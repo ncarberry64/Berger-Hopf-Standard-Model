@@ -2604,3 +2604,33 @@ Exact next object:
   `d_a Delta<0` moving-cone theorem followed by integration to the transverse
   first hit `s=0`.  Gate 8 is `LOCKED`; chord 3 remains `UNAUTHORIZED`;
   frozen predictions are unchanged; `FULL_BHSM_COMPLETE=FALSE`.
+
+## N=12 Gate-7 reset-to-stop existence-only flow cylinder
+
+- The candidate Euler--Dirac stop center is refined at action length
+  `a=92.3033209053828` beyond the certified 1222-segment core.
+- At the center, `Delta=-6.965831811826919e-15` and
+  `D s[V]=-2.8365049372603952e-11`; the existing stop surface `s=0` is
+  therefore transverse to the retained action-arclength field.
+- Selected branch 24 remains simple with gap `1.7341678902683903e-7`;
+  boundary lapse `0.7057304510598463` and radius `0.9949297505914222`
+  remain positive.
+- On the regular 73-dimensional child quotient, the stop face has dimension
+  72.  Its proof-only inverse-flow cylinder has dimension `72+1=73`, with
+  full-rank differential `[D iota,-V]` because `D s[V]` is nonzero.
+- Gate 7 requires existence of at least one certified forward reset history
+  reaching a finite event/canonical stop, not universal reachability of the
+  entire reset family.  A validated proof-coordinate witness plus scalar
+  interval first hit is sufficient and does not define a physical selector.
+- The refined binary center is not promoted: coarse/fine weighted state
+  discrepancy is about `2.4152e-7`, and the full core-to-stop interval
+  shadowing/boundary exclusion remains open.
+- Scientific milestone:
+  `EXACT_EXISTENCE_ONLY_FLOW_CYLINDER_REDUCTION_DERIVED; FINITE_INTERVAL_WITNESS_OPEN`.
+- Exact next owner: one correlated finite multiple-shooting enclosure from
+  the certified core to this transverse target, using the retained
+  Green/Hermite or sheared-Lohner blocks and an inverse-free bordered
+  Krawczyk/interval-Newton terminal solve.
+- Gate 7 remains `ACTIVE`; Gate 8 is `LOCKED`; chord 3 remains
+  `UNAUTHORIZED`; frozen predictions are unchanged;
+  `FULL_BHSM_COMPLETE=FALSE`.

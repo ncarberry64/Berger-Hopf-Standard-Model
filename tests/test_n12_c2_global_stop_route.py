@@ -45,3 +45,36 @@ def test_sampled_delta_concavity_is_strict_but_not_promoted() -> None:
     assert boundary["canonical_s_zero_first_hit_certified"] is False
     assert record["validation_passed"] is False
     assert record["FULL_BHSM_COMPLETE"] is False
+
+
+def test_refined_stop_center_is_transverse_but_remains_reconnaissance() -> None:
+    record = _load("BHSM_N12_C2_REFINED_CANONICAL_STOP_RECONNAISSANCE.json")
+    stop = record["candidate_stop"]
+    assert record["action_length"]["certified_core_to_candidate_stop"] > 92.0
+    assert record["action_length"]["certified_core_to_candidate_stop"] < 94.0
+    assert stop["Delta"] < 0.0
+    assert stop["ds_da"] < 0.0
+    assert stop["transverse_to_stop_face"] is True
+    assert stop["selected_branch"] == 24
+    assert stop["selected_eigenline_gap"] > 0.0
+    assert stop["boundary_lapse"] > 0.0
+    assert stop["boundary_radius"] > 0.0
+    assert record["claim_boundary"]["between_core_and_stop_interval_shadowing"] is False
+    assert record["validation_passed"] is False
+
+
+def test_flow_cylinder_reduces_gate7_to_one_existence_witness() -> None:
+    record = _load("BHSM_N12_GATE7_RESET_TO_STOP_FLOW_CYLINDER.json")
+    theorem = record["theorem"]
+    requirement = record["Gate7_requirement"]
+    assert theorem["regular_child_dimension"] == 73
+    assert theorem["Euler_Dirac_stop_face_dimension"] == 72
+    assert theorem["flow_coordinate_dimension"] == 1
+    assert requirement["classification"] == "EXISTENCE_ONLY"
+    assert "AT_LEAST_ONE" in requirement["required"]
+    assert "UNIVERSAL" in requirement["not_required"]
+    assert requirement["proof_coordinate_witness_is_a_physical_selector"] is False
+    assert record["claim_boundary"]["exact_flow_cylinder_theorem"] == "DERIVED"
+    assert record["claim_boundary"]["finite_reset_to_stop_witness"] == "OPEN_CURRENT_OWNER"
+    assert record["validation_passed"] is True
+    assert record["FULL_BHSM_COMPLETE"] is False
