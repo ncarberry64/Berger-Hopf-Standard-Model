@@ -2692,3 +2692,26 @@ Exact next object:
 - Gate 7 remains `ACTIVE`; Gate 8 is `LOCKED`; chord 3 remains
   `UNAUTHORIZED`; frozen predictions are unchanged;
   `FULL_BHSM_COMPLETE=FALSE`.
+
+## N=12 C2 complete finite-stop selected-projector graph
+
+- The certified branch-24 boundary gaps are inserted into the exact-center
+  `D3` and correlated retained-action `D4` Kato numerator on all 3008 finite
+  stop-path subspans.
+- Near spectral bands use the certified cluster boundary gap.  Far bands use
+  the larger independently valid ordered-Weyl lower bound
+  `d_center-rho_24-||Delta H||`; this prevents far response from being divided
+  by an unrelated nearest-mode gap.
+- Every selected-projector graph Neumann bound is below one.  The maximum
+  graph/projector motion is `0.014138530083434563`, owned by seam 11,
+  subspan 20; the minimum consumed gap is `1.7274638520643627e-7`.
+- Maximum ambient Hessian displacement across the mesh is
+  `0.00427406712705646`; it is used only for ordered far-branch separation,
+  not as the near selected-line gap.
+- Scientific milestone:
+  `ALL_3008_STOP_PATH_SELECTED_PROJECTOR_GRAPHS_CERTIFIED`.
+- Exact next owner: insert this graph into the denominator-resolved bordered
+  hard response and then the finite Green/Hermite shadowing operator.
+- Gate 7 remains `ACTIVE`; Gate 8 is `LOCKED`; chord 3 remains
+  `UNAUTHORIZED`; frozen predictions are unchanged;
+  `FULL_BHSM_COMPLETE=FALSE`.

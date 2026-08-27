@@ -124,3 +124,28 @@ def test_full_stop_boundary_cluster_spectrum_covers_all_3008_subspans() -> None:
     assert record["claim_boundary"]["branchwise_selected_projector_tube"] == "OPEN"
     assert record["claim_boundary"]["Green_Hermite_shadowing"] == "OPEN"
     assert record["FULL_BHSM_COMPLETE"] is False
+
+
+def test_full_stop_selected_projector_graph_is_uniformly_neumann_small() -> None:
+    record = _load("BHSM_N12_C2_STOP_FULL_SELECTED_PROJECTOR_GRAPH.json")
+    rows = record["rows"]
+    assert record["status"] == (
+        "ALL_3008_STOP_PATH_SELECTED_PROJECTOR_GRAPHS_CERTIFIED"
+    )
+    assert [(row["seam"], row["subspan"]) for row in rows] == [
+        (seam, subspan) for seam in range(47) for subspan in range(64)
+    ]
+    assert all(row["selected_branch"] == 24 for row in rows)
+    assert all(row["certified_global_gap_lower"] > 0.0 for row in rows)
+    assert all(row["graph_Neumann_closed"] for row in rows)
+    assert record["summary"]["maximum_selected_projector_motion_upper"] < 0.015
+    assert record["summary"]["minimum_consumed_gap_lower"] > 0.0
+    assert record["validation"][
+        "far_branch_ordered_Weyl_denominators_combined_with_global_gap"
+    ] is True
+    assert record["claim_boundary"][
+        "all_3008_selected_projector_graphs"
+    ] == "CERTIFIED"
+    assert record["claim_boundary"]["bordered_hard_response_tube"] == "OPEN"
+    assert record["claim_boundary"]["Green_Hermite_shadowing"] == "OPEN"
+    assert record["FULL_BHSM_COMPLETE"] is False
