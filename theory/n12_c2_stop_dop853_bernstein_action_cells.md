@@ -98,3 +98,20 @@ The next dependency is to differentiate the complete internal bordered
 system and assemble the response first-variation tube on this same cover.
 The correlated `Y,Z1,Z2` and domain-margin transfer must then use those
 cell-local bounds before shadowing can be promoted.
+
+The exact center differentiation has now been assembled on all 8,692 cells:
+
+`D_xi x=K^-1(D_xi rhs-(D_xi K)x)`.
+
+The two terms on the right are combined before their norm is taken.  The
+maximum combined differentiated RHS norm is `46.43627774188822`, while the
+maximum center response first-variation norm per action time is
+`800.9692587386047`, owned by the first refined cell.  The maximum direct
+bordered residual is `6.004403020726633e-12`.  The independent analytical
+selected-line spectral solve differs from the direct diagnostic by at most
+`0.0002285925216331712`, inside the residual-plus-gap backward-error bound
+`0.0005366791280522494`.
+
+This closes the exact-center `D_xi K`, `D_xi rhs`, and `D_xi x` assembly.  It
+does not yet promote a uniform first-variation tube: the cellwise second
+variation of the combined differentiated identity must still be enclosed.
