@@ -1,6 +1,6 @@
 # C2 finite-prefix terminal-load bracket
 
-Cut the maximal C2 Friedrichs history at the far edge of the certified
+Cut the maximal C2 Friedrichs history at the far form-core truncation boundary of the certified
 1,064-segment prefix.  The omitted nonnegative tail form induces a
 nonnegative downstream Weyl load `L_T(z)` at every real `z<0`.  Composing the
 element transfers gives one scalar Möbius map

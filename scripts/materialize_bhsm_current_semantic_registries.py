@@ -133,6 +133,7 @@ SOURCES = (
     "artifacts/BHSM_rho_ch_action_audit_v1_9.json",
     "artifacts/intrinsic_state_selection/BHSM_N12_CONSTRAINT_REDUCED_ENERGY_IDENTITY_GATE.json",
     "theory/norman_owner_ontology_recovered.md",
+    "theory/bhsm_spacetime_edge_ontology_repair.md",
 )
 
 

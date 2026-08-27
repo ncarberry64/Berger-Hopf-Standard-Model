@@ -89,7 +89,7 @@ adding a separate seam source or combining direct and Schur routes would
 double count the same closed operator.
 
 The direct AE2 descriptor realizes that same topology without first
-eliminating either arm. E0 and the far C2 proof edge are Dirichlet, while the
+eliminating either arm. E0 and the far C2 form-core truncation boundary are Dirichlet, while the
 E1/C2 trace is one internal node carrying `W_phys` exactly once. Its retained
 scalar and factorized-Dirac element forms expose `D_x K`, `D_h K`, and
 `D_h M`. A Schur elimination performed only as a cross-check reproduces
@@ -111,7 +111,7 @@ tubes, bounds their 1064-to-1222 absolute heat-trace increment by
 `3*(1064 exp(-3.5705e62)+1222 exp(-1.1047e54))`.  This removes dense generalized diagonalization of
 those three representative pencils from the live dependency.  It does not
 sum the full angular ledger, supply its multiplicities, realize the incoming
-seam, or control the maximal tail beyond the artificial 1,222-core edge.
+seam, or control the maximal tail beyond the finite 1,222-core truncation boundary.
 
 The direct one-seam domain now closes the first two of those qualifications
 for the finite core. Both exterior traces are Dirichlet, so the complete
@@ -163,5 +163,5 @@ nor a separate zero-exclusion test on this internal component is a physical
 KKT condition. Accordingly the next construction assembles the signed heat,
 zeta, upstream `C1`, and interface/contact covectors once, preserves their
 cancellations before taking norms, and tests that joint object as a projected
-finite-core Cauchy net. The 1,222-core edge remains an
+finite-core Cauchy net. The 1,222-core truncation boundary remains an
 artificial Friedrichs exhaustion edge, not an event or canonical stop.

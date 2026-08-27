@@ -10,7 +10,7 @@ minimal form.  Fix a real resolvent parameter `z=-kappa^2<0`.
 
 On a Friedrichs route, choose increasing compact regular subintervals
 `I_T` exhausting the maximal interval and impose zero trace only at the
-artificial far edge.  The spaces of compactly supported form vectors are
+artificial far form-core truncation boundary.  The spaces of compactly supported form vectors are
 nested and their union is a form core for the maximal Friedrichs domain.
 The shifted energies
 
@@ -28,7 +28,7 @@ Galerkin level, this entrywise convergence is operator-norm convergence:
 `M_C,T(-kappa^2) -> M_C,F(-kappa^2)`.
 
 The construction introduces no terminal condition into the physical theory.
-Dirichlet at the moving far edge is only the canonical compactly supported
+Dirichlet at the moving far form-core truncation boundary is only the canonical compactly supported
 core approximation to a Friedrichs closure; no individual finite `T` is a
 physical force endpoint or a validation cutoff promoted to one.
 

@@ -5,7 +5,7 @@ Status: `ONE_SEAM_DIRECT_DESCRIPTOR_AND_SCHUR_EQUIVALENCE_DERIVED`.
 The owner-authorized zero-source rule fixes the external E0 birth trace to
 zero only after the closed action has been differentiated.  On a finite
 formation prefix and a finite C2 Friedrichs core, the most direct Galerkin
-realization therefore has Dirichlet data at E0 and at the far proof edge, but
+realization therefore has Dirichlet data at E0 and at the far proof cutoff, but
 it retains the E1/C2 trace as one internal degree of freedom.  If the two arm
 forms are `K_f` and `K_c`, the direct action form is
 

@@ -11,8 +11,8 @@ For every new node the retained-action tube is converted to an interval for
 the BHSM boundary log radius.  The scalar and both product-Dirac channels use
 the same inverse-free element forms and derivative adapters as the certified
 1,064-segment core.  The birth node is retained; the last node is eliminated
-only as the far edge of a Friedrichs form core.  It is not assigned a
-terminal load or interpreted as an event.
+only as the far form-core truncation boundary of a Friedrichs form core.  It
+is not assigned a terminal load or interpreted as an event.
 
 This construction is the finite-core side of the maximal-flow dichotomy.  A
 regular numerical box boundary cannot end the physical history.  Nested

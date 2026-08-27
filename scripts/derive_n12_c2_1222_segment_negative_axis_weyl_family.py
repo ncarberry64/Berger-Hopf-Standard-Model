@@ -123,7 +123,7 @@ def build_payload() -> dict[str, Any]:
         },
         "validated_invalidated_open": {
             "VALIDATED": ["1222-core negative-axis Weyl family", "inverse-free coefficient cotangent family"],
-            "INVALIDATED": ["sample probes constitute heat synthesis", "far core edge is an endpoint"],
+            "INVALIDATED": ["sample probes constitute heat synthesis", "far form-core truncation boundary is a physical endpoint"],
             "OPEN": ["parent seam", "reset quotient Jacobi pullback", "complete source contraction", "maximal Cauchy tail"],
         },
         "hindsight": {"classification": "CONTINUOUS_WITHIN_CLASS_EVOLUTION", "obstruction_physical": False},

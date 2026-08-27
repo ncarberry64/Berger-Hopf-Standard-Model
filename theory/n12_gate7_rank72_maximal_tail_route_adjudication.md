@@ -85,7 +85,7 @@ reset seed and the complete closed-system heat-minus-zeta density.  Strong
 resolvent convergence of the operators alone is insufficient because it does
 not imply differentiability of the maximal functional with respect to a
 noncompact coefficient history.  The second alternative requires an actual
-stopping-locus certificate; a proof edge cannot be renamed as one.
+stopping-locus certificate; a proof cutoff cannot be renamed as one.
 
 Only the external Cauchy/birth source is zero.  No internal response is set to
 zero, no seam term is added, and no selector, fitted threshold, new scale,

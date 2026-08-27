@@ -224,7 +224,7 @@ def test_replacement_force_is_constraint_projected_without_reset_selection() -> 
         "DERIVED_SIGNED_PARAMETRIC_OR_INTERVAL_ADJOINT_OPEN"
     )
     assert "D_s J_theta=D_Y F_s J_theta" in parametric_base["formula"]
-    assert "the 1222 proof edge is an event or stop" in (
+    assert "the 1222 proof cutoff is an event or canonical stop" in (
         parametric_base["forbidden_interpretations"]
     )
     signed_adjoint = basis["C2_1222_SIGNED_ADJOINT_ASSEMBLY"]

@@ -71,7 +71,7 @@ The repository matching result is sharp:
 - the outgoing `M_C2` whole-axis object has a rigorous finite-core
   representation, but the broad enclosure does not fix the nonlinear heat
   functional;
-- the 1,222-segment reverse actions are certified, but the finite proof edge
+- the 1,222-segment reverse actions are certified, but the finite proof cutoff
   is not a physical endpoint;
 - no scalar at a proof center represents the physical family;
 - the current diagram has one internal `E1/C2` seam; `B_birth` and `M_E0` are

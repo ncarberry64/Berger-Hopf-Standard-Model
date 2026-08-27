@@ -53,7 +53,7 @@ same enclosure; its zeta contribution remains exactly zero in that direction.
 
 This theorem is uniform on the certified incoming amplitude box and the
 1,222-segment C2 parameter tube. It neither selects a history member nor
-promotes the far proof edge to an endpoint. It does not contract the seed
+promotes the far proof cutoff to a physical endpoint. It does not contract the seed
 with the signed non-scale geometry jet, and it supplies no maximal C2 tail.
 Those remain the Gate-7 owner before the projected KKT root.
 

@@ -248,7 +248,7 @@ def build_payload() -> dict[str, Any]:
         },
         "validated_invalidated_open": {
             "VALIDATED": ["1222-segment nested form core", "positive fixed-channel descriptor gaps", "exact chronological joins"],
-            "INVALIDATED": ["the segment-1222 proof edge is a physical endpoint", "more scalar proof boxes are the Gate-7 owner"],
+            "INVALIDATED": ["the segment-1222 proof cutoff is a physical endpoint", "more scalar proof boxes are the Gate-7 owner"],
             "OPEN": ["maximal endpoint outcome", "combined projected heat-minus-zeta force Cauchy tail", "zero-source force"],
         },
         "hindsight": {

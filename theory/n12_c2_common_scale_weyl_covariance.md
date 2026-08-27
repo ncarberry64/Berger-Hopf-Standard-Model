@@ -12,7 +12,7 @@ local transfer has the exact covariance
 `M(x+a, exp(a)h, exp(-2a)z) = exp(-a) M(x,h,z)`.
 
 Finite composition preserves this identity, including a Dirichlet
-Friedrichs form-core edge.  Differentiation at `a=0` gives
+Friedrichs form-core truncation boundary.  Differentiation at `a=0` gives
 
 `D_x_uniform M + D_h_weighted M - 2 z D_z M = -M`.
 

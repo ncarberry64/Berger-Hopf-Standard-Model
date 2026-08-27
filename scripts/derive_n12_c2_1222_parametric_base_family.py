@@ -205,7 +205,7 @@ def build_payload() -> dict[str, Any]:
             "INVALIDATED": [
                 "absence of any parametric base history is the current blocker",
                 "a proof center must be selected to define the finite-core family",
-                "the 1222 proof edge is a physical endpoint",
+                "the 1222 proof cutoff is a physical endpoint",
             ],
             "OPEN": [
                 "validated signed joint-history adjoint covector on the family",

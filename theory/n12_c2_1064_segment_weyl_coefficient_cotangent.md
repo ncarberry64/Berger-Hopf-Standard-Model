@@ -11,7 +11,7 @@ For a scalar constant-coefficient element at real `z<0`, set
 
 `Z_L=(k t+Z_R)/(1+Z_R t/k)`.
 
-The far Dirichlet form-core edge is initialized analytically by
+The far Dirichlet form-core truncation boundary is initialized analytically by
 `Z_L=k/t`; no infinite number is stored.  For the product-Dirac factor form,
 the conormal pair `(u,p)` has a two-by-two exponential transfer with
 `W=+/- lambda exp(-x)`, and the same boundary elimination is the scalar

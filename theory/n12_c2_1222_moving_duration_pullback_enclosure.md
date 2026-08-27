@@ -30,7 +30,7 @@ second variation bounds used by those segment certificates.
 This closes existence and a rigorous norm enclosure of the moving-duration
 first jet on the finite core.  It does not determine the signed reset
 covector: that requires the inverse-free backward center adjoint.  It also
-does not control the maximal tail beyond the artificial 1,222-core edge.
+does not control the maximal tail beyond the finite 1,222-core truncation boundary.
 
 No duration interval or proof tube is substituted for a first jet.  No event,
 stop, recurrence, selector, fitted scale, action term, gate, or chord is added.

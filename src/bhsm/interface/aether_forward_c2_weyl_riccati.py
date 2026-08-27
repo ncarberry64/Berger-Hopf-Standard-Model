@@ -52,7 +52,8 @@ def finite_core_weyl_and_coefficient_cotangent(
 ) -> dict[str, Any]:
     """Return the birth Weyl scalar and exact reverse coefficient cotangent.
 
-    The terminal `None` value is the far Dirichlet form-core edge.  Each
+    The terminal `None` value is the far Dirichlet form-core truncation
+    boundary.  Each
     Möbius update acts on a scalar conormal impedance and never subtracts the
     two large stiffness terms that make a direct Schur recurrence unstable.
     Local partial derivatives use arbitrary-precision differentiation and are

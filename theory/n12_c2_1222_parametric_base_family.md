@@ -30,5 +30,5 @@ centers remain enclosure data, not selected physical histories.
 
 This removes the statement that no parametric base history exists.  It does
 not evaluate the signed joint-history adjoint, perform the graded
-heat-minus-zeta contraction, turn the 1,222nd proof edge into an endpoint, or
+heat-minus-zeta contraction, turn the 1,222nd proof cutoff into a physical endpoint, or
 close the maximal projected force tail.

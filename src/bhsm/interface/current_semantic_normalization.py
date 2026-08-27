@@ -7,7 +7,7 @@ from typing import Any, Iterable, Mapping
 
 
 ACTION_VERSION = "BHSM-AE-2.0.0"
-ONTOLOGY_VERSION = "BHSM-AE2-ONTOLOGY-1.3.0"
+ONTOLOGY_VERSION = "BHSM-AE2-ONTOLOGY-1.4.0"
 REQUIRED_RECORD_FIELDS = (
     "canonical_id",
     "formula",
@@ -528,7 +528,7 @@ def _basis() -> list[dict[str, Any]]:
             [p_parametric_base],
             current_status="DERIVED_SIGNED_PARAMETRIC_OR_INTERVAL_ADJOINT_OPEN",
             downstream_consumers=["G7_08_FORCE", "G7_09_SADDLE"],
-            forbidden_interpretations=["select a proof center as the physical history", "the 1222 proof edge is an event or stop", "finite-core family existence supplies the graded force value", "finite-core smooth dependence closes the maximal tail"],
+            forbidden_interpretations=["select a proof center as the physical history", "the 1222 proof cutoff is an event or canonical stop", "finite-core family existence supplies the graded force value", "finite-core smooth dependence closes the maximal tail"],
         ),
         record(
             "C2_1222_SIGNED_ADJOINT_ASSEMBLY",
@@ -875,6 +875,7 @@ def _ontology() -> list[dict[str, Any]]:
     owner = "theory/norman_owner_ontology_recovered.md"
     finite = "artifacts/flagship_integration/BHSM_N12_GATE7_FINITE_ENCAPSULATION_PHYSICAL_DOMAIN_AUDIT.json"
     source_ontology = "artifacts/flagship_integration/BHSM_N12_GATE7_EXTERNAL_BIRTH_SOURCE_ROLE_SUPERSESSION.json"
+    spacetime_edge = "theory/bhsm_spacetime_edge_ontology_repair.md"
     rows = [
         ("ONTOLOGY_MAXIMAL_FORWARD_HISTORY", "H_max^+", "Primary dynamical object is a maximal forward geometric history.", "ACTION_REQUIRED"),
         ("ONTOLOGY_SINGLE_TIME", "dt>0 and d_tau>0", "Physical time has one orientation.", "INTERNAL_CONSISTENCY_REQUIRED"),
@@ -900,16 +901,36 @@ def _ontology() -> list[dict[str, Any]]:
         ("ONTOLOGY_FINITE_ENCAPSULATION", "realized_particle => 0<T_enc<infinity", "A realized particle completes encapsulation in finite positive physical time; infinite nonencapsulating histories remain mathematical but nonrealized.", "OWNER_AUTHORIZED_PHYSICAL_DOMAIN"),
         ("ONTOLOGY_ENCAPSULATION_CHRONOLOGY", "pre_encapsulation -> E0 -> C1 -> forward_evolution -> E1 -> C2", "Encapsulation completes at E0, which creates C1; after positive-duration forward evolution a later collision/de-encapsulation is a distinct event E1 creating a distinct child C2. There is no physical reset or return.", "OWNER_AUTHORIZED_PHYSICAL_DOMAIN"),
         ("ONTOLOGY_GATE7_ZERO_EXTERNAL_SOURCE", "D_xi Gamma_closed[P_joint;j_birth] at fixed j_birth, then j_birth=0", "Only the external BRST-quotiented Cauchy/birth trace is zero. Incoming M_f, transported M_C2, U_R, W_phys, and retained contact/incidence blocks remain nonzero internal responses, assembled and differentiated exactly once. Zero external source selects the retained Dirichlet reference at E0, so M_f=M11; it does not set M_f or any internal child/contact block to zero and does not add a pre-E0 response arm.", "OWNER_AUTHORIZED_PHYSICAL_SOURCE_SEMANTICS"),
+        ("FORM_CORE_TRUNCATION_BOUNDARY", "finite operator/form-core/certificate cutoff", "A finite operator, form-core, mesh, validation, or certificate cutoff used to approximate or represent a longer or maximal history. It has no physical meaning merely because the proof stops there and is not a physical boundary, event, canonical stop, or spacetime edge.", "CURRENT_PROOF_OBJECT_NO_PHYSICAL_MEANING"),
+        ("CORE_BOUNDARY", "geometric boundary or collar within the spacetime phase", "A genuine geometric boundary or collar at which the BHSM spacetime description and its induced geometry, lapse, radius, normal data, boundary operators, and matching data remain meaningful.", "OWNER_AUTHORIZED_ONTOLOGY_ACTION_LEVEL_REALIZATION_CONTEXTUAL"),
+        ("CANONICAL_STOP_EVENT", "retained-action forward-history termination or transition", "A rigorously derived termination or transition of a particular forward BHSM history under the retained action. It does not by itself imply that spacetime ceases.", "ACTION_OWNED_WHEN_CERTIFIED_SPACETIME_EDGE_IDENTIFICATION_OPEN"),
+        ("SPACETIME_EDGE", "no current action-level location equation", "The BHSM ontological limit at which spacetime or geometric variables cease to be the operative environmental description and the underlying environment is pure energy/Aether. Owner ontology fixes this meaning; its mathematical location in the retained action remains open.", "OWNER_AUTHORIZED_ONTOLOGY_ACTION_LEVEL_IDENTIFICATION_WITH_CURRENT_GATE7_STOP_OPEN"),
+        ("CANONICAL_STOP_TO_SPACETIME_EDGE_IDENTIFICATION", "OPEN: determine whether a certified canonical stop is the spacetime-to-Aether phase limit", "Future theorem target asking whether the retained action identifies a particular canonical stop with the loss of the geometric phase and an action-owned transition to the pure-energy/Aether environment. This is not a Gate-7 prerequisite unless a Gate-7 observable separately requires that equality.", "OPEN_ACTION_LEVEL_IDENTIFICATION_NOT_GATE7_PREREQUISITE"),
     ]
     return [
-        record(cid, formula, "ONTOLOGY_RECORD", "BHSM_ONTOLOGY", meaning,
-               "current BHSM ontology", [source_ontology] if cid == "ONTOLOGY_GATE7_ZERO_EXTERNAL_SOURCE" else [finite] if cid in {
+        record(cid, formula,
+               "PROOF_TRUNCATION_BOUNDARY" if cid == "FORM_CORE_TRUNCATION_BOUNDARY" else
+               "GEOMETRIC_BOUNDARY_WITHIN_SPACETIME_PHASE" if cid == "CORE_BOUNDARY" else
+               "ACTION_OWNED_FORWARD_HISTORY_TERMINATION_OR_TRANSITION" if cid == "CANONICAL_STOP_EVENT" else
+               "SPACETIME_TO_AETHER_PHASE_LIMIT" if cid == "SPACETIME_EDGE" else
+               "OPEN_THEOREM_DEPENDENCY" if cid == "CANONICAL_STOP_TO_SPACETIME_EDGE_IDENTIFICATION" else
+               "ONTOLOGY_RECORD",
+               "MATHEMATICAL_OBJECT" if cid == "FORM_CORE_TRUNCATION_BOUNDARY" else "BHSM_ONTOLOGY", meaning,
+               "current BHSM ontology", [spacetime_edge] if cid in {
+                   "FORM_CORE_TRUNCATION_BOUNDARY", "CORE_BOUNDARY", "CANONICAL_STOP_EVENT",
+                   "SPACETIME_EDGE", "CANONICAL_STOP_TO_SPACETIME_EDGE_IDENTIFICATION"
+               } else [source_ontology] if cid == "ONTOLOGY_GATE7_ZERO_EXTERNAL_SOURCE" else [finite] if cid in {
                    "ONTOLOGY_FINITE_ENCAPSULATION", "ONTOLOGY_ENCAPSULATION_CHRONOLOGY"
                } else [owner] if cid.startswith("ONTOLOGY_") and cid not in {
                    "ONTOLOGY_MAXIMAL_FORWARD_HISTORY", "ONTOLOGY_SINGLE_TIME", "ONTOLOGY_REFLECTION",
                    "ONTOLOGY_CONDITIONAL_RESET", "ONTOLOGY_AE2_DOMAIN", "ONTOLOGY_AE2_TRANSMISSION", "ONTOLOGY_FAR_END"
                } else [ae2], current_status=status,
                forbidden_interpretations=(
+                    ["finite proof cutoff is a physical endpoint", "finite-core truncation is a spacetime edge", "Dirichlet far cutoff is an event", "mesh termination selects physical history"] if cid == "FORM_CORE_TRUNCATION_BOUNDARY" else
+                    ["every core boundary is the spacetime edge", "boundary matching means spacetime ceases"] if cid == "CORE_BOUNDARY" else
+                    ["canonical stop automatically equals spacetime edge", "proof cutoff is canonical stop", "Delta=0 is automatically a canonical stop"] if cid == "CANONICAL_STOP_EVENT" else
+                    ["finite-core truncation is the spacetime edge", "proof-chart failure is the spacetime edge", "core boundary automatically equals spacetime edge", "canonical stop automatically equals spacetime edge", "s=0 automatically equals spacetime edge", "Delta=0 equals spacetime edge", "binary64 loss of precision is the spacetime edge", "finite-prefix boundary is the spacetime edge"] if cid == "SPACETIME_EDGE" else
+                    ["identify a stop with the spacetime edge without theorem provenance", "invent a spacetime-edge equation", "block Gate 7 solely on the stronger spacetime-edge identification"] if cid == "CANONICAL_STOP_TO_SPACETIME_EDGE_IDENTIFICATION" else
                    ["Set an internal response block to zero.", "Add an independent seam source or force.", "Treat the external birth trace as a dynamical integrated seam.", "Add a pre-E0 response arm."] if cid == "ONTOLOGY_GATE7_ZERO_EXTERNAL_SOURCE" else
                    ["Call owner-authorized AE2 ontology itself action-derived."] if cid == "ONTOLOGY_AE2_DOMAIN" else
                    ["Insert downstream Standard Model observables into the action."] if cid == "ONTOLOGY_NO_OBSERVABLE_UPSTREAM" else
@@ -917,7 +938,11 @@ def _ontology() -> list[dict[str, Any]]:
                    ["Use independent freely chosen sector scales."] if cid == "ONTOLOGY_UNIVERSAL_SCALE" else
                    ["Use dressing as fitting freedom."] if cid == "ONTOLOGY_BARE_DRESSED" else
                    ["Retune a frozen prediction."] if cid == "ONTOLOGY_FROZEN_NO_RETUNE" else
-                   ["Insert 1/118 or 1/(12*pi^2) into AE2.", "Fit the dressing map to alpha inverse 137.036.", "Use the candidate as a reset selector."] if cid == "ONTOLOGY_FINE_STRUCTURE_CANDIDATE" else []
+                    ["Insert 1/118 or 1/(12*pi^2) into AE2.", "Fit the dressing map to alpha inverse 137.036.", "Use the candidate as a reset selector."] if cid == "ONTOLOGY_FINE_STRUCTURE_CANDIDATE" else []
+                ),
+               downstream_consumers=(
+                   ["future spacetime-edge theorem", "Aether-transition theorem", "global BHSM ontology/completion ledger"] if cid == "SPACETIME_EDGE" else
+                   ["future spacetime-edge theorem", "global BHSM ontology/completion ledger"] if cid == "CANONICAL_STOP_TO_SPACETIME_EDGE_IDENTIFICATION" else []
                ))
         for cid, formula, meaning, status in rows
     ]
@@ -1232,11 +1257,34 @@ def validate_registries(registries: Mapping[str, Mapping[str, Any]]) -> None:
         "ONTOLOGY_FROZEN_NO_RETUNE", "ONTOLOGY_FULL_COMPLETION",
         "ONTOLOGY_FINITE_ENCAPSULATION", "ONTOLOGY_ENCAPSULATION_CHRONOLOGY",
         "ONTOLOGY_GATE7_ZERO_EXTERNAL_SOURCE",
+        "CORE_BOUNDARY", "SPACETIME_EDGE",
     }
     if not required_owner_ontology <= set(ontology):
         raise ValueError("recovered Norman owner ontology is incomplete")
     if any(not ontology[cid]["current_status"].startswith("OWNER_AUTHORIZED") for cid in required_owner_ontology):
         raise ValueError("owner ontology was downgraded or reclassified as action-derived")
+    edge_ids = {
+        "FORM_CORE_TRUNCATION_BOUNDARY", "CORE_BOUNDARY", "CANONICAL_STOP_EVENT",
+        "SPACETIME_EDGE", "CANONICAL_STOP_TO_SPACETIME_EDGE_IDENTIFICATION",
+    }
+    if not edge_ids <= set(ontology):
+        raise ValueError("spacetime-edge ontology separation is incomplete")
+    if ontology["FORM_CORE_TRUNCATION_BOUNDARY"]["semantic_layer"] != "MATHEMATICAL_OBJECT":
+        raise ValueError("finite proof cutoff was promoted to physical ontology")
+    if ontology["FORM_CORE_TRUNCATION_BOUNDARY"]["mathematical_class"] != "PROOF_TRUNCATION_BOUNDARY":
+        raise ValueError("finite proof cutoff class regressed")
+    if ontology["CORE_BOUNDARY"]["mathematical_class"] != "GEOMETRIC_BOUNDARY_WITHIN_SPACETIME_PHASE":
+        raise ValueError("core boundary and spacetime edge were silently merged")
+    if ontology["CANONICAL_STOP_EVENT"]["mathematical_class"] != "ACTION_OWNED_FORWARD_HISTORY_TERMINATION_OR_TRANSITION":
+        raise ValueError("canonical stop provenance regressed")
+    if ontology["SPACETIME_EDGE"]["mathematical_class"] != "SPACETIME_TO_AETHER_PHASE_LIMIT":
+        raise ValueError("spacetime edge class regressed")
+    if ontology["SPACETIME_EDGE"]["formula"] != "no current action-level location equation":
+        raise ValueError("an unproved spacetime-edge equation was introduced")
+    if ontology["CANONICAL_STOP_TO_SPACETIME_EDGE_IDENTIFICATION"]["current_status"] != "OPEN_ACTION_LEVEL_IDENTIFICATION_NOT_GATE7_PREREQUISITE":
+        raise ValueError("canonical-stop-to-spacetime-edge theorem was falsely closed")
+    if "spacetime edge" not in ontology["SPACETIME_EDGE"]["physical_meaning"].lower() and "spacetime" not in ontology["SPACETIME_EDGE"]["physical_meaning"].lower():
+        raise ValueError("spacetime-edge meaning is missing")
     source_ontology = ontology["ONTOLOGY_GATE7_ZERO_EXTERNAL_SOURCE"]
     if not (
         source_ontology["formula"]

@@ -14,7 +14,7 @@ Möbius recurrence every numerator and denominator is positive.  In the
 product-Dirac recurrence, `abs(W)tanh(kh)/k<1`, so both diagonal transfer
 factors are positive; positive terminal impedance is therefore mapped to
 positive birth impedance.  Starting from the analytically eliminated far
-Dirichlet form-core edge proves by finite induction that the response has no
+Dirichlet form-core truncation boundary proves by finite induction that the response has no
 pole anywhere on the real negative axis.
 
 The recurrence is a finite composition of analytic maps.  Hence the
@@ -33,4 +33,5 @@ This result supplies the C2 negative-axis diagram slot only on the finite
 proof-center core.  It does not supply the sharp parent `M_f`, the actual reset
 quotient Jacobi pullback, a sector-complete pair-plus-contact trace, or the
 maximal C2 tail.  Thus it is not yet the joint AE2 seam or the heat-minus-zeta
-force, and the form-core edge is not reclassified as a physical endpoint.
+force, and the form-core truncation boundary is not reclassified as a
+physical endpoint.

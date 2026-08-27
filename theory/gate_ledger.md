@@ -324,7 +324,7 @@
   Dirichlet reference but leaves `M_f=M11` as a nonzero internal response.
   Direct Galerkin assembly therefore retains E1/C2 as one internal node,
   includes `W_phys` once, and eliminates only E0 and the far C2 Friedrichs
-  proof edge.  Its scalar and factorized-Dirac element generators expose
+  proof cutoff.  Its scalar and factorized-Dirac element generators expose
   `D_x K`, `D_h K`, and `D_h M` without a kinetic/Euler--Dirac inverse.
   Independent Schur elimination reproduces
   `M_f+U_R^dagger M_C2 U_R+W_phys` and the factorized determinant.  This
@@ -2156,7 +2156,7 @@ Exact next object:
   Jacobi fields through every finite-core prefix.
 - Numerical lower bound for `epsilon_1222`: `NOT_CLAIMED`.
 - Proof center selected as a physical history: `FALSE`.
-- Segment-1222 edge classified as an event/stop: `FALSE`.
+- Segment-1222 proof cutoff classified as an event/canonical stop: `FALSE`.
 - Base-history nonexistence as the Gate-7 blocker: `INVALIDATED`.
 - Signed parametric/interval joint adjoint and graded force net:
   `OPEN_CURRENT_OWNER`; maximal projected tail: `OPEN`.
@@ -2255,7 +2255,7 @@ Exact next object:
 - For every fixed real `z=-kappa^2<0`, finite Dirichlet form-core
   exhaustions converge to the maximal birth Weyl map:
   `OPERATOR_NORM_AT_FIXED_CHANNEL_AND_GALERKIN_LEVEL`.
-- Artificial far edge promoted to a physical endpoint: `FALSE`.
+- Artificial far form-core truncation boundary promoted to a physical endpoint: `FALSE`.
 - Global upper bound for `R4` required for this negative-`z` value theorem:
   `FALSE`.
 - Compact-support weak first and mixed-second Weyl jets on the same
@@ -2398,7 +2398,7 @@ Exact next object:
 - Orientation identities: `Dlambda[G_r]=s>0` and
   `d tau/dr=N_boundary*s^2/Delta>0`.
 - Near-birth linear-`s` microscopic step obstruction: `PROOF_ARTIFACT`;
-  at the 1,222-core edge the logarithmic field norm is below `1e-10`.
+  at the 1,222-core truncation boundary the logarithmic field norm is below `1e-10`.
 - Large logarithmic boxes automatically certified: `FALSE`; each recentered
   interval still requires action-derivative and domain-margin enclosures.
 - Numerical `Delta`-loss candidate near `s~1e-9`: `RECONNAISSANCE_ONLY`,

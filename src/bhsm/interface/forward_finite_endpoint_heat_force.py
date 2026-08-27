@@ -317,7 +317,8 @@ def finite_core_heat_trace_log_upper_bound(
 ) -> dict[str, Any]:
     """Bound a mixed-boundary finite-core heat trace without inversion.
 
-    A piecewise-linear form-core vector vanishes at the artificial far edge
+    A piecewise-linear form-core vector vanishes at the artificial far form-core
+    truncation boundary
     and is free at the retained birth edge.  The sharp one-sided Poincare
     inequality therefore gives ``||u'|| >= pi ||u||/(2T)``.  For a scalar
     Schrodinger form this adds to a supplied nonnegative potential lower

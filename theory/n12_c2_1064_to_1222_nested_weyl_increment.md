@@ -10,7 +10,7 @@ product-Dirac channel and every real `z<0`, let
 `L_1064_to_1222(z)`
 
 be the positive birth impedance of the added 158-segment tail with a
-Dirichlet far form-core edge.  If `Phi_0_1064(z;L)` denotes the inverse-free
+Dirichlet far form-core truncation boundary.  If `Phi_0_1064(z;L)` denotes the inverse-free
 Möbius transfer of a nonnegative load `L` through the old prefix, exact
 associativity gives
 
@@ -50,8 +50,9 @@ than 25 relative decimal digits across the full probe range.  No kinetic or
 Dirac block inverse is formed.
 
 Neither the Dirichlet truncation increment nor its sample grid is the
-physical heat-minus-zeta force.  The far edge remains a form-core
-truncation, not an event, stop, or boundary choice.  Gate 7 still requires
+physical heat-minus-zeta force.  The far form-core truncation boundary remains
+a proof cutoff, not an event, canonical stop, core boundary, or spacetime
+edge.  Gate 7 still requires
 the source-contracted physical reset-quotient Cauchy tail (or an actual
 later event/canonical stop), with the incoming compact arm assembled in the
 same joint operator.

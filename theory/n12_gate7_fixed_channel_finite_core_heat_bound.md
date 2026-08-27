@@ -40,7 +40,7 @@ The bound proves that the three stored fixed-channel traces and their
 1064-to-1222 difference are negligible at the retained unit heat length.
 It does not determine the supertrace multiplicities, the incoming `M_f`
 realization, the exact event-child seam domain, the non-scale reset quotient,
-the full angular sum, or the tail beyond the 1,222-core proof edge.  Gate 7
+the full angular sum, or the tail beyond the 1,222-core proof cutoff.  Gate 7
 therefore remains open.
 
 `FULL_BHSM_COMPLETE=false`.
