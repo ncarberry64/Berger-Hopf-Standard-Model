@@ -32,6 +32,8 @@ INPUTS = {
     "green": BASE / "BHSM_N12_C2_STOP_QUARTER_STEP_MATCHED_TANGENT_CORRELATED_DEFECT_GAUSS12_RECONNAISSANCE.json",
     "green_data": BASE / "BHSM_N12_C2_STOP_QUARTER_STEP_MATCHED_TANGENT_CORRELATED_DEFECT_GAUSS12_RECONNAISSANCE.npz",
     "first_hit": BASE / "BHSM_N12_C2_STOP_DENSE_DESCRIPTOR_FIRST_HIT.json",
+    "time_quotient": BASE / "BHSM_N12_RESET_TIME_QUOTIENT_GENERATOR_AUDIT.json",
+    "anisotropic_z2": BASE / "BHSM_N12_GATE7_COMMON_FRAME_ANISOTROPIC_Z2_RECONNAISSANCE.json",
 }
 
 
@@ -86,11 +88,11 @@ def build_payload() -> dict[str, Any]:
             "match": "VALID_CERTIFIED_MATCH",
         },
         {
-            "slot": "PHYSICAL_TANGENT_QUOTIENT_FRAMES",
-            "required_type": "98-to-73 constraint quotient frames and transported step maps",
+            "slot": "CONSTRAINT_TANGENT_FRAMES",
+            "required_type": "98-to-73 constraint-tangent frames and transported step maps",
             "candidate": ["tangent", "tangent_data"],
             "dimension_domain": "48 x 98 x 73 frames and 47 x 73 x 73 macro maps",
-            "provenance": "retained 25 constraints; center/Magnus reconnaissance",
+            "provenance": "retained 25 constraints; center/Magnus reconnaissance; not relabelled as the final gauge/time quotient",
             "match": "VALID_CENTER_DATA_INTERVAL_AUTHORITY_MISSING",
         },
         {
@@ -130,8 +132,16 @@ def build_payload() -> dict[str, Any]:
             "required_type": "physical-tube Lipschitz bound for A*(N(e)-N(e_tilde))",
             "candidate": ["first", "second", "jacobian"],
             "dimension_domain": "73 transverse directions on a common-frame radius-r tube",
-            "provenance": "path derivative is certified; full transverse D2f tube is not",
+            "provenance": "path derivative is certified; Green-image anisotropic center curvature is reconnoitered; outward transverse tube remainder is not",
             "match": "ACTUALLY_MISSING_TRANSVERSE_NONLINEAR_REMAINDER_ADAPTER",
+        },
+        {
+            "slot": "FINAL_WHOLE_SYSTEM_TIME_QUOTIENT",
+            "required_type": "66-dimensional coupled event-child time quotient or intrinsic quotient formulation for force and Hessian",
+            "candidate": ["time_quotient"],
+            "dimension_domain": "raw fixed-event reset kernel 67; retained whole-system quotient count 66",
+            "provenance": "local child flow is not the coupled hybrid generator and cannot be projected by hand",
+            "match": "ACTUALLY_MISSING_DOWNSTREAM_HYBRID_TIME_QUOTIENT_ADAPTER",
         },
         {
             "slot": "FIRST_HIT_TRANSFER",
@@ -174,6 +184,17 @@ def build_payload() -> dict[str, Any]:
             records["first_hit"]["claim_boundary"]["exact_history_first_hit"]
             == "OPEN_UNTIL_CORRELATED_SHADOWING_AND_MARGIN_TRANSFER"
         ),
+        "constraint_tangent_not_relabelled_final_physical_quotient": (
+            records["time_quotient"]["validation_passed"] is True
+            and records["time_quotient"]["dimension_statement"][
+                "explicit_generator_certified_in_current_checkpoint"
+            ] is False
+        ),
+        "anisotropic_Z2_center_reconnaissance_not_promoted": (
+            records["anisotropic_z2"]["validation_passed"] is False
+            and records["anisotropic_z2"]["claim_boundary"]["literal_Z2"]
+            == "OPEN"
+        ),
         "no_new_operator_or_theory_choice_identified": True,
     }
     passed = all(validations.values())
@@ -195,6 +216,7 @@ def build_payload() -> dict[str, Any]:
             "COMMON_FRAME_INTERVAL_INVERSE_DEFECT_I_MINUS_A_L_FOR_Z1",
             "PHYSICAL_TRANSVERSE_D2F_TUBE_AND_GREEN_LIPSCHITZ_CONTRACTION_FOR_Z2",
         ],
+        "downstream_physical_quotient_adapter": "COUPLED_HYBRID_TIME_GENERATOR_OR_INTRINSIC_66_DIMENSIONAL_QUOTIENT_FORMULATION_BEFORE_FINAL_FORCE_HESSIAN",
         "new_action_or_operator_required": False,
         "new_theory_choice_required": False,
         "validation": validations,
@@ -208,7 +230,7 @@ def build_payload() -> dict[str, Any]:
             "Gate7": "ACTIVE",
             "FULL_BHSM_COMPLETE": False,
         },
-        "exact_next_dependency": "DERIVE_THE_THREE_LOCALIZED_INTERVAL_ADAPTERS_IN_THE_RETAINED_73_DIMENSIONAL_COMMON_FRAME_WITHOUT_COLLAPSING_THE_62_COMPONENT_RESPONSE_VARIATIONS",
+        "exact_next_dependency": "DERIVE_THE_THREE_LOCALIZED_EXISTENCE_INTERVAL_ADAPTERS_IN_THE_RETAINED_CONSTRAINT_TANGENT_COMMON_FRAME_WITHOUT_COLLAPSING_THE_62_COMPONENT_RESPONSE_VARIATIONS;_THEN_USE_THE_COUPLED_HYBRID_OR_INTRINSIC_TIME_QUOTIENT_FOR_THE_FINAL_FORCE_HESSIAN",
         "FULL_BHSM_COMPLETE": False,
     }
 

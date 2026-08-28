@@ -23,10 +23,12 @@ def test_common_frame_slots_and_missing_interval_adapters() -> None:
     assert payload["new_theory_choice_required"] is False
     assert payload["literal_definitions"]["Y"] == "||A*(-d)||_P"
     assert len(payload["actual_missing_interval_adapters"]) == 3
+    assert payload["downstream_physical_quotient_adapter"].startswith("COUPLED_HYBRID_TIME_GENERATOR")
     slots = {row["slot"]: row for row in payload["matching_audit"]}
     assert slots["BORDERED_RESPONSE_VECTOR_AND_PATH_DERIVATIVE"]["match"] == "VALID_CERTIFIED_MATCH"
     assert slots["LITERAL_Y"]["match"].startswith("ACTUALLY_MISSING")
     assert slots["LITERAL_Z1"]["match"].startswith("ACTUALLY_MISSING")
     assert slots["LITERAL_Z2"]["match"].startswith("ACTUALLY_MISSING")
+    assert slots["FINAL_WHOLE_SYSTEM_TIME_QUOTIENT"]["match"].startswith("ACTUALLY_MISSING")
     assert payload["claim_boundary"]["Gate7"] == "ACTIVE"
     assert payload["FULL_BHSM_COMPLETE"] is False
