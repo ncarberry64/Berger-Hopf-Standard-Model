@@ -62,6 +62,11 @@ def test_refined_response_cover_is_exact_and_finite() -> None:
     assert all(row["selected_branch"] == 24 for row in rows)
     assert all(row["relative_bordered_operator_perturbation_upper"] < 1.0 for row in rows)
     assert all(math.isfinite(row["complete_bordered_response_2_norm_upper"]) for row in rows)
+    assert all(
+        math.isfinite(row["raw_internal_rhs_first_coefficient_derivative_2_norm_upper"])
+        and math.isfinite(row["raw_internal_rhs_second_coefficient_derivative_2_norm_upper"])
+        for row in rows
+    )
 
     grouped: dict[int, list[tuple[Fraction, Fraction]]] = defaultdict(list)
     for row in rows:
@@ -81,6 +86,9 @@ def test_refined_response_cover_is_exact_and_finite() -> None:
 
 def test_tangent_remainder_ellipsoid_contains_exact_degree_seven_cell() -> None:
     import certify_n12_c2_stop_dop853_adaptive_bordered_rhs_response as response
+    import derive_n12_action_ball_majorants as majorants
+
+    assert majorants.BALL_RADIUS == 1.0
 
     geometry = response._tight_tangent_remainder_geometry(0, 0, 32)
     *_, weights, __, ___, ____ = response.dense._dense_arrays()

@@ -46,6 +46,16 @@ def test_projector_consumes_the_exact_adaptive_spectrum_cover() -> None:
     assert projector["validation"]["no_cubic_Hermite_surrogate_inserted"] is True
 
 
+def test_projector_generator_pins_the_unit_coefficient_ball() -> None:
+    import sys
+
+    sys.path.insert(0, str(ROOT / "scripts"))
+    import certify_n12_c2_stop_dop853_adaptive_selected_projector_graph  # noqa: F401,E501
+    import derive_n12_action_ball_majorants as majorants
+
+    assert majorants.BALL_RADIUS == 1.0
+
+
 def test_bordered_inverse_is_analytical_and_finite_on_every_cell() -> None:
     spectrum = load(SPECTRUM)
     projector = load(PROJECTOR)

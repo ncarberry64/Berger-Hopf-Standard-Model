@@ -19,8 +19,16 @@ ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT / "src"))
 sys.path.insert(0, str(ROOT / "scripts"))
 
+# ``_tight_tangent_remainder_geometry`` maps the exact Bezier cell into a
+# unit coefficient ball.  The action-majorant radius therefore is part of the
+# proof data and must not be inherited implicitly from the invoking shell.
+os.environ["BHSM_N12_CERTIFICATE_BALL"] = "1.0"
+
 import audit_n12_c2_stop_dop853_boundary_cluster_probe as dense  # noqa: E402
+import derive_n12_action_ball_majorants as action_majorants  # noqa: E402
 from bhsm.interface.aether_forward_c2_descriptor_cover import metric_data  # noqa: E402
+
+action_majorants.BALL_RADIUS = 1.0
 
 
 BASE = ROOT / "artifacts" / "flagship_integration"
@@ -280,6 +288,30 @@ def _row(task: tuple[int, int, int, int, int, int]) -> dict[str, Any]:
         + mixed(response_mixed_output, configuration_variation, projection)
         + mixed(response_mixed_output, configuration_variation)
     )
+    # The second source derivative is assembled in the same exact spectral
+    # preconditioned frame as the first.  Its final two terms are the two
+    # product-rule placements of the linear configuration map.
+    preconditioned_rhs_second = _up(
+        mixed(response_gradient_output, projection, projection)
+        + mixed(
+            response_mixed_output, configuration_center, projection, projection,
+        )
+        + mixed(
+            response_mixed_output, configuration_variation, projection, projection,
+        )
+        + 2.0 * mixed(
+            response_mixed_output, configuration_variation, projection,
+        )
+    )
+    center_bordered_operator_norm = _up(max(
+        1.0, float(np.max(np.abs(values - selected_value))),
+    ))
+    raw_rhs_first_coefficient = _up(
+        center_bordered_operator_norm * preconditioned_rhs_variation
+    )
+    raw_rhs_second_coefficient = _up(
+        center_bordered_operator_norm * preconditioned_rhs_second
+    )
     center_preconditioned_source = np.concatenate((
         preconditioned_hard.T @ rhs,
         np.asarray([float(psi @ rhs)]),
@@ -342,6 +374,10 @@ def _row(task: tuple[int, int, int, int, int, int]) -> dict[str, Any]:
         "center_bordered_response_2_norm": center_response_norm,
         "center_preconditioned_internal_source_2_norm": center_preconditioned_norm,
         "preconditioned_internal_rhs_variation_2_norm_upper": preconditioned_rhs_variation,
+        "preconditioned_internal_rhs_second_coefficient_derivative_2_norm_upper": preconditioned_rhs_second,
+        "center_bordered_operator_2_norm_upper": center_bordered_operator_norm,
+        "raw_internal_rhs_first_coefficient_derivative_2_norm_upper": raw_rhs_first_coefficient,
+        "raw_internal_rhs_second_coefficient_derivative_2_norm_upper": raw_rhs_second_coefficient,
         "relative_bordered_D3_upper": relative_D3,
         "relative_bordered_D4_remainder_upper": 0.5 * relative_D4,
         "relative_selected_shift_upper": selected_shift / gap_lower,
@@ -409,6 +445,11 @@ def build_payload() -> dict[str, Any]:
         "all_center_bordered_solve_residuals_small": all(row["center_bordered_solve_residual_upper"] < 1.0e-7 for row in rows),
         "all_bordered_response_tubes_finite": all(row["bordered_response_tube_finite"] for row in rows),
         "all_center_preconditioned_sources_match_bordered_solves": all(row["center_preconditioned_source_matches_bordered_solve"] for row in rows),
+        "all_internal_rhs_first_and_second_coefficient_derivative_bounds_finite": all(
+            math.isfinite(row["raw_internal_rhs_first_coefficient_derivative_2_norm_upper"])
+            and math.isfinite(row["raw_internal_rhs_second_coefficient_derivative_2_norm_upper"])
+            for row in rows
+        ),
         "all_relative_bordered_perturbations_below_one": all(row["relative_bordered_operator_perturbation_upper"] < 1.0 for row in rows),
         "all_tangent_remainder_product_ellipsoids_exactly_normalized": all(
             abs(row["coefficient_ellipsoid_identity"] - 1.0) <= 4.0e-15
@@ -416,6 +457,8 @@ def build_payload() -> dict[str, Any]:
         ),
         "midpoint_tangent_plus_integral_second_derivative_remainder_enclosure_used": True,
         "two_block_ellipsoid_scaling_minimizes_trace_without_fitting": True,
+        "unit_coefficient_ball_radius_pinned_in_generator": True,
+        "complete_internal_rhs_second_derivative_product_rule_assembled": True,
         "same_stored_DOP853_polynomial_and_adaptive_parent_cover": True,
         "only_external_Cauchy_birth_source_zero_internal_rhs_retained": True,
         "no_added_seam_force_or_double_counted_response": True,

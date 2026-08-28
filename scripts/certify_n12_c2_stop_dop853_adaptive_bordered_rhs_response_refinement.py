@@ -208,6 +208,11 @@ def build_payload() -> dict[str, Any]:
         "all_exact_center_internal_rhs_values_finite": all(row["center_internal_rhs_finite"] for row in cover),
         "all_center_bordered_solve_residuals_small": all(row["center_bordered_solve_residual_upper"] < 1.0e-7 for row in cover),
         "all_center_preconditioned_sources_match_bordered_solves": all(row["center_preconditioned_source_matches_bordered_solve"] for row in cover),
+        "all_internal_rhs_first_and_second_coefficient_derivative_bounds_finite": all(
+            math.isfinite(row["raw_internal_rhs_first_coefficient_derivative_2_norm_upper"])
+            and math.isfinite(row["raw_internal_rhs_second_coefficient_derivative_2_norm_upper"])
+            for row in cover
+        ),
         "all_relative_bordered_perturbations_below_one": all(row["relative_bordered_operator_perturbation_upper"] < 1.0 for row in cover),
         "all_bordered_response_tubes_finite": all(row["bordered_response_tube_finite"] for row in cover),
         "all_tangent_remainder_product_ellipsoids_exactly_normalized": all(
@@ -242,6 +247,7 @@ def build_payload() -> dict[str, Any]:
         "summary": {
             "maximum_center_internal_rhs_2_norm": max(row["center_internal_rhs_2_norm"] for row in cover),
             "maximum_preconditioned_internal_rhs_variation_2_norm_upper": max(row["preconditioned_internal_rhs_variation_2_norm_upper"] for row in cover),
+            "maximum_preconditioned_internal_rhs_second_coefficient_derivative_2_norm_upper": max(row["preconditioned_internal_rhs_second_coefficient_derivative_2_norm_upper"] for row in cover),
             "maximum_relative_bordered_operator_perturbation_upper": max(row["relative_bordered_operator_perturbation_upper"] for row in cover),
             "maximum_bordered_Neumann_factor_upper": max(row["bordered_Neumann_factor_upper"] for row in cover),
             "maximum_complete_bordered_response_2_norm_upper": max(row["complete_bordered_response_2_norm_upper"] for row in cover),

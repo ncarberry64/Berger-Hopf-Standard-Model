@@ -18,7 +18,16 @@ import numpy as np
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT / "scripts"))
 
+# The Bernstein projection is normalized so that its coefficient domain is
+# the unit Euclidean ball.  Pin that proof radius before importing the action
+# majorant module; relying on a caller's shell environment would make the
+# certificate non-reproducible.
+os.environ["BHSM_N12_CERTIFICATE_BALL"] = "1.0"
+
 import audit_n12_c2_stop_dop853_boundary_cluster_probe as dense  # noqa: E402
+import derive_n12_action_ball_majorants as action_majorants  # noqa: E402
+
+action_majorants.BALL_RADIUS = 1.0
 
 
 BASE = ROOT / "artifacts" / "flagship_integration"

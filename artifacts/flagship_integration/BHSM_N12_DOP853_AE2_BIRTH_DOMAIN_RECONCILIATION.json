@@ -1,0 +1,86 @@
+{
+  "FLAGSHIP_READY": false,
+  "FULL_BHSM_COMPLETE": false,
+  "action_version_split": {
+    "owner_selected_BHSM_AE_2_0_0": {
+      "Gate7": "ACTIVE",
+      "remaining_requirement": "COMPOSE_THE_CERTIFIED_DOP853_GEOMETRY_RESPONSE_WITH_THE_AE2_TWO_SIDED_CALDERON_SEAM_AND_EVALUATE_THE_PHYSICAL_HEAT_MINUS_ZETA_QUOTIENT_COVECTOR",
+      "result": "B1_DOMAIN_NO_GO_SUPERSEDED"
+    },
+    "unchanged_retained_v6_7": {
+      "FULL_BHSM_COMPLETE": false,
+      "result": "B2_NO_GO_SURVIVES",
+      "smallest_blocker": "UNCHANGED_RETAINED_ACTION_DOES_NOT_SELECT_A_UNIQUE_NORMAL_MATTER_BIRTH_DOMAIN_REQUIRED_BY_GATE_7"
+    }
+  },
+  "artifact": "BHSM_N12_DOP853_AE2_BIRTH_DOMAIN_RECONCILIATION",
+  "claim_boundary": {
+    "AE2_domain_ownership_closed": true,
+    "AE2_silently_adopted": false,
+    "DOP853_closes_canonical_Gate7_by_itself": false,
+    "FULL_BHSM_COMPLETE": false,
+    "Gate7": "ACTIVE",
+    "unchanged_action_no_go_retracted": false
+  },
+  "dop853_type_audit": {
+    "absent_domain_tokens": [
+      "Cayley",
+      "D_AE2",
+      "Gamma0",
+      "Gamma1",
+      "M_child",
+      "M_event",
+      "Robin",
+      "U_R",
+      "W_phys"
+    ],
+    "bordered_dimension": 62,
+    "configuration_dimension_removed_from_reduced_hessian": 37,
+    "hard_complement_dimension": 60,
+    "normal_matter_domain_parameter_present": false,
+    "operator_source": "exact_full_action_jet_at_state(...).hessian[QDIM:,QDIM:]",
+    "reduced_hessian_dimension": 61,
+    "rhs_source": "retained_local_action_gradient_minus_mixed_Hessian_times_configuration",
+    "selected_line_dimension": 1,
+    "state_dimension": 98,
+    "temporal_boundary_trace_space_present": false
+  },
+  "exact_answers": {
+    "1_domain_used_by_current_DOP853_K": "FINITE_DIMENSIONAL_REAL_EUCLIDEAN_REDUCED_C2_TANGENT:_K_border=[[H_red-lambda_24*I,psi_24],[psi_24^T,0]]_ON_R62;_THIS_IS_NOT_A_TEMPORAL_MATTER_SELF_ADJOINT_BIRTH_DOMAIN",
+    "2_is_that_birth_domain_derived_from_the_unchanged_action": "NOT_APPLICABLE_TO_THE_DOP853_MATRIX;_THE_UNCHANGED_V6_7_ACTION_STILL_DOES_NOT_DERIVE_A_UNIQUE_NORMAL_MATTER_BIRTH_DOMAIN",
+    "3_implicit_Cayley_Robin_or_transmission_phase": "NONE_IN_THE_DOP853_CONSTRUCTION;_OMISSION_IS_NOT_SELECTION_AND_DOES_NOT_TURN_THE_MATRIX_INTO_THE_GATE7_SEAM_OPERATOR",
+    "4_new_DOP853_theorem_removes_phase_family": false,
+    "5_existing_transmission_theorem_supersedes_old_no_go": "YES_ONLY_FOR_THE_EXPLICIT_OWNER_SELECTED_ACTION_VERSION_BHSM_AE_2_0_0",
+    "6_exact_supersession_equations": {
+      "conormal": "Gamma1_child(Psi)=-U_R*Gamma1_event(Psi)_ON_Dom(D_AE2^2)",
+      "squared_domain": "Dom(D_AE2^2)={Psi_in_Dom(D_AE2):D_AE2*Psi_in_Dom(D_AE2)}",
+      "trace": "Gamma0_child(Psi)=U_R*Gamma0_event(Psi)",
+      "variation": "Gamma0_child(deltaPsi)=U_R*Gamma0_event(deltaPsi)",
+      "why_old_resolvent_witness_no_longer_applies": "THE_WITNESS_STILL_PROVES_THAT_ALTERNATE_PHASE_DOMAINS_ARE_INEQUIVALENT,_BUT_THOSE_DOMAINS_ARE_NOT_MEMBERS_OF_THE_SINGLE_AE2_GLOBAL_SECTION_CONFIGURATION_SPACE"
+    },
+    "7_DOP853_canonical_classification": "VALID_ACTION_GEOMETRY_AUXILIARY_UNDER_BOTH_LINEAGES;_NOT_A_CANONICAL_GATE7_OPERATOR_UNTIL_COMPOSED_WITH_THE_AE2_JOINT_SEAM_DOMAIN"
+  },
+  "exact_next_dependency": "FINISH_THE_IN_FLIGHT_RESPONSE_REFINEMENT,_THEN_ASSEMBLE_THE_FIRST_RIGOROUS_SECOND_VARIATION_TUBE_AS_A_GEOMETRY_INPUT;_DO_NOT_PROMOTE_IT_UNTIL_THE_AE2_JOINT_SEAM_OPERATOR_COMPOSITION_IS_EXPLICIT",
+  "inputs": {
+    "artifacts/action_extension/BHSM_ACTION_AE2_GLOBAL_SPIN_RESET_ACTION.json": "4C756145A9E303F6E4F7F9536CF5639957D010C1A97AF6BE9299830C549B82DC",
+    "artifacts/flagship_integration/BHSM_N12_FORWARD_MATTER_DOMAIN_NO_GO.json": "40A0E4E74282CB6120A88A70D64D25456A373E3316C3E94C33B2430426C95109",
+    "artifacts/flagship_integration/BHSM_N12_GATE7_AE2_GLOBAL_SPIN_MATTER_DOMAIN.json": "5697192CCFBC6814B9EEAF5E5A01DD89BD4A70E287B5DFE171F0BBA132E15CFC",
+    "artifacts/flagship_integration/BHSM_RETAINED_ACTION_COMPLETION_NO_GO.json": "9D104EA738877B0ACD67FF6CDAFE5C2DAFA4B611CFE64B59F4614AEB675F0607",
+    "scripts/certify_n12_c2_stop_dop853_adaptive_bordered_hard_inverse.py": "22A2422E1494DBED6FA011E31E0D6EF8CC085262D38572E6EA3A1B478B6FEC35",
+    "scripts/certify_n12_c2_stop_dop853_adaptive_bordered_rhs_response.py": "EDF8CF6307696E0B18CC4CF9CEA8535CF57B817192DBAF35DA6D45B630BFD9AD",
+    "scripts/certify_n12_c2_stop_dop853_adaptive_selected_projector_graph.py": "71D81FDEC0F34BD6623E3C4C903758E8031A958CA10C66AD6D21D4F9385B4B36",
+    "src/bhsm/interface/aether_n3_exact_full_local_action_jet_v17_60.py": "51114F2A47CA1743B8FA1D942F2DD80322929BE1DD4AEB9CAB08C45E3D795F7C"
+  },
+  "phase_B_outcome": "B1_NO_GO_SUPERSEDED_FOR_BHSM_AE_2_0_0_ONLY",
+  "status": "B1_AE2_SUPERSEDES_THE_UNCHANGED_ACTION_DOMAIN_NO_GO;_DOP853_IS_AUXILIARY_GEOMETRY_ONLY",
+  "validation": {
+    "ae2_domain_is_validated_and_unique_modulo_gauge_and_spin_sign": true,
+    "ae2_is_an_explicitly_versioned_owner_selected_action": true,
+    "dop853_bordered_dimension_is_literal_62": true,
+    "dop853_contains_no_temporal_birth_domain_symbol": true,
+    "dop853_does_not_import_the_ae2_action_module": true,
+    "dop853_uses_local_action_jet": true,
+    "unchanged_retained_action_no_go_is_validated": true
+  },
+  "validation_passed": true
+}
