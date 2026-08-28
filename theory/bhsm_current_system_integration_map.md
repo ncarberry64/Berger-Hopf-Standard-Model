@@ -35,6 +35,12 @@ refinement owner or a physical instability.  The current adapter must retain
 the stored 62-component signed variations in a common frame when assembling
 the literal `Y`, `Z1`, and `Z2` bounds.
 
+That common-frame matching is now exhaustive, and the exact normalized-field
+`D1/D2` identity has been derived.  No algebraic object is missing.  The live
+numerical theorem is localized to three interval adapters: the outward
+minus-defect remainder for `Y`, the common-frame inverse defect for `Z1`, and
+the physical transverse `D2f`/Green Lipschitz contraction for `Z2`.
+
 The map has exactly one current blocker:
 
 `G7_COMPLETE_JOINT_HEAT_ZETA_COVECTOR_AND_PROJECTED_KKT_ROOT_ON_A_CERTIFIED_HISTORY`.

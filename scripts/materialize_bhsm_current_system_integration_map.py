@@ -33,6 +33,8 @@ PATHS = {
     "dop_response": "artifacts/flagship_integration/BHSM_N12_C2_STOP_DOP853_ADAPTIVE_BORDERED_RHS_RESPONSE_CERTIFICATE.json",
     "dop_first_variation": "artifacts/flagship_integration/BHSM_N12_C2_STOP_DOP853_ADAPTIVE_BORDERED_RESPONSE_FIRST_VARIATION.json",
     "dop_second_variation": "artifacts/flagship_integration/BHSM_N12_C2_STOP_DOP853_BORDERED_RESPONSE_SECOND_VARIATION.json",
+    "common_frame_matching": "artifacts/flagship_integration/BHSM_N12_GATE7_SIGNED_COMMON_FRAME_DATA_MATCHING.json",
+    "normalized_field_identity": "artifacts/flagship_integration/BHSM_N12_GATE7_NORMALIZED_FIELD_COMMON_FRAME_IDENTITY.json",
     "dop_domain": "artifacts/flagship_integration/BHSM_N12_DOP853_AE2_BIRTH_DOMAIN_RECONCILIATION.json",
     "one_seam": "artifacts/flagship_integration/BHSM_N12_GATE7_AE2_ONE_SEAM_DIRECT_DESCRIPTOR.json",
     "heat_bound": "artifacts/flagship_integration/BHSM_N12_GATE7_ONE_SEAM_FULL_GRADED_FINITE_CORE_HEAT_BOUND.json",
@@ -103,6 +105,8 @@ def build_payload() -> dict[str, Any]:
     response = records["dop_response"]
     first_variation = records["dop_first_variation"]
     second_variation = records["dop_second_variation"]
+    common_frame_matching = records["common_frame_matching"]
+    normalized_field_identity = records["normalized_field_identity"]
     domain_reconciliation = records["dop_domain"]
     one_seam = records["one_seam"]
 
@@ -169,12 +173,12 @@ def build_payload() -> dict[str, Any]:
             "98-state C2 path with 61-dimensional reduced Hessian, branch 24, and 62-dimensional border",
             "finite Euclidean physical tangent quotient; auxiliary geometry, not the temporal birth domain",
             ["local_action", "base_family"],
-            ["dop_response", "dop_first_variation", "dop_second_variation", "dop_domain"],
-            "8692_CELL_BORDERED_RESPONSE_AND_FIRST_VARIATION_CERTIFIED;_SCALAR_SECOND_VARIATION_WRAPPING_REJECTED;_SIGNED_CORRELATION_IN_PROGRESS",
+            ["dop_response", "dop_first_variation", "dop_second_variation", "common_frame_matching", "normalized_field_identity", "dop_domain"],
+            "8692_CELL_BORDERED_RESPONSE_AND_FIRST_VARIATION_CERTIFIED;_SCALAR_SECOND_VARIATION_WRAPPING_REJECTED;_COMMON_FRAME_IDENTITY_DERIVED;_INTERVAL_MAJORANTS_IN_PROGRESS",
             "current adaptive DOP853 certificate",
             ["GATE7_HEAT_ZETA_CHAIN"],
             ["12,032-cell historical uniform cover replaced by the exact 8,692-cell adaptive cover"],
-            ["SIGNED_COMMON_FRAME_SECOND_VARIATION_AND_CORRELATED_Y_Z1_Z2"],
+            ["THREE_LOCALIZED_COMMON_FRAME_INTERVAL_ADAPTERS_FOR_Y_Z1_Z2"],
         ),
         _subsystem(
             "GATE7_HEAT_ZETA_CHAIN",
@@ -272,7 +276,7 @@ def build_payload() -> dict[str, Any]:
         {"id": "AE2_TO_ONE_SEAM", "class": "A", "priority": 0, "status": "RESOLVED_BY_EXISTING_COMPOSITION", "evidence": PATHS["one_seam"]},
         {"id": "EVENT_RESET_TO_INTERNAL_SOURCE", "class": "A", "priority": 0, "status": "RESOLVED_BY_EXISTING_CLOSED_SYSTEM_ONTOLOGY", "evidence": PATHS["source_ontology"]},
         {"id": "DOP853_TO_RESPONSE_VARIATION", "class": "C", "priority": 1, "status": "RESOLVED_FOR_EXACT_CENTER_AND_FINITE_DIRECT_FIRST_VARIATION", "evidence": PATHS["dop_second_variation"]},
-        {"id": "RESPONSE_TO_CORRELATED_Y_Z1_Z2", "class": "C", "priority": 1, "status": "CURRENT_SIGNED_COMMON_FRAME_ADAPTER", "evidence": "theory/n12_c2_stop_correlated_defect_krawczyk.md"},
+        {"id": "RESPONSE_TO_CORRELATED_Y_Z1_Z2", "class": "C", "priority": 1, "status": "COMMON_FRAME_IDENTITY_DERIVED;_THREE_INTERVAL_MAJORANT_ADAPTERS_CURRENT", "evidence": PATHS["common_frame_matching"]},
         {"id": "FINITE_HISTORY_TO_HEAT_ZETA_COVECTOR", "class": "C", "priority": 1, "status": "ENDPOINTS_AND_FORMULAS_EXIST_JOINT_CONTRACTION_NOT_YET_EVALUATED", "evidence": PATHS["force_functional"]},
         {"id": "CORRELATED_TUBE_TO_FIRST_HIT", "class": "B", "priority": 2, "status": "MISSING_INTERVAL_TRANSFER_THEOREM_ON_CURRENT_OWNER_CELLS", "evidence": PATHS["base_family"]},
         {"id": "FAMILY_PROJECTORS_TO_MASS_CKM", "class": "B", "priority": 2, "status": "MISSING_ACTION_SELECTED_SECTOR_RESPONSE_EIGENBASES", "evidence": PATHS["generation"]},
@@ -291,6 +295,8 @@ def build_payload() -> dict[str, Any]:
         "exact_DOP853_center_first_variation_is_certified": first_variation["validation_passed"] is True and len(first_variation["rows"]) == 8692,
         "finite_direct_first_variation_tube_is_certified": second_variation["first_variation_validation_passed"] is True,
         "scalar_second_variation_route_is_rejected_coverwide": second_variation["second_variation_validation_passed"] is False and second_variation["summary"]["scalar_denominator_owner_cells"] == 8692,
+        "common_frame_data_slots_are_exhaustively_matched": common_frame_matching["validation_passed"] is True and len(common_frame_matching["actual_missing_interval_adapters"]) == 3,
+        "normalized_field_common_frame_identity_is_derived": normalized_field_identity["validation_passed"] is True,
         "domain_no_go_is_scoped_correctly": domain_reconciliation["phase_B_outcome"] == "B1_NO_GO_SUPERSEDED_FOR_BHSM_AE_2_0_0_ONLY",
         "one_seam_AE2_composition_already_exists": one_seam["validation_passed"] is True,
         "exactly_one_current_blocker_in_reconciliation": sum(row["classification"] == "CURRENT_BLOCKER" for row in blockers) == 1,
@@ -326,7 +332,7 @@ def build_payload() -> dict[str, Any]:
             "Gate7": "ACTIVE",
             "FULL_BHSM_COMPLETE": False,
         },
-        "exact_next_dependency": "PRESERVE_THE_CERTIFIED_VECTOR_RESPONSE_VARIATIONS_IN_A_SIGNED_COMMON_FRAME_TO_BUILD_LITERAL_Y_Z1_Z2_AND_FIRST_HIT_TRANSFER,_THEN_CONTRACT_THE_EXISTING_AE2_HEAT_ZETA_COVECTOR_AND_PROJECTED_FORCE_ROOT",
+        "exact_next_dependency": "EVALUATE_THE_THREE_LOCALIZED_COMMON_FRAME_INTERVAL_MAJORANTS_FOR_LITERAL_Y_Z1_Z2_AND_FIRST_HIT_TRANSFER,_THEN_CONTRACT_THE_EXISTING_AE2_HEAT_ZETA_COVECTOR_AND_PROJECTED_FORCE_ROOT",
         "FULL_BHSM_COMPLETE": False,
     }
 

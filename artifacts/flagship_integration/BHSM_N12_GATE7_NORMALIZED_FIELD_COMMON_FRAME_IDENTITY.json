@@ -1,0 +1,54 @@
+{
+  "BHSM_G_product_rule": {
+    "D2_G_uv": "(s_uv*c+s_u*c_v+s_v*c_u,_W*(b_uv*psi+b_u*psi_v+b_v*psi_u+b*psi_uv+s_uv*h+s_u*h_v+s_v*h_u+s*h_uv))",
+    "D_G_u": "(s_u*c+s*c_u,_W*(b_u*psi+b*psi_u+s_u*h+s*h_u))",
+    "G": "(s*c,_W*(b*psi+s*h))",
+    "linear_configuration_fact": "D2_c_uv=0"
+  },
+  "FULL_BHSM_COMPLETE": false,
+  "artifact": "BHSM_N12_GATE7_NORMALIZED_FIELD_COMMON_FRAME_IDENTITY",
+  "claim_boundary": {
+    "FULL_BHSM_COMPLETE": false,
+    "Gate7": "ACTIVE",
+    "Y_Z1_Z2": "OPEN",
+    "identity": "DERIVED",
+    "numerical_common_frame_majorants": "OPEN"
+  },
+  "common_frame_bridge": {
+    "Y": "Y<=Y_center_plus_outward_defect_quadrature_remainder",
+    "Z1": "Z1<=||I-A*L0||_P+C_A*delta_J",
+    "Z2": "Z2<=C_A*(A2/g0+3*A1^2/g0^2)",
+    "radii": "Y+Z1*r+Z2*r^2<r_AND_Z1+2*Z2*r<1"
+  },
+  "exact_next_dependency": "EVALUATE_g0_A1_A2_delta_J_C_A_AND_THE_SIGNED_DEFECT_REMAINDER_CELLWISE_IN_THE_RETAINED_PHYSICAL_FRAMES",
+  "fixed_replay": {
+    "first_identity_residual_2_norm": 1.5724119337013626e-11,
+    "first_majorant": 0.14509525002200235,
+    "first_norm": 0.018895315112752643,
+    "mixed_identity_residual_2_norm": 1.5265965114224546e-09,
+    "mixed_majorant": 0.09769471479130712,
+    "mixed_norm": 0.03977488808343596
+  },
+  "identities": {
+    "D2_f_majorant": "||D2f||<=A2/g0+3*A1^2/g0^2",
+    "D2_f_uv": "Q*D2_G_uv/||G||-((f^T*D_G_v)*Q*D_G_u+(f^T*D_G_u)*Q*D_G_v+f*(D_G_u^T*Q*D_G_v))/||G||^2",
+    "D_f_majorant": "||Df||<=A1/g0",
+    "D_f_u": "Q*D_G_u/||G||",
+    "projector": "Q=I-f*f^T"
+  },
+  "inputs": {
+    "artifacts/flagship_integration/BHSM_N12_GATE7_SIGNED_COMMON_FRAME_DATA_MATCHING.json": "59EBAD2C4CAD95106E8E2ECD9118C9F9F79690A4C0D0108108208A276ABEB2E6"
+  },
+  "retained_field": "f=G/||G||_2_ON_THE_NONZERO_CANCELLATION_PRESERVING_GRAPH",
+  "status": "NORMALIZED_FIELD_D1_D2_AND_COMMON_FRAME_RADII_BRIDGE_DERIVED",
+  "validation": {
+    "common_frame_matching_validated": true,
+    "first_derivative_identity_numerically_replayed": true,
+    "first_majorant_dominates_fixed_replay": true,
+    "no_inverse_of_kinetic_Dirac_or_history_operator": true,
+    "no_new_action_source_selector_or_scale": true,
+    "second_derivative_identity_numerically_replayed": true,
+    "second_majorant_dominates_fixed_replay": true
+  },
+  "validation_passed": true
+}
