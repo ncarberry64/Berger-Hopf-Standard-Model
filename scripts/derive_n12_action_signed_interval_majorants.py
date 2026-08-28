@@ -402,12 +402,13 @@ class MixedBound:
 
 @dataclass(frozen=True)
 class ExactMixed:
-    """Exact distinct-direction jet with one optionally vector-valued leg.
+    """Exact distinct-direction jet with broadcast vector/tensor legs.
 
     This is used only to aggregate signed output components at a fixed state
-    before an interval remainder is applied.  A vector-valued derivative may
-    occur in one distinguished direction; subset products remain linear in
-    that leg because a mixed derivative uses every direction at most once.
+    before an interval remainder is applied.  Distinguished matrix-valued
+    directions occupy separate broadcast axes.  A mixed derivative uses each
+    direction at most once, so the final component tensor retains every
+    correlation without constructing an action derivative tensor globally.
     """
 
     value: float
@@ -827,6 +828,7 @@ def action_bound(
     mixed_directions: list[np.ndarray] | None = None,
     *,
     exact_signed_output_index: int | None = None,
+    exact_signed_tensor_indices: tuple[int, ...] | None = None,
     interval_state_bounds: tuple[np.ndarray, np.ndarray] | None = None,
     interval_direction_bounds: list[tuple[np.ndarray, np.ndarray] | None] | None = None,
     interval_signed_output_index: int | None = None,
@@ -845,8 +847,23 @@ def action_bound(
         np.sqrt(1.0 + frequencies["multipliers"] ** 2),
     ))
 
-    if exact_signed_output_index is not None and interval_signed_output_index is not None:
-        raise ValueError("exact and interval signed-output modes are mutually exclusive")
+    exact_modes = sum((
+        exact_signed_output_index is not None,
+        exact_signed_tensor_indices is not None,
+        interval_signed_output_index is not None,
+    ))
+    if exact_modes > 1:
+        raise ValueError(
+            "exact vector, exact tensor, and interval signed-output modes are mutually exclusive"
+        )
+    tensor_indices = (
+        tuple(int(index) for index in exact_signed_tensor_indices)
+        if exact_signed_tensor_indices is not None else
+        (int(exact_signed_output_index),)
+        if exact_signed_output_index is not None else ()
+    )
+    if len(set(tensor_indices)) != len(tensor_indices):
+        raise ValueError("exact signed tensor indices must be unique")
     if interval_signed_output_index is not None:
         if mixed_directions is None or interval_state_bounds is None or interval_direction_bounds is None:
             raise ValueError("interval signed-output mode requires state and direction bounds")
@@ -899,7 +916,7 @@ def action_bound(
                             np.asarray(bounds[1], dtype=float),
                         ))
             return IntervalMixed.affine(state_value, directional_derivatives)
-        if exact_signed_output_index is not None:
+        if tensor_indices:
             if projection is not None:
                 raise ValueError("exact signed output evaluation is fixed-state only")
             directional_derivatives: list[float | np.ndarray] = []
@@ -907,11 +924,14 @@ def action_bound(
                 direction = np.asarray(direction, dtype=float)
                 if direction.ndim == 1:
                     directional_derivatives.append(float(direction @ normalized))
-                elif direction.ndim == 2 and index == exact_signed_output_index:
-                    directional_derivatives.append(direction.T @ normalized)
+                elif direction.ndim == 2 and index in tensor_indices:
+                    component = direction.T @ normalized
+                    shape = [1] * len(tensor_indices)
+                    shape[tensor_indices.index(index)] = component.size
+                    directional_derivatives.append(component.reshape(shape))
                 else:
                     raise ValueError(
-                        "exact signed evaluation permits a matrix only in the output leg"
+                        "exact signed evaluation permits matrices only in declared tensor legs"
                     )
             return ExactMixed.affine(
                 float(coefficients @ values), directional_derivatives,
@@ -949,7 +969,7 @@ def action_bound(
     if mixed_directions is None:
         bulk = Bound.constant(0.0)
         inertia = Bound.constant(0.0)
-    elif exact_signed_output_index is not None:
+    elif tensor_indices:
         bulk = ExactMixed.constant(0.0, len(mixed_directions))
         inertia = ExactMixed.constant(0.0, len(mixed_directions))
     elif interval_signed_output_index is not None:

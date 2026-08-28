@@ -10,6 +10,8 @@ action formula unchanged:
 
 - `exact_signed_output_index` keeps one vector-valued mixed leg signed at a
   fixed state and returns all its output components together;
+- `exact_signed_tensor_indices` assigns multiple matrix-valued legs to
+  separate broadcast axes and retains their complete signed tensor;
 - `interval_signed_output_index` propagates directed floating-point intervals
   for the same output leg, with explicit state and direction boxes.
 

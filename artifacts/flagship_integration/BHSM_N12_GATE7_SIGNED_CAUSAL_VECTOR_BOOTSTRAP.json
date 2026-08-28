@@ -1,0 +1,56 @@
+{
+  "FULL_BHSM_COMPLETE": false,
+  "artifact": "BHSM_N12_GATE7_SIGNED_CAUSAL_VECTOR_BOOTSTRAP",
+  "authority": "EXACT_SIGNED_DIRECTIONAL_AND_MIXED_CENTER_MAPS_WITH_RECONNAISSANCE_TRANSVERSE_ERROR",
+  "claim_boundary": {
+    "FULL_BHSM_COMPLETE": false,
+    "Gate7": "ACTIVE",
+    "causal_interval_vector_radius": "OPEN",
+    "center_transverse_quadratic_error": "RECONNAISSANCE_BOUND_ONLY",
+    "outward_curvature_remainder": "OPEN",
+    "outward_signed_step_map_and_Green_remainder": "OPEN",
+    "signed_directional_and_mixed_center_vector": "DERIVED"
+  },
+  "data": "artifacts/flagship_integration/BHSM_N12_GATE7_SIGNED_CAUSAL_VECTOR_BOOTSTRAP.npz",
+  "data_SHA256": "651E577B0B06217954239A11C99946772C0A01BA38762D43DDB3A2455CC19C06",
+  "exact_next_dependency": "PROVE_ANY_RETAINED_ACTION_PHYSICAL_TRANSVERSE_CURVATURE_TUBE_BELOW_THE_REPORTED_7E8_SCALE_AND_ATTACH_THE_EXISTING_SIGNED_GREEN_STEP_MAP_REMAINDER;_NO_FULL_72_CUBED_TENSOR_IS_REQUIRED",
+  "identity": {
+    "error_radius": "e_i=sum_{j<i}G_ij*(||Hm_j||*c_j*e_j+0.5*Ht_j*(||v_j||+e_j)^2)",
+    "signed_center": "v_i=sum_{j<i}dt_j*P_ij*N_j*(0.5*Hd_j*c_j^2+Hm_j*c_j*N_j^T*v_j)"
+  },
+  "inputs": {
+    "artifacts/flagship_integration/BHSM_N12_C2_STOP_HIGH_ORDER_HALF_STEP_CENTER_RECONNAISSANCE.npz": "16A5383752768B7F3D7275F0304618788F6D380E227E0C8FB793CED40A7EE0B0",
+    "artifacts/flagship_integration/BHSM_N12_C2_STOP_HIGH_ORDER_HALF_STEP_PHYSICAL_TANGENT_TRANSFER_RECONNAISSANCE.npz": "F5ECDBD65D79CC4F66840CA36D38176152C5FA748D39A7C8C7AF834CBBB4D424",
+    "artifacts/flagship_integration/BHSM_N12_C2_STOP_QUARTER_STEP_MATCHED_TANGENT_CORRELATED_DEFECT_GAUSS12_RECONNAISSANCE.npz": "F6675DBF9699ED6E56DE719C78047A0077FECBFC35F57F6943A2DFA645F10E90",
+    "artifacts/flagship_integration/BHSM_N12_GATE7_CAUSAL_VECTOR_RADIUS_RECONNAISSANCE.npz": "C938176899ED53583AB2C284F517C621354440D937675ACCE53FDCBC044A8993",
+    "artifacts/flagship_integration/BHSM_N12_GATE7_COMMON_FRAME_ANISOTROPIC_Z2_RECONNAISSANCE.json": "B982181E81810E8924D4095B4758AFF2F87B5FA8A87E6A91F5CDC314FEC3934A",
+    "artifacts/flagship_integration/BHSM_N12_GATE7_EXACT_SIGNED_DIRECTIONAL_FIELD_CURVATURE.json": "0780676E2DFC2C8C76437485F1499DF527475B0941B9CADC9963630D2F2C3B00",
+    "artifacts/flagship_integration/BHSM_N12_GATE7_EXACT_SIGNED_DIRECTIONAL_FIELD_CURVATURE.npz": "B80783DDB8458BD65630A547C77A5E31C4073E09ABAEF0ADAFA5D21F6736A589",
+    "artifacts/flagship_integration/BHSM_N12_GATE7_EXACT_SIGNED_MIXED_FIELD_CURVATURE.json": "F8D84135E19CBAC2202DB748DDE25DD1D0F1F0D31788C9FB73CD72C8EBD88F6B",
+    "artifacts/flagship_integration/BHSM_N12_GATE7_EXACT_SIGNED_MIXED_FIELD_CURVATURE.npz": "27CB3E23FBAB50545D75E457620A95B388B3140FCE0C57C594E71724B0E7BEC2"
+  },
+  "status": "SIGNED_CAUSAL_CENTER_VECTOR_CLOSES_WITH_LARGE_TRANSVERSE_HEADROOM;_OUTWARD_AUTHORITY_OPEN",
+  "structural_validation": {
+    "all_48_nodes_and_47_signed_step_maps_used": true,
+    "center_vector_plus_quadratic_error_fits_existing_halo": true,
+    "exact_signed_directional_vectors_used": true,
+    "exact_signed_mixed_matrices_used": true,
+    "no_recurrence_reset_selector_scale_gate_or_chord_changed": true,
+    "signed_sources_and_propagators_combined_before_norms": true,
+    "strictly_lower_causal_dependency_preserved": true,
+    "transverse_curvature_can_inflate_by_more_than_1000_before_halo_failure": true
+  },
+  "structural_validation_passed": true,
+  "summary": {
+    "corresponding_permitted_transverse_curvature_upper": 752695948.6550577,
+    "existing_certified_nonlinear_halo": 1.3397010452979786e-08,
+    "halo_to_center_radius_ratio": 21539.062422848823,
+    "maximum_quadratic_error_radius": 9.445904606167864e-16,
+    "maximum_signed_center_vector_2_norm": 6.219541168643112e-13,
+    "maximum_total_center_radius": 6.219867044337139e-13,
+    "maximum_uniform_transverse_profile_inflation_before_halo_failure": 3543.583348759217,
+    "signed_center_vector_owner_node": 21,
+    "terminal_signed_center_vector_2_norm": 2.8288630480989214e-13
+  },
+  "validation_passed": false
+}

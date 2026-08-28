@@ -93,3 +93,28 @@ def test_signed_modes_are_mutually_exclusive() -> None:
         assert "mutually exclusive" in str(error)
     else:
         raise AssertionError("signed modes must be mutually exclusive")
+
+
+def test_exact_signed_tensor_legs_equal_separated_scalar_evaluations() -> None:
+    state, output, first, _ = _fixture()
+    generator = np.random.default_rng(119)
+    second = generator.normal(size=(state.size, 2))
+    combined = np.asarray(action_bound(
+        state,
+        mixed_directions=[output[:, :2], second, first],
+        exact_signed_tensor_indices=(0, 1),
+    ).d[-1], dtype=float)
+    separated = np.asarray([
+        [
+            action_bound(
+                state,
+                mixed_directions=[output[:, i], second[:, j], first],
+                exact_signed_output_index=0,
+            ).d[-1]
+            for j in range(2)
+        ]
+        for i in range(2)
+    ], dtype=float)
+    np.testing.assert_allclose(
+        combined, separated, rtol=3.0e-14, atol=1.0e-11,
+    )
