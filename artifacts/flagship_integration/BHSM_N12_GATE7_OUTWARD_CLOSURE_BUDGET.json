@@ -1,0 +1,62 @@
+{
+  "FULL_BHSM_COMPLETE": false,
+  "artifact": "BHSM_N12_GATE7_OUTWARD_CLOSURE_BUDGET",
+  "authority": "EXACT_SIGNED_CENTER_VOLTERRA_ERROR_IDENTITY_WITH_CONDITIONAL_OUTWARD_MAJORANTS",
+  "claim_boundary": {
+    "FULL_BHSM_COMPLETE": false,
+    "Gate7": "ACTIVE",
+    "causal_interval_vector_radius": "OPEN_UNTIL_BUDGET_VALUES_ARE_PROVED",
+    "outward_curvature_values": "OPEN_INTERVAL_AUTHORITY",
+    "outward_propagator_defect": "OPEN_INTERVAL_AUTHORITY",
+    "outward_sufficient_budget": "DERIVED"
+  },
+  "data": "artifacts/flagship_integration/BHSM_N12_GATE7_OUTWARD_CLOSURE_BUDGET.npz",
+  "data_SHA256": "9E443D332ECC7420091382E4BE0D2F216A48C4EA0DDFE8CEA4EFDF9F82ECB6E7",
+  "exact_next_dependency": "EVALUATE_ONLY_THE_RECENTERED_CONE_PROPAGATOR_DEFECT_AND_DIRECTIONAL_MIXED_TRANSVERSE_DRIFTS_AGAINST_THE_REPORTED_SIGNED_BUDGETS;_DO_NOT_BUILD_A_GLOBAL_D3F_TENSOR",
+  "identity": {
+    "closure": "max_i(||v_i||+e_i)<existing_nonlinear_halo",
+    "directional_drift": "||d_tube-d_center||<=epsilon_d*||d_center||",
+    "mixed_drift": "||M_tube-M_center||<=epsilon_m*||M_center||",
+    "propagator_defect": "||P_tube-P_center||<=epsilon_G*||P_center||",
+    "transverse_tube": "||H_tube||<=kappa_H*H_center_Frobenius"
+  },
+  "inputs": {
+    "artifacts/flagship_integration/BHSM_N12_C2_STOP_HIGH_ORDER_HALF_STEP_CENTER_RECONNAISSANCE.npz": "16A5383752768B7F3D7275F0304618788F6D380E227E0C8FB793CED40A7EE0B0",
+    "artifacts/flagship_integration/BHSM_N12_C2_STOP_HIGH_ORDER_HALF_STEP_PHYSICAL_TANGENT_TRANSFER_RECONNAISSANCE.npz": "F5ECDBD65D79CC4F66840CA36D38176152C5FA748D39A7C8C7AF834CBBB4D424",
+    "artifacts/flagship_integration/BHSM_N12_C2_STOP_QUARTER_STEP_MATCHED_TANGENT_CORRELATED_DEFECT_GAUSS12_RECONNAISSANCE.npz": "F6675DBF9699ED6E56DE719C78047A0077FECBFC35F57F6943A2DFA645F10E90",
+    "artifacts/flagship_integration/BHSM_N12_GATE7_EXACT_CENTER_CAUSAL_VECTOR_CERTIFICATE.json": "D4E9EDC2A2FAF4C56BA1C1DDAADFA831EF7FF5EC968E8AEF71EAD07B0CC4AEBB",
+    "artifacts/flagship_integration/BHSM_N12_GATE7_EXACT_CENTER_CAUSAL_VECTOR_CERTIFICATE.npz": "2506126356444489121B658E8031755BB33B788DDB67E6A7A761252C8459DE91",
+    "artifacts/flagship_integration/BHSM_N12_GATE7_EXACT_SIGNED_DIRECTIONAL_FIELD_CURVATURE.npz": "B80783DDB8458BD65630A547C77A5E31C4073E09ABAEF0ADAFA5D21F6736A589",
+    "artifacts/flagship_integration/BHSM_N12_GATE7_EXACT_SIGNED_FULL_TRANSVERSE_CURVATURE_ADJUDICATION.json": "093D6FA0CCD9BF2AFCB3F09D544F22FC5303BB089FB93E3A9402F93FCEF5A5BA",
+    "artifacts/flagship_integration/BHSM_N12_GATE7_EXACT_SIGNED_MIXED_FIELD_CURVATURE.npz": "27CB3E23FBAB50545D75E457620A95B388B3140FCE0C57C594E71724B0E7BEC2"
+  },
+  "status": "SIGNED_GATE7_OUTWARD_SUFFICIENT_BUDGET_DERIVED",
+  "summary": {
+    "corresponding_uniform_transverse_curvature_upper": 752678938.8789551,
+    "existing_nonlinear_halo": 1.3397010452979786e-08,
+    "limiting_balanced_total_radius": 1.339701045297977e-08,
+    "maximum_baseline_total_radius": 6.219867040855998e-13,
+    "maximum_signed_center_vector_2_norm": 6.219541168643112e-13,
+    "thresholds": {
+      "balanced_relative_outward_perturbation": 0.26860106773527187,
+      "uniform_relative_directional_curvature_drift": 0.9997450744427727,
+      "uniform_relative_mixed_curvature_drift": 19.2413031645799,
+      "uniform_relative_propagator_defect": 0.6094282890178977,
+      "uniform_transverse_curvature_inflation": 3543.589868577081
+    }
+  },
+  "validation": {
+    "all_48_nodes_and_47_step_maps_used": true,
+    "all_conditional_thresholds_positive_and_finite": true,
+    "baseline_exact_center_replay_fits_halo": true,
+    "directional_and_mixed_curvature_drift_terms_included": true,
+    "no_action_equation_source_selector_scale_gate_or_chord_changed": true,
+    "outward_interval_values_not_claimed": true,
+    "propagator_defect_source_term_included": true,
+    "reported_thresholds_are_lower_bisection_endpoints": true,
+    "signed_center_source_formed_before_norm": true,
+    "strictly_lower_causal_dependency_preserved": true,
+    "transverse_quadratic_term_included": true
+  },
+  "validation_passed": true
+}
