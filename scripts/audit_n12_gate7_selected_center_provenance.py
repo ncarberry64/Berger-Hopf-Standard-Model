@@ -70,6 +70,8 @@ CURRENT_ARTIFACTS = {
     "dop853_response": BASE / "BHSM_N12_C2_STOP_DOP853_ADAPTIVE_BORDERED_RHS_RESPONSE_CERTIFICATE.json",
     "dop853_response_first": BASE / "BHSM_N12_C2_STOP_DOP853_ADAPTIVE_BORDERED_RESPONSE_FIRST_VARIATION.json",
     "dop853_response_second": BASE / "BHSM_N12_C2_STOP_DOP853_BORDERED_RESPONSE_SECOND_VARIATION.json",
+    "dop853_nonlinear_spectrum": BASE / "BHSM_N12_GATE7_SELECTED_DOP853_NONLINEAR_CONE_SPECTRUM.json",
+    "dop853_nonlinear_projector_inverse": BASE / "BHSM_N12_GATE7_SELECTED_DOP853_NONLINEAR_CONE_PROJECTOR_INVERSE.json",
 }
 
 
@@ -219,6 +221,20 @@ def build_payload() -> dict[str, Any]:
                 "cellwise_response_second_variation_tube"
             ] == "OPEN_SIGNED_CORRELATION_REQUIRED"
         ),
+        "selected_DOP853_candidate_cone_line_projector_and_inverse_certified": (
+            current_records["dop853_nonlinear_spectrum"]["validation_passed"] is True
+            and current_records["dop853_nonlinear_projector_inverse"][
+                "validation_passed"
+            ] is True
+        ),
+        "candidate_DOP853_radius_not_promoted_before_correlated_self_map": (
+            current_records["dop853_nonlinear_spectrum"]["claim_boundary"][
+                "candidate_radius_self_map"
+            ] == "OPEN_CORRELATED_Y_Z1_Z2"
+            and current_records["dop853_nonlinear_projector_inverse"][
+                "claim_boundary"
+            ]["candidate_radius_self_map"] == "OPEN_CORRELATED_Y_Z1_Z2"
+        ),
         "no_action_equation_source_selector_scale_gate_or_chord_changed": True,
     }
     validation = {key: bool(value) for key, value in validation.items()}
@@ -285,7 +301,8 @@ def build_payload() -> dict[str, Any]:
             "same_center_DOP853_spectrum_projector_inverse_response": "CERTIFIED",
             "same_center_DOP853_response_first_variation": "CERTIFIED_FINITE",
             "same_center_DOP853_response_second_variation": "OPEN_SIGNED_CORRELATION_REQUIRED",
-            "same_center_DOP853_nonlinear_tube": "OPEN_RADIUS_ATTACHMENT",
+            "same_center_DOP853_candidate_cone_line_projector_inverse": "CERTIFIED",
+            "same_center_DOP853_nonlinear_tube": "OPEN_CORRELATED_SELF_MAP",
             "legacy_mixed_center_recentered_cone": "HISTORICAL_NOT_CURRENT",
             "same_center_common_frame_operands": "DERIVED",
             "causal_interval_vector_radius": "OPEN",
@@ -293,8 +310,8 @@ def build_payload() -> dict[str, Any]:
             "FULL_BHSM_COMPLETE": False,
         },
         "exact_next_dependency": (
-            "ATTACH_THE_SELECTED_QUARTER_CAUSAL_RADIUS_TO_THE_ALREADY_"
-            "CERTIFIED_DOP853_CELL_CARRIER,_THEN_CONTRACT_THE_SIGNED_COMMON_"
+            "TRANSFER_THE_COMPLETE_INTERNAL_RESPONSE_TO_THE_CERTIFIED_"
+            "CANDIDATE_DOP853_PRODUCT_CONE,_THEN_CONTRACT_THE_SIGNED_COMMON_"
             "FRAME_CURVATURE_AND_RESPONSE_FIRST_VARIATION_TO_DERIVE_"
             "CELLWISE_Y_Z1_Z2;_FINALLY_TRANSFER_THE_EXISTING_DENSE_FIRST_"
             "HIT_AND_DOMAIN_MARGIN"

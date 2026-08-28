@@ -6,7 +6,8 @@
     "Gate7": "ACTIVE",
     "causal_interval_vector_radius": "OPEN",
     "legacy_mixed_center_recentered_cone": "HISTORICAL_NOT_CURRENT",
-    "same_center_DOP853_nonlinear_tube": "OPEN_RADIUS_ATTACHMENT",
+    "same_center_DOP853_candidate_cone_line_projector_inverse": "CERTIFIED",
+    "same_center_DOP853_nonlinear_tube": "OPEN_CORRELATED_SELF_MAP",
     "same_center_DOP853_response_first_variation": "CERTIFIED_FINITE",
     "same_center_DOP853_response_second_variation": "OPEN_SIGNED_CORRELATION_REQUIRED",
     "same_center_DOP853_spectrum_projector_inverse_response": "CERTIFIED",
@@ -51,7 +52,7 @@
       "reason": "all source constants now name the selected quarter-step center and matching quarter-step tangent"
     }
   ],
-  "exact_next_dependency": "ATTACH_THE_SELECTED_QUARTER_CAUSAL_RADIUS_TO_THE_ALREADY_CERTIFIED_DOP853_CELL_CARRIER,_THEN_CONTRACT_THE_SIGNED_COMMON_FRAME_CURVATURE_AND_RESPONSE_FIRST_VARIATION_TO_DERIVE_CELLWISE_Y_Z1_Z2;_FINALLY_TRANSFER_THE_EXISTING_DENSE_FIRST_HIT_AND_DOMAIN_MARGIN",
+  "exact_next_dependency": "TRANSFER_THE_COMPLETE_INTERNAL_RESPONSE_TO_THE_CERTIFIED_CANDIDATE_DOP853_PRODUCT_CONE,_THEN_CONTRACT_THE_SIGNED_COMMON_FRAME_CURVATURE_AND_RESPONSE_FIRST_VARIATION_TO_DERIVE_CELLWISE_Y_Z1_Z2;_FINALLY_TRANSFER_THE_EXISTING_DENSE_FIRST_HIT_AND_DOMAIN_MARGIN",
   "inputs": {
     "artifacts/flagship_integration/BHSM_N12_C2_STOP_DOP853_ADAPTIVE_BORDERED_HARD_INVERSE.json": "79EC741155715C8746FEC88370D6AAF263767D009C3EF71410B2051F12F7DBBC",
     "artifacts/flagship_integration/BHSM_N12_C2_STOP_DOP853_ADAPTIVE_BORDERED_RESPONSE_FIRST_VARIATION.json": "83EE5A3670AA6D97C359EE3BD947086D113349F5EB33F971D51CA8BF97F69CE3",
@@ -79,9 +80,11 @@
     "artifacts/flagship_integration/BHSM_N12_GATE7_QUARTER_STEP_HYBRID_GRAPH_JACOBIAN_EQUIVALENCE_AUDIT.json": "7395CE4A32D7EA2CD236427E853826F76CCEF60D8B0B2D2A9ECF53E6462CC79B",
     "artifacts/flagship_integration/BHSM_N12_GATE7_RETAINED_CORRECTION_BORDERED_RESPONSE_FIRST_JETS.json": "3746BCF740ED3BCFF5AC1F830963E2028DE955578EBDA0E565E2F8D132C2BACD",
     "artifacts/flagship_integration/BHSM_N12_GATE7_RETAINED_CORRECTION_EIGENLINE_FIRST_JETS.json": "6F7EC77B6BA4E7120EA638E01AC7D5B8B8EA6CD91B02B8E4641381DE972905D7",
+    "artifacts/flagship_integration/BHSM_N12_GATE7_SELECTED_DOP853_NONLINEAR_CONE_PROJECTOR_INVERSE.json": "1B3B8FFA01818AF1F868BD54CB9C9C6D3C62D0A2FEE8F62CDD215BC6EE59D88C",
+    "artifacts/flagship_integration/BHSM_N12_GATE7_SELECTED_DOP853_NONLINEAR_CONE_SPECTRUM.json": "DDE0254B1366B1EDD4F5D8DB43A8187C721CEDF83228C44B222671C1CB93DB06",
     "artifacts/flagship_integration/BHSM_N12_GATE7_SIGNED_COMMON_FRAME_DATA_MATCHING.json": "6E2483396E092A60995A45DA8E61B52CE2E4794DC92EAF2548EBB8C2A56877AC",
     "artifacts/flagship_integration/BHSM_N12_GATE7_TWO_FREE_LEG_ACTION_MAJORANTS.json": "D1BB463DADEFF815A85C6CAF16059ED290AD03879F4E212ACB434C07D780AEA3",
-    "scripts/audit_n12_gate7_signed_common_frame_data_matching.py": "3C111A978F08999567E2675CBBE20721D2FE44CEE7CD1044CAE1F217922C5981",
+    "scripts/audit_n12_gate7_signed_common_frame_data_matching.py": "F26AB052F01DDD406EA7A0F4D152B25ED0CBBEF12495C3EEF7218EB454F1D423",
     "scripts/certify_n12_gate7_correction_direction_action_majorants.py": "1356718BA69F5AB256B25AC1C388460D972E9FA1B403D21AD49F651D5EB20FB7",
     "scripts/certify_n12_gate7_recentered_cone_boundary_cluster_spectrum.py": "8F7E6FBFDDAB75442A2CC015BD1E2114CFEF599E473BD0CEE90C50C57A973A67",
     "scripts/certify_n12_gate7_two_free_leg_action_majorants.py": "02085E2940BA7891F30D6E0EC1159D034256B69222550835000196DCC552E26F",
@@ -112,6 +115,7 @@
     "all_current_exact_scripts_name_quarter_center": true,
     "all_current_exact_scripts_name_quarter_tangent": true,
     "all_current_prerequisite_scripts_name_quarter_center": true,
+    "candidate_DOP853_radius_not_promoted_before_correlated_self_map": true,
     "current_common_frame_script_names_only_quarter_center_operands": true,
     "current_exact_curvature_artifacts_validated": true,
     "current_quarter_common_frame_operands_replayed": true,
@@ -125,6 +129,7 @@
     "no_current_prerequisite_script_names_half_center": true,
     "original_and_quarter_centers_are_not_identical": true,
     "quarter_center_and_tangent_weights_match": true,
+    "selected_DOP853_candidate_cone_line_projector_and_inverse_certified": true,
     "selected_DOP853_chain_names_quarter_center": true,
     "selected_DOP853_spectrum_projector_inverse_and_response_certified": true,
     "selection_manifest_names_quarter_step_center": true

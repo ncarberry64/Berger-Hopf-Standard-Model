@@ -30,6 +30,8 @@ INPUTS = {
     "first_hit": BASE / "BHSM_N12_C2_STOP_QUARTER_STEP_DENSE_DESCRIPTOR_FIRST_HIT.json",
     "common_frame": BASE / "BHSM_N12_GATE7_SIGNED_COMMON_FRAME_DATA_MATCHING.json",
     "selected_center_provenance": BASE / "BHSM_N12_GATE7_SELECTED_CENTER_PROVENANCE_RECONCILIATION.json",
+    "nonlinear_cone_spectrum": BASE / "BHSM_N12_GATE7_SELECTED_DOP853_NONLINEAR_CONE_SPECTRUM.json",
+    "nonlinear_cone_projector_inverse": BASE / "BHSM_N12_GATE7_SELECTED_DOP853_NONLINEAR_CONE_PROJECTOR_INVERSE.json",
 }
 
 
@@ -113,9 +115,10 @@ def build_payload() -> dict[str, Any]:
             "candidate_BHSM_objects": [
                 "first_hit", "dop_response", "dop_first_variation",
                 "dop_second_variation", "common_frame",
-                "selected_center_provenance",
+                "selected_center_provenance", "nonlinear_cone_spectrum",
+                "nonlinear_cone_projector_inverse",
             ],
-            "dimension_domain_check": "center first hit and finite direct response first variation certified; signed/common-frame Z2 and exact-history transfer not yet certified",
+            "dimension_domain_check": "center first hit, finite direct response first variation, and candidate-cone line/projector/inverse certified; complete-response signed/common-frame Z2 and exact-history transfer remain open",
             "provenance_check": "retained DOP853 polynomial and same physical quotient required",
             "match": "ACTUALLY_MISSING_CORRELATED_CERTIFICATION_ADAPTER",
         },
@@ -148,6 +151,12 @@ def build_payload() -> dict[str, Any]:
         ),
         "same_center_common_frame_matching_validated": (
             records["common_frame"]["validation_passed"] is True
+        ),
+        "selected_candidate_cone_line_projector_and_inverse_validated": (
+            records["nonlinear_cone_spectrum"]["validation_passed"] is True
+            and records["nonlinear_cone_projector_inverse"][
+                "validation_passed"
+            ] is True
         ),
         "no_new_C2_theory_needed": all(row["match"] != "ACTUALLY_MISSING_NEW_C2_THEORY" for row in slots),
         "exactly_two_live_adapter_outputs": sum(row["match"].startswith("ACTUALLY_MISSING") for row in slots) == 2,

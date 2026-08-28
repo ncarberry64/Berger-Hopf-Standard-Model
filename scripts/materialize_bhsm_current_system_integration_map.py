@@ -36,6 +36,8 @@ PATHS = {
     "common_frame_matching": "artifacts/flagship_integration/BHSM_N12_GATE7_SIGNED_COMMON_FRAME_DATA_MATCHING.json",
     "selected_center_provenance": "artifacts/flagship_integration/BHSM_N12_GATE7_SELECTED_CENTER_PROVENANCE_RECONCILIATION.json",
     "normalized_field_identity": "artifacts/flagship_integration/BHSM_N12_GATE7_NORMALIZED_FIELD_COMMON_FRAME_IDENTITY.json",
+    "nonlinear_cone_spectrum": "artifacts/flagship_integration/BHSM_N12_GATE7_SELECTED_DOP853_NONLINEAR_CONE_SPECTRUM.json",
+    "nonlinear_cone_projector_inverse": "artifacts/flagship_integration/BHSM_N12_GATE7_SELECTED_DOP853_NONLINEAR_CONE_PROJECTOR_INVERSE.json",
     "dop_domain": "artifacts/flagship_integration/BHSM_N12_DOP853_AE2_BIRTH_DOMAIN_RECONCILIATION.json",
     "one_seam": "artifacts/flagship_integration/BHSM_N12_GATE7_AE2_ONE_SEAM_DIRECT_DESCRIPTOR.json",
     "heat_bound": "artifacts/flagship_integration/BHSM_N12_GATE7_ONE_SEAM_FULL_GRADED_FINITE_CORE_HEAT_BOUND.json",
@@ -109,6 +111,10 @@ def build_payload() -> dict[str, Any]:
     common_frame_matching = records["common_frame_matching"]
     selected_center_provenance = records["selected_center_provenance"]
     normalized_field_identity = records["normalized_field_identity"]
+    nonlinear_cone_spectrum = records["nonlinear_cone_spectrum"]
+    nonlinear_cone_projector_inverse = records[
+        "nonlinear_cone_projector_inverse"
+    ]
     domain_reconciliation = records["dop_domain"]
     one_seam = records["one_seam"]
 
@@ -175,12 +181,12 @@ def build_payload() -> dict[str, Any]:
             "98-state C2 path with 61-dimensional reduced Hessian, branch 24, and 62-dimensional border",
             "finite Euclidean physical tangent quotient; auxiliary geometry, not the temporal birth domain",
             ["local_action", "base_family", "selected_center_provenance"],
-            ["dop_response", "dop_first_variation", "dop_second_variation", "common_frame_matching", "normalized_field_identity", "dop_domain"],
-            "8692_CELL_BORDERED_RESPONSE_AND_FIRST_VARIATION_CERTIFIED;_SCALAR_SECOND_VARIATION_WRAPPING_REJECTED;_COMMON_FRAME_IDENTITY_DERIVED;_INTERVAL_MAJORANTS_IN_PROGRESS",
+            ["dop_response", "dop_first_variation", "dop_second_variation", "common_frame_matching", "normalized_field_identity", "nonlinear_cone_spectrum", "nonlinear_cone_projector_inverse", "dop_domain"],
+            "8692_CELL_BORDERED_RESPONSE_AND_FIRST_VARIATION_CERTIFIED;_1722_CELL_CANDIDATE_CONE_LINE_PROJECTOR_INVERSE_CERTIFIED;_SCALAR_SECOND_VARIATION_WRAPPING_REJECTED;_CORRELATED_SELF_MAP_OPEN",
             "current adaptive DOP853 certificate",
             ["GATE7_HEAT_ZETA_CHAIN"],
             ["12,032-cell historical uniform cover replaced by the exact 8,692-cell adaptive cover"],
-            ["THREE_LOCALIZED_COMMON_FRAME_INTERVAL_ADAPTERS_FOR_Y_Z1_Z2"],
+            ["COMPLETE_INTERNAL_RESPONSE_TRANSFER_AND_CORRELATED_Y_Z1_Z2_ON_THE_CERTIFIED_CANDIDATE_CONE"],
         ),
         _subsystem(
             "GATE7_HEAT_ZETA_CHAIN",
@@ -311,6 +317,10 @@ def build_payload() -> dict[str, Any]:
             ] == "OPEN_SIGNED_CORRELATION_REQUIRED"
         ),
         "normalized_field_common_frame_identity_is_derived": normalized_field_identity["validation_passed"] is True,
+        "selected_candidate_cone_line_projector_and_inverse_are_certified": (
+            nonlinear_cone_spectrum["validation_passed"] is True
+            and nonlinear_cone_projector_inverse["validation_passed"] is True
+        ),
         "domain_no_go_is_scoped_correctly": domain_reconciliation["phase_B_outcome"] == "B1_NO_GO_SUPERSEDED_FOR_BHSM_AE_2_0_0_ONLY",
         "one_seam_AE2_composition_already_exists": one_seam["validation_passed"] is True,
         "exactly_one_current_blocker_in_reconciliation": sum(row["classification"] == "CURRENT_BLOCKER" for row in blockers) == 1,

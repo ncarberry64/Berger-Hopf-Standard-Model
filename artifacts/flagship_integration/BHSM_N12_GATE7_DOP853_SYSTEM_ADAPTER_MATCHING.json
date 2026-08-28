@@ -30,8 +30,10 @@
     "artifacts/flagship_integration/BHSM_N12_GATE7_DIRECT_ZETA_COEFFICIENT_COTANGENT.json": "5A0918A96A3C825789B8EFDC77FF3EBBA27146D4D17341CBCF36A3043C6CBCD8",
     "artifacts/flagship_integration/BHSM_N12_GATE7_JOINT_HEAT_COTANGENT_REVERSE_SEED.json": "314C8A6C77A062A76F92CAD1D3833EED363DA105FC12265A292A1BD874F85901",
     "artifacts/flagship_integration/BHSM_N12_GATE7_ONE_SEAM_FULL_GRADED_FINITE_CORE_HEAT_BOUND.json": "D1E6A58D0586A8995288FF4139C9F24DBF2411532EEA9E2D833B8AA5B60149B3",
-    "artifacts/flagship_integration/BHSM_N12_GATE7_SELECTED_CENTER_PROVENANCE_RECONCILIATION.json": "D1E17DC74591EDC4951D718D4AFBE60EF0B17C83AAB0E6EB29123E95B55F90E4",
-    "artifacts/flagship_integration/BHSM_N12_GATE7_SIGNED_COMMON_FRAME_DATA_MATCHING.json": "6E2483396E092A60995A45DA8E61B52CE2E4794DC92EAF2548EBB8C2A56877AC"
+    "artifacts/flagship_integration/BHSM_N12_GATE7_SELECTED_CENTER_PROVENANCE_RECONCILIATION.json": "5A1C70FA3D71AFD5605884CA12269295AAE3F105F4A4AAF43BCA1085A26D27D7",
+    "artifacts/flagship_integration/BHSM_N12_GATE7_SELECTED_DOP853_NONLINEAR_CONE_PROJECTOR_INVERSE.json": "1B3B8FFA01818AF1F868BD54CB9C9C6D3C62D0A2FEE8F62CDD215BC6EE59D88C",
+    "artifacts/flagship_integration/BHSM_N12_GATE7_SELECTED_DOP853_NONLINEAR_CONE_SPECTRUM.json": "DDE0254B1366B1EDD4F5D8DB43A8187C721CEDF83228C44B222671C1CB93DB06",
+    "artifacts/flagship_integration/BHSM_N12_GATE7_SIGNED_COMMON_FRAME_DATA_MATCHING.json": "F0A6B60E2C3AFA74213677CDC71385A86F536E936001DA4B0D0780F7A5D35365"
   },
   "matching_audit": [
     {
@@ -117,10 +119,12 @@
         "dop_first_variation",
         "dop_second_variation",
         "common_frame",
-        "selected_center_provenance"
+        "selected_center_provenance",
+        "nonlinear_cone_spectrum",
+        "nonlinear_cone_projector_inverse"
       ],
       "diagram_slot": "FINITE_FIRST_HIT_AND_DOMAIN_TUBE",
-      "dimension_domain_check": "center first hit and finite direct response first variation certified; signed/common-frame Z2 and exact-history transfer not yet certified",
+      "dimension_domain_check": "center first hit, finite direct response first variation, and candidate-cone line/projector/inverse certified; complete-response signed/common-frame Z2 and exact-history transfer remain open",
       "match": "ACTUALLY_MISSING_CORRELATED_CERTIFICATION_ADAPTER",
       "provenance_check": "retained DOP853 polynomial and same physical quotient required",
       "required_type": "correlated Y,Z1,Z2 inclusion transferring the center stop and all regular margins"
@@ -164,6 +168,7 @@
     "no_new_C2_theory_needed": true,
     "one_seam_composition_validated": true,
     "same_center_common_frame_matching_validated": true,
+    "selected_candidate_cone_line_projector_and_inverse_validated": true,
     "selected_quarter_center_provenance_reconciled": true
   },
   "validation_passed": true

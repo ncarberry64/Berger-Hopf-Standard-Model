@@ -38,7 +38,10 @@ def test_selected_center_provenance_defect_is_explicit() -> None:
     ] == "OPEN_SIGNED_CORRELATION_REQUIRED"
     assert payload["claim_boundary"][
         "same_center_DOP853_nonlinear_tube"
-    ] == "OPEN_RADIUS_ATTACHMENT"
+    ] == "OPEN_CORRELATED_SELF_MAP"
+    assert payload["claim_boundary"][
+        "same_center_DOP853_candidate_cone_line_projector_inverse"
+    ] == "CERTIFIED"
     assert payload["claim_boundary"][
         "legacy_mixed_center_recentered_cone"
     ] == "HISTORICAL_NOT_CURRENT"

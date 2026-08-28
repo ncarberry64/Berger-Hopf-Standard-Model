@@ -51,6 +51,12 @@ is to attach the selected causal radius to that carrier and perform its signed
 correlated second-order contraction, not to replay the legacy mixed-center
 cone.
 
+That radius attachment is now complete at the line/projector/inverse level.
+All 1,722 selected DOP853 product cells retain a simple branch 24; the minimum
+gap is `1.3326780553552793e-7`, and the maximum charted bordered inverse is
+`1.868407205010464e7`.  The radius remains a candidate while the complete
+internal response and literal correlated `Y,Z1,Z2` self-map are open.
+
 The map has exactly one current blocker:
 
 `G7_COMPLETE_JOINT_HEAT_ZETA_COVECTOR_AND_PROJECTED_KKT_ROOT_ON_A_CERTIFIED_HISTORY`.

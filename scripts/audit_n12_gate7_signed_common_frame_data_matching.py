@@ -37,6 +37,8 @@ INPUTS = {
     "time_quotient": BASE / "BHSM_N12_RESET_TIME_QUOTIENT_GENERATOR_AUDIT.json",
     "transverse_center": BASE / "BHSM_N12_GATE7_EXACT_SIGNED_FULL_TRANSVERSE_CURVATURE_ADJUDICATION.json",
     "transverse_raw": BASE / "BHSM_N12_GATE7_EXACT_SIGNED_FULL_TRANSVERSE_CURVATURE.json",
+    "nonlinear_cone_spectrum": BASE / "BHSM_N12_GATE7_SELECTED_DOP853_NONLINEAR_CONE_SPECTRUM.json",
+    "nonlinear_cone_projector_inverse": BASE / "BHSM_N12_GATE7_SELECTED_DOP853_NONLINEAR_CONE_PROJECTOR_INVERSE.json",
 }
 
 
@@ -135,7 +137,7 @@ def build_payload() -> dict[str, Any]:
             "required_type": "physical-tube Lipschitz bound for A*(N(e)-N(e_tilde))",
             "candidate": ["first", "second", "jacobian"],
             "dimension_domain": "73 transverse directions on a common-frame radius-r tube",
-            "provenance": "path derivative is certified; exact retained-action transverse center curvature is certified; outward transverse tube remainder is not",
+            "provenance": "path derivative and candidate-cone line/projector/inverse are certified; exact retained-action transverse center curvature is certified; complete internal-response curvature transfer remains open",
             "match": "ACTUALLY_MISSING_TRANSVERSE_NONLINEAR_REMAINDER_ADAPTER",
         },
         {
@@ -231,6 +233,17 @@ def build_payload() -> dict[str, Any]:
                 for path in records["transverse_raw"]["inputs"]
             )
         ),
+        "selected_DOP853_candidate_cone_line_projector_and_inverse_certified": (
+            records["nonlinear_cone_spectrum"]["validation_passed"] is True
+            and records["nonlinear_cone_projector_inverse"][
+                "validation_passed"
+            ] is True
+        ),
+        "candidate_radius_not_promoted_before_correlated_self_map": (
+            records["nonlinear_cone_projector_inverse"]["claim_boundary"][
+                "candidate_radius_self_map"
+            ] == "OPEN_CORRELATED_Y_Z1_Z2"
+        ),
         "no_new_operator_or_theory_choice_identified": True,
     }
     passed = all(validations.values())
@@ -262,6 +275,7 @@ def build_payload() -> dict[str, Any]:
             "Y": "OPEN_INTERVAL_AUTHORITY",
             "Z1": "OPEN_INTERVAL_AUTHORITY",
             "Z2": "OPEN_TRANSVERSE_INTERVAL_AUTHORITY",
+            "candidate_cone_line_projector_inverse": "CERTIFIED",
             "exact_history_first_hit": "OPEN",
             "Gate7": "ACTIVE",
             "FULL_BHSM_COMPLETE": False,

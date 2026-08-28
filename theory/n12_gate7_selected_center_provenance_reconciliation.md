@@ -33,13 +33,13 @@ line, projector graph, bordered hard inverse, complete internal response, and
 a finite response first-variation tube.  This chain is not the invalidated
 original-center plus quarter-correction carrier and does not need rebuilding.
 Its only open response item is the decorrelated scalar second-variation
-denominator.  The exact selected-quarter causal radius must still be attached
-to the DOP853 cell carrier to form the nonlinear product tube; that is a
-same-center augmentation, not a replay of the legacy cone.  The signed
-common-frame curvature must then be contracted on those cells to derive
-correlated `Y,Z1,Z2`; the legacy recentered cone remains historical.  No
-action, branch, source, selector, scale, gate, or physical endpoint changes
-in this reconciliation.
+denominator.  The candidate radius `2Y_center` has now been attached to the
+DOP853 carrier: selected-line simplicity, projector motion, and the exact
+bordered inverse are certified on all 1,722 product cells.  The radius remains
+a candidate until the complete internal response and signed common-frame
+curvature close correlated `Y,Z1,Z2`; the legacy recentered cone remains
+historical.  No action, branch, source, selector, scale, gate, or physical
+endpoint changes in this reconciliation.
 
 The deterministic replay entry point is
 `scripts/replay_n12_gate7_quarter_step_common_frame_operands.py`.  It pins the
