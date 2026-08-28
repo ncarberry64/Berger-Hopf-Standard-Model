@@ -2,7 +2,9 @@
 
 from __future__ import annotations
 
+import hashlib
 import json
+import os
 from pathlib import Path
 import sys
 
@@ -20,9 +22,25 @@ from bhsm.interface.aether_hybrid_c2_graph_jacobian import (  # noqa: E402
 
 
 BASE = ROOT / "artifacts" / "flagship_integration"
-CENTER = BASE / "BHSM_N12_C2_STOP_HIGH_ORDER_HALF_STEP_CENTER_RECONNAISSANCE.npz"
-RETAINED = BASE / "BHSM_N12_C2_STOP_HIGH_ORDER_HALF_STEP_GRAPH_JACOBIAN_RECONNAISSANCE.npz"
-RESULT = BASE / "BHSM_N12_HYBRID_GRAPH_JACOBIAN_EQUIVALENCE_AUDIT.json"
+CENTER = Path(os.environ.get(
+    "BHSM_N12_STOP_CENTER_DATA",
+    str(BASE / "BHSM_N12_C2_STOP_HIGH_ORDER_HALF_STEP_CENTER_RECONNAISSANCE.npz"),
+))
+RETAINED = Path(os.environ.get(
+    "BHSM_N12_STOP_JACOBIAN_DATA",
+    str(BASE / "BHSM_N12_C2_STOP_HIGH_ORDER_HALF_STEP_GRAPH_JACOBIAN_RECONNAISSANCE.npz"),
+))
+RESULT = Path(os.environ.get(
+    "BHSM_N12_HYBRID_GRAPH_AUDIT_RESULT",
+    str(BASE / "BHSM_N12_HYBRID_GRAPH_JACOBIAN_EQUIVALENCE_AUDIT.json"),
+))
+
+
+def _sha256(path: Path) -> str:
+    payload = path.read_bytes()
+    if path.suffix.lower() in {".json", ".md", ".py"}:
+        payload = payload.replace(b"\r\n", b"\n")
+    return hashlib.sha256(payload).hexdigest().upper()
 
 
 def main() -> None:
@@ -99,6 +117,11 @@ def main() -> None:
             "jaxlib": jaxlib.__version__,
             "backend": jax.default_backend(),
             "x64_enabled": bool(jax.config.x64_enabled),
+        },
+        "center": CENTER.relative_to(ROOT).as_posix(),
+        "inputs": {
+            CENTER.relative_to(ROOT).as_posix(): _sha256(CENTER),
+            RETAINED.relative_to(ROOT).as_posix(): _sha256(RETAINED),
         },
         "validation": validation,
         "validation_passed": all(validation.values()),

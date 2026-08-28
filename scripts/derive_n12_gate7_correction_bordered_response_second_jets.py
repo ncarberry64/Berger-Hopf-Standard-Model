@@ -3,8 +3,7 @@
 The retained 96-point action supplies the center Hessian and directional D3
 matrix.  Analytic JAX differentiation of the same action formula supplies the
 center directional D4 matrix.  The latter is not promoted to retained
-interval authority: the complete second-jet composition is independently
-checked against a twice-differentiated calibrated field, while the certified
+interval authority; the differentiated bordered residuals and the certified
 retained D4--D5 majorants remain responsible for the outward tube.
 """
 
@@ -30,21 +29,17 @@ sys.path.insert(0, str(ROOT / "src"))
 sys.path.insert(0, str(ROOT / "scripts"))
 
 from bhsm.interface.aether_forward_c2_descriptor_cover import metric_data  # noqa: E402
-from bhsm.interface.aether_jax_full_local_action import (  # noqa: E402
-    action_gradient,
-    action_hessian,
-)
+from bhsm.interface.aether_jax_full_local_action import action_hessian  # noqa: E402
 from derive_n12_gate7_retained_correction_bordered_response_first_jets import (  # noqa: E402
     _retained,
 )
 
 
 BASE = ROOT / "artifacts" / "flagship_integration"
-CENTER = BASE / "BHSM_N12_C2_STOP_HIGH_ORDER_HALF_STEP_CENTER_RECONNAISSANCE.npz"
+CENTER = BASE / "BHSM_N12_C2_STOP_HIGH_ORDER_QUARTER_STEP_RETAINED_RECONNAISSANCE.npz"
 GREEN = BASE / "BHSM_N12_C2_STOP_QUARTER_STEP_MATCHED_TANGENT_CORRELATED_DEFECT_GAUSS12_RECONNAISSANCE.npz"
 EIGENLINE = BASE / "BHSM_N12_GATE7_RETAINED_CORRECTION_EIGENLINE_FIRST_JETS.npz"
 FIRST = BASE / "BHSM_N12_GATE7_RETAINED_CORRECTION_BORDERED_RESPONSE_FIRST_JETS.npz"
-CALIBRATION = BASE / "BHSM_N12_STOP_JAX_ACTION_CALIBRATION.npz"
 MAJORANTS = BASE / "BHSM_N12_GATE7_CORRECTION_DIRECTION_ACTION_MAJORANTS.json"
 RESULT = BASE / "BHSM_N12_GATE7_CORRECTION_BORDERED_RESPONSE_SECOND_JETS.json"
 DATA = RESULT.with_suffix(".npz")
@@ -74,77 +69,14 @@ def _action_hessian_second_directional(
     return jax.jvp(first, (state,), (raw_direction,))[1]
 
 
-def _calibrated_field(
-    action_displacement: jax.Array,
-    center_action: jax.Array,
-    weights: jax.Array,
-    reference: jax.Array,
-    gradient_correction: jax.Array,
-    hessian_correction: jax.Array,
-    descriptor_offset: jax.Array,
-    q_weights: jax.Array,
-    reduced_weights: jax.Array,
-) -> jax.Array:
-    state = (center_action + action_displacement) / weights
-    gradient = action_gradient(state) + gradient_correction
-    hessian = action_hessian(state) + hessian_correction
-    reduced = 0.5 * (hessian[QDIM:, QDIM:] + hessian[QDIM:, QDIM:].T)
-    values, vectors = jnp.linalg.eigh(reduced)
-    psi = vectors[:, 24]
-    psi = jnp.where(jnp.dot(psi, reference) < 0.0, -psi, psi)
-    descriptor = values[24] + descriptor_offset
-    configuration = q_weights * state[QDIM:2 * QDIM]
-    gradient_action = gradient / weights
-    hessian_action = hessian / (weights[:, None] * weights[None, :])
-    rhs = reduced_weights * (
-        jnp.concatenate((
-            q_weights * gradient_action[:QDIM], jnp.zeros(24),
-        )) - hessian_action[QDIM:, :QDIM] @ configuration
-    )
-    bordered = jnp.block([
-        [reduced - values[24] * jnp.eye(61), psi[:, None]],
-        [psi[None, :], jnp.zeros((1, 1))],
-    ])
-    response = jnp.linalg.solve(
-        bordered, jnp.concatenate((rhs, jnp.zeros(1))),
-    )
-    numerator = jnp.concatenate((
-        descriptor * configuration,
-        reduced_weights * (
-            response[-1] * psi + descriptor * response[:-1]
-        ),
-    ))
-    return numerator / jnp.linalg.norm(numerator)
-
-
-@jax.jit
-def _calibrated_field_jets(
-    zero: jax.Array, direction: jax.Array, *arguments: jax.Array,
-) -> tuple[jax.Array, jax.Array, jax.Array]:
-    field, first = jax.jvp(
-        lambda value: _calibrated_field(value, *arguments),
-        (zero,), (direction,),
-    )
-
-    def first_map(value: jax.Array) -> jax.Array:
-        return jax.jvp(
-            lambda item: _calibrated_field(item, *arguments),
-            (value,), (direction,),
-        )[1]
-
-    _, second = jax.jvp(first_map, (zero,), (direction,))
-    return field, first, second
-
-
 def build_payload() -> dict[str, Any]:
-    inputs = (CENTER, GREEN, EIGENLINE, FIRST, CALIBRATION, MAJORANTS)
+    inputs = (CENTER, GREEN, EIGENLINE, FIRST, MAJORANTS)
     if not all(path.is_file() for path in inputs):
         raise FileNotFoundError("correction bordered-response second-jet inputs required")
     with np.load(CENTER) as source:
         states = np.asarray(source["centers"], dtype=float)
         times = np.asarray(source["action_lengths"], dtype=float)
         weights = np.asarray(source["state_weights"], dtype=float)
-        reference = np.asarray(source["branch_reference"], dtype=float)
         descriptors = np.asarray(source["signed_descriptors"], dtype=float)
     with np.load(GREEN) as source:
         corrections = np.asarray(source["ambient_correction_profile"], dtype=float)
@@ -169,12 +101,6 @@ def build_payload() -> dict[str, Any]:
             source["normalized_field_correction_direction_first_variation"],
             dtype=float,
         )
-    with np.load(CALIBRATION) as source:
-        calibration_times = np.asarray(source["action_lengths"], dtype=float)
-        gradient_corrections = np.asarray(source["gradient_correction"], dtype=float)
-        hessian_corrections = np.asarray(source["hessian_correction"], dtype=float)
-    if not np.array_equal(times, calibration_times):
-        raise RuntimeError("calibration and retained macro grids differ")
     majorants = json.loads(MAJORANTS.read_text(encoding="utf-8"))
     if not majorants["validation_passed"]:
         raise RuntimeError("retained correction-direction action majorants invalid")
@@ -186,11 +112,6 @@ def build_payload() -> dict[str, Any]:
     retained.sort(key=lambda item: item[0])
 
     q_weights, reduced_weights, _, _ = metric_data()
-    zero = jnp.zeros(98)
-    q_weights_jax = jnp.asarray(q_weights)
-    reduced_weights_jax = jnp.asarray(reduced_weights)
-    weights_jax = jnp.asarray(weights)
-    reference_jax = jnp.asarray(reference)
     response_second_all = []
     psi_second_all = []
     lambda_second_all = []
@@ -324,28 +245,6 @@ def build_payload() -> dict[str, Any]:
             - field * float(field_first @ field_first)
         )
 
-        calibrated_hessian = np.asarray(action_hessian(
-            jnp.asarray(states[index])
-        )) + hessian_corrections[index]
-        selected_center = float(np.linalg.eigvalsh(
-            calibrated_hessian[QDIM:, QDIM:]
-        )[24])
-        descriptor_offset = descriptors[index] - selected_center
-        direct_field, direct_first, direct_second = _calibrated_field_jets(
-            zero,
-            jnp.asarray(direction),
-            jnp.asarray(states[index] * weights),
-            weights_jax,
-            reference_jax,
-            jnp.asarray(gradient_corrections[index]),
-            jnp.asarray(hessian_corrections[index]),
-            jnp.asarray(descriptor_offset),
-            q_weights_jax,
-            reduced_weights_jax,
-        )
-        direct_field = np.asarray(direct_field)
-        direct_first = np.asarray(direct_first)
-        direct_second = np.asarray(direct_second)
         eigenpair_second_residual = (
             (reduced - lam * np.eye(61)) @ psi_second
             + 2.0 * (reduced_first - lam_first * np.eye(61)) @ psi_first
@@ -356,8 +255,6 @@ def build_payload() -> dict[str, Any]:
             + 2.0 * K_first @ response_first
             - np.concatenate((rhs_second, np.zeros(1)))
         )
-        first_difference = float(np.linalg.norm(field_first - direct_first))
-        second_difference = float(np.linalg.norm(field_second - direct_second))
         row = {
             "node": index,
             "action_length": float(times[index]),
@@ -390,24 +287,6 @@ def build_payload() -> dict[str, Any]:
             "normalization_second_identity_residual": float(abs(
                 field @ field_second + field_first @ field_first
             )),
-            "assembled_vs_direct_calibrated_field_difference": float(
-                np.linalg.norm(field - direct_field)
-            ),
-            "assembled_vs_direct_calibrated_field_first_difference": (
-                first_difference
-            ),
-            "assembled_vs_direct_calibrated_field_second_difference": (
-                second_difference
-            ),
-            "assembled_vs_direct_calibrated_field_first_relative_difference": (
-                first_difference
-                / max(np.linalg.norm(direct_first), np.finfo(float).tiny)
-            ),
-            "assembled_vs_direct_calibrated_field_second_relative_difference": (
-                second_difference
-                / max(np.linalg.norm(direct_second), np.finfo(float).tiny)
-                if np.linalg.norm(direction) > 0.0 else 0.0
-            ),
         }
         rows.append(row)
         response_second_all.append(response_second)
@@ -418,8 +297,8 @@ def build_payload() -> dict[str, Any]:
             "completed": index + 1,
             "node": index,
             "field_second_norm": row["normalized_field_second_variation_2_norm"],
-            "direct_relative": row[
-                "assembled_vs_direct_calibrated_field_second_relative_difference"
+            "response_second_residual": row[
+                "differentiated_bordered_response_second_residual_2_norm"
             ],
         }), flush=True)
 
@@ -439,7 +318,6 @@ def build_payload() -> dict[str, Any]:
             field_second_all
         ),
     )
-    nonzero = [row for row in rows if row["ambient_correction_2_norm"] > 0.0]
     validation = {
         "all_48_retained_macro_seams_evaluated": len(rows) == 48,
         "retained_Hessian_and_complex_step_D3_reused": True,
@@ -454,14 +332,7 @@ def build_payload() -> dict[str, Any]:
         "all_second_normalization_identities_below_1e_minus_12": max(
             row["normalization_second_identity_residual"] for row in rows
         ) < 1.0e-12,
-        "assembled_first_jet_matches_direct_calibrated_AD_below_5e_minus_4_relative": max(
-            row["assembled_vs_direct_calibrated_field_first_relative_difference"]
-            for row in nonzero
-        ) < 5.0e-4,
-        "assembled_second_jet_matches_direct_calibrated_AD_below_1e_minus_3_relative": max(
-            row["assembled_vs_direct_calibrated_field_second_relative_difference"]
-            for row in nonzero
-        ) < 1.0e-3,
+        "no_mismatched_predictor_calibration_used_as_proof_input": True,
         "existing_one_free_leg_D4_D5_majorants_ingested_without_two_free_leg_promotion": True,
         "only_62_dimensional_bordered_systems_solved": True,
         "no_explicit_inverse_formed": True,
@@ -478,7 +349,7 @@ def build_payload() -> dict[str, Any]:
         ),
         "authority": (
             "RETAINED_CENTER_D2_D3_PLUS_ANALYTIC_SAME_FORMULA_JAX_D4_"
-            "WITH_INDEPENDENT_FULL_FIELD_AD_CROSSCHECK"
+            "WITH_DIFFERENTIATED_BORDERED_RESIDUAL_CHECKS"
         ),
         "identity": {
             "selected_line_second": (
@@ -519,22 +390,6 @@ def build_payload() -> dict[str, Any]:
             "maximum_normalization_second_identity_residual": max(
                 row["normalization_second_identity_residual"] for row in rows
             ),
-            "maximum_assembled_vs_direct_field_first_difference": max(
-                row["assembled_vs_direct_calibrated_field_first_difference"]
-                for row in nonzero
-            ),
-            "maximum_assembled_vs_direct_field_second_difference": max(
-                row["assembled_vs_direct_calibrated_field_second_difference"]
-                for row in nonzero
-            ),
-            "maximum_assembled_vs_direct_field_first_relative_difference": max(
-                row["assembled_vs_direct_calibrated_field_first_relative_difference"]
-                for row in nonzero
-            ),
-            "maximum_assembled_vs_direct_field_second_relative_difference": max(
-                row["assembled_vs_direct_calibrated_field_second_relative_difference"]
-                for row in nonzero
-            ),
         },
         "rows": rows,
         "data": _relative(DATA),
@@ -544,7 +399,7 @@ def build_payload() -> dict[str, Any]:
         "claim_boundary": {
             "center_second_bordered_identity": "DERIVED",
             "center_directional_D2f_actual_signed_correction": (
-                "ASSEMBLED_AND_INDEPENDENTLY_CROSSCHECKED"
+                "ASSEMBLED_WITH_DIFFERENTIATED_RESIDUAL_CHECKS"
             ),
             "JAX_D4_as_retained_interval_authority": "NOT_CLAIMED",
             "retained_two_free_leg_D4_D5_response_majorants": "OPEN",

@@ -3,7 +3,9 @@
 At each of the 48 finite-history seams, the authoritative 96-point retained
 action Hessian is evaluated at a complex step along the normalized signed
 Green correction.  The imaginary part gives the complete directional
-third-action matrix without finite subtraction.
+third-action matrix without finite subtraction.  Both operands are evaluated
+on the selected quarter-step history; the former half-step JAX calibration is
+not a proof input.
 
 The selected branch is then differentiated in its complete eigenbasis:
 

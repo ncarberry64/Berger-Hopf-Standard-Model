@@ -98,8 +98,8 @@ result is then a finite forward history from the certified reset relation to
 the already retained Euler--Dirac stop `Sigma_ED`.  It proves the
 existence-only Gate-7 alternative and makes no universal reachability claim.
 
-The center-side part is now exact for the retained half-action DOP853
-polynomial: rational Bernstein replay proves positivity on all 184 complete
+The center-side part is exact for the selected quarter-action DOP853
+polynomial: rational Bernstein replay proves positivity on all 369 complete
 preterminal segments and strict monotone descent on the terminal segment
 with one bracketed zero.  See
 `n12_c2_stop_dense_descriptor_first_hit.md`.  What remains is not another
@@ -109,9 +109,9 @@ interval-Newton correction.
 
 ## Current executable dependency
 
-The retained path already supplies certified selected-line clusters,
-projector graphs, bordered hard inverses, and complete internal response
-tubes on 3,008/12,032 subcells.  The remaining executable quantities are the
+The selected quarter-step path already supplies certified selected-line
+clusters, projector graphs, bordered hard inverses, and complete internal
+response tubes on the 8,692-cell adaptive cover.  The remaining executable quantities are the
 outward-rounded correlated `Y,Z1,Z2` bounds on the refined center and the
 strict transfer of the certified center first hit and other domain margins.
 Only after those inequalities close may

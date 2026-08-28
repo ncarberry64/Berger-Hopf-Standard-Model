@@ -41,6 +41,16 @@ numerical theorem is localized to three interval adapters: the outward
 minus-defect remainder for `Y`, the common-frame inverse defect for `Z1`, and
 the physical transverse `D2f`/Green Lipschitz contraction for `Z2`.
 
+The selected-history provenance reconciliation pins every operand in this
+matching to the retained quarter-step center.  Earlier half-step
+tangent/Jacobian/residual/first-hit combinations remain historical and are
+not inputs to the current three-adapter theorem.  The exact adaptive DOP853
+spectrum, projector, bordered inverse, internal response, and finite
+first-variation tube are already selected-center certificates; the live work
+is to attach the selected causal radius to that carrier and perform its signed
+correlated second-order contraction, not to replay the legacy mixed-center
+cone.
+
 The map has exactly one current blocker:
 
 `G7_COMPLETE_JOINT_HEAT_ZETA_COVECTOR_AND_PROJECTED_KKT_ROOT_ON_A_CERTIFIED_HISTORY`.

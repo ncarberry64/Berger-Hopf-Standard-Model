@@ -22,14 +22,14 @@ from scipy.linalg import null_space
 
 ROOT = Path(__file__).resolve().parents[1]
 BASE = ROOT / "artifacts" / "flagship_integration"
-CENTER = BASE / "BHSM_N12_C2_STOP_HIGH_ORDER_HALF_STEP_CENTER_RECONNAISSANCE.npz"
-TANGENT = BASE / "BHSM_N12_C2_STOP_HIGH_ORDER_HALF_STEP_PHYSICAL_TANGENT_TRANSFER_RECONNAISSANCE.npz"
+CENTER = BASE / "BHSM_N12_C2_STOP_HIGH_ORDER_QUARTER_STEP_RETAINED_RECONNAISSANCE.npz"
+TANGENT = BASE / "BHSM_N12_C2_STOP_QUARTER_STEP_PHYSICAL_TANGENT_TRANSFER_RECONNAISSANCE.npz"
 GREEN = BASE / "BHSM_N12_C2_STOP_QUARTER_STEP_MATCHED_TANGENT_CORRELATED_DEFECT_GAUSS12_RECONNAISSANCE.npz"
 DIRECTIONAL = BASE / "BHSM_N12_GATE7_EXACT_SIGNED_DIRECTIONAL_FIELD_CURVATURE.json"
 DIRECTIONAL_DATA = DIRECTIONAL.with_suffix(".npz")
 MIXED = BASE / "BHSM_N12_GATE7_EXACT_SIGNED_MIXED_FIELD_CURVATURE.json"
 MIXED_DATA = MIXED.with_suffix(".npz")
-PRIOR = BASE / "BHSM_N12_GATE7_COMMON_FRAME_ANISOTROPIC_Z2_RECONNAISSANCE.json"
+TRANSVERSE = BASE / "BHSM_N12_GATE7_EXACT_SIGNED_FULL_TRANSVERSE_CURVATURE_ADJUDICATION.json"
 OLD_RADIUS = BASE / "BHSM_N12_GATE7_CAUSAL_VECTOR_RADIUS_RECONNAISSANCE.npz"
 RESULT = BASE / "BHSM_N12_GATE7_SIGNED_CAUSAL_VECTOR_BOOTSTRAP.json"
 DATA = RESULT.with_suffix(".npz")
@@ -74,7 +74,7 @@ def _error_radius(
 def build_payload() -> dict[str, Any]:
     inputs = (
         CENTER, TANGENT, GREEN, DIRECTIONAL, DIRECTIONAL_DATA,
-        MIXED, MIXED_DATA, PRIOR, OLD_RADIUS,
+        MIXED, MIXED_DATA, TRANSVERSE, OLD_RADIUS,
     )
     if not all(path.is_file() for path in inputs):
         raise FileNotFoundError("signed causal-vector inputs required")
@@ -102,10 +102,12 @@ def build_payload() -> dict[str, Any]:
             source["physical_time_transverse_mixed_Green_curvature"],
             dtype=float,
         )
-    prior = json.loads(PRIOR.read_text(encoding="utf-8"))
+    transverse_record = json.loads(TRANSVERSE.read_text(encoding="utf-8"))
+    if transverse_record["validation_passed"] is not True:
+        raise RuntimeError("exact transverse center curvature required")
     transverse_bound = np.asarray([
         row["physical_time_transverse_D2f_Frobenius_norm"]
-        for row in prior["rows"]
+        for row in transverse_record["rows"]
     ])
     with np.load(OLD_RADIUS) as source:
         old_radius = np.asarray(source["nonlinear_delta_radius"], dtype=float)
@@ -170,7 +172,7 @@ def build_payload() -> dict[str, Any]:
 
     # Quantify the exact remaining center theorem: any rigorous transverse
     # curvature upper below this uniform inflation of the reconnaissance
-    # profile preserves the already certified nonlinear halo.
+    # profile preserves the earlier reconnaissance comparison halo.
     lower = 0.0
     upper = 1.0
     while upper < 1.0e20:
@@ -209,11 +211,13 @@ def build_payload() -> dict[str, Any]:
         ),
         "exact_signed_directional_vectors_used": directional.shape == (48, 72),
         "exact_signed_mixed_matrices_used": mixed.shape == (48, 72, 72),
+        "exact_signed_transverse_profile_used": transverse_bound.shape == (48,),
+        "selected_quarter_step_center_and_matching_tangent_used": True,
         "strictly_lower_causal_dependency_preserved": bool(
             np.allclose(np.triu(green_norm), 0.0, atol=0.0, rtol=0.0)
         ),
         "signed_sources_and_propagators_combined_before_norms": True,
-        "center_vector_plus_quadratic_error_fits_existing_halo": (
+        "center_vector_plus_quadratic_error_fits_reference_halo": (
             float(np.max(total_radius)) < halo
         ),
         "transverse_curvature_can_inflate_by_more_than_1000_before_halo_failure": (
@@ -231,7 +235,7 @@ def build_payload() -> dict[str, Any]:
             "SIGNED_CAUSAL_CENTER_VECTOR_CLOSES_WITH_LARGE_TRANSVERSE_HEADROOM;_OUTWARD_AUTHORITY_OPEN"
             if structural_passed else "SIGNED_CAUSAL_VECTOR_BOOTSTRAP_INVALID"
         ),
-        "authority": "EXACT_SIGNED_DIRECTIONAL_AND_MIXED_CENTER_MAPS_WITH_RECONNAISSANCE_TRANSVERSE_ERROR",
+        "authority": "EXACT_SIGNED_DIRECTIONAL_MIXED_AND_TRANSVERSE_CENTER_MAPS_ON_SELECTED_QUARTER_STEP_HISTORY",
         "identity": {
             "signed_center": (
                 "v_i=sum_{j<i}dt_j*P_ij*N_j*(0.5*Hd_j*c_j^2+Hm_j*c_j*N_j^T*v_j)"
@@ -246,8 +250,8 @@ def build_payload() -> dict[str, Any]:
             "terminal_signed_center_vector_2_norm": float(vector_norm[-1]),
             "maximum_quadratic_error_radius": float(np.max(error)),
             "maximum_total_center_radius": float(np.max(total_radius)),
-            "existing_certified_nonlinear_halo": halo,
-            "halo_to_center_radius_ratio": float(halo / np.max(total_radius)),
+            "reference_reconnaissance_nonlinear_halo": halo,
+            "reference_halo_to_center_radius_ratio": float(halo / np.max(total_radius)),
             "maximum_uniform_transverse_profile_inflation_before_halo_failure": lower,
             "corresponding_permitted_transverse_curvature_upper": float(
                 lower * np.max(transverse_bound)
@@ -260,7 +264,7 @@ def build_payload() -> dict[str, Any]:
         "validation_passed": False,
         "claim_boundary": {
             "signed_directional_and_mixed_center_vector": "DERIVED",
-            "center_transverse_quadratic_error": "RECONNAISSANCE_BOUND_ONLY",
+            "center_transverse_quadratic_error": "EXACT_ACTION_CENTER_BOUND",
             "outward_curvature_remainder": "OPEN",
             "outward_signed_step_map_and_Green_remainder": "OPEN",
             "causal_interval_vector_radius": "OPEN",

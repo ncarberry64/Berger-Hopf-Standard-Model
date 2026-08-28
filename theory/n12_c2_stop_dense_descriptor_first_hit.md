@@ -7,7 +7,10 @@ the native seventh-degree DOP853 dense polynomial for the augmented state.
 The scalar component is the already retained signed selected descriptor
 `s`; no event function or selector is added.
 
-`scripts/audit_n12_c2_stop_dense_descriptor_first_hit.py` converts every
+The selected-center replay wrapper
+`scripts/replay_n12_gate7_quarter_step_common_frame_operands.py` invokes
+`scripts/audit_n12_c2_stop_dense_descriptor_first_hit.py` with the explicit
+quarter-step center.  The first-hit implementation converts every
 binary64 input coefficient to an exact rational number and converts the
 resulting power polynomial to Bernstein form.  Recursive Bernstein range
 inclusion proves:
@@ -18,11 +21,11 @@ inclusion proves:
 3. exact rational bisection encloses its unique zero between a positive left
    value and a negative right value.
 
-For the retained half-action center there are 184 complete preterminal
+For the selected quarter-action center there are 369 complete preterminal
 segments.  The terminal derivative Bernstein upper bound is
-`-1.3991710865594509e-11`, and the exact rational root fraction is centered
-at `0.6103987818808413`.  Floating evaluation of the dense polynomial had
-placed that fraction only `1.9182094228018606e-14` higher; this is a numerical
+`-7.0741157363388825e-12`, and the exact rational root fraction is centered
+at `0.2205569616025703`.  Floating evaluation of the dense polynomial had
+placed that fraction only `2.6566836038711177e-14` higher; this is a numerical
 evaluation effect and does not change the center history.
 
 This is an exact algebraic statement about the stored numerical center, not

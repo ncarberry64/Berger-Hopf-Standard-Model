@@ -27,7 +27,9 @@ INPUTS = {
     "zeta": BASE / "BHSM_N12_GATE7_DIRECT_ZETA_COEFFICIENT_COTANGENT.json",
     "reset_adjoint": BASE / "BHSM_N12_C2_RESET_LAUNCH_ADJOINT_INTERFACE.json",
     "force": BASE / "BHSM_N12_FINITE_ENDPOINT_ZERO_SOURCE_FORCE_FUNCTIONAL.json",
-    "first_hit": BASE / "BHSM_N12_C2_STOP_DENSE_DESCRIPTOR_FIRST_HIT.json",
+    "first_hit": BASE / "BHSM_N12_C2_STOP_QUARTER_STEP_DENSE_DESCRIPTOR_FIRST_HIT.json",
+    "common_frame": BASE / "BHSM_N12_GATE7_SIGNED_COMMON_FRAME_DATA_MATCHING.json",
+    "selected_center_provenance": BASE / "BHSM_N12_GATE7_SELECTED_CENTER_PROVENANCE_RECONCILIATION.json",
 }
 
 
@@ -108,7 +110,11 @@ def build_payload() -> dict[str, Any]:
         {
             "diagram_slot": "FINITE_FIRST_HIT_AND_DOMAIN_TUBE",
             "required_type": "correlated Y,Z1,Z2 inclusion transferring the center stop and all regular margins",
-            "candidate_BHSM_objects": ["first_hit", "dop_response", "dop_first_variation", "dop_second_variation"],
+            "candidate_BHSM_objects": [
+                "first_hit", "dop_response", "dop_first_variation",
+                "dop_second_variation", "common_frame",
+                "selected_center_provenance",
+            ],
             "dimension_domain_check": "center first hit and finite direct response first variation certified; signed/common-frame Z2 and exact-history transfer not yet certified",
             "provenance_check": "retained DOP853 polynomial and same physical quotient required",
             "match": "ACTUALLY_MISSING_CORRELATED_CERTIFICATION_ADAPTER",
@@ -134,6 +140,15 @@ def build_payload() -> dict[str, Any]:
         "existing_Weyl_cotangent_validated": records["weyl_cotangent"]["validation_passed"] is True,
         "existing_heat_and_zeta_types_validated": records["heat_seed"]["validation_passed"] is True and records["zeta"]["validation_passed"] is True,
         "center_first_hit_only_not_overpromoted": records["first_hit"]["claim_boundary"]["exact_history_first_hit"] == "OPEN_UNTIL_CORRELATED_SHADOWING_AND_MARGIN_TRANSFER",
+        "selected_quarter_center_provenance_reconciled": (
+            records["selected_center_provenance"]["validation_passed"] is True
+            and records["selected_center_provenance"]["claim_boundary"][
+                "same_center_common_frame_operands"
+            ] == "DERIVED"
+        ),
+        "same_center_common_frame_matching_validated": (
+            records["common_frame"]["validation_passed"] is True
+        ),
         "no_new_C2_theory_needed": all(row["match"] != "ACTUALLY_MISSING_NEW_C2_THEORY" for row in slots),
         "exactly_two_live_adapter_outputs": sum(row["match"].startswith("ACTUALLY_MISSING") for row in slots) == 2,
     }

@@ -16,7 +16,7 @@ def test_retained_correction_bordered_response_first_jets_are_scoped():
     assert payload["identity"]["border_dimension"] == 62
     assert payload["identity"]["explicit_inverse_formed"] is False
     assert payload["validation"][
-        "field_first_variation_matches_authoritative_graph_Jacobian"
+        "no_mismatched_graph_reconnaissance_used_as_proof_input"
     ] is True
     assert payload["claim_boundary"][
         "retained_center_bordered_response_first_jet"

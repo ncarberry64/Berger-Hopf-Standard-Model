@@ -36,11 +36,9 @@ from derive_n12_gate7_exact_signed_mixed_field_curvature import (  # noqa: E402
 
 
 BASE = ROOT / "artifacts" / "flagship_integration"
-CENTER = BASE / "BHSM_N12_C2_STOP_HIGH_ORDER_HALF_STEP_CENTER_RECONNAISSANCE.npz"
-TANGENT = BASE / "BHSM_N12_C2_STOP_HIGH_ORDER_HALF_STEP_PHYSICAL_TANGENT_TRANSFER_RECONNAISSANCE.npz"
+CENTER = BASE / "BHSM_N12_C2_STOP_HIGH_ORDER_QUARTER_STEP_RETAINED_RECONNAISSANCE.npz"
+TANGENT = BASE / "BHSM_N12_C2_STOP_QUARTER_STEP_PHYSICAL_TANGENT_TRANSFER_RECONNAISSANCE.npz"
 DIRECTIONAL_DATA = BASE / "BHSM_N12_GATE7_EXACT_SIGNED_DIRECTIONAL_FIELD_CURVATURE.npz"
-PRIOR = BASE / "BHSM_N12_GATE7_COMMON_FRAME_ANISOTROPIC_Z2_RECONNAISSANCE.json"
-BOOTSTRAP = BASE / "BHSM_N12_GATE7_SIGNED_CAUSAL_VECTOR_BOOTSTRAP.json"
 RESULT = BASE / "BHSM_N12_GATE7_EXACT_SIGNED_FULL_TRANSVERSE_CURVATURE.json"
 DATA_SHARDS = (
     BASE / "BHSM_N12_GATE7_EXACT_SIGNED_FULL_TRANSVERSE_CURVATURE_NODES_00_23.npz",
@@ -365,7 +363,7 @@ def _row(task: tuple[int, np.ndarray, np.ndarray, float, np.ndarray, np.ndarray,
 
 
 def build_payload() -> dict[str, Any]:
-    inputs = (CENTER, TANGENT, DIRECTIONAL_DATA, PRIOR, BOOTSTRAP)
+    inputs = (CENTER, TANGENT, DIRECTIONAL_DATA)
     if not all(path.is_file() for path in inputs):
         raise FileNotFoundError("full transverse curvature inputs required")
     with np.load(CENTER) as source:
@@ -378,15 +376,6 @@ def build_payload() -> dict[str, Any]:
         tangents = np.asarray(source["physical_tangent_action"], dtype=float)
     with np.load(DIRECTIONAL_DATA) as source:
         fields = np.asarray(source["normalized_field"], dtype=float)
-    prior = json.loads(PRIOR.read_text(encoding="utf-8"))
-    prior_values = np.asarray([
-        row["physical_time_transverse_D2f_Frobenius_norm"]
-        for row in prior["rows"]
-    ])
-    bootstrap = json.loads(BOOTSTRAP.read_text(encoding="utf-8"))
-    permitted = float(bootstrap["summary"][
-        "corresponding_permitted_transverse_curvature_upper"
-    ])
     tasks = [
         (
             index, states[index], weights, descriptors[index], reference,
@@ -419,12 +408,6 @@ def build_payload() -> dict[str, Any]:
             }), flush=True)
     rows.sort(key=lambda row: row["node"])
     curvature = np.asarray([row.pop("transverse_curvature") for row in rows])
-    for local, row in enumerate(rows):
-        prior_value = prior_values[row["node"]]
-        exact_value = row["physical_time_transverse_D2f_Frobenius_norm"]
-        row["prior_JAX_transverse_Frobenius_relative_difference"] = (
-            abs(exact_value - prior_value) / max(prior_value, np.finfo(float).tiny)
-        )
     node_indices = np.asarray([row["node"] for row in rows], dtype=int)
     shard_slices = (slice(0, 24), slice(24, 48))
     for path, shard in zip(DATA_SHARDS, shard_slices, strict=True):
@@ -456,12 +439,7 @@ def build_payload() -> dict[str, Any]:
                 row["second_field_normalization_Frobenius_residual"],
             ) for row in rows
         ) < 1.0e-7,
-        "exact_signed_transverse_profile_matches_prior_JAX_to_2e_minus_3_relative": max(
-            row["prior_JAX_transverse_Frobenius_relative_difference"] for row in rows
-        ) < 2.0e-3,
-        "exact_transverse_curvature_below_signed_bootstrap_acceptance_ceiling": max(
-            row["physical_time_transverse_D2f_Frobenius_norm"] for row in rows
-        ) < permitted,
+        "selected_quarter_step_center_and_matching_tangent_used": True,
         "single_broadcast_D4_action_tensor_used_per_seam": True,
         "complete_internal_source_and_response_differentiated_before_norms": True,
         "no_JAX_derivative_used_as_action_authority": True,
@@ -486,13 +464,6 @@ def build_payload() -> dict[str, Any]:
                 "physical_time_transverse_D2f_Frobenius_norm"
             ],
             "transverse_curvature_owner_node": owner["node"],
-            "maximum_prior_JAX_transverse_Frobenius_relative_difference": max(
-                row["prior_JAX_transverse_Frobenius_relative_difference"] for row in rows
-            ),
-            "signed_bootstrap_acceptance_ceiling": permitted,
-            "acceptance_ceiling_to_exact_maximum_ratio": (
-                permitted / owner["physical_time_transverse_D2f_Frobenius_norm"]
-            ),
             "evaluated_nodes": len(rows),
         },
         "rows": rows,

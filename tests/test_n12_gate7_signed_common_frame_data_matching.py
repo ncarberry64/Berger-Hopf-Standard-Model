@@ -31,4 +31,7 @@ def test_common_frame_slots_and_missing_interval_adapters() -> None:
     assert slots["LITERAL_Z2"]["match"].startswith("ACTUALLY_MISSING")
     assert slots["FINAL_WHOLE_SYSTEM_TIME_QUOTIENT"]["match"].startswith("ACTUALLY_MISSING")
     assert payload["claim_boundary"]["Gate7"] == "ACTIVE"
+    assert all("HALF_STEP" not in path for path in payload["inputs"])
+    assert any("QUARTER_STEP_GRAPH_JACOBIAN" in path for path in payload["inputs"])
+    assert any("QUARTER_STEP_DENSE_DESCRIPTOR_FIRST_HIT" in path for path in payload["inputs"])
     assert payload["FULL_BHSM_COMPLETE"] is False

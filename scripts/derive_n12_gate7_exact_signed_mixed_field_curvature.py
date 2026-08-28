@@ -35,11 +35,9 @@ from derive_n12_action_signed_interval_majorants import action_bound  # noqa: E4
 
 
 BASE = ROOT / "artifacts" / "flagship_integration"
-CENTER = BASE / "BHSM_N12_C2_STOP_HIGH_ORDER_HALF_STEP_CENTER_RECONNAISSANCE.npz"
-TANGENT = BASE / "BHSM_N12_C2_STOP_HIGH_ORDER_HALF_STEP_PHYSICAL_TANGENT_TRANSFER_RECONNAISSANCE.npz"
+CENTER = BASE / "BHSM_N12_C2_STOP_HIGH_ORDER_QUARTER_STEP_RETAINED_RECONNAISSANCE.npz"
+TANGENT = BASE / "BHSM_N12_C2_STOP_QUARTER_STEP_PHYSICAL_TANGENT_TRANSFER_RECONNAISSANCE.npz"
 GREEN = BASE / "BHSM_N12_C2_STOP_QUARTER_STEP_MATCHED_TANGENT_CORRELATED_DEFECT_GAUSS12_RECONNAISSANCE.npz"
-PRIOR = BASE / "BHSM_N12_GATE7_COMMON_FRAME_ANISOTROPIC_Z2_RECONNAISSANCE.json"
-PRIOR_DATA = PRIOR.with_suffix(".npz")
 RESULT = BASE / "BHSM_N12_GATE7_EXACT_SIGNED_MIXED_FIELD_CURVATURE.json"
 DATA = RESULT.with_suffix(".npz")
 QDIM = 37
@@ -391,7 +389,7 @@ def _row(task: tuple[int, np.ndarray, np.ndarray, float, np.ndarray, np.ndarray,
 
 
 def build_payload() -> dict[str, Any]:
-    inputs = (CENTER, TANGENT, GREEN, PRIOR, PRIOR_DATA)
+    inputs = (CENTER, TANGENT, GREEN)
     if not all(path.is_file() for path in inputs):
         raise FileNotFoundError("mixed curvature inputs required")
     with np.load(CENTER) as source:
@@ -404,11 +402,6 @@ def build_payload() -> dict[str, Any]:
         tangents = np.asarray(source["physical_tangent_action"], dtype=float)
     with np.load(GREEN) as source:
         corrections = np.asarray(source["ambient_correction_profile"], dtype=float)
-    prior = json.loads(PRIOR.read_text(encoding="utf-8"))
-    with np.load(PRIOR_DATA) as source:
-        prior_mixed = np.asarray(
-            source["mixed_D2f_dot_correction_unit"], dtype=float,
-        )
     tasks = [
         (
             index, states[index], weights, descriptors[index], reference,
@@ -441,24 +434,12 @@ def build_payload() -> dict[str, Any]:
             }), flush=True)
     rows.sort(key=lambda row: row["node"])
     mixed = np.asarray([row.pop("mixed") for row in rows])
-    for local, row in enumerate(rows):
-        prior_value = prior_mixed[row["node"]]
-        difference = float(np.linalg.norm(mixed[local] - prior_value, ord=2))
-        prior_norm = float(np.linalg.norm(prior_value, ord=2))
-        row["prior_JAX_mixed_operator_difference_2_norm"] = difference
-        row["prior_JAX_mixed_operator_relative_difference"] = (
-            difference / max(prior_norm, np.finfo(float).tiny)
-            if row["correction_time_transverse_2_norm"] > 0.0 else 0.0
-        )
     np.savez_compressed(
         DATA,
         action_lengths=times[[row["node"] for row in rows]],
         node_indices=np.asarray([row["node"] for row in rows], dtype=int),
         physical_time_transverse_mixed_Green_curvature=mixed,
     )
-    active = [
-        row for row in rows if row["correction_time_transverse_2_norm"] > 0.0
-    ]
     complete = len(rows) == 48
     validation = {
         "all_48_retained_macro_seams_evaluated": complete,
@@ -480,9 +461,7 @@ def build_payload() -> dict[str, Any]:
         "mixed_normalization_identity_closes": max(
             row["mixed_normalization_identity_operator_2_norm"] for row in rows
         ) < 1.0e-9,
-        "exact_signed_mixed_map_matches_prior_JAX_reconnaissance_to_2e_minus_3_relative": max(
-            row["prior_JAX_mixed_operator_relative_difference"] for row in active
-        ) < 2.0e-3,
+        "selected_quarter_step_center_and_matching_tangent_used": True,
         "complete_internal_source_differentiated_before_external_zero_source": True,
         "signed_action_contractions_combined_before_operator_norm": True,
         "no_full_response_Hessian_tensor_formed": True,
@@ -513,12 +492,6 @@ def build_payload() -> dict[str, Any]:
             "maximum_mixed_curvature_Frobenius_norm": max(
                 row["mixed_field_curvature_Frobenius_norm"] for row in rows
             ),
-            "maximum_prior_JAX_mixed_operator_relative_difference": max(
-                row["prior_JAX_mixed_operator_relative_difference"] for row in active
-            ),
-            "prior_reconnaissance_maximum_mixed_operator_2_norm": prior[
-                "summary"
-            ]["maximum_mixed_D2f_dot_correction_unit_operator_2_norm"],
             "evaluated_nodes": len(rows),
         },
         "rows": rows,

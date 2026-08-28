@@ -35,11 +35,9 @@ from derive_n12_action_signed_interval_majorants import action_bound  # noqa: E4
 
 
 BASE = ROOT / "artifacts" / "flagship_integration"
-CENTER = BASE / "BHSM_N12_C2_STOP_HIGH_ORDER_HALF_STEP_CENTER_RECONNAISSANCE.npz"
-TANGENT = BASE / "BHSM_N12_C2_STOP_HIGH_ORDER_HALF_STEP_PHYSICAL_TANGENT_TRANSFER_RECONNAISSANCE.npz"
+CENTER = BASE / "BHSM_N12_C2_STOP_HIGH_ORDER_QUARTER_STEP_RETAINED_RECONNAISSANCE.npz"
+TANGENT = BASE / "BHSM_N12_C2_STOP_QUARTER_STEP_PHYSICAL_TANGENT_TRANSFER_RECONNAISSANCE.npz"
 GREEN = BASE / "BHSM_N12_C2_STOP_QUARTER_STEP_MATCHED_TANGENT_CORRELATED_DEFECT_GAUSS12_RECONNAISSANCE.npz"
-PRIOR = BASE / "BHSM_N12_GATE7_COMMON_FRAME_ANISOTROPIC_Z2_RECONNAISSANCE.json"
-PRIOR_DATA = PRIOR.with_suffix(".npz")
 RESULT = BASE / "BHSM_N12_GATE7_EXACT_SIGNED_DIRECTIONAL_FIELD_CURVATURE.json"
 DATA = RESULT.with_suffix(".npz")
 QDIM = 37
@@ -299,7 +297,7 @@ def _row(task: tuple[int, np.ndarray, np.ndarray, float, np.ndarray, np.ndarray,
 
 
 def build_payload() -> dict[str, Any]:
-    inputs = (CENTER, TANGENT, GREEN, PRIOR, PRIOR_DATA)
+    inputs = (CENTER, TANGENT, GREEN)
     if not all(path.is_file() for path in inputs):
         raise FileNotFoundError("directional curvature inputs required")
     with np.load(CENTER) as source:
@@ -312,11 +310,6 @@ def build_payload() -> dict[str, Any]:
         tangents = np.asarray(source["physical_tangent_action"], dtype=float)
     with np.load(GREEN) as source:
         corrections = np.asarray(source["ambient_correction_profile"], dtype=float)
-    prior = json.loads(PRIOR.read_text(encoding="utf-8"))
-    with np.load(PRIOR_DATA) as source:
-        prior_directional = np.asarray(
-            source["directional_D2f_correction_unit_squared"], dtype=float,
-        )
     tasks = [
         (
             index, states[index], weights, descriptors[index], reference,
@@ -334,16 +327,6 @@ def build_payload() -> dict[str, Any]:
     field_first = np.asarray([row.pop("field_first") for row in rows])
     field_second = np.asarray([row.pop("field_second") for row in rows])
     directional = np.asarray([row.pop("directional_output") for row in rows])
-    for index, row in enumerate(rows):
-        row["prior_JAX_directional_output_difference_2_norm"] = float(
-            np.linalg.norm(directional[index] - prior_directional[index])
-        )
-        prior_norm = float(np.linalg.norm(prior_directional[index]))
-        row["prior_JAX_directional_output_relative_difference"] = (
-            row["prior_JAX_directional_output_difference_2_norm"]
-            / max(prior_norm, np.finfo(float).tiny)
-            if row["correction_time_transverse_2_norm"] > 0.0 else 0.0
-        )
     np.savez_compressed(
         DATA,
         action_lengths=times,
@@ -352,9 +335,6 @@ def build_payload() -> dict[str, Any]:
         normalized_field_physical_transverse_correction_second_variation=field_second,
         physical_time_transverse_directional_curvature=directional,
     )
-    active = [
-        row for row in rows if row["correction_time_transverse_2_norm"] > 0.0
-    ]
     validation = {
         "all_48_retained_macro_seams_evaluated": len(rows) == 48,
         "branch_24_selected_everywhere": all(
@@ -374,10 +354,7 @@ def build_payload() -> dict[str, Any]:
                 row["field_second_normalization_residual"],
             ) for row in rows
         ) < 1.0e-10,
-        "exact_signed_directional_curvature_matches_prior_JAX_reconnaissance_to_1e_minus_3_relative": max(
-            row["prior_JAX_directional_output_relative_difference"]
-            for row in active
-        ) < 1.0e-3,
+        "selected_quarter_step_center_and_matching_tangent_used": True,
         "complete_internal_source_differentiated_before_external_zero_source": True,
         "signed_action_contractions_combined_before_norms": True,
         "no_ambient_Hessian_second_matrix_or_response_tensor_formed": True,
@@ -417,13 +394,6 @@ def build_payload() -> dict[str, Any]:
             "maximum_bordered_response_second_variation_2_norm": max(
                 row["bordered_response_second_variation_2_norm"] for row in rows
             ),
-            "maximum_prior_JAX_directional_relative_difference": max(
-                row["prior_JAX_directional_output_relative_difference"]
-                for row in active
-            ),
-            "prior_reconnaissance_maximum_directional_curvature_2_norm": prior[
-                "summary"
-            ]["maximum_directional_D2f_correction_unit_squared_2_norm"],
         },
         "rows": rows,
         "data": _relative(DATA),

@@ -75,7 +75,7 @@ def build_payload() -> dict[str, Any]:
         error[endpoint] = mixed_error[endpoint] + quadratic[endpoint]
     total = vector_norm + error
     halo = float(records[BOOTSTRAP]["summary"][
-        "existing_certified_nonlinear_halo"
+        "reference_reconnaissance_nonlinear_halo"
     ])
     np.savez_compressed(
         DATA,
@@ -94,7 +94,7 @@ def build_payload() -> dict[str, Any]:
             np.allclose(np.triu(green_norm), 0.0, atol=0.0, rtol=0.0)
         ),
         "all_exact_center_radii_finite": bool(np.all(np.isfinite(total))),
-        "exact_center_vector_radius_fits_existing_certified_halo": (
+        "exact_center_vector_radius_fits_reference_reconnaissance_halo": (
             float(np.max(total)) < halo
         ),
         "no_JAX_curvature_used_as_center_authority": True,
@@ -106,7 +106,7 @@ def build_payload() -> dict[str, Any]:
     return {
         "artifact": "BHSM_N12_GATE7_EXACT_CENTER_CAUSAL_VECTOR_CERTIFICATE",
         "status": (
-            "EXACT_ACTION_CENTER_CAUSAL_VECTOR_RADIUS_CERTIFIED_INSIDE_EXISTING_HALO"
+            "EXACT_ACTION_CENTER_CAUSAL_VECTOR_RADIUS_DERIVED_ON_SELECTED_HISTORY"
             if passed else "EXACT_CENTER_CAUSAL_VECTOR_CERTIFICATE_INVALID"
         ),
         "summary": {
@@ -117,8 +117,8 @@ def build_payload() -> dict[str, Any]:
             "maximum_exact_mixed_error_radius": float(np.max(mixed_error)),
             "maximum_exact_total_center_radius": float(np.max(total)),
             "exact_total_radius_owner_node": owner,
-            "existing_certified_nonlinear_halo": halo,
-            "halo_to_exact_center_radius_ratio": float(halo / np.max(total)),
+            "reference_reconnaissance_nonlinear_halo": halo,
+            "reference_halo_to_exact_center_radius_ratio": float(halo / np.max(total)),
             "terminal_exact_total_center_radius": float(total[-1]),
         },
         "data": _relative(DATA),
@@ -127,7 +127,7 @@ def build_payload() -> dict[str, Any]:
         "validation_passed": passed,
         "claim_boundary": {
             "exact_action_center_causal_vector_radius": (
-                "CERTIFIED" if passed else "OPEN"
+                "DERIVED_CENTER_ONLY" if passed else "OPEN"
             ),
             "outward_curvature_remainder": "OPEN",
             "outward_signed_step_map_and_Green_remainder": "OPEN",

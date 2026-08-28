@@ -13,11 +13,12 @@ complex-step directional third-action matrix, and branchwise selected-line
 first jet.  The bordered systems are solved directly; no explicit inverse and
 no kinetic, Dirac, or history inverse is formed.
 
-The resulting normalized graph-field derivative is checked against the
-stored authoritative graph Jacobian in the same action direction.  This
-closes the center response first jet only.  The second bordered derivative
-and the outward `D4`--`D5` remainder remain necessary for the interval causal
-vector radius.
+The resulting normalized graph-field derivative is checked by replaying the
+differentiated bordered and normalization identities on the selected
+quarter-step center.  The former half-step graph-Jacobian profile is not used
+as a cross-center validator.  This closes the center response first jet only.
+The second bordered derivative and the outward `D4`--`D5` remainder remain
+necessary for the interval causal vector radius.
 
 Because the retained border is strongly conditioned, its solve check is the
 normalized backward error

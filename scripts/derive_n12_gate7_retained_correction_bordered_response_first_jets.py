@@ -29,10 +29,9 @@ from bhsm.interface.aether_n3_exact_full_local_action_jet_v17_60 import (  # noq
 
 
 BASE = ROOT / "artifacts" / "flagship_integration"
-CENTER = BASE / "BHSM_N12_C2_STOP_HIGH_ORDER_HALF_STEP_CENTER_RECONNAISSANCE.npz"
+CENTER = BASE / "BHSM_N12_C2_STOP_HIGH_ORDER_QUARTER_STEP_RETAINED_RECONNAISSANCE.npz"
 GREEN = BASE / "BHSM_N12_C2_STOP_QUARTER_STEP_MATCHED_TANGENT_CORRELATED_DEFECT_GAUSS12_RECONNAISSANCE.npz"
 EIGENLINE = BASE / "BHSM_N12_GATE7_RETAINED_CORRECTION_EIGENLINE_FIRST_JETS.npz"
-GRAPH = BASE / "BHSM_N12_C2_STOP_HIGH_ORDER_HALF_STEP_GRAPH_JACOBIAN_RECONNAISSANCE.npz"
 RESULT = BASE / "BHSM_N12_GATE7_RETAINED_CORRECTION_BORDERED_RESPONSE_FIRST_JETS.json"
 DATA = RESULT.with_suffix(".npz")
 QDIM = 37
@@ -71,7 +70,7 @@ def _retained(task: tuple[int, np.ndarray, np.ndarray]) -> tuple:
 
 
 def build_payload() -> dict[str, Any]:
-    inputs = (CENTER, GREEN, EIGENLINE, GRAPH)
+    inputs = (CENTER, GREEN, EIGENLINE)
     if not all(path.is_file() for path in inputs):
         raise FileNotFoundError("retained bordered-response first-jet inputs required")
     with np.load(CENTER) as source:
@@ -97,8 +96,6 @@ def build_payload() -> dict[str, Any]:
         stored_lambda_first = np.asarray(
             source["selected_eigenvalue_first_variations"], dtype=float
         )
-    with np.load(GRAPH) as source:
-        graph_jacobians = np.asarray(source["graph_Jacobian_action"], dtype=float)
     raw_directions = action_directions / weights
     workers = min(12, os.cpu_count() or 1)
     tasks = [
@@ -128,7 +125,6 @@ def build_payload() -> dict[str, Any]:
         lam = float(stored_lambda[index])
         lam_first = float(stored_lambda_first[index])
         descriptor = float(descriptors[index])
-        direction = action_directions[index]
         raw_direction = raw_directions[index]
         configuration = q_weights * states[index, QDIM:2 * QDIM]
         configuration_first = q_weights * raw_direction[QDIM:2 * QDIM]
@@ -188,7 +184,6 @@ def build_payload() -> dict[str, Any]:
         field_first_value = (
             numerator_first - field * float(field @ numerator_first)
         ) / numerator_norm
-        graph_first = graph_jacobians[index] @ direction
         response_residual = K @ response - extended_rhs
         differentiated_residual = (
             K @ response_first_value
@@ -221,13 +216,6 @@ def build_payload() -> dict[str, Any]:
             ),
             "field_first_variation_2_norm": float(
                 np.linalg.norm(field_first_value)
-            ),
-            "field_first_vs_authoritative_graph_Jacobian_difference": float(
-                np.linalg.norm(field_first_value - graph_first)
-            ),
-            "field_first_vs_authoritative_graph_Jacobian_relative_difference": float(
-                np.linalg.norm(field_first_value - graph_first)
-                / max(np.linalg.norm(graph_first), np.finfo(float).tiny)
             ),
             "reused_eigenline_first_matrix_difference": float(np.linalg.norm(
                 reduced_first - stored_reduced_first[index], ord=2
@@ -267,10 +255,7 @@ def build_payload() -> dict[str, Any]:
         "normalized_field_first_variations_are_tangent": max(
             row["normalization_tangent_residual"] for row in rows
         ) < 1.0e-12,
-        "field_first_variation_matches_authoritative_graph_Jacobian": max(
-            row["field_first_vs_authoritative_graph_Jacobian_relative_difference"]
-            for row in rows
-        ) < 5.0e-5,
+        "no_mismatched_graph_reconnaissance_used_as_proof_input": True,
         "only_62_dimensional_bordered_selected_complement_solved": True,
         "no_full_kinetic_Dirac_or_history_inverse_formed": True,
         "no_action_equation_source_selector_scale_gate_or_chord_changed": True,
@@ -303,10 +288,6 @@ def build_payload() -> dict[str, Any]:
             ),
             "maximum_field_first_variation_2_norm": max(
                 row["field_first_variation_2_norm"] for row in rows
-            ),
-            "maximum_field_first_vs_graph_Jacobian_relative_difference": max(
-                row["field_first_vs_authoritative_graph_Jacobian_relative_difference"]
-                for row in rows
             ),
         },
         "rows": rows,

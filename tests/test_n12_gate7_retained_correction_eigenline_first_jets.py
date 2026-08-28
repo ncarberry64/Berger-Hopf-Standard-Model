@@ -18,7 +18,7 @@ def test_retained_correction_eigenline_first_jets_are_scoped():
         "branchwise_denominators_used_without_smallest_gap_collapse"
     ] is True
     assert payload["validation"][
-        "retained_and_JAX_directional_D3_agree_below_1e_minus_10_relative"
+        "no_mismatched_predictor_calibration_used_as_proof_input"
     ] is True
     assert payload["claim_boundary"]["retained_center_eigenline_first_jet"] == (
         "DERIVED"

@@ -11,6 +11,7 @@ from __future__ import annotations
 
 from concurrent.futures import ProcessPoolExecutor
 import argparse
+import hashlib
 import json
 import math
 import os
@@ -41,6 +42,13 @@ RESULT = Path(os.environ.get(
 DATA_RESULT = RESULT.with_suffix(".npz")
 QDIM = 37
 COMPLEX_STEP = 1.0e-20
+
+
+def _sha256(path: Path) -> str:
+    payload = path.read_bytes()
+    if path.suffix.lower() in {".json", ".md", ".py"}:
+        payload = payload.replace(b"\r\n", b"\n")
+    return hashlib.sha256(payload).hexdigest().upper()
 
 
 def _rhs_from_jet(jet: object, state: np.ndarray, weights: np.ndarray) -> np.ndarray:
@@ -244,6 +252,7 @@ def main() -> None:
     payload = {
         "artifact": "BHSM_N12_C2_STOP_GRAPH_JACOBIAN_PROFILE_RECONNAISSANCE",
         "authority": "CENTER_RECONNAISSANCE_ONLY_NOT_AN_INTERVAL_CONE_THEOREM",
+        "center": CENTER_DATA.relative_to(ROOT).as_posix(),
         "rows": rows,
         "summary": {
             "maximum_transverse_graph_Jacobian_numerical_abscissa": owner[
@@ -264,6 +273,13 @@ def main() -> None:
             ),
         },
         "data": DATA_RESULT.relative_to(ROOT).as_posix(),
+        "data_SHA256": _sha256(DATA_RESULT),
+        "inputs": {
+            CENTER_DATA.relative_to(ROOT).as_posix(): _sha256(CENTER_DATA),
+            "src/bhsm/interface/aether_n3_exact_full_local_action_jet_v17_60.py": _sha256(
+                ROOT / "src/bhsm/interface/aether_n3_exact_full_local_action_jet_v17_60.py"
+            ),
+        },
         "validation_passed": False,
     }
     RESULT.write_text(

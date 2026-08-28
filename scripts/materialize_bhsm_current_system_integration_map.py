@@ -34,6 +34,7 @@ PATHS = {
     "dop_first_variation": "artifacts/flagship_integration/BHSM_N12_C2_STOP_DOP853_ADAPTIVE_BORDERED_RESPONSE_FIRST_VARIATION.json",
     "dop_second_variation": "artifacts/flagship_integration/BHSM_N12_C2_STOP_DOP853_BORDERED_RESPONSE_SECOND_VARIATION.json",
     "common_frame_matching": "artifacts/flagship_integration/BHSM_N12_GATE7_SIGNED_COMMON_FRAME_DATA_MATCHING.json",
+    "selected_center_provenance": "artifacts/flagship_integration/BHSM_N12_GATE7_SELECTED_CENTER_PROVENANCE_RECONCILIATION.json",
     "normalized_field_identity": "artifacts/flagship_integration/BHSM_N12_GATE7_NORMALIZED_FIELD_COMMON_FRAME_IDENTITY.json",
     "dop_domain": "artifacts/flagship_integration/BHSM_N12_DOP853_AE2_BIRTH_DOMAIN_RECONCILIATION.json",
     "one_seam": "artifacts/flagship_integration/BHSM_N12_GATE7_AE2_ONE_SEAM_DIRECT_DESCRIPTOR.json",
@@ -106,6 +107,7 @@ def build_payload() -> dict[str, Any]:
     first_variation = records["dop_first_variation"]
     second_variation = records["dop_second_variation"]
     common_frame_matching = records["common_frame_matching"]
+    selected_center_provenance = records["selected_center_provenance"]
     normalized_field_identity = records["normalized_field_identity"]
     domain_reconciliation = records["dop_domain"]
     one_seam = records["one_seam"]
@@ -172,7 +174,7 @@ def build_payload() -> dict[str, Any]:
             "C2_DOP853_RESPONSE",
             "98-state C2 path with 61-dimensional reduced Hessian, branch 24, and 62-dimensional border",
             "finite Euclidean physical tangent quotient; auxiliary geometry, not the temporal birth domain",
-            ["local_action", "base_family"],
+            ["local_action", "base_family", "selected_center_provenance"],
             ["dop_response", "dop_first_variation", "dop_second_variation", "common_frame_matching", "normalized_field_identity", "dop_domain"],
             "8692_CELL_BORDERED_RESPONSE_AND_FIRST_VARIATION_CERTIFIED;_SCALAR_SECOND_VARIATION_WRAPPING_REJECTED;_COMMON_FRAME_IDENTITY_DERIVED;_INTERVAL_MAJORANTS_IN_PROGRESS",
             "current adaptive DOP853 certificate",
@@ -296,6 +298,18 @@ def build_payload() -> dict[str, Any]:
         "finite_direct_first_variation_tube_is_certified": second_variation["first_variation_validation_passed"] is True,
         "scalar_second_variation_route_is_rejected_coverwide": second_variation["second_variation_validation_passed"] is False and second_variation["summary"]["scalar_denominator_owner_cells"] == 8692,
         "common_frame_data_slots_are_exhaustively_matched": common_frame_matching["validation_passed"] is True and len(common_frame_matching["actual_missing_interval_adapters"]) == 3,
+        "selected_quarter_center_provenance_is_reconciled": (
+            selected_center_provenance["validation_passed"] is True
+            and selected_center_provenance["claim_boundary"][
+                "same_center_common_frame_operands"
+            ] == "DERIVED"
+            and selected_center_provenance["claim_boundary"][
+                "same_center_DOP853_spectrum_projector_inverse_response"
+            ] == "CERTIFIED"
+            and selected_center_provenance["claim_boundary"][
+                "same_center_DOP853_response_second_variation"
+            ] == "OPEN_SIGNED_CORRELATION_REQUIRED"
+        ),
         "normalized_field_common_frame_identity_is_derived": normalized_field_identity["validation_passed"] is True,
         "domain_no_go_is_scoped_correctly": domain_reconciliation["phase_B_outcome"] == "B1_NO_GO_SUPERSEDED_FOR_BHSM_AE_2_0_0_ONLY",
         "one_seam_AE2_composition_already_exists": one_seam["validation_passed"] is True,

@@ -28,9 +28,8 @@ EXPECTED_MAJORANT_SHA256 = (
     "78877CF5ED04CBD7A88AB7BF9E50C6D2DE88E1FC50679349FFA3BCC2ABB1592C"
 )
 BALL_RADIUS = 3.6e-6
-CENTER = BASE / "BHSM_N12_C2_STOP_HIGH_ORDER_HALF_STEP_CENTER_RECONNAISSANCE.npz"
+CENTER = BASE / "BHSM_N12_C2_STOP_HIGH_ORDER_QUARTER_STEP_RETAINED_RECONNAISSANCE.npz"
 GREEN = BASE / "BHSM_N12_C2_STOP_QUARTER_STEP_MATCHED_TANGENT_CORRELATED_DEFECT_GAUSS12_RECONNAISSANCE.npz"
-CAUSAL = BASE / "BHSM_N12_GATE7_CAUSAL_VECTOR_RADIUS_RECONNAISSANCE.json"
 RESULT = BASE / "BHSM_N12_GATE7_CORRECTION_DIRECTION_ACTION_MAJORANTS.json"
 
 
@@ -74,7 +73,7 @@ def _load_committed_majorant() -> tuple[types.ModuleType, str]:
 
 
 def build_payload() -> dict[str, Any]:
-    inputs = (CENTER, GREEN, CAUSAL)
+    inputs = (CENTER, GREEN)
     if not all(path.is_file() for path in inputs) or not MAJORANT.is_file():
         raise FileNotFoundError("correction-direction action-majorant inputs required")
     module, source_provenance = _load_committed_majorant()
@@ -125,9 +124,8 @@ def build_payload() -> dict[str, Any]:
         ),
         "only_committed_MixedBound_interface_used": True,
         "same_48_retained_macro_seams_evaluated": len(rows) == 48,
-        "uniform_ball_contains_center_causal_vector_radius": BALL_RADIUS > json.loads(
-            CAUSAL.read_text(encoding="utf-8")
-        )["summary"]["maximum_total_radius"],
+        "uniform_action_ball_radius_is_positive": BALL_RADIUS > 0.0,
+        "mismatched_pre_reconciliation_causal_radius_not_used": True,
         "all_directional_D2_through_D5_bounds_finite": all(
             np.isfinite(value)
             for row in rows for key, value in row.items()

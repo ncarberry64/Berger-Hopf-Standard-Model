@@ -24,8 +24,8 @@ ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT / "src"))
 
 BASE = ROOT / "artifacts" / "flagship_integration"
-CENTER = BASE / "BHSM_N12_C2_STOP_HIGH_ORDER_HALF_STEP_CENTER_RECONNAISSANCE.npz"
-TANGENT = BASE / "BHSM_N12_C2_STOP_HIGH_ORDER_HALF_STEP_PHYSICAL_TANGENT_TRANSFER_RECONNAISSANCE.npz"
+CENTER = BASE / "BHSM_N12_C2_STOP_HIGH_ORDER_QUARTER_STEP_RETAINED_RECONNAISSANCE.npz"
+TANGENT = BASE / "BHSM_N12_C2_STOP_QUARTER_STEP_PHYSICAL_TANGENT_TRANSFER_RECONNAISSANCE.npz"
 GREEN = BASE / "BHSM_N12_C2_STOP_QUARTER_STEP_MATCHED_TANGENT_CORRELATED_DEFECT_GAUSS12_RECONNAISSANCE.npz"
 DIRECTIONAL = BASE / "BHSM_N12_GATE7_EXACT_SIGNED_DIRECTIONAL_FIELD_CURVATURE.npz"
 MIXED = BASE / "BHSM_N12_GATE7_EXACT_SIGNED_MIXED_FIELD_CURVATURE.npz"
@@ -101,7 +101,7 @@ def build_payload() -> dict[str, Any]:
         row["physical_time_transverse_D2f_Frobenius_norm"]
         for row in transverse_record["rows"]
     ], dtype=float)
-    halo = float(signed_record["summary"]["existing_certified_nonlinear_halo"])
+    halo = float(signed_record["summary"]["reference_reconnaissance_nonlinear_halo"])
     dt = np.diff(times)
     frames = []
     correction_norm = []
@@ -259,7 +259,7 @@ def build_payload() -> dict[str, Any]:
             "closure": "max_i(||v_i||+e_i)<existing_nonlinear_halo",
         },
         "summary": {
-            "existing_nonlinear_halo": halo,
+            "reference_reconnaissance_nonlinear_halo": halo,
             "maximum_signed_center_vector_2_norm": float(np.max(vector_norm)),
             "maximum_baseline_total_radius": float(np.max(vector_norm + baseline_error)),
             "thresholds": thresholds,
@@ -283,7 +283,7 @@ def build_payload() -> dict[str, Any]:
             "FULL_BHSM_COMPLETE": False,
         },
         "exact_next_dependency": (
-            "EVALUATE_ONLY_THE_RECENTERED_CONE_PROPAGATOR_DEFECT_AND_"
+            "EVALUATE_ONLY_THE_SELECTED_DOP853_CELL_PROPAGATOR_DEFECT_AND_"
             "DIRECTIONAL_MIXED_TRANSVERSE_DRIFTS_AGAINST_THE_REPORTED_"
             "SIGNED_BUDGETS;_DO_NOT_BUILD_A_GLOBAL_D3F_TENSOR"
         ),

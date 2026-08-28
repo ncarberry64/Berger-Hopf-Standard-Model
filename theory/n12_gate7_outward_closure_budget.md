@@ -18,7 +18,10 @@ remains fixed.
 The generated JSON reports the independent limiting value of every
 perturbation and the common balanced limit when all four vary together.
 These are theorem-owned proof tolerances, not physical parameters or fitted
-thresholds.  No outward value is promoted by this calculation.  Its purpose
-is to make the remaining interval adapter minimal: certify the recentered
-cone quantities against these tolerances without constructing a global
+thresholds.  The outer comparison radius is explicitly the earlier
+reconnaissance halo, not interval authority.  No outward value is promoted
+by this calculation.  Its purpose
+is to make the remaining interval adapter minimal: certify the already
+selected-center DOP853 cell quantities against these tolerances without
+rebuilding the legacy mixed-center recentered cone or constructing a global
 four-leg field tensor.

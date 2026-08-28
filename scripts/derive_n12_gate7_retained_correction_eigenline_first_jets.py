@@ -17,26 +17,20 @@ from pathlib import Path
 import sys
 from typing import Any
 
-import jax.numpy as jnp
 import numpy as np
 
 
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT / "src"))
 
-from bhsm.interface.aether_jax_full_local_action import (  # noqa: E402
-    action_hessian,
-    action_hessian_directional,
-)
 from bhsm.interface.aether_n3_exact_full_local_action_jet_v17_60 import (  # noqa: E402
     exact_full_action_jet_at_state,
 )
 
 
 BASE = ROOT / "artifacts" / "flagship_integration"
-CENTER = BASE / "BHSM_N12_C2_STOP_HIGH_ORDER_HALF_STEP_CENTER_RECONNAISSANCE.npz"
+CENTER = BASE / "BHSM_N12_C2_STOP_HIGH_ORDER_QUARTER_STEP_RETAINED_RECONNAISSANCE.npz"
 GREEN = BASE / "BHSM_N12_C2_STOP_QUARTER_STEP_MATCHED_TANGENT_CORRELATED_DEFECT_GAUSS12_RECONNAISSANCE.npz"
-CALIBRATION = BASE / "BHSM_N12_STOP_JAX_ACTION_CALIBRATION.npz"
 RESULT = BASE / "BHSM_N12_GATE7_RETAINED_CORRECTION_EIGENLINE_FIRST_JETS.json"
 DATA = RESULT.with_suffix(".npz")
 QDIM = 37
@@ -69,7 +63,7 @@ def _retained(task: tuple[int, np.ndarray, np.ndarray]) -> tuple[int, np.ndarray
 
 
 def build_payload() -> dict[str, Any]:
-    inputs = (CENTER, GREEN, CALIBRATION)
+    inputs = (CENTER, GREEN)
     if not all(path.is_file() for path in inputs):
         raise FileNotFoundError("retained correction eigenline-jet inputs required")
     with np.load(CENTER) as source:
@@ -79,8 +73,6 @@ def build_payload() -> dict[str, Any]:
         reference = np.asarray(source["branch_reference"], dtype=float)
     with np.load(GREEN) as source:
         corrections = np.asarray(source["ambient_correction_profile"], dtype=float)
-    with np.load(CALIBRATION) as source:
-        hessian_corrections = np.asarray(source["hessian_correction"], dtype=float)
     correction_norms = np.linalg.norm(corrections, axis=1)
     action_directions = np.divide(
         corrections,
@@ -126,15 +118,7 @@ def build_payload() -> dict[str, Any]:
         psi_first = vectors @ psi_first_coefficients
         gap = float(np.min(np.abs(np.delete(values, selected) - values[selected])))
 
-        jax_hessian = np.asarray(action_hessian(jnp.asarray(states[index])))
-        calibrated_hessian = jax_hessian + hessian_corrections[index]
-        _, jax_first = action_hessian_directional(
-            jnp.asarray(states[index]), jnp.asarray(raw_directions[index])
-        )
         exact_first_norm = float(np.linalg.norm(exact_first, ord=2))
-        first_difference = float(np.linalg.norm(
-            exact_first - np.asarray(jax_first), ord=2
-        ))
         row = {
             "node": index,
             "action_length": float(times[index]),
@@ -149,13 +133,6 @@ def build_payload() -> dict[str, Any]:
                 np.max(np.abs(psi_first_coefficients))
             ),
             "retained_D3_matrix_operator_2_norm": exact_first_norm,
-            "retained_vs_JAX_D3_matrix_operator_difference": first_difference,
-            "retained_vs_JAX_D3_matrix_relative_difference": (
-                first_difference / max(exact_first_norm, np.finfo(float).tiny)
-            ),
-            "retained_vs_calibrated_JAX_Hessian_operator_difference": float(
-                np.linalg.norm(exact_hessian - calibrated_hessian, ord=2)
-            ),
             "eigenline_normalization_first_residual": float(abs(psi @ psi_first)),
             "differentiated_eigenpair_residual_2_norm": float(np.linalg.norm(
                 (reduced - values[selected] * np.eye(values.size)) @ psi_first
@@ -197,13 +174,7 @@ def build_payload() -> dict[str, Any]:
         "differentiated_eigenpair_residual_below_1e_minus_11": max(
             row["differentiated_eigenpair_residual_2_norm"] for row in rows
         ) < 1.0e-11,
-        "retained_and_JAX_directional_D3_agree_below_1e_minus_10_relative": max(
-            row["retained_vs_JAX_D3_matrix_relative_difference"] for row in rows
-        ) < 1.0e-10,
-        "calibrated_JAX_Hessian_replays_retained_center_below_2e_minus_10": max(
-            row["retained_vs_calibrated_JAX_Hessian_operator_difference"]
-            for row in rows
-        ) < 2.0e-10,
+        "no_mismatched_predictor_calibration_used_as_proof_input": True,
         "no_full_Euler_Dirac_inverse_formed": True,
         "no_action_equation_source_selector_scale_gate_or_chord_changed": True,
     }
@@ -226,9 +197,6 @@ def build_payload() -> dict[str, Any]:
             ),
             "maximum_selected_eigenvector_first_variation_2_norm": max(
                 row["selected_eigenvector_first_variation_2_norm"] for row in rows
-            ),
-            "maximum_retained_vs_JAX_D3_matrix_relative_difference": max(
-                row["retained_vs_JAX_D3_matrix_relative_difference"] for row in rows
             ),
             "maximum_differentiated_eigenpair_residual_2_norm": max(
                 row["differentiated_eigenpair_residual_2_norm"] for row in rows

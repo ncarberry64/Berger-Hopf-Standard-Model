@@ -19,21 +19,24 @@ BASE = ROOT / "artifacts" / "flagship_integration"
 RESULT = BASE / "BHSM_N12_GATE7_SIGNED_COMMON_FRAME_DATA_MATCHING.json"
 
 INPUTS = {
+    "selected_center": BASE / "BHSM_N12_C2_STOP_HIGH_ORDER_QUARTER_STEP_RETAINED_RECONNAISSANCE.npz",
     "response": BASE / "BHSM_N12_C2_STOP_DOP853_ADAPTIVE_BORDERED_RHS_RESPONSE_CERTIFICATE.json",
     "first": BASE / "BHSM_N12_C2_STOP_DOP853_ADAPTIVE_BORDERED_RESPONSE_FIRST_VARIATION.json",
     "first_data": BASE / "BHSM_N12_C2_STOP_DOP853_ADAPTIVE_BORDERED_RESPONSE_FIRST_VARIATION.npz",
     "second": BASE / "BHSM_N12_C2_STOP_DOP853_BORDERED_RESPONSE_SECOND_VARIATION.json",
-    "jacobian": BASE / "BHSM_N12_C2_STOP_HIGH_ORDER_HALF_STEP_GRAPH_JACOBIAN_RECONNAISSANCE.json",
-    "jacobian_data": BASE / "BHSM_N12_C2_STOP_HIGH_ORDER_HALF_STEP_GRAPH_JACOBIAN_RECONNAISSANCE.npz",
-    "tangent": BASE / "BHSM_N12_C2_STOP_HIGH_ORDER_HALF_STEP_PHYSICAL_TANGENT_TRANSFER_RECONNAISSANCE.json",
-    "tangent_data": BASE / "BHSM_N12_C2_STOP_HIGH_ORDER_HALF_STEP_PHYSICAL_TANGENT_TRANSFER_RECONNAISSANCE.npz",
-    "residual": BASE / "BHSM_N12_C2_STOP_DOP853_DENSE_RESIDUAL_GAUSS12_RECONNAISSANCE.json",
-    "residual_data": BASE / "BHSM_N12_C2_STOP_DOP853_DENSE_RESIDUAL_GAUSS12_RECONNAISSANCE.npz",
+    "jacobian": BASE / "BHSM_N12_C2_STOP_QUARTER_STEP_GRAPH_JACOBIAN_RECONNAISSANCE.json",
+    "jacobian_data": BASE / "BHSM_N12_C2_STOP_QUARTER_STEP_GRAPH_JACOBIAN_RECONNAISSANCE.npz",
+    "hybrid_graph_audit": BASE / "BHSM_N12_GATE7_QUARTER_STEP_HYBRID_GRAPH_JACOBIAN_EQUIVALENCE_AUDIT.json",
+    "tangent": BASE / "BHSM_N12_C2_STOP_QUARTER_STEP_PHYSICAL_TANGENT_TRANSFER_RECONNAISSANCE.json",
+    "tangent_data": BASE / "BHSM_N12_C2_STOP_QUARTER_STEP_PHYSICAL_TANGENT_TRANSFER_RECONNAISSANCE.npz",
+    "residual": BASE / "BHSM_N12_C2_STOP_QUARTER_STEP_RETAINED_DENSE_RESIDUAL_GAUSS12_RECONNAISSANCE.json",
+    "residual_data": BASE / "BHSM_N12_C2_STOP_QUARTER_STEP_RETAINED_DENSE_RESIDUAL_GAUSS12_RECONNAISSANCE.npz",
     "green": BASE / "BHSM_N12_C2_STOP_QUARTER_STEP_MATCHED_TANGENT_CORRELATED_DEFECT_GAUSS12_RECONNAISSANCE.json",
     "green_data": BASE / "BHSM_N12_C2_STOP_QUARTER_STEP_MATCHED_TANGENT_CORRELATED_DEFECT_GAUSS12_RECONNAISSANCE.npz",
-    "first_hit": BASE / "BHSM_N12_C2_STOP_DENSE_DESCRIPTOR_FIRST_HIT.json",
+    "first_hit": BASE / "BHSM_N12_C2_STOP_QUARTER_STEP_DENSE_DESCRIPTOR_FIRST_HIT.json",
     "time_quotient": BASE / "BHSM_N12_RESET_TIME_QUOTIENT_GENERATOR_AUDIT.json",
-    "anisotropic_z2": BASE / "BHSM_N12_GATE7_COMMON_FRAME_ANISOTROPIC_Z2_RECONNAISSANCE.json",
+    "transverse_center": BASE / "BHSM_N12_GATE7_EXACT_SIGNED_FULL_TRANSVERSE_CURVATURE_ADJUDICATION.json",
+    "transverse_raw": BASE / "BHSM_N12_GATE7_EXACT_SIGNED_FULL_TRANSVERSE_CURVATURE.json",
 }
 
 
@@ -107,7 +110,7 @@ def build_payload() -> dict[str, Any]:
             "slot": "SIGNED_DEFECT_AND_GREEN_CENTER",
             "required_type": "minus-defect Green contraction in common quotient frames",
             "candidate": ["residual", "residual_data", "green", "green_data"],
-            "dimension_domain": "2,220 sampled 99-component defects and 371 correction nodes",
+            "dimension_domain": "quarter-step Gauss-12 sampled 99-component defects and 371 correction nodes",
             "provenance": "correct minus sign and retained quotient; quadrature/interpolation interval remainder open",
             "match": "VALID_SIGNED_DIAGNOSTIC_INTERVAL_AUTHORITY_MISSING",
         },
@@ -132,7 +135,7 @@ def build_payload() -> dict[str, Any]:
             "required_type": "physical-tube Lipschitz bound for A*(N(e)-N(e_tilde))",
             "candidate": ["first", "second", "jacobian"],
             "dimension_domain": "73 transverse directions on a common-frame radius-r tube",
-            "provenance": "path derivative is certified; Green-image anisotropic center curvature is reconnoitered; outward transverse tube remainder is not",
+            "provenance": "path derivative is certified; exact retained-action transverse center curvature is certified; outward transverse tube remainder is not",
             "match": "ACTUALLY_MISSING_TRANSVERSE_NONLINEAR_REMAINDER_ADAPTER",
         },
         {
@@ -172,8 +175,23 @@ def build_payload() -> dict[str, Any]:
             and green_step_shape == (47, 73, 73)
         ),
         "center_Jacobian_dimension_matches": jacobian_shape == (48, 98, 98),
+        "quarter_hybrid_graph_matches_retained_replay": (
+            records["hybrid_graph_audit"]["validation_passed"] is True
+            and records["hybrid_graph_audit"]["center"]
+            == "artifacts/flagship_integration/BHSM_N12_C2_STOP_HIGH_ORDER_QUARTER_STEP_RETAINED_RECONNAISSANCE.npz"
+        ),
+        "graph_residual_and_first_hit_name_selected_quarter_center": (
+            records["jacobian"]["center"]
+            == "artifacts/flagship_integration/BHSM_N12_C2_STOP_HIGH_ORDER_QUARTER_STEP_RETAINED_RECONNAISSANCE.npz"
+            and records["residual"]["construction"]["center"]
+            == "artifacts/flagship_integration/BHSM_N12_C2_STOP_HIGH_ORDER_QUARTER_STEP_RETAINED_RECONNAISSANCE.npz"
+            and records["first_hit"]["center"]
+            == "artifacts/flagship_integration/BHSM_N12_C2_STOP_HIGH_ORDER_QUARTER_STEP_RETAINED_RECONNAISSANCE.npz"
+        ),
         "signed_defect_and_correction_dimensions_match": (
-            residual_shape == (2220, 99)
+            residual_shape == (
+                records["residual"]["summary"]["exact_field_samples"], 99
+            )
             and correction_shape == (371, 98)
         ),
         "reconnaissance_not_promoted_to_interval_authority": all(
@@ -190,10 +208,28 @@ def build_payload() -> dict[str, Any]:
                 "explicit_generator_certified_in_current_checkpoint"
             ] is False
         ),
-        "anisotropic_Z2_center_reconnaissance_not_promoted": (
-            records["anisotropic_z2"]["validation_passed"] is False
-            and records["anisotropic_z2"]["claim_boundary"]["literal_Z2"]
-            == "OPEN"
+        "exact_transverse_center_curvature_not_promoted_outward": (
+            records["transverse_center"]["validation_passed"] is True
+            and records["transverse_center"]["claim_boundary"][
+                "full_physical_transverse_center_curvature"
+            ] == "CERTIFIED"
+            and records["transverse_center"]["claim_boundary"][
+                "outward_transverse_curvature_remainder"
+            ] == "OPEN"
+        ),
+        "exact_transverse_artifact_hashes_selected_quarter_center": (
+            records["transverse_raw"]["validation"][
+                "selected_quarter_step_center_and_matching_tangent_used"
+            ] is True
+            and
+            any(
+                "HIGH_ORDER_QUARTER_STEP_RETAINED_RECONNAISSANCE.npz" in path
+                for path in records["transverse_raw"]["inputs"]
+            )
+            and all(
+                "HIGH_ORDER_HALF_STEP" not in path
+                for path in records["transverse_raw"]["inputs"]
+            )
         ),
         "no_new_operator_or_theory_choice_identified": True,
     }

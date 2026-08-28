@@ -1,0 +1,133 @@
+{
+  "FULL_BHSM_COMPLETE": false,
+  "artifact": "BHSM_N12_GATE7_SELECTED_CENTER_PROVENANCE_RECONCILIATION",
+  "claim_boundary": {
+    "FULL_BHSM_COMPLETE": false,
+    "Gate7": "ACTIVE",
+    "causal_interval_vector_radius": "OPEN",
+    "legacy_mixed_center_recentered_cone": "HISTORICAL_NOT_CURRENT",
+    "same_center_DOP853_nonlinear_tube": "OPEN_RADIUS_ATTACHMENT",
+    "same_center_DOP853_response_first_variation": "CERTIFIED_FINITE",
+    "same_center_DOP853_response_second_variation": "OPEN_SIGNED_CORRELATION_REQUIRED",
+    "same_center_DOP853_spectrum_projector_inverse_response": "CERTIFIED",
+    "same_center_common_frame_operands": "DERIVED",
+    "same_center_exact_directional_mixed_transverse": "DERIVED"
+  },
+  "classification": "PROVENANCE_DEFECT",
+  "classification_ledger": [
+    {
+      "classification": "HISTORICAL_VALID_BUT_NOT_CURRENT",
+      "objects": "half-step exact directional/mixed/transverse center tensors",
+      "reason": "valid standalone derivatives on the half-step history; not composable with the selected quarter-step Green data"
+    },
+    {
+      "classification": "INVALIDATED",
+      "objects": "pre-reconciliation signed causal vector, exact center certificate, and outward budget",
+      "reason": "combined half-step center/tangent derivatives with quarter-step Green correction and propagators"
+    },
+    {
+      "classification": "INVALIDATED",
+      "objects": "pre-reconciliation recentered-cone spectrum/projector/inverse/response chain",
+      "reason": "combined the original multiple-shooting center with the quarter-step correction and a half-step spectrum parent"
+    },
+    {
+      "classification": "CURRENT_CERTIFIED_SELECTED_CENTER_CHAIN",
+      "objects": "adaptive DOP853 spectrum/projector/inverse/internal-response/first-variation chain",
+      "reason": "built directly from the selected quarter-step degree-seven DOP853 polynomial; it is independent of the invalidated original-plus-quarter recentered cone"
+    },
+    {
+      "classification": "CONSERVATIVE_SCALAR_ROUTE_OPEN",
+      "objects": "DOP853 scalar response second-variation denominator",
+      "reason": "the finite first-variation tube is certified, but the decorrelated scalar second-variation denominator fails; route the same cells through the signed common-frame curvature rather than rebuilding the certified cone"
+    },
+    {
+      "classification": "INVALIDATED",
+      "objects": "pre-reconciliation common-frame matching, anisotropic Z2, dense residual, and first-hit composition",
+      "reason": "combined half-step tangent/graph/residual/first-hit data with the selected quarter-step Green and response chain"
+    },
+    {
+      "classification": "CURRENT_REBUILD",
+      "objects": "current exact directional/mixed/transverse replay",
+      "reason": "all source constants now name the selected quarter-step center and matching quarter-step tangent"
+    }
+  ],
+  "exact_next_dependency": "ATTACH_THE_SELECTED_QUARTER_CAUSAL_RADIUS_TO_THE_ALREADY_CERTIFIED_DOP853_CELL_CARRIER,_THEN_CONTRACT_THE_SIGNED_COMMON_FRAME_CURVATURE_AND_RESPONSE_FIRST_VARIATION_TO_DERIVE_CELLWISE_Y_Z1_Z2;_FINALLY_TRANSFER_THE_EXISTING_DENSE_FIRST_HIT_AND_DOMAIN_MARGIN",
+  "inputs": {
+    "artifacts/flagship_integration/BHSM_N12_C2_STOP_DOP853_ADAPTIVE_BORDERED_HARD_INVERSE.json": "79EC741155715C8746FEC88370D6AAF263767D009C3EF71410B2051F12F7DBBC",
+    "artifacts/flagship_integration/BHSM_N12_C2_STOP_DOP853_ADAPTIVE_BORDERED_RESPONSE_FIRST_VARIATION.json": "83EE5A3670AA6D97C359EE3BD947086D113349F5EB33F971D51CA8BF97F69CE3",
+    "artifacts/flagship_integration/BHSM_N12_C2_STOP_DOP853_ADAPTIVE_BORDERED_RHS_RESPONSE_CERTIFICATE.json": "71E2EDB623E045DA1F80B2B542EB76D81D94E2E43EC218A9727D4F841A5B4ABE",
+    "artifacts/flagship_integration/BHSM_N12_C2_STOP_DOP853_ADAPTIVE_BOUNDARY_CLUSTER_SPECTRUM.json": "C67208AD054057F56144CE5AD27938282134E12F425573FA23F39161E547BC25",
+    "artifacts/flagship_integration/BHSM_N12_C2_STOP_DOP853_ADAPTIVE_SELECTED_PROJECTOR_GRAPH.json": "8160E58BEC876009E0150CC8181197605F055DA8DC3FB12FB9A200C38075DBB2",
+    "artifacts/flagship_integration/BHSM_N12_C2_STOP_DOP853_BORDERED_RESPONSE_SECOND_VARIATION.json": "610FB358195753F8398405B55F5FDCBD7DC37D6C59F358EC550921AF3C25F8C7",
+    "artifacts/flagship_integration/BHSM_N12_C2_STOP_HIGH_ORDER_HALF_STEP_CENTER_RECONNAISSANCE.npz": "16A5383752768B7F3D7275F0304618788F6D380E227E0C8FB793CED40A7EE0B0",
+    "artifacts/flagship_integration/BHSM_N12_C2_STOP_HIGH_ORDER_HALF_STEP_PHYSICAL_TANGENT_TRANSFER_RECONNAISSANCE.json": "801E84CA2D4726860AD6B915D96E65B2762C150EBFFFD42EF2B6030911972B36",
+    "artifacts/flagship_integration/BHSM_N12_C2_STOP_HIGH_ORDER_QUARTER_STEP_RETAINED_RECONNAISSANCE.npz": "086C41068B9F3A6C0E5F8040B661202E067D017C909A381010E45FF352498D00",
+    "artifacts/flagship_integration/BHSM_N12_C2_STOP_MULTIPLE_SHOOTING_CENTER.npz": "0C9A1A5D069432ED39C0FC627676D99ACE09985FB4458A1FC0471C7C0F593454",
+    "artifacts/flagship_integration/BHSM_N12_C2_STOP_QUARTER_STEP_DENSE_DESCRIPTOR_FIRST_HIT.json": "E54425FDE85441232A9C832D837C2377A13F2183435EAA48EA5C534C5E50066F",
+    "artifacts/flagship_integration/BHSM_N12_C2_STOP_QUARTER_STEP_GRAPH_JACOBIAN_RECONNAISSANCE.json": "B85797FABEEBA4CA2DAF7482C2F0C889B99D181EC1E22ABB0EDF8F5A90A97DCA",
+    "artifacts/flagship_integration/BHSM_N12_C2_STOP_QUARTER_STEP_MATCHED_TANGENT_CORRELATED_DEFECT_GAUSS12_RECONNAISSANCE.json": "A9A233442A876CB50EC38A35853E5971BDA278A9E86FA5B37773B73FFB63C8AC",
+    "artifacts/flagship_integration/BHSM_N12_C2_STOP_QUARTER_STEP_MATCHED_TANGENT_CORRELATED_DEFECT_GAUSS12_RECONNAISSANCE.npz": "F6675DBF9699ED6E56DE719C78047A0077FECBFC35F57F6943A2DFA645F10E90",
+    "artifacts/flagship_integration/BHSM_N12_C2_STOP_QUARTER_STEP_PHYSICAL_TANGENT_TRANSFER_RECONNAISSANCE.json": "B6F2EAD43496BF257077F230E8C3C15B7006D7E107184835232C4D0FCC08D119",
+    "artifacts/flagship_integration/BHSM_N12_C2_STOP_QUARTER_STEP_RETAINED_DENSE_RESIDUAL_GAUSS12_RECONNAISSANCE.json": "4737E5FE1A751A7B56A3A65B88983AF8474CD94357E199803B41D245BD9B177C",
+    "artifacts/flagship_integration/BHSM_N12_C2_STOP_RETAINED_CENTER_SELECTION.json": "E9E05D2B18491A638CDF941985A71B27D1494C260B987D7A54CF7E0EE36EB101",
+    "artifacts/flagship_integration/BHSM_N12_GATE7_CORRECTION_BORDERED_RESPONSE_SECOND_JETS.json": "6C38ECB5932FF3CD9890D5808DE18CE0E2C95835136AA67B2E28664D3F290855",
+    "artifacts/flagship_integration/BHSM_N12_GATE7_CORRECTION_DIRECTION_ACTION_MAJORANTS.json": "AD2A2394820A00C7EF4C4299910AC7BE774E2C5C8DE6DBA3F1C43F7CFF67CEDB",
+    "artifacts/flagship_integration/BHSM_N12_GATE7_EXACT_SIGNED_DIRECTIONAL_FIELD_CURVATURE.json": "F4A7A753FF66FC7E6714F0F305CC0D6E9E494979E7579C07CDF947FF38DBA331",
+    "artifacts/flagship_integration/BHSM_N12_GATE7_EXACT_SIGNED_FULL_TRANSVERSE_CURVATURE_ADJUDICATION.json": "C52E289A549626DCCE5D3DEBE58CE4542337EB6447777668E4303D182C6F6D9F",
+    "artifacts/flagship_integration/BHSM_N12_GATE7_EXACT_SIGNED_MIXED_FIELD_CURVATURE.json": "000DDB428248FB5150B8BABD2B848A8C575A9E8F798724D2EEFFAE78A00C70E2",
+    "artifacts/flagship_integration/BHSM_N12_GATE7_EXACT_SIGNED_SELECTED_MULTIPLIER_JETS.json": "B32DD8EF4B016171ED0B0AB7376BB2842FE91D8A84F101ABE5E5052DB1F27286",
+    "artifacts/flagship_integration/BHSM_N12_GATE7_QUARTER_STEP_HYBRID_GRAPH_JACOBIAN_EQUIVALENCE_AUDIT.json": "7395CE4A32D7EA2CD236427E853826F76CCEF60D8B0B2D2A9ECF53E6462CC79B",
+    "artifacts/flagship_integration/BHSM_N12_GATE7_RETAINED_CORRECTION_BORDERED_RESPONSE_FIRST_JETS.json": "3746BCF740ED3BCFF5AC1F830963E2028DE955578EBDA0E565E2F8D132C2BACD",
+    "artifacts/flagship_integration/BHSM_N12_GATE7_RETAINED_CORRECTION_EIGENLINE_FIRST_JETS.json": "6F7EC77B6BA4E7120EA638E01AC7D5B8B8EA6CD91B02B8E4641381DE972905D7",
+    "artifacts/flagship_integration/BHSM_N12_GATE7_SIGNED_COMMON_FRAME_DATA_MATCHING.json": "6E2483396E092A60995A45DA8E61B52CE2E4794DC92EAF2548EBB8C2A56877AC",
+    "artifacts/flagship_integration/BHSM_N12_GATE7_TWO_FREE_LEG_ACTION_MAJORANTS.json": "D1BB463DADEFF815A85C6CAF16059ED290AD03879F4E212ACB434C07D780AEA3",
+    "scripts/audit_n12_gate7_signed_common_frame_data_matching.py": "3C111A978F08999567E2675CBBE20721D2FE44CEE7CD1044CAE1F217922C5981",
+    "scripts/certify_n12_gate7_correction_direction_action_majorants.py": "1356718BA69F5AB256B25AC1C388460D972E9FA1B403D21AD49F651D5EB20FB7",
+    "scripts/certify_n12_gate7_recentered_cone_boundary_cluster_spectrum.py": "8F7E6FBFDDAB75442A2CC015BD1E2114CFEF599E473BD0CEE90C50C57A973A67",
+    "scripts/certify_n12_gate7_two_free_leg_action_majorants.py": "02085E2940BA7891F30D6E0EC1159D034256B69222550835000196DCC552E26F",
+    "scripts/derive_n12_gate7_correction_bordered_response_second_jets.py": "D476403C006F7FE6B0BB4F6731EE38A93CA4928059F0271B77928C71B1F21CD2",
+    "scripts/derive_n12_gate7_exact_signed_directional_field_curvature.py": "1D317E7F35003CFFAC4F3C75079F31C1149B40E66E3CEC4C7EEB4641AE05D03E",
+    "scripts/derive_n12_gate7_exact_signed_full_transverse_curvature.py": "4836F1740B654F9C6B604758EC0F0AF00F2FFBEEDFB244D0869A163A471204D3",
+    "scripts/derive_n12_gate7_exact_signed_mixed_field_curvature.py": "B2CFEC59099B5BB8905F6333A4E4DB4BDFD33B031BA5AC1910CE6CB4B087F8F9",
+    "scripts/derive_n12_gate7_exact_signed_selected_multiplier_jets.py": "CADE7E4A41EE29DD99C63116B0D0C3D36FEDBB03B7480463B4BAEF141BCC3C44",
+    "scripts/derive_n12_gate7_outward_closure_budget.py": "EB53929C547AB13D10AC87D443A64ADF646BA8A21D58A6CBF61D95E82C56EA76",
+    "scripts/derive_n12_gate7_retained_correction_bordered_response_first_jets.py": "5AB9BFA3D0C19C5E031682DF2E6DF8596AE24DF6BF603FA5C7CE5FF8CF145453",
+    "scripts/derive_n12_gate7_retained_correction_eigenline_first_jets.py": "D31FCECECB9109061F786348230C0EA640E92B4683A68C0D3F0915B8379E2689",
+    "scripts/derive_n12_gate7_signed_causal_vector_bootstrap.py": "5ABE3BBDDBA964C4464D6D62DF5708BBB0445726C26B4EE55BBB2A0F162E69CF"
+  },
+  "measurements": {
+    "green_terminal_descriptor_crossing": -2.8366383530768354e-11,
+    "half_action_duration": 92.30519939094043,
+    "half_tangent_terminal_descriptor_crossing": -2.8366278641119887e-11,
+    "maximum_half_to_quarter_action_state_2_norm": 6.307193746925677e-05,
+    "maximum_original_to_quarter_action_state_2_norm": 0.0018186563299657165,
+    "original_action_duration": 92.3033209053828,
+    "quarter_action_duration": 92.30513924040065,
+    "quarter_tangent_terminal_descriptor_crossing": -2.8366383530768354e-11
+  },
+  "selected_center": "artifacts/flagship_integration/BHSM_N12_C2_STOP_HIGH_ORDER_QUARTER_STEP_RETAINED_RECONNAISSANCE.json",
+  "status": "SELECTED_QUARTER_CENTER_PROVENANCE_RECONCILED;_DOP853_SIGNED_CORRELATION_OPEN",
+  "validation": {
+    "DOP853_scalar_second_variation_failure_is_not_promoted": true,
+    "all_current_exact_scripts_name_quarter_center": true,
+    "all_current_exact_scripts_name_quarter_tangent": true,
+    "all_current_prerequisite_scripts_name_quarter_center": true,
+    "current_common_frame_script_names_only_quarter_center_operands": true,
+    "current_exact_curvature_artifacts_validated": true,
+    "current_quarter_common_frame_operands_replayed": true,
+    "current_retained_response_prerequisites_validated": true,
+    "green_terminal_crossing_does_not_match_half_tangent": true,
+    "green_terminal_crossing_matches_quarter_tangent_exactly": true,
+    "green_terminal_time_matches_quarter_center": true,
+    "half_and_quarter_centers_are_not_identical": true,
+    "legacy_recentered_cone_default_center_mismatch_detected": true,
+    "no_action_equation_source_selector_scale_gate_or_chord_changed": true,
+    "no_current_prerequisite_script_names_half_center": true,
+    "original_and_quarter_centers_are_not_identical": true,
+    "quarter_center_and_tangent_weights_match": true,
+    "selected_DOP853_chain_names_quarter_center": true,
+    "selected_DOP853_spectrum_projector_inverse_and_response_certified": true,
+    "selection_manifest_names_quarter_step_center": true
+  },
+  "validation_passed": true
+}

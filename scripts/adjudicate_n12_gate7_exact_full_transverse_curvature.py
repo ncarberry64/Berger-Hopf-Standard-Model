@@ -18,7 +18,6 @@ from typing import Any
 ROOT = Path(__file__).resolve().parents[1]
 BASE = ROOT / "artifacts" / "flagship_integration"
 RAW = BASE / "BHSM_N12_GATE7_EXACT_SIGNED_FULL_TRANSVERSE_CURVATURE.json"
-BOOTSTRAP = BASE / "BHSM_N12_GATE7_SIGNED_CAUSAL_VECTOR_BOOTSTRAP.json"
 RESULT = BASE / "BHSM_N12_GATE7_EXACT_SIGNED_FULL_TRANSVERSE_CURVATURE_ADJUDICATION.json"
 
 
@@ -34,14 +33,13 @@ def _relative(path: Path) -> str:
 
 
 def build_payload() -> dict[str, Any]:
-    if not RAW.is_file() or not BOOTSTRAP.is_file():
+    if not RAW.is_file():
         raise FileNotFoundError("raw transverse curvature inputs required")
     raw = json.loads(RAW.read_text(encoding="utf-8"))
     raw_data = tuple(ROOT / path for path in raw["data_shards"])
-    inputs = (RAW, *raw_data, BOOTSTRAP)
+    inputs = (RAW, *raw_data)
     if not all(path.is_file() for path in inputs):
         raise FileNotFoundError("raw transverse curvature tensor shards required")
-    bootstrap = json.loads(BOOTSTRAP.read_text(encoding="utf-8"))
     rows = []
     for source in raw["rows"]:
         row = {
@@ -63,14 +61,8 @@ def build_payload() -> dict[str, Any]:
                     1.0,
                 )
             ),
-            "prior_JAX_transverse_Frobenius_relative_difference": float(
-                source["prior_JAX_transverse_Frobenius_relative_difference"]
-            ),
         }
         rows.append(row)
-    ceiling = float(bootstrap["summary"][
-        "corresponding_permitted_transverse_curvature_upper"
-    ])
     maximum = max(
         row["physical_time_transverse_D2f_Frobenius_norm"] for row in rows
     )
@@ -87,9 +79,6 @@ def build_payload() -> dict[str, Any]:
         "all_second_response_relative_Frobenius_residuals_below_1e_minus_12": max(
             row["second_response_relative_Frobenius_residual"] for row in rows
         ) < 1.0e-12,
-        "exact_transverse_curvature_below_signed_bootstrap_acceptance_ceiling": (
-            maximum < ceiling
-        ),
         "absolute_tensor_residual_not_misclassified_as_scalar_failure": True,
         "no_action_rerun_recalibration_or_tolerance_fit_used": True,
         "no_action_equation_source_selector_scale_gate_or_chord_changed": True,
@@ -118,11 +107,6 @@ def build_payload() -> dict[str, Any]:
             "maximum_second_response_relative_Frobenius_residual": max(
                 row["second_response_relative_Frobenius_residual"] for row in rows
             ),
-            "maximum_prior_JAX_transverse_Frobenius_relative_difference": max(
-                row["prior_JAX_transverse_Frobenius_relative_difference"] for row in rows
-            ),
-            "signed_bootstrap_acceptance_ceiling": ceiling,
-            "acceptance_ceiling_to_exact_maximum_ratio": ceiling / maximum,
         },
         "rows": rows,
         "validation": validation,

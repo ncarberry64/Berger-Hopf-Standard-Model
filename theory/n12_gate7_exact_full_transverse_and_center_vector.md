@@ -22,8 +22,9 @@ input.
 
 Replaying the signed Volterra vector with the exact action-owned directional,
 mixed, and full transverse center curvatures yields a maximum total center
-radius below \(10^{-12}\), still more than four orders of magnitude inside
-the existing nonlinear halo.  JAX is no longer an authority for any center
+radius below \(10^{-12}\), more than four orders of magnitude inside the
+earlier reconnaissance halo used only as a scale comparison.  JAX is no
+longer an authority for any center
 curvature term.  The remaining Gate-7 radius dependencies are exclusively
 outward: the retained \(D^5S\) curvature remainder and the signed Green/step-
 map remainder.
