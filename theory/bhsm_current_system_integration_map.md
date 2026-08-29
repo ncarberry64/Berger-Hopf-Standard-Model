@@ -139,6 +139,18 @@ The analytic Magnus-4 higher-commutator remainder and outward signed-source
 quadrature `Y` remain the exact proof owner before center-dependent `Z2`, radii,
 continuous margins, and first-hit transfer can close.
 
+For the retained affine generator, the exact leading omitted exponent is
+`Omega5 = h^5*([A,[A,[A,B]]]/720 - [B,[A,B]]/240)`.  Complete retained
+Gauss-8 Magnus-6 PROP8/16/32 replays place its PROP16 profile shift from
+Magnus-4 at `3.834887733156508e-19`, but the observed 8-to-16 over 16-to-32
+refinement ratio is `0.2873717953792532`, not the sixth-order factor `64`.
+The midpoint Richardson surrogate also moves slightly farther away.  The Lie
+identity is therefore established as the exact analytic routing term, while
+binary64 Magnus-6 refinement is explicitly rejected as analytic-tail or
+interval authority.  The next proof must outward-evaluate `Omega5` and the
+higher nested-commutator remainder on the retained correlated quotient,
+together with outward signed source-quadrature `Y`.
+
 Independently, the compact 72-dimensional reset quotient domain and its first
 jets are certified.  The apparent zero stored reserves at transitions 791 and
 1064 were binary64 storage artifacts: directed Decimal replay gives strict
