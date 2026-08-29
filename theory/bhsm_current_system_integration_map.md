@@ -22,10 +22,10 @@ equivalence
 and the closed-system source ontology keeps all internal responses inside one
 graded operator.  The DOP853 bordered matrix supplies auxiliary C2 geometry
 and response dependence, not the birth-domain operator.  The local operator
-adapter is therefore not missing.  Its physical promotion depends on two
-independent certification fronts: a converged signed-history recenter for the
-force chain, and a positive-radius compact reset-family map through the stored
-finite core.
+adapter is therefore not missing.  Its physical promotion now depends on one
+correlated center-stop witness: a converged signed-history recenter, strict
+preterminal margin transfer, and scalar interval Newton at the stored
+transverse first hit.
 
 The historical exact adaptive response and its center first variation remain
 certified on the 8,692-cell cover.  On the authoritative quarter-step carrier,
@@ -70,18 +70,18 @@ local spectrum/projector/inverse, response, reverse-first-variation, and causal
 that center cannot yet be promoted as the exact history used by the radii
 polynomial.
 
-The map has exactly two current blockers:
+The map has exactly one current blocker:
 
-`G7_SIGNED_Y_HIGH_PRECISION_OR_ADAPTIVE_QUADRATURE_AND_RECENTER_REBASE`.
-
-`G7_CORE_ENDPOINT_TO_NHIM_CAPTURE_OR_FIRST_RETAINED_STOP`.
+`G7_CORRELATED_QUARTER_STEP_CENTER_STOP_WITNESS`.
 
 The next proof object is correlation-preserving high-precision or adaptive
 signed quadrature whose correction stabilizes below the current halo.  Once
 that new center is frozen, only center-dependent cone/response objects are
 rebuilt before composing literal `Y`, interval `Z1`, the radii polynomial, and
-the first-hit transfer.  The observed propagator refinement is second order,
-but its geometric tail is still numerical rather than interval authority.
+the first-hit transfer.  Strict preterminal margins and scalar interval Newton
+at the stored `s=0` hit close the same witness.  The observed propagator
+refinement is second order, but its geometric tail is still numerical rather
+than interval authority.
 
 Independently, the compact 72-dimensional reset quotient domain and its first
 jets are certified.  The apparent zero stored reserves at transitions 791 and
@@ -91,9 +91,14 @@ open-subball needs without changing any center, step, history, action datum,
 or domain.  The nonempty open subball of radius
 `9.906956529453137e-30` therefore propagates through all 1,222 core segments,
 with terminal quotient first-jet singular lower bound
-`9.727034860392273e-4`.  The current geometric owner begins at that core
-endpoint and must carry the same open family to the existing NHIM capture
-surface or a first retained event/canonical stop.
+`9.727034860392273e-4`.  Flow-equivariant rank preservation and the retained
+stop flow-cylinder theorem reduce the remaining existence proof to one exact
+transverse center hit.  The implicit-function theorem then promotes that hit
+to a nonempty open 72-dimensional stop-reaching seed stratum.  Whole-family
+multiple shooting and the NHIM bridge are therefore not dependencies on this
+stop branch.  The stored center remains diagnostic until its correlated
+`Y/Z1/Z2` shadowing, all strict preterminal margins, and scalar interval Newton
+at `s=0` are certified.
 
 KKT Hessian/Ward/scalar work, action-selected mass/CKM/PMNS eigenbases, frozen
 comparison regeneration, and release packaging are downstream.  An internal

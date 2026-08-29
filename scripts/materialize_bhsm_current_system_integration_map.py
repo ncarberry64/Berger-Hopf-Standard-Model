@@ -35,6 +35,7 @@ PATHS = {
     "compact_reset_domain": "artifacts/flagship_integration/BHSM_N12_GATE7_COMPACT_RESET_QUOTIENT_DOMAIN.json",
     "compact_reset_propagation": "artifacts/flagship_integration/BHSM_N12_GATE7_COMPACT_RESET_PROPAGATION_RESERVE_AUDIT.json",
     "compact_reset_open_subball": "artifacts/flagship_integration/BHSM_N12_GATE7_COMPACT_RESET_OPEN_SUBBALL_1222_PROPAGATION.json",
+    "open_family_stop_reduction": "artifacts/flagship_integration/BHSM_N12_GATE7_OPEN_FAMILY_STOP_TRANSVERSALITY_REDUCTION.json",
     "global_connection": "artifacts/flagship_integration/BHSM_N12_GATE7_GLOBAL_CONNECTION_OBSTRUCTION.json",
     "dop_response": "artifacts/flagship_integration/BHSM_N12_C2_STOP_DOP853_ADAPTIVE_BORDERED_RHS_RESPONSE_CERTIFICATE.json",
     "dop_first_variation": "artifacts/flagship_integration/BHSM_N12_C2_STOP_DOP853_ADAPTIVE_BORDERED_RESPONSE_FIRST_VARIATION.json",
@@ -132,6 +133,7 @@ def build_payload() -> dict[str, Any]:
     signed_y_quadrature = records["signed_y_quadrature"]
     compact_reset_propagation = records["compact_reset_propagation"]
     compact_reset_open_subball = records["compact_reset_open_subball"]
+    open_family_stop_reduction = records["open_family_stop_reduction"]
     recentered_cone_spectrum = records["recentered_cone_spectrum"]
     recentered_cone_projector = records["recentered_cone_projector"]
     recentered_cone_inverse = records["recentered_cone_inverse"]
@@ -194,11 +196,11 @@ def build_payload() -> dict[str, Any]:
             "N12_EVENT_RESET_CHILD",
             "forward-reachable event-to-new-child reset component and 73-parameter C2 launch chart",
             "positive lapse/duration, regular reset/constraint rank, retained first-event/stop alternatives",
-            ["event_reset", "forward_history"], ["launch_chart", "base_family", "compact_reset_domain", "compact_reset_propagation", "compact_reset_open_subball"],
-            "NONEMPTY_OPEN_72_DIMENSIONAL_RESET_QUOTIENT_SUBBALL_AND_FIRST_JETS_CERTIFIED_THROUGH_ALL_1222_CORE_SEGMENTS", "N12 AE2 reset/launch lineage",
+            ["event_reset", "forward_history"], ["launch_chart", "base_family", "compact_reset_domain", "compact_reset_propagation", "compact_reset_open_subball", "open_family_stop_reduction"],
+            "NONEMPTY_OPEN_72_DIMENSIONAL_RESET_QUOTIENT_SUBBALL_AND_FIRST_JETS_CERTIFIED_THROUGH_ALL_1222_CORE_SEGMENTS;_ONE_EXACT_TRANSVERSE_CENTER_STOP_WITNESS_SUFFICES_FOR_AN_OPEN_STOP_STRATUM", "N12 AE2 reset/launch lineage",
             ["C2_DOP853_RESPONSE", "GATE7_HEAT_ZETA_CHAIN"],
             ["universal terminal reachability and recurrence retired as requirements"],
-            ["PROPAGATE_THE_CERTIFIED_OPEN_FAMILY_FROM_CORE_ENDPOINT_TO_NHIM_CAPTURE_OR_FIRST_RETAINED_STOP"],
+            ["CERTIFY_ONE_CORRELATED_QUARTER_STEP_CENTER_SHADOWING_WITH_STRICT_PRETERMINAL_MARGINS_AND_SCALAR_INTERVAL_NEWTON_AT_THE_STORED_FIRST_HIT"],
         ),
         _subsystem(
             "C2_DOP853_RESPONSE",
@@ -216,13 +218,12 @@ def build_payload() -> dict[str, Any]:
             "GATE7_HEAT_ZETA_CHAIN",
             "AE2 joint event/child seam with internal Mf, M_C2, U_R, W_phys and contact blocks",
             "AE2 two-sided transmission plus finite endpoint/Friedrichs alternatives; only external birth trace zero",
-            ["ae2_domain", "source_ontology", "one_seam", "heat_bound", "force_functional", "dop_response", "nhim_tail", "capture_tube", "compact_reset_domain", "compact_reset_propagation", "compact_reset_open_subball", "global_connection"],
+            ["ae2_domain", "source_ontology", "one_seam", "heat_bound", "force_functional", "dop_response", "nhim_tail", "capture_tube", "compact_reset_domain", "compact_reset_propagation", "compact_reset_open_subball", "open_family_stop_reduction", "global_connection"],
             ["completion_dag", "gate_ledger"],
             "OPEN_CURRENT_OWNER", "current AE2 Gate-7 DAG",
             ["GATE7_KKT_HESSIAN", "GENERATION_FAMILY_PROJECTORS"],
             ["strict gap, exact power tail, infinite nonrealized angular tail, and chord 3 are not current dependencies"],
-            ["G7_SIGNED_Y_HIGH_PRECISION_OR_ADAPTIVE_QUADRATURE_AND_RECENTER_REBASE",
-             "G7_CORE_ENDPOINT_TO_NHIM_CAPTURE_OR_FIRST_RETAINED_STOP"],
+            ["G7_CORRELATED_QUARTER_STEP_CENTER_STOP_WITNESS"],
         ),
         _subsystem(
             "GATE7_KKT_HESSIAN",
@@ -297,9 +298,10 @@ def build_payload() -> dict[str, Any]:
         {"id": "UNIVERSAL_TERMINAL_REACHABILITY", "classification": "INVALIDATED", "current_effect": "event-or-stop on the relevant certified history is sufficient"},
         {"id": "CHORD_3", "classification": "INVALIDATED", "current_effect": "unauthorized and not a dependency"},
         {"id": "INTERNAL_ABSOLUTE_SCALE_DERIVATION", "classification": "POST_1_0", "current_effect": "one universal G_F calibration is permitted"},
-        {"id": "G7_SIGNED_Y_QUADRATURE_AND_RECENTER_REBASE", "classification": "CURRENT_BLOCKER", "current_effect": "Gauss 8/12/16/20 signed Green corrections do not converge inside the 1.244e-12 halo; the exact history and first-hit transfer cannot be promoted"},
+        {"id": "G7_SIGNED_Y_QUADRATURE_AND_RECENTER_REBASE", "classification": "REFINED_INTO_CURRENT_WITNESS", "current_effect": "the nonconverged signed Green correction is the Y component of the one correlated center-stop witness"},
         {"id": "G7_COMPACT_RESET_STORED_RESERVE_791_1064", "classification": "SUPERSEDED_BY_DIRECTED_DECIMAL_REPLAY", "current_effect": "the two binary64-rounded zero reserves replay to strict directed lower bounds near 4.03e-28 and the predeclared open subball now crosses all 1222 core segments"},
-        {"id": "G7_RESET_TO_CAPTURE_OR_STOP_CONNECTION", "classification": "CURRENT_BLOCKER", "current_effect": "the nonempty open 72-dimensional reset family reaches the 1222 core endpoint; continuation of that same family to the existing NHIM capture surface or a first retained stop remains open"},
+        {"id": "G7_RESET_TO_CAPTURE_OR_STOP_CONNECTION", "classification": "SUPERSEDED_BY_TRANSVERSALITY_REDUCTION", "current_effect": "one exact transverse center stop witness automatically promotes to a nonempty open 72-dimensional stop-reaching seed stratum; whole-family multiple shooting and the NHIM bridge are unnecessary on the stop branch"},
+        {"id": "G7_CORRELATED_QUARTER_STEP_CENTER_STOP_WITNESS", "classification": "CURRENT_BLOCKER", "current_effect": "close outward-rounded correlated Y/Z1/Z2 for one quarter-step center, transfer strict preterminal margins, and apply scalar interval Newton at the stored s=0 first hit"},
         {"id": "G7_COMPLETE_JOINT_FORCE_ROOT", "classification": "DOWNSTREAM_ONLY", "current_effect": "evaluate after signed-Y recentering, radii closure, and first-hit transfer"},
         {"id": "DECORRELATED_SCALAR_SECOND_VARIATION", "classification": "INVALIDATED_PROOF_ROUTE", "current_effect": "finite first variation survives; all 8,692 scalar denominator cells route to signed/common-frame correlation"},
         {"id": "G7_HESSIAN_WARD_SCALAR", "classification": "DOWNSTREAM_ONLY", "current_effect": "follows the force/KKT root"},
@@ -314,7 +316,7 @@ def build_payload() -> dict[str, Any]:
         {"id": "DOP853_TO_RESPONSE_VARIATION", "class": "C", "priority": 1, "status": "RESOLVED_FOR_EXACT_CENTER_AND_FINITE_DIRECT_FIRST_VARIATION", "evidence": PATHS["dop_second_variation"]},
         {"id": "RESPONSE_TO_CORRELATED_Y_Z1_Z2", "class": "C", "priority": 1, "status": "LOCAL_RECENTERED_RESPONSE_AND_CAUSAL_Z2_CERTIFIED_ON_THE_REPRESENTED_GAUSS12_CENTER;_SIGNED_Y_QUADRATURE_NONCONVERGED_AND_RECENTER_REBASE_REQUIRED", "evidence": PATHS["signed_y_quadrature"]},
         {"id": "FINITE_HISTORY_TO_HEAT_ZETA_COVECTOR", "class": "C", "priority": 1, "status": "ENDPOINTS_AND_FORMULAS_EXIST_JOINT_CONTRACTION_NOT_YET_EVALUATED", "evidence": PATHS["force_functional"]},
-        {"id": "COMPACT_RESET_DOMAIN_TO_CAPTURE_OR_STOP", "class": "B", "priority": 0, "status": "OPEN_72_DIMENSIONAL_RESET_SUBBALL_AND_FIRST_JETS_CERTIFIED_THROUGH_1222_CORE;_CORE_ENDPOINT_TO_NHIM_CAPTURE_OR_FIRST_RETAINED_STOP_OPEN", "evidence": PATHS["compact_reset_open_subball"]},
+        {"id": "COMPACT_RESET_DOMAIN_TO_CAPTURE_OR_STOP", "class": "B", "priority": 0, "status": "OPEN_72_DIMENSIONAL_RESET_SUBBALL_CERTIFIED_THROUGH_1222_CORE;_ONE_EXACT_TRANSVERSE_CENTER_STOP_WITNESS_SUFFICES_FOR_AN_OPEN_STOP_STRATUM;_CENTER_INTERVAL_SHADOWING_AND_FIRST_HIT_NEWTON_OPEN", "evidence": PATHS["open_family_stop_reduction"]},
         {"id": "FAMILY_PROJECTORS_TO_MASS_CKM", "class": "B", "priority": 2, "status": "MISSING_ACTION_SELECTED_SECTOR_RESPONSE_EIGENBASES", "evidence": PATHS["generation"]},
         {"id": "NEUTRAL_PROPAGATION_TO_PMNS", "class": "B", "priority": 2, "status": "MISSING_THREE_SLOT_PROJECTION_AND_CHARGED_NEUTRAL_EIGENBASES", "evidence": PATHS["pmns"]},
         {"id": "G_F_TRANSPORT_TO_FINAL_LEDGER", "class": "A", "priority": 1, "status": "COMPOSITION_EXISTS_REVALIDATION_DOWNSTREAM", "evidence": PATHS["v7_transport"]},
@@ -410,8 +412,19 @@ def build_payload() -> dict[str, Any]:
                 "terminal_quotient_first_jet_singular_value_lower"
             ] > 0.0
         ),
+        "one_transverse_center_witness_suffices_for_open_stop_stratum": (
+            open_family_stop_reduction["validation_passed"] is True
+            and open_family_stop_reduction["status"]
+            == "ONE_TRANSVERSE_CENTER_WITNESS_SUFFICES_FOR_OPEN_72D_STOP_STRATUM"
+            and open_family_stop_reduction["adjudication"][
+                "whole_open_family_multiple_shooting_required"
+            ] is False
+            and open_family_stop_reduction["adjudication"][
+                "open_seed_stratum_after_center_hit"
+            ] == "AUTOMATIC_BY_TRANSVERSALITY"
+        ),
         "global_connection_remains_exactly_localized": records["global_connection"]["status"] == "EXACT_GLOBAL_CONNECTION_OBSTRUCTION_LOCALIZED",
-        "exactly_two_current_blockers_in_reconciliation": sum(row["classification"] == "CURRENT_BLOCKER" for row in blockers) == 2,
+        "exactly_one_current_blocker_in_reconciliation": sum(row["classification"] == "CURRENT_BLOCKER" for row in blockers) == 1,
         "no_current_D_class_theory_choice": all(row["status"] == "NONE_CURRENTLY_IDENTIFIED" for row in gaps if row["class"] == "D"),
         "FULL_BHSM_COMPLETE_false": current_dag["FULL_BHSM_COMPLETE"] is False,
     }
@@ -431,10 +444,9 @@ def build_payload() -> dict[str, Any]:
         "version_lineage": lineage,
         "blocker_reconciliation": blockers,
         "interface_gaps": gaps,
-        "current_irreducible_object": "G7_PARALLEL_FRONTIER_SIGNED_Y_RECENTER_AND_CORE_ENDPOINT_TO_CAPTURE_OR_STOP",
+        "current_irreducible_object": "G7_CORRELATED_QUARTER_STEP_CENTER_STOP_WITNESS",
         "current_irreducible_objects": [
-            "G7_SIGNED_Y_HIGH_PRECISION_OR_ADAPTIVE_QUADRATURE_AND_RECENTER_REBASE",
-            "G7_CORE_ENDPOINT_TO_NHIM_CAPTURE_OR_FIRST_RETAINED_STOP",
+            "G7_CORRELATED_QUARTER_STEP_CENTER_STOP_WITNESS",
         ],
         "integration_order": ["A_EXISTING_COMPOSITION", "C_IMPLEMENTATION", "B_THEOREM", "D_NEW_THEORY_CHOICE"],
         "validation": validations,
@@ -448,7 +460,7 @@ def build_payload() -> dict[str, Any]:
             "Gate7": "ACTIVE",
             "FULL_BHSM_COMPLETE": False,
         },
-        "exact_next_dependency": "IN_PARALLEL:_CONVERGE_SIGNED_Y_BELOW_THE_CURRENT_HALO_WITH_HIGH_PRECISION_OR_ADAPTIVE_CORRELATION_PRESERVING_QUADRATURE_AND_REBASE_THE_CENTER_DEPENDENT_CHAIN;_PROPAGATE_THE_CERTIFIED_OPEN_72_DIMENSIONAL_FAMILY_FROM_THE_1222_CORE_ENDPOINT_TO_THE_EXISTING_NHIM_CAPTURE_SURFACE_OR_A_FIRST_RETAINED_STOP;_THEN_COMPOSE_RADII_FIRST_HIT_FORCE_AND_KKT",
+        "exact_next_dependency": "CLOSE_OUTWARD_ROUNDED_CORRELATED_Y_Z1_Z2_FOR_ONE_EXISTING_QUARTER_STEP_CENTER_WITH_HIGH_PRECISION_OR_ADAPTIVE_SIGNED_QUADRATURE,_TRANSFER_ALL_STRICT_PRETERMINAL_DOMAIN_MARGINS,_AND_APPLY_SCALAR_INTERVAL_NEWTON_AT_THE_STORED_TRANSVERSE_s_ZERO_FIRST_HIT;_THEN_THE_OPEN_72D_STOP_STRATUM_FOLLOWS_AUTOMATICALLY_BY_TRANSVERSALITY",
         "FULL_BHSM_COMPLETE": False,
     }
 

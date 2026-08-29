@@ -53,8 +53,8 @@
       "id": "INTERNAL_ABSOLUTE_SCALE_DERIVATION"
     },
     {
-      "classification": "CURRENT_BLOCKER",
-      "current_effect": "Gauss 8/12/16/20 signed Green corrections do not converge inside the 1.244e-12 halo; the exact history and first-hit transfer cannot be promoted",
+      "classification": "REFINED_INTO_CURRENT_WITNESS",
+      "current_effect": "the nonconverged signed Green correction is the Y component of the one correlated center-stop witness",
       "id": "G7_SIGNED_Y_QUADRATURE_AND_RECENTER_REBASE"
     },
     {
@@ -63,9 +63,14 @@
       "id": "G7_COMPACT_RESET_STORED_RESERVE_791_1064"
     },
     {
-      "classification": "CURRENT_BLOCKER",
-      "current_effect": "the nonempty open 72-dimensional reset family reaches the 1222 core endpoint; continuation of that same family to the existing NHIM capture surface or a first retained stop remains open",
+      "classification": "SUPERSEDED_BY_TRANSVERSALITY_REDUCTION",
+      "current_effect": "one exact transverse center stop witness automatically promotes to a nonempty open 72-dimensional stop-reaching seed stratum; whole-family multiple shooting and the NHIM bridge are unnecessary on the stop branch",
       "id": "G7_RESET_TO_CAPTURE_OR_STOP_CONNECTION"
+    },
+    {
+      "classification": "CURRENT_BLOCKER",
+      "current_effect": "close outward-rounded correlated Y/Z1/Z2 for one quarter-step center, transfer strict preterminal margins, and apply scalar interval Newton at the stored s=0 first hit",
+      "id": "G7_CORRELATED_QUARTER_STEP_CENTER_STOP_WITNESS"
     },
     {
       "classification": "DOWNSTREAM_ONLY",
@@ -114,12 +119,11 @@
     "measured_data_used_upstream": false,
     "new_action_added": false
   },
-  "current_irreducible_object": "G7_PARALLEL_FRONTIER_SIGNED_Y_RECENTER_AND_CORE_ENDPOINT_TO_CAPTURE_OR_STOP",
+  "current_irreducible_object": "G7_CORRELATED_QUARTER_STEP_CENTER_STOP_WITNESS",
   "current_irreducible_objects": [
-    "G7_SIGNED_Y_HIGH_PRECISION_OR_ADAPTIVE_QUADRATURE_AND_RECENTER_REBASE",
-    "G7_CORE_ENDPOINT_TO_NHIM_CAPTURE_OR_FIRST_RETAINED_STOP"
+    "G7_CORRELATED_QUARTER_STEP_CENTER_STOP_WITNESS"
   ],
-  "exact_next_dependency": "IN_PARALLEL:_CONVERGE_SIGNED_Y_BELOW_THE_CURRENT_HALO_WITH_HIGH_PRECISION_OR_ADAPTIVE_CORRELATION_PRESERVING_QUADRATURE_AND_REBASE_THE_CENTER_DEPENDENT_CHAIN;_PROPAGATE_THE_CERTIFIED_OPEN_72_DIMENSIONAL_FAMILY_FROM_THE_1222_CORE_ENDPOINT_TO_THE_EXISTING_NHIM_CAPTURE_SURFACE_OR_A_FIRST_RETAINED_STOP;_THEN_COMPOSE_RADII_FIRST_HIT_FORCE_AND_KKT",
+  "exact_next_dependency": "CLOSE_OUTWARD_ROUNDED_CORRELATED_Y_Z1_Z2_FOR_ONE_EXISTING_QUARTER_STEP_CENTER_WITH_HIGH_PRECISION_OR_ADAPTIVE_SIGNED_QUADRATURE,_TRANSFER_ALL_STRICT_PRETERMINAL_DOMAIN_MARGINS,_AND_APPLY_SCALAR_INTERVAL_NEWTON_AT_THE_STORED_TRANSVERSE_s_ZERO_FIRST_HIT;_THEN_THE_OPEN_72D_STOP_STRATUM_FOLLOWS_AUTOMATICALLY_BY_TRANSVERSALITY",
   "inputs": {
     "artifacts/BHSM_1_0_completion_gate.json": "E562EE797C1C11E529ACDAEF2889A4DA366214C9F317B06A631B3F350588BDF4",
     "artifacts/BHSM_CKM_action_equivalence_v11_6.json": "5F5850309F6744464FBA34A4A255F415A6F17782B60CF0E6FF7A4E1CEC63DD1C",
@@ -155,6 +159,7 @@
     "artifacts/flagship_integration/BHSM_N12_GATE7_NHIM_RANK72_RELATIVE_TAIL_THEOREM.json": "FA36F13C0075A46A973DE82B817C44CD204682981E1FB843A17445E8B6158E33",
     "artifacts/flagship_integration/BHSM_N12_GATE7_NORMALIZED_FIELD_COMMON_FRAME_IDENTITY.json": "BA42969CD878049BC7C816AE590FD4DC09654ED7A353499B9C27F1EB61F98928",
     "artifacts/flagship_integration/BHSM_N12_GATE7_ONE_SEAM_FULL_GRADED_FINITE_CORE_HEAT_BOUND.json": "D1E6A58D0586A8995288FF4139C9F24DBF2411532EEA9E2D833B8AA5B60149B3",
+    "artifacts/flagship_integration/BHSM_N12_GATE7_OPEN_FAMILY_STOP_TRANSVERSALITY_REDUCTION.json": "CE7AB664D08E197D4E35F43085E8370D5D26399B28997034A3683AEC76AD7F7A",
     "artifacts/flagship_integration/BHSM_N12_GATE7_QUANTITATIVE_STABLE_CAPTURE_TUBE.json": "AC6421703F2A29217F9B1056C41F17650464BB40E38DFC324F78CC9343DB98D2",
     "artifacts/flagship_integration/BHSM_N12_GATE7_RECENTERED_CONE_BORDERED_HARD_INVERSE.json": "FC936B33AE3A2547C39BBA7007D33EC3D70F9515E7377574D664D2E3479D5FD4",
     "artifacts/flagship_integration/BHSM_N12_GATE7_RECENTERED_CONE_BORDERED_RESPONSE_FIRST_VARIATION.json": "5B60E698ECD7B74300AD89E0735C4E314EB29EF2646040BD36BDFBBE52CE064E",
@@ -216,10 +221,10 @@
     },
     {
       "class": "B",
-      "evidence": "artifacts/flagship_integration/BHSM_N12_GATE7_COMPACT_RESET_OPEN_SUBBALL_1222_PROPAGATION.json",
+      "evidence": "artifacts/flagship_integration/BHSM_N12_GATE7_OPEN_FAMILY_STOP_TRANSVERSALITY_REDUCTION.json",
       "id": "COMPACT_RESET_DOMAIN_TO_CAPTURE_OR_STOP",
       "priority": 0,
-      "status": "OPEN_72_DIMENSIONAL_RESET_SUBBALL_AND_FIRST_JETS_CERTIFIED_THROUGH_1222_CORE;_CORE_ENDPOINT_TO_NHIM_CAPTURE_OR_FIRST_RETAINED_STOP_OPEN"
+      "status": "OPEN_72_DIMENSIONAL_RESET_SUBBALL_CERTIFIED_THROUGH_1222_CORE;_ONE_EXACT_TRANSVERSE_CENTER_STOP_WITNESS_SUFFICES_FOR_AN_OPEN_STOP_STRATUM;_CENTER_INTERVAL_SHADOWING_AND_FIRST_HIT_NEWTON_OPEN"
     },
     {
       "class": "B",
@@ -374,7 +379,7 @@
       "canonical_action_version": "BHSM-AE-2.0.0",
       "configuration_space": "forward-reachable event-to-new-child reset component and 73-parameter C2 launch chart",
       "current_blockers": [
-        "PROPAGATE_THE_CERTIFIED_OPEN_FAMILY_FROM_CORE_ENDPOINT_TO_NHIM_CAPTURE_OR_FIRST_RETAINED_STOP"
+        "CERTIFY_ONE_CORRELATED_QUARTER_STEP_CENTER_SHADOWING_WITH_STRICT_PRETERMINAL_MARGINS_AND_SCALAR_INTERVAL_NEWTON_AT_THE_STORED_FIRST_HIT"
       ],
       "downstream_consumers": [
         "C2_DOP853_RESPONSE",
@@ -388,13 +393,14 @@
         "artifacts/intrinsic_state_selection/BHSM_N12_CONTINUUM_SINGULAR_HITTING_RESET_RELATION.json",
         "artifacts/intrinsic_state_selection/BHSM_N12_CORRECTED_FORWARD_HISTORY_AND_PARTICLE_CLASS_GATES.json"
       ],
-      "mathematical_status": "NONEMPTY_OPEN_72_DIMENSIONAL_RESET_QUOTIENT_SUBBALL_AND_FIRST_JETS_CERTIFIED_THROUGH_ALL_1222_CORE_SEGMENTS",
+      "mathematical_status": "NONEMPTY_OPEN_72_DIMENSIONAL_RESET_QUOTIENT_SUBBALL_AND_FIRST_JETS_CERTIFIED_THROUGH_ALL_1222_CORE_SEGMENTS;_ONE_EXACT_TRANSVERSE_CENTER_STOP_WITNESS_SUFFICES_FOR_AN_OPEN_STOP_STRATUM",
       "output_artifacts": [
         "artifacts/flagship_integration/BHSM_N12_C2_RESET_GENERATED_LAUNCH_CHART.json",
         "artifacts/flagship_integration/BHSM_N12_C2_1222_PARAMETRIC_BASE_FAMILY.json",
         "artifacts/flagship_integration/BHSM_N12_GATE7_COMPACT_RESET_QUOTIENT_DOMAIN.json",
         "artifacts/flagship_integration/BHSM_N12_GATE7_COMPACT_RESET_PROPAGATION_RESERVE_AUDIT.json",
-        "artifacts/flagship_integration/BHSM_N12_GATE7_COMPACT_RESET_OPEN_SUBBALL_1222_PROPAGATION.json"
+        "artifacts/flagship_integration/BHSM_N12_GATE7_COMPACT_RESET_OPEN_SUBBALL_1222_PROPAGATION.json",
+        "artifacts/flagship_integration/BHSM_N12_GATE7_OPEN_FAMILY_STOP_TRANSVERSALITY_REDUCTION.json"
       ],
       "owning_theorem_version": "N12 AE2 reset/launch lineage",
       "variational_domain": "positive lapse/duration, regular reset/constraint rank, retained first-event/stop alternatives"
@@ -442,8 +448,7 @@
       "canonical_action_version": "BHSM-AE-2.0.0",
       "configuration_space": "AE2 joint event/child seam with internal Mf, M_C2, U_R, W_phys and contact blocks",
       "current_blockers": [
-        "G7_SIGNED_Y_HIGH_PRECISION_OR_ADAPTIVE_QUADRATURE_AND_RECENTER_REBASE",
-        "G7_CORE_ENDPOINT_TO_NHIM_CAPTURE_OR_FIRST_RETAINED_STOP"
+        "G7_CORRELATED_QUARTER_STEP_CENTER_STOP_WITNESS"
       ],
       "downstream_consumers": [
         "GATE7_KKT_HESSIAN",
@@ -465,6 +470,7 @@
         "artifacts/flagship_integration/BHSM_N12_GATE7_COMPACT_RESET_QUOTIENT_DOMAIN.json",
         "artifacts/flagship_integration/BHSM_N12_GATE7_COMPACT_RESET_PROPAGATION_RESERVE_AUDIT.json",
         "artifacts/flagship_integration/BHSM_N12_GATE7_COMPACT_RESET_OPEN_SUBBALL_1222_PROPAGATION.json",
+        "artifacts/flagship_integration/BHSM_N12_GATE7_OPEN_FAMILY_STOP_TRANSVERSALITY_REDUCTION.json",
         "artifacts/flagship_integration/BHSM_N12_GATE7_GLOBAL_CONNECTION_OBSTRUCTION.json"
       ],
       "mathematical_status": "OPEN_CURRENT_OWNER",
@@ -610,12 +616,13 @@
     "current_semantic_registry_validated": true,
     "domain_no_go_is_scoped_correctly": true,
     "exact_DOP853_center_first_variation_is_certified": true,
-    "exactly_two_current_blockers_in_reconciliation": true,
+    "exactly_one_current_blocker_in_reconciliation": true,
     "finite_direct_first_variation_tube_is_certified": true,
     "global_connection_remains_exactly_localized": true,
     "no_current_D_class_theory_choice": true,
     "normalized_field_common_frame_identity_is_derived": true,
     "one_seam_AE2_composition_already_exists": true,
+    "one_transverse_center_witness_suffices_for_open_stop_stratum": true,
     "one_universal_G_F_calibration_only": true,
     "quantitative_capture_tube_is_certified": true,
     "quarter_green_corrected_carrier_is_certified": true,
