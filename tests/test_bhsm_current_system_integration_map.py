@@ -45,6 +45,9 @@ def test_canonical_system_and_required_subsystems() -> None:
         "affine_Omega5_identity_is_established_without_binary64_tail_promotion"
     ] is True
     assert payload["validation"][
+        "finite_exact_Omega5_augmented_global_composition_is_outward_certified"
+    ] is True
+    assert payload["validation"][
         "binary64_compact_reserve_artifact_is_superseded_by_directed_replay"
     ] is True
     assert payload["validation"][
@@ -94,8 +97,7 @@ def test_blocker_and_interface_priority_reconciliation() -> None:
         if row["id"] == "RESPONSE_TO_CORRELATED_Y_Z1_Z2"
     )
     assert response_gap["status"] == (
-        "GLOBAL_FINITE_CORRELATED_MAGNUS4_AFFINE_COMPOSITION_CERTIFIED;_EXACT_"
-        "AFFINE_OMEGA5_ESTABLISHED;_BINARY64_MAGNUS6_REFINEMENT_REJECTED_AS_"
-        "ANALYTIC_TAIL_AUTHORITY;_OUTWARD_OMEGA5_HIGHER_REMAINDER_SIGNED_SOURCE_"
+        "FINITE_EXACT_OMEGA5_AUGMENTED_GLOBAL_CORRELATED_MAGNUS6_COMPOSITION_"
+        "CERTIFIED;_OUTWARD_OMEGA7_AND_HIGHER_REMAINDER_SIGNED_SOURCE_"
         "QUADRATURE_Y_AND_Z2_TRANSFER_OPEN"
     )

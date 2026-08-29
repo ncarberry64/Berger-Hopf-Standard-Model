@@ -151,6 +151,20 @@ interval authority.  The next proof must outward-evaluate `Omega5` and the
 higher nested-commutator remainder on the retained correlated quotient,
 together with outward signed source-quadrature `Y`.
 
+That finite `Omega5` augmentation is now outward certified.  At 256-bit Arb
+precision, all 47 Magnus-6 homogeneous maps from 5,908 fixed exponentials and
+all 47 zero-initial retained-partition signed-source blocks from 31,019
+source/fundamental exponentials are evaluated in the global correlated
+quotient.  The direct Magnus-6-minus-Magnus-4 outward shift is
+`5.709058435280361e-20`, with combined evaluation radius
+`2.222903646849974e-25` and selected-cone reserve factor
+`9662303.878554663`; the Magnus-6 global response radius is
+`1.1768053830046277e-25`.  This replaces the binary64 leading-term routing
+with interval authority for the finite exact `Omega5` contribution only.
+The sole analytic owner is now the outward `Omega7`-and-higher remainder plus
+outward signed source-quadrature `Y`, before center-dependent `Z2`, radii,
+continuous margins, and first-hit transfer.
+
 Independently, the compact 72-dimensional reset quotient domain and its first
 jets are certified.  The apparent zero stored reserves at transitions 791 and
 1064 were binary64 storage artifacts: directed Decimal replay gives strict
