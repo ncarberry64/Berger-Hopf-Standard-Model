@@ -5,6 +5,7 @@ from __future__ import annotations
 import argparse
 import hashlib
 import json
+import os
 from pathlib import Path
 
 import numpy as np
@@ -18,7 +19,12 @@ CENTER = BASE / "BHSM_N12_C2_STOP_HIGH_ORDER_QUARTER_STEP_RETAINED_RECONNAISSANC
 JACOBIAN = BASE / "BHSM_N12_C2_STOP_QUARTER_STEP_FINE_HYBRID_GRAPH_JACOBIAN_RECONNAISSANCE.npz"
 TANGENT = BASE / "BHSM_N12_C2_STOP_QUARTER_STEP_PHYSICAL_TANGENT_TRANSFER_RECONNAISSANCE.npz"
 Z2 = BASE / "BHSM_N12_GATE7_SELECTED_CONE_INTERNAL_RESPONSE_Z2.json"
-RESULT = BASE / "BHSM_N12_GATE7_DECIMAL_SIGNED_Y_GREEN_CONVERGENCE_AUDIT.json"
+RESULT = Path(os.environ.get(
+    "BHSM_N12_GATE7_DECIMAL_GREEN_RESULT",
+    str(BASE / "BHSM_N12_GATE7_DECIMAL_SIGNED_Y_GREEN_CONVERGENCE_AUDIT.json"),
+))
+if not RESULT.is_absolute():
+    RESULT = ROOT / RESULT
 DATA_RESULT = RESULT.with_suffix(".npz")
 
 
@@ -165,7 +171,11 @@ def main() -> None:
         "not_relabelled_as_interval_propagator_authority": True,
     }
     payload = {
-        "artifact": "BHSM_N12_GATE7_DECIMAL_SIGNED_Y_GREEN_CONVERGENCE_AUDIT",
+        "artifact": (
+            "BHSM_N12_GATE7_DECIMAL_SIGNED_Y_GREEN_CONVERGENCE_AUDIT"
+            if args.propagator_substeps == 16 else
+            f"BHSM_N12_GATE7_DECIMAL_SIGNED_Y_GREEN_PROP{args.propagator_substeps}_AUDIT"
+        ),
         "authority": "NUMERICAL_CORRELATION_PRESERVING_GREEN_CROSS_ORDER_AUDIT_NOT_INTERVAL_AUTHORITY",
         "identity": {
             "source_sign": "MINUS_DEFECT",
