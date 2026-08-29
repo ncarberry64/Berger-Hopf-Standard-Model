@@ -62,7 +62,7 @@ def test_blocker_and_interface_priority_reconciliation() -> None:
         if row["id"] == "RESPONSE_TO_CORRELATED_Y_Z1_Z2"
     )
     assert response_gap["status"] == (
-        "QUARTER_GREEN_CORRECTED_LINE_PROJECTOR_INVERSE_AND_CAUSAL_Z2_HALO_"
-        "CERTIFIED;_CORRECTED_RESPONSE_TRANSFER_THEN_SIGNED_Y_AND_PROPAGATOR_"
-        "Z1_CURRENT"
+        "QUARTER_GREEN_CORRECTED_RESPONSE_AND_REVERSE_FIRST_VARIATION_PLUS_"
+        "CAUSAL_Z2_HALO_CERTIFIED;_ONLY_LITERAL_SIGNED_Y_AND_PROPAGATOR_Z1_"
+        "CURRENT"
     )

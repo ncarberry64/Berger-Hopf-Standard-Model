@@ -54,13 +54,13 @@ Every relative bordered perturbation is below one, every center solve has
 residual below `1e-7`, and all complete response enclosures are finite.  The
 global extrema are:
 
-- maximum center internal-source norm: `1300.8934530013148`;
-- maximum center bordered-response norm: `13529.816750282167`;
-- maximum preconditioned internal-source variation: `148621.8449643774`;
-- maximum relative bordered perturbation: `0.7035342221246246`;
-- maximum bordered Neumann factor: `3.3730706028416124`;
-- maximum complete bordered-response norm: `496147.8931521741`;
-- maximum center bordered-solve residual: `2.1828771252109465e-10`.
+- maximum center internal-source norm: `1300.8962829240734`;
+- maximum center bordered-response norm: `13529.8173349823`;
+- maximum preconditioned internal-source variation: `143197.7334737015`;
+- maximum relative bordered perturbation: `0.6212635199793738`;
+- maximum bordered Neumann factor: `2.6403582777279326`;
+- maximum complete bordered-response norm: `365006.7707487828`;
+- maximum center bordered-solve residual: `2.3571798923126495e-10`.
 
 The complete-response owner is seam `45`, parent `63`, child `7`, on the
 action interval `[91.99609375,92.0]`.  Its full row is stored in

@@ -42,6 +42,8 @@ PATHS = {
     "recentered_cone_spectrum": "artifacts/flagship_integration/BHSM_N12_GATE7_RECENTERED_CONE_BOUNDARY_CLUSTER_SPECTRUM.json",
     "recentered_cone_projector": "artifacts/flagship_integration/BHSM_N12_GATE7_RECENTERED_CONE_SELECTED_PROJECTOR_GRAPH.json",
     "recentered_cone_inverse": "artifacts/flagship_integration/BHSM_N12_GATE7_RECENTERED_CONE_BORDERED_HARD_INVERSE.json",
+    "recentered_cone_response": "artifacts/flagship_integration/BHSM_N12_GATE7_RECENTERED_CONE_BORDERED_RHS_RESPONSE.json",
+    "recentered_cone_first_variation": "artifacts/flagship_integration/BHSM_N12_GATE7_RECENTERED_CONE_BORDERED_RESPONSE_FIRST_VARIATION.json",
     "dop_domain": "artifacts/flagship_integration/BHSM_N12_DOP853_AE2_BIRTH_DOMAIN_RECONCILIATION.json",
     "one_seam": "artifacts/flagship_integration/BHSM_N12_GATE7_AE2_ONE_SEAM_DIRECT_DESCRIPTOR.json",
     "heat_bound": "artifacts/flagship_integration/BHSM_N12_GATE7_ONE_SEAM_FULL_GRADED_FINITE_CORE_HEAT_BOUND.json",
@@ -123,6 +125,10 @@ def build_payload() -> dict[str, Any]:
     recentered_cone_spectrum = records["recentered_cone_spectrum"]
     recentered_cone_projector = records["recentered_cone_projector"]
     recentered_cone_inverse = records["recentered_cone_inverse"]
+    recentered_cone_response = records["recentered_cone_response"]
+    recentered_cone_first_variation = records[
+        "recentered_cone_first_variation"
+    ]
     domain_reconciliation = records["dop_domain"]
     one_seam = records["one_seam"]
 
@@ -189,8 +195,8 @@ def build_payload() -> dict[str, Any]:
             "98-state C2 path with 61-dimensional reduced Hessian, branch 24, and 62-dimensional border",
             "finite Euclidean physical tangent quotient; auxiliary geometry, not the temporal birth domain",
             ["local_action", "base_family", "selected_center_provenance"],
-            ["dop_response", "dop_first_variation", "dop_second_variation", "common_frame_matching", "normalized_field_identity", "nonlinear_cone_spectrum", "nonlinear_cone_projector_inverse", "causal_z2", "recentered_cone_spectrum", "recentered_cone_projector", "recentered_cone_inverse", "dop_domain"],
-            "8692_CELL_LEGACY_BORDERED_RESPONSE_AND_FIRST_VARIATION_CERTIFIED;_3009_CELL_QUARTER_GREEN_CORRECTED_LINE_PROJECTOR_INVERSE_CERTIFIED;_CAUSAL_TAYLOR_Z2_NONLINEAR_HALO_CERTIFIED;_QUARTER_CORRECTED_RESPONSE_TRANSFER_THEN_SIGNED_Y_AND_PROPAGATOR_Z1_OPEN",
+            ["dop_response", "dop_first_variation", "dop_second_variation", "common_frame_matching", "normalized_field_identity", "nonlinear_cone_spectrum", "nonlinear_cone_projector_inverse", "causal_z2", "recentered_cone_spectrum", "recentered_cone_projector", "recentered_cone_inverse", "recentered_cone_response", "recentered_cone_first_variation", "dop_domain"],
+            "3009_CELL_QUARTER_GREEN_CORRECTED_LINE_PROJECTOR_INVERSE_AND_24072_CELL_COMPLETE_INTERNAL_RESPONSE_REVERSE_FIRST_VARIATION_CERTIFIED;_CAUSAL_TAYLOR_Z2_NONLINEAR_HALO_CERTIFIED;_ONLY_LITERAL_SIGNED_Y_AND_PROPAGATOR_Z1_REMAIN_BEFORE_THE_RADII_POLYNOMIAL",
             "current adaptive DOP853 certificate",
             ["GATE7_HEAT_ZETA_CHAIN"],
             ["12,032-cell historical uniform cover replaced by the exact 8,692-cell adaptive cover"],
@@ -292,7 +298,7 @@ def build_payload() -> dict[str, Any]:
         {"id": "AE2_TO_ONE_SEAM", "class": "A", "priority": 0, "status": "RESOLVED_BY_EXISTING_COMPOSITION", "evidence": PATHS["one_seam"]},
         {"id": "EVENT_RESET_TO_INTERNAL_SOURCE", "class": "A", "priority": 0, "status": "RESOLVED_BY_EXISTING_CLOSED_SYSTEM_ONTOLOGY", "evidence": PATHS["source_ontology"]},
         {"id": "DOP853_TO_RESPONSE_VARIATION", "class": "C", "priority": 1, "status": "RESOLVED_FOR_EXACT_CENTER_AND_FINITE_DIRECT_FIRST_VARIATION", "evidence": PATHS["dop_second_variation"]},
-        {"id": "RESPONSE_TO_CORRELATED_Y_Z1_Z2", "class": "C", "priority": 1, "status": "QUARTER_GREEN_CORRECTED_LINE_PROJECTOR_INVERSE_AND_CAUSAL_Z2_HALO_CERTIFIED;_CORRECTED_RESPONSE_TRANSFER_THEN_SIGNED_Y_AND_PROPAGATOR_Z1_CURRENT", "evidence": PATHS["recentered_cone_inverse"]},
+        {"id": "RESPONSE_TO_CORRELATED_Y_Z1_Z2", "class": "C", "priority": 1, "status": "QUARTER_GREEN_CORRECTED_RESPONSE_AND_REVERSE_FIRST_VARIATION_PLUS_CAUSAL_Z2_HALO_CERTIFIED;_ONLY_LITERAL_SIGNED_Y_AND_PROPAGATOR_Z1_CURRENT", "evidence": PATHS["recentered_cone_first_variation"]},
         {"id": "FINITE_HISTORY_TO_HEAT_ZETA_COVECTOR", "class": "C", "priority": 1, "status": "ENDPOINTS_AND_FORMULAS_EXIST_JOINT_CONTRACTION_NOT_YET_EVALUATED", "evidence": PATHS["force_functional"]},
         {"id": "CORRELATED_TUBE_TO_FIRST_HIT", "class": "B", "priority": 2, "status": "MISSING_INTERVAL_TRANSFER_THEOREM_ON_CURRENT_OWNER_CELLS", "evidence": PATHS["base_family"]},
         {"id": "FAMILY_PROJECTORS_TO_MASS_CKM", "class": "B", "priority": 2, "status": "MISSING_ACTION_SELECTED_SECTOR_RESPONSE_EIGENBASES", "evidence": PATHS["generation"]},
@@ -344,6 +350,22 @@ def build_payload() -> dict[str, Any]:
             == PATHS["causal_z2"]
             and recentered_cone_spectrum["domain"]["nonlinear_halo_action_radius"]
             == causal_z2["domain"]["candidate_nonlinear_action_radius"]
+        ),
+        "quarter_green_corrected_complete_response_is_certified": (
+            recentered_cone_response["validation_passed"] is True
+            and recentered_cone_response["mesh"]["parent_cells"] == 3009
+            and recentered_cone_response["mesh"]["cells"] == 24072
+            and recentered_cone_response["claim_boundary"][
+                "recentered_cone_bordered_hard_response"
+            ] == "CERTIFIED_FINITE"
+        ),
+        "quarter_green_corrected_reverse_first_variation_is_certified": (
+            recentered_cone_first_variation["validation_passed"] is True
+            and recentered_cone_first_variation["mesh"]["parent_cells"] == 3009
+            and recentered_cone_first_variation["mesh"]["response_cells"] == 24072
+            and recentered_cone_first_variation["claim_boundary"][
+                "reverse_adjoint_complete_response"
+            ] == "CERTIFIED_FINITE"
         ),
         "domain_no_go_is_scoped_correctly": domain_reconciliation["phase_B_outcome"] == "B1_NO_GO_SUPERSEDED_FOR_BHSM_AE_2_0_0_ONLY",
         "one_seam_AE2_composition_already_exists": one_seam["validation_passed"] is True,

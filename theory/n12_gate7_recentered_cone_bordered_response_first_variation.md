@@ -40,7 +40,7 @@ against
 Both metrics equal `rho^2 I` outside the at-most six-dimensional common frame
 of the parent and child path columns.  The certificate therefore solves only
 this small generalized descriptor problem.  It never forms a 98-dimensional
-inverse.  The maximum lift is `1.0000000001588467`; the eight response
+inverse.  The maximum lift is `1.0010097162557205`; the eight response
 children are thus subordinate to their action-bound parents without the
 artificial `1.46e5` amplification of a halo-only representation.
 
@@ -59,17 +59,20 @@ assembled product rule.  With the certified bordered inverse,
 
 All terms are finite on every cell.  Global bounds are:
 
-- maximum common-frame direction lift: `1.0000000001588467`;
-- maximum bordered-operator coefficient derivative: `0.03772527547728036`;
-- maximum internal-source cotangent: `193845886.57255092`;
-- maximum combined differentiated RHS: `193855411.4463509`;
-- maximum complete response first variation: `1.0367851150024591e15`.
+- maximum common-frame direction lift: `1.0010097162557205`;
+- maximum bordered-operator coefficient derivative: `0.03766827876244784`;
+- maximum internal-source cotangent: `186771275.83134463`;
+- maximum combined differentiated RHS: `186779845.7631688`;
+- maximum complete response first variation: `9.698556455702094e14`.
 
 The first-variation owner is the final response child of seam `45`, on
 `[91.99609375,92.0]`.  The large ambient norm is a rigorous conditioning
 bound, not a promoted instability: it retains the hard inverse outside the
 signed source/operator cancellation so the next reverse-adjoint projection
-can sharpen only the observable Cauchy cotangent actually needed.
+can sharpen only the observable Cauchy cotangent actually needed.  The
+physical nonlinear halo used on that child is
+`1.243972269022099e-12`; the much larger matched Green center correction is
+part of the proof center and is not misclassified as nonlinear radius.
 
 ## Claim boundary
 

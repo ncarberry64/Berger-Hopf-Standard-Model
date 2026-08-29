@@ -27,13 +27,15 @@ correlated finite-history response with the existing full graded heat-minus-
 zeta cotangent once, reverse-propagate it, and certify its physical quotient
 root.
 
-The exact adaptive response and its center first variation are now certified
-on the same 8,692-cell cover.  A finite direct first-variation enclosure also
-survives on every cell.  The decorrelated scalar second-variation denominator
-fails on every cell, so it is a rejected proof coordinate rather than a mesh
-refinement owner or a physical instability.  The current adapter must retain
-the stored 62-component signed variations in a common frame when assembling
-the literal `Y`, `Z1`, and `Z2` bounds.
+The historical exact adaptive response and its center first variation remain
+certified on the 8,692-cell cover.  On the authoritative quarter-step carrier,
+the complete internal bordered response and its reverse first variation are
+now certified on 24,072 children of the same 3,009 spectrum/projector/inverse
+parents.  The decorrelated scalar second-variation denominator is a rejected
+proof coordinate rather than a mesh-refinement owner or physical instability.
+The remaining adapter must retain the signed common-frame contractions when
+assembling only the literal `Y` and `Z1`; the physical causal `Z2` is already
+certified.
 
 That common-frame matching is exhaustive, and the exact normalized-field
 `D1/D2` identity has been derived.  No algebraic object is missing.  The
@@ -50,13 +52,16 @@ combinations remain historical.  The matched Green correction has size
 `1.243972269022099e-12`; consequently the correction is incorporated into the
 proof center before the halo is attached.
 
-That corrected carrier is now complete at the line/projector/inverse level.
+That corrected carrier is now complete through the response/reverse-first-
+variation level.
 All 3,009 quarter-center/fine-correction union cells retain a simple branch 24;
 the minimum boundary gap is `1.7205464630704569e-7`, the maximum projector
 motion is `0.025329475443001452`, and the maximum charted bordered inverse is
-`6.1001606088956e6`.  The shortest live chain is the bordered response
-transfer on this corrected carrier, followed immediately by the literal
-signed `Y`, propagator `Z1`, radii polynomial, and first-hit transfer.
+`6.1001606088956e6`.  All 24,072 response cells are finite, with maximum
+relative bordered perturbation `0.6212635199793738`; their complete reverse
+first variation is finite as well.  The shortest live chain is now only the
+literal signed `Y`, propagator `Z1`, radii polynomial, and first-hit transfer,
+followed directly by the already-derived joint heat-minus-zeta reverse seed.
 
 The map has exactly one current blocker:
 

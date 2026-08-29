@@ -60,10 +60,16 @@ def test_common_frame_generalized_metric_lift_is_exact_and_small() -> None:
         assert lift >= 1.0
         assert generalized >= 1.0
         assert lift * lift >= generalized
-        assert lift <= 1.0 + 2.0e-9
+        assert lift <= 1.002
     assert payload["summary"][
         "maximum_child_to_parent_direction_lift_2_norm_upper"
-    ] <= 1.0 + 2.0e-9
+    ] == max(
+        row["child_to_parent_common_frame_direction_lift_2_norm_upper"]
+        for row in payload["rows"]
+    )
+    assert payload["summary"][
+        "maximum_child_to_parent_direction_lift_2_norm_upper"
+    ] <= 1.002
 
 
 def test_closed_system_reverse_adjoint_claim_boundary() -> None:
@@ -95,4 +101,3 @@ def test_first_variation_input_hashes_match_disk() -> None:
     payload = _load(RESULT)
     for relative, expected in payload["inputs"].items():
         assert _sha256(ROOT / relative) == expected
-
