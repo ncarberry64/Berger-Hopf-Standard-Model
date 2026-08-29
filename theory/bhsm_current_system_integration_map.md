@@ -52,20 +52,34 @@ combinations remain historical.  The matched Green correction has size
 `1.243972269022099e-12`; consequently the correction is incorporated into the
 proof center before the halo is attached.
 
-That corrected carrier is now complete through the response/reverse-first-
-variation level.
+That represented corrected carrier is complete through the local
+response/reverse-first-variation level.
 All 3,009 quarter-center/fine-correction union cells retain a simple branch 24;
 the minimum boundary gap is `1.7205464630704569e-7`, the maximum projector
 motion is `0.025329475443001452`, and the maximum charted bordered inverse is
 `6.1001606088956e6`.  All 24,072 response cells are finite, with maximum
 relative bordered perturbation `0.6212635199793738`; their complete reverse
-first variation is finite as well.  The shortest live chain is now only the
-literal signed `Y`, propagator `Z1`, radii polynomial, and first-hit transfer,
-followed directly by the already-derived joint heat-minus-zeta reverse seed.
+first variation is finite as well.  Cross-quadrature comparison on one fixed
+16-substep Green operator, however, does not promote the Gauss-12 correction
+to an exact history: the Gauss 12-to-16 and 16-to-20 signed-profile increments
+are `2.5627317334557724e-7` and `3.4142391285067826e-7`, respectively, versus
+the `1.243972269022099e-12` candidate halo.  The newest increment grows and is
+distributed across the history rather than owned by a few cells.  Thus the
+local spectrum/projector/inverse, response, reverse-first-variation, and causal
+`Z2` statements remain certificates on their represented Gauss-12 center, but
+that center cannot yet be promoted as the exact history used by the radii
+polynomial.
 
 The map has exactly one current blocker:
 
-`G7_COMPLETE_JOINT_HEAT_ZETA_COVECTOR_AND_PROJECTED_KKT_ROOT_ON_A_CERTIFIED_HISTORY`.
+`G7_SIGNED_Y_HIGH_PRECISION_OR_ADAPTIVE_QUADRATURE_AND_RECENTER_REBASE`.
+
+The next proof object is correlation-preserving high-precision or adaptive
+signed quadrature whose correction stabilizes below the current halo.  Once
+that new center is frozen, only center-dependent cone/response objects are
+rebuilt before composing literal `Y`, interval `Z1`, the radii polynomial, and
+the first-hit transfer.  The observed propagator refinement is second order,
+but its geometric tail is still numerical rather than interval authority.
 
 KKT Hessian/Ward/scalar work, action-selected mass/CKM/PMNS eigenbases, frozen
 comparison regeneration, and release packaging are downstream.  An internal

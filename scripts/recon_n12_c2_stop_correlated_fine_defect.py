@@ -13,6 +13,7 @@ from __future__ import annotations
 import json
 import os
 from pathlib import Path
+import math
 
 import numpy as np
 from scipy.sparse.linalg import expm_multiply
@@ -60,6 +61,28 @@ def _interpolated_jacobian(
     return (1.0 - fraction) * jacobians[index] + fraction * jacobians[index + 1]
 
 
+def _propagate(
+    value: np.ndarray,
+    left: float,
+    right: float,
+    maximum_step: float,
+    jacobian_times: np.ndarray,
+    jacobians: np.ndarray,
+) -> np.ndarray:
+    if right <= left:
+        return value.copy()
+    count = max(1, int(math.ceil((right - left) / maximum_step)))
+    step = (right - left) / count
+    result = value.copy()
+    for substep in range(count):
+        midpoint = left + (substep + 0.5) * step
+        generator = _interpolated_jacobian(
+            midpoint, jacobian_times, jacobians,
+        )
+        result = expm_multiply(step * generator, result)
+    return result
+
+
 def build_payload() -> dict[str, object]:
     with np.load(CENTER_DATA) as source:
         action_lengths = np.asarray(source["action_lengths"], dtype=float)
@@ -96,6 +119,12 @@ def build_payload() -> dict[str, object]:
         raise RuntimeError("equal Gauss samples on every fine interval required")
     samples_per_interval = residual.shape[0] // interval_count
     fine_step = float(fine_times[1] - fine_times[0])
+    propagator_substeps = int(os.environ.get(
+        "BHSM_N12_FINE_PROPAGATOR_SUBSTEPS", "1",
+    ))
+    if propagator_substeps < 1:
+        raise ValueError("positive fine propagator substep count required")
+    maximum_propagator_step = fine_step / propagator_substeps
     gauss_nodes, gauss_weights = np.polynomial.legendre.leggauss(
         samples_per_interval
     )
@@ -107,6 +136,7 @@ def build_payload() -> dict[str, object]:
     fine_correction_profile = [correction.copy()]
     fine_descriptor_correction_profile = [0.0]
     fine_correction_times = [float(fine_times[0])]
+    fine_propagated_sources = []
     macro_step_maps = []
     tangent_leakage = []
     direct_descriptor_correction = 0.0
@@ -120,11 +150,6 @@ def build_payload() -> dict[str, object]:
             raise RuntimeError("residual samples do not match the retained Gauss rule")
         duration = fine_step * right_fraction
         left_time = float(fine_times[interval])
-        midpoint_time = left_time + 0.5 * duration
-        generator = _interpolated_jacobian(
-            midpoint_time, jacobian_times, jacobians,
-        )
-
         propagated_source = np.zeros(98)
         for unit, weight, sample_residual in zip(
             local_fractions / right_fraction,
@@ -134,17 +159,27 @@ def build_payload() -> dict[str, object]:
         ):
             propagated_source -= (
                 0.5 * duration * weight
-                * expm_multiply((1.0 - float(unit)) * duration * generator,
-                                sample_residual[:-1])
+                * _propagate(
+                    sample_residual[:-1],
+                    left_time + float(unit) * duration,
+                    left_time + duration,
+                    maximum_propagator_step,
+                    jacobian_times,
+                    jacobians,
+                )
             )
             direct_descriptor_correction -= (
                 0.5 * duration * weight * float(sample_residual[-1])
             )
-        correction = (
-            expm_multiply(duration * generator, correction)
-            + propagated_source
+        fine_propagated_sources.append(propagated_source.copy())
+        correction = _propagate(
+            correction, left_time, left_time + duration,
+            maximum_propagator_step, jacobian_times, jacobians,
+        ) + propagated_source
+        fundamental = _propagate(
+            fundamental, left_time, left_time + duration,
+            maximum_propagator_step, jacobian_times, jacobians,
         )
-        fundamental = expm_multiply(duration * generator, fundamental)
 
         right_time = left_time + duration
         if (
@@ -198,6 +233,7 @@ def build_payload() -> dict[str, object]:
         fine_descriptor_correction_profile=np.asarray(
             fine_descriptor_correction_profile,
         ),
+        fine_propagated_sources=np.asarray(fine_propagated_sources),
         terminal_physical_correction=terminal_physical,
         physical_macro_step_maps=np.asarray(macro_step_maps),
         macro_tangent_leakage=np.asarray(tangent_leakage),
@@ -206,6 +242,7 @@ def build_payload() -> dict[str, object]:
         "fine_intervals": interval_count,
         "Gauss_samples_per_interval": samples_per_interval,
         "fine_action_step": fine_step,
+        "fine_propagator_substeps": propagator_substeps,
         "maximum_ambient_correction_profile_2_norm": float(np.max(
             np.linalg.norm(correction_profile, axis=1)
         )),
@@ -221,6 +258,12 @@ def build_payload() -> dict[str, object]:
         "terminal_descriptor_crossing": crossing,
         "linearized_stop_time_shift": time_shift,
     }
+    source_norms = np.linalg.norm(np.asarray(fine_propagated_sources), axis=1)
+    source_owner = int(np.argmax(source_norms))
+    summary["maximum_fine_propagated_source_2_norm"] = float(
+        source_norms[source_owner]
+    )
+    summary["maximum_fine_propagated_source_owner_interval"] = source_owner
     return {
         "artifact": "BHSM_N12_C2_STOP_CORRELATED_FINE_DEFECT_RECONNAISSANCE",
         "authority": "SIGNED_FINE_GREEN_CENTER_DIAGNOSTIC_NOT_INTERVAL_AUTHORITY",
@@ -228,7 +271,10 @@ def build_payload() -> dict[str, object]:
             "defect": "d=y_hat_prime-F(y_hat)",
             "shadow_equation": "e_prime=J*e-d+N(e)",
             "source_sign": "MINUS_DEFECT",
-            "fine_propagator": "CONSTANT_INTERPOLATED_MIDPOINT_GENERATOR_PER_DOP853_INTERVAL",
+            "fine_propagator": (
+                "PIECEWISE_MIDPOINT_EXPONENTIAL_PRODUCT_ON_THE_"
+                f"DOP853_INTERVAL_WITH_{propagator_substeps}_SUBSTEPS"
+            ),
             "Jacobian_grid_nodes": int(jacobian_times.size),
             "constraint_handling": "PROJECT_ONLY_AT_THE_47_RETAINED_MACRO_SEAMS",
         },

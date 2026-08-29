@@ -43,6 +43,7 @@ PATHS = {
     "nonlinear_cone_spectrum": "artifacts/flagship_integration/BHSM_N12_GATE7_SELECTED_DOP853_NONLINEAR_CONE_SPECTRUM.json",
     "nonlinear_cone_projector_inverse": "artifacts/flagship_integration/BHSM_N12_GATE7_SELECTED_DOP853_NONLINEAR_CONE_PROJECTOR_INVERSE.json",
     "causal_z2": "artifacts/flagship_integration/BHSM_N12_GATE7_SELECTED_CONE_INTERNAL_RESPONSE_Z2.json",
+    "signed_y_quadrature": "artifacts/flagship_integration/BHSM_N12_GATE7_SIGNED_Y_QUADRATURE_CONVERGENCE_AUDIT.json",
     "recentered_cone_spectrum": "artifacts/flagship_integration/BHSM_N12_GATE7_RECENTERED_CONE_BOUNDARY_CLUSTER_SPECTRUM.json",
     "recentered_cone_projector": "artifacts/flagship_integration/BHSM_N12_GATE7_RECENTERED_CONE_SELECTED_PROJECTOR_GRAPH.json",
     "recentered_cone_inverse": "artifacts/flagship_integration/BHSM_N12_GATE7_RECENTERED_CONE_BORDERED_HARD_INVERSE.json",
@@ -126,6 +127,7 @@ def build_payload() -> dict[str, Any]:
         "nonlinear_cone_projector_inverse"
     ]
     causal_z2 = records["causal_z2"]
+    signed_y_quadrature = records["signed_y_quadrature"]
     recentered_cone_spectrum = records["recentered_cone_spectrum"]
     recentered_cone_projector = records["recentered_cone_projector"]
     recentered_cone_inverse = records["recentered_cone_inverse"]
@@ -189,22 +191,23 @@ def build_payload() -> dict[str, Any]:
             "forward-reachable event-to-new-child reset component and 73-parameter C2 launch chart",
             "positive lapse/duration, regular reset/constraint rank, retained first-event/stop alternatives",
             ["event_reset", "forward_history"], ["launch_chart", "base_family", "compact_reset_domain"],
-            "COMPACT_72_DIMENSIONAL_RESET_QUOTIENT_DOMAIN_WITH_FIRST_JETS_CERTIFIED;_GLOBAL_PROPAGATION_OPEN", "N12 AE2 reset/launch lineage",
+            "COMPACT_72_DIMENSIONAL_RESET_QUOTIENT_DOMAIN_WITH_FIRST_JETS_CERTIFIED;_AUTHORITATIVE_SELECTED_QUARTER_FINITE_STOP_ROUTE_RETAINED", "N12 AE2 reset/launch lineage",
             ["C2_DOP853_RESPONSE", "GATE7_HEAT_ZETA_CHAIN"],
-            ["universal terminal reachability and recurrence retired as requirements"],
-            ["BOUNDARY_CONTROLLED_PROPAGATION_OF_THE_COMPLETE_COMPACT_RESET_DOMAIN_TO_CAPTURE_OR_FIRST_STOP"],
+            ["universal terminal reachability and recurrence retired as requirements",
+             "older complete compact reset-set propagation blocker superseded by the selected-quarter finite-stop theorem"],
+            [],
         ),
         _subsystem(
             "C2_DOP853_RESPONSE",
             "98-state C2 path with 61-dimensional reduced Hessian, branch 24, and 62-dimensional border",
             "finite Euclidean physical tangent quotient; auxiliary geometry, not the temporal birth domain",
             ["local_action", "base_family", "selected_center_provenance"],
-            ["dop_response", "dop_first_variation", "dop_second_variation", "common_frame_matching", "normalized_field_identity", "nonlinear_cone_spectrum", "nonlinear_cone_projector_inverse", "causal_z2", "recentered_cone_spectrum", "recentered_cone_projector", "recentered_cone_inverse", "recentered_cone_response", "recentered_cone_first_variation", "dop_domain"],
-            "3009_CELL_QUARTER_GREEN_CORRECTED_LINE_PROJECTOR_INVERSE_AND_24072_CELL_COMPLETE_INTERNAL_RESPONSE_REVERSE_FIRST_VARIATION_CERTIFIED;_CAUSAL_TAYLOR_Z2_NONLINEAR_HALO_CERTIFIED;_ONLY_LITERAL_SIGNED_Y_AND_PROPAGATOR_Z1_REMAIN_BEFORE_THE_RADII_POLYNOMIAL",
+            ["dop_response", "dop_first_variation", "dop_second_variation", "common_frame_matching", "normalized_field_identity", "nonlinear_cone_spectrum", "nonlinear_cone_projector_inverse", "causal_z2", "signed_y_quadrature", "recentered_cone_spectrum", "recentered_cone_projector", "recentered_cone_inverse", "recentered_cone_response", "recentered_cone_first_variation", "dop_domain"],
+            "LOCAL_3009_CELL_QUARTER_RECENTERED_LINE_PROJECTOR_INVERSE_AND_24072_CELL_RESPONSE_REVERSE_FIRST_VARIATION_PLUS_CAUSAL_Z2_CERTIFIED_ON_THE_REPRESENTED_GAUSS12_CENTER;_GAUSS8_12_16_20_SIGNED_Y_NONCONVERGENCE_PREVENTS_HISTORY_PROMOTION",
             "current adaptive DOP853 certificate",
             ["GATE7_HEAT_ZETA_CHAIN"],
             ["12,032-cell historical uniform cover replaced by the exact 8,692-cell adaptive cover"],
-            ["SIGNED_Y_AND_PROPAGATOR_Z1_ON_THE_CERTIFIED_CANDIDATE_CONE"],
+            ["HIGH_PRECISION_OR_ADAPTIVE_SIGNED_Y_QUADRATURE_AND_RECENTER_REBASE_BEFORE_THE_RADII_POLYNOMIAL"],
         ),
         _subsystem(
             "GATE7_HEAT_ZETA_CHAIN",
@@ -215,7 +218,7 @@ def build_payload() -> dict[str, Any]:
             "OPEN_CURRENT_OWNER", "current AE2 Gate-7 DAG",
             ["GATE7_KKT_HESSIAN", "GENERATION_FAMILY_PROJECTORS"],
             ["strict gap, exact power tail, infinite nonrealized angular tail, and chord 3 are not current dependencies"],
-            ["G7_BOUNDARY_CONTROLLED_RESET_TO_CAPTURE_OR_FIRST_STOP_MAP"],
+            ["G7_SIGNED_Y_HIGH_PRECISION_OR_ADAPTIVE_QUADRATURE_AND_RECENTER_REBASE"],
         ),
         _subsystem(
             "GATE7_KKT_HESSIAN",
@@ -224,7 +227,7 @@ def build_payload() -> dict[str, Any]:
             ["force_functional", "completion_dag"], ["completion_dag"],
             "EQUATIONS_DERIVED_SOLUTION_DOWNSTREAM_OF_FORCE", "current finite-endpoint KKT/Hessian lineage",
             ["GENERATION_FAMILY_PROJECTORS", "RELEASE_DEFINITION_OF_DONE"], [],
-            ["DOWNSTREAM_OF_G7_COMPLETE_JOINT_HEAT_ZETA_COVECTOR"],
+            ["DOWNSTREAM_OF_SIGNED_Y_RECENTER_REBASE_RADII_FIRST_HIT_AND_FORCE_ROOT"],
         ),
         _subsystem(
             "CKM_SECTOR",
@@ -290,8 +293,9 @@ def build_payload() -> dict[str, Any]:
         {"id": "UNIVERSAL_TERMINAL_REACHABILITY", "classification": "INVALIDATED", "current_effect": "event-or-stop on the relevant certified history is sufficient"},
         {"id": "CHORD_3", "classification": "INVALIDATED", "current_effect": "unauthorized and not a dependency"},
         {"id": "INTERNAL_ABSOLUTE_SCALE_DERIVATION", "classification": "POST_1_0", "current_effect": "one universal G_F calibration is permitted"},
-        {"id": "G7_RESET_TO_CAPTURE_OR_STOP_CONNECTION", "classification": "CURRENT_BLOCKER", "current_effect": "the compact reset domain, capture tube, and captured-family tail are certified; their boundary-controlled propagated set map or first retained stop remains open"},
-        {"id": "G7_COMPLETE_JOINT_FORCE_ROOT", "classification": "DOWNSTREAM_ONLY", "current_effect": "evaluate after the reset-to-capture or stop connection"},
+        {"id": "G7_SIGNED_Y_QUADRATURE_AND_RECENTER_REBASE", "classification": "CURRENT_BLOCKER", "current_effect": "Gauss 8/12/16/20 signed Green corrections do not converge inside the 1.244e-12 halo; the exact history and first-hit transfer cannot be promoted"},
+        {"id": "G7_RESET_TO_CAPTURE_OR_STOP_CONNECTION", "classification": "SUPERSEDED_BY_LATER_THEOREM", "current_effect": "the authoritative selected-quarter finite-stop route replaces the older global propagated-set requirement"},
+        {"id": "G7_COMPLETE_JOINT_FORCE_ROOT", "classification": "DOWNSTREAM_ONLY", "current_effect": "evaluate after signed-Y recentering, radii closure, and first-hit transfer"},
         {"id": "DECORRELATED_SCALAR_SECOND_VARIATION", "classification": "INVALIDATED_PROOF_ROUTE", "current_effect": "finite first variation survives; all 8,692 scalar denominator cells route to signed/common-frame correlation"},
         {"id": "G7_HESSIAN_WARD_SCALAR", "classification": "DOWNSTREAM_ONLY", "current_effect": "follows the force/KKT root"},
         {"id": "CKM_PMNS_PHYSICAL_EIGENBASES", "classification": "DOWNSTREAM_ONLY", "current_effect": "follows Gate 7 and sector response"},
@@ -303,7 +307,7 @@ def build_payload() -> dict[str, Any]:
         {"id": "AE2_TO_ONE_SEAM", "class": "A", "priority": 0, "status": "RESOLVED_BY_EXISTING_COMPOSITION", "evidence": PATHS["one_seam"]},
         {"id": "EVENT_RESET_TO_INTERNAL_SOURCE", "class": "A", "priority": 0, "status": "RESOLVED_BY_EXISTING_CLOSED_SYSTEM_ONTOLOGY", "evidence": PATHS["source_ontology"]},
         {"id": "DOP853_TO_RESPONSE_VARIATION", "class": "C", "priority": 1, "status": "RESOLVED_FOR_EXACT_CENTER_AND_FINITE_DIRECT_FIRST_VARIATION", "evidence": PATHS["dop_second_variation"]},
-        {"id": "RESPONSE_TO_CORRELATED_Y_Z1_Z2", "class": "C", "priority": 1, "status": "QUARTER_GREEN_CORRECTED_RESPONSE_AND_REVERSE_FIRST_VARIATION_PLUS_CAUSAL_Z2_HALO_CERTIFIED;_ONLY_LITERAL_SIGNED_Y_AND_PROPAGATOR_Z1_CURRENT", "evidence": PATHS["recentered_cone_first_variation"]},
+        {"id": "RESPONSE_TO_CORRELATED_Y_Z1_Z2", "class": "C", "priority": 1, "status": "LOCAL_RECENTERED_RESPONSE_AND_CAUSAL_Z2_CERTIFIED_ON_THE_REPRESENTED_GAUSS12_CENTER;_SIGNED_Y_QUADRATURE_NONCONVERGED_AND_RECENTER_REBASE_REQUIRED", "evidence": PATHS["signed_y_quadrature"]},
         {"id": "FINITE_HISTORY_TO_HEAT_ZETA_COVECTOR", "class": "C", "priority": 1, "status": "ENDPOINTS_AND_FORMULAS_EXIST_JOINT_CONTRACTION_NOT_YET_EVALUATED", "evidence": PATHS["force_functional"]},
         {"id": "COMPACT_RESET_DOMAIN_TO_CAPTURE_OR_STOP", "class": "B", "priority": 0, "status": "COMPACT_72_DOMAIN_AND_FIRST_JETS_CERTIFIED;_BOUNDARY_CONTROLLED_PROPAGATED_SET_MAP_MISSING", "evidence": PATHS["compact_reset_domain"]},
         {"id": "FAMILY_PROJECTORS_TO_MASS_CKM", "class": "B", "priority": 2, "status": "MISSING_ACTION_SELECTED_SECTOR_RESPONSE_EIGENBASES", "evidence": PATHS["generation"]},
@@ -346,6 +350,13 @@ def build_payload() -> dict[str, Any]:
             == "CERTIFIED_BY_SIGNED_THIRD_ORDER_TAYLOR_VOLTERRA_CAUSAL_ENCLOSURE"
             and causal_z2["claim_boundary"]["propagator_Z1_and_signed_Y"]
             == "OPEN"
+        ),
+        "signed_Y_quadrature_nonconvergence_is_reconciled": (
+            signed_y_quadrature["validation_passed"] is True
+            and signed_y_quadrature["claim_boundary"]["Y"]
+            == "OPEN_NONCONVERGED_SIGNED_QUADRATURE"
+            and signed_y_quadrature["status"]
+            == "CURRENT_GAUSS12_RECENTER_NOT_PROMOTABLE;_SIGNED_Y_QUADRATURE_OPEN"
         ),
         "quarter_green_corrected_carrier_is_certified": (
             recentered_cone_spectrum["validation_passed"] is True
@@ -402,7 +413,7 @@ def build_payload() -> dict[str, Any]:
         "version_lineage": lineage,
         "blocker_reconciliation": blockers,
         "interface_gaps": gaps,
-        "current_irreducible_object": "G7_BOUNDARY_CONTROLLED_PROPAGATED_COMPACT_RESET_SET_MAP_TO_CAPTURE_OR_FIRST_RETAINED_STOP",
+        "current_irreducible_object": "G7_SIGNED_Y_HIGH_PRECISION_OR_ADAPTIVE_QUADRATURE_AND_RECENTER_REBASE",
         "integration_order": ["A_EXISTING_COMPOSITION", "C_IMPLEMENTATION", "B_THEOREM", "D_NEW_THEORY_CHOICE"],
         "validation": validations,
         "validation_passed": passed,
@@ -415,7 +426,7 @@ def build_payload() -> dict[str, Any]:
             "Gate7": "ACTIVE",
             "FULL_BHSM_COMPLETE": False,
         },
-        "exact_next_dependency": "PROPAGATE_THE_CERTIFIED_COMPACT_72_DIMENSIONAL_RESET_QUOTIENT_DOMAIN_WITH_ITS_NORMAL_GRAPH_AND_FIRST_JETS_THROUGH_ONE_FINITE_BOUNDARY_CONTROLLED_FLOW_OR_FIRST_HIT_MAP_TO_STRICT_CAPTURE_TUBE_INCLUSION_OR_THE_FIRST_RETAINED_STOP;_THEN_EVALUATE_THE_EXISTING_PROJECTED_HEAT_MINUS_ZETA_COVECTOR_AND_KKT_ROOT",
+        "exact_next_dependency": "CONVERGE_SIGNED_Y_BELOW_THE_CURRENT_HALO_WITH_HIGH_PRECISION_OR_ADAPTIVE_CORRELATION_PRESERVING_QUADRATURE,_FREEZE_THE_NEW_RECENTER,_REBUILD_ONLY_THE_CENTER_DEPENDENT_CONE_RESPONSE_CHAIN,_THEN_COMPOSE_THE_RADII_POLYNOMIAL_AND_FIRST_HIT_TRANSFER",
         "FULL_BHSM_COMPLETE": False,
     }
 
