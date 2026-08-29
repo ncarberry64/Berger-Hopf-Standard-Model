@@ -59,27 +59,28 @@ the minimum boundary gap is `1.7205464630704569e-7`, the maximum projector
 motion is `0.025329475443001452`, and the maximum charted bordered inverse is
 `6.1001606088956e6`.  All 24,072 response cells are finite, with maximum
 relative bordered perturbation `0.6212635199793738`; their complete reverse
-first variation is finite as well.  Cross-quadrature comparison on one fixed
-16-substep Green operator, however, does not promote the Gauss-12 correction
-to an exact history: the Gauss 12-to-16 and 16-to-20 signed-profile increments
-are `2.5627317334557724e-7` and `3.4142391285067826e-7`, respectively, versus
-the `1.243972269022099e-12` candidate halo.  The newest increment grows and is
-distributed across the history rather than owned by a few cells.  Thus the
-local spectrum/projector/inverse, response, reverse-first-variation, and causal
-`Z2` statements remain certificates on their represented Gauss-12 center, but
-that center cannot yet be promoted as the exact history used by the radii
-polynomial.
+first variation is finite as well.  The former Gauss 8/12/16/20 comparison
+changed the per-node binary selected-eigenline source representation and is
+superseded as a numerical-conditioning diagnostic.  A fresh isolated Decimal
+implementation keeps branch 24 throughout all 370 cells, with maximum
+eigenpair residual `1.4123e-58`.  Its Gauss 6-to-8 local signed-source increment
+is at most `7.145502804170978e-15`, or `0.5744%` of the
+`1.243972269022099e-12` halo.  Through the same retained PROP16 Green map, the
+maximum 371-node correction-profile increment is
+`6.919049080236543e-14`, or `5.5621%` of the halo.  This validates numerical
+cross-order convergence and supplies a Gauss-8 center candidate; it does not
+yet provide outward interval `Y/Z1` or transfer the represented-center `Z2`
+certificate.
 
 The map has exactly one current blocker:
 
 `G7_CORRELATED_QUARTER_STEP_CENTER_STOP_WITNESS`.
 
-The next proof object is correlation-preserving high-precision or adaptive
-signed quadrature whose correction stabilizes below the current halo.  Once
-that new center is frozen, only center-dependent cone/response objects are
-rebuilt before composing literal `Y`, interval `Z1`, the radii polynomial, and
-the first-hit transfer.  Strict preterminal margins and scalar interval Newton
-at the stored `s=0` hit close the same witness.  The observed propagator
+The next proof step is to freeze the Decimal Gauss-8 correction center, attach
+outward source and PROP16 tail remainders for literal `Y` and interval `Z1`,
+and rebuild only center-dependent cone/response objects to transfer `Z2`.
+The radii polynomial, strict preterminal margins, and scalar interval Newton at
+the stored `s=0` hit then close the same witness.  The observed propagator
 refinement is second order, but its geometric tail is still numerical rather
 than interval authority.
 

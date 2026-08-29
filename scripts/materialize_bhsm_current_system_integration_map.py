@@ -47,6 +47,8 @@ PATHS = {
     "nonlinear_cone_projector_inverse": "artifacts/flagship_integration/BHSM_N12_GATE7_SELECTED_DOP853_NONLINEAR_CONE_PROJECTOR_INVERSE.json",
     "causal_z2": "artifacts/flagship_integration/BHSM_N12_GATE7_SELECTED_CONE_INTERNAL_RESPONSE_Z2.json",
     "signed_y_quadrature": "artifacts/flagship_integration/BHSM_N12_GATE7_SIGNED_Y_QUADRATURE_CONVERGENCE_AUDIT.json",
+    "decimal_signed_source": "artifacts/flagship_integration/BHSM_N12_GATE7_DECIMAL_SIGNED_SOURCE_QUADRATURE_AUDIT.json",
+    "decimal_signed_y_green": "artifacts/flagship_integration/BHSM_N12_GATE7_DECIMAL_SIGNED_Y_GREEN_CONVERGENCE_AUDIT.json",
     "recentered_cone_spectrum": "artifacts/flagship_integration/BHSM_N12_GATE7_RECENTERED_CONE_BOUNDARY_CLUSTER_SPECTRUM.json",
     "recentered_cone_projector": "artifacts/flagship_integration/BHSM_N12_GATE7_RECENTERED_CONE_SELECTED_PROJECTOR_GRAPH.json",
     "recentered_cone_inverse": "artifacts/flagship_integration/BHSM_N12_GATE7_RECENTERED_CONE_BORDERED_HARD_INVERSE.json",
@@ -131,6 +133,8 @@ def build_payload() -> dict[str, Any]:
     ]
     causal_z2 = records["causal_z2"]
     signed_y_quadrature = records["signed_y_quadrature"]
+    decimal_signed_source = records["decimal_signed_source"]
+    decimal_signed_y_green = records["decimal_signed_y_green"]
     compact_reset_propagation = records["compact_reset_propagation"]
     compact_reset_open_subball = records["compact_reset_open_subball"]
     open_family_stop_reduction = records["open_family_stop_reduction"]
@@ -207,8 +211,8 @@ def build_payload() -> dict[str, Any]:
             "98-state C2 path with 61-dimensional reduced Hessian, branch 24, and 62-dimensional border",
             "finite Euclidean physical tangent quotient; auxiliary geometry, not the temporal birth domain",
             ["local_action", "base_family", "selected_center_provenance"],
-            ["dop_response", "dop_first_variation", "dop_second_variation", "common_frame_matching", "normalized_field_identity", "nonlinear_cone_spectrum", "nonlinear_cone_projector_inverse", "causal_z2", "signed_y_quadrature", "recentered_cone_spectrum", "recentered_cone_projector", "recentered_cone_inverse", "recentered_cone_response", "recentered_cone_first_variation", "dop_domain"],
-            "LOCAL_3009_CELL_QUARTER_RECENTERED_LINE_PROJECTOR_INVERSE_AND_24072_CELL_RESPONSE_REVERSE_FIRST_VARIATION_PLUS_CAUSAL_Z2_CERTIFIED_ON_THE_REPRESENTED_GAUSS12_CENTER;_GAUSS8_12_16_20_SIGNED_Y_NONCONVERGENCE_PREVENTS_HISTORY_PROMOTION",
+            ["dop_response", "dop_first_variation", "dop_second_variation", "common_frame_matching", "normalized_field_identity", "nonlinear_cone_spectrum", "nonlinear_cone_projector_inverse", "causal_z2", "signed_y_quadrature", "decimal_signed_source", "decimal_signed_y_green", "recentered_cone_spectrum", "recentered_cone_projector", "recentered_cone_inverse", "recentered_cone_response", "recentered_cone_first_variation", "dop_domain"],
+            "LOCAL_3009_CELL_QUARTER_RECENTERED_LINE_PROJECTOR_INVERSE_AND_24072_CELL_RESPONSE_REVERSE_FIRST_VARIATION_PLUS_CAUSAL_Z2_CERTIFIED_ON_THE_REPRESENTED_GAUSS12_CENTER;_DECIMAL_GAUSS6_TO8_SIGNED_SOURCE_AND_PROP16_GREEN_IMAGE_NUMERICALLY_STABLE_INSIDE_THE_HALO;_OUTWARD_INTERVAL_PROMOTION_OPEN",
             "current adaptive DOP853 certificate",
             ["GATE7_HEAT_ZETA_CHAIN"],
             ["12,032-cell historical uniform cover replaced by the exact 8,692-cell adaptive cover"],
@@ -298,10 +302,10 @@ def build_payload() -> dict[str, Any]:
         {"id": "UNIVERSAL_TERMINAL_REACHABILITY", "classification": "INVALIDATED", "current_effect": "event-or-stop on the relevant certified history is sufficient"},
         {"id": "CHORD_3", "classification": "INVALIDATED", "current_effect": "unauthorized and not a dependency"},
         {"id": "INTERNAL_ABSOLUTE_SCALE_DERIVATION", "classification": "POST_1_0", "current_effect": "one universal G_F calibration is permitted"},
-        {"id": "G7_SIGNED_Y_QUADRATURE_AND_RECENTER_REBASE", "classification": "REFINED_INTO_CURRENT_WITNESS", "current_effect": "the nonconverged signed Green correction is the Y component of the one correlated center-stop witness"},
+        {"id": "G7_SIGNED_Y_QUADRATURE_AND_RECENTER_REBASE", "classification": "SUPERSEDED_BY_DECIMAL_SOURCE_REPAIR", "current_effect": "the former Gauss8/12/16/20 nonconvergence changed a binary selected-eigenline source representation; the isolated Decimal Gauss6-to8 source and PROP16 image are stable inside the halo"},
         {"id": "G7_COMPACT_RESET_STORED_RESERVE_791_1064", "classification": "SUPERSEDED_BY_DIRECTED_DECIMAL_REPLAY", "current_effect": "the two binary64-rounded zero reserves replay to strict directed lower bounds near 4.03e-28 and the predeclared open subball now crosses all 1222 core segments"},
         {"id": "G7_RESET_TO_CAPTURE_OR_STOP_CONNECTION", "classification": "SUPERSEDED_BY_TRANSVERSALITY_REDUCTION", "current_effect": "one exact transverse center stop witness automatically promotes to a nonempty open 72-dimensional stop-reaching seed stratum; whole-family multiple shooting and the NHIM bridge are unnecessary on the stop branch"},
-        {"id": "G7_CORRELATED_QUARTER_STEP_CENTER_STOP_WITNESS", "classification": "CURRENT_BLOCKER", "current_effect": "close outward-rounded correlated Y/Z1/Z2 for one quarter-step center, transfer strict preterminal margins, and apply scalar interval Newton at the stored s=0 first hit"},
+        {"id": "G7_CORRELATED_QUARTER_STEP_CENTER_STOP_WITNESS", "classification": "CURRENT_BLOCKER", "current_effect": "freeze the Decimal Gauss8 center, attach outward source and PROP16 tails for Y/Z1, transfer Z2 by rebuilding center-dependent cone objects, close the radii polynomial, transfer strict preterminal margins, and apply scalar interval Newton at the stored s=0 first hit"},
         {"id": "G7_COMPLETE_JOINT_FORCE_ROOT", "classification": "DOWNSTREAM_ONLY", "current_effect": "evaluate after signed-Y recentering, radii closure, and first-hit transfer"},
         {"id": "DECORRELATED_SCALAR_SECOND_VARIATION", "classification": "INVALIDATED_PROOF_ROUTE", "current_effect": "finite first variation survives; all 8,692 scalar denominator cells route to signed/common-frame correlation"},
         {"id": "G7_HESSIAN_WARD_SCALAR", "classification": "DOWNSTREAM_ONLY", "current_effect": "follows the force/KKT root"},
@@ -314,7 +318,7 @@ def build_payload() -> dict[str, Any]:
         {"id": "AE2_TO_ONE_SEAM", "class": "A", "priority": 0, "status": "RESOLVED_BY_EXISTING_COMPOSITION", "evidence": PATHS["one_seam"]},
         {"id": "EVENT_RESET_TO_INTERNAL_SOURCE", "class": "A", "priority": 0, "status": "RESOLVED_BY_EXISTING_CLOSED_SYSTEM_ONTOLOGY", "evidence": PATHS["source_ontology"]},
         {"id": "DOP853_TO_RESPONSE_VARIATION", "class": "C", "priority": 1, "status": "RESOLVED_FOR_EXACT_CENTER_AND_FINITE_DIRECT_FIRST_VARIATION", "evidence": PATHS["dop_second_variation"]},
-        {"id": "RESPONSE_TO_CORRELATED_Y_Z1_Z2", "class": "C", "priority": 1, "status": "LOCAL_RECENTERED_RESPONSE_AND_CAUSAL_Z2_CERTIFIED_ON_THE_REPRESENTED_GAUSS12_CENTER;_SIGNED_Y_QUADRATURE_NONCONVERGED_AND_RECENTER_REBASE_REQUIRED", "evidence": PATHS["signed_y_quadrature"]},
+        {"id": "RESPONSE_TO_CORRELATED_Y_Z1_Z2", "class": "C", "priority": 1, "status": "DECIMAL_GAUSS6_TO8_SIGNED_SOURCE_AND_PROP16_GREEN_IMAGE_NUMERICALLY_CONVERGED_INSIDE_THE_HALO;_OUTWARD_INTERVAL_Y_Z1_AND_GAUSS8_CENTER_DEPENDENT_Z2_CONE_REBUILD_OPEN", "evidence": PATHS["decimal_signed_y_green"]},
         {"id": "FINITE_HISTORY_TO_HEAT_ZETA_COVECTOR", "class": "C", "priority": 1, "status": "ENDPOINTS_AND_FORMULAS_EXIST_JOINT_CONTRACTION_NOT_YET_EVALUATED", "evidence": PATHS["force_functional"]},
         {"id": "COMPACT_RESET_DOMAIN_TO_CAPTURE_OR_STOP", "class": "B", "priority": 0, "status": "OPEN_72_DIMENSIONAL_RESET_SUBBALL_CERTIFIED_THROUGH_1222_CORE;_ONE_EXACT_TRANSVERSE_CENTER_STOP_WITNESS_SUFFICES_FOR_AN_OPEN_STOP_STRATUM;_CENTER_INTERVAL_SHADOWING_AND_FIRST_HIT_NEWTON_OPEN", "evidence": PATHS["open_family_stop_reduction"]},
         {"id": "FAMILY_PROJECTORS_TO_MASS_CKM", "class": "B", "priority": 2, "status": "MISSING_ACTION_SELECTED_SECTOR_RESPONSE_EIGENBASES", "evidence": PATHS["generation"]},
@@ -358,12 +362,20 @@ def build_payload() -> dict[str, Any]:
             and causal_z2["claim_boundary"]["propagator_Z1_and_signed_Y"]
             == "OPEN"
         ),
-        "signed_Y_quadrature_nonconvergence_is_reconciled": (
+        "signed_Y_binary_source_noise_is_superseded_by_decimal_repair": (
             signed_y_quadrature["validation_passed"] is True
             and signed_y_quadrature["claim_boundary"]["Y"]
             == "OPEN_NONCONVERGED_SIGNED_QUADRATURE"
-            and signed_y_quadrature["status"]
-            == "CURRENT_GAUSS12_RECENTER_NOT_PROMOTABLE;_SIGNED_Y_QUADRATURE_OPEN"
+            and decimal_signed_source["validation_passed"] is True
+            and decimal_signed_source["summary"]["selected_branches_seen"]
+            == [24]
+            and decimal_signed_y_green["validation_passed"] is True
+            and decimal_signed_y_green["claim_boundary"][
+                "signed_Y_numerical_cross_order_convergence"
+            ] == "VALIDATED"
+            and decimal_signed_y_green["claim_boundary"][
+                "outward_interval_Y_and_Z1"
+            ] == "OPEN"
         ),
         "quarter_green_corrected_carrier_is_certified": (
             recentered_cone_spectrum["validation_passed"] is True
@@ -460,7 +472,7 @@ def build_payload() -> dict[str, Any]:
             "Gate7": "ACTIVE",
             "FULL_BHSM_COMPLETE": False,
         },
-        "exact_next_dependency": "CLOSE_OUTWARD_ROUNDED_CORRELATED_Y_Z1_Z2_FOR_ONE_EXISTING_QUARTER_STEP_CENTER_WITH_HIGH_PRECISION_OR_ADAPTIVE_SIGNED_QUADRATURE,_TRANSFER_ALL_STRICT_PRETERMINAL_DOMAIN_MARGINS,_AND_APPLY_SCALAR_INTERVAL_NEWTON_AT_THE_STORED_TRANSVERSE_s_ZERO_FIRST_HIT;_THEN_THE_OPEN_72D_STOP_STRATUM_FOLLOWS_AUTOMATICALLY_BY_TRANSVERSALITY",
+        "exact_next_dependency": "FREEZE_THE_DECIMAL_GAUSS8_CORRECTION_CENTER,_ATTACH_OUTWARD_SIGNED_SOURCE_AND_PROP16_TAIL_REMAINDERS_FOR_Y_Z1,_REBUILD_ONLY_CENTER_DEPENDENT_CONE_OBJECTS_TO_TRANSFER_Z2,_CLOSE_THE_RADII_POLYNOMIAL,_TRANSFER_ALL_STRICT_PRETERMINAL_DOMAIN_MARGINS,_AND_APPLY_SCALAR_INTERVAL_NEWTON_AT_THE_STORED_TRANSVERSE_s_ZERO_FIRST_HIT",
         "FULL_BHSM_COMPLETE": False,
     }
 

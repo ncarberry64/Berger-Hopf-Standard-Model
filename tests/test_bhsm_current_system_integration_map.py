@@ -24,7 +24,7 @@ def test_canonical_system_and_required_subsystems() -> None:
         "quarter_green_corrected_carrier_is_certified"
     ] is True
     assert payload["validation"][
-        "signed_Y_quadrature_nonconvergence_is_reconciled"
+        "signed_Y_binary_source_noise_is_superseded_by_decimal_repair"
     ] is True
     assert payload["validation"][
         "binary64_compact_reserve_artifact_is_superseded_by_directed_replay"
@@ -76,7 +76,7 @@ def test_blocker_and_interface_priority_reconciliation() -> None:
         if row["id"] == "RESPONSE_TO_CORRELATED_Y_Z1_Z2"
     )
     assert response_gap["status"] == (
-        "LOCAL_RECENTERED_RESPONSE_AND_CAUSAL_Z2_CERTIFIED_ON_THE_REPRESENTED_"
-        "GAUSS12_CENTER;_SIGNED_Y_QUADRATURE_NONCONVERGED_AND_RECENTER_REBASE_"
-        "REQUIRED"
+        "DECIMAL_GAUSS6_TO8_SIGNED_SOURCE_AND_PROP16_GREEN_IMAGE_NUMERICALLY_"
+        "CONVERGED_INSIDE_THE_HALO;_OUTWARD_INTERVAL_Y_Z1_AND_GAUSS8_CENTER_"
+        "DEPENDENT_Z2_CONE_REBUILD_OPEN"
     )
