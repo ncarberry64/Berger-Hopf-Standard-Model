@@ -110,8 +110,23 @@ Richardson reference reduce the PROP16 mismatch from
 `6.923456944010526e-13`, leaving selected-cone reserve
 `5.516265746210465e-13` and `9.25197304141814`-fold `Y+Z1` headroom with stored
 `Z2`.  These remain numerical routing data.  Promotion requires an outward
-correlated enclosure of the Magnus-4 higher-commutator remainder and matrix
-exponential roundoff, while signed `Y` remains a separate outward theorem.
+correlated enclosure of the Magnus-4 higher-commutator remainder, while signed
+`Y` remains a separate outward theorem.
+
+The finite aligned Magnus-4 discrete operator is now outward certified on
+every recentered quotient block.  At 128-bit precision, Arb materializes every
+stored binary64 input as its exact dyadic rational and encloses all 8,868
+matrix exponentials together with the commutators, products, source
+contractions, and quotient projections across all 370 cells.  The maximum Arb
+Euclidean evaluation radius is `8.621929348106468e-35`; the maximum outward
+aligned-versus-prior-unaligned proof-coordinate difference is
+`1.0339123218414115e-19`, with terminal evaluation radius
+`3.8518326736396573e-41` and terminal coordinate difference
+`2.2222465150551854e-21`.  Thus finite discrete construction and exponential
+roundoff are no longer open.  Global correlated block composition, the
+analytic Magnus-4 higher-commutator remainder, and outward signed `Y` remain
+open before the center-dependent `Z2`, radii, continuous margins, and first-hit
+transfer can close.
 
 Independently, the compact 72-dimensional reset quotient domain and its first
 jets are certified.  The apparent zero stored reserves at transitions 791 and

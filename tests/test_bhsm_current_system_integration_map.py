@@ -36,6 +36,9 @@ def test_canonical_system_and_required_subsystems() -> None:
         "affine_Magnus4_recenter_removes_midpoint_leading_defect_numerically"
     ] is True
     assert payload["validation"][
+        "aligned_Magnus4_discrete_blocks_and_exponential_roundoff_are_outward_certified"
+    ] is True
+    assert payload["validation"][
         "binary64_compact_reserve_artifact_is_superseded_by_directed_replay"
     ] is True
     assert payload["validation"][
@@ -85,7 +88,7 @@ def test_blocker_and_interface_priority_reconciliation() -> None:
         if row["id"] == "RESPONSE_TO_CORRELATED_Y_Z1_Z2"
     )
     assert response_gap["status"] == (
-        "MAGNUS4_PROP16_REFERENCE_MISMATCH_REDUCED_21290_FOLD_AND_CANDIDATE_Y_"
-        "PLUS_Z1_CONE_HEADROOM_IS_9P252_FOLD_WITH_STORED_Z2;_OUTWARD_MAGNUS_"
-        "HIGHER_COMMUTATOR_ROUNDOFF_SIGNED_Y_AND_Z2_TRANSFER_OPEN"
+        "ALIGNED_MAGNUS4_DISCRETE_OPERATOR_OUTWARD_EVALUATION_CERTIFIED_ON_ALL_"
+        "370_RECENTERED_QUOTIENT_BLOCKS;_GLOBAL_CORRELATED_BLOCK_COMPOSITION_"
+        "ANALYTIC_HIGHER_COMMUTATOR_REMAINDER_SIGNED_Y_AND_Z2_TRANSFER_OPEN"
     )
