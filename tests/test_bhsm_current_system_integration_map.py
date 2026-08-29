@@ -27,7 +27,7 @@ def test_canonical_system_and_required_subsystems() -> None:
         "signed_Y_quadrature_nonconvergence_is_reconciled"
     ] is True
     assert payload["validation"][
-        "compact_reset_propagation_failure_is_localized"
+        "binary64_compact_reserve_artifact_is_superseded_by_directed_replay"
     ] is True
     assert payload["canonical_action_version"] == "BHSM-AE-2.0.0"
     identifiers = {row["id"] for row in payload["subsystems"]}
@@ -57,7 +57,7 @@ def test_blocker_and_interface_priority_reconciliation() -> None:
     assert payload["current_irreducible_object"].startswith("G7_PARALLEL_FRONTIER")
     assert payload["current_irreducible_objects"] == [
         "G7_SIGNED_Y_HIGH_PRECISION_OR_ADAPTIVE_QUADRATURE_AND_RECENTER_REBASE",
-        "G7_COMPACT_RESET_PROPAGATION_STRICT_RESERVE_AT_TRANSITIONS_791_AND_1064",
+        "G7_CORE_ENDPOINT_TO_NHIM_CAPTURE_OR_FIRST_RETAINED_STOP",
     ]
     assert payload["integration_order"] == [
         "A_EXISTING_COMPOSITION", "C_IMPLEMENTATION", "B_THEOREM", "D_NEW_THEORY_CHOICE"

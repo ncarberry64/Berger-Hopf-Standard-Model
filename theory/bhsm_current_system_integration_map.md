@@ -74,7 +74,7 @@ The map has exactly two current blockers:
 
 `G7_SIGNED_Y_HIGH_PRECISION_OR_ADAPTIVE_QUADRATURE_AND_RECENTER_REBASE`.
 
-`G7_COMPACT_RESET_PROPAGATION_STRICT_RESERVE_AT_TRANSITIONS_791_AND_1064`.
+`G7_CORE_ENDPOINT_TO_NHIM_CAPTURE_OR_FIRST_RETAINED_STOP`.
 
 The next proof object is correlation-preserving high-precision or adaptive
 signed quadrature whose correction stabilizes below the current halo.  Once
@@ -84,13 +84,16 @@ the first-hit transfer.  The observed propagator refinement is second order,
 but its geometric tail is still numerical rather than interval authority.
 
 Independently, the compact 72-dimensional reset quotient domain and its first
-jets are certified.  The stored 1,222-segment pointwise cover does not yet
-carry a positive reset-family radius through the whole core: exactly two
-transitions, global segments 791 and 1064, have zero stored output reserve.
-The other 1,220 rows derive a positive open-subball target, so the next proof
-computation is localized to rebuilding only those two saturated transition
-blocks with a predeclared strict reserve.  This is a failure of the stored
-cover radii, not a dynamical no-go or a failure of the pointwise history.
+jets are certified.  The apparent zero stored reserves at transitions 791 and
+1064 were binary64 storage artifacts: directed Decimal replay gives strict
+reserve lower bounds near `4.03e-28`, exceeding the predeclared proof-only
+open-subball needs without changing any center, step, history, action datum,
+or domain.  The nonempty open subball of radius
+`9.906956529453137e-30` therefore propagates through all 1,222 core segments,
+with terminal quotient first-jet singular lower bound
+`9.727034860392273e-4`.  The current geometric owner begins at that core
+endpoint and must carry the same open family to the existing NHIM capture
+surface or a first retained event/canonical stop.
 
 KKT Hessian/Ward/scalar work, action-selected mass/CKM/PMNS eigenbases, frozen
 comparison regeneration, and release packaging are downstream.  An internal
