@@ -2,6 +2,13 @@
 
 Status: `EXACT_GLOBAL_CONNECTION_OBSTRUCTION_LOCALIZED`.
 
+The compact-domain input has since been sharpened: the retained terminal
+reset radii theorem now certifies a closed 72-dimensional quotient ball with
+nonempty relative interior, uniform regular-domain margins, and a strictly
+positive first-jet singular margin.  The missing route-B object is therefore
+the boundary-controlled propagation or first-hit map of that whole compact
+domain, not the parameter domain itself.
+
 This result consumes the sixteen-segment cancelled-descriptor cover, its
 action-owned endpoint recenter, and the first sheared invariant-graph block
 as closed local machinery.  It does not add another continuation block.

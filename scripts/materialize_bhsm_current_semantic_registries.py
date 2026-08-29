@@ -100,6 +100,7 @@ SOURCES = (
     "artifacts/flagship_integration/BHSM_N12_GATE7_QUANTITATIVE_CAPTURE_BRIDGE_RECOMBINATION.json",
     "artifacts/flagship_integration/BHSM_N12_GATE7_FULL_LOWER_WEIGHT_KRAWCZYK_CLOSURE.json",
     "artifacts/flagship_integration/BHSM_N12_GATE7_QUANTITATIVE_STABLE_CAPTURE_TUBE.json",
+    "artifacts/flagship_integration/BHSM_N12_GATE7_COMPACT_RESET_QUOTIENT_DOMAIN.json",
     "artifacts/flagship_integration/BHSM_N12_GATE7_GLOBAL_CONNECTION_OBSTRUCTION.json",
     "artifacts/flagship_integration/BHSM_N12_C2_SIGNED_DURATION_INCIDENCE_OWNER.json",
     "artifacts/flagship_integration/BHSM_N12_C2_SIGNED_DDELTA_SEED_TRANSPORT_AUDIT.json",
@@ -239,6 +240,9 @@ def verify_current_lineage() -> None:
     ]
     quantitative_stable_capture = loaded[
         "artifacts/flagship_integration/BHSM_N12_GATE7_QUANTITATIVE_STABLE_CAPTURE_TUBE.json"
+    ]
+    compact_reset_domain = loaded[
+        "artifacts/flagship_integration/BHSM_N12_GATE7_COMPACT_RESET_QUOTIENT_DOMAIN.json"
     ]
     global_connection_obstruction = loaded[
         "artifacts/flagship_integration/BHSM_N12_GATE7_GLOBAL_CONNECTION_OBSTRUCTION.json"
@@ -619,6 +623,16 @@ def verify_current_lineage() -> None:
         ] == "CERTIFIED"
         and quantitative_stable_capture["claim_boundary"][
             "AE2_reset_image_enters_capture_tube"
+        ] == "OPEN_CURRENT_OWNER"
+        and compact_reset_domain["claim_boundary"][
+            "compact_nonempty_reset_quotient_domain"
+        ] == "CERTIFIED"
+        and compact_reset_domain["parameter_domain"]["dimension"] == 72
+        and compact_reset_domain["quotient_first_jet"][
+            "uniform_C2_quotient_first_jet_singular_value_lower"
+        ] > 0.0
+        and compact_reset_domain["adjudication"][
+            "propagated_reset_to_terminal_map"
         ] == "OPEN_CURRENT_OWNER"
         and global_connection_obstruction["status"]
         == "EXACT_GLOBAL_CONNECTION_OBSTRUCTION_LOCALIZED"

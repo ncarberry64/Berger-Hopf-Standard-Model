@@ -32,6 +32,12 @@ def test_globalization_audit_localizes_exact_connector() -> None:
         payload["globalization_audit"]["DEGREE_COVERING"]["degree_value"]
         == "UNDEFINED_NOT_ZERO"
     )
+    assert payload["globalization_audit"]["DEGREE_COVERING"][
+        "compact_reset_parameter_box"
+    ] == "CERTIFIED_CLOSED_72_BALL"
+    assert payload["globalization_audit"]["COMPACT_FINITE_SUBCOVER"][
+        "compact_full_reset_family_domain"
+    ] == "CERTIFIED_NONEMPTY_72_DIMENSIONAL_QUOTIENT_DOMAIN"
     assert payload["adjudication"]["another_local_block_authorized_as_default_next_step"] is False
 
 

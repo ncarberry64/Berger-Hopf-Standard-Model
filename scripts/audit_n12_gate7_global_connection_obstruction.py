@@ -35,6 +35,7 @@ RECENTER = BASE / "BHSM_N12_C2_1221_EXPANDED_ENDPOINT_RECENTER.json"
 SHEARED = BASE / "BHSM_N12_C2_1221_EXPANDED_ENDPOINT_SHEARED_STEP.json"
 SHEARED_DATA = SHEARED.with_suffix(".npz")
 LAUNCH = BASE / "BHSM_N12_C2_RESET_GENERATED_LAUNCH_CHART.json"
+RESET_DOMAIN = BASE / "BHSM_N12_GATE7_COMPACT_RESET_QUOTIENT_DOMAIN.json"
 PARAMETRIC = BASE / "BHSM_N12_C2_1222_PARAMETRIC_BASE_FAMILY.json"
 TERMINAL = BASE / "BHSM_N12_ASYMPTOTIC_TERMINAL_CHART_PROJECTION.json"
 CAPTURE = BASE / "BHSM_N12_GATE7_QUANTITATIVE_STABLE_CAPTURE_TUBE.json"
@@ -54,6 +55,7 @@ INPUTS = (
     SHEARED,
     SHEARED_DATA,
     LAUNCH,
+    RESET_DOMAIN,
     PARAMETRIC,
     TERMINAL,
     CAPTURE,
@@ -130,13 +132,14 @@ def build_payload() -> dict[str, Any]:
     missing = [str(path) for path in INPUTS if not path.is_file()]
     if missing:
         raise FileNotFoundError("missing globalization inputs: " + ", ".join(missing))
-    cover, recenter, sheared, launch, parametric, terminal, capture, connection, dichotomy = (
+    cover, recenter, sheared, launch, reset_domain, parametric, terminal, capture, connection, dichotomy = (
         _load(path)
         for path in (
             COVER,
             RECENTER,
             SHEARED,
             LAUNCH,
+            RESET_DOMAIN,
             PARAMETRIC,
             TERMINAL,
             CAPTURE,
@@ -149,6 +152,7 @@ def build_payload() -> dict[str, Any]:
         recenter,
         sheared,
         launch,
+        reset_domain,
         parametric,
         terminal,
         capture,
@@ -265,7 +269,14 @@ def build_payload() -> dict[str, Any]:
             ],
             "terminal_descriptor_dimension": terminal["map"]["descriptor_dimension"],
             "terminal_log_epsilon_is_additional": True,
-            "compact_reset_parameter_box": "NOT_CERTIFIED",
+            "compact_reset_parameter_box": "CERTIFIED_CLOSED_72_BALL",
+            "compact_reset_parameter_radius": reset_domain[
+                "parameter_domain"
+            ]["radius"],
+            "uniform_reset_quotient_first_jet_singular_value_lower": (
+                reset_domain["quotient_first_jet"]
+                ["uniform_C2_quotient_first_jet_singular_value_lower"]
+            ),
             "propagated_reset_to_terminal_map": "NOT_CERTIFIED",
             "square_transverse_degree_map": "NOT_DEFINED",
             "boundary_exclusion_or_covering_faces": "NOT_CERTIFIED",
@@ -279,7 +290,9 @@ def build_payload() -> dict[str, Any]:
             "current_cover_is_finite": True,
             "current_cover_termination": cover["cover"]["exhaustion"],
             "uniform_future_step_lower_bound": "NOT_CERTIFIED",
-            "compact_full_reset_family_domain": "NOT_CERTIFIED",
+            "compact_full_reset_family_domain": (
+                "CERTIFIED_NONEMPTY_72_DIMENSIONAL_QUOTIENT_DOMAIN"
+            ),
             "finite_number_of_future_recenters": "NOT_BOUNDED",
             "verdict": "NO_FINITE_GLOBAL_SUBCOVER_THEOREM_DERIVED",
         },
@@ -302,8 +315,8 @@ def build_payload() -> dict[str, Any]:
             "MARGINS_AND_AN_ACTION_OWNED_FUNCTIONAL_FORCING_FINITE_TUBE_ENTRY"
         ),
         "route_B_finite_set_map": (
-            "A_COMPACT_NONEMPTY_RESET_QUOTIENT_PARAMETER_DOMAIN_K,_A_VALIDATED_"
-            "FLOW_OR_FIRST_HIT_MAP_FROM_K_TO_THE_TERMINAL_CHART,_AND_EITHER_"
+            "A_VALIDATED_FLOW_OR_FIRST_HIT_MAP_FROM_THE_CERTIFIED_COMPACT_"
+            "RESET_QUOTIENT_DOMAIN_K_TO_THE_TERMINAL_CHART,_AND_EITHER_"
             "STRICT_TUBE_INCLUSION_OR_A_SQUARE_TRANSVERSE_MAP_WITH_BOUNDARY_"
             "EXCLUSION_AND_NONZERO_DEGREE"
         ),
@@ -329,6 +342,17 @@ def build_payload() -> dict[str, Any]:
             "C2_launch_manifold"
         ]
         == 73,
+        "compact_reset_quotient_domain_is_certified": (
+            reset_domain["claim_boundary"][
+                "compact_nonempty_reset_quotient_domain"
+            ]
+            == "CERTIFIED"
+            and reset_domain["parameter_domain"]["dimension"] == 72
+            and reset_domain["quotient_first_jet"][
+                "uniform_C2_quotient_first_jet_singular_value_lower"
+            ]
+            > 0.0
+        ),
         "terminal_descriptor_has_74_components": terminal["map"][
             "descriptor_dimension"
         ]
@@ -385,10 +409,11 @@ def build_payload() -> dict[str, Any]:
             else "GLOBAL_CONNECTION_AUDIT_INVALID"
         ),
         "classification": (
-            "THE_CLOSED_LOCAL_COVER,_SHEARED_RECENTER,_73_DIMENSIONAL_RESET_"
-            "LAUNCH,_EXECUTABLE_TERMINAL_PROJECTION,_AND_STABLE_TUBE_DO_NOT_YET_"
+            "THE_CERTIFIED_COMPACT_RESET_QUOTIENT_DOMAIN,_CLOSED_LOCAL_COVER,_"
+            "SHEARED_RECENTER,_EXECUTABLE_TERMINAL_PROJECTION,_AND_STABLE_TUBE_"
+            "DO_NOT_YET_"
             "COMPOSE_TO_A_FINITE_GLOBAL_CONNECTION_THEOREM;_THE_EXACT_MISSING_"
-            "OBJECT_IS_A_COMPACT_BOUNDARY_CONTROLLED_PROPAGATED_RESET_SET_MAP_OR_"
+            "OBJECT_IS_A_BOUNDARY_CONTROLLED_PROPAGATED_RESET_SET_MAP_OR_"
             "AN_EQUIVALENT_GLOBAL_INVARIANT_REGION,_NOT_ANOTHER_LOCAL_RADIUS"
         ),
         "current_certified_sheared_endpoint": {
@@ -425,8 +450,9 @@ def build_payload() -> dict[str, Any]:
         },
         "hindsight": {
             "VALIDATED": (
-                "THE_LOCAL_RESET_FAMILY,_FINITE_COVER,_SHEARED_RECENTER,_TERMINAL_"
-                "PROJECTION,_AND_CAPTURE_TUBE_ARE_REAL_AND_COMPATIBLE_LOCAL_OBJECTS"
+                "THE_COMPACT_RESET_QUOTIENT_DOMAIN_WITH_FIRST_JETS,_FINITE_"
+                "COVER,_SHEARED_RECENTER,_TERMINAL_PROJECTION,_AND_CAPTURE_"
+                "TUBE_ARE_REAL_AND_COMPATIBLE_LOCAL_OBJECTS"
             ),
             "INVALIDATED": (
                 "REPEATED_LOCAL_RADIUS_OR_RECENTER_IMPROVEMENT_BY_ITSELF_MATERIALLY_"

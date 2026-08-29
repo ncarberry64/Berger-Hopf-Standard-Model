@@ -2762,3 +2762,38 @@ Exact next object:
 - Gate 7 remains `ACTIVE`; Gate 8 is `LOCKED`; chord 3 remains
   `UNAUTHORIZED`; frozen predictions are unchanged;
   `FULL_BHSM_COMPLETE=FALSE`.
+
+## N=12 Gate-7 compact AE2 reset-quotient domain
+
+- The existing 58-row terminal-reset normal radii theorem is applied
+  parametrically to the complete forward-swapped reset tangent, rather than
+  to a selected reset member.
+- The terminal reset stratum has tangent dimension 138.  Its projection to
+  the outgoing C2 seed has rank 72, supplying the full reset-quotient
+  parameter space.
+- On the closed proof-domain ball
+  `K_rho={xi in R^72: ||xi||_2<=1e-12}`, tangency removes the first-order
+  parameter residual.  The retained `Y0`, `Z0`, and `Z2` majorants close the
+  parameter-dependent radii polynomial with normal-graph radius
+  `3.2727939976516174e-14`.
+- The combined tangent-plus-normal action radius is
+  `1.0005354156935722e-12`, strictly inside the already retained `1e-10`
+  action ball.  The proof radius is not a physical scale.
+- The uniform normal-graph first-jet bound is
+  `0.023987240897344796`.  After subtracting it from the existing C2
+  projection margin, the quotient first-jet singular value remains at least
+  `0.18120266546690422`, so rank 72 persists throughout the whole domain.
+- Positive lapse, positive radius, positive initial proper radius rate,
+  selected-line simplicity, Legendre positivity, normal reset regularity,
+  and the two-sided forward orientation all hold uniformly on this smaller
+  compact family.
+- Scientific milestone:
+  `COMPACT_NONEMPTY_AE2_RESET_QUOTIENT_DOMAIN_CERTIFIED`.
+- This closes the compact-domain input to route B.  It does not propagate
+  the family and does not establish capture or a stop.  The exact remaining
+  owner is one finite boundary-controlled flow/first-hit map of the entire
+  compact domain, proving strict capture-tube inclusion, nonzero degree with
+  boundary exclusion, or the first retained canonical stop.
+- Gate 7 remains `ACTIVE`; Gate 8 is `LOCKED`; chord 3 remains
+  `UNAUTHORIZED`; frozen predictions are unchanged;
+  `FULL_BHSM_COMPLETE=FALSE`.

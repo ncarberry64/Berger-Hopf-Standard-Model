@@ -48,7 +48,9 @@ def test_blocker_and_interface_priority_reconciliation() -> None:
     assert sum(row["classification"] == "CURRENT_BLOCKER" for row in blockers) == 1
     old_domain = next(row for row in blockers if row["id"] == "V6_7_NORMAL_MATTER_DOMAIN_NO_GO")
     assert old_domain["classification"] == "SUPERSEDED_BY_LATER_DOMAIN"
-    assert payload["current_irreducible_object"].startswith("G7_COMPLETE_JOINT_HEAT_ZETA")
+    assert payload["current_irreducible_object"].startswith(
+        "G7_BOUNDARY_CONTROLLED_PROPAGATED_COMPACT_RESET_SET_MAP"
+    )
     assert payload["integration_order"] == [
         "A_EXISTING_COMPOSITION", "C_IMPLEMENTATION", "B_THEOREM", "D_NEW_THEORY_CHOICE"
     ]

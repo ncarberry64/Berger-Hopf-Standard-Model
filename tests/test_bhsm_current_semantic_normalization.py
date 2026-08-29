@@ -339,10 +339,15 @@ def test_replacement_force_is_constraint_projected_without_reset_selection() -> 
     assert "finite integrated center drift" in dag[
         "G7_08_FORCE"
     ]["physical_meaning"]
-    assert "reset-family forward cover into that tube" in dag[
+    assert "boundary-controlled propagation of that whole ball into the tube" in dag[
         "G7_08_FORCE"
     ]["physical_meaning"]
-    assert "compact boundary-controlled propagated reset-set map" in dag[
+    assert (
+        "artifacts/flagship_integration/"
+        "BHSM_N12_GATE7_COMPACT_RESET_QUOTIENT_DOMAIN.json"
+        in dag["G7_08_FORCE"]["provenance"]
+    )
+    assert "missing connector as that propagated reset-set map" in dag[
         "G7_08_FORCE"
     ]["physical_meaning"]
     assert "finite-core heat suppression is not uniform" in dag["G7_08_FORCE"][

@@ -124,6 +124,7 @@ def _basis() -> list[dict[str, Any]]:
     p_quantitative_stable_capture = "artifacts/flagship_integration/BHSM_N12_GATE7_QUANTITATIVE_STABLE_CAPTURE_TUBE.json"
     p_endpoint_recenter = "artifacts/flagship_integration/BHSM_N12_C2_1221_EXPANDED_ENDPOINT_RECENTER.json"
     p_sheared_step = "artifacts/flagship_integration/BHSM_N12_C2_1221_EXPANDED_ENDPOINT_SHEARED_STEP.json"
+    p_compact_reset_domain = "artifacts/flagship_integration/BHSM_N12_GATE7_COMPACT_RESET_QUOTIENT_DOMAIN.json"
     p_global_connection_obstruction = "artifacts/flagship_integration/BHSM_N12_GATE7_GLOBAL_CONNECTION_OBSTRUCTION.json"
     p_parametric_base = "artifacts/flagship_integration/BHSM_N12_C2_1222_PARAMETRIC_BASE_FAMILY.json"
     p_signed_adjoint = "artifacts/flagship_integration/BHSM_N12_C2_1222_SIGNED_ADJOINT_ASSEMBLY.json"
@@ -507,12 +508,12 @@ def _basis() -> list[dict[str, Any]]:
         ),
         record(
             "GATE7_GLOBAL_CONNECTION_OBSTRUCTION",
-            "K compact reset quotient; Phi_K into (log epsilon,z_74), or one connected invariant region with uniform stop margins",
+            "K_rho={xi in R72: ||xi||<=1e-12}; Phi_K into (log epsilon,z_74), or one connected invariant region with uniform stop margins",
             "FINITE_GLOBAL_CONNECTION_PROOF_OBSTRUCTION",
             "MATHEMATICAL_OBJECT",
-            "The closed local cover, sheared recenter, 73-dimensional reset launch, executable terminal projection, and stable tube do not yet compose to a finite global theorem. Signed-descriptor monotonicity is not a capture-distance law; the local and asymptotic cones have no certified connected overlap; and no compact propagated reset-set map, square transverse degree map, or boundary exclusion is defined. This localizes the exact missing global connector without disproving a connecting history.",
+            "The 58-row parametric radii theorem now certifies a compact nonempty 72-dimensional reset-quotient ball with uniform regular margins and a positive first-jet singular margin. The closed local cover, sheared recenter, executable terminal projection, and stable tube still do not compose to a finite global theorem. Signed-descriptor monotonicity is not a capture-distance law; the local and asymptotic cones have no certified connected overlap; and no boundary-controlled propagated reset-set map, square transverse degree map, or boundary exclusion is defined. This localizes the exact missing global connector without disproving a connecting history.",
             "forward-reachable regular AE2 reset component from the certified finite prefix to capture or first retained stop",
-            [p_global_connection_obstruction],
+            [p_compact_reset_domain, p_global_connection_obstruction],
             current_status="EXACT_GLOBAL_CONNECTION_OBSTRUCTION_LOCALIZED",
             downstream_consumers=["G7_08_FORCE", "G7_09_SADDLE"],
             forbidden_interpretations=["the reset-to-capture connection is impossible", "the undefined degree is zero", "another local recenter closes the global problem", "the terminal proof scale is a physical fitted threshold"],
@@ -1008,6 +1009,7 @@ def _gates() -> list[dict[str, Any]]:
             "artifacts/flagship_integration/BHSM_N12_GATE7_QUANTITATIVE_CAPTURE_BRIDGE_RECOMBINATION.json",
             "artifacts/flagship_integration/BHSM_N12_GATE7_FULL_LOWER_WEIGHT_KRAWCZYK_CLOSURE.json",
             "artifacts/flagship_integration/BHSM_N12_GATE7_QUANTITATIVE_STABLE_CAPTURE_TUBE.json",
+            "artifacts/flagship_integration/BHSM_N12_GATE7_COMPACT_RESET_QUOTIENT_DOMAIN.json",
             "artifacts/flagship_integration/BHSM_N12_GATE7_GLOBAL_CONNECTION_OBSTRUCTION.json",
             "artifacts/flagship_integration/BHSM_N12_C2_1222_PARAMETRIC_BASE_FAMILY.json",
             "artifacts/flagship_integration/BHSM_N12_C2_1222_SIGNED_ADJOINT_ASSEMBLY.json",
@@ -1118,11 +1120,14 @@ def _gates() -> list[dict[str, Any]]:
                 "Krawczyk ball; a directed physical flow-Dirac determinant and "
                 "retained derivative ledger now certify an explicit inward stable "
                 "capture tube, positive expansion, and finite integrated center "
-                "drift; the exact remaining geometric owner is the reset-family "
-                "forward cover into that tube or a genuine later canonical stop; "
-                "the anti-fractal globalization audit now localizes the exact "
-                "missing connector as a compact boundary-controlled propagated "
-                "reset-set map or an equivalent connected invariant region, and "
+                "drift; a parameter-dependent 58-row radii theorem now certifies "
+                "a compact nonempty 72-dimensional reset-quotient ball with all "
+                "initial regular margins and a positive first-jet singular margin; "
+                "the exact remaining geometric owner is the boundary-controlled "
+                "propagation of that whole ball into the tube or a genuine later "
+                "canonical stop; the anti-fractal globalization audit localizes "
+                "the missing connector as that propagated reset-set map or an "
+                "equivalent connected invariant region, and "
                 "retires further unbounded local recentering as the default route"
             )
         predecessor = [] if index == 0 else [GATE_CHAIN[index - 1][0]]
