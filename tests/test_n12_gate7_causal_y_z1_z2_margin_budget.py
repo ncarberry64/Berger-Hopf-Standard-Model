@@ -28,7 +28,10 @@ def test_causal_proxy_budget_vanishes_at_reset_and_has_margin_headroom() -> None
     assert payload["claim_boundary"]["outward_PROP16_Z1"] == "OPEN_INTERVAL_AUTHORITY"
     assert payload["claim_boundary"]["shifted_scalar_first_hit"] == "OPEN"
     assert payload["summary"]["certified_proxy_inflation_factor_lower"] > 200.0
+    assert payload["summary"]["Y_plus_Z1_proxy_inflation_to_selected_cone_lower"] > 5.0
     assert payload["summary"]["maximum_combined_state_proxy_radius"] < 7.3e-13
+    assert payload["summary"]["remaining_selected_cone_reserve_at_unit_proxy"] > 5.2e-13
+    assert payload["claim_boundary"]["selected_cone_self_map"].startswith("OPEN")
     for relative, digest in payload["inputs"].items():
         assert _sha256(ROOT / relative) == digest
     assert _sha256(ROOT / payload["data"]) == payload["data_SHA256"]
@@ -54,4 +57,3 @@ def test_prop32_replay_keeps_the_claim_boundary_numerical() -> None:
     assert payload["identity"]["propagator_substeps_per_quarter_cell"] == 32
     assert payload["claim_boundary"]["outward_interval_Y_and_Z1"] == "OPEN"
     assert payload["validation"]["not_relabelled_as_interval_propagator_authority"] is True
-

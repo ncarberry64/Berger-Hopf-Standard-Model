@@ -22,11 +22,19 @@ range checks prove positivity through the old stored hit.  The unit proxy has
 strict margin, and the same exact replay remains positive under more than
 211-fold uniform inflation of the combined proxy radius.
 
+That 211-fold factor belongs only to the descriptor-margin comparison.  The
+existing selected nonlinear cone is the tighter closure condition.  At unit
+proxy the remaining cone reserve is greater than `5.20e-13`; with Z2 held at
+its stored causal profile, the Y+Z1 proxy may inflate by only about 5.36-fold
+before reaching the cone boundary.  No descriptor-margin number is used as a
+substitute for this self-map condition.
+
 This is a budget and routing result, not an outward interval theorem.  Neither
 Gauss-6/8 nor PROP16/32 cross-discretization is promoted to a truncation-error
 bound.  The remaining theorem is now quantitatively localized: construct a
 causal outward signed-Y plus PROP16-Z1 radius below the reported inflation
-headroom, rebuild the center-dependent Z2 cone on that radius, and apply scalar
+headroom (in particular the tighter selected-cone reserve), rebuild the
+center-dependent Z2 cone on that radius, and apply scalar
 interval Newton on the later shifted terminal segment.
 
 No action term, source, selector, scale, recurrence, event, gate, or chord is

@@ -187,6 +187,13 @@ def main() -> None:
     )
     z2_radius = np.interp(times, macro_times, macro_z2)
     state_radius = y_radius + z1_radius + z2_radius
+    cone_radius = float(z2_record["domain"]["candidate_nonlinear_action_radius"])
+    yz_radius = y_radius + z1_radius
+    yz_inflation_to_cone = np.divide(
+        cone_radius - z2_radius, yz_radius,
+        out=np.full_like(yz_radius, np.inf), where=yz_radius > 0.0,
+    )
+    minimum_yz_inflation_to_cone = float(np.min(yz_inflation_to_cone))
     gradient_upper = float(np.max(np.linalg.norm(descriptor_gradient, axis=1)))
     descriptor_radius = gradient_upper * state_radius
 
@@ -232,6 +239,12 @@ def main() -> None:
             and np.all(np.diff(z1_radius) >= 0.0)
         ),
         "corrected_stored_center_minus_unit_proxy_is_positive_to_old_hit": base[0],
+        "unit_proxy_is_strictly_inside_existing_selected_cone": bool(
+            np.max(state_radius) < cone_radius
+        ),
+        "Y_plus_Z1_proxy_has_more_than_five_fold_cone_headroom": (
+            minimum_yz_inflation_to_cone > 5.0
+        ),
         "stored_proxy_has_more_than_100_fold_inflation_headroom": lower_factor > 100.0,
         "exact_rational_Bernstein_replay_used_for_stored_polynomials": True,
         "numerical_cross_discretization_not_promoted_to_interval_authority": True,
@@ -260,6 +273,13 @@ def main() -> None:
             "maximum_PROP16_to_PROP32_node_norm": float(np.max(z1_cross)),
             "maximum_interpolated_causal_Z2_radius": float(np.max(z2_radius)),
             "maximum_combined_state_proxy_radius": float(np.max(state_radius)),
+            "existing_selected_cone_radius": cone_radius,
+            "remaining_selected_cone_reserve_at_unit_proxy": float(
+                cone_radius - np.max(state_radius)
+            ),
+            "Y_plus_Z1_proxy_inflation_to_selected_cone_lower": (
+                minimum_yz_inflation_to_cone
+            ),
             "descriptor_gradient_stored_node_norm_upper": gradient_upper,
             "maximum_descriptor_proxy_radius": float(np.max(descriptor_radius)),
             "minimum_exact_Bernstein_margin_at_unit_proxy": base[1],
@@ -274,6 +294,7 @@ def main() -> None:
         "validation_passed": all(validation.values()),
         "claim_boundary": {
             "causal_numerical_budget_viability": "CERTIFIED_FOR_THE_STORED_PROXY",
+            "selected_cone_self_map": "OPEN_UNTIL_OUTWARD_Y_Z1_AND_REBUILT_Z2",
             "outward_signed_Y": "OPEN_INTERVAL_AUTHORITY",
             "outward_PROP16_Z1": "OPEN_INTERVAL_AUTHORITY",
             "continuous_exact_history_margin": "OPEN_UNTIL_OUTWARD_TAIL_TRANSFER",
@@ -283,7 +304,7 @@ def main() -> None:
         },
         "exact_next_dependency": (
             "PROVE_A_CAUSAL_OUTWARD_Y_PLUS_PROP16_Z1_STATE_RADIUS_BELOW_THE_REPORTED_"
-            "PROXY_INFLATION_HEADROOM,_THEN_REBUILD_THE_CENTER_DEPENDENT_Z2_CONE_"
+            "FIVE_FOLD_SELECTED_CONE_HEADROOM,_THEN_REBUILD_THE_CENTER_DEPENDENT_Z2_CONE_"
             "AND_APPLY_SCALAR_INTERVAL_NEWTON_ON_THE_SHIFTED_TERMINAL_SEGMENT"
         ),
         "inputs": {
