@@ -46,6 +46,7 @@ def _jacobian_at(time: float, times: np.ndarray, values: np.ndarray) -> np.ndarr
 def _propagate(
     value: np.ndarray, left: float, right: float, maximum_step: float,
     jacobian_times: np.ndarray, jacobians: np.ndarray,
+    commutators: np.ndarray, magnus_order: int,
 ) -> np.ndarray:
     if right <= left:
         return value.copy()
@@ -54,8 +55,14 @@ def _propagate(
     result = value.copy()
     for substep in range(count):
         midpoint = left + (substep + 0.5) * step
+        interval = min(max(
+            int(np.searchsorted(jacobian_times, midpoint, side="right") - 1), 0,
+        ), jacobian_times.size - 2)
+        exponent = step * _jacobian_at(midpoint, jacobian_times, jacobians)
+        if magnus_order == 4:
+            exponent = exponent - step**3 * commutators[interval] / 12.0
         result = expm_multiply(
-            step * _jacobian_at(midpoint, jacobian_times, jacobians), result,
+            exponent, result,
         )
     return result
 
@@ -65,6 +72,7 @@ def _profile(
     sample_indices: np.ndarray, residuals: np.ndarray, fine_times: np.ndarray,
     stop_fraction: float, macro_times: np.ndarray, tangents: np.ndarray,
     jacobian_times: np.ndarray, jacobians: np.ndarray, substeps: int,
+    commutators: np.ndarray, magnus_order: int,
 ) -> np.ndarray:
     nodes, weights = np.polynomial.legendre.leggauss(order)
     units = 0.5 * (nodes + 1.0)
@@ -91,10 +99,11 @@ def _profile(
             node_time = left + right_fraction * float(unit) * step
             source -= 0.5 * duration * float(weight) * _propagate(
                 residual, node_time, right, maximum_step,
-                jacobian_times, jacobians,
+                jacobian_times, jacobians, commutators, magnus_order,
             )
         correction = _propagate(
             correction, left, right, maximum_step, jacobian_times, jacobians,
+            commutators, magnus_order,
         ) + source
         if (
             next_macro < macro_times.size
@@ -112,6 +121,7 @@ def _profile(
 def main() -> None:
     parser = argparse.ArgumentParser()
     parser.add_argument("--propagator-substeps", type=int, default=16)
+    parser.add_argument("--magnus-order", type=int, choices=(2, 4), default=2)
     args = parser.parse_args()
     if args.propagator_substeps < 1:
         raise ValueError("positive propagator substep count required")
@@ -129,6 +139,11 @@ def main() -> None:
         jacobians = np.asarray(data["graph_Jacobian_action"], dtype=float)
     with np.load(TANGENT) as data:
         tangents = np.asarray(data["physical_tangent_action"], dtype=float)
+    slopes = np.diff(jacobians, axis=0) / np.diff(jacobian_times)[:, None, None]
+    commutators = np.asarray([
+        jacobians[index] @ slopes[index] - slopes[index] @ jacobians[index]
+        for index in range(slopes.shape[0])
+    ])
     profiles = {
         order: _profile(
             order=order,
@@ -143,6 +158,8 @@ def main() -> None:
             jacobian_times=jacobian_times,
             jacobians=jacobians,
             substeps=args.propagator_substeps,
+            commutators=commutators,
+            magnus_order=args.magnus_order,
         )
         for order in (6, 8)
     }
@@ -173,14 +190,19 @@ def main() -> None:
     payload = {
         "artifact": (
             "BHSM_N12_GATE7_DECIMAL_SIGNED_Y_GREEN_CONVERGENCE_AUDIT"
-            if args.propagator_substeps == 16 else
-            f"BHSM_N12_GATE7_DECIMAL_SIGNED_Y_GREEN_PROP{args.propagator_substeps}_AUDIT"
+            if args.propagator_substeps == 16 and args.magnus_order == 2 else
+            f"BHSM_N12_GATE7_DECIMAL_SIGNED_Y_GREEN_MAGNUS{args.magnus_order}_"
+            f"PROP{args.propagator_substeps}_AUDIT"
         ),
         "authority": "NUMERICAL_CORRELATION_PRESERVING_GREEN_CROSS_ORDER_AUDIT_NOT_INTERVAL_AUTHORITY",
         "identity": {
             "source_sign": "MINUS_DEFECT",
             "source_orders": [6, 8],
             "propagator_substeps_per_quarter_cell": args.propagator_substeps,
+            "Magnus_order": args.magnus_order,
+            "affine_generator_commutator_coefficient": (
+                "-h^3*[A_mid,A_prime]/12" if args.magnus_order == 4 else None
+            ),
             "constraint_handling": "PROJECT_ONLY_AT_RETAINED_MACRO_SEAMS",
         },
         "summary": {
