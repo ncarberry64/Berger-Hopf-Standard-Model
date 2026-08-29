@@ -98,6 +98,21 @@ cone/response objects to transfer `Z2`.  The radii polynomial, continuous
 strict margins, and scalar interval Newton at the shifted `s=0` hit then close
 the same witness.
 
+The retained fine graph generator is piecewise affine, so the action-owned
+Magnus-4 exponent
+`h*A_mid - h^3[A_mid,A_prime]/12` captures the leading signed commutator.
+Complete Decimal Gauss-8 PROP8/16/32 replays against the midpoint PROP64/128
+Richardson reference reduce the PROP16 mismatch from
+`6.68944683180959e-14` to `3.1419459841993426e-18`, a factor
+`21290.776052326855`.  The signed commutator recenter itself has norm
+`6.689136984037224e-14`, identifying essentially all of the former midpoint
+`Z1` proxy.  The candidate Magnus-4 combined proxy is
+`6.923456944010526e-13`, leaving selected-cone reserve
+`5.516265746210465e-13` and `9.25197304141814`-fold `Y+Z1` headroom with stored
+`Z2`.  These remain numerical routing data.  Promotion requires an outward
+correlated enclosure of the Magnus-4 higher-commutator remainder and matrix
+exponential roundoff, while signed `Y` remains a separate outward theorem.
+
 Independently, the compact 72-dimensional reset quotient domain and its first
 jets are certified.  The apparent zero stored reserves at transitions 791 and
 1064 were binary64 storage artifacts: directed Decimal replay gives strict

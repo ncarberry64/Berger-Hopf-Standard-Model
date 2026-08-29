@@ -33,6 +33,9 @@ def test_canonical_system_and_required_subsystems() -> None:
         "causal_proxy_margin_budget_has_strict_exact_rational_headroom"
     ] is True
     assert payload["validation"][
+        "affine_Magnus4_recenter_removes_midpoint_leading_defect_numerically"
+    ] is True
+    assert payload["validation"][
         "binary64_compact_reserve_artifact_is_superseded_by_directed_replay"
     ] is True
     assert payload["validation"][
@@ -82,7 +85,7 @@ def test_blocker_and_interface_priority_reconciliation() -> None:
         if row["id"] == "RESPONSE_TO_CORRELATED_Y_Z1_Z2"
     )
     assert response_gap["status"] == (
-        "PROP16_32_64_128_SECOND_ORDER_NUMERICAL_TAIL_PROXY_GIVES_207P042_FOLD_"
-        "DESCRIPTOR_MARGIN_HEADROOM_BUT_SELECTED_CONE_LIMITS_Y_PLUS_Z1_TO_"
-        "4P705_FOLD_WITH_STORED_Z2;_OUTWARD_INTERVAL_PROMOTION_OPEN"
+        "MAGNUS4_PROP16_REFERENCE_MISMATCH_REDUCED_21290_FOLD_AND_CANDIDATE_Y_"
+        "PLUS_Z1_CONE_HEADROOM_IS_9P252_FOLD_WITH_STORED_Z2;_OUTWARD_MAGNUS_"
+        "HIGHER_COMMUTATOR_ROUNDOFF_SIGNED_Y_AND_Z2_TRANSFER_OPEN"
     )
