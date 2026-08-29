@@ -1,0 +1,63 @@
+{
+  "FULL_BHSM_COMPLETE": false,
+  "artifact": "BHSM_N12_GATE7_ARB_MAGNUS8_AFFINE_COMPOSITION",
+  "authority": "ARB_BALL_AUTHORITY_FOR_THE_FINITE_DISCRETE_AFFINE_COMPOSITION_ONLY",
+  "claim_boundary": {
+    "FULL_BHSM_COMPLETE": false,
+    "Gate7": "ACTIVE",
+    "analytic_higher_Magnus_remainder": "OPEN_INTERVAL_AUTHORITY",
+    "center_dependent_Z2_radii_margins_first_hit": "DOWNSTREAM_OPEN",
+    "finite_global_correlated_block_composition": "CERTIFIED",
+    "finite_signed_affine_source_blocks": "CERTIFIED",
+    "outward_signed_Y": "OPEN_INTERVAL_AUTHORITY"
+  },
+  "data": "artifacts/flagship_integration/BHSM_N12_GATE7_ARB_MAGNUS8_AFFINE_COMPOSITION.npz",
+  "data_SHA256": "BE1F6792520A8488B42349EA9E4311959691BE1DA51A1451C1BCF6FDE7ED4664",
+  "exact_next_dependency": "OUTWARD_ANALYTIC_OMEGA9_AND_HIGHER_COMMUTATOR_REMAINDER_AND_SIGNED_SOURCE_QUADRATURE_REMAINDER_IN_THE_SAME_CORRELATED_FRAME",
+  "identity": {
+    "Magnus_exponent": "h*A_mid-h^3*[A_left,A_prime]/12+h^5*([A,[A,[A,B]]]/720-[B,[A,B]]/240)+h^7*(-ad_A^5(B)/30240+[A,[A,[B,[A,B]]]]/10080-[[A,B],[A,[A,B]]]/7560-[B,[B,[A,B]]]/6720)",
+    "Magnus_order": 8,
+    "affine_recurrence": "u_(i+1)=M_i*u_i+b_i; u_0=0",
+    "composition_precision_bits": 256,
+    "exponential_count": 31019,
+    "macro_blocks": 47,
+    "physical_dimension": 73,
+    "source_order": 8,
+    "source_partition": "retained-unaligned",
+    "source_precision_bits": 256
+  },
+  "inputs": {
+    "artifacts/flagship_integration/BHSM_N12_C2_STOP_HIGH_ORDER_QUARTER_STEP_RETAINED_RECONNAISSANCE.npz": "086C41068B9F3A6C0E5F8040B661202E067D017C909A381010E45FF352498D00",
+    "artifacts/flagship_integration/BHSM_N12_C2_STOP_QUARTER_STEP_FINE_HYBRID_GRAPH_JACOBIAN_RECONNAISSANCE.npz": "B92C08B4CB2EC4033FA70CBDCC28B6CD79E1189E19D95C984155EB65DD9D73B5",
+    "artifacts/flagship_integration/BHSM_N12_C2_STOP_QUARTER_STEP_PHYSICAL_TANGENT_TRANSFER_RECONNAISSANCE.npz": "9FFD40E1F3BFBBFA085FAB18B8ECDF250C55E753D23BE0B34737386BE833A175",
+    "artifacts/flagship_integration/BHSM_N12_GATE7_ARB_MAGNUS8_MACRO_MAPS.npz": "35286CBF725C3C67C89C43A53F01344536A2BF8D9A64D9A05A2E2687B2717BDA",
+    "artifacts/flagship_integration/BHSM_N12_GATE7_DECIMAL_SIGNED_SOURCE_QUADRATURE_AUDIT.npz": "905FCCF0CB88B432309854DB0953AF8ECEE0DF2E50F5748775E86FB78EAC79B2",
+    "artifacts/flagship_integration/BHSM_N12_GATE7_DECIMAL_SIGNED_Y_GREEN_MAGNUS4_PROP16_AUDIT.npz": "C5245D078D30059A7698786A09C756221003B6656FDA9E5830F76C1F35E15B51"
+  },
+  "status": "ALL_47_SIGNED_AFFINE_MAGNUS8_QUOTIENT_BLOCKS_GLOBALLY_COMPOSED_WITH_OUTWARD_ARB_BALLS",
+  "summary": {
+    "maximum_affine_source_component_radius": 1.3196470557897407e-75,
+    "maximum_affine_source_norm_upper": 1.7494680952334505e-06,
+    "maximum_global_response_Euclidean_radius": 1.3075020275174985e-25,
+    "maximum_reference_quotient_outward_difference": 1.5379940227605227e-18,
+    "maximum_stored_center_off_tangent_residue": 1.6309841115399092e-21,
+    "terminal_global_response_Euclidean_radius": 1.3075020275174985e-25,
+    "terminal_reference_quotient_outward_difference": 1.5379940227605227e-18
+  },
+  "validation": {
+    "Arb_global_composition_precision_at_least_256_bits": true,
+    "Arb_source_precision_at_least_256_bits": true,
+    "all_47_homogeneous_maps_outward_composed_with_signed_sources": true,
+    "all_47_signed_affine_source_blocks_evaluated_from_zero": true,
+    "all_binary64_inputs_materialized_as_exact_dyadics": true,
+    "all_component_radii_finite": true,
+    "analytic_Magnus_remainder_not_claimed": true,
+    "finite_discrete_response_crosscheck_below_3p2e_minus_18": true,
+    "global_response_ball_vanishes_at_reset": true,
+    "no_action_source_selector_scale_gate_or_chord_changed": true,
+    "retained_unaligned_Gauss_node_partition_used": true,
+    "signed_source_quadrature_remainder_not_claimed": true,
+    "stored_center_off_tangent_residue_not_relabelled_as_source": true
+  },
+  "validation_passed": true
+}

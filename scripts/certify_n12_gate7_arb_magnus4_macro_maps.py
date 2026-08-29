@@ -64,15 +64,91 @@ def _mid_radius(matrix: arb_mat) -> tuple[np.ndarray, np.ndarray]:
 def _step(
     left: arb_mat, slope: arb_mat, commutator: arb_mat,
     offset: arb, width: arb, magnus_order: int,
+    fifth_basis: tuple[arb_mat, arb_mat, arb_mat, arb_mat] | None,
+    seventh_polynomial: list[arb_mat] | None,
 ) -> arb_mat:
     midpoint = left + (offset + width / 2) * slope
     exponent = width * midpoint - (width**3 / 12) * commutator
     if magnus_order >= 6:
-        second = midpoint * commutator - commutator * midpoint
-        third = midpoint * second - second * midpoint
-        slope_nested = slope * commutator - commutator * slope
+        if fifth_basis is None:
+            raise RuntimeError("Magnus-6 affine commutator basis required")
+        third_0, third_1, third_2, slope_nested = fifth_basis
+        center = offset + width / 2
+        third = third_0 + center * third_1 + center**2 * third_2
         exponent += width**5 * (third / 720 - slope_nested / 240)
+    if magnus_order >= 8:
+        if seventh_polynomial is None:
+            raise RuntimeError("Magnus-8 affine commutator polynomial required")
+        seventh = seventh_polynomial[-1]
+        for coefficient in reversed(seventh_polynomial[:-1]):
+            seventh = coefficient + center * seventh
+        exponent += width**7 * seventh
     return exponent.exp()
+
+
+def _fifth_basis(
+    left: arb_mat, slope: arb_mat, commutator: arb_mat,
+) -> tuple[arb_mat, arb_mat, arb_mat, arb_mat]:
+    left_nested = left * commutator - commutator * left
+    slope_nested = slope * commutator - commutator * slope
+    third_0 = left * left_nested - left_nested * left
+    third_1 = (
+        slope * left_nested - left_nested * slope
+        + left * slope_nested - slope_nested * left
+    )
+    third_2 = slope * slope_nested - slope_nested * slope
+    return third_0, third_1, third_2, slope_nested
+
+
+def _poly_commutator(
+    left: list[arb_mat], right: list[arb_mat],
+) -> list[arb_mat]:
+    size = left[0].nrows()
+    result = [arb_mat(size, size) for _ in range(len(left) + len(right) - 1)]
+    for i, left_coefficient in enumerate(left):
+        for j, right_coefficient in enumerate(right):
+            result[i + j] += (
+                left_coefficient * right_coefficient
+                - right_coefficient * left_coefficient
+            )
+    return result
+
+
+def _seventh_polynomial(
+    left: arb_mat, slope: arb_mat, commutator: arb_mat,
+) -> list[arb_mat]:
+    affine = [left, slope]
+    constant_slope = [slope]
+    constant_commutator = [commutator]
+    ad_five = constant_slope
+    for _ in range(5):
+        ad_five = _poly_commutator(affine, ad_five)
+    mixed_one = _poly_commutator(
+        affine,
+        _poly_commutator(
+            affine,
+            _poly_commutator(constant_slope, constant_commutator),
+        ),
+    )
+    mixed_two = _poly_commutator(
+        constant_commutator,
+        _poly_commutator(affine, constant_commutator),
+    )
+    slope_chain = _poly_commutator(
+        constant_slope,
+        _poly_commutator(constant_slope, constant_commutator),
+    )
+    degree = max(map(len, (ad_five, mixed_one, mixed_two, slope_chain)))
+    result = [arb_mat(left.nrows(), left.ncols()) for _ in range(degree)]
+    for target, scale in (
+        (ad_five, -arb(1) / 30240),
+        (mixed_one, arb(1) / 10080),
+        (mixed_two, -arb(1) / 7560),
+        (slope_chain, -arb(1) / 6720),
+    ):
+        for index, coefficient in enumerate(target):
+            result[index] += scale * coefficient
+    return result
 
 
 def _initialize_worker(precision: int, magnus_order: int) -> None:
@@ -113,10 +189,19 @@ def _evaluate_macro_map(seam: int) -> tuple[int, np.ndarray, np.ndarray, int]:
         dt = _exact(float(jacobian_times[interval + 1] - jacobian_times[interval]))
         slope = (_matrix(jacobians[interval + 1]) - left) / dt
         commutator = left * slope - slope * left
+        fifth_basis = (
+            _fifth_basis(left, slope, commutator)
+            if magnus_order >= 6 else None
+        )
+        seventh_polynomial = (
+            _seventh_polynomial(left, slope, commutator)
+            if magnus_order >= 8 else None
+        )
         for substep in range(count):
             evolved = _step(
                 left, slope, commutator,
                 _exact(substep * width_float), width, magnus_order,
+                fifth_basis, seventh_polynomial,
             ) * evolved
             exponential_count += 1
     target = _matrix(tangents[seam + 1])
@@ -128,7 +213,7 @@ def _evaluate_macro_map(seam: int) -> tuple[int, np.ndarray, np.ndarray, int]:
 def main() -> None:
     parser = argparse.ArgumentParser()
     parser.add_argument("--precision", type=int, default=256)
-    parser.add_argument("--magnus-order", type=int, choices=(4, 6), default=4)
+    parser.add_argument("--magnus-order", type=int, choices=(4, 6, 8), default=4)
     parser.add_argument("--workers", type=int, default=1)
     parser.add_argument("--macro-limit", type=int, default=47)
     args = parser.parse_args()
@@ -201,7 +286,7 @@ def main() -> None:
 
     result = (
         RESULT if args.magnus_order == 4 else
-        BASE / "BHSM_N12_GATE7_ARB_MAGNUS6_MACRO_MAPS.json"
+        BASE / f"BHSM_N12_GATE7_ARB_MAGNUS{args.magnus_order}_MACRO_MAPS.json"
     )
     data = result.with_suffix(".npz")
     np.savez_compressed(
@@ -241,6 +326,11 @@ def main() -> None:
                 + (
                     "+h^5*([A,[A,[A,B]]]/720-[B,[A,B]]/240)"
                     if args.magnus_order >= 6 else ""
+                )
+                + (
+                    "+h^7*(-ad_A^5(B)/30240+[A,[A,[B,[A,B]]]]/10080-"
+                    "[[A,B],[A,[A,B]]]/7560-[B,[B,[A,B]]]/6720)"
+                    if args.magnus_order >= 8 else ""
                 )
             ),
         },
