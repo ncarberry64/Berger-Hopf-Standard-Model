@@ -1,5 +1,19 @@
 # BHSM Status
 
+## Authoritative current checkpoint
+
+`CARRIER_CLOSED`: the correlated 256-bit Arb interaction-Taylor26 homogeneous
+carrier certifies 47 maps / 5,908 retained substeps.  Outward Arb strings own
+the global product; binary64 midpoint-radius arrays are presentation only.
+Global Frobenius radius: `8.924457407181154e-13`; operator upper:
+`5342.54284263994`.
+
+Current owner: retained unaligned Gauss-8 signed-source blocks and their global
+affine composition with the frozen carrier, then literal outward signed `Y`,
+center-dependent `Z2`/radii, continuous margins, and scalar first-hit Newton.
+Gate 7 remains `ACTIVE`; `FULL_BHSM_COMPLETE = FALSE`.  Downstream physical
+completeness and its no-fit matrix remain open.
+
 This file is the current area-level status source. Detailed sprint records are
 evidence, not competing public status pages.
 

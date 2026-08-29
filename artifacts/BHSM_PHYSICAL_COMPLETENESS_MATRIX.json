@@ -1,0 +1,38 @@
+{
+  "FULL_BHSM_COMPLETE": false,
+  "artifact": "BHSM_PHYSICAL_COMPLETENESS_MATRIX",
+  "allowed_classifications": [
+    "DERIVED_POINT_PREDICTION",
+    "DERIVED_INTERVAL_PREDICTION",
+    "DERIVED_SELECTION_RULE",
+    "DERIVED_QUALITATIVE_STRUCTURE",
+    "COMPARISON_ONLY",
+    "OPEN_INTERNAL_BLOCKER",
+    "OUTSIDE_BHSM_1_0_SCOPE"
+  ],
+  "current_status": "OPEN_DOWNSTREAM_OF_GATE7",
+  "prediction_firewall": "MEASURED_VALUES_MAY_NOT_SELECT_UPSTREAM_BRANCH_COEFFICIENT_NORMALIZATION_FORMULA_OR_CARRIER",
+  "records": [
+    {
+      "classification": "OPEN_INTERNAL_BLOCKER",
+      "id": "MUON_MAGNETIC_MOMENT",
+      "required_mechanism": "UNIVERSAL_ELECTROMAGNETIC_VERTEX_AND_NO_FIT_LOOP_PREDICTION"
+    },
+    {
+      "classification": "OPEN_INTERNAL_BLOCKER",
+      "id": "PARTICLE_STABILITY_AND_DECAYS",
+      "required_mechanism": "ACTION_OWNED_SELECTION_RULES_CHANNELS_AND_LIFETIME_OR_STABILITY_BOUNDS"
+    },
+    {
+      "classification": "OPEN_INTERNAL_BLOCKER",
+      "id": "NEW_PARTICLE_SPECTRAL_ENCLOSURES",
+      "required_mechanism": "RIGOROUS_SPECTRAL_ENCLOSURES_OR_EXCLUSIONS_WITH_DECLARED_DOMAIN"
+    },
+    {
+      "classification": "OPEN_INTERNAL_BLOCKER",
+      "id": "KNOWN_PARTICLE_COVERAGE",
+      "required_mechanism": "COMPLETE_KNOWN_PARTICLE_MATRIX_WITH_ONE_CLASSIFICATION_PER_OBSERVABLE"
+    }
+  ],
+  "validation_passed": true
+}

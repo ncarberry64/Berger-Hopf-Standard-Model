@@ -1,5 +1,9 @@
 # BHSM v1.0 Falsification Ledger
 
+Current scope: the correlated Gate-7 homogeneous carrier is certified, but
+signed source, literal `Y`, Gate 7, and the physical-completeness matrix remain
+open.  No carrier result is a particle-observable prediction.
+
 | ID | Title | Statement | Status | Implications |
 | --- | --- | --- | --- | --- |
 | `F1` | Canonical Geometry Failure | If alpha-anchored a cannot be derived from the internal action, BHSM geometry weakens. | `OPEN_PROOF_OBLIGATION` | Geometry branch becomes conditional rather than action-derived. |

@@ -1,5 +1,16 @@
 # Current canonical BHSM system integration map
 
+## Current Gate-7 owner
+
+The homogeneous exact-affine interaction-Taylor26 carrier is frozen and
+certified on 5,908 retained substeps and 47 macro seams.  Authoritative global
+composition reconstructs outward Arb interval strings; binary64 arrays and
+all Magnus products are comparison-only.  The exact next dependency is the
+retained unaligned Gauss-8 signed-source block composition with this carrier,
+then literal outward signed `Y`, center-dependent `Z2`/radii, continuous
+margins, and scalar first-hit Newton.  Gate 7 is `ACTIVE` and
+`FULL_BHSM_COMPLETE = FALSE`.
+
 The current physical theory tuple is `BHSM-AE-2.0.0`.  It retains the v7.x
 stratified bulk/boundary functor, v14-v17 eta/Aether action lineage, v7.2
 common observable transport, and frozen comparison firewall, while replacing

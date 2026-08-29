@@ -1,5 +1,18 @@
 # BHSM Claim Boundaries
 
+## Authoritative Gate-7 claim boundary
+
+Supported: the homogeneous exact-affine interaction-Taylor26 carrier is
+outward certified at 256-bit Arb precision on 5,908 retained substeps and 47
+macro seams, with correlated global composition from outward Arb interval
+strings.  Its global Frobenius radius is `8.924457407181154e-13`.
+
+Not supported: using under-inflated binary64 radii or decorrelated componentwise
+global composition as authority; promoting historical Magnus refinement;
+claiming signed-source composition, literal outward signed `Y`, final
+center-dependent `Z2`/radii, continuous margins, first-hit Newton, Gate 7, or
+full BHSM complete.  `FULL_BHSM_COMPLETE = FALSE`.
+
 ## Current public claim boundary
 
 Current public identifier: **continuum event-child and local singular reset

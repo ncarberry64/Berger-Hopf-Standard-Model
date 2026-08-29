@@ -9,7 +9,7 @@ Magnus-order extrapolation and does not continuously project the ambient flow.
 from __future__ import annotations
 
 import argparse
-from concurrent.futures import ProcessPoolExecutor
+from concurrent.futures import ProcessPoolExecutor, as_completed
 import hashlib
 import json
 import math
@@ -41,6 +41,7 @@ TANGENT = BASE / (
 )
 TAIL_SCRIPT = ROOT / "scripts" / "certify_n12_gate7_arb_interaction_dyson_tail.py"
 TAIL_RECORD = BASE / "BHSM_N12_GATE7_ARB_INTERACTION_DYSON_TAIL.json"
+THIS_SCRIPT = Path(__file__).resolve()
 RESULT = BASE / "BHSM_N12_GATE7_ARB_INTERACTION_TAYLOR26_MACRO_MAPS.json"
 DATA = RESULT.with_suffix(".npz")
 AMBIENT = 98
@@ -66,16 +67,37 @@ def _identity(size: int) -> arb_mat:
 
 
 def _mid_radius(matrix: arb_mat) -> tuple[np.ndarray, np.ndarray]:
+    """Materialize an Arb matrix as an outward binary64 midpoint-radius ball."""
+
     midpoint = np.empty((matrix.nrows(), matrix.ncols()))
     radius = np.empty_like(midpoint)
     for row in range(matrix.nrows()):
         for column in range(matrix.ncols()):
             value = matrix[row, column]
-            midpoint[row, column] = float(value.mid())
+            center = float(value.mid())
+            arb_radius = np.nextafter(float(value.rad().upper()), np.inf)
+            midpoint[row, column] = center
             radius[row, column] = np.nextafter(
-                float(value.rad().upper()), np.inf,
+                arb_radius + np.spacing(abs(center)), np.inf,
             )
     return midpoint, radius
+
+
+def _arb_strings(matrix: arb_mat) -> np.ndarray:
+    """Return outward decimal Arb strings that round-trip without narrowing."""
+
+    return np.asarray([
+        [str(matrix[row, column]) for column in range(matrix.ncols())]
+        for row in range(matrix.nrows())
+    ])
+
+
+def _matrix_from_arb_strings(values: np.ndarray) -> arb_mat:
+    values = np.asarray(values)
+    return arb_mat([
+        [arb(str(values[row, column])) for column in range(values.shape[1])]
+        for row in range(values.shape[0])
+    ])
 
 
 def _interaction_step(
@@ -175,7 +197,7 @@ def _initialize(precision: int) -> None:
 
 
 def _macro(seam: int) -> tuple[
-    int, np.ndarray, np.ndarray, int, float, float, float,
+    int, np.ndarray, np.ndarray, np.ndarray, int, float, float, float,
 ]:
     fixed_step = float(_WORKER["fixed_step"])
     stop_fraction = float(_WORKER["stop_fraction"])
@@ -212,8 +234,53 @@ def _macro(seam: int) -> tuple[
     quotient = target.transpose() * evolved
     midpoint, radius = _mid_radius(quotient)
     return (
-        seam, midpoint, radius, count_total, beta_max, residual_max, tail_max,
+        seam, midpoint, radius, _arb_strings(quotient), count_total,
+        beta_max, residual_max, tail_max,
     )
+
+
+def _checkpoint_digest() -> str:
+    joined = "|".join(
+        _sha256(path)
+        for path in (
+            CENTER, JACOBIAN, TANGENT, TAIL_SCRIPT, TAIL_RECORD, THIS_SCRIPT,
+        )
+    )
+    return hashlib.sha256(joined.encode("ascii")).hexdigest().upper()[:16]
+
+
+def _checkpoint_path(directory: Path, seam: int) -> Path:
+    return directory / f"macro_map_{seam:03d}.npz"
+
+
+def _save_checkpoint(directory: Path, result: tuple[object, ...]) -> None:
+    seam, midpoint, radius, strings, count, beta, residual, tail = result
+    directory.mkdir(parents=True, exist_ok=True)
+    np.savez_compressed(
+        _checkpoint_path(directory, int(seam)),
+        seam=np.asarray([seam], dtype=int),
+        midpoint=np.asarray(midpoint),
+        radius=np.asarray(radius),
+        arb_strings=np.asarray(strings),
+        exact_step_count=np.asarray([count], dtype=int),
+        maximum_interaction_beta_upper=np.asarray([beta]),
+        maximum_polynomial_residual_integral_upper=np.asarray([residual]),
+        maximum_local_exact_flow_error_upper=np.asarray([tail]),
+    )
+
+
+def _load_checkpoint(path: Path) -> tuple[object, ...]:
+    with np.load(path) as source:
+        return (
+            int(source["seam"][0]),
+            np.asarray(source["midpoint"], dtype=float),
+            np.asarray(source["radius"], dtype=float),
+            np.asarray(source["arb_strings"]),
+            int(source["exact_step_count"][0]),
+            float(source["maximum_interaction_beta_upper"][0]),
+            float(source["maximum_polynomial_residual_integral_upper"][0]),
+            float(source["maximum_local_exact_flow_error_upper"][0]),
+        )
 
 
 def main() -> None:
@@ -221,6 +288,7 @@ def main() -> None:
     parser.add_argument("--precision", type=int, default=256)
     parser.add_argument("--workers", type=int, default=min(12, os.cpu_count() or 1))
     parser.add_argument("--macro-limit", type=int, default=47)
+    parser.add_argument("--no-resume", action="store_true")
     args = parser.parse_args()
     if (
         args.precision < 256 or not 1 <= args.workers <= 16
@@ -229,20 +297,50 @@ def main() -> None:
         raise ValueError("256-bit precision, 1..16 workers, and 1..47 macros required")
     ctx.prec = args.precision
     seams = list(range(args.macro_limit))
-    with ProcessPoolExecutor(
-        max_workers=args.workers,
-        initializer=_initialize,
-        initargs=(args.precision,),
-    ) as executor:
-        results = list(executor.map(_macro, seams, chunksize=1))
+    digest = _checkpoint_digest()
+    checkpoint_directory = BASE / (
+        f".BHSM_N12_GATE7_ARB_INTERACTION_TAYLOR26_MACRO_MAPS_{digest}"
+    )
+    by_seam: dict[int, tuple[object, ...]] = {}
+    if not args.no_resume:
+        for seam in seams:
+            path = _checkpoint_path(checkpoint_directory, seam)
+            if path.is_file():
+                by_seam[seam] = _load_checkpoint(path)
+    pending = [seam for seam in seams if seam not in by_seam]
+    print(json.dumps({
+        "checkpoint_directory": _relative(checkpoint_directory),
+        "completed_macro_maps": len(by_seam),
+        "pending_macro_maps": len(pending),
+    }), flush=True)
+    if pending:
+        with ProcessPoolExecutor(
+            max_workers=args.workers,
+            initializer=_initialize,
+            initargs=(args.precision,),
+        ) as executor:
+            futures = {executor.submit(_macro, seam): seam for seam in pending}
+            for future in as_completed(futures):
+                result = future.result()
+                seam = int(result[0])
+                by_seam[seam] = result
+                _save_checkpoint(checkpoint_directory, result)
+                print(json.dumps({
+                    "completed_macro_maps": len(by_seam),
+                    "latest_seam": seam,
+                    "exact_steps": int(result[4]),
+                    "maximum_component_radius": float(np.max(result[2])),
+                }), flush=True)
+    results = [by_seam[seam] for seam in seams]
     results.sort(key=lambda row: row[0])
 
     maps_mid = np.asarray([row[1] for row in results])
     maps_rad = np.asarray([row[2] for row in results])
-    counts = np.asarray([row[3] for row in results])
-    beta = np.asarray([row[4] for row in results])
-    residual = np.asarray([row[5] for row in results])
-    local_tail = np.asarray([row[6] for row in results])
+    maps_strings = np.asarray([row[3] for row in results])
+    counts = np.asarray([row[4] for row in results])
+    beta = np.asarray([row[5] for row in results])
+    residual = np.asarray([row[6] for row in results])
+    local_tail = np.asarray([row[7] for row in results])
     complete = args.macro_limit == 47
     with np.load(CENTER) as source:
         macro_times = np.asarray(source["action_lengths"], dtype=float)
@@ -250,12 +348,7 @@ def main() -> None:
     ctx.prec = args.precision
     global_map = _identity(PHYSICAL)
     for seam in range(args.macro_limit):
-        block = arb_mat([
-            [arb(float(maps_mid[seam, row, column]),
-                 float(maps_rad[seam, row, column]))
-             for column in range(PHYSICAL)]
-            for row in range(PHYSICAL)
-        ])
+        block = _matrix_from_arb_strings(maps_strings[seam])
         global_map = block * global_map
     global_mid, global_rad = _mid_radius(global_map)
 
@@ -264,6 +357,7 @@ def main() -> None:
         macro_action_lengths=macro_times[:args.macro_limit + 1],
         macro_step_map_midpoint=maps_mid,
         macro_step_map_component_radius=maps_rad,
+        macro_step_map_arb_strings=maps_strings,
         macro_substep_count=counts,
         macro_maximum_interaction_beta_upper=beta,
         macro_maximum_polynomial_residual_integral_upper=residual,
@@ -286,6 +380,8 @@ def main() -> None:
         "all_component_radii_finite": bool(
             np.all(np.isfinite(maps_rad)) and np.all(np.isfinite(global_rad))
         ),
+        "binary64_midpoint_materialization_rounding_attached": True,
+        "global_composition_reconstructs_outward_Arb_strings": True,
         "signed_source_not_yet_promoted": True,
         "no_action_source_selector_scale_gate_or_chord_changed": True,
     }
@@ -295,7 +391,7 @@ def main() -> None:
             "ALL_47_HOMOGENEOUS_EXACT_AFFINE_QUOTIENT_MACRO_MAPS_OUTWARD_"
             "CERTIFIED_BY_INTERACTION_TAYLOR26_RESIDUAL"
             if all(validation.values()) else
-            "INTERACTION_TAYLOR14_MACRO_MAP_CERTIFICATE_INVALID"
+            "INTERACTION_TAYLOR26_MACRO_MAP_CERTIFICATE_INVALID"
         ),
         "authority": (
             "256_BIT_ARB_FINITE_INTERACTION_POLYNOMIAL_PLUS_EXACT_ODE_RESIDUAL_"
@@ -307,6 +403,7 @@ def main() -> None:
             "interaction_polynomial_degree": DEGREE,
             "commutator_depth": DEPTH,
             "projection_rule": "PROJECT_ONLY_AT_RETAINED_MACRO_CONSTRAINT_SEAMS",
+            "correlated_storage": "OUTWARD_ARB_INTERVAL_STRINGS",
             "local_error_identity": (
                 "exp(||A0||h+beta)*(integral||P26'-H22*P26||+"
                 "conjugation_tail*sum||P26_coeff||)"
@@ -328,9 +425,12 @@ def main() -> None:
         },
         "data": _relative(DATA),
         "data_SHA256": _sha256(DATA),
+        "checkpoint_directory": _relative(checkpoint_directory),
         "inputs": {
             _relative(path): _sha256(path)
-            for path in (CENTER, JACOBIAN, TANGENT, TAIL_SCRIPT, TAIL_RECORD)
+            for path in (
+                CENTER, JACOBIAN, TANGENT, TAIL_SCRIPT, TAIL_RECORD, THIS_SCRIPT,
+            )
         },
         "validation": validation,
         "validation_passed": all(validation.values()),

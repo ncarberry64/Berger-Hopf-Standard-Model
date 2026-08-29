@@ -1,5 +1,22 @@
 # Berger-Hopf Standard Model (BHSM)
 
+## Authoritative Gate-7 state
+
+The 256-bit Arb interaction-Taylor26 homogeneous carrier is certified on all
+5,908 retained substeps and 47 macro seams.  Global composition reconstructs
+outward Arb interval strings, not independent binary64 component balls.  Its
+global Frobenius radius is `8.924457407181154e-13` and operator upper bound is
+`5342.54284263994`.  Binary64 arrays are presentation data only; the earlier
+under-inflated and decorrelated global carrier routes are superseded.
+
+The exact next owner is the retained unaligned Gauss-8 signed-source block
+composition with this frozen carrier, followed by literal outward signed
+`Y`, center-dependent `Z2`/radii, continuous margins, and scalar first-hit
+Newton.  Gate 7 is `ACTIVE`; `FULL_BHSM_COMPLETE = FALSE`.  The physical
+completeness matrix remains mandatory downstream and includes muon magnetic
+moment, stability/decays, spectral new-particle enclosures, and known-particle
+coverage under the no-fit prediction firewall.
+
 [![CI](https://github.com/ncarberry64/Berger-Hopf-Standard-Model/actions/workflows/ci.yml/badge.svg)](https://github.com/ncarberry64/Berger-Hopf-Standard-Model/actions/workflows/ci.yml)
 [![Latest archival release](https://img.shields.io/github/v/release/ncarberry64/Berger-Hopf-Standard-Model?label=archival%20release)](https://github.com/ncarberry64/Berger-Hopf-Standard-Model/releases/latest)
 [![Current research status](https://img.shields.io/badge/current%20research-continuum%20child%20certified%3B%20observable%20selection%20open-orange)](docs/current_bhsm_status.md)

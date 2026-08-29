@@ -1,5 +1,23 @@
 # BHSM 1.0 definition of done
 
+## Authoritative current completion state
+
+The correlated exact-affine homogeneous Gate-7 carrier is closed.  Signed
+source composition, literal outward signed `Y`, center-dependent `Z2`/radii,
+continuous margins, scalar first-hit Newton, and downstream Gate-7
+force/KKT/Hessian closure remain open.  Gate 7 is `ACTIVE` and
+`FULL_BHSM_COMPLETE = FALSE`.
+
+Physical completion additionally requires a no-fit matrix in which every
+claimed observable is classified exactly once as
+`DERIVED_POINT_PREDICTION`, `DERIVED_INTERVAL_PREDICTION`,
+`DERIVED_SELECTION_RULE`, `DERIVED_QUALITATIVE_STRUCTURE`, `COMPARISON_ONLY`,
+`OPEN_INTERNAL_BLOCKER`, or `OUTSIDE_BHSM_1_0_SCOPE`.  The matrix must cover
+the universal electromagnetic vertex including muon magnetic moment,
+particle stability and decays, new-particle spectral enclosures/exclusions,
+and the known-particle inventory.  Measured values may not select an upstream
+branch, coefficient, normalization, or formula.
+
 ## Current N12 continuum evaluation
 
 `FULL_BHSM_COMPLETE = FALSE`. Direct N12 is a certified complete persistent

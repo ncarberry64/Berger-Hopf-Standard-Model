@@ -2635,6 +2635,21 @@ Exact next object:
   `UNAUTHORIZED`; frozen predictions are unchanged;
   `FULL_BHSM_COMPLETE=FALSE`.
 
+## N=12 Gate-7 correlated exact-affine carrier correction
+
+- All 47 homogeneous quotient macro maps and all 5,908 retained substeps are
+  certified by the 256-bit Arb interaction-Taylor26 residual theorem.
+- Global composition reconstructs outward Arb interval strings.  Binary64
+  midpoint-radius arrays are presentation only; the under-inflated and
+  decorrelated componentwise carrier compositions are invalidated as proof
+  routes.
+- Global Frobenius radius: `8.924457407181154e-13`; operator upper:
+  `5342.54284263994`.
+- Exact next owner: retained unaligned Gauss-8 signed-source block composition
+  with the frozen carrier, then literal outward signed `Y`, center-dependent
+  `Z2`/radii, continuous margins, and scalar first-hit Newton.
+- Gate 7 remains `ACTIVE`; `FULL_BHSM_COMPLETE=FALSE`.
+
 ## N=12 C2 finite stop multiple-shooting center
 
 - The global path and refined transverse stop are assembled into one finite

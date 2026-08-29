@@ -2,6 +2,7 @@ import hashlib
 import json
 from pathlib import Path
 
+from flint import arb
 import numpy as np
 
 
@@ -25,12 +26,13 @@ def test_exact_affine_macro_map_certificate() -> None:
     assert record["summary"]["substep_count"] == 5908
     assert record["summary"]["maximum_interaction_beta_upper"] < 0.022
     assert record["summary"]["maximum_local_exact_flow_error_upper"] < 1e-70
-    assert record["summary"]["maximum_macro_map_component_radius"] < 1e-50
-    assert (
-        record["summary"][
-            "global_exact_affine_fundamental_component_radius_Frobenius"
-        ] < 3e-15
-    )
+    assert record["summary"]["maximum_macro_map_component_radius"] < 1.5e-14
+    assert record["summary"][
+        "global_exact_affine_fundamental_component_radius_Frobenius"
+    ] < 1e-12
+    assert record["validation"][
+        "global_composition_reconstructs_outward_Arb_strings"
+    ] is True
     assert record["claim_boundary"]["homogeneous_exact_affine_macro_maps"] == (
         "CERTIFIED"
     )
@@ -48,16 +50,29 @@ def test_exact_affine_data_provenance_and_magnus8_crosscheck() -> None:
         assert _sha256(ROOT / relative) == digest
     with np.load(data) as exact, np.load(MAGNUS8) as magnus:
         exact_macro = exact["macro_step_map_midpoint"]
+        exact_strings = exact["macro_step_map_arb_strings"]
         magnus_macro = magnus["macro_step_map_midpoint"]
         assert exact_macro.shape == (47, 73, 73)
+        assert exact_strings.shape == (47, 73, 73)
+        assert exact_strings.dtype.kind == "U"
         assert np.array_equal(exact_macro, magnus_macro)
         exact_global = exact["global_exact_affine_fundamental_midpoint"]
-        magnus_global = magnus["global_fundamental_midpoint"]
-        assert np.array_equal(exact_global, magnus_global)
-        outward = (
-            np.linalg.norm(
-                exact["global_exact_affine_fundamental_component_radius"]
-            )
-            + np.linalg.norm(magnus["global_fundamental_component_radius"])
+        assert np.all(
+            exact["macro_step_map_component_radius"]
+            >= np.spacing(np.abs(exact_macro))
         )
-        assert outward < 3.21e-15
+        assert np.all(
+            exact["global_exact_affine_fundamental_component_radius"]
+            >= np.spacing(np.abs(exact_global))
+        )
+        for seam, row, column in ((0, 0, 0), (14, 7, 22), (46, 72, 72)):
+            authority = arb(str(exact_strings[seam, row, column]))
+            round_trip = arb(str(authority))
+            presentation = arb(
+                float(exact_macro[seam, row, column]),
+                float(exact["macro_step_map_component_radius"][
+                    seam, row, column
+                ]),
+            )
+            assert round_trip.contains(authority)
+            assert presentation.contains(authority)

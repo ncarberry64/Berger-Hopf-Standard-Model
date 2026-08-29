@@ -54,6 +54,12 @@ def test_canonical_system_and_required_subsystems() -> None:
         "interaction_frame_analytic_infinite_tail_is_certified_without_exact_propagator_promotion"
     ] is True
     assert payload["validation"][
+        "correlated_exact_affine_Taylor26_homogeneous_carrier_is_certified"
+    ] is True
+    assert payload["validation"][
+        "physical_completeness_matrix_is_required_and_open"
+    ] is True
+    assert payload["validation"][
         "binary64_compact_reserve_artifact_is_superseded_by_directed_replay"
     ] is True
     assert payload["validation"][
@@ -103,8 +109,6 @@ def test_blocker_and_interface_priority_reconciliation() -> None:
         if row["id"] == "RESPONSE_TO_CORRELATED_Y_Z1_Z2"
     )
     assert response_gap["status"] == (
-        "INTERACTION_FRAME_ANALYTIC_INFINITE_TAIL_CERTIFIED_ON_ALL_5908_RETAINED_"
-        "PROP16_SUBSTEPS;_EXACT_PROPAGATOR_NOT_PROMOTED;_FINITE_OUTWARD_V14_"
-        "EVALUATION_GLOBAL_CORRELATED_COMPOSITION_SIGNED_SOURCE_QUADRATURE_Y_"
-        "AND_Z2_TRANSFER_OPEN"
+        "CORRELATED_EXACT_AFFINE_TAYLOR26_HOMOGENEOUS_CARRIER_CERTIFIED;_"
+        "SIGNED_SOURCE_COMPOSITION_LITERAL_OUTWARD_SIGNED_Y_AND_Z2_TRANSFER_OPEN"
     )
