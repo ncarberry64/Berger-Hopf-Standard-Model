@@ -97,3 +97,31 @@ Gate 7 therefore remains active. The shortest remaining route is to freeze the
 Gauss-8 Decimal correction center, attach outward source and PROP16 tail
 remainders, rebuild only center-dependent cone objects, and then perform the
 strict preterminal margin and scalar first-hit transfer.
+
+## Frozen Gauss-8 linear carrier
+
+The converged Gauss-8 PROP16 state profile is now frozen as the unique numerical
+linear carrier. Its descriptor component is assembled without a new source:
+
+\[
+q_{\mathrm{new}}=D\lambda[c_{\mathrm{Gauss8}}]
+  +\left(q_{\mathrm{old}}-D\lambda[c_{\mathrm{old}}]\right).
+\]
+
+Thus the existing direct descriptor source is retained exactly once while only
+the state-induced term is rebased. The state correction has maximum norm
+\(3.3913443901129416\times10^{-6}\). Descriptor cross-order variation is at
+most \(1.9221817061916492\times10^{-16}\).
+
+At the former stored-center stop, the rebased descriptor is
+\(9.350435266485474\times10^{-16}\). With the retained transverse crossing
+\(-2.8366383530768354\times10^{-11}\), its linearized zero shifts later by
+\(3.296308553518384\times10^{-5}\), well inside the remaining
+\(0.19486075959935079\) terminal-cell action time. The last complete-node
+descriptor margin remains \(1.5631135180446963\times10^{-12}\).
+
+The minimum complete preterminal value, however, occurs at the birth end and is
+only \(1.7739272048543877\times10^{-20}\). Consequently the continuous margin
+transfer must retain the causal Volterra radius, which vanishes at the reset.
+A uniform-in-time use of the terminal nonlinear halo would be invalid. This is
+the exact remaining margin coordinate after freezing the center.
