@@ -514,7 +514,7 @@ def build_payload(
             _relative(INVERSE): _sha256(INVERSE),
             _relative(PROJECTOR): _sha256(PROJECTOR),
             _relative(cone.GREEN): _sha256(cone.GREEN),
-            _relative(cone.CAUSAL): _sha256(cone.CAUSAL),
+            _relative(cone.CAUSAL_Z2): _sha256(cone.CAUSAL_Z2),
             "scripts/certify_n12_gate7_recentered_cone_boundary_cluster_spectrum.py": (
                 _sha256(ROOT / "scripts" / (
                     "certify_n12_gate7_recentered_cone_boundary_cluster_spectrum.py"

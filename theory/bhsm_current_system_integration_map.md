@@ -37,30 +37,26 @@ the literal `Y`, `Z1`, and `Z2` bounds.
 
 That common-frame matching is exhaustive, and the exact normalized-field
 `D1/D2` identity has been derived.  No algebraic object is missing.  The
-complete internal response and componentwise `Z2` adapter are now certified
-by a signed third-order Taylor--Volterra enclosure.  The exact signed
-quadratic contraction is formed before norms and the resulting total radius
-uses `0.5041022829260638` of the selected cone.  The live numerical theorem
-is therefore localized to only two interval adapters: the outward
-minus-defect remainder for `Y` and the common-frame propagator defect for
-`Z1`.
+componentwise causal `Z2` nonlinear remainder adapter is certified by a signed
+third-order Taylor--Volterra enclosure: the exact signed quadratic contraction
+is formed before norms and the resulting total radius uses
+`0.5041022829260638` of the candidate cone.  This radius is a nonlinear halo,
+not a bound for the finite matched Green center correction.
 
-The selected-history provenance reconciliation pins every operand in this
-matching to the retained quarter-step center.  Earlier half-step
-tangent/Jacobian/residual/first-hit combinations remain historical and are
-not inputs to the current three-adapter theorem.  The exact adaptive DOP853
-spectrum, projector, bordered inverse, internal response, and finite
-first-variation tube are already selected-center certificates; the live work
-is to attach the selected causal radius to that carrier and perform its signed
-correlated second-order contraction, not to replay the legacy mixed-center
-cone.
+The selected-history provenance reconciliation makes the retained quarter-step
+history authoritative.  Earlier half-step tangent/Jacobian/residual/first-hit
+combinations remain historical.  The matched Green correction has size
+`3.486903140325637e-6`, much larger than the nonlinear halo
+`1.243972269022099e-12`; consequently the correction is incorporated into the
+proof center before the halo is attached.
 
-That radius attachment is now complete at the line/projector/inverse level.
-All 1,722 selected DOP853 product cells retain a simple branch 24; the minimum
-gap is `1.3326780553552793e-7`, and the maximum charted bordered inverse is
-`1.868407205010464e7`.  The complete internal response and causal `Z2` leg are
-closed.  Promotion of the joint radius still waits on the literal signed `Y`
-and propagator `Z1` composition.
+That corrected carrier is now complete at the line/projector/inverse level.
+All 3,009 quarter-center/fine-correction union cells retain a simple branch 24;
+the minimum boundary gap is `1.7205464630704569e-7`, the maximum projector
+motion is `0.025329475443001452`, and the maximum charted bordered inverse is
+`6.1001606088956e6`.  The shortest live chain is the bordered response
+transfer on this corrected carrier, followed immediately by the literal
+signed `Y`, propagator `Z1`, radii polynomial, and first-hit transfer.
 
 The map has exactly one current blocker:
 

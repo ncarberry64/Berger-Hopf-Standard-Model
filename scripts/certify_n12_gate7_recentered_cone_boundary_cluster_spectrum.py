@@ -41,11 +41,12 @@ from bhsm.interface.aether_jax_full_local_action import action_hessian  # noqa: 
 
 
 BASE = ROOT / "artifacts" / "flagship_integration"
+CENTER = BASE / "BHSM_N12_C2_STOP_HIGH_ORDER_QUARTER_STEP_RETAINED_RECONNAISSANCE.npz"
 GREEN = BASE / "BHSM_N12_C2_STOP_QUARTER_STEP_MATCHED_TANGENT_CORRELATED_DEFECT_GAUSS12_RECONNAISSANCE.npz"
-CAUSAL = BASE / "BHSM_N12_GATE7_CAUSAL_VECTOR_RADIUS_RECONNAISSANCE.npz"
+CAUSAL_Z2 = BASE / "BHSM_N12_GATE7_SELECTED_CONE_INTERNAL_RESPONSE_Z2.json"
 EIGENLINE = BASE / "BHSM_N12_GATE7_RETAINED_CORRECTION_EIGENLINE_FIRST_JETS.json"
 TWO_FREE = BASE / "BHSM_N12_GATE7_TWO_FREE_LEG_ACTION_MAJORANTS.json"
-BASE_SPECTRUM = BASE / "BHSM_N12_C2_STOP_HIGH_ORDER_HALF_STEP_FULL_BOUNDARY_CLUSTER_SPECTRUM.json"
+BASE_SPECTRUM = BASE / "BHSM_N12_GATE7_SELECTED_DOP853_NONLINEAR_CONE_SPECTRUM.json"
 RESULT = BASE / "BHSM_N12_GATE7_RECENTERED_CONE_BOUNDARY_CLUSTER_SPECTRUM.json"
 SQRT_TWO = math.sqrt(2.0)
 JAX_D3_NORM_INFLATION = 1.0 + 1.0e-10
@@ -64,16 +65,22 @@ def _relative(path: Path) -> str:
 
 @lru_cache(maxsize=1)
 def _inputs() -> tuple[np.ndarray, ...]:
-    states, rates, times, weights, reference = cluster._center_arrays()
+    with np.load(CENTER) as source:
+        states = np.asarray(source["centers"], dtype=float)
+        rates = np.asarray(source["action_rates"], dtype=float)
+        times = np.asarray(source["action_lengths"], dtype=float)
+        weights = np.asarray(source["state_weights"], dtype=float)
+        reference = np.asarray(source["branch_reference"], dtype=float)
     with np.load(GREEN) as source:
         fine_times = np.asarray(source["fine_action_lengths"], dtype=float)
         fine_correction = np.asarray(
             source["fine_ambient_correction_profile"], dtype=float
         )
-    with np.load(CAUSAL) as source:
-        nonlinear_radius = np.asarray(
-            source["nonlinear_delta_radius"], dtype=float
-        )
+    causal_z2 = json.loads(CAUSAL_Z2.read_text(encoding="utf-8"))
+    nonlinear_radius = np.full(
+        states.shape[0],
+        float(causal_z2["domain"]["candidate_nonlinear_action_radius"]),
+    )
     return (
         states, rates, times, weights, reference,
         fine_times, fine_correction, nonlinear_radius,
@@ -268,12 +275,14 @@ def _task(task: tuple[int, int, float, float]) -> dict[str, Any]:
 
 
 def build_payload(tasks: list[tuple[int, int, float, float]]) -> dict[str, Any]:
-    inputs = (GREEN, CAUSAL, EIGENLINE, TWO_FREE, BASE_SPECTRUM)
+    inputs = (
+        CENTER, GREEN, CAUSAL_Z2, EIGENLINE, TWO_FREE, BASE_SPECTRUM,
+    )
     if not all(path.is_file() for path in inputs):
         raise FileNotFoundError("recentered-cone spectrum inputs required")
     parents = [
         json.loads(path.read_text(encoding="utf-8"))
-        for path in (EIGENLINE, TWO_FREE, BASE_SPECTRUM)
+        for path in (CAUSAL_Z2, EIGENLINE, TWO_FREE, BASE_SPECTRUM)
     ]
     if not all(parent["validation_passed"] for parent in parents):
         raise RuntimeError("validated retained spectral parents required")
@@ -348,6 +357,9 @@ def build_payload(tasks: list[tuple[int, int, float, float]]) -> dict[str, Any]:
         },
         "domain": {
             "recenter": "BASE_HERMITE_HISTORY_PLUS_FINE_PIECEWISE_LINEAR_SIGNED_GREEN_CORRECTION",
+            "base_center": _relative(CENTER),
+            "center_correction": _relative(GREEN),
+            "nonlinear_radius_authority": _relative(CAUSAL_Z2),
             "nonlinear_halo_action_radius": float(np.max(_inputs()[7])),
             "product_ball_embedding": "sqrt(2)*[P_corrected,delta_radius*I_98]",
         },

@@ -19,6 +19,10 @@ def _payload():
 def test_canonical_system_and_required_subsystems() -> None:
     payload = _payload()
     assert payload["validation_passed"] is True
+    assert payload["validation"]["causal_Z2_nonlinear_halo_is_certified"] is True
+    assert payload["validation"][
+        "quarter_green_corrected_carrier_is_certified"
+    ] is True
     assert payload["canonical_action_version"] == "BHSM-AE-2.0.0"
     identifiers = {row["id"] for row in payload["subsystems"]}
     assert {
@@ -58,6 +62,7 @@ def test_blocker_and_interface_priority_reconciliation() -> None:
         if row["id"] == "RESPONSE_TO_CORRELATED_Y_Z1_Z2"
     )
     assert response_gap["status"] == (
-        "COMPLETE_INTERNAL_RESPONSE_AND_CAUSAL_Z2_CERTIFIED;_"
-        "SIGNED_Y_AND_PROPAGATOR_Z1_CURRENT"
+        "QUARTER_GREEN_CORRECTED_LINE_PROJECTOR_INVERSE_AND_CAUSAL_Z2_HALO_"
+        "CERTIFIED;_CORRECTED_RESPONSE_TRANSFER_THEN_SIGNED_Y_AND_PROPAGATOR_"
+        "Z1_CURRENT"
     )

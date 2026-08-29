@@ -12,3 +12,7 @@ smallest-gap collapse.  The internal hard 26/27 meeting remains inside the
 
 The result bounds the selected projector only.  The bordered internal response
 and its differentiated source are composed afterward on the same mesh.
+
+All 3,009 cells close.  The maximum selected-projector motion is
+`0.025329475443001452`, with minimum consumed gap
+`1.7205464630704569e-7`.

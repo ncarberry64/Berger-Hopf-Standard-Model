@@ -100,7 +100,7 @@
     "new_action_added": false
   },
   "current_irreducible_object": "G7_COMPLETE_JOINT_HEAT_ZETA_COVECTOR_AND_PROJECTED_KKT_ROOT_ON_A_CERTIFIED_HISTORY",
-  "exact_next_dependency": "EVALUATE_ONLY_SIGNED_Y_AND_PROPAGATOR_Z1_ON_THE_CERTIFIED_CAUSAL_Z2_TUBE_AND_COMPOSE_THE_RADII_POLYNOMIAL_AND_FIRST_HIT_TRANSFER,_THEN_CONTRACT_THE_EXISTING_AE2_HEAT_ZETA_COVECTOR_AND_PROJECTED_FORCE_ROOT",
+  "exact_next_dependency": "TRANSFER_THE_BORDERED_RESPONSE_ON_THE_QUARTER_GREEN_CORRECTED_CARRIER,_THEN_EVALUATE_ONLY_SIGNED_Y_AND_PROPAGATOR_Z1_AND_COMPOSE_THE_RADII_POLYNOMIAL_AND_FIRST_HIT_TRANSFER,_THEN_CONTRACT_THE_EXISTING_AE2_HEAT_ZETA_COVECTOR_AND_PROJECTED_FORCE_ROOT",
   "inputs": {
     "artifacts/BHSM_1_0_completion_gate.json": "E562EE797C1C11E529ACDAEF2889A4DA366214C9F317B06A631B3F350588BDF4",
     "artifacts/BHSM_CKM_action_equivalence_v11_6.json": "5F5850309F6744464FBA34A4A255F415A6F17782B60CF0E6FF7A4E1CEC63DD1C",
@@ -131,6 +131,9 @@
     "artifacts/flagship_integration/BHSM_N12_GATE7_CLOSED_SYSTEM_ZERO_EXTERNAL_SOURCE_ONTOLOGY.json": "E9D4611C01C7243A7526F4AC47F473C68733E981D01EFA5013AA028177004A3F",
     "artifacts/flagship_integration/BHSM_N12_GATE7_NORMALIZED_FIELD_COMMON_FRAME_IDENTITY.json": "BA42969CD878049BC7C816AE590FD4DC09654ED7A353499B9C27F1EB61F98928",
     "artifacts/flagship_integration/BHSM_N12_GATE7_ONE_SEAM_FULL_GRADED_FINITE_CORE_HEAT_BOUND.json": "D1E6A58D0586A8995288FF4139C9F24DBF2411532EEA9E2D833B8AA5B60149B3",
+    "artifacts/flagship_integration/BHSM_N12_GATE7_RECENTERED_CONE_BORDERED_HARD_INVERSE.json": "FC936B33AE3A2547C39BBA7007D33EC3D70F9515E7377574D664D2E3479D5FD4",
+    "artifacts/flagship_integration/BHSM_N12_GATE7_RECENTERED_CONE_BOUNDARY_CLUSTER_SPECTRUM.json": "8A4D9A56747FF138FA688F806DD0609836C227780E831B67EE53DB928ED60B70",
+    "artifacts/flagship_integration/BHSM_N12_GATE7_RECENTERED_CONE_SELECTED_PROJECTOR_GRAPH.json": "3CCEF039E42989092771DDF7E5C93E5A82C46EB46A8BB3CC31F38A3A06A52C60",
     "artifacts/flagship_integration/BHSM_N12_GATE7_SELECTED_CENTER_PROVENANCE_RECONCILIATION.json": "5A1C70FA3D71AFD5605884CA12269295AAE3F105F4A4AAF43BCA1085A26D27D7",
     "artifacts/flagship_integration/BHSM_N12_GATE7_SELECTED_CONE_INTERNAL_RESPONSE_Z2.json": "60378E73F6BF46EC84C97D9BD89E16795BF4BBB5EAB4E0028B000C5CD9D4F298",
     "artifacts/flagship_integration/BHSM_N12_GATE7_SELECTED_DOP853_NONLINEAR_CONE_PROJECTOR_INVERSE.json": "1B3B8FFA01818AF1F868BD54CB9C9C6D3C62D0A2FEE8F62CDD215BC6EE59D88C",
@@ -171,10 +174,10 @@
     },
     {
       "class": "C",
-      "evidence": "artifacts/flagship_integration/BHSM_N12_GATE7_SELECTED_CONE_INTERNAL_RESPONSE_Z2.json",
+      "evidence": "artifacts/flagship_integration/BHSM_N12_GATE7_RECENTERED_CONE_BORDERED_HARD_INVERSE.json",
       "id": "RESPONSE_TO_CORRELATED_Y_Z1_Z2",
       "priority": 1,
-      "status": "COMPLETE_INTERNAL_RESPONSE_AND_CAUSAL_Z2_CERTIFIED;_SIGNED_Y_AND_PROPAGATOR_Z1_CURRENT"
+      "status": "QUARTER_GREEN_CORRECTED_LINE_PROJECTOR_INVERSE_AND_CAUSAL_Z2_HALO_CERTIFIED;_CORRECTED_RESPONSE_TRANSFER_THEN_SIGNED_Y_AND_PROPAGATOR_Z1_CURRENT"
     },
     {
       "class": "C",
@@ -383,7 +386,7 @@
         "artifacts/flagship_integration/BHSM_N12_C2_1222_PARAMETRIC_BASE_FAMILY.json",
         "artifacts/flagship_integration/BHSM_N12_GATE7_SELECTED_CENTER_PROVENANCE_RECONCILIATION.json"
       ],
-      "mathematical_status": "8692_CELL_BORDERED_RESPONSE_AND_FIRST_VARIATION_CERTIFIED;_1722_CELL_CANDIDATE_CONE_LINE_PROJECTOR_INVERSE_CERTIFIED;_COMPLETE_INTERNAL_RESPONSE_AND_CAUSAL_TAYLOR_Z2_CERTIFIED;_SIGNED_Y_AND_PROPAGATOR_Z1_OPEN",
+      "mathematical_status": "8692_CELL_LEGACY_BORDERED_RESPONSE_AND_FIRST_VARIATION_CERTIFIED;_3009_CELL_QUARTER_GREEN_CORRECTED_LINE_PROJECTOR_INVERSE_CERTIFIED;_CAUSAL_TAYLOR_Z2_NONLINEAR_HALO_CERTIFIED;_QUARTER_CORRECTED_RESPONSE_TRANSFER_THEN_SIGNED_Y_AND_PROPAGATOR_Z1_OPEN",
       "output_artifacts": [
         "artifacts/flagship_integration/BHSM_N12_C2_STOP_DOP853_ADAPTIVE_BORDERED_RHS_RESPONSE_CERTIFICATE.json",
         "artifacts/flagship_integration/BHSM_N12_C2_STOP_DOP853_ADAPTIVE_BORDERED_RESPONSE_FIRST_VARIATION.json",
@@ -393,6 +396,9 @@
         "artifacts/flagship_integration/BHSM_N12_GATE7_SELECTED_DOP853_NONLINEAR_CONE_SPECTRUM.json",
         "artifacts/flagship_integration/BHSM_N12_GATE7_SELECTED_DOP853_NONLINEAR_CONE_PROJECTOR_INVERSE.json",
         "artifacts/flagship_integration/BHSM_N12_GATE7_SELECTED_CONE_INTERNAL_RESPONSE_Z2.json",
+        "artifacts/flagship_integration/BHSM_N12_GATE7_RECENTERED_CONE_BOUNDARY_CLUSTER_SPECTRUM.json",
+        "artifacts/flagship_integration/BHSM_N12_GATE7_RECENTERED_CONE_SELECTED_PROJECTOR_GRAPH.json",
+        "artifacts/flagship_integration/BHSM_N12_GATE7_RECENTERED_CONE_BORDERED_HARD_INVERSE.json",
         "artifacts/flagship_integration/BHSM_N12_DOP853_AE2_BIRTH_DOMAIN_RECONCILIATION.json"
       ],
       "owning_theorem_version": "current adaptive DOP853 certificate",
@@ -554,8 +560,8 @@
     "adaptive_DOP853_response_is_certified": true,
     "ae2_is_owner_selected_and_validated": true,
     "all_declared_artifacts_exist": true,
+    "causal_Z2_nonlinear_halo_is_certified": true,
     "common_frame_data_slots_are_exhaustively_matched": true,
-    "complete_internal_response_and_causal_Z2_are_certified": true,
     "current_semantic_action_is_AE2": true,
     "current_semantic_registry_validated": true,
     "domain_no_go_is_scoped_correctly": true,
@@ -566,6 +572,7 @@
     "normalized_field_common_frame_identity_is_derived": true,
     "one_seam_AE2_composition_already_exists": true,
     "one_universal_G_F_calibration_only": true,
+    "quarter_green_corrected_carrier_is_certified": true,
     "scalar_second_variation_route_is_rejected_coverwide": true,
     "selected_candidate_cone_line_projector_and_inverse_are_certified": true,
     "selected_quarter_center_provenance_is_reconciled": true
