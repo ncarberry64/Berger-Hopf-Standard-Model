@@ -27,6 +27,9 @@ def test_canonical_system_and_required_subsystems() -> None:
         "signed_Y_binary_source_noise_is_superseded_by_decimal_repair"
     ] is True
     assert payload["validation"][
+        "decimal_Gauss8_PROP16_center_is_frozen_without_source_double_counting"
+    ] is True
+    assert payload["validation"][
         "binary64_compact_reserve_artifact_is_superseded_by_directed_replay"
     ] is True
     assert payload["validation"][
@@ -76,7 +79,7 @@ def test_blocker_and_interface_priority_reconciliation() -> None:
         if row["id"] == "RESPONSE_TO_CORRELATED_Y_Z1_Z2"
     )
     assert response_gap["status"] == (
-        "DECIMAL_GAUSS6_TO8_SIGNED_SOURCE_AND_PROP16_GREEN_IMAGE_NUMERICALLY_"
-        "CONVERGED_INSIDE_THE_HALO;_OUTWARD_INTERVAL_Y_Z1_AND_GAUSS8_CENTER_"
-        "DEPENDENT_Z2_CONE_REBUILD_OPEN"
+        "DECIMAL_GAUSS8_PROP16_CENTER_FROZEN_AND_ALL_STORED_PRETERMINAL_NODES_"
+        "POSITIVE;_CAUSAL_TIME_WEIGHTED_OUTWARD_Y_AND_PROP16_Z1_TAIL_PLUS_"
+        "CENTER_DEPENDENT_Z2_CONE_REBUILD_OPEN"
     )

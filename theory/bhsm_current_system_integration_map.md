@@ -68,21 +68,27 @@ is at most `7.145502804170978e-15`, or `0.5744%` of the
 `1.243972269022099e-12` halo.  Through the same retained PROP16 Green map, the
 maximum 371-node correction-profile increment is
 `6.919049080236543e-14`, or `5.5621%` of the halo.  This validates numerical
-cross-order convergence and supplies a Gauss-8 center candidate; it does not
-yet provide outward interval `Y/Z1` or transfer the represented-center `Z2`
-certificate.
+cross-order convergence.  The Gauss-8 PROP16 state profile is now frozen as
+the linear center, and its coupled descriptor is reconstructed without adding
+or double-counting a source.  Descriptor cross-order variation is at most
+`1.9221817061916492e-16`; all 370 stored preterminal nodes remain positive,
+and the shifted terminal crossing remains inside its retained dense cell.  It
+does not yet provide outward interval `Y/Z1` or transfer the
+represented-center `Z2` certificate.
 
 The map has exactly one current blocker:
 
 `G7_CORRELATED_QUARTER_STEP_CENTER_STOP_WITNESS`.
 
-The next proof step is to freeze the Decimal Gauss-8 correction center, attach
-outward source and PROP16 tail remainders for literal `Y` and interval `Z1`,
-and rebuild only center-dependent cone/response objects to transfer `Z2`.
-The radii polynomial, strict preterminal margins, and scalar interval Newton at
-the stored `s=0` hit then close the same witness.  The observed propagator
-refinement is second order, but its geometric tail is still numerical rather
-than interval authority.
+The next proof step is to attach a causal time-weighted outward signed-source
+radius for literal `Y`, vanishing at the reset, plus the PROP16 tail for
+interval `Z1`, and rebuild only center-dependent cone/response objects to
+transfer `Z2`.  A uniform halo is invalid because the minimum birth-end
+preterminal margin is only `1.7739272048543877e-20`.  The radii polynomial,
+continuous strict margins, and scalar interval Newton at the shifted `s=0` hit
+then close the same witness.  The observed propagator refinement is second
+order, but its geometric tail is still numerical rather than interval
+authority.
 
 Independently, the compact 72-dimensional reset quotient domain and its first
 jets are certified.  The apparent zero stored reserves at transitions 791 and
