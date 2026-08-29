@@ -1,0 +1,50 @@
+{
+  "FULL_BHSM_COMPLETE": false,
+  "artifact": "BHSM_N12_GATE7_DECIMAL_MAGNUS6_LEADING_REMAINDER_AUDIT",
+  "authority": "EXACT_LIE_IDENTITY_PLUS_NUMERICAL_ROUTING_ONLY",
+  "claim_boundary": {
+    "FULL_BHSM_COMPLETE": false,
+    "Gate7": "ACTIVE",
+    "affine_Omega5_identity": "ESTABLISHED",
+    "analytic_Magnus4_higher_commutator_remainder": "OPEN_INTERVAL_AUTHORITY",
+    "binary64_Magnus6_tail": "REJECTED_AS_INTERVAL_AUTHORITY",
+    "outward_signed_Y": "OPEN_INTERVAL_AUTHORITY"
+  },
+  "data": "artifacts/flagship_integration/BHSM_N12_GATE7_DECIMAL_MAGNUS6_LEADING_REMAINDER_AUDIT.npz",
+  "data_SHA256": "B243EF43341DF7EE4BA26210D00F213FEF41C8DE81AEEFE18C09D022A7024BA8",
+  "exact_next_dependency": "OUTWARD_EVALUATE_THE_OMEGA5_AND_HIGHER_NESTED_COMMUTATOR_REMAINDER_ON_THE_RETAINED_CORRELATED_QUOTIENT;_DO_NOT_USE_BINARY64_REFINEMENT",
+  "identity": {
+    "Omega4": "h*A_mid-h^3*[A_mid,B]/12",
+    "Omega5": "h^5*([A_mid,[A_mid,[A_mid,B]]]/720-[B,[A_mid,B]]/240)",
+    "affine_generator": "A(t)=A_mid+(t-t_mid)*B",
+    "expected_sixth_order_halving_ratio": 64.0
+  },
+  "inputs": {
+    "artifacts/flagship_integration/BHSM_N12_GATE7_DECIMAL_MAGNUS4_PROP_RECENTER_AUDIT.npz": "F72D7F31ED125ECAF941211FECE686F0510381054CAAD03FB5900656EF12B11A",
+    "artifacts/flagship_integration/BHSM_N12_GATE7_DECIMAL_SIGNED_Y_GREEN_MAGNUS4_PROP16_AUDIT.npz": "C5245D078D30059A7698786A09C756221003B6656FDA9E5830F76C1F35E15B51",
+    "artifacts/flagship_integration/BHSM_N12_GATE7_DECIMAL_SIGNED_Y_GREEN_MAGNUS6_PROP08_AUDIT.npz": "6ABFEF277C6381ED8A808350486570BBC6FE204B41990F29216B2E5C4614CD55",
+    "artifacts/flagship_integration/BHSM_N12_GATE7_DECIMAL_SIGNED_Y_GREEN_MAGNUS6_PROP16_AUDIT.npz": "F085D05FD0F32034EB737E32EF7F87BD502E60FD4AFFA7739CF3D098D331B01A",
+    "artifacts/flagship_integration/BHSM_N12_GATE7_DECIMAL_SIGNED_Y_GREEN_MAGNUS6_PROP32_AUDIT.npz": "39DC568962501CD543529E49E7D1BED1CF6FDCDB806A0C5A868D32BA30B22719"
+  },
+  "status": "EXACT_AFFINE_OMEGA5_IDENTIFIED;_BINARY64_MAGNUS6_REFINEMENT_IS_NOT_ANALYTIC_TAIL_AUTHORITY",
+  "summary": {
+    "leading_shift_owner_fine_node": 363,
+    "maximum_Magnus4_to_midpoint_Richardson_reference": 3.1419459841993426e-18,
+    "maximum_Magnus6_PROP16_to_32_increment": 2.0819433942664457e-18,
+    "maximum_Magnus6_PROP8_to_16_increment": 5.98291811088325e-19,
+    "maximum_Magnus6_minus_Magnus4_profile_shift": 3.834887733156508e-19,
+    "maximum_Magnus6_to_midpoint_Richardson_reference": 3.519148832203337e-18,
+    "observed_refinement_ratio": 0.2873717953792532,
+    "terminal_Magnus6_minus_Magnus4_profile_shift": 3.8239547807969854e-19
+  },
+  "validation": {
+    "analytic_Magnus_remainder_remains_open": true,
+    "binary64_refinement_ratio_not_relabelled_as_sixth_order_tail": true,
+    "complete_371_node_profiles_compared": true,
+    "exact_affine_Omega5_Lie_polynomial_used": true,
+    "leading_Omega5_profile_shift_below_4e_minus_19": true,
+    "midpoint_Richardson_surrogate_not_relabelled_as_exact_flow": true,
+    "no_action_source_selector_scale_gate_or_chord_changed": true
+  },
+  "validation_passed": true
+}

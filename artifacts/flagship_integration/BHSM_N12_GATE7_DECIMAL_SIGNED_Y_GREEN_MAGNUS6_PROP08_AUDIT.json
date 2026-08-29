@@ -1,0 +1,46 @@
+{
+  "FULL_BHSM_COMPLETE": false,
+  "artifact": "BHSM_N12_GATE7_DECIMAL_SIGNED_Y_GREEN_MAGNUS6_PROP8_AUDIT",
+  "authority": "NUMERICAL_CORRELATION_PRESERVING_GREEN_CROSS_ORDER_AUDIT_NOT_INTERVAL_AUTHORITY",
+  "claim_boundary": {
+    "Gate7": "ACTIVE",
+    "outward_interval_Y_and_Z1": "OPEN",
+    "signed_Y_numerical_cross_order_convergence": "VALIDATED"
+  },
+  "data": "artifacts/flagship_integration/BHSM_N12_GATE7_DECIMAL_SIGNED_Y_GREEN_MAGNUS6_PROP08_AUDIT.npz",
+  "identity": {
+    "Magnus_order": 6,
+    "affine_generator_commutator_coefficient": "-h^3*[A_mid,A_prime]/12",
+    "affine_generator_fifth_order_coefficient": "h^5*([A,[A,[A,B]]]/720-[B,[A,B]]/240)",
+    "constraint_handling": "PROJECT_ONLY_AT_RETAINED_MACRO_SEAMS",
+    "propagator_substeps_per_quarter_cell": 8,
+    "source_orders": [
+      6,
+      8
+    ],
+    "source_sign": "MINUS_DEFECT"
+  },
+  "inputs": {
+    "artifacts/flagship_integration/BHSM_N12_C2_STOP_HIGH_ORDER_QUARTER_STEP_RETAINED_RECONNAISSANCE.npz": "086C41068B9F3A6C0E5F8040B661202E067D017C909A381010E45FF352498D00",
+    "artifacts/flagship_integration/BHSM_N12_C2_STOP_QUARTER_STEP_FINE_HYBRID_GRAPH_JACOBIAN_RECONNAISSANCE.npz": "B92C08B4CB2EC4033FA70CBDCC28B6CD79E1189E19D95C984155EB65DD9D73B5",
+    "artifacts/flagship_integration/BHSM_N12_C2_STOP_QUARTER_STEP_PHYSICAL_TANGENT_TRANSFER_RECONNAISSANCE.npz": "9FFD40E1F3BFBBFA085FAB18B8ECDF250C55E753D23BE0B34737386BE833A175",
+    "artifacts/flagship_integration/BHSM_N12_GATE7_DECIMAL_SIGNED_SOURCE_QUADRATURE_AUDIT.npz": "905FCCF0CB88B432309854DB0953AF8ECEE0DF2E50F5748775E86FB78EAC79B2",
+    "artifacts/flagship_integration/BHSM_N12_GATE7_SELECTED_CONE_INTERNAL_RESPONSE_Z2.json": "60378E73F6BF46EC84C97D9BD89E16795BF4BBB5EAB4E0028B000C5CD9D4F298"
+  },
+  "summary": {
+    "candidate_halo_utilization": 0.055636411283788066,
+    "candidate_nonlinear_action_radius": 1.243972269022099e-12,
+    "maximum_signed_correction_profile_increment_2_norm": 6.921015278494056e-14,
+    "profile_increment_owner_fine_node": 363,
+    "terminal_signed_correction_increment_2_norm": 6.554609218978035e-14
+  },
+  "validation": {
+    "complete_371_node_profiles_compared": true,
+    "maximum_Gauss6_to8_profile_increment_below_candidate_halo": true,
+    "not_relabelled_as_interval_propagator_authority": true,
+    "same_macro_tangent_projection_for_both_orders": true,
+    "same_retained_PROP_substeps_for_both_orders": true,
+    "signed_sources_propagated_before_norm": true
+  },
+  "validation_passed": true
+}

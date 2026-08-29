@@ -46,7 +46,7 @@ def _jacobian_at(time: float, times: np.ndarray, values: np.ndarray) -> np.ndarr
 def _propagate(
     value: np.ndarray, left: float, right: float, maximum_step: float,
     jacobian_times: np.ndarray, jacobians: np.ndarray,
-    commutators: np.ndarray, magnus_order: int,
+    slopes: np.ndarray, commutators: np.ndarray, magnus_order: int,
 ) -> np.ndarray:
     if right <= left:
         return value.copy()
@@ -59,8 +59,20 @@ def _propagate(
             int(np.searchsorted(jacobian_times, midpoint, side="right") - 1), 0,
         ), jacobian_times.size - 2)
         exponent = step * _jacobian_at(midpoint, jacobian_times, jacobians)
-        if magnus_order == 4:
+        if magnus_order >= 4:
             exponent = exponent - step**3 * commutators[interval] / 12.0
+        if magnus_order >= 6:
+            midpoint_generator = _jacobian_at(
+                midpoint, jacobian_times, jacobians,
+            )
+            slope = slopes[interval]
+            first = midpoint_generator @ slope - slope @ midpoint_generator
+            second = midpoint_generator @ first - first @ midpoint_generator
+            third = midpoint_generator @ second - second @ midpoint_generator
+            slope_nested = slope @ first - first @ slope
+            exponent = exponent + step**5 * (
+                third / 720.0 - slope_nested / 240.0
+            )
         result = expm_multiply(
             exponent, result,
         )
@@ -72,7 +84,7 @@ def _profile(
     sample_indices: np.ndarray, residuals: np.ndarray, fine_times: np.ndarray,
     stop_fraction: float, macro_times: np.ndarray, tangents: np.ndarray,
     jacobian_times: np.ndarray, jacobians: np.ndarray, substeps: int,
-    commutators: np.ndarray, magnus_order: int,
+    slopes: np.ndarray, commutators: np.ndarray, magnus_order: int,
 ) -> np.ndarray:
     nodes, weights = np.polynomial.legendre.leggauss(order)
     units = 0.5 * (nodes + 1.0)
@@ -99,11 +111,11 @@ def _profile(
             node_time = left + right_fraction * float(unit) * step
             source -= 0.5 * duration * float(weight) * _propagate(
                 residual, node_time, right, maximum_step,
-                jacobian_times, jacobians, commutators, magnus_order,
+                jacobian_times, jacobians, slopes, commutators, magnus_order,
             )
         correction = _propagate(
             correction, left, right, maximum_step, jacobian_times, jacobians,
-            commutators, magnus_order,
+            slopes, commutators, magnus_order,
         ) + source
         if (
             next_macro < macro_times.size
@@ -121,7 +133,7 @@ def _profile(
 def main() -> None:
     parser = argparse.ArgumentParser()
     parser.add_argument("--propagator-substeps", type=int, default=16)
-    parser.add_argument("--magnus-order", type=int, choices=(2, 4), default=2)
+    parser.add_argument("--magnus-order", type=int, choices=(2, 4, 6), default=2)
     args = parser.parse_args()
     if args.propagator_substeps < 1:
         raise ValueError("positive propagator substep count required")
@@ -158,6 +170,7 @@ def main() -> None:
             jacobian_times=jacobian_times,
             jacobians=jacobians,
             substeps=args.propagator_substeps,
+            slopes=slopes,
             commutators=commutators,
             magnus_order=args.magnus_order,
         )
@@ -201,7 +214,11 @@ def main() -> None:
             "propagator_substeps_per_quarter_cell": args.propagator_substeps,
             "Magnus_order": args.magnus_order,
             "affine_generator_commutator_coefficient": (
-                "-h^3*[A_mid,A_prime]/12" if args.magnus_order == 4 else None
+                "-h^3*[A_mid,A_prime]/12" if args.magnus_order >= 4 else None
+            ),
+            "affine_generator_fifth_order_coefficient": (
+                "h^5*([A,[A,[A,B]]]/720-[B,[A,B]]/240)"
+                if args.magnus_order >= 6 else None
             ),
             "constraint_handling": "PROJECT_ONLY_AT_RETAINED_MACRO_SEAMS",
         },
