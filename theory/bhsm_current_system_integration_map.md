@@ -178,6 +178,19 @@ The sole analytic owner therefore advances to the outward `Omega9`-and-higher
 remainder plus outward signed source-quadrature `Y`, before center-dependent
 `Z2`, radii, continuous margins, and first-hit transfer.
 
+An interaction-frame theorem now certifies that analytic infinite tail on all
+5,908 retained PROP16 affine substeps without continuous quotient projection.
+Writing `U(t)=exp(A0*t)V(t)` gives interaction generator
+`G(t)=t*exp(-ad_A0*t)B`.  At 256-bit Arb precision the maximum interaction
+`beta` is `0.021567811917755787`, the maximum conjugation-series tail is
+`1.4168446239590066e-41`, the maximum order-14 Dyson remainder is
+`7.942523064085875e-38`, and the maximum local exact-propagator tail after the
+constant factor is `3.055586410630589e-35`.  This closes the analytic infinite
+tail but does not promote the exact affine propagator: the finite order-14
+interaction polynomial `V14` still requires outward evaluation on the same
+substeps and global correlated homogeneous/signed-source composition.  Signed
+source-quadrature `Y` remains a separate interval owner.
+
 Independently, the compact 72-dimensional reset quotient domain and its first
 jets are certified.  The apparent zero stored reserves at transitions 791 and
 1064 were binary64 storage artifacts: directed Decimal replay gives strict
