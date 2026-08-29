@@ -26,6 +26,9 @@ def test_canonical_system_and_required_subsystems() -> None:
     assert payload["validation"][
         "signed_Y_quadrature_nonconvergence_is_reconciled"
     ] is True
+    assert payload["validation"][
+        "compact_reset_propagation_failure_is_localized"
+    ] is True
     assert payload["canonical_action_version"] == "BHSM-AE-2.0.0"
     identifiers = {row["id"] for row in payload["subsystems"]}
     assert {
@@ -48,12 +51,14 @@ def test_canonical_system_and_required_subsystems() -> None:
 def test_blocker_and_interface_priority_reconciliation() -> None:
     payload = _payload()
     blockers = payload["blocker_reconciliation"]
-    assert sum(row["classification"] == "CURRENT_BLOCKER" for row in blockers) == 1
+    assert sum(row["classification"] == "CURRENT_BLOCKER" for row in blockers) == 2
     old_domain = next(row for row in blockers if row["id"] == "V6_7_NORMAL_MATTER_DOMAIN_NO_GO")
     assert old_domain["classification"] == "SUPERSEDED_BY_LATER_DOMAIN"
-    assert payload["current_irreducible_object"].startswith(
-        "G7_SIGNED_Y_HIGH_PRECISION_OR_ADAPTIVE_QUADRATURE"
-    )
+    assert payload["current_irreducible_object"].startswith("G7_PARALLEL_FRONTIER")
+    assert payload["current_irreducible_objects"] == [
+        "G7_SIGNED_Y_HIGH_PRECISION_OR_ADAPTIVE_QUADRATURE_AND_RECENTER_REBASE",
+        "G7_COMPACT_RESET_PROPAGATION_STRICT_RESERVE_AT_TRANSITIONS_791_AND_1064",
+    ]
     assert payload["integration_order"] == [
         "A_EXISTING_COMPOSITION", "C_IMPLEMENTATION", "B_THEOREM", "D_NEW_THEORY_CHOICE"
     ]

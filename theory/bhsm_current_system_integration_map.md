@@ -21,11 +21,11 @@ equivalence
 
 and the closed-system source ontology keeps all internal responses inside one
 graded operator.  The DOP853 bordered matrix supplies auxiliary C2 geometry
-and response dependence, not the birth-domain operator.  The current missing
-link is therefore an implementation/certification adapter: contract the
-correlated finite-history response with the existing full graded heat-minus-
-zeta cotangent once, reverse-propagate it, and certify its physical quotient
-root.
+and response dependence, not the birth-domain operator.  The local operator
+adapter is therefore not missing.  Its physical promotion depends on two
+independent certification fronts: a converged signed-history recenter for the
+force chain, and a positive-radius compact reset-family map through the stored
+finite core.
 
 The historical exact adaptive response and its center first variation remain
 certified on the 8,692-cell cover.  On the authoritative quarter-step carrier,
@@ -70,9 +70,11 @@ local spectrum/projector/inverse, response, reverse-first-variation, and causal
 that center cannot yet be promoted as the exact history used by the radii
 polynomial.
 
-The map has exactly one current blocker:
+The map has exactly two current blockers:
 
 `G7_SIGNED_Y_HIGH_PRECISION_OR_ADAPTIVE_QUADRATURE_AND_RECENTER_REBASE`.
+
+`G7_COMPACT_RESET_PROPAGATION_STRICT_RESERVE_AT_TRANSITIONS_791_AND_1064`.
 
 The next proof object is correlation-preserving high-precision or adaptive
 signed quadrature whose correction stabilizes below the current halo.  Once
@@ -80,6 +82,15 @@ that new center is frozen, only center-dependent cone/response objects are
 rebuilt before composing literal `Y`, interval `Z1`, the radii polynomial, and
 the first-hit transfer.  The observed propagator refinement is second order,
 but its geometric tail is still numerical rather than interval authority.
+
+Independently, the compact 72-dimensional reset quotient domain and its first
+jets are certified.  The stored 1,222-segment pointwise cover does not yet
+carry a positive reset-family radius through the whole core: exactly two
+transitions, global segments 791 and 1064, have zero stored output reserve.
+The other 1,220 rows derive a positive open-subball target, so the next proof
+computation is localized to rebuilding only those two saturated transition
+blocks with a predeclared strict reserve.  This is a failure of the stored
+cover radii, not a dynamical no-go or a failure of the pointwise history.
 
 KKT Hessian/Ward/scalar work, action-selected mass/CKM/PMNS eigenbases, frozen
 comparison regeneration, and release packaging are downstream.  An internal
