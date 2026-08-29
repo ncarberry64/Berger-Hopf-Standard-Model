@@ -54,6 +54,8 @@ PATHS = {
     "decimal_prop_refinement": "artifacts/flagship_integration/BHSM_N12_GATE7_DECIMAL_PROP_REFINEMENT_AUDIT.json",
     "decimal_magnus4_prop_recenter": "artifacts/flagship_integration/BHSM_N12_GATE7_DECIMAL_MAGNUS4_PROP_RECENTER_AUDIT.json",
     "arb_magnus4_discrete_propagation": "artifacts/flagship_integration/BHSM_N12_GATE7_ARB_MAGNUS4_DISCRETE_PROPAGATION.json",
+    "arb_magnus4_macro_maps": "artifacts/flagship_integration/BHSM_N12_GATE7_ARB_MAGNUS4_MACRO_MAPS.json",
+    "arb_magnus4_affine_composition": "artifacts/flagship_integration/BHSM_N12_GATE7_ARB_MAGNUS4_AFFINE_COMPOSITION.json",
     "causal_y_z1_z2_margin_budget": "artifacts/flagship_integration/BHSM_N12_GATE7_CAUSAL_Y_Z1_Z2_MARGIN_BUDGET_AUDIT.json",
     "recentered_cone_spectrum": "artifacts/flagship_integration/BHSM_N12_GATE7_RECENTERED_CONE_BOUNDARY_CLUSTER_SPECTRUM.json",
     "recentered_cone_projector": "artifacts/flagship_integration/BHSM_N12_GATE7_RECENTERED_CONE_SELECTED_PROJECTOR_GRAPH.json",
@@ -148,6 +150,10 @@ def build_payload() -> dict[str, Any]:
     arb_magnus4_discrete_propagation = records[
         "arb_magnus4_discrete_propagation"
     ]
+    arb_magnus4_macro_maps = records["arb_magnus4_macro_maps"]
+    arb_magnus4_affine_composition = records[
+        "arb_magnus4_affine_composition"
+    ]
     causal_y_z1_z2_margin_budget = records["causal_y_z1_z2_margin_budget"]
     compact_reset_propagation = records["compact_reset_propagation"]
     compact_reset_open_subball = records["compact_reset_open_subball"]
@@ -225,8 +231,8 @@ def build_payload() -> dict[str, Any]:
             "98-state C2 path with 61-dimensional reduced Hessian, branch 24, and 62-dimensional border",
             "finite Euclidean physical tangent quotient; auxiliary geometry, not the temporal birth domain",
             ["local_action", "base_family", "selected_center_provenance"],
-            ["dop_response", "dop_first_variation", "dop_second_variation", "common_frame_matching", "normalized_field_identity", "nonlinear_cone_spectrum", "nonlinear_cone_projector_inverse", "causal_z2", "signed_y_quadrature", "decimal_signed_source", "decimal_signed_y_green", "decimal_signed_y_green_prop32", "decimal_prop_refinement", "decimal_magnus4_prop_recenter", "arb_magnus4_discrete_propagation", "frozen_decimal_gauss8_center", "causal_y_z1_z2_margin_budget", "recentered_cone_spectrum", "recentered_cone_projector", "recentered_cone_inverse", "recentered_cone_response", "recentered_cone_first_variation", "dop_domain"],
-            "AFFINE_GENERATOR_MAGNUS4_SIGNED_COMMUTATOR_RECENTER_NUMERICALLY_REMOVES_THE_MIDPOINT_PROP16_LEADING_DEFECT_BY_21290_FOLD;_ALL_RECENTERED_ALIGNED_MAGNUS4_DISCRETE_BLOCKS_ARE_OUTWARD_CERTIFIED_IN_ARB;_GLOBAL_CORRELATED_COMPOSITION_ANALYTIC_MAGNUS_REMAINDER_AND_SIGNED_Y_OPEN",
+            ["dop_response", "dop_first_variation", "dop_second_variation", "common_frame_matching", "normalized_field_identity", "nonlinear_cone_spectrum", "nonlinear_cone_projector_inverse", "causal_z2", "signed_y_quadrature", "decimal_signed_source", "decimal_signed_y_green", "decimal_signed_y_green_prop32", "decimal_prop_refinement", "decimal_magnus4_prop_recenter", "arb_magnus4_discrete_propagation", "arb_magnus4_macro_maps", "arb_magnus4_affine_composition", "frozen_decimal_gauss8_center", "causal_y_z1_z2_margin_budget", "recentered_cone_spectrum", "recentered_cone_projector", "recentered_cone_inverse", "recentered_cone_response", "recentered_cone_first_variation", "dop_domain"],
+            "GLOBAL_FINITE_CORRELATED_MAGNUS4_AFFINE_COMPOSITION_IS_OUTWARD_CERTIFIED_IN_ARB_ON_ALL_47_HOMOGENEOUS_AND_SIGNED_SOURCE_BLOCKS;_ANALYTIC_MAGNUS_REMAINDER_AND_SIGNED_SOURCE_QUADRATURE_Y_OPEN",
             "current adaptive DOP853 certificate",
             ["GATE7_HEAT_ZETA_CHAIN"],
             ["12,032-cell historical uniform cover replaced by the exact 8,692-cell adaptive cover"],
@@ -319,7 +325,7 @@ def build_payload() -> dict[str, Any]:
         {"id": "G7_SIGNED_Y_QUADRATURE_AND_RECENTER_REBASE", "classification": "SUPERSEDED_BY_DECIMAL_SOURCE_REPAIR", "current_effect": "the former Gauss8/12/16/20 nonconvergence changed a binary selected-eigenline source representation; the isolated Decimal Gauss6-to8 source and PROP16 image are stable inside the halo"},
         {"id": "G7_COMPACT_RESET_STORED_RESERVE_791_1064", "classification": "SUPERSEDED_BY_DIRECTED_DECIMAL_REPLAY", "current_effect": "the two binary64-rounded zero reserves replay to strict directed lower bounds near 4.03e-28 and the predeclared open subball now crosses all 1222 core segments"},
         {"id": "G7_RESET_TO_CAPTURE_OR_STOP_CONNECTION", "classification": "SUPERSEDED_BY_TRANSVERSALITY_REDUCTION", "current_effect": "one exact transverse center stop witness automatically promotes to a nonempty open 72-dimensional stop-reaching seed stratum; whole-family multiple shooting and the NHIM bridge are unnecessary on the stop branch"},
-        {"id": "G7_CORRELATED_QUARTER_STEP_CENTER_STOP_WITNESS", "classification": "CURRENT_BLOCKER", "current_effect": "globally compose the certified recentered Magnus4 blocks with correlated radii, outward-enclose the analytic Magnus4 higher-commutator remainder and signed-Y separately, promote the Magnus4 PROP16 recenter, rebuild the center-dependent Z2 cone, close radii and continuous margins, and apply scalar interval Newton at the shifted s=0 first hit"},
+        {"id": "G7_CORRELATED_QUARTER_STEP_CENTER_STOP_WITNESS", "classification": "CURRENT_BLOCKER", "current_effect": "outward-enclose the analytic Magnus4 higher-commutator remainder and signed source-quadrature Y in the certified global correlated frame, promote the Magnus4 center, rebuild the center-dependent Z2 cone, close radii and continuous margins, and apply scalar interval Newton at the shifted s=0 first hit"},
         {"id": "G7_COMPLETE_JOINT_FORCE_ROOT", "classification": "DOWNSTREAM_ONLY", "current_effect": "evaluate after signed-Y recentering, radii closure, and first-hit transfer"},
         {"id": "DECORRELATED_SCALAR_SECOND_VARIATION", "classification": "INVALIDATED_PROOF_ROUTE", "current_effect": "finite first variation survives; all 8,692 scalar denominator cells route to signed/common-frame correlation"},
         {"id": "G7_HESSIAN_WARD_SCALAR", "classification": "DOWNSTREAM_ONLY", "current_effect": "follows the force/KKT root"},
@@ -332,7 +338,7 @@ def build_payload() -> dict[str, Any]:
         {"id": "AE2_TO_ONE_SEAM", "class": "A", "priority": 0, "status": "RESOLVED_BY_EXISTING_COMPOSITION", "evidence": PATHS["one_seam"]},
         {"id": "EVENT_RESET_TO_INTERNAL_SOURCE", "class": "A", "priority": 0, "status": "RESOLVED_BY_EXISTING_CLOSED_SYSTEM_ONTOLOGY", "evidence": PATHS["source_ontology"]},
         {"id": "DOP853_TO_RESPONSE_VARIATION", "class": "C", "priority": 1, "status": "RESOLVED_FOR_EXACT_CENTER_AND_FINITE_DIRECT_FIRST_VARIATION", "evidence": PATHS["dop_second_variation"]},
-        {"id": "RESPONSE_TO_CORRELATED_Y_Z1_Z2", "class": "C", "priority": 1, "status": "ALIGNED_MAGNUS4_DISCRETE_OPERATOR_OUTWARD_EVALUATION_CERTIFIED_ON_ALL_370_RECENTERED_QUOTIENT_BLOCKS;_GLOBAL_CORRELATED_BLOCK_COMPOSITION_ANALYTIC_HIGHER_COMMUTATOR_REMAINDER_SIGNED_Y_AND_Z2_TRANSFER_OPEN", "evidence": PATHS["arb_magnus4_discrete_propagation"]},
+        {"id": "RESPONSE_TO_CORRELATED_Y_Z1_Z2", "class": "C", "priority": 1, "status": "GLOBAL_FINITE_CORRELATED_MAGNUS4_AFFINE_COMPOSITION_CERTIFIED_ON_ALL_47_HOMOGENEOUS_AND_ZERO_INITIAL_SIGNED_SOURCE_BLOCKS;_ANALYTIC_HIGHER_COMMUTATOR_REMAINDER_SIGNED_SOURCE_QUADRATURE_Y_AND_Z2_TRANSFER_OPEN", "evidence": PATHS["arb_magnus4_affine_composition"]},
         {"id": "FINITE_HISTORY_TO_HEAT_ZETA_COVECTOR", "class": "C", "priority": 1, "status": "ENDPOINTS_AND_FORMULAS_EXIST_JOINT_CONTRACTION_NOT_YET_EVALUATED", "evidence": PATHS["force_functional"]},
         {"id": "COMPACT_RESET_DOMAIN_TO_CAPTURE_OR_STOP", "class": "B", "priority": 0, "status": "OPEN_72_DIMENSIONAL_RESET_SUBBALL_CERTIFIED_THROUGH_1222_CORE;_ONE_EXACT_TRANSVERSE_CENTER_STOP_WITNESS_SUFFICES_FOR_AN_OPEN_STOP_STRATUM;_CENTER_INTERVAL_SHADOWING_AND_FIRST_HIT_NEWTON_OPEN", "evidence": PATHS["open_family_stop_reduction"]},
         {"id": "FAMILY_PROJECTORS_TO_MASS_CKM", "class": "B", "priority": 2, "status": "MISSING_ACTION_SELECTED_SECTOR_RESPONSE_EIGENBASES", "evidence": PATHS["generation"]},
@@ -468,6 +474,32 @@ def build_payload() -> dict[str, Any]:
             and arb_magnus4_discrete_propagation["claim_boundary"]["signed_Y"]
             == "OPEN_INTERVAL_AUTHORITY"
         ),
+        "global_finite_correlated_Magnus4_affine_composition_is_outward_certified": (
+            arb_magnus4_macro_maps["validation_passed"] is True
+            and arb_magnus4_macro_maps["identity"]["macro_maps"] == 47
+            and arb_magnus4_macro_maps["identity"]["exponential_count"]
+            == 5908
+            and arb_magnus4_affine_composition["validation_passed"] is True
+            and arb_magnus4_affine_composition["identity"]["macro_blocks"]
+            == 47
+            and arb_magnus4_affine_composition["identity"]["exponential_count"]
+            == 31019
+            and arb_magnus4_affine_composition["claim_boundary"][
+                "finite_global_correlated_block_composition"
+            ] == "CERTIFIED"
+            and arb_magnus4_affine_composition["claim_boundary"][
+                "finite_signed_affine_source_blocks"
+            ] == "CERTIFIED"
+            and arb_magnus4_affine_composition["validation"][
+                "stored_center_off_tangent_residue_not_relabelled_as_source"
+            ] is True
+            and arb_magnus4_affine_composition["claim_boundary"][
+                "analytic_Magnus4_remainder"
+            ] == "OPEN_INTERVAL_AUTHORITY"
+            and arb_magnus4_affine_composition["claim_boundary"][
+                "outward_signed_Y"
+            ] == "OPEN_INTERVAL_AUTHORITY"
+        ),
         "quarter_green_corrected_carrier_is_certified": (
             recentered_cone_spectrum["validation_passed"] is True
             and recentered_cone_projector["validation_passed"] is True
@@ -563,7 +595,7 @@ def build_payload() -> dict[str, Any]:
             "Gate7": "ACTIVE",
             "FULL_BHSM_COMPLETE": False,
         },
-        "exact_next_dependency": "GLOBALLY_COMPOSE_THE_CERTIFIED_RECENTERED_MAGNUS4_BLOCKS_WITH_CORRELATED_RADII,_OUTWARD_ENCLOSE_THE_ANALYTIC_MAGNUS4_HIGHER_COMMUTATOR_REMAINDER_AND_SIGNED_Y_SEPARATELY,_PROMOTE_THE_MAGNUS4_PROP16_RECENTER,_REBUILD_THE_CENTER_DEPENDENT_Z2_CONE,_CLOSE_RADII_AND_CONTINUOUS_MARGINS,_AND_APPLY_SCALAR_INTERVAL_NEWTON_AT_THE_SHIFTED_s_ZERO_FIRST_HIT",
+        "exact_next_dependency": "OUTWARD_ENCLOSE_THE_ANALYTIC_MAGNUS4_HIGHER_COMMUTATOR_REMAINDER_AND_SIGNED_SOURCE_QUADRATURE_Y_IN_THE_CERTIFIED_GLOBAL_CORRELATED_FRAME,_PROMOTE_THE_MAGNUS4_CENTER,_REBUILD_THE_CENTER_DEPENDENT_Z2_CONE,_CLOSE_RADII_AND_CONTINUOUS_MARGINS,_AND_APPLY_SCALAR_INTERVAL_NEWTON_AT_THE_SHIFTED_s_ZERO_FIRST_HIT",
         "FULL_BHSM_COMPLETE": False,
     }
 

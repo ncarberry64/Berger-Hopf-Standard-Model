@@ -39,6 +39,9 @@ def test_canonical_system_and_required_subsystems() -> None:
         "aligned_Magnus4_discrete_blocks_and_exponential_roundoff_are_outward_certified"
     ] is True
     assert payload["validation"][
+        "global_finite_correlated_Magnus4_affine_composition_is_outward_certified"
+    ] is True
+    assert payload["validation"][
         "binary64_compact_reserve_artifact_is_superseded_by_directed_replay"
     ] is True
     assert payload["validation"][
@@ -88,7 +91,7 @@ def test_blocker_and_interface_priority_reconciliation() -> None:
         if row["id"] == "RESPONSE_TO_CORRELATED_Y_Z1_Z2"
     )
     assert response_gap["status"] == (
-        "ALIGNED_MAGNUS4_DISCRETE_OPERATOR_OUTWARD_EVALUATION_CERTIFIED_ON_ALL_"
-        "370_RECENTERED_QUOTIENT_BLOCKS;_GLOBAL_CORRELATED_BLOCK_COMPOSITION_"
-        "ANALYTIC_HIGHER_COMMUTATOR_REMAINDER_SIGNED_Y_AND_Z2_TRANSFER_OPEN"
+        "GLOBAL_FINITE_CORRELATED_MAGNUS4_AFFINE_COMPOSITION_CERTIFIED_ON_ALL_"
+        "47_HOMOGENEOUS_AND_ZERO_INITIAL_SIGNED_SOURCE_BLOCKS;_ANALYTIC_HIGHER_"
+        "COMMUTATOR_REMAINDER_SIGNED_SOURCE_QUADRATURE_Y_AND_Z2_TRANSFER_OPEN"
     )

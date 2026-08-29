@@ -123,10 +123,21 @@ aligned-versus-prior-unaligned proof-coordinate difference is
 `1.0339123218414115e-19`, with terminal evaluation radius
 `3.8518326736396573e-41` and terminal coordinate difference
 `2.2222465150551854e-21`.  Thus finite discrete construction and exponential
-roundoff are no longer open.  Global correlated block composition, the
-analytic Magnus-4 higher-commutator remainder, and outward signed `Y` remain
-open before the center-dependent `Z2`, radii, continuous margins, and first-hit
-transfer can close.
+roundoff are no longer open.
+
+The finite global correlated affine composition is now outward certified as
+well.  At 256-bit precision Arb evaluates all 47 homogeneous quotient maps
+from 5,908 fixed exponentials and all 47 zero-initial signed-source blocks from
+31,019 retained-partition source/fundamental exponentials.  Their global
+affine response has Euclidean radius `1.046098263845347e-25` and maximum
+outward difference `1.5943614222923838e-18` from the frozen quotient center;
+the largest signed-source component radius is `9.534470559611862e-76`.  The
+stored-center off-tangent residue, at most `1.6309841115399092e-21`, remains
+explicitly separate and is not relabelled as source.  Global correlated block
+composition and finite exponential roundoff are therefore no longer open.
+The analytic Magnus-4 higher-commutator remainder and outward signed-source
+quadrature `Y` remain the exact proof owner before center-dependent `Z2`, radii,
+continuous margins, and first-hit transfer can close.
 
 Independently, the compact 72-dimensional reset quotient domain and its first
 jets are certified.  The apparent zero stored reserves at transitions 791 and
