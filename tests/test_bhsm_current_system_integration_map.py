@@ -48,6 +48,9 @@ def test_canonical_system_and_required_subsystems() -> None:
         "finite_exact_Omega5_augmented_global_composition_is_outward_certified"
     ] is True
     assert payload["validation"][
+        "finite_exact_Omega7_augmented_global_composition_is_outward_certified"
+    ] is True
+    assert payload["validation"][
         "binary64_compact_reserve_artifact_is_superseded_by_directed_replay"
     ] is True
     assert payload["validation"][
@@ -97,7 +100,7 @@ def test_blocker_and_interface_priority_reconciliation() -> None:
         if row["id"] == "RESPONSE_TO_CORRELATED_Y_Z1_Z2"
     )
     assert response_gap["status"] == (
-        "FINITE_EXACT_OMEGA5_AUGMENTED_GLOBAL_CORRELATED_MAGNUS6_COMPOSITION_"
-        "CERTIFIED;_OUTWARD_OMEGA7_AND_HIGHER_REMAINDER_SIGNED_SOURCE_"
-        "QUADRATURE_Y_AND_Z2_TRANSFER_OPEN"
+        "FINITE_EXACT_OMEGA7_AUGMENTED_GLOBAL_CORRELATED_MAGNUS8_COMPOSITION_"
+        "CERTIFIED;_BINARY_MIDPOINT_COINCIDENCE_NOT_EXACT_ZERO;_OUTWARD_OMEGA9_"
+        "AND_HIGHER_REMAINDER_SIGNED_SOURCE_QUADRATURE_Y_AND_Z2_TRANSFER_OPEN"
     )

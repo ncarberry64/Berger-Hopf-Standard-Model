@@ -165,6 +165,19 @@ The sole analytic owner is now the outward `Omega7`-and-higher remainder plus
 outward signed source-quadrature `Y`, before center-dependent `Z2`, radii,
 continuous margins, and first-hit transfer.
 
+The complete affine `Omega7` Lie polynomial is now established and its finite
+augmentation is outward certified.  All 47 Magnus-8 homogeneous maps and all
+47 retained-partition signed-source blocks are evaluated at 256-bit Arb
+precision.  The Magnus-8 and Magnus-6 stored midpoints coincide at binary
+output resolution, but this is not promoted to exact zero; their combined Arb
+radii give the rigorous finite `Omega7` bound
+`2.484307410522125e-25`, with `2220444105607.331`-fold selected-cone reserve.
+The exact polynomial is
+`h^7*(-ad_A^5(B)/30240 + [A,[A,[B,[A,B]]]]/10080 - [[A,B],[A,[A,B]]]/7560 - [B,[B,[A,B]]]/6720)`.
+The sole analytic owner therefore advances to the outward `Omega9`-and-higher
+remainder plus outward signed source-quadrature `Y`, before center-dependent
+`Z2`, radii, continuous margins, and first-hit transfer.
+
 Independently, the compact 72-dimensional reset quotient domain and its first
 jets are certified.  The apparent zero stored reserves at transitions 791 and
 1064 were binary64 storage artifacts: directed Decimal replay gives strict
