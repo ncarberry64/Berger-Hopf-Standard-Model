@@ -53,3 +53,11 @@ def test_blocker_and_interface_priority_reconciliation() -> None:
         for gap in payload["interface_gaps"] if gap["class"] == "D"
     )
     assert payload["claim_boundary"]["FULL_BHSM_COMPLETE"] is False
+    response_gap = next(
+        row for row in payload["interface_gaps"]
+        if row["id"] == "RESPONSE_TO_CORRELATED_Y_Z1_Z2"
+    )
+    assert response_gap["status"] == (
+        "COMPLETE_INTERNAL_RESPONSE_AND_CAUSAL_Z2_CERTIFIED;_"
+        "SIGNED_Y_AND_PROPAGATOR_Z1_CURRENT"
+    )

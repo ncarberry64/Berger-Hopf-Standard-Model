@@ -35,11 +35,15 @@ refinement owner or a physical instability.  The current adapter must retain
 the stored 62-component signed variations in a common frame when assembling
 the literal `Y`, `Z1`, and `Z2` bounds.
 
-That common-frame matching is now exhaustive, and the exact normalized-field
-`D1/D2` identity has been derived.  No algebraic object is missing.  The live
-numerical theorem is localized to three interval adapters: the outward
-minus-defect remainder for `Y`, the common-frame inverse defect for `Z1`, and
-the physical transverse `D2f`/Green Lipschitz contraction for `Z2`.
+That common-frame matching is exhaustive, and the exact normalized-field
+`D1/D2` identity has been derived.  No algebraic object is missing.  The
+complete internal response and componentwise `Z2` adapter are now certified
+by a signed third-order Taylor--Volterra enclosure.  The exact signed
+quadratic contraction is formed before norms and the resulting total radius
+uses `0.5041022829260638` of the selected cone.  The live numerical theorem
+is therefore localized to only two interval adapters: the outward
+minus-defect remainder for `Y` and the common-frame propagator defect for
+`Z1`.
 
 The selected-history provenance reconciliation pins every operand in this
 matching to the retained quarter-step center.  Earlier half-step
@@ -54,8 +58,9 @@ cone.
 That radius attachment is now complete at the line/projector/inverse level.
 All 1,722 selected DOP853 product cells retain a simple branch 24; the minimum
 gap is `1.3326780553552793e-7`, and the maximum charted bordered inverse is
-`1.868407205010464e7`.  The radius remains a candidate while the complete
-internal response and literal correlated `Y,Z1,Z2` self-map are open.
+`1.868407205010464e7`.  The complete internal response and causal `Z2` leg are
+closed.  Promotion of the joint radius still waits on the literal signed `Y`
+and propagator `Z1` composition.
 
 The map has exactly one current blocker:
 
