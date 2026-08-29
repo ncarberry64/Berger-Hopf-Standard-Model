@@ -22,7 +22,14 @@ SCRIPT = ROOT / "scripts/materialize_bhsm_current_semantic_registries.py"
 
 
 def _load() -> dict[str, dict]:
-    return {path.name: json.loads(path.read_text(encoding="utf-8")) for path in TARGET.glob("*.json")}
+    # The integration map is colocated with the nine semantic registries, but
+    # it is a downstream consumer rather than a member of the closed registry
+    # set accepted by ``validate_registries``.
+    return {
+        path.name: json.loads(path.read_text(encoding="utf-8"))
+        for path in TARGET.glob("*.json")
+        if path.name != "BHSM_CURRENT_SYSTEM_INTEGRATION_MAP.json"
+    }
 
 
 def test_nine_registries_are_complete_and_validated() -> None:
