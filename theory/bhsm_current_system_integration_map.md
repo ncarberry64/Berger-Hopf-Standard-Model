@@ -80,15 +80,20 @@ The map has exactly one current blocker:
 
 `G7_CORRELATED_QUARTER_STEP_CENTER_STOP_WITNESS`.
 
-The next proof step is to attach a causal time-weighted outward signed-source
-radius for literal `Y`, vanishing at the reset, plus the PROP16 tail for
-interval `Z1`, and rebuild only center-dependent cone/response objects to
-transfer `Z2`.  A uniform halo is invalid because the minimum birth-end
-preterminal margin is only `1.7739272048543877e-20`.  The radii polynomial,
-continuous strict margins, and scalar interval Newton at the shifted `s=0` hit
-then close the same witness.  The observed propagator refinement is second
-order, but its geometric tail is still numerical rather than interval
-authority.
+An exact-rational causal budget now combines the Gauss 6-to-8 PROP32 profile
+increment, the Gauss-8 PROP16-to-PROP32 increment, and the interpolated causal
+`Z2` radius.  All three proxy radii vanish at reset; their maximum combined
+stored-profile radius is `7.229953163188114e-13`.  Exact Bernstein replay stays
+positive through the old hit with certified uniform proxy-inflation lower
+`211.83133124958658`.  This proves budget viability for the explicit proxy,
+not outward interval authority and not cone authority.  The tighter selected
+nonlinear cone has unit-proxy reserve `5.209769527032877e-13`; with stored `Z2`,
+the `Y+Z1` proxy may inflate only `5.3641689082242525` times before reaching
+the cone boundary.  The next proof step is therefore to prove causal outward
+signed `Y` plus PROP16 `Z1` radii below this five-fold cone headroom and rebuild
+only center-dependent cone/response objects to transfer `Z2`.  The radii
+polynomial, continuous strict margins, and scalar interval Newton at the
+shifted `s=0` hit then close the same witness.
 
 Independently, the compact 72-dimensional reset quotient domain and its first
 jets are certified.  The apparent zero stored reserves at transitions 791 and

@@ -30,6 +30,9 @@ def test_canonical_system_and_required_subsystems() -> None:
         "decimal_Gauss8_PROP16_center_is_frozen_without_source_double_counting"
     ] is True
     assert payload["validation"][
+        "causal_proxy_margin_budget_has_strict_exact_rational_headroom"
+    ] is True
+    assert payload["validation"][
         "binary64_compact_reserve_artifact_is_superseded_by_directed_replay"
     ] is True
     assert payload["validation"][
@@ -79,7 +82,7 @@ def test_blocker_and_interface_priority_reconciliation() -> None:
         if row["id"] == "RESPONSE_TO_CORRELATED_Y_Z1_Z2"
     )
     assert response_gap["status"] == (
-        "DECIMAL_GAUSS8_PROP16_CENTER_FROZEN_AND_ALL_STORED_PRETERMINAL_NODES_"
-        "POSITIVE;_CAUSAL_TIME_WEIGHTED_OUTWARD_Y_AND_PROP16_Z1_TAIL_PLUS_"
-        "CENTER_DEPENDENT_Z2_CONE_REBUILD_OPEN"
+        "CAUSAL_PROXY_HAS_211P831_FOLD_DESCRIPTOR_MARGIN_HEADROOM_BUT_SELECTED_"
+        "CONE_RESERVE_LIMITS_Y_PLUS_Z1_TO_5P364_FOLD_WITH_STORED_Z2;_OUTWARD_"
+        "INTERVAL_Y_PROP16_Z1_CENTER_DEPENDENT_Z2_AND_SHIFTED_FIRST_HIT_OPEN"
     )
