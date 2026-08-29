@@ -6,8 +6,15 @@ cross-discretization profiles on the same retained quarter-step history:
 \[
  r_Y(t_i)=\max_{k\leq i}\|c^{(8,32)}_k-c^{(6,32)}_k\|_2,
  \qquad
- r_{Z1}(t_i)=\max_{k\leq i}\|c^{(8,32)}_k-c^{(8,16)}_k\|_2.
+ r_{Z1}(t_i)={4\over3}\max_{k\leq i}\|c^{(8,32)}_k-c^{(8,16)}_k\|_2.
 \]
+
+The PROP16/32 difference is the first second-order increment, not the full
+PROP16 tail.  PROP64 and PROP128 replays show successive maximum-increment
+ratios `3.99955` and `3.99633`; their two Richardson consistency residuals
+are below `1.5e-17`.  The numerical Z1 bookkeeping radius therefore uses the
+full second-order geometric proxy `(4/3)||c^(8,32)-c^(8,16)||`, while retaining
+an explicit non-interval claim boundary.
 
 The retained certified Taylor--Volterra Z2 macro radius is interpolated onto
 the fine grid and added to these two bookkeeping radii.  Every term is zero at
@@ -20,12 +27,12 @@ coefficient is replayed as an exact rational number.  The frozen descriptor
 correction and proxy radius are linear on each fine segment.  Exact Bernstein
 range checks prove positivity through the old stored hit.  The unit proxy has
 strict margin, and the same exact replay remains positive under more than
-211-fold uniform inflation of the combined proxy radius.
+207-fold uniform inflation of the combined proxy radius.
 
-That 211-fold factor belongs only to the descriptor-margin comparison.  The
+That 207-fold factor belongs only to the descriptor-margin comparison.  The
 existing selected nonlinear cone is the tighter closure condition.  At unit
-proxy the remaining cone reserve is greater than `5.20e-13`; with Z2 held at
-its stored causal profile, the Y+Z1 proxy may inflate by only about 5.36-fold
+proxy the remaining cone reserve is greater than `5.04e-13`; with Z2 held at
+its stored causal profile, the Y+Z1 proxy may inflate by only about 4.70-fold
 before reaching the cone boundary.  No descriptor-margin number is used as a
 substitute for this self-map condition.
 

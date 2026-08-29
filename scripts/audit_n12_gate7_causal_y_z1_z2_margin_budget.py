@@ -25,6 +25,7 @@ DENSE = BASE / "BHSM_N12_C2_STOP_HIGH_ORDER_QUARTER_STEP_RETAINED_RECONNAISSANCE
 FROZEN = BASE / "BHSM_N12_GATE7_FROZEN_DECIMAL_GAUSS8_CENTER.npz"
 PROP16 = BASE / "BHSM_N12_GATE7_DECIMAL_SIGNED_Y_GREEN_CONVERGENCE_AUDIT.npz"
 PROP32 = BASE / "BHSM_N12_GATE7_DECIMAL_SIGNED_Y_GREEN_PROP32_AUDIT.npz"
+PROP_REFINEMENT = BASE / "BHSM_N12_GATE7_DECIMAL_PROP_REFINEMENT_AUDIT.npz"
 JACOBIAN = BASE / "BHSM_N12_C2_STOP_QUARTER_STEP_FINE_HYBRID_GRAPH_JACOBIAN_RECONNAISSANCE.npz"
 Z2 = BASE / "BHSM_N12_GATE7_SELECTED_CONE_INTERNAL_RESPONSE_Z2.json"
 RESULT = BASE / "BHSM_N12_GATE7_CAUSAL_Y_Z1_Z2_MARGIN_BUDGET_AUDIT.json"
@@ -160,6 +161,10 @@ def main() -> None:
     with np.load(PROP32) as source:
         prop32_gauss6 = np.asarray(source["Gauss6_correction_profile"], dtype=float)
         prop32_gauss8 = np.asarray(source["Gauss8_correction_profile"], dtype=float)
+    with np.load(PROP_REFINEMENT) as source:
+        prop16_geometric_tail = np.asarray(
+            source["PROP16_geometric_tail_proxy"], dtype=float,
+        )
     with np.load(JACOBIAN) as source:
         descriptor_gradient = np.asarray(source["descriptor_gradient_action"], dtype=float)
     z2_record = json.loads(Z2.read_text(encoding="utf-8"))
@@ -177,7 +182,7 @@ def main() -> None:
     # Running maxima are a conservative causal bookkeeping envelope for the
     # stored node profiles.  They do not assert an interval tail theorem.
     y_radius = np.maximum.accumulate(y_cross)
-    z1_radius = np.maximum.accumulate(z1_cross)
+    z1_radius = np.maximum.accumulate(prop16_geometric_tail)
 
     macro_times = np.asarray([
         row["action_length"] for row in z2_record["rows"]
@@ -242,8 +247,8 @@ def main() -> None:
         "unit_proxy_is_strictly_inside_existing_selected_cone": bool(
             np.max(state_radius) < cone_radius
         ),
-        "Y_plus_Z1_proxy_has_more_than_five_fold_cone_headroom": (
-            minimum_yz_inflation_to_cone > 5.0
+        "Y_plus_Z1_proxy_has_more_than_four_fold_cone_headroom": (
+            minimum_yz_inflation_to_cone > 4.0
         ),
         "stored_proxy_has_more_than_100_fold_inflation_headroom": lower_factor > 100.0,
         "exact_rational_Bernstein_replay_used_for_stored_polynomials": True,
@@ -263,7 +268,7 @@ def main() -> None:
         ),
         "identity": {
             "Y_proxy": "RUNNING_MAX_NORM_OF_DECIMAL_GAUSS6_TO_8_PROP32_PROFILE_INCREMENT",
-            "Z1_proxy": "RUNNING_MAX_NORM_OF_GAUSS8_PROP16_TO_PROP32_PROFILE_INCREMENT",
+            "Z1_proxy": "RUNNING_MAX_OF_(4/3)*NORM(GAUSS8_PROP32_MINUS_PROP16)",
             "Z2": "LINEAR_FINE_GRID_INTERPOLATION_OF_CERTIFIED_CAUSAL_MACRO_RADIUS",
             "descriptor_image": "GLOBAL_STORED_DESCRIPTOR_GRADIENT_NODE_NORM_TIMES_STATE_RADIUS",
             "reset_weight": "ALL_CAUSAL_RADII_EQUAL_ZERO_AT_ACTION_TIME_ZERO",
@@ -271,6 +276,7 @@ def main() -> None:
         "summary": {
             "maximum_signed_Y_cross_order_node_norm": float(np.max(y_cross)),
             "maximum_PROP16_to_PROP32_node_norm": float(np.max(z1_cross)),
+            "maximum_PROP16_geometric_tail_proxy": float(np.max(prop16_geometric_tail)),
             "maximum_interpolated_causal_Z2_radius": float(np.max(z2_radius)),
             "maximum_combined_state_proxy_radius": float(np.max(state_radius)),
             "existing_selected_cone_radius": cone_radius,
@@ -304,12 +310,12 @@ def main() -> None:
         },
         "exact_next_dependency": (
             "PROVE_A_CAUSAL_OUTWARD_Y_PLUS_PROP16_Z1_STATE_RADIUS_BELOW_THE_REPORTED_"
-            "FIVE_FOLD_SELECTED_CONE_HEADROOM,_THEN_REBUILD_THE_CENTER_DEPENDENT_Z2_CONE_"
+            "FOUR_FOLD_SELECTED_CONE_HEADROOM,_THEN_REBUILD_THE_CENTER_DEPENDENT_Z2_CONE_"
             "AND_APPLY_SCALAR_INTERVAL_NEWTON_ON_THE_SHIFTED_TERMINAL_SEGMENT"
         ),
         "inputs": {
             path.relative_to(ROOT).as_posix(): _sha256(path)
-            for path in (DENSE, FROZEN, PROP16, PROP32, JACOBIAN, Z2)
+            for path in (DENSE, FROZEN, PROP16, PROP32, PROP_REFINEMENT, JACOBIAN, Z2)
         },
         "FULL_BHSM_COMPLETE": False,
     }

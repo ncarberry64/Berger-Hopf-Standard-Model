@@ -1,0 +1,56 @@
+{
+  "FULL_BHSM_COMPLETE": false,
+  "artifact": "BHSM_N12_GATE7_DECIMAL_PROP_REFINEMENT_AUDIT",
+  "authority": "COMPLETE_PROFILE_NUMERICAL_REFINEMENT_NOT_INTERVAL_TAIL_AUTHORITY",
+  "claim_boundary": {
+    "FULL_BHSM_COMPLETE": false,
+    "Gate7": "ACTIVE",
+    "outward_PROP16_Z1_tail": "OPEN_INTERVAL_AUTHORITY",
+    "signed_PROP_refinement": "NUMERICALLY_SECOND_ORDER_ON_COMPLETE_PROFILE"
+  },
+  "data": "artifacts/flagship_integration/BHSM_N12_GATE7_DECIMAL_PROP_REFINEMENT_AUDIT.npz",
+  "data_SHA256": "8CC501E13B2ECA614B99511EA32854707B0CB52E4FF9B638EB8E15125D5E0FDD",
+  "exact_next_dependency": "ENCLOSE_THE_SIGNED_LEADING_MIDPOINT_DEFECT_AND_ITS_HIGHER_ORDER_REMAINDER_IN_THE_CORRELATED_MULTIPLE_SHOOTING_PROOF_FRAME",
+  "identity": {
+    "geometric_tail_proxy": "(4/3)*NORM(PROP32_MINUS_PROP16)",
+    "resolutions": [
+      16,
+      32,
+      64,
+      128
+    ],
+    "source": "SAME_DECIMAL_GAUSS8_SIGNED_SOURCE_AT_ALL_RESOLUTIONS"
+  },
+  "inputs": {
+    "artifacts/flagship_integration/BHSM_N12_GATE7_DECIMAL_SIGNED_Y_GREEN_CONVERGENCE_AUDIT.npz": "81560C4B09CD111A7017F5B404A0854EF871755D98AF143454B7671E670DDC2D",
+    "artifacts/flagship_integration/BHSM_N12_GATE7_DECIMAL_SIGNED_Y_GREEN_PROP128_AUDIT.npz": "B34372CDCA76096A2BE79709E9ABBE8E85B6E08667CA93B06C092AB8DC1D5E8A",
+    "artifacts/flagship_integration/BHSM_N12_GATE7_DECIMAL_SIGNED_Y_GREEN_PROP32_AUDIT.npz": "3BBB502D29757C342FCC31290D1AC3D6B76E0B8300A27647DDB4F489A91084C2",
+    "artifacts/flagship_integration/BHSM_N12_GATE7_DECIMAL_SIGNED_Y_GREEN_PROP64_AUDIT.npz": "D3EF8F23BEC21F6057C48C69876500A2CA01DA205D4D07AC3B9778CDB02C4BAE"
+  },
+  "status": "PROP16_32_64_128_SHOWS_STABLE_SECOND_ORDER_SIGNED_PROFILE_REFINEMENT;_OUTWARD_PROP_TAIL_REMAINS_OPEN",
+  "summary": {
+    "maximum_PROP16_geometric_tail_proxy": 6.688872476028729e-14,
+    "maximum_Richardson_16_32_64_residual": 1.3520314887171489e-17,
+    "maximum_Richardson_32_64_128_residual": 1.1713769535994327e-17,
+    "maximum_increment_refinement_ratios": {
+      "16_to_32_over_32_to_64": 3.9995458230516587,
+      "32_to_64_over_64_to_128": 3.9963251962504494
+    },
+    "maximum_profile_increments": {
+      "PROP16_to_PROP32": 5.016654357021547e-14,
+      "PROP32_to_PROP64": 1.2543060084741905e-14,
+      "PROP64_to_PROP128": 3.1386485005050206e-15
+    },
+    "terminal_PROP16_geometric_tail_proxy": 6.688872476028729e-14
+  },
+  "validation": {
+    "both_Richardson_residuals_below_1p5e_minus_17": true,
+    "both_observed_maximum_refinement_ratios_within_one_percent_of_four": true,
+    "complete_371_node_same_source_profiles_compared": true,
+    "geometric_tail_proxy_not_promoted_to_interval_authority": true,
+    "geometric_tail_proxy_vanishes_at_reset": true,
+    "no_action_source_selector_scale_gate_or_chord_changed": true,
+    "successive_maximum_increments_decrease": true
+  },
+  "validation_passed": true
+}
