@@ -83,15 +83,41 @@ def _mid_radius(matrix: arb_mat) -> tuple[np.ndarray, np.ndarray]:
 
 def _step(
     left: arb_mat, slope: arb_mat, commutator: arb_mat,
-    offset: arb, width: arb,
+    offset: arb, width: arb, magnus_order: int,
+    fifth_basis: tuple[arb_mat, arb_mat, arb_mat, arb_mat] | None,
 ) -> arb_mat:
     midpoint = left + (offset + width / 2) * slope
-    return (width * midpoint - (width**3 / 12) * commutator).exp()
+    exponent = width * midpoint - (width**3 / 12) * commutator
+    if magnus_order >= 6:
+        if fifth_basis is None:
+            raise RuntimeError("Magnus-6 affine commutator basis required")
+        third_0, third_1, third_2, slope_nested = fifth_basis
+        center = offset + width / 2
+        third = third_0 + center * third_1 + center**2 * third_2
+        exponent += width**5 * (third / 720 - slope_nested / 240)
+    return exponent.exp()
 
 
-def _initialize_source_worker(precision: int, source_partition: str) -> None:
+def _fifth_basis(
+    left: arb_mat, slope: arb_mat, commutator: arb_mat,
+) -> tuple[arb_mat, arb_mat, arb_mat, arb_mat]:
+    left_nested = left * commutator - commutator * left
+    slope_nested = slope * commutator - commutator * slope
+    third_0 = left * left_nested - left_nested * left
+    third_1 = (
+        slope * left_nested - left_nested * slope
+        + left * slope_nested - slope_nested * left
+    )
+    third_2 = slope * slope_nested - slope_nested * slope
+    return third_0, third_1, third_2, slope_nested
+
+
+def _initialize_source_worker(
+    precision: int, source_partition: str, magnus_order: int,
+) -> None:
     ctx.prec = precision
     _WORKER["source_partition"] = source_partition
+    _WORKER["magnus_order"] = magnus_order
     with np.load(SOURCE) as source:
         _WORKER["sample_intervals"] = np.asarray(source["sample_intervals"], dtype=int)
         _WORKER["sample_orders"] = np.asarray(source["sample_orders"], dtype=int)
@@ -124,6 +150,7 @@ def _evaluate_source_block(seam: int) -> tuple[int, np.ndarray, np.ndarray, int]
     units = _WORKER["units"]
     weights = _WORKER["weights"]
     source_partition = _WORKER["source_partition"]
+    magnus_order = _WORKER["magnus_order"]
     maximum_step = fixed_step / 16.0
     macro_starts = list(range(0, 369, 8))
     macro_ends = [*macro_starts[1:], 370]
@@ -142,9 +169,16 @@ def _evaluate_source_block(seam: int) -> tuple[int, np.ndarray, np.ndarray, int]
         dt = _exact(float(jacobian_times[interval + 1] - jacobian_times[interval]))
         slope = (_matrix(jacobians[interval + 1]) - left) / dt
         commutator = left * slope - slope * left
+        fifth_basis = (
+            _fifth_basis(left, slope, commutator)
+            if magnus_order >= 6 else None
+        )
 
         fixed_maps = [
-            _step(left, slope, commutator, _exact(k * width_float), width)
+            _step(
+                left, slope, commutator, _exact(k * width_float), width,
+                magnus_order, fifth_basis,
+            )
             for k in range(count)
         ]
         exponential_count += count
@@ -173,6 +207,7 @@ def _evaluate_source_block(seam: int) -> tuple[int, np.ndarray, np.ndarray, int]
                 partial = _step(
                     left, slope, commutator,
                     _exact(location_float), _exact(partial_width_float),
+                    magnus_order, fifth_basis,
                 )
                 exponential_count += 1
                 propagated = suffix[substep + 1] * partial * propagated
@@ -185,7 +220,7 @@ def _evaluate_source_block(seam: int) -> tuple[int, np.ndarray, np.ndarray, int]
                     propagated = _step(
                         left, slope, commutator,
                         _exact(location_float + source_step * source_width_float),
-                        source_width,
+                        source_width, magnus_order, fifth_basis,
                     ) * propagated
                     exponential_count += 1
             source_vector -= duration * _exact(float(weight_float)) / 2 * propagated
@@ -200,6 +235,7 @@ def main() -> None:
     parser = argparse.ArgumentParser()
     parser.add_argument("--source-precision", type=int, default=256)
     parser.add_argument("--composition-precision", type=int, default=256)
+    parser.add_argument("--magnus-order", type=int, choices=(4, 6), default=4)
     parser.add_argument("--workers", type=int, default=4)
     parser.add_argument(
         "--source-partition", choices=("retained-unaligned", "aligned-suffix"),
@@ -221,7 +257,16 @@ def main() -> None:
         tangents = np.asarray(source["physical_tangent_action"], dtype=float)
     with np.load(REFERENCE) as source:
         reference = np.asarray(source["Gauss8_correction_profile"], dtype=float)
-    with np.load(MACRO_MAPS) as source:
+    macro_maps = (
+        MACRO_MAPS if args.magnus_order == 4 else
+        BASE / "BHSM_N12_GATE7_ARB_MAGNUS6_MACRO_MAPS.npz"
+    )
+    result = (
+        RESULT if args.magnus_order == 4 else
+        BASE / "BHSM_N12_GATE7_ARB_MAGNUS6_AFFINE_COMPOSITION.json"
+    )
+    data_path = result.with_suffix(".npz")
+    with np.load(macro_maps) as source:
         maps_mid = np.asarray(source["macro_step_map_midpoint"], dtype=float)
         maps_rad = np.asarray(source["macro_step_map_component_radius"], dtype=float)
 
@@ -234,7 +279,7 @@ def main() -> None:
     exponential_count = 0
     seams = list(range(args.macro_limit))
     if args.reuse_certified_source_blocks:
-        with np.load(DATA) as source:
+        with np.load(data_path) as source:
             source_mid = list(np.asarray(
                 source["affine_source_midpoint"][:args.macro_limit], dtype=float,
             ))
@@ -247,13 +292,17 @@ def main() -> None:
         results = []
     else:
         if args.workers == 1:
-            _initialize_source_worker(args.source_precision, args.source_partition)
+            _initialize_source_worker(
+                args.source_precision, args.source_partition, args.magnus_order,
+            )
             results = map(_evaluate_source_block, seams)
         else:
             executor = ProcessPoolExecutor(
                 max_workers=args.workers,
                 initializer=_initialize_source_worker,
-                initargs=(args.source_precision, args.source_partition),
+                initargs=(
+                    args.source_precision, args.source_partition, args.magnus_order,
+                ),
             )
             results = executor.map(_evaluate_source_block, seams)
     for seam, midpoint, radius, count in results:
@@ -305,7 +354,7 @@ def main() -> None:
     )
 
     np.savez_compressed(
-        DATA,
+        data_path,
         macro_action_lengths=macro_times[:args.macro_limit + 1],
         macro_boundary_fine_indices=boundary_indices[:args.macro_limit + 1],
         affine_source_midpoint=source_mid,
@@ -347,9 +396,12 @@ def main() -> None:
         "no_action_source_selector_scale_gate_or_chord_changed": True,
     }
     payload = {
-        "artifact": "BHSM_N12_GATE7_ARB_MAGNUS4_AFFINE_COMPOSITION",
+        "artifact": (
+            f"BHSM_N12_GATE7_ARB_MAGNUS{args.magnus_order}_AFFINE_COMPOSITION"
+        ),
         "status": (
-            "ALL_47_SIGNED_AFFINE_MAGNUS4_QUOTIENT_BLOCKS_GLOBALLY_"
+            f"ALL_47_SIGNED_AFFINE_MAGNUS{args.magnus_order}_"
+            "QUOTIENT_BLOCKS_GLOBALLY_"
             "COMPOSED_WITH_OUTWARD_ARB_BALLS"
             if complete else "PARTIAL_AFFINE_COMPOSITION_BENCHMARK"
         ),
@@ -357,12 +409,19 @@ def main() -> None:
         "identity": {
             "source_precision_bits": args.source_precision,
             "composition_precision_bits": args.composition_precision,
+            "Magnus_order": args.magnus_order,
             "macro_blocks": args.macro_limit,
             "physical_dimension": PHYSICAL,
             "source_order": 8,
             "source_partition": args.source_partition,
             "exponential_count": exponential_count,
-            "Magnus_exponent": "h*A_mid-h^3*[A_left,A_prime]/12",
+            "Magnus_exponent": (
+                "h*A_mid-h^3*[A_left,A_prime]/12"
+                + (
+                    "+h^5*([A,[A,[A,B]]]/720-[B,[A,B]]/240)"
+                    if args.magnus_order >= 6 else ""
+                )
+            ),
             "affine_recurrence": "u_(i+1)=M_i*u_i+b_i; u_0=0",
         },
         "summary": {
@@ -380,11 +439,11 @@ def main() -> None:
                 np.max(stored_center_off_tangent)
             ),
         },
-        "data": DATA.relative_to(ROOT).as_posix(),
-        "data_SHA256": _sha256(DATA),
+        "data": data_path.relative_to(ROOT).as_posix(),
+        "data_SHA256": _sha256(data_path),
         "inputs": {
             path.relative_to(ROOT).as_posix(): _sha256(path)
-            for path in (SOURCE, CENTER, JACOBIAN, TANGENT, REFERENCE, MACRO_MAPS)
+            for path in (SOURCE, CENTER, JACOBIAN, TANGENT, REFERENCE, macro_maps)
         },
         "validation": validation,
         "validation_passed": all(validation.values()),
@@ -395,7 +454,7 @@ def main() -> None:
             "finite_global_correlated_block_composition": (
                 "CERTIFIED" if complete else "PARTIAL_BENCHMARK"
             ),
-            "analytic_Magnus4_remainder": "OPEN_INTERVAL_AUTHORITY",
+            "analytic_higher_Magnus_remainder": "OPEN_INTERVAL_AUTHORITY",
             "outward_signed_Y": "OPEN_INTERVAL_AUTHORITY",
             "center_dependent_Z2_radii_margins_first_hit": "DOWNSTREAM_OPEN",
             "Gate7": "ACTIVE",
@@ -407,7 +466,7 @@ def main() -> None:
         ),
         "FULL_BHSM_COMPLETE": False,
     }
-    RESULT.write_text(
+    result.write_text(
         json.dumps(payload, indent=2, sort_keys=True) + "\n",
         encoding="utf-8", newline="\n",
     )
