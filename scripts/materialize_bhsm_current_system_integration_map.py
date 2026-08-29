@@ -51,6 +51,7 @@ PATHS = {
     "decimal_signed_y_green": "artifacts/flagship_integration/BHSM_N12_GATE7_DECIMAL_SIGNED_Y_GREEN_CONVERGENCE_AUDIT.json",
     "frozen_decimal_gauss8_center": "artifacts/flagship_integration/BHSM_N12_GATE7_FROZEN_DECIMAL_GAUSS8_CENTER.json",
     "decimal_signed_y_green_prop32": "artifacts/flagship_integration/BHSM_N12_GATE7_DECIMAL_SIGNED_Y_GREEN_PROP32_AUDIT.json",
+    "decimal_prop_refinement": "artifacts/flagship_integration/BHSM_N12_GATE7_DECIMAL_PROP_REFINEMENT_AUDIT.json",
     "causal_y_z1_z2_margin_budget": "artifacts/flagship_integration/BHSM_N12_GATE7_CAUSAL_Y_Z1_Z2_MARGIN_BUDGET_AUDIT.json",
     "recentered_cone_spectrum": "artifacts/flagship_integration/BHSM_N12_GATE7_RECENTERED_CONE_BOUNDARY_CLUSTER_SPECTRUM.json",
     "recentered_cone_projector": "artifacts/flagship_integration/BHSM_N12_GATE7_RECENTERED_CONE_SELECTED_PROJECTOR_GRAPH.json",
@@ -140,6 +141,7 @@ def build_payload() -> dict[str, Any]:
     decimal_signed_y_green = records["decimal_signed_y_green"]
     frozen_decimal_gauss8_center = records["frozen_decimal_gauss8_center"]
     decimal_signed_y_green_prop32 = records["decimal_signed_y_green_prop32"]
+    decimal_prop_refinement = records["decimal_prop_refinement"]
     causal_y_z1_z2_margin_budget = records["causal_y_z1_z2_margin_budget"]
     compact_reset_propagation = records["compact_reset_propagation"]
     compact_reset_open_subball = records["compact_reset_open_subball"]
@@ -217,8 +219,8 @@ def build_payload() -> dict[str, Any]:
             "98-state C2 path with 61-dimensional reduced Hessian, branch 24, and 62-dimensional border",
             "finite Euclidean physical tangent quotient; auxiliary geometry, not the temporal birth domain",
             ["local_action", "base_family", "selected_center_provenance"],
-            ["dop_response", "dop_first_variation", "dop_second_variation", "common_frame_matching", "normalized_field_identity", "nonlinear_cone_spectrum", "nonlinear_cone_projector_inverse", "causal_z2", "signed_y_quadrature", "decimal_signed_source", "decimal_signed_y_green", "decimal_signed_y_green_prop32", "frozen_decimal_gauss8_center", "causal_y_z1_z2_margin_budget", "recentered_cone_spectrum", "recentered_cone_projector", "recentered_cone_inverse", "recentered_cone_response", "recentered_cone_first_variation", "dop_domain"],
-            "DECIMAL_GAUSS8_PROP16_CENTER_FROZEN;_EXACT_RATIONAL_CAUSAL_PROXY_MARGIN_BUDGET_HAS_211P83_FOLD_DESCRIPTOR_MARGIN_HEADROOM_WHILE_THE_SELECTED_CONE_ALLOWS_5P364_FOLD_Y_PLUS_Z1_INFLATION_WITH_STORED_Z2;_OUTWARD_INTERVAL_PROMOTION_OPEN",
+            ["dop_response", "dop_first_variation", "dop_second_variation", "common_frame_matching", "normalized_field_identity", "nonlinear_cone_spectrum", "nonlinear_cone_projector_inverse", "causal_z2", "signed_y_quadrature", "decimal_signed_source", "decimal_signed_y_green", "decimal_signed_y_green_prop32", "decimal_prop_refinement", "frozen_decimal_gauss8_center", "causal_y_z1_z2_margin_budget", "recentered_cone_spectrum", "recentered_cone_projector", "recentered_cone_inverse", "recentered_cone_response", "recentered_cone_first_variation", "dop_domain"],
+            "DECIMAL_GAUSS8_PROP16_CENTER_FROZEN;_PROP16_32_64_128_NUMERICALLY_SECOND_ORDER_WITH_FULL_4_OVER_3_GEOMETRIC_TAIL_PROXY;_SELECTED_CONE_ALLOWS_4P705_FOLD_Y_PLUS_Z1_INFLATION_WITH_STORED_Z2;_OUTWARD_INTERVAL_PROMOTION_OPEN",
             "current adaptive DOP853 certificate",
             ["GATE7_HEAT_ZETA_CHAIN"],
             ["12,032-cell historical uniform cover replaced by the exact 8,692-cell adaptive cover"],
@@ -311,7 +313,7 @@ def build_payload() -> dict[str, Any]:
         {"id": "G7_SIGNED_Y_QUADRATURE_AND_RECENTER_REBASE", "classification": "SUPERSEDED_BY_DECIMAL_SOURCE_REPAIR", "current_effect": "the former Gauss8/12/16/20 nonconvergence changed a binary selected-eigenline source representation; the isolated Decimal Gauss6-to8 source and PROP16 image are stable inside the halo"},
         {"id": "G7_COMPACT_RESET_STORED_RESERVE_791_1064", "classification": "SUPERSEDED_BY_DIRECTED_DECIMAL_REPLAY", "current_effect": "the two binary64-rounded zero reserves replay to strict directed lower bounds near 4.03e-28 and the predeclared open subball now crosses all 1222 core segments"},
         {"id": "G7_RESET_TO_CAPTURE_OR_STOP_CONNECTION", "classification": "SUPERSEDED_BY_TRANSVERSALITY_REDUCTION", "current_effect": "one exact transverse center stop witness automatically promotes to a nonempty open 72-dimensional stop-reaching seed stratum; whole-family multiple shooting and the NHIM bridge are unnecessary on the stop branch"},
-        {"id": "G7_CORRELATED_QUARTER_STEP_CENTER_STOP_WITNESS", "classification": "CURRENT_BLOCKER", "current_effect": "prove causal outward signed-Y plus PROP16-Z1 radii below the selected-cone 5.364-fold proxy headroom with stored Z2, rebuild the center-dependent Z2 cone, close radii and continuous margins, and apply scalar interval Newton at the shifted s=0 first hit"},
+        {"id": "G7_CORRELATED_QUARTER_STEP_CENTER_STOP_WITNESS", "classification": "CURRENT_BLOCKER", "current_effect": "prove causal outward signed-Y plus PROP16-Z1 radii below the selected-cone 4.705-fold full-tail proxy headroom with stored Z2, rebuild the center-dependent Z2 cone, close radii and continuous margins, and apply scalar interval Newton at the shifted s=0 first hit"},
         {"id": "G7_COMPLETE_JOINT_FORCE_ROOT", "classification": "DOWNSTREAM_ONLY", "current_effect": "evaluate after signed-Y recentering, radii closure, and first-hit transfer"},
         {"id": "DECORRELATED_SCALAR_SECOND_VARIATION", "classification": "INVALIDATED_PROOF_ROUTE", "current_effect": "finite first variation survives; all 8,692 scalar denominator cells route to signed/common-frame correlation"},
         {"id": "G7_HESSIAN_WARD_SCALAR", "classification": "DOWNSTREAM_ONLY", "current_effect": "follows the force/KKT root"},
@@ -324,7 +326,7 @@ def build_payload() -> dict[str, Any]:
         {"id": "AE2_TO_ONE_SEAM", "class": "A", "priority": 0, "status": "RESOLVED_BY_EXISTING_COMPOSITION", "evidence": PATHS["one_seam"]},
         {"id": "EVENT_RESET_TO_INTERNAL_SOURCE", "class": "A", "priority": 0, "status": "RESOLVED_BY_EXISTING_CLOSED_SYSTEM_ONTOLOGY", "evidence": PATHS["source_ontology"]},
         {"id": "DOP853_TO_RESPONSE_VARIATION", "class": "C", "priority": 1, "status": "RESOLVED_FOR_EXACT_CENTER_AND_FINITE_DIRECT_FIRST_VARIATION", "evidence": PATHS["dop_second_variation"]},
-        {"id": "RESPONSE_TO_CORRELATED_Y_Z1_Z2", "class": "C", "priority": 1, "status": "CAUSAL_PROXY_HAS_211P831_FOLD_DESCRIPTOR_MARGIN_HEADROOM_BUT_SELECTED_CONE_RESERVE_LIMITS_Y_PLUS_Z1_TO_5P364_FOLD_WITH_STORED_Z2;_OUTWARD_INTERVAL_Y_PROP16_Z1_CENTER_DEPENDENT_Z2_AND_SHIFTED_FIRST_HIT_OPEN", "evidence": PATHS["causal_y_z1_z2_margin_budget"]},
+        {"id": "RESPONSE_TO_CORRELATED_Y_Z1_Z2", "class": "C", "priority": 1, "status": "PROP16_32_64_128_SECOND_ORDER_NUMERICAL_TAIL_PROXY_GIVES_207P042_FOLD_DESCRIPTOR_MARGIN_HEADROOM_BUT_SELECTED_CONE_LIMITS_Y_PLUS_Z1_TO_4P705_FOLD_WITH_STORED_Z2;_OUTWARD_INTERVAL_PROMOTION_OPEN", "evidence": PATHS["causal_y_z1_z2_margin_budget"]},
         {"id": "FINITE_HISTORY_TO_HEAT_ZETA_COVECTOR", "class": "C", "priority": 1, "status": "ENDPOINTS_AND_FORMULAS_EXIST_JOINT_CONTRACTION_NOT_YET_EVALUATED", "evidence": PATHS["force_functional"]},
         {"id": "COMPACT_RESET_DOMAIN_TO_CAPTURE_OR_STOP", "class": "B", "priority": 0, "status": "OPEN_72_DIMENSIONAL_RESET_SUBBALL_CERTIFIED_THROUGH_1222_CORE;_ONE_EXACT_TRANSVERSE_CENTER_STOP_WITNESS_SUFFICES_FOR_AN_OPEN_STOP_STRATUM;_CENTER_INTERVAL_SHADOWING_AND_FIRST_HIT_NEWTON_OPEN", "evidence": PATHS["open_family_stop_reduction"]},
         {"id": "FAMILY_PROJECTORS_TO_MASS_CKM", "class": "B", "priority": 2, "status": "MISSING_ACTION_SELECTED_SECTOR_RESPONSE_EIGENBASES", "evidence": PATHS["generation"]},
@@ -403,6 +405,13 @@ def build_payload() -> dict[str, Any]:
             and decimal_signed_y_green_prop32["identity"][
                 "propagator_substeps_per_quarter_cell"
             ] == 32
+            and decimal_prop_refinement["validation_passed"] is True
+            and decimal_prop_refinement["claim_boundary"][
+                "signed_PROP_refinement"
+            ] == "NUMERICALLY_SECOND_ORDER_ON_COMPLETE_PROFILE"
+            and decimal_prop_refinement["claim_boundary"][
+                "outward_PROP16_Z1_tail"
+            ] == "OPEN_INTERVAL_AUTHORITY"
             and causal_y_z1_z2_margin_budget["validation_passed"] is True
             and causal_y_z1_z2_margin_budget["validation"][
                 "all_three_proxy_radii_vanish_exactly_at_reset"
@@ -412,7 +421,7 @@ def build_payload() -> dict[str, Any]:
             ] > 100.0
             and causal_y_z1_z2_margin_budget["summary"][
                 "Y_plus_Z1_proxy_inflation_to_selected_cone_lower"
-            ] > 5.0
+            ] > 4.0
             and causal_y_z1_z2_margin_budget["summary"][
                 "remaining_selected_cone_reserve_at_unit_proxy"
             ] > 0.0
@@ -515,7 +524,7 @@ def build_payload() -> dict[str, Any]:
             "Gate7": "ACTIVE",
             "FULL_BHSM_COMPLETE": False,
         },
-        "exact_next_dependency": "PROVE_CAUSAL_OUTWARD_SIGNED_Y_PLUS_PROP16_Z1_RADII_BELOW_THE_SELECTED_CONE_5P364_FOLD_PROXY_HEADROOM_WITH_STORED_Z2,_REBUILD_THE_CENTER_DEPENDENT_Z2_CONE,_CLOSE_THE_RADII_POLYNOMIAL_AND_CONTINUOUS_PRETERMINAL_MARGINS,_AND_APPLY_SCALAR_INTERVAL_NEWTON_AT_THE_SHIFTED_TRANSVERSE_s_ZERO_FIRST_HIT",
+        "exact_next_dependency": "PROVE_CAUSAL_OUTWARD_SIGNED_Y_PLUS_PROP16_Z1_RADII_BELOW_THE_SELECTED_CONE_4P705_FOLD_FULL_GEOMETRIC_TAIL_PROXY_HEADROOM_WITH_STORED_Z2,_REBUILD_THE_CENTER_DEPENDENT_Z2_CONE,_CLOSE_THE_RADII_POLYNOMIAL_AND_CONTINUOUS_PRETERMINAL_MARGINS,_AND_APPLY_SCALAR_INTERVAL_NEWTON_AT_THE_SHIFTED_TRANSVERSE_s_ZERO_FIRST_HIT",
         "FULL_BHSM_COMPLETE": False,
     }
 

@@ -81,19 +81,22 @@ The map has exactly one current blocker:
 `G7_CORRELATED_QUARTER_STEP_CENTER_STOP_WITNESS`.
 
 An exact-rational causal budget now combines the Gauss 6-to-8 PROP32 profile
-increment, the Gauss-8 PROP16-to-PROP32 increment, and the interpolated causal
-`Z2` radius.  All three proxy radii vanish at reset; their maximum combined
-stored-profile radius is `7.229953163188114e-13`.  Exact Bernstein replay stays
-positive through the old hit with certified uniform proxy-inflation lower
-`211.83133124958658`.  This proves budget viability for the explicit proxy,
-not outward interval authority and not cone authority.  The tighter selected
-nonlinear cone has unit-proxy reserve `5.209769527032877e-13`; with stored `Z2`,
-the `Y+Z1` proxy may inflate only `5.3641689082242525` times before reaching
-the cone boundary.  The next proof step is therefore to prove causal outward
-signed `Y` plus PROP16 `Z1` radii below this five-fold cone headroom and rebuild
-only center-dependent cone/response objects to transfer `Z2`.  The radii
-polynomial, continuous strict margins, and scalar interval Newton at the
-shifted `s=0` hit then close the same witness.
+increment, the full numerical PROP16 geometric-tail proxy, and the interpolated
+causal `Z2` radius.  PROP16/32/64/128 complete-profile replays have successive
+increment ratios `3.9995458` and `3.9963252`, so the bookkeeping tail is
+`(4/3)||PROP32-PROP16||=6.688872476028729e-14`.  All three proxy radii vanish at
+reset; their maximum combined stored-profile radius is
+`7.397174975088833e-13`.  Exact Bernstein replay stays positive through the old
+hit with descriptor-margin inflation lower `207.0421423923567`.  This proves
+budget viability for the explicit proxy, not outward interval authority and
+not cone authority.  The tighter selected nonlinear cone has unit-proxy
+reserve `5.042547715132158e-13`; with stored `Z2`, the `Y+Z1` proxy may inflate
+only `4.70508136611006` times before reaching the cone boundary.  The next proof
+step is therefore to prove causal outward signed `Y` plus PROP16 `Z1` radii
+below this four-fold cone headroom and rebuild only center-dependent
+cone/response objects to transfer `Z2`.  The radii polynomial, continuous
+strict margins, and scalar interval Newton at the shifted `s=0` hit then close
+the same witness.
 
 Independently, the compact 72-dimensional reset quotient domain and its first
 jets are certified.  The apparent zero stored reserves at transitions 791 and
