@@ -57,6 +57,12 @@ def test_canonical_system_and_required_subsystems() -> None:
         "correlated_exact_affine_Taylor26_homogeneous_carrier_is_certified"
     ] is True
     assert payload["validation"][
+        "correlated_exact_affine_Taylor26_signed_source_is_certified"
+    ] is True
+    assert payload["validation"][
+        "exact_affine_signed_Y_center_transfer_is_certified_and_old_Gauss12_cone_is_rejected"
+    ] is True
+    assert payload["validation"][
         "physical_completeness_matrix_is_required_and_open"
     ] is True
     assert payload["validation"][
@@ -109,6 +115,6 @@ def test_blocker_and_interface_priority_reconciliation() -> None:
         if row["id"] == "RESPONSE_TO_CORRELATED_Y_Z1_Z2"
     )
     assert response_gap["status"] == (
-        "CORRELATED_EXACT_AFFINE_TAYLOR26_HOMOGENEOUS_CARRIER_CERTIFIED;_"
-        "SIGNED_SOURCE_COMPOSITION_LITERAL_OUTWARD_SIGNED_Y_AND_Z2_TRANSFER_OPEN"
+        "EXACT_AFFINE_TAYLOR26_CARRIER_AND_RETAINED_GAUSS8_SIGNED_Y_CERTIFIED;_"
+        "FINAL_CENTER_Z2_AND_RECENTERED_CONE_REBUILD_OPEN"
     )

@@ -65,6 +65,8 @@ PATHS = {
     "arb_magnus8_leading_term": "artifacts/flagship_integration/BHSM_N12_GATE7_ARB_MAGNUS8_LEADING_TERM_AUDIT.json",
     "arb_interaction_dyson_tail": "artifacts/flagship_integration/BHSM_N12_GATE7_ARB_INTERACTION_DYSON_TAIL.json",
     "arb_interaction_taylor26_macro_maps": "artifacts/flagship_integration/BHSM_N12_GATE7_ARB_INTERACTION_TAYLOR26_MACRO_MAPS.json",
+    "arb_interaction_taylor26_signed_source": "artifacts/flagship_integration/BHSM_N12_GATE7_ARB_INTERACTION_TAYLOR26_SIGNED_SOURCE.json",
+    "exact_affine_center_transfer": "artifacts/flagship_integration/BHSM_N12_GATE7_EXACT_AFFINE_CENTER_TRANSFER_AUDIT.json",
     "causal_y_z1_z2_margin_budget": "artifacts/flagship_integration/BHSM_N12_GATE7_CAUSAL_Y_Z1_Z2_MARGIN_BUDGET_AUDIT.json",
     "recentered_cone_spectrum": "artifacts/flagship_integration/BHSM_N12_GATE7_RECENTERED_CONE_BOUNDARY_CLUSTER_SPECTRUM.json",
     "recentered_cone_projector": "artifacts/flagship_integration/BHSM_N12_GATE7_RECENTERED_CONE_SELECTED_PROJECTOR_GRAPH.json",
@@ -181,6 +183,10 @@ def build_payload() -> dict[str, Any]:
     arb_interaction_taylor26_macro_maps = records[
         "arb_interaction_taylor26_macro_maps"
     ]
+    arb_interaction_taylor26_signed_source = records[
+        "arb_interaction_taylor26_signed_source"
+    ]
+    exact_affine_center_transfer = records["exact_affine_center_transfer"]
     causal_y_z1_z2_margin_budget = records["causal_y_z1_z2_margin_budget"]
     compact_reset_propagation = records["compact_reset_propagation"]
     compact_reset_open_subball = records["compact_reset_open_subball"]
@@ -258,12 +264,12 @@ def build_payload() -> dict[str, Any]:
             "98-state C2 path with 61-dimensional reduced Hessian, branch 24, and 62-dimensional border",
             "finite Euclidean physical tangent quotient; auxiliary geometry, not the temporal birth domain",
             ["local_action", "base_family", "selected_center_provenance"],
-            ["dop_response", "dop_first_variation", "dop_second_variation", "common_frame_matching", "normalized_field_identity", "nonlinear_cone_spectrum", "nonlinear_cone_projector_inverse", "causal_z2", "signed_y_quadrature", "decimal_signed_source", "decimal_signed_y_green", "decimal_signed_y_green_prop32", "decimal_prop_refinement", "decimal_magnus4_prop_recenter", "arb_magnus4_discrete_propagation", "arb_magnus4_macro_maps", "arb_magnus4_affine_composition", "decimal_magnus6_leading_remainder", "arb_magnus6_macro_maps", "arb_magnus6_affine_composition", "arb_magnus6_leading_term", "arb_magnus8_macro_maps", "arb_magnus8_affine_composition", "arb_magnus8_leading_term", "arb_interaction_dyson_tail", "arb_interaction_taylor26_macro_maps", "frozen_decimal_gauss8_center", "causal_y_z1_z2_margin_budget", "recentered_cone_spectrum", "recentered_cone_projector", "recentered_cone_inverse", "recentered_cone_response", "recentered_cone_first_variation", "dop_domain"],
-            "CORRELATED_EXACT_AFFINE_TAYLOR26_HOMOGENEOUS_CARRIER_CERTIFIED_ON_ALL_5908_RETAINED_SUBSTEPS_AND_47_MACROS;_SIGNED_SOURCE_COMPOSITION_AND_LITERAL_OUTWARD_SIGNED_Y_OPEN",
+            ["dop_response", "dop_first_variation", "dop_second_variation", "common_frame_matching", "normalized_field_identity", "nonlinear_cone_spectrum", "nonlinear_cone_projector_inverse", "causal_z2", "signed_y_quadrature", "decimal_signed_source", "decimal_signed_y_green", "decimal_signed_y_green_prop32", "decimal_prop_refinement", "decimal_magnus4_prop_recenter", "arb_magnus4_discrete_propagation", "arb_magnus4_macro_maps", "arb_magnus4_affine_composition", "decimal_magnus6_leading_remainder", "arb_magnus6_macro_maps", "arb_magnus6_affine_composition", "arb_magnus6_leading_term", "arb_magnus8_macro_maps", "arb_magnus8_affine_composition", "arb_magnus8_leading_term", "arb_interaction_dyson_tail", "arb_interaction_taylor26_macro_maps", "arb_interaction_taylor26_signed_source", "exact_affine_center_transfer", "frozen_decimal_gauss8_center", "causal_y_z1_z2_margin_budget", "recentered_cone_spectrum", "recentered_cone_projector", "recentered_cone_inverse", "recentered_cone_response", "recentered_cone_first_variation", "dop_domain"],
+            "EXACT_AFFINE_TAYLOR26_HOMOGENEOUS_CARRIER_AND_RETAINED_GAUSS8_SIGNED_Y_CERTIFIED;_EXACT_CENTER_INSIDE_FROZEN_DECIMAL_CANDIDATE_CONE;_FINAL_CENTER_Z2_AND_RECENTERED_CONE_REBUILD_OPEN",
             "current adaptive DOP853 certificate",
             ["GATE7_HEAT_ZETA_CHAIN"],
             ["12,032-cell historical uniform cover replaced by the exact 8,692-cell adaptive cover"],
-            ["EVALUATE_RETAINED_UNALIGNED_GAUSS8_SIGNED_SOURCE_BLOCKS_WITH_THE_FROZEN_CORRELATED_ARB_TAYLOR26_CARRIER_AND_COMPOSE_GLOBALLY;_THEN_CERTIFY_LITERAL_OUTWARD_SIGNED_Y"],
+            ["REBUILD_ONLY_FINAL_CENTER_DEPENDENT_Z2_AND_RECENTERED_CONE_BALL_AT_THE_CERTIFIED_EXACT_AFFINE_Y_CENTER;_THEN_TRANSFER_RADII_CONTINUOUS_MARGINS_AND_SCALAR_FIRST_HIT_NEWTON"],
         ),
         _subsystem(
             "GATE7_HEAT_ZETA_CHAIN",
@@ -352,8 +358,9 @@ def build_payload() -> dict[str, Any]:
         {"id": "G7_SIGNED_Y_QUADRATURE_AND_RECENTER_REBASE", "classification": "SUPERSEDED_BY_DECIMAL_SOURCE_REPAIR", "current_effect": "the former Gauss8/12/16/20 nonconvergence changed a binary selected-eigenline source representation; the isolated Decimal Gauss6-to8 source and PROP16 image are stable inside the halo"},
         {"id": "G7_COMPACT_RESET_STORED_RESERVE_791_1064", "classification": "SUPERSEDED_BY_DIRECTED_DECIMAL_REPLAY", "current_effect": "the two binary64-rounded zero reserves replay to strict directed lower bounds near 4.03e-28 and the predeclared open subball now crosses all 1222 core segments"},
         {"id": "G7_RESET_TO_CAPTURE_OR_STOP_CONNECTION", "classification": "SUPERSEDED_BY_TRANSVERSALITY_REDUCTION", "current_effect": "one exact transverse center stop witness automatically promotes to a nonempty open 72-dimensional stop-reaching seed stratum; whole-family multiple shooting and the NHIM bridge are unnecessary on the stop branch"},
-        {"id": "G7_CORRELATED_QUARTER_STEP_CENTER_STOP_WITNESS", "classification": "CURRENT_BLOCKER", "current_effect": "the correlated exact-affine Taylor26 homogeneous carrier is frozen; evaluate the retained unaligned Gauss8 signed-source blocks with that carrier and compose them globally, then certify literal outward signed Y, center-dependent Z2/radii, continuous margins, and scalar interval Newton at the shifted s=0 first hit"},
+        {"id": "G7_CORRELATED_QUARTER_STEP_CENTER_STOP_WITNESS", "classification": "CURRENT_BLOCKER", "current_effect": "the exact-affine Taylor26 carrier and retained Gauss8 signed Y are certified, and the exact center uses only 0.053773621885447036 of the frozen Decimal candidate cone; rebuild final-center Z2 and the recentered cone ball, then transfer radii, continuous margins, and scalar interval Newton at the shifted s=0 first hit"},
         {"id": "G7_DECORRELATED_BINARY64_CARRIER_COMPOSITION", "classification": "INVALIDATED_PROOF_ROUTE", "current_effect": "independent binary64 component balls produce wrapping blowup and are presentation data only; correlated outward Arb interval strings own global composition"},
+        {"id": "G7_OLD_GAUSS12_RECENTERED_NUMERICAL_CONE_TRANSFER", "classification": "INVALIDATED_PROOF_ROUTE", "current_effect": "the old Gauss12 center differs from the exact-affine center by 120901.05128628464 candidate-cone radii; retain its theorem formulas but rebuild the numerical Z2/cone ball at the final center"},
         {"id": "G7_COMPLETE_JOINT_FORCE_ROOT", "classification": "DOWNSTREAM_ONLY", "current_effect": "evaluate after signed-Y recentering, radii closure, and first-hit transfer"},
         {"id": "DECORRELATED_SCALAR_SECOND_VARIATION", "classification": "INVALIDATED_PROOF_ROUTE", "current_effect": "finite first variation survives; all 8,692 scalar denominator cells route to signed/common-frame correlation"},
         {"id": "G7_HESSIAN_WARD_SCALAR", "classification": "DOWNSTREAM_ONLY", "current_effect": "follows the force/KKT root"},
@@ -366,7 +373,7 @@ def build_payload() -> dict[str, Any]:
         {"id": "AE2_TO_ONE_SEAM", "class": "A", "priority": 0, "status": "RESOLVED_BY_EXISTING_COMPOSITION", "evidence": PATHS["one_seam"]},
         {"id": "EVENT_RESET_TO_INTERNAL_SOURCE", "class": "A", "priority": 0, "status": "RESOLVED_BY_EXISTING_CLOSED_SYSTEM_ONTOLOGY", "evidence": PATHS["source_ontology"]},
         {"id": "DOP853_TO_RESPONSE_VARIATION", "class": "C", "priority": 1, "status": "RESOLVED_FOR_EXACT_CENTER_AND_FINITE_DIRECT_FIRST_VARIATION", "evidence": PATHS["dop_second_variation"]},
-        {"id": "RESPONSE_TO_CORRELATED_Y_Z1_Z2", "class": "C", "priority": 1, "status": "CORRELATED_EXACT_AFFINE_TAYLOR26_HOMOGENEOUS_CARRIER_CERTIFIED;_SIGNED_SOURCE_COMPOSITION_LITERAL_OUTWARD_SIGNED_Y_AND_Z2_TRANSFER_OPEN", "evidence": PATHS["arb_interaction_taylor26_macro_maps"]},
+        {"id": "RESPONSE_TO_CORRELATED_Y_Z1_Z2", "class": "C", "priority": 1, "status": "EXACT_AFFINE_TAYLOR26_CARRIER_AND_RETAINED_GAUSS8_SIGNED_Y_CERTIFIED;_FINAL_CENTER_Z2_AND_RECENTERED_CONE_REBUILD_OPEN", "evidence": PATHS["exact_affine_center_transfer"]},
         {"id": "FINITE_HISTORY_TO_HEAT_ZETA_COVECTOR", "class": "C", "priority": 1, "status": "ENDPOINTS_AND_FORMULAS_EXIST_JOINT_CONTRACTION_NOT_YET_EVALUATED", "evidence": PATHS["force_functional"]},
         {"id": "COMPACT_RESET_DOMAIN_TO_CAPTURE_OR_STOP", "class": "B", "priority": 0, "status": "OPEN_72_DIMENSIONAL_RESET_SUBBALL_CERTIFIED_THROUGH_1222_CORE;_ONE_EXACT_TRANSVERSE_CENTER_STOP_WITNESS_SUFFICES_FOR_AN_OPEN_STOP_STRATUM;_CENTER_INTERVAL_SHADOWING_AND_FIRST_HIT_NEWTON_OPEN", "evidence": PATHS["open_family_stop_reduction"]},
         {"id": "FAMILY_PROJECTORS_TO_MASS_CKM", "class": "B", "priority": 2, "status": "MISSING_ACTION_SELECTED_SECTOR_RESPONSE_EIGENBASES", "evidence": PATHS["generation"]},
@@ -624,6 +631,27 @@ def build_payload() -> dict[str, Any]:
             ] is True
             and arb_interaction_taylor26_macro_maps["claim_boundary"][
                 "homogeneous_exact_affine_macro_maps"
+            ] == "CERTIFIED"
+        ),
+        "correlated_exact_affine_Taylor26_signed_source_is_certified": (
+            arb_interaction_taylor26_signed_source["validation_passed"] is True
+            and arb_interaction_taylor26_signed_source["validation"][
+                "all_47_source_blocks_composed_with_frozen_correlated_carrier"
+            ] is True
+            and arb_interaction_taylor26_signed_source["claim_boundary"][
+                "retained_unaligned_signed_source_blocks"
+            ] == "CERTIFIED_IF_VALIDATION_PASSES"
+        ),
+        "exact_affine_signed_Y_center_transfer_is_certified_and_old_Gauss12_cone_is_rejected": (
+            exact_affine_center_transfer["validation_passed"] is True
+            and exact_affine_center_transfer["validation"][
+                "exact_center_inside_frozen_Decimal_candidate_cone"
+            ] is True
+            and exact_affine_center_transfer["validation"][
+                "old_recentered_Gauss12_center_outside_candidate_cone"
+            ] is True
+            and exact_affine_center_transfer["claim_boundary"][
+                "literal_outward_retained_Gauss8_signed_Y_propagation"
             ] == "CERTIFIED"
         ),
         "quarter_green_corrected_carrier_is_certified": (

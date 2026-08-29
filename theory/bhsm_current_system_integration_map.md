@@ -2,14 +2,17 @@
 
 ## Current Gate-7 owner
 
-The homogeneous exact-affine interaction-Taylor26 carrier is frozen and
-certified on 5,908 retained substeps and 47 macro seams.  Authoritative global
-composition reconstructs outward Arb interval strings; binary64 arrays and
-all Magnus products are comparison-only.  The exact next dependency is the
-retained unaligned Gauss-8 signed-source block composition with this carrier,
-then literal outward signed `Y`, center-dependent `Z2`/radii, continuous
-margins, and scalar first-hit Newton.  Gate 7 is `ACTIVE` and
-`FULL_BHSM_COMPLETE = FALSE`.
+The exact-affine interaction-Taylor26 carrier and all 47 retained unaligned
+Gauss-8 signed-source blocks are now outward certified.  The maximum global
+signed response radius is `5.813089943277151e-22`, with terminal radius
+`3.238347696636337e-22`.  The resulting exact signed-`Y` center lies inside
+the frozen Decimal candidate cone at utilization `0.053773621885447036`.
+The old Gauss-12 recentered numerical cone is not transferable: its center is
+separated from the exact-affine center by `120901.05128628464` candidate-cone
+radii.  Its theorem formulas remain reusable, but the numerical `Z2` and
+recentered cone ball must be rebuilt at the final center before radii,
+continuous margins, and scalar first-hit Newton are transferred.  Gate 7 is
+`ACTIVE` and `FULL_BHSM_COMPLETE = FALSE`.
 
 The current physical theory tuple is `BHSM-AE-2.0.0`.  It retains the v7.x
 stratified bulk/boundary functor, v14-v17 eta/Aether action lineage, v7.2
