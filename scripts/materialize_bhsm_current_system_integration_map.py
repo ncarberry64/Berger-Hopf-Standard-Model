@@ -68,6 +68,7 @@ PATHS = {
     "arb_interaction_taylor26_signed_source": "artifacts/flagship_integration/BHSM_N12_GATE7_ARB_INTERACTION_TAYLOR26_SIGNED_SOURCE.json",
     "exact_affine_center_transfer": "artifacts/flagship_integration/BHSM_N12_GATE7_EXACT_AFFINE_CENTER_TRANSFER_AUDIT.json",
     "exact_affine_first_stop": "artifacts/flagship_integration/BHSM_N12_GATE7_EXACT_AFFINE_CONTINUOUS_FIRST_STOP.json",
+    "exact_affine_stop_transversality": "artifacts/flagship_integration/BHSM_N12_GATE7_EXACT_AFFINE_TERMINAL_STOP_TRANSVERSALITY.json",
     "final_force_kkt_verdict": "artifacts/flagship_integration/BHSM_N12_GATE7_FINAL_EXACT_CENTER_FORCE_KKT_HESSIAN_VERDICT.json",
     "causal_y_z1_z2_margin_budget": "artifacts/flagship_integration/BHSM_N12_GATE7_CAUSAL_Y_Z1_Z2_MARGIN_BUDGET_AUDIT.json",
     "recentered_cone_spectrum": "artifacts/flagship_integration/BHSM_N12_GATE7_RECENTERED_CONE_BOUNDARY_CLUSTER_SPECTRUM.json",
@@ -189,6 +190,9 @@ def build_payload() -> dict[str, Any]:
         "arb_interaction_taylor26_signed_source"
     ]
     exact_affine_center_transfer = records["exact_affine_center_transfer"]
+    exact_affine_stop_transversality = records[
+        "exact_affine_stop_transversality"
+    ]
     causal_y_z1_z2_margin_budget = records["causal_y_z1_z2_margin_budget"]
     compact_reset_propagation = records["compact_reset_propagation"]
     compact_reset_open_subball = records["compact_reset_open_subball"]
@@ -360,7 +364,7 @@ def build_payload() -> dict[str, Any]:
         {"id": "G7_SIGNED_Y_QUADRATURE_AND_RECENTER_REBASE", "classification": "SUPERSEDED_BY_DECIMAL_SOURCE_REPAIR", "current_effect": "the former Gauss8/12/16/20 nonconvergence changed a binary selected-eigenline source representation; the isolated Decimal Gauss6-to8 source and PROP16 image are stable inside the halo"},
         {"id": "G7_COMPACT_RESET_STORED_RESERVE_791_1064", "classification": "SUPERSEDED_BY_DIRECTED_DECIMAL_REPLAY", "current_effect": "the two binary64-rounded zero reserves replay to strict directed lower bounds near 4.03e-28 and the predeclared open subball now crosses all 1222 core segments"},
         {"id": "G7_RESET_TO_CAPTURE_OR_STOP_CONNECTION", "classification": "SUPERSEDED_BY_TRANSVERSALITY_REDUCTION", "current_effect": "one exact transverse center stop witness automatically promotes to a nonempty open 72-dimensional stop-reaching seed stratum; whole-family multiple shooting and the NHIM bridge are unnecessary on the stop branch"},
-        {"id": "G7_CORRELATED_QUARTER_STEP_CENTER_STOP_WITNESS", "classification": "RESOLVED_BY_EXACT_FIRST_STOP", "current_effect": "the final exact-center cone, response, causal Z2, strict preterminal selected-eigenvalue margins, and canonical earliest stop are certified; uniqueness and differentiable stop time are not claimed"},
+        {"id": "G7_CORRELATED_QUARTER_STEP_CENTER_STOP_WITNESS", "classification": "RESOLVED_BY_EXACT_TRANSVERSE_FIRST_STOP", "current_effect": "the final exact-center cone, response, causal Z2, strict preterminal selected-eigenvalue margins, canonical earliest stop, uniform negative flow derivative, terminal-cell uniqueness, and local differentiable first-stop time are certified"},
         {"id": "G7_DECORRELATED_BINARY64_CARRIER_COMPOSITION", "classification": "INVALIDATED_PROOF_ROUTE", "current_effect": "independent binary64 component balls produce wrapping blowup and are presentation data only; correlated outward Arb interval strings own global composition"},
         {"id": "G7_OLD_GAUSS12_RECENTERED_NUMERICAL_CONE_TRANSFER", "classification": "INVALIDATED_PROOF_ROUTE", "current_effect": "the old Gauss12 center differs from the exact-affine center by 120901.05128628464 candidate-cone radii; retain its theorem formulas but rebuild the numerical Z2/cone ball at the final center"},
         {"id": "G7_COMPLETE_JOINT_FORCE_ROOT", "classification": "CURRENT_BLOCKER", "current_effect": "materialize the complete action-owned joint finite-history operator or equivalent two-sided Weyl-Calderon oracle, endpoint form, and full 72-direction geometry/reset first jet; then evaluate the projected heat-minus-zeta force, KKT root, and physical Hessian"},
@@ -377,7 +381,7 @@ def build_payload() -> dict[str, Any]:
         {"id": "DOP853_TO_RESPONSE_VARIATION", "class": "C", "priority": 1, "status": "RESOLVED_FOR_EXACT_CENTER_AND_FINITE_DIRECT_FIRST_VARIATION", "evidence": PATHS["dop_second_variation"]},
         {"id": "RESPONSE_TO_CORRELATED_Y_Z1_Z2", "class": "C", "priority": 1, "status": "RESOLVED_FINAL_EXACT_CENTER_AND_CAUSAL_Z2_CERTIFIED", "evidence": PATHS["exact_affine_first_stop"]},
         {"id": "FINITE_HISTORY_TO_HEAT_ZETA_COVECTOR", "class": "C", "priority": 0, "status": "CURRENT_BLOCKER_COMPLETE_ACTION_OWNED_OPERATOR_ORACLE_ENDPOINT_FORM_AND_72_DIRECTION_FIRST_JET_MISSING", "evidence": PATHS["final_force_kkt_verdict"]},
-        {"id": "COMPACT_RESET_DOMAIN_TO_CAPTURE_OR_STOP", "class": "B", "priority": 0, "status": "RESOLVED_BY_CERTIFIED_CANONICAL_EARLIEST_STOP_AND_RETAINED_OPEN_FAMILY_THEOREM", "evidence": PATHS["exact_affine_first_stop"]},
+        {"id": "COMPACT_RESET_DOMAIN_TO_CAPTURE_OR_STOP", "class": "B", "priority": 0, "status": "RESOLVED_BY_CERTIFIED_TRANSVERSE_CANONICAL_EARLIEST_STOP_AND_RETAINED_OPEN_FAMILY_THEOREM", "evidence": PATHS["exact_affine_stop_transversality"]},
         {"id": "FAMILY_PROJECTORS_TO_MASS_CKM", "class": "B", "priority": 2, "status": "MISSING_ACTION_SELECTED_SECTOR_RESPONSE_EIGENBASES", "evidence": PATHS["generation"]},
         {"id": "NEUTRAL_PROPAGATION_TO_PMNS", "class": "B", "priority": 2, "status": "MISSING_THREE_SLOT_PROJECTION_AND_CHARGED_NEUTRAL_EIGENBASES", "evidence": PATHS["pmns"]},
         {"id": "G_F_TRANSPORT_TO_FINAL_LEDGER", "class": "A", "priority": 1, "status": "COMPOSITION_EXISTS_REVALIDATION_DOWNSTREAM", "evidence": PATHS["v7_transport"]},
@@ -655,6 +659,15 @@ def build_payload() -> dict[str, Any]:
             and exact_affine_center_transfer["claim_boundary"][
                 "literal_outward_retained_Gauss8_signed_Y_propagation"
             ] == "CERTIFIED"
+        ),
+        "exact_affine_terminal_stop_is_uniformly_transverse": (
+            exact_affine_stop_transversality["validation_passed"] is True
+            and exact_affine_stop_transversality["consequence"][
+                "local_differentiable_first_stop_time_map"
+            ] is True
+            and exact_affine_stop_transversality["cone_transfer"][
+                "uniform_Dlambda24_of_F_interval"
+            ][1] < 0.0
         ),
         "quarter_green_corrected_carrier_is_certified": (
             recentered_cone_spectrum["validation_passed"] is True

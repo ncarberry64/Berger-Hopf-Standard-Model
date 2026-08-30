@@ -5,10 +5,12 @@
 The correlated exact-affine carrier, signed source, final-center
 spectrum/cone/response, causal `Z2`, continuous preterminal margin, and
 canonical earliest stop are closed.  The stop proof uses strict action-owned
-selected-eigenvalue signs plus continuity and does not claim uniqueness or a
-differentiable stop-time map.  Gate 7 remains `ACTIVE` on the missing complete
-joint finite-history operator oracle, projected heat-minus-zeta force, KKT
-root, and constrained physical Hessian.  `FULL_BHSM_COMPLETE = FALSE`.
+selected-eigenvalue signs plus continuity; the follow-on outward tensor
+certificate proves uniform negative flow derivative, terminal-cell
+uniqueness, and a local differentiable stop-time map.  Gate 7 remains
+`ACTIVE` on the missing complete joint finite-history operator oracle,
+projected heat-minus-zeta force, KKT root, and constrained physical Hessian.
+`FULL_BHSM_COMPLETE = FALSE`.
 
 Physical completion additionally requires a no-fit matrix in which every
 claimed observable is classified exactly once as

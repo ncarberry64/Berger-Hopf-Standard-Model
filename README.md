@@ -14,8 +14,12 @@ spectrum/cone/response, and causal Taylor--Volterra `Z2` are now certified.
 The corrected action-owned selected eigenvalue is uniformly positive through
 action time `92.30037143976939` and strictly negative at the true endpoint
 `92.30513924040065`; continuity therefore gives a canonical earliest stop.
-No unique or differentiable stop-time map is claimed.  The Gate-7 geometric
-owner is closed and the background is frozen at that stop.
+An outward retained-action tensor interval now keeps
+`Dlambda_24[F]` in `[-2.8534925825891678e-11,
+-2.8197744911497624e-11]` on the final causal cone.  The terminal zero is
+therefore unique on that flow cell and has a local differentiable first-stop
+time map.  The Gate-7 geometric owner is closed and the background is frozen
+at that stop.
 
 The exact current owner is the missing action-owned complete joint finite-
 history operator (or equivalent two-sided Weyl--Calderon oracle), endpoint

@@ -9,7 +9,11 @@ bound and 3,000 exact-spectrum cells prove strict selected-eigenvalue
 positivity through action time `92.30037143976939`; the uniform final-center
 halo preserves a negative value at the corrected endpoint
 `92.30513924040065`.  Regular-flow continuity therefore supplies a canonical
-earliest stop.  Uniqueness and a differentiable stop-time map are not claimed.
+earliest stop.  The outward retained-action mixed tensor at the corrected
+center, transferred with the final Taylor--Volterra cone bounds, gives
+`Dlambda_24[F]` in `[-2.8534925825891678e-11,
+-2.8197744911497624e-11]`.  Thus the terminal zero is unique on the certified
+flow cell and the local differentiable first-stop time map is now available.
 
 The geometric owner is closed.  Gate 7 is now `ACTIVE` on the missing
 action-owned complete joint finite-history operator (or equivalent two-sided

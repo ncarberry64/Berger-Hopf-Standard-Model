@@ -13,8 +13,10 @@ spectrum/cone/response, causal `Z2`, continuous preterminal positivity, and
 canonical earliest selected-eigenvalue stop are certified.  The terminal
 action interval is `[92.30037143976939, 92.30513924040065]`; the selected
 eigenvalue is positive at the left endpoint and negative at the right after
-the uniform causal halo.  Uniqueness and differentiable stop time are not
-claimed or needed for the existence-only Gate-7 alternative.
+the uniform causal halo.  The new outward mixed-action tensor certificate
+keeps `Dlambda_24[F]` strictly negative on the complete final cone, so the
+terminal zero is unique on that flow cell and the local differentiable
+first-stop time map is certified.
 
 Current owner: materialize the complete action-owned joint finite-history
 operator or equivalent two-sided Weyl--Calderon family, endpoint form, and

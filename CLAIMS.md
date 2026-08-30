@@ -6,9 +6,11 @@ Supported: the homogeneous exact-affine interaction-Taylor26 carrier is
 outward certified at 256-bit Arb precision on 5,908 retained substeps and 47
 macro seams.  The signed-source composition, final exact-center cone/response,
 causal `Z2`, strict preterminal selected-eigenvalue margin, and a canonical
-earliest stop are certified.  The final stop follows from strict endpoint
-signs and continuity; neither uniqueness nor a differentiable stop-time map
-is claimed.
+earliest stop are certified.  The final stop first follows from strict
+endpoint signs and continuity.  A separate outward mixed-action tensor
+certificate then proves uniform negative `Dlambda_24[F]` on the terminal
+causal cone, uniqueness on that flow cell, and a local differentiable
+first-stop time map.
 
 Not supported: using under-inflated binary64 radii or decorrelated componentwise
 global composition as authority; promoting historical Magnus refinement;

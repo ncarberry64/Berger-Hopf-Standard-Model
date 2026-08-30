@@ -2827,8 +2827,12 @@ Exact next object:
   endpoint, using the certified uniform causal radius
   `5.798470127958652e-13`.
 - Continuity of the regular selected-line flow therefore gives a canonical
-  earliest stop.  This closes the Gate-7 geometric connection owner without
-  claiming a unique zero or differentiable stop-time map.
+  earliest stop.  A follow-on outward retained-action mixed-tensor interval,
+  transferred over the final causal cone, keeps `Dlambda_24[F]` in
+  `[-2.8534925825891678e-11,-2.8197744911497624e-11]`.  The zero is therefore
+  unique on the terminal flow cell and the local differentiable first-stop
+  time map is certified.  This closes the Gate-7 geometric connection and
+  endpoint-motion owners.
 - Gate 7 remains active.  Its current owner is the complete action-owned joint
   finite-history operator or equivalent two-sided Weyl--Calderon oracle, its
   endpoint form, and its 72-direction geometry/reset first jet.  The projected

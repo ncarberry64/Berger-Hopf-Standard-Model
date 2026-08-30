@@ -63,6 +63,9 @@ def test_canonical_system_and_required_subsystems() -> None:
         "exact_affine_signed_Y_center_transfer_is_certified_and_old_Gauss12_cone_is_rejected"
     ] is True
     assert payload["validation"][
+        "exact_affine_terminal_stop_is_uniformly_transverse"
+    ] is True
+    assert payload["validation"][
         "physical_completeness_matrix_is_required_and_open"
     ] is True
     assert payload["validation"][

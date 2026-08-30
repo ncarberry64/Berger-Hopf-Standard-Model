@@ -13,6 +13,7 @@ BRACKET = BASE / "BHSM_N12_GATE7_EXACT_AFFINE_TERMINAL_SELECTED_EIGENVALUE_BRACK
 STOP = BASE / "BHSM_N12_GATE7_EXACT_AFFINE_CONTINUOUS_FIRST_STOP.json"
 STOP_DATA = STOP.with_suffix(".npz")
 VERDICT = BASE / "BHSM_N12_GATE7_FINAL_EXACT_CENTER_FORCE_KKT_HESSIAN_VERDICT.json"
+TRANSVERSALITY = BASE / "BHSM_N12_GATE7_EXACT_AFFINE_TERMINAL_STOP_TRANSVERSALITY.json"
 
 
 def _load(path: Path) -> dict:
@@ -61,6 +62,19 @@ def test_continuous_cover_certifies_canonical_earliest_stop() -> None:
     assert _sha256(STOP_DATA) == record["data_SHA256"]
 
 
+def test_terminal_stop_is_uniformly_transverse_on_final_cone() -> None:
+    record = _load(TRANSVERSALITY)
+    assert record["validation_passed"] is True
+    center = record["terminal_center"]["outward_Dlambda24_of_F_interval"]
+    uniform = record["cone_transfer"]["uniform_Dlambda24_of_F_interval"]
+    assert center[1] < 0.0
+    assert uniform[1] < 0.0
+    assert record["cone_transfer"]["strict_negative_margin_lower"] > 0.0
+    assert record["consequence"]["terminal_zero_unique_on_the_certified_terminal_flow_cell"] is True
+    assert record["consequence"]["local_differentiable_first_stop_time_map"] is True
+    assert record["consequence"]["operator_endpoint_motion_prerequisite"] == "CLOSED"
+
+
 def test_force_kkt_hessian_verdict_fails_closed_at_actual_missing_oracle() -> None:
     record = _load(VERDICT)
     assert record["validation_passed"] is True
@@ -79,6 +93,6 @@ def test_force_kkt_hessian_verdict_fails_closed_at_actual_missing_oracle() -> No
 
 
 def test_new_certificate_provenance_hashes_match_disk() -> None:
-    for artifact in (_load(BRACKET), _load(STOP), _load(VERDICT)):
+    for artifact in (_load(BRACKET), _load(STOP), _load(TRANSVERSALITY), _load(VERDICT)):
         for relative, expected in artifact["inputs"].items():
             assert _sha256(ROOT / relative) == expected
