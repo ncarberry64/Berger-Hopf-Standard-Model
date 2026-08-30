@@ -109,6 +109,102 @@ class MuonGMinus2Readout:
         }
 
 
+@dataclass(frozen=True)
+class LeptonGMinus2Readout:
+    """Action-identified charged-lepton anomalous magnetic moment."""
+
+    form_factors: ElectromagneticFormFactors
+    mode_id: str
+    action_version: str
+    background_id: str
+    renormalization_scheme_id: str | None
+    gate7_closed: bool
+    ward_identity_closed: bool
+    external_mode_action_selected: bool
+    mode_identified_as_charged_lepton_by_action: bool
+
+    def require_physical_promotion(self, tolerance: float = 1.0e-9) -> None:
+        missing: list[str] = []
+        if not self.mode_id:
+            missing.append("action_spectrum_mode_id")
+        if not self.gate7_closed:
+            missing.append("Gate7_closed_background")
+        if not self.ward_identity_closed:
+            missing.append("Ward_Slavnov_Taylor_closure")
+        if self.renormalization_scheme_id is None:
+            missing.append("BHSM_renormalization_scheme")
+        if not self.external_mode_action_selected:
+            missing.append("action_selected_external_mode")
+        if not self.mode_identified_as_charged_lepton_by_action:
+            missing.append("action_identified_charged_lepton_mode")
+        if abs(self.form_factors.q_squared) > tolerance:
+            missing.append("q_squared_zero_limit")
+        if abs(self.form_factors.F1 - 1.0) > tolerance:
+            missing.append("charge_Ward_normalization_F1_zero_equals_one")
+        if self.form_factors.relative_projection_residual > tolerance:
+            missing.append("complete_vertex_form_factor_basis")
+        if abs(self.form_factors.F2.imag) > tolerance:
+            missing.append("real_on_shell_F2")
+        if missing:
+            raise RuntimeError("lepton g-2 promotion blocked by: " + ", ".join(missing))
+
+    def anomalous_magnetic_moment(self) -> float:
+        self.require_physical_promotion()
+        return float(self.form_factors.F2.real)
+
+    def metadata(self) -> dict:
+        return {
+            "definition": f"a_{self.mode_id}=(g_{self.mode_id}-2)/2=F2(q_squared=0)",
+            "mode_id": self.mode_id,
+            "action_version": self.action_version,
+            "background_id": self.background_id,
+            "renormalization_scheme_id": self.renormalization_scheme_id,
+            "mode_identified_by_action_spectrum": self.mode_identified_as_charged_lepton_by_action,
+            "experimental_target_used": False,
+        }
+
+
+def lepton_gminus2_from_renormalized_vertex(
+    vertex: RenormalizedVertex,
+    dirac_basis: Array,
+    pauli_basis: Array,
+    incoming_mode: LSZExternalMode,
+    outgoing_mode: LSZExternalMode,
+    *,
+    q_squared: float,
+    mode_identified_as_charged_lepton_by_action_spectrum: bool,
+    tolerance: float = 1.0e-10,
+) -> LeptonGMinus2Readout:
+    """Compose a promoted loop vertex into any action-selected lepton F2(0)."""
+
+    vertex.require_physical_promotion(tolerance=tolerance)
+    incoming_mode.require_physical_external_state(tolerance=tolerance)
+    outgoing_mode.require_physical_external_state(tolerance=tolerance)
+    if incoming_mode.mode_id != outgoing_mode.mode_id:
+        raise ValueError("elastic electromagnetic form factor needs one external mode id")
+    form_factors = project_electromagnetic_form_factors(
+        vertex.finite_value,
+        dirac_basis,
+        pauli_basis,
+        q_squared=q_squared,
+    )
+    return LeptonGMinus2Readout(
+        form_factors=form_factors,
+        mode_id=incoming_mode.mode_id,
+        action_version=vertex.action_version,
+        background_id=vertex.background_id,
+        renormalization_scheme_id=vertex.scheme_id,
+        gate7_closed=vertex.gate7_closed,
+        ward_identity_closed=vertex.maximum_relative_ward_residual <= tolerance,
+        external_mode_action_selected=bool(
+            incoming_mode.action_selected and outgoing_mode.action_selected
+        ),
+        mode_identified_as_charged_lepton_by_action=bool(
+            mode_identified_as_charged_lepton_by_action_spectrum
+        ),
+    )
+
+
 def muon_gminus2_from_renormalized_vertex(
     vertex: RenormalizedVertex,
     dirac_basis: Array,
@@ -150,7 +246,9 @@ def muon_gminus2_from_renormalized_vertex(
 
 __all__ = [
     "ElectromagneticFormFactors",
+    "LeptonGMinus2Readout",
     "MuonGMinus2Readout",
+    "lepton_gminus2_from_renormalized_vertex",
     "muon_gminus2_from_renormalized_vertex",
     "project_electromagnetic_form_factors",
 ]
