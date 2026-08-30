@@ -37,6 +37,8 @@ Z2_RECORD = Z2_INPUTS.with_suffix(".json")
 FIELD_REFERENCE = BASE / "BHSM_N12_GATE7_EXACT_AFFINE_CENTER_DIRECTIONAL_FIELD_CURVATURE.npz"
 FIELD_RECORD = FIELD_REFERENCE.with_suffix(".json")
 SPECTRUM = BASE / "BHSM_N12_GATE7_EXACT_AFFINE_CENTER_BOUNDARY_CLUSTER_SPECTRUM.json"
+FIRST_HIT = BASE / "BHSM_N12_GATE7_EXACT_AFFINE_TERMINAL_INTERVAL_NEWTON_FIRST_HIT.json"
+FIRST_HIT_DATA = FIRST_HIT.with_suffix(".npz")
 THEORY = ROOT / "theory" / "n12_gate7_exact_center_physical_field_jacobian.md"
 RESULT = BASE / "BHSM_N12_GATE7_EXACT_CENTER_PHYSICAL_FIELD_JACOBIAN.json"
 DATA = RESULT.with_suffix(".npz")
@@ -221,7 +223,7 @@ def _field_and_first(
 
 
 def main() -> None:
-    parents = [_load(path) for path in (Z2_RECORD, FIELD_RECORD, SPECTRUM)]
+    parents = [_load(path) for path in (Z2_RECORD, FIELD_RECORD, SPECTRUM, FIRST_HIT)]
     if not all(record.get("validation_passed") is True for record in parents):
         raise RuntimeError("validated exact-center parents required")
     with np.load(CENTER) as source:
@@ -237,6 +239,22 @@ def main() -> None:
     with np.load(FIELD_REFERENCE) as source:
         field_reference = np.asarray(source["normalized_field"], dtype=float)
     states = base_states + correction / weights[None, :]
+    with np.load(FIRST_HIT_DATA) as source:
+        first_hit_interval = np.asarray(
+            source["first_hit_action_time_interval"], dtype=float,
+        )
+        first_hit_midpoint = float(source["first_hit_action_time_midpoint"])
+        first_hit_state = np.asarray(source["representative_state"], dtype=float)
+    # The retained final node was the negative side of the stop bracket.  It is
+    # superseded here by a representative state at the certified first-hit
+    # interval midpoint.  Zero is the action-owned stop descriptor; the state
+    # remains a representative and is not promoted to an exact root.
+    times = np.array(times, copy=True)
+    states = np.array(states, copy=True)
+    descriptors = np.array(descriptors, copy=True)
+    times[-1] = first_hit_midpoint
+    states[-1] = first_hit_state
+    descriptors[-1] = 0.0
 
     constraints = []
     tangents = []
@@ -321,6 +339,10 @@ def main() -> None:
         "all_normalized_fields_have_unit_action_norm": max(abs(row["field_action_2_norm"] - 1.0) for row in rows) < 2.0e-12,
         "all_field_first_normalization_residuals_small": max(row["field_first_normalization_residual_2_norm"] for row in rows) < 1.0e-8,
         "all_center_generators_finite": bool(np.all(np.isfinite(physical_generators))),
+        "terminal_node_is_first_hit_interval_midpoint": (
+            first_hit_interval[0] <= times[-1] <= first_hit_interval[1]
+        ),
+        "terminal_stop_descriptor_is_zero": descriptors[-1] == 0.0,
         "continuous_outward_variational_carrier_not_claimed": True,
         "no_action_source_selector_scale_gate_or_chord_changed": True,
     }
@@ -329,7 +351,7 @@ def main() -> None:
     payload = {
         "artifact": "BHSM_N12_GATE7_EXACT_CENTER_PHYSICAL_FIELD_JACOBIAN",
         "status": (
-            "DIRECT_EXACT_CENTER_48_NODE_PHYSICAL_FIELD_JACOBIAN_MATERIALIZED"
+            "DIRECT_47_NODE_EXACT_CENTER_PLUS_FIRST_HIT_REPRESENTATIVE_FIELD_JACOBIAN_MATERIALIZED"
             if passed else "EXACT_CENTER_PHYSICAL_FIELD_JACOBIAN_INVALID"
         ),
         "authority": (
@@ -346,6 +368,9 @@ def main() -> None:
             "maximum_physical_generator_operator_2_norm": max(row["physical_generator_operator_2_norm"] for row in rows),
             "maximum_bordered_response_residual_2_norm": max(row["bordered_response_residual_2_norm"] for row in rows),
             "maximum_field_first_normalization_residual_2_norm": max(row["field_first_normalization_residual_2_norm"] for row in rows),
+            "terminal_first_hit_action_time_interval": first_hit_interval.tolist(),
+            "terminal_representative_action_time": float(times[-1]),
+            "terminal_descriptor": float(descriptors[-1]),
         },
         "data": _relative(DATA),
         "data_SHA256": _sha256(DATA),
@@ -353,14 +378,18 @@ def main() -> None:
             _relative(path): _sha256(path)
             for path in (
                 CENTER, TANGENT, Z2_INPUTS, Z2_RECORD, FIELD_REFERENCE,
-                FIELD_RECORD, SPECTRUM, THEORY, THIS_SCRIPT,
+                FIELD_RECORD, SPECTRUM, FIRST_HIT, FIRST_HIT_DATA, THEORY,
+                THIS_SCRIPT,
             )
         },
         "validation": validation,
         "validation_passed": passed,
         "claim_boundary": {
             "exact_center_constraint_frames": "MATERIALIZED",
-            "exact_center_normalized_field_first_derivative": "MATERIALIZED_AT_48_NODES",
+            "exact_center_normalized_field_first_derivative": "MATERIALIZED_AT_47_NODES",
+            "first_hit_midpoint_normalized_field_first_derivative": (
+                "REPRESENTATIVE_ONLY_WITH_OUTWARD_TIME_INTERVAL_ATTACHED"
+            ),
             "continuous_outward_variational_carrier": "OPEN",
             "complete_nonlinear_72D_history_first_jet": "OPEN_AFTER_CARRIER",
             "Weyl_force_KKT_Hessian": "NOT_CLAIMED",

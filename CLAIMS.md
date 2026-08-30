@@ -12,6 +12,11 @@ certificate then proves uniform negative `Dlambda_24[F]` on the terminal
 causal cone, uniqueness on that flow cell, and a local differentiable
 first-stop time map.
 
+The canonical first-hit action time is outward enclosed in
+`[92.30448998890974, 92.30449792975345]`.  The midpoint state is materialized
+for finite downstream work, but is not claimed as a numerically resolved zero:
+binary64 eigensolver jitter is larger than the root signal.
+
 Not supported: using under-inflated binary64 radii or decorrelated componentwise
 global composition as authority; promoting historical Magnus refinement;
 claiming a force value, KKT root, physical Hessian, Gate-7 closure, or full
@@ -27,10 +32,12 @@ is explicitly unsupported.  The required replacement is a direct
 exact-center variational carrier.
 
 The direct exact-center 25-row constraint frames and normalized-field first
-derivatives are materialized at all 48 macro nodes.  This supports a center
-generator data claim only.  A continuous outward propagator, nonlinear 72D
-history jet, Weyl force, KKT root, and Hessian remain unsupported until the
-within-seam carrier remainder closes.
+derivatives are materialized at the 47 preterminal macro nodes.  The terminal
+matrix is evaluated at the first-hit interval midpoint with stop descriptor
+zero and is representative-only.  This supports discrete generator data, not
+a continuous outward propagator.  The nonlinear 72D history jet, Weyl force,
+KKT root, and Hessian remain unsupported until the within-seam carrier
+remainder closes.
 
 ## Current public claim boundary
 

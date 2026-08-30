@@ -24,6 +24,9 @@ def test_direct_exact_center_physical_field_jacobian_is_materialized() -> None:
     assert record["summary"]["node_count"] == 48
     assert record["summary"]["physical_dimension"] == 73
     assert record["summary"]["minimum_tangent_alignment_singular_value"] > 0.99
+    interval = record["summary"]["terminal_first_hit_action_time_interval"]
+    assert interval[0] <= record["summary"]["terminal_representative_action_time"] <= interval[1]
+    assert record["summary"]["terminal_descriptor"] == 0.0
     assert record["claim_boundary"]["continuous_outward_variational_carrier"] == "OPEN"
     data = ROOT / record["data"]
     assert _sha256(data) == record["data_SHA256"]

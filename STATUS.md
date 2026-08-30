@@ -16,7 +16,9 @@ eigenvalue is positive at the left endpoint and negative at the right after
 the uniform causal halo.  The new outward mixed-action tensor certificate
 keeps `Dlambda_24[F]` strictly negative on the complete final cone, so the
 terminal zero is unique on that flow cell and the local differentiable
-first-stop time map is certified.
+first-stop time map is certified.  The canonical first-hit action time is
+enclosed in `[92.30448998890974, 92.30449792975345]`; its midpoint state is a
+representative, not a binary64-resolved zero.
 
 Current owner: materialize the complete action-owned joint finite-history
 operator or equivalent two-sided Weyl--Calderon family, endpoint form, and
@@ -24,8 +26,9 @@ full 72-direction geometry/reset first jet; then evaluate the existing
 heat-minus-zeta force and same-action KKT system.  The affine 72D history,
 duration, first-hit, and `log R4` jets now exist, but the retained nonlinear
 transfer bound has contraction `2.9106286494031597 > 1` and is rejected.  A
-direct exact-center rebuild now supplies all 48 corrected constraint frames
-and `73 x 73` normalized-field generators; the active owner is their refined
+direct rebuild now supplies the 47 preterminal exact-center constraint frames
+and `73 x 73` normalized-field generators plus one first-hit-midpoint
+representative with stop descriptor zero; the active owner is their refined
 within-seam outward variational carrier.  Gate 7 remains `ACTIVE`;
 `FULL_BHSM_COMPLETE = FALSE`.  Universal physical prediction engines remain
 open downstream.

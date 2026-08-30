@@ -9,10 +9,11 @@
     "complete_nonlinear_72D_history_first_jet": "OPEN_AFTER_CARRIER",
     "continuous_outward_variational_carrier": "OPEN",
     "exact_center_constraint_frames": "MATERIALIZED",
-    "exact_center_normalized_field_first_derivative": "MATERIALIZED_AT_48_NODES"
+    "exact_center_normalized_field_first_derivative": "MATERIALIZED_AT_47_NODES",
+    "first_hit_midpoint_normalized_field_first_derivative": "REPRESENTATIVE_ONLY_WITH_OUTWARD_TIME_INTERVAL_ATTACHED"
   },
   "data": "artifacts/flagship_integration/BHSM_N12_GATE7_EXACT_CENTER_PHYSICAL_FIELD_JACOBIAN.npz",
-  "data_SHA256": "8ABD1176C9A6FAAB9AC4A831E07D63D4277C3BCFECA0E258C8B898A45CCBEC88",
+  "data_SHA256": "964B9DD41FBE2DB8D6947FD3C812CE09445AC0300C2569F508B6EE9E1055B37E",
   "exact_next_dependency": "BUILD_AN_OUTWARD_CONTINUOUS_VARIATIONAL_CARRIER_FROM_THE_DIRECT_EXACT_CENTER_GENERATORS_USING_REFINED_WITHIN_SEAM_EVALUATION_AND_THE_EXISTING_D2F_D3F_TUBES",
   "inputs": {
     "artifacts/flagship_integration/BHSM_N12_C2_STOP_HIGH_ORDER_QUARTER_STEP_RETAINED_RECONNAISSANCE.npz": "086C41068B9F3A6C0E5F8040B661202E067D017C909A381010E45FF352498D00",
@@ -22,8 +23,10 @@
     "artifacts/flagship_integration/BHSM_N12_GATE7_EXACT_AFFINE_CENTER_DIRECTIONAL_FIELD_CURVATURE.npz": "F10683D3A215E66BB1146A830F789360ADAEDBFD19AFB5DE1D019959F64FAFA8",
     "artifacts/flagship_integration/BHSM_N12_GATE7_EXACT_AFFINE_CENTER_Z2_INPUTS.json": "ADD0B77066E85D63CA2C61565F9EC164013FF9B644EC19D40A9D43424D869E3C",
     "artifacts/flagship_integration/BHSM_N12_GATE7_EXACT_AFFINE_CENTER_Z2_INPUTS.npz": "0E46FECA03DD3858A77C644F7964232C4E51D9EEA8FFF696C316876F32434B27",
-    "scripts/materialize_n12_gate7_exact_center_physical_field_jacobian.py": "189EFE533105FF6FD89A7161DF04F3B7337F205BE27B661BB5BB9677A498A97C",
-    "theory/n12_gate7_exact_center_physical_field_jacobian.md": "93335BDA42BE6F9C8022C1C0FCA31FD75A8042C4AD4BBE954F18377582C7D32C"
+    "artifacts/flagship_integration/BHSM_N12_GATE7_EXACT_AFFINE_TERMINAL_INTERVAL_NEWTON_FIRST_HIT.json": "2A125DBA5BABCB6878D11269802ABCB8175BA199EF827E8A03589E914CBAF8E7",
+    "artifacts/flagship_integration/BHSM_N12_GATE7_EXACT_AFFINE_TERMINAL_INTERVAL_NEWTON_FIRST_HIT.npz": "60A5517316023B93CDCADF944D950029891FF9CA86B8536DA6AA7A73AE5CA172",
+    "scripts/materialize_n12_gate7_exact_center_physical_field_jacobian.py": "611BF0BD5EAC4B86CA97BE7AB60549FC862B2C4F06860DDEE7916525B2E94337",
+    "theory/n12_gate7_exact_center_physical_field_jacobian.md": "175E21F064AD96DF7240ED6F200034AF47EF39A902BF01A5D8242DEB17982A0C"
   },
   "rows": [
     {
@@ -732,31 +735,37 @@
       "selected_gap": 1.7359443395973033e-07
     },
     {
-      "action_length": 92.30513924040065,
-      "bordered_response_residual_2_norm": 6.454527726015224e-11,
+      "action_length": 92.3044939593316,
+      "bordered_response_residual_2_norm": 7.094884738613171e-11,
       "field_action_2_norm": 1.0,
-      "field_constraint_residual_2_norm": 4.880683919419557e-16,
-      "field_first_normalization_residual_2_norm": 3.1836320627454745e-14,
-      "field_reference_difference_2_norm": 5.290243594394355e-07,
-      "minimum_tangent_alignment_singular_value": 0.9999999999999992,
+      "field_constraint_residual_2_norm": 8.968371312242965e-15,
+      "field_first_normalization_residual_2_norm": 6.206027351449837e-14,
+      "field_reference_difference_2_norm": 4.388795918614932e-07,
+      "minimum_tangent_alignment_singular_value": 0.9999999999999836,
       "node": 47,
-      "normalized_numerator_2_norm": 0.0002455802028279323,
-      "physical_generator_operator_2_norm": 45.979649003204685,
+      "normalized_numerator_2_norm": 0.0002455814511447947,
+      "physical_generator_operator_2_norm": 45.979123285128445,
       "selected_branch": 24,
-      "selected_eigenvalue": 2.2405992985057934e-14,
-      "selected_gap": 1.7341590761638596e-07
+      "selected_eigenvalue": -1.2649914124218018e-15,
+      "selected_gap": 1.7341631168387472e-07
     }
   ],
-  "status": "DIRECT_EXACT_CENTER_48_NODE_PHYSICAL_FIELD_JACOBIAN_MATERIALIZED",
+  "status": "DIRECT_47_NODE_EXACT_CENTER_PLUS_FIRST_HIT_REPRESENTATIVE_FIELD_JACOBIAN_MATERIALIZED",
   "summary": {
     "maximum_bordered_response_residual_2_norm": 1.2665877229971956e-10,
     "maximum_field_constraint_residual_2_norm": 1.656681135005019e-12,
     "maximum_field_first_normalization_residual_2_norm": 4.339987142180303e-13,
-    "maximum_field_reference_difference_2_norm": 5.290243594394355e-07,
+    "maximum_field_reference_difference_2_norm": 4.7221837995480103e-07,
     "maximum_physical_generator_operator_2_norm": 109.95791441392815,
-    "minimum_tangent_alignment_singular_value": 0.9999999999999986,
+    "minimum_tangent_alignment_singular_value": 0.9999999999999836,
     "node_count": 48,
-    "physical_dimension": 73
+    "physical_dimension": 73,
+    "terminal_descriptor": 0.0,
+    "terminal_first_hit_action_time_interval": [
+      92.30448998890974,
+      92.30449792975345
+    ],
+    "terminal_representative_action_time": 92.3044939593316
   },
   "validation": {
     "all_48_corrected_center_nodes_consumed": true,
@@ -767,7 +776,9 @@
     "all_normalized_fields_have_unit_action_norm": true,
     "branch_24_selected_at_every_macro_node": true,
     "continuous_outward_variational_carrier_not_claimed": true,
-    "no_action_source_selector_scale_gate_or_chord_changed": true
+    "no_action_source_selector_scale_gate_or_chord_changed": true,
+    "terminal_node_is_first_hit_interval_midpoint": true,
+    "terminal_stop_descriptor_is_zero": true
   },
   "validation_passed": true
 }

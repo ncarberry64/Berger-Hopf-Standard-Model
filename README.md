@@ -19,7 +19,9 @@ An outward retained-action tensor interval now keeps
 -2.8197744911497624e-11]` on the final causal cone.  The terminal zero is
 therefore unique on that flow cell and has a local differentiable first-stop
 time map.  The Gate-7 geometric owner is closed and the background is frozen
-at that stop.
+at that stop.  Its action time is now enclosed in
+`[92.30448998890974, 92.30449792975345]`; the stored midpoint state is only a
+representative because binary64 eigensolver jitter exceeds the root signal.
 
 The exact current owner is the missing action-owned complete joint finite-
 history operator (or equivalent two-sided Weyl--Calderon oracle), endpoint
@@ -28,8 +30,10 @@ already-derived heat-minus-zeta force and KKT system.  The complete affine
 72D candidate is materialized, but its nonlinear Volterra transfer is
 noncontractive (`2.9106286494031597`) and is not operator authority; the
 direct exact-center constraint frames and normalized-field Jacobians are now
-materialized on all 48 macro nodes.  The current construction owner is their
-refined continuous outward variational carrier.
+materialized on the 47 preterminal macro nodes, plus a first-hit-midpoint
+representative with the outward time interval attached and stop descriptor
+zero.  The current construction owner is their refined continuous outward
+variational carrier.
 Gate 7 remains
 `ACTIVE`; `FULL_BHSM_COMPLETE = FALSE`.  Physical completion additionally
 requires universal spectrum/propagator, vertex, decay, loop/magnetic-moment,

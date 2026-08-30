@@ -13,7 +13,11 @@ directional third derivatives accelerate the same retained 96-point action
 formula; no full kinetic Euler--Dirac inverse is formed.
 
 The result is the direct center matrix `T^T DF T` and the ambient action
-matrix `DF T` on all 48 macro nodes.  These discrete center matrices are not
-yet a continuous outward propagator.  Promotion requires refined within-seam
-evaluation and a remainder enclosure using the existing `D2F` and `D3F`
-tubes.  `FULL_BHSM_COMPLETE = FALSE`.
+matrix `DF T` on the 47 preterminal macro nodes.  The prior negative-side
+endpoint is replaced by the state at the midpoint of the certified first-hit
+time interval, with the stop descriptor set to zero.  That last matrix is a
+representative with the outward time interval attached; it is not an exact
+root evaluation.  These discrete matrices are not yet a continuous outward
+propagator.  Promotion requires refined within-seam evaluation and a
+remainder enclosure using the existing `D2F` and `D3F` tubes.
+`FULL_BHSM_COMPLETE = FALSE`.
