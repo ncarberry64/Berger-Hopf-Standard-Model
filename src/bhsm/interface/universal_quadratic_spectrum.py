@@ -9,12 +9,16 @@ scale.
 from __future__ import annotations
 
 from dataclasses import dataclass
+from typing import TYPE_CHECKING
 
 import numpy as np
 from scipy import linalg
 
 
 Array = np.ndarray
+
+if TYPE_CHECKING:
+    from bhsm.interface.universal_brst_quotient import BRSTPhysicalQuotient
 
 
 @dataclass(frozen=True)
@@ -136,4 +140,32 @@ class QuadraticDescriptorPencil:
         }
 
 
-__all__ = ["PoleResidue", "QuadraticDescriptorPencil"]
+def quadratic_pencil_from_brst_quotient(
+    quotient: "BRSTPhysicalQuotient",
+    *,
+    domain_id: str,
+    gate7_closed: bool,
+    scale_map_id: str | None,
+    brst_tolerance: float = 1.0e-10,
+) -> QuadraticDescriptorPencil:
+    """Construct a descriptor pencil only after the explicit BRST checks pass."""
+
+    quotient.require_regular_brst_quotient(tolerance=brst_tolerance)
+    return QuadraticDescriptorPencil(
+        constant=quotient.quotient_constant,
+        linear=quotient.quotient_linear,
+        action_version=quotient.action_version,
+        background_id=quotient.background_id,
+        domain_id=domain_id,
+        gate7_closed=gate7_closed,
+        quotient_applied=True,
+        brst_cancellation_accounted=True,
+        scale_map_id=scale_map_id,
+    )
+
+
+__all__ = [
+    "PoleResidue",
+    "QuadraticDescriptorPencil",
+    "quadratic_pencil_from_brst_quotient",
+]

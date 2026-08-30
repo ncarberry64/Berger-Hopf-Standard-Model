@@ -2,6 +2,9 @@ import numpy as np
 import pytest
 
 from bhsm.interface.universal_brst_quotient import build_brst_physical_quotient
+from bhsm.interface.universal_quadratic_spectrum import (
+    quadratic_pencil_from_brst_quotient,
+)
 
 
 def test_constraint_and_gauge_directions_are_removed_without_inversion() -> None:
@@ -25,6 +28,14 @@ def test_constraint_and_gauge_directions_are_removed_without_inversion() -> None
     assert result.physical_dimension == 2
     np.testing.assert_allclose(np.linalg.eigvalsh(result.quotient_constant), [3.0, 5.0])
     assert result.metadata()["explicit_kinetic_inverse_formed"] is False
+    pencil = quadratic_pencil_from_brst_quotient(
+        result,
+        domain_id="test-domain",
+        gate7_closed=True,
+        scale_map_id="GF-scale",
+    )
+    pencil.require_physical_promotion()
+    assert pencil.dimension == 2
 
 
 def test_singular_ghost_operator_blocks_brst_promotion() -> None:
