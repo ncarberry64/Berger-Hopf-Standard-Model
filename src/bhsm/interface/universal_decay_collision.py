@@ -38,6 +38,19 @@ class ThreeBodyDecayResult:
     maximum_amplitude_squared: float
 
 
+@dataclass(frozen=True)
+class MultiBodyDecayResult:
+    open_channel: bool
+    width: float
+    daughter_count: int
+    invariant_quadrature_order: int
+    angular_quadrature_order: int
+    azimuthal_quadrature_order: int
+    amplitude_evaluations: int
+    minimum_amplitude_squared: float
+    maximum_amplitude_squared: float
+
+
 def two_body_decay_width(
     parent_mass: float,
     first_mass: float,
@@ -169,6 +182,226 @@ def three_body_decay_width(
     )
 
 
+def _rotationless_boost(vector: np.ndarray, frame: np.ndarray) -> np.ndarray:
+    """Boost a rest-frame four-vector into the frame of ``frame``."""
+
+    beta = frame[1:] / frame[0]
+    beta_squared = float(beta @ beta)
+    if beta_squared == 0.0:
+        return vector.copy()
+    if beta_squared >= 1.0:
+        raise ValueError("phase-space recursion produced a non-timelike cluster")
+    gamma = 1.0 / math.sqrt(1.0 - beta_squared)
+    projection = float(beta @ vector[1:])
+    boosted = np.empty(4, dtype=float)
+    boosted[0] = gamma * (vector[0] + projection)
+    boosted[1:] = vector[1:] + (
+        (gamma - 1.0) * projection / beta_squared + gamma * vector[0]
+    ) * beta
+    return boosted
+
+
+def multi_body_decay_width(
+    parent_mass: float,
+    daughter_masses: tuple[float, ...],
+    amplitude_squared: Callable[[tuple[np.ndarray, ...]], float],
+    *,
+    invariant_quadrature_order: int = 10,
+    angular_quadrature_order: int = 6,
+    azimuthal_quadrature_order: int = 8,
+    initial_state_average: float = 1.0,
+    identical_final_state_factor: float = 1.0,
+) -> MultiBodyDecayResult:
+    """Integrate a general ``1->n`` amplitude by sequential factorization.
+
+    The callback receives the daughter four-momenta in the parent rest frame,
+    ordered like ``daughter_masses``.  The root solid angle is integrated as
+    ``4*pi``; this requires the spin-summed or initial-state-averaged squared
+    amplitude to be invariant under a common spatial rotation.  Every lower
+    cluster split retains its polar and azimuthal angles, so correlations in
+    the action-derived amplitude are preserved.
+
+    The recursion uses
+
+    ``dPhi_n = ds/(2*pi) dPhi_2(P; Q,p_n) dPhi_(n-1)(Q)``
+
+    with deterministic Gauss-Legendre invariant/polar quadrature and a
+    periodic midpoint rule in azimuth.  This is numerical readout machinery,
+    not an interval enclosure of quadrature error.
+    """
+
+    daughter_count = len(daughter_masses)
+    values = (
+        parent_mass, *daughter_masses, initial_state_average,
+        identical_final_state_factor,
+    )
+    if daughter_count < 2:
+        raise ValueError("multi-body decay requires at least two daughters")
+    if any(not math.isfinite(value) for value in values):
+        raise ValueError("multi-body decay inputs must be finite")
+    if parent_mass <= 0.0 or min(daughter_masses) < 0.0:
+        raise ValueError("multi-body masses must be physical")
+    if initial_state_average <= 0.0 or identical_final_state_factor <= 0.0:
+        raise ValueError("averaging and symmetry factors must be positive")
+    if invariant_quadrature_order < 2 or angular_quadrature_order < 2:
+        raise ValueError("multi-body Gaussian quadrature orders must be at least two")
+    if azimuthal_quadrature_order < 2:
+        raise ValueError("azimuthal quadrature order must be at least two")
+
+    threshold = math.fsum(daughter_masses)
+    if parent_mass < threshold:
+        return MultiBodyDecayResult(
+            False, 0.0, daughter_count, invariant_quadrature_order,
+            angular_quadrature_order, azimuthal_quadrature_order,
+            0, 0.0, 0.0,
+        )
+    if parent_mass == threshold:
+        return MultiBodyDecayResult(
+            True, 0.0, daughter_count, invariant_quadrature_order,
+            angular_quadrature_order, azimuthal_quadrature_order,
+            0, 0.0, 0.0,
+        )
+
+    invariant_nodes, invariant_weights = np.polynomial.legendre.leggauss(
+        invariant_quadrature_order
+    )
+    polar_nodes, polar_weights = np.polynomial.legendre.leggauss(
+        angular_quadrature_order
+    )
+    azimuths = 2.0 * math.pi * (
+        np.arange(azimuthal_quadrature_order, dtype=float) + 0.5
+    ) / azimuthal_quadrature_order
+    azimuthal_weight = 2.0 * math.pi / azimuthal_quadrature_order
+    lower_cluster_masses = tuple(
+        math.fsum(daughter_masses[:index])
+        for index in range(1, daughter_count)
+    )
+    momenta: list[np.ndarray | None] = [None] * daughter_count
+    contributions: list[float] = []
+    sampled_amplitudes: list[float] = []
+
+    def split_and_continue(
+        cluster_count: int,
+        cluster: np.ndarray,
+        cluster_squared: float,
+        residual_squared: float,
+        weight: float,
+    ) -> None:
+        emitted_mass = daughter_masses[cluster_count - 1]
+        lam = max(
+            0.0,
+            kallen(cluster_squared, residual_squared, emitted_mass**2),
+        )
+        momentum_norm = math.sqrt(lam) / (2.0 * math.sqrt(cluster_squared))
+        emitted_energy = (
+            cluster_squared + emitted_mass**2 - residual_squared
+        ) / (2.0 * math.sqrt(cluster_squared))
+        residual_energy = (
+            cluster_squared + residual_squared - emitted_mass**2
+        ) / (2.0 * math.sqrt(cluster_squared))
+        phase_density = math.sqrt(lam) / (
+            32.0 * math.pi**2 * cluster_squared
+        )
+        if cluster_count == daughter_count:
+            angles = ((1.0, 0.0, 4.0 * math.pi),)
+        else:
+            angles = (
+                (float(cosine), float(phi), float(polar_weight * azimuthal_weight))
+                for cosine, polar_weight in zip(polar_nodes, polar_weights)
+                for phi in azimuths
+            )
+        for cosine, phi, angular_weight in angles:
+            sine = math.sqrt(max(0.0, 1.0 - cosine * cosine))
+            direction = np.asarray((
+                sine * math.cos(phi), sine * math.sin(phi), cosine,
+            ))
+            emitted_rest = np.r_[emitted_energy, momentum_norm * direction]
+            residual_rest = np.r_[residual_energy, -momentum_norm * direction]
+            momenta[cluster_count - 1] = _rotationless_boost(
+                emitted_rest, cluster
+            )
+            residual = _rotationless_boost(residual_rest, cluster)
+            next_weight = weight * phase_density * angular_weight
+            if cluster_count == 2:
+                momenta[0] = residual
+                physical_momenta = tuple(
+                    np.asarray(momentum, dtype=float).copy()
+                    for momentum in momenta
+                    if momentum is not None
+                )
+                if len(physical_momenta) != daughter_count:
+                    raise RuntimeError("incomplete phase-space momentum recursion")
+                amplitude_value = float(amplitude_squared(physical_momenta))
+                if not math.isfinite(amplitude_value) or amplitude_value < 0.0:
+                    raise ValueError(
+                        "amplitude-squared function must be finite and nonnegative"
+                    )
+                sampled_amplitudes.append(amplitude_value)
+                contributions.append(next_weight * amplitude_value)
+            else:
+                integrate_cluster(
+                    cluster_count - 1,
+                    residual,
+                    residual_squared,
+                    next_weight,
+                )
+
+    def integrate_cluster(
+        cluster_count: int,
+        cluster: np.ndarray,
+        cluster_squared: float,
+        weight: float,
+    ) -> None:
+        if cluster_count == 2:
+            split_and_continue(
+                2, cluster, cluster_squared, daughter_masses[0] ** 2, weight
+            )
+            return
+        lower = lower_cluster_masses[cluster_count - 2] ** 2
+        upper = (
+            math.sqrt(cluster_squared) - daughter_masses[cluster_count - 1]
+        ) ** 2
+        if upper <= lower:
+            return
+        half_span = 0.5 * (upper - lower)
+        midpoint = 0.5 * (upper + lower)
+        for node, node_weight in zip(invariant_nodes, invariant_weights):
+            residual_squared = midpoint + half_span * float(node)
+            invariant_weight = half_span * float(node_weight) / (2.0 * math.pi)
+            split_and_continue(
+                cluster_count,
+                cluster,
+                cluster_squared,
+                residual_squared,
+                weight * invariant_weight,
+            )
+
+    integrate_cluster(
+        daughter_count,
+        np.asarray((parent_mass, 0.0, 0.0, 0.0)),
+        parent_mass**2,
+        1.0,
+    )
+    phase_integral = math.fsum(contributions)
+    width = phase_integral / (
+        2.0
+        * parent_mass
+        * initial_state_average
+        * identical_final_state_factor
+    )
+    return MultiBodyDecayResult(
+        True,
+        width,
+        daughter_count,
+        invariant_quadrature_order,
+        angular_quadrature_order,
+        azimuthal_quadrature_order,
+        len(sampled_amplitudes),
+        min(sampled_amplitudes, default=0.0),
+        max(sampled_amplitudes, default=0.0),
+    )
+
+
 @dataclass(frozen=True)
 class TwoToTwoResult:
     open_channel: bool
@@ -218,7 +451,9 @@ class DecayLedgerResult:
 
 
 def combine_decay_channels(
-    channels: Iterable[tuple[str, TwoBodyDecayResult | ThreeBodyDecayResult]],
+    channels: Iterable[
+        tuple[str, TwoBodyDecayResult | ThreeBodyDecayResult | MultiBodyDecayResult]
+    ],
 ) -> DecayLedgerResult:
     """Combine a complete list of action-derived partial widths.
 
@@ -302,12 +537,14 @@ def integrate_two_to_two_cross_section(
 __all__ = [
     "DecayLedgerResult",
     "IntegratedTwoToTwoResult",
+    "MultiBodyDecayResult",
     "ThreeBodyDecayResult",
     "TwoBodyDecayResult",
     "TwoToTwoResult",
     "combine_decay_channels",
     "integrate_two_to_two_cross_section",
     "kallen",
+    "multi_body_decay_width",
     "two_body_decay_width",
     "three_body_decay_width",
     "two_to_two_differential_cross_section",

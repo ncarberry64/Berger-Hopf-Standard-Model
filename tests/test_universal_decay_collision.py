@@ -6,6 +6,7 @@ from bhsm.interface.universal_decay_collision import (
     combine_decay_channels,
     integrate_two_to_two_cross_section,
     kallen,
+    multi_body_decay_width,
     three_body_decay_width,
     two_body_decay_width,
     two_to_two_differential_cross_section,
@@ -115,3 +116,68 @@ def test_total_cross_section_integrates_azimuth_symmetric_angular_amplitude() ->
     expected = 3.0 * (2.0 + 2.0 / 3.0) * 2.0 * np.pi / (64.0 * np.pi**2 * s)
     assert result.open_channel is True
     assert np.isclose(result.total_cross_section, expected, rtol=2.0e-14)
+
+
+def test_recursive_massless_four_body_phase_space_matches_exact_volume() -> None:
+    parent_mass = 2.0
+    amplitude_squared = 3.0
+    result = multi_body_decay_width(
+        parent_mass,
+        (0.0, 0.0, 0.0, 0.0),
+        lambda _momenta: amplitude_squared,
+        invariant_quadrature_order=8,
+        angular_quadrature_order=2,
+        azimuthal_quadrature_order=2,
+    )
+    expected = amplitude_squared * parent_mass**3 / (49152.0 * math.pi**5)
+    assert result.open_channel is True
+    assert result.daughter_count == 4
+    assert result.amplitude_evaluations > 0
+    assert np.isclose(result.width, expected, rtol=3.0e-14)
+
+
+def test_recursive_phase_space_reconstructs_on_shell_conserved_momenta() -> None:
+    daughter_masses = (0.2, 0.3, 0.4, 0.5)
+    parent = np.asarray((2.0, 0.0, 0.0, 0.0))
+    maximum_residual = 0.0
+
+    def amplitude(momenta: tuple[np.ndarray, ...]) -> float:
+        nonlocal maximum_residual
+        total = np.sum(momenta, axis=0)
+        residuals = [np.max(np.abs(total - parent))]
+        residuals.extend(
+            abs(momentum[0] ** 2 - momentum[1:] @ momentum[1:] - mass**2)
+            for momentum, mass in zip(momenta, daughter_masses)
+        )
+        maximum_residual = max(maximum_residual, *residuals)
+        return 1.0 + 0.1 * abs(float(momenta[0][1]))
+
+    result = multi_body_decay_width(
+        parent[0],
+        daughter_masses,
+        amplitude,
+        invariant_quadrature_order=3,
+        angular_quadrature_order=2,
+        azimuthal_quadrature_order=3,
+    )
+    assert result.open_channel is True
+    assert result.width > 0.0
+    assert maximum_residual < 2.0e-14
+
+
+def test_recursive_multi_body_threshold_and_amplitude_validation() -> None:
+    closed = multi_body_decay_width(
+        1.0,
+        (0.3, 0.3, 0.3, 0.3),
+        lambda _momenta: 1.0,
+    )
+    assert closed.open_channel is False
+    assert closed.width == 0.0
+    with np.testing.assert_raises_regex(ValueError, "finite and nonnegative"):
+        multi_body_decay_width(
+            2.0,
+            (0.0, 0.0),
+            lambda _momenta: -1.0,
+            angular_quadrature_order=2,
+            azimuthal_quadrature_order=2,
+        )
