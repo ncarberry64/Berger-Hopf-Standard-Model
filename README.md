@@ -37,7 +37,12 @@ continuous constraint center.  Scaled constraint drift reaches
 midpoint; the largest nodewise linearized correction is `5216.733` times the
 certified macro-center radius.  The current construction owner is therefore a
 direct constraint-preserving normalized-action center, followed by its
-refined continuous outward variational carrier.
+refined continuous outward variational carrier.  One Newton projection has
+now materialized all 371 native quarter-action nodes with maximum scaled
+constraint residual `7.239486906525122e-16`; the largest correction uses
+`22.477230091215175%` of the older reconnaissance halo.  These nodes are a
+discrete candidate only.  Continuous shadowing/collocation, descriptor-fiber
+preservation, and the resulting new first hit remain open.
 Gate 7 remains
 `ACTIVE`; `FULL_BHSM_COMPLETE = FALSE`.  Physical completion additionally
 requires universal spectrum/propagator, vertex, decay, loop/magnetic-moment,

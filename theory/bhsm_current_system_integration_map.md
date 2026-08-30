@@ -40,6 +40,14 @@ is therefore a direct constraint-preserving normalized-action center from
 reset to first hit, followed by refined within-seam `DF` evaluation and an
 outward continuous remainder enclosure.
 
+The native DOP853 route has now been recovered as a discrete candidate: one
+minimum-action-norm Newton step projects all 371 retained quarter-action nodes
+to maximum scaled constraint residual `7.239486906525122e-16`, with maximum
+correction `3.0112768648604145e-9` and reconnaissance-halo utilization
+`0.22477230091215175`.  Projection is not integration.  The active center
+owner is a continuous constraint- and descriptor-fiber-preserving
+shadowing/collocation theorem plus a new first-hit enclosure on that center.
+
 The current physical theory tuple is `BHSM-AE-2.0.0`.  It retains the v7.x
 stratified bulk/boundary functor, v14-v17 eta/Aether action lineage, v7.2
 common observable transport, and frozen comparison firewall, while replacing

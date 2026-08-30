@@ -2853,3 +2853,10 @@ Exact next object:
   `5216.733` times the certified macro-center radius.  The current owner is a
   direct constraint-preserving normalized-action center, followed by its
   continuous outward variational carrier.
+- A one-step minimum-action-norm Newton projection now materializes all 371
+  retained native DOP853 nodes as a discrete constraint-accurate candidate.
+  Maximum scaled residual is `7.239486906525122e-16`; maximum correction is
+  `3.0112768648604145e-9`, using `0.22477230091215175` of the older
+  reconnaissance halo.  This does not establish a continuous orbit, preserve
+  the propagated descriptor fiber, or inherit the prior first hit.  The next
+  owner is projected-dense-path shadowing/collocation with a new stop solve.

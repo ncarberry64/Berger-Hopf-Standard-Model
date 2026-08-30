@@ -33,7 +33,12 @@ maximum stored-node scaled constraint residual is `7.283453490931462e-11`,
 the maximum seam-midpoint residual is `7.381223520027345e-4`, and the maximum
 nodewise linearized correction is `5216.733` certified center radii.  The
 active owner is now a direct constraint-preserving normalized-action center,
-then its within-seam outward variational carrier.  Gate 7 remains `ACTIVE`;
+then its within-seam outward variational carrier.  All 371 retained native
+DOP853 nodes now have a one-step constraint projection with maximum residual
+`7.239486906525122e-16` and maximum reconnaissance-halo utilization
+`0.22477230091215175`.  This is discrete candidate data: continuous
+shadowing/collocation, the descriptor fiber, and a new first-hit enclosure are
+still required.  Gate 7 remains `ACTIVE`;
 `FULL_BHSM_COMPLETE = FALSE`.  Universal physical prediction engines remain
 open downstream.
 

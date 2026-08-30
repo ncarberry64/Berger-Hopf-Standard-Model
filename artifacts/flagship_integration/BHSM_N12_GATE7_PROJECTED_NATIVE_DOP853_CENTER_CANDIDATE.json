@@ -1,0 +1,59 @@
+{
+  "FULL_BHSM_COMPLETE": false,
+  "adjudication": {
+    "continuous_projected_trajectory": "OPEN",
+    "descriptor_fiber_lambda_equals_s": "OPEN_AFTER_PROJECTION",
+    "first_hit_time": "MUST_BE_REBUILT_ON_THE_PROJECTED_FLOW",
+    "native_DOP853_dense_center": "RETAINED_AS_THE_CLOSE_FLOW_CANDIDATE",
+    "projected_371_nodes": "CONSTRAINT_ACCURATE_DISCRETE_CANDIDATE"
+  },
+  "artifact": "BHSM_N12_GATE7_PROJECTED_NATIVE_DOP853_CENTER_CANDIDATE",
+  "authority": "ONE_MINIMUM_ACTION_NORM_NEWTON_STEP_USING_THE_DIRECT_25_ROW_RETAINED_ACTION_CONSTRAINT_DIFFERENTIAL",
+  "claim_boundary": {
+    "FULL_BHSM_COMPLETE": false,
+    "Gate7": "ACTIVE_ACTION_OWNED_OPERATOR_ORACLE",
+    "Weyl_force_KKT_Hessian": "NOT_CLAIMED",
+    "constraint_accurate_discrete_center_nodes": "MATERIALIZED_CANDIDATE",
+    "continuous_action_constrained_center": "OPEN_SHADOWING_OR_COLLOCATION",
+    "continuous_outward_variational_carrier": "OPEN_AFTER_CENTER",
+    "nonlinear_72D_history_first_jet": "OPEN_AFTER_CARRIER"
+  },
+  "data": "artifacts/flagship_integration/BHSM_N12_GATE7_PROJECTED_NATIVE_DOP853_CENTER_CANDIDATE.npz",
+  "data_SHA256": "7977E5BA9AADC2A04917494261256831289A768A69CA7B7DB7C265FF64E5DF1F",
+  "exact_next_dependency": "BUILD_THE_NATIVE_DOP853_DENSE_POLYNOMIAL_TO_PROJECTED_NODE_DEFECT_AND_CERTIFY_A_CONSTRAINT_AND_DESCRIPTOR_FIBER_PRESERVING_CONTINUOUS_SHADOWING_CENTER_WITH_A_NEW_FIRST_HIT",
+  "inputs": {
+    "artifacts/flagship_integration/BHSM_N12_C2_STOP_HIGH_ORDER_QUARTER_STEP_RETAINED_RECONNAISSANCE.json": "B37A1EE6F2BA9B4D18A352446FAB99326CCD594C5015B7D8FF4DAA2FF7B4ACEA",
+    "artifacts/flagship_integration/BHSM_N12_C2_STOP_HIGH_ORDER_QUARTER_STEP_RETAINED_RECONNAISSANCE.npz": "086C41068B9F3A6C0E5F8040B661202E067D017C909A381010E45FF352498D00",
+    "artifacts/flagship_integration/BHSM_N12_GATE7_EXACT_AFFINE_CENTER_CAUSAL_VECTOR_CERTIFICATE.json": "EBDBE3169AF93ECBC8265F7F57DA7E70038264AE728ABD26CF86DE23B7BF2493",
+    "artifacts/flagship_integration/BHSM_N12_GATE7_WITHIN_SEAM_CONSTRAINT_CENTER_OBSTRUCTION.json": "C279316A09C63DF19492A68F6EAAFB93429F4AA708799D96FF37DC368A45E12A",
+    "scripts/materialize_n12_gate7_projected_native_dop853_center_candidate.py": "3D0AB2515BB4FE8583234D51A34A6045191C4E650B546F1D71934A95326F65CA",
+    "theory/n12_gate7_projected_native_dop853_center_candidate.md": "C68E90776A04B890DA921BFAAF12F7FE91E4371A503CF44FB54475D0C652C751"
+  },
+  "status": "PROJECTED_NATIVE_DOP853_371_NODE_CONSTRAINT_CENTER_CANDIDATE_MATERIALIZED",
+  "summary": {
+    "maximum_action_projection_2_norm": 3.0112768648604145e-09,
+    "maximum_constraint_Gram_condition_number": 52033944.23052678,
+    "maximum_exact_macro_center_radius": 5.771044601368224e-13,
+    "maximum_native_scaled_constraint_2_norm": 7.28285495279037e-11,
+    "maximum_projected_scaled_constraint_2_norm": 7.239486906525122e-16,
+    "maximum_projection_to_exact_macro_radius_ratio": 5217.906068766976,
+    "maximum_reconnaissance_halo_utilization": 0.22477230091215175,
+    "native_action_time_end": 92.30513924040065,
+    "node_count": 371,
+    "reference_reconnaissance_nonlinear_halo": 1.3397010452979786e-08
+  },
+  "validation": {
+    "all_371_retained_nodes_projected": true,
+    "all_projection_quantities_finite": true,
+    "descriptor_fiber_and_first_hit_not_inherited": true,
+    "native_constraint_drift_reproduced": true,
+    "native_stop_descriptor_is_zero": true,
+    "native_times_strictly_increase_to_native_stop": true,
+    "no_action_source_selector_scale_gate_or_chord_changed": true,
+    "one_step_projection_closes_every_node_numerically": true,
+    "projected_nodes_not_relabelled_as_continuous_flow": true,
+    "projection_is_inside_reconnaissance_halo": true,
+    "projection_is_outside_exact_macro_radius_so_not_inherited": true
+  },
+  "validation_passed": true
+}

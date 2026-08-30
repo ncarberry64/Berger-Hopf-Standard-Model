@@ -42,6 +42,14 @@ formula evaluations only.  A constraint-preserving continuous action center,
 its outward carrier, nonlinear 72D history jet, Weyl force, KKT root, and
 Hessian remain unsupported.
 
+Supported as candidate data: one minimum-action-norm Newton projection closes
+all 371 retained native DOP853 nodes to maximum scaled constraint residual
+`7.239486906525122e-16`; its largest correction occupies
+`0.22477230091215175` of the older reconnaissance halo.  Not supported: calling
+those projected nodes a continuous orbit, inheriting `lambda_24(Y)=s`, or
+reusing the old first hit.  Those require a continuous shadowing/collocation
+certificate on the projected dense path.
+
 ## Current public claim boundary
 
 Current public identifier: **continuum event-child and local singular reset
