@@ -1,0 +1,44 @@
+{
+  "schema_version": "1.0",
+  "purpose": "Claim-safe source data for the BHSM README visual suite.",
+  "checkpoints": {
+    "action_expansion": "2559e506",
+    "amplitude_readouts": "59bc42d8",
+    "spectral_forecast": "9e42d839"
+  },
+  "capabilities": {
+    "action_derivatives": [1, 2, 3, 4],
+    "quadratic_descriptor_poles_and_residues": true,
+    "shared_cubic_and_quartic_vertices": true,
+    "tree_amplitude_assembly": true,
+    "two_body_decay_phase_space": true,
+    "two_to_two_collision_phase_space": true,
+    "electromagnetic_F1_F2_projection": true,
+    "interval_spectral_forecast": true,
+    "complete_physical_predictions": false
+  },
+  "promotion": {
+    "gate7_closed": false,
+    "status": "PHYSICAL PROMOTION GATED",
+    "detail": "Pending formal Gate 7 closure; engine capability is not a physical prediction."
+  },
+  "spectral_visualization": {
+    "physical_mass_scale_available": false,
+    "particle_assignments_available": false,
+    "display_mode": "STRUCTURAL_AND_PROVISIONAL",
+    "labels": [
+      "ACTION-DERIVED MODE",
+      "ADMISSIBLE INTERVAL",
+      "SPECTRAL NULL WINDOW",
+      "UNRESOLVED",
+      "KINEMATICALLY CLOSED",
+      "SELECTION-RULE FORBIDDEN"
+    ]
+  },
+  "prohibited_numeric_readouts": [
+    "muon_g_minus_2",
+    "collision_cross_sections",
+    "new_particle_masses",
+    "new_particle_assignments"
+  ]
+}
