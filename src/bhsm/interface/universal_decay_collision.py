@@ -10,6 +10,9 @@ from __future__ import annotations
 
 from dataclasses import dataclass
 import math
+from typing import Callable, Iterable
+
+import numpy as np
 
 
 def kallen(x: float, y: float, z: float) -> float:
@@ -96,9 +99,102 @@ def two_to_two_differential_cross_section(
     return TwoToTwoResult(True, incoming, outgoing, differential)
 
 
+@dataclass(frozen=True)
+class DecayLedgerResult:
+    total_width: float
+    inverse_width_lifetime: float
+    branching_fractions: dict[str, float]
+
+
+def combine_decay_channels(
+    channels: Iterable[tuple[str, TwoBodyDecayResult]],
+) -> DecayLedgerResult:
+    """Combine a complete list of action-derived partial widths.
+
+    The lifetime is returned in inverse units of the supplied width.  A
+    seconds conversion belongs after the universal BHSM scale and physical
+    unit convention are fixed.
+    """
+
+    entries = tuple(channels)
+    names = [name for name, _ in entries]
+    if len(names) != len(set(names)):
+        raise ValueError("duplicate decay-channel id")
+    widths = {name: result.width for name, result in entries}
+    if any(not math.isfinite(width) or width < 0.0 for width in widths.values()):
+        raise ValueError("partial widths must be finite and nonnegative")
+    total = math.fsum(widths.values())
+    branching = (
+        {name: width / total for name, width in widths.items()}
+        if total > 0.0
+        else {name: 0.0 for name in widths}
+    )
+    return DecayLedgerResult(
+        total_width=total,
+        inverse_width_lifetime=math.inf if total == 0.0 else 1.0 / total,
+        branching_fractions=branching,
+    )
+
+
+@dataclass(frozen=True)
+class IntegratedTwoToTwoResult:
+    open_channel: bool
+    total_cross_section: float
+    quadrature_order: int
+    minimum_amplitude_squared: float
+    maximum_amplitude_squared: float
+
+
+def integrate_two_to_two_cross_section(
+    s: float,
+    incoming_masses: tuple[float, float],
+    outgoing_masses: tuple[float, float],
+    amplitude_squared: Callable[[float], float],
+    *,
+    quadrature_order: int = 32,
+    initial_state_average: float = 1.0,
+    identical_final_state_factor: float = 1.0,
+) -> IntegratedTwoToTwoResult:
+    """Integrate an azimuth-symmetric ``2->2`` BHSM amplitude over angle."""
+
+    if quadrature_order < 2:
+        raise ValueError("quadrature order must be at least two")
+    root_s = math.sqrt(s) if s > 0.0 else 0.0
+    if root_s < sum(incoming_masses) or root_s < sum(outgoing_masses):
+        return IntegratedTwoToTwoResult(False, 0.0, quadrature_order, 0.0, 0.0)
+    nodes, weights = np.polynomial.legendre.leggauss(quadrature_order)
+    amplitudes = np.asarray([float(amplitude_squared(float(node))) for node in nodes])
+    if not np.all(np.isfinite(amplitudes)) or np.min(amplitudes) < 0.0:
+        raise ValueError("amplitude-squared function must be finite and nonnegative")
+    differential = np.asarray([
+        two_to_two_differential_cross_section(
+            s,
+            incoming_masses,
+            outgoing_masses,
+            value,
+            initial_state_average=initial_state_average,
+            identical_final_state_factor=identical_final_state_factor,
+        ).differential_cross_section_domega
+        for value in amplitudes
+    ])
+    # dOmega = dphi d(cos(theta)); azimuth symmetry supplies 2*pi.
+    total = float(2.0 * math.pi * np.dot(weights, differential))
+    return IntegratedTwoToTwoResult(
+        open_channel=True,
+        total_cross_section=total,
+        quadrature_order=quadrature_order,
+        minimum_amplitude_squared=float(np.min(amplitudes)),
+        maximum_amplitude_squared=float(np.max(amplitudes)),
+    )
+
+
 __all__ = [
+    "DecayLedgerResult",
+    "IntegratedTwoToTwoResult",
     "TwoBodyDecayResult",
     "TwoToTwoResult",
+    "combine_decay_channels",
+    "integrate_two_to_two_cross_section",
     "kallen",
     "two_body_decay_width",
     "two_to_two_differential_cross_section",
