@@ -180,6 +180,19 @@ required engines, one action/background/scale provenance, and promoted frozen
 prediction classes.  It contains no measured values and does not materialize
 or promote any current BHSM benchmark output.
 
+The universal decay/collision layer now includes recursive Lorentz-invariant
+`1 -> n` phase space with explicit daughter four-momentum reconstruction and a
+coupled-channel Legendre partial-wave interface with complete-ledger unitarity
+and incomplete-subspace diagnostics.  These remove API-level coverage gaps;
+they do not supply the open action-owned spectrum, channel inventory,
+renormalized amplitudes, or outward numerical error needed for promotion.
+
+The quadratic/loop bridge now also has an inverse-free bordered dressed-pole
+solver.  It reports complex pole position, mass/width, left/right modes, and
+residue while enforcing simplicity, causal sign, complete same-action
+self-energy, and Gate-7 conditions.  No current physical pole satisfies those
+promotion inputs.
+
 The current physical theory tuple is `BHSM-AE-2.0.0`.  It retains the v7.x
 stratified bulk/boundary functor, v14-v17 eta/Aether action lineage, v7.2
 common observable transport, and frozen comparison firewall, while replacing

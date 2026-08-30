@@ -167,6 +167,17 @@ explicit cross-sector manifest for exact mode/observable coverage, required
 engines, one action/background/scale, and promoted frozen predictions. No
 physical benchmark output is currently materialized or promoted.
 
+Decay/collision infrastructure now includes recursive Lorentz-invariant
+multi-body phase space with reconstructed daughter four-momenta and an
+explicit coupled-channel partial-wave/unitarity diagnostic. These remain
+gated readout capabilities: no physical width, cross section, or unitarity
+claim exists without the frozen action-owned spectrum and amplitudes.
+
+The quadratic/loop interface also includes inverse-free bordered tracking of
+complex dressed poles and residues, with simplicity, causal-width, complete
+self-energy-ledger, and Gate-7 guards. It does not instantiate a physical pole
+from the current incomplete action/background.
+
 `FULL_BHSM_COMPLETE = FALSE`
 
 Historical compatibility: the v18.73 rolling checkpoint records corrected-Rayleigh descent of the 376-variable system, complete-child reconstruction, eta admissibility, and persistence at residual `0.777030406838571`. Earlier v11.1 and v15.10 surfaces remain historical rather than current authority. The historical v15.10 exact-next-object token is

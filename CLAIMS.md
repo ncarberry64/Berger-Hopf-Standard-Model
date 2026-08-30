@@ -66,6 +66,17 @@ consistency, required engines, and promoted frozen-prediction classes.
 Not supported: claiming any benchmark value from that evaluator; no physical
 benchmark prediction is currently materialized.
 
+Supported as gated readout infrastructure: deterministic recursive
+multi-body decay phase space, reconstructed daughter four-momenta,
+coupled-channel partial-wave projection, and explicit unitarity diagnostics.
+Not supported: any physical decay, scattering, or unitarity result absent a
+complete same-action spectrum, channel ledger, and renormalized amplitudes.
+
+Supported as gated pole infrastructure: inverse-free bordered nonlinear
+tracking of a supplied complete renormalized two-point symbol, including
+complex mass/width and residue diagnostics. Not supported: a current physical
+dressed pole or width; the same-action self-energy ledger and Gate 7 are open.
+
 The complete 72-direction affine-carrier path and first-hit coefficient jet
 are materialized but are not the missing nonlinear oracle.  The available
 causal transfer bound is noncontractive and gives terminal uncertainty larger

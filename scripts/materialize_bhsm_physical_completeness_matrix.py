@@ -43,6 +43,8 @@ ENGINE_PATHS = {
     "release_reconciliation": "src/bhsm/interface/universal_release_reconciliation.py",
     "external_state_sum": "src/bhsm/interface/universal_external_state_sum.py",
     "benchmark_suite": "src/bhsm/interface/universal_benchmark_suite.py",
+    "partial_wave": "src/bhsm/interface/universal_partial_wave.py",
+    "dressed_pole": "src/bhsm/interface/universal_dressed_pole.py",
 }
 
 ENGINE_TEST_PATHS = {
@@ -66,6 +68,8 @@ ENGINE_TEST_PATHS = {
     "release_reconciliation": "tests/test_universal_release_reconciliation.py",
     "external_state_sum": "tests/test_universal_external_state_sum.py",
     "benchmark_suite": "tests/test_universal_benchmark_suite.py",
+    "partial_wave": "tests/test_universal_partial_wave.py",
+    "dressed_pole": "tests/test_universal_dressed_pole.py",
 }
 
 IMPLEMENTATION_STATUSES = (
@@ -75,7 +79,7 @@ IMPLEMENTATION_STATUSES = (
     "IMPLEMENTED_PROMOTABLE",
 )
 
-ENGINE_VERIFIED_COMMIT = "c000841f78377a16a3d51ca66d1fc3133d3b85f1"
+ENGINE_VERIFIED_COMMIT = "1f6908ebc8c76af409d10d6f36bbce6373215cd2"
 
 IMPLEMENTATION_STATUS_BY_ID = {
     "GATE7_PHYSICAL_BACKGROUND": "NOT_IMPLEMENTED",
@@ -249,10 +253,10 @@ def build_payload() -> dict[str, Any]:
         _record(
             "UNIVERSAL_QUADRATIC_SPECTRUM_AND_PROPAGATORS",
             "ACTION_OWNED_POLES_RESIDUES_AND_GAUGE_FIXED_PROPAGATORS",
-            "GENERAL_DESCRIPTOR_ALGEBRA_IMPLEMENTED_GATED",
-            ("quadratic_spectrum", "brst_quotient", "momentum_map"),
-            ("inverse-free generalized eigenproblem", "simple-pole residue algebra", "explicit constraint/gauge nullspace quotient", "Faddeev-Popov regularity check", "guarded background-derived momentum map"),
-            ("frozen history S2 pencil", "action-owned constraint/gauge generators and gauge condition", "frozen-background momentum-map instance", "physical scale instance"),
+            "GENERAL_DESCRIPTOR_AND_DRESSED_POLE_ALGEBRA_IMPLEMENTED_GATED",
+            ("quadratic_spectrum", "brst_quotient", "momentum_map", "dressed_pole"),
+            ("inverse-free generalized eigenproblem", "simple-pole residue algebra", "inverse-free bordered nonlinear dressed-pole tracking", "complex mass/width and left/right residue readout", "simplicity and causal-pole diagnostics", "explicit constraint/gauge nullspace quotient", "Faddeev-Popov regularity check", "guarded background-derived momentum map"),
+            ("frozen history S2 pencil", "complete same-action self-energy ledger", "action-owned constraint/gauge generators and gauge condition", "frozen-background momentum-map instance", "physical scale instance"),
         ),
         _record(
             "UNIVERSAL_CUBIC_AND_QUARTIC_VERTEX_GENERATOR",
@@ -290,8 +294,8 @@ def build_payload() -> dict[str, Any]:
             "RENORMALIZATION_AND_LOOP_COMPLETION",
             "FINITE_ACTION_OWNED_LOOP_VERTICES_WITH_WARD_SLAVNOV_TAYLOR_CLOSURE",
             "REGULATED_LEDGER_AND_PROMOTION_GATES_IMPLEMENTED",
-            ("loop_renormalization", "rg_flow"),
-            ("Laurent ledger", "counterterm/ghost/Jacobian categories", "Ward residual checks", "observable-fit rejection", "joint same-action full-parameter RG transport", "RG invariant residual monitoring"),
+            ("loop_renormalization", "rg_flow", "dressed_pole"),
+            ("Laurent ledger", "counterterm/ghost/Jacobian categories", "Ward residual checks", "observable-fit rejection", "joint same-action full-parameter RG transport", "RG invariant residual monitoring", "complete-ledger and Gate7 guarded dressed-pole consumer"),
             ("complete action-owned diagram ledger", "complete counterterm ledger", "sector Ward identities", "finite observable extraction"),
         ),
         _record(
@@ -313,18 +317,18 @@ def build_payload() -> dict[str, Any]:
         _record(
             "PARTICLE_STABILITY_AND_DECAYS",
             "COMPLETE_CHANNEL_SELECTION_PARTIAL_WIDTH_TOTAL_WIDTH_AND_LIFETIME_REGISTRY",
-            "TWO_AND_THREE_BODY_READOUT_AND_INTERVAL_STABILITY_ALGEBRA_IMPLEMENTED_GATED",
+            "TWO_THREE_AND_RECURSIVE_MULTI_BODY_READOUT_AND_INTERVAL_STABILITY_ALGEBRA_IMPLEMENTED_GATED",
             ("decay_collision", "spectral_forecast", "lsz", "vertex_amplitude", "external_state_sum"),
-            ("two-body phase space", "deterministic three-body invariant/helicity-angle phase space", "physical-quotient outgoing sums and incoming density-matrix averages", "channel aggregation", "complete-ledger stability criterion"),
-            ("physical mode spectrum", "complete action-owned channel enumeration", "renormalized amplitudes", "four-or-more-body channels", "physical unit map"),
+            ("two-body phase space", "deterministic three-body invariant/helicity-angle phase space", "deterministic recursive Lorentz-invariant multi-body phase space with reconstructed four-momenta", "physical-quotient outgoing sums and incoming density-matrix averages", "channel aggregation", "complete-ledger stability criterion"),
+            ("physical mode spectrum", "complete action-owned channel enumeration", "renormalized amplitudes", "outward multi-body quadrature error where required", "physical unit map"),
         ),
         _record(
             "COLLISION_AND_SCATTERING_PREDICTION",
             "ACTION_OWNED_LSZ_AMPLITUDES_AND_CROSS_SECTIONS_FOR_REQUIRED_BENCHMARKS",
-            "TREE_AND_TWO_TO_TWO_READOUT_ALGEBRA_IMPLEMENTED_GATED",
-            ("vertex_amplitude", "lsz", "decay_collision", "loop_renormalization", "momentum_map", "external_state_sum"),
-            ("tree contact-plus-exchange algebra", "complete s/t/u assembly without quartic double counting", "physical-quotient outgoing sums and incoming density-matrix averages", "two-to-two phase space and angular quadrature", "guarded Mandelstam invariant map"),
-            ("physical external modes", "renormalized complete amplitudes", "benchmark kinematics", "hadronic bridge where required"),
+            "TREE_TWO_TO_TWO_AND_COUPLED_PARTIAL_WAVE_READOUT_ALGEBRA_IMPLEMENTED_GATED",
+            ("vertex_amplitude", "lsz", "decay_collision", "loop_renormalization", "momentum_map", "external_state_sum", "partial_wave"),
+            ("tree contact-plus-exchange algebra", "complete s/t/u assembly without quartic double counting", "physical-quotient outgoing sums and incoming density-matrix averages", "two-to-two phase space and angular quadrature", "guarded Mandelstam invariant map", "coupled-channel Legendre partial-wave projection", "complete-ledger unitarity and incomplete-subspace absorption/excess diagnostics"),
+            ("physical external modes", "renormalized complete amplitudes", "complete open-channel unitarity ledger", "benchmark kinematics", "hadronic bridge where required"),
         ),
         _record(
             "LEPTON_MAGNETIC_MOMENTS",
@@ -338,8 +342,8 @@ def build_payload() -> dict[str, Any]:
             "NEW_PARTICLE_SPECTRAL_ENCLOSURES",
             "FROZEN_MODE_INTERVALS_OR_EXCLUSIONS_WITH_QUANTUM_NUMBERS_AND_DECAYS",
             "INTERVAL_FORECAST_ALGEBRA_IMPLEMENTED_GATED",
-            ("spectral_forecast", "quadratic_spectrum", "decay_collision"),
-            ("declared-domain spectral exclusion", "interval decay-channel classification"),
+            ("spectral_forecast", "quadratic_spectrum", "dressed_pole", "decay_collision"),
+            ("declared-domain spectral exclusion", "inverse-free complex dressed-pole mass/width readout", "interval decay-channel classification"),
             ("complete physical spectrum enclosure", "physical scale", "complete decay ledger", "pre-comparison frozen forecast artifact"),
         ),
         _record(

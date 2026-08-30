@@ -116,6 +116,19 @@ mode/observable predictions, provisional classifications, inconsistent
 action/background/scale provenance, or absent required engines.  The current
 repository still has no materialized physical benchmark prediction.
 
+The decay readout now covers deterministic recursive `1 -> n` phase space,
+including four-momentum reconstruction for correlated amplitudes; outward
+quadrature error remains open where promotion requires it.  Collision readout
+now also has coupled-channel partial-wave projection and complete/incomplete
+unitarity diagnostics.  Neither capability supplies a physical channel ledger
+or action-owned amplitude by itself.
+
+An inverse-free bordered nonlinear eigenpair solver now tracks complex dressed
+poles, left/right modes, masses, widths, and residues from a supplied complete
+same-action inverse two-point symbol.  Its explicit Gate-7, simplicity,
+causality, and self-energy-ledger guards remain unsatisfied by the current
+physical inputs.
+
 This file is the current area-level status source. Detailed sprint records are
 evidence, not competing public status pages.
 
