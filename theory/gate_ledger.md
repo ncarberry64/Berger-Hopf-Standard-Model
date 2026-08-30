@@ -2853,17 +2853,18 @@ Exact next object:
   `5216.733` times the certified macro-center radius.  The current owner is a
   direct constraint-preserving normalized-action center, followed by its
   continuous outward variational carrier.
-- A one-step minimum-action-norm Newton projection now materializes all 371
-  retained native DOP853 nodes as a discrete constraint-accurate candidate.
-  Maximum scaled residual is `7.239486906525122e-16`; maximum correction is
-  `3.0112768648604145e-9`, using `0.22477230091215175` of the older
-  reconnaissance halo.  This does not establish a continuous orbit, preserve
-  the propagated descriptor fiber, or inherit the prior first hit.  The next
-  owner is projected-dense-path shadowing/collocation with a new stop solve.
-- Direct retained-action evaluation at all 370 projected dense midpoints keeps
-  scaled constraint residual below `1.195622995138146e-14` and branch-24 gap
-  above `1.7343209425225278e-7`, but the augmented flow defect reaches
-  `1.4049769146208235e-5` at cell 315.  The descriptor-rate defect is only
-  `1.4012683173144428e-14`; thus the active continuous-center owner is the 98D
-  state collocation correction with constraint/fiber rows, not another
-  constraint projection.
+- The current discrete candidate first composes the certified Taylor26 signed
+  response with the retained dense center and only then applies a one-step
+  minimum-action-norm constraint projection to all 371 fine nodes.  Maximum
+  scaled residual is `1.1679676438539284e-15`; maximum projection is
+  `3.010903976408097e-9`, or `2420.394771963047` times the inherited final
+  nonlinear radius.  The native-only projection and old final cone/first hit
+  are superseded.  This does not establish a continuous orbit or preserve the
+  propagated descriptor fiber.
+- Direct retained-action evaluation at all 370 corrected dense midpoints keeps
+  scaled constraint residual below `8.528596684108791e-15` and branch-24 gap
+  above `1.73432052961185e-7`, but the augmented flow defect reaches
+  `1.0913491285675919e-5` at cell 283.  The descriptor-rate defect is at most
+  `1.052323869871445e-14`; thus the active continuous-center owner is the 98D
+  state collocation correction with constraint/fiber rows, followed by a
+  rebuilt cone and first hit.
