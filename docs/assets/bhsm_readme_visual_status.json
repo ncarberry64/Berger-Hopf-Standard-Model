@@ -1,0 +1,61 @@
+{
+  "schema_version": "1.0",
+  "purpose": "Claim-safe source data for the BHSM README visual suite.",
+  "checkpoints": {
+    "action_expansion": "2559e506",
+    "amplitude_readouts": "59bc42d8",
+    "spectral_forecast": "9e42d839",
+    "loop_renormalization": "8c9b6658",
+    "universal_gf_scale": "9a1c80f0",
+    "retained_n12_action_binding": "2b0aeb26",
+    "inverse_free_lsz": "f6576fdd",
+    "complete_two_body_readouts": "a3452073",
+    "prediction_firewall": "bcf1b412",
+    "retained_sm_component_matching": "7c0b6a85",
+    "sm_gauge_vertex_tensors": "2a07cfc5",
+    "physical_gauge_coupling_guard": "cf078ac0"
+  },
+  "capabilities": {
+    "action_derivatives": [1, 2, 3, 4],
+    "quadratic_descriptor_poles_and_residues": true,
+    "shared_cubic_and_quartic_vertices": true,
+    "tree_amplitude_assembly": true,
+    "two_body_decay_phase_space": true,
+    "two_to_two_collision_phase_space": true,
+    "electromagnetic_F1_F2_projection": true,
+    "interval_spectral_forecast": true,
+    "same_action_loop_renormalization_ledger": true,
+    "universal_gf_scale_map": true,
+    "retained_n12_local_action_binding": true,
+    "inverse_free_lsz_normalization": true,
+    "immutable_prediction_firewall": true,
+    "retained_sm_component_matching": true,
+    "action_derived_sm_gauge_vertex_tensors": true,
+    "physical_gauge_coupling_normalization_guard": true,
+    "complete_physical_predictions": false
+  },
+  "promotion": {
+    "gate7_closed": false,
+    "status": "PHYSICAL PROMOTION GATED",
+    "detail": "Pending formal Gate 7 closure; engine capability is not a physical prediction."
+  },
+  "spectral_visualization": {
+    "physical_mass_scale_available": false,
+    "particle_assignments_available": false,
+    "display_mode": "STRUCTURAL_AND_PROVISIONAL",
+    "labels": [
+      "ACTION-DERIVED MODE",
+      "ADMISSIBLE INTERVAL",
+      "SPECTRAL NULL WINDOW",
+      "UNRESOLVED",
+      "KINEMATICALLY CLOSED",
+      "SELECTION-RULE FORBIDDEN"
+    ]
+  },
+  "prohibited_numeric_readouts": [
+    "muon_g_minus_2",
+    "collision_cross_sections",
+    "new_particle_masses",
+    "new_particle_assignments"
+  ]
+}
