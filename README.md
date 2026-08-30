@@ -27,7 +27,9 @@ form, and full 72-direction geometry/reset first jet needed to evaluate the
 already-derived heat-minus-zeta force and KKT system.  The complete affine
 72D candidate is materialized, but its nonlinear Volterra transfer is
 noncontractive (`2.9106286494031597`) and is not operator authority; the
-current construction owner is the direct exact-center variational carrier.
+direct exact-center constraint frames and normalized-field Jacobians are now
+materialized on all 48 macro nodes.  The current construction owner is their
+refined continuous outward variational carrier.
 Gate 7 remains
 `ACTIVE`; `FULL_BHSM_COMPLETE = FALSE`.  Physical completion additionally
 requires universal spectrum/propagator, vertex, decay, loop/magnetic-moment,

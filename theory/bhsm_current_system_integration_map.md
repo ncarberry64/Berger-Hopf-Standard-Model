@@ -29,6 +29,14 @@ transfer has contraction upper `2.9106286494031597` and terminal error-to-jet
 ratio `1.5634079697562602`, so it is rejected.  The current operator owner is
 therefore a direct exact-center variational carrier.
 
+The direct rebuild now supplies the corrected 25-row constraint nullspaces,
+aligned 73D physical frames, and normalized-field first derivatives on every
+one of the 48 macro nodes.  The smallest retained-frame alignment singular
+value is `0.9999999999999986`; the largest physical generator norm is
+`109.95791441392815`.  These are discrete center data.  The exact remaining
+carrier owner is refined within-seam evaluation plus an outward continuous
+remainder enclosure.
+
 The current physical theory tuple is `BHSM-AE-2.0.0`.  It retains the v7.x
 stratified bulk/boundary functor, v14-v17 eta/Aether action lineage, v7.2
 common observable transport, and frozen comparison firewall, while replacing

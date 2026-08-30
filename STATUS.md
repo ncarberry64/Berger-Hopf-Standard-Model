@@ -24,8 +24,9 @@ full 72-direction geometry/reset first jet; then evaluate the existing
 heat-minus-zeta force and same-action KKT system.  The affine 72D history,
 duration, first-hit, and `log R4` jets now exist, but the retained nonlinear
 transfer bound has contraction `2.9106286494031597 > 1` and is rejected.  A
-direct exact-center variational carrier is therefore the active owner.  Gate
-7 remains `ACTIVE`;
+direct exact-center rebuild now supplies all 48 corrected constraint frames
+and `73 x 73` normalized-field generators; the active owner is their refined
+within-seam outward variational carrier.  Gate 7 remains `ACTIVE`;
 `FULL_BHSM_COMPLETE = FALSE`.  Universal physical prediction engines remain
 open downstream.
 

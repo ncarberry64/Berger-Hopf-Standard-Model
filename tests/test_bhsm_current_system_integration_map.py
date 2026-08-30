@@ -69,6 +69,9 @@ def test_canonical_system_and_required_subsystems() -> None:
         "complete_affine_72d_history_jet_is_materialized_but_not_promoted"
     ] is True
     assert payload["validation"][
+        "direct_exact_center_physical_field_jacobian_is_materialized"
+    ] is True
+    assert payload["validation"][
         "physical_completeness_matrix_is_required_and_open"
     ] is True
     assert payload["validation"][

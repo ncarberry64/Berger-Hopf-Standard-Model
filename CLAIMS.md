@@ -26,6 +26,12 @@ than the affine Jacobi norm, so using that affine jet as the force authority
 is explicitly unsupported.  The required replacement is a direct
 exact-center variational carrier.
 
+The direct exact-center 25-row constraint frames and normalized-field first
+derivatives are materialized at all 48 macro nodes.  This supports a center
+generator data claim only.  A continuous outward propagator, nonlinear 72D
+history jet, Weyl force, KKT root, and Hessian remain unsupported until the
+within-seam carrier remainder closes.
+
 ## Current public claim boundary
 
 Current public identifier: **continuum event-child and local singular reset

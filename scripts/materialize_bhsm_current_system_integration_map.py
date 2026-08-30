@@ -71,6 +71,7 @@ PATHS = {
     "exact_affine_stop_transversality": "artifacts/flagship_integration/BHSM_N12_GATE7_EXACT_AFFINE_TERMINAL_STOP_TRANSVERSALITY.json",
     "exact_affine_72d_history_jet": "artifacts/flagship_integration/BHSM_N12_GATE7_EXACT_AFFINE_72D_HISTORY_FIRST_JET.json",
     "affine_72d_nonlinear_transfer": "artifacts/flagship_integration/BHSM_N12_GATE7_AFFINE_72D_NONLINEAR_TRANSFER_AUDIT.json",
+    "exact_center_field_jacobian": "artifacts/flagship_integration/BHSM_N12_GATE7_EXACT_CENTER_PHYSICAL_FIELD_JACOBIAN.json",
     "final_force_kkt_verdict": "artifacts/flagship_integration/BHSM_N12_GATE7_FINAL_EXACT_CENTER_FORCE_KKT_HESSIAN_VERDICT.json",
     "causal_y_z1_z2_margin_budget": "artifacts/flagship_integration/BHSM_N12_GATE7_CAUSAL_Y_Z1_Z2_MARGIN_BUDGET_AUDIT.json",
     "recentered_cone_spectrum": "artifacts/flagship_integration/BHSM_N12_GATE7_RECENTERED_CONE_BOUNDARY_CLUSTER_SPECTRUM.json",
@@ -197,6 +198,7 @@ def build_payload() -> dict[str, Any]:
     ]
     exact_affine_72d_history_jet = records["exact_affine_72d_history_jet"]
     affine_72d_nonlinear_transfer = records["affine_72d_nonlinear_transfer"]
+    exact_center_field_jacobian = records["exact_center_field_jacobian"]
     causal_y_z1_z2_margin_budget = records["causal_y_z1_z2_margin_budget"]
     compact_reset_propagation = records["compact_reset_propagation"]
     compact_reset_open_subball = records["compact_reset_open_subball"]
@@ -371,7 +373,7 @@ def build_payload() -> dict[str, Any]:
         {"id": "G7_CORRELATED_QUARTER_STEP_CENTER_STOP_WITNESS", "classification": "RESOLVED_BY_EXACT_TRANSVERSE_FIRST_STOP", "current_effect": "the final exact-center cone, response, causal Z2, strict preterminal selected-eigenvalue margins, canonical earliest stop, uniform negative flow derivative, terminal-cell uniqueness, and local differentiable first-stop time are certified"},
         {"id": "G7_DECORRELATED_BINARY64_CARRIER_COMPOSITION", "classification": "INVALIDATED_PROOF_ROUTE", "current_effect": "independent binary64 component balls produce wrapping blowup and are presentation data only; correlated outward Arb interval strings own global composition"},
         {"id": "G7_OLD_GAUSS12_RECENTERED_NUMERICAL_CONE_TRANSFER", "classification": "INVALIDATED_PROOF_ROUTE", "current_effect": "the old Gauss12 center differs from the exact-affine center by 120901.05128628464 candidate-cone radii; retain its theorem formulas but rebuild the numerical Z2/cone ball at the final center"},
-        {"id": "G7_COMPLETE_JOINT_FORCE_ROOT", "classification": "CURRENT_BLOCKER", "current_effect": "build a direct exact-center 72-direction variational carrier because the materialized affine jet has a noncontractive nonlinear transfer; then assemble the Weyl-Calderon oracle, projected heat-minus-zeta force, KKT root, and physical Hessian"},
+        {"id": "G7_COMPLETE_JOINT_FORCE_ROOT", "classification": "CURRENT_BLOCKER", "current_effect": "the 48 direct exact-center physical field Jacobians are materialized; build their refined within-seam outward variational carrier, then assemble the nonlinear 72D history jet, Weyl-Calderon oracle, projected heat-minus-zeta force, KKT root, and physical Hessian"},
         {"id": "DECORRELATED_SCALAR_SECOND_VARIATION", "classification": "INVALIDATED_PROOF_ROUTE", "current_effect": "finite first variation survives; all 8,692 scalar denominator cells route to signed/common-frame correlation"},
         {"id": "G7_HESSIAN_WARD_SCALAR", "classification": "DOWNSTREAM_ONLY", "current_effect": "follows the force/KKT root"},
         {"id": "CKM_PMNS_PHYSICAL_EIGENBASES", "classification": "DOWNSTREAM_ONLY", "current_effect": "follows Gate 7 and sector response"},
@@ -683,6 +685,14 @@ def build_payload() -> dict[str, Any]:
             and affine_72d_nonlinear_transfer["summary"][
                 "maximum_causal_contraction_factor_upper"
             ] > 1.0
+        ),
+        "direct_exact_center_physical_field_jacobian_is_materialized": (
+            exact_center_field_jacobian["validation_passed"] is True
+            and exact_center_field_jacobian["summary"]["node_count"] == 48
+            and exact_center_field_jacobian["summary"]["physical_dimension"] == 73
+            and exact_center_field_jacobian["claim_boundary"][
+                "continuous_outward_variational_carrier"
+            ] == "OPEN"
         ),
         "quarter_green_corrected_carrier_is_certified": (
             recentered_cone_spectrum["validation_passed"] is True
