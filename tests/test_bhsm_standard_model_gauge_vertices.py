@@ -3,6 +3,8 @@ import pytest
 
 from bhsm.interface.bhsm_standard_model_gauge_vertices import (
     ActionGaugeCoupling,
+    GaugeKineticResidue,
+    derive_action_gauge_coupling,
     fermion_gauge_vertex,
     multiplet_generators,
     structure_constants,
@@ -61,3 +63,32 @@ def test_non_action_owned_coupling_is_rejected() -> None:
             provenance=("external fit",),
             derived_from_retained_local_form_factor=False,
         )
+
+
+def test_local_lorentzian_kinetic_residue_sets_coupling_without_fit() -> None:
+    result = derive_action_gauge_coupling(GaugeKineticResidue(
+        group="SU2",
+        electric=4.0,
+        magnetic=4.0,
+        action_version="BHSM-TEST",
+        background_id="background",
+        local_form_factor_id="local-limit",
+        provenance=("same-action quadratic response",),
+        local_zero_momentum_limit_derived=True,
+    ))
+    assert result.value == 0.5
+
+
+def test_nonlocal_or_non_lorentzian_response_cannot_be_called_a_coupling() -> None:
+    residue = GaugeKineticResidue(
+        group="SU3",
+        electric=2514.17,
+        magnetic=813.03,
+        action_version="BHSM-TEST",
+        background_id="historical-cycle",
+        local_form_factor_id="nonlocal-DtN",
+        provenance=("retained response seed",),
+        local_zero_momentum_limit_derived=False,
+    )
+    with pytest.raises(RuntimeError, match="nonlocal DtN"):
+        derive_action_gauge_coupling(residue)

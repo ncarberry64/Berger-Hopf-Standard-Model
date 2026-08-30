@@ -114,6 +114,53 @@ class ActionGaugeCoupling:
             raise ValueError("gauge-coupling provenance is required")
 
 
+@dataclass(frozen=True)
+class GaugeKineticResidue:
+    group: str
+    electric: float
+    magnetic: float
+    action_version: str
+    background_id: str
+    local_form_factor_id: str
+    provenance: tuple[str, ...]
+    local_zero_momentum_limit_derived: bool
+    normalization_convention: str = "Gamma_contains_(K/4)*F_squared"
+
+    def __post_init__(self) -> None:
+        if self.group not in {"SU3", "SU2", "U1"}:
+            raise ValueError("unknown gauge group")
+        if min(self.electric, self.magnetic) <= 0.0:
+            raise ValueError("gauge kinetic residues must be positive")
+        if not np.isfinite(self.electric) or not np.isfinite(self.magnetic):
+            raise ValueError("gauge kinetic residues must be finite")
+
+
+def derive_action_gauge_coupling(
+    residue: GaugeKineticResidue,
+    *,
+    lorentz_tolerance: float = 1.0e-10,
+) -> ActionGaugeCoupling:
+    """Canonicalize ``(K/4)F^2`` only after the physical local limit exists."""
+
+    if not residue.local_zero_momentum_limit_derived:
+        raise RuntimeError("nonlocal DtN response is not a local gauge coupling")
+    relative_mismatch = abs(residue.electric - residue.magnetic) / max(
+        residue.electric, residue.magnetic,
+    )
+    if relative_mismatch > lorentz_tolerance:
+        raise RuntimeError("electric and magnetic residues do not define one Lorentzian K")
+    kinetic = 0.5 * (residue.electric + residue.magnetic)
+    return ActionGaugeCoupling(
+        group=residue.group,
+        value=float(1.0 / np.sqrt(kinetic)),
+        action_version=residue.action_version,
+        background_id=residue.background_id,
+        local_form_factor_id=residue.local_form_factor_id,
+        provenance=residue.provenance,
+        derived_from_retained_local_form_factor=True,
+    )
+
+
 def fermion_gauge_vertex(
     multiplet_name: str,
     coupling: ActionGaugeCoupling,
@@ -138,6 +185,8 @@ def three_gauge_vertex_color_tensor(coupling: ActionGaugeCoupling) -> Array:
 
 __all__ = [
     "ActionGaugeCoupling",
+    "GaugeKineticResidue",
+    "derive_action_gauge_coupling",
     "fermion_gauge_vertex",
     "multiplet_generators",
     "structure_constants",
