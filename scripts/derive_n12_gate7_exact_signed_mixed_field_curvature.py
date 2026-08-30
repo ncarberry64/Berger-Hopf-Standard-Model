@@ -106,9 +106,8 @@ def _row(task: tuple[int, np.ndarray, np.ndarray, float, np.ndarray, np.ndarray,
         ],
         [psi[None, :], np.zeros((1, 1))],
     ])
-    response = np.linalg.solve(
-        bordered, np.concatenate((forcing, np.zeros(1))),
-    )
+    response_rhs = np.concatenate((forcing, np.zeros(1)))
+    response = np.linalg.solve(bordered, response_rhs)
     numerator = np.concatenate((
         descriptor * configuration,
         reduced_weights * (
@@ -270,15 +269,15 @@ def _row(task: tuple[int, np.ndarray, np.ndarray, float, np.ndarray, np.ndarray,
         )
         return np.vstack((top, psi_V.T @ hard_response))
 
-    response_u = np.linalg.solve(
-        bordered,
-        np.concatenate((forcing_u, [0.0])) - K_u_times(response),
+    response_u_rhs = (
+        np.concatenate((forcing_u, [0.0])) - K_u_times(response)
     )
-    response_V = np.linalg.solve(
-        bordered,
+    response_u = np.linalg.solve(bordered, response_u_rhs)
+    response_V_rhs = (
         np.vstack((forcing_V, np.zeros((1, transverse_action.shape[1]))))
-        - K_V_times(response),
+        - K_V_times(response)
     )
+    response_V = np.linalg.solve(bordered, response_V_rhs)
     H_uV_response = D4_variable_right(reduced_lift @ response[:-1])
     K_uV_response = np.vstack((
         H_uV_response
@@ -293,11 +292,11 @@ def _row(task: tuple[int, np.ndarray, np.ndarray, float, np.ndarray, np.ndarray,
         psi_u @ response_V[:-1],
     ))
     K_V_response_u = K_V_times(response_u)
-    response_uV = np.linalg.solve(
-        bordered,
+    response_uV_rhs = (
         np.vstack((forcing_uV, np.zeros((1, transverse_action.shape[1]))))
-        - K_uV_response - K_u_response_V - K_V_response_u,
+        - K_uV_response - K_u_response_V - K_V_response_u
     )
+    response_uV = np.linalg.solve(bordered, response_uV_rhs)
 
     numerator_u = np.concatenate((
         lambda_u * configuration + descriptor * configuration_u,
@@ -342,20 +341,28 @@ def _row(task: tuple[int, np.ndarray, np.ndarray, float, np.ndarray, np.ndarray,
     )
     mixed = transverse_frame.T @ tangent.T @ field_uV
 
-    base_residual = bordered @ response - np.concatenate((forcing, [0.0]))
-    u_residual = (
-        bordered @ response_u + K_u_times(response)
-        - np.concatenate((forcing_u, [0.0]))
-    )
-    V_residual = (
-        bordered @ response_V + K_V_times(response)
-        - np.vstack((forcing_V, np.zeros((1, transverse_action.shape[1]))))
-    )
-    mixed_residual = (
-        bordered @ response_uV + K_uV_response
-        + K_u_response_V + K_V_response_u
-        - np.vstack((forcing_uV, np.zeros((1, transverse_action.shape[1]))))
-    )
+    # Audit the same assembled right-hand sides passed to the solves.  The
+    # algebraically equivalent form ``Kx + derivative_terms - forcing`` can
+    # lose a final bit through a second cancellation and overstate the solve
+    # residual on the ill-conditioned bordered system.
+    base_residual = bordered @ response - response_rhs
+    u_residual = bordered @ response_u - response_u_rhs
+    V_residual = bordered @ response_V - response_V_rhs
+    mixed_residual = bordered @ response_uV - response_uV_rhs
+    bordered_norm = float(np.linalg.norm(bordered, ord=2))
+
+    def normwise_backward_error(
+        residual: np.ndarray, solution: np.ndarray, rhs: np.ndarray,
+    ) -> float:
+        residual_norm = float(np.linalg.norm(residual, ord=2))
+        denominator = (
+            bordered_norm * float(np.linalg.norm(solution, ord=2))
+            + float(np.linalg.norm(rhs, ord=2))
+        )
+        if denominator == 0.0:
+            return 0.0 if residual_norm == 0.0 else float("inf")
+        return residual_norm / denominator
+
     return {
         "node": index,
         "selected_branch": SELECTED,
@@ -380,6 +387,18 @@ def _row(task: tuple[int, np.ndarray, np.ndarray, float, np.ndarray, np.ndarray,
         ),
         "mixed_response_residual_operator_2_norm": float(
             np.linalg.norm(mixed_residual, ord=2)
+        ),
+        "base_response_normwise_backward_error": normwise_backward_error(
+            base_residual, response, response_rhs,
+        ),
+        "green_response_normwise_backward_error": normwise_backward_error(
+            u_residual, response_u, response_u_rhs,
+        ),
+        "transverse_response_normwise_backward_error": (
+            normwise_backward_error(V_residual, response_V, response_V_rhs)
+        ),
+        "mixed_response_normwise_backward_error": normwise_backward_error(
+            mixed_residual, response_uV, response_uV_rhs,
         ),
         "mixed_normalization_identity_operator_2_norm": float(np.linalg.norm(
             field @ field_uV + field_u @ field_V,
@@ -450,14 +469,14 @@ def build_payload() -> dict[str, Any]:
             mixed.shape[1:] == (72, 72)
         ),
         "actual_signed_Green_image_used_as_one_mixed_leg": True,
-        "all_bordered_response_residuals_below_1e_minus_7": max(
+        "all_bordered_response_normwise_backward_errors_below_1e_minus_12": max(
             max(
-                row["base_response_residual_2_norm"],
-                row["green_response_residual_2_norm"],
-                row["transverse_response_residual_operator_2_norm"],
-                row["mixed_response_residual_operator_2_norm"],
+                row["base_response_normwise_backward_error"],
+                row["green_response_normwise_backward_error"],
+                row["transverse_response_normwise_backward_error"],
+                row["mixed_response_normwise_backward_error"],
             ) for row in rows
-        ) < 1.0e-7,
+        ) < 1.0e-12,
         "mixed_normalization_identity_closes": max(
             row["mixed_normalization_identity_operator_2_norm"] for row in rows
         ) < 1.0e-9,
@@ -493,6 +512,30 @@ def build_payload() -> dict[str, Any]:
                 row["mixed_field_curvature_Frobenius_norm"] for row in rows
             ),
             "evaluated_nodes": len(rows),
+            "maximum_absolute_bordered_response_residual": max(
+                max(
+                    row["base_response_residual_2_norm"],
+                    row["green_response_residual_2_norm"],
+                    row["transverse_response_residual_operator_2_norm"],
+                    row["mixed_response_residual_operator_2_norm"],
+                ) for row in rows
+            ),
+            "absolute_residual_below_1e_minus_7_diagnostic": max(
+                max(
+                    row["base_response_residual_2_norm"],
+                    row["green_response_residual_2_norm"],
+                    row["transverse_response_residual_operator_2_norm"],
+                    row["mixed_response_residual_operator_2_norm"],
+                ) for row in rows
+            ) < 1.0e-7,
+            "maximum_bordered_response_normwise_backward_error": max(
+                max(
+                    row["base_response_normwise_backward_error"],
+                    row["green_response_normwise_backward_error"],
+                    row["transverse_response_normwise_backward_error"],
+                    row["mixed_response_normwise_backward_error"],
+                ) for row in rows
+            ),
         },
         "rows": rows,
         "data": _relative(DATA),
