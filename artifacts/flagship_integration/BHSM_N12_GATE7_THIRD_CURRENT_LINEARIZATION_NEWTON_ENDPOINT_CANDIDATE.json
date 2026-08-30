@@ -1,0 +1,64 @@
+{
+  "FULL_BHSM_COMPLETE": false,
+  "adjudication": {
+    "continuous_center": "OPEN_PENDING_THIRD_GAUSS3_REPLAY",
+    "first_hit": "NUMERICAL_BRACKET_ONLY",
+    "second_center_linearization": "USED_FOR_THIRD_SIGNED_GREEN_NEWTON_STEP"
+  },
+  "artifact": "BHSM_N12_GATE7_THIRD_CURRENT_LINEARIZATION_NEWTON_ENDPOINT_CANDIDATE",
+  "authority": "NUMERICAL_THIRD_CURRENT_LINEARIZATION_NEWTON_CANDIDATE_NOT_INTERVAL_AUTHORITY",
+  "claim_boundary": {
+    "FULL_BHSM_COMPLETE": false,
+    "Gate7": "ACTIVE_ACTION_OWNED_OPERATOR_ORACLE",
+    "continuous_action_constrained_center": "OPEN_INTERVAL_AUTHORITY",
+    "continuous_outward_variational_carrier": "OPEN_AFTER_CENTER"
+  },
+  "data": "artifacts/flagship_integration/BHSM_N12_GATE7_THIRD_CURRENT_LINEARIZATION_NEWTON_ENDPOINT_CANDIDATE.npz",
+  "data_SHA256": "E221A542BF22DDBB2AC1D2F25B6626A4EE9548CA5C38CE47BB27ACAECE62221C",
+  "exact_next_dependency": "REPLAY_ALL_1110_GAUSS3_RESIDUALS_ON_THE_THIRD_NEWTON_ENDPOINTS",
+  "inputs": {
+    "artifacts/flagship_integration/BHSM_N12_GATE7_CURRENT_LINEARIZATION_NEWTON_COLLOCATION_REPLAY.json": "417895383C97B153DB449478B2C091F3E2AC16FEB307809B81AF028110AF1A65",
+    "artifacts/flagship_integration/BHSM_N12_GATE7_CURRENT_LINEARIZATION_NEWTON_COLLOCATION_REPLAY.npz": "501CAB8F283F106610E3C6691B5CBD8A7BC8380FBA5EFABDB575565FE9D80B9A",
+    "artifacts/flagship_integration/BHSM_N12_GATE7_CURRENT_LINEARIZATION_NEWTON_ENDPOINT_CANDIDATE.json": "DBAB6B85663141694D87657C37FA5D18E9CC9373DAE9A6BCA434D502375CC829",
+    "artifacts/flagship_integration/BHSM_N12_GATE7_CURRENT_LINEARIZATION_NEWTON_ENDPOINT_CANDIDATE.npz": "51D74E6ACFD9C0E4CF89D85078E8D7BADE296B5223DC5B1A91CFA30B1CF46945",
+    "artifacts/flagship_integration/BHSM_N12_GATE7_SECOND_CURRENT_CENTER_GRAPH_JACOBIAN.json": "C4588DE81707A6DA145FEA67D62C41AD0F612436BEF7D64556E398796E66F728",
+    "artifacts/flagship_integration/BHSM_N12_GATE7_SECOND_CURRENT_CENTER_GRAPH_JACOBIAN.npz": "EE6E6E70A2F9A4029C152D19768B456D8BEBA471252B610B9598AB80CE654CD8",
+    "artifacts/flagship_integration/BHSM_N12_GATE7_SECOND_CURRENT_CENTER_MACRO_TANGENT.json": "3B362BB1ED1C0073EAFD767259F9F84BABBC7AE63E99C7E261162AF0F2E631F4",
+    "artifacts/flagship_integration/BHSM_N12_GATE7_SECOND_CURRENT_CENTER_MACRO_TANGENT.npz": "90FAB17D6C4D14F7067E261DB9D85A2ECA39958FB92B91213D8FF5D62A2E24F6",
+    "scripts/materialize_n12_gate7_third_current_linearization_newton_endpoint_candidate.py": "4C2EED9BA4BDB6A63C00E01892637AC62EDF4601D6D86F82C6DE6BB18C4EF984",
+    "theory/n12_gate7_third_current_linearization_newton_endpoint_candidate.md": "553AE07278F8D8C1087533A5D7A24780CEED13A625A600CDF2A301DBEBCEAAC1"
+  },
+  "status": "THIRD_CURRENT_LINEARIZATION_NEWTON_ENDPOINTS_MATERIALIZED",
+  "summary": {
+    "first_hit_action_time_bracket": [
+      92.30376209738999,
+      92.30376209740297
+    ],
+    "maximum_constraint_projection_action_2_norm": 1.17481097060021e-10,
+    "maximum_current_linearization_Green_correction_2_norm": 9.15890729318996e-06,
+    "maximum_current_linearization_Green_correction_owner_node": 111,
+    "maximum_final_scaled_constraint_2_norm": 1.9438976007391256e-14,
+    "maximum_macro_tangent_projection_2_norm": 1.3425788135268008e-10,
+    "maximum_source_increment_2_norm": 1.1502869131990854e-06,
+    "maximum_source_increment_owner_interval": 186,
+    "minimum_selected_eigenline_gap": 1.7341552992131992e-07,
+    "terminal_current_linearization_Green_correction_2_norm": 6.202387961411255e-06,
+    "terminal_stop_route": "WITHIN_REPLAYED_FINAL_SEGMENT",
+    "terminal_stop_selected_branch": 24,
+    "triggered_constraint_projection_count": 305
+  },
+  "validation": {
+    "all_371_third_Newton_endpoints_replayed": true,
+    "all_complete_preterminal_descriptors_are_positive": true,
+    "all_endpoint_constraints_close_numerically": true,
+    "all_quantities_finite": true,
+    "branch_24_selected_at_every_endpoint": true,
+    "no_action_source_selector_scale_gate_or_chord_changed": true,
+    "second_center_graph_Jacobian_consumed": true,
+    "second_center_macro_tangents_consumed": true,
+    "selected_line_remains_simple_numerically": true,
+    "terminal_bracket_not_promoted_to_outward_root": true,
+    "terminal_selected_eigenvalue_is_numerically_bracketed": true
+  },
+  "validation_passed": true
+}

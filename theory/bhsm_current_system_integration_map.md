@@ -78,6 +78,26 @@ center owner is now owner-only higher-order collocation or an outward
 continuous shadowing enclosure, followed by the rebuilt cone, first hit, and
 continuous variational carrier.
 
+The next mesh and Newton tests reject both of those heuristic continuations.
+A second halving inserts another 740 exact midpoint fields but increases the
+maximum defect to `8.877740799934337e-6`, with reduction factor
+`0.7975859317254873`.  Rebuilding all 371 graph Jacobians and 48 constraint
+tangents on the second Newton center preserves regularity, but a third signed-
+Green update increases the nonlinear replay maximum to
+`1.643235800430239e-5`, factor `0.9423576582760507` relative to its parent.
+Further interpolation-only refinement and repeated signed-Green fixed-point
+updates are therefore retired.
+
+The best second-Newton center now has an explicit direct high-order source.
+Exact retained midpoint fields recovered from the Gauss-3 replay define all
+370 augmented Hermite--Simpson block residuals.  The maximum block residual is
+`2.0101707940913732e-6` at interval 179; the maximum descriptor component is
+`1.715397777015785e-13`.  This is a `370 x 99` numerical multiple-shooting
+source, not its solution or interval authority.  The exact owner is assembly
+and solution of the block Newton/Krawczyk operator with constraint and
+descriptor-fiber rows, followed by exact-field replay and continuous outward
+shadowing.
+
 The current physical theory tuple is `BHSM-AE-2.0.0`.  It retains the v7.x
 stratified bulk/boundary functor, v14-v17 eta/Aether action lineage, v7.2
 common observable transport, and frozen comparison firewall, while replacing

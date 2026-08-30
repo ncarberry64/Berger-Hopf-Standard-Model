@@ -129,6 +129,15 @@ def test_blocker_and_interface_priority_reconciliation() -> None:
     assert payload["validation"][
         "within_seam_halving_reduces_but_does_not_certify_flow_defect"
     ] is True
+    assert payload["validation"][
+        "second_halving_rejects_interpolation_only_refinement"
+    ] is True
+    assert payload["validation"][
+        "third_current_linearization_replay_rejects_signed_Green_fixed_point"
+    ] is True
+    assert payload["validation"][
+        "direct_Hermite_Simpson_multiple_shooting_source_is_materialized"
+    ] is True
     response_gap = next(
         row for row in payload["interface_gaps"]
         if row["id"] == "RESPONSE_TO_CORRELATED_Y_Z1_Z2"

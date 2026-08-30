@@ -54,10 +54,17 @@ the second nonlinear replay reduced the maximum defect to
 all 370 already-evaluated exact midpoint fields and halving every span reduced
 the maximum to `7.080761167533001e-6`, a `2.1869341505107256`-fold reduction,
 while branch 24 remained simple with gap at least
-`1.7341738652006568e-7`.  This is numerical refined-collocation evidence, not
-continuous interval authority.  The exact next owner is owner-only
-higher-order collocation or an outward shadowing enclosure, followed by a
-rebuilt cone, first hit, and continuous variational carrier.
+`1.7341738652006568e-7`.  A second halving then increased the maximum defect
+to `8.877740799934337e-6`, rejecting interpolation-only refinement.  A third
+signed-Green step after rebuilding the graph Jacobian and 73D tangents also
+increased the nonlinear replay defect to `1.643235800430239e-5`, rejecting
+that fixed-point route.  The best second-Newton center now supplies a direct
+`370 x 99` Hermite--Simpson multiple-shooting source; its maximum block
+residual is `2.0101707940913732e-6` at interval 179.  This source is numerical,
+not a solved or interval-certified orbit.  The exact next owner is its block
+Newton/Krawczyk solve with constraint and descriptor-fiber rows, followed by
+exact-field replay, a rebuilt cone, first hit, and continuous variational
+carrier.
 Gate 7 remains
 `ACTIVE`; `FULL_BHSM_COMPLETE = FALSE`.  Physical completion additionally
 requires universal spectrum/propagator, vertex, decay, loop/magnetic-moment,

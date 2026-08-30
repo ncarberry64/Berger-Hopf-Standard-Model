@@ -87,6 +87,12 @@ PATHS = {
     "current_linearization_endpoint": "artifacts/flagship_integration/BHSM_N12_GATE7_CURRENT_LINEARIZATION_NEWTON_ENDPOINT_CANDIDATE.json",
     "current_linearization_replay": "artifacts/flagship_integration/BHSM_N12_GATE7_CURRENT_LINEARIZATION_NEWTON_COLLOCATION_REPLAY.json",
     "refined_within_seam_collocation": "artifacts/flagship_integration/BHSM_N12_GATE7_REFINED_WITHIN_SEAM_HERMITE_COLLOCATION.json",
+    "second_refined_within_seam_collocation": "artifacts/flagship_integration/BHSM_N12_GATE7_SECOND_REFINED_WITHIN_SEAM_HERMITE_COLLOCATION.json",
+    "second_current_center_graph_jacobian": "artifacts/flagship_integration/BHSM_N12_GATE7_SECOND_CURRENT_CENTER_GRAPH_JACOBIAN.json",
+    "second_current_center_macro_tangent": "artifacts/flagship_integration/BHSM_N12_GATE7_SECOND_CURRENT_CENTER_MACRO_TANGENT.json",
+    "third_current_linearization_endpoint": "artifacts/flagship_integration/BHSM_N12_GATE7_THIRD_CURRENT_LINEARIZATION_NEWTON_ENDPOINT_CANDIDATE.json",
+    "third_current_linearization_replay": "artifacts/flagship_integration/BHSM_N12_GATE7_THIRD_CURRENT_LINEARIZATION_NEWTON_COLLOCATION_REPLAY.json",
+    "direct_Hermite_Simpson_shooting_source": "artifacts/flagship_integration/BHSM_N12_GATE7_DIRECT_HERMITE_SIMPSON_MULTIPLE_SHOOTING_SOURCE.json",
     "final_force_kkt_verdict": "artifacts/flagship_integration/BHSM_N12_GATE7_FINAL_EXACT_CENTER_FORCE_KKT_HESSIAN_VERDICT.json",
     "causal_y_z1_z2_margin_budget": "artifacts/flagship_integration/BHSM_N12_GATE7_CAUSAL_Y_Z1_Z2_MARGIN_BUDGET_AUDIT.json",
     "recentered_cone_spectrum": "artifacts/flagship_integration/BHSM_N12_GATE7_RECENTERED_CONE_BOUNDARY_CLUSTER_SPECTRUM.json",
@@ -224,6 +230,13 @@ def build_payload() -> dict[str, Any]:
     ]
     current_linearization_replay = records["current_linearization_replay"]
     refined_within_seam_collocation = records["refined_within_seam_collocation"]
+    second_refined_within_seam_collocation = records[
+        "second_refined_within_seam_collocation"
+    ]
+    third_current_linearization_replay = records[
+        "third_current_linearization_replay"
+    ]
+    direct_shooting_source = records["direct_Hermite_Simpson_shooting_source"]
     causal_y_z1_z2_margin_budget = records["causal_y_z1_z2_margin_budget"]
     compact_reset_propagation = records["compact_reset_propagation"]
     compact_reset_open_subball = records["compact_reset_open_subball"]
@@ -398,7 +411,7 @@ def build_payload() -> dict[str, Any]:
         {"id": "G7_CORRELATED_QUARTER_STEP_CENTER_STOP_WITNESS", "classification": "RESOLVED_BY_EXACT_TRANSVERSE_FIRST_STOP", "current_effect": "the final exact-center cone, response, causal Z2, strict preterminal selected-eigenvalue margins, canonical earliest stop, uniform negative flow derivative, terminal-cell uniqueness, and local differentiable first-stop time are certified"},
         {"id": "G7_DECORRELATED_BINARY64_CARRIER_COMPOSITION", "classification": "INVALIDATED_PROOF_ROUTE", "current_effect": "independent binary64 component balls produce wrapping blowup and are presentation data only; correlated outward Arb interval strings own global composition"},
         {"id": "G7_OLD_GAUSS12_RECENTERED_NUMERICAL_CONE_TRANSFER", "classification": "INVALIDATED_PROOF_ROUTE", "current_effect": "the old Gauss12 center differs from the exact-affine center by 120901.05128628464 candidate-cone radii; retain its theorem formulas but rebuild the numerical Z2/cone ball at the final center"},
-        {"id": "G7_COMPLETE_JOINT_FORCE_ROOT", "classification": "CURRENT_BLOCKER", "current_effect": "the constraint/descriptor Hermite route, two signed-Green endpoint Newton steps, current-center graph Jacobian, and current-center macro tangents are materialized as numerical candidates. The second nonlinear replay reduces the maximum dense-flow defect by only 1.0251 times. Halving all 370 spans with exact midpoint fields reduces it further from 1.5485158408888117e-5 to 7.080761167533001e-6 (2.1869 times) while preserving branch 24, but this is not interval shadowing authority. Continue owner-only higher-order collocation or prove an outward shadowing enclosure; then rebuild the cone/first hit and continuous variational carrier before the nonlinear 72D history jet, Weyl-Calderon oracle, projected heat-minus-zeta force, KKT root, and physical Hessian"},
+        {"id": "G7_COMPLETE_JOINT_FORCE_ROOT", "classification": "CURRENT_BLOCKER", "current_effect": "the first within-seam halving reduced the pointwise defect, but a second halving increased it to 8.877740799934337e-6 and is rejected. Rebuilding the graph Jacobian and 73D tangents on the second Newton center, then applying a third signed-Green update, also increased the nonlinear replay defect to 1.643235800430239e-5 and retires that fixed-point route. The best second-Newton center now supplies an explicit 370 by 99 Hermite-Simpson multiple-shooting source with maximum block residual 2.0101707940913732e-6. Assemble and solve its block Newton/Krawczyk operator with constraint and descriptor-fiber rows, replay the exact field, then rebuild the cone/first hit and continuous variational carrier before the nonlinear 72D history jet, Weyl-Calderon oracle, projected heat-minus-zeta force, KKT root, and physical Hessian"},
         {"id": "DECORRELATED_SCALAR_SECOND_VARIATION", "classification": "INVALIDATED_PROOF_ROUTE", "current_effect": "finite first variation survives; all 8,692 scalar denominator cells route to signed/common-frame correlation"},
         {"id": "G7_HESSIAN_WARD_SCALAR", "classification": "DOWNSTREAM_ONLY", "current_effect": "follows the force/KKT root"},
         {"id": "CKM_PMNS_PHYSICAL_EIGENBASES", "classification": "DOWNSTREAM_ONLY", "current_effect": "follows Gate 7 and sector response"},
@@ -817,6 +830,32 @@ def build_payload() -> dict[str, Any]:
                 "continuous_action_constrained_center"
             ] == "OPEN_INTERVAL_AUTHORITY"
         ),
+        "second_halving_rejects_interpolation_only_refinement": (
+            second_refined_within_seam_collocation["validation_passed"] is False
+            and second_refined_within_seam_collocation["summary"][
+                "flow_defect_reduction_factor"
+            ] < 1.0
+            and second_refined_within_seam_collocation["claim_boundary"][
+                "continuous_action_constrained_center"
+            ] == "OPEN_INTERVAL_AUTHORITY"
+        ),
+        "third_current_linearization_replay_rejects_signed_Green_fixed_point": (
+            third_current_linearization_replay["validation_passed"] is False
+            and third_current_linearization_replay["summary"][
+                "flow_defect_reduction_factor"
+            ] < 1.0
+            and third_current_linearization_replay["claim_boundary"][
+                "continuous_action_constrained_center"
+            ] == "OPEN_INTERVAL_AUTHORITY"
+        ),
+        "direct_Hermite_Simpson_multiple_shooting_source_is_materialized": (
+            direct_shooting_source["validation_passed"] is True
+            and direct_shooting_source["mesh"]["shooting_intervals"] == 370
+            and direct_shooting_source["mesh"]["augmented_dimension"] == 99
+            and direct_shooting_source["adjudication"][
+                "direct_high_order_multiple_shooting"
+            ].startswith("ACTIVE")
+        ),
         "quarter_green_corrected_carrier_is_certified": (
             recentered_cone_spectrum["validation_passed"] is True
             and recentered_cone_projector["validation_passed"] is True
@@ -921,7 +960,7 @@ def build_payload() -> dict[str, Any]:
             "Gate7": "ACTIVE",
             "FULL_BHSM_COMPLETE": False,
         },
-        "exact_next_dependency": "PROMOTE_THE_REFINED_CONSTRAINT_DESCRIPTOR_CENTER_BY_OWNER_ONLY_HIGH_ORDER_COLLOCATION_OR_AN_OUTWARD_CONTINUOUS_SHADOWING_ENCLOSURE;_REBUILD_THE_CENTER_DEPENDENT_CONE_FIRST_HIT_AND_CONTINUOUS_VARIATIONAL_CARRIER;_THEN_MATERIALIZE_THE_NONLINEAR_72D_HISTORY_JET,_TWO_SIDED_WEYL_CALDERON_ORACLE,_PROJECTED_HEAT_MINUS_ZETA_FORCE,_SAME_ACTION_KKT_ROOT,_AND_CONSTRAINED_PHYSICAL_HESSIAN",
+        "exact_next_dependency": "ASSEMBLE_AND_SOLVE_THE_370_BY_99_BLOCK_HERMITE_SIMPSON_NEWTON_OR_KRAWCZYK_OPERATOR_WITH_CONSTRAINT_AND_DESCRIPTOR_FIBER_ROWS;_REPLAY_THE_EXACT_FIELD_AND_CERTIFY_CONTINUOUS_SHADOWING;_REBUILD_THE_CENTER_DEPENDENT_CONE_FIRST_HIT_AND_CONTINUOUS_VARIATIONAL_CARRIER;_THEN_MATERIALIZE_THE_NONLINEAR_72D_HISTORY_JET,_TWO_SIDED_WEYL_CALDERON_ORACLE,_PROJECTED_HEAT_MINUS_ZETA_FORCE,_SAME_ACTION_KKT_ROOT,_AND_CONSTRAINED_PHYSICAL_HESSIAN",
         "FULL_BHSM_COMPLETE": False,
     }
 

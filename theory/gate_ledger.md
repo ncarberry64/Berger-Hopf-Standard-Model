@@ -2898,3 +2898,29 @@ Exact next object:
   and continuous variational carrier.
 - Gate 7 remains `ACTIVE`; Gate 8 is `LOCKED`; chord 3 remains
   `UNAUTHORIZED`; `FULL_BHSM_COMPLETE=FALSE`.
+
+## N=12 Gate-7 direct high-order multiple-shooting source
+
+- A second interpolation halving increases the maximum augmented flow defect
+  from `7.080761167533001e-6` to `8.877740799934337e-6`; mesh-only refinement
+  is rejected.
+- The graph Jacobian and 73D constraint tangents are rebuilt on the second
+  Newton center.  All 371 graph nodes and 48 seams remain regular, with branch
+  24 simple and maximum tangent residual `1.0664006167487506e-15`.
+- A third signed-Green step nevertheless increases the nonlinear replay defect
+  to `1.643235800430239e-5`; repeated signed-Green fixed-point iteration is
+  rejected.
+- On the best second-Newton center, exact midpoint fields define all 370
+  augmented Hermite--Simpson residual blocks.  The resulting explicit
+  `370 x 99` source has maximum block norm `2.0101707940913732e-6` at interval
+  179 and maximum descriptor component `1.715397777015785e-13`.
+- Scientific milestone:
+  `DIRECT_HIGH_ORDER_MULTIPLE_SHOOTING_SOURCE_MATERIALIZED`.
+- Claim boundary: the block source is not a solved multiple-shooting system,
+  continuous exact orbit, interval shadowing certificate, rebuilt cone, or
+  physical operator oracle.
+- Exact next owner: assemble and solve the block-bidiagonal Hermite--Simpson
+  Newton/Krawczyk operator with constraint and descriptor-fiber rows, then
+  replay the exact field and certify continuous shadowing.
+- Gate 7 remains `ACTIVE`; Gate 8 is `LOCKED`; chord 3 remains
+  `UNAUTHORIZED`; `FULL_BHSM_COMPLETE=FALSE`.

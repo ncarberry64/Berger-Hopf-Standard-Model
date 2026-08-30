@@ -1,0 +1,54 @@
+{
+  "FULL_BHSM_COMPLETE": false,
+  "adjudication": {
+    "direct_high_order_multiple_shooting": "ACTIVE_WITH_EXPLICIT_370_BY_99_BLOCK_SOURCE",
+    "interpolation_only_refinement": "REJECTED_BY_SECOND_HALVING",
+    "repeated_signed_Green_fixed_point": "REJECTED_BY_THIRD_NONLINEAR_REPLAY"
+  },
+  "artifact": "BHSM_N12_GATE7_DIRECT_HERMITE_SIMPSON_MULTIPLE_SHOOTING_SOURCE",
+  "authority": "NUMERICAL_HERMITE_SIMPSON_BLOCK_SOURCE_NOT_INTERVAL_AUTHORITY",
+  "claim_boundary": {
+    "FULL_BHSM_COMPLETE": false,
+    "Gate7": "ACTIVE_ACTION_OWNED_OPERATOR_ORACLE",
+    "continuous_action_constrained_center": "OPEN_MULTIPLE_SHOOTING_NEWTON_AND_INTERVAL_AUTHORITY",
+    "continuous_outward_variational_carrier": "OPEN_AFTER_CENTER"
+  },
+  "data": "artifacts/flagship_integration/BHSM_N12_GATE7_DIRECT_HERMITE_SIMPSON_MULTIPLE_SHOOTING_SOURCE.npz",
+  "data_SHA256": "1F9CAB178A7C0443FC6621E8EFA5804A3A9AB96C34DB386AF344B9DC596B5B7F",
+  "exact_next_dependency": "ASSEMBLE_THE_BLOCK_BIDIAGONAL_HERMITE_SIMPSON_NEWTON_OPERATOR_WITH_CONSTRAINT_AND_DESCRIPTOR_FIBER_ROWS,_SOLVE_FOR_ENDPOINT_AND_MIDPOINT_VALUE_CORRECTIONS,_THEN_REPLAY_THE_EXACT_FIELD",
+  "inputs": {
+    "artifacts/flagship_integration/BHSM_N12_GATE7_CURRENT_LINEARIZATION_NEWTON_COLLOCATION_REPLAY.json": "417895383C97B153DB449478B2C091F3E2AC16FEB307809B81AF028110AF1A65",
+    "artifacts/flagship_integration/BHSM_N12_GATE7_CURRENT_LINEARIZATION_NEWTON_COLLOCATION_REPLAY.npz": "501CAB8F283F106610E3C6691B5CBD8A7BC8380FBA5EFABDB575565FE9D80B9A",
+    "artifacts/flagship_integration/BHSM_N12_GATE7_CURRENT_LINEARIZATION_NEWTON_ENDPOINT_CANDIDATE.json": "DBAB6B85663141694D87657C37FA5D18E9CC9373DAE9A6BCA434D502375CC829",
+    "artifacts/flagship_integration/BHSM_N12_GATE7_CURRENT_LINEARIZATION_NEWTON_ENDPOINT_CANDIDATE.npz": "51D74E6ACFD9C0E4CF89D85078E8D7BADE296B5223DC5B1A91CFA30B1CF46945",
+    "artifacts/flagship_integration/BHSM_N12_GATE7_SECOND_REFINED_WITHIN_SEAM_HERMITE_COLLOCATION.json": "41DECE3610DBEA1B1061A4C995C1C5860B6B7A57DEC97E5A6875D350957292DB",
+    "artifacts/flagship_integration/BHSM_N12_GATE7_THIRD_CURRENT_LINEARIZATION_NEWTON_COLLOCATION_REPLAY.json": "CCAD75D53EC6BE6F1B26897B0439BD38AB55DEFA4231C3EB3D12F87A56ED0F3B",
+    "scripts/materialize_n12_gate7_direct_hermite_simpson_multiple_shooting_source.py": "0259B10B4535F229716A02E09742D44209C563BFCDEC856F31D0D83E39EB8AB2",
+    "theory/n12_gate7_direct_hermite_simpson_multiple_shooting_source.md": "239DEB871EDD11F1F26312C3B35A13328D3EA5B0599FC6E59A25965A8D4C31B6"
+  },
+  "mesh": {
+    "augmented_dimension": 99,
+    "shooting_intervals": 370
+  },
+  "status": "DIRECT_HIGH_ORDER_MULTIPLE_SHOOTING_SOURCE_MATERIALIZED",
+  "summary": {
+    "maximum_Hermite_Simpson_shooting_residual_2_norm": 2.0101707940913732e-06,
+    "maximum_Hermite_Simpson_shooting_residual_owner_interval": 179,
+    "maximum_descriptor_shooting_residual_absolute": 1.715397777015785e-13,
+    "maximum_shooting_residual_density_2_norm": 8.040683176365493e-06,
+    "maximum_state_shooting_residual_2_norm": 2.010170794091373e-06,
+    "terminal_cumulative_unlinearized_residual_2_norm": 9.381500667670246e-06
+  },
+  "validation": {
+    "all_370_Hermite_Simpson_blocks_materialized": true,
+    "all_exact_midpoint_rates_recovered_from_direct_replay": true,
+    "all_quantities_finite": true,
+    "best_second_Newton_center_retained": true,
+    "continuous_interval_shadowing_not_claimed": true,
+    "mesh_only_refinement_rejected": true,
+    "multiple_shooting_Newton_solution_not_claimed": true,
+    "no_action_source_selector_scale_gate_or_chord_changed": true,
+    "third_signed_Green_iteration_rejected": true
+  },
+  "validation_passed": true
+}

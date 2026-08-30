@@ -48,9 +48,17 @@ immediate parent by only `1.0251289061475437`.  A 741-node within-seam
 refinement using all 370 exact midpoint fields reduces the maximum defect from
 `1.5485158408888117e-5` to `7.080761167533001e-6`, a
 `2.1869341505107256`-fold improvement, while preserving simple branch 24.
-This remains numerical, not interval authority.  The active center owner is
-owner-only higher-order collocation or outward continuous shadowing, followed
-by a rebuilt cone, first hit, and continuous variational carrier.
+The second halving increases the maximum defect to
+`8.877740799934337e-6`, so interpolation-only refinement is retired.  A third
+signed-Green step using graph Jacobians and 73D tangents rebuilt on the second
+center also increases its nonlinear replay defect to
+`1.643235800430239e-5`; that fixed-point route is retired as well.  The best
+second-Newton center now has an explicit `370 x 99` Hermite--Simpson multiple-
+shooting source with maximum block residual `2.0101707940913732e-6` at
+interval 179.  The active center owner is assembly and solution of its block
+Newton/Krawczyk operator with constraint and descriptor-fiber rows, exact-
+field replay, and outward continuous shadowing, followed by a rebuilt cone,
+first hit, and continuous variational carrier.
 `FULL_BHSM_COMPLETE = FALSE`.  Universal physical prediction engines remain
 open downstream.
 

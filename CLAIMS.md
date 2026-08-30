@@ -63,8 +63,16 @@ constraint residual `2.0505993511363814e-14` and simple branch 24.  Supported:
 these are reproducible numerical collocation candidates.  Not supported:
 calling the 741-node path a continuous exact orbit or using it as interval,
 cone, first-hit, variational-carrier, force, KKT, or Hessian authority.  The
-next proof is owner-only higher-order collocation or an outward continuous
-shadowing enclosure; the cone and first hit must then be rebuilt.
+next proof is not further mesh refinement: a second halving increases the
+maximum defect to `8.877740799934337e-6`.  A third signed-Green update using
+newly rebuilt graph Jacobians and 73D tangents also increases its parent defect
+to `1.643235800430239e-5`.  Both routes are explicitly rejected as center
+solvers.  Supported now: the best second-Newton center has a materialized
+`370 x 99` Hermite--Simpson block source with maximum residual
+`2.0101707940913732e-6`.  Not supported: calling that source a solved multiple-
+shooting system, continuous exact orbit, or interval shadowing theorem.  Its
+block Newton/Krawczyk operator with constraint and descriptor-fiber rows must
+be assembled and solved before the cone and first hit are rebuilt.
 
 ## Current public claim boundary
 
