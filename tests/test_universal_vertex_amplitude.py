@@ -68,6 +68,17 @@ def test_crossed_ordering_is_supplied_explicitly() -> None:
     assert np.isfinite(crossed.total)
 
 
+def test_complex_external_phase_is_preserved_by_the_action_amplitude() -> None:
+    result = assembler()
+    e0 = np.asarray([1.0, 0.0])
+    e1 = np.asarray([0.0, 1.0])
+    real = result.four_point_channel((e0, e1, e0, e1), 1.0, channel="s")
+    phased = result.four_point_channel((1.0j * e0, e1, e0, e1), 1.0, channel="s")
+    assert abs(phased.contact - 1.0j * real.contact) < 1.0e-12
+    assert abs(phased.exchange - 1.0j * real.exchange) < 1.0e-12
+    assert abs(phased.total - 1.0j * real.total) < 1.0e-12
+
+
 def test_full_tree_amplitude_counts_contact_once_across_s_t_u() -> None:
     result = assembler()
     e0 = np.asarray([1.0, 0.0])

@@ -59,6 +59,21 @@ def test_cubic_and_quartic_vertices_are_permutation_symmetric() -> None:
     assert np.max(fourth) - np.min(fourth) < 1.0e-12
 
 
+def test_complex_polarizations_use_multilinear_real_action_extension() -> None:
+    result = expansion()
+    first = np.asarray([1.0 + 2.0j, -0.3j])
+    second = np.asarray([0.4 - 0.2j, 0.7])
+
+    direct = result.s2(first, second)
+    expanded = (
+        result.s2(first.real, second.real)
+        + 1.0j * result.s2(first.imag, second.real)
+        + 1.0j * result.s2(first.real, second.imag)
+        - result.s2(first.imag, second.imag)
+    )
+    assert abs(direct - expanded) < 1.0e-13
+
+
 def test_gate7_is_a_physical_promotion_boundary() -> None:
     provisional = expansion(gate7_closed=False)
     assert provisional.metadata()["promotion_status"] == "PROVISIONAL_BACKGROUND_ONLY"

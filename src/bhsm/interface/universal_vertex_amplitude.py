@@ -90,7 +90,7 @@ class TreeAmplitudeAssembler:
             raise ValueError("a four-point channel needs four external modes")
         if channel not in {"s", "t", "u", "direct"}:
             raise ValueError("channel must be s, t, u, or direct")
-        modes = tuple(np.asarray(mode, dtype=float) for mode in external_modes)
+        modes = tuple(np.asarray(mode, dtype=complex) for mode in external_modes)
         expected = (self.quadratic.dimension,)
         if any(mode.shape != expected for mode in modes):
             raise ValueError("external mode has the wrong quotient dimension")
@@ -133,7 +133,7 @@ class TreeAmplitudeAssembler:
             raise ValueError("a four-point amplitude needs four external modes")
         if not spectral_parameters or not set(spectral_parameters) <= {"s", "t", "u"}:
             raise ValueError("spectral parameters must select one or more of s, t, u")
-        modes = tuple(np.asarray(mode, dtype=float) for mode in external_modes)
+        modes = tuple(np.asarray(mode, dtype=complex) for mode in external_modes)
         expected = (self.quadratic.dimension,)
         if any(mode.shape != expected for mode in modes):
             raise ValueError("external mode has the wrong quotient dimension")

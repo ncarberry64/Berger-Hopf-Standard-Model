@@ -13,6 +13,7 @@ remain disabled until the caller supplies a Gate-7-closed background.
 
 from __future__ import annotations
 
+import itertools
 from dataclasses import dataclass
 from typing import Callable, Protocol, Sequence
 
@@ -65,9 +66,11 @@ class PhysicalBackground:
         return "PHYSICAL_BACKGROUND_FROZEN" if self.gate7_closed else "PROVISIONAL_BACKGROUND_ONLY"
 
     def ambient(self, physical_direction: Array) -> Array:
-        direction = np.asarray(physical_direction, dtype=float)
+        direction = np.asarray(physical_direction)
         if direction.shape != (self.physical_dimension,):
             raise ValueError("physical direction has the wrong dimension")
+        if not np.all(np.isfinite(direction)):
+            raise ValueError("physical direction must be finite")
         return self.physical_frame @ direction
 
 
@@ -78,25 +81,44 @@ class PhysicalActionExpansion:
     oracle: DirectionalActionOracle
     background: PhysicalBackground
 
-    def _contract(self, *directions: Array) -> float:
+    def _contract(self, *directions: Array) -> float | complex:
         if not 1 <= len(directions) <= 4:
             raise ValueError("only first through fourth action derivatives are supported")
-        ambient = tuple(self.background.ambient(direction) for direction in directions)
-        value = float(self.oracle.derivative(self.background.state, ambient))
-        if not np.isfinite(value):
-            raise ArithmeticError("non-finite action derivative")
-        return value
 
-    def s1(self, direction: Array) -> float:
+        # Extend the real multilinear action derivatives canonically over C.
+        # Backends still see only real directions, while physical external
+        # states may carry complex polarization or phase coefficients.
+        decomposed: list[list[tuple[complex, Array]]] = []
+        for direction in directions:
+            value = np.asarray(direction)
+            if value.shape != (self.background.physical_dimension,):
+                raise ValueError("physical direction has the wrong dimension")
+            if not np.all(np.isfinite(value)):
+                raise ValueError("physical direction must be finite")
+            terms = [(1.0 + 0.0j, np.asarray(value.real, dtype=float))]
+            if np.any(value.imag != 0.0):
+                terms.append((1.0j, np.asarray(value.imag, dtype=float)))
+            decomposed.append(terms)
+
+        result = 0.0j
+        for selection in itertools.product(*decomposed):
+            coefficient = np.prod([term[0] for term in selection])
+            ambient = tuple(self.background.ambient(term[1]) for term in selection)
+            result += coefficient * float(self.oracle.derivative(self.background.state, ambient))
+        if not np.isfinite(result):
+            raise ArithmeticError("non-finite action derivative")
+        return float(result.real) if result.imag == 0.0 else complex(result)
+
+    def s1(self, direction: Array) -> float | complex:
         return self._contract(direction)
 
-    def s2(self, first: Array, second: Array) -> float:
+    def s2(self, first: Array, second: Array) -> float | complex:
         return self._contract(first, second)
 
-    def s3(self, first: Array, second: Array, third: Array) -> float:
+    def s3(self, first: Array, second: Array, third: Array) -> float | complex:
         return self._contract(first, second, third)
 
-    def s4(self, first: Array, second: Array, third: Array, fourth: Array) -> float:
+    def s4(self, first: Array, second: Array, third: Array, fourth: Array) -> float | complex:
         return self._contract(first, second, third, fourth)
 
     def quadratic_matrix(self) -> Array:
@@ -116,7 +138,7 @@ class PhysicalActionExpansion:
         dimension = self.background.physical_dimension
         return np.asarray([self.s1(direction) for direction in np.eye(dimension)])
 
-    def vertex(self, order: int, directions: Sequence[Array]) -> float:
+    def vertex(self, order: int, directions: Sequence[Array]) -> float | complex:
         """Return an action-owned amputated bare vertex coefficient.
 
         Momentum dependence, external-leg normalization, LSZ residues, and
