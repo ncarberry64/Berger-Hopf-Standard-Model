@@ -110,6 +110,15 @@ PATHS = {
     "local_trust_second_HS_endpoint": "artifacts/flagship_integration/BHSM_N12_GATE7_LOCAL_TRUST_SECOND_HS_ENDPOINT_CANDIDATE.json",
     "local_trust_second_HS_midpoint_replay": "artifacts/flagship_integration/BHSM_N12_GATE7_LOCAL_TRUST_SECOND_HS_MIDPOINT_REPLAY.json",
     "Hermite_Simpson_projected_residual_jacobian_adjudication": "artifacts/flagship_integration/BHSM_N12_GATE7_HERMITE_SIMPSON_PROJECTED_RESIDUAL_JACOBIAN_ADJUDICATION.json",
+    "first_HS_endpoint_tangent": "artifacts/flagship_integration/BHSM_N12_GATE7_FIRST_HS_NEWTON_ENDPOINT_TANGENT.json",
+    "first_HS_tangent_predictor": "artifacts/flagship_integration/BHSM_N12_GATE7_FIRST_HS_TANGENT_BLOCK_NEWTON_PREDICTOR.json",
+    "first_HS_tangent_endpoint": "artifacts/flagship_integration/BHSM_N12_GATE7_FIRST_HS_TANGENT_NEWTON_ENDPOINT_CANDIDATE.json",
+    "first_HS_tangent_midpoint_replay": "artifacts/flagship_integration/BHSM_N12_GATE7_FIRST_HS_TANGENT_NEWTON_MIDPOINT_REPLAY.json",
+    "first_HS_rate_consistent_endpoints": "artifacts/flagship_integration/BHSM_N12_GATE7_FIRST_HS_RECENTERED_RATE_CONSISTENT_ENDPOINTS.json",
+    "first_HS_rate_consistent_source": "artifacts/flagship_integration/BHSM_N12_GATE7_FIRST_HS_RATE_CONSISTENT_NONLINEAR_SOURCE.json",
+    "rate_consistent_block_predictor": "artifacts/flagship_integration/BHSM_N12_GATE7_RATE_CONSISTENT_BLOCK_NEWTON_PREDICTOR.json",
+    "rate_consistent_Newton_endpoint": "artifacts/flagship_integration/BHSM_N12_GATE7_RATE_CONSISTENT_NEWTON_ENDPOINT_CANDIDATE.json",
+    "rate_consistent_Newton_midpoint_replay": "artifacts/flagship_integration/BHSM_N12_GATE7_RATE_CONSISTENT_NEWTON_MIDPOINT_REPLAY.json",
     "final_force_kkt_verdict": "artifacts/flagship_integration/BHSM_N12_GATE7_FINAL_EXACT_CENTER_FORCE_KKT_HESSIAN_VERDICT.json",
     "causal_y_z1_z2_margin_budget": "artifacts/flagship_integration/BHSM_N12_GATE7_CAUSAL_Y_Z1_Z2_MARGIN_BUDGET_AUDIT.json",
     "recentered_cone_spectrum": "artifacts/flagship_integration/BHSM_N12_GATE7_RECENTERED_CONE_BOUNDARY_CLUSTER_SPECTRUM.json",
@@ -258,6 +267,10 @@ def build_payload() -> dict[str, Any]:
     HS_projected_jacobian = records[
         "Hermite_Simpson_projected_residual_jacobian_adjudication"
     ]
+    HS_tangent_replay = records["first_HS_tangent_midpoint_replay"]
+    HS_rate_consistent_endpoints = records["first_HS_rate_consistent_endpoints"]
+    HS_rate_consistent_source = records["first_HS_rate_consistent_source"]
+    HS_rate_consistent_replay = records["rate_consistent_Newton_midpoint_replay"]
     causal_y_z1_z2_margin_budget = records["causal_y_z1_z2_margin_budget"]
     compact_reset_propagation = records["compact_reset_propagation"]
     compact_reset_open_subball = records["compact_reset_open_subball"]
@@ -432,7 +445,7 @@ def build_payload() -> dict[str, Any]:
         {"id": "G7_CORRELATED_QUARTER_STEP_CENTER_STOP_WITNESS", "classification": "RESOLVED_BY_EXACT_TRANSVERSE_FIRST_STOP", "current_effect": "the final exact-center cone, response, causal Z2, strict preterminal selected-eigenvalue margins, canonical earliest stop, uniform negative flow derivative, terminal-cell uniqueness, and local differentiable first-stop time are certified"},
         {"id": "G7_DECORRELATED_BINARY64_CARRIER_COMPOSITION", "classification": "INVALIDATED_PROOF_ROUTE", "current_effect": "independent binary64 component balls produce wrapping blowup and are presentation data only; correlated outward Arb interval strings own global composition"},
         {"id": "G7_OLD_GAUSS12_RECENTERED_NUMERICAL_CONE_TRANSFER", "classification": "INVALIDATED_PROOF_ROUTE", "current_effect": "the old Gauss12 center differs from the exact-affine center by 120901.05128628464 candidate-cone radii; retain its theorem formulas but rebuild the numerical Z2/cone ball at the final center"},
-        {"id": "G7_COMPLETE_JOINT_FORCE_ROOT", "classification": "CURRENT_BLOCKER", "current_effect": "the direct 370 by 99 Hermite-Simpson source is explicit. Its first block-bidiagonal Newton step reduces the nonlinear block residual from 2.0101707940913732e-6 to 7.487649935220473e-7 (2.68464846979012 times), so the direct collocation route is retained. A rebuilt full second step, a secant-damped step, and a local-trust step all fail. Exact replay shows the actual projected/recentered residual directional norm is 167.1575285177961 times the stored hybrid graph-model scale with only 0.08881935156225418 cosine alignment to nominal descent. The stored graph Jacobian is therefore rejected as the complete solver derivative. Differentiate the full endpoint constraint projection, selected-descriptor recenter, exact endpoint field, Hermite-Simpson midpoint state, and exact midpoint field composition; assemble its exact block JVP/Newton operator, then certify continuous shadowing and rebuild the cone/first hit before the nonlinear 72D history jet, Weyl-Calderon oracle, force, KKT root, and physical Hessian"},
+        {"id": "G7_COMPLETE_JOINT_FORCE_ROOT", "classification": "CURRENT_BLOCKER", "current_effect": "the earlier 7.487649935220473e-7 Hermite-Simpson contraction is superseded because its recentered endpoint descriptors retained pre-recenter field rates, with maximum rate mismatch 1.0526435867226e-5. Direct same-descriptor replay gives the repaired source maximum 1.800590017529095e-6. A block step whose constraint-projected endpoint descriptor and rate are produced by the same exact jet reduces the exact nonlinear maximum to 1.215762696655947e-6, a 1.4810373952760374-fold contraction. Rebuild endpoint and midpoint Jacobians on this repaired center and iterate the rate-consistent block map to convergence; then certify continuous shadowing and rebuild the cone/first hit before the nonlinear 72D history jet, Weyl-Calderon oracle, force, KKT root, and physical Hessian"},
         {"id": "DECORRELATED_SCALAR_SECOND_VARIATION", "classification": "INVALIDATED_PROOF_ROUTE", "current_effect": "finite first variation survives; all 8,692 scalar denominator cells route to signed/common-frame correlation"},
         {"id": "G7_HESSIAN_WARD_SCALAR", "classification": "DOWNSTREAM_ONLY", "current_effect": "follows the force/KKT root"},
         {"id": "CKM_PMNS_PHYSICAL_EIGENBASES", "classification": "DOWNSTREAM_ONLY", "current_effect": "follows Gate 7 and sector response"},
@@ -877,14 +890,38 @@ def build_payload() -> dict[str, Any]:
                 "direct_high_order_multiple_shooting"
             ].startswith("ACTIVE")
         ),
-        "first_direct_block_Newton_step_reduces_nonlinear_Hermite_Simpson_residual": (
+        "former_mixed_descriptor_rate_contraction_is_superseded": (
             HS_nonlinear_source["validation_passed"] is True
-            and HS_nonlinear_source["summary"][
+            and HS_rate_consistent_endpoints["validation_passed"] is True
+            and HS_rate_consistent_endpoints["adjudication"][
+                "stored_pre_recenter_endpoint_rates"
+            ].startswith("SUPERSEDED")
+            and HS_rate_consistent_endpoints["summary"][
+                "maximum_endpoint_rate_consistency_difference_2_norm"
+            ] > 1.0e-6
+        ),
+        "intrinsic_tangent_restriction_of_old_derivative_is_rejected": (
+            HS_tangent_replay["validation_passed"] is False
+            and HS_tangent_replay["summary"][
                 "nonlinear_block_residual_reduction_factor"
-            ] > 2.0
-            and HS_nonlinear_source["claim_boundary"][
-                "continuous_action_constrained_center"
-            ] == "OPEN"
+            ] < 1.0
+        ),
+        "rate_consistent_source_is_directly_replayed": (
+            HS_rate_consistent_source["validation_passed"] is True
+            and HS_rate_consistent_source["adjudication"][
+                "mixed_pre_recenter_rate_source"
+            ] == "SUPERSEDED"
+        ),
+        "rate_consistent_block_Newton_step_reduces_exact_nonlinear_residual": (
+            HS_rate_consistent_replay["validation_passed"] is True
+            and HS_rate_consistent_replay["summary"][
+                "nonlinear_block_residual_reduction_factor"
+            ] > 1.4
+            and HS_rate_consistent_replay["summary"][
+                "maximum_Hermite_Simpson_shooting_residual_2_norm"
+            ] < HS_rate_consistent_source["summary"][
+                "maximum_Hermite_Simpson_shooting_residual_2_norm"
+            ]
         ),
         "stored_graph_Jacobian_is_rejected_as_complete_projected_residual_derivative": (
             HS_projected_jacobian["validation_passed"] is True
@@ -999,7 +1036,7 @@ def build_payload() -> dict[str, Any]:
             "Gate7": "ACTIVE",
             "FULL_BHSM_COMPLETE": False,
         },
-        "exact_next_dependency": "DIFFERENTIATE_THE_COMPLETE_ENDPOINT_CONSTRAINT_PROJECTION,_SELECTED_DESCRIPTOR_RECENTER,_EXACT_ENDPOINT_FIELD,_HERMITE_SIMPSON_MIDPOINT_STATE,_AND_EXACT_MIDPOINT_FIELD_COMPOSITION;_ASSEMBLE_AND_SOLVE_ITS_EXACT_BLOCK_JVP_NEWTON_OR_KRAWCZYK_OPERATOR;_CERTIFY_CONTINUOUS_SHADOWING;_REBUILD_THE_CONE_FIRST_HIT_AND_CONTINUOUS_VARIATIONAL_CARRIER;_THEN_MATERIALIZE_THE_NONLINEAR_72D_HISTORY_JET,_TWO_SIDED_WEYL_CALDERON_ORACLE,_FORCE,_KKT_ROOT,_AND_PHYSICAL_HESSIAN",
+        "exact_next_dependency": "REBUILD_THE_ENDPOINT_AND_MIDPOINT_GRAPH_JACOBIANS_ON_THE_RATE_CONSISTENT_NEWTON_CENTER;_ITERATE_THE_SAME_DESCRIPTOR_RATE_CONSISTENT_BLOCK_MAP_TO_CONVERGENCE;_CERTIFY_CONTINUOUS_SHADOWING;_REBUILD_THE_CONE_FIRST_HIT_AND_CONTINUOUS_VARIATIONAL_CARRIER;_THEN_MATERIALIZE_THE_NONLINEAR_72D_HISTORY_JET,_TWO_SIDED_WEYL_CALDERON_ORACLE,_FORCE,_KKT_ROOT,_AND_PHYSICAL_HESSIAN",
         "FULL_BHSM_COMPLETE": False,
     }
 

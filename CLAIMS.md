@@ -72,15 +72,15 @@ solvers.  Supported now: the best second-Newton center has a materialized
 `2.0101707940913732e-6`.  Not supported: calling that source a solved multiple-
 shooting system, continuous exact orbit, or interval shadowing theorem.  Its
 block Newton/Krawczyk operator with constraint and descriptor-fiber rows must
-be assembled and solved before the cone and first hit are rebuilt.  The first
-direct block step is supported as a numerical contraction: its nonlinear
-Hermite--Simpson residual falls by `2.68464846979012` to
-`7.487649935220473e-7`.  Not supported: using the stored hybrid graph Jacobian
-for subsequent projected/recentered Newton steps.  A rebuilt full step, a
-secant-damped step, and a local-trust step all fail; the exact local residual
-direction is `167.1575285177961` times the stored model scale.  The missing
-object is now the exact JVP of the complete projection--recenter--endpoint--
-midpoint residual composition.
+be assembled and solved before the cone and first hit are rebuilt.  The former
+`7.487649935220473e-7` contraction is not supported: its endpoints paired a
+recentered descriptor with a field rate evaluated before recentering.  The
+maximum repaired endpoint-rate change is `1.0526435867226e-5`.  Supported now:
+direct same-descriptor replay produces a `1.800590017529095e-6` source, and a
+rate-consistent block step reduces it to `1.215762696655947e-6`, a
+`1.4810373952760374`-fold numerical contraction.  Not supported: calling this
+a solved orbit or interval shadow.  Rebuild the Jacobians on the repaired
+center and iterate before continuous certification.
 
 ## Current public claim boundary
 

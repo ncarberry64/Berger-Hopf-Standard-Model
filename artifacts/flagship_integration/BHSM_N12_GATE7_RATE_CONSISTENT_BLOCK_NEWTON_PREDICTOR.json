@@ -1,0 +1,50 @@
+{
+  "FULL_BHSM_COMPLETE": false,
+  "artifact": "BHSM_N12_GATE7_RATE_CONSISTENT_BLOCK_NEWTON_PREDICTOR",
+  "authority": "NUMERICAL_LINEARIZED_HERMITE_SIMPSON_PREDICTOR_NOT_NONLINEAR_OR_INTERVAL_AUTHORITY",
+  "claim_boundary": {
+    "FULL_BHSM_COMPLETE": false,
+    "Gate7": "ACTIVE_ACTION_OWNED_OPERATOR_ORACLE",
+    "continuous_action_constrained_center": "OPEN",
+    "nonlinear_Hermite_Simpson_center": "OPEN_EXACT_REPLAY"
+  },
+  "data": "artifacts/flagship_integration/BHSM_N12_GATE7_RATE_CONSISTENT_BLOCK_NEWTON_PREDICTOR.npz",
+  "data_SHA256": "8980CF8CB1532ABF77E376CD410B119D45DF706F983BB413FB67A275612FA9F3",
+  "exact_next_dependency": "APPLY_THE_CORRECTION,_PROJECT_AND_RECENTER_EACH_ENDPOINT,_REEVALUATE_EACH_ENDPOINT_RATE_AT_ITS_RECENTERED_DESCRIPTOR,_AND_REPLAY_ALL_MIDPOINTS",
+  "inputs": {
+    "artifacts/flagship_integration/BHSM_N12_GATE7_FIRST_HS_NEWTON_CENTER_GRAPH_JACOBIAN.json": "8D213FE49160E560CCE50B5A8F262F7A27DE66DDFF0028F355D07B5F9B10EAA2",
+    "artifacts/flagship_integration/BHSM_N12_GATE7_FIRST_HS_NEWTON_CENTER_GRAPH_JACOBIAN.npz": "8D53A528BE13126D6332D2D51DA0B240A3A9FB16860ACE2F04D8B280C7B0D597",
+    "artifacts/flagship_integration/BHSM_N12_GATE7_FIRST_HS_NEWTON_MIDPOINT_GRAPH_JACOBIAN.json": "7F45C58A2411206A8F47E2E0AE0B655CAC8ECA3408A0777E69986011C3006D8A",
+    "artifacts/flagship_integration/BHSM_N12_GATE7_FIRST_HS_NEWTON_MIDPOINT_GRAPH_JACOBIAN.npz": "259739240EB66F31271F5D8A37B551F235F8CA448A68947114BB336B3AB82113",
+    "artifacts/flagship_integration/BHSM_N12_GATE7_FIRST_HS_RATE_CONSISTENT_NONLINEAR_SOURCE.json": "63251049AEFAD56DD24518AAA8FACBFB92BE2449891EDE00C8E49C407D114707",
+    "artifacts/flagship_integration/BHSM_N12_GATE7_FIRST_HS_RATE_CONSISTENT_NONLINEAR_SOURCE.npz": "1D003860D9CC3D17D33E547CD9D752C2A33EEDD25F8FB56AA4BF91EBF6B910E8",
+    "scripts/materialize_n12_gate7_rate_consistent_block_newton_predictor.py": "5461D39E4B01F926F33628FF99F4C66E4103F4229B4FF3DE5886698DF0E71392",
+    "theory/n12_gate7_rate_consistent_block_newton_predictor.md": "D11A77D50515A0796C760C7C38BC229C43DD4438E412CD34316D5EAB551DB539"
+  },
+  "mesh": {
+    "blocks": 370,
+    "fixed_reset_endpoint": true,
+    "state_dimension": 98
+  },
+  "status": "RATE_CONSISTENT_AMBIENT_BLOCK_NEWTON_PREDICTOR_SOLVED",
+  "summary": {
+    "maximum_endpoint_correction_action_2_norm": 1.9541775888670937e-05,
+    "maximum_endpoint_correction_owner_node": 180,
+    "maximum_predicted_linearized_residual_2_norm": 1.3279400617587963e-20,
+    "maximum_right_block_condition_2": 6915.411993633663,
+    "maximum_right_block_condition_owner_interval": 138,
+    "terminal_endpoint_correction_action_2_norm": 7.747027373117642e-06
+  },
+  "validation": {
+    "all_370_left_and_right_blocks_materialized": true,
+    "all_371_endpoint_corrections_materialized": true,
+    "all_quantities_finite": true,
+    "all_right_blocks_are_numerically_invertible": true,
+    "continuous_interval_shadowing_not_claimed": true,
+    "linearized_block_residual_closes": true,
+    "no_action_source_selector_scale_gate_or_chord_changed": true,
+    "nonlinear_exact_field_replay_not_claimed": true,
+    "reset_endpoint_correction_is_zero": true
+  },
+  "validation_passed": true
+}

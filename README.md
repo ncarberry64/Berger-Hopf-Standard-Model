@@ -62,19 +62,18 @@ that fixed-point route.  The best second-Newton center now supplies a direct
 `370 x 99` Hermite--Simpson multiple-shooting source; its maximum block
 residual is `2.0101707940913732e-6` at interval 179.  This source is numerical,
 not a solved or interval-certified orbit.  The exact next owner is its block
-Newton/Krawczyk solve with constraint and descriptor-fiber rows.  Its first
-block step reduces the nonlinear Hermite--Simpson residual from
-`2.0101707940913732e-6` to `7.487649935220473e-7`, a
-`2.68464846979012`-fold contraction.  However, a rebuilt second step and two
-progressively damped replays all fail.  The exact local sample shows the true
-projected/recentered residual directional norm is `167.1575285177961` times
-the stored hybrid graph-model scale, with only `0.08881935156225418` cosine
-alignment to nominal descent.  The stored graph Jacobian is therefore not the
-complete solver derivative.  The exact next owner is the JVP of the full
-constraint-projection, descriptor-recenter, endpoint-field, midpoint-state,
-and midpoint-field composition; after that operator converges, exact-field
-shadowing, the cone, first hit, and continuous variational carrier must be
-rebuilt.
+Newton/Krawczyk solve with constraint and descriptor-fiber rows.  A provenance
+audit supersedes the former claimed contraction to `7.487649935220473e-7`:
+the endpoint adapter stored recentered descriptors but retained field rates
+evaluated at the pre-recenter descriptors, with a maximum rate mismatch
+`1.0526435867226e-5`.  Direct same-descriptor endpoint and midpoint replay gives
+the repaired source maximum `1.800590017529095e-6`.  A rebuilt block step whose
+endpoint descriptor and rate come from the same exact jet contracts that
+source to `1.215762696655947e-6`, a `1.4810373952760374`-fold reduction.  This
+is numerical center progress, not a solved orbit.  The exact next owner is to
+rebuild the endpoint and midpoint Jacobians on this repaired center and
+iterate, then certify exact-field shadowing and rebuild the cone, first hit,
+and continuous variational carrier.
 Gate 7 remains
 `ACTIVE`; `FULL_BHSM_COMPLETE = FALSE`.  Physical completion additionally
 requires universal spectrum/propagator, vertex, decay, loop/magnetic-moment,

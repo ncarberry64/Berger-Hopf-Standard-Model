@@ -1,0 +1,55 @@
+{
+  "FULL_BHSM_COMPLETE": false,
+  "artifact": "BHSM_N12_GATE7_FIRST_HS_TANGENT_BLOCK_NEWTON_PREDICTOR",
+  "authority": "NUMERICAL_TANGENT_LINEARIZED_PREDICTOR_NOT_NONLINEAR_OR_INTERVAL_AUTHORITY",
+  "claim_boundary": {
+    "FULL_BHSM_COMPLETE": false,
+    "Gate7": "ACTIVE_ACTION_OWNED_OPERATOR_ORACLE",
+    "continuous_action_constrained_center": "OPEN",
+    "nonlinear_Hermite_Simpson_center": "OPEN_EXACT_REPLAY"
+  },
+  "data": "artifacts/flagship_integration/BHSM_N12_GATE7_FIRST_HS_TANGENT_BLOCK_NEWTON_PREDICTOR.npz",
+  "data_SHA256": "64ED90CC3235D87C6F3AD7B7687BF0E5D964B882A7DBEFEE20FC8602A662BEA3",
+  "exact_next_dependency": "APPLY_THE_TANGENT_CORRECTIONS_AND_REPLAY_ALL_370_EXACT_NONLINEAR_MIDPOINT_FIELDS",
+  "inputs": {
+    "artifacts/flagship_integration/BHSM_N12_GATE7_FIRST_HS_NEWTON_CENTER_GRAPH_JACOBIAN.json": "8D213FE49160E560CCE50B5A8F262F7A27DE66DDFF0028F355D07B5F9B10EAA2",
+    "artifacts/flagship_integration/BHSM_N12_GATE7_FIRST_HS_NEWTON_CENTER_GRAPH_JACOBIAN.npz": "8D53A528BE13126D6332D2D51DA0B240A3A9FB16860ACE2F04D8B280C7B0D597",
+    "artifacts/flagship_integration/BHSM_N12_GATE7_FIRST_HS_NEWTON_ENDPOINT_TANGENT.json": "6AAE1DF0BBC7AB98720CDAA9B9CCF1E5691F8C7B97E9AC64F262EDCB93F26157",
+    "artifacts/flagship_integration/BHSM_N12_GATE7_FIRST_HS_NEWTON_ENDPOINT_TANGENT.npz": "5A6EF00A5658BB465249C8B90725A9D3F98CD53B35A1376A1CEF292F75E6B002",
+    "artifacts/flagship_integration/BHSM_N12_GATE7_FIRST_HS_NEWTON_MIDPOINT_GRAPH_JACOBIAN.json": "7F45C58A2411206A8F47E2E0AE0B655CAC8ECA3408A0777E69986011C3006D8A",
+    "artifacts/flagship_integration/BHSM_N12_GATE7_FIRST_HS_NEWTON_MIDPOINT_GRAPH_JACOBIAN.npz": "259739240EB66F31271F5D8A37B551F235F8CA448A68947114BB336B3AB82113",
+    "artifacts/flagship_integration/BHSM_N12_GATE7_HERMITE_SIMPSON_NEWTON_NONLINEAR_SOURCE.json": "0B0F5DCA153B0743BD28228AD82461E8BE16E3F2A5FEB54BEC771940F3D8974A",
+    "artifacts/flagship_integration/BHSM_N12_GATE7_HERMITE_SIMPSON_NEWTON_NONLINEAR_SOURCE.npz": "06F89BAEA2A89CFCE600D5B1AD17F1F8EE9567D3E859BE8C14451ED8426E1999",
+    "scripts/materialize_n12_gate7_first_hs_tangent_block_newton_predictor.py": "2859A03E1D218F893A799D31C0C3413C8F8899199208EE0EC8B96E9D0B7AA017",
+    "theory/n12_gate7_first_hs_tangent_block_newton_predictor.md": "6624E805E6C8CB7F1DA93242EA2ADE5FC2F847F8B4AB6C2F195C8E9E4F8388A7"
+  },
+  "mesh": {
+    "ambient_dimension": 98,
+    "blocks": 370,
+    "fixed_reset_endpoint": true,
+    "tangent_dimension": 73
+  },
+  "status": "INTRINSIC_73D_TANGENT_BLOCK_NEWTON_PREDICTOR_SOLVED",
+  "summary": {
+    "maximum_correction_tangent_membership_residual_2_norm": 4.9562309363397155e-21,
+    "maximum_endpoint_correction_action_2_norm": 9.458378705444665e-06,
+    "maximum_endpoint_correction_owner_node": 177,
+    "maximum_predicted_full_residual_2_norm": 1.8055389217621203e-11,
+    "maximum_predicted_normal_residual_2_norm": 1.8055389217621203e-11,
+    "maximum_predicted_tangent_residual_2_norm": 8.944389621771543e-21,
+    "maximum_reduced_right_block_condition_2": 186.11204400612365,
+    "maximum_reduced_right_block_condition_owner_interval": 0,
+    "terminal_endpoint_correction_action_2_norm": 8.626962611642318e-07
+  },
+  "validation": {
+    "all_371_tangent_endpoint_corrections_materialized": true,
+    "all_corrections_lie_in_endpoint_tangents": true,
+    "all_reduced_right_blocks_are_numerically_invertible": true,
+    "linearized_tangent_block_residual_closes": true,
+    "no_action_source_selector_scale_gate_or_chord_changed": true,
+    "nonlinear_exact_field_replay_not_claimed": true,
+    "normal_block_residual_is_recorded_not_relabelled_as_zero": true,
+    "reset_endpoint_correction_is_zero": true
+  },
+  "validation_passed": true
+}

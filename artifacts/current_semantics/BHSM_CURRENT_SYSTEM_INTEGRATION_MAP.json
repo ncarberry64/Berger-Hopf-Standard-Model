@@ -84,7 +84,7 @@
     },
     {
       "classification": "CURRENT_BLOCKER",
-      "current_effect": "the direct 370 by 99 Hermite-Simpson source is explicit. Its first block-bidiagonal Newton step reduces the nonlinear block residual from 2.0101707940913732e-6 to 7.487649935220473e-7 (2.68464846979012 times), so the direct collocation route is retained. A rebuilt full second step, a secant-damped step, and a local-trust step all fail. Exact replay shows the actual projected/recentered residual directional norm is 167.1575285177961 times the stored hybrid graph-model scale with only 0.08881935156225418 cosine alignment to nominal descent. The stored graph Jacobian is therefore rejected as the complete solver derivative. Differentiate the full endpoint constraint projection, selected-descriptor recenter, exact endpoint field, Hermite-Simpson midpoint state, and exact midpoint field composition; assemble its exact block JVP/Newton operator, then certify continuous shadowing and rebuild the cone/first hit before the nonlinear 72D history jet, Weyl-Calderon oracle, force, KKT root, and physical Hessian",
+      "current_effect": "the earlier 7.487649935220473e-7 Hermite-Simpson contraction is superseded because its recentered endpoint descriptors retained pre-recenter field rates, with maximum rate mismatch 1.0526435867226e-5. Direct same-descriptor replay gives the repaired source maximum 1.800590017529095e-6. A block step whose constraint-projected endpoint descriptor and rate are produced by the same exact jet reduces the exact nonlinear maximum to 1.215762696655947e-6, a 1.4810373952760374-fold contraction. Rebuild endpoint and midpoint Jacobians on this repaired center and iterate the rate-consistent block map to convergence; then certify continuous shadowing and rebuild the cone/first hit before the nonlinear 72D history jet, Weyl-Calderon oracle, force, KKT root, and physical Hessian",
       "id": "G7_COMPLETE_JOINT_FORCE_ROOT"
     },
     {
@@ -133,7 +133,7 @@
   "current_irreducible_objects": [
     "G7_COMPLETE_JOINT_FORCE_ROOT"
   ],
-  "exact_next_dependency": "DIFFERENTIATE_THE_COMPLETE_ENDPOINT_CONSTRAINT_PROJECTION,_SELECTED_DESCRIPTOR_RECENTER,_EXACT_ENDPOINT_FIELD,_HERMITE_SIMPSON_MIDPOINT_STATE,_AND_EXACT_MIDPOINT_FIELD_COMPOSITION;_ASSEMBLE_AND_SOLVE_ITS_EXACT_BLOCK_JVP_NEWTON_OR_KRAWCZYK_OPERATOR;_CERTIFY_CONTINUOUS_SHADOWING;_REBUILD_THE_CONE_FIRST_HIT_AND_CONTINUOUS_VARIATIONAL_CARRIER;_THEN_MATERIALIZE_THE_NONLINEAR_72D_HISTORY_JET,_TWO_SIDED_WEYL_CALDERON_ORACLE,_FORCE,_KKT_ROOT,_AND_PHYSICAL_HESSIAN",
+  "exact_next_dependency": "REBUILD_THE_ENDPOINT_AND_MIDPOINT_GRAPH_JACOBIANS_ON_THE_RATE_CONSISTENT_NEWTON_CENTER;_ITERATE_THE_SAME_DESCRIPTOR_RATE_CONSISTENT_BLOCK_MAP_TO_CONVERGENCE;_CERTIFY_CONTINUOUS_SHADOWING;_REBUILD_THE_CONE_FIRST_HIT_AND_CONTINUOUS_VARIATIONAL_CARRIER;_THEN_MATERIALIZE_THE_NONLINEAR_72D_HISTORY_JET,_TWO_SIDED_WEYL_CALDERON_ORACLE,_FORCE,_KKT_ROOT,_AND_PHYSICAL_HESSIAN",
   "inputs": {
     "artifacts/BHSM_1_0_completion_gate.json": "CE578DFA191245840935D759E3F07F034A9607EE2DED7010040F7D0780612144",
     "artifacts/BHSM_CKM_action_equivalence_v11_6.json": "5F5850309F6744464FBA34A4A255F415A6F17782B60CF0E6FF7A4E1CEC63DD1C",
@@ -200,7 +200,13 @@
     "artifacts/flagship_integration/BHSM_N12_GATE7_EXACT_CENTER_PHYSICAL_FIELD_JACOBIAN.json": "C54BE66B5046D69CD837000117A7C22FD59037ECE760CE5066FCC784556AF837",
     "artifacts/flagship_integration/BHSM_N12_GATE7_FINAL_EXACT_CENTER_FORCE_KKT_HESSIAN_VERDICT.json": "CDDB1454D3FFFDD082D6A8E560DA9FC83BFD724F07C03273C86CE0E28BD1BEEF",
     "artifacts/flagship_integration/BHSM_N12_GATE7_FIRST_HS_NEWTON_CENTER_GRAPH_JACOBIAN.json": "8D213FE49160E560CCE50B5A8F262F7A27DE66DDFF0028F355D07B5F9B10EAA2",
+    "artifacts/flagship_integration/BHSM_N12_GATE7_FIRST_HS_NEWTON_ENDPOINT_TANGENT.json": "6AAE1DF0BBC7AB98720CDAA9B9CCF1E5691F8C7B97E9AC64F262EDCB93F26157",
     "artifacts/flagship_integration/BHSM_N12_GATE7_FIRST_HS_NEWTON_MIDPOINT_GRAPH_JACOBIAN.json": "7F45C58A2411206A8F47E2E0AE0B655CAC8ECA3408A0777E69986011C3006D8A",
+    "artifacts/flagship_integration/BHSM_N12_GATE7_FIRST_HS_RATE_CONSISTENT_NONLINEAR_SOURCE.json": "63251049AEFAD56DD24518AAA8FACBFB92BE2449891EDE00C8E49C407D114707",
+    "artifacts/flagship_integration/BHSM_N12_GATE7_FIRST_HS_RECENTERED_RATE_CONSISTENT_ENDPOINTS.json": "AFB6846D8188796B656977DC5EB084477538E1B49D8E311DD1533107167AE1CB",
+    "artifacts/flagship_integration/BHSM_N12_GATE7_FIRST_HS_TANGENT_BLOCK_NEWTON_PREDICTOR.json": "D2F4CC574BA98B2C6DA4B841002833D406F1C8F01E710E64E094176E06E0F426",
+    "artifacts/flagship_integration/BHSM_N12_GATE7_FIRST_HS_TANGENT_NEWTON_ENDPOINT_CANDIDATE.json": "E5D9BD53807A0D638D2CCF7450378D88E24779C32A2840AA2F04F2B8482D737B",
+    "artifacts/flagship_integration/BHSM_N12_GATE7_FIRST_HS_TANGENT_NEWTON_MIDPOINT_REPLAY.json": "5AD62602E23436DD688BFE0FCDA40C7450C7F4557D8DDB95BD085E55ED464A24",
     "artifacts/flagship_integration/BHSM_N12_GATE7_FROZEN_DECIMAL_GAUSS8_CENTER.json": "90FD0B41437CBD57B576FC3FED836C1460C83A32C7ACB4D8761C06339DA0DA52",
     "artifacts/flagship_integration/BHSM_N12_GATE7_GLOBAL_CONNECTION_OBSTRUCTION.json": "10001204499627CA5D3D9EFB5956B86BFA03BB9C1D51B6C05DE3474A2393CB06",
     "artifacts/flagship_integration/BHSM_N12_GATE7_HERMITE_SIMPSON_BLOCK_NEWTON_PREDICTOR.json": "C11D15A30A75C237749600B5BD1C44C8AFE431684423D9D8CFE6DA5B4D6BD887",
@@ -220,6 +226,9 @@
     "artifacts/flagship_integration/BHSM_N12_GATE7_PROJECTED_EXACT_AFFINE_FINE_CENTER_CANDIDATE.json": "2178CEEB5F2F98846E426EA7AA2FEEA244CBF0E3315C9DDC32C8B0B452C5425A",
     "artifacts/flagship_integration/BHSM_N12_GATE7_PROJECTED_NATIVE_DOP853_CENTER_CANDIDATE.json": "1A6D4E469253BE075C5A98505CE36195FE04436A1C189880E34F5ECCF07817B9",
     "artifacts/flagship_integration/BHSM_N12_GATE7_QUANTITATIVE_STABLE_CAPTURE_TUBE.json": "AC6421703F2A29217F9B1056C41F17650464BB40E38DFC324F78CC9343DB98D2",
+    "artifacts/flagship_integration/BHSM_N12_GATE7_RATE_CONSISTENT_BLOCK_NEWTON_PREDICTOR.json": "BD07DEDB61C88B698491CD88574DFCE6EE5A4E50E724E3F39BB47802388D4442",
+    "artifacts/flagship_integration/BHSM_N12_GATE7_RATE_CONSISTENT_NEWTON_ENDPOINT_CANDIDATE.json": "039436AB80F76B68ABE51BDB96CC616018C36D37A388280BDDB58E6D27DBA2FA",
+    "artifacts/flagship_integration/BHSM_N12_GATE7_RATE_CONSISTENT_NEWTON_MIDPOINT_REPLAY.json": "69ED710419EF50031AACAAEAED8979AE52128AE3534F14FA58E3B5729B217D3C",
     "artifacts/flagship_integration/BHSM_N12_GATE7_RECENTERED_CONE_BORDERED_HARD_INVERSE.json": "FC936B33AE3A2547C39BBA7007D33EC3D70F9515E7377574D664D2E3479D5FD4",
     "artifacts/flagship_integration/BHSM_N12_GATE7_RECENTERED_CONE_BORDERED_RESPONSE_FIRST_VARIATION.json": "5B60E698ECD7B74300AD89E0735C4E314EB29EF2646040BD36BDFBBE52CE064E",
     "artifacts/flagship_integration/BHSM_N12_GATE7_RECENTERED_CONE_BORDERED_RHS_RESPONSE.json": "724E4FBA44FFFC178D18AEBFC244D65B69E84269EA6753045C6E2FC2E23C6097",
@@ -734,10 +743,11 @@
     "finite_direct_first_variation_tube_is_certified": true,
     "finite_exact_Omega5_augmented_global_composition_is_outward_certified": true,
     "finite_exact_Omega7_augmented_global_composition_is_outward_certified": true,
-    "first_direct_block_Newton_step_reduces_nonlinear_Hermite_Simpson_residual": true,
+    "former_mixed_descriptor_rate_contraction_is_superseded": true,
     "global_connection_remains_exactly_localized": true,
     "global_finite_correlated_Magnus4_affine_composition_is_outward_certified": true,
     "interaction_frame_analytic_infinite_tail_is_certified_without_exact_propagator_promotion": true,
+    "intrinsic_tangent_restriction_of_old_derivative_is_rejected": true,
     "no_current_D_class_theory_choice": true,
     "normalized_field_common_frame_identity_is_derived": true,
     "one_seam_AE2_composition_already_exists": true,
@@ -751,6 +761,8 @@
     "quarter_green_corrected_carrier_is_certified": true,
     "quarter_green_corrected_complete_response_is_certified": true,
     "quarter_green_corrected_reverse_first_variation_is_certified": true,
+    "rate_consistent_block_Newton_step_reduces_exact_nonlinear_residual": true,
+    "rate_consistent_source_is_directly_replayed": true,
     "scalar_second_variation_route_is_rejected_coverwide": true,
     "second_halving_rejects_interpolation_only_refinement": true,
     "selected_candidate_cone_line_projector_and_inverse_are_certified": true,

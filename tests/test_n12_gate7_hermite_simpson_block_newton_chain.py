@@ -18,7 +18,7 @@ def _sha256(path: Path) -> str:
     return hashlib.sha256(payload).hexdigest().upper()
 
 
-def test_first_block_step_contracts_and_stored_derivative_is_rejected() -> None:
+def test_historical_mixed_rate_step_and_stored_derivative_are_superseded() -> None:
     midpoint = _load("BHSM_N12_GATE7_HERMITE_SIMPSON_MIDPOINT_GRAPH_JACOBIAN")
     predictor = _load("BHSM_N12_GATE7_HERMITE_SIMPSON_BLOCK_NEWTON_PREDICTOR")
     endpoint = _load("BHSM_N12_GATE7_HERMITE_SIMPSON_NEWTON_ENDPOINT_CANDIDATE")
@@ -27,11 +27,13 @@ def test_first_block_step_contracts_and_stored_derivative_is_rejected() -> None:
     damped = _load("BHSM_N12_GATE7_DAMPED_SECOND_HS_NEWTON_MIDPOINT_REPLAY")
     trust = _load("BHSM_N12_GATE7_LOCAL_TRUST_SECOND_HS_MIDPOINT_REPLAY")
     verdict = _load("BHSM_N12_GATE7_HERMITE_SIMPSON_PROJECTED_RESIDUAL_JACOBIAN_ADJUDICATION")
+    repair = _load("BHSM_N12_GATE7_FIRST_HS_RECENTERED_RATE_CONSISTENT_ENDPOINTS")
     assert midpoint["validation_passed"] is True
     assert predictor["validation_passed"] is True
     assert endpoint["validation_passed"] is True
     assert source["validation_passed"] is True
     assert source["summary"]["nonlinear_block_residual_reduction_factor"] > 2.0
+    assert repair["adjudication"]["stored_pre_recenter_endpoint_rates"].startswith("SUPERSEDED")
     assert full["validation_passed"] is False
     assert damped["validation_passed"] is False
     assert trust["validation_passed"] is False

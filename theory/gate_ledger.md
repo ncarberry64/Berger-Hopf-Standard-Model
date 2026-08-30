@@ -2899,11 +2899,38 @@ Exact next object:
 - Gate 7 remains `ACTIVE`; Gate 8 is `LOCKED`; chord 3 remains
   `UNAUTHORIZED`; `FULL_BHSM_COMPLETE=FALSE`.
 
+## N=12 Gate-7 endpoint descriptor/rate consistency repair
+
+- The first-HS endpoint adapter recentered each stored descriptor to the
+  selected branch-24 eigenvalue after evaluating the endpoint field with the
+  inherited pre-recenter descriptor.  The stored endpoint augmented rate was
+  therefore not the field of the stored augmented endpoint.
+- Direct reevaluation at all 371 stored recentered endpoints changes the rate
+  by as much as `1.0526435867226e-5`, owned by node 154.  The old mixed-rate
+  `7.487649935220473e-7` source and its apparent contraction are superseded.
+- Direct same-descriptor endpoint and all-370-midpoint replay gives the repaired
+  Hermite--Simpson maximum `1.800590017529095e-6`, owned by interval 218.
+- A rebuilt ambient block predictor followed by constraint projection and a
+  one-jet selected-eigenvalue/field recenter reduces the exact nonlinear
+  maximum to `1.215762696655947e-6`, owned by interval 325.  The reduction
+  factor is `1.4810373952760374`.
+- Scientific milestone:
+  `RECENTERED_DESCRIPTOR_RATE_CONSISTENCY_REPAIRED_AND_NEWTON_CONTRACTS`.
+- Claim boundary: this is numerical center iteration, not an exact orbit,
+  interval shadow, rebuilt cone/first hit, continuous carrier, force, KKT root,
+  Hessian, or physical completion.
+- Exact next owner: rebuild endpoint and midpoint Jacobians on the repaired
+  center, iterate the rate-consistent block map to convergence, and only then
+  construct the continuous outward shadow and downstream Gate-7 operator.
+- Gate 7 remains `ACTIVE`; Gate 8 is `LOCKED`; chord 3 remains
+  `UNAUTHORIZED`; `FULL_BHSM_COMPLETE=FALSE`.
+
 ## N=12 Gate-7 projected Hermite--Simpson Jacobian adjudication
 
 - The first direct block step closes its finite linearized residual below
-  `8.899788305494367e-21` and reduces the nonlinear Hermite--Simpson maximum
-  from `2.0101707940913732e-6` to `7.487649935220473e-7`.
+  `8.899788305494367e-21`.  Its formerly reported nonlinear contraction to
+  `7.487649935220473e-7` is superseded by the endpoint descriptor/rate
+  consistency audit below.
 - Endpoint and midpoint graph Jacobians are rebuilt on that center.  The full
   second step nevertheless raises the nonlinear maximum to
   `1.790160946544264e-6`; secant damping and a local-trust replay also fail.

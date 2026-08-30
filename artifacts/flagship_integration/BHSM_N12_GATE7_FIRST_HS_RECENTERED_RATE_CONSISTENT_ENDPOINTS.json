@@ -1,0 +1,43 @@
+{
+  "FULL_BHSM_COMPLETE": false,
+  "adjudication": {
+    "recentered_descriptor_consistent_endpoint_rates": "REBUILT_DIRECTLY",
+    "stored_first_HS_endpoint_states_and_descriptors": "RETAINED",
+    "stored_pre_recenter_endpoint_rates": "SUPERSEDED_FOR_COLLOCATION_SOURCE"
+  },
+  "artifact": "BHSM_N12_GATE7_FIRST_HS_RECENTERED_RATE_CONSISTENT_ENDPOINTS",
+  "authority": "DIRECT_RETAINED_EXACT_FIELD_REPLAY_NUMERICAL_CENTER_REPAIR",
+  "claim_boundary": {
+    "FULL_BHSM_COMPLETE": false,
+    "Gate7": "ACTIVE_ACTION_OWNED_OPERATOR_ORACLE",
+    "continuous_action_constrained_center": "OPEN",
+    "nonlinear_Hermite_Simpson_center": "OPEN_RATE_CONSISTENT_MIDPOINT_REPLAY"
+  },
+  "data": "artifacts/flagship_integration/BHSM_N12_GATE7_FIRST_HS_RECENTERED_RATE_CONSISTENT_ENDPOINTS.npz",
+  "data_SHA256": "CA6A90349F45880CD4F8172FC9BAEE2611D0A24117920BB6844AE84EDEBB041D",
+  "exact_next_dependency": "REBUILD_ALL_370_HERMITE_SIMPSON_MIDPOINTS_FROM_THE_RATE_CONSISTENT_ENDPOINT_DATA",
+  "inputs": {
+    "artifacts/flagship_integration/BHSM_N12_GATE7_HERMITE_SIMPSON_NEWTON_ENDPOINT_CANDIDATE.json": "4D4A5DDD5929E20921CB857B95BBECD546B585AA7C1A167E9B17786CD76D56B1",
+    "artifacts/flagship_integration/BHSM_N12_GATE7_HERMITE_SIMPSON_NEWTON_ENDPOINT_CANDIDATE.npz": "749660BB633A2775CB0CEF818C11E31966560164B00A45EF3463B6AED812396B",
+    "scripts/materialize_n12_gate7_first_hs_recentered_rate_consistent_endpoints.py": "FDE9F678343C75FB4A2811DFE4DA6D12742BD98CD3D70D87C603194AF0D9C2C7",
+    "theory/n12_gate7_first_hs_recentered_rate_consistency.md": "D490E33D75F461C01DB0E929B97EB6BB1834B032B8214BABC9C931C1A226135E"
+  },
+  "status": "FIRST_HS_ENDPOINT_RATES_REEVALUATED_AT_RECENTERED_DESCRIPTORS",
+  "summary": {
+    "maximum_endpoint_descriptor_fiber_residual_absolute": 9.351382058254128e-14,
+    "maximum_endpoint_rate_consistency_difference_2_norm": 1.0526435867226e-05,
+    "maximum_endpoint_rate_consistency_difference_owner_node": 154,
+    "minimum_selected_eigenline_gap": 1.7341581145819906e-07
+  },
+  "validation": {
+    "all_371_endpoint_fields_recomputed_at_recentered_descriptors": true,
+    "all_quantities_finite": true,
+    "branch_24_selected_at_every_endpoint": true,
+    "endpoint_states_and_descriptors_are_unchanged": true,
+    "no_action_source_selector_scale_gate_or_chord_changed": true,
+    "pre_recenter_rate_mismatch_is_nonzero_and_material": true,
+    "selected_line_remains_simple_numerically": true,
+    "stored_descriptors_match_selected_eigenvalues_numerically": true
+  },
+  "validation_passed": true
+}
