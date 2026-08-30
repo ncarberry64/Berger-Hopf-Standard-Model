@@ -16,6 +16,9 @@ import numpy as np
 from scipy.integrate import solve_ivp
 from scipy.interpolate import CubicSpline
 
+from bhsm.interface.aether_cancelled_arc_proper_time_pullback import (
+    assemble_cancelled_arc_proper_time_coefficient_first_jet,
+)
 from bhsm.interface.aether_forward_channel_transfer import (
     product_dirac_channel_transfer_generator,
     scalar_channel_transfer_generator,
@@ -157,7 +160,13 @@ def integrate_history_weyl_first_jet(
     # conditioned fundamental matrices without adding a boundary condition.
     collar = min(1.0e-5, 0.05 * float(np.min(np.diff(times))))
     vector_initial = np.zeros((1 + parameter_count, 2), dtype=complex)
-    vector_initial[0, 1] = 1.0
+    # Multiplying a Dirichlet solution by a parameter-independent constant
+    # leaves both Riccati response rows and their first jets unchanged.  Use
+    # the reference 1/T normalization so a genuinely short physical history
+    # enters the collar with u approximately equal to the normalized-time
+    # coordinate instead of an unresolved O(T) amplitude.  The physical
+    # transfer b is restored below by the fixed reference factor T.
+    vector_initial[0, 1] = 1.0 / duration
 
     def vector_rhs(normalized_time: float, packed: np.ndarray) -> np.ndarray:
         vectors = packed.reshape(1 + parameter_count, 2)
@@ -258,10 +267,16 @@ def integrate_history_weyl_first_jet(
         raise RuntimeError(f"two-sided Riccati integration failed: {messages}")
     forward_final = forward.y[:, -1].reshape(1 + parameter_count, 2)
     backward_final = backward.y[:, -1].reshape(1 + parameter_count, 2)
-    log_b = forward_final[0, 1]
+    log_b = forward_final[0, 1] + math.log(duration)
+    if not np.isfinite(log_b):
+        raise RuntimeError("nonfinite logarithmic transfer b")
+    if float(-np.real(log_b)) > math.log(np.finfo(float).max):
+        raise OverflowError(
+            "finite transfer b is below the representable binary64 reciprocal range"
+        )
     inverse_b = np.exp(-log_b)
-    if abs(inverse_b) >= 1.0 / tolerance:
-        raise ZeroDivisionError("two-boundary Weyl chart has singular transfer b block")
+    if not np.isfinite(inverse_b):
+        raise OverflowError("nonfinite reciprocal transfer b")
     m00 = -backward_final[0, 0]
     m11 = forward_final[0, 0]
     off_diagonal = -inverse_b
@@ -298,6 +313,11 @@ def integrate_history_weyl_first_jet(
             forward_steps + backward_steps + len(forward.t) + len(backward.t) - 2
         ),
         "transfer_b_chart_margin": chart_margin,
+        "absolute_chart_tolerance_used_for_rejection": False,
+        "transfer_b_above_requested_absolute_tolerance": bool(
+            log_chart_margin > math.log(tolerance)
+        ),
+        "Dirichlet_collar_reference_normalization": "INITIAL_CONORMAL_1_OVER_T",
         "Wronskian_identity_used": "c-d*a/b=-1/b",
         "weyl_Hermitian_residual": float(np.linalg.norm(weyl - weyl.conj().T)),
         "propagation_representation": "TWO_SIDED_RICCATI_PLUS_LOG_TRANSFER_B",
@@ -307,4 +327,70 @@ def integrate_history_weyl_first_jet(
     }
 
 
-__all__ = ["integrate_history_weyl_first_jet"]
+def integrate_cancelled_arc_history_weyl_first_jet(
+    *,
+    arc_nodes: np.ndarray,
+    states: np.ndarray,
+    state_action_first_jet: np.ndarray,
+    state_weights: np.ndarray,
+    signed_descriptor: np.ndarray,
+    signed_descriptor_first_jet: np.ndarray,
+    cancelled_field_action_norm: np.ndarray,
+    cancelled_norm_state_gradient_action: np.ndarray,
+    cancelled_norm_descriptor_derivative: np.ndarray,
+    channel: Channel,
+    unit_channel_value: float,
+    spectral_parameter: complex,
+    chirality: int = 1,
+    terminal_log_radius_first_jet: np.ndarray | None = None,
+    relative_tolerance: float = 2.0e-11,
+    absolute_tolerance: float = 2.0e-13,
+    maximum_step: float | None = None,
+    chart_tolerance: float = 1.0e-14,
+) -> dict[str, Any]:
+    """Compose the retained cancelled-arc incidence with its Weyl first jet."""
+
+    pullback = assemble_cancelled_arc_proper_time_coefficient_first_jet(
+        arc_nodes=arc_nodes,
+        states=states,
+        state_action_first_jet=state_action_first_jet,
+        state_weights=state_weights,
+        signed_descriptor=signed_descriptor,
+        signed_descriptor_first_jet=signed_descriptor_first_jet,
+        cancelled_field_action_norm=cancelled_field_action_norm,
+        cancelled_norm_state_gradient_action=(
+            cancelled_norm_state_gradient_action
+        ),
+        cancelled_norm_descriptor_derivative=(
+            cancelled_norm_descriptor_derivative
+        ),
+        terminal_log_radius_first_jet=terminal_log_radius_first_jet,
+    )
+    response = integrate_history_weyl_first_jet(
+        normalized_times=pullback["normalized_proper_times"],
+        log_radius=pullback["log_radius"],
+        log_radius_first_jet=pullback[
+            "log_radius_normalized_proper_time_first_jet"
+        ],
+        proper_duration=pullback["proper_duration"],
+        proper_duration_first_jet=pullback["proper_duration_first_jet"],
+        channel=channel,
+        unit_channel_value=unit_channel_value,
+        spectral_parameter=spectral_parameter,
+        chirality=chirality,
+        relative_tolerance=relative_tolerance,
+        absolute_tolerance=absolute_tolerance,
+        maximum_step=maximum_step,
+        chart_tolerance=chart_tolerance,
+    )
+    return {
+        **response,
+        "proper_time_pullback": pullback,
+        "cancelled_arc_composed_without_time_relabeling": True,
+    }
+
+
+__all__ = [
+    "integrate_cancelled_arc_history_weyl_first_jet",
+    "integrate_history_weyl_first_jet",
+]
