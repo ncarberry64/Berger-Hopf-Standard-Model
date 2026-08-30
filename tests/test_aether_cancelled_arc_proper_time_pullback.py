@@ -92,6 +92,8 @@ def test_moving_duration_chain_rule_matches_centered_reparameterization() -> Non
     assert result["density_interpolation"] == (
         "POSITIVE_PIECEWISE_LINEAR_WITH_EXACT_LINEAR_FIRST_JET"
     )
+    assert result["numerical_not_interval_authority"] is True
+    assert result["binary64_quadrature_not_outward"] is True
     assert result["arc_parameter_not_identified_with_proper_time"] is True
 
 

@@ -28,7 +28,7 @@ def cancelled_arc_proper_time_density_first_jet(
     log_boundary_lapse_first_jet: np.ndarray,
     signed_descriptor_first_jet: np.ndarray,
     cancelled_field_action_norm_first_jet: np.ndarray,
-) -> dict[str, np.ndarray]:
+) -> dict[str, Any]:
     """Evaluate ``q=N*s/||G||`` and its regular first jet.
 
     The product rule is used directly, so the terminal ``s=0`` row never
@@ -70,6 +70,7 @@ def cancelled_arc_proper_time_density_first_jet(
     return {
         "proper_time_density": density,
         "proper_time_density_first_jet": first,
+        "numerical_not_interval_authority": True,
     }
 
 
@@ -177,6 +178,8 @@ def pullback_cancelled_arc_history_to_proper_time(
         "density_interpolation": (
             "POSITIVE_PIECEWISE_LINEAR_WITH_EXACT_LINEAR_FIRST_JET"
         ),
+        "numerical_not_interval_authority": True,
+        "binary64_quadrature_not_outward": True,
     }
 
 
