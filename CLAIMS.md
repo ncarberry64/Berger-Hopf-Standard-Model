@@ -19,6 +19,13 @@ BHSM completion before the complete action-owned joint finite-history
 operator oracle and its 72-direction first jet exist.
 `FULL_BHSM_COMPLETE = FALSE`.
 
+The complete 72-direction affine-carrier path and first-hit coefficient jet
+are materialized but are not the missing nonlinear oracle.  The available
+causal transfer bound is noncontractive and gives terminal uncertainty larger
+than the affine Jacobi norm, so using that affine jet as the force authority
+is explicitly unsupported.  The required replacement is a direct
+exact-center variational carrier.
+
 ## Current public claim boundary
 
 Current public identifier: **continuum event-child and local singular reset

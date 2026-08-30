@@ -2838,3 +2838,9 @@ Exact next object:
   endpoint form, and its 72-direction geometry/reset first jet.  The projected
   heat-minus-zeta force, same-action KKT root, and constrained physical Hessian
   remain open.  `FULL_BHSM_COMPLETE = FALSE`.
+- The complete 72-direction affine-carrier history and first-hit coefficient
+  jet are materialized.  The attempted causal transfer to the nonlinear exact
+  solution family has contraction upper `2.9106286494031597` and terminal
+  error-to-affine-jet ratio `1.5634079697562602`; it is therefore rejected as
+  operator authority.  The next owner is a direct exact-center variational
+  carrier, not further inflation of the affine transfer.

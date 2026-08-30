@@ -66,6 +66,9 @@ def test_canonical_system_and_required_subsystems() -> None:
         "exact_affine_terminal_stop_is_uniformly_transverse"
     ] is True
     assert payload["validation"][
+        "complete_affine_72d_history_jet_is_materialized_but_not_promoted"
+    ] is True
+    assert payload["validation"][
         "physical_completeness_matrix_is_required_and_open"
     ] is True
     assert payload["validation"][

@@ -21,6 +21,14 @@ Weyl--Calderon oracle), endpoint form, and 72-direction geometry/reset first
 jet required by the already-derived heat-minus-zeta force and KKT formulas.
 `FULL_BHSM_COMPLETE = FALSE`.
 
+The complete reset lift has now been composed with all 47 correlated Arb
+macro maps, and the transverse stop formula supplies affine-carrier duration,
+first-hit, and normalized `log R4` jets in all 72 directions.  This is a
+materialized candidate, not nonlinear authority.  The retained causal
+transfer has contraction upper `2.9106286494031597` and terminal error-to-jet
+ratio `1.5634079697562602`, so it is rejected.  The current operator owner is
+therefore a direct exact-center variational carrier.
+
 The current physical theory tuple is `BHSM-AE-2.0.0`.  It retains the v7.x
 stratified bulk/boundary functor, v14-v17 eta/Aether action lineage, v7.2
 common observable transport, and frozen comparison firewall, while replacing
