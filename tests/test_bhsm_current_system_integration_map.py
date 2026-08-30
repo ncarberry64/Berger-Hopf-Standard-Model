@@ -72,6 +72,12 @@ def test_canonical_system_and_required_subsystems() -> None:
         "direct_exact_center_physical_field_jacobian_is_materialized"
     ] is True
     assert payload["validation"][
+        "projected_exact_affine_center_supersedes_native_only_candidate"
+    ] is True
+    assert payload["validation"][
+        "projected_exact_affine_dense_flow_defect_is_localized_not_promoted"
+    ] is True
+    assert payload["validation"][
         "physical_completeness_matrix_is_required_and_open"
     ] is True
     assert payload["validation"][

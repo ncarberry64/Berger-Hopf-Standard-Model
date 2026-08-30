@@ -33,17 +33,18 @@ maximum stored-node scaled constraint residual is `7.283453490931462e-11`,
 the maximum seam-midpoint residual is `7.381223520027345e-4`, and the maximum
 nodewise linearized correction is `5216.733` certified center radii.  The
 active owner is now a direct constraint-preserving normalized-action center,
-then its within-seam outward variational carrier.  All 371 retained native
-DOP853 nodes now have a one-step constraint projection with maximum residual
-`7.239486906525122e-16` and maximum reconnaissance-halo utilization
-`0.22477230091215175`.  This is discrete candidate data: continuous
-shadowing/collocation, the descriptor fiber, and a new first-hit enclosure are
-still required.  Gate 7 remains `ACTIVE`;
-the all-cell exact-field audit further shows maximum projected midpoint
-constraint residual `1.195622995138146e-14` but augmented flow defect
-`1.4049769146208235e-5` (cell 315).  The descriptor-rate defect is only
-`1.4012683173144428e-14`; the state collocation equation is the active center
-correction owner.
+then its within-seam outward variational carrier.  The certified Taylor26
+signed response is now composed with the retained dense center before all 371
+fine nodes are projected.  Their maximum scaled constraint residual is
+`1.1679676438539284e-15`; the maximum projection is
+`3.010903976408097e-9`, which is `2420.394771963047` times the inherited final
+nonlinear radius.  Thus the native-only projection and old final cone/first
+hit are superseded.  This remains discrete candidate data.  Gate 7 remains
+`ACTIVE`; the corrected all-cell audit gives maximum midpoint constraint
+residual `8.528596684108791e-15` but augmented flow defect
+`1.0913491285675919e-5` (cell 283).  The descriptor-rate defect is at most
+`1.052323869871445e-14`; the state collocation equation is the active center
+correction owner, followed by a rebuilt cone and first hit.
 `FULL_BHSM_COMPLETE = FALSE`.  Universal physical prediction engines remain
 open downstream.
 

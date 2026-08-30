@@ -42,20 +42,22 @@ formula evaluations only.  A constraint-preserving continuous action center,
 its outward carrier, nonlinear 72D history jet, Weyl force, KKT root, and
 Hessian remain unsupported.
 
-Supported as candidate data: one minimum-action-norm Newton projection closes
-all 371 retained native DOP853 nodes to maximum scaled constraint residual
-`7.239486906525122e-16`; its largest correction occupies
-`0.22477230091215175` of the older reconnaissance halo.  Not supported: calling
-those projected nodes a continuous orbit, inheriting `lambda_24(Y)=s`, or
-reusing the old first hit.  Those require a continuous shadowing/collocation
-certificate on the projected dense path.
+Supported as candidate data: the certified Taylor26 signed response is
+composed with the retained dense center before one minimum-action-norm Newton
+projection closes all 371 fine nodes to maximum scaled constraint residual
+`1.1679676438539284e-15`.  The largest projection is
+`3.010903976408097e-9`, or `2420.394771963047` inherited final nonlinear
+radii, so the native-only projected route and old final cone/first hit are
+superseded.  Not supported: calling these nodes a continuous orbit or
+inheriting `lambda_24(Y)=s`.
 
-The projected dense reconstruction has now been tested against the exact
-retained action field at all 370 cell midpoints.  It is constraint-accurate
-there (`≤1.195622995138146e-14`) and branch 24 stays simple, but its augmented
-flow defect reaches `1.4049769146208235e-5`.  Therefore continuous shadowing
-is explicitly unsupported until the state collocation defect is solved; the
-small `1.4012683173144428e-14` descriptor-rate defect does not close that gap.
+The corrected dense reconstruction has been tested against the exact retained
+action field at all 370 cell midpoints.  It is constraint-accurate there
+(`≤8.528596684108791e-15`) and branch 24 stays simple, but its augmented flow
+defect reaches `1.0913491285675919e-5` at cell 283.  Therefore continuous
+shadowing is explicitly unsupported until the state collocation defect is
+solved; the `1.052323869871445e-14` descriptor-rate bound does not close that
+gap.  The cone and first hit must then be rebuilt on the resulting center.
 
 ## Current public claim boundary
 

@@ -40,20 +40,22 @@ is therefore a direct constraint-preserving normalized-action center from
 reset to first hit, followed by refined within-seam `DF` evaluation and an
 outward continuous remainder enclosure.
 
-The native DOP853 route has now been recovered as a discrete candidate: one
-minimum-action-norm Newton step projects all 371 retained quarter-action nodes
-to maximum scaled constraint residual `7.239486906525122e-16`, with maximum
-correction `3.0112768648604145e-9` and reconnaissance-halo utilization
-`0.22477230091215175`.  Projection is not integration.  The active center
-owner is a continuous constraint- and descriptor-fiber-preserving
-shadowing/collocation theorem plus a new first-hit enclosure on that center.
+The current discrete candidate first composes the certified Taylor26 signed
+response with the retained dense center and only then applies a
+minimum-action-norm constraint projection to all 371 fine nodes.  Their
+maximum scaled residual is `1.1679676438539284e-15`.  The maximum projection,
+`3.010903976408097e-9`, is `2420.394771963047` inherited final nonlinear
+radii, so the native-only projection and old final cone/first hit are
+superseded.  Projection is not integration.  The active center owner is a
+continuous constraint- and descriptor-fiber-preserving shadowing/collocation
+theorem, followed by a rebuilt cone and first hit.
 
-The direct all-cell evaluation now quantifies that theorem's source.  All 370
-projected dense midpoints have scaled constraint residual at most
-`1.195622995138146e-14` and retain branch-24 gap at least
-`1.7343209425225278e-7`, but the augmented flow defect reaches
-`1.4049769146208235e-5` at cell 315.  Its descriptor-rate part is only
-`1.4012683173144428e-14`; the 98D state collocation correction is the dominant
+The corrected all-cell evaluation quantifies that theorem's source.  All 370
+dense midpoints have scaled constraint residual at most
+`8.528596684108791e-15` and retain branch-24 gap at least
+`1.73432052961185e-7`, but the augmented flow defect reaches
+`1.0913491285675919e-5` at cell 283.  Its descriptor-rate part is at most
+`1.052323869871445e-14`; the 98D state collocation correction is the dominant
 remaining center equation.
 
 The current physical theory tuple is `BHSM-AE-2.0.0`.  It retains the v7.x

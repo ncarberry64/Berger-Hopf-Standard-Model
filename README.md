@@ -37,18 +37,19 @@ continuous constraint center.  Scaled constraint drift reaches
 midpoint; the largest nodewise linearized correction is `5216.733` times the
 certified macro-center radius.  The current construction owner is therefore a
 direct constraint-preserving normalized-action center, followed by its
-refined continuous outward variational carrier.  One Newton projection has
-now materialized all 371 native quarter-action nodes with maximum scaled
-constraint residual `7.239486906525122e-16`; the largest correction uses
-`22.477230091215175%` of the older reconnaissance halo.  These nodes are a
-discrete candidate only.  Continuous shadowing/collocation, descriptor-fiber
-preservation, and the resulting new first hit remain open.
-The complete 370-cell midpoint audit now localizes the missing equation:
-projected constraint residual stays below `1.195622995138146e-14`, while the
-exact augmented flow defect reaches `1.4049769146208235e-5` at cell 315.
-Its descriptor-rate component is only `1.4012683173144428e-14`, so the next
+refined continuous outward variational carrier.  The certified Taylor26 signed
+response has now been composed with the retained dense center before all 371
+fine nodes are constraint-projected.  Their maximum scaled constraint residual
+is `1.1679676438539284e-15`, but the maximum projection is
+`3.010903976408097e-9`, or `2420.394771963047` times the inherited final
+nonlinear radius.  The native-only projected route and old final cone/first
+hit are therefore superseded.  These nodes remain a discrete candidate.
+The corrected 370-cell midpoint audit localizes the missing equation:
+constraint residual stays below `8.528596684108791e-15`, while the exact
+augmented flow defect reaches `1.0913491285675919e-5` at cell 283.  Its
+descriptor-rate component is at most `1.052323869871445e-14`, so the next
 owner is the 98D state collocation correction with the constraint and
-descriptor-fiber rows attached.
+descriptor-fiber rows attached, followed by a rebuilt cone and first hit.
 Gate 7 remains
 `ACTIVE`; `FULL_BHSM_COMPLETE = FALSE`.  Physical completion additionally
 requires universal spectrum/propagator, vertex, decay, loop/magnetic-moment,

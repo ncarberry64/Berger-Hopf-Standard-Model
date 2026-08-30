@@ -1,0 +1,64 @@
+{
+  "FULL_BHSM_COMPLETE": false,
+  "adjudication": {
+    "continuous_projected_trajectory": "OPEN",
+    "descriptor_fiber_lambda_equals_s": "OPEN_AFTER_PROJECTION",
+    "final_Z2_cone": "MUST_BE_REBUILT_BECAUSE_PROJECTION_EXCEEDS_EXISTING_RADIUS",
+    "first_hit_time": "MUST_BE_REBUILT_ON_THE_PROJECTED_EXACT_AFFINE_FLOW",
+    "projected_exact_affine_371_nodes": "CONSTRAINT_ACCURATE_DISCRETE_CANDIDATE",
+    "projected_native_only_candidate": "SUPERSEDED_AS_CURRENT_CENTER_BY_EXACT_AFFINE_RESPONSE_COMPOSITION"
+  },
+  "artifact": "BHSM_N12_GATE7_PROJECTED_EXACT_AFFINE_FINE_CENTER_CANDIDATE",
+  "authority": "CERTIFIED_256_BIT_TAYLOR26_SIGNED_SOURCE_RESPONSE_PLUS_COUPLED_DESCRIPTOR_THEN_ONE_MINIMUM_ACTION_NORM_CONSTRAINT_NEWTON_STEP",
+  "claim_boundary": {
+    "FULL_BHSM_COMPLETE": false,
+    "Gate7": "ACTIVE_ACTION_OWNED_OPERATOR_ORACLE",
+    "Weyl_force_KKT_Hessian": "NOT_CLAIMED",
+    "constraint_accurate_projected_exact_affine_nodes": "MATERIALIZED_CANDIDATE",
+    "continuous_action_constrained_center": "OPEN_COLLOCATION_OR_SHADOWING",
+    "continuous_outward_variational_carrier": "OPEN_AFTER_CENTER",
+    "nonlinear_72D_history_first_jet": "OPEN_AFTER_CARRIER"
+  },
+  "data": "artifacts/flagship_integration/BHSM_N12_GATE7_PROJECTED_EXACT_AFFINE_FINE_CENTER_CANDIDATE.npz",
+  "data_SHA256": "EDE3565B950F921D69527CAB9801B96502DEA40B9AEC2E73082DC4EE6F0CAFA5",
+  "exact_next_dependency": "REBUILD_THE_DENSE_FLOW_DEFECT_ON_THIS_PROJECTED_EXACT_AFFINE_CENTER,_SOLVE_THE_CONSTRAINT_AND_DESCRIPTOR_FIBER_AUGMENTED_COLLOCATION_CORRECTION,_THEN_REBUILD_Z2_AND_THE_FIRST_HIT",
+  "inputs": {
+    "artifacts/flagship_integration/BHSM_N12_C2_STOP_HIGH_ORDER_QUARTER_STEP_RETAINED_RECONNAISSANCE.npz": "086C41068B9F3A6C0E5F8040B661202E067D017C909A381010E45FF352498D00",
+    "artifacts/flagship_integration/BHSM_N12_C2_STOP_QUARTER_STEP_FINE_HYBRID_GRAPH_JACOBIAN_RECONNAISSANCE.npz": "B92C08B4CB2EC4033FA70CBDCC28B6CD79E1189E19D95C984155EB65DD9D73B5",
+    "artifacts/flagship_integration/BHSM_N12_GATE7_ARB_INTERACTION_TAYLOR26_FINE_CENTER.json": "B9A0CFBE03278F6096FCBC5C36859C9DE1C3F601C6EE47916007393ECF951E63",
+    "artifacts/flagship_integration/BHSM_N12_GATE7_ARB_INTERACTION_TAYLOR26_FINE_CENTER.npz": "5A983B3328698A3126105DB266A7B37451E9E7A1C1D6C579590E818A9DDD0417",
+    "artifacts/flagship_integration/BHSM_N12_GATE7_EXACT_AFFINE_CENTER_INTERNAL_RESPONSE_Z2.json": "4E14B314516EA89635521B866BCA7FA7D5129121B370D90CAC2A41B657C8838D",
+    "artifacts/flagship_integration/BHSM_N12_GATE7_FROZEN_DECIMAL_GAUSS8_CENTER.json": "90FD0B41437CBD57B576FC3FED836C1460C83A32C7ACB4D8761C06339DA0DA52",
+    "artifacts/flagship_integration/BHSM_N12_GATE7_FROZEN_DECIMAL_GAUSS8_CENTER.npz": "2476286C6A3A4F83307C5225F336547F71F00DB34F0CDDD488CC485C1DCB9746",
+    "artifacts/flagship_integration/BHSM_N12_GATE7_PROJECTED_NATIVE_DOP853_CENTER_CANDIDATE.json": "1A6D4E469253BE075C5A98505CE36195FE04436A1C189880E34F5ECCF07817B9",
+    "scripts/materialize_n12_gate7_projected_exact_affine_fine_center_candidate.py": "8FC27DF00825A2192F221C1ECED05DAD177E73DFE72494AC7754762907BB4248",
+    "theory/n12_gate7_projected_exact_affine_fine_center_candidate.md": "8ED20DEA97D8FC2638520A75E3D8D9154577A0CACB3F128E09BCF85C2A56E5F4"
+  },
+  "status": "PROJECTED_EXACT_AFFINE_371_NODE_CONSTRAINT_CENTER_CANDIDATE_MATERIALIZED",
+  "summary": {
+    "existing_final_nonlinear_action_radius": 1.243972269022099e-12,
+    "maximum_action_projection_2_norm": 3.010903976408097e-09,
+    "maximum_constraint_Gram_condition_number": 52033943.506718755,
+    "maximum_exact_affine_response_Euclidean_radius": 8.16567210923097e-18,
+    "maximum_exact_affine_state_response_2_norm": 3.391344402054494e-06,
+    "maximum_exact_minus_frozen_response_2_norm": 3.848995511161254e-12,
+    "maximum_initial_scaled_constraint_2_norm": 7.283454622144628e-11,
+    "maximum_projected_scaled_constraint_2_norm": 1.1679676438539284e-15,
+    "maximum_projection_to_existing_radius_ratio": 2420.394771963047,
+    "node_count": 371
+  },
+  "validation": {
+    "all_371_exact_affine_nodes_projected": true,
+    "all_projection_quantities_finite": true,
+    "coupled_descriptor_reconstructed_without_double_counting": true,
+    "descriptor_fiber_and_first_hit_not_inherited_after_projection": true,
+    "exact_affine_and_frozen_grids_identical": true,
+    "exact_affine_response_differs_materially_from_native_only_candidate": true,
+    "exact_affine_response_is_the_certified_Taylor26_response": true,
+    "no_action_source_selector_scale_gate_or_chord_changed": true,
+    "one_step_projection_closes_every_node_numerically": true,
+    "projected_nodes_not_relabelled_as_continuous_flow": true,
+    "projection_exceeds_existing_final_nonlinear_radius_so_cone_not_inherited": true
+  },
+  "validation_passed": true
+}
