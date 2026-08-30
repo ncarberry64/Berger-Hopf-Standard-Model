@@ -85,7 +85,7 @@ and no root-nonexistence claim is made.
 `FULL_BHSM_COMPLETE = FALSE`.  The universal action-to-observable
 infrastructure is now machine-classified separately from scientific outputs:
 action expansion, quadratic spectrum, bare vertices/tree exchange, LSZ,
-two-body decay/collision readout, spectral forecasting, loop-ledger checks,
+two- and three-body decay plus two-body collision readout, spectral forecasting, loop-ledger checks,
 form-factor projection, and the sole `G_F` scale map are
 `IMPLEMENTED_GATED`; the known-particle, benchmark, and forward-prediction
 registries are `IMPLEMENTED_PROVISIONAL`.  Every physical prediction remains

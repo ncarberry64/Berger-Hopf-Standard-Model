@@ -40,6 +40,9 @@ def test_local_kernel_and_universal_apis_are_not_history_predictions() -> None:
     assert expansion["implementation_status"] == "IMPLEMENTED_GATED"
     assert expansion["implementation_detail"] == "VALIDATED_LOCAL_KERNEL_GATED"
     assert "history and seam action assembly" in expansion["dependencies_open"]
+    assert "complex physical-frame polarization contractions" in expansion[
+        "satisfied_dependencies"
+    ]
     magnetic = records["LEPTON_MAGNETIC_MOMENTS"]
     assert magnetic["implementation_status"] == "IMPLEMENTED_GATED"
     assert magnetic["prediction_classification"] == "OPEN_INTERNAL_BLOCKER"
@@ -80,6 +83,15 @@ def test_rg_and_muon_readout_capabilities_remain_prediction_gated() -> None:
     assert "complete s/t/u assembly without quartic double counting" in collision[
         "satisfied_dependencies"
     ]
+    vertices = records["UNIVERSAL_CUBIC_AND_QUARTIC_VERTEX_GENERATOR"]
+    assert "complex external polarization support" in vertices[
+        "satisfied_dependencies"
+    ]
+    decays = records["PARTICLE_STABILITY_AND_DECAYS"]
+    assert "deterministic three-body invariant/helicity-angle phase space" in decays[
+        "satisfied_dependencies"
+    ]
+    assert "four-or-more-body channels" in decays["dependencies_open"]
 
 
 def test_every_row_has_explicit_evidence_and_promotion_fields() -> None:

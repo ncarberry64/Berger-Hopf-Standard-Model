@@ -149,7 +149,7 @@ background is not certified for universal physical predictions.
 
 The physical-completeness matrix now separates capability maturity from
 scientific output authority.  The universal action expansion, quadratic
-descriptor spectrum, vertex/tree-amplitude, LSZ, decay/collision,
+descriptor spectrum, vertex/tree-amplitude, LSZ, two- and three-body decay/collision,
 loop-ledger, form-factor, spectral-forecast, and single-`G_F` scale interfaces
 are `IMPLEMENTED_GATED`; broader coverage/benchmark registries are
 `IMPLEMENTED_PROVISIONAL`.  Every physical output is still classified

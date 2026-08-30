@@ -1,4 +1,4 @@
-"""Shared two-body decay and collision readout for BHSM amplitudes.
+"""Shared decay and collision phase-space readout for BHSM amplitudes.
 
 The formulas are general relativistic phase-space identities.  Masses,
 external residues, degeneracy averages, symmetry factors, and amplitudes must
@@ -24,6 +24,18 @@ class TwoBodyDecayResult:
     open_channel: bool
     momentum: float
     width: float
+
+
+@dataclass(frozen=True)
+class ThreeBodyDecayResult:
+    open_channel: bool
+    width: float
+    s12_lower: float
+    s12_upper: float
+    invariant_quadrature_order: int
+    angular_quadrature_order: int
+    minimum_amplitude_squared: float
+    maximum_amplitude_squared: float
 
 
 def two_body_decay_width(
@@ -56,6 +68,105 @@ def two_body_decay_width(
         / identical_final_state_factor
     )
     return TwoBodyDecayResult(True, momentum, width)
+
+
+def three_body_decay_width(
+    parent_mass: float,
+    daughter_masses: tuple[float, float, float],
+    amplitude_squared: Callable[[float, float], float],
+    *,
+    invariant_quadrature_order: int = 32,
+    angular_quadrature_order: int = 24,
+    initial_state_average: float = 1.0,
+    identical_final_state_factor: float = 1.0,
+) -> ThreeBodyDecayResult:
+    """Integrate a scalar-parent ``1->3`` amplitude over exact phase space.
+
+    The amplitude is evaluated as ``amplitude_squared(s12, cos_theta_star)``,
+    where ``theta_star`` is the daughter-1 helicity angle in the 12-pair rest
+    frame.  All masses and invariants use the same units as the supplied BHSM
+    spectrum.  Spin sums, LSZ residues, and internal indices must already be
+    included in the action-derived amplitude.
+    """
+
+    values = (
+        parent_mass, *daughter_masses, initial_state_average,
+        identical_final_state_factor,
+    )
+    if any(not math.isfinite(value) for value in values):
+        raise ValueError("three-body decay inputs must be finite")
+    if parent_mass <= 0.0 or min(daughter_masses) < 0.0:
+        raise ValueError("three-body masses must be physical")
+    if initial_state_average <= 0.0 or identical_final_state_factor <= 0.0:
+        raise ValueError("averaging and symmetry factors must be positive")
+    if invariant_quadrature_order < 2 or angular_quadrature_order < 2:
+        raise ValueError("three-body quadrature orders must be at least two")
+
+    first_mass, second_mass, third_mass = daughter_masses
+    s12_lower = (first_mass + second_mass) ** 2
+    s12_upper = max(s12_lower, (parent_mass - third_mass) ** 2)
+    if parent_mass < sum(daughter_masses):
+        return ThreeBodyDecayResult(
+            False, 0.0, s12_lower, s12_upper,
+            invariant_quadrature_order, angular_quadrature_order, 0.0, 0.0,
+        )
+    if s12_upper == s12_lower:
+        return ThreeBodyDecayResult(
+            True, 0.0, s12_lower, s12_upper,
+            invariant_quadrature_order, angular_quadrature_order, 0.0, 0.0,
+        )
+
+    invariant_nodes, invariant_weights = np.polynomial.legendre.leggauss(
+        invariant_quadrature_order
+    )
+    angular_nodes, angular_weights = np.polynomial.legendre.leggauss(
+        angular_quadrature_order
+    )
+    half_span = 0.5 * (s12_upper - s12_lower)
+    midpoint = 0.5 * (s12_upper + s12_lower)
+    invariant_values = midpoint + half_span * invariant_nodes
+    amplitude_values = np.empty(
+        (invariant_quadrature_order, angular_quadrature_order), dtype=float
+    )
+    phase_values = np.empty(invariant_quadrature_order, dtype=float)
+    for index, s12 in enumerate(invariant_values):
+        first_lambda = max(
+            0.0, kallen(parent_mass**2, float(s12), third_mass**2)
+        )
+        second_lambda = max(
+            0.0, kallen(float(s12), first_mass**2, second_mass**2)
+        )
+        phase_values[index] = (
+            math.sqrt(first_lambda) * math.sqrt(second_lambda) / float(s12)
+        )
+        amplitude_values[index] = [
+            float(amplitude_squared(float(s12), float(cosine)))
+            for cosine in angular_nodes
+        ]
+    if not np.all(np.isfinite(amplitude_values)) or np.min(amplitude_values) < 0.0:
+        raise ValueError("amplitude-squared function must be finite and nonnegative")
+
+    angular_integrals = amplitude_values @ angular_weights
+    phase_integral = half_span * float(
+        np.dot(invariant_weights, phase_values * angular_integrals)
+    )
+    width = phase_integral / (
+        512.0
+        * math.pi**3
+        * parent_mass**3
+        * initial_state_average
+        * identical_final_state_factor
+    )
+    return ThreeBodyDecayResult(
+        True,
+        width,
+        s12_lower,
+        s12_upper,
+        invariant_quadrature_order,
+        angular_quadrature_order,
+        float(np.min(amplitude_values)),
+        float(np.max(amplitude_values)),
+    )
 
 
 @dataclass(frozen=True)
@@ -107,7 +218,7 @@ class DecayLedgerResult:
 
 
 def combine_decay_channels(
-    channels: Iterable[tuple[str, TwoBodyDecayResult]],
+    channels: Iterable[tuple[str, TwoBodyDecayResult | ThreeBodyDecayResult]],
 ) -> DecayLedgerResult:
     """Combine a complete list of action-derived partial widths.
 
@@ -191,11 +302,13 @@ def integrate_two_to_two_cross_section(
 __all__ = [
     "DecayLedgerResult",
     "IntegratedTwoToTwoResult",
+    "ThreeBodyDecayResult",
     "TwoBodyDecayResult",
     "TwoToTwoResult",
     "combine_decay_channels",
     "integrate_two_to_two_cross_section",
     "kallen",
     "two_body_decay_width",
+    "three_body_decay_width",
     "two_to_two_differential_cross_section",
 ]

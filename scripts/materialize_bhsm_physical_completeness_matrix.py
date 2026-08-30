@@ -229,7 +229,7 @@ def build_payload() -> dict[str, Any]:
             "ACTION_OWNED_S2_S3_S4_ON_THE_FROZEN_PHYSICAL_HISTORY_QUOTIENT",
             "VALIDATED_LOCAL_KERNEL_GATED",
             ("action_expansion", "retained_n12_adapter"),
-            ("matrix-free S3/S4 API", "retained 96-point local S0-S2 equivalence audit"),
+            ("matrix-free S3/S4 API", "complex physical-frame polarization contractions", "retained 96-point local S0-S2 equivalence audit"),
             ("Gate7 frozen background", "history and seam action assembly", "global physical quotient frame"),
         ),
         _record(
@@ -253,7 +253,7 @@ def build_payload() -> dict[str, Any]:
             "MACHINE_READABLE_ACTION_OWNED_S3_S4_VERTICES_WITH_ALL_INTERNAL_INDICES",
             "BARE_VERTEX_AND_TREE_EXCHANGE_ALGEBRA_IMPLEMENTED_GATED",
             ("action_expansion", "vertex_amplitude", "retained_n12_adapter"),
-            ("matrix-free bare S3/S4 contractions", "inverse-free tree exchange solve", "complete s/t/u tree assembly with one quartic contact"),
+            ("matrix-free bare S3/S4 contractions", "complex external polarization support", "inverse-free tree exchange solve", "complete s/t/u tree assembly with one quartic contact"),
             ("history/seam S3/S4 assembly", "action-selected external modes", "momentum and symmetry bookkeeping"),
         ),
         _record(
@@ -307,10 +307,10 @@ def build_payload() -> dict[str, Any]:
         _record(
             "PARTICLE_STABILITY_AND_DECAYS",
             "COMPLETE_CHANNEL_SELECTION_PARTIAL_WIDTH_TOTAL_WIDTH_AND_LIFETIME_REGISTRY",
-            "TWO_BODY_READOUT_AND_INTERVAL_STABILITY_ALGEBRA_IMPLEMENTED_GATED",
+            "TWO_AND_THREE_BODY_READOUT_AND_INTERVAL_STABILITY_ALGEBRA_IMPLEMENTED_GATED",
             ("decay_collision", "spectral_forecast", "lsz", "vertex_amplitude"),
-            ("two-body phase space", "channel aggregation", "complete-ledger stability criterion"),
-            ("physical mode spectrum", "complete action-owned channel enumeration", "renormalized amplitudes", "multi-body channels", "physical unit map"),
+            ("two-body phase space", "deterministic three-body invariant/helicity-angle phase space", "channel aggregation", "complete-ledger stability criterion"),
+            ("physical mode spectrum", "complete action-owned channel enumeration", "renormalized amplitudes", "four-or-more-body channels", "physical unit map"),
         ),
         _record(
             "COLLISION_AND_SCATTERING_PREDICTION",

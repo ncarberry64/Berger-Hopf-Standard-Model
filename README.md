@@ -131,7 +131,7 @@ renormalization scale, or action coefficient.
 
 ## Current Public Status
 
-The newest integrated science descendant binds the universal expansion engine to the retained N12 local action and includes generalized poles/residues, guarded Standard Model gauge-vertex tensors, shared cubic and quartic vertices, tree amplitudes, two-body decay and `2 -> 2` collision phase space, `F1/F2` projection, interval spectral/stability classification, a same-action renormalization ledger, and the universal scale map.
+The newest integrated science descendant binds the universal expansion engine to the retained N12 local action and includes generalized poles/residues, guarded Standard Model gauge-vertex tensors, shared cubic and quartic vertices, tree amplitudes, two- and three-body decay and `2 -> 2` collision phase space, `F1/F2` projection, interval spectral/stability classification, a same-action renormalization ledger, and the universal scale map.
 
 | Statement class | Current BHSM status |
 | --- | --- |

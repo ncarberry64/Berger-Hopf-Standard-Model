@@ -1,0 +1,57 @@
+{
+  "FLAGSHIP_READY": false,
+  "FULL_BHSM_COMPLETE": false,
+  "artifact": "BHSM_N12_RECENTERED_EVENT_EIGENVALUE_PRECISION_AUDIT",
+  "claim_boundary": {
+    "binary_cross-center_event_difference_has_physical_authority": false,
+    "forward_interval_changed_by_this_audit": false,
+    "high_precision_action_Taylor_transport_audit": "VALIDATED",
+    "intrinsic_state_selection_closed": false
+  },
+  "classification": "BINARY_EVENT_EIGENVALUE_TRANSPORT_JUMP_RECLASSIFIED_AS_NUMERICAL_REPRESENTATION",
+  "event": {
+    "binary_change": 2.1605551638252006e-14,
+    "binary_source": 1.430725678111989e-09,
+    "binary_target": 1.4307472836636273e-09,
+    "high_precision_change": 3.943563116570196e-21,
+    "high_precision_change_decimal": "3.9435631165701959052726609867597636280289285508423880490002228148188E-21",
+    "high_precision_source_decimal": "1.4307435632066071825122427357802321640554714944475991855932551966813937858283668E-9",
+    "high_precision_target_decimal": "1.4307435632105507456288129316855048250422312580756281141440975847303940086431856E-9",
+    "source_iteration_repeat_defect_decimal": "1.09148418451966813937858283668E-59",
+    "target_iteration_repeat_defect_decimal": "5.4089843524152696059913568144E-60"
+  },
+  "exact_next_dependency": "USE_THE_ACTION_TAYLOR_TRANSPORTED_EVENT_INTERVAL_IN_THE_NEXT_RECENTERED_DOMAIN_AND_FORWARD_BOX",
+  "inputs": {
+    "artifacts/intrinsic_state_selection/BHSM_N12_SPECTRAL_SCHUR_ENDPOINT_2_REGULAR_U_CHART_BALL.json": "12383FC1E583755AE6BF98E9E34541798AD8C1CB06C324E924B5DBB49A31E51A",
+    "artifacts/intrinsic_state_selection/BHSM_N12_SPECTRAL_SCHUR_ENDPOINT_2_THIRD_VARIATIONS.npz": "40A425364E43D4F4D8E16D6505A340A8D2A86EFA8AA9D80AC6414FEB6B310186",
+    "artifacts/intrinsic_state_selection/BHSM_N12_SPECTRAL_SCHUR_RECENTERABLE_FLOW_BOX_3.json": "9DDDCB607B298BD35F6B378A4FC5802FA3BA2160BD1DF8DD07710CC668E85C42",
+    "artifacts/intrinsic_state_selection/BHSM_N12_SPECTRAL_SCHUR_RECENTERED_ENDPOINT_2.npz": "28D0D3BB2ED3B21AE2B02E360ABA7834B9B38E506F90414C4B2DC027F49E7BDB",
+    "artifacts/intrinsic_state_selection/BHSM_N12_SPECTRAL_SCHUR_RECENTERED_ENDPOINT_3.npz": "6F556B8176562A74CDD581A238E2536D19061F6978C109DE08FE4D0B4035041E"
+  },
+  "invariant": {
+    "Taylor_remainder": "0.5*sup_norm(H_lambda)*norm(dY)^2",
+    "physical_event": "selected simple eigenvalue of retained raw event Hessian",
+    "transport_identity": "d_lambda=D3L[psi,psi,dY]"
+  },
+  "step": {
+    "Taylor_change_interval": [
+      -6.229426913134914e-17,
+      6.230215626708833e-17
+    ],
+    "action_norm": 3.270014580056699e-10,
+    "linear_action_change": 3.943567869595378e-21,
+    "quadratic_remainder_upper": 6.229821269921873e-17,
+    "stored_center_vector_defect": 2.1442896121080358e-16
+  },
+  "validation": {
+    "Decimal_eigenvalue_iterations_stable": true,
+    "binary_event_change_outside_action_Taylor_enclosure": true,
+    "certified_step_inside_source_chart_ball": true,
+    "high_precision_event_change_inside_action_Taylor_enclosure": true,
+    "no_equation_gate_selector_orientation_scale_or_parent_changed": true,
+    "same_retained_action_quadrature_and_branch_selector": true,
+    "same_selected_simple_event_branch": true,
+    "stored_step_reproduces_certified_center_vector": true
+  },
+  "validation_passed": true
+}

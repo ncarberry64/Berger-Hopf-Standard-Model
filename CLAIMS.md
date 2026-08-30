@@ -26,8 +26,8 @@ operator oracle and its 72-direction first jet exist.
 
 Supported as guarded infrastructure: a common matrix-free `S1`--`S4` action
 expansion, inverse-free quadratic pole/residue solver, bare cubic/quartic
-vertex and tree-exchange assembler, inverse-free LSZ normalization, two-body
-decay/collision readout, interval spectral/stability classifier,
+vertex and tree-exchange assembler, inverse-free LSZ normalization, two- and
+three-body decay plus two-body collision readout, interval spectral/stability classifier,
 renormalization ledger checks, electromagnetic `F1/F2` projector, and one
 shared `G_F=c_F/Lambda^2` scale map.  The retained N12 adapter cross-checks
 the local 96-point action through `S2`; history/seam assembly remains open.
