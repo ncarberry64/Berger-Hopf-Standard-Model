@@ -2,7 +2,9 @@ import numpy as np
 import pytest
 
 from bhsm.interface.universal_precision_form_factor import (
+    LeptonGMinus2Readout,
     MuonGMinus2Readout,
+    lepton_gminus2_from_renormalized_vertex,
     muon_gminus2_from_renormalized_vertex,
     project_electromagnetic_form_factors,
 )
@@ -79,3 +81,65 @@ def test_promoted_loop_vertex_and_lsz_chain_returns_f2_zero() -> None:
     )
     assert result.anomalous_magnetic_moment() == 0.25
     assert result.metadata()["experimental_target_used"] is False
+
+
+def test_generic_action_identified_lepton_readout_covers_non_muon_modes() -> None:
+    vertex = RenormalizedVertex(
+        finite_value=np.asarray([1.0, 0.125], dtype=complex),
+        summed_laurent_coefficients={0: np.asarray([1.0, 0.125])},
+        maximum_relative_pole_residual=0.0,
+        maximum_relative_ward_residual=0.0,
+        action_version="BHSM-TEST",
+        background_id="background",
+        scheme_id="same-action-scheme",
+        diagram_ids=("complete-electron-ledger",),
+        sectors=("electromagnetic",),
+        complete_diagram_ledger=True,
+        complete_counterterm_ledger=True,
+        gate7_closed=True,
+    )
+    mode = LSZExternalMode(
+        spectral_parameter=0.01,
+        right_mode=np.asarray([1.0]),
+        left_mode=np.asarray([1.0]),
+        descriptor_normalization_residual=0.0,
+        pole_simple=True,
+        action_selected=True,
+        mode_id="action-electron-mode",
+        provenance=("same-action electron pole",),
+    )
+    result = lepton_gminus2_from_renormalized_vertex(
+        vertex,
+        np.asarray([1.0, 0.0]),
+        np.asarray([0.0, 1.0]),
+        mode,
+        mode,
+        q_squared=0.0,
+        mode_identified_as_charged_lepton_by_action_spectrum=True,
+    )
+    assert isinstance(result, LeptonGMinus2Readout)
+    assert result.mode_id == "action-electron-mode"
+    assert result.anomalous_magnetic_moment() == 0.125
+    assert result.metadata()["experimental_target_used"] is False
+
+
+def test_generic_lepton_readout_rejects_external_particle_naming() -> None:
+    factors = project_electromagnetic_form_factors(
+        np.asarray([1.0, 0.0]),
+        np.asarray([1.0, 0.0]),
+        np.asarray([0.0, 1.0]),
+        q_squared=0.0,
+    )
+    result = LeptonGMinus2Readout(
+        factors,
+        "unclassified-mode",
+        "BHSM-TEST",
+        "background",
+        "scheme",
+        True,
+        True,
+        True,
+        False,
+    )
+    with pytest.raises(RuntimeError, match="action_identified_charged_lepton_mode"):
+        result.anomalous_magnetic_moment()
