@@ -63,11 +63,15 @@ def test_quadratic_engine_credits_explicit_brst_quotient_without_promotion() -> 
     assert "explicit constraint/gauge nullspace quotient" in quadratic["satisfied_dependencies"]
     assert "src/bhsm/interface/universal_momentum_map.py" in evidence_paths
     assert "src/bhsm/interface/universal_dressed_pole.py" in evidence_paths
+    assert "src/bhsm/interface/universal_spectral_density.py" in evidence_paths
     assert "inverse-free bordered nonlinear dressed-pole tracking" in quadratic[
         "satisfied_dependencies"
     ]
     assert "complete same-action self-energy ledger" in quadratic[
         "dependencies_open"
+    ]
+    assert "inverse-free source-contracted retarded spectral density" in quadratic[
+        "satisfied_dependencies"
     ]
     assert quadratic["prediction_classification"] == "OPEN_INTERNAL_BLOCKER"
     assert quadratic["physical_prediction_materialized"] is False

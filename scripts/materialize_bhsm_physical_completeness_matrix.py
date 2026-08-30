@@ -45,6 +45,7 @@ ENGINE_PATHS = {
     "benchmark_suite": "src/bhsm/interface/universal_benchmark_suite.py",
     "partial_wave": "src/bhsm/interface/universal_partial_wave.py",
     "dressed_pole": "src/bhsm/interface/universal_dressed_pole.py",
+    "spectral_density": "src/bhsm/interface/universal_spectral_density.py",
 }
 
 ENGINE_TEST_PATHS = {
@@ -70,6 +71,7 @@ ENGINE_TEST_PATHS = {
     "benchmark_suite": "tests/test_universal_benchmark_suite.py",
     "partial_wave": "tests/test_universal_partial_wave.py",
     "dressed_pole": "tests/test_universal_dressed_pole.py",
+    "spectral_density": "tests/test_universal_spectral_density.py",
 }
 
 IMPLEMENTATION_STATUSES = (
@@ -79,7 +81,7 @@ IMPLEMENTATION_STATUSES = (
     "IMPLEMENTED_PROMOTABLE",
 )
 
-ENGINE_VERIFIED_COMMIT = "1f6908ebc8c76af409d10d6f36bbce6373215cd2"
+ENGINE_VERIFIED_COMMIT = "93614bc8c1fa71f2f66344b1c26390d40cabe546"
 
 IMPLEMENTATION_STATUS_BY_ID = {
     "GATE7_PHYSICAL_BACKGROUND": "NOT_IMPLEMENTED",
@@ -254,8 +256,8 @@ def build_payload() -> dict[str, Any]:
             "UNIVERSAL_QUADRATIC_SPECTRUM_AND_PROPAGATORS",
             "ACTION_OWNED_POLES_RESIDUES_AND_GAUGE_FIXED_PROPAGATORS",
             "GENERAL_DESCRIPTOR_AND_DRESSED_POLE_ALGEBRA_IMPLEMENTED_GATED",
-            ("quadratic_spectrum", "brst_quotient", "momentum_map", "dressed_pole"),
-            ("inverse-free generalized eigenproblem", "simple-pole residue algebra", "inverse-free bordered nonlinear dressed-pole tracking", "complex mass/width and left/right residue readout", "simplicity and causal-pole diagnostics", "explicit constraint/gauge nullspace quotient", "Faddeev-Popov regularity check", "guarded background-derived momentum map"),
+            ("quadratic_spectrum", "brst_quotient", "momentum_map", "dressed_pole", "spectral_density"),
+            ("inverse-free generalized eigenproblem", "simple-pole residue algebra", "inverse-free bordered nonlinear dressed-pole tracking", "complex mass/width and left/right residue readout", "simplicity and causal-pole diagnostics", "inverse-free source-contracted retarded spectral density", "spectral positivity conditioning and residual diagnostics", "explicit constraint/gauge nullspace quotient", "Faddeev-Popov regularity check", "guarded background-derived momentum map"),
             ("frozen history S2 pencil", "complete same-action self-energy ledger", "action-owned constraint/gauge generators and gauge condition", "frozen-background momentum-map instance", "physical scale instance"),
         ),
         _record(
@@ -294,8 +296,8 @@ def build_payload() -> dict[str, Any]:
             "RENORMALIZATION_AND_LOOP_COMPLETION",
             "FINITE_ACTION_OWNED_LOOP_VERTICES_WITH_WARD_SLAVNOV_TAYLOR_CLOSURE",
             "REGULATED_LEDGER_AND_PROMOTION_GATES_IMPLEMENTED",
-            ("loop_renormalization", "rg_flow", "dressed_pole"),
-            ("Laurent ledger", "counterterm/ghost/Jacobian categories", "Ward residual checks", "observable-fit rejection", "joint same-action full-parameter RG transport", "RG invariant residual monitoring", "complete-ledger and Gate7 guarded dressed-pole consumer"),
+            ("loop_renormalization", "rg_flow", "dressed_pole", "spectral_density"),
+            ("Laurent ledger", "counterterm/ghost/Jacobian categories", "Ward residual checks", "observable-fit rejection", "joint same-action full-parameter RG transport", "RG invariant residual monitoring", "complete-ledger and Gate7 guarded dressed-pole consumer", "complete-ledger and Gate7 guarded retarded spectral-density consumer"),
             ("complete action-owned diagram ledger", "complete counterterm ledger", "sector Ward identities", "finite observable extraction"),
         ),
         _record(
@@ -342,8 +344,8 @@ def build_payload() -> dict[str, Any]:
             "NEW_PARTICLE_SPECTRAL_ENCLOSURES",
             "FROZEN_MODE_INTERVALS_OR_EXCLUSIONS_WITH_QUANTUM_NUMBERS_AND_DECAYS",
             "INTERVAL_FORECAST_ALGEBRA_IMPLEMENTED_GATED",
-            ("spectral_forecast", "quadratic_spectrum", "dressed_pole", "decay_collision"),
-            ("declared-domain spectral exclusion", "inverse-free complex dressed-pole mass/width readout", "interval decay-channel classification"),
+            ("spectral_forecast", "quadratic_spectrum", "dressed_pole", "spectral_density", "decay_collision"),
+            ("declared-domain spectral exclusion", "inverse-free complex dressed-pole mass/width readout", "source-contracted retarded spectral-density readout", "interval decay-channel classification"),
             ("complete physical spectrum enclosure", "physical scale", "complete decay ledger", "pre-comparison frozen forecast artifact"),
         ),
         _record(

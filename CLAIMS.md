@@ -77,6 +77,11 @@ tracking of a supplied complete renormalized two-point symbol, including
 complex mass/width and residue diagnostics. Not supported: a current physical
 dressed pole or width; the same-action self-energy ledger and Gate 7 are open.
 
+Supported as gated spectral infrastructure: inverse-free source-contracted
+retarded spectral density with positivity, conditioning, and solve-residual
+diagnostics. Not supported: a current physical spectral density; Gate 7 and
+the complete same-action self-energy input remain open.
+
 The complete 72-direction affine-carrier path and first-hit coefficient jet
 are materialized but are not the missing nonlinear oracle.  The available
 causal transfer bound is noncontractive and gives terminal uncertainty larger

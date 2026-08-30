@@ -193,6 +193,11 @@ residue while enforcing simplicity, causal sign, complete same-action
 self-energy, and Gate-7 conditions.  No current physical pole satisfies those
 promotion inputs.
 
+The same layer evaluates source-contracted retarded spectral density using
+linear solves rather than a propagator inverse.  Positivity, conditioning,
+residual, complete-self-energy, and Gate-7 checks are explicit; current inputs
+do not satisfy physical promotion.
+
 The current physical theory tuple is `BHSM-AE-2.0.0`.  It retains the v7.x
 stratified bulk/boundary functor, v14-v17 eta/Aether action lineage, v7.2
 common observable transport, and frozen comparison firewall, while replacing

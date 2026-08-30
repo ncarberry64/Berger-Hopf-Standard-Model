@@ -129,6 +129,11 @@ same-action inverse two-point symbol.  Its explicit Gate-7, simplicity,
 causality, and self-energy-ledger guards remain unsatisfied by the current
 physical inputs.
 
+The same guarded two-point layer now evaluates source-contracted retarded
+spectral densities by linear solves, with positivity, conditioning, residual,
+Gate-7, and complete-self-energy checks. No current source/background pair is
+promoted to a physical spectral-density prediction.
+
 This file is the current area-level status source. Detailed sprint records are
 evidence, not competing public status pages.
 

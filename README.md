@@ -178,6 +178,11 @@ complex dressed poles and residues, with simplicity, causal-width, complete
 self-energy-ledger, and Gate-7 guards. It does not instantiate a physical pole
 from the current incomplete action/background.
 
+An inverse-free retarded spectral-density evaluator contracts physical sources
+through linear solves and checks positivity, conditioning, residuals, Gate 7,
+and self-energy-ledger completeness. It likewise remains a gated capability,
+not a current BHSM spectral prediction.
+
 `FULL_BHSM_COMPLETE = FALSE`
 
 Historical compatibility: the v18.73 rolling checkpoint records corrected-Rayleigh descent of the 376-variable system, complete-child reconstruction, eta admissibility, and persistence at residual `0.777030406838571`. Earlier v11.1 and v15.10 surfaces remain historical rather than current authority. The historical v15.10 exact-next-object token is
