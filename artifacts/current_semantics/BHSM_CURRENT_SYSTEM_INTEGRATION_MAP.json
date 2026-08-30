@@ -99,6 +99,11 @@
     },
     {
       "classification": "DOWNSTREAM_ONLY",
+      "current_effect": "the retained 98D N12 local oracle is geometry-only; AE2 owns the fermion reset domain but supplies no new propagating field, coefficient, or scale. Physical spectrum and observable promotion require one current same-action gauge/ghost, fermion, HS/scalar attachment with history/seam S1-S4, local momentum symbols, cross-sector blocks, and action-selected saddle data",
+      "id": "CURRENT_FULL_FIELD_ACTION_ATTACHMENT"
+    },
+    {
+      "classification": "DOWNSTREAM_ONLY",
       "current_effect": "follows Gate 7 and sector response",
       "id": "CKM_PMNS_PHYSICAL_EIGENBASES"
     },
@@ -137,7 +142,8 @@
   "inputs": {
     "artifacts/BHSM_1_0_completion_gate.json": "CE578DFA191245840935D759E3F07F034A9607EE2DED7010040F7D0780612144",
     "artifacts/BHSM_CKM_action_equivalence_v11_6.json": "5F5850309F6744464FBA34A4A255F415A6F17782B60CF0E6FF7A4E1CEC63DD1C",
-    "artifacts/BHSM_PHYSICAL_COMPLETENESS_MATRIX.json": "A22EC8CFFE83E956E057E3079896B43602E893C8EE2C8954D4E8300508C8DB3F",
+    "artifacts/BHSM_CURRENT_FULL_FIELD_ACTION_ATTACHMENT_AUDIT.json": "FC35527D23B49573360B9B28B9F064BFF297F678F7439BEB18D908D0D54808B4",
+    "artifacts/BHSM_PHYSICAL_COMPLETENESS_MATRIX.json": "7F6A23216AF8ACB60DDE8D9BA8416AF751A7484DDFBCA2CCC8D49DC7F0EEB8EB",
     "artifacts/BHSM_aether_total_microscopic_action_v15_3.json": "F57286822FCB15C204836D4C2B2ACAC25141CB016703AFB43A6153AAA2F7E002",
     "artifacts/BHSM_common_scheme_observable_transport_v7_2.json": "A7A2616ACA7238E197759ADE77B2FDB0213EA36783646FE94B04C774EF09CF07",
     "artifacts/BHSM_covariant_bulk_boundary_reduction_functor_v7_1.json": "7ED661C2AA6BF4F2ABCB7F29C40966385CD97AA159B5B15DF01E6DB7A485CD27",
@@ -340,6 +346,13 @@
       "id": "G_F_TRANSPORT_TO_FINAL_LEDGER",
       "priority": 1,
       "status": "COMPOSITION_EXISTS_REVALIDATION_DOWNSTREAM"
+    },
+    {
+      "class": "C",
+      "evidence": "artifacts/BHSM_CURRENT_FULL_FIELD_ACTION_ATTACHMENT_AUDIT.json",
+      "id": "CURRENT_BACKGROUND_TO_FULL_FIELD_ACTION",
+      "priority": 2,
+      "status": "DOWNSTREAM_BLOCKER_PRECISE_ATTACHMENT_NO_GO_LOCALIZED"
     },
     {
       "class": "D",
@@ -700,6 +713,32 @@
     },
     {
       "canonical_action_version": "BHSM-AE-2.0.0",
+      "configuration_space": "current AE2 geometry background plus gauge/ghost, fermion, and HS/scalar perturbation blocks",
+      "current_blockers": [
+        "CURRENT_AE2_FULL_GAUGE_FERMION_HS_ACTION_WITH_HISTORY_SEAMS_S1_TO_S4_AND_ACTION_SELECTED_SADDLE"
+      ],
+      "downstream_consumers": [
+        "GATE7_KKT_HESSIAN",
+        "RELEASE_DEFINITION_OF_DONE"
+      ],
+      "historical_supersessions": [
+        "historical response seeds and nonlocal DtN residues are component evidence, not current local couplings"
+      ],
+      "id": "CURRENT_FULL_FIELD_ACTION_ATTACHMENT",
+      "input_artifacts": [
+        "artifacts/action_extension/BHSM_ACTION_AE2_GLOBAL_SPIN_RESET_ACTION.json",
+        "artifacts/BHSM_CURRENT_FULL_FIELD_ACTION_ATTACHMENT_AUDIT.json",
+        "artifacts/BHSM_PHYSICAL_COMPLETENESS_MATRIX.json"
+      ],
+      "mathematical_status": "PRECISE_DOWNSTREAM_ATTACHMENT_NO_GO_LOCALIZED",
+      "output_artifacts": [
+        "artifacts/BHSM_CURRENT_FULL_FIELD_ACTION_ATTACHMENT_AUDIT.json"
+      ],
+      "owning_theorem_version": "current AE2 full-field attachment audit",
+      "variational_domain": "one same-background action/domain with physical BRST quotient and derivatives through fourth order"
+    },
+    {
+      "canonical_action_version": "BHSM-AE-2.0.0",
       "configuration_space": "one canonical action/input ledger through physical observables, benchmark, prediction and package",
       "current_blockers": [
         "GATE7_CURRENT_BLOCKER_THEN_DOWNSTREAM_ACTION_OWNED_MASS_MIXING_AND_RELEASE_REPRODUCTION"
@@ -714,12 +753,14 @@
         "artifacts/BHSM_1_0_completion_gate.json",
         "artifacts/current_semantics/BHSM_CURRENT_COMPLETION_DAG.json",
         "artifacts/BHSM_frozen_prediction_dependency_graph_v6_30_8.json",
-        "artifacts/BHSM_PHYSICAL_COMPLETENESS_MATRIX.json"
+        "artifacts/BHSM_PHYSICAL_COMPLETENESS_MATRIX.json",
+        "artifacts/BHSM_CURRENT_FULL_FIELD_ACTION_ATTACHMENT_AUDIT.json"
       ],
       "mathematical_status": "NOT_RELEASE_COMPLETE",
       "output_artifacts": [
         "artifacts/BHSM_1_0_completion_gate.json",
-        "artifacts/BHSM_PHYSICAL_COMPLETENESS_MATRIX.json"
+        "artifacts/BHSM_PHYSICAL_COMPLETENESS_MATRIX.json",
+        "artifacts/BHSM_CURRENT_FULL_FIELD_ACTION_ATTACHMENT_AUDIT.json"
       ],
       "owning_theorem_version": "BHSM 1.0 current Definition of Done",
       "variational_domain": "complete domains/operators/maps, deterministic clean reproduction and synchronized ledgers"
@@ -759,6 +800,7 @@
     "finite_exact_Omega5_augmented_global_composition_is_outward_certified": true,
     "finite_exact_Omega7_augmented_global_composition_is_outward_certified": true,
     "former_mixed_descriptor_rate_contraction_is_superseded": true,
+    "full_field_action_attachment_is_precisely_fail_closed": true,
     "global_connection_remains_exactly_localized": true,
     "global_finite_correlated_Magnus4_affine_composition_is_outward_certified": true,
     "interaction_frame_analytic_infinite_tail_is_certified_without_exact_propagator_promotion": true,

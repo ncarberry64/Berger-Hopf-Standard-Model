@@ -50,6 +50,34 @@ def test_local_kernel_and_universal_apis_are_not_history_predictions() -> None:
     assert "action-derived frozen c_F" in scale["dependencies_open"]
 
 
+def test_quadratic_engine_credits_explicit_brst_quotient_without_promotion() -> None:
+    payload = _module().build_payload()
+    records = {record["id"]: record for record in payload["records"]}
+    quadratic = records["UNIVERSAL_QUADRATIC_SPECTRUM_AND_PROPAGATORS"]
+    evidence_paths = {item["path"] for item in quadratic["evidence"]}
+    assert "src/bhsm/interface/universal_brst_quotient.py" in evidence_paths
+    assert "tests/test_universal_brst_quotient.py" in evidence_paths
+    assert "explicit constraint/gauge nullspace quotient" in quadratic["satisfied_dependencies"]
+    assert "src/bhsm/interface/universal_momentum_map.py" in evidence_paths
+    assert quadratic["prediction_classification"] == "OPEN_INTERNAL_BLOCKER"
+    assert quadratic["physical_prediction_materialized"] is False
+
+
+def test_rg_and_muon_readout_capabilities_remain_prediction_gated() -> None:
+    payload = _module().build_payload()
+    records = {record["id"]: record for record in payload["records"]}
+    rg = records["RENORMALIZATION_AND_LOOP_COMPLETION"]
+    rg_paths = {item["path"] for item in rg["evidence"]}
+    assert "src/bhsm/interface/universal_rg_flow.py" in rg_paths
+    assert "joint same-action full-parameter RG transport" in rg["satisfied_dependencies"]
+    magnetic = records["LEPTON_MAGNETIC_MOMENTS"]
+    assert "fail-closed renormalized-vertex plus LSZ muon g-2 composition" in magnetic[
+        "satisfied_dependencies"
+    ]
+    assert magnetic["prediction_classification"] == "OPEN_INTERNAL_BLOCKER"
+    assert magnetic["physical_prediction_materialized"] is False
+
+
 def test_every_row_has_explicit_evidence_and_promotion_fields() -> None:
     payload = _module().build_payload()
     required = {

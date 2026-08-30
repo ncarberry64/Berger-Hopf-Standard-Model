@@ -158,6 +158,16 @@ promotion gates, action-ownership flags, empirical-input flags, and the last
 verified engine commit are recorded per row.  Thus infrastructure maturity
 does not bypass Gate 7 or the prediction firewall.
 
+The current full-field attachment is now separately audited.  The retained
+N12 local action contains only 37 geometry coordinates, 37 velocities, and 24
+constraint multipliers.  AE2 supplies the global fermion reset domain but no
+new propagating field, coefficient, or scale.  The explicit BRST quotient and
+Faddeev--Popov regularity check therefore close an infrastructure dependency,
+not the missing action input.  A current same-background gauge/ghost,
+fermion, and HS/scalar action with history/seam derivatives through fourth
+order remains a precisely localized downstream blocker.  Historical response
+seeds are not promoted, and no root-nonexistence conclusion is drawn.
+
 The current physical theory tuple is `BHSM-AE-2.0.0`.  It retains the v7.x
 stratified bulk/boundary functor, v14-v17 eta/Aether action lineage, v7.2
 common observable transport, and frozen comparison firewall, while replacing

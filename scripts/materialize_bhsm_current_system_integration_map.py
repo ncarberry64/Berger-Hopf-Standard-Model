@@ -153,6 +153,7 @@ PATHS = {
     "completion_gate": "artifacts/BHSM_1_0_completion_gate.json",
     "definition": "docs/BHSM_1_0_DEFINITION_OF_DONE.md",
     "physical_completeness": "artifacts/BHSM_PHYSICAL_COMPLETENESS_MATRIX.json",
+    "full_field_attachment": "artifacts/BHSM_CURRENT_FULL_FIELD_ACTION_ATTACHMENT_AUDIT.json",
 }
 
 
@@ -422,10 +423,20 @@ def build_payload() -> dict[str, Any]:
             ["REGENERATE_ONLY_AFTER_CURRENT_ACTION_OBSERVABLE_CHAIN_CLOSES"],
         ),
         _subsystem(
+            "CURRENT_FULL_FIELD_ACTION_ATTACHMENT",
+            "current AE2 geometry background plus gauge/ghost, fermion, and HS/scalar perturbation blocks",
+            "one same-background action/domain with physical BRST quotient and derivatives through fourth order",
+            ["ae2_action", "full_field_attachment", "physical_completeness"], ["full_field_attachment"],
+            "PRECISE_DOWNSTREAM_ATTACHMENT_NO_GO_LOCALIZED", "current AE2 full-field attachment audit",
+            ["GATE7_KKT_HESSIAN", "RELEASE_DEFINITION_OF_DONE"],
+            ["historical response seeds and nonlocal DtN residues are component evidence, not current local couplings"],
+            ["CURRENT_AE2_FULL_GAUGE_FERMION_HS_ACTION_WITH_HISTORY_SEAMS_S1_TO_S4_AND_ACTION_SELECTED_SADDLE"],
+        ),
+        _subsystem(
             "RELEASE_DEFINITION_OF_DONE",
             "one canonical action/input ledger through physical observables, benchmark, prediction and package",
             "complete domains/operators/maps, deterministic clean reproduction and synchronized ledgers",
-            ["definition", "completion_gate", "completion_dag", "frozen", "physical_completeness"], ["completion_gate", "physical_completeness"],
+            ["definition", "completion_gate", "completion_dag", "frozen", "physical_completeness", "full_field_attachment"], ["completion_gate", "physical_completeness", "full_field_attachment"],
             "NOT_RELEASE_COMPLETE", "BHSM 1.0 current Definition of Done",
             [],
             ["peer review and future experimental confirmation excluded from internal completion"],
@@ -462,6 +473,7 @@ def build_payload() -> dict[str, Any]:
         {"id": "G7_SAME_CENTER_INTERVAL_CONTRACTION", "classification": "CURRENT_BLOCKER", "current_effect": "the retained-exact-field 741-node augmented derivative and 74D recurrence validate, and the one authorized nonlinear replay contracts the maximum from 1.3706618261694602e-7 to 1.2217621999603292e-7. The replay center is 2.7017477414680254e8 old exact-affine Z2 radii from that theorem's center, and the diagnostic old-preconditioner image is 5.218603289632254e5 old radii, so the old cone cannot transfer. The exact owner is outward same-center Y=||AF||, Z1=||I-A DF||, and causal Z2 in one 74D norm, with Y+Z1*r+Z2*r^2<r and Z1+2*Z2*r<1. No second numerical campaign or root-nonexistence claim is authorized"},
         {"id": "DECORRELATED_SCALAR_SECOND_VARIATION", "classification": "INVALIDATED_PROOF_ROUTE", "current_effect": "finite first variation survives; all 8,692 scalar denominator cells route to signed/common-frame correlation"},
         {"id": "G7_HESSIAN_WARD_SCALAR", "classification": "DOWNSTREAM_ONLY", "current_effect": "follows the force/KKT root"},
+        {"id": "CURRENT_FULL_FIELD_ACTION_ATTACHMENT", "classification": "DOWNSTREAM_ONLY", "current_effect": "the retained 98D N12 local oracle is geometry-only; AE2 owns the fermion reset domain but supplies no new propagating field, coefficient, or scale. Physical spectrum and observable promotion require one current same-action gauge/ghost, fermion, HS/scalar attachment with history/seam S1-S4, local momentum symbols, cross-sector blocks, and action-selected saddle data"},
         {"id": "CKM_PMNS_PHYSICAL_EIGENBASES", "classification": "DOWNSTREAM_ONLY", "current_effect": "follows Gate 7 and sector response"},
         {"id": "FINAL_CLEAN_REPRODUCTION_PACKAGE", "classification": "DOWNSTREAM_ONLY", "current_effect": "run once only when all scientific blockers appear closed"},
         {"id": "FUTURE_EMPIRICAL_CONFIRMATION", "classification": "POST_1_0", "current_effect": "external validation only"},
@@ -477,6 +489,7 @@ def build_payload() -> dict[str, Any]:
         {"id": "FAMILY_PROJECTORS_TO_MASS_CKM", "class": "B", "priority": 2, "status": "MISSING_ACTION_SELECTED_SECTOR_RESPONSE_EIGENBASES", "evidence": PATHS["generation"]},
         {"id": "NEUTRAL_PROPAGATION_TO_PMNS", "class": "B", "priority": 2, "status": "MISSING_THREE_SLOT_PROJECTION_AND_CHARGED_NEUTRAL_EIGENBASES", "evidence": PATHS["pmns"]},
         {"id": "G_F_TRANSPORT_TO_FINAL_LEDGER", "class": "A", "priority": 1, "status": "COMPOSITION_EXISTS_REVALIDATION_DOWNSTREAM", "evidence": PATHS["v7_transport"]},
+        {"id": "CURRENT_BACKGROUND_TO_FULL_FIELD_ACTION", "class": "C", "priority": 2, "status": "DOWNSTREAM_BLOCKER_PRECISE_ATTACHMENT_NO_GO_LOCALIZED", "evidence": PATHS["full_field_attachment"]},
         {"id": "NEW_THEORY_CHOICE", "class": "D", "priority": 3, "status": "NONE_CURRENTLY_IDENTIFIED", "evidence": PATHS["ae2_action"]},
     ]
 
@@ -1055,6 +1068,20 @@ def build_payload() -> dict[str, Any]:
                 row["implementation_status"] == "IMPLEMENTED_GATED"
                 for row in records["physical_completeness"]["records"]
             )
+        ),
+        "full_field_action_attachment_is_precisely_fail_closed": (
+            records["full_field_attachment"]["validation_passed"] is True
+            and records["full_field_attachment"]["decision"]
+            == "CURRENT_RETAINED_N12_LOCAL_ACTION_ADAPTER_IS_GEOMETRY_ONLY_AND_CANNOT_BY_ITSELF_INSTANTIATE_UNIVERSAL_SM_S2_S3_S4"
+            and records["full_field_attachment"]["implemented_complementary_infrastructure"][
+                "explicit_BRST_physical_nullspace_quotient"
+            ] is True
+            and records["full_field_attachment"]["scientific_boundary"][
+                "physical_prediction_promotion"
+            ] == "BLOCKED"
+            and records["full_field_attachment"]["scientific_boundary"][
+                "root_nonexistence_claimed"
+            ] is False
         ),
     }
     passed = all(validations.values())

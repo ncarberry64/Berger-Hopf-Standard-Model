@@ -81,6 +81,9 @@ def test_canonical_system_and_required_subsystems() -> None:
         "physical_completeness_matrix_is_required_and_open"
     ] is True
     assert payload["validation"][
+        "full_field_action_attachment_is_precisely_fail_closed"
+    ] is True
+    assert payload["validation"][
         "binary64_compact_reserve_artifact_is_superseded_by_directed_replay"
     ] is True
     assert payload["validation"][
@@ -94,6 +97,7 @@ def test_canonical_system_and_required_subsystems() -> None:
         "AE2_NORMAL_MATTER_TRANSMISSION", "N12_EVENT_RESET_CHILD",
         "C2_DOP853_RESPONSE", "GATE7_HEAT_ZETA_CHAIN", "CKM_SECTOR",
         "NEUTRINO_PMNS_SECTOR", "FROZEN_PREDICTION_SYSTEM",
+        "CURRENT_FULL_FIELD_ACTION_ATTACHMENT",
         "RELEASE_DEFINITION_OF_DONE",
     } <= identifiers
     required = {
@@ -155,6 +159,13 @@ def test_blocker_and_interface_priority_reconciliation() -> None:
         "minimum_contraction_localizes_same_center_Y_Z1_Z2_blocker"
     ] is True
     assert payload["claim_boundary"]["Gate7"] == "ACTIVE_NOT_CLOSED"
+    attachment_gap = next(
+        row for row in payload["interface_gaps"]
+        if row["id"] == "CURRENT_BACKGROUND_TO_FULL_FIELD_ACTION"
+    )
+    assert attachment_gap["status"] == (
+        "DOWNSTREAM_BLOCKER_PRECISE_ATTACHMENT_NO_GO_LOCALIZED"
+    )
     response_gap = next(
         row for row in payload["interface_gaps"]
         if row["id"] == "RESPONSE_TO_CORRELATED_Y_Z1_Z2"

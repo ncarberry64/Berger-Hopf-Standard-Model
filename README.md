@@ -150,6 +150,13 @@ numerical campaign is authorized. Capability rows may be
 `OPEN_INTERNAL_BLOCKER`; frozen predictions remain unchanged and empirical
 status is not established.
 
+The [full-field attachment audit](theory/bhsm_current_full_field_action_attachment.md)
+now identifies the precise downstream physics gap: the validated retained
+N12 oracle is a 98-variable geometry kernel, while a current same-action
+gauge/ghost, fermion, and HS/scalar attachment with history/seam derivatives
+through fourth order is not yet materialized. The BRST/Faddeev--Popov quotient
+is implemented; it does not by itself supply those physical action blocks.
+
 `FULL_BHSM_COMPLETE = FALSE`
 
 Historical compatibility: the v18.73 rolling checkpoint records corrected-Rayleigh descent of the 376-variable system, complete-child reconstruction, eta admissibility, and persistence at residual `0.777030406838571`. Earlier v11.1 and v15.10 surfaces remain historical rather than current authority. The historical v15.10 exact-next-object token is

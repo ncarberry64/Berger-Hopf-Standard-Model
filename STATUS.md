@@ -92,6 +92,17 @@ registries are `IMPLEMENTED_PROVISIONAL`.  Every physical prediction remains
 `OPEN_INTERNAL_BLOCKER`, and none may use this background as certified
 Gate-7 authority.
 
+The current full-field attachment audit localizes the next downstream physics
+dependency without weakening those capability claims.  The retained N12
+oracle has exactly 37 geometry coordinates, 37 velocities, and 24 constraint
+multipliers; it has no gauge/ghost, fermion, or HS/scalar perturbation slots.
+AE2 owns the global fermion reset domain but explicitly adds no propagating
+field, coefficient, or scale.  The explicit BRST nullspace quotient and
+Faddeev--Popov regularity check are implemented, but still require one
+current same-action physical field symbol.  Thus physical `S2`--`S4` and all
+derived observables remain blocked pending the hashed full-field/history-seam
+attachment; this is not a root-nonexistence claim.
+
 This file is the current area-level status source. Detailed sprint records are
 evidence, not competing public status pages.
 

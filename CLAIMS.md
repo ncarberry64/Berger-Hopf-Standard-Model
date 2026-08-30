@@ -39,6 +39,20 @@ forecast from the presence of those APIs.  The physical-completeness matrix
 keeps every such scientific output `OPEN_INTERNAL_BLOCKER`, with its explicit
 dependencies and promotion gate.
 
+Supported: a deterministic attachment audit proves that the current retained
+N12 local action is a 98-variable geometry kernel (37 coordinates, 37
+velocities, 24 multipliers), while AE2 owns a reset-glued fermion domain
+without adding a propagating field, coefficient, or scale.  The explicit BRST
+physical quotient and Faddeev--Popov regularity check are implemented.
+
+Not supported: treating that geometry kernel, the AE2 domain theorem, the
+historical gauge/HS response seeds, or the nonlocal DtN form factors as a
+current full gauge/fermion/HS action.  Physical promotion requires same-action
+field blocks, cross derivatives through fourth order, history/seam assembly,
+local momentum symbols, and the action-selected saddle/HS/Yukawa data.  This
+attachment no-go does not claim that a completion or physical root cannot
+exist.
+
 The complete 72-direction affine-carrier path and first-hit coefficient jet
 are materialized but are not the missing nonlinear oracle.  The available
 causal transfer bound is noncontractive and gives terminal uncertainty larger
