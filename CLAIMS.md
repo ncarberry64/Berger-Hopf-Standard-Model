@@ -53,6 +53,13 @@ local momentum symbols, and the action-selected saddle/HS/Yukawa data.  This
 attachment no-go does not claim that a completion or physical root cannot
 exist.
 
+Supported as guarded release infrastructure: an executable reconciliation
+validator checks all noncircular physical-matrix prerequisites, frozen
+benchmark coverage, single action/background/scale provenance, artifact
+hashes, and clean reproduction.  Not supported: treating the existence of
+that validator as release completion; the current candidate fails its
+scientific prerequisites.
+
 The complete 72-direction affine-carrier path and first-hit coefficient jet
 are materialized but are not the missing nonlinear oracle.  The available
 causal transfer bound is noncontractive and gives terminal uncertainty larger

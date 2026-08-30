@@ -92,6 +92,12 @@ def test_rg_and_muon_readout_capabilities_remain_prediction_gated() -> None:
         "satisfied_dependencies"
     ]
     assert "four-or-more-body channels" in decays["dependencies_open"]
+    assert "physical-quotient outgoing sums and incoming density-matrix averages" in decays[
+        "satisfied_dependencies"
+    ]
+    assert "src/bhsm/interface/universal_external_state_sum.py" in {
+        item["path"] for item in decays["evidence"]
+    }
 
 
 def test_every_row_has_explicit_evidence_and_promotion_fields() -> None:
@@ -106,6 +112,21 @@ def test_every_row_has_explicit_evidence_and_promotion_fields() -> None:
         assert all(item["sha256"] for item in record["evidence"])
         assert record["last_verified_commit"] == _module().ENGINE_VERIFIED_COMMIT
         assert record["empirical_input_used"] is False
+
+
+def test_release_reconciliation_is_implemented_but_full_release_is_open() -> None:
+    payload = _module().build_payload()
+    records = {record["id"]: record for record in payload["records"]}
+    release = records["PHYSICAL_RELEASE_RECONCILIATION"]
+    assert release["implementation_status"] == "IMPLEMENTED_GATED"
+    assert release["prediction_classification"] == "OPEN_INTERNAL_BLOCKER"
+    assert release["physical_prediction_materialized"] is False
+    assert "noncircular prerequisite-row promotion check" in release[
+        "satisfied_dependencies"
+    ]
+    evidence_paths = {item["path"] for item in release["evidence"]}
+    assert "src/bhsm/interface/universal_release_reconciliation.py" in evidence_paths
+    assert "tests/test_universal_release_reconciliation.py" in evidence_paths
 
 
 def test_materialized_artifact_matches_deterministic_builder_and_hashes() -> None:

@@ -168,6 +168,12 @@ fermion, and HS/scalar action with history/seam derivatives through fourth
 order remains a precisely localized downstream blocker.  Historical response
 seeds are not promoted, and no root-nonexistence conclusion is drawn.
 
+Release reconciliation is implemented as a noncircular final validator: all
+other required rows must first be promotable and materialized on one
+action/background/scale, with complete frozen benchmark coverage, byte-exact
+artifacts, and a clean reproduction.  The current system fails those inputs;
+the validator itself is not evidence of physical completion.
+
 The current physical theory tuple is `BHSM-AE-2.0.0`.  It retains the v7.x
 stratified bulk/boundary functor, v14-v17 eta/Aether action lineage, v7.2
 common observable transport, and frozen comparison firewall, while replacing

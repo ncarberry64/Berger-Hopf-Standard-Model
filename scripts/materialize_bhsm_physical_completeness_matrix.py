@@ -40,6 +40,8 @@ ENGINE_PATHS = {
     "rg_flow": "src/bhsm/interface/universal_rg_flow.py",
     "gf_scale": "src/bhsm/interface/universal_gf_scale.py",
     "prediction_freeze": "src/bhsm/interface/universal_prediction_freeze.py",
+    "release_reconciliation": "src/bhsm/interface/universal_release_reconciliation.py",
+    "external_state_sum": "src/bhsm/interface/universal_external_state_sum.py",
 }
 
 ENGINE_TEST_PATHS = {
@@ -60,6 +62,8 @@ ENGINE_TEST_PATHS = {
     "rg_flow": "tests/test_universal_rg_flow.py",
     "gf_scale": "tests/test_universal_gf_scale.py",
     "prediction_freeze": "tests/test_universal_prediction_freeze.py",
+    "release_reconciliation": "tests/test_universal_release_reconciliation.py",
+    "external_state_sum": "tests/test_universal_external_state_sum.py",
 }
 
 IMPLEMENTATION_STATUSES = (
@@ -69,7 +73,7 @@ IMPLEMENTATION_STATUSES = (
     "IMPLEMENTED_PROMOTABLE",
 )
 
-ENGINE_VERIFIED_COMMIT = "0939e662e953c5e6038b2a4338679188ffe91e79"
+ENGINE_VERIFIED_COMMIT = "b51302c38f6f9de0e87e2f3f4774ffc8c43f9f85"
 
 IMPLEMENTATION_STATUS_BY_ID = {
     "GATE7_PHYSICAL_BACKGROUND": "NOT_IMPLEMENTED",
@@ -89,7 +93,7 @@ IMPLEMENTATION_STATUS_BY_ID = {
     "NEW_PARTICLE_SPECTRAL_ENCLOSURES": "IMPLEMENTED_GATED",
     "BENCHMARK_OBSERVABLE_SUITE": "IMPLEMENTED_PROVISIONAL",
     "FROZEN_FORWARD_PREDICTIONS": "IMPLEMENTED_PROVISIONAL",
-    "PHYSICAL_RELEASE_RECONCILIATION": "NOT_IMPLEMENTED",
+    "PHYSICAL_RELEASE_RECONCILIATION": "IMPLEMENTED_GATED",
 }
 
 ACTION_OWNED_BY_ID = {
@@ -110,7 +114,7 @@ ACTION_OWNED_BY_ID = {
     "NEW_PARTICLE_SPECTRAL_ENCLOSURES": True,
     "BENCHMARK_OBSERVABLE_SUITE": False,
     "FROZEN_FORWARD_PREDICTIONS": False,
-    "PHYSICAL_RELEASE_RECONCILIATION": False,
+    "PHYSICAL_RELEASE_RECONCILIATION": True,
 }
 
 PROMOTION_GATE_BY_ID = {
@@ -308,16 +312,16 @@ def build_payload() -> dict[str, Any]:
             "PARTICLE_STABILITY_AND_DECAYS",
             "COMPLETE_CHANNEL_SELECTION_PARTIAL_WIDTH_TOTAL_WIDTH_AND_LIFETIME_REGISTRY",
             "TWO_AND_THREE_BODY_READOUT_AND_INTERVAL_STABILITY_ALGEBRA_IMPLEMENTED_GATED",
-            ("decay_collision", "spectral_forecast", "lsz", "vertex_amplitude"),
-            ("two-body phase space", "deterministic three-body invariant/helicity-angle phase space", "channel aggregation", "complete-ledger stability criterion"),
+            ("decay_collision", "spectral_forecast", "lsz", "vertex_amplitude", "external_state_sum"),
+            ("two-body phase space", "deterministic three-body invariant/helicity-angle phase space", "physical-quotient outgoing sums and incoming density-matrix averages", "channel aggregation", "complete-ledger stability criterion"),
             ("physical mode spectrum", "complete action-owned channel enumeration", "renormalized amplitudes", "four-or-more-body channels", "physical unit map"),
         ),
         _record(
             "COLLISION_AND_SCATTERING_PREDICTION",
             "ACTION_OWNED_LSZ_AMPLITUDES_AND_CROSS_SECTIONS_FOR_REQUIRED_BENCHMARKS",
             "TREE_AND_TWO_TO_TWO_READOUT_ALGEBRA_IMPLEMENTED_GATED",
-            ("vertex_amplitude", "lsz", "decay_collision", "loop_renormalization", "momentum_map"),
-            ("tree contact-plus-exchange algebra", "complete s/t/u assembly without quartic double counting", "two-to-two phase space and angular quadrature", "guarded Mandelstam invariant map"),
+            ("vertex_amplitude", "lsz", "decay_collision", "loop_renormalization", "momentum_map", "external_state_sum"),
+            ("tree contact-plus-exchange algebra", "complete s/t/u assembly without quartic double counting", "physical-quotient outgoing sums and incoming density-matrix averages", "two-to-two phase space and angular quadrature", "guarded Mandelstam invariant map"),
             ("physical external modes", "renormalized complete amplitudes", "benchmark kinematics", "hadronic bridge where required"),
         ),
         _record(
@@ -355,9 +359,9 @@ def build_payload() -> dict[str, Any]:
         _record(
             "PHYSICAL_RELEASE_RECONCILIATION",
             "FULL_BHSM_1_0_RELEASE_WITH_EVERY_REQUIRED_ROW_DERIVED_OR_EXPLICITLY_SCOPED",
-            "BLOCKED_BY_OPEN_ROWS",
-            (),
-            ("machine-readable physical-completeness ledger",),
+            "EXECUTABLE_FAIL_CLOSED_RELEASE_RECONCILIATION_IMPLEMENTED_GATED",
+            ("release_reconciliation", "prediction_freeze"),
+            ("single-action/background/scale consistency checks", "noncircular prerequisite-row promotion check", "complete frozen benchmark coverage check", "byte-exact artifact manifest", "clean-reproduction gate"),
             ("Gate7 closure", "all required physical rows", "one clean deterministic release reproduction", "mainline release integration"),
         ),
     ]

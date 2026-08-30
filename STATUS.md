@@ -103,6 +103,13 @@ current same-action physical field symbol.  Thus physical `S2`--`S4` and all
 derived observables remain blocked pending the hashed full-field/history-seam
 attachment; this is not a root-nonexistence claim.
 
+Physical release reconciliation is now executable and fail-closed.  It checks
+one Gate-7-closed background, one action/background/scale provenance, every
+non-release matrix row promoted, complete frozen benchmark coverage,
+byte-exact artifact hashes, and one clean deterministic reproduction.  The
+current candidate fails those gates, so this capability is
+`IMPLEMENTED_GATED` and `FULL_BHSM_COMPLETE` remains false.
+
 This file is the current area-level status source. Detailed sprint records are
 evidence, not competing public status pages.
 
