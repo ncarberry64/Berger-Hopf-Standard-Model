@@ -118,12 +118,30 @@ def test_rg_and_muon_readout_capabilities_remain_prediction_gated() -> None:
     assert "coupled-channel Legendre partial-wave projection" in collision[
         "satisfied_dependencies"
     ]
-    assert "complete open-channel unitarity ledger" in collision[
+    assert "instantiated complete open-channel unitarity ledger" in collision[
         "dependencies_open"
     ]
     assert "src/bhsm/interface/universal_partial_wave.py" in {
         item["path"] for item in collision["evidence"]
     }
+    assert "src/bhsm/interface/universal_channel_ledger.py" in {
+        item["path"] for item in collision["evidence"]
+    }
+    assert "src/bhsm/interface/universal_optical_theorem.py" in {
+        item["path"] for item in collision["evidence"]
+    }
+    assert "complete/incomplete inclusive optical-theorem reconciliation" in collision[
+        "satisfied_dependencies"
+    ]
+    assert "exhaustive charge-conserving decay-channel multiset enumeration" in decays[
+        "satisfied_dependencies"
+    ]
+    assert "instantiated complete same-action decay-channel ledger" in decays[
+        "dependencies_open"
+    ]
+    assert "generic action-identified charged-lepton F2(0) composition preserving electron/muon/tau mode identity" in magnetic[
+        "satisfied_dependencies"
+    ]
 
 
 def test_every_row_has_explicit_evidence_and_promotion_fields() -> None:

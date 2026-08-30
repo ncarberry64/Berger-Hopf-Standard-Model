@@ -46,6 +46,8 @@ ENGINE_PATHS = {
     "partial_wave": "src/bhsm/interface/universal_partial_wave.py",
     "dressed_pole": "src/bhsm/interface/universal_dressed_pole.py",
     "spectral_density": "src/bhsm/interface/universal_spectral_density.py",
+    "channel_ledger": "src/bhsm/interface/universal_channel_ledger.py",
+    "optical_theorem": "src/bhsm/interface/universal_optical_theorem.py",
 }
 
 ENGINE_TEST_PATHS = {
@@ -72,6 +74,8 @@ ENGINE_TEST_PATHS = {
     "partial_wave": "tests/test_universal_partial_wave.py",
     "dressed_pole": "tests/test_universal_dressed_pole.py",
     "spectral_density": "tests/test_universal_spectral_density.py",
+    "channel_ledger": "tests/test_universal_channel_ledger.py",
+    "optical_theorem": "tests/test_universal_optical_theorem.py",
 }
 
 IMPLEMENTATION_STATUSES = (
@@ -81,7 +85,7 @@ IMPLEMENTATION_STATUSES = (
     "IMPLEMENTED_PROMOTABLE",
 )
 
-ENGINE_VERIFIED_COMMIT = "93614bc8c1fa71f2f66344b1c26390d40cabe546"
+ENGINE_VERIFIED_COMMIT = "fed4e6a5c0187c707058e404c6783260e4b1c7a9"
 
 IMPLEMENTATION_STATUS_BY_ID = {
     "GATE7_PHYSICAL_BACKGROUND": "NOT_IMPLEMENTED",
@@ -320,32 +324,32 @@ def build_payload() -> dict[str, Any]:
             "PARTICLE_STABILITY_AND_DECAYS",
             "COMPLETE_CHANNEL_SELECTION_PARTIAL_WIDTH_TOTAL_WIDTH_AND_LIFETIME_REGISTRY",
             "TWO_THREE_AND_RECURSIVE_MULTI_BODY_READOUT_AND_INTERVAL_STABILITY_ALGEBRA_IMPLEMENTED_GATED",
-            ("decay_collision", "spectral_forecast", "lsz", "vertex_amplitude", "external_state_sum"),
-            ("two-body phase space", "deterministic three-body invariant/helicity-angle phase space", "deterministic recursive Lorentz-invariant multi-body phase space with reconstructed four-momenta", "physical-quotient outgoing sums and incoming density-matrix averages", "channel aggregation", "complete-ledger stability criterion"),
-            ("physical mode spectrum", "complete action-owned channel enumeration", "renormalized amplitudes", "outward multi-body quadrature error where required", "physical unit map"),
+            ("decay_collision", "spectral_forecast", "lsz", "vertex_amplitude", "external_state_sum", "channel_ledger"),
+            ("two-body phase space", "deterministic three-body invariant/helicity-angle phase space", "deterministic recursive Lorentz-invariant multi-body phase space with reconstructed four-momenta", "physical-quotient outgoing sums and incoming density-matrix averages", "exhaustive charge-conserving decay-channel multiset enumeration", "interval threshold and amplitude-resolution adjudication", "canonical identical-state symmetry factors", "channel aggregation", "complete-ledger stability criterion"),
+            ("physical mode spectrum", "instantiated complete same-action decay-channel ledger", "renormalized amplitudes", "outward multi-body quadrature error where required", "physical unit map"),
         ),
         _record(
             "COLLISION_AND_SCATTERING_PREDICTION",
             "ACTION_OWNED_LSZ_AMPLITUDES_AND_CROSS_SECTIONS_FOR_REQUIRED_BENCHMARKS",
             "TREE_TWO_TO_TWO_AND_COUPLED_PARTIAL_WAVE_READOUT_ALGEBRA_IMPLEMENTED_GATED",
-            ("vertex_amplitude", "lsz", "decay_collision", "loop_renormalization", "momentum_map", "external_state_sum", "partial_wave"),
-            ("tree contact-plus-exchange algebra", "complete s/t/u assembly without quartic double counting", "physical-quotient outgoing sums and incoming density-matrix averages", "two-to-two phase space and angular quadrature", "guarded Mandelstam invariant map", "coupled-channel Legendre partial-wave projection", "complete-ledger unitarity and incomplete-subspace absorption/excess diagnostics"),
-            ("physical external modes", "renormalized complete amplitudes", "complete open-channel unitarity ledger", "benchmark kinematics", "hadronic bridge where required"),
+            ("vertex_amplitude", "lsz", "decay_collision", "loop_renormalization", "momentum_map", "external_state_sum", "partial_wave", "channel_ledger", "optical_theorem"),
+            ("tree contact-plus-exchange algebra", "complete s/t/u assembly without quartic double counting", "physical-quotient outgoing sums and incoming density-matrix averages", "two-to-two phase space and angular quadrature", "guarded Mandelstam invariant map", "exhaustive charge-conserving scattering-channel multiset enumeration", "coupled-channel Legendre partial-wave projection", "complete-ledger unitarity and incomplete-subspace absorption/excess diagnostics", "complete/incomplete inclusive optical-theorem reconciliation"),
+            ("physical external modes", "renormalized complete amplitudes", "instantiated complete open-channel unitarity ledger", "benchmark kinematics", "hadronic bridge where required"),
         ),
         _record(
             "LEPTON_MAGNETIC_MOMENTS",
             "ACTION_DERIVED_ELECTRON_MUON_TAU_F2_ZERO_PREDICTIONS",
             "FORM_FACTOR_PROJECTOR_AND_PROMOTION_GATES_IMPLEMENTED",
             ("precision_form_factor", "loop_renormalization", "lsz", "yukawa_vertices"),
-            ("basis-independent F1/F2 projector", "a_l=F2(0) readout", "fail-closed renormalized-vertex plus LSZ muon g-2 composition"),
+            ("basis-independent F1/F2 projector", "a_l=F2(0) readout", "fail-closed renormalized-vertex plus LSZ muon g-2 composition", "generic action-identified charged-lepton F2(0) composition preserving electron/muon/tau mode identity"),
             ("action-selected lepton modes", "complete renormalized electromagnetic vertex", "Ward normalization F1(0)=1", "q-squared to zero enclosure"),
         ),
         _record(
             "NEW_PARTICLE_SPECTRAL_ENCLOSURES",
             "FROZEN_MODE_INTERVALS_OR_EXCLUSIONS_WITH_QUANTUM_NUMBERS_AND_DECAYS",
             "INTERVAL_FORECAST_ALGEBRA_IMPLEMENTED_GATED",
-            ("spectral_forecast", "quadratic_spectrum", "dressed_pole", "spectral_density", "decay_collision"),
-            ("declared-domain spectral exclusion", "inverse-free complex dressed-pole mass/width readout", "source-contracted retarded spectral-density readout", "interval decay-channel classification"),
+            ("spectral_forecast", "quadratic_spectrum", "dressed_pole", "spectral_density", "decay_collision", "channel_ledger"),
+            ("declared-domain spectral exclusion", "inverse-free complex dressed-pole mass/width readout", "source-contracted retarded spectral-density readout", "complete-ledger decay/stability classification machinery", "interval decay-channel classification"),
             ("complete physical spectrum enclosure", "physical scale", "complete decay ledger", "pre-comparison frozen forecast artifact"),
         ),
         _record(

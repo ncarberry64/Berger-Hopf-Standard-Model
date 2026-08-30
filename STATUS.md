@@ -134,6 +134,14 @@ spectral densities by linear solves, with positivity, conditioning, residual,
 Gate-7, and complete-self-energy checks. No current source/background pair is
 promoted to a physical spectral-density prediction.
 
+A complete-channel ledger API now enumerates charge-conserving decay and
+scattering multisets, resolves interval thresholds and amplitude certificates,
+and supplies identical-state factors plus per-initial-state completeness.  An
+optical-theorem validator consumes the inclusive ledger and forward amplitude,
+requiring equality when complete and forbidding excess when incomplete.  The
+charged-lepton `F2(0)` chain now supports any action-identified electron,
+muon, or tau mode.  No current physical instance is promoted.
+
 This file is the current area-level status source. Detailed sprint records are
 evidence, not competing public status pages.
 

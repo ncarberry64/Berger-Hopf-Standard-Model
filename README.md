@@ -183,6 +183,13 @@ through linear solves and checks positivity, conditioning, residuals, Gate 7,
 and self-energy-ledger completeness. It likewise remains a gated capability,
 not a current BHSM spectral prediction.
 
+The decay/scattering layer now builds exhaustive charge-conserving channel
+multisets with threshold, amplitude, and identical-state adjudication, then
+checks complete or incomplete inclusive cross-section ledgers against the
+forward amplitude through the optical theorem. The magnetic-moment readout is
+also generic across action-identified charged-lepton modes while retaining the
+existing muon API. Physical instances remain open.
+
 `FULL_BHSM_COMPLETE = FALSE`
 
 Historical compatibility: the v18.73 rolling checkpoint records corrected-Rayleigh descent of the 376-variable system, complete-child reconstruction, eta admissibility, and persistence at residual `0.777030406838571`. Earlier v11.1 and v15.10 surfaces remain historical rather than current authority. The historical v15.10 exact-next-object token is

@@ -198,6 +198,14 @@ linear solves rather than a propagator inverse.  Positivity, conditioning,
 residual, complete-self-energy, and Gate-7 checks are explicit; current inputs
 do not satisfy physical promotion.
 
+The channel layer now exhaustively enumerates declared conserved-charge final
+states, records threshold and amplitude resolution plus symmetry factors, and
+separates candidate-inventory completeness from physical channel closure.  Its
+inclusive scattering output feeds a forward-amplitude optical-theorem check.
+The precision layer also composes `F2(0)` for any action-identified charged
+lepton while preserving the muon wrapper.  These are gated consumers of the
+still-missing physical spectrum and amplitudes.
+
 The current physical theory tuple is `BHSM-AE-2.0.0`.  It retains the v7.x
 stratified bulk/boundary functor, v14-v17 eta/Aether action lineage, v7.2
 common observable transport, and frozen comparison firewall, while replacing

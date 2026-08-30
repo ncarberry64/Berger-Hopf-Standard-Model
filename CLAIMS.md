@@ -82,6 +82,13 @@ retarded spectral density with positivity, conditioning, and solve-residual
 diagnostics. Not supported: a current physical spectral density; Gate 7 and
 the complete same-action self-energy input remain open.
 
+Supported as gated channel infrastructure: exhaustive conserved-charge final
+states, threshold/amplitude resolution, identical-state factors, per-state
+stability/open-channel reports, and complete/incomplete optical-theorem
+reconciliation. Supported as gated precision infrastructure: generic
+action-identified charged-lepton `F2(0)` composition. Not supported: a current
+physical channel ledger, inclusive cross section, or lepton magnetic moment.
+
 The complete 72-direction affine-carrier path and first-hit coefficient jet
 are materialized but are not the missing nonlinear oracle.  The available
 causal transfer bound is noncontractive and gives terminal uncertainty larger
