@@ -2,17 +2,20 @@
 
 ## Current Gate-7 owner
 
-The exact-affine interaction-Taylor26 carrier and all 47 retained unaligned
-Gauss-8 signed-source blocks are now outward certified.  The maximum global
-signed response radius is `5.813089943277151e-22`, with terminal radius
-`3.238347696636337e-22`.  The resulting exact signed-`Y` center lies inside
-the frozen Decimal candidate cone at utilization `0.053773621885447036`.
-The old Gauss-12 recentered numerical cone is not transferable: its center is
-separated from the exact-affine center by `120901.05128628464` candidate-cone
-radii.  Its theorem formulas remain reusable, but the numerical `Z2` and
-recentered cone ball must be rebuilt at the final center before radii,
-continuous margins, and scalar first-hit Newton are transferred.  Gate 7 is
-`ACTIVE` and `FULL_BHSM_COMPLETE = FALSE`.
+The exact-affine interaction-Taylor26 carrier, all 47 retained unaligned
+Gauss-8 signed-source blocks, final-center spectrum/cone/response, and causal
+Taylor--Volterra `Z2` are outward certified.  A causal birth-cell Bernstein
+bound and 3,000 exact-spectrum cells prove strict selected-eigenvalue
+positivity through action time `92.30037143976939`; the uniform final-center
+halo preserves a negative value at the corrected endpoint
+`92.30513924040065`.  Regular-flow continuity therefore supplies a canonical
+earliest stop.  Uniqueness and a differentiable stop-time map are not claimed.
+
+The geometric owner is closed.  Gate 7 is now `ACTIVE` on the missing
+action-owned complete joint finite-history operator (or equivalent two-sided
+Weyl--Calderon oracle), endpoint form, and 72-direction geometry/reset first
+jet required by the already-derived heat-minus-zeta force and KKT formulas.
+`FULL_BHSM_COMPLETE = FALSE`.
 
 The current physical theory tuple is `BHSM-AE-2.0.0`.  It retains the v7.x
 stratified bulk/boundary functor, v14-v17 eta/Aether action lineage, v7.2

@@ -2812,3 +2812,25 @@ Exact next object:
 - Gate 7 remains `ACTIVE`; Gate 8 is `LOCKED`; chord 3 remains
   `UNAUTHORIZED`; frozen predictions are unchanged;
   `FULL_BHSM_COMPLETE=FALSE`.
+## N=12 final exact-center canonical first stop
+
+- The corrected exact-affine center terminates at action time
+  `92.30513924040065`; the inherited unused quarter-step abscissa `92.5` is
+  superseded for this chain.
+- A causal Taylor bound that vanishes at reset proves the selected descriptor
+  positive on `[0,0.25]`.  The 3,000 retained exact-spectrum cells then prove
+  uniform positivity through `92.30037143976939`, with minimum lower bound
+  `1.5080905888369763e-13`.
+- On the final cell, the action-owned branch-24 eigenvalue interval is
+  `[1.1529055490169818e-13,1.1529823002383342e-13]` at the left endpoint and
+  `[-1.8307427923654646e-14,-1.82997517493954e-14]` at the corrected terminal
+  endpoint, using the certified uniform causal radius
+  `5.798470127958652e-13`.
+- Continuity of the regular selected-line flow therefore gives a canonical
+  earliest stop.  This closes the Gate-7 geometric connection owner without
+  claiming a unique zero or differentiable stop-time map.
+- Gate 7 remains active.  Its current owner is the complete action-owned joint
+  finite-history operator or equivalent two-sided Weyl--Calderon oracle, its
+  endpoint form, and its 72-direction geometry/reset first jet.  The projected
+  heat-minus-zeta force, same-action KKT root, and constrained physical Hessian
+  remain open.  `FULL_BHSM_COMPLETE = FALSE`.

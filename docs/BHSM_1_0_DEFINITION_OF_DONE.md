@@ -2,11 +2,13 @@
 
 ## Authoritative current completion state
 
-The correlated exact-affine homogeneous Gate-7 carrier is closed.  Signed
-source composition, literal outward signed `Y`, center-dependent `Z2`/radii,
-continuous margins, scalar first-hit Newton, and downstream Gate-7
-force/KKT/Hessian closure remain open.  Gate 7 is `ACTIVE` and
-`FULL_BHSM_COMPLETE = FALSE`.
+The correlated exact-affine carrier, signed source, final-center
+spectrum/cone/response, causal `Z2`, continuous preterminal margin, and
+canonical earliest stop are closed.  The stop proof uses strict action-owned
+selected-eigenvalue signs plus continuity and does not claim uniqueness or a
+differentiable stop-time map.  Gate 7 remains `ACTIVE` on the missing complete
+joint finite-history operator oracle, projected heat-minus-zeta force, KKT
+root, and constrained physical Hessian.  `FULL_BHSM_COMPLETE = FALSE`.
 
 Physical completion additionally requires a no-fit matrix in which every
 claimed observable is classified exactly once as
@@ -15,8 +17,10 @@ claimed observable is classified exactly once as
 `OPEN_INTERNAL_BLOCKER`, or `OUTSIDE_BHSM_1_0_SCOPE`.  The matrix must cover
 the universal electromagnetic vertex including muon magnetic moment,
 particle stability and decays, new-particle spectral enclosures/exclusions,
-and the known-particle inventory.  Measured values may not select an upstream
-branch, coefficient, normalization, or formula.
+the known-particle inventory, and collision/scattering prediction with
+representative QED, weak, strong, scalar, flavor, and neutrino benchmarks.
+Measured values may not select an upstream branch, coefficient,
+normalization, or formula.
 
 ## Current N12 continuum evaluation
 

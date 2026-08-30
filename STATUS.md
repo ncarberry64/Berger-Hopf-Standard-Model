@@ -8,11 +8,20 @@ the global product; binary64 midpoint-radius arrays are presentation only.
 Global Frobenius radius: `8.924457407181154e-13`; operator upper:
 `5342.54284263994`.
 
-Current owner: retained unaligned Gauss-8 signed-source blocks and their global
-affine composition with the frozen carrier, then literal outward signed `Y`,
-center-dependent `Z2`/radii, continuous margins, and scalar first-hit Newton.
-Gate 7 remains `ACTIVE`; `FULL_BHSM_COMPLETE = FALSE`.  Downstream physical
-completeness and its no-fit matrix remain open.
+The retained signed-source composition, corrected exact center, final
+spectrum/cone/response, causal `Z2`, continuous preterminal positivity, and
+canonical earliest selected-eigenvalue stop are certified.  The terminal
+action interval is `[92.30037143976939, 92.30513924040065]`; the selected
+eigenvalue is positive at the left endpoint and negative at the right after
+the uniform causal halo.  Uniqueness and differentiable stop time are not
+claimed or needed for the existence-only Gate-7 alternative.
+
+Current owner: materialize the complete action-owned joint finite-history
+operator or equivalent two-sided Weyl--Calderon family, endpoint form, and
+full 72-direction geometry/reset first jet; then evaluate the existing
+heat-minus-zeta force and same-action KKT system.  Gate 7 remains `ACTIVE`;
+`FULL_BHSM_COMPLETE = FALSE`.  Universal physical prediction engines remain
+open downstream.
 
 This file is the current area-level status source. Detailed sprint records are
 evidence, not competing public status pages.

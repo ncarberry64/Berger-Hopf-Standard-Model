@@ -9,13 +9,21 @@ global Frobenius radius is `8.924457407181154e-13` and operator upper bound is
 `5342.54284263994`.  Binary64 arrays are presentation data only; the earlier
 under-inflated and decorrelated global carrier routes are superseded.
 
-The exact next owner is the retained unaligned Gauss-8 signed-source block
-composition with this frozen carrier, followed by literal outward signed
-`Y`, center-dependent `Z2`/radii, continuous margins, and scalar first-hit
-Newton.  Gate 7 is `ACTIVE`; `FULL_BHSM_COMPLETE = FALSE`.  The physical
-completeness matrix remains mandatory downstream and includes muon magnetic
-moment, stability/decays, spectral new-particle enclosures, and known-particle
-coverage under the no-fit prediction firewall.
+The retained signed-source composition, final exact center, center-dependent
+spectrum/cone/response, and causal Taylor--Volterra `Z2` are now certified.
+The corrected action-owned selected eigenvalue is uniformly positive through
+action time `92.30037143976939` and strictly negative at the true endpoint
+`92.30513924040065`; continuity therefore gives a canonical earliest stop.
+No unique or differentiable stop-time map is claimed.  The Gate-7 geometric
+owner is closed and the background is frozen at that stop.
+
+The exact current owner is the missing action-owned complete joint finite-
+history operator (or equivalent two-sided Weyl--Calderon oracle), endpoint
+form, and full 72-direction geometry/reset first jet needed to evaluate the
+already-derived heat-minus-zeta force and KKT system.  Gate 7 remains
+`ACTIVE`; `FULL_BHSM_COMPLETE = FALSE`.  Physical completion additionally
+requires universal spectrum/propagator, vertex, decay, loop/magnetic-moment,
+and collision engines under the no-fit prediction firewall.
 
 [![CI](https://github.com/ncarberry64/Berger-Hopf-Standard-Model/actions/workflows/ci.yml/badge.svg)](https://github.com/ncarberry64/Berger-Hopf-Standard-Model/actions/workflows/ci.yml)
 [![Latest archival release](https://img.shields.io/github/v/release/ncarberry64/Berger-Hopf-Standard-Model?label=archival%20release)](https://github.com/ncarberry64/Berger-Hopf-Standard-Model/releases/latest)

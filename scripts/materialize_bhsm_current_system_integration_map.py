@@ -67,6 +67,8 @@ PATHS = {
     "arb_interaction_taylor26_macro_maps": "artifacts/flagship_integration/BHSM_N12_GATE7_ARB_INTERACTION_TAYLOR26_MACRO_MAPS.json",
     "arb_interaction_taylor26_signed_source": "artifacts/flagship_integration/BHSM_N12_GATE7_ARB_INTERACTION_TAYLOR26_SIGNED_SOURCE.json",
     "exact_affine_center_transfer": "artifacts/flagship_integration/BHSM_N12_GATE7_EXACT_AFFINE_CENTER_TRANSFER_AUDIT.json",
+    "exact_affine_first_stop": "artifacts/flagship_integration/BHSM_N12_GATE7_EXACT_AFFINE_CONTINUOUS_FIRST_STOP.json",
+    "final_force_kkt_verdict": "artifacts/flagship_integration/BHSM_N12_GATE7_FINAL_EXACT_CENTER_FORCE_KKT_HESSIAN_VERDICT.json",
     "causal_y_z1_z2_margin_budget": "artifacts/flagship_integration/BHSM_N12_GATE7_CAUSAL_Y_Z1_Z2_MARGIN_BUDGET_AUDIT.json",
     "recentered_cone_spectrum": "artifacts/flagship_integration/BHSM_N12_GATE7_RECENTERED_CONE_BOUNDARY_CLUSTER_SPECTRUM.json",
     "recentered_cone_projector": "artifacts/flagship_integration/BHSM_N12_GATE7_RECENTERED_CONE_SELECTED_PROJECTOR_GRAPH.json",
@@ -358,10 +360,10 @@ def build_payload() -> dict[str, Any]:
         {"id": "G7_SIGNED_Y_QUADRATURE_AND_RECENTER_REBASE", "classification": "SUPERSEDED_BY_DECIMAL_SOURCE_REPAIR", "current_effect": "the former Gauss8/12/16/20 nonconvergence changed a binary selected-eigenline source representation; the isolated Decimal Gauss6-to8 source and PROP16 image are stable inside the halo"},
         {"id": "G7_COMPACT_RESET_STORED_RESERVE_791_1064", "classification": "SUPERSEDED_BY_DIRECTED_DECIMAL_REPLAY", "current_effect": "the two binary64-rounded zero reserves replay to strict directed lower bounds near 4.03e-28 and the predeclared open subball now crosses all 1222 core segments"},
         {"id": "G7_RESET_TO_CAPTURE_OR_STOP_CONNECTION", "classification": "SUPERSEDED_BY_TRANSVERSALITY_REDUCTION", "current_effect": "one exact transverse center stop witness automatically promotes to a nonempty open 72-dimensional stop-reaching seed stratum; whole-family multiple shooting and the NHIM bridge are unnecessary on the stop branch"},
-        {"id": "G7_CORRELATED_QUARTER_STEP_CENTER_STOP_WITNESS", "classification": "CURRENT_BLOCKER", "current_effect": "the exact-affine Taylor26 carrier and retained Gauss8 signed Y are certified, and the exact center uses only 0.053773621885447036 of the frozen Decimal candidate cone; rebuild final-center Z2 and the recentered cone ball, then transfer radii, continuous margins, and scalar interval Newton at the shifted s=0 first hit"},
+        {"id": "G7_CORRELATED_QUARTER_STEP_CENTER_STOP_WITNESS", "classification": "RESOLVED_BY_EXACT_FIRST_STOP", "current_effect": "the final exact-center cone, response, causal Z2, strict preterminal selected-eigenvalue margins, and canonical earliest stop are certified; uniqueness and differentiable stop time are not claimed"},
         {"id": "G7_DECORRELATED_BINARY64_CARRIER_COMPOSITION", "classification": "INVALIDATED_PROOF_ROUTE", "current_effect": "independent binary64 component balls produce wrapping blowup and are presentation data only; correlated outward Arb interval strings own global composition"},
         {"id": "G7_OLD_GAUSS12_RECENTERED_NUMERICAL_CONE_TRANSFER", "classification": "INVALIDATED_PROOF_ROUTE", "current_effect": "the old Gauss12 center differs from the exact-affine center by 120901.05128628464 candidate-cone radii; retain its theorem formulas but rebuild the numerical Z2/cone ball at the final center"},
-        {"id": "G7_COMPLETE_JOINT_FORCE_ROOT", "classification": "DOWNSTREAM_ONLY", "current_effect": "evaluate after signed-Y recentering, radii closure, and first-hit transfer"},
+        {"id": "G7_COMPLETE_JOINT_FORCE_ROOT", "classification": "CURRENT_BLOCKER", "current_effect": "materialize the complete action-owned joint finite-history operator or equivalent two-sided Weyl-Calderon oracle, endpoint form, and full 72-direction geometry/reset first jet; then evaluate the projected heat-minus-zeta force, KKT root, and physical Hessian"},
         {"id": "DECORRELATED_SCALAR_SECOND_VARIATION", "classification": "INVALIDATED_PROOF_ROUTE", "current_effect": "finite first variation survives; all 8,692 scalar denominator cells route to signed/common-frame correlation"},
         {"id": "G7_HESSIAN_WARD_SCALAR", "classification": "DOWNSTREAM_ONLY", "current_effect": "follows the force/KKT root"},
         {"id": "CKM_PMNS_PHYSICAL_EIGENBASES", "classification": "DOWNSTREAM_ONLY", "current_effect": "follows Gate 7 and sector response"},
@@ -373,9 +375,9 @@ def build_payload() -> dict[str, Any]:
         {"id": "AE2_TO_ONE_SEAM", "class": "A", "priority": 0, "status": "RESOLVED_BY_EXISTING_COMPOSITION", "evidence": PATHS["one_seam"]},
         {"id": "EVENT_RESET_TO_INTERNAL_SOURCE", "class": "A", "priority": 0, "status": "RESOLVED_BY_EXISTING_CLOSED_SYSTEM_ONTOLOGY", "evidence": PATHS["source_ontology"]},
         {"id": "DOP853_TO_RESPONSE_VARIATION", "class": "C", "priority": 1, "status": "RESOLVED_FOR_EXACT_CENTER_AND_FINITE_DIRECT_FIRST_VARIATION", "evidence": PATHS["dop_second_variation"]},
-        {"id": "RESPONSE_TO_CORRELATED_Y_Z1_Z2", "class": "C", "priority": 1, "status": "EXACT_AFFINE_TAYLOR26_CARRIER_AND_RETAINED_GAUSS8_SIGNED_Y_CERTIFIED;_FINAL_CENTER_Z2_AND_RECENTERED_CONE_REBUILD_OPEN", "evidence": PATHS["exact_affine_center_transfer"]},
-        {"id": "FINITE_HISTORY_TO_HEAT_ZETA_COVECTOR", "class": "C", "priority": 1, "status": "ENDPOINTS_AND_FORMULAS_EXIST_JOINT_CONTRACTION_NOT_YET_EVALUATED", "evidence": PATHS["force_functional"]},
-        {"id": "COMPACT_RESET_DOMAIN_TO_CAPTURE_OR_STOP", "class": "B", "priority": 0, "status": "OPEN_72_DIMENSIONAL_RESET_SUBBALL_CERTIFIED_THROUGH_1222_CORE;_ONE_EXACT_TRANSVERSE_CENTER_STOP_WITNESS_SUFFICES_FOR_AN_OPEN_STOP_STRATUM;_CENTER_INTERVAL_SHADOWING_AND_FIRST_HIT_NEWTON_OPEN", "evidence": PATHS["open_family_stop_reduction"]},
+        {"id": "RESPONSE_TO_CORRELATED_Y_Z1_Z2", "class": "C", "priority": 1, "status": "RESOLVED_FINAL_EXACT_CENTER_AND_CAUSAL_Z2_CERTIFIED", "evidence": PATHS["exact_affine_first_stop"]},
+        {"id": "FINITE_HISTORY_TO_HEAT_ZETA_COVECTOR", "class": "C", "priority": 0, "status": "CURRENT_BLOCKER_COMPLETE_ACTION_OWNED_OPERATOR_ORACLE_ENDPOINT_FORM_AND_72_DIRECTION_FIRST_JET_MISSING", "evidence": PATHS["final_force_kkt_verdict"]},
+        {"id": "COMPACT_RESET_DOMAIN_TO_CAPTURE_OR_STOP", "class": "B", "priority": 0, "status": "RESOLVED_BY_CERTIFIED_CANONICAL_EARLIEST_STOP_AND_RETAINED_OPEN_FAMILY_THEOREM", "evidence": PATHS["exact_affine_first_stop"]},
         {"id": "FAMILY_PROJECTORS_TO_MASS_CKM", "class": "B", "priority": 2, "status": "MISSING_ACTION_SELECTED_SECTOR_RESPONSE_EIGENBASES", "evidence": PATHS["generation"]},
         {"id": "NEUTRAL_PROPAGATION_TO_PMNS", "class": "B", "priority": 2, "status": "MISSING_THREE_SLOT_PROJECTION_AND_CHARGED_NEUTRAL_EIGENBASES", "evidence": PATHS["pmns"]},
         {"id": "G_F_TRANSPORT_TO_FINAL_LEDGER", "class": "A", "priority": 1, "status": "COMPOSITION_EXISTS_REVALIDATION_DOWNSTREAM", "evidence": PATHS["v7_transport"]},
@@ -719,7 +721,7 @@ def build_payload() -> dict[str, Any]:
         "physical_completeness_matrix_is_required_and_open": (
             records["physical_completeness"]["validation_passed"] is True
             and records["physical_completeness"]["current_status"]
-            == "OPEN_DOWNSTREAM_OF_GATE7"
+            == "OPEN_GATE7_OPERATOR_ORACLE_AND_DOWNSTREAM_PHYSICS_ENGINES"
             and all(
                 row["classification"] == "OPEN_INTERNAL_BLOCKER"
                 for row in records["physical_completeness"]["records"]
@@ -742,9 +744,9 @@ def build_payload() -> dict[str, Any]:
         "version_lineage": lineage,
         "blocker_reconciliation": blockers,
         "interface_gaps": gaps,
-        "current_irreducible_object": "G7_CORRELATED_QUARTER_STEP_CENTER_STOP_WITNESS",
+        "current_irreducible_object": "G7_COMPLETE_JOINT_FORCE_ROOT",
         "current_irreducible_objects": [
-            "G7_CORRELATED_QUARTER_STEP_CENTER_STOP_WITNESS",
+            "G7_COMPLETE_JOINT_FORCE_ROOT",
         ],
         "integration_order": ["A_EXISTING_COMPOSITION", "C_IMPLEMENTATION", "B_THEOREM", "D_NEW_THEORY_CHOICE"],
         "validation": validations,
@@ -758,7 +760,7 @@ def build_payload() -> dict[str, Any]:
             "Gate7": "ACTIVE",
             "FULL_BHSM_COMPLETE": False,
         },
-        "exact_next_dependency": "EVALUATE_RETAINED_UNALIGNED_GAUSS8_SIGNED_SOURCE_BLOCKS_WITH_THE_FROZEN_CORRELATED_ARB_TAYLOR26_CARRIER_AND_COMPOSE_THE_47_SIGNED_AFFINE_BLOCKS_GLOBALLY;_THEN_CERTIFY_LITERAL_OUTWARD_SIGNED_Y,_CENTER_DEPENDENT_Z2_AND_RADII,_CONTINUOUS_MARGINS,_AND_SCALAR_INTERVAL_NEWTON_AT_THE_SHIFTED_s_ZERO_FIRST_HIT",
+        "exact_next_dependency": "MATERIALIZE_THE_COMPLETE_ACTION_OWNED_JOINT_FINITE_HISTORY_OPERATOR_OR_EQUIVALENT_TWO_SIDED_WEYL_CALDERON_ORACLE,_ENDPOINT_FORM,_AND_FULL_72_DIRECTION_GEOMETRY_RESET_FIRST_JET;_THEN_EVALUATE_THE_PROJECTED_HEAT_MINUS_ZETA_FORCE,_SAME_ACTION_KKT_ROOT,_AND_CONSTRAINED_PHYSICAL_HESSIAN",
         "FULL_BHSM_COMPLETE": False,
     }
 

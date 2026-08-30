@@ -4,14 +4,18 @@
 
 Supported: the homogeneous exact-affine interaction-Taylor26 carrier is
 outward certified at 256-bit Arb precision on 5,908 retained substeps and 47
-macro seams, with correlated global composition from outward Arb interval
-strings.  Its global Frobenius radius is `8.924457407181154e-13`.
+macro seams.  The signed-source composition, final exact-center cone/response,
+causal `Z2`, strict preterminal selected-eigenvalue margin, and a canonical
+earliest stop are certified.  The final stop follows from strict endpoint
+signs and continuity; neither uniqueness nor a differentiable stop-time map
+is claimed.
 
 Not supported: using under-inflated binary64 radii or decorrelated componentwise
 global composition as authority; promoting historical Magnus refinement;
-claiming signed-source composition, literal outward signed `Y`, final
-center-dependent `Z2`/radii, continuous margins, first-hit Newton, Gate 7, or
-full BHSM complete.  `FULL_BHSM_COMPLETE = FALSE`.
+claiming a force value, KKT root, physical Hessian, Gate-7 closure, or full
+BHSM completion before the complete action-owned joint finite-history
+operator oracle and its 72-direction first jet exist.
+`FULL_BHSM_COMPLETE = FALSE`.
 
 ## Current public claim boundary
 

@@ -96,11 +96,9 @@ def test_blocker_and_interface_priority_reconciliation() -> None:
     assert sum(row["classification"] == "CURRENT_BLOCKER" for row in blockers) == 1
     old_domain = next(row for row in blockers if row["id"] == "V6_7_NORMAL_MATTER_DOMAIN_NO_GO")
     assert old_domain["classification"] == "SUPERSEDED_BY_LATER_DOMAIN"
-    assert payload["current_irreducible_object"] == (
-        "G7_CORRELATED_QUARTER_STEP_CENTER_STOP_WITNESS"
-    )
+    assert payload["current_irreducible_object"] == "G7_COMPLETE_JOINT_FORCE_ROOT"
     assert payload["current_irreducible_objects"] == [
-        "G7_CORRELATED_QUARTER_STEP_CENTER_STOP_WITNESS",
+        "G7_COMPLETE_JOINT_FORCE_ROOT",
     ]
     assert payload["integration_order"] == [
         "A_EXISTING_COMPOSITION", "C_IMPLEMENTATION", "B_THEOREM", "D_NEW_THEORY_CHOICE"
@@ -115,6 +113,5 @@ def test_blocker_and_interface_priority_reconciliation() -> None:
         if row["id"] == "RESPONSE_TO_CORRELATED_Y_Z1_Z2"
     )
     assert response_gap["status"] == (
-        "EXACT_AFFINE_TAYLOR26_CARRIER_AND_RETAINED_GAUSS8_SIGNED_Y_CERTIFIED;_"
-        "FINAL_CENTER_Z2_AND_RECENTERED_CONE_REBUILD_OPEN"
+        "RESOLVED_FINAL_EXACT_CENTER_AND_CAUSAL_Z2_CERTIFIED"
     )
