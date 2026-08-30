@@ -27,6 +27,9 @@ def graph_jacobian_action(
     weights: np.ndarray,
     reference: np.ndarray,
     signed_descriptor: float,
+    *,
+    include_fixed_descriptor_decomposition: bool = False,
+    cancelled_field_action: np.ndarray | None = None,
 ) -> dict[str, object]:
     y = np.asarray(state, dtype=float)
     w = np.asarray(weights, dtype=float)
@@ -132,18 +135,52 @@ def graph_jacobian_action(
             + s * hard_first
         ),
     ))
-    norm = float(np.linalg.norm(G))
-    flow = G / norm
+    predictor_norm = float(np.linalg.norm(G))
+    normalization_field = (
+        G if cancelled_field_action is None
+        else np.asarray(cancelled_field_action, dtype=float)
+    )
+    if normalization_field.shape != (total,):
+        raise ValueError("cancelled_field_action must have shape (98,)")
+    norm = float(np.linalg.norm(normalization_field))
+    if not np.isfinite(norm) or norm <= 0.0:
+        raise ValueError("cancelled_field_action must have positive finite norm")
+    flow = normalization_field / norm
     jacobian = (np.eye(total) - np.outer(flow, flow)) @ G_first / norm
-    return {
+    result = {
         "selected_branch": selected,
         "selected_eigenline_gap": float(np.min(np.abs(denominators))),
         "b_psi": b_psi,
         "cancelled_field_action_norm": norm,
+        "predictor_cancelled_field_action_norm": predictor_norm,
         "descriptor_gradient_action": lambda_first,
         "graph_Jacobian_action": jacobian,
         "third_tensor_realization": "SYMMETRIZED_JAX_PREDICTOR",
     }
+    if include_fixed_descriptor_decomposition:
+        descriptor_numerator_partial = np.concatenate((
+            configuration,
+            reduced_weights * hard,
+        ))
+        fixed_descriptor_numerator_first = (
+            G_first - np.outer(descriptor_numerator_partial, lambda_first)
+        )
+        descriptor_column = (
+            np.eye(total) - np.outer(flow, flow)
+        ) @ descriptor_numerator_partial / norm
+        result.update({
+            "fixed_descriptor_state_Jacobian_action": (
+                jacobian - np.outer(descriptor_column, lambda_first)
+            ),
+            "state_rate_descriptor_column": descriptor_column,
+            "cancelled_norm_state_gradient_action": (
+                flow @ fixed_descriptor_numerator_first
+            ),
+            "cancelled_norm_descriptor_derivative": float(
+                flow @ descriptor_numerator_partial
+            ),
+        })
+    return result
 
 
 __all__ = ["graph_jacobian_action"]

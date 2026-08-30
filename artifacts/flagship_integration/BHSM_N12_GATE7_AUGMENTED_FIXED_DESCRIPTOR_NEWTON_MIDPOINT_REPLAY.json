@@ -1,0 +1,66 @@
+{
+  "FULL_BHSM_COMPLETE": false,
+  "adjudication": {
+    "binary64_descriptor_reselection": "REJECTED_AND_NONAUTHORITATIVE",
+    "independent_signed_descriptor_augmented_step": "ACCEPTED_FOR_NEXT_ITERATION"
+  },
+  "artifact": "BHSM_N12_GATE7_AUGMENTED_FIXED_DESCRIPTOR_NEWTON_MIDPOINT_REPLAY",
+  "authority": "NUMERICAL_FIXED_DESCRIPTOR_EXACT_FIELD_REPLAY_NOT_INTERVAL_AUTHORITY",
+  "claim_boundary": {
+    "FULL_BHSM_COMPLETE": false,
+    "Gate7": "ACTIVE_ACTION_OWNED_OPERATOR_ORACLE",
+    "continuous_action_constrained_center": "OPEN",
+    "descriptor_fiber_transport": "FIRST_ORDER_NUMERICAL_CANDIDATE",
+    "nonlinear_Hermite_Simpson_center": "OPEN_ITERATION_AND_INTERVAL_AUTHORITY",
+    "proper_time_and_Weyl_first_jet": "OPEN_72D_RESET_HISTORY_COMPOSITION"
+  },
+  "data": "artifacts/flagship_integration/BHSM_N12_GATE7_AUGMENTED_FIXED_DESCRIPTOR_NEWTON_MIDPOINT_REPLAY.npz",
+  "data_SHA256": "B47F9C415CF9A7A3D7EB1888A245FB7C66EB11879E70F84202B7E3A557CF2988",
+  "exact_next_dependency": "IF_REDUCED,_REBUILD_THE_74D_AUGMENTED_RESIDUAL_DERIVATIVE_ON_THIS_CENTER;_DO_NOT_RESELECT_BINARY64_EIGENVALUES_OR_CALL_ARC_PARAMETERS_PROPER_TIME",
+  "inputs": {
+    "artifacts/flagship_integration/BHSM_N12_GATE7_AUGMENTED_FIXED_DESCRIPTOR_NEWTON_ENDPOINT_CANDIDATE.json": "32672F8FE8EEFEAEB91DF2A9CF74F90597AB5B00D983A117265B2DE09D094AD0",
+    "artifacts/flagship_integration/BHSM_N12_GATE7_AUGMENTED_FIXED_DESCRIPTOR_NEWTON_ENDPOINT_CANDIDATE.npz": "3E52E013B473938B6959D5D63054FCC4D5057A13A71D10E2874ADB9A53E85B4E",
+    "artifacts/flagship_integration/BHSM_N12_GATE7_CORRELATED_DESCRIPTOR_NEWTON_MIDPOINT_REPLAY.json": "A7CB2680D3DBD8CC2EA040811C0D3C74DAA8245901A7B7BEE385AFEADF4BA622",
+    "scripts/audit_n12_gate7_augmented_fixed_descriptor_newton_midpoint_replay.py": "0326439CFEAF0477BA38BB5007B397D0C0D221C7D879065538BFCCAFC559DB4F",
+    "theory/n12_gate7_augmented_fixed_descriptor_newton.md": "55AA6B5D0A415234BAB9FD0D9D3E849210311D20DE7F9DF106429EA574664848"
+  },
+  "mesh": {
+    "augmented_dimension": 99,
+    "correction_dimension": 74,
+    "shooting_intervals": 370,
+    "workers": 4
+  },
+  "parameterization": {
+    "proper_time": "REQUIRES_CERTIFIED_DENSITY_PULLBACK",
+    "stored_abscissa": "NORMALIZED_CANCELLED_FIELD_ARC_COLLOCATION_PARAMETER"
+  },
+  "status": "AUGMENTED_FIXED_DESCRIPTOR_STEP_REDUCES_NONLINEAR_RESIDUAL",
+  "summary": {
+    "maximum_Hermite_Simpson_shooting_residual_2_norm": 1.2217621999603292e-07,
+    "maximum_Hermite_Simpson_shooting_residual_owner_interval": 330,
+    "maximum_descriptor_shooting_residual_absolute": 1.6569565455723476e-16,
+    "maximum_midpoint_scaled_constraint_2_norm": 3.386658049159729e-14,
+    "maximum_numeric_midpoint_descriptor_fiber_residual_diagnostic_only": 2.120535563478322e-13,
+    "maximum_state_shooting_residual_2_norm": 1.2217621999603292e-07,
+    "minimum_independent_midpoint_descriptor": 9.307369429872359e-13,
+    "minimum_midpoint_cancelled_field_action_norm": 0.00023257304888920095,
+    "minimum_selected_eigenline_gap": 1.7343286207087592e-07,
+    "nonlinear_block_residual_reduction_factor": 1.121872837622547,
+    "parent_maximum_Hermite_Simpson_shooting_residual_2_norm": 1.3706618261694602e-07
+  },
+  "validation": {
+    "all_370_fixed_descriptor_midpoint_fields_replayed": true,
+    "all_independent_descriptors_remain_nonnegative": true,
+    "all_midpoint_cancelled_norms_are_positive": true,
+    "all_midpoint_constraints_close_numerically": true,
+    "all_quantities_finite": true,
+    "augmented_fixed_descriptor_step_reduces_nonlinear_Hermite_Simpson_residual": true,
+    "binary64_eigenvalues_not_used_as_descriptor_authority": true,
+    "branch_24_selected_at_every_midpoint_diagnostically": true,
+    "collocation_abscissae_are_not_labeled_proper_time": true,
+    "continuous_interval_shadowing_not_claimed": true,
+    "no_action_source_selector_scale_gate_or_chord_changed": true,
+    "selected_line_remains_simple_numerically": true
+  },
+  "validation_passed": true
+}
