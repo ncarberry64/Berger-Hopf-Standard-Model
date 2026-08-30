@@ -78,9 +78,17 @@ recentered descriptor with a field rate evaluated before recentering.  The
 maximum repaired endpoint-rate change is `1.0526435867226e-5`.  Supported now:
 direct same-descriptor replay produces a `1.800590017529095e-6` source, and a
 rate-consistent block step reduces it to `1.215762696655947e-6`, a
-`1.4810373952760374`-fold numerical contraction.  Not supported: calling this
-a solved orbit or interval shadow.  Rebuild the Jacobians on the repaired
-center and iterate before continuous certification.
+`1.4810373952760374`-fold numerical contraction.  A second binary64
+selected-eigenvalue recenter is rejected both by nonlinear replay
+(`1.429548198240663e-6`) and by reproducibility: sub-`1e-15` state variation
+can move the selected value by `1.22e-13`.  Supported now as candidate data:
+transporting the signed descriptor independently through the actual projected
+state displacement, and evaluating every endpoint/midpoint fixed-descriptor
+field, reduces the global maximum to `1.3706618261694602e-7`, factor
+`8.869895355979933`.  Not supported: treating the diagnostic binary64
+eigenvalue as descriptor authority, or calling this first-order transported
+descriptor candidate a solved orbit or interval shadow.  The complete
+augmented residual derivative and descriptor-fiber equation remain required.
 
 ## Current public claim boundary
 

@@ -1,0 +1,55 @@
+{
+  "FULL_BHSM_COMPLETE": false,
+  "adjudication": {
+    "binary64_reselected_second_step": "REJECTED_AND_NONAUTHORITATIVE",
+    "correlated_signed_descriptor_step": "ACCEPTED_FOR_NEXT_ITERATION"
+  },
+  "artifact": "BHSM_N12_GATE7_CORRELATED_DESCRIPTOR_NEWTON_MIDPOINT_REPLAY",
+  "authority": "NUMERICAL_FIXED_DESCRIPTOR_EXACT_FIELD_REPLAY_NOT_INTERVAL_AUTHORITY",
+  "claim_boundary": {
+    "FULL_BHSM_COMPLETE": false,
+    "Gate7": "ACTIVE_ACTION_OWNED_OPERATOR_ORACLE",
+    "continuous_action_constrained_center": "OPEN",
+    "descriptor_graph_transport": "FIRST_ORDER_NUMERICAL_CANDIDATE",
+    "nonlinear_Hermite_Simpson_center": "OPEN_ITERATION_AND_INTERVAL_AUTHORITY"
+  },
+  "data": "artifacts/flagship_integration/BHSM_N12_GATE7_CORRELATED_DESCRIPTOR_NEWTON_MIDPOINT_REPLAY.npz",
+  "data_SHA256": "3AA096FF8C5629DD64A56A0FF96833148B740122466396DCDFA500B806A3AACC",
+  "exact_next_dependency": "IF_REDUCED,_REBUILD_THE_AUGMENTED_FIXED_DESCRIPTOR_RESIDUAL_DERIVATIVE_ON_THIS_CENTER;_DO_NOT_RESELECT_BINARY64_EIGENVALUES",
+  "inputs": {
+    "artifacts/flagship_integration/BHSM_N12_GATE7_CORRELATED_DESCRIPTOR_NEWTON_ENDPOINT_CANDIDATE.json": "58D1270EE0F1CC3DF5253894D296D2A13C677F318793D6BA90C3D77A12E85DA9",
+    "artifacts/flagship_integration/BHSM_N12_GATE7_CORRELATED_DESCRIPTOR_NEWTON_ENDPOINT_CANDIDATE.npz": "C751AAAB1334CD0F1DADF5BB4549D06CED0E42627CC94C104089872C9756DE66",
+    "artifacts/flagship_integration/BHSM_N12_GATE7_RATE_CONSISTENT_NEWTON_MIDPOINT_REPLAY.json": "69ED710419EF50031AACAAEAED8979AE52128AE3534F14FA58E3B5729B217D3C",
+    "scripts/audit_n12_gate7_correlated_descriptor_newton_midpoint_replay.py": "2A68E54026F8902F3F788EEA0D20DB7A650908B8373938B64642FCB3CA1E676F",
+    "theory/n12_gate7_correlated_descriptor_newton.md": "4791055769EF850BA57D48BEB417C822375732C00779C1E356FD12E5BB017927"
+  },
+  "mesh": {
+    "augmented_dimension": 99,
+    "shooting_intervals": 370,
+    "workers": 8
+  },
+  "status": "CORRELATED_DESCRIPTOR_STEP_REDUCES_NONLINEAR_RESIDUAL",
+  "summary": {
+    "maximum_Hermite_Simpson_shooting_residual_2_norm": 1.3706618261694602e-07,
+    "maximum_Hermite_Simpson_shooting_residual_owner_interval": 330,
+    "maximum_descriptor_shooting_residual_absolute": 1.8550834234400757e-13,
+    "maximum_midpoint_scaled_constraint_2_norm": 3.390120797528224e-14,
+    "maximum_numeric_midpoint_descriptor_fiber_residual_diagnostic_only": 1.7200240978901395e-13,
+    "maximum_state_shooting_residual_2_norm": 1.3706618261694033e-07,
+    "minimum_selected_eigenline_gap": 1.7343202921181715e-07,
+    "nonlinear_block_residual_reduction_factor": 8.869895355979933,
+    "parent_maximum_Hermite_Simpson_shooting_residual_2_norm": 1.215762696655947e-06
+  },
+  "validation": {
+    "all_370_fixed_descriptor_midpoint_fields_replayed": true,
+    "all_midpoint_constraints_close_numerically": true,
+    "all_quantities_finite": true,
+    "binary64_eigenvalues_not_used_as_descriptor_authority": true,
+    "branch_24_selected_at_every_midpoint_diagnostically": true,
+    "continuous_interval_shadowing_not_claimed": true,
+    "correlated_descriptor_step_reduces_nonlinear_Hermite_Simpson_residual": true,
+    "no_action_source_selector_scale_gate_or_chord_changed": true,
+    "selected_line_remains_simple_numerically": true
+  },
+  "validation_passed": true
+}

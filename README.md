@@ -69,11 +69,18 @@ evaluated at the pre-recenter descriptors, with a maximum rate mismatch
 `1.0526435867226e-5`.  Direct same-descriptor endpoint and midpoint replay gives
 the repaired source maximum `1.800590017529095e-6`.  A rebuilt block step whose
 endpoint descriptor and rate come from the same exact jet contracts that
-source to `1.215762696655947e-6`, a `1.4810373952760374`-fold reduction.  This
-is numerical center progress, not a solved orbit.  The exact next owner is to
-rebuild the endpoint and midpoint Jacobians on this repaired center and
-iterate, then certify exact-field shadowing and rebuild the cone, first hit,
-and continuous variational carrier.
+source to `1.215762696655947e-6`, a `1.4810373952760374`-fold reduction.  A
+second step that reselects the near-zero descriptor by binary64 eigensolve is
+rejected (`1.429548198240663e-6`) and is not a reproducible map: state changes
+near `1e-15` move the selected numerical eigenvalue by about `1.22e-13` and
+the normalized rate by about `6.15e-6`.  Carrying the signed descriptor as an
+independent correlated variable instead reduces the complete 370-block
+nonlinear residual to `1.3706618261694602e-7`, an `8.869895355979933`-fold
+contraction, with every transported endpoint descriptor positive.  This is
+numerical center progress, not a solved orbit or interval shadow.  The exact
+next owner is the complete augmented fixed-descriptor residual derivative and
+descriptor-fiber equation, followed by convergence/interval shadowing and a
+rebuilt cone, first hit, and continuous variational carrier.
 Gate 7 remains
 `ACTIVE`; `FULL_BHSM_COMPLETE = FALSE`.  Physical completion additionally
 requires universal spectrum/propagator, vertex, decay, loop/magnetic-moment,

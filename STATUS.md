@@ -62,9 +62,16 @@ endpoint descriptors were paired with pre-recenter field rates.  The maximum
 rate inconsistency is `1.0526435867226e-5`.  The direct rate-consistent source
 has maximum residual `1.800590017529095e-6`; a corrected block step using the
 same exact jet for descriptor and endpoint rate reduces it to
-`1.215762696655947e-6` (`1.4810373952760374`-fold).  The active owner is to
-rebuild the endpoint and midpoint Jacobians on this repaired center and
-iterate, then certify shadowing and rebuild the cone, first hit, and continuous
+`1.215762696655947e-6` (`1.4810373952760374`-fold).  Rebuilt Jacobians and a
+second binary64-reselected step fail (`1.429548198240663e-6`), and an explicit
+reproducibility audit shows that this near-zero eigensolve is not map
+authority.  The replacement carries the signed descriptor independently by
+its correlated action first jet and evaluates the exact fixed-descriptor field
+at all endpoints and midpoints.  Its complete nonlinear maximum is
+`1.3706618261694602e-7` at interval 330, an `8.869895355979933`-fold
+contraction.  The active owner is the complete augmented fixed-descriptor
+residual derivative plus descriptor-fiber equation, then convergence and
+continuous interval shadowing before rebuilding the cone, first hit, and
 variational carrier.
 `FULL_BHSM_COMPLETE = FALSE`.  Universal physical prediction engines remain
 open downstream.

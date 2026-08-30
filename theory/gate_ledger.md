@@ -2925,6 +2925,35 @@ Exact next object:
 - Gate 7 remains `ACTIVE`; Gate 8 is `LOCKED`; chord 3 remains
   `UNAUTHORIZED`; `FULL_BHSM_COMPLETE=FALSE`.
 
+## N=12 Gate-7 correlated signed-descriptor Newton replay
+
+- The rebuilt second rate-consistent predictor closes its finite linear model,
+  but binary64 selected-eigenvalue recentering increases the exact nonlinear
+  maximum from `1.215762696655947e-6` to `1.429548198240663e-6`.
+- Independent reconstruction changes endpoint action states by only about
+  `1e-15` while moving the near-zero selected eigenvalue by as much as
+  `1.2223675212758834e-13` and the normalized rate by
+  `6.153628305085485e-6`.  Binary64 reselection is therefore diagnostic only,
+  not descriptor/Newton-map authority.
+- The replacement carries the signed descriptor through each actual
+  constraint-projected state displacement using the stored action-coordinate
+  descriptor first jet, then evaluates the exact fixed-descriptor field.
+  All 371 transported endpoint descriptors are positive, with minimum
+  `5.6670969137910956e-14`.
+- Exact replay at all 370 Hermite--Simpson midpoints reduces the global maximum
+  residual to `1.3706618261694602e-7` at interval 330, an
+  `8.869895355979933`-fold contraction from the accepted parent.
+- Scientific milestone:
+  `CORRELATED_SIGNED_DESCRIPTOR_FIXED_FIELD_NEWTON_CONTRACTS`.
+- Claim boundary: first-order numerical descriptor transport is not a solved
+  augmented orbit, interval shadow, rebuilt cone/first hit, continuous
+  variational carrier, force, KKT root, Hessian, or physical completion.
+- Exact next owner: differentiate and solve the complete augmented
+  fixed-descriptor residual with an explicit descriptor-fiber equation, then
+  certify continuous interval shadowing before downstream Gate-7 reconstruction.
+- Gate 7 remains `ACTIVE`; Gate 8 is `LOCKED`; chord 3 remains
+  `UNAUTHORIZED`; `FULL_BHSM_COMPLETE=FALSE`.
+
 ## N=12 Gate-7 projected Hermite--Simpson Jacobian adjudication
 
 - The first direct block step closes its finite linearized residual below

@@ -117,6 +117,22 @@ is the derivative/JVP of the complete projected/recentered block residual,
 including constraint projection, selected-descriptor recenter, exact endpoint
 field, Hermite--Simpson midpoint state, and exact midpoint field.
 
+The endpoint descriptor/rate provenance repair changes that route.  Direct
+same-descriptor replay gives maximum `1.800590017529095e-6`, and its first
+corrected block step contracts to `1.215762696655947e-6`.  Rebuilding the
+Jacobians and reselecting the near-zero descriptor by binary64 eigensolve then
+raises the maximum to `1.429548198240663e-6`; sub-`1e-15` reconstruction
+differences move the numerical selected eigenvalue by up to `1.22e-13`, so
+that reselection is not a reproducible Newton map.  The fixed-descriptor
+replacement transports the signed descriptor through the actual projected
+state displacement with its correlated action first jet.  All 371 endpoint
+descriptors remain positive (minimum `5.6670969137910956e-14`), and the exact
+all-370 midpoint replay contracts the maximum to `1.3706618261694602e-7` at
+interval 330, factor `8.869895355979933`.  Binary64 eigenvalues are diagnostic
+fiber residuals only.  This remains a first-order numerical candidate; the
+exact owner is the complete augmented fixed-descriptor residual derivative
+with descriptor-fiber equation, followed by a converged interval shadow.
+
 The current physical theory tuple is `BHSM-AE-2.0.0`.  It retains the v7.x
 stratified bulk/boundary functor, v14-v17 eta/Aether action lineage, v7.2
 common observable transport, and frozen comparison firewall, while replacing
