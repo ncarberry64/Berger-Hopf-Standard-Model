@@ -3,8 +3,11 @@ import pytest
 
 from bhsm.interface.universal_precision_form_factor import (
     MuonGMinus2Readout,
+    muon_gminus2_from_renormalized_vertex,
     project_electromagnetic_form_factors,
 )
+from bhsm.interface.universal_loop_renormalization import RenormalizedVertex
+from bhsm.interface.universal_lsz import LSZExternalMode
 
 
 def test_form_factor_projection_recovers_synthetic_F1_F2() -> None:
@@ -38,3 +41,41 @@ def test_muon_g_minus_two_promotion_is_fail_closed() -> None:
     )
     assert promoted.anomalous_magnetic_moment() == pytest.approx(0.002)
     assert promoted.metadata()["experimental_target_used"] is False
+
+
+def test_promoted_loop_vertex_and_lsz_chain_returns_f2_zero() -> None:
+    vertex = RenormalizedVertex(
+        finite_value=np.asarray([1.0, 0.25], dtype=complex),
+        summed_laurent_coefficients={-1: np.zeros(2), 0: np.asarray([1.0, 0.25])},
+        maximum_relative_pole_residual=0.0,
+        maximum_relative_ward_residual=0.0,
+        action_version="BHSM-TEST",
+        background_id="background",
+        scheme_id="same-action-scheme",
+        diagram_ids=("complete-ledger",),
+        sectors=("electromagnetic",),
+        complete_diagram_ledger=True,
+        complete_counterterm_ledger=True,
+        gate7_closed=True,
+    )
+    mode = LSZExternalMode(
+        spectral_parameter=1.0,
+        right_mode=np.asarray([1.0]),
+        left_mode=np.asarray([1.0]),
+        descriptor_normalization_residual=0.0,
+        pole_simple=True,
+        action_selected=True,
+        mode_id="action-muon-mode",
+        provenance=("same-action pole",),
+    )
+    result = muon_gminus2_from_renormalized_vertex(
+        vertex,
+        np.asarray([1.0, 0.0]),
+        np.asarray([0.0, 1.0]),
+        mode,
+        mode,
+        q_squared=0.0,
+        modes_identified_as_muon_by_action_spectrum=True,
+    )
+    assert result.anomalous_magnetic_moment() == 0.25
+    assert result.metadata()["experimental_target_used"] is False

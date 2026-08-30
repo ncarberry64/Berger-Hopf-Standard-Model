@@ -13,6 +13,9 @@ from dataclasses import dataclass
 import numpy as np
 from scipy import linalg
 
+from bhsm.interface.universal_loop_renormalization import RenormalizedVertex
+from bhsm.interface.universal_lsz import LSZExternalMode
+
 
 Array = np.ndarray
 
@@ -106,8 +109,48 @@ class MuonGMinus2Readout:
         }
 
 
+def muon_gminus2_from_renormalized_vertex(
+    vertex: RenormalizedVertex,
+    dirac_basis: Array,
+    pauli_basis: Array,
+    incoming_mode: LSZExternalMode,
+    outgoing_mode: LSZExternalMode,
+    *,
+    q_squared: float,
+    modes_identified_as_muon_by_action_spectrum: bool,
+    tolerance: float = 1.0e-10,
+) -> MuonGMinus2Readout:
+    """Compose the promoted loop vertex and LSZ states into the g-2 readout."""
+
+    vertex.require_physical_promotion(tolerance=tolerance)
+    incoming_mode.require_physical_external_state(tolerance=tolerance)
+    outgoing_mode.require_physical_external_state(tolerance=tolerance)
+    if incoming_mode.mode_id != outgoing_mode.mode_id:
+        raise ValueError("elastic electromagnetic form factor needs one external mode id")
+    form_factors = project_electromagnetic_form_factors(
+        vertex.finite_value,
+        dirac_basis,
+        pauli_basis,
+        q_squared=q_squared,
+    )
+    return MuonGMinus2Readout(
+        form_factors=form_factors,
+        action_version=vertex.action_version,
+        background_id=vertex.background_id,
+        renormalization_scheme_id=vertex.scheme_id,
+        gate7_closed=vertex.gate7_closed,
+        ward_identity_closed=vertex.maximum_relative_ward_residual <= tolerance,
+        external_muon_mode_action_selected=bool(
+            modes_identified_as_muon_by_action_spectrum
+            and incoming_mode.action_selected
+            and outgoing_mode.action_selected
+        ),
+    )
+
+
 __all__ = [
     "ElectromagneticFormFactors",
     "MuonGMinus2Readout",
+    "muon_gminus2_from_renormalized_vertex",
     "project_electromagnetic_form_factors",
 ]
