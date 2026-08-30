@@ -48,6 +48,8 @@ ENGINE_PATHS = {
     "spectral_density": "src/bhsm/interface/universal_spectral_density.py",
     "channel_ledger": "src/bhsm/interface/universal_channel_ledger.py",
     "optical_theorem": "src/bhsm/interface/universal_optical_theorem.py",
+    "hadronic_factorization": "src/bhsm/interface/universal_hadronic_factorization.py",
+    "event_observables": "src/bhsm/interface/universal_event_observables.py",
 }
 
 ENGINE_TEST_PATHS = {
@@ -76,6 +78,8 @@ ENGINE_TEST_PATHS = {
     "spectral_density": "tests/test_universal_spectral_density.py",
     "channel_ledger": "tests/test_universal_channel_ledger.py",
     "optical_theorem": "tests/test_universal_optical_theorem.py",
+    "hadronic_factorization": "tests/test_universal_hadronic_factorization.py",
+    "event_observables": "tests/test_universal_event_observables.py",
 }
 
 IMPLEMENTATION_STATUSES = (
@@ -85,7 +89,7 @@ IMPLEMENTATION_STATUSES = (
     "IMPLEMENTED_PROMOTABLE",
 )
 
-ENGINE_VERIFIED_COMMIT = "fed4e6a5c0187c707058e404c6783260e4b1c7a9"
+ENGINE_VERIFIED_COMMIT = "9af6d7bf40746f6fe4885c19d0d0e837026d1756"
 
 IMPLEMENTATION_STATUS_BY_ID = {
     "GATE7_PHYSICAL_BACKGROUND": "NOT_IMPLEMENTED",
@@ -331,10 +335,10 @@ def build_payload() -> dict[str, Any]:
         _record(
             "COLLISION_AND_SCATTERING_PREDICTION",
             "ACTION_OWNED_LSZ_AMPLITUDES_AND_CROSS_SECTIONS_FOR_REQUIRED_BENCHMARKS",
-            "TREE_TWO_TO_TWO_AND_COUPLED_PARTIAL_WAVE_READOUT_ALGEBRA_IMPLEMENTED_GATED",
-            ("vertex_amplitude", "lsz", "decay_collision", "loop_renormalization", "momentum_map", "external_state_sum", "partial_wave", "channel_ledger", "optical_theorem"),
-            ("tree contact-plus-exchange algebra", "complete s/t/u assembly without quartic double counting", "physical-quotient outgoing sums and incoming density-matrix averages", "two-to-two phase space and angular quadrature", "guarded Mandelstam invariant map", "exhaustive charge-conserving scattering-channel multiset enumeration", "coupled-channel Legendre partial-wave projection", "complete-ledger unitarity and incomplete-subspace absorption/excess diagnostics", "complete/incomplete inclusive optical-theorem reconciliation"),
-            ("physical external modes", "renormalized complete amplitudes", "instantiated complete open-channel unitarity ledger", "benchmark kinematics", "hadronic bridge where required"),
+            "TREE_TWO_TO_TWO_PARTIAL_WAVE_AND_HADRONIC_READOUT_ALGEBRA_IMPLEMENTED_GATED",
+            ("vertex_amplitude", "lsz", "decay_collision", "loop_renormalization", "momentum_map", "external_state_sum", "partial_wave", "channel_ledger", "optical_theorem", "hadronic_factorization", "event_observables"),
+            ("tree contact-plus-exchange algebra", "complete s/t/u assembly without quartic double counting", "physical-quotient outgoing sums and incoming density-matrix averages", "two-to-two phase space and angular quadrature", "guarded Mandelstam invariant map", "exhaustive charge-conserving scattering-channel multiset enumeration", "coupled-channel Legendre partial-wave projection", "complete-ledger unitarity and incomplete-subspace absorption/excess diagnostics", "complete/incomplete inclusive optical-theorem reconciliation", "ordered-parton PDF luminosity convolution with explicit factorization provenance", "empirical-PDF classification and pre-prediction freeze guard", "Lorentz-kinematic invariant masses visible H_T missing transverse momentum pairwise Delta-R_y and momentum-conservation diagnostics"),
+            ("physical external modes", "renormalized complete amplitudes", "instantiated complete open-channel unitarity ledger", "instantiated frozen benchmark kinematics and visibility convention", "frozen beam/PDF/factorization-scale instance and outward hadronic convolution error"),
         ),
         _record(
             "LEPTON_MAGNETIC_MOMENTS",

@@ -142,6 +142,19 @@ requiring equality when complete and forbidding excess when incomplete.  The
 charged-lepton `F2(0)` chain now supports any action-identified electron,
 muon, or tau mode.  No current physical instance is promoted.
 
+Hadronic collider convolution is now implemented for ordered incoming parton
+channels with explicit PDF, factorization-scheme, and scale provenance.  The
+engine reports empirical PDF use and blocks promotion unless the partonic
+ledger is complete, the PDF input was frozen before prediction, Gate 7 is
+closed, and an outward quadrature error is supplied.  No physical collider
+cross section is currently materialized.
+
+The synchronized collider layer additionally computes invariant masses,
+visible `H_T`, missing transverse momentum relative to the actual incoming
+total, pairwise `Delta R_y`, and normalized conservation residuals.  It makes
+no empirical visibility assignment or detector-cut choice; the physical
+benchmark instance remains open.
+
 This file is the current area-level status source. Detailed sprint records are
 evidence, not competing public status pages.
 

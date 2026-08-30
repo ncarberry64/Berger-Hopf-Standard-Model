@@ -89,6 +89,17 @@ reconciliation. Supported as gated precision infrastructure: generic
 action-identified charged-lepton `F2(0)` composition. Not supported: a current
 physical channel ledger, inclusive cross section, or lepton magnetic moment.
 
+Supported as gated collider infrastructure: ordered-parton PDF luminosity
+convolution with explicit beam, scheme, scale, empirical-input, and numerical
+error provenance. Not supported: a current hadronic cross section; the frozen
+PDF/factorization instance, physical amplitudes, complete partonic ledger, and
+Gate 7 remain open.
+
+Supported as gated event-level infrastructure: Lorentz kinematics, visible
+`H_T`, missing transverse momentum, pairwise `Delta R_y`, and conservation
+diagnostics from an action-derived final-state ledger. Not supported: a
+detector-level prediction or empirically chosen visibility/cut definition.
+
 The complete 72-direction affine-carrier path and first-hit coefficient jet
 are materialized but are not the missing nonlinear oracle.  The available
 causal transfer bound is noncontractive and gives terminal uncertainty larger

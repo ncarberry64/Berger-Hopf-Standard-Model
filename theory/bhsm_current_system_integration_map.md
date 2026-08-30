@@ -206,6 +206,19 @@ The precision layer also composes `F2(0)` for any action-identified charged
 lepton while preserving the muon wrapper.  These are gated consumers of the
 still-missing physical spectrum and amplitudes.
 
+The collision pipeline also has a guarded hadronic factorization bridge.  It
+convolves ordered same-action partonic channels with a declared PDF set while
+preserving beam, scheme, scale, empirical-input, and error provenance.  A
+physical result remains blocked until those inputs are frozen, the partonic
+ledger and amplitudes are complete, an outward convolution error is present,
+and Gate 7 closes.
+
+The final-state readout supplies detector-independent invariant masses,
+visible `H_T`, missing transverse momentum relative to the incoming total,
+pairwise `Delta R_y`, and normalized conservation residuals.  Physical
+benchmark kinematics, visibility assignments, and detector response are not
+instantiated by that interface.
+
 The current physical theory tuple is `BHSM-AE-2.0.0`.  It retains the v7.x
 stratified bulk/boundary functor, v14-v17 eta/Aether action lineage, v7.2
 common observable transport, and frozen comparison firewall, while replacing

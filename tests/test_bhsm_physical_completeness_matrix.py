@@ -133,6 +133,24 @@ def test_rg_and_muon_readout_capabilities_remain_prediction_gated() -> None:
     assert "complete/incomplete inclusive optical-theorem reconciliation" in collision[
         "satisfied_dependencies"
     ]
+    assert "src/bhsm/interface/universal_hadronic_factorization.py" in {
+        item["path"] for item in collision["evidence"]
+    }
+    assert "ordered-parton PDF luminosity convolution with explicit factorization provenance" in collision[
+        "satisfied_dependencies"
+    ]
+    assert "frozen beam/PDF/factorization-scale instance and outward hadronic convolution error" in collision[
+        "dependencies_open"
+    ]
+    assert "src/bhsm/interface/universal_event_observables.py" in {
+        item["path"] for item in collision["evidence"]
+    }
+    assert "Lorentz-kinematic invariant masses visible H_T missing transverse momentum pairwise Delta-R_y and momentum-conservation diagnostics" in collision[
+        "satisfied_dependencies"
+    ]
+    assert "instantiated frozen benchmark kinematics and visibility convention" in collision[
+        "dependencies_open"
+    ]
     assert "exhaustive charge-conserving decay-channel multiset enumeration" in decays[
         "satisfied_dependencies"
     ]

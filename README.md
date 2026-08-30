@@ -190,6 +190,17 @@ forward amplitude through the optical theorem. The magnetic-moment readout is
 also generic across action-identified charged-lepton modes while retaining the
 existing muon API. Physical instances remain open.
 
+Collider readout now includes an ordered-parton hadronic factorization bridge
+for complete same-action partonic ledgers. PDF-set, scheme, and scale
+provenance are explicit; empirical PDFs are reported as external input, and
+promotion requires a pre-prediction PDF freeze plus an outward convolution
+error. No collider datum is used to select a BHSM branch or normalization.
+
+Action-derived final-state events also have a detector-independent kinematic
+readout for invariant masses, visible `H_T`, missing transverse momentum,
+pairwise `Delta R_y`, and four-momentum-conservation residuals. Visibility
+assignments and detector cuts remain external, uninstantiated inputs.
+
 `FULL_BHSM_COMPLETE = FALSE`
 
 Historical compatibility: the v18.73 rolling checkpoint records corrected-Rayleigh descent of the 376-variable system, complete-child reconstruction, eta admissibility, and persistence at residual `0.777030406838571`. Earlier v11.1 and v15.10 surfaces remain historical rather than current authority. The historical v15.10 exact-next-object token is
