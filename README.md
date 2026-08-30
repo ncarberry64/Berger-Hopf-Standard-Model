@@ -162,6 +162,11 @@ complete promoted matrix rows and frozen benchmarks, byte-exact artifacts,
 and clean reproduction. It is `IMPLEMENTED_GATED`; the present repository is
 not a physical release candidate.
 
+The benchmark-suite evaluator is `IMPLEMENTED_PROVISIONAL`: it checks an
+explicit cross-sector manifest for exact mode/observable coverage, required
+engines, one action/background/scale, and promoted frozen predictions. No
+physical benchmark output is currently materialized or promoted.
+
 `FULL_BHSM_COMPLETE = FALSE`
 
 Historical compatibility: the v18.73 rolling checkpoint records corrected-Rayleigh descent of the 376-variable system, complete-child reconstruction, eta admissibility, and persistence at residual `0.777030406838571`. Earlier v11.1 and v15.10 surfaces remain historical rather than current authority. The historical v15.10 exact-next-object token is

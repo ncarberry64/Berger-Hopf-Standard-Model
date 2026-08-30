@@ -129,6 +129,28 @@ def test_release_reconciliation_is_implemented_but_full_release_is_open() -> Non
     assert "tests/test_universal_release_reconciliation.py" in evidence_paths
 
 
+def test_benchmark_evaluator_is_implemented_without_benchmark_promotion() -> None:
+    payload = _module().build_payload()
+    benchmark = {
+        record["id"]: record for record in payload["records"]
+    }["BENCHMARK_OBSERVABLE_SUITE"]
+    assert benchmark["implementation_status"] == "IMPLEMENTED_PROVISIONAL"
+    assert benchmark["implementation_detail"] == (
+        "CROSS_SECTOR_BENCHMARK_MANIFEST_EVALUATOR_IMPLEMENTED_NO_PHYSICAL_OUTPUTS"
+    )
+    assert benchmark["prediction_classification"] == "OPEN_INTERNAL_BLOCKER"
+    assert benchmark["physical_prediction_materialized"] is False
+    assert "exact mode-and-observable coverage check" in benchmark[
+        "satisfied_dependencies"
+    ]
+    assert "materialized promoted benchmark predictions" in benchmark[
+        "dependencies_open"
+    ]
+    evidence_paths = {item["path"] for item in benchmark["evidence"]}
+    assert "src/bhsm/interface/universal_benchmark_suite.py" in evidence_paths
+    assert "tests/test_universal_benchmark_suite.py" in evidence_paths
+
+
 def test_materialized_artifact_matches_deterministic_builder_and_hashes() -> None:
     module = _module()
     expected = module.build_payload()

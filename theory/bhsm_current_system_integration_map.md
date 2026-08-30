@@ -174,6 +174,12 @@ action/background/scale, with complete frozen benchmark coverage, byte-exact
 artifacts, and a clean reproduction.  The current system fails those inputs;
 the validator itself is not evidence of physical completion.
 
+The benchmark registry now has an executable provisional evaluator.  A
+declared cross-sector suite is checked for exact mode/observable coverage,
+required engines, one action/background/scale provenance, and promoted frozen
+prediction classes.  It contains no measured values and does not materialize
+or promote any current BHSM benchmark output.
+
 The current physical theory tuple is `BHSM-AE-2.0.0`.  It retains the v7.x
 stratified bulk/boundary functor, v14-v17 eta/Aether action lineage, v7.2
 common observable transport, and frozen comparison firewall, while replacing

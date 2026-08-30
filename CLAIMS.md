@@ -60,6 +60,12 @@ hashes, and clean reproduction.  Not supported: treating the existence of
 that validator as release completion; the current candidate fails its
 scientific prerequisites.
 
+Supported as provisional benchmark infrastructure: a cross-sector manifest
+evaluator checks exact mode/observable coverage, action/background/scale
+consistency, required engines, and promoted frozen-prediction classes.
+Not supported: claiming any benchmark value from that evaluator; no physical
+benchmark prediction is currently materialized.
+
 The complete 72-direction affine-carrier path and first-hit coefficient jet
 are materialized but are not the missing nonlinear oracle.  The available
 causal transfer bound is noncontractive and gives terminal uncertainty larger

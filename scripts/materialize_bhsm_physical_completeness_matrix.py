@@ -42,6 +42,7 @@ ENGINE_PATHS = {
     "prediction_freeze": "src/bhsm/interface/universal_prediction_freeze.py",
     "release_reconciliation": "src/bhsm/interface/universal_release_reconciliation.py",
     "external_state_sum": "src/bhsm/interface/universal_external_state_sum.py",
+    "benchmark_suite": "src/bhsm/interface/universal_benchmark_suite.py",
 }
 
 ENGINE_TEST_PATHS = {
@@ -64,6 +65,7 @@ ENGINE_TEST_PATHS = {
     "prediction_freeze": "tests/test_universal_prediction_freeze.py",
     "release_reconciliation": "tests/test_universal_release_reconciliation.py",
     "external_state_sum": "tests/test_universal_external_state_sum.py",
+    "benchmark_suite": "tests/test_universal_benchmark_suite.py",
 }
 
 IMPLEMENTATION_STATUSES = (
@@ -73,7 +75,7 @@ IMPLEMENTATION_STATUSES = (
     "IMPLEMENTED_PROMOTABLE",
 )
 
-ENGINE_VERIFIED_COMMIT = "b51302c38f6f9de0e87e2f3f4774ffc8c43f9f85"
+ENGINE_VERIFIED_COMMIT = "c000841f78377a16a3d51ca66d1fc3133d3b85f1"
 
 IMPLEMENTATION_STATUS_BY_ID = {
     "GATE7_PHYSICAL_BACKGROUND": "NOT_IMPLEMENTED",
@@ -343,10 +345,10 @@ def build_payload() -> dict[str, Any]:
         _record(
             "BENCHMARK_OBSERVABLE_SUITE",
             "INDEPENDENT_MASS_MIXING_DECAY_SCATTERING_AND_PRECISION_BENCHMARKS",
-            "NO_PHYSICAL_BENCHMARKS_MATERIALIZED",
-            ("quadratic_spectrum", "vertex_amplitude", "decay_collision", "precision_form_factor", "retained_sm_adapter", "sm_gauge_vertices", "yukawa_vertices"),
-            ("shared universal readout APIs",),
-            ("Gate7 closure", "instantiated action-owned engines", "frozen benchmark definitions", "comparison-after-prediction records"),
+            "CROSS_SECTOR_BENCHMARK_MANIFEST_EVALUATOR_IMPLEMENTED_NO_PHYSICAL_OUTPUTS",
+            ("benchmark_suite", "prediction_freeze", "quadratic_spectrum", "vertex_amplitude", "decay_collision", "precision_form_factor", "retained_sm_adapter", "sm_gauge_vertices", "yukawa_vertices"),
+            ("pre-comparison benchmark manifest schema", "exact mode-and-observable coverage check", "cross-sector action/background/scale consistency", "required-engine dependency check", "promoted frozen-prediction classification check"),
+            ("Gate7 closure", "instantiated action-owned engines", "frozen physical benchmark definitions", "materialized promoted benchmark predictions", "comparison-after-prediction records"),
         ),
         _record(
             "FROZEN_FORWARD_PREDICTIONS",

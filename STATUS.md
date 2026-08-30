@@ -110,6 +110,12 @@ byte-exact artifact hashes, and one clean deterministic reproduction.  The
 current candidate fails those gates, so this capability is
 `IMPLEMENTED_GATED` and `FULL_BHSM_COMPLETE` remains false.
 
+The cross-sector benchmark-suite evaluator is now
+`IMPLEMENTED_PROVISIONAL`.  It fail-closes on missing or duplicate
+mode/observable predictions, provisional classifications, inconsistent
+action/background/scale provenance, or absent required engines.  The current
+repository still has no materialized physical benchmark prediction.
+
 This file is the current area-level status source. Detailed sprint records are
 evidence, not competing public status pages.
 
