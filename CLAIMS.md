@@ -31,13 +31,16 @@ than the affine Jacobi norm, so using that affine jet as the force authority
 is explicitly unsupported.  The required replacement is a direct
 exact-center variational carrier.
 
-The direct exact-center 25-row constraint frames and normalized-field first
-derivatives are materialized at the 47 preterminal macro nodes.  The terminal
-matrix is evaluated at the first-hit interval midpoint with stop descriptor
-zero and is representative-only.  This supports discrete generator data, not
-a continuous outward propagator.  The nonlinear 72D history jet, Weyl force,
-KKT root, and Hessian remain unsupported until the within-seam carrier
-remainder closes.
+The direct 25-row constraint-frame and normalized-field derivative formulas
+have been evaluated at the stored centers.  A subsequent all-node/all-midpoint
+constraint audit shows that the exact-affine corrected path is not a physical
+continuous constraint center: stored-node scaled residual reaches
+`7.283453490931462e-11`, the seam interpolant reaches
+`7.381223520027345e-4`, and the largest nodewise linearized correction exceeds
+the certified center radius by `5216.733`.  These matrices remain numerical
+formula evaluations only.  A constraint-preserving continuous action center,
+its outward carrier, nonlinear 72D history jet, Weyl force, KKT root, and
+Hessian remain unsupported.
 
 ## Current public claim boundary
 

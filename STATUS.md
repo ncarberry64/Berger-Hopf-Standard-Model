@@ -26,10 +26,14 @@ full 72-direction geometry/reset first jet; then evaluate the existing
 heat-minus-zeta force and same-action KKT system.  The affine 72D history,
 duration, first-hit, and `log R4` jets now exist, but the retained nonlinear
 transfer bound has contraction `2.9106286494031597 > 1` and is rejected.  A
-direct rebuild now supplies the 47 preterminal exact-center constraint frames
-and `73 x 73` normalized-field generators plus one first-hit-midpoint
-representative with stop descriptor zero; the active owner is their refined
-within-seam outward variational carrier.  Gate 7 remains `ACTIVE`;
+direct rebuild supplies numerical formula evaluations of the constraint frames
+and `73 x 73` normalized-field generators, but the complete constraint audit
+rejects the corrected nodes/interpolant as a physical continuous center.  The
+maximum stored-node scaled constraint residual is `7.283453490931462e-11`,
+the maximum seam-midpoint residual is `7.381223520027345e-4`, and the maximum
+nodewise linearized correction is `5216.733` certified center radii.  The
+active owner is now a direct constraint-preserving normalized-action center,
+then its within-seam outward variational carrier.  Gate 7 remains `ACTIVE`;
 `FULL_BHSM_COMPLETE = FALSE`.  Universal physical prediction engines remain
 open downstream.
 

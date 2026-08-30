@@ -2844,9 +2844,12 @@ Exact next object:
   error-to-affine-jet ratio `1.5634079697562602`; it is therefore rejected as
   operator authority.  The next owner is a direct exact-center variational
   carrier, not further inflation of the affine transfer.
-- The direct corrected-center construction now materializes all 48 physical
-  73D constraint frames and normalized-field Jacobians.  Frame alignment has
-  singular lower `0.9999999999999986`, field tangency residual is at most
-  `1.656681135005019e-12`, and the largest center generator norm is
-  `109.95791441392815`.  Continuous outward within-seam propagation remains
-  open and is not inferred from these node values.
+- The direct corrected-center construction materializes numerical 73D
+  constraint frames and normalized-field Jacobians at the stored centers.
+  A follow-on complete action-constraint audit supersedes their interpretation
+  as physical-center authority: corrected-node scaled residual reaches
+  `7.283453490931462e-11`, the seam interpolant reaches
+  `7.381223520027345e-4`, and the largest nodewise linearized correction is
+  `5216.733` times the certified macro-center radius.  The current owner is a
+  direct constraint-preserving normalized-action center, followed by its
+  continuous outward variational carrier.

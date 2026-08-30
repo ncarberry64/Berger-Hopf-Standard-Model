@@ -29,11 +29,15 @@ form, and full 72-direction geometry/reset first jet needed to evaluate the
 already-derived heat-minus-zeta force and KKT system.  The complete affine
 72D candidate is materialized, but its nonlinear Volterra transfer is
 noncontractive (`2.9106286494031597`) and is not operator authority; the
-direct exact-center constraint frames and normalized-field Jacobians are now
-materialized on the 47 preterminal macro nodes, plus a first-hit-midpoint
-representative with the outward time interval attached and stop descriptor
-zero.  The current construction owner is their refined continuous outward
-variational carrier.
+direct formula evaluations of the constraint frames and normalized-field
+Jacobians are materialized on the stored nodes, but a complete action audit
+now rejects those corrected nodes and their Hermite/fine interpolant as a
+continuous constraint center.  Scaled constraint drift reaches
+`7.283453490931462e-11` at a stored node and `7.381223520027345e-4` at a seam
+midpoint; the largest nodewise linearized correction is `5216.733` times the
+certified macro-center radius.  The current construction owner is therefore a
+direct constraint-preserving normalized-action center, followed by its
+refined continuous outward variational carrier.
 Gate 7 remains
 `ACTIVE`; `FULL_BHSM_COMPLETE = FALSE`.  Physical completion additionally
 requires universal spectrum/propagator, vertex, decay, loop/magnetic-moment,
