@@ -56,9 +56,17 @@ center also increases its nonlinear replay defect to
 second-Newton center now has an explicit `370 x 99` Hermite--Simpson multiple-
 shooting source with maximum block residual `2.0101707940913732e-6` at
 interval 179.  The active center owner is assembly and solution of its block
-Newton/Krawczyk operator with constraint and descriptor-fiber rows, exact-
-field replay, and outward continuous shadowing, followed by a rebuilt cone,
-first hit, and continuous variational carrier.
+Newton/Krawczyk operator with constraint and descriptor-fiber rows.  The first
+direct block step contracts its nonlinear Hermite--Simpson residual from
+`2.0101707940913732e-6` to `7.487649935220473e-7`.  A rebuilt second step,
+secant damping, and a local-trust replay all fail.  Exact replay measures the
+true projected/recentered residual directional scale at
+`167.1575285177961` times the stored hybrid graph model, so that graph
+Jacobian is rejected as the complete solver derivative.  The active owner is
+the exact JVP of endpoint constraint projection, selected-descriptor recenter,
+endpoint field, midpoint state, and midpoint field; then solve the corrected
+block operator, certify shadowing, and rebuild the cone, first hit, and
+continuous variational carrier.
 `FULL_BHSM_COMPLETE = FALSE`.  Universal physical prediction engines remain
 open downstream.
 

@@ -98,6 +98,25 @@ and solution of the block Newton/Krawczyk operator with constraint and
 descriptor-fiber rows, followed by exact-field replay and continuous outward
 shadowing.
 
+The first direct block-bidiagonal Newton solve is well conditioned enough for
+finite prediction and closes its linearized residual below `8.90e-21`.  After
+constraint projection and exact midpoint replay, the nonlinear Hermite--
+Simpson maximum contracts from `2.0101707940913732e-6` to
+`7.487649935220473e-7`, factor `2.68464846979012`.  This validates the direct
+collocation equation but not the stored derivative.
+
+Rebuilding endpoint and midpoint graph Jacobians on that center, the full
+second step increases the nonlinear residual to `1.790160946544264e-6`.
+Secant damping at `0.16981561230918726` and a local trust fraction
+`0.013397472201727913` also fail.  The latter exact sample measures projected-
+residual directional norm `8.287986555226509e-4`, or
+`167.1575285177961` times the stored graph-model scale, and cosine only
+`0.08881935156225418` with nominal negative residual.  Further scalar damping
+has predicted gain below one percent and is retired.  The exact current owner
+is the derivative/JVP of the complete projected/recentered block residual,
+including constraint projection, selected-descriptor recenter, exact endpoint
+field, Hermite--Simpson midpoint state, and exact midpoint field.
+
 The current physical theory tuple is `BHSM-AE-2.0.0`.  It retains the v7.x
 stratified bulk/boundary functor, v14-v17 eta/Aether action lineage, v7.2
 common observable transport, and frozen comparison firewall, while replacing

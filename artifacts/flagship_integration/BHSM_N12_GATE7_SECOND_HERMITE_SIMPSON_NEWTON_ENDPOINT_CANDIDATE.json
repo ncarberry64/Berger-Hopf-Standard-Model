@@ -1,0 +1,52 @@
+{
+  "FULL_BHSM_COMPLETE": false,
+  "artifact": "BHSM_N12_GATE7_SECOND_HERMITE_SIMPSON_NEWTON_ENDPOINT_CANDIDATE",
+  "authority": "NUMERICAL_CONSTRAINT_PROJECTED_BLOCK_NEWTON_ENDPOINTS_NOT_INTERVAL_AUTHORITY",
+  "claim_boundary": {
+    "FULL_BHSM_COMPLETE": false,
+    "Gate7": "ACTIVE_ACTION_OWNED_OPERATOR_ORACLE",
+    "continuous_action_constrained_center": "OPEN_INTERVAL_AUTHORITY",
+    "continuous_outward_variational_carrier": "OPEN_AFTER_CENTER",
+    "nonlinear_Hermite_Simpson_center": "OPEN_DENSE_EXACT_REPLAY"
+  },
+  "data": "artifacts/flagship_integration/BHSM_N12_GATE7_SECOND_HERMITE_SIMPSON_NEWTON_ENDPOINT_CANDIDATE.npz",
+  "data_SHA256": "DCE16367419F69D6C5318C140A27961E5FE19105AF55F3EE795717A92BAD962B",
+  "exact_next_dependency": "EVALUATE_THE_EXACT_FIELD_AT_ALL_370_SECOND_ITERATION_COLLOCATION_MIDPOINTS",
+  "inputs": {
+    "artifacts/flagship_integration/BHSM_N12_GATE7_HERMITE_SIMPSON_NEWTON_ENDPOINT_CANDIDATE.json": "4D4A5DDD5929E20921CB857B95BBECD546B585AA7C1A167E9B17786CD76D56B1",
+    "artifacts/flagship_integration/BHSM_N12_GATE7_HERMITE_SIMPSON_NEWTON_ENDPOINT_CANDIDATE.npz": "749660BB633A2775CB0CEF818C11E31966560164B00A45EF3463B6AED812396B",
+    "artifacts/flagship_integration/BHSM_N12_GATE7_SECOND_HERMITE_SIMPSON_BLOCK_NEWTON_PREDICTOR.json": "AAD9CACBF448D15CD4CFD00B78D8C11E95ABE1A62D3AAEA698D8DBE23DD95068",
+    "artifacts/flagship_integration/BHSM_N12_GATE7_SECOND_HERMITE_SIMPSON_BLOCK_NEWTON_PREDICTOR.npz": "B52B45DC42DB0C161A24C244341396DB155E162A15B8EE19528DB859667323CE",
+    "scripts/materialize_n12_gate7_second_hermite_simpson_newton_endpoint_candidate.py": "381D6CE06BCB3F9B4CAB5CCEDCE89DB4EB91324CCB67309E60B5342047EBDECE",
+    "theory/n12_gate7_second_hermite_simpson_newton_endpoint_candidate.md": "D0B875F076C16B10C272801C8704BE6E2A97C8EAD5C0A6C5EE9897F338F5F1BC"
+  },
+  "status": "SECOND_HERMITE_SIMPSON_BLOCK_NEWTON_ENDPOINTS_MATERIALIZED",
+  "summary": {
+    "first_hit_action_time_bracket": [
+      92.30589170849511,
+      92.30589170849535
+    ],
+    "maximum_constraint_projection_action_2_norm": 3.0093822249863855e-09,
+    "maximum_endpoint_correction_action_2_norm": 9.16943930570313e-06,
+    "maximum_endpoint_correction_owner_node": 177,
+    "maximum_final_scaled_constraint_2_norm": 1.633516672205274e-14,
+    "minimum_selected_eigenline_gap": 1.734157598126952e-07,
+    "terminal_endpoint_correction_action_2_norm": 9.119725796201006e-07,
+    "terminal_stop_route": "ONE_STEP_RETAINED_FIELD_CONTINUATION_INSIDE_UNUSED_TERMINAL_CELL",
+    "terminal_stop_selected_branch": 24,
+    "triggered_constraint_projection_count": 367
+  },
+  "validation": {
+    "all_371_block_Newton_endpoints_replayed": true,
+    "all_complete_preterminal_descriptors_are_positive": true,
+    "all_endpoint_constraints_close_numerically": true,
+    "all_quantities_finite": true,
+    "branch_24_selected_at_every_endpoint": true,
+    "no_action_source_selector_scale_gate_or_chord_changed": true,
+    "nonlinear_dense_replay_not_yet_claimed": true,
+    "selected_line_remains_simple_numerically": true,
+    "terminal_bracket_not_promoted_to_outward_root": true,
+    "terminal_selected_eigenvalue_is_numerically_bracketed": true
+  },
+  "validation_passed": true
+}

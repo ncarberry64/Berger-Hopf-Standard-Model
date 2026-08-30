@@ -1,0 +1,55 @@
+{
+  "FULL_BHSM_COMPLETE": false,
+  "adjudication": {
+    "exact_projected_recentered_block_residual_JVP": "ACTIVE_OWNER",
+    "further_scalar_damping_of_same_direction": "REJECTED_AS_NUMERICALLY_FUTILE",
+    "hybrid_graph_Jacobian_as_complete_block_derivative": "REJECTED"
+  },
+  "artifact": "BHSM_N12_GATE7_HERMITE_SIMPSON_PROJECTED_RESIDUAL_JACOBIAN_ADJUDICATION",
+  "authority": "EXACT_NONLINEAR_FINITE_DIFFERENCE_ROUTING_NOT_INTERVAL_DERIVATIVE_AUTHORITY",
+  "claim_boundary": {
+    "FULL_BHSM_COMPLETE": false,
+    "Gate7": "ACTIVE_ACTION_OWNED_OPERATOR_ORACLE",
+    "continuous_action_constrained_center": "OPEN_EXACT_PROJECTED_RESIDUAL_JVP_AND_NEWTON",
+    "continuous_outward_variational_carrier": "OPEN_AFTER_CENTER"
+  },
+  "exact_next_dependency": "DIFFERENTIATE_THE_COMPLETE_ENDPOINT_CONSTRAINT_PROJECTION,_SELECTED_DESCRIPTOR_RECENTER,_EXACT_ENDPOINT_FIELD,_HERMITE_SIMPSON_MIDPOINT_STATE,_AND_EXACT_MIDPOINT_FIELD_COMPOSITION;_ASSEMBLE_ITS_BLOCK_JVP_AND_RESOLVE_THE_NEWTON_STEP",
+  "inputs": {
+    "artifacts/flagship_integration/BHSM_N12_GATE7_DAMPED_SECOND_HS_NEWTON_MIDPOINT_REPLAY.json": "84D91D2353FA684C49D53657AC8B8651F55833CCE16036FC88B594156B5F7D11",
+    "artifacts/flagship_integration/BHSM_N12_GATE7_DAMPED_SECOND_HS_NEWTON_MIDPOINT_REPLAY.npz": "00297CD34FFC60A5EB69D1C47781DD511F072A3F7F348790CFCB8A9F3808C5CA",
+    "artifacts/flagship_integration/BHSM_N12_GATE7_HERMITE_SIMPSON_NEWTON_NONLINEAR_SOURCE.json": "0B0F5DCA153B0743BD28228AD82461E8BE16E3F2A5FEB54BEC771940F3D8974A",
+    "artifacts/flagship_integration/BHSM_N12_GATE7_HERMITE_SIMPSON_NEWTON_NONLINEAR_SOURCE.npz": "06F89BAEA2A89CFCE600D5B1AD17F1F8EE9567D3E859BE8C14451ED8426E1999",
+    "artifacts/flagship_integration/BHSM_N12_GATE7_LOCAL_TRUST_SECOND_HS_MIDPOINT_REPLAY.json": "7A82A31C2156C66FE4BC0D682AB39045C9C424D8284C599DCCA72DD5B10E24F9",
+    "artifacts/flagship_integration/BHSM_N12_GATE7_LOCAL_TRUST_SECOND_HS_MIDPOINT_REPLAY.npz": "AFEEA8E13D77AF322EF8E2D8FE8ACA940B3DC01A1AFF2E226614FE5B7CF77695",
+    "artifacts/flagship_integration/BHSM_N12_GATE7_SECOND_HERMITE_SIMPSON_BLOCK_NEWTON_PREDICTOR.json": "AAD9CACBF448D15CD4CFD00B78D8C11E95ABE1A62D3AAEA698D8DBE23DD95068",
+    "artifacts/flagship_integration/BHSM_N12_GATE7_SECOND_HERMITE_SIMPSON_BLOCK_NEWTON_PREDICTOR.npz": "B52B45DC42DB0C161A24C244341396DB155E162A15B8EE19528DB859667323CE",
+    "artifacts/flagship_integration/BHSM_N12_GATE7_SECOND_HERMITE_SIMPSON_NEWTON_MIDPOINT_REPLAY.json": "5570AECF9DEE1D0E26275CE5B66B4C7FAECE154A285844FEA134AB26F3A6D3F7",
+    "artifacts/flagship_integration/BHSM_N12_GATE7_SECOND_HERMITE_SIMPSON_NEWTON_MIDPOINT_REPLAY.npz": "A25EFDC48E26621B942B892568B8B2BECE9D1DDA300E95F29844E152B4CBB230",
+    "artifacts/flagship_integration/BHSM_N12_GATE7_SECOND_HS_NEWTON_LOCAL_TRUST_PREDICTOR.json": "0E3519AF19F62EBFFDE99D634A6835F043515F1887AFDE0D3975B7A0FCE182C4",
+    "scripts/adjudicate_n12_gate7_hermite_simpson_projected_residual_jacobian.py": "D470CF90751DE016C7C106E09BC9808C603B7C94317D39432FECFE5CAC8B09CF",
+    "theory/n12_gate7_hermite_simpson_projected_residual_jacobian.md": "343588CBAB905872DEEDF9332EDD35BB654DD01034F3ED144840E819D75D4DEB"
+  },
+  "status": "STORED_GRAPH_JACOBIAN_REJECTED_FOR_PROJECTED_RECENTERED_BLOCK_NEWTON",
+  "summary": {
+    "actual_projected_residual_directional_2_norm": 0.0008287986555226509,
+    "actual_to_stored_model_scale_ratio": 167.1575285177961,
+    "cosine_with_negative_parent_residual": 0.08881935156225418,
+    "local_trust_alpha": 0.013397472201727913,
+    "local_trust_global_residual_2_norm": 1.1751523733992323e-05,
+    "next_secant_optimal_alpha": 0.0005313511892035315,
+    "next_secant_predicted_global_reduction_factor": 1.0039679309912901,
+    "next_secant_predicted_maximum_block_residual_2_norm": 7.536513116933678e-07,
+    "parent_global_residual_2_norm": 4.958189217510562e-06
+  },
+  "validation": {
+    "actual_directional_scale_exceeds_stored_model_scale_by_two_orders": true,
+    "full_second_step_is_rejected": true,
+    "local_trust_step_is_rejected": true,
+    "no_action_source_selector_scale_gate_or_chord_changed": true,
+    "remaining_local_trust_fraction_is_below_one_per_mille": true,
+    "remaining_secant_gain_is_below_one_percent": true,
+    "secant_damped_step_is_rejected": true,
+    "stored_graph_Jacobian_not_promoted_as_projected_residual_derivative": true
+  },
+  "validation_passed": true
+}

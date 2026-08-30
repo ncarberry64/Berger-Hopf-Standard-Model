@@ -2899,6 +2899,27 @@ Exact next object:
 - Gate 7 remains `ACTIVE`; Gate 8 is `LOCKED`; chord 3 remains
   `UNAUTHORIZED`; `FULL_BHSM_COMPLETE=FALSE`.
 
+## N=12 Gate-7 projected Hermite--Simpson Jacobian adjudication
+
+- The first direct block step closes its finite linearized residual below
+  `8.899788305494367e-21` and reduces the nonlinear Hermite--Simpson maximum
+  from `2.0101707940913732e-6` to `7.487649935220473e-7`.
+- Endpoint and midpoint graph Jacobians are rebuilt on that center.  The full
+  second step nevertheless raises the nonlinear maximum to
+  `1.790160946544264e-6`; secant damping and a local-trust replay also fail.
+- At local-trust fraction `0.013397472201727913`, the exact complete solver-map
+  directional norm is `8.287986555226509e-4`, or
+  `167.1575285177961` times the stored model scale.  Its cosine with nominal
+  negative residual is only `0.08881935156225418`.
+- Scientific milestone:
+  `STORED_GRAPH_JACOBIAN_REJECTED_FOR_PROJECTED_RECENTERED_BLOCK_NEWTON`.
+- Exact next owner: differentiate the complete endpoint constraint projection,
+  selected-descriptor recenter, exact endpoint field, Hermite--Simpson
+  midpoint state, and exact midpoint field composition; assemble its block
+  JVP/Newton operator and replay it nonlinearly.
+- Gate 7 remains `ACTIVE`; Gate 8 is `LOCKED`; chord 3 remains
+  `UNAUTHORIZED`; `FULL_BHSM_COMPLETE=FALSE`.
+
 ## N=12 Gate-7 direct high-order multiple-shooting source
 
 - A second interpolation halving increases the maximum augmented flow defect

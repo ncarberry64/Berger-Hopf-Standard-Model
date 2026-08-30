@@ -93,6 +93,23 @@ PATHS = {
     "third_current_linearization_endpoint": "artifacts/flagship_integration/BHSM_N12_GATE7_THIRD_CURRENT_LINEARIZATION_NEWTON_ENDPOINT_CANDIDATE.json",
     "third_current_linearization_replay": "artifacts/flagship_integration/BHSM_N12_GATE7_THIRD_CURRENT_LINEARIZATION_NEWTON_COLLOCATION_REPLAY.json",
     "direct_Hermite_Simpson_shooting_source": "artifacts/flagship_integration/BHSM_N12_GATE7_DIRECT_HERMITE_SIMPSON_MULTIPLE_SHOOTING_SOURCE.json",
+    "Hermite_Simpson_midpoint_graph_jacobian": "artifacts/flagship_integration/BHSM_N12_GATE7_HERMITE_SIMPSON_MIDPOINT_GRAPH_JACOBIAN.json",
+    "Hermite_Simpson_block_Newton_predictor": "artifacts/flagship_integration/BHSM_N12_GATE7_HERMITE_SIMPSON_BLOCK_NEWTON_PREDICTOR.json",
+    "Hermite_Simpson_Newton_endpoint": "artifacts/flagship_integration/BHSM_N12_GATE7_HERMITE_SIMPSON_NEWTON_ENDPOINT_CANDIDATE.json",
+    "Hermite_Simpson_Newton_cubic_replay": "artifacts/flagship_integration/BHSM_N12_GATE7_HERMITE_SIMPSON_NEWTON_COLLOCATION_REPLAY.json",
+    "Hermite_Simpson_Newton_nonlinear_source": "artifacts/flagship_integration/BHSM_N12_GATE7_HERMITE_SIMPSON_NEWTON_NONLINEAR_SOURCE.json",
+    "first_HS_Newton_center_graph_jacobian": "artifacts/flagship_integration/BHSM_N12_GATE7_FIRST_HS_NEWTON_CENTER_GRAPH_JACOBIAN.json",
+    "first_HS_Newton_midpoint_graph_jacobian": "artifacts/flagship_integration/BHSM_N12_GATE7_FIRST_HS_NEWTON_MIDPOINT_GRAPH_JACOBIAN.json",
+    "second_Hermite_Simpson_block_Newton_predictor": "artifacts/flagship_integration/BHSM_N12_GATE7_SECOND_HERMITE_SIMPSON_BLOCK_NEWTON_PREDICTOR.json",
+    "second_Hermite_Simpson_Newton_endpoint": "artifacts/flagship_integration/BHSM_N12_GATE7_SECOND_HERMITE_SIMPSON_NEWTON_ENDPOINT_CANDIDATE.json",
+    "second_Hermite_Simpson_Newton_midpoint_replay": "artifacts/flagship_integration/BHSM_N12_GATE7_SECOND_HERMITE_SIMPSON_NEWTON_MIDPOINT_REPLAY.json",
+    "second_HS_Newton_line_search": "artifacts/flagship_integration/BHSM_N12_GATE7_SECOND_HS_NEWTON_LINE_SEARCH_PREDICTOR.json",
+    "damped_second_HS_endpoint": "artifacts/flagship_integration/BHSM_N12_GATE7_DAMPED_SECOND_HS_NEWTON_ENDPOINT_CANDIDATE.json",
+    "damped_second_HS_midpoint_replay": "artifacts/flagship_integration/BHSM_N12_GATE7_DAMPED_SECOND_HS_NEWTON_MIDPOINT_REPLAY.json",
+    "second_HS_local_trust_predictor": "artifacts/flagship_integration/BHSM_N12_GATE7_SECOND_HS_NEWTON_LOCAL_TRUST_PREDICTOR.json",
+    "local_trust_second_HS_endpoint": "artifacts/flagship_integration/BHSM_N12_GATE7_LOCAL_TRUST_SECOND_HS_ENDPOINT_CANDIDATE.json",
+    "local_trust_second_HS_midpoint_replay": "artifacts/flagship_integration/BHSM_N12_GATE7_LOCAL_TRUST_SECOND_HS_MIDPOINT_REPLAY.json",
+    "Hermite_Simpson_projected_residual_jacobian_adjudication": "artifacts/flagship_integration/BHSM_N12_GATE7_HERMITE_SIMPSON_PROJECTED_RESIDUAL_JACOBIAN_ADJUDICATION.json",
     "final_force_kkt_verdict": "artifacts/flagship_integration/BHSM_N12_GATE7_FINAL_EXACT_CENTER_FORCE_KKT_HESSIAN_VERDICT.json",
     "causal_y_z1_z2_margin_budget": "artifacts/flagship_integration/BHSM_N12_GATE7_CAUSAL_Y_Z1_Z2_MARGIN_BUDGET_AUDIT.json",
     "recentered_cone_spectrum": "artifacts/flagship_integration/BHSM_N12_GATE7_RECENTERED_CONE_BOUNDARY_CLUSTER_SPECTRUM.json",
@@ -237,6 +254,10 @@ def build_payload() -> dict[str, Any]:
         "third_current_linearization_replay"
     ]
     direct_shooting_source = records["direct_Hermite_Simpson_shooting_source"]
+    HS_nonlinear_source = records["Hermite_Simpson_Newton_nonlinear_source"]
+    HS_projected_jacobian = records[
+        "Hermite_Simpson_projected_residual_jacobian_adjudication"
+    ]
     causal_y_z1_z2_margin_budget = records["causal_y_z1_z2_margin_budget"]
     compact_reset_propagation = records["compact_reset_propagation"]
     compact_reset_open_subball = records["compact_reset_open_subball"]
@@ -411,7 +432,7 @@ def build_payload() -> dict[str, Any]:
         {"id": "G7_CORRELATED_QUARTER_STEP_CENTER_STOP_WITNESS", "classification": "RESOLVED_BY_EXACT_TRANSVERSE_FIRST_STOP", "current_effect": "the final exact-center cone, response, causal Z2, strict preterminal selected-eigenvalue margins, canonical earliest stop, uniform negative flow derivative, terminal-cell uniqueness, and local differentiable first-stop time are certified"},
         {"id": "G7_DECORRELATED_BINARY64_CARRIER_COMPOSITION", "classification": "INVALIDATED_PROOF_ROUTE", "current_effect": "independent binary64 component balls produce wrapping blowup and are presentation data only; correlated outward Arb interval strings own global composition"},
         {"id": "G7_OLD_GAUSS12_RECENTERED_NUMERICAL_CONE_TRANSFER", "classification": "INVALIDATED_PROOF_ROUTE", "current_effect": "the old Gauss12 center differs from the exact-affine center by 120901.05128628464 candidate-cone radii; retain its theorem formulas but rebuild the numerical Z2/cone ball at the final center"},
-        {"id": "G7_COMPLETE_JOINT_FORCE_ROOT", "classification": "CURRENT_BLOCKER", "current_effect": "the first within-seam halving reduced the pointwise defect, but a second halving increased it to 8.877740799934337e-6 and is rejected. Rebuilding the graph Jacobian and 73D tangents on the second Newton center, then applying a third signed-Green update, also increased the nonlinear replay defect to 1.643235800430239e-5 and retires that fixed-point route. The best second-Newton center now supplies an explicit 370 by 99 Hermite-Simpson multiple-shooting source with maximum block residual 2.0101707940913732e-6. Assemble and solve its block Newton/Krawczyk operator with constraint and descriptor-fiber rows, replay the exact field, then rebuild the cone/first hit and continuous variational carrier before the nonlinear 72D history jet, Weyl-Calderon oracle, projected heat-minus-zeta force, KKT root, and physical Hessian"},
+        {"id": "G7_COMPLETE_JOINT_FORCE_ROOT", "classification": "CURRENT_BLOCKER", "current_effect": "the direct 370 by 99 Hermite-Simpson source is explicit. Its first block-bidiagonal Newton step reduces the nonlinear block residual from 2.0101707940913732e-6 to 7.487649935220473e-7 (2.68464846979012 times), so the direct collocation route is retained. A rebuilt full second step, a secant-damped step, and a local-trust step all fail. Exact replay shows the actual projected/recentered residual directional norm is 167.1575285177961 times the stored hybrid graph-model scale with only 0.08881935156225418 cosine alignment to nominal descent. The stored graph Jacobian is therefore rejected as the complete solver derivative. Differentiate the full endpoint constraint projection, selected-descriptor recenter, exact endpoint field, Hermite-Simpson midpoint state, and exact midpoint field composition; assemble its exact block JVP/Newton operator, then certify continuous shadowing and rebuild the cone/first hit before the nonlinear 72D history jet, Weyl-Calderon oracle, force, KKT root, and physical Hessian"},
         {"id": "DECORRELATED_SCALAR_SECOND_VARIATION", "classification": "INVALIDATED_PROOF_ROUTE", "current_effect": "finite first variation survives; all 8,692 scalar denominator cells route to signed/common-frame correlation"},
         {"id": "G7_HESSIAN_WARD_SCALAR", "classification": "DOWNSTREAM_ONLY", "current_effect": "follows the force/KKT root"},
         {"id": "CKM_PMNS_PHYSICAL_EIGENBASES", "classification": "DOWNSTREAM_ONLY", "current_effect": "follows Gate 7 and sector response"},
@@ -856,6 +877,24 @@ def build_payload() -> dict[str, Any]:
                 "direct_high_order_multiple_shooting"
             ].startswith("ACTIVE")
         ),
+        "first_direct_block_Newton_step_reduces_nonlinear_Hermite_Simpson_residual": (
+            HS_nonlinear_source["validation_passed"] is True
+            and HS_nonlinear_source["summary"][
+                "nonlinear_block_residual_reduction_factor"
+            ] > 2.0
+            and HS_nonlinear_source["claim_boundary"][
+                "continuous_action_constrained_center"
+            ] == "OPEN"
+        ),
+        "stored_graph_Jacobian_is_rejected_as_complete_projected_residual_derivative": (
+            HS_projected_jacobian["validation_passed"] is True
+            and HS_projected_jacobian["adjudication"][
+                "hybrid_graph_Jacobian_as_complete_block_derivative"
+            ] == "REJECTED"
+            and HS_projected_jacobian["summary"][
+                "actual_to_stored_model_scale_ratio"
+            ] > 100.0
+        ),
         "quarter_green_corrected_carrier_is_certified": (
             recentered_cone_spectrum["validation_passed"] is True
             and recentered_cone_projector["validation_passed"] is True
@@ -960,7 +999,7 @@ def build_payload() -> dict[str, Any]:
             "Gate7": "ACTIVE",
             "FULL_BHSM_COMPLETE": False,
         },
-        "exact_next_dependency": "ASSEMBLE_AND_SOLVE_THE_370_BY_99_BLOCK_HERMITE_SIMPSON_NEWTON_OR_KRAWCZYK_OPERATOR_WITH_CONSTRAINT_AND_DESCRIPTOR_FIBER_ROWS;_REPLAY_THE_EXACT_FIELD_AND_CERTIFY_CONTINUOUS_SHADOWING;_REBUILD_THE_CENTER_DEPENDENT_CONE_FIRST_HIT_AND_CONTINUOUS_VARIATIONAL_CARRIER;_THEN_MATERIALIZE_THE_NONLINEAR_72D_HISTORY_JET,_TWO_SIDED_WEYL_CALDERON_ORACLE,_PROJECTED_HEAT_MINUS_ZETA_FORCE,_SAME_ACTION_KKT_ROOT,_AND_CONSTRAINED_PHYSICAL_HESSIAN",
+        "exact_next_dependency": "DIFFERENTIATE_THE_COMPLETE_ENDPOINT_CONSTRAINT_PROJECTION,_SELECTED_DESCRIPTOR_RECENTER,_EXACT_ENDPOINT_FIELD,_HERMITE_SIMPSON_MIDPOINT_STATE,_AND_EXACT_MIDPOINT_FIELD_COMPOSITION;_ASSEMBLE_AND_SOLVE_ITS_EXACT_BLOCK_JVP_NEWTON_OR_KRAWCZYK_OPERATOR;_CERTIFY_CONTINUOUS_SHADOWING;_REBUILD_THE_CONE_FIRST_HIT_AND_CONTINUOUS_VARIATIONAL_CARRIER;_THEN_MATERIALIZE_THE_NONLINEAR_72D_HISTORY_JET,_TWO_SIDED_WEYL_CALDERON_ORACLE,_FORCE,_KKT_ROOT,_AND_PHYSICAL_HESSIAN",
         "FULL_BHSM_COMPLETE": False,
     }
 

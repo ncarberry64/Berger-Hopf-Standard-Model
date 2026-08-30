@@ -1,0 +1,43 @@
+{
+  "FULL_BHSM_COMPLETE": false,
+  "artifact": "BHSM_N12_GATE7_SECOND_HS_NEWTON_LOCAL_TRUST_PREDICTOR",
+  "authority": "NUMERICAL_LOCAL_SECANT_TRUST_PREDICTOR_NOT_NONLINEAR_OR_INTERVAL_AUTHORITY",
+  "claim_boundary": {
+    "FULL_BHSM_COMPLETE": false,
+    "Gate7": "ACTIVE_ACTION_OWNED_OPERATOR_ORACLE",
+    "continuous_action_constrained_center": "OPEN",
+    "local_trust_step": "OPEN_EXACT_REPLAY"
+  },
+  "data": "artifacts/flagship_integration/BHSM_N12_GATE7_SECOND_HS_NEWTON_LOCAL_TRUST_PREDICTOR.npz",
+  "data_SHA256": "6403F678476679A209D9F64987B0B4F14908542F6F043E3531141FC13AEE1FCB",
+  "exact_next_dependency": "APPLY_AND_EXACTLY_REPLAY_THE_LOCAL_TRUST_FRACTION",
+  "inputs": {
+    "artifacts/flagship_integration/BHSM_N12_GATE7_DAMPED_SECOND_HS_NEWTON_MIDPOINT_REPLAY.json": "84D91D2353FA684C49D53657AC8B8651F55833CCE16036FC88B594156B5F7D11",
+    "artifacts/flagship_integration/BHSM_N12_GATE7_DAMPED_SECOND_HS_NEWTON_MIDPOINT_REPLAY.npz": "00297CD34FFC60A5EB69D1C47781DD511F072A3F7F348790CFCB8A9F3808C5CA",
+    "artifacts/flagship_integration/BHSM_N12_GATE7_HERMITE_SIMPSON_NEWTON_NONLINEAR_SOURCE.json": "0B0F5DCA153B0743BD28228AD82461E8BE16E3F2A5FEB54BEC771940F3D8974A",
+    "artifacts/flagship_integration/BHSM_N12_GATE7_HERMITE_SIMPSON_NEWTON_NONLINEAR_SOURCE.npz": "06F89BAEA2A89CFCE600D5B1AD17F1F8EE9567D3E859BE8C14451ED8426E1999",
+    "artifacts/flagship_integration/BHSM_N12_GATE7_SECOND_HERMITE_SIMPSON_BLOCK_NEWTON_PREDICTOR.json": "AAD9CACBF448D15CD4CFD00B78D8C11E95ABE1A62D3AAEA698D8DBE23DD95068",
+    "artifacts/flagship_integration/BHSM_N12_GATE7_SECOND_HERMITE_SIMPSON_BLOCK_NEWTON_PREDICTOR.npz": "B52B45DC42DB0C161A24C244341396DB155E162A15B8EE19528DB859667323CE",
+    "artifacts/flagship_integration/BHSM_N12_GATE7_SECOND_HS_NEWTON_LINE_SEARCH_PREDICTOR.json": "0ABAEB678E48800B3C67E1007FD36D2459C866F21E75DE3DA5A0A77C88F0B81E",
+    "scripts/materialize_n12_gate7_second_hs_newton_local_trust_predictor.py": "FB896FAF4D747DE61E9760EFC901839E9DC292FA796A646D506DE18E4713ECED",
+    "theory/n12_gate7_second_hs_newton_local_trust_predictor.md": "C94E0E99C4573404AADDA56CA4C918FC4FCE2FADFE883E661A7E0E473091DA2F"
+  },
+  "status": "LOCAL_EXACT_SECANT_TRUST_FRACTION_MATERIALIZED",
+  "summary": {
+    "directional_inner_product": -5.772225523531824e-11,
+    "local_trust_alpha": 0.013397472201727913,
+    "maximum_scaled_endpoint_correction_action_2_norm": 1.22847308203589e-07,
+    "predicted_global_residual_2_norm": 4.879580720379751e-06,
+    "predicted_maximum_block_residual_2_norm": 7.183704582691438e-07,
+    "sampled_alpha": 0.16981561230918726
+  },
+  "validation": {
+    "all_371_scaled_corrections_materialized": true,
+    "all_quantities_finite": true,
+    "exact_trust_step_replay_not_claimed": true,
+    "local_secant_direction_is_descent": true,
+    "local_secant_predicts_global_reduction": true,
+    "local_trust_alpha_is_inside_sampled_radius": true
+  },
+  "validation_passed": true
+}

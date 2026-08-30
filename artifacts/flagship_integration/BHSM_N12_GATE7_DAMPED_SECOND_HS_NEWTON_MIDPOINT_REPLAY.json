@@ -1,0 +1,50 @@
+{
+  "FULL_BHSM_COMPLETE": false,
+  "artifact": "BHSM_N12_GATE7_DAMPED_SECOND_HS_NEWTON_MIDPOINT_REPLAY",
+  "authority": "NUMERICAL_EXACT_MIDPOINT_REPLAY_NOT_INTERVAL_AUTHORITY",
+  "claim_boundary": {
+    "FULL_BHSM_COMPLETE": false,
+    "Gate7": "ACTIVE_ACTION_OWNED_OPERATOR_ORACLE",
+    "continuous_action_constrained_center": "OPEN",
+    "nonlinear_Hermite_Simpson_center": "OPEN_ITERATION_AND_INTERVAL_AUTHORITY"
+  },
+  "data": "artifacts/flagship_integration/BHSM_N12_GATE7_DAMPED_SECOND_HS_NEWTON_MIDPOINT_REPLAY.npz",
+  "data_SHA256": "00297CD34FFC60A5EB69D1C47781DD511F072A3F7F348790CFCB8A9F3808C5CA",
+  "exact_next_dependency": "IF_REDUCED,_REBUILD_AND_CONTINUE_WITH_RESIDUAL_BASED_GLOBALIZATION;_OTHERWISE_REJECT_THE_CURRENT_LINE_SEARCH_MODEL",
+  "inputs": {
+    "artifacts/flagship_integration/BHSM_N12_GATE7_DAMPED_SECOND_HS_NEWTON_ENDPOINT_CANDIDATE.json": "B1C8EDA4592E1BA2F2B55863BCF3F44E50E9E878E97D834170B051EEDED225A4",
+    "artifacts/flagship_integration/BHSM_N12_GATE7_DAMPED_SECOND_HS_NEWTON_ENDPOINT_CANDIDATE.npz": "54E59083C4C1D9244646616A4738363DA23FCBA88B547844B7177EA1783712B6",
+    "artifacts/flagship_integration/BHSM_N12_GATE7_HERMITE_SIMPSON_NEWTON_NONLINEAR_SOURCE.json": "0B0F5DCA153B0743BD28228AD82461E8BE16E3F2A5FEB54BEC771940F3D8974A",
+    "scripts/audit_n12_gate7_damped_second_hs_newton_midpoint_replay.py": "735B2E3CBB85F17A981DE10B964792A6331032F5F1A18608F681B31563438607",
+    "theory/n12_gate7_damped_second_hs_newton_midpoint_replay.md": "5FD744841CFFD286F754D73069E27FE455F8F36A28F83F85AFA173E77BC07F62"
+  },
+  "mesh": {
+    "Newton_iteration": 2,
+    "augmented_dimension": 99,
+    "shooting_intervals": 370,
+    "workers": 8
+  },
+  "status": "DAMPED_SECOND_BLOCK_NEWTON_DOES_NOT_REDUCE_NONLINEAR_RESIDUAL",
+  "summary": {
+    "maximum_Hermite_Simpson_shooting_residual_2_norm": 1.6826246551305684e-06,
+    "maximum_Hermite_Simpson_shooting_residual_owner_interval": 218,
+    "maximum_descriptor_shooting_residual_absolute": 1.7777399966025856e-13,
+    "maximum_midpoint_descriptor_fiber_residual_absolute": 1.5465562456613324e-13,
+    "maximum_midpoint_scaled_constraint_2_norm": 3.563639891821173e-14,
+    "maximum_state_shooting_residual_2_norm": 1.6826246551305684e-06,
+    "minimum_selected_eigenline_gap": 1.7343202898222452e-07,
+    "nonlinear_block_residual_reduction_factor": 0.4449982301394155,
+    "parent_maximum_Hermite_Simpson_shooting_residual_2_norm": 7.487649935220473e-07
+  },
+  "validation": {
+    "all_370_exact_midpoint_fields_replayed": true,
+    "all_midpoint_constraints_close_numerically": true,
+    "all_quantities_finite": true,
+    "branch_24_selected_at_every_midpoint": true,
+    "continuous_interval_shadowing_not_claimed": true,
+    "no_action_source_selector_scale_gate_or_chord_changed": true,
+    "second_block_step_reduces_nonlinear_Hermite_Simpson_residual": false,
+    "selected_line_remains_simple_numerically": true
+  },
+  "validation_passed": false
+}

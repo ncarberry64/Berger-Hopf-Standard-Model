@@ -84,7 +84,7 @@
     },
     {
       "classification": "CURRENT_BLOCKER",
-      "current_effect": "the first within-seam halving reduced the pointwise defect, but a second halving increased it to 8.877740799934337e-6 and is rejected. Rebuilding the graph Jacobian and 73D tangents on the second Newton center, then applying a third signed-Green update, also increased the nonlinear replay defect to 1.643235800430239e-5 and retires that fixed-point route. The best second-Newton center now supplies an explicit 370 by 99 Hermite-Simpson multiple-shooting source with maximum block residual 2.0101707940913732e-6. Assemble and solve its block Newton/Krawczyk operator with constraint and descriptor-fiber rows, replay the exact field, then rebuild the cone/first hit and continuous variational carrier before the nonlinear 72D history jet, Weyl-Calderon oracle, projected heat-minus-zeta force, KKT root, and physical Hessian",
+      "current_effect": "the direct 370 by 99 Hermite-Simpson source is explicit. Its first block-bidiagonal Newton step reduces the nonlinear block residual from 2.0101707940913732e-6 to 7.487649935220473e-7 (2.68464846979012 times), so the direct collocation route is retained. A rebuilt full second step, a secant-damped step, and a local-trust step all fail. Exact replay shows the actual projected/recentered residual directional norm is 167.1575285177961 times the stored hybrid graph-model scale with only 0.08881935156225418 cosine alignment to nominal descent. The stored graph Jacobian is therefore rejected as the complete solver derivative. Differentiate the full endpoint constraint projection, selected-descriptor recenter, exact endpoint field, Hermite-Simpson midpoint state, and exact midpoint field composition; assemble its exact block JVP/Newton operator, then certify continuous shadowing and rebuild the cone/first hit before the nonlinear 72D history jet, Weyl-Calderon oracle, force, KKT root, and physical Hessian",
       "id": "G7_COMPLETE_JOINT_FORCE_ROOT"
     },
     {
@@ -133,7 +133,7 @@
   "current_irreducible_objects": [
     "G7_COMPLETE_JOINT_FORCE_ROOT"
   ],
-  "exact_next_dependency": "ASSEMBLE_AND_SOLVE_THE_370_BY_99_BLOCK_HERMITE_SIMPSON_NEWTON_OR_KRAWCZYK_OPERATOR_WITH_CONSTRAINT_AND_DESCRIPTOR_FIBER_ROWS;_REPLAY_THE_EXACT_FIELD_AND_CERTIFY_CONTINUOUS_SHADOWING;_REBUILD_THE_CENTER_DEPENDENT_CONE_FIRST_HIT_AND_CONTINUOUS_VARIATIONAL_CARRIER;_THEN_MATERIALIZE_THE_NONLINEAR_72D_HISTORY_JET,_TWO_SIDED_WEYL_CALDERON_ORACLE,_PROJECTED_HEAT_MINUS_ZETA_FORCE,_SAME_ACTION_KKT_ROOT,_AND_CONSTRAINED_PHYSICAL_HESSIAN",
+  "exact_next_dependency": "DIFFERENTIATE_THE_COMPLETE_ENDPOINT_CONSTRAINT_PROJECTION,_SELECTED_DESCRIPTOR_RECENTER,_EXACT_ENDPOINT_FIELD,_HERMITE_SIMPSON_MIDPOINT_STATE,_AND_EXACT_MIDPOINT_FIELD_COMPOSITION;_ASSEMBLE_AND_SOLVE_ITS_EXACT_BLOCK_JVP_NEWTON_OR_KRAWCZYK_OPERATOR;_CERTIFY_CONTINUOUS_SHADOWING;_REBUILD_THE_CONE_FIRST_HIT_AND_CONTINUOUS_VARIATIONAL_CARRIER;_THEN_MATERIALIZE_THE_NONLINEAR_72D_HISTORY_JET,_TWO_SIDED_WEYL_CALDERON_ORACLE,_FORCE,_KKT_ROOT,_AND_PHYSICAL_HESSIAN",
   "inputs": {
     "artifacts/BHSM_1_0_completion_gate.json": "CE578DFA191245840935D759E3F07F034A9607EE2DED7010040F7D0780612144",
     "artifacts/BHSM_CKM_action_equivalence_v11_6.json": "5F5850309F6744464FBA34A4A255F415A6F17782B60CF0E6FF7A4E1CEC63DD1C",
@@ -183,6 +183,8 @@
     "artifacts/flagship_integration/BHSM_N12_GATE7_CONSTRAINT_DESCRIPTOR_HERMITE_COLLOCATION_CANDIDATE.json": "1112C54BA8BAFA37CA374D02C02B0092B818D399911477C427E23FF3E887A299",
     "artifacts/flagship_integration/BHSM_N12_GATE7_CURRENT_LINEARIZATION_NEWTON_COLLOCATION_REPLAY.json": "417895383C97B153DB449478B2C091F3E2AC16FEB307809B81AF028110AF1A65",
     "artifacts/flagship_integration/BHSM_N12_GATE7_CURRENT_LINEARIZATION_NEWTON_ENDPOINT_CANDIDATE.json": "DBAB6B85663141694D87657C37FA5D18E9CC9373DAE9A6BCA434D502375CC829",
+    "artifacts/flagship_integration/BHSM_N12_GATE7_DAMPED_SECOND_HS_NEWTON_ENDPOINT_CANDIDATE.json": "B1C8EDA4592E1BA2F2B55863BCF3F44E50E9E878E97D834170B051EEDED225A4",
+    "artifacts/flagship_integration/BHSM_N12_GATE7_DAMPED_SECOND_HS_NEWTON_MIDPOINT_REPLAY.json": "84D91D2353FA684C49D53657AC8B8651F55833CCE16036FC88B594156B5F7D11",
     "artifacts/flagship_integration/BHSM_N12_GATE7_DECIMAL_MAGNUS4_PROP_RECENTER_AUDIT.json": "EFA05CF7424D3E73E7338579C6E2B9B5D591F65DFA64193F1A0C94ABB4FB5BD9",
     "artifacts/flagship_integration/BHSM_N12_GATE7_DECIMAL_MAGNUS6_LEADING_REMAINDER_AUDIT.json": "12180715983138AA4A2634F6DC79CFF0DF0FD5E296485FC124CB8E3FAF0D94D8",
     "artifacts/flagship_integration/BHSM_N12_GATE7_DECIMAL_PROP_REFINEMENT_AUDIT.json": "67CF800D608447FEB26C6159FE34102B4D0A157D649491751519A4D01D3B5C7F",
@@ -197,8 +199,18 @@
     "artifacts/flagship_integration/BHSM_N12_GATE7_EXACT_AFFINE_TERMINAL_STOP_TRANSVERSALITY.json": "7289344C65E96BECB16822839A2F9866ED6DCF537E1B06236C62426C80053EAD",
     "artifacts/flagship_integration/BHSM_N12_GATE7_EXACT_CENTER_PHYSICAL_FIELD_JACOBIAN.json": "C54BE66B5046D69CD837000117A7C22FD59037ECE760CE5066FCC784556AF837",
     "artifacts/flagship_integration/BHSM_N12_GATE7_FINAL_EXACT_CENTER_FORCE_KKT_HESSIAN_VERDICT.json": "CDDB1454D3FFFDD082D6A8E560DA9FC83BFD724F07C03273C86CE0E28BD1BEEF",
+    "artifacts/flagship_integration/BHSM_N12_GATE7_FIRST_HS_NEWTON_CENTER_GRAPH_JACOBIAN.json": "8D213FE49160E560CCE50B5A8F262F7A27DE66DDFF0028F355D07B5F9B10EAA2",
+    "artifacts/flagship_integration/BHSM_N12_GATE7_FIRST_HS_NEWTON_MIDPOINT_GRAPH_JACOBIAN.json": "7F45C58A2411206A8F47E2E0AE0B655CAC8ECA3408A0777E69986011C3006D8A",
     "artifacts/flagship_integration/BHSM_N12_GATE7_FROZEN_DECIMAL_GAUSS8_CENTER.json": "90FD0B41437CBD57B576FC3FED836C1460C83A32C7ACB4D8761C06339DA0DA52",
     "artifacts/flagship_integration/BHSM_N12_GATE7_GLOBAL_CONNECTION_OBSTRUCTION.json": "10001204499627CA5D3D9EFB5956B86BFA03BB9C1D51B6C05DE3474A2393CB06",
+    "artifacts/flagship_integration/BHSM_N12_GATE7_HERMITE_SIMPSON_BLOCK_NEWTON_PREDICTOR.json": "C11D15A30A75C237749600B5BD1C44C8AFE431684423D9D8CFE6DA5B4D6BD887",
+    "artifacts/flagship_integration/BHSM_N12_GATE7_HERMITE_SIMPSON_MIDPOINT_GRAPH_JACOBIAN.json": "DCAFA758A382CDB0A249F58E9E0324A92BF153A6F90A1438D26DB22A9EE6F5E5",
+    "artifacts/flagship_integration/BHSM_N12_GATE7_HERMITE_SIMPSON_NEWTON_COLLOCATION_REPLAY.json": "A27DCBBA711F9B7C3F47A3D6D01FCE5FAA2415D08E487C6B94E92CFE67C17EB4",
+    "artifacts/flagship_integration/BHSM_N12_GATE7_HERMITE_SIMPSON_NEWTON_ENDPOINT_CANDIDATE.json": "4D4A5DDD5929E20921CB857B95BBECD546B585AA7C1A167E9B17786CD76D56B1",
+    "artifacts/flagship_integration/BHSM_N12_GATE7_HERMITE_SIMPSON_NEWTON_NONLINEAR_SOURCE.json": "0B0F5DCA153B0743BD28228AD82461E8BE16E3F2A5FEB54BEC771940F3D8974A",
+    "artifacts/flagship_integration/BHSM_N12_GATE7_HERMITE_SIMPSON_PROJECTED_RESIDUAL_JACOBIAN_ADJUDICATION.json": "CA4FDCF168D6C9E9B8AA3B1A0CC3416CF29251A8946750C83B8A830D0BCD3458",
+    "artifacts/flagship_integration/BHSM_N12_GATE7_LOCAL_TRUST_SECOND_HS_ENDPOINT_CANDIDATE.json": "911EF22FE099E76E4D0C8A123F546B60290ADCA83B69ABF1F235CFADE263E67A",
+    "artifacts/flagship_integration/BHSM_N12_GATE7_LOCAL_TRUST_SECOND_HS_MIDPOINT_REPLAY.json": "7A82A31C2156C66FE4BC0D682AB39045C9C424D8284C599DCCA72DD5B10E24F9",
     "artifacts/flagship_integration/BHSM_N12_GATE7_NHIM_RANK72_RELATIVE_TAIL_THEOREM.json": "FA36F13C0075A46A973DE82B817C44CD204682981E1FB843A17445E8B6158E33",
     "artifacts/flagship_integration/BHSM_N12_GATE7_NORMALIZED_FIELD_COMMON_FRAME_IDENTITY.json": "BA42969CD878049BC7C816AE590FD4DC09654ED7A353499B9C27F1EB61F98928",
     "artifacts/flagship_integration/BHSM_N12_GATE7_ONE_SEAM_FULL_GRADED_FINITE_CORE_HEAT_BOUND.json": "D1E6A58D0586A8995288FF4139C9F24DBF2411532EEA9E2D833B8AA5B60149B3",
@@ -216,6 +228,11 @@
     "artifacts/flagship_integration/BHSM_N12_GATE7_REFINED_WITHIN_SEAM_HERMITE_COLLOCATION.json": "9E1F55AEE781F1B4CE27B833665F0A89D7B63C86AD23A40FA16E70EC8B4A50F3",
     "artifacts/flagship_integration/BHSM_N12_GATE7_SECOND_CURRENT_CENTER_GRAPH_JACOBIAN.json": "C4588DE81707A6DA145FEA67D62C41AD0F612436BEF7D64556E398796E66F728",
     "artifacts/flagship_integration/BHSM_N12_GATE7_SECOND_CURRENT_CENTER_MACRO_TANGENT.json": "3B362BB1ED1C0073EAFD767259F9F84BABBC7AE63E99C7E261162AF0F2E631F4",
+    "artifacts/flagship_integration/BHSM_N12_GATE7_SECOND_HERMITE_SIMPSON_BLOCK_NEWTON_PREDICTOR.json": "AAD9CACBF448D15CD4CFD00B78D8C11E95ABE1A62D3AAEA698D8DBE23DD95068",
+    "artifacts/flagship_integration/BHSM_N12_GATE7_SECOND_HERMITE_SIMPSON_NEWTON_ENDPOINT_CANDIDATE.json": "DC9A6714A8E2210E6101B008D8AED9FF0C7916A613248313F0FF520AAE2016D3",
+    "artifacts/flagship_integration/BHSM_N12_GATE7_SECOND_HERMITE_SIMPSON_NEWTON_MIDPOINT_REPLAY.json": "5570AECF9DEE1D0E26275CE5B66B4C7FAECE154A285844FEA134AB26F3A6D3F7",
+    "artifacts/flagship_integration/BHSM_N12_GATE7_SECOND_HS_NEWTON_LINE_SEARCH_PREDICTOR.json": "0ABAEB678E48800B3C67E1007FD36D2459C866F21E75DE3DA5A0A77C88F0B81E",
+    "artifacts/flagship_integration/BHSM_N12_GATE7_SECOND_HS_NEWTON_LOCAL_TRUST_PREDICTOR.json": "0E3519AF19F62EBFFDE99D634A6835F043515F1887AFDE0D3975B7A0FCE182C4",
     "artifacts/flagship_integration/BHSM_N12_GATE7_SECOND_REFINED_WITHIN_SEAM_HERMITE_COLLOCATION.json": "41DECE3610DBEA1B1061A4C995C1C5860B6B7A57DEC97E5A6875D350957292DB",
     "artifacts/flagship_integration/BHSM_N12_GATE7_SELECTED_CENTER_PROVENANCE_RECONCILIATION.json": "5A1C70FA3D71AFD5605884CA12269295AAE3F105F4A4AAF43BCA1085A26D27D7",
     "artifacts/flagship_integration/BHSM_N12_GATE7_SELECTED_CONE_INTERNAL_RESPONSE_Z2.json": "60378E73F6BF46EC84C97D9BD89E16795BF4BBB5EAB4E0028B000C5CD9D4F298",
@@ -717,6 +734,7 @@
     "finite_direct_first_variation_tube_is_certified": true,
     "finite_exact_Omega5_augmented_global_composition_is_outward_certified": true,
     "finite_exact_Omega7_augmented_global_composition_is_outward_certified": true,
+    "first_direct_block_Newton_step_reduces_nonlinear_Hermite_Simpson_residual": true,
     "global_connection_remains_exactly_localized": true,
     "global_finite_correlated_Magnus4_affine_composition_is_outward_certified": true,
     "interaction_frame_analytic_infinite_tail_is_certified_without_exact_propagator_promotion": true,
@@ -739,6 +757,7 @@
     "selected_quarter_center_provenance_is_reconciled": true,
     "signed_Y_binary_source_noise_is_superseded_by_decimal_repair": true,
     "stored_center_is_rejected_as_continuous_constraint_center": true,
+    "stored_graph_Jacobian_is_rejected_as_complete_projected_residual_derivative": true,
     "third_current_linearization_replay_rejects_signed_Green_fixed_point": true,
     "within_seam_halving_reduces_but_does_not_certify_flow_defect": true
   },

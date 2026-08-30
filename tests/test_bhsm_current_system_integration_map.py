@@ -138,6 +138,12 @@ def test_blocker_and_interface_priority_reconciliation() -> None:
     assert payload["validation"][
         "direct_Hermite_Simpson_multiple_shooting_source_is_materialized"
     ] is True
+    assert payload["validation"][
+        "first_direct_block_Newton_step_reduces_nonlinear_Hermite_Simpson_residual"
+    ] is True
+    assert payload["validation"][
+        "stored_graph_Jacobian_is_rejected_as_complete_projected_residual_derivative"
+    ] is True
     response_gap = next(
         row for row in payload["interface_gaps"]
         if row["id"] == "RESPONSE_TO_CORRELATED_Y_Z1_Z2"

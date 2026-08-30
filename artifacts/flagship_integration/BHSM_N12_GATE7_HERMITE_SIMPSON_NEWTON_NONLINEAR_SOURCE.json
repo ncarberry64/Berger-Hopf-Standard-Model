@@ -1,0 +1,52 @@
+{
+  "FULL_BHSM_COMPLETE": false,
+  "adjudication": {
+    "Hermite_Simpson_block_residual": "REDUCED_NONLINEARLY",
+    "cubic_Gauss3_defect": "NOT_THE_DIRECT_COLLOCATION_NEWTON_EQUATION",
+    "direct_block_Newton_route": "REBUILD_ON_CURRENT_CENTER_AND_ITERATE"
+  },
+  "artifact": "BHSM_N12_GATE7_HERMITE_SIMPSON_NEWTON_NONLINEAR_SOURCE",
+  "authority": "NUMERICAL_NONLINEAR_HERMITE_SIMPSON_BLOCK_RESIDUAL_NOT_INTERVAL_AUTHORITY",
+  "claim_boundary": {
+    "FULL_BHSM_COMPLETE": false,
+    "Gate7": "ACTIVE_ACTION_OWNED_OPERATOR_ORACLE",
+    "continuous_action_constrained_center": "OPEN",
+    "nonlinear_Hermite_Simpson_center": "OPEN_ITERATION_AND_INTERVAL_AUTHORITY"
+  },
+  "data": "artifacts/flagship_integration/BHSM_N12_GATE7_HERMITE_SIMPSON_NEWTON_NONLINEAR_SOURCE.npz",
+  "data_SHA256": "06F89BAEA2A89CFCE600D5B1AD17F1F8EE9567D3E859BE8C14451ED8426E1999",
+  "exact_next_dependency": "REBUILD_ENDPOINT_AND_MIDPOINT_JACOBIANS_ON_THIS_CENTER_AND_APPLY_THE_SECOND_BLOCK_NEWTON_STEP",
+  "inputs": {
+    "artifacts/flagship_integration/BHSM_N12_GATE7_DIRECT_HERMITE_SIMPSON_MULTIPLE_SHOOTING_SOURCE.json": "F8D55331267C9014B5024904290AF84486D5B9FDB6A592D00D65BE1C10EA3627",
+    "artifacts/flagship_integration/BHSM_N12_GATE7_HERMITE_SIMPSON_NEWTON_COLLOCATION_REPLAY.json": "A27DCBBA711F9B7C3F47A3D6D01FCE5FAA2415D08E487C6B94E92CFE67C17EB4",
+    "artifacts/flagship_integration/BHSM_N12_GATE7_HERMITE_SIMPSON_NEWTON_COLLOCATION_REPLAY.npz": "A5891A60C14C83FCA8E33318CBE5A3B226254411827692957FD122DB30095C87",
+    "artifacts/flagship_integration/BHSM_N12_GATE7_HERMITE_SIMPSON_NEWTON_ENDPOINT_CANDIDATE.json": "4D4A5DDD5929E20921CB857B95BBECD546B585AA7C1A167E9B17786CD76D56B1",
+    "artifacts/flagship_integration/BHSM_N12_GATE7_HERMITE_SIMPSON_NEWTON_ENDPOINT_CANDIDATE.npz": "749660BB633A2775CB0CEF818C11E31966560164B00A45EF3463B6AED812396B",
+    "scripts/materialize_n12_gate7_hermite_simpson_newton_nonlinear_source.py": "63952A8521EF95FE8E66B73B6A1DD728CE9117AEE5CABD6DCE789DFC5D5E267F",
+    "theory/n12_gate7_hermite_simpson_newton_nonlinear_source.md": "57E4856F922538E9C1ECC15857ED5010EB75FC82D20CB95CA823114F94ACE95C"
+  },
+  "mesh": {
+    "Newton_iteration": 1,
+    "augmented_dimension": 99,
+    "shooting_intervals": 370
+  },
+  "status": "DIRECT_BLOCK_NEWTON_REDUCES_NONLINEAR_HERMITE_SIMPSON_RESIDUAL",
+  "summary": {
+    "maximum_Hermite_Simpson_shooting_residual_2_norm": 7.487649935220473e-07,
+    "maximum_Hermite_Simpson_shooting_residual_owner_interval": 154,
+    "maximum_descriptor_shooting_residual_absolute": 1.676127448867357e-13,
+    "maximum_state_shooting_residual_2_norm": 7.487649935220348e-07,
+    "nonlinear_block_residual_reduction_factor": 2.68464846979012,
+    "parent_maximum_Hermite_Simpson_shooting_residual_2_norm": 2.0101707940913732e-06,
+    "terminal_cumulative_unlinearized_residual_2_norm": 1.761047165638062e-06
+  },
+  "validation": {
+    "all_370_nonlinear_Hermite_Simpson_blocks_materialized": true,
+    "all_quantities_finite": true,
+    "continuous_interval_shadowing_not_claimed": true,
+    "cubic_replay_is_not_used_as_block_equation_adjudicator": true,
+    "no_action_source_selector_scale_gate_or_chord_changed": true,
+    "nonlinear_Hermite_Simpson_residual_reduces": true
+  },
+  "validation_passed": true
+}

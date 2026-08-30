@@ -62,9 +62,19 @@ that fixed-point route.  The best second-Newton center now supplies a direct
 `370 x 99` Hermite--Simpson multiple-shooting source; its maximum block
 residual is `2.0101707940913732e-6` at interval 179.  This source is numerical,
 not a solved or interval-certified orbit.  The exact next owner is its block
-Newton/Krawczyk solve with constraint and descriptor-fiber rows, followed by
-exact-field replay, a rebuilt cone, first hit, and continuous variational
-carrier.
+Newton/Krawczyk solve with constraint and descriptor-fiber rows.  Its first
+block step reduces the nonlinear Hermite--Simpson residual from
+`2.0101707940913732e-6` to `7.487649935220473e-7`, a
+`2.68464846979012`-fold contraction.  However, a rebuilt second step and two
+progressively damped replays all fail.  The exact local sample shows the true
+projected/recentered residual directional norm is `167.1575285177961` times
+the stored hybrid graph-model scale, with only `0.08881935156225418` cosine
+alignment to nominal descent.  The stored graph Jacobian is therefore not the
+complete solver derivative.  The exact next owner is the JVP of the full
+constraint-projection, descriptor-recenter, endpoint-field, midpoint-state,
+and midpoint-field composition; after that operator converges, exact-field
+shadowing, the cone, first hit, and continuous variational carrier must be
+rebuilt.
 Gate 7 remains
 `ACTIVE`; `FULL_BHSM_COMPLETE = FALSE`.  Physical completion additionally
 requires universal spectrum/propagator, vertex, decay, loop/magnetic-moment,
