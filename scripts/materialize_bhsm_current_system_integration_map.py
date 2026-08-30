@@ -123,6 +123,11 @@ PATHS = {
     "binary64_descriptor_reselection_reproducibility": "artifacts/flagship_integration/BHSM_N12_GATE7_BINARY64_DESCRIPTOR_RESELECTION_REPRODUCIBILITY_AUDIT.json",
     "correlated_descriptor_Newton_endpoint": "artifacts/flagship_integration/BHSM_N12_GATE7_CORRELATED_DESCRIPTOR_NEWTON_ENDPOINT_CANDIDATE.json",
     "correlated_descriptor_Newton_midpoint_replay": "artifacts/flagship_integration/BHSM_N12_GATE7_CORRELATED_DESCRIPTOR_NEWTON_MIDPOINT_REPLAY.json",
+    "augmented_fixed_descriptor_jacobians": "artifacts/flagship_integration/BHSM_N12_GATE7_CORRELATED_DESCRIPTOR_AUGMENTED_JACOBIANS.json",
+    "augmented_fixed_descriptor_predictor": "artifacts/flagship_integration/BHSM_N12_GATE7_AUGMENTED_FIXED_DESCRIPTOR_BLOCK_NEWTON_PREDICTOR.json",
+    "augmented_fixed_descriptor_endpoint": "artifacts/flagship_integration/BHSM_N12_GATE7_AUGMENTED_FIXED_DESCRIPTOR_NEWTON_ENDPOINT_CANDIDATE.json",
+    "augmented_fixed_descriptor_replay": "artifacts/flagship_integration/BHSM_N12_GATE7_AUGMENTED_FIXED_DESCRIPTOR_NEWTON_MIDPOINT_REPLAY.json",
+    "augmented_minimum_contraction": "artifacts/flagship_integration/BHSM_N12_GATE7_AUGMENTED_FIXED_DESCRIPTOR_MINIMUM_CONTRACTION_ADJUDICATION.json",
     "final_force_kkt_verdict": "artifacts/flagship_integration/BHSM_N12_GATE7_FINAL_EXACT_CENTER_FORCE_KKT_HESSIAN_VERDICT.json",
     "causal_y_z1_z2_margin_budget": "artifacts/flagship_integration/BHSM_N12_GATE7_CAUSAL_Y_Z1_Z2_MARGIN_BUDGET_AUDIT.json",
     "recentered_cone_spectrum": "artifacts/flagship_integration/BHSM_N12_GATE7_RECENTERED_CONE_BOUNDARY_CLUSTER_SPECTRUM.json",
@@ -275,6 +280,11 @@ def build_payload() -> dict[str, Any]:
     HS_rate_consistent_endpoints = records["first_HS_rate_consistent_endpoints"]
     HS_rate_consistent_source = records["first_HS_rate_consistent_source"]
     HS_rate_consistent_replay = records["rate_consistent_Newton_midpoint_replay"]
+    augmented_jacobians = records["augmented_fixed_descriptor_jacobians"]
+    augmented_predictor = records["augmented_fixed_descriptor_predictor"]
+    augmented_endpoint = records["augmented_fixed_descriptor_endpoint"]
+    augmented_replay = records["augmented_fixed_descriptor_replay"]
+    augmented_minimum_contraction = records["augmented_minimum_contraction"]
     causal_y_z1_z2_margin_budget = records["causal_y_z1_z2_margin_budget"]
     compact_reset_propagation = records["compact_reset_propagation"]
     compact_reset_open_subball = records["compact_reset_open_subball"]
@@ -363,12 +373,12 @@ def build_payload() -> dict[str, Any]:
             "GATE7_HEAT_ZETA_CHAIN",
             "AE2 joint event/child seam with internal Mf, M_C2, U_R, W_phys and contact blocks",
             "AE2 two-sided transmission plus finite endpoint/Friedrichs alternatives; only external birth trace zero",
-            ["ae2_domain", "source_ontology", "one_seam", "heat_bound", "force_functional", "dop_response", "nhim_tail", "capture_tube", "compact_reset_domain", "compact_reset_propagation", "compact_reset_open_subball", "open_family_stop_reduction", "global_connection"],
-            ["completion_dag", "gate_ledger"],
-            "OPEN_CURRENT_OWNER", "current AE2 Gate-7 DAG",
+            ["ae2_domain", "source_ontology", "one_seam", "heat_bound", "force_functional", "dop_response", "nhim_tail", "capture_tube", "compact_reset_domain", "compact_reset_propagation", "compact_reset_open_subball", "open_family_stop_reduction", "global_connection", "augmented_fixed_descriptor_jacobians", "augmented_fixed_descriptor_predictor", "augmented_fixed_descriptor_endpoint", "augmented_fixed_descriptor_replay", "augmented_minimum_contraction"],
+            ["completion_dag", "gate_ledger", "augmented_minimum_contraction"],
+            "ACTIVE_NOT_CLOSED_SAME_CENTER_INTERVAL_CONTRACTION", "current AE2 Gate-7 DAG",
             ["GATE7_KKT_HESSIAN", "GENERATION_FAMILY_PROJECTORS"],
             ["strict gap, exact power tail, infinite nonrealized angular tail, and chord 3 are not current dependencies"],
-            ["G7_CORRELATED_QUARTER_STEP_CENTER_STOP_WITNESS"],
+            ["G7_SAME_CENTER_INTERVAL_CONTRACTION"],
         ),
         _subsystem(
             "GATE7_KKT_HESSIAN",
@@ -449,7 +459,7 @@ def build_payload() -> dict[str, Any]:
         {"id": "G7_CORRELATED_QUARTER_STEP_CENTER_STOP_WITNESS", "classification": "RESOLVED_BY_EXACT_TRANSVERSE_FIRST_STOP", "current_effect": "the final exact-center cone, response, causal Z2, strict preterminal selected-eigenvalue margins, canonical earliest stop, uniform negative flow derivative, terminal-cell uniqueness, and local differentiable first-stop time are certified"},
         {"id": "G7_DECORRELATED_BINARY64_CARRIER_COMPOSITION", "classification": "INVALIDATED_PROOF_ROUTE", "current_effect": "independent binary64 component balls produce wrapping blowup and are presentation data only; correlated outward Arb interval strings own global composition"},
         {"id": "G7_OLD_GAUSS12_RECENTERED_NUMERICAL_CONE_TRANSFER", "classification": "INVALIDATED_PROOF_ROUTE", "current_effect": "the old Gauss12 center differs from the exact-affine center by 120901.05128628464 candidate-cone radii; retain its theorem formulas but rebuild the numerical Z2/cone ball at the final center"},
-        {"id": "G7_COMPLETE_JOINT_FORCE_ROOT", "classification": "CURRENT_BLOCKER", "current_effect": "the earlier 7.487649935220473e-7 Hermite-Simpson contraction is superseded because its recentered endpoint descriptors retained pre-recenter field rates, with maximum rate mismatch 1.0526435867226e-5. Direct same-descriptor replay gives 1.800590017529095e-6 and the first repaired block step contracts to 1.215762696655947e-6. A second binary64 selected-eigenvalue recenter is rejected at 1.429548198240663e-6 and is non-reproducible near the zero descriptor. Carrying signed descriptor independently by the correlated action first jet and evaluating the exact fixed-descriptor field contracts the all-370 maximum to 1.3706618261694602e-7, factor 8.869895355979933. The exact owner is the complete augmented fixed-descriptor residual derivative with explicit descriptor-fiber equation, convergence, and continuous interval shadowing; then rebuild cone/first hit before the nonlinear 72D history jet, Weyl-Calderon oracle, force, KKT root, and physical Hessian"},
+        {"id": "G7_SAME_CENTER_INTERVAL_CONTRACTION", "classification": "CURRENT_BLOCKER", "current_effect": "the retained-exact-field 741-node augmented derivative and 74D recurrence validate, and the one authorized nonlinear replay contracts the maximum from 1.3706618261694602e-7 to 1.2217621999603292e-7. The replay center is 2.7017477414680254e8 old exact-affine Z2 radii from that theorem's center, and the diagnostic old-preconditioner image is 5.218603289632254e5 old radii, so the old cone cannot transfer. The exact owner is outward same-center Y=||AF||, Z1=||I-A DF||, and causal Z2 in one 74D norm, with Y+Z1*r+Z2*r^2<r and Z1+2*Z2*r<1. No second numerical campaign or root-nonexistence claim is authorized"},
         {"id": "DECORRELATED_SCALAR_SECOND_VARIATION", "classification": "INVALIDATED_PROOF_ROUTE", "current_effect": "finite first variation survives; all 8,692 scalar denominator cells route to signed/common-frame correlation"},
         {"id": "G7_HESSIAN_WARD_SCALAR", "classification": "DOWNSTREAM_ONLY", "current_effect": "follows the force/KKT root"},
         {"id": "CKM_PMNS_PHYSICAL_EIGENBASES", "classification": "DOWNSTREAM_ONLY", "current_effect": "follows Gate 7 and sector response"},
@@ -462,7 +472,7 @@ def build_payload() -> dict[str, Any]:
         {"id": "EVENT_RESET_TO_INTERNAL_SOURCE", "class": "A", "priority": 0, "status": "RESOLVED_BY_EXISTING_CLOSED_SYSTEM_ONTOLOGY", "evidence": PATHS["source_ontology"]},
         {"id": "DOP853_TO_RESPONSE_VARIATION", "class": "C", "priority": 1, "status": "RESOLVED_FOR_EXACT_CENTER_AND_FINITE_DIRECT_FIRST_VARIATION", "evidence": PATHS["dop_second_variation"]},
         {"id": "RESPONSE_TO_CORRELATED_Y_Z1_Z2", "class": "C", "priority": 1, "status": "RESOLVED_FINAL_EXACT_CENTER_AND_CAUSAL_Z2_CERTIFIED", "evidence": PATHS["exact_affine_first_stop"]},
-        {"id": "FINITE_HISTORY_TO_HEAT_ZETA_COVECTOR", "class": "C", "priority": 0, "status": "CURRENT_BLOCKER_COMPLETE_ACTION_OWNED_OPERATOR_ORACLE_ENDPOINT_FORM_AND_72_DIRECTION_FIRST_JET_MISSING", "evidence": PATHS["final_force_kkt_verdict"]},
+        {"id": "FINITE_HISTORY_TO_HEAT_ZETA_COVECTOR", "class": "C", "priority": 0, "status": "CURRENT_BLOCKER_SAME_CENTER_OUTWARD_Y_Z1_Z2_INTERVAL_CONTRACTION", "evidence": PATHS["augmented_minimum_contraction"]},
         {"id": "COMPACT_RESET_DOMAIN_TO_CAPTURE_OR_STOP", "class": "B", "priority": 0, "status": "RESOLVED_BY_CERTIFIED_TRANSVERSE_CANONICAL_EARLIEST_STOP_AND_RETAINED_OPEN_FAMILY_THEOREM", "evidence": PATHS["exact_affine_first_hit_interval"]},
         {"id": "FAMILY_PROJECTORS_TO_MASS_CKM", "class": "B", "priority": 2, "status": "MISSING_ACTION_SELECTED_SECTOR_RESPONSE_EIGENBASES", "evidence": PATHS["generation"]},
         {"id": "NEUTRAL_PROPAGATION_TO_PMNS", "class": "B", "priority": 2, "status": "MISSING_THREE_SLOT_PROJECTION_AND_CHARGED_NEUTRAL_EIGENBASES", "evidence": PATHS["pmns"]},
@@ -936,6 +946,38 @@ def build_payload() -> dict[str, Any]:
                 "actual_to_stored_model_scale_ratio"
             ] > 100.0
         ),
+        "retained_exact_augmented_fixed_descriptor_chain_is_replayed_once": (
+            augmented_jacobians["validation_passed"] is True
+            and augmented_jacobians["summary"][
+                "maximum_stored_vs_replayed_exact_augmented_rate_2_norm"
+            ] == 0.0
+            and augmented_predictor["validation_passed"] is True
+            and augmented_predictor["summary"][
+                "maximum_reduced_right_block_condition_2"
+            ] < 100.0
+            and augmented_endpoint["validation_passed"] is True
+            and augmented_replay["validation_passed"] is True
+            and augmented_replay["summary"][
+                "maximum_Hermite_Simpson_shooting_residual_2_norm"
+            ] == 1.2217621999603292e-7
+            and augmented_replay["summary"][
+                "nonlinear_block_residual_reduction_factor"
+            ] > 1.0
+        ),
+        "minimum_contraction_localizes_same_center_Y_Z1_Z2_blocker": (
+            augmented_minimum_contraction["validation_passed"] is True
+            and augmented_minimum_contraction["adjudication"]["Gate7"]
+            == "NOT_CLOSED_PRECISE_EQUATION_LEVEL_BLOCKER_LOCALIZED"
+            and augmented_minimum_contraction["summary"][
+                "old_Z2_contains_replay_center"
+            ] is False
+            and augmented_minimum_contraction["summary"][
+                "center_displacement_to_old_Z2_radius_lower"
+            ] > 1.0e8
+            and augmented_minimum_contraction["adjudication"][
+                "next_Gate7_numerical_campaign_authorized"
+            ] is False
+        ),
         "quarter_green_corrected_carrier_is_certified": (
             recentered_cone_spectrum["validation_passed"] is True
             and recentered_cone_projector["validation_passed"] is True
@@ -1024,9 +1066,9 @@ def build_payload() -> dict[str, Any]:
         "version_lineage": lineage,
         "blocker_reconciliation": blockers,
         "interface_gaps": gaps,
-        "current_irreducible_object": "G7_COMPLETE_JOINT_FORCE_ROOT",
+        "current_irreducible_object": "G7_SAME_CENTER_INTERVAL_CONTRACTION",
         "current_irreducible_objects": [
-            "G7_COMPLETE_JOINT_FORCE_ROOT",
+            "G7_SAME_CENTER_INTERVAL_CONTRACTION",
         ],
         "integration_order": ["A_EXISTING_COMPOSITION", "C_IMPLEMENTATION", "B_THEOREM", "D_NEW_THEORY_CHOICE"],
         "validation": validations,
@@ -1037,10 +1079,10 @@ def build_payload() -> dict[str, Any]:
             "historical_theorem_erased": False,
             "measured_data_used_upstream": False,
             "frozen_prediction_retuned": False,
-            "Gate7": "ACTIVE",
+            "Gate7": "ACTIVE_NOT_CLOSED",
             "FULL_BHSM_COMPLETE": False,
         },
-        "exact_next_dependency": "DIFFERENTIATE_AND_SOLVE_THE_COMPLETE_AUGMENTED_FIXED_DESCRIPTOR_RESIDUAL_WITH_EXPLICIT_DESCRIPTOR_FIBER_EQUATION;_DO_NOT_RESELECT_BINARY64_EIGENVALUES;_CERTIFY_CONTINUOUS_INTERVAL_SHADOWING;_REBUILD_THE_CONE_FIRST_HIT_AND_CONTINUOUS_VARIATIONAL_CARRIER;_THEN_MATERIALIZE_THE_NONLINEAR_72D_HISTORY_JET,_TWO_SIDED_WEYL_CALDERON_ORACLE,_FORCE,_KKT_ROOT,_AND_PHYSICAL_HESSIAN",
+        "exact_next_dependency": "ON_THE_ACCEPTED_ONE_SHOT_REPLAY_CENTER,_PRODUCE_OUTWARD_Y=||A*F||,_Z1=||I-A*DF||,_AND_A_SAME_CENTER_CAUSAL_Z2_IN_ONE_74D_NORM;_EXHIBIT_R_WITH_Y+Z1*R+Z2*R^2<R_AND_Z1+2*Z2*R<1;_DO_NOT_START_ANOTHER_NUMERICAL_CAMPAIGN_OR_TRANSFER_THE_OLD_EXACT_AFFINE_Z2_CONE",
         "FULL_BHSM_COMPLETE": False,
     }
 

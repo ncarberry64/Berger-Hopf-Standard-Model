@@ -111,9 +111,9 @@ def test_blocker_and_interface_priority_reconciliation() -> None:
     assert sum(row["classification"] == "CURRENT_BLOCKER" for row in blockers) == 1
     old_domain = next(row for row in blockers if row["id"] == "V6_7_NORMAL_MATTER_DOMAIN_NO_GO")
     assert old_domain["classification"] == "SUPERSEDED_BY_LATER_DOMAIN"
-    assert payload["current_irreducible_object"] == "G7_COMPLETE_JOINT_FORCE_ROOT"
+    assert payload["current_irreducible_object"] == "G7_SAME_CENTER_INTERVAL_CONTRACTION"
     assert payload["current_irreducible_objects"] == [
-        "G7_COMPLETE_JOINT_FORCE_ROOT",
+        "G7_SAME_CENTER_INTERVAL_CONTRACTION",
     ]
     assert payload["integration_order"] == [
         "A_EXISTING_COMPOSITION", "C_IMPLEMENTATION", "B_THEOREM", "D_NEW_THEORY_CHOICE"
@@ -148,6 +148,13 @@ def test_blocker_and_interface_priority_reconciliation() -> None:
     assert payload["validation"][
         "stored_graph_Jacobian_is_rejected_as_complete_projected_residual_derivative"
     ] is True
+    assert payload["validation"][
+        "retained_exact_augmented_fixed_descriptor_chain_is_replayed_once"
+    ] is True
+    assert payload["validation"][
+        "minimum_contraction_localizes_same_center_Y_Z1_Z2_blocker"
+    ] is True
+    assert payload["claim_boundary"]["Gate7"] == "ACTIVE_NOT_CLOSED"
     response_gap = next(
         row for row in payload["interface_gaps"]
         if row["id"] == "RESPONSE_TO_CORRELATED_Y_Z1_Z2"

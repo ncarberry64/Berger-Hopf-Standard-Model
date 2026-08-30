@@ -78,11 +78,17 @@ independent correlated variable instead reduces the complete 370-block
 nonlinear residual to `1.3706618261694602e-7`, an `8.869895355979933`-fold
 contraction, with every transported endpoint descriptor positive.  This is
 numerical center progress, not a solved orbit or interval shadow.  The exact
-next owner is the complete augmented fixed-descriptor residual derivative and
-descriptor-fiber equation, followed by convergence/interval shadowing and a
-rebuilt cone, first hit, and continuous variational carrier.
-Gate 7 remains
-`ACTIVE`; `FULL_BHSM_COMPLETE = FALSE`.  Physical completion additionally
+retained-field-normalized 741-node augmented derivative and 74D recurrence are
+now materialized.  One authorized exact replay reduces the maximum residual
+again to `1.2217621999603292e-7` (factor `1.121872837622547`) and persists the
+regular cancelled-norm jets needed by the proper-time adapter.  The minimum
+interval adjudication nevertheless fails closed: the replay-center shift is
+`2.7017477414680254e8` times the old exact-affine `Z2` radius, and the diagnostic
+old-preconditioner image is `5.218603289632254e5` old radii.  The old cone is
+therefore not current-center authority.  Gate 7 remains `ACTIVE_NOT_CLOSED` on
+outward same-center `Y`, `Z1`, and `Z2` satisfying the two radii inequalities;
+no further alternative numerical campaign is authorized, and root
+nonexistence is not claimed.  `FULL_BHSM_COMPLETE = FALSE`.  Physical completion additionally
 requires universal spectrum/propagator, vertex, decay, loop/magnetic-moment,
 and collision engines under the no-fit prediction firewall.
 

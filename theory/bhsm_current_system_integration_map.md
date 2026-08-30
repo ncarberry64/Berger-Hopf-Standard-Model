@@ -130,8 +130,22 @@ descriptors remain positive (minimum `5.6670969137910956e-14`), and the exact
 all-370 midpoint replay contracts the maximum to `1.3706618261694602e-7` at
 interval 330, factor `8.869895355979933`.  Binary64 eigenvalues are diagnostic
 fiber residuals only.  This remains a first-order numerical candidate; the
-exact owner is the complete augmented fixed-descriptor residual derivative
-with descriptor-fiber equation, followed by a converged interval shadow.
+retained-exact-field normalized augmented derivative has now been evaluated at
+all 371 endpoints and 370 midpoints.  Its stored exact-rate replay residual is
+zero, the maximum reduced block condition is `95.01565077281272`, and one
+authorized nonlinear step reduces the maximum block residual to
+`1.2217621999603292e-7`, factor `1.121872837622547`.  This freezes the numerical
+center; no further derivative rebuild or Newton campaign is authorized.
+
+The minimum interval-contraction adjudication fails at the common-domain test.
+The accepted replay-center shift is `2.7017477414680254e8` times the old
+exact-affine `Z2` radius, while the diagnostic old-preconditioner image is
+`5.218603289632254e5` old radii.  Consequently the old cone cannot supply
+current-center interval authority.  Gate 7 is `ACTIVE_NOT_CLOSED` on exactly
+one equation-level owner: outward `Y=||AF||`, `Z1=||I-A DF||`, and a same-center
+causal `Z2` in one 74D norm, followed by a radius satisfying
+`Y+Z1*r+Z2*r^2<r` and `Z1+2*Z2*r<1`.  Failure is not root nonexistence, and the
+background is not certified for universal physical predictions.
 
 The current physical theory tuple is `BHSM-AE-2.0.0`.  It retains the v7.x
 stratified bulk/boundary functor, v14-v17 eta/Aether action lineage, v7.2

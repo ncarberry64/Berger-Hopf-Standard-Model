@@ -70,11 +70,20 @@ its correlated action first jet and evaluates the exact fixed-descriptor field
 at all endpoints and midpoints.  Its complete nonlinear maximum is
 `1.3706618261694602e-7` at interval 330, an `8.869895355979933`-fold
 contraction.  The active owner is the complete augmented fixed-descriptor
-residual derivative plus descriptor-fiber equation, then convergence and
-continuous interval shadowing before rebuilding the cone, first hit, and
-variational carrier.
+retained-exact-field derivative plus descriptor-fiber equation.  That
+741-node derivative and its 74D recurrence are now complete.  Their one
+authorized nonlinear replay reduces the maximum to `1.2217621999603292e-7`
+(`1.121872837622547`-fold), preserves a minimum selected-line gap
+`1.7343286207087592e-7`, and persists exact-flow cancelled-norm jets for the
+proper-time/Weyl adapter.  The minimum contraction adjudication rejects
+transfer of the old exact-affine cone: center shift / old `Z2` radius is
+`2.7017477414680254e8`, and diagnostic old-preconditioner `Y` / old radius is
+`5.218603289632254e5`.  Gate 7 is `ACTIVE_NOT_CLOSED`; the exact blocker is
+outward same-center `Y,Z1,Z2` in one causal 74D norm satisfying the self-map
+and contraction inequalities.  No second numerical campaign is authorized,
+and no root-nonexistence claim is made.
 `FULL_BHSM_COMPLETE = FALSE`.  Universal physical prediction engines remain
-open downstream.
+open downstream and cannot use this background as certified Gate-7 authority.
 
 This file is the current area-level status source. Detailed sprint records are
 evidence, not competing public status pages.

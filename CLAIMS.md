@@ -88,7 +88,19 @@ field, reduces the global maximum to `1.3706618261694602e-7`, factor
 `8.869895355979933`.  Not supported: treating the diagnostic binary64
 eigenvalue as descriptor authority, or calling this first-order transported
 descriptor candidate a solved orbit or interval shadow.  The complete
-augmented residual derivative and descriptor-fiber equation remain required.
+augmented residual derivative and descriptor-fiber equation have now been
+materialized with every graph normalization taken from the retained exact
+cancelled field.  Its 74D recurrence is numerically regular, and the single
+authorized retained-field replay lowers the global maximum to
+`1.2217621999603292e-7`, factor `1.121872837622547`.  Supported: this is the
+frozen final numerical center and its exact-flow cancelled-norm jets.
+Not supported: interval shadowing or transfer of the old exact-affine `Z2`
+cone.  The replay-center displacement is `2.7017477414680254e8` old cone
+radii, while the diagnostic old-preconditioner image is
+`5.218603289632254e5` radii.  The precise remaining theorem is outward
+same-center `Y=||AF||`, `Z1=||I-A DF||`, and `Z2` in one causal 74D norm, with
+`Y+Z1*r+Z2*r^2<r` and `Z1+2*Z2*r<1`.  No root nonexistence, certified Gate 7,
+or certified background for physical prediction is claimed.
 
 ## Current public claim boundary
 
