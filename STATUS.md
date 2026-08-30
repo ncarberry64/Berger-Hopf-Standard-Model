@@ -82,8 +82,15 @@ transfer of the old exact-affine cone: center shift / old `Z2` radius is
 outward same-center `Y,Z1,Z2` in one causal 74D norm satisfying the self-map
 and contraction inequalities.  No second numerical campaign is authorized,
 and no root-nonexistence claim is made.
-`FULL_BHSM_COMPLETE = FALSE`.  Universal physical prediction engines remain
-open downstream and cannot use this background as certified Gate-7 authority.
+`FULL_BHSM_COMPLETE = FALSE`.  The universal action-to-observable
+infrastructure is now machine-classified separately from scientific outputs:
+action expansion, quadratic spectrum, bare vertices/tree exchange, LSZ,
+two-body decay/collision readout, spectral forecasting, loop-ledger checks,
+form-factor projection, and the sole `G_F` scale map are
+`IMPLEMENTED_GATED`; the known-particle, benchmark, and forward-prediction
+registries are `IMPLEMENTED_PROVISIONAL`.  Every physical prediction remains
+`OPEN_INTERNAL_BLOCKER`, and none may use this background as certified
+Gate-7 authority.
 
 This file is the current area-level status source. Detailed sprint records are
 evidence, not competing public status pages.

@@ -24,6 +24,21 @@ BHSM completion before the complete action-owned joint finite-history
 operator oracle and its 72-direction first jet exist.
 `FULL_BHSM_COMPLETE = FALSE`.
 
+Supported as guarded infrastructure: a common matrix-free `S1`--`S4` action
+expansion, inverse-free quadratic pole/residue solver, bare cubic/quartic
+vertex and tree-exchange assembler, inverse-free LSZ normalization, two-body
+decay/collision readout, interval spectral/stability classifier,
+renormalization ledger checks, electromagnetic `F1/F2` projector, and one
+shared `G_F=c_F/Lambda^2` scale map.  The retained N12 adapter cross-checks
+the local 96-point action through `S2`; history/seam assembly remains open.
+These are `IMPLEMENTED_GATED` capabilities, not physical predictions.
+
+Not supported: claiming a physical pole, propagator, particle assignment,
+decay width, cross section, magnetic moment, new-particle interval, or frozen
+forecast from the presence of those APIs.  The physical-completeness matrix
+keeps every such scientific output `OPEN_INTERNAL_BLOCKER`, with its explicit
+dependencies and promotion gate.
+
 The complete 72-direction affine-carrier path and first-hit coefficient jet
 are materialized but are not the missing nonlinear oracle.  The available
 causal transfer bound is noncontractive and gives terminal uncertainty larger

@@ -89,8 +89,13 @@ therefore not current-center authority.  Gate 7 remains `ACTIVE_NOT_CLOSED` on
 outward same-center `Y`, `Z1`, and `Z2` satisfying the two radii inequalities;
 no further alternative numerical campaign is authorized, and root
 nonexistence is not claimed.  `FULL_BHSM_COMPLETE = FALSE`.  Physical completion additionally
-requires universal spectrum/propagator, vertex, decay, loop/magnetic-moment,
-and collision engines under the no-fit prediction firewall.
+requires physical instantiation of the now-implemented gated universal
+action expansion, spectrum/propagator, vertex, LSZ, decay/collision,
+loop/renormalization, spectral-forecast, magnetic-moment, and single-`G_F`
+scale capabilities under the no-fit prediction firewall.  Their APIs and
+focused tests are evidence of capability maturity, not derived observables:
+every prediction row remains `OPEN_INTERNAL_BLOCKER` until a frozen
+action-owned output exists.
 
 [![CI](https://github.com/ncarberry64/Berger-Hopf-Standard-Model/actions/workflows/ci.yml/badge.svg)](https://github.com/ncarberry64/Berger-Hopf-Standard-Model/actions/workflows/ci.yml)
 [![Latest archival release](https://img.shields.io/github/v/release/ncarberry64/Berger-Hopf-Standard-Model?label=archival%20release)](https://github.com/ncarberry64/Berger-Hopf-Standard-Model/releases/latest)

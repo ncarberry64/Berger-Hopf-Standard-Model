@@ -1043,9 +1043,16 @@ def build_payload() -> dict[str, Any]:
         "physical_completeness_matrix_is_required_and_open": (
             records["physical_completeness"]["validation_passed"] is True
             and records["physical_completeness"]["current_status"]
-            == "OPEN_GATE7_OPERATOR_ORACLE_AND_DOWNSTREAM_PHYSICS_ENGINES"
+            == (
+                "GATE7_INTERVAL_PROMOTION_OPEN__"
+                "UNIVERSAL_ACTION_TO_OBSERVABLE_INFRASTRUCTURE_IMPLEMENTED_GATED"
+            )
             and all(
-                row["classification"] == "OPEN_INTERNAL_BLOCKER"
+                row["prediction_classification"] == "OPEN_INTERNAL_BLOCKER"
+                for row in records["physical_completeness"]["records"]
+            )
+            and any(
+                row["implementation_status"] == "IMPLEMENTED_GATED"
                 for row in records["physical_completeness"]["records"]
             )
         ),

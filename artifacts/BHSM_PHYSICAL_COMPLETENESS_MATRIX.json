@@ -1,6 +1,11 @@
 {
   "FULL_BHSM_COMPLETE": false,
-  "artifact": "BHSM_PHYSICAL_COMPLETENESS_MATRIX",
+  "Gate7_authority": {
+    "background_freeze_for_universal_physics_engine": "NOT_YET_AUTHORIZED_BY_GATE7",
+    "exact_blocker": "ON_THE_ACCEPTED_ONE_SHOT_REPLAY_CENTER,_PRODUCE_OUTWARD_Y=||A*F||,_Z1=||I-A*DF||,_AND_A_SAME_CENTER_Z2_LIPSCHITZ_BOUND_IN_ONE_COMMON_CAUSAL_74D_NORM;_THEN_EXHIBIT_R_WITH_Y+Z1*R+Z2*R^2<R_AND_Z1+2*Z2*R<1._THE_OLD_EXACT_AFFINE_Z2_CONE_CANNOT_BE_TRANSFERRED.",
+    "path": "artifacts/flagship_integration/BHSM_N12_GATE7_AUGMENTED_FIXED_DESCRIPTOR_MINIMUM_CONTRACTION_ADJUDICATION.json",
+    "status": "ACTIVE_NOT_CLOSED"
+  },
   "allowed_classifications": [
     "DERIVED_POINT_PREDICTION",
     "DERIVED_INTERVAL_PREDICTION",
@@ -10,49 +15,1028 @@
     "OPEN_INTERNAL_BLOCKER",
     "OUTSIDE_BHSM_1_0_SCOPE"
   ],
-  "current_status": "OPEN_GATE7_OPERATOR_ORACLE_AND_DOWNSTREAM_PHYSICS_ENGINES",
-  "prediction_firewall": "MEASURED_VALUES_MAY_NOT_SELECT_UPSTREAM_BRANCH_COEFFICIENT_NORMALIZATION_FORMULA_OR_CARRIER",
+  "allowed_implementation_statuses": [
+    "NOT_IMPLEMENTED",
+    "IMPLEMENTED_PROVISIONAL",
+    "IMPLEMENTED_GATED",
+    "IMPLEMENTED_PROMOTABLE"
+  ],
+  "artifact": "BHSM_PHYSICAL_COMPLETENESS_MATRIX",
+  "canonical_action_version": "BHSM-AE-2.0.0",
+  "completion_rule": {
+    "Gate7_must_be_closed": true,
+    "every_required_row_must_leave_OPEN_INTERNAL_BLOCKER": true,
+    "implemented_API_is_never_sufficient_evidence_of_a_prediction": true,
+    "point_or_interval_predictions_must_be_frozen_before_comparison": true
+  },
+  "current_status": "GATE7_INTERVAL_PROMOTION_OPEN__UNIVERSAL_ACTION_TO_OBSERVABLE_INFRASTRUCTURE_IMPLEMENTED_GATED",
+  "prediction_firewall": "MEASURED_VALUES_MAY_NOT_SELECT_UPSTREAM_BRANCH_COEFFICIENT_NORMALIZATION_FORMULA_CARRIER_MODE_OR_RENORMALIZATION_SCALE",
   "records": [
     {
-      "classification": "OPEN_INTERNAL_BLOCKER",
-      "id": "MUON_MAGNETIC_MOMENT",
-      "required_mechanism": "UNIVERSAL_ELECTROMAGNETIC_VERTEX_AND_NO_FIT_LOOP_PREDICTION"
+      "action_owned": true,
+      "dependencies_open": [
+        "ON_THE_ACCEPTED_ONE_SHOT_REPLAY_CENTER,_PRODUCE_OUTWARD_Y=||A*F||,_Z1=||I-A*DF||,_AND_A_SAME_CENTER_Z2_LIPSCHITZ_BOUND_IN_ONE_COMMON_CAUSAL_74D_NORM;_THEN_EXHIBIT_R_WITH_Y+Z1*R+Z2*R^2<R_AND_Z1+2*Z2*R<1._THE_OLD_EXACT_AFFINE_Z2_CONE_CANNOT_BE_TRANSFERRED."
+      ],
+      "empirical_input_used": false,
+      "evidence": [
+        {
+          "kind": "gate_authority",
+          "path": "artifacts/flagship_integration/BHSM_N12_GATE7_AUGMENTED_FIXED_DESCRIPTOR_MINIMUM_CONTRACTION_ADJUDICATION.json",
+          "sha256": "D4E91B583439F3B42B0BCD26982B97F69B580DB92896B15A31AD2488B5922F5B"
+        }
+      ],
+      "id": "GATE7_PHYSICAL_BACKGROUND",
+      "implementation_detail": "PRECISE_EQUATION_LEVEL_BLOCKER_LOCALIZED",
+      "implementation_status": "NOT_IMPLEMENTED",
+      "last_verified_commit": "0939e662e953c5e6038b2a4338679188ffe91e79",
+      "physical_prediction_materialized": false,
+      "prediction_classification": "OPEN_INTERNAL_BLOCKER",
+      "promotion_gate": "SAME_CENTER_OUTWARD_74D_Y_Z1_Z2_CONTRACTION",
+      "required_output": "ONE_FROZEN_ACTION_SELECTED_PHYSICAL_BACKGROUND_WITH_AN_OUTWARD_CONTRACTION_CERTIFICATE",
+      "satisfied_dependencies": [
+        "one retained-exact-field 74D replay center",
+        "one-shot nonlinear replay"
+      ]
     },
     {
-      "classification": "OPEN_INTERNAL_BLOCKER",
-      "id": "PARTICLE_STABILITY_AND_DECAYS",
-      "required_mechanism": "ACTION_OWNED_SELECTION_RULES_CHANNELS_AND_LIFETIME_OR_STABILITY_BOUNDS"
+      "action_owned": true,
+      "dependencies_open": [
+        "Gate7 frozen background",
+        "history and seam action assembly",
+        "global physical quotient frame"
+      ],
+      "empirical_input_used": false,
+      "evidence": [
+        {
+          "kind": "gate_authority",
+          "path": "artifacts/flagship_integration/BHSM_N12_GATE7_AUGMENTED_FIXED_DESCRIPTOR_MINIMUM_CONTRACTION_ADJUDICATION.json",
+          "sha256": "D4E91B583439F3B42B0BCD26982B97F69B580DB92896B15A31AD2488B5922F5B"
+        },
+        {
+          "kind": "source",
+          "path": "src/bhsm/interface/universal_physical_action_expansion.py",
+          "sha256": "32D4815BB8BE0EBA351A0BC7DAE47ACB0A7ED79EA9A91D74B41AF36E8530B0B0"
+        },
+        {
+          "kind": "focused_test",
+          "path": "tests/test_universal_physical_action_expansion.py",
+          "sha256": "C092266109BF7EDA24E48A247FC712BF278149FCCF3AAC0D4EFED7EBA0BA76CC"
+        },
+        {
+          "kind": "source",
+          "path": "src/bhsm/interface/retained_n12_action_expansion_adapter.py",
+          "sha256": "7AB2977352F3C4617DB128E9044655FB03726139744315228FCE055193C5FEFF"
+        },
+        {
+          "kind": "focused_test",
+          "path": "tests/test_retained_n12_action_expansion_adapter.py",
+          "sha256": "FCEA5C121EE1B0F8EBDD3D7812816AF07A48D59A6D906762E0D4260D644201F9"
+        }
+      ],
+      "id": "UNIVERSAL_ACTION_EXPANSION",
+      "implementation_detail": "VALIDATED_LOCAL_KERNEL_GATED",
+      "implementation_status": "IMPLEMENTED_GATED",
+      "last_verified_commit": "0939e662e953c5e6038b2a4338679188ffe91e79",
+      "physical_prediction_materialized": false,
+      "prediction_classification": "OPEN_INTERNAL_BLOCKER",
+      "promotion_gate": "GATE7_CLOSED_PLUS_HISTORY_SEAM_ACTION_ASSEMBLY",
+      "required_output": "ACTION_OWNED_S2_S3_S4_ON_THE_FROZEN_PHYSICAL_HISTORY_QUOTIENT",
+      "satisfied_dependencies": [
+        "matrix-free S3/S4 API",
+        "retained 96-point local S0-S2 equivalence audit"
+      ]
     },
     {
-      "classification": "OPEN_INTERNAL_BLOCKER",
-      "id": "NEW_PARTICLE_SPECTRAL_ENCLOSURES",
-      "required_mechanism": "RIGOROUS_SPECTRAL_ENCLOSURES_OR_EXCLUSIONS_WITH_DECLARED_DOMAIN"
+      "action_owned": true,
+      "dependencies_open": [
+        "Gate7 closed background",
+        "current AE2 background attachment",
+        "machine-readable full gauge-fermion-HS action",
+        "same-action replacement quantum saddle",
+        "action-selected HS direction",
+        "action-derived Yukawa matrices and spectrum"
+      ],
+      "empirical_input_used": false,
+      "evidence": [
+        {
+          "kind": "gate_authority",
+          "path": "artifacts/flagship_integration/BHSM_N12_GATE7_AUGMENTED_FIXED_DESCRIPTOR_MINIMUM_CONTRACTION_ADJUDICATION.json",
+          "sha256": "D4E91B583439F3B42B0BCD26982B97F69B580DB92896B15A31AD2488B5922F5B"
+        },
+        {
+          "kind": "source",
+          "path": "src/bhsm/interface/retained_sm_physics_adapter.py",
+          "sha256": "5C84D81AE5FF5194465F2440C4BD039B008CC83391C6B30F2A2939395F02D013"
+        },
+        {
+          "kind": "focused_test",
+          "path": "tests/test_retained_sm_physics_adapter.py",
+          "sha256": "5428F890D8E2CBCDD86C69B85E314ABA4400946335F713E947AE0E9F81FA0DE4"
+        }
+      ],
+      "id": "RETAINED_SM_COMPONENT_ATTACHMENT",
+      "implementation_detail": "RETAINED_COMPONENT_MATCH_AND_NONPROMOTION_BLOCKERS_IMPLEMENTED",
+      "implementation_status": "IMPLEMENTED_GATED",
+      "last_verified_commit": "0939e662e953c5e6038b2a4338679188ffe91e79",
+      "physical_prediction_materialized": false,
+      "prediction_classification": "OPEN_INTERNAL_BLOCKER",
+      "promotion_gate": "CURRENT_AE2_BACKGROUND_FULL_FIELD_ACTION_QUANTUM_SADDLE_AND_SCALE",
+      "required_output": "CURRENT_AE2_ATTACHMENT_OF_RETAINED_BUNDLE_REPRESENTATIONS_SELECTION_RULES_AND_RESPONSE_SEEDS",
+      "satisfied_dependencies": [
+        "faithful three-family chiral bundle",
+        "allowed Yukawa channel classes",
+        "gauge/HS response seeds",
+        "historical-center nonpromotion"
+      ]
     },
     {
-      "classification": "OPEN_INTERNAL_BLOCKER",
-      "id": "KNOWN_PARTICLE_COVERAGE",
-      "required_mechanism": "COMPLETE_KNOWN_PARTICLE_MATRIX_WITH_ONE_CLASSIFICATION_PER_OBSERVABLE"
-    },
-    {
-      "classification": "OPEN_INTERNAL_BLOCKER",
+      "action_owned": true,
+      "dependencies_open": [
+        "frozen history S2 pencil",
+        "Ward/BRST cancellation",
+        "action-owned momentum map",
+        "physical scale instance"
+      ],
+      "empirical_input_used": false,
+      "evidence": [
+        {
+          "kind": "gate_authority",
+          "path": "artifacts/flagship_integration/BHSM_N12_GATE7_AUGMENTED_FIXED_DESCRIPTOR_MINIMUM_CONTRACTION_ADJUDICATION.json",
+          "sha256": "D4E91B583439F3B42B0BCD26982B97F69B580DB92896B15A31AD2488B5922F5B"
+        },
+        {
+          "kind": "source",
+          "path": "src/bhsm/interface/universal_quadratic_spectrum.py",
+          "sha256": "097D1D3DD16B85F168F4E2DF1B43502D61B236DA724D638CB6C2DA3B5B813341"
+        },
+        {
+          "kind": "focused_test",
+          "path": "tests/test_universal_quadratic_spectrum.py",
+          "sha256": "73C33AA56A8E07A11419A3E87245904DD05924F15CD27A07DCF0EB37DF8C9DB8"
+        }
+      ],
       "id": "UNIVERSAL_QUADRATIC_SPECTRUM_AND_PROPAGATORS",
-      "required_mechanism": "ACTION_OWNED_GAUGE_FIXED_PHYSICAL_POLES_RESIDUES_NORMALIZATION_AND_GHOST_CANCELLATION"
+      "implementation_detail": "GENERAL_DESCRIPTOR_ALGEBRA_IMPLEMENTED_GATED",
+      "implementation_status": "IMPLEMENTED_GATED",
+      "last_verified_commit": "0939e662e953c5e6038b2a4338679188ffe91e79",
+      "physical_prediction_materialized": false,
+      "prediction_classification": "OPEN_INTERNAL_BLOCKER",
+      "promotion_gate": "PHYSICAL_S2_PENCIL_BRST_SCALE_AND_GATE7",
+      "required_output": "ACTION_OWNED_POLES_RESIDUES_AND_GAUGE_FIXED_PROPAGATORS",
+      "satisfied_dependencies": [
+        "inverse-free generalized eigenproblem",
+        "simple-pole residue algebra"
+      ]
     },
     {
-      "classification": "OPEN_INTERNAL_BLOCKER",
+      "action_owned": true,
+      "dependencies_open": [
+        "history/seam S3/S4 assembly",
+        "action-selected external modes",
+        "momentum and symmetry bookkeeping"
+      ],
+      "empirical_input_used": false,
+      "evidence": [
+        {
+          "kind": "gate_authority",
+          "path": "artifacts/flagship_integration/BHSM_N12_GATE7_AUGMENTED_FIXED_DESCRIPTOR_MINIMUM_CONTRACTION_ADJUDICATION.json",
+          "sha256": "D4E91B583439F3B42B0BCD26982B97F69B580DB92896B15A31AD2488B5922F5B"
+        },
+        {
+          "kind": "source",
+          "path": "src/bhsm/interface/universal_physical_action_expansion.py",
+          "sha256": "32D4815BB8BE0EBA351A0BC7DAE47ACB0A7ED79EA9A91D74B41AF36E8530B0B0"
+        },
+        {
+          "kind": "focused_test",
+          "path": "tests/test_universal_physical_action_expansion.py",
+          "sha256": "C092266109BF7EDA24E48A247FC712BF278149FCCF3AAC0D4EFED7EBA0BA76CC"
+        },
+        {
+          "kind": "source",
+          "path": "src/bhsm/interface/universal_vertex_amplitude.py",
+          "sha256": "E6B10B5387D090CAE71BB92207A41B7232F81291A6013EA4B31EFFDC8D1966A2"
+        },
+        {
+          "kind": "focused_test",
+          "path": "tests/test_universal_vertex_amplitude.py",
+          "sha256": "A1437A77F86E87FEAFB2D0669E7A41629423E011672751E4DA3206617BA45F38"
+        },
+        {
+          "kind": "source",
+          "path": "src/bhsm/interface/retained_n12_action_expansion_adapter.py",
+          "sha256": "7AB2977352F3C4617DB128E9044655FB03726139744315228FCE055193C5FEFF"
+        },
+        {
+          "kind": "focused_test",
+          "path": "tests/test_retained_n12_action_expansion_adapter.py",
+          "sha256": "FCEA5C121EE1B0F8EBDD3D7812816AF07A48D59A6D906762E0D4260D644201F9"
+        }
+      ],
       "id": "UNIVERSAL_CUBIC_AND_QUARTIC_VERTEX_GENERATOR",
-      "required_mechanism": "MACHINE_READABLE_ACTION_DERIVATIVES_WITH_TENSOR_MOMENTUM_GAUGE_COLOR_FLAVOR_AND_SYMMETRY_FACTORS"
+      "implementation_detail": "BARE_VERTEX_AND_TREE_EXCHANGE_ALGEBRA_IMPLEMENTED_GATED",
+      "implementation_status": "IMPLEMENTED_GATED",
+      "last_verified_commit": "0939e662e953c5e6038b2a4338679188ffe91e79",
+      "physical_prediction_materialized": false,
+      "prediction_classification": "OPEN_INTERNAL_BLOCKER",
+      "promotion_gate": "PHYSICAL_HISTORY_S3_S4_AND_ACTION_SELECTED_MODES",
+      "required_output": "MACHINE_READABLE_ACTION_OWNED_S3_S4_VERTICES_WITH_ALL_INTERNAL_INDICES",
+      "satisfied_dependencies": [
+        "matrix-free bare S3/S4 contractions",
+        "inverse-free tree exchange solve"
+      ]
     },
     {
-      "classification": "OPEN_INTERNAL_BLOCKER",
+      "action_owned": true,
+      "dependencies_open": [
+        "current-background local zero-momentum gauge residues",
+        "electric-magnetic Lorentzian equality",
+        "same-action coupling normalization"
+      ],
+      "empirical_input_used": false,
+      "evidence": [
+        {
+          "kind": "gate_authority",
+          "path": "artifacts/flagship_integration/BHSM_N12_GATE7_AUGMENTED_FIXED_DESCRIPTOR_MINIMUM_CONTRACTION_ADJUDICATION.json",
+          "sha256": "D4E91B583439F3B42B0BCD26982B97F69B580DB92896B15A31AD2488B5922F5B"
+        },
+        {
+          "kind": "source",
+          "path": "src/bhsm/interface/bhsm_standard_model_gauge_vertices.py",
+          "sha256": "F9DAC796A24075358EFCD3D414527EFB1DF94AF937C905BC62A711A69439333D"
+        },
+        {
+          "kind": "focused_test",
+          "path": "tests/test_bhsm_standard_model_gauge_vertices.py",
+          "sha256": "8D5F3608AA86F327251F44C4EE89EEFAE03C2AD58D88EBEADC9132340BD7277B"
+        },
+        {
+          "kind": "source",
+          "path": "src/bhsm/interface/retained_sm_physics_adapter.py",
+          "sha256": "5C84D81AE5FF5194465F2440C4BD039B008CC83391C6B30F2A2939395F02D013"
+        },
+        {
+          "kind": "focused_test",
+          "path": "tests/test_retained_sm_physics_adapter.py",
+          "sha256": "5428F890D8E2CBCDD86C69B85E314ABA4400946335F713E947AE0E9F81FA0DE4"
+        }
+      ],
+      "id": "STANDARD_MODEL_GAUGE_VERTEX_TENSORS",
+      "implementation_detail": "REPRESENTATION_AND_VERTEX_TENSORS_IMPLEMENTED_COUPLING_PROMOTION_GATED",
+      "implementation_status": "IMPLEMENTED_GATED",
+      "last_verified_commit": "0939e662e953c5e6038b2a4338679188ffe91e79",
+      "physical_prediction_materialized": false,
+      "prediction_classification": "OPEN_INTERNAL_BLOCKER",
+      "promotion_gate": "CURRENT_LOCAL_ZERO_MOMENTUM_LORENTZIAN_GAUGE_RESIDUES",
+      "required_output": "RETAINED_SU3_SU2_U1_REPRESENTATION_TENSORS_WITH_ACTION_DERIVED_LOCAL_COUPLINGS",
+      "satisfied_dependencies": [
+        "retained multiplet generators",
+        "nonabelian structure constants",
+        "fermion-gauge and three-gauge internal tensors",
+        "measured-coupling rejection"
+      ]
+    },
+    {
+      "action_owned": true,
+      "dependencies_open": [
+        "current action-selected physical HS direction",
+        "current same-action 3x3 Yukawa matrices",
+        "physical HS amplitude",
+        "simple action-derived mass spectra"
+      ],
+      "empirical_input_used": false,
+      "evidence": [
+        {
+          "kind": "gate_authority",
+          "path": "artifacts/flagship_integration/BHSM_N12_GATE7_AUGMENTED_FIXED_DESCRIPTOR_MINIMUM_CONTRACTION_ADJUDICATION.json",
+          "sha256": "D4E91B583439F3B42B0BCD26982B97F69B580DB92896B15A31AD2488B5922F5B"
+        },
+        {
+          "kind": "source",
+          "path": "src/bhsm/interface/bhsm_yukawa_vertices.py",
+          "sha256": "F332E70CBC1CF93F30BF429E0889E9CD56884C817E5B958490277800129DCDEC"
+        },
+        {
+          "kind": "focused_test",
+          "path": "tests/test_bhsm_yukawa_vertices.py",
+          "sha256": "37C3D186031CD26E4D4EE95929E975CCA1E550E56525F7650E8204F917456241"
+        },
+        {
+          "kind": "source",
+          "path": "src/bhsm/interface/retained_sm_physics_adapter.py",
+          "sha256": "5C84D81AE5FF5194465F2440C4BD039B008CC83391C6B30F2A2939395F02D013"
+        },
+        {
+          "kind": "focused_test",
+          "path": "tests/test_retained_sm_physics_adapter.py",
+          "sha256": "5428F890D8E2CBCDD86C69B85E314ABA4400946335F713E947AE0E9F81FA0DE4"
+        }
+      ],
+      "id": "ACTION_OWNED_YUKAWA_MASS_AND_MIXING",
+      "implementation_detail": "YUKAWA_MASS_AND_MIXING_ALGEBRA_IMPLEMENTED_SELECTION_GATED",
+      "implementation_status": "IMPLEMENTED_GATED",
+      "last_verified_commit": "0939e662e953c5e6038b2a4338679188ffe91e79",
+      "physical_prediction_materialized": false,
+      "prediction_classification": "OPEN_INTERNAL_BLOCKER",
+      "promotion_gate": "CURRENT_SAME_ACTION_HS_HESSIAN_AND_PHYSICAL_HS_AMPLITUDE",
+      "required_output": "SAME_ACTION_YUKAWA_MATRICES_FERMION_MASS_RESPONSES_AND_RELATIVE_LEFT_MIXING",
+      "satisfied_dependencies": [
+        "four retained gauge-invariant channel types",
+        "same-action-HS-Hessian provenance gate",
+        "SVD mass response",
+        "CKM/PMNS-type relative left frames",
+        "observable-fit rejection"
+      ]
+    },
+    {
+      "action_owned": true,
+      "dependencies_open": [
+        "physical simple poles",
+        "action-selected mode identities",
+        "frozen-background pole provenance"
+      ],
+      "empirical_input_used": false,
+      "evidence": [
+        {
+          "kind": "gate_authority",
+          "path": "artifacts/flagship_integration/BHSM_N12_GATE7_AUGMENTED_FIXED_DESCRIPTOR_MINIMUM_CONTRACTION_ADJUDICATION.json",
+          "sha256": "D4E91B583439F3B42B0BCD26982B97F69B580DB92896B15A31AD2488B5922F5B"
+        },
+        {
+          "kind": "source",
+          "path": "src/bhsm/interface/universal_lsz.py",
+          "sha256": "9A734317A3704469BF0D93E8434DF9643F4B3AAA4DD2F114B9E841CD1215ADFB"
+        },
+        {
+          "kind": "focused_test",
+          "path": "tests/test_universal_lsz.py",
+          "sha256": "AAB8011A4D5F552F826FF92F7CD4D81DF5B014768983BE73F1D735D64056D0CA"
+        },
+        {
+          "kind": "source",
+          "path": "src/bhsm/interface/universal_quadratic_spectrum.py",
+          "sha256": "097D1D3DD16B85F168F4E2DF1B43502D61B236DA724D638CB6C2DA3B5B813341"
+        },
+        {
+          "kind": "focused_test",
+          "path": "tests/test_universal_quadratic_spectrum.py",
+          "sha256": "73C33AA56A8E07A11419A3E87245904DD05924F15CD27A07DCF0EB37DF8C9DB8"
+        }
+      ],
+      "id": "LSZ_EXTERNAL_STATE_NORMALIZATION",
+      "implementation_detail": "INVERSE_FREE_SIMPLE_POLE_NORMALIZATION_IMPLEMENTED_GATED",
+      "implementation_status": "IMPLEMENTED_GATED",
+      "last_verified_commit": "0939e662e953c5e6038b2a4338679188ffe91e79",
+      "physical_prediction_materialized": false,
+      "prediction_classification": "OPEN_INTERNAL_BLOCKER",
+      "promotion_gate": "SIMPLE_ACTION_SELECTED_PHYSICAL_POLES",
+      "required_output": "ACTION_SELECTED_UNIT_RESIDUE_EXTERNAL_STATES",
+      "satisfied_dependencies": [
+        "descriptor-derivative unit-residue normalization"
+      ]
+    },
+    {
+      "action_owned": true,
+      "dependencies_open": [
+        "complete action-owned diagram ledger",
+        "complete counterterm ledger",
+        "sector Ward identities",
+        "finite observable extraction"
+      ],
+      "empirical_input_used": false,
+      "evidence": [
+        {
+          "kind": "gate_authority",
+          "path": "artifacts/flagship_integration/BHSM_N12_GATE7_AUGMENTED_FIXED_DESCRIPTOR_MINIMUM_CONTRACTION_ADJUDICATION.json",
+          "sha256": "D4E91B583439F3B42B0BCD26982B97F69B580DB92896B15A31AD2488B5922F5B"
+        },
+        {
+          "kind": "source",
+          "path": "src/bhsm/interface/universal_loop_renormalization.py",
+          "sha256": "A6DB85FFA7DE5439A055C56FA9E308C81BAD66D96585AAF9551AC2374FE817EF"
+        },
+        {
+          "kind": "focused_test",
+          "path": "tests/test_universal_loop_renormalization.py",
+          "sha256": "121593D315B4BB83D54293BE18F8972FB6537E457AA66AC10CF47919B1F6826F"
+        }
+      ],
       "id": "RENORMALIZATION_AND_LOOP_COMPLETION",
-      "required_mechanism": "BHSM_NATIVE_REGULATION_COUNTERTERMS_RUNNING_WARD_SLAVNOV_TAYLOR_AND_FINITE_OBSERVABLE_EXTRACTION"
+      "implementation_detail": "REGULATED_LEDGER_AND_PROMOTION_GATES_IMPLEMENTED",
+      "implementation_status": "IMPLEMENTED_GATED",
+      "last_verified_commit": "0939e662e953c5e6038b2a4338679188ffe91e79",
+      "physical_prediction_materialized": false,
+      "prediction_classification": "OPEN_INTERNAL_BLOCKER",
+      "promotion_gate": "COMPLETE_DIAGRAM_COUNTERTERM_AND_WARD_LEDGER",
+      "required_output": "FINITE_ACTION_OWNED_LOOP_VERTICES_WITH_WARD_SLAVNOV_TAYLOR_CLOSURE",
+      "satisfied_dependencies": [
+        "Laurent ledger",
+        "counterterm/ghost/Jacobian categories",
+        "Ward residual checks",
+        "observable-fit rejection"
+      ]
     },
     {
-      "classification": "OPEN_INTERNAL_BLOCKER",
+      "action_owned": true,
+      "dependencies_open": [
+        "action-derived frozen c_F",
+        "owner-authorized G_F comparison datum",
+        "frozen background identity"
+      ],
+      "empirical_input_used": false,
+      "evidence": [
+        {
+          "kind": "gate_authority",
+          "path": "artifacts/flagship_integration/BHSM_N12_GATE7_AUGMENTED_FIXED_DESCRIPTOR_MINIMUM_CONTRACTION_ADJUDICATION.json",
+          "sha256": "D4E91B583439F3B42B0BCD26982B97F69B580DB92896B15A31AD2488B5922F5B"
+        },
+        {
+          "kind": "source",
+          "path": "src/bhsm/interface/universal_gf_scale.py",
+          "sha256": "AECF8243975EDCF392A2D93B2864FF91DECC06C3EED5413F2959772A62C0808C"
+        },
+        {
+          "kind": "focused_test",
+          "path": "tests/test_universal_gf_scale.py",
+          "sha256": "D186CF4A9FB75077A20491856C40F056B0FC557818942312AFC7BAC3086EF428"
+        }
+      ],
+      "id": "UNIVERSAL_GF_SCALE_MAP",
+      "implementation_detail": "SOLE_CALIBRATION_FORMULA_IMPLEMENTED_INPUTS_OPEN",
+      "implementation_status": "IMPLEMENTED_GATED",
+      "last_verified_commit": "0939e662e953c5e6038b2a4338679188ffe91e79",
+      "physical_prediction_materialized": false,
+      "prediction_classification": "OPEN_INTERNAL_BLOCKER",
+      "promotion_gate": "FROZEN_ACTION_C_F_AND_SINGLE_AUTHORIZED_G_F_CALIBRATION",
+      "required_output": "ONE_SHARED_DIMENSIONAL_MAP_G_F_EQUALS_C_F_OVER_LAMBDA_SQUARED",
+      "satisfied_dependencies": [
+        "one-calibration API",
+        "sector-retuning rejection"
+      ]
+    },
+    {
+      "action_owned": true,
+      "dependencies_open": [
+        "physical spectrum",
+        "quantum-number assignment",
+        "known-particle comparison layer",
+        "all required benchmark predictions"
+      ],
+      "empirical_input_used": false,
+      "evidence": [
+        {
+          "kind": "gate_authority",
+          "path": "artifacts/flagship_integration/BHSM_N12_GATE7_AUGMENTED_FIXED_DESCRIPTOR_MINIMUM_CONTRACTION_ADJUDICATION.json",
+          "sha256": "D4E91B583439F3B42B0BCD26982B97F69B580DB92896B15A31AD2488B5922F5B"
+        },
+        {
+          "kind": "source",
+          "path": "src/bhsm/interface/universal_spectral_forecast.py",
+          "sha256": "067EB6DBFD80D7DE3D911C94C73512640A1B66E8A5BC9634337B6435D4FBC36A"
+        },
+        {
+          "kind": "focused_test",
+          "path": "tests/test_universal_spectral_forecast.py",
+          "sha256": "19DE46759AF3C3E3B2F5C4D85CFAA806E202E27DB6EB0B16219192004BF185D0"
+        },
+        {
+          "kind": "source",
+          "path": "src/bhsm/interface/retained_sm_physics_adapter.py",
+          "sha256": "5C84D81AE5FF5194465F2440C4BD039B008CC83391C6B30F2A2939395F02D013"
+        },
+        {
+          "kind": "focused_test",
+          "path": "tests/test_retained_sm_physics_adapter.py",
+          "sha256": "5428F890D8E2CBCDD86C69B85E314ABA4400946335F713E947AE0E9F81FA0DE4"
+        },
+        {
+          "kind": "source",
+          "path": "src/bhsm/interface/bhsm_yukawa_vertices.py",
+          "sha256": "F332E70CBC1CF93F30BF429E0889E9CD56884C817E5B958490277800129DCDEC"
+        },
+        {
+          "kind": "focused_test",
+          "path": "tests/test_bhsm_yukawa_vertices.py",
+          "sha256": "37C3D186031CD26E4D4EE95929E975CCA1E550E56525F7650E8204F917456241"
+        },
+        {
+          "kind": "source",
+          "path": "src/bhsm/interface/universal_prediction_freeze.py",
+          "sha256": "7F23D537EC0B0ED8F8642572FDC7AE2525D018CA424BFDB4576A356DBAA592BC"
+        },
+        {
+          "kind": "focused_test",
+          "path": "tests/test_universal_prediction_freeze.py",
+          "sha256": "17CEB9DFA70A31C1D7D8710A39AE4AEAAED24F940C585DED340997982AFA3AA2"
+        }
+      ],
+      "id": "KNOWN_PARTICLE_COVERAGE",
+      "implementation_detail": "CLASSIFICATION_LEDGER_ONLY",
+      "implementation_status": "IMPLEMENTED_PROVISIONAL",
+      "last_verified_commit": "0939e662e953c5e6038b2a4338679188ffe91e79",
+      "physical_prediction_materialized": false,
+      "prediction_classification": "OPEN_INTERNAL_BLOCKER",
+      "promotion_gate": "COMPLETE_PHYSICAL_SPECTRUM_AND_COMPARISON_AFTER_FREEZE",
+      "required_output": "COMPLETE_ACTION_DERIVED_MODE_AND_OBSERVABLE_MATRIX_FOR_ESTABLISHED_PARTICLE_PHYSICS",
+      "satisfied_dependencies": [
+        "interval mode and stability record types",
+        "immutable coverage matrix and downstream comparison firewall",
+        "retained chiral bundle match",
+        "mass/mixing readout algebra"
+      ]
+    },
+    {
+      "action_owned": false,
+      "dependencies_open": [
+        "physical mode spectrum",
+        "complete action-owned channel enumeration",
+        "renormalized amplitudes",
+        "multi-body channels",
+        "physical unit map"
+      ],
+      "empirical_input_used": false,
+      "evidence": [
+        {
+          "kind": "gate_authority",
+          "path": "artifacts/flagship_integration/BHSM_N12_GATE7_AUGMENTED_FIXED_DESCRIPTOR_MINIMUM_CONTRACTION_ADJUDICATION.json",
+          "sha256": "D4E91B583439F3B42B0BCD26982B97F69B580DB92896B15A31AD2488B5922F5B"
+        },
+        {
+          "kind": "source",
+          "path": "src/bhsm/interface/universal_decay_collision.py",
+          "sha256": "1812BEFBD496239043F02D45C1482B0FFEB837290496E37664ED423D7339B667"
+        },
+        {
+          "kind": "focused_test",
+          "path": "tests/test_universal_decay_collision.py",
+          "sha256": "5F3F87176AF549BDF71FF5D3B9BB2D3FA2C03862D74FC2CC0B135443B4075528"
+        },
+        {
+          "kind": "source",
+          "path": "src/bhsm/interface/universal_spectral_forecast.py",
+          "sha256": "067EB6DBFD80D7DE3D911C94C73512640A1B66E8A5BC9634337B6435D4FBC36A"
+        },
+        {
+          "kind": "focused_test",
+          "path": "tests/test_universal_spectral_forecast.py",
+          "sha256": "19DE46759AF3C3E3B2F5C4D85CFAA806E202E27DB6EB0B16219192004BF185D0"
+        },
+        {
+          "kind": "source",
+          "path": "src/bhsm/interface/universal_lsz.py",
+          "sha256": "9A734317A3704469BF0D93E8434DF9643F4B3AAA4DD2F114B9E841CD1215ADFB"
+        },
+        {
+          "kind": "focused_test",
+          "path": "tests/test_universal_lsz.py",
+          "sha256": "AAB8011A4D5F552F826FF92F7CD4D81DF5B014768983BE73F1D735D64056D0CA"
+        },
+        {
+          "kind": "source",
+          "path": "src/bhsm/interface/universal_vertex_amplitude.py",
+          "sha256": "E6B10B5387D090CAE71BB92207A41B7232F81291A6013EA4B31EFFDC8D1966A2"
+        },
+        {
+          "kind": "focused_test",
+          "path": "tests/test_universal_vertex_amplitude.py",
+          "sha256": "A1437A77F86E87FEAFB2D0669E7A41629423E011672751E4DA3206617BA45F38"
+        }
+      ],
+      "id": "PARTICLE_STABILITY_AND_DECAYS",
+      "implementation_detail": "TWO_BODY_READOUT_AND_INTERVAL_STABILITY_ALGEBRA_IMPLEMENTED_GATED",
+      "implementation_status": "IMPLEMENTED_GATED",
+      "last_verified_commit": "0939e662e953c5e6038b2a4338679188ffe91e79",
+      "physical_prediction_materialized": false,
+      "prediction_classification": "OPEN_INTERNAL_BLOCKER",
+      "promotion_gate": "COMPLETE_ACTION_OWNED_CHANNEL_AND_AMPLITUDE_LEDGER",
+      "required_output": "COMPLETE_CHANNEL_SELECTION_PARTIAL_WIDTH_TOTAL_WIDTH_AND_LIFETIME_REGISTRY",
+      "satisfied_dependencies": [
+        "two-body phase space",
+        "channel aggregation",
+        "complete-ledger stability criterion"
+      ]
+    },
+    {
+      "action_owned": false,
+      "dependencies_open": [
+        "physical external modes",
+        "renormalized complete amplitudes",
+        "benchmark kinematics",
+        "hadronic bridge where required"
+      ],
+      "empirical_input_used": false,
+      "evidence": [
+        {
+          "kind": "gate_authority",
+          "path": "artifacts/flagship_integration/BHSM_N12_GATE7_AUGMENTED_FIXED_DESCRIPTOR_MINIMUM_CONTRACTION_ADJUDICATION.json",
+          "sha256": "D4E91B583439F3B42B0BCD26982B97F69B580DB92896B15A31AD2488B5922F5B"
+        },
+        {
+          "kind": "source",
+          "path": "src/bhsm/interface/universal_vertex_amplitude.py",
+          "sha256": "E6B10B5387D090CAE71BB92207A41B7232F81291A6013EA4B31EFFDC8D1966A2"
+        },
+        {
+          "kind": "focused_test",
+          "path": "tests/test_universal_vertex_amplitude.py",
+          "sha256": "A1437A77F86E87FEAFB2D0669E7A41629423E011672751E4DA3206617BA45F38"
+        },
+        {
+          "kind": "source",
+          "path": "src/bhsm/interface/universal_lsz.py",
+          "sha256": "9A734317A3704469BF0D93E8434DF9643F4B3AAA4DD2F114B9E841CD1215ADFB"
+        },
+        {
+          "kind": "focused_test",
+          "path": "tests/test_universal_lsz.py",
+          "sha256": "AAB8011A4D5F552F826FF92F7CD4D81DF5B014768983BE73F1D735D64056D0CA"
+        },
+        {
+          "kind": "source",
+          "path": "src/bhsm/interface/universal_decay_collision.py",
+          "sha256": "1812BEFBD496239043F02D45C1482B0FFEB837290496E37664ED423D7339B667"
+        },
+        {
+          "kind": "focused_test",
+          "path": "tests/test_universal_decay_collision.py",
+          "sha256": "5F3F87176AF549BDF71FF5D3B9BB2D3FA2C03862D74FC2CC0B135443B4075528"
+        },
+        {
+          "kind": "source",
+          "path": "src/bhsm/interface/universal_loop_renormalization.py",
+          "sha256": "A6DB85FFA7DE5439A055C56FA9E308C81BAD66D96585AAF9551AC2374FE817EF"
+        },
+        {
+          "kind": "focused_test",
+          "path": "tests/test_universal_loop_renormalization.py",
+          "sha256": "121593D315B4BB83D54293BE18F8972FB6537E457AA66AC10CF47919B1F6826F"
+        }
+      ],
       "id": "COLLISION_AND_SCATTERING_PREDICTION",
-      "required_mechanism": "ACTION_OWNED_LSZ_EQUIVALENT_AMPLITUDES_PHASE_SPACE_CROSS_SECTIONS_AND_HADRONIC_BRIDGE"
+      "implementation_detail": "TREE_AND_TWO_TO_TWO_READOUT_ALGEBRA_IMPLEMENTED_GATED",
+      "implementation_status": "IMPLEMENTED_GATED",
+      "last_verified_commit": "0939e662e953c5e6038b2a4338679188ffe91e79",
+      "physical_prediction_materialized": false,
+      "prediction_classification": "OPEN_INTERNAL_BLOCKER",
+      "promotion_gate": "PHYSICAL_LSZ_RENORMALIZED_AMPLITUDES_AND_KINEMATICS",
+      "required_output": "ACTION_OWNED_LSZ_AMPLITUDES_AND_CROSS_SECTIONS_FOR_REQUIRED_BENCHMARKS",
+      "satisfied_dependencies": [
+        "tree contact-plus-exchange algebra",
+        "two-to-two phase space and angular quadrature"
+      ]
+    },
+    {
+      "action_owned": false,
+      "dependencies_open": [
+        "action-selected lepton modes",
+        "complete renormalized electromagnetic vertex",
+        "Ward normalization F1(0)=1",
+        "q-squared to zero enclosure"
+      ],
+      "empirical_input_used": false,
+      "evidence": [
+        {
+          "kind": "gate_authority",
+          "path": "artifacts/flagship_integration/BHSM_N12_GATE7_AUGMENTED_FIXED_DESCRIPTOR_MINIMUM_CONTRACTION_ADJUDICATION.json",
+          "sha256": "D4E91B583439F3B42B0BCD26982B97F69B580DB92896B15A31AD2488B5922F5B"
+        },
+        {
+          "kind": "source",
+          "path": "src/bhsm/interface/universal_precision_form_factor.py",
+          "sha256": "BCB4A25ACA5F064AAB73FA352A14B0826765396E1B1346CF20FFB2B203DD4137"
+        },
+        {
+          "kind": "focused_test",
+          "path": "tests/test_universal_precision_form_factor.py",
+          "sha256": "B0DC735EF4A7E31F5BB2F5DDD11808EC1311B5CC921F53930A4DA6E0695DA44C"
+        },
+        {
+          "kind": "source",
+          "path": "src/bhsm/interface/universal_loop_renormalization.py",
+          "sha256": "A6DB85FFA7DE5439A055C56FA9E308C81BAD66D96585AAF9551AC2374FE817EF"
+        },
+        {
+          "kind": "focused_test",
+          "path": "tests/test_universal_loop_renormalization.py",
+          "sha256": "121593D315B4BB83D54293BE18F8972FB6537E457AA66AC10CF47919B1F6826F"
+        },
+        {
+          "kind": "source",
+          "path": "src/bhsm/interface/universal_lsz.py",
+          "sha256": "9A734317A3704469BF0D93E8434DF9643F4B3AAA4DD2F114B9E841CD1215ADFB"
+        },
+        {
+          "kind": "focused_test",
+          "path": "tests/test_universal_lsz.py",
+          "sha256": "AAB8011A4D5F552F826FF92F7CD4D81DF5B014768983BE73F1D735D64056D0CA"
+        },
+        {
+          "kind": "source",
+          "path": "src/bhsm/interface/bhsm_yukawa_vertices.py",
+          "sha256": "F332E70CBC1CF93F30BF429E0889E9CD56884C817E5B958490277800129DCDEC"
+        },
+        {
+          "kind": "focused_test",
+          "path": "tests/test_bhsm_yukawa_vertices.py",
+          "sha256": "37C3D186031CD26E4D4EE95929E975CCA1E550E56525F7650E8204F917456241"
+        }
+      ],
+      "id": "LEPTON_MAGNETIC_MOMENTS",
+      "implementation_detail": "FORM_FACTOR_PROJECTOR_AND_PROMOTION_GATES_IMPLEMENTED",
+      "implementation_status": "IMPLEMENTED_GATED",
+      "last_verified_commit": "0939e662e953c5e6038b2a4338679188ffe91e79",
+      "physical_prediction_materialized": false,
+      "prediction_classification": "OPEN_INTERNAL_BLOCKER",
+      "promotion_gate": "ACTION_SELECTED_LEPTONS_RENORMALIZED_VERTEX_WARD_AND_Q2_ZERO",
+      "required_output": "ACTION_DERIVED_ELECTRON_MUON_TAU_F2_ZERO_PREDICTIONS",
+      "satisfied_dependencies": [
+        "basis-independent F1/F2 projector",
+        "a_l=F2(0) readout"
+      ]
+    },
+    {
+      "action_owned": true,
+      "dependencies_open": [
+        "complete physical spectrum enclosure",
+        "physical scale",
+        "complete decay ledger",
+        "pre-comparison frozen forecast artifact"
+      ],
+      "empirical_input_used": false,
+      "evidence": [
+        {
+          "kind": "gate_authority",
+          "path": "artifacts/flagship_integration/BHSM_N12_GATE7_AUGMENTED_FIXED_DESCRIPTOR_MINIMUM_CONTRACTION_ADJUDICATION.json",
+          "sha256": "D4E91B583439F3B42B0BCD26982B97F69B580DB92896B15A31AD2488B5922F5B"
+        },
+        {
+          "kind": "source",
+          "path": "src/bhsm/interface/universal_spectral_forecast.py",
+          "sha256": "067EB6DBFD80D7DE3D911C94C73512640A1B66E8A5BC9634337B6435D4FBC36A"
+        },
+        {
+          "kind": "focused_test",
+          "path": "tests/test_universal_spectral_forecast.py",
+          "sha256": "19DE46759AF3C3E3B2F5C4D85CFAA806E202E27DB6EB0B16219192004BF185D0"
+        },
+        {
+          "kind": "source",
+          "path": "src/bhsm/interface/universal_quadratic_spectrum.py",
+          "sha256": "097D1D3DD16B85F168F4E2DF1B43502D61B236DA724D638CB6C2DA3B5B813341"
+        },
+        {
+          "kind": "focused_test",
+          "path": "tests/test_universal_quadratic_spectrum.py",
+          "sha256": "73C33AA56A8E07A11419A3E87245904DD05924F15CD27A07DCF0EB37DF8C9DB8"
+        },
+        {
+          "kind": "source",
+          "path": "src/bhsm/interface/universal_decay_collision.py",
+          "sha256": "1812BEFBD496239043F02D45C1482B0FFEB837290496E37664ED423D7339B667"
+        },
+        {
+          "kind": "focused_test",
+          "path": "tests/test_universal_decay_collision.py",
+          "sha256": "5F3F87176AF549BDF71FF5D3B9BB2D3FA2C03862D74FC2CC0B135443B4075528"
+        }
+      ],
+      "id": "NEW_PARTICLE_SPECTRAL_ENCLOSURES",
+      "implementation_detail": "INTERVAL_FORECAST_ALGEBRA_IMPLEMENTED_GATED",
+      "implementation_status": "IMPLEMENTED_GATED",
+      "last_verified_commit": "0939e662e953c5e6038b2a4338679188ffe91e79",
+      "physical_prediction_materialized": false,
+      "prediction_classification": "OPEN_INTERNAL_BLOCKER",
+      "promotion_gate": "COMPLETE_FROZEN_PHYSICAL_SPECTRUM_BEFORE_SEARCH_COMPARISON",
+      "required_output": "FROZEN_MODE_INTERVALS_OR_EXCLUSIONS_WITH_QUANTUM_NUMBERS_AND_DECAYS",
+      "satisfied_dependencies": [
+        "declared-domain spectral exclusion",
+        "interval decay-channel classification"
+      ]
+    },
+    {
+      "action_owned": false,
+      "dependencies_open": [
+        "Gate7 closure",
+        "instantiated action-owned engines",
+        "frozen benchmark definitions",
+        "comparison-after-prediction records"
+      ],
+      "empirical_input_used": false,
+      "evidence": [
+        {
+          "kind": "gate_authority",
+          "path": "artifacts/flagship_integration/BHSM_N12_GATE7_AUGMENTED_FIXED_DESCRIPTOR_MINIMUM_CONTRACTION_ADJUDICATION.json",
+          "sha256": "D4E91B583439F3B42B0BCD26982B97F69B580DB92896B15A31AD2488B5922F5B"
+        },
+        {
+          "kind": "source",
+          "path": "src/bhsm/interface/universal_quadratic_spectrum.py",
+          "sha256": "097D1D3DD16B85F168F4E2DF1B43502D61B236DA724D638CB6C2DA3B5B813341"
+        },
+        {
+          "kind": "focused_test",
+          "path": "tests/test_universal_quadratic_spectrum.py",
+          "sha256": "73C33AA56A8E07A11419A3E87245904DD05924F15CD27A07DCF0EB37DF8C9DB8"
+        },
+        {
+          "kind": "source",
+          "path": "src/bhsm/interface/universal_vertex_amplitude.py",
+          "sha256": "E6B10B5387D090CAE71BB92207A41B7232F81291A6013EA4B31EFFDC8D1966A2"
+        },
+        {
+          "kind": "focused_test",
+          "path": "tests/test_universal_vertex_amplitude.py",
+          "sha256": "A1437A77F86E87FEAFB2D0669E7A41629423E011672751E4DA3206617BA45F38"
+        },
+        {
+          "kind": "source",
+          "path": "src/bhsm/interface/universal_decay_collision.py",
+          "sha256": "1812BEFBD496239043F02D45C1482B0FFEB837290496E37664ED423D7339B667"
+        },
+        {
+          "kind": "focused_test",
+          "path": "tests/test_universal_decay_collision.py",
+          "sha256": "5F3F87176AF549BDF71FF5D3B9BB2D3FA2C03862D74FC2CC0B135443B4075528"
+        },
+        {
+          "kind": "source",
+          "path": "src/bhsm/interface/universal_precision_form_factor.py",
+          "sha256": "BCB4A25ACA5F064AAB73FA352A14B0826765396E1B1346CF20FFB2B203DD4137"
+        },
+        {
+          "kind": "focused_test",
+          "path": "tests/test_universal_precision_form_factor.py",
+          "sha256": "B0DC735EF4A7E31F5BB2F5DDD11808EC1311B5CC921F53930A4DA6E0695DA44C"
+        },
+        {
+          "kind": "source",
+          "path": "src/bhsm/interface/retained_sm_physics_adapter.py",
+          "sha256": "5C84D81AE5FF5194465F2440C4BD039B008CC83391C6B30F2A2939395F02D013"
+        },
+        {
+          "kind": "focused_test",
+          "path": "tests/test_retained_sm_physics_adapter.py",
+          "sha256": "5428F890D8E2CBCDD86C69B85E314ABA4400946335F713E947AE0E9F81FA0DE4"
+        },
+        {
+          "kind": "source",
+          "path": "src/bhsm/interface/bhsm_standard_model_gauge_vertices.py",
+          "sha256": "F9DAC796A24075358EFCD3D414527EFB1DF94AF937C905BC62A711A69439333D"
+        },
+        {
+          "kind": "focused_test",
+          "path": "tests/test_bhsm_standard_model_gauge_vertices.py",
+          "sha256": "8D5F3608AA86F327251F44C4EE89EEFAE03C2AD58D88EBEADC9132340BD7277B"
+        },
+        {
+          "kind": "source",
+          "path": "src/bhsm/interface/bhsm_yukawa_vertices.py",
+          "sha256": "F332E70CBC1CF93F30BF429E0889E9CD56884C817E5B958490277800129DCDEC"
+        },
+        {
+          "kind": "focused_test",
+          "path": "tests/test_bhsm_yukawa_vertices.py",
+          "sha256": "37C3D186031CD26E4D4EE95929E975CCA1E550E56525F7650E8204F917456241"
+        }
+      ],
+      "id": "BENCHMARK_OBSERVABLE_SUITE",
+      "implementation_detail": "NO_PHYSICAL_BENCHMARKS_MATERIALIZED",
+      "implementation_status": "IMPLEMENTED_PROVISIONAL",
+      "last_verified_commit": "0939e662e953c5e6038b2a4338679188ffe91e79",
+      "physical_prediction_materialized": false,
+      "prediction_classification": "OPEN_INTERNAL_BLOCKER",
+      "promotion_gate": "ALL_REQUIRED_INDEPENDENT_PHYSICAL_BENCHMARKS_MATERIALIZED",
+      "required_output": "INDEPENDENT_MASS_MIXING_DECAY_SCATTERING_AND_PRECISION_BENCHMARKS",
+      "satisfied_dependencies": [
+        "shared universal readout APIs"
+      ]
+    },
+    {
+      "action_owned": false,
+      "dependencies_open": [
+        "frozen physical spectrum",
+        "novel prediction registry",
+        "pre-comparison commit and hashes"
+      ],
+      "empirical_input_used": false,
+      "evidence": [
+        {
+          "kind": "gate_authority",
+          "path": "artifacts/flagship_integration/BHSM_N12_GATE7_AUGMENTED_FIXED_DESCRIPTOR_MINIMUM_CONTRACTION_ADJUDICATION.json",
+          "sha256": "D4E91B583439F3B42B0BCD26982B97F69B580DB92896B15A31AD2488B5922F5B"
+        },
+        {
+          "kind": "source",
+          "path": "src/bhsm/interface/universal_spectral_forecast.py",
+          "sha256": "067EB6DBFD80D7DE3D911C94C73512640A1B66E8A5BC9634337B6435D4FBC36A"
+        },
+        {
+          "kind": "focused_test",
+          "path": "tests/test_universal_spectral_forecast.py",
+          "sha256": "19DE46759AF3C3E3B2F5C4D85CFAA806E202E27DB6EB0B16219192004BF185D0"
+        },
+        {
+          "kind": "source",
+          "path": "src/bhsm/interface/universal_prediction_freeze.py",
+          "sha256": "7F23D537EC0B0ED8F8642572FDC7AE2525D018CA424BFDB4576A356DBAA592BC"
+        },
+        {
+          "kind": "focused_test",
+          "path": "tests/test_universal_prediction_freeze.py",
+          "sha256": "17CEB9DFA70A31C1D7D8710A39AE4AEAAED24F940C585DED340997982AFA3AA2"
+        }
+      ],
+      "id": "FROZEN_FORWARD_PREDICTIONS",
+      "implementation_detail": "FIREWALL_SCHEMA_ONLY",
+      "implementation_status": "IMPLEMENTED_PROVISIONAL",
+      "last_verified_commit": "0939e662e953c5e6038b2a4338679188ffe91e79",
+      "physical_prediction_materialized": false,
+      "prediction_classification": "OPEN_INTERNAL_BLOCKER",
+      "promotion_gate": "PRE_COMPARISON_COMMIT_WITH_NUMERICAL_INTERVALS_AND_HASHES",
+      "required_output": "COMMITTED_PRE_COMPARISON_NOVEL_PREDICTIONS_AND_FALSIFICATION_TARGETS",
+      "satisfied_dependencies": [
+        "experimental-result-free interval forecast functions",
+        "immutable prediction records and comparison firewall"
+      ]
+    },
+    {
+      "action_owned": false,
+      "dependencies_open": [
+        "Gate7 closure",
+        "all required physical rows",
+        "one clean deterministic release reproduction",
+        "mainline release integration"
+      ],
+      "empirical_input_used": false,
+      "evidence": [
+        {
+          "kind": "gate_authority",
+          "path": "artifacts/flagship_integration/BHSM_N12_GATE7_AUGMENTED_FIXED_DESCRIPTOR_MINIMUM_CONTRACTION_ADJUDICATION.json",
+          "sha256": "D4E91B583439F3B42B0BCD26982B97F69B580DB92896B15A31AD2488B5922F5B"
+        }
+      ],
+      "id": "PHYSICAL_RELEASE_RECONCILIATION",
+      "implementation_detail": "BLOCKED_BY_OPEN_ROWS",
+      "implementation_status": "NOT_IMPLEMENTED",
+      "last_verified_commit": "0939e662e953c5e6038b2a4338679188ffe91e79",
+      "physical_prediction_materialized": false,
+      "prediction_classification": "OPEN_INTERNAL_BLOCKER",
+      "promotion_gate": "ALL_REQUIRED_ROWS_PROMOTED_AND_ONE_CLEAN_RELEASE_REPRODUCTION",
+      "required_output": "FULL_BHSM_1_0_RELEASE_WITH_EVERY_REQUIRED_ROW_DERIVED_OR_EXPLICITLY_SCOPED",
+      "satisfied_dependencies": [
+        "machine-readable physical-completeness ledger"
+      ]
     }
   ],
+  "schema_version": 2,
+  "source_sha256": {
+    "artifacts/flagship_integration/BHSM_N12_GATE7_AUGMENTED_FIXED_DESCRIPTOR_MINIMUM_CONTRACTION_ADJUDICATION.json": "D4E91B583439F3B42B0BCD26982B97F69B580DB92896B15A31AD2488B5922F5B",
+    "src/bhsm/interface/bhsm_standard_model_gauge_vertices.py": "F9DAC796A24075358EFCD3D414527EFB1DF94AF937C905BC62A711A69439333D",
+    "src/bhsm/interface/bhsm_yukawa_vertices.py": "F332E70CBC1CF93F30BF429E0889E9CD56884C817E5B958490277800129DCDEC",
+    "src/bhsm/interface/retained_n12_action_expansion_adapter.py": "7AB2977352F3C4617DB128E9044655FB03726139744315228FCE055193C5FEFF",
+    "src/bhsm/interface/retained_sm_physics_adapter.py": "5C84D81AE5FF5194465F2440C4BD039B008CC83391C6B30F2A2939395F02D013",
+    "src/bhsm/interface/universal_decay_collision.py": "1812BEFBD496239043F02D45C1482B0FFEB837290496E37664ED423D7339B667",
+    "src/bhsm/interface/universal_gf_scale.py": "AECF8243975EDCF392A2D93B2864FF91DECC06C3EED5413F2959772A62C0808C",
+    "src/bhsm/interface/universal_loop_renormalization.py": "A6DB85FFA7DE5439A055C56FA9E308C81BAD66D96585AAF9551AC2374FE817EF",
+    "src/bhsm/interface/universal_lsz.py": "9A734317A3704469BF0D93E8434DF9643F4B3AAA4DD2F114B9E841CD1215ADFB",
+    "src/bhsm/interface/universal_physical_action_expansion.py": "32D4815BB8BE0EBA351A0BC7DAE47ACB0A7ED79EA9A91D74B41AF36E8530B0B0",
+    "src/bhsm/interface/universal_precision_form_factor.py": "BCB4A25ACA5F064AAB73FA352A14B0826765396E1B1346CF20FFB2B203DD4137",
+    "src/bhsm/interface/universal_prediction_freeze.py": "7F23D537EC0B0ED8F8642572FDC7AE2525D018CA424BFDB4576A356DBAA592BC",
+    "src/bhsm/interface/universal_quadratic_spectrum.py": "097D1D3DD16B85F168F4E2DF1B43502D61B236DA724D638CB6C2DA3B5B813341",
+    "src/bhsm/interface/universal_spectral_forecast.py": "067EB6DBFD80D7DE3D911C94C73512640A1B66E8A5BC9634337B6435D4FBC36A",
+    "src/bhsm/interface/universal_vertex_amplitude.py": "E6B10B5387D090CAE71BB92207A41B7232F81291A6013EA4B31EFFDC8D1966A2",
+    "tests/test_bhsm_standard_model_gauge_vertices.py": "8D5F3608AA86F327251F44C4EE89EEFAE03C2AD58D88EBEADC9132340BD7277B",
+    "tests/test_bhsm_yukawa_vertices.py": "37C3D186031CD26E4D4EE95929E975CCA1E550E56525F7650E8204F917456241",
+    "tests/test_retained_n12_action_expansion_adapter.py": "FCEA5C121EE1B0F8EBDD3D7812816AF07A48D59A6D906762E0D4260D644201F9",
+    "tests/test_retained_sm_physics_adapter.py": "5428F890D8E2CBCDD86C69B85E314ABA4400946335F713E947AE0E9F81FA0DE4",
+    "tests/test_universal_decay_collision.py": "5F3F87176AF549BDF71FF5D3B9BB2D3FA2C03862D74FC2CC0B135443B4075528",
+    "tests/test_universal_gf_scale.py": "D186CF4A9FB75077A20491856C40F056B0FC557818942312AFC7BAC3086EF428",
+    "tests/test_universal_loop_renormalization.py": "121593D315B4BB83D54293BE18F8972FB6537E457AA66AC10CF47919B1F6826F",
+    "tests/test_universal_lsz.py": "AAB8011A4D5F552F826FF92F7CD4D81DF5B014768983BE73F1D735D64056D0CA",
+    "tests/test_universal_physical_action_expansion.py": "C092266109BF7EDA24E48A247FC712BF278149FCCF3AAC0D4EFED7EBA0BA76CC",
+    "tests/test_universal_precision_form_factor.py": "B0DC735EF4A7E31F5BB2F5DDD11808EC1311B5CC921F53930A4DA6E0695DA44C",
+    "tests/test_universal_prediction_freeze.py": "17CEB9DFA70A31C1D7D8710A39AE4AEAAED24F940C585DED340997982AFA3AA2",
+    "tests/test_universal_quadratic_spectrum.py": "73C33AA56A8E07A11419A3E87245904DD05924F15CD27A07DCF0EB37DF8C9DB8",
+    "tests/test_universal_spectral_forecast.py": "19DE46759AF3C3E3B2F5C4D85CFAA806E202E27DB6EB0B16219192004BF185D0",
+    "tests/test_universal_vertex_amplitude.py": "A1437A77F86E87FEAFB2D0669E7A41629423E011672751E4DA3206617BA45F38"
+  },
+  "status_taxonomy": {
+    "action_owned": "THE_IMPLEMENTED_CAPABILITY_ENFORCES_OR_CARRIES_ACTION_PROVENANCE;_THIS_DOES_NOT_IMPLY_A_PHYSICAL_OUTPUT_EXISTS",
+    "implementation_status": "CAPABILITY_MATURITY_ONLY",
+    "prediction_classification": "SCIENTIFIC_OUTPUT_AUTHORITY_ONLY"
+  },
+  "validation": {
+    "FULL_BHSM_COMPLETE_false": true,
+    "Gate7_authority_is_validated": true,
+    "Gate7_is_not_closed": true,
+    "all_required_rows_are_present_once": true,
+    "all_rows_use_allowed_classifications": true,
+    "all_rows_use_frozen_implementation_statuses": true,
+    "every_capability_has_hashed_evidence_and_a_promotion_gate": true,
+    "every_open_row_has_a_concrete_internal_blocker": true,
+    "implemented_infrastructure_is_not_relabelled_as_prediction": true,
+    "no_measured_value_is_used_upstream": true,
+    "same_center_interval_contraction_is_the_exact_Gate7_owner": true
+  },
   "validation_passed": true
 }

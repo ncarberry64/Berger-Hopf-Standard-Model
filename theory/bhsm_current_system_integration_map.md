@@ -147,6 +147,17 @@ causal `Z2` in one 74D norm, followed by a radius satisfying
 `Y+Z1*r+Z2*r^2<r` and `Z1+2*Z2*r<1`.  Failure is not root nonexistence, and the
 background is not certified for universal physical predictions.
 
+The physical-completeness matrix now separates capability maturity from
+scientific output authority.  The universal action expansion, quadratic
+descriptor spectrum, vertex/tree-amplitude, LSZ, decay/collision,
+loop-ledger, form-factor, spectral-forecast, and single-`G_F` scale interfaces
+are `IMPLEMENTED_GATED`; broader coverage/benchmark registries are
+`IMPLEMENTED_PROVISIONAL`.  Every physical output is still classified
+`OPEN_INTERNAL_BLOCKER`.  Source and focused-test hashes, open dependencies,
+promotion gates, action-ownership flags, empirical-input flags, and the last
+verified engine commit are recorded per row.  Thus infrastructure maturity
+does not bypass Gate 7 or the prediction firewall.
+
 The current physical theory tuple is `BHSM-AE-2.0.0`.  It retains the v7.x
 stratified bulk/boundary functor, v14-v17 eta/Aether action lineage, v7.2
 common observable transport, and frozen comparison firewall, while replacing
