@@ -75,6 +75,7 @@ PATHS = {
     "exact_center_field_jacobian": "artifacts/flagship_integration/BHSM_N12_GATE7_EXACT_CENTER_PHYSICAL_FIELD_JACOBIAN.json",
     "within_seam_center_obstruction": "artifacts/flagship_integration/BHSM_N12_GATE7_WITHIN_SEAM_CONSTRAINT_CENTER_OBSTRUCTION.json",
     "projected_native_center": "artifacts/flagship_integration/BHSM_N12_GATE7_PROJECTED_NATIVE_DOP853_CENTER_CANDIDATE.json",
+    "projected_dense_flow_defect": "artifacts/flagship_integration/BHSM_N12_GATE7_PROJECTED_DENSE_CENTER_FLOW_DEFECT.json",
     "final_force_kkt_verdict": "artifacts/flagship_integration/BHSM_N12_GATE7_FINAL_EXACT_CENTER_FORCE_KKT_HESSIAN_VERDICT.json",
     "causal_y_z1_z2_margin_budget": "artifacts/flagship_integration/BHSM_N12_GATE7_CAUSAL_Y_Z1_Z2_MARGIN_BUDGET_AUDIT.json",
     "recentered_cone_spectrum": "artifacts/flagship_integration/BHSM_N12_GATE7_RECENTERED_CONE_BOUNDARY_CLUSTER_SPECTRUM.json",
@@ -205,6 +206,7 @@ def build_payload() -> dict[str, Any]:
     exact_center_field_jacobian = records["exact_center_field_jacobian"]
     within_seam_center_obstruction = records["within_seam_center_obstruction"]
     projected_native_center = records["projected_native_center"]
+    projected_dense_flow_defect = records["projected_dense_flow_defect"]
     causal_y_z1_z2_margin_budget = records["causal_y_z1_z2_margin_budget"]
     compact_reset_propagation = records["compact_reset_propagation"]
     compact_reset_open_subball = records["compact_reset_open_subball"]
@@ -379,7 +381,7 @@ def build_payload() -> dict[str, Any]:
         {"id": "G7_CORRELATED_QUARTER_STEP_CENTER_STOP_WITNESS", "classification": "RESOLVED_BY_EXACT_TRANSVERSE_FIRST_STOP", "current_effect": "the final exact-center cone, response, causal Z2, strict preterminal selected-eigenvalue margins, canonical earliest stop, uniform negative flow derivative, terminal-cell uniqueness, and local differentiable first-stop time are certified"},
         {"id": "G7_DECORRELATED_BINARY64_CARRIER_COMPOSITION", "classification": "INVALIDATED_PROOF_ROUTE", "current_effect": "independent binary64 component balls produce wrapping blowup and are presentation data only; correlated outward Arb interval strings own global composition"},
         {"id": "G7_OLD_GAUSS12_RECENTERED_NUMERICAL_CONE_TRANSFER", "classification": "INVALIDATED_PROOF_ROUTE", "current_effect": "the old Gauss12 center differs from the exact-affine center by 120901.05128628464 candidate-cone radii; retain its theorem formulas but rebuild the numerical Z2/cone ball at the final center"},
-        {"id": "G7_COMPLETE_JOINT_FORCE_ROOT", "classification": "CURRENT_BLOCKER", "current_effect": "all 371 retained native DOP853 nodes now have a constraint-projected candidate with maximum scaled residual 7.239486906525122e-16 and 0.22477230091215175 reconnaissance-halo utilization; certify a continuous constraint/descriptor-fiber preserving shadowing or collocation center and its new first hit, then its outward variational carrier, nonlinear 72D history jet, Weyl-Calderon oracle, projected heat-minus-zeta force, KKT root, and physical Hessian"},
+        {"id": "G7_COMPLETE_JOINT_FORCE_ROOT", "classification": "CURRENT_BLOCKER", "current_effect": "all 371 retained native DOP853 nodes have a constraint-projected candidate, and all 370 projected dense midpoints remain constraint-accurate, but the exact augmented state-flow defect reaches 1.4049769146208235e-5 at cell 315; solve the constraint/descriptor-fiber augmented collocation correction and new first hit, then its outward variational carrier, nonlinear 72D history jet, Weyl-Calderon oracle, projected heat-minus-zeta force, KKT root, and physical Hessian"},
         {"id": "DECORRELATED_SCALAR_SECOND_VARIATION", "classification": "INVALIDATED_PROOF_ROUTE", "current_effect": "finite first variation survives; all 8,692 scalar denominator cells route to signed/common-frame correlation"},
         {"id": "G7_HESSIAN_WARD_SCALAR", "classification": "DOWNSTREAM_ONLY", "current_effect": "follows the force/KKT root"},
         {"id": "CKM_PMNS_PHYSICAL_EIGENBASES", "classification": "DOWNSTREAM_ONLY", "current_effect": "follows Gate 7 and sector response"},
@@ -732,6 +734,19 @@ def build_payload() -> dict[str, Any]:
             ] < 1.0
             and projected_native_center["adjudication"][
                 "continuous_projected_trajectory"
+            ] == "OPEN"
+        ),
+        "projected_dense_flow_defect_is_localized_not_promoted": (
+            projected_dense_flow_defect["validation_passed"] is True
+            and projected_dense_flow_defect["mesh"]["cells"] == 370
+            and projected_dense_flow_defect["summary"][
+                "maximum_scaled_constraint_2_norm"
+            ] < 2.0e-12
+            and projected_dense_flow_defect["summary"][
+                "maximum_augmented_flow_defect_2_norm"
+            ] > 1.0e-6
+            and projected_dense_flow_defect["adjudication"][
+                "continuous_shadowing_center"
             ] == "OPEN"
         ),
         "quarter_green_corrected_carrier_is_certified": (

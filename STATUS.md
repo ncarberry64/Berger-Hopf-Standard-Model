@@ -39,6 +39,11 @@ DOP853 nodes now have a one-step constraint projection with maximum residual
 `0.22477230091215175`.  This is discrete candidate data: continuous
 shadowing/collocation, the descriptor fiber, and a new first-hit enclosure are
 still required.  Gate 7 remains `ACTIVE`;
+the all-cell exact-field audit further shows maximum projected midpoint
+constraint residual `1.195622995138146e-14` but augmented flow defect
+`1.4049769146208235e-5` (cell 315).  The descriptor-rate defect is only
+`1.4012683173144428e-14`; the state collocation equation is the active center
+correction owner.
 `FULL_BHSM_COMPLETE = FALSE`.  Universal physical prediction engines remain
 open downstream.
 

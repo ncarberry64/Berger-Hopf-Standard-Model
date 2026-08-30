@@ -50,6 +50,13 @@ those projected nodes a continuous orbit, inheriting `lambda_24(Y)=s`, or
 reusing the old first hit.  Those require a continuous shadowing/collocation
 certificate on the projected dense path.
 
+The projected dense reconstruction has now been tested against the exact
+retained action field at all 370 cell midpoints.  It is constraint-accurate
+there (`≤1.195622995138146e-14`) and branch 24 stays simple, but its augmented
+flow defect reaches `1.4049769146208235e-5`.  Therefore continuous shadowing
+is explicitly unsupported until the state collocation defect is solved; the
+small `1.4012683173144428e-14` descriptor-rate defect does not close that gap.
+
 ## Current public claim boundary
 
 Current public identifier: **continuum event-child and local singular reset

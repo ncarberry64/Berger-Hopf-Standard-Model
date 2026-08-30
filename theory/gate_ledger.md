@@ -2860,3 +2860,10 @@ Exact next object:
   reconnaissance halo.  This does not establish a continuous orbit, preserve
   the propagated descriptor fiber, or inherit the prior first hit.  The next
   owner is projected-dense-path shadowing/collocation with a new stop solve.
+- Direct retained-action evaluation at all 370 projected dense midpoints keeps
+  scaled constraint residual below `1.195622995138146e-14` and branch-24 gap
+  above `1.7343209425225278e-7`, but the augmented flow defect reaches
+  `1.4049769146208235e-5` at cell 315.  The descriptor-rate defect is only
+  `1.4012683173144428e-14`; thus the active continuous-center owner is the 98D
+  state collocation correction with constraint/fiber rows, not another
+  constraint projection.

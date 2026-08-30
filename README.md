@@ -43,6 +43,12 @@ constraint residual `7.239486906525122e-16`; the largest correction uses
 `22.477230091215175%` of the older reconnaissance halo.  These nodes are a
 discrete candidate only.  Continuous shadowing/collocation, descriptor-fiber
 preservation, and the resulting new first hit remain open.
+The complete 370-cell midpoint audit now localizes the missing equation:
+projected constraint residual stays below `1.195622995138146e-14`, while the
+exact augmented flow defect reaches `1.4049769146208235e-5` at cell 315.
+Its descriptor-rate component is only `1.4012683173144428e-14`, so the next
+owner is the 98D state collocation correction with the constraint and
+descriptor-fiber rows attached.
 Gate 7 remains
 `ACTIVE`; `FULL_BHSM_COMPLETE = FALSE`.  Physical completion additionally
 requires universal spectrum/propagator, vertex, decay, loop/magnetic-moment,

@@ -48,6 +48,14 @@ correction `3.0112768648604145e-9` and reconnaissance-halo utilization
 owner is a continuous constraint- and descriptor-fiber-preserving
 shadowing/collocation theorem plus a new first-hit enclosure on that center.
 
+The direct all-cell evaluation now quantifies that theorem's source.  All 370
+projected dense midpoints have scaled constraint residual at most
+`1.195622995138146e-14` and retain branch-24 gap at least
+`1.7343209425225278e-7`, but the augmented flow defect reaches
+`1.4049769146208235e-5` at cell 315.  Its descriptor-rate part is only
+`1.4012683173144428e-14`; the 98D state collocation correction is the dominant
+remaining center equation.
+
 The current physical theory tuple is `BHSM-AE-2.0.0`.  It retains the v7.x
 stratified bulk/boundary functor, v14-v17 eta/Aether action lineage, v7.2
 common observable transport, and frozen comparison firewall, while replacing
