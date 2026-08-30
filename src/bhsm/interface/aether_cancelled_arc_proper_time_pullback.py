@@ -13,7 +13,11 @@ from __future__ import annotations
 from typing import Any
 
 import numpy as np
-from scipy.interpolate import CubicSpline, PchipInterpolator
+from scipy.interpolate import CubicSpline
+
+from bhsm.interface.aether_forward_c2_geometry_incidence import (
+    boundary_geometry_action_covectors,
+)
 
 
 def cancelled_arc_proper_time_density_first_jet(
@@ -118,22 +122,24 @@ def pullback_cancelled_arc_history_to_proper_time(
         if terminal_first.shape != (parameter_count,) or not np.all(np.isfinite(terminal_first)):
             raise ValueError("one finite terminal log-radius derivative per direction required")
 
-    density_spline = PchipInterpolator(arc, density)
-    density_primitive = density_spline.antiderivative()
-    proper_at_nodes = np.asarray(
-        density_primitive(arc) - density_primitive(arc[0]), dtype=float,
-    )
+    arc_widths = np.diff(arc)
+    proper_at_nodes = np.concatenate((
+        np.zeros(1),
+        np.cumsum(0.5 * arc_widths * (density[:-1] + density[1:])),
+    ))
     duration = float(proper_at_nodes[-1])
     if not np.isfinite(duration) or duration <= 0.0 or not np.all(np.diff(proper_at_nodes) > 0.0):
         raise ArithmeticError("proper-time pullback is not strictly increasing")
 
     if parameter_count:
-        density_first_spline = PchipInterpolator(arc, density_first, axis=0)
-        density_first_primitive = density_first_spline.antiderivative()
-        proper_first = np.asarray(
-            density_first_primitive(arc) - density_first_primitive(arc[0]),
-            dtype=float,
-        )
+        proper_first = np.vstack((
+            np.zeros((1, parameter_count)),
+            np.cumsum(
+                0.5 * arc_widths[:, None]
+                * (density_first[:-1] + density_first[1:]),
+                axis=0,
+            ),
+        ))
     else:
         proper_first = np.empty((arc.size, 0))
     duration_first = proper_first[-1]
@@ -168,10 +174,107 @@ def pullback_cancelled_arc_history_to_proper_time(
             "d_tau/d_r=N_boundary*s/||G_theta||_action_for_"
             "dY/dr=G_theta/||G_theta||_action"
         ),
+        "density_interpolation": (
+            "POSITIVE_PIECEWISE_LINEAR_WITH_EXACT_LINEAR_FIRST_JET"
+        ),
+    }
+
+
+def assemble_cancelled_arc_proper_time_coefficient_first_jet(
+    *,
+    arc_nodes: np.ndarray,
+    states: np.ndarray,
+    state_action_first_jet: np.ndarray,
+    state_weights: np.ndarray,
+    signed_descriptor: np.ndarray,
+    signed_descriptor_first_jet: np.ndarray,
+    cancelled_field_action_norm: np.ndarray,
+    cancelled_norm_state_gradient_action: np.ndarray,
+    cancelled_norm_descriptor_derivative: np.ndarray,
+    terminal_log_radius_first_jet: np.ndarray | None = None,
+) -> dict[str, Any]:
+    """Compose BHSM geometry incidence with the proper-time pullback."""
+
+    arc = np.asarray(arc_nodes, dtype=float)
+    state = np.asarray(states, dtype=float)
+    state_first = np.asarray(state_action_first_jet, dtype=float)
+    weights = np.asarray(state_weights, dtype=float)
+    descriptor = np.asarray(signed_descriptor, dtype=float)
+    descriptor_first = np.asarray(signed_descriptor_first_jet, dtype=float)
+    norm = np.asarray(cancelled_field_action_norm, dtype=float)
+    norm_state = np.asarray(cancelled_norm_state_gradient_action, dtype=float)
+    norm_descriptor = np.asarray(cancelled_norm_descriptor_derivative, dtype=float)
+    if (
+        arc.ndim != 1
+        or state.shape != (arc.size, 98)
+        or state_first.ndim != 3
+        or state_first.shape[:2] != state.shape
+        or weights.shape != (98,)
+        or descriptor.shape != arc.shape
+        or descriptor_first.shape != (arc.size, state_first.shape[2])
+        or norm.shape != arc.shape
+        or norm_state.shape != state.shape
+        or norm_descriptor.shape != arc.shape
+        or not np.all(np.isfinite(state))
+        or not np.all(np.isfinite(state_first))
+        or not np.all(np.isfinite(weights))
+        or np.any(weights <= 0.0)
+        or not np.all(np.isfinite(norm_state))
+        or not np.all(np.isfinite(norm_descriptor))
+    ):
+        raise ValueError("aligned N12 state-history geometry and norm first jets required")
+
+    log_radius = np.empty(arc.size)
+    log_lapse = np.empty(arc.size)
+    log_radius_first = np.empty((arc.size, state_first.shape[2]))
+    log_lapse_first = np.empty_like(log_radius_first)
+    for node in range(arc.size):
+        geometry = boundary_geometry_action_covectors(
+            state=state[node], weights=weights,
+        )
+        log_radius[node] = float(geometry["log_R4"])
+        log_lapse[node] = float(geometry["log_lapse"])
+        log_radius_first[node] = (
+            np.asarray(geometry["D_log_R4_action_dual"], dtype=float)
+            @ state_first[node]
+        )
+        log_lapse_first[node] = (
+            np.asarray(geometry["D_log_lapse_action_dual"], dtype=float)
+            @ state_first[node]
+        )
+    norm_first = (
+        np.einsum("ni,nij->nj", norm_state, state_first)
+        + norm_descriptor[:, None] * descriptor_first
+    )
+    density = cancelled_arc_proper_time_density_first_jet(
+        log_boundary_lapse=log_lapse,
+        signed_descriptor=descriptor,
+        cancelled_field_action_norm=norm,
+        log_boundary_lapse_first_jet=log_lapse_first,
+        signed_descriptor_first_jet=descriptor_first,
+        cancelled_field_action_norm_first_jet=norm_first,
+    )
+    pulled = pullback_cancelled_arc_history_to_proper_time(
+        arc_nodes=arc,
+        log_radius=log_radius,
+        log_radius_arc_first_jet=log_radius_first,
+        proper_time_density=density["proper_time_density"],
+        proper_time_density_first_jet=density[
+            "proper_time_density_first_jet"
+        ],
+        terminal_log_radius_first_jet=terminal_log_radius_first_jet,
+    )
+    return {
+        **pulled,
+        "log_boundary_lapse": log_lapse,
+        "log_boundary_lapse_arc_first_jet": log_lapse_first,
+        "log_radius_arc_first_jet": log_radius_first,
+        "cancelled_field_action_norm_first_jet": norm_first,
     }
 
 
 __all__ = [
+    "assemble_cancelled_arc_proper_time_coefficient_first_jet",
     "cancelled_arc_proper_time_density_first_jet",
     "pullback_cancelled_arc_history_to_proper_time",
 ]
