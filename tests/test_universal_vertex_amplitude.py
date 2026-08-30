@@ -66,3 +66,18 @@ def test_crossed_ordering_is_supplied_explicitly() -> None:
     assert direct.channel == "s"
     assert crossed.channel == "t"
     assert np.isfinite(crossed.total)
+
+
+def test_full_tree_amplitude_counts_contact_once_across_s_t_u() -> None:
+    result = assembler()
+    e0 = np.asarray([1.0, 0.0])
+    e1 = np.asarray([0.0, 1.0])
+    amplitude = result.four_point_total(
+        (e0, e1, e0, e1),
+        {"s": 1.0, "t": 1.0, "u": 1.0},
+    )
+    assert abs(amplitude.contact - 2.0) < 1.0e-12
+    assert abs(amplitude.exchanges["s"] - 4.0 / 3.0) < 1.0e-12
+    assert abs(amplitude.exchanges["t"]) < 1.0e-12
+    assert abs(amplitude.exchanges["u"] - 4.0 / 3.0) < 1.0e-12
+    assert abs(amplitude.total - 14.0 / 3.0) < 1.0e-12

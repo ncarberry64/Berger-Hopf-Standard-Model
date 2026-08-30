@@ -253,7 +253,7 @@ def build_payload() -> dict[str, Any]:
             "MACHINE_READABLE_ACTION_OWNED_S3_S4_VERTICES_WITH_ALL_INTERNAL_INDICES",
             "BARE_VERTEX_AND_TREE_EXCHANGE_ALGEBRA_IMPLEMENTED_GATED",
             ("action_expansion", "vertex_amplitude", "retained_n12_adapter"),
-            ("matrix-free bare S3/S4 contractions", "inverse-free tree exchange solve"),
+            ("matrix-free bare S3/S4 contractions", "inverse-free tree exchange solve", "complete s/t/u tree assembly with one quartic contact"),
             ("history/seam S3/S4 assembly", "action-selected external modes", "momentum and symmetry bookkeeping"),
         ),
         _record(
@@ -317,7 +317,7 @@ def build_payload() -> dict[str, Any]:
             "ACTION_OWNED_LSZ_AMPLITUDES_AND_CROSS_SECTIONS_FOR_REQUIRED_BENCHMARKS",
             "TREE_AND_TWO_TO_TWO_READOUT_ALGEBRA_IMPLEMENTED_GATED",
             ("vertex_amplitude", "lsz", "decay_collision", "loop_renormalization", "momentum_map"),
-            ("tree contact-plus-exchange algebra", "two-to-two phase space and angular quadrature", "guarded Mandelstam invariant map"),
+            ("tree contact-plus-exchange algebra", "complete s/t/u assembly without quartic double counting", "two-to-two phase space and angular quadrature", "guarded Mandelstam invariant map"),
             ("physical external modes", "renormalized complete amplitudes", "benchmark kinematics", "hadronic bridge where required"),
         ),
         _record(

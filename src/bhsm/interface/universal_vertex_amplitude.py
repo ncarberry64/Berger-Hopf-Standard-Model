@@ -49,6 +49,15 @@ class TreeAmplitude:
 
 
 @dataclass(frozen=True)
+class FullTreeAmplitude:
+    contact: complex
+    exchanges: dict[str, complex]
+    total: complex
+    spectral_parameters: dict[str, complex]
+    maximum_linear_solve_relative_residual: float
+
+
+@dataclass(frozen=True)
 class TreeAmplitudeAssembler:
     quadratic: QuadraticDescriptorPencil
     vertices: BareVertexGenerator
@@ -108,6 +117,62 @@ class TreeAmplitudeAssembler:
             linear_solve_relative_residual=relative_residual,
         )
 
+    def four_point_total(
+        self,
+        external_modes: Sequence[Array],
+        spectral_parameters: dict[str, complex],
+    ) -> FullTreeAmplitude:
+        """Assemble contact plus requested ``s/t/u`` exchanges exactly once.
+
+        External modes already carry the caller's all-incoming/crossing sign
+        convention.  This method supplies only the three canonical pairings
+        and prevents accidental triple counting of the quartic contact.
+        """
+
+        if len(external_modes) != 4:
+            raise ValueError("a four-point amplitude needs four external modes")
+        if not spectral_parameters or not set(spectral_parameters) <= {"s", "t", "u"}:
+            raise ValueError("spectral parameters must select one or more of s, t, u")
+        modes = tuple(np.asarray(mode, dtype=float) for mode in external_modes)
+        expected = (self.quadratic.dimension,)
+        if any(mode.shape != expected for mode in modes):
+            raise ValueError("external mode has the wrong quotient dimension")
+        pairings = {
+            "s": ((0, 1), (2, 3)),
+            "t": ((0, 2), (1, 3)),
+            "u": ((0, 3), (1, 2)),
+        }
+        exchanges: dict[str, complex] = {}
+        residuals: list[float] = []
+        for channel, spectral_parameter in spectral_parameters.items():
+            left_pair, right_pair = pairings[channel]
+            left = self.vertices.cubic_internal_covector(
+                modes[left_pair[0]], modes[left_pair[1]],
+            )
+            right = self.vertices.cubic_internal_covector(
+                modes[right_pair[0]], modes[right_pair[1]],
+            )
+            symbol = self.quadratic.symbol(spectral_parameter)
+            internal = linalg.solve(symbol, right, assume_a="gen", check_finite=True)
+            residual = symbol @ internal - right
+            denominator = max(
+                np.linalg.norm(symbol, ord=2) * np.linalg.norm(internal),
+                np.linalg.norm(right),
+                np.finfo(float).tiny,
+            )
+            residuals.append(float(np.linalg.norm(residual) / denominator))
+            exchanges[channel] = complex(left @ internal)
+        contact = self.vertices.quartic(*modes)
+        return FullTreeAmplitude(
+            contact=contact,
+            exchanges=exchanges,
+            total=contact + sum(exchanges.values()),
+            spectral_parameters={
+                channel: complex(value) for channel, value in spectral_parameters.items()
+            },
+            maximum_linear_solve_relative_residual=max(residuals, default=0.0),
+        )
+
     def require_physical_promotion(self) -> None:
         self.vertices.expansion.require_physical_promotion()
         self.quadratic.require_physical_promotion()
@@ -125,4 +190,9 @@ class TreeAmplitudeAssembler:
         }
 
 
-__all__ = ["BareVertexGenerator", "TreeAmplitude", "TreeAmplitudeAssembler"]
+__all__ = [
+    "BareVertexGenerator",
+    "FullTreeAmplitude",
+    "TreeAmplitude",
+    "TreeAmplitudeAssembler",
+]

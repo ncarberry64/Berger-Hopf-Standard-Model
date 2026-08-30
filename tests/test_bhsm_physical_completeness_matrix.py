@@ -76,6 +76,10 @@ def test_rg_and_muon_readout_capabilities_remain_prediction_gated() -> None:
     ]
     assert magnetic["prediction_classification"] == "OPEN_INTERNAL_BLOCKER"
     assert magnetic["physical_prediction_materialized"] is False
+    collision = records["COLLISION_AND_SCATTERING_PREDICTION"]
+    assert "complete s/t/u assembly without quartic double counting" in collision[
+        "satisfied_dependencies"
+    ]
 
 
 def test_every_row_has_explicit_evidence_and_promotion_fields() -> None:
