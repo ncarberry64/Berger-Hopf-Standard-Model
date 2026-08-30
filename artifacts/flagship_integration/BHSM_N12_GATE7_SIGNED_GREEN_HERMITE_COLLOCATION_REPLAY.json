@@ -1,0 +1,68 @@
+{
+  "FULL_BHSM_COMPLETE": false,
+  "adjudication": {
+    "continuous_center": "OPEN_INTERVAL_SHADOWING_OR_NEXT_OWNER_REFINEMENT",
+    "first_hit": "MUST_BE_REBUILT_OUTWARD_AFTER_CENTER",
+    "one_signed_Green_endpoint_Newton_step": "DIRECTLY_REPLAYED"
+  },
+  "artifact": "BHSM_N12_GATE7_SIGNED_GREEN_HERMITE_COLLOCATION_REPLAY",
+  "authority": "NUMERICAL_GAUSS3_NEWTON_REPLAY_NOT_INTERVAL_SHADOWING_AUTHORITY",
+  "claim_boundary": {
+    "FULL_BHSM_COMPLETE": false,
+    "Gate7": "ACTIVE_ACTION_OWNED_OPERATOR_ORACLE",
+    "Weyl_force_KKT_Hessian": "NOT_CLAIMED",
+    "continuous_action_constrained_center": "OPEN_INTERVAL_AUTHORITY",
+    "continuous_outward_variational_carrier": "OPEN_AFTER_CENTER"
+  },
+  "data": "artifacts/flagship_integration/BHSM_N12_GATE7_SIGNED_GREEN_HERMITE_COLLOCATION_REPLAY.npz",
+  "data_SHA256": "62AD308F3544C5D2FBBB7125490FEE1E387CEA2D39DC3122ACBB4B8A1AB1BB17",
+  "exact_next_dependency": "IF_REDUCED,_ITERATE_THE_SAME_SIGNED_GREEN_NEWTON_MAP_UNTIL_THE_DEFECT_IS_INSIDE_THE_EXISTING_TAYLOR_VOLTERRA_KRAWCZYK_RADIUS;_OTHERWISE_LOCALIZE_THE_FAILED_SOURCE_OR_GRAPH_LINEARIZATION",
+  "inputs": {
+    "artifacts/flagship_integration/BHSM_N12_C2_STOP_HIGH_ORDER_QUARTER_STEP_RETAINED_RECONNAISSANCE.json": "B37A1EE6F2BA9B4D18A352446FAB99326CCD594C5015B7D8FF4DAA2FF7B4ACEA",
+    "artifacts/flagship_integration/BHSM_N12_C2_STOP_HIGH_ORDER_QUARTER_STEP_RETAINED_RECONNAISSANCE.npz": "086C41068B9F3A6C0E5F8040B661202E067D017C909A381010E45FF352498D00",
+    "artifacts/flagship_integration/BHSM_N12_GATE7_CONSTRAINT_DESCRIPTOR_HERMITE_COLLOCATION_CANDIDATE.json": "1112C54BA8BAFA37CA374D02C02B0092B818D399911477C427E23FF3E887A299",
+    "artifacts/flagship_integration/BHSM_N12_GATE7_SIGNED_GREEN_PROJECTED_ENDPOINT_CANDIDATE.json": "4BFCD1E011E8542DAD0617A2CB6ADC76004B5FC735F341BFD31A2D9EE06D87B6",
+    "artifacts/flagship_integration/BHSM_N12_GATE7_SIGNED_GREEN_PROJECTED_ENDPOINT_CANDIDATE.npz": "A72F2F14BF3D01923EBB0CC68F0BDC4733ED9EA5CEC61D08B33928C1B10B73DA",
+    "scripts/audit_n12_gate7_signed_green_hermite_collocation_replay.py": "11F1544646BA215A4BD3C99E305E81CCEFD45ECB91FF976D9E5C514559B9B02A",
+    "theory/n12_gate7_signed_green_hermite_collocation_replay.md": "9495F7FDB55275721126AC3F2301AD5B795CF05596CCD1A196DFEA98EEAB3496"
+  },
+  "mesh": {
+    "Gauss_samples_per_interval": 3,
+    "fine_intervals": 370,
+    "workers": 8
+  },
+  "status": "SIGNED_GREEN_NEWTON_STEP_DOES_NOT_CLOSE_DENSE_FLOW_DEFECT",
+  "summary": {
+    "flow_defect_owner": {
+      "augmented_flow_defect_2_norm": 1.5874283501224914e-05,
+      "descriptor": 2.9354875592585677e-10,
+      "descriptor_rate_defect_absolute": 2.6986716103348624e-13,
+      "fraction": 0.8872983346207417,
+      "interval": 315,
+      "numeric_descriptor_fiber_residual": 2.2475898647031176e-14,
+      "sample": 2,
+      "scaled_constraint_2_norm": 3.932877578644608e-15,
+      "selected_branch": 24,
+      "selected_eigenline_gap": 1.8115004955735358e-07,
+      "state_flow_defect_2_norm": 1.587428350122491e-05
+    },
+    "flow_defect_reduction_factor": 0.9995475531280743,
+    "maximum_augmented_flow_defect_2_norm": 1.5874283501224914e-05,
+    "maximum_endpoint_scaled_constraint_2_norm": 1.965645750229222e-14,
+    "maximum_numeric_descriptor_fiber_residual_absolute": 2.1143140692565777e-13,
+    "maximum_sampled_scaled_constraint_2_norm": 3.5593087103030626e-14,
+    "minimum_selected_eigenline_gap": 1.7341952572457943e-07,
+    "prior_maximum_augmented_flow_defect_2_norm": 1.5867101231310724e-05
+  },
+  "validation": {
+    "all_1110_Gauss3_samples_replayed": true,
+    "all_endpoint_constraints_remain_closed_numerically": true,
+    "all_quantities_finite": true,
+    "branch_24_selected_at_every_sample": true,
+    "continuous_interval_shadowing_not_claimed": true,
+    "no_action_source_selector_scale_gate_or_chord_changed": true,
+    "selected_line_remains_simple_numerically": true,
+    "signed_Green_Newton_step_reduces_prior_Hermite_flow_defect": false
+  },
+  "validation_passed": false
+}

@@ -1,0 +1,64 @@
+{
+  "FULL_BHSM_COMPLETE": false,
+  "adjudication": {
+    "continuous_center": "OPEN_PENDING_SECOND_GAUSS3_REPLAY",
+    "current_center_linearization": "USED_FOR_SECOND_SIGNED_GREEN_NEWTON_STEP",
+    "first_hit": "NUMERICAL_BRACKET_ONLY"
+  },
+  "artifact": "BHSM_N12_GATE7_CURRENT_LINEARIZATION_NEWTON_ENDPOINT_CANDIDATE",
+  "authority": "NUMERICAL_CURRENT_LINEARIZATION_NEWTON_CANDIDATE_NOT_INTERVAL_AUTHORITY",
+  "claim_boundary": {
+    "FULL_BHSM_COMPLETE": false,
+    "Gate7": "ACTIVE_ACTION_OWNED_OPERATOR_ORACLE",
+    "continuous_action_constrained_center": "OPEN_INTERVAL_AUTHORITY",
+    "continuous_outward_variational_carrier": "OPEN_AFTER_CENTER"
+  },
+  "data": "artifacts/flagship_integration/BHSM_N12_GATE7_CURRENT_LINEARIZATION_NEWTON_ENDPOINT_CANDIDATE.npz",
+  "data_SHA256": "51D74E6ACFD9C0E4CF89D85078E8D7BADE296B5223DC5B1A91CFA30B1CF46945",
+  "exact_next_dependency": "JOIN_THE_SECOND_NEWTON_ENDPOINTS_WITH_ENDPOINT_FIELD_MATCHED_CUBICS_AND_REPLAY_ALL_1110_GAUSS3_RESIDUALS",
+  "inputs": {
+    "artifacts/flagship_integration/BHSM_N12_GATE7_SIGNED_GREEN_CURRENT_CENTER_GRAPH_JACOBIAN.json": "1FE991EF082D35C136F964DD75D4B0278047E0AA469FFB9F6976F1038D765501",
+    "artifacts/flagship_integration/BHSM_N12_GATE7_SIGNED_GREEN_CURRENT_CENTER_GRAPH_JACOBIAN.npz": "6EAB2EFEC9FE3460FF94DE43D8FAB3E9188B9E601C4C559F9ECE8047A96FFEDC",
+    "artifacts/flagship_integration/BHSM_N12_GATE7_SIGNED_GREEN_CURRENT_CENTER_MACRO_TANGENT.json": "F07C0136239DE27D3C77F7FD74738BF9902DFE946401179C2E7696029AF1BB22",
+    "artifacts/flagship_integration/BHSM_N12_GATE7_SIGNED_GREEN_CURRENT_CENTER_MACRO_TANGENT.npz": "4ABC27117D839DC7B90558E206E5ED6BC242DEE9189F2C953CBF5D5A5F93CA75",
+    "artifacts/flagship_integration/BHSM_N12_GATE7_SIGNED_GREEN_HERMITE_COLLOCATION_REPLAY.json": "4E6D789775190048CFEBB0D37E00A9ED1EAAD308EB2DE3DCC45F0C02C6C3A66E",
+    "artifacts/flagship_integration/BHSM_N12_GATE7_SIGNED_GREEN_HERMITE_COLLOCATION_REPLAY.npz": "62AD308F3544C5D2FBBB7125490FEE1E387CEA2D39DC3122ACBB4B8A1AB1BB17",
+    "artifacts/flagship_integration/BHSM_N12_GATE7_SIGNED_GREEN_PROJECTED_ENDPOINT_CANDIDATE.json": "4BFCD1E011E8542DAD0617A2CB6ADC76004B5FC735F341BFD31A2D9EE06D87B6",
+    "artifacts/flagship_integration/BHSM_N12_GATE7_SIGNED_GREEN_PROJECTED_ENDPOINT_CANDIDATE.npz": "A72F2F14BF3D01923EBB0CC68F0BDC4733ED9EA5CEC61D08B33928C1B10B73DA",
+    "scripts/materialize_n12_gate7_current_linearization_newton_endpoint_candidate.py": "1644670867816515CD909673907EB2479544EAEC822F2F544345880952C98040",
+    "theory/n12_gate7_current_linearization_newton_endpoint_candidate.md": "46565FD9F75AEEC4DEC56C4E4478CBFB37FEF2A7B98CDCB120E21E4E4C90D17C"
+  },
+  "status": "SECOND_CURRENT_LINEARIZATION_NEWTON_ENDPOINTS_MATERIALIZED",
+  "summary": {
+    "first_hit_action_time_bracket": [
+      92.30572324356507,
+      92.3057232435653
+    ],
+    "maximum_constraint_projection_action_2_norm": 1.1722793238301796e-10,
+    "maximum_current_linearization_Green_correction_2_norm": 1.5411203495070446e-05,
+    "maximum_current_linearization_Green_correction_owner_node": 174,
+    "maximum_final_scaled_constraint_2_norm": 1.7595011208120153e-14,
+    "maximum_macro_tangent_projection_2_norm": 1.340330149552809e-10,
+    "maximum_source_increment_2_norm": 1.3276937894184652e-06,
+    "maximum_source_increment_owner_interval": 170,
+    "minimum_selected_eigenline_gap": 1.7341568804441346e-07,
+    "terminal_current_linearization_Green_correction_2_norm": 2.4949119135713313e-06,
+    "terminal_stop_route": "ONE_STEP_RETAINED_FIELD_CONTINUATION_INSIDE_UNUSED_TERMINAL_CELL",
+    "terminal_stop_selected_branch": 24,
+    "triggered_constraint_projection_count": 300
+  },
+  "validation": {
+    "all_371_second_Newton_endpoints_replayed": true,
+    "all_complete_preterminal_descriptors_are_positive": true,
+    "all_endpoint_constraints_close_numerically": true,
+    "all_quantities_finite": true,
+    "branch_24_selected_at_every_endpoint": true,
+    "current_center_graph_Jacobian_consumed": true,
+    "current_center_macro_tangents_consumed": true,
+    "no_action_source_selector_scale_gate_or_chord_changed": true,
+    "selected_line_remains_simple_numerically": true,
+    "terminal_bracket_not_promoted_to_outward_root": true,
+    "terminal_selected_eigenvalue_is_numerically_bracketed": true
+  },
+  "validation_passed": true
+}

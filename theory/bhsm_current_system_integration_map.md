@@ -50,13 +50,33 @@ superseded.  Projection is not integration.  The active center owner is a
 continuous constraint- and descriptor-fiber-preserving shadowing/collocation
 theorem, followed by a rebuilt cone and first hit.
 
-The corrected all-cell evaluation quantifies that theorem's source.  All 370
-dense midpoints have scaled constraint residual at most
-`8.528596684108791e-15` and retain branch-24 gap at least
-`1.73432052961185e-7`, but the augmented flow defect reaches
-`1.0913491285675919e-5` at cell 283.  Its descriptor-rate part is at most
-`1.052323869871445e-14`; the 98D state collocation correction is the dominant
-remaining center equation.
+The corrected all-cell evaluation quantified that theorem's source.  All 370
+dense midpoints had scaled constraint residual at most
+`8.528596684108791e-15` and retained branch-24 gap at least
+`1.73432052961185e-7`, but the augmented flow defect reached
+`1.0913491285675919e-5` at cell 283.  A cubic endpoint-field-matched replay
+failed to reduce the defect, showing that endpoint consistency alone was not
+the missing theorem.
+
+Two signed-Green endpoint Newton candidates were then formed.  The first
+exposed the stale stored graph linearization.  Rebuilding all 371 graph
+Jacobians at the current center keeps branch 24 throughout, with minimum gap
+`1.73415906564607e-7` and maximum operator norm
+`665.0324890726137`; rebuilding all 48 macro tangents gives maximum
+constraint-tangent residual `8.384291186700417e-16`.  The second nonlinear
+replay reduces the immediate parent's maximum defect by only
+`1.0251289061475437`, to `1.5485158408888117e-5`.
+
+The first within-seam refinement inserts the already-evaluated exact field at
+all 370 midpoints, producing 741 nodes and 740 half-spans.  A 2,220-point
+Gauss-3 replay reduces the maximum augmented defect to
+`7.080761167533001e-6`, a `2.1869341505107256`-fold improvement, while the
+maximum sampled constraint residual is `2.0505993511363814e-14` and the
+minimum branch-24 gap is `1.7341738652006568e-7`.  This establishes useful
+numerical refinement, not a continuous orbit or interval theorem.  The exact
+center owner is now owner-only higher-order collocation or an outward
+continuous shadowing enclosure, followed by the rebuilt cone, first hit, and
+continuous variational carrier.
 
 The current physical theory tuple is `BHSM-AE-2.0.0`.  It retains the v7.x
 stratified bulk/boundary functor, v14-v17 eta/Aether action lineage, v7.2

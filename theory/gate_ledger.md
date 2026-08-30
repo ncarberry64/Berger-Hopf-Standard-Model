@@ -2868,3 +2868,33 @@ Exact next object:
   `1.052323869871445e-14`; thus the active continuous-center owner is the 98D
   state collocation correction with constraint/fiber rows, followed by a
   rebuilt cone and first hit.
+
+## N=12 Gate-7 constraint/descriptor collocation refinement
+
+- A direct cubic endpoint-field-matched replay does not reduce the augmented
+  dense-flow defect, so endpoint matching alone is rejected as a center proof.
+- Two signed-Green endpoint Newton candidates are materialized.  The stale
+  stored graph Jacobian is superseded by a current-center rebuild on all 371
+  nodes; branch 24 remains simple with minimum gap
+  `1.73415906564607e-7`.  The rebuilt 48 macro tangents have maximum
+  constraint-tangent residual `8.384291186700417e-16`.
+- The second current-linearization nonlinear replay reduces its immediate
+  parent's maximum defect by `1.0251289061475437`, to
+  `1.5485158408888117e-5`.  This is progress but not closure.
+- Inserting all 370 already-evaluated exact midpoint fields produces 741 nodes
+  and 740 half-spans.  The complete 2,220-sample Gauss-3 replay reduces the
+  maximum augmented defect to `7.080761167533001e-6`, a
+  `2.1869341505107256`-fold improvement, while maximum sampled constraint
+  residual is `2.0505993511363814e-14` and the minimum selected-line gap is
+  `1.7341738652006568e-7`.
+- Scientific milestone:
+  `WITHIN_SEAM_HALVING_REDUCES_HERMITE_FLOW_DEFECT`.
+- Claim boundary: these are reproducible numerical collocation candidates,
+  not a continuous exact orbit, interval shadowing theorem, rebuilt cone,
+  first-hit authority, or physical force oracle.
+- Exact next owner: continue owner-only higher-order collocation until an
+  outward shadowing/Krawczyk budget closes, or construct that outward
+  continuous shadowing enclosure directly; then rebuild the cone, first hit,
+  and continuous variational carrier.
+- Gate 7 remains `ACTIVE`; Gate 8 is `LOCKED`; chord 3 remains
+  `UNAUTHORIZED`; `FULL_BHSM_COMPLETE=FALSE`.

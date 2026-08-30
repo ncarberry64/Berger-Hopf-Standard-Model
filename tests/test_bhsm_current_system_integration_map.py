@@ -123,6 +123,12 @@ def test_blocker_and_interface_priority_reconciliation() -> None:
         for gap in payload["interface_gaps"] if gap["class"] == "D"
     )
     assert payload["claim_boundary"]["FULL_BHSM_COMPLETE"] is False
+    assert payload["validation"][
+        "current_linearization_newton_reduces_but_does_not_close_flow_defect"
+    ] is True
+    assert payload["validation"][
+        "within_seam_halving_reduces_but_does_not_certify_flow_defect"
+    ] is True
     response_gap = next(
         row for row in payload["interface_gaps"]
         if row["id"] == "RESPONSE_TO_CORRELATED_Y_Z1_Z2"

@@ -78,6 +78,15 @@ PATHS = {
     "projected_dense_flow_defect": "artifacts/flagship_integration/BHSM_N12_GATE7_PROJECTED_DENSE_CENTER_FLOW_DEFECT.json",
     "projected_exact_affine_center": "artifacts/flagship_integration/BHSM_N12_GATE7_PROJECTED_EXACT_AFFINE_FINE_CENTER_CANDIDATE.json",
     "projected_exact_affine_dense_flow_defect": "artifacts/flagship_integration/BHSM_N12_GATE7_PROJECTED_EXACT_AFFINE_DENSE_CENTER_FLOW_DEFECT.json",
+    "constraint_descriptor_collocation": "artifacts/flagship_integration/BHSM_N12_GATE7_CONSTRAINT_DESCRIPTOR_HERMITE_COLLOCATION_CANDIDATE.json",
+    "signed_green_endpoint_newton": "artifacts/flagship_integration/BHSM_N12_GATE7_SIGNED_GREEN_ENDPOINT_NEWTON_CANDIDATE.json",
+    "signed_green_projected_endpoint": "artifacts/flagship_integration/BHSM_N12_GATE7_SIGNED_GREEN_PROJECTED_ENDPOINT_CANDIDATE.json",
+    "signed_green_collocation_replay": "artifacts/flagship_integration/BHSM_N12_GATE7_SIGNED_GREEN_HERMITE_COLLOCATION_REPLAY.json",
+    "current_center_graph_jacobian": "artifacts/flagship_integration/BHSM_N12_GATE7_SIGNED_GREEN_CURRENT_CENTER_GRAPH_JACOBIAN.json",
+    "current_center_macro_tangent": "artifacts/flagship_integration/BHSM_N12_GATE7_SIGNED_GREEN_CURRENT_CENTER_MACRO_TANGENT.json",
+    "current_linearization_endpoint": "artifacts/flagship_integration/BHSM_N12_GATE7_CURRENT_LINEARIZATION_NEWTON_ENDPOINT_CANDIDATE.json",
+    "current_linearization_replay": "artifacts/flagship_integration/BHSM_N12_GATE7_CURRENT_LINEARIZATION_NEWTON_COLLOCATION_REPLAY.json",
+    "refined_within_seam_collocation": "artifacts/flagship_integration/BHSM_N12_GATE7_REFINED_WITHIN_SEAM_HERMITE_COLLOCATION.json",
     "final_force_kkt_verdict": "artifacts/flagship_integration/BHSM_N12_GATE7_FINAL_EXACT_CENTER_FORCE_KKT_HESSIAN_VERDICT.json",
     "causal_y_z1_z2_margin_budget": "artifacts/flagship_integration/BHSM_N12_GATE7_CAUSAL_Y_Z1_Z2_MARGIN_BUDGET_AUDIT.json",
     "recentered_cone_spectrum": "artifacts/flagship_integration/BHSM_N12_GATE7_RECENTERED_CONE_BOUNDARY_CLUSTER_SPECTRUM.json",
@@ -213,6 +222,8 @@ def build_payload() -> dict[str, Any]:
     projected_exact_affine_dense_flow_defect = records[
         "projected_exact_affine_dense_flow_defect"
     ]
+    current_linearization_replay = records["current_linearization_replay"]
+    refined_within_seam_collocation = records["refined_within_seam_collocation"]
     causal_y_z1_z2_margin_budget = records["causal_y_z1_z2_margin_budget"]
     compact_reset_propagation = records["compact_reset_propagation"]
     compact_reset_open_subball = records["compact_reset_open_subball"]
@@ -387,7 +398,7 @@ def build_payload() -> dict[str, Any]:
         {"id": "G7_CORRELATED_QUARTER_STEP_CENTER_STOP_WITNESS", "classification": "RESOLVED_BY_EXACT_TRANSVERSE_FIRST_STOP", "current_effect": "the final exact-center cone, response, causal Z2, strict preterminal selected-eigenvalue margins, canonical earliest stop, uniform negative flow derivative, terminal-cell uniqueness, and local differentiable first-stop time are certified"},
         {"id": "G7_DECORRELATED_BINARY64_CARRIER_COMPOSITION", "classification": "INVALIDATED_PROOF_ROUTE", "current_effect": "independent binary64 component balls produce wrapping blowup and are presentation data only; correlated outward Arb interval strings own global composition"},
         {"id": "G7_OLD_GAUSS12_RECENTERED_NUMERICAL_CONE_TRANSFER", "classification": "INVALIDATED_PROOF_ROUTE", "current_effect": "the old Gauss12 center differs from the exact-affine center by 120901.05128628464 candidate-cone radii; retain its theorem formulas but rebuild the numerical Z2/cone ball at the final center"},
-        {"id": "G7_COMPLETE_JOINT_FORCE_ROOT", "classification": "CURRENT_BLOCKER", "current_effect": "the certified Taylor26 signed response is composed with the retained dense center before all 371 nodes are constraint-projected; the projection is 2420.394771963047 times the inherited final nonlinear radius, so the old cone/first hit are not reused. All 370 corrected dense midpoints remain constraint-accurate, but the exact augmented state-flow defect reaches 1.0913491285675919e-5 at cell 283; solve the constraint/descriptor-fiber augmented collocation correction and new first hit, then its outward variational carrier, nonlinear 72D history jet, Weyl-Calderon oracle, projected heat-minus-zeta force, KKT root, and physical Hessian"},
+        {"id": "G7_COMPLETE_JOINT_FORCE_ROOT", "classification": "CURRENT_BLOCKER", "current_effect": "the constraint/descriptor Hermite route, two signed-Green endpoint Newton steps, current-center graph Jacobian, and current-center macro tangents are materialized as numerical candidates. The second nonlinear replay reduces the maximum dense-flow defect by only 1.0251 times. Halving all 370 spans with exact midpoint fields reduces it further from 1.5485158408888117e-5 to 7.080761167533001e-6 (2.1869 times) while preserving branch 24, but this is not interval shadowing authority. Continue owner-only higher-order collocation or prove an outward shadowing enclosure; then rebuild the cone/first hit and continuous variational carrier before the nonlinear 72D history jet, Weyl-Calderon oracle, projected heat-minus-zeta force, KKT root, and physical Hessian"},
         {"id": "DECORRELATED_SCALAR_SECOND_VARIATION", "classification": "INVALIDATED_PROOF_ROUTE", "current_effect": "finite first variation survives; all 8,692 scalar denominator cells route to signed/common-frame correlation"},
         {"id": "G7_HESSIAN_WARD_SCALAR", "classification": "DOWNSTREAM_ONLY", "current_effect": "follows the force/KKT root"},
         {"id": "CKM_PMNS_PHYSICAL_EIGENBASES", "classification": "DOWNSTREAM_ONLY", "current_effect": "follows Gate 7 and sector response"},
@@ -781,6 +792,31 @@ def build_payload() -> dict[str, Any]:
                 "continuous_shadowing_center"
             ] == "OPEN"
         ),
+        "current_linearization_newton_reduces_but_does_not_close_flow_defect": (
+            current_linearization_replay["validation_passed"] is True
+            and current_linearization_replay["summary"][
+                "flow_defect_reduction_factor"
+            ] > 1.0
+            and current_linearization_replay["summary"][
+                "maximum_augmented_flow_defect_2_norm"
+            ] > 1.0e-6
+            and current_linearization_replay["claim_boundary"][
+                "continuous_action_constrained_center"
+            ] == "OPEN_INTERVAL_AUTHORITY"
+        ),
+        "within_seam_halving_reduces_but_does_not_certify_flow_defect": (
+            refined_within_seam_collocation["validation_passed"] is True
+            and refined_within_seam_collocation["mesh"]["refined_nodes"] == 741
+            and refined_within_seam_collocation["summary"][
+                "flow_defect_reduction_factor"
+            ] > 2.0
+            and refined_within_seam_collocation["summary"][
+                "maximum_augmented_flow_defect_2_norm"
+            ] > 1.0e-6
+            and refined_within_seam_collocation["claim_boundary"][
+                "continuous_action_constrained_center"
+            ] == "OPEN_INTERVAL_AUTHORITY"
+        ),
         "quarter_green_corrected_carrier_is_certified": (
             recentered_cone_spectrum["validation_passed"] is True
             and recentered_cone_projector["validation_passed"] is True
@@ -885,7 +921,7 @@ def build_payload() -> dict[str, Any]:
             "Gate7": "ACTIVE",
             "FULL_BHSM_COMPLETE": False,
         },
-        "exact_next_dependency": "MATERIALIZE_THE_COMPLETE_ACTION_OWNED_JOINT_FINITE_HISTORY_OPERATOR_OR_EQUIVALENT_TWO_SIDED_WEYL_CALDERON_ORACLE,_ENDPOINT_FORM,_AND_FULL_72_DIRECTION_GEOMETRY_RESET_FIRST_JET;_THEN_EVALUATE_THE_PROJECTED_HEAT_MINUS_ZETA_FORCE,_SAME_ACTION_KKT_ROOT,_AND_CONSTRAINED_PHYSICAL_HESSIAN",
+        "exact_next_dependency": "PROMOTE_THE_REFINED_CONSTRAINT_DESCRIPTOR_CENTER_BY_OWNER_ONLY_HIGH_ORDER_COLLOCATION_OR_AN_OUTWARD_CONTINUOUS_SHADOWING_ENCLOSURE;_REBUILD_THE_CENTER_DEPENDENT_CONE_FIRST_HIT_AND_CONTINUOUS_VARIATIONAL_CARRIER;_THEN_MATERIALIZE_THE_NONLINEAR_72D_HISTORY_JET,_TWO_SIDED_WEYL_CALDERON_ORACLE,_PROJECTED_HEAT_MINUS_ZETA_FORCE,_SAME_ACTION_KKT_ROOT,_AND_CONSTRAINED_PHYSICAL_HESSIAN",
         "FULL_BHSM_COMPLETE": False,
     }
 

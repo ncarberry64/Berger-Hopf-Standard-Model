@@ -1,0 +1,78 @@
+{
+  "FULL_BHSM_COMPLETE": false,
+  "adjudication": {
+    "continuous_center": "OPEN_INTERVAL_SHADOWING_OR_COLLOCATION_NEWTON_CERTIFICATE",
+    "descriptor_fiber": "NUMERICALLY_RECENTERED_AT_ENDPOINTS_AND_AUDITED_AT_GAUSS3_SAMPLES",
+    "first_hit": "NUMERICAL_BRACKET_ONLY_MUST_BE_REBUILT_OUTWARD",
+    "projected_exact_affine_nodes": "RETAINED_AS_CONSTRAINT_ENDPOINTS"
+  },
+  "artifact": "BHSM_N12_GATE7_CONSTRAINT_DESCRIPTOR_HERMITE_COLLOCATION_CANDIDATE",
+  "authority": "NUMERICAL_GAUSS3_COLLOCATION_AUDIT_NOT_INTERVAL_SHADOWING_AUTHORITY",
+  "claim_boundary": {
+    "FULL_BHSM_COMPLETE": false,
+    "Gate7": "ACTIVE_ACTION_OWNED_OPERATOR_ORACLE",
+    "Weyl_force_KKT_Hessian": "NOT_CLAIMED",
+    "continuous_action_constrained_center": "OPEN_INTERVAL_AUTHORITY",
+    "continuous_outward_variational_carrier": "OPEN_AFTER_CENTER",
+    "nonlinear_72D_history_first_jet": "OPEN_AFTER_CARRIER"
+  },
+  "data": "artifacts/flagship_integration/BHSM_N12_GATE7_CONSTRAINT_DESCRIPTOR_HERMITE_COLLOCATION_CANDIDATE.npz",
+  "data_SHA256": "A260C9D58E5812DF96074D3D626D6532D596D0B3B4C31C83D5BECA21C5F0D075",
+  "exact_next_dependency": "USE_THE_GAUSS3_DEFECT_AND_CONSTRAINT_FIBER_RESIDUALS_IN_THE_EXISTING_TAYLOR_VOLTERRA_KRAWCZYK_MACHINERY_TO_CERTIFY_A_CONTINUOUS_SHADOWING_CENTER,_THEN_REBUILD_THE_FINAL_CONE_AND_STOP",
+  "inputs": {
+    "artifacts/flagship_integration/BHSM_N12_C2_STOP_HIGH_ORDER_QUARTER_STEP_RETAINED_RECONNAISSANCE.json": "B37A1EE6F2BA9B4D18A352446FAB99326CCD594C5015B7D8FF4DAA2FF7B4ACEA",
+    "artifacts/flagship_integration/BHSM_N12_C2_STOP_HIGH_ORDER_QUARTER_STEP_RETAINED_RECONNAISSANCE.npz": "086C41068B9F3A6C0E5F8040B661202E067D017C909A381010E45FF352498D00",
+    "artifacts/flagship_integration/BHSM_N12_GATE7_PROJECTED_EXACT_AFFINE_DENSE_CENTER_FLOW_DEFECT.json": "7A1DE447EEBA488FDE9183F207F49C85D5126EC1C00F1B63761512686924B060",
+    "artifacts/flagship_integration/BHSM_N12_GATE7_PROJECTED_EXACT_AFFINE_FINE_CENTER_CANDIDATE.json": "2178CEEB5F2F98846E426EA7AA2FEEA244CBF0E3315C9DDC32C8B0B452C5425A",
+    "artifacts/flagship_integration/BHSM_N12_GATE7_PROJECTED_EXACT_AFFINE_FINE_CENTER_CANDIDATE.npz": "EDE3565B950F921D69527CAB9801B96502DEA40B9AEC2E73082DC4EE6F0CAFA5",
+    "scripts/audit_n12_gate7_constraint_descriptor_hermite_collocation_candidate.py": "BDA316B056CF7794B5D793B2E8C36E2A9AC3604D1F532B51FAD6A448D1D5D553",
+    "theory/n12_gate7_constraint_descriptor_hermite_collocation_candidate.md": "1E32A54BA508A17AF7446BF48145E5F5999BB415009AD97BAC90DB123FADE02E"
+  },
+  "mesh": {
+    "Gauss_samples_per_interval": 3,
+    "fine_intervals": 370,
+    "workers": 8
+  },
+  "status": "HERMITE_COLLOCATION_CANDIDATE_REQUIRES_OWNER_REFINEMENT",
+  "summary": {
+    "first_hit_action_time_bracket": [
+      92.30478494853105,
+      92.3047849485439
+    ],
+    "first_hit_bracket_width": 1.2846612662542611e-11,
+    "flow_defect_owner": {
+      "augmented_flow_defect_2_norm": 1.5867101231310724e-05,
+      "descriptor": 4.1673582350146416e-10,
+      "descriptor_rate_defect_absolute": 2.115803033520973e-13,
+      "fraction": 0.8872983346207417,
+      "interval": 283,
+      "numeric_descriptor_fiber_residual": -5.740314555434964e-14,
+      "sample": 2,
+      "scaled_constraint_2_norm": 5.2009762073999975e-15,
+      "selected_branch": 24,
+      "selected_eigenline_gap": 1.8640346015150003e-07,
+      "state_flow_defect_2_norm": 1.586710123131072e-05
+    },
+    "flow_defect_reduction_factor": 0.6878062430294581,
+    "maximum_augmented_flow_defect_2_norm": 1.5867101231310724e-05,
+    "maximum_endpoint_scaled_constraint_2_norm": 1.1679676438539284e-15,
+    "maximum_numeric_descriptor_fiber_residual_absolute": 1.9011982737988455e-13,
+    "maximum_sampled_scaled_constraint_2_norm": 3.5316443124433623e-14,
+    "minimum_selected_eigenline_gap": 1.7341972505538696e-07,
+    "prior_piecewise_linear_maximum_augmented_flow_defect_2_norm": 1.0913491285675919e-05
+  },
+  "validation": {
+    "all_1110_Gauss3_collocation_samples_evaluated": true,
+    "all_371_constraint_projected_endpoints_retained_with_new_terminal_stop": true,
+    "all_endpoint_constraints_close_numerically": true,
+    "all_quantities_finite": true,
+    "branch_24_selected_at_every_sample": true,
+    "continuous_interval_shadowing_not_claimed": true,
+    "cubic_endpoint_field_matching_reduces_piecewise_linear_flow_defect": false,
+    "no_action_source_selector_scale_gate_or_chord_changed": true,
+    "selected_line_remains_simple_numerically": true,
+    "terminal_bracket_not_promoted_to_outward_root": true,
+    "terminal_selected_eigenvalue_is_numerically_bracketed": true
+  },
+  "validation_passed": false
+}

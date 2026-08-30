@@ -52,12 +52,19 @@ superseded.  Not supported: calling these nodes a continuous orbit or
 inheriting `lambda_24(Y)=s`.
 
 The corrected dense reconstruction has been tested against the exact retained
-action field at all 370 cell midpoints.  It is constraint-accurate there
-(`≤8.528596684108791e-15`) and branch 24 stays simple, but its augmented flow
-defect reaches `1.0913491285675919e-5` at cell 283.  Therefore continuous
-shadowing is explicitly unsupported until the state collocation defect is
-solved; the `1.052323869871445e-14` descriptor-rate bound does not close that
-gap.  The cone and first hit must then be rebuilt on the resulting center.
+action field.  A direct cubic endpoint-field match fails to reduce the
+defect.  Two signed-Green Newton candidates, a rebuilt current-center graph
+Jacobian, and rebuilt 73D macro tangents are materialized; their second
+nonlinear replay gives only a `1.0251289061475437`-fold maximum-defect
+reduction.  Halving all 370 spans with their already-evaluated exact midpoint
+fields gives a stronger `2.1869341505107256`-fold reduction, from
+`1.5485158408888117e-5` to `7.080761167533001e-6`, with maximum sampled
+constraint residual `2.0505993511363814e-14` and simple branch 24.  Supported:
+these are reproducible numerical collocation candidates.  Not supported:
+calling the 741-node path a continuous exact orbit or using it as interval,
+cone, first-hit, variational-carrier, force, KKT, or Hessian authority.  The
+next proof is owner-only higher-order collocation or an outward continuous
+shadowing enclosure; the cone and first hit must then be rebuilt.
 
 ## Current public claim boundary
 

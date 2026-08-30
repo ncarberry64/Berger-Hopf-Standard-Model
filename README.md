@@ -44,12 +44,20 @@ is `1.1679676438539284e-15`, but the maximum projection is
 `3.010903976408097e-9`, or `2420.394771963047` times the inherited final
 nonlinear radius.  The native-only projected route and old final cone/first
 hit are therefore superseded.  These nodes remain a discrete candidate.
-The corrected 370-cell midpoint audit localizes the missing equation:
-constraint residual stays below `8.528596684108791e-15`, while the exact
-augmented flow defect reaches `1.0913491285675919e-5` at cell 283.  Its
-descriptor-rate component is at most `1.052323869871445e-14`, so the next
-owner is the 98D state collocation correction with the constraint and
-descriptor-fiber rows attached, followed by a rebuilt cone and first hit.
+The corrected 370-cell midpoint audit localized the missing equation:
+constraint residual stayed below `8.528596684108791e-15`, while the exact
+augmented flow defect reached `1.0913491285675919e-5` at cell 283.  A direct
+cubic endpoint-field match did not improve it.  Two signed-Green Newton
+passes then rebuilt the current-center graph Jacobian and 73D macro tangents;
+the second nonlinear replay reduced the maximum defect to
+`1.5485158408888117e-5` relative to its immediate parent.  Finally, inserting
+all 370 already-evaluated exact midpoint fields and halving every span reduced
+the maximum to `7.080761167533001e-6`, a `2.1869341505107256`-fold reduction,
+while branch 24 remained simple with gap at least
+`1.7341738652006568e-7`.  This is numerical refined-collocation evidence, not
+continuous interval authority.  The exact next owner is owner-only
+higher-order collocation or an outward shadowing enclosure, followed by a
+rebuilt cone, first hit, and continuous variational carrier.
 Gate 7 remains
 `ACTIVE`; `FULL_BHSM_COMPLETE = FALSE`.  Physical completion additionally
 requires universal spectrum/propagator, vertex, decay, loop/magnetic-moment,

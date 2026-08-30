@@ -40,11 +40,17 @@ fine nodes are projected.  Their maximum scaled constraint residual is
 `3.010903976408097e-9`, which is `2420.394771963047` times the inherited final
 nonlinear radius.  Thus the native-only projection and old final cone/first
 hit are superseded.  This remains discrete candidate data.  Gate 7 remains
-`ACTIVE`; the corrected all-cell audit gives maximum midpoint constraint
-residual `8.528596684108791e-15` but augmented flow defect
-`1.0913491285675919e-5` (cell 283).  The descriptor-rate defect is at most
-`1.052323869871445e-14`; the state collocation equation is the active center
-correction owner, followed by a rebuilt cone and first hit.
+`ACTIVE`.  The corrected all-cell audit first found augmented flow defect
+`1.0913491285675919e-5`; cubic endpoint-field matching did not reduce it.
+Two signed-Green Newton candidates now rebuild the current-center graph
+Jacobian and 73D macro tangents.  Their second nonlinear replay improves the
+immediate parent by only `1.0251289061475437`.  A 741-node within-seam
+refinement using all 370 exact midpoint fields reduces the maximum defect from
+`1.5485158408888117e-5` to `7.080761167533001e-6`, a
+`2.1869341505107256`-fold improvement, while preserving simple branch 24.
+This remains numerical, not interval authority.  The active center owner is
+owner-only higher-order collocation or outward continuous shadowing, followed
+by a rebuilt cone, first hit, and continuous variational carrier.
 `FULL_BHSM_COMPLETE = FALSE`.  Universal physical prediction engines remain
 open downstream.
 

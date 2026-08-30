@@ -1,0 +1,70 @@
+{
+  "FULL_BHSM_COMPLETE": false,
+  "adjudication": {
+    "continuous_center": "OPEN_INTERVAL_SHADOWING_OR_FURTHER_OWNER_REFINEMENT",
+    "quarter_step_center": "RETAINED",
+    "within_seam_interpolant": "HALVED_USING_ALREADY_EVALUATED_EXACT_MIDPOINT_FIELDS"
+  },
+  "artifact": "BHSM_N12_GATE7_REFINED_WITHIN_SEAM_HERMITE_COLLOCATION",
+  "authority": "NUMERICAL_REFINED_GAUSS3_COLLOCATION_NOT_INTERVAL_AUTHORITY",
+  "claim_boundary": {
+    "FULL_BHSM_COMPLETE": false,
+    "Gate7": "ACTIVE_ACTION_OWNED_OPERATOR_ORACLE",
+    "continuous_action_constrained_center": "OPEN_INTERVAL_AUTHORITY",
+    "continuous_outward_variational_carrier": "OPEN_AFTER_CENTER"
+  },
+  "data": "artifacts/flagship_integration/BHSM_N12_GATE7_REFINED_WITHIN_SEAM_HERMITE_COLLOCATION.npz",
+  "data_SHA256": "78235CEA5C5BE38E0580725610FD11D50919E222E31586ABFDEC251FB668D8EF",
+  "exact_next_dependency": "IF_THE_EXPECTED_INTERPOLATION_ORDER_IS_OBSERVED,_REFINE_ONLY_UNTIL_THE_DEFECT_FITS_THE_TAYLOR_VOLTERRA_KRAWCZYK_BUDGET;_OTHERWISE_ROUTE_TO_DIRECT_HIGH_ORDER_MULTIPLE_SHOOTING",
+  "inputs": {
+    "artifacts/flagship_integration/BHSM_N12_C2_STOP_HIGH_ORDER_QUARTER_STEP_RETAINED_RECONNAISSANCE.json": "B37A1EE6F2BA9B4D18A352446FAB99326CCD594C5015B7D8FF4DAA2FF7B4ACEA",
+    "artifacts/flagship_integration/BHSM_N12_C2_STOP_HIGH_ORDER_QUARTER_STEP_RETAINED_RECONNAISSANCE.npz": "086C41068B9F3A6C0E5F8040B661202E067D017C909A381010E45FF352498D00",
+    "artifacts/flagship_integration/BHSM_N12_GATE7_CURRENT_LINEARIZATION_NEWTON_COLLOCATION_REPLAY.json": "417895383C97B153DB449478B2C091F3E2AC16FEB307809B81AF028110AF1A65",
+    "artifacts/flagship_integration/BHSM_N12_GATE7_CURRENT_LINEARIZATION_NEWTON_COLLOCATION_REPLAY.npz": "501CAB8F283F106610E3C6691B5CBD8A7BC8380FBA5EFABDB575565FE9D80B9A",
+    "artifacts/flagship_integration/BHSM_N12_GATE7_CURRENT_LINEARIZATION_NEWTON_ENDPOINT_CANDIDATE.json": "DBAB6B85663141694D87657C37FA5D18E9CC9373DAE9A6BCA434D502375CC829",
+    "artifacts/flagship_integration/BHSM_N12_GATE7_CURRENT_LINEARIZATION_NEWTON_ENDPOINT_CANDIDATE.npz": "51D74E6ACFD9C0E4CF89D85078E8D7BADE296B5223DC5B1A91CFA30B1CF46945",
+    "scripts/audit_n12_gate7_refined_within_seam_hermite_collocation.py": "B72195C812B1D5EB6BFD234FCB169DD69DBA34A03B4B701DEA123704E9168C03",
+    "theory/n12_gate7_refined_within_seam_hermite_collocation.md": "E513C8B2B217768B2CD1AF7BEE47DA87A562E0E1CA0A9BBC0AE2B3D3B003A53F"
+  },
+  "mesh": {
+    "Gauss_samples_per_interval": 3,
+    "refined_intervals": 740,
+    "refined_nodes": 741,
+    "workers": 8
+  },
+  "status": "WITHIN_SEAM_HALVING_REDUCES_HERMITE_FLOW_DEFECT",
+  "summary": {
+    "flow_defect_owner": {
+      "augmented_flow_defect_2_norm": 7.080761167533001e-06,
+      "descriptor": 6.09997884324903e-10,
+      "descriptor_rate_defect_absolute": 2.0037301141145778e-13,
+      "interval": 440,
+      "numeric_descriptor_fiber_residual": -6.359818935851572e-14,
+      "sample": 0,
+      "scaled_constraint_2_norm": 5.948126046402975e-15,
+      "selected_branch": 24,
+      "selected_eigenline_gap": 2.007279329083265e-07,
+      "state_flow_defect_2_norm": 7.0807611675329975e-06,
+      "unit_fraction": 0.1127016653792583
+    },
+    "flow_defect_reduction_factor": 2.1869341505107256,
+    "maximum_augmented_flow_defect_2_norm": 7.080761167533001e-06,
+    "maximum_numeric_descriptor_fiber_residual_absolute": 1.9645855583158063e-13,
+    "maximum_sampled_scaled_constraint_2_norm": 2.0505993511363814e-14,
+    "minimum_selected_eigenline_gap": 1.7341738652006568e-07,
+    "prior_maximum_augmented_flow_defect_2_norm": 1.5485158408888117e-05
+  },
+  "validation": {
+    "all_2220_refined_Gauss3_samples_evaluated": true,
+    "all_370_existing_exact_midpoint_fields_inserted": true,
+    "all_741_refined_nodes_materialized": true,
+    "all_quantities_finite": true,
+    "branch_24_selected_at_every_sample": true,
+    "continuous_interval_shadowing_not_claimed": true,
+    "no_action_source_selector_scale_gate_or_chord_changed": true,
+    "quarter_step_proof_center_not_replaced": true,
+    "selected_line_remains_simple_numerically": true,
+    "within_seam_halving_reduces_maximum_flow_defect": true
+  },
+  "validation_passed": true
+}
