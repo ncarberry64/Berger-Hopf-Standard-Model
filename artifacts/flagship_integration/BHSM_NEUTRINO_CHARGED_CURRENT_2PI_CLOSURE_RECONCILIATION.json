@@ -1,0 +1,270 @@
+{
+  "FULL_BHSM_COMPLETE": false,
+  "action_version": "BHSM-AE-2.0.0",
+  "artifact": "BHSM_NEUTRINO_CHARGED_CURRENT_2PI_CLOSURE_RECONCILIATION",
+  "classification": "FULL_FIELD_ACTION_ATTACHMENT_REQUIRED_BEFORE_CLOSURE_THEOREM",
+  "closed_owner": "NEUTRINO_CHARGED_CURRENT_2PI_CLOSURE_RECONCILIATION",
+  "evidence_base_commit": "d75473240335832e684de25c913d8998890e8777",
+  "result": "FULL_FIELD_ACTION_ATTACHMENT_REQUIRED_BEFORE_CLOSURE_THEOREM",
+  "schema_version": 1,
+  "sector_scope": {
+    "included": [
+      "neutral_lepton",
+      "charged_lepton",
+      "leptonic_charged_current"
+    ],
+    "explicitly_excluded_from_2pi_encapsulation_generalization": [
+      "quarks",
+      "gluons",
+      "hadrons",
+      "atoms",
+      "nuclei",
+      "molecules"
+    ],
+    "exclusion_reason": "Other sectors may have distinct action-selected formation, confinement, or binding mechanisms; this reconciliation proves or rejects no cross-sector 2pi rule."
+  },
+  "scientific_verdict": {
+    "charged_current_topological_hypothesis": "NOT_DERIVED_ON_CURRENT_ACTION",
+    "hypothesis_A_W_supplies_quantized_winding_increment": "REJECTED_AT_CURRENT_EVIDENCE_BOUNDARY",
+    "hypothesis_A_reason": "No current BHSM charged-current term acts on an action-owned winding coordinate or contributes a quantized angle. The effective SU2L current supplies a representation-changing interaction, not a derived Delta-theta_W.",
+    "hypothesis_B_W_supplies_closure_boundary_or_dynamical_condition": "OPEN",
+    "hypothesis_B_reason": "The effective SU2L current changes the neutral/charged weak-doublet equations, but no same-action theorem maps that variation to the boundary phase-closure functional or to the Gate-7 branch-24 stop surface.",
+    "neutrino_open_winding_classification": "PARTIALLY_SUPPORTED",
+    "neutrino_open_winding_reason": "Propagation-conditioned neutral response, phase evolution, and conditional PMNS transport are present. An action-owned neutral winding variable, an unclosed winding class, literal winding/unwinding, and repeated closure attempts are not derived.",
+    "two_pi_to_gate7_identification": "NOT_DERIVED",
+    "two_pi_to_gate7_reason": "The phase-closure layer uses exp(i d theta)=1, while the exact Gate-7 first stop is lambda_24=0. No artifact proves that these two zero sets coincide or that lambda_24 is a charged-lepton winding angle.",
+    "current_relationship": "BHSM contains conditional neutral propagation, an effective action-owned SU2L charged current, conditional phase/finite-algebra closure, and a separate Gate-7 first-stop geometry, but it does not contain their same-action topological composition.",
+    "physical_contradiction_found": false
+  },
+  "reconciliation_matrix": [
+    {
+      "id": 1,
+      "statement": "neutrino = propagation-locked/open mode",
+      "classification": "CONDITIONAL",
+      "reason": "Propagation locking is doctrine-backed and conditionally formalized; the topological word open is not derived as a winding class."
+    },
+    {
+      "id": 2,
+      "statement": "charged current acts on neutral -> charged transition",
+      "classification": "ARTIFACT_BACKED",
+      "reason": "The effective M4 SU2L covariant derivative owns the Hermitian W+/W- weak current and the weak-doublet transition, but its attachment to the current AE2 Gate-7 background is open."
+    },
+    {
+      "id": 3,
+      "statement": "2pi closure defines charged-lepton formation",
+      "classification": "CONDITIONAL",
+      "reason": "Integer Hopf-phase closure and the 2pi phase functional are conditional results. Their identification with physical charged-lepton formation is not a current theorem."
+    },
+    {
+      "id": 4,
+      "statement": "W supplies quantized winding increment",
+      "classification": "REJECTED",
+      "reason": "No action-derived Delta-theta_W, quantization source, or winding conservation law is present in the charged-current action."
+    },
+    {
+      "id": 5,
+      "statement": "W supplies closure boundary/dynamical condition",
+      "classification": "OPEN",
+      "reason": "The effective current changes field equations, but no theorem shows that it changes admissibility so that the existing neutral phase reaches the 2pi closure set."
+    },
+    {
+      "id": 6,
+      "statement": "electric charge/action representation inherited at closure",
+      "classification": "CONDITIONAL",
+      "reason": "The finite-algebra charge operator conditionally yields Q=0 and Q=-1 weak-orientation rows, but the closure transition and current AE2 full-field attachment are absent."
+    },
+    {
+      "id": 7,
+      "statement": "family mapping nu_e/e, nu_mu/mu, nu_tau/tau",
+      "classification": "OPEN",
+      "reason": "Historical PMNS geometry is conditional; current AE2 action-derived U_l, U_nu, PMNS, and charged/neutral eigenbasis selections are absent."
+    },
+    {
+      "id": 8,
+      "statement": "Gate-7 first hit = topological closure event",
+      "classification": "AUTHOR_ONTOLOGY_ONLY",
+      "reason": "The exact first hit is the branch-24 reduced-Hessian eigenvalue lambda_24=0. The repository does not identify it with theta=2pi."
+    },
+    {
+      "id": 9,
+      "statement": "child persistence is separate from parent formation",
+      "classification": "ARTIFACT_BACKED",
+      "reason": "The exact Gate-7 parent theorem ends at first hit and current persistence artifacts certify only separate positive-duration child domains, without eternal stability."
+    },
+    {
+      "id": 10,
+      "statement": "full neutrino -> charged-lepton closure theorem",
+      "classification": "OPEN",
+      "reason": "The current retained N12 action is geometry-only and cannot instantiate the required same-action fermion, gauge/ghost, scalar/HS, mixed derivative, family, and normalization blocks."
+    }
+  ],
+  "minimum_missing_theorem": {
+    "name": "CURRENT_AE2_FULL_FIELD_LEPTONIC_CHARGED_CURRENT_TOPOLOGICAL_ATTACHMENT_THEOREM",
+    "prerequisite": "Attach one machine-readable gauge/ghost, fermion, and scalar/HS action with all required self- and cross-derivatives to the accepted BHSM-AE-2.0.0 Gate-7 background.",
+    "required_domain_map": "Define an action-owned neutral phase/winding observable and prove how the leptonic W current maps its neutral domain to the charged weak-orientation domain without adding a fitted increment.",
+    "required_zero_set_identification": "Prove or reject equality of the relevant charged phase-closure zero set with the physical Gate-7 branch-24 first-stop/reset stratum.",
+    "required_representation_map": "Derive the charged Q=-1, spin/chirality, and charged-lepton endpoint from the same finite algebra and current variation.",
+    "required_family_map": "Derive current-action U_l and U_nu, their PMNS mismatch, and the e/mu/tau endpoint projectors without importing family labels.",
+    "why_a_bridge_theorem_alone_is_not_yet_enough": "The current full-field-action audit proves that the accepted N12 background has no independent physical fermion, gauge/ghost, or scalar/HS slots. The topological bridge cannot be evaluated on that background until this attachment exists."
+  },
+  "gate7": {
+    "steering_result": "YES — MATHEMATICALLY SUPPORTED",
+    "scope": "PROOF_ARCHITECTURE_ADMISSIBLE; GATE7_NOT_CLOSED",
+    "reason": "The exact current theorem requires a finite causal parent history from the certified reset relation through the canonical earliest stop and explicitly excludes post-hit child persistence. The failed one-ball inequality is one sufficient global proof architecture, not the scientific definition of the stop theorem.",
+    "local_chain_requirements": [
+      "same BHSM-AE-2.0.0 equations, accepted replay center, branch 24, and physical parameters",
+      "validated local neighborhoods with nonempty ordered overlaps",
+      "root-preserving continuation and compatibility or uniqueness on every overlap",
+      "regular-domain and causal-orientation preservation through the complete parent corridor",
+      "terminal contact with the existing certified lambda_24 first-stop bracket",
+      "no transfer of parent-history curvature to the separate child-persistence claim"
+    ],
+    "scientific_boundary": "This authorizes a chained local existence proof method; it does not identify lambda_24=0 with theta=2pi and does not itself close the same-action force/KKT/full-field requirements."
+  },
+  "child_persistence": {
+    "separate_from_parent_formation": true,
+    "positive_duration_evidence_exists": true,
+    "current_evidence_scope": "separate complete-child or event-side persistence domains",
+    "physical_electron_persistence_derived": false,
+    "eternal_stability_derived": false,
+    "black_hole_level_deencapsulation_threshold_derived": false
+  },
+  "precision_F2_downstream_readiness": {
+    "calculation_started": false,
+    "physical_F2_0_promoted": false,
+    "generic_charged_lepton_F2_engine": "IMPLEMENTED_GATED",
+    "required_objects": [
+      {
+        "object": "action-identified physical muon mode",
+        "status": "OPEN",
+        "reason": "Current action-derived charged-lepton spectrum/family endpoint is absent."
+      },
+      {
+        "object": "action-identified physical nu_mu mode",
+        "status": "OPEN",
+        "reason": "Current action-derived neutral eigenbasis and family identification are absent."
+      },
+      {
+        "object": "W-nu_mu-mu map",
+        "status": "EFFECTIVE_EFT_CURRENT_ARTIFACT_BACKED__CURRENT_AE2_ATTACHMENT_OPEN",
+        "reason": "The SU2L current exists at effective M4 level but is not attached to the accepted full-field AE2 background or to the 2pi/Gate-7 closure map."
+      },
+      {
+        "object": "Q_mu=-1",
+        "status": "CONDITIONAL_FINITE_ALGEBRA_OPERATOR",
+        "reason": "The conditional boundary charge operator contains the Q=-1 weak-orientation row; the physical muon endpoint selection is open."
+      },
+      {
+        "object": "muon chirality/spin representation",
+        "status": "CONDITIONAL_REPRESENTATION_LEDGER",
+        "reason": "The representation skeleton exists, but its current full-field action attachment and family endpoint selection are open."
+      },
+      {
+        "object": "external-state and LSZ normalization provenance",
+        "status": "ENGINE_IMPLEMENTED_INPUT_OPEN",
+        "reason": "The universal normalization machinery cannot promote a physical mode without the action-owned full-field symbol and selected external state."
+      }
+    ],
+    "consequence": "The reconciliation does not yet supply the state and vertex provenance required to evaluate a physical a_mu=F2_mu(0)."
+  },
+  "unsupported_assumptions": [
+    "a neutrino is literally an incomplete topological winding",
+    "ordinary neutrino flavor oscillation is winding and unwinding",
+    "the W boson donates a fixed quantized angular increment",
+    "the W interaction catalyzes 2pi closure on the current action",
+    "the Gate-7 lambda_24 first stop is the same zero set as 2pi phase closure",
+    "the Gate-7 child is an electron, muon, or tau",
+    "ordinary electromagnetic interactions preserve an action-derived topological electron knot",
+    "de-encapsulation has a black-hole-level threshold",
+    "positive-duration child persistence proves eternal charged-lepton stability"
+  ],
+  "claim_boundary": {
+    "new_action_term_added": false,
+    "new_numerical_run_used": false,
+    "accepted_gate7_trajectory_changed": false,
+    "accepted_replay_center_changed": false,
+    "branch_24_changed": false,
+    "physical_parameters_changed": false,
+    "old_artifacts_rewritten": false,
+    "muon_gminus2_calculated": false,
+    "full_closure_mechanism_claimed": false
+  },
+  "provenance": [
+    {
+      "path": "artifacts/neutrino_bedrock_dynamic_layer_v1.json",
+      "commit": "0f74b42ee47ea44ade6e20cb676d359a70afd926",
+      "sha256": "747A165B2DA879709228E2982AD9FE080E60312EB0DADC2E7A6393B0D697DC23"
+    },
+    {
+      "path": "artifacts/BHSM_neutral_action_closure_report_v1_5.json",
+      "commit": "34afcdf13cb85d8dcab85968e6babc20e8a702c0",
+      "sha256": "A20860DD52FC33057349524FDED12F37A270560D7D45270ED7654228236D00D5"
+    },
+    {
+      "path": "artifacts/flagship_integration/BHSM_AE2_PMNS_ACTION_REDERIVATION_AUDIT.json",
+      "commit": "6f62a46300b3db3d7f9741256554a0d5491e62f9",
+      "sha256": "26FF64CC3FB52DC29113C60357F9FCC3757DCD8EABEC2A133484F26DC7FD875D"
+    },
+    {
+      "path": "artifacts/BHSM_parent_action_charged_current_v11_6.json",
+      "commit": "dd7420f8e1a1935744b86183f1b164ece8c8b484",
+      "sha256": "D8C19CC8B5370EFF594ABEC29ED9FAFC2067F946B302DC089E448643CB7BA485"
+    },
+    {
+      "path": "theory/derived_hopf_phase_closure.md",
+      "commit": "4efb55cf94a4168073b8fc43bde725ea7912e025",
+      "sha256": "84CB1C7028F35C981DFFE03A1DFD381816DE433DF6C8E45FA8F38B77518B8016"
+    },
+    {
+      "path": "theory/boundary_phase_closure_functional.md",
+      "commit": "0a54ec96a8736b307c6691907cff49c083422d64",
+      "sha256": "B87EA79AC247F981C09E6E057EE1E61C2D43800347141C8A9BC204004909CCE7"
+    },
+    {
+      "path": "theory/theorem_discharge_finite_algebra_charge_results.json",
+      "commit": "2611711d9a8e25530cfb5d0abbb5c713135d624c",
+      "sha256": "AEAB5116A5B82EF3E9E30DA3874503D1EBDC9900F158E7B58CEC6D30C49B6780"
+    },
+    {
+      "path": "artifacts/BHSM_CURRENT_FULL_FIELD_ACTION_ATTACHMENT_AUDIT.json",
+      "commit": "271d17e37725455423bbf34e206cc19779be63e0",
+      "sha256": "28EBFF6817E5DC23BA997ACE965FA1792CBF992CF09D73419218E3AE4DA41A30"
+    },
+    {
+      "path": "artifacts/flagship_integration/BHSM_N12_GATE7_EXACT_AFFINE_CONTINUOUS_FIRST_STOP.json",
+      "commit": "df05fa8becbed9247c9ccf7b04ec25fe071d16ef",
+      "sha256": "111C6FE1E8D297B68DE6B19E2D257D5DC437BC7EC970DB2C9DBF08737B40DF5F"
+    },
+    {
+      "path": "artifacts/flagship_integration/BHSM_N12_GATE7_ACCEPTED_REPLAY_CENTER_OUTWARD_74D_CONTRACTION.json",
+      "commit": "d75473240335832e684de25c913d8998890e8777",
+      "sha256": "3E36775BBB1E34200D30432C6A7D4EEBC898D0A04B4C6DF7FE3F44826BF8DC20"
+    },
+    {
+      "path": "artifacts/BHSM_aether_n3_complete_child_persistence_v17_99.json",
+      "commit": "02ddaa947aaa1f4a3e486ce4b723047203e37eb0",
+      "sha256": "5648CF2421B7C896E502D329833102F2D1010F1F3FA544A9C5C78DF4F91EDD13"
+    },
+    {
+      "path": "src/bhsm/interface/universal_precision_form_factor.py",
+      "commit": "45dec604c3bc5045ae24b709815d64276422dfd0",
+      "sha256": "612627B59DEEBF70CFFCD3130699E0D54D4AB0C7BF5A942034A2D4BE83380877"
+    }
+  ],
+  "validation": {
+    "all_ten_required_matrix_rows_present": true,
+    "all_matrix_classifications_in_allowed_vocabulary": true,
+    "existing_neutrino_doctrine_preserved": true,
+    "charged_current_effective_action_not_relabelled_as_full_AE2_attachment": true,
+    "phase_closure_not_relabelled_as_Gate7_stop": true,
+    "hypothesis_A_not_inferred_from_particle_labels": true,
+    "hypothesis_B_not_promoted_without_action_bridge": true,
+    "charge_family_and_chirality_not_hand_entered_as_derived": true,
+    "parent_formation_and_child_persistence_kept_separate": true,
+    "global_Z2_not_interpreted_as_physical_instability": true,
+    "F2_engine_not_relabelled_as_physical_magnetic_moment": true,
+    "charged_lepton_2pi_mechanism_not_generalized_to_other_sectors": true,
+    "no_old_artifact_promoted_or_modified": true
+  },
+  "validation_passed": true
+}
