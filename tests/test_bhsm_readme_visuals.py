@@ -23,12 +23,16 @@ def test_visual_manifest_preserves_claim_boundaries() -> None:
     assert payload["spectral_visualization"]["particle_assignments_available"] is False
 
 
-def test_visual_suite_and_readme_references_exist() -> None:
+def test_visual_suite_is_presented_outside_the_scientific_readme() -> None:
     readme = (ROOT / "README.md").read_text(encoding="utf-8")
+    museum = (ROOT / "museum" / "app" / "exhibits.ts").read_text(encoding="utf-8")
     for name in NAMES:
         for suffix in (".svg", ".png", "_animated.gif"):
             assert (ASSETS / f"{name}{suffix}").is_file()
-        assert f"docs/assets/{name}_animated.gif" in readme
+        assert f"{name}_animated.gif" in museum
+        assert f"docs/assets/{name}_animated.gif" not in readme
+    assert "https://ncarberry64.github.io/Berger-Hopf-Standard-Model/" in readme
+    assert "animations live outside it" in readme
 
 
 def test_svg_has_no_external_dependencies() -> None:
