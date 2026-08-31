@@ -1,0 +1,62 @@
+name: BHSM Museum Pages
+
+on:
+  push:
+    branches:
+      - agent/bhsm-museum-facade
+    paths:
+      - museum/**
+      - docs/assets/bhsm_*
+      - .github/workflows/museum-pages.yml
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: bhsm-museum-pages
+  cancel-in-progress: true
+
+jobs:
+  build-and-deploy:
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Install pnpm
+        uses: pnpm/action-setup@v4
+        with:
+          version: 11.19.0
+
+      - name: Install Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 24
+          cache: pnpm
+          cache-dependency-path: museum/pnpm-lock.yaml
+
+      - name: Install museum dependencies
+        run: pnpm install --frozen-lockfile
+        working-directory: museum
+
+      - name: Build static museum package
+        run: pnpm build:pages
+        working-directory: museum
+
+      - name: Configure GitHub Pages
+        uses: actions/configure-pages@v5
+
+      - name: Upload museum artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: museum/dist/pages
+
+      - name: Deploy museum
+        id: deployment
+        uses: actions/deploy-pages@v4
