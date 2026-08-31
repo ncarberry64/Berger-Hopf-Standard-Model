@@ -1,0 +1,85 @@
+{
+  "FULL_BHSM_COMPLETE": false,
+  "artifact": "BHSM_N12_GATE7_SAME_CENTER_BLOCKS01_LOCAL_KRAWCZYK",
+  "claim_boundary": {
+    "FULL_BHSM_COMPLETE": false,
+    "Gate7": "OPEN",
+    "blocks01_local_root": "OPEN",
+    "correlated_branch24_spectral_domain_blocks01": "CERTIFIED",
+    "local_Z1_Z2_Krawczyk_inequality": "NOT_CERTIFIED",
+    "physical_instability_claim": false,
+    "root_nonexistence_claim": false
+  },
+  "directive_terminal_classification": "B_LOCAL_OWNER_FAILS_TO_CERTIFY",
+  "exact_missing_operand": "A correlation-preserving cancelled-rate Taylor/affine enclosure, or equivalent branchwise Kato-Schur rate-Jacobian variation, on this same corrected center.",
+  "failed_enclosure": {
+    "anisotropic_root_containing_box": "REJECTED_AS_INDETERMINATE_NONFINITE_OUTPUT",
+    "exception_type": "ArithmeticError",
+    "isotropic_root_containing_box": "REJECTED_BY_INTERVAL_EIGENLINE_RECIPROCAL",
+    "message": "tube_endpoint_1: interval rate/value enclosure became indeterminate",
+    "scientific_interpretation": "The direct componentwise state box loses correlated cancelled-field and normalized-rate dependency.",
+    "stage": "tube_endpoint_1"
+  },
+  "finite_center_evidence": {
+    "corrected_center_local_Y_Euclidean_upper": 9.698359901588148e-11,
+    "prior_two_block_Newton_coordinate_norm_upper": 4.743583632105581e-08,
+    "residual_reduction_factor_lower": 489.11194060026565
+  },
+  "outward_operands": {
+    "Krawczyk_self_map": null,
+    "local_Y_Euclidean_upper": 9.698359901588148e-11,
+    "local_Z1": null,
+    "local_Z2": null
+  },
+  "owner": "SAME_CENTER_LOCAL_FORMATION_VIABILITY_CERTIFICATE",
+  "provenance_SHA256": {
+    "artifacts/flagship_integration/.accepted_replay_outward_74d_work/endpoint_000.npz": "66BFD1FB0F09018D2A24E1CDBC779EC392E03D3FF6C17D941869172C35E722B1",
+    "artifacts/flagship_integration/.accepted_replay_outward_74d_work/endpoint_001.npz": "E357BB31FD7A546E8BB50036018A5EBB9E544829A9B3807AD463A96FC70D9DDA",
+    "artifacts/flagship_integration/.accepted_replay_outward_74d_work/endpoint_002.npz": "77B1E4BBB6FD19D3749DB7783D0E54D017D5D129D0FF6111D9C199FB9D09B7FC",
+    "artifacts/flagship_integration/.accepted_replay_outward_74d_work/midpoint_000.npz": "957E91E5AD8B2BF7B73F4C91400724EB11350DAE2856F3B6EC7DB76C69798CB4",
+    "artifacts/flagship_integration/.accepted_replay_outward_74d_work/midpoint_001.npz": "7B6DFE71BE0A817488E6D1D6197FD86078DFD8E9397361F8EBB418EB9DA38ACF",
+    "artifacts/flagship_integration/BHSM_N12_GATE7_AUGMENTED_FIXED_DESCRIPTOR_BLOCK_NEWTON_PREDICTOR.json": "A55263D4B3982B9C9517D975AD1328F615BCFFA6CC99A061DF125BDE2CB2B005",
+    "artifacts/flagship_integration/BHSM_N12_GATE7_AUGMENTED_FIXED_DESCRIPTOR_BLOCK_NEWTON_PREDICTOR.npz": "27D8365FBE86CC0784EB089E2F9F7C0DFE40A451C90AD4891366D2DD0DAE0F3B",
+    "artifacts/flagship_integration/BHSM_N12_GATE7_AUGMENTED_FIXED_DESCRIPTOR_NEWTON_ENDPOINT_CANDIDATE.json": "32672F8FE8EEFEAEB91DF2A9CF74F90597AB5B00D983A117265B2DE09D094AD0",
+    "artifacts/flagship_integration/BHSM_N12_GATE7_AUGMENTED_FIXED_DESCRIPTOR_NEWTON_ENDPOINT_CANDIDATE.npz": "3E52E013B473938B6959D5D63054FCC4D5057A13A71D10E2874ADB9A53E85B4E",
+    "artifacts/flagship_integration/BHSM_N12_GATE7_CORRELATED_DESCRIPTOR_AUGMENTED_JACOBIANS.json": "13AE80FD5E99CD4CF64910DC265C9A61179E1A7EF4300BE0D989722E1CAA6954",
+    "artifacts/flagship_integration/BHSM_N12_GATE7_CORRELATED_DESCRIPTOR_AUGMENTED_JACOBIANS.npz": "09F5441ADD40335C9F3683B5DCC4D21C0D25026629330DD66E3AF684B54497FD",
+    "artifacts/flagship_integration/BHSM_N12_GATE7_SAME_CENTER_BLOCKS01_CORRELATED_SPECTRAL_DOMAIN.json": "8BA9E271E1FB0B33D9252317985298DE3BE54EB073E4DA14A9F276CD8AF655FF"
+  },
+  "requested_B_curvature_label_not_claimed": true,
+  "result": "LOCAL_OWNER_NOT_CERTIFIED__CORRELATED_CANCELLED_RATE_TAYLOR_MODEL_REQUIRED",
+  "segment": {
+    "accepted_to_recentered_two_node_displacement_upper": 4.743583632105581e-08,
+    "action_interval": [
+      0.0,
+      0.5
+    ],
+    "anisotropic_transverse_floor": 3.559868138451527e-14,
+    "block_intervals": [
+      0,
+      1
+    ],
+    "endpoint_nodes": [
+      0,
+      1,
+      2
+    ],
+    "maximum_coordinate_radius": 5.417017999482307e-11,
+    "minimum_coordinate_radius": 3.563344836626297e-14,
+    "prior_correlated_spectral_radius": 4.980762813710861e-08,
+    "proof_recenter_classification": "EQUIVALENT_PROOF_COORDINATE_TRANSFORMATION",
+    "root_containing_anisotropic_proof_radius": 1.2145270131641616e-10,
+    "spectral_containment_margin": 2.2503391147363864e-09
+  },
+  "validation": {
+    "complete_root_containing_ball_inside_prior_spectral_domain": true,
+    "corrected_center_residual_is_finite": true,
+    "direct_componentwise_interval_rate_enclosure_rejected": true,
+    "indeterminate_interval_output_not_used_as_authority": true,
+    "no_local_Z1_or_Z2_promoted": true,
+    "no_root_nonexistence_or_physical_instability_inference": true,
+    "proof_recenter_strictly_inside_prior_correlated_spectral_domain": true,
+    "same_action_center_branch_mesh_and_physics": true
+  },
+  "validation_passed": true
+}
