@@ -16,6 +16,9 @@ export const metadata: Metadata = {
   title: 'BHSM Museum | One Action · One Scale · One Observable Pipeline',
   description:
     'The animated public entrance to the Berger–Hopf Standard Model scientific repository.',
+  icons: {
+    icon: './bhsm-symbol.svg',
+  },
   openGraph: {
     title: 'BHSM Museum',
     description:
