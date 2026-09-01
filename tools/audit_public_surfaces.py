@@ -21,6 +21,7 @@ SIMULATION_BASES = (
     "bhsm_no_fit_firewall",
     "bhsm_physical_identification_bridge",
 )
+OTHER_WORK_BASE = "cosmology_hyperspherical_scalar_topography"
 CMS_REQUIRED = (
     "coordinate-engine validation",
     "detector reconstruction",
@@ -53,19 +54,36 @@ def audit() -> dict:
         phrase: phrase.casefold() in combined.casefold() for phrase in CMS_REQUIRED
     }
     exhibit_checks = {
-        "nine_animated_visuals": exhibits.count("animated: '") == 9,
-        "nine_static_visuals": exhibits.count("still: '") == 9,
-        "lay_copy_for_every_exhibit": exhibits.count("lay: '") == 9,
+        "ten_animated_visuals": exhibits.count("animated: '") == 10,
+        "ten_static_visuals": exhibits.count("still: '") == 10,
+        "lay_copy_for_every_exhibit": exhibits.count("lay: '") == 10,
         "lay_placard_rendered": "<dt>Lay description</dt>" in page,
         "real_data_engine_label": "Real-data engine" in page,
         "simulation_engine_label": "Simulation / audit engine" in page,
         "motion_fallback": "onError={() => setFailedSource(desired)}" in page,
+        "cosmology_other_work_boundary": all(
+            phrase.casefold() in combined.casefold()
+            for phrase in (
+                "not peer reviewed",
+                "not observational data",
+                "full likelihood analysis",
+                "10.20944/preprints202601.1427.v1",
+            )
+        ),
     }
     asset_checks = {
         f"{base}{suffix}": (ASSETS / f"{base}{suffix}").is_file()
         for base in SIMULATION_BASES
         for suffix in (".svg", ".png", "_animated.gif")
     }
+    asset_checks.update(
+        {
+            f"{OTHER_WORK_BASE}{suffix}": (
+                ASSETS / f"{OTHER_WORK_BASE}{suffix}"
+            ).is_file()
+            for suffix in (".svg", ".png", "_animated.gif")
+        }
+    )
     asset_checks.update(
         {
             "cms_png": (
@@ -80,6 +98,9 @@ def audit() -> dict:
             ).is_file(),
             "simulation_generator": (
                 ASSETS / "generate_bhsm_museum_engines.py"
+            ).is_file(),
+            "cosmology_generator": (
+                ASSETS / "generate_cosmology_other_work_exhibit.py"
             ).is_file(),
         }
     )

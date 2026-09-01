@@ -236,3 +236,33 @@ export const exhibits: Exhibit[] = [
     ],
   },
 ];
+
+export const cosmologyExhibit: Exhibit = {
+  number: 'OW-01',
+  title: 'A Hyperspherical Scalar-Topographic Framework',
+  subtitle: 'Other work · late-time cosmological anomalies · January 2026 preprint',
+  animated: 'cosmology_hyperspherical_scalar_topography_animated.gif',
+  still: 'cosmology_hyperspherical_scalar_topography.png',
+  alt: 'A schematic hyperspherical scalar mode changes directional distance rings while a synchronized redshift cursor samples BAO, supernova, and overlap kernels.',
+  lay: 'This separate cosmology paper asks whether one very large, smooth variation across a curved Universe could leave related fingerprints in galaxy-distance measurements, supernova directions, and the measured expansion rate.',
+  seen:
+    'The colored hypersphere represents the paper’s proposed long-wavelength scalar mode. Its changing direction slightly stretches and compresses the white distance rings. At right, one moving redshift cursor samples the BAO, supernova, and shared-overlap response curves together.',
+  matters:
+    'The preprint proposes a common late-time origin for several reported cosmological anomalies and identifies observations that could rule it out. It reports qualitative and order-of-magnitude consistency rather than a full likelihood analysis; the scalar field’s microphysical origin and a full perturbation treatment remain open.',
+  dataLabel: 'Schematic preprint model · not observational data',
+  status: 'provisional',
+  statusLabel: 'Independent preprint · not peer reviewed',
+  facts: [
+    { label: 'Posted', value: '20 January 2026' },
+    { label: 'Geometry', value: 'S³(R_H)' },
+    { label: 'Reported bound', value: 'R_H ≳ 24 Gpc' },
+    { label: 'Comparison level', value: 'Order of magnitude' },
+  ],
+  links: [
+    {
+      label: 'Read the cosmology preprint',
+      href: 'https://doi.org/10.20944/preprints202601.1427.v1',
+    },
+    { label: 'Creator ORCID', href: 'https://orcid.org/0009-0000-6650-3485' },
+  ],
+};
