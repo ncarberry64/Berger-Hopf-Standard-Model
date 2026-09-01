@@ -1,0 +1,159 @@
+{
+  "FULL_BHSM_COMPLETE": false,
+  "action_version": "BHSM-AE-3.1.0",
+  "artifact": "BHSM_AE31_C2_QUARK_SCALAR_ATTACHMENT_VARIATION",
+  "chirality_parity_theorem": {
+    "basis_order": [
+      "Q_L_up",
+      "Q_L_down",
+      "u_R",
+      "d_R"
+    ],
+    "chirality_operator": [
+      [
+        -1.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      [
+        0.0,
+        -1.0,
+        0.0,
+        0.0
+      ],
+      [
+        0.0,
+        0.0,
+        1.0,
+        0.0
+      ],
+      [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ]
+    ],
+    "down_scalar_chirality_anticommutator_norm": 0.0,
+    "even_U1_connection_variation_can_equal_odd_LR_scalar_vertex": false,
+    "transported_scalar_incidence_is_chirality_odd": true,
+    "u1_chirality_commutator_norm": 0.0,
+    "u1_connection_is_chirality_even": true,
+    "u1_left_right_block_norm": 0.0,
+    "u1_right_left_block_norm": 0.0,
+    "up_scalar_chirality_anticommutator_norm": 0.0
+  },
+  "claim_boundary": {
+    "CKM_MATRIX_DERIVED": false,
+    "CURRENT_C2_HIGGS_SELECTED_U1_CONNECTION_LR_VERTEX_EXCLUDED": true,
+    "CURRENT_C2_ODD_DIRAC_ENDOMORPHISM_ACTION_OWNED": false,
+    "CURRENT_C2_PHYSICAL_QUARK_POLES_DERIVED": false,
+    "CURRENT_C2_REQUIRED_ODD_DIRAC_ENDOMORPHISM_CLASS_DERIVED": true,
+    "CURRENT_C2_SCALAR_PROFILE_NORMALIZATION_LR_VERTEX_EXCLUDED": true,
+    "CURRENT_C2_UP_DOWN_YUKAWA_VERTEX_RESIDUES_ACTION_DERIVED": false,
+    "FULL_BHSM_COMPLETE": false,
+    "MEASURED_QUARK_MASS_USED": false,
+    "particle_spectrum_rebuilt": false
+  },
+  "classification": "AE31_CURRENT_C2_QUARK_SCALAR_ATTACHMENT_VARIATION",
+  "current_action_internal_scalar_incidence": {
+    "H_times_Phi_kinematic_factorization_is_action_attachment": false,
+    "action_version": "BHSM-AE-3.1.0",
+    "active_H_field": "INTRINSIC_M4_ACTIVE_FIELD",
+    "active_composition": "S_AE3_1=S_AE3_0+S_4_lH_BHSM",
+    "active_internal_Phi_field": false,
+    "delta_S_AE31_over_delta_Phi_defined": false,
+    "historical_scalar_state": "H(x,y)=H(x)*Phi(y)",
+    "historical_scalar_state_status": "SCALAR_STATE_ONTOLOGY_CONDITIONAL",
+    "profile_transport_upgraded_to_action_ownership": false,
+    "reason": "PHI_IS_NOT_AN_ACTIVE_FIELD_COORDINATE_OF_THE_VERSIONED_AE31_ACTION"
+  },
+  "exact_remaining_owner": {
+    "U1_connection_or_scalar_kinetic_term_can_substitute": false,
+    "derive_from_one_parent_action": [
+      "odd_endomorphism_E_H_and_its_normalization",
+      "identification_of_intrinsic_H_with_the_universal_internal_profile",
+      "complete_retained_internal_trace_or_selected_density",
+      "c_u_and_c_d_on_the_existing_I_up_and_I_down_supports"
+    ],
+    "historical_target_or_beta_kappa_relabelling_allowed": false,
+    "independent_yukawa_or_mass_fit_allowed": false,
+    "then_reuse": [
+      "projector_overlap_R_up_R_down",
+      "squared_pencil_contact_Q_fg",
+      "family_shapes_T_u_T_d",
+      "current_C2_radial_domain_and_birth_trace"
+    ]
+  },
+  "historical_parent_term_adjudication": {
+    "Higgs_selected_U1_phase_discarded": false,
+    "boundary_functional_full_action_variation_completed": false,
+    "proper_role_preserved": "CHARGE_AND_BOUNDARY_ORIENTATION_SELECTION",
+    "rows": [
+      {
+        "can_own_c_u_c_d": false,
+        "chirality_parity": "EVEN",
+        "contains_explicit_quark_LR_scalar_incidence": false,
+        "expression": "Phi0^dagger*D_tr*Phi0_OR_barPsi*A_Higgs-U1*Psi",
+        "id": "I_U1",
+        "role": "TRACE_U1_BOUNDARY_PHASE_AND_CHARGE_ORIENTATION"
+      },
+      {
+        "can_own_c_u_c_d": false,
+        "chirality_parity": "NOT_EVALUABLE_FROM_SYMBOLIC_EXPRESSION",
+        "contains_explicit_quark_LR_scalar_incidence": false,
+        "expression": "S_boundary[Psi,Phi0]",
+        "id": "I_BDY",
+        "role": "SYMBOLIC_FAMILY_INDEX_AND_SECTOR_WINDING_SELECTION"
+      }
+    ],
+    "target_values_6_and_12_relabelled_as_Yukawa_residues": false
+  },
+  "inputs": {
+    "artifacts/action_extension/BHSM_AE31_C2_QUARK_HIGGS_CONTACT_CLOSURE.json": "C0569A05B9CAF74C3BD9669021344E0008C4892F87CDC17ACCBC75C940A351F1",
+    "artifacts/action_extension/BHSM_AE31_C2_QUARK_HIGGS_INCIDENCE_TRANSPORT.json": "81AC7F0250CAC2FC7F8D2B26CE22AD3E785D5E11FC188C0A50362353D8918CBB",
+    "artifacts/action_extension/BHSM_AE31_C2_QUARK_PARENT_THIRD_VARIATION.json": "880D656909727CEE22F9C9F4FEBB5E25D5845DC8ACC229496D930C07A0429057",
+    "artifacts/action_extension/BHSM_AE31_C2_QUARK_PROJECTOR_OVERLAP_BRIDGE.json": "09D583F536E4483DCD97B721E9CA729D818D1EAB35A172C0A5AD98FE95C2D8E0",
+    "artifacts/action_extension/BHSM_AE31_C2_UNIVERSAL_SCALAR_PROFILE_TRANSPORT.json": "0578D2DED0D43715DF0990EE001200DAF6DF59CA4E60899F174615778F6AEF72",
+    "src/bhsm/interface/ae31_c2_quark_scalar_attachment_variation.py": "57047DB0F287AB0FA8477950E97E86E5FCCDAFB4EC93C55645E7FC076F59DBE5",
+    "src/bhsm_model.py": "8FC5A59AC4FCAFE4D3FCA3249C46EAAF4EE2D0A019656333B75E3B1A989C8B3B",
+    "src/internal_action.py": "F9F754F4A36C11D20BC1636185967047297302D7902CCF898995A9F785A1C880",
+    "src/parent_internal_action.py": "4D19581149E35FE45F295AA91664B6DA2F678BEC8F22B82447D405B94B922886"
+  },
+  "required_odd_endomorphism_contract": {
+    "action_location": "integral_barPsi*E_H[H,Htilde]*Psi",
+    "coefficient_or_residue_inserted": false,
+    "existing_binary_supports_reused": true,
+    "grading_condition": "Gamma_chi*E_H+E_H*Gamma_chi=0",
+    "new_independent_contact_term_required": false,
+    "new_representation_channel_required": false,
+    "object_promoted_into_AE31_action": false,
+    "required_parent_object": "ODD_INTERNAL_DIRAC_OR_SUPERCONNECTION_ENDOMORPHISM_E_H[H,Htilde]",
+    "sample_grading_residual": 0.0,
+    "support_decomposition": "E_H=V_u(Htilde)*I_up+V_d(H)*I_down"
+  },
+  "scalar_only_variation_theorem": {
+    "canonical_profile_condition": "integral_B|Phi|^2*dmu_Berger=1",
+    "kinetic_residue_conditionally_fixed": true,
+    "mixed_third_variations": {
+      "delta_barQ_delta_H_delta_dR_S_scalar": "0",
+      "delta_barQ_delta_Htilde_delta_uR_S_scalar": "0"
+    },
+    "profile_normalization_generates_Yukawa_vertex": false,
+    "profile_response_may_normalize_an_already_owned_odd_vertex": true,
+    "scalar_action_depends_on_Q_L_u_R_d_R": false,
+    "scalar_kinetic_reduction": "integral_B|Phi|^2*dmu_Berger_TIMES_integral_M4|D H|^2",
+    "scalar_projection": "H(x,y)=H(x)*Phi(y)"
+  },
+  "validation": {
+    "U1_connection_even_LR_support_odd": true,
+    "active_AE31_has_no_internal_Phi_coordinate": true,
+    "downstream_projector_and_contact_assets_preserved": true,
+    "historical_boundary_targets_not_relabelled": true,
+    "no_residue_pole_CKM_or_completion_overclaim": true,
+    "odd_endomorphism_reuses_existing_support_without_insertion": true,
+    "profile_normalizes_but_does_not_generate_vertex": true
+  },
+  "validation_passed": true
+}

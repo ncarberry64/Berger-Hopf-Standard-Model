@@ -1,5 +1,23 @@
 # Gate Ledger
 
+## AE3.1 current-C2 quark scalar-attachment variation
+
+- `H(x,y)=H(x)Phi(y)` is preserved scalar-state ontology, but `Phi` is not an
+  active coordinate of the versioned AE3.1 action; kinematic factorization is
+  not silently upgraded to action ownership.
+- The Higgs-selected `U(1)` connection commutes with chirality and has zero LR
+  block, while the transported `I_up,I_down` supports anticommute with
+  chirality. The connection therefore cannot vary into the missing LR scalar
+  vertex; its charge/boundary-orientation role remains valid.
+- Canonical profile normalization fixes a scalar kinetic factor conditionally,
+  but the scalar-only action has zero mixed quark--Higgs third variation and
+  cannot create a Yukawa vertex.
+- The required parent object is an odd internal Dirac/superconnection
+  endomorphism `E_H=V_u I_up+V_d I_down`. This reuses all existing supports
+  and contacts but is not inserted into AE3.1 or assigned fitted residues.
+- Artifact:
+  `artifacts/action_extension/BHSM_AE31_C2_QUARK_SCALAR_ATTACHMENT_VARIATION.json`.
+
 ## AE3.1 current-C2 universal scalar-profile transport
 
 - The recovered universal profile
