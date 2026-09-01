@@ -4120,3 +4120,25 @@ Exact next object:
   `CURRENT_C2_NEUTRAL_INTERNAL_SEMIGROUP_RESPONSE_SHAPE_ATTACHED`.
 - The next owner is the action-derived returned Lorentzian neutral self-energy
   together with its weak-flavor/internal-family intertwiner.
+
+## AE3.1 historical-neutral-seed identification bridge
+
+- The current `(k,j)` neutral modes `(0,0),(3,0),(3,1)` map under
+  `q=k-2j` exactly to the historical neutral-Hessian slots
+  `(0,0),(3,0),(1,1)`, recovering the stored costs `(0,9,5)`.
+- The historical `K_nu` therefore acts algebraically on the same three mode
+  slots and supplies a noncommuting family shape. Conditionally identifying
+  the first slot with the capture source gives commutator norm `sqrt(2)/3`.
+- Its off-diagonal block decomposes exactly as
+  `(sqrt(2)/3)M_(3,0)+(sqrt(2)/6)M_(1,1)` on the predeclared v14.55
+  noncommuting shape channels. This identifies one common algebraic object,
+  but v14.55 did not action-select the channel amplitudes or phases.
+- The seed is not positive semidefinite: `det K_nu=-5/27`, its leading `2x2`
+  principal minor is `-1/9`, and it has one negative eigenvalue.
+- Its `eta_nu`, `beta_nu`, and `kappa_nu` remain candidate coefficients without
+  an action/source derivation. No positive shift, scale, basis map, or
+  Lorentzian interpretation is inserted.
+- Scientific milestone:
+  `CURRENT_C2_HISTORICAL_NEUTRAL_SEED_MODE_IDENTIFICATION_DERIVED`.
+- The returned neutral action Hessian must now derive or replace those
+  coefficients on the identified current-C2 slots.
