@@ -4036,3 +4036,23 @@ Exact next object:
 - The historical constructive owner is now localized to the still-underived
   v15.69 common parent regulator/subtraction or another genuinely microscopic
   boundary/collar functional.
+
+## AE3.1 current-C2 color-singlet residual-response bridge
+
+- The historical Wilson meson/baryon singlets, closed-`S3` color-Gauss
+  condition, and current quark representations are reused without rebuilding
+  the particle spectrum.
+- Every constituent-resolved color probe has zero direct singlet matrix
+  element. A uniform long-wavelength probe annihilates the singlet completely,
+  so no linear exterior color field leaks from the completed enclosure.
+- A finite-size probe can connect the singlet to internal colored states. The
+  exact contracted numerators are `(4/3)(f_q-f_qbar)^2` for a meson and
+  `2 sum_i(f_i-f_bar)^2` for a baryon.
+- The leading admissible exterior response is the negative-semidefinite Schur
+  polarizability `-P1 V Q [Q(H_hadron-E1)Q]^-1 Q V P1`, not a free-gluon
+  propagator.
+- Scientific milestone:
+  `CURRENT_C2_COLOR_SINGLET_FINITE_SIZE_POLARIZABILITY_NUMERATOR_DERIVED`.
+- The returned hadron Hamiltonian/resolvent, two-hadron residual kernel,
+  global asymptotic confinement theorem, area law, and hadron spectrum remain
+  open. The v14.28 Gaussian-collar zero-string-tension no-go is preserved.
