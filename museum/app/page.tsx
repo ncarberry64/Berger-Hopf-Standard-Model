@@ -6,7 +6,7 @@ import { useEffect, useMemo, useState } from 'react';
 import { Button } from '@/components/ui/button';
 import { exhibits, REPOSITORY, SCIENCE, type Exhibit } from './exhibits';
 
-const ASSET_REVISION = 'simulation-engines-2026-09-01';
+const ASSET_REVISION = 'simulation-engines-2026-09-01b';
 
 const creatorLinks = [
   { label: 'ORCID record', href: 'https://orcid.org/0009-0000-6650-3485' },
