@@ -263,9 +263,10 @@ def gauge_ghost_hessian_claim_boundary() -> dict[str, Any]:
         "electroweak_neutral_Hessian_derived": False,
         "independent_ZA_g_gprime_alpha_or_metric_cone_inserted": False,
         "next_required_action_domain_object": (
-            "THE_CONTINUOUS_FREQUENCY_GAUGE_GHOST_CALDERON_OPERATOR_ON_THE_"
-            "ACTUAL_CURRENT_C2_MAXIMAL_EXTERIOR_AND_ITS_TWO_SIDED_PARENT_"
-            "SCHUR_COMPLEMENT_WITH_THE_DERIVED_INTERIOR_OPERATOR"
+            "FINITE_DECISION_AMONG_A_MICROSCOPICALLY_DERIVED_AE4_BOUNDARY_OR_"
+            "COLLAR_ACTION,_AN_ACTION_SELECTED_NONREFLECTION_EXTERIOR_OR_"
+            "INDEPENDENT_BOUNDARY_FIELD_DOMAIN,_OR_RETAINING_AE3_WITH_NO_"
+            "LOCAL_LORENTZIAN_MAXWELL_PHOTON_SECTOR"
         ),
     }
 

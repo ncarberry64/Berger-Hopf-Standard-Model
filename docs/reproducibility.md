@@ -13,7 +13,8 @@ python scripts/materialize_ae3_c2_coexact_gauge_form.py
 python scripts/materialize_ae3_c2_lorentzian_gauge_ghost_hessian.py
 python scripts/materialize_ae3_c2_coexact_su2l_neutral.py
 python scripts/materialize_ae3_c2_gauge_mismatch_resolution.py
-python -m pytest -q tests/test_ae3_reciprocal_join_localization.py tests/test_ae3_c2_lorentzian_gauge_ghost_hessian.py tests/test_ae3_c2_coexact_su2l_neutral.py tests/test_ae3_c2_gauge_mismatch_resolution.py
+python scripts/materialize_ae3_c2_two_sided_calderon.py
+python -m pytest -q tests/test_ae3_reciprocal_join_localization.py tests/test_ae3_c2_lorentzian_gauge_ghost_hessian.py tests/test_ae3_c2_coexact_su2l_neutral.py tests/test_ae3_c2_gauge_mismatch_resolution.py tests/test_ae3_c2_two_sided_calderon.py
 ```
 
 This reproduces the analytic eta-to-sigma profile, its unique transverse
@@ -25,10 +26,18 @@ response-constrained nonlinear witnesses by hash, and verifies that the old
 zero-source closed-cycle determinant is not promoted to the current C2 action.
 It does not rerun or strengthen the branch-24 first-stop numerics.
 
-The last materializer evaluates the current-C2 continuous-frequency
+The continuous-frequency materializer evaluates the current-C2
 transverse DtN derivative together with the temporal/longitudinal constraint
 and ghost blocks. It records the strict temporal/spatial residue mismatch and
 does not reuse the historical periodic-cycle frequency response.
+
+The final materializer evaluates the selected two-sided parent Calderón sum.
+The exact reciprocal reflection sends `sigma<0` to `sigma>0` while preserving
+the round radius and `Lambda=1-4 sigma^2`, so the regular exterior operator is
+reset-conjugate to the interior operator. Both residues double and
+`Z_t/Z_s=0.590609601652908` is unchanged. The certificate therefore closes
+the coefficient-free route negatively and emits a finite action/domain
+decision surface; it does not add a boundary coefficient or promote a photon.
 
 ## Current Gate-7 carrier certificate
 

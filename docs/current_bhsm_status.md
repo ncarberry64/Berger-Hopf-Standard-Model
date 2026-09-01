@@ -131,19 +131,35 @@ lowest transverse DtN mode has `N_T(0)=1.67955783202127`,
 electric/magnetic weights plus positive radial-gradient DtN energy. It is
 recorded without renormalization.
 
+The selected coefficient-free two-sided parent Calderón calculation is also
+now closed. The exact reciprocal reflection `chi -> pi/2-chi` reverses
+`sigma`, preserves the round radius and `Lambda=1-4 sigma^2`, and transports
+the regular gauge/ghost domain. Consequently `N_exterior=N_inside` up to the
+reset conjugation and `N_total=2 N_inside`. Both the static and `omega^2`
+coefficients double, so `Z_t/Z_s=0.590609601652908` is unchanged. This is a
+no-go for that route, not a Maxwell-residue promotion.
+
 - `CURRENT_C2_COEXACT_GAUGE_FORM_SHAPE_DERIVED = TRUE`
 - `CURRENT_C2_LORENTZIAN_GAUGE_GHOST_FREQUENCY_HESSIAN_DERIVED = TRUE`
 - `CURRENT_C2_LORENTZIAN_MAXWELL_RESIDUE_DERIVED = FALSE`
 - `CURRENT_C2_NORMALIZED_PHOTON_PROPAGATOR_DERIVED = FALSE`
+- `TWO_SIDED_CURRENT_C2_CALDERON_REPAIRS_RESIDUE = FALSE`
 
 The remaining obstruction is no longer carrier selection or the absence of
 every fermionic C2 operator piece. One compatible AE3 C2 action assembly must
 still join the geometry/response block and this reduced product-Dirac piece
 to dynamical HS and broken-LR data, an action/domain resolution of the gauge
 residue mismatch, broken-neutral transverse source blocks, nonzero
-fermion-background cross derivatives, and the maximal exterior operator
+fermion-background cross derivatives, and the remaining full-field blocks
 before the complete event canonical flux, contact term, and parent/event/child
 Noether--Hamiltonian balance can be evaluated.
+
+For the gauge residue specifically, no coefficient-free retained mechanism
+remains. The finite physical-theory decision surface is: derive a
+microscopically fixed AE4 boundary/collar action; derive an action-selected
+nonreflection exterior or independent boundary-field domain; or retain AE3
+and accept that this parent trace supplies no local Lorentzian Maxwell/photon
+sector. This result selects none of those alternatives.
 
 The historical common gauge--ghost--Weyl--HS determinant is not that oracle:
 it is a zero-source closed-proper-cycle functional, whereas the current C2
@@ -174,6 +190,9 @@ and [`machine certificate`](../artifacts/action_extension/BHSM_AE3_C2_LORENTZIAN
 The finite action/domain screen selects the two-sided parent Calderón route;
 see the [`resolution theorem`](../theory/ae3_c2_gauge_mismatch_resolution.md)
 and [`route certificate`](../artifacts/action_extension/BHSM_AE3_C2_GAUGE_MISMATCH_RESOLUTION_SCREEN.json).
+Its exact reciprocal-reflection evaluation is recorded in the
+[`two-sided no-go theorem`](../theory/ae3_c2_two_sided_calderon_reflection_no_go.md)
+and [`machine certificate`](../artifacts/action_extension/BHSM_AE3_C2_TWO_SIDED_CALDERON_REFLECTION_NO_GO.json).
 The same-domain neutral weak current is recorded in the
 [`SU(2)L neutral-source theorem`](../theory/ae3_c2_coexact_su2l_neutral_source_jet.md)
 and [`J3 certificate`](../artifacts/action_extension/BHSM_AE3_C2_COEXACT_SU2L_NEUTRAL_SOURCE_JET.json).
