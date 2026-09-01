@@ -142,6 +142,27 @@ lowest transverse DtN mode has `N_T(0)=1.67955783202127`,
 electric/magnetic weights plus positive radial-gradient DtN energy. It is
 recorded without renormalization.
 
+The current-C2 reduced HS/fermion variation is now also explicit. Writing
+`K(H)=K0+H V+H^2 Q/2` and `S=bar(c)K(H)c`, its HS source, HS curvature, and
+mixed Hessian are `bar(c)V c`, `bar(c)Q c`, and `V c`. The attached symmetric
+C2 slice contains no classical fermion Sobolev coefficient coordinate, so
+`c*=0` and these background-dependent blocks vanish exactly. The third
+LR/HS variation `V` and contact tensor `Q` remain nonzero on both chiral
+1,222-segment pencils. A frozen family/mode fiber remains valid internal
+initial data but is not substituted for the missing spatial field profile.
+
+No retained dynamical HS kernel matches both AE3 and current C2. The
+historical four-channel heat kernels have the wrong proper-cycle domain and
+select no physical direction; the historical Legendre crossing depends on an
+unevaluated critical value and the now-failed gauge residue. The strongest
+coefficient-free extension candidate is the first-order Einstein--Cartan
+contorsion Schur complement, but it requires a new action version and a
+current-C2 derivation.
+
+- `CURRENT_C2_ZERO_BACKGROUND_HS_FERMION_MIXED_VARIATION_DERIVED = TRUE`
+- `CURRENT_C2_DYNAMICAL_HS_KERNEL_DERIVED = FALSE`
+- `CURRENT_C2_BROKEN_LR_SADDLE_DERIVED = FALSE`
+
 The selected coefficient-free two-sided parent Calderón calculation is also
 now closed. The exact reciprocal reflection `chi -> pi/2-chi` reverses
 `sigma`, preserves the round radius and `Lambda=1-4 sigma^2`, and transports
@@ -192,6 +213,9 @@ The family decision surface is recorded in the
 Its retained-history provenance closure is recorded in the
 [`family-return audit`](../theory/ae3_family_noncentral_return_provenance_audit.md)
 and [`machine certificate`](../artifacts/action_extension/BHSM_AE3_FAMILY_NONCENTRAL_RETURN_PROVENANCE_AUDIT.json).
+The current-C2 reduced mixed variation and HS-kernel screen are recorded in
+the [`HS/fermion theorem`](../theory/ae3_c2_hs_fermion_mixed_variation.md) and
+[`machine certificate`](../artifacts/action_extension/BHSM_AE3_C2_HS_FERMION_MIXED_VARIATION.json).
 The transverse hypercharge result is recorded in the
 [`current-C2 source theorem`](../theory/ae3_c2_coexact_hypercharge_source_jet.md)
 and [`source certificate`](../artifacts/action_extension/BHSM_AE3_C2_COEXACT_HYPERCHARGE_SOURCE_JET.json).

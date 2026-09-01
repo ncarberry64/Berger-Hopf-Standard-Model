@@ -135,6 +135,8 @@ def section_fit_ledger() -> dict[str, Any]:
                 "C2_lowest_Weyl_product_Dirac_quadratic_pencils_both_chiralities",
                 "exact_unit_reduced_LR_HS_first_source_derivative",
                 "exact_unit_reduced_LR_HS_second_contact_derivative",
+                "zero_background_HS_fermion_mixed_Hessian_vanishing",
+                "nonzero_background_independent_third_LR_HS_variation",
                 "family_central_I3_tensor_attachment",
             ],
             "particle_identity_transport": [
@@ -146,9 +148,9 @@ def section_fit_ledger() -> dict[str, Any]:
         },
         "unfitted_interfaces": {
             "current_full_field_action": [
-                "dynamical_HS_coordinate_and_broken_LR_saddle",
+                "current_C2_pure_dynamical_HS_kernel_and_broken_LR_saddle",
                 "gauge_ghost_and_transverse_electromagnetic_source_blocks",
-                "nonzero_fermion_background_and_cross_derivatives",
+                "action_selected_classical_fermion_Sobolev_background_embedding",
                 "maximal_history_exterior_operator",
             ],
             "particle_identity_transport": [
