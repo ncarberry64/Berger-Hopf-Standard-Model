@@ -1,5 +1,33 @@
 # Gate Ledger
 
+## AE3.1 current-C2 chiral operator and Green-domain theorem
+
+- The pre-AE2 `U(1)_parent x U(1)_child` birth-phase no-go is not a live
+  ambiguity in AE3.1. AE2 selected one reset-glued global spin--gauge section;
+  its unitary transmission graph is maximal isotropic.
+- The AE3 enclosure is a smooth internal material level set, not a terminal
+  fermion wall. Smooth trace and opposite-normal Green-form cancellation add
+  no independent enclosure boundary parameter.
+- The recovered family mass matrix is a bounded Hermitian zero-order
+  endomorphism. It preserves the first-order Dirac domain and commutes exactly
+  with the reset because the two act on separate tensor factors.
+- The same-domain operator
+  `D_l,C2=[[D_L,M_l],[M_l^dagger,D_R]]` is now assembled.
+- Every exact current-C2 member through the certified 1,222-segment finite
+  cover has `M4=I_tau x S3`, positive proper duration, and `R4>0`. Hence its
+  closed-FLRW development is globally hyperbolic and the advanced/retarded
+  Green operators exist uniquely for compact sources, member by member.
+- No explicit causal kernel, physical history-member selector, maximal C2
+  continuation, Feynman state, asymptotic stationarity, or dressed frequency
+  pole is supplied. The native proper-history resolvent parameter `z` is not
+  identified with `p^2`.
+- Derived: current-C2 first-order charged-lepton LR operator, preserved domain,
+  finite-core familywise global hyperbolicity, and causal Green existence.
+- Not derived: one physical/maximal global propagator, Feynman two-point
+  function, dressed pole residues, or muon `F2(0)`.
+- Artifact:
+  `artifacts/action_extension/BHSM_AE31_C2_CHIRAL_GREEN_DOMAIN.json`.
+
 ## AE3.1 intrinsic M4 charged-lepton action transport
 
 - `BHSM-AE-3.1.0` is the mass-sector successor composition
@@ -19,9 +47,9 @@
   three distinct tree mass shells and simple energy poles with canonical,
   unfitted residues. This closes local charged-lepton identification
   conditionally.
-- The global/dressed current-C2 first-order left--right Green operator remains
-  open; the radial/proper-history squared chiral pencils are not Lorentzian
-  pole substitutes.
+- The first-order left--right operator and finite-core causal Green existence
+  are now closed by the successor theorem below; one physical/maximal dressed
+  propagator and its frequency poles remain open.
 - Derived: versioned charged-lepton semigroup coupling and conditional tree
   mass operator.
 - Not derived: global/dressed current-C2 physical poles, up/down action

@@ -263,16 +263,29 @@ energy poles with the canonical tree residue; no wavefunction factor is
 fitted. This conditionally closes the charged-lepton local enclosure
 identification bridge.
 
-The exact remaining operator is the global first-order current-C2 chiral block
-with `D_L,D_R` on the diagonal and `M_l,M_l^dagger` off diagonal. The existing
-separate squared chiral pencils are radial/proper-history forms; they do not
-already contain this family-noncentral left--right block and cannot be used as
-a Lorentzian pole surrogate.
+The global-domain join has now advanced. AE2's owner-selected reset lift
+supersedes the old independent parent/child Cayley phase family for the current
+action version, and AE3's enclosure is a smooth internal material level set,
+not an extra fermion wall. The bounded Hermitian mass endomorphism preserves
+that domain and commutes with reset. Thus the same-domain first-order block
+`[[D_L,M_l],[M_l^dagger,D_R]]` is assembled.
+
+Every exact current-C2 member through the certified 1,222-segment finite cover
+has closed-FLRW geometry `I_tau x S3`, positive proper duration, and strictly
+positive `R4`. It is globally hyperbolic member by member, so unique advanced
+and retarded Green operators exist for compact sources. No explicit kernel is
+yet evaluated, and no physical family member, maximal continuation, Feynman
+state, or asymptotic stationarity is selected. Consequently a global dressed
+frequency pole is still open. The radial/proper-history resolvent retains its
+native variable `z`; it is not promoted to physical `p^2`.
 
 - `AE31_CHARGED_LEPTON_M4_SEMIGROUP_COUPLING_ACTION_OWNED = TRUE`
 - `AE31_CONDITIONAL_TREE_CHARGED_LEPTON_MASS_OPERATOR_DERIVED = TRUE`
 - `CURRENT_C2_LOCAL_TANGENT_FRAME_TREE_POLES_DERIVED = TRUE`
 - `LOCAL_ENCLOSURE_PARTICLE_IDENTIFICATION_BRIDGE_CLOSED_CONDITIONALLY = TRUE`
+- `CURRENT_C2_FIRST_ORDER_CHARGED_LEPTON_LR_OPERATOR_ASSEMBLED = TRUE`
+- `FINITE_CORE_CURRENT_C2_GLOBAL_HYPERBOLICITY_DERIVED_FAMILYWISE = TRUE`
+- `FINITE_CORE_ADVANCED_RETARDED_GREEN_EXISTENCE_DERIVED = TRUE`
 - `CURRENT_C2_PHYSICAL_CHARGED_LEPTON_POLES_DERIVED = FALSE`
 - `UP_DOWN_ACTION_PREFACTORS_DERIVED = FALSE`
 
@@ -314,7 +327,7 @@ remain reusable, but the background/domain/source mismatch cannot be repaired
 by choosing a coefficient.
 
 Exact next object:
-`GLOBAL_CURRENT_C2_FIRST_ORDER_CHIRAL_GREEN_OPERATOR_[[D_L,M_l],[M_l_DAGGER,D_R]]_ON_THE_RETAINED_MAXIMAL_ISOTROPIC_DOMAIN_WITH_DRESSED_POLES_AND_RESIDUES`.
+`PHYSICAL_CURRENT_C2_HISTORY_MEMBER_OR_MAXIMAL_CONTINUATION_PLUS_FEYNMAN_OR_ASYMPTOTIC_STATE_CLASS_FOR_THE_ASSEMBLED_CHIRAL_OPERATOR_AND_ITS_DRESSED_POLE_RESIDUES`.
 
 Evidence: [`AE3 theorem`](../theory/ae3_reciprocal_join_localization_enclosure.md)
 and [`AE3 machine certificate`](../artifacts/action_extension/BHSM_ACTION_AE3_RECIPROCAL_JOIN_LOCALIZATION.json),
@@ -342,6 +355,10 @@ The resulting current-C2 semigroup transport is recorded in the
 The versioned charged-lepton action composition is recorded in the
 [`AE3.1 theorem`](../theory/ae31_c2_intrinsic_m4_lepton_action.md) and
 [`machine certificate`](../artifacts/action_extension/BHSM_AE31_C2_INTRINSIC_M4_LEPTON_ACTION.json).
+Its same-domain chiral assembly and finite-core causal Green theorem are
+recorded in the
+[`Green-domain theorem`](../theory/ae31_c2_chiral_green_domain.md) and
+[`machine certificate`](../artifacts/action_extension/BHSM_AE31_C2_CHIRAL_GREEN_DOMAIN.json).
 The transverse hypercharge result is recorded in the
 [`current-C2 source theorem`](../theory/ae3_c2_coexact_hypercharge_source_jet.md)
 and [`source certificate`](../artifacts/action_extension/BHSM_AE3_C2_COEXACT_HYPERCHARGE_SOURCE_JET.json).
