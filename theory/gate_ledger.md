@@ -1,5 +1,20 @@
 # Gate Ledger
 
+## AE3.1 event-to-child Hadamard-state transport
+
+- The unitary AE2 spin--gauge reset lift induces
+  `C_child=U_R C_event U_R^dagger` on self-dual CAR covariances.
+- The map and its `U_R^dagger` inverse preserve `0<=C<=I`,
+  `C+Gamma C Gamma=I`, purity, and the Hadamard polarization class.
+- Since the reset lift is `U_R tensor I_F`, all frozen family projectors and
+  the AE3.1 mass endomorphism are transported unchanged.
+- Any upstream family-labelled Hadamard particle state therefore reaches the
+  first regular child trace and the current-C2 local enclosure.
+- The reset does not select the upstream covariance and supplies no second
+  frequency splitting or Bogoliubov particle number.
+- Artifact:
+  `artifacts/action_extension/BHSM_AE31_C2_RESET_HADAMARD_TRANSPORT.json`.
+
 ## AE3.1 current-C2 fermion Hadamard-state class
 
 - Every certified finite-core current-C2 open development is globally
