@@ -275,6 +275,18 @@ The bound does not apply the still-missing normal inverse and does not treat
 any higher cutoff as a root. None of these results supplies the explicit
 high-shell compact cutoff or promotes a continuum child.
 
+Supported finite diagnostic: the unchanged N16 coupled map rejects the
+constraint-only lift as a complete-child correction. The existing paired
+exact hard momentum test reduces full weak merit from `0.9618557665898765` to
+`0.35386295232775206` with admissible eta and an isolated ordered branch. Its
+hard constraint/boundary block is allowed to worsen from
+`0.12021432656497034` to `0.14718333891190302`; no componentwise monotonicity
+is claimed or required. The remaining soft source projection is
+`0.08926177036476479` and its paired response is
+`0.00043277842426231244`. It remains a category-2 dynamically controlled
+normal line. This does not prove a quantitative uniform inverse or an N16
+root.
+
 Supported finite diagnostic: the gauge-fixed N12 event/child Calderon boundary
 symbol has gap `0.029146859835358096`; doubled quadrature agrees to
 `7.44e-13`. The source-restricted linear N48 and N64 probes retain positive
@@ -328,6 +340,9 @@ Active dependency:
 
 Not supported: a continuum child, `Q_xi`, `Delta H`, mass, an action-selected
 family, or a new blind observable.
+
+Its first missing explicit constant is the validated source-restricted
+positive-duration soft normal right-inverse bound `K`.
 
 ### Historical corrected-Rayleigh N3 claim boundary
 
