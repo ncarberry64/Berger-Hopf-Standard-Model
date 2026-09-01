@@ -20,6 +20,7 @@ from PIL import Image, ImageDraw, ImageFont
 ROOT = Path(__file__).resolve().parents[1]
 ASSET_DIR = ROOT / "docs" / "assets"
 STATUS_PATH = ASSET_DIR / "bhsm_readme_visual_status.json"
+SIMULATED_SPECTRUM_PATH = ROOT / "data" / "museum" / "bhsm_simulated_particle_spectrum_v1.json"
 
 W, H = 1280, 720
 FRAMES = 16
@@ -339,39 +340,77 @@ def universal(frame=None) -> Scene:
 
 def spectral(frame=None) -> Scene:
     s = Scene(frame)
-    background(s, "BHSM SPECTRAL FORECAST", "STRUCTURAL / PROVISIONAL — NO INVENTED MASS SCALE")
-    s.text((80, 155), "ACTION-DERIVED SPECTRAL COORDINATE", 20, C["white"], True, "la")
-    s.text((1200, 155), "not a physical mass axis", 16, C["muted"], False, "ra")
-    y = 360
-    s.line([(80, y), (1200, y)], C["white"], 3, animated=True)
-    s.scan(80, 1200, 195, 445)
-    for x in range(80, 1201, 140):
-        s.line([(x, y - 8), (x, y + 8)], C["muted"], 2)
-    s.rect((150, 245, 235, 360), C["panel2"], C["cyan"], 2, 6)
-    s.text((192, 227), "ACTION-DERIVED", 14, C["cyan"], True, "mm")
-    s.text((192, 260), "MODE", 16, C["white"], True, "mm")
-    s.rect((310, 315, 480, 405), C["panel2"], C["gold"], 2, 6)
-    s.text((395, 292), "ADMISSIBLE INTERVAL", 14, C["gold"], True, "mm")
-    s.rect((550, 315, 720, 405), C["black"], C["red"], 2, 6)
-    for x in range(550, 721, 18):
-        s.line([(x, 315), (max(550, x - 50), 405)], C["red"], 1)
-    s.text((635, 292), "SPECTRAL NULL WINDOW", 14, C["red"], True, "mm")
-    s.rect((790, 300, 1010, 420), C["panel"], C["gray"], 2, 6)
-    s.text((900, 277), "UNRESOLVED", 14, C["gray"], True, "mm")
-    s.ellipse((1090, 323, 1164, 397), C["panel2"], C["cyan"], 3, reveal=0.78)
-    s.text((1127, 360), "MODE", 14, C["white"], True, "mm")
-    for index, x in enumerate((118, 270, 505, 750, 1040)):
-        s.ellipse((x - 7, y - 7, x + 7, y + 7), C["cyan"], C["white"], 1,
-                  reveal=0.08 + index * 0.14)
-    cards = [
-        (100, "OPEN + NONZERO", "UNSTABLE", C["red"]),
-        (385, "KINEMATICALLY CLOSED", "CHANNEL CLOSED", C["gold"]),
-        (670, "EXACT ZERO", "SELECTION-RULE FORBIDDEN", C["cyan"]),
-        (955, "INCOMPLETE LEDGER", "STABILITY UNRESOLVED", C["gray"]),
+    background(s, "SPECTRAL FORECAST — BAND VIEW", "REPOSITORY-DERIVED STRUCTURE • PROVISIONAL")
+    x0, x1 = 150, 1190
+    y0, y1 = 165, 555
+    s.text((58, 147), "CLASS", 14, C["muted"], True, "la")
+    s.text((1190, 147), "NORMALIZED SPECTRAL COORDINATE ξ  (NOT MASS)", 15, C["muted"], False, "ra")
+    for tick in range(6):
+        x = x0 + tick * (x1 - x0) / 5
+        s.line([(x, y0), (x, y1)], C["grid"], 1)
+        s.text((x, y1 + 28), f"{tick / 5:.1f}", 13, C["muted"], False, "mm")
+    rows = [
+        (205, "MODE A", 0.10, 0.28, 0.06, C["cyan"]),
+        (285, "MODE B", 0.34, 0.51, 0.04, C["gold"]),
+        (365, "NULL", 0.56, 0.69, 0.00, C["red"]),
+        (445, "MODE C", 0.73, 0.91, 0.08, C["gray"]),
     ]
-    for x, top, bottom, accent in cards:
-        node(s, (x, 500, x + 225, 590), top, [bottom], accent, title_size=14, body_size=13)
-    s.text((640, 660), "STABILITY IS CERTIFIED ONLY FROM A COMPLETE ACTION-DERIVED CHANNEL LEDGER", 15, C["muted"], True, "mm")
+    for row, label, lo, hi, uncertainty, accent in rows:
+        s.text((118, row), label, 15, accent, True, "rm")
+        s.line([(x0, row), (x1, row)], C["panel2"], 2)
+        left = x0 + lo * (x1 - x0)
+        right = x0 + hi * (x1 - x0)
+        if uncertainty:
+            outer_left = x0 + max(0.0, lo - uncertainty) * (x1 - x0)
+            outer_right = x0 + min(1.0, hi + uncertainty) * (x1 - x0)
+            s.rect((outer_left, row - 18, outer_right, row + 18), C["panel2"], accent, 1, 9)
+        s.rect((left, row - 11, right, row + 11), accent, C["white"], 1, 6)
+        if label == "NULL":
+            for hatch_x in range(int(left), int(right) + 1, 18):
+                s.line([(hatch_x, row - 11), (max(left, hatch_x - 18), row + 11)], C["black"], 1)
+    s.scan(x0, x1, y0, y1)
+    legend = [
+        (170, C["cyan"], "ADMISSIBLE BAND"),
+        (430, C["panel2"], "UNCERTAINTY ENVELOPE"),
+        (760, C["red"], "NULL WINDOW"),
+        (1010, C["gray"], "UNRESOLVED"),
+    ]
+    for x, accent, label in legend:
+        s.rect((x, 615, x + 24, 631), accent, C["white"], 1, 3)
+        s.text((x + 34, 624), label, 13, C["muted"], True, "lm")
+    s.text((640, 682), "BAND WIDTH ENCODES INTERVAL AUTHORITY; THE SCAN LINE SHOWS CLASSIFICATION, NOT DISCOVERY", 14, C["white"], True, "mm")
+    return s
+
+
+def particle_spectrum(frame=None) -> Scene:
+    payload = json.loads(SIMULATED_SPECTRUM_PATH.read_text(encoding="utf-8"))
+    s = Scene(frame)
+    background(s, "SIMULATED BHSM PARTICLE SPECTRUM", "MUSEUM DISPLAY DATA • NOT A PHYSICAL PREDICTION")
+    x0, x1 = 120, 1200
+    y0, y1 = 175, 570
+    for tick in range(6):
+        x = x0 + tick * (x1 - x0) / 5
+        s.line([(x, y0), (x, y1)], C["grid"], 1)
+        s.text((x, y1 + 27), f"{tick / 5:.1f}", 13, C["muted"], False, "mm")
+    s.text((1200, 145), "DIMENSIONLESS DISPLAY COORDINATE ξ", 15, C["muted"], False, "ra")
+    family_rows = {"lepton": 235, "gauge": 340, "quark": 445}
+    family_colors = {"lepton": C["cyan"], "gauge": C["gold"], "quark": C["green"]}
+    for family, row in family_rows.items():
+        accent = family_colors[family]
+        s.text((95, row), family.upper(), 14, accent, True, "rm")
+        s.line([(x0, row), (x1, row)], C["panel2"], 2)
+    for index, mode in enumerate(payload["modes"]):
+        row = family_rows[mode["family"]]
+        accent = family_colors[mode["family"]]
+        x = x0 + float(mode["display_coordinate"]) * (x1 - x0)
+        height = 28 + 40 * float(mode["relative_intensity"])
+        reveal = 0.04 + index * 0.07
+        s.line([(x, row), (x, row - height)], accent, 4)
+        s.ellipse((x - 8, row - height - 8, x + 8, row - height + 8), accent, C["white"], 2, reveal=reveal)
+        label_y = row + 27 if index % 2 == 0 else row + 48
+        s.text((x, label_y), mode["label"], 12, C["white"], True, "mm")
+    s.scan(x0, x1, y0, y1)
+    badge(s, (220, 630, 1060, 670), "SIMULATED POSITIONS + INTENSITIES • FAMILIAR PARTICLE LABELS ARE REFERENCE IDENTITIES", C["gold"])
     return s
 
 
@@ -460,48 +499,43 @@ def firewall(frame=None) -> Scene:
 
 def identification_bridge(frame=None) -> Scene:
     s = Scene(frame)
-    background(
-        s,
-        "BHSM IDENTIFICATION BRIDGE",
-        "FROZEN STATE → AE2 SELECTED STOP / EVENT CHILD → LOCAL ENCLOSURE",
-    )
-    nodes = [
-        (25, 180, 235, 350, "BHSM STATE", ["family / mode", "representation", "projector + current"], C["gold"]),
-        (270, 180, 470, 350, "SELECTED STOP", ["λ₂₄ = 0", "Euler–Dirac Hessian"], C["cyan"]),
-        (505, 180, 705, 350, "EVENT CHILD", ["geometric child", "forward-carried state"], C["cyan"]),
-        (740, 180, 970, 350, "LOCAL ENCLOSURE", ["action-owned domain", "matching + balance"], C["red"]),
-        (1005, 180, 1255, 350, "SM MANIFESTATION", ["existing class", "particle readout"], C["gold"]),
+    background(s, "PHYSICAL IDENTIFICATION — STATE SPACE", "AE2 EVENT CHILD → CANDIDATE LOCAL ENCLOSURE")
+    x0, x1, y0, y1 = 115, 880, 150, 610
+    for tick in range(6):
+        x = x0 + tick * (x1 - x0) / 5
+        y = y1 - tick * (y1 - y0) / 5
+        s.line([(x, y0), (x, y1)], C["grid"], 1)
+        s.line([(x0, y), (x1, y)], C["grid"], 1)
+    s.line([(x0, y1), (x1, y1)], C["white"], 2)
+    s.line([(x0, y0), (x0, y1)], C["white"], 2)
+    s.text(((x0 + x1) / 2, 651), "EVENT-CHILD COORDINATE q_EC", 15, C["muted"], True, "mm")
+    s.text((116, 126), "R_ENC", 13, C["muted"], True, "la")
+    # Nested contours are the candidate action-owned enclosure, not a proof.
+    s.ellipse((420, 230, 830, 545), C["panel"], C["red"], 3)
+    s.ellipse((485, 280, 770, 505), C["panel2"], C["gold"], 2)
+    s.ellipse((550, 330, 715, 465), C["black"], C["cyan"], 2)
+    s.text((625, 213), "CANDIDATE ENCLOSURE CONTOURS", 14, C["red"], True, "mm")
+    trajectories = [
+        ([(150, 540), (300, 470), (440, 410), (575, 390)], C["cyan"], "FAMILY α"),
+        ([(160, 350), (310, 360), (455, 385), (600, 410)], C["gold"], "MODE β"),
+        ([(180, 210), (330, 270), (470, 335), (620, 385)], C["green"], "CURRENT γ"),
     ]
-    for index, box in enumerate(nodes):
-        node(
-            s,
-            box[:4],
-            box[4],
-            box[5],
-            box[6],
-            pulse=index in {2, 3},
-            title_size=17,
-            body_size=15,
-        )
-        if index:
-            arrow(
-                s,
-                (nodes[index - 1][2], 265),
-                (box[0], 265),
-                0.13 * index,
-                C["red"] if index in {3, 4} else C["cyan"],
-            )
-    badge(s, (210, 415, 1070, 462), "A BHSM FAMILY OR MODE MAY MANIFEST AS AN SM PARTICLE", C["gold"])
-    s.rect((90, 510, 1190, 610), C["black"], C["red"], 2, 10)
-    s.text((640, 540), "REJECTED SHORTCUTS", 18, C["red"], True, "mm")
-    s.text((640, 580), "λ₂₄ = 0 ≠ 2π     •     STOP ≠ SPACETIME EDGE     •     DURATION ≠ STABILITY", 17, C["white"], True, "mm")
-    s.text((640, 665), "MISSING: ENCLOSURE OWNER • JUNCTION DATA • FULL-FIELD ATTACHMENT • INTERTWINING TRANSPORT", 14, C["muted"], True, "mm")
+    for index, (points, accent, label) in enumerate(trajectories):
+        s.line(points, accent, 3, animated=True, delay=index * 0.24)
+        s.text((points[0][0], points[0][1] - 22), label, 13, accent, True, "mm")
+    s.scan(135, 830, 170, 575, C["cyan"])
+    node(s, (930, 150, 1235, 290), "REUSED STATE", ["family / mode", "representation • projector", "current • topology"], C["gold"], title_size=18)
+    node(s, (930, 315, 1235, 440), "DYNAMICS", ["selected stop λ₂₄ = 0", "geometric event child"], C["cyan"], title_size=18)
+    node(s, (930, 465, 1235, 600), "OPEN PROOF", ["enclosure owner", "junction + attachment", "intertwining transport"], C["red"], True, 18)
+    s.text((1080, 625), "CONTOUR = TARGET REGION, NOT CLOSURE", 13, C["red"], True, "mm")
+    s.text((640, 690), "A FAMILY OR MODE MAY MANIFEST AS AN SM PARTICLE ONLY AFTER STRUCTURE-PRESERVING ENCLOSURE", 14, C["white"], True, "mm")
     return s
 
 
 VISUALS: dict[str, Callable[[int | None], Scene]] = {
     "bhsm_geometry_to_prediction": hero,
     "bhsm_universal_predictive_engine": universal,
+    "bhsm_simulated_particle_spectrum": particle_spectrum,
     "bhsm_spectral_forecast": spectral,
     "bhsm_muon_g2_pipeline": gminus2,
     "bhsm_collision_predictor": collision,

@@ -7,14 +7,18 @@ const sourceRoot = resolve(museumRoot, '..', 'docs', 'assets');
 const cmsSourceRoot = join(sourceRoot, 'pr98_cms_open_data_animation');
 const publicRoot = resolve(museumRoot, 'public');
 const targetRoot = resolve(publicRoot, 'exhibits');
+const dataRoot = resolve(publicRoot, 'data');
 
-if (relative(publicRoot, targetRoot).startsWith('..')) {
+if (
+  relative(publicRoot, targetRoot).startsWith('..') ||
+  relative(publicRoot, dataRoot).startsWith('..')
+) {
   throw new Error('Refusing to sync outside museum/public.');
 }
 
 const exhibitBases = [
   'bhsm_geometry_to_prediction',
-  'bhsm_universal_predictive_engine',
+  'bhsm_simulated_particle_spectrum',
   'bhsm_spectral_forecast',
   'bhsm_muon_g2_pipeline',
   'bhsm_collision_predictor',
@@ -36,6 +40,8 @@ const names = (await readdir(sourceRoot)).filter((name) =>
 
 await rm(targetRoot, { recursive: true, force: true });
 await mkdir(targetRoot, { recursive: true });
+await rm(dataRoot, { recursive: true, force: true });
+await mkdir(dataRoot, { recursive: true });
 
 for (const name of names) {
   await cp(join(sourceRoot, name), join(targetRoot, name));
@@ -51,10 +57,15 @@ for (const name of cmsNames) {
 }
 
 await cp(
+  join(cmsSourceRoot, 'pr98_cms_four_vector_sample.json'),
+  join(dataRoot, 'cms-four-vector-sample.json'),
+);
+
+await cp(
   join(cmsSourceRoot, 'pr98_cms_engine_validation.png'),
   join(publicRoot, 'og.png'),
 );
 
 console.log(
-  `Synced ${names.length + cmsNames.length} provenance-tracked museum assets.`,
+  `Synced ${names.length + cmsNames.length + 1} provenance-tracked museum assets.`,
 );

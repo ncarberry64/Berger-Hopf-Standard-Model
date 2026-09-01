@@ -11,6 +11,7 @@ export type Exhibit = {
   alt: string;
   seen: string;
   matters: string;
+  dataLabel: string;
   status: 'implemented' | 'provisional' | 'gated';
   statusLabel: string;
   facts?: { label: string; value: string }[];
@@ -20,14 +21,16 @@ export type Exhibit = {
 export const exhibits: Exhibit[] = [
   {
     number: '01',
-    title: 'CMS Open Data in motion',
+    title: 'CMS Open Data through the BHSM Engine',
     subtitle: '100,000 dimuon events · precision-gated coordinate validation',
     animated: 'pr98_cms_engine_validation_continuous.gif',
     still: 'pr98_cms_engine_validation.png',
-    alt: 'Real CMS dimuon four-vectors continuously morph from an input momentum projection into a boundary-safe angular chart beside the validated workload and precision metrics.',
-    seen: 'A deterministic sample of 128 real muon four-vectors moves between coordinate charts. The source record contains 100,000 two-muon events from 2010 CMS open data.',
+    alt: 'Real CMS dimuon four-vectors move from a transverse-momentum view into a boundary-safe angular chart beside validation metrics.',
+    seen:
+      'Each moving mark is derived from a real muon four-vector in the checked-in CMS sample. The left view encodes transverse momentum; the right view encodes angular coordinates after the BHSM Engine transformation. Color and motion preserve event identity rather than illustrating an invented trajectory.',
     matters:
-      'PR #98 validated the BHSM Engine coordinate path on 200,000 unique four-vectors and a two-million-vector timed workload while preserving a scale-aware backward error below 2.4 machine epsilon.',
+      'This is an engineering validation on public collider data, not a claim that CMS confirms BHSM. PR #98 processed 200,000 unique four-vectors and a two-million-vector timed workload while keeping scale-aware backward error below 2.4 machine epsilon.',
+    dataLabel: 'Real CMS Open Data · BHSM Engine',
     status: 'implemented',
     statusLabel: 'Real-data engine validation',
     facts: [
@@ -39,18 +42,9 @@ export const exhibits: Exhibit[] = [
       { label: 'License', value: 'CC0' },
     ],
     links: [
-      {
-        label: 'CMS Open Data Record 303',
-        href: 'https://opendata.cern.ch/record/303',
-      },
-      {
-        label: 'Animation data and method',
-        href: `${SCIENCE}/docs/pr98_cms_open_data_animation.md`,
-      },
-      {
-        label: 'Pinned source manifest',
-        href: `${SCIENCE}/data/manifests/cms_open_data_dimuon_2010.json`,
-      },
+      { label: 'CMS Open Data Record 303', href: 'https://opendata.cern.ch/record/303' },
+      { label: 'Animation data and method', href: `${SCIENCE}/docs/pr98_cms_open_data_animation.md` },
+      { label: 'Pinned source manifest', href: `${SCIENCE}/data/manifests/cms_open_data_dimuon_2010.json` },
     ],
   },
   {
@@ -60,78 +54,63 @@ export const exhibits: Exhibit[] = [
     animated: 'bhsm_geometry_to_prediction_animated.gif',
     still: 'bhsm_geometry_to_prediction.png',
     alt: 'A pulse travels from the BHSM action through its second, third, and fourth derivatives toward observable readouts.',
-    seen: 'A pulse passes through S², S³, and S⁴: the structures used for propagation and interactions are obtained from one proposed action.',
+    seen:
+      'A single signal leaves the proposed BHSM action and passes through S², S³, and S⁴. These derivatives supply the quadratic propagation terms and the cubic and quartic interaction terms used downstream.',
     matters:
-      'The architecture is designed to prevent unrelated formulas from being chosen separately for each observable.',
+      'For a general reader, this is the project’s one-source rule: the displayed observables are meant to share a mathematical origin. Scientifically, it makes each pole, vertex, and amplitude traceable to the same action instead of to separately selected formulas.',
+    dataLabel: 'Repository-derived structural record',
     status: 'implemented',
     statusLabel: 'Implemented machinery',
     links: [
-      {
-        label: 'Action expansion source',
-        href: `${SCIENCE}/src/bhsm/interface/universal_physical_action_expansion.py`,
-      },
-      {
-        label: 'Focused tests',
-        href: `${SCIENCE}/tests/test_universal_physical_action_expansion.py`,
-      },
-      {
-        label: 'Current action attachment',
-        href: `${SCIENCE}/theory/bhsm_current_full_field_action_attachment.md`,
-      },
+      { label: 'Action expansion source', href: `${SCIENCE}/src/bhsm/interface/universal_physical_action_expansion.py` },
+      { label: 'Focused tests', href: `${SCIENCE}/tests/test_universal_physical_action_expansion.py` },
+      { label: 'Current action attachment', href: `${SCIENCE}/theory/bhsm_current_full_field_action_attachment.md` },
     ],
   },
   {
     number: '03',
-    title: 'The observable pipeline',
-    subtitle: 'Poles, residues, vertices, and LSZ',
-    animated: 'bhsm_universal_predictive_engine_animated.gif',
-    still: 'bhsm_universal_predictive_engine.png',
-    alt: 'Poles appear on a spectrum and a pulse passes through LSZ normalization into observable channels.',
-    seen: 'Poles and residues emerge from the quadratic sector; shared vertices assemble an amplitude; a pulse crosses the inverse-free LSZ normalization step.',
+    title: 'Simulated particle spectrum',
+    subtitle: 'Temporary museum dataset · dimensionless coordinate',
+    animated: 'bhsm_simulated_particle_spectrum_animated.gif',
+    still: 'bhsm_simulated_particle_spectrum.png',
+    alt: 'Simulated lepton, gauge, and quark-family markers rise from a dimensionless BHSM-style spectrum while a scan line crosses the plot.',
+    seen:
+      'Lepton, gauge, and quark rows use familiar particle labels as orientation anchors. Marker position and height come from a deterministic museum simulation on a dimensionless display axis; the scan reveals the dataset without assigning a physical mass.',
     matters:
-      'It exposes a reviewable chain from action-derived inputs to decay, collision, form-factor, and spectral readouts.',
-    status: 'gated',
-    statusLabel: 'Implemented · physical promotion gated',
+      'The temporary spectrum restores the visual vocabulary needed to discuss families and modes while preserving the scientific boundary. It is not a rebuilt BHSM spectrum, a fit to measured masses, or a prediction of new particles; it can later be replaced by an action-owned physical artifact.',
+    dataLabel: 'Simulated display data · not a prediction',
+    status: 'provisional',
+    statusLabel: 'Simulated spectrum installed',
+    facts: [
+      { label: 'Display modes', value: '9' },
+      { label: 'Families', value: '3' },
+      { label: 'Coordinate', value: 'ξ ∈ [0,1]' },
+      { label: 'Mass scale', value: 'Not assigned' },
+    ],
     links: [
-      {
-        label: 'Spectrum source',
-        href: `${SCIENCE}/src/bhsm/interface/universal_quadratic_spectrum.py`,
-      },
-      {
-        label: 'Amplitude source',
-        href: `${SCIENCE}/src/bhsm/interface/universal_vertex_amplitude.py`,
-      },
-      {
-        label: 'LSZ source',
-        href: `${SCIENCE}/src/bhsm/interface/universal_lsz.py`,
-      },
+      { label: 'Simulated display dataset', href: `${SCIENCE}/data/museum/bhsm_simulated_particle_spectrum_v1.json` },
+      { label: 'Spectrum implementation', href: `${SCIENCE}/src/bhsm/interface/universal_quadratic_spectrum.py` },
+      { label: 'Claim policy', href: `${SCIENCE}/docs/artifact_backed_claim_policy.md` },
     ],
   },
   {
     number: '04',
     title: 'Spectral forecast',
-    subtitle: 'Allowed bands and null windows',
+    subtitle: 'Animated bands, uncertainty envelopes, and null windows',
     animated: 'bhsm_spectral_forecast_animated.gif',
     still: 'bhsm_spectral_forecast.png',
-    alt: 'A scan crosses a structural spectrum, revealing admissible bands, null windows, closed regions, and unresolved intervals.',
-    seen: 'A scan separates action-derived modes, admissible intervals, spectral null windows, closed channels, and unresolved regions.',
+    alt: 'A scan line moves across normalized spectral bands with uncertainty envelopes, a null window, and an unresolved region.',
+    seen:
+      'Horizontal bands show interval-valued mode classes on a normalized spectral coordinate. Thin outer envelopes represent uncertainty or incomplete localization, the hatched red interval is a null window, and the moving scan line reads the classification at each coordinate.',
     matters:
-      'The classifier can say “allowed,” “absent,” or “not resolved” without turning a structural calculation into a particle claim.',
+      'This view makes uncertainty part of the result rather than hiding it behind a single point. The classifier can distinguish admissible, absent, and unresolved regions without converting a structural interval into a particle mass or discovery claim.',
+    dataLabel: 'Repository-derived interval classes',
     status: 'provisional',
     statusLabel: 'Structural and provisional',
     links: [
-      {
-        label: 'Forecast source',
-        href: `${SCIENCE}/src/bhsm/interface/universal_spectral_forecast.py`,
-      },
-      {
-        label: 'Focused tests',
-        href: `${SCIENCE}/tests/test_universal_spectral_forecast.py`,
-      },
-      {
-        label: 'Claim policy',
-        href: `${SCIENCE}/docs/artifact_backed_claim_policy.md`,
-      },
+      { label: 'Forecast source', href: `${SCIENCE}/src/bhsm/interface/universal_spectral_forecast.py` },
+      { label: 'Focused tests', href: `${SCIENCE}/tests/test_universal_spectral_forecast.py` },
+      { label: 'Claim policy', href: `${SCIENCE}/docs/artifact_backed_claim_policy.md` },
     ],
   },
   {
@@ -141,24 +120,17 @@ export const exhibits: Exhibit[] = [
     animated: 'bhsm_muon_g2_pipeline_animated.gif',
     still: 'bhsm_muon_g2_pipeline.png',
     alt: 'An electromagnetic vertex is projected into F1 and F2 structures, approaching the F2 at zero-momentum readout behind a gate.',
-    seen: 'A supplied renormalized on-shell electromagnetic vertex resolves into F₁(q²) and F₂(q²), with the F₂(0) endpoint guarded.',
+    seen:
+      'The display decomposes a supplied renormalized on-shell electromagnetic vertex into the charge form factor F₁(q²) and magnetic form factor F₂(q²). The animation approaches q² = 0 while leaving the numerical endpoint behind an explicit gate.',
     matters:
-      'The projection machinery exists, but no numerical BHSM muon g−2 value is displayed before all physical gates pass.',
+      'In everyday terms, the machinery knows where a magnetic-moment correction would be read. Scientifically, the projection is basis-independent, but no BHSM muon g−2 number is promoted until enclosure, external-state, Ward-identity, and renormalization requirements all pass.',
+    dataLabel: 'Analytic projection · numerical result gated',
     status: 'gated',
     statusLabel: 'Implemented · numerical output gated',
     links: [
-      {
-        label: 'Form-factor source',
-        href: `${SCIENCE}/src/bhsm/interface/universal_precision_form_factor.py`,
-      },
-      {
-        label: 'Focused tests',
-        href: `${SCIENCE}/tests/test_universal_precision_form_factor.py`,
-      },
-      {
-        label: 'Frozen prediction policy',
-        href: `${SCIENCE}/docs/frozen_predictions.md`,
-      },
+      { label: 'Form-factor source', href: `${SCIENCE}/src/bhsm/interface/universal_precision_form_factor.py` },
+      { label: 'Focused tests', href: `${SCIENCE}/tests/test_universal_precision_form_factor.py` },
+      { label: 'Frozen prediction policy', href: `${SCIENCE}/docs/frozen_predictions.md` },
     ],
   },
   {
@@ -167,25 +139,18 @@ export const exhibits: Exhibit[] = [
     subtitle: 'Incoming states to final states',
     animated: 'bhsm_collision_predictor_animated.gif',
     still: 'bhsm_collision_predictor.png',
-    alt: 'Two incoming particles converge on an amplitude block and separate into two outgoing final states.',
-    seen: 'Two incoming particles meet at the shared amplitude block and separate into final states while thresholds, averages, and symmetry factors remain visible.',
+    alt: 'Two incoming particles converge on a shared amplitude calculation and separate into two outgoing final states.',
+    seen:
+      'Two incoming states enter the shared interaction calculation and emerge as a two-body final state. The moving marks track the calculation through contact and exchange contributions, squared amplitude, angular distribution, and integrated cross-section readout.',
     matters:
-      'The animation shows an engine topology, not a cross-section value or a claim of collider readiness.',
+      'This is the familiar collider question—what can go in, what can come out, and with what probability—shown as an implemented calculation path. It does not display a BHSM cross-section value or claim collider readiness.',
+    dataLabel: 'Action-derived engine topology',
     status: 'gated',
     statusLabel: 'Implemented · collider claim gated',
     links: [
-      {
-        label: 'Decay/collision source',
-        href: `${SCIENCE}/src/bhsm/interface/universal_decay_collision.py`,
-      },
-      {
-        label: 'Hadronic bridge',
-        href: `${SCIENCE}/src/bhsm/interface/universal_hadronic_factorization.py`,
-      },
-      {
-        label: 'Focused tests',
-        href: `${SCIENCE}/tests/test_universal_decay_collision.py`,
-      },
+      { label: 'Decay/collision source', href: `${SCIENCE}/src/bhsm/interface/universal_decay_collision.py` },
+      { label: 'Hadronic bridge', href: `${SCIENCE}/src/bhsm/interface/universal_hadronic_factorization.py` },
+      { label: 'Focused tests', href: `${SCIENCE}/tests/test_universal_decay_collision.py` },
     ],
   },
   {
@@ -194,25 +159,18 @@ export const exhibits: Exhibit[] = [
     subtitle: 'Allowed, forbidden, closed, unresolved',
     animated: 'bhsm_decay_stability_engine_animated.gif',
     still: 'bhsm_decay_stability_engine.png',
-    alt: 'Possible decay branches illuminate when allowed, remain crossed when forbidden, or stay dim when closed or unresolved.',
-    seen: 'Allowed decay branches illuminate. Exactly forbidden branches remain crossed. Kinematically closed and unresolved cases retain separate labels.',
+    alt: 'Possible decay branches illuminate when allowed and remain distinct when forbidden, closed, or unresolved.',
+    seen:
+      'The candidate state is tested against four distinct channel outcomes. Allowed branches contribute to the total width; exact selection rules set a branch to zero; thresholds can close it; incomplete interval information keeps it unresolved.',
     matters:
-      'A state is called stable only when a complete ledger proves that every decay route is closed or exactly forbidden.',
+      'A long-lived-looking state is not automatically stable. The scientific claim requires a complete action-derived ledger showing that every possible decay route is either kinematically closed or exactly forbidden.',
+    dataLabel: 'Repository-derived channel ledger classes',
     status: 'gated',
     statusLabel: 'Implemented · physical instance gated',
     links: [
-      {
-        label: 'Channel ledger source',
-        href: `${SCIENCE}/src/bhsm/interface/universal_channel_ledger.py`,
-      },
-      {
-        label: 'Phase-space source',
-        href: `${SCIENCE}/src/bhsm/interface/universal_decay_collision.py`,
-      },
-      {
-        label: 'Focused tests',
-        href: `${SCIENCE}/tests/test_universal_channel_ledger.py`,
-      },
+      { label: 'Channel ledger source', href: `${SCIENCE}/src/bhsm/interface/universal_channel_ledger.py` },
+      { label: 'Phase-space source', href: `${SCIENCE}/src/bhsm/interface/universal_decay_collision.py` },
+      { label: 'Focused tests', href: `${SCIENCE}/tests/test_universal_channel_ledger.py` },
     ],
   },
   {
@@ -222,48 +180,37 @@ export const exhibits: Exhibit[] = [
     animated: 'bhsm_no_fit_firewall_animated.gif',
     still: 'bhsm_no_fit_firewall.png',
     alt: 'A firewall prevents measured values from changing upstream branches, coefficients, normalizations, modes, or scales.',
-    seen: 'Measured values may enter only on the comparison side. They cannot select an upstream branch, action coefficient, mode, normalization, or scale.',
+    seen:
+      'Measured values remain on the comparison side of the display. The firewall blocks them from choosing the action branch, coefficient, mode, normalization, formula, or scale that generated the candidate prediction.',
     matters:
-      'The firewall keeps a frozen prediction distinct from a post-hoc fit and fails closed when provenance is incomplete.',
+      'For any reader, the rule is simple: the answer cannot be adjusted after it is known. Scientifically, immutable provenance separates a frozen prediction from a post-hoc fit and forces incomplete records to fail closed.',
+    dataLabel: 'Repository policy and provenance checks',
     status: 'implemented',
     statusLabel: 'Implemented policy machinery',
     links: [
-      {
-        label: 'Prediction-freeze source',
-        href: `${SCIENCE}/src/bhsm/interface/universal_prediction_freeze.py`,
-      },
-      {
-        label: 'Integrity audit',
-        href: `${SCIENCE}/tools/audit_frozen_prediction_integrity.py`,
-      },
+      { label: 'Prediction-freeze source', href: `${SCIENCE}/src/bhsm/interface/universal_prediction_freeze.py` },
+      { label: 'Integrity audit', href: `${SCIENCE}/tools/audit_frozen_prediction_integrity.py` },
       { label: 'Claim boundaries', href: `${SCIENCE}/CLAIMS.md` },
     ],
   },
   {
     number: '09',
     title: 'The physical identification bridge',
-    subtitle: 'Frozen BHSM state to local enclosure and SM manifestation',
+    subtitle: 'Moving state space · event child to candidate enclosure',
     animated: 'bhsm_physical_identification_bridge_animated.gif',
     still: 'bhsm_physical_identification_bridge.png',
-    alt: 'A frozen BHSM family or mode passes through the selected AE2 stop and event child toward an open local enclosure bridge and its existing Standard Model manifestation class.',
-    seen: 'An existing BHSM family or mode, together with its representation, projector, current, and topology, is carried through the selected stop and event child. The enclosure segment remains visibly open.',
+    alt: 'Three BHSM state trajectories move through event-child state space toward nested candidate enclosure contours while the unproved ownership conditions remain listed.',
+    seen:
+      'Colored trajectories carry a reused BHSM family, mode, and current across event-child coordinates toward nested candidate-enclosure contours. The side ledger separates inherited state data, derived AE2 dynamics, and the still-open proof obligations.',
     matters:
-      'This is the missing identification map. It does not rebuild the particle spectrum: it must prove that the already-defined state reaches an action-owned local enclosure and its existing SM manifestation class.',
+      'This is the missing bridge, not another particle-spectrum calculation. It must prove that an already-defined family or mode reaches an action-owned local enclosure with junction data, full-field balance, and structure-preserving transport before its existing Standard Model manifestation can be promoted.',
+    dataLabel: 'Reconstructed state inventory · enclosure open',
     status: 'gated',
     statusLabel: 'Bridge specified · local enclosure open',
     links: [
-      {
-        label: 'Full ontology reconstruction',
-        href: `${SCIENCE}/docs/BHSM_NORMAN_SCHOOL_FULL_CORPUS_RECONSTRUCTION.md`,
-      },
-      {
-        label: 'Bridge theorem interface',
-        href: `${SCIENCE}/theory/n12_gate7_physical_encapsulation_identification_bridge.md`,
-      },
-      {
-        label: 'Machine-readable bridge',
-        href: `${SCIENCE}/artifacts/flagship_integration/BHSM_N12_GATE7_PHYSICAL_ENCAPSULATION_IDENTIFICATION_BRIDGE.json`,
-      },
+      { label: 'Full ontology reconstruction', href: `${SCIENCE}/docs/BHSM_NORMAN_SCHOOL_FULL_CORPUS_RECONSTRUCTION.md` },
+      { label: 'Bridge theorem interface', href: `${SCIENCE}/theory/n12_gate7_physical_encapsulation_identification_bridge.md` },
+      { label: 'Machine-readable bridge', href: `${SCIENCE}/artifacts/flagship_integration/BHSM_N12_GATE7_PHYSICAL_ENCAPSULATION_IDENTIFICATION_BRIDGE.json` },
     ],
   },
 ];

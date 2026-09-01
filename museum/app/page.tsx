@@ -2,15 +2,131 @@
 
 import { ArrowRight, Code2, Pause, Play, ShieldCheck } from 'lucide-react';
 import Image from 'next/image';
-import { useState } from 'react';
+import { useEffect, useMemo, useState } from 'react';
 import { Button } from '@/components/ui/button';
 import { exhibits, REPOSITORY, SCIENCE, type Exhibit } from './exhibits';
 
 const creatorLinks = [
   { label: 'ORCID record', href: 'https://orcid.org/0009-0000-6650-3485' },
   { label: 'Citation metadata', href: `${SCIENCE}/CITATION.cff` },
+  { label: 'Frozen preprint PDF', href: `${SCIENCE}/manuscript/BHSM_final_paper.pdf` },
   { label: 'Archival DOI', href: 'https://doi.org/10.5281/zenodo.20663419' },
 ];
+
+type CMSVector = {
+  event_index: number;
+  run: number;
+  event: number;
+  muon: number;
+  E: number;
+  px: number;
+  py: number;
+  pz: number;
+  pt: number;
+  eta: number;
+  phi: number;
+  charge: number;
+};
+
+function CMSExplorer() {
+  const [vectors, setVectors] = useState<CMSVector[]>([]);
+  const [selected, setSelected] = useState(0);
+
+  useEffect(() => {
+    fetch('./data/cms-four-vector-sample.json')
+      .then(async (response) => {
+        const payload = (await response.json()) as { vectors: CMSVector[] };
+        setVectors(payload.vectors);
+      })
+      .catch(() => setVectors([]));
+  }, []);
+
+  const eventVectors = useMemo(
+    () => vectors.filter((vector) => vector.event_index === selected),
+    [selected, vectors],
+  );
+  const event = eventVectors[0];
+  const maxPt = Math.max(...eventVectors.map((vector) => vector.pt), 1);
+
+  return (
+    <section className="cms-explorer" id="cms-data" aria-labelledby="cms-explorer-title">
+      <div className="cms-explorer-copy">
+        <p className="eyebrow">BHSM Engine instrument · real CMS Open Data</p>
+        <h2 id="cms-explorer-title">Inspect 64 dimuon events.</h2>
+        <p>
+          Choose one checked-in event and inspect both measured muon
+          four-vectors. The circular instrument maps azimuth to angle, transverse
+          momentum to radius, and charge to color. It is a BHSM-style rendering
+          of CMS data—not a detector photograph and not evidence for BHSM.
+        </p>
+        <label htmlFor="cms-event-selector">
+          Sample event <strong>{selected + 1} / 64</strong>
+        </label>
+        <input
+          id="cms-event-selector"
+          type="range"
+          min="0"
+          max="63"
+          value={selected}
+          onChange={(eventChange) => setSelected(Number(eventChange.target.value))}
+        />
+        <div className="cms-event-identity">
+          <span>Source row {event?.event_index ?? '—'}</span>
+          <span>Run {event?.run ?? '—'}</span>
+          <span>Event {event?.event ?? '—'}</span>
+        </div>
+        <div className="cms-field-links">
+          <a href="https://opendata.cern.ch/record/303">CMS record ↗</a>
+          <a href={`${SCIENCE}/docs/pr98_cms_open_data_animation.md`}>Method ↗</a>
+        </div>
+      </div>
+
+      <div className="cms-event-instrument">
+        <svg viewBox="0 0 320 320" aria-labelledby="cms-event-plot-title">
+          <title id="cms-event-plot-title">Selected dimuon event in a polar momentum display</title>
+          {[55, 95, 135].map((radius) => (
+            <circle className="instrument-ring" cx="160" cy="160" r={radius} key={radius} />
+          ))}
+          <line className="instrument-axis" x1="20" x2="300" y1="160" y2="160" />
+          <line className="instrument-axis" x1="160" x2="160" y1="20" y2="300" />
+          {eventVectors.map((vector) => {
+            const radius = 42 + (vector.pt / maxPt) * 92;
+            const x = 160 + Math.cos(vector.phi) * radius;
+            const y = 160 - Math.sin(vector.phi) * radius;
+            return (
+              <g className={vector.charge > 0 ? 'track-positive' : 'track-negative'} key={vector.muon}>
+                <line x1="160" y1="160" x2={x} y2={y} />
+                <circle cx={x} cy={y} r="8" />
+                <text x={x + 12} y={y - 10}>μ{vector.charge > 0 ? '+' : '−'}</text>
+              </g>
+            );
+          })}
+          <circle className="instrument-origin" cx="160" cy="160" r="5" />
+        </svg>
+        <table className="cms-vector-table">
+          <caption>Selected CMS muon four-vectors</caption>
+          <thead>
+            <tr className="cms-vector-row cms-vector-head">
+              <th>Muon</th><th>E</th><th>pT</th><th>η</th><th>φ</th>
+            </tr>
+          </thead>
+          <tbody>
+            {eventVectors.map((vector) => (
+              <tr className="cms-vector-row" key={vector.muon}>
+                <th>μ{vector.charge > 0 ? '+' : '−'}</th>
+                <td>{vector.E.toFixed(3)}</td>
+                <td>{vector.pt.toFixed(3)}</td>
+                <td>{vector.eta.toFixed(3)}</td>
+                <td>{vector.phi.toFixed(3)}</td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+        <p className="instrument-caption">Energy and momentum in GeV · η and φ dimensionless/radians · two source vectors per event</p>
+      </div>
+    </section>
+  );
+}
 
 function StatusBadge({ exhibit }: { exhibit: Exhibit }) {
   return (
@@ -47,7 +163,7 @@ export default function Home() {
           />
           <span>
             <strong>BHSM Museum</strong>
-            <small>Norman P. Carberry · Research archive</small>
+            <small>Scientific research archive</small>
           </span>
         </a>
         <nav aria-label="Museum navigation">
@@ -64,7 +180,7 @@ export default function Home() {
 
       <section className="atrium" id="top" aria-labelledby="atrium-title">
         <div className="atrium-copy">
-          <p className="eyebrow">Norman P. Carberry · Berger–Hopf Standard Model</p>
+          <p className="eyebrow">Berger–Hopf Standard Model</p>
           <h1 id="atrium-title">
             Geometry, particles, and the record <span>in motion.</span>
           </h1>
@@ -117,7 +233,7 @@ export default function Home() {
           </div>
           <div className="display-caption">
             <p>
-              <strong>What you are seeing</strong>
+              <strong>Public reading</strong>
               {hero.seen}
             </p>
             <StatusBadge exhibit={hero} />
@@ -135,41 +251,7 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="cms-field" id="cms-data" aria-labelledby="cms-field-title">
-        <div className="cms-field-image">
-          <Image
-            src="./cms-detector-simon-waldherr.jpg"
-            alt="Interior view of the Compact Muon Solenoid detector at CERN"
-            width={1280}
-            height={853}
-            unoptimized
-          />
-        </div>
-        <div className="cms-field-copy">
-          <p className="eyebrow">A real detector · a real public dataset</p>
-          <h2 id="cms-field-title">The visual language starts at CMS.</h2>
-          <p>
-            The rings, tracks, color, and instrument-panel typography throughout
-            this museum take their cue from the Compact Muon Solenoid. BHSM’s
-            checked-in PR #98 record uses the CC0 CMS dimuon education dataset
-            for coordinate-transformation validation.
-          </p>
-          <div className="cms-record-grid">
-            <div><strong>7 TeV</strong><span>collision energy</span></div>
-            <div><strong>100,000</strong><span>two-muon events</span></div>
-            <div><strong>15,075,838 B</strong><span>pinned source file</span></div>
-            <div><strong>Record 303</strong><span>CERN Open Data Portal</span></div>
-          </div>
-          <div className="cms-field-links">
-            <a href="https://opendata.cern.ch/record/303">Open the dataset ↗</a>
-            <a href="https://doi.org/10.7483/OPENDATA.CMS.4M97.3SQ9">Dataset DOI ↗</a>
-          </div>
-          <p className="image-credit">
-            CMS detector photograph: Simon Waldherr, 2019 · CC BY-SA 4.0 ·
-            Wikimedia Commons
-          </p>
-        </div>
-      </section>
+      <CMSExplorer />
 
       <section
         className="reconstruction-room"
@@ -179,7 +261,7 @@ export default function Home() {
         <div className="section-heading reconstruction-heading">
           <p className="eyebrow">Reconstruction room · integrated BHSM corpus</p>
           <h2 id="reconstruction-title">
-            One program, recovered through its changing semantics.
+            One program, recovered across an evolving research record.
           </h2>
           <p>
             Every BHSM lineage is now integrated on main. The reconstruction
@@ -197,7 +279,7 @@ export default function Home() {
               Representation, projector, current, topology, and existing SM
               manifestation class retain their historical provenance.
             </p>
-            <strong>No particle-spectrum rebuild</strong>
+            <strong>Historical registry retained</strong>
           </article>
           <div className="bridge-arrow" aria-hidden="true">→</div>
           <article className="bridge-stage bridge-stage-dynamics">
@@ -235,7 +317,7 @@ export default function Home() {
           </article>
           <article>
             <span className="ledger-label ledger-forbidden">Not equivalent</span>
-            <h3>Semantic guardrails</h3>
+            <h3>Interpretive guardrails</h3>
             <p>λ₂₄ = 0 is not 2π; a stop is not automatically a spacetime edge; positive duration is not particle stability.</p>
           </article>
         </div>
@@ -353,6 +435,7 @@ export default function Home() {
                 <p className="exhibit-index">Gallery {exhibit.number}</p>
                 <h3>{exhibit.title}</h3>
                 <p className="exhibit-subtitle">{exhibit.subtitle}</p>
+                <p className="data-label">{exhibit.dataLabel}</p>
                 <StatusBadge exhibit={exhibit} />
                 {exhibit.facts ? (
                   <dl className="exhibit-facts">
@@ -366,11 +449,11 @@ export default function Home() {
                 ) : null}
                 <dl>
                   <div>
-                    <dt>What you are seeing</dt>
+                    <dt>Public reading</dt>
                     <dd>{exhibit.seen}</dd>
                   </div>
                   <div>
-                    <dt>Why it matters</dt>
+                    <dt>Scientific caption</dt>
                     <dd>{exhibit.matters}</dd>
                   </div>
                 </dl>
@@ -445,7 +528,7 @@ export default function Home() {
             [
               '07',
               'Ontology reconstruction',
-              'Recovered meanings, provenance, semantic drift, and current authority.',
+              'Recovered meanings, provenance, vocabulary drift, and current authority.',
               `${SCIENCE}/docs/BHSM_NORMAN_SCHOOL_FULL_CORPUS_RECONSTRUCTION.md`,
             ],
             [

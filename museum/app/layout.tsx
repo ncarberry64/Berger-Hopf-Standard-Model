@@ -13,9 +13,9 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: 'BHSM Museum | Norman P. Carberry Research Archive',
+  title: 'BHSM Museum | Animated Scientific Archive',
   description:
-    'Real CMS Open Data in motion, the integrated Berger–Hopf Standard Model record, and Norman P. Carberry’s artifact-backed research archive.',
+    'Real CMS Open Data rendered through the BHSM Engine, the integrated Berger–Hopf Standard Model record, and an artifact-backed scientific archive.',
   icons: {
     icon: './bhsm-symbol.svg',
   },
