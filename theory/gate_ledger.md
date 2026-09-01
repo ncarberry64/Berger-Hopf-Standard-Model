@@ -4056,3 +4056,24 @@ Exact next object:
 - The returned hadron Hamiltonian/resolvent, two-hadron residual kernel,
   global asymptotic confinement theorem, area law, and hadron spectrum remain
   open. The v14.28 Gaussian-collar zero-string-tension no-go is preserved.
+
+## AE3.1 current-C2 `r2` electron-capture selection rule
+
+- Recall identifies the historical `r2` shorthand as a scalarized `ell=2`
+  reduced-stiffness channel, not an electron orbital or independent current-C2
+  field. Its equal-inertia `chi2` is conditional, and the retained stationary
+  branch evaluates its physical relative transport to zero.
+- A derived `H2 -> M4` metric intertwiner would couple this channel to the
+  covariant electron action through `(1/2) integral h_mu_nu T_e^(mu nu)` with
+  no new coefficient.
+- Exact round-`S3` harmonic selection gives zero isotropic lowest-multiplet
+  trace for an `ell2` perturbation, while `ell0 -> ell2` mixing is nonzero.
+  The full spinor block remains unevaluated and may split or mix modes.
+  Therefore `r2` may dress a capture state but cannot be renamed as, or alone
+  generate, an isotropic lowest stationary capture orbital.
+- The structural leptonic and quark charged currents are attached. The
+  returned proton/neutron states, hadronic weak matrix element, complete
+  electron environmental operator, and outgoing neutrino boundary trace are
+  still absent.
+- Scientific milestone:
+  `CURRENT_C2_R2_CAPTURE_ZERO_ISOTROPIC_TRACE_NONZERO_MIXING_RULE_DERIVED`.
