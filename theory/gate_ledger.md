@@ -3913,3 +3913,20 @@ Exact next object:
   `H_0,ren v=m_scalar^2 Z_ren v`.
 - UV kinetic eigenvectors are not promoted as a physical Higgs direction;
   canonical Yukawas, scalar/quark poles, and full completion remain open.
+
+## AE3.1 current-C2 scalar UV Hessian factorization
+
+- The complete zero-momentum Hadamard pole and continuous-frequency derivative
+  pole factor through the same full-rank four-field vertex Gram matrix `G_V`.
+- Their Laurent scalars are not identified, but their normalized channel
+  shapes agree exactly. Hence the singular generalized channel operator is
+  `G_V^(-1)G_V=I4` and has a four-dimensional degenerate eigenspace.
+- Family noncentrality makes the UV kinetic form full rank; it does not make a
+  UV kinetic eigenvector the physical Higgs direction.
+- Scientific milestone:
+  `CURRENT_C2_SCALAR_MASSLIKE_DERIVATIVE_UV_GRAM_FACTORIZATION_DERIVED`.
+- Exact next owner: derive finite `Z_fin[C,mu]` and `H0_fin[C,mu]` from one
+  action-selected current-`C2` boundary/state condition, resolve the weak
+  components, and solve `H0_ren v=m_scalar^2 Z_ren v`.
+- No subtraction convention, cutoff, old EC residue, fitted matrix, scalar
+  mass, canonical Yukawa, or quark pole is promoted.
