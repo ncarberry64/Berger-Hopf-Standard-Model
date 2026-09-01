@@ -1,5 +1,48 @@
 # Gate Ledger
 
+## Current AE3 family mass-ontology recovery audit
+
+- v14.54's accepted definition is preserved: physical mass is a stable
+  rest-frame composite-minus-matched-parent charge or Floquet quasi-energy,
+  with `E_rel=m c^2`; it was a contract, not an evaluated current-C2 mass.
+- v15.56's `I3` result concerns the local fiber-invariant Higgs overlap. It
+  does not prove that distinct complete mode configurations have equal total
+  parent-relative energies.
+- The historical Hopf-base candidate is recovered as
+  `exp[-L_a/(4 pi)]`, with charged-lepton weights
+  `1, 0.0600744709..., 0.0002972911...`. It is a decreasing response
+  semigroup, not the positive local gradient-energy rule.
+- Its dimensionful triplet remains conditional: the response time, profile
+  radius, trace-normalized source, Planck-to-EW lift, broken-sector insertion,
+  current-C2 pole, and equivalence to the v14.54 charge are not all AE3-owned.
+- A numeric radius alone is insufficient; the matched parent, complete
+  covariant charge data, normalized mode realization, and pole/rest-frame map
+  are also absent.
+- No historical number or measured mass is promoted.
+- Artifact:
+  `artifacts/action_extension/BHSM_AE3_FAMILY_MASS_ONTOLOGY_RECOVERY_AUDIT.json`.
+
+## Current AE3 family harmonic-energy pullback audit
+
+- The frozen family/mode labels pull the v15.54 scalar Berger spectrum back to
+  family space as `K_family=sum_f lambda_f P_f`.
+- Dimensionless spectra for `(heavy,middle,light)` are `0,35,99` for charged
+  leptons, `0,48,120` for up, and `0,48,80` for down. The resulting spectral
+  stiffness operators are genuinely family-noncentral.
+- All slots share one current-C2 radius. Positive gradient energy and positive
+  frequency therefore order the frozen roles as `heavy<middle<light`, opposite
+  to the stored physical role ordering. The heavy-slot displacement is zero,
+  so the requested ratios relative to it are undefined.
+- No measured mass or historical exponential attenuation rule is used.
+- Missing: the normalized current-C2 manifestation map into an action energy
+  domain, a spinor/Dirac lift, the parent-relative energy or fermion pole
+  functional, any action-selected state-dependent localization scale, and an
+  absolute physical unit.
+- Derived: `FAMILY_NONCENTRAL_SPECTRAL_STIFFNESS=TRUE`.
+- Not derived: `FAMILY_MASS_HIERARCHY`, physical muon mass, CKM, or PMNS.
+- Artifact:
+  `artifacts/action_extension/BHSM_AE3_FAMILY_HARMONIC_ENERGY_PULLBACK_AUDIT.json`.
+
 ## Current AE3 C2 reduced HS/fermion mixed variation
 
 - For `K(H)=K0+H V+H^2 Q/2` and `S=bar(c)K(H)c`, the current-C2

@@ -163,6 +163,47 @@ current-C2 derivation.
 - `CURRENT_C2_DYNAMICAL_HS_KERNEL_DERIVED = FALSE`
 - `CURRENT_C2_BROKEN_LR_SADDLE_DERIVED = FALSE`
 
+The family/mode harmonic-energy proposal has also been tested directly,
+without fitting masses. Pulling the frozen Berger scalar eigenvalues back to
+the three family slots produces noncentral spectral stiffness operators with
+dimensionless values `0,35,99` (charged leptons), `0,48,120` (up), and
+`0,48,80` (down). This confirms that a noncentral observable can originate in
+harmonic space rather than as an arbitrary family matrix.
+
+It does not yet produce the physical mass hierarchy. All slots share one
+current-C2 radius, and every positive monotone scalar harmonic energy orders
+the stored `(heavy,middle,light)` roles as `heavy<middle<light`. The heavy
+`(0,0)` displacement is zero, so ratios relative to it are undefined. The
+current action also lacks the normalized manifestation isometry into an energy
+domain, a spinor lift, a parent-relative energy or fermion-pole functional,
+and an action-selected state-dependent localization scale. The old
+exponential overlap screen is not reused.
+
+- `FAMILY_NONCENTRAL_SPECTRAL_STIFFNESS_DERIVED = TRUE`
+- `FAMILY_MASS_HIERARCHY_DERIVED = FALSE`
+
+The older mass ontology has now been restored to the active audit. v14.54
+defines physical mass through a stable rest-frame composite-minus-matched-
+parent charge or Floquet quasi-energy, with `E_rel=m c^2`. That definition was
+never invalidated, but it was never evaluated on the current C2 history.
+Likewise, v15.56's `I3` result is only a theorem about the local
+fiber-invariant Higgs overlap; it does not prove equal total relative energies
+for distinct complete mode configurations.
+
+The historical Hopf-base construction is also recovered. It uses the
+decreasing response semigroup `exp[-L_a/(4 pi)]`, not positive local gradient
+energy, and reproduces the no-lepton-input charged weights
+`1, 0.0600744709..., 0.0002972911...`. Its dimensionful triplet remains a
+conditional historical candidate because its response time, profile radius,
+trace-normalized source, Planck-to-EW lift, broken-sector insertion, current-C2
+pole, and equivalence to the v14.54 relative charge are not jointly AE3-owned.
+A numeric radius alone cannot replace the missing matched parent and covariant
+charge construction.
+
+- `V14_54_MASS_ONTOLOGY_RECOVERED = TRUE`
+- `HISTORICAL_HOPF_SEMIGROUP_CANDIDATE_RECOVERED = TRUE`
+- `CURRENT_C2_PARENT_RELATIVE_MASS_EVALUATED = FALSE`
+
 The selected coefficient-free two-sided parent Calderón calculation is also
 now closed. The exact reciprocal reflection `chi -> pi/2-chi` reverses
 `sigma`, preserves the round radius and `Lambda=1-4 sigma^2`, and transports
@@ -201,7 +242,7 @@ remain reusable, but the background/domain/source mismatch cannot be repaired
 by choosing a coefficient.
 
 Exact next object:
-`ONE_AE3_FULL_FIELD_C2_ACTION_ORACLE_WITH_GEOMETRY_GAUGE_GHOST_FERMION_HS_AND_RESPONSE_MULTIPLIER_BLOCKS;_THEN_EVALUATE_THE_EVENT_CANONICAL_FLUX_AND_COMPLETE_NOETHER_HAMILTONIAN_BALANCE_WITHOUT_ADDING_A_CONTACT_COEFFICIENT`.
+`CURRENT_C2_MODE_RESOLVED_ACTION_ENERGY_MAP_WITH_ITS_OWNED_DIMENSIONFUL_SCALE_AND_PHYSICAL_POLE_OR_RELATIVE_CHARGE_READOUT`.
 
 Evidence: [`AE3 theorem`](../theory/ae3_reciprocal_join_localization_enclosure.md)
 and [`AE3 machine certificate`](../artifacts/action_extension/BHSM_ACTION_AE3_RECIPROCAL_JOIN_LOCALIZATION.json),
@@ -216,6 +257,13 @@ and [`machine certificate`](../artifacts/action_extension/BHSM_AE3_FAMILY_NONCEN
 The current-C2 reduced mixed variation and HS-kernel screen are recorded in
 the [`HS/fermion theorem`](../theory/ae3_c2_hs_fermion_mixed_variation.md) and
 [`machine certificate`](../artifacts/action_extension/BHSM_AE3_C2_HS_FERMION_MIXED_VARIATION.json).
+The harmonic shortcut screen and recovered mass ontology are recorded in the
+[`harmonic pullback audit`](../theory/ae3_family_harmonic_energy_pullback_audit.md),
+[`recovery audit`](../theory/ae3_family_mass_ontology_recovery_audit.md), and
+their machine certificates
+[`one`](../artifacts/action_extension/BHSM_AE3_FAMILY_HARMONIC_ENERGY_PULLBACK_AUDIT.json)
+and
+[`two`](../artifacts/action_extension/BHSM_AE3_FAMILY_MASS_ONTOLOGY_RECOVERY_AUDIT.json).
 The transverse hypercharge result is recorded in the
 [`current-C2 source theorem`](../theory/ae3_c2_coexact_hypercharge_source_jet.md)
 and [`source certificate`](../artifacts/action_extension/BHSM_AE3_C2_COEXACT_HYPERCHARGE_SOURCE_JET.json).
