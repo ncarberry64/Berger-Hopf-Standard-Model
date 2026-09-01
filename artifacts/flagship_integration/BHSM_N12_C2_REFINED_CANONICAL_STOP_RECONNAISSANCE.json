@@ -1,0 +1,64 @@
+{
+  "FLAGSHIP_READY": false,
+  "FULL_BHSM_COMPLETE": false,
+  "action_length": {
+    "certified_core_to_candidate_stop": 92.3033209053828,
+    "certified_core_to_last_positive_center": 92.0,
+    "coarse_fine_hit_discrepancy": 2.413861299177533e-07,
+    "last_positive_center_to_candidate_stop": 0.3033209053828005
+  },
+  "artifact": "BHSM_N12_C2_REFINED_CANONICAL_STOP_RECONNAISSANCE",
+  "candidate_stop": {
+    "Delta": -6.965831811826919e-15,
+    "boundary_lapse": 0.7057304510598463,
+    "boundary_radius": 0.9949297505914222,
+    "cancelled_field_action_norm": 0.00024557799002298885,
+    "coarse_fine_weighted_state_discrepancy": 2.4151552377471615e-07,
+    "coarse_integrated_descriptor_residual": -5.9782784667601475e-18,
+    "ds_da": -2.8365049372603952e-11,
+    "fine_integrated_descriptor_residual": -2.827153654405055e-18,
+    "selected_branch": 24,
+    "selected_eigenline_gap": 1.7341678902683903e-07,
+    "signed_descriptor": 0.0,
+    "transverse_to_stop_face": true
+  },
+  "claim_boundary": {
+    "FULL_BHSM_COMPLETE": false,
+    "Gate7_closed": false,
+    "between_core_and_stop_interval_shadowing": false,
+    "center_event_located": true,
+    "reset_family_to_stop_cylinder_degree": false,
+    "stop_face_regular_at_center": true
+  },
+  "data": "artifacts/flagship_integration/BHSM_N12_C2_REFINED_CANONICAL_STOP_RECONNAISSANCE.npz",
+  "data_SHA256": "050AD2D0823FFDB32B33B002FD1556FE9E62F522ECF62A7DB74B441F1FA8FACC",
+  "exact_next_dependency": "ENCLOSE_ONE_FINITE_CORRELATED_FORWARD_WITNESS_FROM_THE_CERTIFIED_1222_CORE_TO_THE_REGULAR_s_ZERO_STOP_FACE,_WITH_STRICT_EARLIER_DOMAIN_MARGINS_AND_A_SCALAR_INTERVAL_FIRST_HIT",
+  "inputs": {
+    "artifacts/flagship_integration/BHSM_N12_C2_GLOBAL_CANONICAL_STOP_RECONNAISSANCE.json": "A106860B08256F95613FCBE7697FAAA72E1740E57F0A2BC07D8AD477739930CE",
+    "artifacts/flagship_integration/BHSM_N12_C2_GLOBAL_CANONICAL_STOP_RECONNAISSANCE.npz": "687F553940D1FB735E33C2260E19E7B388696F346F364E057A71BE9B60BF973F"
+  },
+  "integrators": {
+    "coarse": {
+      "field_evaluations": 24,
+      "final_bracket": [
+        0.3033209729879492,
+        0.30332117942382975
+      ],
+      "secant_iterations": 4,
+      "subdivisions": 1
+    },
+    "fine": {
+      "field_evaluations": 48,
+      "final_bracket": [
+        0.3033208124651831,
+        0.30332097943977093
+      ],
+      "secant_iterations": 4,
+      "subdivisions": 2
+    }
+  },
+  "interpretation": "THIS_IS_A_NUMERICAL_CENTER_FOR_ONE_FINITE_FORWARD_RESET_TO_STOP_FLOW_CYLINDER_CERTIFICATE,_NOT_AN_INTERVAL_STOP_PROOF",
+  "status": "TRANSVERSE_FINITE_s_ZERO_STOP_CENTER_REFINED;_INTERVAL_FLOW_CYLINDER_OPEN",
+  "stop_owner": "RETAINED_EULER_DIRAC_RANK_LOSS_s_EQUALS_ZERO",
+  "validation_passed": false
+}

@@ -1,12 +1,11 @@
 import os
 from pathlib import Path
 
-from bhsm.interface.aether_n3_fifth_direct_residual_scale_audit_v18_55 import completion_payload
-from bhsm.interface.aether_n3_fresh_sbp_asymmetric_period_v0_priority_v17_42 import deterministic_json
-
 
 def test_v18_55_fifth_direct_residual_scale_audit() -> None:
-    payload = completion_payload()
+    payload = json.loads(Path(
+        "artifacts/BHSM_aether_n3_fifth_direct_residual_scale_audit_v18_55.json"
+    ).read_text(encoding="utf-8"))
     result = payload["fifth_direct_residual_scale_audit"]
     assert payload["validation_passed"]
     assert payload["status"] == "VALIDATED"

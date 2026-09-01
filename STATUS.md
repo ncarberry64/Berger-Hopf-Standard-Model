@@ -1,5 +1,160 @@
 # BHSM Status
 
+## Authoritative current checkpoint
+
+`CARRIER_CLOSED`: the correlated 256-bit Arb interaction-Taylor26 homogeneous
+carrier certifies 47 maps / 5,908 retained substeps.  Outward Arb strings own
+the global product; binary64 midpoint-radius arrays are presentation only.
+Global Frobenius radius: `8.924457407181154e-13`; operator upper:
+`5342.54284263994`.
+
+The retained signed-source composition, corrected exact center, final
+spectrum/cone/response, causal `Z2`, continuous preterminal positivity, and
+canonical earliest selected-eigenvalue stop are certified.  The terminal
+action interval is `[92.30037143976939, 92.30513924040065]`; the selected
+eigenvalue is positive at the left endpoint and negative at the right after
+the uniform causal halo.  The new outward mixed-action tensor certificate
+keeps `Dlambda_24[F]` strictly negative on the complete final cone, so the
+terminal zero is unique on that flow cell and the local differentiable
+first-stop time map is certified.  The canonical first-hit action time is
+enclosed in `[92.30448998890974, 92.30449792975345]`; its midpoint state is a
+representative, not a binary64-resolved zero.
+
+Current owner: materialize the complete action-owned joint finite-history
+operator or equivalent two-sided Weyl--Calderon family, endpoint form, and
+full 72-direction geometry/reset first jet; then evaluate the existing
+heat-minus-zeta force and same-action KKT system.  The affine 72D history,
+duration, first-hit, and `log R4` jets now exist, but the retained nonlinear
+transfer bound has contraction `2.9106286494031597 > 1` and is rejected.  A
+direct rebuild supplies numerical formula evaluations of the constraint frames
+and `73 x 73` normalized-field generators, but the complete constraint audit
+rejects the corrected nodes/interpolant as a physical continuous center.  The
+maximum stored-node scaled constraint residual is `7.283453490931462e-11`,
+the maximum seam-midpoint residual is `7.381223520027345e-4`, and the maximum
+nodewise linearized correction is `5216.733` certified center radii.  The
+active owner is now a direct constraint-preserving normalized-action center,
+then its within-seam outward variational carrier.  The certified Taylor26
+signed response is now composed with the retained dense center before all 371
+fine nodes are projected.  Their maximum scaled constraint residual is
+`1.1679676438539284e-15`; the maximum projection is
+`3.010903976408097e-9`, which is `2420.394771963047` times the inherited final
+nonlinear radius.  Thus the native-only projection and old final cone/first
+hit are superseded.  This remains discrete candidate data.  Gate 7 remains
+`ACTIVE`.  The corrected all-cell audit first found augmented flow defect
+`1.0913491285675919e-5`; cubic endpoint-field matching did not reduce it.
+Two signed-Green Newton candidates now rebuild the current-center graph
+Jacobian and 73D macro tangents.  Their second nonlinear replay improves the
+immediate parent by only `1.0251289061475437`.  A 741-node within-seam
+refinement using all 370 exact midpoint fields reduces the maximum defect from
+`1.5485158408888117e-5` to `7.080761167533001e-6`, a
+`2.1869341505107256`-fold improvement, while preserving simple branch 24.
+The second halving increases the maximum defect to
+`8.877740799934337e-6`, so interpolation-only refinement is retired.  A third
+signed-Green step using graph Jacobians and 73D tangents rebuilt on the second
+center also increases its nonlinear replay defect to
+`1.643235800430239e-5`; that fixed-point route is retired as well.  The best
+second-Newton center now has an explicit `370 x 99` Hermite--Simpson multiple-
+shooting source with maximum block residual `2.0101707940913732e-6` at
+interval 179.  The active center owner is assembly and solution of its block
+Newton/Krawczyk operator with constraint and descriptor-fiber rows.  The former
+claimed contraction to `7.487649935220473e-7` is superseded: recentered
+endpoint descriptors were paired with pre-recenter field rates.  The maximum
+rate inconsistency is `1.0526435867226e-5`.  The direct rate-consistent source
+has maximum residual `1.800590017529095e-6`; a corrected block step using the
+same exact jet for descriptor and endpoint rate reduces it to
+`1.215762696655947e-6` (`1.4810373952760374`-fold).  Rebuilt Jacobians and a
+second binary64-reselected step fail (`1.429548198240663e-6`), and an explicit
+reproducibility audit shows that this near-zero eigensolve is not map
+authority.  The replacement carries the signed descriptor independently by
+its correlated action first jet and evaluates the exact fixed-descriptor field
+at all endpoints and midpoints.  Its complete nonlinear maximum is
+`1.3706618261694602e-7` at interval 330, an `8.869895355979933`-fold
+contraction.  The active owner is the complete augmented fixed-descriptor
+retained-exact-field derivative plus descriptor-fiber equation.  That
+741-node derivative and its 74D recurrence are now complete.  Their one
+authorized nonlinear replay reduces the maximum to `1.2217621999603292e-7`
+(`1.121872837622547`-fold), preserves a minimum selected-line gap
+`1.7343286207087592e-7`, and persists exact-flow cancelled-norm jets for the
+proper-time/Weyl adapter.  The minimum contraction adjudication rejects
+transfer of the old exact-affine cone: center shift / old `Z2` radius is
+`2.7017477414680254e8`, and diagnostic old-preconditioner `Y` / old radius is
+`5.218603289632254e5`.  Gate 7 is `ACTIVE_NOT_CLOSED`; the exact blocker is
+outward same-center `Y,Z1,Z2` in one causal 74D norm satisfying the self-map
+and contraction inequalities.  No second numerical campaign is authorized,
+and no root-nonexistence claim is made.
+`FULL_BHSM_COMPLETE = FALSE`.  The universal action-to-observable
+infrastructure is now machine-classified separately from scientific outputs:
+action expansion, quadratic spectrum, bare vertices/tree exchange, LSZ,
+two- and three-body decay plus two-body collision readout, spectral forecasting, loop-ledger checks,
+form-factor projection, and the sole `G_F` scale map are
+`IMPLEMENTED_GATED`; the known-particle, benchmark, and forward-prediction
+registries are `IMPLEMENTED_PROVISIONAL`.  Every physical prediction remains
+`OPEN_INTERNAL_BLOCKER`, and none may use this background as certified
+Gate-7 authority.
+
+The current full-field attachment audit localizes the next downstream physics
+dependency without weakening those capability claims.  The retained N12
+oracle has exactly 37 geometry coordinates, 37 velocities, and 24 constraint
+multipliers; it has no gauge/ghost, fermion, or HS/scalar perturbation slots.
+AE2 owns the global fermion reset domain but explicitly adds no propagating
+field, coefficient, or scale.  The explicit BRST nullspace quotient and
+Faddeev--Popov regularity check are implemented, but still require one
+current same-action physical field symbol.  Thus physical `S2`--`S4` and all
+derived observables remain blocked pending the hashed full-field/history-seam
+attachment; this is not a root-nonexistence claim.
+
+Physical release reconciliation is now executable and fail-closed.  It checks
+one Gate-7-closed background, one action/background/scale provenance, every
+non-release matrix row promoted, complete frozen benchmark coverage,
+byte-exact artifact hashes, and one clean deterministic reproduction.  The
+current candidate fails those gates, so this capability is
+`IMPLEMENTED_GATED` and `FULL_BHSM_COMPLETE` remains false.
+
+The cross-sector benchmark-suite evaluator is now
+`IMPLEMENTED_PROVISIONAL`.  It fail-closes on missing or duplicate
+mode/observable predictions, provisional classifications, inconsistent
+action/background/scale provenance, or absent required engines.  The current
+repository still has no materialized physical benchmark prediction.
+
+The decay readout now covers deterministic recursive `1 -> n` phase space,
+including four-momentum reconstruction for correlated amplitudes; outward
+quadrature error remains open where promotion requires it.  Collision readout
+now also has coupled-channel partial-wave projection and complete/incomplete
+unitarity diagnostics.  Neither capability supplies a physical channel ledger
+or action-owned amplitude by itself.
+
+An inverse-free bordered nonlinear eigenpair solver now tracks complex dressed
+poles, left/right modes, masses, widths, and residues from a supplied complete
+same-action inverse two-point symbol.  Its explicit Gate-7, simplicity,
+causality, and self-energy-ledger guards remain unsatisfied by the current
+physical inputs.
+
+The same guarded two-point layer now evaluates source-contracted retarded
+spectral densities by linear solves, with positivity, conditioning, residual,
+Gate-7, and complete-self-energy checks. No current source/background pair is
+promoted to a physical spectral-density prediction.
+
+A complete-channel ledger API now enumerates charge-conserving decay and
+scattering multisets, resolves interval thresholds and amplitude certificates,
+and supplies identical-state factors plus per-initial-state completeness.  An
+optical-theorem validator consumes the inclusive ledger and forward amplitude,
+requiring equality when complete and forbidding excess when incomplete.  The
+charged-lepton `F2(0)` chain now supports any action-identified electron,
+muon, or tau mode.  No current physical instance is promoted.
+
+Hadronic collider convolution is now implemented for ordered incoming parton
+channels with explicit PDF, factorization-scheme, and scale provenance.  The
+engine reports empirical PDF use and blocks promotion unless the partonic
+ledger is complete, the PDF input was frozen before prediction, Gate 7 is
+closed, and an outward quadrature error is supplied.  No physical collider
+cross section is currently materialized.
+
+The synchronized collider layer additionally computes invariant masses,
+visible `H_T`, missing transverse momentum relative to the actual incoming
+total, pairwise `Delta R_y`, and normalized conservation residuals.  It makes
+no empirical visibility assignment or detector-cut choice; the physical
+benchmark instance remains open.
+
 This file is the current area-level status source. Detailed sprint records are
 evidence, not competing public status pages.
 
@@ -30,17 +185,180 @@ child domain: `dt>0`, `N_boundary>0`, and
 Cauchy states in that same domain, not backward physical evolution or a second
 temporal sector. It remains non-gauge and unquotiented.
 
-Global reachability is the active blocker. The certified child starts on the
-positive ordered-event side and the first analytic continuum interval is
-event-free. Current retained-action assets do not select terminal-chart entry
-versus physical-domain exit: the reduced energy is identically zero, the
-unreduced energy is noncoercive, and no compact trapping shell or
-component-restricted integrated event-transport bound is available. This is
-an obstruction to the current proof route, not proof of nonreturn.
+Global terminal reachability is no longer the active native blocker. The
+maximal-flow outcome remains history dependent, but the source domain is
+action owned for every retained outcome: use the existing reset graph if an
+actual reset is hit and the Friedrichs closure at an infinite or excluded
+maximal end. Terminal return is one optional finite-endpoint route, not a
+universal or existential prerequisite of the Gate-7 Hessian.
 
-`Q_xi`, `Delta H`, mass, action-selected families, and a blind observable
-remain open; `FULL_BHSM_COMPLETE = FALSE`. Exact next object:
-`DERIVE_AN_ACTION_OWNED_COMPACT_FORWARD_TRAPPING_OR_COMPONENT_RESTRICTED_INTEGRATED_EVENT_TRANSPORT_ESTIMATE_ON_AT_LEAST_ONE_FORWARD_ORIENTED_COMPLETE_CHILD_COMPONENT_OR_CERTIFY_ITS_FIRST_EXISTING_PHYSICAL_DOMAIN_EXIT`.
+The inherited (p^2), (K_A(p)), and (a_i(p)) readout is not executable on
+that domain and is classified as a retired periodic-Fourier artifact. The
+native replacement is the physical maximal-forward operator (K_C), its
+resolvent/spectral measure, and the birth Weyl--Calderón response (M_C(z))
+with neutral spectral parameter (z). The nonzero supplied-section BRST
+gauge/ghost/rank-16/HS pair-plus-contact incidence is assembled. Exact Green
+identities also reduce the exterior part of the weak geometry force to
+(D_\Phi M_C(z)), without requiring a pointwise exterior-history
+representation.
+
+The exterior oracle values and geometry variations, zero-source force,
+same-action saddle, Ward/BRST closure, scalar observable map, `Q_xi`,
+`Delta H`, mass, action-selected families, and a blind observable remain
+open. A lower positive gap and Friedrichs closure do not determine or
+uniformly upper-bound the Weyl response: the exact family
+`-d_tau^2+Q`, `Q>=1`, has `M_Q(-1)=sqrt(Q+1)`. The two-chord scalar endpoint
+surrogate still carries uncertainty above `4.4e7`, and Ward/BRST cancels only
+the longitudinal/ghost pair, not the full geometry force. The local spatial
+coefficient calculus is now closed through second variation: retained Dirac
+and source blocks scale as `R4^-1`, Laplace/de Rham blocks as `R4^-2`, and
+contact blocks have zero radius jet. The maximal-forward values and variations
+of `log R4` remain open. The temporal factors are no longer separate missing
+coefficients: on the positive proper-time clock, `D_tau` is canonical and
+`Delta_tau=D_tau^*D_tau` with the same retained endpoint form. Fixed round
+spatial eigenspaces then reduce the exterior problem to finite trace-zero
+`2x2` channel transfers and their Möbius action on terminal/Friedrichs Weyl
+data; no moving eigenbasis is required. The exact base, tangent, and
+mixed-second transfer equations and induced Möbius quotient jets are now
+derived. Their remaining inputs are the action-owned maximal-forward
+`x,x_h,x_k,x_hk` histories, terminal/Friedrichs graph jets, and a regular
+Weyl-chart margin or finite chart cover.
+The physical radius driving those systems is exactly the retained attachment
+functional `R4=(RADIUS0/2) exp(q0+u_L-(1/2)log cosh(2v_L))`. Its coordinate
+gradient and Hessian are globally bounded in every finite-N chart, and its
+first/mixed action jets are exact pullbacks of the state Jacobi cocycles. No
+independent radius-history degree of freedom remains open.
+The implicit Euler--Dirac solve has now been differentiated exactly through
+mixed order. Existing action `D3/D4`, velocity, right-hand-side, and
+Dirac-inverse majorants certify a finite local second state-Jacobi and
+`log R4` tube. These constants cover only the existing anchor action ball;
+they do not yet cover the maximal forward component.
+For every closed regular pre-stop interval, however, continuity of the strong
+flow makes the trajectory image compact and gives finite `B_T` and positive
+`delta_T`; the continuum recentering theorem therefore supplies a finite
+Jacobi/radius/transfer cover automatically. Only the `C1/C2` Weyl limit at an
+infinite regular Friedrichs end still needs a global relative-form or
+integrable Riccati-variation estimate.
+For compactly supported weak geometry tests, the infinite-end `C1/C2` issue is
+also closed: the endpoint domain does not move, and the first/mixed Weyl
+derivatives are finite Poisson--form and Dirichlet-resolvent contractions at
+real `z<0`. This proves the variation formulas, not their actual maximal-
+history values or the zero-source force. At the concrete probe `z=-1`, the
+two certified chords nevertheless give rigorous scalar/de Rham
+Sturm-comparison intervals for the maximal-history birth Weyl values, because
+the unknown retained nonnegative future enters only through a nonnegative
+inward graph. They also bound first/mixed log-radius contractions for
+directions supported inside that known core. The constant-channel upper bound
+remains above `4e7`; pair/contact assembly, the spatial-tail combination, and
+the zero-source force remain open.
+The product-Dirac base and core-supported weak jets are now enclosed as well.
+The proof uses the action-owned factorization `A_lambda^* A_lambda`, a
+piecewise-linear Dirichlet trial, and relative-form coercivity; it does not
+expand the operator into an `s'` potential. Both scalar/de Rham and
+product-Dirac channel families therefore have broad parametric bounds at
+`z=-1`. The certified continuum child tail cannot close their angular sum:
+it controls the cohomogeneity-one event/child action-graph correction, whereas
+the source Hessian is indexed by internal `S3` Dirac/de Rham levels and carrier
+sectors. The authoritative rank-16, de Rham, and gauge-ownership artifacts
+explicitly leave source-level convergence and its continuum/relative-trace
+bound open. Combining the channel bounds with pair/contact incidence therefore
+requires a new theorem in that already retained source domain, not a relabeling
+of the child tail.
+Moreover, the materialized channel intervals at `z=-1` are not themselves the
+retained quantum functional. The action uses
+`-(1/2) STr E1(ell_kappa^2 K_C)`, whose force and Hessian are heat-semigroup or
+equivalent spectral integrals. Two explicit positive `2x2` operators with the
+same `M(-1)=11/4` have different regulated traces, proving that one probe is
+insufficient. The Weyl compression route remains valid, but now has an exact
+functional-calculus synthesis obligation.
+The obstruction is specifically infrared. As `z=-kappa^2` approaches zero,
+the current scalar/de Rham Poisson bounds contain `1/kappa^2`, while the
+factorized product-Dirac first/mixed estimates contain `1/kappa` and
+`1/kappa^2`. The retained `E1` multiplier itself behaves as
+`1/(2 lambda)`. Because the actual maximal outcome, uniform global radius/gap,
+and low-energy spectral measure are unknown, these estimates do not control
+the heat integral near zero. A finite retained endpoint and an infinite
+Friedrichs history remain separate valid routes.
+The retained graded spectrum does not cancel the latter obstruction. The
+longitudinal gauge/ghost pair cancels exactly, but the high-level physical
+sector has degeneracy coefficient `4+24-48=-20`, hence leading spatial heat
+coefficient `-5 sqrt(pi)`. BRST grading alone is exhausted as an angular or
+infrared relative-trace mechanism.
+For the first geometry force, a full uniform gap is nevertheless stronger
+than necessary. A new dyadic theorem shows that the source-weighted graded
+measure is sufficient if its low-energy counting function is
+`O(Lambda^(1+epsilon))` for some positive `epsilon` and its `E1`-weighted
+high-energy tail is finite. This criterion is action-native and contraction
+specific; the actual N12 constants and force sign are not yet derived.
+The certified core now supplies a positive child zero-energy impedance for
+every positive scalar/de Rham angular channel; the constant channel is
+log-radius silent. Exact product-Dirac kernel atoms are also silent in the
+first form derivative. These identities remove discrete zero-atom
+obstructions but do not control the continuous threshold. The canonical free
+half-line comparison shows the precise remaining dichotomy: positive regular
+Robin data give `Lambda^(3/2)`, while Neumann/resonant data give only
+`Lambda^(1/2)`. The actual N12 limiting-absorption/Weyl threshold class is
+still open and no free exterior has been selected.
+For compactly supported weak directions, high-energy integrability is no
+longer an independent hypothesis. The unit heat sandwich
+`exp(-K/2) P_h exp(-K/2)` is trace class, so the `E1`-weighted tail above
+unit spectral energy is bounded by its trace norm. This does not evaluate the
+actual N12 angular tail or make the unperturbed infinite-volume heat trace
+finite. The active analytic obstruction is now the continuous low-energy
+threshold law; the active computational obligation after it is a numerical
+fixed-channel/angular enclosure and force sign.
+The low-energy dependency is now localized exactly at the physical birth
+graph. A constant positive barrier has a critical Robin value
+`-a tanh(a T)` that cancels its child impedance. The resulting operator is
+still nonnegative but has resonant `Lambda^(1/2)` local counting instead of
+the required `Lambda^(3/2)`. For N12 the weakest certified child impedance is
+`6.37052204298831e-8`. Disk provenance shows that the zero-background graph
+does not derive the nonzero fluctuation matrices, the common local incidence
+does not select a temporal graph, and the forward graph record still leaves
+the complete sector-resolved nonzero event-flux/`W_phys` graph unassembled.
+Thus a strict full birth Wronskian margin—not another chord—is the first
+missing action-owned object.
+
+The surviving object is now localized at action provenance, not numerical
+assembly. v15.13 proves that the retained normal matter junction action is
+zero and that boundary identity leaves a continuous
+`U(1)_parent x U(1)_child` self-adjoint phase family. The later complete-child
+lineage evaluates the zero-background point but explicitly leaves the nonzero
+fluctuation Calderon matrices underived. An exact half-line resolvent identity
+shows that the compact source `1_[0,1]` distinguishes the allowed `h=0` and
+`h=1` Cayley phases by `-(1-exp(-1))^2/2`. Consequently the unchanged retained
+action does not determine a unique full Gate-7 operator or pair term. This is
+a scoped canonical unchanged-action no-go, not an adoption of either phase and
+not a claim against an explicitly versioned action extension or a proof of
+complete graded phase independence.
+
+The structural graded escape route is now separately invalidated. For the
+common scalar Cayley theorem-class subfamily, the exact Robin-minus-Neumann
+temporal relative heat trace at unit heat time is `-0.28620821192209656`.
+The retained four-HS minus 48-Weyl spatial supertrace at unit scaled heat time
+is below `-8.9` with analytic tail below `1e-150`, making the graded response
+difference strictly greater than `2.5`. Thus Ward/BRST does not make the heat
+response phase independent mode by mode or heat time by heat time. This does
+not exclude an actual full-history cancellation after the one fixed `E1`
+integration; that remaining alternative now requires a theorem over the
+entire surviving Cayley family.
+
+The repository-native definition of done independently requires complete
+configurations and variational domains for Tier-A completion. The reconciled
+v6.7 matter action is `CONDITIONAL_EFFECTIVE_ACTION` and explicitly retires
+the unique self-adjoint-domain claim. The exact domain and heat witnesses show
+that the remaining family is not a gauge redundancy. Consequently the
+unchanged retained action cannot satisfy a necessary internal completion
+condition. The master campaign has reached terminal condition 2: a canonical
+theorem-level no-go for the unchanged retained action. A future explicitly
+versioned normal matter boundary action could change the theory, but no such
+action or phase is selected in this lineage.
+The maximal-forward Friedrichs closure applies only at an infinite or excluded
+far endpoint; it does not select the distinct action-unresolved matter graph
+at the birth interface.
+
+`FULL_BHSM_COMPLETE = FALSE`. Retained-action campaign terminal result:
+`TERMINAL_CANONICAL_NO_GO_FOR_UNCHANGED_RETAINED_ACTION;_FUTURE_CONTINUATION_REQUIRES_AN_EXPLICITLY_VERSIONED_NORMAL_MATTER_BOUNDARY_ACTION_AND_PHYSICAL_AUTHORIZATION`.
 
 ## Prior N12 source-tail checkpoint (superseded)
 
@@ -151,6 +469,9 @@ family, and new frozen blind observable remain open.
 
 Exact next object:
 `DERIVE_AN_EXPLICIT_RETAINED_ACTION_COMPACT_CUTOFF_M_STAR_FOR_THE_GAUGE_REDUCED_HIGH_SHELL_NORMAL_INVERSE;_THEN_APPLY_THE_SHARP_SOURCE_TAIL_AND_BOUND_THE_ORDERED_EVENT_AND_MOMENTUM_FLUX_OBSERVATION_PERTURBATIONS`.
+
+The first missing quantitative object inside it is a validated
+source-restricted positive-duration soft normal right-inverse bound `K`.
 
 ### Historical corrected-Rayleigh N3 snapshot
 

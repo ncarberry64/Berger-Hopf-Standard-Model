@@ -1,0 +1,119 @@
+{
+  "FULL_BHSM_COMPLETE": false,
+  "artifact": "BHSM_N12_GATE7_ARB_INTERACTION_DYSON_TAIL",
+  "authority": "EXACT_BINARY64_RETAINED_AFFINE_GENERATORS_LIFTED_TO_256_BIT_ARB;_RIGOROUS_MATRIX_NORM_AND_TIME_ORDERED_DYSON_MAJORANT",
+  "claim_boundary": {
+    "FULL_BHSM_COMPLETE": false,
+    "Gate7": "ACTIVE",
+    "exact_affine_propagator_composition": "OPEN_UNTIL_FINITE_PART_EVALUATED",
+    "finite_order14_interaction_polynomial": "OPEN_FINITE_OUTWARD_EVALUATION",
+    "former_Omega9_plus_route": "SUPERSEDED_BY_INTERACTION_DYSON_ROUTE_ON_COMPLETION_OF_FINITE_PART",
+    "interaction_frame_analytic_tail": "CERTIFIED_ON_ALL_PROP16_SUBSTEPS",
+    "signed_Y": "OPEN_INTERVAL_AUTHORITY"
+  },
+  "data": "artifacts/flagship_integration/BHSM_N12_GATE7_ARB_INTERACTION_DYSON_TAIL.npz",
+  "data_SHA256": "89A9C2E72D800D918D191A60BAA9F9A563C816D32A07F454134EA1E89AE634A9",
+  "exact_next_dependency": "OUTWARD_EVALUATE_THE_FINITE_ORDER14_INTERACTION_DYSON_POLYNOMIAL_AND_COMPOSE_IT_WITH_exp(A0*h)_ON_THE_IDENTICAL_5908_SUBSTEPS,_THEN_REPLAY_THE_GLOBAL_CORRELATED_HOMOGENEOUS_AND_SIGNED_SOURCE_BLOCKS",
+  "identity": {
+    "Dyson_order": 14,
+    "Dyson_tail": "exp(beta)*beta^(N+1)/(N+1)!",
+    "affine_generator": "A(t)=A0+t*B",
+    "commutator_depth": 12,
+    "constant_factor_bound": "exp(||A0||_2_upper*h)",
+    "interaction_factorization": "U(t)=exp(A0*t)*V(t)",
+    "interaction_generator": "G(t)=t*exp(-ad_A0*t)*B"
+  },
+  "inputs": {
+    "artifacts/flagship_integration/BHSM_N12_C2_STOP_HIGH_ORDER_QUARTER_STEP_RETAINED_RECONNAISSANCE.npz": "086C41068B9F3A6C0E5F8040B661202E067D017C909A381010E45FF352498D00",
+    "artifacts/flagship_integration/BHSM_N12_C2_STOP_QUARTER_STEP_FINE_HYBRID_GRAPH_JACOBIAN_RECONNAISSANCE.npz": "B92C08B4CB2EC4033FA70CBDCC28B6CD79E1189E19D95C984155EB65DD9D73B5"
+  },
+  "status": "ALL_RETAINED_AFFINE_SUBSTEPS_HAVE_A_RIGOROUS_INTERACTION_FRAME_ORDER14_DYSON_ANALYTIC_TAIL",
+  "summary": {
+    "maximum_Dyson_remainder_upper": 7.942523064085875e-38,
+    "maximum_conjugation_series_tail_upper": 1.4168446239590066e-41,
+    "maximum_generator_width_upper": 22.954086513152124,
+    "maximum_interaction_beta_upper": 0.021567811917755787,
+    "maximum_local_exact_propagator_tail_upper": 3.055586410630589e-35,
+    "owners": {
+      "Dyson_remainder_upper": {
+        "Dyson_remainder_upper": 7.942523064085875e-38,
+        "conjugation_series_tail_upper": 6.136277041335478e-47,
+        "constant_factor_norm_upper": 384.71231194117587,
+        "generator_2_norm_upper": 380.95973204814777,
+        "generator_width_upper": 5.952495813252309,
+        "interaction_beta_upper": 0.021567811917755787,
+        "interval": 0,
+        "local_exact_propagator_tail_upper": 3.055586410630589e-35,
+        "substep": 15,
+        "substep_count": 16,
+        "width": 0.015625
+      },
+      "conjugation_series_tail_upper": {
+        "Dyson_remainder_upper": 3.2647730098930377e-56,
+        "conjugation_series_tail_upper": 1.4168446239590066e-41,
+        "constant_factor_norm_upper": 9273250688.101633,
+        "generator_2_norm_upper": 1468.8255886461002,
+        "generator_width_upper": 22.950399822595315,
+        "interaction_beta_upper": 0.0012842601013851606,
+        "interval": 140,
+        "local_exact_propagator_tail_upper": 3.0275058560486245e-46,
+        "substep": 15,
+        "substep_count": 16,
+        "width": 0.015625
+      },
+      "generator_width_upper": {
+        "Dyson_remainder_upper": 6.971612544461294e-56,
+        "conjugation_series_tail_upper": 1.3959421250944749e-41,
+        "constant_factor_norm_upper": 9307501390.921968,
+        "generator_2_norm_upper": 1469.061536841736,
+        "generator_width_upper": 22.954086513152124,
+        "interaction_beta_upper": 0.0013508788793078275,
+        "interval": 143,
+        "local_exact_propagator_tail_upper": 6.4888293454542514e-46,
+        "substep": 0,
+        "substep_count": 16,
+        "width": 0.015625
+      },
+      "interaction_beta_upper": {
+        "Dyson_remainder_upper": 7.942523064085875e-38,
+        "conjugation_series_tail_upper": 6.136277041335478e-47,
+        "constant_factor_norm_upper": 384.71231194117587,
+        "generator_2_norm_upper": 380.95973204814777,
+        "generator_width_upper": 5.952495813252309,
+        "interaction_beta_upper": 0.021567811917755787,
+        "interval": 0,
+        "local_exact_propagator_tail_upper": 3.055586410630589e-35,
+        "substep": 15,
+        "substep_count": 16,
+        "width": 0.015625
+      },
+      "local_exact_propagator_tail_upper": {
+        "Dyson_remainder_upper": 7.942523064085875e-38,
+        "conjugation_series_tail_upper": 6.136277041335478e-47,
+        "constant_factor_norm_upper": 384.71231194117587,
+        "generator_2_norm_upper": 380.95973204814777,
+        "generator_width_upper": 5.952495813252309,
+        "interaction_beta_upper": 0.021567811917755787,
+        "interval": 0,
+        "local_exact_propagator_tail_upper": 3.055586410630589e-35,
+        "substep": 15,
+        "substep_count": 16,
+        "width": 0.015625
+      }
+    },
+    "substep_count": 5908
+  },
+  "validation": {
+    "all_5908_retained_PROP16_substeps_certified": true,
+    "all_binary64_generator_inputs_lifted_as_exact_rationals": true,
+    "all_nested_commutators_evaluated_with_Arb_matrices": true,
+    "conjugation_tail_closed_from_exact_last_commutator": true,
+    "finite_interaction_Dyson_polynomial_not_yet_promoted": true,
+    "induced_2_norm_bounded_by_sqrt_1_norm_times_infinity_norm": true,
+    "interaction_integral_beta_below_one": true,
+    "no_action_source_selector_scale_gate_or_chord_changed": true,
+    "order_14_Dyson_local_exact_flow_tail_below_1e_minus_20": true,
+    "signed_source_not_relabelled_as_internal_propagator_tail": true
+  },
+  "validation_passed": true
+}

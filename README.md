@@ -1,347 +1,306 @@
 # Berger-Hopf Standard Model (BHSM)
 
+<!-- Historical detailed Gate-7 provenance retained in source; the concise
+current public status rendered below is authoritative.
+## Authoritative Gate-7 state
+
+The 256-bit Arb interaction-Taylor26 homogeneous carrier is certified on all
+5,908 retained substeps and 47 macro seams.  Global composition reconstructs
+outward Arb interval strings, not independent binary64 component balls.  Its
+global Frobenius radius is `8.924457407181154e-13` and operator upper bound is
+`5342.54284263994`.  Binary64 arrays are presentation data only; the earlier
+under-inflated and decorrelated global carrier routes are superseded.
+
+The retained signed-source composition, final exact center, center-dependent
+spectrum/cone/response, and causal Taylor--Volterra `Z2` are now certified.
+The corrected action-owned selected eigenvalue is uniformly positive through
+action time `92.30037143976939` and strictly negative at the true endpoint
+`92.30513924040065`; continuity therefore gives a canonical earliest stop.
+An outward retained-action tensor interval now keeps
+`Dlambda_24[F]` in `[-2.8534925825891678e-11,
+-2.8197744911497624e-11]` on the final causal cone.  The terminal zero is
+therefore unique on that flow cell and has a local differentiable first-stop
+time map.  The Gate-7 geometric owner is closed and the background is frozen
+at that stop.  Its action time is now enclosed in
+`[92.30448998890974, 92.30449792975345]`; the stored midpoint state is only a
+representative because binary64 eigensolver jitter exceeds the root signal.
+
+The exact current owner is the missing action-owned complete joint finite-
+history operator (or equivalent two-sided Weyl--Calderon oracle), endpoint
+form, and full 72-direction geometry/reset first jet needed to evaluate the
+already-derived heat-minus-zeta force and KKT system.  The complete affine
+72D candidate is materialized, but its nonlinear Volterra transfer is
+noncontractive (`2.9106286494031597`) and is not operator authority; the
+direct formula evaluations of the constraint frames and normalized-field
+Jacobians are materialized on the stored nodes, but a complete action audit
+now rejects those corrected nodes and their Hermite/fine interpolant as a
+continuous constraint center.  Scaled constraint drift reaches
+`7.283453490931462e-11` at a stored node and `7.381223520027345e-4` at a seam
+midpoint; the largest nodewise linearized correction is `5216.733` times the
+certified macro-center radius.  The current construction owner is therefore a
+direct constraint-preserving normalized-action center, followed by its
+refined continuous outward variational carrier.  The certified Taylor26 signed
+response has now been composed with the retained dense center before all 371
+fine nodes are constraint-projected.  Their maximum scaled constraint residual
+is `1.1679676438539284e-15`, but the maximum projection is
+`3.010903976408097e-9`, or `2420.394771963047` times the inherited final
+nonlinear radius.  The native-only projected route and old final cone/first
+hit are therefore superseded.  These nodes remain a discrete candidate.
+The corrected 370-cell midpoint audit localized the missing equation:
+constraint residual stayed below `8.528596684108791e-15`, while the exact
+augmented flow defect reached `1.0913491285675919e-5` at cell 283.  A direct
+cubic endpoint-field match did not improve it.  Two signed-Green Newton
+passes then rebuilt the current-center graph Jacobian and 73D macro tangents;
+the second nonlinear replay reduced the maximum defect to
+`1.5485158408888117e-5` relative to its immediate parent.  Finally, inserting
+all 370 already-evaluated exact midpoint fields and halving every span reduced
+the maximum to `7.080761167533001e-6`, a `2.1869341505107256`-fold reduction,
+while branch 24 remained simple with gap at least
+`1.7341738652006568e-7`.  A second halving then increased the maximum defect
+to `8.877740799934337e-6`, rejecting interpolation-only refinement.  A third
+signed-Green step after rebuilding the graph Jacobian and 73D tangents also
+increased the nonlinear replay defect to `1.643235800430239e-5`, rejecting
+that fixed-point route.  The best second-Newton center now supplies a direct
+`370 x 99` Hermite--Simpson multiple-shooting source; its maximum block
+residual is `2.0101707940913732e-6` at interval 179.  This source is numerical,
+not a solved or interval-certified orbit.  The exact next owner is its block
+Newton/Krawczyk solve with constraint and descriptor-fiber rows.  A provenance
+audit supersedes the former claimed contraction to `7.487649935220473e-7`:
+the endpoint adapter stored recentered descriptors but retained field rates
+evaluated at the pre-recenter descriptors, with a maximum rate mismatch
+`1.0526435867226e-5`.  Direct same-descriptor endpoint and midpoint replay gives
+the repaired source maximum `1.800590017529095e-6`.  A rebuilt block step whose
+endpoint descriptor and rate come from the same exact jet contracts that
+source to `1.215762696655947e-6`, a `1.4810373952760374`-fold reduction.  A
+second step that reselects the near-zero descriptor by binary64 eigensolve is
+rejected (`1.429548198240663e-6`) and is not a reproducible map: state changes
+near `1e-15` move the selected numerical eigenvalue by about `1.22e-13` and
+the normalized rate by about `6.15e-6`.  Carrying the signed descriptor as an
+independent correlated variable instead reduces the complete 370-block
+nonlinear residual to `1.3706618261694602e-7`, an `8.869895355979933`-fold
+contraction, with every transported endpoint descriptor positive.  This is
+numerical center progress, not a solved orbit or interval shadow.  The exact
+retained-field-normalized 741-node augmented derivative and 74D recurrence are
+now materialized.  One authorized exact replay reduces the maximum residual
+again to `1.2217621999603292e-7` (factor `1.121872837622547`) and persists the
+regular cancelled-norm jets needed by the proper-time adapter.  The minimum
+interval adjudication nevertheless fails closed: the replay-center shift is
+`2.7017477414680254e8` times the old exact-affine `Z2` radius, and the diagnostic
+old-preconditioner image is `5.218603289632254e5` old radii.  The old cone is
+therefore not current-center authority.  Gate 7 remains `ACTIVE_NOT_CLOSED` on
+outward same-center `Y`, `Z1`, and `Z2` satisfying the two radii inequalities;
+no further alternative numerical campaign is authorized, and root
+nonexistence is not claimed.  `FULL_BHSM_COMPLETE = FALSE`.  Physical completion additionally
+requires physical instantiation of the now-implemented gated universal
+action expansion, spectrum/propagator, vertex, LSZ, decay/collision,
+loop/renormalization, spectral-forecast, magnetic-moment, and single-`G_F`
+scale capabilities under the no-fit prediction firewall.  Their APIs and
+focused tests are evidence of capability maturity, not derived observables:
+every prediction row remains `OPEN_INTERNAL_BLOCKER` until a frozen
+action-owned output exists.
+
+-->
 [![CI](https://github.com/ncarberry64/Berger-Hopf-Standard-Model/actions/workflows/ci.yml/badge.svg)](https://github.com/ncarberry64/Berger-Hopf-Standard-Model/actions/workflows/ci.yml)
 [![Latest archival release](https://img.shields.io/github/v/release/ncarberry64/Berger-Hopf-Standard-Model?label=archival%20release)](https://github.com/ncarberry64/Berger-Hopf-Standard-Model/releases/latest)
-[![Current research status](https://img.shields.io/badge/current%20research-continuum%20child%20certified%3B%20observable%20selection%20open-orange)](docs/current_bhsm_status.md)
+[![Current research status](https://img.shields.io/badge/current%20research-Gate%207%20active%3B%20physical%20readout%20gated-orange)](docs/current_bhsm_status.md)
 [![Python 3.10+](https://img.shields.io/badge/python-3.10%2B-3776AB)](https://www.python.org/)
 [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.20663419.svg)](https://doi.org/10.5281/zenodo.20663419)
 
-BHSM is an independent artifact-backed computational framework and mathematical-physics research program investigating whether Standard Model structure and particle-like dynamics can be derived from Berger-Hopf boundary/envelopment geometry and a common action architecture.
+> **New to BHSM? Begin at the [BHSM Museum](https://ncarberry64.github.io/Berger-Hopf-Standard-Model/).**
+> The animated public exhibition explains the observable pipeline in plain
+> language, then opens the source, tests, derivations, artifacts, and claim
+> boundaries behind every display. This README remains the scientific front
+> desk; animations live outside it.
 
-## Current Research Frontier -- continuum child certified; physical readout open
+BHSM is an independent, artifact-backed computational framework and mathematical-physics research program investigating whether Berger-Hopf boundary/envelopment geometry and one retained action can generate particle-like modes, shared interactions, and observable readouts.
 
-BHSM now has a certified resolution-independent event-to-complete-child
-construction. The direct N12 complete persistent child is the finite anchor;
-the exact four-row trace-compatible action-Galerkin projector, four retained
-compact-block moduli, quantitative normal inverse, action-derived inverse-square
-source tail, and nonlinear radii polynomial place the entire N12-to-infinity
-correction inside the existing physical neighborhood. The selected proof
-margin gives `K <= 9.818810450848289e18`, linear correction
-`D1 <= 1.795995767425834e-128`, and a positive Kantorovich discriminant. No
-higher-resolution root, new equation, gate, fitted coefficient, event change,
-or empirical input is used.
+## One Action &middot; One Scale &middot; One Observable Pipeline
 
-`CONTINUUM_EVENT_CHILD_CERTIFIED = TRUE`. The action-owned pole decomposition
-now also certifies the local one-sided singular hitting law. The represented
-event has `c_psi b_psi < 0` and is forward-terminal; the reflected Cauchy state
-has the forward-emergent boundary role. These are boundary-dynamics labels,
-not choices of physical time. BHSM has one existing physical clock orientation:
-`dt > 0`, positive boundary lapse, and `d_tau = N_boundary dt > 0`.
+The engine differentiates the same retained local action through fourth order. `S^(2)` supplies the descriptor spectrum and propagators; `S^(3)` and `S^(4)` supply shared vertices; the resulting amplitude passes through on-shell normalization into common decay, collision, form-factor, and spectral classifiers. A single `G_F = c_F / Lambda^2` scale map forbids observable-by-observable retuning.
 
-The fixed-event N12 child block has rank 31 in 98 child variables, so the
-event-to-complete-child reset is a regular set-valued relation with a
-67-dimensional local fiber, or 66 dimensions after the existing whole-system
-time quotient. The numerical normal chart is a reproducible representative,
-not an action-owned physical selector. The local hitting factors, hard gap,
-and reset submersion transfer to the certified continuum graph.
+The [retained N12 action adapter](src/bhsm/interface/retained_n12_action_expansion_adapter.py)
+cross-checks the action value, gradient, and Hessian before exposing higher
+directional derivatives. This is implemented machinery, not a physical
+promotion.
 
-Global forward reachability is still fail closed. The certified child starts
-on the positive event side and the first analytic interval is event-free. The
-retained maximal-flow theorem does not yet choose terminal-chart entry versus
-physical-domain exit, blowup, or Dirac/eigenline degeneration. The
-constraint-reduced energy is identically zero, the unreduced energy is
-noncoercive, and no compact invariant child shell or component-restricted
-integrated event-transport estimate is currently owned. This localizes the
-first global-control obstruction without proving that no returning history
-exists.
+## No-Fit Prediction Firewall
 
-The matched-parent `Q_xi / Delta H` route remains unavailable because no
-action-owned parent-only restriction exists. No local energy, reset-chart
-representative, or formal reflection may substitute for that missing object.
+Measured particle values may be used only downstream for declared comparison.
+They may not choose an upstream branch, normalization, mode, formula,
+renormalization scale, or action coefficient.
 
-| Scientific gate | Status |
+## Current Public Status
+
+The newest integrated science descendant binds the universal expansion engine to the retained N12 local action and includes generalized poles/residues, guarded Standard Model gauge-vertex tensors, shared cubic and quartic vertices, tree amplitudes, two- and three-body decay and `2 -> 2` collision phase space, `F1/F2` projection, interval spectral/stability classification, a same-action renormalization ledger, and the universal scale map.
+
+| Statement class | Current BHSM status |
 | --- | --- |
-| `N12 COMPLETE PERSISTENT CHILD` | **YES** |
-| `CONTINUUM_EVENT_CHILD_CERTIFIED` | **YES** |
-| Local continuum singular hitting/reset relation | **CERTIFIED** |
-| Single forward physical-time domain | **CERTIFIED** |
-| Global forward terminal-chart reachability | **OPEN -- global control obstruction localized** |
-| `Q_xi / Delta H` | **OPEN -- matched-parent restriction absent** |
-| `FULL_BHSM_COMPLETE` | **FALSE** |
+| `implementation_status` | Capability maturity: `NOT_IMPLEMENTED`, `IMPLEMENTED_PROVISIONAL`, `IMPLEMENTED_GATED`, or `IMPLEMENTED_PROMOTABLE` |
+| `prediction_classification` | Scientific output authority, kept separate from software maturity |
+| Implemented machinery | Action expansion, spectrum, vertices, LSZ, phase space, forecast, loop ledger, form factors, gauge/Yukawa tensors, prediction firewall, and one-scale map are testable but gated |
+| Numerically demonstrated behavior | Reported with its interval, resolution, and provisional qualifier |
+| Physical predictions | Fail-closed unless frozen behind the no-fit firewall |
 
-Evidence: [`continuum certificate`](artifacts/n12_continuum_majorant_effectiveness/BHSM_CONTINUUM_EVENT_CHILD_CERTIFICATE.json),
-[`singular hitting/reset certificate`](artifacts/intrinsic_state_selection/BHSM_N12_CONTINUUM_SINGULAR_HITTING_RESET_RELATION.json),
-[`forward-time domain audit`](artifacts/intrinsic_state_selection/BHSM_N12_FORWARD_TIME_DOMAIN_ORIENTATION_AUDIT.json),
-[`reachability gate`](artifacts/intrinsic_state_selection/BHSM_N12_FORWARD_TERMINAL_CHART_REACHABILITY_GATE.json),
-and [`post-parent observable audit`](artifacts/qxi_relative_energy_preparation/BHSM_POST_PARENT_FLAGSHIP_OBSERVABLE_GATE.json).
+The Gate-7 geometric stop is closed and the accepted replay center is fixed,
+but the physical background is not yet certified or frozen for prediction.
+Gate 7 remains `ACTIVE_NOT_CLOSED`: the current blocker is same-center
+outward `Y`, `Z1`, and `Z2` satisfying both radii inequalities. No alternative
+numerical campaign is authorized. Capability rows may be
+`IMPLEMENTED_GATED` while their physical outputs remain
+`OPEN_INTERNAL_BLOCKER`; frozen predictions remain unchanged and empirical
+status is not established.
 
-Exact next object:
+The [full-field attachment audit](theory/bhsm_current_full_field_action_attachment.md)
+now identifies the precise downstream physics gap: the validated retained
+N12 oracle is a 98-variable geometry kernel, while a current same-action
+gauge/ghost, fermion, and HS/scalar attachment with history/seam derivatives
+through fourth order is not yet materialized. The BRST/Faddeev--Popov quotient
+is implemented; it does not by itself supply those physical action blocks.
 
-`DERIVE_AN_ACTION_OWNED_COMPACT_FORWARD_TRAPPING_OR_COMPONENT_RESTRICTED_INTEGRATED_EVENT_TRANSPORT_ESTIMATE_ON_AT_LEAST_ONE_FORWARD_ORIENTED_COMPLETE_CHILD_COMPONENT_OR_CERTIFY_ITS_FIRST_EXISTING_PHYSICAL_DOMAIN_EXIT`
+An executable release reconciler also enforces one action/background/scale,
+complete promoted matrix rows and frozen benchmarks, byte-exact artifacts,
+and clean reproduction. It is `IMPLEMENTED_GATED`; the present repository is
+not a physical release candidate.
 
-## Prior N12 source-tail checkpoint (superseded by the continuum certificate above)
+The benchmark-suite evaluator is `IMPLEMENTED_PROVISIONAL`: it checks an
+explicit cross-sector manifest for exact mode/observable coverage, required
+engines, one action/background/scale, and promoted frozen predictions. No
+physical benchmark output is currently materialized or promoted.
 
-BHSM now has a directly corrected `N=12` complete persistent child under the
-unchanged retained 57-row finite-resolution map. Its independently evaluated
-exact residual is `||F12|| = 1.5155497333590932e-13`; the certified
-action-coordinate root ball has radius `1e-11`. The ordered event, eta domain,
-boundary/Dirac neighborhood, and positive-duration persistence gates all pass.
-No physical row, coefficient, event definition, child criterion, or gate was
-added.
+Decay/collision infrastructure now includes recursive Lorentz-invariant
+multi-body phase space with reconstructed daughter four-momenta and an
+explicit coupled-channel partial-wave/unitarity diagnostic. These remain
+gated readout capabilities: no physical width, cross section, or unitarity
+claim exists without the frozen action-owned spectrum and amplitudes.
 
-The first unchanged-map N16 coupled audit now shows why the constraint-only
-tail lift was insufficient. Its exact paired hard momentum response reduces
-the full weak merit from `0.9618557665898765` to `0.35386295232775206` while
-eta remains admissible and the ordered branch stays isolated. The remaining
-soft source projection is `0.08926177036476479`, with paired response
-`0.00043277842426231244`. It remains category 2: a dynamically controlled
-normal direction. This is a finite structural diagnostic, not an N16 root;
-the hard trial allows the coupled constraint/boundary norm to move from
-`0.12021432656497034` to `0.14718333891190302` while the independently
-evaluated total merit falls. No componentwise monotonicity was imposed.
+The quadratic/loop interface also includes inverse-free bordered tracking of
+complex dressed poles and residues, with simplicity, causal-width, complete
+self-energy-ledger, and Gate-7 guards. It does not instantiate a physical pole
+from the current incomplete action/background.
 
-The contraction-correlated exact-root Calderon problem is now closed. The
-first Picard center lies within `1.244833612865511e-15` action coordinates of
-the exact root; directed interval action jets give normalized graph gap
-`0.0016147930860920538`. A whole action-coordinate ball of radius
-`7.62939453125e-17` about each enclosed exact root retains graph gap
-`0.0008325142235529747`. On that ball, the retained gauge-fixed
-Euler--Dirac/Jacobi evolution gives a positive-duration finite-core observation
-modulus `c_M0 >= 2.036906619199693e-19`.
+An inverse-free retarded spectral-density evaluator contracts physical sources
+through linear solves and checks positivity, conditioning, residuals, Gate 7,
+and self-energy-ledger completeness. It likewise remains a gated capability,
+not a current BHSM spectral prediction.
 
-The unchanged action also now supplies an explicit, outward-rounded,
-non-fitted inverse-square bulk source constant
-`C_r,event-child <= 6472.790577608341`. Four integrations by parts sharpen
-the complete N12-to-infinity weak source-tail bound to
-`0.6235945114875246` (one-extra-weighted bound `33.41402289587693`). This certifies the shell law
-`||r_n||_weak <= C_r n^-2`; the standard-model boundary Casimir covector stays
-in the existing weak conormal reaction relation. These results do not yet
-certify a continuum child. The N12-to-infinity observation perturbation still
-lacks an explicit retained-action compact cutoff `M_star` for the gauge-reduced
-high-shell normal inverse, followed by graph-norm moduli for the interior
-lower-order Euler--Dirac, ordered-event projector, canonical momentum/dynamic
-flux, and Gauss-consistency blocks. The sharp tail does not assume that inverse,
-and its cutoff table does not promote higher cutoffs as roots. No retained-action
-obstruction has been found.
+The decay/scattering layer now builds exhaustive charge-conserving channel
+multisets with threshold, amplitude, and identical-state adjudication, then
+checks complete or incomplete inclusive cross-section ledgers against the
+forward amplitude through the optical theorem. The magnetic-moment readout is
+also generic across action-identified charged-lepton modes while retaining the
+existing muon API. Physical instances remain open.
 
-| Scientific gate | Status |
-| --- | --- |
-| `N3 COMPLETE PERSISTENT CHILD` | **YES** |
-| `N4 COMPLETE PERSISTENT CHILD` | **YES** |
-| `N5 COMPLETE PERSISTENT CHILD` | **YES** |
-| `N6 COMPLETE PERSISTENT CHILD` | **YES** |
-| `N12 COMPLETE PERSISTENT CHILD` | **YES** |
-| `CONTINUUM_EVENT_CHILD_CERTIFIED` | **FALSE** |
-| `FULL_BHSM_COMPLETE` | **FALSE** |
+Collider readout now includes an ordered-parton hadronic factorization bridge
+for complete same-action partonic ledgers. PDF-set, scheme, and scale
+provenance are explicit; empirical PDFs are reported as external input, and
+promotion requires a pre-prediction PDF freeze plus an outward convolution
+error. No collider datum is used to select a BHSM branch or normalization.
 
-The durable provenance is the
-[`N12 scientific checkpoint manifest`](artifacts/n12_direct_checkpoint/BHSM_N12_SCIENTIFIC_CHECKPOINT_MANIFEST.json),
-which hash-locks the state, exact residual, radii certificate, ordered-event
-ball, physical neighborhood, persistence witness, exact normal data, and
-retained-action tail diagnostics. The corrected branch is the same-action
-`N6` index-12 to `N12` index-24 ordered-event branch.
-
-The execution-provenance audit also hash-locks the retained-action source
-files resolved from this checkout. Lower-precision binary eigenvalue/lift
-residuals belong to a different measurement era and are not a physical
-regression chronology. The corrected high-precision solve returned within
-`1.799193285874061e-13` action coordinates of the prior public state.
-
-The unchanged positive-duration event/child Calderon symbol has finite gap
-`0.029146859835358096` at the certified N12 state. Source-restricted linear
-probes remain transverse at N48 (`0.00922485414794376`, 192-point quadrature)
-and N64 (`0.0038382679025004396`, 96-point quadrature), with admissible eta.
-These remain diagnostic probes, not complete-child roots. The retained
-inverse-square eta-completed Ward source, gauge-fixed principal gap, and
-positive-duration Jacobi evolution now close a qualitative strong-graph and
-closed-range theorem on the source-selected soft normal bundle. It does not
-cover arbitrary Jacobi data and does not supply the explicit nonlinear-radius
-majorants. The continuum claim therefore remains fail closed. `Q_xi`, relative
-`Delta H`, action-selected families, and any new blind observable remain open.
-
-The retained-action N12-to-N64 full q-v-m tail audit now separates the exact
-omitted source from the worst static normal direction. After routing the
-existing weak boundary reaction, the source has inverse-square shell decay;
-the N48-to-N64 event/child correction distances are action-small (`0.00183`,
-`0.00108`) while their strong `H2_q x H1_v x H2_m` distances remain `0.279`
-and `0.176`. Those finite samples alone do not prove convergence. The new
-theorem instead uses the action-derived `n^-2` source restriction: the
-one-derivative-stronger shell is `O(n^-1)` and square summable, which excludes
-high-mode graph escape on the selected normal line. The worst instantaneous
-generic inverse remains invalid, and the probes remain non-root diagnostics.
-
-The retained radial-diffeomorphism Ward identity is now corrected. Because
-`x_eta = x_spatial - (beta/N)^2`, the eta clock supplies a nonzero shift
-current. Exact retained shift rows reconstruct as geometric momentum plus that
-current to below `1e-10` on every N16--N48 probe; the earlier eta-free
-annihilation statement is invalidated. At N48 the source-restricted proposal
-reduces event/child high bulk weak residuals by over two orders of magnitude
-with admissible eta, but it disturbs finite boundary/energy rows and is not a
-root. A direct equivalence audit now shows that the earlier principal retained
-submatrix is not the unchanged ordered-event definition. Exact Feshbach
-elimination is equivalent only through the existing shifted w/shift inverse,
-whose sampled gap collapses from `8.877056607545721e-06` at N12 to
-`7.369327366811907e-09` at embedded N48. The static projector shortcut is
-therefore invalidated; the soft line remains a category-2 dynamically
-controlled normal direction because no category-3 history collapse sequence
-has been constructed.
-
-N6 provenance was re-audited before this checkpoint. The earlier N5-projected
-N6 seed had ordered-event value `1.645981691e-6`, outside the existing `1e-9`
-tolerance. Using the unchanged retained action-energy fiber and ordered-event
-row repaired it to `-3e-15`; the rebuilt child then closed its physical norm to
-`5.708e-12`, retained eta `0.999999998794641`, matched the two-sided reaction
-to `2.12131e-10`, and passed the existing positive-duration persistence gate.
-No equation, gate, or acceptance rule changed.
-
-Exact next object:
-
-`DERIVE_EXPLICIT_ACTION_GRAPH_NORM_TAIL_MODULI_FOR_THE_FOUR_RETAINED_COMPACT_BLOCKS;_VERIFY_epsilon_obs(M0)<c_M0;_THEN_CLOSE_THE_NONLINEAR_CONTINUUM_RADII_POLYNOMIAL`
-
-The N16 probe and higher-resolution sampled states are not promoted as roots,
-continuum states, or interval certificates. `Q_xi`, relative `Delta H`,
-action-selected families, and a frozen blind observable remain downstream of
-the continuum-child gate.
-
-## Historical corrected-Rayleigh N=3 snapshot
-
-BHSM remains under active derivation. The N=3 physical solve is still the square
-376-variable KKT system with an explicit event multiplier; no equation 377 was
-added. The event-to-complete-child boundary/BVP map is implemented, and every
-accepted state must independently reduce the exact unweighted corrected-Rayleigh
-`F376` merit and then reconstruct a fresh complete moving child from all 26 child
-variables. Promotion retains rank 14, admissible eta, trace, seven constraints,
-momentum, the unchanged `2e-5` two-scale flux gate, positive-duration
-constraint-consistent persistence, and nonzero relative motion.
-
-The current accepted rolling checkpoint is a snapshot, not a scientific version
-or a closed root: exact `||F376|| = 0.777030406838571`. Its fresh child has rank
-14, eta minimum `1.00003772292787`, flux envelope `1.6172791659e-5`, maximum
-14-row mismatch `6.51707072e-7`, and persistence constraint
-`6.1803e-11`; every retained child gate passes. The rolling driver was adopted
-only after reproducing the manual v21.32 -> v21.33 continuation state exactly.
-It automates fresh isolated-eigenpair curvature proposals while leaving the exact
-residual, event definition, physical root, and acceptance gates unchanged.
-
-**Residual-series provenance:** legacy values near `0.758...` and corrected
-ordered-Rayleigh values near `0.787...` belong to different numerical
-measurement eras. They are not a single directly comparable monotone series
-unless the legacy states are reevaluated with the corrected definition. The
-apparent jump is not evidence that the physical residual worsened; it records
-the correction of an invalid legacy event covector near ordered-event
-degeneracy.
-
-The isolated-eigenpair second variation, including eigenvector response and the
-terminal scale/v pullback, repaired the demonstrated event-curvature assembly
-blocker and restored material prospective descent. Exact `F376` and the complete
-moving child remain authoritative; curvature, trust metrics, Krylov models, and
-structured probes only propose. This paragraph records the earlier N3-only
-frontier and is superseded by the cross-resolution status above. Frozen
-predictions are unchanged.
+Action-derived final-state events also have a detector-independent kinematic
+readout for invariant masses, visible `H_T`, missing transverse momentum,
+pairwise `Delta R_y`, and four-momentum-conservation residuals. Visibility
+assignments and detector cuts remain external, uninstantiated inputs.
 
 `FULL_BHSM_COMPLETE = FALSE`
 
-Historical next object at that checkpoint:
+Historical compatibility: the v18.73 rolling checkpoint records corrected-Rayleigh descent of the 376-variable system, complete-child reconstruction, eta admissibility, and persistence at residual `0.777030406838571`. Earlier v11.1 and v15.10 surfaces remain historical rather than current authority. The historical v15.10 exact-next-object token is
+`ACTION_OWNED_AETHER_CYCLE_TO_REGULAR_SIGMA_RESPONSE_JET_MAP_PRODUCING_THE_PHYSICAL_SIGMA_TANGENT_PROPAGATOR_X_DERIVATIVE_AND_BACKREACTION_UNREDUCED_CANONICAL_QUARTIC_ON_THE_V15_9_BRANCH`.
 
-`CONTINUE_PHYSICALLY_ADMISSIBLE_EXACT_376_ROW_DESCENT_FROM_THE_LATEST_ACCEPTED_FRONTIER_TO_F376_ZERO`
+This independent mathematical-physics project records calculations and
+conditional relationships; it has not established BHSM as particle physics or
+completed a derivation or replacement of the Standard Model.
 
-Read the authoritative [N=3 continuation ledger](docs/BHSM_N3_CONTINUATION_LEDGER.md), [rolling checkpoint artifact](artifacts/BHSM_N3_FRESH_EIGENPAIR_CURVATURE_CONTINUATION_CHECKPOINT.json), [current status](docs/current_bhsm_status.md), [claim boundaries](CLAIMS.md), [gate ledger](theory/gate_ledger.md), and [reviewer reproduction guide](docs/reviewer_reproduction_guide.md). Historical v18 correspondence and child-fiber reports remain linked from the continuation ledger and documentation index.
+## Predictive Spectrum
 
-| Layer | Current status |
-| --- | --- |
-| Computational framework | Validated software/tests; this does not validate nature |
-| Current test corpus | Focused cross-resolution, complete-child, persistence, claim-firewall, frozen-integrity, and engine-invariant checks; historical corpus retained for manual regression |
-| Internal mathematical program | Complete persistent children validated at N3--N6 and direct N12; continuum projector-tail/radius bound remains open |
-| Nonlinear Norman cycle | N3/N4/N5/N6/N12 finite-resolution persistence validated; resolution-independent continuation remains open |
-| Scale and flavor | Absolute scale, action-derived CKM, and PMNS remain open |
-| Frozen predictions | Unchanged |
-| Empirical status | Not established |
+The interval engine distinguishes action-derived modes, admissible bands, null
+windows, exact selection-rule zeros, kinematically closed channels, instability,
+and unresolved ledgers. The repository does not yet emit a promoted physical
+mass axis or frozen new-particle assignment, so the map is qualitative.
 
-Historical v11.x and v14.x campaigns remain preserved in the [documentation index](docs/README.md) and [artifact index](ARTIFACT_INDEX.md); they are evidence layers, not competing current-status declarations.
+## Magnetic Moment
 
-BHSM has conditional dimensionless neutrino propagation closure, a conditional neutral spectral-mass theorem, and conditional measurement-supported admissible neutral positivity. Physical eV/GeV neutrino mass closure remains open pending a numeric neutral stiffness length sqrt(A_nu/Z_nu), a physical K_neutral,eff map in m^-2, and complete-action derivation of the admissible response cone.
+The electromagnetic readout resolves a supplied renormalized on-shell vertex
+into `F1(q^2)` and `F2(q^2)`. No numerical BHSM `a_mu = F2(0)` is displayed:
+Gate 7, Ward/Slavnov-Taylor closure, renormalization, external-mode selection,
+and the zero-momentum limit must all pass first.
 
-This independent mathematical-physics project investigates whether Berger-Hopf boundary geometry can organize structures associated with Standard Model fields, flavor, generations, interactions, and dimensional emergence. It records calculations and candidate relationships; it has not received empirical validation, completed a derivation or replacement of the Standard Model, or received institutional endorsement.
+## Decays and Stability
 
-## Start Here: BHSM in Plain Language
+The shared amplitude feeds two-body phase space and the interval channel ledger.
+A state is called stable only when a complete ledger proves every channel closed
+or exactly forbidden; otherwise the engine reports unstable or unresolved.
 
-- [BHSM in plain language](docs/bhsm_in_plain_language.md)
-- [Public scientific handoff](docs/bhsm_public_scientific_handoff_v6_21_0.md)
-- [Scientific contribution ledger](docs/bhsm_scientific_contribution_ledger.md)
-- [CERN toy model in plain language](docs/cern_toy_model_in_plain_language.md)
-- [STATUS.md](STATUS.md) and [claim boundaries](CLAIMS.md)
-- [BHSM v11.6 parent-action current reduction](docs/BHSM_PARENT_ACTION_SPECTRAL_CURRENT_COMPLETION_v11_6.md), [v11.5 flavor-action assembly](docs/BHSM_FLAVOR_ACTION_COMPLETION_v11_5.md), [v11.3 reciprocal attachment](docs/BHSM_RECIPROCAL_CORE_SURFACE_ATTACHMENT_v11_3.md), and [historical documentation index](docs/README.md)
-- [Reviewer reproduction guide](docs/reviewer_reproduction_guide.md)
-- [Frozen records](docs/frozen_predictions.md), [artifact index](ARTIFACT_INDEX.md), and historical v11.1-v11.3 chronology in the status records
+## Collision Prediction
 
-## BHSM Engine on real CMS Open Data
+The `2 -> 2` readout maps the shared amplitude to differential phase space while
+retaining thresholds, averaging, symmetry factors, and channel status. The
+displayed `e+ e- -> mu+ mu-` process is an engine topology, not a numerical
+cross-section claim or statement of collider readiness.
 
-![BHSM Engine CMS Open Data validation](docs/assets/pr98_cms_open_data_animation/pr98_cms_engine_validation_continuous.gif)
+## CMS / Real-Data Validation
 
 The checksum-pinned PR #98 path uses CERN Open Data Record 303, DOI
 `10.7483/OPENDATA.CMS.4M97.3SQ9`, to test coordinate transformations on
 collision-derived four-vectors. Scope: Engine coordinate-transformation validation only.
-It is not detector reconstruction, a BHSM physics test, or CERN/CMS
-endorsement. See the [benchmark record](docs/cern_open_data_benchmark.md).
+It is not detector reconstruction, a BHSM physics test, or CERN/CMS endorsement.
+See the [benchmark record](docs/cern_open_data_benchmark.md).
 
 The earlier [near-pole animation](docs/assets/bhsm_boundary_mapping_explainer.gif)
 is a synthetic coordinate-stability demonstration, not a detector failure.
 
-## Computational Quickstart (30 Seconds)
+## Start Here
 
-BHSM supports Python 3.10 or newer:
+- [BHSM in plain language](docs/bhsm_in_plain_language.md)
+- [Scientific contribution ledger](docs/bhsm_scientific_contribution_ledger.md)
+- [CERN toy model in plain language](docs/cern_toy_model_in_plain_language.md)
+- [Current status](docs/current_bhsm_status.md), [STATUS.md](STATUS.md), and [CLAIMS.md](CLAIMS.md)
+- [Reviewer reproduction guide](docs/reviewer_reproduction_guide.md)
+- [Frozen predictions](docs/frozen_predictions.md) and [prediction gallery](docs/prediction_gallery.md)
+
+## Computational Quickstart
 
 ```bash
 git clone https://github.com/ncarberry64/Berger-Hopf-Standard-Model.git
 cd Berger-Hopf-Standard-Model
 python -m venv .venv
-source .venv/bin/activate
 python -m pip install -e .
-make reviewer-smoke
-```
-
-On Windows activate with `.\.venv\Scripts\Activate.ps1`. Without `make`, run:
-
-```bash
 python -m pytest -q tests/test_engine_invariant_preservation.py tests/test_engine_physics_status_separation.py
-python -m bhsm.interface --help
-python -m bhsm.interface registry
 python -m bhsm.interface physics-status --format markdown
-python tools/audit_public_readiness.py
 ```
 
-See [QUICKSTART.md](QUICKSTART.md) and
-[CLI_REFERENCE.md](CLI_REFERENCE.md) for the complete offline review surface.
+See [QUICKSTART.md](QUICKSTART.md) and [CLI_REFERENCE.md](CLI_REFERENCE.md).
 
 ## Established Artifact-Backed Outputs
 
-The authoritative frozen records remain `BHSM_BARE_V1` and
-`BHSM_DRESSED_V1_CANDIDATE`; this handoff changes neither. The repository
-also provides a prediction gallery, provenance adapters, theorem-blocker
-reports, symbolic action candidates, and deterministic sprint artifacts.
+The frozen `BHSM_BARE_V1` and `BHSM_DRESSED_V1_CANDIDATE` records are unchanged.
+The repository also contains deterministic sprint artifacts, theorem-blocker
+reports, provenance adapters, and the prediction gallery.
 
 ## Candidate And Open Theorem Areas
 
-The live synthesis is in
-[current_bhsm_status](docs/current_bhsm_status.md),
-[full_bhsm_completion_v1_candidate](theory/full_bhsm_completion_v1_candidate.md),
-and [open proof obligations](theory/full_bhsm_open_proof_obligations.md).
-These distinguish artifact-backed formulas and conditional response laws from
-unproved completion, physical-scale, and empirical claims.
+See the [current synthesis](theory/full_bhsm_completion_v1_candidate.md) and
+[open proof obligations](theory/full_bhsm_open_proof_obligations.md). These keep
+historical screens, conditional theorems, and physical predictions distinct.
 
 ## Engine Validation Versus Physics Validation
 
-Engine tests do not validate BHSM as particle physics. Engine correctness
-means tested software and numerical transformations; physics validation
-requires independent experimental comparison and successful derivations.
+Engine tests do not validate BHSM as particle physics. Software correctness and
+numerical transformation checks are not empirical validation of BHSM Physics.
 
 ## Runtime-Gated External Tools
 
-ROOT, CERN Open Data downloads, plotting, native compilation, FeynRules, UFO,
-MadGraph, and hardware profiling are optional or runtime-gated. They are not
-required for the offline reviewer smoke and are not collider-readiness claims.
+ROOT, CERN downloads, FeynRules, UFO, MadGraph, plotting, and native compilation
+are optional or runtime-gated; their adapters are not collider-readiness claims.
 
 ## What This Repository Contains
 
-Executable interfaces, deterministic artifacts, frozen records, geometric
-and variational derivations, theorem-development records, tests, audits, and
-optional external-runtime adapters.
+Executable interfaces, deterministic artifacts, geometric and variational
+derivations, reviewer guides, audits, tests, and optional runtime adapters.
 
 ## Repository Map
-
 | Path | Purpose |
 | --- | --- |
-| `src/bhsm/interface/` | Python registry, reports, action audits, and interfaces |
+| `src/bhsm/interface/` | Action, spectrum, amplitude, and reporting interfaces |
 | `artifacts/` | Machine-readable evidence and status records |
 | `docs/`, `theory/` | Reviewer guides, derivations, and historical handoffs |
 | `tests/`, `tools/` | Reproduction tests and offline audits |
@@ -349,25 +308,12 @@ optional external-runtime adapters.
 
 ## Claim Boundaries
 
-BHSM does not claim a complete physical action, action-derived particle
-masses or gauge couplings, a physical neutrino mass, a completed fold kinetic
-classification, collider-production readiness, or institutional endorsement.
-See [CLAIMS.md](CLAIMS.md).
+BHSM does not claim empirical establishment, completed physical promotion,
+collider-production readiness, or institutional endorsement. See
+[CLAIMS.md](CLAIMS.md) and [allowed public language](docs/allowed_public_language.md).
 
 ## Citation and License
 
-Use [CITATION.cff](CITATION.cff). The verified archival DOI is
-[10.5281/zenodo.20663419](https://doi.org/10.5281/zenodo.20663419); the latest
-GitHub release and DOI snapshot have distinct version labels. Reuse is
+Use [CITATION.cff](CITATION.cff). The archival DOI is
+[10.5281/zenodo.20663419](https://doi.org/10.5281/zenodo.20663419). Reuse is
 governed by [LICENSE.md](LICENSE.md).
-
-For critique or changes, read [CONTRIBUTING.md](CONTRIBUTING.md), use the
-[research template](.github/ISSUE_TEMPLATE/research-source.yml) or
-[bug template](.github/ISSUE_TEMPLATE/bug-report.yml), and route security
-reports through [SECURITY.md](SECURITY.md).
-
-## v10.2 Topological Buoyancy current-action exhaustion
-
-V10.2 imports prior action/domain results and proves `BHSM_CURRENT_PARENT_ACTION_CANNOT_GENERATE_TOPOLOGICAL_BUOYANCY`; it emits no physical depth, force, Newtonian limit, scale, new term, or fitted parameter. See the [full derivation and exact next object](docs/bhsm_topological_buoyancy_action_derivation_v10_2.md).
-
-The authoritative [v7.1 covariant bulk--boundary reduction](docs/bhsm_covariant_bulk_boundary_reduction_functor_v7_1.md) constructs the oriented \(M_8\to M_5\) pushforward on the retained subcategory and adopts a stratified correspondence action for independently owned cap and boundary-localized fields. The dimensionless finite-input core is internally closed; physical scheme/observable transport remains open. The [v14.29 scientific audit](docs/BHSM_VIEW2_SCIENTIFIC_PROOF_AUDIT_V14_29.md) validates a conditional eta-SU3 action/current candidate with no new vector pole, but finds that common-domain action ownership and FR/Dirac matching are open. BHSM remains incomplete at those gates and the nonlinear BVP, confinement/worldsheet, normalization, scale, mass, flavor, and neutrino gates.

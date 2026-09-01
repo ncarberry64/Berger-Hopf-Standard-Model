@@ -1,0 +1,74 @@
+{
+  "FULL_BHSM_COMPLETE": false,
+  "artifact": "BHSM_N12_C2_LOG_DESCRIPTOR_DELTA_STOP_RECONNAISSANCE",
+  "candidate_boundary_is_canonical_stop": false,
+  "candidate_boundary_type": "FIXED_DESCRIPTOR_TRANSVERSALITY_LOSS",
+  "data": "artifacts/flagship_integration/BHSM_N12_C2_LOG_DESCRIPTOR_DELTA_STOP_RECONNAISSANCE.npz",
+  "first_failed_trial": {
+    "attempted_signed_descriptor": 9.5367431640625e-10,
+    "exception": "ArithmeticError: fixed-s denominator is not positive"
+  },
+  "last_positive_Delta": 5.6426102814980575e-15,
+  "last_positive_signed_descriptor": 7.629394531249999e-10,
+  "method": "GEOMETRIC_HEUN_PREDICTOR_CORRECTOR_IN_SIGNED_DESCRIPTOR",
+  "permitted_use": "RECENTERED_INTERVAL_BOX_SEED_ONLY",
+  "proof_center_selected_as_physical_history": false,
+  "reason_not_canonical": "Delta=0 loses the fixed-s chart but does not by itself make the Euler-Dirac selected eigenvalue vanish",
+  "rows": [
+    {
+      "Delta": 4.945639573543349e-14,
+      "R_Dlambda_Vhard": 2.170087867004284e-05,
+      "b_psi": 0.0003831245087821955,
+      "c_psi": 1.149265449184675e-10,
+      "selected_branch": 24,
+      "selected_eigenvalue": 2.4839102888940223e-10,
+      "signed_descriptor": 2.5e-10
+    },
+    {
+      "Delta": 4.157256564467207e-14,
+      "R_Dlambda_Vhard": 1.843529849902767e-05,
+      "b_psi": 0.00037137048211688395,
+      "c_psi": 9.643075200698022e-11,
+      "selected_branch": 24,
+      "selected_eigenvalue": 3.107293146368021e-10,
+      "signed_descriptor": 3.125e-10
+    },
+    {
+      "Delta": 3.2816340773149713e-14,
+      "R_Dlambda_Vhard": 1.479774910098458e-05,
+      "b_psi": 0.0003565296933234485,
+      "c_psi": 7.583090703766493e-11,
+      "selected_branch": 24,
+      "selected_eigenvalue": 3.8851615396678116e-10,
+      "signed_descriptor": 3.90625e-10
+    },
+    {
+      "Delta": 2.348535822704371e-14,
+      "R_Dlambda_Vhard": 1.0904658940853409e-05,
+      "b_psi": 0.00033767353224867236,
+      "c_psi": 5.3782177145012326e-11,
+      "selected_branch": 24,
+      "selected_eigenvalue": 4.854112335402363e-10,
+      "signed_descriptor": 4.8828125e-10
+    },
+    {
+      "Delta": 1.4137236806184598e-14,
+      "R_Dlambda_Vhard": 6.978192050892778e-06,
+      "b_psi": 0.0003133812701876515,
+      "c_psi": 3.1520985215811245e-11,
+      "selected_branch": 24,
+      "selected_eigenvalue": 6.050710418021092e-10,
+      "signed_descriptor": 6.103515624999999e-10
+    },
+    {
+      "Delta": 5.6426102814980575e-15,
+      "R_Dlambda_Vhard": 3.3672516522200387e-06,
+      "b_psi": 0.00028087828860146047,
+      "c_psi": 1.0942822112463793e-11,
+      "selected_branch": 24,
+      "selected_eigenvalue": 7.487010188610883e-10,
+      "signed_descriptor": 7.629394531249999e-10
+    }
+  ],
+  "status": "RECONNAISSANCE_ONLY_NOT_A_CERTIFICATE"
+}

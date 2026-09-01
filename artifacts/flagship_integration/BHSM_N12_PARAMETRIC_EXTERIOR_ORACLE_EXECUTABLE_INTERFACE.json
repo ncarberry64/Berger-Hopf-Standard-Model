@@ -1,0 +1,108 @@
+{
+  "FLAGSHIP_READY": false,
+  "FULL_BHSM_COMPLETE": false,
+  "artifact": "BHSM_N12_PARAMETRIC_EXTERIOR_ORACLE_EXECUTABLE_INTERFACE",
+  "claim_boundary": {
+    "FULL_BHSM_COMPLETE": false,
+    "Gate7": "ACTIVE_ACTUAL_PARAMETRIC_FINITE_STRATUM_DATA_OPEN",
+    "Gate8": "LOCKED",
+    "actual_parametric_exterior_oracle": "OPEN_CURRENT_OWNER",
+    "actual_projected_force": "OPEN",
+    "chord_03_authorized": false,
+    "frozen_predictions_changed": false,
+    "geometry_reset_KKT_Hessian": "OPEN",
+    "same_action_saddle": "OPEN",
+    "stable_Weyl_value_first_second_jet_solver": "DERIVED",
+    "two_chord_core_as_complete_force_domain": false
+  },
+  "classification": "FOR_ANY_SUPPLIED_FIXED_STRATUM_HERMITIAN_OPERATOR_AND_FIRST_SECOND_DIRECTIONAL_GEOMETRY_JETS_WITH_A_COERCIVE_NEGATIVE_PROBE_INTERIOR_BLOCK,_THE_WEYL_CALDERON_VALUE_AND_TWO_JETS_ARE_NOW_COMPUTED_BY_THREE_BORDERED_INTERIOR_SOLVES_WITHOUT_FORMING_AN_INVERSE;_THE_TWO_CERTIFIED_1E-8_CHORDS_ARE_NOT_A_PHYSICAL_FORCE_ENDPOINT,_SO_THE_ACTUAL_ACTION_OWNED_FINITE_STRATUM_DATA_REMAIN_OPEN",
+  "exact_next_dependency": "SUPPLY_FROM_THE_RETAINED_ACTION_A_NONEMPTY_COMPLETE_FINITE_ENDPOINT_OR_CANONICAL_STOP_STRATUM_WITH_K(xi),_D_xi_K,_D_xi2_K_AND_THE_INTRINSIC_EXACT_GAUGE_TIME_QUOTIENT;_THEN_THIS_SOLVER_RETURNS_THE_EXTERIOR_BUNDLE_NEEDED_BY_q_rep_AND_THE_GEOMETRY_RESET_KKT_HESSIAN",
+  "executable_crosscheck": {
+    "Hermitian_residuals": {
+      "first_hermitian_residual_norm": 0.0,
+      "second_hermitian_residual_norm": 4.9065389333867974e-18,
+      "value_hermitian_residual_norm": 0.0
+    },
+    "block_unitary_covariance_residuals": {
+      "first": 9.813077866773595e-18,
+      "second": 9.341771812940338e-18,
+      "value": 1.9091418018976075e-16
+    },
+    "boundary_dimension": 2,
+    "explicit_matrix_inverse_formed": false,
+    "first_centered_difference_residual": 1.256209183739361e-11,
+    "interior_dimension": 2,
+    "interior_solve_residuals": {
+      "interior_first_residual_norm": 1.5515838457795457e-17,
+      "interior_second_residual_norm": 3.878959614448864e-18,
+      "interior_value_residual_norm": 3.1031676915590914e-17
+    },
+    "matrix_size": 4,
+    "minimum_shifted_interior_eigenvalue": 5.1,
+    "probe_z": -1.0,
+    "second_centered_difference_residual": 2.912873743228872e-08
+  },
+  "inputs": {
+    "artifacts/flagship_integration/BHSM_N12_FINITE_HISTORY_FORCE_DOMAIN_AUDIT.json": "827A30D38BBB0920C8577DAA586E621845F3BE928774214374FCED9E2171E227",
+    "artifacts/flagship_integration/BHSM_N12_GATE7_TWO_CHORD_HEAT_TAIL_AUDIT.json": "0EB80019EFE710FC45BFB66A094345C7B253F07D5530CD3F373375CD20A4E6E1",
+    "artifacts/flagship_integration/BHSM_N12_PARAMETRIC_RESET_FIBER_EXTERIOR_ORACLE_THEOREM.json": "1A789C7916626C7AA96B8718690A7B347C0766181FC7E5246E911CED40A4301F",
+    "artifacts/flagship_integration/BHSM_N12_RESET_FIBER_RADIUS_JET_AND_SCALE_CENTER_AUDIT.json": "F245D549B6C5247BE5E0730C33C4840AEFADB8A68B28B222B8D0E34BEF1A85A7",
+    "artifacts/intrinsic_state_selection/BHSM_N12_GATE7_CHORD_02_SIGNED_ALIGNED_GREEN.json": "90F09359CE376A572D97327736DD4F9C9A6D2E52C4615118707943E95CBC5D56",
+    "artifacts/intrinsic_state_selection/BHSM_N12_GATE7_FIRST_CHORD_CERTIFICATE_TRANSFER_AUDIT.json": "7B84C0C4F6086E5A09AF5A5A6238D2F14049F86906B39756636DA08C701664BE",
+    "src/bhsm/interface/parametric_finite_stratum_exterior_oracle.py": "A1C5800B1030682040FB5A23BB0E6083649DF28D59306F6BBD4311723027A24D"
+  },
+  "solver_contract": {
+    "Weyl_equations": [
+      "M=P_bb-P_bi*X",
+      "M'=K_bb'-K_bi'*X-P_bi*X'",
+      "M''=K_bb''-K_bi''*X-2*K_bi'*X'-P_bi*X''"
+    ],
+    "full_or_interior_inverse_formed": false,
+    "ill_conditioned_Euler_Dirac_kinetic_block_inverted": false,
+    "input_pencil": "P(xi,z)=K(xi)-z*I_ON_ONE_FIXED_REGULAR_FINITE_STRATUM",
+    "interior_equations": [
+      "P_ii*X=P_ib",
+      "P_ii*X'=K_ib'-K_ii'*X",
+      "P_ii*X''=K_ib''-K_ii''*X-2*K_ii'*X'"
+    ],
+    "outputs": [
+      "M_C(z;xi)",
+      "D_xi_M_C(z;xi)[eta]",
+      "D_xi2_M_C(z;xi)[eta,eta]",
+      "POISSON_TAIL_AND_TWO_JETS",
+      "SOLVE_HERMITICITY_AND_COERCIVITY_RESIDUALS"
+    ],
+    "required_inputs": [
+      "K",
+      "D_xi_K[eta]",
+      "D_xi2_K[eta,eta]",
+      "ACTION_OWNED_BOUNDARY_INTERIOR_PARTITION",
+      "REAL_NEGATIVE_PROBE_z",
+      "POSITIVE_INTERIOR_COERCIVITY_MARGIN"
+    ]
+  },
+  "status": "STABLE_WEYL_VALUE_AND_TWO_JET_SOLVER_DERIVED_ACTUAL_FINITE_STRATUM_DATA_OPEN",
+  "tracked_two_chord_adjudication": {
+    "certified_core_end": 2e-08,
+    "chord_03_authorized": false,
+    "first_chord_exact_shadowing": "CERTIFIED",
+    "may_be_used_as_complete_force_domain": false,
+    "reason": "THE_RETAINED_ZETA_EXTENSION_FORCE_IS_STRICTLY_ADDITIVE_AND_THE_SECOND_CHORD_REACHES_NEITHER_EVENT_NOR_DOMAIN_EXIT",
+    "second_chord_exact_shadowing": "CERTIFIED",
+    "terminal_event_or_canonical_stop_at_core_end": false,
+    "terminal_recurrence_reopened": false
+  },
+  "validation": {
+    "Hermitian_structure_is_preserved": true,
+    "block_unitary_covariance_is_verified": true,
+    "first_jet_matches_centered_difference": true,
+    "interior_solve_residuals_are_small": true,
+    "no_explicit_matrix_inverse_is_formed": true,
+    "no_recurrence_chord3_endpoint_selector_scale_fit_or_prediction_added": true,
+    "parametric_data_not_fabricated": true,
+    "second_jet_matches_centered_difference": true,
+    "two_certified_chords_are_not_promoted_to_force_endpoint": true,
+    "value_first_second_jet_interface_executes": true
+  },
+  "validation_passed": true
+}

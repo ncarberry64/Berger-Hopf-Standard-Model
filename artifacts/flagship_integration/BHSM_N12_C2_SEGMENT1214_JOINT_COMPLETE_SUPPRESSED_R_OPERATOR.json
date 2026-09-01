@@ -1,0 +1,95 @@
+{
+  "FLAGSHIP_READY": false,
+  "FULL_BHSM_COMPLETE": false,
+  "action_majorants": {
+    "D3": 8633993.267557435,
+    "D4": 179836486.00093397,
+    "D5": 4005674561.9399257
+  },
+  "adjudication": {
+    "Gate7": "OPEN",
+    "Gate8": "LOCKED",
+    "chord_03_authorized": false,
+    "complete_non_scale_D2Delta_operator": "OPEN_PENDING_COMPLETE_cb_ROW_SWEEP",
+    "complete_non_scale_sR_operator": "CERTIFIED",
+    "segment1214_joint_non_scale_sR_operator": "CERTIFIED",
+    "transposed_exact_segment_map_action": "OPEN"
+  },
+  "artifact": "BHSM_N12_C2_SEGMENT1214_JOINT_COMPLETE_SUPPRESSED_R_OPERATOR",
+  "classification": "OUTWARD_ROUNDED_GLOBAL_ACTION_OPERATOR_MAJORANT_WITH_CANCELLATION_PRESERVING_SECOND_JACOBI_CONTRACTIONS",
+  "complete_s_suppressed_R_second_operator_2_norm_upper": 0.04722126273031545,
+  "direction_bounds": {
+    "Psi_ball_action_norm_upper": 1.0006693956869825,
+    "Psi_first_ball_action_operator_norm_upper": 468.12979232285676,
+    "Psi_first_center_action_operator_norm_upper": 101.62734570525973,
+    "Psi_first_motion_action_operator_norm_upper": 366.5024466171288,
+    "Psi_first_motion_raw_coefficient_upper": 7.6338111745098285,
+    "W_ball_action_norm_upper": 15748.759853161253,
+    "W_first_center_action_operator_norm_upper": 107160241.99832486,
+    "W_first_motion_raw_coefficient_upper": 1353602158350.6243,
+    "embed_operator_norm_upper": 48.01041553667923,
+    "selected_line_first_derivative_leakage_upper": 1.1541816737610966e-14
+  },
+  "exact_identity": {
+    "D2R": "D5S[i,h,W,Psi,Psi]+D4S[i,W_h,Psi,Psi]+D4S[h,W_i,Psi,Psi]+2D4S[i,W,Psi_h,Psi]+2D4S[h,W,Psi_i,Psi]+D3S[W_ih,Psi,Psi]+2D3S[W_i,Psi_h,Psi]+2D3S[W_h,Psi_i,Psi]+2D3S[W,Psi_ih,Psi]+2D3S[W,Psi_i,Psi_h]",
+    "R": "D3S[W,Psi,Psi],_W=Qdot+E*V_hard"
+  },
+  "exact_next_dependency": "ADD_THIS_REISSUED_SEGMENT1214_JOINT_sR_BOUND_TO_THE_REISSUED_JOINT_NON_SCALE_cb_OPERATOR",
+  "inputs": {
+    "artifacts/flagship_integration/BHSM_N12_C2_BORDERED_HARD_RESPONSE_MATRIX.json": "7D36311E1127291DDEF6F778E2F2C21E9F2B2544DBAF74BC743B8E47BC3814AB",
+    "artifacts/flagship_integration/BHSM_N12_C2_BORDERED_HARD_RESPONSE_MATRIX.npz": "BC1EEB01C2BFB1A358B7DB14906009DF05CEFAC713749395937F0E5DE0E5AB9E",
+    "artifacts/flagship_integration/BHSM_N12_C2_CANCELLED_FIELD_LOHNER_STEP.json": "7091C2977A09DF413371306801DC5246BBDBAE55F1634EEF6B0D64BDF7677E33",
+    "artifacts/flagship_integration/BHSM_N12_C2_EXACT_CENTER_FIXED_S_FIELD_MATRIX.json": "7962A9051821633517A47DB91EF73EAF2EAD0E5C15BD3E7F2EA707B6E0DC40CA",
+    "artifacts/flagship_integration/BHSM_N12_C2_FRESH_CHART_FIXED_S_GROWTH.json": "D84370EEFC8B5F6681C14BEBC33839F8A9AFAB1887DDF7D1D75FD527145227B5",
+    "artifacts/flagship_integration/BHSM_N12_C2_SEGMENT1214_SUPPRESSED_HARD_RESPONSE_ROW_CERTIFICATE.json": "F8CD1F2256B3AEB15996332851405DB0DCFE69CC4927BEADC5D35A0985266783",
+    "artifacts/flagship_integration/BHSM_N12_C2_TERMINAL_PARENT_ACTION_MAJORANTS_2P0E10.json": "1B7689F24449514119E3987671576820715B9C6154E4F43CF5135488C1B39DC1",
+    "artifacts/flagship_integration/BHSM_N12_FINITE_TERMINAL_RESET_STRATUM_CANDIDATE.npz": "303BEBE80E6033D398278935C9AD01CD1A8C72EDEE208D52C0005A252119D0CD",
+    "scripts/certify_n12_c2_complete_suppressed_r_operator.py": "C4B552DEA7C40893DEEBBC1C4EC314358C47BC55F1C984C587B328C40148DB39",
+    "scripts/certify_n12_c2_segment1214_joint_suppressed_chain.py": "F77AF9E6E810C4E9A028F1E17AE72D99D218CC619E80C8AF9073197A03D8A853",
+    "theory/n12_c2_segment1214_joint_domain_extension.md": "4FB55C15A76366FF27A30C34194E669E65BAE74FB390AEDA5635F3532F68F210"
+  },
+  "parent_ball_containment": {
+    "containing_radius_upper": 1.3838006819055008e-10,
+    "node_1214_center_distance_from_parent_event": 8.316717991724977e-11,
+    "node_1214_tube_radius": 5.5212888273161885e-11,
+    "strict_margin_lower": 6.161993180938829e-11,
+    "terminal_parent_action_radius": 2e-10,
+    "terminal_parent_sector": "event"
+  },
+  "raw_R_second_operator_2_norm_upper": 2.7324141808682644e+18,
+  "raw_R_second_operator_term_uppers": {
+    "D3_W_second_p_p": 3.0882055549705075e+17,
+    "D5_i_h_W_p_p": 63168891853057.08,
+    "four_D3_W_first_center_p_first_p": 1.7336534225500923e+18,
+    "four_D3_W_first_motion_p_box_correction": 3.0265732989039443e+17,
+    "four_D3_W_first_motion_p_first_selected_p": 2.6960791232242106e+17,
+    "four_D4_i_W_p_first_p": 5306901885950314.0,
+    "two_D3_W_p_first_p_first": 5.959648200942808e+16,
+    "two_D3_W_p_second_p": 636610416348054.5,
+    "two_D4_W_first_center_p_p": 3.859426054821417e+16,
+    "two_D4_W_first_motion_p_box_correction": 1.3475443941769958e+16,
+    "two_D4_W_first_motion_selected_p_p": 2092912009464.798
+  },
+  "segment_joint_domain": {
+    "segment": [
+      1214,
+      1215
+    ],
+    "state_action_radius": 5.5212888273161885e-11,
+    "strict_extension_of_endpoint_tube": true
+  },
+  "signed_descriptor_absolute_upper": 1.7281883200907326e-20,
+  "status": "C2_SEGMENT1214_JOINT_COMPLETE_SUPPRESSED_R_OPERATOR_CERTIFIED",
+  "validation": {
+    "complete_ten_term_product_rule_is_partitioned": true,
+    "event_parent_supplies_derivatives_through_five": true,
+    "global_certificate_dominates_decisive_row_certificate": true,
+    "hard_first_motion_uses_action_owned_complement_selected_bound": true,
+    "no_inverse_selector_recurrence_scale_fit_gate_or_chord_added": true,
+    "node_tube_is_strictly_inside_terminal_parent_event_ball": true,
+    "selected_leakage_is_retained": true,
+    "suppressed_operator_is_finite": true,
+    "terminal_parent_majorant_is_validated": true
+  },
+  "validation_passed": true
+}

@@ -1,0 +1,48 @@
+# Gate-7 causal Y/Z1/Z2 margin budget
+
+The frozen Decimal Gauss-8, PROP16 correction is compared with two independent
+cross-discretization profiles on the same retained quarter-step history:
+
+\[
+ r_Y(t_i)=\max_{k\leq i}\|c^{(8,32)}_k-c^{(6,32)}_k\|_2,
+ \qquad
+ r_{Z1}(t_i)={4\over3}\max_{k\leq i}\|c^{(8,32)}_k-c^{(8,16)}_k\|_2.
+\]
+
+The PROP16/32 difference is the first second-order increment, not the full
+PROP16 tail.  PROP64 and PROP128 replays show successive maximum-increment
+ratios `3.99955` and `3.99633`; their two Richardson consistency residuals
+are below `1.5e-17`.  The numerical Z1 bookkeeping radius therefore uses the
+full second-order geometric proxy `(4/3)||c^(8,32)-c^(8,16)||`, while retaining
+an explicit non-interval claim boundary.
+
+The retained certified Taylor--Volterra Z2 macro radius is interpolated onto
+the fine grid and added to these two bookkeeping radii.  Every term is zero at
+the reset.  Thus the construction respects the causal initial condition and
+does not replace it with a uniform halo that would obscure the tiny positive
+birth descriptor.
+
+For the explicit stored-profile proxy, every binary64 dense descriptor
+coefficient is replayed as an exact rational number.  The frozen descriptor
+correction and proxy radius are linear on each fine segment.  Exact Bernstein
+range checks prove positivity through the old stored hit.  The unit proxy has
+strict margin, and the same exact replay remains positive under more than
+207-fold uniform inflation of the combined proxy radius.
+
+That 207-fold factor belongs only to the descriptor-margin comparison.  The
+existing selected nonlinear cone is the tighter closure condition.  At unit
+proxy the remaining cone reserve is greater than `5.04e-13`; with Z2 held at
+its stored causal profile, the Y+Z1 proxy may inflate by only about 4.70-fold
+before reaching the cone boundary.  No descriptor-margin number is used as a
+substitute for this self-map condition.
+
+This is a budget and routing result, not an outward interval theorem.  Neither
+Gauss-6/8 nor PROP16/32 cross-discretization is promoted to a truncation-error
+bound.  The remaining theorem is now quantitatively localized: construct a
+causal outward signed-Y plus PROP16-Z1 radius below the reported inflation
+headroom (in particular the tighter selected-cone reserve), rebuild the
+center-dependent Z2 cone on that radius, and apply scalar
+interval Newton on the later shifted terminal segment.
+
+No action term, source, selector, scale, recurrence, event, gate, or chord is
+added or changed.

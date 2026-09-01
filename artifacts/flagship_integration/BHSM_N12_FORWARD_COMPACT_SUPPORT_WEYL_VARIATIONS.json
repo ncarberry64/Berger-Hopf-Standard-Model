@@ -1,0 +1,76 @@
+{
+  "FLAGSHIP_READY": false,
+  "FULL_BHSM_COMPLETE": false,
+  "artifact": "BHSM_N12_FORWARD_COMPACT_SUPPORT_WEYL_VARIATIONS",
+  "claim_boundary": {
+    "FLAGSHIP_READY": false,
+    "FULL_BHSM_COMPLETE": false,
+    "Gate_7": "ACTIVE_NOT_CLOSED",
+    "Gate_8": "LOCKED",
+    "chord_03": "NOT_AUTHORIZED",
+    "global_noncompact_Weyl_variations": "OPEN_IF_REQUIRED_BY_SADDLE",
+    "infinite_Friedrichs_compact_support_Weyl_C1_C2": "DERIVED",
+    "oracle_values": "OPEN",
+    "same_action_saddle": "OPEN",
+    "zero_source_force": "OPEN"
+  },
+  "classification": "FOR_EVERY_COMPACTLY_SUPPORTED_REGULAR_GEOMETRY_VARIATION_ON_A_FINITE_SUBINTERVAL_OF_AN_INFINITE_FORWARD_HISTORY_THE_FRIEDRICHS_ENDPOINT_DOMAIN_IS_FIXED;_NEGATIVE_z_COERCIVITY_AND_THE_FIXED_CHANNEL_RELATIVE_FORM_JETS_GIVE_FINITE_EXACT_FIRST_AND_MIXED_SECOND_BIRTH_WEYL_VARIATIONS_WITHOUT_A_UNIFORM_T_TO_INFINITY_TRANSFER_LIMIT_OR_TERMINAL_RETURN",
+  "exact_next_dependency": "EVALUATE_OR_RIGOROUSLY_ENCLOSE_THE_FIXED_CHANNEL_POISSON_WEYL_CONTRACTIONS_AND_COMMON_PAIR_CONTACT_TERMS_FOR_THE_ACTUAL_MAXIMAL_HISTORY_ON_A_NONEMPTY_NEGATIVE_z_REGION;_ASSEMBLE_THE_ZERO_SOURCE_WEAK_GEOMETRY_FORCE_BEFORE_ANY_GLOBAL_SADDLE_VARIATION",
+  "exact_witness": {
+    "base": {
+      "decimal": 2.75,
+      "exact": "11/4"
+    },
+    "first_left": {
+      "decimal": 0.0125,
+      "exact": "1/80"
+    },
+    "first_right": {
+      "decimal": 0.008928571428571428,
+      "exact": "1/112"
+    },
+    "geometry": "d(t,s)=3+t/5+s/7+t*s/11",
+    "mixed_second": {
+      "decimal": 0.004788961038961039,
+      "exact": "59/12320"
+    },
+    "model": "M=a-z-b^2/(d-z)",
+    "resolvent_pair_formula": "M_hk=<U,P_hk*U>-<P_h*U,R_D*P_k*U>-<P_k*U,R_D*P_h*U>"
+  },
+  "infinite_end_adjudication": {
+    "base_Weyl_family": "ALREADY_DEFINED_BY_THE_FRIEDRICHS_FORM",
+    "compact_support_first_second_weak_variations": "DERIVED_HERE",
+    "global_noncompact_saddle_variations": "NOT_COVERED",
+    "numerical_or_interval_value_of_M_D_M_D2_M": "NOT_EVALUATED",
+    "uniform_transfer_jet_limit_as_T_to_infinity_required": false
+  },
+  "inputs": {
+    "artifacts/flagship_integration/BHSM_N12_FORWARD_COMMON_SOURCE_GEOMETRY_JETS.json": "A372FD0204C274051312254FA65EFA4C65D5BBC6262BD13147386D3700B229F5",
+    "artifacts/flagship_integration/BHSM_N12_FORWARD_COMPACT_INTERVAL_RECENTERING.json": "2160CD4A13F3D10CEE574695E031C50B48AFC965553358BD14E48EE318AC87D9",
+    "artifacts/flagship_integration/BHSM_N12_FORWARD_EXTERIOR_GAP_ORACLE_AUDIT.json": "42F94186C6F5842B5D6A4A327F1226AA43E9BE7523F0E3ACC9DB80E915815652",
+    "artifacts/flagship_integration/BHSM_N12_FORWARD_GAUGE_WEYL_READOUT_FAMILY.json": "452134D1EA925FEBE2DA99483926F70AFEC6DEF09731B268ECB2A2A6FCE280AE",
+    "artifacts/flagship_integration/BHSM_N12_FORWARD_PROPER_TIME_FORM_OWNERSHIP.json": "C56D4B49F58DF4FF58D6725899261B5D08C5E38F8860B0C74D2725DC920D2BB4"
+  },
+  "status": "COMPACT_SUPPORT_WEYL_C1_C2_AT_FRIEDRICHS_END_DERIVED",
+  "validation": {
+    "Friedrichs_infinite_endpoint_supported": true,
+    "all_finite_support_intervals_have_variational_cover": true,
+    "all_inputs_validated": true,
+    "compact_support_fixes_proper_time_domain": true,
+    "exact_second_variation_witness_is_nonzero": true,
+    "gap_not_misused_as_an_oracle_value_bound": true,
+    "local_first_second_operator_jets_available": true,
+    "negative_z_coercive_region_available": true,
+    "no_terminal_return_endpoint_motion_new_gate_or_prediction": true
+  },
+  "validation_passed": true,
+  "weak_variation_theorem": {
+    "endpoint_domain_variation": 0,
+    "finiteness_reason": "U_a,U_b_ARE_IN_THE_FRIEDRICHS_FORM_DOMAIN;_P_h_AND_P_hk_HAVE_BOUNDED_COMPACT_SUPPORT_RELATIVE_FORM_CONSTANTS",
+    "first": "<a,D_hM(z)b>=<U_a,P_h*U_b>+RETAINED_BOUNDARY_CONTACT_h",
+    "mixed_second": "<a,D_hkM(z)b>=<U_a,P_hk*U_b>-<P_h*U_a,R_D(z)*P_k*U_b>-<P_k*U_a,R_D(z)*P_h*U_b>+RETAINED_PAIR_CONTACT_hk",
+    "resolvent_bound": "norm(R_D(z))<=1/abs(z)_FOR_REAL_z<0",
+    "temporal_bulk_variation": "D_Phi_D_tau=D_Phi_Delta_tau=0",
+    "variation_class": "COMPACTLY_SUPPORTED_RETAINED_GEOMETRY_TEST_VARIATIONS_INSIDE_ONE_REGULAR_FORWARD_INTERVAL"
+  }
+}

@@ -1,0 +1,68 @@
+{
+  "FLAGSHIP_READY": false,
+  "FULL_BHSM_COMPLETE": false,
+  "artifact": "BHSM_N12_FINITE_ENDPOINT_FORWARD_ADJOINT_KKT",
+  "claim_boundary": {
+    "FULL_BHSM_COMPLETE": false,
+    "G7_08_force_adjoint": "DERIVED",
+    "G7_09_joint_system": "DERIVED_UNSOLVED",
+    "Gate7": "ACTIVE_FORWARD_ADJOINT_KKT_SOLUTION_OPEN",
+    "Gate8": "LOCKED",
+    "actual_finite_endpoint_stratum_solution": "OPEN_CURRENT_OWNER",
+    "chord_03_authorized": false,
+    "frozen_predictions_changed": false,
+    "geometry_reset_KKT_Hessian": "PENDING_FOR_CERTIFIED_NEWTON_OR_NONZERO_FORCE",
+    "pair_plus_contact_Hessian": "PENDING_AFTER_ZERO_SOURCE_SADDLE",
+    "single_reset_representative_sufficient": false
+  },
+  "classification": "ON_EACH_NONEMPTY_REGULAR_FINITE_EVENT_OR_CANONICAL_STOP_STRATUM_THE_SET_VALUED_AE2_RESET_AND_THE_HEAT_MINUS_ZETA_STATIONARITY_CONDITION_FORM_ONE_COUPLED_FORWARD_STATE_OPERATOR_ADJOINT_AND_PHYSICAL_RESET_QUOTIENT_KKT_BOUNDARY_VALUE_SYSTEM;_SOLVING_THIS_SYSTEM_OR_AN_EQUIVALENT_PARAMETRIC_ORACLE_ROOT_IS_REQUIRED_AND_NO_SINGLE_RESET_REPRESENTATIVE_IS_SELECTED",
+  "derivative_boundary": {
+    "Newton_or_KKT_linearization_for_nonzero_force_branch": "REQUIRES_THE_RETAINED_D4_L_SECOND_OPERATOR_JET_AND_RESET_CONSTRAINT_CURVATURE_ALREADY_CLASSIFIED_DOWNSTREAM",
+    "pair_plus_contact_source_Hessian_is_this_KKT_Jacobian": false,
+    "residual_evaluation_highest_action_derivative": "D3_L"
+  },
+  "equivalent_routes": {
+    "mathematically_equivalent_at_a_regular_root": true,
+    "new_physical_choice": false,
+    "parametric_oracle_route": "CERTIFY_Y(xi),T(xi),P_C(xi)_ON_A_FIXED_REGULAR_STRATUM;_EVALUATE_THE_ADJOINT_COVECTOR_AND_CERTIFY_ITS_QUOTIENT_ROOT",
+    "simultaneous_BVP_route": "SOLVE_AND_CERTIFY_THE_FORWARD_STATE_OPERATOR_ADJOINT_ENDPOINT_AND_QUOTIENT_STATIONARITY_EQUATIONS_TOGETHER"
+  },
+  "exact_next_dependency": "CERTIFY_A_NONEMPTY_REGULAR_FINITE_ENDPOINT_STRATUM_SOLUTION_OF_THIS_FORWARD_ADJOINT_QUOTIENT_KKT_SYSTEM_OR_ITS_EQUIVALENT_PARAMETRIC_ORACLE_ROOT;_THE_TWO_CERTIFIED_CHORDS_SUPPLY_ONLY_A_BASE_CORE_WITH_NO_ENDPOINT_AND_CHORD_3_REMAINS_UNAUTHORIZED",
+  "inputs": {
+    "artifacts/flagship_integration/BHSM_N12_ACTION_OWNED_ENDPOINT_LOAD_REDUCTION.json": "8B9EBFE886CA4EBDD1E29D4C503803043700C7CB47BF540FD517623EA3F55D9E",
+    "artifacts/flagship_integration/BHSM_N12_CONSTRAINT_PROJECTED_REPLACEMENT_SADDLE.json": "E5C0340FC39BFF9C83F338B8AFA7270F71A6699A56A5B0996F754FB99B65DAD1",
+    "artifacts/flagship_integration/BHSM_N12_FORCE_ADJOINT_PULLBACK.json": "CD8A55728672AE5CACEC16268AF5B00A267A06F4A0A92BE5F10989CD58189CDF",
+    "artifacts/flagship_integration/BHSM_N12_PARAMETRIC_RESET_FIBER_EXTERIOR_ORACLE_THEOREM.json": "1A789C7916626C7AA96B8718690A7B347C0766181FC7E5246E911CED40A4301F",
+    "artifacts/flagship_integration/BHSM_N12_RESET_STRATUM_MOVING_ENDPOINT_JETS.json": "DE930C625E5E1445C8EAFADC579D25C9BF1B52A294CEF7342EBDA799C746B65D"
+  },
+  "status": "NO_SELECTOR_FORWARD_ADJOINT_KKT_SYSTEM_DERIVED_EVALUATION_OPEN",
+  "system": {
+    "adjoint": "-p'=DV(Y)^dagger*p+q_Y,_p(T)=Pi_T^dagger*g_T",
+    "endpoint": "FIRST_TRANSVERSE_RETAINED_EVENT_e(Y(T))=0_OR_THE_FIRST_RETAINED_CANONICAL_STOP_GRAPH_ON_THE_SELECTED_STRATUM",
+    "forward": "Y'=V_AE2(Y)",
+    "moving_endpoint": "Pi_T=I-V tensor De/(De V)",
+    "operator": "P_C=P_C[Y,T]_WITH_THE_ACTION_OWNED_ENDPOINT_DOMAIN",
+    "operator_cotangent": "W_C=(s_C*m_C/2)*exp(-ell^2*P_C)*P_C^-1_AND_q_rep=q_heat-q_zeta",
+    "quotient_stationarity": "N_phys^dagger*(D_xi_R_AE2^dagger*p(0)+q_xi,direct)=0",
+    "raw_bordered_equivalent": "q_xi+D_C_reset^dagger*lambda=0,_C_reset=0,_WITH_EXACT_GAUGE_AND_WHOLE_TIME_GENERATORS_QUOTIENTED",
+    "reset": "Y(0)=R_AE2(xi),_xi_IN_C_reset/G_exact"
+  },
+  "unknowns": [
+    "PHYSICAL_RESET_QUOTIENT_PARAMETER_xi",
+    "FINITE_ENDPOINT_TIME_OR_INTRINSIC_STOP_GRAPH_T",
+    "FORWARD_STATE_HISTORY_Y(t)",
+    "FIXED_CHANNEL_OR_OPERATOR_STATE_ON_Y",
+    "BACKWARD_OPERATOR_AND_EULER_DIRAC_ADJOINT_p(t)",
+    "RETAINED_CONSTRAINT_AND_ENDPOINT_MULTIPLIERS_IF_RAW_COORDINATES_USED"
+  ],
+  "validation": {
+    "adjoint_pullback_is_available": true,
+    "endpoint_domain_is_action_owned": true,
+    "moving_endpoint_projection_is_exact": true,
+    "no_selector_endpoint_action_term_scale_fit_chord_or_prediction_added": true,
+    "quotient_stationarity_is_exact": true,
+    "reset_is_set_valued": true,
+    "single_representative_not_promoted": true
+  },
+  "validation_passed": true
+}

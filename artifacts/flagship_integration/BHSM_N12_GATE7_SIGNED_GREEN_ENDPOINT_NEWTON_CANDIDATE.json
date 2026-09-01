@@ -1,0 +1,58 @@
+{
+  "FULL_BHSM_COMPLETE": false,
+  "adjudication": {
+    "constraint_manifold": "REQUIRES_DIRECT_REPLAY_ON_CORRECTED_ENDPOINTS",
+    "continuous_center": "OPEN_AFTER_EXACT_REPLAY",
+    "descriptor_fiber": "REQUIRES_RECENTERING_AFTER_STATE_CORRECTION",
+    "endpoint_position_inconsistency": "ONE_SIGNED_GREEN_NEWTON_CORRECTION_APPLIED"
+  },
+  "artifact": "BHSM_N12_GATE7_SIGNED_GREEN_ENDPOINT_NEWTON_CANDIDATE",
+  "authority": "NUMERICAL_SIGNED_GREEN_NEWTON_CANDIDATE_NOT_INTERVAL_AUTHORITY",
+  "claim_boundary": {
+    "FULL_BHSM_COMPLETE": false,
+    "Gate7": "ACTIVE_ACTION_OWNED_OPERATOR_ORACLE",
+    "continuous_action_constrained_center": "OPEN",
+    "continuous_outward_variational_carrier": "OPEN_AFTER_CENTER"
+  },
+  "construction": {
+    "constraint_handling": "PROJECT_ONLY_AT_THE_46_COMPLETE_RETAINED_MACRO_SEAMS",
+    "propagator_substeps_per_quarter_cell": 16,
+    "shadow_equation": "e_prime=J*e-d",
+    "source_sign": "MINUS_MEASURED_HERMITE_FLOW_DEFECT"
+  },
+  "data": "artifacts/flagship_integration/BHSM_N12_GATE7_SIGNED_GREEN_ENDPOINT_NEWTON_CANDIDATE.npz",
+  "data_SHA256": "DE83323343C2244F40A49B19108E20B73168F7D2DA6014210941D203B806A511",
+  "exact_next_dependency": "REPLAY_ACTION_CONSTRAINTS_AND_SELECTED_DESCRIPTOR_ON_THE_371_CORRECTED_ENDPOINTS,_RECENTER_THE_STOP,_THEN_REMEASURE_THE_GAUSS3_FLOW_DEFECT",
+  "inputs": {
+    "artifacts/flagship_integration/BHSM_N12_C2_STOP_QUARTER_STEP_FINE_HYBRID_GRAPH_JACOBIAN_RECONNAISSANCE.json": "EE37B8C16E15D531B6B6A1D0F640A7D4D7DB2C684EDC37E39CF103937845061F",
+    "artifacts/flagship_integration/BHSM_N12_C2_STOP_QUARTER_STEP_FINE_HYBRID_GRAPH_JACOBIAN_RECONNAISSANCE.npz": "B92C08B4CB2EC4033FA70CBDCC28B6CD79E1189E19D95C984155EB65DD9D73B5",
+    "artifacts/flagship_integration/BHSM_N12_C2_STOP_QUARTER_STEP_PHYSICAL_TANGENT_TRANSFER_RECONNAISSANCE.json": "B6F2EAD43496BF257077F230E8C3C15B7006D7E107184835232C4D0FCC08D119",
+    "artifacts/flagship_integration/BHSM_N12_C2_STOP_QUARTER_STEP_PHYSICAL_TANGENT_TRANSFER_RECONNAISSANCE.npz": "9FFD40E1F3BFBBFA085FAB18B8ECDF250C55E753D23BE0B34737386BE833A175",
+    "artifacts/flagship_integration/BHSM_N12_GATE7_CONSTRAINT_DESCRIPTOR_HERMITE_COLLOCATION_CANDIDATE.json": "1112C54BA8BAFA37CA374D02C02B0092B818D399911477C427E23FF3E887A299",
+    "artifacts/flagship_integration/BHSM_N12_GATE7_CONSTRAINT_DESCRIPTOR_HERMITE_COLLOCATION_CANDIDATE.npz": "A260C9D58E5812DF96074D3D626D6532D596D0B3B4C31C83D5BECA21C5F0D075",
+    "scripts/materialize_n12_gate7_signed_green_endpoint_newton_candidate.py": "3B4089B8D49285E535AF5EBBC70084C1AAA1823475BF61B6302B626B4068AC0C",
+    "theory/n12_gate7_signed_green_endpoint_newton_candidate.md": "F5922E71A0730964C5CBB1044833C482B8F6D090E92AFB3B4EE81F40898061CF"
+  },
+  "status": "SIGNED_GREEN_ENDPOINT_NEWTON_CORRECTION_MATERIALIZED",
+  "summary": {
+    "maximum_macro_tangent_projection_2_norm": 1.339557435090381e-10,
+    "maximum_signed_Green_state_correction_2_norm": 7.402781016801482e-06,
+    "maximum_signed_Green_state_correction_owner_node": 172,
+    "maximum_signed_source_increment_2_norm": 1.2545481705763918e-06,
+    "maximum_signed_source_increment_owner_interval": 82,
+    "terminal_signed_Green_state_correction_2_norm": 3.692909535696325e-06
+  },
+  "validation": {
+    "all_370_Gauss3_defect_blocks_consumed": true,
+    "all_371_endpoint_corrections_materialized": true,
+    "all_quantities_finite": true,
+    "correction_vanishes_at_reset": true,
+    "no_action_source_selector_scale_gate_or_chord_changed": true,
+    "not_promoted_without_exact_field_constraint_and_fiber_replay": true,
+    "same_371_node_graph_Jacobian_used": true,
+    "same_47_macro_tangent_transfer_used": true,
+    "signed_source_is_minus_measured_flow_defect": true,
+    "sixteen_substeps_match_the_frozen_Taylor26_partition": true
+  },
+  "validation_passed": true
+}

@@ -1,0 +1,63 @@
+{
+  "FULL_BHSM_COMPLETE": false,
+  "adjudication": {
+    "binary64_eigenvalue_role": "LINE_IDENTIFICATION_DIAGNOSTIC_ONLY",
+    "descriptor_interval_role": "COUPLED_GRAPH_COORDINATE_NOT_INDEPENDENT_SCALAR_TUBE",
+    "physical_stop_derived": false
+  },
+  "artifact": "BHSM_N12_C2_CANCELLED_DESCRIPTOR_GRAPH",
+  "dimension": {
+    "ambient_extended_coordinates": 99,
+    "extra_physical_degree_of_freedom_added": false,
+    "invariant_descriptor_graph_dimension": 98
+  },
+  "exact_next_dependency": "PROPAGATE_A_SHEARED_LOHNER_OR_MULTIPLE_SHOOTING_TUBE_ON_THE_INVARIANT_DESCRIPTOR_GRAPH_AND_RECENTER_THE_COMPLETE_RESPONSE",
+  "identity": "d_theta(s-lambda(Y))=Delta-Dlambda[G_theta]=0",
+  "inputs": {
+    "artifacts/flagship_integration/BHSM_N12_C2_1221_CANCELLED_DELTA_MONOTONICITY.json": "EFE18737B851A32349876F124B15E5FCA6EE0E3572D410AC6D2BC755BA0544EA",
+    "artifacts/flagship_integration/BHSM_N12_C2_EXPANDED_CANCELLED_THETA_COVER_FROM_1221.json": "15A4485C3511469C94BF9689A789D29E03BD3D950C115771B1367FA4AD1000A8",
+    "artifacts/flagship_integration/BHSM_N12_C2_EXPANDED_CANCELLED_THETA_COVER_FROM_1221.npz": "5763628CF6B75E1DB5876C69611208225AA2958C82EFF97364C6B9461232E1E2"
+  },
+  "status": "C2_CANCELLED_SIGNED_DESCRIPTOR_GRAPH_INVARIANT_DERIVED",
+  "validation": {
+    "all_sampled_centers_retain_branch_24": true,
+    "descriptor_graph_defect_rate_is_identically_zero": true,
+    "extended_graph_fields_are_finite": true,
+    "independent_wrapped_descriptor_interval_is_superseded": true,
+    "no_selector_recurrence_scale_gate_or_chord_added": true,
+    "signed_descriptor_and_selected_eigenvalue_rates_agree_exactly": true
+  },
+  "validation_passed": true,
+  "witnesses": [
+    {
+      "Delta": 8.920455287357582e-14,
+      "Dlambda_cancelled_field": 8.920455287357582e-14,
+      "descriptor_graph_defect_rate": 0.0,
+      "extended_field_norm": 0.0004293955466100616,
+      "index": 0,
+      "selected_branch": 24,
+      "signed_descriptor": 1.773581793017898e-20,
+      "signed_descriptor_rate": 8.920455287357582e-14
+    },
+    {
+      "Delta": 8.920468913452344e-14,
+      "Dlambda_cancelled_field": 8.920468913452344e-14,
+      "descriptor_graph_defect_rate": 0.0,
+      "extended_field_norm": 0.0004293952961425849,
+      "index": 8,
+      "selected_branch": 24,
+      "signed_descriptor": 2.23961501774032e-20,
+      "signed_descriptor_rate": 8.920468913452344e-14
+    },
+    {
+      "Delta": 8.920435479420002e-14,
+      "Dlambda_cancelled_field": 8.920435479420002e-14,
+      "descriptor_graph_defect_rate": 0.0,
+      "extended_field_norm": 0.00042939509156702903,
+      "index": 16,
+      "selected_branch": 24,
+      "signed_descriptor": 2.3002650802153867e-20,
+      "signed_descriptor_rate": 8.920435479420002e-14
+    }
+  ]
+}

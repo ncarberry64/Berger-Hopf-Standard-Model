@@ -1,0 +1,42 @@
+{
+  "FULL_BHSM_COMPLETE": false,
+  "artifact": "BHSM_N12_GATE7_EXACT_CENTER_CAUSAL_VECTOR_CERTIFICATE",
+  "claim_boundary": {
+    "FULL_BHSM_COMPLETE": false,
+    "Gate7": "ACTIVE",
+    "causal_interval_vector_radius": "OPEN",
+    "exact_action_center_causal_vector_radius": "DERIVED_CENTER_ONLY",
+    "outward_curvature_remainder": "OPEN",
+    "outward_signed_step_map_and_Green_remainder": "OPEN"
+  },
+  "data": "artifacts/flagship_integration/BHSM_N12_GATE7_EXACT_CENTER_CAUSAL_VECTOR_CERTIFICATE.npz",
+  "data_SHA256": "78F6ECD054902C8EB4E9FB5876DA7B008B402678D950656BFA5626BC05EAB8E9",
+  "exact_next_dependency": "ATTACH_ONLY_THE_RETAINED_D5_CURVATURE_AND_SIGNED_GREEN_STEP_MAP_OUTWARD_REMAINDERS_TO_THE_EXACT_CENTER_VECTOR_BOOTSTRAP",
+  "inputs": {
+    "artifacts/flagship_integration/BHSM_N12_GATE7_EXACT_SIGNED_FULL_TRANSVERSE_CURVATURE_ADJUDICATION.json": "C52E289A549626DCCE5D3DEBE58CE4542337EB6447777668E4303D182C6F6D9F",
+    "artifacts/flagship_integration/BHSM_N12_GATE7_EXACT_SIGNED_MIXED_FIELD_CURVATURE.json": "000DDB428248FB5150B8BABD2B848A8C575A9E8F798724D2EEFFAE78A00C70E2",
+    "artifacts/flagship_integration/BHSM_N12_GATE7_SIGNED_CAUSAL_VECTOR_BOOTSTRAP.json": "5F30F313A1B6207802822219FDBB3DB39D1ED7CB409169D1FE2C226ECD50CA70",
+    "artifacts/flagship_integration/BHSM_N12_GATE7_SIGNED_CAUSAL_VECTOR_BOOTSTRAP.npz": "4F27FEAB849F32995AC8253B63FDD4356ECEBCDDE0786420E283109DF084AFD2"
+  },
+  "status": "EXACT_ACTION_CENTER_CAUSAL_VECTOR_RADIUS_DERIVED_ON_SELECTED_HISTORY",
+  "summary": {
+    "exact_total_radius_owner_node": 21,
+    "maximum_exact_mixed_error_radius": 2.426868668634414e-16,
+    "maximum_exact_total_center_radius": 6.219861345110496e-13,
+    "maximum_exact_transverse_quadratic_error_radius": 7.019083167899228e-16,
+    "maximum_signed_center_vector_2_norm": 6.219535471038e-13,
+    "reference_halo_to_exact_center_radius_ratio": 21539.082158979847,
+    "reference_reconnaissance_nonlinear_halo": 1.3397010452979786e-08,
+    "terminal_exact_total_center_radius": 2.838328569496269e-13
+  },
+  "validation": {
+    "all_exact_center_radii_finite": true,
+    "exact_action_directional_mixed_and_transverse_center_curvatures_used": true,
+    "exact_center_vector_radius_fits_reference_reconnaissance_halo": true,
+    "no_JAX_curvature_used_as_center_authority": true,
+    "no_recurrence_reset_selector_scale_gate_or_chord_changed": true,
+    "signed_48_by_73_center_vector_reused_without_rescalarization": true,
+    "strictly_lower_causal_error_recursion_used": true
+  },
+  "validation_passed": true
+}

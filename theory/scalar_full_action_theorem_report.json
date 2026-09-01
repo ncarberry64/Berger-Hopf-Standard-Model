@@ -1,0 +1,422 @@
+{
+  "exactly_one_higgs_projection": true,
+  "limitations": [
+    "The v1.6 scaffold passes with zero current open scalar risk rows.",
+    "This wrapper does not upgrade scaffold screening to a complete action proof."
+  ],
+  "open_obligations": [
+    "derive all scalar/topographic screening channels from the complete action",
+    "prove global absence of unscreened direct light scalar matter couplings",
+    "connect scalar complement lifting to the full H_T theorem"
+  ],
+  "open_scalar_risk_count": 0,
+  "ordinary_fifth_force_mediators": 0,
+  "screening_report": {
+    "curvature_conditions": [
+      {
+        "assumptions": [
+          "The mode couples to topographic curvature/gradient sources rather than direct matter density.",
+          "The local flat/low-curvature limit is the relevant fifth-force comparison limit."
+        ],
+        "coupling_operator": "L_int ~ phi R_topo",
+        "curvature_source": "R_topo = K[rho_Phi] or equivalent topographic curvature scalar",
+        "flat_limit_suppresses": true,
+        "id": "CS1",
+        "limitations": [
+          "The full action must prove that direct matter density couplings are absent.",
+          "Curvature positivity/profile assumptions remain tied to the broader H_T/scalar scaffold."
+        ],
+        "observable_fifth_force_survives": false,
+        "status": "CURVATURE_SCREENING_DERIVED"
+      },
+      {
+        "assumptions": [
+          "No boundary defect produces a nonzero local topographic source."
+        ],
+        "coupling_operator": "local flat limit: R_topo -> 0",
+        "curvature_source": "topographic gradients vanish in the local flat comparison patch",
+        "flat_limit_suppresses": true,
+        "id": "CS2",
+        "limitations": [
+          "This is a sufficient screening criterion, not a proof of global scalar decoupling."
+        ],
+        "observable_fifth_force_survives": false,
+        "status": "CURVATURE_SCREENING_DERIVED"
+      }
+    ],
+    "derivative_conditions": [
+      {
+        "assumptions": [
+          "The scalar/topographic mode enters matter channels only through a conserved or slowly varying topographic current.",
+          "No unscreened non-derivative phi psi_bar psi term is present for this channel."
+        ],
+        "coupling_operator": "L_int ~ (1/M_*) partial_mu phi J^mu_topo",
+        "id": "DS1",
+        "limitations": [
+          "The exact suppression scale M_* is not fixed by this scaffold.",
+          "The full scalar/topographic action must prove absence of direct matter coupling globally."
+        ],
+        "mode_remains_virtual_or_screened": true,
+        "static_long_range_force_absent": true,
+        "status": "DERIVATIVE_SCREENING_DERIVED",
+        "suppression_scale": null
+      },
+      {
+        "assumptions": [
+          "The fifth-force test is the static, long-wavelength limit.",
+          "Boundary terms do not reintroduce an unscreened scalar charge."
+        ],
+        "coupling_operator": "static limit: partial_mu phi J^mu_topo -> 0 for zero momentum transfer",
+        "id": "DS2",
+        "limitations": [
+          "This is a sufficient screening condition, not a full theorem."
+        ],
+        "mode_remains_virtual_or_screened": true,
+        "static_long_range_force_absent": true,
+        "status": "DERIVATIVE_SCREENING_DERIVED",
+        "suppression_scale": null
+      }
+    ],
+    "fifth_force_exclusion": {
+      "excluded_modes": [
+        "higgs_projection",
+        "heavy_scalar_complement",
+        "ht_scalar_complement",
+        "derivative_topographic",
+        "curvature_topographic",
+        "virtual_topographic"
+      ],
+      "forbidden_unscreened_modes": [],
+      "limitations": [
+        "Fifth-force exclusion is conditional on the v1.6 screening scaffold.",
+        "The full scalar/topographic action proof remains open."
+      ],
+      "open_scalar_risks": [],
+      "rules": [
+        {
+          "assumptions": [
+            "Classification is inherited from the v1.5 scalar action channel.",
+            "No empirical residuals or flavor outputs are used."
+          ],
+          "channel": "HIGGS_PROJECTED_LIGHT_MODE",
+          "curvature_coupling_only": false,
+          "derivative_coupling_only": false,
+          "direct_matter_coupling": true,
+          "forbidden_unscreened_light_coupling": false,
+          "heavy_lifted": false,
+          "higgs_projected_sm_scalar": true,
+          "limitations": [
+            "Matter-coupling exclusion remains a scaffold until derived from the complete action."
+          ],
+          "mode_id": "higgs_projection",
+          "open_coupling_risk": false,
+          "ordinary_on_shell_fifth_force_mediator": false,
+          "status": "SM_HIGGS_ALLOWED",
+          "virtual_only": false
+        },
+        {
+          "assumptions": [
+            "Classification is inherited from the v1.5 scalar action channel.",
+            "No empirical residuals or flavor outputs are used."
+          ],
+          "channel": "HOPF_GAP_LIFTED",
+          "curvature_coupling_only": false,
+          "derivative_coupling_only": false,
+          "direct_matter_coupling": false,
+          "forbidden_unscreened_light_coupling": false,
+          "heavy_lifted": true,
+          "higgs_projected_sm_scalar": false,
+          "limitations": [
+            "Matter-coupling exclusion remains a scaffold until derived from the complete action."
+          ],
+          "mode_id": "heavy_scalar_complement",
+          "open_coupling_risk": false,
+          "ordinary_on_shell_fifth_force_mediator": false,
+          "status": "FIFTH_FORCE_EXCLUDED_BY_MASS_GAP",
+          "virtual_only": false
+        },
+        {
+          "assumptions": [
+            "Classification is inherited from the v1.5 scalar action channel.",
+            "No empirical residuals or flavor outputs are used."
+          ],
+          "channel": "HT_COMPLEMENT_LIFTED",
+          "curvature_coupling_only": false,
+          "derivative_coupling_only": false,
+          "direct_matter_coupling": false,
+          "forbidden_unscreened_light_coupling": false,
+          "heavy_lifted": true,
+          "higgs_projected_sm_scalar": false,
+          "limitations": [
+            "Matter-coupling exclusion remains a scaffold until derived from the complete action."
+          ],
+          "mode_id": "ht_scalar_complement",
+          "open_coupling_risk": false,
+          "ordinary_on_shell_fifth_force_mediator": false,
+          "status": "FIFTH_FORCE_EXCLUDED_BY_MASS_GAP",
+          "virtual_only": false
+        },
+        {
+          "assumptions": [
+            "Classification is inherited from the v1.5 scalar action channel.",
+            "No empirical residuals or flavor outputs are used."
+          ],
+          "channel": "DERIVATIVE_SCREENED",
+          "curvature_coupling_only": false,
+          "derivative_coupling_only": true,
+          "direct_matter_coupling": false,
+          "forbidden_unscreened_light_coupling": false,
+          "heavy_lifted": false,
+          "higgs_projected_sm_scalar": false,
+          "limitations": [
+            "Matter-coupling exclusion remains a scaffold until derived from the complete action."
+          ],
+          "mode_id": "derivative_topographic",
+          "open_coupling_risk": false,
+          "ordinary_on_shell_fifth_force_mediator": false,
+          "status": "DERIVATIVE_SCREENED_NOT_STATIC_MEDIATOR",
+          "virtual_only": false
+        },
+        {
+          "assumptions": [
+            "Classification is inherited from the v1.5 scalar action channel.",
+            "No empirical residuals or flavor outputs are used."
+          ],
+          "channel": "CURVATURE_SCREENED",
+          "curvature_coupling_only": true,
+          "derivative_coupling_only": false,
+          "direct_matter_coupling": false,
+          "forbidden_unscreened_light_coupling": false,
+          "heavy_lifted": false,
+          "higgs_projected_sm_scalar": false,
+          "limitations": [
+            "Matter-coupling exclusion remains a scaffold until derived from the complete action."
+          ],
+          "mode_id": "curvature_topographic",
+          "open_coupling_risk": false,
+          "ordinary_on_shell_fifth_force_mediator": false,
+          "status": "CURVATURE_SCREENED_FLAT_LIMIT_SUPPRESSED",
+          "virtual_only": false
+        },
+        {
+          "assumptions": [
+            "Classification is inherited from the v1.5 scalar action channel.",
+            "No empirical residuals or flavor outputs are used."
+          ],
+          "channel": "VIRTUAL_ONLY",
+          "curvature_coupling_only": false,
+          "derivative_coupling_only": false,
+          "direct_matter_coupling": false,
+          "forbidden_unscreened_light_coupling": false,
+          "heavy_lifted": false,
+          "higgs_projected_sm_scalar": false,
+          "limitations": [
+            "Matter-coupling exclusion remains a scaffold until derived from the complete action."
+          ],
+          "mode_id": "virtual_topographic",
+          "open_coupling_risk": false,
+          "ordinary_on_shell_fifth_force_mediator": false,
+          "status": "VIRTUAL_ONLY_NOT_ON_SHELL_MEDIATOR",
+          "virtual_only": true
+        }
+      ],
+      "status": "SCREENING_SCAFFOLD_PASSES",
+      "theorem_complete": false
+    },
+    "limitations": [
+      "This is not FULL_SCREENING_THEOREM_PROVEN.",
+      "Derivative and curvature screening are sufficient action-level scaffold conditions.",
+      "No frozen BHSM predictions, constants, tolerances, mode ledgers, or dressing rules are changed."
+    ],
+    "matter_coupling_audit": [
+      {
+        "assumptions": [
+          "Classification is inherited from the v1.5 scalar action channel.",
+          "No empirical residuals or flavor outputs are used."
+        ],
+        "channel": "HIGGS_PROJECTED_LIGHT_MODE",
+        "curvature_coupling_only": false,
+        "derivative_coupling_only": false,
+        "direct_matter_coupling": true,
+        "forbidden_unscreened_light_coupling": false,
+        "heavy_lifted": false,
+        "higgs_projected_sm_scalar": true,
+        "limitations": [
+          "Matter-coupling exclusion remains a scaffold until derived from the complete action."
+        ],
+        "mode_id": "higgs_projection",
+        "open_coupling_risk": false,
+        "ordinary_on_shell_fifth_force_mediator": false,
+        "status": "SM_HIGGS_ALLOWED",
+        "virtual_only": false
+      },
+      {
+        "assumptions": [
+          "Classification is inherited from the v1.5 scalar action channel.",
+          "No empirical residuals or flavor outputs are used."
+        ],
+        "channel": "HOPF_GAP_LIFTED",
+        "curvature_coupling_only": false,
+        "derivative_coupling_only": false,
+        "direct_matter_coupling": false,
+        "forbidden_unscreened_light_coupling": false,
+        "heavy_lifted": true,
+        "higgs_projected_sm_scalar": false,
+        "limitations": [
+          "Matter-coupling exclusion remains a scaffold until derived from the complete action."
+        ],
+        "mode_id": "heavy_scalar_complement",
+        "open_coupling_risk": false,
+        "ordinary_on_shell_fifth_force_mediator": false,
+        "status": "FIFTH_FORCE_EXCLUDED_BY_MASS_GAP",
+        "virtual_only": false
+      },
+      {
+        "assumptions": [
+          "Classification is inherited from the v1.5 scalar action channel.",
+          "No empirical residuals or flavor outputs are used."
+        ],
+        "channel": "HT_COMPLEMENT_LIFTED",
+        "curvature_coupling_only": false,
+        "derivative_coupling_only": false,
+        "direct_matter_coupling": false,
+        "forbidden_unscreened_light_coupling": false,
+        "heavy_lifted": true,
+        "higgs_projected_sm_scalar": false,
+        "limitations": [
+          "Matter-coupling exclusion remains a scaffold until derived from the complete action."
+        ],
+        "mode_id": "ht_scalar_complement",
+        "open_coupling_risk": false,
+        "ordinary_on_shell_fifth_force_mediator": false,
+        "status": "FIFTH_FORCE_EXCLUDED_BY_MASS_GAP",
+        "virtual_only": false
+      },
+      {
+        "assumptions": [
+          "Classification is inherited from the v1.5 scalar action channel.",
+          "No empirical residuals or flavor outputs are used."
+        ],
+        "channel": "DERIVATIVE_SCREENED",
+        "curvature_coupling_only": false,
+        "derivative_coupling_only": true,
+        "direct_matter_coupling": false,
+        "forbidden_unscreened_light_coupling": false,
+        "heavy_lifted": false,
+        "higgs_projected_sm_scalar": false,
+        "limitations": [
+          "Matter-coupling exclusion remains a scaffold until derived from the complete action."
+        ],
+        "mode_id": "derivative_topographic",
+        "open_coupling_risk": false,
+        "ordinary_on_shell_fifth_force_mediator": false,
+        "status": "DERIVATIVE_SCREENED_NOT_STATIC_MEDIATOR",
+        "virtual_only": false
+      },
+      {
+        "assumptions": [
+          "Classification is inherited from the v1.5 scalar action channel.",
+          "No empirical residuals or flavor outputs are used."
+        ],
+        "channel": "CURVATURE_SCREENED",
+        "curvature_coupling_only": true,
+        "derivative_coupling_only": false,
+        "direct_matter_coupling": false,
+        "forbidden_unscreened_light_coupling": false,
+        "heavy_lifted": false,
+        "higgs_projected_sm_scalar": false,
+        "limitations": [
+          "Matter-coupling exclusion remains a scaffold until derived from the complete action."
+        ],
+        "mode_id": "curvature_topographic",
+        "open_coupling_risk": false,
+        "ordinary_on_shell_fifth_force_mediator": false,
+        "status": "CURVATURE_SCREENED_FLAT_LIMIT_SUPPRESSED",
+        "virtual_only": false
+      },
+      {
+        "assumptions": [
+          "Classification is inherited from the v1.5 scalar action channel.",
+          "No empirical residuals or flavor outputs are used."
+        ],
+        "channel": "VIRTUAL_ONLY",
+        "curvature_coupling_only": false,
+        "derivative_coupling_only": false,
+        "direct_matter_coupling": false,
+        "forbidden_unscreened_light_coupling": false,
+        "heavy_lifted": false,
+        "higgs_projected_sm_scalar": false,
+        "limitations": [
+          "Matter-coupling exclusion remains a scaffold until derived from the complete action."
+        ],
+        "mode_id": "virtual_topographic",
+        "open_coupling_risk": false,
+        "ordinary_on_shell_fifth_force_mediator": false,
+        "status": "VIRTUAL_ONLY_NOT_ON_SHELL_MEDIATOR",
+        "virtual_only": true
+      }
+    ],
+    "screening_action_terms": [
+      {
+        "assumptions": [
+          "The scalar/topographic mode enters matter channels only through a conserved or slowly varying topographic current.",
+          "The fifth-force test is the static, long-wavelength limit."
+        ],
+        "channel": "DERIVATIVE_SCREENED",
+        "excludes_static_fifth_force": true,
+        "id": "ST1",
+        "limitations": [
+          "Suppression scale and global absence of direct couplings remain open."
+        ],
+        "operator": "L_int ~ (1/M_*) partial_mu phi J^mu_topo",
+        "status": "DERIVATIVE_SCREENING_DERIVED"
+      },
+      {
+        "assumptions": [
+          "The mode couples to topographic curvature/gradient sources rather than direct matter density.",
+          "No boundary defect produces a nonzero local topographic source."
+        ],
+        "channel": "CURVATURE_SCREENED",
+        "excludes_static_fifth_force": true,
+        "id": "ST2",
+        "limitations": [
+          "Curvature-source uniqueness must be proven in the full action."
+        ],
+        "operator": "L_int ~ phi R_topo",
+        "status": "CURVATURE_SCREENING_DERIVED"
+      },
+      {
+        "assumptions": [
+          "Virtual-only modes are not on-shell ordinary fifth-force mediators."
+        ],
+        "channel": "VIRTUAL_ONLY",
+        "excludes_static_fifth_force": true,
+        "id": "ST3",
+        "limitations": [
+          "Path-integral/off-shell proof remains scaffold-level."
+        ],
+        "operator": "off-shell scalar/topographic exchange",
+        "status": "FIFTH_FORCE_EXCLUDED_CONDITIONALLY"
+      },
+      {
+        "assumptions": [
+          "Direct unscreened light scalar matter coupling is forbidden in the SM-equivalent limit."
+        ],
+        "channel": "FORBIDDEN_UNSCREENED_LIGHT_SCALAR",
+        "excludes_static_fifth_force": false,
+        "id": "ST4",
+        "limitations": [
+          "If this term is present in the complete action, screening fails or remains open risk."
+        ],
+        "operator": "g_phi psi_bar psi phi_light",
+        "status": "FALSIFIER_RULE"
+      }
+    ],
+    "status": "SCREENING_SCAFFOLD_PASSES",
+    "theorem_complete": false,
+    "title": "BHSM v1.6 Scalar/Topographic Screening Proof Scaffold"
+  },
+  "status": "SCALAR_FULL_ACTION_PROOF_OPEN",
+  "theorem_complete": false,
+  "title": "BHSM Scalar/Topographic Full Action Theorem Attempt"
+}

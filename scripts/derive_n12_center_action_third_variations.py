@@ -24,7 +24,9 @@ from bhsm.interface.aether_sobolev_metric_soft_mode_lift_v16_07 import (
 
 ORDER = 12
 POINTS = 96
-COMPLEX_STEP = 1.0e-20
+COMPLEX_STEP = float(os.environ.get(
+    "BHSM_N12_THIRD_VARIATION_COMPLEX_STEP", "1e-20"
+))
 CHECKPOINT = Path(os.environ.get(
     "BHSM_N12_CHECKPOINT", ".tmp_direct_n12_corrected_branch_state.npz"
 ))

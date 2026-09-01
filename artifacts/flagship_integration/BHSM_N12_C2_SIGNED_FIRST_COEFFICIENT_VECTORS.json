@@ -1,0 +1,63 @@
+{
+  "FLAGSHIP_READY": false,
+  "FULL_BHSM_COMPLETE": false,
+  "adjudication": {
+    "Gate7": "OPEN",
+    "Gate8": "LOCKED",
+    "chord_03_authorized": false,
+    "complete_D2Delta_operator": "OPEN",
+    "signed_center_first_coefficient_vectors": "CERTIFIED",
+    "tube_mean_value_radii": "OPEN_ROW_BOOTSTRAP"
+  },
+  "artifact": "BHSM_N12_C2_SIGNED_FIRST_COEFFICIENT_VECTORS",
+  "center_norms": {
+    "b_first_interval_norm_upper": 6.284529154736189,
+    "c_first_interval_norm_upper": 2.2848329733902478e-06,
+    "lambda_first_interval_norm_upper": 6.165647281722456e-06
+  },
+  "classification": "OUTWARD_ROUNDED_POINT_INTERVAL_RETAINED_ACTION_TENSOR_WITH_SIGNED_VECTOR_ASSEMBLY_BEFORE_NORMS",
+  "cross_method_discrepancies": {
+    "authority": "THE_NEW_POINT_INTERVAL_IS_THE_SIGNED_CENTER_AUTHORITY;_OLDER_POINT_VECTORS_ARE_CROSSCHECKS_ONLY",
+    "older_binary64_moving_c_to_interval_midpoint_2_norm": 4.13406814654202e-09,
+    "older_complex_step_lambda_to_interval_midpoint_2_norm": 2.4311094160679577e-16
+  },
+  "data": "artifacts/flagship_integration/BHSM_N12_C2_SIGNED_FIRST_COEFFICIENT_VECTORS.npz",
+  "data_SHA256": "C23A735EE30042855AE56635C3AD110554410B9185649487C45BBAC6A49DA3FA",
+  "exact_next_dependency": "USE_THE_SIGNED_CENTER_INTERVALS_WITH_ROW_SELF_CONSISTENT_MEAN_VALUE_RADII_IN_THE_COMPLETE_D2DELTA_ROW_SWEEP",
+  "inputs": {
+    "artifacts/flagship_integration/BHSM_N12_C2_BORDERED_HARD_RESPONSE_MATRIX.json": "7D36311E1127291DDEF6F778E2F2C21E9F2B2544DBAF74BC743B8E47BC3814AB",
+    "artifacts/flagship_integration/BHSM_N12_C2_BORDERED_HARD_RESPONSE_MATRIX.npz": "BC1EEB01C2BFB1A358B7DB14906009DF05CEFAC713749395937F0E5DE0E5AB9E",
+    "artifacts/flagship_integration/BHSM_N12_C2_DIRECT_DDELTA_ROW_RECONNAISSANCE.json": "48109D006F8E92760BC45A170133AFE969C9C740FA3CE0FC4B5AE8A256367FA3",
+    "artifacts/flagship_integration/BHSM_N12_C2_DIRECT_DDELTA_ROW_RECONNAISSANCE.npz": "E5E82F0EC65D1A23ADC36E02BBA8E01BD6C2A50E898484D68C48E666023E2814",
+    "artifacts/flagship_integration/BHSM_N12_C2_EXACT_CENTER_FIXED_S_FIELD_MATRIX.json": "7962A9051821633517A47DB91EF73EAF2EAD0E5C15BD3E7F2EA707B6E0DC40CA",
+    "artifacts/flagship_integration/BHSM_N12_C2_EXACT_CENTER_FIXED_S_FIELD_MATRIX.npz": "163383CD903538866E579BD87366333B8DA04877EFA587F0F999DA00AC1FFDCD",
+    "scripts/certify_n12_c2_signed_first_coefficient_vectors.py": "9D059B77DBD065AB8B04C26482E02D64A769772019E532B0555A76EF8EDF0495",
+    "src/bhsm/interface/aether_retained_action_tensor_interval.py": "0CA4AD7209E7B8C98DBA580B7EA6E0A93953A8A8BF61E7DA00027418C2718C6B",
+    "theory/n12_c2_signed_first_coefficient_vectors.md": "E93922A6FC75E5CCE3541714E8639960649162AC6220FCED19582D4A3E209084"
+  },
+  "reference_node": 1214,
+  "row_86_intervals": {
+    "b_first": [
+      -0.7673819343691637,
+      -0.7673819343259963
+    ],
+    "c_first": [
+      -1.5164171346201214e-06,
+      -1.516417134583293e-06
+    ],
+    "lambda_first": [
+      4.108000543116053e-06,
+      4.108000543298579e-06
+    ]
+  },
+  "status": "C2_SIGNED_CENTER_Db_Dc_Dlambda_VECTORS_CERTIFIED",
+  "validation": {
+    "all_center_intervals_are_ordered": true,
+    "no_inverse_or_selected_line_resolve_is_formed": true,
+    "no_selector_recurrence_scale_fit_gate_or_chord_added": true,
+    "older_binary64_moving_c_cross_method_discrepancy_is_recorded": true,
+    "older_complex_step_lambda_cross_method_discrepancy_is_recorded": true,
+    "row_86_b_center_matches_independent_replay": true
+  },
+  "validation_passed": true
+}

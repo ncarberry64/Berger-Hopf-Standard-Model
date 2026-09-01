@@ -1,0 +1,122 @@
+{
+  "FLAGSHIP_READY": false,
+  "FULL_BHSM_COMPLETE": false,
+  "action_version": "BHSM-AE-2.0.0",
+  "artifact": "BHSM_N12_GATE7_AE2_FACTORIZED_SOURCE_MEASURE_REDUCTION",
+  "claim_boundary": {
+    "FLAGSHIP_READY": false,
+    "FULL_BHSM_COMPLETE": false,
+    "Gate7": "ACTIVE_NOT_CLOSED",
+    "Gate8": "LOCKED",
+    "abstract_factorized_transfer_to_source_measure_theorem": "CLOSED",
+    "actual_N12_infinite_end_threshold_normalization": "OPEN",
+    "angular_sum": "OPEN",
+    "chord_03_authorized": false,
+    "high_energy_integrability": "CLOSED_QUALITATIVELY",
+    "nonfermion_threshold": "CLOSED",
+    "zero_source_force": "OPEN"
+  },
+  "classification": "AT_EVERY_FACTORIZED_ZERO_RESONANCE_THE_FIXED_CHANNEL_TRANSFER_SYSTEM_IS_ANALYTIC_IN_lambda=k_squared_AND_Au_zero=0;_DIFFERENTIATING_THE_EXACT_TRANSFER_EQUATION_GIVES_Au_k=O(k_squared)_ON_COMPACT_SOURCE_SUPPORT,_SO_THE_FIRST_LOG_RADIUS_FORM_WEIGHT_IS_O(k_squared)_AND_THE_CUMULATIVE_ONE_DIMENSIONAL_SOURCE_MEASURE_IS_O(Lambda^(3/2))_WHEN_THE_SUM_OF_SQUARED_GENERALIZED_EIGENSTATE_NORMALIZATIONS_IS_UNIFORMLY_BOUNDED_NEAR_THRESHOLD;_FINITE_REGULAR_OR_CANONICAL_STOP_ENDS_REQUIRE_NO_CONTINUOUS_LAP",
+  "exact_crosscheck": {
+    "prior_scattering_witness": {
+      "cumulative_weight_over_Lambda_to_three_halves_limit": 2.1841933050173625,
+      "strict_zero_energy_wronskian_margin": 0.0,
+      "weight_over_momentum_squared_limit": 6.552579915052088,
+      "zero_energy_core_end_factor_image": 0.0,
+      "zero_energy_core_end_value": 0.22313016014842982,
+      "zero_energy_exterior_solution": "NONZERO_CONSTANT"
+    },
+    "transfer_derivative": {
+      "cumulative_measure_over_Lambda_to_three_halves_limit": 2.1841933050173625,
+      "first_form_weight_over_k_squared_limit": 6.552579915052088,
+      "threshold_delta_normalization_squared": 12.786849943920384,
+      "unnormalized_transfer_derivative_coefficient": 0.512446767091966
+    }
+  },
+  "exact_next_dependency": "CLASSIFY_EACH_REALIZED_MAXIMAL_FORWARD_FACTORIZED_CHANNEL_AS_FINITE_EVENT_OR_CANONICAL_STOP_VERSUS_INFINITE_REGULAR_END;_FOR_EACH_INFINITE_END_PROVE_ONLY_A_FINITE_UNIFORM_NEAR_THRESHOLD_GENERALIZED_EIGENSTATE_NORMALIZATION_SUM_ON_THE_RETAINED_COMPACT_SOURCE_SUPPORT,_THEN_INSERT_THE_EXPLICIT_TRANSFER_MAJORANT_INTO_THE_E1_DYADIC_CRITERION_AND_ASSEMBLE_THE_ANGULAR_SUM",
+  "frontier_sharpening": {
+    "actual_N12_status": "OPEN_BECAUSE_THE_REALIZED_MAXIMAL_FORWARD_FAR_END_CLASS_AND_ITS_THRESHOLD_NORMALIZATION_HAVE_NOT_BEEN_CERTIFIED",
+    "new_weakest_actual_input": "FOR_EACH_INFINITE_REGULAR_FACTORIZED_CHANNEL_PROVE_A_FINITE_UNIFORM_NEAR_THRESHOLD_SUM_OF_SQUARED_GENERALIZED_EIGENSTATE_NORMALIZATIONS_ON_THE_COMPACT_SOURCE_SUPPORT;_FINITE_EVENT_OR_CANONICAL_STOP_CHANNELS_ARE_ALREADY_IN_THE_COMPACT_RESOLVENT_BRANCH",
+    "retired_as_required": [
+      "STRICT_ZERO_WRONSKIAN",
+      "FULL_OPERATOR_NORM_LIMITING_ABSORPTION",
+      "GENERIC_OPERATOR_HISTORY_TUBE"
+    ]
+  },
+  "inputs": {
+    "artifacts/flagship_integration/BHSM_N12_FORWARD_E1_HIGH_ENERGY_TRACE_NORM.json": "B3D4EF461C0E8A941F532A90E48CD1F4BA9F5627212FE7DC78CB35C93C7DE0F7",
+    "artifacts/flagship_integration/BHSM_N12_FORWARD_E1_SOURCE_MEASURE_CRITERION.json": "E6976D1A49B536044FC2B7A1B25DB3B422F2ED8A9DEBF05DBFDEDD2544A0D9D8",
+    "artifacts/flagship_integration/BHSM_N12_FORWARD_FIXED_CHANNEL_TRANSFER.json": "F83BE1866D44FE0D0F273A2B73AAEF13B272BE6B1174B3644E37E8A8AE91C786",
+    "artifacts/flagship_integration/BHSM_N12_GATE7_AE2_FACTORIZED_THRESHOLD_RECLASSIFICATION.json": "DBDFBF1A3D86BE5E2F93B126E92EF1BA0023D3771E6DCC5824EE0634A38546E1",
+    "artifacts/flagship_integration/BHSM_N12_GATE7_AE2_THRESHOLD_SUPERSESSION.json": "1C30C3003E74B48F873CCCBE3F54AAC9780D26FC1408A74C12D933A253FD2613",
+    "scripts/derive_n12_gate7_ae2_factorized_source_measure_reduction.py": "1F01602035A7AC123552C5EF96801060905F7EC286D789B179FD80F72247E774",
+    "src/bhsm/interface/action_extension_ae2_factorized_source_measure.py": "0048902F7B554057BCD7FB6613F650EEAB1564C5BB30B2D217DDE987899FE5B1"
+  },
+  "status": "FACTORIZED_E1_THRESHOLD_REDUCED_TO_ONE_SOURCE_CONTRACTED_NORMALIZATION_SCALAR_PER_INFINITE_CHANNEL",
+  "theorem": {
+    "endpoint_dichotomy": {
+      "finite": {
+        "finite_regular_or_canonical_stop": true,
+        "full_operator_norm_limiting_absorption_required": false,
+        "infinite_end_threshold_normalization_bound_available": false,
+        "remaining_input": null,
+        "status": "COMPACT_RESOLVENT_ZERO_ATOM_HAS_EXACTLY_ZERO_FIRST_FORM_WEIGHT",
+        "strict_gap_required": false
+      },
+      "infinite_open": {
+        "finite_regular_or_canonical_stop": false,
+        "full_operator_norm_limiting_absorption_required": false,
+        "infinite_end_threshold_normalization_bound_available": false,
+        "remaining_input": "FINITE_UNIFORM_NEAR_THRESHOLD_SUM_OF_SQUARED_GENERALIZED_EIGENSTATE_NORMALIZATIONS",
+        "status": "OPEN_ONLY_THRESHOLD_DELTA_NORMALIZATION_SCALAR_BOUND",
+        "strict_gap_required": false
+      },
+      "infinite_with_normalization": {
+        "finite_regular_or_canonical_stop": false,
+        "full_operator_norm_limiting_absorption_required": false,
+        "infinite_end_threshold_normalization_bound_available": true,
+        "remaining_input": null,
+        "status": "RESONANCE_COMPATIBLE_SOURCE_MEASURE_SUPERLINEAR",
+        "strict_gap_required": false
+      }
+    },
+    "first_vertex": "D_h_q[u_k]=2Re_integral_(A*u_k)^*(-h*s*u_k)",
+    "majorant": {
+      "cumulative_measure_over_Lambda_to_three_halves_upper": 3868.937584086336,
+      "factor_image_order_in_lambda": 1.0,
+      "first_form_weight_order_in_k": 2.0,
+      "first_form_weight_over_k_squared_upper": 11606.812752259008,
+      "log_radius_direction_abs_upper": 1.0,
+      "source_measure_excess_exponent": 0.5,
+      "source_support_length": 0.75,
+      "spectral_value_variable": "lambda=k^2",
+      "superpotential_abs_upper": 2.0,
+      "transfer_exponential_majorant": 403.4287934927351,
+      "uniform_near_threshold_delta_normalization_squared_sum_upper": 12.786849943920384
+    },
+    "measure_conclusion": "limsup_Lambda_to_0_abs(nu_h)([0,Lambda])/Lambda^(3/2)<=C_h/3",
+    "resonant_solution": "u_0(t)=exp(-S(t)),_v_0(t)=0,_S(t)=integral_0^t_s",
+    "scope": "ONE_FIXED_FACTORIZED_CHANNEL_AND_ONE_COMPACTLY_SUPPORTED_RETAINED_LOG_RADIUS_DIRECTION;_SUM_CHANNELWISE_WITH_RETAINED_ABSOLUTE_GRADING_WEIGHTS",
+    "spectral_derivative": "partial_lambda_v_at_0=-exp(S(t))*integral_0^t_exp(-2*S(r))dr",
+    "system": "u_prime=-s*u+v,_v_prime=s*v-lambda*u,_lambda=k_squared",
+    "weight_conclusion": "limsup_k_to_0_abs(D_h_q[psi_k])/k_squared<=C_h"
+  },
+  "validation": {
+    "FULL_BHSM_COMPLETE_false": true,
+    "actual_N12_normalization_not_fabricated": true,
+    "actual_factorized_measure_was_open": true,
+    "all_inputs_validated": true,
+    "exact_transfer_derivative_matches_prior_witness": true,
+    "explicit_majorant_dominates_exact_witness": true,
+    "finite_end_needs_no_continuous_LAP": true,
+    "fixed_channel_factor_is_retained": true,
+    "full_operator_LAP_not_demanded": true,
+    "high_energy_integrability_already_derived": true,
+    "infinite_end_only_needs_threshold_normalization_scalar": true,
+    "no_new_selector_scale_endpoint_prediction_or_action_term": true,
+    "normalization_scalar_closes_the_abstract_infinite_end_theorem": true,
+    "prior_strict_gap_is_not_required": true,
+    "source_measure_exponent_meets_E1_criterion": true
+  },
+  "validation_passed": true
+}

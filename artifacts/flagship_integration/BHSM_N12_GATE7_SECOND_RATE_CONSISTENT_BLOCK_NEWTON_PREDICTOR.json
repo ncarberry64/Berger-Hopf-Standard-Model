@@ -1,0 +1,50 @@
+{
+  "FULL_BHSM_COMPLETE": false,
+  "artifact": "BHSM_N12_GATE7_SECOND_RATE_CONSISTENT_BLOCK_NEWTON_PREDICTOR",
+  "authority": "NUMERICAL_LINEARIZED_HERMITE_SIMPSON_PREDICTOR_NOT_NONLINEAR_OR_INTERVAL_AUTHORITY",
+  "claim_boundary": {
+    "FULL_BHSM_COMPLETE": false,
+    "Gate7": "ACTIVE_ACTION_OWNED_OPERATOR_ORACLE",
+    "continuous_action_constrained_center": "OPEN",
+    "nonlinear_Hermite_Simpson_center": "OPEN_EXACT_REPLAY"
+  },
+  "data": "artifacts/flagship_integration/BHSM_N12_GATE7_SECOND_RATE_CONSISTENT_BLOCK_NEWTON_PREDICTOR.npz",
+  "data_SHA256": "1F9DE33A6DCF0F0349E47ADCAD6C496E5C750331B3D5D17C0F4B51B8A6785968",
+  "exact_next_dependency": "APPLY_THE_SECOND_CORRECTION,_PROJECT_AND_RECENTER_EACH_ENDPOINT,_REEVALUATE_EACH_RATE_AT_ITS_SAME_DESCRIPTOR,_AND_REPLAY_ALL_MIDPOINTS",
+  "inputs": {
+    "artifacts/flagship_integration/BHSM_N12_GATE7_RATE_CONSISTENT_NEWTON_MIDPOINT_REPLAY.json": "69ED710419EF50031AACAAEAED8979AE52128AE3534F14FA58E3B5729B217D3C",
+    "artifacts/flagship_integration/BHSM_N12_GATE7_RATE_CONSISTENT_NEWTON_MIDPOINT_REPLAY.npz": "9A40BF782712D0416F350CC2CAAD287B43BE70C39561C5663BAC5861D8C4108E",
+    "artifacts/flagship_integration/BHSM_N12_GATE7_SECOND_RATE_CONSISTENT_CENTER_GRAPH_JACOBIAN.json": "2D17890DC71A8832F443ACCF56B208EEF2EA14A0F8936D87177C307BDB8CC8F8",
+    "artifacts/flagship_integration/BHSM_N12_GATE7_SECOND_RATE_CONSISTENT_CENTER_GRAPH_JACOBIAN.npz": "6F25C99B3DDF360537A2A0703ABD3764F7F00534A9150A7CDD4FA54999C34ED8",
+    "artifacts/flagship_integration/BHSM_N12_GATE7_SECOND_RATE_CONSISTENT_MIDPOINT_GRAPH_JACOBIAN.json": "FC158841F3BF3C0A11FA6AF45E3419686420EBB64522D2500CF72918A9FF3E0A",
+    "artifacts/flagship_integration/BHSM_N12_GATE7_SECOND_RATE_CONSISTENT_MIDPOINT_GRAPH_JACOBIAN.npz": "ACE415FA8EE5D1F9DDA6C49655AA7AB14F6558A931A4CC603311C698642546F1",
+    "scripts/materialize_n12_gate7_second_rate_consistent_block_newton_predictor.py": "BECB02A97155644EA82653DF1AED0834FD51E9E1E65BC1A872F365F5298A3E04",
+    "theory/n12_gate7_rate_consistent_block_newton_predictor.md": "D11A77D50515A0796C760C7C38BC229C43DD4438E412CD34316D5EAB551DB539"
+  },
+  "mesh": {
+    "blocks": 370,
+    "fixed_reset_endpoint": true,
+    "state_dimension": 98
+  },
+  "status": "SECOND_RATE_CONSISTENT_AMBIENT_BLOCK_NEWTON_PREDICTOR_SOLVED",
+  "summary": {
+    "maximum_endpoint_correction_action_2_norm": 8.067815917096086e-06,
+    "maximum_endpoint_correction_owner_node": 191,
+    "maximum_predicted_linearized_residual_2_norm": 4.951757911182844e-21,
+    "maximum_right_block_condition_2": 6915.409998738948,
+    "maximum_right_block_condition_owner_interval": 139,
+    "terminal_endpoint_correction_action_2_norm": 2.8529652152204676e-06
+  },
+  "validation": {
+    "all_370_left_and_right_blocks_materialized": true,
+    "all_371_endpoint_corrections_materialized": true,
+    "all_quantities_finite": true,
+    "all_right_blocks_are_numerically_invertible": true,
+    "continuous_interval_shadowing_not_claimed": true,
+    "linearized_block_residual_closes": true,
+    "no_action_source_selector_scale_gate_or_chord_changed": true,
+    "nonlinear_exact_field_replay_not_claimed": true,
+    "reset_endpoint_correction_is_zero": true
+  },
+  "validation_passed": true
+}

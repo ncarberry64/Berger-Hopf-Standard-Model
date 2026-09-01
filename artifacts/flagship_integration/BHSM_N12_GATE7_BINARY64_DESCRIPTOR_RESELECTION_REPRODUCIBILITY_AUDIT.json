@@ -1,0 +1,70 @@
+{
+  "FULL_BHSM_COMPLETE": false,
+  "adjudication": {
+    "Newton_descriptor_coordinate": "MUST_BE_CARRIED_AS_AN_INDEPENDENT_CORRELATED_VARIABLE_OR_OUTWARD_HIGH_PRECISION_OBJECT",
+    "binary64_selected_eigenvalue": "DIAGNOSTIC_ONLY"
+  },
+  "artifact": "BHSM_N12_GATE7_BINARY64_DESCRIPTOR_RESELECTION_REPRODUCIBILITY_AUDIT",
+  "authority": "DIRECT_REPLAY_DIAGNOSTIC_NOT_INTERVAL_AUTHORITY",
+  "inputs": {
+    "artifacts/flagship_integration/BHSM_N12_GATE7_CORRELATED_DESCRIPTOR_NEWTON_ENDPOINT_CANDIDATE.json": "58D1270EE0F1CC3DF5253894D296D2A13C677F318793D6BA90C3D77A12E85DA9",
+    "artifacts/flagship_integration/BHSM_N12_GATE7_CORRELATED_DESCRIPTOR_NEWTON_ENDPOINT_CANDIDATE.npz": "C751AAAB1334CD0F1DADF5BB4549D06CED0E42627CC94C104089872C9756DE66",
+    "artifacts/flagship_integration/BHSM_N12_GATE7_SECOND_RATE_CONSISTENT_NEWTON_ENDPOINT_CANDIDATE.json": "D59EB59A599CDD274F96932213CF5FC91B8D78774969DA5B98756CC7292AC9B4",
+    "artifacts/flagship_integration/BHSM_N12_GATE7_SECOND_RATE_CONSISTENT_NEWTON_ENDPOINT_CANDIDATE.npz": "07B0878F86DC5311F4069BDDECC1B7AB9BFC124E181AD15E272AD01BA7AE2C02",
+    "scripts/audit_n12_gate7_binary64_descriptor_reselection_reproducibility.py": "934FDFCBCA36AAD7BB8DB42EC39F2F8EA17EBA1CEEF2B04793CABE8F57C7CE4A"
+  },
+  "rows": [
+    {
+      "node": 123,
+      "normalized_rate_2_norm_difference": 6.153628305085485e-06,
+      "recomputed_selected_branch": 24,
+      "recomputed_selected_gap": 2.3026440519389724e-07,
+      "selected_eigenvalue_absolute_difference": 1.2223675212758834e-13,
+      "state_absolute_maximum_difference": 1.3773704399255848e-15
+    },
+    {
+      "node": 124,
+      "normalized_rate_2_norm_difference": 8.854393834328388e-07,
+      "recomputed_selected_branch": 24,
+      "recomputed_selected_gap": 2.299639203264167e-07,
+      "selected_eigenvalue_absolute_difference": 1.9618865020031203e-14,
+      "state_absolute_maximum_difference": 5.473052566706826e-16
+    },
+    {
+      "node": 325,
+      "normalized_rate_2_norm_difference": 3.149430755818287e-06,
+      "recomputed_selected_branch": 24,
+      "recomputed_selected_gap": 1.7978655754215387e-07,
+      "selected_eigenvalue_absolute_difference": 8.292392873644759e-14,
+      "state_absolute_maximum_difference": 1.949829186997931e-15
+    },
+    {
+      "node": 326,
+      "normalized_rate_2_norm_difference": 3.829252303001983e-07,
+      "recomputed_selected_branch": 24,
+      "recomputed_selected_gap": 1.7963922521745758e-07,
+      "selected_eigenvalue_absolute_difference": 1.1508583802828012e-14,
+      "state_absolute_maximum_difference": 1.734723475976807e-15
+    }
+  ],
+  "sampled_nodes": [
+    123,
+    124,
+    325,
+    326
+  ],
+  "status": "BINARY64_SELECTED_DESCRIPTOR_RESELECTION_REJECTED_AS_NEWTON_MAP_AUTHORITY",
+  "summary": {
+    "maximum_normalized_rate_2_norm_difference": 6.153628305085485e-06,
+    "maximum_selected_eigenvalue_absolute_difference": 1.2223675212758834e-13,
+    "maximum_state_absolute_difference": 1.949829186997931e-15
+  },
+  "validation": {
+    "near_zero_selected_value_is_not_reproducible_at_its_signal_scale": true,
+    "normalized_reselected_rate_is_not_reproducible_at_Newton_residual_scale": true,
+    "same_mathematical_endpoint_reconstructions_agree_near_binary64_roundoff": true,
+    "selected_branch_remains_24": true,
+    "selected_line_remains_simple_numerically": true
+  },
+  "validation_passed": true
+}

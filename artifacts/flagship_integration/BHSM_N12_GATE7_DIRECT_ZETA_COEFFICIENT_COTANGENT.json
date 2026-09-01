@@ -1,0 +1,98 @@
+{
+  "C2_center_witness": {
+    "Gamma_SM_zeta": -2.4811999826713056e-27,
+    "common_scale_residual": 0.0,
+    "duration_component_maximum": -1.9767148688151004,
+    "duration_component_minimum": -1.9767148688151004,
+    "integral_d_tau_over_R4": 1.2616271098328674e-27,
+    "node_component_maximum": 2.6204991132141127e-28,
+    "node_component_minimum": 7.08921647437141e-49,
+    "role": "REPRODUCIBILITY_CENTER_NOT_A_SELECTED_PHYSICAL_HISTORY"
+  },
+  "C2_family_enclosure": {
+    "all_duration_components_strictly_negative": true,
+    "all_node_components_strictly_positive": true,
+    "duration_component_maximum_upper": -1.976714868604558,
+    "duration_component_minimum_lower": -1.9767148690256426,
+    "log_R4_interval": [
+      -0.005096247479711742,
+      -0.005096247266689165
+    ],
+    "node_radius_component_maximum_upper": 2.8441508994035186e-28,
+    "node_radius_component_minimum_lower": 4.032107433069075e-49
+  },
+  "FLAGSHIP_READY": false,
+  "FULL_BHSM_COMPLETE": false,
+  "artifact": "BHSM_N12_GATE7_DIRECT_ZETA_COEFFICIENT_COTANGENT",
+  "claim_boundary": {
+    "FULL_BHSM_COMPLETE": false,
+    "Gate7": "OPEN",
+    "Gate8": "LOCKED",
+    "chord_03_authorized": false,
+    "direct_zeta_finite_core_coefficient_cotangent": "CERTIFIED",
+    "full_heat_minus_zeta_signed_reverse_value": "OPEN",
+    "maximal_projected_tail": "OPEN"
+  },
+  "classification": "THE_RETAINED_MINUS_59_OVER_30_INTEGRAL_exp_MINUS_x_d_tau_TERM_HAS_AN_EXACT_LINEAR_ELEMENT_VALUE_AND_SIGNED_NODE_RADIUS_PLUS_MOVING_DURATION_COTANGENT;_THE_COMPLETE_C2_FAMILY_IS_ENCLOSED_COMPONENTWISE_WITHOUT_SELECTING_THE_PROOF_CENTER_OR_ADDING_A_SOURCE",
+  "data": "artifacts/flagship_integration/BHSM_N12_GATE7_DIRECT_ZETA_COEFFICIENT_COTANGENT.npz",
+  "data_SHA256": "6551E8624FA9919606FCF32A347266A3F5DE7B373213986BFCED8B56FDDC545E",
+  "exact_next_dependency": "FEED_THE_EXPLICIT_ZETA_NODE_AND_DURATION_COTANGENTS_AND_THE_SEPARATELY_SUPPRESSED_HEAT_SEED_INTO_A_VALIDATED_PARAMETRIC_OR_INTERVAL_STATE_TRANSITION_ADJOINT,_COMPOSE_WITH_THE_UPSTREAM_C1_COVECTOR,_THEN_TEST_THE_MAXIMAL_PROJECTED_CAUCHY_TAIL",
+  "functional": {
+    "C2_duration_sign": "D_h_Gamma_SM_zeta<0_SO_THE_ZETA_PART_OF_q_rep_IS_POSITIVE",
+    "C2_node_radius_sign": "D_x_Gamma_SM_zeta>0_SO_THE_ZETA_PART_OF_q_rep_IS_NEGATIVE",
+    "Gamma_SM_zeta": "-(59/30)*integral_exp(-x(tau))*d_tau",
+    "common_scale": "sum_j_D_xj_Gamma+sum_e_h_e*D_he_Gamma=0",
+    "element_integral": "h_j*integral_0^1_exp(-(1-s)*x_j-s*x_(j+1))*ds",
+    "replacement": "q_rep=q_heat-q_zeta"
+  },
+  "incoming_formation_enclosure": {
+    "duration_interval": [
+      2.1482545066231233e-46,
+      1.8602143121971425e-45
+    ],
+    "integral_d_tau_over_R4_interval": [
+      2.1592304874092646e-46,
+      1.8697186220873545e-45
+    ],
+    "log_R4_interval": [
+      -0.005096247373848582,
+      -0.005096247372551606
+    ],
+    "routing": "UPSTREAM_C1_HISTORY_ADJOINT_NOT_AN_E1_C2_SEAM_SOURCE"
+  },
+  "inputs": {
+    "artifacts/flagship_integration/BHSM_N12_C2_1222_SEGMENT_FINITE_CORE_DESCRIPTOR.json": "0CDC9B9EF09AFA70AA7F5E225F6D49A4FCD27CADAD5CDFA4A062FBE04B960445",
+    "artifacts/flagship_integration/BHSM_N12_C2_1222_SEGMENT_FINITE_CORE_DESCRIPTOR.npz": "90E0F02751031F879C82C4EA8ED3ACEBBF278900ED4FBD47C5612CD13F91AF11",
+    "artifacts/flagship_integration/BHSM_N12_GATE7_AE2_ONE_SEAM_DIRECT_DESCRIPTOR.json": "5EFC77311E78C2426C87600EF03EA19B43B18CBFE1CF693ACF07C3D9535C04BF",
+    "artifacts/flagship_integration/BHSM_N12_GATE7_COMMON_SCALE_HEAT_ZETA_WARD.json": "A50AE728D4BF59B56134C85E9F19261BFBC44238D3311209837691A38F25058B",
+    "artifacts/flagship_integration/BHSM_N12_GATE7_ONE_SEAM_FULL_GRADED_FINITE_CORE_HEAT_BOUND.json": "D1E6A58D0586A8995288FF4139C9F24DBF2411532EEA9E2D833B8AA5B60149B3",
+    "artifacts/flagship_integration/BHSM_N12_INCOMING_FINITE_AMPLITUDE_COEFFICIENT_ENCLOSURE.json": "40C22A60A17597900D972D02F107B12E621EED1020A839E71D5D2B97B629D194",
+    "src/bhsm/interface/forward_finite_endpoint_heat_force.py": "51459519C2D484F088895182BC8347FE0EA5BC70A4D7E2B07F73D15FE63FA356",
+    "theory/n12_gate7_direct_zeta_coefficient_cotangent.md": "A789E9B8462724F26A92F9BF5FC0FC1648D7B0E9DC504794E915AA42D0C4E052"
+  },
+  "matching_audit": {
+    "C2_zeta_reverse_source": "READY_FOR_CERTIFIED_INTERVAL_ACTIONS",
+    "complete_signed_reverse_value": "OPEN_TRANSITION_ADJOINT_NOT_NUMERICALLY_REALIZED",
+    "direct_zeta_coefficient_cotangent": "CLOSED_COMPONENTWISE_ON_FINITE_CORE_FAMILY",
+    "heat_coefficient_contraction": "OPEN_BUT_SEED_UNIFORMLY_SUPPRESSED",
+    "incoming_zeta_reverse_source": "CLOSED_AGGREGATE_INTERVAL_UPSTREAM_ADJOINT_VALUE_OPEN",
+    "maximal_projected_tail": "OPEN"
+  },
+  "status": "DIRECT_ZETA_COEFFICIENT_COTANGENT_CLOSED_ON_FINITE_CORE_FAMILY",
+  "validation": {
+    "all_interval_radii_are_finite_nonnegative": true,
+    "common_scale_cancellation_replays": true,
+    "direct_one_seam_domain_consumed": true,
+    "every_center_component_is_enclosed": true,
+    "every_center_duration_component_is_negative": true,
+    "every_center_node_radius_component_is_positive": true,
+    "exactly_1223_node_and_1222_duration_components": true,
+    "formation_zeta_integral_is_strictly_positive": true,
+    "full_heat_seed_is_separate_and_suppressed_not_zeroed": true,
+    "moving_duration_Ward_identity_preserved": true,
+    "no_external_or_seam_source_added": true,
+    "no_selector_scale_recurrence_gate_or_chord_added": true,
+    "proof_center_not_promoted_to_physical_history": true
+  },
+  "validation_passed": true
+}

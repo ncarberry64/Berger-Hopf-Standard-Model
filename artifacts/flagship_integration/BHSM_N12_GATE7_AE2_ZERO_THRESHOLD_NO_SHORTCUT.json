@@ -1,0 +1,114 @@
+{
+  "FLAGSHIP_READY": false,
+  "FULL_BHSM_COMPLETE": false,
+  "N12_two_chord_application": {
+    "constant_channel_witness": {
+      "birth_factorized_conormal": 0.0,
+      "factorized_form_energy": 0.0,
+      "initial_trace": {
+        "imag": 0.0,
+        "real": 1.0
+      },
+      "terminal_inward_factorized_graph": 0.0,
+      "terminal_trace": {
+        "imag": 0.0,
+        "real": 0.999999965491886
+      },
+      "zero_energy_weyl_value": 0.0
+    },
+    "piecewise_channel_witness": {
+      "birth_factorized_conormal": 0.0,
+      "factorized_form_energy": 0.0,
+      "maximum_transport_residual": 0.0,
+      "terminal_inward_factorized_graph": 0.0,
+      "values": [
+        {
+          "imag": 0.25,
+          "real": 1.0
+        },
+        {
+          "imag": 0.249999997124324,
+          "real": 0.999999988497295
+        },
+        {
+          "imag": 0.249999999137297,
+          "real": 0.999999996549188
+        },
+        {
+          "imag": 0.249999998562162,
+          "real": 0.999999994248647
+        }
+      ]
+    },
+    "proper_duration_lower": 2.2469219e-08,
+    "representative_absolute_superpotential_upper": 1.535794995360795,
+    "two_sided_AE2_witness": {
+      "child_factorized_form_energy": 0.0,
+      "event_factorized_form_energy": 0.0,
+      "strict_positive_margin_from_local_collars": false,
+      "trace_graph_residual": 0.0,
+      "two_sided_zero_energy_wronskian": 0.0,
+      "unitarity_residual": 0.0
+    }
+  },
+  "action_version": "BHSM-AE-2.0.0",
+  "artifact": "BHSM_N12_GATE7_AE2_ZERO_THRESHOLD_NO_SHORTCUT",
+  "claim_boundary": {
+    "AE2_action_invalidated": false,
+    "FLAGSHIP_READY": false,
+    "FULL_BHSM_COMPLETE": false,
+    "Gate7": "ACTIVE_NOT_CLOSED",
+    "Gate8": "LOCKED",
+    "chord_03_authorized": false,
+    "frozen_predictions_changed": false,
+    "local_collars_suffice_for_strict_margin": false,
+    "physical_maximal_exterior_has_zero_mode": "NOT_CLAIMED",
+    "strict_margin_impossible_for_all_realizations": "NOT_CLAIMED",
+    "zero_source_force_evaluated": false
+  },
+  "classification": "AE2_REMOVES_THE_RELATIVE_CAYLEY_DOMAIN_AMBIGUITY_BUT_THE_RETAINED_PRODUCT_DIRAC_FORM_REMAINS_A_lambda_STAR_A_lambda;_ON_EVERY_POSITIVE_DURATION_COLLAR_THE_EXACT_TRANSPORT_A_lambda_u_EQUALS_ZERO_HAS_ARBITRARY_NONZERO_BIRTH_TRACE_AND_ZERO_FACTORIZED_CONORMAL,_SO_SPATIAL_EIGENVALUE_POSITIVITY_AND_TWO_CHORD_DURATION_ALONE_CANNOT_PROVE_A_STRICT_ZERO_ENERGY_TWO_SIDED_WRONSKIAN_MARGIN",
+  "exact_next_dependency": "REALIZE_OR_RIGOROUSLY_ENCLOSE_THE_AE2_ACTION_OWNED_MAXIMAL_EVENT_AND_CHILD_CALDERON_MAPS_M_event(z)_AND_M_child(z)_WITH_THEIR_FIRST_AND_SECOND_GEOMETRY_VARIATIONS_ON_A_NONEMPTY_NATIVE_RESOLVENT_REGION;_AT_ZERO_ENERGY_PROVE_THE_STRICT_TWO_SIDED_WRONSKIAN_MARGIN_FROM_THAT_GLOBAL_EXTERIOR_DATA,_NOT_FROM_THE_LOCAL_COLLARS,_BEFORE_CLAIMING_THE_CONTINUOUS_LOW_ENERGY_SOURCE_MEASURE_OR_ZERO_SOURCE_FORCE",
+  "inputs": {
+    "artifacts/action_extension/BHSM_ACTION_AE2_GLOBAL_SPIN_RESET_ACTION.json": "4C756145A9E303F6E4F7F9536CF5639957D010C1A97AF6BE9299830C549B82DC",
+    "artifacts/flagship_integration/BHSM_N12_FORWARD_BIRTH_THRESHOLD_MARGIN_AUDIT.json": "2E6BAD1E680B82B57AC05DB870641C67D5951187956588CCA02447886C1746DB",
+    "artifacts/flagship_integration/BHSM_N12_FORWARD_PROPER_TIME_FORM_OWNERSHIP.json": "C56D4B49F58DF4FF58D6725899261B5D08C5E38F8860B0C74D2725DC920D2BB4",
+    "artifacts/flagship_integration/BHSM_N12_FORWARD_TWO_CHORD_PRODUCT_DIRAC_WEYL_ENCLOSURES.json": "6733FF7C5246CE5F47F4D48E76B43CB5E4FBBF84C58865CCDB7FD0831282EF2A",
+    "artifacts/flagship_integration/BHSM_N12_GATE7_AE2_GLOBAL_SPIN_MATTER_DOMAIN.json": "5697192CCFBC6814B9EEAF5E5A01DD89BD4A70E287B5DFE171F0BBA132E15CFC",
+    "src/bhsm/interface/action_extension_ae2_zero_threshold.py": "01B7F1CC2394A828A1AF33FB5364172EDD96E4C137818F4DF207B63A3F232EC9"
+  },
+  "provenance_adjudication": {
+    "maximal_exterior_Calderon_value_and_geometry_jets": "OPEN",
+    "negative_resolvent_product_Weyl_bounds": "CERTIFIED_BROAD",
+    "positive_two_chord_duration": "CERTIFIED",
+    "relative_terminal_phase_eliminated": "ACTION_VERSION_OWNED",
+    "strict_zero_energy_two_sided_margin": "NOT_DERIVED",
+    "well_defined_AE2_reset_and_matter_domain": "ACTION_VERSION_OWNED"
+  },
+  "status": "AE2_DOMAIN_FIXED_BUT_LOCAL_ZERO_THRESHOLD_MARGIN_NOT_FORCED",
+  "theorem": {
+    "birth_conormal": "M_local(0)=-A_s*u(0)/u(0)=0",
+    "channel_factor": "A_s=d_tau+s(tau)",
+    "consequence": "NO_STRICT_POSITIVE_FUTURE_INDEPENDENT_ZERO_THRESHOLD_BOUND_FOLLOWS_FROM_THE_CERTIFIED_COLLARS",
+    "identity": "A_s*u=0_AND_q_0[u]=norm(A_s*u)^2=0",
+    "negative_resolvent_distinction": "AT_z=-kappa_squared<0_THE_FORM_ADDS_kappa_squared*norm(u)^2_AND_COERCIVITY_RETURNS;_THAT_CERTIFICATE_CANNOT_BE_SET_TO_z=0",
+    "terminal_inward_graph": "-A_s*u(T)/u(T)=0_IS_NONNEGATIVE",
+    "two_sided_AE2_graph": "g_child=U_R*g_event_AND_M_event_local(0)+U_R_DAGGER*M_child_local(0)*U_R=0",
+    "zero_transport": "u(tau)=exp(-integral_0^tau_s(r)dr)*g"
+  },
+  "validation": {
+    "AE2_independent_fermion_surface_block_is_zero": true,
+    "AE2_relative_Cayley_family_absent": true,
+    "FULL_BHSM_COMPLETE_false": true,
+    "Gate7_not_overclaimed": true,
+    "all_inputs_validated": true,
+    "constant_transport_has_zero_form_energy": true,
+    "negative_probe_not_relabelled_zero_energy": true,
+    "piecewise_transport_is_exact": true,
+    "positive_duration_does_not_create_zero_margin": true,
+    "realized_maximal_exterior_zero_mode_not_claimed": true,
+    "retained_product_form_is_factorized": true,
+    "two_sided_AE2_trace_graph_is_satisfied": true,
+    "two_sided_local_wronskian_can_equal_zero": true
+  },
+  "validation_passed": true
+}

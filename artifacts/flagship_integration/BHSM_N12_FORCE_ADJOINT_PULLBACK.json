@@ -1,0 +1,90 @@
+{
+  "FLAGSHIP_READY": false,
+  "FULL_BHSM_COMPLETE": false,
+  "artifact": "BHSM_N12_FORCE_ADJOINT_PULLBACK",
+  "claim_boundary": {
+    "FULL_BHSM_COMPLETE": false,
+    "G7_08_actual_projected_force": "OPEN_CURRENT_OWNER",
+    "G7_08_force_adjoint_pullback": "DERIVED",
+    "G7_08_force_functional": "DERIVED",
+    "Gate7": "ACTIVE_PARAMETRIC_BASE_OR_FORWARD_ADJOINT_KKT_OPEN",
+    "Gate8": "LOCKED",
+    "chord_03_authorized": false,
+    "frozen_predictions_changed": false,
+    "parametric_maximal_base_history_or_joint_KKT": "OPEN",
+    "same_action_saddle": "PENDING_ON_FORCE_RESULT",
+    "second_operator_jet": "PENDING_CONDITIONAL"
+  },
+  "classification": "THE_COMPLETE_FIRST_PHYSICAL_RESET_QUOTIENT_FORCE_COVECTOR_CAN_BE_EVALUATED_WITHOUT_PROPAGATING_ONE_FORWARD_JACOBI_COLUMN_PER_TANGENT_DIRECTION:_PULL_THE_HEAT_MINUS_ZETA_OPERATOR_COVECTOR_BACKWARD_THROUGH_THE_FIXED_CHANNEL_AND_EULER_DIRAC_LINEARIZATIONS_AND_THEN_THROUGH_THE_RESET_JET;_THE_MOVING_ENDPOINT_ENTERS_BY_ITS_EXACT_TRANSVERSE_PROJECTION_AND_AUTONOMOUS_TIME_SHIFT_IS_ANNIHILATED",
+  "computational_consequence": {
+    "forward_Jacobi_columns_required": 0,
+    "one_column_per_raw_or_physical_reset_direction_required": false,
+    "one_fixed_reset_parameter_closes_physical_saddle": false,
+    "required_base_history": true,
+    "required_nested_backward_covector_solves": true,
+    "required_parametric_base_history_or_joint_KKT_solve": true,
+    "reset_representative_selected": false,
+    "second_state_or_operator_jet_required_before_first_force": false
+  },
+  "continuous_adjoint_theorem": {
+    "backward_adjoint": "-p'=A(t)^dagger*p+q(t),_p(T)=Pi_T^dagger*g_T",
+    "force_pairing": "F_h=integral_<q(t),J_h(t)>dt+<g_T,Pi_T*J_h(T)>+<q_direct,h>",
+    "forward_first_jet": "J_h'=A(t)*J_h,_J_h(0)=B_reset*h",
+    "identity": "F_h=<B_reset^dagger*p(0)+q_direct,h>_FOR_EVERY_PHYSICAL_h",
+    "physical_quotient_force": "F_phys=N_phys^dagger*q_xi",
+    "reset_pullback": "q_xi=B_reset^dagger*p(0)+q_direct",
+    "state_generator": "A(t)=D_V(Y(t))"
+  },
+  "exact_next_dependency": "EITHER_CERTIFY_A_PARAMETRIC_MAXIMAL_BASE_HISTORY_ORACLE_ON_A_REGULAR_FINITE_ENDPOINT_STRATUM_AND_ROOT_THE_ADJOINT_COVECTOR_ON_THE_PHYSICAL_QUOTIENT,_OR_SOLVE_THE_EQUIVALENT_COUPLED_FINITE_ENDPOINT_FORWARD_ADJOINT_KKT_SYSTEM;_A_SINGLE_FIXED_RESET_PARAMETER_DOES_NOT_CLOSE_THE_SET_VALUED_RESET",
+  "inputs": {
+    "artifacts/flagship_integration/BHSM_N12_CONSTRAINT_PROJECTED_REPLACEMENT_SADDLE.json": "E5C0340FC39BFF9C83F338B8AFA7270F71A6699A56A5B0996F754FB99B65DAD1",
+    "artifacts/flagship_integration/BHSM_N12_FINITE_ENDPOINT_ZERO_SOURCE_FORCE_FUNCTIONAL.json": "6BC1FC78190437347813117A63D252C96115B2B67619D893144526A5DDD4E931",
+    "artifacts/flagship_integration/BHSM_N12_FORCE_FIRST_JET_CRITICAL_PATH.json": "A8FD972FD9053F2556B6973BDBFF4A558F7F472DB718E4B4CFF678EC81A77E8E",
+    "artifacts/flagship_integration/BHSM_N12_FORWARD_CHANNEL_TRANSFER_VARIATIONS.json": "1A1FCB295DDBE303667E70117EE38537417AF0047301BADCE46BD504AE1781F5",
+    "artifacts/flagship_integration/BHSM_N12_FORWARD_EULER_DIRAC_VARIATION_BOUNDS.json": "14BDEA36AE74F01D44A4865D45398A183A84CB692FE42D8060E5685C2E4E6BBF",
+    "artifacts/flagship_integration/BHSM_N12_RESET_STRATUM_MOVING_ENDPOINT_JETS.json": "DE930C625E5E1445C8EAFADC579D25C9BF1B52A294CEF7342EBDA799C746B65D"
+  },
+  "inverse_free_Euler_Dirac_adjoint": {
+    "adjoint_solve": "D^dagger*lambda=r_acceleration",
+    "explicit_D_inverse_formed": false,
+    "first": "D*delta_s=delta_b-delta_D*s",
+    "highest_action_derivative_before_first_force": "D3_L",
+    "primal": "D*s=b",
+    "pullback_pairing": "<r_acceleration,delta_s>=<lambda,delta_b-delta_D*s>",
+    "same_factorization_or_transposed_factorization_reused": true
+  },
+  "moving_endpoint_adjoint": {
+    "alpha": "De(Y_T)*V(Y_T)_NOT_EQUAL_0",
+    "endpoint_projection": "Pi_T=I-V(Y_T) tensor De(Y_T)/alpha",
+    "endpoint_state_jet": "Z_h=Pi_T*J_h(T)",
+    "terminal_adjoint_covector": "p(T)=Pi_T^dagger*g_T",
+    "time_shift_kernel": "Pi_T*V(Y_T)=0"
+  },
+  "operator_cotangent": {
+    "heat_pairing": "D_Gamma_heat=<W_C,D_P_C>_trace_SUM_C",
+    "noncommuting_operator_jet_allowed": true,
+    "per_channel": "W_C=(s_C*m_C/2)*exp(-ell^2*P_C)*P_C^(-1)",
+    "replacement": "q_rep=q_heat-q_zeta"
+  },
+  "status": "GATE7_FORCE_COVECTOR_REDUCED_TO_NESTED_ADJOINT_PULLBACK",
+  "validation": {
+    "adjoint_is_equivalent_to_allowed_first_jet_covector": true,
+    "discrete_forward_and_adjoint_crosscheck": true,
+    "first_Euler_Dirac_jet_uses_reused_solve": true,
+    "first_channel_variation_is_triangular": true,
+    "heat_force_supplies_operator_covector": true,
+    "moving_endpoint_first_projection_owned": true,
+    "no_selector_endpoint_action_term_scale_fit_chord_or_prediction_added": true,
+    "physical_output_is_projected_covector": true
+  },
+  "validation_passed": true,
+  "witness": {
+    "crosscheck_passed": true,
+    "endpoint_transversality_abs": 4.6385490312033895,
+    "forward_vs_adjoint_pullback_residual": 1.9984014443252818e-15,
+    "moving_endpoint_time_shift_residual": 2.7894008272968645e-16,
+    "physical_quotient_dimension": 4,
+    "state_dimension": 7,
+    "steps": 9
+  }
+}

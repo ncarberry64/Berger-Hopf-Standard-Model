@@ -1,0 +1,54 @@
+{
+  "FULL_BHSM_COMPLETE": false,
+  "adjudication": {
+    "first_rate_consistent_center": "PARENT",
+    "second_rate_consistent_Newton_step": "REJECTED_BY_EXACT_NONLINEAR_REPLAY"
+  },
+  "artifact": "BHSM_N12_GATE7_SECOND_RATE_CONSISTENT_NEWTON_MIDPOINT_REPLAY",
+  "authority": "NUMERICAL_EXACT_MIDPOINT_REPLAY_NOT_INTERVAL_AUTHORITY",
+  "claim_boundary": {
+    "FULL_BHSM_COMPLETE": false,
+    "Gate7": "ACTIVE_ACTION_OWNED_OPERATOR_ORACLE",
+    "continuous_action_constrained_center": "OPEN",
+    "nonlinear_Hermite_Simpson_center": "OPEN_ITERATION_AND_INTERVAL_AUTHORITY"
+  },
+  "data": "artifacts/flagship_integration/BHSM_N12_GATE7_SECOND_RATE_CONSISTENT_NEWTON_MIDPOINT_REPLAY.npz",
+  "data_SHA256": "FF1362C0E5693F1A60AB5DAE3B6C31149FC79472AA927B06E5C002CF7F763857",
+  "exact_next_dependency": "IF_REDUCED,_REBUILD_THE_CURRENT_CENTER_JACOBIANS_AND_ITERATE;_OTHERWISE_DIFFERENTIATE_THE_COMPLETE_PROJECTED_RECENTERED_RESIDUAL_MAP",
+  "inputs": {
+    "artifacts/flagship_integration/BHSM_N12_GATE7_RATE_CONSISTENT_NEWTON_MIDPOINT_REPLAY.json": "69ED710419EF50031AACAAEAED8979AE52128AE3534F14FA58E3B5729B217D3C",
+    "artifacts/flagship_integration/BHSM_N12_GATE7_SECOND_RATE_CONSISTENT_NEWTON_ENDPOINT_CANDIDATE.json": "D59EB59A599CDD274F96932213CF5FC91B8D78774969DA5B98756CC7292AC9B4",
+    "artifacts/flagship_integration/BHSM_N12_GATE7_SECOND_RATE_CONSISTENT_NEWTON_ENDPOINT_CANDIDATE.npz": "07B0878F86DC5311F4069BDDECC1B7AB9BFC124E181AD15E272AD01BA7AE2C02",
+    "scripts/audit_n12_gate7_second_rate_consistent_newton_midpoint_replay.py": "D9CF1E721E04C533769E9A896541248072882D5D1321102E298CED03D9001ABC",
+    "theory/n12_gate7_rate_consistent_newton_midpoint_replay.md": "2A15E71654A51EEC182D1467B03E1CF24C35D8976135BACFAF85955E09DD757C"
+  },
+  "mesh": {
+    "augmented_dimension": 99,
+    "endpoint_map": "SECOND_CONSTRAINT_PROJECTED_ONE_JET_DESCRIPTOR_RATE_RECENTER",
+    "shooting_intervals": 370,
+    "workers": 8
+  },
+  "status": "SECOND_RATE_CONSISTENT_NEWTON_STEP_DOES_NOT_REDUCE_NONLINEAR_RESIDUAL",
+  "summary": {
+    "maximum_Hermite_Simpson_shooting_residual_2_norm": 1.429548198240663e-06,
+    "maximum_Hermite_Simpson_shooting_residual_owner_interval": 123,
+    "maximum_descriptor_shooting_residual_absolute": 1.801638009780511e-13,
+    "maximum_midpoint_descriptor_fiber_residual_absolute": 1.5351964640420886e-13,
+    "maximum_midpoint_scaled_constraint_2_norm": 3.3067123134723494e-14,
+    "maximum_state_shooting_residual_2_norm": 1.4295481982406602e-06,
+    "minimum_selected_eigenline_gap": 1.7343202878818283e-07,
+    "nonlinear_block_residual_reduction_factor": 0.8504524003822882,
+    "parent_maximum_Hermite_Simpson_shooting_residual_2_norm": 1.215762696655947e-06
+  },
+  "validation": {
+    "all_370_exact_midpoint_fields_replayed": true,
+    "all_midpoint_constraints_close_numerically": true,
+    "all_quantities_finite": true,
+    "branch_24_selected_at_every_midpoint": true,
+    "continuous_interval_shadowing_not_claimed": true,
+    "no_action_source_selector_scale_gate_or_chord_changed": true,
+    "second_rate_consistent_step_reduces_nonlinear_Hermite_Simpson_residual": false,
+    "selected_line_remains_simple_numerically": true
+  },
+  "validation_passed": false
+}

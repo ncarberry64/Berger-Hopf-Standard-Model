@@ -1,0 +1,80 @@
+{
+  "classification": "N12_RETAINED_ACTION_BALL_DERIVATIVE_MAJORANTS",
+  "order": 12,
+  "points": 96,
+  "action_coordinate_ball_radius": 6.2e-13,
+  "rounding_inflation_factor_per_bound_operation": 1.0000000001,
+  "sectors": [
+    {
+      "sector": "event",
+      "action_value": 3.3653342081224205,
+      "action_value_interval": [
+        3.365334207400266,
+        3.3653342088445752
+      ],
+      "derivative_operator_majorants_0_through_5": [
+        982.3303222587883,
+        20461.801493589206,
+        421310.34209453256,
+        8633993.231693035,
+        179836485.20212626,
+        4005674540.685938
+      ],
+      "exact_center_action_gradient_norm": 99.88562044054147,
+      "exact_center_action_hessian_norm": 1069.4301121617,
+      "value_enclosed": true,
+      "gradient_bound_dominates_exact_center": true,
+      "hessian_bound_dominates_exact_center": true,
+      "restricted_subspace_dimension": 59,
+      "restricted_derivative_operator_majorants_0_through_5": [
+        982.3303222582753,
+        19634.963257761254,
+        388809.72048546886,
+        7685791.69381983,
+        155318936.8391594,
+        3405209748.868618
+      ]
+    },
+    {
+      "sector": "child",
+      "action_value": 2.016489998089027,
+      "action_value_interval": [
+        2.016489997273255,
+        2.0164899989048006
+      ],
+      "derivative_operator_majorants_0_through_5": [
+        931.1985991623889,
+        18731.541818106703,
+        374927.34474455344,
+        7534974.424130981,
+        156376844.08570758,
+        3590326126.7718024
+      ],
+      "exact_center_action_gradient_norm": 101.64962204090286,
+      "exact_center_action_hessian_norm": 1014.3911297000022,
+      "value_enclosed": true,
+      "gradient_bound_dominates_exact_center": true,
+      "hessian_bound_dominates_exact_center": true,
+      "restricted_subspace_dimension": 58,
+      "restricted_derivative_operator_majorants_0_through_5": [
+        931.1985991610707,
+        16604.03045633077,
+        295534.6177434149,
+        5316084.540444352,
+        100278297.46733649,
+        2171435773.0970335
+      ]
+    }
+  ],
+  "scope": "SCALAR_RETAINED_ACTION_DERIVATIVE_MAJORANTS_ONLY;_THE_BORDERED_LIFT_AND_EIGENPROJECTOR_COMPOSITION_BOUNDS_REMAIN",
+  "validation": {
+    "unchanged_retained_action_expression": true,
+    "event_value_enclosed": true,
+    "child_value_enclosed": true,
+    "event_first_two_center_derivatives_dominated": true,
+    "child_first_two_center_derivatives_dominated": true,
+    "no_equation_gate_or_physics_changed": true
+  },
+  "validation_passed": true,
+  "FULL_BHSM_COMPLETE": false
+}

@@ -1,5 +1,9 @@
 # BHSM Prediction/Screen Ledger
 
+Current firewall: all rows remain screen/comparison entries until the Gate-7
+chain and mandatory physical-completeness matrix close.  Measured values do
+not select carrier, source, branch, normalization, or formula.
+
 The term prediction here means model-output ledger entry. Rows keep their own screen, proxy, scaffold, or placeholder status.
 
 | ID | Sector | Quantity | Predicted | Reference | Relative Error | Status | Source | Limitations |

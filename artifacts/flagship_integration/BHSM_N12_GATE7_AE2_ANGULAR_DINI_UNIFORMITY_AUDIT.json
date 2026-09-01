@@ -1,0 +1,695 @@
+{
+  "FLAGSHIP_READY": false,
+  "FULL_BHSM_COMPLETE": false,
+  "action_version": "BHSM-AE-2.0.0",
+  "adjudication": {
+    "BRST_grading_closes_physical_tail": false,
+    "action_owned_forward_relative_reference_available": false,
+    "arbitrary_positive_tail_angular_sum": "FALSE",
+    "bounded_log_derivative_monotonicity_and_smoothness_suffice": false,
+    "eventual_logarithmic_speed_Osgood_radius_proved_by_action": false,
+    "eventual_logarithmic_speed_Osgood_radius_sufficient": true,
+    "eventual_two_sided_Lipschitz_radius_proved_by_action": false,
+    "eventual_two_sided_Lipschitz_radius_sufficient": true,
+    "exact_power_tail_fixed_channel_results": "PRESERVED_DO_NOT_REOPEN",
+    "finite_optical_length_compatible_with_absolute_angular_sum": false,
+    "fixed_channel_source_Dini": "CLOSED_DO_NOT_REOPEN",
+    "leading_ADM_cosmological_balance_excludes_constant_positive_log_rate": false,
+    "optical_completeness_proved_by_retained_action": false,
+    "optical_completeness_proved_sufficient_for_every_nonasymptotic_tail": false,
+    "radius_monotonicity_required": false,
+    "spatial_Galerkin_tail_used_as_angular_or_temporal_tail": false,
+    "weight_seven_Euler_Dirac_block_invertible": false
+  },
+  "artifact": "BHSM_N12_GATE7_AE2_ANGULAR_DINI_UNIFORMITY_AUDIT",
+  "claim_boundary": {
+    "FULL_BHSM_COMPLETE": false,
+    "Gate7": "ACTIVE_NOT_CLOSED",
+    "Gate8": "LOCKED",
+    "chord_03_authorized": false,
+    "frozen_predictions_changed": false,
+    "zero_source_force": "OPEN"
+  },
+  "classification": "THE_COMPACT_VOL_TERRA_THEOREM_CLOSES_EVERY_FIXED_FACTORIZED_CHANNEL_BUT_IS_NOT_UNIFORM_IN_THE_SIGNED_S3_DIRAC_LEVEL;_THE_SMOOTH_POSITIVE_NON_POWER_HISTORY_R4=exp(tau)_HAS_BOUNDED_LOG_DERIVATIVE_AND_FINITE_OPTICAL_LENGTH,_AND_THE_EXACT_POSITIVE_CHIRALITY_ZERO_TRANSFER_NORMALIZATION_FORCES_THE_LEVEL_n_SOURCE_DINI_COEFFICIENT_TO_GROW_AT_LEAST_AS_exp(2*(n+3/2));_WITH_QUADRATIC_WEYL_DEGENERACY_THE_ABSOLUTE_ANGULAR_TERMS_DO_NOT_TEND_TO_ZERO",
+  "conditional_action_state_control_reduction": {
+    "identity": "abs(D_tau_R4)=R4*abs(D_q_x[v])/N_boundary",
+    "result": "abs(D_tau_R4)<=(R0/2)*exp(sqrt(1+N)*Q+sqrt(N)*M)*sqrt(1+2N)*V",
+    "retained_action_supplies_global_coordinate_bound": false,
+    "retained_action_supplies_global_velocity_bound": false,
+    "retained_action_supplies_uniform_positive_lapse_margin": false,
+    "status": "EXACT_FINITE_N_REDUCTION_GLOBAL_HYPOTHESES_OPEN",
+    "uniform_hypotheses": "sup_norm(q)<=Q,_sup_norm(v)<=V,_sup_norm(multipliers)<=M",
+    "witness": {
+      "bound": "abs(D_tau_R4)<=(R0/2)*exp(sqrt(1+N)*Q+sqrt(N)*M)*sqrt(1+2N)*V",
+      "coordinate_norm_upper": 0.25,
+      "galerkin_order": 12,
+      "global_state_controls_proved_by_retained_action": false,
+      "inverse_boundary_lapse_upper": 1.4139824580805163,
+      "log_radius_coordinate_rate_numerator_upper": 2.5,
+      "multiplier_norm_upper": 0.1,
+      "proper_radius_speed_upper": 8.807969654104516,
+      "radius_upper": 2.491677206819482,
+      "reference_radius": 2.0232708255441265,
+      "requires_radius_monotonicity": false,
+      "velocity_norm_upper": 0.5
+    }
+  },
+  "conditional_at_most_linear_sufficient_class": {
+    "agmon_action_lower": {
+      "negative_chirality": "A_minus_mu(k)>=(mu/(2*v))*log(mu/(2*k*R_L))_FOR_mu>=2*v",
+      "positive_chirality": "A_plus_mu(k)>=(mu/(2*v))*log(mu/(2*k*R_L))_FOR_mu>=2*v"
+    },
+    "barrier_range": "R_L+v*(tau-L)<=mu/(2*k)",
+    "barrier_witnesses": {
+      "negative_chirality": {
+        "agmon_action_lower": 10.058986952713127,
+        "angular_eigenvalue": 12.5,
+        "asymptotic_action_class": "(0.5/v)*mu*log(mu)+O(mu)",
+        "beats_every_fixed_polynomial_multiplicity": true,
+        "beats_exp(C*mu)*mu^d_for_every_fixed_C_and_d": true,
+        "chirality": -1,
+        "envelope_turning_distance": 5.0,
+        "exact_power_law_assumed": false,
+        "log_squared_amplitude_suppression_upper": -20.117973905426254,
+        "potential_lower": "V_minus>=s_mu^2/2_FOR_mu>=2*v",
+        "radius_monotonicity_assumed": false,
+        "radius_speed_upper": 1.0,
+        "radius_upper_at_source_end": 1.25,
+        "reciprocal_linear_envelope_integral_diverges": true,
+        "squared_amplitude_suppression_upper": 1.8317868871678289e-09,
+        "threshold_wave_number": 1.0
+      },
+      "positive_chirality": {
+        "agmon_action_lower": 10.058986952713127,
+        "angular_eigenvalue": 12.5,
+        "asymptotic_action_class": "(0.5/v)*mu*log(mu)+O(mu)",
+        "beats_every_fixed_polynomial_multiplicity": true,
+        "beats_exp(C*mu)*mu^d_for_every_fixed_C_and_d": true,
+        "chirality": 1,
+        "envelope_turning_distance": 5.0,
+        "exact_power_law_assumed": false,
+        "log_squared_amplitude_suppression_upper": -20.117973905426254,
+        "potential_lower": "V_plus>=s_mu^2/2_FOR_mu>=2*v",
+        "radius_monotonicity_assumed": false,
+        "radius_speed_upper": 1.0,
+        "radius_upper_at_source_end": 1.25,
+        "reciprocal_linear_envelope_integral_diverges": true,
+        "squared_amplitude_suppression_upper": 1.8317868871678289e-09,
+        "threshold_wave_number": 1.0
+      }
+    },
+    "exact_power_law_assumed": false,
+    "hypothesis": "AFTER_COMPACT_SOURCE_abs(D_tau_R4)<=v<infinity",
+    "local_source_growth_class": "exp(C_source*mu)*(1+mu)^d",
+    "monotonicity_required": false,
+    "optical_consequence": "integral_L^infinity_d_tau/R4=infinity",
+    "radius_envelope": "R4(tau)<=R_L+v*(tau-L)",
+    "root_test_witness": {
+      "analytic_root_test_limit": "minus_infinity",
+      "angular_series_absolutely_summable": true,
+      "local_weight_class": "exp(C*mu)*(1+mu)^d",
+      "nth_root_logs_decrease": true,
+      "polynomial_degree": 4,
+      "rows": [
+        {
+          "angular_eigenvalue": 9.5,
+          "level": 8,
+          "log_local_exp_times_polynomial_weight": 28.40550102865391,
+          "log_weighted_tail_term_upper": 15.722990894696679,
+          "negative_chirality_log_suppression_upper": -12.68251013395723,
+          "nth_root_log_upper": 1.746998988299631,
+          "positive_chirality_log_suppression_upper": -12.68251013395723
+        },
+        {
+          "angular_eigenvalue": 10.5,
+          "level": 9,
+          "log_local_exp_times_polynomial_weight": 30.769388141476817,
+          "log_weighted_tail_term_upper": 15.701000625938928,
+          "negative_chirality_log_suppression_upper": -15.06838751553789,
+          "nth_root_log_upper": 1.5701000625938928,
+          "positive_chirality_log_suppression_upper": -15.06838751553789
+        },
+        {
+          "angular_eigenvalue": 11.5,
+          "level": 10,
+          "log_local_exp_times_polynomial_weight": 33.10291457723302,
+          "log_weighted_tail_term_upper": 15.553267087039956,
+          "negative_chirality_log_suppression_upper": -17.549647490193067,
+          "nth_root_log_upper": 1.413933371549087,
+          "positive_chirality_log_suppression_upper": -17.549647490193067
+        },
+        {
+          "angular_eigenvalue": 12.5,
+          "level": 11,
+          "log_local_exp_times_polynomial_weight": 35.410758741777535,
+          "log_weighted_tail_term_upper": 15.29278483635128,
+          "negative_chirality_log_suppression_upper": -20.117973905426254,
+          "nth_root_log_upper": 1.2743987363626068,
+          "positive_chirality_log_suppression_upper": -20.117973905426254
+        },
+        {
+          "angular_eigenvalue": 13.5,
+          "level": 12,
+          "log_local_exp_times_polynomial_weight": 37.69659459770612,
+          "log_weighted_tail_term_upper": 14.930208724508027,
+          "negative_chirality_log_suppression_upper": -22.76638587319809,
+          "nth_root_log_upper": 1.1484775941929253,
+          "positive_chirality_log_suppression_upper": -22.76638587319809
+        },
+        {
+          "angular_eigenvalue": 14.5,
+          "level": 13,
+          "log_local_exp_times_polynomial_weight": 39.96336009570081,
+          "log_weighted_tail_term_upper": 14.47442029119139,
+          "negative_chirality_log_suppression_upper": -25.488939804509418,
+          "nth_root_log_upper": 1.0338871636565279,
+          "positive_chirality_log_suppression_upper": -25.488939804509418
+        },
+        {
+          "angular_eigenvalue": 15.5,
+          "level": 14,
+          "log_local_exp_times_polynomial_weight": 42.21344152362614,
+          "log_weighted_tail_term_upper": 13.932927496834925,
+          "negative_chirality_log_suppression_upper": -28.280514026791213,
+          "nth_root_log_upper": 0.9288618331223283,
+          "positive_chirality_log_suppression_upper": -28.280514026791213
+        },
+        {
+          "angular_eigenvalue": 16.5,
+          "level": 15,
+          "log_local_exp_times_polynomial_weight": 44.44880352371787,
+          "log_weighted_tail_term_upper": 13.312154314683607,
+          "negative_chirality_log_suppression_upper": -31.136649209034264,
+          "nth_root_log_upper": 0.8320096446677254,
+          "positive_chirality_log_suppression_upper": -31.136649209034264
+        },
+        {
+          "angular_eigenvalue": 17.5,
+          "level": 16,
+          "log_local_exp_times_polynomial_weight": 46.671082928337114,
+          "log_weighted_tail_term_upper": 12.61765531986913,
+          "negative_chirality_log_suppression_upper": -34.053427608467985,
+          "nth_root_log_upper": 0.7422150188158312,
+          "positive_chirality_log_suppression_upper": -34.053427608467985
+        },
+        {
+          "angular_eigenvalue": 18.5,
+          "level": 17,
+          "log_local_exp_times_polynomial_weight": 48.8816578622788,
+          "log_weighted_tail_term_upper": 11.854277858391498,
+          "negative_chirality_log_suppression_upper": -37.0273800038873,
+          "nth_root_log_upper": 0.658570992132861,
+          "positive_chirality_log_suppression_upper": -37.0273800038873
+        },
+        {
+          "angular_eigenvalue": 19.5,
+          "level": 18,
+          "log_local_exp_times_polynomial_weight": 51.08169954457745,
+          "log_weighted_tail_term_upper": 11.026286737514297,
+          "negative_chirality_log_suppression_upper": -40.05541280706315,
+          "nth_root_log_upper": 0.5803308809218052,
+          "positive_chirality_log_suppression_upper": -40.05541280706315
+        },
+        {
+          "angular_eigenvalue": 20.5,
+          "level": 19,
+          "log_local_exp_times_polynomial_weight": 53.272211740534466,
+          "log_weighted_tail_term_upper": 10.13746157799521,
+          "negative_chirality_log_suppression_upper": -43.134750162539255,
+          "nth_root_log_upper": 0.5068730788997605,
+          "positive_chirality_log_suppression_upper": -43.134750162539255
+        },
+        {
+          "angular_eigenvalue": 21.5,
+          "level": 20,
+          "log_local_exp_times_polynomial_weight": 55.4540612368415,
+          "log_weighted_tail_term_upper": 9.191173866763066,
+          "negative_chirality_log_suppression_upper": -46.26288737007843,
+          "nth_root_log_upper": 0.43767494603633644,
+          "positive_chirality_log_suppression_upper": -46.26288737007843
+        },
+        {
+          "angular_eigenvalue": 22.5,
+          "level": 21,
+          "log_local_exp_times_polynomial_weight": 57.628001684600456,
+          "log_weighted_tail_term_upper": 8.190448694535519,
+          "negative_chirality_log_suppression_upper": -49.43755299006494,
+          "nth_root_log_upper": 0.37229312247888724,
+          "positive_chirality_log_suppression_upper": -49.43755299006494
+        },
+        {
+          "angular_eigenvalue": 23.5,
+          "level": 22,
+          "log_local_exp_times_polynomial_weight": 59.794692470202726,
+          "log_weighted_tail_term_upper": 7.138014772217701,
+          "negative_chirality_log_suppression_upper": -52.656677697985025,
+          "nth_root_log_upper": 0.31034846835729135,
+          "positive_chirality_log_suppression_upper": -52.656677697985025
+        },
+        {
+          "angular_eigenvalue": 24.5,
+          "level": 23,
+          "log_local_exp_times_polynomial_weight": 61.95471380865752,
+          "log_weighted_tail_term_upper": 6.036345359582626,
+          "negative_chirality_log_suppression_upper": -55.9183684490749,
+          "nth_root_log_upper": 0.2515143899826094,
+          "positive_chirality_log_suppression_upper": -55.9183684490749
+        },
+        {
+          "angular_eigenvalue": 25.5,
+          "level": 24,
+          "log_local_exp_times_polynomial_weight": 64.10857893196871,
+          "log_weighted_tail_term_upper": 4.887692064567965,
+          "negative_chirality_log_suppression_upper": -59.22088686740074,
+          "nth_root_log_upper": 0.19550768258271858,
+          "positive_chirality_log_suppression_upper": -59.22088686740074
+        }
+      ],
+      "source_exponential_rate": 2.0,
+      "weighted_log_terms_strictly_decrease": true
+    },
+    "status": "CLOSED_CONDITIONAL_THEOREM",
+    "summability": "exp(C_source*mu)*(1+mu)^d*exp(-2*A_mu(k))_IS_SUMMABLE_IN_mu_BY_ROOT_TEST",
+    "two_chirality_potential": "V_chi=s_mu^2+/-mu*(D_tau_R4)/R4^2>=s_mu^2/2_FOR_mu>=2*v",
+    "two_sided_direct_bound": "abs(D_tau_R4)<=v_IMPLIES_V_plus_AND_V_minus>=s_mu^2/2_FOR_mu>=2*v;_ON_s_mu>=2*k_THIS_GIVES_sqrt(V_chi-k^2)>=s_mu/2"
+  },
+  "conditional_logarithmic_speed_Osgood_class": {
+    "Osgood_optical_lower": "int_d_tau/R4>=int_(R_L)^R_turn_dR/(R*(a+b*log(R/R_L)))",
+    "agmon_action_for_b_positive": "A_chi_mu(k)>=(mu/(2*b))*log(1+(b/a)*log(mu/(2*k*R_L)))",
+    "allows_unbounded_radius_speed": true,
+    "asymptotic_action_class": "mu*log(log(mu))",
+    "exact_power_law_assumed": false,
+    "high_angular_range": "mu>=2*(a+b*log(R_turn/R_L))",
+    "hypothesis": "ON_EVERY_OUTWARD_PASSAGE_abs(D_tau_R4)<=a+b*log(R4/R_L),_a>0,_b>=0",
+    "radius_monotonicity_required": false,
+    "status": "CLOSED_CONDITIONAL_THEOREM",
+    "summability": "exp(C_source*mu)*(1+mu)^d*exp(-2*A_chi_mu(k))_IS_SUMMABLE_BY_ROOT_TEST",
+    "turning_radius": "R_turn=mu/(2*k)",
+    "two_chirality_potential": "V_chi>=s_mu^2/2",
+    "witnesses": {
+      "negative_chirality": {
+        "Osgood_optical_integral_lower": 2.2494965258180724,
+        "agmon_action_lower": 143.96777765235663,
+        "allows_unbounded_radius_speed": true,
+        "angular_eigenvalue": 128.0,
+        "asymptotic_action_class": "(1/(2*b))*mu*log(log(mu))+O(mu)",
+        "beats_exp(C*mu)*mu^d_for_every_fixed_C_and_d": true,
+        "chirality": -1,
+        "exact_power_law_assumed": false,
+        "log_squared_amplitude_suppression_upper": -287.93555530471326,
+        "potential_lower": "V_chi>=s_mu^2/2",
+        "radius_at_source_end": 1.0,
+        "radius_monotonicity_assumed": false,
+        "speed_envelope_at_turning_radius": 3.0794415416798357,
+        "speed_log_coefficient": 0.5,
+        "speed_offset": 1.0,
+        "squared_amplitude_suppression_upper": 8.936700169906168e-126,
+        "threshold_wave_number": 1.0,
+        "turning_radius": 64.0,
+        "two_chirality_high_angular_condition": "mu>=2*omega(mu/(2*k))"
+      },
+      "positive_chirality": {
+        "Osgood_optical_integral_lower": 2.2494965258180724,
+        "agmon_action_lower": 143.96777765235663,
+        "allows_unbounded_radius_speed": true,
+        "angular_eigenvalue": 128.0,
+        "asymptotic_action_class": "(1/(2*b))*mu*log(log(mu))+O(mu)",
+        "beats_exp(C*mu)*mu^d_for_every_fixed_C_and_d": true,
+        "chirality": 1,
+        "exact_power_law_assumed": false,
+        "log_squared_amplitude_suppression_upper": -287.93555530471326,
+        "potential_lower": "V_chi>=s_mu^2/2",
+        "radius_at_source_end": 1.0,
+        "radius_monotonicity_assumed": false,
+        "speed_envelope_at_turning_radius": 3.0794415416798357,
+        "speed_log_coefficient": 0.5,
+        "speed_offset": 1.0,
+        "squared_amplitude_suppression_upper": 8.936700169906168e-126,
+        "threshold_wave_number": 1.0,
+        "turning_radius": 64.0,
+        "two_chirality_high_angular_condition": "mu>=2*omega(mu/(2*k))"
+      }
+    }
+  },
+  "counterexample": {
+    "absolute_angular_source_Dini_sum_finite": false,
+    "degeneracy_weighted_terms_tend_to_zero": false,
+    "eventually_monotone": true,
+    "fixed_channel_source_Dini_finite_for_every_level": true,
+    "log_radius_derivative": 1.0,
+    "minimum_successive_log_term_increment": 2.1541506798272536,
+    "radius_history": "R4(tau)=exp(tau)",
+    "reciprocal_radius_integral": 1.0,
+    "rows": [
+      {
+        "Weyl_degeneracy": 288,
+        "level": 1,
+        "log_channel_Dini_coefficient_lower": 2.906990019756275,
+        "log_degeneracy_weighted_term_lower": 8.56995049989222,
+        "positive_Dirac_eigenvalue": 2.5
+      },
+      {
+        "Weyl_degeneracy": 576,
+        "level": 2,
+        "log_channel_Dini_coefficient_lower": 4.906990019756275,
+        "log_degeneracy_weighted_term_lower": 11.263097680452166,
+        "positive_Dirac_eigenvalue": 3.5
+      },
+      {
+        "Weyl_degeneracy": 960,
+        "level": 3,
+        "log_channel_Dini_coefficient_lower": 6.906990019756275,
+        "log_degeneracy_weighted_term_lower": 13.773923304218158,
+        "positive_Dirac_eigenvalue": 4.5
+      },
+      {
+        "Weyl_degeneracy": 1440,
+        "level": 4,
+        "log_channel_Dini_coefficient_lower": 8.906990019756275,
+        "log_degeneracy_weighted_term_lower": 16.179388412326322,
+        "positive_Dirac_eigenvalue": 5.5
+      },
+      {
+        "Weyl_degeneracy": 2016,
+        "level": 5,
+        "log_channel_Dini_coefficient_lower": 10.906990019756275,
+        "log_degeneracy_weighted_term_lower": 18.515860648947534,
+        "positive_Dirac_eigenvalue": 6.5
+      },
+      {
+        "Weyl_degeneracy": 2688,
+        "level": 6,
+        "log_channel_Dini_coefficient_lower": 12.906990019756275,
+        "log_degeneracy_weighted_term_lower": 20.803542721399317,
+        "positive_Dirac_eigenvalue": 7.5
+      },
+      {
+        "Weyl_degeneracy": 3456,
+        "level": 7,
+        "log_channel_Dini_coefficient_lower": 14.906990019756275,
+        "log_degeneracy_weighted_term_lower": 23.054857149680224,
+        "positive_Dirac_eigenvalue": 8.5
+      },
+      {
+        "Weyl_degeneracy": 4320,
+        "level": 8,
+        "log_channel_Dini_coefficient_lower": 16.906990019756275,
+        "log_degeneracy_weighted_term_lower": 25.278000700994433,
+        "positive_Dirac_eigenvalue": 9.5
+      },
+      {
+        "Weyl_degeneracy": 5280,
+        "level": 9,
+        "log_channel_Dini_coefficient_lower": 18.906990019756275,
+        "log_degeneracy_weighted_term_lower": 27.478671396456583,
+        "positive_Dirac_eigenvalue": 10.5
+      },
+      {
+        "Weyl_degeneracy": 6336,
+        "level": 10,
+        "log_channel_Dini_coefficient_lower": 20.906990019756275,
+        "log_degeneracy_weighted_term_lower": 29.660992953250535,
+        "positive_Dirac_eigenvalue": 11.5
+      },
+      {
+        "Weyl_degeneracy": 7488,
+        "level": 11,
+        "log_channel_Dini_coefficient_lower": 22.906990019756275,
+        "log_degeneracy_weighted_term_lower": 31.828047037913706,
+        "positive_Dirac_eigenvalue": 12.5
+      },
+      {
+        "Weyl_degeneracy": 8736,
+        "level": 12,
+        "log_channel_Dini_coefficient_lower": 24.906990019756275,
+        "log_degeneracy_weighted_term_lower": 33.98219771774096,
+        "positive_Dirac_eigenvalue": 13.5
+      }
+    ],
+    "smooth_positive_non_power_tail": true,
+    "source_interval": [
+      0.25,
+      0.75
+    ],
+    "source_reciprocal_integral": 0.3064342303303902
+  },
+  "exact_lower_bound": {
+    "Weyl_levels": "mu_n=n+3/2,_d_n=48*(n+1)*(n+2)",
+    "coefficient_bound": "C_mu>=((2/pi)*(1-exp(-1))*H/r_max)*exp(2*mu*I)",
+    "consequence": "sum_n_d_n*C_mu_n=infinity_WHEN_I>0_IS_FINITE",
+    "geometry": "r=1/R4,_I=int_0^infinity_r,_s_mu=mu*r",
+    "initial_core_hypothesis": "r(t)<=r_max_ON_[0,delta]",
+    "range": "mu>=1/(2*r_max*delta)",
+    "source_hypothesis": "h>=0_AND_H=int_delta^L_h(t)*r(t)dt>0",
+    "zero_transfer_normalization": "N_mu^2=(2/pi)*exp(2*mu*I)"
+  },
+  "exact_next_dependency": "DERIVE_THE_SINGULAR_FESHBACH_DIRAC_REDUCTION_OF_THE_LINEARIZED_FLOW_ABOUT_THE_FULL_WEIGHT_SEVEN_ROUND_EXPANDING_BALANCE_ON_THE_EXACT_12_DIMENSIONAL_KERNEL_z_k=(delta_v_u_k=sqrt(kappa0/42),delta_log_lapse_k=1),_USING_THE_WEIGHT_FIVE_R_MINUS_TWO_LIFT;_THEN_CERTIFY_THE_REDUCED_CENTER_STABILITY_OR_AN_EXISTING_EVENT_CANONICAL_STOP;_AN_ORDINARY_INVERSE_OF_THE_LEADING_EULER_DIRAC_BLOCK_IS_NOT_DEFINED",
+  "frontier_sharpening": {
+    "G7_07_angular_tail": "OPEN_CURRENT_OWNER",
+    "finite_branch": "USE_THE_RETAINED_COMPACT_RESOLVENT_OPERATOR_IF_THE_ACTUAL_HISTORY_REACHES_EVENT_OR_CANONICAL_STOP",
+    "first_branch": "PERFORM_THE_SINGULAR_FESHBACH_DIRAC_REDUCTION_ON_THE_EXACT_12_DIMENSIONAL_WEIGHT_SEVEN_KERNEL_USING_ITS_WEIGHT_FIVE_LIFT,_THEN_TEST_WHETHER_THE_REDUCED_TRANSVERSE_DYNAMICS_EXCLUDE_THE_ROUND_EXPANDING_BRANCH_OR_FORCE_THE_OUTWARD_OSGOOD_ENVELOPE",
+    "second_branch": "DERIVE_AN_ALREADY_ACTION_OWNED_FORWARD_RELATIVE_REFERENCE_AND_PROVE_SOURCE_CONTRACTED_RELATIVE_TRACE_CLASS"
+  },
+  "inputs": {
+    "artifacts/flagship_integration/BHSM_N12_FORWARD_BOUNDARY_RADIUS_ACTION_PROJECTION.json": "5B69F7F93E97D7D2DA7E547C6F73B0662E863259974CBA4D623F4EDA7F96F8EE",
+    "artifacts/flagship_integration/BHSM_N12_FORWARD_BRST_HEAT_TAIL_CANCELLATION_AUDIT.json": "C27A8CB4EFC001E44EC9B001A3130155D7847E299CCBE54EA6B8FD38E755ABC6",
+    "artifacts/flagship_integration/BHSM_N12_FORWARD_E1_HIGH_ENERGY_TRACE_NORM.json": "B3D4EF461C0E8A941F532A90E48CD1F4BA9F5627212FE7DC78CB35C93C7DE0F7",
+    "artifacts/flagship_integration/BHSM_N12_FORWARD_HEAT_TRACE_CLASS_AUDIT.json": "80CC27BC0DDD23620CBC4AFB4EE4CF35C51F74A5CD80630A256AEF20B2D2D804",
+    "artifacts/flagship_integration/BHSM_N12_FORWARD_SOURCE_TAIL_OWNERSHIP_AUDIT.json": "059B26ED8B865BAA5DF66E5E64536DBCF2DE9381A314F4916CCFCCCC1B3912AB",
+    "artifacts/flagship_integration/BHSM_N12_GATE7_AE2_COMPACT_SOURCE_DINI_CLOSURE.json": "E1E735CBA8FC9D5FBC28B2AB93B0EA17803191D69F081C7A194224360A18CF27",
+    "artifacts/intrinsic_state_selection/BHSM_N12_CONSTRAINT_REDUCED_ENERGY_IDENTITY_GATE.json": "EB907DF96C8C9E0A66014D6A6463B853E92F1A5D0CBA2B269789FA28706501D1",
+    "artifacts/intrinsic_state_selection/BHSM_N12_CONTINUUM_MAXIMAL_FLOW_DICHOTOMY.json": "F75E3CEE4EE4D0768027770FEFECAC1A17994B4297AE344E3FC2D83F86B002A9",
+    "artifacts/intrinsic_state_selection/BHSM_N12_GLOBAL_FLOW_COERCIVE_CONTROL_GATE.json": "0A6C1BED930316B8EFF8BBE110078AE1C582E638E6BC42445330CC276EC2A2C4",
+    "scripts/derive_n12_gate7_ae2_angular_dini_uniformity.py": "012C6647F6603C48AC44A7A08A32990EB7EED2E37059875C2E1F357DD68F39E9",
+    "src/bhsm/interface/action_extension_ae2_angular_dini_uniformity.py": "EE7D2507BE3F003E42ADD71874FA7C416FCF442CA7FC579F50BD1F889EC7C0D5",
+    "src/bhsm/interface/aether_n3_exact_full_local_action_jet_v17_60.py": "7AE8F637E2AA19AC21858A71B7C2012B56912CD884A61D7D0008816B3BD94CFC",
+    "theory/bhsm_action_ae2_angular_dini_uniformity.md": "F19897C8BABCAFF2DF93D26DC054DC06D71C456458473D7C5BFC7869887CC0E2"
+  },
+  "minimal_requirement": {
+    "bounded_logarithmic_derivative_sufficient": false,
+    "eventual_monotonicity_sufficient": false,
+    "factorization_and_compact_source_sufficient_after_angular_sum": false,
+    "factorization_and_compact_source_sufficient_per_channel": true,
+    "finite_optical_length_excluded_by_angular_finiteness": true,
+    "necessary_geometric_exclusion": "integral_0^infinity d_tau/R4(tau)=infinity",
+    "optical_completeness_alone_proved_sufficient": false,
+    "remaining_sufficient_route": "quantitative optical-completeness/barrier estimate uniform in the angular level, or an already action-owned relative trace",
+    "smoothness_or_local_BV_sufficient": false
+  },
+  "retained_action_dominant_round_radius_balance": {
+    "consequence": "THE_COMPLETE_WEIGHT_SEVEN_COORDINATE_AND_MULTIPLIER_EQUATIONS_ADMIT_THE_ROUND_NONZERO_LOG_RATE_DOMINANT_BALANCE_AND_ARE_COMPATIBLE_WITH_FINITE_OPTICAL_LENGTH",
+    "full_action_large_scale_replay": {
+      "action_limit_errors_strictly_decrease": true,
+      "ansatz": "q=(q0,0,...),_v=(sqrt(kappa0/42),0,...),_multipliers=0",
+      "full_coordinate_EL_residuals_strictly_decrease": true,
+      "multiplier_constraint_residuals_strictly_decrease": true,
+      "normalized_energy_magnitudes_strictly_decrease": true,
+      "normalized_scale_EL_residuals_strictly_decrease": true,
+      "observed_relative_remainder_weight": "R^-2_CONSISTENT_WITH_NEXT_SCALE_WEIGHT_5",
+      "quadrature_points": 96,
+      "rows": [
+        {
+          "absolute_action_limit_error": 0.0034421013230795383,
+          "maximum_absolute_normalized_coordinate_EL_residual": 0.01721053786038212,
+          "maximum_absolute_normalized_multiplier_constraint_residual": 0.001991575512320194,
+          "maximum_absolute_normalized_transverse_coordinate_EL_residual": 0.009957903487000113,
+          "normalized_constant_rate_scale_EL_residual_over_R7": -0.01721053786038212,
+          "normalized_full_action_over_R7": -0.26374164034515435,
+          "normalized_reduced_energy_over_R7": -0.0034421013230794876,
+          "predicted_weight_seven_limit": -0.2671837416682339,
+          "proper_log_radius_rate": 0.3907383060443644,
+          "q0": 2.0
+        },
+        {
+          "absolute_action_limit_error": 6.304438023030379e-05,
+          "maximum_absolute_normalized_coordinate_EL_residual": 0.00031522190115504335,
+          "maximum_absolute_normalized_multiplier_constraint_residual": 3.647705704286414e-05,
+          "maximum_absolute_normalized_transverse_coordinate_EL_residual": 0.00018238528521684696,
+          "normalized_constant_rate_scale_EL_residual_over_R7": -0.00031522190115504335,
+          "normalized_full_action_over_R7": -0.2671206972880036,
+          "normalized_reduced_energy_over_R7": -6.3044380230168e-05,
+          "predicted_weight_seven_limit": -0.2671837416682339,
+          "proper_log_radius_rate": 0.3907383060443644,
+          "q0": 4.0
+        },
+        {
+          "absolute_action_limit_error": 1.1546981024679326e-06,
+          "maximum_absolute_normalized_coordinate_EL_residual": 5.773490512182635e-06,
+          "maximum_absolute_normalized_multiplier_constraint_residual": 6.681006045282717e-07,
+          "maximum_absolute_normalized_transverse_coordinate_EL_residual": 3.3405030230560423e-06,
+          "normalized_constant_rate_scale_EL_residual_over_R7": -5.773490512182635e-06,
+          "normalized_full_action_over_R7": -0.2671825869701314,
+          "normalized_reduced_energy_over_R7": -1.1546981022804274e-06,
+          "predicted_weight_seven_limit": -0.2671837416682339,
+          "proper_log_radius_rate": 0.3907383060443644,
+          "q0": 6.0
+        }
+      ],
+      "transverse_coordinate_EL_residuals_strictly_decrease": true
+    },
+    "not_claimed": "EXISTENCE_OF_A_FULL_RETAINED_EXPONENTIAL_HISTORY_OR_INCOMPATIBILITY_OF_THE_RETAINED_ACTION",
+    "result": {
+      "ADM_trace_coefficient": -21.0,
+      "claim": "EXACT_WEIGHT_SEVEN_DOMINANT_BALANCE_OBSTRUCTS_ANY_PROOF_OF_OSGOOD_DECAY_FROM_THE_LEADING_ADM_COSMOLOGICAL_SECTOR_ALONE",
+      "contracting_equilibrium_log_rate": -0.3907383060443644,
+      "cosmological_coefficient": 6.412409800037613,
+      "dominant_balance_forces_log_rate_decay": false,
+      "dominant_balance_is_compatible_with_finite_optical_length": true,
+      "expanding_dominant_optical_length": "INTEGRAL_0^infinity_d_tau/R4=1/(R_star*sqrt(kappa0/42))",
+      "expanding_dominant_radius_class": "R4(tau)=R_star*exp(sqrt(kappa0/42)*tau)",
+      "expanding_equilibrium_log_rate": 0.3907383060443644,
+      "full_retained_history_with_this_asymptotic_proved": false,
+      "lower_weight_and_transverse_remainders_controlled": false,
+      "proper_time_scale_equation": "D_tau^2_log_R4=kappa0/12-(7/2)*(D_tau_log_R4)^2",
+      "round_volume_integral": 0.041666666666666664,
+      "scale_equation_residual_at_equilibrium": 0.0,
+      "weight_seven_reduced_action": "L7=(R^7/24)*(-21*q0_dot^2/N-(kappa0/2)*N)",
+      "zero_energy_constraint_residual_at_equilibrium": -4.440892098500626e-16,
+      "zero_reduced_energy_constraint": "21*(D_tau_log_R4)^2-kappa0/2=0"
+    },
+    "scope": "ROUND_COMMON_SCALE_ANSATZ_AND_COMPLETE_WEIGHT_SEVEN_ADM_PLUS_COSMOLOGICAL_SECTOR",
+    "status": "EXACT_WEIGHT_SEVEN_BALANCE_PERMITS_NONZERO_LOG_RATE_FULL_HISTORY_OPEN",
+    "weight_seven_kernel_and_weight_five_lift": {
+      "full_action_kernel_lift": [
+        {
+          "R_squared_rescaled_minimum_singular_value": 0.0007718484453457801,
+          "R_squared_rescaled_operator_norm": 0.17892587686439113,
+          "projected_lift_minimum_singular_value": 1.413689740178419e-05,
+          "projected_lift_operator_norm": 0.0032771417484983058,
+          "q0": 2.0
+        },
+        {
+          "R_squared_rescaled_minimum_singular_value": 0.0007718485127599168,
+          "R_squared_rescaled_operator_norm": 0.1789269258424041,
+          "projected_lift_minimum_singular_value": 2.5892633043308713e-07,
+          "projected_lift_operator_norm": 6.0023296745610734e-05,
+          "q0": 4.0
+        },
+        {
+          "R_squared_rescaled_minimum_singular_value": 0.0007718485119342964,
+          "R_squared_rescaled_operator_norm": 0.17892692585816442,
+          "projected_lift_minimum_singular_value": 4.7424011619247e-09,
+          "projected_lift_operator_norm": 1.0993650282007745e-06,
+          "q0": 6.0
+        }
+      ],
+      "kernel_dimension_exhibited": 12,
+      "kernel_origin": "LOCAL_TIME_REPARAMETRIZATION_CANCELLATION_OF_THE_COMMON_EXTRINSIC_CURVATURE_RATE_AT_ZERO_REDUCED_ENERGY",
+      "kernel_vectors": "z_k=(delta_v_u_k=sqrt(kappa0/42),_delta_log_lapse_k=1),_k=1,...,12",
+      "leading_cross_quadrature": [
+        {
+          "maximum_absolute_normalized_coordinate_EL_residual": 4.0954540328020243e-16,
+          "maximum_absolute_normalized_multiplier_constraint_residual": 2.6233502797516286e-15,
+          "maximum_weight_seven_kernel_residual": 1.0268763323878813e-15,
+          "normalized_action": -0.26718374166823367,
+          "normalized_zero_energy_residual": 0.0,
+          "predicted_normalized_action": -0.2671837416682339,
+          "quadrature_points": 96
+        },
+        {
+          "maximum_absolute_normalized_coordinate_EL_residual": 6.143181049203036e-16,
+          "maximum_absolute_normalized_multiplier_constraint_residual": 5.508340680116897e-15,
+          "maximum_weight_seven_kernel_residual": 8.621729183249112e-16,
+          "normalized_action": -0.2671837416682343,
+          "normalized_zero_energy_residual": -1.535795262300759e-16,
+          "predicted_normalized_action": -0.2671837416682339,
+          "quadrature_points": 192
+        },
+        {
+          "maximum_absolute_normalized_coordinate_EL_residual": 6.143181049203036e-16,
+          "maximum_absolute_normalized_multiplier_constraint_residual": 8.243132353555902e-15,
+          "maximum_weight_seven_kernel_residual": 1.0603257509905634e-15,
+          "normalized_action": -0.2671837416682331,
+          "normalized_zero_energy_residual": -2.0477270164010121e-16,
+          "predicted_normalized_action": -0.2671837416682339,
+          "quadrature_points": 384
+        }
+      ],
+      "lift_scale": "D_FULL_ON_KERNEL/R7=exp(-2*q0)*K5_PLUS_LOWER_WEIGHTS",
+      "ordinary_leading_inverse_stability_analysis_authorized": false,
+      "required_reduction": "SINGULAR_FESHBACH_OR_DIRAC_REDUCTION_USING_THE_WEIGHT_FIVE_KERNEL_LIFT_BEFORE_TRANSVERSE_STABILITY_CAN_BE_ADJUDICATED",
+      "rescaled_minimum_singular_value_relative_spread": 8.7341149914819e-08,
+      "rescaled_operator_norm_relative_spread": 5.862693768745089e-06,
+      "weight_seven_Euler_Dirac_block_invertible": false
+    }
+  },
+  "retained_action_uniform_scale_ownership_audit": {
+    "Osgood_requirement": "omega(R)=o(R)_REQUIRES_D_tau_log_R4->0_ALONG_UNBOUNDED_OUTWARD_RADIUS",
+    "action_scale_structure": "PRE_QUOTIENT_BULK_WEIGHTS_{7,5,3,1,-1};_INERTIA_WEIGHTS_{7,5,3,1};_BOUNDARY_CASIMIR_WEIGHT_-1",
+    "conclusion": "POSITIVE_RADIUS_LAPSE_AND_SCALE_WEIGHTS_DO_NOT_FORCE_OSGOOD;_A_CONSTRAINT_REDUCED_FLOW_ESTIMATE_IS_REQUIRED",
+    "kinematic_consequence": "R4->exp(sigma)*R4,_D_tau_log_R4_UNCHANGED,_abs(D_tau_R4)->exp(sigma)*abs(D_tau_R4)",
+    "leading_balance": "ADM_KINETIC_AND_ALGEBRAIC_TERMS_BOTH_HAVE_WEIGHT_7",
+    "status": "EXACT_SCALE_WEIGHTS_DERIVED_NO_OSGOOD_DECAY_THEOREM",
+    "uniform_shift": "q0->q0+sigma_WITH_OTHER_COORDINATES_VELOCITIES_AND_LAPSE_SHIFT_FIXED",
+    "witness": {
+      "Osgood_sublinear_speed_requires_proper_log_rate_tends_to_zero": true,
+      "base_absolute_proper_radius_speed": 0.125,
+      "base_proper_log_radius_rate": 0.1,
+      "base_radius": 1.25,
+      "boundary_Casimir_scale_weight": -1,
+      "inertia_polynomial_scale_weights": [
+        7,
+        5,
+        3,
+        1
+      ],
+      "inverse_inertia_leading_scale_weight": -7,
+      "leading_ADM_kinetic_scale_weight": 7,
+      "leading_algebraic_scale_weight": 7,
+      "positive_radius_and_lapse_domain_alone_proves_Osgood_envelope": false,
+      "pre_inverse_inertia_bulk_scale_weights": [
+        7,
+        5,
+        3,
+        1,
+        -1
+      ],
+      "radius_scale_factor": 7.38905609893065,
+      "scale_shift": 2.0,
+      "scale_weights_alone_force_log_rate_decay": false,
+      "speed_to_radius_ratio": 0.1,
+      "translated_absolute_proper_radius_speed": 0.9236320123663313,
+      "translated_proper_log_radius_rate": 0.1,
+      "translated_radius": 9.236320123663313
+    }
+  },
+  "status": "FIXED_CHANNEL_DINI_CLOSED_ANGULAR_UNIFORMITY_REDUCED_TO_OPTICAL_COMPLETENESS_OR_ACTION_OWNED_RELATIVE_TRACE",
+  "validation": {
+    "BRST_physical_leading_coefficient_nonzero": true,
+    "FULL_BHSM_COMPLETE_false": true,
+    "absolute_angular_sum_is_not_closed_for_arbitrary_tails": true,
+    "action_does_not_currently_prove_global_absolute_radius_speed_bound": true,
+    "action_does_not_currently_prove_optical_completeness": true,
+    "all_inputs_validated": true,
+    "angular_terms_fail_even_to_tend_to_zero": true,
+    "at_most_linear_barrier_has_mu_log_mu_action": true,
+    "at_most_linear_radius_implies_optical_completeness": true,
+    "barrier_beats_local_exponential_and_polynomial_growth": true,
+    "both_chiralities_have_direct_mu_log_mu_barrier_without_monotonicity": true,
+    "conditional_angular_series_root_test_closes": true,
+    "constraint_reduced_energy_identity_consumed": true,
+    "counterexample_has_bounded_log_derivative": true,
+    "counterexample_has_finite_optical_length": true,
+    "counterexample_is_positive_smooth_and_non_power": true,
+    "dominant_balance_does_not_prove_full_exponential_history": true,
+    "every_fixed_channel_remains_Dini_finite": true,
+    "exact_weight_seven_energy_and_scale_equations_have_nonzero_expanding_equilibrium": true,
+    "exact_weight_seven_full_system_and_kernel_replay_close": true,
+    "fixed_channel_Dini_closure_preserved": true,
+    "frozen_predictions_unchanged": true,
+    "full_action_large_scale_replay_converges_to_weight_seven_balance": true,
+    "high_energy_fixed_sector_theorem_preserved": true,
+    "logarithmic_speed_Osgood_barrier_allows_unbounded_speed": true,
+    "logarithmic_speed_barrier_beats_local_exponential_growth": true,
+    "maximal_flow_dichotomy_does_not_select_infinite_tail_class": true,
+    "no_relative_reference_inserted": true,
+    "retained_action_has_same_leading_scale_weight_for_kinetic_and_algebraic_terms": true,
+    "retained_forward_reference_is_not_executable": true,
+    "spatial_Galerkin_tail_not_repurposed": true,
+    "state_control_reduction_is_finite_and_two_sided": true,
+    "strict_gap_power_tail_terminal_recurrence_and_chord3_not_reopened": true,
+    "uniform_scale_shift_preserves_log_rate_and_scales_radius_speed_linearly": true,
+    "weight_five_kernel_lift_has_exact_relative_R_minus_two_scaling": true
+  },
+  "validation_passed": true
+}

@@ -1,0 +1,63 @@
+{
+  "FLAGSHIP_READY": false,
+  "FULL_BHSM_COMPLETE": false,
+  "artifact": "BHSM_N12_C2_RECENTERABLE_LAUNCH_ENDPOINT",
+  "claim_boundary": {
+    "FULL_BHSM_COMPLETE": false,
+    "canonical_stop_reached": false,
+    "complete_M_C2_maximal_response": "OPEN_AFTER_CONTINUATION",
+    "first_recenterable_C2_endpoint_tube": "CERTIFIED",
+    "physical_encapsulation_endpoint_reached": false,
+    "zero_source_force": "OPEN_AFTER_COMPLETE_M_C2"
+  },
+  "classification": "THE_POLE_FREE_COVARIANT_JACOBI_BOUND_PERMITS_THE_FULL_DELTA_POSITIVITY_LIMITED_C2_LAUNCH;_THE_REFINED_ROOT_UNCERTAINTY,_FLOW_GROWTH,_PREDICTOR_MISMATCH,_AND_NONLINEAR_REMAINDER_CLOSE_AN_EXPLICIT_ENDPOINT_TUBE_STRICTLY_INSIDE_A_NEW_TRANSLATED_ACTION_BALL",
+  "endpoint_recenter": {
+    "data": "artifacts/flagship_integration/BHSM_N12_C2_RECENTERABLE_LAUNCH_ENDPOINT.npz",
+    "data_SHA256": "59FFDE431DEE45F472821B1FE4FD395848FF07C0C477D1259A667385139E05F0",
+    "endpoint_tube_radius_upper": 6.717436438122753e-15,
+    "next_translated_ball_radius": 1.3434872876245506e-14,
+    "nonlinear_remainder_upper": 1.0227937703462394e-19,
+    "outer_ball_total_radius_use": 6.228071208671125e-13,
+    "outer_launch_ball_radius": 1e-12,
+    "predictor_action_step_norm": 5.653030252171769e-16,
+    "predictor_is_physical_endpoint": false,
+    "refined_root_distance_upper": 4.3223310537263596e-15
+  },
+  "exact_next_dependency": "RECOMPUTE_THE_RETAINED_ACTION,_SELECTED_LINE,_DELTA,_AND_POLE_FREE_JACOBI_BOUNDS_ON_THE_TRANSLATED_PREDICTOR_BALL,_THEN_ITERATE_UNTIL_COMPLETED_ENCAPSULATION_OR_A_CANONICAL_STOP",
+  "extended_segment": {
+    "action_path_upper": 1.1971322971092994e-15,
+    "coordinate_time_interval": [
+      5.060138700136564e-38,
+      1.636750280909127e-37
+    ],
+    "physical_u_end": 1.379177998199948e-50,
+    "pole_free_Jacobi_exponent_upper": 0.00017084478445032096,
+    "pole_free_Jacobi_growth_upper": 1.0001708593792515,
+    "proper_time_interval": [
+      3.5454075837291094e-38,
+      1.14679600747958e-37
+    ],
+    "signed_lambda_end": 1.1743840931313519e-25
+  },
+  "inputs": {
+    "artifacts/flagship_integration/BHSM_N12_C2_POLE_FREE_REGULARIZED_JACOBI.json": "E2442FE76E3A7AB07195788B773B58412FA4AA5EA901F1A8ABC4385338A99654",
+    "artifacts/flagship_integration/BHSM_N12_C2_REFINED_RESET_ROOT_CENTER.json": "DA620CB57D84CD3552669D3F590F4E25F46C335D38F06FA3A2CC5C397FD43B55",
+    "artifacts/flagship_integration/BHSM_N12_C2_REFINED_RESET_ROOT_CENTER.npz": "59DD88661B15CBEEC96BC19294F9D9C64F754CCCBFBC385C32329FA9C864A8FE",
+    "artifacts/flagship_integration/BHSM_N12_C2_REGULARIZED_LAUNCH_SEGMENT.json": "32755FD84E61A806202D83F92EADEDA58A906FC188BCE63704671C7CA4E56DE9",
+    "artifacts/flagship_integration/BHSM_N12_FINITE_TERMINAL_RESET_STRATUM_CANDIDATE.npz": "303BEBE80E6033D398278935C9AD01CD1A8C72EDEE208D52C0005A252119D0CD",
+    "theory/n12_c2_recenterable_launch_endpoint.md": "2935DA2CF84567D03AF2BCCEA5970BD2AEFF02E1D876AB57655C601F5B752E9B"
+  },
+  "status": "POLE_FREE_C2_LAUNCH_ENDPOINT_TUBE_RECENTERABLE",
+  "validation": {
+    "Jacobi_growth_is_close_to_one": true,
+    "endpoint_tube_is_strictly_positive_and_finite": true,
+    "extended_launch_has_positive_coordinate_and_proper_time": true,
+    "extended_launch_stays_inside_Delta_tube": true,
+    "next_recenter_ball_stays_inside_outer_launch_ball": true,
+    "no_selector_equation_scale_fit_gate_or_chord_added": true,
+    "pole_free_Jacobi_removes_old_length_cap": true,
+    "predictor_is_proof_center_not_physical_endpoint": true,
+    "same_actual_C2_branch_24_used": true
+  },
+  "validation_passed": true
+}

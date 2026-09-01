@@ -1,0 +1,74 @@
+{
+  "components": [
+    {
+      "assumptions": [
+        "diagonal l2 reference operator is the chosen complete-operator core scaffold"
+      ],
+      "component_id": "A0",
+      "identified_with_complete_operator": true,
+      "limitations": [
+        "does not identify all non-diagonal twisted Dirac/bundle terms"
+      ],
+      "role": "diagonal reference operator D_diag^2",
+      "source_status": "DIAGONAL_REFERENCE_OPERATOR_PROVEN",
+      "status": "COMPONENT_IDENTIFIED"
+    },
+    {
+      "assumptions": [
+        "v2.13 complete-operator action uniqueness closes the perturbation package selection"
+      ],
+      "component_id": "V",
+      "identified_with_complete_operator": true,
+      "limitations": [
+        "commutator/domain control remains a downstream H_T dependency"
+      ],
+      "role": "Hopf, boundary, chirality, sector-coupling perturbation package",
+      "source_status": "RELATIVE_BOUND_CONDITIONAL_WITH_EXPLICIT_ASSUMPTIONS",
+      "status": "COMPONENT_IDENTIFIED"
+    },
+    {
+      "assumptions": [
+        "formal kernel is coordinate-independent and sector-labeled"
+      ],
+      "component_id": "K_formal",
+      "identified_with_complete_operator": true,
+      "limitations": [
+        "topological index theorem remains separate from coordinate realization"
+      ],
+      "role": "corrected sector-labeled formal kernel",
+      "source_status": "FORMAL_KERNEL_PROJECTOR_PROVEN",
+      "status": "COMPONENT_IDENTIFIED"
+    },
+    {
+      "assumptions": [
+        "PSD/lift terms are part of the unique v2.13 operator package"
+      ],
+      "component_id": "heat_lift_profile",
+      "identified_with_complete_operator": true,
+      "limitations": [
+        "full profile positivity belongs to scalar/topographic action closure"
+      ],
+      "role": "heat-lift and PSD profile contribution",
+      "source_status": "LIFT_PROJECTOR_DOMAIN_CONDITIONAL",
+      "status": "COMPONENT_IDENTIFIED"
+    }
+  ],
+  "diagonal_reference_status": "DIAGONAL_REFERENCE_OPERATOR_PROVEN",
+  "exact_complete_operator": true,
+  "formal_kernel_coordinates": [
+    0,
+    18,
+    36
+  ],
+  "limitations": [
+    "This audit identifies the complete-operator candidate chain without changing frozen predictions.",
+    "v2.13 upgrades only complete-operator identification; H_T commutator/domain/index/mirror gates remain separate."
+  ],
+  "old_coordinate_first_kernel_used": false,
+  "open_obligations": [],
+  "perturbation_bridge_status": "RELATIVE_BOUND_CONDITIONAL_WITH_EXPLICIT_ASSUMPTIONS",
+  "status": "COMPLETE_OPERATOR_IDENTIFICATION_PROVEN",
+  "theorem_candidate_model": true,
+  "theorem_complete": true,
+  "title": "BHSM v2.4 Complete Twisted Dirac Operator Identification Report"
+}

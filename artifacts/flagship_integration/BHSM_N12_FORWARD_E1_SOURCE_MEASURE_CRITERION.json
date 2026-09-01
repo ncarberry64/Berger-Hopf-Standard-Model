@@ -1,0 +1,59 @@
+{
+  "FLAGSHIP_READY": false,
+  "FULL_BHSM_COMPLETE": false,
+  "artifact": "BHSM_N12_FORWARD_E1_SOURCE_MEASURE_CRITERION",
+  "claim_boundary": {
+    "FLAGSHIP_READY": false,
+    "FULL_BHSM_COMPLETE": false,
+    "Gate_7": "ACTIVE_NOT_CLOSED",
+    "Gate_8": "LOCKED",
+    "chord_03_authorized": false,
+    "same_action_saddle": "OPEN",
+    "zero_source_force": "OPEN"
+  },
+  "classification": "THE_ZERO_SOURCE_WEAK_GEOMETRY_FORCE_DOES_NOT_REQUIRE_A_UNIFORM_BOUND_ON_THE_ENTIRE_MAXIMAL_FORWARD_SPECTRAL_MEASURE_IF_ITS_ACTION_OWNED_SOURCE_WEIGHTED_GRADED_MEASURE_HAS_STRICTLY_MORE_THAN_LINEAR_LOW_ENERGY_VANISHING_AND_A_FINITE_E1_WEIGHTED_HIGH_ENERGY_TAIL;_AN_EXACT_DYADIC_SUM_THEN_BOUNDS_THE_FIRST_VARIATION",
+  "exact_next_dependency": "BOUND_THE_ACTUAL_N12_SOURCE_WEIGHTED_GRADED_SPECTRAL_COUNTING_FUNCTION_NEAR_ZERO_AND_ITS_E1_WEIGHTED_HIGH_ENERGY_TAIL_FOR_EACH_RETAINED_WEAK_GEOMETRY_DIRECTION;_THEN_ASSEMBLE_AND_SIGN_ADJUDICATE_THE_ZERO_SOURCE_FORCE",
+  "exact_witness": {
+    "C_h": 3.0,
+    "H_h": 2.0,
+    "epsilon_h": 1.0,
+    "first_E1_variation_absolute_upper": 7.0,
+    "high_energy_integral_upper": 2.0,
+    "low_energy_integral_upper": 12.0
+  },
+  "hindsight": {
+    "actual_N12_source_weighted_constants_C_epsilon_H": "OPEN",
+    "full_unweighted_spectral_measure_bound_logically_required": false,
+    "one_source_weighted_measure_estimate_sufficient_for_force": true,
+    "pair_contact_second_variation_criterion": "NOT_DERIVED_HERE",
+    "uniform_global_operator_gap_logically_required": false
+  },
+  "inputs": {
+    "artifacts/flagship_integration/BHSM_N12_FORWARD_BRST_HEAT_TAIL_CANCELLATION_AUDIT.json": "C27A8CB4EFC001E44EC9B001A3130155D7847E299CCBE54EA6B8FD38E755ABC6",
+    "artifacts/flagship_integration/BHSM_N12_FORWARD_E1_INFRARED_CONTROL_AUDIT.json": "29D57E2B21FFF1956419A29B828E5672CC179D02A157B65928C69E34F2B783AC",
+    "artifacts/flagship_integration/BHSM_N12_FORWARD_RESOLVENT_HEAT_SYNTHESIS_AUDIT.json": "F2752BBC60DE7342BA61DF6ABC793AAEB6F59D87B6F5616FDB71B92679C0D7D6",
+    "artifacts/flagship_integration/BHSM_N12_FORWARD_WEAK_HEAT_VARIATIONS.json": "9B6912D5C3CD4280C3E8530C2EE839B0396600F91F3046D81712B4F9F686FBBF",
+    "src/bhsm/interface/aether_forward_e1_source_measure.py": "1A141DEA93BADDE171BE1D7A2A8B79627548F0651246002E4A3BA04F15EDE4BE"
+  },
+  "status": "SOURCE_WEIGHTED_E1_FIRST_VARIATION_SUFFICIENT_CRITERION_DERIVED",
+  "theorem": {
+    "dyadic_low_bound": "2*C_h/(1-2^(-epsilon_h))",
+    "force_bound": "abs(D_h_Gamma_heat)<=C_h/(1-2^(-epsilon_h))+H_h/2",
+    "high_energy_hypothesis": "H_h=integral_[1,infinity]exp(-lambda)/lambda_dabs(nu_h)(lambda)<infinity",
+    "low_energy_hypothesis": "abs(nu_h)([0,Lambda])<=C_h*Lambda^(1+epsilon_h)_FOR_0<Lambda<=1,_epsilon_h>0",
+    "retained_heat_length": 1.0,
+    "scope": "FIRST_ZERO_SOURCE_WEAK_GEOMETRY_VARIATION_ONLY",
+    "source_weighted_measure": "nu_h(B)=STr(E_K(B)*P_h)_IN_TOTAL_VARIATION_FOR_ONE_RETAINED_COMPACTLY_SUPPORTED_GEOMETRY_DIRECTION_h"
+  },
+  "validation": {
+    "BRST_universal_cancellation_is_unavailable": true,
+    "all_inputs_validated": true,
+    "compact_source_variation_class_is_retained": true,
+    "epsilon_zero_is_not_promoted": true,
+    "exact_dyadic_witness_closes": true,
+    "full_operator_infrared_control_is_open": true,
+    "no_reference_gap_profile_endpoint_or_prediction_added": true,
+    "single_probe_is_unavailable_as_heat_synthesis": true
+  },
+  "validation_passed": true
+}

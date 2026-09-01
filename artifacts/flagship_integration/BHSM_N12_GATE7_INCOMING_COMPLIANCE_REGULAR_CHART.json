@@ -1,0 +1,103 @@
+{
+  "FLAGSHIP_READY": false,
+  "FULL_BHSM_COMPLETE": false,
+  "adjudication": {
+    "Gate7": "OPEN",
+    "Gate8": "LOCKED",
+    "chord_03_authorized": false,
+    "componentwise_KKT_condition_added": false,
+    "full_graded_heat_amplitude_bound": "OPEN_UNIFORM_ANGULAR_DOMINATION",
+    "incoming_M_f_is_zeroed": false,
+    "joint_amplitude_force": "OPEN_AFTER_GRADED_DOMINATION",
+    "maximal_projected_tail": "OPEN",
+    "new_seam_force_or_source_added": false,
+    "pointwise_fixed_channel_shrinking_arm_heat_jet": "REGULAR_O_lambda"
+  },
+  "algebra_witness": {
+    "C_f": 0.1574074074074074,
+    "D_C_f_inverse_identity": -0.03220164609053498,
+    "D_C_f_quotient": -0.032201646090534976,
+    "D_M_f": 1.2996539792387543,
+    "M_f": 6.352941176470588,
+    "derivative_identity_absolute_residual": 6.938893903907228e-18,
+    "positive_M_f_and_C_f": true,
+    "transfer_b": 0.17,
+    "transfer_d": 1.08
+  },
+  "artifact": "BHSM_N12_GATE7_INCOMING_COMPLIANCE_REGULAR_CHART",
+  "certified_coefficients": {
+    "D_lambda_T_per_lambda_interval": [
+      242797960189610.97,
+      2102433575462571.8
+    ],
+    "D_lambda_log_R4_per_lambda_absolute_upper": 4.697434087429611e+16,
+    "amplitude_interval": [
+      0.0,
+      1.3302563684711186e-30
+    ],
+    "amplitude_interval_left_endpoint_is_open": true,
+    "duration_lambda_squared_coefficient_interval": [
+      121398980082665.56,
+      1051216787836407.6
+    ],
+    "liminf_D_lambda_C_f_per_lambda_lower": 242797960189610.97,
+    "limsup_D_lambda_C_f_per_lambda_upper": 2102433575462571.8,
+    "minus_Delta_interval": [
+      4.75639283766662e-16,
+      4.11865074656747e-15
+    ]
+  },
+  "claim_boundary": {
+    "FULL_BHSM_COMPLETE": false,
+    "Gate7": "OPEN",
+    "Gate8": "LOCKED",
+    "actual_projected_KKT_root": "OPEN",
+    "chord_03_authorized": false,
+    "fixed_channel_amplitude_heat_jet_regularity": "CERTIFIED_POINTWISE",
+    "incoming_compliance_regular_chart": "CERTIFIED",
+    "joint_amplitude_force": "OPEN",
+    "uniform_graded_heat_amplitude_covector": "OPEN"
+  },
+  "classification": "THE_SHORT_ARM_DIRICHLET_TO_NEUMANN_POLE_M_f_EQUALS_d_OVER_b_IS_REMOVED_BY_THE_EQUIVALENT_COMPLIANCE_CHART_C_f_EQUALS_b_OVER_d;_THE_EXACT_REVERSE_IDENTITY_D_C_f_EQUALS_MINUS_C_f_D_M_f_C_f_MAKES_EVERY_FIXED_CHANNEL_AMPLITUDE_JET_LINEAR_AT_THE_ZERO_LENGTH_LIMIT",
+  "exact_chart": {
+    "derivative": "D_C_f=-C_f*(D_M_f)*C_f=(D_b*d-b*D_d)/d^2",
+    "descriptor_or_kinetic_block_inverse_formed": false,
+    "incoming_DtN": "M_f=d/b",
+    "incoming_compliance": "C_f=M_f^-1=b/d",
+    "transfer": "Phi_f=[[a,b],[c,d]]"
+  },
+  "exact_next_dependency": "PROVE_A_SUMMABLE_ANGULAR_MAJORANT_FOR_THE_REGULAR_COMPLIANCE_HEAT_JET,_THEN_COMPARE_THE_RESULTING_UNIFORM_O_lambda_BOUND_WITH_THE_CERTIFIED_STRICT_REPLACEMENT_ZETA_COEFFICIENT",
+  "inputs": {
+    "artifacts/flagship_integration/BHSM_N12_FINITE_HISTORY_TERMINAL_WEYL_GERM.json": "995C33B16212734491E08A22852910E95574809D9CBDD75065377CBFFF3BDCF1",
+    "artifacts/flagship_integration/BHSM_N12_GATE7_INCOMING_AMPLITUDE_ZETA_COTANGENT.json": "B076C8837F8C371E0CEF9D8E1D062DF44A4684CAE0D4ED36000779D1FE631304",
+    "artifacts/flagship_integration/BHSM_N12_GATE7_JOINT_HEAT_COTANGENT_REVERSE_SEED.json": "314C8A6C77A062A76F92CAD1D3833EED363DA105FC12265A292A1BD874F85901",
+    "artifacts/flagship_integration/BHSM_N12_INCOMING_FINITE_AMPLITUDE_COEFFICIENT_ENCLOSURE.json": "40C22A60A17597900D972D02F107B12E621EED1020A839E71D5D2B97B629D194",
+    "artifacts/flagship_integration/BHSM_N12_INCOMING_MF_COMPACT_MATCH.json": "0FB27367F58FBF75C6C0B384F41AE7644515FBCFCA0AABAAA6544B47B05EEC33",
+    "artifacts/flagship_integration/BHSM_N12_INCOMING_MF_NEGATIVE_AXIS_ENCLOSURE.json": "59B718CC574103B05AE2D184506A06F51617450D958B2E5E856D8B5C9753633C",
+    "artifacts/flagship_integration/BHSM_N12_INCOMING_REGULARIZED_TERMINAL_SEGMENT.json": "DDFDCBD0632F9C99A1E7C3DB97F98793BBB12E139610A16730A2C33E23984485",
+    "theory/n12_gate7_incoming_compliance_regular_chart.md": "22BDA274DEF829773006D6D226454EA3D68063BDF4329FE53B20F27FD0698459"
+  },
+  "short_arm_theorem": {
+    "C_f": "T-T^2*C_0+O(T^3)",
+    "M_f": "T^-1+C_0+T*B+O(T^2)",
+    "compliance_derivative": "D_lambda_C_f=lambda/(-Delta(lambda))+O(lambda^3)",
+    "duration_derivative": "D_lambda_T=lambda/(-Delta(lambda))",
+    "fixed_channel_heat_functional_sensitivity": "O(lambda)",
+    "uniform_full_graded_supertrace_sensitivity": "OPEN_SUMMABLE_DOMINATION"
+  },
+  "status": "INCOMING_COMPLIANCE_REGULAR_CHART_AND_LINEAR_AMPLITUDE_JET_CERTIFIED",
+  "validation": {
+    "compliance_derivative_identity_replays": true,
+    "componentwise_KKT_condition_remains_retired": true,
+    "duration_derivative_per_lambda_is_positive_and_ordered": true,
+    "duration_quadratic_coefficients_match_half_derivative_coefficients": true,
+    "graded_uniform_differentiation_not_overclaimed": true,
+    "incoming_response_is_compact_M11": true,
+    "joint_heat_seed_uses_one_complete_internal_seam": true,
+    "negative_axis_incoming_response_is_strictly_positive": true,
+    "no_descriptor_inverse_source_selector_endpoint_recurrence_scale_gate_or_chord_added": true,
+    "normalized_coefficient_amplitude_jet_is_O_lambda": true,
+    "terminal_M_f_Laurent_germ_is_certified": true
+  },
+  "validation_passed": true
+}

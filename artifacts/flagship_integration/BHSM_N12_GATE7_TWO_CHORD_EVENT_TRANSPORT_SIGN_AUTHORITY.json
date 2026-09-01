@@ -1,0 +1,102 @@
+{
+  "FLAGSHIP_READY": false,
+  "FULL_BHSM_COMPLETE": false,
+  "Gate7_status_changed": false,
+  "artifact": "BHSM_N12_GATE7_TWO_CHORD_EVENT_TRANSPORT_SIGN_AUTHORITY",
+  "bounded_next_calculation": {
+    "decision_rule": {
+      "all_F_u_upper_negative_and_accumulation_reaches_chart": "FINITE_TERMINAL_CHART_ENTRY_OR_EXISTING_STOP",
+      "any_F_u_lower_positive": "IMMEDIATE_GLOBAL_DECREASE_INEQUALITY_INVALID_ON_THAT_SUBSPAN",
+      "mixed_or_zero_containing_intervals": "PURE_SIGN_ROUTE_OPEN_OR_INVALID;_TEST_PIECEWISE_INTEGRATED_BOUND"
+    },
+    "new_chord_required": false,
+    "required_output_per_subspan": [
+      "SIGNED_CENTER_c_psi*b_psi",
+      "SIGNED_CENTER_e_ord*R_EXT",
+      "CANCELLATION_PRESERVING_VARIATION_UPPER",
+      "F_u_LOWER_AND_UPPER"
+    ],
+    "reuse": [
+      "THE_TWO_EXISTING_HERMITE_CENTER_FAMILIES",
+      "THE_EXISTING_ACTION_BALLS_AND_HARD_KATO_GAPS",
+      "THE_EXISTING_D3_D4_D5_ACTION_MAJORANTS",
+      "THE_EXISTING_SELECTED_LINE_AND_HARD_PROJECTOR_TRANSPORT",
+      "THE_CERTIFIED_GREEN_SHADOWING_RADII"
+    ],
+    "target": "INTERVAL_ENCLOSE_F_u=2*c_psi*b_psi+2*e_ord*R_EXT_ON_EACH_OF_THE_EXISTING_128_CERTIFIED_SUBSPANS",
+    "trajectory_campaign_required": false
+  },
+  "chord_03_authorized": false,
+  "classification": "TWO_CHORD_STATE_SHADOWING_DOES_NOT_CERTIFY_ORDERED_EVENT_TRANSPORT_SIGN;_THE_FIRST_MISSING_FINITE_CORE_OBJECT_IS_A_CANCELLATION_PRESERVING_INTERVAL_ENCLOSURE_OF_F_u_ON_THE_EXISTING_128_SUBSPANS",
+  "current_flagship_gate": 7,
+  "exact_next_dependency": "INTERVAL_ENCLOSE_F_u=2*c_psi*b_psi+2*e_ord*R_EXT_ON_EACH_OF_THE_EXISTING_128_CERTIFIED_SUBSPANS",
+  "inputs": {
+    "artifacts/flagship_integration/BHSM_N12_GATE7_MINIMAL_EVENT_TRANSPORT_SCALAR_AUDIT.json": "83CA81A77EC8C3CD7AFD7302DA2A7F9240FF80E598A6F0C77895B8CF8C8DEFBD",
+    "artifacts/flagship_integration/BHSM_N12_GATE7_TWO_CHORD_PROMOTION_AUDIT.json": "EBAF4727B33374EEFD2EA1CE5543FB66DCD08018B5774A6A7D37835399E4FDF8",
+    "artifacts/intrinsic_state_selection/BHSM_N12_FORWARD_TERMINAL_CHART_REACHABILITY_GATE.json": "3B8824B525DD7DB2FA8FEAA7B08D52BACFFA6752ECA83CEF9FF775BEBBA0E8B3",
+    "artifacts/intrinsic_state_selection/BHSM_N12_GATE7_CHORD_02_SIGNED_ALIGNED_GREEN.json": "7DCCE7038B78DB2DB0FD39B2F10CB342C798CD02175CB1D8A869B9752C93F726",
+    "artifacts/intrinsic_state_selection/BHSM_N12_GATE7_COMPLETE_PHYSICAL_U_GREEN_SHADOWING.json": "090900BB95B3325ADC1E5DF141B82996C538AE464397F8D5F4DBD543799BB435"
+  },
+  "obstruction_class": "MISSING_PROOF_ENCLOSURE_NOT_RETAINED_ACTION_INCOMPATIBILITY",
+  "sign_authority_audit": {
+    "certified_core": {
+      "certified_chords": 2,
+      "certified_subspans": 128,
+      "coordinate_interval": [
+        0.0,
+        2e-08
+      ],
+      "event_or_existing_domain_stop_on_core": false,
+      "state_shadowing_closed": true
+    },
+    "chord_01": {
+      "F_u_interval_sign_certified": false,
+      "certificate_role": "COMPLETE_PHYSICAL_U_GREEN_STATE_SHADOWING",
+      "missing_signed_interval_fields": [
+        "R_ext_lower",
+        "R_ext_upper",
+        "b_psi_lower",
+        "b_psi_upper",
+        "c_psi_lower",
+        "c_psi_upper",
+        "u_dot_lower",
+        "u_dot_upper"
+      ],
+      "subspans": 64
+    },
+    "chord_02": {
+      "F_u_interval_sign_certified": false,
+      "certificate_role": "COMPLETE_SIGNED_PHYSICAL_U_GREEN_STATE_SHADOWING",
+      "missing_signed_interval_fields": [
+        "R_ext_lower",
+        "R_ext_upper",
+        "b_psi_lower",
+        "b_psi_upper",
+        "c_psi_lower",
+        "c_psi_upper",
+        "u_dot_lower",
+        "u_dot_upper"
+      ],
+      "subspans": 64
+    },
+    "finite_core_sign_conclusion": "NO_SIGN_SELECTED_FROM_CURRENT_CERTIFICATES",
+    "global_monotone_decrease_proved": false,
+    "global_monotone_increase_proved": false,
+    "identity_to_sign": "F_u(Y)=D_t(e_ord^2)=2*c_psi*b_psi+2*e_ord*R_EXT(Y)",
+    "why_shadowing_is_not_sign_authority": "THE_GREEN_CERTIFICATES_BOUND_THE_STATE_SHADOWING_SOURCE_AND_DOMAIN_MARGINS;_THEIR_PER_SUBSPAN_SOURCE_BOUNDS_ARE_ABSOLUTE_ENCLOSURES_AND_DO_NOT_REPORT_SIGNED_INTERVALS_FOR_c_psi,_b_psi,_R_EXT,_OR_F_u"
+  },
+  "validation": {
+    "Gate7_and_later_claim_boundaries_preserved": true,
+    "all_128_certified_subspans_accounted": true,
+    "all_inputs_validated": true,
+    "local_terminal_hitting_reused": true,
+    "minimal_scalar_identity_consumed": true,
+    "missing_interval_sign_is_proof_enclosure_not_action_incompatibility": true,
+    "no_chord_03_or_new_trajectory_required_for_next_calculation": true,
+    "no_new_equation_gate_selector_threshold_or_physics": true,
+    "state_shadowing_not_misclassified_as_transport_sign": true,
+    "terminal_chart_entry_not_assumed": true,
+    "two_certified_chords_consumed": true
+  },
+  "validation_passed": true
+}

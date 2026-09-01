@@ -1,0 +1,42 @@
+{
+  "FULL_BHSM_COMPLETE": false,
+  "artifact": "BHSM_N12_GATE7_SECOND_RATE_CONSISTENT_NEWTON_ENDPOINT_CANDIDATE",
+  "authority": "DIRECT_ONE_JET_SELECTED_DESCRIPTOR_AND_CANCELLED_FIELD_REPLAY_NUMERICAL_CANDIDATE",
+  "claim_boundary": {
+    "FULL_BHSM_COMPLETE": false,
+    "Gate7": "ACTIVE_ACTION_OWNED_OPERATOR_ORACLE",
+    "continuous_action_constrained_center": "OPEN",
+    "nonlinear_Hermite_Simpson_center": "OPEN_MIDPOINT_REPLAY"
+  },
+  "data": "artifacts/flagship_integration/BHSM_N12_GATE7_SECOND_RATE_CONSISTENT_NEWTON_ENDPOINT_CANDIDATE.npz",
+  "data_SHA256": "07B0878F86DC5311F4069BDDECC1B7AB9BFC124E181AD15E272AD01BA7AE2C02",
+  "exact_next_dependency": "REPLAY_ALL_370_SECOND_RATE_CONSISTENT_NEWTON_MIDPOINTS",
+  "inputs": {
+    "artifacts/flagship_integration/BHSM_N12_GATE7_RATE_CONSISTENT_NEWTON_ENDPOINT_CANDIDATE.json": "039436AB80F76B68ABE51BDB96CC616018C36D37A388280BDDB58E6D27DBA2FA",
+    "artifacts/flagship_integration/BHSM_N12_GATE7_RATE_CONSISTENT_NEWTON_ENDPOINT_CANDIDATE.npz": "B7FEBA2FABDBAD48457112D3B9EF32665FB3F62BBC76A3AD087CA94D7506A306",
+    "artifacts/flagship_integration/BHSM_N12_GATE7_SECOND_RATE_CONSISTENT_BLOCK_NEWTON_PREDICTOR.json": "B8546C62D89FF869A155BAC2D93907D09D797DEE01307F444DCE2A8A289AC9B7",
+    "artifacts/flagship_integration/BHSM_N12_GATE7_SECOND_RATE_CONSISTENT_BLOCK_NEWTON_PREDICTOR.npz": "1F9DE33A6DCF0F0349E47ADCAD6C496E5C750331B3D5D17C0F4B51B8A6785968",
+    "scripts/materialize_n12_gate7_second_rate_consistent_newton_endpoint_candidate.py": "2318F529A80F88D005BDF11B28F39BB01389CF71C8B6836D5373FC4FE2245BD3",
+    "theory/n12_gate7_rate_consistent_newton_endpoint_candidate.md": "1A5B5BFDC9E593B3B88073B2784C7A34BEF2644049AD5C56ED0AE14BCEF1D0DD"
+  },
+  "status": "SECOND_RATE_CONSISTENT_NEWTON_ENDPOINTS_PROJECTED_RECENTERED_AND_REEVALUATED",
+  "summary": {
+    "maximum_constraint_projection_action_2_norm": 3.010151415673234e-09,
+    "maximum_endpoint_correction_action_2_norm": 8.067815917096086e-06,
+    "maximum_final_scaled_constraint_2_norm": 8.778101550617972e-15,
+    "minimum_selected_eigenline_gap": 1.734157690492258e-07,
+    "raw_endpoint_sign_change_brackets": [],
+    "terminal_numeric_selected_eigenvalue": 1.3908954731983766e-14
+  },
+  "validation": {
+    "all_371_corrected_endpoints_replayed": true,
+    "all_endpoint_constraints_close_numerically": true,
+    "all_quantities_finite": true,
+    "branch_24_selected_at_every_endpoint": true,
+    "each_endpoint_rate_uses_its_same_call_recentered_descriptor": true,
+    "no_action_source_selector_scale_gate_or_chord_changed": true,
+    "selected_line_remains_simple_numerically": true,
+    "terminal_first_hit_adapter_not_imposed_before_center_convergence": true
+  },
+  "validation_passed": true
+}

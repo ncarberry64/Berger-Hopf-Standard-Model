@@ -1,0 +1,62 @@
+{
+  "FULL_BHSM_COMPLETE": false,
+  "artifact": "BHSM_N12_GATE7_OUTWARD_CLOSURE_BUDGET",
+  "authority": "EXACT_SIGNED_CENTER_VOLTERRA_ERROR_IDENTITY_WITH_CONDITIONAL_OUTWARD_MAJORANTS",
+  "claim_boundary": {
+    "FULL_BHSM_COMPLETE": false,
+    "Gate7": "ACTIVE",
+    "causal_interval_vector_radius": "OPEN_UNTIL_BUDGET_VALUES_ARE_PROVED",
+    "outward_curvature_values": "OPEN_INTERVAL_AUTHORITY",
+    "outward_propagator_defect": "OPEN_INTERVAL_AUTHORITY",
+    "outward_sufficient_budget": "DERIVED"
+  },
+  "data": "artifacts/flagship_integration/BHSM_N12_GATE7_OUTWARD_CLOSURE_BUDGET.npz",
+  "data_SHA256": "A4DBB396817E38817D7D0BCDF55253D1F934D1BB0124A81463C1BAD18232DE70",
+  "exact_next_dependency": "EVALUATE_ONLY_THE_SELECTED_DOP853_CELL_PROPAGATOR_DEFECT_AND_DIRECTIONAL_MIXED_TRANSVERSE_DRIFTS_AGAINST_THE_REPORTED_SIGNED_BUDGETS;_DO_NOT_BUILD_A_GLOBAL_D3F_TENSOR",
+  "identity": {
+    "closure": "max_i(||v_i||+e_i)<existing_nonlinear_halo",
+    "directional_drift": "||d_tube-d_center||<=epsilon_d*||d_center||",
+    "mixed_drift": "||M_tube-M_center||<=epsilon_m*||M_center||",
+    "propagator_defect": "||P_tube-P_center||<=epsilon_G*||P_center||",
+    "transverse_tube": "||H_tube||<=kappa_H*H_center_Frobenius"
+  },
+  "inputs": {
+    "artifacts/flagship_integration/BHSM_N12_C2_STOP_HIGH_ORDER_QUARTER_STEP_RETAINED_RECONNAISSANCE.npz": "086C41068B9F3A6C0E5F8040B661202E067D017C909A381010E45FF352498D00",
+    "artifacts/flagship_integration/BHSM_N12_C2_STOP_QUARTER_STEP_MATCHED_TANGENT_CORRELATED_DEFECT_GAUSS12_RECONNAISSANCE.npz": "F6675DBF9699ED6E56DE719C78047A0077FECBFC35F57F6943A2DFA645F10E90",
+    "artifacts/flagship_integration/BHSM_N12_C2_STOP_QUARTER_STEP_PHYSICAL_TANGENT_TRANSFER_RECONNAISSANCE.npz": "9FFD40E1F3BFBBFA085FAB18B8ECDF250C55E753D23BE0B34737386BE833A175",
+    "artifacts/flagship_integration/BHSM_N12_GATE7_EXACT_CENTER_CAUSAL_VECTOR_CERTIFICATE.json": "EF6796D6A5CC36639D25BD041F12D3AB1F618DD7B52551CB60888EAF1AC650E5",
+    "artifacts/flagship_integration/BHSM_N12_GATE7_EXACT_CENTER_CAUSAL_VECTOR_CERTIFICATE.npz": "78F6ECD054902C8EB4E9FB5876DA7B008B402678D950656BFA5626BC05EAB8E9",
+    "artifacts/flagship_integration/BHSM_N12_GATE7_EXACT_SIGNED_DIRECTIONAL_FIELD_CURVATURE.npz": "9EA23892F74A989E0FAA7A2FC14CF05FDD1AE0DECC5A555A3A57BD702BBD925E",
+    "artifacts/flagship_integration/BHSM_N12_GATE7_EXACT_SIGNED_FULL_TRANSVERSE_CURVATURE_ADJUDICATION.json": "C52E289A549626DCCE5D3DEBE58CE4542337EB6447777668E4303D182C6F6D9F",
+    "artifacts/flagship_integration/BHSM_N12_GATE7_EXACT_SIGNED_MIXED_FIELD_CURVATURE.npz": "665630814B43B95BFAD80277703CC09A8B7ED604BA646B33B1376F0407F98825"
+  },
+  "status": "SIGNED_GATE7_OUTWARD_SUFFICIENT_BUDGET_DERIVED",
+  "summary": {
+    "corresponding_uniform_transverse_curvature_upper": 752678475.1919776,
+    "limiting_balanced_total_radius": 1.3397010452979774e-08,
+    "maximum_baseline_total_radius": 6.219861343025361e-13,
+    "maximum_signed_center_vector_2_norm": 6.219535471038e-13,
+    "reference_reconnaissance_nonlinear_halo": 1.3397010452979786e-08,
+    "thresholds": {
+      "balanced_relative_outward_perturbation": 0.2686008731283458,
+      "uniform_relative_directional_curvature_drift": 0.9997442074950016,
+      "uniform_relative_mixed_curvature_drift": 19.241293107134528,
+      "uniform_relative_propagator_defect": 0.6094277952286928,
+      "uniform_transverse_curvature_inflation": 3543.5876855526985
+    }
+  },
+  "validation": {
+    "all_48_nodes_and_47_step_maps_used": true,
+    "all_conditional_thresholds_positive_and_finite": true,
+    "baseline_exact_center_replay_fits_halo": true,
+    "directional_and_mixed_curvature_drift_terms_included": true,
+    "no_action_equation_source_selector_scale_gate_or_chord_changed": true,
+    "outward_interval_values_not_claimed": true,
+    "propagator_defect_source_term_included": true,
+    "reported_thresholds_are_lower_bisection_endpoints": true,
+    "signed_center_source_formed_before_norm": true,
+    "strictly_lower_causal_dependency_preserved": true,
+    "transverse_quadratic_term_included": true
+  },
+  "validation_passed": true
+}

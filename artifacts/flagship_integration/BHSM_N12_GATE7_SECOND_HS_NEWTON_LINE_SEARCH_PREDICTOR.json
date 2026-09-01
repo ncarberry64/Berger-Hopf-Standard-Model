@@ -1,0 +1,49 @@
+{
+  "FULL_BHSM_COMPLETE": false,
+  "artifact": "BHSM_N12_GATE7_SECOND_HS_NEWTON_LINE_SEARCH_PREDICTOR",
+  "authority": "NUMERICAL_SECANT_LINE_SEARCH_PREDICTOR_NOT_NONLINEAR_OR_INTERVAL_AUTHORITY",
+  "claim_boundary": {
+    "FULL_BHSM_COMPLETE": false,
+    "Gate7": "ACTIVE_ACTION_OWNED_OPERATOR_ORACLE",
+    "continuous_action_constrained_center": "OPEN",
+    "damped_second_block_step": "OPEN_EXACT_NONLINEAR_REPLAY"
+  },
+  "data": "artifacts/flagship_integration/BHSM_N12_GATE7_SECOND_HS_NEWTON_LINE_SEARCH_PREDICTOR.npz",
+  "data_SHA256": "C86F00FA9EF283A797245488F6E57D8056690F62EE26D4D3B9BE0224B9D81A53",
+  "exact_next_dependency": "APPLY_THE_DAMPED_CORRECTION_AND_REPLAY_ALL_ENDPOINTS_AND_COLLOCATION_MIDPOINTS",
+  "inputs": {
+    "artifacts/flagship_integration/BHSM_N12_GATE7_HERMITE_SIMPSON_NEWTON_NONLINEAR_SOURCE.json": "0B0F5DCA153B0743BD28228AD82461E8BE16E3F2A5FEB54BEC771940F3D8974A",
+    "artifacts/flagship_integration/BHSM_N12_GATE7_HERMITE_SIMPSON_NEWTON_NONLINEAR_SOURCE.npz": "06F89BAEA2A89CFCE600D5B1AD17F1F8EE9567D3E859BE8C14451ED8426E1999",
+    "artifacts/flagship_integration/BHSM_N12_GATE7_SECOND_HERMITE_SIMPSON_BLOCK_NEWTON_PREDICTOR.json": "AAD9CACBF448D15CD4CFD00B78D8C11E95ABE1A62D3AAEA698D8DBE23DD95068",
+    "artifacts/flagship_integration/BHSM_N12_GATE7_SECOND_HERMITE_SIMPSON_BLOCK_NEWTON_PREDICTOR.npz": "B52B45DC42DB0C161A24C244341396DB155E162A15B8EE19528DB859667323CE",
+    "artifacts/flagship_integration/BHSM_N12_GATE7_SECOND_HERMITE_SIMPSON_NEWTON_MIDPOINT_REPLAY.json": "5570AECF9DEE1D0E26275CE5B66B4C7FAECE154A285844FEA134AB26F3A6D3F7",
+    "artifacts/flagship_integration/BHSM_N12_GATE7_SECOND_HERMITE_SIMPSON_NEWTON_MIDPOINT_REPLAY.npz": "A25EFDC48E26621B942B892568B8B2BECE9D1DDA300E95F29844E152B4CBB230",
+    "scripts/materialize_n12_gate7_second_hs_newton_line_search_predictor.py": "D50EF53F47630D0B39B906C7D04008695ABF48033D302D3E6A4F4B68DDB2AD94",
+    "theory/n12_gate7_second_hs_newton_line_search_predictor.md": "EF52B33E3F1DB80F077A49A9C4F0F553D6A129F1942CD2969DEB5DA705C26E86"
+  },
+  "mesh": {
+    "Newton_iteration": 2,
+    "blocks": 370,
+    "state_dimension": 98
+  },
+  "status": "SECOND_BLOCK_NEWTON_SECANT_LINE_SEARCH_DAMPING_MATERIALIZED",
+  "summary": {
+    "full_step_global_residual_2_norm": 1.1276619608450234e-05,
+    "line_search_alpha": 0.16981561230918726,
+    "maximum_scaled_endpoint_correction_action_2_norm": 1.5571139502299058e-06,
+    "parent_global_residual_2_norm": 4.958189217510562e-06,
+    "secant_predicted_global_reduction_factor": 1.1058083036039719,
+    "secant_predicted_global_residual_2_norm": 4.483769204256456e-06,
+    "secant_predicted_maximum_block_residual_2_norm": 6.123229594223749e-07
+  },
+  "validation": {
+    "all_371_scaled_endpoint_corrections_materialized": true,
+    "all_quantities_finite": true,
+    "exact_nonlinear_damped_replay_not_claimed": true,
+    "line_search_alpha_is_strictly_damped": true,
+    "no_action_source_selector_scale_gate_or_chord_changed": true,
+    "secant_model_reduces_global_residual_2_norm": true,
+    "secant_model_reduces_maximum_block_residual": true
+  },
+  "validation_passed": true
+}

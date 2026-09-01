@@ -1,0 +1,73 @@
+{
+  "FULL_BHSM_COMPLETE": false,
+  "artifact": "BHSM_N12_C2_EXPANDED_CANCELLED_THETA_STEP_FROM_1221",
+  "cancelled_field": {
+    "center_first_variation_partial_norm": 6.288715147457918,
+    "center_first_variation_remainder_upper": 0.04958229596819379,
+    "center_norm": 0.0004293953011606195,
+    "first_variation_ball_upper": 694186.5339458946,
+    "logarithmic_norm_ball_upper": 694183.389569522,
+    "second_variation_upper": 3652350842699588.0
+  },
+  "domain": {
+    "Delta_absolute_upper": 2.9530428449038913e-13,
+    "Delta_center": 8.920450183779355e-14,
+    "Delta_first_variation_center_plus_error_upper": 1.6084390278843699e-09,
+    "Delta_second_variation_upper": 11410572.22425869,
+    "b_psi_interval": [
+      0.00042773292499305844,
+      0.00043048343808042047
+    ],
+    "expanded_full_action_line_consumed": true,
+    "incoming_tube_radius": 9.503197056856919e-11,
+    "lapse_interval": [
+      0.7006542297799195,
+      0.7006542298614982
+    ],
+    "response_self_consistency": 0.0618592179501919,
+    "selected_radius": 1.9006394113713838e-10
+  },
+  "exact_next_dependency": "RECENTER_THE_CANCELLED_FIELD_BALL_AT_THE_NEW_PREDICTOR_AND_ITERATE_UNTIL_LOG_s_IS_RELIABLE_THEN_CONTINUE_TO_CAPTURE_OR_RETAINED_STOP",
+  "inputs": {
+    "artifacts/flagship_integration/BHSM_N12_C2_1221_CANCELLED_CENTER_MATRIX.json": "2FAC44ABB574123485942E78B6EFC4FCF2C9283A244A1869941E6D5EFFC61061",
+    "artifacts/flagship_integration/BHSM_N12_C2_1221_CANCELLED_CENTER_MATRIX.npz": "460AD0BF3686591F8FE9AEE819920F88AABEAB45FD1B5CCFFE6DE2F23023F1AB",
+    "artifacts/flagship_integration/BHSM_N12_C2_1221_CANCELLED_CHART_ACTION_MAJORANTS_R1E8.json": "EF7A6138EBB2B1013D8E470E76182F081E6295903F459D87459DCB77BD0863F2",
+    "artifacts/flagship_integration/BHSM_N12_C2_1221_FULL_ACTION_EIGENLINE_BALL_R1E8.json": "A1B8B38605DFC48E80B37652B479FBD0CB5761690704849CC58FCA41E9E3653B",
+    "artifacts/flagship_integration/BHSM_N12_C2_LOHNER_BORDERED_MATRIX_1221.json": "51B41A71861A531DFF5A8F6DA2A37ABABF8C7EBD092EE4EEBF8E2745E52B8425",
+    "artifacts/flagship_integration/BHSM_N12_C2_LOHNER_BORDERED_MATRIX_1221.npz": "E76B642903CAC2B3BF6F919BC4D1529BB7D042B318257A4E68542C443932F679",
+    "artifacts/flagship_integration/BHSM_N12_C2_LOHNER_GROWTH_1221.json": "F392CC8B3BD3470BE52D14989DB9AAAAED8EB31CE815070CB68116E67F6368AB",
+    "artifacts/flagship_integration/BHSM_N12_C2_LOHNER_STEP_1221.json": "C465CC0414A4E435A8553B9553C5F3B9A2EE37E2CEEA0700F9425B38D5B32E1F"
+  },
+  "segment": {
+    "Euler_truncation_upper": 2.747296131535452e-14,
+    "center_path_upper": 5.802998226427364e-12,
+    "endpoint_tube_radius_upper": 9.595586481843399e-11,
+    "joint_domain_use_upper": 1.0175886304486135e-10,
+    "matrix_growth_upper": 1.0094249012577614,
+    "proof_center_is_physical_endpoint": false,
+    "proper_time_increment_lower": 1.3014295522604057e-28,
+    "signed_descriptor_center_end": 1.8941272267973242e-20,
+    "signed_descriptor_endpoint_interval": [
+      1.374525889451418e-20,
+      2.172637696664189e-20
+    ],
+    "signed_descriptor_start": 1.773581793017898e-20,
+    "theta_step": 1.3513380075662757e-08,
+    "theta_step_feasible_upper": 2.7026760151325514e-08
+  },
+  "status": "C2_EXPANDED_CANCELLED_THETA_EXTENSION_FROM_1221_CERTIFIED",
+  "validation": {
+    "Delta_sign_not_required_as_domain_condition": true,
+    "b_psi_stays_positive": true,
+    "binary64_eigenvalue_not_used_as_descriptor": true,
+    "branch_24_replays_at_predictor": true,
+    "no_selector_recurrence_scale_gate_or_chord_added": true,
+    "positive_proper_duration": true,
+    "predictor_not_promoted_to_physical_endpoint": true,
+    "response_fixed_point_closes": true,
+    "same_action_cancelled_identity_used": true,
+    "selected_domain_contains_tube_and_center": true,
+    "signed_descriptor_interval_stays_positive": true
+  },
+  "validation_passed": true
+}

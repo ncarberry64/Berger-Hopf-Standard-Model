@@ -1,0 +1,41 @@
+{
+  "FULL_BHSM_COMPLETE": false,
+  "artifact": "BHSM_N12_GATE7_HERMITE_SIMPSON_MIDPOINT_GRAPH_JACOBIAN",
+  "authority": "HYBRID_RETAINED_ACTION_JAX_NUMERICAL_PREDICTOR_NOT_INTERVAL_AUTHORITY",
+  "claim_boundary": {
+    "FULL_BHSM_COMPLETE": false,
+    "Gate7": "ACTIVE_ACTION_OWNED_OPERATOR_ORACLE",
+    "Hermite_Simpson_block_Newton_operator": "OPEN_ASSEMBLY",
+    "continuous_action_constrained_center": "OPEN"
+  },
+  "data": "artifacts/flagship_integration/BHSM_N12_GATE7_HERMITE_SIMPSON_MIDPOINT_GRAPH_JACOBIAN.npz",
+  "data_SHA256": "D6D9F71435289EFD2A3703A2F64A583F3E35FEA9380C0A7AA5D3E466E0508FA2",
+  "exact_next_dependency": "ASSEMBLE_AND_SOLVE_THE_BLOCK_BIDIAGONAL_HERMITE_SIMPSON_NEWTON_RECURRENCE",
+  "inputs": {
+    "artifacts/flagship_integration/BHSM_N12_GATE7_CURRENT_LINEARIZATION_NEWTON_ENDPOINT_CANDIDATE.json": "DBAB6B85663141694D87657C37FA5D18E9CC9373DAE9A6BCA434D502375CC829",
+    "artifacts/flagship_integration/BHSM_N12_GATE7_CURRENT_LINEARIZATION_NEWTON_ENDPOINT_CANDIDATE.npz": "51D74E6ACFD9C0E4CF89D85078E8D7BADE296B5223DC5B1A91CFA30B1CF46945",
+    "artifacts/flagship_integration/BHSM_N12_GATE7_DIRECT_HERMITE_SIMPSON_MULTIPLE_SHOOTING_SOURCE.json": "F8D55331267C9014B5024904290AF84486D5B9FDB6A592D00D65BE1C10EA3627",
+    "artifacts/flagship_integration/BHSM_N12_GATE7_DIRECT_HERMITE_SIMPSON_MULTIPLE_SHOOTING_SOURCE.npz": "1F9CAB178A7C0443FC6621E8EFA5804A3A9AB96C34DB386AF344B9DC596B5B7F",
+    "scripts/materialize_n12_gate7_hermite_simpson_midpoint_graph_jacobian.py": "B02604F6255571510E561625D2DAE224F691006F89E4D5E3B3F7DC1835E73242",
+    "theory/n12_gate7_hermite_simpson_midpoint_graph_jacobian.md": "BA29CC487B2A3968E36A2B9B66DF38777CFC04538E91FE5D0346A21A98FD282A"
+  },
+  "status": "ALL_370_HERMITE_SIMPSON_MIDPOINT_JACOBIANS_MATERIALIZED",
+  "summary": {
+    "maximum_graph_Jacobian_numerical_abscissa": 332.5149943446634,
+    "maximum_graph_Jacobian_operator_2_norm": 665.0206294974566,
+    "maximum_graph_Jacobian_operator_owner_interval": 139,
+    "maximum_graph_Jacobian_spectral_abscissa": 0.02129325317921288,
+    "midpoint_count": 370,
+    "minimum_selected_eigenline_gap": 1.73431841798035e-07
+  },
+  "validation": {
+    "JAX_third_tensor_is_predictor_not_interval_authority": true,
+    "all_370_midpoint_descriptor_gradients_materialized": true,
+    "all_370_midpoint_graph_Jacobians_materialized": true,
+    "all_quantities_finite": true,
+    "branch_24_selected_at_every_midpoint": true,
+    "no_action_source_selector_scale_gate_or_chord_changed": true,
+    "selected_line_remains_simple_numerically": true
+  },
+  "validation_passed": true
+}

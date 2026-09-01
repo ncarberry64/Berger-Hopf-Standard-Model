@@ -1,0 +1,111 @@
+{
+  "FLAGSHIP_READY": false,
+  "FULL_BHSM_COMPLETE": false,
+  "adjudication": {
+    "Gate7": "G7_08_OPEN_MAXIMAL_C2_FORCE_OR_FINITE_EVENT_STOP",
+    "Gate8": "LOCKED",
+    "actual_later_event_or_canonical_stop": "NOT_REACHED",
+    "hindsight_outcome": "C_REGULAR_CONTINUATION_EXTENDED",
+    "old_binary64_zero_step_limit": "REMOVED_BY_MATRIX_LOHNER_STEP"
+  },
+  "artifact": "BHSM_N12_C2_LOHNER_STEP_1219",
+  "domain": {
+    "D_tau_log_R4_interval": [
+      0.08877816725788058,
+      0.0887781680868026
+    ],
+    "Delta_interval": [
+      5.33819291110864e-14,
+      1.251179133569894e-13
+    ],
+    "b_psi_interval": [
+      0.00042855862196072896,
+      0.00042965776149681386
+    ],
+    "c_interval": [
+      1.2476643094883147e-10,
+      2.909993114308949e-10
+    ],
+    "fresh_chart_remaining_radius": 9.487744387586602e-11,
+    "incoming_endpoint_tube_radius": 6.40683108762873e-11,
+    "lapse_interval": [
+      0.7006542298036533,
+      0.7006542298377645
+    ],
+    "maximal_joint_domain_radius": 9.487744387586602e-11,
+    "parent_action_radius": 2e-10,
+    "parent_remaining_radius": 1.1536370087179486e-10,
+    "selected_domain_radius": 7.947287737607667e-11,
+    "terminal_center_distance": 8.463629911666877e-11
+  },
+  "endpoint_data": "artifacts/flagship_integration/BHSM_N12_C2_LOHNER_STEP_1219.npz",
+  "endpoint_data_SHA256": "9369C7AC907058B6BC1A108AE8621FC5241F1130B649D1C2C78BD668E05A5A41",
+  "exact_next_dependency": "RECENTER_BRANCH_24_AND_THE_BORDERED_FIXED_s_MATRIX_AT_THE_1216_PREDICTOR,_THEN_REPEAT_THE_SAME_LOHNER_CONSTRUCTION",
+  "hindsight": {
+    "classification": "PROOF_TECHNIQUE;_SCALAR_WRAPPING_AND_ZERO_STEP_REMOVED",
+    "obstruction_physical": false,
+    "result": "VALIDATED"
+  },
+  "inputs": {
+    "artifacts/flagship_integration/BHSM_N12_C2_LOHNER_BORDERED_MATRIX_1218.npz": "9E49E9EE2463AFD4127B6194ACDA93F34A941430DC9EAFEAC513BCB0E55F90C9",
+    "artifacts/flagship_integration/BHSM_N12_C2_LOHNER_FIXED_S_FIELD_1218.json": "2C84264A5D1A8327780E41516D4F957CF884BC555E1DC078DE3772D28B030993",
+    "artifacts/flagship_integration/BHSM_N12_C2_LOHNER_FIXED_S_FIELD_1218.npz": "7215AFBD9769FE57536758BFB2106C067555F0113B650235106FA91A4087F2DF",
+    "artifacts/flagship_integration/BHSM_N12_C2_LOHNER_GROWTH_1218.json": "E1886F0E265C1FDE949179CF210E0DCD83350436F80DC6B06A47F73EC18DC47C",
+    "artifacts/flagship_integration/BHSM_N12_C2_LOHNER_RESPONSE_BALL_1218.json": "22D4E35EF943057E59D3A0CD3100CAC5470A89BB0FB6B1147FF9C02F6D60DE0C",
+    "artifacts/flagship_integration/BHSM_N12_C2_LOHNER_STEP_1219_INPUT.json": "C5C5F6E672043368628BA2E523E3AA8F2C79F98F408880233782862C0DFFC1FD",
+    "artifacts/flagship_integration/BHSM_N12_C2_TERMINAL_PARENT_ACTION_MAJORANTS_2P0E10.json": "1B7689F24449514119E3987671576820715B9C6154E4F43CF5135488C1B39DC1",
+    "artifacts/flagship_integration/BHSM_N12_FINITE_TERMINAL_RESET_STRATUM_CANDIDATE.npz": "303BEBE80E6033D398278935C9AD01CD1A8C72EDEE208D52C0005A252119D0CD",
+    "scripts/materialize_n12_c2_terminal_parent_action_majorants.py": "AB21CC4BA62BF817328BD3D16B15C2B600743BB62111C9513604F62E4306E2FC",
+    "theory/n12_c2_lohner_step_1216.md": "20882EB0009A8C1676027B0B0AFBF32B339D57083C33E2921267813B1706B854"
+  },
+  "second_variation": {
+    "R_second_variation_upper": 1.5808013474708694e+24,
+    "birth_limit_second_variation_upper": 2.0745073019768487e+31,
+    "cancelled_correction_second_variation_before_s_upper": 1.3707992406473238e+49,
+    "center_tangent_numerical_abscissa_upper": 660042765674.7727,
+    "complete_fixed_s_second_variation_upper": 2.0986157553789955e+31,
+    "fixed_s_first_variation_ball_upper": 1.6678303792571377e+21,
+    "fixed_s_logarithmic_norm_ball_upper": 1.6678303266942002e+21,
+    "response_first_variation_upper": 1989868067689.6106,
+    "response_norm_upper": 13768.058844114037,
+    "response_second_variation_upper": 2.503697468187976e+22,
+    "response_self_consistency": 0.030432251543447055,
+    "s_times_cancelled_correction_second_variation_upper": 2.4108453192284913e+29,
+    "selected_eigenvalue_third_variation_upper": 2.3914588820248975e+18
+  },
+  "segment": {
+    "center_path_upper": 5.290224391757703e-13,
+    "endpoint_selected_branch": 24,
+    "endpoint_tube_radius_upper": 7.590683799185135e-11,
+    "joint_domain_use_upper": 7.643586043102712e-11,
+    "matrix_growth_upper": "1.18413634614494333158691635701777907196456320817389308347972476018199306058159403323668772188312049595672181173566587431",
+    "physical_u_increment": "3.574743654522200380295221015436543233967595994147325520353718276937403814842138939866863274172349579838923679359662741E-42",
+    "prior_certified_segments": 1218,
+    "proof_center_is_physical_endpoint": false,
+    "proper_time_increment_interval": [
+      1.0009195305465158e-29,
+      2.3459804692656926e-29
+    ],
+    "signed_descriptor_end": "1.768848842696556100048135146488049652777167509902081983328684477664726067913976230782953361502182079513671875E-20",
+    "signed_descriptor_start": "1.758715096814638667869534801394979890761566743694911505409401318073135830289162122652431289186966015060546875E-20",
+    "signed_descriptor_step": "1.0133745881917432178600345093069762015600766207170477919283159591590237624814108130522072315216064453125E-22",
+    "stored_step_action_norm": 4.883099700099174e-13,
+    "total_certified_segments": 1219
+  },
+  "status": "C2_CANCELLED_FIXED_s_MATRIX_LOHNER_SEGMENT_1219_CERTIFIED",
+  "validation": {
+    "branch_24_replayed_at_predictor_center": true,
+    "c_b_Delta_lapse_and_radius_rate_are_positive": true,
+    "cancelled_correction_second_variation_is_subdominant_to_birth": true,
+    "domain_strictly_contains_incoming_tube": true,
+    "extended_bordered_response_fixed_point_closes": true,
+    "fresh_growth_chart_contains_domain": true,
+    "matrix_Lohner_tube_and_center_close_inside_domain": true,
+    "no_selector_recurrence_scale_gate_or_chord_added": true,
+    "positive_physical_and_proper_duration": true,
+    "positive_step_has_nonzero_stored_geometry": true,
+    "proof_edge_not_promoted_to_event_or_canonical_stop": true,
+    "terminal_parent_majorant_contains_domain": true
+  },
+  "validation_passed": true
+}

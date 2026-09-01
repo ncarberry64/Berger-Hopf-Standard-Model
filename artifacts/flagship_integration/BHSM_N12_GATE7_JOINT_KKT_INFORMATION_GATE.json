@@ -1,0 +1,87 @@
+{
+  "FLAGSHIP_READY": false,
+  "FULL_BHSM_COMPLETE": false,
+  "adjudication": {
+    "C2_zeta_norm_pullback": "CERTIFIED_COMPONENT_BOUND",
+    "Gate7": "OPEN",
+    "Gate8": "LOCKED",
+    "chord_03_authorized": false,
+    "complete_joint_signed_finite_core_covector": "OPEN_CURRENT_OWNER",
+    "complete_upstream_C1_and_interface_covector": "OPEN_CURRENT_OWNER",
+    "full_heat_geometry_contraction": "OPEN_SUPPRESSED_NOT_ZERO",
+    "maximal_projected_tail": "OPEN_AFTER_JOINT_FINITE_CORE_NET",
+    "projected_KKT_root": "OPEN_WAITING_ON_JOINT_SIGNED_COVECTOR_AND_TAIL",
+    "separate_C2_zeta_zero_or_zero_exclusion_gate": "RETIRED_NOT_A_PHYSICAL_KKT_CONDITION"
+  },
+  "artifact": "BHSM_N12_GATE7_JOINT_KKT_INFORMATION_GATE",
+  "claim_boundary": {
+    "FULL_BHSM_COMPLETE": false,
+    "Gate7": "OPEN",
+    "Gate8": "LOCKED",
+    "actual_joint_signed_covector": "OPEN",
+    "actual_projected_KKT_root": "OPEN",
+    "chord_03_authorized": false,
+    "componentwise_internal_zero_conditions": "NOT_REQUIRED",
+    "joint_KKT_information_requirement": "CERTIFIED",
+    "maximal_projected_tail": "OPEN"
+  },
+  "classification": "THE_C2_ZETA_PULLBACK_BALL_PROJECTS_TO_THE_73_DIMENSIONAL_LAUNCH_COTANGENT_WITHOUT_NORM_GROWTH_BUT_CONTAINS_BOTH_ZERO_AND_NONZERO_VALUES;_GATE7_TESTS_ONLY_THE_COMPLETE_INTERNAL_HEAT_MINUS_ZETA_COVECTOR_SO_NO_INTERNAL_COMPONENT_IS_SEPARATELY_REQUIRED_TO_VANISH_OR_EXCLUDE_ZERO",
+  "data": "artifacts/flagship_integration/BHSM_N12_GATE7_JOINT_KKT_INFORMATION_GATE.npz",
+  "data_SHA256": "00BABB19EF9932BE57A9A1D0F295AB3A4F8C7D51C4D13FE5768A54062FE8B814",
+  "exact_next_dependency": "ASSEMBLE_ONE_SIGNED_INTERVAL_COVECTOR_FOR_THE_COMPLETE_C1_E1_C2_INTERNAL_FUNCTIONAL_WITH_CANCELLATIONS_RETAINED_BEFORE_NORMS,_THEN_APPLY_THE_INTRINSIC_OR_BORDERED_KKT_TEST_AND_PROVE_THE_MAXIMAL_PROJECTED_CAUCHY_TAIL",
+  "information_witnesses": {
+    "component_nonzero_norm": 3.067575799492688e-15,
+    "joint_norm_with_internal_cancellation": 0.0,
+    "joint_norm_without_internal_cancellation": 3.067575799492688e-15,
+    "role": "GENERAL_COTANGENT_INFORMATION_WITNESSES_NOT_BHSM_HISTORY_SOLUTIONS"
+  },
+  "inputs": {
+    "artifacts/flagship_integration/BHSM_N12_C2_1222_SIGNED_ADJOINT_ASSEMBLY.json": "32CE95CB81071E0F0929AE05337A216854C4143E1F0985A8A7117C8EDD4C1DE8",
+    "artifacts/flagship_integration/BHSM_N12_C2_FIXED_SEED_UPSTREAM_FORCE_OWNER.json": "396F39A4F98ECE7F903221EFD01A1C126479EE56DC4F8A72C976501D0D4F8A71",
+    "artifacts/flagship_integration/BHSM_N12_C2_RESET_GENERATED_LAUNCH_CHART.json": "570BC1093194BA6CA8ED91F6FE657D3BF965F76B30EC34CFC40704697BE10842",
+    "artifacts/flagship_integration/BHSM_N12_C2_RESET_GENERATED_LAUNCH_CHART.npz": "97ADFB0BF7B3C109E15330CD3A3C52E1C5C03B7756A6CEEBDF47A89BD22746B2",
+    "artifacts/flagship_integration/BHSM_N12_GATE7_C2_FINITE_CORE_ZETA_RESET_COTANGENT_ENCLOSURE.json": "6DE56BDA7F8943E907DDD8775398DDC500456987767E6512E33F4233D87D8AF1",
+    "artifacts/flagship_integration/BHSM_N12_GATE7_C2_FINITE_CORE_ZETA_RESET_COTANGENT_ENCLOSURE.npz": "2D72DDB03543AD3A85A8593B4E06CA847F2FFDE580C997AAC59BA8004E349DFB",
+    "artifacts/flagship_integration/BHSM_N12_GATE7_CLOSED_SYSTEM_ZERO_EXTERNAL_SOURCE_ONTOLOGY.json": "E9D4611C01C7243A7526F4AC47F473C68733E981D01EFA5013AA028177004A3F",
+    "artifacts/flagship_integration/BHSM_N12_GATE7_ONE_SEAM_FULL_GRADED_FINITE_CORE_HEAT_BOUND.json": "D1E6A58D0586A8995288FF4139C9F24DBF2411532EEA9E2D833B8AA5B60149B3",
+    "artifacts/flagship_integration/BHSM_N12_INTRINSIC_TIME_QUOTIENT_FORCE_ROOT.json": "CF0B9488F06D21BBEBDDB5F5880BCAA893392D0B07F654680E86BA2D2AA26487",
+    "theory/n12_gate7_joint_kkt_information_gate.md": "FBB3C2049826E825C636DDA8D8DFF597B2686C9C6F591FFC87A47F5D8AE9334F"
+  },
+  "joint_KKT_rule": {
+    "component_ball_contains_zero_decides_joint_root": false,
+    "componentwise_zero_exclusion_decides_joint_nonzero": false,
+    "componentwise_zero_required": false,
+    "covector": "F_joint=P_phys(q_C1+q_interface+q_C2_heat-q_C2_zeta)",
+    "external_source_rule": "SET_ONLY_J_ext_TO_ZERO_AFTER_JOINT_DIFFERENTIATION",
+    "norm_order": "SUM_SIGNED_INTERNAL_COVECTORS_BEFORE_TAKING_THE_CERTIFICATION_NORM"
+  },
+  "projected_component_ball": {
+    "ambient_dimension": 98,
+    "ambient_radius_upper": 6.135151598985376e-15,
+    "contains_nonzero_values": true,
+    "contains_zero": true,
+    "launch_dimension": 73,
+    "orthonormality_residual": 1.9574623156292456e-15,
+    "projected_center_norm": 0.0,
+    "projected_radius_upper": 6.135151598985379e-15,
+    "projection_operator_norm": 1.0000000000000004
+  },
+  "status": "JOINT_KKT_REQUIRES_COMBINED_SIGNED_COVECTOR_COMPONENT_ZERO_TESTS_RETIRED",
+  "validation": {
+    "ambient_C2_zeta_ball_has_dimension_98": true,
+    "component_ball_contains_a_nonzero_projected_covector": true,
+    "component_ball_contains_zero": true,
+    "internal_cancellation_information_witness_closes_exactly": true,
+    "internal_upstream_covector_remains_live": true,
+    "intrinsic_KKT_root_equivalence_is_available": true,
+    "joint_signed_adjoint_value_remains_open": true,
+    "launch_basis_has_73_orthonormal_columns": true,
+    "no_componentwise_zero_condition_is_added": true,
+    "no_source_selector_endpoint_recurrence_scale_gate_or_chord_added": true,
+    "only_external_source_is_zeroed": true,
+    "orthogonal_launch_projection_does_not_enlarge_ball": true,
+    "same_component_can_be_nonzero_without_cancellation": true,
+    "suppressed_heat_seed_is_not_exact_zero": true
+  },
+  "validation_passed": true
+}

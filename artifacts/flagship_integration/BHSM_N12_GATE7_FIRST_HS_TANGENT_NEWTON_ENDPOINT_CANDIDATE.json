@@ -1,0 +1,42 @@
+{
+  "FULL_BHSM_COMPLETE": false,
+  "artifact": "BHSM_N12_GATE7_FIRST_HS_TANGENT_NEWTON_ENDPOINT_CANDIDATE",
+  "authority": "NUMERICAL_TANGENT_CORRECTED_CONSTRAINT_PROJECTED_ENDPOINTS_NOT_INTERVAL_AUTHORITY",
+  "claim_boundary": {
+    "FULL_BHSM_COMPLETE": false,
+    "Gate7": "ACTIVE_ACTION_OWNED_OPERATOR_ORACLE",
+    "continuous_action_constrained_center": "OPEN",
+    "first_hit": "OPEN_AFTER_CENTER_CONVERGENCE",
+    "nonlinear_Hermite_Simpson_center": "OPEN_MIDPOINT_REPLAY"
+  },
+  "data": "artifacts/flagship_integration/BHSM_N12_GATE7_FIRST_HS_TANGENT_NEWTON_ENDPOINT_CANDIDATE.npz",
+  "data_SHA256": "0BC6276DBBA0A6184F830A96FA1A1D93A7DF9B5A7B07528CEAA43009AE02D007",
+  "exact_next_dependency": "REPLAY_ALL_370_TANGENT_CORRECTED_COLLOCATION_MIDPOINTS",
+  "inputs": {
+    "artifacts/flagship_integration/BHSM_N12_GATE7_FIRST_HS_TANGENT_BLOCK_NEWTON_PREDICTOR.json": "D2F4CC574BA98B2C6DA4B841002833D406F1C8F01E710E64E094176E06E0F426",
+    "artifacts/flagship_integration/BHSM_N12_GATE7_FIRST_HS_TANGENT_BLOCK_NEWTON_PREDICTOR.npz": "64ED90CC3235D87C6F3AD7B7687BF0E5D964B882A7DBEFEE20FC8602A662BEA3",
+    "artifacts/flagship_integration/BHSM_N12_GATE7_HERMITE_SIMPSON_NEWTON_ENDPOINT_CANDIDATE.json": "4D4A5DDD5929E20921CB857B95BBECD546B585AA7C1A167E9B17786CD76D56B1",
+    "artifacts/flagship_integration/BHSM_N12_GATE7_HERMITE_SIMPSON_NEWTON_ENDPOINT_CANDIDATE.npz": "749660BB633A2775CB0CEF818C11E31966560164B00A45EF3463B6AED812396B",
+    "scripts/materialize_n12_gate7_first_hs_tangent_newton_endpoint_candidate.py": "75B1A0D5CFE85975059BB384F60CC9516589BFB6538A8C3D2DDD2A9C2AD11F0A",
+    "theory/n12_gate7_first_hs_tangent_newton_endpoint_candidate.md": "DE33CDE4BA95534A4DEE3C05440C79E222E59061E6529DCC684346A770ED15E7"
+  },
+  "status": "FIRST_HS_TANGENT_NEWTON_ENDPOINTS_MATERIALIZED",
+  "summary": {
+    "maximum_constraint_projection_action_2_norm": 0.0,
+    "maximum_endpoint_correction_action_2_norm": 9.458378705444665e-06,
+    "maximum_final_scaled_constraint_2_norm": 1.749694685290904e-14,
+    "minimum_selected_eigenline_gap": 1.7341576444619773e-07,
+    "raw_endpoint_sign_change_brackets": [],
+    "terminal_numeric_selected_eigenvalue": 3.792014154410638e-14
+  },
+  "validation": {
+    "all_371_tangent_corrected_endpoints_replayed": true,
+    "all_endpoint_constraints_close_numerically": true,
+    "all_quantities_finite": true,
+    "branch_24_selected_at_every_endpoint": true,
+    "no_action_source_selector_scale_gate_or_chord_changed": true,
+    "selected_line_remains_simple_numerically": true,
+    "terminal_first_hit_adapter_not_imposed_before_center_convergence": true
+  },
+  "validation_passed": true
+}

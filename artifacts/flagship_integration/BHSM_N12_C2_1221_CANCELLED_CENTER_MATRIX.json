@@ -1,0 +1,73 @@
+{
+  "FLAGSHIP_READY": false,
+  "FULL_BHSM_COMPLETE": false,
+  "artifact": "BHSM_N12_C2_1221_CANCELLED_CENTER_MATRIX",
+  "center_field": {
+    "Delta": 8.920450183779355e-14,
+    "Delta_first_c_gradient_remainder_norm_upper": 4.907816319701456e-12,
+    "Delta_first_partial_action_norm": 1.6032888036760551e-09,
+    "Delta_first_selected_eigenvalue_Hessian_remainder_norm_upper": 2.4240772725430726e-13,
+    "Delta_first_signed_center_ball": "D_Y_Delta_IN_Delta_first_partial_action_PLUS_CLOSED_EUCLIDEAN_BALL(total_remainder_upper)",
+    "Delta_first_total_remainder_action_norm_upper": 5.150224047470787e-12,
+    "Dlambda_field": 1.0000000000000326,
+    "R_Dlambda_Vhard": 3.81002687215123e-05,
+    "b_psi": 0.0004291081815366019,
+    "field_action_norm": 4813605729.209472,
+    "moving_cubic_direct_fixed_line_D3": 2.078834795527656e-10,
+    "moving_cubic_from_Dlambda_Psi": 2.0788347944726585e-10,
+    "signed_descriptor_decimal": "1.773581793017897980583357836943941636871401822361732287654542551912574695982856092313102717032920910080078125E-20"
+  },
+  "comparison": {
+    "diagnosis": "THE_EXACT_DESCRIPTOR_IDENTITY_AND_BORDERED_RESPONSE_CANCEL_BEFORE_PROJECTION;_THE_SCALAR_JACOBI_BOUND_IS_NOT_THE_CENTER_TANGENT_GENERATOR",
+    "matrix_to_scalar_ratio": 3.575989119249959e-13,
+    "prior_scalar_fixed_s_Jacobi_upper": 2.5646519250254787e+24
+  },
+  "data": "artifacts/flagship_integration/BHSM_N12_C2_1221_CANCELLED_CENTER_MATRIX.npz",
+  "data_SHA256": "460AD0BF3686591F8FE9AEE819920F88AABEAB45FD1B5CCFFE6DE2F23023F1AB",
+  "derivation_source": "scripts/audit_n12_c2_exact_center_fixed_s_field_matrix.py",
+  "derivation_source_SHA256": "8D8C53363C601AD9BE68E5FAA8A00F3452664A1BDE1B585592B3CC9C0126C866",
+  "exact_next_dependency": "ENCLOSE_PHI_CENTER_INVERSE_TIMES_DF_s_OF_Y_MINUS_A_CENTER_TIMES_PHI_CENTER_ON_A_FIXED_DESCRIPTOR_ELLIPSOID_USING_THE_RETAINED_D4_D5_BOUNDS",
+  "fixed_descriptor_matrix": {
+    "bordered_relative_tangent_tensor_Frobenius_upper": 51372392.492711656,
+    "c_gradient_field_matrix_uncertainty_upper": 264832965463.78668,
+    "center_tangent_numerical_abscissa_upper": 597601622741.6361,
+    "fixed_D4_D5_truncation_operator_upper": 1.2677541938315817e-14,
+    "fixed_D4_slope_disagreement_2_norm": 2.2874468909487804e-08,
+    "incoming_endpoint_tube_radius": 9.503197056856919e-11,
+    "omitted_D2lambda_V_field_matrix_upper": 13080676430.857159,
+    "partial_tangent_numerical_abscissa": 319687980759.44055,
+    "partial_tangent_operator_2_norm": 639203095841.3102,
+    "partial_tangent_spectral_abscissa": 380586371.32750547,
+    "relative_second_variation_self_consistency": 0.009764039383785124,
+    "total_center_matrix_remainder_upper": 277913641922.4353
+  },
+  "hindsight": {
+    "classification": "NUMERICAL_CONDITIONING;_FULL_CENTER_MATRIX_RECOVERED",
+    "obstruction_physical": false,
+    "result": "OPEN"
+  },
+  "inputs": {
+    "artifacts/flagship_integration/BHSM_N12_C2_LOHNER_BORDERED_MATRIX_1221.json": "51B41A71861A531DFF5A8F6DA2A37ABABF8C7EBD092EE4EEBF8E2745E52B8425",
+    "artifacts/flagship_integration/BHSM_N12_C2_LOHNER_BORDERED_MATRIX_1221.npz": "E76B642903CAC2B3BF6F919BC4D1529BB7D042B318257A4E68542C443932F679",
+    "artifacts/flagship_integration/BHSM_N12_C2_LOHNER_CENTER_1221_INPUT.json": "0B851677B3DE8C5C24E57529ECB5D1B31D4C4C5652AF2B014679FC21808D2474",
+    "artifacts/flagship_integration/BHSM_N12_C2_LOHNER_GROWTH_1221.json": "F392CC8B3BD3470BE52D14989DB9AAAAED8EB31CE815070CB68116E67F6368AB",
+    "theory/n12_c2_exact_center_fixed_s_field_matrix.md": "0BCD19B3275EC9249EE9C731FE32398C3FF18702BFA5E4CFEB0DFA638DBC7AE0"
+  },
+  "purpose": "SUPPLY_SIGNED_Delta_FIRST_JET_FOR_DENOMINATOR_FREE_G_theta_ASSEMBLY",
+  "status": "C2_CANCELLATION_PRESERVING_FIXED_s_CENTER_FIELD_MATRIX_CERTIFIED;_CONJUGATED_INTERVAL_REMAINDER_OPEN",
+  "validation": {
+    "D5_controls_one_sided_fixed_line_D4_slopes": true,
+    "Delta_is_strictly_positive": true,
+    "branch_24_bordered_parent_consumed": true,
+    "center_field_and_matrix_are_finite": true,
+    "center_matrix_not_promoted_to_interval_flow_box": true,
+    "descriptor_field_identity_is_close_to_one": true,
+    "fixed_descriptor_tangent_has_codimension_one": true,
+    "lambda_Hessian_contraction_is_retained_as_remainder": true,
+    "moving_cubic_identity_matches_direct_D3": true,
+    "no_selector_recurrence_scale_gate_or_chord_added": true,
+    "signed_Delta_first_partial_and_remainder_ball_are_finite": true,
+    "signed_descriptor_is_strictly_positive": true
+  },
+  "validation_passed": true
+}

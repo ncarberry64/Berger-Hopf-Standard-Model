@@ -1,0 +1,72 @@
+{
+  "FLAGSHIP_READY": false,
+  "FULL_BHSM_COMPLETE": false,
+  "artifact": "BHSM_N12_C2_1221_EXPANDED_ENDPOINT_EIGENLINE_CHART",
+  "center": {
+    "binary64_selected_eigenvalue_not_used_as_descriptor": 4.956934967336835e-15,
+    "center_hard_gap": 2.5937425882769774e-07,
+    "lambda_gradient_action_norm": 6.165648264551269e-06,
+    "preconditioned_hard_block_first_variation": 9869522.849370712,
+    "preconditioned_selected_line_first_variation": 94.66447069321596,
+    "selected_branch": 24,
+    "selected_to_complement_first_variation": 0.3449387519191553
+  },
+  "chart_semantics": {
+    "ambient_ball_role": "UNIFORM_BRANCH_GAP_AND_DOMAIN_CERTIFICATE_ONLY",
+    "arbitrary_normal_motion_allowed": false,
+    "physical_propagation_domain": "EXACT_lambda_event_EQUALS_s_DESCRIPTOR_FIBER",
+    "proof_chart_boundary_is_physical_stop": false
+  },
+  "data": "artifacts/flagship_integration/BHSM_N12_C2_1221_EXPANDED_ENDPOINT_EIGENLINE_CHART.npz",
+  "data_SHA256": "3F55F23CC81545208195C39A359FDE6140037F9561F3DE02BE2B610F073C86AD",
+  "exact_next_dependency": "TRANSFER_THE_EXISTING_FIXED_s_GROWTH_AND_HARD_RESPONSE_BOUNDS_TO_THE_EXPANDED_ENDPOINT",
+  "hindsight": {
+    "classification": "PROOF_CHART_LIMIT_REMOVED_BY_FRESH_FIBER_CHART",
+    "obstruction_physical": false,
+    "result": "VALIDATED"
+  },
+  "inputs": {
+    "artifacts/flagship_integration/BHSM_N12_C2_1221_EXPANDED_ENDPOINT_RECENTER_INPUT.json": "FC0B670264193BACE2FEA5950954AD328AD587EAF2E7834DED182CF6581E5B4E",
+    "artifacts/flagship_integration/BHSM_N12_C2_1221_EXPANDED_ENDPOINT_RECENTER_INPUT.npz": "2A425288DE0001F152834513DD4375121D6C5EDCA6B098B90203FEC5B86C49DD",
+    "artifacts/flagship_integration/BHSM_N12_C2_1221_FULL_ACTION_EIGENLINE_BALL_R1E8.json": "A1B8B38605DFC48E80B37652B479FBD0CB5761690704849CC58FCA41E9E3653B",
+    "theory/n12_c2_1221_expanded_endpoint_recenter.md": "8D5499F6315B48E3E754B86C57A37E25194AC91531A9A052A07A2E93C44E3BED"
+  },
+  "radius_derivation": {
+    "failed_upper_D4_bounds": {
+      "D4_XXCC": 105773187.3949706,
+      "D4_XXPC": 9718.328332598967,
+      "D4_XXPP": 1.055854412927627
+    },
+    "first_failed_intrinsic_upper_radius": 1.0147055530437365e-07,
+    "incoming_endpoint_tube_upper": 9.909233916442739e-11,
+    "maximal_feasible_radius_lower": 4.574699795365026e-08,
+    "selected_chart_bounds": {
+      "D_tau_log_R4_lower": 0.08877804812578702,
+      "Schur_correction_upper": 1.4255155933570448e-13,
+      "complement_inverse_upper": 5783574.766194252,
+      "coupling_upper": 7.909599909331065e-09,
+      "eigenline_gap_lower": 1.57083960743593e-07,
+      "feasible": true,
+      "graph_norm_upper": 1.8022600505150615e-05,
+      "lapse_lower": 0.70065422490123,
+      "relative_hard_perturbation": 0.33338240441274986,
+      "scalar_shift_upper": 1.4161284133616804e-13,
+      "weighted_coupling_upper": 1.201417277381421e-05
+    },
+    "selected_fresh_chart_radius": 2.2923045146407346e-08,
+    "selection_is_proof_midpoint_only": true
+  },
+  "status": "C2_EXPANDED_ENDPOINT_BRANCH_24_CHART_CERTIFIED",
+  "validation": {
+    "ambient_ball_used_only_for_uniform_spectral_and_domain_control": true,
+    "branch_24_replayed": true,
+    "first_intrinsic_upper_failure_was_localized": true,
+    "fresh_chart_radius_strictly_exceeds_incoming_tube": true,
+    "fresh_uniform_hard_gap_is_positive": true,
+    "incoming_1192_endpoint_tube_consumed": true,
+    "lapse_and_radius_rate_remain_positive": true,
+    "no_validation_cutoff_selector_recurrence_scale_gate_or_chord_added": true,
+    "propagation_chart_is_exact_fixed_descriptor_fiber": true
+  },
+  "validation_passed": true
+}

@@ -1,0 +1,52 @@
+{
+  "artifact": "BHSM_N12_C2_STOP_RETAINED_CENTER_SELECTION",
+  "claim_boundary": {
+    "FULL_BHSM_COMPLETE": false,
+    "Gate7": "ACTIVE_KRAWCZYK_RADII_AND_MARGIN_TRANSFER",
+    "finite_interval_history_certified": false,
+    "numerical_proof_center_selected": true
+  },
+  "comparison": {
+    "correlated_correction_reduction_factor": 5.203823817268202,
+    "half_step": {
+      "correlated_correction_max": 1.814522961013384e-05,
+      "fixed_step": 0.5,
+      "macro_tangent_leakage": 1.6070913898564564e-06,
+      "pointwise_Gauss12_residual_max": 2.609140837701298e-05,
+      "terminal_state_correction": 1.8145229610133837e-05
+    },
+    "quarter_step": {
+      "correlated_correction_max": 3.486903140325637e-06,
+      "fixed_step": 0.25,
+      "macro_tangent_leakage": 4.1315518794963806e-07,
+      "pointwise_Gauss12_residual_max": 1.5496153409065845e-05,
+      "terminal_state_correction": 1.983149361661596e-06
+    },
+    "terminal_correction_reduction_factor": 9.14970398141405
+  },
+  "inputs": {
+    "artifacts/flagship_integration/BHSM_N12_C2_STOP_DENSE_DESCRIPTOR_FIRST_HIT.json": "E6C697604F7C352759EEB5CEFDD8871043A28E88452ACC6AE57EFB1C0A5FCA88",
+    "artifacts/flagship_integration/BHSM_N12_C2_STOP_DOP853_DENSE_RESIDUAL_GAUSS12_RECONNAISSANCE.json": "058AF37361D9672AC8636ABC6E418ACBA5AD5743021BD03D9C6876A024170AF2",
+    "artifacts/flagship_integration/BHSM_N12_C2_STOP_FINE_JACOBIAN_CORRELATED_DEFECT_GAUSS12_RECONNAISSANCE.json": "726A77D860EE65340C9665566F5ADF96A20FFD6992679E2B96B36988ED9E5403",
+    "artifacts/flagship_integration/BHSM_N12_C2_STOP_HIGH_ORDER_HALF_STEP_CENTER_RECONNAISSANCE.json": "39FA09604BB52E1B9D993CE2989A349A6F049543A3D3DBCEDAA625549E7DCF8D",
+    "artifacts/flagship_integration/BHSM_N12_C2_STOP_HIGH_ORDER_QUARTER_STEP_RETAINED_RECONNAISSANCE.json": "B37A1EE6F2BA9B4D18A352446FAB99326CCD594C5015B7D8FF4DAA2FF7B4ACEA",
+    "artifacts/flagship_integration/BHSM_N12_C2_STOP_QUARTER_STEP_DENSE_DESCRIPTOR_FIRST_HIT.json": "E54425FDE85441232A9C832D837C2377A13F2183435EAA48EA5C534C5E50066F",
+    "artifacts/flagship_integration/BHSM_N12_C2_STOP_QUARTER_STEP_MATCHED_TANGENT_CORRELATED_DEFECT_GAUSS12_RECONNAISSANCE.json": "A9A233442A876CB50EC38A35853E5971BDA278A9E86FA5B37773B73FFB63C8AC",
+    "artifacts/flagship_integration/BHSM_N12_C2_STOP_QUARTER_STEP_RETAINED_DENSE_RESIDUAL_GAUSS12_RECONNAISSANCE.json": "4737E5FE1A751A7B56A3A65B88983AF8474CD94357E199803B41D245BD9B177C"
+  },
+  "selected_center": "artifacts/flagship_integration/BHSM_N12_C2_STOP_HIGH_ORDER_QUARTER_STEP_RETAINED_RECONNAISSANCE.json",
+  "selection_rule": "MINIMIZE_MATCHED_CORRELATED_GREEN_CORRECTION_AMONG_RETAINED_CENTERS",
+  "status": "QUARTER_STEP_RETAINED_CENTER_SELECTED_FOR_KRAWCZYK_ENCLOSURE",
+  "validation": {
+    "both_centers_use_same_retained_action_field": true,
+    "both_stored_centers_have_exact_polynomial_first_hits": true,
+    "interval_shadowing_authority_not_claimed": true,
+    "quarter_correlated_correction_is_smaller": true,
+    "quarter_matched_fine_Jacobian_leakage_is_smaller": true,
+    "quarter_path_keeps_branch_24": true,
+    "quarter_path_keeps_positive_gap_and_b_psi": true,
+    "quarter_terminal_correction_is_smaller": true,
+    "selection_is_proof_coordinate_only_not_physical_selector": true
+  },
+  "validation_passed": true
+}

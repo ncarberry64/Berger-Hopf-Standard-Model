@@ -1,5 +1,15 @@
 # Reproducibility
 
+## Current Gate-7 carrier certificate
+
+Run `python scripts/certify_n12_gate7_arb_interaction_taylor26_macro_maps.py
+--workers 15` to materialize the 47 correlated outward Arb-string macro maps,
+then run `python -m pytest
+tests/test_n12_gate7_arb_interaction_taylor26_macro_maps.py
+tests/test_bhsm_current_system_integration_map.py -q`.  Checkpoints are keyed
+to authoritative input and implementation hashes.  Do not use binary64
+component balls for global composition.
+
 ## Fresh Clone
 
 ```powershell

@@ -1,0 +1,69 @@
+{
+  "FLAGSHIP_READY": false,
+  "FULL_BHSM_COMPLETE": false,
+  "adjudication": {
+    "Gate7": "OPEN",
+    "Gate8": "LOCKED",
+    "chord_03_authorized": false,
+    "complete_1222_duration_pullback": "OPEN",
+    "integrated_segment_duration_covector": "OPEN_AFTER_SEGMENT_ACTION",
+    "signed_node1214_DDelta_covector": "CERTIFIED",
+    "signed_node1214_duration_density_covector": "CERTIFIED",
+    "transposed_exact_segment_map_action": "OPEN_CURRENT_OWNER"
+  },
+  "artifact": "BHSM_N12_C2_NODE1214_SIGNED_DURATION_DENSITY_COVECTOR",
+  "classification": "EXACT_BHSM_INCIDENCE_WITH_DDELTA_MEAN_VALUE_VALUE_ENCLOSURE_ON_THE_INTRINSIC_NON_SCALE_QUOTIENT",
+  "covector": {
+    "independent_norm_lower": 0.0011572707515201416,
+    "reference_center_action_dual_norm": 0.0023772067413837155,
+    "transported_ball_radius_upper": 0.001219901666361023,
+    "zero_exclusion_margin_lower": 0.0011573050750215347
+  },
+  "data": "artifacts/flagship_integration/BHSM_N12_C2_NODE1214_SIGNED_DURATION_DENSITY_COVECTOR.npz",
+  "data_SHA256": "DABF4CA96AD17D31975342AD758E1F6A7CCC4618D6FBFE8241B76777E868BCD8",
+  "exact_incidence": {
+    "D_q_tau": "q_tau*(D_log_N_boundary-D_Delta/Delta)",
+    "q_tau": "N_boundary*s/Delta"
+  },
+  "exact_next_dependency": "APPLY_THE_CERTIFIED_NODE1214_SIGNED_SOURCE_BALL_THROUGH_THE_TRANSPOSED_EXACT_SEGMENT_VARIATIONAL_ACTION_BEFORE_INTEGRATION",
+  "inputs": {
+    "artifacts/flagship_integration/BHSM_N12_C2_CANCELLED_FIELD_LOHNER_STEP.json": "7091C2977A09DF413371306801DC5246BBDBAE55F1634EEF6B0D64BDF7677E33",
+    "artifacts/flagship_integration/BHSM_N12_C2_COMPLETE_NON_SCALE_DDELTA_OPERATOR.json": "C1B221CD1339CC901358C68F721AD05DF3B95D15F220B826101A45A0E4B0E845",
+    "artifacts/flagship_integration/BHSM_N12_C2_COMPLETE_NON_SCALE_DDELTA_OPERATOR.npz": "F3D47A676B14B8E4C8C5E554E8436DCF7B293B32BA75A8649186C44D2D74FAF9",
+    "artifacts/flagship_integration/BHSM_N12_C2_EXACT_CENTER_FIXED_S_FIELD_MATRIX.json": "7962A9051821633517A47DB91EF73EAF2EAD0E5C15BD3E7F2EA707B6E0DC40CA",
+    "artifacts/flagship_integration/BHSM_N12_C2_EXACT_CENTER_FIXED_S_FIELD_MATRIX.npz": "163383CD903538866E579BD87366333B8DA04877EFA587F0F999DA00AC1FFDCD",
+    "scripts/certify_n12_c2_node1214_signed_duration_density_covector.py": "F0C85E2F617FB6522EBB3F519C75AA391307AAB789C0BE444009AFBA24FDA30A",
+    "src/bhsm/interface/aether_forward_c2_geometry_incidence.py": "517EF5751810384347B6C8ADD9F2F282BC3EF7ACECB3B6C15AA7F58EF8F68C0E",
+    "theory/n12_c2_node1214_signed_duration_density_covector.md": "6B66EDA33E7271076846826376346804821DFE0B97AE1976D372C52B56C8BB68"
+  },
+  "status": "C2_NODE1214_SIGNED_DURATION_DENSITY_COVECTOR_BALL_CERTIFIED",
+  "tube": {
+    "Delta_center": 8.920442766345066e-14,
+    "Delta_interval": [
+      8.920429740095217e-14,
+      8.920455792594915e-14
+    ],
+    "Delta_value_radius_upper": 1.302624092628505e-19,
+    "boundary_lapse_interval": [
+      0.7006542298081824,
+      0.7006542298332358
+    ],
+    "proper_duration_density_interval": [
+      1.3573997613209547e-07,
+      1.3574037257167402e-07
+    ],
+    "reference_node": 1214,
+    "state_action_radius": 5.5104723095444935e-11
+  },
+  "validation": {
+    "complete_DDelta_ball_is_zero_excluding": true,
+    "expected_action_tube_is_used": true,
+    "independent_triangle_lower_bound_is_positive": true,
+    "no_inverse_selector_recurrence_scale_fit_gate_or_chord_added": true,
+    "proof_center_is_not_selected_as_a_physical_history": true,
+    "proper_duration_density_stays_positive": true,
+    "signed_centered_duration_covector_ball_excludes_zero": true,
+    "transported_Delta_value_stays_positive": true
+  },
+  "validation_passed": true
+}

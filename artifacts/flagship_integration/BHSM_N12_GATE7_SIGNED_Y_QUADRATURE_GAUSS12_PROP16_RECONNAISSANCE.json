@@ -1,0 +1,30 @@
+{
+  "artifact": "BHSM_N12_C2_STOP_CORRELATED_FINE_DEFECT_RECONNAISSANCE",
+  "authority": "SIGNED_FINE_GREEN_CENTER_DIAGNOSTIC_NOT_INTERVAL_AUTHORITY",
+  "data": "artifacts/flagship_integration/BHSM_N12_GATE7_SIGNED_Y_QUADRATURE_GAUSS12_PROP16_RECONNAISSANCE.npz",
+  "identity": {
+    "Jacobian_grid_nodes": 371,
+    "constraint_handling": "PROJECT_ONLY_AT_THE_47_RETAINED_MACRO_SEAMS",
+    "defect": "d=y_hat_prime-F(y_hat)",
+    "fine_propagator": "PIECEWISE_MIDPOINT_EXPONENTIAL_PRODUCT_ON_THE_DOP853_INTERVAL_WITH_16_SUBSTEPS",
+    "shadow_equation": "e_prime=J*e-d+N(e)",
+    "source_sign": "MINUS_DEFECT"
+  },
+  "summary": {
+    "Gauss_samples_per_interval": 12,
+    "combined_terminal_s_correction": 9.13768089267835e-16,
+    "direct_descriptor_correction": 8.706784863447885e-16,
+    "fine_action_step": 0.25,
+    "fine_intervals": 370,
+    "fine_propagator_substeps": 16,
+    "linearized_stop_time_shift": 3.221306263016193e-05,
+    "maximum_ambient_correction_profile_2_norm": 3.4869323254174524e-06,
+    "maximum_fine_propagated_source_2_norm": 7.788709376322632e-07,
+    "maximum_fine_propagated_source_owner_interval": 315,
+    "maximum_macro_tangent_leakage_operator_2_norm": 3.681242045427101e-07,
+    "state_induced_terminal_s_correction": 4.308960292304643e-17,
+    "terminal_descriptor_crossing": -2.8366383530768354e-11,
+    "terminal_physical_state_correction_2_norm": 1.983178207461229e-06
+  },
+  "validation_passed": false
+}

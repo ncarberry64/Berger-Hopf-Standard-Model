@@ -1,0 +1,518 @@
+{
+  "FULL_BHSM_COMPLETE": false,
+  "action_version": "BHSM-AE-2.0.0",
+  "artifact": "BHSM_FORMULA_DEPRECATION_LEDGER",
+  "input_hashes": {
+    "artifacts/BHSM_alpha_i_update_v4_2.json": "6DCBE29A734C54FFB2B567E48C90B1AA531BD9A10F46CD2F7C433B937ED86416",
+    "artifacts/BHSM_rho_ch_action_audit_v1_9.json": "24D863B79D9ECDE9137BD7B25DAE00442F5FBF25BF1DC99738E46C5353D8D7CB",
+    "artifacts/action_extension/BHSM_ACTION_AE2_GLOBAL_SPIN_RESET_ACTION.json": "4C756145A9E303F6E4F7F9536CF5639957D010C1A97AF6BE9299830C549B82DC",
+    "artifacts/flagship_integration/BHSM_N12_ACTION_OWNED_ENDPOINT_LOAD_REDUCTION.json": "8B9EBFE886CA4EBDD1E29D4C503803043700C7CB47BF540FD517623EA3F55D9E",
+    "artifacts/flagship_integration/BHSM_N12_AE2_CHILD_BOUNDARY_HAMILTONIAN_NON_SUPERSESSION.json": "71C0328AF5783CC07AA7D62B2EE4803E04AFC8F9070CAD183BD0D6DBC6E94CBD",
+    "artifacts/flagship_integration/BHSM_N12_AE2_COVARIANT_SEAM_ENCLOSURE_Z_MINUS_1.json": "7391274C597672BED6EEEC38AA694755621F8AA63EE725C3868E1E18B7BB318F",
+    "artifacts/flagship_integration/BHSM_N12_AE2_NEGATIVE_AXIS_SEAM_FAMILY.json": "F2B489A187E84DF6614C07BEF199F45D8E291A685448F52A56262EC9D6AA1623",
+    "artifacts/flagship_integration/BHSM_N12_ANALYTIC_LOCAL_BLOCK_CENTER_LIFT.json": "7A0EC5168457672FBE57819D5F7319047ACB5A7F3A476781FD43B6A48E46B499",
+    "artifacts/flagship_integration/BHSM_N12_ASYMPTOTIC_CHILD_EXTERIOR_CONNECTION_PRECONDITIONS.json": "E3F85050789A9E155636C56D1418CC9A183F18DE19C2D2FD4994431F7BB7547D",
+    "artifacts/flagship_integration/BHSM_N12_ASYMPTOTIC_NHIM_ANGULAR_FORCE_NO_GO.json": "8CADFCD9FDD2D5174ACF37C167E88DD73091391D834027CDBBF8FD9CEF768B01",
+    "artifacts/flagship_integration/BHSM_N12_ASYMPTOTIC_NHIM_CAPTURE_BASIN.json": "A2FE14D141A18B39CF27F568A4B9417246DD49DA95158CDDF5489EB303F53FA4",
+    "artifacts/flagship_integration/BHSM_N12_C2_1222_PARAMETRIC_BASE_FAMILY.json": "F74C3044DEDAE07D5BE2D56F7C839C6AB6ED0D5E4F1E14B19DED7EA25FAFCEA1",
+    "artifacts/flagship_integration/BHSM_N12_C2_1222_SIGNED_ADJOINT_ASSEMBLY.json": "32CE95CB81071E0F0929AE05337A216854C4143E1F0985A8A7117C8EDD4C1DE8",
+    "artifacts/flagship_integration/BHSM_N12_C2_1222_TRANSPOSED_DURATION_ACTION_COVERAGE.json": "346142D3A8D55F0F5D8C28AF7F93994022B377A08BEBCE4468DD97C169F75809",
+    "artifacts/flagship_integration/BHSM_N12_C2_CLASS_REDUCED_MAXIMAL_RESPONSE.json": "DA82F5036004E115A13E53B369B51A92FD9A21B81FFEF44A0656C4DB11FF38B8",
+    "artifacts/flagship_integration/BHSM_N12_C2_DIRECT_DDELTA_ROW_RECONNAISSANCE.json": "48109D006F8E92760BC45A170133AFE969C9C740FA3CE0FC4B5AE8A256367FA3",
+    "artifacts/flagship_integration/BHSM_N12_C2_EXACT_FIXED_S_FIELD_ORACLE.json": "DCE35195F9F6AE9E485F1462FF1F611DB6F4CF266C2CF10C9E49344255A66C88",
+    "artifacts/flagship_integration/BHSM_N12_C2_FIXED_SEED_UPSTREAM_FORCE_OWNER.json": "396F39A4F98ECE7F903221EFD01A1C126479EE56DC4F8A72C976501D0D4F8A71",
+    "artifacts/flagship_integration/BHSM_N12_C2_FULLY_REDUCED_SIGNED_ROW_CERTIFICATE.json": "E2870FA9C03A43552A24C8D80A8BD250D1EF1A4C27547186730CD9570EC51F7F",
+    "artifacts/flagship_integration/BHSM_N12_C2_INFINITE_HEAT_ZETA_COMPATIBILITY.json": "9AFA86530D09A8C6A14F8F0FE95E60A3A7127498678185A10B83C3252F3E24E7",
+    "artifacts/flagship_integration/BHSM_N12_C2_PROJECTED_ADJOINT_CAUCHY_CRITERION.json": "43ABB7D0E81FBBA8770534453CA0A4D8A7EA6DBA6D677213EB957B3B2321C19D",
+    "artifacts/flagship_integration/BHSM_N12_C2_RESET_GENERATED_LAUNCH_CHART.json": "570BC1093194BA6CA8ED91F6FE657D3BF965F76B30EC34CFC40704697BE10842",
+    "artifacts/flagship_integration/BHSM_N12_C2_RESET_LAUNCH_ADJOINT_INTERFACE.json": "834744FE503761891F7922CAADBF3187F8484EE6587049A0A624D9F78C2B3ABD",
+    "artifacts/flagship_integration/BHSM_N12_C2_SIGNED_DDELTA_SEED_TRANSPORT_AUDIT.json": "DADC6DB8D100EA250C598A52C59FEE2E847C30DB9C094CD9E913B393BDF53ABB",
+    "artifacts/flagship_integration/BHSM_N12_C2_SIGNED_DURATION_INCIDENCE_OWNER.json": "2A0E28A352A80F395FE4177428E5536375DC622BD813B9D697F17AC8E15F897F",
+    "artifacts/flagship_integration/BHSM_N12_C2_SUPPRESSED_HARD_RESPONSE_ROW_CERTIFICATE.json": "F14F57F6AF835BDEBCB9AF2C1D216C46CE2042114F437B6C4BCA5F8C42BDD8D4",
+    "artifacts/flagship_integration/BHSM_N12_CANONICAL_MOMENTUM_ACTION_JACOBIAN.json": "0B1BE86ECDC049B363C2C0E665CAB0CE9C216FD5CEFB5AE813DA157F18909733",
+    "artifacts/flagship_integration/BHSM_N12_CONSTRAINT_PROJECTED_REPLACEMENT_SADDLE.json": "E5C0340FC39BFF9C83F338B8AFA7270F71A6699A56A5B0996F754FB99B65DAD1",
+    "artifacts/flagship_integration/BHSM_N12_CORE_TRANSMITTED_PHYSICAL_MANIFOLD_AUDIT.json": "007C16DDC4D44747358B71219738158F77F12ADAA60EE91EF28985179B6D1AD9",
+    "artifacts/flagship_integration/BHSM_N12_DIRECT_KKT_EXISTENCE_PRECONDITIONS.json": "1D680BF2DE86E8FF28861F342BC6D9441F73077165BAB275494FD5A67EAF4BF6",
+    "artifacts/flagship_integration/BHSM_N12_EVENT_NORMAL_TWO_SIDED_SEAM_CORRECTION.json": "D575E60A442C19CE0EE34EDBB8BBAC1D90A8895D46D6ACE16317BFBD2CBE894F",
+    "artifacts/flagship_integration/BHSM_N12_EVENT_NORMAL_WEYL_RICCATI.json": "40232FD566213EA7A97B1C34AB73432A9E8F02BEAEC37FFC8E4537ACDE1C38FF",
+    "artifacts/flagship_integration/BHSM_N12_FINITE_ENDPOINT_FORCE_SIGN_SHORTCUT_NO_GO.json": "377F22F131A1E4A899B66C1305C98FEBAF99E2C5E2390DCB235BD691766A4A01",
+    "artifacts/flagship_integration/BHSM_N12_FINITE_ENDPOINT_FORWARD_ADJOINT_KKT.json": "989FBE4857CC0291457D36428158345BF88F3CE45F1599B3672A8AE83141776B",
+    "artifacts/flagship_integration/BHSM_N12_FINITE_ENDPOINT_ZERO_SOURCE_FORCE_FUNCTIONAL.json": "6BC1FC78190437347813117A63D252C96115B2B67619D893144526A5DDD4E931",
+    "artifacts/flagship_integration/BHSM_N12_FINITE_HISTORY_FORCE_DOMAIN_AUDIT.json": "827A30D38BBB0920C8577DAA586E621845F3BE928774214374FCED9E2171E227",
+    "artifacts/flagship_integration/BHSM_N12_FINITE_TERMINAL_DIRECTED_CENTER.json": "CFAED93820580A92C0DC6F7C66DD239FEE78C011A39C2204D6CC3CD485B0D3CF",
+    "artifacts/flagship_integration/BHSM_N12_FINITE_TERMINAL_EVENT_EIGENLINE_SOLUTION_BALL.json": "18338D36D084EE9113F580A020B6AC4AA244CE8B1A8CE9B084D512D6A19328F4",
+    "artifacts/flagship_integration/BHSM_N12_FINITE_TERMINAL_FORWARD_COMPONENT_COMPATIBILITY.json": "B8C8E3282A16CC12663559FD85DABC0CEFAC5ECC711957541292134DBF38131E",
+    "artifacts/flagship_integration/BHSM_N12_FINITE_TERMINAL_MARGIN_TRANSFER.json": "FBECCFF6CE89D4280A9B26220AF274E989648E4C8B8511061E8F96D088EC6F3E",
+    "artifacts/flagship_integration/BHSM_N12_FINITE_TERMINAL_ORIENTATION_CERTIFICATE.json": "2FB7A89A7704D9A017511B2C76D9F3F80A2F1B41F970AC36D3DBF7B954A08AAE",
+    "artifacts/flagship_integration/BHSM_N12_FINITE_TERMINAL_RADII_CERTIFICATE.json": "83A17916069B72895CCE651263F61664F3EC77E63BE68F2292D15E084D24D217",
+    "artifacts/flagship_integration/BHSM_N12_FINITE_TERMINAL_RESET_STRATUM_CANDIDATE.json": "A77867B35ED17BC4C3E19E2315D34420D971E8EB28CBAB7A2CD7BC5CE516A844",
+    "artifacts/flagship_integration/BHSM_N12_FINITE_TERMINAL_TWO_SIDED_FORWARD_INTERFACE.json": "0BA9D5C8FDF495CBF0565B5F1703907EDB9F4450C28D0557C0AEC9B79A5CF8F7",
+    "artifacts/flagship_integration/BHSM_N12_FORCE_ADJOINT_PULLBACK.json": "CD8A55728672AE5CACEC16268AF5B00A267A06F4A0A92BE5F10989CD58189CDF",
+    "artifacts/flagship_integration/BHSM_N12_FORCE_FIRST_JET_CRITICAL_PATH.json": "A8FD972FD9053F2556B6973BDBFF4A558F7F472DB718E4B4CFF678EC81A77E8E",
+    "artifacts/flagship_integration/BHSM_N12_FORWARD_ADJOINT_KKT_EXISTENCE_GATE.json": "2A96F06C1EC23E02E5E209014288246E498A6CCE089A25204BE39A697DFD89FD",
+    "artifacts/flagship_integration/BHSM_N12_FORWARD_E1_SOURCE_MEASURE_CRITERION.json": "E6976D1A49B536044FC2B7A1B25DB3B422F2ED8A9DEBF05DBFDEDD2544A0D9D8",
+    "artifacts/flagship_integration/BHSM_N12_FORWARD_FIXED_CHANNEL_TRANSFER.json": "F83BE1866D44FE0D0F273A2B73AAEF13B272BE6B1174B3644E37E8A8AE91C786",
+    "artifacts/flagship_integration/BHSM_N12_FORWARD_GAUGE_WEYL_READOUT_FAMILY.json": "452134D1EA925FEBE2DA99483926F70AFEC6DEF09731B268ECB2A2A6FCE280AE",
+    "artifacts/flagship_integration/BHSM_N12_FORWARD_PROPER_TIME_FORM_OWNERSHIP.json": "C56D4B49F58DF4FF58D6725899261B5D08C5E38F8860B0C74D2725DC920D2BB4",
+    "artifacts/flagship_integration/BHSM_N12_FULL_RESET_ACTION_JACOBIAN.json": "6F669531A372F9BCC9D04AC26DB4F53A25DE38867036D0A8C1B779B7CB1C477B",
+    "artifacts/flagship_integration/BHSM_N12_FULL_RETAINED_ASYMPTOTIC_BRANCH.json": "AC00B2E15B88843B11711735F18A98649065F6D4DA4C6421BC7C8A026F5978CF",
+    "artifacts/flagship_integration/BHSM_N12_GATE7_1222_CORE_DIAGRAM_MATCHING_AUDIT.json": "C8EDE0B56B272F967C07D2D45AC63F0E2112030C0DE85381B50C9EB1C453D4C0",
+    "artifacts/flagship_integration/BHSM_N12_GATE7_AE2_ANGULAR_DINI_UNIFORMITY_AUDIT.json": "69536BC6859C87D3990391C2224FB7104F06FEFB6E4082B29609C31CDBBB8F52",
+    "artifacts/flagship_integration/BHSM_N12_GATE7_AE2_COMPACT_SOURCE_DINI_CLOSURE.json": "E1E735CBA8FC9D5FBC28B2AB93B0EA17803191D69F081C7A194224360A18CF27",
+    "artifacts/flagship_integration/BHSM_N12_GATE7_AE2_FACTORIZED_SOURCE_MEASURE_REDUCTION.json": "4E4A016D28E520B09C4AC76253A29D9DD713DFD727A818FD529DB17D9621DE38",
+    "artifacts/flagship_integration/BHSM_N12_GATE7_AE2_FACTORIZED_THRESHOLD_RECLASSIFICATION.json": "DBDFBF1A3D86BE5E2F93B126E92EF1BA0023D3771E6DCC5824EE0634A38546E1",
+    "artifacts/flagship_integration/BHSM_N12_GATE7_AE2_GLOBAL_SPIN_MATTER_DOMAIN.json": "5697192CCFBC6814B9EEAF5E5A01DD89BD4A70E287B5DFE171F0BBA132E15CFC",
+    "artifacts/flagship_integration/BHSM_N12_GATE7_AE2_INTEGRABLE_RADIUS_THRESHOLD_ROUTE.json": "E4A6F774089A3B88E448BA5EDAA51FD7ADEB7826FCC3F6BB6109DB9F15EFD5E3",
+    "artifacts/flagship_integration/BHSM_N12_GATE7_AE2_LINEAR_RADIUS_TAIL_THEOREM.json": "8A1C4DC6C4D1979D0D2E479CCD30D60C7F2071074704ABD996A54D841175459E",
+    "artifacts/flagship_integration/BHSM_N12_GATE7_AE2_NONFERMION_THRESHOLD_MARGIN.json": "A4E4C05991402FB74FC0C584B122EF887B4A89CCB7FAA6D85560E3934872E7D2",
+    "artifacts/flagship_integration/BHSM_N12_GATE7_AE2_POWER_RADIUS_TAIL_CLOSURE.json": "09463B0A59178AF5EB318C5DBC5673BE51F4C4166610C9B38F4E2B0381D5035B",
+    "artifacts/flagship_integration/BHSM_N12_GATE7_AE2_THRESHOLD_SUPERSESSION.json": "1C30C3003E74B48F873CCCBE3F54AAC9780D26FC1408A74C12D933A253FD2613",
+    "artifacts/flagship_integration/BHSM_N12_GATE7_BIRTH_GRAPH_LOAD_MATCHING_AUDIT.json": "3E7C62010EB1F8EA720DCDABA397B753CCD7D8CF34C23C79E60D0EAEB5B02F50",
+    "artifacts/flagship_integration/BHSM_N12_GATE7_BIRTH_TRACE_MF_SUPERSESSION_AUDIT.json": "7EF2AD9AF223853D45355149F6D105CF497BFD5C57581E30851B5EABB1B66CD9",
+    "artifacts/flagship_integration/BHSM_N12_GATE7_C2_FINITE_CORE_ZETA_RESET_COTANGENT_ENCLOSURE.json": "21B7E206F647F6857D67C75C074925650CC26E2C6A2C025CFA53E59EB5E7E867",
+    "artifacts/flagship_integration/BHSM_N12_GATE7_CLOSED_SYSTEM_ZERO_EXTERNAL_SOURCE_ONTOLOGY.json": "E9D4611C01C7243A7526F4AC47F473C68733E981D01EFA5013AA028177004A3F",
+    "artifacts/flagship_integration/BHSM_N12_GATE7_COMPACT_RESET_QUOTIENT_DOMAIN.json": "5D980B08DA70D9DC44C98057D2AAD605C53CD6D3E6561A7DCCAE6239D9927AE2",
+    "artifacts/flagship_integration/BHSM_N12_GATE7_DIRECT_ZETA_COEFFICIENT_COTANGENT.json": "F4065A42BABBD06381281CB231422B192070AB1923F0FF9751EB1C4331C13686",
+    "artifacts/flagship_integration/BHSM_N12_GATE7_E0_EVENT_SIDE_RESPONSE_PROVENANCE_AUDIT.json": "392FF0C6CDF160E5EBAB4B6AB6686F209F77B2B61FD27C4EE8EB928BF7DBE6FC",
+    "artifacts/flagship_integration/BHSM_N12_GATE7_EXTERNAL_BIRTH_SOURCE_ROLE_SUPERSESSION.json": "AD17370C269C0E2D309BA4A005EE5A1203B7C7AECAEB832C229387429829F8B1",
+    "artifacts/flagship_integration/BHSM_N12_GATE7_FINITE_ENCAPSULATION_PHYSICAL_DOMAIN_AUDIT.json": "2F6BF031EAAC90D060A8D81DB093FF19B3C1875278C2CE18747CC1804A1E9F3B",
+    "artifacts/flagship_integration/BHSM_N12_GATE7_FORMATION_DECAY_CHRONOLOGY_SUPERSESSION.json": "AA9FD0AA737E714248F9A5019FE0B7D30FEE78999BA3C246EDD1C79E6520D749",
+    "artifacts/flagship_integration/BHSM_N12_GATE7_FULL_LOWER_WEIGHT_KRAWCZYK_CLOSURE.json": "1E13D57E06DF1F1E464548F47A7BA72A18D111A4F020C409B88F138321E6296F",
+    "artifacts/flagship_integration/BHSM_N12_GATE7_GLOBAL_CONNECTION_OBSTRUCTION.json": "10001204499627CA5D3D9EFB5956B86BFA03BB9C1D51B6C05DE3474A2393CB06",
+    "artifacts/flagship_integration/BHSM_N12_GATE7_INCOMING_AMPLITUDE_ZETA_COTANGENT.json": "B4ED227AE1478BDA31813F9ED32B826C479772182114C031689CF06F5CA02DE1",
+    "artifacts/flagship_integration/BHSM_N12_GATE7_INCOMING_COMPLIANCE_REGULAR_CHART.json": "9FBFDC5113D5B784FA9A68F47B3B58665EADCD8D2AB755464E30EA8B468D953D",
+    "artifacts/flagship_integration/BHSM_N12_GATE7_INCOMING_FINITE_AMPLITUDE_HEAT_ZETA_COMPARISON.json": "F487862C3B0ED26022817F52623E29D7B5E9A7D4ACCF86D094F78181B51ACDB6",
+    "artifacts/flagship_integration/BHSM_N12_GATE7_INCOMING_GRADED_HEAT_DIFFERENTIABILITY.json": "092D2DA76D9729E98D360E314B5CE30209D9BB110D82E2F499476E22DB911D6A",
+    "artifacts/flagship_integration/BHSM_N12_GATE7_INCOMING_ZERO_AMPLITUDE_HEAT_ZETA_COMPARISON.json": "8195A70C44E319ED037B5DCC9AEE87572134F3968D819EFB7FE9AF1E972D1B4C",
+    "artifacts/flagship_integration/BHSM_N12_GATE7_JOINT_HEAT_COTANGENT_REVERSE_SEED.json": "314C8A6C77A062A76F92CAD1D3833EED363DA105FC12265A292A1BD874F85901",
+    "artifacts/flagship_integration/BHSM_N12_GATE7_JOINT_KKT_INFORMATION_GATE.json": "8E615185B091061941F1A72D11C57D7440ED6299D16B0BD581266AA8F3FB68C9",
+    "artifacts/flagship_integration/BHSM_N12_GATE7_MAXIMAL_COMPLIANCE_SEAM_CONTRACTION.json": "AD8D23843A523504B82787687441F3149420BCADAE8249D4BD16F674DAEEC4D7",
+    "artifacts/flagship_integration/BHSM_N12_GATE7_MAXIMAL_FIXED_CHANNEL_RELATIVE_HEAT_COTANGENT.json": "9BFABA9D4AA1C2C1DB599DAB1E07DCD597B7D105D1AF73CCC840976A00DB084F",
+    "artifacts/flagship_integration/BHSM_N12_GATE7_MAXIMAL_GRADED_COTANGENT_MATCHING_AUDIT.json": "C4A18905F11993ACDBEEC38A44B6CA563CC7D191A784424633D76A0BFD96B25B",
+    "artifacts/flagship_integration/BHSM_N12_GATE7_MAXIMAL_GRADED_INCOMING_RELATIVE_HEAT_COTANGENT.json": "7328CB30824B1954B2394E1D53DEE0925F29653B249B815366DDD2457ECE1BB0",
+    "artifacts/flagship_integration/BHSM_N12_GATE7_MAXIMAL_TAIL_SUPPORT_REDUCTION.json": "150BE9D7C1EADE81C263CC805AE0700C1D703073B95CB01FF0001A03C8442CEC",
+    "artifacts/flagship_integration/BHSM_N12_GATE7_NHIM_RANK72_RELATIVE_TAIL_THEOREM.json": "FA36F13C0075A46A973DE82B817C44CD204682981E1FB843A17445E8B6158E33",
+    "artifacts/flagship_integration/BHSM_N12_GATE7_ONE_SEAM_FULL_GRADED_FINITE_CORE_HEAT_BOUND.json": "934DCD800EE09583E3A214A5F7B4E2AF1686C08D45A278E75880B144DBE582BD",
+    "artifacts/flagship_integration/BHSM_N12_GATE7_OUTGOING_FLOW_TAIL_CLOSURE.json": "BFB82254E72FB36886F4F403A9C79AF401E74AD97EC71AA8A90C4BADD62999E4",
+    "artifacts/flagship_integration/BHSM_N12_GATE7_QUANTITATIVE_CAPTURE_BRIDGE_RECOMBINATION.json": "6EA0BFD6F0E106E13FB40DFE155C89013DBC8DB186950B14BA867033B3323856",
+    "artifacts/flagship_integration/BHSM_N12_GATE7_QUANTITATIVE_STABLE_CAPTURE_TUBE.json": "AC6421703F2A29217F9B1056C41F17650464BB40E38DFC324F78CC9343DB98D2",
+    "artifacts/flagship_integration/BHSM_N12_GATE7_RANK72_MAXIMAL_TAIL_ROUTE_ADJUDICATION.json": "2BFD3D7C606B3C5B6741F957AF4C34FD8D289EBAF5C231CF9E2313907815E8F2",
+    "artifacts/flagship_integration/BHSM_N12_GATE7_RANK72_RELATIVE_FORM_TAIL.json": "60B68487BB45E2845CF852DE26B3B7D7C8AC0D5DDD829FBD8FBC1149F494375A",
+    "artifacts/flagship_integration/BHSM_N12_GATE7_SEED_IMAGE_WARD_GAUGE_AUDIT.json": "D4E82792C554AA939D6077363478E81B54CEBDAF4C6559467AF3E0E73579A37D",
+    "artifacts/flagship_integration/BHSM_N12_GATE7_TWO_SEAM_CLOSED_OPERATOR_ASSEMBLY.json": "ED9296981EE926B0570194077F3728E606D4B1A53A8A8BEAE8BB3B4FE9B6C13E",
+    "artifacts/flagship_integration/BHSM_N12_INTERVAL_WEIGHT_FIVE_CENTER_LIFT.json": "CF4A6345F0E84F40DD7F3884D061B65A19A45B99F21799426FFD6274EFBBBE57",
+    "artifacts/flagship_integration/BHSM_N12_JOINT_FINITE_HISTORY_OPERATOR_DATA_GATE.json": "6668D3057D767E5F2D3AAF4C040D1FBD4264EA2D0CA792D3815EA4130BDED05D",
+    "artifacts/flagship_integration/BHSM_N12_LOCAL_RESET_TERMINAL_TRANSVERSALITY_AUDIT.json": "13B5D7DDD7FA8E1BD3F169A44F7EB56CB1EDA20AFDD1887A21FE47CFDF812E34",
+    "artifacts/flagship_integration/BHSM_N12_MAXIMAL_FORWARD_ADJOINT_EXHAUSTION.json": "99FA66BCDD77453E8D468AB1C6685A83CA7010C368EE6EF346C916D2DADAC26F",
+    "artifacts/flagship_integration/BHSM_N12_MAXIMAL_FRIEDRICHS_WEYL_EXHAUSTION.json": "ADD797EAE0D9DB94D1BA0C58687AF114598331662B92B13579408361D95D9E5B",
+    "artifacts/flagship_integration/BHSM_N12_NEGATIVE_AXIS_SEAM_HEAT_SYNTHESIS_NO_GO.json": "312194EA488458AF8A72583151B9DCD466BE5C88EF9F7B67F889E920804C3560",
+    "artifacts/flagship_integration/BHSM_N12_PARAMETRIC_EXTERIOR_ORACLE_EXECUTABLE_INTERFACE.json": "3ED83437F9FA9F2558E1D3AC96CED75EE68455B03F87E42AAF0C96B0FD9DCBCE",
+    "artifacts/flagship_integration/BHSM_N12_PARAMETRIC_RESET_FIBER_EXTERIOR_ORACLE_THEOREM.json": "1A789C7916626C7AA96B8718690A7B347C0766181FC7E5246E911CED40A4301F",
+    "artifacts/flagship_integration/BHSM_N12_RESET_FIBER_RADIUS_JET_AND_SCALE_CENTER_AUDIT.json": "F245D549B6C5247BE5E0730C33C4840AEFADB8A68B28B222B8D0E34BEF1A85A7",
+    "artifacts/flagship_integration/BHSM_N12_RESET_STRATUM_MOVING_ENDPOINT_JETS.json": "DE930C625E5E1445C8EAFADC579D25C9BF1B52A294CEF7342EBDA799C746B65D",
+    "artifacts/flagship_integration/BHSM_N12_RESET_TIME_QUOTIENT_GENERATOR_AUDIT.json": "CAB2DA9A4BF5A5489241CF3C49F4C67C9EB93E4B6C567B6A425E67B0D6D895C8",
+    "artifacts/flagship_integration/BHSM_N12_SAME_ACTION_CONTINUATION_PRECONDITIONS.json": "B3E382A599485E929517C8C6F3657FC15181D0CBEDB050CC95040C6117C97B64",
+    "artifacts/flagship_integration/BHSM_N12_WEIGHT_FIVE_CENTER_MODULATION.json": "47FEC9975254408080949DA85313E9EE253B9F4E50391845BD9C159923D20AD8",
+    "artifacts/flagship_integration/BHSM_N12_WEIGHT_FIVE_MULTIPRECISION_NONPROMOTION.json": "0575CB53F513B8E018AD93E6BC961C531D23DA4C2BBCA38ADD0F93FFBAA854B6",
+    "artifacts/flagship_integration/BHSM_N12_WEIGHT_SEVEN_TRANSVERSE_DESCRIPTOR.json": "44C88B6588E92B002A6E882108DCFBB1B04CA296CF662E58AD9CA459C4D78C74",
+    "artifacts/frozen_constants_v2.json": "9D601C03992C5ADF34E7D438C8A9A15598138E26D0022A94B1B09CCA52092C7D",
+    "artifacts/intrinsic_state_selection/BHSM_N12_CONSTRAINT_REDUCED_ENERGY_IDENTITY_GATE.json": "EB907DF96C8C9E0A66014D6A6463B853E92F1A5D0CBA2B269789FA28706501D1",
+    "artifacts/intrinsic_state_selection/BHSM_N12_FINITE_ENCAPSULATION_LOCAL_BRANCH.json": "280AAECD38DE340C1D40F8B374B96BA7A5C6DAE6F8F5B518B60A49CBBE14CB63",
+    "theory/bhsm_prediction_ledger.json": "CCD1EE7A578923ADB513F70641C6E4C27F17305C002728D85CCBAFA48CC9F4D8",
+    "theory/bhsm_spacetime_edge_ontology_repair.md": "8F7DD67BBF8244C642CF86C063D07AD977D5E3C09D8286EB3AC24E7645B3E35F",
+    "theory/norman_owner_ontology_recovered.md": "E7463E3EBD38145D221873DFFA7D2C2B69BE1A202C70EA93B8E5E5B9227BFBD0"
+  },
+  "ontology_version": "BHSM-AE2-ONTOLOGY-1.4.0",
+  "records": [
+    {
+      "action_version": "BHSM-AE-2.0.0",
+      "artifact_hashes": {
+        "artifacts/flagship_integration/BHSM_N12_GATE7_AE2_THRESHOLD_SUPERSESSION.json": "1C30C3003E74B48F873CCCBE3F54AAC9780D26FC1408A74C12D933A253FD2613"
+      },
+      "canonical_id": "DEPRECATE_STRICT_GAP",
+      "current_status": "SUPERSEDED_AS_NECESSARY",
+      "dimensions": "DIMENSIONLESS_OR_OPERATOR_TYPED",
+      "domain": "current AE2/Gate7",
+      "downstream_consumers": [],
+      "equivalent_forms": [],
+      "forbidden_interpretations": [
+        "strict universal threshold gap"
+      ],
+      "formula": "strict universal threshold gap",
+      "frozen_output_status": "NOT_FROZEN_OUTPUT",
+      "mathematical_class": "DEPRECATION_RECORD",
+      "observable_status": "NOT_AN_OBSERVABLE",
+      "ontology_version": "BHSM-AE2-ONTOLOGY-1.4.0",
+      "physical_meaning": "source-weighted threshold measure",
+      "provenance": [
+        "artifacts/flagship_integration/BHSM_N12_GATE7_AE2_THRESHOLD_SUPERSESSION.json"
+      ],
+      "semantic_layer": "BHSM_ONTOLOGY",
+      "source_weighting_required": false,
+      "superseded_meanings": [
+        "strict universal threshold gap"
+      ],
+      "tests": [
+        "test_required_fields"
+      ]
+    },
+    {
+      "action_version": "BHSM-AE-2.0.0",
+      "artifact_hashes": {
+        "artifacts/flagship_integration/BHSM_N12_GATE7_AE2_THRESHOLD_SUPERSESSION.json": "1C30C3003E74B48F873CCCBE3F54AAC9780D26FC1408A74C12D933A253FD2613"
+      },
+      "canonical_id": "DEPRECATE_ZERO_RESONANCE_DIVERGENCE",
+      "current_status": "FALSE_IN_GENERAL",
+      "dimensions": "DIMENSIONLESS_OR_OPERATOR_TYPED",
+      "domain": "current AE2/Gate7",
+      "downstream_consumers": [],
+      "equivalent_forms": [],
+      "forbidden_interpretations": [
+        "zero resonance => infrared divergence"
+      ],
+      "formula": "zero resonance => infrared divergence",
+      "frozen_output_status": "NOT_FROZEN_OUTPUT",
+      "mathematical_class": "DEPRECATION_RECORD",
+      "observable_status": "NOT_AN_OBSERVABLE",
+      "ontology_version": "BHSM-AE2-ONTOLOGY-1.4.0",
+      "physical_meaning": "source vertex determines weighted response",
+      "provenance": [
+        "artifacts/flagship_integration/BHSM_N12_GATE7_AE2_THRESHOLD_SUPERSESSION.json"
+      ],
+      "semantic_layer": "BHSM_ONTOLOGY",
+      "source_weighting_required": false,
+      "superseded_meanings": [
+        "zero resonance => infrared divergence"
+      ],
+      "tests": [
+        "test_required_fields"
+      ]
+    },
+    {
+      "action_version": "BHSM-AE-2.0.0",
+      "artifact_hashes": {
+        "artifacts/flagship_integration/BHSM_N12_GATE7_AE2_THRESHOLD_SUPERSESSION.json": "1C30C3003E74B48F873CCCBE3F54AAC9780D26FC1408A74C12D933A253FD2613"
+      },
+      "canonical_id": "DEPRECATE_P2",
+      "current_status": "FORBIDDEN_WITHOUT_ACTION_MAP",
+      "dimensions": "DIMENSIONLESS_OR_OPERATOR_TYPED",
+      "domain": "current AE2/Gate7",
+      "downstream_consumers": [],
+      "equivalent_forms": [],
+      "forbidden_interpretations": [
+        "z=p^2"
+      ],
+      "formula": "z=p^2",
+      "frozen_output_status": "NOT_FROZEN_OUTPUT",
+      "mathematical_class": "DEPRECATION_RECORD",
+      "observable_status": "NOT_AN_OBSERVABLE",
+      "ontology_version": "BHSM-AE2-ONTOLOGY-1.4.0",
+      "physical_meaning": "neutral z",
+      "provenance": [
+        "artifacts/flagship_integration/BHSM_N12_GATE7_AE2_THRESHOLD_SUPERSESSION.json"
+      ],
+      "semantic_layer": "BHSM_ONTOLOGY",
+      "source_weighting_required": false,
+      "superseded_meanings": [
+        "z=p^2"
+      ],
+      "tests": [
+        "test_required_fields"
+      ]
+    },
+    {
+      "action_version": "BHSM-AE-2.0.0",
+      "artifact_hashes": {
+        "artifacts/flagship_integration/BHSM_N12_GATE7_AE2_THRESHOLD_SUPERSESSION.json": "1C30C3003E74B48F873CCCBE3F54AAC9780D26FC1408A74C12D933A253FD2613"
+      },
+      "canonical_id": "DEPRECATE_PERIODIC_READOUT",
+      "current_status": "HISTORICAL",
+      "dimensions": "DIMENSIONLESS_OR_OPERATOR_TYPED",
+      "domain": "current AE2/Gate7",
+      "downstream_consumers": [],
+      "equivalent_forms": [],
+      "forbidden_interpretations": [
+        "periodic S1 Fourier readout"
+      ],
+      "formula": "periodic S1 Fourier readout",
+      "frozen_output_status": "NOT_FROZEN_OUTPUT",
+      "mathematical_class": "DEPRECATION_RECORD",
+      "observable_status": "NOT_AN_OBSERVABLE",
+      "ontology_version": "BHSM-AE2-ONTOLOGY-1.4.0",
+      "physical_meaning": "nonperiodic forward resolvent",
+      "provenance": [
+        "artifacts/flagship_integration/BHSM_N12_GATE7_AE2_THRESHOLD_SUPERSESSION.json"
+      ],
+      "semantic_layer": "BHSM_ONTOLOGY",
+      "source_weighting_required": false,
+      "superseded_meanings": [
+        "periodic S1 Fourier readout"
+      ],
+      "tests": [
+        "test_required_fields"
+      ]
+    },
+    {
+      "action_version": "BHSM-AE-2.0.0",
+      "artifact_hashes": {
+        "artifacts/flagship_integration/BHSM_N12_GATE7_AE2_THRESHOLD_SUPERSESSION.json": "1C30C3003E74B48F873CCCBE3F54AAC9780D26FC1408A74C12D933A253FD2613"
+      },
+      "canonical_id": "DEPRECATE_TERMINAL_RETURN",
+      "current_status": "NOT_REQUIRED",
+      "dimensions": "DIMENSIONLESS_OR_OPERATOR_TYPED",
+      "domain": "current AE2/Gate7",
+      "downstream_consumers": [],
+      "equivalent_forms": [],
+      "forbidden_interpretations": [
+        "mandatory terminal return"
+      ],
+      "formula": "mandatory terminal return",
+      "frozen_output_status": "NOT_FROZEN_OUTPUT",
+      "mathematical_class": "DEPRECATION_RECORD",
+      "observable_status": "NOT_AN_OBSERVABLE",
+      "ontology_version": "BHSM-AE2-ONTOLOGY-1.4.0",
+      "physical_meaning": "conditional event reset or canonical stop",
+      "provenance": [
+        "artifacts/flagship_integration/BHSM_N12_GATE7_AE2_THRESHOLD_SUPERSESSION.json"
+      ],
+      "semantic_layer": "BHSM_ONTOLOGY",
+      "source_weighting_required": false,
+      "superseded_meanings": [
+        "mandatory terminal return"
+      ],
+      "tests": [
+        "test_required_fields"
+      ]
+    },
+    {
+      "action_version": "BHSM-AE-2.0.0",
+      "artifact_hashes": {
+        "artifacts/flagship_integration/BHSM_N12_GATE7_AE2_THRESHOLD_SUPERSESSION.json": "1C30C3003E74B48F873CCCBE3F54AAC9780D26FC1408A74C12D933A253FD2613"
+      },
+      "canonical_id": "DEPRECATE_GENERIC_OPERATOR_HISTORY",
+      "current_status": "SUPERSEDED_IN_FIXED_CHANNEL_SCOPE",
+      "dimensions": "DIMENSIONLESS_OR_OPERATOR_TYPED",
+      "domain": "current AE2/Gate7",
+      "downstream_consumers": [],
+      "equivalent_forms": [],
+      "forbidden_interpretations": [
+        "generic operator-valued exterior history"
+      ],
+      "formula": "generic operator-valued exterior history",
+      "frozen_output_status": "NOT_FROZEN_OUTPUT",
+      "mathematical_class": "DEPRECATION_RECORD",
+      "observable_status": "NOT_AN_OBSERVABLE",
+      "ontology_version": "BHSM-AE2-ONTOLOGY-1.4.0",
+      "physical_meaning": "x(tau) fixed-channel coefficients",
+      "provenance": [
+        "artifacts/flagship_integration/BHSM_N12_GATE7_AE2_THRESHOLD_SUPERSESSION.json"
+      ],
+      "semantic_layer": "BHSM_ONTOLOGY",
+      "source_weighting_required": false,
+      "superseded_meanings": [
+        "generic operator-valued exterior history"
+      ],
+      "tests": [
+        "test_required_fields"
+      ]
+    },
+    {
+      "action_version": "BHSM-AE-2.0.0",
+      "artifact_hashes": {
+        "artifacts/flagship_integration/BHSM_N12_GATE7_AE2_THRESHOLD_SUPERSESSION.json": "1C30C3003E74B48F873CCCBE3F54AAC9780D26FC1408A74C12D933A253FD2613"
+      },
+      "canonical_id": "DEPRECATE_D5_NATIVE_BLOCKER",
+      "current_status": "OPTIONAL_ENDPOINT_ROUTE",
+      "dimensions": "DIMENSIONLESS_OR_OPERATOR_TYPED",
+      "domain": "current AE2/Gate7",
+      "downstream_consumers": [],
+      "equivalent_forms": [],
+      "forbidden_interpretations": [
+        "D5/Kato interval sign as native Gate7 blocker"
+      ],
+      "formula": "D5/Kato interval sign as native Gate7 blocker",
+      "frozen_output_status": "NOT_FROZEN_OUTPUT",
+      "mathematical_class": "DEPRECATION_RECORD",
+      "observable_status": "NOT_AN_OBSERVABLE",
+      "ontology_version": "BHSM-AE2-ONTOLOGY-1.4.0",
+      "physical_meaning": "factorized source-weighted LAP",
+      "provenance": [
+        "artifacts/flagship_integration/BHSM_N12_GATE7_AE2_THRESHOLD_SUPERSESSION.json"
+      ],
+      "semantic_layer": "BHSM_ONTOLOGY",
+      "source_weighting_required": false,
+      "superseded_meanings": [
+        "D5/Kato interval sign as native Gate7 blocker"
+      ],
+      "tests": [
+        "test_required_fields"
+      ]
+    },
+    {
+      "action_version": "BHSM-AE-2.0.0",
+      "artifact_hashes": {
+        "artifacts/flagship_integration/BHSM_N12_GATE7_AE2_THRESHOLD_SUPERSESSION.json": "1C30C3003E74B48F873CCCBE3F54AAC9780D26FC1408A74C12D933A253FD2613"
+      },
+      "canonical_id": "DEPRECATE_STRICT_POWER_EXCESS",
+      "current_status": "SUFFICIENT_NOT_NECESSARY_AFTER_CRITICAL_BESSEL_THEOREM",
+      "dimensions": "DIMENSIONLESS_OR_OPERATOR_TYPED",
+      "domain": "current AE2/Gate7",
+      "downstream_consumers": [],
+      "equivalent_forms": [],
+      "forbidden_interpretations": [
+        "epsilon_h>0 power excess is compulsory"
+      ],
+      "formula": "epsilon_h>0 power excess is compulsory",
+      "frozen_output_status": "NOT_FROZEN_OUTPUT",
+      "mathematical_class": "DEPRECATION_RECORD",
+      "observable_status": "NOT_AN_OBSERVABLE",
+      "ontology_version": "BHSM-AE2-ONTOLOGY-1.4.0",
+      "physical_meaning": "exact source-Dini integrability",
+      "provenance": [
+        "artifacts/flagship_integration/BHSM_N12_GATE7_AE2_THRESHOLD_SUPERSESSION.json"
+      ],
+      "semantic_layer": "BHSM_ONTOLOGY",
+      "source_weighting_required": false,
+      "superseded_meanings": [
+        "epsilon_h>0 power excess is compulsory"
+      ],
+      "tests": [
+        "test_required_fields"
+      ]
+    },
+    {
+      "action_version": "BHSM-AE-2.0.0",
+      "artifact_hashes": {
+        "artifacts/flagship_integration/BHSM_N12_GATE7_AE2_THRESHOLD_SUPERSESSION.json": "1C30C3003E74B48F873CCCBE3F54AAC9780D26FC1408A74C12D933A253FD2613"
+      },
+      "canonical_id": "DEPRECATE_FAR_END_BIRTH_SELECTION",
+      "current_status": "FORBIDDEN",
+      "dimensions": "DIMENSIONLESS_OR_OPERATOR_TYPED",
+      "domain": "current AE2/Gate7",
+      "downstream_consumers": [],
+      "equivalent_forms": [],
+      "forbidden_interpretations": [
+        "far Friedrichs closure selects birth graph"
+      ],
+      "formula": "far Friedrichs closure selects birth graph",
+      "frozen_output_status": "NOT_FROZEN_OUTPUT",
+      "mathematical_class": "DEPRECATION_RECORD",
+      "observable_status": "NOT_AN_OBSERVABLE",
+      "ontology_version": "BHSM-AE2-ONTOLOGY-1.4.0",
+      "physical_meaning": "AE2 glued birth domain",
+      "provenance": [
+        "artifacts/flagship_integration/BHSM_N12_GATE7_AE2_THRESHOLD_SUPERSESSION.json"
+      ],
+      "semantic_layer": "BHSM_ONTOLOGY",
+      "source_weighting_required": false,
+      "superseded_meanings": [
+        "far Friedrichs closure selects birth graph"
+      ],
+      "tests": [
+        "test_required_fields"
+      ]
+    },
+    {
+      "action_version": "BHSM-AE-2.0.0",
+      "artifact_hashes": {
+        "artifacts/flagship_integration/BHSM_N12_GATE7_AE2_THRESHOLD_SUPERSESSION.json": "1C30C3003E74B48F873CCCBE3F54AAC9780D26FC1408A74C12D933A253FD2613"
+      },
+      "canonical_id": "DEPRECATE_LOCAL_ENERGY_MASS",
+      "current_status": "FORBIDDEN",
+      "dimensions": "DIMENSIONLESS_OR_OPERATOR_TYPED",
+      "domain": "current AE2/Gate7",
+      "downstream_consumers": [],
+      "equivalent_forms": [],
+      "forbidden_interpretations": [
+        "local energy=m_phys"
+      ],
+      "formula": "local energy=m_phys",
+      "frozen_output_status": "NOT_FROZEN_OUTPUT",
+      "mathematical_class": "DEPRECATION_RECORD",
+      "observable_status": "NOT_AN_OBSERVABLE",
+      "ontology_version": "BHSM-AE2-ONTOLOGY-1.4.0",
+      "physical_meaning": "observable plus physical scale map",
+      "provenance": [
+        "artifacts/flagship_integration/BHSM_N12_GATE7_AE2_THRESHOLD_SUPERSESSION.json"
+      ],
+      "semantic_layer": "BHSM_ONTOLOGY",
+      "source_weighting_required": false,
+      "superseded_meanings": [
+        "local energy=m_phys"
+      ],
+      "tests": [
+        "test_required_fields"
+      ]
+    },
+    {
+      "action_version": "BHSM-AE-2.0.0",
+      "artifact_hashes": {
+        "artifacts/flagship_integration/BHSM_N12_EVENT_NORMAL_TWO_SIDED_SEAM_CORRECTION.json": "D575E60A442C19CE0EE34EDBB8BBAC1D90A8895D46D6ACE16317BFBD2CBE894F"
+      },
+      "canonical_id": "DEPRECATE_W_ONLY_EVENT_INITIALIZATION",
+      "current_status": "SUPERSEDED_BY_TWO_SIDED_AE2_SEAM",
+      "dimensions": "DIMENSIONLESS_OR_OPERATOR_TYPED",
+      "domain": "physical AE2 finite event-child operator",
+      "downstream_consumers": [
+        "G7_08_FORCE"
+      ],
+      "equivalent_forms": [],
+      "forbidden_interpretations": [
+        "W_phys=0 implies zero child Calderon response"
+      ],
+      "formula": "M(0,z)=W_phys as the physical AE2 event datum",
+      "frozen_output_status": "NOT_FROZEN_OUTPUT",
+      "mathematical_class": "DEPRECATION_RECORD",
+      "observable_status": "NOT_AN_OBSERVABLE",
+      "ontology_version": "BHSM-AE2-ONTOLOGY-1.4.0",
+      "physical_meaning": "Use U_R^dagger*M_child(z)*U_R+W_phys after opposite-arm elimination, or solve the joint two-sided seam.",
+      "provenance": [
+        "artifacts/flagship_integration/BHSM_N12_EVENT_NORMAL_TWO_SIDED_SEAM_CORRECTION.json"
+      ],
+      "semantic_layer": "MATHEMATICAL_OBJECT",
+      "source_weighting_required": false,
+      "superseded_meanings": [
+        "one-sided W-only terminal wall"
+      ],
+      "tests": [
+        "test_required_fields"
+      ]
+    },
+    {
+      "action_version": "BHSM-AE-2.0.0",
+      "artifact_hashes": {
+        "artifacts/flagship_integration/BHSM_N12_GATE7_EXTERNAL_BIRTH_SOURCE_ROLE_SUPERSESSION.json": "AD17370C269C0E2D309BA4A005EE5A1203B7C7AECAEB832C229387429829F8B1"
+      },
+      "canonical_id": "DEPRECATE_DYNAMIC_BIRTH_TRACE_MF_REDUCTION",
+      "current_status": "SUPERSEDED_BY_EXTERNAL_BIRTH_TRACE_ROLE",
+      "dimensions": "DIMENSIONLESS_OR_OPERATOR_TYPED",
+      "domain": "physical Gate-7 zero-external-source joint operator",
+      "downstream_consumers": [
+        "G7_08_FORCE"
+      ],
+      "equivalent_forms": [],
+      "forbidden_interpretations": [
+        "Reopen M_f by inventing a pre-E0 response arm."
+      ],
+      "formula": "Treat the external birth trace as a dynamical integrated E0 seam and require B_birth or M_E0",
+      "frozen_output_status": "NOT_FROZEN_OUTPUT",
+      "mathematical_class": "DEPRECATION_RECORD",
+      "observable_status": "NOT_AN_OBSERVABLE",
+      "ontology_version": "BHSM-AE2-ONTOLOGY-1.4.0",
+      "physical_meaning": "At fixed external birth trace, differentiate the complete E1/C2 functional and then set the trace to zero; the nonzero internal response is M_f=M11.",
+      "provenance": [
+        "artifacts/flagship_integration/BHSM_N12_GATE7_EXTERNAL_BIRTH_SOURCE_ROLE_SUPERSESSION.json"
+      ],
+      "semantic_layer": "MATHEMATICAL_OBJECT",
+      "source_weighting_required": false,
+      "superseded_meanings": [
+        "the external Cauchy source is an integrated dynamical birth seam"
+      ],
+      "tests": [
+        "test_required_fields"
+      ]
+    }
+  ],
+  "schema": "BHSM_CURRENT_SEMANTIC_RECORD_V1",
+  "validation_passed": true
+}

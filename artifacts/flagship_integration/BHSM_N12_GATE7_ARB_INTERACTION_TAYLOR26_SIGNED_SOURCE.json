@@ -1,0 +1,57 @@
+{
+  "FULL_BHSM_COMPLETE": false,
+  "artifact": "BHSM_N12_GATE7_ARB_INTERACTION_TAYLOR26_SIGNED_SOURCE",
+  "authority": "256_BIT_ARB_EXACT_AFFINE_PROPAGATION_OF_THE_STORED_DECIMAL_GAUSS8_SIGNED_SOURCE_SAMPLES;_NOT_SOURCE_QUADRATURE_REMAINDER_AUTHORITY",
+  "claim_boundary": {
+    "FULL_BHSM_COMPLETE": false,
+    "Gate7": "ACTIVE",
+    "center_dependent_Z2_radii_margins_first_hit": "OPEN",
+    "frozen_homogeneous_exact_affine_carrier": "CERTIFIED_REUSED",
+    "literal_outward_signed_source_quadrature_Y": "OPEN_INTERVAL_AUTHORITY",
+    "retained_unaligned_signed_source_blocks": "CERTIFIED_IF_VALIDATION_PASSES"
+  },
+  "data": "artifacts/flagship_integration/BHSM_N12_GATE7_ARB_INTERACTION_TAYLOR26_SIGNED_SOURCE.npz",
+  "data_SHA256": "6B5A62069B2CC5C5695B91F1171BB19AD0618D4387E9CDE09A17A86F83D451F1",
+  "exact_next_dependency": "CERTIFY_LITERAL_OUTWARD_SIGNED_SOURCE_QUADRATURE_Y_ON_THE_SAME_DECIMAL_ACTION_FIELD,_THEN_REBUILD_CENTER_DEPENDENT_Z2_AND_RADII,_CLOSE_CONTINUOUS_MARGINS,_AND_APPLY_SCALAR_INTERVAL_NEWTON",
+  "identity": {
+    "carrier": "artifacts/flagship_integration/BHSM_N12_GATE7_ARB_INTERACTION_TAYLOR26_MACRO_MAPS.json",
+    "fixed_substep_count": 5908,
+    "source_order": 8,
+    "source_partition": "RETAINED_UNALIGNED",
+    "source_sign": "MINUS_DEFECT",
+    "source_unaligned_partial_step_count": 2960,
+    "stop_fraction": 0.22055696160259686
+  },
+  "inputs": {
+    "artifacts/flagship_integration/BHSM_N12_C2_STOP_HIGH_ORDER_QUARTER_STEP_RETAINED_RECONNAISSANCE.npz": "086C41068B9F3A6C0E5F8040B661202E067D017C909A381010E45FF352498D00",
+    "artifacts/flagship_integration/BHSM_N12_C2_STOP_QUARTER_STEP_FINE_HYBRID_GRAPH_JACOBIAN_RECONNAISSANCE.npz": "B92C08B4CB2EC4033FA70CBDCC28B6CD79E1189E19D95C984155EB65DD9D73B5",
+    "artifacts/flagship_integration/BHSM_N12_C2_STOP_QUARTER_STEP_PHYSICAL_TANGENT_TRANSFER_RECONNAISSANCE.npz": "9FFD40E1F3BFBBFA085FAB18B8ECDF250C55E753D23BE0B34737386BE833A175",
+    "artifacts/flagship_integration/BHSM_N12_GATE7_ARB_INTERACTION_TAYLOR26_MACRO_MAPS.json": "9F0F4B9EA75A2AD10F89D397AC6B4008F4EE7D6F89E372080DC6755B8BE5C58E",
+    "artifacts/flagship_integration/BHSM_N12_GATE7_ARB_INTERACTION_TAYLOR26_MACRO_MAPS.npz": "B288E0BD1DEBB84E073320781AC1EB6DD92E6271E72297AB7CD439BDD90E4B2F",
+    "artifacts/flagship_integration/BHSM_N12_GATE7_DECIMAL_SIGNED_SOURCE_QUADRATURE_AUDIT.npz": "905FCCF0CB88B432309854DB0953AF8ECEE0DF2E50F5748775E86FB78EAC79B2",
+    "artifacts/flagship_integration/BHSM_N12_GATE7_DECIMAL_SIGNED_Y_GREEN_CONVERGENCE_AUDIT.npz": "81560C4B09CD111A7017F5B404A0854EF871755D98AF143454B7671E670DDC2D",
+    "scripts/certify_n12_gate7_arb_interaction_taylor26_signed_source.py": "52FB756416FF6EF277295230CD93776CBF41B90E0322A277136A96E4CE8384BA"
+  },
+  "status": "ALL_47_RETAINED_UNALIGNED_GAUSS8_SIGNED_SOURCE_BLOCKS_GLOBALLY_COMPOSED_WITH_THE_FROZEN_CORRELATED_EXACT_AFFINE_CARRIER",
+  "summary": {
+    "maximum_global_response_Euclidean_radius": 5.813089943277151e-22,
+    "maximum_reference_quotient_midpoint_difference": 6.689289410654118e-14,
+    "maximum_reference_quotient_outward_difference": 6.689289443037596e-14,
+    "maximum_source_block_component_radius": 1.0587911840678757e-22,
+    "maximum_stored_center_off_tangent_residue": 1.588977341800427e-21,
+    "terminal_global_response_Euclidean_radius": 3.238347696636337e-22
+  },
+  "validation": {
+    "all_47_source_blocks_composed_with_frozen_correlated_carrier": true,
+    "all_47_zero_initial_signed_source_blocks_evaluated": true,
+    "all_component_radii_finite": true,
+    "correlated_source_and_global_storage_use_outward_Arb_strings": true,
+    "global_response_ball_vanishes_at_reset": true,
+    "literal_signed_source_quadrature_remainder_not_claimed": true,
+    "no_action_source_selector_scale_gate_or_chord_changed": true,
+    "retained_unaligned_Gauss8_source_partition_used": true,
+    "same_exact_interaction_Taylor26_step_as_frozen_carrier": true,
+    "stored_center_off_tangent_residue_not_relabelled_as_source": true
+  },
+  "validation_passed": true
+}

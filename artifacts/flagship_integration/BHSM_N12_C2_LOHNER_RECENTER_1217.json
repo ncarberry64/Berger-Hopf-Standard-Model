@@ -1,0 +1,77 @@
+{
+  "FLAGSHIP_READY": false,
+  "FULL_BHSM_COMPLETE": false,
+  "artifact": "BHSM_N12_C2_LOHNER_RECENTER_1217",
+  "center": {
+    "binary64_selected_eigenvalue_not_used_as_descriptor": -2.7528760894120206e-14,
+    "center_hard_gap": 2.5937429907113674e-07,
+    "lambda_gradient_action_norm": 6.165647728678601e-06,
+    "preconditioned_hard_block_first_variation": 9869521.83821029,
+    "preconditioned_selected_line_first_variation": 94.66445918302077,
+    "selected_branch": 24,
+    "selected_to_complement_first_variation": 0.3449388278802077
+  },
+  "chart_semantics": {
+    "ambient_ball_role": "UNIFORM_BRANCH_GAP_AND_DOMAIN_CERTIFICATE_ONLY",
+    "arbitrary_normal_motion_allowed": false,
+    "physical_propagation_domain": "EXACT_lambda_event_EQUALS_s_DESCRIPTOR_FIBER",
+    "proof_chart_boundary_is_physical_stop": false
+  },
+  "data": "artifacts/flagship_integration/BHSM_N12_C2_LOHNER_RECENTER_1217.npz",
+  "data_SHA256": "D76677A8F13A4982123D1D0480960ED01DE53C5071D7CD8AC1F6DEB6470950B1",
+  "exact_next_dependency": "REBUILD_THE_BORDERED_RESPONSE_AND_CANCELLED_FIXED_s_FIELD_AT_THE_1215_PREDICTOR_AND_ITERATE_THE_MATRIX_LOHNER_STEP",
+  "hindsight": {
+    "classification": "PROOF_CHART_LIMIT_REMOVED_BY_FRESH_FIBER_CHART",
+    "obstruction_physical": false,
+    "result": "VALIDATED"
+  },
+  "inputs": {
+    "artifacts/flagship_integration/BHSM_N12_C2_LOHNER_RECENTER_1216.json": "F2DEB441BF6CFA11DB3F1D7C0A169B49310395BE077B34EDE7ECD828E263FC1C",
+    "artifacts/flagship_integration/BHSM_N12_C2_LOHNER_RECENTER_1217_INPUT.json": "F864EF1AF60D5417B50FE6AC4732213D98B04772F6F1DA387510D052926FC13C",
+    "artifacts/flagship_integration/BHSM_N12_C2_LOHNER_RECENTER_1217_INPUT.npz": "186A2FF11671CBC36DDAE56863E02C5F99A72C5FDAC7B312A6B18946A0EA6566",
+    "theory/n12_c2_lohner_recenter_1215.md": "97AC85D3741B10ED8529E804A5067AC7BCA5E1CAA88F73CDC271522BE456F872"
+  },
+  "radius_derivation": {
+    "failed_upper_D4_bounds": {
+      "D4_XXCC": 105773113.13791592,
+      "D4_XXPC": 9718.322492221403,
+      "D4_XXPP": 1.0558540889445198
+    },
+    "first_failed_intrinsic_upper_radius": 6.461640656676325e-08,
+    "incoming_endpoint_tube_upper": 6.310195953785474e-11,
+    "maximal_feasible_radius_lower": 4.574701091319091e-08,
+    "selected_chart_bounds": {
+      "D_tau_log_R4_lower": 0.08877804821960184,
+      "Schur_correction_upper": 1.421625667568684e-13,
+      "complement_inverse_upper": 5780575.712470636,
+      "coupling_upper": 7.903392638661003e-09,
+      "eigenline_gap_lower": 1.5718608081563432e-07,
+      "feasible": true,
+      "graph_norm_upper": 1.798753690247349e-05,
+      "lapse_lower": 0.7006542249050944,
+      "relative_hard_perturbation": 0.3330366561882196,
+      "scalar_shift_upper": 1.4150148170103623e-13,
+      "weighted_coupling_upper": 1.1997017945122643e-05
+    },
+    "selected_fresh_chart_radius": 2.2905056436364382e-08,
+    "selection_is_proof_midpoint_only": true
+  },
+  "recenter_provenance": {
+    "prior_data_SHA256": "72CD4CFDEC08C1AE1096DCFF1CD1EDB4CD74A7FFADCEB9E16C43B1B78347CA05",
+    "prior_result_SHA256": "DB7BA9AA45AE3B601EC90263A7F0CE716401A1256FEDE024A3454A3D69D360E3",
+    "prior_segment": 1217
+  },
+  "status": "C2_LOHNER_SEGMENT_1217_FRESH_DESCRIPTOR_FIBER_CHART_CERTIFIED",
+  "validation": {
+    "ambient_ball_used_only_for_uniform_spectral_and_domain_control": true,
+    "branch_24_replayed": true,
+    "first_intrinsic_upper_failure_was_localized": true,
+    "fresh_chart_radius_strictly_exceeds_incoming_tube": true,
+    "fresh_uniform_hard_gap_is_positive": true,
+    "incoming_1217_endpoint_tube_consumed": true,
+    "lapse_and_radius_rate_remain_positive": true,
+    "no_validation_cutoff_selector_recurrence_scale_gate_or_chord_added": true,
+    "propagation_chart_is_exact_fixed_descriptor_fiber": true
+  },
+  "validation_passed": true
+}

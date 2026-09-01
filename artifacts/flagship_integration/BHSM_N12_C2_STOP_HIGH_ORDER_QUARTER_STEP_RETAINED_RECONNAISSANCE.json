@@ -1,0 +1,49 @@
+{
+  "FLAGSHIP_READY": false,
+  "FULL_BHSM_COMPLETE": false,
+  "action_jet_realization": "RETAINED_COMBINED_DIRECTION_DELTA_96_POINT_ACTION",
+  "artifact": "BHSM_N12_C2_STOP_HIGH_ORDER_CENTER_RECONNAISSANCE",
+  "center": {
+    "action_length_stop": 92.30513924040065,
+    "maximum_Hermite_midpoint_state_position_defect_action_norm": 7.530907341551435e-06,
+    "maximum_Hermite_midpoint_state_rate_defect_action_norm": 2.3044773479202316e-06,
+    "maximum_absolute_Hermite_midpoint_descriptor_position_defect": 5.131539146038171e-13,
+    "maximum_absolute_Hermite_midpoint_descriptor_rate_defect": 7.694834261568662e-14,
+    "prior_refined_stop_action_length": 92.3033209053828,
+    "stop_action_coordinate_shift_from_prior_center": 0.0018186563299657115
+  },
+  "claim_boundary": {
+    "FULL_BHSM_COMPLETE": false,
+    "Gate7": "ACTIVE",
+    "finite_interval_witness": "OPEN",
+    "global_center_improved": true
+  },
+  "data": "artifacts/flagship_integration/BHSM_N12_C2_STOP_HIGH_ORDER_QUARTER_STEP_RETAINED_RECONNAISSANCE.npz",
+  "data_SHA256": "086C41068B9F3A6C0E5F8040B661202E067D017C909A381010E45FF352498D00",
+  "descriptor_directional_realization": "RETAINED_COMPLEX_STEP_ACTION_JET",
+  "exact_next_dependency": "REBUILD_THE_FINITE_SHEARED_BORDERED_GREEN_OPERATOR_ON_THIS_ONE_HIGH_ORDER_CENTER_AND_CERTIFY_ITS_INTERVAL_NEWTON_RADIUS_WITH_THE_EXISTING_ACTION_D4_D5_AND_256_CELL_RESPONSE_PARENTS",
+  "inputs": {
+    "artifacts/flagship_integration/BHSM_N12_C2_STOP_MULTIPLE_SHOOTING_CENTER.json": "7279FE5C083896B60CBF7B47EA6A8FEAC29216520B079B38BBF5BB52E6A4D0EC",
+    "artifacts/flagship_integration/BHSM_N12_C2_STOP_MULTIPLE_SHOOTING_CENTER.npz": "0C9A1A5D069432ED39C0FC627676D99ACE09985FB4458A1FC0471C7C0F593454"
+  },
+  "integrator": {
+    "Runge_Kutta_order": 8,
+    "Runge_Kutta_stages": 12,
+    "field_evaluations": 6015,
+    "fixed_action_step": 0.25,
+    "global_fixed_steps_through_stop_bracket": 370,
+    "stop_bisection_iterations": 48
+  },
+  "macro_action_jet_calibration": null,
+  "method": "FIXED_DOP853_ON_RETAINED_DENOMINATOR_FREE_ACTION_ARCLENGTH_FIELD",
+  "status": "HIGH_ORDER_GLOBAL_STOP_CENTER_ASSEMBLED;_INTERVAL_AUTHORITY_OPEN",
+  "validation": {
+    "fixed_DOP853_descending_s_zero_bracket_found": true,
+    "high_order_center_not_promoted_to_interval_history": true,
+    "high_order_center_stop_stays_near_prior_refined_stop": false,
+    "no_new_stop_selector_action_scale_gate_or_chord_added": true,
+    "same_47_macro_seams_retained": true,
+    "scalar_bisection_returns_s_zero_center": true
+  },
+  "validation_passed": false
+}

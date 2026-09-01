@@ -1,0 +1,41 @@
+{
+  "FULL_BHSM_COMPLETE": false,
+  "artifact": "BHSM_N12_GATE7_ARB_EXACT_AFFINE_GREEN_SUFFIX_PRODUCTS",
+  "claim_boundary": {
+    "FULL_BHSM_COMPLETE": false,
+    "Gate7": "ACTIVE",
+    "causal_interval_vector_radius": "OPEN",
+    "exact_affine_Green_suffix_products": "CERTIFIED",
+    "outward_D5_curvature_remainder": "OPEN",
+    "outward_signed_nonlinear_source_remainder": "OPEN"
+  },
+  "data": "artifacts/flagship_integration/BHSM_N12_GATE7_ARB_EXACT_AFFINE_GREEN_SUFFIX_PRODUCTS.npz",
+  "data_SHA256": "93D7D534AF8D2AB3D21C84BC47D9E76644D6B86D05EB23C89EA774FC6C7DFC3D",
+  "exact_next_dependency": "REPLAY_THE_EXACT_AFFINE_CAUSAL_VECTOR_WITH_THE_CORRELATED_ARB_SUFFIX_BOUNDS_AND_ATTACH_THE_RETAINED_D5_SOURCE_REMAINDER",
+  "inputs": {
+    "artifacts/flagship_integration/BHSM_N12_GATE7_ARB_INTERACTION_TAYLOR26_MACRO_MAPS.json": "9F0F4B9EA75A2AD10F89D397AC6B4008F4EE7D6F89E372080DC6755B8BE5C58E",
+    "artifacts/flagship_integration/BHSM_N12_GATE7_ARB_INTERACTION_TAYLOR26_MACRO_MAPS.npz": "B288E0BD1DEBB84E073320781AC1EB6DD92E6271E72297AB7CD439BDD90E4B2F",
+    "scripts/certify_n12_gate7_arb_exact_affine_green_suffix_products.py": "7E93B06F700AAF973C16279E93B5274CFF8558946482BF72EB82C03E4FF4A6EC"
+  },
+  "precision_bits": 256,
+  "status": "ALL_1128_EXACT_AFFINE_GREEN_SUFFIX_PRODUCTS_OUTWARD_CERTIFIED",
+  "summary": {
+    "full_product_Frobenius_upper": 5342.8243537169,
+    "full_product_export_radius_Frobenius": 8.924457407181154e-13,
+    "maximum_suffix_owner_endpoint": 47,
+    "maximum_suffix_owner_source_index": 0,
+    "maximum_suffix_product_Frobenius_upper": 5342.8243537169,
+    "maximum_suffix_product_export_radius_Frobenius": 8.924457407181154e-13,
+    "suffix_product_count": 1128
+  },
+  "validation": {
+    "all_1128_strictly_causal_suffix_products_evaluated": true,
+    "all_suffix_products_finite": true,
+    "authoritative_256_bit_Arb_strings_composed_before_binary_export": true,
+    "no_action_equation_source_selector_scale_gate_or_chord_changed": true,
+    "no_independent_binary_macro_export_radii_repropagated": true,
+    "one_final_binary_spacing_allowance_per_suffix_component": true,
+    "stored_global_product_overlaps_recomputed_Arb_product": true
+  },
+  "validation_passed": true
+}

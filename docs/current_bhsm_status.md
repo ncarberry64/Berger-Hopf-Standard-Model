@@ -145,6 +145,9 @@ the soft channel remains category 2: a dynamically controlled normal line.
 Exact next dependency:
 `DERIVE_AN_EXPLICIT_RETAINED_ACTION_COMPACT_CUTOFF_M_STAR_FOR_THE_GAUGE_REDUCED_HIGH_SHELL_NORMAL_INVERSE;_THEN_APPLY_THE_SHARP_SOURCE_TAIL_AND_BOUND_THE_ORDERED_EVENT_AND_MOMENTUM_FLUX_OBSERVATION_PERTURBATIONS`.
 
+The first missing quantitative constant inside this dependency is a validated
+source-restricted positive-duration soft normal right-inverse bound `K`.
+
 `Q_xi`, relative `Delta H`, action-selected families, and a new frozen blind
 observable remain downstream and open. The following v21.37 discussion is
 retained as historical proof-architecture provenance and is superseded as the

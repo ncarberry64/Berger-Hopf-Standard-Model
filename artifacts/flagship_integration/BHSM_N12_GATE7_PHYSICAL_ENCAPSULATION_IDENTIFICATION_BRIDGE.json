@@ -1,0 +1,429 @@
+{
+  "FULL_BHSM_COMPLETE": false,
+  "action_version": "BHSM-AE-2.0.0_UNCHANGED",
+  "admissible_enclosure_routes": {
+    "current_selection": null,
+    "reason": "A_CANONICAL_STOP_MAY_FORM_A_LOCAL_OR_BOUNDARY_ENCLOSURE_WITHOUT_ENDING_THE_SPACETIME_PHASE;_SPACETIME_EDGE_IS_A_STRONGER_ROUTE_REQUIRING_ITS_OWN_ACTION_THEOREM",
+    "routes": [
+      "LOCAL_SAME_SPACETIME_ENCLOSURE",
+      "CORE_BOUNDARY_OR_COLLAR_ENCLOSURE",
+      "SPACETIME_EDGE_TRANSITION"
+    ],
+    "selection_rule": "EXACTLY_ONE_ROUTE_OR_AN_ACTION_DERIVED_EQUIVALENCE_CLASS",
+    "spacetime_edge_required": false
+  },
+  "artifact": "BHSM_N12_GATE7_PHYSICAL_ENCAPSULATION_IDENTIFICATION_BRIDGE",
+  "bridge_evaluation": {
+    "bridge_version": "BHSM-AE2-PHYSICAL-ENCAPSULATION-BRIDGE-1.0.0",
+    "classification": "PHYSICAL_ENCAPSULATION_IDENTIFICATION_OPEN",
+    "missing_required_obligations": [
+      "PEI_03",
+      "PEI_04",
+      "PEI_05",
+      "PEI_06",
+      "PEI_07",
+      "PEI_08",
+      "PEI_09",
+      "PEI_11"
+    ],
+    "particle_state_transport_claimed": true,
+    "physical_encapsulation_identified": false,
+    "requirements": [
+      {
+        "id": "PEI_01",
+        "layer": "mathematical_carrier",
+        "name": "canonical_stop",
+        "required": true,
+        "satisfied": true,
+        "statement": "A same-action physical parent history reaches an action-selected canonical stop before any earlier physical-domain exit."
+      },
+      {
+        "id": "PEI_02",
+        "layer": "mathematical_carrier",
+        "name": "event_child_relation",
+        "required": true,
+        "satisfied": true,
+        "statement": "The stop lies in a regular nonempty event-to-complete-child relation."
+      },
+      {
+        "id": "PEI_03",
+        "layer": "physical_domain",
+        "name": "route_selector",
+        "required": true,
+        "satisfied": false,
+        "statement": "The unchanged action selects exactly which admissible enclosure route is realized: same-spacetime local enclosure, geometric boundary/collar enclosure, or spacetime-edge transition."
+      },
+      {
+        "id": "PEI_04",
+        "layer": "physical_domain",
+        "name": "enclosure_carrier",
+        "required": true,
+        "satisfied": false,
+        "statement": "An action-owned local carrier supplies intrinsic enclosure data and external embedding, normal, extrinsic-curvature, collar, and attachment data on a declared domain."
+      },
+      {
+        "id": "PEI_05",
+        "layer": "physical_domain",
+        "name": "matching_and_junction_domain",
+        "required": true,
+        "satisfied": false,
+        "statement": "Induced-metric, lapse/shift, momentum/flux, field-trace, and junction conditions are selected by the action on one compatible domain."
+      },
+      {
+        "id": "PEI_06",
+        "layer": "full_action",
+        "name": "full_field_restriction",
+        "required": true,
+        "satisfied": false,
+        "statement": "Gauge/ghost, fermion, scalar/HS, and geometry blocks participate, or their vanishing is proved to define an invariant same-action subdomain."
+      },
+      {
+        "id": "PEI_07",
+        "layer": "full_action",
+        "name": "event_balance",
+        "required": true,
+        "satisfied": false,
+        "statement": "Constraints, the complete parent/event/child Noether-Hamiltonian balance, and all interface contact terms close through the event."
+      },
+      {
+        "id": "PEI_08",
+        "layer": "physical_identification",
+        "name": "nonlinear_local_completion",
+        "required": true,
+        "satisfied": false,
+        "statement": "The stop produces a nontrivial localized completed configuration rather than only a Hessian zero, proof cutoff, chart failure, or relabeling."
+      },
+      {
+        "id": "PEI_09",
+        "layer": "physical_identification",
+        "name": "child_inheritance",
+        "required": true,
+        "satisfied": false,
+        "statement": "The event-to-child map transports the selected enclosure geometry, boundary incidence/topology, full-field traces, and conserved data into the child class."
+      },
+      {
+        "id": "PEI_10",
+        "layer": "chronology",
+        "name": "positive_duration_separation",
+        "required": true,
+        "satisfied": true,
+        "statement": "The identified child has positive-duration evolution, while stability, decay, and later events remain separate claims."
+      },
+      {
+        "id": "PEI_11",
+        "layer": "particle_manifestation",
+        "name": "upstream_particle_state_transport",
+        "required": true,
+        "satisfied": false,
+        "statement": "The provenance-frozen BHSM family/mode, representation, projector, current, and topological state is attached to the parent and transported through the event-child enclosure map into its existing Standard Model manifestation class without rederiving the particle spectrum."
+      }
+    ]
+  },
+  "claim_boundary": {
+    "FULL_BHSM_COMPLETE": false,
+    "Gate7_closed": false,
+    "first_stop_strengthened": false,
+    "historical_particle_spectrum_rebuilt": false,
+    "named_particle_identified": false,
+    "new_action_term_added": false,
+    "new_numerical_run_used": false,
+    "physical_encapsulation_identified": false,
+    "physical_parameter_or_selector_added": false,
+    "spacetime_pocket_identified": false,
+    "upstream_particle_assets_modified": false
+  },
+  "classification": "FAIL_CLOSED_PHYSICAL_IDENTIFICATION_INTERFACE",
+  "closure_rule": {
+    "Gate7_consequence": "THIS_BRIDGE_IS_NECESSARY_FOR_PHYSICAL_ENCAPSULATION_LANGUAGE_BUT_DOES_NOT_BY_ITSELF_CLOSE_THE_EXISTING_FORCE_SADDLE_HESSIAN_WARD_TRACE_OR_SCALAR_READOUT_NODES",
+    "generic_physical_encapsulation": "ALL_REQUIRED_PEI_01_THROUGH_PEI_10_TRUE",
+    "particle_state_enclosure_and_SM_manifestation": "GENERIC_PHYSICAL_ENCAPSULATION_AND_PEI_11_TRUE,_WITH_THE_UPSTREAM_REGISTRY_IMPORTED_UNCHANGED"
+  },
+  "current_evidence": {
+    "collar": {
+      "action_selected": false,
+      "embedding": "X:S7x[0,rho_star]->B8, X(Y,rho)=exp_Y(ell_c rho n)",
+      "field_matching": {
+        "gauge": "pullback connection and normal flux conditions open",
+        "scalar": "trace/normal derivative conditions open",
+        "spin": "spin structure and boundary projector open"
+      },
+      "status": "CONDITIONAL_TUBULAR_COLLAR_FORMULA_EMBEDDING_AND_SCALE_OPEN"
+    },
+    "enclosure_class": {
+      "global_physical_class_identification": "OPEN",
+      "source_validation_passed": true,
+      "status": "INVARIANT_ON_CERTIFIED_C2_CONTINUATION_ONLY"
+    },
+    "enclosure_geometry_vocabulary": {
+      "action_owned_constraint_or_stability_term": null,
+      "external": [
+        "embedding X",
+        "normal bundle N Sigma_enc",
+        "extrinsic curvature K",
+        "ambient metric",
+        "attachment morphism",
+        "relational interval"
+      ],
+      "intrinsic": {
+        "area": "integral_Sigma sqrt(|h_enc|)",
+        "cross_distance": "geodesic diameter along the selected inside-edge pair",
+        "metric": "h_enc_ab",
+        "topology": "T_enc"
+      },
+      "status": "DECLARED_CONDITIONAL_NOT_ACTION_SELECTED"
+    },
+    "event_balance": {
+      "complete_parent_event_child_Noether_Hamiltonian_balance": "OPEN",
+      "retained_event_and_child_energy_rows": "CLOSED",
+      "source": "DERIVE_AND_EVALUATE_THE_EXISTING_COMPLETE_COMPOSITE_MINUS_MATCHED_PARENT_NOETHER_HAMILTONIAN_Q_XI_ON_A_PAIRED_PARENT_CHILD_HISTORY"
+    },
+    "event_child_relation": {
+      "fixed_event_child_fiber_dimension": 67,
+      "status": "CLOSED_REGULAR_NONEMPTY_RELATION"
+    },
+    "first_stop": {
+      "physical_selector_claimed": false,
+      "source_status": "ONE_EXACT_FORWARD_RESET_HISTORY_REACHES_A_CANONICAL_EARLIEST_STOP",
+      "status": "CLOSED_MATHEMATICAL_CARRIER"
+    },
+    "full_field_attachment": {
+      "decision": "CURRENT_RETAINED_N12_LOCAL_ACTION_ADAPTER_IS_GEOMETRY_ONLY_AND_CANNOT_BY_ITSELF_INSTANTIATE_UNIVERSAL_SM_S2_S3_S4",
+      "missing_blocks": [
+        "gauge_and_ghost_fields",
+        "fermion_fields",
+        "HS_or_scalar_fields",
+        "geometry_gauge_cross_derivatives",
+        "geometry_fermion_cross_derivatives",
+        "geometry_HS_cross_derivatives",
+        "gauge_fermion_HS_cross_derivatives"
+      ],
+      "status": "OPEN_PRECISE_NO_GO"
+    },
+    "junction_domain": {
+      "remaining_family": "U(1)",
+      "status": "BHSM_CURRENT_ACTION_SELECTS_NO_SELF_ADJOINT_JUNCTION_DOMAIN",
+      "unique_domain_selected": false
+    },
+    "metric_matching": {
+      "conditional_on_provisional_boundary_axiom": true,
+      "equation": "S_match=integral sqrt(-h) Lambda^{mu nu}(h_mu nu-iota^*g_mu nu)",
+      "parent_derived": false,
+      "status": "BHSM_EXACT_METRIC_MATCHING_WELL_POSED_CONDITIONALLY"
+    },
+    "particle_state_registry": {
+      "currents_rederived": false,
+      "missing_object": "STRUCTURE_PRESERVING_ATTACHMENT_OF_THE_EXISTING_BHSM_FAMILY_MODE_STATE_TO_THE_PARENT_STOP_EVENT_CHILD_ENCLOSURE_AND_ITS_EXISTING_SM_MANIFESTATION_MAP",
+      "projectors_rederived": false,
+      "representations_rederived": false,
+      "spectrum_rederived": false,
+      "status": "RECOVERED_AND_IMPORTED_AS_FROZEN_UPSTREAM_ASSETS",
+      "topology_rederived": false
+    }
+  },
+  "enclosure_signature": {
+    "components": [
+      "AE2 action/domain version",
+      "forward-history component and orientation",
+      "intrinsic domain and topology",
+      "embedding, normal bundle, extrinsic curvature, and collar",
+      "reset-glued Spin x G_SM bundle and field-trace class",
+      "boundary-incidence and junction-domain class",
+      "transported selected-eigenline class",
+      "constraint and complete Noether level-set class",
+      "admissible child-domain component"
+    ],
+    "excluded": [
+      "proof-box index",
+      "mesh or truncation boundary",
+      "floating-point failure",
+      "lambda24 value without the other bridge obligations"
+    ],
+    "symbol": "Sigma_enc"
+  },
+  "exact_next_dependency": "ACTION_OWNED_ENCAPSULATION_CARRIER_AND_ROUTE_SELECTOR_ON_THE_UNCHANGED_AE2_EVENT_CHILD_DOMAIN,_INCLUDING_INTRINSIC_AND_EXTERNAL_GEOMETRY,_MATCHING_AND_JUNCTION_DOMAIN,_FULL_FIELD_RESTRICTION,_COMPLETE_PARENT_EVENT_CHILD_BALANCE,_AND_INTERTWINING_TRANSPORT_OF_THE_FROZEN_BHSM_PARTICLE_STATE_REGISTRY",
+  "forbidden_substitutions": {
+    "canonical_stop_equals_spacetime_edge": false,
+    "lambda24_zero_equals_two_pi": false,
+    "positive_duration_equals_stability": false,
+    "proof_cutoff_equals_physical_boundary": false,
+    "reset_state_equals_new_spacetime_domain": false
+  },
+  "inputs": {
+    "artifacts/BHSM_CURRENT_FULL_FIELD_ACTION_ATTACHMENT_AUDIT.json": "FC35527D23B49573360B9B28B9F064BFF297F678F7439BEB18D908D0D54808B4",
+    "artifacts/BHSM_aether_hybrid_standard_model_bundle_v15_53.json": "951098D595DFD4DABBDBAB6C063A0650C491337CC3C0B3D26F5D4FD124F1FB25",
+    "artifacts/BHSM_electromagnetic_surviving_generator_v6_3_0.json": "8245D5514E3B153083800A3AB9FD24E9E10C3E8B20D72BFF018AE6A6428F6667",
+    "artifacts/BHSM_exact_boundary_matching_action_ledger_v6_1_3.json": "DA83ADBC4F0829226C9C8A52C646054FF814D6B2859923DA797EF6D92A2C6260",
+    "artifacts/BHSM_fixed_encapsulation_geometry_v11_2.json": "0D383654033CE52B19882B376E10F34184F1B4BA6D38D66F4985D349D4A51DBF",
+    "artifacts/BHSM_generation_projector_action_attachment_v8_2.json": "ECA91239E1C9C471F3A13602FBE28804D8979A1AE44E50621C18FD0B18106E58",
+    "artifacts/BHSM_global_family_count_spectrum_v6_7_0.json": "C1C2FBE9801D6730CE53D9C5BEC5BE822B132FC4164C090D1398721BD8672B11",
+    "artifacts/BHSM_harmonic_exact_mode_representation_spectrum_v6_0_4.json": "8C95D6F53E38664323F1CF1C9C22DFB32FB68E00D896C46E1C2A87D5B67FDFC3",
+    "artifacts/BHSM_junction_variation_and_selected_domain_v6_10_0.json": "254F8E1CEBD9A7D33A9C904B7EC739C4F19AE9AC78EEDCE647492738F71FD7A4",
+    "artifacts/BHSM_parent_action_charged_current_v11_6.json": "D8C19CC8B5370EFF594ABEC29ED9FAFC2067F946B302DC089E448643CB7BA485",
+    "artifacts/BHSM_s7_physical_collar_matching_v6_0_1.json": "03D94E50F8C44522D8AAEEDDB2C4C9F9B20F23238F67D1AE8DF58F18A666C814",
+    "artifacts/BHSM_topological_configuration_space_v6_5_0.json": "47DE6D9D5E4F8207D192C4BD6037DE5BFA0FE1689A2EFA7C82B5D13074FE1A84",
+    "artifacts/BHSM_topological_matter_action_global_spectrum_report_v6_5_0.json": "9B47598729C58FC9E6DBB1E0CB1E5FA9A07CF96A5117FE3B16B0D4FB4623F550",
+    "artifacts/flagship_integration/BHSM_N12_C2_ENCLOSURE_CLASS_INVARIANT_AUDIT.json": "5ACEE5AB441658EE1FFAF67506E344F07D781789B975808047902E7FBF0C470F",
+    "artifacts/flagship_integration/BHSM_N12_GATE7_EXACT_AFFINE_CONTINUOUS_FIRST_STOP.json": "111C6FE1E8D297B68DE6B19E2D257D5DC437BC7EC970DB2C9DBF08737B40DF5F",
+    "artifacts/flagship_integration/BHSM_NEUTRINO_CHARGED_CURRENT_2PI_CLOSURE_RECONCILIATION.json": "084E169B05537E862084F9C97D89BAB5210B080A61BBCE27B32393A47943D3BD",
+    "artifacts/flagship_integration/BHSM_NORMAN_SCHOOL_FULL_CORPUS_RECONSTRUCTION.json": "209EBB30142C4DC6510D1D8FF69E4F1CA8AD2B6A7A6EF923A755815BEB4618AF",
+    "artifacts/flagship_integration/BHSM_SPACETIME_EDGE_ONTOLOGY_AUDIT.json": "1B7325CF7350BC758215CB5FAC705683EC4406EB0BA0691C03981B0426E370B4",
+    "artifacts/intrinsic_state_selection/BHSM_N12_CONTINUUM_SINGULAR_HITTING_RESET_RELATION.json": "FAE8BFFDBF19FA71F33340AB00B5C708779D475E935C505203D2B31BA3A3988D",
+    "artifacts/intrinsic_state_selection/BHSM_N12_CORRECTED_FORWARD_HISTORY_AND_PARTICLE_CLASS_GATES.json": "A2BEA02C3731ADA0DE4592E0F74327825DAF69FAAEB8CD8BA68E4FA4F061DAE0",
+    "artifacts/intrinsic_state_selection/BHSM_N12_FINITE_ENCAPSULATION_LOCAL_BRANCH.json": "5EB67F1A8FE2AF2BD199923D59F386EEAA6D234C37B6E0AD1279619E7DF8D306",
+    "artifacts/n12_continuum_majorant_effectiveness/BHSM_CONTINUUM_EVENT_CHILD_CERTIFICATE.json": "429FDDAE87C257F27DE419FE8903493470CDB8F56F344F6B0BD6DC889C17F350",
+    "docs/bhsm_sector_projector_ledger_theorem.md": "2AEF3088F97CAD6D2C789AE5910A248523050C3EEF6D5CAC6915C56EB3297B3C",
+    "theory/boundary_phase_closure_functional.md": "B87EA79AC247F981C09E6E057EE1E61C2D43800347141C8A9BC204004909CCE7",
+    "theory/derived_generation_raw_mode_ledgers.md": "9024CE0B9A6F4F31B9510571AE0529BFC9D5CD4CB492C01BAE5225B08B037375",
+    "theory/derived_hopf_phase_closure.md": "84CB1C7028F35C981DFFE03A1DFD381816DE433DF6C8E45FA8F38B77518B8016",
+    "theory/derived_yukawa_generation_mode_ledgers.md": "CA64B8215F704F43EC92950BB1E22D24BE2E7A4082F96F721ECF69CC79C78BDD"
+  },
+  "owner": "CURRENT_AE2_GATE7_PHYSICAL_ENCAPSULATION_IDENTIFICATION_SPECIFICATION",
+  "schema_version": 1,
+  "scientific_decision": "THE_BRANCH24_CANONICAL_STOP_AND_EVENT_CHILD_RELATION_SUPPLY_THE_MATHEMATICAL_CARRIER_BUT_DO_NOT_YET_IDENTIFY_A_PHYSICAL_LOCAL_ENCLOSURE;_PROMOTION_REQUIRES_AN_ACTION_SELECTED_ROUTE,_CARRIER_AND_DOMAIN,_MATCHING_AND_JUNCTION_CONDITIONS,_FULL_FIELD_RESTRICTION,_COMPLETE_EVENT_BALANCE,_NONLINEAR_LOCAL_COMPLETION,_AND_CHILD_INHERITANCE_OF_THE_EXISTING_BHSM_FAMILY_MODE_PARTICLE_STATE",
+  "status": "BRIDGE_INTERFACE_SPECIFIED__PHYSICAL_IDENTIFICATION_OPEN_MISSING_ACTION_OWNED_DOMAIN_AND_FULL_FIELD_ATTACHMENT",
+  "typed_bridge": {
+    "current_map_status": "INTERFACE_DEFINED_MAP_NOT_INSTANTIATED",
+    "intermediate": "REGULAR_EVENT_TO_COMPLETE_CHILD_RELATION",
+    "map": "I_phys: (P_BHSM,H_parent,E_stop,R_EC,S_AE2) -> (route,D_enc,Sigma_enc,C_child,M_SM(P_BHSM))",
+    "source": "UPSTREAM_STATE_ATTACHED_TO_SAME_AE2_PARENT_HISTORY",
+    "target": "ACTION_IDENTIFIED_LOCAL_ENCLOSURE_CARRYING_THE_UPSTREAM_STATE_INTO_ITS_EXISTING_SM_PARTICLE_MANIFESTATION_CLASS",
+    "upstream_state": "PROVENANCE_FROZEN_BHSM_FAMILY_MODE_REPRESENTATION_PROJECTOR_CURRENT_TOPOLOGICAL_STATE"
+  },
+  "upstream_particle_asset_policy": {
+    "assets": [
+      {
+        "claim_boundary": {
+          "Yukawa_matrix_entries_derived": false,
+          "global_SM_bundle_and_representations_fixed": true,
+          "hypercharge_and_anomalies_closed": true,
+          "mass_eigenvalues_and_mixing_derived": false,
+          "renormalized_gauge_couplings_derived": false
+        },
+        "import_status": "REUSE_FIXED_BUNDLE_AND_REPRESENTATIONS",
+        "path": "artifacts/BHSM_aether_hybrid_standard_model_bundle_v15_53.json",
+        "role": "global Spin x G_SM bundle, representations, hypercharge, and event gluing data",
+        "sha256": "951098D595DFD4DABBDBAB6C063A0650C491337CC3C0B3D26F5D4FD124F1FB25",
+        "source_status": "BHSM_HYBRID_STANDARD_MODEL_GLOBAL_BUNDLE"
+      },
+      {
+        "claim_boundary": "Projectors and family modules are imported; the historical mode-stress response blocker is preserved.",
+        "import_status": "REUSE_FROZEN_PROJECTORS_NO_REDERIVATION",
+        "path": "artifacts/BHSM_generation_projector_action_attachment_v8_2.json",
+        "role": "frozen three-slot family modules and sector/mode projectors",
+        "sha256": "ECA91239E1C9C471F3A13602FBE28804D8979A1AE44E50621C18FD0B18106E58",
+        "source_status": "BHSM_MODE_DEPENDENT_RESPONSE_BLOCKED_BY_UNDEFINED_MODE_STRESS"
+      },
+      {
+        "claim_boundary": "v6.0.4 proves linear phase no-selection and finds one exact round-S7 octave commensurability, but the accepted parent family does not supply the selected nonlinear field, coefficient, stable coherent solution, or negative invariant sigma-Hessian shift needed for physicality selection.",
+        "import_status": "REUSE_ONLY_AT_ORIGINAL_CLAIM_STRENGTH",
+        "path": "artifacts/BHSM_harmonic_exact_mode_representation_spectrum_v6_0_4.json",
+        "role": "exact and conditional harmonic/mode representation content",
+        "sha256": "8C95D6F53E38664323F1CF1C9C22DFB32FB68E00D896C46E1C2A87D5B67FDFC3",
+        "source_status": "ROUND_S7_SCALAR_SUBSPECTRUM_EXACT_PARENT_SPECTRUM_OPEN"
+      },
+      {
+        "claim_boundary": null,
+        "import_status": "REUSE_ONLY_AT_ORIGINAL_CLAIM_STRENGTH",
+        "path": "artifacts/BHSM_global_family_count_spectrum_v6_7_0.json",
+        "role": "historical family-count spectrum",
+        "sha256": "C1C2FBE9801D6730CE53D9C5BEC5BE822B132FC4164C090D1398721BD8672B11",
+        "source_status": "BHSM_THREE_SELECTED_FAMILY_COPIES_SPECTRALLY_DEGENERATE"
+      },
+      {
+        "claim_boundary": "The effective current object is reused; its transport to the selected-stop enclosure remains the bridge obligation.",
+        "import_status": "REUSE_CURRENT_OBJECT_NO_REDERIVATION",
+        "path": "artifacts/BHSM_parent_action_charged_current_v11_6.json",
+        "role": "parent-action charged-current term and variation provenance",
+        "sha256": "D8C19CC8B5370EFF594ABEC29ED9FAFC2067F946B302DC089E448643CB7BA485",
+        "source_status": "PARENT_ACTION_TERM_AND_VARIATION_PROVENANCE_LEDGER"
+      },
+      {
+        "claim_boundary": "BHSM_TOPOLOGICAL_MATTER_ACTION_SOURCE_AND_GLOBAL_SPECTRUM_REMAIN_CONDITIONAL",
+        "import_status": "REUSE_ONLY_AT_ORIGINAL_CLAIM_STRENGTH",
+        "path": "artifacts/BHSM_topological_configuration_space_v6_5_0.json",
+        "role": "topological configuration-space ontology and candidate labels",
+        "sha256": "47DE6D9D5E4F8207D192C4BD6037DE5BFA0FE1689A2EFA7C82B5D13074FE1A84",
+        "source_status": "BHSM_CONFIGURATION_SPACE_ONTOLOGY_NOT_FIXED_BY_FROZEN_ACTION"
+      },
+      {
+        "claim_boundary": null,
+        "import_status": "REUSE_ONLY_AT_ORIGINAL_CLAIM_STRENGTH",
+        "path": "artifacts/BHSM_topological_matter_action_global_spectrum_report_v6_5_0.json",
+        "role": "historical topological matter spectrum results",
+        "sha256": "9B47598729C58FC9E6DBB1E0CB1E5FA9A07CF96A5117FE3B16B0D4FB4623F550",
+        "source_status": "BHSM_TOPOLOGICAL_MATTER_ACTION_SOURCE_AND_GLOBAL_SPECTRUM_REMAIN_CONDITIONAL"
+      },
+      {
+        "claim_boundary": "BHSM_CHIRAL_PARTICLE_AND_CONNECTION_ARCHITECTURE_DERIVED_CONDITIONALLY",
+        "import_status": "REUSE_DERIVED_GENERATOR_NO_REDERIVATION",
+        "path": "artifacts/BHSM_electromagnetic_surviving_generator_v6_3_0.json",
+        "role": "surviving electromagnetic generator and conditional chiral particle architecture",
+        "sha256": "8245D5514E3B153083800A3AB9FD24E9E10C3E8B20D72BFF018AE6A6428F6667",
+        "source_status": "BHSM_ELECTROMAGNETIC_SURVIVING_GENERATOR_DERIVED"
+      },
+      {
+        "claim_boundary": {
+          "FLAGSHIP_READY": false,
+          "FULL_BHSM_COMPLETE": false,
+          "action_defined_particle_history_class": "CLOSED",
+          "common_observable_and_blind_prediction": "OPEN",
+          "complete_forward_child_history_well_posedness_persistence": "CLOSED",
+          "finite_complete_persistent_N12_child": "CLOSED",
+          "forward_time_physical_domain": "CLOSED",
+          "gauge_scale_flavor_neutrino": "OPEN",
+          "local_singular_encapsulation_reset_structure": "CLOSED",
+          "resolution_independent_continuum_child": "CLOSED"
+        },
+        "import_status": "REUSE_CLOSED_HISTORY_CLASS",
+        "path": "artifacts/intrinsic_state_selection/BHSM_N12_CORRECTED_FORWARD_HISTORY_AND_PARTICLE_CLASS_GATES.json",
+        "role": "complete forward particle-history class and discrete-label propagation rule",
+        "sha256": "A2BEA02C3731ADA0DE4592E0F74327825DAF69FAAEB8CD8BA68E4FA4F061DAE0",
+        "source_status": "CORRECTED_GATE_5_COMPLETE_FORWARD_HISTORY_CLOSED_AND_GATE_6_ACTION_DEFINED_PARTICLE_HISTORY_CLASS_CLOSED"
+      },
+      {
+        "claim_boundary": "Integer admissibility, not a rederived particle spectrum.",
+        "import_status": "REUSE_CONDITIONAL_TOPOLOGICAL_RESULT",
+        "path": "theory/derived_hopf_phase_closure.md",
+        "role": "conditional Hopf phase-closure result",
+        "sha256": "84CB1C7028F35C981DFFE03A1DFD381816DE433DF6C8E45FA8F38B77518B8016",
+        "source_status": "PO_BH_2_PHASE_CLOSURE_DERIVED_CONDITIONAL"
+      },
+      {
+        "claim_boundary": "Imported without retuning or recomputation.",
+        "import_status": "REUSE_FROZEN_MODE_LEDGER",
+        "path": "theory/derived_generation_raw_mode_ledgers.md",
+        "role": "raw frozen family/mode ledgers",
+        "sha256": "9024CE0B9A6F4F31B9510571AE0529BFC9D5CD4CB492C01BAE5225B08B037375",
+        "source_status": "FROZEN_UPSTREAM_ASSET"
+      },
+      {
+        "claim_boundary": "Transport, not projector derivation, is current owner.",
+        "import_status": "REUSE_SECTOR_PROJECTORS",
+        "path": "docs/bhsm_sector_projector_ledger_theorem.md",
+        "role": "finite sector incidence projectors",
+        "sha256": "2AEF3088F97CAD6D2C789AE5910A248523050C3EEF6D5CAC6915C56EB3297B3C",
+        "source_status": "AUTHORITATIVE_IMPORTED_RESULT_IN_V8_2"
+      }
+    ],
+    "manifestation_rule": "BHSM_FAMILY_OR_MODE_STATE_MAY_MANIFEST_AS_AN_SM_PARTICLE;_THE_BRIDGE_PROVES_LOCAL_ENCLOSURE_TRANSPORT_AND_DOES_NOT_REBUILD_THE_MANIFESTATION_SPECTRUM",
+    "policy": "IMPORT_EVERY_VALID_HISTORICAL_OBJECT_AT_ITS_STORED_CLAIM_STRENGTH;_DO_NOT_REDERIVE_RETUNE_OR_REORDER_THE_PARTICLE_FAMILY_MODE_SPECTRUM",
+    "transport_invariant": "THE_EVENT_CHILD_ENCLOSURE_MAP_MUST_INTERTWINE_THE_IMPORTED_SECTOR_AND_FAMILY_PROJECTORS,_BUNDLE_REPRESENTATION,_CURRENT_INCIDENCE,_AND_TOPOLOGICAL_LABELS_WITH_THE_EXISTING_SM_MANIFESTATION_MAP"
+  },
+  "validation": {
+    "canonical_stop_not_relabelled_spacetime_edge": true,
+    "conditional_geometry_not_promoted": true,
+    "event_child_relation_retained_unchanged": true,
+    "first_stop_retained_unchanged": true,
+    "geometry_only_full_field_no_go_preserved": true,
+    "junction_domain_no_go_preserved": true,
+    "lambda24_not_relabelled_two_pi": true,
+    "no_action_equation_parameter_selector_or_numerics_changed": true,
+    "particle_state_transport_is_the_target": true,
+    "physical_identification_not_promoted": true,
+    "positive_duration_retained_but_not_stability": true,
+    "reconstruction_result_is_drift_confirmed": true,
+    "route_not_hand_selected": true,
+    "upstream_particle_assets_reused_not_rederived": true
+  },
+  "validation_passed": true
+}

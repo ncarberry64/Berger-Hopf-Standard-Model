@@ -1,0 +1,143 @@
+{
+  "FLAGSHIP_READY": false,
+  "FULL_BHSM_COMPLETE": false,
+  "artifact": "BHSM_N12_FORWARD_PROPER_TIME_FORM_OWNERSHIP",
+  "claim_boundary": {
+    "FLAGSHIP_READY": false,
+    "FULL_BHSM_COMPLETE": false,
+    "Gate_7": "ACTIVE_NOT_CLOSED",
+    "Gate_8": "LOCKED",
+    "chord_03": "NOT_AUTHORIZED",
+    "same_action_saddle": "OPEN",
+    "zero_source_force": "OPEN"
+  },
+  "classification": "THE_POSITIVE_ACTION_OWNED_CLOCK_d_tau=N_boundary*dt_REMOVES_LAPSE_AS_AN_INDEPENDENT_LOCAL_SOURCE_OPERATOR_COEFFICIENT:_ON_THE_REALIZED_MAXIMAL_PROPER_TIME_DOMAIN_D_tau_IS_THE_CANONICAL_COVARIANT_DERIVATIVE_AND_Delta_tau=D_tau^star*D_tau_PLUS_THE_SINGLE_RETAINED_NONNEGATIVE_ENDPOINT_FORM;_THE_ONLY_UNREALIZED_BULK_GEOMETRY_COEFFICIENT_IN_THE_CURRENT_SOURCE_REPRESENTATION_IS_log_R4(tau)",
+  "current_flagship_gate": 7,
+  "dependency_reduction": {
+    "prior_string": "MAXIMAL_FORWARD_TUBE_FOR_log_R4,D_tau,Delta_tau_AND_THEIR_FIRST_SECOND_GEOMETRY_VARIATIONS",
+    "reclassification": "D_tau_AND_Delta_tau_ARE_FORM_OWNED_KINEMATICS_ON_THE_REALIZED_DOMAIN_NOT_INDEPENDENT_HISTORY_COEFFICIENTS",
+    "remaining_owner": "THE_MAXIMAL_FORWARD_log_R4(tau)_WEYL_RESPONSE_AND_ITS_FIRST_SECOND_ACTION_JACOBI_VARIATIONS_OR_AN_EQUIVALENT_DIRECT_M_C_ORACLE_ENCLOSURE"
+  },
+  "exact_next_dependency": "ENCLOSE_THE_MAXIMAL_FORWARD_log_R4(tau)_WEYL_RESPONSE_AND_ITS_FIRST_AND_SECOND_ACTION_JACOBI_VARIATIONS,_OR_COMPUTE_THE_EQUIVALENT_M_C,D_Phi_M_C,D_Phi2_M_C_ORACLE_DIRECTLY",
+  "finite_witnesses": {
+    "historical_periodic_equivalence_only": {
+      "absolute_DstarD_residual": 6.117571370076485e-13,
+      "physical_periodicity_selected": false,
+      "points": 24,
+      "relative_DstarD_residual": 6.198395722326271e-16,
+      "step": 0.1
+    },
+    "nonperiodic_endpoint_form": {
+      "first_derivative": [
+        [
+          -1.0,
+          1.0,
+          0.0
+        ],
+        [
+          0.0,
+          -1.0,
+          1.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0
+        ]
+      ],
+      "form_laplacian": [
+        [
+          1.25,
+          -1.0,
+          0.0
+        ],
+        [
+          -1.0,
+          2.0,
+          -1.0
+        ],
+        [
+          0.0,
+          -1.0,
+          1.5
+        ]
+      ],
+      "form_pair_residual": 0.0,
+      "minimum_eigenvalue": 0.23085435029383386,
+      "retained_endpoint_form": [
+        [
+          0.25,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.5
+        ]
+      ]
+    }
+  },
+  "inputs": {
+    "artifacts/BHSM_aether_proper_time_joint_pushforward_v15_91.json": "C85B5F5F88171F8F97418C41320083E4903947095B5F35F1D7CD3C939D623F0B",
+    "artifacts/flagship_integration/BHSM_N12_FORWARD_COMMON_SOURCE_GEOMETRY_JETS.json": "A372FD0204C274051312254FA65EFA4C65D5BBC6262BD13147386D3700B229F5",
+    "artifacts/flagship_integration/BHSM_N12_FORWARD_GAUGE_WEYL_READOUT_FAMILY.json": "452134D1EA925FEBE2DA99483926F70AFEC6DEF09731B268ECB2A2A6FCE280AE",
+    "artifacts/flagship_integration/BHSM_N12_MAXIMAL_FORWARD_SOURCE_DOMAIN.json": "61642A88D01B81C7685C5355149C08F01F9C4B089CF715D544CF690A136A6E0A",
+    "src/bhsm/interface/aether_forward_common_source_incidence.py": "9A925A5C64E863E6008EB692CE20AC67099137880A435CE1752DEE59DFBA7347"
+  },
+  "proper_time_form_theorem": {
+    "bulk_form": "integral_Ic_norm(D_tau_U)^2*d_tau",
+    "clock_pullback": "tau(t)=integral_0^t_N_boundary(s)ds",
+    "compactly_supported_geometry_variation": "D_Phi_D_tau=0_AND_D_Phi_Delta_tau=0_AT_FIXED_PROPER_TIME_DOMAIN;_ALL_LOCAL_BULK_GEOMETRY_VARIATION_ENTERS_THROUGH_log_R4(tau)",
+    "endpoint_completion": "ADD_THE_EXISTING_NONNEGATIVE_RESET_WENTZELL_FORM_IF_HIT;_USE_THE_FRIEDRICHS_FORM_CLOSURE_OTHERWISE",
+    "endpoint_shape_variation": "BELONGS_TO_D_Phi_M_C_AND_IS_NOT_A_SECOND_BULK_TEMPORAL_COEFFICIENT",
+    "positive_orientation": "N_boundary>0_IMPLIES_d_tau>0",
+    "temporal_operator": "Delta_tau=D_tau^star*D_tau"
+  },
+  "provenance_classification": {
+    "D_tau": {
+      "class": "ACTION_REQUIRED_KINEMATIC",
+      "role": "CANONICAL_COVARIANT_DERIVATIVE_ON_THE_ACTION_OWNED_MAXIMAL_PROPER_TIME_DOMAIN",
+      "separate_coefficient_oracle_required": false
+    },
+    "Delta_tau": {
+      "class": "INTERNAL_CONSISTENCY_REQUIRED",
+      "independently_selectable": false,
+      "role": "FORM_OPERATOR_D_tau^star*D_tau_WITH_THE_SAME_RETAINED_ENDPOINT_FORM"
+    },
+    "log_R4_of_tau": {
+      "class": "ACTION_REQUIRED_DYNAMIC_COEFFICIENT",
+      "local_first_second_jets": "DERIVED",
+      "maximal_history_value_and_Jacobi_envelope": "OPEN"
+    },
+    "maximal_interval_and_endpoint_class": {
+      "class": "ACTION_REQUIRED_DOMAIN",
+      "role": "ALREADY_COMPRESSED_IN_THE_WEYL_CALDERON_ORACLE",
+      "separate_bulk_coefficient_tube_required": false
+    },
+    "positive_boundary_lapse": {
+      "class": "ACTION_REQUIRED",
+      "independent_bulk_source_coefficient_after_pullback": false,
+      "role": "DEFINES_d_tau=N_boundary*dt_AND_FORWARD_ORIENTATION"
+    }
+  },
+  "status": "PROPER_TIME_TEMPORAL_FORM_OWNERSHIP_DERIVED",
+  "validation": {
+    "all_inputs_validated": true,
+    "local_log_radius_geometry_jets_already_derived": true,
+    "maximal_endpoint_rule_is_action_owned": true,
+    "native_z_remains_distinct_from_p2": true,
+    "no_temporal_operator_endpoint_p2_fit_or_prediction_added": true,
+    "nonperiodic_form_witness_is_exact": true,
+    "nonperiodic_form_witness_is_nonnegative": true,
+    "periodic_lineage_obeys_DstarD_identity_to_1e_minus_14_relative": true,
+    "positive_lapse_defines_single_forward_proper_clock": true,
+    "proper_time_measure_is_action_owned": true
+  },
+  "validation_passed": true
+}

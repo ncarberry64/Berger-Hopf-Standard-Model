@@ -1,0 +1,593 @@
+"""Angular-uniformity audit for factorized AE2 source-Dini bounds."""
+
+from __future__ import annotations
+
+import math
+
+
+def integrable_optical_tail_dini_coefficient_lower(
+    *,
+    angular_eigenvalue: float,
+    reciprocal_radius_integral: float,
+    initial_reciprocal_radius_upper: float,
+    initial_interval_length: float,
+    positive_source_reciprocal_integral: float,
+) -> dict[str, float | bool]:
+    """Lower-bound the positive-chirality threshold coefficient.
+
+    Let ``r=1/R4``, ``I=int_0^infinity r``, ``s=mu*r`` and let the retained
+    log-radius direction be nonnegative on a compact interval after
+    ``delta``.  Delta-normalizing the exact zero transfer state contributes
+    ``N_mu^2=(2/pi)*exp(2*mu*I)``.  If ``r<=r_max`` on ``[0,delta]`` and
+    ``mu>=1/(2*r_max*delta)``, then
+
+    ``int_0^t exp(-2*mu*int_0^q r)dq``
+    ``>= (1-exp(-1))/(2*mu*r_max)``
+
+    for every source point ``t>=delta``.  Substitution in the exact transfer
+    derivative gives the lower bound returned here.  It concerns the angular
+    direct sum only; every fixed channel remains source-Dini finite.
+    """
+
+    mu = float(angular_eigenvalue)
+    optical = float(reciprocal_radius_integral)
+    r_upper = float(initial_reciprocal_radius_upper)
+    delta = float(initial_interval_length)
+    source_integral = float(positive_source_reciprocal_integral)
+    values = (mu, optical, r_upper, delta, source_integral)
+    if not all(math.isfinite(value) and value > 0.0 for value in values):
+        raise ValueError("finite positive angular-uniformity inputs required")
+    threshold = 1.0 / (2.0 * r_upper * delta)
+    if mu < threshold:
+        raise ValueError("angular eigenvalue below the proved lower-bound range")
+    prefactor = (2.0 / math.pi) * (1.0 - math.exp(-1.0))
+    log_lower = (
+        math.log(prefactor * source_integral / r_upper)
+        + 2.0 * mu * optical
+    )
+    lower = math.exp(log_lower) if log_lower < math.log(float.fromhex("0x1.fffffffffffffp+1023")) else math.inf
+    return {
+        "angular_eigenvalue": mu,
+        "reciprocal_radius_integral": optical,
+        "initial_reciprocal_radius_upper": r_upper,
+        "initial_interval_length": delta,
+        "positive_source_reciprocal_integral": source_integral,
+        "minimum_angular_eigenvalue_for_bound": threshold,
+        "log_threshold_coefficient_lower": log_lower,
+        "threshold_coefficient_lower": lower,
+        "grows_exponentially_in_angular_level": True,
+        "fixed_channel_source_Dini_finite": True,
+    }
+
+
+def exponential_radius_angular_counterexample(
+    maximum_level: int = 12,
+    *,
+    source_start: float = 0.25,
+    source_end: float = 0.75,
+) -> dict[str, object]:
+    """Return a smooth positive non-power angular-divergence witness.
+
+    The history ``R4(tau)=exp(tau)`` has bounded logarithmic derivative,
+    eventual monotonicity, smooth coefficients, and finite optical length
+    ``int exp(-tau)d_tau=1``.  A unit nonnegative source on
+    ``[source_start,source_end]`` has the exact reciprocal-radius integral
+    used below.  Weyl levels have ``mu_n=n+3/2`` and degeneracy
+    ``48(n+1)(n+2)``.
+    """
+
+    count = int(maximum_level)
+    start = float(source_start)
+    end = float(source_end)
+    if count < 2 or not (0.0 < start < end):
+        raise ValueError("at least two levels and a positive source interval required")
+    source_integral = math.exp(-start) - math.exp(-end)
+    rows = []
+    for level in range(1, count + 1):
+        mu = level + 1.5
+        coefficient = integrable_optical_tail_dini_coefficient_lower(
+            angular_eigenvalue=mu,
+            reciprocal_radius_integral=1.0,
+            initial_reciprocal_radius_upper=1.0,
+            initial_interval_length=start,
+            positive_source_reciprocal_integral=source_integral,
+        )
+        degeneracy = 48 * (level + 1) * (level + 2)
+        log_term = math.log(float(degeneracy)) + float(
+            coefficient["log_threshold_coefficient_lower"]
+        )
+        rows.append(
+            {
+                "level": level,
+                "positive_Dirac_eigenvalue": mu,
+                "Weyl_degeneracy": degeneracy,
+                "log_channel_Dini_coefficient_lower": coefficient[
+                    "log_threshold_coefficient_lower"
+                ],
+                "log_degeneracy_weighted_term_lower": log_term,
+            }
+        )
+    increments = [
+        later["log_degeneracy_weighted_term_lower"]
+        - earlier["log_degeneracy_weighted_term_lower"]
+        for earlier, later in zip(rows, rows[1:])
+    ]
+    return {
+        "radius_history": "R4(tau)=exp(tau)",
+        "log_radius_derivative": 1.0,
+        "eventually_monotone": True,
+        "smooth_positive_non_power_tail": True,
+        "reciprocal_radius_integral": 1.0,
+        "source_interval": [start, end],
+        "source_reciprocal_integral": source_integral,
+        "rows": rows,
+        "minimum_successive_log_term_increment": min(increments),
+        "degeneracy_weighted_terms_tend_to_zero": False,
+        "absolute_angular_source_Dini_sum_finite": False,
+        "fixed_channel_source_Dini_finite_for_every_level": True,
+    }
+
+
+def angular_uniformity_requirement() -> dict[str, object]:
+    """State the sharp requirement exposed by the counterexample."""
+
+    return {
+        "bounded_logarithmic_derivative_sufficient": False,
+        "eventual_monotonicity_sufficient": False,
+        "smoothness_or_local_BV_sufficient": False,
+        "factorization_and_compact_source_sufficient_per_channel": True,
+        "factorization_and_compact_source_sufficient_after_angular_sum": False,
+        "finite_optical_length_excluded_by_angular_finiteness": True,
+        "necessary_geometric_exclusion": "integral_0^infinity d_tau/R4(tau)=infinity",
+        "optical_completeness_alone_proved_sufficient": False,
+        "remaining_sufficient_route": (
+            "quantitative optical-completeness/barrier estimate uniform in the "
+            "angular level, or an already action-owned relative trace"
+        ),
+    }
+
+
+def at_most_linear_radius_agmon_bound(
+    *,
+    angular_eigenvalue: float,
+    radius_upper_at_source_end: float,
+    radius_speed_upper: float,
+    threshold_wave_number: float,
+    chirality: int = 1,
+) -> dict[str, float | bool | str]:
+    """Return the high-angular barrier from an at-most-linear radius envelope.
+
+    Assume after the compact source that ``abs(R4')<=v``. Then
+    ``R4(t)<=R_L+v(t-L)``. For either chirality, ``s=mu/R4`` and the
+    corresponding squared factor has
+
+    ``V_chi=s^2+/-mu*R4'/R4^2 >= s^2/2``
+
+    once ``mu>=2v``. Up to the envelope turning point
+    ``R_L+v(t-L)=mu/(2k)``, one has ``s>=2k``. Thus the forbidden-region
+    square root is at least ``s/2`` for both chiralities. Integrating the
+    reciprocal linear envelope gives the stated ``mu*log(mu)`` action.
+    No monotonicity hypothesis is used.
+    """
+
+    mu = float(angular_eigenvalue)
+    radius = float(radius_upper_at_source_end)
+    speed = float(radius_speed_upper)
+    k = float(threshold_wave_number)
+    sign = int(chirality)
+    values = (mu, radius, speed, k)
+    if not all(math.isfinite(value) for value in values):
+        raise ValueError("finite angular barrier inputs required")
+    if mu <= 0.0 or radius <= 0.0 or speed < 0.0 or k <= 0.0 or sign not in (-1, 1):
+        raise ValueError(
+            "positive mu, radius and k, nonnegative speed, and chirality +/-1 required"
+        )
+    ratio = mu / (2.0 * k * radius)
+    if ratio <= 1.0:
+        raise ValueError("angular level must place a barrier beyond the source")
+    if speed == 0.0:
+        return {
+            "angular_eigenvalue": mu,
+            "radius_upper_at_source_end": radius,
+            "radius_speed_upper": speed,
+            "threshold_wave_number": k,
+            "chirality": sign,
+            "envelope_turning_distance": "INFINITY",
+            "agmon_action_lower": "INFINITY",
+            "log_squared_amplitude_suppression_upper": "MINUS_INFINITY",
+            "squared_amplitude_suppression_upper": 0.0,
+            "asymptotic_action_class": "UNIFORM_POSITIVE_GAP_TO_INFINITY",
+            "beats_every_fixed_polynomial_multiplicity": True,
+            "beats_exp(C*mu)*mu^d_for_every_fixed_C_and_d": True,
+            "reciprocal_linear_envelope_integral_diverges": True,
+            "exact_power_law_assumed": False,
+            "radius_monotonicity_assumed": False,
+        }
+    if mu < 2.0 * speed:
+        raise ValueError("two-sided Lipschitz bound requires mu>=2*v")
+    action_factor = 0.5
+    potential_lower = (
+        "V_plus>=s_mu^2/2_FOR_mu>=2*v"
+        if sign == 1
+        else "V_minus>=s_mu^2/2_FOR_mu>=2*v"
+    )
+    action = action_factor * mu * math.log(ratio) / speed
+    turning_distance = (mu / (2.0 * k) - radius) / speed
+    log_suppression = -2.0 * action
+    suppression = math.exp(log_suppression) if log_suppression > -745.0 else 0.0
+    return {
+        "angular_eigenvalue": mu,
+        "radius_upper_at_source_end": radius,
+        "radius_speed_upper": speed,
+        "threshold_wave_number": k,
+        "chirality": sign,
+        "envelope_turning_distance": turning_distance,
+        "agmon_action_lower": action,
+        "log_squared_amplitude_suppression_upper": log_suppression,
+        "squared_amplitude_suppression_upper": suppression,
+        "potential_lower": potential_lower,
+        "asymptotic_action_class": f"({action_factor}/v)*mu*log(mu)+O(mu)",
+        "beats_every_fixed_polynomial_multiplicity": True,
+        "beats_exp(C*mu)*mu^d_for_every_fixed_C_and_d": True,
+        "reciprocal_linear_envelope_integral_diverges": True,
+        "exact_power_law_assumed": False,
+        "radius_monotonicity_assumed": False,
+    }
+
+
+def radius_speed_bound_from_state_controls(
+    *,
+    galerkin_order: int,
+    coordinate_norm_upper: float,
+    velocity_norm_upper: float,
+    multiplier_norm_upper: float,
+    reference_radius: float,
+) -> dict[str, float | bool | str]:
+    """Reduce a proper-radius speed bound to retained state controls.
+
+    In the exact N-mode attachment chart,
+
+    ``R4=(R0/2)exp(q0+u_L-(1/2)log(cosh(2v_L)))``
+
+    and ``D_tau R4=R4*(D_q x . qdot)/N_boundary``. Euclidean Cauchy--
+    Schwarz and ``log(cosh)>=0`` therefore give
+
+    ``R4 <= (R0/2)exp(sqrt(1+N) Q)``,
+    ``abs(D_q x . qdot) <= sqrt(1+2N) V``, and
+    ``N_boundary^-1 <= exp(sqrt(N) M)``.
+
+    Here ``Q,V,M`` uniformly bound the coordinate, velocity, and multiplier
+    coefficient norms. The returned product is a sufficient two-sided
+    proper-radius Lipschitz constant. This is a conditional reduction, not a
+    claim that the retained action supplies the three global bounds.
+    """
+
+    order = int(galerkin_order)
+    q_bound = float(coordinate_norm_upper)
+    v_bound = float(velocity_norm_upper)
+    m_bound = float(multiplier_norm_upper)
+    radius0 = float(reference_radius)
+    values = (q_bound, v_bound, m_bound, radius0)
+    if order < 1 or not all(math.isfinite(value) for value in values):
+        raise ValueError("positive order and finite state-control inputs required")
+    if q_bound < 0.0 or v_bound < 0.0 or m_bound < 0.0 or radius0 <= 0.0:
+        raise ValueError("nonnegative norm bounds and positive reference radius required")
+    radius_upper = 0.5 * radius0 * math.exp(math.sqrt(1.0 + order) * q_bound)
+    inverse_lapse_upper = math.exp(math.sqrt(float(order)) * m_bound)
+    log_rate_numerator_upper = math.sqrt(1.0 + 2.0 * order) * v_bound
+    speed_upper = radius_upper * inverse_lapse_upper * log_rate_numerator_upper
+    return {
+        "galerkin_order": order,
+        "coordinate_norm_upper": q_bound,
+        "velocity_norm_upper": v_bound,
+        "multiplier_norm_upper": m_bound,
+        "reference_radius": radius0,
+        "radius_upper": radius_upper,
+        "inverse_boundary_lapse_upper": inverse_lapse_upper,
+        "log_radius_coordinate_rate_numerator_upper": log_rate_numerator_upper,
+        "proper_radius_speed_upper": speed_upper,
+        "bound": (
+            "abs(D_tau_R4)<=(R0/2)*exp(sqrt(1+N)*Q+sqrt(N)*M)"
+            "*sqrt(1+2N)*V"
+        ),
+        "requires_radius_monotonicity": False,
+        "global_state_controls_proved_by_retained_action": False,
+    }
+
+
+def logarithmic_radius_speed_agmon_bound(
+    *,
+    angular_eigenvalue: float,
+    radius_at_source_end: float,
+    speed_offset: float,
+    speed_log_coefficient: float,
+    threshold_wave_number: float,
+    chirality: int = 1,
+) -> dict[str, float | bool | str]:
+    """Return the barrier under an unbounded logarithmic speed envelope.
+
+    On every outward passage from ``R_L`` to ``R>=R_L``, assume only
+
+    ``abs(R4') <= a+b*log(R4/R_L)``, with ``a>0`` and ``b>=0``.
+
+    No monotonicity of the full history is required. Put
+    ``R_turn=mu/(2k)``. If ``mu>=2*(a+b*log(R_turn/R_L))``, both squared
+    chiral factors obey ``V_chi>=s_mu^2/2`` before that turning radius.
+    The chain-rule/Osgood comparison gives
+
+    ``int d_tau/R4 >= int_(R_L)^R_turn dR/(R*(a+b*log(R/R_L)))``.
+
+    The integral is ``log(R_turn/R_L)/a`` for ``b=0`` and
+    ``log(1+(b/a)log(R_turn/R_L))/b`` for ``b>0``. Thus the latter permits
+    an unbounded radius speed yet yields an action of order
+    ``mu*log(log(mu))``, still beating every ``exp(C*mu)*mu^d`` local loss.
+    """
+
+    mu = float(angular_eigenvalue)
+    radius = float(radius_at_source_end)
+    offset = float(speed_offset)
+    coefficient = float(speed_log_coefficient)
+    k = float(threshold_wave_number)
+    sign = int(chirality)
+    values = (mu, radius, offset, coefficient, k)
+    if not all(math.isfinite(value) for value in values):
+        raise ValueError("finite logarithmic-speed barrier inputs required")
+    if (
+        mu <= 0.0
+        or radius <= 0.0
+        or offset <= 0.0
+        or coefficient < 0.0
+        or k <= 0.0
+        or sign not in (-1, 1)
+    ):
+        raise ValueError(
+            "positive mu, radius, offset and k, nonnegative log coefficient, "
+            "and chirality +/-1 required"
+        )
+    ratio = mu / (2.0 * k * radius)
+    if ratio <= 1.0:
+        raise ValueError("angular level must place a barrier beyond the source")
+    log_ratio = math.log(ratio)
+    speed_at_turning = offset + coefficient * log_ratio
+    if mu < 2.0 * speed_at_turning:
+        raise ValueError("angular level below the two-chirality Osgood range")
+    if coefficient == 0.0:
+        optical_lower = log_ratio / offset
+        action_class = "(1/(2*a))*mu*log(mu)+O(mu)"
+        speed_unbounded = False
+    else:
+        optical_lower = math.log1p(coefficient * log_ratio / offset) / coefficient
+        action_class = "(1/(2*b))*mu*log(log(mu))+O(mu)"
+        speed_unbounded = True
+    action = 0.5 * mu * optical_lower
+    log_suppression = -2.0 * action
+    suppression = math.exp(log_suppression) if log_suppression > -745.0 else 0.0
+    return {
+        "angular_eigenvalue": mu,
+        "radius_at_source_end": radius,
+        "speed_offset": offset,
+        "speed_log_coefficient": coefficient,
+        "threshold_wave_number": k,
+        "chirality": sign,
+        "turning_radius": mu / (2.0 * k),
+        "speed_envelope_at_turning_radius": speed_at_turning,
+        "two_chirality_high_angular_condition": "mu>=2*omega(mu/(2*k))",
+        "Osgood_optical_integral_lower": optical_lower,
+        "agmon_action_lower": action,
+        "log_squared_amplitude_suppression_upper": log_suppression,
+        "squared_amplitude_suppression_upper": suppression,
+        "potential_lower": "V_chi>=s_mu^2/2",
+        "asymptotic_action_class": action_class,
+        "allows_unbounded_radius_speed": speed_unbounded,
+        "radius_monotonicity_assumed": False,
+        "exact_power_law_assumed": False,
+        "beats_exp(C*mu)*mu^d_for_every_fixed_C_and_d": True,
+    }
+
+
+def uniform_scale_shift_osgood_audit(
+    *,
+    scale_shift: float,
+    radius: float,
+    proper_log_radius_rate: float,
+) -> dict[str, float | bool | str | list[int]]:
+    """Expose the exact retained uniform-scale obstruction to Osgood control.
+
+    Shift only the retained common scale coordinate by ``sigma`` while
+    holding the other coordinates, velocities, and lapse/shift coefficients
+    fixed. Then ``x=log(R4)`` shifts by ``sigma``, ``D_tau x`` is unchanged,
+    and both ``R4`` and ``abs(D_tau R4)`` scale by ``exp(sigma)``.
+
+    The retained radial action has the following exact scale weights before
+    the inverse-inertia quotient is taken. Volume/ADM and algebraic terms
+    have leading weight seven; spatial curvature has weight five; expanding
+    the retained ``x_eta`` polynomial gives weights seven through minus one
+    in steps of two. The inertia polynomial has weights seven, five, three,
+    and one, its reciprocal is asymptotically weight minus seven when its
+    leading coefficient is nonzero, and the boundary Casimir has weight
+    minus one. Thus the action contains same-order leading kinetic and
+    algebraic terms, not a scale-weight coercive separation that would by
+    itself force ``D_tau x`` to vanish.
+    """
+
+    sigma = float(scale_shift)
+    base_radius = float(radius)
+    log_rate = float(proper_log_radius_rate)
+    if not all(math.isfinite(value) for value in (sigma, base_radius, log_rate)):
+        raise ValueError("finite scale-shift inputs required")
+    if base_radius <= 0.0:
+        raise ValueError("positive radius required")
+    factor = math.exp(sigma)
+    base_speed = abs(base_radius * log_rate)
+    translated_radius = factor * base_radius
+    translated_speed = factor * base_speed
+    return {
+        "scale_shift": sigma,
+        "radius_scale_factor": factor,
+        "base_radius": base_radius,
+        "translated_radius": translated_radius,
+        "base_proper_log_radius_rate": log_rate,
+        "translated_proper_log_radius_rate": log_rate,
+        "base_absolute_proper_radius_speed": base_speed,
+        "translated_absolute_proper_radius_speed": translated_speed,
+        "speed_to_radius_ratio": abs(log_rate),
+        "pre_inverse_inertia_bulk_scale_weights": [7, 5, 3, 1, -1],
+        "inertia_polynomial_scale_weights": [7, 5, 3, 1],
+        "inverse_inertia_leading_scale_weight": -7,
+        "boundary_Casimir_scale_weight": -1,
+        "leading_ADM_kinetic_scale_weight": 7,
+        "leading_algebraic_scale_weight": 7,
+        "scale_weights_alone_force_log_rate_decay": False,
+        "Osgood_sublinear_speed_requires_proper_log_rate_tends_to_zero": True,
+        "positive_radius_and_lapse_domain_alone_proves_Osgood_envelope": False,
+    }
+
+
+def dominant_round_radius_balance(
+    *, cosmological_coefficient: float,
+) -> dict[str, float | bool | str]:
+    """Derive the exact weight-seven round-radius Euler--Lagrange balance.
+
+    On the retained round common-scale ansatz, write ``h=q0_dot`` in the
+    fixed unit-average lapse gauge. Since
+    ``integral_0^(pi/4) cos(chi)^3 sin(chi)^3 dchi=1/24``, the complete
+    weight-seven part of the unchanged local action is
+
+    ``L7=(R^7/24)*(-21*h^2/N-(kappa0/2)*N)``.
+
+    The already-owned zero reduced Legendre energy and the common-scale
+    Euler--Lagrange equation admit the expanding proper-time equilibrium
+    ``D_tau log(R4)=sqrt(kappa0/42)``.  This is an exact dominant-balance
+    statement, not an existence theorem for a full retained history: all
+    lower scale weights and transverse equations still have to be controlled.
+    """
+
+    kappa0 = float(cosmological_coefficient)
+    if not math.isfinite(kappa0) or kappa0 <= 0.0:
+        raise ValueError("positive finite cosmological coefficient required")
+    volume_coefficient = 1.0 / 24.0
+    expansion_rate = math.sqrt(kappa0 / 42.0)
+    return {
+        "round_volume_integral": volume_coefficient,
+        "ADM_trace_coefficient": -21.0,
+        "cosmological_coefficient": kappa0,
+        "weight_seven_reduced_action": (
+            "L7=(R^7/24)*(-21*q0_dot^2/N-(kappa0/2)*N)"
+        ),
+        "zero_reduced_energy_constraint": (
+            "21*(D_tau_log_R4)^2-kappa0/2=0"
+        ),
+        "proper_time_scale_equation": (
+            "D_tau^2_log_R4=kappa0/12-(7/2)*(D_tau_log_R4)^2"
+        ),
+        "expanding_equilibrium_log_rate": expansion_rate,
+        "contracting_equilibrium_log_rate": -expansion_rate,
+        "zero_energy_constraint_residual_at_equilibrium": (
+            21.0 * expansion_rate**2 - 0.5 * kappa0
+        ),
+        "scale_equation_residual_at_equilibrium": (
+            kappa0 / 12.0 - 3.5 * expansion_rate**2
+        ),
+        "expanding_dominant_radius_class": (
+            "R4(tau)=R_star*exp(sqrt(kappa0/42)*tau)"
+        ),
+        "expanding_dominant_optical_length": (
+            "INTEGRAL_0^infinity_d_tau/R4=1/(R_star*sqrt(kappa0/42))"
+        ),
+        "dominant_balance_forces_log_rate_decay": False,
+        "dominant_balance_is_compatible_with_finite_optical_length": True,
+        "full_retained_history_with_this_asymptotic_proved": False,
+        "lower_weight_and_transverse_remainders_controlled": False,
+        "claim": (
+            "EXACT_WEIGHT_SEVEN_DOMINANT_BALANCE_OBSTRUCTS_ANY_PROOF_OF_"
+            "OSGOOD_DECAY_FROM_THE_LEADING_ADM_COSMOLOGICAL_SECTOR_ALONE"
+        ),
+    }
+
+
+def at_most_linear_angular_series_witness(
+    *,
+    first_level: int = 8,
+    last_level: int = 24,
+    radius_upper_at_source_end: float = 1.25,
+    radius_speed_upper: float = 1.0,
+    threshold_wave_number: float = 1.0,
+    polynomial_degree: int = 4,
+    source_exponential_rate: float = 2.0,
+) -> dict[str, object]:
+    """Demonstrate decay after local exponential and polynomial weights."""
+
+    first = int(first_level)
+    last = int(last_level)
+    degree = int(polynomial_degree)
+    exponential_rate = float(source_exponential_rate)
+    if (
+        first < 0
+        or last <= first
+        or degree < 0
+        or not math.isfinite(exponential_rate)
+        or exponential_rate < 0.0
+    ):
+        raise ValueError("valid angular level interval and polynomial degree required")
+    rows = []
+    for level in range(first, last + 1):
+        mu = level + 1.5
+        barrier = at_most_linear_radius_agmon_bound(
+            angular_eigenvalue=mu,
+            radius_upper_at_source_end=radius_upper_at_source_end,
+            radius_speed_upper=radius_speed_upper,
+            threshold_wave_number=threshold_wave_number,
+            chirality=1,
+        )
+        partner = at_most_linear_radius_agmon_bound(
+            angular_eigenvalue=mu,
+            radius_upper_at_source_end=radius_upper_at_source_end,
+            radius_speed_upper=radius_speed_upper,
+            threshold_wave_number=threshold_wave_number,
+            chirality=-1,
+        )
+        log_local_weight = exponential_rate * mu + degree * math.log1p(mu)
+        positive_log = float(barrier["log_squared_amplitude_suppression_upper"])
+        negative_log = float(partner["log_squared_amplitude_suppression_upper"])
+        log_term = log_local_weight + max(positive_log, negative_log)
+        rows.append(
+            {
+                "level": level,
+                "angular_eigenvalue": mu,
+                "log_local_exp_times_polynomial_weight": log_local_weight,
+                "positive_chirality_log_suppression_upper": positive_log,
+                "negative_chirality_log_suppression_upper": negative_log,
+                "log_weighted_tail_term_upper": log_term,
+                "nth_root_log_upper": log_term / (level + 1.0),
+            }
+        )
+    return {
+        "polynomial_degree": degree,
+        "source_exponential_rate": exponential_rate,
+        "rows": rows,
+        "weighted_log_terms_strictly_decrease": all(
+            later["log_weighted_tail_term_upper"]
+            < earlier["log_weighted_tail_term_upper"]
+            for earlier, later in zip(rows, rows[1:])
+        ),
+        "nth_root_logs_decrease": all(
+            later["nth_root_log_upper"] < earlier["nth_root_log_upper"]
+            for earlier, later in zip(rows, rows[1:])
+        ),
+        "analytic_root_test_limit": "minus_infinity",
+        "local_weight_class": "exp(C*mu)*(1+mu)^d",
+        "angular_series_absolutely_summable": True,
+    }
+
+
+__all__ = [
+    "at_most_linear_angular_series_witness",
+    "at_most_linear_radius_agmon_bound",
+    "angular_uniformity_requirement",
+    "dominant_round_radius_balance",
+    "exponential_radius_angular_counterexample",
+    "integrable_optical_tail_dini_coefficient_lower",
+    "logarithmic_radius_speed_agmon_bound",
+    "radius_speed_bound_from_state_controls",
+    "uniform_scale_shift_osgood_audit",
+]

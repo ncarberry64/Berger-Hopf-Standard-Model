@@ -1,0 +1,75 @@
+{
+  "FULL_BHSM_COMPLETE": false,
+  "artifact": "BHSM_N12_JAX_FULL_ACTION_EQUIVALENCE_AUDIT",
+  "rows": [
+    {
+      "JAX_seconds_including_first_compile_when_applicable": 0.8426689999178052,
+      "gradient_relative_residual": 2.418725291770199e-15,
+      "hessian_relative_residual": 6.551949589445655e-16,
+      "hessian_symmetry_residual": 6.668247024089645e-11,
+      "node": 0,
+      "retained_Jet_seconds": 1.2063600000692531,
+      "value_relative_residual": 3.958797394731567e-16
+    },
+    {
+      "JAX_seconds_including_first_compile_when_applicable": 0.0014009999576956034,
+      "gradient_relative_residual": 4.210629471606768e-15,
+      "hessian_relative_residual": 5.321361339938801e-16,
+      "hessian_symmetry_residual": 6.622058387161652e-11,
+      "node": 11,
+      "retained_Jet_seconds": 1.2194664999842644,
+      "value_relative_residual": 1.9781142938705746e-15
+    },
+    {
+      "JAX_seconds_including_first_compile_when_applicable": 0.001433099969290197,
+      "gradient_relative_residual": 3.5494100934843736e-15,
+      "hessian_relative_residual": 4.440825693420937e-16,
+      "hessian_symmetry_residual": 6.235773768235637e-11,
+      "node": 23,
+      "retained_Jet_seconds": 1.2327345999656245,
+      "value_relative_residual": 3.1649248527567214e-15
+    },
+    {
+      "JAX_seconds_including_first_compile_when_applicable": 0.001277000061236322,
+      "gradient_relative_residual": 5.563644124826585e-15,
+      "hessian_relative_residual": 5.845460457536706e-16,
+      "hessian_symmetry_residual": 6.923702579704958e-11,
+      "node": 35,
+      "retained_Jet_seconds": 1.220415799994953,
+      "value_relative_residual": 1.844976880533464e-15
+    },
+    {
+      "JAX_seconds_including_first_compile_when_applicable": 0.0014292000560089946,
+      "gradient_relative_residual": 1.0375012862076502e-14,
+      "hessian_relative_residual": 5.782107558601551e-16,
+      "hessian_symmetry_residual": 5.272859454684626e-11,
+      "node": 47,
+      "retained_Jet_seconds": 1.222497700015083,
+      "value_relative_residual": 4.211762983581353e-15
+    }
+  ],
+  "software": {
+    "backend": "cpu",
+    "jax": "0.11.1",
+    "jaxlib": "0.11.1",
+    "x64_enabled": true
+  },
+  "status": "OPTIONAL_JAX_ACTION_VALUE_GRADIENT_HESSIAN_EQUIVALENT_TO_RETAINED_JET",
+  "summary": {
+    "maximum_gradient_relative_residual": 1.0375012862076502e-14,
+    "maximum_hessian_relative_residual": 6.551949589445655e-16,
+    "maximum_value_relative_residual": 4.211762983581353e-15,
+    "minimum_retained_Jet_seconds": 1.2063600000692531,
+    "minimum_warm_JAX_seconds": 0.001277000061236322
+  },
+  "validation": {
+    "JAX_is_acceleration_only_and_retained_jet_remains_authority": true,
+    "five_global_stop_nodes_compared": true,
+    "gradient_relative_residual_below_1e_minus_11": true,
+    "hessian_relative_residual_below_1e_minus_10": true,
+    "no_action_coefficient_equation_selector_scale_gate_or_chord_changed": true,
+    "same_96_point_action_quadrature_and_all_boundary_terms_used": true,
+    "value_relative_residual_below_1e_minus_12": true
+  },
+  "validation_passed": true
+}

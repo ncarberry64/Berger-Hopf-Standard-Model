@@ -1,0 +1,121 @@
+{
+  "FLAGSHIP_READY": false,
+  "FULL_BHSM_COMPLETE": false,
+  "adjudication": {
+    "BRST_grading_closes_E1_infrared": false,
+    "BRST_grading_closes_source_angular_tail": false,
+    "action_owned_relative_reference_or_low_energy_control": "STILL_REQUIRED",
+    "longitudinal_ghost_BRST_pair": "CANCELS_EXACTLY",
+    "transverse_gauge_HS_Weyl_physical_supertrace": "NONZERO_LEADING_HEAT_COEFFICIENT",
+    "universal_Ward_BRST_zero_force": "INVALID"
+  },
+  "artifact": "BHSM_N12_FORWARD_BRST_HEAT_TAIL_CANCELLATION_AUDIT",
+  "claim_boundary": {
+    "FLAGSHIP_READY": false,
+    "FULL_BHSM_COMPLETE": false,
+    "Gate_7": "ACTIVE_NOT_CLOSED",
+    "Gate_8": "LOCKED",
+    "chord_03_authorized": false
+  },
+  "classification": "THE_RETAINED_LONGITUDINAL_GAUGE_AND_COMPLEX_GHOST_BLOCKS_CANCEL_MODE_BY_MODE,_BUT_THE_PHYSICAL_TRANSVERSE_GAUGE_PLUS_FOUR_HS_MINUS_48_WEYL_GRADED_S3_HEAT_TRACE_HAS_NONZERO_LEADING_COEFFICIENT_MINUS_5_SQRT_PI_TIMES_a_TO_MINUS_3_OVER_2;_THEREFORE_BRST_GRADING_ALONE_CANNOT_SUPPLY_THE_MISSING_SOURCE_ANGULAR_OR_INFRARED_RELATIVE_TRACE_CANCELLATION",
+  "exact_asymptotic": {
+    "Gaussian_moment": "sum_(m>=1)m^2*exp(-a*m^2)~sqrt(pi)/(4*a^(3/2))",
+    "HS": "4*sum_(m>=1)m^2*exp(-a*m^2)",
+    "Weyl": "-48*sum_(n>=0)(n+1)(n+2)*exp(-a*(n+3/2)^2)",
+    "dimensionless_ratio": "a=s/R4^2",
+    "leading_degeneracy_coefficient": -20,
+    "leading_scaled_limit": "-5*sqrt(pi)",
+    "leading_scaled_limit_decimal": -8.862269254527579,
+    "shift_and_minus_one_terms_affect_leading_coefficient": false,
+    "transverse_gauge": "24*sum_(m>=2)(m^2-1)*exp(-a*m^2)"
+  },
+  "exact_next_dependency": "DERIVE_AN_ACTION_OWNED_RELATIVE_HEAT_REFERENCE_OR_LOW_ENERGY_SPECTRAL_MEASURE_BOUND_FOR_THE_NONCANCELLING_PHYSICAL_SECTORS,_OR_EVALUATE_THE_ACTUAL_FINITE_MAXIMAL_ENDPOINT_OPERATOR;_BRST_GRADING_ALONE_IS_EXHAUSTED",
+  "inputs": {
+    "artifacts/BHSM_aether_common_quantum_superdeterminant_v15_96.json": "8B545506D2864818E9E6413B716350B13B455558B8C2D732784C1FA301439137",
+    "artifacts/flagship_integration/BHSM_N12_FORWARD_E1_INFRARED_CONTROL_AUDIT.json": "29D57E2B21FFF1956419A29B828E5672CC179D02A157B65928C69E34F2B783AC",
+    "artifacts/flagship_integration/BHSM_N12_FORWARD_EXTERIOR_GAP_ORACLE_AUDIT.json": "42F94186C6F5842B5D6A4A327F1226AA43E9BE7523F0E3ACC9DB80E915815652",
+    "artifacts/flagship_integration/BHSM_N12_FORWARD_HEAT_TRACE_CLASS_AUDIT.json": "80CC27BC0DDD23620CBC4AFB4EE4CF35C51F74A5CD80630A256AEF20B2D2D804"
+  },
+  "numeric_witness_rows": [
+    {
+      "HS_contribution": 56.04991216397928,
+      "Weyl_contribution": -638.9689986693638,
+      "a_equals_heat_time_over_R4_squared": 0.1,
+      "a_to_three_halves_times_total": -9.546268245850685,
+      "absolute_scaled_residual": 0.6839989913231062,
+      "graded_total": -301.879508118284,
+      "leading_asymptotic_target": -8.862269254527579,
+      "summation_cutoff": 100,
+      "transverse_gauge_contribution": 281.03957838710056
+    },
+    {
+      "HS_contribution": 158.53309190424042,
+      "Weyl_contribution": -1854.837175279613,
+      "a_equals_heat_time_over_R4_squared": 0.05,
+      "a_to_three_halves_times_total": -9.259841331149248,
+      "absolute_scaled_residual": 0.39757207662166927,
+      "graded_total": -828.2253870924742,
+      "leading_asymptotic_target": -8.862269254527579,
+      "summation_cutoff": 100,
+      "transverse_gauge_contribution": 868.0786962828982
+    },
+    {
+      "HS_contribution": 626.6570686577502,
+      "Weyl_contribution": -7444.685975654072,
+      "a_equals_heat_time_over_R4_squared": 0.02,
+      "a_to_three_halves_times_total": -9.041022591139287,
+      "absolute_scaled_residual": 0.17875333661170778,
+      "graded_total": -3196.48419152768,
+      "leading_asymptotic_target": -8.862269254527579,
+      "summation_cutoff": 100,
+      "transverse_gauge_contribution": 3621.544715468641
+    },
+    {
+      "HS_contribution": 1772.453850905516,
+      "Weyl_contribution": -21163.09897981186,
+      "a_equals_heat_time_over_R4_squared": 0.01,
+      "a_to_three_halves_times_total": -8.95661648558191,
+      "absolute_scaled_residual": 0.0943472310543303,
+      "graded_total": -8956.61648558191,
+      "leading_asymptotic_target": -8.862269254527579,
+      "summation_cutoff": 100,
+      "transverse_gauge_contribution": 10434.028643324435
+    },
+    {
+      "HS_contribution": 5013.2565492620015,
+      "Weyl_contribution": -60008.680894666155,
+      "a_equals_heat_time_over_R4_squared": 0.005,
+      "a_to_three_halves_times_total": -8.911200229367626,
+      "absolute_scaled_residual": 0.04893097484004727,
+      "graded_total": -25204.680442787867,
+      "leading_asymptotic_target": -8.862269254527579,
+      "summation_cutoff": 100,
+      "transverse_gauge_contribution": 29790.743902616287
+    },
+    {
+      "HS_contribution": 19816.636488030053,
+      "Weyl_contribution": -237561.8382185043,
+      "a_equals_heat_time_over_R4_squared": 0.002,
+      "a_to_three_halves_times_total": -8.882465388109246,
+      "absolute_scaled_residual": 0.020196133581666942,
+      "graded_total": -99308.98207800664,
+      "leading_asymptotic_target": -8.862269254527579,
+      "summation_cutoff": 158,
+      "transverse_gauge_contribution": 118436.2196524676
+    }
+  ],
+  "status": "BRST_LONGITUDINAL_GHOST_CANCELLATION_DOES_NOT_CANCEL_PHYSICAL_HEAT_TAIL",
+  "validation": {
+    "Ward_BRST_cancellation_is_not_complete_physical_force_cancellation": true,
+    "all_inputs_validated": true,
+    "graded_supertrace_not_previously_promoted_to_trace_class": true,
+    "infrared_relative_or_spectral_control_remains_open": true,
+    "leading_heat_coefficient_is_minus_five": true,
+    "leading_physical_superdimension_is_nonzero": true,
+    "longitudinal_ghost_pair_cancels_mode_by_mode": true,
+    "no_sector_removed_reference_added_or_prediction_changed": true,
+    "retained_physical_sector_species_and_signs_consumed": true,
+    "scaled_numeric_rows_converge_toward_exact_nonzero_coefficient": true
+  },
+  "validation_passed": true
+}

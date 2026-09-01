@@ -37,8 +37,86 @@ def _variables(values: np.ndarray, offset: int, size: int) -> list[Jet]:
 def _linear(variables: list[Jet], coefficients: np.ndarray) -> Jet:
     result = Jet.constant(0.0, variables[0].gradient.size)
     for variable, coefficient in zip(variables, coefficients):
-        result = result + float(coefficient) * variable
+        if getattr(coefficient, "_mpf_", None) is not None:
+            result = result + variable * coefficient
+        else:
+            result = result + float(coefficient) * variable
     return result
+
+
+def _gauss_rule(
+    points: int, *, extended_precision: bool
+) -> tuple[np.ndarray, np.ndarray, object]:
+    """Return the action quadrature, optionally with high-precision nodes.
+
+    NumPy's public Legendre rule is float64.  For the badly conditioned N12
+    center lift, build the nodes and weights at 80 decimal digits and convert
+    them to the platform extended type before any trigonometric evaluation or
+    accumulation.  This changes numerical realization only, not the action.
+    """
+
+    if not extended_precision:
+        nodes, weights = np.polynomial.legendre.leggauss(points)
+        return nodes, weights, np.float64(math.pi)
+    import mpmath as mp
+
+    with mp.workdps(80):
+        nodes_mp, weights_mp = mp.gauss_quadrature(points, "legendre")
+        nodes = np.asarray(list(nodes_mp), dtype=object)
+        weights = np.asarray(list(weights_mp), dtype=object)
+        pi = +mp.pi
+    return nodes, weights, pi
+
+
+def _sin(value: object) -> object:
+    if isinstance(value, np.ndarray) and value.dtype == object:
+        import mpmath as mp
+
+        return np.vectorize(mp.sin, otypes=[object])(value)
+    if getattr(value, "_mpf_", None) is not None:
+        import mpmath as mp
+
+        return mp.sin(value)
+    return np.sin(value)
+
+
+def _cos(value: object) -> object:
+    if isinstance(value, np.ndarray) and value.dtype == object:
+        import mpmath as mp
+
+        return np.vectorize(mp.cos, otypes=[object])(value)
+    if getattr(value, "_mpf_", None) is not None:
+        import mpmath as mp
+
+        return mp.cos(value)
+    return np.cos(value)
+
+
+def _tan(value: object) -> object:
+    if getattr(value, "_mpf_", None) is not None:
+        import mpmath as mp
+
+        return mp.tan(value)
+    return np.tan(value)
+
+
+def _identity_localization_precise(
+    chi: np.ndarray, pi: object
+) -> np.ndarray:
+    import mpmath as mp
+
+    sigma = (
+        -mp.mpf("0.5")
+        + mp.mpf(2) * chi / pi
+        - _sin(mp.mpf(4) * chi) / (mp.mpf(2) * pi)
+    )
+    return mp.mpf(1) - mp.mpf(4) * sigma**2
+
+
+def _mp_array(values: np.ndarray) -> np.ndarray:
+    import mpmath as mp
+
+    return np.asarray([mp.mpf(str(value)) for value in values], dtype=object)
 
 
 def _sqrt(value: Jet) -> Jet:
@@ -147,6 +225,253 @@ def exact_full_action_jet_at_state(
     return action - standard_model_casimir_coefficient() / R4 * boundary_log_n.exp()
 
 
+def exact_weight_seven_action_jet_at_state(
+    order: int, coordinates: np.ndarray, velocities: np.ndarray,
+    multipliers: np.ndarray, *, points: int = 44,
+    extended_precision: bool = False,
+) -> Jet:
+    """Return the exact weight-seven quadratic jet at the round balance.
+
+    This is not a new action. It is the ADM kinetic plus cosmological part of
+    :func:`exact_full_action_jet_at_state`, selected by its exact uniform
+    ``q0`` scale weight.  In addition to ADM kinetic and cosmological terms,
+    the response contributes ``+localization*volume*(beta/N)^2/2`` at
+    quadratic order.  The other spatial-curvature, response,
+    inverse-inertia, and boundary-Casimir second variations have strictly
+    lower weights and are omitted only for the asymptotic dominant-system
+    audit.  The returned two-jet is exact about vanishing shift; it is not a
+    proposed truncation of the nonlinear retained action away from that
+    background.
+    """
+
+    size = dimensions(order)
+    q = _mp_array(np.asarray(coordinates)) if extended_precision else np.asarray(coordinates)
+    velocity = _mp_array(np.asarray(velocities)) if extended_precision else np.asarray(velocities)
+    multipliers = _mp_array(np.asarray(multipliers)) if extended_precision else np.asarray(multipliers)
+    qdim = size["coordinates"]
+    mdim = size["multipliers"]
+    if (
+        q.shape != (qdim,)
+        or velocity.shape != (qdim,)
+        or multipliers.shape != (mdim,)
+    ):
+        raise ValueError("state dimensions do not match order")
+    total = 2 * qdim + mdim
+    qj = _variables(q, 0, total)
+    vj = _variables(velocity, qdim, total)
+    mj = _variables(multipliers, 2 * qdim, total)
+    nodes, quadrature, pi = _gauss_rule(
+        points, extended_precision=extended_precision
+    )
+    chi = (nodes + 1.0) * pi / 8.0
+    quadrature = quadrature * pi / 8.0
+    ks = np.arange(1, order + 1, dtype=float)
+    js = np.arange(order, dtype=float)
+    cos_k = _cos(4.0 * np.outer(ks, chi))
+    sin_k = _sin(4.0 * np.outer(ks, chi))
+    cos_j = _cos(4.0 * np.outer(js, chi))
+    sin_j = _sin(4.0 * np.outer(js, chi))
+    localization = (
+        _identity_localization_precise(chi, pi)
+        if extended_precision else identity_response_localization(chi)
+    )
+    u_coeff = qj[1:1 + order]
+    w_coeff = qj[1 + order:1 + 2 * order]
+    b_coeff = qj[1 + 2 * order:1 + 3 * order]
+    if extended_precision:
+        import mpmath as mp
+
+        radius0 = mp.mpf(str(RADIUS0))
+        kappa0 = mp.mpf(15) * mp.root(5, 3) / 4
+    else:
+        radius0 = RADIUS0
+        kappa0 = 15.0 * 5.0 ** (1.0 / 3.0) / 4.0
+    radius = qj[0].exp() * radius0
+    leading = Jet.constant(0.0, total)
+    coefficient_dtype = object if extended_precision else float
+    for index, coordinate in enumerate(chi):
+        window = _sin(2.0 * coordinate) ** 2
+        window_prime = 2.0 * _sin(4.0 * coordinate)
+        u = _linear(u_coeff, cos_k[:, index])
+        up = _linear(u_coeff, -4.0 * ks * sin_k[:, index])
+        w = window * _linear(w_coeff, cos_j[:, index])
+        b = window * _linear(b_coeff, cos_j[:, index])
+        wp = _linear(
+            w_coeff,
+            window_prime * cos_j[:, index]
+            + window * (-4.0 * js * sin_j[:, index]),
+        )
+        bp_shape = _linear(
+            b_coeff,
+            window_prime * cos_j[:, index]
+            + window * (-4.0 * js * sin_j[:, index]),
+        )
+        C = radius * (u + w).exp()
+        A = radius * (u + b).exp() * _cos(coordinate)
+        B = radius * (u - b).exp() * _sin(coordinate)
+        cp = up + wp
+        # Jet.__sub__ historically coerces a scalar through float().  Use
+        # addition here so the extended-precision tangent remains an mpf.
+        ap = up + bp_shape + (-_tan(coordinate))
+        bp = up - bp_shape + 1.0 / _tan(coordinate)
+        volume = C * A**3 * B**3
+        lc_coeff = np.zeros(qdim, dtype=coefficient_dtype)
+        la_coeff = np.zeros(qdim, dtype=coefficient_dtype)
+        lb_coeff = np.zeros(qdim, dtype=coefficient_dtype)
+        lc_coeff[0] = la_coeff[0] = lb_coeff[0] = 1.0
+        lc_coeff[1:1 + order] = cos_k[:, index]
+        la_coeff[1:1 + order] = cos_k[:, index]
+        lb_coeff[1:1 + order] = cos_k[:, index]
+        lc_coeff[1 + order:1 + 2 * order] = window * cos_j[:, index]
+        la_coeff[1 + 2 * order:1 + 3 * order] = window * cos_j[:, index]
+        lb_coeff[1 + 2 * order:1 + 3 * order] = -window * cos_j[:, index]
+        lapse_coeff = np.zeros(mdim, dtype=coefficient_dtype)
+        lapse_coeff[:order] = cos_k[:, index]
+        shift_coeff = np.zeros(mdim, dtype=coefficient_dtype)
+        shift_coeff[order:2 * order] = (
+            _sin(4.0 * coordinate) * cos_j[:, index]
+        )
+        shift_prime_coeff = np.zeros(mdim, dtype=coefficient_dtype)
+        shift_prime_coeff[order:2 * order] = (
+            4.0 * _cos(4.0 * coordinate) * cos_j[:, index]
+            + _sin(4.0 * coordinate)
+            * (-4.0 * js * sin_j[:, index])
+        )
+        lc = _linear(vj, lc_coeff)
+        la = _linear(vj, la_coeff)
+        lb = _linear(vj, lb_coeff)
+        log_n = _linear(mj, lapse_coeff)
+        beta = _linear(mj, shift_coeff)
+        beta_prime = _linear(mj, shift_prime_coeff)
+        N = log_n.exp()
+        Hc = (lc - beta * cp - beta_prime) / N
+        Ha = (la - beta * ap) / N
+        Hb = (lb - beta * bp) / N
+        adm = (
+            Hc**2 + 3.0 * Ha**2 + 3.0 * Hb**2
+            - (Hc + 3.0 * Ha + 3.0 * Hb)**2
+        )
+        leading = leading + quadrature[index] * N * volume * (
+            -0.5 * kappa0
+            + 0.5 * adm
+            + 0.5 * localization[index] * (beta / N) ** 2
+        )
+    return leading
+
+
+def exact_weight_five_action_jet_at_state(
+    order: int, coordinates: np.ndarray, velocities: np.ndarray,
+    multipliers: np.ndarray, *, points: int = 44,
+    extended_precision: bool = False,
+) -> Jet:
+    """Return the exact scale-weight-five action jet at vanishing shift.
+
+    The complete weight-five component of the retained local action is the
+    spatial-gravity term together with ``3/A**2+3/B**2`` and the part
+    ``-localization*x_spatial/2`` of the identity response.  ADM kinetic and
+    the cosmological term have weight seven.  The remaining response powers,
+    inverse inertia, and boundary Casimir have weights at most three after
+    their exact scale decomposition.  As for the weight-seven helper, the
+    returned two-jet is the exact jet about vanishing shift and is not a new
+    truncated physical action.
+    """
+
+    size = dimensions(order)
+    q = _mp_array(np.asarray(coordinates)) if extended_precision else np.asarray(coordinates)
+    velocity = _mp_array(np.asarray(velocities)) if extended_precision else np.asarray(velocities)
+    multipliers = _mp_array(np.asarray(multipliers)) if extended_precision else np.asarray(multipliers)
+    qdim = size["coordinates"]
+    mdim = size["multipliers"]
+    if (
+        q.shape != (qdim,)
+        or velocity.shape != (qdim,)
+        or multipliers.shape != (mdim,)
+    ):
+        raise ValueError("state dimensions do not match order")
+    total = 2 * qdim + mdim
+    qj = _variables(q, 0, total)
+    vj = _variables(velocity, qdim, total)
+    mj = _variables(multipliers, 2 * qdim, total)
+    nodes, quadrature, pi = _gauss_rule(
+        points, extended_precision=extended_precision
+    )
+    chi = (nodes + 1.0) * pi / 8.0
+    quadrature = quadrature * pi / 8.0
+    ks = np.arange(1, order + 1, dtype=float)
+    js = np.arange(order, dtype=float)
+    cos_k = _cos(4.0 * np.outer(ks, chi))
+    sin_k = _sin(4.0 * np.outer(ks, chi))
+    cos_j = _cos(4.0 * np.outer(js, chi))
+    sin_j = _sin(4.0 * np.outer(js, chi))
+    localization = (
+        _identity_localization_precise(chi, pi)
+        if extended_precision else identity_response_localization(chi)
+    )
+    u_coeff = qj[1:1 + order]
+    w_coeff = qj[1 + order:1 + 2 * order]
+    b_coeff = qj[1 + 2 * order:1 + 3 * order]
+    if extended_precision:
+        import mpmath as mp
+
+        radius0 = mp.mpf(str(RADIUS0))
+    else:
+        radius0 = RADIUS0
+    radius = qj[0].exp() * radius0
+    weight_five = Jet.constant(0.0, total)
+    coefficient_dtype = object if extended_precision else float
+    for index, coordinate in enumerate(chi):
+        window = _sin(2.0 * coordinate) ** 2
+        window_prime = 2.0 * _sin(4.0 * coordinate)
+        u = _linear(u_coeff, cos_k[:, index])
+        up = _linear(u_coeff, -4.0 * ks * sin_k[:, index])
+        w = window * _linear(w_coeff, cos_j[:, index])
+        b = window * _linear(b_coeff, cos_j[:, index])
+        wp = _linear(
+            w_coeff,
+            window_prime * cos_j[:, index]
+            + window * (-4.0 * js * sin_j[:, index]),
+        )
+        bp_shape = _linear(
+            b_coeff,
+            window_prime * cos_j[:, index]
+            + window * (-4.0 * js * sin_j[:, index]),
+        )
+        C = radius * (u + w).exp()
+        A = radius * (u + b).exp() * _cos(coordinate)
+        B = radius * (u - b).exp() * _sin(coordinate)
+        # Preserve the mpf tangent in the extended-precision realization.
+        ap = up + bp_shape + (-_tan(coordinate))
+        bp = up - bp_shape + 1.0 / _tan(coordinate)
+        volume = C * A**3 * B**3
+        spatial_volume = A**3 * B**3
+        lapse_coeff = np.zeros(mdim, dtype=coefficient_dtype)
+        lapse_coeff[:order] = cos_k[:, index]
+        lapse_prime_coeff = np.zeros(mdim, dtype=coefficient_dtype)
+        lapse_prime_coeff[:order] = -4.0 * ks * sin_k[:, index]
+        log_n = _linear(mj, lapse_coeff)
+        n_prime = _linear(mj, lapse_prime_coeff)
+        N = log_n.exp()
+        x_spatial = (
+            1.0 / C**2
+            + 3.0 * _cos(coordinate) ** 2 / A**2
+            + 3.0 * _sin(coordinate) ** 2 / B**2
+        )
+        fixed_gravity = ap**2 + bp**2 + 3.0 * ap * bp
+        spatial_gravity = (
+            3.0 * spatial_volume / C * N
+            * (n_prime * (ap + bp) + fixed_gravity)
+        )
+        algebraic = N * volume * (
+            3.0 / A**2
+            + 3.0 / B**2
+            - 0.5 * localization[index] * x_spatial
+        )
+        weight_five = weight_five + quadrature[index] * (
+            spatial_gravity + algebraic
+        )
+    return weight_five
+
+
 def exact_full_local_action_jet_audit() -> dict[str, Any]:
     unpacked = unpack_reduced(v17_53_selected_raw_vector())
     q = np.asarray(unpacked["coordinates"])[-1]
@@ -198,4 +523,4 @@ def materialize(directory: str | Path) -> Path:
     target=Path(directory);target.mkdir(parents=True,exist_ok=True);path=target/"BHSM_aether_n3_exact_full_local_action_jet_v17_60.json";path.write_text(deterministic_json(completion_payload()),encoding="utf-8");return path
 
 
-__all__=["VERSION","CLASSIFICATION","FULL_BHSM_COMPLETE","exact_full_action_jet_at_state","exact_full_local_action_jet_audit","completion_payload","materialize"]
+__all__=["VERSION","CLASSIFICATION","FULL_BHSM_COMPLETE","exact_full_action_jet_at_state","exact_weight_seven_action_jet_at_state","exact_weight_five_action_jet_at_state","exact_full_local_action_jet_audit","completion_payload","materialize"]

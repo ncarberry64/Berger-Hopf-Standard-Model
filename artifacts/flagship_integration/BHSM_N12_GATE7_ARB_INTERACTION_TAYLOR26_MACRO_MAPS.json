@@ -1,0 +1,60 @@
+{
+  "FULL_BHSM_COMPLETE": false,
+  "artifact": "BHSM_N12_GATE7_ARB_INTERACTION_TAYLOR26_MACRO_MAPS",
+  "authority": "256_BIT_ARB_FINITE_INTERACTION_POLYNOMIAL_PLUS_EXACT_ODE_RESIDUAL_AND_CERTIFIED_CONJUGATION_TAIL",
+  "checkpoint_directory": "artifacts/flagship_integration/.BHSM_N12_GATE7_ARB_INTERACTION_TAYLOR26_MACRO_MAPS_853C80B0F21BDAA3",
+  "claim_boundary": {
+    "FULL_BHSM_COMPLETE": false,
+    "Gate7": "ACTIVE",
+    "global_exact_affine_signed_response": "OPEN_UNTIL_SOURCE_BLOCKS_COMPOSED",
+    "homogeneous_exact_affine_macro_maps": "CERTIFIED",
+    "retained_partition_exact_affine_source_blocks": "OPEN",
+    "signed_source_quadrature_Y": "OPEN_INTERVAL_AUTHORITY"
+  },
+  "data": "artifacts/flagship_integration/BHSM_N12_GATE7_ARB_INTERACTION_TAYLOR26_MACRO_MAPS.npz",
+  "data_SHA256": "B288E0BD1DEBB84E073320781AC1EB6DD92E6271E72297AB7CD439BDD90E4B2F",
+  "exact_next_dependency": "EVALUATE_THE_RETAINED_UNALIGNED_GAUSS8_SOURCE_SUFFIXES_WITH_THE_SAME_EXACT_INTERACTION_TAYLOR26_STEP_AND_GLOBALLY_COMPOSE_THE_47_SIGNED_AFFINE_SOURCE_BLOCKS",
+  "identity": {
+    "ambient_dimension": 98,
+    "commutator_depth": 22,
+    "correlated_storage": "OUTWARD_ARB_INTERVAL_STRINGS",
+    "interaction_polynomial_degree": 26,
+    "local_error_identity": "exp(||A0||h+beta)*(integral||P26'-H22*P26||+conjugation_tail*sum||P26_coeff||)",
+    "physical_quotient_dimension": 73,
+    "projection_rule": "PROJECT_ONLY_AT_RETAINED_MACRO_CONSTRAINT_SEAMS"
+  },
+  "inputs": {
+    "artifacts/flagship_integration/BHSM_N12_C2_STOP_HIGH_ORDER_QUARTER_STEP_RETAINED_RECONNAISSANCE.npz": "086C41068B9F3A6C0E5F8040B661202E067D017C909A381010E45FF352498D00",
+    "artifacts/flagship_integration/BHSM_N12_C2_STOP_QUARTER_STEP_FINE_HYBRID_GRAPH_JACOBIAN_RECONNAISSANCE.npz": "B92C08B4CB2EC4033FA70CBDCC28B6CD79E1189E19D95C984155EB65DD9D73B5",
+    "artifacts/flagship_integration/BHSM_N12_C2_STOP_QUARTER_STEP_PHYSICAL_TANGENT_TRANSFER_RECONNAISSANCE.npz": "9FFD40E1F3BFBBFA085FAB18B8ECDF250C55E753D23BE0B34737386BE833A175",
+    "artifacts/flagship_integration/BHSM_N12_GATE7_ARB_INTERACTION_DYSON_TAIL.json": "0F405CBF26F04260DC982334D0EA69AB817E6A32BB9E54F4478AEBC86B437396",
+    "scripts/certify_n12_gate7_arb_interaction_dyson_tail.py": "631D047897E0531A8F0A55A3B10D2D19ABA93C5FFD2DD6082D32B6E05B759FF5",
+    "scripts/certify_n12_gate7_arb_interaction_taylor26_macro_maps.py": "83E374DAAE53D057DB99BE5C036B9B26657738F4A75D2A94E2F51B1734D7ACE9"
+  },
+  "status": "ALL_47_HOMOGENEOUS_EXACT_AFFINE_QUOTIENT_MACRO_MAPS_OUTWARD_CERTIFIED_BY_INTERACTION_TAYLOR26_RESIDUAL",
+  "summary": {
+    "global_exact_affine_fundamental_component_radius_Frobenius": 8.924457407181154e-13,
+    "global_exact_affine_fundamental_operator_upper": 5342.54284263994,
+    "macro_count": 47,
+    "maximum_interaction_beta_upper": 0.021567811917755787,
+    "maximum_local_exact_flow_error_upper": 6.529925891449844e-79,
+    "maximum_macro_map_component_radius": 1.4210854715202007e-14,
+    "maximum_polynomial_residual_integral_upper": 2.2377596113841067e-90,
+    "substep_count": 5908
+  },
+  "validation": {
+    "all_47_homogeneous_exact_affine_macro_maps_evaluated": true,
+    "all_5908_retained_PROP16_substeps_evaluated": true,
+    "all_component_radii_finite": true,
+    "all_finite_interaction_polynomial_operations_in_256_bit_Arb": true,
+    "ambient_98D_flow_preserved_between_macro_constraint_seams": true,
+    "binary64_midpoint_materialization_rounding_attached": true,
+    "certified_depth22_conjugation_tail_attached_to_every_substep": true,
+    "complete_affine_flow_error_attached_before_composition": true,
+    "degree26_interaction_polynomial_residual_evaluated_exactly": true,
+    "global_composition_reconstructs_outward_Arb_strings": true,
+    "no_action_source_selector_scale_gate_or_chord_changed": true,
+    "signed_source_not_yet_promoted": true
+  },
+  "validation_passed": true
+}

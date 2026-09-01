@@ -1,0 +1,60 @@
+{
+  "FLAGSHIP_READY": false,
+  "FULL_BHSM_COMPLETE": false,
+  "action_version": "BHSM-AE-2.0.0",
+  "artifact": "BHSM_N12_GATE7_AE2_NONFERMION_THRESHOLD_MARGIN",
+  "certified_margins": {
+    "constant_scalar_log_radius_first_vertex_zero": true,
+    "global_gauge_zero_mode_quotiented": true,
+    "positive_scalar_derham_channel_count": 7,
+    "positive_scalar_derham_child_and_seam_lower": 6.370522e-08,
+    "transverse_gauge_Wentzell_lower_for_minimum_group_ray_and_unit_eigenvalue_4": 650.6279735413212,
+    "transverse_gauge_total_seam_lower": 650.6279736050265
+  },
+  "claim_boundary": {
+    "FLAGSHIP_READY": false,
+    "FULL_BHSM_COMPLETE": false,
+    "Gate7": "ACTIVE_NOT_CLOSED",
+    "Gate8": "LOCKED",
+    "boundary_uniform_limiting_absorption": "OPEN",
+    "chord_03_authorized": false,
+    "factorized_product_Dirac_two_sided_margin": "OPEN",
+    "graded_angular_tail": "OPEN",
+    "nonfermion_critical_zero_graph_excluded": true,
+    "zero_source_force": "OPEN"
+  },
+  "classification": "ON_THE_AE2_GLOBAL_TRANSMISSION_DOMAIN_THE_ZERO_ENERGY_NONFERMION_SEAM_OPERATOR_IS_THE_SUM_OF_NONNEGATIVE_EVENT_AND_CHILD_DTN_FORMS_AND_THE_RETAINED_NONNEGATIVE_WENTZELL_BLOCK;_EVERY_POSITIVE_SCALAR_DERHAM_CHANNEL_THEREFORE_INHERITS_THE_CERTIFIED_CHILD_CORE_MARGIN_AND_EVERY_TRANSVERSE_GAUGE_CHANNEL_ALSO_HAS_THE_STRICT_SQRT_DELTA1_WENTZELL_MARGIN;_CONSTANT_RADIUS_ZERO_MODES_HAVE_ZERO_FIRST_VERTEX_OR_ARE_GAUGE_QUOTIENTED",
+  "exact_next_dependency": "PROVE_THE_AE2_FACTORIZED_PRODUCT_DIRAC_LOW_ENERGY_SOURCE_MEASURE_BOUND_OR_ENCLOSE_ITS_REALIZED_TWO_SIDED_CALDERON_WRONSKIAN,_AND_DERIVE_A_BOUNDARY_UNIFORM_LIMITING_ABSORPTION_BOUND_FOR_THE_NOW_REGULAR_NONFERMION_CHANNELS;_THEN_CLOSE_THE_GRADED_ANGULAR_SUM_AND_EVALUATE_THE_ZERO_SOURCE_FORCE",
+  "inputs": {
+    "artifacts/BHSM_aether_full_gauge_dtn_lr_kernel_v15_66.json": "F39450E8EE52C88E0DDBC26356B15919D42E9762A469E177F98CD2F6419675C4",
+    "artifacts/action_extension/BHSM_ACTION_AE2_GLOBAL_SPIN_RESET_ACTION.json": "4C756145A9E303F6E4F7F9536CF5639957D010C1A97AF6BE9299830C549B82DC",
+    "artifacts/flagship_integration/BHSM_N12_FORWARD_COMMON_SOURCE_INCIDENCE.json": "943359A4649960D7D2293B396D5C3B661B6D6F2C8D36A68FC6E36895141CEF33",
+    "artifacts/flagship_integration/BHSM_N12_FORWARD_THRESHOLD_SOURCE_MEASURE_AUDIT.json": "98B23298171CF23D0D804771ECB80E17CE95649AF796C2D9058136E351C3D88E",
+    "artifacts/flagship_integration/BHSM_N12_MAXIMAL_FORWARD_SOURCE_DOMAIN.json": "61642A88D01B81C7685C5355149C08F01F9C4B089CF715D544CF690A136A6E0A",
+    "scripts/derive_n12_gate7_ae2_nonfermion_threshold.py": "C9B222E92007D05B13B1AF9A22662EB60B7FEBF70E42E4F6962B682BDE6D1E5B",
+    "src/bhsm/interface/action_extension_ae2_nonfermion_threshold.py": "15F5ABB7E1416C1E309840F40CC10E26E78BAF9F236C99F0F6D85DF45FE20D77"
+  },
+  "status": "AE2_NONFERMION_ZERO_THRESHOLD_RESONANCE_EXCLUDED",
+  "theorem": {
+    "quadratic_form_order": "M_event(0)>=0,_M_child(0)>=m_child*I,_W_phys>=0_IMPLIES_SEAM>=m_child*I",
+    "scope": "NONFERMIONIC_SCALAR_DERHAM_GHOST_AND_TRANSVERSE_GAUGE_BLOCKS",
+    "seam_operator": "M_event(0)+U_R_DAGGER*M_child(0)*U_R+W_phys",
+    "why_event_map_value_not_needed_for_this_lower_bound": "ONLY_ITS_NONNEGATIVE_QUADRATIC_FORM_ORDER_IS_USED"
+  },
+  "validation": {
+    "AE2_global_transmission_domain_used": true,
+    "FULL_BHSM_COMPLETE_false": true,
+    "all_inputs_validated": true,
+    "all_positive_scalar_derham_rows_have_positive_child_margin": true,
+    "constant_scalar_radius_vertex_is_zero": true,
+    "event_and_child_arm_forms_nonnegative_in_the_source_domain": true,
+    "factorized_Weyl_threshold_not_claimed_closed": true,
+    "global_gauge_zero_mode_quotient_assembled": true,
+    "limiting_absorption_angular_sum_and_force_not_fabricated": true,
+    "no_endpoint_reference_chord_selector_scale_fit_or_prediction_added": true,
+    "nonfermion_strict_seam_margins_positive": true,
+    "transverse_gauge_Wentzell_block_action_derived_and_positive": true,
+    "unitary_reset_conjugation_preserves_child_lower_bound": true
+  },
+  "validation_passed": true
+}

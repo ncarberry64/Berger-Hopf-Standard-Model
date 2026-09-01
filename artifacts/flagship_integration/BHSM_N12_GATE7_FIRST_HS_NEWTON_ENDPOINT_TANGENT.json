@@ -1,0 +1,39 @@
+{
+  "FULL_BHSM_COMPLETE": false,
+  "artifact": "BHSM_N12_GATE7_FIRST_HS_NEWTON_ENDPOINT_TANGENT",
+  "authority": "DIRECT_NUMERICAL_ACTION_CONSTRAINT_NULLSPACES_NOT_INTERVAL_AUTHORITY",
+  "claim_boundary": {
+    "FULL_BHSM_COMPLETE": false,
+    "Gate7": "ACTIVE_ACTION_OWNED_OPERATOR_ORACLE",
+    "continuous_action_constrained_center": "OPEN",
+    "projected_recentered_Hermite_Simpson_Jacobian": "OPEN_TANGENT_BLOCK_ADJUDICATION"
+  },
+  "data": "artifacts/flagship_integration/BHSM_N12_GATE7_FIRST_HS_NEWTON_ENDPOINT_TANGENT.npz",
+  "data_SHA256": "5A6EF00A5658BB465249C8B90725A9D3F98CD53B35A1376A1CEF292F75E6B002",
+  "exact_next_dependency": "SOLVE_THE_370_HERMITE_SIMPSON_BLOCKS_INTRINSICALLY_IN_THESE_73D_ENDPOINT_TANGENTS",
+  "inputs": {
+    "artifacts/flagship_integration/BHSM_N12_GATE7_HERMITE_SIMPSON_NEWTON_ENDPOINT_CANDIDATE.json": "4D4A5DDD5929E20921CB857B95BBECD546B585AA7C1A167E9B17786CD76D56B1",
+    "artifacts/flagship_integration/BHSM_N12_GATE7_HERMITE_SIMPSON_NEWTON_ENDPOINT_CANDIDATE.npz": "749660BB633A2775CB0CEF818C11E31966560164B00A45EF3463B6AED812396B",
+    "scripts/materialize_n12_gate7_first_hs_newton_endpoint_tangent.py": "98A73C8A6D00E9F48C5FF0F44B328B1A4E817E93B8578468573EB179CEBE0626",
+    "theory/n12_gate7_first_hs_newton_endpoint_tangent.md": "96D68BF8FB77213612C003CBD77A7E6B9A18C6B6F3E87D6968E1CA726F5331E9"
+  },
+  "status": "FIRST_HS_CENTER_371_ENDPOINT_CONSTRAINT_TANGENTS_MATERIALIZED",
+  "summary": {
+    "endpoint_count": 371,
+    "maximum_constraint_tangent_residual_2_norm": 1.1145392414862933e-15,
+    "maximum_scaled_constraint_2_norm": 1.738085656993393e-14,
+    "maximum_tangent_orthonormal_residual_2_norm": 2.070388499308724e-15,
+    "minimum_constraint_singular_value": 0.0003346165443129284,
+    "physical_tangent_dimension": 73
+  },
+  "validation": {
+    "all_371_endpoint_tangents_materialized": true,
+    "all_constraint_frames_have_rank_25": true,
+    "all_endpoint_constraints_are_numerically_closed": true,
+    "all_tangents_annihilate_constraints": true,
+    "all_tangents_are_orthonormal": true,
+    "basis_orientation_is_not_claimed_canonical": true,
+    "no_action_source_selector_scale_gate_or_chord_changed": true
+  },
+  "validation_passed": true
+}

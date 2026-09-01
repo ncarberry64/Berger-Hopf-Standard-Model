@@ -1,0 +1,895 @@
+{
+  "combined_bound_chain": [
+    "Restrict the finite Level 2 Dirac matrix to the complement of the three protected zero modes.",
+    "Use the exact finite-basis diagonal contribution and finite q/residual ranges for diagonal sign-indefinite terms.",
+    "Control sector off-diagonal blocks with Gershgorin and restricted min-max bounds.",
+    "Use the v1.3B sector-coupling operator-norm audit to distinguish norm-certified cases from finite-basis-only passes.",
+    "Square the symmetric Level 2 Dirac matrix and take the conservative complement lower bound.",
+    "Apply the monotone heat-lift inequality with Lambda^2 = 1/(4*pi).",
+    "Add only PSD curvature/profile contributions, so Weyl's lower bound cannot decrease.",
+    "Keep theorem_complete=False until the zero-mode/complement split and off-diagonal bounds are proven in the full action."
+  ],
+  "inventory": {
+    "classifications": [
+      {
+        "analytic_status": "exact for the Level 2 finite-basis diagonal block",
+        "can_lower_complement_gap": false,
+        "classification": "DIAGONAL_EXACT",
+        "lower_bound_method": "exact diagonal minimum after complement restriction; min-max check after squaring",
+        "term_id": "berger_dirac_kinetic",
+        "upgrade_requirement": "derive a closed Berger twisted-Dirac diagonal lower bound"
+      },
+      {
+        "analytic_status": "bounded in finite basis by explicit coefficient and mode ranges",
+        "can_lower_complement_gap": true,
+        "classification": "SIGN_INDEFINITE_BOUNDED",
+        "lower_bound_method": "Weyl bound with explicit coefficient and finite q range",
+        "term_id": "hopf_twist",
+        "upgrade_requirement": "prove global coefficient-weighted mode bounds on H_perp"
+      },
+      {
+        "analytic_status": "bounded in finite basis by explicit coefficient and mode ranges",
+        "can_lower_complement_gap": true,
+        "classification": "SIGN_INDEFINITE_BOUNDED",
+        "lower_bound_method": "Weyl bound using the bounded residual range in the finite basis",
+        "term_id": "boundary_term",
+        "upgrade_requirement": "prove global coefficient-weighted mode bounds on H_perp"
+      },
+      {
+        "analytic_status": "bounded in finite basis by explicit coefficient and mode ranges",
+        "can_lower_complement_gap": true,
+        "classification": "SIGN_INDEFINITE_BOUNDED",
+        "lower_bound_method": "Weyl bound from explicit chirality coefficient",
+        "term_id": "chirality_term",
+        "upgrade_requirement": "prove global coefficient-weighted mode bounds on H_perp"
+      },
+      {
+        "analytic_status": "bounded in finite basis by Gershgorin and restricted min-max estimates",
+        "can_lower_complement_gap": true,
+        "classification": "OFF_DIAGONAL_BOUNDED",
+        "lower_bound_method": "Gershgorin bound and restricted min-max finite-basis check",
+        "term_id": "sector_coupling",
+        "upgrade_requirement": "prove an infinite-basis operator-norm or relative-bound estimate"
+      },
+      {
+        "analytic_status": "nonnegative contribution controlled exactly under the PSD assumption",
+        "can_lower_complement_gap": false,
+        "classification": "PSD_EXACT",
+        "lower_bound_method": "PSD nonnegative monotone heat-lift inequality",
+        "term_id": "heat_lift",
+        "upgrade_requirement": "derive the profile or heat-lift input from the complete action"
+      },
+      {
+        "analytic_status": "nonnegative contribution controlled exactly under the PSD assumption",
+        "can_lower_complement_gap": false,
+        "classification": "PSD_EXACT",
+        "lower_bound_method": "PSD nonnegative Weyl contribution",
+        "term_id": "psd_profile",
+        "upgrade_requirement": "derive the profile or heat-lift input from the complete action"
+      },
+      {
+        "analytic_status": "finite-basis evidence only",
+        "can_lower_complement_gap": false,
+        "classification": "FINITE_BASIS_ONLY",
+        "lower_bound_method": "min-max restricted complement in finite basis",
+        "term_id": "zero_complement_projector",
+        "upgrade_requirement": "prove the protected kernel and complement decomposition in the full action"
+      }
+    ],
+    "limitations": [
+      "This inventory classifies the current Level 2 finite-basis proxy; it is not the full analytic H_T spectrum.",
+      "Frozen v1.0/v1.1 predictions, constants, tolerances, and mode ledgers are not changed."
+    ],
+    "model_level": "DIRAC_PROXY_LEVEL_2",
+    "terms": [
+      {
+        "assumptions": [
+          "Level 2 matrix uses the existing Berger anisotropy and finite mode basis.",
+          "The protected zero-mode rows and columns are projected out by construction."
+        ],
+        "can_lower_complement_gap": false,
+        "classification": "DIAGONAL_EXACT",
+        "id": "berger_dirac_kinetic",
+        "limitations": [
+          "The term is exact only inside DIRAC_PROXY_LEVEL_2.",
+          "A closed analytic Berger twisted-Dirac spectrum is not derived here."
+        ],
+        "lower_bound_method": "exact diagonal minimum after complement restriction; min-max check after squaring",
+        "matrix_structure": "diagonal in the finite Dirac basis before the D^dagger D construction",
+        "name": "Berger / Dirac kinetic diagonal contribution",
+        "operator_role": "dominant signed diagonal Dirac proxy contribution before squaring",
+        "preserves_zero_modes": true,
+        "source_module": "twisted_dirac",
+        "source_symbol": "build_level2_dirac_matrix"
+      },
+      {
+        "assumptions": [
+          "The finite basis has bounded Hopf charges.",
+          "The Hopf coefficient is fixed before residual comparison."
+        ],
+        "can_lower_complement_gap": true,
+        "classification": "SIGN_INDEFINITE_BOUNDED",
+        "id": "hopf_twist",
+        "limitations": [
+          "The current lower bound is finite-basis bounded, not a global analytic q-bound."
+        ],
+        "lower_bound_method": "Weyl bound with explicit coefficient and finite q range",
+        "matrix_structure": "diagonal but sign-indefinite because q can have either sign in general basis choices",
+        "name": "Hopf twist contribution",
+        "operator_role": "Hopf-charge dependent diagonal twist",
+        "preserves_zero_modes": true,
+        "source_module": "twisted_dirac",
+        "source_symbol": "level2_hopf_twist_term"
+      },
+      {
+        "assumptions": [
+          "Boundary coefficients are those from the v1.2 action-origin scaffold.",
+          "Boundary strength is explicit and nonnegative."
+        ],
+        "can_lower_complement_gap": true,
+        "classification": "SIGN_INDEFINITE_BOUNDED",
+        "id": "boundary_term",
+        "limitations": [
+          "The full action-level uniqueness of the complete internal action remains open.",
+          "A global analytic residual bound beyond the finite basis is not proven here."
+        ],
+        "lower_bound_method": "Weyl bound using the bounded residual range in the finite basis",
+        "matrix_structure": "diagonal residual term; sign may vary by sector and mode",
+        "name": "Action-linked boundary residual contribution",
+        "operator_role": "sector boundary residual term tied to the omega scaffold",
+        "preserves_zero_modes": true,
+        "source_module": "twisted_dirac",
+        "source_symbol": "level2_boundary_term"
+      },
+      {
+        "assumptions": [
+          "Chirality labels are explicit finite-basis labels.",
+          "The coefficient is not fitted to residuals."
+        ],
+        "can_lower_complement_gap": true,
+        "classification": "SIGN_INDEFINITE_BOUNDED",
+        "id": "chirality_term",
+        "limitations": [
+          "The chirality splitting is still a Level 2 proxy term."
+        ],
+        "lower_bound_method": "Weyl bound from explicit chirality coefficient",
+        "matrix_structure": "diagonal sign-indefinite term",
+        "name": "Chirality splitting contribution",
+        "operator_role": "left/right chirality dependent diagonal splitting",
+        "preserves_zero_modes": true,
+        "source_module": "twisted_dirac",
+        "source_symbol": "level2_chirality_term"
+      },
+      {
+        "assumptions": [
+          "Off-diagonal strengths are explicit and nonnegative.",
+          "Only same-(k,j,chirality) cross-sector couplings are allowed in Level 2."
+        ],
+        "can_lower_complement_gap": true,
+        "classification": "OFF_DIAGONAL_BOUNDED",
+        "id": "sector_coupling",
+        "limitations": [
+          "This is the weakest matrix term for analytic upgrade because the present control is finite-basis.",
+          "No infinite-basis operator-norm bound is proven here."
+        ],
+        "lower_bound_method": "Gershgorin bound and restricted min-max finite-basis check",
+        "matrix_structure": "off-diagonal symmetric finite matrix block",
+        "name": "Sector and boundary off-diagonal coupling",
+        "operator_role": "symmetric off-diagonal coupling between sectors with matching k, j, chirality",
+        "preserves_zero_modes": true,
+        "source_module": "twisted_dirac",
+        "source_symbol": "level2_sector_coupling_term"
+      },
+      {
+        "assumptions": [
+          "The cutoff Lambda^2 is supplied explicitly and defaults to 1/(4*pi).",
+          "Dirac-squared input d is nonnegative."
+        ],
+        "can_lower_complement_gap": false,
+        "classification": "PSD_EXACT",
+        "id": "heat_lift",
+        "limitations": [
+          "The heat lift inherits any incompleteness in the lower bound for D^dagger D on the complement."
+        ],
+        "lower_bound_method": "PSD nonnegative monotone heat-lift inequality",
+        "matrix_structure": "spectral functional of D^dagger D",
+        "name": "Heat-kernel Hopf lift",
+        "operator_role": "monotone heat lift d + mu_H(1-exp(-d/Lambda^2))",
+        "preserves_zero_modes": true,
+        "source_module": "ht_operator",
+        "source_symbol": "build_ht_spectrum"
+      },
+      {
+        "assumptions": [
+          "Profile operators are PSD unless explicit failure tests opt into negative profiles.",
+          "The curvature/profile positivity condition is imposed on the complement."
+        ],
+        "can_lower_complement_gap": false,
+        "classification": "PSD_EXACT",
+        "id": "psd_profile",
+        "limitations": [
+          "The full curvature/profile operator from the action is not computed here."
+        ],
+        "lower_bound_method": "PSD nonnegative Weyl contribution",
+        "matrix_structure": "PSD vector or matrix contribution; negative profiles are rejected by default",
+        "name": "Positive-semidefinite curvature/profile contribution",
+        "operator_role": "optional PSD profile contribution on H_perp",
+        "preserves_zero_modes": true,
+        "source_module": "ht_operator",
+        "source_symbol": "_profile_values"
+      },
+      {
+        "assumptions": [
+          "Exactly three protected zero modes are inserted or projected in the Level 2 scaffold.",
+          "The complement is taken orthogonal to that finite coordinate subspace."
+        ],
+        "can_lower_complement_gap": false,
+        "classification": "FINITE_BASIS_ONLY",
+        "id": "zero_complement_projector",
+        "limitations": [
+          "This is the weakest analytic block: dim ker D_twist = 3 is not proven in the full action.",
+          "The infinite-dimensional complement separation remains open."
+        ],
+        "lower_bound_method": "min-max restricted complement in finite basis",
+        "matrix_structure": "coordinate projector in the Level 2 finite basis",
+        "name": "Zero-mode and complement projector",
+        "operator_role": "separates three protected zero modes from H_perp in the finite basis",
+        "preserves_zero_modes": true,
+        "source_module": "twisted_dirac / positivity",
+        "source_symbol": "zero_mode_subspace / complement_projector"
+      }
+    ],
+    "theorem_complete": false,
+    "title": "BHSM v1.3A Level 2 H_T Term Inventory"
+  },
+  "limitations": [
+    "The report is an analytic-bound development scaffold over DIRAC_PROXY_LEVEL_2.",
+    "It does not prove the full no-extra-light-state theorem.",
+    "No frozen v1.0/v1.1 predictions or v1.2 action-origin outputs are changed."
+  ],
+  "next_upgrade_target": "Prove the full-action zero-mode/complement decomposition dim ker D_twist = 3 and prove assumptions A1-A6 from the complete operator.",
+  "sector_coupling_bound_status": "v1.3B adds finite spectral, Frobenius, row-sum, Weyl, and relative-bound estimates. v1.3C adds structured block and generalized relative-bound diagnostics. v1.3D tests uniform-in-k_max stability through k_max=32. v1.3E defines the Hilbert-space/domain assumptions needed to upgrade the scan. The status remains THEOREM_SCAFFOLD, not proven.",
+  "theorem_complete": false,
+  "title": "BHSM v1.3A H_T Analytic-Bound Classification Report",
+  "v1_3g_zero_mode_complement_update": {
+    "claim": "BHSM v1.3G formalizes the zero-mode/index and complement-projector scaffold; it does not prove the full index theorem.",
+    "complement_projector_status": "COMPLEMENT_PROJECTOR_SCAFFOLD",
+    "index_status": "INDEX_SCAFFOLD",
+    "mirror_zero_mode_status": "OPEN",
+    "status": "IMPLEMENTED",
+    "theorem_complete": false,
+    "zero_mode_count": 3
+  },
+  "v1_3h_diagonal_mirror_update": {
+    "claim": "BHSM v1.3H audits the diagonal complement lower bound and mirror-mode exclusion conditions; it does not prove the full H_T theorem.",
+    "diagonal_bound_clears_required": true,
+    "finite_diagonal_complement_lower_bound": 1.4641,
+    "mirror_exclusion_status": "OPEN_MIRROR_RISK",
+    "open_mirror_risk_count": 3,
+    "required_dirac_lower_bound": 0.8038064161349437,
+    "status": "IMPLEMENTED",
+    "theorem_complete": false
+  },
+  "v1_3i_mirror_exclusion_update": {
+    "boundary_functional_channel": "OPEN",
+    "claim": "BHSM v1.3I excludes generated mirror candidates at the chiral-projector scaffold channel, but does not prove the full H_T theorem.",
+    "excluded_count": 3,
+    "exclusion_channel": "EXCLUDED_BY_CHIRAL_PROJECTOR",
+    "higgs_u1_phase_channel": "OPEN",
+    "open_mirror_risk_count": 0,
+    "scaffold_index": 3,
+    "status": "IMPLEMENTED",
+    "theorem_complete": false
+  },
+  "v1_3j_zero_mode_alignment_update": {
+    "aligned": [
+      "zero_mode_lepton -> coordinate 0"
+    ],
+    "claim": "BHSM v1.3J audits formal/coordinate zero-mode alignment and finds partial alignment; it does not prove the full H_T theorem.",
+    "mirror_exclusion_intact": true,
+    "one_to_one_alignment": false,
+    "open_alignment_gap_remains": true,
+    "open_alignment_gaps": [
+      "zero_mode_up -> coordinate 18",
+      "zero_mode_down -> coordinate 36"
+    ],
+    "status": "IMPLEMENTED",
+    "theorem_complete": false
+  },
+  "v1_3k_sector_labeled_kernel_update": {
+    "claim": "BHSM v1.3K audits formal sector-labeled protected kernel construction and reports that the current Level 2 matrix does not protect the formal up/down kernel coordinates.",
+    "classification": "FORMAL_KERNEL_NOT_PROTECTED",
+    "formal_gap_passes": false,
+    "formal_protected_coordinates": [
+      0,
+      18,
+      36
+    ],
+    "legacy_protected_coordinates": [
+      0,
+      1,
+      2
+    ],
+    "previous_gap_survives": false,
+    "status": "IMPLEMENTED",
+    "theorem_complete": false
+  },
+  "v1_3l_formal_kernel_operator_update": {
+    "claim": "Corrected finite-basis formal-kernel Level 2 scaffold; full H_T theorem remains open.",
+    "first_complement_eigenvalue": 6.8171156827281205,
+    "formal_kernel_protected": true,
+    "formal_protected_coordinates": [
+      0,
+      18,
+      36
+    ],
+    "ht_gap": 19592.076941940737,
+    "margin": 6.81711568272658,
+    "new_variant": "DIRAC_PROXY_LEVEL_2_FORMAL_KERNEL",
+    "old_protected_coordinates": [
+      0,
+      1,
+      2
+    ],
+    "passes_mu_h": true,
+    "protected_sectors": [
+      "lepton",
+      "up",
+      "down"
+    ],
+    "required_dirac_lower_bound": 0.8038064161349437,
+    "sector_coupling_vanishes_on_formal_kernel": true,
+    "status": "FORMAL_KERNEL_GAP_RESTORED",
+    "theorem_complete": false
+  },
+  "v1_3m_formal_kernel_regression_update": {
+    "all_convergence_rows_pass": true,
+    "convergence_rows": 27,
+    "direct_lower_bound": 6.8171156827281205,
+    "gershgorin_lower_bound": 6.721838618515489,
+    "ht_gap": 19592.076941940737,
+    "margin": 6.81711568272658,
+    "minmax_lower_bound": 6.8171156827281205,
+    "operator_variant": "DIRAC_PROXY_LEVEL_2_FORMAL_KERNEL",
+    "protected_coordinates": [
+      0,
+      18,
+      36
+    ],
+    "protected_sectors": [
+      "lepton",
+      "up",
+      "down"
+    ],
+    "sector_coupling_spectral_norm": 0.47208720318305375,
+    "status": "FORMAL_KERNEL_CONVERGENCE_SUPPORTED",
+    "structured_lower_bound": 6.729508865520464,
+    "supersedes_coordinate_first_dependent_conclusions": true,
+    "theorem_complete": false,
+    "worst_direct_margin": 4.833981204821612,
+    "worst_gershgorin_margin": 3.949470723972136
+  },
+  "v1_3n_formal_kernel_action_origin_update": {
+    "clears_required_bound": true,
+    "diagonal_lower_bound": 6.833527254265818,
+    "exact_finite_lower_bound": 6.8171156827281205,
+    "first_diagonal_complement_coordinate": 1,
+    "gershgorin_lower_bound": 6.721838618515489,
+    "old_coordinate_first_coordinates": [
+      0,
+      1,
+      2
+    ],
+    "parent_action_status": "REDUCED_FROM_PARENT_ACTION",
+    "projector_derivation_status": "FORMAL_KERNEL_BASIS_DERIVED",
+    "protected_coordinates": [
+      0,
+      18,
+      36
+    ],
+    "protected_sectors": [
+      "lepton",
+      "up",
+      "down"
+    ],
+    "required_dirac_lower_bound": 0.8038064161349437,
+    "semi_analytic_bound_status": "SEMI_ANALYTIC_BOUND_SCAFFOLD_PASSES",
+    "structured_relative_lower_bound": 6.729508865520464,
+    "theorem_complete": false
+  },
+  "v1_3o_symbolic_formal_kernel_update": {
+    "coordinate_free_subspace": {
+      "basis_realization": {
+        "avoids_old_coordinate_first_block": true,
+        "formula": "M(k_max)=sum_{k=0}^{k_max}(floor(k/2)+1); ell=0, u=2M, d=4M",
+        "k_max": 4,
+        "limitations": [
+          "Coordinates are finite-basis labels; K_formal is the coordinate-free object.",
+          "The old coordinate-first block is retained only as a regression comparison."
+        ],
+        "matches_current_basis": true,
+        "modes_per_chirality_sector": 9,
+        "old_coordinate_first_block": [
+          0,
+          1,
+          2
+        ],
+        "operator_coordinates": [
+          0,
+          18,
+          36
+        ],
+        "realized_coordinates": [
+          0,
+          18,
+          36
+        ],
+        "sector_coordinates": {
+          "down": 36,
+          "lepton": 0,
+          "up": 18
+        },
+        "status": "BASIS_REALIZED",
+        "theorem_complete": false
+      },
+      "basis_realization_scan": [
+        {
+          "avoids_old_coordinate_first_block": true,
+          "formula": "M(k_max)=sum_{k=0}^{k_max}(floor(k/2)+1); ell=0, u=2M, d=4M",
+          "k_max": 4,
+          "limitations": [
+            "Coordinates are finite-basis labels; K_formal is the coordinate-free object.",
+            "The old coordinate-first block is retained only as a regression comparison."
+          ],
+          "matches_current_basis": true,
+          "modes_per_chirality_sector": 9,
+          "old_coordinate_first_block": [
+            0,
+            1,
+            2
+          ],
+          "operator_coordinates": [
+            0,
+            18,
+            36
+          ],
+          "realized_coordinates": [
+            0,
+            18,
+            36
+          ],
+          "sector_coordinates": {
+            "down": 36,
+            "lepton": 0,
+            "up": 18
+          },
+          "status": "BASIS_REALIZED",
+          "theorem_complete": false
+        },
+        {
+          "avoids_old_coordinate_first_block": true,
+          "formula": "M(k_max)=sum_{k=0}^{k_max}(floor(k/2)+1); ell=0, u=2M, d=4M",
+          "k_max": 6,
+          "limitations": [
+            "Coordinates are finite-basis labels; K_formal is the coordinate-free object.",
+            "The old coordinate-first block is retained only as a regression comparison."
+          ],
+          "matches_current_basis": true,
+          "modes_per_chirality_sector": 16,
+          "old_coordinate_first_block": [
+            0,
+            1,
+            2
+          ],
+          "operator_coordinates": [
+            0,
+            32,
+            64
+          ],
+          "realized_coordinates": [
+            0,
+            32,
+            64
+          ],
+          "sector_coordinates": {
+            "down": 64,
+            "lepton": 0,
+            "up": 32
+          },
+          "status": "BASIS_REALIZED",
+          "theorem_complete": false
+        },
+        {
+          "avoids_old_coordinate_first_block": true,
+          "formula": "M(k_max)=sum_{k=0}^{k_max}(floor(k/2)+1); ell=0, u=2M, d=4M",
+          "k_max": 8,
+          "limitations": [
+            "Coordinates are finite-basis labels; K_formal is the coordinate-free object.",
+            "The old coordinate-first block is retained only as a regression comparison."
+          ],
+          "matches_current_basis": true,
+          "modes_per_chirality_sector": 25,
+          "old_coordinate_first_block": [
+            0,
+            1,
+            2
+          ],
+          "operator_coordinates": [
+            0,
+            50,
+            100
+          ],
+          "realized_coordinates": [
+            0,
+            50,
+            100
+          ],
+          "sector_coordinates": {
+            "down": 100,
+            "lepton": 0,
+            "up": 50
+          },
+          "status": "BASIS_REALIZED",
+          "theorem_complete": false
+        },
+        {
+          "avoids_old_coordinate_first_block": true,
+          "formula": "M(k_max)=sum_{k=0}^{k_max}(floor(k/2)+1); ell=0, u=2M, d=4M",
+          "k_max": 10,
+          "limitations": [
+            "Coordinates are finite-basis labels; K_formal is the coordinate-free object.",
+            "The old coordinate-first block is retained only as a regression comparison."
+          ],
+          "matches_current_basis": true,
+          "modes_per_chirality_sector": 36,
+          "old_coordinate_first_block": [
+            0,
+            1,
+            2
+          ],
+          "operator_coordinates": [
+            0,
+            72,
+            144
+          ],
+          "realized_coordinates": [
+            0,
+            72,
+            144
+          ],
+          "sector_coordinates": {
+            "down": 144,
+            "lepton": 0,
+            "up": 72
+          },
+          "status": "BASIS_REALIZED",
+          "theorem_complete": false
+        },
+        {
+          "avoids_old_coordinate_first_block": true,
+          "formula": "M(k_max)=sum_{k=0}^{k_max}(floor(k/2)+1); ell=0, u=2M, d=4M",
+          "k_max": 12,
+          "limitations": [
+            "Coordinates are finite-basis labels; K_formal is the coordinate-free object.",
+            "The old coordinate-first block is retained only as a regression comparison."
+          ],
+          "matches_current_basis": true,
+          "modes_per_chirality_sector": 49,
+          "old_coordinate_first_block": [
+            0,
+            1,
+            2
+          ],
+          "operator_coordinates": [
+            0,
+            98,
+            196
+          ],
+          "realized_coordinates": [
+            0,
+            98,
+            196
+          ],
+          "sector_coordinates": {
+            "down": 196,
+            "lepton": 0,
+            "up": 98
+          },
+          "status": "BASIS_REALIZED",
+          "theorem_complete": false
+        }
+      ],
+      "correct_claim": "BHSM v1.3O separates K_formal and H_perp as coordinate-free scaffold objects and verifies their current finite Level 2 basis realization.",
+      "limitations": [
+        "This does not prove the full index theorem or complete H_T spectrum.",
+        "Finite coordinate checks remain scaffold evidence."
+      ],
+      "projector": {
+        "complement_subspace": "H_perp = K_formal^perp",
+        "idempotent_statement": "P_formal^2 = P_formal",
+        "limitations": [
+          "The coordinate-free projector is realized in the current finite basis but not proven for the complete Hilbert space."
+        ],
+        "name": "P_formal",
+        "orthogonality_statement": "P_formal P_perp = 0, P_perp = I - P_formal",
+        "protected_subspace": "K_formal = span{|ell,0,0,q=0,chi=-1>, |u,0,0,q=0,chi=-1>, |d,0,0,q=0,chi=-1>}",
+        "rank": 3,
+        "status": "COORDINATE_FREE_SCAFFOLD",
+        "theorem_complete": false
+      },
+      "subspace": {
+        "assumptions": [
+          "The protected BHSM family labels are the heavy (0,0) sector labels for lepton, up, and down sectors.",
+          "The protected chirality convention is chi=-1.",
+          "The v1.2 boundary functional supplies the sector labels without using empirical masses."
+        ],
+        "chirality": -1,
+        "dimension": 3,
+        "j": 0,
+        "k": 0,
+        "limitations": [
+          "This is the coordinate-free scaffold subspace, not a full index theorem.",
+          "Mirror-mode exclusion and the full infinite-basis complement split remain proof obligations."
+        ],
+        "name": "K_formal",
+        "q": 0,
+        "sectors": [
+          "lepton",
+          "up",
+          "down"
+        ],
+        "spanning_states": [
+          "|ell,0,0,q=0,chi=-1>",
+          "|u,0,0,q=0,chi=-1>",
+          "|d,0,0,q=0,chi=-1>"
+        ],
+        "status": "COORDINATE_FREE_SCAFFOLD",
+        "theorem_complete": false
+      },
+      "theorem_complete": false,
+      "title": "BHSM v1.3O Coordinate-Free Formal-Kernel Subspace"
+    },
+    "correct_claim": "BHSM v1.3O gives a closed symbolic formal-kernel scaffold and finite basis realization. It does not prove the full no-extra-light-state theorem.",
+    "status": "IMPLEMENTED",
+    "symbolic_operator_summary": {
+      "basis_realization": {
+        "avoids_old_coordinate_first_block": true,
+        "formula": "M(k_max)=sum_{k=0}^{k_max}(floor(k/2)+1); ell=0, u=2M, d=4M",
+        "k_max": 4,
+        "limitations": [
+          "Coordinates are finite-basis labels; K_formal is the coordinate-free object.",
+          "The old coordinate-first block is retained only as a regression comparison."
+        ],
+        "matches_current_basis": true,
+        "modes_per_chirality_sector": 9,
+        "old_coordinate_first_block": [
+          0,
+          1,
+          2
+        ],
+        "operator_coordinates": [
+          0,
+          18,
+          36
+        ],
+        "realized_coordinates": [
+          0,
+          18,
+          36
+        ],
+        "sector_coordinates": {
+          "down": 36,
+          "lepton": 0,
+          "up": 18
+        },
+        "status": "BASIS_REALIZED",
+        "theorem_complete": false
+      },
+      "complement_bound": {
+        "assumptions": [
+          "K_formal is removed before complement bounds are evaluated.",
+          "The structured relative lower bound is used conservatively.",
+          "Natural Lambda^2=1/(4*pi) is fixed.",
+          "PSD profile terms cannot lower the complement gap."
+        ],
+        "clears_mu_h_after_heat_lift": true,
+        "clears_required_dirac_bound": true,
+        "complement_subspace": "H_perp = K_formal^perp",
+        "diagonal_complement_lower_bound": 6.833527254265818,
+        "exact_finite_lower_bound": 6.8171156827281205,
+        "heat_gap_margin": 6.729508865519165,
+        "heat_lift_lower_bound": 19591.98933512353,
+        "implication": "If the coordinate-free K_formal split, semi-analytic complement lower bound, sector-coupling relative bound, and PSD profile condition hold in the full operator, then H_T|H_perp >= mu_H.",
+        "lambda2": 0.07957747154594767,
+        "limitations": [
+          "This implication is conditional and scaffold-level.",
+          "The full coordinate-free infinite-basis operator proof remains open."
+        ],
+        "model_level": "DIRAC_PROXY_LEVEL_2_FORMAL_KERNEL",
+        "mu_h": 19585.25982625801,
+        "protected_subspace": "K_formal",
+        "psd_profile_assumption": "V_profile|H_perp >= 0",
+        "required_dirac_lower_bound": 0.8038064161349437,
+        "status": "SEMI_ANALYTIC_BOUND",
+        "structured_relative_lower_bound": 6.729508865520464,
+        "theorem_complete": false
+      },
+      "coordinate_free_projector": {
+        "complement_subspace": "H_perp = K_formal^perp",
+        "idempotent_statement": "P_formal^2 = P_formal",
+        "limitations": [
+          "The coordinate-free projector is realized in the current finite basis but not proven for the complete Hilbert space."
+        ],
+        "name": "P_formal",
+        "orthogonality_statement": "P_formal P_perp = 0, P_perp = I - P_formal",
+        "protected_subspace": "K_formal = span{|ell,0,0,q=0,chi=-1>, |u,0,0,q=0,chi=-1>, |d,0,0,q=0,chi=-1>}",
+        "rank": 3,
+        "status": "COORDINATE_FREE_SCAFFOLD",
+        "theorem_complete": false
+      },
+      "correct_claim": "BHSM v1.3O gives a closed symbolic formal-kernel scaffold and finite basis realization. It does not prove the full no-extra-light-state theorem.",
+      "formal_kernel": {
+        "assumptions": [
+          "The protected BHSM family labels are the heavy (0,0) sector labels for lepton, up, and down sectors.",
+          "The protected chirality convention is chi=-1.",
+          "The v1.2 boundary functional supplies the sector labels without using empirical masses."
+        ],
+        "chirality": -1,
+        "dimension": 3,
+        "j": 0,
+        "k": 0,
+        "limitations": [
+          "This is the coordinate-free scaffold subspace, not a full index theorem.",
+          "Mirror-mode exclusion and the full infinite-basis complement split remain proof obligations."
+        ],
+        "name": "K_formal",
+        "q": 0,
+        "sectors": [
+          "lepton",
+          "up",
+          "down"
+        ],
+        "spanning_states": [
+          "|ell,0,0,q=0,chi=-1>",
+          "|u,0,0,q=0,chi=-1>",
+          "|d,0,0,q=0,chi=-1>"
+        ],
+        "status": "COORDINATE_FREE_SCAFFOLD",
+        "theorem_complete": false
+      },
+      "limitations": [
+        "The full operator, index theorem, and infinite-basis complement split remain open.",
+        "Finite-basis evidence is not labeled FULL_OPERATOR_PROVEN.",
+        "Frozen BHSM v1.0/v1.1 predictions are not changed."
+      ],
+      "model_level": "DIRAC_PROXY_LEVEL_2_FORMAL_KERNEL",
+      "operator_expression": "D_FK^2 = D_diag^2 + V_Hopf + V_boundary + V_chi + K_sector + P_lift^perp",
+      "terms": [
+        {
+          "acts_only_on_h_perp": false,
+          "assumptions": [
+            "The formal kernel rows/columns are zero-protected in the corrected Level 2 realization."
+          ],
+          "can_lower_complement_gap": false,
+          "classification": "DIAGONAL_EXACT",
+          "expression": "D_diag^2",
+          "id": "D_diag_squared",
+          "limitations": [
+            "Term classification is for DIRAC_PROXY_LEVEL_2_FORMAL_KERNEL, not the full analytic twisted Dirac operator."
+          ],
+          "lower_bound_method": "exact diagonal complement minimum after removing K_formal",
+          "preserves_k_formal": true,
+          "status": "SEMI_ANALYTIC_BOUND",
+          "vanishes_on_k_formal": true
+        },
+        {
+          "acts_only_on_h_perp": false,
+          "assumptions": [
+            "Protected states have q=0 and are projected into K_formal."
+          ],
+          "can_lower_complement_gap": true,
+          "classification": "SIGN_INDEFINITE_BOUNDED",
+          "expression": "V_Hopf(q)",
+          "id": "V_Hopf",
+          "limitations": [
+            "Term classification is for DIRAC_PROXY_LEVEL_2_FORMAL_KERNEL, not the full analytic twisted Dirac operator."
+          ],
+          "lower_bound_method": "included in semi-analytic diagonal and Gershgorin rows",
+          "preserves_k_formal": true,
+          "status": "SEMI_ANALYTIC_BOUND",
+          "vanishes_on_k_formal": true
+        },
+        {
+          "acts_only_on_h_perp": false,
+          "assumptions": [
+            "The v1.2 boundary functional is supplied and acts compatibly with K_formal."
+          ],
+          "can_lower_complement_gap": true,
+          "classification": "SIGN_INDEFINITE_BOUNDED",
+          "expression": "V_boundary(Omega_f)",
+          "id": "V_boundary",
+          "limitations": [
+            "Term classification is for DIRAC_PROXY_LEVEL_2_FORMAL_KERNEL, not the full analytic twisted Dirac operator."
+          ],
+          "lower_bound_method": "included in semi-analytic diagonal and Gershgorin rows",
+          "preserves_k_formal": true,
+          "status": "SEMI_ANALYTIC_BOUND",
+          "vanishes_on_k_formal": true
+        },
+        {
+          "acts_only_on_h_perp": false,
+          "assumptions": [
+            "The protected chiral channel is chi=-1 and is zero-protected by P_formal."
+          ],
+          "can_lower_complement_gap": true,
+          "classification": "SIGN_INDEFINITE_BOUNDED",
+          "expression": "V_chi(chi)",
+          "id": "V_chi",
+          "limitations": [
+            "Term classification is for DIRAC_PROXY_LEVEL_2_FORMAL_KERNEL, not the full analytic twisted Dirac operator."
+          ],
+          "lower_bound_method": "included in semi-analytic diagonal and Gershgorin rows",
+          "preserves_k_formal": true,
+          "status": "SEMI_ANALYTIC_BOUND",
+          "vanishes_on_k_formal": true
+        },
+        {
+          "acts_only_on_h_perp": true,
+          "assumptions": [
+            "The corrected formal-kernel sector-coupling block vanishes on K_formal."
+          ],
+          "can_lower_complement_gap": true,
+          "classification": "OFF_DIAGONAL_BOUNDED",
+          "expression": "K_sector",
+          "id": "K_sector",
+          "limitations": [
+            "Uniform/infinite-basis sector-coupling control remains a scaffold-level result."
+          ],
+          "lower_bound_method": "structured relative-bound candidate and finite-basis norm checks",
+          "preserves_k_formal": true,
+          "status": "SEMI_ANALYTIC_BOUND",
+          "vanishes_on_k_formal": true
+        },
+        {
+          "acts_only_on_h_perp": true,
+          "assumptions": [
+            "Natural Lambda^2=1/(4*pi) is fixed and not tuned."
+          ],
+          "can_lower_complement_gap": false,
+          "classification": "PSD_EXACT",
+          "expression": "P_lift^perp = mu_H(1-exp(-D_FK^2/Lambda^2)) P_perp",
+          "id": "P_lift_perp",
+          "limitations": [
+            "PSD heat lift is exact inside the scaffold once D_FK^2 lower bound is supplied."
+          ],
+          "lower_bound_method": "monotone heat-lift lower bound",
+          "preserves_k_formal": true,
+          "status": "SEMI_ANALYTIC_BOUND",
+          "vanishes_on_k_formal": true
+        },
+        {
+          "acts_only_on_h_perp": true,
+          "assumptions": [
+            "Curvature/profile contribution is positive semidefinite on H_perp."
+          ],
+          "can_lower_complement_gap": false,
+          "classification": "PSD_EXACT",
+          "expression": "V_profile|H_perp >= 0",
+          "id": "PSD_profile",
+          "limitations": [
+            "The PSD profile condition remains a sufficient assumption, not a full scalar/topographic proof."
+          ],
+          "lower_bound_method": "PSD nonnegative Weyl contribution",
+          "preserves_k_formal": true,
+          "status": "COORDINATE_FREE_SCAFFOLD",
+          "vanishes_on_k_formal": true
+        }
+      ],
+      "theorem_complete": false,
+      "title": "BHSM v1.3O Symbolic Formal-Kernel H_T Operator Scaffold"
+    },
+    "theorem_complete": false
+  },
+  "weakest_matrix_term": "sector_coupling",
+  "weakest_term": "zero_complement_projector"
+}

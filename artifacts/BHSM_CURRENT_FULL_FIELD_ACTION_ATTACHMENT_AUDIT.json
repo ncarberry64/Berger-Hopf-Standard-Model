@@ -1,0 +1,119 @@
+{
+  "FULL_BHSM_COMPLETE": false,
+  "action_version": "BHSM-AE-2.0.0",
+  "adapter_reported_dependencies_open": [
+    "Gate7_closed_background",
+    "current_AE2_background_attachment",
+    "machine_readable_full_gauge_fermion_HS_action",
+    "same_action_replacement_quantum_saddle",
+    "action_selected_physical_HS_direction",
+    "local_zero_momentum_gauge_couplings",
+    "action_derived_Yukawa_matrices",
+    "action_derived_mass_and_mixing_spectrum"
+  ],
+  "ae2_domain_result": {
+    "field_action_attachment_completed": false,
+    "global_fermion_reset_domain_owned": true,
+    "independent_normal_matter_boundary_action": "S_Sigma_F_AE2=0",
+    "new_continuous_coefficient": null,
+    "new_physical_scale": null,
+    "new_propagating_field": null
+  },
+  "artifact": "BHSM_CURRENT_FULL_FIELD_ACTION_ATTACHMENT_AUDIT",
+  "audit_scope": "CURRENT_AE2_BACKGROUND_TO_UNIVERSAL_S1_S2_S3_S4_PHYSICAL_FIELD_ATTACHMENT",
+  "classification": "PRECISE_ATTACHMENT_NO_GO_CERTIFICATE",
+  "current_retained_action_state": {
+    "HS_or_scalar_fields": 0,
+    "constraint_multipliers": 24,
+    "fermion_fields": 0,
+    "gauge_and_ghost_fields": 0,
+    "geometry_coordinates": 37,
+    "geometry_velocities": 37,
+    "retained_order": 12,
+    "total_state_dimension": 98
+  },
+  "decision": "CURRENT_RETAINED_N12_LOCAL_ACTION_ADAPTER_IS_GEOMETRY_ONLY_AND_CANNOT_BY_ITSELF_INSTANTIATE_UNIVERSAL_SM_S2_S3_S4",
+  "evidence_base_commit": "f4dcd155d742009de6a10c209f47f21a36afba49",
+  "implemented_complementary_infrastructure": {
+    "explicit_BRST_physical_nullspace_quotient": true,
+    "explicit_Faddeev_Popov_regularity_check": true,
+    "kinetic_inverse_assumed_or_formed": false,
+    "physical_action_inputs_supplied_by_BRST_module": false,
+    "quadratic_engine_accepts_BRST_quotient": true,
+    "universal_derivative_orders": [
+      1,
+      2,
+      3,
+      4
+    ]
+  },
+  "minimum_promotion_inputs": [
+    "one_current_AE2_physical_background_with_geometry_gauge_fermion_HS_blocks",
+    "same_action_value_and_derivatives_orders_1_through_4",
+    "history_and_seam_action_assembly",
+    "explicit_constraint_and_BRST_quotient_frame",
+    "current_action_owned_local_momentum_symbol",
+    "all_required_self_and_cross_sector_derivative_blocks",
+    "same_action_replacement_quantum_saddle",
+    "action_selected_physical_HS_direction",
+    "local_zero_momentum_Lorentzian_gauge_residues_and_couplings",
+    "action_derived_Yukawa_matrices",
+    "action_version_background_domain_and_provenance_hashes"
+  ],
+  "missing_physical_field_blocks": [
+    "gauge_and_ghost_fields",
+    "fermion_fields",
+    "HS_or_scalar_fields",
+    "geometry_gauge_cross_derivatives",
+    "geometry_fermion_cross_derivatives",
+    "geometry_HS_cross_derivatives",
+    "gauge_fermion_HS_cross_derivatives"
+  ],
+  "retained_component_evidence": {
+    "absolute_dimensionless_boundary_form_factors_derived": true,
+    "absolute_gauge_replacement_seed_evaluated": true,
+    "complete_current_full_field_action_materialized": false,
+    "global_SM_bundle_and_representations_fixed": true,
+    "historical_centers_promoted": false,
+    "nonzero_HS_kinetic_kernel_evaluated": true
+  },
+  "schema_version": 1,
+  "scientific_boundary": {
+    "BHSM_action_completion_impossible_claimed": false,
+    "historical_nonlocal_DtN_residues_relabelled_as_local_couplings": false,
+    "new_action_coefficient_or_empirical_datum_invented": false,
+    "physical_prediction_promotion": "BLOCKED",
+    "root_nonexistence_claimed": false,
+    "universal_engine_infrastructure_invalidated": false
+  },
+  "source_sha256": {
+    "artifacts/BHSM_aether_common_gauge_hs_pushforward_v16_05.json": "B64A38785B41E01DAE38FA303005FF934C0B4148452B4C2CEC08C49CF001D572",
+    "artifacts/BHSM_aether_cycle_scale_renormalization_v15_89.json": "DC488B37CA654B72F9426626490A302965985053EC204FDADD18AEB18B7ADE90",
+    "artifacts/BHSM_aether_hybrid_standard_model_bundle_v15_53.json": "951098D595DFD4DABBDBAB6C063A0650C491337CC3C0B3D26F5D4FD124F1FB25",
+    "artifacts/BHSM_aether_total_microscopic_action_v15_3.json": "F57286822FCB15C204836D4C2B2ACAC25141CB016703AFB43A6153AAA2F7E002",
+    "artifacts/action_extension/BHSM_ACTION_AE2_GLOBAL_SPIN_RESET_ACTION.json": "4C756145A9E303F6E4F7F9536CF5639957D010C1A97AF6BE9299830C549B82DC",
+    "src/bhsm/interface/aether_jax_full_local_action.py": "A013B2EE3E9ED05A314E436734185F993CB38C4C159A392930BC5FCF086EBBCC",
+    "src/bhsm/interface/aether_n3_exact_full_local_action_jet_v17_60.py": "51114F2A47CA1743B8FA1D942F2DD80322929BE1DD4AEB9CAB08C45E3D795F7C",
+    "src/bhsm/interface/retained_n12_action_expansion_adapter.py": "7AB2977352F3C4617DB128E9044655FB03726139744315228FCE055193C5FEFF",
+    "src/bhsm/interface/retained_sm_physics_adapter.py": "5C84D81AE5FF5194465F2440C4BD039B008CC83391C6B30F2A2939395F02D013",
+    "src/bhsm/interface/universal_brst_quotient.py": "A77A609A5F2ED8F46DB49935D3956B917044179035E15FC2B448A3B708695E80",
+    "src/bhsm/interface/universal_quadratic_spectrum.py": "B138EE8671EF2D539362562A8F6471506746EAD0A1246005D9FCF6291740FF40"
+  },
+  "validation": {
+    "ae2_action_version_is_current": true,
+    "ae2_adds_no_new_coefficient": true,
+    "ae2_adds_no_new_propagating_field": true,
+    "ae2_adds_no_new_scale": true,
+    "ae2_gate7_remains_open": true,
+    "all_expected_adapter_blockers_are_present": true,
+    "brst_quotient_is_implemented_but_requires_action_owned_inputs": true,
+    "historical_DtN_not_relabelled_as_local_coupling": true,
+    "microscopic_core_action_not_owned": true,
+    "physical_HS_direction_and_saddle_are_open": true,
+    "physical_yukawa_mass_and_gauge_outputs_are_open": true,
+    "retained_bundle_is_valid_component_evidence": true,
+    "retained_state_is_exactly_37_plus_37_plus_24": true,
+    "total_microscopic_operator_not_derived": true
+  },
+  "validation_passed": true
+}

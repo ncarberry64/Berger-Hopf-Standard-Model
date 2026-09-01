@@ -1,0 +1,68 @@
+{
+  "all_slots_represented_or_zero": true,
+  "axiom_status": "BUNDLE_SEPARATION_AXIOM_FORMALIZED",
+  "limitations": [
+    "Representation of the mixed coefficient rule does not by itself prove scalar/topographic decoupling or the full H_T theorem.",
+    "The rule forbids independent fitted mixed coefficients."
+  ],
+  "real_missing_terms": [],
+  "rows": [
+    {
+      "classification": "ZERO_BY_COMPATIBILITY",
+      "contributes_to_r_bundle": false,
+      "independent_bundle_curvature_forbidden": true,
+      "limitation": "No independent bundle curvature coefficient is introduced.",
+      "mapped_operator_term": "A0 + V_Hopf bookkeeping only",
+      "representation": "zero/cancelled by vertical-horizontal compatibility",
+      "slot": "hopf_fiber_base_cross"
+    },
+    {
+      "classification": "REPRESENTED_BY_V_BOUNDARY",
+      "contributes_to_r_bundle": false,
+      "independent_bundle_curvature_forbidden": true,
+      "limitation": "The boundary action remains the place where base-node phase enters.",
+      "mapped_operator_term": "V_boundary",
+      "representation": "represented by boundary functional sector",
+      "slot": "base_boundary_cross"
+    },
+    {
+      "classification": "REPRESENTED_BY_V_PSD_PROFILE",
+      "contributes_to_r_bundle": false,
+      "independent_bundle_curvature_forbidden": true,
+      "limitation": "Full scalar/topographic proof remains separate from this coefficient rule.",
+      "mapped_operator_term": "V_PSD/profile",
+      "representation": "represented by profile/coframe topographic sector",
+      "slot": "boundary_coframe_cross"
+    },
+    {
+      "classification": "REPRESENTED_BY_SCALAR_TOPOGRAPHIC_SCREENED_SECTOR",
+      "contributes_to_r_bundle": false,
+      "independent_bundle_curvature_forbidden": true,
+      "limitation": "This classifies the mixed channel as represented rather than free.",
+      "mapped_operator_term": "scalar/topographic screened sector",
+      "representation": "represented by scalar/topographic screened sector",
+      "slot": "hopf_boundary_coframe_mixed"
+    },
+    {
+      "classification": "REPRESENTED_BY_P_PERP_LIFT",
+      "contributes_to_r_bundle": false,
+      "independent_bundle_curvature_forbidden": true,
+      "limitation": "Mirror exclusion remains a separate dependency in the full theorem chain.",
+      "mapped_operator_term": "V_chi + P_perp_lift",
+      "representation": "represented by chiral projector and lift package",
+      "slot": "chirality_dependence"
+    },
+    {
+      "classification": "REPRESENTED_BY_V_BOUNDARY",
+      "contributes_to_r_bundle": false,
+      "independent_bundle_curvature_forbidden": true,
+      "limitation": "Sector dependence is not a fitted coefficient; it follows the formal sector-labeled boundary functional.",
+      "mapped_operator_term": "V_boundary + K_sector",
+      "representation": "represented by sector boundary functional",
+      "slot": "sector_dependence"
+    }
+  ],
+  "status": "TOPOGRAPHIC_REPRESENTATION_RULE_FORMALIZED",
+  "theorem_complete": true,
+  "title": "BHSM v2.11 Topographic Representation Rule Report"
+}

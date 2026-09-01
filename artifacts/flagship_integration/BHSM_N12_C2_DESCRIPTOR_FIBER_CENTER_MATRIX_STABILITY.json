@@ -1,0 +1,71 @@
+{
+  "FLAGSHIP_READY": false,
+  "FULL_BHSM_COMPLETE": false,
+  "artifact": "BHSM_N12_C2_DESCRIPTOR_FIBER_CENTER_MATRIX_STABILITY",
+  "diagnosis": {
+    "proof_authority": "CENTER_DIAGNOSTIC_ONLY",
+    "stable_fact": "THE_ACTION_D3_KATO_DATA,_COMPLETE_MOVING_CUBIC_GRADIENT,_FULL_BIRTH_MATRIX,_AND_SHORT_DESCRIPTOR_PROPAGATOR_SCALE_ARE_STABLE_UNDER_STEP_HALVING",
+    "unstable_fact": "THE_SMALL_FIXED_s_TANGENT_RESIDUAL_MATRIX_IS_A_DIFFERENCE_OF_LARGE_TERMS_AND_REQUIRES_A_SIGNED_HIGH_PRECISION_D4_OR_INTERVAL_DIRECTIONAL_EVALUATION"
+  },
+  "difference_scales": {
+    "Kato_eigenline_derivative_absolute_defect": 0.0,
+    "complete_c_gradient_relative_defect": 0.011884453655200992,
+    "full_action_difference_step": 1e-11,
+    "full_birth_matrix_relative_Frobenius_defect": 0.011884361658640435,
+    "half_action_difference_step": 5e-12,
+    "lambda_gradient_absolute_defect": 0.0,
+    "tangent_matrix_operator_difference": 628426485167.1886,
+    "tangent_matrix_relative_Frobenius_defect": 0.7759371557461825
+  },
+  "exact_next_dependency": "ENCLOSE_THE_SIGNED_FIXED_LINE_D4_TERM_AND_RETAINED_D5_CENTRAL_REMAINDER,_THEN_PROPAGATE_THE_CONJUGATED_FIXED_s_TANGENT_TUBE",
+  "growth_comparison": [
+    {
+      "absolute_growth_difference": 2.6201263381153694e-14,
+      "fullstep_growth": 1.0000000000003737,
+      "halfstep_growth": 1.0000000000004,
+      "signed_descriptor_horizon": 1e-24
+    },
+    {
+      "absolute_growth_difference": 2.615685446016869e-13,
+      "fullstep_growth": 1.0000000000037377,
+      "halfstep_growth": 1.0000000000039992,
+      "signed_descriptor_horizon": 1e-23
+    },
+    {
+      "absolute_growth_difference": 2.6139090891774686e-12,
+      "fullstep_growth": 1.0000000000373772,
+      "halfstep_growth": 1.0000000000399911,
+      "signed_descriptor_horizon": 1e-22
+    },
+    {
+      "absolute_growth_difference": 2.6141311337823936e-11,
+      "fullstep_growth": 1.0000000003737706,
+      "halfstep_growth": 1.0000000003999119,
+      "signed_descriptor_horizon": 1e-21
+    },
+    {
+      "absolute_growth_difference": 2.61414223601264e-10,
+      "fullstep_growth": 1.000000003737706,
+      "halfstep_growth": 1.0000000039991201,
+      "signed_descriptor_horizon": 1e-20
+    }
+  ],
+  "inputs": {
+    "artifacts/flagship_integration/BHSM_N12_C2_DESCRIPTOR_FIBER_CENTER_MATRIX.json": "0F14B24642C0BDA9FE1D9F25DA743823BCB754DF51327906F4D5685181EF98D1",
+    "artifacts/flagship_integration/BHSM_N12_C2_DESCRIPTOR_FIBER_CENTER_MATRIX.npz": "0FEBB7D15B1B8C89E5DBDF3A2B71D97BA1D096511FD1B0507209BD327A880A3F",
+    "artifacts/flagship_integration/BHSM_N12_C2_DESCRIPTOR_FIBER_CENTER_MATRIX_HALFSTEP.json": "774775F6148B0F76B36EDE6BF11CA1FEFD6F5167843C75BEF93C98738A69841B",
+    "artifacts/flagship_integration/BHSM_N12_C2_DESCRIPTOR_FIBER_CENTER_MATRIX_HALFSTEP.npz": "E382642B29E639994EAD18EC16980589C1ADA56C568333BECCE3D585F2C8CEFF",
+    "theory/n12_c2_descriptor_fiber_center_matrix.md": "B13EE92086E61808E71098E1D1EB83D53A9878D04DF29D85C681CD0AEE079D63"
+  },
+  "status": "FIXED_S_CENTER_PROPAGATOR_SCALE_STABLE;_CONJUGATED_INTERVAL_REMAINDER_OPEN",
+  "validation": {
+    "center_matrix_not_promoted_to_between_center_interval_authority": true,
+    "complete_moving_cubic_gradient_stable_to_two_percent": true,
+    "full_birth_matrix_stable_to_two_percent": true,
+    "no_equation_selector_recurrence_scale_gate_or_chord_added": true,
+    "one_e_minus_22_propagator_difference_below_3e_minus_12": true,
+    "same_exact_D3_Kato_center_data_replayed": true,
+    "small_tangent_residual_matrix_sensitivity_disclosed": true
+  },
+  "validation_passed": true
+}

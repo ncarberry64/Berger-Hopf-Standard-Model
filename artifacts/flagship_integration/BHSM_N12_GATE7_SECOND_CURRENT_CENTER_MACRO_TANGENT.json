@@ -1,0 +1,43 @@
+{
+  "FULL_BHSM_COMPLETE": false,
+  "adjudication": {
+    "first_current_center_macro_tangents": "SUPERSEDED_FOR_THIRD_NEWTON_PROJECTION",
+    "second_current_center_constraint_projection": "MATERIALIZED_AT_ALL_RETAINED_SEAMS"
+  },
+  "artifact": "BHSM_N12_GATE7_SECOND_CURRENT_CENTER_MACRO_TANGENT",
+  "authority": "DIRECT_RETAINED_ACTION_CONSTRAINT_NULLSPACES_NUMERICAL_CANDIDATE",
+  "claim_boundary": {
+    "FULL_BHSM_COMPLETE": false,
+    "Gate7": "ACTIVE_ACTION_OWNED_OPERATOR_ORACLE",
+    "continuous_action_constrained_center": "OPEN_NEWTON_ITERATION"
+  },
+  "data": "artifacts/flagship_integration/BHSM_N12_GATE7_SECOND_CURRENT_CENTER_MACRO_TANGENT.npz",
+  "data_SHA256": "90FAB17D6C4D14F7067E261DB9D85A2ECA39958FB92B91213D8FF5D62A2E24F6",
+  "exact_next_dependency": "APPLY_A_THIRD_SIGNED_GREEN_NEWTON_STEP_WITH_THE_SECOND_CURRENT_CENTER_GRAPH_JACOBIAN_AND_THESE_TANGENTS",
+  "inputs": {
+    "artifacts/flagship_integration/BHSM_N12_GATE7_CURRENT_LINEARIZATION_NEWTON_ENDPOINT_CANDIDATE.json": "DBAB6B85663141694D87657C37FA5D18E9CC9373DAE9A6BCA434D502375CC829",
+    "artifacts/flagship_integration/BHSM_N12_GATE7_CURRENT_LINEARIZATION_NEWTON_ENDPOINT_CANDIDATE.npz": "51D74E6ACFD9C0E4CF89D85078E8D7BADE296B5223DC5B1A91CFA30B1CF46945",
+    "artifacts/flagship_integration/BHSM_N12_GATE7_SIGNED_GREEN_CURRENT_CENTER_MACRO_TANGENT.json": "F07C0136239DE27D3C77F7FD74738BF9902DFE946401179C2E7696029AF1BB22",
+    "scripts/materialize_n12_gate7_second_current_center_macro_tangent.py": "183D36806267D4FDA79B9DBD1B09F3FB312258FA20C21E773610A474BECB9FD9",
+    "theory/n12_gate7_second_current_center_macro_tangent.md": "1A09C5013F8517E789178E1B4C52EC1A7FD73509E21C2A43EB143E7F5DC9E1F4"
+  },
+  "status": "SECOND_CURRENT_CENTER_48_SEAM_CONSTRAINT_TANGENTS_MATERIALIZED",
+  "summary": {
+    "maximum_constraint_tangent_residual_2_norm": 1.0664006167487506e-15,
+    "maximum_scaled_constraint_2_norm": 7.688178017059988e-16,
+    "maximum_tangent_orthonormal_residual_2_norm": 1.684329066408322e-15,
+    "minimum_constraint_singular_value": 0.000334616878764219,
+    "physical_dimension": 73,
+    "seam_count": 48
+  },
+  "validation": {
+    "all_48_retained_macro_seams_evaluated": true,
+    "all_center_constraints_are_numerically_closed": true,
+    "all_constraint_frames_have_rank_25": true,
+    "all_tangents_annihilate_constraints": true,
+    "all_tangents_are_orthonormal": true,
+    "no_action_source_selector_scale_gate_or_chord_changed": true,
+    "projection_uses_subspace_not_basis_orientation": true
+  },
+  "validation_passed": true
+}

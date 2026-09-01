@@ -168,7 +168,15 @@ def physical_skin_spectrum(intervals: int = 1600) -> dict[str, Any]:
     operator = diags([off, main, off], [-1, 0, 1])
     mass = diags(measure)
     eigenvalues = np.sort(
-        eigsh(operator, k=6, M=mass, sigma=0.0, which="LM", return_eigenvectors=False)
+        eigsh(
+            operator,
+            k=6,
+            M=mass,
+            sigma=0.0,
+            which="LM",
+            return_eigenvectors=False,
+            v0=np.linspace(1.0, 2.0, intervals - 1, dtype=float),
+        )
     )
     return {
         "operator": (

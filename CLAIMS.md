@@ -1,5 +1,183 @@
 # BHSM Claim Boundaries
 
+## Authoritative Gate-7 claim boundary
+
+Supported: the homogeneous exact-affine interaction-Taylor26 carrier is
+outward certified at 256-bit Arb precision on 5,908 retained substeps and 47
+macro seams.  The signed-source composition, final exact-center cone/response,
+causal `Z2`, strict preterminal selected-eigenvalue margin, and a canonical
+earliest stop are certified.  The final stop first follows from strict
+endpoint signs and continuity.  A separate outward mixed-action tensor
+certificate then proves uniform negative `Dlambda_24[F]` on the terminal
+causal cone, uniqueness on that flow cell, and a local differentiable
+first-stop time map.
+
+The canonical first-hit action time is outward enclosed in
+`[92.30448998890974, 92.30449792975345]`.  The midpoint state is materialized
+for finite downstream work, but is not claimed as a numerically resolved zero:
+binary64 eigensolver jitter is larger than the root signal.
+
+Not supported: using under-inflated binary64 radii or decorrelated componentwise
+global composition as authority; promoting historical Magnus refinement;
+claiming a force value, KKT root, physical Hessian, Gate-7 closure, or full
+BHSM completion before the complete action-owned joint finite-history
+operator oracle and its 72-direction first jet exist.
+`FULL_BHSM_COMPLETE = FALSE`.
+
+Supported as guarded infrastructure: a common matrix-free `S1`--`S4` action
+expansion, inverse-free quadratic pole/residue solver, bare cubic/quartic
+vertex and tree-exchange assembler, inverse-free LSZ normalization, two- and
+three-body decay plus two-body collision readout, interval spectral/stability classifier,
+renormalization ledger checks, electromagnetic `F1/F2` projector, and one
+shared `G_F=c_F/Lambda^2` scale map.  The retained N12 adapter cross-checks
+the local 96-point action through `S2`; history/seam assembly remains open.
+These are `IMPLEMENTED_GATED` capabilities, not physical predictions.
+
+Not supported: claiming a physical pole, propagator, particle assignment,
+decay width, cross section, magnetic moment, new-particle interval, or frozen
+forecast from the presence of those APIs.  The physical-completeness matrix
+keeps every such scientific output `OPEN_INTERNAL_BLOCKER`, with its explicit
+dependencies and promotion gate.
+
+Supported: a deterministic attachment audit proves that the current retained
+N12 local action is a 98-variable geometry kernel (37 coordinates, 37
+velocities, 24 multipliers), while AE2 owns a reset-glued fermion domain
+without adding a propagating field, coefficient, or scale.  The explicit BRST
+physical quotient and Faddeev--Popov regularity check are implemented.
+
+Not supported: treating that geometry kernel, the AE2 domain theorem, the
+historical gauge/HS response seeds, or the nonlocal DtN form factors as a
+current full gauge/fermion/HS action.  Physical promotion requires same-action
+field blocks, cross derivatives through fourth order, history/seam assembly,
+local momentum symbols, and the action-selected saddle/HS/Yukawa data.  This
+attachment no-go does not claim that a completion or physical root cannot
+exist.
+
+Supported as guarded release infrastructure: an executable reconciliation
+validator checks all noncircular physical-matrix prerequisites, frozen
+benchmark coverage, single action/background/scale provenance, artifact
+hashes, and clean reproduction.  Not supported: treating the existence of
+that validator as release completion; the current candidate fails its
+scientific prerequisites.
+
+Supported as provisional benchmark infrastructure: a cross-sector manifest
+evaluator checks exact mode/observable coverage, action/background/scale
+consistency, required engines, and promoted frozen-prediction classes.
+Not supported: claiming any benchmark value from that evaluator; no physical
+benchmark prediction is currently materialized.
+
+Supported as gated readout infrastructure: deterministic recursive
+multi-body decay phase space, reconstructed daughter four-momenta,
+coupled-channel partial-wave projection, and explicit unitarity diagnostics.
+Not supported: any physical decay, scattering, or unitarity result absent a
+complete same-action spectrum, channel ledger, and renormalized amplitudes.
+
+Supported as gated pole infrastructure: inverse-free bordered nonlinear
+tracking of a supplied complete renormalized two-point symbol, including
+complex mass/width and residue diagnostics. Not supported: a current physical
+dressed pole or width; the same-action self-energy ledger and Gate 7 are open.
+
+Supported as gated spectral infrastructure: inverse-free source-contracted
+retarded spectral density with positivity, conditioning, and solve-residual
+diagnostics. Not supported: a current physical spectral density; Gate 7 and
+the complete same-action self-energy input remain open.
+
+Supported as gated channel infrastructure: exhaustive conserved-charge final
+states, threshold/amplitude resolution, identical-state factors, per-state
+stability/open-channel reports, and complete/incomplete optical-theorem
+reconciliation. Supported as gated precision infrastructure: generic
+action-identified charged-lepton `F2(0)` composition. Not supported: a current
+physical channel ledger, inclusive cross section, or lepton magnetic moment.
+
+Supported as gated collider infrastructure: ordered-parton PDF luminosity
+convolution with explicit beam, scheme, scale, empirical-input, and numerical
+error provenance. Not supported: a current hadronic cross section; the frozen
+PDF/factorization instance, physical amplitudes, complete partonic ledger, and
+Gate 7 remain open.
+
+Supported as gated event-level infrastructure: Lorentz kinematics, visible
+`H_T`, missing transverse momentum, pairwise `Delta R_y`, and conservation
+diagnostics from an action-derived final-state ledger. Not supported: a
+detector-level prediction or empirically chosen visibility/cut definition.
+
+The complete 72-direction affine-carrier path and first-hit coefficient jet
+are materialized but are not the missing nonlinear oracle.  The available
+causal transfer bound is noncontractive and gives terminal uncertainty larger
+than the affine Jacobi norm, so using that affine jet as the force authority
+is explicitly unsupported.  The required replacement is a direct
+exact-center variational carrier.
+
+The direct 25-row constraint-frame and normalized-field derivative formulas
+have been evaluated at the stored centers.  A subsequent all-node/all-midpoint
+constraint audit shows that the exact-affine corrected path is not a physical
+continuous constraint center: stored-node scaled residual reaches
+`7.283453490931462e-11`, the seam interpolant reaches
+`7.381223520027345e-4`, and the largest nodewise linearized correction exceeds
+the certified center radius by `5216.733`.  These matrices remain numerical
+formula evaluations only.  A constraint-preserving continuous action center,
+its outward carrier, nonlinear 72D history jet, Weyl force, KKT root, and
+Hessian remain unsupported.
+
+Supported as candidate data: the certified Taylor26 signed response is
+composed with the retained dense center before one minimum-action-norm Newton
+projection closes all 371 fine nodes to maximum scaled constraint residual
+`1.1679676438539284e-15`.  The largest projection is
+`3.010903976408097e-9`, or `2420.394771963047` inherited final nonlinear
+radii, so the native-only projected route and old final cone/first hit are
+superseded.  Not supported: calling these nodes a continuous orbit or
+inheriting `lambda_24(Y)=s`.
+
+The corrected dense reconstruction has been tested against the exact retained
+action field.  A direct cubic endpoint-field match fails to reduce the
+defect.  Two signed-Green Newton candidates, a rebuilt current-center graph
+Jacobian, and rebuilt 73D macro tangents are materialized; their second
+nonlinear replay gives only a `1.0251289061475437`-fold maximum-defect
+reduction.  Halving all 370 spans with their already-evaluated exact midpoint
+fields gives a stronger `2.1869341505107256`-fold reduction, from
+`1.5485158408888117e-5` to `7.080761167533001e-6`, with maximum sampled
+constraint residual `2.0505993511363814e-14` and simple branch 24.  Supported:
+these are reproducible numerical collocation candidates.  Not supported:
+calling the 741-node path a continuous exact orbit or using it as interval,
+cone, first-hit, variational-carrier, force, KKT, or Hessian authority.  The
+next proof is not further mesh refinement: a second halving increases the
+maximum defect to `8.877740799934337e-6`.  A third signed-Green update using
+newly rebuilt graph Jacobians and 73D tangents also increases its parent defect
+to `1.643235800430239e-5`.  Both routes are explicitly rejected as center
+solvers.  Supported now: the best second-Newton center has a materialized
+`370 x 99` Hermite--Simpson block source with maximum residual
+`2.0101707940913732e-6`.  Not supported: calling that source a solved multiple-
+shooting system, continuous exact orbit, or interval shadowing theorem.  Its
+block Newton/Krawczyk operator with constraint and descriptor-fiber rows must
+be assembled and solved before the cone and first hit are rebuilt.  The former
+`7.487649935220473e-7` contraction is not supported: its endpoints paired a
+recentered descriptor with a field rate evaluated before recentering.  The
+maximum repaired endpoint-rate change is `1.0526435867226e-5`.  Supported now:
+direct same-descriptor replay produces a `1.800590017529095e-6` source, and a
+rate-consistent block step reduces it to `1.215762696655947e-6`, a
+`1.4810373952760374`-fold numerical contraction.  A second binary64
+selected-eigenvalue recenter is rejected both by nonlinear replay
+(`1.429548198240663e-6`) and by reproducibility: sub-`1e-15` state variation
+can move the selected value by `1.22e-13`.  Supported now as candidate data:
+transporting the signed descriptor independently through the actual projected
+state displacement, and evaluating every endpoint/midpoint fixed-descriptor
+field, reduces the global maximum to `1.3706618261694602e-7`, factor
+`8.869895355979933`.  Not supported: treating the diagnostic binary64
+eigenvalue as descriptor authority, or calling this first-order transported
+descriptor candidate a solved orbit or interval shadow.  The complete
+augmented residual derivative and descriptor-fiber equation have now been
+materialized with every graph normalization taken from the retained exact
+cancelled field.  Its 74D recurrence is numerically regular, and the single
+authorized retained-field replay lowers the global maximum to
+`1.2217621999603292e-7`, factor `1.121872837622547`.  Supported: this is the
+frozen final numerical center and its exact-flow cancelled-norm jets.
+Not supported: interval shadowing or transfer of the old exact-affine `Z2`
+cone.  The replay-center displacement is `2.7017477414680254e8` old cone
+radii, while the diagnostic old-preconditioner image is
+`5.218603289632254e5` radii.  The precise remaining theorem is outward
+same-center `Y=||AF||`, `Z1=||I-A DF||`, and `Z2` in one causal 74D norm, with
+`Y+Z1*r+Z2*r^2<r` and `Z1+2*Z2*r<1`.  No root nonexistence, certified Gate 7,
+or certified background for physical prediction is claimed.
+
 ## Current public claim boundary
 
 Current public identifier: **continuum event-child and local singular reset
@@ -97,6 +275,18 @@ The bound does not apply the still-missing normal inverse and does not treat
 any higher cutoff as a root. None of these results supplies the explicit
 high-shell compact cutoff or promotes a continuum child.
 
+Supported finite diagnostic: the unchanged N16 coupled map rejects the
+constraint-only lift as a complete-child correction. The existing paired
+exact hard momentum test reduces full weak merit from `0.9618557665898765` to
+`0.35386295232775206` with admissible eta and an isolated ordered branch. Its
+hard constraint/boundary block is allowed to worsen from
+`0.12021432656497034` to `0.14718333891190302`; no componentwise monotonicity
+is claimed or required. The remaining soft source projection is
+`0.08926177036476479` and its paired response is
+`0.00043277842426231244`. It remains a category-2 dynamically controlled
+normal line. This does not prove a quantitative uniform inverse or an N16
+root.
+
 Supported finite diagnostic: the gauge-fixed N12 event/child Calderon boundary
 symbol has gap `0.029146859835358096`; doubled quadrature agrees to
 `7.44e-13`. The source-restricted linear N48 and N64 probes retain positive
@@ -150,6 +340,9 @@ Active dependency:
 
 Not supported: a continuum child, `Q_xi`, `Delta H`, mass, an action-selected
 family, or a new blind observable.
+
+Its first missing explicit constant is the validated source-restricted
+positive-duration soft normal right-inverse bound `K`.
 
 ### Historical corrected-Rayleigh N3 claim boundary
 

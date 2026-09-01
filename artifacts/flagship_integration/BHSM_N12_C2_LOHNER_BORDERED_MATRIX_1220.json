@@ -1,0 +1,61 @@
+{
+  "FLAGSHIP_READY": false,
+  "FULL_BHSM_COMPLETE": false,
+  "artifact": "BHSM_N12_C2_LOHNER_BORDERED_MATRIX_1220",
+  "bordered_center": {
+    "b_psi": 0.00042910818956080606,
+    "binary64_selected_eigenvalue_not_used_as_descriptor": -2.3377321496105135e-14,
+    "bordered_condition_number": 5028597406.149018,
+    "bordered_inverse_2_norm_upper": 3855431.852042755,
+    "hard_equation_residual": 1.0513988491552098e-10,
+    "hard_gap": 2.5937426903926273e-07,
+    "hard_rate_action_norm": 13828.0476642235,
+    "hard_rate_raw_norm": 13530.855293659068,
+    "minimum_bordered_singular_value": 2.5937431615349705e-07,
+    "selected_branch": 24,
+    "selected_line_orthogonality_residual": 2.4442670110147446e-12,
+    "solve_residual_upper": 1.0507161590375622e-10
+  },
+  "comparison": {
+    "diagnosis": "THE_BORDERED_CENTER_RESPONSE_RETAINS_DIRECTIONAL_SPECTRAL_STRUCTURE;_THE_SCALAR_GRONWALL_EXPONENT_IS_NOT_THE_MATRIX_PROPAGATOR_AND_MUST_NOT_BE_USED_AS_A_PHYSICAL_STOP",
+    "last_scalar_Delta_lower": 4.49272870655624e-14,
+    "last_scalar_fixed_s_Jacobi_upper": 2.5646519250254787e+24,
+    "last_scalar_hard_Gronwall_exponent": 7.3985974666141106
+  },
+  "data": "artifacts/flagship_integration/BHSM_N12_C2_LOHNER_BORDERED_MATRIX_1220.npz",
+  "data_SHA256": "F76267EC55C9EF8BFDB8181F8801763DAEEA533DB278A1C08D18F119DE1A5D73",
+  "exact_next_dependency": "ASSEMBLE_THE_COMPLETE_FIXED_s_FIELD_AND_RELATIVE_TANGENT_TENSOR_AT_1215",
+  "hindsight": {
+    "classification": "NUMERICAL_CONDITIONING;_MATRIX_RESPONSE_RECOVERED",
+    "obstruction_physical": false,
+    "result": "OPEN"
+  },
+  "inputs": {
+    "artifacts/flagship_integration/BHSM_N12_C2_LOHNER_CENTER_1220_INPUT.json": "34E964183DD214FAAA35C55333EF5A9E202E35E50CEDF6FFEADEA33FE7032562",
+    "artifacts/flagship_integration/BHSM_N12_C2_LOHNER_CENTER_1220_INPUT.npz": "A310A9A1F7081336D15FA91D5B42EB488EF59995034CB9A4FE1E3628105DB63A",
+    "artifacts/flagship_integration/BHSM_N12_C2_LOHNER_GROWTH_1220.json": "EFBE27BFFBFAB994FF6D58748F68A6871A11E69E494CB5162A5D64BD5B104014",
+    "artifacts/flagship_integration/BHSM_N12_C2_LOHNER_RECENTER_1220.json": "FA753C08144DF68C9CA7B0EACBA9414748FBD964BE5E7BB9E251EEB1F15B6DB7",
+    "theory/n12_c2_lohner_center_1215.md": "1C61E9CD44626E4037EE5818DBFE0C9F89CF334D586D7BA5177523039893137C"
+  },
+  "status": "C2_LOHNER_1220_BORDERED_HARD_RESPONSE_CENTER_MATRIX_CERTIFIED;_SECOND_VARIATION_REMAINDER_OPEN",
+  "validation": {
+    "bordered_matrix_is_uniformly_invertible_at_center": true,
+    "bordered_solve_residual_is_small": true,
+    "branch_24_replayed": true,
+    "fixed_descriptor_tangent_has_codimension_one": true,
+    "hard_equation_residual_is_small": true,
+    "hard_response_is_selected_line_orthogonal": true,
+    "hard_response_variational_matrix_is_finite": true,
+    "matrix_is_diagnostic_until_second_variation_remainder_is_enclosed": true,
+    "no_soft_block_inverse_selector_recurrence_scale_gate_or_chord_added": true
+  },
+  "validation_passed": true,
+  "variational_matrix": {
+    "fixed_descriptor_b_psi_gradient_norm": 6.280242274540051,
+    "fixed_descriptor_hard_response_operator_norm": 107132422.64156838,
+    "fixed_descriptor_hard_response_smallest_nonzero_singular_value": 1.0555839469765573,
+    "full_b_psi_gradient_norm": 6.284531145577683,
+    "full_hard_response_action_operator_norm": 107160241.75285621,
+    "tangent_rank": 61
+  }
+}

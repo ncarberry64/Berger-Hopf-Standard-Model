@@ -1,0 +1,68 @@
+{
+  "FULL_BHSM_COMPLETE": false,
+  "adjudication": {
+    "continuous_center": "OPEN_INTERVAL_SHADOWING_OR_HIGH_ORDER_COLLOCATION",
+    "quarter_step_center": "RETAINED",
+    "within_seam_interpolant": "HALVED_A_SECOND_TIME_USING_EXACT_MIDPOINT_FIELDS"
+  },
+  "artifact": "BHSM_N12_GATE7_SECOND_REFINED_WITHIN_SEAM_HERMITE_COLLOCATION",
+  "authority": "NUMERICAL_SECOND_REFINED_GAUSS3_COLLOCATION_NOT_INTERVAL_AUTHORITY",
+  "claim_boundary": {
+    "FULL_BHSM_COMPLETE": false,
+    "Gate7": "ACTIVE_ACTION_OWNED_OPERATOR_ORACLE",
+    "continuous_action_constrained_center": "OPEN_INTERVAL_AUTHORITY",
+    "continuous_outward_variational_carrier": "OPEN_AFTER_CENTER"
+  },
+  "data": "artifacts/flagship_integration/BHSM_N12_GATE7_SECOND_REFINED_WITHIN_SEAM_HERMITE_COLLOCATION.npz",
+  "data_SHA256": "7BFD507A234669EB8BAADB1366FD71909D0C98A633472FE4B9E7A6D10B7E8BD7",
+  "exact_next_dependency": "USE_THE_TWO_SUCCESSIVE_REFINEMENT_RATIOS_TO_ADJUDICATE_MESH_REFINEMENT_VERSUS_DIRECT_HIGH_ORDER_COLLOCATION_OR_OUTWARD_SHADOWING",
+  "inputs": {
+    "artifacts/flagship_integration/BHSM_N12_GATE7_CURRENT_LINEARIZATION_NEWTON_ENDPOINT_CANDIDATE.json": "DBAB6B85663141694D87657C37FA5D18E9CC9373DAE9A6BCA434D502375CC829",
+    "artifacts/flagship_integration/BHSM_N12_GATE7_CURRENT_LINEARIZATION_NEWTON_ENDPOINT_CANDIDATE.npz": "51D74E6ACFD9C0E4CF89D85078E8D7BADE296B5223DC5B1A91CFA30B1CF46945",
+    "artifacts/flagship_integration/BHSM_N12_GATE7_REFINED_WITHIN_SEAM_HERMITE_COLLOCATION.json": "9E1F55AEE781F1B4CE27B833665F0A89D7B63C86AD23A40FA16E70EC8B4A50F3",
+    "artifacts/flagship_integration/BHSM_N12_GATE7_REFINED_WITHIN_SEAM_HERMITE_COLLOCATION.npz": "78235CEA5C5BE38E0580725610FD11D50919E222E31586ABFDEC251FB668D8EF",
+    "scripts/audit_n12_gate7_second_refined_within_seam_hermite_collocation.py": "4B3356BF638B3536EC99276DB1A4A7C31F5CB95B48839A8F5AE8B320DB16094A",
+    "theory/n12_gate7_second_refined_within_seam_hermite_collocation.md": "A33A0D4F1B011118F75947B0EA248427C1F768DC224ADF557AB4D0EA1673E2E2"
+  },
+  "mesh": {
+    "Gauss_samples_per_interval": 3,
+    "refined_intervals": 1480,
+    "refined_nodes": 1481,
+    "workers": 8
+  },
+  "status": "SECOND_WITHIN_SEAM_HALVING_DOES_NOT_REDUCE_FLOW_DEFECT",
+  "summary": {
+    "flow_defect_owner": {
+      "augmented_flow_defect_2_norm": 8.877740799934337e-06,
+      "descriptor": 7.179875365330086e-10,
+      "descriptor_rate_defect_absolute": 2.392613717438842e-13,
+      "interval": 716,
+      "numeric_descriptor_fiber_residual": -4.397474700273304e-14,
+      "sample": 1,
+      "scaled_constraint_2_norm": 1.8084757845020652e-15,
+      "selected_branch": 24,
+      "selected_eigenline_gap": 2.1287862557991626e-07,
+      "state_flow_defect_2_norm": 8.877740799934333e-06,
+      "unit_fraction": 0.5
+    },
+    "flow_defect_reduction_factor": 0.7975859317254873,
+    "maximum_augmented_flow_defect_2_norm": 8.877740799934337e-06,
+    "maximum_numeric_descriptor_fiber_residual_absolute": 2.421832292817776e-13,
+    "maximum_sampled_scaled_constraint_2_norm": 1.7695353537111406e-14,
+    "minimum_selected_eigenline_gap": 1.7341651732601445e-07,
+    "prior_maximum_augmented_flow_defect_2_norm": 7.080761167533001e-06
+  },
+  "validation": {
+    "all_1481_refined_nodes_materialized": true,
+    "all_4440_refined_Gauss3_samples_evaluated": true,
+    "all_740_existing_exact_midpoint_fields_inserted": true,
+    "all_quantities_finite": true,
+    "branch_24_selected_at_every_sample": true,
+    "continuous_interval_shadowing_not_claimed": true,
+    "no_action_source_selector_scale_gate_or_chord_changed": true,
+    "quarter_step_proof_center_not_replaced": true,
+    "second_within_seam_halving_reduces_maximum_flow_defect": false,
+    "selected_line_remains_simple_numerically": true
+  },
+  "validation_passed": false
+}

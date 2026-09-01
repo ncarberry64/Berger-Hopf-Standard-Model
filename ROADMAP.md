@@ -6,24 +6,119 @@
    resolution-independent event-child construction. Do not reopen the closed
    action-Galerkin/compact-tail/nonlinear-radius proof unless contradicted.
 2. Preserve the certified local one-sided singular hitting law, regular
-   set-valued reset relation, and the single existing forward clock domain.
-   Derive an action-owned compact forward trap or component-restricted
-   integrated event-transport estimate which proves terminal-chart entry or
-   certifies the first existing physical-domain exit.
-3. Prove an action-selected invariant forward child history on the resulting
-   hybrid flow/relation without quotienting the chiral Cauchy-state pairing or
-   selecting a numerical chart representative.
-4. If the retained action supplies it, derive the parent-only stationary
+   set-valued reset relation, single forward clock domain, and maximal-flow
+   endpoint alternatives. Keep terminal return/event transport as an optional
+   finite-endpoint route; do not require recurrence or authorize chord 3.
+3. Continue Gate 7 from the derived action-owned (K_C) resolvent/spectral
+   measure, birth Weyl--Calderón family (M_C(z)), and supplied-section BRST
+   source incidence. Enclose the exterior oracle bundle
+   ((M_C,D_\Phi M_C,D_\Phi^2M_C)) and pair-plus-contact response on the same
+   maximal-forward domain. The lower-gap/Friedrichs shortcut and a universal
+   Ward/BRST force cancellation are invalidated; enclose the finite fixed-
+   channel Weyl/transfer maps for `x(tau)=log R4(tau)` and their first/second
+   action variations, or calculate the oracle directly. Their exact finite
+   triangular first/mixed-second transfer and Möbius variation equations are
+   derived. Enclose the remaining action-owned `x,x_h,x_k,x_hk` histories,
+   terminal/Friedrichs graph jets, and regular Weyl-chart cover. The local
+   `log R4` coefficient jets and proper-time temporal form ownership are already
+   derived; `D_tau` and `Delta_tau` are not independent coefficient histories.
+   The physical radius is also an exact action-coordinate projection, so
+   assemble and enclose `DV,D2V` of the retained Euler--Dirac vector field,
+   propagate the state Jacobi cocycles, and pull them back through the closed
+   radius jets before the channel transfer variations.
+   The exact implicit-solve first/mixed formulas and one certified local N12
+   second-Jacobi tube are now derived. Promote their constants to explicit
+   bounded-margin `C(B,delta)` estimates and recenter them across the relevant
+   maximal component.
+   On each finite regular pre-stop interval this recentering cover is automatic
+   by compactness. Prove relative-form `C1/C2` control, or an equivalent
+   integrable fixed-channel Riccati variation bound, for every infinite regular
+   Friedrichs end.
+   Compactly supported weak variations at such ends are now closed directly by
+   relative-form/resolvent identities. The certified two-chord core now gives
+   broad scalar/de Rham Weyl and core-supported first/mixed contraction bounds
+   at `z=-1`. The corresponding product-Dirac comparison and core-supported
+   weak-jet enclosure is now derived directly in the factorized form. Combine
+   all retained-channel Poisson bounds with the common pair/contact incidence
+   only after deriving its internal `S3` angular-level tail or an action-owned
+   BRST relative-trace/subtraction bound. The existing certified continuum
+   tail acts on the separate cohomogeneity-one child action graph and cannot
+   be transferred to this source sum without such a theorem. Then assemble
+   the zero-source weak force before addressing noncompact saddle variations.
+   Also synthesize the retained `E1` heat variations from a controlled region
+   of the maximal-forward Weyl/spectral family (or bound the heat semigroup
+   directly). A single `z=-1` Weyl probe does not determine the retained
+   functional.
+   Close the infrared end of that synthesis: certify a finite-endpoint
+   spectrum if an actual finite maximal outcome occurs, or prove low-energy
+   spectral-measure/relative-heat control on an infinite Friedrichs history.
+   The current comparison bounds diverge as `z` approaches zero and do not
+   supply this step.
+   Do not reuse BRST grading as the missing tail theorem: after exact
+   longitudinal/ghost cancellation, the retained transverse-gauge/HS/Weyl
+   supertrace has nonzero leading heat coefficient `-5 sqrt(pi)`.
+   For the first weak force, use the weaker derived source-weighted criterion:
+   prove superlinear low-energy vanishing and a finite `E1`-weighted
+   high-energy tail for each retained geometry direction. Do not require a
+   full operator gap if these contractions close.
+   The two-chord threshold audit already gives positive child zero-energy
+   impedance for every positive scalar/de Rham channel, makes the constant
+   scalar radius vertex zero, and proves that exact product-Dirac kernel atoms
+   have zero first form weight. Use these gains, but do not promote the free
+   positive-Robin `Lambda^(3/2)` comparison to the actual exterior. Prove the
+   action-owned continuous limiting-absorption/Weyl threshold estimate and
+   rule out the Neumann/resonant `Lambda^(1/2)` class on the physical graph.
+   High-energy integrability for this compact weak class is already closed by
+   the trace-class heat sandwich. What remains at high energy is an explicit
+   computable angular-tail enclosure for sign adjudication, not existence of
+   the E1 integral.
+   Before promoting any threshold exponent, assemble the sector-resolved
+   nonzero event flux plus `W_phys` birth graph and prove its zero-energy
+   matrix Wronskian stays strictly away from the critical cancellation of the
+   child Weyl map. Core positivity and total-form nonnegativity are
+   insufficient by the exact barrier counterfamily. A boundary-uniform
+   limiting-absorption theorem excluding that critical graph is an equivalent
+   route. Do not assign the gauge Wentzell block to the Weyl or HS sectors.
+   Do not identify (z) with momentum squared.
+   The provenance audit now proves that this graph is not merely unevaluated:
+   the retained transverse-gauge DtN block is explicit, but the normal matter
+   junction action is zero and the surviving `U(1)_parent x U(1)_child`
+   self-adjoint phases are unselected. The v17 complete-child map closes only
+   the zero-background point. Resolve the scoped unchanged-action no-go by
+   deriving a normal matter generator from existing retained terms, or prove
+   that the complete graded Gate-7 pair-plus-contact functional is independent
+   of the entire surviving phase family. Do not infer Neumann from a missing
+   term and do not insert a phase as policy.
+   Ward/BRST cannot provide a universal replacement: an exact unit-heat-time
+   Robin relative trace times the retained four-HS-minus-48-Weyl spatial
+   supertrace is strictly nonzero on a common Cayley theorem-class subfamily.
+   Only an actual full-history, fixed-regulator independence theorem over the
+   whole surviving phase family remains as an alternative to the generator.
+   The repository definition of done requires a complete physical variational
+   domain independently of observable cancellation. Because the reconciled
+   retained matter action explicitly retires its unique-domain claim, the
+   unchanged-action path terminates here in a canonical no-go. Steps 4 and
+   later remain locked. Continuing would require an explicitly versioned
+   normal matter boundary action and physical authorization; it is not a
+   routine proof or numerical continuation of the retained theory.
+4. Evaluate the zero-source weak geometry force, solve and certify the
+   same-action saddle if it is nonzero, evaluate the physical pair-plus-contact
+   Hessian, and close Ward/BRST, continuum/relative-trace, and basis-independent
+   scalar-readout obligations. Only then close Gate 7.
+5. If the retained action supplies it, derive the parent-only stationary
    section `R_P: Phi_(P+C) -> Phi_P^matched`; then complete the
    boundary-improved covariant `Q_xi` assembler and evolve the
    matched parent and composite on the same history, and evaluate
    `Delta H = Q_xi[P+C] - Q_xi[P matched]` with continuum error control. The
    reduced local Legendre energy is not a substitute.
-5. Resume action-selected family-cycle ownership, relative quasi-energy mass
-   ratios, absolute scale, and returned-family current dependencies without
-   reopening closed sectors or retuning frozen predictions.
+6. Resume action-selected family ownership, physical mass/readout, absolute
+   scale, gauge normalization, flavor, and neutrino dependencies without
+   reopening retired periodic-cycle machinery or retuning frozen predictions.
 
 `FULL_BHSM_COMPLETE = FALSE`.
+
+Retained-action campaign terminal result:
+`TERMINAL_CANONICAL_NO_GO_FOR_UNCHANGED_RETAINED_ACTION;_FUTURE_CONTINUATION_REQUIRES_AN_EXPLICITLY_VERSIONED_NORMAL_MATTER_BOUNDARY_ACTION_AND_PHYSICAL_AUTHORIZATION`.
 
 ## Current corrected-Rayleigh N=3 critical path
 

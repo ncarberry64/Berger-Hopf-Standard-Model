@@ -1,0 +1,59 @@
+{
+  "FULL_BHSM_COMPLETE": false,
+  "artifact": "BHSM_N12_GATE7_FROZEN_DECIMAL_GAUSS8_CENTER",
+  "authority": "FROZEN_NUMERICAL_LINEAR_CENTER_NOT_INTERVAL_FIXED_POINT_AUTHORITY",
+  "claim_boundary": {
+    "Decimal_Gauss8_linear_center": "FROZEN",
+    "Gate7": "ACTIVE",
+    "continuous_preterminal_margin_and_interval_Newton": "OPEN",
+    "outward_Y_Z1_and_transferred_Z2": "OPEN"
+  },
+  "data": "artifacts/flagship_integration/BHSM_N12_GATE7_FROZEN_DECIMAL_GAUSS8_CENTER.npz",
+  "identity": {
+    "descriptor_split": "Dlambda_c_PLUS_EXISTING_DIRECT_DESCRIPTOR_SOURCE",
+    "internal_descriptor_term_double_counted": false,
+    "source_terms_added": 0,
+    "state_center": "DECIMAL_GAUSS8_PROP16_SIGNED_GREEN_CORRECTION"
+  },
+  "inputs": {
+    "artifacts/flagship_integration/BHSM_N12_C2_STOP_HIGH_ORDER_QUARTER_STEP_RETAINED_RECONNAISSANCE.npz": "086C41068B9F3A6C0E5F8040B661202E067D017C909A381010E45FF352498D00",
+    "artifacts/flagship_integration/BHSM_N12_C2_STOP_QUARTER_STEP_FINE_HYBRID_GRAPH_JACOBIAN_RECONNAISSANCE.npz": "B92C08B4CB2EC4033FA70CBDCC28B6CD79E1189E19D95C984155EB65DD9D73B5",
+    "artifacts/flagship_integration/BHSM_N12_C2_STOP_QUARTER_STEP_PHYSICAL_TANGENT_TRANSFER_RECONNAISSANCE.json": "B6F2EAD43496BF257077F230E8C3C15B7006D7E107184835232C4D0FCC08D119",
+    "artifacts/flagship_integration/BHSM_N12_GATE7_DECIMAL_SIGNED_Y_GREEN_CONVERGENCE_AUDIT.npz": "81560C4B09CD111A7017F5B404A0854EF871755D98AF143454B7671E670DDC2D",
+    "artifacts/flagship_integration/BHSM_N12_GATE7_SELECTED_CONE_INTERNAL_RESPONSE_Z2.json": "60378E73F6BF46EC84C97D9BD89E16795BF4BBB5EAB4E0028B000C5CD9D4F298",
+    "artifacts/flagship_integration/BHSM_N12_GATE7_SIGNED_Y_QUADRATURE_GAUSS08_PROP16_RECONNAISSANCE.npz": "3A67B605526723DD22A1115B22B9A06E2D6BA2D4A503F0731E2FAD12C0838ED3",
+    "artifacts/flagship_integration/BHSM_N12_GATE7_SIGNED_Y_QUADRATURE_GAUSS12_PROP16_RECONNAISSANCE.npz": "A723943DD42DE50510A8583F4BE8CA1ABB9D7AEB3E65BEBA40701EB799297C46",
+    "artifacts/flagship_integration/BHSM_N12_GATE7_SIGNED_Y_QUADRATURE_GAUSS16_PROP16_RECONNAISSANCE.npz": "4ED0CC09762636E142FC3A45B1E7E3D3092B4EFCD45816356940D7B525154F03",
+    "artifacts/flagship_integration/BHSM_N12_GATE7_SIGNED_Y_QUADRATURE_GAUSS20_PROP16_RECONNAISSANCE.npz": "4C35BB6B131626DB52AC9E92F0BCC60AA09E973E685410B917A22423C148BC75"
+  },
+  "summary": {
+    "corrected_descriptor_at_old_stop": 9.350435266485474e-16,
+    "descriptor_cross_order_maximums": {
+      "Gauss12_to_16": 1.9221817061916492e-16,
+      "Gauss16_to_20": 1.647951675776759e-16,
+      "Gauss8_to_12": 1.692424399811424e-16
+    },
+    "last_complete_node_descriptor_margin": 1.5631135180446963e-12,
+    "linearized_later_stop_time_shift": 3.296308553518384e-05,
+    "maximum_Gauss6_to8_state_profile_increment_2_norm": 6.919049080236543e-14,
+    "maximum_descriptor_correction_absolute": 2.4836982943792473e-15,
+    "maximum_descriptor_cross_order_increment": 1.9221817061916492e-16,
+    "maximum_state_correction_2_norm": 3.3913443901129416e-06,
+    "minimum_corrected_complete_preterminal_node_descriptor": 1.7739272048543877e-20,
+    "nonlinear_radius_descriptor_linear_image_upper": 7.669904416005341e-18,
+    "remaining_terminal_dense_cell_time": 0.19486075959935079,
+    "terminal_descriptor_crossing": -2.8366383530768354e-11,
+    "terminal_state_correction_2_norm": 1.938939133506319e-06
+  },
+  "validation": {
+    "Gauss8_state_correction_frozen_without_refit": true,
+    "all_stored_complete_preterminal_nodes_remain_positive": true,
+    "descriptor_cross_order_increment_below_nonlinear_radius": true,
+    "descriptor_internal_state_and_direct_parts_counted_once": true,
+    "last_complete_node_margin_exceeds_descriptor_rounding_and_halo": true,
+    "linearized_shift_remains_inside_terminal_dense_cell": true,
+    "not_promoted_to_continuous_interval_first_hit": true,
+    "same_371_node_quarter_step_stop_grid": true
+  },
+  "validation_passed": true
+}

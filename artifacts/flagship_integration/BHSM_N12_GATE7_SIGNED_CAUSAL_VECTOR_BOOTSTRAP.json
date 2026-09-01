@@ -1,0 +1,58 @@
+{
+  "FULL_BHSM_COMPLETE": false,
+  "artifact": "BHSM_N12_GATE7_SIGNED_CAUSAL_VECTOR_BOOTSTRAP",
+  "authority": "EXACT_SIGNED_DIRECTIONAL_MIXED_AND_TRANSVERSE_CENTER_MAPS_ON_SELECTED_QUARTER_STEP_HISTORY",
+  "claim_boundary": {
+    "FULL_BHSM_COMPLETE": false,
+    "Gate7": "ACTIVE",
+    "causal_interval_vector_radius": "OPEN",
+    "center_transverse_quadratic_error": "EXACT_ACTION_CENTER_BOUND",
+    "outward_curvature_remainder": "OPEN",
+    "outward_signed_step_map_and_Green_remainder": "OPEN",
+    "signed_directional_and_mixed_center_vector": "DERIVED"
+  },
+  "data": "artifacts/flagship_integration/BHSM_N12_GATE7_SIGNED_CAUSAL_VECTOR_BOOTSTRAP.npz",
+  "data_SHA256": "4F27FEAB849F32995AC8253B63FDD4356ECEBCDDE0786420E283109DF084AFD2",
+  "exact_next_dependency": "PROVE_ANY_RETAINED_ACTION_PHYSICAL_TRANSVERSE_CURVATURE_TUBE_BELOW_THE_REPORTED_7E8_SCALE_AND_ATTACH_THE_EXISTING_SIGNED_GREEN_STEP_MAP_REMAINDER;_NO_FULL_72_CUBED_TENSOR_IS_REQUIRED",
+  "identity": {
+    "error_radius": "e_i=sum_{j<i}G_ij*(||Hm_j||*c_j*e_j+0.5*Ht_j*(||v_j||+e_j)^2)",
+    "signed_center": "v_i=sum_{j<i}dt_j*P_ij*N_j*(0.5*Hd_j*c_j^2+Hm_j*c_j*N_j^T*v_j)"
+  },
+  "inputs": {
+    "artifacts/flagship_integration/BHSM_N12_C2_STOP_HIGH_ORDER_QUARTER_STEP_RETAINED_RECONNAISSANCE.npz": "086C41068B9F3A6C0E5F8040B661202E067D017C909A381010E45FF352498D00",
+    "artifacts/flagship_integration/BHSM_N12_C2_STOP_QUARTER_STEP_MATCHED_TANGENT_CORRELATED_DEFECT_GAUSS12_RECONNAISSANCE.npz": "F6675DBF9699ED6E56DE719C78047A0077FECBFC35F57F6943A2DFA645F10E90",
+    "artifacts/flagship_integration/BHSM_N12_C2_STOP_QUARTER_STEP_PHYSICAL_TANGENT_TRANSFER_RECONNAISSANCE.npz": "9FFD40E1F3BFBBFA085FAB18B8ECDF250C55E753D23BE0B34737386BE833A175",
+    "artifacts/flagship_integration/BHSM_N12_GATE7_CAUSAL_VECTOR_RADIUS_RECONNAISSANCE.npz": "C938176899ED53583AB2C284F517C621354440D937675ACCE53FDCBC044A8993",
+    "artifacts/flagship_integration/BHSM_N12_GATE7_EXACT_SIGNED_DIRECTIONAL_FIELD_CURVATURE.json": "F4A7A753FF66FC7E6714F0F305CC0D6E9E494979E7579C07CDF947FF38DBA331",
+    "artifacts/flagship_integration/BHSM_N12_GATE7_EXACT_SIGNED_DIRECTIONAL_FIELD_CURVATURE.npz": "9EA23892F74A989E0FAA7A2FC14CF05FDD1AE0DECC5A555A3A57BD702BBD925E",
+    "artifacts/flagship_integration/BHSM_N12_GATE7_EXACT_SIGNED_FULL_TRANSVERSE_CURVATURE_ADJUDICATION.json": "C52E289A549626DCCE5D3DEBE58CE4542337EB6447777668E4303D182C6F6D9F",
+    "artifacts/flagship_integration/BHSM_N12_GATE7_EXACT_SIGNED_MIXED_FIELD_CURVATURE.json": "000DDB428248FB5150B8BABD2B848A8C575A9E8F798724D2EEFFAE78A00C70E2",
+    "artifacts/flagship_integration/BHSM_N12_GATE7_EXACT_SIGNED_MIXED_FIELD_CURVATURE.npz": "665630814B43B95BFAD80277703CC09A8B7ED604BA646B33B1376F0407F98825"
+  },
+  "status": "SIGNED_CAUSAL_CENTER_VECTOR_CLOSES_WITH_LARGE_TRANSVERSE_HEADROOM;_OUTWARD_AUTHORITY_OPEN",
+  "structural_validation": {
+    "all_48_nodes_and_47_signed_step_maps_used": true,
+    "center_vector_plus_quadratic_error_fits_reference_halo": true,
+    "exact_signed_directional_vectors_used": true,
+    "exact_signed_mixed_matrices_used": true,
+    "exact_signed_transverse_profile_used": true,
+    "no_recurrence_reset_selector_scale_gate_or_chord_changed": true,
+    "selected_quarter_step_center_and_matching_tangent_used": true,
+    "signed_sources_and_propagators_combined_before_norms": true,
+    "strictly_lower_causal_dependency_preserved": true,
+    "transverse_curvature_can_inflate_by_more_than_1000_before_halo_failure": true
+  },
+  "structural_validation_passed": true,
+  "summary": {
+    "corresponding_permitted_transverse_curvature_upper": 752673325.4940478,
+    "maximum_quadratic_error_radius": 9.445951836533642e-16,
+    "maximum_signed_center_vector_2_norm": 6.219535471038e-13,
+    "maximum_total_center_radius": 6.219861345110496e-13,
+    "maximum_uniform_transverse_profile_inflation_before_halo_failure": 3543.5634409293034,
+    "reference_halo_to_center_radius_ratio": 21539.082158979847,
+    "reference_reconnaissance_nonlinear_halo": 1.3397010452979786e-08,
+    "signed_center_vector_owner_node": 21,
+    "terminal_signed_center_vector_2_norm": 2.8288826176597356e-13
+  },
+  "validation_passed": false
+}

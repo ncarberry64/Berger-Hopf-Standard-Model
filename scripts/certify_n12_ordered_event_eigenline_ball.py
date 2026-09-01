@@ -58,11 +58,10 @@ def _down(value: float) -> float:
 
 
 def _sha256(path: Path) -> str:
-    digest = hashlib.sha256()
-    with path.open("rb") as handle:
-        for block in iter(lambda: handle.read(1024 * 1024), b""):
-            digest.update(block)
-    return digest.hexdigest().upper()
+    payload = path.read_bytes()
+    if path.suffix.lower() == ".json":
+        payload = payload.replace(b"\r\n", b"\n")
+    return hashlib.sha256(payload).hexdigest().upper()
 
 
 def main() -> None:
@@ -89,11 +88,15 @@ def main() -> None:
     sector_normal = vh.T[offset:offset + state_dimension]
 
     third_payload = np.load(THIRD_VARIATION)
+    third_center_key = (
+        "center_state" if "center_state" in third_payload.files else "state"
+    )
     if not np.array_equal(
-        state, np.asarray(third_payload["center_state"], dtype=float)
+        state, np.asarray(third_payload[third_center_key], dtype=float)
     ):
         raise ValueError("third variation does not belong to this checkpoint")
-    third = np.asarray(third_payload[SIDE], dtype=float)
+    third_key = SIDE if SIDE in third_payload.files else f"{SIDE}_third"
+    third = np.asarray(third_payload[third_key], dtype=float)
 
     majorant = json.loads(ACTION_MAJORANT.read_text(encoding="utf-8"))
     if majorant.get("validation_passed") is not True:
@@ -476,7 +479,11 @@ def main() -> None:
         "DIRECT_N12_COMPLETE_PERSISTENT_CHILD_CERTIFIED": False,
         "FULL_BHSM_COMPLETE": False,
     }
-    RESULT.write_text(json.dumps(payload, indent=2) + "\n", encoding="utf-8")
+    RESULT.write_text(
+        json.dumps(payload, indent=2) + "\n",
+        encoding="utf-8",
+        newline="\n",
+    )
     print(json.dumps(payload, indent=2))
 
 

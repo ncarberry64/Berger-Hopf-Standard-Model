@@ -1,0 +1,117 @@
+{
+  "FLAGSHIP_READY": false,
+  "FULL_BHSM_COMPLETE": false,
+  "action_version": "BHSM-AE-2.0.0",
+  "artifact": "BHSM_N12_GATE7_AE2_FACTORIZED_THRESHOLD_RECLASSIFICATION",
+  "claim_boundary": {
+    "FLAGSHIP_READY": false,
+    "FULL_BHSM_COMPLETE": false,
+    "Gate7": "ACTIVE_NOT_CLOSED",
+    "Gate8": "LOCKED",
+    "chord_03_authorized": false,
+    "factorized_N12_low_energy_source_measure": "OPEN",
+    "graded_angular_tail": "OPEN",
+    "nonfermion_threshold_margin": "CLOSED",
+    "strict_product_Dirac_Wronskian_required_in_advance": false,
+    "zero_source_force": "OPEN"
+  },
+  "classification": "AN_EXACT_FACTORIZED_A_s_STAR_A_s_HALF_LINE_HAS_A_NONZERO_ZERO_THRESHOLD_RESONANCE_AND_ZERO_WRONSKIAN_MARGIN_WHILE_THE_LOG_RADIUS_FIRST_FORM_WEIGHT_IS_C*k_squared_PLUS_o(k_squared)_AND_ITS_CUMULATIVE_SOURCE_WEIGHT_IS_(C/3)*Lambda_to_3_over_2;_THEREFORE_STRICT_WRONSKIAN_POSITIVITY_IS_SUFFICIENT_BUT_NOT_NECESSARY_FOR_THE_RETAINED_E1_FIRST_VARIATION",
+  "exact_model": {
+    "asymptotic": {
+      "cumulative_weight_over_Lambda_to_three_halves_limit": 2.184193305017363,
+      "strict_zero_energy_wronskian_margin": 0.0,
+      "weight_over_momentum_squared_limit": 6.552579915052088,
+      "zero_energy_core_end_factor_image": 0.0,
+      "zero_energy_core_end_value": 0.22313016014843,
+      "zero_energy_exterior_solution": "NONZERO_CONSTANT"
+    },
+    "birth_graph": "A_s*u(0)=0",
+    "exterior": "A_s=d_dx_AFTER_T",
+    "factor": "A_s=d_dx+s*1_[0,T]",
+    "log_radius_factor_jet": "D_h_A_s=-s*1_[0,T]",
+    "maximum_final_scaled_residual": 0.000138303835064,
+    "operator": "K_s=A_s_star*A_s",
+    "parameters": {
+      "T": 0.75,
+      "s": 2.0
+    },
+    "rows": [
+      {
+        "core_end_factor_image": -0.010637653747539,
+        "core_end_value": 0.220888106313268,
+        "exterior_amplitude_squared": 0.060107523235915,
+        "first_log_radius_weight": 0.05408424957408,
+        "momentum": 0.1,
+        "spectral_value": 0.01,
+        "weight_over_momentum_squared": 5.408424957407981
+      },
+      {
+        "core_end_factor_image": -0.000958104915148,
+        "core_end_value": 0.222928278955059,
+        "exterior_amplitude_squared": 0.050716978700566,
+        "first_log_radius_weight": 0.005787359997245,
+        "momentum": 0.03,
+        "spectral_value": 0.0009,
+        "weight_over_momentum_squared": 6.430399996938613
+      },
+      {
+        "core_end_factor_image": -0.000106463098173,
+        "core_end_value": 0.223107727963409,
+        "exterior_amplitude_squared": 0.04989040218972,
+        "first_log_radius_weight": 0.000653877806263,
+        "momentum": 0.01,
+        "spectral_value": 0.0001,
+        "weight_over_momentum_squared": 6.538778062628476
+      },
+      {
+        "core_end_factor_image": -9.581750464e-06,
+        "core_end_value": 0.223128141242142,
+        "exterior_amplitude_squared": 0.049796368518834,
+        "first_log_radius_weight": 5.8962018496e-05,
+        "momentum": 0.003,
+        "spectral_value": 9e-06,
+        "weight_over_momentum_squared": 6.551335388429707
+      },
+      {
+        "core_end_factor_image": -1.06463964e-06,
+        "core_end_value": 0.223129935825415,
+        "exterior_amplitude_squared": 0.049788101719017,
+        "first_log_radius_weight": 6.552441611e-06,
+        "momentum": 0.001,
+        "spectral_value": 1e-06,
+        "weight_over_momentum_squared": 6.552441611217025
+      }
+    ]
+  },
+  "exact_next_dependency": "PROVE_FOR_THE_REALIZED_AE2_TWO_SIDED_PRODUCT_DIRAC_FAMILY_A_RESONANCE_COMPATIBLE_SOURCE_WEIGHTED_LIMITING_ABSORPTION_BOUND_abs(nu_h)([0,Lambda])<=C_h*Lambda^(1+epsilon_h)_WITH_epsilon_h>0,_WITHOUT_REQUIRING_A_STRICT_ZERO_WRONSKIAN;_THEN_ASSEMBLE_THE_GRADED_ANGULAR_TAIL_AND_ZERO_SOURCE_FORCE",
+  "inputs": {
+    "artifacts/flagship_integration/BHSM_N12_FORWARD_E1_SOURCE_MEASURE_CRITERION.json": "E6976D1A49B536044FC2B7A1B25DB3B422F2ED8A9DEBF05DBFDEDD2544A0D9D8",
+    "artifacts/flagship_integration/BHSM_N12_FORWARD_TWO_CHORD_PRODUCT_DIRAC_WEYL_ENCLOSURES.json": "6733FF7C5246CE5F47F4D48E76B43CB5E4FBBF84C58865CCDB7FD0831282EF2A",
+    "artifacts/flagship_integration/BHSM_N12_GATE7_AE2_NONFERMION_THRESHOLD_MARGIN.json": "A4E4C05991402FB74FC0C584B122EF887B4A89CCB7FAA6D85560E3934872E7D2",
+    "artifacts/flagship_integration/BHSM_N12_GATE7_AE2_ZERO_THRESHOLD_NO_SHORTCUT.json": "39C7A877BC0935078134EC720CA9B137D47D4DE04C04B090D887E766C4B5374B",
+    "scripts/derive_n12_gate7_ae2_factorized_threshold_reclassification.py": "96EF58678E00A235E872C902A1C73B2AC4B75F405D530A1F11391379FACA6BCD",
+    "src/bhsm/interface/action_extension_ae2_factorized_threshold.py": "B62F5868D9FD1034592221BE27B10F7778B6E7BA7501B05E28D41BB205F7FD74"
+  },
+  "provenance_reclassification": {
+    "exact_zero_atom_first_weight": "ZERO_AND_PRESERVED",
+    "strict_two_sided_Wronskian_margin": "SUFFICIENT_NOT_NECESSARY",
+    "weakest_actual_N12_requirement": "A_RESONANCE_COMPATIBLE_FACTORIZED_LIMITING_ABSORPTION_OR_SOURCE_WEIGHTED_WEYL_BOUND_WITH_EXPONENT_STRICTLY_ABOVE_ONE",
+    "what_the_model_does_not_prove": "THE_UNKNOWN_MAXIMAL_N12_EVENT_CHILD_EXTERIOR_BELONGS_TO_THIS_CONSTANT_CORE_FREE_EXTERIOR_CLASS"
+  },
+  "status": "STRICT_ZERO_WRONSKIAN_RECLASSIFIED_AS_SUFFICIENT_NOT_NECESSARY",
+  "validation": {
+    "AE2_local_zero_wronskian_shortcut_remains_invalid": true,
+    "FULL_BHSM_COMPLETE_false": true,
+    "actual_N12_limiting_absorption_not_fabricated": true,
+    "all_inputs_validated": true,
+    "cumulative_source_exponent_is_three_halves": true,
+    "first_factorized_geometry_weight_is_positive": true,
+    "model_has_exact_nonzero_zero_resonance": true,
+    "no_endpoint_reference_chord_selector_scale_fit_or_prediction_added": true,
+    "nonfermion_margin_theorem_preserved": true,
+    "retained_product_form_is_A_star_A": true,
+    "strict_Wronskian_not_declared_necessary": true,
+    "weight_is_quadratic_in_momentum": true
+  },
+  "validation_passed": true
+}

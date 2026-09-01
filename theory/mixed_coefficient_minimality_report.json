@@ -1,0 +1,75 @@
+{
+  "limitations": [
+    "The audit closes independent coefficient freedom under the BHSM axiom, but does not prove the full H_T theorem.",
+    "Scalar/topographic, projector-domain, and lower-bound dependencies remain separate theorem obligations."
+  ],
+  "minimality_status": "MINIMALITY_AUDIT_PASSES_UNDER_BHSM_AXIOMS",
+  "theorem_complete": true,
+  "title": "BHSM v2.11 Mixed Coefficient Minimality Report",
+  "uniqueness_status": "UNIQUE_REPRESENTATION_RULE_UNDER_BHSM_AXIOMS",
+  "variants": [
+    {
+      "changed_rule": "set every mixed coefficient to zero",
+      "limitation": "Represented slots must remain represented by existing sectors.",
+      "outcome": "allowed only for Hopf/base vertical-horizontal compatibility, not as universal convenience",
+      "status": "VARIANT_INDETERMINATE_WITHOUT_COMPATIBILITY_AXIOM",
+      "variant_id": "coefficient_zero"
+    },
+    {
+      "changed_rule": "flip mixed coefficient orientations",
+      "limitation": "A sign flip would create a new free bundle-curvature parameter.",
+      "outcome": "forbidden because no independent orientation coefficient is allowed",
+      "status": "VARIANT_FORBIDDEN_FREE_COEFFICIENT",
+      "variant_id": "sign_flipped"
+    },
+    {
+      "changed_rule": "remove Hopf/base mixing",
+      "limitation": "The parent connection inventory includes this slot.",
+      "outcome": "breaks the identified complete-connection slot",
+      "status": "VARIANT_FAILS_BHSM_AXIOMS",
+      "variant_id": "hopf_base_disabled"
+    },
+    {
+      "changed_rule": "remove boundary/coframe mixing",
+      "limitation": "The v1.2C coframe triplet channel remains required.",
+      "outcome": "loses the quark coframe compatibility channel",
+      "status": "VARIANT_FAILS_BHSM_AXIOMS",
+      "variant_id": "boundary_coframe_disabled"
+    },
+    {
+      "changed_rule": "replace coframe triplet by singlet",
+      "limitation": "This reopens the v1.2C uniqueness failure.",
+      "outcome": "fails the tested action-origin sector ledger",
+      "status": "VARIANT_FAILS_BHSM_AXIOMS",
+      "variant_id": "coframe_singlet"
+    },
+    {
+      "changed_rule": "remove chirality dependence",
+      "limitation": "Mirror exclusion cannot be preserved by a chirality-blind mixed rule.",
+      "outcome": "reopens mirror-channel risk",
+      "status": "VARIANT_OPEN_MIRROR_RISK",
+      "variant_id": "chirality_blind"
+    },
+    {
+      "changed_rule": "remove lepton/up/down dependence",
+      "limitation": "Sector labels are part of the formal kernel.",
+      "outcome": "cannot distinguish the sector boundary functionals",
+      "status": "VARIANT_FAILS_BHSM_AXIOMS",
+      "variant_id": "sector_blind"
+    },
+    {
+      "changed_rule": "allow opposite-chirality mixed channel",
+      "limitation": "No theorem allows this channel.",
+      "outcome": "conflicts with mirror exclusion scaffold",
+      "status": "VARIANT_OPEN_MIRROR_RISK",
+      "variant_id": "mirror_allowing"
+    },
+    {
+      "changed_rule": "introduce a new fitted coefficient",
+      "limitation": "This is explicitly forbidden by the v2.11 axiom.",
+      "outcome": "violates bundle separation and topographic representation",
+      "status": "VARIANT_FORBIDDEN_FREE_COEFFICIENT",
+      "variant_id": "independent_free_mixed_coefficient"
+    }
+  ]
+}

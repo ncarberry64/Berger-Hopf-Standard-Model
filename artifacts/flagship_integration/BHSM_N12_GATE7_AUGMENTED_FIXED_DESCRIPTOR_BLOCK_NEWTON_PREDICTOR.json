@@ -1,0 +1,61 @@
+{
+  "FULL_BHSM_COMPLETE": false,
+  "artifact": "BHSM_N12_GATE7_AUGMENTED_FIXED_DESCRIPTOR_BLOCK_NEWTON_PREDICTOR",
+  "authority": "NUMERICAL_REDUCED_TANGENT_DESCRIPTOR_PREDICTOR_NOT_NONLINEAR_OR_INTERVAL_AUTHORITY",
+  "claim_boundary": {
+    "FULL_BHSM_COMPLETE": false,
+    "Gate7": "ACTIVE_ACTION_OWNED_OPERATOR_ORACLE",
+    "continuous_interval_shadowing": "OPEN",
+    "nonlinear_augmented_center": "OPEN_RETAINED_EXACT_REPLAY",
+    "proper_time_pullback": "DOWNSTREAM_REQUIRES_ACCEPTED_CENTER_NORM_JETS"
+  },
+  "data": "artifacts/flagship_integration/BHSM_N12_GATE7_AUGMENTED_FIXED_DESCRIPTOR_BLOCK_NEWTON_PREDICTOR.npz",
+  "data_SHA256": "27D8365FBE86CC0784EB089E2F9F7C0DFE40A451C90AD4891366D2DD0DAE0F3B",
+  "exact_next_dependency": "APPLY_THE_74D_CORRECTION,_PROJECT_CONSTRAINTS,_KEEP_THE_INDEPENDENT_DESCRIPTOR,_PERSIST_CANCELLED_NORM_JETS,_AND_REPLAY_ALL_370_RETAINED_EXACT_MIDPOINTS",
+  "inputs": {
+    "artifacts/flagship_integration/BHSM_N12_GATE7_CORRELATED_DESCRIPTOR_AUGMENTED_JACOBIANS.json": "13AE80FD5E99CD4CF64910DC265C9A61179E1A7EF4300BE0D989722E1CAA6954",
+    "artifacts/flagship_integration/BHSM_N12_GATE7_CORRELATED_DESCRIPTOR_AUGMENTED_JACOBIANS.npz": "09F5441ADD40335C9F3683B5DCC4D21C0D25026629330DD66E3AF684B54497FD",
+    "artifacts/flagship_integration/BHSM_N12_GATE7_CORRELATED_DESCRIPTOR_NEWTON_MIDPOINT_REPLAY.json": "A7CB2680D3DBD8CC2EA040811C0D3C74DAA8245901A7B7BEE385AFEADF4BA622",
+    "artifacts/flagship_integration/BHSM_N12_GATE7_CORRELATED_DESCRIPTOR_NEWTON_MIDPOINT_REPLAY.npz": "3AA096FF8C5629DD64A56A0FF96833148B740122466396DCDFA500B806A3AACC",
+    "scripts/materialize_n12_gate7_augmented_fixed_descriptor_block_newton_predictor.py": "67860A51301A260F30D4CBC35B70E550CFFF36057B6A16698C9CD283F2F0161E",
+    "theory/n12_gate7_augmented_fixed_descriptor_newton.md": "55AA6B5D0A415234BAB9FD0D9D3E849210311D20DE7F9DF106429EA574664848"
+  },
+  "mesh": {
+    "ambient_dimension": 99,
+    "blocks": 370,
+    "constraint_tangent_dimension": 73,
+    "fixed_reset_endpoint": true,
+    "reduced_augmented_dimension": 74,
+    "test_descriptor_scale": 1000000.0,
+    "trial_descriptor_scale": 1e-07
+  },
+  "status": "AUGMENTED_74D_BLOCK_NEWTON_PREDICTOR_SOLVED",
+  "summary": {
+    "maximum_descriptor_correction_absolute": 2.456147478185911e-13,
+    "maximum_endpoint_augmented_correction_2_norm": 0.00033608992682753976,
+    "maximum_endpoint_augmented_correction_owner_node": 370,
+    "maximum_predicted_full_residual_2_norm": 1.6940341813577248e-11,
+    "maximum_predicted_normal_residual_2_norm": 1.6940341813577248e-11,
+    "maximum_predicted_reduced_residual_2_norm": 3.9374714209539156e-19,
+    "maximum_reduced_right_block_condition_2": 95.01565077281272,
+    "maximum_reduced_right_block_condition_owner_interval": 0,
+    "maximum_state_correction_2_norm": 0.00033608992682753976,
+    "minimum_predicted_descriptor": 9.351383832181333e-14,
+    "terminal_endpoint_augmented_correction_2_norm": 0.00033608992682753976
+  },
+  "validation": {
+    "all_370_reduced_blocks_materialized": true,
+    "all_371_augmented_endpoint_corrections_materialized": true,
+    "all_corrections_lie_in_constraint_tangent_plus_descriptor_axis": true,
+    "all_reduced_right_blocks_are_numerically_invertible": true,
+    "collocation_parameter_not_labeled_proper_time": true,
+    "descriptor_rate_row_is_solved_not_reconstructed_from_binary_eigenvalue": true,
+    "linearized_74D_block_residual_closes": true,
+    "no_action_source_selector_scale_gate_or_chord_changed": true,
+    "nonlinear_retained_exact_field_replay_not_claimed": true,
+    "normal_25D_residual_is_recorded_not_relabelled_as_zero": true,
+    "predicted_descriptors_remain_in_nonnegative_domain": true,
+    "reset_endpoint_correction_is_zero": true
+  },
+  "validation_passed": true
+}

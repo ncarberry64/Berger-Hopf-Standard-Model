@@ -1,0 +1,878 @@
+{
+  "FLAGSHIP_READY": false,
+  "FULL_BHSM_COMPLETE": false,
+  "actual_C2_birth_data": {
+    "D_tau_log_R4": 0.08877816767232168,
+    "log_R4": -0.0050962473732000975,
+    "source": "artifacts/flagship_integration/BHSM_N12_C2_BIRTH_COEFFICIENT_QUOTIENT_JET.json"
+  },
+  "artifact": "BHSM_N12_C2_OUTGOING_LOCAL_TRANSFER_GERM",
+  "claim_boundary": {
+    "FULL_BHSM_COMPLETE": false,
+    "Gate7": "ACTIVE_FIRST_VALIDATED_C2_REGULAR_SEGMENT",
+    "actual_C2_birth_and_transfer_germ": "DERIVED",
+    "actual_nonzero_C2_segment": "OPEN",
+    "chord_03_authorized": false,
+    "complete_M_C2_and_second_jet": "OPEN",
+    "frozen_predictions_changed": false,
+    "physical_Hessian": "OPEN_AFTER_SADDLE",
+    "same_action_saddle": "OPEN_AFTER_FORCE",
+    "zero_source_force": "OPEN_AFTER_COMPLETE_C2_REALIZATION"
+  },
+  "classification": "THE_CERTIFIED_ACTUAL_C2_BIRTH_CAUCHY_DATA_FIX_THE_EXACT_PROPER_TIME_GENERATOR_CAUCHY_JETS_AND_THE_INVERSE_FREE_SECOND_ORDER_OUTGOING_TRANSFER_GERM_FOR_SCALAR_AND_BOTH_FACTORIZED_PRODUCT_DIRAC_CHIRALITIES_IN_TWO_INDEPENDENT_RESET_QUOTIENT_DIRECTIONS;_NO_FUTURE_ENDPOINT_OR_COMPLETE_MAXIMAL_RESPONSE_IS_PROMOTED",
+  "diagram_feed": {
+    "C2_local_leg_first_quotient_jet": "DERIVED_THROUGH_SECOND_PROPER_TIME_ORDER",
+    "C2_local_leg_transfer": "DERIVED_THROUGH_SECOND_PROPER_TIME_ORDER",
+    "complete_M_C2": "OPEN_AFTER_VALIDATED_SEGMENT_AND_MAXIMAL_CONTINUATION",
+    "composition_when_available": "USE_EXISTING_TERMINAL_LOAD_SCHUR_REDUCTION_WITH_THE_LATER_AE2_OR_FRIEDRICHS_RESPONSE",
+    "downstream_C2_load": "NOT_SELECTED_AND_NOT_REQUIRED_FOR_THE_LOCAL_TWO_BOUNDARY_GERM"
+  },
+  "exact_identities": {
+    "first_quotient_jet": "D_xi_T=tau*D_xi_G0+(tau^2/2)*(D_xi_G0*G0+G0*D_xi_G0+D_xi_D_tau_G0)+o(tau^2)",
+    "product_Dirac": {
+      "D_tau_G": "diag(H*s,-H*s)",
+      "D_xi_D_tau_G": "diag((h_H-H*h)*s,-(h_H-H*h)*s)",
+      "D_xi_G": "diag(h*s,-h*s)",
+      "s": "chi*lambda*exp(-x)"
+    },
+    "scalar": {
+      "D_tau_V": "-2*H*V",
+      "D_xi_D_tau_V": "(4*H*h-2*h_H)*V",
+      "D_xi_V": "-2*h*V",
+      "V": "c*exp(-2*x)"
+    },
+    "transfer": "T(tau)=I+tau*G0+(tau^2/2)*(G0^2+D_tau_G0)+o(tau^2)"
+  },
+  "exact_next_dependency": "CERTIFY_A_NONZERO_OUTGOING_C2_COEFFICIENT_SEGMENT_WITH_A_REMAINDER_BOUND_IN_THE_PHYSICAL_EVENT_DESINGULARIZED_CHART,_THEN_INTEGRATE_THE_EXISTING_TRIANGULAR_TRANSFER_JET_ON_THAT_ACTUAL_SEGMENT_WITHOUT_PROMOTING_ITS_VALIDATION_EDGE_TO_AN_ENDPOINT",
+  "inputs": {
+    "artifacts/flagship_integration/BHSM_N12_C2_BIRTH_COEFFICIENT_QUOTIENT_JET.json": "A6595ACAD2A9865F31EE69F6DA7C067F8C0C00886B5D8A57A915D3537FF4ED7D",
+    "artifacts/flagship_integration/BHSM_N12_GATE7_C2_DIAGRAM_SLOT_MATCHING_AUDIT.json": "6B43CD9C225735E4DB4B73D67A43FF2BD8B8B4CFA2A7290397B8C8E076B63FA8",
+    "src/bhsm/interface/aether_forward_c2_local_transfer_germ.py": "838C91E26169639FBB25F021E6878EDBEB55968395A968F6947C63D37BAEFBB8",
+    "src/bhsm/interface/aether_forward_channel_transfer.py": "EE51EA8C9D2FB466EE6E766CD81713DED6A408ED942A9E817D8629547E87C275",
+    "theory/n12_c2_outgoing_local_transfer_germ.md": "D3AA35F9AA006D7C9588D1EF5FBFF7ED3FCED89CCF68E3391EE3E8B8524698B5"
+  },
+  "reset_quotient_rows": [
+    {
+      "birth_parameter_log_radius": -0.48022813477659065,
+      "birth_parameter_proper_rate": 0.804018373469784,
+      "channels": {
+        "product_Dirac_lambda_1_5_chirality_minus": {
+          "channel": "factorized_product_Dirac",
+          "chirality": -1,
+          "crosscheck": {
+            "Wronskian_residuals": [
+              1.1102230246251565e-16,
+              1.1102230246251565e-16
+            ],
+            "affine_history_role": "NUMERICAL_CAUCHY_GERM_CROSSCHECK_NOT_A_PROMOTED_PHYSICAL_ENDPOINT_OR_COMPLETE_C2_HISTORY",
+            "parameter_jet_halving_ratio": 0.12504967763310926,
+            "parameter_jet_residuals": [
+              2.0769412351923905e-09,
+              2.5972083192372017e-10
+            ],
+            "proper_durations": [
+              0.001,
+              0.0005
+            ],
+            "value_halving_ratio": 0.12500861750536096,
+            "value_residuals": [
+              1.4054614520255758e-09,
+              1.7569479307479443e-10
+            ]
+          },
+          "endpoint_condition_imposed": false,
+          "explicit_matrix_inverse_formed": false,
+          "generator_Cauchy_jet": {
+            "base": [
+              [
+                1.5076638829945674,
+                1.0
+              ],
+              [
+                1.0,
+                -1.5076638829945674
+              ]
+            ],
+            "mixed_time_parameter": [
+              [
+                -1.2764668640042323,
+                0.0
+              ],
+              [
+                0.0,
+                1.2764668640042323
+              ]
+            ],
+            "parameter_first": [
+              [
+                0.7240226144005132,
+                0.0
+              ],
+              [
+                0.0,
+                -0.7240226144005132
+              ]
+            ],
+            "proper_time_first": [
+              [
+                -0.1338476369979953,
+                0.0
+              ],
+              [
+                0.0,
+                0.1338476369979953
+              ]
+            ]
+          },
+          "transfer_germ": {
+            "parameter_constant": [
+              [
+                0.0,
+                0.0
+              ],
+              [
+                0.0,
+                0.0
+              ]
+            ],
+            "parameter_linear": [
+              [
+                0.7240226144005132,
+                0.0
+              ],
+              [
+                0.0,
+                -0.7240226144005132
+              ]
+            ],
+            "parameter_quadratic": [
+              [
+                0.45334931420084,
+                0.0
+              ],
+              [
+                0.0,
+                1.7298161782050723
+              ]
+            ],
+            "transfer_constant": [
+              [
+                1.0,
+                0.0
+              ],
+              [
+                0.0,
+                1.0
+              ]
+            ],
+            "transfer_linear": [
+              [
+                1.5076638829945674,
+                1.0
+              ],
+              [
+                1.0,
+                -1.5076638829945674
+              ]
+            ],
+            "transfer_quadratic": [
+              [
+                1.5696013735441308,
+                0.0
+              ],
+              [
+                0.0,
+                1.7034490105421258
+              ]
+            ]
+          },
+          "unit_radius_Dirac_eigenvalue": 1.5
+        },
+        "product_Dirac_lambda_1_5_chirality_plus": {
+          "channel": "factorized_product_Dirac",
+          "chirality": 1,
+          "crosscheck": {
+            "Wronskian_residuals": [
+              0.0,
+              2.220446049250313e-16
+            ],
+            "affine_history_role": "NUMERICAL_CAUCHY_GERM_CROSSCHECK_NOT_A_PROMOTED_PHYSICAL_ENDPOINT_OR_COMPLETE_C2_HISTORY",
+            "parameter_jet_halving_ratio": 0.12504967763310923,
+            "parameter_jet_residuals": [
+              2.076941235192391e-09,
+              2.5972083192372017e-10
+            ],
+            "proper_durations": [
+              0.001,
+              0.0005
+            ],
+            "value_halving_ratio": 0.12500861750536096,
+            "value_residuals": [
+              1.4054614520255758e-09,
+              1.7569479307479443e-10
+            ]
+          },
+          "endpoint_condition_imposed": false,
+          "explicit_matrix_inverse_formed": false,
+          "generator_Cauchy_jet": {
+            "base": [
+              [
+                -1.5076638829945674,
+                1.0
+              ],
+              [
+                1.0,
+                1.5076638829945674
+              ]
+            ],
+            "mixed_time_parameter": [
+              [
+                1.2764668640042323,
+                0.0
+              ],
+              [
+                0.0,
+                -1.2764668640042323
+              ]
+            ],
+            "parameter_first": [
+              [
+                -0.7240226144005132,
+                0.0
+              ],
+              [
+                0.0,
+                0.7240226144005132
+              ]
+            ],
+            "proper_time_first": [
+              [
+                0.1338476369979953,
+                0.0
+              ],
+              [
+                0.0,
+                -0.1338476369979953
+              ]
+            ]
+          },
+          "transfer_germ": {
+            "parameter_constant": [
+              [
+                0.0,
+                0.0
+              ],
+              [
+                0.0,
+                0.0
+              ]
+            ],
+            "parameter_linear": [
+              [
+                -0.7240226144005132,
+                0.0
+              ],
+              [
+                0.0,
+                0.7240226144005132
+              ]
+            ],
+            "parameter_quadratic": [
+              [
+                1.7298161782050723,
+                0.0
+              ],
+              [
+                0.0,
+                0.45334931420084
+              ]
+            ],
+            "transfer_constant": [
+              [
+                1.0,
+                0.0
+              ],
+              [
+                0.0,
+                1.0
+              ]
+            ],
+            "transfer_linear": [
+              [
+                -1.5076638829945674,
+                1.0
+              ],
+              [
+                1.0,
+                1.5076638829945674
+              ]
+            ],
+            "transfer_quadratic": [
+              [
+                1.7034490105421258,
+                0.0
+              ],
+              [
+                0.0,
+                1.5696013735441308
+              ]
+            ]
+          },
+          "unit_radius_Dirac_eigenvalue": 1.5
+        },
+        "scalar_c_3": {
+          "channel": "scalar",
+          "crosscheck": {
+            "Wronskian_residuals": [
+              0.0,
+              0.0
+            ],
+            "affine_history_role": "NUMERICAL_CAUCHY_GERM_CROSSCHECK_NOT_A_PROMOTED_PHYSICAL_ENDPOINT_OR_COMPLETE_C2_HISTORY",
+            "parameter_jet_halving_ratio": 0.12505610091927583,
+            "parameter_jet_residuals": [
+              4.6899333534182085e-09,
+              5.865047787497451e-10
+            ],
+            "proper_durations": [
+              0.001,
+              0.0005
+            ],
+            "value_halving_ratio": 0.12500947103726437,
+            "value_residuals": [
+              2.8120830772716396e-09,
+              3.515370180025703e-10
+            ]
+          },
+          "endpoint_condition_imposed": false,
+          "explicit_matrix_inverse_formed": false,
+          "generator_Cauchy_jet": {
+            "base": [
+              [
+                0.0,
+                1.0
+              ],
+              [
+                4.030733845448342,
+                0.0
+              ]
+            ],
+            "mixed_time_parameter": [
+              [
+                0.0,
+                0.0
+              ],
+              [
+                -5.390377879384371,
+                0.0
+              ]
+            ],
+            "parameter_first": [
+              [
+                0.0,
+                0.0
+              ],
+              [
+                2.910887323207883,
+                0.0
+              ]
+            ],
+            "proper_time_first": [
+              [
+                0.0,
+                0.0
+              ],
+              [
+                -0.5381259950027865,
+                0.0
+              ]
+            ]
+          },
+          "transfer_germ": {
+            "parameter_constant": [
+              [
+                0.0,
+                0.0
+              ],
+              [
+                0.0,
+                0.0
+              ]
+            ],
+            "parameter_linear": [
+              [
+                0.0,
+                0.0
+              ],
+              [
+                2.910887323207883,
+                0.0
+              ]
+            ],
+            "parameter_quadratic": [
+              [
+                1.4554436616039415,
+                0.0
+              ],
+              [
+                -2.6951889396921853,
+                1.4554436616039415
+              ]
+            ],
+            "transfer_constant": [
+              [
+                1.0,
+                0.0
+              ],
+              [
+                0.0,
+                1.0
+              ]
+            ],
+            "transfer_linear": [
+              [
+                0.0,
+                1.0
+              ],
+              [
+                4.030733845448342,
+                0.0
+              ]
+            ],
+            "transfer_quadratic": [
+              [
+                2.015366922724171,
+                0.0
+              ],
+              [
+                -0.26906299750139323,
+                2.015366922724171
+              ]
+            ]
+          },
+          "unit_radius_spatial_eigenvalue": 3.0
+        }
+      },
+      "reset_quotient_direction": 0
+    },
+    {
+      "birth_parameter_log_radius": 0.4611589202646205,
+      "birth_parameter_proper_rate": 0.2754433174935253,
+      "channels": {
+        "product_Dirac_lambda_1_5_chirality_minus": {
+          "channel": "factorized_product_Dirac",
+          "chirality": -1,
+          "crosscheck": {
+            "Wronskian_residuals": [
+              1.1102230246251565e-16,
+              1.1102230246251565e-16
+            ],
+            "affine_history_role": "NUMERICAL_CAUCHY_GERM_CROSSCHECK_NOT_A_PROMOTED_PHYSICAL_ENDPOINT_OR_COMPLETE_C2_HISTORY",
+            "parameter_jet_halving_ratio": 0.12498145359685571,
+            "parameter_jet_residuals": [
+              1.3964370606778192e-09,
+              1.7452873370003445e-10
+            ],
+            "proper_durations": [
+              0.001,
+              0.0005
+            ],
+            "value_halving_ratio": 0.12500861750536096,
+            "value_residuals": [
+              1.4054614520255758e-09,
+              1.7569479307479443e-10
+            ]
+          },
+          "endpoint_condition_imposed": false,
+          "explicit_matrix_inverse_formed": false,
+          "generator_Cauchy_jet": {
+            "base": [
+              [
+                1.5076638829945674,
+                1.0
+              ],
+              [
+                1.0,
+                -1.5076638829945674
+              ]
+            ],
+            "mixed_time_parameter": [
+              [
+                -0.35355090983922743,
+                0.0
+              ],
+              [
+                0.0,
+                0.35355090983922743
+              ]
+            ],
+            "parameter_first": [
+              [
+                -0.6952726484037399,
+                0.0
+              ],
+              [
+                0.0,
+                0.6952726484037399
+              ]
+            ],
+            "proper_time_first": [
+              [
+                -0.1338476369979953,
+                0.0
+              ],
+              [
+                0.0,
+                0.1338476369979953
+              ]
+            ]
+          },
+          "transfer_germ": {
+            "parameter_constant": [
+              [
+                0.0,
+                0.0
+              ],
+              [
+                0.0,
+                0.0
+              ]
+            ],
+            "parameter_linear": [
+              [
+                -0.6952726484037399,
+                0.0
+              ],
+              [
+                0.0,
+                0.6952726484037399
+              ]
+            ],
+            "parameter_quadratic": [
+              [
+                -1.2250129157519127,
+                0.0
+              ],
+              [
+                0.0,
+                -0.8714620059126854
+              ]
+            ],
+            "transfer_constant": [
+              [
+                1.0,
+                0.0
+              ],
+              [
+                0.0,
+                1.0
+              ]
+            ],
+            "transfer_linear": [
+              [
+                1.5076638829945674,
+                1.0
+              ],
+              [
+                1.0,
+                -1.5076638829945674
+              ]
+            ],
+            "transfer_quadratic": [
+              [
+                1.5696013735441308,
+                0.0
+              ],
+              [
+                0.0,
+                1.7034490105421258
+              ]
+            ]
+          },
+          "unit_radius_Dirac_eigenvalue": 1.5
+        },
+        "product_Dirac_lambda_1_5_chirality_plus": {
+          "channel": "factorized_product_Dirac",
+          "chirality": 1,
+          "crosscheck": {
+            "Wronskian_residuals": [
+              0.0,
+              2.220446049250313e-16
+            ],
+            "affine_history_role": "NUMERICAL_CAUCHY_GERM_CROSSCHECK_NOT_A_PROMOTED_PHYSICAL_ENDPOINT_OR_COMPLETE_C2_HISTORY",
+            "parameter_jet_halving_ratio": 0.12498145359685571,
+            "parameter_jet_residuals": [
+              1.3964370606778192e-09,
+              1.7452873370003445e-10
+            ],
+            "proper_durations": [
+              0.001,
+              0.0005
+            ],
+            "value_halving_ratio": 0.12500861750536096,
+            "value_residuals": [
+              1.4054614520255758e-09,
+              1.7569479307479443e-10
+            ]
+          },
+          "endpoint_condition_imposed": false,
+          "explicit_matrix_inverse_formed": false,
+          "generator_Cauchy_jet": {
+            "base": [
+              [
+                -1.5076638829945674,
+                1.0
+              ],
+              [
+                1.0,
+                1.5076638829945674
+              ]
+            ],
+            "mixed_time_parameter": [
+              [
+                0.35355090983922743,
+                0.0
+              ],
+              [
+                0.0,
+                -0.35355090983922743
+              ]
+            ],
+            "parameter_first": [
+              [
+                0.6952726484037399,
+                0.0
+              ],
+              [
+                0.0,
+                -0.6952726484037399
+              ]
+            ],
+            "proper_time_first": [
+              [
+                0.1338476369979953,
+                0.0
+              ],
+              [
+                0.0,
+                -0.1338476369979953
+              ]
+            ]
+          },
+          "transfer_germ": {
+            "parameter_constant": [
+              [
+                0.0,
+                0.0
+              ],
+              [
+                0.0,
+                0.0
+              ]
+            ],
+            "parameter_linear": [
+              [
+                0.6952726484037399,
+                0.0
+              ],
+              [
+                0.0,
+                -0.6952726484037399
+              ]
+            ],
+            "parameter_quadratic": [
+              [
+                -0.8714620059126854,
+                0.0
+              ],
+              [
+                0.0,
+                -1.2250129157519127
+              ]
+            ],
+            "transfer_constant": [
+              [
+                1.0,
+                0.0
+              ],
+              [
+                0.0,
+                1.0
+              ]
+            ],
+            "transfer_linear": [
+              [
+                -1.5076638829945674,
+                1.0
+              ],
+              [
+                1.0,
+                1.5076638829945674
+              ]
+            ],
+            "transfer_quadratic": [
+              [
+                1.7034490105421258,
+                0.0
+              ],
+              [
+                0.0,
+                1.5696013735441308
+              ]
+            ]
+          },
+          "unit_radius_Dirac_eigenvalue": 1.5
+        },
+        "scalar_c_3": {
+          "channel": "scalar",
+          "crosscheck": {
+            "Wronskian_residuals": [
+              0.0,
+              0.0
+            ],
+            "affine_history_role": "NUMERICAL_CAUCHY_GERM_CROSSCHECK_NOT_A_PROMOTED_PHYSICAL_ENDPOINT_OR_COMPLETE_C2_HISTORY",
+            "parameter_jet_halving_ratio": 0.1249884392144211,
+            "parameter_jet_residuals": [
+              3.727443692987556e-09,
+              4.658873694461524e-10
+            ],
+            "proper_durations": [
+              0.001,
+              0.0005
+            ],
+            "value_halving_ratio": 0.12500947103726437,
+            "value_residuals": [
+              2.8120830772716396e-09,
+              3.515370180025703e-10
+            ]
+          },
+          "endpoint_condition_imposed": false,
+          "explicit_matrix_inverse_formed": false,
+          "generator_Cauchy_jet": {
+            "base": [
+              [
+                0.0,
+                1.0
+              ],
+              [
+                4.030733845448342,
+                0.0
+              ]
+            ],
+            "mixed_time_parameter": [
+              [
+                0.0,
+                0.0
+              ],
+              [
+                -1.1732675640167822,
+                0.0
+              ]
+            ],
+            "parameter_first": [
+              [
+                0.0,
+                0.0
+              ],
+              [
+                -2.7952998955527977,
+                0.0
+              ]
+            ],
+            "proper_time_first": [
+              [
+                0.0,
+                0.0
+              ],
+              [
+                -0.5381259950027865,
+                0.0
+              ]
+            ]
+          },
+          "transfer_germ": {
+            "parameter_constant": [
+              [
+                0.0,
+                0.0
+              ],
+              [
+                0.0,
+                0.0
+              ]
+            ],
+            "parameter_linear": [
+              [
+                0.0,
+                0.0
+              ],
+              [
+                -2.7952998955527977,
+                0.0
+              ]
+            ],
+            "parameter_quadratic": [
+              [
+                -1.3976499477763988,
+                0.0
+              ],
+              [
+                -0.5866337820083911,
+                -1.3976499477763988
+              ]
+            ],
+            "transfer_constant": [
+              [
+                1.0,
+                0.0
+              ],
+              [
+                0.0,
+                1.0
+              ]
+            ],
+            "transfer_linear": [
+              [
+                0.0,
+                1.0
+              ],
+              [
+                4.030733845448342,
+                0.0
+              ]
+            ],
+            "transfer_quadratic": [
+              [
+                2.015366922724171,
+                0.0
+              ],
+              [
+                -0.26906299750139323,
+                2.015366922724171
+              ]
+            ]
+          },
+          "unit_radius_spatial_eigenvalue": 3.0
+        }
+      },
+      "reset_quotient_direction": 1
+    }
+  ],
+  "spectral_probe": {
+    "role": "NUMERICAL_CROSSCHECK_ONLY;_THE_ALGEBRAIC_GERM_IDENTITIES_HOLD_FOR_ARBITRARY_NATIVE_z",
+    "z": -1.0
+  },
+  "status": "ACTUAL_C2_CHANNEL_TRANSFER_AND_FIRST_QUOTIENT_JET_GERM_DERIVED",
+  "validation": {
+    "all_first_jet_germs_show_cubic_order_halving": true,
+    "all_transfer_Wronskians_close": true,
+    "all_value_germs_show_cubic_order_halving": true,
+    "both_independent_reset_quotient_directions_propagated": true,
+    "existing_C2_operator_type_match_consumed": true,
+    "no_affine_crosscheck_promoted_to_complete_physical_history": true,
+    "no_endpoint_condition_or_matrix_inverse_used": true,
+    "no_selector_endpoint_scale_action_term_recurrence_gate_or_chord_added": true,
+    "scalar_and_both_Dirac_chiralities_assembled": true,
+    "validated_actual_C2_birth_jet_consumed": true
+  },
+  "validation_passed": true
+}

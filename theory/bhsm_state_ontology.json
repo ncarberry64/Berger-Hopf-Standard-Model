@@ -1,0 +1,483 @@
+{
+  "category_counts": {
+    "COMPOSITE_QCD_STATE": 3,
+    "DRESSING_CONTRIBUTION": 1,
+    "FORBIDDEN_EXTRA_LIGHT_STATE": 1,
+    "HEAVY_LIFTED_STATE": 1,
+    "INTERNAL_BERGER_HOPF_MODE": 1,
+    "ON_SHELL_SM_PARTICLE": 3,
+    "OPEN_UNCLASSIFIED": 0,
+    "SCREENED_TOPOGRAPHIC_STATE": 1,
+    "VIRTUAL_EXCITATION": 1
+  },
+  "claim_boundary": "BHSM v1.3F clarifies that internal modes and virtual dressing contributions are not automatically new observable particles. Extra observable light states remain forbidden unless identified experimentally or lifted/screened by the H_T/scalar-sector mechanisms.",
+  "ledger": {
+    "classifications": [
+      {
+        "category": "ON_SHELL_SM_PARTICLE",
+        "forbidden_extra_light": false,
+        "limitations": [
+          "State ontology is semantic; it does not change model predictions."
+        ],
+        "observable_particle": true,
+        "rationale": [
+          "R1: accepted on-shell SM field state."
+        ],
+        "state_id": "electron",
+        "virtual_or_dressing": false
+      },
+      {
+        "category": "ON_SHELL_SM_PARTICLE",
+        "forbidden_extra_light": false,
+        "limitations": [
+          "State ontology is semantic; it does not change model predictions."
+        ],
+        "observable_particle": true,
+        "rationale": [
+          "R1: accepted on-shell SM field state."
+        ],
+        "state_id": "charm_quark_field",
+        "virtual_or_dressing": false
+      },
+      {
+        "category": "ON_SHELL_SM_PARTICLE",
+        "forbidden_extra_light": false,
+        "limitations": [
+          "State ontology is semantic; it does not change model predictions."
+        ],
+        "observable_particle": true,
+        "rationale": [
+          "R1: accepted on-shell SM field state."
+        ],
+        "state_id": "photon",
+        "virtual_or_dressing": false
+      },
+      {
+        "category": "COMPOSITE_QCD_STATE",
+        "forbidden_extra_light": false,
+        "limitations": [
+          "State ontology is semantic; it does not change model predictions."
+        ],
+        "observable_particle": true,
+        "rationale": [
+          "R2: QCD bound states are composite, not elementary BHSM ledger entries."
+        ],
+        "state_id": "proton",
+        "virtual_or_dressing": false
+      },
+      {
+        "category": "COMPOSITE_QCD_STATE",
+        "forbidden_extra_light": false,
+        "limitations": [
+          "State ontology is semantic; it does not change model predictions."
+        ],
+        "observable_particle": true,
+        "rationale": [
+          "R2: QCD bound states are composite, not elementary BHSM ledger entries."
+        ],
+        "state_id": "neutron",
+        "virtual_or_dressing": false
+      },
+      {
+        "category": "COMPOSITE_QCD_STATE",
+        "forbidden_extra_light": false,
+        "limitations": [
+          "State ontology is semantic; it does not change model predictions."
+        ],
+        "observable_particle": true,
+        "rationale": [
+          "R2: QCD bound states are composite, not elementary BHSM ledger entries."
+        ],
+        "state_id": "pion",
+        "virtual_or_dressing": false
+      },
+      {
+        "category": "INTERNAL_BERGER_HOPF_MODE",
+        "forbidden_extra_light": false,
+        "limitations": [
+          "State ontology is semantic; it does not change model predictions."
+        ],
+        "observable_particle": false,
+        "rationale": [
+          "R3: internal Berger-Hopf modes are not automatically particles."
+        ],
+        "state_id": "lepton_internal_mode_5_2",
+        "virtual_or_dressing": false
+      },
+      {
+        "category": "FORBIDDEN_EXTRA_LIGHT_STATE",
+        "forbidden_extra_light": true,
+        "limitations": [
+          "State ontology is semantic; it does not change model predictions."
+        ],
+        "observable_particle": false,
+        "rationale": [
+          "R6: unrecognized light observable internal state is forbidden."
+        ],
+        "state_id": "non_sm_light_internal_mode",
+        "virtual_or_dressing": false
+      },
+      {
+        "category": "HEAVY_LIFTED_STATE",
+        "forbidden_extra_light": false,
+        "limitations": [
+          "State ontology is semantic; it does not change model predictions."
+        ],
+        "observable_particle": false,
+        "rationale": [
+          "R7: internal complement mode is above the Hopf/H_T lift scale."
+        ],
+        "state_id": "heavy_complement_mode",
+        "virtual_or_dressing": false
+      },
+      {
+        "category": "SCREENED_TOPOGRAPHIC_STATE",
+        "forbidden_extra_light": false,
+        "limitations": [
+          "State ontology is semantic; it does not change model predictions."
+        ],
+        "observable_particle": false,
+        "rationale": [
+          "R8: scalar/topographic mode is Higgs-projected or screened."
+        ],
+        "state_id": "screened_topographic_scalar",
+        "virtual_or_dressing": false
+      },
+      {
+        "category": "VIRTUAL_EXCITATION",
+        "forbidden_extra_light": false,
+        "limitations": [
+          "State ontology is semantic; it does not change model predictions."
+        ],
+        "observable_particle": false,
+        "rationale": [
+          "R4: off-shell temporary contributions are virtual excitations unless on-shell."
+        ],
+        "state_id": "temporary_charm_sector_dressing",
+        "virtual_or_dressing": true
+      },
+      {
+        "category": "DRESSING_CONTRIBUTION",
+        "forbidden_extra_light": false,
+        "limitations": [
+          "State ontology is semantic; it does not change model predictions."
+        ],
+        "observable_particle": false,
+        "rationale": [
+          "R5: virtual-environment corrections are dressing contributions, not particles."
+        ],
+        "state_id": "z_virt_u2_half",
+        "virtual_or_dressing": true
+      }
+    ],
+    "rules": [
+      {
+        "category": "ON_SHELL_SM_PARTICLE",
+        "id": "R1",
+        "limitations": [
+          "This ontology does not derive the SM field ledger."
+        ],
+        "statement": "Standard Model elementary particles are real/on-shell particle states only if they correspond to the accepted SM field ledger."
+      },
+      {
+        "category": "COMPOSITE_QCD_STATE",
+        "id": "R2",
+        "limitations": [
+          "Composite classification is semantic and does not solve QCD confinement."
+        ],
+        "statement": "Composite hadrons, mesons, baryons, resonances, and bound states are downstream QCD composite states, not elementary BHSM ledger entries."
+      },
+      {
+        "category": "INTERNAL_BERGER_HOPF_MODE",
+        "id": "R3",
+        "limitations": [
+          "The full internal spectrum remains under H_T audit."
+        ],
+        "statement": "Internal Berger-Hopf eigenmodes are not automatically observable particles."
+      },
+      {
+        "category": "VIRTUAL_EXCITATION",
+        "id": "R4",
+        "limitations": [
+          "Loop/dressing language is an ontology distinction, not a new numerical prediction."
+        ],
+        "statement": "Virtual charm, top, quark, lepton, gauge, or scalar contributions are virtual excitations or dressing contributions unless they correspond to on-shell states."
+      },
+      {
+        "category": "DRESSING_CONTRIBUTION",
+        "id": "R5",
+        "limitations": [
+          "The dressed branch remains a candidate branch, not canonical adoption."
+        ],
+        "statement": "Virtual-environment corrections such as Z_virt^{u,2}=1/2 are dressing contributions, not new particles."
+      },
+      {
+        "category": "FORBIDDEN_EXTRA_LIGHT_STATE",
+        "id": "R6",
+        "limitations": [
+          "The full H_T no-extra-light theorem remains scaffolded, not proven."
+        ],
+        "statement": "Any additional internal mode below the H_T gap that couples as an observable on-shell state is a forbidden extra-light state unless experimentally identified."
+      },
+      {
+        "category": "HEAVY_LIFTED_STATE",
+        "id": "R7",
+        "limitations": [
+          "The full H_T spectrum is still open."
+        ],
+        "statement": "Heavy internal modes above the Hopf/H_T lift scale are heavy lifted states."
+      },
+      {
+        "category": "SCREENED_TOPOGRAPHIC_STATE",
+        "id": "R8",
+        "limitations": [
+          "Full scalar/topographic decoupling from the action remains open."
+        ],
+        "statement": "Scalar/topographic modes are allowed only if Higgs-projected, heavy, derivative-filtered, curvature-filtered, or screened; otherwise they are forbidden extra-light states."
+      }
+    ],
+    "states": [
+      {
+        "above_ht_gap": false,
+        "composite": false,
+        "couples_as_observable": true,
+        "description": "Accepted on-shell Standard Model charged-lepton field state.",
+        "dressing": false,
+        "experimentally_identified": true,
+        "higgs_projected": false,
+        "id": "electron",
+        "internal_mode": false,
+        "light": true,
+        "name": "electron",
+        "notes": [],
+        "on_shell": true,
+        "screened": false,
+        "sector": "charged_leptons",
+        "sm_field": true,
+        "virtual": false
+      },
+      {
+        "above_ht_gap": false,
+        "composite": false,
+        "couples_as_observable": true,
+        "description": "Accepted SM charm field state when treated as a real field excitation.",
+        "dressing": false,
+        "experimentally_identified": true,
+        "higgs_projected": false,
+        "id": "charm_quark_field",
+        "internal_mode": false,
+        "light": false,
+        "name": "charm quark field excitation",
+        "notes": [],
+        "on_shell": true,
+        "screened": false,
+        "sector": "up_quarks",
+        "sm_field": true,
+        "virtual": false
+      },
+      {
+        "above_ht_gap": false,
+        "composite": false,
+        "couples_as_observable": true,
+        "description": "Accepted on-shell SM gauge field state.",
+        "dressing": false,
+        "experimentally_identified": true,
+        "higgs_projected": false,
+        "id": "photon",
+        "internal_mode": false,
+        "light": true,
+        "name": "photon",
+        "notes": [],
+        "on_shell": true,
+        "screened": false,
+        "sector": "gauge",
+        "sm_field": true,
+        "virtual": false
+      },
+      {
+        "above_ht_gap": false,
+        "composite": true,
+        "couples_as_observable": true,
+        "description": "QCD baryon composite state.",
+        "dressing": false,
+        "experimentally_identified": true,
+        "higgs_projected": false,
+        "id": "proton",
+        "internal_mode": false,
+        "light": false,
+        "name": "proton",
+        "notes": [],
+        "on_shell": true,
+        "screened": false,
+        "sector": "qcd_composite",
+        "sm_field": false,
+        "virtual": false
+      },
+      {
+        "above_ht_gap": false,
+        "composite": true,
+        "couples_as_observable": true,
+        "description": "QCD baryon composite state.",
+        "dressing": false,
+        "experimentally_identified": true,
+        "higgs_projected": false,
+        "id": "neutron",
+        "internal_mode": false,
+        "light": false,
+        "name": "neutron",
+        "notes": [],
+        "on_shell": true,
+        "screened": false,
+        "sector": "qcd_composite",
+        "sm_field": false,
+        "virtual": false
+      },
+      {
+        "above_ht_gap": false,
+        "composite": true,
+        "couples_as_observable": true,
+        "description": "QCD meson composite state.",
+        "dressing": false,
+        "experimentally_identified": true,
+        "higgs_projected": false,
+        "id": "pion",
+        "internal_mode": false,
+        "light": false,
+        "name": "pion",
+        "notes": [],
+        "on_shell": true,
+        "screened": false,
+        "sector": "qcd_composite",
+        "sm_field": false,
+        "virtual": false
+      },
+      {
+        "above_ht_gap": false,
+        "composite": false,
+        "couples_as_observable": false,
+        "description": "Berger-Hopf internal mode used in the charged-lepton ledger.",
+        "dressing": false,
+        "experimentally_identified": false,
+        "higgs_projected": false,
+        "id": "lepton_internal_mode_5_2",
+        "internal_mode": true,
+        "light": false,
+        "name": "charged-lepton internal mode (5,2)",
+        "notes": [
+          "Internal mode label is not automatically an on-shell particle."
+        ],
+        "on_shell": false,
+        "screened": false,
+        "sector": "charged_leptons",
+        "sm_field": false,
+        "virtual": false
+      },
+      {
+        "above_ht_gap": false,
+        "composite": false,
+        "couples_as_observable": true,
+        "description": "Hypothetical light internal mode below the H_T gap that couples as an observable on-shell state.",
+        "dressing": false,
+        "experimentally_identified": false,
+        "higgs_projected": false,
+        "id": "non_sm_light_internal_mode",
+        "internal_mode": true,
+        "light": true,
+        "name": "non-SM light internal mode below H_T gap",
+        "notes": [],
+        "on_shell": true,
+        "screened": false,
+        "sector": "internal",
+        "sm_field": false,
+        "virtual": false
+      },
+      {
+        "above_ht_gap": true,
+        "composite": false,
+        "couples_as_observable": false,
+        "description": "Internal complement mode lifted above the Hopf/H_T scale.",
+        "dressing": false,
+        "experimentally_identified": false,
+        "higgs_projected": false,
+        "id": "heavy_complement_mode",
+        "internal_mode": true,
+        "light": false,
+        "name": "heavy internal complement mode above 4 pi^2 v",
+        "notes": [],
+        "on_shell": false,
+        "screened": false,
+        "sector": "internal",
+        "sm_field": false,
+        "virtual": false
+      },
+      {
+        "above_ht_gap": false,
+        "composite": false,
+        "couples_as_observable": false,
+        "description": "Scalar/topographic mode allowed through screening rather than as an extra light direct-coupled state.",
+        "dressing": false,
+        "experimentally_identified": false,
+        "higgs_projected": false,
+        "id": "screened_topographic_scalar",
+        "internal_mode": true,
+        "light": true,
+        "name": "screened topographic scalar mode",
+        "notes": [],
+        "on_shell": false,
+        "screened": true,
+        "sector": "scalar_topographic",
+        "sm_field": false,
+        "virtual": false
+      },
+      {
+        "above_ht_gap": false,
+        "composite": false,
+        "couples_as_observable": false,
+        "description": "Temporary charm-sector contribution treated as virtual/off-shell or dressing structure.",
+        "dressing": false,
+        "experimentally_identified": false,
+        "higgs_projected": false,
+        "id": "temporary_charm_sector_dressing",
+        "internal_mode": false,
+        "light": false,
+        "name": "temporary charm-sector loop/dressing effect",
+        "notes": [
+          "Not an additional on-shell particle."
+        ],
+        "on_shell": false,
+        "screened": false,
+        "sector": "up_quarks",
+        "sm_field": false,
+        "virtual": true
+      },
+      {
+        "above_ht_gap": false,
+        "composite": false,
+        "couples_as_observable": false,
+        "description": "Virtual-environment dressing contribution for the pure-fiber middle-up mode.",
+        "dressing": true,
+        "experimentally_identified": false,
+        "higgs_projected": false,
+        "id": "z_virt_u2_half",
+        "internal_mode": false,
+        "light": false,
+        "name": "Z_virt^{u,2}=1/2",
+        "notes": [
+          "Dressing contribution changes only c/t in the dressed candidate branch."
+        ],
+        "on_shell": false,
+        "screened": false,
+        "sector": "up_quarks",
+        "sm_field": false,
+        "virtual": false
+      }
+    ],
+    "theorem_complete": false
+  },
+  "limitations": [
+    "This is a semantic and structural ontology layer, not a model-output change.",
+    "It does not compute the full H_T spectrum or prove the no-extra-light theorem."
+  ],
+  "theorem_complete": false,
+  "title": "BHSM v1.3F State Ontology and Particle/Mode Classification Ledger"
+}

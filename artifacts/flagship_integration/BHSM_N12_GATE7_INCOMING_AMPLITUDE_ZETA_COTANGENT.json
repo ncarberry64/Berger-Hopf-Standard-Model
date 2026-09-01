@@ -1,0 +1,94 @@
+{
+  "FLAGSHIP_READY": false,
+  "FULL_BHSM_COMPLETE": false,
+  "adjudication": {
+    "Gate7": "OPEN",
+    "Gate8": "LOCKED",
+    "chord_03_authorized": false,
+    "componentwise_KKT_condition_added": false,
+    "joint_heat_minus_zeta_amplitude_sign": "OPEN_WAITING_ON_SHRINKING_ARM_HEAT_DERIVATIVE",
+    "maximal_projected_tail": "OPEN_AFTER_FINITE_CORE_JOINT_COVECTOR",
+    "same_action_saddle": "WAITING_ON_JOINT_SIGN",
+    "upstream_C1_zeta_amplitude_covector": "CERTIFIED_STRICT_SIGN"
+  },
+  "artifact": "BHSM_N12_GATE7_INCOMING_AMPLITUDE_ZETA_COTANGENT",
+  "certified_enclosure": {
+    "absolute_covector_per_lambda_interval": [
+      479942338023989.3,
+      4155911709319810.5
+    ],
+    "amplitude_interval": [
+      0.0,
+      1.3302563684711186e-30
+    ],
+    "amplitude_interval_left_endpoint_is_open": true,
+    "log_R4_interval": [
+      -0.005096247373848582,
+      -0.005096247372551606
+    ],
+    "minus_Delta_interval": [
+      4.75639283766662e-16,
+      4.11865074656747e-15
+    ],
+    "outer_amplitude_replacement_covector_interval": [
+      6.384463516546915e-16,
+      5.5284280181319e-15
+    ],
+    "outer_amplitude_signed_covector_interval": [
+      -5.5284280181319e-15,
+      -6.384463516546915e-16
+    ],
+    "uniform_positive_magnitude_lower_on_open_interval": false,
+    "uniform_strict_sign_for_every_positive_amplitude": true
+  },
+  "claim_boundary": {
+    "FULL_BHSM_COMPLETE": false,
+    "Gate7": "OPEN",
+    "Gate8": "LOCKED",
+    "actual_projected_KKT_root": "OPEN",
+    "chord_03_authorized": false,
+    "incoming_amplitude_zeta_covector": "CERTIFIED_STRICT_SIGN",
+    "joint_amplitude_force": "OPEN",
+    "maximal_projected_tail": "OPEN"
+  },
+  "classification": "ON_THE_CERTIFIED_FIXED_TERMINAL_E1_C2_LOCAL_FAMILY_THE_INCOMING_AMPLITUDE_DERIVATIVE_OF_THE_FORMATION_ZETA_FUNCTIONAL_IS_EXACTLY_MINUS_59_OVER_30_TIMES_exp_minus_x_TIMES_lambda_OVER_minus_Delta_AND_IS_STRICTLY_NEGATIVE_FOR_EVERY_POSITIVE_AMPLITUDE",
+  "exact_formula": {
+    "amplitude_covector": "D_lambda0_Gamma_form_zeta=-(59/30)*exp(-x(lambda0))*lambda0/(-Delta(lambda0))",
+    "formation_functional": "Gamma_form_zeta=-(59/30)*integral_0^lambda0_exp(-x(lambda))*lambda/(-Delta(lambda))*d_lambda",
+    "proper_time_density": "d_tau/d_lambda=lambda/(-Delta(lambda))",
+    "replacement_amplitude_covector": "-D_lambda0_Gamma_form_zeta>0_FOR_lambda0>0"
+  },
+  "exact_next_dependency": "BOUND_THE_GRADED_HEAT_DERIVATIVE_ALONG_THE_SAME_SHRINKING_INCOMING_AMPLITUDE_FAMILY_WITH_LOCAL_SHORT_ARM_CALCULUS,_THEN_COMPARE_IT_TO_THE_CERTIFIED_POSITIVE_REPLACEMENT_ZETA_COVECTOR_WITHOUT_SETTING_THE_HEAT_TERM_TO_ZERO",
+  "inputs": {
+    "artifacts/flagship_integration/BHSM_N12_FINITE_TERMINAL_TWO_SIDED_FORWARD_INTERFACE.json": "0BA9D5C8FDF495CBF0565B5F1703907EDB9F4450C28D0557C0AEC9B79A5CF8F7",
+    "artifacts/flagship_integration/BHSM_N12_GATE7_DIRECT_ZETA_COEFFICIENT_COTANGENT.json": "5A0918A96A3C825789B8EFDC77FF3EBBA27146D4D17341CBCF36A3043C6CBCD8",
+    "artifacts/flagship_integration/BHSM_N12_GATE7_JOINT_KKT_INFORMATION_GATE.json": "81427D560A02142EB99E6A60BD9CBC48078EC99A848158EFAAEFE609ACB2622C",
+    "artifacts/flagship_integration/BHSM_N12_GATE7_ONE_SEAM_FULL_GRADED_FINITE_CORE_HEAT_BOUND.json": "D1E6A58D0586A8995288FF4139C9F24DBF2411532EEA9E2D833B8AA5B60149B3",
+    "artifacts/flagship_integration/BHSM_N12_INCOMING_FINITE_AMPLITUDE_COEFFICIENT_ENCLOSURE.json": "40C22A60A17597900D972D02F107B12E621EED1020A839E71D5D2B97B629D194",
+    "artifacts/flagship_integration/BHSM_N12_INCOMING_REGULARIZED_TERMINAL_SEGMENT.json": "DDFDCBD0632F9C99A1E7C3DB97F98793BBB12E139610A16730A2C33E23984485",
+    "theory/n12_gate7_incoming_amplitude_zeta_cotangent.md": "594E0EBA099222586236A3890446D2ECDD2B95C095A65A4E7C56AFE37E7BFF8A"
+  },
+  "joint_direction_matching": {
+    "C2_zeta_amplitude_component_on_fixed_E1_C2_family": "ZERO_BY_FIXED_FAMILY_ENDPOINTS",
+    "complete_joint_amplitude_covector": "OPEN_UNTIL_HEAT_COMPARISON",
+    "incoming_C1_zeta_amplitude_component": "CERTIFIED_STRICT_SIGN",
+    "incoming_graded_heat_amplitude_component": "OPEN_EXACT_REMAINING_COMPARISON",
+    "interface_zeta_amplitude_component_on_fixed_E1_C2_family": "ZERO_BY_FIXED_FAMILY_ENDPOINTS"
+  },
+  "status": "INCOMING_AMPLITUDE_ZETA_COTANGENT_STRICT_SIGN_CERTIFIED",
+  "validation": {
+    "amplitude_domain_is_strictly_positive": true,
+    "componentwise_zero_test_remains_retired": true,
+    "direct_zeta_routes_formation_through_upstream_adjoint": true,
+    "formation_zeta_derivative_is_strictly_negative_at_outer_witness": true,
+    "heat_seed_is_not_set_to_zero": true,
+    "incoming_regularized_denominator_is_strictly_negative": true,
+    "no_source_selector_cutoff_endpoint_recurrence_scale_gate_or_chord_added": true,
+    "no_uniform_positive_lower_bound_claimed_as_lambda_tends_to_zero": true,
+    "radius_tube_is_finite": true,
+    "replacement_zeta_derivative_is_strictly_positive_for_every_positive_amplitude": true,
+    "two_sided_family_keeps_terminal_E1_and_C2_fixed": true,
+    "zeta_derivative_coefficient_is_strictly_positive": true
+  },
+  "validation_passed": true
+}

@@ -1,0 +1,179 @@
+{
+  "FLAGSHIP_READY": false,
+  "FULL_BHSM_COMPLETE": false,
+  "adjudication": {
+    "C2_finite_prefix_negative_axis_transfer": "CLOSED",
+    "actual_later_event_or_canonical_stop": "NOT_REACHED",
+    "additional_same_scale_prefix_refinement_can_replace_tail_theorem": false,
+    "unknown_maximal_tail_load": "ACTUALLY_MISSING_AND_NOT_DAMPED_AT_LOW_PROBES",
+    "zero_source_force": "OPEN"
+  },
+  "artifact": "BHSM_N12_C2_FINITE_PREFIX_TERMINAL_LOAD_BRACKET",
+  "claim_boundary": {
+    "FULL_BHSM_COMPLETE": false,
+    "Gate7": "ACTIVE_ACTUAL_LATER_EVENT_STOP_OR_MAXIMAL_TAIL_LOAD",
+    "joint_AE2_seam": "OPEN",
+    "low_axis_tail_forgetting": "CERTIFIED_FALSE_ON_CURRENT_PREFIX",
+    "maximal_C2_Weyl_value": "OPEN_AFTER_ACTUAL_TAIL_LOAD_OR_FINITE_ENDPOINT",
+    "terminal_load_monotone_bracket": "CERTIFIED_FOR_EVERY_REAL_z_NEGATIVE",
+    "zero_source_force": "OPEN"
+  },
+  "classification": "FOR_EVERY_REAL_z_LESS_THAN_ZERO_THE_1064_SEGMENT_C2_PREFIX_MAPS_THE_NONNEGATIVE_DOWNSTREAM_WEYL_LOAD_MONOTONICALLY_BETWEEN_ITS_ZERO_LOAD_AND_DIRICHLET_LIMITS,_BUT_ITS_LOW_AXIS_TERMINAL_SENSITIVITY_IS_ONE_TO_27_DECIMAL_PLACES_AND_THEREFORE_THE_PREFIX_DOES_NOT_DETERMINE_OR_FORGET_THE_MAXIMAL_TAIL",
+  "exact_next_dependency": "CERTIFY_THE_ACTION_OWNED_C2_CONTINUATION_TO_A_LATER_EVENT_OR_CANONICAL_STOP,_OR_CERTIFY_THE_ACTUAL_MAXIMAL_DOWNSTREAM_WEYL_LOAD_AND_ITS_PROJECTED_HEAT_MINUS_ZETA_COTANGENT;_DO_NOT_USE_MORE_SAME_SCALE_PREFIX_SAMPLES_AS_A_SUBSTITUTE",
+  "exact_theorem": {
+    "Dirichlet_limit_role": "FINITE_FORM_CORE_UPPER_ENDPOINT_NOT_A_PHYSICAL_BOUNDARY_CONDITION",
+    "bracket": "M_prefix(z;0)<=M_C2_max(z)<=lim_L_to_infinity_M_prefix(z;L)",
+    "downstream_load": "L_T(z)>=0_FROM_THE_RETAINED_NONNEGATIVE_FRIEDRICHS_TAIL_FORM",
+    "monotonicity": "D_L_M_prefix=(a*d-b*c)/(b*L+d)^2>0",
+    "prefix_map": "M_prefix(z;L)=(a(z)*L+c(z))/(b(z)*L+d(z))"
+  },
+  "inputs": {
+    "artifacts/flagship_integration/BHSM_N12_C2_1064_SEGMENT_FINITE_CORE_DESCRIPTOR.json": "01FE2F2B4C3C4BB3E82C55BD8BB433C73BFAA3061029C10F1180C2BB05CECBC3",
+    "artifacts/flagship_integration/BHSM_N12_C2_1064_SEGMENT_FINITE_CORE_DESCRIPTOR.npz": "808CF3379BA43B29857522B96F64EECCA2B44CD79C9D12C20C5669CEA36A8234",
+    "artifacts/flagship_integration/BHSM_N12_C2_1064_SEGMENT_NEGATIVE_AXIS_WEYL_FAMILY.json": "0A3225943A8222B5C8DFE1BFEBF07A748AE85001EB360C76446FCF7276BF8D16",
+    "artifacts/flagship_integration/BHSM_N12_MAXIMAL_FRIEDRICHS_WEYL_EXHAUSTION.json": "ADD797EAE0D9DB94D1BA0C58687AF114598331662B92B13579408361D95D9E5B",
+    "src/bhsm/interface/aether_forward_c2_weyl_riccati.py": "91D37EF7F5E57AD782B26A00A7802948215AE4055E11AEFD7C168FD3AE75CB3D",
+    "theory/n12_c2_finite_prefix_terminal_load_bracket.md": "C63DB2DD5F8BD8834C94FC22928C4EFFE956744F154E552600026B69A3626424"
+  },
+  "sampled_crosschecks": [
+    {
+      "channels": {
+        "product_Dirac_lambda1_5_chirality_minus": {
+          "D_terminal_load_birth_Weyl_at_zero_decimal": "1.000000000000000000000000000000186395605117400577206974487727381297869458240898",
+          "Dirichlet_terminal_limit_birth_Weyl_decimal": "16177032522252566281069186458010.476816887479444865195898323628043870689545946916",
+          "zero_terminal_load_birth_Weyl_decimal": "6.1816034468894995101595016282140753419996750918442890859084812712965349274570866e-48"
+        },
+        "product_Dirac_lambda1_5_chirality_plus": {
+          "D_terminal_load_birth_Weyl_at_zero_decimal": "0.99999999999999999999999999999981360439488259942279302551227265344545214884102954",
+          "Dirichlet_terminal_limit_birth_Weyl_decimal": "16177032522252566281069186458007.461489121490308854824957626559257422649582651659",
+          "zero_terminal_load_birth_Weyl_decimal": "6.1816034468894995101595016282129231182845963144022162516515043269249843319460203e-48"
+        },
+        "scalar_c3": {
+          "D_terminal_load_birth_Weyl_at_zero_decimal": "0.99999999999999999999999999999999999999999999999999999999999998841889279763935686",
+          "Dirichlet_terminal_limit_birth_Weyl_decimal": "16177032522252566281069186458008.96915300448487686001042797509366625899855232275",
+          "zero_terminal_load_birth_Weyl_decimal": "1.8734794785628155627350985645416041498031810915925259100931170616358526216777013e-31"
+        }
+      },
+      "negative_spectral_magnitude": 1e-16,
+      "z": -1e-16
+    },
+    {
+      "channels": {
+        "product_Dirac_lambda1_5_chirality_minus": {
+          "D_terminal_load_birth_Weyl_at_zero_decimal": "1.000000000000000000000000000000186395605117400577206974487727377476647340781284",
+          "Dirichlet_terminal_limit_birth_Weyl_decimal": "16177032522252566281069186458010.476816887479444865195898323628064476034368911913",
+          "zero_terminal_load_birth_Weyl_decimal": "6.1816034468894996393686952625412301118575393887330784300455893964541084776798836e-32"
+        },
+        "product_Dirac_lambda1_5_chirality_plus": {
+          "D_terminal_load_birth_Weyl_at_zero_decimal": "0.99999999999999999999999999999981360439488259942279302551227264962423003138141564",
+          "Dirichlet_terminal_limit_birth_Weyl_decimal": "16177032522252566281069186458007.461489121490308854824957626559278027994405616656",
+          "zero_terminal_load_birth_Weyl_decimal": "6.1816034468894996393686952625400778881424606112669215699544106593881838481503129e-32"
+        },
+        "scalar_c3": {
+          "D_terminal_load_birth_Weyl_at_zero_decimal": "0.99999999999999999999999999999999999999999999999999999999999998459767068017974297",
+          "Dirichlet_terminal_limit_birth_Weyl_decimal": "16177032522252566281069186458008.969153004484876860010427975093686864343375287747",
+          "zero_terminal_load_birth_Weyl_decimal": "2.4916398232517654648559336219006744482081648094575336086717600248432957933965254e-31"
+        }
+      },
+      "negative_spectral_magnitude": 1.0,
+      "z": -1.0
+    },
+    {
+      "channels": {
+        "product_Dirac_lambda1_5_chirality_minus": {
+          "D_terminal_load_birth_Weyl_at_zero_decimal": "1.0000000000000000000000000000001863956051174005389947533131312383092036808335614",
+          "Dirichlet_terminal_limit_birth_Weyl_decimal": "16177032522252566281069186458010.476816887479445071249346553278031849646054698269",
+          "zero_terminal_load_birth_Weyl_decimal": "0.00000000000000061816034468894996393686952625412301118575393886543408306701935902907600156725023"
+        },
+        "product_Dirac_lambda1_5_chirality_plus": {
+          "D_terminal_load_birth_Weyl_at_zero_decimal": "0.99999999999999999999999999999981360439488259938458080433767651045678637143371201",
+          "Dirichlet_terminal_limit_birth_Weyl_decimal": "16177032522252566281069186458007.461489121490309060878405856209245401606091403012",
+          "zero_terminal_load_birth_Weyl_decimal": "0.0000000000000006181603446889499639368695262540077888142460611188183970579014853224835386142961"
+        },
+        "scalar_c3": {
+          "D_terminal_load_birth_Weyl_at_zero_decimal": "0.99999999999999999999999999999999999999999999996178777882540384543022702023202984",
+          "Dirichlet_terminal_limit_birth_Weyl_decimal": "16177032522252566281069186458008.969153004484877066063876204743654237955061074103",
+          "zero_terminal_load_birth_Weyl_decimal": "0.00000000000000061816034468895015128481738253561549190640956465303106087894135957699588049401763"
+        }
+      },
+      "negative_spectral_magnitude": 1e+16,
+      "z": -1e+16
+    },
+    {
+      "channels": {
+        "product_Dirac_lambda1_5_chirality_minus": {
+          "D_terminal_load_birth_Weyl_at_zero_decimal": "0.99999999999999999999999999999980427339337143912681501901234993500002803805758485",
+          "Dirichlet_terminal_limit_birth_Weyl_decimal": "16177032522252566281069186458012.537351369775944855557086008631016714644722818837",
+          "zero_terminal_load_birth_Weyl_decimal": "6.1816034468894999710835630550088647429280668379510564026759650313225021711524919"
+        },
+        "product_Dirac_lambda1_5_chirality_plus": {
+          "D_terminal_load_birth_Weyl_at_zero_decimal": "0.99999999999999999999999999999943148218313663797240107003689539708334642782560734",
+          "Dirichlet_terminal_limit_birth_Weyl_decimal": "16177032522252566281069186458009.522023603786808845186145311562230266604759523579",
+          "zero_terminal_load_birth_Weyl_decimal": "6.1816034468894999710835630550077125192129880604230693490761709048730540781526122"
+        },
+        "scalar_c3": {
+          "D_terminal_load_birth_Weyl_at_zero_decimal": "0.99999999999999999999999999999961787778825403854960804452462263708891922703998921",
+          "Dirichlet_terminal_limit_birth_Weyl_decimal": "16177032522252566281069186458011.02968748678137685037161566009663910295372919467",
+          "zero_terminal_load_birth_Weyl_decimal": "6.1816034468894999710835630550084759790183837307371547822856325454811513734059076"
+        }
+      },
+      "negative_spectral_magnitude": 1e+32,
+      "z": -1e+32
+    },
+    {
+      "channels": {
+        "product_Dirac_lambda1_5_chirality_minus": {
+          "D_terminal_load_birth_Weyl_at_zero_decimal": "0.99999999999999617877788254039545447663614916425090840886348575207442517607181004",
+          "Dirichlet_terminal_limit_birth_Weyl_decimal": "16177032522252586886414009423004.928997961658924280977991997587430079313692053629",
+          "zero_terminal_load_birth_Weyl_decimal": "61816034468894920.366463722221901873683747561292231670206706391131880752825481989"
+        },
+        "product_Dirac_lambda1_5_chirality_plus": {
+          "D_terminal_load_birth_Weyl_at_zero_decimal": "0.99999999999999617877788254039508168542591436499585181687970374506041563710949128",
+          "Dirichlet_terminal_limit_birth_Weyl_decimal": "16177032522252586886414009423001.913670195669788270607051300518643631273728758372",
+          "zero_terminal_load_birth_Weyl_decimal": "61816034468894920.366463722221890351446596773546417584366289685019149786844747504"
+        },
+        "scalar_c3": {
+          "D_terminal_load_birth_Weyl_at_zero_decimal": "0.9999999999999961787778825403952680810310317646233801128715947196146524001000315",
+          "Dirichlet_terminal_limit_birth_Weyl_decimal": "16177032522252586886414009423003.421334078664356275792521649053052467622698429455",
+          "zero_terminal_load_birth_Weyl_decimal": "61816034468894920.366463722221896112565172167419511975234354318790392700567406112"
+        }
+      },
+      "negative_spectral_magnitude": 1e+48,
+      "z": -1e+48
+    },
+    {
+      "channels": {
+        "product_Dirac_lambda1_5_chirality_minus": {
+          "D_terminal_load_birth_Weyl_at_zero_decimal": "0.000017091640416277073434682937942564706418788710794779490192012799220231406108075486",
+          "Dirichlet_terminal_limit_birth_Weyl_decimal": "100000854592975627404050435339340.96639659648490272282930678069315989601702844282",
+          "zero_terminal_load_birth_Weyl_decimal": "99999145414327603855007140008950.964589490577092827348332852772414846577084313609"
+        },
+        "product_Dirac_lambda1_5_chirality_plus": {
+          "D_terminal_load_birth_Weyl_at_zero_decimal": "0.000017091640416277073434682937942563675689638979658636395604866437301317777588740397",
+          "Dirichlet_terminal_limit_birth_Weyl_decimal": "100000854592975627404050435339337.95106883049576671245836608362437344797706514756",
+          "zero_terminal_load_birth_Weyl_decimal": "99999145414327603855007140008947.949313261485870319351864750108860106455553532985"
+        },
+        "scalar_c3": {
+          "D_terminal_load_birth_Weyl_at_zero_decimal": "0.000017091640416277073434682937942564191054213845226707942898413013797158492921826351",
+          "Dirichlet_terminal_limit_birth_Weyl_decimal": "100000854592975627404050435339339.4587327134903347176438364321587704600464618429",
+          "zero_terminal_load_birth_Weyl_decimal": "99999145414327603855007140008949.456951376031481573350098801440641265690009209949"
+        }
+      },
+      "negative_spectral_magnitude": 1e+64,
+      "z": -1e+64
+    }
+  ],
+  "status": "C2_1064_SEGMENT_PREFIX_TERMINAL_LOAD_DEPENDENCE_CERTIFIED_NOT_CONTRACTED",
+  "validation": {
+    "all_zero_load_and_Dirichlet_limit_brackets_are_strictly_ordered": true,
+    "bracket_not_promoted_to_heat_force_or_force_sign": true,
+    "full_1064_segment_prefix_consumed": true,
+    "low_and_moderate_probe_terminal_sensitivity_stays_within_1e_minus_27_of_one": true,
+    "no_selector_terminal_load_scale_fit_recurrence_gate_or_chord_added": true,
+    "nonnegative_Friedrichs_tail_load_lies_in_the_zero_to_Dirichlet_bracket": true,
+    "prefix_does_not_forget_the_unknown_tail_on_the_force_relevant_low_axis": true,
+    "proof_edge_not_promoted_to_physical_endpoint": true,
+    "terminal_load_monotonicity_is_exact_from_positive_Mobius_determinant": true
+  },
+  "validation_passed": true
+}

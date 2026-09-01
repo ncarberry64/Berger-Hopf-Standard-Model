@@ -1,0 +1,79 @@
+{
+  "FLAGSHIP_READY": false,
+  "FULL_BHSM_COMPLETE": false,
+  "action_projection": {
+    "first": "x_h=D_q_x[q_h]",
+    "mixed_second": "x_hk=D_q_x[q_hk]+D_q2_x[q_h,q_k]",
+    "no_independent_radius_degree_of_freedom": true,
+    "physical_radius": "R4=(RADIUS0/2)*exp(q_W)",
+    "proper_time_rate": "d_tau_x=D_q_x[v]/N_boundary",
+    "q_W": "q0+u_L-(1/2)*log(cosh(2*v_L))",
+    "x": "log(R4)"
+  },
+  "artifact": "BHSM_N12_FORWARD_BOUNDARY_RADIUS_ACTION_PROJECTION",
+  "certified_child_anchor": {
+    "R4": 1.0023342201094778,
+    "boundary_lapse": 1.1294138126100413,
+    "log_R4": 0.002331500049707843,
+    "log_boundary_lapse": 0.12169874822434981,
+    "proper_time_log_R4_rate": 0.10757005348193936
+  },
+  "claim_boundary": {
+    "FULL_BHSM_COMPLETE": false,
+    "Gate_7": "ACTIVE_NOT_CLOSED",
+    "channel_Weyl_enclosures": "OPEN",
+    "chord_03": "NOT_AUTHORIZED",
+    "global_state_Jacobi_cocycles_enclosed": false,
+    "maximal_x_history_numerically_enclosed": false
+  },
+  "classification": "THE_PHYSICAL_FORWARD_RADIUS_IS_THE_EXACT_RETAINED_ACTION_TRACE_R4=(RADIUS0/2)*exp(q0+u_L-(1/2)log_cosh(2v_L));_ITS_FIRST_AND_MIXED_SECOND_ACTION_JETS_ARE_EXACT_PULLBACKS_OF_THE_STATE_JACOBI_FIELDS,_SO_NO_INDEPENDENT_RADIUS_HISTORY_VARIABLE_IS_REQUIRED",
+  "exact_next_dependency": "ASSEMBLE_DV_AND_D2V_OF_THE_RETAINED_EULER_DIRAC_VECTOR_FIELD_FROM_THE_EXISTING_ACTION_D3_D4_AND_DIRAC_INVERSE_IDENTITIES;_ENCLOSE_THE_STATE_JACOBI_COCYCLES_ON_BOUNDED_MARGIN_COMPONENTS;_THEN_PULL_BACK_BY_THE_CLOSED_R4_JETS_AND_PROPAGATE_THE_CHANNEL_TRANSFER_VARIATIONS",
+  "existing_local_action_ball": {
+    "child_DV_Jacobi_generator_bound": 3.931919986324045e+25,
+    "child_action_fourth_variation_bound": 168898707.09202424,
+    "child_action_third_variation_bound": 8180992.616262165,
+    "child_local_exit_time_lower": 6.301881201051695e-30,
+    "extends_to_maximal_component": false,
+    "log_R4_change_upper_from_projection_only": 3.814697265625e-16,
+    "radius": 7.62939453125e-17,
+    "scope": "FINITE_N12_SOURCE_RESTRICTED_GAUGE_FIXED_CHILD_TANGENT_QUOTIENTED_NORMAL_OBSERVATION_ONLY"
+  },
+  "global_functional_bounds": {
+    "Euclidean_coordinate_Hessian_operator_norm_upper": 24.0,
+    "Euclidean_coordinate_gradient_norm_upper": 5.0,
+    "source": "abs(tanh)<=1_AND_2*sech(2v)^2<=2"
+  },
+  "inputs": {
+    "artifacts/flagship_integration/BHSM_N12_FORWARD_CHANNEL_TRANSFER_VARIATIONS.json": "1A1FCB295DDBE303667E70117EE38537417AF0047301BADCE46BD504AE1781F5",
+    "artifacts/intrinsic_state_selection/BHSM_N12_CONTINUUM_MAXIMAL_FLOW_DICHOTOMY.json": "F75E3CEE4EE4D0768027770FEFECAC1A17994B4297AE344E3FC2D83F86B002A9",
+    "artifacts/n12_direct_checkpoint/BHSM_N12_COMPLETE_PERSISTENT_CHILD_STATE.npz": "8AEE33C46C320A36384C83E6B9BDE387AE3E565D99C7D49C606895229B796890",
+    "artifacts/n12_direct_checkpoint/BHSM_N12_POSITIVE_DURATION_OBSERVATION.json": "6D60505F4DB2EC6428FEB5818B5E4AB304DCC662B55A389869481AE0C6B91560",
+    "src/bhsm/interface/aether_forward_boundary_radius.py": "5A5F59100984F860E7F4E2CB09C462A469132371A92532E12990C6957C01BB15"
+  },
+  "remaining_variational_owner": {
+    "base_history": "THE_UNIQUE_ACTION_OWNED_MAXIMAL_CONTINUUM_FLOW_Y(tau)",
+    "first_state_Jacobi": "J_h'=D_V(Y)*J_h",
+    "global_DV_and_D2V_enclosures_on_maximal_component": "OPEN",
+    "mixed_second_state_Jacobi": "J_hk'=D_V(Y)*J_hk+D2_V(Y)[J_h,J_k]",
+    "radius_pullback_after_state_jets": "CLOSED_BY_THIS_ARTIFACT",
+    "regular_Weyl_chart_cover": "OPEN",
+    "terminal_or_Friedrichs_graph_jets": "OPEN"
+  },
+  "status": "ACTION_OWNED_BOUNDARY_RADIUS_AND_JET_PROJECTION_DERIVED",
+  "validation": {
+    "certified_N12_child_state_consumed": true,
+    "continuum_maximal_flow_dichotomy_available": true,
+    "finite_anchor_radius_and_proper_time_rate": true,
+    "first_action_projection_jet_closes_to_1e_minus_8": true,
+    "local_action_ball_has_finite_DV_bound": true,
+    "mixed_action_projection_jet_closes_to_1e_minus_6": true,
+    "no_untracked_history_terminal_return_or_new_gate_used": true,
+    "positive_boundary_lapse_at_anchor": true,
+    "transfer_variation_equations_available": true
+  },
+  "validation_passed": true,
+  "witnesses": {
+    "first_residual": 7.909034538400306e-12,
+    "mixed_second_residual": 1.5297163709349082e-10
+  }
+}

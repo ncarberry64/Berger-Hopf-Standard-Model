@@ -1,0 +1,70 @@
+{
+  "FLAGSHIP_READY": false,
+  "FULL_BHSM_COMPLETE": false,
+  "artifact": "BHSM_N12_C2_EXACT_CENTER_FIXED_S_FIELD_MATRIX",
+  "center_field": {
+    "Delta": 8.920442766345066e-14,
+    "Delta_first_c_gradient_remainder_norm_upper": 4.230957067191647e-12,
+    "Delta_first_partial_action_norm": 1.6027259765507991e-09,
+    "Delta_first_selected_eigenvalue_Hessian_remainder_norm_upper": 2.356380825780576e-13,
+    "Delta_first_signed_center_ball": "D_Y_Delta_IN_Delta_first_partial_action_PLUS_CLOSED_EUCLIDEAN_BALL(total_remainder_upper)",
+    "Delta_first_total_remainder_action_norm_upper": 4.466595150216365e-12,
+    "Dlambda_field": 1.0000000000000246,
+    "R_Dlambda_Vhard": 3.810025154678796e-05,
+    "b_psi": 0.00042910818866374314,
+    "field_action_norm": 4813609811.428505,
+    "moving_cubic_direct_fixed_line_D3": 2.0788330320843285e-10,
+    "moving_cubic_from_Dlambda_Psi": 2.0788330313755536e-10,
+    "signed_descriptor_decimal": "1.728188320089004047567745354867259291308404101613192782872779739696306330276927092426138269236576153E-20"
+  },
+  "comparison": {
+    "diagnosis": "THE_EXACT_DESCRIPTOR_IDENTITY_AND_BORDERED_RESPONSE_CANCEL_BEFORE_PROJECTION;_THE_SCALAR_JACOBI_BOUND_IS_NOT_THE_CENTER_TANGENT_GENERATOR",
+    "matrix_to_scalar_ratio": 3.566840226354967e-13,
+    "prior_scalar_fixed_s_Jacobi_upper": 2.5646519250254787e+24
+  },
+  "data": "artifacts/flagship_integration/BHSM_N12_C2_EXACT_CENTER_FIXED_S_FIELD_MATRIX.npz",
+  "data_SHA256": "163383CD903538866E579BD87366333B8DA04877EFA587F0F999DA00AC1FFDCD",
+  "exact_next_dependency": "ENCLOSE_PHI_CENTER_INVERSE_TIMES_DF_s_OF_Y_MINUS_A_CENTER_TIMES_PHI_CENTER_ON_A_FIXED_DESCRIPTOR_ELLIPSOID_USING_THE_RETAINED_D4_D5_BOUNDS",
+  "fixed_descriptor_matrix": {
+    "bordered_relative_tangent_tensor_Frobenius_upper": 51372353.97648559,
+    "c_gradient_field_matrix_uncertainty_upper": 228309031107.78018,
+    "center_tangent_numerical_abscissa_upper": 577793644008.4883,
+    "fixed_D4_D5_truncation_operator_upper": 1.2677544335547156e-14,
+    "fixed_D4_slope_disagreement_2_norm": 1.971974312344255e-08,
+    "incoming_endpoint_tube_radius": 5.5104723095444935e-11,
+    "omitted_D2lambda_V_field_matrix_upper": 12715397833.427023,
+    "partial_tangent_numerical_abscissa": 336769214985.39905,
+    "partial_tangent_operator_2_norm": 673745936221.1711,
+    "partial_tangent_spectral_abscissa": 393962036.08176124,
+    "relative_second_variation_self_consistency": 0.005661718681837008,
+    "total_center_matrix_remainder_upper": 241024428965.3097
+  },
+  "hindsight": {
+    "classification": "NUMERICAL_CONDITIONING;_FULL_CENTER_MATRIX_RECOVERED",
+    "obstruction_physical": false,
+    "result": "OPEN"
+  },
+  "inputs": {
+    "artifacts/flagship_integration/BHSM_N12_C2_BORDERED_HARD_RESPONSE_MATRIX.json": "7D36311E1127291DDEF6F778E2F2C21E9F2B2544DBAF74BC743B8E47BC3814AB",
+    "artifacts/flagship_integration/BHSM_N12_C2_BORDERED_HARD_RESPONSE_MATRIX.npz": "BC1EEB01C2BFB1A358B7DB14906009DF05CEFAC713749395937F0E5DE0E5AB9E",
+    "artifacts/flagship_integration/BHSM_N12_C2_FRESH_CHART_FIXED_S_GROWTH.json": "D84370EEFC8B5F6681C14BEBC33839F8A9AFAB1887DDF7D1D75FD527145227B5",
+    "artifacts/flagship_integration/BHSM_N12_C2_SECOND_UNIFORM_GAP_CONTINUATION.json": "03F0E2F5860F101E5E7DC5F37A71D4B33164E91910636C946E15DD1C3139F952",
+    "theory/n12_c2_exact_center_fixed_s_field_matrix.md": "0BCD19B3275EC9249EE9C731FE32398C3FF18702BFA5E4CFEB0DFA638DBC7AE0"
+  },
+  "status": "C2_CANCELLATION_PRESERVING_FIXED_s_CENTER_FIELD_MATRIX_CERTIFIED;_CONJUGATED_INTERVAL_REMAINDER_OPEN",
+  "validation": {
+    "D5_controls_one_sided_fixed_line_D4_slopes": true,
+    "Delta_is_strictly_positive": true,
+    "branch_24_bordered_parent_consumed": true,
+    "center_field_and_matrix_are_finite": true,
+    "center_matrix_not_promoted_to_interval_flow_box": true,
+    "descriptor_field_identity_is_close_to_one": true,
+    "fixed_descriptor_tangent_has_codimension_one": true,
+    "lambda_Hessian_contraction_is_retained_as_remainder": true,
+    "moving_cubic_identity_matches_direct_D3": true,
+    "no_selector_recurrence_scale_gate_or_chord_added": true,
+    "signed_Delta_first_partial_and_remainder_ball_are_finite": true,
+    "signed_descriptor_is_strictly_positive": true
+  },
+  "validation_passed": true
+}

@@ -1,0 +1,64 @@
+{
+  "FULL_BHSM_COMPLETE": false,
+  "artifact": "BHSM_N12_GATE7_EXACT_AFFINE_TERMINAL_INTERVAL_NEWTON_FIRST_HIT",
+  "authority": "TERMINAL_ACTION_OWNED_EIGENVALUE_INTERVAL_DIVIDED_BY_UNIFORM_NEGATIVE_FLOW_DERIVATIVE_INTERVAL_PLUS_MONOTONE_FIRST_STOP_THEOREM",
+  "claim_boundary": {
+    "FULL_BHSM_COMPLETE": false,
+    "Gate7": "ACTIVE_ACTION_OWNED_OPERATOR_ORACLE",
+    "Weyl_force_KKT_Hessian": "NOT_CLAIMED",
+    "canonical_first_hit_time": "CERTIFIED_INTERVAL",
+    "continuous_outward_variational_carrier": "OPEN_REBUILD_AT_FIRST_HIT",
+    "operator_history_terminal_abscissa": "SUPERSEDES_NEGATIVE_SIDE_ENDPOINT",
+    "representative_midpoint_state": "MATERIALIZED_WITHOUT_ZERO_CLAIM"
+  },
+  "data": "artifacts/flagship_integration/BHSM_N12_GATE7_EXACT_AFFINE_TERMINAL_INTERVAL_NEWTON_FIRST_HIT.npz",
+  "data_SHA256": "60A5517316023B93CDCADF944D950029891FF9CA86B8536DA6AA7A73AE5CA172",
+  "exact_next_dependency": "REBUILD_THE_DIRECT_EXACT_CENTER_TERMINAL_FRAME_AND_FIELD_JACOBIAN_AT_THE_CERTIFIED_FIRST_HIT_CENTER,_THEN_CONSTRUCT_THE_REFINED_WITHIN_SEAM_OUTWARD_VARIATIONAL_CARRIER",
+  "inputs": {
+    "artifacts/flagship_integration/BHSM_N12_GATE7_EXACT_AFFINE_CONTINUOUS_FIRST_STOP.json": "111C6FE1E8D297B68DE6B19E2D257D5DC437BC7EC970DB2C9DBF08737B40DF5F",
+    "artifacts/flagship_integration/BHSM_N12_GATE7_EXACT_AFFINE_TERMINAL_SELECTED_EIGENVALUE_BRACKET.json": "F0CE3AEEA322A3C42497935E37DA2C58F9048C53CAF959674B5A84E44DD467C5",
+    "artifacts/flagship_integration/BHSM_N12_GATE7_EXACT_AFFINE_TERMINAL_STOP_TRANSVERSALITY.json": "7289344C65E96BECB16822839A2F9866ED6DCF537E1B06236C62426C80053EAD",
+    "scripts/certify_n12_gate7_exact_affine_terminal_interval_newton_first_hit.py": "6345987CA76096FBF6D74CC848E60A56E82542D24106A5264918C7B3A18FA170",
+    "theory/n12_gate7_exact_affine_terminal_interval_newton_first_hit.md": "0859DE6AE31A1724EFC6F639E78CE35E49B53E1185658AF9BD189F131419DFC9"
+  },
+  "interval_Newton": {
+    "backward_displacement_interval": [
+      0.0006413106472066167,
+      0.0006492514908945715
+    ],
+    "base_action_time": 92.30513924040065,
+    "base_selected_eigenvalue_interval": [
+      -1.8307427923654646e-14,
+      -1.82997517493954e-14
+    ],
+    "first_hit_action_time_interval": [
+      92.30448998890974,
+      92.30449792975345
+    ],
+    "first_hit_action_time_midpoint": 92.3044939593316,
+    "first_hit_action_time_radius": 3.9704218579572625e-06,
+    "interval_width": 7.940843715914525e-06,
+    "uniform_Dlambda24_of_F_interval": [
+      -2.8534925825891678e-11,
+      -2.8197744911497624e-11
+    ]
+  },
+  "representative": {
+    "action_time": 92.3044939593316,
+    "binary64_eigenvalue_root_solve": "REJECTED_BECAUSE_EIGENSOLVER_JITTER_EXCEEDS_THE_ROOT_SIGNAL",
+    "role": "MIDPOINT_STATE_ONLY;_NOT_A_NUMERICALLY_RESOLVED_ZERO;_THE_OUTWARD_INTERVAL_IS_THE_FIRST_HIT_AUTHORITY",
+    "selected_branch": 24
+  },
+  "status": "CANONICAL_TRANSVERSE_FIRST_HIT_TIME_INTERVAL_CERTIFIED",
+  "validation": {
+    "canonical_preterminal_positivity_inherited": true,
+    "endpoint_value_interval_is_strictly_negative": true,
+    "flow_derivative_interval_is_strictly_negative": true,
+    "interval_Newton_root_is_inside_terminal_cell": true,
+    "no_action_source_selector_scale_gate_or_chord_changed": true,
+    "representative_time_is_inside_outward_root_interval": true,
+    "terminal_endpoint_is_corrected_abscissa": true,
+    "terminal_zero_uniqueness_inherited": true
+  },
+  "validation_passed": true
+}

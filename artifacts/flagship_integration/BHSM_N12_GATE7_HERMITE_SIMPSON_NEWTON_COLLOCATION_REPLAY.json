@@ -1,0 +1,68 @@
+{
+  "FULL_BHSM_COMPLETE": false,
+  "adjudication": {
+    "continuous_center": "OPEN_INTERVAL_SHADOWING_OR_NEXT_OWNER_REFINEMENT",
+    "first_hit": "MUST_BE_REBUILT_OUTWARD_AFTER_CENTER",
+    "one_signed_Green_endpoint_Newton_step": "DIRECTLY_REPLAYED"
+  },
+  "artifact": "BHSM_N12_GATE7_HERMITE_SIMPSON_NEWTON_COLLOCATION_REPLAY",
+  "authority": "NUMERICAL_GAUSS3_NEWTON_REPLAY_NOT_INTERVAL_SHADOWING_AUTHORITY",
+  "claim_boundary": {
+    "FULL_BHSM_COMPLETE": false,
+    "Gate7": "ACTIVE_ACTION_OWNED_OPERATOR_ORACLE",
+    "Weyl_force_KKT_Hessian": "NOT_CLAIMED",
+    "continuous_action_constrained_center": "OPEN_INTERVAL_AUTHORITY",
+    "continuous_outward_variational_carrier": "OPEN_AFTER_CENTER"
+  },
+  "data": "artifacts/flagship_integration/BHSM_N12_GATE7_HERMITE_SIMPSON_NEWTON_COLLOCATION_REPLAY.npz",
+  "data_SHA256": "A5891A60C14C83FCA8E33318CBE5A3B226254411827692957FD122DB30095C87",
+  "exact_next_dependency": "IF_THE_DIRECT_BLOCK_NEWTON_STEP_REDUCES_THE_NONLINEAR_DEFECT,_REBUILD_THE_BLOCK_OPERATOR_AND_ITERATE;_OTHERWISE_LOCALIZE_THE_BLOCK_LINEARIZATION_OR_CONSTRAINT_PROJECTION_FAILURE",
+  "inputs": {
+    "artifacts/flagship_integration/BHSM_N12_C2_STOP_HIGH_ORDER_QUARTER_STEP_RETAINED_RECONNAISSANCE.json": "B37A1EE6F2BA9B4D18A352446FAB99326CCD594C5015B7D8FF4DAA2FF7B4ACEA",
+    "artifacts/flagship_integration/BHSM_N12_C2_STOP_HIGH_ORDER_QUARTER_STEP_RETAINED_RECONNAISSANCE.npz": "086C41068B9F3A6C0E5F8040B661202E067D017C909A381010E45FF352498D00",
+    "artifacts/flagship_integration/BHSM_N12_GATE7_CURRENT_LINEARIZATION_NEWTON_COLLOCATION_REPLAY.json": "417895383C97B153DB449478B2C091F3E2AC16FEB307809B81AF028110AF1A65",
+    "artifacts/flagship_integration/BHSM_N12_GATE7_HERMITE_SIMPSON_NEWTON_ENDPOINT_CANDIDATE.json": "4D4A5DDD5929E20921CB857B95BBECD546B585AA7C1A167E9B17786CD76D56B1",
+    "artifacts/flagship_integration/BHSM_N12_GATE7_HERMITE_SIMPSON_NEWTON_ENDPOINT_CANDIDATE.npz": "749660BB633A2775CB0CEF818C11E31966560164B00A45EF3463B6AED812396B",
+    "scripts/audit_n12_gate7_hermite_simpson_newton_collocation_replay.py": "60EB327F38AB155C35DAF673AA2C9580238F43F535C522032F077973E9C838F4",
+    "theory/n12_gate7_hermite_simpson_newton_collocation_replay.md": "6EF94FAAA85BCA0354FC906698277C8295FBA3419FF93B014C56F6F9E8CDEB23"
+  },
+  "mesh": {
+    "Gauss_samples_per_interval": 3,
+    "fine_intervals": 370,
+    "workers": 8
+  },
+  "status": "SIGNED_GREEN_NEWTON_STEP_DOES_NOT_CLOSE_DENSE_FLOW_DEFECT",
+  "summary": {
+    "flow_defect_owner": {
+      "augmented_flow_defect_2_norm": 1.983265429020261e-05,
+      "descriptor": 2.93550481817162e-10,
+      "descriptor_rate_defect_absolute": 3.4266714524425973e-13,
+      "fraction": 0.8872983346207417,
+      "interval": 315,
+      "numeric_descriptor_fiber_residual": 1.3343009749585592e-13,
+      "sample": 2,
+      "scaled_constraint_2_norm": 5.526961868266929e-15,
+      "selected_branch": 24,
+      "selected_eigenline_gap": 1.8114999590510787e-07,
+      "state_flow_defect_2_norm": 1.983265429020261e-05
+    },
+    "flow_defect_reduction_factor": 0.7807910218320011,
+    "maximum_augmented_flow_defect_2_norm": 1.983265429020261e-05,
+    "maximum_endpoint_scaled_constraint_2_norm": 1.738085656993393e-14,
+    "maximum_numeric_descriptor_fiber_residual_absolute": 1.9796949353448888e-13,
+    "maximum_sampled_scaled_constraint_2_norm": 3.5598265539939113e-14,
+    "minimum_selected_eigenline_gap": 1.734194774313527e-07,
+    "prior_maximum_augmented_flow_defect_2_norm": 1.5485158408888117e-05
+  },
+  "validation": {
+    "all_1110_Gauss3_samples_replayed": true,
+    "all_endpoint_constraints_remain_closed_numerically": true,
+    "all_quantities_finite": true,
+    "branch_24_selected_at_every_sample": true,
+    "continuous_interval_shadowing_not_claimed": true,
+    "no_action_source_selector_scale_gate_or_chord_changed": true,
+    "selected_line_remains_simple_numerically": true,
+    "signed_Green_Newton_step_reduces_prior_Hermite_flow_defect": false
+  },
+  "validation_passed": false
+}

@@ -1,0 +1,46 @@
+{
+  "FLAGSHIP_READY": false,
+  "FULL_BHSM_COMPLETE": false,
+  "artifact": "BHSM_N12_C2_STOP_HIGH_ORDER_CENTER_RECONNAISSANCE",
+  "center": {
+    "action_length_stop": 92.30519939094043,
+    "maximum_Hermite_midpoint_state_position_defect_action_norm": 7.5957666226223715e-06,
+    "maximum_Hermite_midpoint_state_rate_defect_action_norm": 2.3857689367342785e-06,
+    "maximum_absolute_Hermite_midpoint_descriptor_position_defect": 5.119118210556808e-13,
+    "maximum_absolute_Hermite_midpoint_descriptor_rate_defect": 7.706918526976408e-14,
+    "prior_refined_stop_action_length": 92.3033209053828,
+    "stop_action_coordinate_shift_from_prior_center": 0.0018792718697207553
+  },
+  "claim_boundary": {
+    "FULL_BHSM_COMPLETE": false,
+    "Gate7": "ACTIVE",
+    "finite_interval_witness": "OPEN",
+    "global_center_improved": true
+  },
+  "data": "artifacts/flagship_integration/BHSM_N12_C2_STOP_HIGH_ORDER_HALF_STEP_CENTER_RECONNAISSANCE.npz",
+  "data_SHA256": "16A5383752768B7F3D7275F0304618788F6D380E227E0C8FB793CED40A7EE0B0",
+  "exact_next_dependency": "REBUILD_THE_FINITE_SHEARED_BORDERED_GREEN_OPERATOR_ON_THIS_ONE_HIGH_ORDER_CENTER_AND_CERTIFY_ITS_INTERVAL_NEWTON_RADIUS_WITH_THE_EXISTING_ACTION_D4_D5_AND_256_CELL_RESPONSE_PARENTS",
+  "inputs": {
+    "artifacts/flagship_integration/BHSM_N12_C2_STOP_MULTIPLE_SHOOTING_CENTER.json": "7279FE5C083896B60CBF7B47EA6A8FEAC29216520B079B38BBF5BB52E6A4D0EC",
+    "artifacts/flagship_integration/BHSM_N12_C2_STOP_MULTIPLE_SHOOTING_CENTER.npz": "0C9A1A5D069432ED39C0FC627676D99ACE09985FB4458A1FC0471C7C0F593454"
+  },
+  "integrator": {
+    "Runge_Kutta_order": 8,
+    "Runge_Kutta_stages": 12,
+    "field_evaluations": 3055,
+    "fixed_action_step": 0.5,
+    "global_fixed_steps_through_stop_bracket": 185,
+    "stop_bisection_iterations": 48
+  },
+  "method": "FIXED_DOP853_ON_RETAINED_DENOMINATOR_FREE_ACTION_ARCLENGTH_FIELD",
+  "status": "HIGH_ORDER_GLOBAL_STOP_CENTER_ASSEMBLED;_INTERVAL_AUTHORITY_OPEN",
+  "validation": {
+    "fixed_DOP853_descending_s_zero_bracket_found": true,
+    "high_order_center_not_promoted_to_interval_history": true,
+    "high_order_center_stop_stays_near_prior_refined_stop": false,
+    "no_new_stop_selector_action_scale_gate_or_chord_added": true,
+    "same_47_macro_seams_retained": true,
+    "scalar_bisection_returns_s_zero_center": true
+  },
+  "validation_passed": false
+}

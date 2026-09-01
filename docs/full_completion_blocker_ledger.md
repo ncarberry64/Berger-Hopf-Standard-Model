@@ -1,5 +1,14 @@
 # BHSM Full-Completion Blocker Ledger
 
+## Current upstream owner
+
+The correlated Gate-7 homogeneous carrier is closed.  The immediate blocker
+is retained signed-source composition with that frozen carrier, followed by
+literal outward signed `Y`, `Z2`/radii, continuous margins, and first-hit
+Newton.  The mandatory physical-completeness matrix (muon magnetic moment,
+stability/decays, spectral exclusions, known-particle coverage) remains
+downstream.  `FULL_BHSM_COMPLETE = FALSE`.
+
 ## v11.3 canonical blocker
 
 Mark II is `REACHED_CONDITIONALLY`: the reciprocal attachment action fixes the
