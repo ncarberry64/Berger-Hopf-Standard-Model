@@ -1,6 +1,8 @@
 export const REPOSITORY =
   'https://github.com/ncarberry64/Berger-Hopf-Standard-Model';
-export const SCIENCE = `${REPOSITORY}/blob/agent/constraint-manifold-global-control`;
+export const SCIENCE = `${REPOSITORY}/blob/main`;
+export const MUSEUM =
+  'https://ncarberry64.github.io/Berger-Hopf-Standard-Model/';
 
 export type Exhibit = {
   number: string;
@@ -14,6 +16,40 @@ export type Exhibit = {
   status: 'implemented' | 'provisional' | 'gated';
   statusLabel: string;
   links: { label: string; href: string }[];
+};
+
+export const cmsValidation = {
+  title: 'Coordinate-engine validation—not a BHSM physics test',
+  animated: 'pr98_cms_engine_validation_continuous.gif',
+  still: 'pr98_cms_engine_validation.svg',
+  alt: 'Checksum-pinned CMS Open Data dimuon four-vectors continuously transform between coordinate representations while invariant checks remain fixed.',
+  seen: 'Real, checksum-pinned four-vectors from a compact CMS Open Data dimuon sample move through BHSM coordinate transformations. The motion shows the data representation changing while the engine checks invariants.',
+  proves:
+    'The tested software can ingest the pinned four-vectors and preserve the declared coordinate and invariant relationships at the documented benchmark scope.',
+  doesNotProve:
+    'It does not perform detector reconstruction, validate BHSM as particle physics, produce a BHSM prediction, or imply CERN/CMS endorsement.',
+  links: [
+    {
+      label: 'CERN Open Data record 303',
+      href: 'https://opendata.cern.ch/record/303',
+    },
+    {
+      label: 'Generator source',
+      href: `${SCIENCE}/docs/assets/pr98_cms_open_data_animation/generate_pr98_cms_animation.py`,
+    },
+    {
+      label: 'Pinned sample manifest',
+      href: `${SCIENCE}/docs/assets/pr98_cms_open_data_animation/pr98_cms_sample_manifest.json`,
+    },
+    {
+      label: 'Benchmark result',
+      href: `${SCIENCE}/artifacts/cern_open_data_benchmark/results.json`,
+    },
+    {
+      label: 'Benchmark tests',
+      href: `${SCIENCE}/tests/test_cern_open_data_benchmark.py`,
+    },
+  ],
 };
 
 export const exhibits: Exhibit[] = [

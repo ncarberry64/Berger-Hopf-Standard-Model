@@ -1,6 +1,7 @@
-"""Machine checks for the v15.10 public current-status contract.
+"""Compatibility entry point for the canonical BHSM public-status audit.
 
-The historical filename remains a compatibility surface for existing tooling.
+The historical module name remains import-stable. Current public authority is
+the schema-v2 status pair under ``docs/``; legacy campaign ledgers are archives.
 """
 from __future__ import annotations
 
@@ -9,31 +10,26 @@ from pathlib import Path
 import re
 from typing import Any
 
-from .aether_cycle_sigma_coefficient_reconstruction_v15_10 import EXACT_NEXT_OBJECT, PRIMARY_VERDICT
-from .current_program_status import CURRENT_VERSION, status_payload
-from .science_hardening import payload_for_command
-
 
 ROOT = Path(__file__).resolve().parents[3]
 CURRENT_SECTIONS = {
-    "README.md": ("## Current Public Status", "This independent mathematical-physics project"),
-    "STATUS.md": ("## Current public summary", "## Historical v11.6"),
-    "CLAIMS.md": ("## Current public claim boundary", "## Historical claim boundaries"),
-    "ARTIFACT_INDEX.md": ("## Current BHSM v15.10", "## BHSM v15.9"),
-    "docs/README.md": ("## Current v15.10", "## Historical v15.9"),
-    "docs/current_bhsm_status.md": ("## v15.10", "## v15.9"),
-    "docs/BHSM_1_0_DEFINITION_OF_DONE.md": ("## Current v15.10", "## Historical v11.1"),
-    "theory/gate_ledger.md": ("## v15.10", "## v15.9"),
-    "CLI_REFERENCE.md": ("## Current v15.10", "## BHSM v11.2"),
-    "ROADMAP.md": ("## Current v15.10", "## Historical v11.6"),
-    "FALSIFICATION.md": ("## Current v15.10", "## Historical v11.6"),
+    "README.md": ("## Current research status", "## How to read claims"),
+    "STATUS.md": ("# BHSM Status Ledger", "## Authoritative current checkpoint"),
+    "CLAIMS.md": ("# BHSM Claim Boundaries Ledger", "## Authoritative Gate-7 claim boundary"),
+    "docs/README.md": ("## Canonical current authority", "## Historical v15.10 campaign"),
+    "docs/current_bhsm_status.md": ("## Verdict", "## What is established at the retained scope"),
 }
+FLAGS = (
+    "UNCHANGED_AE2_LOCALIZATION_CARRIER_FOUND",
+    "PHYSICAL_ENCAPSULATION_IDENTIFIED",
+    "FULL_BHSM_COMPLETE",
+)
 
 
 def _section(path: Path, start: str, end: str) -> str:
     text = path.read_text(encoding="utf-8")
     if start not in text or end not in text:
-        raise ValueError(f"missing current-section marker in {path}")
+        raise ValueError(f"missing canonical-section marker in {path}")
     return start + text.split(start, 1)[1].split(end, 1)[0]
 
 
@@ -46,39 +42,36 @@ def current_surface_sections(root: Path = ROOT) -> dict[str, str]:
 
 def stale_current_status_hits(root: Path = ROOT) -> list[dict[str, str]]:
     hits: list[dict[str, str]] = []
+    patterns = (
+        re.compile(r"ACTIVE_NOT_CLOSED"),
+        re.compile(r"FULL_BHSM_COMPLETE\s*[=:]\s*TRUE", re.IGNORECASE),
+        re.compile(r"PHYSICAL_ENCAPSULATION_IDENTIFIED\s*[=:]\s*TRUE", re.IGNORECASE),
+    )
     for name, text in current_surface_sections(root).items():
-        for match in re.finditer(r"(?i)current[^\n]{0,80}\bv(?!15\.10\b)\d+(?:\.\d+)+", text):
-            hits.append({"file": name, "text": match.group(0)})
+        for pattern in patterns:
+            for match in pattern.finditer(text):
+                hits.append({"file": name, "text": match.group(0)})
     return hits
 
 
 def semantic_status_audit(root: Path = ROOT) -> dict[str, Any]:
     sections = current_surface_sections(root)
-    status_json = json.loads((root / "docs/current_bhsm_status.json").read_text(encoding="utf-8"))
-    cli = payload_for_command("physics-status")
-    cli_current = cli["physics_current_status"]
+    status = json.loads(
+        (root / "docs/current_bhsm_status.json").read_text(encoding="utf-8")
+    )
     surfaces = {
-        name: EXACT_NEXT_OBJECT in text
-        and (CURRENT_VERSION in text or CURRENT_VERSION in CURRENT_SECTIONS[name][0])
+        name: all(f"{flag} = FALSE" in text for flag in FLAGS)
         for name, text in sections.items()
     }
     surfaces["docs/current_bhsm_status.json"] = (
-        status_json["current_version"] == CURRENT_VERSION
-        and status_json["primary_verdict"] == PRIMARY_VERDICT
-        and status_json["exact_next_object"] == EXACT_NEXT_OBJECT
-        and status_json["FULL_BHSM_COMPLETE"] is False
+        status.get("schema_version") == "2.0"
+        and status.get("canonical_public_status") is True
+        and status.get("gate_7", {}).get("status") == "OPEN"
+        and all(status.get(flag) is False for flag in FLAGS)
     )
-    surfaces["physics-status CLI"] = (
-        cli_current["current_version"] == CURRENT_VERSION
-        and cli_current["primary_verdict"] == PRIMARY_VERDICT
-        and cli_current["exact_next_object"] == EXACT_NEXT_OBJECT
-        and cli_current["FULL_BHSM_COMPLETE"] is False
-    )
-    python_status = status_payload()
-    surfaces["Python status"] = python_status["current_version"] == CURRENT_VERSION
     return {
-        "version": CURRENT_VERSION,
-        "exact_next_object": EXACT_NEXT_OBJECT,
+        "version": status.get("schema_version"),
+        "exact_next_object": status.get("exact_promotion_dependency"),
         "surface_results": surfaces,
         "all_current": all(surfaces.values()),
         "stale_current_status_hits": stale_current_status_hits(root),
@@ -94,10 +87,7 @@ def broken_current_links(root: Path = ROOT) -> list[dict[str, str]]:
             if re.match(r"(?:https?://|mailto:|#)", target):
                 continue
             clean = target.split("#", 1)[0]
-            if not clean:
-                continue
-            resolved = (source.parent / clean).resolve()
-            if not resolved.exists():
+            if clean and not (source.parent / clean).resolve().exists():
                 broken.append({"file": name, "target": target})
     return broken
 

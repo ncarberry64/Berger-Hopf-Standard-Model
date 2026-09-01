@@ -3,6 +3,11 @@
 - The seven animated exhibits, their static fallbacks, and the social preview
   are synchronized from `../docs/assets/`. Their claim-safe source manifest is
   `../docs/assets/bhsm_readme_visual_status.json`.
+- The CMS validation GIF and SVG are synchronized from
+  `../docs/assets/pr98_cms_open_data_animation/`. They are deterministically
+  regenerated from the checked-in compact sample, whose manifest pins CERN
+  Open Data Record 303, DOI `10.7483/OPENDATA.CMS.4M97.3SQ9`, and the full
+  source SHA-256. Their scope is coordinate/engine validation only.
 - `public/bhsm-symbol.svg` is reused from the sibling Bubo Research Node project
   (`frontend/src/assets/bhsm-symbol.svg`). That project identifies the mark as
   an original repository asset and publishes it under the MIT License.

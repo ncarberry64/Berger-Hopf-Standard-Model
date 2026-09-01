@@ -15,11 +15,21 @@ def audit() -> dict:
     status = _json("docs/current_bhsm_status.json")
     completion = _json("theory/full_bhsm_completion_results.json")
     checks = {
-        "candidate_architecture_complete": status["candidate_architecture_complete"] is True,
-        "full_bhsm_not_proven": status["full_bhsm_proven"] is False,
-        "standard_model_not_fully_derived": status["standard_model_fully_derived"] is False,
-        "mass_numerical_closure_open": status["mass_numerical_closure"] is False,
-        "dark_matter_not_solved": status["dark_matter_solved"] is False,
+        "canonical_public_status": status["canonical_public_status"] is True,
+        "gate_7_open": status["gate_7"]["status"] == "OPEN",
+        "unchanged_ae2_localization_carrier_open": status[
+            "UNCHANGED_AE2_LOCALIZATION_CARRIER_FOUND"
+        ]
+        is False,
+        "physical_encapsulation_open": status[
+            "PHYSICAL_ENCAPSULATION_IDENTIFIED"
+        ]
+        is False,
+        "full_bhsm_not_complete": status["FULL_BHSM_COMPLETE"] is False,
+        "observable_machinery_promotion_gated": status[
+            "observable_machinery_classification"
+        ]
+        == "IMPLEMENTED_BUT_PHYSICAL_PROMOTION_GATED",
         "frozen_predictions_unchanged": status["frozen_predictions_changed"] is False,
         "official_predictions_unchanged": status["official_predictions_changed"] is False,
         "completion_payload_candidate_only": completion["status"] == "candidate_only",
@@ -30,10 +40,10 @@ def audit() -> dict:
         "passed": all(checks.values()),
         "checks": checks,
         "verdict_labels": [
-            "BHSM_REPO_STATUS_REFRESH_COMPLETE",
-            "FULL_BHSM_STATUS_SYNCHRONIZED",
-            "SM_DERIVATION_REMAINS_OPEN",
-            "MASS_NUMERICAL_CLOSURE_REMAINS_OPEN",
+            "BHSM_CANONICAL_PUBLIC_STATUS_SYNCHRONIZED",
+            "GATE7_REMAINS_OPEN",
+            "PHYSICAL_ENCAPSULATION_REMAINS_OPEN",
+            "FULL_BHSM_COMPLETE_FALSE",
         ],
     }
 

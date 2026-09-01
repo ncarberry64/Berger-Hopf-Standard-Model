@@ -59,10 +59,13 @@ jobs:
           tests/test_engine_physics_status_separation.py
       - name: Public status and claim boundaries
         run: |
+          python tools/audit_public_surfaces.py
+          python tools/audit_public_status_sync_v15_7.py
           python tools/audit_forbidden_claims.py
           python tools/audit_bhsm_status.py
           python tools/audit_frozen_prediction_integrity.py
           python tools/verify_precision.py
+          python -m pytest -q tests/test_public_surface_consistency.py tests/test_bhsm_museum_facade.py tests/test_current_bhsm_status_schema.py tests/test_bhsm_public_status_sync_v15_7.py
       - name: Patch hygiene
         run: git diff --check
 

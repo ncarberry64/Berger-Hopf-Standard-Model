@@ -16,6 +16,9 @@ export const metadata: Metadata = {
   title: 'BHSM Museum | One Action · One Scale · One Observable Pipeline',
   description:
     'The animated public entrance to the Berger–Hopf Standard Model scientific repository.',
+  alternates: {
+    canonical: 'https://ncarberry64.github.io/Berger-Hopf-Standard-Model/',
+  },
   icons: {
     icon: './bhsm-symbol.svg',
   },

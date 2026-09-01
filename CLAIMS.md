@@ -1,4 +1,13 @@
-# BHSM Claim Boundaries
+# BHSM Claim Boundaries Ledger
+
+> **Authority notice (2026-09-01):** This file preserves compatibility and
+> historical claim records. The canonical public boundary is
+> [`docs/current_bhsm_status.md`](docs/current_bhsm_status.md) with machine
+> flags in [`docs/current_bhsm_status.json`](docs/current_bhsm_status.json).
+> Gate 7 is **OPEN**; `UNCHANGED_AE2_LOCALIZATION_CARRIER_FOUND = FALSE`;
+> `PHYSICAL_ENCAPSULATION_IDENTIFIED = FALSE`; `FULL_BHSM_COMPLETE = FALSE`.
+> Implemented observable machinery remains gated infrastructure, not a physical
+> prediction.
 
 ## Authoritative Gate-7 claim boundary
 

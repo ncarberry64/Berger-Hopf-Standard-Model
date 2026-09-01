@@ -4,7 +4,13 @@ import { ArrowRight, Code2, Pause, Play, ShieldCheck } from 'lucide-react';
 import Image from 'next/image';
 import { useState } from 'react';
 import { Button } from '@/components/ui/button';
-import { exhibits, REPOSITORY, SCIENCE, type Exhibit } from './exhibits';
+import {
+  cmsValidation,
+  exhibits,
+  REPOSITORY,
+  SCIENCE,
+  type Exhibit,
+} from './exhibits';
 
 const creatorLinks = [
   { label: 'ORCID record', href: 'https://orcid.org/0009-0000-6650-3485' },
@@ -17,6 +23,39 @@ function StatusBadge({ exhibit }: { exhibit: Exhibit }) {
     <span className={`status status-${exhibit.status}`}>
       <ShieldCheck aria-hidden="true" size={15} /> {exhibit.statusLabel}
     </span>
+  );
+}
+
+function MotionImage({
+  motion,
+  animated,
+  still,
+  alt,
+  priority = false,
+  loading,
+}: {
+  motion: boolean;
+  animated: string;
+  still: string;
+  alt: string;
+  priority?: boolean;
+  loading?: 'eager' | 'lazy';
+}) {
+  const desired = motion ? animated : still;
+  const [failedSource, setFailedSource] = useState<string | null>(null);
+  const source = failedSource === desired ? still : desired;
+
+  return (
+    <Image
+      src={`./exhibits/${source}`}
+      alt={alt}
+      width={1600}
+      height={900}
+      priority={priority}
+      loading={priority ? undefined : loading}
+      onError={() => setFailedSource(desired)}
+      unoptimized
+    />
   );
 }
 
@@ -103,13 +142,12 @@ export default function Home() {
             </Button>
           </div>
           <div className="display-frame">
-            <Image
-              src={`./exhibits/${motion ? hero.animated : hero.still}`}
+            <MotionImage
+              motion={motion}
+              animated={hero.animated}
+              still={hero.still}
               alt={hero.alt}
-              width={1600}
-              height={900}
               priority
-              unoptimized
             />
           </div>
           <div className="display-caption">
@@ -135,6 +173,104 @@ export default function Home() {
           calculations. Every animation has a backstage door to source,
           derivation, tests, artifacts, and stated limits.
         </p>
+      </section>
+
+      <section
+        className="frontier-wall"
+        id="frontier"
+        aria-labelledby="frontier-title"
+      >
+        <div className="section-heading">
+          <p className="eyebrow">Current frontier · the central obstruction</p>
+          <h2 id="frontier-title">
+            A certified reduced event is not yet a physical enclosure.
+          </h2>
+        </div>
+        <div className="frontier-grid">
+          <article>
+            <span>Retained</span>
+            <h3>What the record establishes</h3>
+            <p>
+              A branch-24 first-stop event in reduced action state space, the
+              continuum event-child certificate, fermionic reset-trace
+              matching, a tensor-factor intertwiner, and the local correlated
+              spectral domain at their stated scopes.
+            </p>
+          </article>
+          <article className="frontier-open">
+            <span>Gate 7 · open</span>
+            <h3>What still blocks promotion</h3>
+            <p>
+              No unchanged-AE2 action-owned covariant localization carrier or
+              physical encapsulation has been identified. Complete gauge,
+              ghost, fermion, scalar/HS field attachment and required cross
+              derivatives remain missing.
+            </p>
+          </article>
+        </div>
+        <div className="frontier-flags" role="note">
+          <code>UNCHANGED_AE2_LOCALIZATION_CARRIER_FOUND = FALSE</code>
+          <code>PHYSICAL_ENCAPSULATION_IDENTIFIED = FALSE</code>
+          <code>FULL_BHSM_COMPLETE = FALSE</code>
+          <a href={`${SCIENCE}/docs/current_bhsm_status.md`}>
+            Inspect the exact promotion dependency ↗
+          </a>
+        </div>
+      </section>
+
+      <section
+        className="validation-gallery"
+        id="validation"
+        aria-labelledby="validation-title"
+      >
+        <div className="validation-copy">
+          <p className="eyebrow">Validation gallery V01 · CMS Open Data</p>
+          <h2 id="validation-title">{cmsValidation.title}</h2>
+          <p className="validation-subtitle">
+            No detector reconstruction · no BHSM empirical validation · no
+            CERN/CMS endorsement
+          </p>
+          <dl>
+            <div>
+              <dt>What you are seeing</dt>
+              <dd>{cmsValidation.seen}</dd>
+            </div>
+            <div>
+              <dt>What this proves</dt>
+              <dd>{cmsValidation.proves}</dd>
+            </div>
+            <div>
+              <dt>What this does not prove</dt>
+              <dd>{cmsValidation.doesNotProve}</dd>
+            </div>
+          </dl>
+          <div className="record-links" aria-label="CMS validation provenance">
+            <span>Source · manifest · result · tests</span>
+            {cmsValidation.links.map((link) => (
+              <a href={link.href} key={link.label}>
+                {link.label} <span aria-hidden="true">↗</span>
+              </a>
+            ))}
+          </div>
+        </div>
+        <div className="validation-visual">
+          <div className="display-label">
+            <span>Real four-vectors · coordinate display</span>
+            <span>{motion ? 'Motion on' : 'Static view'}</span>
+          </div>
+          <MotionImage
+            motion={motion}
+            animated={cmsValidation.animated}
+            still={cmsValidation.still}
+            alt={cmsValidation.alt}
+          />
+          <p>
+            Benchmark coverage: 100,000 events · 200,000 unique muon
+            four-vectors. Display sample: 128 four-vectors from 64 evenly
+            spaced events in the checksum-pinned source. The full result and
+            provenance are linked at left.
+          </p>
+        </div>
       </section>
 
       <section
@@ -174,7 +310,7 @@ export default function Home() {
         <div className="status-ribbon" role="note">
           <strong>Current public boundary</strong>
           <span>
-            Gate 7 remains ACTIVE_NOT_CLOSED · physical readout is gated ·
+            Gate 7 remains OPEN · physical readout is gated ·
             FULL_BHSM_COMPLETE = FALSE
           </span>
           <a href={`${SCIENCE}/docs/current_bhsm_status.md`}>
@@ -212,13 +348,12 @@ export default function Home() {
                   <span>Exhibit {exhibit.number} / 07</span>
                   <span>{motion ? 'Motion on' : 'Static view'}</span>
                 </div>
-                <Image
-                  src={`./exhibits/${motion ? exhibit.animated : exhibit.still}`}
+                <MotionImage
+                  motion={motion}
+                  animated={exhibit.animated}
+                  still={exhibit.still}
                   alt={exhibit.alt}
-                  width={1600}
-                  height={900}
                   loading={index === 0 ? 'eager' : 'lazy'}
-                  unoptimized
                 />
               </div>
               <div className="exhibit-placard">
@@ -270,9 +405,9 @@ export default function Home() {
           {[
             [
               '01',
-              'Current authority',
-              'Live status, completion boundary, and blocker.',
-              `${SCIENCE}/docs/current_bhsm_status.md`,
+              'Reviewer start here',
+              'Five-minute path through status, evidence, tests, and critique.',
+              `${SCIENCE}/docs/reviewer_start_here.md`,
             ],
             [
               '02',

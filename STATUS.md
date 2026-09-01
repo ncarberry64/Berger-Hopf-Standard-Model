@@ -1,4 +1,14 @@
-# BHSM Status
+# BHSM Status Ledger
+
+> **Authority notice (2026-09-01):** This file is a retained compatibility and
+> historical ledger. Current public authority is
+> [`docs/current_bhsm_status.md`](docs/current_bhsm_status.md) and
+> [`docs/current_bhsm_status.json`](docs/current_bhsm_status.json). Gate 7 is
+> **OPEN** at the action-owned covariant localization/domain-carrier and
+> full-field attachment frontier.
+> `UNCHANGED_AE2_LOCALIZATION_CARRIER_FOUND = FALSE`;
+> `PHYSICAL_ENCAPSULATION_IDENTIFIED = FALSE`;
+> `FULL_BHSM_COMPLETE = FALSE`.
 
 ## Authoritative current checkpoint
 

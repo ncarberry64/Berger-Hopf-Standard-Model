@@ -6,6 +6,7 @@ const museumRoot = resolve(dirname(fileURLToPath(import.meta.url)), '..');
 const sourceRoot = resolve(museumRoot, '..', 'docs', 'assets');
 const publicRoot = resolve(museumRoot, 'public');
 const targetRoot = resolve(publicRoot, 'exhibits');
+const cmsSourceRoot = join(sourceRoot, 'pr98_cms_open_data_animation');
 
 if (relative(publicRoot, targetRoot).startsWith('..')) {
   throw new Error('Refusing to sync outside museum/public.');
@@ -31,12 +32,23 @@ const allowedNames = new Set([
 const names = (await readdir(sourceRoot)).filter((name) =>
   allowedNames.has(name),
 );
+const cmsNames = [
+  'pr98_cms_engine_validation_continuous.gif',
+  'pr98_cms_engine_validation.svg',
+];
 
-await rm(targetRoot, { recursive: true, force: true });
 await mkdir(targetRoot, { recursive: true });
+
+for (const existing of await readdir(targetRoot)) {
+  await rm(join(targetRoot, existing), { recursive: true, force: true });
+}
 
 for (const name of names) {
   await cp(join(sourceRoot, name), join(targetRoot, name));
+}
+
+for (const name of cmsNames) {
+  await cp(join(cmsSourceRoot, name), join(targetRoot, name));
 }
 
 await cp(
@@ -44,4 +56,6 @@ await cp(
   join(publicRoot, 'og.png'),
 );
 
-console.log(`Synced ${names.length} provenance-tracked museum assets.`);
+console.log(
+  `Synced ${names.length + cmsNames.length} provenance-tracked museum assets.`,
+);

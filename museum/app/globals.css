@@ -12,6 +12,7 @@
   --cyan-deep: #143b43;
   --gold: #e7b75c;
   --max: 1440px;
+  --label-size: 0.75rem;
 }
 * {
   box-sizing: border-box;
@@ -121,11 +122,14 @@ nav a:hover {
   border: 1px solid var(--line);
   display: inline-flex;
   gap: 0.45rem;
+  min-height: 44px;
   padding: 0.55rem 0.75rem;
 }
 .atrium,
 .orientation,
-.claim-key {
+.claim-key,
+.frontier-wall,
+.validation-gallery {
   margin: 0 auto;
   max-width: var(--max);
   padding-left: 5vw;
@@ -240,6 +244,7 @@ h1 span {
   display: flex;
   font: inherit;
   gap: 0.45rem;
+  min-height: 44px;
   padding: 0.35rem;
   text-transform: uppercase;
 }
@@ -314,6 +319,128 @@ h1 span {
   font-size: clamp(1rem, 1.35vw, 1.22rem);
   line-height: 1.75;
   margin: 2.1rem 0 0;
+}
+.frontier-wall {
+  padding-bottom: clamp(5rem, 9vw, 9rem);
+  padding-top: clamp(5rem, 9vw, 9rem);
+}
+.frontier-grid {
+  display: grid;
+  gap: 1px;
+  grid-template-columns: 1fr 1fr;
+  margin-top: 3.5rem;
+}
+.frontier-grid article {
+  background: var(--panel);
+  border: 1px solid var(--line);
+  min-height: 280px;
+  padding: clamp(1.6rem, 3vw, 3rem);
+}
+.frontier-grid article > span {
+  color: var(--cyan);
+  font-family: var(--font-geist-mono), monospace;
+  font-size: 0.68rem;
+  font-weight: 800;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+.frontier-grid .frontier-open {
+  border-top-color: var(--gold);
+}
+.frontier-grid .frontier-open > span {
+  color: var(--gold);
+}
+.frontier-grid h3 {
+  font-size: clamp(1.45rem, 2.5vw, 2.5rem);
+  margin: 3.2rem 0 1rem;
+}
+.frontier-grid p {
+  color: var(--muted);
+  line-height: 1.75;
+  margin-bottom: 0;
+}
+.frontier-flags {
+  border: 1px solid var(--line);
+  border-left: 3px solid var(--gold);
+  display: grid;
+  gap: 0.75rem;
+  padding: 1.3rem;
+}
+.frontier-flags code {
+  color: #ffd98a;
+  font-size: clamp(0.66rem, 1vw, 0.78rem);
+  overflow-wrap: anywhere;
+}
+.frontier-flags a {
+  color: var(--cyan);
+  font-size: 0.78rem;
+  font-weight: 800;
+  margin-top: 0.35rem;
+}
+.validation-gallery {
+  align-items: center;
+  border-bottom: 1px solid var(--line);
+  border-top: 1px solid var(--line);
+  display: grid;
+  gap: clamp(3rem, 6vw, 7rem);
+  grid-template-columns: minmax(320px, 0.72fr) minmax(440px, 1.28fr);
+  padding-bottom: clamp(5rem, 8vw, 8rem);
+  padding-top: clamp(5rem, 8vw, 8rem);
+}
+.validation-copy h2 {
+  font-size: clamp(2.1rem, 4.2vw, 4.6rem);
+  letter-spacing: -0.05em;
+  line-height: 1;
+  margin-bottom: 1.2rem;
+}
+.validation-subtitle {
+  color: var(--gold);
+  font-family: var(--font-geist-mono), monospace;
+  font-size: 0.7rem;
+  line-height: 1.6;
+  text-transform: uppercase;
+}
+.validation-copy dl {
+  margin: 2.5rem 0;
+}
+.validation-copy dl > div {
+  border-top: 1px solid var(--line);
+  padding: 1rem 0;
+}
+.validation-copy dt {
+  color: var(--ink);
+  font-family: var(--font-geist-mono), monospace;
+  font-size: 0.67rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  margin-bottom: 0.5rem;
+  text-transform: uppercase;
+}
+.validation-copy dd {
+  color: var(--muted);
+  font-size: 0.88rem;
+  line-height: 1.7;
+  margin: 0;
+}
+.validation-visual {
+  background: #061014;
+  border: 1px solid var(--line);
+  min-width: 0;
+}
+.validation-visual img {
+  display: block;
+  height: auto;
+  padding: clamp(0.7rem, 1.5vw, 1.4rem);
+  width: 100%;
+}
+.validation-visual > p {
+  border-top: 1px solid var(--line);
+  color: var(--muted);
+  font-family: var(--font-geist-mono), monospace;
+  font-size: 0.66rem;
+  line-height: 1.6;
+  margin: 0;
+  padding: 0.9rem 1rem;
 }
 .claim-key {
   padding-bottom: 8rem;
@@ -499,6 +626,7 @@ h1 span {
   display: flex;
   font-size: 0.8rem;
   justify-content: space-between;
+  min-height: 44px;
   padding: 0.7rem 0;
 }
 .record-links a:hover {
@@ -577,7 +705,7 @@ pre {
   border-left: 4px solid var(--cyan);
   color: #c7f5f3;
   font-family: var(--font-geist-mono), monospace;
-  font-size: clamp(0.67rem, 1vw, 0.85rem);
+  font-size: clamp(0.75rem, 1vw, 0.85rem);
   line-height: 1.8;
   margin: 0;
   overflow: auto;
@@ -709,6 +837,7 @@ pre {
   color: var(--cyan);
   font-size: 0.75rem;
   font-weight: 800;
+  min-height: 44px;
   padding: 0.65rem 0.8rem;
 }
 footer {
@@ -740,20 +869,55 @@ footer > div:first-child strong {
   gap: 1.4rem;
 }
 .footer-links a {
+  align-items: center;
   color: var(--muted);
+  display: inline-flex;
   font-size: 0.72rem;
+  min-height: 44px;
 }
 .footer-links a:hover {
   color: var(--cyan);
 }
 .footer-boundary {
   border-top: 1px solid var(--line);
-  color: #617a80;
+  color: #789098;
   font-family: var(--font-geist-mono), monospace;
   font-size: 0.63rem;
   grid-column: 1/-1;
   margin: 0;
   padding-top: 1.5rem;
+}
+.wordmark small,
+.eyebrow,
+.institution-note,
+.display-label,
+.display-caption strong,
+.status,
+.frontier-grid article > span,
+.frontier-flags code,
+.frontier-flags a,
+.validation-subtitle,
+.validation-copy dt,
+.validation-visual > p,
+.claim-number,
+.status-ribbon strong,
+.status-ribbon a,
+.text-link,
+.exhibit-index,
+.exhibit-subtitle,
+.exhibit-placard dt,
+.record-links > span,
+.review-card > span,
+.review-card strong,
+.language-grid article > span,
+.integration-boundary,
+.creator-mark small,
+.creator-role,
+.creator-boundary,
+.creator-links a,
+.footer-links a,
+.footer-boundary {
+  font-size: var(--label-size);
 }
 @media (max-width: 960px) {
   .site-header nav > a:not(.nav-repository) {
@@ -809,12 +973,18 @@ footer > div:first-child strong {
   }
   .atrium,
   .orientation,
-  .claim-key {
+  .claim-key,
+  .frontier-wall,
+  .validation-gallery {
     padding-left: 1.1rem;
     padding-right: 1.1rem;
   }
   .atrium {
     padding-top: 4rem;
+  }
+  .frontier-grid,
+  .validation-gallery {
+    grid-template-columns: 1fr;
   }
   .display-caption {
     display: block;
