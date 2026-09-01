@@ -7,6 +7,7 @@ Materialize and test the current action-owned reciprocal-join carrier with:
 ```powershell
 python scripts/materialize_ae3_reciprocal_join_localization.py
 python scripts/materialize_ae3_c2_action_puzzle.py
+python scripts/materialize_ae3_c2_hs_mixed_variation.py
 python scripts/materialize_ae3_family_hierarchy_interface.py
 python scripts/materialize_ae3_family_noncentral_return_audit.py
 python scripts/materialize_ae3_c2_coexact_hypercharge.py
@@ -15,7 +16,7 @@ python scripts/materialize_ae3_c2_lorentzian_gauge_ghost_hessian.py
 python scripts/materialize_ae3_c2_coexact_su2l_neutral.py
 python scripts/materialize_ae3_c2_gauge_mismatch_resolution.py
 python scripts/materialize_ae3_c2_two_sided_calderon.py
-python -m pytest -q tests/test_ae3_reciprocal_join_localization.py tests/test_ae3_family_hierarchy_interface.py tests/test_ae3_family_noncentral_return_audit.py tests/test_ae3_c2_lorentzian_gauge_ghost_hessian.py tests/test_ae3_c2_coexact_su2l_neutral.py tests/test_ae3_c2_gauge_mismatch_resolution.py tests/test_ae3_c2_two_sided_calderon.py
+python -m pytest -q tests/test_ae3_reciprocal_join_localization.py tests/test_ae3_c2_action_puzzle.py tests/test_ae3_c2_hs_mixed_variation.py tests/test_ae3_family_hierarchy_interface.py tests/test_ae3_family_noncentral_return_audit.py tests/test_ae3_c2_lorentzian_gauge_ghost_hessian.py tests/test_ae3_c2_coexact_su2l_neutral.py tests/test_ae3_c2_gauge_mismatch_resolution.py tests/test_ae3_c2_two_sided_calderon.py
 ```
 
 This reproduces the analytic eta-to-sigma profile, its unique transverse
@@ -33,6 +34,13 @@ projections, absent junction bilinears with unfixed coefficients, circular
 coherence sources, family-blind constraints, unselected bands, and
 underived intrinsic Wilson matrices. It does not rebuild the particle
 spectrum or insert measured masses.
+
+The current-C2 HS mixed-variation materializer differentiates the attached
+1,222-segment reduced bilinear without importing the historical proper-cycle
+determinant. It verifies exact vanishing of the mixed Hessian on the attached
+zero coefficient background while retaining nonzero third and fourth
+interaction tensors. It also records why a family/mode projector is not a
+classical spatial fermion background.
 
 The continuous-frequency materializer evaluates the current-C2
 transverse DtN derivative together with the temporal/longitudinal constraint
