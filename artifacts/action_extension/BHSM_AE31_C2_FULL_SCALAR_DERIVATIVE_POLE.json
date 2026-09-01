@@ -1,0 +1,305 @@
+{
+  "FULL_BHSM_COMPLETE": false,
+  "action_version": "BHSM-AE-3.1.0",
+  "artifact": "BHSM_AE31_C2_FULL_SCALAR_DERIVATIVE_POLE",
+  "claim_boundary": {
+    "CURRENT_C2_CANONICAL_YUKAWA_RESIDUES_DERIVED": false,
+    "CURRENT_C2_FAMILY_NONCENTRAL_LEPTON_KINETIC_RANK_TWO_DERIVED": true,
+    "CURRENT_C2_FINITE_FULL_SCALAR_KINETIC_MATRIX_DERIVED": false,
+    "CURRENT_C2_FULL_FOUR_FIELD_DERIVATIVE_PRINCIPAL_POLE_DERIVED": true,
+    "CURRENT_C2_FULL_SCALAR_UV_KINETIC_FORM_POSITIVE_DEFINITE": true,
+    "CURRENT_C2_INTRINSIC_LEPTON_HS_CROSS_DERIVATIVE_POLE_DERIVED": true,
+    "CURRENT_C2_PHYSICAL_SINGLE_HIGGS_DIRECTION_SELECTED": false,
+    "CURRENT_C2_RENORMALIZED_ZERO_MOMENTUM_SCALAR_HESSIAN_DERIVED": false,
+    "FULL_BHSM_COMPLETE": false,
+    "MEASURED_MASS_USED": false,
+    "particle_spectrum_rebuilt": false
+  },
+  "classification": "AE31_CURRENT_C2_FULL_SCALAR_DERIVATIVE_POLE",
+  "derivative_eigenmode_boundary": {
+    "UV_derivative_eigendirections_action_derived": true,
+    "finite_canonical_fields_derived": false,
+    "kinetic_and_masslike_matrices_simultaneously_diagonalized": false,
+    "physical_lightest_or_broken_scalar_selected": false,
+    "universal_pole_kinetic_eigenvalues": [
+      6.420569707014604e-05,
+      3.0000382703103066,
+      9.0,
+      9.0
+    ],
+    "universal_pole_kinetic_eigenvectors_columns": [
+      [
+        -0.9999936215394643,
+        0.0035716775312178172,
+        0.0,
+        0.0
+      ],
+      [
+        0.0035716775312178172,
+        0.9999936215394643,
+        0.0,
+        0.0
+      ],
+      [
+        0.0,
+        0.0,
+        1.0,
+        0.0
+      ],
+      [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ]
+    ],
+    "why": "A_PHYSICAL_GENERALIZED_EIGENPROBLEM_REQUIRES_THE_FINITE_RENORMALIZED_DERIVATIVE_MATRIX_AND_ZERO_MOMENTUM_HESSIAN",
+    "zero_momentum_masslike_Hessian_derived": false
+  },
+  "exact_remaining_owner": {
+    "closed": [
+      "complete_four_field_universal_derivative_pole_matrix",
+      "intrinsic_charged_lepton_HS_cross_derivative_pole",
+      "family_noncentral_rank_two_lepton_block",
+      "full_rank_four_field_UV_kinetic_form"
+    ],
+    "next_operator": "H0_ren*v=m_squared*Z_ren*v_ON_(H_intrinsic,H_HS_e,H_HS_up,H_HS_down)",
+    "old_EC_residue_or_fitted_scalar_normalization_allowed": false,
+    "still_required": [
+      "finite_current_C2_derivative_matching_condition",
+      "renormalized_zero_momentum_four_field_Hessian",
+      "physical_generalized_scalar_eigenproblem",
+      "nonzero_broken_mode_and_canonical_Yukawa_pushforward"
+    ]
+  },
+  "family_noncentral_rank_theorem": {
+    "charged_lepton_derivative_pole_block": "[[Tr(Y_l^2),Tr(Y_l)],[Tr(Y_l),3]]/[16*pi^2*epsilon_UV]",
+    "current_family_noncentral_block_rank": 2,
+    "determinant_identity": "sum_(i<j)(y_i-y_j)^2",
+    "determinant_numerator": "3*Tr(Y_l^2)-Tr(Y_l)^2",
+    "determinant_value": 0.00019261954838238816,
+    "family_central_limit_would_have_rank_one": true,
+    "family_hierarchy_rebuilt": false,
+    "full_four_field_pole_rank": 4,
+    "intrinsic_and_charged_lepton_HS_directions_redundant": false,
+    "reason": "THREE_DISTINCT_ACTION_OWNED_CHARGED_LEPTON_FAMILY_EIGENVALUES",
+    "strictly_positive": true
+  },
+  "full_Lorentzian_derivative_symbol_example": {
+    "Hessian_principal_symbol": [
+      [
+        0.6875004461441171,
+        4.664874305386625e-05,
+        0.0,
+        0.0
+      ],
+      [
+        4.664874305386625e-05,
+        0.013060933828895104,
+        0.0,
+        0.0
+      ],
+      [
+        0.0,
+        0.0,
+        0.03918280148668531,
+        0.0
+      ],
+      [
+        0.0,
+        0.0,
+        0.0,
+        0.03918280148668531
+      ]
+    ],
+    "Lorentzian_covector_square": 0.6875,
+    "field_basis": [
+      "H_intrinsic",
+      "H_HS_e",
+      "H_HS_up",
+      "H_HS_down"
+    ],
+    "finite_loop_derivative_matrix_selected": false,
+    "formula": "H_derivative=[diag(1,0,0,0)+Gram(V)/(16*pi^2*epsilon_UV)]*(-omega^2+lambda_scalar)",
+    "frequency_domain": "CONTINUOUS_REAL_OMEGA__NOT_PERIODIC_CYCLE_MODE",
+    "full_derivative_Laurent_matrix_at_epsilon_coordinate": [
+      [
+        1.0000006489368976,
+        6.785271716926e-05,
+        0.0,
+        0.0
+      ],
+      [
+        6.785271716926e-05,
+        0.018997721932938333,
+        0.0,
+        0.0
+      ],
+      [
+        0.0,
+        0.0,
+        0.056993165798815,
+        0.0
+      ],
+      [
+        0.0,
+        0.0,
+        0.0,
+        0.056993165798815
+      ]
+    ],
+    "metric": "h=-d_tau^2+R4(tau)^2*dOmega3^2",
+    "same_temporal_spatial_matrix": true,
+    "tree_derivative_matrix": [
+      [
+        1.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      [
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      [
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      [
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ]
+    ],
+    "tree_intrinsic_H_kinetic_term_reused": true,
+    "universal_loop_pole_matrix": [
+      [
+        6.489368976457349e-07,
+        6.785271716926e-05,
+        0.0,
+        0.0
+      ],
+      [
+        6.785271716926e-05,
+        0.018997721932938333,
+        0.0,
+        0.0
+      ],
+      [
+        0.0,
+        0.0,
+        0.056993165798815,
+        0.0
+      ],
+      [
+        0.0,
+        0.0,
+        0.0,
+        0.056993165798815
+      ]
+    ]
+  },
+  "inputs": {
+    "artifacts/action_extension/BHSM_AE31_C2_COMPOSITE_LORENTZIAN_KINETIC_POLE.json": "FF35BD8E761D7E250337C37FFC8F6CCE35123D65201CE84DCEBBF6530D554489",
+    "artifacts/action_extension/BHSM_AE31_C2_INTRINSIC_M4_LEPTON_ACTION.json": "C0E851100FCAA04C1968081A3940D938B7C64C857FE416F7F7795974A9053850",
+    "artifacts/action_extension/BHSM_AE31_C2_LEPTON_COMPOSITE_MIXING_STRUCTURE.json": "B162BF1F0CB5330AD4DA20E566441C894EB0A06F2341D33974D6BDFF22EF979B",
+    "src/bhsm/interface/ae31_c2_full_scalar_derivative_pole.py": "15089D4F7EC448D4FFDEE41BA2C33851C26D9D31C3EADBDE8C9CFA217BF2E42A"
+  },
+  "scalar_vertex_Gram_matrix": {
+    "Gram_eigenvalues": [
+      6.420569707014604e-05,
+      3.0000382703103066,
+      9.0,
+      9.0
+    ],
+    "Gram_eigenvectors_columns": [
+      [
+        -0.9999936215394643,
+        0.0035716775312178172,
+        0.0,
+        0.0
+      ],
+      [
+        0.0035716775312178172,
+        0.9999936215394643,
+        0.0,
+        0.0
+      ],
+      [
+        0.0,
+        0.0,
+        1.0,
+        0.0
+      ],
+      [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ]
+    ],
+    "Gram_matrix": [
+      [
+        0.00010247600737653791,
+        0.010714871615993599,
+        0.0,
+        0.0
+      ],
+      [
+        0.010714871615993599,
+        3.0,
+        0.0,
+        0.0
+      ],
+      [
+        0.0,
+        0.0,
+        9.0,
+        0.0
+      ],
+      [
+        0.0,
+        0.0,
+        0.0,
+        9.0
+      ]
+    ],
+    "Gram_rank": 4,
+    "Y_l_family_noncentral": true,
+    "charged_lepton_block_determinant": 0.00019261954838238816,
+    "field_basis": [
+      "H_intrinsic",
+      "H_HS_e",
+      "H_HS_up",
+      "H_HS_down"
+    ],
+    "measured_lepton_mass_used": false,
+    "pairwise_family_difference_square_sum": 0.00019261954838238848,
+    "positive_definite": true,
+    "species_off_diagonal_blocks_zero": true,
+    "trace_Y_l": 0.010714871615993599,
+    "trace_Y_l_squared": 0.00010247600737653791,
+    "variance_identity": 0.00019261954838238846,
+    "variance_identity_residual": 2.710505431213761e-20,
+    "vertex_vectors": {
+      "H_HS_down": "I9_ON_down_color_family_pairings",
+      "H_HS_e": "I3_ON_charged_lepton_family_space",
+      "H_HS_up": "I9_ON_up_color_family_pairings",
+      "H_intrinsic": "Y_l_ON_charged_lepton_family_space"
+    }
+  },
+  "validation": {
+    "UV_modes_not_promoted_to_physical_Higgs": true,
+    "family_noncentrality_makes_lepton_block_rank_two": true,
+    "full_UV_kinetic_Gram_form_positive": true,
+    "intrinsic_and_auxiliary_vertices_reused": true,
+    "no_finite_Higgs_Yukawa_or_mass_overclaim": true,
+    "one_pair_Lorentzian_pole_reused": true
+  },
+  "validation_passed": true
+}
