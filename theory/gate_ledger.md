@@ -1,5 +1,50 @@
 # Gate Ledger
 
+## Current BHSM-AE-3 localization and identification owner
+
+- Action version: `BHSM-AE-3.0.0`, owner-authorized minimal localization
+  domain extension.
+- Selected carrier: existing reciprocal-join eta-to-sigma response.
+- New propagating fields, continuous coefficients, scales, or Standard Model
+  fits: `NONE`.
+- Carrier domain: `D_enc={sigma<0}` with
+  `Sigma_enc={sigma=0}` and `d sigma|Sigma_enc != 0`.
+- Identity-branch crossing: `chi=pi/4`,
+  `d sigma/d chi=4/pi`.
+- Enclosure route: `LOCAL_SAME_SPACETIME_ENCLOSURE`, selected by the smooth
+  scalar action domain.
+- Terminal boundary, reset-locus enclosure, or spacetime edge: `FALSE`.
+- Resolved same-action interface variation: `CLOSED` for metric, eta, sigma,
+  gauge, fermion, ghost/BRST, traction, Brown--York cancellation, and smooth
+  Noether normal-flux laws.
+- `KERNEL_A`: `CLOSED_ON_RETAINED_C2_ACTION_DOMAIN`.
+- `KERNEL_B`: resolved enclosure interface closed; complete full-field event
+  junction and Noether--Hamiltonian balance `OPEN`.
+- `KERNEL_C`: enclosure signature and particle-state fiber inheritance
+  closed; one full-field C2 action evaluation `OPEN`.
+- `KERNEL_D`: `CLOSED_AS_FIBERED_C2_INSTANTIATION`; the actual C2 base now
+  carries all nine frozen charged-sector rank-one fibers, while the upstream
+  state label selects the particle type.
+- Reset, family projection, `D_enc` restriction, and smooth carrier
+  multiplication commute exactly on the factorized C2 state space. No
+  interacting time-evolution intertwiner is claimed before its action exists.
+- Reused nonlinear evidence: response-constrained functional and finite
+  spatial Euler projection `SOLVED`; both ADM initial-data constraints
+  `SOLVED`; Lorentzian surface-separation trajectory `INTEGRATED`; persistent
+  current-C2 full-field particle `OPEN`.
+- Historical zero-source closed-cycle superdeterminant promoted to the current
+  positive-duration nonzero-family-state C2 action: `FALSE`; the mismatch is
+  background/domain/source ownership, not a tunable coefficient.
+- Existing AE2 fermion reset trace and all frozen particle/family/projector,
+  current, representation, and topological assets: `PRESERVED`.
+- Existing Standard Model manifestation/readout map: `PRESERVED_DOWNSTREAM`.
+- `PHYSICAL_ENCAPSULATION_IDENTIFIED=FALSE` because `PEI_05`--`PEI_07` and
+  the dependency-closed full-field portion of `PEI_09` still require one
+  common AE3 oracle and event-balance evaluation.
+- Gate 7: `ACTIVE`; `FULL_BHSM_COMPLETE=FALSE`.
+- Exact next object:
+  `ONE_AE3_FULL_FIELD_C2_ACTION_ORACLE_WITH_GEOMETRY_GAUGE_GHOST_FERMION_HS_AND_RESPONSE_MULTIPLIER_BLOCKS;_THEN_EVALUATE_THE_EVENT_CANONICAL_FLUX_AND_COMPLETE_NOETHER_HAMILTONIAN_BALANCE_WITHOUT_ADDING_A_CONTACT_COEFFICIENT`.
+
 ## Current Gate-7 physical-identification owner
 
 - Canonical branch-24 first stop: `CLOSED_AND_REUSED_UNCHANGED`.

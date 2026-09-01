@@ -1,5 +1,23 @@
 # Reproducibility
 
+## BHSM-AE-3 localization enclosure
+
+Materialize and test the current action-owned reciprocal-join carrier with:
+
+```powershell
+python scripts/materialize_ae3_reciprocal_join_localization.py
+python -m pytest -q tests/test_ae3_reciprocal_join_localization.py
+```
+
+This reproduces the analytic eta-to-sigma profile, its unique transverse
+`sigma=0` enclosure, the retained `1-4 sigma^2` Hopf weight, the resolved
+interface variation ledger, the three sector-scoped dependency closures, and
+the nine frozen family-fiber transport certificates. It also checks the full
+reset/projector/enclosure-restriction transport square, imports the historical
+response-constrained nonlinear witnesses by hash, and verifies that the old
+zero-source closed-cycle determinant is not promoted to the current C2 action.
+It does not rerun or strengthen the branch-24 first-stop numerics.
+
 ## Current Gate-7 carrier certificate
 
 Run `python scripts/certify_n12_gate7_arb_interaction_taylor26_macro_maps.py
