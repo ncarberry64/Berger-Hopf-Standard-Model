@@ -78,3 +78,16 @@ def test_every_exhibit_visual_uses_motion_control_and_cache_safe_fallback() -> N
     assert "onError={() => setFailedSource(desired)}" in page
     assert "ASSET_REVISION" in page
     assert "<MotionImage" in page
+
+
+def test_exhibition_hall_is_the_first_content_after_navigation() -> None:
+    page = (MUSEUM / "app" / "page.tsx").read_text(encoding="utf-8")
+    header_end = page.index("</header>")
+    exhibits = page.index('id="exhibits"')
+    atrium = page.index('className="atrium"')
+    cms_data = page.index("<CMSExplorer />")
+    research = page.index('className="reconstruction-room"')
+
+    assert header_end < exhibits < atrium < cms_data < research
+    assert 'href="#exhibits">Exhibits</a>' in page
+    assert 'href="#exhibits">\n        Skip to the exhibits' in page
