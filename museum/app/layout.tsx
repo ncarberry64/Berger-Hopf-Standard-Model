@@ -13,11 +13,17 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL(
+    'https://ncarberry64.github.io/Berger-Hopf-Standard-Model/',
+  ),
   title: 'BHSM Museum | Animated Scientific Archive',
   description:
     'Real CMS Open Data rendered through the BHSM Engine, the integrated Berger–Hopf Standard Model record, and an artifact-backed scientific archive.',
   icons: {
     icon: './bhsm-symbol.svg',
+  },
+  alternates: {
+    canonical: './',
   },
   openGraph: {
     title: 'BHSM Museum | CMS Open Data and the BHSM Record',
