@@ -1,0 +1,131 @@
+{
+  "FULL_BHSM_COMPLETE": false,
+  "action_version": "BHSM-AE-3.0.0",
+  "artifact": "BHSM_AE3_C2_GAUGE_MISMATCH_RESOLUTION_SCREEN",
+  "claim_boundary": {
+    "Lorentzian_Maxwell_residue_derived": false,
+    "exterior_Calderon_operator_derived": false,
+    "finite_route_screen_complete": true,
+    "physical_photon_derived": false
+  },
+  "classification": "AE3_CURRENT_C2_GAUGE_MISMATCH_FINITE_ACTION_DOMAIN_SCREEN",
+  "inputs": {
+    "artifacts/BHSM_action_attachment_wentzell_v14_67.json": "ED29199518D822C39DC8AD03EBB551A6C90380991C5502E3362997FEA3D5CA5A",
+    "artifacts/BHSM_action_sector_provenance_v14_61.json": "F6997B10CD4DB8C9ECA1AF80995B7961D2359A23EBE79D53EA27B20A6FC8C6B1",
+    "artifacts/BHSM_aether_n3_dynamic_child_wentzell_cauchy_v17_90.json": "727FFB8168729C1148C83660D1A57602069E68C74EE891F8C13DB6B41E7E4A42",
+    "artifacts/BHSM_aether_n3_event_attachment_state_incidence_v17_89.json": "1B4691CD8C96E0D95255C98EEDD1824194C3CCA18B1BFF1124532CE2FCCCEF51",
+    "artifacts/action_extension/BHSM_ACTION_AE3_RECIPROCAL_JOIN_LOCALIZATION.json": "D03C12779749B161EAB33EE5C45BFCBC5025DDB671CE76CB05682B4D1DB4A45C",
+    "artifacts/action_extension/BHSM_AE3_C2_LORENTZIAN_GAUGE_GHOST_FREQUENCY_HESSIAN.json": "2861DE2A1705933BBCA8BD4B9CC75F1E4CD25398A97F86054AF3BF7FEC648462",
+    "src/bhsm/interface/ae3_c2_gauge_mismatch_resolution.py": "FD7636BF83602D71A75A1605050A369B2D6F0A6D53319D2495899CEE4E0CA40B"
+  },
+  "scientific_result": "THE_ONLY_CURRENTLY_ADMISSIBLE_COEFFICIENT_FREE_ROUTE_IS_THE_TWO_SIDED_PARENT_CALDERON_SCHUR_COMPLEMENT;_THE_ACTUAL_CURRENT_C2_EXTERIOR_OPERATOR_IS_NOT_YET_DERIVED",
+  "selected_route_contract": {
+    "combined_interface_Hessian": "N_TOTAL=N_INSIDE+U_RESET_STAR*N_EXTERIOR*U_RESET",
+    "decision": "PROMOTE_RESIDUE_ONLY_IF_ZT_TOTAL_EQUALS_ZS_TOTAL_POSITIVE_WITHOUT_FIELD_OR_CONE_RETUNING",
+    "derivatives_required": [
+      "minus_partial_omega_squared_N_TOTAL_at_zero",
+      "partial_coexact_k_squared_N_TOTAL_at_zero",
+      "longitudinal_ghost_Ward_derivative"
+    ],
+    "failure_rule": "RECORD_SIGNED_MISMATCH_AND_RESPONSIBLE_EXTERIOR_OR_DOMAIN_TERM",
+    "far_Friedrichs_core_is_physical_exterior": false,
+    "inside_operator": "CURRENT_DERIVED_N_INSIDE_OMEGA_K",
+    "interface": "SIGMA_ZERO_INTERNAL_TWO_SIDED_TRACE_NOT_SPACETIME_EDGE",
+    "missing_operator": "N_EXTERIOR_OMEGA_K_ON_ACTUAL_CURRENT_C2_MAXIMAL_EXTERIOR",
+    "physical_photon_derived": false,
+    "same_parent_operator": "AE3_WEIGHTED_MAXWELL_PLUS_BRST_GAUGE_GHOST_BLOCK",
+    "surface_contact_term": null
+  },
+  "selection": {
+    "action_version": "BHSM-AE-3.0.0",
+    "admissible_count": 1,
+    "candidate_rows": [
+      {
+        "admissible": true,
+        "can_change_transverse_temporal_spatial_ratio": true,
+        "candidate_id": "TWO_SIDED_CURRENT_C2_PARENT_CALDERON_SCHUR_COMPLEMENT",
+        "compatible_with_zero_AE3_surface_contact": true,
+        "existing_parent_action_provenance": true,
+        "no_new_continuous_coefficient": true,
+        "same_current_C2_domain_possible": true,
+        "status": "SELECTED_UNIQUE_COEFFICIENT_FREE_CALCULATION_ROUTE"
+      },
+      {
+        "admissible": false,
+        "can_change_transverse_temporal_spatial_ratio": false,
+        "candidate_id": "ONE_SIDED_SMOOTH_PARENT_TRACE",
+        "compatible_with_zero_AE3_surface_contact": true,
+        "existing_parent_action_provenance": true,
+        "no_new_continuous_coefficient": true,
+        "same_current_C2_domain_possible": true,
+        "status": "INVALIDATED_BY_CURRENT_C2_ZT_OVER_ZS_MISMATCH"
+      },
+      {
+        "admissible": false,
+        "can_change_transverse_temporal_spatial_ratio": true,
+        "candidate_id": "FREE_INTRINSIC_M4_YANG_MILLS_TERM",
+        "compatible_with_zero_AE3_surface_contact": false,
+        "existing_parent_action_provenance": false,
+        "no_new_continuous_coefficient": false,
+        "same_current_C2_domain_possible": true,
+        "status": "REJECTED_FREE_TAU_A_AND_NONZERO_CONTACT_ACTION"
+      },
+      {
+        "admissible": false,
+        "can_change_transverse_temporal_spatial_ratio": true,
+        "candidate_id": "RECOVERED_V14_67_ATTACHMENT_WENTZELL_MATRIX",
+        "compatible_with_zero_AE3_surface_contact": true,
+        "existing_parent_action_provenance": false,
+        "no_new_continuous_coefficient": true,
+        "same_current_C2_domain_possible": false,
+        "status": "THEOREM_CLASS_ONLY_PHYSICAL_INCIDENCE_AND_CURVATURE_PROVENANCE_OPEN"
+      },
+      {
+        "admissible": false,
+        "can_change_transverse_temporal_spatial_ratio": false,
+        "candidate_id": "V17_89_TO_92_N3_DYNAMIC_WENTZELL_LAW",
+        "compatible_with_zero_AE3_surface_contact": true,
+        "existing_parent_action_provenance": true,
+        "no_new_continuous_coefficient": true,
+        "same_current_C2_domain_possible": false,
+        "status": "REUSABLE_DYNAMIC_SEAM_TEMPLATE_NOT_CURRENT_C2_GAUGE_CALDERON_DATA"
+      },
+      {
+        "admissible": false,
+        "can_change_transverse_temporal_spatial_ratio": true,
+        "candidate_id": "RELATIVE_SPECTRAL_HEAT_BOUNDARY_COEFFICIENT",
+        "compatible_with_zero_AE3_surface_contact": true,
+        "existing_parent_action_provenance": false,
+        "no_new_continuous_coefficient": false,
+        "same_current_C2_domain_possible": true,
+        "status": "PARTIAL_FORMULAS_ONLY_RELATIVE_SPECTRAL_COEFFICIENT_Z_OPEN"
+      },
+      {
+        "admissible": false,
+        "can_change_transverse_temporal_spatial_ratio": true,
+        "candidate_id": "DISTRIBUTIONAL_WALL_LOCALIZATION",
+        "compatible_with_zero_AE3_surface_contact": false,
+        "existing_parent_action_provenance": false,
+        "no_new_continuous_coefficient": true,
+        "same_current_C2_domain_possible": false,
+        "status": "REJECTED_SINGULAR_DOMAIN_OUTSIDE_RESOLVED_AE3_INTERFACE"
+      }
+    ],
+    "certificate_passed": true,
+    "classification": "AE3_CURRENT_C2_GAUGE_MISMATCH_FINITE_ACTION_DOMAIN_SCREEN",
+    "selected_route": "TWO_SIDED_CURRENT_C2_PARENT_CALDERON_SCHUR_COMPLEMENT",
+    "selection_is_for_next_calculation_not_residue_promotion": true
+  },
+  "validation": {
+    "AE3_same_action_valid": true,
+    "AE3_surface_contact_exactly_zero": true,
+    "current_Hessian_mismatch_valid": true,
+    "no_contact_or_coefficient_added": true,
+    "photon_not_promoted": true,
+    "relative_spectral_sector_not_ready": true,
+    "unique_route": true,
+    "v14_67_not_unconditional_physical": true,
+    "v17_dynamic_Wentzell_templates_valid": true
+  },
+  "validation_passed": true
+}

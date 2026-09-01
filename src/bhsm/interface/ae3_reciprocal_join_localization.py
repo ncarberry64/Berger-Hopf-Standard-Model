@@ -600,11 +600,12 @@ def systems_integration_puzzle() -> dict[str, object]:
                     "exact_coexact_BRST_quotient_and_positive_finite_core_pencil",
                     "current_C2_continuous_frequency_gauge_ghost_Hessian",
                     "strict_unrenormalized_temporal_spatial_gauge_residue_mismatch",
+                    "unique_two_sided_parent_Calderon_mismatch_resolution_route",
                     "existing_family_central_I3_tensor_factor",
                 ],
                 "open_join": (
-                    "action_derived_resolution_of_the_smooth_trace_gauge_"
-                    "residue_mismatch_then_dynamical_HS_broken_LR_neutral_"
+                    "current_C2_maximal_exterior_gauge_ghost_Calderon_operator_"
+                    "and_two_sided_residue_test_then_dynamical_HS_broken_LR_neutral_"
                     "mixing_nonzero_fermion_cross_derivative_and_maximal_"
                     "exterior_blocks"
                 ),
