@@ -1,5 +1,45 @@
 # Gate Ledger
 
+## AE3.2 candidate current-C2 first-order Einstein--Cartan LR action
+
+- The coefficient-free v15.75--v15.76 first-order Einstein--Dirac completion
+  is formulated as `BHSM-AE-3.2.0-CANDIDATE` on current C2. It would replace
+  the Levi-Civita representative; it does not add a second Einstein term.
+- Algebraic contorsion elimination gives the attractive scalar LR kernel
+  `G_EC=(3/4)/(K_G5[1-4 sigma^2])` with the exact Clifford/Fierz coefficient
+  `c_EC=3/4` and no new continuous coefficient.
+- The local kernel is positive and finite for `|sigma|<1/2`, reflection-even,
+  and attached to the up, down, charged-lepton and effective-neutrino LR
+  channels with the retained `9,9,3,3` pairing multiplicities.
+- The retained round-join zero mode is `L2`, but its EC quartic density is
+  `(3pi/512) chi^(-2)+O(1)` at the collapse endpoint. The reduced form
+  diverges like `1/epsilon`, so the mode is not in its domain and the global
+  AE3.2 promotion fails.
+- The uneliminated block has `A=O(chi^6)`, projected spin source `S=O(chi^2)`,
+  and unique stationary contorsion `K_star=-A^-1 S=O(chi^-4)`. Its quadratic,
+  linear, and total densities are `+Q/2`, `-Q`, and `-Q/2`, so the `chi^-2`
+  divergences do not cancel. Algebraic contorsion has no derivative boundary
+  form; no finite-action stationary endpoint extension exists.
+- The v15.75 regular-side event-control crossing is not this radial collapse
+  domain. V15.82's rejection of the old full `Lambda L_eta` Einstein weight
+  remains in force; only the exact v15.76 `c_EC=3/4` coefficient is reused.
+- Its family action is `I3`; it does not generate a hierarchy or CKM mixing.
+- The Hubbard--Stratonovich representation supplies an algebraic positive
+  auxiliary block and unit unnormalized LR vertex, but no derivative kinetic
+  term or canonical Yukawa residue.
+- Historical charged-boundary `beta_f,kappa_f` values are family-bridge
+  candidates, not this LR variation, and are not promoted to quark Yukawa
+  prefactors.
+- Derived: current-C2 local algebraic LR kernel, exact eliminated-form
+  divergence, and the matching uneliminated stationary parent-action domain
+  obstruction. No counterterm, boundary condition, or mode deletion is used.
+- Closed as a route: global AE3.2 EC ownership of the retained zero mode.
+- Open on non-EC owners: HS/two-point alternatives in the regular AE3.1
+  action, intrinsic-Higgs mixing, quark Yukawa operators/masses, noncentral
+  quark response, and physical CKM.
+- Artifact:
+  `artifacts/action_extension/BHSM_AE32_C2_EINSTEIN_CARTAN_LR_ACTION.json`.
+
 ## AE3.1 current-C2 SU(2)L charged-current family theorem
 
 - The retained `T_plus,T_minus` doublet generators and the current-C2
