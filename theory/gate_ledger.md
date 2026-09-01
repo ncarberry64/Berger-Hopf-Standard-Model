@@ -4098,3 +4098,25 @@ Exact next object:
   `CURRENT_C2_FAMILY_CENTRAL_NEUTRINO_PROPAGATION_NO_OSCILLATION_DERIVED`.
 - The capture Hessian, outgoing neutral boundary trace, physical neutral
   Green operator, two splittings, and PMNS map remain open.
+
+## AE3.1 current-C2 neutral semigroup response transport
+
+- The retained neutral modes `(0,0)`, `(3,0)`, `(3,1)` are transported with
+  the existing frozen Berger shape and overlap width, without rebuilding the
+  particle/family spectrum.
+- The resulting positive overlap response has weights
+  `(1, 0.2378080903, 0.2950469233)`, is family-noncentral, and has two nonzero
+  response gaps.
+- Its tensor lift commutes with the tested reset, enclosure, and localization
+  factors. The full physical neutral rank-three projector and its commutators
+  with `D_AE2^2` and gauge/BRST remain open.
+- It shares the charged-lepton family projectors and therefore yields canonical
+  `PMNS=I3`, not flavor conversion. The physical weak-flavor/internal-slot
+  intertwiner remains underived.
+- This heat-semigroup contraction is not a Lorentzian propagation Hamiltonian,
+  retarded neutral self-energy, or mass matrix; its gaps are not promoted as
+  neutrino `Delta m^2` values.
+- Scientific milestone:
+  `CURRENT_C2_NEUTRAL_INTERNAL_SEMIGROUP_RESPONSE_SHAPE_ATTACHED`.
+- The next owner is the action-derived returned Lorentzian neutral self-energy
+  together with its weak-flavor/internal-family intertwiner.
