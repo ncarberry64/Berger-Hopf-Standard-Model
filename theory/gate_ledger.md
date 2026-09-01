@@ -1,5 +1,23 @@
 # Gate Ledger
 
+## AE3.1 current-C2 lepton/composite mixing structure
+
+- The nonzero gauge auxiliary block extends to the charged-lepton channel with
+  `C_e=3/10` and inverse coefficient `5/(3 G_C2)`. The zero neutrino gauge
+  channel is not made invertible by a regulator.
+- The intrinsic vertex `sigma1_LR tensor Y_l` and auxiliary lepton vertex
+  `sigma1_LR tensor I3` act on the same bilinear. Their squared-pencil mixed
+  contact is fixed exactly as `2 I_LR tensor Y_l`.
+- The mixed determinant pole has action-derived family direction
+  `M_eHS,sing=chi_Had,sing Y_l`; the finite familywise susceptibilities remain
+  covariance dependent and are not set equal.
+- Species orthogonality and the unpaired chirality flip make the direct
+  intrinsic--quark blocks zero to all perturbative orders in retained vector
+  gauge vertices about the symmetric quark background. The next quark link
+  must be a common parent odd endomorphism or an independently derived gap.
+- Artifact:
+  `artifacts/action_extension/BHSM_AE31_C2_LEPTON_COMPOSITE_MIXING_STRUCTURE.json`.
+
 ## AE3.1 current-C2 gauge composite HS action
 
 - The positive coexact gauge current kernel admits an exact auxiliary rewrite:

@@ -1,0 +1,305 @@
+{
+  "FULL_BHSM_COMPLETE": false,
+  "action_version": "BHSM-AE-3.1.0",
+  "artifact": "BHSM_AE31_C2_LEPTON_COMPOSITE_MIXING_STRUCTURE",
+  "claim_boundary": {
+    "CURRENT_C2_CANONICAL_QUARK_YUKAWA_RESIDUES_DERIVED": false,
+    "CURRENT_C2_CHARGED_LEPTON_GAUGE_HS_CHANNEL_DERIVED": true,
+    "CURRENT_C2_COMMON_PARENT_ODD_QUARK_ENDOMORPHISM_DERIVED": false,
+    "CURRENT_C2_DIRECT_ONE_FERMION_LOOP_INTRINSIC_QUARK_MIXING_ZERO_DERIVED": true,
+    "CURRENT_C2_FINITE_LEPTON_COMPOSITE_MIXING_DERIVED": false,
+    "CURRENT_C2_INTRINSIC_LEPTON_COMPOSITE_VERTEX_JET_DERIVED": true,
+    "CURRENT_C2_LEPTON_COMPOSITE_HADAMARD_POLE_DIRECTION_DERIVED": true,
+    "CURRENT_C2_PHYSICAL_QUARK_POLES_DERIVED": false,
+    "CURRENT_C2_PHYSICAL_SINGLE_HIGGS_DIRECTION_SELECTED": false,
+    "CURRENT_C2_VECTOR_GAUGE_INTRINSIC_QUARK_MIXING_EXCLUDED_ON_SYMMETRIC_BACKGROUND": true,
+    "FULL_BHSM_COMPLETE": false,
+    "MEASURED_MASS_USED": false,
+    "particle_spectrum_rebuilt": false
+  },
+  "classification": "AE31_CURRENT_C2_LEPTON_COMPOSITE_MIXING_STRUCTURE",
+  "exact_remaining_owner": {
+    "closed": [
+      "charged_lepton_gauge_HS_auxiliary_channel",
+      "shared_intrinsic_auxiliary_lepton_vertex_jet",
+      "universal_Hadamard_mixing_direction_proportional_to_Y_l",
+      "one_fermion_loop_species_block_pattern"
+    ],
+    "next": [
+      "finite_current_C2_charged_lepton_composite_mixing_for_selected_covariance",
+      "common_parent_odd_intrinsic_to_quark_endomorphism_or_independent_quark_gap",
+      "full_derivative_Higgs_composite_residue_matrix",
+      "physical_normalized_scalar_eigenvector"
+    ],
+    "next_operator": "ACTION_DERIVED_COMMON_ODD_ENDOMORPHISM_E_H_ON_THE_EXISTING_I_up_I_down_SUPPORTS__OR_A_NONZERO_QUARK_GAP_FROM_THE_FULL_CURRENT_C2_COMPOSITE_HESSIAN",
+    "one_loop_zero_replaced_by_fitted_mixing": false
+  },
+  "inputs": {
+    "artifacts/BHSM_aether_full_gauge_dtn_lr_kernel_v15_66.json": "F39450E8EE52C88E0DDBC26356B15919D42E9762A469E177F98CD2F6419675C4",
+    "artifacts/action_extension/BHSM_AE31_C2_GAUGE_COMPOSITE_HS_ACTION.json": "4539C4DBAA9A0CC4A7204BF3FF60A960B6571D927E07C16CBF431BC7465F0020",
+    "artifacts/action_extension/BHSM_AE31_C2_INTRINSIC_M4_LEPTON_ACTION.json": "C0E851100FCAA04C1968081A3940D938B7C64C857FE416F7F7795974A9053850",
+    "artifacts/action_extension/BHSM_AE31_C2_LR_SUSCEPTIBILITY_FACTORIZATION.json": "88AA2372559C5EEAD71F69BAEDAF211F6455F6C413D8C8404A45FFA2131F026F",
+    "src/bhsm/interface/ae31_c2_lepton_composite_mixing_structure.py": "52480771D2D7676AF2B064F4C68BCFBA2416246E35DB9592C897948974AEDB24"
+  },
+  "nonzero_gauge_hs_channel_extension": {
+    "bare_inverse_coefficients_over_G_C2": {
+      "charged_lepton": "5/3",
+      "down": "5/13",
+      "up": "5/14"
+    },
+    "channel_order": [
+      "up",
+      "down",
+      "charged_lepton",
+      "neutrino"
+    ],
+    "invertible_HS_channels": [
+      "up",
+      "down",
+      "charged_lepton"
+    ],
+    "neutrino_auxiliary_inserted_by_regulator": false,
+    "neutrino_zero_kernel_HS_inverse_defined": false,
+    "new_continuous_coefficient": false,
+    "pre_Fierz_weights": {
+      "charged_lepton": "3/10",
+      "down": "13/10",
+      "neutrino": "0",
+      "up": "7/5"
+    },
+    "same_gauge_current_kernel_reused": true,
+    "three_channel_bare_Hessian": "G_C2^(-1)*diag(5/14,5/13,5/3)"
+  },
+  "one_loop_mixing_factorization": {
+    "Y_l_family_noncentral": true,
+    "arbitrary_family_equal_state_assumed": false,
+    "current_C2_chiral_operator_commutes_with_Y_l_family_projectors": true,
+    "effective_action": "Gamma_e=-Tr_log(D_e)",
+    "family_projector_form": "M_eHS[C]=sum_f y_f*chi_f[C]*P_f_WHEN_G_e_COMMUTES_WITH_Y_l",
+    "finite_chi_f_selected": false,
+    "finite_mixing": "sum_f y_f*chi_f,fin[C]*P_f",
+    "full_numeric_mixing_matrix_derived": false,
+    "intrinsic_Y_l_eigenvalues": [
+      0.010104825496118923,
+      0.0006070420455456903,
+      3.0040743289839823e-06
+    ],
+    "mixed_second_variation": "M_eHS[C]=Tr[G_e[C]*V_HS*G_e[C]*V_intrinsic]",
+    "universal_Hadamard_pole": "M_eHS,sing=chi_Had,sing*Y_l",
+    "universal_pole_family_direction_action_derived": true
+  },
+  "shared_charged_lepton_vertex_jet": {
+    "V_HS": "sigma1_LR_tensor_I3",
+    "V_intrinsic": "sigma1_LR_tensor_Y_l",
+    "auxiliary_grading_residual": 0.0,
+    "auxiliary_vertex_matrix": [
+      [
+        0.0,
+        0.0,
+        0.0,
+        1.0,
+        0.0,
+        0.0
+      ],
+      [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        1.0,
+        0.0
+      ],
+      [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ],
+      [
+        1.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      [
+        0.0,
+        1.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      [
+        0.0,
+        0.0,
+        1.0,
+        0.0,
+        0.0,
+        0.0
+      ]
+    ],
+    "combined_first_order_pencil": "D_e(h,h_HS)=D_e0+h*V_intrinsic+h_HS*V_HS",
+    "first_order_mixed_contact": 0.0,
+    "intrinsic_grading_residual": 0.0,
+    "intrinsic_vertex_matrix": [
+      [
+        0.0,
+        0.0,
+        0.0,
+        0.010104825496118923,
+        0.0,
+        0.0
+      ],
+      [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0006070420455456903,
+        0.0
+      ],
+      [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        3.0040743289839823e-06
+      ],
+      [
+        0.010104825496118923,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      [
+        0.0,
+        0.0006070420455456903,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      [
+        0.0,
+        0.0,
+        3.0040743289839823e-06,
+        0.0,
+        0.0,
+        0.0
+      ]
+    ],
+    "measured_lepton_mass_used": false,
+    "shared_fermion_bilinear": "bar(L_L)*e_R+h.c.",
+    "squared_pencil_cross_contact_formula": "Q_intrinsic,HS=2*I_LR*Y_l",
+    "squared_pencil_cross_contact_residual": 0.0,
+    "squared_pencil_mixed_contact": [
+      [
+        0.020209650992237847,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      [
+        0.0,
+        0.0012140840910913806,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      [
+        0.0,
+        0.0,
+        6.008148657967965e-06,
+        0.0,
+        0.0,
+        0.0
+      ],
+      [
+        0.0,
+        0.0,
+        0.0,
+        0.020209650992237847,
+        0.0,
+        0.0
+      ],
+      [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0012140840910913806,
+        0.0
+      ],
+      [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        6.008148657967965e-06
+      ]
+    ]
+  },
+  "species_block_selection_theorem": {
+    "all_orders_vector_gauge_mixing_zero_at_chirally_symmetric_quark_background": true,
+    "direct_one_fermion_loop_intrinsic_quark_mixing_zero": true,
+    "field_order": [
+      "H_intrinsic",
+      "H_HS_e",
+      "H_HS_up",
+      "H_HS_down"
+    ],
+    "intrinsic_to_charged_lepton_composite_shared_species": true,
+    "intrinsic_to_quark_composite_shared_species": false,
+    "nonperturbative_chirality_violating_topological_vertex_excluded": false,
+    "one_fermion_loop_possible_blocks": [
+      [
+        true,
+        true,
+        false,
+        false
+      ],
+      [
+        true,
+        true,
+        false,
+        false
+      ],
+      [
+        false,
+        false,
+        true,
+        false
+      ],
+      [
+        false,
+        false,
+        false,
+        true
+      ]
+    ],
+    "quark_link_requires": "A_COMMON_PARENT_ODD_ENDOMORPHISM_OR_AN_INDEPENDENTLY_DERIVED_NONZERO_QUARK_CHIRALITY_BREAKING_GAP",
+    "reason": "ORTHOGONAL_SPECIES_PROJECTORS_AND_ONE_UNPAIRED_CHIRALITY_FLIP_ON_EACH_SEPARATE_FERMION_LOOP",
+    "scope": "PERTURBATION_THEORY_IN_THE_RETAINED_VECTOR_GAUGE_VERTICES_WITH_ZERO_QUARK_ODD_BACKGROUND",
+    "vector_gauge_vertices_preserve_chirality_and_species": true
+  },
+  "validation": {
+    "charged_lepton_gauge_channel_is_nonzero": true,
+    "intrinsic_lepton_action_reused": true,
+    "no_Higgs_Yukawa_or_mass_overclaim": true,
+    "one_loop_species_boundary_preserved": true,
+    "shared_vertex_and_contact_jet_close": true,
+    "universal_mixing_direction_not_finite_value": true
+  },
+  "validation_passed": true
+}
