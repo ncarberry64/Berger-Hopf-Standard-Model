@@ -1,0 +1,74 @@
+{
+  "FULL_BHSM_COMPLETE": false,
+  "action_version": "BHSM-AE-3.1.0",
+  "artifact": "BHSM_AE31_C2_COLOR_SINGLET_RESIDUAL_RESPONSE_BRIDGE",
+  "baryon_reference_probe": {
+    "direct_singlet_linear_response_norm": 1.1564823173178652e-18,
+    "exact_formula": "N_B=2*sum_i(f_i-f_bar)^2",
+    "exact_value": 1.3333333333333335,
+    "formula_residual": 8.881784197001252e-16,
+    "linear_color_charge_zero": true,
+    "singlet_to_colored_transition_numerator": 1.3333333333333344,
+    "transition_channel_nonzero": true,
+    "uniform_long_wavelength_probe_annihilates_singlet": false
+  },
+  "claim_boundary": {
+    "CURRENT_C2_BARYON_FINITE_SIZE_COLOR_TRANSITION_NUMERATOR_DERIVED": true,
+    "CURRENT_C2_COLOR_SINGLET_LINEAR_EXTERIOR_CHARGE_ZERO_DERIVED": true,
+    "CURRENT_C2_COLOR_SINGLET_SCHUR_POLARIZABILITY_SIGN_DERIVED": true,
+    "CURRENT_C2_GLOBAL_ASYMPTOTIC_CONFINEMENT_THEOREM_DERIVED": false,
+    "CURRENT_C2_HADRON_MASS_DERIVED": false,
+    "CURRENT_C2_MESON_FINITE_SIZE_COLOR_TRANSITION_NUMERATOR_DERIVED": true,
+    "CURRENT_C2_NONZERO_PHYSICAL_RESIDUAL_NUCLEAR_FORCE_DERIVED": false,
+    "CURRENT_C2_RETURNED_HADRON_COLORED_RESOLVENT_DERIVED": false,
+    "FULL_BHSM_COMPLETE": false,
+    "particle_spectrum_rebuilt": false
+  },
+  "classification": "AE31_CURRENT_C2_COLOR_SINGLET_RESIDUAL_RESPONSE_BRIDGE",
+  "enclosure_response_contract": {
+    "area_law_or_mass_gap_derived": false,
+    "finite_size_probe_result": "NONZERO_NUMERATOR_WHEN_CONSTITUENT_WEIGHTS_DIFFER",
+    "first_admissible_residual_map": "P1*V_color*Q_colored*(Q(H_hadron-E1)Q)^(-1)*Q_colored*V_color*P1",
+    "hadron_mass_spectrum_derived": false,
+    "interhadron_residual_potential_derived": false,
+    "linear_exterior_map": "P1*V_color*P1=0",
+    "physical_interpretation": "NO_FREE_COLOR_LEAKAGE;_A_FINITE_COMPOSITE_CAN_HAVE_A_COLOR_SINGLET_POLARIZABILITY_THROUGH_INTERNAL_COLORED_STATES",
+    "returned_hadron_resolvent_derived": false,
+    "reused_upstream_assets": [
+      "V14_17_WILSON_DRESSED_MESON_AND_BARYON_SINGLET_FUNCTIONALS",
+      "V15_58_CLOSED_S3_GLOBAL_COLOR_GAUSS_SINGLET_CONDITION",
+      "CURRENT_C2_RANK16_QUARK_COLOR_REPRESENTATIONS",
+      "CURRENT_C2_PARENT_SU3_GAUGE_COEFFICIENT_RAY"
+    ],
+    "uniform_probe_result": "ZERO_BY_GLOBAL_GAUSS_SINGLET_CLOSURE",
+    "wilson_source_is_action_term": false
+  },
+  "inputs": {
+    "artifacts/BHSM_Wilson_singlet_operator_source_v14_29.json": "FB6E1A756AAFBB0958C7CF5B7EE9FD947C36F8E2B74489EDA8D9C5D9CB5D6E1B",
+    "artifacts/BHSM_aether_physical_inverse_closure_v16_36.json": "C2FD73E35BDF915671F0EB4DC0CF8AF5EA3FCE187E302DCB354440CD2D459B67",
+    "artifacts/BHSM_aether_sm_gauge_color_completion_v15_58.json": "C98D23B2B46DBC0801684C8FC11F841AAB5D3D6FE77ECDB0E26448EF7EABA641",
+    "src/bhsm/interface/ae31_c2_color_singlet_residual_response_bridge.py": "E8523D763F2E57085E6698E60F69C84A93FA60409F6701AE0118DF8D2CC0198E"
+  },
+  "meson_reference_probe": {
+    "direct_singlet_linear_response_norm": 2.3129646346357296e-18,
+    "exact_formula": "N_M=C_F*(f_q-f_qbar)^2,_C_F=4/3",
+    "exact_value": 1.3333333333333333,
+    "formula_residual": 8.881784197001252e-16,
+    "linear_color_charge_zero": true,
+    "singlet_to_colored_transition_numerator": 1.3333333333333341,
+    "transition_channel_nonzero": true,
+    "uniform_long_wavelength_probe_annihilates_singlet": false
+  },
+  "validation": {
+    "baryon_numerator_exact": true,
+    "closed_child_Gauss_singlet_reused": true,
+    "finite_size_transition_nonzero": true,
+    "historical_Wilson_singlet_reused": true,
+    "later_global_confinement_boundary_preserved": true,
+    "linear_color_charge_zero": true,
+    "meson_numerator_exact": true,
+    "resolvent_and_force_not_overclaimed": true,
+    "wilson_not_relabelled_as_action": true
+  },
+  "validation_passed": true
+}
