@@ -1,5 +1,32 @@
 # Gate Ledger
 
+## Current-C2 Hopf-semigroup transport theorem
+
+- On the actual round AE3 reset, the reused family modes give the diagnostic
+  `K_l=diag(0,35,99)`, `K_u=diag(0,48,120)`, and
+  `K_d=diag(0,48,80)`.
+- With the frozen BHSM width `S=1/(4 pi)`, the operators
+  `T_f=exp[-S K_f]` are positive, self-adjoint contractions, commute with all
+  frozen family projectors, obey the semigroup law, and recover the retained
+  heavy-to-light ordering in all three charged sectors.
+- The C2 carrier and internal Berger geometry are separate tensor factors.
+  The round reset does not replace the frozen internal squashing
+  `a=1.157054135733433`.
+- The unchanged frozen internal operators reproduce all charged-lepton, up,
+  and down bare ratio assets and commute exactly with reset, enclosure
+  restriction, and localization. No spectrum or observed mass is imported.
+- The first variational failure is the absent AE3 intrinsic M4 coupling
+  `bar(L_L) y0 T_l H e_R+h.c.`. The frozen width is a retained framework rule,
+  not an AE3 action term, and `y0` is not currently derived.
+- A nonzero broken saddle, family-resolved fermion poles, and equivalence to
+  matched-parent `Delta H_xi` remain downstream.
+- Derived: `CURRENT_C2_FINITE_FAMILY_HOPF_RESPONSE_SHAPE=TRUE`.
+- Derived: `FROZEN_INTERNAL_HOPF_RESPONSE_OPERATOR_ATTACHED_TO_CURRENT_C2=TRUE`.
+- Not derived: current-AE3 Yukawa operator, physical mass hierarchy, or pole
+  masses.
+- Artifact:
+  `artifacts/action_extension/BHSM_AE3_C2_HOPF_SEMIGROUP_TRANSPORT.json`.
+
 ## Current AE3 family mass-ontology recovery audit
 
 - v14.54's accepted definition is preserved: physical mass is a stable

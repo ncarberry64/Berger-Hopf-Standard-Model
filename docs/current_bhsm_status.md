@@ -204,6 +204,37 @@ charge construction.
 - `HISTORICAL_HOPF_SEMIGROUP_CANDIDATE_RECOVERED = TRUE`
 - `CURRENT_C2_PARENT_RELATIVE_MASS_EVALUATED = FALSE`
 
+The recovered overlap rule has now been transported one step further. The
+round current-C2 birth diagnostic gives `K_l=diag(0,35,99)`,
+`K_u=diag(0,48,120)`, and `K_d=diag(0,48,80)`. Functional calculus with the
+retained BHSM width `S=1/(4 pi)` produces positive, self-adjoint contraction
+operators that satisfy the semigroup law and recover the stored ordering.
+
+More importantly, the current C2 carrier and frozen internal Berger geometry
+are different tensor factors. The round carrier therefore does not erase the
+frozen internal squashing `a=1.157054135733433`. The unchanged internal
+operators reproduce the existing BHSM bare ratio assets in all three charged
+sectors and commute exactly with the reset lift, enclosure restriction, and
+smooth localization carrier. No spectrum is rebuilt and no observed mass is
+used. The frozen hierarchy operator is now attached over current C2; the
+dimensionful triplet is not promoted.
+
+This is a current-C2 finite-family response-shape theorem, not yet a mass
+theorem. The first variational failure is now localized before the absolute
+scale: `BHSM-AE-3.0.0` contains no intrinsic M4 term coupling this operator to
+`bar(L_L) H e_R`. The historical v11.3 term cannot be silently relabeled AE3.
+The trace-normalized source/profile lift, nonzero broken saddle, fermion poles,
+and matched-parent charge comparison remain downstream. Formally setting the
+currently evaluated HS probe to zero gives a zero mass matrix, but not a
+physical massless-pole theorem.
+
+- `CURRENT_C2_FINITE_FAMILY_HOPF_RESPONSE_SHAPE_DERIVED = TRUE`
+- `FROZEN_INTERNAL_HOPF_RESPONSE_OPERATOR_ATTACHED_TO_CURRENT_C2 = TRUE`
+- `FROZEN_MASS_RATIO_SCREENS_TRANSPORTED_UNCHANGED = TRUE`
+- `CHARGED_LEPTON_UP_DOWN_RESPONSE_ORDERINGS_DERIVED = TRUE`
+- `CURRENT_AE3_YUKAWA_OPERATOR_DERIVED = FALSE`
+- `CURRENT_AE3_FAMILY_MASS_HIERARCHY_DERIVED = FALSE`
+
 The selected coefficient-free two-sided parent Calderón calculation is also
 now closed. The exact reciprocal reflection `chi -> pi/2-chi` reverses
 `sigma`, preserves the round radius and `Lambda=1-4 sigma^2`, and transports
@@ -242,7 +273,7 @@ remain reusable, but the background/domain/source mismatch cannot be repaired
 by choosing a coefficient.
 
 Exact next object:
-`CURRENT_C2_MODE_RESOLVED_ACTION_ENERGY_MAP_WITH_ITS_OWNED_DIMENSIONFUL_SCALE_AND_PHYSICAL_POLE_OR_RELATIVE_CHARGE_READOUT`.
+`VERSIONED_CURRENT_C2_INTRINSIC_M4_LR_HIGGS_SEMIGROUP_COUPLING_WITHOUT_AN_INDEPENDENT_FAMILY_COEFFICIENT;_THEN_ITS_BROKEN_SADDLE_AND_FERMION_POLES`.
 
 Evidence: [`AE3 theorem`](../theory/ae3_reciprocal_join_localization_enclosure.md)
 and [`AE3 machine certificate`](../artifacts/action_extension/BHSM_ACTION_AE3_RECIPROCAL_JOIN_LOCALIZATION.json),
@@ -264,6 +295,9 @@ their machine certificates
 [`one`](../artifacts/action_extension/BHSM_AE3_FAMILY_HARMONIC_ENERGY_PULLBACK_AUDIT.json)
 and
 [`two`](../artifacts/action_extension/BHSM_AE3_FAMILY_MASS_ONTOLOGY_RECOVERY_AUDIT.json).
+The resulting current-C2 semigroup transport is recorded in the
+[`transport theorem`](../theory/ae3_c2_hopf_semigroup_transport.md) and
+[`machine certificate`](../artifacts/action_extension/BHSM_AE3_C2_HOPF_SEMIGROUP_TRANSPORT.json).
 The transverse hypercharge result is recorded in the
 [`current-C2 source theorem`](../theory/ae3_c2_coexact_hypercharge_source_jet.md)
 and [`source certificate`](../artifacts/action_extension/BHSM_AE3_C2_COEXACT_HYPERCHARGE_SOURCE_JET.json).
