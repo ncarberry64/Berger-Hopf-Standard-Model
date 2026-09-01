@@ -1,0 +1,146 @@
+{
+  "FULL_BHSM_COMPLETE": false,
+  "action_trace_bifurcation": {
+    "full_multiplet_trace": {
+      "basis_invariant": true,
+      "condition": "PARENT_ACTION_TRACE_RESTRICTS_TO_THE_COMPLETE_RETAINED_kj_SUBSPACES",
+      "m_selection_required": false,
+      "readout": "R_f=Tr(P_A,f*M_H*P_S,f*M_H^dagger)"
+    },
+    "scientific_decision": "DERIVE_THE_CURRENT_C2_ACTION_TRACE_DOMAIN_BEFORE_REQUESTING_EXPLICIT_m",
+    "selected_vector_or_density": {
+      "condition": "PARENT_ACTION_SELECTS_A_PROPER_SUBSPACE_OR_STATE_INSIDE_A_DEGENERATE_kj_SPACE",
+      "m_or_density_selection_required": true,
+      "projector_trace_cannot_choose_the_state": true,
+      "readout": "R_f(rho_A,rho_S)=Tr(rho_A*M_H*rho_S*M_H^dagger)"
+    }
+  },
+  "action_version": "BHSM-AE-3.1.0",
+  "artifact": "BHSM_AE31_C2_QUARK_PROJECTOR_OVERLAP_BRIDGE",
+  "basis_invariance_witness": {
+    "projector_sum_after": 5.000000000000003,
+    "projector_sum_before": 5.000000000000001,
+    "projector_sum_invariance_residual": 1.7763568394002505e-15,
+    "projectors_unchanged_residual": 3.148795641120281e-17,
+    "single_matrix_entry_after": 0.36930273942796665,
+    "single_matrix_entry_before": 1.0,
+    "single_vector_amplitude_basis_dependent": true
+  },
+  "claim_boundary": {
+    "CKM_MATRIX_DERIVED": false,
+    "CURRENT_C2_NORMALIZED_INTERNAL_SCALAR_MAP_DERIVED": false,
+    "CURRENT_C2_PHYSICAL_QUARK_POLES_DERIVED": false,
+    "CURRENT_C2_QUARK_ACTION_TRACE_DOMAIN_DERIVED": false,
+    "CURRENT_C2_QUARK_FULL_MULTIPLET_TRACE_ROUTE_IDENTIFIED_CONDITIONAL": true,
+    "CURRENT_C2_QUARK_PROJECTOR_OVERLAP_BASIS_INVARIANT": true,
+    "CURRENT_C2_QUARK_PROJECTOR_OVERLAP_FUNCTIONAL_DERIVED": true,
+    "CURRENT_C2_UP_DOWN_YUKAWA_VERTEX_RESIDUES_ACTION_DERIVED": false,
+    "FULL_BHSM_COMPLETE": false,
+    "MEASURED_QUARK_MASS_USED": false,
+    "particle_spectrum_rebuilt": false
+  },
+  "classification": "AE31_CURRENT_C2_QUARK_PROJECTOR_OVERLAP_BRIDGE",
+  "current_family_projector_contract": {
+    "down_modes_k_j": [
+      [
+        0,
+        0
+      ],
+      [
+        6,
+        3
+      ],
+      [
+        8,
+        2
+      ]
+    ],
+    "down_modes_q_j": [
+      [
+        0,
+        0
+      ],
+      [
+        0,
+        3
+      ],
+      [
+        4,
+        2
+      ]
+    ],
+    "family_and_representation_identity_reused": true,
+    "particle_spectrum_rebuilt": false,
+    "raw_mode_relation": "k=q+2*j",
+    "remaining_m_basis_may_rotate": true,
+    "retained_object": "SPECTRAL_SUBSPACE_PROJECTOR_P_kj_NOT_A_GUESSED_VECTOR_psi_kjm",
+    "up_modes_k_j": [
+      [
+        0,
+        0
+      ],
+      [
+        6,
+        0
+      ],
+      [
+        10,
+        1
+      ]
+    ],
+    "up_modes_q_j": [
+      [
+        0,
+        0
+      ],
+      [
+        6,
+        0
+      ],
+      [
+        8,
+        1
+      ]
+    ]
+  },
+  "exact_remaining_owner": {
+    "basis_ambiguity_removed_from": "FULL_RETAINED_SUBSPACE_OVERLAP_RESPONSE",
+    "conditional_ratio_relation": "|c_u/c_d|^2=R_u/R_d_IF_C_common_AND_FIELD_NORMALIZATION_ARE_SHARED",
+    "conditional_sector_residue_relation": "|c_f|^2=C_common*Tr(P_A,f*M_H*P_S,f*M_H^dagger)",
+    "historical_boundary_targets_relabelled_as_residues": false,
+    "independent_yukawa_or_mass_fit_allowed": false,
+    "individual_m_guessed_or_fitted": false,
+    "still_missing_from_parent_action": [
+      "normalized_current_C2_internal_scalar_multiplication_operator_M_H",
+      "proof_that_the_action_trace_uses_the_complete_retained_kj_subspaces",
+      "common_trace_and_field_normalization"
+    ]
+  },
+  "inputs": {
+    "artifacts/action_extension/BHSM_AE31_C2_QUARK_HIGGS_CONTACT_CLOSURE.json": "C0569A05B9CAF74C3BD9669021344E0008C4892F87CDC17ACCBC75C940A351F1",
+    "artifacts/action_extension/BHSM_AE31_C2_QUARK_HIGGS_INCIDENCE_TRANSPORT.json": "81AC7F0250CAC2FC7F8D2B26CE22AD3E785D5E11FC188C0A50362353D8918CBB",
+    "artifacts/action_extension/BHSM_AE3_C2_QUARK_RESPONSE_SUM_RULES.json": "FE42458D60AF7CF6A70D16C96EE4E1666AA2D987DCFE73A0F2E06D620089421D",
+    "src/bhsm/interface/ae31_c2_quark_projector_overlap_bridge.py": "38F8D30849A34D0A89981B6197F995A8287595929B0859A5542EB3045F95CE7F",
+    "theory/theorem_discharge_m_weight_assignment.md": "2D4B509B36C53CFFD897A5C412B20FD1F2A84FD2277215E50B9D0982950D03CD",
+    "theory/theorem_discharge_raw_mode_berger_harmonic_map.md": "E5973DDF54274522433138B3997088D56A4FE53421E3AF3F65BC6FC7626F950F"
+  },
+  "projector_overlap_response": {
+    "equivalent_form": "R=||P_A*M_H*P_S||_HS^2",
+    "functional": "R(P_A,P_S;M_H)=Tr(P_A*M_H*P_S*M_H^dagger)",
+    "hilbert_schmidt_residual": 8.881784197001252e-16,
+    "nonnegative": true,
+    "physical_yukawa_residue_promoted": false,
+    "response": 5.0,
+    "unresolved_basis_vector_required": false,
+    "zero_iff_projected_scalar_map_zero": true
+  },
+  "validation": {
+    "action_trace_bifurcation_keeps_state_selection_honest": true,
+    "incidence_and_contact_closure_reused": true,
+    "individual_amplitude_changes_but_projector_sum_is_invariant": true,
+    "normalization_and_residues_not_overclaimed": true,
+    "preserved_current_quark_modes_reused_exactly": true,
+    "projector_response_is_positive_hilbert_schmidt_norm": true
+  },
+  "validation_passed": true
+}
