@@ -1,0 +1,299 @@
+{
+  "FULL_BHSM_COMPLETE": false,
+  "action_version": "BHSM-AE-3.0.0",
+  "artifact": "BHSM_AE3_C2_QUARK_RESPONSE_SUM_RULES",
+  "attached_frozen_internal_operator_witness": {
+    "action_version": "BHSM-AE-3.0.0",
+    "all_attachment_commutators_zero": true,
+    "comparison": {
+      "down": {
+        "attached_ratios_to_heavy": [
+          1.0,
+          0.021933971495439474,
+          0.0011165200546001757
+        ],
+        "log_sum_rule_residual": 0.0,
+        "maximum_reconstruction_residual": 0.0
+      },
+      "up": {
+        "attached_ratios_to_heavy": [
+          1.0,
+          0.008310500554068288,
+          1.2690463017606151e-05
+        ],
+        "log_sum_rule_residual": 1.0658141036401503e-14,
+        "maximum_reconstruction_residual": 0.0
+      }
+    },
+    "frozen_internal_Berger_shape": 1.157054135733433,
+    "response_weights_relabelled_as_quark_masses": false
+  },
+  "claim_boundary": {
+    "CKM_MATRIX_DERIVED": false,
+    "CURRENT_C2_DOWN_QUARK_SCALE_FREE_RESPONSE_SUM_RULE_DERIVED": true,
+    "CURRENT_C2_PHYSICAL_QUARK_MASS_RATIOS_DERIVED": false,
+    "CURRENT_C2_PHYSICAL_QUARK_POLES_DERIVED": false,
+    "CURRENT_C2_QUARK_RESPONSE_IDENTITIES_HOLD_FOR_ALL_POSITIVE_SQUASHING": true,
+    "CURRENT_C2_UP_DOWN_ABSOLUTE_YUKAWA_PREFACTORS_DERIVED": false,
+    "CURRENT_C2_UP_DOWN_YUKAWA_OPERATORS_DERIVED": false,
+    "CURRENT_C2_UP_QUARK_SCALE_FREE_RESPONSE_SUM_RULE_DERIVED": true,
+    "FULL_BHSM_COMPLETE": false,
+    "MEASURED_QUARK_MASS_USED": false,
+    "exact_next_operator": "ACTION_OWNED_INTRINSIC_M4_UP_DOWN_LR_HIGGS_OPERATORS_WITHOUT_INDEPENDENT_FAMILY_COEFFICIENTS__THEN_TEST_THE_RESPONSE_SUM_RULES_ON_THEIR_TREE_AND_DRESSED_POLES",
+    "particle_spectrum_rebuilt": false
+  },
+  "classification": "CURRENT_C2_QUARK_SCALE_FREE_HOPF_RESPONSE_SUM_RULES",
+  "inputs": {
+    "artifacts/action_extension/BHSM_AE31_C2_COEXACT_SU2L_CHARGED_CURRENT.json": "4ACDC1E6FD27ACE85DA73CFF763D3276BF9AFF8C524DA457328B9EFA810D7092",
+    "artifacts/action_extension/BHSM_AE31_CHARGED_LEPTON_SCALE_FREE_SUM_RULE.json": "AC078A750CB3F17606BC51248DD66857FE87E10B8B22DD12267B6DBE0EB3EEFA",
+    "artifacts/action_extension/BHSM_AE3_C2_HOPF_SEMIGROUP_TRANSPORT.json": "890FD3AD9CF06F8753C463B332F529181C9A1EAA3244836C58F5B59FF3ED3785",
+    "artifacts/action_extension/BHSM_AE3_FAMILY_HARMONIC_ENERGY_PULLBACK_AUDIT.json": "5EB1190E080D20C454D9D4924D8C4E1E57E6AC9E0EB68D66272C447F47D52673",
+    "src/bhsm/interface/ae3_c2_quark_response_sum_rules.py": "EB6FFA3C0779132470293DC99235A5C9813186388336CE8922355C1AB06328CE",
+    "theory/derived_generation_raw_mode_ledgers.md": "B52108D44E74D5747AEBC09BB9B1A1761E033F9E44396728C036008E437F6D97"
+  },
+  "quark_response_sum_rule_theorem": {
+    "Berger_squashing_cancels": true,
+    "action_version": "BHSM-AE-3.0.0",
+    "common_sector_prefactors_cancel": true,
+    "down": {
+      "Berger_term_cancels_exactly": true,
+      "K_equals_k_times_k_plus_2": [
+        0,
+        48,
+        80
+      ],
+      "exact_log_sum_rule": "log(r_middle)=-12/pi",
+      "exact_multiplicative_sum_rule": "r_middle=exp(-12/pi)",
+      "modes": [
+        [
+          0,
+          0
+        ],
+        [
+          6,
+          3
+        ],
+        [
+          8,
+          2
+        ]
+      ],
+      "primitive_cost_constant": 48,
+      "primitive_log_coefficients_middle_light": [
+        1,
+        0
+      ],
+      "primitive_log_constant": -3.819718634205488,
+      "q_squared_equals_k_minus_2j_squared": [
+        0,
+        0,
+        16
+      ],
+      "roles": [
+        "heavy",
+        "middle",
+        "light"
+      ],
+      "sector": "down"
+    },
+    "measured_quark_mass_used": false,
+    "operator": "T_f(a)=exp[-(K_f+(a^2-1)q_f^2)/(4*pi)]",
+    "quark_Yukawa_operator_used": false,
+    "ratios": "r_f=T_f/T_heavy",
+    "relation_holds_for_every_positive_Berger_squashing": true,
+    "up": {
+      "Berger_term_cancels_exactly": true,
+      "K_equals_k_times_k_plus_2": [
+        0,
+        48,
+        120
+      ],
+      "exact_log_sum_rule": "9*log(r_light)-16*log(r_middle)=-78/pi",
+      "exact_multiplicative_sum_rule": "r_light^9=exp(-78/pi)*r_middle^16",
+      "modes": [
+        [
+          0,
+          0
+        ],
+        [
+          6,
+          0
+        ],
+        [
+          10,
+          1
+        ]
+      ],
+      "primitive_cost_constant": -312,
+      "primitive_log_coefficients_middle_light": [
+        16,
+        -9
+      ],
+      "primitive_log_constant": 24.82817112233567,
+      "q_squared_equals_k_minus_2j_squared": [
+        0,
+        36,
+        64
+      ],
+      "roles": [
+        "heavy",
+        "middle",
+        "light"
+      ],
+      "sector": "up"
+    }
+  },
+  "squashing_independence_witnesses": [
+    {
+      "measured_quark_mass_used": false,
+      "quark_Yukawa_operator_used": false,
+      "sectors": {
+        "down": {
+          "costs": [
+            0.0,
+            48.0,
+            74.24000000000001
+          ],
+          "log_sum_rule_residual": 0.0,
+          "multiplicative_sum_rule_residual": 0.0,
+          "ratios_to_heavy": [
+            1.0,
+            0.021933971495439474,
+            0.002718074679929692
+          ]
+        },
+        "up": {
+          "costs": [
+            0.0,
+            35.040000000000006,
+            96.96000000000001
+          ],
+          "log_sum_rule_residual": 3.552713678800501e-15,
+          "multiplicative_sum_rule_residual": 1.8392042344263224e-45,
+          "ratios_to_heavy": [
+            1.0,
+            0.061519898542206554,
+            0.0004457146356540565
+          ]
+        }
+      },
+      "squashing": 0.8
+    },
+    {
+      "measured_quark_mass_used": false,
+      "quark_Yukawa_operator_used": false,
+      "sectors": {
+        "down": {
+          "costs": [
+            0.0,
+            48.0,
+            80.0
+          ],
+          "log_sum_rule_residual": 0.0,
+          "multiplicative_sum_rule_residual": 0.0,
+          "ratios_to_heavy": [
+            1.0,
+            0.021933971495439474,
+            0.0017186817203577493
+          ]
+        },
+        "up": {
+          "costs": [
+            0.0,
+            48.0,
+            120.0
+          ],
+          "log_sum_rule_residual": -3.552713678800501e-15,
+          "multiplicative_sum_rule_residual": -4.802624088446914e-52,
+          "ratios_to_heavy": [
+            1.0,
+            0.021933971495439474,
+            7.125136468582184e-05
+          ]
+        }
+      },
+      "squashing": 1.0
+    },
+    {
+      "measured_quark_mass_used": false,
+      "quark_Yukawa_operator_used": false,
+      "sectors": {
+        "down": {
+          "costs": [
+            0.0,
+            48.0,
+            85.42038836828547
+          ],
+          "log_sum_rule_residual": 0.0,
+          "multiplicative_sum_rule_residual": 0.0,
+          "ratios_to_heavy": [
+            1.0,
+            0.021933971495439474,
+            0.0011165200546001757
+          ]
+        },
+        "up": {
+          "costs": [
+            0.0,
+            60.1958738286423,
+            141.68155347314186
+          ],
+          "log_sum_rule_residual": 1.0658141036401503e-14,
+          "multiplicative_sum_rule_residual": 2.7381267222589024e-59,
+          "ratios_to_heavy": [
+            1.0,
+            0.008310500554068288,
+            1.2690463017606151e-05
+          ]
+        }
+      },
+      "squashing": 1.157054135733433
+    },
+    {
+      "measured_quark_mass_used": false,
+      "quark_Yukawa_operator_used": false,
+      "sectors": {
+        "down": {
+          "costs": [
+            0.0,
+            48.0,
+            95.36
+          ],
+          "log_sum_rule_residual": 0.0,
+          "multiplicative_sum_rule_residual": 0.0,
+          "ratios_to_heavy": [
+            1.0,
+            0.021933971495439474,
+            0.0005062359532366189
+          ]
+        },
+        "up": {
+          "costs": [
+            0.0,
+            82.55999999999999,
+            181.44
+          ],
+          "log_sum_rule_residual": -1.7763568394002505e-14,
+          "multiplicative_sum_rule_residual": -5.999387389722697e-71,
+          "ratios_to_heavy": [
+            1.0,
+            0.0014019150968008068,
+            5.363191428519168e-07
+          ]
+        }
+      },
+      "squashing": 1.4
+    }
+  ],
+  "validation": {
+    "attached_operator_satisfies_both_identities": true,
+    "down_integer_eliminant_exact": true,
+    "frozen_modes_and_current_C2_attachment_reused": true,
+    "identities_hold_across_positive_squashing_samples": true,
+    "lepton_rule_consistency_without_rederivation": true,
+    "no_mass_input_spectrum_rebuild_or_completion_overclaim": true,
+    "quark_action_and_CKM_boundary_preserved": true,
+    "up_integer_eliminant_exact": true
+  },
+  "validation_passed": true
+}
