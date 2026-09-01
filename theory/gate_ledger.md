@@ -3892,3 +3892,24 @@ Exact next object:
   current-`C2` action domain, then test for a nonzero broken eigenmode.
 - Physical Higgs direction, canonical Yukawas, quark poles, and full BHSM
   completion remain open.
+
+## AE3.1 current-C2 full scalar derivative pole
+
+- In `(H_intrinsic,H_HS_e,H_HS_up,H_HS_down)`, the universal external-momentum
+  pole is the vertex Gram matrix
+  `[[Tr(Y_l^2),Tr(Y_l),0,0],[Tr(Y_l),3,0,0],[0,0,9,0],[0,0,0,9]]`
+  divided by `16*pi^2*epsilon_UV`.
+- The intrinsic/charged-lepton-HS determinant numerator is
+  `3 Tr(Y_l^2)-Tr(Y_l)^2=sum_(i<j)(y_i-y_j)^2`. The derived noncentral lepton
+  family operator makes it strictly positive, so the lepton block has rank
+  two and the complete UV kinetic Gram form has rank four.
+- The full principal symbol adds the owned intrinsic tree term and multiplies
+  one Lorentzian factor `(-omega^2+lambda)`. Its temporal and spatial matrices
+  match exactly.
+- Scientific milestone:
+  `CURRENT_C2_FULL_FOUR_FIELD_DERIVATIVE_PRINCIPAL_POLE_DERIVED`.
+- Exact next owner: derive finite `Z_ren` and the renormalized zero-momentum
+  matrix `H_0,ren` from one current-`C2` action domain, then solve
+  `H_0,ren v=m_scalar^2 Z_ren v`.
+- UV kinetic eigenvectors are not promoted as a physical Higgs direction;
+  canonical Yukawas, scalar/quark poles, and full completion remain open.
