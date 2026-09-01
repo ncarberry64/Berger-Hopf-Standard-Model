@@ -1,5 +1,24 @@
 # Gate Ledger
 
+## AE3.1 charged-lepton scale-free mode sum rule
+
+- The frozen charged-lepton modes have `(K,q^2)=(0,0),(35,1),(99,9)` in
+  the heavy, middle, and light slots of the composed semigroup mass operator.
+- Eliminating the common Berger term gives the exact local-tree identity
+  `log(m_e/m_tau)=9 log(m_mu/m_tau)+54/pi`, equivalently
+  `m_e/m_tau=exp(54/pi)(m_mu/m_tau)^9`.
+- The common Higgs scale, universal energy calibration, trace-normalized
+  Yukawa prefactor, Berger squashing, and its historical fine-structure
+  anchor cancel.  No measured lepton mass is used.
+- The frozen on-shell ratio ledger is used only afterward as a test.  It
+  requires a `1.06056690` multiplicative dressing of the tree relation; that
+  correction is recorded as a global/radiative target and is not fitted into
+  the action.
+- This is a conditional relation among the current-C2 local tree shells, not
+  a promotion of globally dressed physical electron, muon, or tau poles.
+- Artifact:
+  `artifacts/action_extension/BHSM_AE31_CHARGED_LEPTON_SCALE_FREE_SUM_RULE.json`.
+
 ## AE3.1 fixed-history fermion-state nonuniqueness
 
 - On any fixed certified finite-core current-`C2` history, a finite-rank
