@@ -1,0 +1,220 @@
+{
+  "all_residuals": [
+    {
+      "absolute_error": 0.0005834095384305666,
+      "log_error": 0.06570510081787827,
+      "passes_tolerance": true,
+      "predicted": 0.004155250277034144,
+      "ratio": "c/t",
+      "reference": 0.0035718407386035773,
+      "relative_error": 0.16333582069469663
+    },
+    {
+      "absolute_error": 5.362130645996226e-06,
+      "log_error": 0.23847230958339555,
+      "passes_tolerance": false,
+      "predicted": 1.2690463017606151e-05,
+      "ratio": "u/t",
+      "reference": 7.328332371609925e-06,
+      "relative_error": 0.7316986149221621
+    },
+    {
+      "absolute_error": 0.0029028296269273633,
+      "log_error": 0.061652428003834935,
+      "passes_tolerance": true,
+      "predicted": 0.021933971495439474,
+      "ratio": "s/b",
+      "reference": 0.01903114186851211,
+      "relative_error": 0.15253050221491055
+    },
+    {
+      "absolute_error": 0.0001130598469877191,
+      "log_error": 0.046366373003045004,
+      "passes_tolerance": true,
+      "predicted": 0.0011165200546001757,
+      "ratio": "d/b",
+      "reference": 0.0010034602076124566,
+      "relative_error": 0.11266998544638215
+    }
+  ],
+  "classification": "U_T_WARNING_CONFIRMED",
+  "common_scale_quark_status_changes": false,
+  "exploratory_candidates": [
+    {
+      "changes_ckm_sin_theta_13": false,
+      "changes_official_u_over_t": false,
+      "corrected_u_over_t": 1.2690463017606151e-05,
+      "factor": 1.0,
+      "name": "no_correction",
+      "notes": [
+        "Baseline frozen value."
+      ],
+      "passes_tolerance": false,
+      "relative_error": 0.7316986149221621,
+      "status": "BASELINE"
+    },
+    {
+      "changes_ckm_sin_theta_13": true,
+      "changes_official_u_over_t": true,
+      "corrected_u_over_t": 7.328332371609926e-06,
+      "factor": 0.5774676906148296,
+      "name": "required_factor_diagnostic_only",
+      "notes": [
+        "Computed after seeing the reference; diagnostic only, not an allowed derivation."
+      ],
+      "passes_tolerance": true,
+      "relative_error": 1.155833147710002e-16,
+      "status": "EXPLORATORY_CANDIDATE"
+    },
+    {
+      "changes_ckm_sin_theta_13": true,
+      "changes_official_u_over_t": true,
+      "corrected_u_over_t": 7.326842239355902e-06,
+      "factor": 0.5773502691896258,
+      "name": "coframe_amplitude_1_over_sqrt3",
+      "notes": [
+        "Simple triplet-amplitude factor; structurally suggestive but not derived."
+      ],
+      "passes_tolerance": true,
+      "relative_error": 0.00020333851938751296,
+      "status": "EXPLORATORY_CANDIDATE"
+    },
+    {
+      "changes_ckm_sin_theta_13": true,
+      "changes_official_u_over_t": true,
+      "corrected_u_over_t": 6.3452315088030755e-06,
+      "factor": 0.5,
+      "name": "weak_doublet_probability_1_over_2",
+      "notes": [
+        "Borrowed from existing middle-up dressing family; not derived for light-up mode."
+      ],
+      "passes_tolerance": true,
+      "relative_error": 0.13415069253891893,
+      "status": "EXPLORATORY_CANDIDATE"
+    },
+    {
+      "changes_ckm_sin_theta_13": true,
+      "changes_official_u_over_t": true,
+      "corrected_u_over_t": 8.973512456146406e-06,
+      "factor": 0.7071067811865475,
+      "name": "weak_doublet_amplitude_1_over_sqrt2",
+      "notes": [
+        "Simple two-component amplitude factor; not derived for light-up mode."
+      ],
+      "passes_tolerance": true,
+      "relative_error": 0.22449583358281275,
+      "status": "EXPLORATORY_CANDIDATE"
+    },
+    {
+      "changes_ckm_sin_theta_13": true,
+      "changes_official_u_over_t": true,
+      "corrected_u_over_t": 1.0840770054105326e-06,
+      "factor": 0.08542454313184122,
+      "name": "alpha_sqrt",
+      "notes": [
+        "Alpha-suppressed candidate; included as exploratory stress test only."
+      ],
+      "passes_tolerance": false,
+      "relative_error": 0.8520704369782321,
+      "status": "EXPLORATORY_CANDIDATE"
+    }
+  ],
+  "frozen_predictions_modified": false,
+  "frozen_sanity": {
+    "BHSM_BARE_V1_unchanged": true,
+    "BHSM_DRESSED_V1_CANDIDATE_unchanged": true,
+    "changed_rows": [
+      {
+        "bare": 0.008310500554068288,
+        "changed": true,
+        "dressed": 0.004155250277034144,
+        "quantity": "c/t"
+      }
+    ],
+    "ckm_sin_theta_13_unchanged": true,
+    "dressed_branch_changes_only_c_over_t": true,
+    "u_over_t_unchanged": true
+  },
+  "global_rescale": {
+    "damaged_ratios": [
+      "c/t",
+      "s/b",
+      "d/b"
+    ],
+    "factor_to_fix_u_over_t": 0.5774676906148296,
+    "global_rescale_allowed": false,
+    "rows": [
+      {
+        "corrected": 0.0023995227814055382,
+        "damaged": true,
+        "passes_tolerance": false,
+        "ratio": "c/t",
+        "reference": 0.0035718407386035773,
+        "relative_error": 0.328211150213926,
+        "was_previously_passing": true
+      },
+      {
+        "corrected": 7.328332371609926e-06,
+        "damaged": false,
+        "passes_tolerance": true,
+        "ratio": "u/t",
+        "reference": 7.328332371609925e-06,
+        "relative_error": 1.155833147710002e-16,
+        "was_previously_passing": false
+      },
+      {
+        "corrected": 0.012666159865482933,
+        "damaged": true,
+        "passes_tolerance": false,
+        "ratio": "s/b",
+        "reference": 0.01903114186851211,
+        "relative_error": 0.33445087252280586,
+        "was_previously_passing": true
+      },
+      {
+        "corrected": 0.0006447542574551069,
+        "damaged": true,
+        "passes_tolerance": false,
+        "ratio": "d/b",
+        "reference": 0.0010034602076124566,
+        "relative_error": 0.3574690330878416,
+        "was_previously_passing": true
+      }
+    ]
+  },
+  "limitations": [
+    "The M_Z reference table lacks uncertainty propagation for u/t.",
+    "The up quark is extremely light, so relative errors are visually amplified.",
+    "Any light-up-only repair would change official u/t and CKM sin(theta_13).",
+    "Global rescaling is rejected because it damages ratios that already survive."
+  ],
+  "official_outputs_modified": false,
+  "official_u_over_t_changed": false,
+  "reference_source": {
+    "scale": "M_Z = 91.1876 GeV",
+    "scheme": "MSbar running quark masses at M_Z in SM convention",
+    "source_citation_text": "A. Abdalgabar, A. S. Cornell, A. Deandrea, and A. Tarhini, Eur. Phys. J. C 74, 2893 (2014), Sec. 2.1, quoting Z.-z. Xing, H. Zhang, and S. Zhou, Phys. Rev. D 77, 113016 (2008), arXiv:0712.1419.",
+    "u_over_t_uncertainty": null
+  },
+  "repair_attempted": true,
+  "repair_official": false,
+  "result": {
+    "candidate_repair_available": true,
+    "candidate_status": "EXPLORATORY_CANDIDATE",
+    "classification": "U_T_WARNING_CONFIRMED",
+    "damages_other_ratios": true,
+    "global_rescale_allowed": false,
+    "recommendation": "Keep u/t as a common-scale warning. Do not alter official frozen outputs. A light-up-only factor near 1/sqrt(3) is numerically suggestive but remains candidate-only and would change official u/t and CKM sin(theta_13).",
+    "u_t_warning_confirmed": true
+  },
+  "title": "BHSM common-scale light-up ratio tension audit",
+  "u_over_t": {
+    "absolute_error": 5.362130645996226e-06,
+    "log_error": 0.23847230958339555,
+    "passes_tolerance": false,
+    "predicted": 1.2690463017606151e-05,
+    "ratio": "u/t",
+    "reference": 7.328332371609925e-06,
+    "relative_error": 0.7316986149221621
+  }
+}
