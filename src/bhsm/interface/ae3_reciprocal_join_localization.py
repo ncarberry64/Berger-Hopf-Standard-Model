@@ -602,12 +602,15 @@ def systems_integration_puzzle() -> dict[str, object]:
                     "strict_unrenormalized_temporal_spatial_gauge_residue_mismatch",
                     "unique_two_sided_parent_Calderon_mismatch_resolution_route",
                     "two_sided_reciprocal_Calderon_reflection_no_go",
+                    "current_C2_zero_background_HS_fermion_mixed_variation",
+                    "current_C2_nonzero_third_LR_HS_vertex_tensor",
                     "existing_family_central_I3_tensor_factor",
                 ],
                 "open_join": (
                     "finite_action_domain_decision_for_the_gauge_residue_then_"
-                    "dynamical_HS_broken_LR_neutral_mixing_nonzero_fermion_"
-                    "cross_derivative_and_remaining_full_field_blocks"
+                    "physical_action_decision_for_the_current_C2_dynamical_HS_"
+                    "kernel_then_broken_LR_neutral_mixing_classical_fermion_"
+                    "background_embedding_and_remaining_full_field_blocks"
                 ),
                 "complete": False,
             },

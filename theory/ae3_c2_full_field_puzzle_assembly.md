@@ -85,9 +85,12 @@ In particular, the family factor `I3` proves that this piece alone cannot
 split electron, muon, and tau masses. It is not renamed as the missing
 electromagnetic vertex.
 
-The gauge/ghost blocks, nonzero fermion-background and cross derivatives,
-dynamical HS block, and maximal-history exterior operator remain unfitted
-interfaces of the common AE3 oracle. Consequently
+The zero-background HS--fermion mixed variation has subsequently been closed:
+the mixed Hessian vanishes on the attached symmetric coefficient slice while
+the third LR/HS variation remains nonzero. The current-C2 pure dynamical HS
+kernel, an action-selected classical fermion Sobolev background embedding,
+and the maximal-history operator remain unfitted interfaces of the common
+AE3 oracle. Consequently
 `CURRENT_FULL_FIELD_ACTION_COMPLETE=FALSE`,
 `MUON_MAGNETIC_MOMENT_DERIVED=FALSE`, and `FULL_BHSM_COMPLETE=FALSE`.
 

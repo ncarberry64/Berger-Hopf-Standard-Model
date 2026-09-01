@@ -1,5 +1,25 @@
 # Gate Ledger
 
+## Current AE3 C2 reduced HS/fermion mixed variation
+
+- For `K(H)=K0+H V+H^2 Q/2` and `S=bar(c)K(H)c`, the current-C2
+  source, HS curvature, and mixed Hessian are respectively
+  `bar(c)V c`, `bar(c)Q c`, and `V c`.
+- The attached symmetric current-C2 slice has no classical fermion Sobolev
+  coefficient coordinate, so `c*=0` and all three quantities vanish exactly.
+  The background-independent third LR/HS variation `V` and contact tensor
+  `Q` remain nonzero on both 1,222-segment chiral pencils.
+- The existing family/mode fiber is preserved as internal initial data and is
+  not relabeled as the missing spatial fermion background.
+- No retained dynamic HS kernel is attachable to AE3/current C2. The strongest
+  coefficient-free extension candidate is the historical first-order
+  Einstein--Cartan contorsion Schur complement, which requires a new action
+  version and a current-C2 derivation.
+- No condensate, broken LR saddle, spectrum, mass, or Yukawa normalization is
+  promoted.
+- Artifact:
+  `artifacts/action_extension/BHSM_AE3_C2_HS_FERMION_MIXED_VARIATION.json`.
+
 ## Current AE3 family-noncentral return provenance audit
 
 - All nine retained candidate classes have been checked against current AE3
