@@ -289,6 +289,27 @@ native variable `z`; it is not promoted to physical `p^2`.
 - `CURRENT_C2_PHYSICAL_CHARGED_LEPTON_POLES_DERIVED = FALSE`
 - `UP_DOWN_ACTION_PREFACTORS_DERIVED = FALSE`
 
+The same-domain weak charged-current piece is now explicit. The retained
+`SU(2)_L` raising/lowering generators attach to the current-C2 lowest-Weyl
+coexact coordinate form as an adjoint `J_plus,J_minus` source/contact pair.
+The current acts as `I3` on family, while the transported bare up/down response
+operators are diagonal in the same frozen family basis. Their commutator is
+therefore zero and the canonical response-basis mixing readout is `I3` with
+zero Jarlskog invariant.
+
+This is a no-mixing theorem for the present family-central action, not a claim
+that the physical CKM matrix is identity. Nontrivial CKM requires an
+action-owned family-noncentral dressing of the common left-handed up/down
+embeddings or an equivalent mixed second variation. The historical middle-up
+`Z_virt=1/2` conditional dressing is not promoted, and the absolute up/down
+Yukawa prefactors remain open.
+
+- `CURRENT_C2_COEXACT_SU2L_CHARGED_SOURCE_PAIR_DERIVED = TRUE`
+- `CURRENT_C2_SU2L_RAISING_CURRENT_FAMILY_KERNEL_IS_I3 = TRUE`
+- `CURRENT_C2_CANONICAL_QUARK_RESPONSE_BASIS_CKM_IS_I3 = TRUE`
+- `PHYSICAL_CKM_MATRIX_DERIVED = FALSE`
+- `MIDDLE_UP_VIRTUAL_DRESSING_PROMOTED = FALSE`
+
 The selected coefficient-free two-sided parent Calderón calculation is also
 now closed. The exact reciprocal reflection `chi -> pi/2-chi` reverses
 `sigma`, preserves the round radius and `Lambda=1-4 sigma^2`, and transports

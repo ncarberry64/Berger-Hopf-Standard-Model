@@ -1,5 +1,27 @@
 # Gate Ledger
 
+## AE3.1 current-C2 SU(2)L charged-current family theorem
+
+- The retained `T_plus,T_minus` doublet generators and the current-C2
+  lowest-Weyl coexact coordinate form give a same-domain adjoint `J_plus,J_minus`
+  source/contact pair without a new `g2` or source coefficient.
+- `Tr(T_minus T_plus)=4` per family (`3` color copies plus one lepton doublet)
+  and `12` on the retained three-family representation.
+- The raising current acts as `I3` on family. The attached bare up/down
+  response operators are diagonal in the same frozen projector basis, so their
+  commutator vanishes and the canonical response-basis readout is `I3` with
+  zero Jarlskog invariant.
+- This is an exact no-mixing result for the present family-central current, not
+  a physical prediction that CKM equals identity.
+- The historical middle-up `Z_virt=1/2` factor is not inserted: it remains a
+  conditional dressing output, not a current AE3.1 action term.
+- Derived: current-C2 coexact charged source pair and its full-rank identity
+  family kernel.
+- Not derived: up/down absolute Yukawa prefactors, family-noncentral left
+  embedding, physical CKM matrix, or physical W pole.
+- Artifact:
+  `artifacts/action_extension/BHSM_AE31_C2_COEXACT_SU2L_CHARGED_CURRENT.json`.
+
 ## AE3.1 current-C2 chiral operator and Green-domain theorem
 
 - The pre-AE2 `U(1)_parent x U(1)_child` birth-phase no-go is not a live
