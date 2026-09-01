@@ -235,6 +235,47 @@ physical massless-pole theorem.
 - `CURRENT_AE3_YUKAWA_OPERATOR_DERIVED = FALSE`
 - `CURRENT_AE3_FAMILY_MASS_HIERARCHY_DERIVED = FALSE`
 
+The charged-lepton sector now advances into a versioned action successor.
+`BHSM-AE-3.1.0` retains the complete AE3.0 carrier/domain action and composes
+the existing v11.3 intrinsic M4 lepton--Higgs block with the attached frozen
+internal operator. Higgs and fermion fields remain on M4; no field moves
+stratum, no independent `Y_e` survives, and no separate post-breaking mass
+term is added. Up/down terms are not inferred from the lepton term.
+
+The action variation derives
+
+```text
+Y_l = (16 sqrt(2 pi)/3969) T_l,
+M_l = (v_BH/sqrt(2)) Y_l.
+```
+
+With the inherited single universal energy calibration, the conditional tree
+eigenvalues are `1.758930614523592`, `0.10566682607467498`, and
+`0.0005229143548875549` GeV in the frozen heavy, middle, and light slots. No
+lepton mass or measured Higgs VEV is used. The absolute unit remains
+conditional, so these are action-composed tree candidates rather than
+current-C2 physical pole masses.
+
+At every regular point inside the smooth AE3 enclosure, the induced Lorentzian
+metric gives the local Dirac symbol `gamma^a e_a^mu p_mu-M_l`. It yields three
+distinct continuous-frequency local mass shells and simple positive/negative
+energy poles with the canonical tree residue; no wavefunction factor is
+fitted. This conditionally closes the charged-lepton local enclosure
+identification bridge.
+
+The exact remaining operator is the global first-order current-C2 chiral block
+with `D_L,D_R` on the diagonal and `M_l,M_l^dagger` off diagonal. The existing
+separate squared chiral pencils are radial/proper-history forms; they do not
+already contain this family-noncentral left--right block and cannot be used as
+a Lorentzian pole surrogate.
+
+- `AE31_CHARGED_LEPTON_M4_SEMIGROUP_COUPLING_ACTION_OWNED = TRUE`
+- `AE31_CONDITIONAL_TREE_CHARGED_LEPTON_MASS_OPERATOR_DERIVED = TRUE`
+- `CURRENT_C2_LOCAL_TANGENT_FRAME_TREE_POLES_DERIVED = TRUE`
+- `LOCAL_ENCLOSURE_PARTICLE_IDENTIFICATION_BRIDGE_CLOSED_CONDITIONALLY = TRUE`
+- `CURRENT_C2_PHYSICAL_CHARGED_LEPTON_POLES_DERIVED = FALSE`
+- `UP_DOWN_ACTION_PREFACTORS_DERIVED = FALSE`
+
 The selected coefficient-free two-sided parent Calderón calculation is also
 now closed. The exact reciprocal reflection `chi -> pi/2-chi` reverses
 `sigma`, preserves the round radius and `Lambda=1-4 sigma^2`, and transports
@@ -273,7 +314,7 @@ remain reusable, but the background/domain/source mismatch cannot be repaired
 by choosing a coefficient.
 
 Exact next object:
-`VERSIONED_CURRENT_C2_INTRINSIC_M4_LR_HIGGS_SEMIGROUP_COUPLING_WITHOUT_AN_INDEPENDENT_FAMILY_COEFFICIENT;_THEN_ITS_BROKEN_SADDLE_AND_FERMION_POLES`.
+`GLOBAL_CURRENT_C2_FIRST_ORDER_CHIRAL_GREEN_OPERATOR_[[D_L,M_l],[M_l_DAGGER,D_R]]_ON_THE_RETAINED_MAXIMAL_ISOTROPIC_DOMAIN_WITH_DRESSED_POLES_AND_RESIDUES`.
 
 Evidence: [`AE3 theorem`](../theory/ae3_reciprocal_join_localization_enclosure.md)
 and [`AE3 machine certificate`](../artifacts/action_extension/BHSM_ACTION_AE3_RECIPROCAL_JOIN_LOCALIZATION.json),
@@ -298,6 +339,9 @@ and
 The resulting current-C2 semigroup transport is recorded in the
 [`transport theorem`](../theory/ae3_c2_hopf_semigroup_transport.md) and
 [`machine certificate`](../artifacts/action_extension/BHSM_AE3_C2_HOPF_SEMIGROUP_TRANSPORT.json).
+The versioned charged-lepton action composition is recorded in the
+[`AE3.1 theorem`](../theory/ae31_c2_intrinsic_m4_lepton_action.md) and
+[`machine certificate`](../artifacts/action_extension/BHSM_AE31_C2_INTRINSIC_M4_LEPTON_ACTION.json).
 The transverse hypercharge result is recorded in the
 [`current-C2 source theorem`](../theory/ae3_c2_coexact_hypercharge_source_jet.md)
 and [`source certificate`](../artifacts/action_extension/BHSM_AE3_C2_COEXACT_HYPERCHARGE_SOURCE_JET.json).

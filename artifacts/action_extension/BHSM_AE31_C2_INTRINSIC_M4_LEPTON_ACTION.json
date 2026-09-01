@@ -1,0 +1,289 @@
+{
+  "FULL_BHSM_COMPLETE": false,
+  "action_composition_contract": {
+    "action_term": "S_4_lH=integral_M4[|D H|^2-V_BH(H)+i*bar(L_L)*slash(D)*L_L+i*bar(e_R)*slash(D)*e_R-(bar(L_L)*Y_l_BH*H*e_R+h.c.)]",
+    "action_version": "BHSM-AE-3.1.0",
+    "composition": "S_AE3_1=S_AE3_0+S_4_lH_BHSM",
+    "field_ownership": {
+      "C2_carrier": "AE3_PREDECESSOR_DOMAIN_FACTOR",
+      "H": "INTRINSIC_M4_ACTIVE_FIELD",
+      "L_L": "INTRINSIC_M4_ACTIVE_FIELD",
+      "T_l": "FIXED_INTERNAL_FAMILY_OPERATOR",
+      "e_R": "INTRINSIC_M4_ACTIVE_FIELD"
+    },
+    "imported_term_source": "V11_3_FINAL_PARENT_ACTION_LEPTON_MASS_COMPLETION_INTRINSIC_M4_BLOCK",
+    "independent_Y_e_retained": false,
+    "inherited_positive_radial_stiffness": "lambda_H>0",
+    "new_family_coefficient_added_by_transport": false,
+    "new_field_added_by_transport": false,
+    "potential": "V_BH=lambda_H*(H_dagger*H-nu_BH^2)^2,_lambda_H>0",
+    "predecessor_action_version": "BHSM-AE-3.0.0",
+    "same_C2_carrier_preserved": true,
+    "separate_post_EWSB_mass_term_added": false,
+    "stratum_moved": false,
+    "up_down_Yukawa_terms_added": false,
+    "why_up_down_untouched": "THE_FROZEN_RATIO_OPERATORS_ARE_ATTACHED_BUT_NO_MATCHING_HISTORICAL_ACTION_OWNED_UP_DOWN_PREFACTORS_ARE_TRANSPORTED_HERE"
+  },
+  "action_version": "BHSM-AE-3.1.0",
+  "artifact": "BHSM_AE31_C2_INTRINSIC_M4_LEPTON_ACTION",
+  "charged_lepton_yukawa_operator": {
+    "Hermitian": true,
+    "action_version": "BHSM-AE-3.1.0",
+    "commutes_with_family_projectors": true,
+    "eigenvalues_heavy_middle_light": [
+      0.010104825496118923,
+      0.0006070420455456903,
+      3.0040743289839823e-06
+    ],
+    "family_noncentral": true,
+    "family_operator": [
+      [
+        0.010104825496118923,
+        0.0,
+        0.0
+      ],
+      [
+        0.0,
+        0.0006070420455456903,
+        0.0
+      ],
+      [
+        0.0,
+        0.0,
+        3.0040743289839823e-06
+      ]
+    ],
+    "formula": "Y_l=(16*sqrt(2*pi)/3969)*T_l",
+    "independent_Yukawa_matrix_used": false,
+    "measured_lepton_mass_used": false,
+    "positive_definite": true,
+    "scalar_prefactor": 0.010104825496118923,
+    "standard_SM_gauge_contraction_preserved": true
+  },
+  "claim_boundary": {
+    "FULL_BHSM_COMPLETE": false,
+    "absolute_unit_first_principles_derived": false,
+    "charged_lepton_M4_semigroup_coupling_action_owned_in_successor": true,
+    "charged_lepton_family_noncentral_Yukawa_operator_derived": true,
+    "conditional_tree_level_charged_lepton_mass_operator_derived": true,
+    "current_C2_local_tangent_frame_tree_poles_derived": true,
+    "current_C2_physical_charged_lepton_poles_derived": false,
+    "global_or_dressed_current_C2_charged_lepton_poles_derived": false,
+    "local_enclosure_particle_identification_bridge_closed_conditionally": true,
+    "measured_mass_used": false,
+    "muon_magnetic_moment_derived": false,
+    "particle_spectrum_rebuilt": false,
+    "up_down_action_prefactors_derived": false,
+    "versioned_successor_action_composed": true
+  },
+  "classification": "CURRENT_C2_INTRINSIC_M4_CHARGED_LEPTON_ACTION_TRANSPORT",
+  "conditional_higgs_saddle": {
+    "action_cost": 39.482395832089544,
+    "action_cost_formula": "4*pi^2+(a-1)/(4*pi^2)",
+    "action_version": "BHSM-AE-3.1.0",
+    "classification": "CONDITIONAL_ON_INHERITED_UNIVERSAL_UNIT_CALIBRATION",
+    "measured_Higgs_VEV_used": false,
+    "nonzero_branch": "H_vac=(0,v_BH/sqrt(2))",
+    "nu_BH_squared_GeV2": 30299.801268324547,
+    "radial_Hessian": "2*lambda_H*v_BH^2>0_for_lambda_H>0",
+    "stationarity_equation": "(H_dagger*H-nu_BH^2)*H=0",
+    "universal_energy_calibration_GeV": 1.22089e+19,
+    "universal_energy_calibration_action_derived": false,
+    "v_BH_GeV": 246.16986520825228
+  },
+  "conditional_tree_mass_operator": {
+    "absolute_unit_action_derived": false,
+    "action_version": "BHSM-AE-3.1.0",
+    "classification": "ACTION_COMPOSED_CONDITIONAL_TREE_LEVEL_CHARGED_LEPTON_MASS_OPERATOR",
+    "conditional_tree_pole_equations": [
+      "p^2=3.0938369067083404_GeV^2",
+      "p^2=0.011165478132695606_GeV^2",
+      "p^2=2.7343942254746769e-07_GeV^2"
+    ],
+    "current_C2_finite_core_poles_evaluated": false,
+    "eigenvalues_GeV_heavy_middle_light": [
+      1.758930614523592,
+      0.10566682607467495,
+      0.0005229143548875549
+    ],
+    "equivalent_formula": "M_l=4*pi^2*v_BH*(beta_l*tau/3)*exp[-L_a,l/(4*pi)]",
+    "formula": "M_l=(v_BH/sqrt(2))*Y_l",
+    "matrix_GeV": [
+      [
+        1.758930614523592,
+        0.0,
+        0.0
+      ],
+      [
+        0.0,
+        0.10566682607467495,
+        0.0
+      ],
+      [
+        0.0,
+        0.0,
+        0.0005229143548875549
+      ]
+    ],
+    "measured_lepton_mass_used": false,
+    "ratios_to_heavy": [
+      1.0,
+      0.060074470932609765,
+      0.00029729106456492414
+    ],
+    "tree_level_local_M4_pole_template": "det(slash(p)-M_l)=0"
+  },
+  "first_variation_and_pole_gate": {
+    "Euler_H": "-D^2*H-2*lambda_H*(H_dagger*H-nu_BH^2)*H-bar(e_R)*Y_l_dagger*L_L=0",
+    "Euler_L_L": "i*slash(D)*L_L-Y_l*H*e_R=0",
+    "Euler_e_R": "i*slash(D)*e_R-Y_l_dagger*H_dagger*L_L=0",
+    "action_version": "BHSM-AE-3.1.0",
+    "do_not_use": [
+      "THE_SEPARATE_CHIRAL_SQUARED_PENCILS_AS_IF_THEY_ALREADY_CONTAIN_M_l",
+      "A_FITTED_WAVEFUNCTION_RESIDUE",
+      "AN_OBSERVED_LEPTON_MASS_TO_SELECT_THE_BRANCH"
+    ],
+    "exact_next_operator": "CURRENT_C2_FIRST_ORDER_CHIRAL_BLOCK_[[D_L,M_l],[M_l_DAGGER,D_R]]_ON_THE_RETAINED_MAXIMAL_ISOTROPIC_DOMAIN_WITH_ITS_SIMPLE_POLES",
+    "matched_parent_Delta_H_xi_evaluated": false,
+    "same_current_C2_domain_determinant_evaluated": false,
+    "same_current_C2_first_order_LR_block_assembled": false,
+    "simple_pole_residues_evaluated": false,
+    "variation_is_family_noncentral": true
+  },
+  "inputs": {
+    "artifacts/BHSM_completion_gate_v11_4.json": "0A50EF5755BA4C142C58A5CB74DC95FA3797FB93760399202FAE3E89AC73EF89",
+    "artifacts/action_extension/BHSM_AE3_C2_FULL_FIELD_PUZZLE_ASSEMBLY.json": "D83FA5FC2CB31709C84AE689FC3E1CD715215826E199AF0F23E1B72344184F80",
+    "artifacts/action_extension/BHSM_AE3_C2_HOPF_SEMIGROUP_TRANSPORT.json": "890FD3AD9CF06F8753C463B332F529181C9A1EAA3244836C58F5B59FF3ED3785",
+    "artifacts/action_extension/BHSM_AE3_C2_HS_FERMION_MIXED_VARIATION.json": "23E1741332800951F510D6D1AA5A2FB7C43B7D5F2D2AE80C67AB59F8BBB5B159",
+    "docs/research_packets/2026-08-03/BHSM_FINAL_PARENT_ACTION_LEPTON_MASS_COMPLETION_2026-08-03.md": "4CCA073D0C3E1846B9D854BF5F2DE9FBA02A39361741A631F8E34317C69A00C1",
+    "src/bhsm/interface/ae31_c2_intrinsic_m4_lepton_action.py": "74279094ADAB554F53AA288CDD344CC36A187630E721FC39B113E4E68B916D07"
+  },
+  "local_tangent_frame_poles": {
+    "absolute_unit_remains_conditional": true,
+    "action_version": "BHSM-AE-3.1.0",
+    "all_energy_poles_simple": true,
+    "canonical_tree_kinetic_residue_used": true,
+    "continuous_frequency": true,
+    "curvature_and_connection_lower_order_dressing_derived": false,
+    "determinant_per_family": "det(D_f)=(h_inverse(p,p)-m_f^2)^2",
+    "domain": "REGULAR_INTERIOR_POINT_OF_AE3_ENCLOSURE_D_enc",
+    "global_current_C2_Green_function_derived": false,
+    "global_time_translation_invariance_claimed": false,
+    "independent_wavefunction_residue_fitted": false,
+    "local_symbol": "D_l(x,p)=gamma^a*e_a^mu(x)*p_mu-M_l",
+    "metric": "ACTION_SELECTED_INDUCED_LORENTZIAN_METRIC_h=X_star_g",
+    "propagator_per_family": "S_f=i*(gamma.p+m_f)/(p^2-m_f^2+i0)",
+    "result": "LOCAL_CURRENT_C2_ENCLOSURE_TREE_MASS_SHELLS_AND_SIMPLE_POLES_DERIVED_CONDITIONALLY",
+    "rows": [
+      {
+        "dispersion": "omega^2=|k|^2+3.0938369067083404_GeV^2",
+        "family_projector": [
+          [
+            1.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            0.0
+          ]
+        ],
+        "mass_squared_GeV2": 3.0938369067083404,
+        "pole_order": 1,
+        "positive_pole_denominator_derivative": 3.517861229047184,
+        "positive_pole_scalar_residue_GeV_inverse": 0.2842636292025797,
+        "rest_frequency_poles_GeV": [
+          -1.758930614523592,
+          1.758930614523592
+        ],
+        "role": "heavy",
+        "spinor_residue_formula": "(gamma.p+m_f)/(2*E_f)",
+        "tree_mass_GeV": 1.758930614523592
+      },
+      {
+        "dispersion": "omega^2=|k|^2+0.011165478132695606_GeV^2",
+        "family_projector": [
+          [
+            0.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            1.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            0.0
+          ]
+        ],
+        "mass_squared_GeV2": 0.011165478132695606,
+        "pole_order": 1,
+        "positive_pole_denominator_derivative": 0.2113336521493499,
+        "positive_pole_scalar_residue_GeV_inverse": 4.731854060295603,
+        "rest_frequency_poles_GeV": [
+          -0.10566682607467495,
+          0.10566682607467495
+        ],
+        "role": "middle",
+        "spinor_residue_formula": "(gamma.p+m_f)/(2*E_f)",
+        "tree_mass_GeV": 0.10566682607467495
+      },
+      {
+        "dispersion": "omega^2=|k|^2+2.7343942254746769e-07_GeV^2",
+        "family_projector": [
+          [
+            0.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            1.0
+          ]
+        ],
+        "mass_squared_GeV2": 2.734394225474677e-07,
+        "pole_order": 1,
+        "positive_pole_denominator_derivative": 0.0010458287097751097,
+        "positive_pole_scalar_residue_GeV_inverse": 956.1795260096039,
+        "rest_frequency_poles_GeV": [
+          -0.0005229143548875549,
+          0.0005229143548875549
+        ],
+        "role": "light",
+        "spinor_residue_formula": "(gamma.p+m_f)/(2*E_f)",
+        "tree_mass_GeV": 0.0005229143548875549
+      }
+    ],
+    "three_distinct_positive_local_mass_shells": true
+  },
+  "validation": {
+    "composition_adds_no_independent_Ye_or_mass_term": true,
+    "conditional_saddle_reproduces_historical_vBH": true,
+    "historical_action_formula_source_present": true,
+    "historical_triplet_not_used_as_input_to_operator": true,
+    "local_enclosure_tree_poles_are_distinct_simple_and_unfitted": true,
+    "local_poles_do_not_overclaim_global_propagator": true,
+    "no_up_down_or_muon_overclaim": true,
+    "predecessor_HS_and_current_full_field_gates_were_open": true,
+    "predecessor_internal_operator_attached": true,
+    "same_C2_first_order_pole_join_remains_explicit": true,
+    "tree_mass_triplet_reproduces_historical_action_result": true,
+    "yukawa_is_positive_noncentral_and_no_fit": true
+  },
+  "validation_passed": true
+}

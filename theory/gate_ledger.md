@@ -1,5 +1,34 @@
 # Gate Ledger
 
+## AE3.1 intrinsic M4 charged-lepton action transport
+
+- `BHSM-AE-3.1.0` is the mass-sector successor composition
+  `S_AE3.1=S_AE3.0+S_4,lH^BHSM`; it retains the AE3.0 carrier/domain and the
+  historical intrinsic-M4 field ownership.
+- The attached frozen family operator enters the action as
+  `Y_l=(16 sqrt(2 pi)/3969) T_l`. No independent `Y_e`, family fit, new field,
+  or separate post-breaking mass term is present.
+- Variation derives `M_l=(v_BH/sqrt(2))Y_l`. With the inherited single
+  universal energy calibration, the conditional tree eigenvalues are
+  `1.758930614523592`, `0.10566682607467498`, and
+  `0.0005229143548875549` GeV.
+- The measured Higgs VEV and charged-lepton masses are not inputs. The
+  universal absolute unit remains conditional.
+- Up/down action prefactors are not supplied by analogy.
+- The local tangent-frame symbol inside the smooth Lorentzian enclosure gives
+  three distinct tree mass shells and simple energy poles with canonical,
+  unfitted residues. This closes local charged-lepton identification
+  conditionally.
+- The global/dressed current-C2 first-order left--right Green operator remains
+  open; the radial/proper-history squared chiral pencils are not Lorentzian
+  pole substitutes.
+- Derived: versioned charged-lepton semigroup coupling and conditional tree
+  mass operator.
+- Not derived: global/dressed current-C2 physical poles, up/down action
+  normalization, or muon `F2(0)`.
+- Artifact:
+  `artifacts/action_extension/BHSM_AE31_C2_INTRINSIC_M4_LEPTON_ACTION.json`.
+
 ## Current-C2 Hopf-semigroup transport theorem
 
 - On the actual round AE3 reset, the reused family modes give the diagnostic
