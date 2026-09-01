@@ -184,9 +184,9 @@ export default function Home() {
   const exhibitCount = String(exhibits.length).padStart(2, '0');
 
   return (
-    <main>
-      <a className="skip-link" href="#cms-data">
-        Skip to the CMS record
+    <main id="top">
+      <a className="skip-link" href="#exhibits">
+        Skip to the exhibits
       </a>
       <header className="site-header">
         <a className="wordmark" href="#top" aria-label="BHSM Museum home">
@@ -204,9 +204,9 @@ export default function Home() {
           </span>
         </a>
         <nav aria-label="Museum navigation">
+          <a href="#exhibits">Exhibits</a>
           <a href="#cms-data">CMS data</a>
           <a href="#reconstruction">Research</a>
-          <a href="#exhibits">Animations</a>
           <a href="#professionals">For reviewers</a>
           <a href="#creator">Creator</a>
           <a className="nav-repository" href={REPOSITORY}>
@@ -215,12 +215,110 @@ export default function Home() {
         </nav>
       </header>
 
-      <section className="atrium" id="top" aria-labelledby="atrium-title">
+      <section
+        className="exhibition-hall exhibition-hall-first"
+        id="exhibits"
+        aria-labelledby="exhibit-title"
+      >
+        <div className="section-heading hall-heading">
+          <p className="eyebrow">
+            Main exhibition hall · {exhibits.length} animated data engines
+          </p>
+          <h1 id="exhibit-title">Look first. Then go backstage.</h1>
+          <p>
+            The CMS exhibit uses real public data. The remaining rooms use
+            normalized simulations or audited records to show calculations
+            happening—never flow charts.
+          </p>
+          <Button
+            className="hall-motion-toggle"
+            onClick={() => setMotion((value) => !value)}
+            aria-pressed={!motion}
+            variant="outline"
+            size="sm"
+          >
+            {motion ? <Pause aria-hidden="true" /> : <Play aria-hidden="true" />}
+            {motion ? 'Pause all motion' : 'Play all motion'}
+          </Button>
+        </div>
+
+        <div className="exhibit-list">
+          {exhibits.map((exhibit, index) => (
+            <article
+              className="exhibit"
+              id={`exhibit-${exhibit.number}`}
+              key={exhibit.number}
+            >
+              <div className="exhibit-visual">
+                <div className="display-label">
+                  <span>Exhibit {exhibit.number} / {exhibitCount}</span>
+                  <span>
+                    {exhibit.number === '01'
+                      ? 'Real-data engine'
+                      : 'Simulation / audit engine'}{' '}
+                    · {motion ? 'motion on' : 'static view'}
+                  </span>
+                </div>
+                <MotionImage
+                  motion={motion}
+                  exhibit={exhibit}
+                  priority={index === 0}
+                  loading={index === 0 ? undefined : 'lazy'}
+                />
+              </div>
+              <div className="exhibit-placard">
+                <p className="exhibit-index">Gallery {exhibit.number}</p>
+                <h2>{exhibit.title}</h2>
+                <p className="exhibit-subtitle">{exhibit.subtitle}</p>
+                <p className="data-label">{exhibit.dataLabel}</p>
+                <StatusBadge exhibit={exhibit} />
+                {exhibit.facts ? (
+                  <dl className="exhibit-facts">
+                    {exhibit.facts.map((fact) => (
+                      <div key={fact.label}>
+                        <dt>{fact.label}</dt>
+                        <dd>{fact.value}</dd>
+                      </div>
+                    ))}
+                  </dl>
+                ) : null}
+                <dl>
+                  <div>
+                    <dt>Lay description</dt>
+                    <dd>{exhibit.lay}</dd>
+                  </div>
+                  <div>
+                    <dt>What you are seeing</dt>
+                    <dd>{exhibit.seen}</dd>
+                  </div>
+                  <div>
+                    <dt>Scientific caption</dt>
+                    <dd>{exhibit.matters}</dd>
+                  </div>
+                </dl>
+                <div
+                  className="record-links"
+                  aria-label={`Scientific record for ${exhibit.title}`}
+                >
+                  <span>Open scientific record</span>
+                  {exhibit.links.map((link) => (
+                    <a href={link.href} key={link.label}>
+                      {link.label} <span aria-hidden="true">↗</span>
+                    </a>
+                  ))}
+                </div>
+              </div>
+            </article>
+          ))}
+        </div>
+      </section>
+
+      <section className="atrium" aria-labelledby="atrium-title">
         <div className="atrium-copy">
           <p className="eyebrow">Berger–Hopf Standard Model</p>
-          <h1 id="atrium-title">
+          <h2 id="atrium-title" className="atrium-title">
             Geometry, particles, and the record <span>in motion.</span>
-          </h1>
+          </h2>
           <p className="lede">
             The reconstructed BHSM archive begins with real CMS Open Data, then
             moves through the action, spectrum, observables, and the open
@@ -422,93 +520,6 @@ export default function Home() {
           <a href={`${SCIENCE}/docs/current_bhsm_status.md`}>
             Read current status <ArrowRight aria-hidden="true" size={15} />
           </a>
-        </div>
-      </section>
-
-      <section
-        className="exhibition-hall"
-        id="exhibits"
-        aria-labelledby="exhibit-title"
-      >
-        <div className="section-heading hall-heading">
-          <p className="eyebrow">
-            Main exhibition hall · {exhibits.length} animated data engines
-          </p>
-          <h2 id="exhibit-title">Look first. Then go backstage.</h2>
-          <p>
-            The CMS exhibit uses real public data. The remaining rooms use
-            normalized simulations or audited records to show calculations
-            happening—never flow charts.
-          </p>
-        </div>
-
-        <div className="exhibit-list">
-          {exhibits.map((exhibit, index) => (
-            <article
-              className="exhibit"
-              id={`exhibit-${exhibit.number}`}
-              key={exhibit.number}
-            >
-              <div className="exhibit-visual">
-                <div className="display-label">
-                  <span>Exhibit {exhibit.number} / {exhibitCount}</span>
-                  <span>
-                    {exhibit.number === '01'
-                      ? 'Real-data engine'
-                      : 'Simulation / audit engine'}{' '}
-                    · {motion ? 'motion on' : 'static view'}
-                  </span>
-                </div>
-                <MotionImage
-                  motion={motion}
-                  exhibit={exhibit}
-                  loading={index === 0 ? 'eager' : 'lazy'}
-                />
-              </div>
-              <div className="exhibit-placard">
-                <p className="exhibit-index">Gallery {exhibit.number}</p>
-                <h3>{exhibit.title}</h3>
-                <p className="exhibit-subtitle">{exhibit.subtitle}</p>
-                <p className="data-label">{exhibit.dataLabel}</p>
-                <StatusBadge exhibit={exhibit} />
-                {exhibit.facts ? (
-                  <dl className="exhibit-facts">
-                    {exhibit.facts.map((fact) => (
-                      <div key={fact.label}>
-                        <dt>{fact.label}</dt>
-                        <dd>{fact.value}</dd>
-                      </div>
-                    ))}
-                  </dl>
-                ) : null}
-                <dl>
-                  <div>
-                    <dt>Lay description</dt>
-                    <dd>{exhibit.lay}</dd>
-                  </div>
-                  <div>
-                    <dt>What you are seeing</dt>
-                    <dd>{exhibit.seen}</dd>
-                  </div>
-                  <div>
-                    <dt>Scientific caption</dt>
-                    <dd>{exhibit.matters}</dd>
-                  </div>
-                </dl>
-                <div
-                  className="record-links"
-                  aria-label={`Scientific record for ${exhibit.title}`}
-                >
-                  <span>Open scientific record</span>
-                  {exhibit.links.map((link) => (
-                    <a href={link.href} key={link.label}>
-                      {link.label} <span aria-hidden="true">↗</span>
-                    </a>
-                  ))}
-                </div>
-              </div>
-            </article>
-          ))}
         </div>
       </section>
 

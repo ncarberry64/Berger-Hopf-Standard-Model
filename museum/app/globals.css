@@ -171,6 +171,18 @@ h1 span {
   font-family: Georgia, serif;
   font-weight: 400;
 }
+.atrium-title {
+  font-size: clamp(2.7rem, 5.8vw, 6.8rem);
+  letter-spacing: -0.055em;
+  line-height: 0.94;
+  margin-bottom: 2rem;
+  max-width: 11ch;
+}
+.atrium-title span {
+  color: var(--gold);
+  font-family: Georgia, serif;
+  font-weight: 400;
+}
 .lede {
   color: #c5d5d9;
   font-size: clamp(1.05rem, 1.5vw, 1.3rem);
@@ -838,6 +850,10 @@ h1 span {
   border-top: 1px solid var(--line);
   padding: clamp(6rem, 10vw, 10rem) 0 0;
 }
+.exhibition-hall-first {
+  border-top: 0;
+  padding-top: clamp(4rem, 7vw, 7rem);
+}
 .hall-heading,
 .professional-heading {
   margin: 0 auto;
@@ -845,13 +861,16 @@ h1 span {
   padding-left: 5vw;
   padding-right: 5vw;
 }
-.hall-heading > p:last-child,
+.hall-heading > p:last-of-type,
 .professional-heading > p:last-child {
   color: var(--muted);
   font-size: 1rem;
   line-height: 1.7;
   margin: 1.5rem 0 0;
   max-width: 48rem;
+}
+.hall-motion-toggle {
+  margin-top: 1.5rem;
 }
 .exhibit-list {
   background: var(--line);
@@ -904,14 +923,14 @@ h1 span {
   letter-spacing: 0.12em;
   text-transform: uppercase;
 }
-.exhibit-placard h3 {
+.exhibit-placard h2 {
   font-size: clamp(1.9rem, 3.2vw, 3.7rem);
   letter-spacing: -0.05em;
   line-height: 1.02;
   margin: 1rem 0 0.7rem;
   overflow-wrap: anywhere;
 }
-.exhibit:first-child .exhibit-placard h3 {
+.exhibit:first-child .exhibit-placard h2 {
   font-size: clamp(2.2rem, 4vw, 4.5rem);
 }
 .exhibit-subtitle {
