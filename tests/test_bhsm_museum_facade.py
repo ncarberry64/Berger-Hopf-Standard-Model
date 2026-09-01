@@ -43,6 +43,7 @@ def test_museum_separates_claim_classes_and_creator_record() -> None:
         "Frozen preprint PDF",
         "Inspect 64 dimuon events",
         "Scientific caption",
+        "eventIndices[selected]",
     ):
         assert phrase in page
     assert "guided tour" not in page.lower()
