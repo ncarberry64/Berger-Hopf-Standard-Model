@@ -167,6 +167,8 @@ def build_payload() -> dict[str, Any]:
                 "exact_threefold_plus2_curl_multiplicity",
                 "coexact_BRST_quotient",
                 "positive_inverse_free_finite_core_pencil",
+                "downstream_current_C2_continuous_frequency_gauge_ghost_Hessian",
+                "downstream_strict_temporal_spatial_residue_mismatch",
             ],
             "not_derived": [
                 "one_current_C2_Lorentzian_Maxwell_residue",

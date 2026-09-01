@@ -43,25 +43,28 @@ numbers to be attached to this C2 form:
 - the static transverse and Gauss derivatives were evaluated;
 - a proper-time response was evaluated on the historical cycle;
 - those values do not establish a common Lorentzian `F_mn F^mn` coefficient;
-- the necessary dynamic `omega^2` response has not been evaluated on the
-  current C2 background.
+- the necessary dynamic `omega^2` response had not yet been evaluated on the
+  current C2 background at this artifact's original promotion.
 
 Consequently the differential form, coexact domain, multiplicity, and
 finite-core gap are derived, while the physical residue is not. Multiplying
 the form by a fitted coefficient or reusing a closed-cycle response would
 violate the one-parent-pushforward rule.
 
-The exact missing object is
+The downstream continuous-frequency unit now derives that Hessian and finds
+a strict temporal/spatial residue mismatch on the smooth parent trace domain.
+The exact missing object has therefore sharpened to
 
 ```text
-ONE_SAME_C2_BACKGROUND_GAUGE_GHOST_HESSIAN_WITH_DYNAMIC_OMEGA_SQUARED_
-RESPONSE_AND_BROKEN_ELECTROWEAK_NEUTRAL_MIXING,_JOINTLY_NORMALIZED_BY_
-THE_EXISTING_PARENT_PUSHFORWARD
+ONE_ACTION_DERIVED_NONSINGULAR_BOUNDARY_OR_WENTZELL_TERM_OR_OTHER_EXISTING_
+PARENT_DOMAIN_MECHANISM_THAT_REMOVES_THE_CURRENT_TRANSVERSE_LORENTZ_RESIDUE_
+MISMATCH_WITHOUT_A_FREE_COEFFICIENT
 ```
 
-Only after that object exists can the coexact form be promoted to a normalized
-hypercharge propagator, mixed into the physical photon, and used by the muon
-or collision engines.
+Only after that mismatch is removed by the action/domain can the coexact form
+be promoted to a normalized hypercharge propagator, mixed into the physical
+photon, and used by the muon or collision engines. See
+`theory/ae3_c2_lorentzian_gauge_ghost_hessian.md`.
 
 `CURRENT_C2_COEXACT_GAUGE_FORM_SHAPE_DERIVED=TRUE`,
 `CURRENT_C2_LORENTZIAN_MAXWELL_RESIDUE_DERIVED=FALSE`,

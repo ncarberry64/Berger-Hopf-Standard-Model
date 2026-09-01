@@ -1,5 +1,31 @@
 # Gate Ledger
 
+## Current AE3 C2 Lorentzian gauge/ghost frequency Hessian
+
+- The owned weighted parent Maxwell term is reduced on the actual
+  reset-generated C2 background with continuous real `omega`, not a
+  periodic-cycle surrogate.
+- The transverse DtN equation, temporal electric derivative, spatial
+  coexact term, temporal/longitudinal constraint block, BRST gauge fixing,
+  and Faddeev--Popov operator are derived together.
+- The lowest coexact mode gives
+  `N_T(0)=1.67955783202127` and
+  `-partial_(q^2)N_T(0)=0.247990745530776`.
+- Its complete mode residue ratio is
+  `Z_t/Z_s=0.590609601652908<1`; the mismatch is not renormalized away.
+- Responsible terms: unequal radial electric/magnetic metric weights and the
+  positive radial-gradient DtN energy forced by the smooth trace domain.
+- BRST cancels the unphysical constraint/ghost sector but does not alter the
+  transverse mismatch.
+- No `Z_A`, `g`, `g'`, `alpha`, metric-cone adjustment, or fitted residue is
+  inserted. Photon and electroweak-neutral mixing remain unpromoted.
+- Artifact:
+  `artifacts/action_extension/BHSM_AE3_C2_LORENTZIAN_GAUGE_GHOST_FREQUENCY_HESSIAN.json`.
+- `CURRENT_C2_LORENTZIAN_GAUGE_GHOST_FREQUENCY_HESSIAN_DERIVED=TRUE`;
+  `CURRENT_C2_LORENTZIAN_MAXWELL_RESIDUE_DERIVED=FALSE`;
+  `CURRENT_C2_NORMALIZED_PHOTON_PROPAGATOR_DERIVED=FALSE`;
+  `FULL_BHSM_COMPLETE=FALSE`.
+
 ## Current AE3 C2 coexact gauge form shape
 
 - Exact level-zero `S3` curl spectrum: `(+2,+2,+2)`, with coexact dimension
@@ -11,9 +37,9 @@
 - Coexact projection supplies the longitudinal/BRST quotient.
 - The parent Maxwell term and `K_F5/K_G5=R_F^2/2` are owned; a separate gauge
   normalization is forbidden.
-- Historical spatial, Gauss, and proper-time responses do not establish one
-  Lorentzian coefficient on the current C2 background. The dynamic
-  `omega^2` gauge/ghost Hessian remains open.
+- Historical spatial, Gauss, and proper-time responses did not establish one
+  Lorentzian coefficient. The current-C2 dynamic `omega^2` gauge/ghost
+  Hessian is now derived and exposes a strict temporal/spatial mismatch.
 - This form may support domain and gap analysis but may not be used as a
   normalized photon propagator.
 - Artifact:

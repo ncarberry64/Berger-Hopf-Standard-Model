@@ -10,7 +10,8 @@ python scripts/materialize_ae3_c2_action_puzzle.py
 python scripts/materialize_ae3_family_hierarchy_interface.py
 python scripts/materialize_ae3_c2_coexact_hypercharge.py
 python scripts/materialize_ae3_c2_coexact_gauge_form.py
-python -m pytest -q tests/test_ae3_reciprocal_join_localization.py
+python scripts/materialize_ae3_c2_lorentzian_gauge_ghost_hessian.py
+python -m pytest -q tests/test_ae3_reciprocal_join_localization.py tests/test_ae3_c2_lorentzian_gauge_ghost_hessian.py
 ```
 
 This reproduces the analytic eta-to-sigma profile, its unique transverse
@@ -21,6 +22,11 @@ reset/projector/enclosure-restriction transport square, imports the historical
 response-constrained nonlinear witnesses by hash, and verifies that the old
 zero-source closed-cycle determinant is not promoted to the current C2 action.
 It does not rerun or strengthen the branch-24 first-stop numerics.
+
+The last materializer evaluates the current-C2 continuous-frequency
+transverse DtN derivative together with the temporal/longitudinal constraint
+and ghost blocks. It records the strict temporal/spatial residue mismatch and
+does not reuse the historical periodic-cycle frequency response.
 
 ## Current Gate-7 carrier certificate
 

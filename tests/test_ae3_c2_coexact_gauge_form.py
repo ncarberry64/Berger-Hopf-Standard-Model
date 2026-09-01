@@ -47,7 +47,10 @@ def test_normalization_interface_forbids_photon_overpromotion() -> None:
     assert interface["parent_Maxwell_action_owned"] is True
     assert interface["independent_gauge_normalization_allowed"] is False
     assert interface["historical_responses_define_one_Lorentzian_coefficient"] is False
-    assert interface["current_C2_dynamic_frequency_response_available"] is False
+    assert interface["current_C2_dynamic_frequency_response_available"] is True
+    assert interface["current_C2_dynamic_frequency_response_outcome"] == (
+        "GAUGE_GHOST_HESSIAN_DERIVED__TEMPORAL_SPATIAL_RESIDUE_MISMATCH"
+    )
     assert interface["form_shape_may_be_used_as_normalized_photon_propagator"] is False
 
 

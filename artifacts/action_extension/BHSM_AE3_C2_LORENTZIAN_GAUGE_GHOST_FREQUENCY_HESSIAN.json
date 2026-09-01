@@ -1,0 +1,211 @@
+{
+  "CURRENT_C2_LORENTZIAN_GAUGE_GHOST_FREQUENCY_HESSIAN_DERIVED": true,
+  "CURRENT_C2_LORENTZIAN_MAXWELL_RESIDUE_DERIVED": false,
+  "CURRENT_C2_NORMALIZED_PHOTON_PROPAGATOR_DERIVED": false,
+  "FULL_BHSM_COMPLETE": false,
+  "MUON_MAGNETIC_MOMENT_DERIVED": false,
+  "action_version": "BHSM-AE-3.0.0",
+  "artifact": "BHSM_AE3_C2_LORENTZIAN_GAUGE_GHOST_FREQUENCY_HESSIAN",
+  "claim_boundary": {
+    "CURRENT_C2_LORENTZIAN_MAXWELL_RESIDUE_DERIVED": false,
+    "electroweak_neutral_Hessian_derived": false,
+    "independent_ZA_g_gprime_alpha_or_metric_cone_inserted": false,
+    "next_required_action_domain_object": "AN_ACTION_DERIVED_NONSINGULAR_BOUNDARY_OR_WENTZELL_TERM_OR_OTHER_EXISTING_PARENT_DOMAIN_MECHANISM_THAT_REMOVES_THE_TRANSVERSE_RESIDUE_MISMATCH_WITHOUT_A_FREE_COEFFICIENT",
+    "physical_photon_derived": false,
+    "residue_outcome": "MISMATCH_RECORDED__NOT_RENORMALIZED",
+    "same_C2_continuous_frequency_gauge_ghost_Hessian_derived": true,
+    "temporal_transverse_constraint_and_ghost_blocks_derived_together": true
+  },
+  "classification": "CURRENT_C2_LORENTZIAN_GAUGE_GHOST_FREQUENCY_HESSIAN",
+  "constraint_and_ghost_witness": {
+    "BRST_real_degree_weights": {
+      "complex_ghost": -2,
+      "temporal_plus_longitudinal_bosons": 2
+    },
+    "Maxwell_Ward_residual": 0.0,
+    "Maxwell_constraint_block": {
+      "imaginary": [
+        [
+          0.0,
+          0.27898958872212304
+        ],
+        [
+          -0.27898958872212304,
+          0.0
+        ]
+      ],
+      "real": [
+        [
+          0.7439722365923281,
+          0.0
+        ],
+        [
+          0.0,
+          0.10462109577079615
+        ]
+      ]
+    },
+    "basis": [
+      "A_0",
+      "phi_longitudinal"
+    ],
+    "gauge_fixed_block": {
+      "imaginary": [
+        [
+          0.0,
+          0.37198611829616407
+        ],
+        [
+          -0.37198611829616407,
+          0.0
+        ]
+      ],
+      "real": [
+        [
+          0.7508378170031815,
+          0.0
+        ],
+        [
+          0.0,
+          1.364289469786748
+        ]
+      ]
+    },
+    "gauge_fixing_block_xi_one": {
+      "imaginary": [
+        [
+          0.0,
+          0.09299652957404102
+        ],
+        [
+          -0.09299652957404102,
+          0.0
+        ]
+      ],
+      "real": [
+        [
+          0.00686558041085341,
+          0.0
+        ],
+        [
+          0.0,
+          1.2596683740159518
+        ]
+      ]
+    },
+    "ghost_Faddeev_Popov_symbol": -1.2247946754256864,
+    "omega": 0.375,
+    "physical_transverse_residue_changed_by_gauge_fixing": false,
+    "scalar_laplacian": 3.0
+  },
+  "continuous_frequency_transverse_DtN": {
+    "centered_difference_derivative": -0.24799074553660816,
+    "d_DtN_d_q_squared_at_zero": -0.24799074553077605,
+    "electric_weight_integral": 0.24799074553077605,
+    "magnetic_weight_integral": 0.2728372145405974,
+    "mismatch_source": "UNEQUAL_RADIAL_ELECTRIC_AND_MAGNETIC_METRIC_WEIGHTS_PLUS_THE_POSITIVE_RADIAL_GRADIENT_DTN_TERM_ON_THE_SMOOTH_BULK_TRACE_DOMAIN",
+    "one_Lorentzian_residue": false,
+    "pure_electric_to_magnetic_weight_ratio": 0.9089329912282759,
+    "radial_gradient_integral": 0.5882089738588797,
+    "static_dimensionless_DtN": 1.679557832021269,
+    "static_energy_identity_right_hand_side": 1.6795578320212692,
+    "temporal_to_complete_spatial_mode_residue_ratio": 0.5906096016529084,
+    "transverse_level": 2,
+    "v16_03_level_zero_curl_eigenvalue": 2
+  },
+  "current_C2_symbol": {
+    "H_probe_over_K_F5_summary": {
+      "maximum": 1.6842839634158189,
+      "maximum_absolute": 1.6842839634158189,
+      "minimum": 1.6842839634158189
+    },
+    "Z_s_over_K_F5_summary": {
+      "maximum": 0.4177550408364098,
+      "maximum_absolute": 0.4177550408364098,
+      "minimum": 0.4177550408364098
+    },
+    "Z_t_over_K_F5_summary": {
+      "maximum": 0.24673013825688647,
+      "maximum_absolute": 0.24673013825688647,
+      "minimum": 0.24673013825688647
+    },
+    "boundary_radius_summary": {
+      "maximum": 0.9949167164637879,
+      "maximum_absolute": 0.9949167164637879,
+      "minimum": 0.9949167164637879
+    },
+    "coexact_eigenvalue_summary": {
+      "maximum": 4.040978460597792,
+      "maximum_absolute": 4.040978460597792,
+      "minimum": 4.040978460597792
+    },
+    "formula": "H_T/K_F5=Zs_over_KF5*K_coexact-Zt_over_KF5*omega^2+O(omega^4)",
+    "omega_probe": 0.125,
+    "residue_ratio_summary": {
+      "maximum": 0.5906096016529084,
+      "maximum_absolute": 0.5906096016529084,
+      "minimum": 0.5906096016529084
+    },
+    "segment_count": 1222
+  },
+  "decision": {
+    "Z_t_equals_Z_s": false,
+    "answer": "NO_ON_THE_CURRENT_SMOOTH_PARENT_TRACE_DOMAIN",
+    "mismatch_not_renormalized": true,
+    "question": "DOES_THE_COMPLETE_ACTION_DERIVED_REDUCTION_PRODUCE_ONE_CONSISTENT_PHYSICAL_GAUGE_RESIDUE",
+    "responsible_action_domain_terms": [
+      "electric_weight_W*RF*r",
+      "magnetic_weight_W*RF/r",
+      "positive_radial_gradient_DtN_energy",
+      "smooth_regular_bulk_trace_domain_with_r_strictly_less_than_r_boundary_in_the_interior"
+    ]
+  },
+  "domain": {
+    "background": "ACTUAL_RESET_GENERATED_C2_PROOF_CENTER_HISTORY",
+    "far_core_role": "NOT_USED_BY_THE_LOCAL_CONTINUOUS_FREQUENCY_SYMBOL",
+    "frequency_domain": "CONTINUOUS_REAL_OMEGA_NEAR_ZERO",
+    "periodic_cycle_frequency_used": false,
+    "radial_domain": "SMOOTH_AE3_WEIGHTED_HALF_CAP_TRACE_TO_SIGMA_ZERO_WALL",
+    "retained_boundary": "C2_BIRTH_TRACE_NODE_0"
+  },
+  "inputs": {
+    "artifacts/BHSM_aether_einstein_cartan_joint_pushforward_v15_75.json": "1E82EE9E365ED99E8943C5090C71119C47DEC38BA1924C9EED1BC7A3086CD842",
+    "artifacts/BHSM_aether_event_weighted_unified_pushforward_v15_71.json": "96EE096E3548AFF4205EA8CD54FB2A493C7A5414E696BFC12D3F04333BBF8D80",
+    "artifacts/BHSM_aether_m5_m4_gauge_higgs_ownership_v15_60.json": "F929EA272EEAEA914E7BBBCB4AB72643655209D7947255CE2D1F1851335EECA0",
+    "artifacts/BHSM_aether_nonabelian_coexact_vertex_v16_03.json": "0DF9A55F2FC853D20AAD52B1004FDCD75A8E4A937A0001313B1F7B8BFB5A21D7",
+    "artifacts/BHSM_aether_nonabelian_derham_response_v16_04.json": "F1FD02FEAD7590E50D47595C1CCBBB765241BDD46BC5590D0B1E1BF05D72D324",
+    "artifacts/action_extension/BHSM_ACTION_AE3_RECIPROCAL_JOIN_LOCALIZATION.json": "69EA4C2D4EC763B798F859DE946C77F76793E47EDEC24F433F7AFE544D4E3CC8",
+    "artifacts/action_extension/BHSM_AE3_C2_COEXACT_GAUGE_FORM_SHAPE.json": "F9D34B6F3B078E5369173B7BFDD2D389135E53454FC46AFDB3B95D4D3756F465",
+    "artifacts/flagship_integration/BHSM_N12_C2_1222_SEGMENT_FINITE_CORE_DESCRIPTOR.json": "C7B6DB4C09D9D826A5BC9050EA558044354C177D7D4B05D5E422AC1D73B3ACC8",
+    "artifacts/flagship_integration/BHSM_N12_C2_1222_SEGMENT_FINITE_CORE_DESCRIPTOR.npz": "5E8C1E98B4B0E77B628C0B11D29A3F2110DAE665A666B4A2C3DBEB735E6F6E25",
+    "src/bhsm/interface/ae3_c2_lorentzian_gauge_ghost_hessian.py": "DC7A4937AD4C9E6DDF5169FBFDA876A4CD1661C393BC2698885B48980FD3B873"
+  },
+  "parent_action": {
+    "coefficient_relation": "K_F5/K_G5=RF^2/2",
+    "new_ZA_g_gprime_alpha_metric_cone_or_residue": null,
+    "quadratic_term": "(K_F5/4)*integral_M5*W*Tr_16(F_MN*F^MN)",
+    "weight": "W=(1-4*sigma^2)*(1+X_eta^3)"
+  },
+  "validation": {
+    "AE3_weight_inserted_before_derivatives": true,
+    "BRST_degree_weights_close": true,
+    "actual_reset_generated_C2_descriptor_valid": true,
+    "constraint_Maxwell_Ward_identity": true,
+    "continuous_frequency_derivative_matches_envelope_integral": true,
+    "continuous_frequency_not_cycle_surrogate": true,
+    "current_C2_form_predecessor_valid": true,
+    "ghost_is_same_gauge_functional_derivative": true,
+    "mismatch_not_renormalized": true,
+    "no_independent_continuous_coefficient": true,
+    "parent_Maxwell_coefficient_relation_owned": true,
+    "photon_not_promoted": true,
+    "retained_birth_trace_preserved": true,
+    "same_AE3_action_owner": true,
+    "smooth_bulk_weight_no_go_retained": true,
+    "static_DtN_energy_identity": true,
+    "temporal_spatial_residue_mismatch_is_strict": true,
+    "v16_03_coexact_BRST_machinery_reused": true,
+    "v16_04_periodic_response_not_promoted": true
+  },
+  "validation_passed": true
+}

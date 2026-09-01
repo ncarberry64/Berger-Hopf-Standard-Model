@@ -596,12 +596,15 @@ def systems_integration_puzzle() -> dict[str, object]:
                     "current_C2_lowest_Weyl_coexact_U1Y_source_and_contact_jet",
                     "current_C2_n0_coexact_gauge_coordinate_form_shape",
                     "exact_coexact_BRST_quotient_and_positive_finite_core_pencil",
+                    "current_C2_continuous_frequency_gauge_ghost_Hessian",
+                    "strict_unrenormalized_temporal_spatial_gauge_residue_mismatch",
                     "existing_family_central_I3_tensor_factor",
                 ],
                 "open_join": (
-                    "same_domain_dynamical_HS_broken_LR_gauge_ghost_transverse_"
-                    "electromagnetic_nonzero_fermion_cross_derivative_and_"
-                    "maximal_exterior_blocks"
+                    "action_derived_resolution_of_the_smooth_trace_gauge_"
+                    "residue_mismatch_then_dynamical_HS_broken_LR_neutral_"
+                    "mixing_nonzero_fermion_cross_derivative_and_maximal_"
+                    "exterior_blocks"
                 ),
                 "complete": False,
             },
@@ -650,6 +653,8 @@ def systems_integration_puzzle() -> dict[str, object]:
                     "current_C2_lowest_Weyl_two_point_operator_piece",
                     "current_C2_transverse_hypercharge_precursor_vertex",
                     "current_C2_coexact_gauge_form_domain_and_gap",
+                    "current_C2_continuous_frequency_gauge_ghost_Hessian",
+                    "unrenormalized_Lorentz_residue_mismatch_certificate",
                 ],
                 "open_join": (
                     "current_AE3_muon_simple_pole_plus_complete_renormalized_"
