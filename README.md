@@ -106,13 +106,15 @@ action-owned output exists.
 [![Python 3.10+](https://img.shields.io/badge/python-3.10%2B-3776AB)](https://www.python.org/)
 [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.20663419.svg)](https://doi.org/10.5281/zenodo.20663419)
 
-![Animated BHSM geometry-to-prediction pipeline](docs/assets/bhsm_geometry_to_prediction_animated.gif)
+> **New to BHSM? Begin at the [BHSM Museum](https://ncarberry64.github.io/Berger-Hopf-Standard-Model/).**
+> The animated public exhibition explains the observable pipeline in plain
+> language, then opens the source, tests, derivations, artifacts, and claim
+> boundaries behind every display. This README remains the scientific front
+> desk; animations live outside it.
 
 BHSM is an independent, artifact-backed computational framework and mathematical-physics research program investigating whether Berger-Hopf boundary/envelopment geometry and one retained action can generate particle-like modes, shared interactions, and observable readouts.
 
 ## One Action &middot; One Scale &middot; One Observable Pipeline
-
-![Animated BHSM universal predictive engine](docs/assets/bhsm_universal_predictive_engine_animated.gif)
 
 The engine differentiates the same retained local action through fourth order. `S^(2)` supplies the descriptor spectrum and propagators; `S^(3)` and `S^(4)` supply shared vertices; the resulting amplitude passes through on-shell normalization into common decay, collision, form-factor, and spectral classifiers. A single `G_F = c_F / Lambda^2` scale map forbids observable-by-observable retuning.
 
@@ -122,8 +124,6 @@ directional derivatives. This is implemented machinery, not a physical
 promotion.
 
 ## No-Fit Prediction Firewall
-
-![Animated BHSM no-fit firewall](docs/assets/bhsm_no_fit_firewall_animated.gif)
 
 Measured particle values may be used only downstream for declared comparison.
 They may not choose an upstream branch, normalization, mode, formula,
@@ -212,16 +212,12 @@ completed a derivation or replacement of the Standard Model.
 
 ## Predictive Spectrum
 
-![Animated structural BHSM spectral forecast](docs/assets/bhsm_spectral_forecast_animated.gif)
-
 The interval engine distinguishes action-derived modes, admissible bands, null
 windows, exact selection-rule zeros, kinematically closed channels, instability,
 and unresolved ledgers. The repository does not yet emit a promoted physical
 mass axis or frozen new-particle assignment, so the map is qualitative.
 
 ## Magnetic Moment
-
-![Animated BHSM muon g-2 pipeline](docs/assets/bhsm_muon_g2_pipeline_animated.gif)
 
 The electromagnetic readout resolves a supplied renormalized on-shell vertex
 into `F1(q^2)` and `F2(q^2)`. No numerical BHSM `a_mu = F2(0)` is displayed:
@@ -230,15 +226,11 @@ and the zero-momentum limit must all pass first.
 
 ## Decays and Stability
 
-![Animated BHSM decay and stability engine](docs/assets/bhsm_decay_stability_engine_animated.gif)
-
 The shared amplitude feeds two-body phase space and the interval channel ledger.
 A state is called stable only when a complete ledger proves every channel closed
 or exactly forbidden; otherwise the engine reports unstable or unresolved.
 
 ## Collision Prediction
-
-![Animated BHSM collision predictor](docs/assets/bhsm_collision_predictor_animated.gif)
 
 The `2 -> 2` readout maps the shared amplitude to differential phase space while
 retaining thresholds, averaging, symmetry factors, and channel status. The
@@ -246,8 +238,6 @@ displayed `e+ e- -> mu+ mu-` process is an engine topology, not a numerical
 cross-section claim or statement of collider readiness.
 
 ## CMS / Real-Data Validation
-
-![BHSM Engine CMS Open Data validation](docs/assets/pr98_cms_open_data_animation/pr98_cms_engine_validation_continuous.gif)
 
 The checksum-pinned PR #98 path uses CERN Open Data Record 303, DOI
 `10.7483/OPENDATA.CMS.4M97.3SQ9`, to test coordinate transformations on
