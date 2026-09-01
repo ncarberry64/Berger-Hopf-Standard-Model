@@ -1,0 +1,110 @@
+{
+  "FULL_BHSM_COMPLETE": false,
+  "action_version": "BHSM-AE-3.1.0",
+  "artifact": "BHSM_AE31_C2_QUARK_YUKAWA_NORMALIZATION_NO_GO",
+  "claim_boundary": {
+    "CKM_MATRIX_DERIVED": false,
+    "CURRENT_AE31_QUARK_NORMALIZATION_NULLITY": 2,
+    "CURRENT_AE31_QUARK_YUKAWA_NORMALIZATION_NONIDENTIFIABILITY_DERIVED": true,
+    "CURRENT_C2_PHYSICAL_QUARK_MASS_RATIOS_DERIVED": false,
+    "CURRENT_C2_PHYSICAL_QUARK_POLES_DERIVED": false,
+    "CURRENT_C2_QUARK_RESPONSE_SHAPES_REUSED": true,
+    "CURRENT_C2_UP_DOWN_ABSOLUTE_YUKAWA_PREFACTORS_DERIVED": false,
+    "CURRENT_C2_UP_DOWN_YUKAWA_OPERATORS_ACTION_OWNED": false,
+    "FULL_BHSM_COMPLETE": false,
+    "HISTORICAL_BETA_KAPPA_RELABELLED_AS_QUARK_YUKAWA": false,
+    "MEASURED_QUARK_MASS_USED": false,
+    "exact_next_operator": "COMPLETE_PARENT_INTRINSIC_M4_MIXED_THIRD_VARIATIONS_P_U_DELTA3S_BARQL_HTILDE_UR_P_U_AND_P_D_DELTA3S_BARQL_H_DR_P_D_WITH_THEIR_TRACE_NORMALIZATIONS",
+    "particle_spectrum_rebuilt": false
+  },
+  "classification": "AE31_CURRENT_C2_QUARK_YUKAWA_NORMALIZATION_NONIDENTIFIABILITY",
+  "inputs": {
+    "artifacts/action_extension/BHSM_AE31_C2_COEXACT_SU2L_CHARGED_CURRENT.json": "4ACDC1E6FD27ACE85DA73CFF763D3276BF9AFF8C524DA457328B9EFA810D7092",
+    "artifacts/action_extension/BHSM_AE31_C2_INTRINSIC_M4_LEPTON_ACTION.json": "C0E851100FCAA04C1968081A3940D938B7C64C857FE416F7F7795974A9053850",
+    "artifacts/action_extension/BHSM_AE32_C2_EINSTEIN_CARTAN_LR_ACTION.json": "D003C0BD67DC671478CA167C5FBDD553EBA1A7FAE24AEAFCF7743877C7015313",
+    "artifacts/action_extension/BHSM_AE3_C2_QUARK_RESPONSE_SUM_RULES.json": "FE42458D60AF7CF6A70D16C96EE4E1666AA2D987DCFE73A0F2E06D620089421D",
+    "docs/research_packets/2026-08-03/BHSM_FINAL_PARENT_ACTION_LEPTON_MASS_COMPLETION_2026-08-03.md": "4CCA073D0C3E1846B9D854BF5F2DE9FBA02A39361741A631F8E34317C69A00C1",
+    "docs/research_packets/2026-08-03/BHSM_QUARK_YUKAWA_PAIR_AND_CKM_INTERTWINER_2026-08-03.md": "FE5BC1D07ED730B2725ED0E46C21B6CE2539DE7D6A002AB800226BFCBBF789CC",
+    "src/bhsm/interface/ae31_c2_quark_yukawa_normalization_no_go.py": "62A43A78A6F1FFA72B575CA34616109F5914671990171F863024E20679653E1C",
+    "theory/parent_action_boundary_derivation.json": "A57AA03CEEDDDB911CC2777720900D22A24589D04C4B12F875086B9325902036"
+  },
+  "normalization_kernel_witness": {
+    "continuum_of_indistinguishable_normalizations": true,
+    "cross_sector_ratio_changes": true,
+    "down_shape_residual": 0.0,
+    "first_heavy_up_over_down": 1.0,
+    "first_normalizations": [
+      1.0,
+      1.0
+    ],
+    "second_heavy_up_over_down": 56.0,
+    "second_normalizations": [
+      7.0,
+      0.125
+    ],
+    "up_shape_residual": 0.0
+  },
+  "normalization_nonidentifiability_theorem": {
+    "absolute_normalizations_fixed_by_current_response_shapes": false,
+    "action_version": "BHSM-AE-3.1.0",
+    "all_current_within_sector_response_data_select_c_u_or_c_d": false,
+    "candidate_operator_family": "Y_u(c_u)=c_u*J_u^dagger*T_u*R_u;_Y_d(c_d)=c_d*J_d^dagger*T_d*R_d",
+    "exact_missing_variations": {
+      "down": "c_d proportional_to P_d[delta^3 S_parent/(delta bar(Q_L) delta H delta d_R)]P_d_with_trace_and_domain_fixed",
+      "up": "c_u proportional_to P_u[delta^3 S_parent/(delta bar(Q_L) delta H_tilde delta u_R)]P_u_with_trace_and_domain_fixed"
+    },
+    "heavy_cross_sector_ratio": "y_u,heavy/y_d,heavy=c_u/c_d",
+    "measured_quark_mass_can_select_the_normalizations": false,
+    "normalization_nullity": 2,
+    "normalized_shape_Jacobian_rank": 0,
+    "normalized_shape_Jacobian_with_respect_to_log_c_u_log_c_d": [
+      [
+        0.0,
+        0.0
+      ],
+      [
+        0.0,
+        0.0
+      ],
+      [
+        0.0,
+        0.0
+      ],
+      [
+        0.0,
+        0.0
+      ]
+    ],
+    "one_common_lepton_prefactor_can_be_copied_by_gauge_analogy": false,
+    "parameter_domain": "(c_u,c_d)_in_positive_real_numbers_squared",
+    "relative_normalization_fixed_by_current_response_shapes": false,
+    "within_sector_observables": "rho_u,i=y_u,i/y_u,heavy;_rho_d,i=y_d,i/y_d,heavy"
+  },
+  "provenance_and_exclusion_ledger": {
+    "EC_auxiliary_unit_vertex_supplies_global_quark_normalization": false,
+    "beta_kappa_can_be_relabelled_as_c_u_c_d": false,
+    "charged_lepton_normalization_owner": "sqrt(2)*kappa_H*tau^2*(beta_l*tau/Tr(P_l))",
+    "charged_lepton_owner_may_be_reused_as_quark_number": false,
+    "historical_beta_kappa_functional_variation": "FAMILY_SLOT_BRIDGE_OR_BOUNDARY_MATRIX_VARIATION",
+    "historical_beta_kappa_objects": "CONDITIONAL_FAMILY_BRIDGE_AND_BOUNDARY_SOURCE_CANDIDATES",
+    "independent_quark_normalization_inserted": false,
+    "middle_up_virtual_dressing_promoted": false,
+    "quark_mass_fit_used": false,
+    "required_c_u_c_d_functional_variation": "INTRINSIC_M4_LR_HIGGS_THIRD_VARIATION",
+    "up_down_frozen_family_response_operators_available": true,
+    "up_down_gauge_invariant_operator_classes_available": true,
+    "up_down_intrinsic_M4_source_variations_available": false,
+    "why_EC_excluded": "RETAINED_ZERO_MODE_NOT_IN_GLOBAL_EC_STATIONARY_ACTION_DOMAIN"
+  },
+  "validation": {
+    "EC_route_not_repurposed_as_global_normalization": true,
+    "charged_current_and_virtual_dressing_boundary_preserved": true,
+    "exact_missing_parent_variations_named_without_fit": true,
+    "historical_boundary_scaffold_not_promoted": true,
+    "no_quark_pole_CKM_or_completion_overclaim": true,
+    "quark_response_shapes_and_sum_rules_reused": true,
+    "same_AE31_action_and_lepton_normalization_owner_recovered": true,
+    "two_dimensional_normalization_kernel_derived": true
+  },
+  "validation_passed": true
+}

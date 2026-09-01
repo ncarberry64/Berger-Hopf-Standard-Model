@@ -1,5 +1,22 @@
 # Gate Ledger
 
+## AE3.1 quark Yukawa normalization non-identifiability
+
+- The candidate pair `Y_u=c_u T_u`, `Y_d=c_d T_d` has an exact
+  two-dimensional normalization kernel: the Jacobian of all four within-sector
+  normalized response eigenvalues with respect to `(log c_u,log c_d)` is zero.
+- Distinct positive `(c_u,c_d)` pairs preserve every attached quark response
+  shape and scale-free sum rule while changing the cross-sector heavy ratio
+  `y_u,heavy/y_d,heavy=c_u/c_d`.
+- The historical `beta/kappa` entries belong to a different family-bridge
+  variation, the middle-up `1/2` dressing is unpromoted, and the globally
+  obstructed EC auxiliary vertex cannot be repurposed as a normalization.
+- The exact missing owners are the trace- and domain-fixed intrinsic-M4 mixed
+  third variations in the `bar(Q_L) H_tilde u_R` and `bar(Q_L) H d_R`
+  channels. No quark mass may select them.
+- Artifact:
+  `artifacts/action_extension/BHSM_AE31_C2_QUARK_YUKAWA_NORMALIZATION_NO_GO.json`.
+
 ## Current-C2 quark response sum rules
 
 - Reusing the frozen internal Berger operator, the up modes
