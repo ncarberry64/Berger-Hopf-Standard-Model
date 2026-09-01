@@ -1,5 +1,22 @@
 # Gate Ledger
 
+## AE3.1 current-C2 quark--Higgs contact closure
+
+- The transported renormalizable first-order pencil is affine-linear:
+  `D(h_u,h_d)=D_0+h_u V_u+h_d V_d`, so its first-order contact
+  `D_f D_g D` vanishes exactly.
+- For the retained squared product-Dirac pencil,
+  `D_f D_g(D^dagger D)=V_f^dagger V_g+V_g^dagger V_f`; hence
+  `Q_ff=2 V_f^dagger V_f` and no independent contact coefficient exists.
+- The transported up/down supports are disjoint, giving `Q_ud=Q_du=0`.
+  Diagonal contacts are positive semidefinite and reproduce the existing
+  `Q(q)=q^2 Q(1)` source scaling.
+- The remaining action task is reduced to deriving the two first-vertex
+  residues `c_u,c_d`; a selected Feynman covariance is still required for the
+  quantum channel Hessian.
+- Artifact:
+  `artifacts/action_extension/BHSM_AE31_C2_QUARK_HIGGS_CONTACT_CLOSURE.json`.
+
 ## AE3.1 current-C2 quark--Higgs incidence-support transport
 
 - The historical two-component colored closure classes transport through
