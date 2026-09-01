@@ -1,0 +1,774 @@
+{
+  "ACTION_OWNED_LOCALIZATION_CARRIER_DERIVED": true,
+  "ACTION_OWNED_PHYSICAL_LOCALIZATION_AND_ENCLOSURE_DERIVED": true,
+  "BHSM_NATIVE_FAMILY_MODE_STATE_TRANSPORTED_THROUGH_LOCALIZATION": true,
+  "EXISTING_SM_MANIFESTATION_READOUT_PRESERVED": true,
+  "FLAGSHIP_READY": false,
+  "FULL_BHSM_COMPLETE": false,
+  "PHYSICAL_ENCAPSULATION_IDENTIFIED": false,
+  "action": {
+    "KKT_term": "S_response=integral_Q d_ell*mu_Q*lambda_sigma*C_sigma",
+    "SM_observables_used_for_selection": [],
+    "configuration_domain": "AE2_reset_glued_parent_event_child_domain_with_existing_eta_sigma_degree_orientation_FR_data",
+    "covariant_response_on_orbit_space": "C_sigma=n_eta^A*nabla_A_sigma-W_J[eta]/Z_J[eta]=0;_Z_J=integral_Q W_J d_ell",
+    "extension": "S_AE3=S_BHSM_AE2_retained[Lambda(sigma_0)->Lambda(sigma)]+S_response;_the_existing_H_FR_is_promoted_with_the_same_substitution_and_is_not_added_twice",
+    "inactive_limit": "S_AE3=S_AE2_on_the_trivial_or_even_FR_component_where_the_localization_response_sector_is_absent_and_<J^2>=0",
+    "localization_scalar": "sigma=C_J[eta]-1/2",
+    "localized_Hopf_weight": "Lambda(sigma)=1-4*sigma^2",
+    "localized_inertia": "I_H=integral_Sigma_t sqrt(h)*(kappa1+X_eta^3)*Lambda(sigma)*abs(K_H)^2",
+    "new_continuous_coefficients": [],
+    "new_nonpropagating_multipliers": [
+      "lambda_sigma"
+    ],
+    "new_physical_fields": [],
+    "new_scales": [],
+    "odd_FR_ground_state": "Psi_0=cos(theta/2)/sqrt(pi);_<J>=0;_<J^2>=1/4",
+    "stationary_FR_functional": "H_FR=<J^2>/(2I_H)=1/(8I_H)"
+  },
+  "action_version": "BHSM-AE-3.0.0",
+  "action_version_status": "OWNER_AUTHORIZED_MINIMAL_LOCALIZATION_DOMAIN_EXTENSION",
+  "artifact": "BHSM_ACTION_AE3_RECIPROCAL_JOIN_LOCALIZATION",
+  "candidate_ranking": [
+    {
+      "action_ownership": "RETAINED_N12_PROFILE_AND_HOPF_WEIGHT_PROMOTED_BY_COEFFICIENT_FREE_RESPONSE_KKT",
+      "candidate_id": "RECIPROCAL_JOIN_ETA_SIGMA_RESPONSE",
+      "field_type": "existing_spacetime_scalar_sigma_derived_from_existing_eta_join",
+      "new_continuous_coefficients": 0,
+      "new_physical_fields": 0,
+      "rank": 1,
+      "regular_local_domain": true,
+      "result": "SELECTED_MINIMAL_POST_AE2_EXTENSION",
+      "same_action_variation": true,
+      "why": "It is the only recovered candidate already used by the retained action, with a regular zero, an oriented inside/outside split, and no new physical coefficient."
+    },
+    {
+      "action_ownership": "ALGEBRAIC_FUNCTION_OF_ACTION_FIELD_ETA",
+      "candidate_id": "ETA_EQUAL_PREIMAGE_SCALAR",
+      "field_type": "chi_eta=norm(eta_v)^2-norm(eta_u)^2",
+      "new_continuous_coefficients": 0,
+      "new_physical_fields": 0,
+      "rank": 2,
+      "regular_local_domain": true,
+      "result": "VALIDATED_KINEMATIC_CROSSCHECK_NOT_SELECTED_AS_THE_MATERIAL_ACTION",
+      "same_action_variation": false,
+      "why": "The factor-exchange fixed set is regular but by itself carries no localized response or interface energy."
+    },
+    {
+      "action_ownership": "CLASSIFIED_ACTION_COMPLETION_NOT_RETAINED_PARENT_ACTION",
+      "candidate_id": "ETA_INDUCED_INVERSE_EULER_SIGMA_SKIN",
+      "field_type": "existing_scalar_sigma",
+      "new_continuous_coefficients": 1,
+      "new_physical_fields": 0,
+      "rank": 3,
+      "regular_local_domain": true,
+      "result": "VALIDATED_FIXED_BACKGROUND_CRITICAL_SKIN_BUT_UNSTABLE_AND_NORMALIZATION_OPEN",
+      "same_action_variation": true,
+      "why": "The inverse potential is unique along one eta profile, but Z_sigma remains physical under backreaction and the Derrick mode is negative."
+    },
+    {
+      "action_ownership": "HISTORICAL_RETAINED_ACTION_FAMILY",
+      "candidate_id": "RETAINED_QUARTIC_SIGMA_WALL",
+      "field_type": "existing_scalar_sigma",
+      "new_continuous_coefficients": 4,
+      "new_physical_fields": 0,
+      "rank": 4,
+      "regular_local_domain": true,
+      "result": "INVALIDATED_AS_UNIQUE_SELECTOR",
+      "same_action_variation": true,
+      "why": "Stable inequivalent coefficient triples share the same sigma-zero parent and first variation."
+    },
+    {
+      "action_ownership": "CANONICAL_HAAR_SUPPORT_ACTION",
+      "candidate_id": "MULTIPLICATIVE_SUPPORT_DEPTH_Q_D",
+      "field_type": "q_D=-lambda_D_log_upsilon",
+      "new_continuous_coefficients": 2,
+      "new_physical_fields": 0,
+      "rank": 5,
+      "regular_local_domain": false,
+      "result": "INVALIDATED_FOR_REGULAR_FINITE_CODIMENSION_ONE_ENCLOSURE",
+      "same_action_variation": true,
+      "why": "The zero-support endpoint lies at infinite Haar depth and has an infinite positive-capacity collar cost."
+    },
+    {
+      "action_ownership": "CONDITIONAL_GEOMETRIC_SCAFFOLD",
+      "candidate_id": "SCALAR_TOPOGRAPHIC_LEVEL_SET",
+      "field_type": "spacetime_or_internal_scalar_level_set",
+      "new_continuous_coefficients": 1,
+      "new_physical_fields": 0,
+      "rank": 6,
+      "regular_local_domain": false,
+      "result": "OPEN_THRESHOLD_AND_PROFILE_NOT_ACTION_SELECTED",
+      "same_action_variation": false,
+      "why": "Normal and shape formulas are available only after an unselected threshold and profile are supplied."
+    },
+    {
+      "action_ownership": "CONDITIONAL_B1_AND_COLLAR_GEOMETRY",
+      "candidate_id": "CORE_BOUNDARY_OR_COLLAR",
+      "field_type": "embedded_boundary_or_collar",
+      "new_continuous_coefficients": 1,
+      "new_physical_fields": 0,
+      "rank": 7,
+      "regular_local_domain": false,
+      "result": "INVALIDATED_AS_CURRENT_ACTION_SELECTOR",
+      "same_action_variation": false,
+      "why": "The embedding, thickness, response coefficients, and physical attachment domain are not selected."
+    },
+    {
+      "action_ownership": "NO_ACTION_OWNED_EDGE_THEOREM",
+      "candidate_id": "SPACETIME_EDGE_TRANSITION",
+      "field_type": "domain_termination",
+      "new_continuous_coefficients": 0,
+      "new_physical_fields": 0,
+      "rank": 8,
+      "regular_local_domain": false,
+      "result": "INVALIDATED_AT_CURRENT_EVIDENCE_BOUNDARY",
+      "same_action_variation": false,
+      "why": "Neither the branch-24 stop nor support-rank loss proves that spacetime ends."
+    }
+  ],
+  "carrier_map": {
+    "certificate": {
+      "inside_sign": "sigma<0",
+      "maximum_response_residual": 6.661338147750939e-16,
+      "minimal_even_quadratic": {
+        "constant": 1.0,
+        "sigma_squared": -4.0
+      },
+      "minimum_interior_derivative": 7.490139097095662e-07,
+      "minimum_interior_localization_weight": 3.8299075022507623e-10,
+      "normal": "n_A=grad_A(sigma)/sqrt(abs(grad(sigma)^2))",
+      "outside_sign": "sigma>0",
+      "regular_level_set": true,
+      "samples": 4097,
+      "sigma_endpoints": [
+        -0.5,
+        0.5
+      ],
+      "transversality_at_zero": 1.2732395447351628,
+      "unique_sampled_zero_index": 2048,
+      "zero_coordinate": 0.7853981633974483,
+      "zero_residual": 1.9490859162596877e-17
+    },
+    "map": "D_A:z->(D_enc={sigma<0},Sigma_enc={sigma=0},X,n,K,h,topology,attachment)",
+    "not_a_terminal_boundary": true,
+    "not_the_event_scalar": true,
+    "not_the_reset_locus": true,
+    "route": "LOCAL_SAME_SPACETIME_ENCLOSURE",
+    "route_selected_by": "smooth_action_scalar_on_one_parent_child_spacetime_domain"
+  },
+  "classification": "BHSM_AE3_RECIPROCAL_JOIN_LOCAL_SAME_SPACETIME_ENCLOSURE",
+  "current_full_field_attachment": {
+    "attachment_rule": "same_action_version_and_same_background_and_same_domain_and_explicit_field_coordinates_and_required_source_dependence",
+    "blocks": {
+      "HS_scalar": {
+        "current_C2_action_owned": false,
+        "current_C2_coordinates_present": false,
+        "historical_reusable_structure": "four_channel_HS_kinetic_response_seed",
+        "mismatch": "physical_HS_direction_and_interacting_source_Hessian_open",
+        "status": "STRUCTURE_REUSED__CURRENT_ACTION_BLOCK_OPEN"
+      },
+      "eta_sigma_response": {
+        "current_C2_action_owned": true,
+        "current_C2_coordinates_present": true,
+        "status": "ATTACHED_ON_RESPONSE_ELIMINATED_RETAINED_DOMAIN"
+      },
+      "fermion": {
+        "current_C2_action_owned": false,
+        "current_C2_coordinates_present": false,
+        "historical_reusable_structure": "bulk_Dirac_representation_family_projectors_and_AE2_reset_domain",
+        "mismatch": "nonzero_family_state_has_no_current_C2_field_action_coordinate",
+        "status": "DOMAIN_AND_STATE_FIBER_ATTACHED__CURRENT_ACTION_BLOCK_OPEN"
+      },
+      "gauge_ghost": {
+        "current_C2_action_owned": false,
+        "current_C2_coordinates_present": false,
+        "historical_reusable_structure": "BRST_quotient_and_common_operator_form",
+        "mismatch": "historical_closed_proper_cycle_zero_source_background",
+        "status": "STRUCTURE_REUSED__CURRENT_ACTION_BLOCK_OPEN"
+      },
+      "geometry": {
+        "current_C2_action_owned": true,
+        "current_C2_coordinates_present": true,
+        "status": "ATTACHED"
+      }
+    },
+    "complete_current_full_field_action_attached": false,
+    "continuous_coefficient_choice_would_fix_this_mismatch": false,
+    "exact_missing_object": "ONE_BACKGROUND-COVARIANT_AE3_C2_OPERATOR_WITH_EXPLICIT_GAUGE-GHOST,_NONZERO_FERMION,_AND_HS_SOURCE_BLOCKS_ON_THE_RESET-GLUED_MAXIMAL_HISTORY_DOMAIN",
+    "historical_common_superdeterminant_promoted_to_current_C2": false,
+    "why_no_direct_sum": "THE_HISTORICAL_COMMON_OPERATOR_IS_A_ZERO-SOURCE_CLOSED-CYCLE_FUNCTIONAL;_THE_ACTUAL_C2_OBJECT_IS_A_POSITIVE-DURATION_MAXIMAL_HISTORY_WITH_NONZERO_UPSTREAM_FAMILY-STATE_INITIAL_DATA"
+  },
+  "dependency_ledgers": {
+    "charged_lepton": {
+      "dependency_closure": [
+        "C2_geometry_history",
+        "eta_join_field",
+        "sigma_localization_scalar",
+        "lambda_sigma_KKT_multiplier",
+        "Sigma_enc_induced_geometry_normal_K",
+        "odd_FR_degree_orientation_topology",
+        "reset_glued_Spin_x_G_SM_bundle",
+        "AE2_reset_lift_U_R",
+        "gauge_connection_and_BRST_trace_domain",
+        "fermion_Green_trace_domain",
+        "F_l",
+        "rank_one_family_projector_Pi_r_n",
+        "P_l=(1-C)(1-sigma_sector)/2",
+        "sector_fermion_field_Psi_r_n",
+        "sector_Noether_current",
+        "Higgs_HS_trace_if_manifestation_operator_is_evaluated",
+        "existing_M_SM_readout_for_charged_lepton"
+      ],
+      "family_module": "F_l",
+      "manifestation_slots": [
+        "L_L",
+        "e_c"
+      ],
+      "mode_labels": [
+        [
+          0,
+          0
+        ],
+        [
+          5,
+          2
+        ],
+        [
+          9,
+          3
+        ]
+      ],
+      "sector_projector": "P_l=(1-C)(1-sigma_sector)/2",
+      "unrelated_fields_required": false
+    },
+    "down": {
+      "dependency_closure": [
+        "C2_geometry_history",
+        "eta_join_field",
+        "sigma_localization_scalar",
+        "lambda_sigma_KKT_multiplier",
+        "Sigma_enc_induced_geometry_normal_K",
+        "odd_FR_degree_orientation_topology",
+        "reset_glued_Spin_x_G_SM_bundle",
+        "AE2_reset_lift_U_R",
+        "gauge_connection_and_BRST_trace_domain",
+        "fermion_Green_trace_domain",
+        "F_d",
+        "rank_one_family_projector_Pi_r_n",
+        "P_d=C(1-sigma_sector)/2",
+        "sector_fermion_field_Psi_r_n",
+        "sector_Noether_current",
+        "Higgs_HS_trace_if_manifestation_operator_is_evaluated",
+        "existing_M_SM_readout_for_down"
+      ],
+      "family_module": "F_d",
+      "manifestation_slots": [
+        "Q_L_lower",
+        "d_c"
+      ],
+      "mode_labels": [
+        [
+          0,
+          0
+        ],
+        [
+          6,
+          3
+        ],
+        [
+          8,
+          2
+        ]
+      ],
+      "sector_projector": "P_d=C(1-sigma_sector)/2",
+      "unrelated_fields_required": false
+    },
+    "up": {
+      "dependency_closure": [
+        "C2_geometry_history",
+        "eta_join_field",
+        "sigma_localization_scalar",
+        "lambda_sigma_KKT_multiplier",
+        "Sigma_enc_induced_geometry_normal_K",
+        "odd_FR_degree_orientation_topology",
+        "reset_glued_Spin_x_G_SM_bundle",
+        "AE2_reset_lift_U_R",
+        "gauge_connection_and_BRST_trace_domain",
+        "fermion_Green_trace_domain",
+        "F_u",
+        "rank_one_family_projector_Pi_r_n",
+        "P_u=C(1+sigma_sector)/2",
+        "sector_fermion_field_Psi_r_n",
+        "sector_Noether_current",
+        "Higgs_HS_trace_if_manifestation_operator_is_evaluated",
+        "existing_M_SM_readout_for_up"
+      ],
+      "family_module": "F_u",
+      "manifestation_slots": [
+        "Q_L_upper",
+        "u_c"
+      ],
+      "mode_labels": [
+        [
+          0,
+          0
+        ],
+        [
+          6,
+          0
+        ],
+        [
+          10,
+          1
+        ]
+      ],
+      "sector_projector": "P_u=C(1+sigma_sector)/2",
+      "unrelated_fields_required": false
+    }
+  },
+  "euler_lagrange_and_interface_variation": {
+    "brown_york": "opposite_normal_internal_GHY/Brown-York contributions_cancel",
+    "canonical_geometry_flux": "[Pi_geometry^n]=0_after_opposite_normal_orientation",
+    "domain": "D_enc={x:sigma(x)<0}",
+    "embedding": "X:Sigma_enc->M_parent_or_child",
+    "eta_trace": "[eta]=0;_[Pi_eta^n]=0",
+    "extrinsic_curvature": "K_ab=h_a^A*h_b^B*nabla_A*n_B",
+    "fermion_flux": "opposite_normal_Green_forms_cancel",
+    "fermion_trace": "smooth_enclosure_trace;_AE2_event_child_trace_remains_Gamma0_child=U_R_Gamma0_event",
+    "fr_sigma_force": "delta_H_FR/delta_sigma=4*J2*K_H_density*sigma/I_H^2;_J2=1/4_on_the_odd_FR_ground_domain",
+    "gauge_trace": "[i_X^*A]=0;_[Pi_A^n]=0",
+    "ghost_BRST": "ghost_and_antighost_pullbacks_are_continuous_and_BRST_domain_is_preserved",
+    "induced_metric": "h_ab=X^*g_ab",
+    "interface": "Sigma_enc={x:sigma(x)=0}",
+    "interpretation": "resolved_internal_material_level_set_not_a_terminal_boundary_or_reset_locus",
+    "lapse_shift_trace": "[N]=0;_[beta_tangent]=0_on_the_single_smooth_domain",
+    "metric_trace": "[h_ab]=0",
+    "noether_balance": "[n_A*J_Noether^A]=0_for_each_owned_smooth_current",
+    "normal": "n_A=grad_A(sigma)/sqrt(abs(grad(sigma)^2))",
+    "normal_traction": "[T_nn]_resolved=0_with_all_profile_stress_included",
+    "response_adjoint_equation": "-div_orbit(lambda_sigma)+delta(H_regular+H_FR)/delta_sigma=0",
+    "response_constraint": "D_s_sigma=W_J[f]/Z_J[f];_sigma(left_pole)=-1/2",
+    "response_first_variation": "delta_C_sigma=D_s(delta_sigma)-delta_W/Z_J+W_J*delta_Z_J/Z_J^2+metric_normal_variation",
+    "route": "LOCAL_SAME_SPACETIME_ENCLOSURE",
+    "sigma_trace": "[sigma]=0;_[lambda_sigma_density]=0",
+    "surface_contact_term": null,
+    "surface_tension_parameter": null
+  },
+  "exact_next_mathematical_object": "ONE_AE3_FULL_FIELD_C2_ACTION_ORACLE_WITH_GEOMETRY_GAUGE_GHOST_FERMION_HS_AND_RESPONSE_MULTIPLIER_BLOCKS;_THEN_EVALUATE_THE_EVENT_CANONICAL_FLUX_AND_COMPLETE_NOETHER_HAMILTONIAN_BALANCE_WITHOUT_ADDING_A_CONTACT_COEFFICIENT",
+  "extension_acceptance_gates": [
+    {
+      "evidence": "The current owner explicitly authorizes a new minimal post-AE2 action version.",
+      "gate_id": "LEC_01",
+      "status": "CLOSED"
+    },
+    {
+      "evidence": "sigma is an existing spacetime scalar; the coefficient-free proper-orbit KKT response makes it action-owned.",
+      "gate_id": "LEC_02",
+      "status": "CLOSED_ON_RETAINED_COHOMOGENEITY_ONE_C2_DOMAIN"
+    },
+    {
+      "evidence": "The normalized reciprocal density is positive in the interior and gives one transverse sigma=0 level set.",
+      "gate_id": "LEC_03",
+      "status": "CLOSED"
+    },
+    {
+      "evidence": "Splitting the same smooth action at sigma=0 derives trace, canonical-flux, traction, Green-form, and Noether matching with no delta contact term.",
+      "gate_id": "LEC_04",
+      "status": "CLOSED_FOR_THE_RESOLVED_ENCLOSURE_INTERFACE"
+    },
+    {
+      "evidence": "A smooth scalar level set inside one spacetime selects LOCAL_SAME_SPACETIME_ENCLOSURE and excludes a collar boundary or spacetime edge.",
+      "gate_id": "LEC_05",
+      "status": "CLOSED"
+    },
+    {
+      "evidence": "Sector-scoped transitive dependency ledgers are explicit, but the retained 98-variable oracle still omits gauge/ghost, fermion, and HS coordinates.",
+      "gate_id": "LEC_06",
+      "status": "CONSTRUCTED_NOT_YET_EVALUATED_IN_ONE_FULL_FIELD_C2_ACTION_ORACLE"
+    },
+    {
+      "evidence": "AE2 reset traces and all tensor-factor family projectors are unchanged and commute exactly.",
+      "gate_id": "LEC_07",
+      "status": "CLOSED"
+    },
+    {
+      "evidence": "Every frozen (sector,slot) rank-one state is a real fiber over the actual C2 history; an upstream BHSM label selects the fiber.",
+      "gate_id": "LEC_08",
+      "status": "CLOSED_AS_A_FIBERED_INSTANTIATION_NOT_A_SPECIES_SELECTION"
+    },
+    {
+      "evidence": "The carrier, topology, reset bundle, projector, and dependency signature transport; the omitted full-field C2 blocks prevent a complete physical balance claim.",
+      "gate_id": "LEC_09",
+      "status": "ALGEBRAIC_AND_SIGNATURE_INHERITANCE_CLOSED__FULL_FIELD_EVENT_BALANCE_OPEN"
+    },
+    {
+      "evidence": "On the inactive even/trivial sector there is no response/odd-FR localization functional and the action is exactly AE2.",
+      "gate_id": "LEC_10",
+      "status": "CLOSED_BY_STRATIFIED_TOPOLOGICAL_DOMAIN"
+    },
+    {
+      "evidence": "No new physical coefficient or scale is introduced; Lambda=1-4 sigma^2 is fixed by the retained action and the minimal even-quadratic conditions.",
+      "gate_id": "LEC_11",
+      "status": "CLOSED"
+    },
+    {
+      "evidence": "All particle, family, representation, projector, current, and topology assets are imported by hash and unchanged.",
+      "gate_id": "LEC_12",
+      "status": "CLOSED"
+    }
+  ],
+  "family_mode_C2_instantiation": {
+    "all_frozen_slots_instantiated_as_real_fibers": true,
+    "base_history": "ACTUAL_RESET_SELECTED_MAXIMAL_C2_HISTORY",
+    "certificate_passed": true,
+    "fiber_rule": "C2_history_times_disjoint_union_over_(sector,slot)_of_Pi_(sector,slot)F_sector",
+    "new_particle_labels": [],
+    "particle_species_selected_by_geometry": false,
+    "reset_unitarity_residual": 0.0,
+    "rows": [
+      {
+        "commutator_residual": 0.0,
+        "idempotency_residual": 0.0,
+        "mode_label": [
+          0,
+          0
+        ],
+        "parent_stop_event_child_enclosure_child_transport": "PRESERVED_ON_THE_C2_FIBER",
+        "projector_rank": 1,
+        "sector": "charged_lepton",
+        "slot": 0
+      },
+      {
+        "commutator_residual": 0.0,
+        "idempotency_residual": 0.0,
+        "mode_label": [
+          5,
+          2
+        ],
+        "parent_stop_event_child_enclosure_child_transport": "PRESERVED_ON_THE_C2_FIBER",
+        "projector_rank": 1,
+        "sector": "charged_lepton",
+        "slot": 1
+      },
+      {
+        "commutator_residual": 0.0,
+        "idempotency_residual": 0.0,
+        "mode_label": [
+          9,
+          3
+        ],
+        "parent_stop_event_child_enclosure_child_transport": "PRESERVED_ON_THE_C2_FIBER",
+        "projector_rank": 1,
+        "sector": "charged_lepton",
+        "slot": 2
+      },
+      {
+        "commutator_residual": 0.0,
+        "idempotency_residual": 0.0,
+        "mode_label": [
+          0,
+          0
+        ],
+        "parent_stop_event_child_enclosure_child_transport": "PRESERVED_ON_THE_C2_FIBER",
+        "projector_rank": 1,
+        "sector": "up",
+        "slot": 0
+      },
+      {
+        "commutator_residual": 0.0,
+        "idempotency_residual": 0.0,
+        "mode_label": [
+          6,
+          0
+        ],
+        "parent_stop_event_child_enclosure_child_transport": "PRESERVED_ON_THE_C2_FIBER",
+        "projector_rank": 1,
+        "sector": "up",
+        "slot": 1
+      },
+      {
+        "commutator_residual": 0.0,
+        "idempotency_residual": 0.0,
+        "mode_label": [
+          10,
+          1
+        ],
+        "parent_stop_event_child_enclosure_child_transport": "PRESERVED_ON_THE_C2_FIBER",
+        "projector_rank": 1,
+        "sector": "up",
+        "slot": 2
+      },
+      {
+        "commutator_residual": 0.0,
+        "idempotency_residual": 0.0,
+        "mode_label": [
+          0,
+          0
+        ],
+        "parent_stop_event_child_enclosure_child_transport": "PRESERVED_ON_THE_C2_FIBER",
+        "projector_rank": 1,
+        "sector": "down",
+        "slot": 0
+      },
+      {
+        "commutator_residual": 0.0,
+        "idempotency_residual": 0.0,
+        "mode_label": [
+          6,
+          3
+        ],
+        "parent_stop_event_child_enclosure_child_transport": "PRESERVED_ON_THE_C2_FIBER",
+        "projector_rank": 1,
+        "sector": "down",
+        "slot": 1
+      },
+      {
+        "commutator_residual": 0.0,
+        "idempotency_residual": 0.0,
+        "mode_label": [
+          8,
+          2
+        ],
+        "parent_stop_event_child_enclosure_child_transport": "PRESERVED_ON_THE_C2_FIBER",
+        "projector_rank": 1,
+        "sector": "down",
+        "slot": 2
+      }
+    ],
+    "upstream_BHSM_state_label_is_initial_data": true
+  },
+  "inputs": {
+    "artifacts/BHSM_aether_FR_zero_current_child_v15_37.json": "1F0A705B2691698D78366D443C44C14DB36B14AA78C231E5A28FD0FE0DA0BAF3",
+    "artifacts/BHSM_aether_complete_child_localized_fiber_v15_34.json": "AE458FC141E3A7EFC05FAFB2ABAED34E37906843E8BB86959EA3414921860E3D",
+    "artifacts/BHSM_aether_eta_sigma_response_constraint_v15_40.json": "59A3286F6BB62C8A7BB18F80FAF33733487B65F0F44C0525628470CD866EBAAB",
+    "artifacts/BHSM_aether_hybrid_standard_model_bundle_v15_53.json": "951098D595DFD4DABBDBAB6C063A0650C491337CC3C0B3D26F5D4FD124F1FB25",
+    "artifacts/BHSM_aether_lorentzian_child_galerkin_v15_44.json": "69BF4820A44963082B2FA5153B941E17AC41DB4F9F87661F2A2B4A0880DA474D",
+    "artifacts/BHSM_aether_material_skin_variation_v15_15.json": "292B4610F5B836BD8123C4ED48BA66C5790BF2E8CE630C37CC5683579EF311AA",
+    "artifacts/BHSM_aether_momentum_balanced_shear_data_v15_43.json": "ACFCA119308B788E28DB274DA9A6058C520915FE4F6E3A544F8959BB2BCE6240",
+    "artifacts/BHSM_aether_n3_lorentzian_child_cauchy_correspondence_v17_88.json": "42859E45DC43E615F4109312DA727FF8BC5BFB705B62A8D548CAF6CD86BDB0E2",
+    "artifacts/BHSM_aether_response_constrained_child_galerkin_v15_41.json": "93638026EC9450A281F24C41EE937040B19024FAABE6A7ADA274996FD1EF0182",
+    "artifacts/BHSM_generation_projector_action_attachment_v8_2.json": "ECA91239E1C9C471F3A13602FBE28804D8979A1AE44E50621C18FD0B18106E58",
+    "artifacts/action_extension/BHSM_ACTION_AE2_GLOBAL_SPIN_RESET_ACTION.json": "4C756145A9E303F6E4F7F9536CF5639957D010C1A97AF6BE9299830C549B82DC",
+    "artifacts/action_extension/BHSM_POST_AE2_LOCALIZATION_CARRIER_EXTENSION_CONTRACT.json": "0FD96D9EDF9E0D523E883B847332B48F4FA7E767D3222173A21264D8EDF389A3",
+    "artifacts/flagship_integration/BHSM_N12_C2_CLASS_REDUCED_MAXIMAL_RESPONSE.json": "DA82F5036004E115A13E53B369B51A92FD9A21B81FFEF44A0656C4DB11FF38B8",
+    "artifacts/flagship_integration/BHSM_N12_GATE7_LOCALIZATION_CARRIER_KILL_SCREEN.json": "84292D8168A8B67E042887CF660B86DBE53EF3AF6FB1B73B33D50A88223B4D56",
+    "artifacts/n12_continuum_majorant_effectiveness/BHSM_CONTINUUM_EVENT_CHILD_CERTIFICATE.json": "429FDDAE87C257F27DE419FE8903493470CDB8F56F344F6B0BD6DC889C17F350",
+    "src/bhsm/interface/ae3_reciprocal_join_localization.py": "8A2C6461B04D4CB3B789B2D5066DE789C7639CC718F0E4D9C11443BC35D46E6B",
+    "src/bhsm/interface/aether_jax_full_local_action.py": "A013B2EE3E9ED05A314E436734185F993CB38C4C159A392930BC5FCF086EBBCC"
+  },
+  "nonlinear_completion": {
+    "actual_C2_continuum_child_available": true,
+    "analytic_profile": "sigma_0=-1/2+2chi/pi-sin(4chi)/(2pi)",
+    "finite_localization_support": true,
+    "historical_derived_surface_separation_reached": true,
+    "historical_finite_Galerkin_spatial_Euler_projection_solved": true,
+    "historical_nonlinear_Lorentzian_encapsulation_trajectory_integrated": true,
+    "historical_persistent_child_derived": false,
+    "historical_response_constrained_both_ADM_constraints_solved": true,
+    "historical_response_constrained_functional_written": true,
+    "nontrivial_profile": true,
+    "scope": "retained_cohomogeneity_one_C2_action_domain",
+    "unique_regular_interface": true,
+    "unrestricted_nonround_full_field_BVP_solved": false
+  },
+  "physical_encapsulation_rows": {
+    "PEI_01": true,
+    "PEI_02": true,
+    "PEI_03": true,
+    "PEI_04": true,
+    "PEI_05": false,
+    "PEI_06": false,
+    "PEI_07": false,
+    "PEI_08": true,
+    "PEI_09": false,
+    "PEI_10": true,
+    "PEI_11": true
+  },
+  "physical_transport_square": {
+    "certificate_passed": true,
+    "claim": "THE_AE2_RESET_LIFT,_EVERY_FROZEN_FAMILY_PROJECTOR,_THE_AE3_ENCLOSURE_RESTRICTION,_AND_THE_SMOOTH_LOCALIZATION_WEIGHT_COMMUTE_BECAUSE_THEY_ACT_ON_SEPARATE_TENSOR_FACTORS",
+    "enclosure_restriction": "P_D=multiplication_by_1_{sigma<0}",
+    "hilbert_factorization": "L2(Q)_carrier tensor (Spin x G_SM) tensor F_r",
+    "inside_sample_count": 33,
+    "interface_sample_index": 32,
+    "interface_sample_sigma": -1.9490859162596877e-17,
+    "reset_carrier_commutator": 0.0,
+    "reset_restriction_commutator": 0.0,
+    "restriction_idempotency_residual": 0.0,
+    "rows": [
+      {
+        "carrier_family_commutator": 0.0,
+        "reset_family_commutator": 0.0,
+        "restriction_family_commutator": 0.0,
+        "sector": "charged_lepton",
+        "slot": 0
+      },
+      {
+        "carrier_family_commutator": 0.0,
+        "reset_family_commutator": 0.0,
+        "restriction_family_commutator": 0.0,
+        "sector": "charged_lepton",
+        "slot": 1
+      },
+      {
+        "carrier_family_commutator": 0.0,
+        "reset_family_commutator": 0.0,
+        "restriction_family_commutator": 0.0,
+        "sector": "charged_lepton",
+        "slot": 2
+      },
+      {
+        "carrier_family_commutator": 0.0,
+        "reset_family_commutator": 0.0,
+        "restriction_family_commutator": 0.0,
+        "sector": "up",
+        "slot": 0
+      },
+      {
+        "carrier_family_commutator": 0.0,
+        "reset_family_commutator": 0.0,
+        "restriction_family_commutator": 0.0,
+        "sector": "up",
+        "slot": 1
+      },
+      {
+        "carrier_family_commutator": 0.0,
+        "reset_family_commutator": 0.0,
+        "restriction_family_commutator": 0.0,
+        "sector": "up",
+        "slot": 2
+      },
+      {
+        "carrier_family_commutator": 0.0,
+        "reset_family_commutator": 0.0,
+        "restriction_family_commutator": 0.0,
+        "sector": "down",
+        "slot": 0
+      },
+      {
+        "carrier_family_commutator": 0.0,
+        "reset_family_commutator": 0.0,
+        "restriction_family_commutator": 0.0,
+        "sector": "down",
+        "slot": 1
+      },
+      {
+        "carrier_family_commutator": 0.0,
+        "reset_family_commutator": 0.0,
+        "restriction_family_commutator": 0.0,
+        "sector": "down",
+        "slot": 2
+      }
+    ],
+    "smooth_localization_map": "L_sigma=multiplication_by_Lambda(sigma)",
+    "smooth_localization_map_is_a_projector": false,
+    "time_evolution_intertwiner_claimed": false
+  },
+  "remaining_kernels": {
+    "KERNEL_A": "CLOSED_ON_RETAINED_C2_ACTION_DOMAIN",
+    "KERNEL_B": "RESOLVED_INTERFACE_CLOSED__FULL_FIELD_EVENT_JUNCTION_AND_NOETHER_HAMILTONIAN_BALANCE_OPEN",
+    "KERNEL_C": "SIGNATURE_AND_FIBER_INHERITANCE_CLOSED__DEPENDENCY_CLOSED_FULL_FIELD_ACTION_EVALUATION_OPEN",
+    "KERNEL_D": "CLOSED_AS_FIBERED_C2_INSTANTIATION_WITH_UPSTREAM_LABEL_PRESERVED"
+  },
+  "schema_version": 1,
+  "selected_candidate": "RECIPROCAL_JOIN_ETA_SIGMA_RESPONSE",
+  "status": "ACTION_OWNED_LOCALIZATION_CARRIER_DERIVED_ON_THE_RETAINED_C2_ACTION_DOMAIN__RESOLVED_INTERFACE_AND_FAMILY_FIBER_TRANSPORT_CONSTRUCTED__FULL_FIELD_EVENT_BALANCE_OPEN",
+  "systems_integration_puzzle": {
+    "integration_key": [
+      "action_version",
+      "background_id",
+      "variational_domain",
+      "state_factorization",
+      "scale_and_renormalization",
+      "provenance_hashes"
+    ],
+    "section_updates_allowed_when_locally_compatible": true,
+    "sections": {
+      "collisions_and_decays": {
+        "fitted_pieces": [
+          "same_action_S2_S3_S4_interfaces",
+          "LSZ_normalization_engine",
+          "tree_loop_decay_and_collision_kinematics",
+          "channel_and_optical_theorem_ledgers"
+        ],
+        "open_join": "current_physical_spectrum_vertices_complete_channels_and_renormalized_amplitudes",
+        "prediction_emitted": false
+      },
+      "gravity_and_cosmology": {
+        "fitted_pieces": [
+          "retained_Einstein_eta_geometry_action",
+          "historical_boundary_gravity_and_cosmological_parent_components"
+        ],
+        "open_join": "one_current_action_background_and_scale_connecting_local_enclosure_to_gravity_dark_sectors_expansion_and_CMB",
+        "prediction_emitted": false
+      },
+      "localization_enclosure": {
+        "fitted_pieces": [
+          "AE3_eta_sigma_response_carrier",
+          "regular_sigma_zero_interface",
+          "resolved_same_action_interface_laws",
+          "historical_nonlinear_surface_separation_witnesses"
+        ],
+        "open_join": "current_interacting_full_field_C2_action"
+      },
+      "muon_magnetic_moment": {
+        "fitted_pieces": [
+          "charged_lepton_family_slot_1_mode_label_(5,2)",
+          "existing_muon_manifestation_readout",
+          "fail_closed_LSZ_loop_vertex_F2_zero_engine"
+        ],
+        "open_join": "current_AE3_muon_simple_pole_plus_complete_renormalized_electromagnetic_vertex_and_Ward_identity",
+        "prediction_emitted": false
+      },
+      "new_particle_and_phenomenon_forecasts": {
+        "fitted_pieces": [
+          "spectral_density_and_forecast_engines",
+          "interval_and_claim_firewalls"
+        ],
+        "open_join": "current_full_quadratic_operator_physical_saddle_and_outward_uncertainty",
+        "prediction_emitted": false
+      },
+      "particle_identity_transport": {
+        "fitted_pieces": [
+          "Spin_x_G_SM_reset_bundle",
+          "three_family_projectors_per_charged_sector",
+          "all_nine_C2_state_fibers",
+          "reset_projector_enclosure_commuting_square",
+          "existing_SM_manifestation_readout"
+        ],
+        "open_join": "action_selected_returned_mass_and_pole_operators"
+      }
+    },
+    "serial_gate_order_required": false,
+    "systems_completion_rule": "ALL_CLAIMED_SECTION_JOINS_SHARE_ONE_COMPATIBLE_ACTION_BACKGROUND_DOMAIN_SCALE_AND_PROVENANCE_AND_THE_COMPOSED_MAPS_COMMUTE"
+  },
+  "validation": {
+    "AE2_reset_preserved": true,
+    "C2_history_is_actual": true,
+    "C2_sigma_response_trace_exists": true,
+    "SM_bundle_unchanged": true,
+    "all_family_fibers_commute_with_reset": true,
+    "carrier_regular": true,
+    "carrier_transverse": true,
+    "continuum_child_is_certified": true,
+    "enclosure_transport_square_commutes": true,
+    "family_projectors_unchanged": true,
+    "full_field_balance_not_false_promoted": true,
+    "historical_localized_lorentzian_trajectory_exists": true,
+    "historical_response_child_constraints_are_solved": true,
+    "historical_response_child_functional_is_executable": true,
+    "historical_zero_source_cycle_not_false_attached_to_current_C2": true,
+    "localized_Hopf_weight_is_historical": true,
+    "no_SM_fit": true,
+    "no_new_continuous_coefficient": true,
+    "no_new_particle_spectrum": true,
+    "no_spacetime_edge_claim": true,
+    "owner_authorization_supersedes_contract_authorization_gate": true,
+    "resolved_material_interface_laws_are_historical": true,
+    "response_constraint_is_historical": true,
+    "systems_integration_is_not_artificially_serialized": true,
+    "unchanged_AE2_kill_screen_preserved": true,
+    "zero_current_FR_ground_state_is_historical": true
+  },
+  "validation_passed": true
+}

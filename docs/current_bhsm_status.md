@@ -1,5 +1,88 @@
 # Current BHSM status
 
+## Authoritative Gate-7 identification frontier: BHSM-AE-3 carrier derived
+
+Work is organized as a systems-integration puzzle, not a serial gate ladder.
+Localization, particle identity, the full field action, muon `F2(0)`,
+collisions, spectral forecasts, and gravity/cosmology may each receive a valid
+piece whenever its local assumptions match. A composed physical claim is
+promoted only when the interfaces it uses share one action, background,
+domain, scale/renormalization, and provenance chain.
+
+The owner-authorized `BHSM-AE-3.0.0` action-domain extension promotes the
+reciprocal-join eta-to-sigma profile already frozen in the retained N12 action
+into a coefficient-free response constraint. The existing scalar
+
+```text
+sigma_0(chi)=-1/2+2chi/pi-sin(4chi)/(2pi)
+```
+
+is strictly increasing in the open orbit interval and has one transverse
+zero at `chi=pi/4`, with `d sigma/d chi=4/pi`. It therefore supplies the
+action-owned map
+
+```text
+D_enc={sigma<0}, Sigma_enc={sigma=0},
+n=grad(sigma)/|grad(sigma)|, h=X^*g, K=X^*(nabla n).
+```
+
+The selected route is `LOCAL_SAME_SPACETIME_ENCLOSURE`. The interface is a
+resolved internal material level set, not the branch-24 state-space stop, the
+AE2 reset locus, a terminal boundary, or a spacetime edge. Splitting the same
+smooth action at `sigma=0` derives continuous field traces, opposite-normal
+canonical-flux and Green-form cancellation, resolved traction balance, and no
+independent surface tension or contact coefficient.
+
+The localization weight `Lambda=1-4 sigma^2` is retained exactly. It is also
+the unique even polynomial of degree at most two with unit seam normalization
+and zeros at both material vacua. The odd-FR zero-current ground domain keeps
+`<J>=0`, `<J^2>=1/4`, and `H_FR=1/(8 I_H)`. No propagating field,
+continuous coefficient, scale, particle label, or Standard Model fit is
+added.
+
+The actual C2 history is now lifted to the disjoint frozen state fiber over
+all three charged sectors and all three family slots. The geometry does not
+choose a particle species; an upstream BHSM-native `(sector,slot)` state is
+initial data. For all nine fibers, the reset lift, rank-one family projector,
+enclosure restriction `1_{sigma<0}`, and smooth carrier multiplication
+`Lambda(sigma)` commute exactly on their separate tensor factors. Thus the
+parent-to-stop-to-event-child-to-enclosure algebraic transport square
+preserves the BHSM state and its existing downstream manifestation map. This
+does not assert commutation with the still-missing interacting C2 Hamiltonian.
+
+The recovered nonlinear chain is stronger than a profile-only witness: it
+contains one response-constrained functional, a solved finite Galerkin
+spatial Euler projection, both ADM initial-data constraints, and an integrated
+Lorentzian trajectory reaching surface separation. These are retained at
+their historical claim strength; they do not by themselves prove a persistent
+full-field particle on the current C2 background.
+
+- `ACTION_OWNED_LOCALIZATION_CARRIER_DERIVED = TRUE`
+- `ACTION_OWNED_PHYSICAL_LOCALIZATION_AND_ENCLOSURE_DERIVED = TRUE`
+- `BHSM_NATIVE_FAMILY_MODE_STATE_TRANSPORTED_THROUGH_LOCALIZATION = TRUE`
+- `EXISTING_SM_MANIFESTATION_READOUT_PRESERVED = TRUE`
+- `PHYSICAL_ENCAPSULATION_IDENTIFIED = FALSE`
+- `FULL_BHSM_COMPLETE = FALSE`
+
+The remaining obstruction is no longer carrier selection. The retained N12
+oracle still has geometry coordinates only. One AE3 C2 action oracle must
+contain geometry, response multiplier, gauge/ghost, fermion, and HS blocks on
+the same state before the complete event canonical flux, contact term, and
+parent/event/child Noether--Hamiltonian balance can be evaluated.
+
+The historical common gauge--ghost--Weyl--HS determinant is not that oracle:
+it is a zero-source closed-proper-cycle functional, whereas the current C2
+object is a positive-duration maximal history carrying nonzero upstream
+family-state initial data. Its BRST, representation, and response structures
+remain reusable, but the background/domain/source mismatch cannot be repaired
+by choosing a coefficient.
+
+Exact next object:
+`ONE_AE3_FULL_FIELD_C2_ACTION_ORACLE_WITH_GEOMETRY_GAUGE_GHOST_FERMION_HS_AND_RESPONSE_MULTIPLIER_BLOCKS;_THEN_EVALUATE_THE_EVENT_CANONICAL_FLUX_AND_COMPLETE_NOETHER_HAMILTONIAN_BALANCE_WITHOUT_ADDING_A_CONTACT_COEFFICIENT`.
+
+Evidence: [`AE3 theorem`](../theory/ae3_reciprocal_join_localization_enclosure.md)
+and [`AE3 machine certificate`](../artifacts/action_extension/BHSM_ACTION_AE3_RECIPROCAL_JOIN_LOCALIZATION.json).
+
 ## Authoritative Gate-7 identification frontier: unchanged-AE2 carrier audit complete
 
 The current owner is no longer another strengthening of the canonical
