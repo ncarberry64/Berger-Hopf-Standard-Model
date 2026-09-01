@@ -171,6 +171,9 @@ The coexact gauge domain and normalization boundary are recorded in the
 The continuous-frequency result and its unrenormalized mismatch are recorded
 in the [`gauge/ghost Hessian theorem`](../theory/ae3_c2_lorentzian_gauge_ghost_hessian.md)
 and [`machine certificate`](../artifacts/action_extension/BHSM_AE3_C2_LORENTZIAN_GAUGE_GHOST_FREQUENCY_HESSIAN.json).
+The finite action/domain screen selects the two-sided parent Calderón route;
+see the [`resolution theorem`](../theory/ae3_c2_gauge_mismatch_resolution.md)
+and [`route certificate`](../artifacts/action_extension/BHSM_AE3_C2_GAUGE_MISMATCH_RESOLUTION_SCREEN.json).
 The same-domain neutral weak current is recorded in the
 [`SU(2)L neutral-source theorem`](../theory/ae3_c2_coexact_su2l_neutral_source_jet.md)
 and [`J3 certificate`](../artifacts/action_extension/BHSM_AE3_C2_COEXACT_SU2L_NEUTRAL_SOURCE_JET.json).

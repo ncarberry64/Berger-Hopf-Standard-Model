@@ -1,5 +1,19 @@
 # Gate Ledger
 
+## Current AE3 C2 gauge-mismatch resolution screen
+
+- The unique coefficient-free surviving calculation route is the two-sided
+  parent Calderón Schur complement at the internal `sigma=0` interface.
+- The derived inside operator must be combined with the missing actual
+  current-C2 maximal-exterior gauge/ghost Calderón operator.
+- AE3's surface contact remains exactly zero; the induced exterior DtN term
+  is nonlocal parent elimination, not an added boundary action.
+- Free intrinsic Yang--Mills, conditional v14.67 Wentzell data, N3-only
+  dynamic templates, open relative-spectral coefficients, singular walls,
+  and the already-failed one-sided trace are not promoted.
+- Artifact: `artifacts/action_extension/BHSM_AE3_C2_GAUGE_MISMATCH_RESOLUTION_SCREEN.json`.
+
+
 ## Current AE3 C2 neutral SU(2)L source jet
 
 - The same lowest-Weyl coexact source construction as `J_Y` now attaches
