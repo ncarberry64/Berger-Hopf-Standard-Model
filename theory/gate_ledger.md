@@ -3868,3 +3868,27 @@ Exact next object:
   replay the exact field and certify continuous shadowing.
 - Gate 7 remains `ACTIVE`; Gate 8 is `LOCKED`; chord 3 remains
   `UNAUTHORIZED`; `FULL_BHSM_COMPLETE=FALSE`.
+
+## AE3.1 current-C2 composite Lorentzian kinetic pole
+
+- The external-momentum second variation of the same unit-vertex current-`C2`
+  fermion determinant gives the universal one-pair pole
+  `p_E^2/(16*pi^2*epsilon_UV)`.
+- Reusing the valid v16.02 pairing trace gives the three-channel Lorentzian
+  principal symbol
+  `diag(9,9,3)*(-omega^2+lambda)/(16*pi^2*epsilon_UV)` in the
+  `(up,down,charged-lepton)` gauge-HS basis.
+- The local pole has matching temporal/spatial residue and proves an induced
+  derivative principal part. Its finite coefficient remains state- and
+  subtraction-dependent, and its equal up/down entries select no broken
+  direction.
+- The v15.77 object `-partial chi_LR/partial(m^2)` is a static mass-parameter
+  derivative, not an external-momentum kinetic derivative. Its numerical value
+  is not promoted, and the globally failed EC gap route is not revived.
+- Scientific milestone:
+  `CURRENT_C2_COMPOSITE_LORENTZIAN_PRINCIPAL_POLE_DERIVED`.
+- Exact next owner: derive the finite renormalized zero-momentum and derivative
+  blocks of the complete three-channel Lorentzian HS Hessian from one selected
+  current-`C2` action domain, then test for a nonzero broken eigenmode.
+- Physical Higgs direction, canonical Yukawas, quark poles, and full BHSM
+  completion remain open.

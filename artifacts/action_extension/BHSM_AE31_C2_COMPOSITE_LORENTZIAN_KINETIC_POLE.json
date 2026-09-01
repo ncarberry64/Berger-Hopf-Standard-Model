@@ -1,0 +1,170 @@
+{
+  "Clifford_trace_witness": {
+    "Euclidean_Clifford_residual": 0.0,
+    "expected_2q_dot_q_plus_p": 6.640000000000001,
+    "residual": 0.0,
+    "trace_imaginary": 0.0,
+    "trace_real": 6.640000000000001
+  },
+  "FULL_BHSM_COMPLETE": false,
+  "action_version": "BHSM-AE-3.1.0",
+  "artifact": "BHSM_AE31_C2_COMPOSITE_LORENTZIAN_KINETIC_POLE",
+  "chiral_bubble_principal_part": {
+    "Clifford_trace": "tr[P_L*slash(q)*P_R*slash(q+p)]=2*q_dot_(q+p)",
+    "effective_action": "Gamma_fermion=-Tr_log(D_C2+H*P_R+Hdagger*P_L)",
+    "finite_part_selected": false,
+    "mass_quadratic_part_selected": false,
+    "numerator_identity": "2*q_dot_(q+p)=q^2+(q+p)^2-p^2",
+    "one_pair_Euclidean_derivative_pole": "+p_E^2/[16*pi^2*epsilon_UV]",
+    "one_pair_pole_coefficient_without_epsilon": 0.006332573977646111,
+    "quadratic_variation": "Gamma_HdaggerH^(2)(p)=-integral_q_2*q_dot_(q+p)/[q^2*(q+p)^2]",
+    "scaleless_tadpoles_in_dimensional_regularization": 2
+  },
+  "claim_boundary": {
+    "CURRENT_C2_CANONICAL_YUKAWA_RESIDUES_DERIVED": false,
+    "CURRENT_C2_COMPOSITE_DERIVATIVE_TERM_LOCALLY_INDUCED": true,
+    "CURRENT_C2_COMPOSITE_GAP_DERIVED": false,
+    "CURRENT_C2_COMPOSITE_LORENTZIAN_PRINCIPAL_POLE_DERIVED": true,
+    "CURRENT_C2_COMPOSITE_TEMPORAL_SPATIAL_POLE_RESIDUE_MATCH_DERIVED": true,
+    "CURRENT_C2_FINITE_COMPOSITE_KINETIC_RESIDUE_DERIVED": false,
+    "CURRENT_C2_PHYSICAL_SINGLE_HIGGS_DIRECTION_SELECTED": false,
+    "CURRENT_C2_RENORMALIZED_COMPOSITE_HESSIAN_DERIVED": false,
+    "FULL_BHSM_COMPLETE": false,
+    "HISTORICAL_MINUS_DCHI_DM2_USED_AS_KINETIC_RESIDUE": false,
+    "MEASURED_MASS_USED": false,
+    "particle_spectrum_rebuilt": false
+  },
+  "classification": "AE31_CURRENT_C2_COMPOSITE_LORENTZIAN_KINETIC_POLE",
+  "combined_composite_Hessian_structure": {
+    "bare_inverse_curvature_over_G_C2": [
+      "5/14",
+      "5/13",
+      "5/3"
+    ],
+    "channel_basis": [
+      "up",
+      "down",
+      "charged_lepton"
+    ],
+    "derivative_pole_relative_to_up": [
+      "1",
+      "1",
+      "1/3"
+    ],
+    "finite_masslike_Hessian_selected": false,
+    "low_momentum_Hessian": "H_HS=G_C2^(-1)*diag(5/14,5/13,5/3)-Pi_0,ren[C]+diag(9,9,3)*(-omega^2+lambda)/[16*pi^2*epsilon_UV]+...",
+    "physical_broken_eigenvector_selected": false,
+    "pole_alone_selects_up_down_direction": false,
+    "universal_derivative_pole_multiplicities": [
+      9,
+      9,
+      3
+    ],
+    "up_down_bare_curvature_degenerate": false,
+    "up_down_derivative_pole_degenerate": true
+  },
+  "current_C2_Lorentzian_principal_symbol_example": {
+    "Hessian_principal_pole": [
+      [
+        0.03918280148668531,
+        0.0,
+        0.0
+      ],
+      [
+        0.0,
+        0.03918280148668531,
+        0.0
+      ],
+      [
+        0.0,
+        0.0,
+        0.013060933828895104
+      ]
+    ],
+    "Lorentzian_covector_square": 0.6875,
+    "action_version": "BHSM-AE-3.1.0",
+    "channel_basis": [
+      "up",
+      "down",
+      "charged_lepton"
+    ],
+    "current_C2_local_Lorentzian_cone_inherited_from_Dirac_action": true,
+    "external_frequency": 0.25,
+    "finite_current_C2_covariance_selected": false,
+    "formula": "H_HS,sing=(1/[16*pi^2*epsilon_UV])*diag(9,9,3)*(-omega^2+lambda_scalar)",
+    "frequency_domain": "CONTINUOUS_REAL_OMEGA__NOT_PERIODIC_CYCLE_MODE",
+    "metric": "h=-d_tau^2+R4(tau)^2*dOmega3^2",
+    "multiplicity_source": "REUSED_V16_02_RANK16_PAIRING_TRACE",
+    "pairing_multiplicities": [
+      9,
+      9,
+      3
+    ],
+    "pole_coordinate_epsilon_uv": 1.0,
+    "pole_residue_matrix": [
+      [
+        0.056993165798815,
+        0.0,
+        0.0
+      ],
+      [
+        0.0,
+        0.056993165798815,
+        0.0
+      ],
+      [
+        0.0,
+        0.0,
+        0.018997721932938333
+      ]
+    ],
+    "same_temporal_and_spatial_residue_per_channel": true,
+    "spatial_scalar_Laplacian_eigenvalue": 0.75
+  },
+  "exact_remaining_owner": {
+    "closed": [
+      "unit_vertex_three_channel_external_momentum_bubble",
+      "continuous_frequency_current_C2_Lorentzian_principal_symbol",
+      "universal_positive_Euclidean_derivative_pole",
+      "same_temporal_spatial_residue_at_the_local_pole",
+      "historical_mass_derivative_not_equal_to_kinetic_derivative"
+    ],
+    "cutoff_fitted_residue_or_old_EC_number_allowed": false,
+    "next_operator": "RENORMALIZED_FULL_THREE_CHANNEL_LORENTZIAN_HS_HESSIAN_WITH_FINITE_PI_0_AND_PI_P2_FROM_ONE_CURRENT_C2_ACTION_DOMAIN",
+    "still_required": [
+      "action_selected_finite_current_C2_covariance",
+      "parent_owned_finite_derivative_subtraction_or_boundary_matching_rule",
+      "renormalized_zero_momentum_composite_Hessian",
+      "nonzero_gap_and_physical_broken_channel_eigenvector"
+    ]
+  },
+  "historical_mass_derivative_adjudication": {
+    "current_object": "partial_(external_p^2)_Gamma_HdaggerH^(2)(p)_at_p=0",
+    "current_variation": "LORENTZIAN_EXTERNAL_MOMENTUM_TWO_POINT_DERIVATIVE",
+    "global_EC_eliminated_action_used": false,
+    "historical_gap_branch_revived": false,
+    "historical_numeric_Z_H_promoted_to_current_C2_kinetic_residue": false,
+    "historical_object": "v15.77_Z_H=-partial_chi_LR/partial_(m^2)",
+    "historical_variation": "STATIC_SUSCEPTIBILITY_MASS_PARAMETER_DERIVATIVE",
+    "same_functional_derivative": false,
+    "scientific_conclusion": "THE_OLD_MINUS_D_CHI_D_M2_NUMBER_IS_NOT_A_WAVEFUNCTION_NORMALIZATION;_THE_CURRENT_C2_EXTERNAL_MOMENTUM_POLE_IS_DERIVED_INSTEAD",
+    "valid_historical_pairing_multiplicities_reused": true
+  },
+  "inputs": {
+    "artifacts/BHSM_aether_hs_channel_normalization_v16_02.json": "294C95A7EAFA39259F31432CB48912924390DB907C178EEB91CDBE3BEF6DD2E1",
+    "artifacts/BHSM_aether_nonlinear_cartan_gap_branch_v15_77.json": "6F3A641016EFD25945F9FAF5FC1CBE77886DE1335A9959B164733FB5EA12EE3C",
+    "artifacts/action_extension/BHSM_AE31_C2_GAUGE_COMPOSITE_HS_ACTION.json": "4539C4DBAA9A0CC4A7204BF3FF60A960B6571D927E07C16CBF431BC7465F0020",
+    "artifacts/action_extension/BHSM_AE31_C2_LEPTON_COMPOSITE_MIXING_STRUCTURE.json": "B162BF1F0CB5330AD4DA20E566441C894EB0A06F2341D33974D6BDFF22EF979B",
+    "artifacts/action_extension/BHSM_AE31_C2_LR_SUSCEPTIBILITY_FACTORIZATION.json": "88AA2372559C5EEAD71F69BAEDAF211F6455F6C413D8C8404A45FFA2131F026F",
+    "src/bhsm/interface/ae31_c2_composite_lorentzian_kinetic_pole.py": "BBDFE94024F5A0475124F2CB2796B575AF17DB3BA0306A38606ACB88349E0163"
+  },
+  "validation": {
+    "continuous_frequency_Lorentzian_pole_derived": true,
+    "historical_pairing_trace_only_reused": true,
+    "mass_and_momentum_derivatives_separated": true,
+    "no_finite_gap_Yukawa_or_mass_overclaim": true,
+    "pole_does_not_select_broken_direction": true,
+    "same_action_unit_vertices_reused": true
+  },
+  "validation_passed": true
+}
