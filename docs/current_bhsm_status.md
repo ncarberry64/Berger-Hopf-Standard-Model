@@ -289,6 +289,29 @@ native variable `z`; it is not promoted to physical `p^2`.
 - `CURRENT_C2_PHYSICAL_CHARGED_LEPTON_POLES_DERIVED = FALSE`
 - `UP_DOWN_ACTION_PREFACTORS_DERIVED = FALSE`
 
+The AE3.1 intrinsic Higgs action now supplies the current-C2 broken neutral
+connection Hessian. In the unfitted connection coordinates
+`(W3_hat=g2 W3,B_hat=g1 B)`, it is
+
+```text
+H_neutral=(v_BH^2/4) [[1,-1],[-1,1]].
+```
+
+It has exactly one null vector `(1,1)/sqrt(2)`, selected by
+`Q_em=T3+Y_BH`, and a positive orthogonal broken curvature. The already
+attached same-domain fields and sources rotate together to structural pairs
+`(A_Q,Z_H)` and `(J3+JY,J3-JY)`. No gauge coupling, residue, alpha, or mixing
+angle is inserted.
+
+This does not promote a physical photon. The current gauge/ghost Hessian's
+temporal/spatial Lorentzian residue mismatch still prevents canonical field
+normalization, a photon pole, and its Ward identity.
+
+- `CURRENT_C2_NEUTRAL_CONNECTION_HESSIAN_DERIVED = TRUE`
+- `CURRENT_C2_UNIQUE_QEM_CONNECTION_NULL_DIRECTION_DERIVED = TRUE`
+- `CURRENT_C2_STRUCTURAL_JQ_CURRENT_DERIVED = TRUE`
+- `CURRENT_C2_PHYSICAL_PHOTON_DERIVED = FALSE`
+
 The previously derived coefficient-free first-order Einstein--Cartan
 completion has now been formulated and tested as
 `BHSM-AE-3.2.0-CANDIDATE` on current C2. It would replace the Levi-Civita

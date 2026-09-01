@@ -1,5 +1,21 @@
 # Gate Ledger
 
+## AE3.1 current-C2 neutral connection Hessian
+
+- The AE3.1 intrinsic Higgs saddle has `T3=-1/2`, `Y_BH=+1/2` on its
+  selected component, so `Q_em=T3+Y_BH` annihilates the vacuum.
+- In connection coordinates `(W3_hat=g2 W3,B_hat=g1 B)`, the action-derived
+  neutral Hessian is `(v_BH^2/4)[[1,-1],[-1,1]]` with one exact null vector
+  `(1,1)/sqrt(2)` and one positive broken vector.
+- The already attached same-C2 sources rotate with the fields:
+  `J_Q=(J3+JY)/sqrt(2)` and `J_H=(J3-JY)/sqrt(2)`.
+- No `g2`, `g1`, `alpha`, residue, or mixing angle is inserted.
+- This is a structural connection-coordinate null direction, not a physical
+  photon. The unrenormalized Lorentzian temporal/spatial residue mismatch
+  still blocks canonical normalization, a photon pole, and its Ward identity.
+- Artifact:
+  `artifacts/action_extension/BHSM_AE31_C2_NEUTRAL_CONNECTION_HESSIAN.json`.
+
 ## AE3.2 candidate current-C2 first-order Einstein--Cartan LR action
 
 - The coefficient-free v15.75--v15.76 first-order Einstein--Dirac completion
