@@ -4077,3 +4077,24 @@ Exact next object:
   still absent.
 - Scientific milestone:
   `CURRENT_C2_R2_CAPTURE_ZERO_ISOTROPIC_TRACE_NONZERO_MIXING_RULE_DERIVED`.
+
+## AE3.1 capture-source to neutrino-propagation gate
+
+- Electron capture fixes an initial `nu_e` weak source, not a mass eigenstate
+  or the later propagation operator.
+- Any curvature/weak/environment response proportional to `I3` in family
+  space produces only a common phase. A common scalar shift leaves both
+  independent eigenvalue gaps invariant, so it cannot generate oscillation.
+- The Lichnerowicz curvature term `(R/4)I3` may change common local dispersion
+  but cannot by itself create neutrino splittings. BHSM therefore requires the
+  already-identified family-noncentral returned neutral self-energy and
+  propagation monodromy. Noncentrality is necessary but not sufficient: the
+  transported operator must also be misaligned with the produced `nu_e`
+  projector.
+- A local eigenvalue of `D_nu_eff^2` is not automatically a mass squared. The
+  admissible readout is a subtracted pole or parent-relative cycle
+  quasi-energy; its environmental dependence remains to be derived.
+- Scientific milestone:
+  `CURRENT_C2_FAMILY_CENTRAL_NEUTRINO_PROPAGATION_NO_OSCILLATION_DERIVED`.
+- The capture Hessian, outgoing neutral boundary trace, physical neutral
+  Green operator, two splittings, and PMNS map remain open.
