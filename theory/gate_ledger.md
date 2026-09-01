@@ -1,5 +1,25 @@
 # Gate Ledger
 
+## AE3.1 current-C2 quark projector-overlap bridge
+
+- The preserved `(k,j)` family labels determine retained harmonic subspaces
+  but do not select the unresolved Wigner/base orientation `m`; an individual
+  eigenfunction matrix element therefore remains basis dependent.
+- The full-subspace response
+  `R_f=Tr(P_A,f M_H P_S,f M_H^dagger)=||P_A,f M_H P_S,f||_HS^2`
+  is nonnegative and exactly invariant under unitary basis rotations inside
+  either retained subspace. It reuses the existing family projectors and does
+  not rebuild the particle spectrum.
+- If the parent action traces complete retained multiplets, no `m` selection
+  is required for this response. If it selects a proper state or density, the
+  action must still derive that selection; the projector trace cannot choose
+  it.
+- The next owner is now the current-C2 action trace domain plus the normalized
+  internal scalar multiplication operator `M_H` and their common field/trace
+  normalization. The historical boundary targets are not Yukawa residues.
+- Artifact:
+  `artifacts/action_extension/BHSM_AE31_C2_QUARK_PROJECTOR_OVERLAP_BRIDGE.json`.
+
 ## AE3.1 current-C2 quark--Higgs contact closure
 
 - The transported renormalizable first-order pencil is affine-linear:
