@@ -1,5 +1,22 @@
 # Gate Ledger
 
+## Current-C2 quark response sum rules
+
+- Reusing the frozen internal Berger operator, the up modes
+  `(K,q^2)=(0,0),(48,36),(120,64)` obey the exact all-squashing identity
+  `9 log(r_light)-16 log(r_middle)=-78/pi`.
+- The down modes `(K,q^2)=(0,0),(48,0),(80,16)` give the independent exact
+  identity `log(r_middle)=-12/pi`; the down middle/heavy response ratio is
+  `exp(-12/pi)` for every positive squashing.
+- Common sector prefactors and the internal Berger squashing cancel.  No
+  measured quark mass is used and the already-defined modes, family
+  projectors, and current-C2 attachment are not rebuilt.
+- These are Hopf response-shape identities, not quark mass relations.  The
+  action-owned intrinsic-M4 up/down LR--Higgs operators, absolute Yukawa
+  prefactors, physical quark poles, and nontrivial CKM matrix remain open.
+- Artifact:
+  `artifacts/action_extension/BHSM_AE3_C2_QUARK_RESPONSE_SUM_RULES.json`.
+
 ## AE3.1 charged-lepton pole-dressing invariant
 
 - For any positive effective pole shifts `M_f=Z_f m_f`, the already-derived
