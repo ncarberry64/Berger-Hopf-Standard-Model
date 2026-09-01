@@ -1,0 +1,91 @@
+{
+  "FULL_BHSM_COMPLETE": false,
+  "Pauli_transversality": {
+    "Ward_identity_constrains_longitudinal_vertex": true,
+    "Ward_identity_determines_F2": false,
+    "antisymmetry_residual": 0.0,
+    "minimal_tree_vertex_F1": -1.0,
+    "minimal_tree_vertex_F2": 0.0,
+    "on_shell_vertex_decomposition": "Gamma^mu=F1(q^2)*gamma^mu+i*sigma^(mu nu)*q_nu*F2(q^2)/(2m)",
+    "q_sigma_q_residual": 0.0,
+    "tree_F2_is_quantum_muon_anomaly": false,
+    "why": "q_mu*sigma^(mu nu)*q_nu=0_BY_ANTISYMMETRY"
+  },
+  "action_version": "BHSM-AE-3.1.0",
+  "artifact": "BHSM_AE31_C2_LOCAL_EM_WARD_IDENTITY",
+  "charged_lepton_Qem_ledger": {
+    "Dirac_charge_operator": "Q_l=-I4_spinor tensor I3_family",
+    "Higgs_vacuum_charge": 0.0,
+    "current_C2_source_domain_attached": true,
+    "current_source": "J_Q proportional_to J3+JY",
+    "left_component": {
+      "Q_em": -1.0,
+      "T3": -0.5,
+      "Y_BH": -0.5,
+      "field": "e_L_in_L_L"
+    },
+    "left_handed_conjugate_ledger_component": {
+      "Q_em": 1.0,
+      "T3": 0.0,
+      "Y_BH": 1.0,
+      "field": "e_c"
+    },
+    "mass_endomorphism_commutes_with_Qem": true,
+    "mass_term_charge_balance": "Q(bar(e_L))+Q(H_0)+Q(e_R)=1+0-1=0",
+    "photon_normalization_used": false,
+    "physical_right_component": {
+      "Q_em": -1.0,
+      "field": "e_R=charge_conjugate(e_c)"
+    }
+  },
+  "claim_boundary": {
+    "CURRENT_C2_CANONICALLY_NORMALIZED_PHOTON_VERTEX_DERIVED": false,
+    "CURRENT_C2_LOCAL_STRUCTURAL_QEM_VERTEX_DERIVED": true,
+    "CURRENT_C2_LOCAL_TREE_WARD_TAKAHASHI_IDENTITY_DERIVED": true,
+    "CURRENT_C2_MINIMAL_TREE_F2_ZERO_DERIVED": true,
+    "CURRENT_C2_PAULI_FORM_FACTOR_TRANSVERSALITY_DERIVED": true,
+    "CURRENT_C2_PHYSICAL_PHOTON_POLE_DERIVED": false,
+    "CURRENT_C2_RENORMALIZED_MUON_VERTEX_DERIVED": false,
+    "FULL_BHSM_COMPLETE": false,
+    "MUON_MAGNETIC_MOMENT_DERIVED": false,
+    "interpretation": "THE_LOCAL_CHARGE_IDENTITY_IS_CLOSED_BUT_F2_IS_A_TRANSVERSE_DYNAMICAL_FORM_FACTOR_REQUIRING_THE_PHYSICAL_PHOTON_AND_RENORMALIZED_STATE_DEPENDENT_VERTEX",
+    "particle_spectrum_rebuilt": false
+  },
+  "classification": "CURRENT_C2_LOCAL_ELECTROMAGNETIC_WARD_PAULI_DECOMPOSITION",
+  "inputs": {
+    "artifacts/action_extension/BHSM_AE31_C2_CALDERON_PRINCIPAL_SYMBOL.json": "18E7F5BB7AD46B9E137E757462EBAF2B82E53A63FA775A595538B4394210F6B8",
+    "artifacts/action_extension/BHSM_AE31_C2_CHIRAL_GREEN_DOMAIN.json": "C7FA0821A2A21A536D119CC84986FAD8D6AD65E2517953F6120F91CA76760131",
+    "artifacts/action_extension/BHSM_AE31_C2_NEUTRAL_CONNECTION_HESSIAN.json": "43B129EDA0FAF1456288B240C1FBB812C76D63B246863CBDD8713D3FFCB7E62E",
+    "src/bhsm/interface/ae31_c2_local_em_ward_identity.py": "16A1C17A91C4F2252A06B4F0F3FC4DFE8352F50B9DB538401E3424FAA044A42A"
+  },
+  "local_Ward_identity": {
+    "Clifford_residual": 0.0,
+    "Ward_Takahashi_residual": 1.0590277105649727e-15,
+    "canonical_photon_residue_used": false,
+    "charge_eigenvalue_each_family": -1.0,
+    "conditional_mass_eigenvalues_GeV": [
+      1.758930614523592,
+      0.10566682607467495,
+      0.0005229143548875549
+    ],
+    "family_order": [
+      "heavy",
+      "middle",
+      "light"
+    ],
+    "identity": "q_mu*Gamma_Q^mu=Q*S_inv(p+q)-S_inv(p)*Q",
+    "mass_charge_commutator_residual": 0.0,
+    "measured_mass_used": false,
+    "same_identity_for_all_three_family_projectors": true,
+    "vertex": "Gamma_Q^mu=Q_l*gamma^mu"
+  },
+  "validation": {
+    "Pauli_term_transverse": true,
+    "Ward_identity_exact": true,
+    "current_C2_chiral_mass_operator_reused": true,
+    "downstream_not_overclaimed": true,
+    "local_boundary_symbol_reused_without_photon_promotion": true,
+    "structural_Qem_current_reused": true
+  },
+  "validation_passed": true
+}
