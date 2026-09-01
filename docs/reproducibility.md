@@ -8,13 +8,14 @@ Materialize and test the current action-owned reciprocal-join carrier with:
 python scripts/materialize_ae3_reciprocal_join_localization.py
 python scripts/materialize_ae3_c2_action_puzzle.py
 python scripts/materialize_ae3_family_hierarchy_interface.py
+python scripts/materialize_ae3_family_noncentral_return_audit.py
 python scripts/materialize_ae3_c2_coexact_hypercharge.py
 python scripts/materialize_ae3_c2_coexact_gauge_form.py
 python scripts/materialize_ae3_c2_lorentzian_gauge_ghost_hessian.py
 python scripts/materialize_ae3_c2_coexact_su2l_neutral.py
 python scripts/materialize_ae3_c2_gauge_mismatch_resolution.py
 python scripts/materialize_ae3_c2_two_sided_calderon.py
-python -m pytest -q tests/test_ae3_reciprocal_join_localization.py tests/test_ae3_c2_lorentzian_gauge_ghost_hessian.py tests/test_ae3_c2_coexact_su2l_neutral.py tests/test_ae3_c2_gauge_mismatch_resolution.py tests/test_ae3_c2_two_sided_calderon.py
+python -m pytest -q tests/test_ae3_reciprocal_join_localization.py tests/test_ae3_family_hierarchy_interface.py tests/test_ae3_family_noncentral_return_audit.py tests/test_ae3_c2_lorentzian_gauge_ghost_hessian.py tests/test_ae3_c2_coexact_su2l_neutral.py tests/test_ae3_c2_gauge_mismatch_resolution.py tests/test_ae3_c2_two_sided_calderon.py
 ```
 
 This reproduces the analytic eta-to-sigma profile, its unique transverse
@@ -25,6 +26,13 @@ reset/projector/enclosure-restriction transport square, imports the historical
 response-constrained nonlinear witnesses by hash, and verifies that the old
 zero-source closed-cycle determinant is not promoted to the current C2 action.
 It does not rerun or strengthen the branch-24 first-stop numerics.
+
+The family-return audit reuses the frozen family projectors and historical
+operator artifacts. It rejects conditional mass entries, twofold-degenerate
+projections, absent junction bilinears with unfixed coefficients, circular
+coherence sources, family-blind constraints, unselected bands, and
+underived intrinsic Wilson matrices. It does not rebuild the particle
+spectrum or insert measured masses.
 
 The continuous-frequency materializer evaluates the current-C2
 transverse DtN derivative together with the temporal/longitudinal constraint

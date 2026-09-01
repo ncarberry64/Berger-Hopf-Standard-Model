@@ -1,5 +1,25 @@
 # Gate Ledger
 
+## Current AE3 family-noncentral return provenance audit
+
+- All nine retained candidate classes have been checked against current AE3
+  action ownership, current-C2 domain, family noncentrality, three-value
+  capacity, absence of free or underived family inputs, and source
+  noncircularity.
+- No candidate passes all requirements. In particular, the v6.3 mass matrix
+  is conditional, v14.38 preserves a twofold degeneracy, the generic v6.10
+  commutant term is absent with unfixed coefficients, and the v15.85--87
+  common-action return is family-central with zero background mass.
+- Existing family/mode particle fibers and their manifestation map are
+  preserved. No particle spectrum, mass hierarchy, CKM, or PMNS result is
+  rebuilt or promoted.
+- The live choice is an action-derived same-C2 C3-breaking return, an
+  action-derived same-C2 triality-changing intertwiner with mass-basis
+  transport, or retention of present AE3 family centrality. No choice is
+  made here.
+- Artifact:
+  `artifacts/action_extension/BHSM_AE3_FAMILY_NONCENTRAL_RETURN_PROVENANCE_AUDIT.json`.
+
 ## Current AE3 C2 two-sided Calderón reflection no-go
 
 - The reciprocal reflection `chi -> pi/2-chi` sends
