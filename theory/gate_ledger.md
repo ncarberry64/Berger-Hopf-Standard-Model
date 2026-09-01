@@ -1,5 +1,25 @@
 # Gate Ledger
 
+## AE3.1 current-C2 LR susceptibility Hadamard factorization
+
+- The historical round-`S3` Weyl sum transports to every finite-core
+  current-`C2` Cauchy slice as
+  `chi_N(tau)=S_N/[2 pi^2 R4(tau)^2]`. This is a spatial spectral result and
+  is not relabelled a global-frequency Feynman loop.
+- The Laurent pole per unit LR pair is local and state independent. Equal
+  up/down incidence traces and the reusable `diag(9,9)` multiplicity make its
+  normalized unit-vertex composite channel matrix proportional to `I2`.
+- With the gauge ray,
+  `K_LR^(-1)=135/(364 G_C2) I2-5/(364 G_C2) sigma3`. The common Hadamard pole
+  cancels exactly from the traceless channel and cannot remove the gauge
+  ordering of the unit-vertex up/down curvatures.
+- A same-Hadamard-class covariance witness has a nonzero finite traceless
+  response, so the smooth remainder can still rotate the eigenvectors. No
+  finite subtraction, physical Higgs direction, gap, or Yukawa residue is
+  promoted.
+- Artifact:
+  `artifacts/action_extension/BHSM_AE31_C2_LR_SUSCEPTIBILITY_FACTORIZATION.json`.
+
 ## AE3.1 current-C2 quark gauge LR channel ray
 
 - The single-carrier inverse-kernel ray and current quark representations give
