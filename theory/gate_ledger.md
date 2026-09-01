@@ -1,5 +1,26 @@
 # Gate Ledger
 
+## AE3.1 current-C2 universal scalar-profile transport
+
+- The recovered universal profile
+  `Phi(y)=Phi0 exp[-sigma d_I(y,y0)^2]` defines a bounded internal
+  multiplication operator for finite `Phi0` and `sigma>=0`, with
+  `||M_Phi||<=|Phi0|`.
+- Its tensor lift commutes with the reset-generated C2 radial operator, so it
+  preserves the current-C2 domain, endpoint condition, and retained birth
+  trace.
+- Every finite retained projector response is Hilbert--Schmidt and satisfies
+  `R_f<=min(rank(P_A,f),rank(P_S,f))||M_Phi||^2`; no global trace-class
+  assumption is introduced.
+- Canonical unit normalization would fix `Phi0` by the Berger measure, but the
+  current repository owns that statement only conditionally from an author
+  profile-normalization axiom. Numerical no-fit boundary values are not
+  imported as quark Yukawa residues.
+- The next action calculation must derive the attachment
+  `H(x)->H(x)Phi(y)` and the retained internal trace from AE3.1 itself.
+- Artifact:
+  `artifacts/action_extension/BHSM_AE31_C2_UNIVERSAL_SCALAR_PROFILE_TRANSPORT.json`.
+
 ## AE3.1 current-C2 quark projector-overlap bridge
 
 - The preserved `(k,j)` family labels determine retained harmonic subspaces
