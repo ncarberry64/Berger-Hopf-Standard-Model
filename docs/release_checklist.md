@@ -1,4 +1,4 @@
-# BHSM v1.2.0 Release Checklist
+# BHSM v1.3.0 Release Checklist
 
 ## Repository Audit
 
@@ -16,7 +16,7 @@
 - [x] No new physics results invented.
 - [x] Frozen prediction status preserved.
 - [x] No parameter retuning.
-- [x] No Zenodo DOI invented.
+- [x] Zenodo DOI recorded after archival: `10.5281/zenodo.20663419`.
 - [x] H_T/no-extra-light-state status remains proxy/open unless stronger evidence is present in the branch.
 
 ## Validation

@@ -1,0 +1,197 @@
+{
+  "boundary_action_candidate_status": "CANDIDATE_NOT_OFFICIAL",
+  "boundary_blocker": "BOUNDARY_OPERATORS_NOT_ACTION_DERIVED",
+  "candidate_remains_non_official": true,
+  "classification": "STRUCTURALLY_MOTIVATED_NOT_DERIVED",
+  "closes_boundary_blocker": false,
+  "coframe_multiplier": {
+    "derived": false,
+    "evidence": [
+      "The rule uses only field-ledger structure: color rank and weak component.",
+      "It naturally makes the down-sector base coefficient larger: -4*T3*C_f = +4 for T3=-1/2 and C_f=2.",
+      "It preserves the lepton and up coefficients with C_f=1."
+    ],
+    "inserted": false,
+    "obstruction": "The repository does not contain an action variation, coframe trace, or spectral boundary calculation that forces C_f=2 specifically for the colored weak-lower channel.",
+    "proposed_rule": "C_f=1 for leptons and weak-upper quarks; C_f=2 for the colored weak-lower down-sector boundary channel",
+    "rule_name": "coframe_multiplier",
+    "status": "COFRAME_MULTIPLIER_NOT_DERIVED"
+  },
+  "forbidden_claims_absent": true,
+  "frozen_predictions_modified": false,
+  "frozen_sanity": {
+    "BHSM_BARE_V1_unchanged": true,
+    "BHSM_DRESSED_V1_CANDIDATE_unchanged": true,
+    "changed_rows": [
+      {
+        "bare": 0.008310500554068288,
+        "changed": true,
+        "dressed": 0.004155250277034144,
+        "quantity": "c/t"
+      }
+    ],
+    "ckm_sin_theta_13_unchanged": true,
+    "dressed_branch_changes_only_c_over_t": true,
+    "u_over_t_unchanged": true
+  },
+  "generators": {
+    "down": {
+      "base_coefficient": 4,
+      "base_rule": "-4*T3*coframe_multiplier fixes the base coefficient",
+      "fiber_coefficient": 1,
+      "fiber_rule": "sign(Y) orients Hopf fiber coefficient",
+      "forced_by_action": false,
+      "sector": "down",
+      "target": 12,
+      "target_rule": "N_gen*sector_boundary_winding fixes the target",
+      "unproven_rules": [
+        "coframe_multiplier(field) not derived from an action variation",
+        "sector_boundary_winding(field) not derived from a spectral boundary condition"
+      ]
+    },
+    "lepton": {
+      "base_coefficient": 2,
+      "base_rule": "-4*T3*coframe_multiplier fixes the base coefficient",
+      "fiber_coefficient": -1,
+      "fiber_rule": "sign(Y) orients Hopf fiber coefficient",
+      "forced_by_action": false,
+      "sector": "lepton",
+      "target": 3,
+      "target_rule": "N_gen*sector_boundary_winding fixes the target",
+      "unproven_rules": [
+        "coframe_multiplier(field) not derived from an action variation",
+        "sector_boundary_winding(field) not derived from a spectral boundary condition"
+      ]
+    },
+    "up": {
+      "base_coefficient": -2,
+      "base_rule": "-4*T3*coframe_multiplier fixes the base coefficient",
+      "fiber_coefficient": 1,
+      "fiber_rule": "sign(Y) orients Hopf fiber coefficient",
+      "forced_by_action": false,
+      "sector": "up",
+      "target": 6,
+      "target_rule": "N_gen*sector_boundary_winding fixes the target",
+      "unproven_rules": [
+        "coframe_multiplier(field) not derived from an action variation",
+        "sector_boundary_winding(field) not derived from a spectral boundary condition"
+      ]
+    }
+  },
+  "official_outputs_modified": false,
+  "promotion_criteria": [
+    "derive C_f from a coframe trace, boundary variation, or representation-theoretic projection",
+    "derive W_f from Hopf winding, self-adjoint boundary spectrum, or boundary-generator eigenvalue condition",
+    "show both derivations are independent of the selected mode targets and empirical residuals"
+  ],
+  "rejection_criteria": [
+    "C_f=2 is only chosen because the down-sector target requires +4j",
+    "W_f=1,2,4 is only chosen because the targets are 3,6,12",
+    "a competing non-fitted rule produces different omega operators while preserving the ledger"
+  ],
+  "result": {
+    "classification": "STRUCTURALLY_MOTIVATED_NOT_DERIVED",
+    "closes_boundary_blocker": false,
+    "coefficients_forced": false,
+    "coefficients_inserted": false,
+    "coframe_multiplier_status": "COFRAME_MULTIPLIER_NOT_DERIVED",
+    "helps_ckm_1_16": false,
+    "helps_z_virt_u2": false,
+    "notes": [
+      "The coframe and winding rules remain structural candidate rules.",
+      "The omega operators are recovered, but recovery is not a derivation.",
+      "No mass residuals, CKM values, or frozen output changes are used.",
+      "The P0 boundary blocker remains open until both rules are forced by BHSM boundary action or spectrum."
+    ],
+    "omega_d_recovered": true,
+    "omega_l_recovered": true,
+    "omega_u_recovered": true,
+    "sector_winding_status": "SECTOR_WINDING_RULE_NOT_DERIVED"
+  },
+  "sector_winding": {
+    "derived": false,
+    "evidence": [
+      "The rule is compatible with the field-ledger hierarchy: lepton singlet boundary, upper colored channel, lower colored/coframe channel.",
+      "It recovers targets 3, 6, and 12 from family index N_gen=3.",
+      "The signs of the q and j terms are motivated separately by sign(Y) and -4*T3*C_f."
+    ],
+    "inserted": false,
+    "obstruction": "The repository does not contain a Hopf winding, self-adjoint-domain, or boundary-generator eigenvalue argument that uniquely forces the multipliers 1, 2, and 4.",
+    "proposed_rule": "W_l=1, W_u=2, W_d=4 with target_f=N_gen*W_f",
+    "rule_name": "sector_winding",
+    "status": "SECTOR_WINDING_RULE_NOT_DERIVED"
+  },
+  "selected_mode_checks": [
+    {
+      "matches_target": true,
+      "mode": [
+        5,
+        2
+      ],
+      "omega_value": 3,
+      "q": 1,
+      "sector": "lepton",
+      "target": 3
+    },
+    {
+      "matches_target": true,
+      "mode": [
+        9,
+        3
+      ],
+      "omega_value": 3,
+      "q": 3,
+      "sector": "lepton",
+      "target": 3
+    },
+    {
+      "matches_target": true,
+      "mode": [
+        6,
+        0
+      ],
+      "omega_value": 6,
+      "q": 6,
+      "sector": "up",
+      "target": 6
+    },
+    {
+      "matches_target": true,
+      "mode": [
+        10,
+        1
+      ],
+      "omega_value": 6,
+      "q": 8,
+      "sector": "up",
+      "target": 6
+    },
+    {
+      "matches_target": true,
+      "mode": [
+        6,
+        3
+      ],
+      "omega_value": 12,
+      "q": 0,
+      "sector": "down",
+      "target": 12
+    },
+    {
+      "matches_target": true,
+      "mode": [
+        8,
+        2
+      ],
+      "omega_value": 12,
+      "q": 4,
+      "sector": "down",
+      "target": 12
+    }
+  ],
+  "specific_blockers": [
+    "COFRAME_MULTIPLIER_NOT_DERIVED",
+    "SECTOR_WINDING_RULE_NOT_DERIVED"
+  ],
+  "title": "BHSM coframe multiplier and sector winding closure audit"
+}

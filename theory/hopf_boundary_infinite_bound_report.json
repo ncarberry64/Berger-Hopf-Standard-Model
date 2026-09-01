@@ -1,0 +1,59 @@
+{
+  "all_terms_controlled": true,
+  "limitations": [
+    "Termwise bounds are explicit under the scaffold comparisons, but the complete twisted Dirac spectrum is not yet analytically derived.",
+    "This report does not prove the full H_T theorem."
+  ],
+  "status": "HOPF_BOUNDARY_CHI_BOUNDS_CONDITIONAL",
+  "terms": [
+    {
+      "assumptions": [
+        "the q-growth comparison holds for the complete Berger twisted diagonal action"
+      ],
+      "bound_type": "relative diagonal domination by Berger action q^2 <= C lambda_diag",
+      "limitations": [
+        "The comparison is explicit in the scaffold but not yet an analytic theorem for the complete operator."
+      ],
+      "preserves_domain": true,
+      "relative_a": 0.0,
+      "relative_b": 0.0,
+      "symbolic_form": "Hopf fiber twist controlled by q=k-2j",
+      "symmetric_on_DA0": true,
+      "term_id": "V_Hopf"
+    },
+    {
+      "assumptions": [
+        "Omega_f growth remains at most linearly controlled by the complete diagonal action."
+      ],
+      "bound_type": "linear boundary growth controlled by diagonal action",
+      "limitations": [
+        "The v1.2 action-origin functional is reduced from a symbolic parent scaffold, not the full action."
+      ],
+      "preserves_domain": true,
+      "relative_a": 0.0,
+      "relative_b": 0.0,
+      "symbolic_form": "sector boundary functional Omega_f(k,j,q)",
+      "symmetric_on_DA0": true,
+      "term_id": "V_boundary"
+    },
+    {
+      "assumptions": [
+        "chirality remains a bounded involutive/projector label in the complete basis"
+      ],
+      "bound_type": "bounded projector",
+      "limitations": [
+        "This does not settle mirror-mode exclusion by itself."
+      ],
+      "preserves_domain": true,
+      "relative_a": 0.0,
+      "relative_b": 1.0,
+      "symbolic_form": "weak chirality projector contribution",
+      "symmetric_on_DA0": true,
+      "term_id": "V_chi"
+    }
+  ],
+  "theorem_complete": false,
+  "title": "BHSM v2.1 Hopf/Boundary/Chirality Infinite Bounds",
+  "total_relative_a": 0.0,
+  "total_relative_b": 1.0
+}

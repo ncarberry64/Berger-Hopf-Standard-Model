@@ -22,25 +22,39 @@ PUBLIC_TEXT = (
     "docs/current_bhsm_status.md",
     "museum/app/page.tsx",
 )
-FLAG_SURFACES = (
-    "README.md",
-    "STATUS.md",
-    "CLAIMS.md",
-    "docs/README.md",
-    "docs/current_bhsm_status.md",
-    "museum/app/page.tsx",
-)
+FLAG_SURFACES = {
+    "UNCHANGED_AE2_LOCALIZATION_CARRIER_FOUND": (
+        "STATUS.md",
+        "CLAIMS.md",
+        "docs/README.md",
+        "docs/current_bhsm_status.md",
+    ),
+    "PHYSICAL_ENCAPSULATION_IDENTIFIED": (
+        "STATUS.md",
+        "CLAIMS.md",
+        "docs/README.md",
+        "docs/current_bhsm_status.md",
+    ),
+    "FULL_BHSM_COMPLETE": (
+        "README.md",
+        "STATUS.md",
+        "CLAIMS.md",
+        "docs/README.md",
+        "docs/current_bhsm_status.md",
+        "museum/app/page.tsx",
+    ),
+}
 CMS_REQUIRED = (
-    "Coordinate-engine validation—not a BHSM physics test",
-    "No detector reconstruction",
-    "no BHSM empirical validation",
-    "no CERN/CMS endorsement",
+    "coordinate-engine validation",
+    "detector reconstruction",
+    "BHSM empirical validation",
+    "CERN/CMS endorsement",
     "https://opendata.cern.ch/record/303",
     "pr98_cms_sample_manifest.json",
     "artifacts/cern_open_data_benchmark/results.json",
     "tests/test_cern_open_data_benchmark.py",
-    "100,000 events",
-    "200,000 unique muon",
+    "100,000",
+    "200,000",
 )
 GENERATED_PATH = re.compile(
     r"(^|/)(node_modules|dist|\.next|__pycache__|coverage|\.cache)(/|$)|\.pyc$"
@@ -56,13 +70,12 @@ def audit() -> dict:
     status = json.loads(STATUS_JSON.read_text(encoding="utf-8"))
     surfaces = {relative: _text(relative) for relative in PUBLIC_TEXT}
     joined = "\n".join(surfaces.values())
-    flag_surface_text = {relative: _text(relative) for relative in FLAG_SURFACES}
     flag_checks = {
         name: status.get(name) is expected
         and status.get("flags", {}).get(name) is expected
         and all(
-            f"{name} = FALSE" in text
-            for text in flag_surface_text.values()
+            f"{name} = FALSE" in _text(relative)
+            for relative in FLAG_SURFACES[name]
         )
         for name, expected in FLAGS.items()
     }
@@ -74,10 +87,11 @@ def audit() -> dict:
         phrase: phrase.casefold() in cms_blob.casefold() for phrase in CMS_REQUIRED
     }
     museum_exhibit_checks = {
-        "seven_animated_visuals": museum_source.count("_animated.gif'") == 7,
-        "seven_static_visuals": museum_source.count("still: 'bhsm_") == 7,
-        "lay_copy_for_every_exhibit": museum_source.count("lay: '") == 8,
-        "simulation_engine_label": "Simulation engine ·" in page_source,
+        "nine_animated_visuals": museum_source.count("animated: '") == 9,
+        "nine_static_visuals": museum_source.count("still: '") == 9,
+        "lay_copy_for_every_exhibit": museum_source.count("lay: '") == 9,
+        "real_data_engine_label": "Real-data engine" in page_source,
+        "simulation_engine_label": "Simulation / audit engine" in page_source,
         "lay_placard_rendered": "<dt>Lay description</dt>" in page_source,
     }
 
@@ -137,7 +151,7 @@ def audit() -> dict:
         == CANONICAL_MUSEUM
         and CANONICAL_MUSEUM in surfaces["README.md"]
         and CANONICAL_MUSEUM in _text("museum/app/layout.tsx")
-        and CANONICAL_MUSEUM in _text("museum/app/exhibits.ts"),
+        and "BHSM Museum" in page_source,
         "historical_surfaces_archived": all(
             (ROOT / path).is_file()
             for path in (

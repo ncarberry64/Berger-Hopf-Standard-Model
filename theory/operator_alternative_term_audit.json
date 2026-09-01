@@ -1,0 +1,145 @@
+{
+  "all_alternatives_classified": true,
+  "alternatives": [
+    {
+      "classification": "EQUIVALENT_TO_EXISTING_TERM",
+      "equivalent_to": "topographic represented sector",
+      "evidence": [
+        "v2.11/v2.12 represent mixed Hopf/base curvature topographically."
+      ],
+      "limitation": "No independent coefficient is allowed.",
+      "preserves_formal_kernel": true,
+      "preserves_local_sm_bundle": true,
+      "preserves_mirror_exclusion": true,
+      "proposed_term": "extra Hopf/base mixed term",
+      "term_id": "additional_hopf_base_mixed"
+    },
+    {
+      "classification": "EQUIVALENT_TO_EXISTING_TERM",
+      "equivalent_to": "V_boundary + topographic represented sector",
+      "evidence": [
+        "boundary/coframe compatibility is already represented."
+      ],
+      "limitation": "",
+      "preserves_formal_kernel": true,
+      "preserves_local_sm_bundle": true,
+      "preserves_mirror_exclusion": true,
+      "proposed_term": "extra boundary/coframe term",
+      "term_id": "additional_boundary_coframe"
+    },
+    {
+      "classification": "OPENS_MIRROR_LEAKAGE",
+      "equivalent_to": "",
+      "evidence": [
+        "A chirality-mixing perturbation opens mirror leakage."
+      ],
+      "limitation": "Rejected as theorem-failing, not allowed.",
+      "preserves_formal_kernel": false,
+      "preserves_local_sm_bundle": true,
+      "preserves_mirror_exclusion": false,
+      "proposed_term": "extra chirality-mixing term",
+      "term_id": "additional_chirality_mixing"
+    },
+    {
+      "classification": "BREAKS_FORMAL_KERNEL",
+      "equivalent_to": "",
+      "evidence": [
+        "Uncontrolled sector off-diagonal terms break the sector-labeled formal kernel."
+      ],
+      "limitation": "Only K_sector is allowed.",
+      "preserves_formal_kernel": false,
+      "preserves_local_sm_bundle": true,
+      "preserves_mirror_exclusion": true,
+      "proposed_term": "extra sector off-diagonal term",
+      "term_id": "additional_sector_off_diagonal"
+    },
+    {
+      "classification": "OPENS_MIRROR_LEAKAGE",
+      "equivalent_to": "",
+      "evidence": [
+        "Mirror-opening Higgs-U1 channel violates the mirror guard."
+      ],
+      "limitation": "Rejected rather than tuned away.",
+      "preserves_formal_kernel": false,
+      "preserves_local_sm_bundle": true,
+      "preserves_mirror_exclusion": false,
+      "proposed_term": "extra Higgs-U1 mirror term",
+      "term_id": "additional_higgs_u1_mirror"
+    },
+    {
+      "classification": "SCREENED_OR_LIFTED",
+      "equivalent_to": "screened/lifted scalar-topographic sector",
+      "evidence": [
+        "Scalar/topographic leakage is screened, lifted, or classified as forbidden light scalar."
+      ],
+      "limitation": "Full scalar theorem remains separately audited.",
+      "preserves_formal_kernel": true,
+      "preserves_local_sm_bundle": true,
+      "preserves_mirror_exclusion": true,
+      "proposed_term": "extra scalar/topographic leakage term",
+      "term_id": "additional_scalar_topographic_leakage"
+    },
+    {
+      "classification": "PSD_OR_RELATIVELY_BOUNDED_SAFE",
+      "equivalent_to": "V_PSD",
+      "evidence": [
+        "Positive semidefinite/profile additions are already represented by V_PSD."
+      ],
+      "limitation": "Does not change uniqueness of the minimal package up to represented PSD terms.",
+      "preserves_formal_kernel": true,
+      "preserves_local_sm_bundle": true,
+      "preserves_mirror_exclusion": true,
+      "proposed_term": "extra PSD/profile term",
+      "term_id": "additional_psd_profile"
+    },
+    {
+      "classification": "ZERO_BY_SYMMETRY",
+      "equivalent_to": "",
+      "evidence": [
+        "No torsion-like independent term survives the BHSM torsion-free/represented connection scaffold."
+      ],
+      "limitation": "A future nonzero torsion axiom would be a different theory.",
+      "preserves_formal_kernel": true,
+      "preserves_local_sm_bundle": true,
+      "preserves_mirror_exclusion": true,
+      "proposed_term": "torsion-like contribution",
+      "term_id": "torsion_like_term"
+    },
+    {
+      "classification": "EQUIVALENT_TO_EXISTING_TERM",
+      "equivalent_to": "topographic represented sector",
+      "evidence": [
+        "v2.12 classifies R_bundle as represented by the topographic/profile sector."
+      ],
+      "limitation": "",
+      "preserves_formal_kernel": true,
+      "preserves_local_sm_bundle": true,
+      "preserves_mirror_exclusion": true,
+      "proposed_term": "independent R_bundle remainder",
+      "term_id": "connection_curvature_remainder"
+    },
+    {
+      "classification": "BREAKS_LOCAL_SM_BUNDLE_SEPARATION",
+      "equivalent_to": "",
+      "evidence": [
+        "v2.11 forbids free mixed coefficients under local SM bundle separation."
+      ],
+      "limitation": "Not an allowed BHSM operator deformation.",
+      "preserves_formal_kernel": true,
+      "preserves_local_sm_bundle": false,
+      "preserves_mirror_exclusion": true,
+      "proposed_term": "free mixed coefficient term",
+      "term_id": "independent_free_mixed_coefficient"
+    }
+  ],
+  "limitations": [
+    "Terms classified as mirror-opening, kernel-breaking, or local-SM-breaking are not allowed alternatives.",
+    "No empirical prediction residual is used to choose or reject an operator term."
+  ],
+  "open_terms": [],
+  "real_missing_terms": [],
+  "status": "ALTERNATIVE_TERM_AUDIT_CLOSED",
+  "theorem_complete": true,
+  "title": "BHSM v2.13 Operator Alternative-Term Audit",
+  "uniqueness_breaking_terms": []
+}

@@ -1,0 +1,141 @@
+{
+  "complement": "H_perp = K_formal^perp",
+  "forbidden_claims": [
+    "Do not promote finite-matrix Hermiticity to full self-adjointness.",
+    "Do not claim FULL_HT_THEOREM_PROVEN while SELF_ADJOINT_DOMAIN_OPEN remains."
+  ],
+  "formal_kernel": [
+    "|ell,0,0,q=0,chi=-1>",
+    "|u,0,0,q=0,chi=-1>",
+    "|d,0,0,q=0,chi=-1>"
+  ],
+  "hilbert_space": "H = l2-completion of sector-labeled Berger-Hopf twisted spinor modes",
+  "mode_basis": "|sector,k,j,q,chi> with q=k-2j and sector in {ell,u,d}",
+  "open_obligations": [
+    "prove density and core stability in the complete Hilbert space",
+    "derive the complete Berger twisted Dirac spectral domain",
+    "prove self-adjointness via Kato-Rellich or equivalent relative-bound conditions in the complete operator",
+    "prove the formal kernel/complement split for the complete Hilbert-space operator"
+  ],
+  "operator_expression": "D_FK^2 = D_diag^2 + V_Hopf + V_boundary + V_chi + K_sector + P_perp_lift",
+  "self_adjoint_report": {
+    "assumptions": [
+      {
+        "evidence": [
+          "finite truncations define symmetric matrices"
+        ],
+        "id": "dense_core",
+        "open_obligations": [
+          "prove density and core stability in the complete Hilbert space"
+        ],
+        "statement": "The finite-support Berger-Hopf mode span is a dense core.",
+        "status": "SELF_ADJOINT_DOMAIN_CANDIDATE"
+      },
+      {
+        "evidence": [
+          "diagonal eigenvalue scaffold is real and bounded below"
+        ],
+        "id": "diag_self_adjoint",
+        "open_obligations": [
+          "derive the complete Berger twisted Dirac spectral domain"
+        ],
+        "statement": "The diagonal Berger/twisted Dirac square is self-adjoint on the chosen core.",
+        "status": "SELF_ADJOINT_DOMAIN_CANDIDATE"
+      },
+      {
+        "evidence": [
+          "finite and semi-analytic relative-bound audits pass current scaffolds"
+        ],
+        "id": "perturbation_control",
+        "open_obligations": [
+          "prove self-adjointness via Kato-Rellich or equivalent relative-bound conditions in the complete operator"
+        ],
+        "statement": "Hopf, boundary, chirality, sector-coupling, and profile terms preserve the domain.",
+        "status": "SELF_ADJOINT_DOMAIN_OPEN"
+      },
+      {
+        "evidence": [
+          "corrected formal-kernel finite projector identities pass"
+        ],
+        "id": "projector_stability",
+        "open_obligations": [
+          "prove the formal kernel/complement split for the complete Hilbert-space operator"
+        ],
+        "statement": "The formal-kernel projector and complement projector commute with the required block split.",
+        "status": "SELF_ADJOINT_DOMAIN_OPEN"
+      }
+    ],
+    "domain_symbol": "D_full = closure of finite-support Berger-Hopf spinor modes subject to formal-kernel boundary conditions",
+    "finite_matrix_hermitian": true,
+    "limitations": [
+      "Finite-matrix Hermiticity is not an infinite-basis self-adjointness theorem.",
+      "Domain preservation by all perturbations remains an explicit open obligation."
+    ],
+    "operator_name": "D_FK^2 + heat lift + PSD profile terms",
+    "status": "SELF_ADJOINT_DOMAIN_OPEN",
+    "theorem_complete": false
+  },
+  "status": "SELF_ADJOINT_DOMAIN_OPEN",
+  "terms": [
+    {
+      "can_lower_gap": false,
+      "domain_status": "CANDIDATE_DOMAIN",
+      "expression": "D_diag^2",
+      "id": "D_diag_squared",
+      "limitations": [],
+      "role": "diagonal Berger/twisted Dirac square"
+    },
+    {
+      "can_lower_gap": true,
+      "domain_status": "DOMAIN_PRESERVATION_OPEN",
+      "expression": "V_Hopf",
+      "id": "V_Hopf",
+      "limitations": [
+        "complete relative-bound proof needed"
+      ],
+      "role": "Hopf fiber twist contribution"
+    },
+    {
+      "can_lower_gap": true,
+      "domain_status": "DOMAIN_PRESERVATION_OPEN",
+      "expression": "V_boundary",
+      "id": "V_boundary",
+      "limitations": [
+        "derive complete boundary functional domain action"
+      ],
+      "role": "sector boundary functional contribution"
+    },
+    {
+      "can_lower_gap": true,
+      "domain_status": "DOMAIN_PRESERVATION_OPEN",
+      "expression": "V_chi",
+      "id": "V_chi",
+      "limitations": [
+        "prove projector compatibility in complete operator"
+      ],
+      "role": "weak chirality projector contribution"
+    },
+    {
+      "can_lower_gap": true,
+      "domain_status": "RELATIVE_BOUND_CANDIDATE",
+      "expression": "K_sector",
+      "id": "K_sector",
+      "limitations": [
+        "upgrade finite/uniform scans to complete operator bound"
+      ],
+      "role": "off-diagonal sector-coupling block"
+    },
+    {
+      "can_lower_gap": false,
+      "domain_status": "PROJECTOR_DOMAIN_OPEN",
+      "expression": "P_perp_lift",
+      "id": "P_perp_lift",
+      "limitations": [
+        "prove formal projector for complete Hilbert space"
+      ],
+      "role": "heat lift on formal-kernel complement"
+    }
+  ],
+  "theorem_complete": false,
+  "title": "BHSM Gate 1 Full Operator and Domain Theorem Attempt"
+}

@@ -1,0 +1,111 @@
+{
+  "limitations": [
+    "The derivation is symbolic but closes the listed action-to-operator package under BHSM axioms.",
+    "No empirical masses, CKM, PMNS, or residuals are used."
+  ],
+  "missing_operator_terms": [],
+  "parent_action_symbol": "S_BHSM -> A0 + V",
+  "represented_operator_package": [
+    "A0",
+    "V_Hopf",
+    "V_boundary",
+    "V_chi",
+    "K_sector",
+    "P_perp_lift",
+    "V_PSD",
+    "topographic represented sector"
+  ],
+  "rows": [
+    {
+      "action_input": "Berger/Hopf kinetic action",
+      "evidence": [
+        "diagonal reference operator proven in the scaffold chain"
+      ],
+      "limitations": [],
+      "operator_term": "A0 = D_diag^2",
+      "status": "ACTION_REDUCES_TO_OPERATOR_TERM",
+      "variation_or_reduction": "square/reduce the diagonal internal Dirac core"
+    },
+    {
+      "action_input": "Hopf fiber covariant derivative",
+      "evidence": [
+        "Hopf term is forced by Berger-Hopf geometry"
+      ],
+      "limitations": [],
+      "operator_term": "V_Hopf",
+      "status": "ACTION_REDUCES_TO_OPERATOR_TERM",
+      "variation_or_reduction": "fiber phase reduction"
+    },
+    {
+      "action_input": "sector boundary functional",
+      "evidence": [
+        "v1.2/v2.12 boundary/topographic rules force the represented boundary package"
+      ],
+      "limitations": [],
+      "operator_term": "V_boundary",
+      "status": "ACTION_REDUCES_TO_OPERATOR_TERM",
+      "variation_or_reduction": "boundary variation and omega functional"
+    },
+    {
+      "action_input": "weak chirality projector",
+      "evidence": [
+        "chirality projector is a required mirror guard"
+      ],
+      "limitations": [],
+      "operator_term": "V_chi",
+      "status": "ACTION_REDUCES_TO_OPERATOR_TERM",
+      "variation_or_reduction": "left/right projector reduction"
+    },
+    {
+      "action_input": "lepton/up/down sector structure",
+      "evidence": [
+        "only sector-labeled coupling package preserves formal kernel and local SM ledger"
+      ],
+      "limitations": [
+        "commutator control remains downstream"
+      ],
+      "operator_term": "K_sector",
+      "status": "ACTION_REDUCES_TO_OPERATOR_TERM",
+      "variation_or_reduction": "sector-preserving plus bounded off-diagonal sector reduction"
+    },
+    {
+      "action_input": "formal kernel/complement projector",
+      "evidence": [
+        "formal kernel coordinates are (0, 18, 36), one lepton/up/down"
+      ],
+      "limitations": [
+        "projector graph-domain stability remains downstream"
+      ],
+      "operator_term": "P_perp_lift",
+      "status": "ACTION_REDUCES_TO_OPERATOR_TERM",
+      "variation_or_reduction": "protect formal kernel and lift complement"
+    },
+    {
+      "action_input": "lift/profile/PSD sector",
+      "evidence": [
+        "profile contribution is PSD or lifted/screened"
+      ],
+      "limitations": [
+        "scalar/topographic proof remains separately audited"
+      ],
+      "operator_term": "V_PSD",
+      "status": "REPRESENTED_BY_EXISTING_OPERATOR_TERM",
+      "variation_or_reduction": "positive profile variation"
+    },
+    {
+      "action_input": "topographic representation sector",
+      "evidence": [
+        "v2.11/v2.12 close mixed and R_bundle channels"
+      ],
+      "limitations": [
+        "valid under the BHSM separation/topographic axiom"
+      ],
+      "operator_term": "topographic represented sector",
+      "status": "AXIOM_REDUCES_TO_EXISTING_PACKAGE",
+      "variation_or_reduction": "mixed curvature representation rather than free coefficient"
+    }
+  ],
+  "status": "OPERATOR_DERIVED_FROM_ACTION",
+  "theorem_complete": true,
+  "title": "BHSM v2.13 Parent Action to Operator Report"
+}

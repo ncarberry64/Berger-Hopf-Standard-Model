@@ -20,6 +20,13 @@ from PIL import Image, ImageDraw, ImageFont
 ROOT = Path(__file__).resolve().parents[1]
 ASSET_DIR = ROOT / "docs" / "assets"
 STATUS_PATH = ASSET_DIR / "bhsm_readme_visual_status.json"
+SIMULATED_SPECTRUM_PATH = ROOT / "data" / "museum" / "bhsm_simulated_particle_spectrum_v1.json"
+LOCALIZATION_AUDIT_PATH = (
+    ROOT
+    / "artifacts"
+    / "flagship_integration"
+    / "BHSM_N12_GATE7_LOCALIZATION_CARRIER_KILL_SCREEN.json"
+)
 
 W, H = 1280, 720
 FRAMES = 16
@@ -305,7 +312,7 @@ def hero(frame=None) -> Scene:
     badge(s, (300, 510, 980, 550), "ONE ACTION • ONE SCALE • ONE OBSERVABLE PIPELINE")
     badge(s, (430, 558, 850, 594), "ACTION-OWNED • NO-FIT", C["cyan"])
     s.rect((300, 612, 980, 666), C["panel2"], C["red"], 2, 10)
-    s.text((640, 639), "PHYSICAL PROMOTION GATED PENDING FORMAL GATE 7 CLOSURE", 18, C["red"], True, "mm")
+    s.text((640, 639), "AE2 STOP + EVENT CHILD DERIVED • LOCAL ENCLOSURE BRIDGE OPEN", 18, C["red"], True, "mm")
     return s
 
 
@@ -313,7 +320,7 @@ def universal(frame=None) -> Scene:
     s = Scene(frame)
     background(s, "UNIVERSAL PREDICTIVE ENGINE", "NO SEPARATE HANDWRITTEN READOUT RULES")
     boxes = [
-        (25, 150, 220, 270, "FROZEN BACKGROUND", ["Gate 7 not closed", "physical quotient"]),
+        (25, 150, 220, 270, "FROZEN BACKGROUND", ["state registry retained", "physical quotient"]),
         (245, 150, 440, 270, "ACTION EXPANSION", ["S² • S³ • S⁴", "one provenance"]),
         (465, 150, 660, 270, "SPECTRUM", ["poles / residues", "propagators"]),
         (685, 150, 880, 270, "VERTICES", ["cubic + quartic", "action derivatives"]),
@@ -333,45 +340,83 @@ def universal(frame=None) -> Scene:
         x0 = 25 + index * 250
         node(s, (x0, 500, x0 + 230, 590), label, (), C["gold"] if index in {2, 3} else C["cyan"], title_size=15)
         arrow(s, (640, 430), (x0 + 115, 500), 0.15 * index, bend=(x0 + 115, 465))
-    s.text((640, 650), "ENGINE CAPABILITY • PHYSICAL READOUTS REMAIN FAIL-CLOSED UNTIL PROMOTION GATES PASS", 16, C["red"], True, "mm")
+    s.text((640, 650), "ENGINE CAPABILITY • ENCLOSURE TRANSPORT REMAINS FAIL-CLOSED UNTIL THE BRIDGE PASSES", 16, C["red"], True, "mm")
     return s
 
 
 def spectral(frame=None) -> Scene:
     s = Scene(frame)
-    background(s, "BHSM SPECTRAL FORECAST", "STRUCTURAL / PROVISIONAL — NO INVENTED MASS SCALE")
-    s.text((80, 155), "ACTION-DERIVED SPECTRAL COORDINATE", 20, C["white"], True, "la")
-    s.text((1200, 155), "not a physical mass axis", 16, C["muted"], False, "ra")
-    y = 360
-    s.line([(80, y), (1200, y)], C["white"], 3, animated=True)
-    s.scan(80, 1200, 195, 445)
-    for x in range(80, 1201, 140):
-        s.line([(x, y - 8), (x, y + 8)], C["muted"], 2)
-    s.rect((150, 245, 235, 360), C["panel2"], C["cyan"], 2, 6)
-    s.text((192, 227), "ACTION-DERIVED", 14, C["cyan"], True, "mm")
-    s.text((192, 260), "MODE", 16, C["white"], True, "mm")
-    s.rect((310, 315, 480, 405), C["panel2"], C["gold"], 2, 6)
-    s.text((395, 292), "ADMISSIBLE INTERVAL", 14, C["gold"], True, "mm")
-    s.rect((550, 315, 720, 405), C["black"], C["red"], 2, 6)
-    for x in range(550, 721, 18):
-        s.line([(x, 315), (max(550, x - 50), 405)], C["red"], 1)
-    s.text((635, 292), "SPECTRAL NULL WINDOW", 14, C["red"], True, "mm")
-    s.rect((790, 300, 1010, 420), C["panel"], C["gray"], 2, 6)
-    s.text((900, 277), "UNRESOLVED", 14, C["gray"], True, "mm")
-    s.ellipse((1090, 323, 1164, 397), C["panel2"], C["cyan"], 3, reveal=0.78)
-    s.text((1127, 360), "MODE", 14, C["white"], True, "mm")
-    for index, x in enumerate((118, 270, 505, 750, 1040)):
-        s.ellipse((x - 7, y - 7, x + 7, y + 7), C["cyan"], C["white"], 1,
-                  reveal=0.08 + index * 0.14)
-    cards = [
-        (100, "OPEN + NONZERO", "UNSTABLE", C["red"]),
-        (385, "KINEMATICALLY CLOSED", "CHANNEL CLOSED", C["gold"]),
-        (670, "EXACT ZERO", "SELECTION-RULE FORBIDDEN", C["cyan"]),
-        (955, "INCOMPLETE LEDGER", "STABILITY UNRESOLVED", C["gray"]),
+    background(s, "SPECTRAL FORECAST — BAND VIEW", "REPOSITORY-DERIVED STRUCTURE • PROVISIONAL")
+    x0, x1 = 150, 1190
+    y0, y1 = 165, 555
+    s.text((58, 147), "CLASS", 14, C["muted"], True, "la")
+    s.text((1190, 147), "NORMALIZED SPECTRAL COORDINATE ξ  (NOT MASS)", 15, C["muted"], False, "ra")
+    for tick in range(6):
+        x = x0 + tick * (x1 - x0) / 5
+        s.line([(x, y0), (x, y1)], C["grid"], 1)
+        s.text((x, y1 + 28), f"{tick / 5:.1f}", 13, C["muted"], False, "mm")
+    rows = [
+        (205, "MODE A", 0.10, 0.28, 0.06, C["cyan"]),
+        (285, "MODE B", 0.34, 0.51, 0.04, C["gold"]),
+        (365, "NULL", 0.56, 0.69, 0.00, C["red"]),
+        (445, "MODE C", 0.73, 0.91, 0.08, C["gray"]),
     ]
-    for x, top, bottom, accent in cards:
-        node(s, (x, 500, x + 225, 590), top, [bottom], accent, title_size=14, body_size=13)
-    s.text((640, 660), "STABILITY IS CERTIFIED ONLY FROM A COMPLETE ACTION-DERIVED CHANNEL LEDGER", 15, C["muted"], True, "mm")
+    for row, label, lo, hi, uncertainty, accent in rows:
+        s.text((118, row), label, 15, accent, True, "rm")
+        s.line([(x0, row), (x1, row)], C["panel2"], 2)
+        left = x0 + lo * (x1 - x0)
+        right = x0 + hi * (x1 - x0)
+        if uncertainty:
+            outer_left = x0 + max(0.0, lo - uncertainty) * (x1 - x0)
+            outer_right = x0 + min(1.0, hi + uncertainty) * (x1 - x0)
+            s.rect((outer_left, row - 18, outer_right, row + 18), C["panel2"], accent, 1, 9)
+        s.rect((left, row - 11, right, row + 11), accent, C["white"], 1, 6)
+        if label == "NULL":
+            for hatch_x in range(int(left), int(right) + 1, 18):
+                s.line([(hatch_x, row - 11), (max(left, hatch_x - 18), row + 11)], C["black"], 1)
+    s.scan(x0, x1, y0, y1)
+    legend = [
+        (170, C["cyan"], "ADMISSIBLE BAND"),
+        (430, C["panel2"], "UNCERTAINTY ENVELOPE"),
+        (760, C["red"], "NULL WINDOW"),
+        (1010, C["gray"], "UNRESOLVED"),
+    ]
+    for x, accent, label in legend:
+        s.rect((x, 615, x + 24, 631), accent, C["white"], 1, 3)
+        s.text((x + 34, 624), label, 13, C["muted"], True, "lm")
+    s.text((640, 682), "BAND WIDTH ENCODES INTERVAL AUTHORITY; THE SCAN LINE SHOWS CLASSIFICATION, NOT DISCOVERY", 14, C["white"], True, "mm")
+    return s
+
+
+def particle_spectrum(frame=None) -> Scene:
+    payload = json.loads(SIMULATED_SPECTRUM_PATH.read_text(encoding="utf-8"))
+    s = Scene(frame)
+    background(s, "SIMULATED BHSM PARTICLE SPECTRUM", "MUSEUM DISPLAY DATA • NOT A PHYSICAL PREDICTION")
+    x0, x1 = 120, 1200
+    y0, y1 = 175, 570
+    for tick in range(6):
+        x = x0 + tick * (x1 - x0) / 5
+        s.line([(x, y0), (x, y1)], C["grid"], 1)
+        s.text((x, y1 + 27), f"{tick / 5:.1f}", 13, C["muted"], False, "mm")
+    s.text((1200, 145), "DIMENSIONLESS DISPLAY COORDINATE ξ", 15, C["muted"], False, "ra")
+    family_rows = {"lepton": 235, "gauge": 340, "quark": 445}
+    family_colors = {"lepton": C["cyan"], "gauge": C["gold"], "quark": C["green"]}
+    for family, row in family_rows.items():
+        accent = family_colors[family]
+        s.text((95, row), family.upper(), 14, accent, True, "rm")
+        s.line([(x0, row), (x1, row)], C["panel2"], 2)
+    for index, mode in enumerate(payload["modes"]):
+        row = family_rows[mode["family"]]
+        accent = family_colors[mode["family"]]
+        x = x0 + float(mode["display_coordinate"]) * (x1 - x0)
+        height = 28 + 40 * float(mode["relative_intensity"])
+        reveal = 0.04 + index * 0.07
+        s.line([(x, row), (x, row - height)], accent, 4)
+        s.ellipse((x - 8, row - height - 8, x + 8, row - height + 8), accent, C["white"], 2, reveal=reveal)
+        label_y = row + 27 if index % 2 == 0 else row + 48
+        s.text((x, label_y), mode["label"], 12, C["white"], True, "mm")
+    s.scan(x0, x1, y0, y1)
+    badge(s, (220, 630, 1060, 670), "SIMULATED POSITIONS + INTENSITIES • FAMILIAR PARTICLE LABELS ARE REFERENCE IDENTITIES", C["gold"])
     return s
 
 
@@ -393,7 +438,7 @@ def gminus2(frame=None) -> Scene:
     s.text((640, 410), "Γ^μ = F1(q²) γ^μ + [i σ^μν q_ν / (2m_μ)] F2(q²) + …", 25, C["white"], False, "mm")
     badge(s, (140, 495, 1140, 540), "F2(0) ENGINE READY • NO NUMERICAL BHSM a_μ DISPLAYED", C["gold"])
     s.rect((220, 580, 1060, 638), C["panel2"], C["red"], 2, 10)
-    s.text((640, 609), "PHYSICAL PREDICTION GATED: GATE 7 • WARD IDENTITY • RENORMALIZATION • EXTERNAL MODE", 15, C["red"], True, "mm")
+    s.text((640, 609), "PHYSICAL PREDICTION GATED: ENCLOSURE BRIDGE • WARD IDENTITY • RENORMALIZATION • EXTERNAL MODE", 15, C["red"], True, "mm")
     return s
 
 
@@ -458,25 +503,116 @@ def firewall(frame=None) -> Scene:
     return s
 
 
+def identification_bridge(frame=None) -> Scene:
+    audit = json.loads(LOCALIZATION_AUDIT_PATH.read_text(encoding="utf-8"))[
+        "carrier_audit"
+    ]
+    s = Scene(frame)
+    background(s, "PHYSICAL IDENTIFICATION — STATE SPACE", "UNCHANGED AE2 CARRIER AUDIT · 0 OF 6 QUALIFY")
+    x0, x1, y0, y1 = 80, 775, 170, 560
+    for tick in range(6):
+        x = x0 + tick * (x1 - x0) / 5
+        y = y1 - tick * (y1 - y0) / 5
+        s.line([(x, y0), (x, y1)], C["grid"], 1)
+        s.line([(x0, y), (x1, y)], C["grid"], 1)
+    s.line([(x0, y1), (x1, y1)], C["white"], 2)
+    s.line([(x0, y0), (x0, y1)], C["white"], 2)
+    s.text(((x0 + x1) / 2, 595), "EVENT-CHILD COORDINATE q_EC", 14, C["muted"], True, "mm")
+    s.text((82, 145), "STATE-SPACE EVENT VALUE", 13, C["muted"], True, "la")
+    # The nested region is the desired carrier type, not a selected AE2 object.
+    s.ellipse((390, 235, 750, 520), C["panel"], C["red"], 3)
+    s.ellipse((450, 285, 700, 485), C["panel2"], C["gold"], 2)
+    s.ellipse((515, 335, 650, 450), C["black"], C["cyan"], 2)
+    s.text((570, 216), "TARGET LOCAL DOMAIN · NOT SELECTED", 13, C["red"], True, "mm")
+    trajectories = [
+        ([(110, 515), (250, 460), (390, 400), (540, 390)], C["cyan"], "FAMILY α"),
+        ([(120, 355), (275, 360), (420, 385), (565, 410)], C["gold"], "MODE β"),
+        ([(145, 205), (290, 265), (430, 330), (580, 385)], C["green"], "CURRENT γ"),
+    ]
+    for index, (points, accent, label) in enumerate(trajectories):
+        s.line(points, accent, 3, animated=True, delay=index * 0.24)
+        s.text((points[0][0], points[0][1] - 22), label, 13, accent, True, "mm")
+    s.scan(100, 745, 185, 535, C["cyan"])
+
+    # Data-native matrix: action-owned, domain, embedded surface, regularity,
+    # and same-action interface variation.  No candidate supplies all five.
+    s.rect((805, 135, 1240, 590), C["panel"], C["grid"], 2, 12)
+    s.text((825, 165), "CARRIER TYPE AUDIT", 17, C["white"], True, "la")
+    s.text((1220, 165), "0 / 6", 17, C["red"], True, "ra", pulse=True)
+    columns = (
+        ("A", "action"),
+        ("D", "domain"),
+        ("Σ", "surface"),
+        ("R", "regularity"),
+        ("δS", "variation"),
+    )
+    column_x = [1010, 1055, 1100, 1145, 1190]
+    for x, (short, _) in zip(column_x, columns):
+        s.text((x, 202), short, 12, C["muted"], True, "mm")
+    short_names = ("λ₂₄", "reset", "B1/collar", "support", "98-var", "edge")
+    attribute_keys = (
+        "action_owned",
+        "selects_local_domain",
+        "supplies_embedded_interface",
+        "regularity_or_domain_control",
+        "owns_interface_variation",
+    )
+    for row_index, (candidate, short_name) in enumerate(
+        zip(audit["candidates"], short_names)
+    ):
+        y = 238 + row_index * 49
+        s.text((825, y), short_name, 13, C["white"], row_index < 2, "lm")
+        for x, key in zip(column_x, attribute_keys):
+            passed = bool(candidate[key])
+            s.ellipse(
+                (x - 7, y - 7, x + 7, y + 7),
+                C["green"] if passed else C["black"],
+                C["green"] if passed else C["red"],
+                2,
+                reveal=row_index / 7,
+            )
+    badge(s, (825, 535, 1220, 568), "KERNEL A · FAIL-CLOSED", C["red"])
+    s.text((640, 632), "λ₂₄ SELECTS EVENT TIME — NOT THE EMBEDDED SURFACE Σ_enc", 15, C["red"], True, "mm")
+    s.text((640, 667), "REUSED: FERMION RESET TRACE + FAMILY-PROJECTOR INTERTWINER", 13, C["green"], True, "mm")
+    s.text((640, 695), "NEXT OWNER: ACTION-VERSION DECISION FOR A COVARIANT LOCALIZATION CARRIER", 13, C["white"], True, "mm")
+    return s
+
+
 VISUALS: dict[str, Callable[[int | None], Scene]] = {
     "bhsm_geometry_to_prediction": hero,
     "bhsm_universal_predictive_engine": universal,
+    "bhsm_simulated_particle_spectrum": particle_spectrum,
     "bhsm_spectral_forecast": spectral,
     "bhsm_muon_g2_pipeline": gminus2,
     "bhsm_collision_predictor": collision,
     "bhsm_decay_stability_engine": decay,
     "bhsm_no_fit_firewall": firewall,
+    "bhsm_physical_identification_bridge": identification_bridge,
 }
 
 
 def validate_status() -> dict:
     status = json.loads(STATUS_PATH.read_text(encoding="utf-8"))
+    audit = json.loads(LOCALIZATION_AUDIT_PATH.read_text(encoding="utf-8"))
     if status["promotion"]["gate7_closed"]:
         raise RuntimeError("visual manifest unexpectedly promotes Gate 7")
     if status["capabilities"]["complete_physical_predictions"]:
         raise RuntimeError("visual manifest unexpectedly claims complete predictions")
     if status["spectral_visualization"]["physical_mass_scale_available"]:
         raise RuntimeError("visual suite is intentionally non-numeric until a physical scale exists")
+    if status["identification_bridge"]["local_enclosure_proved"]:
+        raise RuntimeError("visual manifest unexpectedly promotes the local enclosure bridge")
+    if not status["identification_bridge"]["frozen_particle_registry_reused"]:
+        raise RuntimeError("visual manifest must reuse the frozen particle registry")
+    carrier_audit = audit["carrier_audit"]
+    if carrier_audit["carrier_exists_in_audited_unchanged_ae2"]:
+        raise RuntimeError("visual unexpectedly found an unchanged-AE2 carrier")
+    if len(carrier_audit["candidates"]) != 6:
+        raise RuntimeError("visual requires the six-class localization audit")
+    if status["identification_bridge"]["carrier_candidates_audited"] != 6:
+        raise RuntimeError("visual manifest carrier count drift")
+    if status["identification_bridge"]["qualifying_carriers"] != 0:
+        raise RuntimeError("visual manifest unexpectedly promotes a carrier")
     return status
 
 

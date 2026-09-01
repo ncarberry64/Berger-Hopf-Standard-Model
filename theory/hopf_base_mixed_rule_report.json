@@ -1,0 +1,38 @@
+{
+  "limitations": [
+    "The Hopf/base mixed rule is closed as a representation/compatibility rule, not as a numerical coefficient.",
+    "No coefficient is selected from empirical outputs."
+  ],
+  "missing_axiom": "",
+  "preserves_formal_kernel": true,
+  "preserves_h_perp": true,
+  "rows": [
+    {
+      "coefficient_slot": "hopf_fiber_base_cross",
+      "conclusion": "cross curvature is zero/absorbed by vertical-horizontal compatibility",
+      "geometric_input": "Hopf fiber/base splitting in Berger-Hopf geometry",
+      "limitation": "This is a representation rule, not a new fitted coefficient.",
+      "rule_id": "vertical_horizontal_split",
+      "status": "HOPF_BASE_MIXED_REPRESENTED"
+    },
+    {
+      "coefficient_slot": "base_boundary_cross",
+      "conclusion": "sector-sensitive boundary/base mixing is represented by V_boundary",
+      "geometric_input": "Higgs-selected U(1) boundary phase and Omega_f",
+      "limitation": "Boundary phase remains in the existing boundary sector.",
+      "rule_id": "boundary_phase_coupling",
+      "status": "HOPF_BASE_MIXED_REPRESENTED"
+    },
+    {
+      "coefficient_slot": "hopf_boundary_coframe_mixed",
+      "conclusion": "mixed contribution is not an independent curvature source on the formal kernel",
+      "geometric_input": "formal protected kernel coordinates (0,18,36)",
+      "limitation": "Full H_T proof still requires downstream operator-domain dependencies.",
+      "rule_id": "formal_kernel_safety",
+      "status": "HOPF_BASE_MIXED_REPRESENTED"
+    }
+  ],
+  "status": "HOPF_BASE_MIXED_REPRESENTED",
+  "theorem_complete": true,
+  "title": "BHSM v2.11 Hopf/Base Mixed Rule Report"
+}

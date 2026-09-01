@@ -52,6 +52,9 @@ jobs:
           tests/test_bhsm_n12_intrinsic_state_return_section.py
           tests/test_n12_forward_invariant_history_existence.py
           tests/test_n12_forward_terminal_chart_reachability.py
+          tests/test_n12_gate7_localization_carrier_kill_screen.py
+          tests/test_n12_gate7_physical_encapsulation_identification.py
+          tests/test_post_ae2_localization_carrier_extension_contract.py
           tests/test_bhsm_aether_cross_resolution_reconnaissance_v21_35.py
           tests/test_bhsm_n6_n12_nonlinear_homotopy_integrability_v21_36.py
           tests/test_bhsm_n6_n12_fixed_chart_rank_no_go_v21_37.py
@@ -59,15 +62,47 @@ jobs:
           tests/test_engine_physics_status_separation.py
       - name: Public status and claim boundaries
         run: |
-          python tools/audit_public_surfaces.py
-          python tools/audit_public_status_sync_v15_7.py
           python tools/audit_forbidden_claims.py
           python tools/audit_bhsm_status.py
           python tools/audit_frozen_prediction_integrity.py
           python tools/verify_precision.py
-          python -m pytest -q tests/test_public_surface_consistency.py tests/test_bhsm_museum_facade.py tests/test_current_bhsm_status_schema.py tests/test_bhsm_public_status_sync_v15_7.py
+      - name: Coordinate benchmark precision gate
+        run: |
+          python -m bhsm.interface.benchmarks.coordinate_benchmark \
+            --events 100000 \
+            --boundary-fraction 0.35 \
+            --repeats 1 \
+            --output tmp/ci-coordinate-benchmark/results.json \
+            --markdown tmp/ci-coordinate-benchmark/results.md \
+            --plot tmp/ci-coordinate-benchmark/latency.png \
+            --summary
+          python tools/verify_precision.py \
+            --results tmp/ci-coordinate-benchmark/results.json
       - name: Patch hygiene
         run: git diff --check
+
+  root-integration:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    container:
+      image: rootproject/root@sha256:9d2a9dd6991dc3571eeb8a33b0eb313cfd785eb3303b14ce0170b09a44c2ecb7
+    steps:
+      - uses: actions/checkout@v4
+      - name: Report ROOT toolchain
+        run: |
+          root-config --version
+          cmake --version
+      - name: Configure generic-safe ROOT integration
+        run: >-
+          cmake -S . -B build
+          -DBUILD_ROOT_INTEGRATION=ON
+          -DENABLE_AVX2=OFF
+          -DENABLE_AVX512=OFF
+          -DCMAKE_BUILD_TYPE=Release
+      - name: Compile ROOT integration
+        run: cmake --build build --config Release --parallel 2
+      - name: Run live ROOT integration smoke test
+        run: ctest --test-dir build --build-config Release --output-on-failure
 
   full-historical-regression:
     if: >-

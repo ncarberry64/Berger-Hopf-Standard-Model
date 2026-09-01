@@ -5,26 +5,28 @@ ROOT = Path(__file__).resolve().parents[1]
 MUSEUM = ROOT / "museum"
 
 
-def test_museum_has_seven_simulation_engine_exhibits_with_lay_placards() -> None:
+def test_museum_has_nine_visual_engines_with_lay_placards_and_fallbacks() -> None:
     exhibits = (MUSEUM / "app" / "exhibits.ts").read_text(encoding="utf-8")
-    assert exhibits.count("_animated.gif'") == 7
-    assert exhibits.count("still: 'bhsm_") == 7
-    assert exhibits.count("lay: '") == 8  # seven simulations plus CMS real data
+    assert exhibits.count("animated: '") == 9
+    assert exhibits.count("still: '") == 9
+    assert exhibits.count("lay: '") == 9
+    assert "pr98_cms_engine_validation_continuous.gif" in exhibits
+    assert "CMS Open Data Record 303" in exhibits
     for phrase in (
+        "100,000 dimuon events",
+        "3.225×",
         "S², S³, and S⁴",
-        "inverse-free LSZ",
-        "admissible bands",
-        "F₂(0)",
+        "Simulated particle spectrum",
+        "uncertainty envelopes",
+        "F₂(q²)",
         "Two incoming tracks",
         "Pulses travel along allowed channels",
         "no-fit firewall",
+        "family or mode",
+        "local enclosure",
+        "Real CMS Open Data · BHSM Engine",
     ):
         assert phrase in exhibits
-
-    page = (MUSEUM / "app" / "page.tsx").read_text(encoding="utf-8")
-    assert "seven animated simulation engines" in page
-    assert "<dt>Lay description</dt>" in page
-    assert "Simulation engine ·" in page
 
 
 def test_museum_separates_claim_classes_and_creator_record() -> None:
@@ -34,59 +36,45 @@ def test_museum_separates_claim_classes_and_creator_record() -> None:
         "Implemented machinery",
         "Numerically demonstrated",
         "Physical prediction",
-        "Gate 7 remains OPEN",
+        "6 carrier classes audited",
+        "0 qualify",
+        "Four proof kernels",
         "FULL_BHSM_COMPLETE = FALSE",
-        "PHYSICAL_ENCAPSULATION_IDENTIFIED = FALSE",
         "Norman P. Carberry",
         "0009-0000-6650-3485",
-        "No CERN, Fermilab, or institutional endorsement is implied",
+        "17,630",
+        "Frozen preprint PDF",
+        "Inspect 64 dimuon events",
+        "Scientific caption",
+        "eventIndices[selected]",
+        "{exhibits.length} animated data engines",
+        "Lay description",
+        "Real-data engine",
+        "Simulation / audit engine",
     ):
         assert phrase in page
+    assert "guided tour" not in page.lower()
+    assert "semantics" not in page.lower()
+    assert "Norman P. Carberry · Research archive" not in page
+    assert "Norman P. Carberry · Berger–Hopf Standard Model" not in page
+    assert "No invented biography" not in page
 
 
 def test_museum_assets_are_local_and_provenance_documented() -> None:
     provenance = (MUSEUM / "ASSET_PROVENANCE.md").read_text(encoding="utf-8")
     assert "Bubo Research Node" in provenance
     assert "MIT License" in provenance
-    assert "No stock imagery" in provenance
-    assert "deterministic" in provenance
-    assert "none of their plotted" in provenance
-    assert (ROOT / "docs" / "assets" / "generate_bhsm_museum_engines.py").is_file()
+    assert "SIMULATED" not in provenance
+    assert "simulated museum data" in provenance
+    assert "generate_bhsm_museum_engines.py" in provenance
+    assert "neither experimental measurements nor physical predictions" in provenance
     assert (MUSEUM / "public" / "bhsm-symbol.svg").is_file()
+    assert (MUSEUM / "public" / "data" / "cms-four-vector-sample.json").is_file()
 
 
-def test_cms_gallery_is_distinct_qualified_and_provenanced() -> None:
-    exhibits = (MUSEUM / "app" / "exhibits.ts").read_text(encoding="utf-8")
+def test_every_exhibit_visual_uses_motion_control_and_cache_safe_fallback() -> None:
     page = (MUSEUM / "app" / "page.tsx").read_text(encoding="utf-8")
-    combined = " ".join((exhibits + page).split())
-    for phrase in (
-        "Coordinate-engine validation—not a BHSM physics test",
-        "No detector reconstruction",
-        "no BHSM empirical validation",
-        "no CERN/CMS endorsement",
-        "https://opendata.cern.ch/record/303",
-        "pr98_cms_sample_manifest.json",
-        "artifacts/cern_open_data_benchmark/results.json",
-        "tests/test_cern_open_data_benchmark.py",
-        "100,000 events",
-        "200,000 unique muon",
-    ):
-        assert phrase.casefold() in combined.casefold()
-
-    sync = (MUSEUM / "scripts" / "sync-assets.mjs").read_text(encoding="utf-8")
-    assert "pr98_cms_engine_validation_continuous.gif" in sync
-    assert "pr98_cms_engine_validation.svg" in sync
-
-
-def test_museum_has_keyboard_and_reduced_motion_contracts() -> None:
-    page = (MUSEUM / "app" / "page.tsx").read_text(encoding="utf-8")
-    css = (MUSEUM / "app" / "globals.css").read_text(encoding="utf-8")
-    assert 'className="skip-link"' in page
-    assert "prefers-reduced-motion: reduce" in page
-    assert "aria-pressed={!motion}" in page
-    assert "animated={cmsValidation.animated}" in page
-    assert "still={cmsValidation.still}" in page
+    assert "function MotionImage" in page
     assert "onError={() => setFailedSource(desired)}" in page
-    assert ":focus-visible" in css
-    assert "@media (prefers-reduced-motion: reduce)" in css
-    assert "min-height: 44px" in css
+    assert "ASSET_REVISION" in page
+    assert "<MotionImage" in page

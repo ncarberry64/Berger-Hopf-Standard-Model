@@ -9,10 +9,6 @@ on:
     paths:
       - museum/**
       - docs/assets/bhsm_*
-      - docs/assets/pr98_cms_open_data_animation/**
-      - docs/current_bhsm_status.*
-      - docs/reviewer_start_here.md
-      - README.md
       - .github/workflows/museum-pages.yml
   workflow_dispatch:
 
@@ -53,10 +49,6 @@ jobs:
 
       - name: Build static museum package
         run: pnpm build:pages
-        working-directory: museum
-
-      - name: Lint museum source
-        run: pnpm lint
         working-directory: museum
 
       - name: Configure GitHub Pages

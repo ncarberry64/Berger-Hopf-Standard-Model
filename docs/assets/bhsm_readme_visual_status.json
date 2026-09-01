@@ -15,7 +15,9 @@
     "prediction_firewall": "bcf1b412",
     "retained_sm_component_matching": "7c0b6a85",
     "sm_gauge_vertex_tensors": "2a07cfc5",
-    "physical_gauge_coupling_guard": "cf078ac0"
+    "physical_gauge_coupling_guard": "cf078ac0",
+    "ontology_reconstruction": "1e7e9e0e",
+    "physical_identification_bridge": "1e7e9e0e"
   },
   "capabilities": {
     "action_derivatives": [1, 2, 3, 4],
@@ -39,11 +41,13 @@
   "promotion": {
     "gate7_closed": false,
     "status": "PHYSICAL PROMOTION GATED",
-    "detail": "Pending formal Gate 7 closure; engine capability is not a physical prediction."
+    "detail": "The AE2 selected stop and event child are derived; physical promotion remains gated on the local-enclosure identification bridge and downstream physical requirements."
   },
   "spectral_visualization": {
     "physical_mass_scale_available": false,
-    "particle_assignments_available": false,
+    "particle_assignments_available": true,
+    "assignment_authority": "FROZEN_UPSTREAM_REGISTRY_AT_ORIGINAL_CLAIM_STRENGTH",
+    "new_particle_assignments_derived_here": false,
     "display_mode": "STRUCTURAL_AND_PROVISIONAL",
     "labels": [
       "ACTION-DERIVED MODE",
@@ -52,6 +56,46 @@
       "UNRESOLVED",
       "KINEMATICALLY CLOSED",
       "SELECTION-RULE FORBIDDEN"
+    ]
+  },
+  "simulated_particle_spectrum": {
+    "installed_for_museum": true,
+    "dataset": "data/museum/bhsm_simulated_particle_spectrum_v1.json",
+    "physical_mass_scale": false,
+    "new_particle_prediction": false,
+    "label": "SIMULATED_MUSEUM_DATASET"
+  },
+  "identification_bridge": {
+    "selected_ae2_stop_derived": true,
+    "event_child_derived": true,
+    "frozen_particle_registry_reused": true,
+    "family_or_mode_may_manifest_as_sm_particle": true,
+    "local_enclosure_proved": false,
+    "carrier_kill_screen_complete": true,
+    "carrier_candidates_audited": 6,
+    "qualifying_carriers": 0,
+    "four_kernel_reduction": [
+      "localization_carrier",
+      "physical_interface_variation",
+      "child_inheritance",
+      "C2_family_mode_instantiation"
+    ],
+    "reusable_subclosures": [
+      "fermionic_event_child_reset_trace_matching",
+      "tensor_factor_family_reset_intertwiner"
+    ],
+    "missing": [
+      "owner_authorized_action_version_decision",
+      "covariant_localization_or_domain_carrier",
+      "physical_interface_variation",
+      "dependency_closed_field_transport",
+      "child_inheritance",
+      "actual_C2_family_mode_instantiation"
+    ],
+    "forbidden_equivalences": [
+      "lambda24_zero_equals_two_pi",
+      "selected_stop_equals_spacetime_edge",
+      "positive_duration_equals_particle_stability"
     ]
   },
   "prohibited_numeric_readouts": [

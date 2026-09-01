@@ -1,0 +1,85 @@
+{
+  "correct_claim": "BHSM v1.3L corrects the Level 2 H_T scaffold to protect the formal sector-labeled kernel rather than the old coordinate-first block.",
+  "protection_term": {
+    "avoids_old_lepton_only_modes": true,
+    "idempotent": true,
+    "limitations": [
+      "The projection is a corrected Level 2 scaffold term.",
+      "A full action derivation of this projection remains open."
+    ],
+    "name": "P0_formal_sector_labeled",
+    "old_coordinate_first_coordinates": [
+      0,
+      1,
+      2
+    ],
+    "orthogonal_to_complement": true,
+    "projector_rank": 3,
+    "protected_coordinates": [
+      0,
+      18,
+      36
+    ],
+    "protected_sectors": [
+      "lepton",
+      "up",
+      "down"
+    ]
+  },
+  "summary": {
+    "avoids_old_lepton_only_modes": true,
+    "formal_protected_coordinates": [
+      0,
+      18,
+      36
+    ],
+    "heat_lift_preserves_formal_kernel": true,
+    "matrix_symmetric": true,
+    "new_variant": "DIRAC_PROXY_LEVEL_2_FORMAL_KERNEL",
+    "old_protected_coordinates": [
+      0,
+      1,
+      2
+    ],
+    "old_variant": "DIRAC_PROXY_LEVEL_2_COORDINATE_FIRST",
+    "p0_pperp_zero": true,
+    "projector_idempotent": true,
+    "projector_orthogonal_to_complement": true,
+    "projector_rank": 3,
+    "protected_sectors": [
+      "lepton",
+      "up",
+      "down"
+    ],
+    "theorem_complete": false
+  },
+  "theorem_complete": false,
+  "title": "BHSM v1.3L Formal-Kernel Level 2 Operator Variant",
+  "v1_3m_formal_kernel_regression_update": {
+    "all_convergence_rows_pass": true,
+    "convergence_rows": 27,
+    "direct_lower_bound": 6.8171156827281205,
+    "gershgorin_lower_bound": 6.721838618515489,
+    "ht_gap": 19592.076941940737,
+    "margin": 6.81711568272658,
+    "minmax_lower_bound": 6.8171156827281205,
+    "operator_variant": "DIRAC_PROXY_LEVEL_2_FORMAL_KERNEL",
+    "protected_coordinates": [
+      0,
+      18,
+      36
+    ],
+    "protected_sectors": [
+      "lepton",
+      "up",
+      "down"
+    ],
+    "sector_coupling_spectral_norm": 0.47208720318305375,
+    "status": "FORMAL_KERNEL_CONVERGENCE_SUPPORTED",
+    "structured_lower_bound": 6.729508865520464,
+    "supersedes_coordinate_first_dependent_conclusions": true,
+    "theorem_complete": false,
+    "worst_direct_margin": 4.833981204821612,
+    "worst_gershgorin_margin": 3.949470723972136
+  }
+}

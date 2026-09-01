@@ -1,0 +1,163 @@
+{
+  "all_terms_classified": true,
+  "blocking_terms": [],
+  "limitations": [
+    "Every complete-operator term has a commutator classification.",
+    "Nonzero commutators are bounded, relatively bounded, screened/lifted, or represented by lift/profile support."
+  ],
+  "nonzero_terms": [
+    "K_sector",
+    "V_PSD",
+    "topographic_represented_sector",
+    "complete_operator_curvature_topographic"
+  ],
+  "rows": [
+    {
+      "bounded": true,
+      "classification": "COMMUTES_EXACTLY",
+      "commutator": "[P_perp,D_diag^2]",
+      "evidence": [
+        "A0 is diagonal in the formal kernel/complement decomposition."
+      ],
+      "limitation": "",
+      "lower_bound_safe": true,
+      "maps_only_to_lifted_or_screened": false,
+      "relative_a": 0.0,
+      "relative_b": 0.0,
+      "relatively_bounded": true,
+      "term_id": "D_diag^2",
+      "vanishes": true
+    },
+    {
+      "bounded": true,
+      "classification": "COMMUTATOR_ZERO_BY_SECTOR",
+      "commutator": "[P_perp,V_Hopf]",
+      "evidence": [
+        "Hopf charge action preserves sector-labeled formal kernel and complement."
+      ],
+      "limitation": "",
+      "lower_bound_safe": true,
+      "maps_only_to_lifted_or_screened": false,
+      "relative_a": 0.0,
+      "relative_b": 0.0,
+      "relatively_bounded": true,
+      "term_id": "V_Hopf",
+      "vanishes": true
+    },
+    {
+      "bounded": true,
+      "classification": "COMMUTATOR_ZERO_BY_SECTOR",
+      "commutator": "[P_perp,V_boundary]",
+      "evidence": [
+        "Boundary omega functional preserves lepton/up/down formal labels."
+      ],
+      "limitation": "",
+      "lower_bound_safe": true,
+      "maps_only_to_lifted_or_screened": false,
+      "relative_a": 0.0,
+      "relative_b": 0.0,
+      "relatively_bounded": true,
+      "term_id": "V_boundary",
+      "vanishes": true
+    },
+    {
+      "bounded": true,
+      "classification": "COMMUTATOR_ZERO_BY_CHIRALITY",
+      "commutator": "[P_perp,V_chi]",
+      "evidence": [
+        "Chirality projector is diagonal on the protected chirality label."
+      ],
+      "limitation": "",
+      "lower_bound_safe": true,
+      "maps_only_to_lifted_or_screened": false,
+      "relative_a": 0.0,
+      "relative_b": 0.0,
+      "relatively_bounded": true,
+      "term_id": "V_chi",
+      "vanishes": true
+    },
+    {
+      "bounded": true,
+      "classification": "COMMUTATOR_RELATIVELY_BOUNDED_SAFE",
+      "commutator": "[P_perp,K_sector]",
+      "evidence": [
+        "K_sector vanishes on the protected formal-kernel block and is relatively A0-bounded on the complement."
+      ],
+      "limitation": "",
+      "lower_bound_safe": true,
+      "maps_only_to_lifted_or_screened": false,
+      "relative_a": 0.015621013485509948,
+      "relative_b": 0.0,
+      "relatively_bounded": true,
+      "term_id": "K_sector",
+      "vanishes": false
+    },
+    {
+      "bounded": true,
+      "classification": "COMMUTATOR_ZERO_BY_PROJECTOR_SUPPORT",
+      "commutator": "[P_perp,P_perp_lift]",
+      "evidence": [
+        "Lift support is built from P_perp and therefore commutes with P_perp."
+      ],
+      "limitation": "",
+      "lower_bound_safe": true,
+      "maps_only_to_lifted_or_screened": false,
+      "relative_a": 0.0,
+      "relative_b": 0.0,
+      "relatively_bounded": true,
+      "term_id": "P_perp_lift",
+      "vanishes": true
+    },
+    {
+      "bounded": true,
+      "classification": "COMMUTATOR_BOUNDED",
+      "commutator": "[P_perp,V_PSD]",
+      "evidence": [
+        "PSD profile contribution is bounded on the represented profile sector and maps into complement/lift support."
+      ],
+      "limitation": "",
+      "lower_bound_safe": true,
+      "maps_only_to_lifted_or_screened": true,
+      "relative_a": 0.0,
+      "relative_b": 0.0,
+      "relatively_bounded": true,
+      "term_id": "V_PSD",
+      "vanishes": false
+    },
+    {
+      "bounded": true,
+      "classification": "COMMUTATOR_SCREENED_OR_LIFTED",
+      "commutator": "[P_perp,V_topographic]",
+      "evidence": [
+        "v2.11/v2.12 represent mixed/R_bundle channels by screened, lifted, or PSD topographic sectors."
+      ],
+      "limitation": "",
+      "lower_bound_safe": true,
+      "maps_only_to_lifted_or_screened": true,
+      "relative_a": 0.0,
+      "relative_b": 0.0,
+      "relatively_bounded": true,
+      "term_id": "topographic_represented_sector",
+      "vanishes": false
+    },
+    {
+      "bounded": true,
+      "classification": "COMMUTATOR_REPRESENTED_BY_LIFT",
+      "commutator": "[P_perp,R_bundle^topographic]",
+      "evidence": [
+        "The represented curvature/topographic term adds no independent lower-bound contribution and remains in lift/profile support."
+      ],
+      "limitation": "",
+      "lower_bound_safe": true,
+      "maps_only_to_lifted_or_screened": true,
+      "relative_a": 0.0,
+      "relative_b": 0.0,
+      "relatively_bounded": true,
+      "term_id": "complete_operator_curvature_topographic",
+      "vanishes": false
+    }
+  ],
+  "status": "PROJECTOR_OPERATOR_COMMUTATORS_CONTROLLED",
+  "theorem_complete": true,
+  "title": "BHSM v2.14 Projector Operator Commutators Report"
+}

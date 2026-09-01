@@ -2,23 +2,139 @@
 
 import { ArrowRight, Code2, Pause, Play, ShieldCheck } from 'lucide-react';
 import Image from 'next/image';
-import { useState } from 'react';
+import { useEffect, useMemo, useState } from 'react';
 import { Button } from '@/components/ui/button';
-import {
-  cmsValidation,
-  exhibits,
-  REPOSITORY,
-  SCIENCE,
-  type Exhibit,
-} from './exhibits';
+import { exhibits, REPOSITORY, SCIENCE, type Exhibit } from './exhibits';
 
 const ASSET_REVISION = 'simulation-engines-2026-09-01';
 
 const creatorLinks = [
   { label: 'ORCID record', href: 'https://orcid.org/0009-0000-6650-3485' },
   { label: 'Citation metadata', href: `${SCIENCE}/CITATION.cff` },
+  { label: 'Frozen preprint PDF', href: `${SCIENCE}/manuscript/BHSM_final_paper.pdf` },
   { label: 'Archival DOI', href: 'https://doi.org/10.5281/zenodo.20663419' },
 ];
+
+type CMSVector = {
+  event_index: number;
+  run: number;
+  event: number;
+  muon: number;
+  E: number;
+  px: number;
+  py: number;
+  pz: number;
+  pt: number;
+  eta: number;
+  phi: number;
+  charge: number;
+};
+
+function CMSExplorer() {
+  const [vectors, setVectors] = useState<CMSVector[]>([]);
+  const [selected, setSelected] = useState(0);
+
+  useEffect(() => {
+    fetch('./data/cms-four-vector-sample.json')
+      .then(async (response) => {
+        const payload = (await response.json()) as { vectors: CMSVector[] };
+        setVectors(payload.vectors);
+      })
+      .catch(() => setVectors([]));
+  }, []);
+
+  const eventIndices = useMemo(
+    () => [...new Set(vectors.map((vector) => vector.event_index))],
+    [vectors],
+  );
+  const selectedEventIndex = eventIndices[selected];
+  const eventVectors = useMemo(
+    () => vectors.filter((vector) => vector.event_index === selectedEventIndex),
+    [selectedEventIndex, vectors],
+  );
+  const event = eventVectors[0];
+  const maxPt = Math.max(...eventVectors.map((vector) => vector.pt), 1);
+
+  return (
+    <section className="cms-explorer" id="cms-data" aria-labelledby="cms-explorer-title">
+      <div className="cms-explorer-copy">
+        <p className="eyebrow">BHSM Engine instrument · real CMS Open Data</p>
+        <h2 id="cms-explorer-title">Inspect 64 dimuon events.</h2>
+        <p>
+          Choose one checked-in event and inspect both measured muon
+          four-vectors. The circular instrument maps azimuth to angle, transverse
+          momentum to radius, and charge to color. It is a BHSM-style rendering
+          of CMS data—not a detector photograph, detector reconstruction,
+          BHSM empirical validation, or CERN/CMS endorsement.
+        </p>
+        <label htmlFor="cms-event-selector">
+          Sample event <strong>{selected + 1} / {eventIndices.length || 64}</strong>
+        </label>
+        <input
+          id="cms-event-selector"
+          type="range"
+          min="0"
+          max={Math.max(eventIndices.length - 1, 0)}
+          value={selected}
+          onChange={(eventChange) => setSelected(Number(eventChange.target.value))}
+        />
+        <div className="cms-event-identity">
+          <span>Source row {event?.event_index ?? '—'}</span>
+          <span>Run {event?.run ?? '—'}</span>
+          <span>Event {event?.event ?? '—'}</span>
+        </div>
+        <div className="cms-field-links">
+          <a href="https://opendata.cern.ch/record/303">CMS record ↗</a>
+          <a href={`${SCIENCE}/docs/pr98_cms_open_data_animation.md`}>Method ↗</a>
+        </div>
+      </div>
+
+      <div className="cms-event-instrument">
+        <svg viewBox="0 0 320 320" aria-labelledby="cms-event-plot-title">
+          <title id="cms-event-plot-title">Selected dimuon event in a polar momentum display</title>
+          {[55, 95, 135].map((radius) => (
+            <circle className="instrument-ring" cx="160" cy="160" r={radius} key={radius} />
+          ))}
+          <line className="instrument-axis" x1="20" x2="300" y1="160" y2="160" />
+          <line className="instrument-axis" x1="160" x2="160" y1="20" y2="300" />
+          {eventVectors.map((vector) => {
+            const radius = 42 + (vector.pt / maxPt) * 92;
+            const x = 160 + Math.cos(vector.phi) * radius;
+            const y = 160 - Math.sin(vector.phi) * radius;
+            return (
+              <g className={vector.charge > 0 ? 'track-positive' : 'track-negative'} key={vector.muon}>
+                <line x1="160" y1="160" x2={x} y2={y} />
+                <circle cx={x} cy={y} r="8" />
+                <text x={x + 12} y={y - 10}>μ{vector.charge > 0 ? '+' : '−'}</text>
+              </g>
+            );
+          })}
+          <circle className="instrument-origin" cx="160" cy="160" r="5" />
+        </svg>
+        <table className="cms-vector-table">
+          <caption>Selected CMS muon four-vectors</caption>
+          <thead>
+            <tr className="cms-vector-row cms-vector-head">
+              <th>Muon</th><th>E</th><th>pT</th><th>η</th><th>φ</th>
+            </tr>
+          </thead>
+          <tbody>
+            {eventVectors.map((vector) => (
+              <tr className="cms-vector-row" key={vector.muon}>
+                <th>μ{vector.charge > 0 ? '+' : '−'}</th>
+                <td>{vector.E.toFixed(3)}</td>
+                <td>{vector.pt.toFixed(3)}</td>
+                <td>{vector.eta.toFixed(3)}</td>
+                <td>{vector.phi.toFixed(3)}</td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+        <p className="instrument-caption">Energy and momentum in GeV · η and φ dimensionless/radians · two source vectors per event</p>
+      </div>
+    </section>
+  );
+}
 
 function StatusBadge({ exhibit }: { exhibit: Exhibit }) {
   return (
@@ -30,27 +146,23 @@ function StatusBadge({ exhibit }: { exhibit: Exhibit }) {
 
 function MotionImage({
   motion,
-  animated,
-  still,
-  alt,
+  exhibit,
   priority = false,
   loading,
 }: {
   motion: boolean;
-  animated: string;
-  still: string;
-  alt: string;
+  exhibit: Exhibit;
   priority?: boolean;
   loading?: 'eager' | 'lazy';
 }) {
-  const desired = motion ? animated : still;
+  const desired = motion ? exhibit.animated : exhibit.still;
   const [failedSource, setFailedSource] = useState<string | null>(null);
-  const source = failedSource === desired ? still : desired;
+  const source = failedSource === desired ? exhibit.still : desired;
 
   return (
     <Image
       src={`./exhibits/${source}?v=${ASSET_REVISION}`}
-      alt={alt}
+      alt={exhibit.alt}
       width={1600}
       height={900}
       priority={priority}
@@ -69,11 +181,12 @@ export default function Home() {
   );
 
   const hero = exhibits[0];
+  const exhibitCount = String(exhibits.length).padStart(2, '0');
 
   return (
     <main>
-      <a className="skip-link" href="#museum-start">
-        Skip to the exhibition
+      <a className="skip-link" href="#cms-data">
+        Skip to the CMS record
       </a>
       <header className="site-header">
         <a className="wordmark" href="#top" aria-label="BHSM Museum home">
@@ -87,11 +200,13 @@ export default function Home() {
           />
           <span>
             <strong>BHSM Museum</strong>
-            <small>Public exhibition · Scientific archive</small>
+            <small>Scientific research archive</small>
           </span>
         </a>
         <nav aria-label="Museum navigation">
-          <a href="#exhibits">Exhibits</a>
+          <a href="#cms-data">CMS data</a>
+          <a href="#reconstruction">Research</a>
+          <a href="#exhibits">Animations</a>
           <a href="#professionals">For reviewers</a>
           <a href="#creator">Creator</a>
           <a className="nav-repository" href={REPOSITORY}>
@@ -104,31 +219,31 @@ export default function Home() {
         <div className="atrium-copy">
           <p className="eyebrow">Berger–Hopf Standard Model</p>
           <h1 id="atrium-title">
-            One Action <span>·</span> One Scale <span>·</span> One Observable
-            Pipeline
+            Geometry, particles, and the record <span>in motion.</span>
           </h1>
           <p className="lede">
-            A visual entrance to an artifact-backed mathematical physics
-            program. Watch each calculation move, then open the scientific
-            record behind it.
+            The reconstructed BHSM archive begins with real CMS Open Data, then
+            moves through the action, spectrum, observables, and the open
+            physical-identification bridge.
           </p>
           <div className="atrium-actions">
-            <a className="button button-primary" href="#museum-start">
-              Begin the guided tour <ArrowRight aria-hidden="true" size={18} />
+            <a className="button button-primary" href="#cms-data">
+              Open the CMS record <ArrowRight aria-hidden="true" size={18} />
             </a>
             <a className="button button-secondary" href={REPOSITORY}>
               Enter the scientific repository
             </a>
           </div>
-          <p className="institution-note">
-            Built for public understanding and professional inspection. No CERN,
-            Fermilab, or institutional endorsement is implied.
-          </p>
+          <div className="hero-release" aria-label="BHSM archival identifiers">
+            <span>Release v1.1.0</span>
+            <span>Research head v15.7</span>
+            <span>DOI 10.5281/zenodo.20663419</span>
+          </div>
         </div>
 
         <div className="atrium-display" aria-label="Featured animated exhibit">
           <div className="display-label">
-            <span>Exhibit {hero.number} / 07</span>
+            <span>Exhibit {hero.number} / {exhibitCount}</span>
             <Button
               onClick={() => setMotion((value) => !value)}
               aria-pressed={!motion}
@@ -144,13 +259,7 @@ export default function Home() {
             </Button>
           </div>
           <div className="display-frame">
-            <MotionImage
-              motion={motion}
-              animated={hero.animated}
-              still={hero.still}
-              alt={hero.alt}
-              priority
-            />
+            <MotionImage motion={motion} exhibit={hero} priority />
           </div>
           <div className="display-caption">
             <p>
@@ -159,124 +268,114 @@ export default function Home() {
             </p>
             <StatusBadge exhibit={hero} />
           </div>
+          {hero.facts ? (
+            <dl className="hero-facts">
+              {hero.facts.map((fact) => (
+                <div key={fact.label}>
+                  <dt>{fact.label}</dt>
+                  <dd>{fact.value}</dd>
+                </div>
+              ))}
+            </dl>
+          ) : null}
         </div>
       </section>
 
-      <section className="orientation" id="museum-start">
-        <div>
-          <p className="eyebrow">Orientation wall · 60 seconds</p>
-          <h2>
-            The displays are the invitation. The records are the evidence.
-          </h2>
-        </div>
-        <p>
-          BHSM investigates whether Berger–Hopf geometry can organize a
-          reproducible path from a parent action to particle-physics
-          calculations. Every animation has a backstage door to source,
-          derivation, tests, artifacts, and stated limits.
-        </p>
-      </section>
+      <CMSExplorer />
 
       <section
-        className="frontier-wall"
-        id="frontier"
-        aria-labelledby="frontier-title"
+        className="reconstruction-room"
+        id="reconstruction"
+        aria-labelledby="reconstruction-title"
       >
-        <div className="section-heading">
-          <p className="eyebrow">Current frontier · the central obstruction</p>
-          <h2 id="frontier-title">
-            A certified reduced event is not yet a physical enclosure.
+        <div className="section-heading reconstruction-heading">
+          <p className="eyebrow">Reconstruction room · integrated BHSM corpus</p>
+          <h2 id="reconstruction-title">
+            One program, recovered across an evolving research record.
           </h2>
-        </div>
-        <div className="frontier-grid">
-          <article>
-            <span>Retained</span>
-            <h3>What the record establishes</h3>
-            <p>
-              A branch-24 first-stop event in reduced action state space, the
-              continuum event-child certificate, fermionic reset-trace
-              matching, a tensor-factor intertwiner, and the local correlated
-              spectral domain at their stated scopes.
-            </p>
-          </article>
-          <article className="frontier-open">
-            <span>Gate 7 · open</span>
-            <h3>What still blocks promotion</h3>
-            <p>
-              No unchanged-AE2 action-owned covariant localization carrier or
-              physical encapsulation has been identified. Complete gauge,
-              ghost, fermion, scalar/HS field attachment and required cross
-              derivatives remain missing.
-            </p>
-          </article>
-        </div>
-        <div className="frontier-flags" role="note">
-          <code>UNCHANGED_AE2_LOCALIZATION_CARRIER_FOUND = FALSE</code>
-          <code>PHYSICAL_ENCAPSULATION_IDENTIFIED = FALSE</code>
-          <code>FULL_BHSM_COMPLETE = FALSE</code>
-          <a href={`${SCIENCE}/docs/current_bhsm_status.md`}>
-            Inspect the exact promotion dependency ↗
-          </a>
-        </div>
-      </section>
-
-      <section
-        className="validation-gallery"
-        id="validation"
-        aria-labelledby="validation-title"
-      >
-        <div className="validation-copy">
-          <p className="eyebrow">Validation gallery V01 · CMS Open Data</p>
-          <h2 id="validation-title">{cmsValidation.title}</h2>
-          <p className="validation-subtitle">
-            No detector reconstruction · no BHSM empirical validation · no
-            CERN/CMS endorsement
-          </p>
-          <dl>
-            <div>
-              <dt>Lay description</dt>
-              <dd>{cmsValidation.lay}</dd>
-            </div>
-            <div>
-              <dt>What you are seeing</dt>
-              <dd>{cmsValidation.seen}</dd>
-            </div>
-            <div>
-              <dt>What this proves</dt>
-              <dd>{cmsValidation.proves}</dd>
-            </div>
-            <div>
-              <dt>What this does not prove</dt>
-              <dd>{cmsValidation.doesNotProve}</dd>
-            </div>
-          </dl>
-          <div className="record-links" aria-label="CMS validation provenance">
-            <span>Source · manifest · result · tests</span>
-            {cmsValidation.links.map((link) => (
-              <a href={link.href} key={link.label}>
-                {link.label} <span aria-hidden="true">↗</span>
-              </a>
-            ))}
-          </div>
-        </div>
-        <div className="validation-visual">
-          <div className="display-label">
-            <span>Real four-vectors · coordinate display</span>
-            <span>{motion ? 'Motion on' : 'Static view'}</span>
-          </div>
-          <MotionImage
-            motion={motion}
-            animated={cmsValidation.animated}
-            still={cmsValidation.still}
-            alt={cmsValidation.alt}
-          />
           <p>
-            Benchmark coverage: 100,000 events · 200,000 unique muon
-            four-vectors. Display sample: 128 four-vectors from 64 evenly
-            spaced events in the checksum-pinned source. The full result and
-            provenance are linked at left.
+            Every BHSM lineage is now integrated on main. The reconstruction
+            preserves its calculations while separating an existing particle
+            ontology from the later AE2 stop and event-child dynamics and from
+            the audited but still-missing local-enclosure carrier.
           </p>
         </div>
+
+        <div className="bridge-map" aria-label="Physical identification bridge">
+          <article className="bridge-stage bridge-stage-upstream">
+            <span>01 · Reused upstream state</span>
+            <h3>BHSM family or mode</h3>
+            <p>
+              Representation, projector, current, topology, and existing SM
+              manifestation class retain their historical provenance.
+            </p>
+            <strong>Historical registry retained</strong>
+          </article>
+          <div className="bridge-arrow" aria-hidden="true">→</div>
+          <article className="bridge-stage bridge-stage-dynamics">
+            <span>02 · Derived AE2 dynamics</span>
+            <h3>Selected stop → event child</h3>
+            <p>
+              The canonical stop is the reduced Euler–Dirac Hessian stop
+              λ₂₄ = 0. Its geometric event child is carried forward.
+            </p>
+            <strong>Real dynamics · not yet enclosure</strong>
+          </article>
+          <div className="bridge-arrow" aria-hidden="true">→</div>
+          <article className="bridge-stage bridge-stage-open">
+            <span>03 · Open typed interface</span>
+            <h3>Local enclosure → SM manifestation</h3>
+            <p>
+              Six stored AE2 candidate classes have now been tested. None
+              supplies the full action-owned localization type needed to carry
+              the frozen state into its existing manifestation class.
+            </p>
+            <strong>6 audited · 0 qualify</strong>
+          </article>
+        </div>
+
+        <div className="reconstruction-ledger">
+          <article>
+            <span className="ledger-label ledger-proved">Recovered</span>
+            <h3>Preserved BHSM assets</h3>
+            <p>Particle families, modes, representations, projectors, currents, topology, selected stop, and event child.</p>
+          </article>
+          <article>
+            <span className="ledger-label ledger-open">Still required</span>
+            <h3>Four proof kernels</h3>
+            <p>Localization carrier, physical interface variation, child inheritance, and actual C2 family/mode instantiation.</p>
+          </article>
+          <article>
+            <span className="ledger-label ledger-forbidden">Not equivalent</span>
+            <h3>Interpretive guardrails</h3>
+            <p>λ₂₄ = 0 is not 2π; a stop is not automatically a spacetime edge; positive duration is not particle stability.</p>
+          </article>
+        </div>
+
+        <div className="reconstruction-records">
+          <a href={`${SCIENCE}/docs/BHSM_NORMAN_SCHOOL_FULL_CORPUS_RECONSTRUCTION.md`}>Full ontology reconstruction ↗</a>
+          <a href={`${SCIENCE}/theory/n12_gate7_localization_carrier_kill_screen.md`}>Carrier kill screen ↗</a>
+          <a href={`${SCIENCE}/theory/n12_gate7_physical_encapsulation_identification_bridge.md`}>Typed enclosure bridge ↗</a>
+          <a href={`${SCIENCE}/theory/post_ae2_localization_carrier_extension_contract.md`}>Extension acceptance contract ↗</a>
+        </div>
+        <dl className="corpus-facts" aria-label="Integrated BHSM corpus figures">
+          <div>
+            <dt>Lineage refs examined</dt>
+            <dd>426</dd>
+          </div>
+          <div>
+            <dt>Lineage refs integrated</dt>
+            <dd>426</dd>
+          </div>
+          <div>
+            <dt>Unmerged refs</dt>
+            <dd>0</dd>
+          </div>
+          <div>
+            <dt>Files after reduction</dt>
+            <dd>17,630</dd>
+          </div>
+        </dl>
       </section>
 
       <section
@@ -314,9 +413,10 @@ export default function Home() {
           </article>
         </div>
         <div className="status-ribbon" role="note">
-          <strong>Current public boundary</strong>
+          <strong>Current research state</strong>
           <span>
-            Gate 7 remains OPEN · physical readout is gated ·
+            AE2 stop and event child are derived · 6 carrier classes audited,
+            0 qualify · owner-authorized action-version decision remains open ·
             FULL_BHSM_COMPLETE = FALSE
           </span>
           <a href={`${SCIENCE}/docs/current_bhsm_status.md`}>
@@ -332,13 +432,13 @@ export default function Home() {
       >
         <div className="section-heading hall-heading">
           <p className="eyebrow">
-            Main exhibition hall · seven animated simulation engines
+            Main exhibition hall · {exhibits.length} animated data engines
           </p>
           <h2 id="exhibit-title">Look first. Then go backstage.</h2>
           <p>
-            Each display starts with plain language. The scientific-record links
-            lead directly to the implementation, test, derivation, or policy
-            that supports the placard.
+            The CMS exhibit uses real public data. The remaining rooms use
+            normalized simulations or audited records to show calculations
+            happening—never flow charts.
           </p>
         </div>
 
@@ -351,16 +451,17 @@ export default function Home() {
             >
               <div className="exhibit-visual">
                 <div className="display-label">
-                  <span>Exhibit {exhibit.number} / 07</span>
+                  <span>Exhibit {exhibit.number} / {exhibitCount}</span>
                   <span>
-                    Simulation engine · {motion ? 'motion on' : 'static view'}
+                    {exhibit.number === '01'
+                      ? 'Real-data engine'
+                      : 'Simulation / audit engine'}{' '}
+                    · {motion ? 'motion on' : 'static view'}
                   </span>
                 </div>
                 <MotionImage
                   motion={motion}
-                  animated={exhibit.animated}
-                  still={exhibit.still}
-                  alt={exhibit.alt}
+                  exhibit={exhibit}
                   loading={index === 0 ? 'eager' : 'lazy'}
                 />
               </div>
@@ -368,7 +469,18 @@ export default function Home() {
                 <p className="exhibit-index">Gallery {exhibit.number}</p>
                 <h3>{exhibit.title}</h3>
                 <p className="exhibit-subtitle">{exhibit.subtitle}</p>
+                <p className="data-label">{exhibit.dataLabel}</p>
                 <StatusBadge exhibit={exhibit} />
+                {exhibit.facts ? (
+                  <dl className="exhibit-facts">
+                    {exhibit.facts.map((fact) => (
+                      <div key={fact.label}>
+                        <dt>{fact.label}</dt>
+                        <dd>{fact.value}</dd>
+                      </div>
+                    ))}
+                  </dl>
+                ) : null}
                 <dl>
                   <div>
                     <dt>Lay description</dt>
@@ -379,7 +491,7 @@ export default function Home() {
                     <dd>{exhibit.seen}</dd>
                   </div>
                   <div>
-                    <dt>Why it matters</dt>
+                    <dt>Scientific caption</dt>
                     <dd>{exhibit.matters}</dd>
                   </div>
                 </dl>
@@ -417,9 +529,9 @@ export default function Home() {
           {[
             [
               '01',
-              'Reviewer start here',
-              'Five-minute path through status, evidence, tests, and critique.',
-              `${SCIENCE}/docs/reviewer_start_here.md`,
+              'Current authority',
+              'Live status, completion boundary, and blocker.',
+              `${SCIENCE}/docs/current_bhsm_status.md`,
             ],
             [
               '02',
@@ -450,6 +562,24 @@ export default function Home() {
               'Public-language guardrails',
               'Allowed statements, forbidden claims, and institutional boundaries.',
               `${SCIENCE}/docs/allowed_public_language.md`,
+            ],
+            [
+              '07',
+              'Ontology reconstruction',
+              'Recovered meanings, provenance, vocabulary drift, and current authority.',
+              `${SCIENCE}/docs/BHSM_NORMAN_SCHOOL_FULL_CORPUS_RECONSTRUCTION.md`,
+            ],
+            [
+              '08',
+              'Physical enclosure bridge',
+              'Typed transport from existing BHSM states through the AE2 event child.',
+              `${SCIENCE}/theory/n12_gate7_physical_encapsulation_identification_bridge.md`,
+            ],
+            [
+              '09',
+              'Integrated validation',
+              'Current-authority checks and the retained historical N=3 replay boundary.',
+              `${SCIENCE}/docs/BHSM_INTEGRATED_VALIDATION_REPORT.md`,
             ],
           ].map(([number, title, copy, href]) => (
             <a className="review-card" href={href} key={number}>
@@ -569,15 +699,15 @@ python -m bhsm.interface physics-status --format markdown`}</code>
             Independent Researcher · Oconomowoc, Wisconsin, USA
           </p>
           <p>
-            The repository record identifies Norman P. Carberry as the primary
-            author of BHSM. The work is presented as an independent,
-            artifact-backed mathematical-physics research framework built for
-            inspection, reproducibility, and explicit claim boundaries.
+            Norman P. Carberry is the primary author of the Berger–Hopf Standard
+            Model research framework. From Oconomowoc, Wisconsin, he has built
+            BHSM as a public, artifact-backed program spanning differential
+            geometry, particle-physics interfaces, numerical certification, and
+            reproducible scientific software.
           </p>
-          <p className="creator-boundary">
-            No invented biography or portrait is used here. A first-person
-            creator’s statement can be added when supplied or approved by the
-            creator.
+          <p className="creator-release">
+            Citation release v1.1.0 · released 26 June 2026 · ORCID
+            0009-0000-6650-3485 · Zenodo 10.5281/zenodo.20663419
           </p>
           <div className="creator-links">
             {creatorLinks.map((link) => (
@@ -600,7 +730,7 @@ python -m bhsm.interface physics-status --format markdown`}</code>
           />
           <p>
             <strong>BHSM Museum</strong>
-            <br />A public door to a scientific repository.
+            <br />The research archive of Norman P. Carberry.
           </p>
         </div>
         <div className="footer-links">
@@ -610,9 +740,8 @@ python -m bhsm.interface physics-status --format markdown`}</code>
           <a href="#top">Back to top ↑</a>
         </div>
         <p className="footer-boundary">
-          BHSM does not claim empirical establishment, completed physical
-          promotion, collider-production readiness, or institutional
-          endorsement.
+          Reconstructed corpus · CMS Open Data Record 303 · nine animated
+          exhibits · current authority synchronized with GitHub main
         </p>
       </footer>
     </main>

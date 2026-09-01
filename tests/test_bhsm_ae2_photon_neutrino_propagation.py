@@ -117,8 +117,9 @@ def test_nine_artifacts_are_validated_and_deterministic() -> None:
     assert final["DIMENSIONLESS DELTA-M-SQUARED RATIO"] == "OPEN"
     assert final["ABSOLUTE NEUTRINO MASS SCALE"] == "OPEN"
     reconvergence = payloads["BHSM_AE2_NEUTRINO_GATE7_RECONVERGENCE.json"]
-    assert reconvergence["Gate7_current_owner"] == "G7_07_ANGULAR_TAIL"
-    assert "OUTWARD_OSGOOD_ENVELOPE" in reconvergence["Gate7_current_owner_detail"]
+    assert reconvergence["Gate7_current_owner"] == "G7_08_FORCE"
+    assert "physical force net" in reconvergence["Gate7_current_owner_detail"]
+    assert reconvergence["superseded_current_owner"] == "G7_07_ANGULAR_TAIL"
     assert reconvergence["completion_DAG_dependency_changed_by_this_sprint"] is False
     assert reconvergence["validation"]["current_completion_DAG_consumed"] is True
     assert (
