@@ -1,0 +1,99 @@
+{
+  "FULL_BHSM_COMPLETE": false,
+  "action_version": "BHSM-AE-3.1.0",
+  "affine_first_order_contact_theorem": {
+    "first_order_contact_jet_zero": true,
+    "first_order_operator": "D(h_u,h_d)=D_0+h_u*V_u+h_d*V_d",
+    "first_variations": {
+      "down": "V_d",
+      "up": "V_u"
+    },
+    "higher_dimension_scalar_fermion_contact_inserted": false,
+    "reason": "RENORMALIZABLE_QUARK_HIGGS_DIRAC_INCIDENCE_IS_AFFINE_LINEAR_IN_THE_SCALAR_FIELDS",
+    "scalar_source_scope": "REAL_NEUTRAL_UP_AND_DOWN_CHANNEL_COORDINATES",
+    "second_variations": {
+      "Q_dd": "0",
+      "Q_du": "0",
+      "Q_ud": "0",
+      "Q_uu": "0"
+    }
+  },
+  "artifact": "BHSM_AE31_C2_QUARK_HIGGS_CONTACT_CLOSURE",
+  "claim_boundary": {
+    "CKM_MATRIX_DERIVED": false,
+    "CURRENT_C2_INDEPENDENT_QUARK_CONTACT_COEFFICIENT_REQUIRED": false,
+    "CURRENT_C2_PHYSICAL_QUARK_POLES_DERIVED": false,
+    "CURRENT_C2_QUARK_FIRST_ORDER_HIGGS_CONTACT_JET_ZERO_DERIVED_CONDITIONAL": true,
+    "CURRENT_C2_QUARK_MIXED_UP_DOWN_CONTACT_ZERO_ON_TRANSPORTED_SUPPORT": true,
+    "CURRENT_C2_QUARK_QUANTUM_HESSIAN_DERIVED": false,
+    "CURRENT_C2_QUARK_SQUARED_PENCIL_CONTACT_CLOSED_BY_FIRST_VERTICES": true,
+    "CURRENT_C2_UP_DOWN_YUKAWA_VERTEX_RESIDUES_ACTION_DERIVED": false,
+    "FULL_BHSM_COMPLETE": false,
+    "MEASURED_QUARK_MASS_USED": false,
+    "particle_spectrum_rebuilt": false
+  },
+  "classification": "AE31_CURRENT_C2_QUARK_HIGGS_CONTACT_CLOSURE",
+  "determinant_hessian_reduction": {
+    "first_order_H_fg": "Tr(G*V_g*G*V_f)",
+    "first_order_Q_fg_term": "ABSENT_BECAUSE_d_f*d_g*D=0",
+    "first_order_effective_action": "Gamma=-Tr(log(D))",
+    "squared_pencil_contact": "Q_fg=V_f^dagger*V_g+V_g^dagger*V_f",
+    "squared_pencil_contact_is_independent_input": false,
+    "squared_pencil_effective_action": "Gamma_even=-(1/2)*Tr(log(D^dagger*D))",
+    "state_covariance_or_Feynman_inverse_still_required": true,
+    "up_down_vertex_residues_still_required": true
+  },
+  "exact_remaining_owner": {
+    "independent_missing_contact_coefficients": [],
+    "independent_missing_vertex_residues": [
+      "c_u",
+      "c_d"
+    ],
+    "independent_yukawa_contact_or_mass_fit_allowed": false,
+    "missing_action_object": "Gamma_qH_current_C2_WITH_ACTION_NORMALIZED_FIRST_VERTICES_V_u_V_d",
+    "mixed_contact_on_transported_support": "Q_ud=Q_du=0",
+    "must_remain_common": [
+      "current_C2_action",
+      "trace_and_field_normalization",
+      "boundary_domain",
+      "family_shapes_T_u_T_d"
+    ],
+    "squared_pencil_contact_reconstruction": "Q_fg=V_f^dagger*V_g+V_g^dagger*V_f"
+  },
+  "inputs": {
+    "artifacts/action_extension/BHSM_AE31_C2_QUARK_CHANNEL_SELECTOR_DOMAIN.json": "F207902844B2A1FF3217509F796443BD0291AD935BEC097973FB17584A1326A8",
+    "artifacts/action_extension/BHSM_AE31_C2_QUARK_HIGGS_INCIDENCE_TRANSPORT.json": "81AC7F0250CAC2FC7F8D2B26CE22AD3E785D5E11FC188C0A50362353D8918CBB",
+    "artifacts/action_extension/BHSM_AE31_C2_QUARK_VERTEX_CONTACT_PROJECTION.json": "829E68C06B234860E3F9BBB62D6076D32EAC9C174A55B38E4DC538692A6B24B6",
+    "artifacts/action_extension/BHSM_AE3_C2_FULL_FIELD_PUZZLE_ASSEMBLY.json": "D83FA5FC2CB31709C84AE689FC3E1CD715215826E199AF0F23E1B72344184F80",
+    "artifacts/action_extension/BHSM_AE3_C2_QUARK_RESPONSE_SUM_RULES.json": "FE42458D60AF7CF6A70D16C96EE4E1666AA2D987DCFE73A0F2E06D620089421D",
+    "src/bhsm/interface/ae31_c2_quark_higgs_contact_closure.py": "82464414C862ACA0053D6381B802E5570633C31AAB73CC6503204E4247F90BA0"
+  },
+  "squared_pencil_contact_closure": {
+    "Q_down_down_residual": 0.0,
+    "Q_down_up_norm": 0.0,
+    "Q_up_down_norm": 0.0,
+    "Q_up_up_residual": 0.0,
+    "contact_jet_fixed_once_vertices_are_fixed": true,
+    "diagonal_contact_identity": "Q_ff=2*V_f^dagger*V_f",
+    "diagonal_contacts_positive_semidefinite": true,
+    "family_shape_dimension": 3,
+    "general_contact_identity": "d_f*d_g*P=V_f^dagger*V_g+V_g^dagger*V_f",
+    "independent_contact_coefficient_count": 0,
+    "lifted_vertex_dimension": 12,
+    "mixed_contact_zero_by_disjoint_support": true,
+    "scalar_source_scope": "REAL_NEUTRAL_UP_AND_DOWN_CHANNEL_COORDINATES",
+    "sector_residues_action_derived": false,
+    "squared_operator": "P(h)=D(h)^dagger*D(h)"
+  },
+  "validation": {
+    "family_shapes_reused_without_spectrum_rebuild": true,
+    "first_order_contact_zero_without_higher_dimension_term": true,
+    "incidence_support_and_affine_operator_reused": true,
+    "no_vertex_quantum_pole_CKM_or_completion_overclaim": true,
+    "remaining_owner_reduced_to_first_vertex_residues": true,
+    "retained_product_Dirac_contact_scaling_reconciled": true,
+    "selector_formula_keeps_state_dependence": true,
+    "squared_contact_fixed_by_vertices": true
+  },
+  "validation_passed": true
+}
