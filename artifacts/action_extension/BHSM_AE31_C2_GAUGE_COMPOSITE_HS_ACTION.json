@@ -1,0 +1,154 @@
+{
+  "FULL_BHSM_COMPLETE": false,
+  "action_owned_gauge_hs_contract": {
+    "auxiliary_identity": "exp[+O^dagger*K_LR*O]_proportional_to_integral_DH_exp[-H^dagger*K_LR^(-1)*H+H^dagger*O+O^dagger*H]",
+    "bare_LR_vertices": {
+      "down": 1.0,
+      "up": 1.0
+    },
+    "bare_auxiliary_Hessian": "K_LR^(-1)=G_C2^(-1)*diag(5/14,5/13)",
+    "bilinear_column": "O=(bar(Q_L)*u_R,bar(Q_L)*d_R)^T",
+    "domain": "POSITIVE_COEXACT_CURRENT_C2_DtN_MODES_WITH_G_C2>0",
+    "four_fermion_factor": "exp[+O^dagger*K_LR*O]",
+    "gauge_kernel_changed": false,
+    "local_Maxwell_residue_required": false,
+    "new_continuous_coefficient": false,
+    "new_elementary_scalar": false,
+    "source_action_object": "CURRENT_C2_STATIC_NONLOCAL_GAUGE_CURRENT_KERNEL",
+    "source_kernel": "K_LR=2*G_C2*diag(7/5,13/10)",
+    "static_nonlocal_kernel_relabelled_local": false,
+    "unit_vertex_is_coefficient_placement_not_fitted_Yukawa": true
+  },
+  "action_version": "BHSM-AE-3.1.0",
+  "artifact": "BHSM_AE31_C2_GAUGE_COMPOSITE_HS_ACTION",
+  "claim_boundary": {
+    "CURRENT_C2_CANONICAL_QUARK_YUKAWA_RESIDUES_DERIVED": false,
+    "CURRENT_C2_COMPOSITE_DERIVATIVE_KINETIC_TERM_DERIVED": false,
+    "CURRENT_C2_COMPOSITE_GAP_DERIVED": false,
+    "CURRENT_C2_COMPOSITE_ODD_ENDOMORPHISM_ACTION_OWNED": true,
+    "CURRENT_C2_GAUGE_COMPOSITE_BARE_HESSIAN_DERIVED": true,
+    "CURRENT_C2_GAUGE_COMPOSITE_HS_REWRITE_DERIVED": true,
+    "CURRENT_C2_GAUGE_COMPOSITE_UNIT_LR_VERTICES_DERIVED": true,
+    "CURRENT_C2_INTRINSIC_COMPOSITE_MIXING_DERIVED": false,
+    "CURRENT_C2_INTRINSIC_HIGGS_ODD_ENDOMORPHISM_ACTION_OWNED": false,
+    "CURRENT_C2_PHYSICAL_SINGLE_HIGGS_DIRECTION_SELECTED": false,
+    "FULL_BHSM_COMPLETE": false,
+    "MEASURED_QUARK_MASS_USED": false,
+    "particle_spectrum_rebuilt": false
+  },
+  "classification": "AE31_CURRENT_C2_GAUGE_COMPOSITE_HS_ACTION",
+  "current_c2_domain_and_trace_transport": {
+    "CKM_generated": false,
+    "Einstein_Cartan_global_kernel_used": false,
+    "auxiliary_incidence": "I_radial_tensor_(I_up_direct_sum_I_down)",
+    "endpoint_cutoff_inserted": false,
+    "family_action": "I3",
+    "family_hierarchy_generated": false,
+    "historical_up_down_pairing_multiplicities": [
+      9,
+      9
+    ],
+    "radial_incidence_commutator": 0.0,
+    "radial_operator": "D_C2_tensor_I_internal",
+    "reset_generated_C2_domain_preserved": true,
+    "retained_birth_trace_preserved": true,
+    "why_EC_not_used": "THE_GAUGE_KERNEL_IS_REGULAR_ON_ITS_COEXACT_CURRENT_C2_DOMAIN_AND_DOES_NOT_IMPORT_THE_FAILED_GLOBAL_EC_ZERO_MODE_ELIMINATION"
+  },
+  "exact_hs_completion_witness": {
+    "Gaussian_normalization_field_independent": true,
+    "HS_exponent_at_saddle": 2.1804444444444444,
+    "HS_saddle": [
+      1.8666666666666665,
+      -1.56
+    ],
+    "K_LR": [
+      [
+        2.8,
+        0.0
+      ],
+      [
+        0.0,
+        2.6
+      ]
+    ],
+    "K_LR_inverse": [
+      [
+        0.35714285714285715,
+        0.0
+      ],
+      [
+        0.0,
+        0.3846153846153846
+      ]
+    ],
+    "bilinear_witness": [
+      0.6666666666666666,
+      -0.6
+    ],
+    "channel_basis": [
+      "up",
+      "down"
+    ],
+    "common_kernel": 1.0,
+    "completion_residual": 0.0,
+    "four_fermion_exponent": 2.1804444444444444,
+    "stationary_residual": 0.0
+  },
+  "exact_inverse_coefficients": {
+    "down": "5/13",
+    "mean": "135/364",
+    "sigma3": "-5/364",
+    "up": "5/14",
+    "up_minus_down": "-5/182"
+  },
+  "inputs": {
+    "artifacts/BHSM_aether_composite_higgs_channel_v15_64.json": "B71A0874C09CE43C6C1CCBB9133DC3892D216097CE458AAE34A69685750AB1FE",
+    "artifacts/action_extension/BHSM_AE31_C2_LR_SUSCEPTIBILITY_FACTORIZATION.json": "88AA2372559C5EEAD71F69BAEDAF211F6455F6C413D8C8404A45FFA2131F026F",
+    "artifacts/action_extension/BHSM_AE31_C2_QUARK_GAUGE_LR_CHANNEL_RAY.json": "601763B49E7F194EABF6236AB88A1B89FF6D4B40677A0FF0F5E24DA01E9F779C",
+    "artifacts/action_extension/BHSM_AE31_C2_QUARK_HIGGS_INCIDENCE_TRANSPORT.json": "81AC7F0250CAC2FC7F8D2B26CE22AD3E785D5E11FC188C0A50362353D8918CBB",
+    "artifacts/action_extension/BHSM_AE31_C2_QUARK_SCALAR_ATTACHMENT_VARIATION.json": "94838766A46669BBB49483391722F63507776B2393CCB10405A3800DE231E836",
+    "src/bhsm/interface/ae31_c2_gauge_composite_hs_action.py": "E597200324124607173CB5A43E73CC39CE9D78E5EED6E67B28ADB271B88B29BF"
+  },
+  "intrinsic_higgs_mixing_boundary": {
+    "M_HS_action_derived": false,
+    "auxiliary_composite_fields": [
+      "H_HS_up",
+      "H_HS_down"
+    ],
+    "auxiliary_derivative_kinetic_term_at_bare_level": false,
+    "auxiliary_field_is_physical_Higgs": false,
+    "exact_next_operator": "H_mix=[[H_intrinsic,M_HS],[M_HS^dagger,K_LR^(-1)-Pi_Had,sing*I2-Pi_fin[C]]]",
+    "fermion_determinant_two_point_block_required": true,
+    "intrinsic_AE31_Higgs_field": "H_intrinsic_charged_lepton_block",
+    "intrinsic_to_composite_mixing_block": "M_HS",
+    "next_variation": "DELTA_Hintrinsic_DELTA_HHS_DELTA_PsiBarL_DELTA_PsiR_Gamma_current_C2",
+    "physical_single_Higgs_direction_selected": false,
+    "unit_bare_vertex_is_canonical_Yukawa_residue": false
+  },
+  "odd_composite_endomorphism_attachment": {
+    "composite_HS_odd_endomorphism_action_owned_by_rewrite": true,
+    "composite_odd_endomorphism": "E_HS=H_u*I_up+H_d*I_down",
+    "existing_representation_projectors_reused": true,
+    "grading": "{Gamma_chi,E_HS}=0",
+    "grading_residuals": {
+      "down": 0.0,
+      "up": 0.0
+    },
+    "intrinsic_Higgs_odd_endomorphism_action_owned": false,
+    "particle_spectrum_rebuilt": false,
+    "support_ranks": {
+      "down": 2,
+      "up": 2
+    },
+    "supports_disjoint": true
+  },
+  "validation": {
+    "current_C2_gauge_and_susceptibility_blocks_reused": true,
+    "exact_HS_rewrite_closes": true,
+    "historical_composite_representation_reused": true,
+    "no_mass_or_spectrum_fit": true,
+    "physical_Higgs_boundary_preserved": true,
+    "required_odd_class_realized_as_composite": true
+  },
+  "validation_passed": true
+}
