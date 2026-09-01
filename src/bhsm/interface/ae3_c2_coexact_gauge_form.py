@@ -76,13 +76,16 @@ def gauge_normalization_interface() -> dict[str, Any]:
         "historical_Gauss_response_available": True,
         "historical_proper_time_response_available": True,
         "historical_responses_define_one_Lorentzian_coefficient": False,
-        "current_C2_dynamic_frequency_response_available": False,
+        "current_C2_dynamic_frequency_response_available": True,
+        "current_C2_dynamic_frequency_response_outcome": (
+            "GAUGE_GHOST_HESSIAN_DERIVED__TEMPORAL_SPATIAL_RESIDUE_MISMATCH"
+        ),
         "current_C2_broken_electroweak_saddle_available": False,
         "current_C2_physical_photon_residue_available": False,
         "exact_missing_object": (
-            "ONE_SAME_C2_BACKGROUND_GAUGE_GHOST_HESSIAN_WITH_DYNAMIC_OMEGA_"
-            "SQUARED_RESPONSE_AND_BROKEN_ELECTROWEAK_NEUTRAL_MIXING,_JOINTLY_"
-            "NORMALIZED_BY_THE_EXISTING_PARENT_PUSHFORWARD"
+            "ONE_ACTION_DERIVED_NONSINGULAR_BOUNDARY_OR_WENTZELL_TERM_OR_"
+            "OTHER_EXISTING_PARENT_DOMAIN_MECHANISM_THAT_REMOVES_THE_CURRENT_"
+            "TRANSVERSE_LORENTZ_RESIDUE_MISMATCH_WITHOUT_A_FREE_COEFFICIENT"
         ),
         "form_shape_may_be_used_for_finite_core_domain_and_gap_analysis": True,
         "form_shape_may_be_used_as_normalized_photon_propagator": False,
@@ -96,6 +99,8 @@ def coexact_gauge_puzzle_ledger() -> dict[str, Any]:
                 "current_C2_n0_coexact_gauge_field_coordinate_form_shape",
                 "exact_coexact_BRST_quotient_and_threefold_curl_plus2_multiplicity",
                 "positive_inverse_free_finite_core_gauge_pencil",
+                "current_C2_continuous_frequency_gauge_ghost_Hessian",
+                "strict_temporal_spatial_residue_mismatch_certificate",
             ],
             "muon_magnetic_moment": [
                 "current_C2_hypercharge_source_and_gauge_form_share_one_domain"
@@ -105,8 +110,8 @@ def coexact_gauge_puzzle_ledger() -> dict[str, Any]:
             ],
         },
         "open_join": (
-            "same_C2_dynamic_gauge_ghost_Hessian_Lorentzian_residue_broken_"
-            "electroweak_neutral_mixing_and_maximal_exterior"
+            "action_derived_resolution_of_the_smooth_trace_residue_mismatch_"
+            "then_broken_electroweak_neutral_mixing_and_maximal_exterior"
         ),
         "coexact_gauge_form_shape_derived": True,
         "normalized_photon_propagator_derived": False,

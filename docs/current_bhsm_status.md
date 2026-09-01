@@ -124,19 +124,26 @@ This closes the gauge coordinate domain and operator shape, not its physical
 residue. The parent Maxwell coefficient is owned and cannot be independently
 retuned, while the historical static, Gauss, and proper-time pushforwards do
 not establish one Lorentzian coefficient on the current C2 background. The
-same-background dynamic `omega^2` gauge/ghost Hessian remains necessary.
+same-background continuous-`omega` gauge/ghost Hessian is now derived. Its
+lowest transverse DtN mode has `N_T(0)=1.67955783202127`,
+`-partial_(q^2)N_T(0)=0.247990745530776`, and the complete mode ratio
+`Z_t/Z_s=0.590609601652908<1`. The mismatch comes from the unequal radial
+electric/magnetic weights plus positive radial-gradient DtN energy. It is
+recorded without renormalization.
 
 - `CURRENT_C2_COEXACT_GAUGE_FORM_SHAPE_DERIVED = TRUE`
+- `CURRENT_C2_LORENTZIAN_GAUGE_GHOST_FREQUENCY_HESSIAN_DERIVED = TRUE`
 - `CURRENT_C2_LORENTZIAN_MAXWELL_RESIDUE_DERIVED = FALSE`
 - `CURRENT_C2_NORMALIZED_PHOTON_PROPAGATOR_DERIVED = FALSE`
 
 The remaining obstruction is no longer carrier selection or the absence of
 every fermionic C2 operator piece. One compatible AE3 C2 action assembly must
 still join the geometry/response block and this reduced product-Dirac piece
-to dynamical HS and broken-LR data, gauge/ghost and transverse electromagnetic
-source blocks, nonzero fermion-background cross derivatives, and the maximal
-exterior operator before the complete event canonical flux, contact term, and
-parent/event/child Noether--Hamiltonian balance can be evaluated.
+to dynamical HS and broken-LR data, an action/domain resolution of the gauge
+residue mismatch, broken-neutral transverse source blocks, nonzero
+fermion-background cross derivatives, and the maximal exterior operator
+before the complete event canonical flux, contact term, and parent/event/child
+Noether--Hamiltonian balance can be evaluated.
 
 The historical common gauge--ghost--Weyl--HS determinant is not that oracle:
 it is a zero-source closed-proper-cycle functional, whereas the current C2
@@ -161,6 +168,9 @@ and [`source certificate`](../artifacts/action_extension/BHSM_AE3_C2_COEXACT_HYP
 The coexact gauge domain and normalization boundary are recorded in the
 [`gauge-form theorem`](../theory/ae3_c2_coexact_gauge_form_shape.md) and
 [`gauge-form certificate`](../artifacts/action_extension/BHSM_AE3_C2_COEXACT_GAUGE_FORM_SHAPE.json).
+The continuous-frequency result and its unrenormalized mismatch are recorded
+in the [`gauge/ghost Hessian theorem`](../theory/ae3_c2_lorentzian_gauge_ghost_hessian.md)
+and [`machine certificate`](../artifacts/action_extension/BHSM_AE3_C2_LORENTZIAN_GAUGE_GHOST_FREQUENCY_HESSIAN.json).
 
 ## Authoritative Gate-7 identification frontier: unchanged-AE2 carrier audit complete
 
