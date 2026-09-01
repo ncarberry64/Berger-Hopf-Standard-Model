@@ -4003,3 +4003,20 @@ Exact next object:
 - Canonical photon normalization, the physical photon pole, a selected
   fermion two-point function, the renormalized three-point vertex, and muon
   `F2(0)` remain open.
+
+## AE3.1 retained-action outer-Calderon completion no-go
+
+- The AE2 internal reset has zero independent fermion surface action and no
+  continuous pregeometric-core spinor trace. The smooth CAR covariance is not
+  a coordinate of the retained classical action and has no selection equation.
+- A continuum of finite-rank-related pure Hadamard covariances preserves the
+  fixed local symbol, family projectors, charge grading, and reset transport.
+- The unique retained coefficient-free gauge completion route was the
+  reciprocal two-sided Calderon response; its evaluation preserves
+  `Z_t/Z_s=0.590609601652908`. Common `F^2` shifts also preserve the mismatch.
+- Scientific milestone:
+  `CURRENT_AE31_RETAINED_ACTION_OUTER_CALDERON_COMPLETION_NO_GO_DERIVED`.
+- The two live exit classes are an action-selected nonreflection/global-state
+  domain completion or a microscopic fixed boundary/collar action extension.
+  Neither is inserted, and this retained-route no-go is not a BHSM-wide
+  refutation.
