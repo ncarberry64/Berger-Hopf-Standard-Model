@@ -1,0 +1,131 @@
+{
+  "FULL_BHSM_COMPLETE": false,
+  "Lorentzian_photon_promotion_gate": {
+    "Ward_identity_for_canonical_A_Q_derived": false,
+    "coexact_JY_J3_source_pair_attached": true,
+    "independent_ZA_g_gprime_alpha_or_mixing_angle_inserted": false,
+    "neutral_Higgs_curvature_null_direction_derived": true,
+    "physical_photon_promoted": false,
+    "physical_transverse_A_Q_pole_derived": false,
+    "reason": "THE_CURRENT_AE3_GAUGE_GHOST_HESSIAN_HAS_AN_UNRENORMALIZED_TEMPORAL_SPATIAL_RESIDUE_MISMATCH",
+    "single_Lorentzian_Maxwell_residue_available": false
+  },
+  "action_version": "BHSM-AE-3.1.0",
+  "artifact": "BHSM_AE31_C2_NEUTRAL_CONNECTION_HESSIAN",
+  "claim_boundary": {
+    "CURRENT_C2_CANONICAL_WEINBERG_ROTATION_DERIVED": false,
+    "CURRENT_C2_FIELDS_AND_CURRENTS_ROTATED_IN_CONNECTION_COORDINATES": true,
+    "CURRENT_C2_NEUTRAL_CONNECTION_HESSIAN_DERIVED": true,
+    "CURRENT_C2_PHOTON_POLE_AND_WARD_IDENTITY_DERIVED": false,
+    "CURRENT_C2_PHYSICAL_PHOTON_DERIVED": false,
+    "CURRENT_C2_STRUCTURAL_JQ_CURRENT_DERIVED": true,
+    "CURRENT_C2_UNIQUE_QEM_CONNECTION_NULL_DIRECTION_DERIVED": true,
+    "FULL_BHSM_COMPLETE": false,
+    "MUON_MAGNETIC_MOMENT_DERIVED": false,
+    "exact_next_operator": "ACTION_OWNED_LORENTZIAN_GAUGE_DOMAIN_WITH_ONE_COMMON_TEMPORAL_SPATIAL_RESIDUE_FOR_THE_QEM_NULL_CONNECTION_THEN_ITS_WARD_IDENTITY",
+    "independent_gauge_or_mixing_parameter_inserted": false
+  },
+  "classification": "CURRENT_C2_BROKEN_NEUTRAL_CONNECTION_COORDINATE_HESSIAN",
+  "higgs_neutral_charge_ledger": {
+    "H_representation": "(1,2,+1/2)",
+    "Q_em": "T3+Y_BH",
+    "Q_em_on_vacuum": 0.0,
+    "T3_on_vacuum": -0.5,
+    "Y_BH_on_vacuum": 0.5,
+    "connection_coordinates": {
+      "B_hat": "g1*B_physical_before_canonical_normalization",
+      "W3_hat": "g2*W3_physical_before_canonical_normalization"
+    },
+    "independent_g2_or_g1_inserted": false,
+    "vacuum_component": "H_0=(0,v_BH/sqrt(2))"
+  },
+  "inputs": {
+    "artifacts/BHSM_electromagnetic_surviving_generator_v6_3_0.json": "8245D5514E3B153083800A3AB9FD24E9E10C3E8B20D72BFF018AE6A6428F6667",
+    "artifacts/action_extension/BHSM_AE31_C2_INTRINSIC_M4_LEPTON_ACTION.json": "C0E851100FCAA04C1968081A3940D938B7C64C857FE416F7F7795974A9053850",
+    "artifacts/action_extension/BHSM_AE3_C2_COEXACT_HYPERCHARGE_SOURCE_JET.json": "1237B1DEBE468B0326D38D94D8D3AF7C3B73335B9DB0FBEB6545907AA49F0C36",
+    "artifacts/action_extension/BHSM_AE3_C2_COEXACT_SU2L_NEUTRAL_SOURCE_JET.json": "52D1BEA68CBA1FC9846AA5F315D5FBF68918BC3B03C0952D44997D9DC86C8F72",
+    "artifacts/action_extension/BHSM_AE3_C2_LORENTZIAN_GAUGE_GHOST_FREQUENCY_HESSIAN.json": "F302614948E5990878B2EB011A61673D0806F007FBC9EFCB7A20311519F22F64",
+    "src/bhsm/interface/ae31_c2_neutral_connection_hessian.py": "43EE189D7265C598A023D3C69028062B43B11983B55551549B43ADB25078D662"
+  },
+  "neutral_connection_Hessian": {
+    "Q_em_null_residual_exact": 0.0,
+    "Q_em_null_residual_floating": 1.2353699492514034e-12,
+    "Q_em_null_vector": [
+      0.7071067811865475,
+      0.7071067811865475
+    ],
+    "absolute_scale_action_derived": false,
+    "action_version": "BHSM-AE-3.1.0",
+    "basis": [
+      "W3_hat",
+      "B_hat"
+    ],
+    "broken_curvature_GeV2": 30299.80126832454,
+    "broken_curvature_positive": true,
+    "broken_vector": [
+      0.7071067811865475,
+      -0.7071067811865475
+    ],
+    "canonically_normalized_physical_field_result": false,
+    "connection_coordinate_result": true,
+    "eigenvalues_GeV2": [
+      0.0,
+      30299.801268324547
+    ],
+    "formula": "H_neutral=(v_BH^2/4)*[[1,-1],[-1,1]]",
+    "matrix_GeV2": [
+      [
+        15149.900634162273,
+        -15149.900634162273
+      ],
+      [
+        -15149.900634162273,
+        15149.900634162273
+      ]
+    ],
+    "measured_Higgs_VEV_used": false,
+    "nullity": 1,
+    "rank": 1,
+    "unique_neutral_null_direction": true,
+    "v_BH_GeV": 246.16986520825228
+  },
+  "neutral_field_current_rotation": {
+    "Q_em_current": "J_Q proportional_to J3+JY",
+    "Weinberg_angle_derived": false,
+    "broken_neutral_current": "J_H proportional_to J3-JY",
+    "canonical_kinetic_rotation_claimed": false,
+    "current_rotation": "J_Q=(J3+JY)/sqrt(2);_J_H=(J3-JY)/sqrt(2)",
+    "field_rotation": "A_Q=(W3_hat+B_hat)/sqrt(2);_Z_H=(W3_hat-B_hat)/sqrt(2)",
+    "input_current_basis": [
+      "J3",
+      "JY"
+    ],
+    "input_field_basis": [
+      "W3_hat",
+      "B_hat"
+    ],
+    "interaction_identity": "W3_hat*J3+B_hat*JY=A_Q*J_Q+Z_H*J_H",
+    "orthogonal_coordinate_transform": true,
+    "output_current_basis": [
+      "J_Q",
+      "J_H"
+    ],
+    "output_field_basis": [
+      "A_Q",
+      "Z_H"
+    ],
+    "same_current_C2_source_domain": true
+  },
+  "validation": {
+    "Higgs_vacuum_is_Qem_neutral": true,
+    "JY_and_J3_share_current_C2_domain": true,
+    "fields_and_currents_rotate_together": true,
+    "gauge_residue_mismatch_blocks_physical_photon": true,
+    "neutral_Hessian_has_exactly_one_null_and_positive_broken_mode": true,
+    "no_independent_gauge_or_mixing_input": true,
+    "no_photon_muon_or_full_completion_overclaim": true,
+    "same_AE31_Higgs_action_and_no_measured_vev": true,
+    "structural_Qem_matches_retained_representation": true
+  },
+  "validation_passed": true
+}
