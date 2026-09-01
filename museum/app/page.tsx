@@ -4,15 +4,25 @@ import { ArrowRight, Code2, Pause, Play, ShieldCheck } from 'lucide-react';
 import Image from 'next/image';
 import { useEffect, useMemo, useState } from 'react';
 import { Button } from '@/components/ui/button';
-import { exhibits, REPOSITORY, SCIENCE, type Exhibit } from './exhibits';
+import {
+  cosmologyExhibit,
+  exhibits,
+  REPOSITORY,
+  SCIENCE,
+  type Exhibit,
+} from './exhibits';
 
-const ASSET_REVISION = 'simulation-engines-2026-09-01b';
+const ASSET_REVISION = 'cosmology-other-work-2026-09-01';
 
 const creatorLinks = [
   { label: 'ORCID record', href: 'https://orcid.org/0009-0000-6650-3485' },
   { label: 'Citation metadata', href: `${SCIENCE}/CITATION.cff` },
   { label: 'Frozen preprint PDF', href: `${SCIENCE}/manuscript/BHSM_final_paper.pdf` },
   { label: 'Archival DOI', href: 'https://doi.org/10.5281/zenodo.20663419' },
+  {
+    label: 'Cosmology preprint',
+    href: 'https://doi.org/10.20944/preprints202601.1427.v1',
+  },
 ];
 
 type CMSVector = {
@@ -730,6 +740,80 @@ python -m bhsm.interface physics-status --format markdown`}</code>
         </div>
       </section>
 
+      <section
+        className="other-work-wing"
+        id="other-work"
+        aria-labelledby="other-work-title"
+      >
+        <div className="section-heading other-work-heading">
+          <p className="eyebrow">Other work · cosmology</p>
+          <h2 id="other-work-title">A separate preprint, viewed as a live model.</h2>
+          <p>
+            This exhibit presents Norman P. Carberry’s cosmology work separately
+            from BHSM. It explains the preprint’s proposed mechanism and testable
+            correlations without extending the scientific claims of this repository.
+          </p>
+        </div>
+
+        <article className="other-work-card">
+          <div className="other-work-visual">
+            <div className="display-label">
+              <span>Other work · Exhibit {cosmologyExhibit.number}</span>
+              <span>Preprint model · {motion ? 'motion on' : 'static view'}</span>
+            </div>
+            <MotionImage motion={motion} exhibit={cosmologyExhibit} loading="lazy" />
+          </div>
+          <div className="other-work-copy">
+            <p className="exhibit-index">Cosmology collection</p>
+            <h3>{cosmologyExhibit.title}</h3>
+            <p className="exhibit-subtitle">{cosmologyExhibit.subtitle}</p>
+            <p className="data-label">{cosmologyExhibit.dataLabel}</p>
+            <StatusBadge exhibit={cosmologyExhibit} />
+            {cosmologyExhibit.facts ? (
+              <dl className="exhibit-facts">
+                {cosmologyExhibit.facts.map((fact) => (
+                  <div key={fact.label}>
+                    <dt>{fact.label}</dt>
+                    <dd>{fact.value}</dd>
+                  </div>
+                ))}
+              </dl>
+            ) : null}
+            <dl className="other-work-placard">
+              <div>
+                <dt>Lay description</dt>
+                <dd>{cosmologyExhibit.lay}</dd>
+              </div>
+              <div>
+                <dt>What you are seeing</dt>
+                <dd>{cosmologyExhibit.seen}</dd>
+              </div>
+              <div>
+                <dt>Scientific caption</dt>
+                <dd>{cosmologyExhibit.matters}</dd>
+              </div>
+            </dl>
+            <div
+              className="record-links"
+              aria-label={`Scientific record for ${cosmologyExhibit.title}`}
+            >
+              <span>Open preprint record</span>
+              {cosmologyExhibit.links.map((link) => (
+                <a href={link.href} key={link.label}>
+                  {link.label} <span aria-hidden="true">↗</span>
+                </a>
+              ))}
+            </div>
+          </div>
+        </article>
+        <p className="other-work-boundary">
+          Source status: independently authored preprint, posted 20 January 2026,
+          not peer reviewed. The animation is a schematic rendering of the paper’s
+          equations and reported parameter ranges; it is not a sky map, survey-data
+          visualization, or confirmation of the proposed model.
+        </p>
+      </section>
+
       <footer>
         <div>
           <Image
@@ -751,8 +835,9 @@ python -m bhsm.interface physics-status --format markdown`}</code>
           <a href="#top">Back to top ↑</a>
         </div>
         <p className="footer-boundary">
-          Reconstructed corpus · CMS Open Data Record 303 · nine animated
-          exhibits · current authority synchronized with GitHub main
+          Reconstructed corpus · CMS Open Data Record 303 · nine BHSM exhibits
+          plus one cosmology other-work exhibit · current authority synchronized
+          with GitHub main
         </p>
       </footer>
     </main>
