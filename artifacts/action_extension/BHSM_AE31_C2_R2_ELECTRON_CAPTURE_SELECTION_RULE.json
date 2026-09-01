@@ -1,0 +1,107 @@
+{
+  "FULL_BHSM_COMPLETE": false,
+  "action_version": "BHSM-AE-3.1.0",
+  "artifact": "BHSM_AE31_C2_R2_ELECTRON_CAPTURE_SELECTION_RULE",
+  "capture_vertex_and_hessian_gate": {
+    "attached_leptonic_current": "bar(nu_eL)*gamma^mu*e_L",
+    "attached_quark_current": "sum_color(bar(u_L)*gamma^mu*d_L)",
+    "capture_Hessian_derived": false,
+    "capture_amplitude_factorization": "A_EC=<nu_e|J_lep^mu|e_env>*<n|J_had_mu|p>",
+    "capture_hessian_required_blocks": [
+      "electron_environment_Dirac_block",
+      "proton_neutron_returned_composite_block",
+      "hadronic_weak_current_matrix_element",
+      "outgoing_neutrino_boundary_trace_block"
+    ],
+    "complete_electron_environment_operator_derived": false,
+    "current_family_action": "I3",
+    "electron_environment_operator": "D_e_env=D_e+M_EM+M_residual_hadronic+delta_D[h_ell2]",
+    "leptonic_weak_representation_attached": true,
+    "physical_hadronic_weak_matrix_element_derived": false,
+    "physical_proton_neutron_states_derived": false,
+    "quark_weak_representation_attached": true,
+    "stationary_capturable_electron_mode_derived": false
+  },
+  "claim_boundary": {
+    "CURRENT_C2_ELECTRON_NUCLEAR_CAPTURE_HESSIAN_DERIVED": false,
+    "CURRENT_C2_ELL0_TO_ELL2_MIXING_CHANNEL_DERIVED": true,
+    "CURRENT_C2_ELL2_ISOTROPIC_LOWEST_TRACE_SELECTION_RULE_DERIVED": true,
+    "CURRENT_C2_FULL_LOWEST_SPINOR_ELL2_BLOCK_DERIVED": false,
+    "CURRENT_C2_OUTGOING_NEUTRINO_BOUNDARY_MODE_DERIVED": false,
+    "CURRENT_C2_PHYSICAL_ELECTRON_CAPTURE_AMPLITUDE_DERIVED": false,
+    "CURRENT_C2_R2_PROVENANCE_RECONSTRUCTED": true,
+    "CURRENT_C2_R2_TO_M4_METRIC_INTERTWINER_DERIVED": false,
+    "CURRENT_C2_STATIONARY_CAPTURABLE_ELECTRON_MODE_DERIVED": false,
+    "FULL_BHSM_COMPLETE": false,
+    "measured_capture_or_neutrino_data_used": false,
+    "particle_spectrum_rebuilt": false
+  },
+  "classification": "AE31_CURRENT_C2_R2_ELECTRON_CAPTURE_SELECTION_RULE",
+  "electron_metric_incidence": {
+    "allowed_first_order_role": "ELL0_TO_ELL2_MIXING_OR_INTERNAL_MULTIPLET_SPLITTING_NOT_AN_ISOTROPIC_ELL0_DIAGONAL_BINDING_TERM",
+    "conditional_ell2_attachment": "h_mu_nu=r2*h_mu_nu^(ell2)",
+    "full_lowest_spinor_matrix_evaluated": false,
+    "historical_full_preimage_H2_to_current_M4_metric_intertwiner_derived": false,
+    "lepton_action_owner": "BHSM-AE-3.1.0",
+    "metric_variation_identity": "delta_h S_e=(1/2)*integral_sqrt(-g)*h_mu_nu*T_e^(mu_nu)",
+    "mixed_incidence": "partial^2 S_e/(partial r2 partial Psi_e)=variation_of_D_e_along_h^(ell2)",
+    "new_electron_shear_coefficient_required": false,
+    "round_lowest_multiplet_trace_selection_rule": "Tr_lowest(P*delta_D[h_ell2]*P)=0_FOR_AN_ISOTROPIC_ROUND_MULTIPLET_TRACE_BY_SO4_HARMONIC_ORTHOGONALITY",
+    "therefore_current_C2_numeric_mixed_block_derived": false
+  },
+  "inputs": {
+    "artifacts/BHSM_aether_physical_inverse_closure_v16_36.json": "C2FD73E35BDF915671F0EB4DC0CF8AF5EA3FCE187E302DCB354440CD2D459B67",
+    "artifacts/BHSM_differential_shear_softening_v14_83.json": "21E259BD6F0736CCED7DA1F2E157EC93B8820CE8B59E92AD09DDF5EC80B7DC70",
+    "artifacts/BHSM_stationary_full_preimage_transport_no_go_v14_85.json": "E67347FB91EDC4830A067EA308067381CC8835F412EF71DC97F8B62AD7E7512D",
+    "artifacts/action_extension/BHSM_AE31_C2_COEXACT_SU2L_CHARGED_CURRENT.json": "4ACDC1E6FD27ACE85DA73CFF763D3276BF9AFF8C524DA457328B9EFA810D7092",
+    "artifacts/action_extension/BHSM_AE31_C2_INTRINSIC_M4_LEPTON_ACTION.json": "C0E851100FCAA04C1968081A3940D938B7C64C857FE416F7F7795974A9053850",
+    "artifacts/action_extension/BHSM_AE31_C2_OUTER_CALDERON_ACTION_NO_GO.json": "55304434AEACA121092814F608EF849530887DDFD9CF811CF43327ACCF968753",
+    "src/bhsm/interface/ae31_c2_r2_electron_capture_selection_rule.py": "18252E33B87D60C8FE8184125D0D3E17B709E9DCB6C8C0ACDD1764CC0AB8ADD0"
+  },
+  "normalized_S3_rank2_witness": {
+    "S3_volume": 19.739208802178716,
+    "diagonal_Gaunt_000_to_2": 0.0,
+    "lowest_isotropic_mode_first_order_diagonal_shift": 0.0,
+    "off_diagonal_Gaunt_0_2_2": 0.22507907903927651,
+    "rank0_harmonic": "Y0=1/sqrt(2*pi^2)",
+    "rank0_to_rank2_mixing_allowed": true,
+    "rank2_harmonic": "Y2=(sqrt(3)/pi)*(x1^2-x2^2)",
+    "rank2_mean": 0.0,
+    "rank2_norm_squared": 1.0,
+    "rank2_normalization": 0.5513288954217921
+  },
+  "recovered_r2_provenance": {
+    "conditional_equal_inertia_chi2": "chi_2=2/(3 R^2)",
+    "current_stationary_branch_Delta_A": "ZERO",
+    "current_stationary_branch_shear_operator": "ZERO",
+    "historical_exact_operator": "H_eff=H0-mu D_Delta_u^dagger D_Delta_u",
+    "historical_scalarized_notation": "r2_eff=r2_0-chi2*D_shear",
+    "nonzero_physical_r2_transport_derived": false,
+    "notation_status": "A_SCALAR_EIGENCHANNEL_SUMMARY_OF_H_EFF_NOT_AN_INDEPENDENT_ELECTRON_ORBITAL_OR_CURRENT_C2_ACTION_FIELD",
+    "positive_semidefinite_sign_theorem_reusable": true,
+    "r2_is_a_capturable_electron_state_derived": false
+  },
+  "scientific_decision": {
+    "exact_next_object": "DRIVEN_CURRENT_C2_NUCLEAR_COMPOSITE_BACKGROUND_WITH_ACTION_OWNED_H2_TO_M4_METRIC_TRACE_COMPLETE_EM_RESPONSE_AND_PROTON_NEUTRON_WEAK_MATRIX_ELEMENT",
+    "r2_enters_in_principle": "YES_AS_AN_ACTION_METRIC_VARIATION_AFTER_THE_H2_TO_M4_INTERTWINER_IS_DERIVED",
+    "r2_may_be_renamed_the_capture_orbital": false,
+    "r2_may_dress_a_capture_state": true,
+    "r2_produces_isotropic_lowest_stationary_electron_mode_at_first_order": false,
+    "reason": "AN_ELL2_TRACEFREE_PERTURBATION_HAS_ZERO_ISOTROPIC_MULTIPLET_TRACE_ON_THE_ROUND_LOWEST_CHANNEL;_THE_UNEVALUATED_FULL_SPINOR_BLOCK_MAY_MIX_OR_SPLIT_MODES_BUT_CANNOT_SUPPLY_A_COMMON_ISOTROPIC_BINDING_SHIFT"
+  },
+  "validation": {
+    "capture_not_overclaimed": true,
+    "current_charged_current_reused": true,
+    "current_lepton_action_reused": true,
+    "no_new_coefficient": true,
+    "outer_environment_no_go_preserved": true,
+    "proton_neutron_gate_reused": true,
+    "r2_not_relabelled_as_orbital": true,
+    "rank2_diagonal_zero": true,
+    "rank2_mixing_nonzero": true,
+    "stationary_transport_not_overridden": true,
+    "v14_83_sign_theorem_reused": true,
+    "v14_85_stationary_zero_reused": true
+  },
+  "validation_passed": true
+}
