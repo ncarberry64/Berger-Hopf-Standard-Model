@@ -289,6 +289,36 @@ native variable `z`; it is not promoted to physical `p^2`.
 - `CURRENT_C2_PHYSICAL_CHARGED_LEPTON_POLES_DERIVED = FALSE`
 - `UP_DOWN_ACTION_PREFACTORS_DERIVED = FALSE`
 
+The action has now advanced to `BHSM-AE-3.2.0` by selecting the previously
+derived coefficient-free first-order Einstein--Cartan completion on current
+C2. This replaces the Levi-Civita Einstein--Dirac representative rather than
+adding a second Einstein term. Eliminating algebraic contorsion gives the
+attractive local scalar LR kernel
+
+```text
+G_EC(sigma) = (3/4)/(K_G5 [1-4 sigma^2]).
+```
+
+The exact `3/4` Clifford/Fierz coefficient is inherited without a new
+continuous parameter. The kernel is positive and reflection-even on the
+regular current-C2 interior and attaches to all four LR channels with the
+retained `9,9,3,3` three-family pairing multiplicities. Its family action is
+still `I3`. The first-order action is selected globally, while endpoint
+integrability of the eliminated four-fermion representative remains open; the
+reduced LR kernel is promoted locally, not as a completed global domain.
+
+The exact Hubbard--Stratonovich transform supplies an algebraic auxiliary
+quadratic block and unit unnormalized LR vertex, but no derivative kinetic
+term. Therefore no canonical composite Yukawa residue, physical Higgs mixing
+direction, quark mass operator, or nontrivial CKM matrix is promoted. The
+historical charged-boundary `beta,kappa` values belong to a different family
+bridge variation and are not relabelled as quark Yukawa prefactors.
+
+- `BHSM_AE32_FIRST_ORDER_EINSTEIN_CARTAN_COMPLETION_SELECTED = TRUE`
+- `CURRENT_C2_LOCAL_ALGEBRAIC_LR_KERNEL_DERIVED = TRUE`
+- `CURRENT_C2_PROPAGATING_HS_KINETIC_KERNEL_DERIVED = FALSE`
+- `UP_DOWN_ACTION_YUKAWA_PREFACTORS_DERIVED = FALSE`
+
 The same-domain weak charged-current piece is now explicit. The retained
 `SU(2)_L` raising/lowering generators attach to the current-C2 lowest-Weyl
 coexact coordinate form as an adjoint `J_plus,J_minus` source/contact pair.

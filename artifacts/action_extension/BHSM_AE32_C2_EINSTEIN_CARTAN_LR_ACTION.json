@@ -1,0 +1,158 @@
+{
+  "FULL_BHSM_COMPLETE": false,
+  "action_completion_contract": {
+    "Gamma_EC_on_symmetric_zero_fermion_background": 0.0,
+    "action_version": "BHSM-AE-3.2.0",
+    "background_geometry_first_variation_changed_at_zero_fermion": false,
+    "composition": "S_AE3_2=FirstOrderLift_spin_connection[S_AE3_1]",
+    "contorsion_is_algebraic": true,
+    "independent_spin_connection": "omega=omega_LeviCivita+C",
+    "intrinsic_Higgs_identified_with_HS_auxiliary": false,
+    "intrinsic_M4_Higgs_term_removed": false,
+    "new_continuous_coefficient": false,
+    "new_elementary_field": false,
+    "owner_decision": "SELECT_THE_HISTORICAL_COEFFICIENT_FREE_FIRST_ORDER_EINSTEIN_DIRAC_COMPLETION_ON_CURRENT_C2",
+    "particle_spectrum_rebuilt": false,
+    "predecessor_action_version": "BHSM-AE-3.1.0",
+    "reduced_composition": "S_AE3_2_reduced=S_AE3_1+Gamma_EC",
+    "replaced_representative": "LEVI_CIVITA_EINSTEIN_DIRAC_REPRESENTATIVE",
+    "replacement_not_addition": true,
+    "same_AE2_spin_x_gauge_reset_domain": true,
+    "same_reset_generated_C2_background": true
+  },
+  "action_version": "BHSM-AE-3.2.0",
+  "algebraic_Hubbard_Stratonovich_block": {
+    "HS_derivative_kinetic_term_present": false,
+    "HS_quadratic_coefficient": "G_EC^(-1)",
+    "HS_quadratic_coefficient_positive_in_C2_interior": true,
+    "O_f": "bar(Psi_L)*Psi_R",
+    "auxiliary_field_is_propagating": false,
+    "canonical_Yukawa_residue_derived": false,
+    "identity": "exp[+G_EC*integral(O_f_dagger*O_f)] proportional_to integral DH_f exp[-integral(H_f_dagger*G_EC^(-1)*H_f-H_f*O_f_dagger-H_f_dagger*O_f)]",
+    "intrinsic_M4_Higgs_mixing_derived": false,
+    "physical_single_Higgs_direction_selected": false,
+    "unnormalized_LR_HS_vertex": 1.0
+  },
+  "artifact": "BHSM_AE32_C2_EINSTEIN_CARTAN_LR_ACTION",
+  "charged_bridge_separation_theorem": {
+    "auxiliary_rescaling": "H_f_prime=a*H_f_changes_the_coordinate_vertex_and_quadratic_coefficient_but_leaves_the_eliminated_four_fermion_kernel_FIXED",
+    "beta_u_or_beta_d_promoted_to_Yukawa_prefactor": false,
+    "consequence": "A_PROPAGATING_HS_TWO_POINT_RESIDUE_AND_A_PHYSICAL_HIGGS_DIRECTION_OR_MIXING_MAP_ARE_REQUIRED_BEFORE_Y_f_IS_CANONICAL",
+    "current_EC_object": "ACTION_OWNED_LOCAL_SCALAR_LR_FOUR_FERMION_KERNEL",
+    "historical_beta_kappa_object": "CONDITIONAL_TRIDIAGONAL_FAMILY_BRIDGE_ENTRIES",
+    "independent_c_u_or_c_d_inserted": false,
+    "kappa_u_or_kappa_d_promoted_to_Yukawa_prefactor": false,
+    "objects_are_the_same_variation": false,
+    "reason": "BETA_AND_KAPPA_ACT_INSIDE_THE_FROZEN_THREE_SLOT_FAMILY_MODULE;_G_EC_MULTIPLIES_THE_GAUGE_SINGLET_LR_CHANNEL_AND_IS_FAMILY_I3"
+  },
+  "claim_boundary": {
+    "BHSM_AE32_FIRST_ORDER_EINSTEIN_CARTAN_COMPLETION_SELECTED": true,
+    "CURRENT_C2_ALL_SM_LR_CHANNELS_ATTACHED": true,
+    "CURRENT_C2_EXACT_CLIFFORD_FIERZ_COEFFICIENT_DERIVED": true,
+    "CURRENT_C2_GLOBAL_REDUCED_EC_ACTION_DOMAIN_DERIVED": false,
+    "CURRENT_C2_LOCAL_ALGEBRAIC_LR_KERNEL_DERIVED": true,
+    "CURRENT_C2_PHYSICAL_HIGGS_DIRECTION_DERIVED": false,
+    "CURRENT_C2_PROPAGATING_HS_KINETIC_KERNEL_DERIVED": false,
+    "FULL_BHSM_COMPLETE": false,
+    "HISTORICAL_CHARGED_BRIDGE_VALUES_PROMOTED": false,
+    "PHYSICAL_CKM_MATRIX_DERIVED": false,
+    "QUARK_MASS_OPERATORS_DERIVED": false,
+    "UP_DOWN_ACTION_YUKAWA_PREFACTORS_DERIVED": false,
+    "exact_next_operator": "SAME_AE32_CURRENT_C2_HS_TWO_POINT_KINETIC_MATRIX_AND_INTRINSIC_HIGGS_MIXING_MAP_ON_AN_ACTION_SELECTED_QUANTUM_STATE",
+    "new_continuous_coefficient_inserted": false,
+    "particle_spectrum_rebuilt": false
+  },
+  "classification": "CURRENT_C2_FIRST_ORDER_EINSTEIN_CARTAN_LR_ACTION",
+  "contorsion_Schur_complement": {
+    "c_EC": 0.75,
+    "coefficient_inserted_by_hand": false,
+    "contorsion_quadratic_form": "S_C=(1/2)<C,K_G5*Lambda(sigma)*M_Clifford*C>+<C,J_S>",
+    "eliminated_three_form_term": "-(bar(Psi)*Gamma_ABC*Psi)^2/(32*K_G5*Lambda)",
+    "four_dimensional_axial_magnitude": "3/(16*K_G5*Lambda)",
+    "induced_current_action": "Gamma_EC=-1/2<J_S,(K_G5*Lambda*M_Clifford)^(-1)*J_S>",
+    "same_parent_Einstein_Dirac_Hessian": true,
+    "scalar_LR_Fierz_coefficient": "c_EC=3/4",
+    "scalar_LR_sign": "ATTRACTIVE",
+    "spin_current": "J_S^ABC=(1/4)*bar(Psi)*Gamma^[A*Gamma^B*Gamma^C]*Psi",
+    "stationary_contorsion": "C_star=-(K_G5*Lambda*M_Clifford)^(-1)*J_S"
+  },
+  "inputs": {
+    "artifacts/BHSM_aether_cartan_shell_crossing_v15_76.json": "077D2AF2555579501B7FBC157C484526C0C25D2285F94DEBBD49054C35C99E56",
+    "artifacts/BHSM_aether_common_gauge_hs_pushforward_v16_05.json": "B64A38785B41E01DAE38FA303005FF934C0B4148452B4C2CEC08C49CF001D572",
+    "artifacts/BHSM_aether_einstein_cartan_joint_pushforward_v15_75.json": "1E82EE9E365ED99E8943C5090C71119C47DEC38BA1924C9EED1BC7A3086CD842",
+    "artifacts/BHSM_charged_action_stiffness_v1_7.json": "B5CB6509C7D9E9392B707D47536EB6D5E96D4774DB12232B06B8F4A1C746FC07",
+    "artifacts/action_extension/BHSM_ACTION_AE3_RECIPROCAL_JOIN_LOCALIZATION.json": "858C24D806EAE6574F17D8606CAAE63909E189641A09305B51AA0A95D73A63A1",
+    "artifacts/action_extension/BHSM_AE31_C2_CHIRAL_GREEN_DOMAIN.json": "C7FA0821A2A21A536D119CC84986FAD8D6AD65E2517953F6120F91CA76760131",
+    "artifacts/action_extension/BHSM_AE31_C2_INTRINSIC_M4_LEPTON_ACTION.json": "C0E851100FCAA04C1968081A3940D938B7C64C857FE416F7F7795974A9053850",
+    "artifacts/action_extension/BHSM_AE3_C2_HS_FERMION_MIXED_VARIATION.json": "23E1741332800951F510D6D1AA5A2FB7C43B7D5F2D2AE80C67AB59F8BBB5B159",
+    "artifacts/charged_boundary_bridge_values_v1.json": "7529DD3DE10ED01F15CF45D9E9B36821787C024D34F99945762893E05FA148D7",
+    "src/bhsm/interface/ae32_c2_einstein_cartan_lr_action.py": "D1C868032C752BF5A2880C274A8AB0B8A7469D90EB068C9E1BC7A268549B6349"
+  },
+  "local_current_C2_LR_kernel_sample": {
+    "G_EC_inverse_over_K_G5": [
+      0.052800000000000104,
+      1.0,
+      1.3333333333333333,
+      1.0,
+      0.052800000000000104
+    ],
+    "K_G5_times_G_EC": [
+      18.939393939393902,
+      1.0,
+      0.75,
+      1.0,
+      18.939393939393902
+    ],
+    "action_version": "BHSM-AE-3.2.0",
+    "domain": "CURRENT_C2_REGULAR_INTERIOR__ABS_SIGMA_LT_ONE_HALF",
+    "endpoint_limit": "+infinity_as_abs(sigma)_up_to_1/2",
+    "formula": "G_EC=(3/4)/(K_G5*(1-4*sigma^2))",
+    "global_reduced_EC_action_domain_derived": false,
+    "global_zero_mode_weighted_integrability_derived": false,
+    "inverse_formula": "G_EC^(-1)/K_G5=(4/3)*(1-4*sigma^2)",
+    "localization_weight": [
+      0.03960000000000008,
+      0.75,
+      1.0,
+      0.75,
+      0.03960000000000008
+    ],
+    "locally_finite": true,
+    "positive": true,
+    "reflection_even": true
+  },
+  "scalar_LR_channel_ledger": {
+    "all_channels_gauge_singlets_after_LR_product": true,
+    "channels": {
+      "charged_lepton": "(bar(L_L)*e_R)*(bar(e_R)*L_L)",
+      "down": "(bar(Q_L)*d_R)*(bar(d_R)*Q_L)",
+      "neutrino_effective_extension": "(bar(L_L)*nu_R)*(bar(nu_R)*L_L)",
+      "up": "(bar(Q_L)*u_R)*(bar(u_R)*Q_L)"
+    },
+    "color_action": "I3_color_IN_QUARK_CHANNELS",
+    "family_action": "I3",
+    "family_noncentral_direction_selected": false,
+    "neutrino_is_effective_extension_not_minimal_SM": true,
+    "pairing_multiplicities_three_families": {
+      "charged_lepton": 3,
+      "down": 9,
+      "neutrino_effective_extension": 3,
+      "up": 9
+    },
+    "same_scalar_kernel_per_normalized_pair": true,
+    "total_pairing_multiplicity": 24
+  },
+  "validation": {
+    "algebraic_HS_block_is_not_overclaimed_as_propagating": true,
+    "all_24_historical_channel_pairings_attached": true,
+    "current_AE3_localization_is_same_positive_weight": true,
+    "current_reduced_vertex_preexisted_but_HS_kernel_was_open": true,
+    "exact_historical_Clifford_coefficient_recovered": true,
+    "first_order_lift_replaces_instead_of_double_counting": true,
+    "historical_charged_values_remain_non_action_normalizations": true,
+    "historical_completion_is_coefficient_free": true,
+    "no_quark_mass_CKM_or_spectrum_overclaim": true,
+    "predecessor_is_current_AE31_action": true
+  },
+  "validation_passed": true
+}
