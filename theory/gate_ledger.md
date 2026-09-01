@@ -1,5 +1,26 @@
 # Gate Ledger
 
+## AE3.1 current-C2 quark HS channel-direction no-go
+
+- For positive quark-channel kinetic coefficients, canonical normalization
+  gives the single constraint `Z_u c_u^2+Z_d c_d^2=1`. Its Jacobian has rank
+  one, leaving an exact one-dimensional channel-direction nullity and a
+  continuously variable ratio `c_u/c_d`.
+- The reusable v16.02 pairing multiplicities are `diag(9,9,3,3)`. Equal up
+  and down entries make the isolated quark quadratic form `O(2)` invariant;
+  they do not select equal physical components. The historical numeric
+  periodic-cycle residue is not promoted to current C2.
+- Tensoring the current reduced vertex with the attached `T_u,T_d` operators
+  preserves all within-sector shapes and current-C2 commutators for every
+  normalized angle while changing the cross-sector heavy ratio. Family
+  attachment therefore does not remove the channel ambiguity.
+- The exact selector is the full same-domain `2 x 2` up/down Hessian of one
+  `Gamma_qH`, derived together with the intrinsic-Higgs identification,
+  dynamical residue, family pushforward, and boundary domain. No
+  equal-component assumption or quark-mass fit is allowed.
+- Artifact:
+  `artifacts/action_extension/BHSM_AE31_C2_QUARK_HS_DIRECTION_NO_GO.json`.
+
 ## AE3.1 current-C2 quark parent third-variation evaluation
 
 - Direct field-incidence differentiation of the active action gives
