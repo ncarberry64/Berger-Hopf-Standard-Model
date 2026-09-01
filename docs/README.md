@@ -1,23 +1,6 @@
 # BHSM Documentation Index
 
-## Canonical current authority
-
-- [Current scientific status](current_bhsm_status.md)
-- [Machine-readable status](current_bhsm_status.json)
-- [Reviewer start path](reviewer_start_here.md)
-- [Public terminology](public_terminology.md)
-- [Superseded status archive](archive/status/README.md)
-
-Gate 7 is **OPEN** at the action-owned covariant localization/domain-carrier
-and full-field attachment frontier.
-`UNCHANGED_AE2_LOCALIZATION_CARRIER_FOUND = FALSE`;
-`PHYSICAL_ENCAPSULATION_IDENTIFIED = FALSE`;
-`FULL_BHSM_COMPLETE = FALSE`.
-
-The campaigns below are historical documentation records, not current public
-authority.
-
-## Historical v15.10 campaign
+## Current v15.10 campaign
 
 - [Aether-cycle sigma-coefficient reconstruction](BHSM_AETHER_CYCLE_SIGMA_COEFFICIENT_RECONSTRUCTION_V15_10.md)
 - [v15.9 cycle-driven eta upstream theorem](BHSM_CYCLE_DRIVEN_ETA_SPREAD_CONCENTRATION_V15_9.md)
@@ -25,14 +8,14 @@ authority.
 - [Reviewer reproduction guide](reviewer_reproduction_guide.md)
 - [Artifact index](../ARTIFACT_INDEX.md)
 
-Historical result: the invariant coefficient triple has an exact injective
+Current result: the invariant coefficient triple has an exact injective
 three-response inverse, but the present Aether/cycle state does not provide
 the physical sigma tangent derivative or nonlinear response. Constructive
 stable witnesses prove retained-action nonuniqueness. The v15.9 eta branch is
 preserved; physical sigma onset and Hopf continuation remain open.
 `FULL_BHSM_COMPLETE = FALSE`.
 
-Historical next object:
+Exact next object:
 `ACTION_OWNED_AETHER_CYCLE_TO_REGULAR_SIGMA_RESPONSE_JET_MAP_PRODUCING_THE_PHYSICAL_SIGMA_TANGENT_PROPAGATOR_X_DERIVATIVE_AND_BACKREACTION_UNREDUCED_CANONICAL_QUARTIC_ON_THE_V15_9_BRANCH`.
 
 ## Historical v15.9 campaign

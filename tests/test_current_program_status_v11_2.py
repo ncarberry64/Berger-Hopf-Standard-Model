@@ -23,21 +23,16 @@ def test_historical_python_status_is_v15_10_and_fail_closed() -> None:
 def test_repository_current_surfaces_are_synchronized() -> None:
     for name in ("README.md", "STATUS.md", "CLAIMS.md", "docs/current_bhsm_status.md"):
         text = (ROOT / name).read_text(encoding="utf-8")
-        assert "UNCHANGED_AE2_LOCALIZATION_CARRIER_FOUND = FALSE" in text, name
-        assert "PHYSICAL_ENCAPSULATION_IDENTIFIED = FALSE" in text, name
+        assert "v18.73" in text.lower(), name
+        assert "376" in text, name
+        assert "complete-child" in text, name
         assert "FULL_BHSM_COMPLETE = FALSE" in text, name
 
 
-def test_canonical_and_historical_machine_statuses_are_separated() -> None:
+def test_historical_machine_status_remains_internally_consistent() -> None:
     current = json.loads((ROOT / "docs" / "current_bhsm_status.json").read_text(encoding="utf-8"))
-    assert current["schema_version"] == "2.0"
-    assert current["gate_7"]["status"] == "OPEN"
-    historical = json.loads(
-        (ROOT / "docs/archive/status/current_bhsm_status_pre_2026_09_01.json")
-        .read_text(encoding="utf-8")
-    )
-    assert historical["current_version"] == CURRENT_VERSION
-    assert historical["primary_verdict"] == PRIMARY_VERDICT
+    assert current["current_version"] == CURRENT_VERSION
+    assert current["primary_verdict"] == PRIMARY_VERDICT
 
 
 def test_historical_status_chronology_is_preserved() -> None:

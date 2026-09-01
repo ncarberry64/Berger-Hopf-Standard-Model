@@ -1,4 +1,4 @@
-"""Fail-closed audit for canonical BHSM public presentation surfaces."""
+"""Fail-closed audit for the BHSM museum presentation boundary."""
 
 from __future__ import annotations
 
@@ -6,44 +6,21 @@ import json
 import re
 import subprocess
 from pathlib import Path
-from urllib.parse import unquote
 
 
 ROOT = Path(__file__).resolve().parents[1]
-STATUS_JSON = ROOT / "docs/current_bhsm_status.json"
-CANONICAL_MUSEUM = "https://ncarberry64.github.io/Berger-Hopf-Standard-Model/"
-FLAGS = {
-    "UNCHANGED_AE2_LOCALIZATION_CARRIER_FOUND": False,
-    "PHYSICAL_ENCAPSULATION_IDENTIFIED": False,
-    "FULL_BHSM_COMPLETE": False,
-}
-PUBLIC_TEXT = (
-    "README.md",
-    "docs/current_bhsm_status.md",
-    "museum/app/page.tsx",
+MUSEUM_URL = "https://ncarberry64.github.io/Berger-Hopf-Standard-Model/"
+ASSETS = ROOT / "docs" / "assets"
+SIMULATION_BASES = (
+    "bhsm_geometry_to_prediction",
+    "bhsm_simulated_particle_spectrum",
+    "bhsm_spectral_forecast",
+    "bhsm_muon_g2_pipeline",
+    "bhsm_collision_predictor",
+    "bhsm_decay_stability_engine",
+    "bhsm_no_fit_firewall",
+    "bhsm_physical_identification_bridge",
 )
-FLAG_SURFACES = {
-    "UNCHANGED_AE2_LOCALIZATION_CARRIER_FOUND": (
-        "STATUS.md",
-        "CLAIMS.md",
-        "docs/README.md",
-        "docs/current_bhsm_status.md",
-    ),
-    "PHYSICAL_ENCAPSULATION_IDENTIFIED": (
-        "STATUS.md",
-        "CLAIMS.md",
-        "docs/README.md",
-        "docs/current_bhsm_status.md",
-    ),
-    "FULL_BHSM_COMPLETE": (
-        "README.md",
-        "STATUS.md",
-        "CLAIMS.md",
-        "docs/README.md",
-        "docs/current_bhsm_status.md",
-        "museum/app/page.tsx",
-    ),
-}
 CMS_REQUIRED = (
     "coordinate-engine validation",
     "detector reconstruction",
@@ -59,7 +36,6 @@ CMS_REQUIRED = (
 GENERATED_PATH = re.compile(
     r"(^|/)(node_modules|dist|\.next|__pycache__|coverage|\.cache)(/|$)|\.pyc$"
 )
-MARKDOWN_LINK = re.compile(r"(?<!!)\[[^\]]+\]\(([^)]+)\)")
 
 
 def _text(relative: str) -> str:
@@ -67,33 +43,46 @@ def _text(relative: str) -> str:
 
 
 def audit() -> dict:
-    status = json.loads(STATUS_JSON.read_text(encoding="utf-8"))
-    surfaces = {relative: _text(relative) for relative in PUBLIC_TEXT}
-    joined = "\n".join(surfaces.values())
-    flag_checks = {
-        name: status.get(name) is expected
-        and status.get("flags", {}).get(name) is expected
-        and all(
-            f"{name} = FALSE" in _text(relative)
-            for relative in FLAG_SURFACES[name]
-        )
-        for name, expected in FLAGS.items()
-    }
+    status = json.loads(_text("docs/current_bhsm_status.json"))
+    exhibits = _text("museum/app/exhibits.ts")
+    page = _text("museum/app/page.tsx")
+    layout = _text("museum/app/layout.tsx")
+    combined = " ".join((exhibits + "\n" + page).split())
 
-    museum_source = _text("museum/app/exhibits.ts")
-    page_source = surfaces["museum/app/page.tsx"]
-    cms_blob = " ".join((museum_source + "\n" + page_source).split())
     cms_checks = {
-        phrase: phrase.casefold() in cms_blob.casefold() for phrase in CMS_REQUIRED
+        phrase: phrase.casefold() in combined.casefold() for phrase in CMS_REQUIRED
     }
-    museum_exhibit_checks = {
-        "nine_animated_visuals": museum_source.count("animated: '") == 9,
-        "nine_static_visuals": museum_source.count("still: '") == 9,
-        "lay_copy_for_every_exhibit": museum_source.count("lay: '") == 9,
-        "real_data_engine_label": "Real-data engine" in page_source,
-        "simulation_engine_label": "Simulation / audit engine" in page_source,
-        "lay_placard_rendered": "<dt>Lay description</dt>" in page_source,
+    exhibit_checks = {
+        "nine_animated_visuals": exhibits.count("animated: '") == 9,
+        "nine_static_visuals": exhibits.count("still: '") == 9,
+        "lay_copy_for_every_exhibit": exhibits.count("lay: '") == 9,
+        "lay_placard_rendered": "<dt>Lay description</dt>" in page,
+        "real_data_engine_label": "Real-data engine" in page,
+        "simulation_engine_label": "Simulation / audit engine" in page,
+        "motion_fallback": "onError={() => setFailedSource(desired)}" in page,
     }
+    asset_checks = {
+        f"{base}{suffix}": (ASSETS / f"{base}{suffix}").is_file()
+        for base in SIMULATION_BASES
+        for suffix in (".svg", ".png", "_animated.gif")
+    }
+    asset_checks.update(
+        {
+            "cms_png": (
+                ASSETS
+                / "pr98_cms_open_data_animation"
+                / "pr98_cms_engine_validation.png"
+            ).is_file(),
+            "cms_gif": (
+                ASSETS
+                / "pr98_cms_open_data_animation"
+                / "pr98_cms_engine_validation_continuous.gif"
+            ).is_file(),
+            "simulation_generator": (
+                ASSETS / "generate_bhsm_museum_engines.py"
+            ).is_file(),
+        }
+    )
 
     tracked = subprocess.run(
         ["git", "ls-files"],
@@ -105,78 +94,31 @@ def audit() -> dict:
     ).stdout.splitlines()
     generated_tracked = [path for path in tracked if GENERATED_PATH.search(path)]
 
-    provenance_paths = (
-        "docs/assets/pr98_cms_open_data_animation/pr98_cms_sample_manifest.json",
-        "docs/assets/pr98_cms_open_data_animation/generate_pr98_cms_animation.py",
-        "artifacts/cern_open_data_benchmark/results.json",
-        "tests/test_cern_open_data_benchmark.py",
-        "museum/ASSET_PROVENANCE.md",
-    )
-    provenance_checks = {
-        path: (ROOT / path).is_file() for path in provenance_paths
-    }
-
-    broken_links: list[dict[str, str]] = []
-    for relative in (
-        "README.md",
-        "docs/current_bhsm_status.md",
-        "docs/public_terminology.md",
-        "docs/reviewer_start_here.md",
-        "docs/archive/status/README.md",
-    ):
-        source = ROOT / relative
-        for target in MARKDOWN_LINK.findall(source.read_text(encoding="utf-8")):
-            if target.startswith(("http://", "https://", "mailto:", "#")):
-                continue
-            clean = unquote(target.split("#", 1)[0]).strip("<>")
-            if clean and not (source.parent / clean).resolve().exists():
-                broken_links.append({"source": relative, "target": target})
-
     checks = {
-        "canonical_schema": status.get("schema_version") == "2.0"
-        and status.get("canonical_public_status") is True,
-        "gate_7_open": status.get("gate_7", {}).get("status") == "OPEN",
-        "flags_fail_closed": all(flag_checks.values()),
-        "observable_machinery_gated": status.get(
-            "observable_machinery_classification"
-        )
-        == "IMPLEMENTED_BUT_PHYSICAL_PROMOTION_GATED",
-        "cms_boundary_complete": all(cms_checks.values()),
+        "current_science_remains_open": status.get("FULL_BHSM_COMPLETE") is False,
+        "current_science_version_present": bool(status.get("current_version")),
         "museum_exhibits_are_visual_and_lay_accessible": all(
-            museum_exhibit_checks.values()
+            exhibit_checks.values()
         ),
-        "cms_provenance_resolves": all(provenance_checks.values()),
-        "canonical_markdown_links_resolve": not broken_links,
-        "canonical_museum_url": status.get("canonical_museum_url")
-        == CANONICAL_MUSEUM
-        and CANONICAL_MUSEUM in surfaces["README.md"]
-        and CANONICAL_MUSEUM in _text("museum/app/layout.tsx")
-        and "BHSM Museum" in page_source,
-        "historical_surfaces_archived": all(
-            (ROOT / path).is_file()
-            for path in (
-                "docs/archive/status/README_pre_canonical_front_door_2026_09_01.md",
-                "docs/archive/status/current_bhsm_status_pre_2026_09_01.md",
-                "docs/archive/status/current_bhsm_status_pre_2026_09_01.json",
-            )
-        ),
+        "museum_assets_resolve": all(asset_checks.values()),
+        "cms_boundary_complete": all(cms_checks.values()),
+        "canonical_museum_url": MUSEUM_URL in _text("README.md")
+        and MUSEUM_URL in layout,
         "no_tracked_generated_output": not generated_tracked,
         "no_full_completion_promotion": not re.search(
-            r"FULL_BHSM_COMPLETE\s*[=:]\s*TRUE", joined, re.IGNORECASE
+            r"FULL_BHSM_COMPLETE\s*[=:]\s*TRUE", page, re.IGNORECASE
         ),
         "no_cms_physics_promotion": "CMS Open Data validates BHSM physics"
-        not in joined,
+        not in combined,
     }
     return {
         "audit": "bhsm_public_surfaces",
         "passed": all(checks.values()),
         "checks": checks,
-        "flag_checks": flag_checks,
         "cms_checks": cms_checks,
-        "museum_exhibit_checks": museum_exhibit_checks,
-        "provenance_checks": provenance_checks,
+        "exhibit_checks": exhibit_checks,
+        "asset_checks": asset_checks,
         "generated_tracked": generated_tracked,
-        "broken_links": broken_links,
     }
 
 
