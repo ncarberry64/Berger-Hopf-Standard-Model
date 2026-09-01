@@ -1,5 +1,26 @@
 # Gate Ledger
 
+## Current AE3 family-hierarchy interface
+
+- Present composition: every attached reset, localization, enclosure, and C2
+  quadratic map factors as `A_nonfamily tensor I3`.
+- Retained action theorem: family-projector locality intersected with `C3`
+  equivariance is exactly `C I3`.
+- Consequence: existing family/mode states remain valid particle fibers, but
+  the present attachment cannot derive three distinct family masses.
+- Structurally sufficient route A: action-selected `C3` breaking while the
+  frozen family projectors remain local.
+- Structurally sufficient route B: a triality-changing intertwiner, with the
+  particle manifestation map transported to its mass eigenbasis.
+- Neither route is currently selected; no family coefficient or measured mass
+  is admitted as input.
+- Exact missing interface:
+  `ONE_ACTION_OWNED_FAMILY_NONCENTRAL_RETURNED_MASS_OPERATOR_VIA_EITHER_ACTION_SELECTED_C3_BREAKING_OR_A_TRIALITY_CHANGING_INTERTWINER_ON_THE_CURRENT_PHYSICAL_DOMAIN`.
+- `FAMILY_MASS_HIERARCHY_DERIVED=FALSE`; `CKM_PMNS_DERIVED=FALSE`;
+  `FULL_BHSM_COMPLETE=FALSE`.
+- Artifact:
+  `artifacts/action_extension/BHSM_AE3_FAMILY_HIERARCHY_INTERFACE.json`.
+
 ## Current AE3 non-serial puzzle assembly
 
 - Completion method: independent science sections may receive any locally

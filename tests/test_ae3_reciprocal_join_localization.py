@@ -109,6 +109,7 @@ def test_systems_integration_puzzle_advances_sections_without_serial_gates() -> 
         "full_field_action",
         "localization_enclosure",
         "particle_identity_transport",
+        "family_mass_hierarchy",
         "muon_magnetic_moment",
         "collisions_and_decays",
         "new_particle_and_phenomenon_forecasts",

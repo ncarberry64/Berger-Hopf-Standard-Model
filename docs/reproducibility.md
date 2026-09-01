@@ -7,6 +7,7 @@ Materialize and test the current action-owned reciprocal-join carrier with:
 ```powershell
 python scripts/materialize_ae3_reciprocal_join_localization.py
 python scripts/materialize_ae3_c2_action_puzzle.py
+python scripts/materialize_ae3_family_hierarchy_interface.py
 python -m pytest -q tests/test_ae3_reciprocal_join_localization.py
 ```
 

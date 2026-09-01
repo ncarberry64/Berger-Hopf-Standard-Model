@@ -80,6 +80,22 @@ particle spectrum, selected history, or physical pole.
 - `CURRENT_FULL_FIELD_ACTION_COMPLETE = FALSE`
 - `MUON_MAGNETIC_MOMENT_DERIVED = FALSE`
 
+The family-hierarchy section now has an exact necessary-interface theorem.
+Every currently attached reset, localization, enclosure, and C2 quadratic
+map factors as `A_nonfamily tensor I3`. Together with the retained locality
+plus `C3` theorem, the full present composition remains family-central. It
+therefore preserves the existing family/mode particle fibers but cannot
+derive three distinct electron--muon--tau singular values. A physical
+hierarchy requires one action-owned family-noncentral returned mass operator:
+either an action-selected `C3`-breaking diagonal return, or a triality-changing
+intertwiner whose mass eigenbasis is transported into the manifestation map.
+Neither route is selected by current evidence, and no family coefficient or
+measured mass is inserted.
+
+- `PRESENT_AE3_COMPOSITION_FAMILY_CENTRAL = TRUE`
+- `FAMILY_MASS_HIERARCHY_DERIVED = FALSE`
+- `CKM_PMNS_DERIVED = FALSE`
+
 The remaining obstruction is no longer carrier selection or the absence of
 every fermionic C2 operator piece. One compatible AE3 C2 action assembly must
 still join the geometry/response block and this reduced product-Dirac piece
@@ -102,6 +118,9 @@ Evidence: [`AE3 theorem`](../theory/ae3_reciprocal_join_localization_enclosure.m
 and [`AE3 machine certificate`](../artifacts/action_extension/BHSM_ACTION_AE3_RECIPROCAL_JOIN_LOCALIZATION.json),
 plus the [`current-C2 puzzle theorem`](../theory/ae3_c2_full_field_puzzle_assembly.md)
 and [`puzzle certificate`](../artifacts/action_extension/BHSM_AE3_C2_FULL_FIELD_PUZZLE_ASSEMBLY.json).
+The family decision surface is recorded in the
+[`family-hierarchy theorem`](../theory/ae3_family_hierarchy_interface.md) and
+[`machine certificate`](../artifacts/action_extension/BHSM_AE3_FAMILY_HIERARCHY_INTERFACE.json).
 
 ## Authoritative Gate-7 identification frontier: unchanged-AE2 carrier audit complete
 
