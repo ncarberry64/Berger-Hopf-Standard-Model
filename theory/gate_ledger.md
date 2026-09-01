@@ -1,5 +1,23 @@
 # Gate Ledger
 
+## AE3.1 current-C2 quark--Higgs incidence-support transport
+
+- The historical two-component colored closure classes transport through
+  anti-linear fermion conjugation plus the `SU(2)` epsilon intertwiner to the
+  current `bar(Q_L) H_tilde u_R` and `bar(Q_L) H d_R` channels.
+- Doubled-hypercharge closure is preserved exactly on both sides; no Standard
+  Model operator table is used as a premise.
+- Existing `P_u=C(1+sigma)/2` and `P_d=C(1-sigma)/2` select two disjoint,
+  linearly independent binary LR incidence supports. They still do not select
+  the up/down residues.
+- Finite internal incidence commutes with the radial lift, so this transport
+  preserves the reset-generated current-C2 radial operator and retained birth
+  trace. Existing `T_u,T_d` family shapes remain reusable tensor factors.
+- The remaining action object is `Gamma_qH_current_C2`; its first and second
+  variations must derive `V_u,V_d,Q_fg` and their common normalization.
+- Artifact:
+  `artifacts/action_extension/BHSM_AE31_C2_QUARK_HIGGS_INCIDENCE_TRANSPORT.json`.
+
 ## AE3.1 current-C2 quark vertex/contact projection theorem
 
 - The retained unit commuting product-Dirac probe obeys the exact laws

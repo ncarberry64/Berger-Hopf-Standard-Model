@@ -1,0 +1,278 @@
+{
+  "FULL_BHSM_COMPLETE": false,
+  "action_version": "BHSM-AE-3.1.0",
+  "artifact": "BHSM_AE31_C2_QUARK_HIGGS_INCIDENCE_TRANSPORT",
+  "claim_boundary": {
+    "CKM_MATRIX_DERIVED": false,
+    "CURRENT_C2_HISTORICAL_TO_CURRENT_FIELD_CONVENTION_BRIDGE_DERIVED": true,
+    "CURRENT_C2_PHYSICAL_QUARK_POLES_DERIVED": false,
+    "CURRENT_C2_QUARK_CONTACT_JET_ACTION_DERIVED": false,
+    "CURRENT_C2_QUARK_HIGGS_INCIDENCE_SUPPORT_TRANSPORTED_CONDITIONAL": true,
+    "CURRENT_C2_QUARK_HIGGS_SUPPORT_PRESERVES_C2_RADIAL_DOMAIN": true,
+    "CURRENT_C2_UP_DOWN_YUKAWA_COEFFICIENTS_ACTION_DERIVED": false,
+    "FULL_BHSM_COMPLETE": false,
+    "MEASURED_QUARK_MASS_USED": false,
+    "particle_spectrum_rebuilt": false
+  },
+  "classification": "AE31_CURRENT_C2_QUARK_HIGGS_INCIDENCE_SUPPORT_TRANSPORT",
+  "current_C2_domain_tensor_theorem": {
+    "exact_tensor_identity": "[D_C2_tensor_I,I_tensor_I_f]=0",
+    "family_fiber_tensor_attachment_allowed": true,
+    "finite_internal_support_is_bounded": true,
+    "maximal_or_friedrichs_radial_domain_reselected": false,
+    "reset_generated_C2_radial_operator_unchanged": true,
+    "retained_birth_trace_unchanged": true,
+    "sample_commutator_residual": 0.0
+  },
+  "exact_remaining_owner": {
+    "family_shapes_to_reuse": [
+      "T_u",
+      "T_d"
+    ],
+    "independent_yukawa_or_mass_fit_allowed": false,
+    "missing_action_object": "Gamma_qH_current_C2_WITH_COEFFICIENT_AND_CONTACT_JETS",
+    "must_fix_together": [
+      "c_u",
+      "c_d",
+      "H_wavefunction_residue",
+      "trace_normalization",
+      "current_C2_boundary_domain"
+    ],
+    "required_first_variations": [
+      "V_u",
+      "V_d"
+    ],
+    "required_second_variations": [
+      "Q_uu",
+      "Q_ud",
+      "Q_du",
+      "Q_dd"
+    ],
+    "transported_object": "rho_qH_support:(H,H_tilde)_to_Hom(Q_L,u_R_direct_sum_d_R)_ON_CURRENT_C2"
+  },
+  "finite_sector_projectors": {
+    "P_down": [
+      [
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      [
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      [
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ]
+    ],
+    "P_up": [
+      [
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      [
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      [
+        0.0,
+        0.0,
+        1.0,
+        0.0
+      ],
+      [
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ]
+    ],
+    "all_sector_orthogonality_residual": 0.0,
+    "basis_order": [
+      "nu",
+      "charged_lepton",
+      "up",
+      "down"
+    ],
+    "formulae": {
+      "P_charged_lepton": "(1-C)(1-sigma)/2",
+      "P_down": "C(1-sigma)/2",
+      "P_nu": "(1-C)(1+sigma)/2",
+      "P_up": "C(1+sigma)/2"
+    },
+    "quark_projector_orthogonality_residual": 0.0,
+    "sector_completeness_residual": 0.0,
+    "up_down_residue_selected": false,
+    "up_down_support_selected": true
+  },
+  "inputs": {
+    "artifacts/action_extension/BHSM_AE31_C2_QUARK_PARENT_THIRD_VARIATION.json": "880D656909727CEE22F9C9F4FEBB5E25D5845DC8ACC229496D930C07A0429057",
+    "artifacts/action_extension/BHSM_AE31_C2_QUARK_VERTEX_CONTACT_PROJECTION.json": "829E68C06B234860E3F9BBB62D6076D32EAC9C174A55B38E4DC538692A6B24B6",
+    "artifacts/action_extension/BHSM_AE3_C2_QUARK_RESPONSE_SUM_RULES.json": "FE42458D60AF7CF6A70D16C96EE4E1666AA2D987DCFE73A0F2E06D620089421D",
+    "docs/bhsm_sector_projector_ledger_theorem.md": "A3DA519FC960D26B4FB0C2EFEF40AB43BE7B9E66823B79B1108F07DD94C2BC6B",
+    "src/bhsm/interface/ae31_c2_quark_higgs_incidence_transport.py": "155E129CD3FF3DC5A4BEFA59819A165DF1BAB7DBCB2489A9471020AE3A86D198",
+    "theory/theorem_discharge_higgs_scalar_results.json": "BBE9A1FD0892CE2FA9CAD9AC60FE1575AA9585B86BD6F155FC4594E519F18792",
+    "theory/theorem_discharge_yukawa_operator_results.json": "5806708308C26A49D8E5B50D2BF19A2A3B7CD39DCF9C19EE3DCA3BF8BD717DDE"
+  },
+  "quark_higgs_support_pencil": {
+    "I_down": [
+      [
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ],
+      [
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      [
+        0.0,
+        1.0,
+        0.0,
+        0.0
+      ]
+    ],
+    "I_up": [
+      [
+        0.0,
+        0.0,
+        1.0,
+        0.0
+      ],
+      [
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      [
+        1.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      [
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ]
+    ],
+    "basis_order": [
+      "Q_L_up",
+      "Q_L_down",
+      "u_R",
+      "d_R"
+    ],
+    "coefficients_in_support_pencil": "BINARY_INCIDENCE_ONLY",
+    "current_operator_channels": [
+      "bar(Q_L)*H_tilde*u_R+h.c.",
+      "bar(Q_L)*H*d_R+h.c."
+    ],
+    "down_support_rank": 2,
+    "support_inner_product": 0.0,
+    "support_pencil": "rho_qH_support(h)=h_tilde*I_up+h*I_down",
+    "supports_linearly_independent": true,
+    "up_support_rank": 2
+  },
+  "two_to_four_component_transport": {
+    "both_quark_classes_transport_uniquely": true,
+    "convention_map": "ANTI_LINEAR_FERMION_CONJUGATION_PLUS_SU2_EPSILON_INTERTWINER",
+    "rows": [
+      {
+        "charge_closure_preserved": true,
+        "current_charge_sum": "0",
+        "current_charges": [
+          "-1/3",
+          "-1",
+          "4/3"
+        ],
+        "current_fields": [
+          "bar(Q_L)",
+          "H_tilde",
+          "u_R"
+        ],
+        "historical_charge_sum": "0",
+        "historical_charges": [
+          "1/3",
+          "1",
+          "-4/3"
+        ],
+        "historical_class": "cyclic_upper_closure",
+        "historical_fields": [
+          "A_cyc",
+          "H",
+          "S_cyc_upper"
+        ],
+        "scalar_intertwiner": "epsilon*complex_conjugation:H_to_H_tilde",
+        "sector": "up"
+      },
+      {
+        "charge_closure_preserved": true,
+        "current_charge_sum": "0",
+        "current_charges": [
+          "-1/3",
+          "1",
+          "-2/3"
+        ],
+        "current_fields": [
+          "bar(Q_L)",
+          "H",
+          "d_R"
+        ],
+        "historical_charge_sum": "0",
+        "historical_charges": [
+          "1/3",
+          "-1",
+          "2/3"
+        ],
+        "historical_class": "cyclic_lower_closure",
+        "historical_fields": [
+          "A_cyc",
+          "H_tilde",
+          "S_cyc_lower"
+        ],
+        "scalar_intertwiner": "epsilon*complex_conjugation:H_tilde_to_H",
+        "sector": "down"
+      }
+    ],
+    "standard_model_operator_table_used_as_premise": false
+  },
+  "validation": {
+    "binary_incidence_supports_independent": true,
+    "existing_projectors_select_disjoint_complete_support": true,
+    "family_shapes_reused_not_rebuilt": true,
+    "finite_incidence_preserves_current_C2_domain": true,
+    "historical_quark_operator_classes_reused": true,
+    "historical_scalar_and_conjugate_reused": true,
+    "no_coefficient_pole_CKM_or_completion_overclaim": true,
+    "prior_missing_map_narrowed_to_coefficients_and_contacts": true,
+    "two_to_four_component_bridge_closes_both_charges": true
+  },
+  "validation_passed": true
+}
