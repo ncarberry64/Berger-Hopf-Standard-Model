@@ -622,6 +622,23 @@ def systems_integration_puzzle() -> dict[str, object]:
                 ],
                 "open_join": "action_selected_returned_mass_and_pole_operators",
             },
+            "family_mass_hierarchy": {
+                "fitted_pieces": [
+                    "three_frozen_family_projectors_per_charged_sector",
+                    "current_AE3_family_blind_transport_composition",
+                    "locality_intersection_C3_family_centrality_theorem",
+                    "two_noncentral_structural_interface_classes",
+                ],
+                "derived_obstruction": (
+                    "present_AE3_composition_is_I3_central_and_cannot_produce_"
+                    "three_distinct_family_singular_values"
+                ),
+                "open_join": (
+                    "action_owned_family_noncentral_returned_mass_operator_via_"
+                    "C3_breaking_or_triality_changing_intertwiner"
+                ),
+                "prediction_emitted": False,
+            },
             "muon_magnetic_moment": {
                 "fitted_pieces": [
                     "charged_lepton_family_slot_1_mode_label_(5,2)",
