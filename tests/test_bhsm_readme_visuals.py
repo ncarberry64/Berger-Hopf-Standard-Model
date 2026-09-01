@@ -6,7 +6,7 @@ ROOT = Path(__file__).resolve().parents[1]
 ASSETS = ROOT / "docs" / "assets"
 NAMES = (
     "bhsm_geometry_to_prediction",
-    "bhsm_universal_predictive_engine",
+    "bhsm_simulated_particle_spectrum",
     "bhsm_spectral_forecast",
     "bhsm_muon_g2_pipeline",
     "bhsm_collision_predictor",
@@ -25,6 +25,9 @@ def test_visual_manifest_preserves_claim_boundaries() -> None:
     assert payload["spectral_visualization"]["new_particle_assignments_derived_here"] is False
     assert payload["identification_bridge"]["frozen_particle_registry_reused"] is True
     assert payload["identification_bridge"]["local_enclosure_proved"] is False
+    assert payload["simulated_particle_spectrum"]["installed_for_museum"] is True
+    assert payload["simulated_particle_spectrum"]["physical_mass_scale"] is False
+    assert payload["simulated_particle_spectrum"]["new_particle_prediction"] is False
 
 
 def test_visual_suite_is_presented_outside_the_scientific_readme() -> None:
@@ -44,4 +47,13 @@ def test_svg_has_no_external_dependencies() -> None:
         svg = (ASSETS / f"{name}.svg").read_text(encoding="utf-8")
         assert "http://" not in svg.replace("http://www.w3.org/2000/svg", "")
         assert "https://" not in svg
-        assert "<animateMotion" in svg
+        assert "<animateMotion" in svg or "<animate " in svg
+
+
+def test_simulated_spectrum_is_machine_readable_and_claim_safe() -> None:
+    path = ROOT / "data" / "museum" / "bhsm_simulated_particle_spectrum_v1.json"
+    payload = json.loads(path.read_text(encoding="utf-8"))
+    assert payload["display_status"] == "SIMULATED_MUSEUM_DATASET"
+    assert "not BHSM mass predictions" in payload["claim_boundary"]
+    assert len(payload["modes"]) == 9
+    assert {mode["family"] for mode in payload["modes"]} == {"lepton", "gauge", "quark"}

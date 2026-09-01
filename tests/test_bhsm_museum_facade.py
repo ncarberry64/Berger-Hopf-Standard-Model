@@ -15,14 +15,15 @@ def test_museum_has_nine_functional_motion_exhibits_and_static_fallbacks() -> No
         "100,000 dimuon events",
         "3.225×",
         "S², S³, and S⁴",
-        "inverse-free LSZ",
-        "admissible bands",
-        "F₂(0)",
-        "Two incoming particles",
-        "Allowed decay branches",
+        "Simulated particle spectrum",
+        "uncertainty envelopes",
+        "F₂(q²)",
+        "Two incoming states",
+        "Allowed branches",
         "no-fit firewall",
         "family or mode",
         "local enclosure",
+        "Real CMS Open Data · BHSM Engine",
     ):
         assert phrase in exhibits
 
@@ -38,11 +39,16 @@ def test_museum_separates_claim_classes_and_creator_record() -> None:
         "FULL_BHSM_COMPLETE = FALSE",
         "Norman P. Carberry",
         "0009-0000-6650-3485",
-        "CMS detector photograph: Simon Waldherr",
         "17,630",
+        "Frozen preprint PDF",
+        "Inspect 64 dimuon events",
+        "Scientific caption",
     ):
         assert phrase in page
     assert "guided tour" not in page.lower()
+    assert "semantics" not in page.lower()
+    assert "Norman P. Carberry · Research archive" not in page
+    assert "Norman P. Carberry · Berger–Hopf Standard Model" not in page
     assert "No invented biography" not in page
 
 
@@ -50,7 +56,7 @@ def test_museum_assets_are_local_and_provenance_documented() -> None:
     provenance = (MUSEUM / "ASSET_PROVENANCE.md").read_text(encoding="utf-8")
     assert "Bubo Research Node" in provenance
     assert "MIT License" in provenance
-    assert "Simon Waldherr" in provenance
-    assert "CC BY-SA 4.0" in provenance
+    assert "SIMULATED" not in provenance
+    assert "simulated museum data" in provenance
     assert (MUSEUM / "public" / "bhsm-symbol.svg").is_file()
-    assert (MUSEUM / "public" / "cms-detector-simon-waldherr.jpg").is_file()
+    assert (MUSEUM / "public" / "data" / "cms-four-vector-sample.json").is_file()
