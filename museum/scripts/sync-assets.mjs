@@ -38,10 +38,16 @@ const names = (await readdir(sourceRoot)).filter((name) =>
   allowedNames.has(name),
 );
 
-await rm(targetRoot, { recursive: true, force: true });
 await mkdir(targetRoot, { recursive: true });
-await rm(dataRoot, { recursive: true, force: true });
 await mkdir(dataRoot, { recursive: true });
+
+for (const existing of await readdir(targetRoot)) {
+  await rm(join(targetRoot, existing), { recursive: true, force: true });
+}
+
+for (const existing of await readdir(dataRoot)) {
+  await rm(join(dataRoot, existing), { recursive: true, force: true });
+}
 
 for (const name of names) {
   await cp(join(sourceRoot, name), join(targetRoot, name));

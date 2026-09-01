@@ -5,10 +5,11 @@ ROOT = Path(__file__).resolve().parents[1]
 MUSEUM = ROOT / "museum"
 
 
-def test_museum_has_nine_functional_motion_exhibits_and_static_fallbacks() -> None:
+def test_museum_has_nine_visual_engines_with_lay_placards_and_fallbacks() -> None:
     exhibits = (MUSEUM / "app" / "exhibits.ts").read_text(encoding="utf-8")
     assert exhibits.count("animated: '") == 9
     assert exhibits.count("still: '") == 9
+    assert exhibits.count("lay: '") == 9
     assert "pr98_cms_engine_validation_continuous.gif" in exhibits
     assert "CMS Open Data Record 303" in exhibits
     for phrase in (
@@ -18,8 +19,8 @@ def test_museum_has_nine_functional_motion_exhibits_and_static_fallbacks() -> No
         "Simulated particle spectrum",
         "uncertainty envelopes",
         "F₂(q²)",
-        "Two incoming states",
-        "Allowed branches",
+        "Two incoming tracks",
+        "Pulses travel along allowed channels",
         "no-fit firewall",
         "family or mode",
         "local enclosure",
@@ -46,6 +47,10 @@ def test_museum_separates_claim_classes_and_creator_record() -> None:
         "Inspect 64 dimuon events",
         "Scientific caption",
         "eventIndices[selected]",
+        "{exhibits.length} animated data engines",
+        "Lay description",
+        "Real-data engine",
+        "Simulation / audit engine",
     ):
         assert phrase in page
     assert "guided tour" not in page.lower()
@@ -61,5 +66,15 @@ def test_museum_assets_are_local_and_provenance_documented() -> None:
     assert "MIT License" in provenance
     assert "SIMULATED" not in provenance
     assert "simulated museum data" in provenance
+    assert "generate_bhsm_museum_engines.py" in provenance
+    assert "neither experimental measurements nor physical predictions" in provenance
     assert (MUSEUM / "public" / "bhsm-symbol.svg").is_file()
     assert (MUSEUM / "public" / "data" / "cms-four-vector-sample.json").is_file()
+
+
+def test_every_exhibit_visual_uses_motion_control_and_cache_safe_fallback() -> None:
+    page = (MUSEUM / "app" / "page.tsx").read_text(encoding="utf-8")
+    assert "function MotionImage" in page
+    assert "onError={() => setFailedSource(desired)}" in page
+    assert "ASSET_REVISION" in page
+    assert "<MotionImage" in page

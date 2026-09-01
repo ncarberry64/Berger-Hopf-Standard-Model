@@ -32,6 +32,8 @@ def test_visual_manifest_preserves_claim_boundaries() -> None:
     assert payload["simulated_particle_spectrum"]["installed_for_museum"] is True
     assert payload["simulated_particle_spectrum"]["physical_mass_scale"] is False
     assert payload["simulated_particle_spectrum"]["new_particle_prediction"] is False
+    assert payload["visual_mode"] == "DETERMINISTIC_EXPLANATORY_SIMULATION_ENGINES"
+    assert "no measured output" in payload["visual_scope"]
 
 
 def test_visual_suite_is_presented_outside_the_scientific_readme() -> None:
@@ -52,6 +54,12 @@ def test_svg_has_no_external_dependencies() -> None:
         assert "http://" not in svg.replace("http://www.w3.org/2000/svg", "")
         assert "https://" not in svg
         assert "<animateMotion" in svg or "<animate " in svg
+
+        if name not in {
+            "bhsm_simulated_particle_spectrum",
+            "bhsm_physical_identification_bridge",
+        }:
+            assert 'data-visual-kind="simulation-engine"' in svg
 
 
 def test_simulated_spectrum_is_machine_readable_and_claim_safe() -> None:

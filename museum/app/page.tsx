@@ -6,6 +6,8 @@ import { useEffect, useMemo, useState } from 'react';
 import { Button } from '@/components/ui/button';
 import { exhibits, REPOSITORY, SCIENCE, type Exhibit } from './exhibits';
 
+const ASSET_REVISION = 'simulation-engines-2026-09-01b';
+
 const creatorLinks = [
   { label: 'ORCID record', href: 'https://orcid.org/0009-0000-6650-3485' },
   { label: 'Citation metadata', href: `${SCIENCE}/CITATION.cff` },
@@ -62,7 +64,8 @@ function CMSExplorer() {
           Choose one checked-in event and inspect both measured muon
           four-vectors. The circular instrument maps azimuth to angle, transverse
           momentum to radius, and charge to color. It is a BHSM-style rendering
-          of CMS data—not a detector photograph and not evidence for BHSM.
+          of CMS data—not a detector photograph, detector reconstruction,
+          BHSM empirical validation, or CERN/CMS endorsement.
         </p>
         <label htmlFor="cms-event-selector">
           Sample event <strong>{selected + 1} / {eventIndices.length || 64}</strong>
@@ -138,6 +141,35 @@ function StatusBadge({ exhibit }: { exhibit: Exhibit }) {
     <span className={`status status-${exhibit.status}`}>
       <ShieldCheck aria-hidden="true" size={15} /> {exhibit.statusLabel}
     </span>
+  );
+}
+
+function MotionImage({
+  motion,
+  exhibit,
+  priority = false,
+  loading,
+}: {
+  motion: boolean;
+  exhibit: Exhibit;
+  priority?: boolean;
+  loading?: 'eager' | 'lazy';
+}) {
+  const desired = motion ? exhibit.animated : exhibit.still;
+  const [failedSource, setFailedSource] = useState<string | null>(null);
+  const source = failedSource === desired ? exhibit.still : desired;
+
+  return (
+    <Image
+      src={`./exhibits/${source}?v=${ASSET_REVISION}`}
+      alt={exhibit.alt}
+      width={1600}
+      height={900}
+      priority={priority}
+      loading={priority ? undefined : loading}
+      onError={() => setFailedSource(desired)}
+      unoptimized
+    />
   );
 }
 
@@ -227,19 +259,12 @@ export default function Home() {
             </Button>
           </div>
           <div className="display-frame">
-            <Image
-              src={`./exhibits/${motion ? hero.animated : hero.still}`}
-              alt={hero.alt}
-              width={1600}
-              height={900}
-              priority
-              unoptimized
-            />
+            <MotionImage motion={motion} exhibit={hero} priority />
           </div>
           <div className="display-caption">
             <p>
-              <strong>Public reading</strong>
-              {hero.seen}
+              <strong>Lay description</strong>
+              {hero.lay}
             </p>
             <StatusBadge exhibit={hero} />
           </div>
@@ -407,13 +432,13 @@ export default function Home() {
       >
         <div className="section-heading hall-heading">
           <p className="eyebrow">
-            Main exhibition hall · {exhibits.length} animated calculations
+            Main exhibition hall · {exhibits.length} animated data engines
           </p>
           <h2 id="exhibit-title">Look first. Then go backstage.</h2>
           <p>
-            The CMS exhibit establishes the visual language: animated data,
-            visible quantities, and an inspectable source. The remaining rooms
-            apply that language to BHSM machinery and proof state.
+            The CMS exhibit uses real public data. The remaining rooms use
+            normalized simulations or audited records to show calculations
+            happening—never flow charts.
           </p>
         </div>
 
@@ -427,15 +452,17 @@ export default function Home() {
               <div className="exhibit-visual">
                 <div className="display-label">
                   <span>Exhibit {exhibit.number} / {exhibitCount}</span>
-                  <span>{motion ? 'Motion on' : 'Static view'}</span>
+                  <span>
+                    {exhibit.number === '01'
+                      ? 'Real-data engine'
+                      : 'Simulation / audit engine'}{' '}
+                    · {motion ? 'motion on' : 'static view'}
+                  </span>
                 </div>
-                <Image
-                  src={`./exhibits/${motion ? exhibit.animated : exhibit.still}`}
-                  alt={exhibit.alt}
-                  width={1600}
-                  height={900}
+                <MotionImage
+                  motion={motion}
+                  exhibit={exhibit}
                   loading={index === 0 ? 'eager' : 'lazy'}
-                  unoptimized
                 />
               </div>
               <div className="exhibit-placard">
@@ -456,7 +483,11 @@ export default function Home() {
                 ) : null}
                 <dl>
                   <div>
-                    <dt>Public reading</dt>
+                    <dt>Lay description</dt>
+                    <dd>{exhibit.lay}</dd>
+                  </div>
+                  <div>
+                    <dt>What you are seeing</dt>
                     <dd>{exhibit.seen}</dd>
                   </div>
                   <div>
