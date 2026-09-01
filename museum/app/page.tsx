@@ -41,9 +41,14 @@ function CMSExplorer() {
       .catch(() => setVectors([]));
   }, []);
 
+  const eventIndices = useMemo(
+    () => [...new Set(vectors.map((vector) => vector.event_index))],
+    [vectors],
+  );
+  const selectedEventIndex = eventIndices[selected];
   const eventVectors = useMemo(
-    () => vectors.filter((vector) => vector.event_index === selected),
-    [selected, vectors],
+    () => vectors.filter((vector) => vector.event_index === selectedEventIndex),
+    [selectedEventIndex, vectors],
   );
   const event = eventVectors[0];
   const maxPt = Math.max(...eventVectors.map((vector) => vector.pt), 1);
@@ -60,13 +65,13 @@ function CMSExplorer() {
           of CMS data—not a detector photograph and not evidence for BHSM.
         </p>
         <label htmlFor="cms-event-selector">
-          Sample event <strong>{selected + 1} / 64</strong>
+          Sample event <strong>{selected + 1} / {eventIndices.length || 64}</strong>
         </label>
         <input
           id="cms-event-selector"
           type="range"
           min="0"
-          max="63"
+          max={Math.max(eventIndices.length - 1, 0)}
           value={selected}
           onChange={(eventChange) => setSelected(Number(eventChange.target.value))}
         />
