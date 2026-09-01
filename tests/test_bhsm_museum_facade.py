@@ -5,20 +5,26 @@ ROOT = Path(__file__).resolve().parents[1]
 MUSEUM = ROOT / "museum"
 
 
-def test_museum_has_seven_functional_motion_exhibits_and_static_fallbacks() -> None:
+def test_museum_has_seven_simulation_engine_exhibits_with_lay_placards() -> None:
     exhibits = (MUSEUM / "app" / "exhibits.ts").read_text(encoding="utf-8")
     assert exhibits.count("_animated.gif'") == 7
     assert exhibits.count("still: 'bhsm_") == 7
+    assert exhibits.count("lay: '") == 8  # seven simulations plus CMS real data
     for phrase in (
         "S², S³, and S⁴",
         "inverse-free LSZ",
         "admissible bands",
         "F₂(0)",
-        "Two incoming particles",
-        "Allowed decay branches",
+        "Two incoming tracks",
+        "Pulses travel along allowed channels",
         "no-fit firewall",
     ):
         assert phrase in exhibits
+
+    page = (MUSEUM / "app" / "page.tsx").read_text(encoding="utf-8")
+    assert "seven animated simulation engines" in page
+    assert "<dt>Lay description</dt>" in page
+    assert "Simulation engine ·" in page
 
 
 def test_museum_separates_claim_classes_and_creator_record() -> None:
@@ -43,6 +49,9 @@ def test_museum_assets_are_local_and_provenance_documented() -> None:
     assert "Bubo Research Node" in provenance
     assert "MIT License" in provenance
     assert "No stock imagery" in provenance
+    assert "deterministic" in provenance
+    assert "none of their plotted" in provenance
+    assert (ROOT / "docs" / "assets" / "generate_bhsm_museum_engines.py").is_file()
     assert (MUSEUM / "public" / "bhsm-symbol.svg").is_file()
 
 

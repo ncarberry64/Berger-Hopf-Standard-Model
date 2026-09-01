@@ -12,6 +12,8 @@ import {
   type Exhibit,
 } from './exhibits';
 
+const ASSET_REVISION = 'simulation-engines-2026-09-01';
+
 const creatorLinks = [
   { label: 'ORCID record', href: 'https://orcid.org/0009-0000-6650-3485' },
   { label: 'Citation metadata', href: `${SCIENCE}/CITATION.cff` },
@@ -47,7 +49,7 @@ function MotionImage({
 
   return (
     <Image
-      src={`./exhibits/${source}`}
+      src={`./exhibits/${source}?v=${ASSET_REVISION}`}
       alt={alt}
       width={1600}
       height={900}
@@ -152,8 +154,8 @@ export default function Home() {
           </div>
           <div className="display-caption">
             <p>
-              <strong>What you are seeing</strong>
-              {hero.seen}
+              <strong>Lay description</strong>
+              {hero.lay}
             </p>
             <StatusBadge exhibit={hero} />
           </div>
@@ -231,6 +233,10 @@ export default function Home() {
             CERN/CMS endorsement
           </p>
           <dl>
+            <div>
+              <dt>Lay description</dt>
+              <dd>{cmsValidation.lay}</dd>
+            </div>
             <div>
               <dt>What you are seeing</dt>
               <dd>{cmsValidation.seen}</dd>
@@ -326,7 +332,7 @@ export default function Home() {
       >
         <div className="section-heading hall-heading">
           <p className="eyebrow">
-            Main exhibition hall · seven animated calculations
+            Main exhibition hall · seven animated simulation engines
           </p>
           <h2 id="exhibit-title">Look first. Then go backstage.</h2>
           <p>
@@ -346,7 +352,9 @@ export default function Home() {
               <div className="exhibit-visual">
                 <div className="display-label">
                   <span>Exhibit {exhibit.number} / 07</span>
-                  <span>{motion ? 'Motion on' : 'Static view'}</span>
+                  <span>
+                    Simulation engine · {motion ? 'motion on' : 'static view'}
+                  </span>
                 </div>
                 <MotionImage
                   motion={motion}
@@ -362,6 +370,10 @@ export default function Home() {
                 <p className="exhibit-subtitle">{exhibit.subtitle}</p>
                 <StatusBadge exhibit={exhibit} />
                 <dl>
+                  <div>
+                    <dt>Lay description</dt>
+                    <dd>{exhibit.lay}</dd>
+                  </div>
                   <div>
                     <dt>What you are seeing</dt>
                     <dd>{exhibit.seen}</dd>

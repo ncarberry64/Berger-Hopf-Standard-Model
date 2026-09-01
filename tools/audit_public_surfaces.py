@@ -73,6 +73,13 @@ def audit() -> dict:
     cms_checks = {
         phrase: phrase.casefold() in cms_blob.casefold() for phrase in CMS_REQUIRED
     }
+    museum_exhibit_checks = {
+        "seven_animated_visuals": museum_source.count("_animated.gif'") == 7,
+        "seven_static_visuals": museum_source.count("still: 'bhsm_") == 7,
+        "lay_copy_for_every_exhibit": museum_source.count("lay: '") == 8,
+        "simulation_engine_label": "Simulation engine ·" in page_source,
+        "lay_placard_rendered": "<dt>Lay description</dt>" in page_source,
+    }
 
     tracked = subprocess.run(
         ["git", "ls-files"],
@@ -121,6 +128,9 @@ def audit() -> dict:
         )
         == "IMPLEMENTED_BUT_PHYSICAL_PROMOTION_GATED",
         "cms_boundary_complete": all(cms_checks.values()),
+        "museum_exhibits_are_visual_and_lay_accessible": all(
+            museum_exhibit_checks.values()
+        ),
         "cms_provenance_resolves": all(provenance_checks.values()),
         "canonical_markdown_links_resolve": not broken_links,
         "canonical_museum_url": status.get("canonical_museum_url")
@@ -149,6 +159,7 @@ def audit() -> dict:
         "checks": checks,
         "flag_checks": flag_checks,
         "cms_checks": cms_checks,
+        "museum_exhibit_checks": museum_exhibit_checks,
         "provenance_checks": provenance_checks,
         "generated_tracked": generated_tracked,
         "broken_links": broken_links,

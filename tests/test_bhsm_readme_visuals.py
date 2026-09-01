@@ -21,6 +21,8 @@ def test_visual_manifest_preserves_claim_boundaries() -> None:
     assert payload["capabilities"]["complete_physical_predictions"] is False
     assert payload["spectral_visualization"]["physical_mass_scale_available"] is False
     assert payload["spectral_visualization"]["particle_assignments_available"] is False
+    assert payload["visual_mode"] == "DETERMINISTIC_EXPLANATORY_SIMULATION_ENGINES"
+    assert "no measured output" in payload["visual_scope"]
 
 
 def test_visual_suite_is_presented_outside_the_scientific_readme() -> None:
@@ -40,4 +42,6 @@ def test_svg_has_no_external_dependencies() -> None:
         svg = (ASSETS / f"{name}.svg").read_text(encoding="utf-8")
         assert "http://" not in svg.replace("http://www.w3.org/2000/svg", "")
         assert "https://" not in svg
-        assert "<animateMotion" in svg
+        assert 'data-visual-kind="simulation-engine"' in svg
+        assert "<animate" in svg
+        assert "not measured data and not a physical prediction" in svg
