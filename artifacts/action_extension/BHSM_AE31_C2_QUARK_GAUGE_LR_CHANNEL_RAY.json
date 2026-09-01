@@ -1,0 +1,124 @@
+{
+  "FULL_BHSM_COMPLETE": false,
+  "action_version": "BHSM-AE-3.1.0",
+  "artifact": "BHSM_AE31_C2_QUARK_GAUGE_LR_CHANNEL_RAY",
+  "channel_direction_effect": {
+    "c_up_over_c_down_Yukawa_residue_derived": false,
+    "eigenvalue_splitting": 0.19999999999999973,
+    "eigenvalues_ascending": [
+      2.6,
+      2.8
+    ],
+    "eigenvectors_columns": [
+      [
+        0.0,
+        1.0
+      ],
+      [
+        1.0,
+        0.0
+      ]
+    ],
+    "isolated_O2_quark_plane_degeneracy_broken": true,
+    "largest_attraction_axis": "up",
+    "mixed_up_down_eigendirection_selected": false,
+    "normalized_common_factor_Hessian": [
+      [
+        2.8,
+        0.0
+      ],
+      [
+        0.0,
+        2.6
+      ]
+    ],
+    "reason_no_mixed_direction": "THE_TRANSPORTED_GAUGE_RAY_IS_DIAGONAL_IN_UP_DOWN_CHANNEL_SPACE"
+  },
+  "claim_boundary": {
+    "CKM_MATRIX_DERIVED": false,
+    "CURRENT_C2_ISOLATED_QUARK_CHANNEL_O2_DEGENERACY_BROKEN_BY_GAUGE_RAY": true,
+    "CURRENT_C2_MIXED_SINGLE_HIGGS_DIRECTION_SELECTED": false,
+    "CURRENT_C2_PHYSICAL_QUARK_POLES_DERIVED": false,
+    "CURRENT_C2_QUARK_GAUGE_LR_RELATIVE_CHANNEL_RAY_DERIVED": true,
+    "CURRENT_C2_UP_DOWN_ABSOLUTE_YUKAWA_PREFACTORS_DERIVED": false,
+    "CURRENT_C2_UP_DOWN_RELATIVE_YUKAWA_RESIDUE_DERIVED": false,
+    "FULL_BHSM_COMPLETE": false,
+    "MEASURED_QUARK_MASS_USED": false,
+    "particle_spectrum_rebuilt": false
+  },
+  "classification": "AE31_CURRENT_C2_QUARK_GAUGE_LR_CHANNEL_RAY",
+  "current_c2_transport_contract": {
+    "Lorentzian_Maxwell_mismatch_overridden": false,
+    "absolute_G_C2_evaluated_here": false,
+    "common_current_C2_geometry_factor": "G_C2_STATIC_NONLOCAL_DtN",
+    "current_C2_radial_domain_or_birth_trace_changed": false,
+    "kernel_ray": "K_LR=2*G_C2*diag(7/5,13/10)_on_(up,down)",
+    "local_Lorentzian_Maxwell_residue_required_for_relative_ray": false,
+    "nonlocal_static_kernel_relabelled_as_local_photon_exchange": false,
+    "reason": "THE_COMMON_GEOMETRIC_FACTOR_CANCELS_FROM_THE_CHANNEL_RATIO",
+    "transported_data": [
+      "rank16_single_carrier_trace_normalization_ray",
+      "current_quark_hypercharges",
+      "color_singlet_C_F",
+      "transported_I_up_I_down_supports"
+    ]
+  },
+  "exact_group_factor_ray": {
+    "C_up_minus_C_down": "1/10",
+    "C_up_over_C_down": "14/13",
+    "color_singlet_C_F": "4/3",
+    "hypercharge_products": {
+      "down": "-1/18",
+      "up": "1/9"
+    },
+    "measured_quark_mass_used": false,
+    "ordering": "C_up>C_down>0",
+    "post_Fierz_weights": {
+      "down": "13/5",
+      "up": "14/5"
+    },
+    "pre_Fierz_weights": {
+      "down": "13/10",
+      "up": "7/5"
+    },
+    "single_carrier_inverse_kernel_ray": "G_Y:G_2:G_3=3/5:1:1"
+  },
+  "exact_remaining_owner": {
+    "derive_together": [
+      "current_C2_regulated_LR_fermion_susceptibility",
+      "odd_scalar_endomorphism_or_composite_HS_two_point_kernel",
+      "intrinsic_Higgs_to_composite_channel_mixing",
+      "complete_up_down_off_diagonal_Hessian"
+    ],
+    "group_factor_ratio_may_be_called_Yukawa_ratio": false,
+    "independent_up_down_gauge_normalizations_allowed": false,
+    "quark_mass_fit_allowed": false,
+    "reusable_diagonal_ray": "diag(7/5,13/10)"
+  },
+  "family_and_higgs_boundary": {
+    "CKM_generated": false,
+    "family_action": "diag(C_up*I3,C_down*I3)",
+    "family_hierarchy_generated": false,
+    "historical_group_weights_relabelled_as_Yukawa_residues": false,
+    "if_off_diagonal_block_is_zero": "FIRST_GAUGE_DRIVEN_INSTABILITY_IS_PURE_UP_NOT_A_SHARED_SM_HIGGS_DIRECTION",
+    "required_missing_block": "CURRENT_C2_FULL_LR_SUSCEPTIBILITY_PLUS_INTRINSIC_HIGGS_MIXING_HESSIAN_WITH_ACTION_DERIVED_OFF_DIAGONAL_CHANNEL_TERMS",
+    "single_intrinsic_Higgs_direction_selected": false
+  },
+  "inputs": {
+    "artifacts/BHSM_aether_full_gauge_dtn_lr_kernel_v15_66.json": "F39450E8EE52C88E0DDBC26356B15919D42E9762A469E177F98CD2F6419675C4",
+    "artifacts/action_extension/BHSM_AE31_C2_QUARK_HIGGS_INCIDENCE_TRANSPORT.json": "81AC7F0250CAC2FC7F8D2B26CE22AD3E785D5E11FC188C0A50362353D8918CBB",
+    "artifacts/action_extension/BHSM_AE31_C2_QUARK_HS_DIRECTION_NO_GO.json": "B5A6C94AFFE0C4EF896015D9C72040A0441B2ACB4EA5F17C48EAC8D49B1A53C8",
+    "artifacts/action_extension/BHSM_AE31_C2_QUARK_SCALAR_ATTACHMENT_VARIATION.json": "94838766A46669BBB49483391722F63507776B2393CCB10405A3800DE231E836",
+    "artifacts/action_extension/BHSM_AE3_C2_LORENTZIAN_GAUGE_GHOST_FREQUENCY_HESSIAN.json": "F302614948E5990878B2EB011A61673D0806F007FBC9EFCB7A20311519F22F64",
+    "src/bhsm/interface/ae31_c2_quark_gauge_lr_channel_ray.py": "CD0E508329694F29B5AE1B2CECAC1C2758281F50F6220F0CCA14132DE570D412"
+  },
+  "validation": {
+    "current_representation_support_reused": true,
+    "family_and_Yukawa_boundaries_preserved": true,
+    "gauge_ray_breaks_only_isolated_O2_degeneracy": true,
+    "historical_exact_group_factors_recovered": true,
+    "no_mass_CKM_or_completion_overclaim": true,
+    "relative_ray_does_not_override_Maxwell_mismatch": true
+  },
+  "validation_passed": true
+}
