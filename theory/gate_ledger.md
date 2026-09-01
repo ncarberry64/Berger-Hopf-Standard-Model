@@ -1,5 +1,26 @@
 # Gate Ledger
 
+## AE3.1 charged-lepton pole-dressing invariant
+
+- For any positive effective pole shifts `M_f=Z_f m_f`, the already-derived
+  tree identity implies
+  `R_pole=log(Z_e)-9 log(Z_mu)+8 log(Z_tau)` and therefore
+  `D=Z_e Z_tau^8/Z_mu^9=exp(R_pole)`.
+- The coefficient vector `(8,-9,1)` is orthogonal to the common direction.
+  Common multiplicative mass, unit, or wavefunction rescaling cancels and
+  cannot repair a nonzero residual.
+- The frozen on-shell ratios are used only after derivation.  They require
+  `R=0.05880357568422312` or `D=1.0605668991516508`; neither quantity is
+  inserted into the action.
+- This does not exclude additive identity or nondiagonal pole corrections and
+  does not derive a microscopic self-energy.  It isolates the exact effective
+  log-dressing combination that the future action-selected two-point operator
+  must supply.
+- Global physical lepton poles, the physical muon pole, and `F2(0)` remain
+  open.  No upstream particle/family asset is rebuilt.
+- Artifact:
+  `artifacts/action_extension/BHSM_AE31_CHARGED_LEPTON_POLE_DRESSING_INVARIANT.json`.
+
 ## AE3.1 charged-lepton scale-free mode sum rule
 
 - The frozen charged-lepton modes have `(K,q^2)=(0,0),(35,1),(99,9)` in
