@@ -1,5 +1,30 @@
 # Gate Ledger
 
+## AE3.1 fixed-history fermion-state nonuniqueness
+
+- On any fixed certified finite-core current-`C2` history, a finite-rank
+  Bogoliubov rotation of two smooth opposite-charge modes inside one frozen
+  family sector constructs a continuous family `P_theta` of distinct pure
+  self-dual CAR covariances while preserving the gauge-charge grading.
+- Each `P_theta` obeys `P_theta^2=P_theta` and
+  `P_theta+Gamma P_theta Gamma=I`.  Since `P_theta-P` is finite-rank
+  smoothing, every member has the same Hadamard wavefront and polarization
+  class, Dirac operator, causal propagator, and classical action data.
+- AE2 reset conjugation is bijective and acts as `U_R tensor I_F`, so it
+  transports the entire continuum while preserving the frozen family
+  projectors; it cannot select one member.
+- The latest Gate-7 center remains a proof candidate rather than a selected
+  physical history.  The nonrealized expanding analytic branch and the
+  incomplete child-boundary Hamiltonian supply no asymptotic or spectral
+  state condition.  Even a future unique history would not remove the
+  finite-rank covariance freedom by itself.
+- Derived: fixed-history pure-Hadamard state nonuniqueness for the present
+  retained action data.  Not derived: an action-selected covariance,
+  action-owned Feynman function, charged-lepton poles, physical muon pole, or
+  `F2(0)`.
+- Artifact:
+  `artifacts/action_extension/BHSM_AE31_C2_FIXED_HISTORY_STATE_NONUNIQUENESS.json`.
+
 ## AE3.1 event-to-child Hadamard-state transport
 
 - The unitary AE2 spin--gauge reset lift induces
