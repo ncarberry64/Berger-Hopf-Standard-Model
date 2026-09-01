@@ -315,6 +315,23 @@ resolvent have all been audited; none is an action-owned state selector.
 - `CURRENT_C2_DRESSED_CHARGED_LEPTON_POLES_DERIVED = FALSE`
 - `CURRENT_C2_PHYSICAL_MUON_POLE_DERIVED = FALSE`
 
+The event-to-child state transport is now closed independently of state
+selection. For every admissible upstream self-dual CAR covariance,
+`C_child=U_R C_event U_R^dagger` preserves positivity, the CAR reality
+constraint, purity, and the Hadamard wavefront polarization. The inverse is
+conjugation by `U_R^dagger`, so the reset gives a bijection of state classes.
+Because `U_R` acts only on spin--gauge data, the frozen family projectors and
+AE3.1 mass endomorphism pass unchanged into the current-C2 enclosure.
+
+This proves that an upstream family-labelled Hadamard particle state reaches
+the child enclosure; it does not choose that upstream state or derive a
+Bogoliubov particle number.
+
+- `AE2_RESET_HADAMARD_STATE_CLASS_TRANSPORT_DERIVED = TRUE`
+- `UPSTREAM_HADAMARD_PARTICLE_STATE_CARRIED_INTO_CURRENT_C2_ENCLOSURE = TRUE`
+- `RESET_TRANSPORT_PRESERVES_FROZEN_FAMILY_IDENTITY = TRUE`
+- `RESET_SELECTS_UNIQUE_PHYSICAL_FERMION_STATE = FALSE`
+
 The AE3.1 intrinsic Higgs action now supplies the current-C2 broken neutral
 connection Hessian. In the unfitted connection coordinates
 `(W3_hat=g2 W3,B_hat=g1 B)`, it is
