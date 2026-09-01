@@ -1,0 +1,201 @@
+{
+  "CURRENT_C2_PRODUCT_DIRAC_QUADRATIC_PIECE_ATTACHED": true,
+  "CURRENT_C2_REDUCED_HS_SOURCE_JET_DERIVED": true,
+  "CURRENT_C2_TRANSVERSE_ELECTROMAGNETIC_VERTEX_DERIVED": false,
+  "CURRENT_FULL_FIELD_ACTION_COMPLETE": false,
+  "FULL_BHSM_COMPLETE": false,
+  "MUON_MAGNETIC_MOMENT_DERIVED": false,
+  "action_version": "BHSM-AE-3.0.0",
+  "artifact": "BHSM_AE3_C2_FULL_FIELD_PUZZLE_ASSEMBLY",
+  "claim_boundary": {
+    "derived": [
+      "current_C2_lowest_Weyl_quadratic_operator_pencils_for_both_chiralities",
+      "exact_current_domain_unit_reduced_LR_HS_source_and_contact_jets",
+      "compatible_family_central_I3_tensor_attachment"
+    ],
+    "not_derived": [
+      "physical_HS_saddle_or_fermion_mass",
+      "family_mass_splitting",
+      "transverse_photon_vertex_or_muon_F2_zero",
+      "physical_particle_pole",
+      "full_current_C2_field_action",
+      "maximal_history_operator"
+    ]
+  },
+  "classification": "CURRENT_C2_REDUCED_PRODUCT_DIRAC_HS_SOURCE_JET",
+  "domain": {
+    "background": "ACTUAL_RESET_GENERATED_C2_FINITE_CORE_FAMILY",
+    "far_boundary": "FRIEDRICHS_FORM_CORE_TRUNCATION_ONLY",
+    "maximal_exterior_attached": false,
+    "proof_centers_are_selected_physical_histories": false,
+    "retained_boundary": "C2_BIRTH_TRACE_NODE_0"
+  },
+  "inputs": {
+    "artifacts/BHSM_aether_rank16_u1_hs_vertex_matrices_v16_01.json": "034F33BB92162EE130789AF8DF658089BE34BAF47CBAE6AA4DE5BDA99E957AE9",
+    "artifacts/action_extension/BHSM_ACTION_AE3_RECIPROCAL_JOIN_LOCALIZATION.json": "D3D4F18B62F5789B15AD22C7542680B8011687E7A6B644901FB3AA1A32C10CD1",
+    "artifacts/flagship_integration/BHSM_N12_C2_1222_SEGMENT_FINITE_CORE_DESCRIPTOR.json": "C7B6DB4C09D9D826A5BC9050EA558044354C177D7D4B05D5E422AC1D73B3ACC8",
+    "artifacts/flagship_integration/BHSM_N12_C2_1222_SEGMENT_FINITE_CORE_DESCRIPTOR.npz": "5E8C1E98B4B0E77B628C0B11D29A3F2110DAE665A666B4A2C3DBEB735E6F6E25",
+    "src/bhsm/interface/ae3_c2_action_puzzle.py": "85A6F321EFD8E65F5535657B63F9CD4ECC705DFF15B5B137B42F5EC72E2D8B0D",
+    "src/bhsm/interface/aether_forward_c2_finite_core_descriptor.py": "0CAB5BF4F38DCC40317143321A9A28C62AB9E1C489AB8956EA7FDE7B6EC1CECC",
+    "src/bhsm/interface/aether_rank16_u1_hs_vertex_matrices_v16_01.py": "5F630A62BBECCD7FEC39FD2DB86D6D0D03F63F38EEB06C055018BC89E232AD01"
+  },
+  "method": "NON_SERIAL_PUZZLE_SECTION_ASSEMBLY",
+  "operator_piece": {
+    "angular_value": 1.5,
+    "channels": {
+      "product_Dirac_lambda1_5_chirality_minus": {
+        "angular_value": 1.5,
+        "base_W_summary": {
+          "maximum": -1.507663882994568,
+          "maximum_absolute": 1.507663882994568,
+          "minimum": -1.507663882994568
+        },
+        "chirality": -1,
+        "contact_form_positive_semidefinite_by_element_factorization": true,
+        "descriptor_array_comparisons": {
+          "K_diagonal": true,
+          "K_off_diagonal": true,
+          "M_diagonal": true,
+          "M_off_diagonal": true,
+          "element_coefficient": true
+        },
+        "descriptor_exactly_reassembled": true,
+        "dimension": 1222,
+        "explicit_inverse_formed": false,
+        "generalized_gap_lower": 1.566045129604086e+54,
+        "segment_count": 1222,
+        "source_jet_real_symmetric": true,
+        "unit_source_contact_diagonal_summary": {
+          "maximum": 1.767578558112036e-28,
+          "maximum_absolute": 1.767578558112036e-28,
+          "minimum": 4.781816933547521e-49
+        },
+        "unit_source_contact_off_diagonal_summary": {
+          "maximum": 4.563876326102609e-29,
+          "maximum_absolute": 4.563876326102609e-29,
+          "minimum": 7.969694889245868e-50
+        },
+        "unit_source_vertex_diagonal_summary": {
+          "maximum": 0.0,
+          "maximum_absolute": 1.0,
+          "minimum": -1.0
+        },
+        "unit_source_vertex_off_diagonal_summary": {
+          "maximum": -1.201562114300239e-49,
+          "maximum_absolute": 6.880791503318843e-29,
+          "minimum": -6.880791503318843e-29
+        }
+      },
+      "product_Dirac_lambda1_5_chirality_plus": {
+        "angular_value": 1.5,
+        "base_W_summary": {
+          "maximum": 1.507663882994568,
+          "maximum_absolute": 1.507663882994568,
+          "minimum": 1.507663882994568
+        },
+        "chirality": 1,
+        "contact_form_positive_semidefinite_by_element_factorization": true,
+        "descriptor_array_comparisons": {
+          "K_diagonal": true,
+          "K_off_diagonal": true,
+          "M_diagonal": true,
+          "M_off_diagonal": true,
+          "element_coefficient": true
+        },
+        "descriptor_exactly_reassembled": true,
+        "dimension": 1222,
+        "explicit_inverse_formed": false,
+        "generalized_gap_lower": 1.566045129604086e+54,
+        "segment_count": 1222,
+        "source_jet_real_symmetric": true,
+        "unit_source_contact_diagonal_summary": {
+          "maximum": 1.767578558112036e-28,
+          "maximum_absolute": 1.767578558112036e-28,
+          "minimum": 4.781816933547521e-49
+        },
+        "unit_source_contact_off_diagonal_summary": {
+          "maximum": 4.563876326102609e-29,
+          "maximum_absolute": 4.563876326102609e-29,
+          "minimum": 7.969694889245868e-50
+        },
+        "unit_source_vertex_diagonal_summary": {
+          "maximum": 0.0,
+          "maximum_absolute": 1.0,
+          "minimum": -1.0
+        },
+        "unit_source_vertex_off_diagonal_summary": {
+          "maximum": 6.880791503318843e-29,
+          "maximum_absolute": 6.880791503318843e-29,
+          "minimum": 1.201562114300239e-49
+        }
+      }
+    },
+    "chiralities": [
+      -1,
+      1
+    ],
+    "dynamical_HS_coordinate": "NOT_ATTACHED_BY_THIS_PIECE",
+    "family_factor": "I3",
+    "family_noncentral_mass_operator_derived": false,
+    "field_sector": "LOWEST_PRODUCT_DIRAC_WEYL_CHANNEL",
+    "first_derivative": "V_e=2*W_e*p_e*M_e+p_e*C",
+    "second_contact_derivative": "Q_e=2*p_e^2*M_e",
+    "source_probe": "UNIT_COMMUTING_REDUCED_LR_HS_PROBE",
+    "source_shift": "W_e(epsilon)=W_e+epsilon*p_e_for_p_e=1",
+    "transverse_electromagnetic_vertex": "NOT_DERIVED_BY_THIS_PIECE"
+  },
+  "puzzle_section_fit": {
+    "advanced_sections": {
+      "current_full_field_action": [
+        "C2_lowest_Weyl_product_Dirac_quadratic_pencils_both_chiralities",
+        "exact_unit_reduced_LR_HS_first_source_derivative",
+        "exact_unit_reduced_LR_HS_second_contact_derivative",
+        "family_central_I3_tensor_attachment"
+      ],
+      "muon_magnetic_moment": [
+        "current_C2_two_point_operator_piece_only"
+      ],
+      "particle_identity_transport": [
+        "existing_charged_family_fibers_can_tensor_with_this_C2_operator_piece"
+      ]
+    },
+    "fit_rule": "A_PIECE_MAY_ADVANCE_ANY_SECTION_WHEN_ITS_ACTION_BACKGROUND_DOMAIN_STATE_FACTORIZATION_SCALE_AND_PROVENANCE_INTERFACES_MATCH",
+    "full_BHSM_complete": false,
+    "full_field_action_complete": false,
+    "method": "NON_SERIAL_PUZZLE_SECTION_ASSEMBLY",
+    "prediction_emitted": false,
+    "unfitted_interfaces": {
+      "current_full_field_action": [
+        "dynamical_HS_coordinate_and_broken_LR_saddle",
+        "gauge_ghost_and_transverse_electromagnetic_source_blocks",
+        "nonzero_fermion_background_and_cross_derivatives",
+        "maximal_history_exterior_operator"
+      ],
+      "muon_magnetic_moment": [
+        "transverse_photon_vertex",
+        "Ward_identity_and_action_derived_renormalization",
+        "complete_loop_amplitude_and_q_squared_to_zero_limit"
+      ],
+      "particle_identity_transport": [
+        "family_noncentral_returned_mass_operator",
+        "action_selected_simple_particle_poles"
+      ]
+    }
+  },
+  "validation": {
+    "both_chiral_descriptor_gap_bounds_positive": true,
+    "both_chiral_descriptors_exactly_reassembled": true,
+    "both_chiral_source_jets_real_symmetric": true,
+    "current_AE3_localization_input_valid": true,
+    "current_C2_descriptor_input_valid": true,
+    "electromagnetic_vertex_not_claimed": true,
+    "family_factor_is_existing_I3": true,
+    "far_core_edge_not_promoted_to_physical_endpoint": true,
+    "historical_source_algebra_input_valid": true,
+    "no_new_continuous_coefficient": true,
+    "particle_spectrum_not_rebuilt": true,
+    "prediction_not_emitted": true,
+    "proof_center_not_promoted_to_selected_physical_history": true
+  },
+  "validation_passed": true
+}

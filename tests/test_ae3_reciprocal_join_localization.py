@@ -106,6 +106,7 @@ def test_systems_integration_puzzle_advances_sections_without_serial_gates() -> 
     assert puzzle["serial_gate_order_required"] is False
     assert puzzle["section_updates_allowed_when_locally_compatible"] is True
     assert set(puzzle["sections"]) == {
+        "full_field_action",
         "localization_enclosure",
         "particle_identity_transport",
         "muon_magnetic_moment",
@@ -114,6 +115,7 @@ def test_systems_integration_puzzle_advances_sections_without_serial_gates() -> 
         "gravity_and_cosmology",
     }
     assert puzzle["sections"]["muon_magnetic_moment"]["prediction_emitted"] is False
+    assert puzzle["sections"]["full_field_action"]["complete"] is False
     assert "charged_lepton_family_slot_1_mode_label_(5,2)" in puzzle[
         "sections"
     ]["muon_magnetic_moment"]["fitted_pieces"]

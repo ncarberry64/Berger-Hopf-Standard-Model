@@ -64,10 +64,28 @@ full-field particle on the current C2 background.
 - `PHYSICAL_ENCAPSULATION_IDENTIFIED = FALSE`
 - `FULL_BHSM_COMPLETE = FALSE`
 
-The remaining obstruction is no longer carrier selection. The retained N12
-oracle still has geometry coordinates only. One AE3 C2 action oracle must
-contain geometry, response multiplier, gauge/ghost, fermion, and HS blocks on
-the same state before the complete event canonical flux, contact term, and
+The first non-serial full-field puzzle attachment is now closed on the current
+C2 finite core. Both stored `lambda=3/2` product-Dirac chiral pencils
+reconstruct exactly from the retained nonuniform element action. Reusing the
+already-derived squared-Dirac source algebra gives exact real symmetric unit
+reduced LR/HS first and second/contact jets,
+`V_e=2 W_e M_e+C` and `Q_e=2 M_e`, on that same domain. The family factor is
+the existing `I3`; this attaches all retained family fibers but cannot split
+their masses. The result is a current-C2 two-point/source piece, not a new
+particle spectrum, selected history, or physical pole.
+
+- `CURRENT_C2_PRODUCT_DIRAC_QUADRATIC_PIECE_ATTACHED = TRUE`
+- `CURRENT_C2_REDUCED_HS_SOURCE_JET_DERIVED = TRUE`
+- `CURRENT_C2_TRANSVERSE_ELECTROMAGNETIC_VERTEX_DERIVED = FALSE`
+- `CURRENT_FULL_FIELD_ACTION_COMPLETE = FALSE`
+- `MUON_MAGNETIC_MOMENT_DERIVED = FALSE`
+
+The remaining obstruction is no longer carrier selection or the absence of
+every fermionic C2 operator piece. One compatible AE3 C2 action assembly must
+still join the geometry/response block and this reduced product-Dirac piece
+to dynamical HS and broken-LR data, gauge/ghost and transverse electromagnetic
+source blocks, nonzero fermion-background cross derivatives, and the maximal
+exterior operator before the complete event canonical flux, contact term, and
 parent/event/child Noether--Hamiltonian balance can be evaluated.
 
 The historical common gauge--ghost--Weyl--HS determinant is not that oracle:
@@ -81,7 +99,9 @@ Exact next object:
 `ONE_AE3_FULL_FIELD_C2_ACTION_ORACLE_WITH_GEOMETRY_GAUGE_GHOST_FERMION_HS_AND_RESPONSE_MULTIPLIER_BLOCKS;_THEN_EVALUATE_THE_EVENT_CANONICAL_FLUX_AND_COMPLETE_NOETHER_HAMILTONIAN_BALANCE_WITHOUT_ADDING_A_CONTACT_COEFFICIENT`.
 
 Evidence: [`AE3 theorem`](../theory/ae3_reciprocal_join_localization_enclosure.md)
-and [`AE3 machine certificate`](../artifacts/action_extension/BHSM_ACTION_AE3_RECIPROCAL_JOIN_LOCALIZATION.json).
+and [`AE3 machine certificate`](../artifacts/action_extension/BHSM_ACTION_AE3_RECIPROCAL_JOIN_LOCALIZATION.json),
+plus the [`current-C2 puzzle theorem`](../theory/ae3_c2_full_field_puzzle_assembly.md)
+and [`puzzle certificate`](../artifacts/action_extension/BHSM_AE3_C2_FULL_FIELD_PUZZLE_ASSEMBLY.json).
 
 ## Authoritative Gate-7 identification frontier: unchanged-AE2 carrier audit complete
 
