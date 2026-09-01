@@ -1,0 +1,183 @@
+{
+  "CURRENT_C2_COEXACT_U1Y_SOURCE_JET_DERIVED": true,
+  "CURRENT_C2_PHYSICAL_PHOTON_VERTEX_DERIVED": false,
+  "FULL_BHSM_COMPLETE": false,
+  "MUON_MAGNETIC_MOMENT_DERIVED": false,
+  "action_version": "BHSM-AE-3.0.0",
+  "artifact": "BHSM_AE3_C2_COEXACT_HYPERCHARGE_SOURCE_JET",
+  "chiral_rows": {
+    "product_Dirac_lambda1_5_chirality_minus": {
+      "angular_dimension": 2,
+      "angular_level": 0,
+      "background_diagonal_is_exact_I2_lift": true,
+      "background_diagonal_relative_residual": 0.0,
+      "background_off_diagonal_is_exact_I2_lift": true,
+      "background_off_diagonal_relative_residual": 0.0,
+      "chirality": -1,
+      "contact_diagonal_summary": {
+        "maximum_absolute": 1.7675785581120358e-28,
+        "maximum_imaginary_absolute": 0.0,
+        "maximum_real": 1.7675785581120358e-28,
+        "minimum_real": 0.0
+      },
+      "contact_elements_positive_semidefinite_by_factorization": true,
+      "contact_off_diagonal_summary": {
+        "maximum_absolute": 4.5638763261026084e-29,
+        "maximum_imaginary_absolute": 0.0,
+        "maximum_real": 4.5638763261026084e-29,
+        "minimum_real": 0.0
+      },
+      "explicit_inverse_formed": false,
+      "segment_count": 1222,
+      "source_generator_square_is_identity": true,
+      "source_generator_traceless": true,
+      "stored_W_relative_residual": 0.0,
+      "vertex_diagonal_summary": {
+        "maximum_absolute": 1.0,
+        "maximum_imaginary_absolute": 0.0,
+        "maximum_real": 1.0,
+        "minimum_real": -1.0
+      },
+      "vertex_elements_Hermitian": true,
+      "vertex_off_diagonal_summary": {
+        "maximum_absolute": 6.880791503318842e-29,
+        "maximum_imaginary_absolute": 0.0,
+        "maximum_real": 6.880791503318842e-29,
+        "minimum_real": -6.880791503318842e-29
+      }
+    },
+    "product_Dirac_lambda1_5_chirality_plus": {
+      "angular_dimension": 2,
+      "angular_level": 0,
+      "background_diagonal_is_exact_I2_lift": true,
+      "background_diagonal_relative_residual": 0.0,
+      "background_off_diagonal_is_exact_I2_lift": true,
+      "background_off_diagonal_relative_residual": 0.0,
+      "chirality": 1,
+      "contact_diagonal_summary": {
+        "maximum_absolute": 1.7675785581120358e-28,
+        "maximum_imaginary_absolute": 0.0,
+        "maximum_real": 1.7675785581120358e-28,
+        "minimum_real": 0.0
+      },
+      "contact_elements_positive_semidefinite_by_factorization": true,
+      "contact_off_diagonal_summary": {
+        "maximum_absolute": 4.5638763261026084e-29,
+        "maximum_imaginary_absolute": 0.0,
+        "maximum_real": 4.5638763261026084e-29,
+        "minimum_real": 0.0
+      },
+      "explicit_inverse_formed": false,
+      "segment_count": 1222,
+      "source_generator_square_is_identity": true,
+      "source_generator_traceless": true,
+      "stored_W_relative_residual": 0.0,
+      "vertex_diagonal_summary": {
+        "maximum_absolute": 1.0,
+        "maximum_imaginary_absolute": 0.0,
+        "maximum_real": 1.0,
+        "minimum_real": -1.0
+      },
+      "vertex_elements_Hermitian": true,
+      "vertex_off_diagonal_summary": {
+        "maximum_absolute": 6.880791503318842e-29,
+        "maximum_imaginary_absolute": 0.0,
+        "maximum_real": 6.880791503318842e-29,
+        "minimum_real": -6.880791503318842e-29
+      }
+    }
+  },
+  "claim_boundary": {
+    "derived": [
+      "current_C2_lowest_Weyl_spatial_coexact_U1Y_source_jet",
+      "current_C2_lowest_Weyl_spatial_coexact_U1Y_contact_jet",
+      "rank16_charge_square_and_family_central_attachment"
+    ],
+    "not_derived": [
+      "dynamical_current_C2_U1Y_gauge_and_ghost_action",
+      "broken_electroweak_saddle",
+      "physical_photon_or_Weinberg_mixing",
+      "muon_simple_pole_or_F2_zero",
+      "maximal_history_exterior_vertex"
+    ]
+  },
+  "classification": "CURRENT_C2_LOWEST_WEYL_COEXACT_HYPERCHARGE_SOURCE_JET",
+  "derivation": {
+    "chiral_first_order_factor": "W_s(epsilon)=s*(D_0+epsilon*p*G)",
+    "coexact_unit_generator": "G=sigma_z",
+    "element_form": "K_e=S/h_tensor_I2+M_tensor_W_s^2+C_tensor_W_s",
+    "first_source_derivative": "V_e=M_tensor_(W_s*dW_s+dW_s*W_s)+C_tensor_dW_s",
+    "lowest_Berger_block": "D_0=(3/2)*R4^-1*I2",
+    "new_gauge_coupling_or_scale": false,
+    "second_contact_derivative": "Q_e=2*M_tensor_dW_s^2",
+    "unit_profile_used_in_certificate": true
+  },
+  "domain": {
+    "background": "ACTUAL_RESET_GENERATED_C2_FINITE_CORE_FAMILY",
+    "far_boundary": "FRIEDRICHS_FORM_CORE_TRUNCATION_ONLY",
+    "proof_center_selected_as_physical_history": false,
+    "retained_boundary": "C2_BIRTH_TRACE_NODE_0"
+  },
+  "inputs": {
+    "artifacts/BHSM_aether_rank16_u1_hs_vertex_matrices_v16_01.json": "034F33BB92162EE130789AF8DF658089BE34BAF47CBAE6AA4DE5BDA99E957AE9",
+    "artifacts/action_extension/BHSM_AE3_C2_FULL_FIELD_PUZZLE_ASSEMBLY.json": "D6E426F960F4D88047036C0FA088DFDE544C951652B0040016BB1753B96AE692",
+    "artifacts/flagship_integration/BHSM_N12_C2_1222_SEGMENT_FINITE_CORE_DESCRIPTOR.json": "C7B6DB4C09D9D826A5BC9050EA558044354C177D7D4B05D5E422AC1D73B3ACC8",
+    "artifacts/flagship_integration/BHSM_N12_C2_1222_SEGMENT_FINITE_CORE_DESCRIPTOR.npz": "5E8C1E98B4B0E77B628C0B11D29A3F2110DAE665A666B4A2C3DBEB735E6F6E25",
+    "src/bhsm/interface/ae3_c2_coexact_hypercharge.py": "EAB7E9546B54C0D2B1FA85D7D7DE4700DCF5B56F49CE31D6AD4CBB542054A5DB",
+    "src/bhsm/interface/aether_rank16_u1_hs_vertex_matrices_v16_01.py": "5F630A62BBECCD7FEC39FD2DB86D6D0D03F63F38EEB06C055018BC89E232AD01",
+    "src/bhsm/interface/completion/exact_berger_dirac_cap_obstruction_v14_59.py": "DEE615CC8DA9666B4445B82639A769870CDFBB5C6EF419BC3FBB4D2DD69173EB"
+  },
+  "puzzle_section_fit": {
+    "FULL_BHSM_COMPLETE": false,
+    "U1Y_source_jet_derived": true,
+    "advanced_sections": {
+      "collisions_and_decays": [
+        "current_C2_hypercharge_fermion_source_vertex_precursor"
+      ],
+      "full_field_action": [
+        "current_C2_lowest_Weyl_U1Y_coexact_fermion_source_jet",
+        "current_C2_lowest_Weyl_U1Y_contact_jet"
+      ],
+      "muon_magnetic_moment": [
+        "transverse_hypercharge_precursor_vertex_on_current_C2_core"
+      ]
+    },
+    "muon_magnetic_moment_derived": false,
+    "physical_electromagnetic_vertex_derived": false,
+    "prediction_emitted": false,
+    "unfitted_interfaces": {
+      "full_field_action": [
+        "dynamical_U1Y_gauge_kinetic_and_ghost_block_on_current_C2",
+        "broken_SU2L_x_U1Y_saddle_and_neutral_mixing_map",
+        "maximal_history_exterior_operator"
+      ],
+      "muon_magnetic_moment": [
+        "action_selected_muon_pole",
+        "physical_photon_vertex_after_electroweak_mixing",
+        "Ward_identity_renormalization_and_complete_loops"
+      ]
+    }
+  },
+  "rank16_attachment": {
+    "family_factor": "I3",
+    "gauge_coupling_derived_here": false,
+    "one_family_hypercharge_square_trace": "10/3",
+    "three_family_hypercharge_square_trace": 10.0
+  },
+  "validation": {
+    "both_background_chiral_block_lifts_match": true,
+    "both_source_jets_Hermitian": true,
+    "both_stored_W_paths_match_lowest_Berger_block": true,
+    "coexact_generator_contract_exact": true,
+    "current_C2_descriptor_valid": true,
+    "current_C2_puzzle_attachment_valid": true,
+    "far_core_is_not_physical_endpoint": true,
+    "historical_rank16_source_algebra_valid": true,
+    "no_prediction_emitted": true,
+    "physical_photon_not_identified": true,
+    "proof_center_is_not_selected_history": true,
+    "rank16_family_factor_is_I3": true,
+    "rank16_three_family_hypercharge_square_trace_is_10": true
+  },
+  "validation_passed": true
+}

@@ -1,5 +1,28 @@
 # Gate Ledger
 
+## Current AE3 C2 coexact hypercharge source jet
+
+- Same-domain operator: the `n=0` Berger block is exactly
+  `D_0=(3/2)R4^-1 I2` on every current C2 element.
+- Reused unit coexact source: `G=sigma_z`, with `tr(G)=0` and `G^2=I2`.
+- Both chiral current-C2 background systems reconstruct as exact `I2` lifts
+  of the stored 1,222-segment product-Dirac descriptors.
+- Exact element derivatives:
+  `V=M tensor (W dW+dW W)+C tensor dW` and
+  `Q=2 M tensor dW^2`.
+- Rank-16 attachment: three-family hypercharge-square trace `10`, family
+  factor `I3`, no new gauge coupling or scale.
+- Derived object: current-C2 lowest-Weyl transverse `U(1)_Y` fermion source
+  and contact jet.
+- Not derived: dynamical C2 hypercharge gauge/ghost action, broken
+  electroweak saddle, photon mixing map, muon pole, Ward identity, or `F2(0)`.
+- The far form-core edge remains a Friedrichs proof cutoff, not an event.
+- Artifact:
+  `artifacts/action_extension/BHSM_AE3_C2_COEXACT_HYPERCHARGE_SOURCE_JET.json`.
+- `CURRENT_C2_COEXACT_U1Y_SOURCE_JET_DERIVED=TRUE`;
+  `CURRENT_C2_PHYSICAL_PHOTON_VERTEX_DERIVED=FALSE`;
+  `MUON_MAGNETIC_MOMENT_DERIVED=FALSE`; `FULL_BHSM_COMPLETE=FALSE`.
+
 ## Current AE3 family-hierarchy interface
 
 - Present composition: every attached reset, localization, enclosure, and C2
