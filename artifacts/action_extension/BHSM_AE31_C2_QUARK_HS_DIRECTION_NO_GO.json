@@ -1,0 +1,142 @@
+{
+  "FULL_BHSM_COMPLETE": false,
+  "action_version": "BHSM-AE-3.1.0",
+  "artifact": "BHSM_AE31_C2_QUARK_HS_DIRECTION_NO_GO",
+  "claim_boundary": {
+    "CKM_MATRIX_DERIVED": false,
+    "CURRENT_C2_PHYSICAL_QUARK_POLES_DERIVED": false,
+    "CURRENT_C2_QUARK_CHANNEL_DIRECTION_SELECTED": false,
+    "CURRENT_C2_QUARK_HS_CHANNEL_DIRECTION_NULLITY": 1,
+    "CURRENT_C2_QUARK_HS_KINETIC_NORMALIZATION_NULLITY_DERIVED": true,
+    "CURRENT_C2_UP_DOWN_ABSOLUTE_YUKAWA_PREFACTORS_DERIVED": false,
+    "CURRENT_C2_UP_DOWN_RELATIVE_YUKAWA_RESIDUE_DERIVED": false,
+    "FULL_BHSM_COMPLETE": false,
+    "HISTORICAL_FOUR_CHANNEL_MULTIPLICITIES_REUSED": true,
+    "HISTORICAL_PERIODIC_CYCLE_RESIDUE_PROMOTED": false,
+    "MEASURED_QUARK_MASS_USED": false,
+    "particle_spectrum_rebuilt": false
+  },
+  "classification": "AE31_CURRENT_C2_QUARK_HS_CHANNEL_DIRECTION_NONIDENTIFIABILITY",
+  "exact_channel_selector": {
+    "diagonal_kinetic_trace_alone_sufficient": false,
+    "equal_components_may_be_assumed": false,
+    "historical_numeric_channel_residue_may_be_copied": false,
+    "minimum_block": "[[H_uu,H_ud],[H_du,H_dd]]",
+    "must_be_derived_together_with": [
+      "intrinsic_H_and_H_tilde_identification",
+      "current_C2_dynamical_kinetic_residue",
+      "up_down_family_pushforward",
+      "boundary_and_BRST_domain"
+    ],
+    "quark_mass_fit_allowed": false,
+    "required_operator": "H_qH_current_C2=D_(H_u,H_d)^2*Gamma_qH_on_the_same_AE3_1_domain",
+    "required_result": "A_UNIQUE_NORMALIZABLE_PHYSICAL_EIGENDIRECTION_WITH_NONZERO_UP_AND_DOWN_COMPONENTS_OR_AN_ACTION_DERIVED_EQUIVALENT_SOURCE"
+  },
+  "family_tensor_pushforward_witness": {
+    "all_attachment_commutators_zero": true,
+    "candidate_pushforward": "V_spatial_tensor[(c_up*T_u)_on_up_plus_(c_down*T_d)_on_down]",
+    "cross_sector_heavy_ratio_first": 1.7320508075688776,
+    "cross_sector_heavy_ratio_second": 0.577350269189626,
+    "cross_sector_ratio_changes": true,
+    "family_tensoring_selects_channel_angle": false,
+    "first_down_ratios_to_heavy": [
+      1.0,
+      0.021933971495439474,
+      0.0011165200546001757
+    ],
+    "first_up_ratios_to_heavy": [
+      1.0,
+      0.008310500554068288,
+      1.2690463017606151e-05
+    ],
+    "measured_quark_mass_used": false,
+    "second_down_ratios_to_heavy": [
+      1.0,
+      0.021933971495439474,
+      0.0011165200546001757
+    ],
+    "second_up_ratios_to_heavy": [
+      1.0,
+      0.008310500554068288,
+      1.2690463017606151e-05
+    ],
+    "within_sector_shapes_identical": true
+  },
+  "historical_four_channel_trace_reuse": {
+    "equal_multiplicity_selects_equal_components": false,
+    "historical_channel_basis": [
+      "up",
+      "down",
+      "charged_lepton",
+      "neutrino"
+    ],
+    "historical_numeric_Z_pair_promoted_to_current_C2": false,
+    "historical_pairing_multiplicity_matrix": "diag(9,9,3,3)",
+    "historical_periodic_cycle_domain_promoted_to_current_C2": false,
+    "independent_channel_canonical_values_are_physical_single_Higgs_values": false,
+    "quark_plane_quadratic_symmetry_when_no_other_terms_are_present": "O(2)",
+    "reason": "AN_O2_INVARIANT_QUADRATIC_FORM_IS_CONSTANT_ON_THE_NORMALIZED_CIRCLE_AND_HAS_NO_PREFERRED_ANGLE",
+    "reusable_result": "UP_AND_DOWN_HAVE_EQUAL_PAIRING_MULTIPLICITY_IN_THE_HISTORICAL_FOUR_CHANNEL_TRACE"
+  },
+  "inputs": {
+    "artifacts/BHSM_aether_hs_channel_normalization_v16_02.json": "294C95A7EAFA39259F31432CB48912924390DB907C178EEB91CDBE3BEF6DD2E1",
+    "artifacts/action_extension/BHSM_AE31_C2_QUARK_PARENT_THIRD_VARIATION.json": "880D656909727CEE22F9C9F4FEBB5E25D5845DC8ACC229496D930C07A0429057",
+    "artifacts/action_extension/BHSM_AE31_C2_QUARK_YUKAWA_NORMALIZATION_NO_GO.json": "CE08DFABB05D215BE3573C6E84A65B8A628D1D5C151A1EF876EAEBF338BBD6BB",
+    "artifacts/action_extension/BHSM_AE3_C2_HOPF_SEMIGROUP_TRANSPORT.json": "890FD3AD9CF06F8753C463B332F529181C9A1EAA3244836C58F5B59FF3ED3785",
+    "artifacts/action_extension/BHSM_AE3_C2_HS_FERMION_MIXED_VARIATION.json": "23E1741332800951F510D6D1AA5A2FB7C43B7D5F2D2AE80C67AB59F8BBB5B159",
+    "src/bhsm/interface/ae31_c2_quark_hs_direction_no_go.py": "2B19871B3817A7C9E9E276E0D9B9B62E2FC5888C3741F04E31BF9A67321BB7BC"
+  },
+  "kinetic_normalization_nullity_theorem": {
+    "channel_coordinates": [
+      "c_up",
+      "c_down"
+    ],
+    "channel_direction_nullity": 1,
+    "constraint_Jacobian_rank": 1,
+    "gradient_dot_tangent": -3.9614419418916084e-16,
+    "kinetic_normalization_selects_relative_up_down_residue": false,
+    "normalization_equation": "Z_up*c_up^2+Z_down*c_down^2=1",
+    "tangent_vector_at_equal_angle": [
+      2.121320343559643,
+      -2.121320343559643
+    ],
+    "two_normalized_witnesses": [
+      {
+        "action_version": "BHSM-AE-3.1.0",
+        "angle": 0.5235987755982988,
+        "c_down": 0.16666666666666666,
+        "c_up": 0.2886751345948129,
+        "direction_action_selected": false,
+        "down_kinetic": 9.0,
+        "kinetic_norm": 1.0000000000000002,
+        "positive_direction": true,
+        "relative_residue_c_up_over_c_down": 1.7320508075688776,
+        "up_kinetic": 9.0
+      },
+      {
+        "action_version": "BHSM-AE-3.1.0",
+        "angle": 1.0471975511965976,
+        "c_down": 0.28867513459481287,
+        "c_up": 0.1666666666666667,
+        "direction_action_selected": false,
+        "down_kinetic": 9.0,
+        "kinetic_norm": 1.0000000000000002,
+        "positive_direction": true,
+        "relative_residue_c_up_over_c_down": 0.577350269189626,
+        "up_kinetic": 9.0
+      }
+    ],
+    "witness_relative_residues_differ": true
+  },
+  "validation": {
+    "current_HS_vertex_still_lacks_dynamical_selector": true,
+    "exact_selector_is_full_channel_operator_and_unfitted": true,
+    "family_tensoring_preserves_angle_ambiguity": true,
+    "historical_multiplicity_reused_without_residue_promotion": true,
+    "no_relative_residue_pole_CKM_or_completion_overclaim": true,
+    "one_channel_direction_survives_kinetic_normalization": true,
+    "parent_third_variation_gate_reused": true,
+    "previous_two_scalar_normalization_no_go_preserved": true
+  },
+  "validation_passed": true
+}
