@@ -1,5 +1,21 @@
 # Gate Ledger
 
+## AE3.1 current-C2 quark gauge LR channel ray
+
+- The single-carrier inverse-kernel ray and current quark representations give
+  exact gauge-exchange weights `C_u=7/5`, `C_d=13/10`, hence
+  `C_u-C_d=1/10` and `C_u/C_d=14/13` without mass data.
+- The common static nonlocal current-C2 geometry factor cancels from this
+  relative ray. The failed local Lorentzian Maxwell residue is neither needed
+  nor overridden, and the DtN kernel is not relabelled as local photon exchange.
+- `diag(7/5,13/10)` breaks the isolated equal-multiplicity quark-plane `O(2)`
+  degeneracy and orders the up channel first, but its eigenvectors are pure
+  axes; it does not derive a mixed single-Higgs direction or `c_u/c_d`.
+- The next selector is the full current-C2 LR susceptibility, odd/composite
+  two-point kernel, intrinsic-Higgs mixing, and off-diagonal channel Hessian.
+- Artifact:
+  `artifacts/action_extension/BHSM_AE31_C2_QUARK_GAUGE_LR_CHANNEL_RAY.json`.
+
 ## AE3.1 current-C2 quark scalar-attachment variation
 
 - `H(x,y)=H(x)Phi(y)` is preserved scalar-state ontology, but `Phi` is not an
