@@ -1,19 +1,20 @@
 # Gate Ledger
 
-## AE3.2 current-C2 first-order Einstein--Cartan LR action
+## AE3.2 candidate current-C2 first-order Einstein--Cartan LR action
 
 - The coefficient-free v15.75--v15.76 first-order Einstein--Dirac completion
-  is selected as `BHSM-AE-3.2.0` on current C2. It replaces the Levi-Civita
-  representative; it does not add a second Einstein term.
+  is formulated as `BHSM-AE-3.2.0-CANDIDATE` on current C2. It would replace
+  the Levi-Civita representative; it does not add a second Einstein term.
 - Algebraic contorsion elimination gives the attractive scalar LR kernel
   `G_EC=(3/4)/(K_G5[1-4 sigma^2])` with the exact Clifford/Fierz coefficient
   `c_EC=3/4` and no new continuous coefficient.
 - The local kernel is positive and finite for `|sigma|<1/2`, reflection-even,
   and attached to the up, down, charged-lepton and effective-neutrino LR
   channels with the retained `9,9,3,3` pairing multiplicities.
-- The first-order action is globally selected, but endpoint-weighted
-  integrability of the eliminated kernel and hence its global reduced action
-  domain remain open.
+- The retained round-join zero mode is `L2`, but its EC quartic density is
+  `(3pi/512) chi^(-2)+O(1)` at the collapse endpoint. The reduced form
+  diverges like `1/epsilon`, so the mode is not in its domain and the global
+  AE3.2 promotion fails.
 - Its family action is `I3`; it does not generate a hierarchy or CKM mixing.
 - The Hubbard--Stratonovich representation supplies an algebraic positive
   auxiliary block and unit unnormalized LR vertex, but no derivative kinetic
@@ -21,10 +22,11 @@
 - Historical charged-boundary `beta_f,kappa_f` values are family-bridge
   candidates, not this LR variation, and are not promoted to quark Yukawa
   prefactors.
-- Derived: versioned first-order completion and current-C2 local algebraic LR
-  kernel.
-- Open: same-action HS two-point kinetic matrix, intrinsic-Higgs mixing map,
-  quark Yukawa operators/masses, noncentral quark response, and physical CKM.
+- Derived: current-C2 local algebraic LR kernel and exact endpoint-domain
+  obstruction. No counterterm, boundary condition, or mode deletion is used.
+- Open: action-derived endpoint completion, HS two-point kinetic matrix,
+  intrinsic-Higgs mixing map, quark Yukawa operators/masses, noncentral quark
+  response, and physical CKM.
 - Artifact:
   `artifacts/action_extension/BHSM_AE32_C2_EINSTEIN_CARTAN_LR_ACTION.json`.
 

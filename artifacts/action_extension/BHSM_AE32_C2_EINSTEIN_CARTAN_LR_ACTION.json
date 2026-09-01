@@ -2,25 +2,26 @@
   "FULL_BHSM_COMPLETE": false,
   "action_completion_contract": {
     "Gamma_EC_on_symmetric_zero_fermion_background": 0.0,
-    "action_version": "BHSM-AE-3.2.0",
+    "action_version": "BHSM-AE-3.2.0-CANDIDATE",
     "background_geometry_first_variation_changed_at_zero_fermion": false,
     "composition": "S_AE3_2=FirstOrderLift_spin_connection[S_AE3_1]",
     "contorsion_is_algebraic": true,
+    "global_action_promotion_before_domain_test": false,
     "independent_spin_connection": "omega=omega_LeviCivita+C",
     "intrinsic_Higgs_identified_with_HS_auxiliary": false,
     "intrinsic_M4_Higgs_term_removed": false,
     "new_continuous_coefficient": false,
     "new_elementary_field": false,
-    "owner_decision": "SELECT_THE_HISTORICAL_COEFFICIENT_FREE_FIRST_ORDER_EINSTEIN_DIRAC_COMPLETION_ON_CURRENT_C2",
+    "owner_decision": "TEST_THE_HISTORICAL_COEFFICIENT_FREE_FIRST_ORDER_EINSTEIN_DIRAC_COMPLETION_ON_CURRENT_C2",
     "particle_spectrum_rebuilt": false,
     "predecessor_action_version": "BHSM-AE-3.1.0",
     "reduced_composition": "S_AE3_2_reduced=S_AE3_1+Gamma_EC",
     "replaced_representative": "LEVI_CIVITA_EINSTEIN_DIRAC_REPRESENTATIVE",
     "replacement_not_addition": true,
     "same_AE2_spin_x_gauge_reset_domain": true,
-    "same_reset_generated_C2_background": true
+    "same_reset_generated_C2_background_for_local_domain_test": true
   },
-  "action_version": "BHSM-AE-3.2.0",
+  "action_version": "BHSM-AE-3.2.0-CANDIDATE",
   "algebraic_Hubbard_Stratonovich_block": {
     "HS_derivative_kinetic_term_present": false,
     "HS_quadratic_coefficient": "G_EC^(-1)",
@@ -46,7 +47,8 @@
     "reason": "BETA_AND_KAPPA_ACT_INSIDE_THE_FROZEN_THREE_SLOT_FAMILY_MODULE;_G_EC_MULTIPLIES_THE_GAUGE_SINGLET_LR_CHANNEL_AND_IS_FAMILY_I3"
   },
   "claim_boundary": {
-    "BHSM_AE32_FIRST_ORDER_EINSTEIN_CARTAN_COMPLETION_SELECTED": true,
+    "BHSM_AE32_FIRST_ORDER_EINSTEIN_CARTAN_COMPLETION_FORMULATED": true,
+    "BHSM_AE32_FIRST_ORDER_EINSTEIN_CARTAN_COMPLETION_GLOBALLY_PROMOTED": false,
     "CURRENT_C2_ALL_SM_LR_CHANNELS_ATTACHED": true,
     "CURRENT_C2_EXACT_CLIFFORD_FIERZ_COEFFICIENT_DERIVED": true,
     "CURRENT_C2_GLOBAL_REDUCED_EC_ACTION_DOMAIN_DERIVED": false,
@@ -57,8 +59,9 @@
     "HISTORICAL_CHARGED_BRIDGE_VALUES_PROMOTED": false,
     "PHYSICAL_CKM_MATRIX_DERIVED": false,
     "QUARK_MASS_OPERATORS_DERIVED": false,
+    "RETAINED_ZERO_MODE_EC_ENDPOINT_DIVERGENCE_DERIVED": true,
     "UP_DOWN_ACTION_YUKAWA_PREFACTORS_DERIVED": false,
-    "exact_next_operator": "SAME_AE32_CURRENT_C2_HS_TWO_POINT_KINETIC_MATRIX_AND_INTRINSIC_HIGGS_MIXING_MAP_ON_AN_ACTION_SELECTED_QUANTUM_STATE",
+    "exact_next_operator": "ACTION_DERIVED_CURRENT_C2_ENDPOINT_DOMAIN_OR_COUNTERTERM_THAT_MAKES_THE_FIRST_ORDER_CONTORSION_SCHUR_FORM_FINITE_WITHOUT_REMOVING_THE_RETAINED_ZERO_MODE_OR_FITTING_ITS_COEFFICIENT",
     "new_continuous_coefficient_inserted": false,
     "particle_spectrum_rebuilt": false
   },
@@ -79,6 +82,7 @@
   "inputs": {
     "artifacts/BHSM_aether_cartan_shell_crossing_v15_76.json": "077D2AF2555579501B7FBC157C484526C0C25D2285F94DEBBD49054C35C99E56",
     "artifacts/BHSM_aether_common_gauge_hs_pushforward_v16_05.json": "B64A38785B41E01DAE38FA303005FF934C0B4148452B4C2CEC08C49CF001D572",
+    "artifacts/BHSM_aether_complete_child_localized_fiber_v15_34.json": "AE458FC141E3A7EFC05FAFB2ABAED34E37906843E8BB86959EA3414921860E3D",
     "artifacts/BHSM_aether_einstein_cartan_joint_pushforward_v15_75.json": "1E82EE9E365ED99E8943C5090C71119C47DEC38BA1924C9EED1BC7A3086CD842",
     "artifacts/BHSM_charged_action_stiffness_v1_7.json": "B5CB6509C7D9E9392B707D47536EB6D5E96D4774DB12232B06B8F4A1C746FC07",
     "artifacts/action_extension/BHSM_ACTION_AE3_RECIPROCAL_JOIN_LOCALIZATION.json": "858C24D806EAE6574F17D8606CAAE63909E189641A09305B51AA0A95D73A63A1",
@@ -86,7 +90,7 @@
     "artifacts/action_extension/BHSM_AE31_C2_INTRINSIC_M4_LEPTON_ACTION.json": "C0E851100FCAA04C1968081A3940D938B7C64C857FE416F7F7795974A9053850",
     "artifacts/action_extension/BHSM_AE3_C2_HS_FERMION_MIXED_VARIATION.json": "23E1741332800951F510D6D1AA5A2FB7C43B7D5F2D2AE80C67AB59F8BBB5B159",
     "artifacts/charged_boundary_bridge_values_v1.json": "7529DD3DE10ED01F15CF45D9E9B36821787C024D34F99945762893E05FA148D7",
-    "src/bhsm/interface/ae32_c2_einstein_cartan_lr_action.py": "D1C868032C752BF5A2880C274A8AB0B8A7469D90EB068C9E1BC7A268549B6349"
+    "src/bhsm/interface/ae32_c2_einstein_cartan_lr_action.py": "789A24448351A5ECDCFD906042166B27CD674B7EE501BE8CD18C1D882707A5C3"
   },
   "local_current_C2_LR_kernel_sample": {
     "G_EC_inverse_over_K_G5": [
@@ -103,7 +107,7 @@
       1.0,
       18.939393939393902
     ],
-    "action_version": "BHSM-AE-3.2.0",
+    "action_version": "BHSM-AE-3.2.0-CANDIDATE",
     "domain": "CURRENT_C2_REGULAR_INTERIOR__ABS_SIGMA_LT_ONE_HALF",
     "endpoint_limit": "+infinity_as_abs(sigma)_up_to_1/2",
     "formula": "G_EC=(3/4)/(K_G5*(1-4*sigma^2))",
@@ -120,6 +124,51 @@
     "locally_finite": true,
     "positive": true,
     "reflection_even": true
+  },
+  "retained_zero_mode_endpoint_domain_test": {
+    "EC_quartic_form_finite": false,
+    "Jacobian_endpoint_series": "J=8*chi^3+O(chi^5)",
+    "Lambda_endpoint_series": "Lambda=(64/(3pi))*chi^3+O(chi^5)",
+    "cutoff_rows": [
+      {
+        "cutoff_quartic_shape_integral": 0.9606011162898465,
+        "epsilon": 0.02,
+        "epsilon_times_integral": 0.01921202232579693
+      },
+      {
+        "cutoff_quartic_shape_integral": 1.8813870861177453,
+        "epsilon": 0.01,
+        "epsilon_times_integral": 0.018813870861177452
+      },
+      {
+        "cutoff_quartic_shape_integral": 3.7223615666785177,
+        "epsilon": 0.005,
+        "epsilon_times_integral": 0.01861180783339259
+      },
+      {
+        "cutoff_quartic_shape_integral": 9.244810543125118,
+        "epsilon": 0.002,
+        "epsilon_times_integral": 0.018489621086250234
+      },
+      {
+        "cutoff_quartic_shape_integral": 18.448734584919148,
+        "epsilon": 0.001,
+        "epsilon_times_integral": 0.01844873458491915
+      }
+    ],
+    "divergence": "+infinity_like_(3pi/512)/epsilon_before_finite_N^4_factor",
+    "domain": "ROUND_JOIN_ENCLOSED_HALF__0_LT_CHI_LE_PI_OVER_4",
+    "first_order_contorsion_infimum_bounded_below_on_zero_mode": false,
+    "independent_counterterm_or_boundary_condition_inserted": false,
+    "inverse_cutoff_coefficient": 0.018407769454627694,
+    "last_scaled_residual": 4.0965130291455154e-05,
+    "quartic_integrand_endpoint_series": "sin(chi)^4/(J*Lambda)=(3pi/512)*chi^(-2)+O(1)",
+    "retained_geometry": "f=chi,_J=sin(2chi)^3,_Lambda=1-4sigma^2",
+    "retained_zero_mode": "u0=N*J^(-1/2)*sin(chi)",
+    "retained_zero_mode_in_reduced_EC_form_domain": false,
+    "sigma_endpoint_series": "sigma+1/2=(16/(3pi))*chi^3+O(chi^5)",
+    "zero_mode_L2_normalizable": true,
+    "zero_mode_L2_shape_norm": 0.14269908169872414
   },
   "scalar_LR_channel_ledger": {
     "all_channels_gauge_singlets_after_LR_product": true,
@@ -147,12 +196,14 @@
     "all_24_historical_channel_pairings_attached": true,
     "current_AE3_localization_is_same_positive_weight": true,
     "current_reduced_vertex_preexisted_but_HS_kernel_was_open": true,
+    "endpoint_domain_no_go_matches_exact_asymptotic": true,
     "exact_historical_Clifford_coefficient_recovered": true,
     "first_order_lift_replaces_instead_of_double_counting": true,
     "historical_charged_values_remain_non_action_normalizations": true,
     "historical_completion_is_coefficient_free": true,
     "no_quark_mass_CKM_or_spectrum_overclaim": true,
-    "predecessor_is_current_AE31_action": true
+    "predecessor_is_current_AE31_action": true,
+    "round_join_zero_mode_provenance_recovered": true
   },
   "validation_passed": true
 }

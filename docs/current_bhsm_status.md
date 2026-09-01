@@ -289,10 +289,11 @@ native variable `z`; it is not promoted to physical `p^2`.
 - `CURRENT_C2_PHYSICAL_CHARGED_LEPTON_POLES_DERIVED = FALSE`
 - `UP_DOWN_ACTION_PREFACTORS_DERIVED = FALSE`
 
-The action has now advanced to `BHSM-AE-3.2.0` by selecting the previously
-derived coefficient-free first-order Einstein--Cartan completion on current
-C2. This replaces the Levi-Civita Einstein--Dirac representative rather than
-adding a second Einstein term. Eliminating algebraic contorsion gives the
+The previously derived coefficient-free first-order Einstein--Cartan
+completion has now been formulated and tested as
+`BHSM-AE-3.2.0-CANDIDATE` on current C2. It would replace the Levi-Civita
+Einstein--Dirac representative rather than add a second Einstein term.
+Eliminating algebraic contorsion locally gives the
 attractive local scalar LR kernel
 
 ```text
@@ -303,9 +304,14 @@ The exact `3/4` Clifford/Fierz coefficient is inherited without a new
 continuous parameter. The kernel is positive and reflection-even on the
 regular current-C2 interior and attaches to all four LR channels with the
 retained `9,9,3,3` three-family pairing multiplicities. Its family action is
-still `I3`. The first-order action is selected globally, while endpoint
-integrability of the eliminated four-fermion representative remains open; the
-reduced LR kernel is promoted locally, not as a completed global domain.
+still `I3`.
+
+The exact endpoint test rejects global promotion. The retained round-join
+degree-one zero mode is `L2`, but its EC quartic density behaves as
+`(3pi/512) chi^(-2)+O(1)` at the collapse endpoint. The cutoff form diverges
+like `1/epsilon`; the mode is not in the reduced EC form domain and the
+contorsion infimum is not bounded below on that source. No counterterm,
+boundary condition, or mode deletion is inserted.
 
 The exact Hubbard--Stratonovich transform supplies an algebraic auxiliary
 quadratic block and unit unnormalized LR vertex, but no derivative kinetic
@@ -314,8 +320,10 @@ direction, quark mass operator, or nontrivial CKM matrix is promoted. The
 historical charged-boundary `beta,kappa` values belong to a different family
 bridge variation and are not relabelled as quark Yukawa prefactors.
 
-- `BHSM_AE32_FIRST_ORDER_EINSTEIN_CARTAN_COMPLETION_SELECTED = TRUE`
+- `BHSM_AE32_FIRST_ORDER_EINSTEIN_CARTAN_COMPLETION_FORMULATED = TRUE`
+- `BHSM_AE32_FIRST_ORDER_EINSTEIN_CARTAN_COMPLETION_GLOBALLY_PROMOTED = FALSE`
 - `CURRENT_C2_LOCAL_ALGEBRAIC_LR_KERNEL_DERIVED = TRUE`
+- `RETAINED_ZERO_MODE_EC_ENDPOINT_DIVERGENCE_DERIVED = TRUE`
 - `CURRENT_C2_PROPAGATING_HS_KINETIC_KERNEL_DERIVED = FALSE`
 - `UP_DOWN_ACTION_YUKAWA_PREFACTORS_DERIVED = FALSE`
 

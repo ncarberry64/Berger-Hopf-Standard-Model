@@ -23,6 +23,7 @@ from bhsm.interface.ae32_c2_einstein_cartan_lr_action import (
     claim_boundary,
     contorsion_schur_complement,
     local_current_c2_lr_kernel,
+    retained_zero_mode_endpoint_domain_test,
     scalar_lr_channel_ledger,
 )
 
@@ -35,6 +36,7 @@ LOCALIZATION = A / "action_extension/BHSM_ACTION_AE3_RECIPROCAL_JOIN_LOCALIZATIO
 V1575 = A / "BHSM_aether_einstein_cartan_joint_pushforward_v15_75.json"
 V1576 = A / "BHSM_aether_cartan_shell_crossing_v15_76.json"
 V1605 = A / "BHSM_aether_common_gauge_hs_pushforward_v16_05.json"
+V1534 = A / "BHSM_aether_complete_child_localized_fiber_v15_34.json"
 CHARGED = A / "charged_boundary_bridge_values_v1.json"
 STIFFNESS = A / "BHSM_charged_action_stiffness_v1_7.json"
 TARGET = A / "action_extension/BHSM_AE32_C2_EINSTEIN_CARTAN_LR_ACTION.json"
@@ -46,6 +48,7 @@ INPUTS = (
     V1575,
     V1576,
     V1605,
+    V1534,
     CHARGED,
     STIFFNESS,
     ROOT / "src/bhsm/interface/ae32_c2_einstein_cartan_lr_action.py",
@@ -64,13 +67,14 @@ def build_payload() -> dict[str, Any]:
     missing = [str(path) for path in INPUTS if not path.is_file()]
     if missing:
         raise FileNotFoundError(", ".join(missing))
-    ae31, green, hs, localization, v1575, v1576, v1605, charged, stiffness = map(
-        _load, INPUTS[:9]
+    ae31, green, hs, localization, v1575, v1576, v1605, v1534, charged, stiffness = map(
+        _load, INPUTS[:10]
     )
     completion = action_completion_contract()
     schur = contorsion_schur_complement()
     sample = local_current_c2_lr_kernel(np.asarray((-0.49, -0.25, 0.0, 0.25, 0.49)))
     channels = scalar_lr_channel_ledger()
+    endpoint = retained_zero_mode_endpoint_domain_test()
     auxiliary = algebraic_hubbard_stratonovich_block()
     separation = charged_bridge_separation_theorem()
     boundary = claim_boundary()
@@ -99,6 +103,16 @@ def build_payload() -> dict[str, Any]:
             channels["total_pairing_multiplicity"]
             == sum(v1605["common_M5_to_M4_pushforward"]["trace_ledger"]["HS_pairing_multiplicities"].values())
             == 24
+        ),
+        "round_join_zero_mode_provenance_recovered": (
+            v1534["complete_child_tangent"]["round_join"]
+            == "C=R,_A=R*cos(chi),_B=R*sin(chi),_f=chi"
+            and endpoint["zero_mode_L2_normalizable"]
+        ),
+        "endpoint_domain_no_go_matches_exact_asymptotic": (
+            not endpoint["EC_quartic_form_finite"]
+            and not endpoint["retained_zero_mode_in_reduced_EC_form_domain"]
+            and endpoint["last_scaled_residual"] < 5.0e-5
         ),
         "current_reduced_vertex_preexisted_but_HS_kernel_was_open": (
             hs["claim_boundary"]["current_C2_third_LR_HS_vertex_retained"]
@@ -129,6 +143,7 @@ def build_payload() -> dict[str, Any]:
         "contorsion_Schur_complement": schur,
         "local_current_C2_LR_kernel_sample": sample,
         "scalar_LR_channel_ledger": channels,
+        "retained_zero_mode_endpoint_domain_test": endpoint,
         "algebraic_Hubbard_Stratonovich_block": auxiliary,
         "charged_bridge_separation_theorem": separation,
         "claim_boundary": boundary,

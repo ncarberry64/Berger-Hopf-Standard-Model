@@ -2,10 +2,10 @@
 
 ## Action decision
 
-The current action is advanced to `BHSM-AE-3.2.0` by selecting the
-coefficient-free first-order Einstein--Dirac completion already derived in
-v15.75--v15.76. This is a change of representative, not a second Einstein
-term:
+The coefficient-free first-order Einstein--Dirac completion already derived
+in v15.75--v15.76 is formulated as the candidate
+`BHSM-AE-3.2.0-CANDIDATE` and tested on current C2. This would be a change of
+representative, not a second Einstein term:
 
 ```text
 S_AE3.2 = FirstOrderLift_spin_connection[S_AE3.1],
@@ -53,9 +53,45 @@ For every regular current-C2 interior point `|sigma|<1/2`, this kernel is
 positive, finite, and even under the reciprocal reflection. It diverges at
 the localization-support endpoints. A global weighted zero-mode
 integrability theorem is not asserted here.
-Accordingly, the first-order action is selected globally, but the eliminated
-four-fermion representative is promoted only as a local interior kernel; its
-global reduced action domain remains open.
+## Endpoint domain no-go
+
+The retained round join and degree-one zero mode give, on the enclosed half,
+
+```text
+f=chi,
+J=sin(2chi)^3,
+u0=N J^(-1/2) sin(chi),
+0<chi<=pi/4.
+```
+
+The mode is ordinary `L2(J dchi)` because its norm shape is
+
+```text
+integral_0^(pi/4) sin(chi)^2 dchi = pi/8-1/4 > 0.
+```
+
+At the collapse endpoint,
+
+```text
+sigma+1/2 = (16/(3pi)) chi^3 + O(chi^5),
+Lambda = (64/(3pi)) chi^3 + O(chi^5),
+J = 8 chi^3 + O(chi^5).
+```
+
+Therefore its EC quartic shape density is
+
+```text
+sin(chi)^4/(J Lambda)
+  = (3pi/512) chi^(-2) + O(1),
+```
+
+and the cutoff form diverges as `(3pi/512)/epsilon` before the finite `N^4`
+normalization factor. The retained zero mode is not in the reduced EC form
+domain, and minimizing over contorsion is not bounded below on this source.
+
+No counterterm, boundary condition, or mode deletion is inserted to hide the
+failure. The global AE3.2 action promotion is withdrawn. What survives is the
+exact local interior LR kernel and the endpoint obstruction.
 
 ## Channel attachment
 
@@ -102,11 +138,12 @@ values cannot be relabelled as `c_u,c_d` or canonical quark Yukawas.
 
 Derived:
 
-- the versioned first-order Einstein--Cartan action completion;
+- the formulated first-order Einstein--Cartan action candidate;
 - the exact coefficient `c_EC=3/4`;
 - a positive local current-C2 algebraic LR kernel;
 - its four-channel, 24-pair attachment;
 - the exact auxiliary-field block.
+- the exact retained-zero-mode endpoint divergence.
 
 Not derived:
 
@@ -116,6 +153,7 @@ Not derived:
 - a family-noncentral quark response or physical CKM matrix;
 - global endpoint integrability of the LR kernel.
 
-The next operator is the same-action current-C2 HS two-point kinetic matrix
-and intrinsic-Higgs mixing map on an action-selected quantum state. No
-historical bridge coefficient or fitted quark scale may substitute for it.
+The next object is an action-derived current-C2 endpoint domain or counterterm
+that makes the contorsion Schur form finite without removing the retained zero
+mode or fitting a coefficient. No historical bridge coefficient or fitted
+quark scale may substitute for it.

@@ -11,6 +11,7 @@ from bhsm.interface.ae32_c2_einstein_cartan_lr_action import (
     claim_boundary,
     contorsion_schur_complement,
     local_current_c2_lr_kernel,
+    retained_zero_mode_endpoint_domain_test,
     scalar_lr_channel_ledger,
 )
 from scripts.materialize_ae32_c2_einstein_cartan_lr_action import (
@@ -22,7 +23,7 @@ from scripts.materialize_ae32_c2_einstein_cartan_lr_action import (
 
 def test_first_order_completion_is_versioned_and_not_double_counted():
     result = action_completion_contract()
-    assert ACTION_VERSION == "BHSM-AE-3.2.0"
+    assert ACTION_VERSION == "BHSM-AE-3.2.0-CANDIDATE"
     assert result["predecessor_action_version"] == "BHSM-AE-3.1.0"
     assert result["replacement_not_addition"]
     assert result["contorsion_is_algebraic"]
@@ -31,6 +32,7 @@ def test_first_order_completion_is_versioned_and_not_double_counted():
     assert not result["background_geometry_first_variation_changed_at_zero_fermion"]
     assert not result["intrinsic_M4_Higgs_term_removed"]
     assert not result["intrinsic_Higgs_identified_with_HS_auxiliary"]
+    assert not result["global_action_promotion_before_domain_test"]
 
 
 def test_exact_clifford_fierz_coefficient_is_inherited_without_fit():
@@ -69,6 +71,21 @@ def test_all_lr_channels_are_attached_but_family_action_is_central():
     assert result["neutrino_is_effective_extension_not_minimal_SM"]
 
 
+def test_retained_zero_mode_is_l2_but_not_in_ec_quartic_form_domain():
+    result = retained_zero_mode_endpoint_domain_test()
+    expected = 3.0 * np.pi / 512.0
+    assert result["zero_mode_L2_normalizable"]
+    assert not result["EC_quartic_form_finite"]
+    assert not result["retained_zero_mode_in_reduced_EC_form_domain"]
+    assert not result["first_order_contorsion_infimum_bounded_below_on_zero_mode"]
+    assert abs(result["cutoff_rows"][-1]["epsilon_times_integral"] - expected) < 5.0e-5
+
+
+def test_endpoint_domain_test_rejects_invalid_cutoff_order():
+    with pytest.raises(ValueError):
+        retained_zero_mode_endpoint_domain_test((0.01, 0.02))
+
+
 def test_hs_transform_is_algebraic_not_a_physical_yukawa_residue():
     result = algebraic_hubbard_stratonovich_block()
     assert result["unnormalized_LR_HS_vertex"] == 1.0
@@ -88,10 +105,12 @@ def test_charged_bridge_values_cannot_be_relabelled_as_quark_yukawas():
 
 def test_claim_boundary_promotes_only_the_local_algebraic_lr_kernel():
     result = claim_boundary()
-    assert result["BHSM_AE32_FIRST_ORDER_EINSTEIN_CARTAN_COMPLETION_SELECTED"]
+    assert result["BHSM_AE32_FIRST_ORDER_EINSTEIN_CARTAN_COMPLETION_FORMULATED"]
+    assert not result["BHSM_AE32_FIRST_ORDER_EINSTEIN_CARTAN_COMPLETION_GLOBALLY_PROMOTED"]
     assert result["CURRENT_C2_LOCAL_ALGEBRAIC_LR_KERNEL_DERIVED"]
     assert result["CURRENT_C2_EXACT_CLIFFORD_FIERZ_COEFFICIENT_DERIVED"]
     assert not result["CURRENT_C2_GLOBAL_REDUCED_EC_ACTION_DOMAIN_DERIVED"]
+    assert result["RETAINED_ZERO_MODE_EC_ENDPOINT_DIVERGENCE_DERIVED"]
     assert not result["CURRENT_C2_PROPAGATING_HS_KINETIC_KERNEL_DERIVED"]
     assert not result["UP_DOWN_ACTION_YUKAWA_PREFACTORS_DERIVED"]
     assert not result["QUARK_MASS_OPERATORS_DERIVED"]
