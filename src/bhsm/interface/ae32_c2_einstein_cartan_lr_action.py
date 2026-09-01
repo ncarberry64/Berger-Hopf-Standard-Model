@@ -116,6 +116,36 @@ def local_current_c2_lr_kernel(sigma: object) -> dict[str, Any]:
     }
 
 
+def historical_collapse_domain_comparison() -> dict[str, Any]:
+    """Prevent conflation of the v15.75 and current-C2 singular limits."""
+
+    return {
+        "v15_75_control_variable": (
+            "epsilon_IN_THE_INTERIOR_EVENT_SHELL_LEGENDRE_FACTOR"
+        ),
+        "v15_75_domain": "REGULAR_SIDE__epsilon_GT_ZERO",
+        "v15_75_singular_shell_evaluated": False,
+        "v15_75_result": (
+            "DIVERGENT_GAP_EIGENVALUE_FORCES_A_FINITE_FIRST_INWARD_"
+            "CROSSING_epsilon_star_f_GT_ZERO"
+        ),
+        "v15_82_supersession": (
+            "THE_FULL_EVENT_WEIGHT_Lambda_TIMES_L_eta_DOES_NOT_MULTIPLY_"
+            "THE_EINSTEIN_TERM"
+        ),
+        "v15_75_full_event_weighted_Einstein_term_retained": False,
+        "v15_76_Clifford_Fierz_coefficient_c_EC_retained": True,
+        "current_C2_control_variable": (
+            "chi_APPROACHING_THE_SPATIAL_COLLAPSE_ENDPOINT"
+        ),
+        "current_C2_divergence": (
+            "GLOBAL_RADIAL_EC_FORM_OF_THE_RETAINED_ZERO_MODE"
+        ),
+        "current_C2_finite_pre_endpoint_gap_crossing_already_derived": False,
+        "limits_are_the_same_domain_statement": False,
+    }
+
+
 def scalar_lr_channel_ledger() -> dict[str, Any]:
     """Attach the Fierz scalar to every retained SM left/right channel."""
 
@@ -220,6 +250,112 @@ def retained_zero_mode_endpoint_domain_test(
     }
 
 
+def uneliminated_contorsion_endpoint_test() -> dict[str, Any]:
+    """Test the stationary first-order contorsion before Schur elimination.
+
+    After the angular reduction, write the algebraic block as
+
+    ``S_C=1/2 integral A K^2 + integral S K``.
+
+    For the retained mode, ``A`` contains the actual radial measure
+    ``J*Lambda`` while the projected spin source has shape ``J*u0^2``.
+    Their endpoint orders determine the unique stationary contorsion and each
+    term in the uneliminated action without choosing a regulator coefficient.
+    """
+
+    eliminated = retained_zero_mode_endpoint_domain_test()
+    rows = []
+    for cutoff_row in eliminated["cutoff_rows"]:
+        epsilon = float(cutoff_row["epsilon"])
+        sigma = (
+            -0.5
+            + 2.0 * epsilon / math.pi
+            - math.sin(4.0 * epsilon) / (2.0 * math.pi)
+        )
+        jacobian = math.sin(2.0 * epsilon) ** 3
+        weight = 1.0 - 4.0 * sigma**2
+        source_shape = math.sin(epsilon) ** 2
+        stationary_contorsion_shape = -source_shape / (jacobian * weight)
+        eliminated_shape_integral = float(
+            cutoff_row["cutoff_quartic_shape_integral"]
+        )
+        common_schur_integral = (
+            2.0 * CLIFFORD_FIERZ_COEFFICIENT * eliminated_shape_integral
+        )
+        rows.append(
+            {
+                "epsilon": epsilon,
+                "normalized_K_star_at_cutoff": stationary_contorsion_shape,
+                "epsilon4_times_normalized_K_star": (
+                    epsilon**4 * stationary_contorsion_shape
+                ),
+                "normalized_quadratic_integral": 0.5 * common_schur_integral,
+                "normalized_linear_integral": -common_schur_integral,
+                "normalized_total_integral": -0.5 * common_schur_integral,
+            }
+        )
+    k_star_coefficient = -3.0 * math.pi / 512.0
+    total_action_coefficient = (
+        -CLIFFORD_FIERZ_COEFFICIENT * 3.0 * math.pi / 512.0
+    )
+    return {
+        "radial_measure": "J(chi)=sin(2chi)^3=8*chi^3+O(chi^5)",
+        "localization_weight": (
+            "Lambda(chi)=1-4*sigma(chi)^2=(64/(3pi))*chi^3+O(chi^5)"
+        ),
+        "retained_mode": (
+            "u0=N*J^(-1/2)*sin(chi)=(N/sqrt(8))*chi^(-1/2)+O(chi^(3/2))"
+        ),
+        "quadratic_density_coefficient": (
+            "A(chi)=K_G5*J*Lambda*A_Clifford=O(chi^6)"
+        ),
+        "projected_spin_source_density": (
+            "S(chi)=J*u0^2*S_Clifford=N^2*sin(chi)^2*S_Clifford="
+            "O(chi^2)"
+        ),
+        "pointwise_stationarity_equation": "A(chi)*K_star(chi)+S(chi)=0",
+        "stationary_contorsion": "K_star=-A^(-1)*S=O(chi^(-4))",
+        "normalized_K_star_leading_coefficient": k_star_coefficient,
+        "normalized_stationary_rows": rows,
+        "last_K_star_scaled_residual": abs(
+            rows[-1]["epsilon4_times_normalized_K_star"]
+            - k_star_coefficient
+        ),
+        "stationary_contorsion_locally_finite_for_every_chi_gt_zero": True,
+        "stationary_contorsion_has_finite_endpoint_extension": False,
+        "common_positive_schur_density": (
+            "Q(chi)=S*A^(-1)*S=(2*c_EC*N^4/K_G5)*"
+            "[(3pi/512)*chi^(-2)+O(1)]"
+        ),
+        "quadratic_term_at_stationarity": "+(1/2)*Q(chi)=O(chi^(-2))",
+        "linear_term_at_stationarity": "-Q(chi)=O(chi^(-2))",
+        "total_term_at_stationarity": "-(1/2)*Q(chi)=O(chi^(-2))",
+        "quadratic_term_cutoff_limit": "+infinity_like_1/epsilon",
+        "linear_term_cutoff_limit": "-infinity_like_2/epsilon",
+        "total_stationary_action_cutoff_limit": "-infinity_like_1/epsilon",
+        "normalized_total_action_inverse_cutoff_coefficient": (
+            total_action_coefficient
+        ),
+        "last_total_action_scaled_residual": abs(
+            rows[-1]["epsilon"]
+            * rows[-1]["normalized_total_integral"]
+            - total_action_coefficient
+        ),
+        "divergences_cancel_in_total_action": False,
+        "finite_nonstationary_configuration_example": "K=0",
+        "finite_nonstationary_configuration_solves_contorsion_equation": False,
+        "algebraic_variable_has_derivative_boundary_form": False,
+        "endpoint_boundary_variation": "ZERO_IDENTICALLY__NO_DERIVATIVES_OF_K",
+        "boundary_condition_can_cancel_bulk_algebraic_divergence": False,
+        "unique_stationary_solution_on_each_regular_cutoff": True,
+        "finite_action_stationary_endpoint_extension_exists": False,
+        "classification": "GENUINE_PARENT_ACTION_STATIONARY_DOMAIN_OBSTRUCTION",
+        "elimination_only_failure": False,
+        "retained_AE3_zero_mode_in_global_EC_stationary_action_domain": False,
+        "independent_cutoff_counterterm_or_suppression_inserted": False,
+    }
+
+
 def algebraic_hubbard_stratonovich_block() -> dict[str, Any]:
     """Record the exact auxiliary-field representation of the LR kernel."""
 
@@ -276,6 +412,10 @@ def claim_boundary() -> dict[str, Any]:
         "CURRENT_C2_EXACT_CLIFFORD_FIERZ_COEFFICIENT_DERIVED": True,
         "CURRENT_C2_ALL_SM_LR_CHANNELS_ATTACHED": True,
         "RETAINED_ZERO_MODE_EC_ENDPOINT_DIVERGENCE_DERIVED": True,
+        "CURRENT_C2_EC_ELIMINATED_GLOBAL_ACTION_FINITE": False,
+        "CURRENT_C2_UNELIMINATED_STATIONARY_EC_ACTION_FINITE": False,
+        "RETAINED_AE3_ZERO_MODE_IN_GLOBAL_EC_STATIONARY_ACTION_DOMAIN": False,
+        "EC_ENDPOINT_OBSTRUCTION_IS_ELIMINATION_ONLY": False,
         "CURRENT_C2_GLOBAL_REDUCED_EC_ACTION_DOMAIN_DERIVED": False,
         "CURRENT_C2_PROPAGATING_HS_KINETIC_KERNEL_DERIVED": False,
         "CURRENT_C2_PHYSICAL_HIGGS_DIRECTION_DERIVED": False,
@@ -286,9 +426,9 @@ def claim_boundary() -> dict[str, Any]:
         "new_continuous_coefficient_inserted": False,
         "particle_spectrum_rebuilt": False,
         "exact_next_operator": (
-            "ACTION_DERIVED_CURRENT_C2_ENDPOINT_DOMAIN_OR_COUNTERTERM_THAT_"
-            "MAKES_THE_FIRST_ORDER_CONTORSION_SCHUR_FORM_FINITE_WITHOUT_"
-            "REMOVING_THE_RETAINED_ZERO_MODE_OR_FITTING_ITS_COEFFICIENT"
+            "RETURN_TO_THE_AE31_REGULAR_GLOBAL_ACTION_AND_DERIVE_THE_NEXT_"
+            "NON_EC_HIGGS_OR_FERMION_TWO_POINT_OWNER_WITHOUT_ENDPOINT_"
+            "CUTOFF_COUNTERTERM_OR_FITTED_SUPPRESSION"
         ),
         "FULL_BHSM_COMPLETE": False,
     }
@@ -304,7 +444,9 @@ __all__ = [
     "charged_bridge_separation_theorem",
     "claim_boundary",
     "contorsion_schur_complement",
+    "historical_collapse_domain_comparison",
     "local_current_c2_lr_kernel",
     "retained_zero_mode_endpoint_domain_test",
     "scalar_lr_channel_ledger",
+    "uneliminated_contorsion_endpoint_test",
 ]

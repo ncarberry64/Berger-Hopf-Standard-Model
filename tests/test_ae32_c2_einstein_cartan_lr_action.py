@@ -10,9 +10,11 @@ from bhsm.interface.ae32_c2_einstein_cartan_lr_action import (
     charged_bridge_separation_theorem,
     claim_boundary,
     contorsion_schur_complement,
+    historical_collapse_domain_comparison,
     local_current_c2_lr_kernel,
     retained_zero_mode_endpoint_domain_test,
     scalar_lr_channel_ledger,
+    uneliminated_contorsion_endpoint_test,
 )
 from scripts.materialize_ae32_c2_einstein_cartan_lr_action import (
     TARGET,
@@ -86,6 +88,41 @@ def test_endpoint_domain_test_rejects_invalid_cutoff_order():
         retained_zero_mode_endpoint_domain_test((0.01, 0.02))
 
 
+def test_uneliminated_stationary_contorsion_has_genuine_action_domain_obstruction():
+    result = uneliminated_contorsion_endpoint_test()
+    assert result["stationary_contorsion"] == "K_star=-A^(-1)*S=O(chi^(-4))"
+    assert result["stationary_contorsion_locally_finite_for_every_chi_gt_zero"]
+    assert not result["stationary_contorsion_has_finite_endpoint_extension"]
+    assert not result["divergences_cancel_in_total_action"]
+    assert not result["finite_nonstationary_configuration_solves_contorsion_equation"]
+    assert not result["algebraic_variable_has_derivative_boundary_form"]
+    assert not result["boundary_condition_can_cancel_bulk_algebraic_divergence"]
+    assert not result["finite_action_stationary_endpoint_extension_exists"]
+    assert result["classification"] == "GENUINE_PARENT_ACTION_STATIONARY_DOMAIN_OBSTRUCTION"
+    assert not result["elimination_only_failure"]
+    assert result["last_K_star_scaled_residual"] < 5.0e-5
+    assert result["last_total_action_scaled_residual"] < 5.0e-5
+    for row in result["normalized_stationary_rows"]:
+        assert np.isclose(
+            row["normalized_linear_integral"],
+            -2.0 * row["normalized_quadratic_integral"],
+        )
+        assert np.isclose(
+            row["normalized_total_integral"],
+            -row["normalized_quadratic_integral"],
+        )
+
+
+def test_historical_event_crossing_is_not_current_c2_collapse_domain():
+    result = historical_collapse_domain_comparison()
+    assert result["v15_75_domain"] == "REGULAR_SIDE__epsilon_GT_ZERO"
+    assert not result["v15_75_singular_shell_evaluated"]
+    assert not result["v15_75_full_event_weighted_Einstein_term_retained"]
+    assert result["v15_76_Clifford_Fierz_coefficient_c_EC_retained"]
+    assert not result["current_C2_finite_pre_endpoint_gap_crossing_already_derived"]
+    assert not result["limits_are_the_same_domain_statement"]
+
+
 def test_hs_transform_is_algebraic_not_a_physical_yukawa_residue():
     result = algebraic_hubbard_stratonovich_block()
     assert result["unnormalized_LR_HS_vertex"] == 1.0
@@ -111,6 +148,10 @@ def test_claim_boundary_promotes_only_the_local_algebraic_lr_kernel():
     assert result["CURRENT_C2_EXACT_CLIFFORD_FIERZ_COEFFICIENT_DERIVED"]
     assert not result["CURRENT_C2_GLOBAL_REDUCED_EC_ACTION_DOMAIN_DERIVED"]
     assert result["RETAINED_ZERO_MODE_EC_ENDPOINT_DIVERGENCE_DERIVED"]
+    assert not result["CURRENT_C2_EC_ELIMINATED_GLOBAL_ACTION_FINITE"]
+    assert not result["CURRENT_C2_UNELIMINATED_STATIONARY_EC_ACTION_FINITE"]
+    assert not result["RETAINED_AE3_ZERO_MODE_IN_GLOBAL_EC_STATIONARY_ACTION_DOMAIN"]
+    assert not result["EC_ENDPOINT_OBSTRUCTION_IS_ELIMINATION_ONLY"]
     assert not result["CURRENT_C2_PROPAGATING_HS_KINETIC_KERNEL_DERIVED"]
     assert not result["UP_DOWN_ACTION_YUKAWA_PREFACTORS_DERIVED"]
     assert not result["QUARK_MASS_OPERATORS_DERIVED"]

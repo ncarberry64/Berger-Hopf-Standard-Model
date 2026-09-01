@@ -15,6 +15,14 @@
   `(3pi/512) chi^(-2)+O(1)` at the collapse endpoint. The reduced form
   diverges like `1/epsilon`, so the mode is not in its domain and the global
   AE3.2 promotion fails.
+- The uneliminated block has `A=O(chi^6)`, projected spin source `S=O(chi^2)`,
+  and unique stationary contorsion `K_star=-A^-1 S=O(chi^-4)`. Its quadratic,
+  linear, and total densities are `+Q/2`, `-Q`, and `-Q/2`, so the `chi^-2`
+  divergences do not cancel. Algebraic contorsion has no derivative boundary
+  form; no finite-action stationary endpoint extension exists.
+- The v15.75 regular-side event-control crossing is not this radial collapse
+  domain. V15.82's rejection of the old full `Lambda L_eta` Einstein weight
+  remains in force; only the exact v15.76 `c_EC=3/4` coefficient is reused.
 - Its family action is `I3`; it does not generate a hierarchy or CKM mixing.
 - The Hubbard--Stratonovich representation supplies an algebraic positive
   auxiliary block and unit unnormalized LR vertex, but no derivative kinetic
@@ -22,11 +30,13 @@
 - Historical charged-boundary `beta_f,kappa_f` values are family-bridge
   candidates, not this LR variation, and are not promoted to quark Yukawa
   prefactors.
-- Derived: current-C2 local algebraic LR kernel and exact endpoint-domain
+- Derived: current-C2 local algebraic LR kernel, exact eliminated-form
+  divergence, and the matching uneliminated stationary parent-action domain
   obstruction. No counterterm, boundary condition, or mode deletion is used.
-- Open: action-derived endpoint completion, HS two-point kinetic matrix,
-  intrinsic-Higgs mixing map, quark Yukawa operators/masses, noncentral quark
-  response, and physical CKM.
+- Closed as a route: global AE3.2 EC ownership of the retained zero mode.
+- Open on non-EC owners: HS/two-point alternatives in the regular AE3.1
+  action, intrinsic-Higgs mixing, quark Yukawa operators/masses, noncentral
+  quark response, and physical CKM.
 - Artifact:
   `artifacts/action_extension/BHSM_AE32_C2_EINSTEIN_CARTAN_LR_ACTION.json`.
 

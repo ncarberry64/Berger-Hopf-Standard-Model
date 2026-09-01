@@ -93,6 +93,77 @@ No counterterm, boundary condition, or mode deletion is inserted to hide the
 failure. The global AE3.2 action promotion is withdrawn. What survives is the
 exact local interior LR kernel and the endpoint obstruction.
 
+## Uneliminated first-order endpoint test
+
+The obstruction is not an artifact of substituting the algebraic solution.
+Before elimination, the projected contorsion block has the form
+
+```text
+S_C = 1/2 integral A(chi) K(chi)^2 dchi
+      + integral S(chi) K(chi) dchi,
+A = K_G5 J Lambda A_Clifford,
+S = J u0^2 S_Clifford.
+```
+
+The actual current-C2 measure and retained zero mode give
+
+```text
+J = O(chi^3),
+Lambda = O(chi^3),
+u0 = O(chi^(-1/2)),
+A = O(chi^6),
+S = O(chi^2).
+```
+
+Contorsion is algebraic, so its interior Euler--Lagrange equation has the
+unique solution
+
+```text
+K_star = -A^(-1) S = O(chi^(-4)).
+```
+
+Writing `Q=S A^(-1) S`, the three uneliminated contributions at this solution
+are
+
+```text
+1/2 A K_star^2 = +1/2 Q = O(chi^(-2)),
+S K_star       = -Q     = O(chi^(-2)),
+total          = -1/2 Q = O(chi^(-2)).
+```
+
+Thus the quadratic and linear divergences do not cancel. Their cutoff
+integrals have relative coefficients `+1/2`, `-1`, and `-1/2`, and the total
+stationary action still diverges like `-1/epsilon`. A finite configuration
+such as `K=0` exists, but it does not solve the contorsion equation wherever
+the retained spin source is nonzero. Because `K` has no derivative term,
+there is no contorsion boundary Green form or endpoint boundary variation
+that can cancel this bulk algebraic divergence.
+
+The decisive classification is therefore the stronger alternative:
+
+```text
+RETAINED_AE3_ZERO_MODE_IS_NOT_IN_THE_GLOBAL_EC_STATIONARY_ACTION_DOMAIN.
+```
+
+This is a genuine stationary parent-action domain obstruction for the
+proposed AE3.2 route, not merely a failure of Schur substitution at one point.
+
+## Historical collapse-domain reconciliation
+
+V15.75 did classify a divergence as a regular-side forcing mechanism, but it
+was a different limit: its `epsilon` controlled an interior event-shell
+Legendre factor, and its theorem supplied a finite first inward gap crossing
+before that shell. It never evaluated the singular shell as a physical state.
+
+The current test instead sends the radial coordinate `chi` to the spatial
+collapse endpoint and asks whether the retained zero mode belongs to the
+global EC action domain. No same-current-C2 gap eigenvalue has been derived
+that removes this endpoint from the mode's action domain. Moreover v15.82
+superseded the old placement of the full event weight `Lambda L_eta` in the
+Einstein term. Current AE3.2 retains the exact v15.76 Clifford coefficient,
+but it does not revive that obsolete weighting or transfer the old crossing
+theorem to this distinct endpoint problem.
+
 ## Channel attachment
 
 The scalar Fierz product attaches to all retained LR channels:
@@ -144,6 +215,10 @@ Derived:
 - its four-channel, 24-pair attachment;
 - the exact auxiliary-field block.
 - the exact retained-zero-mode endpoint divergence.
+- the uneliminated stationary-contorsion scaling `K_star=O(chi^-4)`;
+- the noncancellation of its quadratic and linear `chi^-2` action densities;
+- the resulting global stationary EC action-domain obstruction;
+- the distinction from the historical v15.75 event-control crossing.
 
 Not derived:
 
@@ -151,9 +226,11 @@ Not derived:
 - a physical Higgs/composite direction or mixing map;
 - absolute up/down Yukawa operators or quark masses;
 - a family-noncentral quark response or physical CKM matrix;
-- global endpoint integrability of the LR kernel.
+- global endpoint integrability of the LR kernel;
+- a finite-action stationary EC extension of the retained zero mode.
 
-The next object is an action-derived current-C2 endpoint domain or counterterm
-that makes the contorsion Schur form finite without removing the retained zero
-mode or fitting a coefficient. No historical bridge coefficient or fitted
-quark scale may substitute for it.
+No endpoint cutoff, counterterm, boundary condition, mode deletion, or fitted
+suppression is admitted to rescue this route. The next mass-sector owner must
+return to the regular global AE3.1 action and derive a non-EC Higgs/fermion
+two-point operator. No historical bridge coefficient or fitted quark scale
+may substitute for it.
