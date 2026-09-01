@@ -601,13 +601,13 @@ def systems_integration_puzzle() -> dict[str, object]:
                     "current_C2_continuous_frequency_gauge_ghost_Hessian",
                     "strict_unrenormalized_temporal_spatial_gauge_residue_mismatch",
                     "unique_two_sided_parent_Calderon_mismatch_resolution_route",
+                    "two_sided_reciprocal_Calderon_reflection_no_go",
                     "existing_family_central_I3_tensor_factor",
                 ],
                 "open_join": (
-                    "current_C2_maximal_exterior_gauge_ghost_Calderon_operator_"
-                    "and_two_sided_residue_test_then_dynamical_HS_broken_LR_neutral_"
-                    "mixing_nonzero_fermion_cross_derivative_and_maximal_"
-                    "exterior_blocks"
+                    "finite_action_domain_decision_for_the_gauge_residue_then_"
+                    "dynamical_HS_broken_LR_neutral_mixing_nonzero_fermion_"
+                    "cross_derivative_and_remaining_full_field_blocks"
                 ),
                 "complete": False,
             },

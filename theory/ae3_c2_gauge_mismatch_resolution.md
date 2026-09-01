@@ -24,3 +24,12 @@ exterior.
 Only if the derivatives of `N_total` yield one positive temporal/spatial
 residue may the Maxwell residue be promoted. Otherwise the signed mismatch is
 retained. No photon claim is made by this route selection.
+
+## Subsequent evaluation
+
+The selected calculation is now evaluated in
+`ae3_c2_two_sided_calderon_reflection_no_go.md`. Exact reciprocal reflection
+conjugates the regular exterior Maxwell--BRST problem to the interior one, so
+both residues double and their ratio is unchanged. This screen remains the
+provenance record of route selection; the later theorem owns the negative
+evaluation and the resulting finite action/domain decision surface.

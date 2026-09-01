@@ -1,0 +1,103 @@
+{
+  "FULL_BHSM_COMPLETE": false,
+  "action_version": "BHSM-AE-3.0.0",
+  "artifact": "BHSM_AE3_C2_TWO_SIDED_CALDERON_REFLECTION_NO_GO",
+  "claim_boundary": {
+    "Lorentzian_Maxwell_residue_derived": false,
+    "physical_photon_derived": false,
+    "two_sided_parent_Calderon_evaluated": true
+  },
+  "classification": "AE3_CURRENT_C2_TWO_SIDED_CALDERON_REFLECTION_NO_GO",
+  "inputs": {
+    "artifacts/action_extension/BHSM_ACTION_AE3_RECIPROCAL_JOIN_LOCALIZATION.json": "3A6203A3D63169143380946B99441B4DD02E870AEED236EEC96B880965760E72",
+    "artifacts/action_extension/BHSM_AE3_C2_GAUGE_MISMATCH_RESOLUTION_SCREEN.json": "1A32CB40BA5DEAA9A612CCA279F1DD3A166DFE6451EB2086C29212AEE6780080",
+    "artifacts/action_extension/BHSM_AE3_C2_LORENTZIAN_GAUGE_GHOST_FREQUENCY_HESSIAN.json": "5D23320B1331EC76D19C86709EC37C120782080FC60E0602C1823F78F1D13769",
+    "src/bhsm/interface/ae3_c2_two_sided_calderon.py": "3A763001D9B12C14932549B96A6B44C855296E95AEF27C7B8BC6FEE91BC2D7B7"
+  },
+  "irreducible_physical_theory_decision_surface": {
+    "FULL_BHSM_COMPLETE": false,
+    "choice_made_here": false,
+    "coefficient_free_retained_routes_remaining": 0,
+    "decision_classes": [
+      {
+        "decision": "DERIVE_A_NEW_AE4_BOUNDARY_OR_COLLAR_ACTION_FROM_A_MORE_MICROSCOPIC_PARENT",
+        "requirement": "fixed_nonarbitrary_common_Lorentzian_gauge_coefficient"
+      },
+      {
+        "decision": "DERIVE_A_NONREFLECTION_PHYSICAL_EXTERIOR_OR_INDEPENDENT_BOUNDARY_FIELD_DOMAIN",
+        "requirement": "action_selected_domain_and_full_interface_variation"
+      },
+      {
+        "consequence": "no_physical_local_Maxwell_photon_sector_from_this_parent_trace",
+        "decision": "RETAIN_AE3_ACTION_AND_DOMAIN"
+      }
+    ],
+    "physical_photon_derived": false,
+    "retained_action_and_domain_outcome": "NO_LOCAL_LORENTZIAN_MAXWELL_RESIDUE"
+  },
+  "operator_domain_transport": {
+    "BRST_gauge_fixing_and_ghost_complex_preserved": true,
+    "coexact_level_preserved": true,
+    "constraint_block_preserved": true,
+    "continuous_frequency_preserved": true,
+    "full_regular_domain_transport_derived": true,
+    "interface_Dirichlet_trace_preserved": true,
+    "operator_identity": "N_exterior(omega,k)=U_reset*N_inside(omega,k)*U_reset_star",
+    "regular_pole_condition_exchanged_by_reflection": true,
+    "reset_is_unitary_on_the_retained_internal_fiber": true,
+    "same_parent_operator": "AE3_WEIGHTED_MAXWELL_PLUS_BRST_GAUGE_GHOST_BLOCK",
+    "scalar_coexact_identity_after_reset": "U_reset_star*N_exterior*U_reset=N_inside",
+    "surface_contact_term": null,
+    "temporal_electric_weight_preserved": true,
+    "transverse_spatial_weight_preserved": true
+  },
+  "reflection": {
+    "exact_identities": {
+      "half_cap_coordinate": "rho_inside=2*chi; rho_exterior=pi-2*chi; sin(rho_exterior)=sin(rho_inside)",
+      "localization": "Lambda(-sigma)=Lambda(sigma)=1-4*sigma^2",
+      "material": "sigma(pi/2-chi)=-sigma(chi)",
+      "round_radius": "sin(pi/2-chi)*cos(pi/2-chi)=sin(chi)*cos(chi)"
+    },
+    "inside": "sigma<0",
+    "interface_coordinate": 0.7853981633974483,
+    "numerical_audit": {
+      "radius_symmetry_residual": 1.942890293094024e-16,
+      "samples": 4097,
+      "sigma_antisymmetry_residual": 2.220446049250313e-16,
+      "weight_symmetry_residual": 6.661338147750939e-16
+    },
+    "numerical_audit_passed": true,
+    "outside": "sigma>0",
+    "proof_kind": "EXACT_TRIGONOMETRIC_IDENTITIES_WITH_NUMERICAL_AUDIT",
+    "reflection_isometry_exact": true
+  },
+  "two_sided_residue": {
+    "N_exterior_zero": 1.679557832021269,
+    "N_inside_zero": 1.679557832021269,
+    "N_total_zero": 3.359115664042538,
+    "Zt_over_Zs_inside": 0.5906096016529084,
+    "Zt_over_Zs_two_sided": 0.5906096016529084,
+    "minus_dq2_N_exterior_zero": 0.24799074553077605,
+    "minus_dq2_N_inside_zero": 0.24799074553077605,
+    "minus_dq2_N_total_zero": 0.4959814910615521,
+    "one_positive_Lorentzian_residue": false,
+    "reset_conjugation_changes_scalar_coexact_residue": false,
+    "scientific_result": "RECIPROCAL_REFLECTION_DOUBLES_BOTH_RESIDUES_AND_CANNOT_REPAIR_THE_MISMATCH"
+  },
+  "validation": {
+    "AE3_valid": true,
+    "choice_not_fabricated": true,
+    "exterior_equals_inside": true,
+    "full_regular_domain_transported": true,
+    "inside_Hessian_valid": true,
+    "mismatch_remains_strict": true,
+    "no_retained_route_left": true,
+    "photon_not_promoted": true,
+    "reciprocal_reflection_exact": true,
+    "reflection_numerical_audit_passed": true,
+    "selected_route_predecessor_valid": true,
+    "two_sided_ratio_unchanged": true,
+    "zero_surface_contact_retained": true
+  },
+  "validation_passed": true
+}

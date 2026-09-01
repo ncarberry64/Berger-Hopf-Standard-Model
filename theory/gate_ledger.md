@@ -1,11 +1,31 @@
 # Gate Ledger
 
+## Current AE3 C2 two-sided Calderón reflection no-go
+
+- The reciprocal reflection `chi -> pi/2-chi` sends
+  `sigma -> -sigma` exactly and preserves both the round radius
+  `sin(chi) cos(chi)` and `Lambda=1-4 sigma^2`.
+- On the transported regular gauge/ghost domain,
+  `N_exterior=U_reset N_inside U_reset^*`; hence the interface Schur
+  complement is `N_total=2 N_inside` in each scalar coexact channel.
+- The static and continuous-frequency residues both double, leaving
+  `Z_t/Z_s=0.590609601652908`. The two-sided parent construction therefore
+  cannot repair the Lorentzian mismatch.
+- No coefficient-free retained route remains. The live boundary is a finite
+  choice among deriving a nonarbitrary microscopic AE4 boundary/collar
+  action, deriving an action-selected nonreflection exterior or independent
+  boundary-field domain, or retaining AE3 with no local Lorentzian
+  Maxwell/photon sector from this trace.
+- No choice, coefficient, residue, photon, or observable is promoted here.
+- Artifact:
+  `artifacts/action_extension/BHSM_AE3_C2_TWO_SIDED_CALDERON_REFLECTION_NO_GO.json`.
+
 ## Current AE3 C2 gauge-mismatch resolution screen
 
 - The unique coefficient-free surviving calculation route is the two-sided
   parent Calderón Schur complement at the internal `sigma=0` interface.
-- The derived inside operator must be combined with the missing actual
-  current-C2 maximal-exterior gauge/ghost Calderón operator.
+- That selected calculation has now been evaluated by reciprocal reflection;
+  it doubles both residues and fails to repair the mismatch.
 - AE3's surface contact remains exactly zero; the induced exterior DtN term
   is nonlocal parent elimination, not an added boundary action.
 - Free intrinsic Yang--Mills, conditional v14.67 Wentzell data, N3-only
