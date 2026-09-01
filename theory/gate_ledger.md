@@ -1,5 +1,23 @@
 # Gate Ledger
 
+## AE3.1 current-C2 gauge composite HS action
+
+- The positive coexact gauge current kernel admits an exact auxiliary rewrite:
+  `exp(O^dagger K_LR O)` is the Gaussian integral with bare Hessian
+  `K_LR^(-1)=G_C2^(-1)diag(5/14,5/13)` and unit LR vertices. This adds no
+  coefficient or elementary scalar.
+- Attaching the unit vertices to `I_up,I_down` realizes an action-owned odd
+  *composite* endomorphism while preserving the current-`C2` radial domain and
+  birth trace. It does not promote the missing intrinsic-Higgs endomorphism.
+- This route is owned by the regular gauge DtN kernel and does not import the
+  globally obstructed EC zero-mode elimination.
+- The auxiliary fields have no bare derivative kinetic term. The finite
+  fermion two-point residue and intrinsic--composite mixing `M_HS` remain the
+  exact blocks required before a physical Higgs direction or canonical quark
+  Yukawa can be named.
+- Artifact:
+  `artifacts/action_extension/BHSM_AE31_C2_GAUGE_COMPOSITE_HS_ACTION.json`.
+
 ## AE3.1 current-C2 LR susceptibility Hadamard factorization
 
 - The historical round-`S3` Weyl sum transports to every finite-core
