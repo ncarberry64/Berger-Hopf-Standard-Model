@@ -298,7 +298,6 @@ Executable interfaces, deterministic artifacts, geometric and variational
 derivations, reviewer guides, audits, tests, and optional runtime adapters.
 
 ## Repository Map
-
 | Path | Purpose |
 | --- | --- |
 | `src/bhsm/interface/` | Action, spectrum, amplitude, and reporting interfaces |
