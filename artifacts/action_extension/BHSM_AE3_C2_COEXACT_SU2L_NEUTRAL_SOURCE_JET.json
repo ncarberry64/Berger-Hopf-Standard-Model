@@ -1,0 +1,137 @@
+{
+  "FULL_BHSM_COMPLETE": false,
+  "MUON_MAGNETIC_MOMENT_DERIVED": false,
+  "action_version": "BHSM-AE-3.0.0",
+  "artifact": "BHSM_AE3_C2_COEXACT_SU2L_NEUTRAL_SOURCE_JET",
+  "chiral_rows": {
+    "minus": {
+      "Hermitian": true,
+      "chirality": -1,
+      "contact_summary": {
+        "maximum_absolute": 9.127752652205217e-29,
+        "maximum_real": 9.127752652205217e-29,
+        "minimum_real": -0.0
+      },
+      "segments": 1222,
+      "vertex_summary": {
+        "maximum_absolute": 1.0,
+        "maximum_real": 1.0,
+        "minimum_real": -1.0
+      }
+    },
+    "plus": {
+      "Hermitian": true,
+      "chirality": 1,
+      "contact_summary": {
+        "maximum_absolute": 9.127752652205217e-29,
+        "maximum_real": 9.127752652205217e-29,
+        "minimum_real": -0.0
+      },
+      "segments": 1222,
+      "vertex_summary": {
+        "maximum_absolute": 1.0,
+        "maximum_real": 1.0,
+        "minimum_real": -1.0
+      }
+    }
+  },
+  "claim_boundary": {
+    "CURRENT_C2_COEXACT_SU2L_J3_SOURCE_JET_DERIVED": true,
+    "CURRENT_C2_NEUTRAL_HESSIAN_NULL_DIRECTION_DERIVED": false,
+    "CURRENT_C2_NEUTRAL_SOURCE_PAIR_JY_J3_ATTACHED": true,
+    "CURRENT_C2_PHYSICAL_PHOTON_VERTEX_DERIVED": false
+  },
+  "classification": "CURRENT_C2_LOWEST_WEYL_COEXACT_SU2L_NEUTRAL_SOURCE_JET",
+  "domain": {
+    "background": "ACTUAL_RESET_GENERATED_C2_FINITE_CORE_FAMILY",
+    "far_boundary": "FRIEDRICHS_FORM_CORE_TRUNCATION_ONLY",
+    "retained_boundary": "C2_BIRTH_TRACE_NODE_0"
+  },
+  "inputs": {
+    "artifacts/BHSM_aether_hybrid_standard_model_bundle_v15_53.json": "951098D595DFD4DABBDBAB6C063A0650C491337CC3C0B3D26F5D4FD124F1FB25",
+    "artifacts/action_extension/BHSM_AE3_C2_COEXACT_HYPERCHARGE_SOURCE_JET.json": "48A583F14769BDC476A179CB247C99F0E277CC7A1C26E844BD98BDD602241600",
+    "artifacts/action_extension/BHSM_AE3_C2_LORENTZIAN_GAUGE_GHOST_FREQUENCY_HESSIAN.json": "AB0D2FBDD81BD642F866EF5B3B54C4BAF634C89F756C40D3061976B2AF84B896",
+    "artifacts/flagship_integration/BHSM_N12_C2_1222_SEGMENT_FINITE_CORE_DESCRIPTOR.json": "C7B6DB4C09D9D826A5BC9050EA558044354C177D7D4B05D5E422AC1D73B3ACC8",
+    "artifacts/flagship_integration/BHSM_N12_C2_1222_SEGMENT_FINITE_CORE_DESCRIPTOR.npz": "5E8C1E98B4B0E77B628C0B11D29A3F2110DAE665A666B4A2C3DBEB735E6F6E25",
+    "src/bhsm/interface/ae3_c2_coexact_su2l_neutral.py": "1215954D94A1D783B01C790DD996559060DFCDEC9B178C982368EE4BE7651D02"
+  },
+  "neutral_source_pair": {
+    "Q_em_structural_generator_available": true,
+    "both_sources_share_lowest_Weyl_coexact_C2_domain": true,
+    "current_C2_J3_source_attached": true,
+    "current_C2_JY_source_attached": true,
+    "fields_and_currents_rotated_to_A_Z": false,
+    "neutral_Hessian_null_direction_derived": false,
+    "physical_photon_vertex_derived": false,
+    "prediction_emitted": false
+  },
+  "representation_attachment": {
+    "family_factor": "I3",
+    "one_family_T3_square_trace": 2.0,
+    "one_family_T3_trace": 0.0,
+    "one_family_Y_T3_trace": 0.0,
+    "one_family_rows": {
+      "L_L": {
+        "T3_eigenvalues": [
+          0.5,
+          -0.5
+        ],
+        "Y": -0.5,
+        "multiplicity_each": 1
+      },
+      "Q_L": {
+        "T3_eigenvalues": [
+          0.5,
+          -0.5
+        ],
+        "Y": 0.16666666666666666,
+        "multiplicity_each": 3
+      },
+      "d_c": {
+        "T3_eigenvalues": [
+          0.0
+        ],
+        "Y": 0.3333333333333333,
+        "multiplicity_each": 3
+      },
+      "e_c": {
+        "T3_eigenvalues": [
+          0.0
+        ],
+        "Y": 1.0,
+        "multiplicity_each": 1
+      },
+      "nu_c": {
+        "T3_eigenvalues": [
+          0.0
+        ],
+        "Y": 0.0,
+        "multiplicity_each": 1
+      },
+      "u_c": {
+        "T3_eigenvalues": [
+          0.0
+        ],
+        "Y": -0.6666666666666666,
+        "multiplicity_each": 3
+      }
+    },
+    "right_singlets_are_T3_neutral": true,
+    "structural_electromagnetic_generator": "Q_em=T3+Y_BH",
+    "three_family_T3_square_trace": 6.0
+  },
+  "validation": {
+    "JY_predecessor_valid": true,
+    "T3_traceless": true,
+    "Y_T3_trace_zero": true,
+    "both_chiral_C2_jets_Hermitian": true,
+    "current_C2_descriptor_valid": true,
+    "dynamic_gauge_ghost_Hessian_valid": true,
+    "global_SM_bundle_valid": true,
+    "one_family_T3_square_trace_is_2": true,
+    "photon_not_promoted": true,
+    "same_domain_JY_J3_pair": true,
+    "three_family_T3_square_trace_is_6": true
+  },
+  "validation_passed": true
+}

@@ -1,5 +1,18 @@
 # Gate Ledger
 
+## Current AE3 C2 neutral SU(2)L source jet
+
+- The same lowest-Weyl coexact source construction as `J_Y` now attaches
+  `J_3` on both current-C2 chiral pencils.
+- One-family representation traces are `tr(T3)=0`, `tr(T3^2)=2`, and
+  `tr(Y T3)=0`; the three-family square trace is `6` with family factor `I3`.
+- `(J_Y,J_3)` now shares one current-C2 domain and the structural generator
+  `Q_em=T3+Y_BH` is retained.
+- No field/current rotation, neutral Hessian null direction, photon, or
+  observable is promoted.
+- Artifact: `artifacts/action_extension/BHSM_AE3_C2_COEXACT_SU2L_NEUTRAL_SOURCE_JET.json`.
+
+
 ## Current AE3 C2 Lorentzian gauge/ghost frequency Hessian
 
 - The owned weighted parent Maxwell term is reduced on the actual
