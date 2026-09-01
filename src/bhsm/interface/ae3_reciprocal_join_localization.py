@@ -637,14 +637,15 @@ def systems_integration_puzzle() -> dict[str, object]:
                     "current_AE3_family_blind_transport_composition",
                     "locality_intersection_C3_family_centrality_theorem",
                     "two_noncentral_structural_interface_classes",
+                    "historical_noncentral_return_provenance_audit",
                 ],
                 "derived_obstruction": (
                     "present_AE3_composition_is_I3_central_and_cannot_produce_"
                     "three_distinct_family_singular_values"
                 ),
                 "open_join": (
-                    "action_owned_family_noncentral_returned_mass_operator_via_"
-                    "C3_breaking_or_triality_changing_intertwiner"
+                    "physical_action_decision_selecting_a_same_C2_C3_breaking_"
+                    "return_or_triality_changing_intertwiner"
                 ),
                 "prediction_emitted": False,
             },

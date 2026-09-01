@@ -92,9 +92,20 @@ intertwiner whose mass eigenbasis is transported into the manifestation map.
 Neither route is selected by current evidence, and no family coefficient or
 measured mass is inserted.
 
+The retained-history provenance audit is now complete across nine candidate
+classes. It finds no action-owned, same-current-C2 operator with three
+nonfitted family values. The conditional v6.3 triality/Berger matrix, the
+twofold-degenerate v14.38 projection, the absent and coefficient-open v6.10
+junction commutant, circular coherence chains, family-blind Lambda85,
+unselected dynamic bands, underived intrinsic Wilson matrices, and the
+family-central zero-mass v15.85--87 cycle therefore cannot be attached as the
+missing return. Existing family/mode particle fibers remain valid upstream
+objects; this audit does not rebuild their spectrum.
+
 - `PRESENT_AE3_COMPOSITION_FAMILY_CENTRAL = TRUE`
 - `FAMILY_MASS_HIERARCHY_DERIVED = FALSE`
 - `CKM_PMNS_DERIVED = FALSE`
+- `RETAINED_FAMILY_NONCENTRAL_RETURN_FOUND = FALSE`
 
 The transverse-source section has also advanced onto the actual C2 finite
 core. At lowest spinor level the Berger block is exactly
@@ -178,6 +189,9 @@ and [`puzzle certificate`](../artifacts/action_extension/BHSM_AE3_C2_FULL_FIELD_
 The family decision surface is recorded in the
 [`family-hierarchy theorem`](../theory/ae3_family_hierarchy_interface.md) and
 [`machine certificate`](../artifacts/action_extension/BHSM_AE3_FAMILY_HIERARCHY_INTERFACE.json).
+Its retained-history provenance closure is recorded in the
+[`family-return audit`](../theory/ae3_family_noncentral_return_provenance_audit.md)
+and [`machine certificate`](../artifacts/action_extension/BHSM_AE3_FAMILY_NONCENTRAL_RETURN_PROVENANCE_AUDIT.json).
 The transverse hypercharge result is recorded in the
 [`current-C2 source theorem`](../theory/ae3_c2_coexact_hypercharge_source_jet.md)
 and [`source certificate`](../artifacts/action_extension/BHSM_AE3_C2_COEXACT_HYPERCHARGE_SOURCE_JET.json).
