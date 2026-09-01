@@ -1,0 +1,125 @@
+{
+  "FULL_BHSM_COMPLETE": false,
+  "action_version": "BHSM-AE-3.1.0",
+  "artifact": "BHSM_AE31_C2_UNIVERSAL_SCALAR_PROFILE_TRANSPORT",
+  "canonical_normalization_witness": {
+    "BHSM_profile_measure_numerically_evaluated": false,
+    "continuum_formula": "Phi0=[integral_B exp(-2*sigma*d_I(y,y0)^2)*dmu_Berger]^-1/2",
+    "independent_amplitude_after_canonical_normalization": false,
+    "normalization_integral": 0.4922562138466648,
+    "phi0": 1.4252938016898908,
+    "unit_norm_residual": 1.1102230246251565e-16,
+    "weighted_norm_squared": 0.9999999999999999
+  },
+  "claim_boundary": {
+    "CKM_MATRIX_DERIVED": false,
+    "CURRENT_C2_FINITE_PROJECTOR_OVERLAP_TRACE_FINITE": true,
+    "CURRENT_C2_INTRINSIC_HIGGS_INTERNAL_PROFILE_ATTACHMENT_ACTION_DERIVED": false,
+    "CURRENT_C2_PHYSICAL_QUARK_POLES_DERIVED": false,
+    "CURRENT_C2_PROFILE_SIGMA_AND_AMPLITUDE_ACTION_DERIVED": false,
+    "CURRENT_C2_UNIVERSAL_SCALAR_PROFILE_BOUNDED_MULTIPLIER_DERIVED_CONDITIONAL": true,
+    "CURRENT_C2_UNIVERSAL_SCALAR_PROFILE_PRESERVES_RADIAL_DOMAIN": true,
+    "CURRENT_C2_UP_DOWN_YUKAWA_VERTEX_RESIDUES_ACTION_DERIVED": false,
+    "FULL_BHSM_COMPLETE": false,
+    "MEASURED_QUARK_MASS_USED": false,
+    "particle_spectrum_rebuilt": false
+  },
+  "classification": "AE31_CURRENT_C2_UNIVERSAL_SCALAR_PROFILE_TRANSPORT",
+  "conjugate_channel_universality": {
+    "down_scalar": "H",
+    "equal_operator_norms_for_conjugate_profile": true,
+    "equal_up_down_projector_responses_forced": false,
+    "flavor_or_generation_dependent_sigma_allowed": false,
+    "internal_maps": "M_Htilde=epsilon*M_Phi^bar,_M_H=M_Phi",
+    "one_universal_profile": true,
+    "reason": "P_A,up/P_S,up_AND_P_A,down/P_S,down_ARE_DIFFERENT_COMPRESSIONS",
+    "up_scalar": "H_tilde=epsilon*complex_conjugate(H)"
+  },
+  "current_c2_tensor_domain_transport": {
+    "bounded_internal_multiplier_preserves_Domain_D_C2_tensor_I": true,
+    "domain_identity": "(D_C2 tensor I)(I tensor M_Phi)=(I tensor M_Phi)(D_C2 tensor I)",
+    "endpoint_boundary_condition_reselected": false,
+    "reset_generated_C2_radial_operator_unchanged": true,
+    "retained_birth_trace_unchanged": true,
+    "sample_commutator_residual": 0.0,
+    "tensor_operator": "I_C2 tensor M_Phi"
+  },
+  "exact_remaining_owner": {
+    "independent_sector_profile_widths_allowed": false,
+    "independent_yukawa_or_mass_fit_allowed": false,
+    "m_weight_required_if_full_multiplet_trace_selected": false,
+    "next_action_variation": "DELTA_S_AE31/DELTA_H_INTERNAL_AT_FIXED_CURRENT_C2_DOMAIN_TO_DERIVE_H(x)_MAPS_TO_H(x)*Phi(y)_AND_THE_RETAINED_INTERNAL_TRACE",
+    "then_evaluate": [
+      "sigma_and_Phi0_from_the_same_profile_action_and_Berger_measure",
+      "R_up_and_R_down_on_the_preserved_family_projectors",
+      "common_trace_and_field_normalization"
+    ]
+  },
+  "finite_projector_response_bound": {
+    "bound_residual": 0.0,
+    "compressed_operator_is_hilbert_schmidt": true,
+    "finite_rank_bound": "R<=min(rank(P_A),rank(P_S))*||M_Phi||_op^2",
+    "global_uncompressed_trace_class_assumed": false,
+    "parent_action_full_multiplet_trace_selected": false,
+    "response": 2.141045714075961,
+    "upper_bound": 8.0
+  },
+  "inputs": {
+    "artifacts/action_extension/BHSM_AE31_C2_QUARK_HIGGS_INCIDENCE_TRANSPORT.json": "81AC7F0250CAC2FC7F8D2B26CE22AD3E785D5E11FC188C0A50362353D8918CBB",
+    "artifacts/action_extension/BHSM_AE31_C2_QUARK_PROJECTOR_OVERLAP_BRIDGE.json": "09D583F536E4483DCD97B721E9CA729D818D1EAB35A172C0A5AD98FE95C2D8E0",
+    "src/bhsm/interface/ae31_c2_universal_scalar_profile_transport.py": "1816632316A1D08E3768604CCE18BE6336C71F355AB6402FE33C80D5AF3B2906",
+    "src/profile_normalization_hessian_closure.py": "46D18AF4A60944DBD0377E5C03E15C8C4D12CAC3F556DC1FD885618EFA258285",
+    "theory/derived_universal_higgs_topographic_profile.md": "3F6610735D6B07D62FDCA433D3B4F79D44741A7590B874630FF726BCA3D6F1E3",
+    "theory/theorem_discharge_legacy_geometric_overlap_results.json": "F5ACCF6D4E9149AA1083CB6A85DF8C06DF21826884B70A3DF8283D1FF43D02FF"
+  },
+  "provenance_and_action_gate": {
+    "Phi0_from_current_Berger_measure_evaluated": false,
+    "canonical_Z_H_formula": "integral_B|Phi|^2*dmu_Berger=1",
+    "canonical_Z_H_status": "DERIVED_CONDITIONAL_FROM_AUTHOR_PROFILE_NORMALIZATION_AXIOM",
+    "conditional_transport_is_not_action_ownership": true,
+    "historical_profile_status": "UNIVERSAL_HIGGS_TOPOGRAPHIC_PROFILE_DERIVED_CONDITIONAL",
+    "intrinsic_M4_H_to_internal_profile_attachment_action_derived": false,
+    "old_boundary_no_fit_values_used_as_quark_yukawa_inputs": false,
+    "sigma_action_derived_in_current_AE31": false
+  },
+  "universal_profile_operator_witness": {
+    "bound_residual": 0.0,
+    "bounded_for_every_finite_phi0_and_sigma_nonnegative": true,
+    "flavor_dependent_width_inserted": false,
+    "multiplication_operator": [
+      [
+        2.0,
+        0.0,
+        0.0
+      ],
+      [
+        0.0,
+        1.4632312578932836,
+        0.0
+      ],
+      [
+        0.0,
+        0.0,
+        0.5730095937203802
+      ]
+    ],
+    "operator_norm": 2.0,
+    "profile": "Phi(y)=Phi0*exp[-sigma*d_I(y,y0)^2]",
+    "supremum_bound": 2.0,
+    "values": [
+      2.0,
+      1.4632312578932836,
+      0.5730095937203802
+    ]
+  },
+  "validation": {
+    "action_ownership_and_residues_not_overclaimed": true,
+    "canonical_amplitude_formula_normalizes_sample": true,
+    "current_C2_domain_and_birth_trace_preserved": true,
+    "finite_projector_trace_requires_no_global_trace_class_claim": true,
+    "historical_universal_profile_reused": true,
+    "one_profile_does_not_force_equal_sector_response": true,
+    "profile_multiplier_is_bounded": true
+  },
+  "validation_passed": true
+}
