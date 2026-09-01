@@ -1,0 +1,189 @@
+{
+  "FULL_BHSM_COMPLETE": false,
+  "action_version": "BHSM-AE-3.1.0",
+  "artifact": "BHSM_AE31_C2_QUARK_VERTEX_CONTACT_PROJECTION",
+  "claim_boundary": {
+    "CKM_MATRIX_DERIVED": false,
+    "CURRENT_C2_PHYSICAL_QUARK_POLES_DERIVED": false,
+    "CURRENT_C2_PRODUCT_DIRAC_DESCRIPTOR_UP_DOWN_INCIDENCE_PRESENT": false,
+    "CURRENT_C2_QUARK_CHANNEL_DIRECTION_SELECTED": false,
+    "CURRENT_C2_QUARK_VERTEX_CONTACT_BLOCK_PROJECTION_STRUCTURALLY_DEFINED": true,
+    "CURRENT_C2_QUARK_VERTEX_CONTACT_COEFFICIENTS_ACTION_DERIVED": false,
+    "CURRENT_C2_UNIT_PRODUCT_DIRAC_SOURCE_SCALING_DERIVED": true,
+    "CURRENT_C2_UP_DOWN_YUKAWA_OPERATORS_ACTION_OWNED": false,
+    "FULL_BHSM_COMPLETE": false,
+    "MEASURED_QUARK_MASS_USED": false,
+    "particle_spectrum_rebuilt": false
+  },
+  "classification": "AE31_CURRENT_C2_QUARK_VERTEX_CONTACT_PROJECTION_THEOREM",
+  "descriptor_channel_incidence": {
+    "chirality_minus_present": true,
+    "chirality_plus_present": true,
+    "descriptor_can_distinguish_chirality": true,
+    "descriptor_can_distinguish_up_from_down": false,
+    "descriptor_product_Dirac_key_count": 16,
+    "down_sector_keys": [],
+    "explicit_up_down_sector_axis_present": false,
+    "source_is_dynamical_field_coordinate": false,
+    "source_kind": "UNIT_COMMUTING_REDUCED_LR_HS_PROBE",
+    "up_sector_keys": []
+  },
+  "exact_missing_incidence_map": {
+    "existing_projectors_and_family_operators_reused": true,
+    "independent_q_up_q_down_allowed": false,
+    "must_be_derived_from": "ONE_CURRENT_C2_PARENT_OR_INTRINSIC_ACTION_WITH_FIXED_TRACE_DOMAIN_AND_FIELD_NORMALIZATIONS",
+    "quark_mass_fit_allowed": false,
+    "required_contact": "D2_rho_qH=Q_spatial_tensor_sector_contact_matrix",
+    "required_linearization": "D_rho_qH=V_spatial_tensor(q_up*P_up+q_down*P_down)",
+    "required_map": "rho_qH_current_C2:(H,H_tilde)_intrinsic_to_End(Q_L_direct_sum_u_R_direct_sum_d_R)",
+    "unit_probe_may_be_declared_both_sector_coefficients": false
+  },
+  "inputs": {
+    "artifacts/action_extension/BHSM_AE31_C2_QUARK_CHANNEL_SELECTOR_DOMAIN.json": "F207902844B2A1FF3217509F796443BD0291AD935BEC097973FB17584A1326A8",
+    "artifacts/action_extension/BHSM_AE3_C2_FULL_FIELD_PUZZLE_ASSEMBLY.json": "D83FA5FC2CB31709C84AE689FC3E1CD715215826E199AF0F23E1B72344184F80",
+    "artifacts/action_extension/BHSM_AE3_C2_HS_FERMION_MIXED_VARIATION.json": "23E1741332800951F510D6D1AA5A2FB7C43B7D5F2D2AE80C67AB59F8BBB5B159",
+    "artifacts/flagship_integration/BHSM_N12_C2_1222_SEGMENT_FINITE_CORE_DESCRIPTOR.npz": "5E8C1E98B4B0E77B628C0B11D29A3F2110DAE665A666B4A2C3DBEB735E6F6E25",
+    "docs/bhsm_sector_projector_ledger_theorem.md": "A3DA519FC960D26B4FB0C2EFEF40AB43BE7B9E66823B79B1108F07DD94C2BC6B",
+    "src/bhsm/interface/ae31_c2_quark_vertex_contact_projection.py": "1D9AEC8C978562B01C4ADDD49C240A6512FA89C311DDE67499EF2DC62E56C80D"
+  },
+  "projection_nonidentifiability_theorem": {
+    "both_obey_same_projector_algebra": true,
+    "first": {
+      "G_H_candidate": [
+        [
+          1.0,
+          0.0
+        ],
+        [
+          0.0,
+          1.0
+        ]
+      ],
+      "P_down": [
+        [
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          1.0
+        ]
+      ],
+      "P_up": [
+        [
+          1.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0
+        ]
+      ],
+      "block_projection_structurally_defined": true,
+      "projected_contact_coefficients": {
+        "down_down": 1.0,
+        "up_down": 0.0,
+        "up_up": 1.0
+      },
+      "projected_vertex_coefficients": {
+        "down": 1.0,
+        "up": 1.0
+      },
+      "projector_completeness_residual": 0.0,
+      "projector_orthogonality_residual": 0.0,
+      "q_up_q_down_action_derived": false,
+      "representation_identity": [
+        [
+          1.0,
+          0.0
+        ],
+        [
+          0.0,
+          1.0
+        ]
+      ]
+    },
+    "gauge_allowed_H_and_H_tilde_contractions_select_absolute_residues": false,
+    "representation_projectors_select_block_coefficients": false,
+    "representation_projectors_select_block_support": true,
+    "same_structural_projection_different_residue_ratio": true,
+    "second": {
+      "G_H_candidate": [
+        [
+          2.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.5
+        ]
+      ],
+      "P_down": [
+        [
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          1.0
+        ]
+      ],
+      "P_up": [
+        [
+          1.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0
+        ]
+      ],
+      "block_projection_structurally_defined": true,
+      "projected_contact_coefficients": {
+        "down_down": 0.25,
+        "up_down": 0.0,
+        "up_up": 4.0
+      },
+      "projected_vertex_coefficients": {
+        "down": 0.5,
+        "up": 2.0
+      },
+      "projector_completeness_residual": 0.0,
+      "projector_orthogonality_residual": 0.0,
+      "q_up_q_down_action_derived": false,
+      "representation_identity": [
+        [
+          1.0,
+          0.0
+        ],
+        [
+          0.0,
+          1.0
+        ]
+      ]
+    },
+    "sector_residue_ratio_first": 1.0,
+    "sector_residue_ratio_second": 4.0
+  },
+  "unit_probe_scaling_theorem": {
+    "action_version": "BHSM-AE-3.1.0",
+    "contact_scaling": "Q(q)=q^2*Q(1)",
+    "contact_scaling_residual": 1.7763568394002505e-15,
+    "q_selected_by_unit_probe_derivation": false,
+    "scaling_verified": true,
+    "source_deformation": "delta_W=q*p",
+    "test_scale": 2.3333333333333335,
+    "vertex_scaling": "V(q)=q*V(1)",
+    "vertex_scaling_residual": 4.440892098500626e-16
+  },
+  "validation": {
+    "descriptor_has_chirality_but_no_up_down_axis": true,
+    "existing_HS_piece_is_unit_family_central_probe": true,
+    "missing_map_reuses_assets_without_free_coefficients": true,
+    "no_vertex_coefficient_selector_pole_or_completion_overclaim": true,
+    "projectors_split_support_not_coefficients": true,
+    "selector_domain_first_missing_vertices_reused": true,
+    "unit_probe_scaling_exact": true
+  },
+  "validation_passed": true
+}
