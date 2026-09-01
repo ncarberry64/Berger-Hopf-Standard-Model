@@ -13,12 +13,48 @@ export type Exhibit = {
   matters: string;
   status: 'implemented' | 'provisional' | 'gated';
   statusLabel: string;
+  facts?: { label: string; value: string }[];
   links: { label: string; href: string }[];
 };
 
 export const exhibits: Exhibit[] = [
   {
     number: '01',
+    title: 'CMS Open Data in motion',
+    subtitle: '100,000 dimuon events · precision-gated coordinate validation',
+    animated: 'pr98_cms_engine_validation_continuous.gif',
+    still: 'pr98_cms_engine_validation.png',
+    alt: 'Real CMS dimuon four-vectors continuously morph from an input momentum projection into a boundary-safe angular chart beside the validated workload and precision metrics.',
+    seen: 'A deterministic sample of 128 real muon four-vectors moves between coordinate charts. The source record contains 100,000 two-muon events from 2010 CMS open data.',
+    matters:
+      'PR #98 validated the BHSM Engine coordinate path on 200,000 unique four-vectors and a two-million-vector timed workload while preserving a scale-aware backward error below 2.4 machine epsilon.',
+    status: 'implemented',
+    statusLabel: 'Real-data engine validation',
+    facts: [
+      { label: 'CMS events', value: '100,000' },
+      { label: 'Four-vectors', value: '200,000' },
+      { label: 'Timed workload', value: '2,000,000' },
+      { label: 'Control speedup', value: '3.225×' },
+      { label: 'Maximum delta', value: '5.821×10⁻¹¹' },
+      { label: 'License', value: 'CC0' },
+    ],
+    links: [
+      {
+        label: 'CMS Open Data Record 303',
+        href: 'https://opendata.cern.ch/record/303',
+      },
+      {
+        label: 'Animation data and method',
+        href: `${SCIENCE}/docs/pr98_cms_open_data_animation.md`,
+      },
+      {
+        label: 'Pinned source manifest',
+        href: `${SCIENCE}/data/manifests/cms_open_data_dimuon_2010.json`,
+      },
+    ],
+  },
+  {
+    number: '02',
     title: 'From action to calculation',
     subtitle: 'The shared mathematical source',
     animated: 'bhsm_geometry_to_prediction_animated.gif',
@@ -45,7 +81,7 @@ export const exhibits: Exhibit[] = [
     ],
   },
   {
-    number: '02',
+    number: '03',
     title: 'The observable pipeline',
     subtitle: 'Poles, residues, vertices, and LSZ',
     animated: 'bhsm_universal_predictive_engine_animated.gif',
@@ -72,7 +108,7 @@ export const exhibits: Exhibit[] = [
     ],
   },
   {
-    number: '03',
+    number: '04',
     title: 'Spectral forecast',
     subtitle: 'Allowed bands and null windows',
     animated: 'bhsm_spectral_forecast_animated.gif',
@@ -99,7 +135,7 @@ export const exhibits: Exhibit[] = [
     ],
   },
   {
-    number: '04',
+    number: '05',
     title: 'Magnetic-moment projection',
     subtitle: 'Resolving F₁ and F₂',
     animated: 'bhsm_muon_g2_pipeline_animated.gif',
@@ -126,7 +162,7 @@ export const exhibits: Exhibit[] = [
     ],
   },
   {
-    number: '05',
+    number: '06',
     title: 'Collision readout',
     subtitle: 'Incoming states to final states',
     animated: 'bhsm_collision_predictor_animated.gif',
@@ -153,7 +189,7 @@ export const exhibits: Exhibit[] = [
     ],
   },
   {
-    number: '06',
+    number: '07',
     title: 'Decay and stability',
     subtitle: 'Allowed, forbidden, closed, unresolved',
     animated: 'bhsm_decay_stability_engine_animated.gif',
@@ -180,7 +216,7 @@ export const exhibits: Exhibit[] = [
     ],
   },
   {
-    number: '07',
+    number: '08',
     title: 'The no-fit firewall',
     subtitle: 'Prediction authority and provenance',
     animated: 'bhsm_no_fit_firewall_animated.gif',
@@ -204,7 +240,7 @@ export const exhibits: Exhibit[] = [
     ],
   },
   {
-    number: '08',
+    number: '09',
     title: 'The physical identification bridge',
     subtitle: 'Frozen BHSM state to local enclosure and SM manifestation',
     animated: 'bhsm_physical_identification_bridge_animated.gif',

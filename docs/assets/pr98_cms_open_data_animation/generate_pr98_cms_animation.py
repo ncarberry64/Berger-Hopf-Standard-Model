@@ -182,11 +182,11 @@ def draw_continuous_scene(
 ) -> Image.Image:
     image, draw = base_frame(
         "BHSM Engine on real CMS Open Data",
-        "Continuous morph of 128 collision-derived muon four-vectors from input projection to boundary-safe angular chart",
+        "128 CMS dimuon four-vectors morph from (px, pz) into the boundary-safe (phi, eta) chart",
     )
     box = (70, 116, 610, 404)
     draw.rounded_rectangle(box, radius=8, fill="white", outline=COLORS["grid"], width=2)
-    draw.text((92, 131), "real PR #98 display sample: px/pz projection -> (phi, eta) chart", fill=COLORS["ink"], font=font(15, True))
+    draw.text((92, 131), "PR #98 sample · (px, pz) → (phi, eta)", fill=COLORS["ink"], font=font(15, True))
     for fraction in (0.25, 0.5, 0.75):
         x = box[0] + 20 + fraction * (box[2] - box[0] - 40)
         y = box[1] + 42 + fraction * (box[3] - box[1] - 62)
@@ -271,6 +271,7 @@ def main() -> int:
     (HERE / "pr98_cms_sample_manifest.json").write_text(json.dumps(manifest(), indent=2) + "\n", encoding="utf-8")
     (HERE / "pr98_cms_four_vector_sample.json").write_text(json.dumps(sample, indent=2) + "\n", encoding="utf-8")
     frames = render_frames(sample)
+    frames[0].save(HERE / "pr98_cms_engine_validation.png")
     frames[0].save(
         HERE / "pr98_cms_engine_validation_continuous.gif",
         save_all=True,

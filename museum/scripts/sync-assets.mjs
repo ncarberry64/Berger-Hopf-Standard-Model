@@ -4,6 +4,7 @@ import { fileURLToPath } from 'node:url';
 
 const museumRoot = resolve(dirname(fileURLToPath(import.meta.url)), '..');
 const sourceRoot = resolve(museumRoot, '..', 'docs', 'assets');
+const cmsSourceRoot = join(sourceRoot, 'pr98_cms_open_data_animation');
 const publicRoot = resolve(museumRoot, 'public');
 const targetRoot = resolve(publicRoot, 'exhibits');
 
@@ -40,9 +41,20 @@ for (const name of names) {
   await cp(join(sourceRoot, name), join(targetRoot, name));
 }
 
+const cmsNames = [
+  'pr98_cms_engine_validation.png',
+  'pr98_cms_engine_validation.svg',
+  'pr98_cms_engine_validation_continuous.gif',
+];
+for (const name of cmsNames) {
+  await cp(join(cmsSourceRoot, name), join(targetRoot, name));
+}
+
 await cp(
-  join(sourceRoot, 'bhsm_geometry_to_prediction.png'),
+  join(cmsSourceRoot, 'pr98_cms_engine_validation.png'),
   join(publicRoot, 'og.png'),
 );
 
-console.log(`Synced ${names.length} provenance-tracked museum assets.`);
+console.log(
+  `Synced ${names.length + cmsNames.length} provenance-tracked museum assets.`,
+);

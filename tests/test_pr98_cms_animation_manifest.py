@@ -26,7 +26,11 @@ def test_pr98_animation_manifest_and_sample_are_pinned_and_compact():
     assert len(sample["vectors"]) == 128
     assert (ASSETS / "pr98_cms_four_vector_sample.json").stat().st_size < 100_000
     animation_path = ASSETS / "pr98_cms_engine_validation_continuous.gif"
+    still_path = ASSETS / "pr98_cms_engine_validation.png"
     assert animation_path.stat().st_size < 2_000_000
+    assert still_path.is_file()
+    with Image.open(still_path) as still:
+        assert still.size == (900, 500)
     with Image.open(animation_path) as animation:
         assert animation.n_frames >= 28
         assert animation.size == (900, 500)
