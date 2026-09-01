@@ -1,0 +1,576 @@
+{
+  "FULL_BHSM_COMPLETE": false,
+  "action_version": "BHSM-AE-3.1.0",
+  "artifact": "BHSM_AE31_C2_CALDERON_TRACE_SKELETON",
+  "claim_boundary": {
+    "CURRENT_C2_ACTION_SELECTED_HADAMARD_STATE_DERIVED": false,
+    "CURRENT_C2_FINITE_SCALAR_HESSIAN_DERIVED": false,
+    "CURRENT_C2_GAUGE_GHOST_SPINOR_TRACE_SPACE_ASSEMBLED": true,
+    "CURRENT_C2_LORENTZIAN_MAXWELL_RESIDUE_DERIVED": false,
+    "CURRENT_C2_NORMALIZED_PHOTON_PROPAGATOR_DERIVED": false,
+    "CURRENT_C2_PHYSICAL_GAUGE_SPINOR_GHOST_CALDERON_PROJECTOR_DERIVED": false,
+    "CURRENT_C2_RESET_CALDERON_TRACE_SKELETON_DERIVED": true,
+    "FULL_BHSM_COMPLETE": false,
+    "MUON_MAGNETIC_MOMENT_DERIVED": false,
+    "RESET_TRANSMISSION_NOT_PHYSICAL_OUTER_CALDERON_DERIVED": true,
+    "particle_spectrum_rebuilt": false
+  },
+  "classification": "CURRENT_C2_GAUGE_SPINOR_GHOST_CALDERON_TRACE_SKELETON",
+  "exact_remaining_owner": {
+    "archived_Wentzell_matrix_may_be_inserted": false,
+    "closed": [
+      "AE2_unitary_reset_graph_projectors",
+      "gauge_constraint_ghost_spinor_trace_space_direct_sum",
+      "proof_that_transmission_is_not_physical_outer_Calderon_selection",
+      "typed_shared_output_contract_for_gauge_fermion_and_scalar_sectors"
+    ],
+    "first_missing_map": "EVENT_SPECIFIC_CURRENT_C2_GAUGE_SPINOR_GHOST_OUTER_CALDERON_PROJECTOR_ON_THE_COMPLETE_GREEN_TRACE_SPACE",
+    "next_calculation": "DERIVE_ITS_GAUGE_DTN_DERIVATIVES_AND_SPINOR_POLARIZATION_FROM_THE_SAME_JOINED_EVENT_CHILD_ACTION_VARIATION",
+    "reset_graph_may_be_relabelled_physical_projector": false
+  },
+  "inputs": {
+    "artifacts/action_extension/BHSM_ACTION_AE2_GLOBAL_SPIN_RESET_ACTION.json": "4C756145A9E303F6E4F7F9536CF5639957D010C1A97AF6BE9299830C549B82DC",
+    "artifacts/action_extension/BHSM_AE31_C2_CHIRAL_GREEN_DOMAIN.json": "C7FA0821A2A21A536D119CC84986FAD8D6AD65E2517953F6120F91CA76760131",
+    "artifacts/action_extension/BHSM_AE31_C2_FIXED_HISTORY_STATE_NONUNIQUENESS.json": "A62D578BFC58C0C1EC7942DC6D4E9441B4BE38EE2C5F5B1BBB6F04C9A7A9111C",
+    "artifacts/action_extension/BHSM_AE31_C2_SCALAR_UV_HESSIAN_FACTORIZATION.json": "FA6B1C9F6E3F040C569476B97AB4C932B81FA23B848BBC104D182A1A1AD85D49",
+    "artifacts/action_extension/BHSM_AE3_C2_MAXWELL_COMMON_SHIFT_NO_GO.json": "BA85A0CF0BE3BAE0107A2FBA5E87F7F8A1D011FF7410FAAA29AE297F4AC6FC33",
+    "artifacts/action_extension/BHSM_AE3_C2_TWO_SIDED_CALDERON_REFLECTION_NO_GO.json": "1C2910DD654872972AC8FCCDC2FD716D793C02725E6C08E4F5D4C0BC1DC38721",
+    "src/bhsm/interface/ae31_c2_calderon_trace_skeleton.py": "F2203DBEB351A5BB12EF19E677A87114FF33F34032F603BFE4B651ED3542B0D4"
+  },
+  "physical_outer_Calderon_contract": {
+    "coefficient_or_state_inserted": false,
+    "current_N3_gauge_spinor_ghost_projector_present": false,
+    "current_N3_gravity_eta_scalar_boundary_block_closed": true,
+    "fermion_output": "ONE_ACTION_SELECTED_CAUCHY_COVARIANCE_C_phys",
+    "gauge_residue_condition": "delta_Z_t-delta_Z_s=Z_s_parent-Z_t_parent",
+    "one_operator_would_close_three_dependencies": true,
+    "operator": "C_phys_current_C2(omega,k;z_event)",
+    "operator_constructed_here": false,
+    "photon_output": "ONE_POSITIVE_MAXWELL_RESIDUE_IF_THE_CONDITION_HOLDS",
+    "required_delta_Zt_minus_delta_Zs": 0.40939039834709157,
+    "required_properties": [
+      "Hermitian_or_Krein_self_adjoint_on_the_complete_Green_pairing",
+      "projector_or_equivalent_Calderon_graph_relation",
+      "BRST_intertwining_of_constraint_and_ghost_blocks",
+      "compatibility_with_the_owned_AE2_reset_transmission_graph",
+      "continuous_frequency_gauge_DtN_derivatives",
+      "self_dual_CAR_positive_frequency_polarization_modulo_Hadamard_symbol",
+      "family_projector_preservation",
+      "one_common_boundary_state_for_finite_fermion_determinants"
+    ],
+    "scalar_output": "FINITE_Z_fin[C_phys,mu]_AND_H0_fin[C_phys,mu]",
+    "source_trace_space": [
+      "coexact_gauge_(Gamma0_A,Gamma1_A)",
+      "temporal_longitudinal_constraint_trace",
+      "Faddeev_Popov_ghost_trace",
+      "spinor_CAR_Cauchy_trace_tensor_C3_family"
+    ]
+  },
+  "reset_transmission_complex": {
+    "BRST_constraint_and_ghost_reset_matched": true,
+    "all_Hermitian": true,
+    "all_fix_the_reset_graph": true,
+    "all_half_rank": true,
+    "all_idempotent": true,
+    "new_boundary_parameter": false,
+    "projector_certificates": {
+      "coexact_gauge": {
+        "Hermitian_residual": 0.0,
+        "graph_fixing_residual": 0.0,
+        "half_rank": true,
+        "idempotence_residual": 0.0,
+        "one_side_dimension": 2,
+        "projector_imaginary": [
+          [
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ]
+        ],
+        "projector_real": [
+          [
+            0.5,
+            0.0,
+            0.5,
+            0.0
+          ],
+          [
+            0.0,
+            0.5,
+            0.0,
+            0.5
+          ],
+          [
+            0.5,
+            0.0,
+            0.5,
+            0.0
+          ],
+          [
+            0.0,
+            0.5,
+            0.0,
+            0.5
+          ]
+        ],
+        "rank": 2,
+        "two_sided_dimension": 4
+      },
+      "constraint_ghost": {
+        "Hermitian_residual": 0.0,
+        "graph_fixing_residual": 0.0,
+        "half_rank": true,
+        "idempotence_residual": 0.0,
+        "one_side_dimension": 2,
+        "projector_imaginary": [
+          [
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ]
+        ],
+        "projector_real": [
+          [
+            0.5,
+            0.0,
+            0.5,
+            0.0
+          ],
+          [
+            0.0,
+            0.5,
+            0.0,
+            0.5
+          ],
+          [
+            0.5,
+            0.0,
+            0.5,
+            0.0
+          ],
+          [
+            0.0,
+            0.5,
+            0.0,
+            0.5
+          ]
+        ],
+        "rank": 2,
+        "two_sided_dimension": 4
+      },
+      "spinor_tensor_family": {
+        "Hermitian_residual": 0.0,
+        "graph_fixing_residual": 0.0,
+        "half_rank": true,
+        "idempotence_residual": 0.0,
+        "one_side_dimension": 6,
+        "projector_imaginary": [
+          [
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            -0.0,
+            -0.0,
+            -0.0
+          ],
+          [
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            -0.0,
+            -0.0,
+            -0.0
+          ],
+          [
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            -0.0,
+            -0.0,
+            -0.0
+          ],
+          [
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ]
+        ],
+        "projector_real": [
+          [
+            0.5,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            -0.5,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.5,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            -0.5,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            0.5,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            -0.5
+          ],
+          [
+            0.0,
+            0.0,
+            0.0,
+            0.5,
+            0.0,
+            0.0,
+            0.5,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.5,
+            0.0,
+            0.0,
+            0.5,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.5,
+            0.0,
+            0.0,
+            0.5,
+            0.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            0.0,
+            0.5,
+            0.0,
+            0.0,
+            0.5,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.5,
+            0.0,
+            0.0,
+            0.5,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.5,
+            0.0,
+            0.0,
+            0.5,
+            0.0,
+            0.0,
+            0.0
+          ],
+          [
+            -0.5,
+            -0.0,
+            -0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.5,
+            0.0,
+            0.0
+          ],
+          [
+            -0.0,
+            -0.5,
+            -0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.5,
+            0.0
+          ],
+          [
+            -0.0,
+            -0.0,
+            -0.5,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.5
+          ]
+        ],
+        "rank": 6,
+        "two_sided_dimension": 12
+      }
+    },
+    "spinor_reset_factor": "U_spin_gauge_tensor_I3_family",
+    "trace_sector_order": [
+      "coexact_gauge",
+      "constraint_ghost",
+      "spinor_tensor_family"
+    ]
+  },
+  "transmission_is_not_outer_Calderon": {
+    "conclusion": "THE_AE2_RESET_GRAPH_CLOSES_TRANSMISSION_BUT_CANNOT_BE_RELABELLED_THE_MISSING_PHYSICAL_OUTER_CALDERON_PROJECTOR",
+    "gauge_two_sided_ratio": 0.5906096016529084,
+    "physical_outer_Calderon_role": "DYNAMIC_DIRICHLET_TO_NEUMANN_AND_SPINOR_POLARIZATION_SELECTION",
+    "reset_graph_fixes_finite_scalar_determinant": false,
+    "reset_graph_preserves_Hadamard_covariance_continuum": true,
+    "reset_graph_repairs_gauge_residue": false,
+    "reset_graph_role": "KINEMATIC_INTERNAL_TRANSMISSION_DOMAIN",
+    "reset_graph_selects_positive_frequency_covariance": false,
+    "same_object": false
+  },
+  "validation": {
+    "downstream_not_overclaimed": true,
+    "gauge_reflection_failure_reused": true,
+    "one_shared_missing_owner_typed": true,
+    "owned_reset_domain_reused": true,
+    "projector_not_fabricated": true,
+    "spinor_domain_and_nonselection_reused": true
+  },
+  "validation_passed": true
+}

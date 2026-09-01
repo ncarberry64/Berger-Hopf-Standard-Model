@@ -3947,3 +3947,21 @@ Exact next object:
   `CURRENT_C2_COMMON_COVARIANT_F2_SHIFT_NO_GO_DERIVED`.
 - The normalized photon propagator, electroweak pole rotation, and muon
   `F2(0)` remain open behind an action-owned noncommon gauge residue term.
+
+## AE3.1 current-C2 gauge--spinor--ghost Calderon trace skeleton
+
+- For each retained reset lift `U`, the exact projector
+  `(1/2)[[I,U_dagger],[U,I]]` is Hermitian, idempotent, half rank, and fixes
+  `graph(U)`. The coexact gauge, matched constraint/ghost, and
+  spinor-times-family reset trace spaces are assembled without a parameter.
+- This graph is internal transmission, not the missing physical outer
+  Calderon projector: it preserves the gauge residue mismatch, the continuum
+  of Hadamard covariances, and the open finite scalar determinant.
+- The shared missing operator acts on the complete gauge--constraint--ghost--
+  spinor Green trace space. It must supply the noncommon gauge DtN derivative,
+  one self-dual CAR polarization, and the finite scalar determinant data from
+  the same joined event/child action variation.
+- Scientific milestone:
+  `CURRENT_C2_RESET_CALDERON_TRACE_SKELETON_DERIVED`.
+- The N=3 gravity/eta scalar boundary block is closed; its gauge--spinor--ghost
+  outer projector remains the first missing systems-integration map.
