@@ -1,0 +1,94 @@
+{
+  "FULL_BHSM_COMPLETE": false,
+  "action_version": "BHSM-AE-3.1.0",
+  "artifact": "BHSM_AE31_C2_OUTER_CALDERON_ACTION_NO_GO",
+  "claim_boundary": {
+    "BHSM_ROUTE_FAILURE_NOT_GLOBAL_REFUTATION": true,
+    "CURRENT_AE31_FERMION_SMOOTH_STATE_SELECTOR_ABSENT_DERIVED": true,
+    "CURRENT_AE31_RETAINED_ACTION_OUTER_CALDERON_COMPLETION_NO_GO_DERIVED": true,
+    "CURRENT_AE3_COEFFICIENT_FREE_GAUGE_COMPLETION_ROUTES_EXHAUSTED": true,
+    "CURRENT_C2_ACTION_SELECTED_HADAMARD_STATE_DERIVED": false,
+    "CURRENT_C2_FINITE_SCALAR_HESSIAN_DERIVED": false,
+    "CURRENT_C2_LORENTZIAN_MAXWELL_RESIDUE_DERIVED": false,
+    "CURRENT_C2_NORMALIZED_PHOTON_PROPAGATOR_DERIVED": false,
+    "CURRENT_C2_PHYSICAL_GAUGE_SPINOR_GHOST_CALDERON_PROJECTOR_DERIVED": false,
+    "FULL_BHSM_COMPLETE": false,
+    "MUON_MAGNETIC_MOMENT_DERIVED": false,
+    "new_boundary_coefficient_inserted": false
+  },
+  "classification": "CURRENT_C2_RETAINED_ACTION_OUTER_CALDERON_COMPLETION_NO_GO",
+  "fermion_selector_configuration_space": {
+    "Cauchy_covariance_C_is_action_configuration_variable": false,
+    "Euler_Lagrange_equation_for_C_or_K_present": false,
+    "bulk_configuration_variable": "Psi_ON_THE_AE2_RESET_GLUED_DOMAIN",
+    "continuum_preserves_reset_and_family_data": true,
+    "continuum_shares_fixed_local_symbol": true,
+    "independent_fermion_surface_action": "S_Sigma_F_AE2=0",
+    "internal_transmission_variable": "Gamma0_child-U_R*Gamma0_event=0",
+    "nontrivial_covariance_distance_witness": 0.3625475783474792,
+    "pregeometric_core_spinor_content": "NO_CONTINUOUS_SPINOR_TRACE_OR_FLUX",
+    "reason": "C_AND_ITS_SMOOTHING_PART_ARE_QUANTUM_STATE_DATA_NOT_COORDINATES_OF_THE_RETAINED_CLASSICAL_ACTION;_THE_INTERNAL_RESET_HAS_ZERO_INDEPENDENT_FERMION_SURFACE_ACTION",
+    "retained_classical_action_selects_smooth_covariance": false,
+    "smooth_bisolution_K_is_action_configuration_variable": false,
+    "witness_is_pure_self_dual": true,
+    "witness_is_smoothing_and_Hadamard_preserving": true
+  },
+  "gauge_outer_response_exhaustion": {
+    "all_possible_global_or_microscopic_extensions_excluded": false,
+    "coefficient_free_admissible_route_count": 1,
+    "coefficient_free_route_selected_before_evaluation": "TWO_SIDED_CURRENT_C2_PARENT_CALDERON_SCHUR_COMPLEMENT",
+    "common_local_F_squared_shift_repairs_mismatch": false,
+    "required_delta_Zt_minus_delta_Zs": 0.40939039834709157,
+    "required_noncommon_equation": "delta_Z_t-delta_Z_s=Z_s_parent-Z_t_parent",
+    "retained_action_selects_one_noncommon_correction": false,
+    "retained_coefficient_free_local_and_reflected_routes_exhausted": true,
+    "selected_two_sided_route_evaluated": true,
+    "two_sided_Zt_over_Zs": 0.5906096016529084,
+    "two_sided_route_repairs_mismatch": false,
+    "zero_contact_action_may_be_replaced_by_fitted_surface_term": false
+  },
+  "inputs": {
+    "artifacts/action_extension/BHSM_ACTION_AE2_GLOBAL_SPIN_RESET_ACTION.json": "4C756145A9E303F6E4F7F9536CF5639957D010C1A97AF6BE9299830C549B82DC",
+    "artifacts/action_extension/BHSM_AE31_C2_CALDERON_PRINCIPAL_SYMBOL.json": "18E7F5BB7AD46B9E137E757462EBAF2B82E53A63FA775A595538B4394210F6B8",
+    "artifacts/action_extension/BHSM_AE31_C2_FIXED_HISTORY_STATE_NONUNIQUENESS.json": "A62D578BFC58C0C1EC7942DC6D4E9441B4BE38EE2C5F5B1BBB6F04C9A7A9111C",
+    "artifacts/action_extension/BHSM_AE3_C2_MAXWELL_COMMON_SHIFT_NO_GO.json": "BA85A0CF0BE3BAE0107A2FBA5E87F7F8A1D011FF7410FAAA29AE297F4AC6FC33",
+    "artifacts/action_extension/BHSM_AE3_C2_TWO_SIDED_CALDERON_REFLECTION_NO_GO.json": "1C2910DD654872972AC8FCCDC2FD716D793C02725E6C08E4F5D4C0BC1DC38721",
+    "src/bhsm/interface/ae31_c2_outer_calderon_action_no_go.py": "00714F7DCFF4A6564B7B46844FE3F92AFA138CF42C0FD45D15951AC4A41B0F5B"
+  },
+  "outer_Calderon_no_go_theorem": {
+    "BHSM_as_a_whole_refuted": false,
+    "combined_conclusion": "THE_RETAINED_AE3_1_ACTION_AND_CURRENT_RECIPROCAL_DOMAIN_CANNOT_SUPPLY_THE_COMPLETE_PHYSICAL_OUTER_GAUGE_SPINOR_GHOST_CALDERON_OPERATOR",
+    "fermion_conclusion": "NO_UNIQUE_SMOOTH_SELF_DUAL_CAR_COVARIANCE_IS_SELECTED",
+    "gauge_conclusion": "NO_SINGLE_POSITIVE_LORENTZIAN_MAXWELL_RESIDUE_IS_PRODUCED",
+    "hypotheses": [
+      "RETAIN_BHSM_AE3_1_BULK_ACTION_AND_AE2_INTERNAL_RESET_DOMAIN",
+      "RETAIN_ZERO_INDEPENDENT_FERMION_AND_GAUGE_CONTACT_ACTION",
+      "DO_NOT_INSERT_A_STATE_PARAMETER_COUPLING_RESIDUE_OR_CONE_RETUNING",
+      "USE_THE_RECIPROCAL_REFLECTED_CURRENT_C2_EXTERIOR_WHEN_NO_NEW_GLOBAL_DOMAIN_IS_DERIVED"
+    ],
+    "live_exit_classes": [
+      {
+        "action_version_change_logically_required": false,
+        "class": "GLOBAL_DOMAIN_COMPLETION",
+        "required_object": "ACTION_SELECTED_NONREFLECTION_MAXIMAL_EXTERIOR_OR_REALIZED_ASYMPTOTIC_OR_EUCLIDEAN_STATE_CONDITION"
+      },
+      {
+        "action_version_change_logically_required": true,
+        "class": "MICROSCOPIC_ACTION_EXTENSION",
+        "required_object": "FIXED_BOUNDARY_OR_COLLAR_FUNCTIONAL_WITH_GAUGE_BRST_AND_SELF_DUAL_CAR_VARIATION"
+      }
+    ],
+    "no_go_scope": "RETAINED_AE3_1_ACTION_PLUS_CURRENT_RECIPROCAL_DOMAIN_ONLY",
+    "one_exit_class_selected_here": false,
+    "scalar_consequence": "FINITE_STATE_DEPENDENT_SCALAR_HESSIAN_DATA_REMAIN_UNSELECTED"
+  },
+  "validation": {
+    "downstream_not_overclaimed": true,
+    "fixed_local_symbol_reused": true,
+    "gauge_no_gos_reused": true,
+    "scope_is_retained_route_only": true,
+    "state_nonuniqueness_reused": true,
+    "zero_surface_action_reused": true
+  },
+  "validation_passed": true
+}
