@@ -3965,3 +3965,24 @@ Exact next object:
   `CURRENT_C2_RESET_CALDERON_TRACE_SKELETON_DERIVED`.
 - The N=3 gravity/eta scalar boundary block is closed; its gauge--spinor--ghost
   outer projector remains the first missing systems-integration map.
+
+## AE3.1 current-C2 Calderon/Hadamard principal boundary symbol
+
+- The frozen current-`C2` family Dirac Hamiltonian satisfies
+  `H_l(k)^2=I4 tensor (|k|^2 I3+M_l^2)`, giving exact frozen positive and
+  negative energy projectors without a fitted residue.
+- Because the retained family mass endomorphism is zero order, all three
+  families share the homogeneous Hadamard/Calderon symbol
+  `P_+^(0)=(I+alpha.k/|k|)/2 tensor I3`.
+- Its self-dual CAR doubling is Hermitian, pure, half rank, obeys the CAR
+  reality relation, and intertwines a nontrivial AE2 spin reset while
+  preserving every frozen family projector.
+- The joined Maxwell--BRST characteristic symbols are opposite on the
+  coexact/ghost scalar factor, but retain `Z_t/Z_s=0.590609601652908`; the
+  principal symbol does not repair the finite residue mismatch.
+- Scientific milestone:
+  `CURRENT_C2_RESET_EQUIVARIANT_FAMILY_PRESERVING_LOCAL_SYMBOL_DERIVED`.
+- The missing outer operator is reduced to a reset-equivariant smooth
+  completion of this fixed symbol. The smooth CAR covariance and lower-order
+  outer DtN/boundary response remain unselected, so the finite scalar Hessian,
+  Lorentzian Maxwell residue, photon, and muon `F2(0)` remain open.

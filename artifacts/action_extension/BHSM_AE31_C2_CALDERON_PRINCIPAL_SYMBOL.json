@@ -1,0 +1,121 @@
+{
+  "FULL_BHSM_COMPLETE": false,
+  "action_version": "BHSM-AE-3.1.0",
+  "artifact": "BHSM_AE31_C2_CALDERON_PRINCIPAL_SYMBOL",
+  "claim_boundary": {
+    "CURRENT_C2_ACTION_SELECTED_HADAMARD_STATE_DERIVED": false,
+    "CURRENT_C2_FINITE_SCALAR_HESSIAN_DERIVED": false,
+    "CURRENT_C2_GAUGE_BRST_CHARACTERISTIC_BOUNDARY_SYMBOL_DERIVED": true,
+    "CURRENT_C2_LORENTZIAN_MAXWELL_RESIDUE_DERIVED": false,
+    "CURRENT_C2_NORMALIZED_PHOTON_PROPAGATOR_DERIVED": false,
+    "CURRENT_C2_PHYSICAL_GAUGE_SPINOR_GHOST_CALDERON_PROJECTOR_DERIVED": false,
+    "CURRENT_C2_RESET_EQUIVARIANT_FAMILY_PRESERVING_LOCAL_SYMBOL_DERIVED": true,
+    "CURRENT_C2_SPINOR_HADAMARD_CALDERON_PRINCIPAL_SYMBOL_DERIVED": true,
+    "FULL_BHSM_COMPLETE": false,
+    "MUON_MAGNETIC_MOMENT_DERIVED": false,
+    "particle_spectrum_rebuilt": false
+  },
+  "classification": "CURRENT_C2_CALDERON_HADAMARD_PRINCIPAL_BOUNDARY_SYMBOL",
+  "conditional_massive_to_principal_limit": {
+    "asymptotic_order": "O(max(m_f)/abs(k))",
+    "conditional_mass_eigenvalues_GeV": [
+      1.758930614523592,
+      0.10566682607467495,
+      0.0005229143548875549
+    ],
+    "mass_changes_homogeneous_principal_symbol": false,
+    "measured_mass_used": false,
+    "momentum_scales_GeV": [
+      17.58930614523592,
+      175.89306145235918,
+      1758.9306145235919
+    ],
+    "operator_norm_differences": [
+      0.04981370188015975,
+      0.004999812512108442,
+      0.0004999998125001354
+    ],
+    "strictly_decreasing": true
+  },
+  "gauge_BRST_characteristic_symbol_certificate": {
+    "BRST_characteristic_matching_residual": 0.0,
+    "Z_s_normalized": 1.0,
+    "Z_t_normalized": 0.5906096016529084,
+    "coexact_characteristic_scalar": 3.4093903983470915,
+    "continuous_frequency": 1.0,
+    "effective_characteristic_cone": "Z_t*omega^2=Z_s*abs(k)^2",
+    "ghost_characteristic_scalar": {
+      "imaginary": 0.0,
+      "real": -3.4093903983470915
+    },
+    "one_Maxwell_metric_residue": false,
+    "principal_symbol_repairs_residue_mismatch": false,
+    "spatial_momentum": [
+      0.0,
+      0.0,
+      2.0
+    ],
+    "transverse_projector_rank": 2,
+    "transverse_projector_residual": 0.0
+  },
+  "inputs": {
+    "artifacts/action_extension/BHSM_AE31_C2_CALDERON_TRACE_SKELETON.json": "A6C5BF9EF66A80505A6DE974D7394E4BBC67271ADB9BFDFD7A5CBB18D0921020",
+    "artifacts/action_extension/BHSM_AE31_C2_RESET_HADAMARD_TRANSPORT.json": "FC72EB59F289FDC87F8068C562F841FE28DC6B3B7E0208A5AD7D7DF5FD1154AF",
+    "artifacts/action_extension/BHSM_AE3_C2_LORENTZIAN_GAUGE_GHOST_FREQUENCY_HESSIAN.json": "F302614948E5990878B2EB011A61673D0806F007FBC9EFCB7A20311519F22F64",
+    "src/bhsm/interface/ae31_c2_calderon_principal_symbol.py": "DE5552CD87B23CA3BCE1EF3D4423F7388EE7E39A2F0E314436AEB37168A0C4B5"
+  },
+  "local_boundary_symbol_theorem": {
+    "AE2_reset_intertwines_the_local_symbol": true,
+    "action_version": "BHSM-AE-3.1.0",
+    "all_admissible_Hadamard_completions_share_spinor_symbol": true,
+    "frozen_family_projectors_preserved": true,
+    "gauge_symbol": "H_coexact^(0)=(Z_s*abs(k)^2-Z_t*omega^2)*Pi_transverse",
+    "ghost_symbol": "H_FP^(0)=Z_t*omega^2-Z_s*abs(k)^2",
+    "physical_outer_projector_constructed": false,
+    "remaining_gauge_freedom": "LOWER_ORDER_OUTER_DTN_AND_BOUNDARY_OR_COLLAR_RESPONSE",
+    "remaining_spinor_freedom": "SMOOTH_SELF_DUAL_BISOLUTION_OR_EQUIVALENT_SMOOTHING_OPERATOR_K",
+    "scientific_result": "THE_MISSING_OUTER_OPERATOR_IS_REDUCED_TO_A_RESET_EQUIVARIANT_SMOOTH_COMPLETION_OF_A_FIXED_LOCAL_GAUGE_SPINOR_GHOST_SYMBOL",
+    "self_dual_symbol": "C_Had^(0)=diag(P_plus^(0),I-conjugate(P_plus^(0)))",
+    "spinor_symbol": "P_plus^(0)(k)=(I+alpha_dot_k/abs(k))/2",
+    "symbol_determines_finite_determinant": false,
+    "symbol_selects_one_global_state": false,
+    "symbol_supplies_required_noncommon_gauge_correction": false
+  },
+  "reset_equivariance_witness": {
+    "AE2_reset_equivariant": true,
+    "CAR_conjugation_intertwining_residual": 0.0,
+    "child_momentum": [
+      0.7651329971864766,
+      -0.25410922182486617,
+      1.1
+    ],
+    "event_momentum": [
+      0.4,
+      -0.7,
+      1.1
+    ],
+    "family_factor": "I3",
+    "family_projectors_preserved": true,
+    "principal_covariance_intertwining_residual": 1.5165928555043607e-16,
+    "rotation_angle": 0.731,
+    "spin_lift_unitarity_residual": 1.1102230246251565e-16
+  },
+  "self_dual_principal_covariance_certificate": {
+    "Hermitian_residual": 0.0,
+    "dimension": 24,
+    "purity_residual": 8.82032820935825e-19,
+    "rank": 12,
+    "self_dual_CAR_residual": 0.0
+  },
+  "validation": {
+    "BRST_characteristic_matching": true,
+    "Hadamard_transport_reused": true,
+    "mass_is_lower_order": true,
+    "reset_and_family_equivariance": true,
+    "same_gauge_Hessian_reused": true,
+    "self_dual_pure_principal_covariance": true,
+    "smooth_completion_not_fabricated": true,
+    "trace_skeleton_reused": true
+  },
+  "validation_passed": true
+}
