@@ -336,6 +336,24 @@ like `1/epsilon`; the mode is not in the reduced EC form domain and the
 contorsion infimum is not bounded below on that source. No counterterm,
 boundary condition, or mode deletion is inserted.
 
+The uneliminated first-order test closes the remaining ambiguity. With the
+actual radial measure, `A=K_G5 J Lambda A_Clifford=O(chi^6)` and the retained
+spin source is `S=J u0^2 S_Clifford=O(chi^2)`. The unique algebraic stationary
+solution is therefore `K_star=-A^-1 S=O(chi^-4)`. At stationarity the
+quadratic, linear, and total densities are respectively `+Q/2`, `-Q`, and
+`-Q/2`, all of order `chi^-2`; the divergences do not cancel. A finite choice
+such as `K=0` is nonstationary, and algebraic contorsion has no derivative
+boundary form that could repair the bulk divergence. The retained zero mode
+is therefore not in the global stationary EC action domain. This is a genuine
+parent-action route obstruction, not only a failure of Schur substitution.
+
+This does not contradict the v15.75 regular-side event-shell crossing. That
+calculation used a different event-control `epsilon` and forced a finite
+crossing before its singular shell. The present limit is the radial
+current-C2 collapse endpoint, for which no same-action gap crossing has been
+derived. V15.82's supersession of the old full `Lambda L_eta` Einstein weight
+is also preserved; only the exact v15.76 Clifford coefficient is retained.
+
 The exact Hubbard--Stratonovich transform supplies an algebraic auxiliary
 quadratic block and unit unnormalized LR vertex, but no derivative kinetic
 term. Therefore no canonical composite Yukawa residue, physical Higgs mixing
@@ -347,6 +365,10 @@ bridge variation and are not relabelled as quark Yukawa prefactors.
 - `BHSM_AE32_FIRST_ORDER_EINSTEIN_CARTAN_COMPLETION_GLOBALLY_PROMOTED = FALSE`
 - `CURRENT_C2_LOCAL_ALGEBRAIC_LR_KERNEL_DERIVED = TRUE`
 - `RETAINED_ZERO_MODE_EC_ENDPOINT_DIVERGENCE_DERIVED = TRUE`
+- `CURRENT_C2_EC_ELIMINATED_GLOBAL_ACTION_FINITE = FALSE`
+- `CURRENT_C2_UNELIMINATED_STATIONARY_EC_ACTION_FINITE = FALSE`
+- `RETAINED_AE3_ZERO_MODE_IN_GLOBAL_EC_STATIONARY_ACTION_DOMAIN = FALSE`
+- `EC_ENDPOINT_OBSTRUCTION_IS_ELIMINATION_ONLY = FALSE`
 - `CURRENT_C2_PROPAGATING_HS_KINETIC_KERNEL_DERIVED = FALSE`
 - `UP_DOWN_ACTION_YUKAWA_PREFACTORS_DERIVED = FALSE`
 

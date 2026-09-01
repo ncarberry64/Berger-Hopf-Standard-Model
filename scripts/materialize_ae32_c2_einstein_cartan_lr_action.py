@@ -22,9 +22,11 @@ from bhsm.interface.ae32_c2_einstein_cartan_lr_action import (
     charged_bridge_separation_theorem,
     claim_boundary,
     contorsion_schur_complement,
+    historical_collapse_domain_comparison,
     local_current_c2_lr_kernel,
     retained_zero_mode_endpoint_domain_test,
     scalar_lr_channel_ledger,
+    uneliminated_contorsion_endpoint_test,
 )
 
 
@@ -35,6 +37,7 @@ HS = A / "action_extension/BHSM_AE3_C2_HS_FERMION_MIXED_VARIATION.json"
 LOCALIZATION = A / "action_extension/BHSM_ACTION_AE3_RECIPROCAL_JOIN_LOCALIZATION.json"
 V1575 = A / "BHSM_aether_einstein_cartan_joint_pushforward_v15_75.json"
 V1576 = A / "BHSM_aether_cartan_shell_crossing_v15_76.json"
+V1582 = A / "BHSM_aether_invariant_sobolev_schur_pushforward_v15_82.json"
 V1605 = A / "BHSM_aether_common_gauge_hs_pushforward_v16_05.json"
 V1534 = A / "BHSM_aether_complete_child_localized_fiber_v15_34.json"
 CHARGED = A / "charged_boundary_bridge_values_v1.json"
@@ -47,6 +50,7 @@ INPUTS = (
     LOCALIZATION,
     V1575,
     V1576,
+    V1582,
     V1605,
     V1534,
     CHARGED,
@@ -67,14 +71,16 @@ def build_payload() -> dict[str, Any]:
     missing = [str(path) for path in INPUTS if not path.is_file()]
     if missing:
         raise FileNotFoundError(", ".join(missing))
-    ae31, green, hs, localization, v1575, v1576, v1605, v1534, charged, stiffness = map(
-        _load, INPUTS[:10]
+    ae31, green, hs, localization, v1575, v1576, v1582, v1605, v1534, charged, stiffness = map(
+        _load, INPUTS[:11]
     )
     completion = action_completion_contract()
     schur = contorsion_schur_complement()
     sample = local_current_c2_lr_kernel(np.asarray((-0.49, -0.25, 0.0, 0.25, 0.49)))
     channels = scalar_lr_channel_ledger()
     endpoint = retained_zero_mode_endpoint_domain_test()
+    first_order_endpoint = uneliminated_contorsion_endpoint_test()
+    historical_domain = historical_collapse_domain_comparison()
     auxiliary = algebraic_hubbard_stratonovich_block()
     separation = charged_bridge_separation_theorem()
     boundary = claim_boundary()
@@ -101,7 +107,11 @@ def build_payload() -> dict[str, Any]:
         ),
         "all_24_historical_channel_pairings_attached": (
             channels["total_pairing_multiplicity"]
-            == sum(v1605["common_M5_to_M4_pushforward"]["trace_ledger"]["HS_pairing_multiplicities"].values())
+            == sum(
+                v1605["common_M5_to_M4_pushforward"]["trace_ledger"][
+                    "HS_pairing_multiplicities"
+                ].values()
+            )
             == 24
         ),
         "round_join_zero_mode_provenance_recovered": (
@@ -113,6 +123,25 @@ def build_payload() -> dict[str, Any]:
             not endpoint["EC_quartic_form_finite"]
             and not endpoint["retained_zero_mode_in_reduced_EC_form_domain"]
             and endpoint["last_scaled_residual"] < 5.0e-5
+        ),
+        "uneliminated_stationary_action_has_same_domain_obstruction": (
+            not first_order_endpoint[
+                "finite_action_stationary_endpoint_extension_exists"
+            ]
+            and not first_order_endpoint["divergences_cancel_in_total_action"]
+            and first_order_endpoint["classification"]
+            == "GENUINE_PARENT_ACTION_STATIONARY_DOMAIN_OBSTRUCTION"
+        ),
+        "historical_event_crossing_not_conflated_with_C2_collapse_domain": (
+            v1575["forced_joint_crossing"]["crossing_exists"]
+            and not historical_domain["v15_75_singular_shell_evaluated"]
+            and not historical_domain["limits_are_the_same_domain_statement"]
+        ),
+        "v15_82_weighting_supersession_preserved": (
+            not v1582["supersession"]["v15_75_EH_weight_W_retained"]
+            and not historical_domain[
+                "v15_75_full_event_weighted_Einstein_term_retained"
+            ]
         ),
         "current_reduced_vertex_preexisted_but_HS_kernel_was_open": (
             hs["claim_boundary"]["current_C2_third_LR_HS_vertex_retained"]
@@ -144,6 +173,8 @@ def build_payload() -> dict[str, Any]:
         "local_current_C2_LR_kernel_sample": sample,
         "scalar_LR_channel_ledger": channels,
         "retained_zero_mode_endpoint_domain_test": endpoint,
+        "uneliminated_contorsion_endpoint_test": first_order_endpoint,
+        "historical_collapse_domain_comparison": historical_domain,
         "algebraic_Hubbard_Stratonovich_block": auxiliary,
         "charged_bridge_separation_theorem": separation,
         "claim_boundary": boundary,
