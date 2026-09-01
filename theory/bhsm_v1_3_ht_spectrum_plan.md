@@ -1,0 +1,785 @@
+# BHSM v1.3 H_T Spectrum Plan
+
+Branch: `bhsm-v1.3-ht-spectrum`
+
+Objective: attack the largest remaining Standard-Model-equivalence blocker:
+the full twisted Dirac / `H_T` spectrum.
+
+This plan does not change frozen v1.0/v1.1 predictions, constants, tolerances,
+mode ledgers, or branch outputs.
+
+## Current H_T Status
+
+The current repository contains a finite-basis and lower-bound program for the
+topographic stability operator `H_T`. The no-extra-light-state theorem remains
+open.
+
+Current status to preserve:
+
+- Level 2 finite-basis `H_T` proxy exists.
+- Spectral lower-bound scaffold exists.
+- Basis-convergence audit exists.
+- Formal sufficient theorem scaffold exists.
+- `theorem_complete` remains `False`.
+
+## Existing Proxy / Scaffold Modules
+
+Relevant modules already present:
+
+- `src/twisted_dirac.py`
+- `src/ht_operator.py`
+- `src/spectral_gap.py`
+- `src/spectral_bounds.py`
+- `src/positivity.py`
+- `src/theorem_scaffold.py`
+- `src/scalar_decoupling.py`
+
+Relevant notebooks and reports:
+
+- `notebooks/06_twisted_dirac_ht_spectrum.ipynb`
+- `notebooks/09_twisted_dirac_level2_operator.ipynb`
+- `notebooks/10_spectral_lower_bound_program.ipynb`
+- `notebooks/11_basis_convergence_ht_bound.ipynb`
+- `theory/ht_no_extra_light_theorem_scaffold.md`
+- `theory/proof_gap_report.md`
+
+## Required Mathematical Target
+
+The main spectral target is:
+
+```text
+H_T|_{H_perp} >= (4 pi^2 v)^2
+```
+
+Equivalently, in the dimensionless Hopf-gap normalization already used in the
+repository:
+
+```text
+H_T|_{H_perp} >= mu_H = 64 pi^5
+```
+
+## Required Zero-Mode Target
+
+The protected-family target is:
+
+```text
+dim ker D_twist = 3
+```
+
+The complement `H_perp` must exclude exactly these protected chiral zero modes
+and must not contain additional light mirror or scalar/topographic states.
+
+## Near-Term Goals
+
+1. Derive a Berger twisted Dirac eigenvalue formula or rigorous lower bound.
+2. Separate protected zero modes from the complement without relying only on
+   finite-basis projection.
+3. Prove or bound the first complement eigenvalue of the twisted Dirac square.
+4. Integrate the positive-semidefinite curvature/profile condition:
+
+```text
+V_profile|_{H_perp} >= 0
+```
+
+5. Compare the analytic or semi-analytic lower bound to the current Level 2
+   finite-basis result.
+6. Keep all failures explicit and preserve `theorem_complete=False` until the
+   full assumptions are proven.
+
+## Non-Goals
+
+- No retuning of `a`, `S`, mode ledgers, tolerances, `Z_virt`, or frozen
+  predictions.
+- No changes to `BHSM_BARE_V1` or `BHSM_DRESSED_V1_CANDIDATE`.
+- No claim that the `H_T` theorem is complete unless the full analytic or
+  sufficient spectral proof is implemented.
+- No replacement of the v1.1 public release package.
+
+## First Technical Task
+
+Start with a representation-aware symbolic/analytic inventory of the Level 2
+twisted Dirac matrix terms:
+
+- diagonal Berger/spin-connection contribution;
+- Hopf twist contribution;
+- boundary/chirality contribution;
+- sector-coupling terms;
+- protected zero-mode projection;
+- PSD profile contribution.
+
+Then classify which terms admit direct analytic lower bounds and which still
+depend on finite-basis estimates.
+
+## v1.3A Term Inventory Status
+
+Status: `IMPLEMENTED`
+
+BHSM v1.3A inventories and classifies the Level 2 `H_T` operator terms for
+analytic-bound development. It does not prove the full no-extra-light-state
+theorem, and `theorem_complete` remains `False`.
+
+Generated reports:
+
+- `theory/ht_level2_term_inventory.md`
+- `theory/ht_level2_term_inventory.json`
+- `theory/ht_bound_classification_report.md`
+- `theory/ht_bound_classification_report.json`
+- `manuscript/v1_3a_ht_term_inventory_note.md`
+- `notebooks/23_ht_term_inventory.ipynb`
+
+Current classifications:
+
+- `berger_dirac_kinetic`: `DIAGONAL_EXACT`
+- `hopf_twist`: `SIGN_INDEFINITE_BOUNDED`
+- `boundary_term`: `SIGN_INDEFINITE_BOUNDED`
+- `chirality_term`: `SIGN_INDEFINITE_BOUNDED`
+- `sector_coupling`: `OFF_DIAGONAL_BOUNDED`
+- `heat_lift`: `PSD_EXACT`
+- `psd_profile`: `PSD_EXACT`
+- `zero_complement_projector`: `FINITE_BASIS_ONLY`
+
+The weakest analytic block is `zero_complement_projector`, because the full
+action-level statement `dim ker D_twist = 3` and the infinite-dimensional
+complement decomposition remain open. The weakest matrix term is
+`sector_coupling`, whose current control is finite-basis Gershgorin / min-max
+rather than an infinite-basis operator-norm bound.
+
+## v1.3B Sector-Coupling Bound Status
+
+Status: `IMPLEMENTED`
+
+BHSM v1.3B isolates the Level 2 sector-coupling perturbation:
+
+```text
+K_sector = D_full^dagger D_full - D_0^dagger D_0
+```
+
+where `D_0` disables `sector_coupling` and
+`offdiag_boundary_coupling`. The audit computes finite spectral,
+Frobenius, row-sum, Weyl, and relative-bound estimates on the protected
+finite-basis complement.
+
+Generated reports:
+
+- `theory/sector_coupling_bound_report.md`
+- `theory/sector_coupling_bound_report.json`
+- `manuscript/v1_3b_sector_coupling_bound_note.md`
+- `notebooks/24_sector_coupling_bounds.ipynb`
+
+Baseline result:
+
+- Required Dirac lower bound: `0.8038064161349437`
+- Base complement lower bound before sector coupling: `1.4641`
+- Full complement lower bound with sector coupling: `1.463040025299567`
+- Sector-coupling spectral norm: `0.4720872031830534`
+- Weyl lower bound: `0.9920127968169465`
+- Classification: `NORM_BOUND_SUFFICIENT`
+
+Robustness result:
+
+- Cases scanned: `72`
+- All finite-basis cases pass: `True`
+- All norm bounds sufficient: `False`
+- Classification set:
+  `NORM_BOUND_SUFFICIENT`,
+  `NORM_BOUND_INSUFFICIENT_BUT_FINITE_BASIS_PASSES`
+
+This improves the sector-coupling audit but does not complete the theorem:
+some larger/perturbed finite-basis cases pass by direct spectrum while the
+conservative norm bound is insufficient. Those cases remain finite-basis
+evidence, not analytic proof.
+
+## v1.3C Structured Sector-Coupling Bound Status
+
+Status: `IMPLEMENTED`
+
+BHSM v1.3C analyzes additional structure in the Level 2 sector-coupling block.
+At the Dirac-matrix level the coupling:
+
+- connects distinct charged sectors only;
+- preserves `k`, `j`, Hopf charge `q`, and chirality;
+- vanishes on the protected zero-mode coordinate block;
+- is sparse in the finite basis;
+- is block-banded after ordering by `(k,j,chirality)`;
+- is finite-rank only at fixed `k_max`, not certified finite-rank as
+  `k_max -> infinity`.
+
+Generated reports:
+
+- `theory/structured_sector_coupling_bound.md`
+- `theory/structured_sector_coupling_bound.json`
+- `manuscript/v1_3c_structured_sector_bound_note.md`
+- `notebooks/25_structured_sector_coupling_bounds.ipynb`
+
+The structured finite-basis relative-bound diagnostic computes:
+
+```text
+a_K = ||B^{-1/2} K_sector B^{-1/2}||
+```
+
+on the protected complement. Baseline result:
+
+- `a_K`: `0.015621013485509948`
+- Structured lower bound: `1.4412292741558648`
+- Required Dirac lower bound: `0.8038064161349437`
+- Classification: `RELATIVE_BOUND_CANDIDATE`
+
+Robustness result:
+
+- Cases scanned: `84`
+- All structured finite-basis bounds sufficient: `True`
+- All finite-basis gaps pass: `True`
+- All classifications remain `RELATIVE_BOUND_CANDIDATE`
+
+This strengthens finite-basis and semi-analytic sector-coupling control, but it
+does not complete the theorem. The bound must still be made uniform in the
+infinite-basis limit and paired with a full proof of the zero-mode/complement
+decomposition.
+
+## v1.3D Uniform Relative-Bound Status
+
+Status: `IMPLEMENTED`
+
+BHSM v1.3D tests whether the structured sector-coupling relative-bound
+certificate remains stable as `k_max` increases.
+
+Generated reports:
+
+- `theory/uniform_relative_bound_report.md`
+- `theory/uniform_relative_bound_report.json`
+- `manuscript/v1_3d_uniform_relative_bound_note.md`
+- `notebooks/26_uniform_relative_bounds.ipynb`
+
+Scan definition:
+
+- `k_max = 4, 6, 8, 10, 12, 16, 20, 24, 32`
+- `a = alpha^{-1}/(12*pi^2), 1.0, 0.573`
+- baseline plus v1.3B sector-coupling perturbations
+
+Result:
+
+- Scan rows: `108`
+- Classification: `UNIFORM_BOUND_CANDIDATE`
+- All rows pass the required Dirac lower bound: `True`
+- All `b_K` values remain zero: `True`
+- Max `a_K`: `0.03095889839310559`
+- Minimum structured lower bound: `1.418773076862654`
+- Minimum finite-basis lower bound: `1.4599918132873242`
+- Maximum mode-block bandwidth: `2`
+
+Canonical-baseline trend summary:
+
+- `a_K`: stable
+- `b_K`: stable at zero
+- sparsity: increasing
+- band width: stable
+- structured lower bound: stable
+- finite-basis complement lower bound: stable
+
+The scan supports a uniform-bound candidate across tested finite truncations,
+but it does not prove the infinite-basis result. Remaining blockers are the
+finite-to-infinite upgrade, the full zero-mode/complement split, and the lack
+of a compactness or finite-rank theorem for the growing sector-coupling block.
+
+## v1.3E Hilbert-Space Domain Scaffold Status
+
+Status: `IMPLEMENTED`
+
+BHSM v1.3E converts the v1.3D finite uniform-bound evidence into a formal
+Hilbert-space/domain theorem scaffold.
+
+Generated reports:
+
+- `theory/hilbert_space_domain_scaffold.md`
+- `theory/hilbert_space_domain_scaffold.json`
+- `theory/infinite_sector_bound_scaffold.md`
+- `theory/infinite_sector_bound_scaffold.json`
+- `manuscript/v1_3e_hilbert_space_bound_note.md`
+- `notebooks/27_hilbert_space_infinite_bound.ipynb`
+
+Formal basis labels:
+
+```text
+e_{k,j,q,chi,sector}
+```
+
+with `k >= 0`, `0 <= j <= floor(k/2)`, `q = k - 2j`,
+`chi in {-1,+1}`, and `sector in {lepton, up, down}`.
+
+Theorem scaffold status:
+
+- Status: `THEOREM_SCAFFOLD`
+- Theorem complete: `False`
+- Finite evidence bridge: `UNIFORM_BOUND_CANDIDATE`
+- Conservative assumption candidate: `a_K^max = 0.04`, `b_K = 0`
+- Candidate diagonal lower bound: `d0 = 1.4641`
+- Candidate structured lower bound: `1.405536`
+- Required Dirac lower bound: `0.8038064161349437`
+- Candidate margin: `0.6017295838650562`
+
+Assumptions A1-A6:
+
+- A1: `K_sector` preserves `(k,j,q,chi)` and only mixes sectors.
+- A2: `K_sector` has uniformly bounded mode-block bandwidth.
+- A3: `K_sector` is `D0^2`-relative bounded on `H_perp` with
+  `a_K <= 0.04`, `b_K = 0`.
+- A4: `K_sector` vanishes on protected zero modes.
+- A5: the complement projection is well-defined and commutes with the relevant
+  block decomposition.
+- A6: the diagonal complement lower bound clears the relative-bound
+  requirement.
+
+Correct claim:
+
+```text
+BHSM v1.3E defines the Hilbert-space/domain assumptions under which the
+structured sector-coupling relative bound would extend beyond finite
+truncations. It does not prove the full H_T theorem until those assumptions
+and the zero-mode/complement split are derived from the complete operator.
+```
+
+Recommended v1.3F task: prove or further constrain A5 and A6: the protected
+kernel/complement projection and the diagonal complement lower bound on the
+infinite Hilbert space.
+
+## v1.3F State Ontology Status
+
+Status: `IMPLEMENTED`
+
+BHSM v1.3F adds a state ontology and particle/mode classification ledger.
+
+Generated reports:
+
+- `theory/bhsm_state_ontology.md`
+- `theory/bhsm_state_ontology.json`
+- `manuscript/v1_3f_state_ontology_note.md`
+- `notebooks/28_state_ontology.ipynb`
+
+Ontology categories:
+
+- `ON_SHELL_SM_PARTICLE`
+- `COMPOSITE_QCD_STATE`
+- `INTERNAL_BERGER_HOPF_MODE`
+- `VIRTUAL_EXCITATION`
+- `DRESSING_CONTRIBUTION`
+- `HEAVY_LIFTED_STATE`
+- `SCREENED_TOPOGRAPHIC_STATE`
+- `FORBIDDEN_EXTRA_LIGHT_STATE`
+- `OPEN_UNCLASSIFIED`
+
+Correct claim:
+
+```text
+BHSM v1.3F clarifies that internal modes and virtual dressing contributions
+are not automatically new observable particles. Extra observable light states
+remain forbidden unless identified experimentally or lifted/screened by the
+H_T/scalar-sector mechanisms.
+```
+
+This ontology layer does not change frozen predictions and does not complete
+the full `H_T` theorem.
+
+## v1.3G Zero-Mode and Complement-Split Status
+
+Status: `IMPLEMENTED`
+
+BHSM v1.3G formalizes the zero-mode/index and complement-projector scaffold
+needed for the `H_T` no-extra-light-state theorem.
+
+Generated reports:
+
+- `theory/zero_mode_index_scaffold.md`
+- `theory/zero_mode_index_scaffold.json`
+- `theory/complement_projector_report.md`
+- `theory/complement_projector_report.json`
+- `theory/index_theorem_scaffold_report.md`
+- `theory/index_theorem_scaffold_report.json`
+- `manuscript/v1_3g_zero_mode_complement_note.md`
+- `notebooks/29_zero_mode_complement_split.ipynb`
+
+Target decomposition:
+
+```text
+H = ker(D_twist) direct_sum H_perp
+```
+
+Target kernel/index:
+
+```text
+dim ker(D_twist) = 3
+Index(D_twist) = 3
+```
+
+Current scaffold result:
+
+- exactly three protected zero-mode candidates are identified;
+- finite Level 2 projectors satisfy `P0^2=P0`, `P_perp^2=P_perp`, and
+  `P0 P_perp=0`;
+- the finite sector-coupling block vanishes on the protected coordinate block;
+- the heat lift preserves zero Dirac-squared modes;
+- mirror opposite-chirality zero modes remain `OPEN`;
+- theorem_complete remains `False`.
+
+Correct claim:
+
+```text
+BHSM v1.3G formalizes the zero-mode/index and complement-projector scaffold
+needed for the H_T no-extra-light-state theorem. It does not prove the full
+index theorem unless the topological and mirror-mode assumptions are derived
+from the complete operator.
+```
+
+Recommended v1.3H task: attack the diagonal complement lower bound and mirror
+mode exclusion in the complete twisted Dirac operator, so assumptions `I1`,
+`I3`, `I5`, and the infinite-dimensional projector compatibility can be
+upgraded from scaffold/open status.
+
+## v1.3H Diagonal Complement and Mirror-Mode Status
+
+Status: `IMPLEMENTED`
+
+BHSM v1.3H audits the diagonal complement lower bound and mirror-mode
+exclusion conditions needed for the `H_T` no-extra-light-state theorem.
+
+Generated reports:
+
+- `theory/diagonal_complement_bound_report.md`
+- `theory/diagonal_complement_bound_report.json`
+- `theory/mirror_mode_exclusion_report.md`
+- `theory/mirror_mode_exclusion_report.json`
+- `theory/twisted_dirac_index_audit.md`
+- `theory/twisted_dirac_index_audit.json`
+- `manuscript/v1_3h_diagonal_mirror_note.md`
+- `notebooks/30_diagonal_complement_mirror_audit.ipynb`
+
+Current finite-scaffold result:
+
+- required Dirac lower bound: `0.8038064161349437`;
+- finite diagonal coordinate-complement lower bound: `1.4641`;
+- first complement mode: `basis_index=18`, `sector=up`, `(k,j,q,chi)=(0,0,0,-1)`;
+- diagonal finite scaffold clears the required bound;
+- mirror candidates `mirror_lepton`, `mirror_up`, and `mirror_down` are all
+  classified as `OPEN_MIRROR_RISK`;
+- scaffold index: `3`;
+- theorem_complete remains `False`.
+
+Correct claim:
+
+```text
+BHSM v1.3H audits the diagonal complement lower bound and mirror-mode
+exclusion conditions needed for the H_T no-extra-light-state theorem. It does
+not prove the full theorem unless the topological index, mirror exclusion, and
+infinite-basis complement bound are derived from the complete twisted Dirac
+operator.
+```
+
+Recommended v1.3I task: derive or rule out the `OPEN_MIRROR_RISK` candidates
+from the full chiral projector, Higgs-selected `U(1)` phase, and sector
+boundary functional, or prove the topological index theorem that excludes
+opposite-chirality kernel states.
+
+## v1.3I Mirror-Exclusion Derivation Status
+
+Status: `IMPLEMENTED`
+
+BHSM v1.3I audits whether mirror zero modes are excluded by the weak chiral
+projector, Higgs-selected `U(1)` boundary phase, and v1.2 sector boundary
+functional.
+
+Generated reports:
+
+- `theory/mirror_exclusion_derivation_report.md`
+- `theory/mirror_exclusion_derivation_report.json`
+- `manuscript/v1_3i_mirror_exclusion_note.md`
+- `notebooks/31_mirror_exclusion_derivation.ipynb`
+
+Current channel result:
+
+- `mirror_lepton`: `EXCLUDED` by `EXCLUDED_BY_CHIRAL_PROJECTOR`;
+- `mirror_up`: `EXCLUDED` by `EXCLUDED_BY_CHIRAL_PROJECTOR`;
+- `mirror_down`: `EXCLUDED` by `EXCLUDED_BY_CHIRAL_PROJECTOR`;
+- Higgs-selected `U(1)` phase channel remains `OPEN`;
+- sector boundary-functional channel remains `OPEN`;
+- scaffold index remains `3`;
+- theorem_complete remains `False`.
+
+Correct claim:
+
+```text
+BHSM v1.3I audits whether mirror zero modes are excluded by the chiral
+projector, Higgs-selected U(1) boundary phase, and v1.2 sector boundary
+functional. It does not prove the full H_T theorem unless mirror exclusion,
+the index theorem, and the infinite-basis complement bound are all closed.
+```
+
+Recommended v1.3J task: attack the remaining `OPEN_ALIGNMENT_GAP` between the
+formal sector-labeled zero-mode scaffold and the finite Level 2 coordinate
+protected block, or derive the full topological index theorem
+`Index(D_twist)=3`.
+
+## v1.3J Zero-Mode Alignment Status
+
+Status: `IMPLEMENTED`
+
+BHSM v1.3J audits the alignment between formal protected zero-mode labels and
+the finite Level 2 coordinate-protected block.
+
+Generated reports:
+
+- `theory/zero_mode_alignment_report.md`
+- `theory/zero_mode_alignment_report.json`
+- `manuscript/v1_3j_zero_mode_alignment_note.md`
+- `notebooks/32_zero_mode_alignment.ipynb`
+
+Alignment result:
+
+- exactly three formal protected labels are present;
+- exactly three finite coordinate-protected states are present;
+- `zero_mode_lepton -> coordinate 0`: `ALIGNED`;
+- `zero_mode_up -> coordinate 18`: `OPEN_ALIGNMENT_GAP`;
+- `zero_mode_down -> coordinate 36`: `OPEN_ALIGNMENT_GAP`;
+- one-to-one alignment is `False`;
+- open alignment gap remains `True`;
+- mirror exclusion remains intact;
+- theorem_complete remains `False`.
+
+Correct claim:
+
+```text
+BHSM v1.3J audits the alignment between formal protected zero-mode labels and
+the finite Level 2 coordinate-protected block. It does not prove the full H_T
+theorem unless the full operator, index theorem, and infinite-basis complement
+split are certified.
+```
+
+Recommended v1.3K task: either revise the Level 2 coordinate-protection
+construction to protect the formal sector-labeled kernel directly, or derive a
+change-of-basis/projection theorem showing why the current finite coordinate
+block represents the formal three-sector kernel.
+
+## v1.3K Sector-Labeled Kernel Status
+
+Status: `IMPLEMENTED`
+
+BHSM v1.3K audits whether the finite Level 2 protected kernel corresponds to
+the formal sector-labeled BHSM zero modes.
+
+Generated reports:
+
+- `theory/sector_labeled_kernel_report.md`
+- `theory/sector_labeled_kernel_report.json`
+- `theory/protected_kernel_audit.md`
+- `theory/protected_kernel_audit.json`
+- `manuscript/v1_3k_sector_labeled_kernel_note.md`
+- `notebooks/33_sector_labeled_kernel.ipynb`
+
+Result:
+
+- legacy coordinate-first protected block: `(0,1,2)`;
+- formal sector-labeled protected kernel: `(0,18,36)`;
+- formal kernel sector distribution: one lepton, one up, one down;
+- formal projector is idempotent and rank `3`;
+- formal up/down coordinates are not protected by the current Level 2 matrix;
+- sector coupling does not vanish on the formal kernel;
+- formal-projector `H_T` gap recomputation fails;
+- previous Level 2 gap does not survive the formal-projector audit;
+- classification: `FORMAL_KERNEL_NOT_PROTECTED`;
+- theorem_complete remains `False`.
+
+Correct claim:
+
+```text
+BHSM v1.3K audits whether the finite Level 2 protected kernel corresponds to
+the formal sector-labeled BHSM zero modes. If the scaffold protected coordinate
+positions rather than formal sector labels, the correction must be reported
+and the H_T gap recomputed.
+```
+
+Recommended v1.3L task: implement a corrected Level 2 operator variant whose
+protected zero block is built from formal sector-labeled coordinates
+`(0,18,36)`, then rerun the sector-coupling, lower-bound, and convergence
+audits from that corrected scaffold.
+
+## v1.3L Corrected Formal-Kernel Operator Status
+
+Status: `IMPLEMENTED`
+
+BHSM v1.3L implements `DIRAC_PROXY_LEVEL_2_FORMAL_KERNEL`, a corrected
+finite-basis Level 2 operator variant whose protected block is the formal
+sector-labeled kernel rather than the legacy coordinate-first block.
+
+Generated reports:
+
+- `theory/formal_kernel_operator_report.md`
+- `theory/formal_kernel_operator_report.json`
+- `theory/formal_kernel_ht_gap_report.md`
+- `theory/formal_kernel_ht_gap_report.json`
+- `manuscript/v1_3l_formal_kernel_operator_note.md`
+- `notebooks/34_formal_kernel_operator.ipynb`
+
+Result:
+
+- old protected coordinates: `(0,1,2)`;
+- corrected formal protected coordinates at `k_max=4`: `(0,18,36)`;
+- protected sectors: one lepton, one up, one down;
+- projector rank: `3`;
+- projector identities pass;
+- matrix symmetry passes;
+- heat lift preserves the formal kernel;
+- sector coupling vanishes on the formal kernel;
+- first complement eigenvalue: `6.8171156827281205`;
+- required Dirac lower bound: `0.8038064161349437`;
+- `H_T` gap: `19592.076941940737`;
+- margin vs `mu_H`: `6.81711568272658`;
+- status: `FORMAL_KERNEL_GAP_RESTORED`;
+- theorem_complete remains `False`.
+
+Correct claim:
+
+```text
+BHSM v1.3L corrects the Level 2 H_T scaffold to protect the formal
+sector-labeled kernel rather than the old coordinate-first block. The
+corrected formal-kernel gap is recomputed, but the full H_T theorem remains
+open until the complete operator, index theorem, and infinite-basis complement
+split are certified.
+```
+
+Recommended v1.3M task: rerun the sector-coupling, structured relative-bound,
+uniform relative-bound, and basis-convergence audits using
+`DIRAC_PROXY_LEVEL_2_FORMAL_KERNEL` as the baseline operator variant.
+
+## v1.3M Formal-Kernel Regression and Convergence Status
+
+Status: `IMPLEMENTED`
+
+BHSM v1.3M reruns the finite-basis `H_T` lower-bound, sector-coupling,
+structured relative-bound, and basis-convergence audits using the corrected
+formal sector-labeled kernel.
+
+Generated reports:
+
+- `theory/formal_kernel_regression_report.md`
+- `theory/formal_kernel_regression_report.json`
+- `theory/formal_kernel_convergence_report.md`
+- `theory/formal_kernel_convergence_report.json`
+- `manuscript/v1_3m_formal_kernel_regression_note.md`
+- `notebooks/35_formal_kernel_regression.ipynb`
+
+Result:
+
+- corrected protected coordinates: `(0,18,36)` at `k_max=4`;
+- protected sectors: one lepton, one up, one down;
+- direct finite-spectrum lower bound: `6.8171156827281205`;
+- min-max complement lower bound: `6.8171156827281205`;
+- Gershgorin lower bound: `6.721838618515489`;
+- sector-coupling structured lower bound: `6.729508865520464`;
+- convergence classification: `FORMAL_KERNEL_CONVERGENCE_SUPPORTED`;
+- convergence rows: `27`;
+- all convergence rows pass: `True`;
+- worst direct margin: `4.833981204821612`;
+- theorem_complete remains `False`.
+
+Correct claim:
+
+```text
+BHSM v1.3M reruns the H_T gap and bound audits using the corrected formal
+sector-labeled kernel. It supersedes coordinate-first Level 2 conclusions
+where those depended on the old protected block.
+```
+
+Recommended v1.3N task: move from corrected finite-basis formal-kernel
+evidence toward an action-derived formal-kernel projector or a semi-analytic
+closed-form complement lower bound for `DIRAC_PROXY_LEVEL_2_FORMAL_KERNEL`.
+
+## v1.3N Formal-Kernel Action-Origin and Semi-Analytic Bound Status
+
+Status: `IMPLEMENTED`
+
+BHSM v1.3N constrains the corrected formal-kernel projector from the BHSM
+sector/boundary/action scaffold and builds a semi-analytic complement-bound
+scaffold.
+
+Generated reports:
+
+- `theory/formal_kernel_action_origin_report.md`
+- `theory/formal_kernel_action_origin_report.json`
+- `theory/semi_analytic_complement_bound_report.md`
+- `theory/semi_analytic_complement_bound_report.json`
+- `manuscript/v1_3n_formal_kernel_action_origin_note.md`
+- `notebooks/36_formal_kernel_action_origin.ipynb`
+
+Result:
+
+- projector derivation status: `FORMAL_KERNEL_BASIS_DERIVED`;
+- sector kernel status: `FORMAL_KERNEL_BOUNDARY_DERIVED`;
+- parent-action channel: `REDUCED_FROM_PARENT_ACTION`;
+- formal coordinates at `k_max=4`: `(0,18,36)`;
+- old coordinate-first block `(0,1,2)` is not the formal kernel;
+- semi-analytic complement-bound status:
+  `SEMI_ANALYTIC_BOUND_SCAFFOLD_PASSES`;
+- first diagonal complement mode: lepton coordinate `1`,
+  `(k,j,q,chi)=(1,0,1,-1)`;
+- diagonal lower bound: `6.833527254265818`;
+- structured relative lower bound: `6.729508865520464`;
+- required lower bound: `0.8038064161349437`;
+- theorem_complete remains `False`.
+
+Correct claim:
+
+```text
+BHSM v1.3N derives or constrains the corrected formal-kernel projector from
+the BHSM sector/boundary/action scaffold and builds a semi-analytic
+complement-bound scaffold. It does not prove the full H_T theorem unless the
+complete twisted Dirac operator, index theorem, and infinite-basis complement
+bound are all certified.
+```
+
+Recommended v1.3O task: derive the formal-kernel projector and diagonal
+complement lower bound directly from a closed symbolic
+`DIRAC_PROXY_LEVEL_2_FORMAL_KERNEL` operator formula, then separate finite
+basis-ordering facts from coordinate-free subspace statements.
+
+## v1.3O Symbolic Formal-Kernel Operator Status
+
+Status: `IMPLEMENTED`
+
+BHSM v1.3O records the corrected formal-kernel scaffold as a coordinate-free
+subspace plus symbolic Level 2 operator:
+
+```text
+K_formal = span{|ell,0,0,q=0,chi=-1>, |u,0,0,q=0,chi=-1>, |d,0,0,q=0,chi=-1>}
+H_perp = K_formal^perp
+D_FK^2 = D_diag^2 + V_Hopf + V_boundary + V_chi + K_sector + P_lift^perp
+```
+
+Generated reports:
+
+- `theory/formal_kernel_symbolic_operator.md`
+- `theory/formal_kernel_symbolic_operator.json`
+- `theory/coordinate_free_subspace_report.md`
+- `theory/coordinate_free_subspace_report.json`
+- `manuscript/v1_3o_symbolic_formal_kernel_note.md`
+- `notebooks/37_symbolic_formal_kernel_operator.ipynb`
+
+Result:
+
+- coordinate-free protected subspace contains exactly one lepton, one up, and
+  one down heavy `(0,0,q=0,chi=-1)` state;
+- basis realization formula:
+  `M(k_max)=sum_{k=0}^{k_max}(floor(k/2)+1)`, `ell=0`, `u=2M`, `d=4M`;
+- at `k_max=4`, the corrected formal-kernel coordinates are `(0,18,36)`;
+- old coordinate-first block `(0,1,2)` is not the formal kernel;
+- symbolic complement-bound implication clears the finite Level 2 threshold
+  under the semi-analytic lower-bound and PSD profile assumptions;
+- theorem_complete remains `False`.
+
+Correct claim:
+
+```text
+BHSM v1.3O gives a closed symbolic formal-kernel scaffold and finite basis
+realization. It does not prove the full no-extra-light-state theorem.
+```
+
+Recommended v1.3P task: upgrade the coordinate-free scaffold by proving or
+bounding the `K_formal` complement split and sector-coupling relative bound in
+the infinite-basis domain, rather than relying on finite realization evidence.

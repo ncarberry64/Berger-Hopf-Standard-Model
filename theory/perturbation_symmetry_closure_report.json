@@ -1,0 +1,98 @@
+{
+  "all_symmetric_on_core": true,
+  "all_termwise_symmetric_on_DA0": true,
+  "limitations": [
+    "Termwise symmetry is explicit under v2.1 scaffold assumptions.",
+    "It is not upgraded to PERTURBATION_SYMMETRY_PROVEN for the complete operator."
+  ],
+  "open_obligations": [
+    "identify each symmetric scaffold term with the corresponding complete operator term on D(A0)",
+    "prove the complete sector-coupling block remains symmetric under the infinite-basis pairing rule"
+  ],
+  "status": "PERTURBATION_SYMMETRY_TERMWISE_CONDITIONAL",
+  "terms": [
+    {
+      "evidence": [
+        "relative diagonal domination by Berger action q^2 <= C lambda_diag",
+        "the q-growth comparison holds for the complete Berger twisted diagonal action"
+      ],
+      "limitations": [
+        "The comparison is explicit in the scaffold but not yet an analytic theorem for the complete operator."
+      ],
+      "status": "SYMMETRIC_ON_DA0_CONDITIONAL",
+      "symmetric_on_DA0": true,
+      "symmetric_on_finite_core": true,
+      "term_id": "V_Hopf"
+    },
+    {
+      "evidence": [
+        "linear boundary growth controlled by diagonal action",
+        "Omega_f growth remains at most linearly controlled by the complete diagonal action."
+      ],
+      "limitations": [
+        "The v1.2 action-origin functional is reduced from a symbolic parent scaffold, not the full action."
+      ],
+      "status": "SYMMETRIC_ON_DA0_CONDITIONAL",
+      "symmetric_on_DA0": true,
+      "symmetric_on_finite_core": true,
+      "term_id": "V_boundary"
+    },
+    {
+      "evidence": [
+        "bounded projector",
+        "chirality remains a bounded involutive/projector label in the complete basis"
+      ],
+      "limitations": [
+        "This does not settle mirror-mode exclusion by itself."
+      ],
+      "status": "SYMMETRIC_ON_DA0_CONDITIONAL",
+      "symmetric_on_DA0": true,
+      "symmetric_on_finite_core": true,
+      "term_id": "V_chi"
+    },
+    {
+      "evidence": [
+        "sector-coupling matrix is symmetric by paired sector block rule",
+        "The complete sector-coupling rule has the same fixed-label sparse support as the formal-kernel scaffold.",
+        "The sector-coupling weights are uniformly bounded by the stated scaffold weight.",
+        "The diagonal reference action dominates the fixed-label sector-coupling quadratic form."
+      ],
+      "limitations": [
+        "The bound is independent of k_max under the scaffold rule, but the rule is not yet derived from the complete operator.",
+        "This is not a proof of the full H_T theorem."
+      ],
+      "status": "SYMMETRIC_ON_DA0_CONDITIONAL",
+      "symmetric_on_DA0": true,
+      "symmetric_on_finite_core": true,
+      "term_id": "K_sector"
+    },
+    {
+      "evidence": [
+        "bounded formal-complement heat-lift projector",
+        "the formal complement projector has a bounded infinite-basis limit preserving D(A0)"
+      ],
+      "limitations": [
+        "Formal complement stability remains a later theorem obligation."
+      ],
+      "status": "SYMMETRIC_ON_DA0_CONDITIONAL",
+      "symmetric_on_DA0": true,
+      "symmetric_on_finite_core": true,
+      "term_id": "P_perp_lift"
+    },
+    {
+      "evidence": [
+        "positive semidefinite topographic/profile contribution",
+        "the profile contribution is nonnegative on the formal complement"
+      ],
+      "limitations": [
+        "The full scalar/topographic action proof is separate from this perturbation bridge."
+      ],
+      "status": "SYMMETRIC_ON_DA0_CONDITIONAL",
+      "symmetric_on_DA0": true,
+      "symmetric_on_finite_core": true,
+      "term_id": "PSD_profile"
+    }
+  ],
+  "theorem_complete": false,
+  "title": "BHSM v2.1 Perturbation Symmetry Closure"
+}

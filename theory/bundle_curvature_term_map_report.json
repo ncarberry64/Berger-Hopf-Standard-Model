@@ -1,0 +1,122 @@
+{
+  "all_contributions_classified_once": true,
+  "limitations": [
+    "This closes the curvature formula map, not the full H_T theorem.",
+    "Downstream projector, index/mirror, and scalar/topographic theorem dependencies remain separately audited."
+  ],
+  "open_or_missing_terms": [],
+  "r_bundle_contributors": [],
+  "rows": [
+    {
+      "classification": "CURVATURE_REPRESENTED_BY_A0",
+      "connection_piece": "[nabla_Berger,nabla_Berger]",
+      "contributes_to_r_bundle": false,
+      "contribution_id": "diagonal_curvature_contribution",
+      "limitation": "Diagonal curvature is the reference operator package.",
+      "lower_bound_requires_new_term": false,
+      "mapped_operator_term": "A0"
+    },
+    {
+      "classification": "CURVATURE_REPRESENTED_BY_V_HOPF",
+      "connection_piece": "[nabla_Hopf,nabla_Hopf]",
+      "contributes_to_r_bundle": false,
+      "contribution_id": "hopf_curvature_contribution",
+      "limitation": "Hopf twist curvature remains in the Hopf operator channel.",
+      "lower_bound_requires_new_term": false,
+      "mapped_operator_term": "V_Hopf"
+    },
+    {
+      "classification": "CURVATURE_REPRESENTED_BY_V_HOPF",
+      "connection_piece": "[nabla_U1/fiber,nabla_U1/fiber]",
+      "contributes_to_r_bundle": false,
+      "contribution_id": "fiber_curvature_contribution",
+      "limitation": "Higgs-selected U1/fiber curvature is represented by Hopf and boundary terms.",
+      "lower_bound_requires_new_term": false,
+      "mapped_operator_term": "V_Hopf + V_boundary"
+    },
+    {
+      "classification": "CURVATURE_REPRESENTED_BY_A0",
+      "connection_piece": "[nabla_base,nabla_base]",
+      "contributes_to_r_bundle": false,
+      "contribution_id": "base_curvature_contribution",
+      "limitation": "Base curvature is represented by diagonal/base and boundary bookkeeping.",
+      "lower_bound_requires_new_term": false,
+      "mapped_operator_term": "A0 + V_boundary"
+    },
+    {
+      "classification": "CURVATURE_REPRESENTED_BY_V_BOUNDARY",
+      "connection_piece": "[nabla_boundary,nabla_boundary]",
+      "contributes_to_r_bundle": false,
+      "contribution_id": "boundary_curvature_contribution",
+      "limitation": "Boundary functional curvature is represented by V_boundary.",
+      "lower_bound_requires_new_term": false,
+      "mapped_operator_term": "V_boundary"
+    },
+    {
+      "classification": "CURVATURE_REPRESENTED_BY_V_CHI",
+      "connection_piece": "[nabla_chi,nabla_chi]",
+      "contributes_to_r_bundle": false,
+      "contribution_id": "chirality_curvature_contribution",
+      "limitation": "Chirality contribution is represented by chiral projector terms.",
+      "lower_bound_requires_new_term": false,
+      "mapped_operator_term": "V_chi"
+    },
+    {
+      "classification": "CURVATURE_REPRESENTED_BY_K_SECTOR",
+      "connection_piece": "[nabla_sector,nabla_sector]",
+      "contributes_to_r_bundle": false,
+      "contribution_id": "sector_mixing_curvature_contribution",
+      "limitation": "Sector coupling is already represented and bounded in the operator package.",
+      "lower_bound_requires_new_term": false,
+      "mapped_operator_term": "K_sector"
+    },
+    {
+      "classification": "CURVATURE_REPRESENTED_BY_V_BOUNDARY",
+      "connection_piece": "[nabla_Higgs-U1,nabla_Higgs-U1]",
+      "contributes_to_r_bundle": false,
+      "contribution_id": "higgs_u1_curvature_contribution",
+      "limitation": "Higgs-U1 curvature remains in Hopf/boundary channels.",
+      "lower_bound_requires_new_term": false,
+      "mapped_operator_term": "V_Hopf + V_boundary"
+    },
+    {
+      "classification": "CURVATURE_REPRESENTED_BY_P_PERP_LIFT",
+      "connection_piece": "[nabla_lift/profile,nabla_lift/profile]",
+      "contributes_to_r_bundle": false,
+      "contribution_id": "lift_profile_curvature_contribution",
+      "limitation": "Lift/profile curvature is represented by lift and PSD profile operators.",
+      "lower_bound_requires_new_term": false,
+      "mapped_operator_term": "P_perp_lift + V_PSD"
+    },
+    {
+      "classification": "CURVATURE_SCREENED_OR_LIFTED",
+      "connection_piece": "[nabla_scalar/topographic,nabla_scalar/topographic]",
+      "contributes_to_r_bundle": false,
+      "contribution_id": "scalar_topographic_curvature_contribution",
+      "limitation": "Scalar/topographic leakage is screened or lifted by existing scaffold obligations.",
+      "lower_bound_requires_new_term": false,
+      "mapped_operator_term": "scalar/topographic screened sector"
+    },
+    {
+      "classification": "CURVATURE_REPRESENTED_BY_V_CHI",
+      "connection_piece": "[nabla_mirror,nabla_mirror]",
+      "contributes_to_r_bundle": false,
+      "contribution_id": "mirror_curvature_contribution",
+      "limitation": "Mirror curvature is represented by chiral/Higgs-U1/boundary channels; mirror theorem remains downstream.",
+      "lower_bound_requires_new_term": false,
+      "mapped_operator_term": "V_chi + Higgs-U1 + boundary channels"
+    },
+    {
+      "classification": "CURVATURE_REPRESENTED_BY_TOPOGRAPHIC_SECTOR",
+      "connection_piece": "sum_{i<j} [nabla_i,nabla_j] mixed Hopf/base/boundary/coframe",
+      "contributes_to_r_bundle": false,
+      "contribution_id": "mixed_curvature_remainder",
+      "limitation": "v2.11 forbids an independent mixed coefficient and represents mixed curvature topographically.",
+      "lower_bound_requires_new_term": false,
+      "mapped_operator_term": "V_boundary + V_PSD/profile + scalar/topographic screened sector + P_perp_lift"
+    }
+  ],
+  "status": "BUNDLE_CURVATURE_TERM_MAP_CLOSED",
+  "theorem_complete": true,
+  "title": "BHSM v2.12 Bundle Curvature Term Map Report"
+}

@@ -1,0 +1,36 @@
+{
+  "limitations": [
+    "Boundary/coframe coefficients are represented through existing BHSM topographic/profile sectors.",
+    "No prediction residual is used to choose a boundary/coframe coefficient."
+  ],
+  "missing_axiom": "",
+  "rows": [
+    {
+      "boundary_rule": "Omega_l=-q+2j=3",
+      "coefficient_status": "BOUNDARY_COFRAME_CONSTRAINED",
+      "coframe_channel": "no quark coframe triplet",
+      "conclusion": "lepton sector supplies a control case with no coframe triplet coefficient",
+      "limitation": "Control case does not introduce an independent mixed coefficient.",
+      "sector": "lepton"
+    },
+    {
+      "boundary_rule": "Omega_u=q-2j=6",
+      "coefficient_status": "BOUNDARY_COFRAME_REPRESENTED",
+      "coframe_channel": "coframe triplet participates",
+      "conclusion": "up-sector boundary/coframe cross coefficient is represented by V_PSD/profile",
+      "limitation": "Full profile positivity remains a separate H_T dependency.",
+      "sector": "up"
+    },
+    {
+      "boundary_rule": "Omega_d=q+4j=12",
+      "coefficient_status": "BOUNDARY_COFRAME_REPRESENTED",
+      "coframe_channel": "coframe triplet participates",
+      "conclusion": "down-sector boundary/coframe cross coefficient is represented by V_PSD/profile",
+      "limitation": "Full profile positivity remains a separate H_T dependency.",
+      "sector": "down"
+    }
+  ],
+  "status": "BOUNDARY_COFRAME_REPRESENTED",
+  "theorem_complete": true,
+  "title": "BHSM v2.11 Boundary/Coframe Compatibility Report"
+}

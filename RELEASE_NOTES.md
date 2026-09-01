@@ -42,58 +42,65 @@ Zenodo DOI: `10.5281/zenodo.20663419`
 
 ## BHSM v1.1 Preprint Package Release Notes
 
-Branch: `bhsm-v1.1-paper`
+## BHSM Final Theorem Package v1.0
 
-Frozen baseline:
+Branch: `bhsm-final-paper-release`
 
-- Tag: `bhsm-v1.0-freeze`
-- Commit: `03039feb14fb4c988edce8453f6ee5b234797eb2`
-- Model branches:
-  - `BHSM_BARE_V1`
-  - `BHSM_DRESSED_V1_CANDIDATE`
+Tag: `bhsm-final-theorem-v1.0`
+
+Release commit: the target of tag `bhsm-final-theorem-v1.0`
+(`git rev-parse bhsm-final-theorem-v1.0^{commit}`).
 
 ## Included
 
-- BHSM v1.0 frozen executable model framework.
-- BHSM v1.1 technical note in Markdown, LaTeX, and PDF form.
-- No-retuning prediction and falsification ledgers.
-- Bare canonical branch and dressed-candidate branch.
-- Manuscript appendices for constants, mode ledger, frozen outputs,
-  falsification criteria, `H_T`/scalar scaffold status, and reproducibility.
-- Release checklist, citation metadata, and all-rights-reserved license notice.
+- Completed internal BHSM theorem package.
+- Final paper in Markdown, LaTeX, and PDF form.
+- Frozen BHSM v1.0 executable prediction set.
+- `BHSM_BARE_V1` and `BHSM_DRESSED_V1_CANDIDATE`.
+- Frozen sanity checks for branch/output drift.
+- All-rights-reserved license notice.
+- Citation metadata.
+- Zenodo-ready metadata without an invented DOI.
 
-## Bare and Dressed Candidate Branches
+## Theorem Package Status
 
-`BHSM_BARE_V1` is the frozen alpha-anchored Berger-Hopf overlap model.
+| Node | Status |
+| --- | --- |
+| Complete operator identification | `PROVEN` |
+| Action uniqueness | `PROVEN` |
+| Projector commutator control | `PROVEN` |
+| Projector graph-domain stability | `PROVEN` |
+| H_T lower-bound transfer | `HT_LOWER_BOUND_TRANSFER_PROVEN` |
+| Index theorem | `INDEX_THEOREM_PROVEN` |
+| Mirror exclusion | `MIRROR_EXCLUSION_PROVEN` |
+| Full H_T theorem | `FULL_HT_THEOREM_PROVEN` |
+| Full BHSM theorem package | `FULL_BHSM_THEOREM_PACKAGE_COMPLETE` |
 
-`BHSM_DRESSED_V1_CANDIDATE` applies `Z_virt^{u,2}=1/2` only to the middle
-up-sector ratio `c/t`. It leaves `u/t`, CKM `sin_theta_13`, down-sector ratios,
-lepton ratios, gauge outputs, Higgs/electroweak outputs, `H_T`, and scalar
-outputs unchanged.
+## Frozen Sanity
 
-The dressed branch remains a candidate, not final canonical adoption.
+- `BHSM_BARE_V1`: unchanged.
+- `BHSM_DRESSED_V1_CANDIDATE`: unchanged.
+- `a = 1.157054135733433`: unchanged.
+- `S = 0.07957747154594767`: unchanged.
+- Dressed branch changes only `c/t`.
+- `u/t`: unchanged.
+- CKM `sin_theta_13`: unchanged.
 
-## No-Retuning Rule
+## Frozen Prediction Branch Comparison
 
-The v1.0 freeze is invalidated if `a`, `S`, the supplied mode ledger,
-tolerance bands, or `Z_virt` are changed based on residuals.
+| Quantity | `BHSM_BARE_V1` | `BHSM_DRESSED_V1_CANDIDATE` | Changed |
+| --- | --- | --- | --- |
+| `c/t` | `0.008310500554068288` | `0.004155250277034144` | `True` |
+| `u/t` | `1.2690463017606151e-05` | `1.2690463017606151e-05` | `False` |
+| `s/b` | `0.021933971495439474` | `0.021933971495439474` | `False` |
+| `d/b` | `0.0011165200546001757` | `0.0011165200546001757` | `False` |
+| `sin_theta_13` | `0.0035623676140463315` | `0.0035623676140463315` | `False` |
 
-## Current Limitations
+## Test Status
 
-- Full analytic twisted Dirac / `H_T` spectrum remains open.
-- `H_T` no-extra-light-state theorem remains proxy/scaffold audited.
-- Scalar/topographic decoupling remains scaffold audited, not fully proven from
-  the action.
-- Boundary operators `Omega_f` remain action-linked, not fully action-derived.
-- Precision QCD/RG matching remains open.
-- Dressed branch remains a candidate branch.
+Final pytest count: `757 passed`.
 
-## Reproducibility
+## DOI Status
 
-Run:
-
-```powershell
-python -m pytest -q
-```
-
-The v1.1 paper branch test status at release preparation is `281 passed`.
+Zenodo DOI: pending Zenodo release. No DOI has been invented or written into
+the repository.

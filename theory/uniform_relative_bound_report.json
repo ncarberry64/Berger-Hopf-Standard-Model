@@ -1,0 +1,90 @@
+{
+  "all_a_below_one": true,
+  "all_assumptions_proven": false,
+  "limitations": [
+    "The total relative-a upper estimate is below one, but not all infinite-basis assumptions are proven.",
+    "This report upgrades finite scans to explicit conditional theorem obligations, not to a completed proof."
+  ],
+  "status": "UNIFORM_RELATIVE_BOUND_CONDITIONAL",
+  "terms": [
+    {
+      "assumptions_proven": false,
+      "candidate_infinite_bound": "|V_Hopf psi| <= b_H ||psi|| if Hopf twist coefficient is uniformly bounded or relatively D0-bounded by q^2 <= C lambda_diag",
+      "depends_on": [
+        "q",
+        "k",
+        "j"
+      ],
+      "finite_scaffold_bound": "bounded on finite q-ranges in truncation audits",
+      "open_obligations": [
+        "prove the q^2/lambda_diag comparison for the complete Berger twisted spectrum"
+      ],
+      "proof_method": "candidate q^2/lambda_diag comparison",
+      "relative_a": 0.0,
+      "relative_b": 0.0,
+      "status": "UNIFORM_RELATIVE_BOUND_CONDITIONAL",
+      "term_id": "V_Hopf",
+      "uniform_in_kmax": true
+    },
+    {
+      "assumptions_proven": false,
+      "candidate_infinite_bound": "|V_boundary psi| <= a_B |D0 psi| + b_B ||psi|| using Omega_f growth controlled by k,j and diagonal action",
+      "depends_on": [
+        "k",
+        "j",
+        "q",
+        "sector"
+      ],
+      "finite_scaffold_bound": "bounded by sector boundary residuals in finite ledgers",
+      "open_obligations": [
+        "prove Omega_f growth is relatively bounded by the complete diagonal operator"
+      ],
+      "proof_method": "relative growth bound against diagonal action",
+      "relative_a": 0.0,
+      "relative_b": 0.0,
+      "status": "UNIFORM_RELATIVE_BOUND_CONDITIONAL",
+      "term_id": "V_boundary",
+      "uniform_in_kmax": true
+    },
+    {
+      "assumptions_proven": true,
+      "candidate_infinite_bound": "||V_chi psi|| <= b_chi ||psi|| because chirality is a two-valued bounded projector",
+      "depends_on": [
+        "chirality"
+      ],
+      "finite_scaffold_bound": "chirality projector is bounded in finite matrices",
+      "open_obligations": [],
+      "proof_method": "bounded projector",
+      "relative_a": 0.0,
+      "relative_b": 1.0,
+      "status": "UNIFORM_RELATIVE_BOUND_CANDIDATE",
+      "term_id": "V_chi",
+      "uniform_in_kmax": true
+    },
+    {
+      "assumptions_proven": false,
+      "candidate_infinite_bound": "|<psi,K_sector psi>| <= a_K <psi,D0^2 psi> with a_K < 1 if the sparse/banded coupling rule is uniform in the infinite basis",
+      "depends_on": [
+        "sector",
+        "k",
+        "j",
+        "q",
+        "chirality"
+      ],
+      "finite_scaffold_bound": "v1.7 inherits a_K = 0.015621013485509948, b_K = 0 from structured uniform scans",
+      "open_obligations": [
+        "prove sparse/banded sector-coupling rule and a_K bound in the complete infinite basis"
+      ],
+      "proof_method": "structured relative-bound candidate from sparse sector-preserving coupling",
+      "relative_a": 0.015621013485509948,
+      "relative_b": 0.0,
+      "status": "UNIFORM_RELATIVE_BOUND_CONDITIONAL",
+      "term_id": "K_sector",
+      "uniform_in_kmax": true
+    }
+  ],
+  "theorem_complete": false,
+  "title": "BHSM v1.8 Uniform Relative-Bound Theorem Attempt",
+  "total_relative_a_upper": 0.015621013485509948,
+  "total_relative_b_upper": 1.0
+}

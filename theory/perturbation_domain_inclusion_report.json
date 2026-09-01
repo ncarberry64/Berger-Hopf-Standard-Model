@@ -1,0 +1,69 @@
+{
+  "all_terms_include_DA0": false,
+  "graph_domain_status": "GRAPH_NORM_DOMAIN_PROVEN",
+  "limitations": [
+    "D(A0) is proven, but not every perturbation has proven D(A0) inclusion."
+  ],
+  "status": "PERTURBATION_DOMAIN_INCLUSION_CONDITIONAL",
+  "term_statuses": [
+    {
+      "D_A0_included": false,
+      "domain_status": "DOMAIN_CONDITIONAL",
+      "open_obligations": [
+        "prove q-growth is A0-relative bounded on D(A0)"
+      ],
+      "term_id": "V_Hopf"
+    },
+    {
+      "D_A0_included": false,
+      "domain_status": "DOMAIN_CONDITIONAL",
+      "open_obligations": [
+        "prove Omega_f growth is A0-relative bounded on D(A0)"
+      ],
+      "term_id": "V_boundary"
+    },
+    {
+      "D_A0_included": true,
+      "domain_status": "DOMAIN_INCLUDED",
+      "open_obligations": [],
+      "term_id": "V_chi"
+    },
+    {
+      "D_A0_included": false,
+      "domain_status": "DOMAIN_CONDITIONAL",
+      "open_obligations": [
+        "upgrade sparse/banded finite-scan evidence to a complete infinite-basis operator bound"
+      ],
+      "term_id": "K_sector"
+    },
+    {
+      "D_A0_included": false,
+      "domain_status": "DOMAIN_CONDITIONAL",
+      "open_obligations": [
+        "prove formal complement projector preserves D(A0)"
+      ],
+      "term_id": "P_perp_lift"
+    },
+    {
+      "D_A0_included": true,
+      "domain_status": "DOMAIN_INCLUDED",
+      "open_obligations": [],
+      "term_id": "PSD_profile"
+    }
+  ],
+  "theorem_complete": false,
+  "title": "BHSM v2.0 Perturbation Domain Inclusion Report",
+  "v2_1_update": {
+    "common_domain_status": "COMMON_DOMAIN_EQUALS_DA0_CONDITIONAL",
+    "hopf_boundary_chi_status": "HOPF_BOUNDARY_CHI_BOUNDS_CONDITIONAL",
+    "ht_dependency_status": "HT_THEOREM_CONDITIONAL_ON_COMPLEMENT",
+    "kato_rellich_status": "KATO_RELLICH_CLOSURE_CONDITIONAL",
+    "lift_projector_domain_status": "LIFT_PROJECTOR_DOMAIN_CONDITIONAL",
+    "lower_bound_status": "LOWER_BOUND_BLOCKED_BY_COMPLEMENT",
+    "note": "v2.1 supersedes the finite-scan perturbation blocker with explicit conditional infinite-basis bounds; formal complement stability remains open.",
+    "perturbation_symmetry_status": "PERTURBATION_SYMMETRY_TERMWISE_CONDITIONAL",
+    "relative_bound_status": "RELATIVE_BOUND_CONDITIONAL_WITH_EXPLICIT_ASSUMPTIONS",
+    "sector_coupling_status": "SECTOR_COUPLING_INFINITE_BOUND_CONDITIONAL",
+    "theorem_complete": false
+  }
+}

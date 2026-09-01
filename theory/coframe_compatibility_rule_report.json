@@ -1,0 +1,35 @@
+{
+  "coefficient_rule_fixed": true,
+  "limitations": [
+    "The coframe audit closes the free coefficient slot by representation, not by introducing numeric coefficients.",
+    "No empirical mass, CKM, PMNS, residual, or prediction-ledger data are used."
+  ],
+  "rows": [
+    {
+      "bhsm_input": "quark coframe triplet from the v1.2 parent-action scaffold",
+      "conclusion": "triplet participation is required for the charged-sector boundary functional",
+      "criterion": "triplet_participation",
+      "limitation": "This fixes which coframe channel participates, not a new coefficient.",
+      "status": "COFRAME_COMPATIBILITY_CONDITIONAL"
+    },
+    {
+      "bhsm_input": "replace triplet by singlet coframe participation",
+      "conclusion": "variant conflicts with the v1.2C tested-sector ledger",
+      "criterion": "singlet_variant",
+      "limitation": "Failure of a nearby variant constrains structure but does not tune predictions.",
+      "status": "COFRAME_COMPATIBILITY_FAILS"
+    },
+    {
+      "bhsm_input": "boundary/coframe cross term C_bdC",
+      "conclusion": "independent coefficient is forbidden and represented by V_PSD/profile",
+      "criterion": "mixed_connection_coefficient",
+      "limitation": "This closes the free coefficient slot; full scalar/topographic proof remains separate.",
+      "status": "COFRAME_COMPATIBILITY_FORMALIZED"
+    }
+  ],
+  "singlet_variant_fails": true,
+  "status": "COFRAME_COMPATIBILITY_FORMALIZED",
+  "theorem_complete": true,
+  "title": "BHSM v2.11 Coframe Compatibility Rule Report",
+  "triplet_required": true
+}

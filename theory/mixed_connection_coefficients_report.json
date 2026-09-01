@@ -1,0 +1,99 @@
+{
+  "all_coefficients_classified": true,
+  "coefficients": [
+    {
+      "acts_on": [
+        "A0 + V_Hopf bookkeeping only",
+        "H_perp"
+      ],
+      "coefficient_id": "hopf_fiber_base_cross",
+      "limitation": "The rule is fixed by bundle separation/topographic representation, not by residual fitting.",
+      "source_terms": [
+        "Berger metric compatibility + Hopf fibration connection compatibility",
+        "A0 + V_Hopf bookkeeping only"
+      ],
+      "status": "MIXED_COEFFICIENT_CONDITIONAL",
+      "symbolic_form": "C_HB is not an independent coefficient; vertical-horizontal cross curvature is zero/absorbed by compatibility"
+    },
+    {
+      "acts_on": [
+        "V_boundary",
+        "H_perp"
+      ],
+      "coefficient_id": "base_boundary_cross",
+      "limitation": "Boundary phases remain in V_boundary rather than a new R_bundle coefficient.",
+      "source_terms": [
+        "boundary functional compatibility",
+        "V_boundary"
+      ],
+      "status": "MIXED_COEFFICIENT_CONDITIONAL",
+      "symbolic_form": "represented by the existing boundary operator package"
+    },
+    {
+      "acts_on": [
+        "V_PSD/profile",
+        "H_perp"
+      ],
+      "coefficient_id": "boundary_coframe_cross",
+      "limitation": "The scalar/topographic proof remains a separate dependency, but no free coefficient is introduced.",
+      "source_terms": [
+        "coframe triplet structure + boundary functional",
+        "V_PSD/profile"
+      ],
+      "status": "MIXED_COEFFICIENT_CONDITIONAL",
+      "symbolic_form": "represented by the PSD/profile topographic sector"
+    },
+    {
+      "acts_on": [
+        "scalar/topographic screened sector",
+        "H_perp"
+      ],
+      "coefficient_id": "hopf_boundary_coframe_mixed",
+      "limitation": "The core mixed channel is represented rather than computed as an independent curvature source.",
+      "source_terms": [
+        "Hopf/boundary/coframe compatibility",
+        "scalar/topographic screened sector"
+      ],
+      "status": "MIXED_COEFFICIENT_CONDITIONAL",
+      "symbolic_form": "represented by scalar/topographic screened sector"
+    },
+    {
+      "acts_on": [
+        "V_chi + P_perp_lift",
+        "H_perp"
+      ],
+      "coefficient_id": "chirality_dependence",
+      "limitation": "Mirror exclusion remains downstream, but this coefficient is not free.",
+      "source_terms": [
+        "chirality projection + mirror exclusion",
+        "V_chi + P_perp_lift"
+      ],
+      "status": "MIXED_COEFFICIENT_CONDITIONAL",
+      "symbolic_form": "represented by chiral projector and P_perp lift package"
+    },
+    {
+      "acts_on": [
+        "V_boundary + K_sector",
+        "H_perp"
+      ],
+      "coefficient_id": "sector_dependence",
+      "limitation": "Sector dependence follows formal sector-labeled boundary data, not mass inputs.",
+      "source_terms": [
+        "sector lepton/up/down compatibility",
+        "V_boundary + K_sector"
+      ],
+      "status": "MIXED_COEFFICIENT_CONDITIONAL",
+      "symbolic_form": "represented by sector boundary functional and K_sector bookkeeping"
+    }
+  ],
+  "exact_missing_rule": "",
+  "limitations": [
+    "The mixed coefficient slots are represented through the v2.11 bundle-separation/topographic-representation rule.",
+    "Rule status: MIXED_COEFFICIENT_RULE_REPRESENTED_BY_TOPOGRAPHIC_SECTOR.",
+    "No numerical or residual fit is used to choose coefficients."
+  ],
+  "open_coefficients": [],
+  "status": "MIXED_COEFFICIENT_CONDITIONAL",
+  "theorem_complete": true,
+  "title": "BHSM v2.10 Mixed Connection Coefficients Report"
+}
