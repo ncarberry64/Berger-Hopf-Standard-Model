@@ -1,0 +1,138 @@
+{
+  "FULL_BHSM_COMPLETE": false,
+  "action_version": "BHSM-AE-3.1.0",
+  "artifact": "BHSM_AE31_C2_QUARK_PARENT_THIRD_VARIATION",
+  "claim_boundary": {
+    "CKM_MATRIX_DERIVED": false,
+    "CURRENT_AE31_DOWN_INTRINSIC_HIGGS_THIRD_VARIATION_NONZERO": false,
+    "CURRENT_AE31_UP_DOWN_INTRINSIC_HIGGS_THIRD_VARIATIONS_EVALUATED": true,
+    "CURRENT_AE31_UP_INTRINSIC_HIGGS_THIRD_VARIATION_NONZERO": false,
+    "CURRENT_C2_PHYSICAL_QUARK_POLES_DERIVED": false,
+    "CURRENT_C2_REDUCED_HS_THIRD_VERTEX_IDENTIFIED_WITH_PHYSICAL_HIGGS": false,
+    "CURRENT_C2_UP_DOWN_ABSOLUTE_YUKAWA_PREFACTORS_DERIVED": false,
+    "CURRENT_C2_UP_DOWN_YUKAWA_OPERATORS_ACTION_OWNED": false,
+    "FULL_BHSM_COMPLETE": false,
+    "MAXIMAL_S4_EFT_VARIATIONS_DERIVE_Y_U_Y_D": false,
+    "MAXIMAL_S4_EFT_VARIATIONS_RECOVER_INDEPENDENT_Y_U_Y_D": true,
+    "MEASURED_QUARK_MASS_USED": false,
+    "particle_spectrum_rebuilt": false
+  },
+  "classification": "AE31_CURRENT_C2_QUARK_PARENT_THIRD_VARIATION_EVALUATION",
+  "current_action_incidence_theorem": {
+    "action_version": "BHSM-AE-3.1.0",
+    "active_added_intrinsic_M4_term": "S_4_lH=integral_M4[|D H|^2-V_BH(H)+i*bar(L_L)*slash(D)*L_L+i*bar(e_R)*slash(D)*e_R-(bar(L_L)*Y_l_BH*H*e_R+h.c.)]",
+    "active_added_term_field_channels": [
+      "bar(L_L)",
+      "H",
+      "e_R"
+    ],
+    "active_composition": "S_AE3_1=S_AE3_0+S_4_lH_BHSM",
+    "down_channel_derivative": "P_d*D_bar(Q_L)*D_H*D_d_R*S_AE3_1*P_d=0",
+    "down_zero_by_field_incidence": true,
+    "physical_quark_mass_zero_promoted": false,
+    "reason": "S_AE3_0_HAS_NO_INTRINSIC_QUARK_LR_HIGGS_TRILINEAR_AND_S_4_lH_BHSM_ADDS_ONLY_THE_CHARGED_LEPTON_CHANNEL",
+    "up_channel_derivative": "P_u*D_bar(Q_L)*D_H_tilde*D_u_R*S_AE3_1*P_u=0",
+    "up_down_Yukawa_terms_added": false,
+    "up_zero_by_field_incidence": true,
+    "zero_is_a_derived_absence_not_a_zero_physical_quark_mass_claim": true
+  },
+  "current_hs_vertex_separation": {
+    "can_canonically_normalize_Y_u_or_Y_d": false,
+    "can_generate_attached_family_noncentral_T_u_or_T_d": false,
+    "current_C2_dynamical_HS_kernel_derived": false,
+    "current_C2_reduced_third_vertex_nonzero": true,
+    "derivative": "D_HS*D_bar(c)*D_c*S_reduced=V_tensor_I3_family",
+    "family_factor": "I3",
+    "identification_required_before_reuse": "ACTION_DERIVED_MAP_HS_TO_(H,H_tilde)_PLUS_A_DYNAMICAL_HS_KINETIC_RESIDUE_AND_SECTOR_FAMILY_PUSHFORWARD",
+    "intrinsic_H_or_H_tilde_derivative": false,
+    "physical_broken_LR_direction_selected": false
+  },
+  "exact_next_owner": {
+    "independent_c_u_or_c_d_allowed": false,
+    "must_include": [
+      "current_C2_trace_and_boundary_domain",
+      "canonical_Q_L_u_R_d_R_and_H_wavefunction_normalizations",
+      "action_derived_identification_of_H_and_H_tilde",
+      "pushforward_of_the_reused_T_u_and_T_d_family_operators",
+      "sector_residues_c_u_and_c_d_from_the_same_functional"
+    ],
+    "proved_equivalent_route_allowed": "CURRENT_HS_VERTEX_MAY_BE_USED_ONLY_AFTER_THE_HS_TO_INTRINSIC_HIGGS_MAP,_DYNAMICAL_RESIDUE,_AND_SECTOR_PUSHFORWARD_ARE_DERIVED",
+    "quark_mass_fit_allowed": false,
+    "required_derivatives": [
+      "P_u*D_bar(Q_L)*D_H_tilde*D_u_R*Gamma_qH*P_u",
+      "P_d*D_bar(Q_L)*D_H*D_d_R*Gamma_qH*P_d"
+    ],
+    "required_functional": "Gamma_qH_current_C2[barQ_L,u_R,d_R,H]_ON_THE_AE3_1_DOMAIN"
+  },
+  "historical_residue_adjudication": {
+    "attachable_current_AE31_intrinsic_quark_residue_count": 0,
+    "historical_result_discarded": false,
+    "historical_result_silently_promoted": false,
+    "rows": [
+      {
+        "current_AE31_intrinsic_quark_owner": false,
+        "object": "V15_73_EVENT_SHELL_GAMMA_BOUNDARY_THIRD_RESIDUE",
+        "reason": "ACTUAL_EVENT_SHELL_CROSSING_NOT_ESTABLISHED_IN_V15_73",
+        "result": "FORMAL_RESIDUE_DEFINED"
+      },
+      {
+        "current_AE31_intrinsic_quark_owner": false,
+        "object": "V15_91_PROPER_CYCLE_CANONICAL_YUKAWA",
+        "reason": "PERIODIC_PROPER_CYCLE_SURROGATE_IS_FAMILY_CENTRAL_AND_ITS_LOCAL_ELECTRIC_MAGNETIC_MAXWELL_COEFFICIENTS_MISMATCH",
+        "result": "Y_PROPER_TIMES_I3_EVALUATED"
+      },
+      {
+        "current_AE31_intrinsic_quark_owner": false,
+        "object": "V15_96_COMMON_QUANTUM_SUPERDETERMINANT",
+        "reason": "INTERACTING_SOURCE_HESSIAN_AND_COUPLED_QUANTUM_EVENT_SADDLE_NOT_SOLVED",
+        "result": "THIRD_DERIVATIVE_CONTRACT_FORMULATED"
+      },
+      {
+        "current_AE31_intrinsic_quark_owner": false,
+        "object": "AE32_CURRENT_C2_EINSTEIN_CARTAN_AUXILIARY_VERTEX",
+        "reason": "RETAINED_ZERO_MODE_OUTSIDE_GLOBAL_STATIONARY_EC_ACTION_DOMAIN_AND_NO_PROPAGATING_HS_KINETIC_RESIDUE",
+        "result": "LOCAL_UNIT_AUXILIARY_VERTEX_ONLY"
+      }
+    ]
+  },
+  "inputs": {
+    "artifacts/BHSM_aether_common_quantum_superdeterminant_v15_96.json": "8B545506D2864818E9E6413B716350B13B455558B8C2D732784C1FA301439137",
+    "artifacts/BHSM_aether_event_shell_joint_operator_v15_73.json": "3FAC5876018667F1D4E797C85867161748B522722EE296E6A87629FAB41920A8",
+    "artifacts/BHSM_aether_proper_time_joint_pushforward_v15_91.json": "C85B5F5F88171F8F97418C41320083E4903947095B5F35F1D7CD3C939D623F0B",
+    "artifacts/action_extension/BHSM_AE31_C2_INTRINSIC_M4_LEPTON_ACTION.json": "C0E851100FCAA04C1968081A3940D938B7C64C857FE416F7F7795974A9053850",
+    "artifacts/action_extension/BHSM_AE31_C2_QUARK_YUKAWA_NORMALIZATION_NO_GO.json": "CE08DFABB05D215BE3573C6E84A65B8A628D1D5C151A1EF876EAEBF338BBD6BB",
+    "artifacts/action_extension/BHSM_AE32_C2_EINSTEIN_CARTAN_LR_ACTION.json": "D003C0BD67DC671478CA167C5FBDD553EBA1A7FAE24AEAFCF7743877C7015313",
+    "artifacts/action_extension/BHSM_AE3_C2_HS_FERMION_MIXED_VARIATION.json": "23E1741332800951F510D6D1AA5A2FB7C43B7D5F2D2AE80C67AB59F8BBB5B159",
+    "src/bhsm/interface/ae31_c2_quark_parent_third_variation.py": "B7CF1C43817DD49CF067ABC4095D8CCD18466E6D38E5EA064DFD9F442AD35C2E",
+    "src/bhsm/interface/master_action/coefficients.py": "CCDDD353FC12F495D620718ED505183B994DDDC3B008BBBD13891711F16FDB99",
+    "src/bhsm/interface/master_action/terms.py": "FC680F2945B0AB0CCF174EDA5D938FA9221732452F7D09A60C2A7366DEE503BC"
+  },
+  "maximal_eft_variation_theorem": {
+    "coefficient_action_level": "S4_effective",
+    "coefficient_classification": "INDEPENDENT_THEORY_INPUT",
+    "coefficient_rationale": "Finite matrices; frozen overlap screens do not derive them.",
+    "formal_down_variation": "P_d*D_bar(Q_L)*D_H*D_d_R*S4eff*P_d=-sqrt(-h)*P_d*Y_d*P_d_times_delta_and_canonical_index_contractions",
+    "formal_up_variation": "P_u*D_bar(Q_L)*D_H_tilde*D_u_R*S4eff*P_u=-sqrt(-h)*P_u*Y_u*P_u_times_delta_and_canonical_index_contractions",
+    "only_T4_Yukawa_contributes": true,
+    "registry_action_level": "S4eff",
+    "registry_expression": "-int sqrt(-h)[barQ_L Y_d H d_R+barQ_L Y_u Htilde u_R+barL_L Y_e H e_R+h.c.]",
+    "registry_term_id": "T4_Yukawa",
+    "representation_trace_or_projector_removes_sector_scalar": false,
+    "variation_derives_input_matrix": false,
+    "variation_recovers_input_matrix": true,
+    "why_projection_does_not_normalize": "P_f*(c_f*T_f)*P_f=c_f*(P_f*T_f*P_f)_FOR_EVERY_POSITIVE_c_f"
+  },
+  "validation": {
+    "EC_and_previous_normalization_no_go_preserved": true,
+    "active_up_down_variations_zero_by_field_incidence": true,
+    "current_HS_vertex_not_misidentified": true,
+    "historical_event_shell_definition_not_promoted": true,
+    "maximal_EFT_variation_is_typed_input_recovery": true,
+    "next_owner_is_specific_and_unfitted": true,
+    "no_quark_pole_CKM_or_completion_overclaim": true,
+    "proper_cycle_residue_is_family_central_and_Lorentz_mismatched": true,
+    "quantum_third_derivative_remains_unevaluated": true,
+    "same_AE31_action_evaluated": true
+  },
+  "validation_passed": true
+}

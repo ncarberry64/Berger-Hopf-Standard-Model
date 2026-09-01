@@ -1,5 +1,28 @@
 # Gate Ledger
 
+## AE3.1 current-C2 quark parent third-variation evaluation
+
+- Direct field-incidence differentiation of the active action gives
+  `P_u D_bar(Q_L) D_H_tilde D_u_R S_AE3.1 P_u=0` and
+  `P_d D_bar(Q_L) D_H D_d_R S_AE3.1 P_d=0`: AE3.0 has no intrinsic quark
+  LR--Higgs trilinear and the AE3.1 successor adds only the charged-lepton
+  channel. This does not promote zero physical quark masses.
+- Differentiating the maximal `S4eff` registry instead returns
+  `-sqrt(-h)P_u Y_u P_u` and `-sqrt(-h)P_d Y_d P_d`; its own coefficient
+  ledger types `Y_u,Y_d` as independent theory inputs, so these are input
+  recovery identities rather than a derivation.
+- The retained current-C2 reduced HS third vertex is nonzero but proportional
+  to `I3` in family, is not an intrinsic `H/H_tilde` derivative, and lacks a
+  dynamical HS residue and selected physical broken direction. It cannot
+  normalize or attach the noncentral `T_u,T_d` operators by itself.
+- The exact next owner is one current-C2 quark--Higgs functional on the AE3.1
+  domain whose two third derivatives derive the sector residues, field
+  normalizations, intrinsic-Higgs identification, and pushforward of the
+  already-reused family operators. No quark-mass fit or independent `c_u,c_d`
+  is allowed.
+- Artifact:
+  `artifacts/action_extension/BHSM_AE31_C2_QUARK_PARENT_THIRD_VARIATION.json`.
+
 ## AE3.1 quark Yukawa normalization non-identifiability
 
 - The candidate pair `Y_u=c_u T_u`, `Y_d=c_d T_d` has an exact
