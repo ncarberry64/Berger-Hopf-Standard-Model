@@ -1,5 +1,31 @@
 # Gate Ledger
 
+## Current Gate-7 physical-identification owner
+
+- Canonical branch-24 first stop: `CLOSED_AND_REUSED_UNCHANGED`.
+- Regular event-to-complete-child relation: `CLOSED_AND_REUSED_UNCHANGED`.
+- Unchanged-AE2 action-owned physical localization carrier:
+  `NOT_FOUND_IN_SIX_CLASS_EVIDENCE_BOUND_AUDIT`.
+- Event scalar versus spacetime carrier:
+  `lambda_24:C->R_IS_NOT_Sigma_enc_OR_chi_A[Phi](x)`.
+- Four live kernels: `A_LOCALIZATION_CARRIER`,
+  `B_PHYSICAL_INTERFACE_VARIATION`, `C_CHILD_INHERITANCE`, and
+  `D_C2_FAMILY_MODE_INSTANTIATION`.
+- `PEI_05a` fermionic event-child reset trace matching: `AVAILABLE`.
+- `PEI_05b` geometric junction and `PEI_05c` dependency-closed full-field
+  flux matching: `OPEN`.
+- `PEI_11a` tensor-factor reset/family-projector intertwiner: `AVAILABLE`.
+- `PEI_11b` actual C2 family/mode slot and `PEI_11c` physical enclosure
+  inheritance: `OPEN`.
+- Required field transport: `Dep_A(B_i)`, the transitive action dependency
+  closure, rather than every field everywhere.
+- Least-assumptive route to test: `LOCAL_SAME_SPACETIME_ENCLOSURE`; action
+  selection: `ABSENT`.
+- Action extension made by this owner: `FALSE`.
+- Gate 7: `ACTIVE`; Gate 8: `LOCKED`; `FULL_BHSM_COMPLETE=FALSE`.
+- Exact next dependency:
+  `OWNER_AUTHORIZED_ACTION_VERSION_DECISION_SELECTING_A_COVARIANT_LOCALIZATION_OR_DOMAIN_CARRIER;_THEN_DERIVE_ITS_INTERFACE_VARIATION,_DEPENDENCY_CLOSED_FIELD_TRANSPORT,_CHILD_INHERITANCE,_AND_C2_FAMILY_MODE_INSTANTIATION`.
+
 ## Current continuum-child and Qxi gates
 
 - `N12_COMPLETE_PERSISTENT_CHILD`: `CERTIFIED`.

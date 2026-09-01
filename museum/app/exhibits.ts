@@ -196,21 +196,30 @@ export const exhibits: Exhibit[] = [
   {
     number: '09',
     title: 'The physical identification bridge',
-    subtitle: 'Moving state space · event child to candidate enclosure',
+    subtitle: 'Moving state space · six-class AE2 carrier audit',
     animated: 'bhsm_physical_identification_bridge_animated.gif',
     still: 'bhsm_physical_identification_bridge.png',
-    alt: 'Three BHSM state trajectories move through event-child state space toward nested candidate enclosure contours while the unproved ownership conditions remain listed.',
+    alt: 'Three reused BHSM state trajectories move through event-child state space beside a six-by-five audit matrix in which none of the unchanged AE2 candidates qualifies as a local enclosure carrier.',
     seen:
-      'Colored trajectories carry a reused BHSM family, mode, and current across event-child coordinates toward nested candidate-enclosure contours. The side ledger separates inherited state data, derived AE2 dynamics, and the still-open proof obligations.',
+      'Colored trajectories carry a reused BHSM family, mode, and current through the certified event-child state space. The matrix tests six stored AE2 candidates against five carrier requirements: action ownership, local-domain selection, an embedded surface, regularity, and interface variation. Green cells are available properties; no row has all five.',
     matters:
-      'This is the missing bridge, not another particle-spectrum calculation. It must prove that an already-defined family or mode reaches an action-owned local enclosure with junction data, full-field balance, and structure-preserving transport before its existing Standard Model manifestation can be promoted.',
-    dataLabel: 'Reconstructed state inventory · enclosure open',
+      'For any reader, reaching an event is not the same as forming a place in spacetime. Scientifically, the audit shows that λ₂₄ selects event time but does not define the embedded enclosure surface. An existing family or mode and its reset matching remain reusable, while a future action version would need an owner-approved covariant localization carrier.',
+    dataLabel: 'Unchanged AE2 audit · 6 candidates · 0 qualifying carriers',
     status: 'gated',
-    statusLabel: 'Bridge specified · local enclosure open',
+    statusLabel: 'Carrier audit complete · extension decision open',
+    facts: [
+      { label: 'Candidates audited', value: '6' },
+      { label: 'Carrier requirements', value: '5' },
+      { label: 'Qualifying carriers', value: '0' },
+      { label: 'Reduced kernels', value: '4' },
+      { label: 'Reusable subclosures', value: '2' },
+      { label: 'Action change made', value: 'No' },
+    ],
     links: [
       { label: 'Full ontology reconstruction', href: `${SCIENCE}/docs/BHSM_NORMAN_SCHOOL_FULL_CORPUS_RECONSTRUCTION.md` },
+      { label: 'Localization carrier kill screen', href: `${SCIENCE}/theory/n12_gate7_localization_carrier_kill_screen.md` },
       { label: 'Bridge theorem interface', href: `${SCIENCE}/theory/n12_gate7_physical_encapsulation_identification_bridge.md` },
-      { label: 'Machine-readable bridge', href: `${SCIENCE}/artifacts/flagship_integration/BHSM_N12_GATE7_PHYSICAL_ENCAPSULATION_IDENTIFICATION_BRIDGE.json` },
+      { label: 'Future extension acceptance contract', href: `${SCIENCE}/theory/post_ae2_localization_carrier_extension_contract.md` },
     ],
   },
 ];

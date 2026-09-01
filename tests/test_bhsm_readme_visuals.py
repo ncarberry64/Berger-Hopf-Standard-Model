@@ -25,6 +25,10 @@ def test_visual_manifest_preserves_claim_boundaries() -> None:
     assert payload["spectral_visualization"]["new_particle_assignments_derived_here"] is False
     assert payload["identification_bridge"]["frozen_particle_registry_reused"] is True
     assert payload["identification_bridge"]["local_enclosure_proved"] is False
+    assert payload["identification_bridge"]["carrier_kill_screen_complete"] is True
+    assert payload["identification_bridge"]["carrier_candidates_audited"] == 6
+    assert payload["identification_bridge"]["qualifying_carriers"] == 0
+    assert len(payload["identification_bridge"]["four_kernel_reduction"]) == 4
     assert payload["simulated_particle_spectrum"]["installed_for_museum"] is True
     assert payload["simulated_particle_spectrum"]["physical_mass_scale"] is False
     assert payload["simulated_particle_spectrum"]["new_particle_prediction"] is False

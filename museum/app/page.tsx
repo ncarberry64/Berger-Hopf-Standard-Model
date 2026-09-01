@@ -272,7 +272,7 @@ export default function Home() {
             Every BHSM lineage is now integrated on main. The reconstruction
             preserves its calculations while separating an existing particle
             ontology from the later AE2 stop and event-child dynamics and from
-            the still-missing local-enclosure proof.
+            the audited but still-missing local-enclosure carrier.
           </p>
         </div>
 
@@ -301,11 +301,11 @@ export default function Home() {
             <span>03 · Open typed interface</span>
             <h3>Local enclosure → SM manifestation</h3>
             <p>
-              The missing map must prove an action-owned local domain and
-              transport the frozen state into its existing manifestation class,
-              including when a family or mode manifests as an SM particle.
+              Six stored AE2 candidate classes have now been tested. None
+              supplies the full action-owned localization type needed to carry
+              the frozen state into its existing manifestation class.
             </p>
-            <strong>Specified · fail-closed</strong>
+            <strong>6 audited · 0 qualify</strong>
           </article>
         </div>
 
@@ -317,8 +317,8 @@ export default function Home() {
           </article>
           <article>
             <span className="ledger-label ledger-open">Still required</span>
-            <h3>Identification bridge</h3>
-            <p>Enclosure owner and route, junction data, full-field attachment and balance, and intertwining state transport.</p>
+            <h3>Four proof kernels</h3>
+            <p>Localization carrier, physical interface variation, child inheritance, and actual C2 family/mode instantiation.</p>
           </article>
           <article>
             <span className="ledger-label ledger-forbidden">Not equivalent</span>
@@ -329,8 +329,9 @@ export default function Home() {
 
         <div className="reconstruction-records">
           <a href={`${SCIENCE}/docs/BHSM_NORMAN_SCHOOL_FULL_CORPUS_RECONSTRUCTION.md`}>Full ontology reconstruction ↗</a>
+          <a href={`${SCIENCE}/theory/n12_gate7_localization_carrier_kill_screen.md`}>Carrier kill screen ↗</a>
           <a href={`${SCIENCE}/theory/n12_gate7_physical_encapsulation_identification_bridge.md`}>Typed enclosure bridge ↗</a>
-          <a href={`${SCIENCE}/artifacts/flagship_integration/BHSM_N12_GATE7_PHYSICAL_ENCAPSULATION_IDENTIFICATION_BRIDGE.json`}>Machine-readable bridge ↗</a>
+          <a href={`${SCIENCE}/theory/post_ae2_localization_carrier_extension_contract.md`}>Extension acceptance contract ↗</a>
         </div>
         <dl className="corpus-facts" aria-label="Integrated BHSM corpus figures">
           <div>
@@ -389,8 +390,9 @@ export default function Home() {
         <div className="status-ribbon" role="note">
           <strong>Current research state</strong>
           <span>
-            AE2 selected stop and event child are derived · the physical
-            enclosure bridge remains open · FULL_BHSM_COMPLETE = FALSE
+            AE2 stop and event child are derived · 6 carrier classes audited,
+            0 qualify · owner-authorized action-version decision remains open ·
+            FULL_BHSM_COMPLETE = FALSE
           </span>
           <a href={`${SCIENCE}/docs/current_bhsm_status.md`}>
             Read current status <ArrowRight aria-hidden="true" size={15} />
