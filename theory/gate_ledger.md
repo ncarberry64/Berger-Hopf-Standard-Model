@@ -3986,3 +3986,20 @@ Exact next object:
   completion of this fixed symbol. The smooth CAR covariance and lower-order
   outer DtN/boundary response remain unselected, so the finite scalar Hessian,
   Lorentzian Maxwell residue, photon, and muon `F2(0)` remain open.
+
+## AE3.1 current-C2 local electromagnetic Ward identity
+
+- The physical charged-lepton left and right components both carry
+  `Q_em=-1`; the all-left-handed `e_c` ledger entry has the conjugate charge.
+- Hence `Q_l=-I4 tensor I3` commutes with the retained family-noncentral mass
+  endomorphism, and the local tree vertex obeys exactly
+  `q_mu Gamma_Q^mu=Q_l S_l^(-1)(p+q)-S_l^(-1)(p)Q_l` on all three family
+  projectors.
+- The Pauli tensor is transverse because
+  `q_mu sigma^(mu nu)q_nu=0`. The Ward identity therefore does not determine
+  `F2`; the minimal tree vertex has `F2=0`, which is not the muon anomaly.
+- Scientific milestone:
+  `CURRENT_C2_LOCAL_TREE_WARD_TAKAHASHI_IDENTITY_DERIVED`.
+- Canonical photon normalization, the physical photon pole, a selected
+  fermion two-point function, the renormalized three-point vertex, and muon
+  `F2(0)` remain open.
