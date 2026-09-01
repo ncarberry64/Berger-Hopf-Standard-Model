@@ -11,7 +11,8 @@ python scripts/materialize_ae3_family_hierarchy_interface.py
 python scripts/materialize_ae3_c2_coexact_hypercharge.py
 python scripts/materialize_ae3_c2_coexact_gauge_form.py
 python scripts/materialize_ae3_c2_lorentzian_gauge_ghost_hessian.py
-python -m pytest -q tests/test_ae3_reciprocal_join_localization.py tests/test_ae3_c2_lorentzian_gauge_ghost_hessian.py
+python scripts/materialize_ae3_c2_coexact_su2l_neutral.py
+python -m pytest -q tests/test_ae3_reciprocal_join_localization.py tests/test_ae3_c2_lorentzian_gauge_ghost_hessian.py tests/test_ae3_c2_coexact_su2l_neutral.py
 ```
 
 This reproduces the analytic eta-to-sigma profile, its unique transverse
