@@ -5,11 +5,11 @@ ROOT = Path(__file__).resolve().parents[1]
 MUSEUM = ROOT / "museum"
 
 
-def test_museum_has_nine_visual_engines_with_lay_placards_and_fallbacks() -> None:
+def test_museum_has_ten_visual_exhibits_with_lay_placards_and_fallbacks() -> None:
     exhibits = (MUSEUM / "app" / "exhibits.ts").read_text(encoding="utf-8")
-    assert exhibits.count("animated: '") == 9
-    assert exhibits.count("still: '") == 9
-    assert exhibits.count("lay: '") == 9
+    assert exhibits.count("animated: '") == 10
+    assert exhibits.count("still: '") == 10
+    assert exhibits.count("lay: '") == 10
     assert "pr98_cms_engine_validation_continuous.gif" in exhibits
     assert "CMS Open Data Record 303" in exhibits
     for phrase in (
@@ -25,6 +25,8 @@ def test_museum_has_nine_visual_engines_with_lay_placards_and_fallbacks() -> Non
         "family or mode",
         "local enclosure",
         "Real CMS Open Data · BHSM Engine",
+        "Hyperspherical Scalar-Topographic Framework",
+        "Independent preprint · not peer reviewed",
     ):
         assert phrase in exhibits
 
@@ -51,6 +53,8 @@ def test_museum_separates_claim_classes_and_creator_record() -> None:
         "Lay description",
         "Real-data engine",
         "Simulation / audit engine",
+        "Other work · cosmology",
+        "not peer reviewed",
     ):
         assert phrase in page
     assert "guided tour" not in page.lower()
@@ -70,6 +74,14 @@ def test_museum_assets_are_local_and_provenance_documented() -> None:
     assert "neither experimental measurements nor physical predictions" in provenance
     assert (MUSEUM / "public" / "bhsm-symbol.svg").is_file()
     assert (MUSEUM / "public" / "data" / "cms-four-vector-sample.json").is_file()
+    assert "generate_cosmology_other_work_exhibit.py" in provenance
+    assert "10.20944/preprints202601.1427.v1" in provenance
+    assert (
+        ROOT
+        / "docs"
+        / "assets"
+        / "cosmology_hyperspherical_scalar_topography_animated.gif"
+    ).is_file()
 
 
 def test_every_exhibit_visual_uses_motion_control_and_cache_safe_fallback() -> None:
@@ -91,3 +103,16 @@ def test_exhibition_hall_is_the_first_content_after_navigation() -> None:
     assert header_end < exhibits < atrium < cms_data < research
     assert 'href="#exhibits">Exhibits</a>' in page
     assert 'href="#exhibits">\n        Skip to the exhibits' in page
+
+
+def test_cosmology_other_work_follows_creator_and_preserves_claim_boundary() -> None:
+    page = (MUSEUM / "app" / "page.tsx").read_text(encoding="utf-8")
+    exhibits = (MUSEUM / "app" / "exhibits.ts").read_text(encoding="utf-8")
+
+    assert page.index('id="creator"') < page.index('id="other-work"') < page.index("<footer>")
+    assert "cosmologyExhibit.lay" in page
+    assert "not a sky map" in page
+    assert "not observational data" in exhibits
+    assert "Order of magnitude" in exhibits
+    assert "full likelihood analysis" in exhibits
+    assert "https://doi.org/10.20944/preprints202601.1427.v1" in exhibits

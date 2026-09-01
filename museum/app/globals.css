@@ -1225,6 +1225,85 @@ pre {
   font-weight: 800;
   padding: 0.65rem 0.8rem;
 }
+.other-work-wing {
+  margin: 0 auto;
+  max-width: var(--max);
+  padding: clamp(6rem, 10vw, 10rem) 5vw;
+}
+.other-work-heading > p:last-child {
+  color: var(--muted);
+  line-height: 1.7;
+  margin: 1.5rem 0 0;
+  max-width: 52rem;
+}
+.other-work-card {
+  background: var(--panel);
+  border: 1px solid var(--line);
+  display: grid;
+  grid-template-columns: minmax(0, 1.3fr) minmax(360px, 0.7fr);
+  margin-top: 4rem;
+  min-width: 0;
+}
+.other-work-visual {
+  align-self: stretch;
+  background: #061014;
+  border-right: 1px solid var(--line);
+  min-width: 0;
+  overflow: hidden;
+}
+.other-work-visual > img {
+  aspect-ratio: 16 / 9;
+  display: block;
+  height: auto;
+  object-fit: contain;
+  padding: clamp(0.7rem, 2vw, 2rem);
+  width: 100%;
+}
+.other-work-copy {
+  padding: clamp(2rem, 3.5vw, 4rem);
+}
+.other-work-copy h3 {
+  font-size: clamp(2rem, 3.4vw, 3.8rem);
+  letter-spacing: -0.05em;
+  line-height: 1.02;
+  margin: 1rem 0 0.7rem;
+  overflow-wrap: anywhere;
+}
+.other-work-copy .exhibit-facts {
+  margin-bottom: 2rem !important;
+}
+.other-work-placard {
+  margin: 0 0 2.5rem;
+}
+.other-work-placard > div {
+  border-top: 1px solid var(--line);
+  padding: 1.25rem 0;
+}
+.other-work-placard dt {
+  color: var(--ink);
+  font-family: var(--font-geist-mono), monospace;
+  font-size: 0.67rem;
+  font-weight: 800;
+  letter-spacing: 0.09em;
+  margin-bottom: 0.55rem;
+  text-transform: uppercase;
+}
+.other-work-placard dd {
+  color: var(--muted);
+  font-size: 0.9rem;
+  line-height: 1.7;
+  margin: 0;
+}
+.other-work-boundary {
+  border-left: 2px solid var(--gold);
+  color: #81999f;
+  font-family: var(--font-geist-mono), monospace;
+  font-size: 0.68rem;
+  line-height: 1.65;
+  margin: 1.5rem 0 0;
+  max-width: 66rem;
+  padding-left: 1rem;
+}
 footer {
   display: grid;
   gap: 2rem;
@@ -1322,6 +1401,13 @@ footer > div:first-child strong {
     border-bottom: 1px solid var(--line);
     border-right: 0;
   }
+  .other-work-card {
+    grid-template-columns: 1fr;
+  }
+  .other-work-visual {
+    border-bottom: 1px solid var(--line);
+    border-right: 0;
+  }
   .review-grid {
     grid-template-columns: repeat(2, 1fr);
   }
@@ -1404,7 +1490,8 @@ footer > div:first-child strong {
     grid-template-columns: 1fr;
   }
   .professional-wing,
-  .language-gallery {
+  .language-gallery,
+  .other-work-wing {
     padding-left: 1.1rem;
     padding-right: 1.1rem;
   }
