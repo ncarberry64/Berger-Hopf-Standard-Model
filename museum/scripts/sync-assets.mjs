@@ -25,6 +25,7 @@ const exhibitBases = [
   'bhsm_decay_stability_engine',
   'bhsm_no_fit_firewall',
   'bhsm_physical_identification_bridge',
+  'cosmology_hyperspherical_scalar_topography',
 ];
 const allowedNames = new Set([
   ...exhibitBases.flatMap((base) => [
