@@ -1,0 +1,163 @@
+{
+  "FULL_BHSM_COMPLETE": false,
+  "action_version": "BHSM-AE-3.1.0",
+  "artifact": "BHSM_AE31_C2_CAPTURE_NEUTRINO_PROPAGATION_GATE",
+  "capture_boundary_to_propagation": {
+    "PMNS_detector_map_derived": false,
+    "boundary_equation": "gamma_Sigma(nu)=G_nu_retarded*J_capture[p,e_to_n,nu_e]",
+    "capture_Hessian_derived": false,
+    "chain": [
+      "electron_nuclear_capture_Hessian",
+      "outgoing_nu_e_boundary_source_trace",
+      "retarded_or_positive_frequency_neutral_Calderon_map",
+      "transported_family_neutral_operator_K_nu(x)",
+      "subtracted_pole_or_cycle_quasi_energy_readout"
+    ],
+    "family_noncentral_K_nu_x_derived": false,
+    "outgoing_nu_e_boundary_trace_derived": false,
+    "physical_neutral_outer_Green_operator_derived": false,
+    "two_nonzero_propagation_splittings_derived": false
+  },
+  "capture_family_source": {
+    "charged_current_family_action": "I3",
+    "family_basis": [
+      "nu_e",
+      "nu_mu",
+      "nu_tau"
+    ],
+    "fixed_mass_eigenstate_selected_at_production": false,
+    "production_statement": "CAPTURE_SELECTS_AN_INITIAL_NU_E_WEAK_SOURCE",
+    "propagation_operator_selected_at_production": false,
+    "source_projector": [
+      [
+        1.0,
+        0.0,
+        0.0
+      ],
+      [
+        0.0,
+        0.0,
+        0.0
+      ],
+      [
+        0.0,
+        0.0,
+        0.0
+      ]
+    ],
+    "source_vector": [
+      1.0,
+      0.0,
+      0.0
+    ]
+  },
+  "claim_boundary": {
+    "CURRENT_C2_CAPTURE_INITIAL_NUE_FAMILY_SOURCE_DERIVED": true,
+    "CURRENT_C2_CAPTURE_OUTGOING_NEUTRINO_BOUNDARY_MODE_DERIVED": false,
+    "CURRENT_C2_COMMON_ENVIRONMENT_SHIFT_GAP_INVARIANCE_DERIVED": true,
+    "CURRENT_C2_CURVATURE_ALONE_NEUTRINO_SPLITTING_NO_GO_DERIVED": true,
+    "CURRENT_C2_FAMILY_CENTRAL_PROPAGATION_NO_OSCILLATION_THEOREM_DERIVED": true,
+    "CURRENT_C2_FAMILY_NONCENTRAL_NEUTRAL_OPERATOR_DERIVED": false,
+    "CURRENT_C2_NEUTRINO_MASS_SUPPORT_PROPAGATION_DEPENDENCE_DERIVED": false,
+    "CURRENT_C2_NONTRIVIAL_NEUTRAL_FLAVOR_MONODROMY_DERIVED": false,
+    "CURRENT_C2_PMNS_DERIVED": false,
+    "CURRENT_C2_TWO_NEUTRINO_SPLITTINGS_DERIVED": false,
+    "FULL_BHSM_COMPLETE": false,
+    "measured_neutrino_data_used": false
+  },
+  "classification": "AE31_CURRENT_C2_CAPTURE_NEUTRINO_PROPAGATION_GATE",
+  "common_shift_gap_witness": {
+    "common_environment_generates_splittings": false,
+    "eigenvalues": [
+      0.2,
+      0.7,
+      1.4
+    ],
+    "gap_invariance_residual": 1.1116099371267112e-15,
+    "independent_adjacent_gaps": [
+      0.49999999999999994,
+      0.7
+    ],
+    "shifted_adjacent_gaps": [
+      0.5,
+      0.7000000000000011
+    ],
+    "shifted_eigenvalues": [
+      8.5,
+      9.0,
+      9.700000000000001
+    ]
+  },
+  "family_central_propagation_witness": {
+    "final_probabilities": [
+      1.0,
+      0.0,
+      0.0
+    ],
+    "flavor_change": false,
+    "initial_probabilities": [
+      1.0,
+      0.0,
+      0.0
+    ],
+    "probability_change_norm": 0.0,
+    "theorem": "K_nu(x)=kappa(x)*I3_IMPLIES_U=exp(-i*Phi)*I3"
+  },
+  "family_noncentrality_theorem": {
+    "additional_conversion_condition": "[K_nu_family(x),P_nu_e]_NOT_IDENTICALLY_ZERO_OR_EQUIVALENT_NONTRIVIAL_PATH_ORDERED_MONODROMY",
+    "common_shift_cancels_from_all_oscillation_phases": true,
+    "current_C2_family_noncentral_neutral_operator_derived": false,
+    "current_capture_source_family_kernel": "I3",
+    "family_central_weak_environment_changes_common_phase_only": true,
+    "family_noncentrality_alone_sufficient_for_flavor_conversion": false,
+    "necessary_for_oscillation": "K_nu_family(x)_NOT_PROPORTIONAL_TO_I3_WITH_AT_LEAST_TWO_NONZERO_EIGENVALUE_DIFFERENCES_AFTER_TRANSPORT",
+    "position_dependent_eigenvectors_require_path_ordering": true,
+    "scalar_curvature_family_kernel": "I3",
+    "unitary_transport_condition": "K_nu_family(x)=K_nu_family(x)^dagger"
+  },
+  "historical_neutrino_reconciliation": {
+    "capture_event_role": "SETS_THE_INITIAL_WEAK_SOURCE_AND_BOUNDARY_GEOMETRY_NOT_A_MEASURED_OR_FIXED_NEUTRINO_MASS",
+    "current_owner": "RETURNED_RECONSTRUCTED_SPACETIME_NEUTRAL_SELF_ENERGY_AND_PROPAGATION_MONODROMY",
+    "detector_flavor_response_identified_with_mass_eigenbasis": false,
+    "v14_55_reusable_ontology": [
+      "PROPAGATION_PHASE_MAY_DEPEND_ON_ENVIRONMENT",
+      "INSTANTANEOUS_WAKE_RESPONSE_IS_NOT_A_PRIMITIVE_STATIC_MASS",
+      "PARENT_RELATIVE_CYCLE_QUASI_ENERGY_IS_THE_CANDIDATE_MASS_READOUT"
+    ],
+    "v14_55_status": "FORMALIZED_HYPOTHESIS_NOT_ACTION_DERIVED"
+  },
+  "inputs": {
+    "artifacts/BHSM_aether_physical_inverse_closure_v16_36.json": "C2FD73E35BDF915671F0EB4DC0CF8AF5EA3FCE187E302DCB354440CD2D459B67",
+    "artifacts/BHSM_pair_wake_neutrino_action_v14_55.json": "D7C2DB4AD681662D697DF96F2E940245B90D04967F12146F1827AEE23F738C1A",
+    "artifacts/action_extension/BHSM_AE31_C2_COEXACT_SU2L_CHARGED_CURRENT.json": "4ACDC1E6FD27ACE85DA73CFF763D3276BF9AFF8C524DA457328B9EFA810D7092",
+    "artifacts/action_extension/BHSM_AE31_C2_OUTER_CALDERON_ACTION_NO_GO.json": "55304434AEACA121092814F608EF849530887DDFD9CF811CF43327ACCF968753",
+    "artifacts/action_extension/BHSM_AE31_C2_R2_ELECTRON_CAPTURE_SELECTION_RULE.json": "956376BD14656115206F7CB69128CB2251FE70E2E84885324A1F1CA9484BC652",
+    "src/bhsm/interface/ae31_c2_capture_neutrino_propagation_gate.py": "D32BF9B989DA016ADE5A519F450363195051D8BD939E45B52BB3831F4815BD78"
+  },
+  "squared_neutral_operator_contract": {
+    "Lichnerowicz_scalar_term": "D_slash^2=-nabla^2+R/4+gauge_curvature",
+    "R_over_4_family_action": "(R/4)*I3",
+    "admissible_masslike_readout": "SUBTRACTED_ZERO_MOMENTUM_POLE_OR_PARENT_RELATIVE_CYCLE_QUASI_ENERGY_OF_THE_PROPAGATING_MODE",
+    "curvature_alone_generates_family_splittings": false,
+    "environment_dependent_mass_support_action_derived": false,
+    "environment_dependent_mass_support_possible_in_principle": true,
+    "local_D_squared_eigenvalue_is_automatically_a_mass_squared": false,
+    "reason": "THE_SPECTRUM_ALSO_CONTAINS_MOMENTUM_CURVATURE_GAUGE_POTENTIAL_AND_BOUNDARY_DATA",
+    "schematic_operator": "D_nu_eff=slash_nabla+Sigma_curvature+Sigma_weak+Sigma_environment"
+  },
+  "validation": {
+    "capture_gate_reused": true,
+    "central_no_oscillation_exact": true,
+    "charged_current_reused": true,
+    "common_shift_gap_invariant": true,
+    "current_neutral_owner_reused": true,
+    "family_noncentral_gate_open": true,
+    "historical_hypothesis_reclassified": true,
+    "historical_mass_semantics_preserved": true,
+    "local_D2_not_relabelled_mass": true,
+    "nue_source_exact": true,
+    "outer_state_no_go_preserved": true,
+    "outgoing_mode_not_overclaimed": true
+  },
+  "validation_passed": true
+}
