@@ -13,16 +13,16 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: 'BHSM Museum | Reconstructed Scientific Record',
+  title: 'BHSM Museum | Norman P. Carberry Research Archive',
   description:
-    'The public entrance to the integrated Berger–Hopf Standard Model record, its particle ontology, AE2 event dynamics, and open physical-enclosure bridge.',
+    'Real CMS Open Data in motion, the integrated Berger–Hopf Standard Model record, and Norman P. Carberry’s artifact-backed research archive.',
   icons: {
     icon: './bhsm-symbol.svg',
   },
   openGraph: {
-    title: 'BHSM Museum | Reconstructed Scientific Record',
+    title: 'BHSM Museum | CMS Open Data and the BHSM Record',
     description:
-      'Explore the integrated BHSM corpus, animated calculations, provenance, and the exact boundary of the open physical-enclosure bridge.',
+      'Explore real CMS dimuon data, animated BHSM calculations, integrated provenance, and the open physical-identification bridge.',
     images: ['./og.png'],
   },
 };

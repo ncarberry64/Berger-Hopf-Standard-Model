@@ -32,8 +32,8 @@ export default function Home() {
 
   return (
     <main>
-      <a className="skip-link" href="#museum-start">
-        Skip to the exhibition
+      <a className="skip-link" href="#cms-data">
+        Skip to the CMS record
       </a>
       <header className="site-header">
         <a className="wordmark" href="#top" aria-label="BHSM Museum home">
@@ -47,12 +47,13 @@ export default function Home() {
           />
           <span>
             <strong>BHSM Museum</strong>
-            <small>Public exhibition · Scientific archive</small>
+            <small>Norman P. Carberry · Research archive</small>
           </span>
         </a>
         <nav aria-label="Museum navigation">
-          <a href="#reconstruction">Reconstruction</a>
-          <a href="#exhibits">Exhibits</a>
+          <a href="#cms-data">CMS data</a>
+          <a href="#reconstruction">Research</a>
+          <a href="#exhibits">Animations</a>
           <a href="#professionals">For reviewers</a>
           <a href="#creator">Creator</a>
           <a className="nav-repository" href={REPOSITORY}>
@@ -63,28 +64,28 @@ export default function Home() {
 
       <section className="atrium" id="top" aria-labelledby="atrium-title">
         <div className="atrium-copy">
-          <p className="eyebrow">Berger–Hopf Standard Model</p>
+          <p className="eyebrow">Norman P. Carberry · Berger–Hopf Standard Model</p>
           <h1 id="atrium-title">
-            One Action <span>·</span> One Scale <span>·</span> One Observable
-            Pipeline
+            Geometry, particles, and the record <span>in motion.</span>
           </h1>
           <p className="lede">
-            A visual entrance to an artifact-backed mathematical physics
-            program. Watch each calculation move, then open the scientific
-            record behind it.
+            The reconstructed BHSM archive begins with real CMS Open Data, then
+            moves through the action, spectrum, observables, and the open
+            physical-identification bridge.
           </p>
           <div className="atrium-actions">
-            <a className="button button-primary" href="#museum-start">
-              Begin the guided tour <ArrowRight aria-hidden="true" size={18} />
+            <a className="button button-primary" href="#cms-data">
+              Open the CMS record <ArrowRight aria-hidden="true" size={18} />
             </a>
             <a className="button button-secondary" href={REPOSITORY}>
               Enter the scientific repository
             </a>
           </div>
-          <p className="institution-note">
-            Built for public understanding and professional inspection. No CERN,
-            Fermilab, or institutional endorsement is implied.
-          </p>
+          <div className="hero-release" aria-label="BHSM archival identifiers">
+            <span>Release v1.1.0</span>
+            <span>Research head v15.7</span>
+            <span>DOI 10.5281/zenodo.20663419</span>
+          </div>
         </div>
 
         <div className="atrium-display" aria-label="Featured animated exhibit">
@@ -121,6 +122,52 @@ export default function Home() {
             </p>
             <StatusBadge exhibit={hero} />
           </div>
+          {hero.facts ? (
+            <dl className="hero-facts">
+              {hero.facts.map((fact) => (
+                <div key={fact.label}>
+                  <dt>{fact.label}</dt>
+                  <dd>{fact.value}</dd>
+                </div>
+              ))}
+            </dl>
+          ) : null}
+        </div>
+      </section>
+
+      <section className="cms-field" id="cms-data" aria-labelledby="cms-field-title">
+        <div className="cms-field-image">
+          <Image
+            src="./cms-detector-simon-waldherr.jpg"
+            alt="Interior view of the Compact Muon Solenoid detector at CERN"
+            width={1280}
+            height={853}
+            unoptimized
+          />
+        </div>
+        <div className="cms-field-copy">
+          <p className="eyebrow">A real detector · a real public dataset</p>
+          <h2 id="cms-field-title">The visual language starts at CMS.</h2>
+          <p>
+            The rings, tracks, color, and instrument-panel typography throughout
+            this museum take their cue from the Compact Muon Solenoid. BHSM’s
+            checked-in PR #98 record uses the CC0 CMS dimuon education dataset
+            for coordinate-transformation validation.
+          </p>
+          <div className="cms-record-grid">
+            <div><strong>7 TeV</strong><span>collision energy</span></div>
+            <div><strong>100,000</strong><span>two-muon events</span></div>
+            <div><strong>15,075,838 B</strong><span>pinned source file</span></div>
+            <div><strong>Record 303</strong><span>CERN Open Data Portal</span></div>
+          </div>
+          <div className="cms-field-links">
+            <a href="https://opendata.cern.ch/record/303">Open the dataset ↗</a>
+            <a href="https://doi.org/10.7483/OPENDATA.CMS.4M97.3SQ9">Dataset DOI ↗</a>
+          </div>
+          <p className="image-credit">
+            CMS detector photograph: Simon Waldherr, 2019 · CC BY-SA 4.0 ·
+            Wikimedia Commons
+          </p>
         </div>
       </section>
 
@@ -198,21 +245,24 @@ export default function Home() {
           <a href={`${SCIENCE}/theory/n12_gate7_physical_encapsulation_identification_bridge.md`}>Typed enclosure bridge ↗</a>
           <a href={`${SCIENCE}/artifacts/flagship_integration/BHSM_N12_GATE7_PHYSICAL_ENCAPSULATION_IDENTIFICATION_BRIDGE.json`}>Machine-readable bridge ↗</a>
         </div>
-      </section>
-
-      <section className="orientation" id="museum-start">
-        <div>
-          <p className="eyebrow">Orientation wall · 60 seconds</p>
-          <h2>
-            The displays are the invitation. The records are the evidence.
-          </h2>
-        </div>
-        <p>
-          BHSM investigates whether Berger–Hopf geometry can organize a
-          reproducible path from a parent action to particle-physics
-          calculations. Every animation has a backstage door to source,
-          derivation, tests, artifacts, and stated limits.
-        </p>
+        <dl className="corpus-facts" aria-label="Integrated BHSM corpus figures">
+          <div>
+            <dt>Lineage refs examined</dt>
+            <dd>426</dd>
+          </div>
+          <div>
+            <dt>Lineage refs integrated</dt>
+            <dd>426</dd>
+          </div>
+          <div>
+            <dt>Unmerged refs</dt>
+            <dd>0</dd>
+          </div>
+          <div>
+            <dt>Files after reduction</dt>
+            <dd>17,630</dd>
+          </div>
+        </dl>
       </section>
 
       <section
@@ -250,7 +300,7 @@ export default function Home() {
           </article>
         </div>
         <div className="status-ribbon" role="note">
-          <strong>Current public boundary</strong>
+          <strong>Current research state</strong>
           <span>
             AE2 selected stop and event child are derived · the physical
             enclosure bridge remains open · FULL_BHSM_COMPLETE = FALSE
@@ -272,9 +322,9 @@ export default function Home() {
           </p>
           <h2 id="exhibit-title">Look first. Then go backstage.</h2>
           <p>
-            Each display starts with plain language. The scientific-record links
-            lead directly to the implementation, test, derivation, or policy
-            that supports the placard.
+            The CMS exhibit establishes the visual language: animated data,
+            visible quantities, and an inspectable source. The remaining rooms
+            apply that language to BHSM machinery and proof state.
           </p>
         </div>
 
@@ -304,6 +354,16 @@ export default function Home() {
                 <h3>{exhibit.title}</h3>
                 <p className="exhibit-subtitle">{exhibit.subtitle}</p>
                 <StatusBadge exhibit={exhibit} />
+                {exhibit.facts ? (
+                  <dl className="exhibit-facts">
+                    {exhibit.facts.map((fact) => (
+                      <div key={fact.label}>
+                        <dt>{fact.label}</dt>
+                        <dd>{fact.value}</dd>
+                      </div>
+                    ))}
+                  </dl>
+                ) : null}
                 <dl>
                   <div>
                     <dt>What you are seeing</dt>
@@ -518,15 +578,15 @@ python -m bhsm.interface physics-status --format markdown`}</code>
             Independent Researcher · Oconomowoc, Wisconsin, USA
           </p>
           <p>
-            The repository record identifies Norman P. Carberry as the primary
-            author of BHSM. The work is presented as an independent,
-            artifact-backed mathematical-physics research framework built for
-            inspection, reproducibility, and explicit claim boundaries.
+            Norman P. Carberry is the primary author of the Berger–Hopf Standard
+            Model research framework. From Oconomowoc, Wisconsin, he has built
+            BHSM as a public, artifact-backed program spanning differential
+            geometry, particle-physics interfaces, numerical certification, and
+            reproducible scientific software.
           </p>
-          <p className="creator-boundary">
-            No invented biography or portrait is used here. A first-person
-            creator’s statement can be added when supplied or approved by the
-            creator.
+          <p className="creator-release">
+            Citation release v1.1.0 · released 26 June 2026 · ORCID
+            0009-0000-6650-3485 · Zenodo 10.5281/zenodo.20663419
           </p>
           <div className="creator-links">
             {creatorLinks.map((link) => (
@@ -549,7 +609,7 @@ python -m bhsm.interface physics-status --format markdown`}</code>
           />
           <p>
             <strong>BHSM Museum</strong>
-            <br />A public door to a scientific repository.
+            <br />The research archive of Norman P. Carberry.
           </p>
         </div>
         <div className="footer-links">
@@ -559,9 +619,8 @@ python -m bhsm.interface physics-status --format markdown`}</code>
           <a href="#top">Back to top ↑</a>
         </div>
         <p className="footer-boundary">
-          BHSM does not claim empirical establishment, completed physical
-          promotion, collider-production readiness, or institutional
-          endorsement.
+          Reconstructed corpus · CMS Open Data Record 303 · nine animated
+          exhibits · current authority synchronized with GitHub main
         </p>
       </footer>
     </main>
