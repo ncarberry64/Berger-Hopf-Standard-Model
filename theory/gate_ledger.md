@@ -1,5 +1,23 @@
 # Gate Ledger
 
+## AE3.1 current-C2 quark vertex/contact projection theorem
+
+- The retained unit commuting product-Dirac probe obeys the exact laws
+  `V(q)=qV(1)` and `Q(q)=q^2Q(1)`.
+- The authoritative 1,222-segment descriptor distinguishes chirality plus and
+  minus but contains no up/down sector incidence axis; its family factor is
+  `I3` and its source is not a dynamical field coordinate.
+- Existing orthogonal quark projectors structurally split a
+  representation-valued source into up/down blocks, but every pair
+  `(q_u,q_d)` obeys the same projector algebra. Projectors fix block support,
+  not the sector coefficients.
+- The missing constructive object is the current-C2 incidence map from
+  intrinsic `(H,H_tilde)` into the quark LR representation. Its first and
+  second variations must fix `V_u,V_d,Q_fg` with the same action, trace,
+  domain, and field normalization.
+- Artifact:
+  `artifacts/action_extension/BHSM_AE31_C2_QUARK_VERTEX_CONTACT_PROJECTION.json`.
+
 ## AE3.1 current-C2 quark-channel selector domain theorem
 
 - The proposed intrinsic `H_u,H_d` Hessian is undefined on the active AE3.1
