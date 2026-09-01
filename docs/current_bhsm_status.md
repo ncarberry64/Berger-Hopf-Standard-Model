@@ -96,6 +96,24 @@ measured mass is inserted.
 - `FAMILY_MASS_HIERARCHY_DERIVED = FALSE`
 - `CKM_PMNS_DERIVED = FALSE`
 
+The transverse-source section has also advanced onto the actual C2 finite
+core. At lowest spinor level the Berger block is exactly
+`(3/2)R4^-1 I2`; inserting the retained coexact hypercharge generator
+`sigma_z` and differentiating the same nonuniform element form produces exact
+Hermitian first and second/contact jets for both chiralities. Their background
+blocks are exact `I2` lifts of all stored current-C2 coefficients. The
+rank-16 charge-square trace `10` and family factor `I3` are reused without a
+new gauge coupling or scale.
+
+This is a current-domain transverse `U(1)_Y` fermion source vertex, not yet the
+physical photon. A dynamical C2 gauge/ghost block and the action-selected
+broken `SU(2)_L x U(1)_Y` neutral mixing map remain necessary before the
+electromagnetic Ward identity or muon `F2(0)` can be evaluated.
+
+- `CURRENT_C2_COEXACT_U1Y_SOURCE_JET_DERIVED = TRUE`
+- `CURRENT_C2_PHYSICAL_PHOTON_VERTEX_DERIVED = FALSE`
+- `MUON_MAGNETIC_MOMENT_DERIVED = FALSE`
+
 The remaining obstruction is no longer carrier selection or the absence of
 every fermionic C2 operator piece. One compatible AE3 C2 action assembly must
 still join the geometry/response block and this reduced product-Dirac piece
@@ -121,6 +139,9 @@ and [`puzzle certificate`](../artifacts/action_extension/BHSM_AE3_C2_FULL_FIELD_
 The family decision surface is recorded in the
 [`family-hierarchy theorem`](../theory/ae3_family_hierarchy_interface.md) and
 [`machine certificate`](../artifacts/action_extension/BHSM_AE3_FAMILY_HIERARCHY_INTERFACE.json).
+The transverse hypercharge result is recorded in the
+[`current-C2 source theorem`](../theory/ae3_c2_coexact_hypercharge_source_jet.md)
+and [`source certificate`](../artifacts/action_extension/BHSM_AE3_C2_COEXACT_HYPERCHARGE_SOURCE_JET.json).
 
 ## Authoritative Gate-7 identification frontier: unchanged-AE2 carrier audit complete
 
