@@ -126,6 +126,30 @@ currents.
 This conjunction is intentionally stricter than `lambda_24=0` and weaker than
 eternal stability.  It is the minimum bridge between those two errors.
 
+### 4.1 Four-kernel reduction and retained subclosures
+
+The eleven rows reduce to four unresolved kernels without deleting their
+individual acceptance tests:
+
+| Kernel | PEI coverage | Current result |
+|---|---|---|
+| A: localization carrier | `PEI_03`, `PEI_04`, much of `PEI_08` | no qualifying carrier in unchanged AE2 |
+| B: physical interface variation | `PEI_05`--`PEI_07` | fermionic reset trace reusable; physical junction and full-field flux open |
+| C: child inheritance | `PEI_09` | open |
+| D: C2 family/mode instantiation | `PEI_11` | algebraic intertwiner reusable; actual C2 slot and enclosure inheritance open |
+
+Thus `PEI_05a`, fermionic event-child reset trace matching, is available,
+while `PEI_05b` geometric junction matching and `PEI_05c` dependency-closed
+full-field flux matching remain open.  Likewise, the tensor-product identity
+
+```text
+[U_R tensor I_F, I_Spin tensor Pi_r,n] = 0
+```
+
+closes the algebraic `PEI_11a` intertwiner.  It does not instantiate the
+family/mode slot on the actual C2 parent (`PEI_11b`) or prove that a physical
+child enclosure inherits it (`PEI_11c`).
+
 ## 5. Current no-go operands
 
 The missing rows are not placeholders invented in this sprint.  They are
@@ -143,6 +167,47 @@ preserved results already on disk:
   but its physical carrier and inheritance map are not derived.
 
 These facts force the bridge to fail closed at the current evidence boundary.
+
+### 5.1 Unchanged-AE2 carrier kill screen
+
+A localization carrier must be an action-owned object of the type
+
+```text
+D_A : z -> (D_enc, Sigma_enc, X, n, K, ...)
+```
+
+or a covariant scalar realization
+
+```text
+Sigma_enc = {x : chi_A[Phi](x)=0},
+d chi_A restricted to Sigma_enc != 0,
+```
+
+with enough regularity and action variation to determine its interface data.
+The selected eigenvalue `lambda_24 : C -> R` has a different type: it detects
+an event time in reduced state space.  Its zero cannot be relabelled as the
+embedded spacetime surface `Sigma_enc`.
+
+The executable audit tests six stored candidate classes: `lambda_24`, the AE2
+reset locus, fixed `B1`/collar vocabulary, the unassigned support character,
+the 98-variable retained oracle, and the spacetime-edge route.  None supplies
+all of action ownership, local-domain selection, embedded-interface data,
+regularity/domain control, and owned interface variation.  This is a bounded
+no-carrier result for unchanged AE2, not a theorem against a future action
+extension.
+
+For `PEI_06`, transport is restricted to the action dependency closure
+
+```text
+Dep_A(B_i) = TC(
+  fields defining B_i,
+  fields required by M_SM(B_i),
+  fields entering delta S on Sigma_enc
+).
+```
+
+The enclosure must carry this closure; it need not carry every field
+everywhere.
 
 ## 6. Frozen upstream particle assets
 
@@ -215,17 +280,19 @@ Even then, this bridge would not by itself close the existing Gate-7
 force/KKT, saddle, pair-plus-contact Hessian, Ward/BRST trace, or physical
 scalar-readout nodes.
 
-The exact next construction is therefore
+The unchanged-AE2 audit has now exhausted the stored carrier candidates.  The
+exact next dependency is therefore an owner-authorized action-version decision,
+not another refinement of the first-stop theorem:
 
 ```text
-ACTION_OWNED_ENCAPSULATION_CARRIER_AND_ROUTE_SELECTOR_ON_THE_UNCHANGED_AE2_EVENT_CHILD_DOMAIN,
-INCLUDING_INTRINSIC_AND_EXTERNAL_GEOMETRY,
-MATCHING_AND_JUNCTION_DOMAIN,
-FULL_FIELD_RESTRICTION,
-COMPLETE_PARENT_EVENT_CHILD_BALANCE,
-AND_INTERTWINING_TRANSPORT_OF_THE_FROZEN_BHSM_PARTICLE_STATE_REGISTRY.
+OWNER_AUTHORIZED_ACTION_VERSION_DECISION_SELECTING_A_COVARIANT_LOCALIZATION_OR_DOMAIN_CARRIER;
+THEN DERIVE ITS INTERFACE VARIATION,
+DEPENDENCY-CLOSED FIELD TRANSPORT,
+CHILD INHERITANCE,
+AND C2 FAMILY/MODE INSTANTIATION.
 ```
 
-No first-stop refinement is part of that owner.
+No action term, coefficient, selector, or physical parameter is introduced by
+this audit.  No first-stop refinement is part of that owner.
 
 `FULL_BHSM_COMPLETE = FALSE`.

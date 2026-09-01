@@ -1,5 +1,49 @@
 # Current BHSM status
 
+## Authoritative Gate-7 identification frontier: unchanged-AE2 carrier audit complete
+
+The current owner is no longer another strengthening of the canonical
+branch-24 first-stop proof.  That theorem and the regular event-child relation
+are retained unchanged.  The executable carrier kill screen has instead
+tested the stored AE2 candidates against the required physical type: an
+action-owned local domain or covariant level-set carrier with embedded
+interface data, regularity/domain control, and its own interface variation.
+
+No audited candidate qualifies.  In particular, `lambda_24=0` fixes an event
+time in reduced state space and does not define `Sigma_enc` in spacetime.  The
+AE2 reset locus is internal trace glue, the fixed `B1`/collar construction is
+conditional rather than action-selected, the primitive support character is
+unassigned, the retained 98-variable oracle is geometry-only, and no theorem
+identifies the stop with a spacetime edge.
+
+The former eleven PEI rows are now organized into four unresolved kernels:
+localization carrier, physical interface variation, child inheritance, and
+C2 family/mode instantiation.  Two subclosures are retained rather than
+discarded: fermionic event-child reset trace matching is available, and the
+reset lift algebraically commutes with the frozen family projector on the
+tensor-product bundle.  Neither subclosure promotes `PEI_05` or `PEI_11` as a
+whole.  The actual C2 history still has no instantiated family/mode slot.
+
+For full-field inheritance the required object is the action dependency
+closure `Dep_A(B_i)`, not every field everywhere.  The least-assumptive route
+to test remains `LOCAL_SAME_SPACETIME_ENCLOSURE`, but unchanged AE2 does not
+select it.
+
+- `UNCHANGED_AE2_LOCALIZATION_CARRIER_FOUND = FALSE`
+- `PEI_05a_FERMIONIC_RESET_TRACE_MATCHING = AVAILABLE`
+- `PEI_11a_TENSOR_FACTOR_INTERTWINER = AVAILABLE`
+- `PHYSICAL_ENCAPSULATION_IDENTIFIED = FALSE`
+- `FULL_BHSM_COMPLETE = FALSE`
+
+Exact next dependency:
+`OWNER_AUTHORIZED_ACTION_VERSION_DECISION_SELECTING_A_COVARIANT_LOCALIZATION_OR_DOMAIN_CARRIER;_THEN_DERIVE_ITS_INTERFACE_VARIATION,_DEPENDENCY_CLOSED_FIELD_TRANSPORT,_CHILD_INHERITANCE,_AND_C2_FAMILY_MODE_INSTANTIATION`.
+
+No action extension, coefficient, selector, particle-spectrum rebuild, or new
+physical claim has been introduced by this audit.  Evidence:
+[`carrier kill screen`](../artifacts/flagship_integration/BHSM_N12_GATE7_LOCALIZATION_CARRIER_KILL_SCREEN.json)
+and
+[`physical-identification bridge`](../artifacts/flagship_integration/BHSM_N12_GATE7_PHYSICAL_ENCAPSULATION_IDENTIFICATION_BRIDGE.json).
+
 ## Authoritative frontier: continuum child certified; physical readout open
 
 The direct N12 complete persistent child now anchors a certified

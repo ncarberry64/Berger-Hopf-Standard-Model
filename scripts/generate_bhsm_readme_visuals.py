@@ -21,6 +21,12 @@ ROOT = Path(__file__).resolve().parents[1]
 ASSET_DIR = ROOT / "docs" / "assets"
 STATUS_PATH = ASSET_DIR / "bhsm_readme_visual_status.json"
 SIMULATED_SPECTRUM_PATH = ROOT / "data" / "museum" / "bhsm_simulated_particle_spectrum_v1.json"
+LOCALIZATION_AUDIT_PATH = (
+    ROOT
+    / "artifacts"
+    / "flagship_integration"
+    / "BHSM_N12_GATE7_LOCALIZATION_CARRIER_KILL_SCREEN.json"
+)
 
 W, H = 1280, 720
 FRAMES = 16
@@ -498,9 +504,12 @@ def firewall(frame=None) -> Scene:
 
 
 def identification_bridge(frame=None) -> Scene:
+    audit = json.loads(LOCALIZATION_AUDIT_PATH.read_text(encoding="utf-8"))[
+        "carrier_audit"
+    ]
     s = Scene(frame)
-    background(s, "PHYSICAL IDENTIFICATION — STATE SPACE", "AE2 EVENT CHILD → CANDIDATE LOCAL ENCLOSURE")
-    x0, x1, y0, y1 = 115, 880, 150, 610
+    background(s, "PHYSICAL IDENTIFICATION — STATE SPACE", "UNCHANGED AE2 CARRIER AUDIT · 0 OF 6 QUALIFY")
+    x0, x1, y0, y1 = 80, 775, 170, 560
     for tick in range(6):
         x = x0 + tick * (x1 - x0) / 5
         y = y1 - tick * (y1 - y0) / 5
@@ -508,27 +517,64 @@ def identification_bridge(frame=None) -> Scene:
         s.line([(x0, y), (x1, y)], C["grid"], 1)
     s.line([(x0, y1), (x1, y1)], C["white"], 2)
     s.line([(x0, y0), (x0, y1)], C["white"], 2)
-    s.text(((x0 + x1) / 2, 651), "EVENT-CHILD COORDINATE q_EC", 15, C["muted"], True, "mm")
-    s.text((116, 126), "R_ENC", 13, C["muted"], True, "la")
-    # Nested contours are the candidate action-owned enclosure, not a proof.
-    s.ellipse((420, 230, 830, 545), C["panel"], C["red"], 3)
-    s.ellipse((485, 280, 770, 505), C["panel2"], C["gold"], 2)
-    s.ellipse((550, 330, 715, 465), C["black"], C["cyan"], 2)
-    s.text((625, 213), "CANDIDATE ENCLOSURE CONTOURS", 14, C["red"], True, "mm")
+    s.text(((x0 + x1) / 2, 595), "EVENT-CHILD COORDINATE q_EC", 14, C["muted"], True, "mm")
+    s.text((82, 145), "STATE-SPACE EVENT VALUE", 13, C["muted"], True, "la")
+    # The nested region is the desired carrier type, not a selected AE2 object.
+    s.ellipse((390, 235, 750, 520), C["panel"], C["red"], 3)
+    s.ellipse((450, 285, 700, 485), C["panel2"], C["gold"], 2)
+    s.ellipse((515, 335, 650, 450), C["black"], C["cyan"], 2)
+    s.text((570, 216), "TARGET LOCAL DOMAIN · NOT SELECTED", 13, C["red"], True, "mm")
     trajectories = [
-        ([(150, 540), (300, 470), (440, 410), (575, 390)], C["cyan"], "FAMILY α"),
-        ([(160, 350), (310, 360), (455, 385), (600, 410)], C["gold"], "MODE β"),
-        ([(180, 210), (330, 270), (470, 335), (620, 385)], C["green"], "CURRENT γ"),
+        ([(110, 515), (250, 460), (390, 400), (540, 390)], C["cyan"], "FAMILY α"),
+        ([(120, 355), (275, 360), (420, 385), (565, 410)], C["gold"], "MODE β"),
+        ([(145, 205), (290, 265), (430, 330), (580, 385)], C["green"], "CURRENT γ"),
     ]
     for index, (points, accent, label) in enumerate(trajectories):
         s.line(points, accent, 3, animated=True, delay=index * 0.24)
         s.text((points[0][0], points[0][1] - 22), label, 13, accent, True, "mm")
-    s.scan(135, 830, 170, 575, C["cyan"])
-    node(s, (930, 150, 1235, 290), "REUSED STATE", ["family / mode", "representation • projector", "current • topology"], C["gold"], title_size=18)
-    node(s, (930, 315, 1235, 440), "DYNAMICS", ["selected stop λ₂₄ = 0", "geometric event child"], C["cyan"], title_size=18)
-    node(s, (930, 465, 1235, 600), "OPEN PROOF", ["enclosure owner", "junction + attachment", "intertwining transport"], C["red"], True, 18)
-    s.text((1080, 625), "CONTOUR = TARGET REGION, NOT CLOSURE", 13, C["red"], True, "mm")
-    s.text((640, 690), "A FAMILY OR MODE MAY MANIFEST AS AN SM PARTICLE ONLY AFTER STRUCTURE-PRESERVING ENCLOSURE", 14, C["white"], True, "mm")
+    s.scan(100, 745, 185, 535, C["cyan"])
+
+    # Data-native matrix: action-owned, domain, embedded surface, regularity,
+    # and same-action interface variation.  No candidate supplies all five.
+    s.rect((805, 135, 1240, 590), C["panel"], C["grid"], 2, 12)
+    s.text((825, 165), "CARRIER TYPE AUDIT", 17, C["white"], True, "la")
+    s.text((1220, 165), "0 / 6", 17, C["red"], True, "ra", pulse=True)
+    columns = (
+        ("A", "action"),
+        ("D", "domain"),
+        ("Σ", "surface"),
+        ("R", "regularity"),
+        ("δS", "variation"),
+    )
+    column_x = [1010, 1055, 1100, 1145, 1190]
+    for x, (short, _) in zip(column_x, columns):
+        s.text((x, 202), short, 12, C["muted"], True, "mm")
+    short_names = ("λ₂₄", "reset", "B1/collar", "support", "98-var", "edge")
+    attribute_keys = (
+        "action_owned",
+        "selects_local_domain",
+        "supplies_embedded_interface",
+        "regularity_or_domain_control",
+        "owns_interface_variation",
+    )
+    for row_index, (candidate, short_name) in enumerate(
+        zip(audit["candidates"], short_names)
+    ):
+        y = 238 + row_index * 49
+        s.text((825, y), short_name, 13, C["white"], row_index < 2, "lm")
+        for x, key in zip(column_x, attribute_keys):
+            passed = bool(candidate[key])
+            s.ellipse(
+                (x - 7, y - 7, x + 7, y + 7),
+                C["green"] if passed else C["black"],
+                C["green"] if passed else C["red"],
+                2,
+                reveal=row_index / 7,
+            )
+    badge(s, (825, 535, 1220, 568), "KERNEL A · FAIL-CLOSED", C["red"])
+    s.text((640, 632), "λ₂₄ SELECTS EVENT TIME — NOT THE EMBEDDED SURFACE Σ_enc", 15, C["red"], True, "mm")
+    s.text((640, 667), "REUSED: FERMION RESET TRACE + FAMILY-PROJECTOR INTERTWINER", 13, C["green"], True, "mm")
+    s.text((640, 695), "NEXT OWNER: ACTION-VERSION DECISION FOR A COVARIANT LOCALIZATION CARRIER", 13, C["white"], True, "mm")
     return s
 
 
@@ -547,6 +593,7 @@ VISUALS: dict[str, Callable[[int | None], Scene]] = {
 
 def validate_status() -> dict:
     status = json.loads(STATUS_PATH.read_text(encoding="utf-8"))
+    audit = json.loads(LOCALIZATION_AUDIT_PATH.read_text(encoding="utf-8"))
     if status["promotion"]["gate7_closed"]:
         raise RuntimeError("visual manifest unexpectedly promotes Gate 7")
     if status["capabilities"]["complete_physical_predictions"]:
@@ -557,6 +604,15 @@ def validate_status() -> dict:
         raise RuntimeError("visual manifest unexpectedly promotes the local enclosure bridge")
     if not status["identification_bridge"]["frozen_particle_registry_reused"]:
         raise RuntimeError("visual manifest must reuse the frozen particle registry")
+    carrier_audit = audit["carrier_audit"]
+    if carrier_audit["carrier_exists_in_audited_unchanged_ae2"]:
+        raise RuntimeError("visual unexpectedly found an unchanged-AE2 carrier")
+    if len(carrier_audit["candidates"]) != 6:
+        raise RuntimeError("visual requires the six-class localization audit")
+    if status["identification_bridge"]["carrier_candidates_audited"] != 6:
+        raise RuntimeError("visual manifest carrier count drift")
+    if status["identification_bridge"]["qualifying_carriers"] != 0:
+        raise RuntimeError("visual manifest unexpectedly promotes a carrier")
     return status
 
 

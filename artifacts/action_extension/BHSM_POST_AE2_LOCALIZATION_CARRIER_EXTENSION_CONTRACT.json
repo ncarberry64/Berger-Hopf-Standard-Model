@@ -1,0 +1,127 @@
+{
+  "FULL_BHSM_COMPLETE": false,
+  "acceptance_gates": [
+    {
+      "gate_id": "LEC_01",
+      "requirement": "OWNER_AUTHORIZES_EXPLICIT_NEW_ACTION_VERSION",
+      "status": "OPEN_OWNER_DECISION"
+    },
+    {
+      "gate_id": "LEC_02",
+      "requirement": "COVARIANT_LOCALIZATION_SCALAR_OR_DOMAIN_SELECTOR_IS_ACTION_OWNED",
+      "status": "OPEN"
+    },
+    {
+      "gate_id": "LEC_03",
+      "requirement": "REGULAR_LEVEL_SET_OR_WELL_POSED_EMBEDDED_DOMAIN_AND_ORIENTATION",
+      "status": "OPEN"
+    },
+    {
+      "gate_id": "LEC_04",
+      "requirement": "SAME_ACTION_VARIATION_DERIVES_INTERFACE_AND_JUNCTION_EQUATIONS",
+      "status": "OPEN"
+    },
+    {
+      "gate_id": "LEC_05",
+      "requirement": "ACTION_SELECTS_ENCLOSURE_ROUTE_WITHOUT_MANUAL_ROUTE_CHOICE",
+      "status": "OPEN"
+    },
+    {
+      "gate_id": "LEC_06",
+      "requirement": "ACTION_DEPENDENCY_CLOSURE_IS_TRANSPORTED_ON_THE_ENCLOSURE",
+      "status": "OPEN"
+    },
+    {
+      "gate_id": "LEC_07",
+      "requirement": "EXISTING_AE2_RESET_TRACE_AND_FAMILY_PROJECTOR_INTERTWINER_ARE_PRESERVED",
+      "status": "AVAILABLE_UPSTREAM_NOT_YET_ATTACHED"
+    },
+    {
+      "gate_id": "LEC_08",
+      "requirement": "FAMILY_MODE_SLOT_IS_INSTANTIATED_ON_THE_ACTUAL_C2_PARENT",
+      "status": "OPEN"
+    },
+    {
+      "gate_id": "LEC_09",
+      "requirement": "CHILD_INHERITS_ENCLOSURE_AND_DEPENDENCY_CLOSED_BHSM_STATE",
+      "status": "OPEN"
+    },
+    {
+      "gate_id": "LEC_10",
+      "requirement": "EXTENSION_REDUCES_TO_AE2_AWAY_FROM_THE_LOCALIZATION_SUPPORT",
+      "status": "OPEN"
+    },
+    {
+      "gate_id": "LEC_11",
+      "requirement": "EVERY_NEW_COEFFICIENT_HAS_DIMENSIONAL_AND_NONFIT_PROVENANCE",
+      "status": "OPEN_IF_ANY_COEFFICIENT_IS_PROPOSED"
+    },
+    {
+      "gate_id": "LEC_12",
+      "requirement": "FROZEN_PARTICLE_FAMILY_REPRESENTATION_PROJECTOR_CURRENT_AND_TOPOLOGY_ASSETS_REMAIN_UNCHANGED",
+      "status": "REQUIRED"
+    }
+  ],
+  "artifact": "BHSM_POST_AE2_LOCALIZATION_CARRIER_EXTENSION_CONTRACT",
+  "authorization_boundary": {
+    "contract_is_authorization": false,
+    "decision_must_identify": [
+      "new action version",
+      "carrier field or domain selector",
+      "action term and coefficient provenance"
+    ],
+    "extension_may_be_implemented_now": false,
+    "owner_decision_required": true
+  },
+  "current_action_version": "BHSM-AE-2.0.0",
+  "dependency_transport_rule": {
+    "all_fields_everywhere_required": false,
+    "definition": "Dep_A(B_i)=TC(fields defining B_i, fields required by M_SM(B_i), fields entering delta S on Sigma_enc)",
+    "physical_instance_available": false,
+    "requirement": "Dep_A(B_i) must be contained in the fields transported by the physical enclosure"
+  },
+  "forbidden_shortcuts": [
+    "RELABEL_LAMBDA24_ZERO_AS_SIGMA_ENC",
+    "RELABEL_AE2_RESET_LOCUS_AS_A_NEW_SPACETIME_DOMAIN",
+    "HAND_SELECT_LOCAL_SAME_SPACETIME_ENCLOSURE",
+    "ASSUME_B1_OR_COLLAR_AS_ACTION_SELECTED",
+    "FIT_A_LOCALIZATION_COEFFICIENT_TO_A_DESIRED_PARTICLE_OUTPUT",
+    "REBUILD_OR_RETUNE_FROZEN_PARTICLE_ASSETS",
+    "PROMOTE_THE_ALGEBRAIC_INTERTWINER_WITHOUT_ACTUAL_C2_INSTANTIATION"
+  ],
+  "inputs": {
+    "artifacts/BHSM_primitive_support_character_ledger_v11_2.json": "C340133A14AC20AE57C53DEB7E84F7B6B79B08019795B35AE8514E8EDEC6E7A9",
+    "artifacts/action_extension/BHSM_ACTION_AE2_GLOBAL_SPIN_RESET_ACTION.json": "4C756145A9E303F6E4F7F9536CF5639957D010C1A97AF6BE9299830C549B82DC",
+    "artifacts/flagship_integration/BHSM_N12_GATE7_LOCALIZATION_CARRIER_KILL_SCREEN.json": "0533BA8A02BC5E4A76C27150B65D761B115ADB73F87254F2EA524B4A4E0A0E2B",
+    "artifacts/flagship_integration/BHSM_N12_GATE7_PHYSICAL_ENCAPSULATION_IDENTIFICATION_BRIDGE.json": "519DA2BB652DEB3A4AD8FD22E9D63160EBDED29054361315A7B72870FE428E3A"
+  },
+  "minimum_carrier_signature": {
+    "domain_map": "D_A:z->(D_enc,Sigma_enc,X,n,K,...)",
+    "regularity": "dchi_A|Sigma_enc != 0_OR_EQUIVALENT_DOMAIN_WELL_POSEDNESS",
+    "scalar_option": "Sigma_enc={x:chi_A[Phi](x)=0}",
+    "variation_owner": "delta_S_extension|Sigma_enc"
+  },
+  "new_coefficients": [],
+  "proposed_action_version": null,
+  "purpose": "Define the minimum review and proof boundary for a future action-owned localization carrier without choosing or adding that carrier.",
+  "reusable_subclosures": {
+    "fermionic_event_child_reset_trace": "AVAILABLE",
+    "promotion_of_PEI_05_or_PEI_11": false,
+    "tensor_factor_family_projector_intertwiner": "AVAILABLE"
+  },
+  "schema_version": 1,
+  "selected_enclosure_route": null,
+  "selected_localization_candidate": null,
+  "status": "ACCEPTANCE_CONTRACT_DEFINED__EXTENSION_NOT_AUTHORIZED_OR_INSTANTIATED",
+  "validation": {
+    "ae2_reset_is_reused": true,
+    "no_action_version_assigned": true,
+    "no_candidate_selected": true,
+    "no_equation_or_coefficient_added": true,
+    "no_particle_spectrum_rebuilt": true,
+    "physical_bridge_remains_open": true,
+    "support_character_missing_object_is_preserved": true,
+    "unchanged_ae2_carrier_absence_is_input": true
+  },
+  "validation_passed": true
+}

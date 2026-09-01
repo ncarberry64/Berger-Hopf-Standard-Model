@@ -31,6 +31,8 @@ INPUTS = (
     ARTIFACTS
     / "flagship_integration/BHSM_N12_GATE7_EXACT_AFFINE_CONTINUOUS_FIRST_STOP.json",
     ARTIFACTS
+    / "flagship_integration/BHSM_N12_GATE7_LOCALIZATION_CARRIER_KILL_SCREEN.json",
+    ARTIFACTS
     / "intrinsic_state_selection/BHSM_N12_FINITE_ENCAPSULATION_LOCAL_BRANCH.json",
     ARTIFACTS
     / "intrinsic_state_selection/BHSM_N12_CONTINUUM_SINGULAR_HITTING_RESET_RELATION.json",
@@ -91,6 +93,9 @@ def build_payload() -> dict[str, Any]:
     ]
     first_stop = records[
         "BHSM_N12_GATE7_EXACT_AFFINE_CONTINUOUS_FIRST_STOP.json"
+    ]
+    carrier_audit = records[
+        "BHSM_N12_GATE7_LOCALIZATION_CARRIER_KILL_SCREEN.json"
     ]
     local_branch = records["BHSM_N12_FINITE_ENCAPSULATION_LOCAL_BRANCH.json"]
     reset = records[
@@ -328,6 +333,21 @@ def build_payload() -> dict[str, Any]:
                 "ENCLOSURE_AND_ITS_EXISTING_SM_MANIFESTATION_MAP"
             ),
         },
+        "localization_carrier": {
+            "status": carrier_audit["status"],
+            "classification": carrier_audit["classification"],
+            "qualifying_candidate_ids": carrier_audit["carrier_audit"][
+                "qualifying_candidate_ids"
+            ],
+            "unchanged_AE2_carrier_exists": carrier_audit["carrier_audit"][
+                "carrier_exists_in_audited_unchanged_ae2"
+            ],
+            "claim_boundary": (
+                "The audit excludes a qualifying carrier among the stored AE2 "
+                "objects; it does not prove that no future action extension can "
+                "supply one."
+            ),
+        },
     }
 
     validation = {
@@ -373,12 +393,23 @@ def build_payload() -> dict[str, Any]:
         "physical_identification_not_promoted": (
             bridge["physical_encapsulation_identified"] is False
         ),
+        "unchanged_ae2_carrier_kill_screen_is_fail_closed": (
+            carrier_audit["validation_passed"] is True
+            and carrier_audit["carrier_audit"][
+                "carrier_exists_in_audited_unchanged_ae2"
+            ]
+            is False
+            and carrier_audit["action_extension_boundary"][
+                "extension_authorized_here"
+            ]
+            is False
+        ),
         "no_action_equation_parameter_selector_or_numerics_changed": True,
     }
 
     return {
         "artifact": "BHSM_N12_GATE7_PHYSICAL_ENCAPSULATION_IDENTIFICATION_BRIDGE",
-        "schema_version": 1,
+        "schema_version": 2,
         "action_version": "BHSM-AE-2.0.0_UNCHANGED",
         "owner": "CURRENT_AE2_GATE7_PHYSICAL_ENCAPSULATION_IDENTIFICATION_SPECIFICATION",
         "status": (
@@ -463,6 +494,30 @@ def build_payload() -> dict[str, Any]:
             ),
         },
         "bridge_evaluation": bridge,
+        "four_kernel_reduction": carrier_audit["four_kernel_reduction"],
+        "subrequirement_resolution": carrier_audit[
+            "subrequirement_resolution"
+        ],
+        "family_reset_intertwiner": carrier_audit[
+            "family_reset_intertwiner"
+        ],
+        "dependency_closure_rule": carrier_audit[
+            "dependency_closure_rule"
+        ],
+        "localization_carrier_kill_screen": {
+            "status": carrier_audit["status"],
+            "classification": carrier_audit["classification"],
+            "candidate_count": len(carrier_audit["carrier_audit"]["candidates"]),
+            "qualifying_candidate_ids": carrier_audit["carrier_audit"][
+                "qualifying_candidate_ids"
+            ],
+            "unchanged_AE2_carrier_exists": carrier_audit["carrier_audit"][
+                "carrier_exists_in_audited_unchanged_ae2"
+            ],
+            "action_extension_boundary": carrier_audit[
+                "action_extension_boundary"
+            ],
+        },
         "current_evidence": source_findings,
         "forbidden_substitutions": {
             "lambda24_zero_equals_two_pi": False,
@@ -486,11 +541,10 @@ def build_payload() -> dict[str, Any]:
             ),
         },
         "exact_next_dependency": (
-            "ACTION_OWNED_ENCAPSULATION_CARRIER_AND_ROUTE_SELECTOR_ON_THE_"
-            "UNCHANGED_AE2_EVENT_CHILD_DOMAIN,_INCLUDING_INTRINSIC_AND_"
-            "EXTERNAL_GEOMETRY,_MATCHING_AND_JUNCTION_DOMAIN,_FULL_FIELD_"
-            "RESTRICTION,_COMPLETE_PARENT_EVENT_CHILD_BALANCE,_AND_"
-            "INTERTWINING_TRANSPORT_OF_THE_FROZEN_BHSM_PARTICLE_STATE_REGISTRY"
+            "OWNER_AUTHORIZED_ACTION_VERSION_DECISION_SELECTING_A_COVARIANT_"
+            "LOCALIZATION_OR_DOMAIN_CARRIER;_THEN_DERIVE_ITS_INTERFACE_"
+            "VARIATION,_DEPENDENCY_CLOSED_FIELD_TRANSPORT,_CHILD_INHERITANCE,_"
+            "AND_C2_FAMILY_MODE_INSTANTIATION"
         ),
         "claim_boundary": {
             "physical_encapsulation_identified": False,

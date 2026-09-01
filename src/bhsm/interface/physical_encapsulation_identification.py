@@ -11,6 +11,8 @@ from __future__ import annotations
 from dataclasses import dataclass
 from typing import Mapping
 
+import numpy as np
+
 
 BRIDGE_VERSION = "BHSM-AE2-PHYSICAL-ENCAPSULATION-BRIDGE-1.0.0"
 
@@ -127,6 +129,104 @@ ENCLOSURE_ROUTES = (
     "CORE_BOUNDARY_OR_COLLAR_ENCLOSURE",
     "SPACETIME_EDGE_TRANSITION",
 )
+
+
+KERNEL_REDUCTION = (
+    {
+        "kernel_id": "KERNEL_A",
+        "name": "localization_carrier",
+        "pei_rows": ("PEI_03", "PEI_04", "PEI_08"),
+        "status": (
+            "UNCHANGED_AE2_KILL_SCREEN_COMPLETE__CARRIER_NOT_FOUND__"
+            "ACTION_VERSION_DECISION_REQUIRED"
+        ),
+    },
+    {
+        "kernel_id": "KERNEL_B",
+        "name": "physical_interface_variation",
+        "pei_rows": ("PEI_05", "PEI_06", "PEI_07"),
+        "status": "PHYSICAL_ENCLOSURE_INTERFACE_OPEN",
+    },
+    {
+        "kernel_id": "KERNEL_C",
+        "name": "child_inheritance",
+        "pei_rows": ("PEI_09",),
+        "status": "ENCLOSURE_INHERITANCE_OPEN",
+    },
+    {
+        "kernel_id": "KERNEL_D",
+        "name": "c2_family_mode_instantiation",
+        "pei_rows": ("PEI_11",),
+        "status": "C2_FAMILY_MODE_SLOT_OPEN",
+    },
+)
+
+
+def tensor_factor_intertwiner_certificate(
+    reset_lift: object,
+    family_projector: object,
+    *,
+    tolerance: float = 1.0e-12,
+) -> dict[str, object]:
+    """Certify the algebraic reset/family-projector intertwiner.
+
+    The AE2 reset lift acts on the Spin x gauge factor and the frozen family
+    projector acts on the finite family module.  Their tensor extensions must
+    commute.  This certifies only that algebraic fact; it does not instantiate
+    a family slot on the realized C2 history or construct a physical enclosure.
+    """
+
+    lift = np.asarray(reset_lift, dtype=complex)
+    projector = np.asarray(family_projector, dtype=complex)
+    if lift.ndim != 2 or lift.shape[0] != lift.shape[1]:
+        raise ValueError("reset_lift must be square")
+    if projector.ndim != 2 or projector.shape[0] != projector.shape[1]:
+        raise ValueError("family_projector must be square")
+    if not np.all(np.isfinite(lift)) or not np.all(np.isfinite(projector)):
+        raise ValueError("intertwiner inputs must be finite")
+    identity_spin_gauge = np.eye(lift.shape[0], dtype=complex)
+    identity_family = np.eye(projector.shape[0], dtype=complex)
+    unitarity_residual = float(
+        np.linalg.norm(np.conjugate(lift.T) @ lift - identity_spin_gauge)
+    )
+    idempotency_residual = float(np.linalg.norm(projector @ projector - projector))
+    lifted_reset = np.kron(lift, identity_family)
+    lifted_projector = np.kron(identity_spin_gauge, projector)
+    commutator_residual = float(
+        np.linalg.norm(lifted_reset @ lifted_projector - lifted_projector @ lifted_reset)
+    )
+    certified = (
+        unitarity_residual <= tolerance
+        and idempotency_residual <= tolerance
+        and commutator_residual <= tolerance
+    )
+    return {
+        "spin_gauge_dimension": int(lift.shape[0]),
+        "family_dimension": int(projector.shape[0]),
+        "product_dimension": int(lifted_reset.shape[0]),
+        "unitarity_residual": unitarity_residual,
+        "projector_idempotency_residual": idempotency_residual,
+        "commutator_residual": commutator_residual,
+        "algebraic_intertwiner_certified": certified,
+        "c2_family_mode_slot_instantiated": False,
+        "physical_enclosure_transport_proved": False,
+    }
+
+
+def action_dependency_closure(
+    seeds: set[str], dependencies: Mapping[str, set[str]]
+) -> set[str]:
+    """Return the transitive same-action field dependency closure."""
+
+    closure = set(seeds)
+    frontier = list(seeds)
+    while frontier:
+        field = frontier.pop()
+        for dependency in dependencies.get(field, set()):
+            if dependency not in closure:
+                closure.add(dependency)
+                frontier.append(dependency)
+    return closure
 
 
 def evaluate_identification(

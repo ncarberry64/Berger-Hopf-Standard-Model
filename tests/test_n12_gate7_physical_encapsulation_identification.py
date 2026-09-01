@@ -118,3 +118,35 @@ def test_historical_particle_assets_are_imported_with_provenance() -> None:
     assert payload["current_evidence"]["particle_state_registry"][
         "spectrum_rederived"
     ] is False
+
+
+def test_localization_kill_screen_and_four_kernel_reduction_are_imported() -> None:
+    payload = build_payload()
+    kill_screen = payload["localization_carrier_kill_screen"]
+    assert kill_screen["candidate_count"] == 6
+    assert kill_screen["qualifying_candidate_ids"] == []
+    assert kill_screen["unchanged_AE2_carrier_exists"] is False
+    assert kill_screen["action_extension_boundary"][
+        "extension_authorized_here"
+    ] is False
+    assert [row["kernel_id"] for row in payload["four_kernel_reduction"]] == [
+        "KERNEL_A",
+        "KERNEL_B",
+        "KERNEL_C",
+        "KERNEL_D",
+    ]
+
+
+def test_partial_subclosures_do_not_promote_parent_pei_rows() -> None:
+    payload = build_payload()
+    sub = payload["subrequirement_resolution"]
+    assert sub["PEI_05a_fermionic_event_child_reset_trace_matching"] == "AVAILABLE"
+    assert sub["PEI_05b_physical_enclosure_geometric_junction"] == "OPEN"
+    assert sub["PEI_11a_tensor_factor_family_reset_intertwiner"] == "AVAILABLE"
+    assert sub["PEI_11b_family_mode_projector_instantiated_on_actual_C2_parent"] == "OPEN"
+    requirements = {
+        row["id"]: row["satisfied"]
+        for row in payload["bridge_evaluation"]["requirements"]
+    }
+    assert requirements["PEI_05"] is False
+    assert requirements["PEI_11"] is False

@@ -204,6 +204,13 @@
       "status": "BHSM_CURRENT_ACTION_SELECTS_NO_SELF_ADJOINT_JUNCTION_DOMAIN",
       "unique_domain_selected": false
     },
+    "localization_carrier": {
+      "claim_boundary": "The audit excludes a qualifying carrier among the stored AE2 objects; it does not prove that no future action extension can supply one.",
+      "classification": "CARRIER_EXISTENCE_KILL_SCREEN_FAIL_CLOSED",
+      "qualifying_candidate_ids": [],
+      "status": "UNCHANGED_AE2_LOCALIZATION_CARRIER_NOT_FOUND_AT_AUDITED_EVIDENCE_BOUNDARY",
+      "unchanged_AE2_carrier_exists": false
+    },
     "metric_matching": {
       "conditional_on_provisional_boundary_axiom": true,
       "equation": "S_match=integral sqrt(-h) Lambda^{mu nu}(h_mu nu-iota^*g_mu nu)",
@@ -219,6 +226,12 @@
       "status": "RECOVERED_AND_IMPORTED_AS_FROZEN_UPSTREAM_ASSETS",
       "topology_rederived": false
     }
+  },
+  "dependency_closure_rule": {
+    "all_fields_everywhere_required": false,
+    "definition": "Dep_A(B_i)=TC(fields defining B_i, fields required by M_SM(B_i), fields entering delta S on Sigma_enc)",
+    "physical_instance_available": false,
+    "requirement": "Dep_A(B_i) must be contained in the fields transported by the physical enclosure"
   },
   "enclosure_signature": {
     "components": [
@@ -240,7 +253,18 @@
     ],
     "symbol": "Sigma_enc"
   },
-  "exact_next_dependency": "ACTION_OWNED_ENCAPSULATION_CARRIER_AND_ROUTE_SELECTOR_ON_THE_UNCHANGED_AE2_EVENT_CHILD_DOMAIN,_INCLUDING_INTRINSIC_AND_EXTERNAL_GEOMETRY,_MATCHING_AND_JUNCTION_DOMAIN,_FULL_FIELD_RESTRICTION,_COMPLETE_PARENT_EVENT_CHILD_BALANCE,_AND_INTERTWINING_TRANSPORT_OF_THE_FROZEN_BHSM_PARTICLE_STATE_REGISTRY",
+  "exact_next_dependency": "OWNER_AUTHORIZED_ACTION_VERSION_DECISION_SELECTING_A_COVARIANT_LOCALIZATION_OR_DOMAIN_CARRIER;_THEN_DERIVE_ITS_INTERFACE_VARIATION,_DEPENDENCY_CLOSED_FIELD_TRANSPORT,_CHILD_INHERITANCE,_AND_C2_FAMILY_MODE_INSTANTIATION",
+  "family_reset_intertwiner": {
+    "algebraic_intertwiner_certified": true,
+    "c2_family_mode_slot_instantiated": false,
+    "commutator_residual": 0.0,
+    "family_dimension": 3,
+    "physical_enclosure_transport_proved": false,
+    "product_dimension": 6,
+    "projector_idempotency_residual": 0.0,
+    "spin_gauge_dimension": 2,
+    "unitarity_residual": 0.0
+  },
   "forbidden_substitutions": {
     "canonical_stop_equals_spacetime_edge": false,
     "lambda24_zero_equals_two_pi": false,
@@ -248,6 +272,44 @@
     "proof_cutoff_equals_physical_boundary": false,
     "reset_state_equals_new_spacetime_domain": false
   },
+  "four_kernel_reduction": [
+    {
+      "kernel_id": "KERNEL_A",
+      "name": "localization_carrier",
+      "pei_rows": [
+        "PEI_03",
+        "PEI_04",
+        "PEI_08"
+      ],
+      "status": "UNCHANGED_AE2_KILL_SCREEN_COMPLETE__CARRIER_NOT_FOUND__ACTION_VERSION_DECISION_REQUIRED"
+    },
+    {
+      "kernel_id": "KERNEL_B",
+      "name": "physical_interface_variation",
+      "pei_rows": [
+        "PEI_05",
+        "PEI_06",
+        "PEI_07"
+      ],
+      "status": "PHYSICAL_ENCLOSURE_INTERFACE_OPEN"
+    },
+    {
+      "kernel_id": "KERNEL_C",
+      "name": "child_inheritance",
+      "pei_rows": [
+        "PEI_09"
+      ],
+      "status": "ENCLOSURE_INHERITANCE_OPEN"
+    },
+    {
+      "kernel_id": "KERNEL_D",
+      "name": "c2_family_mode_instantiation",
+      "pei_rows": [
+        "PEI_11"
+      ],
+      "status": "C2_FAMILY_MODE_SLOT_OPEN"
+    }
+  ],
   "inputs": {
     "artifacts/BHSM_CURRENT_FULL_FIELD_ACTION_ATTACHMENT_AUDIT.json": "FC35527D23B49573360B9B28B9F064BFF297F678F7439BEB18D908D0D54808B4",
     "artifacts/BHSM_aether_hybrid_standard_model_bundle_v15_53.json": "951098D595DFD4DABBDBAB6C063A0650C491337CC3C0B3D26F5D4FD124F1FB25",
@@ -264,6 +326,7 @@
     "artifacts/BHSM_topological_matter_action_global_spectrum_report_v6_5_0.json": "9B47598729C58FC9E6DBB1E0CB1E5FA9A07CF96A5117FE3B16B0D4FB4623F550",
     "artifacts/flagship_integration/BHSM_N12_C2_ENCLOSURE_CLASS_INVARIANT_AUDIT.json": "5ACEE5AB441658EE1FFAF67506E344F07D781789B975808047902E7FBF0C470F",
     "artifacts/flagship_integration/BHSM_N12_GATE7_EXACT_AFFINE_CONTINUOUS_FIRST_STOP.json": "111C6FE1E8D297B68DE6B19E2D257D5DC437BC7EC970DB2C9DBF08737B40DF5F",
+    "artifacts/flagship_integration/BHSM_N12_GATE7_LOCALIZATION_CARRIER_KILL_SCREEN.json": "0533BA8A02BC5E4A76C27150B65D761B115ADB73F87254F2EA524B4A4E0A0E2B",
     "artifacts/flagship_integration/BHSM_NEUTRINO_CHARGED_CURRENT_2PI_CLOSURE_RECONCILIATION.json": "084E169B05537E862084F9C97D89BAB5210B080A61BBCE27B32393A47943D3BD",
     "artifacts/flagship_integration/BHSM_NORMAN_SCHOOL_FULL_CORPUS_RECONSTRUCTION.json": "209EBB30142C4DC6510D1D8FF69E4F1CA8AD2B6A7A6EF923A755815BEB4618AF",
     "artifacts/flagship_integration/BHSM_SPACETIME_EDGE_ONTOLOGY_AUDIT.json": "1B7325CF7350BC758215CB5FAC705683EC4406EB0BA0691C03981B0426E370B4",
@@ -277,10 +340,31 @@
     "theory/derived_hopf_phase_closure.md": "84CB1C7028F35C981DFFE03A1DFD381816DE433DF6C8E45FA8F38B77518B8016",
     "theory/derived_yukawa_generation_mode_ledgers.md": "CA64B8215F704F43EC92950BB1E22D24BE2E7A4082F96F721ECF69CC79C78BDD"
   },
+  "localization_carrier_kill_screen": {
+    "action_extension_boundary": {
+      "extension_authorized_here": false,
+      "extension_required_if_local_physical_enclosure_remains_the_goal": true,
+      "forbidden_shortcut": "DO_NOT_RELABEL_LAMBDA24_ZERO_OR_THE_RESET_LOCUS_AS_SIGMA_ENC",
+      "minimum_new_owner": "COVARIANT_LOCALIZATION_OR_DOMAIN_SELECTOR_WITH_SAME_ACTION_INTERFACE_VARIATION"
+    },
+    "candidate_count": 6,
+    "classification": "CARRIER_EXISTENCE_KILL_SCREEN_FAIL_CLOSED",
+    "qualifying_candidate_ids": [],
+    "status": "UNCHANGED_AE2_LOCALIZATION_CARRIER_NOT_FOUND_AT_AUDITED_EVIDENCE_BOUNDARY",
+    "unchanged_AE2_carrier_exists": false
+  },
   "owner": "CURRENT_AE2_GATE7_PHYSICAL_ENCAPSULATION_IDENTIFICATION_SPECIFICATION",
-  "schema_version": 1,
+  "schema_version": 2,
   "scientific_decision": "THE_BRANCH24_CANONICAL_STOP_AND_EVENT_CHILD_RELATION_SUPPLY_THE_MATHEMATICAL_CARRIER_BUT_DO_NOT_YET_IDENTIFY_A_PHYSICAL_LOCAL_ENCLOSURE;_PROMOTION_REQUIRES_AN_ACTION_SELECTED_ROUTE,_CARRIER_AND_DOMAIN,_MATCHING_AND_JUNCTION_CONDITIONS,_FULL_FIELD_RESTRICTION,_COMPLETE_EVENT_BALANCE,_NONLINEAR_LOCAL_COMPLETION,_AND_CHILD_INHERITANCE_OF_THE_EXISTING_BHSM_FAMILY_MODE_PARTICLE_STATE",
   "status": "BRIDGE_INTERFACE_SPECIFIED__PHYSICAL_IDENTIFICATION_OPEN_MISSING_ACTION_OWNED_DOMAIN_AND_FULL_FIELD_ATTACHMENT",
+  "subrequirement_resolution": {
+    "PEI_05a_fermionic_event_child_reset_trace_matching": "AVAILABLE",
+    "PEI_05b_physical_enclosure_geometric_junction": "OPEN",
+    "PEI_05c_dependency_closed_full_field_enclosure_flux_matching": "OPEN",
+    "PEI_11a_tensor_factor_family_reset_intertwiner": "AVAILABLE",
+    "PEI_11b_family_mode_projector_instantiated_on_actual_C2_parent": "OPEN",
+    "PEI_11c_physical_enclosure_inherits_intertwined_bundle_state": "OPEN"
+  },
   "typed_bridge": {
     "current_map_status": "INTERFACE_DEFINED_MAP_NOT_INSTANTIATED",
     "intermediate": "REGULAR_EVENT_TO_COMPLETE_CHILD_RELATION",
@@ -423,6 +507,7 @@
     "positive_duration_retained_but_not_stability": true,
     "reconstruction_result_is_drift_confirmed": true,
     "route_not_hand_selected": true,
+    "unchanged_ae2_carrier_kill_screen_is_fail_closed": true,
     "upstream_particle_assets_reused_not_rederived": true
   },
   "validation_passed": true

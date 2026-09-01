@@ -13,6 +13,12 @@
   `../data/museum/bhsm_simulated_particle_spectrum_v1.json`. Its dimensionless
   positions and intensities are deterministic simulated museum data; familiar
   particle labels are orientation references, not mass predictions or fits.
+- The physical-identification animation reads the checked-in six-candidate
+  unchanged-AE2 carrier audit at
+  `../artifacts/flagship_integration/BHSM_N12_GATE7_LOCALIZATION_CARRIER_KILL_SCREEN.json`.
+  Its 6-by-5 matrix is a direct rendering of the audited boolean carrier
+  attributes; the moving family, mode, and current traces are explanatory
+  state-space paths and do not claim a selected enclosure.
 - `public/bhsm-symbol.svg` is reused from the sibling Bubo Research Node project
   (`frontend/src/assets/bhsm-symbol.svg`). That project identifies the mark as
   an original repository asset and publishes it under the MIT License.
