@@ -13,16 +13,16 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: 'BHSM Museum | One Action · One Scale · One Observable Pipeline',
+  title: 'BHSM Museum | Reconstructed Scientific Record',
   description:
-    'The animated public entrance to the Berger–Hopf Standard Model scientific repository.',
+    'The public entrance to the integrated Berger–Hopf Standard Model record, its particle ontology, AE2 event dynamics, and open physical-enclosure bridge.',
   icons: {
     icon: './bhsm-symbol.svg',
   },
   openGraph: {
-    title: 'BHSM Museum',
+    title: 'BHSM Museum | Reconstructed Scientific Record',
     description:
-      'Functional animations lead to the source, tests, artifacts, and claim boundaries behind BHSM.',
+      'Explore the integrated BHSM corpus, animated calculations, provenance, and the exact boundary of the open physical-enclosure bridge.',
     images: ['./og.png'],
   },
 };

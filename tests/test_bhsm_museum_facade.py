@@ -5,10 +5,10 @@ ROOT = Path(__file__).resolve().parents[1]
 MUSEUM = ROOT / "museum"
 
 
-def test_museum_has_seven_functional_motion_exhibits_and_static_fallbacks() -> None:
+def test_museum_has_eight_functional_motion_exhibits_and_static_fallbacks() -> None:
     exhibits = (MUSEUM / "app" / "exhibits.ts").read_text(encoding="utf-8")
-    assert exhibits.count("_animated.gif'") == 7
-    assert exhibits.count("still: 'bhsm_") == 7
+    assert exhibits.count("_animated.gif'") == 8
+    assert exhibits.count("still: 'bhsm_") == 8
     for phrase in (
         "S², S³, and S⁴",
         "inverse-free LSZ",
@@ -17,6 +17,8 @@ def test_museum_has_seven_functional_motion_exhibits_and_static_fallbacks() -> N
         "Two incoming particles",
         "Allowed decay branches",
         "no-fit firewall",
+        "family or mode",
+        "local enclosure",
     ):
         assert phrase in exhibits
 
@@ -28,7 +30,7 @@ def test_museum_separates_claim_classes_and_creator_record() -> None:
         "Implemented machinery",
         "Numerically demonstrated",
         "Physical prediction",
-        "ACTIVE_NOT_CLOSED",
+        "physical enclosure bridge remains open",
         "FULL_BHSM_COMPLETE = FALSE",
         "Norman P. Carberry",
         "0009-0000-6650-3485",

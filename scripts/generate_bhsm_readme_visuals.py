@@ -305,7 +305,7 @@ def hero(frame=None) -> Scene:
     badge(s, (300, 510, 980, 550), "ONE ACTION • ONE SCALE • ONE OBSERVABLE PIPELINE")
     badge(s, (430, 558, 850, 594), "ACTION-OWNED • NO-FIT", C["cyan"])
     s.rect((300, 612, 980, 666), C["panel2"], C["red"], 2, 10)
-    s.text((640, 639), "PHYSICAL PROMOTION GATED PENDING FORMAL GATE 7 CLOSURE", 18, C["red"], True, "mm")
+    s.text((640, 639), "AE2 STOP + EVENT CHILD DERIVED • LOCAL ENCLOSURE BRIDGE OPEN", 18, C["red"], True, "mm")
     return s
 
 
@@ -313,7 +313,7 @@ def universal(frame=None) -> Scene:
     s = Scene(frame)
     background(s, "UNIVERSAL PREDICTIVE ENGINE", "NO SEPARATE HANDWRITTEN READOUT RULES")
     boxes = [
-        (25, 150, 220, 270, "FROZEN BACKGROUND", ["Gate 7 not closed", "physical quotient"]),
+        (25, 150, 220, 270, "FROZEN BACKGROUND", ["state registry retained", "physical quotient"]),
         (245, 150, 440, 270, "ACTION EXPANSION", ["S² • S³ • S⁴", "one provenance"]),
         (465, 150, 660, 270, "SPECTRUM", ["poles / residues", "propagators"]),
         (685, 150, 880, 270, "VERTICES", ["cubic + quartic", "action derivatives"]),
@@ -333,7 +333,7 @@ def universal(frame=None) -> Scene:
         x0 = 25 + index * 250
         node(s, (x0, 500, x0 + 230, 590), label, (), C["gold"] if index in {2, 3} else C["cyan"], title_size=15)
         arrow(s, (640, 430), (x0 + 115, 500), 0.15 * index, bend=(x0 + 115, 465))
-    s.text((640, 650), "ENGINE CAPABILITY • PHYSICAL READOUTS REMAIN FAIL-CLOSED UNTIL PROMOTION GATES PASS", 16, C["red"], True, "mm")
+    s.text((640, 650), "ENGINE CAPABILITY • ENCLOSURE TRANSPORT REMAINS FAIL-CLOSED UNTIL THE BRIDGE PASSES", 16, C["red"], True, "mm")
     return s
 
 
@@ -393,7 +393,7 @@ def gminus2(frame=None) -> Scene:
     s.text((640, 410), "Γ^μ = F1(q²) γ^μ + [i σ^μν q_ν / (2m_μ)] F2(q²) + …", 25, C["white"], False, "mm")
     badge(s, (140, 495, 1140, 540), "F2(0) ENGINE READY • NO NUMERICAL BHSM a_μ DISPLAYED", C["gold"])
     s.rect((220, 580, 1060, 638), C["panel2"], C["red"], 2, 10)
-    s.text((640, 609), "PHYSICAL PREDICTION GATED: GATE 7 • WARD IDENTITY • RENORMALIZATION • EXTERNAL MODE", 15, C["red"], True, "mm")
+    s.text((640, 609), "PHYSICAL PREDICTION GATED: ENCLOSURE BRIDGE • WARD IDENTITY • RENORMALIZATION • EXTERNAL MODE", 15, C["red"], True, "mm")
     return s
 
 
@@ -458,6 +458,47 @@ def firewall(frame=None) -> Scene:
     return s
 
 
+def identification_bridge(frame=None) -> Scene:
+    s = Scene(frame)
+    background(
+        s,
+        "BHSM IDENTIFICATION BRIDGE",
+        "FROZEN STATE → AE2 SELECTED STOP / EVENT CHILD → LOCAL ENCLOSURE",
+    )
+    nodes = [
+        (25, 180, 235, 350, "BHSM STATE", ["family / mode", "representation", "projector + current"], C["gold"]),
+        (270, 180, 470, 350, "SELECTED STOP", ["λ₂₄ = 0", "Euler–Dirac Hessian"], C["cyan"]),
+        (505, 180, 705, 350, "EVENT CHILD", ["geometric child", "forward-carried state"], C["cyan"]),
+        (740, 180, 970, 350, "LOCAL ENCLOSURE", ["action-owned domain", "matching + balance"], C["red"]),
+        (1005, 180, 1255, 350, "SM MANIFESTATION", ["existing class", "particle readout"], C["gold"]),
+    ]
+    for index, box in enumerate(nodes):
+        node(
+            s,
+            box[:4],
+            box[4],
+            box[5],
+            box[6],
+            pulse=index in {2, 3},
+            title_size=17,
+            body_size=15,
+        )
+        if index:
+            arrow(
+                s,
+                (nodes[index - 1][2], 265),
+                (box[0], 265),
+                0.13 * index,
+                C["red"] if index in {3, 4} else C["cyan"],
+            )
+    badge(s, (210, 415, 1070, 462), "A BHSM FAMILY OR MODE MAY MANIFEST AS AN SM PARTICLE", C["gold"])
+    s.rect((90, 510, 1190, 610), C["black"], C["red"], 2, 10)
+    s.text((640, 540), "REJECTED SHORTCUTS", 18, C["red"], True, "mm")
+    s.text((640, 580), "λ₂₄ = 0 ≠ 2π     •     STOP ≠ SPACETIME EDGE     •     DURATION ≠ STABILITY", 17, C["white"], True, "mm")
+    s.text((640, 665), "MISSING: ENCLOSURE OWNER • JUNCTION DATA • FULL-FIELD ATTACHMENT • INTERTWINING TRANSPORT", 14, C["muted"], True, "mm")
+    return s
+
+
 VISUALS: dict[str, Callable[[int | None], Scene]] = {
     "bhsm_geometry_to_prediction": hero,
     "bhsm_universal_predictive_engine": universal,
@@ -466,6 +507,7 @@ VISUALS: dict[str, Callable[[int | None], Scene]] = {
     "bhsm_collision_predictor": collision,
     "bhsm_decay_stability_engine": decay,
     "bhsm_no_fit_firewall": firewall,
+    "bhsm_physical_identification_bridge": identification_bridge,
 }
 
 
@@ -477,6 +519,10 @@ def validate_status() -> dict:
         raise RuntimeError("visual manifest unexpectedly claims complete predictions")
     if status["spectral_visualization"]["physical_mass_scale_available"]:
         raise RuntimeError("visual suite is intentionally non-numeric until a physical scale exists")
+    if status["identification_bridge"]["local_enclosure_proved"]:
+        raise RuntimeError("visual manifest unexpectedly promotes the local enclosure bridge")
+    if not status["identification_bridge"]["frozen_particle_registry_reused"]:
+        raise RuntimeError("visual manifest must reuse the frozen particle registry")
     return status
 
 

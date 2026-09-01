@@ -13,7 +13,9 @@
     "prediction_firewall": "bcf1b412",
     "retained_sm_component_matching": "7c0b6a85",
     "sm_gauge_vertex_tensors": "2a07cfc5",
-    "physical_gauge_coupling_guard": "cf078ac0"
+    "physical_gauge_coupling_guard": "cf078ac0",
+    "ontology_reconstruction": "1e7e9e0e",
+    "physical_identification_bridge": "1e7e9e0e"
   },
   "capabilities": {
     "action_derivatives": [1, 2, 3, 4],
@@ -37,11 +39,13 @@
   "promotion": {
     "gate7_closed": false,
     "status": "PHYSICAL PROMOTION GATED",
-    "detail": "Pending formal Gate 7 closure; engine capability is not a physical prediction."
+    "detail": "The AE2 selected stop and event child are derived; physical promotion remains gated on the local-enclosure identification bridge and downstream physical requirements."
   },
   "spectral_visualization": {
     "physical_mass_scale_available": false,
-    "particle_assignments_available": false,
+    "particle_assignments_available": true,
+    "assignment_authority": "FROZEN_UPSTREAM_REGISTRY_AT_ORIGINAL_CLAIM_STRENGTH",
+    "new_particle_assignments_derived_here": false,
     "display_mode": "STRUCTURAL_AND_PROVISIONAL",
     "labels": [
       "ACTION-DERIVED MODE",
@@ -50,6 +54,24 @@
       "UNRESOLVED",
       "KINEMATICALLY CLOSED",
       "SELECTION-RULE FORBIDDEN"
+    ]
+  },
+  "identification_bridge": {
+    "selected_ae2_stop_derived": true,
+    "event_child_derived": true,
+    "frozen_particle_registry_reused": true,
+    "family_or_mode_may_manifest_as_sm_particle": true,
+    "local_enclosure_proved": false,
+    "missing": [
+      "action_owned_enclosure_carrier",
+      "matching_or_junction_data",
+      "full_field_attachment_and_balance",
+      "structure_preserving_particle_state_transport"
+    ],
+    "forbidden_equivalences": [
+      "lambda24_zero_equals_two_pi",
+      "selected_stop_equals_spacetime_edge",
+      "positive_duration_equals_particle_stability"
     ]
   },
   "prohibited_numeric_readouts": [

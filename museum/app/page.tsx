@@ -28,6 +28,7 @@ export default function Home() {
   );
 
   const hero = exhibits[0];
+  const exhibitCount = String(exhibits.length).padStart(2, '0');
 
   return (
     <main>
@@ -50,6 +51,7 @@ export default function Home() {
           </span>
         </a>
         <nav aria-label="Museum navigation">
+          <a href="#reconstruction">Reconstruction</a>
           <a href="#exhibits">Exhibits</a>
           <a href="#professionals">For reviewers</a>
           <a href="#creator">Creator</a>
@@ -87,7 +89,7 @@ export default function Home() {
 
         <div className="atrium-display" aria-label="Featured animated exhibit">
           <div className="display-label">
-            <span>Exhibit {hero.number} / 07</span>
+            <span>Exhibit {hero.number} / {exhibitCount}</span>
             <Button
               onClick={() => setMotion((value) => !value)}
               aria-pressed={!motion}
@@ -119,6 +121,82 @@ export default function Home() {
             </p>
             <StatusBadge exhibit={hero} />
           </div>
+        </div>
+      </section>
+
+      <section
+        className="reconstruction-room"
+        id="reconstruction"
+        aria-labelledby="reconstruction-title"
+      >
+        <div className="section-heading reconstruction-heading">
+          <p className="eyebrow">Reconstruction room · integrated BHSM corpus</p>
+          <h2 id="reconstruction-title">
+            One program, recovered through its changing semantics.
+          </h2>
+          <p>
+            Every BHSM lineage is now integrated on main. The reconstruction
+            preserves its calculations while separating an existing particle
+            ontology from the later AE2 stop and event-child dynamics and from
+            the still-missing local-enclosure proof.
+          </p>
+        </div>
+
+        <div className="bridge-map" aria-label="Physical identification bridge">
+          <article className="bridge-stage bridge-stage-upstream">
+            <span>01 · Reused upstream state</span>
+            <h3>BHSM family or mode</h3>
+            <p>
+              Representation, projector, current, topology, and existing SM
+              manifestation class retain their historical provenance.
+            </p>
+            <strong>No particle-spectrum rebuild</strong>
+          </article>
+          <div className="bridge-arrow" aria-hidden="true">→</div>
+          <article className="bridge-stage bridge-stage-dynamics">
+            <span>02 · Derived AE2 dynamics</span>
+            <h3>Selected stop → event child</h3>
+            <p>
+              The canonical stop is the reduced Euler–Dirac Hessian stop
+              λ₂₄ = 0. Its geometric event child is carried forward.
+            </p>
+            <strong>Real dynamics · not yet enclosure</strong>
+          </article>
+          <div className="bridge-arrow" aria-hidden="true">→</div>
+          <article className="bridge-stage bridge-stage-open">
+            <span>03 · Open typed interface</span>
+            <h3>Local enclosure → SM manifestation</h3>
+            <p>
+              The missing map must prove an action-owned local domain and
+              transport the frozen state into its existing manifestation class,
+              including when a family or mode manifests as an SM particle.
+            </p>
+            <strong>Specified · fail-closed</strong>
+          </article>
+        </div>
+
+        <div className="reconstruction-ledger">
+          <article>
+            <span className="ledger-label ledger-proved">Recovered</span>
+            <h3>Preserved BHSM assets</h3>
+            <p>Particle families, modes, representations, projectors, currents, topology, selected stop, and event child.</p>
+          </article>
+          <article>
+            <span className="ledger-label ledger-open">Still required</span>
+            <h3>Identification bridge</h3>
+            <p>Enclosure owner and route, junction data, full-field attachment and balance, and intertwining state transport.</p>
+          </article>
+          <article>
+            <span className="ledger-label ledger-forbidden">Not equivalent</span>
+            <h3>Semantic guardrails</h3>
+            <p>λ₂₄ = 0 is not 2π; a stop is not automatically a spacetime edge; positive duration is not particle stability.</p>
+          </article>
+        </div>
+
+        <div className="reconstruction-records">
+          <a href={`${SCIENCE}/docs/BHSM_NORMAN_SCHOOL_FULL_CORPUS_RECONSTRUCTION.md`}>Full ontology reconstruction ↗</a>
+          <a href={`${SCIENCE}/theory/n12_gate7_physical_encapsulation_identification_bridge.md`}>Typed enclosure bridge ↗</a>
+          <a href={`${SCIENCE}/artifacts/flagship_integration/BHSM_N12_GATE7_PHYSICAL_ENCAPSULATION_IDENTIFICATION_BRIDGE.json`}>Machine-readable bridge ↗</a>
         </div>
       </section>
 
@@ -174,8 +252,8 @@ export default function Home() {
         <div className="status-ribbon" role="note">
           <strong>Current public boundary</strong>
           <span>
-            Gate 7 remains ACTIVE_NOT_CLOSED · physical readout is gated ·
-            FULL_BHSM_COMPLETE = FALSE
+            AE2 selected stop and event child are derived · the physical
+            enclosure bridge remains open · FULL_BHSM_COMPLETE = FALSE
           </span>
           <a href={`${SCIENCE}/docs/current_bhsm_status.md`}>
             Read current status <ArrowRight aria-hidden="true" size={15} />
@@ -190,7 +268,7 @@ export default function Home() {
       >
         <div className="section-heading hall-heading">
           <p className="eyebrow">
-            Main exhibition hall · seven animated calculations
+            Main exhibition hall · {exhibits.length} animated calculations
           </p>
           <h2 id="exhibit-title">Look first. Then go backstage.</h2>
           <p>
@@ -209,7 +287,7 @@ export default function Home() {
             >
               <div className="exhibit-visual">
                 <div className="display-label">
-                  <span>Exhibit {exhibit.number} / 07</span>
+                  <span>Exhibit {exhibit.number} / {exhibitCount}</span>
                   <span>{motion ? 'Motion on' : 'Static view'}</span>
                 </div>
                 <Image
@@ -303,6 +381,24 @@ export default function Home() {
               'Public-language guardrails',
               'Allowed statements, forbidden claims, and institutional boundaries.',
               `${SCIENCE}/docs/allowed_public_language.md`,
+            ],
+            [
+              '07',
+              'Ontology reconstruction',
+              'Recovered meanings, provenance, semantic drift, and current authority.',
+              `${SCIENCE}/docs/BHSM_NORMAN_SCHOOL_FULL_CORPUS_RECONSTRUCTION.md`,
+            ],
+            [
+              '08',
+              'Physical enclosure bridge',
+              'Typed transport from existing BHSM states through the AE2 event child.',
+              `${SCIENCE}/theory/n12_gate7_physical_encapsulation_identification_bridge.md`,
+            ],
+            [
+              '09',
+              'Integrated validation',
+              'Current-authority checks and the retained historical N=3 replay boundary.',
+              `${SCIENCE}/docs/BHSM_INTEGRATED_VALIDATION_REPORT.md`,
             ],
           ].map(([number, title, copy, href]) => (
             <a className="review-card" href={href} key={number}>

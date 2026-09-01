@@ -1,6 +1,6 @@
 # Museum asset provenance
 
-- The seven animated exhibits, their static fallbacks, and the social preview
+- The eight animated exhibits, their static fallbacks, and the social preview
   are synchronized from `../docs/assets/`. Their claim-safe source manifest is
   `../docs/assets/bhsm_readme_visual_status.json`.
 - `public/bhsm-symbol.svg` is reused from the sibling Bubo Research Node project

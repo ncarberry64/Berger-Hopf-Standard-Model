@@ -134,6 +134,13 @@ def build_payloads() -> dict[str, dict[str, Any]]:
     if len(gate7_angular_nodes) != 1:
         raise RuntimeError("current DAG must contain exactly one G7_07 node")
     gate7_angular_node = gate7_angular_nodes[0]
+    current_owner_nodes = [
+        record for record in completion_dag["records"]
+        if record.get("current_status") == "OPEN_CURRENT_OWNER"
+    ]
+    if len(current_owner_nodes) != 1:
+        raise RuntimeError("current DAG must contain exactly one open current owner")
+    current_owner_node = current_owner_nodes[0]
 
     source_hashes = _inputs()
     raw_seed = neutral_seed_spectrum(neutral_seed["K_nu"])
@@ -508,7 +515,8 @@ def build_payloads() -> dict[str, dict[str, Any]]:
         "current_completion_DAG_consumed": (
             completion_dag["action_version"] == ACTION_VERSION
             and completion_dag["validation_passed"] is True
-            and gate7_angular_node["current_status"] == "OPEN_CURRENT_OWNER"
+            and gate7_angular_node["current_status"].startswith("CLOSED_BY_OWNER")
+            and current_owner_node["canonical_id"] == "G7_08_FORCE"
         ),
         "neutral_reconnaissance_does_not_replace_current_DAG_owner": all(
             "NEUTRINO" not in record.get("canonical_id", "")
@@ -543,8 +551,9 @@ def build_payloads() -> dict[str, dict[str, Any]]:
             "any p, E, group velocity, mass, or oscillation interpretation",
         ],
         "Gate7_status": "ACTIVE_NOT_CLOSED",
-        "Gate7_current_owner": "G7_07_ANGULAR_TAIL",
-        "Gate7_current_owner_detail": angular["exact_next_dependency"],
+        "Gate7_current_owner": current_owner_node["canonical_id"],
+        "Gate7_current_owner_detail": current_owner_node["physical_meaning"],
+        "superseded_current_owner": "G7_07_ANGULAR_TAIL",
         "completion_DAG_dependency_changed_by_this_sprint": False,
         "Gate7_changed_by_this_sprint": False,
         "final_adjudication": adjudication,

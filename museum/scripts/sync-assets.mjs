@@ -19,6 +19,7 @@ const exhibitBases = [
   'bhsm_collision_predictor',
   'bhsm_decay_stability_engine',
   'bhsm_no_fit_firewall',
+  'bhsm_physical_identification_bridge',
 ];
 const allowedNames = new Set([
   ...exhibitBases.flatMap((base) => [

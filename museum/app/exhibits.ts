@@ -1,6 +1,6 @@
 export const REPOSITORY =
   'https://github.com/ncarberry64/Berger-Hopf-Standard-Model';
-export const SCIENCE = `${REPOSITORY}/blob/agent/constraint-manifold-global-control`;
+export const SCIENCE = `${REPOSITORY}/blob/main`;
 
 export type Exhibit = {
   number: string;
@@ -201,6 +201,33 @@ export const exhibits: Exhibit[] = [
         href: `${SCIENCE}/tools/audit_frozen_prediction_integrity.py`,
       },
       { label: 'Claim boundaries', href: `${SCIENCE}/CLAIMS.md` },
+    ],
+  },
+  {
+    number: '08',
+    title: 'The physical identification bridge',
+    subtitle: 'Frozen BHSM state to local enclosure and SM manifestation',
+    animated: 'bhsm_physical_identification_bridge_animated.gif',
+    still: 'bhsm_physical_identification_bridge.png',
+    alt: 'A frozen BHSM family or mode passes through the selected AE2 stop and event child toward an open local enclosure bridge and its existing Standard Model manifestation class.',
+    seen: 'An existing BHSM family or mode, together with its representation, projector, current, and topology, is carried through the selected stop and event child. The enclosure segment remains visibly open.',
+    matters:
+      'This is the missing identification map. It does not rebuild the particle spectrum: it must prove that the already-defined state reaches an action-owned local enclosure and its existing SM manifestation class.',
+    status: 'gated',
+    statusLabel: 'Bridge specified · local enclosure open',
+    links: [
+      {
+        label: 'Full ontology reconstruction',
+        href: `${SCIENCE}/docs/BHSM_NORMAN_SCHOOL_FULL_CORPUS_RECONSTRUCTION.md`,
+      },
+      {
+        label: 'Bridge theorem interface',
+        href: `${SCIENCE}/theory/n12_gate7_physical_encapsulation_identification_bridge.md`,
+      },
+      {
+        label: 'Machine-readable bridge',
+        href: `${SCIENCE}/artifacts/flagship_integration/BHSM_N12_GATE7_PHYSICAL_ENCAPSULATION_IDENTIFICATION_BRIDGE.json`,
+      },
     ],
   },
 ];

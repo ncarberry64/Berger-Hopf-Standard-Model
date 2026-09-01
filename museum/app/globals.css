@@ -315,6 +315,121 @@ h1 span {
   line-height: 1.75;
   margin: 2.1rem 0 0;
 }
+.reconstruction-room {
+  background:
+    linear-gradient(135deg, rgb(105 226 231 / 0.07), transparent 42%),
+    radial-gradient(circle at 85% 10%, rgb(231 183 92 / 0.1), transparent 28%),
+    #081419;
+  border-bottom: 1px solid var(--line);
+  padding: clamp(5rem, 9vw, 9rem) 5vw;
+}
+.reconstruction-heading {
+  max-width: 62rem;
+}
+.reconstruction-heading > p:last-child {
+  color: var(--muted);
+  font-size: clamp(1rem, 1.45vw, 1.2rem);
+  line-height: 1.75;
+  max-width: 52rem;
+}
+.bridge-map {
+  align-items: stretch;
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: minmax(0, 1fr) auto minmax(0, 1fr) auto minmax(0, 1fr);
+  margin-top: 3rem;
+}
+.bridge-stage {
+  background: rgb(7 17 21 / 0.86);
+  border: 1px solid var(--line);
+  display: flex;
+  flex-direction: column;
+  min-height: 270px;
+  padding: 1.6rem;
+}
+.bridge-stage > span,
+.bridge-stage > strong,
+.ledger-label {
+  font-family: var(--font-geist-mono), monospace;
+  font-size: 0.7rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+.bridge-stage > span {
+  color: var(--muted);
+}
+.bridge-stage h3 {
+  font-size: 1.35rem;
+  margin: 1rem 0 0.7rem;
+}
+.bridge-stage p,
+.reconstruction-ledger p {
+  color: var(--muted);
+  line-height: 1.65;
+  margin: 0;
+}
+.bridge-stage > strong {
+  margin-top: auto;
+  padding-top: 1.5rem;
+}
+.bridge-stage-upstream {
+  border-top: 3px solid var(--gold);
+}
+.bridge-stage-upstream > strong {
+  color: var(--gold);
+}
+.bridge-stage-dynamics {
+  border-top: 3px solid var(--cyan);
+}
+.bridge-stage-dynamics > strong {
+  color: var(--cyan);
+}
+.bridge-stage-open {
+  border-top: 3px solid #ff8a80;
+}
+.bridge-stage-open > strong,
+.ledger-open,
+.ledger-forbidden {
+  color: #ff8a80;
+}
+.bridge-arrow {
+  align-self: center;
+  color: var(--gold);
+  font-size: 1.8rem;
+}
+.reconstruction-ledger {
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  margin-top: 1rem;
+}
+.reconstruction-ledger article {
+  background: rgb(5 11 16 / 0.72);
+  border: 1px solid var(--line);
+  padding: 1.5rem;
+}
+.reconstruction-ledger h3 {
+  font-size: 1.08rem;
+  margin: 0.8rem 0 1rem;
+}
+.ledger-proved {
+  color: var(--cyan);
+}
+.reconstruction-records {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  margin-top: 1.5rem;
+}
+.reconstruction-records a {
+  border: 1px solid var(--line);
+  font-size: 0.86rem;
+  padding: 0.8rem 1rem;
+}
+.reconstruction-records a:hover {
+  border-color: var(--cyan);
+  color: var(--cyan);
+}
 .claim-key {
   padding-bottom: 8rem;
   padding-top: 8rem;
@@ -769,6 +884,14 @@ footer > div:first-child strong {
     gap: 1rem;
     grid-template-columns: 1fr;
   }
+  .bridge-map,
+  .reconstruction-ledger {
+    grid-template-columns: 1fr;
+  }
+  .bridge-arrow {
+    justify-self: center;
+    transform: rotate(90deg);
+  }
   .claim-grid {
     grid-template-columns: 1fr;
   }
@@ -809,7 +932,8 @@ footer > div:first-child strong {
   }
   .atrium,
   .orientation,
-  .claim-key {
+  .claim-key,
+  .reconstruction-room {
     padding-left: 1.1rem;
     padding-right: 1.1rem;
   }

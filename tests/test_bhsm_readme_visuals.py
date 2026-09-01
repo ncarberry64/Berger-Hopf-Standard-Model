@@ -12,6 +12,7 @@ NAMES = (
     "bhsm_collision_predictor",
     "bhsm_decay_stability_engine",
     "bhsm_no_fit_firewall",
+    "bhsm_physical_identification_bridge",
 )
 
 
@@ -20,7 +21,10 @@ def test_visual_manifest_preserves_claim_boundaries() -> None:
     assert payload["promotion"]["gate7_closed"] is False
     assert payload["capabilities"]["complete_physical_predictions"] is False
     assert payload["spectral_visualization"]["physical_mass_scale_available"] is False
-    assert payload["spectral_visualization"]["particle_assignments_available"] is False
+    assert payload["spectral_visualization"]["particle_assignments_available"] is True
+    assert payload["spectral_visualization"]["new_particle_assignments_derived_here"] is False
+    assert payload["identification_bridge"]["frozen_particle_registry_reused"] is True
+    assert payload["identification_bridge"]["local_enclosure_proved"] is False
 
 
 def test_visual_suite_is_presented_outside_the_scientific_readme() -> None:
