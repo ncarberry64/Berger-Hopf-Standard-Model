@@ -1,0 +1,65 @@
+{
+  "FULL_BHSM_COMPLETE": false,
+  "action_version": "BHSM-AE-3.1.0",
+  "artifact": "BHSM_AE31_C2_V1566_DYNAMIC_DTN_RECOVERY",
+  "claim_boundary": {
+    "CURRENT_C2_LORENTZIAN_MAXWELL_RESIDUE_DERIVED": false,
+    "CURRENT_C2_NORMALIZED_PHOTON_PROPAGATOR_DERIVED": false,
+    "FULL_BHSM_COMPLETE": false,
+    "MUON_MAGNETIC_MOMENT_DERIVED": false,
+    "V1566_ADDITIVE_CURRENT_C2_BOUNDARY_CORRECTION_AUTHORIZED": false,
+    "V1566_ROUND_CAP_CONTINUOUS_FREQUENCY_DTN_DERIVED": true,
+    "V1566_ROUND_CAP_ONE_LORENTZIAN_MAXWELL_RESIDUE_DERIVED": false,
+    "V1566_STATIC_FULL_GAUGE_KERNEL_PROVENANCE_REUSABLE": true
+  },
+  "classification": "V1566_ROUND_CAP_CONTINUOUS_FREQUENCY_DTN_RECOVERY",
+  "current_C2_recovery_classification": {
+    "may_be_added_to_current_AE3_trace_without_double_counting": false,
+    "parent_provenance": "BHSM_ACTION_COMPLETION_DERIVED_FROM_EXISTING_RANK16_CARRIER_TRACE_AND_DIAGONAL_SP1_DtN_OPERATOR",
+    "reusable_upstream_assets": [
+      "ACTION_OWNED_K_F_FIVE_DIMENSIONAL",
+      "FULL_GAUGE_COEFFICIENT_RAY_5_OVER_3_TO_1_TO_1",
+      "STATIC_ORDER_ONE_DTN_OPERATOR",
+      "LR_GROUP_FACTORS"
+    ],
+    "round_cap_dynamic_Maxwell_residue": false,
+    "round_cap_dynamic_ratio": 0.4548225555204376,
+    "same_geometry_as_current_AE3_weighted_reciprocal_profile": false,
+    "scientific_result": "THE_RECOVERED_STATIC_KERNEL_AND_GROUP_RAY_SURVIVE_BUT_ITS_CONTINUOUS_FREQUENCY_ROUND_CAP_COMPLETION_ALSO_FAILS_THE_SINGLE_MAXWELL_RESIDUE_TEST",
+    "v1566_supplies_missing_noncommon_current_C2_correction": false,
+    "v1569_common_parent_subtraction_still_required": true,
+    "why_not_additive": "V1566_IS_THE_BULK_PUSHFORWARD_OF_THE_PREDECESSOR_ROUND_CAP_USING_THE_SAME_PARENT_CONNECTION_COEFFICIENT_NOT_AN_INDEPENDENT_CONTACT_FIELD"
+  },
+  "inputs": {
+    "artifacts/BHSM_aether_full_gauge_dtn_lr_kernel_v15_66.json": "F39450E8EE52C88E0DDBC26356B15919D42E9762A469E177F98CD2F6419675C4",
+    "artifacts/BHSM_aether_round_cap_maxwell_dtn_v15_65.json": "371861F97DCA0B120C21A32FBFC29E4C6D077E9FA9473FBB704C8DEA822F54CF",
+    "artifacts/BHSM_aether_unified_m5_m4_pushforward_v15_69.json": "DA49E60580375CF5BDA3258988655EDBF9ABD55BC0EF3FF059BD8249810F0679",
+    "artifacts/action_extension/BHSM_AE31_C2_OUTER_CALDERON_ACTION_NO_GO.json": "55304434AEACA121092814F608EF849530887DDFD9CF811CF43327ACCF968753",
+    "src/bhsm/interface/ae31_c2_v1566_dynamic_dtn_recovery.py": "7053D18FCDF9AB04D9116B913509F209CFCC76EDD26E6A445CBA2FEEBE8FE7DA"
+  },
+  "lowest_mode_dynamic_residue": {
+    "centered_difference_derivative": -0.22741127776781944,
+    "continuous_frequency_not_cycle_surrogate": true,
+    "electric_weight_integral": 0.2274112777602188,
+    "exact_electric_formula": "3-4*log(2)",
+    "exact_electric_formula_residual": 5.551115123125783e-17,
+    "exact_ratio_formula": "6-8*log(2)",
+    "exact_ratio_formula_residual": 1.1102230246251565e-16,
+    "minus_d_DtN_d_q_squared_exact": 0.2274112777602188,
+    "mode": 2,
+    "one_Lorentzian_Maxwell_residue": false,
+    "static_dimensionless_DtN": 2.0,
+    "temporal_to_spatial_residue_ratio": 0.4548225555204376
+  },
+  "validation": {
+    "current_route_no_go_reused": true,
+    "double_counting_rejected": true,
+    "downstream_not_overclaimed": true,
+    "dynamic_derivative_verified": true,
+    "full_gauge_ray_reused": true,
+    "round_cap_Maxwell_test_failed_honestly": true,
+    "static_round_cap_asset_reused": true,
+    "v1569_subtraction_still_open": true
+  },
+  "validation_passed": true
+}

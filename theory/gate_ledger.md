@@ -4020,3 +4020,19 @@ Exact next object:
   domain completion or a microscopic fixed boundary/collar action extension.
   Neither is inserted, and this retained-route no-go is not a BHSM-wide
   refutation.
+
+## AE3.1 v15.66 dynamic round-cap DtN recovery
+
+- The v15.66 static order-one full-gauge DtN kernel, parent coefficient,
+  `5/3:1:1` gauge ray, and LR group factors remain reusable upstream assets.
+- Continuous-frequency restoration gives, for the lowest coexact mode,
+  `Z_t/Z_s=6-8 log(2)=0.4548225555204377`, so the round-cap completion also
+  fails the one-residue Maxwell test.
+- The v15.66 kernel and current AE3 weighted trace are alternative bulk
+  pushforwards of the same parent connection coefficient; adding them would
+  double count and is not an authorized boundary correction.
+- Scientific milestone:
+  `V1566_ROUND_CAP_CONTINUOUS_FREQUENCY_DTN_DERIVED`.
+- The historical constructive owner is now localized to the still-underived
+  v15.69 common parent regulator/subtraction or another genuinely microscopic
+  boundary/collar functional.
