@@ -1,5 +1,30 @@
 # Gate Ledger
 
+## Current AE3 non-serial puzzle assembly
+
+- Completion method: independent science sections may receive any locally
+  compatible result; downstream section names are not serial gates.
+- Integration key: common action version, background, variational domain,
+  state factorization, scale/renormalization convention, and provenance.
+- Newly fitted current-C2 piece: both `lambda=3/2` product-Dirac chiral
+  quadratic pencils on the 1,222-segment Friedrichs form core.
+- Newly derived source jet: exact unit commuting reduced LR/HS first and
+  second/contact derivatives, `V_e=2 W_e M_e+C` and `Q_e=2 M_e`.
+- Family attachment: existing `I3`, hence compatible with all retained family
+  fibers but incapable by itself of family mass splitting.
+- Muon section gain: a current-C2 two-point operator piece only.
+- Transverse electromagnetic vertex, Ward identity, physical simple muon
+  pole, renormalized loop amplitude, and `F2(0)`: `OPEN`.
+- This finite-core result does not select a proof center or turn the far
+  Friedrichs cutoff into a physical endpoint.
+- Artifact:
+  `artifacts/action_extension/BHSM_AE3_C2_FULL_FIELD_PUZZLE_ASSEMBLY.json`.
+- `CURRENT_C2_PRODUCT_DIRAC_QUADRATIC_PIECE_ATTACHED=TRUE`;
+  `CURRENT_C2_REDUCED_HS_SOURCE_JET_DERIVED=TRUE`;
+  `CURRENT_FULL_FIELD_ACTION_COMPLETE=FALSE`;
+  `MUON_MAGNETIC_MOMENT_DERIVED=FALSE`;
+  `FULL_BHSM_COMPLETE=FALSE`.
+
 ## Current BHSM-AE-3 localization and identification owner
 
 - Action version: `BHSM-AE-3.0.0`, owner-authorized minimal localization

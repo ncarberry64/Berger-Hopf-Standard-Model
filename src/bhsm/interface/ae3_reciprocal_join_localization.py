@@ -588,6 +588,20 @@ def systems_integration_puzzle() -> dict[str, object]:
             "provenance_hashes",
         ],
         "sections": {
+            "full_field_action": {
+                "fitted_pieces": [
+                    "retained_N12_geometry_and_response_multiplier_action",
+                    "current_C2_lowest_Weyl_product_Dirac_quadratic_pencils",
+                    "current_C2_unit_reduced_LR_HS_source_and_contact_jet",
+                    "existing_family_central_I3_tensor_factor",
+                ],
+                "open_join": (
+                    "same_domain_dynamical_HS_broken_LR_gauge_ghost_transverse_"
+                    "electromagnetic_nonzero_fermion_cross_derivative_and_"
+                    "maximal_exterior_blocks"
+                ),
+                "complete": False,
+            },
             "localization_enclosure": {
                 "fitted_pieces": [
                     "AE3_eta_sigma_response_carrier",
@@ -604,6 +618,7 @@ def systems_integration_puzzle() -> dict[str, object]:
                     "all_nine_C2_state_fibers",
                     "reset_projector_enclosure_commuting_square",
                     "existing_SM_manifestation_readout",
+                    "family_central_current_C2_lowest_Weyl_operator_attachment",
                 ],
                 "open_join": "action_selected_returned_mass_and_pole_operators",
             },
@@ -612,6 +627,7 @@ def systems_integration_puzzle() -> dict[str, object]:
                     "charged_lepton_family_slot_1_mode_label_(5,2)",
                     "existing_muon_manifestation_readout",
                     "fail_closed_LSZ_loop_vertex_F2_zero_engine",
+                    "current_C2_lowest_Weyl_two_point_operator_piece",
                 ],
                 "open_join": (
                     "current_AE3_muon_simple_pole_plus_complete_renormalized_"
@@ -657,6 +673,10 @@ def systems_integration_puzzle() -> dict[str, object]:
         },
         "serial_gate_order_required": False,
         "section_updates_allowed_when_locally_compatible": True,
+        "section_fit_is_monotone": (
+            "VALID_PIECES_REMAIN_REUSABLE_UNLESS_A_PROVENANCE_OR_INTERFACE_"
+            "AUDIT_EXPLICITLY_SUPERSEDES_THEM"
+        ),
         "systems_completion_rule": (
             "ALL_CLAIMED_SECTION_JOINS_SHARE_ONE_COMPATIBLE_ACTION_BACKGROUND_"
             "DOMAIN_SCALE_AND_PROVENANCE_AND_THE_COMPOSED_MAPS_COMMUTE"
