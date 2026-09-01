@@ -289,6 +289,32 @@ native variable `z`; it is not promoted to physical `p^2`.
 - `CURRENT_C2_PHYSICAL_CHARGED_LEPTON_POLES_DERIVED = FALSE`
 - `UP_DOWN_ACTION_PREFACTORS_DERIVED = FALSE`
 
+The fermion state-class question has now been separated into existence and
+selection. On the open development of every certified finite-core globally
+hyperbolic C2 member, the assembled AE3.1 Dirac operator has a nonempty
+quasifree Hadamard state class. Each chosen member defines a state-dependent
+time-ordered Feynman two-point distribution, and all such two-point functions
+share the universal local Hadamard singularity class.
+
+This does not select a physical state. Two Hadamard two-point functions can
+differ by a smooth bisolution. AE3.1 owns the causal evolution and CAR
+pairing, but not the smoothing part of a Cauchy covariance `0<=C<=I` or an
+equivalent complex structure. On the self-dual CAR space it must also obey
+`C+Gamma C Gamma=I`, with `C^2=C` in the pure case. The covariance must
+intertwine the AE2 reset as
+`C_child=U_R C_event U_R^dagger`. The reset lift, forward time orientation,
+Hadamard condition, instantaneous diagonalization, adiabatic prescription,
+KMS construction, Euclidean cap, in/out asymptotics, and proper-history `z`
+resolvent have all been audited; none is an action-owned state selector.
+
+- `FINITE_CORE_CURRENT_C2_HADAMARD_STATE_CLASS_NONEMPTY_FAMILYWISE = TRUE`
+- `STATE_DEPENDENT_FEYNMAN_TWO_POINT_DISTRIBUTION_EXISTS_FAMILYWISE = TRUE`
+- `LOCAL_HADAMARD_SINGULARITY_CLASS_DERIVED = TRUE`
+- `CURRENT_C2_ACTION_SELECTED_HADAMARD_STATE_DERIVED = FALSE`
+- `CURRENT_C2_ACTION_OWNED_FEYNMAN_TWO_POINT_FUNCTION_DERIVED = FALSE`
+- `CURRENT_C2_DRESSED_CHARGED_LEPTON_POLES_DERIVED = FALSE`
+- `CURRENT_C2_PHYSICAL_MUON_POLE_DERIVED = FALSE`
+
 The AE3.1 intrinsic Higgs action now supplies the current-C2 broken neutral
 connection Hessian. In the unfitted connection coordinates
 `(W3_hat=g2 W3,B_hat=g1 B)`, it is

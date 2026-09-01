@@ -1,5 +1,29 @@
 # Gate Ledger
 
+## AE3.1 current-C2 fermion Hadamard-state class
+
+- Every certified finite-core current-C2 open development is globally
+  hyperbolic with Cauchy surfaces diffeomorphic to `S3`; the assembled AE3.1
+  charged-lepton operator is Dirac type with a smooth bounded mass term.
+- The CAR algebra therefore has a nonempty quasifree Hadamard state class
+  member by member. Each chosen state defines a time-ordered Feynman
+  two-point distribution.
+- The universal Hadamard singularity class is state independent, but any two
+  Hadamard two-point functions may differ by a smooth bisolution. Existence
+  does not select the state-dependent smoothing part.
+- The exact missing datum is a self-dual CAR Cauchy covariance `0<=C<=I`
+  with `C+Gamma C Gamma=I`, pure when `C^2=C`, compatible with
+  `C_child=U_R C_event U_R^dagger`, the current-C2 evolution, and the frozen
+  family projectors.
+- The reset lift, time orientation, Hadamard condition, instantaneous or
+  adiabatic prescriptions, KMS state, Euclidean cap, in/out vacuum, and
+  proper-history `z` resolvent do not supply that covariance.
+- Derived: nonempty Hadamard class and conditional state-dependent Feynman
+  distribution. Not derived: one action-selected state, action-owned Feynman
+  function, global frequency poles, physical muon pole, or `F2(0)`.
+- Artifact:
+  `artifacts/action_extension/BHSM_AE31_C2_FERMION_HADAMARD_STATE_CLASS.json`.
+
 ## AE3.1 current-C2 neutral connection Hessian
 
 - The AE3.1 intrinsic Higgs saddle has `T3=-1/2`, `Y_BH=+1/2` on its
