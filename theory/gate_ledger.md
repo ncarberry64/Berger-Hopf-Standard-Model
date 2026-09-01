@@ -1,5 +1,25 @@
 # Gate Ledger
 
+## AE3.1 current-C2 quark-channel selector domain theorem
+
+- The proposed intrinsic `H_u,H_d` Hessian is undefined on the active AE3.1
+  field space: the successor adds one charged-lepton Higgs block, not quark
+  channel coordinates or LR--Higgs trilinears. Undefined is not relabelled as
+  a physical zero Hessian.
+- The reduced product-Dirac auxiliary probe has zero pure-HS curvature at
+  `c*=0`, but no complete dynamical HS kernel; its rank-zero block is an
+  incomplete probe and selects no physical direction.
+- A finite-rank Hadamard-preserving covariance rotation changes an explicit
+  charge-compatible two-channel particle-hole susceptibility while preserving
+  the Dirac operator, causal propagator, action, domain, and Hadamard class.
+  Thus a quantum selector requires an action-selected covariance or a direct
+  proof of state independence.
+- The dependency order is: action-owned quark vertices/contact, complete
+  same-domain dynamical channel kernel, state selection or independence
+  theorem, then full Hessian evaluation and diagonalization.
+- Artifact:
+  `artifacts/action_extension/BHSM_AE31_C2_QUARK_CHANNEL_SELECTOR_DOMAIN.json`.
+
 ## AE3.1 current-C2 quark HS channel-direction no-go
 
 - For positive quark-channel kinetic coefficients, canonical normalization

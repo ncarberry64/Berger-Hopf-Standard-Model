@@ -1,0 +1,166 @@
+{
+  "FULL_BHSM_COMPLETE": false,
+  "action_version": "BHSM-AE-3.1.0",
+  "artifact": "BHSM_AE31_C2_QUARK_CHANNEL_SELECTOR_DOMAIN",
+  "claim_boundary": {
+    "CKM_MATRIX_DERIVED": false,
+    "CURRENT_AE31_INTRINSIC_QUARK_CHANNEL_HESSIAN_DEFINED": false,
+    "CURRENT_AE31_INTRINSIC_QUARK_CHANNEL_HESSIAN_DOMAIN_CLASSIFIED": true,
+    "CURRENT_C2_ACTION_SELECTED_FERMION_COVARIANCE_DERIVED": false,
+    "CURRENT_C2_PHYSICAL_QUARK_POLES_DERIVED": false,
+    "CURRENT_C2_QUANTUM_SELECTOR_STATE_DEPENDENCE_COUNTEREXAMPLE_DERIVED": true,
+    "CURRENT_C2_QUARK_CHANNEL_DIRECTION_SELECTED": false,
+    "CURRENT_C2_REDUCED_ZERO_HS_CURVATURE_IS_PHYSICAL_SELECTOR": false,
+    "CURRENT_C2_UP_DOWN_YUKAWA_OPERATORS_ACTION_OWNED": false,
+    "FULL_BHSM_COMPLETE": false,
+    "MEASURED_QUARK_MASS_USED": false,
+    "particle_spectrum_rebuilt": false
+  },
+  "classical_selector_domain": {
+    "action_version": "BHSM-AE-3.1.0",
+    "evaluated_fermion_background": "c_star=0",
+    "intrinsic_H_u_H_d_are_active_AE31_fields": false,
+    "intrinsic_quark_channel_Hessian_status": "UNDEFINED_ON_ACTIVE_FIELD_SPACE",
+    "intrinsic_quark_channel_coordinates": [
+      "H_u",
+      "H_d"
+    ],
+    "intrinsic_reason": "AE3_1_ADDS_ONE_CHARGED_LEPTON_INTRINSIC_H_FIELD_BUT_NO_QUARK_LR_HIGGS_TRILINEARS_OR_INDEPENDENT_H_u_H_d_COORDINATES",
+    "intrinsic_undefined_may_be_relabelled_zero": false,
+    "physical_zero_quark_Hessian_promoted": false,
+    "reduced_auxiliary_probe_coordinates": [
+      "HS_up",
+      "HS_down"
+    ],
+    "reduced_probe_is_complete_dynamical_HS_Hessian": false,
+    "reduced_probe_rank": 0,
+    "reduced_product_Dirac_pure_HS_curvature": [
+      [
+        0.0,
+        0.0
+      ],
+      [
+        0.0,
+        0.0
+      ]
+    ],
+    "reduced_zero_block_selects_physical_direction": false
+  },
+  "classification": "AE31_CURRENT_C2_QUARK_CHANNEL_SELECTOR_DOMAIN_THEOREM",
+  "exact_dependency_order": {
+    "first_missing_object": "CURRENT_C2_ACTION_OWNED_QUARK_HIGGS_OR_HS_VERTICES_V_u_V_d_Q_fg",
+    "physical_channel_diagonalization_ready": false,
+    "quark_mass_fit_allowed": false,
+    "state_selection_can_be_skipped_before_quantum_evaluation": false,
+    "steps": [
+      {
+        "object": "CURRENT_C2_ACTION_OWNED_QUARK_HIGGS_OR_HS_VERTICES_V_u_V_d_Q_fg",
+        "order": 1,
+        "present": false
+      },
+      {
+        "object": "CURRENT_C2_COMPLETE_DYNAMICAL_TWO_CHANNEL_KERNEL_ON_AE3_1_DOMAIN",
+        "order": 2,
+        "present": false
+      },
+      {
+        "object": "ACTION_SELECTED_FEYNMAN_COVARIANCE_OR_PROVED_STATE_INDEPENDENCE",
+        "order": 3,
+        "present": false
+      },
+      {
+        "object": "FULL_RENORMALIZED_2X2_CHANNEL_HESSIAN_AND_UNIQUE_EIGENDIRECTION",
+        "order": 4,
+        "present": false
+      }
+    ]
+  },
+  "inputs": {
+    "artifacts/BHSM_aether_common_quantum_superdeterminant_v15_96.json": "8B545506D2864818E9E6413B716350B13B455558B8C2D732784C1FA301439137",
+    "artifacts/action_extension/BHSM_AE31_C2_FERMION_HADAMARD_STATE_CLASS.json": "71B0BE4F25C4D8473DEB10C105588A63B8BD4E040F82F7A5D653C6865D71C3C4",
+    "artifacts/action_extension/BHSM_AE31_C2_FIXED_HISTORY_STATE_NONUNIQUENESS.json": "A62D578BFC58C0C1EC7942DC6D4E9441B4BE38EE2C5F5B1BBB6F04C9A7A9111C",
+    "artifacts/action_extension/BHSM_AE31_C2_QUARK_HS_DIRECTION_NO_GO.json": "B5A6C94AFFE0C4EF896015D9C72040A0441B2ACB4EA5F17C48EAC8D49B1A53C8",
+    "artifacts/action_extension/BHSM_AE31_C2_QUARK_PARENT_THIRD_VARIATION.json": "880D656909727CEE22F9C9F4FEBB5E25D5845DC8ACC229496D930C07A0429057",
+    "artifacts/action_extension/BHSM_AE3_C2_HS_FERMION_MIXED_VARIATION.json": "23E1741332800951F510D6D1AA5A2FB7C43B7D5F2D2AE80C67AB59F8BBB5B159",
+    "src/bhsm/interface/ae31_c2_quark_channel_selector_domain.py": "DA252D1DCBA526AFCE21DFE700974C8F8A1A933FAB5A1AE439C5B0103BD6CD01"
+  },
+  "quantum_selector_contract": {
+    "G_C": "STATE_DEPENDENT_CURRENT_C2_FEYNMAN_INVERSE",
+    "Q_fg": "ACTION_OWNED_TWO_CHANNEL_CONTACT_VERTEX",
+    "V_f": "ACTION_OWNED_FIRST_HS_OR_INTRINSIC_HIGGS_VERTEX",
+    "candidate_effective_functional": "Gamma_1loop[C,H]=-Tr_log(D_C[H])",
+    "current_AE31_V_up_V_down_intrinsic_vertices_present": false,
+    "current_C2_action_selected_Feynman_inverse_present": false,
+    "current_C2_complete_dynamical_HS_kernel_present": false,
+    "formula_currently_evaluable_as_physical_selector": false,
+    "historical_periodic_superdeterminant_may_replace_current_domain": false,
+    "second_variation_identity": "D_g_D_f_Gamma=Tr[G_C*V_g*G_C*V_f]-Tr[G_C*Q_fg]"
+  },
+  "selector_state_dependence_theorem": {
+    "Hadamard_singularity_condition_alone_fixes_finite_channel_response": false,
+    "action_and_domain_alone_fix_finite_channel_response": false,
+    "actual_BHSM_selector_state_independence_proved": false,
+    "finite_rank_rotated": {
+      "finite_rank_smoothing_covariance_change": true,
+      "proxy_formula": "chi_fg(P)=Tr[P*V_f*(I-P)*V_g]",
+      "proxy_is_physical_BHSM_quark_Hessian": false,
+      "purpose": "STATE_INDEPENDENCE_COUNTEREXAMPLE_ONLY",
+      "same_action_Dirac_domain_and_Hadamard_class": true,
+      "susceptibility_matrix": [
+        [
+          0.3749999999999999,
+          0.37499999999999994
+        ],
+        [
+          0.37499999999999994,
+          0.3749999999999999
+        ]
+      ],
+      "susceptibility_rank": 1,
+      "susceptibility_trace": 0.7499999999999998,
+      "theta": 0.5235987755982988,
+      "vertex_charge_commutator_norms": [
+        0.0,
+        0.0
+      ]
+    },
+    "logical_consequence": "A_CURRENT_C2_QUANTUM_CHANNEL_HESSIAN_REQUIRES_AN_ACTION_SELECTED_COVARIANCE_OR_A_DIRECT_PROOF_THAT_ITS_SELECTED_COMBINATION_IS_INDEPENDENT_OF_THE_SMOOTH_BISOLUTION_PART",
+    "reference": {
+      "finite_rank_smoothing_covariance_change": false,
+      "proxy_formula": "chi_fg(P)=Tr[P*V_f*(I-P)*V_g]",
+      "proxy_is_physical_BHSM_quark_Hessian": false,
+      "purpose": "STATE_INDEPENDENCE_COUNTEREXAMPLE_ONLY",
+      "same_action_Dirac_domain_and_Hadamard_class": true,
+      "susceptibility_matrix": [
+        [
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0
+        ]
+      ],
+      "susceptibility_rank": 0,
+      "susceptibility_trace": 0.0,
+      "theta": 0.0,
+      "vertex_charge_commutator_norms": [
+        0.0,
+        0.0
+      ]
+    },
+    "response_changes_within_same_Hadamard_class": true,
+    "response_difference_frobenius_norm": 0.7499999999999999
+  },
+  "validation": {
+    "dependency_order_starts_with_missing_vertices": true,
+    "direction_no_go_reused": true,
+    "existing_state_nonuniqueness_reused": true,
+    "historical_quantum_cycle_not_promoted": true,
+    "intrinsic_undefined_separated_from_auxiliary_zero": true,
+    "no_selector_pole_CKM_or_completion_overclaim": true,
+    "state_dependence_counterexample_is_charge_compatible": true,
+    "third_variation_and_HS_boundaries_preserved": true
+  },
+  "validation_passed": true
+}
