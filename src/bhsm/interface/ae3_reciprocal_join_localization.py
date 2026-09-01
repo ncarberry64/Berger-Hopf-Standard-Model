@@ -594,6 +594,8 @@ def systems_integration_puzzle() -> dict[str, object]:
                     "current_C2_lowest_Weyl_product_Dirac_quadratic_pencils",
                     "current_C2_unit_reduced_LR_HS_source_and_contact_jet",
                     "current_C2_lowest_Weyl_coexact_U1Y_source_and_contact_jet",
+                    "current_C2_n0_coexact_gauge_coordinate_form_shape",
+                    "exact_coexact_BRST_quotient_and_positive_finite_core_pencil",
                     "existing_family_central_I3_tensor_factor",
                 ],
                 "open_join": (
@@ -647,6 +649,7 @@ def systems_integration_puzzle() -> dict[str, object]:
                     "fail_closed_LSZ_loop_vertex_F2_zero_engine",
                     "current_C2_lowest_Weyl_two_point_operator_piece",
                     "current_C2_transverse_hypercharge_precursor_vertex",
+                    "current_C2_coexact_gauge_form_domain_and_gap",
                 ],
                 "open_join": (
                     "current_AE3_muon_simple_pole_plus_complete_renormalized_"

@@ -1,5 +1,28 @@
 # Gate Ledger
 
+## Current AE3 C2 coexact gauge form shape
+
+- Exact level-zero `S3` curl spectrum: `(+2,+2,+2)`, with coexact dimension
+  three and longitudinal dimension zero.
+- Current C2 form per component:
+  `integral dt (|partial_t a_T|^2+4 R4^-2|a_T|^2)`.
+- Three identical birth-retained, far-core-Dirichlet generalized pencils have
+  a strictly positive finite-core gap; no inverse is formed.
+- Coexact projection supplies the longitudinal/BRST quotient.
+- The parent Maxwell term and `K_F5/K_G5=R_F^2/2` are owned; a separate gauge
+  normalization is forbidden.
+- Historical spatial, Gauss, and proper-time responses do not establish one
+  Lorentzian coefficient on the current C2 background. The dynamic
+  `omega^2` gauge/ghost Hessian remains open.
+- This form may support domain and gap analysis but may not be used as a
+  normalized photon propagator.
+- Artifact:
+  `artifacts/action_extension/BHSM_AE3_C2_COEXACT_GAUGE_FORM_SHAPE.json`.
+- `CURRENT_C2_COEXACT_GAUGE_FORM_SHAPE_DERIVED=TRUE`;
+  `CURRENT_C2_LORENTZIAN_MAXWELL_RESIDUE_DERIVED=FALSE`;
+  `CURRENT_C2_NORMALIZED_PHOTON_PROPAGATOR_DERIVED=FALSE`;
+  `FULL_BHSM_COMPLETE=FALSE`.
+
 ## Current AE3 C2 coexact hypercharge source jet
 
 - Same-domain operator: the `n=0` Berger block is exactly

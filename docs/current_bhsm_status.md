@@ -114,6 +114,22 @@ electromagnetic Ward identity or muon `F2(0)` can be evaluated.
 - `CURRENT_C2_PHYSICAL_PHOTON_VERTEX_DERIVED = FALSE`
 - `MUON_MAGNETIC_MOMENT_DERIVED = FALSE`
 
+The matching dynamical gauge form shape is now assembled on the same C2
+finite core. The exact level-zero coexact curl spectrum is three copies of
+`+2`, giving three identical pencils for
+`|partial_t a_T|^2+4 R4^-2|a_T|^2`, with a strictly positive finite-core gap
+and the longitudinal/BRST sector removed by coexact projection.
+
+This closes the gauge coordinate domain and operator shape, not its physical
+residue. The parent Maxwell coefficient is owned and cannot be independently
+retuned, while the historical static, Gauss, and proper-time pushforwards do
+not establish one Lorentzian coefficient on the current C2 background. The
+same-background dynamic `omega^2` gauge/ghost Hessian remains necessary.
+
+- `CURRENT_C2_COEXACT_GAUGE_FORM_SHAPE_DERIVED = TRUE`
+- `CURRENT_C2_LORENTZIAN_MAXWELL_RESIDUE_DERIVED = FALSE`
+- `CURRENT_C2_NORMALIZED_PHOTON_PROPAGATOR_DERIVED = FALSE`
+
 The remaining obstruction is no longer carrier selection or the absence of
 every fermionic C2 operator piece. One compatible AE3 C2 action assembly must
 still join the geometry/response block and this reduced product-Dirac piece
@@ -142,6 +158,9 @@ The family decision surface is recorded in the
 The transverse hypercharge result is recorded in the
 [`current-C2 source theorem`](../theory/ae3_c2_coexact_hypercharge_source_jet.md)
 and [`source certificate`](../artifacts/action_extension/BHSM_AE3_C2_COEXACT_HYPERCHARGE_SOURCE_JET.json).
+The coexact gauge domain and normalization boundary are recorded in the
+[`gauge-form theorem`](../theory/ae3_c2_coexact_gauge_form_shape.md) and
+[`gauge-form certificate`](../artifacts/action_extension/BHSM_AE3_C2_COEXACT_GAUGE_FORM_SHAPE.json).
 
 ## Authoritative Gate-7 identification frontier: unchanged-AE2 carrier audit complete
 

@@ -1,0 +1,134 @@
+{
+  "CURRENT_C2_COEXACT_GAUGE_FORM_SHAPE_DERIVED": true,
+  "CURRENT_C2_LORENTZIAN_MAXWELL_RESIDUE_DERIVED": false,
+  "CURRENT_C2_NORMALIZED_PHOTON_PROPAGATOR_DERIVED": false,
+  "FULL_BHSM_COMPLETE": false,
+  "MUON_MAGNETIC_MOMENT_DERIVED": false,
+  "action_version": "BHSM-AE-3.0.0",
+  "artifact": "BHSM_AE3_C2_COEXACT_GAUGE_FORM_SHAPE",
+  "claim_boundary": {
+    "derived": [
+      "current_C2_n0_coexact_gauge_form_shape",
+      "exact_threefold_plus2_curl_multiplicity",
+      "coexact_BRST_quotient",
+      "positive_inverse_free_finite_core_pencil"
+    ],
+    "not_derived": [
+      "one_current_C2_Lorentzian_Maxwell_residue",
+      "normalized_hypercharge_or_photon_propagator",
+      "broken_electroweak_neutral_mixing",
+      "maximal_history_exterior_gauge_operator",
+      "muon_F2_zero_or_collision_amplitude"
+    ]
+  },
+  "classification": "CURRENT_C2_COEXACT_GAUGE_FORM_SHAPE_OPEN_LORENTZIAN_RESIDUE",
+  "coexact_gauge_form": {
+    "BRST_longitudinal_sector_removed": true,
+    "K_diagonal_summary": {
+      "maximum": 6.273765896291578e+48,
+      "maximum_absolute": 6.273765896291578e+48,
+      "minimum": 1.5102798086352203e+28
+    },
+    "K_off_diagonal_summary": {
+      "maximum": -7.303732825249197e+27,
+      "maximum_absolute": 4.182510597527718e+48,
+      "minimum": -4.182510597527718e+48
+    },
+    "M_diagonal_summary": {
+      "maximum": 8.83789279056018e-29,
+      "maximum_absolute": 8.83789279056018e-29,
+      "minimum": 2.3909084667737604e-49
+    },
+    "M_off_diagonal_summary": {
+      "maximum": 2.2819381630513045e-29,
+      "maximum_absolute": 2.2819381630513045e-29,
+      "minimum": 3.984847444622934e-50
+    },
+    "angular_level": 0,
+    "coexact_dimension": 3,
+    "curl_eigenvalues": [
+      2.0,
+      2.0,
+      2.0
+    ],
+    "descriptor_dimension_per_component": 1222,
+    "explicit_inverse_formed": false,
+    "generalized_gap_lower": 2.0204892302988964,
+    "local_form": "integral_dt_(|partial_t_a_T|^2+4*R4^-2*|a_T|^2)",
+    "longitudinal_dimension": 0,
+    "segment_count": 1222,
+    "three_identical_component_blocks": true
+  },
+  "domain": {
+    "background": "ACTUAL_RESET_GENERATED_C2_FINITE_CORE_FAMILY",
+    "far_boundary": "FRIEDRICHS_FORM_CORE_TRUNCATION_ONLY",
+    "proof_center_selected_as_physical_history": false,
+    "retained_boundary": "C2_BIRTH_TRACE_NODE_0"
+  },
+  "inputs": {
+    "artifacts/BHSM_aether_cycle_dtn_local_limit_v15_90.json": "F1A0CA65BAE9F554D1D81E39D8BDC2446C5D39C79586EFBA859CFF192B46F345",
+    "artifacts/BHSM_aether_einstein_cartan_joint_pushforward_v15_75.json": "1E82EE9E365ED99E8943C5090C71119C47DEC38BA1924C9EED1BC7A3086CD842",
+    "artifacts/BHSM_aether_event_weighted_unified_pushforward_v15_71.json": "96EE096E3548AFF4205EA8CD54FB2A493C7A5414E696BFC12D3F04333BBF8D80",
+    "artifacts/BHSM_aether_nonabelian_coexact_vertex_v16_03.json": "0DF9A55F2FC853D20AAD52B1004FDCD75A8E4A937A0001313B1F7B8BFB5A21D7",
+    "artifacts/BHSM_aether_proper_time_joint_pushforward_v15_91.json": "C85B5F5F88171F8F97418C41320083E4903947095B5F35F1D7CD3C939D623F0B",
+    "artifacts/action_extension/BHSM_AE3_C2_COEXACT_HYPERCHARGE_SOURCE_JET.json": "B66776CDD95BCD8F688E394855A53DF584DB6AA400B85077582E9C48369D27C5",
+    "artifacts/flagship_integration/BHSM_N12_C2_1222_SEGMENT_FINITE_CORE_DESCRIPTOR.json": "C7B6DB4C09D9D826A5BC9050EA558044354C177D7D4B05D5E422AC1D73B3ACC8",
+    "artifacts/flagship_integration/BHSM_N12_C2_1222_SEGMENT_FINITE_CORE_DESCRIPTOR.npz": "5E8C1E98B4B0E77B628C0B11D29A3F2110DAE665A666B4A2C3DBEB735E6F6E25",
+    "src/bhsm/interface/ae3_c2_coexact_gauge_form.py": "E072A15FFE9F2D5CBFBF8E329B9491DCBC8F6D128158BA875D4B8BF90424F66F"
+  },
+  "normalization_interface": {
+    "current_C2_broken_electroweak_saddle_available": false,
+    "current_C2_dynamic_frequency_response_available": false,
+    "current_C2_physical_photon_residue_available": false,
+    "exact_missing_object": "ONE_SAME_C2_BACKGROUND_GAUGE_GHOST_HESSIAN_WITH_DYNAMIC_OMEGA_SQUARED_RESPONSE_AND_BROKEN_ELECTROWEAK_NEUTRAL_MIXING,_JOINTLY_NORMALIZED_BY_THE_EXISTING_PARENT_PUSHFORWARD",
+    "form_shape_may_be_used_as_normalized_photon_propagator": false,
+    "form_shape_may_be_used_for_finite_core_domain_and_gap_analysis": true,
+    "historical_Gauss_response_available": true,
+    "historical_proper_time_response_available": true,
+    "historical_responses_define_one_Lorentzian_coefficient": false,
+    "historical_spatial_coexact_response_available": true,
+    "independent_gauge_normalization_allowed": false,
+    "parent_Maxwell_action_owned": true,
+    "parent_coefficient_relation": "K_F5/K_G5=R_F^2/2"
+  },
+  "puzzle_section_fit": {
+    "FULL_BHSM_COMPLETE": false,
+    "advanced_sections": {
+      "collisions_and_decays": [
+        "current_C2_transverse_gauge_form_domain_precursor"
+      ],
+      "full_field_action": [
+        "current_C2_n0_coexact_gauge_field_coordinate_form_shape",
+        "exact_coexact_BRST_quotient_and_threefold_curl_plus2_multiplicity",
+        "positive_inverse_free_finite_core_gauge_pencil"
+      ],
+      "muon_magnetic_moment": [
+        "current_C2_hypercharge_source_and_gauge_form_share_one_domain"
+      ]
+    },
+    "coexact_gauge_form_shape_derived": true,
+    "muon_magnetic_moment_derived": false,
+    "normalized_photon_propagator_derived": false,
+    "open_join": "same_C2_dynamic_gauge_ghost_Hessian_Lorentzian_residue_broken_electroweak_neutral_mixing_and_maximal_exterior",
+    "prediction_emitted": false
+  },
+  "validation": {
+    "BRST_longitudinal_quotient_explicit": true,
+    "current_C2_descriptor_valid": true,
+    "current_C2_hypercharge_source_valid": true,
+    "far_cutoff_not_promoted_to_endpoint": true,
+    "finite_core_birth_retained_and_far_node_eliminated": true,
+    "finite_core_gauge_shape_gap_positive": true,
+    "historical_Einstein_Cartan_coefficient_relation_valid": true,
+    "historical_coexact_curl_and_BRST_valid": true,
+    "historical_local_limit_rejects_single_Lorentzian_coefficient": true,
+    "historical_parent_weighted_Maxwell_action_valid": true,
+    "historical_proper_time_rejects_Lorentzian_Maxwell_matching": true,
+    "independent_gauge_normalization_forbidden": true,
+    "n0_curl_spectrum_is_three_copies_of_plus2": true,
+    "no_explicit_inverse": true,
+    "normalized_photon_propagator_not_claimed": true,
+    "prediction_not_emitted": true
+  },
+  "validation_passed": true
+}
