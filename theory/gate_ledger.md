@@ -3930,3 +3930,20 @@ Exact next object:
   components, and solve `H0_ren v=m_scalar^2 Z_ren v`.
 - No subtraction convention, cutoff, old EC residue, fitted matrix, scalar
   mass, canonical Yukawa, or quark pole is promoted.
+
+## AE3 current-C2 Maxwell common-shift no-go
+
+- With the lowest parent mode normalized to `Z_s=1`, the derived temporal
+  residue is `Z_t=0.590609601652908`.
+- Any finite local covariant `delta_Z F_munu F^munu` correction shifts both
+  coefficients equally and preserves `Z_s-Z_t=0.409390398347092`. It can make
+  the ratio approach one but cannot produce exact equality.
+- The theorem excludes the common wavefunction-renormalization shortcut, not
+  curvature-, boundary-, collar-, or domain-sensitive corrections.
+- Any viable noncommon correction must satisfy
+  `delta_Z_t-delta_Z_s=0.409390398347092` in the same normalization. No
+  coefficient is fitted to this target.
+- Scientific milestone:
+  `CURRENT_C2_COMMON_COVARIANT_F2_SHIFT_NO_GO_DERIVED`.
+- The normalized photon propagator, electroweak pole rotation, and muon
+  `F2(0)` remain open behind an action-owned noncommon gauge residue term.
