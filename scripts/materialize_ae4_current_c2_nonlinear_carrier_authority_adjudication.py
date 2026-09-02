@@ -30,6 +30,7 @@ GREEN_PARTITION = A / "BHSM_AE4_CURRENT_C2_GREEN_IMAGE_PARTITION_RECONCILIATION.
 GREEN_SEED = F / "BHSM_N12_GATE7_CURRENT_GREEN_DIRECTIONAL_CURVATURE_SEED.json"
 GREEN_ENDPOINTS = F / "BHSM_N12_GATE7_CURRENT_GREEN_DIRECTIONAL_ENDPOINT_CURVATURE.json"
 GREEN_MIDPOINT = F / "BHSM_N12_GATE7_CURRENT_GREEN_HERMITE_SIMPSON_MIDPOINT_CURVATURE.json"
+GREEN_CORRELATED_355 = F / "BHSM_N12_GATE7_CURRENT_GREEN_CORRELATED_SCALAR_INTERVAL355.json"
 GAUGE = A / "BHSM_AE4_CURRENT_C2_AFFINE72_GAUGE_CALDERON_FIRST_JET.json"
 PARTICLE = A / "BHSM_AE4_CURRENT_C2_AFFINE72_PARTICLE_FIBER_CALDERON.json"
 TARGET = A / "BHSM_AE4_CURRENT_C2_NONLINEAR_CARRIER_AUTHORITY_ADJUDICATION.json"
@@ -41,6 +42,7 @@ INPUTS = (
     GREEN_SEED,
     GREEN_ENDPOINTS,
     GREEN_MIDPOINT,
+    GREEN_CORRELATED_355,
     GAUGE,
     PARTICLE,
     ROOT / "src/bhsm/interface/ae4_current_c2_nonlinear_carrier_authority_adjudication.py",
@@ -65,13 +67,13 @@ def build_payload() -> dict[str, Any]:
     missing = [str(path) for path in INPUTS if not path.is_file()]
     if missing:
         raise FileNotFoundError(", ".join(missing))
-    transfer, outward, block_screen, green_partition, green_seed, green_endpoints, green_midpoint, gauge, particle = (
-        _load(path) for path in INPUTS[:9]
+    transfer, outward, block_screen, green_partition, green_seed, green_endpoints, green_midpoint, green_correlated_355, gauge, particle = (
+        _load(path) for path in INPUTS[:10]
     )
     if not all(
         row.get("validation_passed") is True
         for row in (
-            transfer, outward, block_screen, green_partition, green_seed, green_endpoints, green_midpoint,
+            transfer, outward, block_screen, green_partition, green_seed, green_endpoints, green_midpoint, green_correlated_355,
             gauge, particle
         )
     ):
@@ -101,6 +103,9 @@ def build_payload() -> dict[str, Any]:
         green_midpoint_componentwise_route_obstructed=green_midpoint[
             "claim_boundary"
         ]["CURRENT_CENTER_COMPONENTWISE_GREEN_DIRECTION_BALL_MIDPOINT_ROUTE_OBSTRUCTED"],
+        green_correlated_scalar_interval355_finite=green_correlated_355[
+            "claim_boundary"
+        ]["CURRENT_GREEN_CORRELATED_SCALAR_INTERVAL355_FINITE"],
         root_nonexistence_claim=decision["root_nonexistence_claim"],
         physical_instability_claim=decision[
             "physical_spacetime_instability_claim"
@@ -160,7 +165,7 @@ def build_payload() -> dict[str, Any]:
         "BHSM_native_green_longitudinal_correlation_is_current_next_object": (
             green_partition["validation_passed"]
             and boundary["G7_BHSM_NATIVE_GREEN_IMAGE_PARTITION_RECOVERED"]
-            and "CORRELATED_LONGITUDINAL_SCALAR_PARAMETERIZATION" in result[
+            and "CORRELATED_CENTRAL_GREEN_SCALAR_CONSTRUCTION" in result[
                 "next_proof_object"
             ]
         ),
@@ -186,6 +191,13 @@ def build_payload() -> dict[str, Any]:
             and not green_midpoint["claim_boundary"][
                 "CURRENT_CENTER_GREEN_MIDPOINT_INTRINSIC_CURVATURE_GLOBAL_FINITE_ENCLOSURE_DERIVED"
             ]
+        ),
+        "correlated_green_scalar_interval355_reconciliation_is_reused": (
+            green_correlated_355["validation_passed"]
+            and green_correlated_355["interval"] == 355
+            and green_correlated_355["operand_norm_bounds"][
+                "midpoint_intrinsic_curvature"
+            ]["upper"] < 0.012207
         ),
     }
     return {
@@ -265,6 +277,21 @@ def build_payload() -> dict[str, Any]:
                 "componentwise_direction_ball_obstruction"
             ]["midpoint_direction_and_second_incidence_remain_finite"],
             "physical_instability_or_path_nonexistence_inferred": False,
+        },
+        "recovered_green_correlated_scalar_interval355": {
+            "midpoint_intrinsic_curvature_upper": green_correlated_355[
+                "operand_norm_bounds"
+            ]["midpoint_intrinsic_curvature"]["upper"],
+            "local_HS_second_residual_upper": green_correlated_355[
+                "operand_norm_bounds"
+            ]["local_HS_second_residual"]["upper"],
+            "left_axis_neighborhood_error_upper": green_correlated_355[
+                "central_axis_neighborhood_error_upper"
+            ]["left_node_355"],
+            "right_axis_neighborhood_error_upper": green_correlated_355[
+                "central_axis_neighborhood_error_upper"
+            ]["right_node_356"],
+            "global_or_causal_promotion": False,
         },
         "authority_adjudication": result,
         "claim_boundary": boundary,
