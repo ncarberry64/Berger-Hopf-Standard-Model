@@ -445,6 +445,15 @@ def build_payload() -> dict[str, Any]:
             > 0.99
             and "GREEN_IMAGE_LONGITUDINAL_TRANSVERSE" in gate_blocker
         ),
+        "current_green_directional_seed_is_integrated": (
+            nonlinear_gate["claim_boundary"][
+                "G7_CURRENT_CENTER_NODE1_GREEN_DIRECTIONAL_CURVATURE_DERIVED"
+            ]
+            and nonlinear_gate["recovered_green_directional_seed"][
+                "curvature_upper"
+            ]
+            < 0.03
+        ),
         "all_required_rows_are_present_once": (
             identifiers == REQUIRED_RECORD_IDS and len(set(identifiers)) == len(identifiers)
         ),

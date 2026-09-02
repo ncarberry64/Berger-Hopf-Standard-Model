@@ -40,6 +40,7 @@ def test_matrix_tracks_all_required_physical_sectors_without_promotion() -> None
     assert payload["validation"][
         "BHSM_native_green_image_partition_is_current_next_object"
     ]
+    assert payload["validation"]["current_green_directional_seed_is_integrated"]
     assert tuple(record["id"] for record in payload["records"]) == module.REQUIRED_RECORD_IDS
     assert all(record["prediction_classification"] == "OPEN_INTERNAL_BLOCKER" for record in payload["records"])
     assert not any(record["physical_prediction_materialized"] for record in payload["records"])
