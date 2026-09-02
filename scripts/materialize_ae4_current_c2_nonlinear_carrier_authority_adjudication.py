@@ -27,6 +27,7 @@ TRANSFER = F / "BHSM_N12_GATE7_AFFINE_72D_NONLINEAR_TRANSFER_AUDIT.json"
 OUTWARD = F / "BHSM_N12_GATE7_ACCEPTED_REPLAY_CENTER_OUTWARD_74D_CONTRACTION.json"
 BLOCK_SCREEN = F / "BHSM_N12_GATE7_ACCEPTED_REPLAY_ACTION_BLOCK_SCREEN.json"
 GREEN_PARTITION = A / "BHSM_AE4_CURRENT_C2_GREEN_IMAGE_PARTITION_RECONCILIATION.json"
+GREEN_SEED = F / "BHSM_N12_GATE7_CURRENT_GREEN_DIRECTIONAL_CURVATURE_SEED.json"
 GAUGE = A / "BHSM_AE4_CURRENT_C2_AFFINE72_GAUGE_CALDERON_FIRST_JET.json"
 PARTICLE = A / "BHSM_AE4_CURRENT_C2_AFFINE72_PARTICLE_FIBER_CALDERON.json"
 TARGET = A / "BHSM_AE4_CURRENT_C2_NONLINEAR_CARRIER_AUTHORITY_ADJUDICATION.json"
@@ -35,6 +36,7 @@ INPUTS = (
     OUTWARD,
     BLOCK_SCREEN,
     GREEN_PARTITION,
+    GREEN_SEED,
     GAUGE,
     PARTICLE,
     ROOT / "src/bhsm/interface/ae4_current_c2_nonlinear_carrier_authority_adjudication.py",
@@ -59,13 +61,14 @@ def build_payload() -> dict[str, Any]:
     missing = [str(path) for path in INPUTS if not path.is_file()]
     if missing:
         raise FileNotFoundError(", ".join(missing))
-    transfer, outward, block_screen, green_partition, gauge, particle = (
-        _load(path) for path in INPUTS[:6]
+    transfer, outward, block_screen, green_partition, green_seed, gauge, particle = (
+        _load(path) for path in INPUTS[:7]
     )
     if not all(
         row.get("validation_passed") is True
         for row in (
-            transfer, outward, block_screen, green_partition, gauge, particle
+            transfer, outward, block_screen, green_partition, green_seed,
+            gauge, particle
         )
     ):
         raise RuntimeError("validated transfer, outward, and AE4 carrier inputs required")
@@ -84,6 +87,9 @@ def build_payload() -> dict[str, Any]:
         ],
         green_image_partition_recovered=green_partition["claim_boundary"][
             "G7_BHSM_NATIVE_GREEN_IMAGE_PARTITION_RECOVERED"
+        ],
+        green_directional_seed_derived=green_seed["claim_boundary"][
+            "CURRENT_CENTER_NODE1_GREEN_DIRECTIONAL_RATE_CURVATURE_DERIVED"
         ],
         root_nonexistence_claim=decision["root_nonexistence_claim"],
         physical_instability_claim=decision[
@@ -148,6 +154,13 @@ def build_payload() -> dict[str, Any]:
                 "next_proof_object"
             ]
         ),
+        "current_green_directional_seed_is_reused": (
+            green_seed["validation_passed"]
+            and green_seed["green_directional_rate_curvature"]["total"][
+                "upper"
+            ]
+            < 0.03
+        ),
     }
     return {
         "artifact": "BHSM_AE4_CURRENT_C2_NONLINEAR_CARRIER_AUTHORITY_ADJUDICATION",
@@ -184,6 +197,18 @@ def build_payload() -> dict[str, Any]:
                 "coarse_obstruction_localization"
             ]["transverse_projection_lower"],
             "historical_numerical_values_reused": False,
+        },
+        "recovered_green_directional_seed": {
+            "node": green_seed["node"],
+            "curvature_lower": green_seed[
+                "green_directional_rate_curvature"
+            ]["total"]["lower"],
+            "curvature_upper": green_seed[
+                "green_directional_rate_curvature"
+            ]["total"]["upper"],
+            "transverse_to_green_lower_factor": green_seed[
+                "comparison_to_existing_transverse_obstruction"
+            ]["transverse_to_green_lower_factor"],
         },
         "authority_adjudication": result,
         "claim_boundary": boundary,

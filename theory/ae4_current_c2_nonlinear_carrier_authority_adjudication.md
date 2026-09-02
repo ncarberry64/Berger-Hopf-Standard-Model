@@ -42,6 +42,14 @@ at all 370 post-reset nodes.  The localized remaining proof object is the
 same-center longitudinal/transverse two-radius test, not an arbitrary
 componentwise search.
 
+The first current-center retained-action operand is now outward: at node 1,
+`||D2f[u_G,u_G]||` lies in
+`[0.02190794340908502, 0.027451526147420215]`, more than five million times
+below the already-certified almost-purely-transverse raw obstruction
+curvature at that node.  This is a local seed rather than the causal theorem;
+it must be extended to all endpoints and midpoints and joined to the mixed and
+transverse remainder bounds.
+
 Until that test succeeds, the gauge/BRST and nine-particle-fiber Calderón
 first jets remain evaluated affine candidates, not nonlinear physical
 operator authority.
@@ -60,5 +68,6 @@ G7_SAME_CENTER_ACTION_BLOCK_RADII_POLYNOMIAL_DERIVED = FALSE
 G7_SAME_CENTER_COMPONENTWISE_OR_FINER_BLOCK_RADII_DERIVED = FALSE
 G7_BHSM_NATIVE_GREEN_IMAGE_PARTITION_RECOVERED = TRUE
 G7_CURRENT_CENTER_GREEN_IMAGE_ANISOTROPIC_RADII_DERIVED = FALSE
+G7_CURRENT_CENTER_NODE1_GREEN_DIRECTIONAL_CURVATURE_DERIVED = TRUE
 FULL_BHSM_COMPLETE = FALSE
 ```

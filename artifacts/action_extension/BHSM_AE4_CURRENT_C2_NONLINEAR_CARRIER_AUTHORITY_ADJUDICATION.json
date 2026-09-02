@@ -9,8 +9,9 @@
     "affine_to_nonlinear_transfer_allowed": false,
     "classification": "AE4_CURRENT_C2_NONLINEAR_CARRIER_AUTHORITY_ADJUDICATION",
     "current_affine_operator_jets_have_nonlinear_authority": false,
+    "current_center_green_directional_curvature_seed_derived": true,
     "independent_fit_or_new_physical_scale_inserted": false,
-    "next_proof_object": "SAME_FROZEN_CENTER_GREEN_IMAGE_LONGITUDINAL_TRANSVERSE_RADII_SCREEN_WITH_OUTWARD_DIRECTIONAL_MIXED_AND_TRANSVERSE_REMAINDERS",
+    "next_proof_object": "EXTEND_CURRENT_GREEN_DIRECTIONAL_CURVATURE_TO_ALL_ENDPOINTS_AND_MIDPOINTS_THEN_EVALUATE_MIXED_AND_TRANSVERSE_REMAINDERS_FOR_THE_GREEN_IMAGE_LONGITUDINAL_TRANSVERSE_TWO_RADIUS_SCREEN",
     "obstruction_scope": "FROZEN_PRECONDITIONER_SINGLE_RADIUS_AND_COARSE_73_PLUS_1_FIELD_DESCRIPTOR_CONTRACTIONS_IN_THE_EVALUATED_PROOF_COORDINATES",
     "obstruction_scope_extended_to_all_existence_theorems": false,
     "physical_spacetime_instability_inferred": false,
@@ -24,6 +25,7 @@
     "FULL_BHSM_COMPLETE": false,
     "G7_BHSM_NATIVE_GREEN_IMAGE_PARTITION_RECOVERED": true,
     "G7_CURRENT_CENTER_GREEN_IMAGE_ANISOTROPIC_RADII_DERIVED": false,
+    "G7_CURRENT_CENTER_NODE1_GREEN_DIRECTIONAL_CURVATURE_DERIVED": true,
     "G7_FIELD_DESCRIPTOR_BLOCK_CONTRACTION_ROUTE_OBSTRUCTED": true,
     "G7_PHYSICAL_SPACETIME_INSTABILITY_DERIVED": false,
     "G7_ROOT_NONEXISTENCE_DERIVED": false,
@@ -34,7 +36,7 @@
     "NEW_CENTER_OR_TRAJECTORY_AUTHORIZED": false
   },
   "classification": "AE4_CURRENT_C2_NONLINEAR_CARRIER_AUTHORITY_ADJUDICATION",
-  "exact_next_calculation": "SAME_FROZEN_CENTER_GREEN_IMAGE_LONGITUDINAL_TRANSVERSE_RADII_SCREEN_WITH_OUTWARD_DIRECTIONAL_MIXED_AND_TRANSVERSE_REMAINDERS",
+  "exact_next_calculation": "EXTEND_CURRENT_GREEN_DIRECTIONAL_CURVATURE_TO_ALL_ENDPOINTS_AND_MIDPOINTS_THEN_EVALUATE_MIXED_AND_TRANSVERSE_REMAINDERS_FOR_THE_GREEN_IMAGE_LONGITUDINAL_TRANSVERSE_TWO_RADIUS_SCREEN",
   "inputs": {
     "artifacts/action_extension/BHSM_AE4_CURRENT_C2_AFFINE72_GAUGE_CALDERON_FIRST_JET.json": "EF1B9A54204B2C4B47240D4899AFDDB1ED32F550A26A55E91DD9461613765C8B",
     "artifacts/action_extension/BHSM_AE4_CURRENT_C2_AFFINE72_PARTICLE_FIBER_CALDERON.json": "04F705318A594498FDF3568793A7C7CF198982C9ADA03E14C4E6B1087A6DA4D1",
@@ -42,14 +44,21 @@
     "artifacts/flagship_integration/BHSM_N12_GATE7_ACCEPTED_REPLAY_ACTION_BLOCK_SCREEN.json": "70F2DC6EFC8554F858FFF1407F1C956217D3B5E458629C01A0E7A7811415583F",
     "artifacts/flagship_integration/BHSM_N12_GATE7_ACCEPTED_REPLAY_CENTER_OUTWARD_74D_CONTRACTION.json": "3E36775BBB1E34200D30432C6A7D4EEBC898D0A04B4C6DF7FE3F44826BF8DC20",
     "artifacts/flagship_integration/BHSM_N12_GATE7_AFFINE_72D_NONLINEAR_TRANSFER_AUDIT.json": "3353FF318812E6FF79FA2687EBEB9261AE73FB3FF4EA84249E82B4005FB18A1F",
-    "scripts/materialize_ae4_current_c2_nonlinear_carrier_authority_adjudication.py": "0D09ACFEE715C1A0F20CF2CA626A13447BC23D86556737EBFD0B80A35FD93707",
-    "src/bhsm/interface/ae4_current_c2_nonlinear_carrier_authority_adjudication.py": "F3D4595BD3074C8B7463D4925850899540DAA9FAD22699215CDAADF0607DBDAE",
-    "theory/ae4_current_c2_nonlinear_carrier_authority_adjudication.md": "9ED2E54B5E4C6117D4A4DB91CD2B754BEECFBD9DDC637DB21F4C1A855A476DC5"
+    "artifacts/flagship_integration/BHSM_N12_GATE7_CURRENT_GREEN_DIRECTIONAL_CURVATURE_SEED.json": "C644C9CD76914CDC2A1B21E3ED72191CE45552E0902838E726B8BC447B47CDC9",
+    "scripts/materialize_ae4_current_c2_nonlinear_carrier_authority_adjudication.py": "5FC24024248B2641F383B78B256E6CE76604B45ECD0927D10A457A55F7D661FB",
+    "src/bhsm/interface/ae4_current_c2_nonlinear_carrier_authority_adjudication.py": "9495AD41352B45F279FE71E5C850A8B03E6016859141C8CF1E14F3BFD661A690",
+    "theory/ae4_current_c2_nonlinear_carrier_authority_adjudication.md": "2F1BB05B581D04C6FCA10CF7C142693EE327CF8CAF28BA638B7C720F5EE21454"
   },
   "recovered_coarse_block_obstruction": {
     "field_Y_lower": 6.157752658017768e-07,
     "field_from_field_curvature_lower": 3376436.18656192,
     "necessary_field_discriminant_upper": -7.316503560971616
+  },
+  "recovered_green_directional_seed": {
+    "curvature_lower": 0.02190794340908502,
+    "curvature_upper": 0.027451526147420215,
+    "node": 1,
+    "transverse_to_green_lower_factor": 5628148.584375781
   },
   "recovered_green_image_partition": {
     "absolute_obstruction_longitudinal_projection_upper": 0.0013604306503207282,
@@ -66,6 +75,7 @@
     "BHSM_native_green_image_partition_is_current_next_object": true,
     "affine_transfer_independently_rejected": true,
     "coarse_field_descriptor_route_not_left_open": true,
+    "current_green_directional_seed_is_reused": true,
     "gauge_candidate_remains_non_authoritative": true,
     "necessary_scalar_discriminant_strictly_negative": true,
     "no_new_numerical_campaign_authorized": true,
