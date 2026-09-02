@@ -30,6 +30,7 @@ GREEN_PARTITION = A / "BHSM_AE4_CURRENT_C2_GREEN_IMAGE_PARTITION_RECONCILIATION.
 GREEN_SEED = F / "BHSM_N12_GATE7_CURRENT_GREEN_DIRECTIONAL_CURVATURE_SEED.json"
 GREEN_ENDPOINTS = F / "BHSM_N12_GATE7_CURRENT_GREEN_DIRECTIONAL_ENDPOINT_CURVATURE.json"
 GREEN_MIDPOINT = F / "BHSM_N12_GATE7_CURRENT_GREEN_HERMITE_SIMPSON_MIDPOINT_CURVATURE.json"
+GREEN_MIDPOINT_512 = F / "BHSM_N12_GATE7_CURRENT_GREEN_HERMITE_SIMPSON_MIDPOINT_CURVATURE_512BIT.json"
 GREEN_CORRELATED_355 = F / "BHSM_N12_GATE7_CURRENT_GREEN_CORRELATED_SCALAR_INTERVAL355.json"
 GREEN_CORRELATED_ALL = F / "BHSM_N12_GATE7_CURRENT_GREEN_CORRELATED_SCALAR_ALL_INTERVALS.json"
 GREEN_CORRELATED_CAUSAL = F / "BHSM_N12_GATE7_CURRENT_GREEN_CORRELATED_SCALAR_CAUSAL_COMPOSITION.json"
@@ -44,6 +45,7 @@ INPUTS = (
     GREEN_SEED,
     GREEN_ENDPOINTS,
     GREEN_MIDPOINT,
+    GREEN_MIDPOINT_512,
     GREEN_CORRELATED_355,
     GREEN_CORRELATED_ALL,
     GREEN_CORRELATED_CAUSAL,
@@ -71,13 +73,13 @@ def build_payload() -> dict[str, Any]:
     missing = [str(path) for path in INPUTS if not path.is_file()]
     if missing:
         raise FileNotFoundError(", ".join(missing))
-    transfer, outward, block_screen, green_partition, green_seed, green_endpoints, green_midpoint, green_correlated_355, green_correlated_all, green_correlated_causal, gauge, particle = (
-        _load(path) for path in INPUTS[:12]
+    transfer, outward, block_screen, green_partition, green_seed, green_endpoints, green_midpoint, green_midpoint_512, green_correlated_355, green_correlated_all, green_correlated_causal, gauge, particle = (
+        _load(path) for path in INPUTS[:13]
     )
     if not all(
         row.get("validation_passed") is True
         for row in (
-            transfer, outward, block_screen, green_partition, green_seed, green_endpoints, green_midpoint, green_correlated_355, green_correlated_all, green_correlated_causal,
+            transfer, outward, block_screen, green_partition, green_seed, green_endpoints, green_midpoint, green_midpoint_512, green_correlated_355, green_correlated_all, green_correlated_causal,
             gauge, particle
         )
     ):
@@ -200,6 +202,21 @@ def build_payload() -> dict[str, Any]:
                 "CURRENT_CENTER_GREEN_MIDPOINT_INTRINSIC_CURVATURE_GLOBAL_FINITE_ENCLOSURE_DERIVED"
             ]
         ),
+        "componentwise_green_midpoint_obstruction_persists_at_512_bit": (
+            green_midpoint_512["validation_passed"]
+            and green_midpoint_512["componentwise_direction_ball_obstruction"][
+                "first_nonfinite_intrinsic_interval"
+            ] == 355
+            and green_midpoint_512["componentwise_direction_ball_obstruction"][
+                "nonfinite_intrinsic_intervals"
+            ] == list(range(355, 370))
+            and green_midpoint_512["claim_boundary"][
+                "CURRENT_CENTER_COMPONENTWISE_GREEN_DIRECTION_BALL_MIDPOINT_ROUTE_OBSTRUCTED"
+            ]
+            and not green_midpoint_512["claim_boundary"][
+                "CURRENT_GREEN_AXIS_NEIGHBORHOOD_MIXED_TRANSVERSE_BOUND_DERIVED"
+            ]
+        ),
         "correlated_green_scalar_interval355_reconciliation_is_reused": (
             green_correlated_355["validation_passed"]
             and green_correlated_355["interval"] == 355
@@ -304,6 +321,10 @@ def build_payload() -> dict[str, Any]:
                 "componentwise_direction_ball_obstruction"
             ]["midpoint_direction_and_second_incidence_remain_finite"],
             "physical_instability_or_path_nonexistence_inferred": False,
+            "same_first_nonfinite_interval_at_512_bit": green_midpoint_512[
+                "componentwise_direction_ball_obstruction"
+            ]["first_nonfinite_intrinsic_interval"],
+            "higher_precision_removes_obstruction": False,
         },
         "recovered_green_correlated_scalar_interval355": {
             "midpoint_intrinsic_curvature_upper": green_correlated_355[

@@ -97,6 +97,14 @@ the same action calculation is evaluated more deeply.  This closes the causal
 central-scalar operand, not the exact-axis neighborhood or the two-radius
 certificate.
 
+A distinct 512-bit replay of the componentwise exact-axis balls preserves
+the same first nonfinite midpoint at interval 355.  Endpoint and local Arb
+strings were recomputed rather than reusing the 384-bit exports.  More scalar
+precision therefore does not supply the missing bridge: the component boxes
+have already discarded the normalization/transport dependency.  The next
+object remains the correlation-preserving mixed Green/transverse and
+transverse-transverse remainder around the certified central axis.
+
 Until that test succeeds, the gauge/BRST and nine-particle-fiber Calderón
 first jets remain evaluated affine candidates, not nonlinear physical
 operator authority.
@@ -123,5 +131,6 @@ G7_CURRENT_CENTER_CORRELATED_GREEN_NORMALIZATION_TRANSPORT_DERIVED = TRUE
 G7_CURRENT_GREEN_CORRELATED_SCALAR_INTERVAL355_FINITE = TRUE
 G7_CURRENT_GREEN_CORRELATED_SCALAR_ALL_INTERVALS_DERIVED = TRUE
 G7_CURRENT_GREEN_CORRELATED_CENTRAL_SCALAR_CAUSAL_COMPOSITION_DERIVED = TRUE
+G7_CURRENT_CENTER_COMPONENTWISE_GREEN_MIDPOINT_ROUTE_OBSTRUCTED_AT_512_BIT = TRUE
 FULL_BHSM_COMPLETE = FALSE
 ```
