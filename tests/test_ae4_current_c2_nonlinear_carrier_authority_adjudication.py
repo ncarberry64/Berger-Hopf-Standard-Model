@@ -20,6 +20,7 @@ def test_two_negative_transfer_results_do_not_promote_nonlinear_authority():
         field_descriptor_block_obstructed=True,
         green_image_partition_recovered=True,
         green_directional_seed_derived=True,
+        green_directional_endpoints_derived=True,
         root_nonexistence_claim=False,
         physical_instability_claim=False,
         another_center_or_trajectory_authorized=False,
@@ -28,7 +29,7 @@ def test_two_negative_transfer_results_do_not_promote_nonlinear_authority():
     assert result["same_center_single_radius_contraction_obstructed"]
     assert result["same_center_field_descriptor_block_contraction_obstructed"]
     assert not result["root_nonexistence_inferred"]
-    assert "GREEN_DIRECTIONAL_CURVATURE_TO_ALL_ENDPOINTS" in result[
+    assert "HERMITE_SIMPSON_MIDPOINT_GREEN_DIRECTION" in result[
         "next_proof_object"
     ]
 
@@ -41,6 +42,7 @@ def test_upstream_physical_overclaims_fail_closed():
             field_descriptor_block_obstructed=True,
             green_image_partition_recovered=True,
             green_directional_seed_derived=True,
+            green_directional_endpoints_derived=True,
             root_nonexistence_claim=True,
             physical_instability_claim=False,
             another_center_or_trajectory_authorized=False,
@@ -70,6 +72,12 @@ def test_materialized_adjudication_is_valid_and_deterministic():
         "BHSM_native_green_image_partition_is_current_next_object"
     ]
     assert payload["validation"]["current_green_directional_seed_is_reused"]
+    assert payload["validation"][
+        "all_post_reset_green_directional_endpoints_are_reused"
+    ]
+    assert payload["recovered_green_directional_endpoints"][
+        "maximum_upper_owner_node"
+    ] == 370
     main()
     first = hashlib.sha256(TARGET.read_bytes()).hexdigest()
     main()

@@ -24,6 +24,7 @@ def nonlinear_carrier_authority_contract(
     field_descriptor_block_obstructed: bool,
     green_image_partition_recovered: bool,
     green_directional_seed_derived: bool,
+    green_directional_endpoints_derived: bool,
     root_nonexistence_claim: bool,
     physical_instability_claim: bool,
     another_center_or_trajectory_authorized: bool,
@@ -38,6 +39,8 @@ def nonlinear_carrier_authority_contract(
         raise ValueError("the BHSM-native Green-image partition is required")
     if not green_directional_seed_derived:
         raise ValueError("the current-center Green directional seed is required")
+    if not green_directional_endpoints_derived:
+        raise ValueError("all post-reset Green directional endpoints are required")
     promoted = bool(
         affine_transfer_allowed
         and not same_center_contraction_obstructed
@@ -55,6 +58,7 @@ def nonlinear_carrier_authority_contract(
         ),
         "BHSM_native_green_image_partition_recovered": True,
         "current_center_green_directional_curvature_seed_derived": True,
+        "current_center_all_post_reset_green_directional_endpoint_curvature_derived": True,
         "current_affine_operator_jets_have_nonlinear_authority": promoted,
         "accepted_replay_center_or_trajectory_may_be_reselected": False,
         "physical_spacetime_instability_inferred": False,
@@ -65,8 +69,8 @@ def nonlinear_carrier_authority_contract(
         ),
         "obstruction_scope_extended_to_all_existence_theorems": False,
         "next_proof_object": (
-            "EXTEND_CURRENT_GREEN_DIRECTIONAL_CURVATURE_TO_ALL_ENDPOINTS_"
-            "AND_MIDPOINTS_THEN_EVALUATE_MIXED_AND_TRANSVERSE_REMAINDERS_"
+            "DERIVE_CORRELATED_HERMITE_SIMPSON_MIDPOINT_GREEN_DIRECTION_"
+            "AND_SECOND_INCIDENCE_THEN_EVALUATE_MIXED_AND_TRANSVERSE_REMAINDERS_"
             "FOR_THE_GREEN_IMAGE_LONGITUDINAL_TRANSVERSE_TWO_RADIUS_SCREEN"
         ),
         "why_next": (
@@ -94,6 +98,8 @@ def claim_boundary() -> dict[str, Any]:
         "G7_BHSM_NATIVE_GREEN_IMAGE_PARTITION_RECOVERED": True,
         "G7_CURRENT_CENTER_GREEN_IMAGE_ANISOTROPIC_RADII_DERIVED": False,
         "G7_CURRENT_CENTER_NODE1_GREEN_DIRECTIONAL_CURVATURE_DERIVED": True,
+        "G7_CURRENT_CENTER_ALL_POST_RESET_ENDPOINT_GREEN_DIRECTIONAL_CURVATURE_DERIVED": True,
+        "G7_CURRENT_CENTER_GREEN_MIDPOINT_DIRECTIONAL_CURVATURE_DERIVED": False,
         "FULL_BHSM_COMPLETE": False,
     }
 

@@ -50,6 +50,15 @@ curvature at that node.  This is a local seed rather than the causal theorem;
 it must be extended to all endpoints and midpoints and joined to the mixed and
 transverse remainder bounds.
 
+The endpoint extension is now complete at all 370 post-reset nodes.  It also
+reveals collapse-side stiffening: the raw local Green-directional curvature
+upper bound grows from `0.027451526147420215` at node 1 to
+`139645314859.80203` at terminal node 370.  This does not by itself obstruct
+the anisotropic route because it precedes Hermite--Simpson step incidence,
+midpoint curvature, signs, and causal preconditioning.  The current missing
+longitudinal object is therefore the correlated midpoint and complete causal
+composition, not another endpoint audit.
+
 Until that test succeeds, the gauge/BRST and nine-particle-fiber Calderón
 first jets remain evaluated affine candidates, not nonlinear physical
 operator authority.
@@ -69,5 +78,7 @@ G7_SAME_CENTER_COMPONENTWISE_OR_FINER_BLOCK_RADII_DERIVED = FALSE
 G7_BHSM_NATIVE_GREEN_IMAGE_PARTITION_RECOVERED = TRUE
 G7_CURRENT_CENTER_GREEN_IMAGE_ANISOTROPIC_RADII_DERIVED = FALSE
 G7_CURRENT_CENTER_NODE1_GREEN_DIRECTIONAL_CURVATURE_DERIVED = TRUE
+G7_CURRENT_CENTER_ALL_POST_RESET_ENDPOINT_GREEN_DIRECTIONAL_CURVATURE_DERIVED = TRUE
+G7_CURRENT_CENTER_GREEN_MIDPOINT_DIRECTIONAL_CURVATURE_DERIVED = FALSE
 FULL_BHSM_COMPLETE = FALSE
 ```

@@ -28,6 +28,7 @@ OUTWARD = F / "BHSM_N12_GATE7_ACCEPTED_REPLAY_CENTER_OUTWARD_74D_CONTRACTION.jso
 BLOCK_SCREEN = F / "BHSM_N12_GATE7_ACCEPTED_REPLAY_ACTION_BLOCK_SCREEN.json"
 GREEN_PARTITION = A / "BHSM_AE4_CURRENT_C2_GREEN_IMAGE_PARTITION_RECONCILIATION.json"
 GREEN_SEED = F / "BHSM_N12_GATE7_CURRENT_GREEN_DIRECTIONAL_CURVATURE_SEED.json"
+GREEN_ENDPOINTS = F / "BHSM_N12_GATE7_CURRENT_GREEN_DIRECTIONAL_ENDPOINT_CURVATURE.json"
 GAUGE = A / "BHSM_AE4_CURRENT_C2_AFFINE72_GAUGE_CALDERON_FIRST_JET.json"
 PARTICLE = A / "BHSM_AE4_CURRENT_C2_AFFINE72_PARTICLE_FIBER_CALDERON.json"
 TARGET = A / "BHSM_AE4_CURRENT_C2_NONLINEAR_CARRIER_AUTHORITY_ADJUDICATION.json"
@@ -37,6 +38,7 @@ INPUTS = (
     BLOCK_SCREEN,
     GREEN_PARTITION,
     GREEN_SEED,
+    GREEN_ENDPOINTS,
     GAUGE,
     PARTICLE,
     ROOT / "src/bhsm/interface/ae4_current_c2_nonlinear_carrier_authority_adjudication.py",
@@ -61,13 +63,13 @@ def build_payload() -> dict[str, Any]:
     missing = [str(path) for path in INPUTS if not path.is_file()]
     if missing:
         raise FileNotFoundError(", ".join(missing))
-    transfer, outward, block_screen, green_partition, green_seed, gauge, particle = (
-        _load(path) for path in INPUTS[:7]
+    transfer, outward, block_screen, green_partition, green_seed, green_endpoints, gauge, particle = (
+        _load(path) for path in INPUTS[:8]
     )
     if not all(
         row.get("validation_passed") is True
         for row in (
-            transfer, outward, block_screen, green_partition, green_seed,
+            transfer, outward, block_screen, green_partition, green_seed, green_endpoints,
             gauge, particle
         )
     ):
@@ -90,6 +92,9 @@ def build_payload() -> dict[str, Any]:
         ],
         green_directional_seed_derived=green_seed["claim_boundary"][
             "CURRENT_CENTER_NODE1_GREEN_DIRECTIONAL_RATE_CURVATURE_DERIVED"
+        ],
+        green_directional_endpoints_derived=green_endpoints["claim_boundary"][
+            "CURRENT_CENTER_ALL_POST_RESET_ENDPOINT_GREEN_DIRECTIONAL_CURVATURE_DERIVED"
         ],
         root_nonexistence_claim=decision["root_nonexistence_claim"],
         physical_instability_claim=decision[
@@ -161,6 +166,13 @@ def build_payload() -> dict[str, Any]:
             ]
             < 0.03
         ),
+        "all_post_reset_green_directional_endpoints_are_reused": (
+            green_endpoints["validation_passed"]
+            and green_endpoints["post_reset_nodes_certified"] == 370
+            and green_endpoints["terminal_endpoint_stiffening"][
+                "terminal_node"
+            ] == 370
+        ),
     }
     return {
         "artifact": "BHSM_AE4_CURRENT_C2_NONLINEAR_CARRIER_AUTHORITY_ADJUDICATION",
@@ -209,6 +221,24 @@ def build_payload() -> dict[str, Any]:
             "transverse_to_green_lower_factor": green_seed[
                 "comparison_to_existing_transverse_obstruction"
             ]["transverse_to_green_lower_factor"],
+        },
+        "recovered_green_directional_endpoints": {
+            "post_reset_nodes_certified": green_endpoints[
+                "post_reset_nodes_certified"
+            ],
+            "minimum_curvature_lower": green_endpoints[
+                "endpoint_green_directional_curvature_norm"
+            ]["minimum_lower"],
+            "maximum_curvature_upper": green_endpoints[
+                "endpoint_green_directional_curvature_norm"
+            ]["maximum_upper"],
+            "maximum_upper_owner_node": green_endpoints[
+                "endpoint_green_directional_curvature_norm"
+            ]["maximum_upper_owner_node"],
+            "terminal_to_node1_upper_growth_factor": green_endpoints[
+                "terminal_endpoint_stiffening"
+            ]["terminal_to_node1_upper_growth_factor"],
+            "raw_terminal_growth_is_not_causal_obstruction": True,
         },
         "authority_adjudication": result,
         "claim_boundary": boundary,
