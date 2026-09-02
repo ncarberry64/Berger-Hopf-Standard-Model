@@ -1,0 +1,217 @@
+{
+  "FULL_BHSM_COMPLETE": false,
+  "action_version": "BHSM-AE-3.1.0",
+  "algebraic_mixing_screen": {
+    "commutator_norm_with_canonical_first_slot_source": 0.4714045207910317,
+    "commutator_norm_with_current_neutral_semigroup_shape": 0.35955391442544676,
+    "condition_is_sufficient_for_physical_oscillation": false,
+    "conditional_canonical_source_conversion_condition_satisfied": true,
+    "exact_first_slot_source_commutator_norm": "sqrt(2)/3",
+    "noncommuting_family_shape_present": true,
+    "why_conditional": "THE_WEAK_FLAVOR_TO_INTERNAL_SLOT_INTERTWINER_AND_LORENTZIAN_PROPAGATION_OWNER_ARE_NOT_DERIVED"
+  },
+  "artifact": "BHSM_AE31_C2_NEUTRAL_SEED_IDENTIFICATION_BRIDGE",
+  "claim_boundary": {
+    "CURRENT_C2_ACTION_OWNED_NEUTRAL_MIXING_KERNEL_DERIVED": false,
+    "CURRENT_C2_HISTORICAL_NEUTRAL_SEED_INDEFINITE_NO_GO_DERIVED": true,
+    "CURRENT_C2_HISTORICAL_NEUTRAL_SEED_MODE_IDENTIFICATION_DERIVED": true,
+    "CURRENT_C2_HISTORICAL_NEUTRAL_SEED_NONCOMMUTATION_DERIVED": true,
+    "CURRENT_C2_PHYSICAL_NEUTRINO_PROPAGATION_OPERATOR_DERIVED": false,
+    "CURRENT_C2_PHYSICAL_NEUTRINO_SPLITTINGS_DERIVED": false,
+    "CURRENT_C2_PHYSICAL_PMNS_DERIVED": false,
+    "FULL_BHSM_COMPLETE": false,
+    "arbitrary_positive_shift_inserted": false,
+    "measured_neutrino_data_used": false,
+    "particle_spectrum_rebuilt": false
+  },
+  "classification": "AE31_CURRENT_C2_HISTORICAL_NEUTRAL_SEED_IDENTIFICATION_BRIDGE",
+  "historical_neutral_seed_spectrum": {
+    "Hermitian_boundary_response_seed": true,
+    "characteristic_polynomial_det_xI_minus_K": "x^3-(14/3)x^2+(175/36)x+5/27",
+    "common_shift_action_derived": false,
+    "common_shift_needed_for_positive_semidefinite": 0.03678592197922493,
+    "determinant": "-5/27",
+    "eigenvalues": [
+      -0.03678592197922493,
+      1.647109652211853,
+      3.0563429364340386
+    ],
+    "exact_kernel": [
+      [
+        "0",
+        "1/3",
+        "0"
+      ],
+      [
+        "1/3",
+        "3",
+        "1/6"
+      ],
+      [
+        "0",
+        "1/6",
+        "5/3"
+      ]
+    ],
+    "kernel_may_be_called_physical_mass_squared": false,
+    "leading_2x2_principal_minor": "-1/9",
+    "one_negative_eigenvalue": true,
+    "positive_semidefinite_stiffness": false
+  },
+  "historical_shape_channel_decomposition": {
+    "channel_amplitudes_action_selected": false,
+    "channel_basis_action_selected": false,
+    "diagonal_cost_block": [
+      [
+        0.0,
+        0.0,
+        0.0
+      ],
+      [
+        0.0,
+        3.0,
+        0.0
+      ],
+      [
+        0.0,
+        0.0,
+        1.6666666666666667
+      ]
+    ],
+    "direct_0_2_channel_present": false,
+    "exact_coefficients": [
+      "0",
+      "sqrt(2)/3",
+      "sqrt(2)/6"
+    ],
+    "exact_reconstruction": true,
+    "interpretation": "THE_HISTORICAL_K_NU_OFF_DIAGONALS_LIVE_EXACTLY_IN_THE_PREDECLARED_V14_55_NONCOMMUTING_SHAPE_CHANNEL_BASIS",
+    "normalized_channel_coefficients": [
+      0.0,
+      0.4714045207910316,
+      0.2357022603955158
+    ],
+    "reconstruction_residual": 8.777083671441753e-17,
+    "same_mode_labels_as_coordinate_bridge": true,
+    "v14_55_channel_labels": [
+      "M_(0,0)",
+      "M_(3,0)",
+      "M_(1,1)"
+    ],
+    "v14_55_channel_slots": [
+      "U0-D0",
+      "U0-D1",
+      "U1-D2"
+    ]
+  },
+  "inputs": {
+    "artifacts/BHSM_neutrino_dirac_majorana_basis_scale_theorem_v1_1.json": "4697669C0BE2FD704DD82AC2CADC03A452C1AB3650D3F73D061546CC66E2C107",
+    "artifacts/action_extension/BHSM_AE31_C2_CAPTURE_NEUTRINO_PROPAGATION_GATE.json": "156E816423D2FB3A27D7C19852DCF3E52B50805AB6CFD59C2AB5BBC11D90CCE6",
+    "artifacts/action_extension/BHSM_AE31_C2_NEUTRAL_SEMIGROUP_RESPONSE_TRANSPORT.json": "F138884EA4E22690BB53BDBB92C692775A91358B6CEF53AA25589162F446E826",
+    "artifacts/neutral_operator_no_fit_output_v1.json": "C7AD8F161EB772E2618D88DA970BFF63AAEB782BECDF46D0A50CAA7391BFF772",
+    "artifacts/neutral_parameter_closure_or_obstruction_v1.json": "7556266FF21D742F8D1BD2B018F0A853B9B0B0F0388DE42F4D6C5E57B66A93F2",
+    "src/bhsm/interface/ae31_c2_neutral_seed_identification_bridge.py": "2B3CF2D4EF0EC756D8EBE96BC02515630DA3D724B29132D2F859650F84B78BC2",
+    "src/bhsm/interface/completion/pair_wake_neutrino_bvp_v14_55.py": "8C24F77CBFDE520BDC2FF330452090C1C8DB28A9B6CDDBE51A5CBCD0F2188490",
+    "src/neutral_bridge_pmns_source.py": "C070A67A0533BCEE02B08E876083B75E8057384A7293A59A687BA298528A665C",
+    "src/neutral_minimal_hessian.py": "5C3B89DFD6AF42AD750EEBF49CAF189BFD45236FC98E73E383A451DDD0C3CDF9"
+  },
+  "mode_coordinate_identification": {
+    "current_mode_coordinates": "(k,j)",
+    "current_neutral_modes": [
+      [
+        0,
+        0
+      ],
+      [
+        3,
+        0
+      ],
+      [
+        3,
+        1
+      ]
+    ],
+    "expected_mode_costs": [
+      0,
+      9,
+      5
+    ],
+    "historical_H_nu": [
+      [
+        1,
+        1
+      ],
+      [
+        1,
+        2
+      ]
+    ],
+    "historical_mode_costs": [
+      0,
+      9,
+      5
+    ],
+    "historical_neutral_modes": [
+      [
+        0,
+        0
+      ],
+      [
+        3,
+        0
+      ],
+      [
+        1,
+        1
+      ]
+    ],
+    "historical_seed_coordinates": "(q,j)_with_q=k-2j",
+    "mapped_historical_modes": [
+      [
+        0,
+        0
+      ],
+      [
+        3,
+        0
+      ],
+      [
+        1,
+        1
+      ]
+    ],
+    "mode_costs_recovered": true,
+    "new_family_or_particle_ledger_created": false,
+    "slotwise_identification_exact": true
+  },
+  "provenance_and_owner_reconciliation": {
+    "beta_nu_action_source_derived": false,
+    "eta_nu_action_source_derived": false,
+    "exact_next_owner": "DERIVE_ETA_BETA_KAPPA_OR_THEIR_REPLACEMENT_FROM_THE_RETURNED_NEUTRAL_ACTION_HESSIAN_ON_THE_IDENTIFIED_CURRENT_C2_SLOTS",
+    "historical_seed_promoted_to_current_action_term": false,
+    "historical_status": "STRONGLY_SUPPORTED_BOUNDARY_SEED_CANDIDATE",
+    "kappa_nu_action_source_derived": false,
+    "neutral_threshold_operator_derived": false,
+    "physical_basis_and_scale_theorem_derived": false,
+    "result": "IDENTIFICATION_BRIDGE_CLOSED_ALGEBRAICALLY;_VARIATIONAL_AND_LORENTZIAN_OWNERSHIP_REMAINS_OPEN",
+    "returned_Lorentzian_neutral_self_energy_derived": false,
+    "same_current_C2_mode_slots_identified": true
+  },
+  "validation": {
+    "action_ownership_not_overclaimed": true,
+    "basis_scale_blocker_preserved": true,
+    "capture_noncentrality_gate_reused": true,
+    "current_neutral_response_reused": true,
+    "historical_candidate_status_preserved": true,
+    "historical_seed_reused": true,
+    "indefinite_seed_detected": true,
+    "mode_coordinate_bridge_exact": true,
+    "mode_costs_recovered": true,
+    "noncommuting_shape_detected": true,
+    "particle_spectrum_not_rebuilt": true,
+    "source_condition_only_conditional": true,
+    "v14_55_amplitudes_not_overclaimed": true,
+    "v14_55_channel_decomposition_exact": true
+  },
+  "validation_passed": true
+}
