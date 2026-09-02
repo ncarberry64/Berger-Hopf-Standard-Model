@@ -4142,3 +4142,20 @@ Exact next object:
   `CURRENT_C2_HISTORICAL_NEUTRAL_SEED_MODE_IDENTIFICATION_DERIVED`.
 - The returned neutral action Hessian must now derive or replace those
   coefficients on the identified current-C2 slots.
+
+## AE3.1 neutral stiffness versus wake-generator adjudication
+
+- A positive-semidefinite stiffness with zero reference diagonal must have a
+  zero reference row/column. Therefore historical `beta_nu=1/3` is impossible
+  in a positive mass-squared/stiffness operator while `K_00=0`; the exact
+  principal minor is `-1/9`.
+- The v14.56 coherent action instead owns a first-order wake equation
+  `i D_tau z=H_wake z`. Removing the common trace `14/9` from historical
+  `K_nu` gives a traceless Hermitian two-gap shape with unitary evolution.
+- This makes `K_nu` algebraically eligible as a wake-Hamiltonian candidate,
+  not a positive mass-squared matrix.
+- v14.57 defines the physical owner from the projected child-parent-interface
+  DtN block plus relative-zeta shape derivatives, but its stored matrices are
+  diagnostic. Those physical current-C2 terms remain unevaluated.
+- Scientific milestone:
+  `CURRENT_C2_HISTORICAL_KNU_TRACELESS_UNITARY_GENERATOR_SHAPE_DERIVED`.
