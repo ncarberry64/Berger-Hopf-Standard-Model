@@ -141,11 +141,17 @@ The minimum interval-contraction adjudication fails at the common-domain test.
 The accepted replay-center shift is `2.7017477414680254e8` times the old
 exact-affine `Z2` radius, while the diagnostic old-preconditioner image is
 `5.218603289632254e5` old radii.  Consequently the old cone cannot supply
-current-center interval authority.  Gate 7 is `ACTIVE_NOT_CLOSED` on exactly
-one equation-level owner: outward `Y=||AF||`, `Z1=||I-A DF||`, and a same-center
-causal `Z2` in one 74D norm, followed by a radius satisfying
-`Y+Z1*r+Z2*r^2<r` and `Z1+2*Z2*r<1`.  Failure is not root nonexistence, and the
-background is not certified for universal physical predictions.
+current-center interval authority.  The same-center outward operands were
+subsequently evaluated on the frozen replay center:
+`Y_lower=6.15777040956615e-7`, `Z1_upper=0.4493650871145146`, and
+`Z2_lower=3376470.2602736303`.  Their necessary single-radius discriminant is
+`-7.31661146299723`, so that scalar contraction route is obstructed by
+proof-coordinate amplification.  Gate 7 remains `ACTIVE_NOT_CLOSED` on one
+reduced owner: componentwise or action-owned field/descriptor block radii
+polynomials using the existing interval operands at the same frozen center.
+No new numerical campaign or fitted block scale is authorized.  The failure
+is not root nonexistence or physical instability, and the background is not
+certified for universal physical predictions.
 
 The physical-completeness matrix now separates capability maturity from
 scientific output authority.  The universal action expansion, quadratic

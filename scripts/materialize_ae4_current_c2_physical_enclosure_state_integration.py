@@ -103,6 +103,19 @@ def build_payload() -> dict[str, Any]:
                 "physical_mass_or_pole_extracted"
             ]
         ),
+        "nonlinear_single_radius_route_obstruction_reused": (
+            flux["claim_boundary"][
+                "AE4_G7_SINGLE_RADIUS_74D_CONTRACTION_OBSTRUCTION_ADJUDICATED"
+            ]
+            and flux["nonlinear_carrier_authority_adjudication"][
+                "single_radius_74D_contraction_route"
+            ]
+            == "OBSTRUCTED"
+            and flux["nonlinear_carrier_authority_adjudication"][
+                "root_nonexistence"
+            ]
+            == "NOT_DERIVED"
+        ),
         "physical_event_balance_not_overpromoted": not flux["claim_boundary"][
             "AE4_CURRENT_C2_NOETHER_HAMILTONIAN_BALANCE_PHYSICALLY_CLOSED"
         ],
@@ -155,6 +168,8 @@ def build_payload() -> dict[str, Any]:
         "museum_export": {
             "local_enclosure_state_transport": "BHSM_DERIVED",
             "affine72_particle_fiber_carrier_response": "BHSM_EVALUATED_CANDIDATE",
+            "nonlinear_single_radius_carrier_proof": "BHSM_OBSTRUCTED_ROUTE",
+            "same_center_action_block_radii_proof": "NOT_YET_DERIVED",
             "complete_interacting_AE4_encapsulation": "NOT_YET_DERIVED",
             "particle_poles_masses_vertices_collisions": "NOT_DERIVED_BY_THIS_RESULT",
             "particle_spectrum_rebuild_claim_allowed": False,

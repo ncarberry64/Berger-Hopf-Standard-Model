@@ -24,6 +24,10 @@ def test_matrix_tracks_all_required_physical_sectors_without_promotion() -> None
     assert payload["validation_passed"] is True
     assert payload["FULL_BHSM_COMPLETE"] is False
     assert payload["Gate7_authority"]["status"] == "ACTIVE_NOT_CLOSED"
+    assert payload["Gate7_authority"]["single_radius_route"] == "OBSTRUCTED"
+    assert payload["validation"][
+        "same_center_scalar_route_is_now_evaluated_and_obstructed"
+    ]
     assert tuple(record["id"] for record in payload["records"]) == module.REQUIRED_RECORD_IDS
     assert all(record["prediction_classification"] == "OPEN_INTERNAL_BLOCKER" for record in payload["records"])
     assert not any(record["physical_prediction_materialized"] for record in payload["records"])
@@ -172,6 +176,10 @@ def test_every_row_has_explicit_evidence_and_promotion_fields() -> None:
         assert required <= record.keys()
         assert record["evidence"]
         assert all(item["sha256"] for item in record["evidence"])
+        assert any(
+            item["kind"] == "gate_hindsight_authority"
+            for item in record["evidence"]
+        )
         assert record["last_verified_commit"] == _module().ENGINE_VERIFIED_COMMIT
         assert record["empirical_input_used"] is False
 

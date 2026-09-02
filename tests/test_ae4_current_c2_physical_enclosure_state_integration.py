@@ -43,6 +43,7 @@ def test_claim_boundary_promotes_local_bridge_not_full_ae4_completion() -> None:
         "PHYSICAL_ENCAPSULATION_IDENTIFIED_AT_LOCAL_CARRIER_AND_STATE_TRANSPORT_LEVEL"
     ]
     assert result["AE4_AFFINE72_ALL_NINE_PARTICLE_FIBER_CALDERON_CANDIDATE_REUSED"]
+    assert result["AE4_G7_SINGLE_RADIUS_NONLINEAR_AUTHORITY_ROUTE_OBSTRUCTED"]
     assert not result[
         "PHYSICAL_ENCAPSULATION_IDENTIFIED_AT_COMPLETE_AE4_INTERACTING_LEVEL"
     ]
@@ -56,6 +57,7 @@ def test_materialized_integration_validates_all_nine_state_fibers() -> None:
     assert len(payload["scientific_result"]["nine_state_fibers"]) == 9
     assert payload["museum_export"]["local_enclosure_state_transport"] == "BHSM_DERIVED"
     assert payload["validation"]["affine72_particle_fiber_Calderon_candidate_reused"]
+    assert payload["validation"]["nonlinear_single_radius_route_obstruction_reused"]
     assert payload["museum_export"]["affine72_particle_fiber_carrier_response"] == (
         "BHSM_EVALUATED_CANDIDATE"
     )

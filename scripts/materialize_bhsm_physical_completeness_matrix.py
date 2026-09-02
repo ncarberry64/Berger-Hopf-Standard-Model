@@ -21,6 +21,10 @@ GATE7_AUTHORITY = (
     "artifacts/flagship_integration/"
     "BHSM_N12_GATE7_AUGMENTED_FIXED_DESCRIPTOR_MINIMUM_CONTRACTION_ADJUDICATION.json"
 )
+NONLINEAR_GATE7_AUTHORITY = (
+    "artifacts/action_extension/"
+    "BHSM_AE4_CURRENT_C2_NONLINEAR_CARRIER_AUTHORITY_ADJUDICATION.json"
+)
 
 ENGINE_PATHS = {
     "action_expansion": "src/bhsm/interface/universal_physical_action_expansion.py",
@@ -134,7 +138,7 @@ ACTION_OWNED_BY_ID = {
 }
 
 PROMOTION_GATE_BY_ID = {
-    "GATE7_PHYSICAL_BACKGROUND": "SAME_CENTER_OUTWARD_74D_Y_Z1_Z2_CONTRACTION",
+    "GATE7_PHYSICAL_BACKGROUND": "SAME_CENTER_ACTION_BLOCK_RADII_POLYNOMIAL",
     "UNIVERSAL_ACTION_EXPANSION": "GATE7_CLOSED_PLUS_HISTORY_SEAM_ACTION_ASSEMBLY",
     "RETAINED_SM_COMPONENT_ATTACHMENT": "CURRENT_AE2_BACKGROUND_FULL_FIELD_ACTION_QUANTUM_SADDLE_AND_SCALE",
     "UNIVERSAL_QUADRATIC_SPECTRUM_AND_PROPAGATORS": "PHYSICAL_S2_PENCIL_BRST_SCALE_AND_GATE7",
@@ -205,6 +209,10 @@ def _record(
         "kind": "gate_authority",
         "path": GATE7_AUTHORITY,
         "sha256": _sha256(ROOT / GATE7_AUTHORITY),
+    }, {
+        "kind": "gate_hindsight_authority",
+        "path": NONLINEAR_GATE7_AUTHORITY,
+        "sha256": _sha256(ROOT / NONLINEAR_GATE7_AUTHORITY),
     }]
     for key in engine_evidence:
         for kind, paths in (("source", ENGINE_PATHS), ("focused_test", ENGINE_TEST_PATHS)):
@@ -230,18 +238,30 @@ def _record(
 def build_payload() -> dict[str, Any]:
     gate_path = ROOT / GATE7_AUTHORITY
     gate = json.loads(gate_path.read_text(encoding="utf-8"))
-    sources = {GATE7_AUTHORITY: _sha256(gate_path)}
+    nonlinear_gate_path = ROOT / NONLINEAR_GATE7_AUTHORITY
+    nonlinear_gate = json.loads(
+        nonlinear_gate_path.read_text(encoding="utf-8")
+    )
+    sources = {
+        GATE7_AUTHORITY: _sha256(gate_path),
+        NONLINEAR_GATE7_AUTHORITY: _sha256(nonlinear_gate_path),
+    }
     sources.update({path: _sha256(ROOT / path) for path in ENGINE_PATHS.values()})
     sources.update({path: _sha256(ROOT / path) for path in ENGINE_TEST_PATHS.values()})
 
-    gate_blocker = gate["exact_blocker"]
+    gate_blocker = nonlinear_gate["exact_next_calculation"]
     records = [
         _record(
             "GATE7_PHYSICAL_BACKGROUND",
-            "ONE_FROZEN_ACTION_SELECTED_PHYSICAL_BACKGROUND_WITH_AN_OUTWARD_CONTRACTION_CERTIFICATE",
-            "PRECISE_EQUATION_LEVEL_BLOCKER_LOCALIZED",
+            "ONE_FROZEN_ACTION_SELECTED_PHYSICAL_BACKGROUND_WITH_AN_ACTION_BLOCK_RADII_CERTIFICATE",
+            "SINGLE_RADIUS_ROUTE_OBSTRUCTED__ACTION_BLOCK_RADII_PROOF_OPEN",
             (),
-            ("one retained-exact-field 74D replay center", "one-shot nonlinear replay"),
+            (
+                "one retained-exact-field 74D replay center",
+                "one-shot nonlinear replay",
+                "same-center outward Y Z1 Z2 operands",
+                "single-radius proof-coordinate obstruction adjudication",
+            ),
             (gate_blocker,),
         ),
         _record(
@@ -386,9 +406,23 @@ def build_payload() -> dict[str, Any]:
     validations = {
         "Gate7_authority_is_validated": gate["validation_passed"] is True,
         "Gate7_is_not_closed": gate["claim_boundary"]["Gate7"] == "ACTIVE_NOT_CLOSED",
-        "same_center_interval_contraction_is_the_exact_Gate7_owner": (
+        "same_center_interval_contraction_was_precisely_localized": (
             gate["claim_boundary"]["current_center_interval_contraction"]
             == "OPEN_PRECISELY_LOCALIZED"
+        ),
+        "same_center_scalar_route_is_now_evaluated_and_obstructed": (
+            nonlinear_gate["validation_passed"] is True
+            and nonlinear_gate["claim_boundary"][
+                "G7_SINGLE_RADIUS_74D_CONTRACTION_ROUTE_OBSTRUCTED"
+            ]
+            and nonlinear_gate["recovered_same_center_operands"][
+                "necessary_discriminant_upper"
+            ]
+            < 0.0
+            and nonlinear_gate["claim_boundary"][
+                "G7_ROOT_NONEXISTENCE_DERIVED"
+            ]
+            is False
         ),
         "all_required_rows_are_present_once": (
             identifiers == REQUIRED_RECORD_IDS and len(set(identifiers)) == len(identifiers)
@@ -432,8 +466,11 @@ def build_payload() -> dict[str, Any]:
         },
         "Gate7_authority": {
             "path": GATE7_AUTHORITY,
+            "hindsight_path": NONLINEAR_GATE7_AUTHORITY,
             "status": gate["claim_boundary"]["Gate7"],
             "exact_blocker": gate_blocker,
+            "single_radius_route": "OBSTRUCTED",
+            "root_nonexistence_or_physical_instability": "NOT_DERIVED",
             "background_freeze_for_universal_physics_engine": gate["adjudication"][
                 "background_freeze_for_universal_physics_engine"
             ],
