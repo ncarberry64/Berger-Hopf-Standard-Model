@@ -87,8 +87,15 @@ operand.  Its maximum intrinsic midpoint curvature norm upper is
 seed.  The exact Green axis remains inside a persisted neighborhood whose
 maximum error is `5.5312200553564e-6` at node 370, so the
 mixed Green/transverse and transverse/transverse remainder is the next proof
-object; neither causal preconditioning nor the two-radius theorem is promoted
-by the scalar result alone.
+object; the two-radius theorem is not promoted by the scalar result alone.
+
+The same central scalar is now composed through the frozen causal
+preconditioner at 512-bit Arb precision.  The terminal causal norm upper is
+`8.405509181456809`, and the enclosure remains sharp through node 370.  The
+earlier 384-bit radius growth was precision amplification and disappears when
+the same action calculation is evaluated more deeply.  This closes the causal
+central-scalar operand, not the exact-axis neighborhood or the two-radius
+certificate.
 
 Until that test succeeds, the gauge/BRST and nine-particle-fiber Calderón
 first jets remain evaluated affine candidates, not nonlinear physical
@@ -115,5 +122,6 @@ G7_CURRENT_CENTER_COMPONENTWISE_GREEN_MIDPOINT_ROUTE_OBSTRUCTED = TRUE
 G7_CURRENT_CENTER_CORRELATED_GREEN_NORMALIZATION_TRANSPORT_DERIVED = TRUE
 G7_CURRENT_GREEN_CORRELATED_SCALAR_INTERVAL355_FINITE = TRUE
 G7_CURRENT_GREEN_CORRELATED_SCALAR_ALL_INTERVALS_DERIVED = TRUE
+G7_CURRENT_GREEN_CORRELATED_CENTRAL_SCALAR_CAUSAL_COMPOSITION_DERIVED = TRUE
 FULL_BHSM_COMPLETE = FALSE
 ```

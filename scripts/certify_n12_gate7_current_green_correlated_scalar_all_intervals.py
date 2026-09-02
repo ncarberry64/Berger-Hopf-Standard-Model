@@ -30,12 +30,13 @@ REPLAY = F / "BHSM_N12_GATE7_AUGMENTED_FIXED_DESCRIPTOR_NEWTON_MIDPOINT_REPLAY.j
 JACOBIAN = F / "BHSM_N12_GATE7_CORRELATED_DESCRIPTOR_AUGMENTED_JACOBIANS.json"
 PARTITION = A / "BHSM_AE4_CURRENT_C2_GREEN_IMAGE_PARTITION_RECONCILIATION.json"
 SEED = F / "BHSM_N12_GATE7_CURRENT_GREEN_CORRELATED_SCALAR_INTERVAL355.json"
-RESULT = F / "BHSM_N12_GATE7_CURRENT_GREEN_CORRELATED_SCALAR_ALL_INTERVALS.json"
+PRECISION = int(os.environ.get("BHSM_GREEN_SCALAR_PRECISION", cert.PRECISION))
+PRECISION_SUFFIX = "" if PRECISION == cert.PRECISION else f"_{PRECISION}BIT"
+RESULT = F / f"BHSM_N12_GATE7_CURRENT_GREEN_CORRELATED_SCALAR_ALL_INTERVALS{PRECISION_SUFFIX}.json"
 DATA = RESULT.with_suffix(".npz")
-WORK = F / ".current_green_correlated_scalar_all_work"
+WORK = F / f".current_green_correlated_scalar_all_work{PRECISION_SUFFIX.lower()}"
 THEORY = ROOT / "theory/n12_gate7_current_green_correlated_scalar_all_intervals.md"
 THIS_SCRIPT = Path(__file__).resolve()
-PRECISION = cert.PRECISION
 NODES = 371
 INTERVALS = 370
 SHARD_REVISION = 2
@@ -158,7 +159,10 @@ def _midpoint_worker(intervals: list[int]) -> dict[str, int]:
         midpoint_values = np.asarray(source["midpoint_augmented_action_values"], dtype=float)
     zero = np.asarray([arb(0) for _ in range(cert.STATE + 1)], dtype=object)
     computed = reused = 0
-    required = ("intrinsic_mid", "intrinsic_radius", "local_hs_mid", "local_hs_radius")
+    required = (
+        "intrinsic_mid", "intrinsic_radius", "local_hs_mid", "local_hs_radius",
+        "local_hs_arb",
+    )
     for count, interval in enumerate(intervals, 1):
         target = _midpoint_shard(interval)
         if _valid(target, "interval", interval, required):
@@ -207,7 +211,8 @@ def _midpoint_worker(intervals: list[int]) -> dict[str, int]:
         ):
             arrays[f"{name}_mid"], arrays[f"{name}_radius"] = seed._export(values)
         np.savez_compressed(
-            target, **arrays, interval=np.asarray(interval),
+            target, **arrays, local_hs_arb=cert._arb_string_array(local_hs),
+            interval=np.asarray(interval),
             gap_lower=np.asarray(incidence_enclosure.gap_lower),
             eigen_residual_upper=np.asarray(incidence_enclosure.eigen_residual_upper),
             precision_bits=np.asarray(PRECISION),
@@ -245,7 +250,10 @@ def _run(stage: str, workers: int) -> None:
 def build_payload() -> dict[str, object]:
     missing = [interval for interval in range(INTERVALS) if not _valid(
         _midpoint_shard(interval), "interval", interval,
-        ("intrinsic_mid", "intrinsic_radius", "local_hs_mid", "local_hs_radius"),
+        (
+            "intrinsic_mid", "intrinsic_radius", "local_hs_mid", "local_hs_radius",
+            "local_hs_arb",
+        ),
     )]
     if missing:
         raise RuntimeError(f"missing {len(missing)} correlated midpoint shards")
@@ -254,6 +262,7 @@ def build_payload() -> dict[str, object]:
     arrays = {f"{name}_{suffix}": np.empty((INTERVALS, cert.STATE + 1))
               for name in names for suffix in ("mid", "radius")}
     gap = np.empty(INTERVALS); residual = np.empty(INTERVALS)
+    local_hs_arb_rows = []
     axis_error = np.zeros(NODES)
     for node in range(1, NODES):
         with np.load(_endpoint_shard(node)) as source:
@@ -262,6 +271,7 @@ def build_payload() -> dict[str, object]:
         with np.load(_midpoint_shard(interval)) as source:
             for key in arrays:
                 arrays[key][interval] = source[key]
+            local_hs_arb_rows.append(np.asarray(source["local_hs_arb"], dtype=str))
             gap[interval] = source["gap_lower"]
             residual[interval] = source["eigen_residual_upper"]
     bounds = {}; owners = {}
@@ -272,7 +282,7 @@ def build_payload() -> dict[str, object]:
         bounds[name] = float(np.nextafter(upper[owner], math.inf)); owners[name] = owner
     arrays["axis_error_upper"] = axis_error
     arrays["precision_bits"] = np.asarray(PRECISION)
-    np.savez_compressed(DATA, **arrays)
+    np.savez_compressed(DATA, **arrays, local_hs_arb=np.asarray(local_hs_arb_rows))
     with np.load(SEED.with_suffix(".npz")) as source:
         seed_intrinsic_mid = source["midpoint_intrinsic_curvature_mid"]
         seed_intrinsic_radius = source["midpoint_intrinsic_curvature_radius"]
@@ -294,7 +304,7 @@ def build_payload() -> dict[str, object]:
         "all_370_axis_neighborhood_errors_finite": bool(
             np.all(np.isfinite(axis_error[1:])) and np.all(axis_error[1:] > 0.0)
         ),
-        "384_bit_Arb_retained_action_evaluation": PRECISION == 384,
+        "at_least_384_bit_Arb_retained_action_evaluation": PRECISION >= 384,
         "axis_error_not_silently_discarded": True,
         "global_scalar_result_not_relabelled_as_mixed_transverse_or_causal_certificate": True,
         "same_center_action_branch_trajectory_scale_and_partition_retained": True,
@@ -303,7 +313,7 @@ def build_payload() -> dict[str, object]:
     return {
         "artifact": "BHSM_N12_GATE7_CURRENT_GREEN_CORRELATED_SCALAR_ALL_INTERVALS",
         "status": "CURRENT_GREEN_CORRELATED_CENTRAL_SCALAR_ALL_370_INTERVALS_CERTIFIED",
-        "authority": "384_BIT_ARB_GLOBAL_CORRELATED_CENTRAL_SCALAR_NOT_AXIS_NEIGHBORHOOD_OR_CAUSAL_AUTHORITY",
+        "authority": f"{PRECISION}_BIT_ARB_GLOBAL_CORRELATED_CENTRAL_SCALAR_NOT_AXIS_NEIGHBORHOOD_OR_CAUSAL_AUTHORITY",
         "intervals_certified": INTERVALS,
         "maximum_norm_upper": bounds,
         "maximum_norm_owner_interval": owners,

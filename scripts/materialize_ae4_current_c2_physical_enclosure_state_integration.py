@@ -180,6 +180,7 @@ def build_payload() -> dict[str, Any]:
             "coarse_field_descriptor_block_radii_proof": "BHSM_OBSTRUCTED_ROUTE",
             "BHSM_native_green_image_partition": "RECOVERED_CURRENT_CENTER",
             "global_correlated_central_green_scalar": "BHSM_DERIVED_ALL_370_INTERVALS",
+            "correlated_central_green_scalar_causal_composition": "BHSM_DERIVED_512_BIT",
             "same_center_green_image_longitudinal_transverse_radii_proof": "NOT_YET_DERIVED",
             "complete_interacting_AE4_encapsulation": "NOT_YET_DERIVED",
             "particle_poles_masses_vertices_collisions": "NOT_DERIVED_BY_THIS_RESULT",

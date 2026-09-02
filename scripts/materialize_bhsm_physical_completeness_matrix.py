@@ -449,6 +449,12 @@ def build_payload() -> dict[str, Any]:
             and nonlinear_gate["recovered_green_correlated_scalar_all_intervals"][
                 "intervals_certified"
             ] == 370
+            and nonlinear_gate["claim_boundary"][
+                "G7_CURRENT_GREEN_CORRELATED_CENTRAL_SCALAR_CAUSAL_COMPOSITION_DERIVED"
+            ]
+            and nonlinear_gate[
+                "recovered_green_correlated_central_scalar_causal_composition"
+            ]["maximum_causal_curvature_norm_upper"] < 8.406
             and "MIXED_GREEN_TRANSVERSE" in gate_blocker
         ),
         "current_green_directional_seed_is_integrated": (

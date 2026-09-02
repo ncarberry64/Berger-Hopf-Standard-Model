@@ -77,10 +77,11 @@ retired the scalar same-center `Y,Z1,Z2` request: those operands were already
 evaluated and their single-radius discriminant is strictly negative because
 of proof-coordinate amplification.  The BHSM-native Green-image partition
 and its global correlation-preserving central scalar have now been evaluated
-on all 370 retained intervals.  The valid next proof is the mixed
+on all 370 retained intervals.  The central scalar's frozen causal composition
+is also certified at 512-bit Arb precision.  The valid next proof is the mixed
 Green/transverse and transverse-transverse bound for the certified axis
-neighborhood, followed by the frozen causal preconditioner and
-longitudinal/transverse two-radius test.  It is not a new trajectory and not
+neighborhood, followed by its combination with the derived causal scalar in
+the longitudinal/transverse two-radius test.  It is not a new trajectory and not
 a claim of physical instability.
 
 ## Claim boundary

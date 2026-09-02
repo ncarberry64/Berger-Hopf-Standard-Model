@@ -32,6 +32,7 @@ GREEN_ENDPOINTS = F / "BHSM_N12_GATE7_CURRENT_GREEN_DIRECTIONAL_ENDPOINT_CURVATU
 GREEN_MIDPOINT = F / "BHSM_N12_GATE7_CURRENT_GREEN_HERMITE_SIMPSON_MIDPOINT_CURVATURE.json"
 GREEN_CORRELATED_355 = F / "BHSM_N12_GATE7_CURRENT_GREEN_CORRELATED_SCALAR_INTERVAL355.json"
 GREEN_CORRELATED_ALL = F / "BHSM_N12_GATE7_CURRENT_GREEN_CORRELATED_SCALAR_ALL_INTERVALS.json"
+GREEN_CORRELATED_CAUSAL = F / "BHSM_N12_GATE7_CURRENT_GREEN_CORRELATED_SCALAR_CAUSAL_COMPOSITION.json"
 GAUGE = A / "BHSM_AE4_CURRENT_C2_AFFINE72_GAUGE_CALDERON_FIRST_JET.json"
 PARTICLE = A / "BHSM_AE4_CURRENT_C2_AFFINE72_PARTICLE_FIBER_CALDERON.json"
 TARGET = A / "BHSM_AE4_CURRENT_C2_NONLINEAR_CARRIER_AUTHORITY_ADJUDICATION.json"
@@ -45,6 +46,7 @@ INPUTS = (
     GREEN_MIDPOINT,
     GREEN_CORRELATED_355,
     GREEN_CORRELATED_ALL,
+    GREEN_CORRELATED_CAUSAL,
     GAUGE,
     PARTICLE,
     ROOT / "src/bhsm/interface/ae4_current_c2_nonlinear_carrier_authority_adjudication.py",
@@ -69,13 +71,13 @@ def build_payload() -> dict[str, Any]:
     missing = [str(path) for path in INPUTS if not path.is_file()]
     if missing:
         raise FileNotFoundError(", ".join(missing))
-    transfer, outward, block_screen, green_partition, green_seed, green_endpoints, green_midpoint, green_correlated_355, green_correlated_all, gauge, particle = (
-        _load(path) for path in INPUTS[:11]
+    transfer, outward, block_screen, green_partition, green_seed, green_endpoints, green_midpoint, green_correlated_355, green_correlated_all, green_correlated_causal, gauge, particle = (
+        _load(path) for path in INPUTS[:12]
     )
     if not all(
         row.get("validation_passed") is True
         for row in (
-            transfer, outward, block_screen, green_partition, green_seed, green_endpoints, green_midpoint, green_correlated_355, green_correlated_all,
+            transfer, outward, block_screen, green_partition, green_seed, green_endpoints, green_midpoint, green_correlated_355, green_correlated_all, green_correlated_causal,
             gauge, particle
         )
     ):
@@ -111,6 +113,9 @@ def build_payload() -> dict[str, Any]:
         green_correlated_scalar_all_intervals_derived=green_correlated_all[
             "claim_boundary"
         ]["CURRENT_GREEN_CORRELATED_SCALAR_ALL_INTERVALS_DERIVED"],
+        green_correlated_scalar_causal_composition_derived=green_correlated_causal[
+            "claim_boundary"
+        ]["CURRENT_GREEN_CORRELATED_CENTRAL_SCALAR_CAUSAL_COMPOSITION_DERIVED"],
         root_nonexistence_claim=decision["root_nonexistence_claim"],
         physical_instability_claim=decision[
             "physical_spacetime_instability_claim"
@@ -210,6 +215,15 @@ def build_payload() -> dict[str, Any]:
             ]
             and not green_correlated_all["claim_boundary"][
                 "CURRENT_GREEN_AXIS_NEIGHBORHOOD_MIXED_TRANSVERSE_BOUND_DERIVED"
+            ]
+        ),
+        "correlated_green_central_scalar_causal_composition_is_reused": (
+            green_correlated_causal["validation_passed"]
+            and green_correlated_causal["nodes_composed"] == 371
+            and green_correlated_causal["first_recursive_wrapping_node"] is None
+            and green_correlated_causal["maximum_causal_curvature_norm_upper"] < 8.406
+            and not green_correlated_causal["claim_boundary"][
+                "CURRENT_CENTER_GREEN_CAUSAL_TWO_RADIUS_CERTIFICATE_DERIVED"
             ]
         ),
     }
@@ -319,6 +333,17 @@ def build_payload() -> dict[str, Any]:
                 "axis_neighborhood"
             ]["maximum_error_owner_node"],
             "axis_neighborhood_mixed_transverse_bound_derived": False,
+        },
+        "recovered_green_correlated_central_scalar_causal_composition": {
+            "nodes_composed": green_correlated_causal["nodes_composed"],
+            "maximum_causal_curvature_norm_upper": green_correlated_causal[
+                "maximum_causal_curvature_norm_upper"
+            ],
+            "maximum_causal_curvature_owner_node": green_correlated_causal[
+                "maximum_causal_curvature_owner_node"
+            ],
+            "exact_axis_neighborhood_causal_composition_derived": False,
+            "two_radius_certificate_derived": False,
         },
         "authority_adjudication": result,
         "claim_boundary": boundary,
