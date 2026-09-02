@@ -163,6 +163,9 @@ def build_payload() -> dict[str, Any]:
             and nonlinear_authority["claim_boundary"][
                 "G7_SINGLE_RADIUS_74D_CONTRACTION_ROUTE_OBSTRUCTED"
             ]
+            and nonlinear_authority["claim_boundary"][
+                "G7_FIELD_DESCRIPTOR_BLOCK_CONTRACTION_ROUTE_OBSTRUCTED"
+            ]
             and not nonlinear_authority["claim_boundary"][
                 "G7_ROOT_NONEXISTENCE_DERIVED"
             ]
@@ -235,6 +238,7 @@ def build_payload() -> dict[str, Any]:
             },
             "nonlinear_carrier_authority_adjudication": {
                 "single_radius_74D_contraction_route": "OBSTRUCTED",
+                "coarse_field_descriptor_block_route": "OBSTRUCTED",
                 "root_nonexistence": "NOT_DERIVED",
                 "physical_spacetime_instability": "NOT_DERIVED",
                 "new_center_or_trajectory": "NOT_AUTHORIZED",

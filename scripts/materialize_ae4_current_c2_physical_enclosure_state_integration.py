@@ -112,6 +112,10 @@ def build_payload() -> dict[str, Any]:
             ]
             == "OBSTRUCTED"
             and flux["nonlinear_carrier_authority_adjudication"][
+                "coarse_field_descriptor_block_route"
+            ]
+            == "OBSTRUCTED"
+            and flux["nonlinear_carrier_authority_adjudication"][
                 "root_nonexistence"
             ]
             == "NOT_DERIVED"
@@ -169,7 +173,8 @@ def build_payload() -> dict[str, Any]:
             "local_enclosure_state_transport": "BHSM_DERIVED",
             "affine72_particle_fiber_carrier_response": "BHSM_EVALUATED_CANDIDATE",
             "nonlinear_single_radius_carrier_proof": "BHSM_OBSTRUCTED_ROUTE",
-            "same_center_action_block_radii_proof": "NOT_YET_DERIVED",
+            "coarse_field_descriptor_block_radii_proof": "BHSM_OBSTRUCTED_ROUTE",
+            "same_center_componentwise_or_finer_action_block_radii_proof": "NOT_YET_DERIVED",
             "complete_interacting_AE4_encapsulation": "NOT_YET_DERIVED",
             "particle_poles_masses_vertices_collisions": "NOT_DERIVED_BY_THIS_RESULT",
             "particle_spectrum_rebuild_claim_allowed": False,

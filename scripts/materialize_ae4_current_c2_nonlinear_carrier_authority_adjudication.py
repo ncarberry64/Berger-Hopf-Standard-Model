@@ -25,12 +25,14 @@ A = ROOT / "artifacts/action_extension"
 F = ROOT / "artifacts/flagship_integration"
 TRANSFER = F / "BHSM_N12_GATE7_AFFINE_72D_NONLINEAR_TRANSFER_AUDIT.json"
 OUTWARD = F / "BHSM_N12_GATE7_ACCEPTED_REPLAY_CENTER_OUTWARD_74D_CONTRACTION.json"
+BLOCK_SCREEN = F / "BHSM_N12_GATE7_ACCEPTED_REPLAY_ACTION_BLOCK_SCREEN.json"
 GAUGE = A / "BHSM_AE4_CURRENT_C2_AFFINE72_GAUGE_CALDERON_FIRST_JET.json"
 PARTICLE = A / "BHSM_AE4_CURRENT_C2_AFFINE72_PARTICLE_FIBER_CALDERON.json"
 TARGET = A / "BHSM_AE4_CURRENT_C2_NONLINEAR_CARRIER_AUTHORITY_ADJUDICATION.json"
 INPUTS = (
     TRANSFER,
     OUTWARD,
+    BLOCK_SCREEN,
     GAUGE,
     PARTICLE,
     ROOT / "src/bhsm/interface/ae4_current_c2_nonlinear_carrier_authority_adjudication.py",
@@ -55,10 +57,12 @@ def build_payload() -> dict[str, Any]:
     missing = [str(path) for path in INPUTS if not path.is_file()]
     if missing:
         raise FileNotFoundError(", ".join(missing))
-    transfer, outward, gauge, particle = (_load(path) for path in INPUTS[:4])
+    transfer, outward, block_screen, gauge, particle = (
+        _load(path) for path in INPUTS[:5]
+    )
     if not all(
         row.get("validation_passed") is True
-        for row in (transfer, outward, gauge, particle)
+        for row in (transfer, outward, block_screen, gauge, particle)
     ):
         raise RuntimeError("validated transfer, outward, and AE4 carrier inputs required")
 
@@ -70,6 +74,9 @@ def build_payload() -> dict[str, Any]:
         affine_transfer_allowed=transfer_allowed,
         same_center_contraction_obstructed=decision[
             "current_same_center_contraction_theorem_obstructed"
+        ],
+        field_descriptor_block_obstructed=block_screen["decision"][
+            "coarse_73_plus_1_field_descriptor_block_route_obstructed"
         ],
         root_nonexistence_claim=decision["root_nonexistence_claim"],
         physical_instability_claim=decision[
@@ -122,6 +129,11 @@ def build_payload() -> dict[str, Any]:
         "scalar_route_not_left_as_open_next_calculation": boundary[
             "G7_SINGLE_RADIUS_74D_CONTRACTION_ROUTE_OBSTRUCTED"
         ],
+        "coarse_field_descriptor_route_not_left_open": (
+            boundary["G7_FIELD_DESCRIPTOR_BLOCK_CONTRACTION_ROUTE_OBSTRUCTED"]
+            and block_screen["necessary_field_block_test"]["discriminant_upper"]
+            < 0.0
+        ),
     }
     return {
         "artifact": "BHSM_AE4_CURRENT_C2_NONLINEAR_CARRIER_AUTHORITY_ADJUDICATION",
@@ -136,6 +148,17 @@ def build_payload() -> dict[str, Any]:
             "necessary_discriminant_upper": operands[
                 "necessary_discriminant_upper_1_minus_4_Ylower_Z2lower"
             ],
+        },
+        "recovered_coarse_block_obstruction": {
+            "field_Y_lower": block_screen["outward_center_defect"][
+                "field_Y_lower"
+            ],
+            "field_from_field_curvature_lower": block_screen[
+                "existing_curvature_witness"
+            ]["terminal_field_block_curvature_lower"],
+            "necessary_field_discriminant_upper": block_screen[
+                "necessary_field_block_test"
+            ]["discriminant_upper"],
         },
         "authority_adjudication": result,
         "claim_boundary": boundary,
