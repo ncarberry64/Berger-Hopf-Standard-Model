@@ -107,6 +107,7 @@ def test_canonical_system_and_required_subsystems() -> None:
         "C2_DOP853_RESPONSE", "GATE7_HEAT_ZETA_CHAIN", "CKM_SECTOR",
         "NEUTRINO_PMNS_SECTOR", "FROZEN_PREDICTION_SYSTEM",
         "CURRENT_FULL_FIELD_ACTION_ATTACHMENT",
+        "ENVIRONMENT_CONDITIONED_REALIZATION_SCOPE",
         "RELEASE_DEFINITION_OF_DONE",
     } <= identifiers
     required = {
@@ -173,6 +174,12 @@ def test_blocker_and_interface_priority_reconciliation() -> None:
         "same_center_scalar_contraction_is_evaluated_and_obstructed"
     ] is True
     assert payload["claim_boundary"]["Gate7"] == "ACTIVE_NOT_CLOSED"
+    assert payload["claim_boundary"]["Gate7_realization_scope"] == (
+        "ONE_ACTION_SELECTED_BACKGROUND_NOT_ALL_PARTICLE_TRAJECTORIES"
+    )
+    assert payload["validation"][
+        "environment_conditioned_realization_scope_is_fail_closed"
+    ] is True
     attachment_gap = next(
         row for row in payload["interface_gaps"]
         if row["id"] == "CURRENT_BACKGROUND_TO_FULL_FIELD_ACTION"

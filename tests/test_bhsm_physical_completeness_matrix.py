@@ -37,6 +37,15 @@ def test_matrix_tracks_all_required_physical_sectors_without_promotion() -> None
     assert payload["Gate7_authority"][
         "transverse_quadratic_current_seed"
     ] == "DERIVED_EIGHT_DECISIVE_DIRECTIONS"
+    assert payload["Gate7_authority"]["realization_scope"] == (
+        "ONE_ACTION_SELECTED_BACKGROUND_REALIZATION_NOT_A_UNIVERSAL_PARTICLE_TRAJECTORY"
+    )
+    assert payload["encapsulation_realization_scope"][
+        "complete_interacting_spacetime_volume_enclosure"
+    ] == "OPEN"
+    assert payload["validation"][
+        "encapsulation_scope_is_validated_and_particle_specific_realizations_remain_open"
+    ]
     assert payload["validation"][
         "same_center_scalar_route_is_now_evaluated_and_obstructed"
     ]

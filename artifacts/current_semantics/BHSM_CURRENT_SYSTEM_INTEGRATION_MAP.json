@@ -144,10 +144,12 @@
   "claim_boundary": {
     "FULL_BHSM_COMPLETE": false,
     "Gate7": "ACTIVE_NOT_CLOSED",
+    "Gate7_realization_scope": "ONE_ACTION_SELECTED_BACKGROUND_NOT_ALL_PARTICLE_TRAJECTORIES",
     "frozen_prediction_retuned": false,
     "historical_theorem_erased": false,
     "measured_data_used_upstream": false,
-    "new_action_added": false
+    "new_action_added": false,
+    "particle_specific_realizations": "OPEN"
   },
   "current_irreducible_object": "G7_SAME_CENTER_GREEN_IMAGE_LONGITUDINAL_TRANSVERSE_RADII_SCREEN",
   "current_irreducible_objects": [
@@ -158,7 +160,7 @@
     "artifacts/BHSM_1_0_completion_gate.json": "CE578DFA191245840935D759E3F07F034A9607EE2DED7010040F7D0780612144",
     "artifacts/BHSM_CKM_action_equivalence_v11_6.json": "5F5850309F6744464FBA34A4A255F415A6F17782B60CF0E6FF7A4E1CEC63DD1C",
     "artifacts/BHSM_CURRENT_FULL_FIELD_ACTION_ATTACHMENT_AUDIT.json": "FC35527D23B49573360B9B28B9F064BFF297F678F7439BEB18D908D0D54808B4",
-    "artifacts/BHSM_PHYSICAL_COMPLETENESS_MATRIX.json": "2481956A840BC57E309148E19C79BCE11CDA224FB700B1898F1645EC6296A696",
+    "artifacts/BHSM_PHYSICAL_COMPLETENESS_MATRIX.json": "609CC7D89D013E03CAA104E3491F499818F5A2DDD302E50FC236EE79582DE967",
     "artifacts/BHSM_aether_total_microscopic_action_v15_3.json": "F57286822FCB15C204836D4C2B2ACAC25141CB016703AFB43A6153AAA2F7E002",
     "artifacts/BHSM_common_scheme_observable_transport_v7_2.json": "A7A2616ACA7238E197759ADE77B2FDB0213EA36783646FE94B04C774EF09CF07",
     "artifacts/BHSM_covariant_bulk_boundary_reduction_functor_v7_1.json": "7ED661C2AA6BF4F2ABCB7F29C40966385CD97AA159B5B15DF01E6DB7A485CD27",
@@ -173,6 +175,7 @@
     "artifacts/current_semantics/BHSM_CURRENT_GATE_LEDGER.json": "9F6050210D4330993E3EF01EA725780F537B7733C18AEDA1375C89BAD3A2136D",
     "artifacts/current_semantics/BHSM_CURRENT_MATHEMATICAL_BASIS.json": "F9804C63CBA71FE8A78021E9542C3803D43E036423DE16D1388F3DB0EFD2BFCD",
     "artifacts/current_semantics/BHSM_CURRENT_ONTOLOGY_REGISTRY.json": "238B6D470D567B65E2B80361E25E238C0878F0AE1F03705406B1B866FF9C4CD7",
+    "artifacts/current_semantics/BHSM_ENCAPSULATION_REALIZATION_ONTOLOGY.json": "DC6785C4F346557267F9C4E66B5288D8E96744110320BF27BD3C3750A8FFA199",
     "artifacts/flagship_integration/BHSM_AE2_NEUTRAL_PROPAGATION_OPERATOR.json": "19F9FD1F40F57EAB94F5C8423BE1BB8DAD5CEE83BDBDC16486B0678F4594F287",
     "artifacts/flagship_integration/BHSM_AE2_PMNS_ACTION_REDERIVATION_AUDIT.json": "367BA9D391CE8826183ABAD21B32D8439F2A12A801BBD9A340145D46187B20E2",
     "artifacts/flagship_integration/BHSM_FULL_RECALL_HINDSIGHT_RECON_FORESIGHT.json": "3730D5075A2276EE07D6A4E956E1ED529E6DA9BEA4B4A8F4C5848E31CEEACE75",
@@ -768,6 +771,33 @@
     },
     {
       "canonical_action_version": "BHSM-AE-2.0.0",
+      "configuration_space": "one universal action with mode scale environment boundary history and trajectory dependent realizations",
+      "current_blockers": [
+        "PARTICLE_SPECIFIC_ENVIRONMENT_MODE_SCALE_BOUNDARY_AND_HISTORY_REALIZATIONS"
+      ],
+      "downstream_consumers": [
+        "GENERATION_FAMILY_PROJECTORS",
+        "CURRENT_FULL_FIELD_ACTION_ATTACHMENT",
+        "RELEASE_DEFINITION_OF_DONE"
+      ],
+      "historical_supersessions": [
+        "particle/family/representation/projector assets are reused without spectrum rebuild"
+      ],
+      "id": "ENVIRONMENT_CONDITIONED_REALIZATION_SCOPE",
+      "input_artifacts": [
+        "artifacts/current_semantics/BHSM_ENCAPSULATION_REALIZATION_ONTOLOGY.json",
+        "artifacts/BHSM_generation_projector_action_attachment_v8_2.json",
+        "artifacts/action_extension/BHSM_ACTION_AE2_GLOBAL_SPIN_RESET_ACTION.json"
+      ],
+      "mathematical_status": "ONTOLOGY_AND_GATE7_SCOPE_FAIL_CLOSED",
+      "output_artifacts": [
+        "artifacts/current_semantics/BHSM_ENCAPSULATION_REALIZATION_ONTOLOGY.json"
+      ],
+      "owning_theorem_version": "current encapsulation realization ontology",
+      "variational_domain": "current 371-node Gate-7 center is one action-selected background realization, not a universal particle trajectory"
+    },
+    {
+      "canonical_action_version": "BHSM-AE-2.0.0",
       "configuration_space": "one canonical action/input ledger through physical observables, benchmark, prediction and package",
       "current_blockers": [
         "GATE7_CURRENT_BLOCKER_THEN_DOWNSTREAM_ACTION_OWNED_MASS_MIXING_AND_RELEASE_REPRODUCTION"
@@ -826,6 +856,7 @@
     "direct_Hermite_Simpson_multiple_shooting_source_is_materialized": true,
     "direct_exact_center_physical_field_jacobian_is_materialized": true,
     "domain_no_go_is_scoped_correctly": true,
+    "environment_conditioned_realization_scope_is_fail_closed": true,
     "exact_DOP853_center_first_variation_is_certified": true,
     "exact_affine_signed_Y_center_transfer_is_certified_and_old_Gauss12_cone_is_rejected": true,
     "exact_affine_terminal_stop_is_uniformly_transverse": true,
