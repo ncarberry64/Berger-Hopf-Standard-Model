@@ -38,3 +38,13 @@ next calculation must retain the Green normalization and endpoint-to-midpoint
 transport as one correlated longitudinal scalar parameterization, beginning
 at interval 355.  No frozen test-frame or causal-preconditioner promotion is
 allowed before that finite enclosure is recovered.
+
+The same calculation is also available as a distinct 512-bit artifact.  It
+retains the componentwise exact-Green-axis balls, recomputes both endpoint
+variations at the higher precision, and carries their Arb strings into the
+midpoint assembly without an intermediate binary-radius floor.  The same
+interval-355 loss persists.  Hence the failure is not an Arb precision floor:
+the component boxes discard the normalization/transport dependency before
+the collapse-side midpoint is formed.  This result sharpens the missing
+bridge to a correlation-preserving mixed Green/transverse and
+transverse-transverse remainder around the already finite central scalar.

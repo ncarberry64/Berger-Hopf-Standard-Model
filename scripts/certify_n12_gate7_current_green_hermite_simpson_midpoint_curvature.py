@@ -29,23 +29,25 @@ REPLAY = F / "BHSM_N12_GATE7_AUGMENTED_FIXED_DESCRIPTOR_NEWTON_MIDPOINT_REPLAY.j
 JACOBIAN = F / "BHSM_N12_GATE7_CORRELATED_DESCRIPTOR_AUGMENTED_JACOBIANS.json"
 PARTITION = A / "BHSM_AE4_CURRENT_C2_GREEN_IMAGE_PARTITION_RECONCILIATION.json"
 ENDPOINT_SECOND = F / "BHSM_N12_GATE7_CURRENT_GREEN_DIRECTIONAL_ENDPOINT_CURVATURE.json"
-RESULT = F / "BHSM_N12_GATE7_CURRENT_GREEN_HERMITE_SIMPSON_MIDPOINT_CURVATURE.json"
+PRECISION = int(os.environ.get("BHSM_GREEN_HS_PRECISION", cert.PRECISION))
+PRECISION_SUFFIX = "" if PRECISION == cert.PRECISION else f"_{PRECISION}BIT"
+RESULT = F / f"BHSM_N12_GATE7_CURRENT_GREEN_HERMITE_SIMPSON_MIDPOINT_CURVATURE{PRECISION_SUFFIX}.json"
 DATA = RESULT.with_suffix(".npz")
-WORK = F / ".current_green_hs_midpoint_work"
+WORK = F / f".current_green_hs_midpoint_work{PRECISION_SUFFIX.lower()}"
 THEORY = ROOT / "theory/n12_gate7_current_green_hermite_simpson_midpoint_curvature.md"
 THIS_SCRIPT = Path(__file__).resolve()
-PRECISION = cert.PRECISION
 NODES = 371
 INTERVALS = 370
-SHARD_REVISION = 1
+SHARD_REVISION = 1 if PRECISION == cert.PRECISION else 2
 INPUTS = (
     ENDPOINT, ENDPOINT.with_suffix(".npz"),
     REPLAY, REPLAY.with_suffix(".npz"),
     JACOBIAN, JACOBIAN.with_suffix(".npz"),
     PARTITION, PARTITION.with_suffix(".npz"),
-    ENDPOINT_SECOND, ENDPOINT_SECOND.with_suffix(".npz"),
     Path(cert.__file__).resolve(), THIS_SCRIPT, THEORY,
-)
+) + (() if PRECISION > cert.PRECISION else (
+    ENDPOINT_SECOND, ENDPOINT_SECOND.with_suffix(".npz"),
+))
 
 
 def _sha(path: Path) -> str:
@@ -97,7 +99,7 @@ def _direction(frame: np.ndarray, unit_mid: np.ndarray, unit_radius: np.ndarray)
     return result
 
 
-def _valid(path: Path, key: str, index: int) -> bool:
+def _valid(path: Path, key: str, index: int, required: tuple[str, ...] = ()) -> bool:
     if not path.is_file():
         return False
     try:
@@ -106,6 +108,7 @@ def _valid(path: Path, key: str, index: int) -> bool:
                 int(data[key]) == index
                 and int(data["precision_bits"]) == PRECISION
                 and int(data["shard_revision"]) == SHARD_REVISION
+                and all(name in data.files for name in required)
             )
     except Exception:
         return False
@@ -127,7 +130,8 @@ def _endpoint_first_worker(nodes: list[int]) -> dict[str, int]:
     computed = reused = 0
     for count, node in enumerate(nodes, 1):
         target = _first_shard(node)
-        if _valid(target, "node", node):
+        required = ("first_arb", "second_arb") if PRECISION > cert.PRECISION else ()
+        if _valid(target, "node", node, required):
             reused += 1
             continue
         direction = _direction(
@@ -139,8 +143,16 @@ def _endpoint_first_worker(nodes: list[int]) -> dict[str, int]:
             direction.reshape(cert.STATE + 1, 1),
         )
         midpoint, radius = _export(enclosed.derivative[:, 0])
+        arrays: dict[str, np.ndarray] = {}
+        if PRECISION > cert.PRECISION:
+            second = cert._rate_second_directional(
+                states[node], float(descriptors[node]), weights, reference,
+                direction,
+            )
+            arrays["first_arb"] = cert._arb_string_array(enclosed.derivative[:, 0])
+            arrays["second_arb"] = cert._arb_string_array(second)
         np.savez_compressed(
-            target, derivative_mid=midpoint, derivative_radius=radius,
+            target, **arrays, derivative_mid=midpoint, derivative_radius=radius,
             node=np.asarray(node), precision_bits=np.asarray(PRECISION),
             shard_revision=np.asarray(SHARD_REVISION),
             gap_lower=np.asarray(enclosed.gap_lower),
@@ -168,15 +180,17 @@ def _midpoint_worker(intervals: list[int]) -> dict[str, int]:
     with np.load(PARTITION.with_suffix(".npz")) as source:
         unit_mid = np.asarray(source["current_center_green_image_unit_mid"], dtype=float)
         unit_radius = np.asarray(source["current_center_green_image_unit_radius"], dtype=float)
-    with np.load(ENDPOINT_SECOND.with_suffix(".npz")) as source:
-        second_mid = np.asarray(source["green_directional_endpoint_curvature_mid"], dtype=float)
-        second_radius = np.asarray(source["green_directional_endpoint_curvature_radius"], dtype=float)
+    if PRECISION == cert.PRECISION:
+        with np.load(ENDPOINT_SECOND.with_suffix(".npz")) as source:
+            second_mid = np.asarray(source["green_directional_endpoint_curvature_mid"], dtype=float)
+            second_radius = np.asarray(source["green_directional_endpoint_curvature_radius"], dtype=float)
 
     zero = np.asarray([arb(0) for _ in range(cert.STATE + 1)], dtype=object)
     computed = reused = 0
     for count, interval in enumerate(intervals, 1):
         target = _midpoint_shard(interval)
-        if _valid(target, "interval", interval):
+        required = ("local_hs_arb",) if PRECISION > cert.PRECISION else ()
+        if _valid(target, "interval", interval, required):
             reused += 1
             continue
         left_direction = zero if interval == 0 else _direction(
@@ -191,11 +205,29 @@ def _midpoint_worker(intervals: list[int]) -> dict[str, int]:
             left_first = zero
         else:
             with np.load(_first_shard(interval)) as source:
-                left_first = _ball(source["derivative_mid"], source["derivative_radius"])
+                left_first = (
+                    cert._parse_arb_string_array(source["first_arb"])
+                    if PRECISION > cert.PRECISION else
+                    _ball(source["derivative_mid"], source["derivative_radius"])
+                )
         with np.load(_first_shard(interval + 1)) as source:
-            right_first = _ball(source["derivative_mid"], source["derivative_radius"])
-        left_second = _ball(second_mid[interval], second_radius[interval])
-        right_second = _ball(second_mid[interval + 1], second_radius[interval + 1])
+            right_first = (
+                cert._parse_arb_string_array(source["first_arb"])
+                if PRECISION > cert.PRECISION else
+                _ball(source["derivative_mid"], source["derivative_radius"])
+            )
+            right_second = (
+                cert._parse_arb_string_array(source["second_arb"])
+                if PRECISION > cert.PRECISION else
+                _ball(second_mid[interval + 1], second_radius[interval + 1])
+            )
+        if interval == 0:
+            left_second = zero
+        elif PRECISION > cert.PRECISION:
+            with np.load(_first_shard(interval)) as source:
+                left_second = cert._parse_arb_string_array(source["second_arb"])
+        else:
+            left_second = _ball(second_mid[interval], second_radius[interval])
         h = arb(float(times[interval + 1] - times[interval]))
         midpoint_direction = np.asarray([
             (left_direction[i] + right_direction[i]) / 2
@@ -230,7 +262,10 @@ def _midpoint_worker(intervals: list[int]) -> dict[str, int]:
         ):
             arrays[f"{name}_mid"], arrays[f"{name}_radius"] = _export(values)
         np.savez_compressed(
-            target, **arrays, interval=np.asarray(interval),
+            target, **arrays,
+            **({"local_hs_arb": cert._arb_string_array(hs_second)}
+               if PRECISION > cert.PRECISION else {}),
+            interval=np.asarray(interval),
             precision_bits=np.asarray(PRECISION),
             shard_revision=np.asarray(SHARD_REVISION),
             gap_lower=np.asarray(incidence_enclosure.gap_lower),
@@ -248,7 +283,10 @@ def _run(stage: str, workers: int) -> None:
     indices = list(range(1, NODES)) if stage == "endpoint-first" else list(range(INTERVALS))
     if stage == "midpoint":
         missing = [node for node in range(1, NODES)
-                   if not _valid(_first_shard(node), "node", node)]
+                   if not _valid(
+                       _first_shard(node), "node", node,
+                       ("first_arb", "second_arb") if PRECISION > cert.PRECISION else (),
+                   )]
         if missing:
             raise RuntimeError(f"missing {len(missing)} endpoint first-variation shards")
     groups = [indices[index::workers] for index in range(workers)]
@@ -268,7 +306,10 @@ def build_payload() -> dict[str, object]:
     if missing_inputs:
         raise FileNotFoundError(", ".join(missing_inputs))
     missing = [interval for interval in range(INTERVALS)
-               if not _valid(_midpoint_shard(interval), "interval", interval)]
+               if not _valid(
+                   _midpoint_shard(interval), "interval", interval,
+                   ("local_hs_arb",) if PRECISION > cert.PRECISION else (),
+               )]
     if missing:
         raise RuntimeError(f"missing {len(missing)} midpoint shards")
     names = ("midpoint_direction", "midpoint_second_incidence", "intrinsic_curvature",
@@ -276,10 +317,13 @@ def build_payload() -> dict[str, object]:
     arrays = {f"{name}_{suffix}": np.empty((INTERVALS, cert.STATE + 1), dtype=float)
               for name in names for suffix in ("mid", "radius")}
     gap = np.empty(INTERVALS); residual = np.empty(INTERVALS)
+    local_hs_arb_rows = []
     for interval in range(INTERVALS):
         with np.load(_midpoint_shard(interval)) as source:
             for key in arrays:
                 arrays[key][interval] = source[key]
+            if PRECISION > cert.PRECISION:
+                local_hs_arb_rows.append(np.asarray(source["local_hs_arb"], dtype=str))
             gap[interval] = source["gap_lower"]
             residual[interval] = source["eigen_residual_upper"]
     norm_upper = {}
@@ -297,7 +341,11 @@ def build_payload() -> dict[str, object]:
     arrays["minimum_gap_lower"] = np.asarray(np.min(gap))
     arrays["maximum_eigen_residual_upper"] = np.asarray(np.max(residual))
     arrays["precision_bits"] = np.asarray(PRECISION)
-    np.savez_compressed(DATA, **arrays)
+    np.savez_compressed(
+        DATA, **arrays,
+        **({"local_hs_arb": np.asarray(local_hs_arb_rows)}
+           if PRECISION > cert.PRECISION else {}),
+    )
     intrinsic_finite = finite_masks["intrinsic_curvature"]
     finite_prefix = int(np.argmax(~intrinsic_finite)) if not np.all(intrinsic_finite) else INTERVALS
     nonfinite_intervals = np.where(~intrinsic_finite)[0].tolist()
@@ -307,28 +355,53 @@ def build_payload() -> dict[str, object]:
     incidence_direction_finite = np.all(
         np.isfinite(arrays["midpoint_second_incidence_mid"])
     ) and np.all(np.isfinite(arrays["midpoint_second_incidence_radius"]))
-    validation = {
+    common_validation = {
         "all_370_correlated_midpoints_certified": True,
-        "384_bit_Arb_retained_action_evaluation": PRECISION == 384,
+        "at_least_384_bit_Arb_retained_action_evaluation": PRECISION >= 384,
         "all_selected_line_gaps_positive": bool(np.all(gap > 0.0)),
         "all_midpoint_direction_balls_finite": bool(direction_finite),
         "all_midpoint_second_incidence_balls_finite": bool(incidence_direction_finite),
-        "intrinsic_curvature_finite_exactly_through_interval_354": bool(
-            finite_prefix == 355 and nonfinite_intervals == list(range(355, 370))
-        ),
         "incidence_curvature_remains_finite_all_370_intervals": bool(
             np.all(finite_masks["incidence_curvature"])
         ),
-        "endpoint_second_variations_reused_without_recomputation": True,
+        "endpoint_second_variations_exactly_attached": True,
         "midpoint_second_incidence_included": True,
         "local_HS_residual_second_assembled_with_exact_step_signs": True,
         "raw_midpoint_result_not_relabelled_as_preconditioned_causal_certificate": True,
         "same_center_action_branch_trajectory_partition_and_scale_retained": True,
     }
+    if PRECISION == cert.PRECISION:
+        route_validation = {
+            "intrinsic_curvature_finite_exactly_through_interval_354": bool(
+                finite_prefix == 355 and nonfinite_intervals == list(range(355, 370))
+            ),
+            "componentwise_route_remains_fail_closed_at_384_bits": True,
+        }
+    else:
+        route_validation = {
+            "intrinsic_curvature_finite_exactly_through_interval_354": bool(
+                finite_prefix == 355 and nonfinite_intervals == list(range(355, 370))
+            ),
+            "exact_Arb_local_HS_residuals_persisted": len(local_hs_arb_rows) == INTERVALS,
+            "512_bit_precision_does_not_remove_componentwise_dependency_wrapping": bool(
+                nonfinite_intervals == list(range(355, 370))
+            ),
+            "failed_componentwise_route_not_promoted_as_exact_axis_authority": True,
+        }
+    validation = {**common_validation, **route_validation}
+    high_precision = PRECISION > cert.PRECISION
     return {
         "artifact": "BHSM_N12_GATE7_CURRENT_GREEN_HERMITE_SIMPSON_MIDPOINT_CURVATURE",
-        "status": "CURRENT_CENTER_GREEN_MIDPOINT_COMPONENTWISE_DIRECTION_BALL_LOSS_LOCALIZED",
-        "authority": "384_BIT_ARB_FINITE_PREFIX_AND_FAIL_CLOSED_COMPONENTWISE_DIRECTION_BALL_OBSTRUCTION_NOT_CAUSAL_PRECONDITIONED_AUTHORITY",
+        "status": (
+            "CURRENT_GREEN_COMPONENTWISE_AXIS_BALL_OBSTRUCTION_PERSISTS_AT_512_BIT"
+            if high_precision else
+            "CURRENT_CENTER_GREEN_MIDPOINT_COMPONENTWISE_DIRECTION_BALL_LOSS_LOCALIZED"
+        ),
+        "authority": (
+            f"{PRECISION}_BIT_ARB_COMPONENTWISE_DEPENDENCY_OBSTRUCTION_NOT_EXACT_AXIS_OR_CAUSAL_AUTHORITY"
+            if high_precision else
+            "384_BIT_ARB_FINITE_PREFIX_AND_FAIL_CLOSED_COMPONENTWISE_DIRECTION_BALL_OBSTRUCTION_NOT_CAUSAL_PRECONDITIONED_AUTHORITY"
+        ),
         "intervals_certified": INTERVALS,
         "maximum_norm_upper": norm_upper,
         "maximum_norm_owner_interval": owners,
@@ -336,14 +409,24 @@ def build_payload() -> dict[str, object]:
         "maximum_eigen_residual_upper": float(np.max(residual)),
         "componentwise_direction_ball_obstruction": {
             "finite_intrinsic_prefix_intervals": finite_prefix,
-            "first_nonfinite_intrinsic_interval": nonfinite_intervals[0],
+            "first_nonfinite_intrinsic_interval": (
+                nonfinite_intervals[0] if nonfinite_intervals else None
+            ),
             "nonfinite_intrinsic_intervals": nonfinite_intervals,
             "midpoint_direction_and_second_incidence_remain_finite": bool(
                 direction_finite and incidence_direction_finite
             ),
-            "interpretation": "INDEPENDENT_COMPONENTWISE_INTERVALIZATION_OF_THE_NORMALIZED_GREEN_AXES_LOSES_A_FINITE_INTRINSIC_MIDPOINT_HESSIAN_ENCLOSURE_ON_THE_COLLAPSE_SIDE;_THIS_OBSTRUCTS_THE_PRESENT_ENCLOSURE_COORDINATES,_NOT_THE_CORRELATED_GREEN_PATH_OR_A_PHYSICAL_SOLUTION",
+            "interpretation": (
+                "HIGHER_PRECISION_PRESERVES_THE_SAME_INTERVAL_355_COMPONENTWISE_DEPENDENCY_OBSTRUCTION;_THE_MISSING_OBJECT_IS_A_CORRELATION_PRESERVING_MIXED_GREEN_TRANSVERSE_REMAINDER,_NOT_MORE_SCALAR_PRECISION"
+                if high_precision else
+                "INDEPENDENT_COMPONENTWISE_INTERVALIZATION_OF_THE_NORMALIZED_GREEN_AXES_LOSES_A_FINITE_INTRINSIC_MIDPOINT_HESSIAN_ENCLOSURE_ON_THE_COLLAPSE_SIDE;_THIS_OBSTRUCTS_THE_PRESENT_ENCLOSURE_COORDINATES,_NOT_THE_CORRELATED_GREEN_PATH_OR_A_PHYSICAL_SOLUTION"
+            ),
         },
-        "exact_next_calculation": "RETAIN_THE_GREEN_IMAGE_NORMALIZATION_AND_ENDPOINT_TO_MIDPOINT_TRANSPORT_AS_ONE_CORRELATED_LONGITUDINAL_SCALAR_PARAMETERIZATION,_THEN_REEVALUATE_INTERVAL_355_BEFORE_ANY_CAUSAL_PRECONDITIONED_OR_TWO_RADIUS_PROMOTION",
+        "exact_next_calculation": (
+            "DERIVE_THE_CORRELATION_PRESERVING_MIXED_GREEN_TRANSVERSE_AND_TRANSVERSE_TRANSVERSE_REMAINDERS_AROUND_THE_CERTIFIED_CENTRAL_AXIS,_THEN_COMBINE_THEM_WITH_THE_DERIVED_CAUSAL_CENTRAL_SCALAR"
+            if high_precision else
+            "RETAIN_THE_GREEN_IMAGE_NORMALIZATION_AND_ENDPOINT_TO_MIDPOINT_TRANSPORT_AS_ONE_CORRELATED_LONGITUDINAL_SCALAR_PARAMETERIZATION,_THEN_REEVALUATE_INTERVAL_355_BEFORE_ANY_CAUSAL_PRECONDITIONED_OR_TWO_RADIUS_PROMOTION"
+        ),
         "claim_boundary": {
             "CURRENT_CENTER_ALL_POST_RESET_ENDPOINT_GREEN_DIRECTIONAL_CURVATURE_DERIVED": True,
             "CURRENT_CENTER_CORRELATED_GREEN_MIDPOINT_DIRECTION_DERIVED": True,
@@ -351,6 +434,8 @@ def build_payload() -> dict[str, object]:
             "CURRENT_CENTER_GREEN_MIDPOINT_INTRINSIC_CURVATURE_GLOBAL_FINITE_ENCLOSURE_DERIVED": False,
             "CURRENT_CENTER_COMPONENTWISE_GREEN_DIRECTION_BALL_MIDPOINT_ROUTE_OBSTRUCTED": True,
             "CURRENT_CENTER_LOCAL_HS_GREEN_SECOND_VARIATION_DERIVED": False,
+            "CURRENT_GREEN_EXACT_AXIS_NEIGHBORHOOD_LOCAL_HS_CURVATURE_DERIVED": False,
+            "CURRENT_GREEN_AXIS_NEIGHBORHOOD_MIXED_TRANSVERSE_BOUND_DERIVED": False,
             "CURRENT_CENTER_GREEN_CAUSAL_PRECONDITIONED_CURVATURE_DERIVED": False,
             "CURRENT_CENTER_GREEN_MIXED_CURVATURE_DERIVED": False,
             "CURRENT_CENTER_GREEN_CAUSAL_TWO_RADIUS_CERTIFICATE_DERIVED": False,

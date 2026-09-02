@@ -88,7 +88,10 @@ scalar operand.  Its same-action frozen causal composition is now certified at
 512-bit Arb precision with terminal norm upper `8.405509181456809`; the
 384-bit terminal radius growth was precision amplification, not physical
 divergence.  Action-derived mixed Green/transverse and transverse-transverse
-neighborhood remainders and the two-radius inequalities remain open.  No new center is
+neighborhood remainders and the two-radius inequalities remain open.  A
+separate 512-bit replay of the componentwise exact-axis balls still loses the
+midpoint enclosure first at interval 355, proving that more scalar precision
+does not restore the discarded normalization/transport dependency.  No new center is
 authorized, and no root-nonexistence claim is made.
 `FULL_BHSM_COMPLETE = FALSE`.  The universal action-to-observable
 infrastructure is now machine-classified separately from scientific outputs:

@@ -452,6 +452,9 @@ def build_payload() -> dict[str, Any]:
             and nonlinear_gate["claim_boundary"][
                 "G7_CURRENT_GREEN_CORRELATED_CENTRAL_SCALAR_CAUSAL_COMPOSITION_DERIVED"
             ]
+            and nonlinear_gate["claim_boundary"][
+                "G7_CURRENT_CENTER_COMPONENTWISE_GREEN_MIDPOINT_ROUTE_OBSTRUCTED_AT_512_BIT"
+            ]
             and nonlinear_gate[
                 "recovered_green_correlated_central_scalar_causal_composition"
             ]["maximum_causal_curvature_norm_upper"] < 8.406

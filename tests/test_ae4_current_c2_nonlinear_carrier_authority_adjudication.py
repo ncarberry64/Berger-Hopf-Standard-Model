@@ -89,6 +89,9 @@ def test_materialized_adjudication_is_valid_and_deterministic():
     assert payload["validation"][
         "componentwise_green_midpoint_obstruction_is_reused"
     ]
+    assert payload["validation"][
+        "componentwise_green_midpoint_obstruction_persists_at_512_bit"
+    ]
     assert payload["recovered_green_midpoint_obstruction"][
         "first_nonfinite_intrinsic_interval"
     ] == 355

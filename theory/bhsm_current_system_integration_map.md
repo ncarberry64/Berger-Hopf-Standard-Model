@@ -152,7 +152,10 @@ intrinsic midpoint norm upper is `0.34991350135064914`, and the maximum local
 HS second-residual norm upper is `0.08778063910324282`.  Its frozen causal
 central-scalar composition is now certified at 512-bit Arb precision with
 terminal norm upper `8.405509181456809`; the apparent 384-bit terminal growth
-was numerical precision amplification, not physical divergence.  Gate 7 remains
+was numerical precision amplification, not physical divergence.  By contrast,
+a fresh 512-bit component-box replay preserves the same first midpoint loss at
+interval 355, so additional scalar precision cannot restore the discarded
+normalization/transport dependency.  Gate 7 remains
 `ACTIVE_NOT_CLOSED` on one reduced owner: bound the certified Green-axis
 neighborhood with mixed Green/transverse and transverse-transverse remainders,
 then combine that remainder with the derived causal central scalar and complete
