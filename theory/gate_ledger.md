@@ -4191,3 +4191,30 @@ Exact next object:
 - Scientific milestones:
   `AE4_STRATIFIED_DIRAC_ZETA_MICROSCOPIC_OWNER_SELECTED` and
   `AE4_POSITIVE_ORDER_M8_M5_M4_MOMENT_RATIOS_DERIVED`.
+
+## AE4 existing-asset systems integration
+
+- Frozen particle/family/representation/projector/current data, the
+  charged-lepton noncentral M4 operator, color-singlet response selection,
+  `r2` capture channel, capture `nu_e` source, and neutral noncentral
+  semigroup/wake shapes are integrated as upstream assets without rebuilding
+  the spectrum.
+- The v17.84 event-child boundary canonical relation, v17.86 evaluated
+  finite-chart metric/lapse child DtN slice, and v17.87 persistent
+  nonequilibrium child/first-exit decay ontology are also recovered as live
+  components. The complete child problem is not being restarted.
+- Hindsight retires several duplicated broad gates. Family-noncentral operator
+  shapes already exist; independent cross-stratum Wilson coefficients are
+  retired by AE4; the free cutoff route is retired by the native collapse
+  surface; and separate gauge/fermion/scalar outer oracles reduce to one
+  direct-sum BRST stratified operator.
+- The remaining root is
+  `D_strat_ret[Phi_star,Sigma_star]` on one future-directed parent-to-child
+  relative-boundary domain. Its single AE4 evaluation must return the gauge,
+  pole, wake, capture, neutrino, hadron, vertex, collision and metric blocks.
+- This is integration, not promotion: the global operator, stationary
+  background, physical `ell_star`, dressed poles and amplitudes remain open.
+- Museum exports must distinguish derived, conditional, simulated and
+  external experimental data directly from machine claim boundaries.
+- Scientific milestone:
+  `AE4_EXISTING_PARTICLE_AND_ENCLOSURE_ASSETS_SYSTEM_INTEGRATED`.
