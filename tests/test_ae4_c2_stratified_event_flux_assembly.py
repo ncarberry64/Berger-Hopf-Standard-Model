@@ -81,12 +81,20 @@ def test_claim_boundary_advances_assembly_not_physical_evaluation():
     assert boundary["AE4_STRATIFIED_FULL_FIELD_DIRECT_SUM_ASSEMBLY_DERIVED"]
     assert boundary["AE4_EVENT_CANONICAL_FLUX_BALANCE_IDENTITY_DERIVED"]
     assert boundary["AE4_EVENT_NOETHER_FLUX_CONTRACTION_IDENTITY_DERIVED"]
+    assert boundary[
+        "AE4_CURRENT_C2_CANONICAL_STOP_GAUGE_BRST_CENTER_BLOCK_EVALUATED"
+    ]
     assert not boundary["AE4_CURRENT_C2_NONZERO_SECTOR_CALDERON_BLOCKS_EVALUATED"]
     assert not boundary["PHYSICAL_ENCAPSULATION_IDENTIFIED"]
 
 
 def test_materialized_event_flux_assembly_is_valid_and_deterministic():
-    assert build_payload()["validation_passed"]
+    payload = build_payload()
+    assert payload["validation_passed"]
+    assert payload["validation"][
+        "canonical_stop_gauge_BRST_center_block_attached"
+    ]
+    assert payload["evaluated_sector_attachment"]["BRST_cancellation_residual"] == 0.0
     main()
     first = hashlib.sha256(TARGET.read_bytes()).hexdigest()
     main()
