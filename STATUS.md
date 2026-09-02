@@ -93,6 +93,10 @@ separate 512-bit replay of the componentwise exact-axis balls still loses the
 midpoint enclosure first at interval 355, proving that more scalar precision
 does not restore the discarded normalization/transport dependency.  No new center is
 authorized, and no root-nonexistence claim is made.
+The action-derived mixed Green/transverse polarization map is now rebuilt on
+the current center at decisive nodes 1, 355, 356, and 370; global endpoint,
+midpoint, transverse--transverse, and causal two-radius promotion remains open.
+Its maximum four-node outward Frobenius upper is `30.44882953782609` at node 1.
 `FULL_BHSM_COMPLETE = FALSE`.  The universal action-to-observable
 infrastructure is now machine-classified separately from scientific outputs:
 action expansion, quadratic spectrum, bare vertices/tree exchange, LSZ,

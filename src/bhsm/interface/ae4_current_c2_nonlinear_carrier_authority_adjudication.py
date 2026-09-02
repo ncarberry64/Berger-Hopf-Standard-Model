@@ -76,6 +76,7 @@ def nonlinear_carrier_authority_contract(
         "current_green_correlated_scalar_interval355_finite": True,
         "current_green_correlated_scalar_all_intervals_derived": True,
         "current_green_correlated_scalar_causal_composition_derived": True,
+        "current_green_mixed_transverse_decisive_node_seed_derived": True,
         "current_affine_operator_jets_have_nonlinear_authority": promoted,
         "accepted_replay_center_or_trajectory_may_be_reselected": False,
         "physical_spacetime_instability_inferred": False,
@@ -124,6 +125,8 @@ def claim_boundary() -> dict[str, Any]:
         "G7_CURRENT_GREEN_CORRELATED_SCALAR_INTERVAL355_FINITE": True,
         "G7_CURRENT_GREEN_CORRELATED_SCALAR_ALL_INTERVALS_DERIVED": True,
         "G7_CURRENT_GREEN_CORRELATED_CENTRAL_SCALAR_CAUSAL_COMPOSITION_DERIVED": True,
+        "G7_CURRENT_GREEN_MIXED_TRANSVERSE_DECISIVE_NODE_SEED_DERIVED": True,
+        "G7_CURRENT_GREEN_MIXED_TRANSVERSE_ALL_NODES_DERIVED": False,
         "FULL_BHSM_COMPLETE": False,
     }
 

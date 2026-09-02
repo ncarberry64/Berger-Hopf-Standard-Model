@@ -113,6 +113,12 @@ def test_materialized_adjudication_is_valid_and_deterministic():
     assert payload["recovered_green_correlated_central_scalar_causal_composition"][
         "maximum_causal_curvature_norm_upper"
     ] < 8.406
+    assert payload["validation"][
+        "current_green_mixed_transverse_decisive_seed_is_integrated"
+    ]
+    assert payload["recovered_green_mixed_transverse_seed"]["nodes"] == [
+        1, 355, 356, 370,
+    ]
     main()
     first = hashlib.sha256(TARGET.read_bytes()).hexdigest()
     main()
