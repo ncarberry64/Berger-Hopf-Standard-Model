@@ -7,6 +7,7 @@ from bhsm.interface.ae4_current_c2_factorized_hs_calderon import (
     claim_boundary,
     direct_composition_hs_weyl_value,
     factorized_product_dirac_hs_weyl_jet,
+    terminal_hs_jet_transport_coefficients,
 )
 from scripts.materialize_ae4_current_c2_factorized_hs_calderon import (
     TARGET,
@@ -56,6 +57,57 @@ def test_factorized_jet_rejects_nonnegative_spectral_parameter():
             chirality=1,
             source_profile=profile,
             spectral_parameter=0.0,
+        )
+
+
+def test_terminal_hs_jet_transport_law_reconstructs_arbitrary_tail_jets():
+    x, h, profile = _small_data()
+    arguments = {
+        "log_radii": x,
+        "proper_durations": h,
+        "dirac_eigenvalue_at_unit_radius": 1.5,
+        "chirality": 1,
+        "source_profile": profile,
+        "spectral_parameter": -2.3,
+        "terminal_load": 1.7,
+        "decimal_precision": 70,
+    }
+    coefficients = terminal_hs_jet_transport_coefficients(**arguments)
+    u = 0.37
+    v = -0.21
+    propagated = factorized_product_dirac_hs_weyl_jet(
+        **arguments,
+        terminal_load_first=u,
+        terminal_load_second=v,
+    )
+    expected_first = (
+        coefficients["first_local_coefficient_a"]
+        + coefficients["terminal_first_jet_sensitivity_s"] * u
+    )
+    expected_second = (
+        coefficients["second_local_coefficient_b"]
+        + 2.0 * coefficients["mixed_terminal_first_coefficient_c"] * u
+        + coefficients["terminal_first_jet_quadratic_coefficient_q"] * u * u
+        + coefficients["terminal_second_jet_sensitivity"] * v
+    )
+    assert abs(propagated["D_H_Weyl_birth"] - expected_first) < 2e-14
+    assert abs(propagated["D2_H_Weyl_birth"] - expected_second) < 2e-14
+    assert abs(coefficients["terminal_second_jet_identity_residual"]) < 1e-60
+    assert not coefficients["physical_terminal_HS_jets_selected"]
+
+
+def test_dirichlet_form_core_rejects_nonzero_terminal_jets():
+    x, h, profile = _small_data()
+    with pytest.raises(ValueError):
+        factorized_product_dirac_hs_weyl_jet(
+            log_radii=x,
+            proper_durations=h,
+            dirac_eigenvalue_at_unit_radius=1.5,
+            chirality=1,
+            source_profile=profile,
+            spectral_parameter=-2.3,
+            terminal_load=None,
+            terminal_load_first=1.0,
         )
 
 
