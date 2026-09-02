@@ -28,11 +28,17 @@ def test_matrix_tracks_all_required_physical_sectors_without_promotion() -> None
     assert payload["Gate7_authority"][
         "coarse_field_descriptor_block_route"
     ] == "OBSTRUCTED"
+    assert payload["Gate7_authority"][
+        "BHSM_native_green_image_partition"
+    ] == "RECOVERED_CURRENT_CENTER"
     assert payload["validation"][
         "same_center_scalar_route_is_now_evaluated_and_obstructed"
     ]
     assert payload["validation"][
         "same_center_coarse_field_descriptor_route_is_now_evaluated_and_obstructed"
+    ]
+    assert payload["validation"][
+        "BHSM_native_green_image_partition_is_current_next_object"
     ]
     assert tuple(record["id"] for record in payload["records"]) == module.REQUIRED_RECORD_IDS
     assert all(record["prediction_classification"] == "OPEN_INTERNAL_BLOCKER" for record in payload["records"])

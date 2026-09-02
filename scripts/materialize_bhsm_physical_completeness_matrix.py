@@ -138,7 +138,7 @@ ACTION_OWNED_BY_ID = {
 }
 
 PROMOTION_GATE_BY_ID = {
-    "GATE7_PHYSICAL_BACKGROUND": "SAME_CENTER_COMPONENTWISE_OR_FINER_ACTION_BLOCK_RADII_SCREEN",
+    "GATE7_PHYSICAL_BACKGROUND": "SAME_CENTER_GREEN_IMAGE_LONGITUDINAL_TRANSVERSE_RADII_SCREEN",
     "UNIVERSAL_ACTION_EXPANSION": "GATE7_CLOSED_PLUS_HISTORY_SEAM_ACTION_ASSEMBLY",
     "RETAINED_SM_COMPONENT_ATTACHMENT": "CURRENT_AE2_BACKGROUND_FULL_FIELD_ACTION_QUANTUM_SADDLE_AND_SCALE",
     "UNIVERSAL_QUADRATIC_SPECTRUM_AND_PROPAGATORS": "PHYSICAL_S2_PENCIL_BRST_SCALE_AND_GATE7",
@@ -253,8 +253,8 @@ def build_payload() -> dict[str, Any]:
     records = [
         _record(
             "GATE7_PHYSICAL_BACKGROUND",
-            "ONE_FROZEN_ACTION_SELECTED_PHYSICAL_BACKGROUND_WITH_A_COMPONENTWISE_OR_FINER_ACTION_BLOCK_RADII_CERTIFICATE",
-            "SCALAR_AND_COARSE_FIELD_DESCRIPTOR_ROUTES_OBSTRUCTED__FINER_BLOCK_SCREEN_OPEN",
+            "ONE_FROZEN_ACTION_SELECTED_PHYSICAL_BACKGROUND_WITH_A_GREEN_IMAGE_LONGITUDINAL_TRANSVERSE_RADII_CERTIFICATE",
+            "SCALAR_AND_COARSE_FIELD_DESCRIPTOR_ROUTES_OBSTRUCTED__BHSM_NATIVE_GREEN_IMAGE_TWO_RADIUS_SCREEN_OPEN",
             (),
             (
                 "one retained-exact-field 74D replay center",
@@ -262,6 +262,7 @@ def build_payload() -> dict[str, Any]:
                 "same-center outward Y Z1 Z2 operands",
                 "single-radius proof-coordinate obstruction adjudication",
                 "coarse 73+1 field-descriptor block obstruction adjudication",
+                "current-center signed Green-image partition recovery",
             ),
             (gate_blocker,),
         ),
@@ -434,6 +435,16 @@ def build_payload() -> dict[str, Any]:
             ]
             < 0.0
         ),
+        "BHSM_native_green_image_partition_is_current_next_object": (
+            nonlinear_gate["claim_boundary"][
+                "G7_BHSM_NATIVE_GREEN_IMAGE_PARTITION_RECOVERED"
+            ]
+            and nonlinear_gate["recovered_green_image_partition"][
+                "obstruction_transverse_projection_lower"
+            ]
+            > 0.99
+            and "GREEN_IMAGE_LONGITUDINAL_TRANSVERSE" in gate_blocker
+        ),
         "all_required_rows_are_present_once": (
             identifiers == REQUIRED_RECORD_IDS and len(set(identifiers)) == len(identifiers)
         ),
@@ -481,6 +492,7 @@ def build_payload() -> dict[str, Any]:
             "exact_blocker": gate_blocker,
             "single_radius_route": "OBSTRUCTED",
             "coarse_field_descriptor_block_route": "OBSTRUCTED",
+            "BHSM_native_green_image_partition": "RECOVERED_CURRENT_CENTER",
             "root_nonexistence_or_physical_instability": "NOT_DERIVED",
             "background_freeze_for_universal_physics_engine": gate["adjudication"][
                 "background_freeze_for_universal_physics_engine"
