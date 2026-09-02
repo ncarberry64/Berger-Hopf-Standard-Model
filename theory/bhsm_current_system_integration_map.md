@@ -171,6 +171,13 @@ remaining all-endpoint/all-midpoint campaign; it is not yet the global mixed
 remainder or the two-radius certificate.  Its maximum outward Frobenius upper
 is `30.44882953782609` at node 1.
 
+A direct two-leg implementation now reproduces the independent polarization
+centers on three coordinate columns at all four seed nodes, with maximum
+absolute difference `6.258105145207082e-12`.  Because the separately rounded
+Arb graphs do not overlap in every component, this validates the numerical
+identity and the proposed all-endpoint reconnaissance implementation without
+promoting outward equivalence or a global mixed remainder.
+
 The matching transverse-quadratic seed is also finite on eight selected
 directions, with maximum upper `283135.9524836309` at node 1.  The remaining
 step is an action-derived majorant over the whole transverse unit sphere, not

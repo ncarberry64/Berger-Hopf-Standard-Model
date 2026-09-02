@@ -120,6 +120,15 @@ def test_materialized_adjudication_is_valid_and_deterministic():
         1, 355, 356, 370,
     ]
     assert payload["validation"][
+        "current_green_mixed_direct_bilinear_identity_is_integrated_fail_closed"
+    ]
+    assert payload["recovered_green_mixed_direct_bilinear_identity"][
+        "maximum_center_absolute_difference"
+    ] < 1.0e-8
+    assert not payload["claim_boundary"][
+        "G7_CURRENT_GREEN_MIXED_DIRECT_BILINEAR_OUTWARD_EQUIVALENCE_DERIVED"
+    ]
+    assert payload["validation"][
         "current_green_transverse_quadratic_decisive_seed_is_integrated"
     ]
     assert payload["recovered_green_transverse_quadratic_seed"][
