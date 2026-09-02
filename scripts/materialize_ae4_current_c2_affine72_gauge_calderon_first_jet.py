@@ -88,20 +88,20 @@ def _truncate(values: np.ndarray, left: int, fraction: float) -> np.ndarray:
 
 
 @lru_cache(maxsize=1)
-def build_payload() -> dict[str, Any]:
-    missing = [str(path) for path in INPUTS if not path.is_file()]
-    if missing:
-        raise FileNotFoundError(", ".join(missing))
-    affine, transfer, moving, center, first_hit, stop_gauge = (
-        _load(path)
-        for path in (AFFINE, TRANSFER, MOVING, CENTER, FIRST_HIT, STOP_GAUGE)
+def build_affine72_proper_time_carrier() -> dict[str, Any]:
+    """Return the shared stopped proper-time path and its affine 72D jet."""
+
+    for path in (AFFINE, AFFINE_DATA, CENTER, CENTER_DATA, FIRST_HIT):
+        if not path.is_file():
+            raise FileNotFoundError(str(path))
+    affine, center, first_hit = (
+        _load(path) for path in (AFFINE, CENTER, FIRST_HIT)
     )
     if not all(
         row.get("validation_passed") is True
-        for row in (affine, transfer, moving, center, first_hit, stop_gauge)
+        for row in (affine, center, first_hit)
     ):
-        raise RuntimeError("validated affine, stop, moving-endpoint, and gauge inputs required")
-
+        raise RuntimeError("validated affine and canonical-stop center inputs required")
     with np.load(AFFINE_DATA) as source:
         affine_arc = np.asarray(source["action_lengths"], dtype=float)
         affine_jacobi = np.asarray(
@@ -144,17 +144,19 @@ def build_payload() -> dict[str, Any]:
     stopped_norm_descriptor = _truncate(norm_descriptor, left, fraction)
     stopped_descriptor_gradient = _truncate(descriptor_gradient, left, fraction)
 
-    jacobi_interpolator = CubicSpline(affine_arc, affine_jacobi, axis=0)
-    radius_interpolator = PchipInterpolator(affine_arc, affine_radius, axis=0)
-    state_first = np.asarray(jacobi_interpolator(stopped_arc), dtype=float)
-    state_first_radius = np.asarray(radius_interpolator(stopped_arc), dtype=float)
+    state_first = np.asarray(
+        CubicSpline(affine_arc, affine_jacobi, axis=0)(stopped_arc), dtype=float
+    )
+    state_first_radius = np.asarray(
+        PchipInterpolator(affine_arc, affine_radius, axis=0)(stopped_arc),
+        dtype=float,
+    )
     descriptor_first = np.einsum(
         "ni,nij->nj", stopped_descriptor_gradient, state_first, optimize=True
     )
     descriptor_first[-1] = 0.0
     terminal_geometry = boundary_geometry_action_covectors(
-        state=stopped_states[-1],
-        weights=weights,
+        state=stopped_states[-1], weights=weights
     )
     terminal_log_radius_first = (
         np.asarray(terminal_geometry["D_log_R4_action_dual"], dtype=float)
@@ -172,6 +174,34 @@ def build_payload() -> dict[str, Any]:
         cancelled_norm_descriptor_derivative=stopped_norm_descriptor,
         terminal_log_radius_first_jet=terminal_log_radius_first,
     )
+    return {
+        "pulled": pulled,
+        "stop": stop,
+        "terminal_descriptor": float(stopped_descriptor[-1]),
+        "terminal_descriptor_first_jet": descriptor_first[-1],
+        "maximum_interpolated_affine_component_radius": float(
+            np.max(state_first_radius)
+        ),
+    }
+
+
+@lru_cache(maxsize=1)
+def build_payload() -> dict[str, Any]:
+    missing = [str(path) for path in INPUTS if not path.is_file()]
+    if missing:
+        raise FileNotFoundError(", ".join(missing))
+    affine, transfer, moving, center, first_hit, stop_gauge = (
+        _load(path)
+        for path in (AFFINE, TRANSFER, MOVING, CENTER, FIRST_HIT, STOP_GAUGE)
+    )
+    if not all(
+        row.get("validation_passed") is True
+        for row in (affine, transfer, moving, center, first_hit, stop_gauge)
+    ):
+        raise RuntimeError("validated affine, stop, moving-endpoint, and gauge inputs required")
+
+    carrier = build_affine72_proper_time_carrier()
+    pulled = carrier["pulled"]
     result = affine72_gauge_brst_first_jet(
         log_radii=np.asarray(pulled["log_radius"], dtype=float),
         normalized_proper_times=np.asarray(
@@ -211,7 +241,7 @@ def build_payload() -> dict[str, Any]:
         == "DERIVED",
         "all_72_affine_directions_consumed": coexact_jet.shape == (72,),
         "affine_component_radii_retained_as_nonpromotion_warning": bool(
-            np.max(state_first_radius) > 0.0
+            carrier["maximum_interpolated_affine_component_radius"] > 0.0
         ),
         "proper_time_pullback_not_action_arc": pulled[
             "arc_parameter_not_identified_with_proper_time"
@@ -220,8 +250,8 @@ def build_payload() -> dict[str, Any]:
         < pulled["proper_duration"]
         < 1.6e-4,
         "moving_stop_descriptor_and_jet_zero": (
-            stopped_descriptor[-1] == 0.0
-            and np.all(descriptor_first[-1] == 0.0)
+            carrier["terminal_descriptor"] == 0.0
+            and np.all(carrier["terminal_descriptor_first_jet"] == 0.0)
         ),
         "base_coexact_value_matches_stop_center": abs(
             result["coexact"]["Weyl_birth_value"] - midpoint_stop_value
@@ -260,13 +290,13 @@ def build_payload() -> dict[str, Any]:
                 "reason": "THE_REPOSITORY_TRANSFER_AUDIT_REJECTS_THE_CURRENT_AFFINE_TO_NONLINEAR_BOUND",
             },
             "proper_time_pullback": {
-                "node_count": int(len(stopped_arc)),
+                "node_count": int(len(pulled["log_radius"])),
                 "proper_duration": pulled["proper_duration"],
                 "parameter_count": pulled["parameter_count"],
-                "terminal_descriptor": float(stopped_descriptor[-1]),
-                "maximum_interpolated_affine_component_radius": float(
-                    np.max(state_first_radius)
-                ),
+                "terminal_descriptor": carrier["terminal_descriptor"],
+                "maximum_interpolated_affine_component_radius": carrier[
+                    "maximum_interpolated_affine_component_radius"
+                ],
             },
             "gauge_BRST_first_jet": result,
             "scientific_result": {

@@ -87,6 +87,10 @@ def test_claim_boundary_advances_assembly_not_physical_evaluation():
     assert boundary[
         "AE4_CURRENT_C2_AFFINE72_GAUGE_BRST_FIRST_JET_CANDIDATE_EVALUATED"
     ]
+    assert boundary[
+        "AE4_CURRENT_C2_AFFINE72_PARTICLE_FIBER_CALDERON_CANDIDATE_EVALUATED"
+    ]
+    assert boundary["AE4_ALL_NINE_EXISTING_CHARGED_PARTICLE_FIBERS_ATTACHED"]
     assert not boundary["AE4_CURRENT_C2_NONZERO_SECTOR_CALDERON_BLOCKS_EVALUATED"]
     assert not boundary["PHYSICAL_ENCAPSULATION_IDENTIFIED"]
 
@@ -100,6 +104,13 @@ def test_materialized_event_flux_assembly_is_valid_and_deterministic():
     assert payload["evaluated_sector_attachment"]["BRST_cancellation_residual"] == 0.0
     assert payload["validation"][
         "affine72_gauge_BRST_first_jet_candidate_attached_fail_closed"
+    ]
+    assert payload["validation"][
+        "affine72_particle_fiber_Calderon_candidate_attached_fail_closed"
+    ]
+    assert payload["evaluated_particle_fiber_attachment"]["existing_fiber_count"] == 9
+    assert not payload["evaluated_particle_fiber_attachment"][
+        "physical_mass_or_pole_extracted"
     ]
     assert not payload["evaluated_sector_attachment"][
         "affine72_first_jet_nonlinear_authority"
