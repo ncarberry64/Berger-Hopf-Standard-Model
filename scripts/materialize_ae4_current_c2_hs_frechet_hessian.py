@@ -110,7 +110,9 @@ def _full_core_conditioning(
         "equilibrated_diagonal_dynamic_range": largest / smallest,
         "analytic_generalized_gap_lower": gap,
         "analytic_gap_to_largest_diagonal_ratio": resolvable_ratio,
-        "ratio_below_float64_machine_epsilon": resolvable_ratio < np.finfo(float).eps,
+        "ratio_below_float64_machine_epsilon": bool(
+            resolvable_ratio < np.finfo(float).eps
+        ),
         "dense_full_generalized_eigensolve_authorized": False,
         "required_route": (
             "FIRST_ORDER_PRODUCT_DIRAC_FACTORIZATION_OR_INVERSE_FREE_"
