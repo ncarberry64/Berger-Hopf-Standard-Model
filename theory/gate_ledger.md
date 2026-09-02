@@ -4263,3 +4263,23 @@ Exact next object:
 - Scientific milestones:
   `AE4_STRATIFIED_FULL_FIELD_DIRECT_SUM_ASSEMBLY_DERIVED` and
   `AE4_EVENT_CANONICAL_FLUX_BALANCE_IDENTITY_DERIVED`.
+
+## AE4 current-C2 HS Fréchet Hessian
+
+- The exact first and second generalized-form variations of the common AE4
+  `-STr E1(ell_star^2 P)/2` owner are derived, including contact and
+  two-vertex divided-difference terms.
+- The formula is evaluated for birth-local 128-segment Galerkin prefixes of
+  both lowest product-Dirac chiral form pencils using the existing current-C2
+  LR/HS vertex and contact forms. No historical periodic-cycle HS kernel is
+  transplanted.
+- At the conditioned witness scale the two chiral source/curvature jets agree
+  and the resulting HS curvature is positive; this is not promoted as a
+  physical Higgs mass or residue.
+- `ell_witness=lambda_min(prefix)^(-1/2)` is a conditioning witness rather
+  than physical `ell_star`; the descriptor values are proof centers and the
+  prefix edge is a Galerkin truncation. Full-core convergence, the
+  maximal-history retarded HS block, physical four-channel direction and
+  broken LR saddle remain open.
+- Scientific milestone:
+  `AE4_CURRENT_C2_BIRTH_LOCAL_GALERKIN_HS_FRECHET_HESSIAN_EVALUATED`.
