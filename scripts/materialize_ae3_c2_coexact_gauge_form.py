@@ -79,6 +79,7 @@ def build_payload() -> dict[str, Any]:
         h = np.asarray(data["segment_proper_duration_proof_center"], dtype=float)
     shape = lowest_coexact_gauge_form_shape(log_radii=x, proper_durations=h)
     pencil = shape["component_pencil"]
+    expected_coexact_potential = 4.0 * np.exp(-(x[:-1] + x[1:]))
     normalization = gauge_normalization_interface()
     puzzle = coexact_gauge_puzzle_ledger()
     claims90 = local_limit["claim_boundary"]
@@ -99,6 +100,12 @@ def build_payload() -> dict[str, Any]:
             shape["coexact_dimension"] == 3
             and shape["longitudinal_dimension"] == 0
             and np.array_equal(shape["curl_eigenvalues"], np.full(3, 2.0))
+        ),
+        "coexact_potential_is_curl_squared_over_R4_squared": np.allclose(
+            pencil["element_coefficient"],
+            expected_coexact_potential,
+            rtol=2.0e-15,
+            atol=0.0,
         ),
         "finite_core_gauge_shape_gap_positive": pencil["generalized_gap_lower"] > 0.0,
         "finite_core_birth_retained_and_far_node_eliminated": (
@@ -147,6 +154,10 @@ def build_payload() -> dict[str, Any]:
             "coexact_dimension": shape["coexact_dimension"],
             "longitudinal_dimension": shape["longitudinal_dimension"],
             "curl_eigenvalues": shape["curl_eigenvalues"].tolist(),
+            "curl_squared_eigenvalues": shape[
+                "curl_squared_eigenvalues"
+            ].tolist(),
+            "unit_radius_potential_coefficient": 4.0,
             "local_form": shape["form"],
             "descriptor_dimension_per_component": pencil["dimension"],
             "segment_count": pencil["segment_count"],
@@ -158,6 +169,18 @@ def build_payload() -> dict[str, Any]:
             "three_identical_component_blocks": True,
             "BRST_longitudinal_sector_removed": True,
             "explicit_inverse_formed": False,
+        },
+        "historical_correction": {
+            "affected_operand": "FINITE_CORE_SCALAR_POTENTIAL_COEFFICIENT",
+            "previous_argument": 2.0,
+            "previous_argument_role": "UNSQUARED_CURL_EIGENVALUE",
+            "corrected_argument": 4.0,
+            "corrected_argument_role": "CURL_SQUARED_POTENTIAL_COEFFICIENT",
+            "spatial_gauge_stiffness_previous_factor": 0.5,
+            "lorentzian_residue_mismatch_theorem_affected": False,
+            "why_lorentzian_theorem_survives": (
+                "THE_CONTINUOUS_FREQUENCY_RADIAL_EQUATION_ALREADY_USED_N_SQUARED_EQUALS_4"
+            ),
         },
         "normalization_interface": normalization,
         "puzzle_section_fit": puzzle,
@@ -182,6 +205,7 @@ def build_payload() -> dict[str, Any]:
         "validation": validation,
         "validation_passed": all(validation.values()),
         "CURRENT_C2_COEXACT_GAUGE_FORM_SHAPE_DERIVED": True,
+        "CURRENT_C2_COEXACT_GAUGE_SPATIAL_POTENTIAL_CORRECTED": True,
         "CURRENT_C2_LORENTZIAN_MAXWELL_RESIDUE_DERIVED": False,
         "CURRENT_C2_NORMALIZED_PHOTON_PROPAGATOR_DERIVED": False,
         "MUON_MAGNETIC_MOMENT_DERIVED": False,

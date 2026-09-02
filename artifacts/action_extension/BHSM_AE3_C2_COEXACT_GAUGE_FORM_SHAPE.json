@@ -1,5 +1,6 @@
 {
   "CURRENT_C2_COEXACT_GAUGE_FORM_SHAPE_DERIVED": true,
+  "CURRENT_C2_COEXACT_GAUGE_SPATIAL_POTENTIAL_CORRECTED": true,
   "CURRENT_C2_LORENTZIAN_MAXWELL_RESIDUE_DERIVED": false,
   "CURRENT_C2_NORMALIZED_PHOTON_PROPAGATOR_DERIVED": false,
   "FULL_BHSM_COMPLETE": false,
@@ -53,19 +54,35 @@
       2.0,
       2.0
     ],
+    "curl_squared_eigenvalues": [
+      4.0,
+      4.0,
+      4.0
+    ],
     "descriptor_dimension_per_component": 1222,
     "explicit_inverse_formed": false,
-    "generalized_gap_lower": 2.0204892302988964,
+    "generalized_gap_lower": 4.040978460597793,
     "local_form": "integral_dt_(|partial_t_a_T|^2+4*R4^-2*|a_T|^2)",
     "longitudinal_dimension": 0,
     "segment_count": 1222,
-    "three_identical_component_blocks": true
+    "three_identical_component_blocks": true,
+    "unit_radius_potential_coefficient": 4.0
   },
   "domain": {
     "background": "ACTUAL_RESET_GENERATED_C2_FINITE_CORE_FAMILY",
     "far_boundary": "FRIEDRICHS_FORM_CORE_TRUNCATION_ONLY",
     "proof_center_selected_as_physical_history": false,
     "retained_boundary": "C2_BIRTH_TRACE_NODE_0"
+  },
+  "historical_correction": {
+    "affected_operand": "FINITE_CORE_SCALAR_POTENTIAL_COEFFICIENT",
+    "corrected_argument": 4.0,
+    "corrected_argument_role": "CURL_SQUARED_POTENTIAL_COEFFICIENT",
+    "lorentzian_residue_mismatch_theorem_affected": false,
+    "previous_argument": 2.0,
+    "previous_argument_role": "UNSQUARED_CURL_EIGENVALUE",
+    "spatial_gauge_stiffness_previous_factor": 0.5,
+    "why_lorentzian_theorem_survives": "THE_CONTINUOUS_FREQUENCY_RADIAL_EQUATION_ALREADY_USED_N_SQUARED_EQUALS_4"
   },
   "inputs": {
     "artifacts/BHSM_aether_cycle_dtn_local_limit_v15_90.json": "F1A0CA65BAE9F554D1D81E39D8BDC2446C5D39C79586EFBA859CFF192B46F345",
@@ -76,7 +93,7 @@
     "artifacts/action_extension/BHSM_AE3_C2_COEXACT_HYPERCHARGE_SOURCE_JET.json": "1237B1DEBE468B0326D38D94D8D3AF7C3B73335B9DB0FBEB6545907AA49F0C36",
     "artifacts/flagship_integration/BHSM_N12_C2_1222_SEGMENT_FINITE_CORE_DESCRIPTOR.json": "C7B6DB4C09D9D826A5BC9050EA558044354C177D7D4B05D5E422AC1D73B3ACC8",
     "artifacts/flagship_integration/BHSM_N12_C2_1222_SEGMENT_FINITE_CORE_DESCRIPTOR.npz": "5E8C1E98B4B0E77B628C0B11D29A3F2110DAE665A666B4A2C3DBEB735E6F6E25",
-    "src/bhsm/interface/ae3_c2_coexact_gauge_form.py": "B2DB271974BE154064192814AE13A16E2C1806C728FE7C98162609E8E6CDA4F2"
+    "src/bhsm/interface/ae3_c2_coexact_gauge_form.py": "88AD328C3FF769E697B89BC04499119A97E70C9777F067DD015BA7B9D2258F80"
   },
   "normalization_interface": {
     "current_C2_broken_electroweak_saddle_available": false,
@@ -84,6 +101,7 @@
     "current_C2_dynamic_frequency_response_outcome": "GAUGE_GHOST_HESSIAN_DERIVED__TEMPORAL_SPATIAL_RESIDUE_MISMATCH",
     "current_C2_physical_photon_residue_available": false,
     "exact_missing_object": "ONE_ACTION_DERIVED_NONSINGULAR_BOUNDARY_OR_WENTZELL_TERM_OR_OTHER_EXISTING_PARENT_DOMAIN_MECHANISM_THAT_REMOVES_THE_CURRENT_TRANSVERSE_LORENTZ_RESIDUE_MISMATCH_WITHOUT_A_FREE_COEFFICIENT",
+    "finite_core_descriptor_receives_squared_curl_coefficient": true,
     "form_shape_may_be_used_as_normalized_photon_propagator": false,
     "form_shape_may_be_used_for_finite_core_domain_and_gap_analysis": true,
     "historical_Gauss_response_available": true,
@@ -91,6 +109,7 @@
     "historical_responses_define_one_Lorentzian_coefficient": false,
     "historical_spatial_coexact_response_available": true,
     "independent_gauge_normalization_allowed": false,
+    "lowest_coexact_spatial_potential": "curl_0^2/R4^2=4/R4^2",
     "parent_Maxwell_action_owned": true,
     "parent_coefficient_relation": "K_F5/K_G5=R_F^2/2"
   },
@@ -112,6 +131,7 @@
       ]
     },
     "coexact_gauge_form_shape_derived": true,
+    "coexact_spatial_potential_factor_two_correction_applied": true,
     "muon_magnetic_moment_derived": false,
     "normalized_photon_propagator_derived": false,
     "open_join": "action_derived_resolution_of_the_smooth_trace_residue_mismatch_then_broken_electroweak_neutral_mixing_and_maximal_exterior",
@@ -119,6 +139,7 @@
   },
   "validation": {
     "BRST_longitudinal_quotient_explicit": true,
+    "coexact_potential_is_curl_squared_over_R4_squared": true,
     "current_C2_descriptor_valid": true,
     "current_C2_hypercharge_source_valid": true,
     "far_cutoff_not_promoted_to_endpoint": true,

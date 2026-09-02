@@ -23,8 +23,10 @@ def lowest_coexact_gauge_form_shape(
 ) -> dict[str, Any]:
     """Assemble the n=0 coexact one-form pencil on the current C2 geometry.
 
-    The exact S3 curl spectrum at level zero is ``(+2,+2,+2)``.  Each
-    component therefore has form ``|a'|^2+4 R4^-2 |a|^2``.  The returned
+    The exact S3 curl spectrum at level zero is ``(+2,+2,+2)``.  The scalar
+    descriptor consumes the potential coefficient, not the unsquared curl
+    eigenvalue.  Each component therefore has form
+    ``|a'|^2+4 R4^-2 |a|^2``.  The returned
     object fixes this differential form and its BRST/coexact multiplicity but
     deliberately leaves the one Lorentzian Maxwell residue unevaluated.
     """
@@ -39,7 +41,7 @@ def lowest_coexact_gauge_form_shape(
         log_radii=x,
         proper_durations=h,
         channel="scalar",
-        unit_channel_value=2.0,
+        unit_channel_value=4.0,
     )
     return {
         "action_version": ACTION_VERSION,
@@ -48,6 +50,7 @@ def lowest_coexact_gauge_form_shape(
         "coexact_dimension": int(decomposition["coexact_dimension"]),
         "longitudinal_dimension": int(decomposition["longitudinal_dimension"]),
         "curl_eigenvalues": curl_values,
+        "curl_squared_eigenvalues": curl_values * curl_values,
         "form": "integral_dt_(|partial_t_a_T|^2+4*R4^-2*|a_T|^2)",
         "component_pencil": unit,
         "K_diagonal_blocks": unit["K_diagonal"][:, None, None]
@@ -70,6 +73,8 @@ def gauge_normalization_interface() -> dict[str, Any]:
 
     return {
         "parent_Maxwell_action_owned": True,
+        "lowest_coexact_spatial_potential": "curl_0^2/R4^2=4/R4^2",
+        "finite_core_descriptor_receives_squared_curl_coefficient": True,
         "parent_coefficient_relation": "K_F5/K_G5=R_F^2/2",
         "independent_gauge_normalization_allowed": False,
         "historical_spatial_coexact_response_available": True,
@@ -114,6 +119,7 @@ def coexact_gauge_puzzle_ledger() -> dict[str, Any]:
             "then_broken_electroweak_neutral_mixing_and_maximal_exterior"
         ),
         "coexact_gauge_form_shape_derived": True,
+        "coexact_spatial_potential_factor_two_correction_applied": True,
         "normalized_photon_propagator_derived": False,
         "muon_magnetic_moment_derived": False,
         "prediction_emitted": False,
