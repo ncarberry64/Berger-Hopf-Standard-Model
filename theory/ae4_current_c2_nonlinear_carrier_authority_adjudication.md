@@ -33,9 +33,14 @@ block, while `Y_field > 6.157752658017768e-7`.  Its necessary field
 discriminant is `-7.316503560971616`, so the coarse 73+1 split is obstructed
 too.
 
-The localized remaining proof object is a componentwise or finer
-action-owned block test at the same frozen center.  Its partition must come
-from the action and causal norm; it may not be fitted to force contraction.
+Recall supplies the non-arbitrary surviving partition.  BHSM's earlier
+common-frame work defined the signed minus-defect Green image as the
+longitudinal axis and its causal orthogonal complement as the transverse
+sector.  The old 48-seam numerical values are not current-center authority,
+but the current outward `Y` calculation now instantiates that same partition
+at all 370 post-reset nodes.  The localized remaining proof object is the
+same-center longitudinal/transverse two-radius test, not an arbitrary
+componentwise search.
 
 Until that test succeeds, the gauge/BRST and nine-particle-fiber Calderón
 first jets remain evaluated affine candidates, not nonlinear physical
@@ -53,5 +58,7 @@ NEW_CENTER_OR_TRAJECTORY_AUTHORIZED = FALSE
 AE4_AFFINE_GAUGE_AND_PARTICLE_JETS_NONLINEAR_AUTHORITY_DERIVED = FALSE
 G7_SAME_CENTER_ACTION_BLOCK_RADII_POLYNOMIAL_DERIVED = FALSE
 G7_SAME_CENTER_COMPONENTWISE_OR_FINER_BLOCK_RADII_DERIVED = FALSE
+G7_BHSM_NATIVE_GREEN_IMAGE_PARTITION_RECOVERED = TRUE
+G7_CURRENT_CENTER_GREEN_IMAGE_ANISOTROPIC_RADII_DERIVED = FALSE
 FULL_BHSM_COMPLETE = FALSE
 ```

@@ -26,6 +26,7 @@ F = ROOT / "artifacts/flagship_integration"
 TRANSFER = F / "BHSM_N12_GATE7_AFFINE_72D_NONLINEAR_TRANSFER_AUDIT.json"
 OUTWARD = F / "BHSM_N12_GATE7_ACCEPTED_REPLAY_CENTER_OUTWARD_74D_CONTRACTION.json"
 BLOCK_SCREEN = F / "BHSM_N12_GATE7_ACCEPTED_REPLAY_ACTION_BLOCK_SCREEN.json"
+GREEN_PARTITION = A / "BHSM_AE4_CURRENT_C2_GREEN_IMAGE_PARTITION_RECONCILIATION.json"
 GAUGE = A / "BHSM_AE4_CURRENT_C2_AFFINE72_GAUGE_CALDERON_FIRST_JET.json"
 PARTICLE = A / "BHSM_AE4_CURRENT_C2_AFFINE72_PARTICLE_FIBER_CALDERON.json"
 TARGET = A / "BHSM_AE4_CURRENT_C2_NONLINEAR_CARRIER_AUTHORITY_ADJUDICATION.json"
@@ -33,6 +34,7 @@ INPUTS = (
     TRANSFER,
     OUTWARD,
     BLOCK_SCREEN,
+    GREEN_PARTITION,
     GAUGE,
     PARTICLE,
     ROOT / "src/bhsm/interface/ae4_current_c2_nonlinear_carrier_authority_adjudication.py",
@@ -57,12 +59,14 @@ def build_payload() -> dict[str, Any]:
     missing = [str(path) for path in INPUTS if not path.is_file()]
     if missing:
         raise FileNotFoundError(", ".join(missing))
-    transfer, outward, block_screen, gauge, particle = (
-        _load(path) for path in INPUTS[:5]
+    transfer, outward, block_screen, green_partition, gauge, particle = (
+        _load(path) for path in INPUTS[:6]
     )
     if not all(
         row.get("validation_passed") is True
-        for row in (transfer, outward, block_screen, gauge, particle)
+        for row in (
+            transfer, outward, block_screen, green_partition, gauge, particle
+        )
     ):
         raise RuntimeError("validated transfer, outward, and AE4 carrier inputs required")
 
@@ -77,6 +81,9 @@ def build_payload() -> dict[str, Any]:
         ],
         field_descriptor_block_obstructed=block_screen["decision"][
             "coarse_73_plus_1_field_descriptor_block_route_obstructed"
+        ],
+        green_image_partition_recovered=green_partition["claim_boundary"][
+            "G7_BHSM_NATIVE_GREEN_IMAGE_PARTITION_RECOVERED"
         ],
         root_nonexistence_claim=decision["root_nonexistence_claim"],
         physical_instability_claim=decision[
@@ -134,6 +141,13 @@ def build_payload() -> dict[str, Any]:
             and block_screen["necessary_field_block_test"]["discriminant_upper"]
             < 0.0
         ),
+        "BHSM_native_green_image_partition_is_current_next_object": (
+            green_partition["validation_passed"]
+            and boundary["G7_BHSM_NATIVE_GREEN_IMAGE_PARTITION_RECOVERED"]
+            and "GREEN_IMAGE_LONGITUDINAL_TRANSVERSE" in result[
+                "next_proof_object"
+            ]
+        ),
     }
     return {
         "artifact": "BHSM_AE4_CURRENT_C2_NONLINEAR_CARRIER_AUTHORITY_ADJUDICATION",
@@ -159,6 +173,17 @@ def build_payload() -> dict[str, Any]:
             "necessary_field_discriminant_upper": block_screen[
                 "necessary_field_block_test"
             ]["discriminant_upper"],
+        },
+        "recovered_green_image_partition": {
+            "absolute_obstruction_longitudinal_projection_upper": (
+                green_partition["coarse_obstruction_localization"][
+                    "absolute_longitudinal_projection_upper"
+                ]
+            ),
+            "obstruction_transverse_projection_lower": green_partition[
+                "coarse_obstruction_localization"
+            ]["transverse_projection_lower"],
+            "historical_numerical_values_reused": False,
         },
         "authority_adjudication": result,
         "claim_boundary": boundary,

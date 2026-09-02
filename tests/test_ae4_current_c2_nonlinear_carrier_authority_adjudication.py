@@ -18,6 +18,7 @@ def test_two_negative_transfer_results_do_not_promote_nonlinear_authority():
         affine_transfer_allowed=False,
         same_center_contraction_obstructed=True,
         field_descriptor_block_obstructed=True,
+        green_image_partition_recovered=True,
         root_nonexistence_claim=False,
         physical_instability_claim=False,
         another_center_or_trajectory_authorized=False,
@@ -26,7 +27,7 @@ def test_two_negative_transfer_results_do_not_promote_nonlinear_authority():
     assert result["same_center_single_radius_contraction_obstructed"]
     assert result["same_center_field_descriptor_block_contraction_obstructed"]
     assert not result["root_nonexistence_inferred"]
-    assert "FINER_ACTION_OWNED_BLOCK" in result["next_proof_object"]
+    assert "GREEN_IMAGE_LONGITUDINAL_TRANSVERSE" in result["next_proof_object"]
 
 
 def test_upstream_physical_overclaims_fail_closed():
@@ -35,6 +36,7 @@ def test_upstream_physical_overclaims_fail_closed():
             affine_transfer_allowed=False,
             same_center_contraction_obstructed=True,
             field_descriptor_block_obstructed=True,
+            green_image_partition_recovered=True,
             root_nonexistence_claim=True,
             physical_instability_claim=False,
             another_center_or_trajectory_authorized=False,
@@ -60,6 +62,9 @@ def test_materialized_adjudication_is_valid_and_deterministic():
     ] < 0.0
     assert payload["validation"]["scalar_route_not_left_as_open_next_calculation"]
     assert payload["validation"]["coarse_field_descriptor_route_not_left_open"]
+    assert payload["validation"][
+        "BHSM_native_green_image_partition_is_current_next_object"
+    ]
     main()
     first = hashlib.sha256(TARGET.read_bytes()).hexdigest()
     main()

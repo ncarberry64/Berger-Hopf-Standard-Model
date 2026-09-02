@@ -130,6 +130,7 @@ PATHS = {
     "augmented_minimum_contraction": "artifacts/flagship_integration/BHSM_N12_GATE7_AUGMENTED_FIXED_DESCRIPTOR_MINIMUM_CONTRACTION_ADJUDICATION.json",
     "outward_same_center_74d": "artifacts/flagship_integration/BHSM_N12_GATE7_ACCEPTED_REPLAY_CENTER_OUTWARD_74D_CONTRACTION.json",
     "action_block_screen": "artifacts/flagship_integration/BHSM_N12_GATE7_ACCEPTED_REPLAY_ACTION_BLOCK_SCREEN.json",
+    "green_image_partition": "artifacts/action_extension/BHSM_AE4_CURRENT_C2_GREEN_IMAGE_PARTITION_RECONCILIATION.json",
     "ae4_nonlinear_carrier_authority": "artifacts/action_extension/BHSM_AE4_CURRENT_C2_NONLINEAR_CARRIER_AUTHORITY_ADJUDICATION.json",
     "final_force_kkt_verdict": "artifacts/flagship_integration/BHSM_N12_GATE7_FINAL_EXACT_CENTER_FORCE_KKT_HESSIAN_VERDICT.json",
     "causal_y_z1_z2_margin_budget": "artifacts/flagship_integration/BHSM_N12_GATE7_CAUSAL_Y_Z1_Z2_MARGIN_BUDGET_AUDIT.json",
@@ -291,6 +292,7 @@ def build_payload() -> dict[str, Any]:
     augmented_minimum_contraction = records["augmented_minimum_contraction"]
     outward_same_center_74d = records["outward_same_center_74d"]
     action_block_screen = records["action_block_screen"]
+    green_image_partition = records["green_image_partition"]
     ae4_nonlinear_carrier_authority = records[
         "ae4_nonlinear_carrier_authority"
     ]
@@ -383,11 +385,11 @@ def build_payload() -> dict[str, Any]:
             "AE2 joint event/child seam with internal Mf, M_C2, U_R, W_phys and contact blocks",
             "AE2 two-sided transmission plus finite endpoint/Friedrichs alternatives; only external birth trace zero",
             ["ae2_domain", "source_ontology", "one_seam", "heat_bound", "force_functional", "dop_response", "nhim_tail", "capture_tube", "compact_reset_domain", "compact_reset_propagation", "compact_reset_open_subball", "open_family_stop_reduction", "global_connection", "augmented_fixed_descriptor_jacobians", "augmented_fixed_descriptor_predictor", "augmented_fixed_descriptor_endpoint", "augmented_fixed_descriptor_replay", "augmented_minimum_contraction", "outward_same_center_74d"],
-            ["completion_dag", "gate_ledger", "outward_same_center_74d", "action_block_screen", "ae4_nonlinear_carrier_authority"],
-            "ACTIVE_NOT_CLOSED_SAME_CENTER_COMPONENTWISE_OR_FINER_ACTION_BLOCK_SCREEN", "current AE2 Gate-7 DAG plus AE4 hindsight adjudication",
+            ["completion_dag", "gate_ledger", "outward_same_center_74d", "action_block_screen", "green_image_partition", "ae4_nonlinear_carrier_authority"],
+            "ACTIVE_NOT_CLOSED_SAME_CENTER_GREEN_IMAGE_LONGITUDINAL_TRANSVERSE_RADII_SCREEN", "current AE2 Gate-7 DAG plus AE4 hindsight adjudication",
             ["GATE7_KKT_HESSIAN", "GENERATION_FAMILY_PROJECTORS"],
             ["strict gap, exact power tail, infinite nonrealized angular tail, and chord 3 are not current dependencies"],
-            ["G7_SAME_CENTER_COMPONENTWISE_OR_FINER_ACTION_BLOCK_RADII_SCREEN"],
+            ["G7_SAME_CENTER_GREEN_IMAGE_LONGITUDINAL_TRANSVERSE_RADII_SCREEN"],
         ),
         _subsystem(
             "GATE7_KKT_HESSIAN",
@@ -480,7 +482,8 @@ def build_payload() -> dict[str, Any]:
         {"id": "G7_OLD_GAUSS12_RECENTERED_NUMERICAL_CONE_TRANSFER", "classification": "INVALIDATED_PROOF_ROUTE", "current_effect": "the old Gauss12 center differs from the exact-affine center by 120901.05128628464 candidate-cone radii; retain its theorem formulas but rebuild the numerical Z2/cone ball at the final center"},
         {"id": "G7_SAME_CENTER_INTERVAL_CONTRACTION", "classification": "OBSTRUCTED_PROOF_ROUTE", "current_effect": "the outward same-center operands have already been evaluated: Y_lower=6.15777040956615e-7, Z1_upper=0.4493650871145146, Z2_lower=3376470.2602736303, and the necessary scalar discriminant is -7.31661146299723. The single-radius theorem is obstructed by proof-coordinate amplification; this is neither root nonexistence nor physical instability, and no new center or trajectory is authorized"},
         {"id": "G7_SAME_CENTER_FIELD_DESCRIPTOR_BLOCK_RADII_POLYNOMIAL", "classification": "OBSTRUCTED_PROOF_ROUTE", "current_effect": "the 384-bit outward field defect and existing field-input curvature witness give a necessary field discriminant of -7.316503560971616, so the coarse 73-field plus 1-descriptor block split cannot self-map; this still does not imply root nonexistence or physical instability"},
-        {"id": "G7_SAME_CENTER_COMPONENTWISE_OR_FINER_ACTION_BLOCK_RADII_SCREEN", "classification": "CURRENT_BLOCKER", "current_effect": "on the same frozen accepted replay center, declare a componentwise or finer action-owned partition and persist only its required direction-by-output-block curvature envelopes. The partition and scaling must be inherited from the action and causal norm, not fitted to force contraction"},
+        {"id": "G7_SAME_CENTER_COMPONENTWISE_OR_FINER_ACTION_BLOCK_RADII_SCREEN", "classification": "SUPERSEDED_BY_RECOVERED_BHSM_PARTITION", "current_effect": "Recall recovered the already-defined signed Green-image longitudinal axis and causal transverse complement, so no arbitrary componentwise partition search is needed"},
+        {"id": "G7_SAME_CENTER_GREEN_IMAGE_LONGITUDINAL_TRANSVERSE_RADII_SCREEN", "classification": "CURRENT_BLOCKER", "current_effect": "on the same frozen accepted replay center, evaluate outward directional D2f[uG,uG], mixed D2f[.,uG], the transverse-transverse remainder at its declared small radius, and their complete causal two-radius composition. The existing coordinate-61 obstruction is more than 0.999999 transverse and does not by itself obstruct this narrow Green cone"},
         {"id": "DECORRELATED_SCALAR_SECOND_VARIATION", "classification": "INVALIDATED_PROOF_ROUTE", "current_effect": "finite first variation survives; all 8,692 scalar denominator cells route to signed/common-frame correlation"},
         {"id": "G7_HESSIAN_WARD_SCALAR", "classification": "DOWNSTREAM_ONLY", "current_effect": "follows the force/KKT root"},
         {"id": "CURRENT_FULL_FIELD_ACTION_ATTACHMENT", "classification": "DOWNSTREAM_ONLY", "current_effect": "the retained 98D N12 local oracle is geometry-only; AE2 owns the fermion reset domain but supplies no new propagating field, coefficient, or scale. Physical spectrum and observable promotion require one current same-action gauge/ghost, fermion, HS/scalar attachment with history/seam S1-S4, local momentum symbols, cross-sector blocks, and action-selected saddle data"},
@@ -494,7 +497,7 @@ def build_payload() -> dict[str, Any]:
         {"id": "EVENT_RESET_TO_INTERNAL_SOURCE", "class": "A", "priority": 0, "status": "RESOLVED_BY_EXISTING_CLOSED_SYSTEM_ONTOLOGY", "evidence": PATHS["source_ontology"]},
         {"id": "DOP853_TO_RESPONSE_VARIATION", "class": "C", "priority": 1, "status": "RESOLVED_FOR_EXACT_CENTER_AND_FINITE_DIRECT_FIRST_VARIATION", "evidence": PATHS["dop_second_variation"]},
         {"id": "RESPONSE_TO_CORRELATED_Y_Z1_Z2", "class": "C", "priority": 1, "status": "RESOLVED_FINAL_EXACT_CENTER_AND_CAUSAL_Z2_CERTIFIED", "evidence": PATHS["exact_affine_first_stop"]},
-        {"id": "FINITE_HISTORY_TO_HEAT_ZETA_COVECTOR", "class": "C", "priority": 0, "status": "CURRENT_BLOCKER_SAME_CENTER_COMPONENTWISE_OR_FINER_ACTION_BLOCK_RADII_SCREEN", "evidence": PATHS["ae4_nonlinear_carrier_authority"]},
+        {"id": "FINITE_HISTORY_TO_HEAT_ZETA_COVECTOR", "class": "C", "priority": 0, "status": "CURRENT_BLOCKER_SAME_CENTER_GREEN_IMAGE_LONGITUDINAL_TRANSVERSE_RADII_SCREEN", "evidence": PATHS["ae4_nonlinear_carrier_authority"]},
         {"id": "COMPACT_RESET_DOMAIN_TO_CAPTURE_OR_STOP", "class": "B", "priority": 0, "status": "RESOLVED_BY_CERTIFIED_TRANSVERSE_CANONICAL_EARLIEST_STOP_AND_RETAINED_OPEN_FAMILY_THEOREM", "evidence": PATHS["exact_affine_first_hit_interval"]},
         {"id": "FAMILY_PROJECTORS_TO_MASS_CKM", "class": "B", "priority": 2, "status": "MISSING_ACTION_SELECTED_SECTOR_RESPONSE_EIGENBASES", "evidence": PATHS["generation"]},
         {"id": "NEUTRAL_PROPAGATION_TO_PMNS", "class": "B", "priority": 2, "status": "MISSING_THREE_SLOT_PROJECTION_AND_CHARGED_NEUTRAL_EIGENBASES", "evidence": PATHS["pmns"]},
@@ -1026,6 +1029,16 @@ def build_payload() -> dict[str, Any]:
                 "G7_FIELD_DESCRIPTOR_BLOCK_CONTRACTION_ROUTE_OBSTRUCTED"
             ]
         ),
+        "BHSM_native_green_image_partition_is_recovered_on_current_center": (
+            green_image_partition["validation_passed"] is True
+            and green_image_partition["claim_boundary"][
+                "G7_BHSM_NATIVE_GREEN_IMAGE_PARTITION_RECOVERED"
+            ]
+            and green_image_partition["coarse_obstruction_localization"][
+                "transverse_projection_lower"
+            ]
+            > 0.99
+        ),
         "quarter_green_corrected_carrier_is_certified": (
             recentered_cone_spectrum["validation_passed"] is True
             and recentered_cone_projector["validation_passed"] is True
@@ -1135,9 +1148,9 @@ def build_payload() -> dict[str, Any]:
         "version_lineage": lineage,
         "blocker_reconciliation": blockers,
         "interface_gaps": gaps,
-        "current_irreducible_object": "G7_SAME_CENTER_COMPONENTWISE_OR_FINER_ACTION_BLOCK_RADII_SCREEN",
+        "current_irreducible_object": "G7_SAME_CENTER_GREEN_IMAGE_LONGITUDINAL_TRANSVERSE_RADII_SCREEN",
         "current_irreducible_objects": [
-            "G7_SAME_CENTER_COMPONENTWISE_OR_FINER_ACTION_BLOCK_RADII_SCREEN",
+            "G7_SAME_CENTER_GREEN_IMAGE_LONGITUDINAL_TRANSVERSE_RADII_SCREEN",
         ],
         "integration_order": ["A_EXISTING_COMPOSITION", "C_IMPLEMENTATION", "B_THEOREM", "D_NEW_THEORY_CHOICE"],
         "validation": validations,
@@ -1151,7 +1164,7 @@ def build_payload() -> dict[str, Any]:
             "Gate7": "ACTIVE_NOT_CLOSED",
             "FULL_BHSM_COMPLETE": False,
         },
-        "exact_next_dependency": "ON_THE_SAME_FROZEN_ACCEPTED_REPLAY_CENTER,_DECLARE_A_COMPONENTWISE_OR_FINER_ACTION_OWNED_PARTITION_AND_PERSIST_ONLY_THE_DIRECTION_BY_OUTPUT_BLOCK_CURVATURE_ENVELOPES_REQUIRED_BY_THAT_PARTITION;_DO_NOT_RETRY_THE_OBSTRUCTED_SCALAR_OR_73_PLUS_1_SPLITS,_FIT_THE_SCALING,_OR_RESELECT_THE_CENTER",
+        "exact_next_dependency": "ON_THE_SAME_FROZEN_ACCEPTED_REPLAY_CENTER,_EVALUATE_THE_OUTWARD_SIGNED_GREEN_IMAGE_DIRECTIONAL_AND_MIXED_CURVATURES,_THE_TRANSVERSE_TRANSVERSE_REMAINDER_AT_ITS_DECLARED_SMALL_RADIUS,_AND_THE_COMPLETE_CAUSAL_LONGITUDINAL_TRANSVERSE_TWO_RADIUS_COMPOSITION;_DO_NOT_REUSE_THE_OLD_48_SEAM_NUMBERS,_FIT_A_PARTITION,_OR_RESELECT_THE_CENTER",
         "FULL_BHSM_COMPLETE": False,
     }
 

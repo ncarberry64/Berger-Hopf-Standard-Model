@@ -119,6 +119,10 @@ def build_payload() -> dict[str, Any]:
                 "root_nonexistence"
             ]
             == "NOT_DERIVED"
+            and "GREEN_IMAGE_LONGITUDINAL_TRANSVERSE"
+            in flux["nonlinear_carrier_authority_adjudication"][
+                "exact_next_proof_object"
+            ]
         ),
         "physical_event_balance_not_overpromoted": not flux["claim_boundary"][
             "AE4_CURRENT_C2_NOETHER_HAMILTONIAN_BALANCE_PHYSICALLY_CLOSED"
@@ -174,7 +178,8 @@ def build_payload() -> dict[str, Any]:
             "affine72_particle_fiber_carrier_response": "BHSM_EVALUATED_CANDIDATE",
             "nonlinear_single_radius_carrier_proof": "BHSM_OBSTRUCTED_ROUTE",
             "coarse_field_descriptor_block_radii_proof": "BHSM_OBSTRUCTED_ROUTE",
-            "same_center_componentwise_or_finer_action_block_radii_proof": "NOT_YET_DERIVED",
+            "BHSM_native_green_image_partition": "RECOVERED_CURRENT_CENTER",
+            "same_center_green_image_longitudinal_transverse_radii_proof": "NOT_YET_DERIVED",
             "complete_interacting_AE4_encapsulation": "NOT_YET_DERIVED",
             "particle_poles_masses_vertices_collisions": "NOT_DERIVED_BY_THIS_RESULT",
             "particle_spectrum_rebuild_claim_allowed": False,
