@@ -4024,3 +4024,27 @@ the owner weights are not promoted.
 convergence and downstream broken-return/mass/flavor chain remain open. No
 external synchronization was performed.
 <!-- /BHSM_V16_80_TO_V16_92_CURRENT_FRONTIER -->
+
+<!-- BHSM_CURRENT_ENCAPSULATION_REALIZATION_SCOPE -->
+## Current encapsulation and realization scope
+
+BHSM has one current owner action, `BHSM-AE-2.0.0`, but action universality
+does not imply one numerical trajectory for every particle. The retained
+371-node Gate-7 center is one action-selected background realization and a
+reusable proof carrier. Particle-specific modes, scales, environments,
+boundary data, histories, and trajectories must be derived.
+
+The existing family/representation/projector assets and local
+particle-state-to-enclosure bridge are preserved. Complete interacting
+spacetime-volume enclosure, topological zero-interior fermion closure,
+hadronic enclosure onset, composite enclosure, superconducting many-body
+closure, and stability-to-decay prediction remain explicitly open or
+hypothetical as classified in
+`artifacts/current_semantics/BHSM_ENCAPSULATION_REALIZATION_ONTOLOGY.json`.
+
+The current Gate-7 calculation is unchanged and active. Its exact blocker is
+the all-node mixed Green/transverse map, full transverse-sphere majorant, and
+longitudinal/transverse two-radius composition. No action term, center,
+trajectory, coefficient, scale, frozen prediction, or calibration input was
+changed. `FULL_BHSM_COMPLETE = FALSE`; `GATE7_CLOSED = FALSE`.
+<!-- /BHSM_CURRENT_ENCAPSULATION_REALIZATION_SCOPE -->

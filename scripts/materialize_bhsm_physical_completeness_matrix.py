@@ -25,6 +25,10 @@ NONLINEAR_GATE7_AUTHORITY = (
     "artifacts/action_extension/"
     "BHSM_AE4_CURRENT_C2_NONLINEAR_CARRIER_AUTHORITY_ADJUDICATION.json"
 )
+ENCAPSULATION_SCOPE_AUTHORITY = (
+    "artifacts/current_semantics/"
+    "BHSM_ENCAPSULATION_REALIZATION_ONTOLOGY.json"
+)
 
 ENGINE_PATHS = {
     "action_expansion": "src/bhsm/interface/universal_physical_action_expansion.py",
@@ -242,9 +246,14 @@ def build_payload() -> dict[str, Any]:
     nonlinear_gate = json.loads(
         nonlinear_gate_path.read_text(encoding="utf-8")
     )
+    encapsulation_scope_path = ROOT / ENCAPSULATION_SCOPE_AUTHORITY
+    encapsulation_scope = json.loads(
+        encapsulation_scope_path.read_text(encoding="utf-8")
+    )
     sources = {
         GATE7_AUTHORITY: _sha256(gate_path),
         NONLINEAR_GATE7_AUTHORITY: _sha256(nonlinear_gate_path),
+        ENCAPSULATION_SCOPE_AUTHORITY: _sha256(encapsulation_scope_path),
     }
     sources.update({path: _sha256(ROOT / path) for path in ENGINE_PATHS.values()})
     sources.update({path: _sha256(ROOT / path) for path in ENGINE_TEST_PATHS.values()})
@@ -408,6 +417,14 @@ def build_payload() -> dict[str, Any]:
     validations = {
         "Gate7_authority_is_validated": gate["validation_passed"] is True,
         "Gate7_is_not_closed": gate["claim_boundary"]["Gate7"] == "ACTIVE_NOT_CLOSED",
+        "encapsulation_scope_is_validated_and_particle_specific_realizations_remain_open": (
+            encapsulation_scope["validation_passed"] is True
+            and encapsulation_scope["scope_adjudication"]["Gate7_status"]
+            == "ACTIVE_NOT_CLOSED"
+            and encapsulation_scope["scope_adjudication"]["Gate7_particle_scope"]
+            == "NO_PARTICLE_SPECIFIC_UNIVERSALITY_CLAIM"
+            and not any(encapsulation_scope["guardrails"].values())
+        ),
         "same_center_interval_contraction_was_precisely_localized": (
             gate["claim_boundary"]["current_center_interval_contraction"]
             == "OPEN_PRECISELY_LOCALIZED"
@@ -542,9 +559,19 @@ def build_payload() -> dict[str, Any]:
             "mixed_green_transverse_current_seed": "DERIVED_FOUR_DECISIVE_NODES",
             "transverse_quadratic_current_seed": "DERIVED_EIGHT_DECISIVE_DIRECTIONS",
             "root_nonexistence_or_physical_instability": "NOT_DERIVED",
+            "realization_scope": "ONE_ACTION_SELECTED_BACKGROUND_REALIZATION_NOT_A_UNIVERSAL_PARTICLE_TRAJECTORY",
+            "particle_specific_realizations": "OPEN_ENVIRONMENT_MODE_SCALE_BOUNDARY_AND_HISTORY_DEPENDENT",
             "background_freeze_for_universal_physics_engine": gate["adjudication"][
                 "background_freeze_for_universal_physics_engine"
             ],
+        },
+        "encapsulation_realization_scope": {
+            "path": ENCAPSULATION_SCOPE_AUTHORITY,
+            "universal_object": encapsulation_scope["scope_adjudication"]["universal_object"],
+            "current_371_node_object": encapsulation_scope["scope_adjudication"]["current_371_node_object"],
+            "topological_zero_interior_fermion": "HYPOTHESIS",
+            "complete_interacting_spacetime_volume_enclosure": "OPEN",
+            "stability_to_decay_prediction": "OPEN",
         },
         "source_sha256": sources,
         "records": records,

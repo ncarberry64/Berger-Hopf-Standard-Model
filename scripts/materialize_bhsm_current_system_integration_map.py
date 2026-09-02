@@ -161,6 +161,7 @@ PATHS = {
     "definition": "docs/BHSM_1_0_DEFINITION_OF_DONE.md",
     "physical_completeness": "artifacts/BHSM_PHYSICAL_COMPLETENESS_MATRIX.json",
     "full_field_attachment": "artifacts/BHSM_CURRENT_FULL_FIELD_ACTION_ATTACHMENT_AUDIT.json",
+    "encapsulation_scope": "artifacts/current_semantics/BHSM_ENCAPSULATION_REALIZATION_ONTOLOGY.json",
 }
 
 
@@ -317,6 +318,7 @@ def build_payload() -> dict[str, Any]:
     ]
     domain_reconciliation = records["dop_domain"]
     one_seam = records["one_seam"]
+    encapsulation_scope = records["encapsulation_scope"]
 
     subsystems = [
         _subsystem(
@@ -449,6 +451,16 @@ def build_payload() -> dict[str, Any]:
             ["GATE7_KKT_HESSIAN", "RELEASE_DEFINITION_OF_DONE"],
             ["historical response seeds and nonlocal DtN residues are component evidence, not current local couplings"],
             ["CURRENT_AE2_FULL_GAUGE_FERMION_HS_ACTION_WITH_HISTORY_SEAMS_S1_TO_S4_AND_ACTION_SELECTED_SADDLE"],
+        ),
+        _subsystem(
+            "ENVIRONMENT_CONDITIONED_REALIZATION_SCOPE",
+            "one universal action with mode scale environment boundary history and trajectory dependent realizations",
+            "current 371-node Gate-7 center is one action-selected background realization, not a universal particle trajectory",
+            ["encapsulation_scope", "generation", "ae2_action"], ["encapsulation_scope"],
+            "ONTOLOGY_AND_GATE7_SCOPE_FAIL_CLOSED", "current encapsulation realization ontology",
+            ["GENERATION_FAMILY_PROJECTORS", "CURRENT_FULL_FIELD_ACTION_ATTACHMENT", "RELEASE_DEFINITION_OF_DONE"],
+            ["particle/family/representation/projector assets are reused without spectrum rebuild"],
+            ["PARTICLE_SPECIFIC_ENVIRONMENT_MODE_SCALE_BOUNDARY_AND_HISTORY_REALIZATIONS"],
         ),
         _subsystem(
             "RELEASE_DEFINITION_OF_DONE",
@@ -1199,6 +1211,17 @@ def build_payload() -> dict[str, Any]:
                 "root_nonexistence_claimed"
             ] is False
         ),
+        "environment_conditioned_realization_scope_is_fail_closed": (
+            encapsulation_scope["validation_passed"] is True
+            and encapsulation_scope["scope_adjudication"]["Gate7_status"]
+            == "ACTIVE_NOT_CLOSED"
+            and encapsulation_scope["scope_adjudication"]["Gate7_particle_scope"]
+            == "NO_PARTICLE_SPECIFIC_UNIVERSALITY_CLAIM"
+            and encapsulation_scope["consequences"]["current_Gate7_calculation_changed"]
+            is False
+            and encapsulation_scope["consequences"]["frozen_prediction_changed"]
+            is False
+        ),
     }
     passed = all(validations.values())
     return {
@@ -1230,6 +1253,8 @@ def build_payload() -> dict[str, Any]:
             "measured_data_used_upstream": False,
             "frozen_prediction_retuned": False,
             "Gate7": "ACTIVE_NOT_CLOSED",
+            "Gate7_realization_scope": "ONE_ACTION_SELECTED_BACKGROUND_NOT_ALL_PARTICLE_TRAJECTORIES",
+            "particle_specific_realizations": "OPEN",
             "FULL_BHSM_COMPLETE": False,
         },
         "exact_next_dependency": "EXTEND_THE_DERIVED_CURRENT_CENTER_MIXED_GREEN_TRANSVERSE_POLARIZATION_SEED_TO_ALL_ENDPOINTS_AND_MIDPOINTS,_MAJORIZE_THE_FULL_TRANSVERSE_UNIT_SPHERE_AROUND_THE_EIGHT_VALIDATED_DIRECTIONAL_SEEDS,_THEN_COMBINE_WITH_THE_DERIVED_512_BIT_FROZEN_CAUSAL_CENTRAL_SCALAR_AND_COMPLETE_THE_LONGITUDINAL_TRANSVERSE_TWO_RADIUS_COMPOSITION;_DO_NOT_REUSE_THE_OLD_48_SEAM_NUMBERS,_FIT_A_PARTITION,_OR_RESELECT_THE_CENTER",
