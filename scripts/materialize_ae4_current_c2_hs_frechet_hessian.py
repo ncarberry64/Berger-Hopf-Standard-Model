@@ -93,6 +93,32 @@ def _channel(
     }
 
 
+def _full_core_conditioning(
+    data: Any, *, suffix: str, analytic_gap_lower: float
+) -> dict[str, Any]:
+    mass_diagonal = np.asarray(data[f"{suffix}__M_diagonal"], dtype=float)
+    stiffness_diagonal = np.asarray(data[f"{suffix}__K_diagonal"], dtype=float)
+    scaled_diagonal = stiffness_diagonal / mass_diagonal
+    largest = float(np.max(scaled_diagonal))
+    smallest = float(np.min(scaled_diagonal))
+    gap = float(analytic_gap_lower)
+    resolvable_ratio = gap / largest
+    return {
+        "dimension": int(mass_diagonal.size),
+        "mass_diagonal_equilibrated_stiffness_minimum": smallest,
+        "mass_diagonal_equilibrated_stiffness_maximum": largest,
+        "equilibrated_diagonal_dynamic_range": largest / smallest,
+        "analytic_generalized_gap_lower": gap,
+        "analytic_gap_to_largest_diagonal_ratio": resolvable_ratio,
+        "ratio_below_float64_machine_epsilon": resolvable_ratio < np.finfo(float).eps,
+        "dense_full_generalized_eigensolve_authorized": False,
+        "required_route": (
+            "FIRST_ORDER_PRODUCT_DIRAC_FACTORIZATION_OR_INVERSE_FREE_"
+            "STURM_TRANSFER_RESOLVENT_WITH_ANALYTIC_GAP_CONTROL"
+        ),
+    }
+
+
 @lru_cache(maxsize=1)
 def build_payload() -> dict[str, Any]:
     missing = [str(path) for path in INPUTS if not path.is_file()]
@@ -101,6 +127,7 @@ def build_payload() -> dict[str, Any]:
     source_artifacts = [_load(path) for path in INPUTS[:5]]
     descriptor = source_artifacts[-1]
     channels: dict[str, Any] = {}
+    conditioning: dict[str, Any] = {}
     with np.load(DESCRIPTOR_NPZ) as data:
         durations = np.asarray(data["segment_proper_duration_proof_center"], dtype=float)
         for chirality, suffix in (
@@ -111,6 +138,13 @@ def build_payload() -> dict[str, Any]:
                 "chirality": chirality,
                 **_channel(data, suffix=suffix, durations=durations),
             }
+            conditioning[suffix] = _full_core_conditioning(
+                data,
+                suffix=suffix,
+                analytic_gap_lower=descriptor["descriptor_pencils"][suffix][
+                    "generalized_gap_lower"
+                ],
+            )
     boundary = claim_boundary()
     validation = {
         "all_JSON_inputs_validated": all(row["validation_passed"] for row in source_artifacts),
@@ -159,6 +193,11 @@ def build_payload() -> dict[str, Any]:
         "physical_HS_kernel_not_overclaimed": not boundary[
             "AE4_MAXIMAL_HISTORY_HS_CALDERON_BLOCK_EVALUATED"
         ],
+        "full_core_dense_spectral_route_rejected": all(
+            row["ratio_below_float64_machine_epsilon"]
+            and not row["dense_full_generalized_eigensolve_authorized"]
+            for row in conditioning.values()
+        ),
     }
     return {
         "artifact": "BHSM_AE4_CURRENT_C2_HS_FRECHET_HESSIAN",
@@ -176,6 +215,7 @@ def build_payload() -> dict[str, Any]:
             "supertrace_weight_role": "ONE_WEYL_BLOCK_BEFORE_PHYSICAL_CHANNEL_MULTIPLICITY",
         },
         "channels": channels,
+        "full_core_conditioning_gate": conditioning,
         "claim_boundary": boundary,
         "inputs": {path.relative_to(ROOT).as_posix(): _sha(path) for path in INPUTS},
         "validation": validation,

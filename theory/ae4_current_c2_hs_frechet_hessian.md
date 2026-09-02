@@ -64,8 +64,16 @@ maximal-history retarded HS Calderon block, a selected four-channel Higgs
 direction, or a broken LR saddle.  It cannot yet be inserted as a physical
 coefficient in the event-flux assembly.
 
-The next calculation is to establish prefix convergence to the full finite
-core, extend the same Fréchet block to the reset-glued maximal-history
-retarded resolvent, assemble all four existing HS channels and the noncentral
-fermion operator, then test the broken saddle and event balance without
-fitting a Yukawa or scalar normalization.
+The full descriptor cannot be passed through an ordinary float64 dense
+generalized eigensolver. Even after mass-diagonal equilibration, its analytic
+gap-to-largest-diagonal ratio lies below machine epsilon. A returned negative
+low eigenvalue would therefore be cancellation, not a physical instability.
+The full-core continuation must preserve the first-order product-Dirac
+factorization or use an inverse-free Sturm/transfer resolvent with the existing
+analytic gap control.
+
+The next calculation is to establish prefix convergence using that factorized
+or transfer-resolvent route, extend the same Fréchet block to the reset-glued
+maximal-history retarded resolvent, assemble all four existing HS channels and
+the noncentral fermion operator, then test the broken saddle and event balance
+without fitting a Yukawa or scalar normalization.

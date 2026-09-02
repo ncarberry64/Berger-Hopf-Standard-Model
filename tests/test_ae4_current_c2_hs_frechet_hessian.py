@@ -64,6 +64,14 @@ def test_current_c2_full_form_core_payload_is_fail_closed():
         "AE4_CURRENT_C2_BIRTH_LOCAL_CONDITIONED_HS_CURVATURE_POSITIVE"
     ]
     assert boundary["AE4_CURRENT_C2_BIRTH_LOCAL_CHIRAL_HS_JETS_EQUAL"]
+    assert not boundary[
+        "AE4_FULL_1222_DENSE_GENERALIZED_EIGENSOLVE_NUMERICALLY_ADMISSIBLE"
+    ]
+    assert boundary["AE4_FULL_CORE_FACTORIZED_OR_TRANSFER_RESOLVENT_REQUIRED"]
+    assert all(
+        row["ratio_below_float64_machine_epsilon"]
+        for row in payload["full_core_conditioning_gate"].values()
+    )
     assert not boundary["AE4_PHYSICAL_ELL_STAR_NUMERICALLY_EVALUATED"]
     assert not boundary["AE4_MAXIMAL_HISTORY_HS_CALDERON_BLOCK_EVALUATED"]
     assert not boundary["AE4_BROKEN_LR_HS_SADDLE_DERIVED"]

@@ -4281,5 +4281,10 @@ Exact next object:
   prefix edge is a Galerkin truncation. Full-core convergence, the
   maximal-history retarded HS block, physical four-channel direction and
   broken LR saddle remain open.
+- The full 1222-segment gap-to-largest-diagonal ratio is below float64 machine
+  epsilon even after mass-diagonal equilibration. Dense low-eigenvalue signs
+  are inadmissible; continuation must use the first-order product-Dirac
+  factorization or an inverse-free Sturm/transfer resolvent with analytic gap
+  control.
 - Scientific milestone:
   `AE4_CURRENT_C2_BIRTH_LOCAL_GALERKIN_HS_FRECHET_HESSIAN_EVALUATED`.
