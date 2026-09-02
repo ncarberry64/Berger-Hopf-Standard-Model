@@ -4306,3 +4306,22 @@ Exact next object:
   integrated AE4 Hessian, broken saddle, or physical scalar prediction.
 - Scientific milestone:
   `AE4_CURRENT_C2_FULL_FINITE_CORE_FACTORIZED_HS_CALDERON_JET_DERIVED`.
+
+## AE4 current-C2 terminal HS-jet transport
+
+- The full 1222-segment factorized core now accepts an action-owned finite
+  terminal load together with its first two HS variations.
+- Exact Möbius-chain differentiation gives
+  `D_H M_birth=a+s*u` and
+  `D_H^2 M_birth=b+2*c*u+q*u^2+s*v`, where
+  `u=D_H L_terminal` and `v=D_H^2 L_terminal`.
+- At the native `z=-1` probe the first- and second-terminal-jet sensitivity
+  `s` is within `1.2e-19` of one for both zero and the broad AE2 upper
+  reference load. The finite core therefore does not erase the missing child
+  HS response.
+- No reference load is promoted as the physical endpoint, and the existing
+  covariant geometry jets are not relabeled as HS jets. The action-owned N12
+  maximal child or first physical domain exit must still supply `u,v` before
+  the maximal-history HS block and integrated AE4 Hessian close.
+- Scientific milestone:
+  `AE4_CURRENT_C2_TERMINAL_HS_JET_TRANSPORT_LAW_DERIVED`.
