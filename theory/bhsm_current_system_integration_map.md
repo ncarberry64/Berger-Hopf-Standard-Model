@@ -164,6 +164,13 @@ is authorized.  The remaining proof obligation is not root nonexistence or
 physical instability, and the background is not certified for universal
 physical predictions.
 
+The mixed Green/transverse mechanism is no longer only historical: 512-bit
+retained-action polarization now reconstructs every projected column at
+current nodes 1, 355, 356, and 370.  This is the decisive-node seed for the
+remaining all-endpoint/all-midpoint campaign; it is not yet the global mixed
+remainder or the two-radius certificate.  Its maximum outward Frobenius upper
+is `30.44882953782609` at node 1.
+
 The physical-completeness matrix now separates capability maturity from
 scientific output authority.  The universal action expansion, quadratic
 descriptor spectrum, vertex/tree-amplitude, LSZ, two- and three-body decay/collision,

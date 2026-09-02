@@ -105,6 +105,14 @@ have already discarded the normalization/transport dependency.  The next
 object remains the correlation-preserving mixed Green/transverse and
 transverse-transverse remainder around the certified central axis.
 
+The retained-action polarization map has now been rebuilt on the current
+center at the four decisive seed nodes 1, 355, 356, and 370.  All 74
+projected columns are evaluated before norming.  This recovers the exact
+mixed-map mechanism without importing the old 48-seam values; extension to
+all endpoints and midpoints, causal composition, and the transverse--
+transverse remainder remain open.  The maximum four-node outward Frobenius
+upper is `30.44882953782609` at node 1.
+
 Until that test succeeds, the gauge/BRST and nine-particle-fiber Calderón
 first jets remain evaluated affine candidates, not nonlinear physical
 operator authority.
@@ -132,5 +140,6 @@ G7_CURRENT_GREEN_CORRELATED_SCALAR_INTERVAL355_FINITE = TRUE
 G7_CURRENT_GREEN_CORRELATED_SCALAR_ALL_INTERVALS_DERIVED = TRUE
 G7_CURRENT_GREEN_CORRELATED_CENTRAL_SCALAR_CAUSAL_COMPOSITION_DERIVED = TRUE
 G7_CURRENT_CENTER_COMPONENTWISE_GREEN_MIDPOINT_ROUTE_OBSTRUCTED_AT_512_BIT = TRUE
+G7_CURRENT_GREEN_MIXED_TRANSVERSE_DECISIVE_NODE_SEED_DERIVED = TRUE
 FULL_BHSM_COMPLETE = FALSE
 ```
