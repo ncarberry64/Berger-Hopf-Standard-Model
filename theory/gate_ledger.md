@@ -4342,3 +4342,21 @@ Exact next object:
   Weyl family and jets; only the existing stop branch is reduced here.
 - Scientific milestone:
   `AE4_CURRENT_C2_CANONICAL_STOP_DOMAIN_BRIDGE_DERIVED`.
+
+## AE4 current-C2 stop-matched center diagnostic
+
+- The existing cancelled-field incidence pulls the accepted 371-node center
+  from action arc to physical proper time and truncates it at the certified
+  canonical first-hit interval without treating action arc as time.
+- With the action-selected Friedrichs terminal domain and `z=-1`, the
+  midpoint stop center gives birth Weyl values near `6769.19` and `6772.21`
+  for the two lowest product-Dirac chiralities, first HS jets near `-1`, and
+  second HS jets near `9.846e-5`.
+- One-to-eight piecewise-linear subdivision is stable, but the accepted
+  center still lacks correlation-preserving outward nonlinear shadowing and
+  the HS moving-stop jet. The result is a diagnostic, not a physical residue
+  or completed AE4 Hessian.
+- The physical-duration result demonstrates that the tiny-duration 1,222
+  birth-local proof prefix cannot substitute for the stop-matched operator.
+- Scientific milestone:
+  `AE4_CURRENT_C2_STOP_MATCHED_CENTER_HS_CALDERON_DIAGNOSTIC_EVALUATED`.
