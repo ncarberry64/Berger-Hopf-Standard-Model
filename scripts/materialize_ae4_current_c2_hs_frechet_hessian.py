@@ -231,7 +231,11 @@ def main() -> None:
     if not payload["validation_passed"]:
         raise SystemExit("current-C2 AE4 HS Hessian failed")
     TARGET.parent.mkdir(parents=True, exist_ok=True)
-    TARGET.write_text(json.dumps(payload, indent=2, sort_keys=True) + "\n", encoding="utf-8")
+    TARGET.write_text(
+        json.dumps(payload, indent=2, sort_keys=True) + "\n",
+        encoding="utf-8",
+        newline="\n",
+    )
     print(TARGET.relative_to(ROOT).as_posix())
 
 
