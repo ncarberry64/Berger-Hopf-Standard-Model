@@ -25,6 +25,7 @@ def nonlinear_carrier_authority_contract(
     green_image_partition_recovered: bool,
     green_directional_seed_derived: bool,
     green_directional_endpoints_derived: bool,
+    green_midpoint_componentwise_route_obstructed: bool,
     root_nonexistence_claim: bool,
     physical_instability_claim: bool,
     another_center_or_trajectory_authorized: bool,
@@ -41,6 +42,8 @@ def nonlinear_carrier_authority_contract(
         raise ValueError("the current-center Green directional seed is required")
     if not green_directional_endpoints_derived:
         raise ValueError("all post-reset Green directional endpoints are required")
+    if not green_midpoint_componentwise_route_obstructed:
+        raise ValueError("the current componentwise Green midpoint obstruction is required")
     promoted = bool(
         affine_transfer_allowed
         and not same_center_contraction_obstructed
@@ -59,6 +62,7 @@ def nonlinear_carrier_authority_contract(
         "BHSM_native_green_image_partition_recovered": True,
         "current_center_green_directional_curvature_seed_derived": True,
         "current_center_all_post_reset_green_directional_endpoint_curvature_derived": True,
+        "current_center_componentwise_green_midpoint_route_obstructed": True,
         "current_affine_operator_jets_have_nonlinear_authority": promoted,
         "accepted_replay_center_or_trajectory_may_be_reselected": False,
         "physical_spacetime_instability_inferred": False,
@@ -69,9 +73,10 @@ def nonlinear_carrier_authority_contract(
         ),
         "obstruction_scope_extended_to_all_existence_theorems": False,
         "next_proof_object": (
-            "DERIVE_CORRELATED_HERMITE_SIMPSON_MIDPOINT_GREEN_DIRECTION_"
-            "AND_SECOND_INCIDENCE_THEN_EVALUATE_MIXED_AND_TRANSVERSE_REMAINDERS_"
-            "FOR_THE_GREEN_IMAGE_LONGITUDINAL_TRANSVERSE_TWO_RADIUS_SCREEN"
+            "RETAIN_GREEN_NORMALIZATION_AND_ENDPOINT_TO_MIDPOINT_TRANSPORT_"
+            "AS_ONE_CORRELATED_LONGITUDINAL_SCALAR_PARAMETERIZATION_THEN_"
+            "REEVALUATE_INTERVAL_355_BEFORE_CAUSAL_PROMOTION_FOR_THE_GREEN_"
+            "IMAGE_LONGITUDINAL_TRANSVERSE_TWO_RADIUS_SCREEN"
         ),
         "why_next": (
             "THE_COARSE_FIELD_DESCRIPTOR_SPLIT_IS_ALREADY_OBSTRUCTED_BY_A_"
@@ -100,6 +105,8 @@ def claim_boundary() -> dict[str, Any]:
         "G7_CURRENT_CENTER_NODE1_GREEN_DIRECTIONAL_CURVATURE_DERIVED": True,
         "G7_CURRENT_CENTER_ALL_POST_RESET_ENDPOINT_GREEN_DIRECTIONAL_CURVATURE_DERIVED": True,
         "G7_CURRENT_CENTER_GREEN_MIDPOINT_DIRECTIONAL_CURVATURE_DERIVED": False,
+        "G7_CURRENT_CENTER_COMPONENTWISE_GREEN_MIDPOINT_ROUTE_OBSTRUCTED": True,
+        "G7_CURRENT_CENTER_CORRELATED_GREEN_NORMALIZATION_TRANSPORT_DERIVED": False,
         "FULL_BHSM_COMPLETE": False,
     }
 

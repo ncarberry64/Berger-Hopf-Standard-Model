@@ -21,6 +21,7 @@ def test_two_negative_transfer_results_do_not_promote_nonlinear_authority():
         green_image_partition_recovered=True,
         green_directional_seed_derived=True,
         green_directional_endpoints_derived=True,
+        green_midpoint_componentwise_route_obstructed=True,
         root_nonexistence_claim=False,
         physical_instability_claim=False,
         another_center_or_trajectory_authorized=False,
@@ -29,7 +30,7 @@ def test_two_negative_transfer_results_do_not_promote_nonlinear_authority():
     assert result["same_center_single_radius_contraction_obstructed"]
     assert result["same_center_field_descriptor_block_contraction_obstructed"]
     assert not result["root_nonexistence_inferred"]
-    assert "HERMITE_SIMPSON_MIDPOINT_GREEN_DIRECTION" in result[
+    assert "CORRELATED_LONGITUDINAL_SCALAR_PARAMETERIZATION" in result[
         "next_proof_object"
     ]
 
@@ -43,6 +44,7 @@ def test_upstream_physical_overclaims_fail_closed():
             green_image_partition_recovered=True,
             green_directional_seed_derived=True,
             green_directional_endpoints_derived=True,
+            green_midpoint_componentwise_route_obstructed=True,
             root_nonexistence_claim=True,
             physical_instability_claim=False,
             another_center_or_trajectory_authorized=False,
@@ -69,7 +71,7 @@ def test_materialized_adjudication_is_valid_and_deterministic():
     assert payload["validation"]["scalar_route_not_left_as_open_next_calculation"]
     assert payload["validation"]["coarse_field_descriptor_route_not_left_open"]
     assert payload["validation"][
-        "BHSM_native_green_image_partition_is_current_next_object"
+        "BHSM_native_green_longitudinal_correlation_is_current_next_object"
     ]
     assert payload["validation"]["current_green_directional_seed_is_reused"]
     assert payload["validation"][
@@ -78,6 +80,12 @@ def test_materialized_adjudication_is_valid_and_deterministic():
     assert payload["recovered_green_directional_endpoints"][
         "maximum_upper_owner_node"
     ] == 370
+    assert payload["validation"][
+        "componentwise_green_midpoint_obstruction_is_reused"
+    ]
+    assert payload["recovered_green_midpoint_obstruction"][
+        "first_nonfinite_intrinsic_interval"
+    ] == 355
     main()
     first = hashlib.sha256(TARGET.read_bytes()).hexdigest()
     main()
