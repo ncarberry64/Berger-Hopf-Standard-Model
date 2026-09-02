@@ -75,9 +75,13 @@ insert them into the existing balance, and transport the full interacting
 traces into the already-identified enclosure.  Hindsight integration has now
 retired the scalar same-center `Y,Z1,Z2` request: those operands were already
 evaluated and their single-radius discriminant is strictly negative because
-of proof-coordinate amplification.  The valid next proof is componentwise or
-action-block radii at the same frozen center, not a new trajectory and not a
-claim of physical instability.
+of proof-coordinate amplification.  The BHSM-native Green-image partition
+and its global correlation-preserving central scalar have now been evaluated
+on all 370 retained intervals.  The valid next proof is the mixed
+Green/transverse and transverse-transverse bound for the certified axis
+neighborhood, followed by the frozen causal preconditioner and
+longitudinal/transverse two-radius test.  It is not a new trajectory and not
+a claim of physical instability.
 
 ## Claim boundary
 

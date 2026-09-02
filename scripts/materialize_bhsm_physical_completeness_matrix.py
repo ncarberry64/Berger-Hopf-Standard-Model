@@ -435,7 +435,7 @@ def build_payload() -> dict[str, Any]:
             ]
             < 0.0
         ),
-        "BHSM_native_green_image_partition_is_current_next_object": (
+        "BHSM_native_green_partition_and_global_scalar_are_integrated": (
             nonlinear_gate["claim_boundary"][
                 "G7_BHSM_NATIVE_GREEN_IMAGE_PARTITION_RECOVERED"
             ]
@@ -443,7 +443,13 @@ def build_payload() -> dict[str, Any]:
                 "obstruction_transverse_projection_lower"
             ]
             > 0.99
-            and "GREEN_IMAGE_LONGITUDINAL_TRANSVERSE" in gate_blocker
+            and nonlinear_gate["claim_boundary"][
+                "G7_CURRENT_GREEN_CORRELATED_SCALAR_ALL_INTERVALS_DERIVED"
+            ]
+            and nonlinear_gate["recovered_green_correlated_scalar_all_intervals"][
+                "intervals_certified"
+            ] == 370
+            and "MIXED_GREEN_TRANSVERSE" in gate_blocker
         ),
         "current_green_directional_seed_is_integrated": (
             nonlinear_gate["claim_boundary"][

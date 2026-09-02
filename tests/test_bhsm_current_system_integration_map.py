@@ -89,6 +89,9 @@ def test_canonical_system_and_required_subsystems() -> None:
     assert payload["validation"][
         "one_transverse_center_witness_suffices_for_open_stop_stratum"
     ] is True
+    assert payload["validation"][
+        "current_center_correlated_green_scalar_is_derived_on_all_intervals"
+    ] is True
     assert payload["canonical_action_version"] == "BHSM-AE-2.0.0"
     identifiers = {row["id"] for row in payload["subsystems"]}
     assert {

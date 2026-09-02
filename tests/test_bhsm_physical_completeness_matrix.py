@@ -38,7 +38,7 @@ def test_matrix_tracks_all_required_physical_sectors_without_promotion() -> None
         "same_center_coarse_field_descriptor_route_is_now_evaluated_and_obstructed"
     ]
     assert payload["validation"][
-        "BHSM_native_green_image_partition_is_current_next_object"
+        "BHSM_native_green_partition_and_global_scalar_are_integrated"
     ]
     assert payload["validation"]["current_green_directional_seed_is_integrated"]
     assert tuple(record["id"] for record in payload["records"]) == module.REQUIRED_RECORD_IDS
