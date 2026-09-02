@@ -497,6 +497,20 @@ def build_payload() -> dict[str, Any]:
                 "G7_CURRENT_GREEN_MIXED_TRANSVERSE_ALL_NODES_DERIVED"
             ]
         ),
+        "current_green_mixed_direct_bilinear_identity_is_integrated_fail_closed": (
+            nonlinear_gate["claim_boundary"][
+                "G7_CURRENT_GREEN_MIXED_DIRECT_BILINEAR_CENTER_IDENTITY_REPRODUCED"
+            ]
+            and nonlinear_gate["recovered_green_mixed_direct_bilinear_identity"][
+                "maximum_center_absolute_difference"
+            ] < 1.0e-8
+            and not nonlinear_gate["recovered_green_mixed_direct_bilinear_identity"][
+                "all_component_interval_hulls_overlap"
+            ]
+            and not nonlinear_gate["claim_boundary"][
+                "G7_CURRENT_GREEN_MIXED_DIRECT_BILINEAR_OUTWARD_EQUIVALENCE_DERIVED"
+            ]
+        ),
         "current_green_transverse_quadratic_seed_is_integrated": (
             nonlinear_gate["claim_boundary"][
                 "G7_CURRENT_GREEN_TRANSVERSE_TRANSVERSE_DECISIVE_DIRECTION_SEED_DERIVED"
@@ -557,6 +571,9 @@ def build_payload() -> dict[str, Any]:
             "coarse_field_descriptor_block_route": "OBSTRUCTED",
             "BHSM_native_green_image_partition": "RECOVERED_CURRENT_CENTER",
             "mixed_green_transverse_current_seed": "DERIVED_FOUR_DECISIVE_NODES",
+            "mixed_green_transverse_direct_bilinear": (
+                "CENTER_IDENTITY_REPRODUCED__OUTWARD_EQUIVALENCE_OPEN"
+            ),
             "transverse_quadratic_current_seed": "DERIVED_EIGHT_DECISIVE_DIRECTIONS",
             "root_nonexistence_or_physical_instability": "NOT_DERIVED",
             "realization_scope": "ONE_ACTION_SELECTED_BACKGROUND_REALIZATION_NOT_A_UNIVERSAL_PARTICLE_TRAJECTORY",

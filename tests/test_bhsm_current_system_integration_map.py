@@ -23,6 +23,9 @@ def test_canonical_system_and_required_subsystems() -> None:
         "current_center_mixed_green_transverse_decisive_seed_is_derived"
     ] is True
     assert payload["validation"][
+        "current_center_mixed_green_direct_bilinear_identity_is_reproduced_fail_closed"
+    ] is True
+    assert payload["validation"][
         "current_center_transverse_quadratic_decisive_seed_is_derived"
     ] is True
     assert payload["validation"]["causal_Z2_nonlinear_halo_is_certified"] is True

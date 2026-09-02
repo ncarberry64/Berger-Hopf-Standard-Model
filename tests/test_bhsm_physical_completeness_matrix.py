@@ -35,6 +35,9 @@ def test_matrix_tracks_all_required_physical_sectors_without_promotion() -> None
         "mixed_green_transverse_current_seed"
     ] == "DERIVED_FOUR_DECISIVE_NODES"
     assert payload["Gate7_authority"][
+        "mixed_green_transverse_direct_bilinear"
+    ] == "CENTER_IDENTITY_REPRODUCED__OUTWARD_EQUIVALENCE_OPEN"
+    assert payload["Gate7_authority"][
         "transverse_quadratic_current_seed"
     ] == "DERIVED_EIGHT_DECISIVE_DIRECTIONS"
     assert payload["Gate7_authority"]["realization_scope"] == (
@@ -58,6 +61,9 @@ def test_matrix_tracks_all_required_physical_sectors_without_promotion() -> None
     assert payload["validation"]["current_green_directional_seed_is_integrated"]
     assert payload["validation"][
         "current_green_mixed_transverse_seed_is_integrated"
+    ]
+    assert payload["validation"][
+        "current_green_mixed_direct_bilinear_identity_is_integrated_fail_closed"
     ]
     assert payload["validation"][
         "current_green_transverse_quadratic_seed_is_integrated"

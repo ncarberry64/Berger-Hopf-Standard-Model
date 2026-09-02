@@ -35,6 +35,7 @@ GREEN_CORRELATED_355 = F / "BHSM_N12_GATE7_CURRENT_GREEN_CORRELATED_SCALAR_INTER
 GREEN_CORRELATED_ALL = F / "BHSM_N12_GATE7_CURRENT_GREEN_CORRELATED_SCALAR_ALL_INTERVALS.json"
 GREEN_CORRELATED_CAUSAL = F / "BHSM_N12_GATE7_CURRENT_GREEN_CORRELATED_SCALAR_CAUSAL_COMPOSITION.json"
 GREEN_MIXED_SEED = F / "BHSM_N12_GATE7_CURRENT_GREEN_MIXED_TRANSVERSE_SEED.json"
+GREEN_MIXED_BILINEAR = F / "BHSM_N12_GATE7_CURRENT_GREEN_MIXED_BILINEAR_EQUIVALENCE_AUDIT.json"
 GREEN_TRANSVERSE_SEED = F / "BHSM_N12_GATE7_CURRENT_GREEN_TRANSVERSE_QUADRATIC_SEED.json"
 GAUGE = A / "BHSM_AE4_CURRENT_C2_AFFINE72_GAUGE_CALDERON_FIRST_JET.json"
 PARTICLE = A / "BHSM_AE4_CURRENT_C2_AFFINE72_PARTICLE_FIBER_CALDERON.json"
@@ -52,6 +53,7 @@ INPUTS = (
     GREEN_CORRELATED_ALL,
     GREEN_CORRELATED_CAUSAL,
     GREEN_MIXED_SEED,
+    GREEN_MIXED_BILINEAR,
     GREEN_TRANSVERSE_SEED,
     GAUGE,
     PARTICLE,
@@ -77,13 +79,13 @@ def build_payload() -> dict[str, Any]:
     missing = [str(path) for path in INPUTS if not path.is_file()]
     if missing:
         raise FileNotFoundError(", ".join(missing))
-    transfer, outward, block_screen, green_partition, green_seed, green_endpoints, green_midpoint, green_midpoint_512, green_correlated_355, green_correlated_all, green_correlated_causal, green_mixed_seed, green_transverse_seed, gauge, particle = (
-        _load(path) for path in INPUTS[:15]
+    transfer, outward, block_screen, green_partition, green_seed, green_endpoints, green_midpoint, green_midpoint_512, green_correlated_355, green_correlated_all, green_correlated_causal, green_mixed_seed, green_mixed_bilinear, green_transverse_seed, gauge, particle = (
+        _load(path) for path in INPUTS[:16]
     )
     if not all(
         row.get("validation_passed") is True
         for row in (
-            transfer, outward, block_screen, green_partition, green_seed, green_endpoints, green_midpoint, green_midpoint_512, green_correlated_355, green_correlated_all, green_correlated_causal, green_mixed_seed, green_transverse_seed,
+            transfer, outward, block_screen, green_partition, green_seed, green_endpoints, green_midpoint, green_midpoint_512, green_correlated_355, green_correlated_all, green_correlated_causal, green_mixed_seed, green_mixed_bilinear, green_transverse_seed,
             gauge, particle
         )
     ):
@@ -261,6 +263,17 @@ def build_payload() -> dict[str, Any]:
                 "CURRENT_GREEN_AXIS_NEIGHBORHOOD_MIXED_TRANSVERSE_BOUND_DERIVED"
             ]
         ),
+        "current_green_mixed_direct_bilinear_identity_is_integrated_fail_closed": (
+            green_mixed_bilinear["validation_passed"]
+            and green_mixed_bilinear["maximum_center_absolute_difference"]
+            < 1.0e-8
+            and green_mixed_bilinear["claim_boundary"][
+                "CURRENT_GREEN_MIXED_DIRECT_BILINEAR_CENTER_IDENTITY_REPRODUCED"
+            ]
+            and not green_mixed_bilinear["claim_boundary"][
+                "CURRENT_GREEN_MIXED_DIRECT_BILINEAR_OUTWARD_EQUIVALENCE_DERIVED"
+            ]
+        ),
         "current_green_transverse_quadratic_decisive_seed_is_integrated": (
             green_transverse_seed["validation_passed"]
             and len(green_transverse_seed["rows"]) == 8
@@ -406,6 +419,17 @@ def build_payload() -> dict[str, Any]:
                 "maximum_seed_mixed_owner_node"
             ],
             "all_nodes_or_causal_promotion": False,
+        },
+        "recovered_green_mixed_direct_bilinear_identity": {
+            "seed_nodes": green_mixed_bilinear["seed_nodes"],
+            "seed_columns": green_mixed_bilinear["seed_columns"],
+            "maximum_center_absolute_difference": green_mixed_bilinear[
+                "maximum_center_absolute_difference"
+            ],
+            "all_component_interval_hulls_overlap": green_mixed_bilinear[
+                "all_component_interval_hulls_overlap"
+            ],
+            "outward_equivalence_promotion": False,
         },
         "recovered_green_transverse_quadratic_seed": {
             "evaluated_direction_count": len(green_transverse_seed["rows"]),

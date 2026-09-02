@@ -100,6 +100,14 @@ Its maximum four-node outward Frobenius upper is `30.44882953782609` at node 1.
 The complementary eight-direction transverse-quadratic seed is finite with
 maximum 512-bit norm upper `283135.9524836309` at node 1; the full transverse
 unit-sphere majorant remains open.
+The direct two-leg mixed derivative now independently reproduces the
+polarization centers at nodes 1, 355, 356, and 370 for coordinate columns 0,
+1, and 61.  Its maximum absolute center difference is
+`6.258105145207082e-12` (`2.1951329642888595e-12` after unit-floor scaling).
+The separately rounded Arb evaluation graphs do not have overlapping hulls in
+every component, so this is a center-identity audit only: outward algebraic
+equivalence, the all-endpoint map, and causal two-radius promotion remain
+open.
 `FULL_BHSM_COMPLETE = FALSE`.  The universal action-to-observable
 infrastructure is now machine-classified separately from scientific outputs:
 action expansion, quadratic spectrum, bare vertices/tree exchange, LSZ,
