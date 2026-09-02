@@ -84,6 +84,9 @@ def test_claim_boundary_advances_assembly_not_physical_evaluation():
     assert boundary[
         "AE4_CURRENT_C2_CANONICAL_STOP_GAUGE_BRST_CENTER_BLOCK_EVALUATED"
     ]
+    assert boundary[
+        "AE4_CURRENT_C2_AFFINE72_GAUGE_BRST_FIRST_JET_CANDIDATE_EVALUATED"
+    ]
     assert not boundary["AE4_CURRENT_C2_NONZERO_SECTOR_CALDERON_BLOCKS_EVALUATED"]
     assert not boundary["PHYSICAL_ENCAPSULATION_IDENTIFIED"]
 
@@ -95,6 +98,12 @@ def test_materialized_event_flux_assembly_is_valid_and_deterministic():
         "canonical_stop_gauge_BRST_center_block_attached"
     ]
     assert payload["evaluated_sector_attachment"]["BRST_cancellation_residual"] == 0.0
+    assert payload["validation"][
+        "affine72_gauge_BRST_first_jet_candidate_attached_fail_closed"
+    ]
+    assert not payload["evaluated_sector_attachment"][
+        "affine72_first_jet_nonlinear_authority"
+    ]
     main()
     first = hashlib.sha256(TARGET.read_bytes()).hexdigest()
     main()

@@ -39,6 +39,7 @@ INPUTS = (
     A / "BHSM_AE3_C2_HS_FERMION_MIXED_VARIATION.json",
     ROOT / "artifacts/n12_continuum_majorant_effectiveness/BHSM_CONTINUUM_EVENT_CHILD_CERTIFICATE.json",
     A / "BHSM_AE4_CURRENT_C2_STOP_GAUGE_BRST_CALDERON.json",
+    A / "BHSM_AE4_CURRENT_C2_AFFINE72_GAUGE_CALDERON_FIRST_JET.json",
     ROOT / "src/bhsm/interface/ae4_c2_stratified_event_flux_assembly.py",
 )
 
@@ -109,7 +110,8 @@ def build_payload() -> dict[str, Any]:
     solution = witness["solution"]
     noether = witness["noether"]
     boundary = claim_boundary()
-    gauge_brst = json_sources[-1]
+    gauge_brst = json_sources[-2]
+    gauge_first_jet = json_sources[-1]
     validation = {
         "all_source_artifacts_validated": all(row["validation_passed"] for row in json_sources),
         "six_required_sectors_explicit": witness["direct_sum"]["all_required_sectors_explicit"],
@@ -133,6 +135,13 @@ def build_payload() -> dict[str, Any]:
             ]
             and gauge_brst["validation_passed"]
         ),
+        "affine72_gauge_BRST_first_jet_candidate_attached_fail_closed": (
+            gauge_first_jet["validation_passed"]
+            and gauge_first_jet["claim_boundary"][
+                "AE4_CURRENT_C2_AFFINE72_PROPER_TIME_GAUGE_CALDERON_FIRST_JET_EVALUATED"
+            ]
+            and not gauge_first_jet["carrier"]["nonlinear_exact_family_authority"]
+        ),
         "physical_sector_values_not_overclaimed": not boundary[
             "AE4_CURRENT_C2_NONZERO_SECTOR_CALDERON_BLOCKS_EVALUATED"
         ],
@@ -153,6 +162,15 @@ def build_payload() -> dict[str, Any]:
                 "BRST_cancellation_residual": gauge_brst["scientific_result"][
                     "midpoint_refinement_4"
                 ]["BRST_cancellation_residual_norm"],
+                "affine72_first_jet_candidate_2_norm": gauge_first_jet[
+                    "scientific_result"
+                ]["coexact_first_jet_2_norm"],
+                "affine72_first_jet_moving_duration_to_radius_norm_ratio": (
+                    gauge_first_jet["scientific_result"][
+                        "moving_duration_to_log_radius_norm_ratio"
+                    ]
+                ),
+                "affine72_first_jet_nonlinear_authority": False,
                 "inserted_in_finite_theorem_witness": False,
                 "why_not_inserted": (
                     "THE_REMAINING_FIVE_PHYSICAL_SECTOR_BLOCKS_AND_THE_OUTWARD_"
