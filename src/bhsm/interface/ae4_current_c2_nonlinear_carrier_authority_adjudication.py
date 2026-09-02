@@ -77,6 +77,7 @@ def nonlinear_carrier_authority_contract(
         "current_green_correlated_scalar_all_intervals_derived": True,
         "current_green_correlated_scalar_causal_composition_derived": True,
         "current_green_mixed_transverse_decisive_node_seed_derived": True,
+        "current_green_transverse_transverse_decisive_direction_seed_derived": True,
         "current_affine_operator_jets_have_nonlinear_authority": promoted,
         "accepted_replay_center_or_trajectory_may_be_reselected": False,
         "physical_spacetime_instability_inferred": False,
@@ -87,9 +88,10 @@ def nonlinear_carrier_authority_contract(
         ),
         "obstruction_scope_extended_to_all_existence_theorems": False,
         "next_proof_object": (
-            "BOUND_THE_CERTIFIED_GREEN_AXIS_NEIGHBORHOOD_WITH_ACTION_DERIVED_"
-            "MIXED_GREEN_TRANSVERSE_AND_TRANSVERSE_TRANSVERSE_REMAINDERS_THEN_"
-            "COMBINE_THEM_WITH_THE_DERIVED_FROZEN_CAUSAL_CENTRAL_SCALAR_IN_THE_"
+            "EXTEND_THE_CURRENT_MIXED_GREEN_TRANSVERSE_POLARIZATION_SEED_TO_"
+            "ALL_ENDPOINTS_AND_MIDPOINTS_AND_MAJORIZE_THE_FULL_TRANSVERSE_"
+            "UNIT_SPHERE_AROUND_THE_EIGHT_ACTION_DERIVED_DIRECTIONAL_SEEDS_"
+            "THEN_COMBINE_WITH_THE_FROZEN_CAUSAL_CENTRAL_SCALAR_IN_THE_"
             "LONGITUDINAL_TRANSVERSE_TWO_RADIUS_SCREEN"
         ),
         "why_next": (
@@ -127,6 +129,8 @@ def claim_boundary() -> dict[str, Any]:
         "G7_CURRENT_GREEN_CORRELATED_CENTRAL_SCALAR_CAUSAL_COMPOSITION_DERIVED": True,
         "G7_CURRENT_GREEN_MIXED_TRANSVERSE_DECISIVE_NODE_SEED_DERIVED": True,
         "G7_CURRENT_GREEN_MIXED_TRANSVERSE_ALL_NODES_DERIVED": False,
+        "G7_CURRENT_GREEN_TRANSVERSE_TRANSVERSE_DECISIVE_DIRECTION_SEED_DERIVED": True,
+        "G7_CURRENT_GREEN_TRANSVERSE_TRANSVERSE_FULL_OPERATOR_BOUND_DERIVED": False,
         "FULL_BHSM_COMPLETE": False,
     }
 

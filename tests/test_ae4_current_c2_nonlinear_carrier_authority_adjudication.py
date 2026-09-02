@@ -119,6 +119,12 @@ def test_materialized_adjudication_is_valid_and_deterministic():
     assert payload["recovered_green_mixed_transverse_seed"]["nodes"] == [
         1, 355, 356, 370,
     ]
+    assert payload["validation"][
+        "current_green_transverse_quadratic_decisive_seed_is_integrated"
+    ]
+    assert payload["recovered_green_transverse_quadratic_seed"][
+        "maximum_seed_transverse_quadratic_norm_upper"
+    ] < 283136.0
     main()
     first = hashlib.sha256(TARGET.read_bytes()).hexdigest()
     main()

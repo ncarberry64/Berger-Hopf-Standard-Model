@@ -113,6 +113,12 @@ all endpoints and midpoints, causal composition, and the transverse--
 transverse remainder remain open.  The maximum four-node outward Frobenius
 upper is `30.44882953782609` at node 1.
 
+The complementary transverse-quadratic seed now evaluates the projected
+coarse direction and each mixed map's leading right-singular direction at the
+same four nodes.  All eight 512-bit action derivatives are finite; the
+largest upper is `283135.9524836309` at node 1.  These directional anchors do
+not yet majorize the entire transverse unit sphere.
+
 Until that test succeeds, the gauge/BRST and nine-particle-fiber Calderón
 first jets remain evaluated affine candidates, not nonlinear physical
 operator authority.
@@ -141,5 +147,6 @@ G7_CURRENT_GREEN_CORRELATED_SCALAR_ALL_INTERVALS_DERIVED = TRUE
 G7_CURRENT_GREEN_CORRELATED_CENTRAL_SCALAR_CAUSAL_COMPOSITION_DERIVED = TRUE
 G7_CURRENT_CENTER_COMPONENTWISE_GREEN_MIDPOINT_ROUTE_OBSTRUCTED_AT_512_BIT = TRUE
 G7_CURRENT_GREEN_MIXED_TRANSVERSE_DECISIVE_NODE_SEED_DERIVED = TRUE
+G7_CURRENT_GREEN_TRANSVERSE_TRANSVERSE_DECISIVE_DIRECTION_SEED_DERIVED = TRUE
 FULL_BHSM_COMPLETE = FALSE
 ```

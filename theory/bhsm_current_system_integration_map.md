@@ -171,6 +171,11 @@ remaining all-endpoint/all-midpoint campaign; it is not yet the global mixed
 remainder or the two-radius certificate.  Its maximum outward Frobenius upper
 is `30.44882953782609` at node 1.
 
+The matching transverse-quadratic seed is also finite on eight selected
+directions, with maximum upper `283135.9524836309` at node 1.  The remaining
+step is an action-derived majorant over the whole transverse unit sphere, not
+another guessed direction or historical-number import.
+
 The physical-completeness matrix now separates capability maturity from
 scientific output authority.  The universal action expansion, quadratic
 descriptor spectrum, vertex/tree-amplitude, LSZ, two- and three-body decay/collision,
