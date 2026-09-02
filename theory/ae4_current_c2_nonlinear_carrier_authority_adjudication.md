@@ -59,6 +59,15 @@ midpoint curvature, signs, and causal preconditioning.  The current missing
 longitudinal object is therefore the correlated midpoint and complete causal
 composition, not another endpoint audit.
 
+That midpoint calculation has now been carried through all 370 intervals.  Its
+induced direction, second incidence, and `DF_m w_m` term remain finite, while
+the intrinsic Hessian enclosure is finite only through interval 354.  On
+intervals 355--369, independently intervalizing the normalized endpoint Green
+axes loses a finite intrinsic enclosure.  This localizes another proof-route
+failure: the Green normalization and endpoint-to-midpoint transport must remain
+one correlated longitudinal scalar object.  It does not establish path
+nonexistence or physical instability.
+
 Until that test succeeds, the gauge/BRST and nine-particle-fiber Calderón
 first jets remain evaluated affine candidates, not nonlinear physical
 operator authority.
@@ -80,5 +89,7 @@ G7_CURRENT_CENTER_GREEN_IMAGE_ANISOTROPIC_RADII_DERIVED = FALSE
 G7_CURRENT_CENTER_NODE1_GREEN_DIRECTIONAL_CURVATURE_DERIVED = TRUE
 G7_CURRENT_CENTER_ALL_POST_RESET_ENDPOINT_GREEN_DIRECTIONAL_CURVATURE_DERIVED = TRUE
 G7_CURRENT_CENTER_GREEN_MIDPOINT_DIRECTIONAL_CURVATURE_DERIVED = FALSE
+G7_CURRENT_CENTER_COMPONENTWISE_GREEN_MIDPOINT_ROUTE_OBSTRUCTED = TRUE
+G7_CURRENT_CENTER_CORRELATED_GREEN_NORMALIZATION_TRANSPORT_DERIVED = FALSE
 FULL_BHSM_COMPLETE = FALSE
 ```

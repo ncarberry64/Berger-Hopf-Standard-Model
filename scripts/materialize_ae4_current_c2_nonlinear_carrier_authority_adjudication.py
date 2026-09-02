@@ -29,6 +29,7 @@ BLOCK_SCREEN = F / "BHSM_N12_GATE7_ACCEPTED_REPLAY_ACTION_BLOCK_SCREEN.json"
 GREEN_PARTITION = A / "BHSM_AE4_CURRENT_C2_GREEN_IMAGE_PARTITION_RECONCILIATION.json"
 GREEN_SEED = F / "BHSM_N12_GATE7_CURRENT_GREEN_DIRECTIONAL_CURVATURE_SEED.json"
 GREEN_ENDPOINTS = F / "BHSM_N12_GATE7_CURRENT_GREEN_DIRECTIONAL_ENDPOINT_CURVATURE.json"
+GREEN_MIDPOINT = F / "BHSM_N12_GATE7_CURRENT_GREEN_HERMITE_SIMPSON_MIDPOINT_CURVATURE.json"
 GAUGE = A / "BHSM_AE4_CURRENT_C2_AFFINE72_GAUGE_CALDERON_FIRST_JET.json"
 PARTICLE = A / "BHSM_AE4_CURRENT_C2_AFFINE72_PARTICLE_FIBER_CALDERON.json"
 TARGET = A / "BHSM_AE4_CURRENT_C2_NONLINEAR_CARRIER_AUTHORITY_ADJUDICATION.json"
@@ -39,6 +40,7 @@ INPUTS = (
     GREEN_PARTITION,
     GREEN_SEED,
     GREEN_ENDPOINTS,
+    GREEN_MIDPOINT,
     GAUGE,
     PARTICLE,
     ROOT / "src/bhsm/interface/ae4_current_c2_nonlinear_carrier_authority_adjudication.py",
@@ -63,13 +65,13 @@ def build_payload() -> dict[str, Any]:
     missing = [str(path) for path in INPUTS if not path.is_file()]
     if missing:
         raise FileNotFoundError(", ".join(missing))
-    transfer, outward, block_screen, green_partition, green_seed, green_endpoints, gauge, particle = (
-        _load(path) for path in INPUTS[:8]
+    transfer, outward, block_screen, green_partition, green_seed, green_endpoints, green_midpoint, gauge, particle = (
+        _load(path) for path in INPUTS[:9]
     )
     if not all(
         row.get("validation_passed") is True
         for row in (
-            transfer, outward, block_screen, green_partition, green_seed, green_endpoints,
+            transfer, outward, block_screen, green_partition, green_seed, green_endpoints, green_midpoint,
             gauge, particle
         )
     ):
@@ -96,6 +98,9 @@ def build_payload() -> dict[str, Any]:
         green_directional_endpoints_derived=green_endpoints["claim_boundary"][
             "CURRENT_CENTER_ALL_POST_RESET_ENDPOINT_GREEN_DIRECTIONAL_CURVATURE_DERIVED"
         ],
+        green_midpoint_componentwise_route_obstructed=green_midpoint[
+            "claim_boundary"
+        ]["CURRENT_CENTER_COMPONENTWISE_GREEN_DIRECTION_BALL_MIDPOINT_ROUTE_OBSTRUCTED"],
         root_nonexistence_claim=decision["root_nonexistence_claim"],
         physical_instability_claim=decision[
             "physical_spacetime_instability_claim"
@@ -152,10 +157,10 @@ def build_payload() -> dict[str, Any]:
             and block_screen["necessary_field_block_test"]["discriminant_upper"]
             < 0.0
         ),
-        "BHSM_native_green_image_partition_is_current_next_object": (
+        "BHSM_native_green_longitudinal_correlation_is_current_next_object": (
             green_partition["validation_passed"]
             and boundary["G7_BHSM_NATIVE_GREEN_IMAGE_PARTITION_RECOVERED"]
-            and "GREEN_IMAGE_LONGITUDINAL_TRANSVERSE" in result[
+            and "CORRELATED_LONGITUDINAL_SCALAR_PARAMETERIZATION" in result[
                 "next_proof_object"
             ]
         ),
@@ -172,6 +177,15 @@ def build_payload() -> dict[str, Any]:
             and green_endpoints["terminal_endpoint_stiffening"][
                 "terminal_node"
             ] == 370
+        ),
+        "componentwise_green_midpoint_obstruction_is_reused": (
+            green_midpoint["validation_passed"]
+            and green_midpoint["componentwise_direction_ball_obstruction"][
+                "first_nonfinite_intrinsic_interval"
+            ] == 355
+            and not green_midpoint["claim_boundary"][
+                "CURRENT_CENTER_GREEN_MIDPOINT_INTRINSIC_CURVATURE_GLOBAL_FINITE_ENCLOSURE_DERIVED"
+            ]
         ),
     }
     return {
@@ -239,6 +253,18 @@ def build_payload() -> dict[str, Any]:
                 "terminal_endpoint_stiffening"
             ]["terminal_to_node1_upper_growth_factor"],
             "raw_terminal_growth_is_not_causal_obstruction": True,
+        },
+        "recovered_green_midpoint_obstruction": {
+            "finite_intrinsic_prefix_intervals": green_midpoint[
+                "componentwise_direction_ball_obstruction"
+            ]["finite_intrinsic_prefix_intervals"],
+            "first_nonfinite_intrinsic_interval": green_midpoint[
+                "componentwise_direction_ball_obstruction"
+            ]["first_nonfinite_intrinsic_interval"],
+            "midpoint_direction_and_second_incidence_remain_finite": green_midpoint[
+                "componentwise_direction_ball_obstruction"
+            ]["midpoint_direction_and_second_incidence_remain_finite"],
+            "physical_instability_or_path_nonexistence_inferred": False,
         },
         "authority_adjudication": result,
         "claim_boundary": boundary,
