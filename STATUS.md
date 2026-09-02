@@ -80,8 +80,14 @@ transfer of the old exact-affine cone: center shift / old `Z2` radius is
 `2.7017477414680254e8`, and diagnostic old-preconditioner `Y` / old radius is
 `5.218603289632254e5`.  Gate 7 is `ACTIVE_NOT_CLOSED`; the exact blocker is
 outward same-center `Y,Z1,Z2` in one causal 74D norm satisfying the self-map
-and contraction inequalities.  No second numerical campaign is authorized,
-and no root-nonexistence claim is made.
+and contraction inequalities.  The correlated central Green scalar is now
+certified on all 370 retained intervals at 384-bit Arb precision, with maximum
+total rate-curvature norm `0.3491272055507006` and maximum axis-neighborhood
+error `5.5312200553564e-6` at node 370.  This closes only the longitudinal
+scalar operand; action-derived mixed Green/transverse and
+transverse-transverse neighborhood remainders, frozen causal preconditioning,
+and the two-radius inequalities remain open.  No second numerical campaign is
+authorized, and no root-nonexistence claim is made.
 `FULL_BHSM_COMPLETE = FALSE`.  The universal action-to-observable
 infrastructure is now machine-classified separately from scientific outputs:
 action expansion, quadratic spectrum, bare vertices/tree exchange, LSZ,

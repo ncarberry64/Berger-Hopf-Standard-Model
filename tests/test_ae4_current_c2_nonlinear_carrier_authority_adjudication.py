@@ -23,6 +23,7 @@ def test_two_negative_transfer_results_do_not_promote_nonlinear_authority():
         green_directional_endpoints_derived=True,
         green_midpoint_componentwise_route_obstructed=True,
         green_correlated_scalar_interval355_finite=True,
+        green_correlated_scalar_all_intervals_derived=True,
         root_nonexistence_claim=False,
         physical_instability_claim=False,
         another_center_or_trajectory_authorized=False,
@@ -31,7 +32,7 @@ def test_two_negative_transfer_results_do_not_promote_nonlinear_authority():
     assert result["same_center_single_radius_contraction_obstructed"]
     assert result["same_center_field_descriptor_block_contraction_obstructed"]
     assert not result["root_nonexistence_inferred"]
-    assert "CORRELATED_CENTRAL_GREEN_SCALAR_CONSTRUCTION" in result[
+    assert "MIXED_GREEN_TRANSVERSE" in result[
         "next_proof_object"
     ]
 
@@ -47,6 +48,7 @@ def test_upstream_physical_overclaims_fail_closed():
             green_directional_endpoints_derived=True,
             green_midpoint_componentwise_route_obstructed=True,
             green_correlated_scalar_interval355_finite=True,
+            green_correlated_scalar_all_intervals_derived=True,
             root_nonexistence_claim=True,
             physical_instability_claim=False,
             another_center_or_trajectory_authorized=False,
@@ -73,7 +75,7 @@ def test_materialized_adjudication_is_valid_and_deterministic():
     assert payload["validation"]["scalar_route_not_left_as_open_next_calculation"]
     assert payload["validation"]["coarse_field_descriptor_route_not_left_open"]
     assert payload["validation"][
-        "BHSM_native_green_longitudinal_correlation_is_current_next_object"
+        "BHSM_native_green_longitudinal_correlation_is_reused"
     ]
     assert payload["validation"]["current_green_directional_seed_is_reused"]
     assert payload["validation"][
@@ -94,6 +96,12 @@ def test_materialized_adjudication_is_valid_and_deterministic():
     assert payload["recovered_green_correlated_scalar_interval355"][
         "midpoint_intrinsic_curvature_upper"
     ] < 0.012207
+    assert payload["validation"][
+        "all_370_correlated_green_scalar_intervals_are_reused"
+    ]
+    assert payload["recovered_green_correlated_scalar_all_intervals"][
+        "intervals_certified"
+    ] == 370
     main()
     first = hashlib.sha256(TARGET.read_bytes()).hexdigest()
     main()

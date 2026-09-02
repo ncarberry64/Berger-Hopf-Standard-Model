@@ -119,7 +119,7 @@ def build_payload() -> dict[str, Any]:
                 "root_nonexistence"
             ]
             == "NOT_DERIVED"
-            and "GREEN_IMAGE_LONGITUDINAL_TRANSVERSE"
+            and "MIXED_GREEN_TRANSVERSE"
             in flux["nonlinear_carrier_authority_adjudication"][
                 "exact_next_proof_object"
             ]
@@ -179,6 +179,7 @@ def build_payload() -> dict[str, Any]:
             "nonlinear_single_radius_carrier_proof": "BHSM_OBSTRUCTED_ROUTE",
             "coarse_field_descriptor_block_radii_proof": "BHSM_OBSTRUCTED_ROUTE",
             "BHSM_native_green_image_partition": "RECOVERED_CURRENT_CENTER",
+            "global_correlated_central_green_scalar": "BHSM_DERIVED_ALL_370_INTERVALS",
             "same_center_green_image_longitudinal_transverse_radii_proof": "NOT_YET_DERIVED",
             "complete_interacting_AE4_encapsulation": "NOT_YET_DERIVED",
             "particle_poles_masses_vertices_collisions": "NOT_DERIVED_BY_THIS_RESULT",

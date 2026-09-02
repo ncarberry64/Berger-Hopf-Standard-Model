@@ -77,6 +77,19 @@ two endpoints; those errors remain obligations of the mixed/transverse
 remainder.  Thus the component-box failure is reconciled at its first onset,
 while global and causal promotion remain open.
 
+The same correlation-preserving construction is now certified on all 370
+retained intervals.  Exact Arb intervals, rather than independently rounded
+component boxes, carry the endpoint direction and its first and second action
+variations into each midpoint.  This closes the global central Green scalar
+operand.  Its maximum intrinsic midpoint curvature norm upper is
+`0.34991350135064914`, its maximum local HS second-residual norm upper is
+`0.08778063910324282`, and interval 355 sharply reproduces the independent
+seed.  The exact Green axis remains inside a persisted neighborhood whose
+maximum error is `5.5312200553564e-6` at node 370, so the
+mixed Green/transverse and transverse/transverse remainder is the next proof
+object; neither causal preconditioning nor the two-radius theorem is promoted
+by the scalar result alone.
+
 Until that test succeeds, the gauge/BRST and nine-particle-fiber Calderón
 first jets remain evaluated affine candidates, not nonlinear physical
 operator authority.
@@ -99,8 +112,8 @@ G7_CURRENT_CENTER_NODE1_GREEN_DIRECTIONAL_CURVATURE_DERIVED = TRUE
 G7_CURRENT_CENTER_ALL_POST_RESET_ENDPOINT_GREEN_DIRECTIONAL_CURVATURE_DERIVED = TRUE
 G7_CURRENT_CENTER_GREEN_MIDPOINT_DIRECTIONAL_CURVATURE_DERIVED = FALSE
 G7_CURRENT_CENTER_COMPONENTWISE_GREEN_MIDPOINT_ROUTE_OBSTRUCTED = TRUE
-G7_CURRENT_CENTER_CORRELATED_GREEN_NORMALIZATION_TRANSPORT_DERIVED = FALSE
+G7_CURRENT_CENTER_CORRELATED_GREEN_NORMALIZATION_TRANSPORT_DERIVED = TRUE
 G7_CURRENT_GREEN_CORRELATED_SCALAR_INTERVAL355_FINITE = TRUE
-G7_CURRENT_GREEN_CORRELATED_SCALAR_ALL_INTERVALS_DERIVED = FALSE
+G7_CURRENT_GREEN_CORRELATED_SCALAR_ALL_INTERVALS_DERIVED = TRUE
 FULL_BHSM_COMPLETE = FALSE
 ```

@@ -146,12 +146,17 @@ subsequently evaluated on the frozen replay center:
 `Y_lower=6.15777040956615e-7`, `Z1_upper=0.4493650871145146`, and
 `Z2_lower=3376470.2602736303`.  Their necessary single-radius discriminant is
 `-7.31661146299723`, so that scalar contraction route is obstructed by
-proof-coordinate amplification.  Gate 7 remains `ACTIVE_NOT_CLOSED` on one
-reduced owner: componentwise or action-owned field/descriptor block radii
-polynomials using the existing interval operands at the same frozen center.
-No new numerical campaign or fitted block scale is authorized.  The failure
-is not root nonexistence or physical instability, and the background is not
-certified for universal physical predictions.
+proof-coordinate amplification.  The BHSM-native Green partition then closes
+the correlation-preserving central scalar on all 370 intervals: the maximum
+intrinsic midpoint norm upper is `0.34991350135064914`, and the maximum local
+HS second-residual norm upper is `0.08778063910324282`.  Gate 7 remains
+`ACTIVE_NOT_CLOSED` on one reduced owner: bound the certified Green-axis
+neighborhood with mixed Green/transverse and transverse-transverse remainders,
+then apply the frozen causal preconditioner and complete the longitudinal/
+transverse two-radius screen.  No new numerical campaign or fitted block scale
+is authorized.  The remaining proof obligation is not root nonexistence or
+physical instability, and the background is not certified for universal
+physical predictions.
 
 The physical-completeness matrix now separates capability maturity from
 scientific output authority.  The universal action expansion, quadratic

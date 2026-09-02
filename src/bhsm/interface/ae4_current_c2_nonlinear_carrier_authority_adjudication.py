@@ -27,6 +27,7 @@ def nonlinear_carrier_authority_contract(
     green_directional_endpoints_derived: bool,
     green_midpoint_componentwise_route_obstructed: bool,
     green_correlated_scalar_interval355_finite: bool,
+    green_correlated_scalar_all_intervals_derived: bool,
     root_nonexistence_claim: bool,
     physical_instability_claim: bool,
     another_center_or_trajectory_authorized: bool,
@@ -47,6 +48,8 @@ def nonlinear_carrier_authority_contract(
         raise ValueError("the current componentwise Green midpoint obstruction is required")
     if not green_correlated_scalar_interval355_finite:
         raise ValueError("the correlated Green scalar interval-355 reconciliation is required")
+    if not green_correlated_scalar_all_intervals_derived:
+        raise ValueError("the all-interval correlated Green scalar certificate is required")
     promoted = bool(
         affine_transfer_allowed
         and not same_center_contraction_obstructed
@@ -67,6 +70,7 @@ def nonlinear_carrier_authority_contract(
         "current_center_all_post_reset_green_directional_endpoint_curvature_derived": True,
         "current_center_componentwise_green_midpoint_route_obstructed": True,
         "current_green_correlated_scalar_interval355_finite": True,
+        "current_green_correlated_scalar_all_intervals_derived": True,
         "current_affine_operator_jets_have_nonlinear_authority": promoted,
         "accepted_replay_center_or_trajectory_may_be_reselected": False,
         "physical_spacetime_instability_inferred": False,
@@ -77,9 +81,9 @@ def nonlinear_carrier_authority_contract(
         ),
         "obstruction_scope_extended_to_all_existence_theorems": False,
         "next_proof_object": (
-            "EXTEND_THE_CORRELATED_CENTRAL_GREEN_SCALAR_CONSTRUCTION_TO_ALL_"
-            "370_INTERVALS_THEN_BOUND_THE_CERTIFIED_AXIS_NEIGHBORHOOD_WITH_"
-            "MIXED_AND_TRANSVERSE_REMAINDERS_FOR_THE_GREEN_IMAGE_"
+            "BOUND_THE_CERTIFIED_GREEN_AXIS_NEIGHBORHOOD_WITH_ACTION_DERIVED_"
+            "MIXED_GREEN_TRANSVERSE_AND_TRANSVERSE_TRANSVERSE_REMAINDERS_THEN_"
+            "APPLY_THE_FROZEN_CAUSAL_PRECONDITIONER_AND_"
             "LONGITUDINAL_TRANSVERSE_TWO_RADIUS_SCREEN"
         ),
         "why_next": (
@@ -110,9 +114,9 @@ def claim_boundary() -> dict[str, Any]:
         "G7_CURRENT_CENTER_ALL_POST_RESET_ENDPOINT_GREEN_DIRECTIONAL_CURVATURE_DERIVED": True,
         "G7_CURRENT_CENTER_GREEN_MIDPOINT_DIRECTIONAL_CURVATURE_DERIVED": False,
         "G7_CURRENT_CENTER_COMPONENTWISE_GREEN_MIDPOINT_ROUTE_OBSTRUCTED": True,
-        "G7_CURRENT_CENTER_CORRELATED_GREEN_NORMALIZATION_TRANSPORT_DERIVED": False,
+        "G7_CURRENT_CENTER_CORRELATED_GREEN_NORMALIZATION_TRANSPORT_DERIVED": True,
         "G7_CURRENT_GREEN_CORRELATED_SCALAR_INTERVAL355_FINITE": True,
-        "G7_CURRENT_GREEN_CORRELATED_SCALAR_ALL_INTERVALS_DERIVED": False,
+        "G7_CURRENT_GREEN_CORRELATED_SCALAR_ALL_INTERVALS_DERIVED": True,
         "FULL_BHSM_COMPLETE": False,
     }
 
