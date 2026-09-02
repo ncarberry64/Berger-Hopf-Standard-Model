@@ -72,7 +72,12 @@ affine-72 first-jet candidates on the canonical-stop proper-time path.  The
 remaining bridge is value-level: promote those candidates on a closed
 nonlinear stop family, compose the geometry and interacting HS/mixed blocks,
 insert them into the existing balance, and transport the full interacting
-traces into the already-identified enclosure.
+traces into the already-identified enclosure.  Hindsight integration has now
+retired the scalar same-center `Y,Z1,Z2` request: those operands were already
+evaluated and their single-radius discriminant is strictly negative because
+of proof-coordinate amplification.  The valid next proof is componentwise or
+action-block radii at the same frozen center, not a new trajectory and not a
+claim of physical instability.
 
 ## Claim boundary
 

@@ -41,6 +41,7 @@ INPUTS = (
     A / "BHSM_AE4_CURRENT_C2_STOP_GAUGE_BRST_CALDERON.json",
     A / "BHSM_AE4_CURRENT_C2_AFFINE72_GAUGE_CALDERON_FIRST_JET.json",
     A / "BHSM_AE4_CURRENT_C2_AFFINE72_PARTICLE_FIBER_CALDERON.json",
+    A / "BHSM_AE4_CURRENT_C2_NONLINEAR_CARRIER_AUTHORITY_ADJUDICATION.json",
     ROOT / "src/bhsm/interface/ae4_c2_stratified_event_flux_assembly.py",
 )
 
@@ -111,9 +112,10 @@ def build_payload() -> dict[str, Any]:
     solution = witness["solution"]
     noether = witness["noether"]
     boundary = claim_boundary()
-    gauge_brst = json_sources[-3]
-    gauge_first_jet = json_sources[-2]
-    particle_fiber = json_sources[-1]
+    gauge_brst = json_sources[-4]
+    gauge_first_jet = json_sources[-3]
+    particle_fiber = json_sources[-2]
+    nonlinear_authority = json_sources[-1]
     validation = {
         "all_source_artifacts_validated": all(row["validation_passed"] for row in json_sources),
         "six_required_sectors_explicit": witness["direct_sum"]["all_required_sectors_explicit"],
@@ -154,6 +156,18 @@ def build_payload() -> dict[str, Any]:
             and not particle_fiber["carrier"]["nonlinear_exact_family_authority"]
             and not particle_fiber["claim_boundary"][
                 "CURRENT_C2_PHYSICAL_MASS_OPERATOR_DERIVED"
+            ]
+        ),
+        "nonlinear_authority_obstruction_attached_without_physical_overclaim": (
+            nonlinear_authority["validation_passed"]
+            and nonlinear_authority["claim_boundary"][
+                "G7_SINGLE_RADIUS_74D_CONTRACTION_ROUTE_OBSTRUCTED"
+            ]
+            and not nonlinear_authority["claim_boundary"][
+                "G7_ROOT_NONEXISTENCE_DERIVED"
+            ]
+            and not nonlinear_authority["claim_boundary"][
+                "G7_PHYSICAL_SPACETIME_INSTABILITY_DERIVED"
             ]
         ),
         "physical_sector_values_not_overclaimed": not boundary[
@@ -218,6 +232,16 @@ def build_payload() -> dict[str, Any]:
                     "THE_NONLINEAR_STOP_FAMILY_AND_INTERACTING_HS_MIXED_"
                     "FERMION_BLOCK_ARE_NOT_YET_CLOSED"
                 ),
+            },
+            "nonlinear_carrier_authority_adjudication": {
+                "single_radius_74D_contraction_route": "OBSTRUCTED",
+                "root_nonexistence": "NOT_DERIVED",
+                "physical_spacetime_instability": "NOT_DERIVED",
+                "new_center_or_trajectory": "NOT_AUTHORIZED",
+                "current_affine_operator_jets_have_nonlinear_authority": False,
+                "exact_next_proof_object": nonlinear_authority[
+                    "exact_next_calculation"
+                ],
             },
             "finite_theorem_witness": witness,
             "claim_boundary": boundary,

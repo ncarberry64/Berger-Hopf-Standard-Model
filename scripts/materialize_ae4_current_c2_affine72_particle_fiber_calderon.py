@@ -29,6 +29,7 @@ from scripts.materialize_ae4_current_c2_affine72_gauge_calderon_first_jet import
     CENTER_DATA,
     FIRST_HIT,
     MOVING,
+    OUTWARD_74D,
     TRANSFER,
     build_affine72_proper_time_carrier,
 )
@@ -46,6 +47,7 @@ INPUTS = (
     CENTER,
     CENTER_DATA,
     FIRST_HIT,
+    OUTWARD_74D,
     FIBERS,
     GAUGE_JET,
     ROOT / "src/bhsm/interface/action_extension_ae2_angular_dini_uniformity.py",
@@ -88,12 +90,13 @@ def build_payload() -> dict[str, Any]:
     missing = [str(path) for path in INPUTS if not path.is_file()]
     if missing:
         raise FileNotFoundError(", ".join(missing))
-    transfer, moving, fibers, gauge = (
-        _load(path) for path in (TRANSFER, MOVING, FIBERS, GAUGE_JET)
+    transfer, moving, outward, fibers, gauge = (
+        _load(path)
+        for path in (TRANSFER, MOVING, OUTWARD_74D, FIBERS, GAUGE_JET)
     )
     if not all(
         row.get("validation_passed") is True
-        for row in (transfer, moving, fibers, gauge)
+        for row in (transfer, moving, outward, fibers, gauge)
     ):
         raise RuntimeError("validated affine carrier, fiber, and moving-stop inputs required")
 
@@ -228,10 +231,17 @@ def build_payload() -> dict[str, Any]:
                 ),
             },
             "claim_boundary": boundary,
+            "nonlinear_authority_hindsight": {
+                "same_center_single_radius_contraction_obstructed": outward[
+                    "decision"
+                ]["current_same_center_contraction_theorem_obstructed"],
+                "new_center_or_trajectory_authorized": False,
+            },
             "exact_next_calculation": (
-                "REPEAT_THE_SAME_PRODUCT_DIRAC_COTANGENT_CONTRACTION_ON_THE_"
-                "CLOSED_NONLINEAR_STOP_FAMILY_AND_COMPOSE_THE_EXISTING_"
-                "FAMILY_NONCENTRAL_HS_MIXED_OPERATOR_BEFORE_EXTRACTING_POLES"
+                "CERTIFY_THE_SAME_FROZEN_CENTER_WITH_AN_ACTION_BLOCK_OR_"
+                "COMPONENTWISE_RADII_POLYNOMIAL_USING_EXISTING_OUTWARD_"
+                "OPERANDS,_THEN_COMPOSE_THE_FAMILY_NONCENTRAL_HS_MIXED_"
+                "OPERATOR_BEFORE_EXTRACTING_POLES"
             ),
             "inputs": {path.relative_to(ROOT).as_posix(): _sha(path) for path in INPUTS},
             "validation": validation,

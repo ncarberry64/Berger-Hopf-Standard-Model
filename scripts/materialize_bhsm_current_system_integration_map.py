@@ -128,6 +128,8 @@ PATHS = {
     "augmented_fixed_descriptor_endpoint": "artifacts/flagship_integration/BHSM_N12_GATE7_AUGMENTED_FIXED_DESCRIPTOR_NEWTON_ENDPOINT_CANDIDATE.json",
     "augmented_fixed_descriptor_replay": "artifacts/flagship_integration/BHSM_N12_GATE7_AUGMENTED_FIXED_DESCRIPTOR_NEWTON_MIDPOINT_REPLAY.json",
     "augmented_minimum_contraction": "artifacts/flagship_integration/BHSM_N12_GATE7_AUGMENTED_FIXED_DESCRIPTOR_MINIMUM_CONTRACTION_ADJUDICATION.json",
+    "outward_same_center_74d": "artifacts/flagship_integration/BHSM_N12_GATE7_ACCEPTED_REPLAY_CENTER_OUTWARD_74D_CONTRACTION.json",
+    "ae4_nonlinear_carrier_authority": "artifacts/action_extension/BHSM_AE4_CURRENT_C2_NONLINEAR_CARRIER_AUTHORITY_ADJUDICATION.json",
     "final_force_kkt_verdict": "artifacts/flagship_integration/BHSM_N12_GATE7_FINAL_EXACT_CENTER_FORCE_KKT_HESSIAN_VERDICT.json",
     "causal_y_z1_z2_margin_budget": "artifacts/flagship_integration/BHSM_N12_GATE7_CAUSAL_Y_Z1_Z2_MARGIN_BUDGET_AUDIT.json",
     "recentered_cone_spectrum": "artifacts/flagship_integration/BHSM_N12_GATE7_RECENTERED_CONE_BOUNDARY_CLUSTER_SPECTRUM.json",
@@ -286,6 +288,10 @@ def build_payload() -> dict[str, Any]:
     augmented_endpoint = records["augmented_fixed_descriptor_endpoint"]
     augmented_replay = records["augmented_fixed_descriptor_replay"]
     augmented_minimum_contraction = records["augmented_minimum_contraction"]
+    outward_same_center_74d = records["outward_same_center_74d"]
+    ae4_nonlinear_carrier_authority = records[
+        "ae4_nonlinear_carrier_authority"
+    ]
     causal_y_z1_z2_margin_budget = records["causal_y_z1_z2_margin_budget"]
     compact_reset_propagation = records["compact_reset_propagation"]
     compact_reset_open_subball = records["compact_reset_open_subball"]
@@ -374,12 +380,12 @@ def build_payload() -> dict[str, Any]:
             "GATE7_HEAT_ZETA_CHAIN",
             "AE2 joint event/child seam with internal Mf, M_C2, U_R, W_phys and contact blocks",
             "AE2 two-sided transmission plus finite endpoint/Friedrichs alternatives; only external birth trace zero",
-            ["ae2_domain", "source_ontology", "one_seam", "heat_bound", "force_functional", "dop_response", "nhim_tail", "capture_tube", "compact_reset_domain", "compact_reset_propagation", "compact_reset_open_subball", "open_family_stop_reduction", "global_connection", "augmented_fixed_descriptor_jacobians", "augmented_fixed_descriptor_predictor", "augmented_fixed_descriptor_endpoint", "augmented_fixed_descriptor_replay", "augmented_minimum_contraction"],
-            ["completion_dag", "gate_ledger", "augmented_minimum_contraction"],
-            "ACTIVE_NOT_CLOSED_SAME_CENTER_INTERVAL_CONTRACTION", "current AE2 Gate-7 DAG",
+            ["ae2_domain", "source_ontology", "one_seam", "heat_bound", "force_functional", "dop_response", "nhim_tail", "capture_tube", "compact_reset_domain", "compact_reset_propagation", "compact_reset_open_subball", "open_family_stop_reduction", "global_connection", "augmented_fixed_descriptor_jacobians", "augmented_fixed_descriptor_predictor", "augmented_fixed_descriptor_endpoint", "augmented_fixed_descriptor_replay", "augmented_minimum_contraction", "outward_same_center_74d"],
+            ["completion_dag", "gate_ledger", "outward_same_center_74d", "ae4_nonlinear_carrier_authority"],
+            "ACTIVE_NOT_CLOSED_SAME_CENTER_ACTION_BLOCK_RADII_POLYNOMIAL", "current AE2 Gate-7 DAG plus AE4 hindsight adjudication",
             ["GATE7_KKT_HESSIAN", "GENERATION_FAMILY_PROJECTORS"],
             ["strict gap, exact power tail, infinite nonrealized angular tail, and chord 3 are not current dependencies"],
-            ["G7_SAME_CENTER_INTERVAL_CONTRACTION"],
+            ["G7_SAME_CENTER_ACTION_BLOCK_RADII_POLYNOMIAL"],
         ),
         _subsystem(
             "GATE7_KKT_HESSIAN",
@@ -470,7 +476,8 @@ def build_payload() -> dict[str, Any]:
         {"id": "G7_CORRELATED_QUARTER_STEP_CENTER_STOP_WITNESS", "classification": "RESOLVED_BY_EXACT_TRANSVERSE_FIRST_STOP", "current_effect": "the final exact-center cone, response, causal Z2, strict preterminal selected-eigenvalue margins, canonical earliest stop, uniform negative flow derivative, terminal-cell uniqueness, and local differentiable first-stop time are certified"},
         {"id": "G7_DECORRELATED_BINARY64_CARRIER_COMPOSITION", "classification": "INVALIDATED_PROOF_ROUTE", "current_effect": "independent binary64 component balls produce wrapping blowup and are presentation data only; correlated outward Arb interval strings own global composition"},
         {"id": "G7_OLD_GAUSS12_RECENTERED_NUMERICAL_CONE_TRANSFER", "classification": "INVALIDATED_PROOF_ROUTE", "current_effect": "the old Gauss12 center differs from the exact-affine center by 120901.05128628464 candidate-cone radii; retain its theorem formulas but rebuild the numerical Z2/cone ball at the final center"},
-        {"id": "G7_SAME_CENTER_INTERVAL_CONTRACTION", "classification": "CURRENT_BLOCKER", "current_effect": "the retained-exact-field 741-node augmented derivative and 74D recurrence validate, and the one authorized nonlinear replay contracts the maximum from 1.3706618261694602e-7 to 1.2217621999603292e-7. The replay center is 2.7017477414680254e8 old exact-affine Z2 radii from that theorem's center, and the diagnostic old-preconditioner image is 5.218603289632254e5 old radii, so the old cone cannot transfer. The exact owner is outward same-center Y=||AF||, Z1=||I-A DF||, and causal Z2 in one 74D norm, with Y+Z1*r+Z2*r^2<r and Z1+2*Z2*r<1. No second numerical campaign or root-nonexistence claim is authorized"},
+        {"id": "G7_SAME_CENTER_INTERVAL_CONTRACTION", "classification": "OBSTRUCTED_PROOF_ROUTE", "current_effect": "the outward same-center operands have already been evaluated: Y_lower=6.15777040956615e-7, Z1_upper=0.4493650871145146, Z2_lower=3376470.2602736303, and the necessary scalar discriminant is -7.31661146299723. The single-radius theorem is obstructed by proof-coordinate amplification; this is neither root nonexistence nor physical instability, and no new center or trajectory is authorized"},
+        {"id": "G7_SAME_CENTER_ACTION_BLOCK_RADII_POLYNOMIAL", "classification": "CURRENT_BLOCKER", "current_effect": "on the same frozen accepted replay center, retain the existing outward interval operands and replace the failed single scalar radius by componentwise or action-owned field/descriptor block radii. The block scaling must be inherited from the action and causal norm, not fitted to force contraction"},
         {"id": "DECORRELATED_SCALAR_SECOND_VARIATION", "classification": "INVALIDATED_PROOF_ROUTE", "current_effect": "finite first variation survives; all 8,692 scalar denominator cells route to signed/common-frame correlation"},
         {"id": "G7_HESSIAN_WARD_SCALAR", "classification": "DOWNSTREAM_ONLY", "current_effect": "follows the force/KKT root"},
         {"id": "CURRENT_FULL_FIELD_ACTION_ATTACHMENT", "classification": "DOWNSTREAM_ONLY", "current_effect": "the retained 98D N12 local oracle is geometry-only; AE2 owns the fermion reset domain but supplies no new propagating field, coefficient, or scale. Physical spectrum and observable promotion require one current same-action gauge/ghost, fermion, HS/scalar attachment with history/seam S1-S4, local momentum symbols, cross-sector blocks, and action-selected saddle data"},
@@ -484,7 +491,7 @@ def build_payload() -> dict[str, Any]:
         {"id": "EVENT_RESET_TO_INTERNAL_SOURCE", "class": "A", "priority": 0, "status": "RESOLVED_BY_EXISTING_CLOSED_SYSTEM_ONTOLOGY", "evidence": PATHS["source_ontology"]},
         {"id": "DOP853_TO_RESPONSE_VARIATION", "class": "C", "priority": 1, "status": "RESOLVED_FOR_EXACT_CENTER_AND_FINITE_DIRECT_FIRST_VARIATION", "evidence": PATHS["dop_second_variation"]},
         {"id": "RESPONSE_TO_CORRELATED_Y_Z1_Z2", "class": "C", "priority": 1, "status": "RESOLVED_FINAL_EXACT_CENTER_AND_CAUSAL_Z2_CERTIFIED", "evidence": PATHS["exact_affine_first_stop"]},
-        {"id": "FINITE_HISTORY_TO_HEAT_ZETA_COVECTOR", "class": "C", "priority": 0, "status": "CURRENT_BLOCKER_SAME_CENTER_OUTWARD_Y_Z1_Z2_INTERVAL_CONTRACTION", "evidence": PATHS["augmented_minimum_contraction"]},
+        {"id": "FINITE_HISTORY_TO_HEAT_ZETA_COVECTOR", "class": "C", "priority": 0, "status": "CURRENT_BLOCKER_SAME_CENTER_ACTION_BLOCK_RADII_POLYNOMIAL", "evidence": PATHS["ae4_nonlinear_carrier_authority"]},
         {"id": "COMPACT_RESET_DOMAIN_TO_CAPTURE_OR_STOP", "class": "B", "priority": 0, "status": "RESOLVED_BY_CERTIFIED_TRANSVERSE_CANONICAL_EARLIEST_STOP_AND_RETAINED_OPEN_FAMILY_THEOREM", "evidence": PATHS["exact_affine_first_hit_interval"]},
         {"id": "FAMILY_PROJECTORS_TO_MASS_CKM", "class": "B", "priority": 2, "status": "MISSING_ACTION_SELECTED_SECTOR_RESPONSE_EIGENBASES", "evidence": PATHS["generation"]},
         {"id": "NEUTRAL_PROPAGATION_TO_PMNS", "class": "B", "priority": 2, "status": "MISSING_THREE_SLOT_PROJECTION_AND_CHARGED_NEUTRAL_EIGENBASES", "evidence": PATHS["pmns"]},
@@ -991,6 +998,21 @@ def build_payload() -> dict[str, Any]:
                 "next_Gate7_numerical_campaign_authorized"
             ] is False
         ),
+        "same_center_scalar_contraction_is_evaluated_and_obstructed": (
+            outward_same_center_74d["validation_passed"] is True
+            and outward_same_center_74d["decision"][
+                "current_same_center_contraction_theorem_obstructed"
+            ]
+            and outward_same_center_74d["outward_operands"][
+                "necessary_discriminant_upper_1_minus_4_Ylower_Z2lower"
+            ]
+            < 0.0
+            and ae4_nonlinear_carrier_authority["validation_passed"] is True
+            and ae4_nonlinear_carrier_authority["claim_boundary"][
+                "G7_SAME_CENTER_ACTION_BLOCK_RADII_POLYNOMIAL_DERIVED"
+            ]
+            is False
+        ),
         "quarter_green_corrected_carrier_is_certified": (
             recentered_cone_spectrum["validation_passed"] is True
             and recentered_cone_projector["validation_passed"] is True
@@ -1100,9 +1122,9 @@ def build_payload() -> dict[str, Any]:
         "version_lineage": lineage,
         "blocker_reconciliation": blockers,
         "interface_gaps": gaps,
-        "current_irreducible_object": "G7_SAME_CENTER_INTERVAL_CONTRACTION",
+        "current_irreducible_object": "G7_SAME_CENTER_ACTION_BLOCK_RADII_POLYNOMIAL",
         "current_irreducible_objects": [
-            "G7_SAME_CENTER_INTERVAL_CONTRACTION",
+            "G7_SAME_CENTER_ACTION_BLOCK_RADII_POLYNOMIAL",
         ],
         "integration_order": ["A_EXISTING_COMPOSITION", "C_IMPLEMENTATION", "B_THEOREM", "D_NEW_THEORY_CHOICE"],
         "validation": validations,
@@ -1116,7 +1138,7 @@ def build_payload() -> dict[str, Any]:
             "Gate7": "ACTIVE_NOT_CLOSED",
             "FULL_BHSM_COMPLETE": False,
         },
-        "exact_next_dependency": "ON_THE_ACCEPTED_ONE_SHOT_REPLAY_CENTER,_PRODUCE_OUTWARD_Y=||A*F||,_Z1=||I-A*DF||,_AND_A_SAME_CENTER_CAUSAL_Z2_IN_ONE_74D_NORM;_EXHIBIT_R_WITH_Y+Z1*R+Z2*R^2<R_AND_Z1+2*Z2*R<1;_DO_NOT_START_ANOTHER_NUMERICAL_CAMPAIGN_OR_TRANSFER_THE_OLD_EXACT_AFFINE_Z2_CONE",
+        "exact_next_dependency": "ON_THE_SAME_FROZEN_ACCEPTED_REPLAY_CENTER,_USE_THE_EXISTING_OUTWARD_INTERVAL_OPERANDS_TO_BUILD_COMPONENTWISE_OR_ACTION_OWNED_FIELD_DESCRIPTOR_BLOCK_RADII_POLYNOMIALS;_DO_NOT_START_ANOTHER_NUMERICAL_CAMPAIGN,_FIT_THE_BLOCK_SCALING,_OR_REUSE_THE_OBSTRUCTED_SINGLE_RADIUS_CONE",
         "FULL_BHSM_COMPLETE": False,
     }
 

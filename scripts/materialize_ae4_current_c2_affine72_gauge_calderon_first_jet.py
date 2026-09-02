@@ -39,6 +39,7 @@ MOVING = F / "BHSM_N12_RESET_STRATUM_MOVING_ENDPOINT_JETS.json"
 CENTER = F / "BHSM_N12_GATE7_AUGMENTED_FIXED_DESCRIPTOR_NEWTON_ENDPOINT_CANDIDATE.json"
 CENTER_DATA = CENTER.with_suffix(".npz")
 FIRST_HIT = F / "BHSM_N12_GATE7_EXACT_AFFINE_TERMINAL_INTERVAL_NEWTON_FIRST_HIT.json"
+OUTWARD_74D = F / "BHSM_N12_GATE7_ACCEPTED_REPLAY_CENTER_OUTWARD_74D_CONTRACTION.json"
 STOP_GAUGE = A / "BHSM_AE4_CURRENT_C2_STOP_GAUGE_BRST_CALDERON.json"
 TARGET = A / "BHSM_AE4_CURRENT_C2_AFFINE72_GAUGE_CALDERON_FIRST_JET.json"
 INPUTS = (
@@ -49,6 +50,7 @@ INPUTS = (
     CENTER,
     CENTER_DATA,
     FIRST_HIT,
+    OUTWARD_74D,
     STOP_GAUGE,
     ROOT / "src/bhsm/interface/ae4_current_c2_affine72_gauge_calderon_first_jet.py",
     ROOT / "src/bhsm/interface/aether_cancelled_arc_proper_time_pullback.py",
@@ -190,13 +192,29 @@ def build_payload() -> dict[str, Any]:
     missing = [str(path) for path in INPUTS if not path.is_file()]
     if missing:
         raise FileNotFoundError(", ".join(missing))
-    affine, transfer, moving, center, first_hit, stop_gauge = (
+    affine, transfer, moving, center, first_hit, outward, stop_gauge = (
         _load(path)
-        for path in (AFFINE, TRANSFER, MOVING, CENTER, FIRST_HIT, STOP_GAUGE)
+        for path in (
+            AFFINE,
+            TRANSFER,
+            MOVING,
+            CENTER,
+            FIRST_HIT,
+            OUTWARD_74D,
+            STOP_GAUGE,
+        )
     )
     if not all(
         row.get("validation_passed") is True
-        for row in (affine, transfer, moving, center, first_hit, stop_gauge)
+        for row in (
+            affine,
+            transfer,
+            moving,
+            center,
+            first_hit,
+            outward,
+            stop_gauge,
+        )
     ):
         raise RuntimeError("validated affine, stop, moving-endpoint, and gauge inputs required")
 
@@ -318,11 +336,19 @@ def build_payload() -> dict[str, Any]:
                 ),
             },
             "claim_boundary": boundary,
+            "nonlinear_authority_hindsight": {
+                "same_center_outward_74D_operands_already_evaluated": True,
+                "single_radius_contraction_obstructed": outward["decision"][
+                    "current_same_center_contraction_theorem_obstructed"
+                ],
+                "root_nonexistence_or_physical_instability_inferred": False,
+                "new_center_or_trajectory_authorized": False,
+            },
             "exact_next_calculation": (
-                "CLOSE_THE_ALREADY_LOCALIZED_SAME_CENTER_74D_INTERVAL_"
-                "CONTRACTION_OR_EQUIVALENT_CONTINUOUS_OUTWARD_VARIATIONAL_"
-                "CARRIER,_THEN_REPEAT_THIS_IDENTICAL_PROPER_TIME_COTANGENT_"
-                "CONTRACTION_WITH_NONLINEAR_AUTHORITY"
+                "ON_THE_SAME_FROZEN_REPLAY_CENTER,_BUILD_THE_ACTION_BLOCK_"
+                "OR_COMPONENTWISE_RADII_POLYNOMIAL_FROM_THE_EXISTING_"
+                "OUTWARD_INTERVAL_OPERANDS;_DO_NOT_RESTART_THE_TRAJECTORY_"
+                "OR_REUSE_THE_OBSTRUCTED_SINGLE_RADIUS_CONE"
             ),
             "inputs": {path.relative_to(ROOT).as_posix(): _sha(path) for path in INPUTS},
             "validation": validation,
