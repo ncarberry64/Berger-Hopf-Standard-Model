@@ -4218,3 +4218,28 @@ Exact next object:
   external experimental data directly from machine claim boundaries.
 - Scientific milestone:
   `AE4_EXISTING_PARTICLE_AND_ENCLOSURE_ASSETS_SYSTEM_INTEGRATED`.
+
+## AE4 future-collapse relative-boundary domain
+
+- The physical outer route is now selected: one future-directed
+  parent-to-child relative-boundary domain at the first impedance surface,
+  not a reciprocal reflected cap or a static reset-graph state selector.
+- Eliminating the returned child block gives the same-action retarded Schur
+  complement `H_eff^R=H_pp-H_pc(H_cc^R)^(-1)H_cp`.
+- The exact identity
+  `Im H_eff^R=H_pc(H_cc^R)^(-dagger)Im(H_cc^R)(H_cc^R)^(-1)H_cp`
+  proves causal passivity when the child block is passive.
+- The full parent–child action remains closed while the reduced parent may be
+  dissipative. Gauge, constraint, ghost, spinor, scalar and metric blocks use
+  the same retarded prescription.
+- AE3.1's reflection no-go remains valid on its old domain. AE4 bypasses its
+  assumption but has not yet evaluated the current-C2 child impedance or the
+  Maxwell residue.
+- Scientific milestone:
+  `AE4_FUTURE_COLLAPSE_RELATIVE_BOUNDARY_DOMAIN_CLASS_SELECTED`.
+- Recall integration: v17.84 already owns the `F_child` boundary canonical
+  relation, v17.86 evaluates the finite-chart metric/lapse DtN slice and its
+  nonclosing static mismatch, v17.87 owns persistent nonequilibrium
+  child/first-exit decay semantics, and AE2 supplies the positive nonfermion
+  child-core impedance lower. AE4 extends these objects; it does not restart
+  the complete-child calculation.
