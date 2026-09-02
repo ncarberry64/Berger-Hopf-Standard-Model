@@ -38,6 +38,7 @@ INPUTS = (
     A / "BHSM_AE3_C2_LORENTZIAN_GAUGE_GHOST_FREQUENCY_HESSIAN.json",
     A / "BHSM_AE3_C2_HS_FERMION_MIXED_VARIATION.json",
     ROOT / "artifacts/n12_continuum_majorant_effectiveness/BHSM_CONTINUUM_EVENT_CHILD_CERTIFICATE.json",
+    A / "BHSM_AE4_CURRENT_C2_STOP_GAUGE_BRST_CALDERON.json",
     ROOT / "src/bhsm/interface/ae4_c2_stratified_event_flux_assembly.py",
 )
 
@@ -108,6 +109,7 @@ def build_payload() -> dict[str, Any]:
     solution = witness["solution"]
     noether = witness["noether"]
     boundary = claim_boundary()
+    gauge_brst = json_sources[-1]
     validation = {
         "all_source_artifacts_validated": all(row["validation_passed"] for row in json_sources),
         "six_required_sectors_explicit": witness["direct_sum"]["all_required_sectors_explicit"],
@@ -122,6 +124,15 @@ def build_payload() -> dict[str, Any]:
             and solution["effective_imaginary_part_positive_semidefinite"]
         ),
         "noether_contraction_exact": abs(noether["canonical_noether_flux_residual"]) < 2.0e-14,
+        "canonical_stop_gauge_BRST_center_block_attached": (
+            gauge_brst["claim_boundary"][
+                "AE4_CURRENT_C2_CANONICAL_STOP_COEXACT_CALDERON_CENTER_EVALUATED"
+            ]
+            and gauge_brst["claim_boundary"][
+                "AE4_CURRENT_C2_CANONICAL_STOP_BRST_QUOTIENT_CENTER_EVALUATED"
+            ]
+            and gauge_brst["validation_passed"]
+        ),
         "physical_sector_values_not_overclaimed": not boundary[
             "AE4_CURRENT_C2_NONZERO_SECTOR_CALDERON_BLOCKS_EVALUATED"
         ],
@@ -133,6 +144,21 @@ def build_payload() -> dict[str, Any]:
             "action_version": ACTION_VERSION,
             "classification": CLASSIFICATION,
             "assembly_contract": assembly_contract(),
+            "evaluated_sector_attachment": {
+                "sector": "gauge_transverse+gauge_constraint+BRST_ghost",
+                "domain": "CANONICAL_STOP_CENTER_FRIEDRICHS",
+                "coexact_boundary_value": gauge_brst["scientific_result"][
+                    "midpoint_refinement_4"
+                ]["coexact_Weyl_birth_value"],
+                "BRST_cancellation_residual": gauge_brst["scientific_result"][
+                    "midpoint_refinement_4"
+                ]["BRST_cancellation_residual_norm"],
+                "inserted_in_finite_theorem_witness": False,
+                "why_not_inserted": (
+                    "THE_REMAINING_FIVE_PHYSICAL_SECTOR_BLOCKS_AND_THE_OUTWARD_"
+                    "NONLINEAR_STOP_FAMILY_ARE_NOT_YET_EVALUATED"
+                ),
+            },
             "finite_theorem_witness": witness,
             "claim_boundary": boundary,
             "inputs": {path.relative_to(ROOT).as_posix(): _sha(path) for path in INPUTS},

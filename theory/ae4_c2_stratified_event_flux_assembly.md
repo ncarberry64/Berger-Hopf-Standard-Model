@@ -58,14 +58,19 @@ Noether contraction are derived.  The numerical witness tests the theorem
 with all six sectors and nonzero source and response data; it is not physical
 BHSM data.
 
-The action-derived nonzero current-C2 Calderon blocks have not yet been
+The canonical-stop **center** coexact gauge block and its exact BRST quotient
+are now evaluated and attached to this assembly.  They are not inserted into
+the theorem witness as though the other physical sector blocks were known.
+The correlation-preserving outward nonlinear stop family and the remaining
+action-derived nonzero current-C2 Calderon blocks have not yet been
 evaluated.  In particular, this result does not supply a physical Maxwell
 residue, broken HS saddle, action-selected fermion/Hadamard state, physical
 event flux, or completed encapsulation.  Those values must be inserted only
 after they are obtained as variations of the common AE4 operator, with no
 fitted normalization.
 
-The next calculation is therefore narrower: evaluate the gauge/BRST pair and
-HS/fermion mixed nonzero blocks on the selected future domain, insert them in
-this assembly, and test the resulting physical event and Noether-Hamiltonian
+The next calculation is therefore narrower: lift the gauge/BRST center block
+to the nonlinear stop family with moving-endpoint jets, evaluate the
+HS/fermion mixed nonzero blocks on that same domain, insert them in this
+assembly, and test the resulting physical event and Noether-Hamiltonian
 balance.
