@@ -4159,3 +4159,35 @@ Exact next object:
   diagnostic. Those physical current-C2 terms remain unevaluated.
 - Scientific milestone:
   `CURRENT_C2_HISTORICAL_KNU_TRACELESS_UNITARY_GENERATOR_SHAPE_DERIVED`.
+
+## AE4 stratified Dirac–zeta induced-action owner
+
+- The zero-input branch now selects the full stratified proper-time
+  Dirac–zeta functional as the common microscopic coefficient owner. M8, M5
+  and M4 local actions are expansions of this one functional, not independent
+  Wilson sectors.
+- The selected v15.99–v16 regulator is the integrated heat kernel
+  `f_ell(u)=-(1/2)E1(ell_star^2 u)`, rather than the raw heat trace.
+- Its positive-order moments are derived exactly as
+  `F_p=-ell_star^(-p)/p`. At dimensionless `ell_star=1`, the retained weights
+  are `(-1/8,-1/6,-1/5,-1/4,-1/3,-1/2)` for
+  `p=(8,6,5,4,3,2)`.
+- This removes the generic cutoff-profile freedom proved in v14.63 while
+  retaining one common spectral length. Order zero belongs to the relative
+  zeta/eta logarithmic and phase completion.
+- The global self-adjoint stratified Dirac domain, operator-valued seam,
+  physical value of `ell_star`, eta phase and finite family operator remain
+  open; no physical numerical coefficient is promoted.
+- `ell_star` is not a free cutoff: its owner rule is the inverse impedance
+  energy at the first future surface where the action-derived exterior
+  spacetime-support impedance reaches the core threshold. Compact objects and
+  atomic decay are downstream tests, not calibration inputs.
+- Physical evolution is future-directed parent-to-child only. The heat
+  parameter is a spectral proper-time regulator and continuous Lorentzian
+  frequency may not be replaced by a periodic-cycle surrogate.
+- `rho_hold=E_mode/E_impedance` is retained as a cross-scale stability
+  hypothesis requiring an action-Hessian/resonance-width derivation; no decay
+  law or macroscopic-instability scaling is promoted.
+- Scientific milestones:
+  `AE4_STRATIFIED_DIRAC_ZETA_MICROSCOPIC_OWNER_SELECTED` and
+  `AE4_POSITIVE_ORDER_M8_M5_M4_MOMENT_RATIOS_DERIVED`.
