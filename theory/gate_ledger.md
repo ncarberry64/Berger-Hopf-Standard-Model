@@ -4243,3 +4243,23 @@ Exact next object:
   child/first-exit decay semantics, and AE2 supplies the positive nonfermion
   child-core impedance lower. AE4 extends these objects; it does not restart
   the complete-child calculation.
+
+## AE4 current-C2 stratified event-flux assembly
+
+- The six required field sectors are now assembled as one graded direct sum:
+  geometry/eta/sigma, transverse gauge, gauge constraint, BRST ghost,
+  fermion/family and HS scalar.
+- The exact nonzero source/response KKT reduction is derived on the selected
+  future-child domain. Its event traction identity is
+  `Pi_parent+Pi_returned-child+J+C^dagger lambda=0`.
+- Contracting that identity with an anti-Hermitian action-symmetry generator
+  derives the event Noether-flux balance. The retarded passivity identity is
+  preserved in the same assembly.
+- This closes the algebraic bridge, not the physical block evaluation. The
+  action-derived nonzero current-C2 Calderon blocks, Maxwell residue, broken
+  HS saddle, selected fermion state and physical Noether-Hamiltonian balance
+  remain open and may not be replaced by witness matrices or fitted sector
+  normalizations.
+- Scientific milestones:
+  `AE4_STRATIFIED_FULL_FIELD_DIRECT_SUM_ASSEMBLY_DERIVED` and
+  `AE4_EVENT_CANONICAL_FLUX_BALANCE_IDENTITY_DERIVED`.
