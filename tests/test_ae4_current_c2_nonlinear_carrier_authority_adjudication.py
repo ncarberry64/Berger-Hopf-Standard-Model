@@ -22,6 +22,7 @@ def test_two_negative_transfer_results_do_not_promote_nonlinear_authority():
         green_directional_seed_derived=True,
         green_directional_endpoints_derived=True,
         green_midpoint_componentwise_route_obstructed=True,
+        green_correlated_scalar_interval355_finite=True,
         root_nonexistence_claim=False,
         physical_instability_claim=False,
         another_center_or_trajectory_authorized=False,
@@ -30,7 +31,7 @@ def test_two_negative_transfer_results_do_not_promote_nonlinear_authority():
     assert result["same_center_single_radius_contraction_obstructed"]
     assert result["same_center_field_descriptor_block_contraction_obstructed"]
     assert not result["root_nonexistence_inferred"]
-    assert "CORRELATED_LONGITUDINAL_SCALAR_PARAMETERIZATION" in result[
+    assert "CORRELATED_CENTRAL_GREEN_SCALAR_CONSTRUCTION" in result[
         "next_proof_object"
     ]
 
@@ -45,6 +46,7 @@ def test_upstream_physical_overclaims_fail_closed():
             green_directional_seed_derived=True,
             green_directional_endpoints_derived=True,
             green_midpoint_componentwise_route_obstructed=True,
+            green_correlated_scalar_interval355_finite=True,
             root_nonexistence_claim=True,
             physical_instability_claim=False,
             another_center_or_trajectory_authorized=False,
@@ -86,6 +88,12 @@ def test_materialized_adjudication_is_valid_and_deterministic():
     assert payload["recovered_green_midpoint_obstruction"][
         "first_nonfinite_intrinsic_interval"
     ] == 355
+    assert payload["validation"][
+        "correlated_green_scalar_interval355_reconciliation_is_reused"
+    ]
+    assert payload["recovered_green_correlated_scalar_interval355"][
+        "midpoint_intrinsic_curvature_upper"
+    ] < 0.012207
     main()
     first = hashlib.sha256(TARGET.read_bytes()).hexdigest()
     main()

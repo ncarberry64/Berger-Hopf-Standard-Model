@@ -68,6 +68,15 @@ failure: the Green normalization and endpoint-to-midpoint transport must remain
 one correlated longitudinal scalar object.  It does not establish path
 nonexistence or physical instability.
 
+The correlation-preserving probe at the first failed interval is now finite.
+Using the normalized midpoint of the certified Green-axis enclosure as one
+central scalar direction gives `||D2F_m|| < 0.012206040568732014` and
+`||R_HS''|| < 0.003051599835522847` at interval 355.  The exact Green axis is
+kept inside certified neighborhoods of radius `5.96e-8` and `8.25e-8` at its
+two endpoints; those errors remain obligations of the mixed/transverse
+remainder.  Thus the component-box failure is reconciled at its first onset,
+while global and causal promotion remain open.
+
 Until that test succeeds, the gauge/BRST and nine-particle-fiber Calderón
 first jets remain evaluated affine candidates, not nonlinear physical
 operator authority.
@@ -91,5 +100,7 @@ G7_CURRENT_CENTER_ALL_POST_RESET_ENDPOINT_GREEN_DIRECTIONAL_CURVATURE_DERIVED = 
 G7_CURRENT_CENTER_GREEN_MIDPOINT_DIRECTIONAL_CURVATURE_DERIVED = FALSE
 G7_CURRENT_CENTER_COMPONENTWISE_GREEN_MIDPOINT_ROUTE_OBSTRUCTED = TRUE
 G7_CURRENT_CENTER_CORRELATED_GREEN_NORMALIZATION_TRANSPORT_DERIVED = FALSE
+G7_CURRENT_GREEN_CORRELATED_SCALAR_INTERVAL355_FINITE = TRUE
+G7_CURRENT_GREEN_CORRELATED_SCALAR_ALL_INTERVALS_DERIVED = FALSE
 FULL_BHSM_COMPLETE = FALSE
 ```
