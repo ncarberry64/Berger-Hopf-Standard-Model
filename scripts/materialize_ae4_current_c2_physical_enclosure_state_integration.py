@@ -93,6 +93,16 @@ def build_payload() -> dict[str, Any]:
         "AE4_event_balance_identity_derived": flux["claim_boundary"][
             "AE4_EVENT_CANONICAL_FLUX_BALANCE_IDENTITY_DERIVED"
         ],
+        "affine72_particle_fiber_Calderon_candidate_reused": (
+            flux["claim_boundary"][
+                "AE4_CURRENT_C2_AFFINE72_PARTICLE_FIBER_CALDERON_CANDIDATE_EVALUATED"
+            ]
+            and flux["evaluated_particle_fiber_attachment"]["existing_fiber_count"]
+            == 9
+            and not flux["evaluated_particle_fiber_attachment"][
+                "physical_mass_or_pole_extracted"
+            ]
+        ),
         "physical_event_balance_not_overpromoted": not flux["claim_boundary"][
             "AE4_CURRENT_C2_NOETHER_HAMILTONIAN_BALANCE_PHYSICALLY_CLOSED"
         ],
@@ -144,6 +154,7 @@ def build_payload() -> dict[str, Any]:
         "claim_boundary": boundary,
         "museum_export": {
             "local_enclosure_state_transport": "BHSM_DERIVED",
+            "affine72_particle_fiber_carrier_response": "BHSM_EVALUATED_CANDIDATE",
             "complete_interacting_AE4_encapsulation": "NOT_YET_DERIVED",
             "particle_poles_masses_vertices_collisions": "NOT_DERIVED_BY_THIS_RESULT",
             "particle_spectrum_rebuild_claim_allowed": False,

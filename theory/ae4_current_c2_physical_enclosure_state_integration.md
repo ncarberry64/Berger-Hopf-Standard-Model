@@ -66,10 +66,13 @@ Kernel C: inheritance open
 
 The AE4 direct sum already contains geometry/eta/sigma, transverse gauge,
 constraint, BRST ghost, fermion/family, and HS sectors.  Its event canonical
-and Noether identities are derived.  The remaining bridge is value-level:
-evaluate the nonzero action-derived sector Calderon blocks on the canonical
-stop domain, insert them into the existing balance, and transport the full
-interacting traces into the already-identified enclosure.
+and Noether identities are derived.  The gauge/BRST block and the lowest
+product-Dirac carrier for all nine preserved charged fibers now also have
+affine-72 first-jet candidates on the canonical-stop proper-time path.  The
+remaining bridge is value-level: promote those candidates on a closed
+nonlinear stop family, compose the geometry and interacting HS/mixed blocks,
+insert them into the existing balance, and transport the full interacting
+traces into the already-identified enclosure.
 
 ## Claim boundary
 

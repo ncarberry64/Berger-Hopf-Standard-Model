@@ -40,6 +40,7 @@ INPUTS = (
     ROOT / "artifacts/n12_continuum_majorant_effectiveness/BHSM_CONTINUUM_EVENT_CHILD_CERTIFICATE.json",
     A / "BHSM_AE4_CURRENT_C2_STOP_GAUGE_BRST_CALDERON.json",
     A / "BHSM_AE4_CURRENT_C2_AFFINE72_GAUGE_CALDERON_FIRST_JET.json",
+    A / "BHSM_AE4_CURRENT_C2_AFFINE72_PARTICLE_FIBER_CALDERON.json",
     ROOT / "src/bhsm/interface/ae4_c2_stratified_event_flux_assembly.py",
 )
 
@@ -110,8 +111,9 @@ def build_payload() -> dict[str, Any]:
     solution = witness["solution"]
     noether = witness["noether"]
     boundary = claim_boundary()
-    gauge_brst = json_sources[-2]
-    gauge_first_jet = json_sources[-1]
+    gauge_brst = json_sources[-3]
+    gauge_first_jet = json_sources[-2]
+    particle_fiber = json_sources[-1]
     validation = {
         "all_source_artifacts_validated": all(row["validation_passed"] for row in json_sources),
         "six_required_sectors_explicit": witness["direct_sum"]["all_required_sectors_explicit"],
@@ -141,6 +143,18 @@ def build_payload() -> dict[str, Any]:
                 "AE4_CURRENT_C2_AFFINE72_PROPER_TIME_GAUGE_CALDERON_FIRST_JET_EVALUATED"
             ]
             and not gauge_first_jet["carrier"]["nonlinear_exact_family_authority"]
+        ),
+        "affine72_particle_fiber_Calderon_candidate_attached_fail_closed": (
+            particle_fiber["validation_passed"]
+            and particle_fiber["claim_boundary"][
+                "ALL_NINE_EXISTING_CHARGED_PARTICLE_FIBERS_ATTACHED_TO_CARRIER"
+            ]
+            and particle_fiber["scientific_result"]["attached_existing_fiber_count"]
+            == 9
+            and not particle_fiber["carrier"]["nonlinear_exact_family_authority"]
+            and not particle_fiber["claim_boundary"][
+                "CURRENT_C2_PHYSICAL_MASS_OPERATOR_DERIVED"
+            ]
         ),
         "physical_sector_values_not_overclaimed": not boundary[
             "AE4_CURRENT_C2_NONZERO_SECTOR_CALDERON_BLOCKS_EVALUATED"
@@ -173,8 +187,36 @@ def build_payload() -> dict[str, Any]:
                 "affine72_first_jet_nonlinear_authority": False,
                 "inserted_in_finite_theorem_witness": False,
                 "why_not_inserted": (
-                    "THE_REMAINING_FIVE_PHYSICAL_SECTOR_BLOCKS_AND_THE_OUTWARD_"
-                    "NONLINEAR_STOP_FAMILY_ARE_NOT_YET_EVALUATED"
+                    "THE_GEOMETRY_ETA_SIGMA_AND_INTERACTING_FERMION_HS_BLOCKS_"
+                    "PLUS_THE_OUTWARD_NONLINEAR_STOP_FAMILY_ARE_NOT_YET_CLOSED"
+                ),
+            },
+            "evaluated_particle_fiber_attachment": {
+                "sector": "fermion_family",
+                "domain": "CANONICAL_STOP_CENTER_FRIEDRICHS",
+                "existing_fiber_count": particle_fiber["scientific_result"][
+                    "attached_existing_fiber_count"
+                ],
+                "spatial_channel": particle_fiber["carrier"]["spatial_channel"],
+                "plus_chirality_Weyl_birth_value": particle_fiber[
+                    "scientific_result"
+                ]["plus_chirality_Weyl_birth_value"],
+                "minus_chirality_Weyl_birth_value": particle_fiber[
+                    "scientific_result"
+                ]["minus_chirality_Weyl_birth_value"],
+                "plus_chirality_affine72_first_jet_2_norm": particle_fiber[
+                    "scientific_result"
+                ]["plus_chirality_first_jet_2_norm"],
+                "minus_chirality_affine72_first_jet_2_norm": particle_fiber[
+                    "scientific_result"
+                ]["minus_chirality_first_jet_2_norm"],
+                "internal_Berger_labels_used_as_spatial_levels": False,
+                "physical_mass_or_pole_extracted": False,
+                "affine72_first_jet_nonlinear_authority": False,
+                "inserted_in_finite_theorem_witness": False,
+                "why_not_inserted": (
+                    "THE_NONLINEAR_STOP_FAMILY_AND_INTERACTING_HS_MIXED_"
+                    "FERMION_BLOCK_ARE_NOT_YET_CLOSED"
                 ),
             },
             "finite_theorem_witness": witness,
