@@ -35,6 +35,7 @@ GREEN_CORRELATED_355 = F / "BHSM_N12_GATE7_CURRENT_GREEN_CORRELATED_SCALAR_INTER
 GREEN_CORRELATED_ALL = F / "BHSM_N12_GATE7_CURRENT_GREEN_CORRELATED_SCALAR_ALL_INTERVALS.json"
 GREEN_CORRELATED_CAUSAL = F / "BHSM_N12_GATE7_CURRENT_GREEN_CORRELATED_SCALAR_CAUSAL_COMPOSITION.json"
 GREEN_MIXED_SEED = F / "BHSM_N12_GATE7_CURRENT_GREEN_MIXED_TRANSVERSE_SEED.json"
+GREEN_TRANSVERSE_SEED = F / "BHSM_N12_GATE7_CURRENT_GREEN_TRANSVERSE_QUADRATIC_SEED.json"
 GAUGE = A / "BHSM_AE4_CURRENT_C2_AFFINE72_GAUGE_CALDERON_FIRST_JET.json"
 PARTICLE = A / "BHSM_AE4_CURRENT_C2_AFFINE72_PARTICLE_FIBER_CALDERON.json"
 TARGET = A / "BHSM_AE4_CURRENT_C2_NONLINEAR_CARRIER_AUTHORITY_ADJUDICATION.json"
@@ -51,6 +52,7 @@ INPUTS = (
     GREEN_CORRELATED_ALL,
     GREEN_CORRELATED_CAUSAL,
     GREEN_MIXED_SEED,
+    GREEN_TRANSVERSE_SEED,
     GAUGE,
     PARTICLE,
     ROOT / "src/bhsm/interface/ae4_current_c2_nonlinear_carrier_authority_adjudication.py",
@@ -75,13 +77,13 @@ def build_payload() -> dict[str, Any]:
     missing = [str(path) for path in INPUTS if not path.is_file()]
     if missing:
         raise FileNotFoundError(", ".join(missing))
-    transfer, outward, block_screen, green_partition, green_seed, green_endpoints, green_midpoint, green_midpoint_512, green_correlated_355, green_correlated_all, green_correlated_causal, green_mixed_seed, gauge, particle = (
-        _load(path) for path in INPUTS[:14]
+    transfer, outward, block_screen, green_partition, green_seed, green_endpoints, green_midpoint, green_midpoint_512, green_correlated_355, green_correlated_all, green_correlated_causal, green_mixed_seed, green_transverse_seed, gauge, particle = (
+        _load(path) for path in INPUTS[:15]
     )
     if not all(
         row.get("validation_passed") is True
         for row in (
-            transfer, outward, block_screen, green_partition, green_seed, green_endpoints, green_midpoint, green_midpoint_512, green_correlated_355, green_correlated_all, green_correlated_causal, green_mixed_seed,
+            transfer, outward, block_screen, green_partition, green_seed, green_endpoints, green_midpoint, green_midpoint_512, green_correlated_355, green_correlated_all, green_correlated_causal, green_mixed_seed, green_transverse_seed,
             gauge, particle
         )
     ):
@@ -259,6 +261,19 @@ def build_payload() -> dict[str, Any]:
                 "CURRENT_GREEN_AXIS_NEIGHBORHOOD_MIXED_TRANSVERSE_BOUND_DERIVED"
             ]
         ),
+        "current_green_transverse_quadratic_decisive_seed_is_integrated": (
+            green_transverse_seed["validation_passed"]
+            and len(green_transverse_seed["rows"]) == 8
+            and green_transverse_seed[
+                "maximum_seed_transverse_quadratic_norm_upper"
+            ] < 283136.0
+            and green_transverse_seed["claim_boundary"][
+                "CURRENT_GREEN_TRANSVERSE_TRANSVERSE_DECISIVE_DIRECTION_SEED_DERIVED"
+            ]
+            and not green_transverse_seed["claim_boundary"][
+                "CURRENT_GREEN_TRANSVERSE_TRANSVERSE_FULL_OPERATOR_BOUND_DERIVED"
+            ]
+        ),
     }
     return {
         "artifact": "BHSM_AE4_CURRENT_C2_NONLINEAR_CARRIER_AUTHORITY_ADJUDICATION",
@@ -391,6 +406,16 @@ def build_payload() -> dict[str, Any]:
                 "maximum_seed_mixed_owner_node"
             ],
             "all_nodes_or_causal_promotion": False,
+        },
+        "recovered_green_transverse_quadratic_seed": {
+            "evaluated_direction_count": len(green_transverse_seed["rows"]),
+            "maximum_seed_transverse_quadratic_norm_upper": green_transverse_seed[
+                "maximum_seed_transverse_quadratic_norm_upper"
+            ],
+            "maximum_seed_transverse_quadratic_owner": green_transverse_seed[
+                "maximum_seed_transverse_quadratic_owner"
+            ],
+            "full_transverse_operator_promotion": False,
         },
         "authority_adjudication": result,
         "claim_boundary": boundary,

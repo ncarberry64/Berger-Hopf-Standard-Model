@@ -480,6 +480,17 @@ def build_payload() -> dict[str, Any]:
                 "G7_CURRENT_GREEN_MIXED_TRANSVERSE_ALL_NODES_DERIVED"
             ]
         ),
+        "current_green_transverse_quadratic_seed_is_integrated": (
+            nonlinear_gate["claim_boundary"][
+                "G7_CURRENT_GREEN_TRANSVERSE_TRANSVERSE_DECISIVE_DIRECTION_SEED_DERIVED"
+            ]
+            and nonlinear_gate["recovered_green_transverse_quadratic_seed"][
+                "evaluated_direction_count"
+            ] == 8
+            and not nonlinear_gate["claim_boundary"][
+                "G7_CURRENT_GREEN_TRANSVERSE_TRANSVERSE_FULL_OPERATOR_BOUND_DERIVED"
+            ]
+        ),
         "all_required_rows_are_present_once": (
             identifiers == REQUIRED_RECORD_IDS and len(set(identifiers)) == len(identifiers)
         ),
@@ -529,6 +540,7 @@ def build_payload() -> dict[str, Any]:
             "coarse_field_descriptor_block_route": "OBSTRUCTED",
             "BHSM_native_green_image_partition": "RECOVERED_CURRENT_CENTER",
             "mixed_green_transverse_current_seed": "DERIVED_FOUR_DECISIVE_NODES",
+            "transverse_quadratic_current_seed": "DERIVED_EIGHT_DECISIVE_DIRECTIONS",
             "root_nonexistence_or_physical_instability": "NOT_DERIVED",
             "background_freeze_for_universal_physics_engine": gate["adjudication"][
                 "background_freeze_for_universal_physics_engine"

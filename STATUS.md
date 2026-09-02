@@ -97,6 +97,9 @@ The action-derived mixed Green/transverse polarization map is now rebuilt on
 the current center at decisive nodes 1, 355, 356, and 370; global endpoint,
 midpoint, transverse--transverse, and causal two-radius promotion remains open.
 Its maximum four-node outward Frobenius upper is `30.44882953782609` at node 1.
+The complementary eight-direction transverse-quadratic seed is finite with
+maximum 512-bit norm upper `283135.9524836309` at node 1; the full transverse
+unit-sphere majorant remains open.
 `FULL_BHSM_COMPLETE = FALSE`.  The universal action-to-observable
 infrastructure is now machine-classified separately from scientific outputs:
 action expansion, quadratic spectrum, bare vertices/tree exchange, LSZ,

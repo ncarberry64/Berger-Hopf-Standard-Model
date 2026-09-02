@@ -34,6 +34,9 @@ def test_matrix_tracks_all_required_physical_sectors_without_promotion() -> None
     assert payload["Gate7_authority"][
         "mixed_green_transverse_current_seed"
     ] == "DERIVED_FOUR_DECISIVE_NODES"
+    assert payload["Gate7_authority"][
+        "transverse_quadratic_current_seed"
+    ] == "DERIVED_EIGHT_DECISIVE_DIRECTIONS"
     assert payload["validation"][
         "same_center_scalar_route_is_now_evaluated_and_obstructed"
     ]
@@ -46,6 +49,9 @@ def test_matrix_tracks_all_required_physical_sectors_without_promotion() -> None
     assert payload["validation"]["current_green_directional_seed_is_integrated"]
     assert payload["validation"][
         "current_green_mixed_transverse_seed_is_integrated"
+    ]
+    assert payload["validation"][
+        "current_green_transverse_quadratic_seed_is_integrated"
     ]
     assert tuple(record["id"] for record in payload["records"]) == module.REQUIRED_RECORD_IDS
     assert all(record["prediction_classification"] == "OPEN_INTERNAL_BLOCKER" for record in payload["records"])
