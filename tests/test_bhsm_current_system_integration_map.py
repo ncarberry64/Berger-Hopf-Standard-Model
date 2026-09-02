@@ -116,10 +116,10 @@ def test_blocker_and_interface_priority_reconciliation() -> None:
     old_domain = next(row for row in blockers if row["id"] == "V6_7_NORMAL_MATTER_DOMAIN_NO_GO")
     assert old_domain["classification"] == "SUPERSEDED_BY_LATER_DOMAIN"
     assert payload["current_irreducible_object"] == (
-        "G7_SAME_CENTER_ACTION_BLOCK_RADII_POLYNOMIAL"
+        "G7_SAME_CENTER_COMPONENTWISE_OR_FINER_ACTION_BLOCK_RADII_SCREEN"
     )
     assert payload["current_irreducible_objects"] == [
-        "G7_SAME_CENTER_ACTION_BLOCK_RADII_POLYNOMIAL",
+        "G7_SAME_CENTER_COMPONENTWISE_OR_FINER_ACTION_BLOCK_RADII_SCREEN",
     ]
     assert payload["integration_order"] == [
         "A_EXISTING_COMPOSITION", "C_IMPLEMENTATION", "B_THEOREM", "D_NEW_THEORY_CHOICE"

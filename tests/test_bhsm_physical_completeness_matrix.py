@@ -25,8 +25,14 @@ def test_matrix_tracks_all_required_physical_sectors_without_promotion() -> None
     assert payload["FULL_BHSM_COMPLETE"] is False
     assert payload["Gate7_authority"]["status"] == "ACTIVE_NOT_CLOSED"
     assert payload["Gate7_authority"]["single_radius_route"] == "OBSTRUCTED"
+    assert payload["Gate7_authority"][
+        "coarse_field_descriptor_block_route"
+    ] == "OBSTRUCTED"
     assert payload["validation"][
         "same_center_scalar_route_is_now_evaluated_and_obstructed"
+    ]
+    assert payload["validation"][
+        "same_center_coarse_field_descriptor_route_is_now_evaluated_and_obstructed"
     ]
     assert tuple(record["id"] for record in payload["records"]) == module.REQUIRED_RECORD_IDS
     assert all(record["prediction_classification"] == "OPEN_INTERNAL_BLOCKER" for record in payload["records"])

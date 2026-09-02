@@ -88,9 +88,14 @@
       "id": "G7_SAME_CENTER_INTERVAL_CONTRACTION"
     },
     {
+      "classification": "OBSTRUCTED_PROOF_ROUTE",
+      "current_effect": "the 384-bit outward field defect and existing field-input curvature witness give a necessary field discriminant of -7.316503560971616, so the coarse 73-field plus 1-descriptor block split cannot self-map; this still does not imply root nonexistence or physical instability",
+      "id": "G7_SAME_CENTER_FIELD_DESCRIPTOR_BLOCK_RADII_POLYNOMIAL"
+    },
+    {
       "classification": "CURRENT_BLOCKER",
-      "current_effect": "on the same frozen accepted replay center, retain the existing outward interval operands and replace the failed single scalar radius by componentwise or action-owned field/descriptor block radii. The block scaling must be inherited from the action and causal norm, not fitted to force contraction",
-      "id": "G7_SAME_CENTER_ACTION_BLOCK_RADII_POLYNOMIAL"
+      "current_effect": "on the same frozen accepted replay center, declare a componentwise or finer action-owned partition and persist only its required direction-by-output-block curvature envelopes. The partition and scaling must be inherited from the action and causal norm, not fitted to force contraction",
+      "id": "G7_SAME_CENTER_COMPONENTWISE_OR_FINER_ACTION_BLOCK_RADII_SCREEN"
     },
     {
       "classification": "INVALIDATED_PROOF_ROUTE",
@@ -139,16 +144,16 @@
     "measured_data_used_upstream": false,
     "new_action_added": false
   },
-  "current_irreducible_object": "G7_SAME_CENTER_ACTION_BLOCK_RADII_POLYNOMIAL",
+  "current_irreducible_object": "G7_SAME_CENTER_COMPONENTWISE_OR_FINER_ACTION_BLOCK_RADII_SCREEN",
   "current_irreducible_objects": [
-    "G7_SAME_CENTER_ACTION_BLOCK_RADII_POLYNOMIAL"
+    "G7_SAME_CENTER_COMPONENTWISE_OR_FINER_ACTION_BLOCK_RADII_SCREEN"
   ],
-  "exact_next_dependency": "ON_THE_SAME_FROZEN_ACCEPTED_REPLAY_CENTER,_USE_THE_EXISTING_OUTWARD_INTERVAL_OPERANDS_TO_BUILD_COMPONENTWISE_OR_ACTION_OWNED_FIELD_DESCRIPTOR_BLOCK_RADII_POLYNOMIALS;_DO_NOT_START_ANOTHER_NUMERICAL_CAMPAIGN,_FIT_THE_BLOCK_SCALING,_OR_REUSE_THE_OBSTRUCTED_SINGLE_RADIUS_CONE",
+  "exact_next_dependency": "ON_THE_SAME_FROZEN_ACCEPTED_REPLAY_CENTER,_DECLARE_A_COMPONENTWISE_OR_FINER_ACTION_OWNED_PARTITION_AND_PERSIST_ONLY_THE_DIRECTION_BY_OUTPUT_BLOCK_CURVATURE_ENVELOPES_REQUIRED_BY_THAT_PARTITION;_DO_NOT_RETRY_THE_OBSTRUCTED_SCALAR_OR_73_PLUS_1_SPLITS,_FIT_THE_SCALING,_OR_RESELECT_THE_CENTER",
   "inputs": {
     "artifacts/BHSM_1_0_completion_gate.json": "CE578DFA191245840935D759E3F07F034A9607EE2DED7010040F7D0780612144",
     "artifacts/BHSM_CKM_action_equivalence_v11_6.json": "5F5850309F6744464FBA34A4A255F415A6F17782B60CF0E6FF7A4E1CEC63DD1C",
     "artifacts/BHSM_CURRENT_FULL_FIELD_ACTION_ATTACHMENT_AUDIT.json": "FC35527D23B49573360B9B28B9F064BFF297F678F7439BEB18D908D0D54808B4",
-    "artifacts/BHSM_PHYSICAL_COMPLETENESS_MATRIX.json": "ABA5439F674115A149CE45AE4B3161175272957CCA7576EF137BB8F2AB9DC9CA",
+    "artifacts/BHSM_PHYSICAL_COMPLETENESS_MATRIX.json": "4D367E464E60F3685F63B626B8FA0750F52D605A8DB791707BA9A7DE0A0EF49B",
     "artifacts/BHSM_aether_total_microscopic_action_v15_3.json": "F57286822FCB15C204836D4C2B2ACAC25141CB016703AFB43A6153AAA2F7E002",
     "artifacts/BHSM_common_scheme_observable_transport_v7_2.json": "A7A2616ACA7238E197759ADE77B2FDB0213EA36783646FE94B04C774EF09CF07",
     "artifacts/BHSM_covariant_bulk_boundary_reduction_functor_v7_1.json": "7ED661C2AA6BF4F2ABCB7F29C40966385CD97AA159B5B15DF01E6DB7A485CD27",
@@ -157,7 +162,7 @@
     "artifacts/BHSM_generation_projector_action_attachment_v8_2.json": "ECA91239E1C9C471F3A13602FBE28804D8979A1AE44E50621C18FD0B18106E58",
     "artifacts/CKM_no_fit_operator_output_v1.json": "1BC3A36E47CABE1AA377B9081EF9BE7FCAE9EB91D34EFCDB488BC2F295A9C38A",
     "artifacts/action_extension/BHSM_ACTION_AE2_GLOBAL_SPIN_RESET_ACTION.json": "4C756145A9E303F6E4F7F9536CF5639957D010C1A97AF6BE9299830C549B82DC",
-    "artifacts/action_extension/BHSM_AE4_CURRENT_C2_NONLINEAR_CARRIER_AUTHORITY_ADJUDICATION.json": "B9FCA960E7E310D9531A63B7B7DC14F1FF4C776CD52FE917244CB48B280AEB3A",
+    "artifacts/action_extension/BHSM_AE4_CURRENT_C2_NONLINEAR_CARRIER_AUTHORITY_ADJUDICATION.json": "EB2DF1ADD070A46A590157FB2F6DF1117966B9D2A8E1F8E2EAC7AA7E0E41CCD6",
     "artifacts/current_semantics/BHSM_CURRENT_COMPLETION_DAG.json": "530D141F5F909FBE5FCB74C24E45AE3B480329622E49A395A78DCD82FE6FB4F5",
     "artifacts/current_semantics/BHSM_CURRENT_GATE_LEDGER.json": "9F6050210D4330993E3EF01EA725780F537B7733C18AEDA1375C89BAD3A2136D",
     "artifacts/current_semantics/BHSM_CURRENT_MATHEMATICAL_BASIS.json": "F9804C63CBA71FE8A78021E9542C3803D43E036423DE16D1388F3DB0EFD2BFCD",
@@ -172,6 +177,7 @@
     "artifacts/flagship_integration/BHSM_N12_C2_STOP_DOP853_BORDERED_RESPONSE_SECOND_VARIATION.json": "610FB358195753F8398405B55F5FDCBD7DC37D6C59F358EC550921AF3C25F8C7",
     "artifacts/flagship_integration/BHSM_N12_DOP853_AE2_BIRTH_DOMAIN_RECONCILIATION.json": "55E3E6862D1A999A565BEC8F814486A970DF7E85197D628801BAFD1C18F1D25D",
     "artifacts/flagship_integration/BHSM_N12_FINITE_ENDPOINT_ZERO_SOURCE_FORCE_FUNCTIONAL.json": "6BC1FC78190437347813117A63D252C96115B2B67619D893144526A5DDD4E931",
+    "artifacts/flagship_integration/BHSM_N12_GATE7_ACCEPTED_REPLAY_ACTION_BLOCK_SCREEN.json": "70F2DC6EFC8554F858FFF1407F1C956217D3B5E458629C01A0E7A7811415583F",
     "artifacts/flagship_integration/BHSM_N12_GATE7_ACCEPTED_REPLAY_CENTER_OUTWARD_74D_CONTRACTION.json": "3E36775BBB1E34200D30432C6A7D4EEBC898D0A04B4C6DF7FE3F44826BF8DC20",
     "artifacts/flagship_integration/BHSM_N12_GATE7_AE2_GLOBAL_SPIN_MATTER_DOMAIN.json": "5697192CCFBC6814B9EEAF5E5A01DD89BD4A70E287B5DFE171F0BBA132E15CFC",
     "artifacts/flagship_integration/BHSM_N12_GATE7_AE2_ONE_SEAM_DIRECT_DESCRIPTOR.json": "5EFC77311E78C2426C87600EF03EA19B43B18CBFE1CF693ACF07C3D9535C04BF",
@@ -324,7 +330,7 @@
       "evidence": "artifacts/action_extension/BHSM_AE4_CURRENT_C2_NONLINEAR_CARRIER_AUTHORITY_ADJUDICATION.json",
       "id": "FINITE_HISTORY_TO_HEAT_ZETA_COVECTOR",
       "priority": 0,
-      "status": "CURRENT_BLOCKER_SAME_CENTER_ACTION_BLOCK_RADII_POLYNOMIAL"
+      "status": "CURRENT_BLOCKER_SAME_CENTER_COMPONENTWISE_OR_FINER_ACTION_BLOCK_RADII_SCREEN"
     },
     {
       "class": "B",
@@ -583,7 +589,7 @@
       "canonical_action_version": "BHSM-AE-2.0.0",
       "configuration_space": "AE2 joint event/child seam with internal Mf, M_C2, U_R, W_phys and contact blocks",
       "current_blockers": [
-        "G7_SAME_CENTER_ACTION_BLOCK_RADII_POLYNOMIAL"
+        "G7_SAME_CENTER_COMPONENTWISE_OR_FINER_ACTION_BLOCK_RADII_SCREEN"
       ],
       "downstream_consumers": [
         "GATE7_KKT_HESSIAN",
@@ -614,11 +620,12 @@
         "artifacts/flagship_integration/BHSM_N12_GATE7_AUGMENTED_FIXED_DESCRIPTOR_MINIMUM_CONTRACTION_ADJUDICATION.json",
         "artifacts/flagship_integration/BHSM_N12_GATE7_ACCEPTED_REPLAY_CENTER_OUTWARD_74D_CONTRACTION.json"
       ],
-      "mathematical_status": "ACTIVE_NOT_CLOSED_SAME_CENTER_ACTION_BLOCK_RADII_POLYNOMIAL",
+      "mathematical_status": "ACTIVE_NOT_CLOSED_SAME_CENTER_COMPONENTWISE_OR_FINER_ACTION_BLOCK_SCREEN",
       "output_artifacts": [
         "artifacts/current_semantics/BHSM_CURRENT_COMPLETION_DAG.json",
         "artifacts/current_semantics/BHSM_CURRENT_GATE_LEDGER.json",
         "artifacts/flagship_integration/BHSM_N12_GATE7_ACCEPTED_REPLAY_CENTER_OUTWARD_74D_CONTRACTION.json",
+        "artifacts/flagship_integration/BHSM_N12_GATE7_ACCEPTED_REPLAY_ACTION_BLOCK_SCREEN.json",
         "artifacts/action_extension/BHSM_AE4_CURRENT_C2_NONLINEAR_CARRIER_AUTHORITY_ADJUDICATION.json"
       ],
       "owning_theorem_version": "current AE2 Gate-7 DAG plus AE4 hindsight adjudication",
@@ -831,6 +838,7 @@
     "rate_consistent_block_Newton_step_reduces_exact_nonlinear_residual": true,
     "rate_consistent_source_is_directly_replayed": true,
     "retained_exact_augmented_fixed_descriptor_chain_is_replayed_once": true,
+    "same_center_coarse_field_descriptor_block_is_evaluated_and_obstructed": true,
     "same_center_scalar_contraction_is_evaluated_and_obstructed": true,
     "scalar_second_variation_route_is_rejected_coverwide": true,
     "second_halving_rejects_interpolation_only_refinement": true,

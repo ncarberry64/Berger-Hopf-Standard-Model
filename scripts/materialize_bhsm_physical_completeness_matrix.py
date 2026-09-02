@@ -138,7 +138,7 @@ ACTION_OWNED_BY_ID = {
 }
 
 PROMOTION_GATE_BY_ID = {
-    "GATE7_PHYSICAL_BACKGROUND": "SAME_CENTER_ACTION_BLOCK_RADII_POLYNOMIAL",
+    "GATE7_PHYSICAL_BACKGROUND": "SAME_CENTER_COMPONENTWISE_OR_FINER_ACTION_BLOCK_RADII_SCREEN",
     "UNIVERSAL_ACTION_EXPANSION": "GATE7_CLOSED_PLUS_HISTORY_SEAM_ACTION_ASSEMBLY",
     "RETAINED_SM_COMPONENT_ATTACHMENT": "CURRENT_AE2_BACKGROUND_FULL_FIELD_ACTION_QUANTUM_SADDLE_AND_SCALE",
     "UNIVERSAL_QUADRATIC_SPECTRUM_AND_PROPAGATORS": "PHYSICAL_S2_PENCIL_BRST_SCALE_AND_GATE7",
@@ -253,14 +253,15 @@ def build_payload() -> dict[str, Any]:
     records = [
         _record(
             "GATE7_PHYSICAL_BACKGROUND",
-            "ONE_FROZEN_ACTION_SELECTED_PHYSICAL_BACKGROUND_WITH_AN_ACTION_BLOCK_RADII_CERTIFICATE",
-            "SINGLE_RADIUS_ROUTE_OBSTRUCTED__ACTION_BLOCK_RADII_PROOF_OPEN",
+            "ONE_FROZEN_ACTION_SELECTED_PHYSICAL_BACKGROUND_WITH_A_COMPONENTWISE_OR_FINER_ACTION_BLOCK_RADII_CERTIFICATE",
+            "SCALAR_AND_COARSE_FIELD_DESCRIPTOR_ROUTES_OBSTRUCTED__FINER_BLOCK_SCREEN_OPEN",
             (),
             (
                 "one retained-exact-field 74D replay center",
                 "one-shot nonlinear replay",
                 "same-center outward Y Z1 Z2 operands",
                 "single-radius proof-coordinate obstruction adjudication",
+                "coarse 73+1 field-descriptor block obstruction adjudication",
             ),
             (gate_blocker,),
         ),
@@ -424,6 +425,15 @@ def build_payload() -> dict[str, Any]:
             ]
             is False
         ),
+        "same_center_coarse_field_descriptor_route_is_now_evaluated_and_obstructed": (
+            nonlinear_gate["claim_boundary"][
+                "G7_FIELD_DESCRIPTOR_BLOCK_CONTRACTION_ROUTE_OBSTRUCTED"
+            ]
+            and nonlinear_gate["recovered_coarse_block_obstruction"][
+                "necessary_field_discriminant_upper"
+            ]
+            < 0.0
+        ),
         "all_required_rows_are_present_once": (
             identifiers == REQUIRED_RECORD_IDS and len(set(identifiers)) == len(identifiers)
         ),
@@ -470,6 +480,7 @@ def build_payload() -> dict[str, Any]:
             "status": gate["claim_boundary"]["Gate7"],
             "exact_blocker": gate_blocker,
             "single_radius_route": "OBSTRUCTED",
+            "coarse_field_descriptor_block_route": "OBSTRUCTED",
             "root_nonexistence_or_physical_instability": "NOT_DERIVED",
             "background_freeze_for_universal_physics_engine": gate["adjudication"][
                 "background_freeze_for_universal_physics_engine"
