@@ -4325,3 +4325,20 @@ Exact next object:
   the maximal-history HS block and integrated AE4 Hessian close.
 - Scientific milestone:
   `AE4_CURRENT_C2_TERMINAL_HS_JET_TRANSPORT_LAW_DERIVED`.
+
+## AE4 current-C2 canonical-stop domain bridge
+
+- Recall recovers an existing exact forward canonical earliest stop, its
+  transverse crossing and certified first-hit interval, and the retained
+  theorem promoting it to a nonempty open 72-dimensional stop-reaching reset
+  stratum.
+- The existing endpoint-domain theorem assigns the Friedrichs closure of the
+  retained nonnegative minimal form at a canonical stop. On this stratum no
+  independent finite child load or terminal-load HS jets are required.
+- The 1,222-segment far proof edge is not relabeled as the stop. The physical
+  nonlinear coefficient path, bulk HS jet, and moving-stop HS variation must
+  still be constructed through the certified first hit.
+- An alternative later-event branch still requires its action-owned child
+  Weyl family and jets; only the existing stop branch is reduced here.
+- Scientific milestone:
+  `AE4_CURRENT_C2_CANONICAL_STOP_DOMAIN_BRIDGE_DERIVED`.
