@@ -12,6 +12,8 @@ between resumable stages as exact Arb decimal intervals.  Binary64 midpoint and
 radius exports are retained for reporting only; they are not fed back into the
 scientific transport.  This prevents persistence rounding from being
 misinterpreted as 99 independent perturbation directions.
+The exact local Hermite--Simpson second residual is likewise persisted as Arb
+interval text for downstream causal composition.
 
 The resulting global norm bounds are
 

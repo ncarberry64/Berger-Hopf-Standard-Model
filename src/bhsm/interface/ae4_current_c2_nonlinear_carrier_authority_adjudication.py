@@ -28,6 +28,7 @@ def nonlinear_carrier_authority_contract(
     green_midpoint_componentwise_route_obstructed: bool,
     green_correlated_scalar_interval355_finite: bool,
     green_correlated_scalar_all_intervals_derived: bool,
+    green_correlated_scalar_causal_composition_derived: bool,
     root_nonexistence_claim: bool,
     physical_instability_claim: bool,
     another_center_or_trajectory_authorized: bool,
@@ -50,6 +51,8 @@ def nonlinear_carrier_authority_contract(
         raise ValueError("the correlated Green scalar interval-355 reconciliation is required")
     if not green_correlated_scalar_all_intervals_derived:
         raise ValueError("the all-interval correlated Green scalar certificate is required")
+    if not green_correlated_scalar_causal_composition_derived:
+        raise ValueError("the correlated Green scalar causal composition is required")
     promoted = bool(
         affine_transfer_allowed
         and not same_center_contraction_obstructed
@@ -71,6 +74,7 @@ def nonlinear_carrier_authority_contract(
         "current_center_componentwise_green_midpoint_route_obstructed": True,
         "current_green_correlated_scalar_interval355_finite": True,
         "current_green_correlated_scalar_all_intervals_derived": True,
+        "current_green_correlated_scalar_causal_composition_derived": True,
         "current_affine_operator_jets_have_nonlinear_authority": promoted,
         "accepted_replay_center_or_trajectory_may_be_reselected": False,
         "physical_spacetime_instability_inferred": False,
@@ -83,7 +87,7 @@ def nonlinear_carrier_authority_contract(
         "next_proof_object": (
             "BOUND_THE_CERTIFIED_GREEN_AXIS_NEIGHBORHOOD_WITH_ACTION_DERIVED_"
             "MIXED_GREEN_TRANSVERSE_AND_TRANSVERSE_TRANSVERSE_REMAINDERS_THEN_"
-            "APPLY_THE_FROZEN_CAUSAL_PRECONDITIONER_AND_"
+            "COMBINE_THEM_WITH_THE_DERIVED_FROZEN_CAUSAL_CENTRAL_SCALAR_IN_THE_"
             "LONGITUDINAL_TRANSVERSE_TWO_RADIUS_SCREEN"
         ),
         "why_next": (
@@ -117,6 +121,7 @@ def claim_boundary() -> dict[str, Any]:
         "G7_CURRENT_CENTER_CORRELATED_GREEN_NORMALIZATION_TRANSPORT_DERIVED": True,
         "G7_CURRENT_GREEN_CORRELATED_SCALAR_INTERVAL355_FINITE": True,
         "G7_CURRENT_GREEN_CORRELATED_SCALAR_ALL_INTERVALS_DERIVED": True,
+        "G7_CURRENT_GREEN_CORRELATED_CENTRAL_SCALAR_CAUSAL_COMPOSITION_DERIVED": True,
         "FULL_BHSM_COMPLETE": False,
     }
 

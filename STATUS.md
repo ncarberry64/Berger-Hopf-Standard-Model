@@ -84,9 +84,11 @@ and contraction inequalities.  The correlated central Green scalar is now
 certified on all 370 retained intervals at 384-bit Arb precision, with maximum
 total rate-curvature norm `0.3491272055507006` and maximum axis-neighborhood
 error `5.5312200553564e-6` at node 370.  This closes only the longitudinal
-scalar operand; action-derived mixed Green/transverse and
-transverse-transverse neighborhood remainders, frozen causal preconditioning,
-and the two-radius inequalities remain open.  No second numerical campaign is
+scalar operand.  Its same-action frozen causal composition is now certified at
+512-bit Arb precision with terminal norm upper `8.405509181456809`; the
+384-bit terminal radius growth was precision amplification, not physical
+divergence.  Action-derived mixed Green/transverse and transverse-transverse
+neighborhood remainders and the two-radius inequalities remain open.  No new center is
 authorized, and no root-nonexistence claim is made.
 `FULL_BHSM_COMPLETE = FALSE`.  The universal action-to-observable
 infrastructure is now machine-classified separately from scientific outputs:

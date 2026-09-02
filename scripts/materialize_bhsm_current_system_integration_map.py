@@ -485,7 +485,7 @@ def build_payload() -> dict[str, Any]:
         {"id": "G7_SAME_CENTER_INTERVAL_CONTRACTION", "classification": "OBSTRUCTED_PROOF_ROUTE", "current_effect": "the outward same-center operands have already been evaluated: Y_lower=6.15777040956615e-7, Z1_upper=0.4493650871145146, Z2_lower=3376470.2602736303, and the necessary scalar discriminant is -7.31661146299723. The single-radius theorem is obstructed by proof-coordinate amplification; this is neither root nonexistence nor physical instability, and no new center or trajectory is authorized"},
         {"id": "G7_SAME_CENTER_FIELD_DESCRIPTOR_BLOCK_RADII_POLYNOMIAL", "classification": "OBSTRUCTED_PROOF_ROUTE", "current_effect": "the 384-bit outward field defect and existing field-input curvature witness give a necessary field discriminant of -7.316503560971616, so the coarse 73-field plus 1-descriptor block split cannot self-map; this still does not imply root nonexistence or physical instability"},
         {"id": "G7_SAME_CENTER_COMPONENTWISE_OR_FINER_ACTION_BLOCK_RADII_SCREEN", "classification": "SUPERSEDED_BY_RECOVERED_BHSM_PARTITION", "current_effect": "Recall recovered the already-defined signed Green-image longitudinal axis and causal transverse complement, so no arbitrary componentwise partition search is needed"},
-        {"id": "G7_SAME_CENTER_GREEN_IMAGE_LONGITUDINAL_TRANSVERSE_RADII_SCREEN", "classification": "CURRENT_BLOCKER", "current_effect": "the correlated central Green scalar is now certified on all 370 retained intervals with maximum intrinsic midpoint norm upper 0.34991350135064914 and maximum local HS second-residual norm upper 0.08778063910324282. Its maximum axis-neighborhood error is 5.5312200553564e-6 and remains an explicit input to the action-derived mixed Green/transverse and transverse-transverse remainder; apply the frozen causal preconditioner and complete the two-radius composition only after those bounds are derived"},
+        {"id": "G7_SAME_CENTER_GREEN_IMAGE_LONGITUDINAL_TRANSVERSE_RADII_SCREEN", "classification": "CURRENT_BLOCKER", "current_effect": "the correlated central Green scalar is certified on all 370 intervals and its 512-bit frozen causal composition has terminal norm upper 8.405509181456809. The maximum axis-neighborhood error 5.5312200553564e-6 remains an explicit input to the action-derived mixed Green/transverse and transverse-transverse remainder; combine that remainder with the derived causal central scalar and complete the two-radius composition"},
         {"id": "DECORRELATED_SCALAR_SECOND_VARIATION", "classification": "INVALIDATED_PROOF_ROUTE", "current_effect": "finite first variation survives; all 8,692 scalar denominator cells route to signed/common-frame correlation"},
         {"id": "G7_HESSIAN_WARD_SCALAR", "classification": "DOWNSTREAM_ONLY", "current_effect": "follows the force/KKT root"},
         {"id": "CURRENT_FULL_FIELD_ACTION_ATTACHMENT", "classification": "DOWNSTREAM_ONLY", "current_effect": "the retained 98D N12 local oracle is geometry-only; AE2 owns the fermion reset domain but supplies no new propagating field, coefficient, or scale. Physical spectrum and observable promotion require one current same-action gauge/ghost, fermion, HS/scalar attachment with history/seam S1-S4, local momentum symbols, cross-sector blocks, and action-selected saddle data"},
@@ -1064,6 +1064,12 @@ def build_payload() -> dict[str, Any]:
                 "recovered_green_correlated_scalar_all_intervals"
             ]["axis_neighborhood_mixed_transverse_bound_derived"]
             is False
+            and ae4_nonlinear_carrier_authority["claim_boundary"][
+                "G7_CURRENT_GREEN_CORRELATED_CENTRAL_SCALAR_CAUSAL_COMPOSITION_DERIVED"
+            ]
+            and ae4_nonlinear_carrier_authority[
+                "recovered_green_correlated_central_scalar_causal_composition"
+            ]["maximum_causal_curvature_norm_upper"] < 8.406
         ),
         "quarter_green_corrected_carrier_is_certified": (
             recentered_cone_spectrum["validation_passed"] is True
@@ -1190,7 +1196,7 @@ def build_payload() -> dict[str, Any]:
             "Gate7": "ACTIVE_NOT_CLOSED",
             "FULL_BHSM_COMPLETE": False,
         },
-        "exact_next_dependency": "BOUND_THE_CERTIFIED_GREEN_AXIS_NEIGHBORHOOD_WITH_ACTION_DERIVED_MIXED_GREEN_TRANSVERSE_AND_TRANSVERSE_TRANSVERSE_REMAINDERS,_THEN_APPLY_THE_FROZEN_CAUSAL_PRECONDITIONER_AND_COMPLETE_THE_LONGITUDINAL_TRANSVERSE_TWO_RADIUS_COMPOSITION;_DO_NOT_REUSE_THE_OLD_48_SEAM_NUMBERS,_FIT_A_PARTITION,_OR_RESELECT_THE_CENTER",
+        "exact_next_dependency": "BOUND_THE_CERTIFIED_GREEN_AXIS_NEIGHBORHOOD_WITH_ACTION_DERIVED_MIXED_GREEN_TRANSVERSE_AND_TRANSVERSE_TRANSVERSE_REMAINDERS,_THEN_COMBINE_THE_REMAINDER_WITH_THE_DERIVED_512_BIT_FROZEN_CAUSAL_CENTRAL_SCALAR_AND_COMPLETE_THE_LONGITUDINAL_TRANSVERSE_TWO_RADIUS_COMPOSITION;_DO_NOT_REUSE_THE_OLD_48_SEAM_NUMBERS,_FIT_A_PARTITION,_OR_RESELECT_THE_CENTER",
         "FULL_BHSM_COMPLETE": False,
     }
 

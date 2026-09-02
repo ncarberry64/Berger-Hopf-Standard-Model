@@ -1,3 +1,4 @@
+import hashlib
 import json
 from pathlib import Path
 
@@ -6,6 +7,7 @@ import numpy as np
 
 ROOT = Path(__file__).resolve().parents[1]
 ARTIFACT = ROOT / "artifacts/flagship_integration/BHSM_N12_GATE7_CURRENT_GREEN_CORRELATED_SCALAR_ALL_INTERVALS.json"
+HIGH_PRECISION_ARTIFACT = ROOT / "artifacts/flagship_integration/BHSM_N12_GATE7_CURRENT_GREEN_CORRELATED_SCALAR_ALL_INTERVALS_512BIT.json"
 
 
 def test_all_correlated_scalar_intervals_are_finite_and_fail_closed():
@@ -34,6 +36,22 @@ def test_global_data_preserves_finite_curvatures_and_axis_errors():
         assert np.all(np.isfinite(errors[1:]))
         assert np.all(errors[1:] > 0.0)
         assert int(data["precision_bits"]) == 384
+        assert data["local_hs_arb"].shape == (370, 99)
+
+
+def test_512_bit_operand_repeats_the_same_scalar_without_model_changes():
+    payload = json.loads(HIGH_PRECISION_ARTIFACT.read_text(encoding="utf-8"))
+    assert payload["validation_passed"]
+    assert payload["intervals_certified"] == 370
+    assert payload["claim_boundary"][
+        "CURRENT_GREEN_CORRELATED_SCALAR_ALL_INTERVALS_DERIVED"
+    ]
+    with np.load(ROOT / payload["data"]) as data:
+        assert int(data["precision_bits"]) == 512
+        assert data["local_hs_arb"].shape == (370, 99)
+    assert hashlib.sha256((ROOT / payload["data"]).read_bytes()).hexdigest().upper() == payload[
+        "data_SHA256"
+    ]
 
 
 def test_interval355_reproduces_the_correlation_reconciliation_seed():

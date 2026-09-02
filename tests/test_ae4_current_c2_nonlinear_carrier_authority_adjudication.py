@@ -24,6 +24,7 @@ def test_two_negative_transfer_results_do_not_promote_nonlinear_authority():
         green_midpoint_componentwise_route_obstructed=True,
         green_correlated_scalar_interval355_finite=True,
         green_correlated_scalar_all_intervals_derived=True,
+        green_correlated_scalar_causal_composition_derived=True,
         root_nonexistence_claim=False,
         physical_instability_claim=False,
         another_center_or_trajectory_authorized=False,
@@ -49,6 +50,7 @@ def test_upstream_physical_overclaims_fail_closed():
             green_midpoint_componentwise_route_obstructed=True,
             green_correlated_scalar_interval355_finite=True,
             green_correlated_scalar_all_intervals_derived=True,
+            green_correlated_scalar_causal_composition_derived=True,
             root_nonexistence_claim=True,
             physical_instability_claim=False,
             another_center_or_trajectory_authorized=False,
@@ -102,6 +104,12 @@ def test_materialized_adjudication_is_valid_and_deterministic():
     assert payload["recovered_green_correlated_scalar_all_intervals"][
         "intervals_certified"
     ] == 370
+    assert payload["validation"][
+        "correlated_green_central_scalar_causal_composition_is_reused"
+    ]
+    assert payload["recovered_green_correlated_central_scalar_causal_composition"][
+        "maximum_causal_curvature_norm_upper"
+    ] < 8.406
     main()
     first = hashlib.sha256(TARGET.read_bytes()).hexdigest()
     main()
