@@ -4288,3 +4288,21 @@ Exact next object:
   control.
 - Scientific milestone:
   `AE4_CURRENT_C2_BIRTH_LOCAL_GALERKIN_HS_FRECHET_HESSIAN_EVALUATED`.
+
+## AE4 full finite-core factorized HS Calderon jet
+
+- The full 1222-segment current-C2 product-Dirac Weyl graph is evaluated on
+  the negative spectral axis through its first-order factorization and
+  arbitrary-precision Riccati/Möbius updates.
+- First and second derivatives with respect to the existing commuting LR/HS
+  superpotential source are propagated without a dense generalized spectrum
+  or explicit inverse.
+- At the analytic-gap probe, the Dirichlet endpoint yields
+  `D_H M=-1` and `D_H^2 M=6.3426454163e-28` for both chiral second jets.
+  The zero-tail-load endpoint gives materially different values, so the
+  terminal-domain dependence is preserved rather than silently discarded.
+- The N12 continuum-child terminal retarded load and its HS jets remain open;
+  therefore this finite-core result is not yet the maximal-history HS block,
+  integrated AE4 Hessian, broken saddle, or physical scalar prediction.
+- Scientific milestone:
+  `AE4_CURRENT_C2_FULL_FINITE_CORE_FACTORIZED_HS_CALDERON_JET_DERIVED`.
