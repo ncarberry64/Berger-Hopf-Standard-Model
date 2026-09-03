@@ -29,6 +29,9 @@ def nonlinear_carrier_authority_contract(
     green_correlated_scalar_interval355_finite: bool,
     green_correlated_scalar_all_intervals_derived: bool,
     green_correlated_scalar_causal_composition_derived: bool,
+    green_mixed_all_endpoint_centers_materialized: bool,
+    green_mixed_outward_equivalence_derived: bool,
+    green_mixed_all_endpoints_derived: bool,
     root_nonexistence_claim: bool,
     physical_instability_claim: bool,
     another_center_or_trajectory_authorized: bool,
@@ -53,6 +56,12 @@ def nonlinear_carrier_authority_contract(
         raise ValueError("the all-interval correlated Green scalar certificate is required")
     if not green_correlated_scalar_causal_composition_derived:
         raise ValueError("the correlated Green scalar causal composition is required")
+    if not green_mixed_all_endpoint_centers_materialized:
+        raise ValueError("the all-endpoint direct mixed-map center survey is required")
+    if not green_mixed_outward_equivalence_derived:
+        raise ValueError("the direct/polarized mixed-map outward reconciliation is required")
+    if not green_mixed_all_endpoints_derived:
+        raise ValueError("the outward all-endpoint mixed map is required")
     promoted = bool(
         affine_transfer_allowed
         and not same_center_contraction_obstructed
@@ -77,6 +86,9 @@ def nonlinear_carrier_authority_contract(
         "current_green_correlated_scalar_all_intervals_derived": True,
         "current_green_correlated_scalar_causal_composition_derived": True,
         "current_green_mixed_transverse_decisive_node_seed_derived": True,
+        "current_green_mixed_direct_bilinear_all_endpoint_centers_materialized": True,
+        "current_green_mixed_direct_bilinear_outward_equivalence_derived": True,
+        "current_green_mixed_transverse_all_endpoints_derived": True,
         "current_green_transverse_transverse_decisive_direction_seed_derived": True,
         "current_affine_operator_jets_have_nonlinear_authority": promoted,
         "accepted_replay_center_or_trajectory_may_be_reselected": False,
@@ -88,11 +100,11 @@ def nonlinear_carrier_authority_contract(
         ),
         "obstruction_scope_extended_to_all_existence_theorems": False,
         "next_proof_object": (
-            "EXTEND_THE_CURRENT_MIXED_GREEN_TRANSVERSE_POLARIZATION_SEED_TO_"
-            "ALL_ENDPOINTS_AND_MIDPOINTS_AND_MAJORIZE_THE_FULL_TRANSVERSE_"
-            "UNIT_SPHERE_AROUND_THE_EIGHT_ACTION_DERIVED_DIRECTIONAL_SEEDS_"
-            "THEN_COMBINE_WITH_THE_FROZEN_CAUSAL_CENTRAL_SCALAR_IN_THE_"
-            "LONGITUDINAL_TRANSVERSE_TWO_RADIUS_SCREEN"
+            "TRANSPORT_THE_RECONCILED_MIXED_GREEN_TRANSVERSE_ENDPOINT_GRAPH_"
+            "THROUGH_THE_CORRELATED_HERMITE_SIMPSON_MIDPOINT_AND_CAUSAL_"
+            "PRECONDITIONER,_THEN_MAJORIZE_THE_FULL_"
+            "TRANSVERSE_UNIT_SPHERE_AROUND_THE_EIGHT_ACTION_DERIVED_"
+            "DIRECTIONAL_SEEDS_BEFORE_THE_LONGITUDINAL_TRANSVERSE_TWO_RADIUS_SCREEN"
         ),
         "why_next": (
             "THE_COARSE_FIELD_DESCRIPTOR_SPLIT_IS_ALREADY_OBSTRUCTED_BY_A_"
@@ -129,8 +141,10 @@ def claim_boundary() -> dict[str, Any]:
         "G7_CURRENT_GREEN_CORRELATED_CENTRAL_SCALAR_CAUSAL_COMPOSITION_DERIVED": True,
         "G7_CURRENT_GREEN_MIXED_TRANSVERSE_DECISIVE_NODE_SEED_DERIVED": True,
         "G7_CURRENT_GREEN_MIXED_DIRECT_BILINEAR_CENTER_IDENTITY_REPRODUCED": True,
-        "G7_CURRENT_GREEN_MIXED_DIRECT_BILINEAR_OUTWARD_EQUIVALENCE_DERIVED": False,
-        "G7_CURRENT_GREEN_MIXED_TRANSVERSE_ALL_NODES_DERIVED": False,
+        "G7_CURRENT_GREEN_MIXED_DIRECT_BILINEAR_ALL_ENDPOINT_CENTERS_MATERIALIZED": True,
+        "G7_CURRENT_GREEN_MIXED_DIRECT_BILINEAR_OUTWARD_EQUIVALENCE_DERIVED": True,
+        "G7_CURRENT_GREEN_MIXED_TRANSVERSE_ALL_NODES_DERIVED": True,
+        "G7_CURRENT_GREEN_MIXED_TRANSVERSE_ALL_MIDPOINTS_DERIVED": False,
         "G7_CURRENT_GREEN_TRANSVERSE_TRANSVERSE_DECISIVE_DIRECTION_SEED_DERIVED": True,
         "G7_CURRENT_GREEN_TRANSVERSE_TRANSVERSE_FULL_OPERATOR_BOUND_DERIVED": False,
         "FULL_BHSM_COMPLETE": False,

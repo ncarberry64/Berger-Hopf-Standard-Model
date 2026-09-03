@@ -1,0 +1,208 @@
+{
+  "FULL_BHSM_COMPLETE": false,
+  "adaptive_precision_benchmarks": {
+    "node_81_128_bit": {
+      "decision": "REJECTED_INSUFFICIENT_ENCLOSURE",
+      "elapsed_seconds": 641.5929895000008,
+      "maximum_scaled_component_radius": 0.39631014037877327
+    },
+    "node_82_192_bit": {
+      "decision": "ACCEPTED_MINIMUM_RECONNAISSANCE_PRECISION",
+      "elapsed_seconds": 748.3704691999883,
+      "maximum_scaled_component_radius": 1.044616767592016e-16
+    },
+    "validation": {
+      "node_81_128_bit_screen_is_finite": true,
+      "node_81_128_bit_screen_is_rejected_as_too_wide": true,
+      "node_82_192_bit_screen_has_sub_2e_minus_16_scaled_radius": true,
+      "node_82_192_bit_screen_is_finite": true
+    }
+  },
+  "artifact": "BHSM_COMPUTE_JUSTIFICATION_AUDIT",
+  "authorization": {
+    "automatic_follow_on_global_campaign": false,
+    "resume_nodes_128_through_370_at_192_bit": true,
+    "worker_basis": "BENCHMARKS_AT_1_2_4_8_AND_16_WORKERS_IDENTIFY_EIGHT_AS_THE_COST_EFFECTIVE_THROUGHPUT_KNEE;_SIXTEEN_INCREASES_CPU_HOURS_PER_NODE_BY_MORE_THAN_30_PERCENT",
+    "worker_count": 8
+  },
+  "cheaper_alternatives_considered": [
+    {
+      "decision": "REJECTED_UNTIL_MONOTONICITY_OR_EXTREMAL_THEOREM_EXISTS",
+      "route": "ASSUME_TERMINAL_OR_SEED_NODE_DOMINANCE"
+    },
+    {
+      "decision": "NOT_CURRENTLY_AVAILABLE_BECAUSE_NO_ENDPOINT_INDEX_REMAINDER_IS_DERIVED",
+      "route": "CERTIFIED_INTERVAL_INTERPOLATION_FROM_SPARSE_NODES"
+    },
+    {
+      "decision": "REJECTED_AS_REDUNDANT_AFTER_DIRECT_BILINEAR_IDENTITY",
+      "route": "EXHAUSTIVE_512_BIT_POLARIZATION"
+    },
+    {
+      "decision": "REJECTED_FOR_RECONNAISSANCE;_EXISTING_512_BIT_SHARDS_ARE_REUSED",
+      "route": "UNIFORM_512_BIT_DIRECT_CONTINUATION"
+    }
+  ],
+  "claim_boundary": {
+    "COMPUTE_JUSTIFICATION_AUDIT_PASSED": true,
+    "FULL_370_ENDPOINT_RECONNAISSANCE_COMPLETE": false,
+    "FULL_BHSM_COMPLETE": false,
+    "GATE7_CLOSED": false,
+    "OUTWARD_BILINEAR_EQUIVALENCE_DERIVED": false
+  },
+  "cost": {
+    "actual_CPU_hours_consumed_through_node_127_including_rejected_screen": 56.143787851583305,
+    "completed_192_bit_CPU_hours_actual": 17.47223424338886,
+    "completed_512_bit_CPU_hours_estimated_actual": 38.49333333333333,
+    "estimated_CPU_reduction_factor": 3.5472485078659783,
+    "naive_CPU_hours_estimate": 456.3333333333333,
+    "naive_directional_evaluations": 54760,
+    "naive_estimate_basis": "OBSERVED_APPROXIMATELY_60_SECONDS_PER_POLARIZED_COLUMN_PAIR",
+    "naive_method": "370_NODES_X_74_COLUMNS_X_TWO_POLARIZED_SECOND_DIRECTIONALS",
+    "node_81_128_bit_rejected_benchmark_elapsed_seconds": 641.5929895000008,
+    "node_82_192_bit_accepted_benchmark_elapsed_seconds": 748.3704691999883,
+    "observed_peak_memory_GiB_approx": 3.5,
+    "parallel_worker_benchmarks": {
+      "1": {
+        "CPU_hours_per_node": 0.20788068588888564,
+        "actual_CPU_hours": 0.20788068588888564,
+        "batch_wall_seconds_approx": 748.3704691999883,
+        "maximum_node_elapsed_seconds": 748.3704691999883,
+        "mean_node_elapsed_seconds": 748.3704691999883,
+        "median_node_elapsed_seconds": 748.3704691999883,
+        "minimum_node_elapsed_seconds": 748.3704691999883,
+        "nodes": [
+          82
+        ],
+        "throughput_nodes_per_hour": 4.8104517056217055,
+        "workers": 1
+      },
+      "16": {
+        "CPU_hours_per_node": 0.41441158096180464,
+        "actual_CPU_hours": 6.630585295388874,
+        "batch_wall_seconds_approx": 1498.9242893999908,
+        "maximum_node_elapsed_seconds": 1498.9242893999908,
+        "mean_node_elapsed_seconds": 1491.8816914624967,
+        "median_node_elapsed_seconds": 1491.1828129499918,
+        "minimum_node_elapsed_seconds": 1486.3343106000102,
+        "nodes": [
+          97,
+          99,
+          100,
+          101,
+          102,
+          103,
+          104,
+          105,
+          106,
+          107,
+          108,
+          109,
+          110,
+          111,
+          112,
+          114
+        ],
+        "throughput_nodes_per_hour": 38.42755795428259,
+        "workers": 16
+      },
+      "2": {
+        "CPU_hours_per_node": 0.27245694758333333,
+        "actual_CPU_hours": 0.5449138951666667,
+        "batch_wall_seconds_approx": 981.4181360999937,
+        "maximum_node_elapsed_seconds": 981.4181360999937,
+        "mean_node_elapsed_seconds": 980.8450112999999,
+        "median_node_elapsed_seconds": 980.8450112999999,
+        "minimum_node_elapsed_seconds": 980.2718865000061,
+        "nodes": [
+          126,
+          127
+        ],
+        "throughput_nodes_per_hour": 7.336322547096699,
+        "workers": 2
+      },
+      "4": {
+        "CPU_hours_per_node": 0.2733194411597227,
+        "actual_CPU_hours": 1.0932777646388907,
+        "batch_wall_seconds_approx": 1005.4128700000001,
+        "maximum_node_elapsed_seconds": 1005.4128700000001,
+        "mean_node_elapsed_seconds": 983.9499881750016,
+        "median_node_elapsed_seconds": 988.418097850008,
+        "minimum_node_elapsed_seconds": 953.5508869999903,
+        "nodes": [
+          122,
+          123,
+          124,
+          125
+        ],
+        "throughput_nodes_per_hour": 14.322474308489804,
+        "workers": 4
+      },
+      "8": {
+        "CPU_hours_per_node": 0.2983560543263876,
+        "actual_CPU_hours": 2.386848434611101,
+        "batch_wall_seconds_approx": 1094.8914875999908,
+        "maximum_node_elapsed_seconds": 1094.8914875999908,
+        "mean_node_elapsed_seconds": 1074.0817955749953,
+        "median_node_elapsed_seconds": 1072.1816763499955,
+        "minimum_node_elapsed_seconds": 1060.4155138999922,
+        "nodes": [
+          113,
+          115,
+          116,
+          117,
+          118,
+          119,
+          120,
+          121
+        ],
+        "throughput_nodes_per_hour": 26.30397653664272,
+        "workers": 8
+      }
+    },
+    "projected_remaining_wall_hours_at_selected_worker_count": 9.238146926624923,
+    "proposed_method": "ONE_SHARED_GENERATOR_DIRECT_BILINEAR_MATRIX_TRAVERSAL_PER_NODE",
+    "proposed_total_CPU_hours_including_completed_work": 128.6443090528955,
+    "remaining_192_bit_CPU_hours_projected": 72.5005212013122,
+    "selected_worker_count": 8
+  },
+  "exact_theorem_or_proof_obligation": "LOCALIZE_THE_DIRECT_MIXED_GREEN_TRANSVERSE_CENTER_MAP_OVER_ALL_POST_RESET_ENDPOINTS_WITH_A_DEFINED_GREEN_AXIS_SO_THE_SUBSEQUENT_OUTWARD_EQUIVALENCE_THEOREM_CAN_USE_A_MINIMAL_EXTREMAL_PROOF_SET",
+  "existing_certified_artifacts_reused": [
+    "CURRENT_371_NODE_REALIZATION",
+    "CURRENT_GREEN_IMAGE_PARTITION",
+    "CURRENT_GREEN_MIXED_TRANSVERSE_FOUR_NODE_512_BIT_SEED",
+    "DIRECT_BILINEAR_CENTER_IDENTITY_AUDIT",
+    "EIGHTY_HASH_ATTESTED_512_BIT_ENDPOINT_SHARDS",
+    "CURRENT_512_BIT_CAUSAL_CENTRAL_SCALAR"
+  ],
+  "failure_consequence": "IF_128_BIT_RECONNAISSANCE_IS_NONFINITE_OR_UNSTABLE,_STOP_LOCAL_EXPANSION,_ESCALATE_ONLY_THE_AFFECTED_NODES,_AND_PACKAGE_ANY_STILL_UNAFFORDABLE_OUTWARD_PROOF_AS_A_RESTARTABLE_HPC_JOB",
+  "inputs": {
+    "artifacts/flagship_integration/BHSM_N12_GATE7_CURRENT_GREEN_MIXED_TRANSVERSE_CHECKPOINT_MANIFEST.json": "43829F86611E5B3B831A47D4485749A56E84294BB1886A874F38D1C8E7E34E45",
+    "artifacts/flagship_integration/BHSM_N12_GATE7_CURRENT_GREEN_MIXED_TRANSVERSE_COMPUTE_BENCHMARK.json": "348056ECC61F1AA6D1B4B60C99EEE66568459CA2E0F8F16C0116809C5354A537",
+    "scripts/materialize_bhsm_gate7_compute_conservation.py": "64F124299122E3D9BF097647570757F942027C37CC1B17096B55FF2FB03D2BBE",
+    "theory/n12_gate7_compute_justification_audit.md": "C49C3CD2030153F6F59817D53770133A0E2B451BDE89B2BCE31210A338B3B3EB"
+  },
+  "scientific_unit": "CURRENT_GREEN_MIXED_TRANSVERSE_POST_RESET_ENDPOINT_RECONNAISSANCE",
+  "status": "ADAPTIVE_DIRECT_ENDPOINT_CONTINUATION_AUTHORIZED",
+  "structure_audit": {
+    "bilinear_reduction": "148_DIRECTIONAL_CALLS_TO_ONE_MATRIX_TRAVERSAL_PER_NODE",
+    "bilinearity_or_multilinearity_reduces_evaluations": true,
+    "interval_interpolation_is_certifiable": "NOT_YET_DERIVED",
+    "low_rank_structure_exists": "NOT_YET_DERIVED",
+    "minimum_precision": "192_BIT_ARB_FOR_CENTER_RECONNAISSANCE_AFTER_128_BIT_FAILED_THE_RADIUS_SCREEN;_512_BIT_REUSED_OR_LOCALLY_ESCALATED_ONLY_FOR_SELECTED_OUTWARD_PROOF_NODES",
+    "monotonicity_or_convexity_reduces_points": "NOT_YET_DERIVED",
+    "only_extremal_nodes_need_direct_certification": "YES_FOR_THE_FINAL_THEOREM_BUT_THE_EXTREMAL_SET_IS_NOT_YET_CERTIFIED;_THIS_LOW_PRECISION_SURVEY_LOCALIZES_IT",
+    "operator_norm_can_replace_direction_enumeration": "YES_WITHIN_EACH_NODE_AFTER_MATERIALIZING_THE_DIRECT_MATRIX;_NOT_YET_ACROSS_THE_ENDPOINT_INDEX",
+    "symmetry_reduces_domain": "ONLY_BIRTH_NODE_0_IS_REMOVED_BY_THE_ZERO_GREEN_IMAGE;_NO_CERTIFIED_SYMMETRY_IDENTIFIES_DISTINCT_POST_RESET_NODES"
+  },
+  "validation": {
+    "adaptive_precision_benchmark_is_valid": true,
+    "all_required_audit_questions_answered": true,
+    "eighty_completed_shards_reused_by_hash": true,
+    "no_empirical_or_calibration_input_used": true,
+    "proposed_route_reduces_estimated_CPU_cost": true,
+    "reconnaissance_is_not_relabelled_as_theorem_authority": true,
+    "worker_count_8_is_the_cost_effective_throughput_knee": true
+  },
+  "validation_passed": true
+}

@@ -493,7 +493,7 @@ def build_payload() -> dict[str, Any]:
             and nonlinear_gate["recovered_green_mixed_transverse_seed"][
                 "nodes"
             ] == [1, 355, 356, 370]
-            and not nonlinear_gate["claim_boundary"][
+            and nonlinear_gate["claim_boundary"][
                 "G7_CURRENT_GREEN_MIXED_TRANSVERSE_ALL_NODES_DERIVED"
             ]
         ),
@@ -507,8 +507,31 @@ def build_payload() -> dict[str, Any]:
             and not nonlinear_gate["recovered_green_mixed_direct_bilinear_identity"][
                 "all_component_interval_hulls_overlap"
             ]
-            and not nonlinear_gate["claim_boundary"][
+            and nonlinear_gate["claim_boundary"][
                 "G7_CURRENT_GREEN_MIXED_DIRECT_BILINEAR_OUTWARD_EQUIVALENCE_DERIVED"
+            ]
+        ),
+        "current_green_mixed_all_endpoint_outward_authority_is_integrated": (
+            nonlinear_gate["claim_boundary"][
+                "G7_CURRENT_GREEN_MIXED_DIRECT_BILINEAR_ALL_ENDPOINT_CENTERS_MATERIALIZED"
+            ]
+            and nonlinear_gate[
+                "recovered_green_mixed_all_endpoint_center_reconnaissance"
+            ]["post_reset_endpoints_with_defined_green_axis"] == 370
+            and nonlinear_gate[
+                "recovered_green_mixed_all_endpoint_center_reconnaissance"
+            ]["maximum_direct_graph_Frobenius_upper"] > 0.0
+            and nonlinear_gate["claim_boundary"][
+                "G7_CURRENT_GREEN_MIXED_DIRECT_BILINEAR_OUTWARD_EQUIVALENCE_DERIVED"
+            ]
+            and nonlinear_gate["claim_boundary"][
+                "G7_CURRENT_GREEN_MIXED_TRANSVERSE_ALL_NODES_DERIVED"
+            ]
+            and nonlinear_gate[
+                "recovered_green_mixed_outward_reconciliation"
+            ]["seed_columns_reconciled_per_node"] == 74
+            and not nonlinear_gate["claim_boundary"][
+                "G7_CURRENT_GREEN_MIXED_TRANSVERSE_ALL_MIDPOINTS_DERIVED"
             ]
         ),
         "current_green_transverse_quadratic_seed_is_integrated": (
@@ -572,7 +595,9 @@ def build_payload() -> dict[str, Any]:
             "BHSM_native_green_image_partition": "RECOVERED_CURRENT_CENTER",
             "mixed_green_transverse_current_seed": "DERIVED_FOUR_DECISIVE_NODES",
             "mixed_green_transverse_direct_bilinear": (
-                "CENTER_IDENTITY_REPRODUCED__OUTWARD_EQUIVALENCE_OPEN"
+                "CENTER_IDENTITY_REPRODUCED__ALL_370_DEFINED_AXIS_ENDPOINT_"
+                "CENTERS_MATERIALIZED__OUTWARD_EQUIVALENCE_DERIVED__"
+                "ALL_ENDPOINTS_DERIVED__MIDPOINTS_OPEN"
             ),
             "transverse_quadratic_current_seed": "DERIVED_EIGHT_DECISIVE_DIRECTIONS",
             "root_nonexistence_or_physical_instability": "NOT_DERIVED",

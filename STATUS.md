@@ -93,21 +93,30 @@ separate 512-bit replay of the componentwise exact-axis balls still loses the
 midpoint enclosure first at interval 355, proving that more scalar precision
 does not restore the discarded normalization/transport dependency.  No new center is
 authorized, and no root-nonexistence claim is made.
-The action-derived mixed Green/transverse polarization map is now rebuilt on
-the current center at decisive nodes 1, 355, 356, and 370; global endpoint,
-midpoint, transverse--transverse, and causal two-radius promotion remains open.
-Its maximum four-node outward Frobenius upper is `30.44882953782609` at node 1.
+The action-derived mixed Green/transverse map now has endpoint authority on
+all 370 post-reset nodes where the normalized Green axis exists.  Birth node
+0 remains excluded because its Green image is exactly zero.  The complete
+direct survey has maximum outward Frobenius upper `256.52090126938094` at node
+9, maximum component radius `5.023633018517515e-15`, and maximum projected-axis
+annihilation upper `1.2958447643204296e-14`.  Nodes 1--80 retain their attested
+512-bit evaluations and nodes 81--370 use the validated 192-bit continuation.
+The decisive-node polarization seed remains independently available, with
+maximum four-node outward Frobenius upper `30.44882953782609` at node 1.
 The complementary eight-direction transverse-quadratic seed is finite with
 maximum 512-bit norm upper `283135.9524836309` at node 1; the full transverse
 unit-sphere majorant remains open.
-The direct two-leg mixed derivative now independently reproduces the
-polarization centers at nodes 1, 355, 356, and 370 for coordinate columns 0,
-1, and 61.  Its maximum absolute center difference is
-`6.258105145207082e-12` (`2.1951329642888595e-12` after unit-floor scaling).
-The separately rounded Arb evaluation graphs do not have overlapping hulls in
-every component, so this is a center-identity audit only: outward algebraic
-equivalence, the all-endpoint map, and causal two-radius promotion remain
-open.
+The direct and polarization evaluations are now reconciled outward rather
+than identified from center agreement alone.  One common directed hull
+contains both independently rounded graphs for all 296 seed-node columns,
+and a fresh 512-bit polarization check covers the leading right-singular
+direction at the survey owner, node 9.  Maximum seed-center disagreement is
+`6.256328788367682e-12` absolute and `2.1949664308351657e-12` after unit-floor
+scaling; the owner-direction values are `1.8332002582610585e-12` and
+`8.000920959132899e-14`.  The maximum seed and owner common-hull radii are
+`3.129940751023242e-12` and `9.379164112033326e-13`, respectively.  Thus
+endpoint mixed-map representation authority is derived.  Correlated
+Hermite--Simpson midpoint/causal transport, the full transverse-sphere
+majorant, and the two-radius certificate remain open.
 `FULL_BHSM_COMPLETE = FALSE`.  The universal action-to-observable
 infrastructure is now machine-classified separately from scientific outputs:
 action expansion, quadratic spectrum, bare vertices/tree exchange, LSZ,
@@ -4050,8 +4059,9 @@ closure, and stability-to-decay prediction remain explicitly open or
 hypothetical as classified in
 `artifacts/current_semantics/BHSM_ENCAPSULATION_REALIZATION_ONTOLOGY.json`.
 
-The current Gate-7 calculation is unchanged and active. Its exact blocker is
-the all-node mixed Green/transverse map, full transverse-sphere majorant, and
+The current Gate-7 calculation is unchanged and active. The all-node endpoint
+mixed Green/transverse map is now derived; its exact blocker is correlated
+mixed midpoint/causal transport, the full transverse-sphere majorant, and the
 longitudinal/transverse two-radius composition. No action term, center,
 trajectory, coefficient, scale, frozen prediction, or calibration input was
 changed. `FULL_BHSM_COMPLETE = FALSE`; `GATE7_CLOSED = FALSE`.

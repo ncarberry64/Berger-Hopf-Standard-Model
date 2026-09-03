@@ -25,6 +25,9 @@ def test_two_negative_transfer_results_do_not_promote_nonlinear_authority():
         green_correlated_scalar_interval355_finite=True,
         green_correlated_scalar_all_intervals_derived=True,
         green_correlated_scalar_causal_composition_derived=True,
+        green_mixed_all_endpoint_centers_materialized=True,
+        green_mixed_outward_equivalence_derived=True,
+        green_mixed_all_endpoints_derived=True,
         root_nonexistence_claim=False,
         physical_instability_claim=False,
         another_center_or_trajectory_authorized=False,
@@ -51,6 +54,9 @@ def test_upstream_physical_overclaims_fail_closed():
             green_correlated_scalar_interval355_finite=True,
             green_correlated_scalar_all_intervals_derived=True,
             green_correlated_scalar_causal_composition_derived=True,
+            green_mixed_all_endpoint_centers_materialized=True,
+            green_mixed_outward_equivalence_derived=True,
+            green_mixed_all_endpoints_derived=True,
             root_nonexistence_claim=True,
             physical_instability_claim=False,
             another_center_or_trajectory_authorized=False,
@@ -125,8 +131,26 @@ def test_materialized_adjudication_is_valid_and_deterministic():
     assert payload["recovered_green_mixed_direct_bilinear_identity"][
         "maximum_center_absolute_difference"
     ] < 1.0e-8
-    assert not payload["claim_boundary"][
+    assert payload["claim_boundary"][
         "G7_CURRENT_GREEN_MIXED_DIRECT_BILINEAR_OUTWARD_EQUIVALENCE_DERIVED"
+    ]
+    assert payload["validation"][
+        "current_green_mixed_all_endpoint_center_reconnaissance_is_integrated_fail_closed"
+    ]
+    assert payload["recovered_green_mixed_all_endpoint_center_reconnaissance"][
+        "post_reset_endpoints_with_defined_green_axis"
+    ] == 370
+    assert payload["claim_boundary"][
+        "G7_CURRENT_GREEN_MIXED_DIRECT_BILINEAR_ALL_ENDPOINT_CENTERS_MATERIALIZED"
+    ]
+    assert payload["validation"][
+        "current_green_mixed_outward_reconciliation_and_all_endpoints_are_integrated"
+    ]
+    assert payload["claim_boundary"][
+        "G7_CURRENT_GREEN_MIXED_TRANSVERSE_ALL_NODES_DERIVED"
+    ]
+    assert not payload["claim_boundary"][
+        "G7_CURRENT_GREEN_MIXED_TRANSVERSE_ALL_MIDPOINTS_DERIVED"
     ]
     assert payload["validation"][
         "current_green_transverse_quadratic_decisive_seed_is_integrated"

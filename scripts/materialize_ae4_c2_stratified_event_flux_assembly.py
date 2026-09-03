@@ -173,6 +173,20 @@ def build_payload() -> dict[str, Any]:
                 "G7_PHYSICAL_SPACETIME_INSTABILITY_DERIVED"
             ]
         ),
+        "all_endpoint_direct_mixed_outward_reconciliation_attached": (
+            nonlinear_authority["claim_boundary"][
+                "G7_CURRENT_GREEN_MIXED_DIRECT_BILINEAR_ALL_ENDPOINT_CENTERS_MATERIALIZED"
+            ]
+            and nonlinear_authority["claim_boundary"][
+                "G7_CURRENT_GREEN_MIXED_DIRECT_BILINEAR_OUTWARD_EQUIVALENCE_DERIVED"
+            ]
+            and nonlinear_authority["claim_boundary"][
+                "G7_CURRENT_GREEN_MIXED_TRANSVERSE_ALL_NODES_DERIVED"
+            ]
+            and not nonlinear_authority["claim_boundary"][
+                "G7_CURRENT_GREEN_MIXED_TRANSVERSE_ALL_MIDPOINTS_DERIVED"
+            ]
+        ),
         "physical_sector_values_not_overclaimed": not boundary[
             "AE4_CURRENT_C2_NONZERO_SECTOR_CALDERON_BLOCKS_EVALUATED"
         ],
@@ -243,6 +257,10 @@ def build_payload() -> dict[str, Any]:
                 "physical_spacetime_instability": "NOT_DERIVED",
                 "new_center_or_trajectory": "NOT_AUTHORIZED",
                 "current_affine_operator_jets_have_nonlinear_authority": False,
+                "direct_mixed_all_endpoint_centers_materialized": True,
+                "direct_mixed_outward_equivalence": "DERIVED",
+                "direct_mixed_all_endpoints": "DERIVED",
+                "direct_mixed_all_midpoints": "OPEN",
                 "exact_next_proof_object": nonlinear_authority[
                     "exact_next_calculation"
                 ],
@@ -262,7 +280,11 @@ def main() -> None:
     if not payload["validation_passed"]:
         raise SystemExit("AE4 stratified event-flux assembly failed")
     TARGET.parent.mkdir(parents=True, exist_ok=True)
-    TARGET.write_text(json.dumps(payload, indent=2, sort_keys=True) + "\n", encoding="utf-8")
+    TARGET.write_text(
+        json.dumps(payload, indent=2, sort_keys=True) + "\n",
+        encoding="utf-8",
+        newline="\n",
+    )
     print(TARGET.relative_to(ROOT).as_posix())
 
 

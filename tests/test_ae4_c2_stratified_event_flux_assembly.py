@@ -114,6 +114,9 @@ def test_materialized_event_flux_assembly_is_valid_and_deterministic():
     assert payload["validation"][
         "nonlinear_authority_obstruction_attached_without_physical_overclaim"
     ]
+    assert payload["validation"][
+        "all_endpoint_direct_mixed_outward_reconciliation_attached"
+    ]
     assert payload["evaluated_particle_fiber_attachment"]["existing_fiber_count"] == 9
     assert not payload["evaluated_particle_fiber_attachment"][
         "physical_mass_or_pole_extracted"
@@ -121,6 +124,18 @@ def test_materialized_event_flux_assembly_is_valid_and_deterministic():
     assert payload["nonlinear_carrier_authority_adjudication"][
         "single_radius_74D_contraction_route"
     ] == "OBSTRUCTED"
+    assert payload["nonlinear_carrier_authority_adjudication"][
+        "direct_mixed_all_endpoint_centers_materialized"
+    ]
+    assert payload["nonlinear_carrier_authority_adjudication"][
+        "direct_mixed_outward_equivalence"
+    ] == "DERIVED"
+    assert payload["nonlinear_carrier_authority_adjudication"][
+        "direct_mixed_all_endpoints"
+    ] == "DERIVED"
+    assert payload["nonlinear_carrier_authority_adjudication"][
+        "direct_mixed_all_midpoints"
+    ] == "OPEN"
     assert not payload["evaluated_sector_attachment"][
         "affine72_first_jet_nonlinear_authority"
     ]

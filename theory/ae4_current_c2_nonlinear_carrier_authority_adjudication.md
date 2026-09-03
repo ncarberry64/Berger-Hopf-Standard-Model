@@ -113,6 +113,31 @@ all endpoints and midpoints, causal composition, and the transverse--
 transverse remainder remain open.  The maximum four-node outward Frobenius
 upper is `30.44882953782609` at node 1.
 
+The direct two-leg implementation has now materialized the mixed-map centers
+at every one of the 370 post-reset endpoints where the normalized Green axis
+exists.  Birth node 0 is excluded because its current Green image is exactly
+zero, so no normalized axis can be defined there.  This survey preserves the
+direct bilinear dependency graph and localizes the endpoint owner for the
+next proof, but it does not convert center agreement into an outward interval
+identity.  The next unit must derive one correlated direct-versus-polarized
+remainder on the owner and decisive nodes before any all-endpoint mixed-map
+or two-radius promotion.
+
+That outward reconciliation is now complete.  The exact Fréchet-Hessian
+polarization identity is paired with one directed common hull containing both
+independently rounded graphs for all 74 columns at the four decisive nodes and
+a fresh 512-bit leading-direction check at the reconnaissance owner.  The
+direct graph consequently has endpoint representation authority on all 370
+defined-axis nodes.  Mixed midpoint/causal transport, the full transverse
+operator majorant, and the two-radius theorem remain open.
+
+The completed direct survey owner is node 9 with maximum Frobenius upper
+`256.52090126938094`.  Across all 296 seed columns the maximum direct/polarized
+center difference is `6.256328788367682e-12`; at the owner leading direction
+it is `1.8332002582610585e-12`.  The common hulls retain both rounding graphs
+with maximum radii `3.129940751023242e-12` on the seed and
+`9.379164112033326e-13` on the owner witness.
+
 The complementary transverse-quadratic seed now evaluates the projected
 coarse direction and each mixed map's leading right-singular direction at the
 same four nodes.  All eight 512-bit action derivatives are finite; the
@@ -148,7 +173,10 @@ G7_CURRENT_GREEN_CORRELATED_CENTRAL_SCALAR_CAUSAL_COMPOSITION_DERIVED = TRUE
 G7_CURRENT_CENTER_COMPONENTWISE_GREEN_MIDPOINT_ROUTE_OBSTRUCTED_AT_512_BIT = TRUE
 G7_CURRENT_GREEN_MIXED_TRANSVERSE_DECISIVE_NODE_SEED_DERIVED = TRUE
 G7_CURRENT_GREEN_MIXED_DIRECT_BILINEAR_CENTER_IDENTITY_REPRODUCED = TRUE
-G7_CURRENT_GREEN_MIXED_DIRECT_BILINEAR_OUTWARD_EQUIVALENCE_DERIVED = FALSE
+G7_CURRENT_GREEN_MIXED_DIRECT_BILINEAR_ALL_ENDPOINT_CENTERS_MATERIALIZED = TRUE
+G7_CURRENT_GREEN_MIXED_DIRECT_BILINEAR_OUTWARD_EQUIVALENCE_DERIVED = TRUE
+G7_CURRENT_GREEN_MIXED_TRANSVERSE_ALL_NODES_DERIVED = TRUE
+G7_CURRENT_GREEN_MIXED_TRANSVERSE_ALL_MIDPOINTS_DERIVED = FALSE
 G7_CURRENT_GREEN_TRANSVERSE_TRANSVERSE_DECISIVE_DIRECTION_SEED_DERIVED = TRUE
 FULL_BHSM_COMPLETE = FALSE
 ```
