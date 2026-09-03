@@ -19,6 +19,7 @@ ALL_ENDPOINTS_DATA = ALL_ENDPOINTS.with_suffix(".npz")
 OUTWARD_AUDIT = C / "BHSM_N12_GATE7_CURRENT_GREEN_MIXED_OUTWARD_COMPUTE_JUSTIFICATION.json"
 OUTWARD = F / "BHSM_N12_GATE7_CURRENT_GREEN_MIXED_BILINEAR_OUTWARD_RECONCILIATION.json"
 OUTWARD_DATA = OUTWARD.with_suffix(".npz")
+MIXED_HS_AUDIT = C / "BHSM_N12_GATE7_CURRENT_GREEN_MIXED_HS_CAUSAL_COMPUTE_JUSTIFICATION.json"
 THEORY = ROOT / "theory/n12_gate7_compute_justification_audit.md"
 THIS_SCRIPT = Path(__file__).resolve()
 AUDIT = C / "BHSM_COMPUTE_JUSTIFICATION_AUDIT.json"
@@ -32,6 +33,7 @@ LEDGER_INPUTS = (
     OUTWARD_AUDIT,
     OUTWARD,
     OUTWARD_DATA,
+    MIXED_HS_AUDIT,
     THEORY,
     THIS_SCRIPT,
 )
@@ -62,12 +64,18 @@ def build_payloads() -> tuple[dict[str, object], dict[str, object]]:
     all_endpoints = json.loads(ALL_ENDPOINTS.read_text(encoding="utf-8"))
     outward_audit = json.loads(OUTWARD_AUDIT.read_text(encoding="utf-8"))
     outward = json.loads(OUTWARD.read_text(encoding="utf-8"))
+    mixed_hs_audit = json.loads(MIXED_HS_AUDIT.read_text(encoding="utf-8"))
     if not all_endpoints.get("validation_passed"):
         raise ValueError("completed endpoint reconnaissance is not valid")
     if not outward_audit.get("validation_passed"):
         raise ValueError("outward compute audit is not valid")
     if not outward.get("validation_passed"):
         raise ValueError("outward reconciliation is not valid")
+    if not (
+        mixed_hs_audit.get("validation_passed")
+        and mixed_hs_audit.get("campaign_authorized")
+    ):
+        raise ValueError("mixed HS/causal compute audit is not valid")
     precision_128 = benchmark["precision_benchmarks"]["128"]
     precision_192 = benchmark["precision_benchmarks"]["192"]
     elapsed_128 = float(precision_128["elapsed_seconds"])
@@ -306,6 +314,25 @@ def build_payloads() -> tuple[dict[str, object], dict[str, object]]:
                 "authorization": "AUTHORIZED_AND_COMPLETED_BY_POST_RECONNAISSANCE_AUDIT",
             },
             {
+                "id": "G7_MIXED_HS_CAUSAL_TRANSPORT",
+                "scientific_objective": mixed_hs_audit["proof_obligation"],
+                "method": mixed_hs_audit["cost"]["proposed_route"],
+                "estimated_CPU_hours": mixed_hs_audit["cost"][
+                    "projected_CPU_hours_at_eight_workers"
+                ],
+                "actual_CPU_hours": (
+                    sum(mixed_hs_audit["benchmark"]["endpoint_elapsed_seconds"])
+                    + mixed_hs_audit["benchmark"]["midpoint_elapsed_seconds"]
+                ) / 3600.0,
+                "peak_memory_GiB_approx": None,
+                "reusable_artifacts_generated": [_relative(MIXED_HS_AUDIT)],
+                "proof_obligation_closed": False,
+                "authorization": "AUTHORIZED_UNDER_FIXED_160_CPU_HOUR_CEILING",
+                "cheaper_alternatives_considered": mixed_hs_audit[
+                    "cheaper_routes_adjudicated"
+                ],
+            },
+            {
                 "id": "G7_TRANSVERSE_TRANSVERSE_OPERATOR_BOUND",
                 "scientific_objective": "BOUND_THE_FULL_TRANSVERSE_UNIT_SPHERE_WITH_ONE_OPERATOR_CERTIFICATE",
                 "method": "INTERVAL_SYMMETRIC_OPERATOR_OR_RAYLEIGH_BOUND_REUSING_EIGHT_DIRECTION_SEED",
@@ -350,6 +377,10 @@ def build_payloads() -> tuple[dict[str, object], dict[str, object]]:
                 ] is True
             ),
             "unestimated_future_work_is_not_authorized": True,
+            "mixed_HS_causal_campaign_has_specific_valid_compute_audit": (
+                mixed_hs_audit["validation_passed"] is True
+                and mixed_hs_audit["campaign_authorized"] is True
+            ),
             "calibration_input_used": False,
             "FULL_BHSM_COMPLETE": False,
         },
