@@ -36,6 +36,8 @@ GREEN_CORRELATED_ALL = F / "BHSM_N12_GATE7_CURRENT_GREEN_CORRELATED_SCALAR_ALL_I
 GREEN_CORRELATED_CAUSAL = F / "BHSM_N12_GATE7_CURRENT_GREEN_CORRELATED_SCALAR_CAUSAL_COMPOSITION.json"
 GREEN_MIXED_SEED = F / "BHSM_N12_GATE7_CURRENT_GREEN_MIXED_TRANSVERSE_SEED.json"
 GREEN_MIXED_BILINEAR = F / "BHSM_N12_GATE7_CURRENT_GREEN_MIXED_BILINEAR_EQUIVALENCE_AUDIT.json"
+GREEN_MIXED_ALL_ENDPOINT_CENTERS = F / "BHSM_N12_GATE7_CURRENT_GREEN_MIXED_TRANSVERSE_ALL_ENDPOINTS.json"
+GREEN_MIXED_OUTWARD = F / "BHSM_N12_GATE7_CURRENT_GREEN_MIXED_BILINEAR_OUTWARD_RECONCILIATION.json"
 GREEN_TRANSVERSE_SEED = F / "BHSM_N12_GATE7_CURRENT_GREEN_TRANSVERSE_QUADRATIC_SEED.json"
 GAUGE = A / "BHSM_AE4_CURRENT_C2_AFFINE72_GAUGE_CALDERON_FIRST_JET.json"
 PARTICLE = A / "BHSM_AE4_CURRENT_C2_AFFINE72_PARTICLE_FIBER_CALDERON.json"
@@ -54,6 +56,8 @@ INPUTS = (
     GREEN_CORRELATED_CAUSAL,
     GREEN_MIXED_SEED,
     GREEN_MIXED_BILINEAR,
+    GREEN_MIXED_ALL_ENDPOINT_CENTERS,
+    GREEN_MIXED_OUTWARD,
     GREEN_TRANSVERSE_SEED,
     GAUGE,
     PARTICLE,
@@ -79,13 +83,13 @@ def build_payload() -> dict[str, Any]:
     missing = [str(path) for path in INPUTS if not path.is_file()]
     if missing:
         raise FileNotFoundError(", ".join(missing))
-    transfer, outward, block_screen, green_partition, green_seed, green_endpoints, green_midpoint, green_midpoint_512, green_correlated_355, green_correlated_all, green_correlated_causal, green_mixed_seed, green_mixed_bilinear, green_transverse_seed, gauge, particle = (
-        _load(path) for path in INPUTS[:16]
+    transfer, outward, block_screen, green_partition, green_seed, green_endpoints, green_midpoint, green_midpoint_512, green_correlated_355, green_correlated_all, green_correlated_causal, green_mixed_seed, green_mixed_bilinear, green_mixed_all_endpoint_centers, green_mixed_outward, green_transverse_seed, gauge, particle = (
+        _load(path) for path in INPUTS[:18]
     )
     if not all(
         row.get("validation_passed") is True
         for row in (
-            transfer, outward, block_screen, green_partition, green_seed, green_endpoints, green_midpoint, green_midpoint_512, green_correlated_355, green_correlated_all, green_correlated_causal, green_mixed_seed, green_mixed_bilinear, green_transverse_seed,
+            transfer, outward, block_screen, green_partition, green_seed, green_endpoints, green_midpoint, green_midpoint_512, green_correlated_355, green_correlated_all, green_correlated_causal, green_mixed_seed, green_mixed_bilinear, green_mixed_all_endpoint_centers, green_mixed_outward, green_transverse_seed,
             gauge, particle
         )
     ):
@@ -128,6 +132,15 @@ def build_payload() -> dict[str, Any]:
         physical_instability_claim=decision[
             "physical_spacetime_instability_claim"
         ],
+        green_mixed_all_endpoint_centers_materialized=green_mixed_all_endpoint_centers[
+            "claim_boundary"
+        ]["CURRENT_GREEN_MIXED_DIRECT_BILINEAR_ALL_ENDPOINT_CENTERS_MATERIALIZED"],
+        green_mixed_outward_equivalence_derived=green_mixed_outward[
+            "claim_boundary"
+        ]["CURRENT_GREEN_MIXED_DIRECT_BILINEAR_OUTWARD_EQUIVALENCE_DERIVED"],
+        green_mixed_all_endpoints_derived=green_mixed_outward[
+            "claim_boundary"
+        ]["CURRENT_GREEN_MIXED_TRANSVERSE_ALL_ENDPOINTS_DERIVED"],
         another_center_or_trajectory_authorized=decision[
             "another_center_or_trajectory_authorized"
         ],
@@ -272,6 +285,39 @@ def build_payload() -> dict[str, Any]:
             ]
             and not green_mixed_bilinear["claim_boundary"][
                 "CURRENT_GREEN_MIXED_DIRECT_BILINEAR_OUTWARD_EQUIVALENCE_DERIVED"
+            ]
+        ),
+        "current_green_mixed_all_endpoint_center_reconnaissance_is_integrated_fail_closed": (
+            green_mixed_all_endpoint_centers["validation_passed"]
+            and green_mixed_all_endpoint_centers[
+                "post_reset_endpoints_with_defined_green_axis"
+            ] == 370
+            and green_mixed_all_endpoint_centers["excluded_birth_node"] == 0
+            and green_mixed_all_endpoint_centers["maximum_direct_graph_Frobenius_upper"]
+            > 0.0
+            and green_mixed_all_endpoint_centers["claim_boundary"][
+                "CURRENT_GREEN_MIXED_DIRECT_BILINEAR_ALL_ENDPOINT_CENTERS_MATERIALIZED"
+            ]
+            and not green_mixed_all_endpoint_centers["claim_boundary"][
+                "CURRENT_GREEN_MIXED_DIRECT_BILINEAR_OUTWARD_EQUIVALENCE_DERIVED"
+            ]
+            and not green_mixed_all_endpoint_centers["claim_boundary"][
+                "CURRENT_GREEN_MIXED_TRANSVERSE_ALL_ENDPOINTS_DERIVED"
+            ]
+        ),
+        "current_green_mixed_outward_reconciliation_and_all_endpoints_are_integrated": (
+            green_mixed_outward["validation_passed"]
+            and green_mixed_outward["seed_nodes"] == [1, 355, 356, 370]
+            and green_mixed_outward["seed_columns_reconciled_per_node"] == 74
+            and green_mixed_outward["owner_polarization_precision_bits"] == 512
+            and green_mixed_outward["claim_boundary"][
+                "CURRENT_GREEN_MIXED_DIRECT_BILINEAR_OUTWARD_EQUIVALENCE_DERIVED"
+            ]
+            and green_mixed_outward["claim_boundary"][
+                "CURRENT_GREEN_MIXED_TRANSVERSE_ALL_ENDPOINTS_DERIVED"
+            ]
+            and not green_mixed_outward["claim_boundary"][
+                "CURRENT_GREEN_MIXED_TRANSVERSE_ALL_MIDPOINTS_DERIVED"
             ]
         ),
         "current_green_transverse_quadratic_decisive_seed_is_integrated": (
@@ -430,6 +476,45 @@ def build_payload() -> dict[str, Any]:
                 "all_component_interval_hulls_overlap"
             ],
             "outward_equivalence_promotion": False,
+        },
+        "recovered_green_mixed_all_endpoint_center_reconnaissance": {
+            "post_reset_endpoints_with_defined_green_axis": (
+                green_mixed_all_endpoint_centers[
+                    "post_reset_endpoints_with_defined_green_axis"
+                ]
+            ),
+            "excluded_birth_node": green_mixed_all_endpoint_centers[
+                "excluded_birth_node"
+            ],
+            "maximum_direct_graph_Frobenius_upper": (
+                green_mixed_all_endpoint_centers[
+                    "maximum_direct_graph_Frobenius_upper"
+                ]
+            ),
+            "maximum_direct_graph_owner_node": green_mixed_all_endpoint_centers[
+                "maximum_direct_graph_owner_node"
+            ],
+            "outward_equivalence_promotion": False,
+            "all_endpoint_mixed_map_promotion": False,
+        },
+        "recovered_green_mixed_outward_reconciliation": {
+            "seed_nodes": green_mixed_outward["seed_nodes"],
+            "seed_columns_reconciled_per_node": green_mixed_outward[
+                "seed_columns_reconciled_per_node"
+            ],
+            "maximum_seed_common_hull_radius": green_mixed_outward[
+                "maximum_seed_common_hull_radius"
+            ],
+            "reconnaissance_owner_node": green_mixed_outward[
+                "reconnaissance_owner_node"
+            ],
+            "maximum_owner_leading_direction_common_hull_radius": (
+                green_mixed_outward[
+                    "maximum_owner_leading_direction_common_hull_radius"
+                ]
+            ),
+            "all_endpoint_mixed_map_promotion": True,
+            "all_midpoint_mixed_map_promotion": False,
         },
         "recovered_green_transverse_quadratic_seed": {
             "evaluated_direction_count": len(green_transverse_seed["rows"]),

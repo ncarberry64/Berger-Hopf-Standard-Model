@@ -25,6 +25,7 @@ def test_materialized_ontology_is_deterministic_and_fail_closed() -> None:
     assert payload["validation_passed"] is True
     assert payload["FULL_BHSM_COMPLETE"] is False
     assert payload["scope_adjudication"]["Gate7_status"] == "ACTIVE_NOT_CLOSED"
+    assert payload["validation"]["Gate7_math_and_active_blocker_preserved"]
     assert not any(payload["guardrails"].values())
 
 

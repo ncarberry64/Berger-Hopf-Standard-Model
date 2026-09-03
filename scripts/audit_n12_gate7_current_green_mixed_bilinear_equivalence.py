@@ -30,6 +30,7 @@ THEORY = ROOT / "theory/n12_gate7_current_green_mixed_bilinear_equivalence.md"
 THIS_SCRIPT = Path(__file__).resolve()
 SEED_NODES = (1, 355, 356, 370)
 SEED_COLUMNS = (0, 1, 61)
+AUDIT_PRECISION = 512
 INPUTS = (
     direct.ENDPOINT, direct.ENDPOINT.with_suffix(".npz"),
     direct.JACOBIAN, direct.JACOBIAN.with_suffix(".npz"),
@@ -52,7 +53,7 @@ def _relative(path: Path) -> str:
 
 
 def _row(node: int) -> dict[str, object]:
-    ctx.prec = direct.PRECISION
+    ctx.prec = AUDIT_PRECISION
     with np.load(direct.ENDPOINT.with_suffix(".npz")) as source:
         state = np.asarray(source["projected_states"][node], dtype=float)
         descriptor = float(source["independent_signed_descriptors"][node])
@@ -110,7 +111,7 @@ def build_payload() -> dict[str, object]:
     validation = {
         "four_decisive_nodes_replayed": direct_mid.shape[0] == 4,
         "three_coordinate_columns_per_node_replayed": direct_mid.shape[2] == 3,
-        "512_bit_Arb_direct_bilinear_evaluation": direct.PRECISION == 512,
+        "512_bit_Arb_direct_bilinear_evaluation": AUDIT_PRECISION == 512,
         "direct_and_polarized_centers_agree_below_1e_minus_8_absolute": maximum_absolute < 1.0e-8,
         "direct_and_polarized_centers_agree_below_1e_minus_9_scaled": maximum_relative < 1.0e-9,
         "all_direct_values_and_radii_finite": bool(
@@ -138,7 +139,8 @@ def build_payload() -> dict[str, object]:
             "DERIVE_AN_OUTWARD_ALGEBRAIC_EQUIVALENCE_REMAINDER_BEFORE_PROMOTION"
         ),
         "exact_next_calculation": (
-            "MATERIALIZE_THE_DIRECT_BILINEAR_MIXED_MAP_AT_ALL_371_ENDPOINTS,_"
+            "MATERIALIZE_THE_DIRECT_BILINEAR_MIXED_MAP_AT_ALL_370_POST_RESET_"
+            "ENDPOINTS_WITH_A_DEFINED_GREEN_AXIS,_"
             "LOCALIZE_ITS_MAXIMUM_AND_VARIATION,_AND_CERTIFY_THE_POLARIZATION_"
             "EQUIVALENCE_REMAINDER_AT_THE_ACTION_SELECTED_OWNER_NODES"
         ),

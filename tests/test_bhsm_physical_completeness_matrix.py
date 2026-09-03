@@ -36,7 +36,11 @@ def test_matrix_tracks_all_required_physical_sectors_without_promotion() -> None
     ] == "DERIVED_FOUR_DECISIVE_NODES"
     assert payload["Gate7_authority"][
         "mixed_green_transverse_direct_bilinear"
-    ] == "CENTER_IDENTITY_REPRODUCED__OUTWARD_EQUIVALENCE_OPEN"
+    ] == (
+        "CENTER_IDENTITY_REPRODUCED__ALL_370_DEFINED_AXIS_ENDPOINT_"
+        "CENTERS_MATERIALIZED__OUTWARD_EQUIVALENCE_DERIVED__"
+        "ALL_ENDPOINTS_DERIVED__MIDPOINTS_OPEN"
+    )
     assert payload["Gate7_authority"][
         "transverse_quadratic_current_seed"
     ] == "DERIVED_EIGHT_DECISIVE_DIRECTIONS"
@@ -64,6 +68,9 @@ def test_matrix_tracks_all_required_physical_sectors_without_promotion() -> None
     ]
     assert payload["validation"][
         "current_green_mixed_direct_bilinear_identity_is_integrated_fail_closed"
+    ]
+    assert payload["validation"][
+        "current_green_mixed_all_endpoint_outward_authority_is_integrated"
     ]
     assert payload["validation"][
         "current_green_transverse_quadratic_seed_is_integrated"

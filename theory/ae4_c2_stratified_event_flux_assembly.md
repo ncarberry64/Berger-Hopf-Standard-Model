@@ -64,6 +64,11 @@ affine-carrier proper-time first jet is also attached as a fail-closed
 candidate; its existing nonlinear transfer rejection is preserved.  Neither
 is inserted into the theorem witness as though the other physical sector
 blocks or nonlinear authority were known.
+The direct mixed Green/transverse graph is now reconciled outward with the
+independent polarization route and materialized on every post-reset endpoint
+with a defined Green axis.  This closes the endpoint representation operand,
+but its correlated midpoint and causal transport remain open; it therefore
+does not yet enter this flux assembly as a complete certified nonlinear block.
 The correlation-preserving outward nonlinear stop family and the remaining
 action-derived nonzero current-C2 Calderon blocks have not yet been
 evaluated.  In particular, this result does not supply a physical Maxwell

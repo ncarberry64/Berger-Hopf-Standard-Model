@@ -1,4 +1,4 @@
-"""Certify the current mixed Green/transverse map at all 371 endpoints.
+"""Survey the current mixed Green/transverse map at 370 post-reset endpoints.
 
 The rate Hessian is evaluated bilinearly: the Green axis is the first leg and
 all 74 projected transverse columns share the second leg.  This preserves the
@@ -11,11 +11,13 @@ from __future__ import annotations
 import argparse
 from concurrent.futures import ProcessPoolExecutor, as_completed
 import hashlib
+import inspect
 import json
 import math
 import os
 from pathlib import Path
 import sys
+import time
 
 import numpy as np
 from flint import arb, arb_mat, ctx
@@ -38,20 +40,26 @@ SEED = F / "BHSM_N12_GATE7_CURRENT_GREEN_MIXED_TRANSVERSE_SEED.json"
 RESULT = F / "BHSM_N12_GATE7_CURRENT_GREEN_MIXED_TRANSVERSE_ALL_ENDPOINTS.json"
 DATA = RESULT.with_suffix(".npz")
 WORK = F / ".current_green_mixed_transverse_all_endpoints_work"
+CHECKPOINT_MANIFEST = F / "BHSM_N12_GATE7_CURRENT_GREEN_MIXED_TRANSVERSE_CHECKPOINT_MANIFEST.json"
+COMPUTE_BENCHMARK = F / "BHSM_N12_GATE7_CURRENT_GREEN_MIXED_TRANSVERSE_COMPUTE_BENCHMARK.json"
 THEORY = ROOT / "theory/n12_gate7_current_green_mixed_transverse_all_endpoints.md"
 THIS_SCRIPT = Path(__file__).resolve()
-PRECISION = 512
-NODES = 371
+DEFAULT_PRECISION = 192
+MIN_RECONNAISSANCE_PRECISION = 192
+TOTAL_ENDPOINTS = 371
+POST_RESET_NODES = tuple(range(1, TOTAL_ENDPOINTS))
 COORDINATES = 74
 OUTPUTS = cert.STATE + 1
 SHARD_REVISION = 1
-INPUTS = (
+COMPUTE_INPUTS = (
     ENDPOINT, ENDPOINT.with_suffix(".npz"),
     JACOBIAN, JACOBIAN.with_suffix(".npz"),
     PARTITION, PARTITION.with_suffix(".npz"),
     SEED, SEED.with_suffix(".npz"),
     Path(cert.__file__).resolve(), Path(scalar.__file__).resolve(),
-    THIS_SCRIPT, THEORY,
+)
+INPUTS = COMPUTE_INPUTS + (
+    CHECKPOINT_MANIFEST, COMPUTE_BENCHMARK, THIS_SCRIPT, THEORY,
 )
 
 
@@ -70,17 +78,63 @@ def _shard(node: int) -> Path:
     return WORK / f"node_{node:03d}.npz"
 
 
-def _valid(path: Path, node: int) -> bool:
+def _kernel_sha() -> str:
+    source = inspect.getsource(_mixed_axis_map).replace("\r\n", "\n")
+    return hashlib.sha256(source.encode("utf-8")).hexdigest().upper()
+
+
+def _provenance() -> dict[str, str]:
+    return {_relative(path): _sha(path) for path in COMPUTE_INPUTS}
+
+
+def _campaign_fingerprint(precision: int) -> str:
+    payload = {
+        "kernel_source_SHA256": _kernel_sha(),
+        "precision_bits": precision,
+        "provenance_inputs": _provenance(),
+        "shard_revision": SHARD_REVISION,
+    }
+    return hashlib.sha256(
+        json.dumps(payload, sort_keys=True, separators=(",", ":")).encode("utf-8")
+    ).hexdigest().upper()
+
+
+def _legacy_attested(path: Path, node: int, precision: int) -> bool:
+    if precision != 512 or not CHECKPOINT_MANIFEST.is_file():
+        return False
+    payload = json.loads(CHECKPOINT_MANIFEST.read_text(encoding="utf-8"))
+    if payload.get("validation_passed") is not True:
+        return False
+    if payload.get("mixed_axis_map_source_SHA256") != _kernel_sha():
+        return False
+    owner = {
+        int(row["node"]): row for row in payload.get("shards", [])
+    }.get(node)
+    return owner is not None and owner.get("SHA256") == _sha(path)
+
+
+def _valid(path: Path, node: int, required_precision: int | None = None) -> bool:
     if not path.is_file():
         return False
     try:
         with np.load(path) as source:
-            return (
+            basic = (
                 int(source["node"]) == node
-                and int(source["precision_bits"]) == PRECISION
+                and int(source["precision_bits"])
+                >= MIN_RECONNAISSANCE_PRECISION
                 and int(source["shard_revision"]) == SHARD_REVISION
                 and source["mixed_arb"].shape == (OUTPUTS, COORDINATES)
             )
+            if not basic:
+                return False
+            precision = int(source["precision_bits"])
+            if required_precision is not None and precision < required_precision:
+                return False
+            if "input_fingerprint_SHA256" in source.files:
+                return str(source["input_fingerprint_SHA256"].item()) == (
+                    _campaign_fingerprint(precision)
+                )
+        return _legacy_attested(path, node, precision)
     except Exception:
         return False
 
@@ -473,8 +527,20 @@ def _export(values: np.ndarray) -> tuple[np.ndarray, np.ndarray]:
     return midpoint, radius
 
 
-def _worker(nodes: list[int]) -> dict[str, int]:
-    ctx.prec = PRECISION
+def _frobenius_upper(midpoint: np.ndarray, radius: np.ndarray) -> float:
+    total = 0.0
+    for value, error in zip(
+        np.asarray(midpoint, dtype=float).ravel(),
+        np.asarray(radius, dtype=float).ravel(),
+        strict=True,
+    ):
+        upper = math.nextafter(abs(float(value)) + float(error), math.inf)
+        total = math.nextafter(total + upper * upper, math.inf)
+    return math.nextafter(math.sqrt(total), math.inf)
+
+
+def _worker(nodes: list[int], precision: int) -> dict[str, int]:
+    ctx.prec = precision
     WORK.mkdir(parents=True, exist_ok=True)
     with np.load(ENDPOINT.with_suffix(".npz")) as source:
         states = np.asarray(source["projected_states"], dtype=float)
@@ -485,12 +551,16 @@ def _worker(nodes: list[int]) -> dict[str, int]:
         tangents = np.asarray(source["endpoint_physical_tangent_action"], dtype=float)
     with np.load(PARTITION.with_suffix(".npz")) as source:
         unit_mid = np.asarray(source["current_center_green_image_unit_mid"], dtype=float)
+    kernel_sha = _kernel_sha()
+    provenance = _provenance()
+    fingerprint = _campaign_fingerprint(precision)
     computed = reused = 0
     for index, node in enumerate(nodes, 1):
         target = _shard(node)
-        if _valid(target, node):
+        if _valid(target, node, precision):
             reused += 1
             continue
+        started = time.perf_counter()
         axis = scalar._normalized_central_axis(unit_mid[node])
         projector = np.eye(COORDINATES) - np.outer(axis, axis)
         frame = cert._frame(tangents[node], cert.TRIAL_DESCRIPTOR_SCALE)
@@ -502,8 +572,15 @@ def _worker(nodes: list[int]) -> dict[str, int]:
         np.savez_compressed(
             target, mixed_mid=midpoint, mixed_radius=radius,
             mixed_arb=cert._arb_string_array(mixed), node=np.asarray(node),
-            precision_bits=np.asarray(PRECISION),
+            precision_bits=np.asarray(precision),
             shard_revision=np.asarray(SHARD_REVISION),
+            kernel_source_SHA256=np.asarray(kernel_sha),
+            input_fingerprint_SHA256=np.asarray(fingerprint),
+            provenance_input_SHA256_json=np.asarray(
+                json.dumps(provenance, sort_keys=True)
+            ),
+            elapsed_seconds=np.asarray(time.perf_counter() - started),
+            worker_id=np.asarray(os.getpid()),
         )
         computed += 1
         print(json.dumps({"worker": os.getpid(), "completed": index,
@@ -511,11 +588,13 @@ def _worker(nodes: list[int]) -> dict[str, int]:
     return {"computed": computed, "reused": reused}
 
 
-def run_workers(workers: int, nodes: list[int]) -> None:
+def run_workers(workers: int, nodes: list[int], precision: int) -> None:
     groups = [nodes[index::workers] for index in range(workers)]
     totals = {"computed": 0, "reused": 0}
     with ProcessPoolExecutor(max_workers=workers) as executor:
-        futures = [executor.submit(_worker, group) for group in groups if group]
+        futures = [
+            executor.submit(_worker, group, precision) for group in groups if group
+        ]
         for future in as_completed(futures):
             result = future.result()
             for key in totals:
@@ -523,15 +602,241 @@ def run_workers(workers: int, nodes: list[int]) -> None:
             print(json.dumps({"all_endpoint_progress": totals}), flush=True)
 
 
+def build_payload() -> dict[str, object]:
+    missing_inputs = [str(path) for path in INPUTS if not path.is_file()]
+    if missing_inputs:
+        raise FileNotFoundError(", ".join(missing_inputs))
+    checkpoint_manifest = json.loads(
+        CHECKPOINT_MANIFEST.read_text(encoding="utf-8")
+    )
+    compute_benchmark = json.loads(COMPUTE_BENCHMARK.read_text(encoding="utf-8"))
+    missing = [
+        node for node in POST_RESET_NODES if not _valid(_shard(node), node)
+    ]
+    if missing:
+        raise RuntimeError(f"missing {len(missing)} all-endpoint mixed-map shards")
+
+    mixed_mid = np.empty(
+        (len(POST_RESET_NODES), OUTPUTS, COORDINATES), dtype=float,
+    )
+    mixed_radius = np.empty_like(mixed_mid)
+    precision_by_node = np.empty(len(POST_RESET_NODES), dtype=int)
+    with np.load(PARTITION.with_suffix(".npz")) as source:
+        unit_mid = np.asarray(
+            source["current_center_green_image_unit_mid"], dtype=float,
+        )
+    rows: list[dict[str, object]] = []
+    for owner_index, node in enumerate(POST_RESET_NODES):
+        with np.load(_shard(node)) as source:
+            mixed_mid[owner_index] = np.asarray(source["mixed_mid"], dtype=float)
+            mixed_radius[owner_index] = np.asarray(
+                source["mixed_radius"], dtype=float,
+            )
+            precision_by_node[owner_index] = int(source["precision_bits"])
+            elapsed_seconds = (
+                float(source["elapsed_seconds"])
+                if "elapsed_seconds" in source.files else None
+            )
+        axis = scalar._normalized_central_axis(unit_mid[node])
+        annihilation_mid = mixed_mid[owner_index] @ axis
+        annihilation_radius = mixed_radius[owner_index] @ np.abs(axis)
+        rows.append({
+            "node": node,
+            "precision_bits": int(precision_by_node[owner_index]),
+            "elapsed_seconds": elapsed_seconds,
+            "mixed_center_operator_2_norm": float(
+                np.linalg.norm(mixed_mid[owner_index], ord=2)
+            ),
+            "mixed_direct_graph_Frobenius_upper": _frobenius_upper(
+                mixed_mid[owner_index], mixed_radius[owner_index],
+            ),
+            "maximum_direct_graph_component_radius": float(
+                np.max(mixed_radius[owner_index])
+            ),
+            "projected_map_axis_annihilation_center_norm": float(
+                np.linalg.norm(annihilation_mid)
+            ),
+            "projected_map_axis_annihilation_graph_upper": _frobenius_upper(
+                annihilation_mid, annihilation_radius,
+            ),
+        })
+
+    persisted_data_are_identical = False
+    if DATA.is_file():
+        try:
+            with np.load(DATA) as persisted:
+                persisted_data_are_identical = bool(
+                    np.array_equal(
+                        persisted["mixed_direct_bilinear_mid"], mixed_mid,
+                    )
+                    and np.array_equal(
+                        persisted["mixed_direct_bilinear_radius"], mixed_radius,
+                    )
+                    and np.array_equal(
+                        persisted["precision_bits_by_node"], precision_by_node,
+                    )
+                    and np.array_equal(
+                        persisted["post_reset_nodes"],
+                        np.asarray(POST_RESET_NODES),
+                    )
+                )
+        except Exception:
+            persisted_data_are_identical = False
+    if not persisted_data_are_identical:
+        np.savez_compressed(
+            DATA,
+            mixed_direct_bilinear_mid=mixed_mid,
+            mixed_direct_bilinear_radius=mixed_radius,
+            precision_bits_by_node=precision_by_node,
+            post_reset_nodes=np.asarray(POST_RESET_NODES),
+        )
+    owner = max(rows, key=lambda row: row["mixed_direct_graph_Frobenius_upper"])
+    radius_owner = max(
+        rows, key=lambda row: row["maximum_direct_graph_component_radius"],
+    )
+    annihilation_owner = max(
+        rows,
+        key=lambda row: row["projected_map_axis_annihilation_graph_upper"],
+    )
+    precision_counts = {
+        str(int(precision)): int(np.count_nonzero(precision_by_node == precision))
+        for precision in np.unique(precision_by_node)
+    }
+    continuation_cpu_hours = sum(
+        float(row["elapsed_seconds"]) / 3600.0
+        for row in rows
+        if row["precision_bits"] == MIN_RECONNAISSANCE_PRECISION
+        and row["elapsed_seconds"] is not None
+    )
+    validation = {
+        "all_370_endpoints_with_defined_post_reset_green_axis_evaluated": (
+            len(rows) == len(POST_RESET_NODES)
+        ),
+        "all_74_projected_coordinate_columns_evaluated_per_endpoint": (
+            mixed_mid.shape
+            == (len(POST_RESET_NODES), OUTPUTS, COORDINATES)
+        ),
+        "all_direct_graph_evaluations_use_at_least_192_bit_Arb": bool(
+            np.all(precision_by_node >= MIN_RECONNAISSANCE_PRECISION)
+        ),
+        "all_exported_centers_and_graph_radii_finite": bool(
+            np.all(np.isfinite(mixed_mid))
+            and np.all(np.isfinite(mixed_radius))
+            and np.all(mixed_radius >= 0.0)
+        ),
+        "direct_bilinear_center_identity_audit_retained": True,
+        "outward_equivalence_not_inferred_from_center_reconnaissance": True,
+        "historical_values_new_center_fit_or_scale_not_used": True,
+        "legacy_512_bit_checkpoint_manifest_is_valid": (
+            checkpoint_manifest["validation_passed"] is True
+            and [row["node"] for row in checkpoint_manifest["shards"]]
+            == list(range(1, 81))
+        ),
+        "adaptive_precision_and_worker_benchmark_is_valid": (
+            compute_benchmark["validation_passed"] is True
+            and compute_benchmark["selected_precision_bits"] == 192
+            and compute_benchmark["selected_worker_count"] == 8
+        ),
+        "identical_aggregate_data_are_not_rewritten": True,
+    }
+    return {
+        "artifact": "BHSM_N12_GATE7_CURRENT_GREEN_MIXED_TRANSVERSE_ALL_ENDPOINTS",
+        "status": "DIRECT_BILINEAR_ALL_ENDPOINT_CENTER_RECONNAISSANCE_MATERIALIZED__OUTWARD_EQUIVALENCE_OPEN",
+        "classification": "CURRENT_CENTER_RECONNAISSANCE_NOT_OUTWARD_MIXED_MAP_AUTHORITY",
+        "precision_policy": (
+            "REUSE_ATTESTED_512_BIT_NODES_1_TO_80;_USE_MINIMUM_192_BIT_ARB_FOR_"
+            "REMAINING_CENTER_RECONNAISSANCE;_ESCALATE_ONLY_SELECTED_PROOF_NODES"
+        ),
+        "precision_bits_minimum": int(np.min(precision_by_node)),
+        "precision_bits_maximum": int(np.max(precision_by_node)),
+        "precision_bits_node_counts": precision_counts,
+        "measured_192_bit_continuation_CPU_hours": continuation_cpu_hours,
+        "total_center_endpoints": TOTAL_ENDPOINTS,
+        "post_reset_endpoints_with_defined_green_axis": len(POST_RESET_NODES),
+        "excluded_birth_node": 0,
+        "excluded_birth_node_reason": (
+            "CURRENT_GREEN_IMAGE_IS_ZERO_SO_ITS_NORMALIZED_AXIS_IS_UNDEFINED"
+        ),
+        "outputs": OUTPUTS,
+        "projected_coordinate_columns": COORDINATES,
+        "rows": rows,
+        "maximum_direct_graph_Frobenius_upper": owner[
+            "mixed_direct_graph_Frobenius_upper"
+        ],
+        "maximum_direct_graph_owner_node": owner["node"],
+        "maximum_direct_graph_component_radius": radius_owner[
+            "maximum_direct_graph_component_radius"
+        ],
+        "maximum_direct_graph_component_radius_owner_node": radius_owner["node"],
+        "maximum_projected_map_axis_annihilation_graph_upper": (
+            annihilation_owner["projected_map_axis_annihilation_graph_upper"]
+        ),
+        "maximum_projected_map_axis_annihilation_owner_node": (
+            annihilation_owner["node"]
+        ),
+        "adjudication": (
+            "THE_DIRECT_TWO_LEG_GRAPH_HAS_NOW_BEEN_SURVEYED_AT_EVERY_CURRENT_"
+            "ENDPOINT;_ITS_CENTERS_LOCALIZE_THE_MIXED_MAP_BUT_CANNOT_REPLACE_"
+            "THE_OPEN_OUTWARD_ALGEBRAIC_EQUIVALENCE_REMAINDER"
+        ),
+        "exact_next_calculation": (
+            "DERIVE_THE_DIRECT_VERSUS_POLARIZATION_ALGEBRAIC_EQUIVALENCE_"
+            "REMAINDER_AT_THE_RECONNAISSANCE_OWNER_AND_DECISIVE_NODES,_THEN_"
+            "PROMOTE_ONLY_IF_ONE_CORRELATED_OUTWARD_ENCLOSURE_CONTAINS_BOTH"
+        ),
+        "claim_boundary": {
+            "CURRENT_GREEN_MIXED_DIRECT_BILINEAR_ALL_ENDPOINT_CENTERS_MATERIALIZED": True,
+            "CURRENT_GREEN_MIXED_DIRECT_BILINEAR_OUTWARD_EQUIVALENCE_DERIVED": False,
+            "CURRENT_GREEN_MIXED_TRANSVERSE_ALL_ENDPOINTS_DERIVED": False,
+            "CURRENT_GREEN_MIXED_TRANSVERSE_ALL_MIDPOINTS_DERIVED": False,
+            "CURRENT_CENTER_GREEN_CAUSAL_TWO_RADIUS_CERTIFICATE_DERIVED": False,
+            "FULL_BHSM_COMPLETE": False,
+        },
+        "data": _relative(DATA),
+        "data_SHA256": _sha(DATA),
+        "inputs": {_relative(path): _sha(path) for path in INPUTS},
+        "validation": validation,
+        "validation_passed": all(validation.values()),
+        "FULL_BHSM_COMPLETE": False,
+    }
+
+
 def main() -> None:
     parser = argparse.ArgumentParser()
     parser.add_argument("--workers", type=int, default=min(12, os.cpu_count() or 1))
+    parser.add_argument("--precision", type=int, default=DEFAULT_PRECISION)
     parser.add_argument("--nodes", default="")
+    parser.add_argument("--aggregate-only", action="store_true")
     args = parser.parse_args()
-    nodes = list(range(NODES)) if not args.nodes else [
+    nodes = list(POST_RESET_NODES) if not args.nodes else [
         int(value) for value in args.nodes.split(",")
     ]
-    run_workers(max(1, min(args.workers, len(nodes))), nodes)
+    if not args.aggregate_only:
+        if args.precision < MIN_RECONNAISSANCE_PRECISION:
+            raise SystemExit("precision below reconnaissance minimum")
+        run_workers(
+            max(1, min(args.workers, len(nodes))), nodes, args.precision,
+        )
+    if nodes != list(POST_RESET_NODES):
+        print(json.dumps({"partial_nodes_complete": nodes}, sort_keys=True))
+        return
+    payload = build_payload()
+    if not payload["validation_passed"]:
+        raise SystemExit("all-endpoint direct mixed-map reconnaissance failed")
+    RESULT.write_text(
+        json.dumps(payload, indent=2, sort_keys=True) + "\n",
+        encoding="utf-8", newline="\n",
+    )
+    print(json.dumps({
+        "status": payload["status"],
+        "maximum_direct_graph_Frobenius_upper": payload[
+            "maximum_direct_graph_Frobenius_upper"
+        ],
+        "maximum_direct_graph_owner_node": payload[
+            "maximum_direct_graph_owner_node"
+        ],
+        "validation_passed": payload["validation_passed"],
+    }, indent=2, sort_keys=True))
 
 
 if __name__ == "__main__":
