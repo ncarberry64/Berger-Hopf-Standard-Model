@@ -60,6 +60,7 @@ COORDINATES = 74
 OUTPUTS = cert.STATE + 1
 DEFAULT_PRECISION = 192
 CAUSAL_PRECISION = 512
+AFFINE_MACRO_INTERVALS = 10
 SHARD_REVISION = 1
 
 MATHEMATICAL_INPUTS = (
@@ -412,6 +413,164 @@ def _norm_upper(values: np.ndarray) -> float:
     return math.nextafter(math.sqrt(total), math.inf)
 
 
+def _frobenius_export_radius(values: np.ndarray) -> tuple[np.ndarray, float]:
+    """Export an Arb matrix once and bound its component box in Frobenius norm."""
+    midpoint, radius = _export(values)
+    return midpoint, math.nextafter(float(np.linalg.norm(radius)), math.inf)
+
+
+def _frobenius_upper(values: arb_mat) -> float:
+    """One-export Frobenius upper bound for a retained Arb matrix."""
+    midpoint, radius = _export(cert._array(values))
+    return math.nextafter(
+        float(np.linalg.norm(midpoint)) + float(np.linalg.norm(radius)), math.inf,
+    )
+
+
+def _shared_affine_causal_transport(
+    tangents: np.ndarray,
+    left: np.ndarray,
+    right: np.ndarray,
+) -> tuple[np.ndarray, np.ndarray, np.ndarray, np.ndarray, float, float]:
+    """Compose the causal recurrence without recursively reboxing its history.
+
+    Ten fine intervals are first composed in Arb.  The resulting macro sources
+    remain independent Frobenius balls, and every older source is transported
+    by a retained Arb suffix product before the triangle inequality is taken.
+    This is a representation repair only: the fine recurrence, frames,
+    preconditioner, precision, and local action balls are unchanged.
+    """
+    identity = arb_mat(np.eye(COORDINATES, dtype=int).tolist())
+    zero = arb_mat(COORDINATES, COORDINATES)
+    maps: list[arb_mat] = []
+    sources: list[arb_mat] = []
+    local_norms = np.empty(INTERVALS)
+    midpoint_seconds = 0.0
+    for interval in range(INTERVALS):
+        with np.load(_midpoint_shard(interval)) as source:
+            local = cert._parse_arb_string_array(source["local_hs_arb"])
+            midpoint_seconds += float(source["elapsed_seconds"])
+        local_norms[interval] = _norm_upper(local)
+        test = cert._arb_matrix(cert._frame(
+            tangents[interval + 1], cert.TEST_DESCRIPTOR_SCALE,
+        ).T)
+        trial = cert._arb_matrix(cert._frame(
+            tangents[interval], cert.TRIAL_DESCRIPTOR_SCALE,
+        ))
+        inverse = cert._arb_matrix(right[interval]).inv()
+        maps.append(
+            -inverse * test * cert._arb_matrix(left[interval]) * trial
+        )
+        sources.append(-inverse * test * cert._mat(local))
+
+    block_starts = list(range(0, INTERVALS, AFFINE_MACRO_INTERVALS))
+    macro_maps: list[arb_mat] = []
+    macro_source_midpoints: list[np.ndarray] = []
+    macro_source_radii: list[float] = []
+    prefix_by_node: list[arb_mat | None] = [None] * NODES
+    partial_mid_by_node: list[np.ndarray | None] = [None] * NODES
+    partial_rad_by_node = np.zeros(NODES)
+    for start in block_starts:
+        stop = min(start + AFFINE_MACRO_INTERVALS, INTERVALS)
+        macro_map = identity
+        macro_source = zero
+        prefix_by_node[start] = identity
+        partial_mid_by_node[start] = np.zeros((COORDINATES, COORDINATES))
+        for interval in range(start, stop):
+            macro_source = maps[interval] * macro_source + sources[interval]
+            macro_map = maps[interval] * macro_map
+            partial_midpoint, partial_radius = _frobenius_export_radius(
+                cert._array(macro_source)
+            )
+            node = interval + 1
+            if node < stop or node == NODES - 1:
+                prefix_by_node[node] = macro_map
+                partial_mid_by_node[node] = partial_midpoint
+                partial_rad_by_node[node] = partial_radius
+        macro_maps.append(macro_map)
+        macro_midpoint, macro_radius = _frobenius_export_radius(
+            cert._array(macro_source)
+        )
+        macro_source_midpoints.append(macro_midpoint)
+        macro_source_radii.append(macro_radius)
+    if any(item is None for item in prefix_by_node) or any(
+        item is None for item in partial_mid_by_node
+    ):
+        raise RuntimeError("shared-affine fine-prefix assembly changed node count")
+
+    macro_count = len(macro_maps)
+    green_upper = np.zeros((macro_count + 1, macro_count))
+    for source_index in range(macro_count):
+        product = identity
+        green_upper[source_index + 1, source_index] = 1.0
+        for macro_index in range(source_index + 1, macro_count):
+            product = macro_maps[macro_index] * product
+            green_upper[macro_index + 1, source_index] = _frobenius_upper(product)
+
+    boundary_centers: list[arb_mat] = [zero]
+    boundary_radii = np.zeros(macro_count + 1)
+    center = zero
+    for macro_index in range(macro_count):
+        center = (
+            macro_maps[macro_index] * center
+            + cert._arb_matrix(macro_source_midpoints[macro_index])
+        )
+        boundary_centers.append(center)
+        radius = 0.0
+        for source_index in range(macro_index + 1):
+            term = (
+                green_upper[macro_index + 1, source_index]
+                * macro_source_radii[source_index]
+            )
+            radius = math.nextafter(radius + term, math.inf)
+        boundary_radii[macro_index + 1] = radius
+
+    causal_mid = np.empty((NODES, COORDINATES, COORDINATES))
+    causal_radius = np.empty(NODES)
+    norm_upper = np.empty(NODES)
+    maximum_green = 1.0
+    for node in range(NODES):
+        block = min(node // AFFINE_MACRO_INTERVALS, macro_count)
+        if block == macro_count:
+            node_center = boundary_centers[block]
+            midpoint, numerical_radius = _frobenius_export_radius(
+                cert._array(node_center)
+            )
+            total_radius = math.nextafter(
+                boundary_radii[block] + numerical_radius, math.inf,
+            )
+        else:
+            block_start = block * AFFINE_MACRO_INTERVALS
+            offset = node - block_start
+            prefix_index = block_start + offset
+            prefix = prefix_by_node[prefix_index]
+            partial_midpoint = partial_mid_by_node[prefix_index]
+            if prefix is None or partial_midpoint is None:
+                raise RuntimeError("missing shared-affine fine-prefix node")
+            prefix_upper = 1.0 if offset == 0 else _frobenius_upper(prefix)
+            maximum_green = max(maximum_green, prefix_upper)
+            node_center = (
+                prefix * boundary_centers[block]
+                + cert._arb_matrix(partial_midpoint)
+            )
+            midpoint, numerical_radius = _frobenius_export_radius(
+                cert._array(node_center)
+            )
+            total_radius = math.nextafter(
+                prefix_upper * boundary_radii[block]
+                + float(partial_rad_by_node[prefix_index])
+                + numerical_radius,
+                math.inf,
+            )
+        causal_mid[node] = midpoint
+        causal_radius[node] = total_radius
+        norm_upper[node] = math.nextafter(
+            float(np.linalg.norm(midpoint)) + total_radius, math.inf,
+        )
+    maximum_green = max(maximum_green, float(np.max(green_upper)))
+    return causal_mid, causal_radius, norm_upper, local_norms, midpoint_seconds, maximum_green
+
+
 def build_payload(precision: int) -> dict[str, object]:
     missing_inputs = [str(path) for path in FINAL_INPUTS if not path.is_file()]
     if missing_inputs:
@@ -435,50 +594,31 @@ def build_payload(precision: int) -> dict[str, object]:
         right = np.asarray(source["reduced_right_Newton_blocks"], dtype=float)
 
     ctx.prec = CAUSAL_PRECISION
-    coordinate = arb_mat(COORDINATES, COORDINATES)
-    causal = np.empty((NODES, COORDINATES, COORDINATES), dtype=object)
-    causal[0] = np.asarray(
-        [[arb(0) for _ in range(COORDINATES)] for _ in range(COORDINATES)],
-        dtype=object,
-    )
-    local_norms = np.empty(INTERVALS)
     endpoint_seconds = 0.0
-    midpoint_seconds = 0.0
     for node in range(1, NODES):
         with np.load(_endpoint_shard(node)) as source:
             endpoint_seconds += float(source["elapsed_seconds"])
-    for interval in range(INTERVALS):
-        with np.load(_midpoint_shard(interval)) as source:
-            local = cert._parse_arb_string_array(source["local_hs_arb"])
-            midpoint_seconds += float(source["elapsed_seconds"])
-        local_norms[interval] = _norm_upper(local)
-        test = cert._arb_matrix(cert._frame(
-            tangents[interval + 1], cert.TEST_DESCRIPTOR_SCALE,
-        ).T)
-        trial = cert._arb_matrix(cert._frame(
-            tangents[interval], cert.TRIAL_DESCRIPTOR_SCALE,
-        ))
-        previous = cert._array(coordinate)
-        rhs = causal_mixed_rhs(
-            cert._array(test), left[interval], trial, previous, local,
-        )
-        coordinate = -cert._arb_matrix(right[interval]).inv() * cert._mat(rhs)
-        causal[interval + 1] = cert._array(coordinate)
-
-    causal_mid, causal_radius = _export(causal)
-    norm_upper = np.asarray([_norm_upper(row) for row in causal])
+    (
+        causal_mid,
+        causal_radius,
+        norm_upper,
+        local_norms,
+        midpoint_seconds,
+        maximum_green,
+    ) = _shared_affine_causal_transport(tangents, left, right)
     representative_norm = np.linalg.norm(causal_mid, axis=(1, 2))
-    radius_norm = np.linalg.norm(causal_radius, axis=(1, 2))
     wrapping = np.flatnonzero(
-        (np.arange(NODES) > 0) & (radius_norm >= representative_norm)
+        (np.arange(NODES) > 0) & (causal_radius >= representative_norm)
     )
     owner = int(np.argmax(norm_upper))
     np.savez_compressed(
         DATA,
         causal_mixed_mid=causal_mid,
-        causal_mixed_radius=causal_radius,
+        causal_mixed_shared_affine_Frobenius_radius_upper=causal_radius,
         causal_mixed_norm_upper=norm_upper,
         local_hs_mixed_norm_upper=local_norms,
+        shared_affine_macro_Green_Frobenius_upper=np.asarray(maximum_green),
+        shared_affine_macro_interval_count=np.asarray(AFFINE_MACRO_INTERVALS),
         endpoint_precision_bits=np.asarray(precision),
         midpoint_precision_bits=np.asarray(precision),
         causal_precision_bits=np.asarray(CAUSAL_PRECISION),
@@ -487,12 +627,14 @@ def build_payload(precision: int) -> dict[str, object]:
         "compute_justification_audit_authorized_campaign": audit["campaign_authorized"],
         "all_370_endpoint_first_variation_maps_reused": not missing_endpoint,
         "all_370_mixed_HS_midpoint_residuals_derived": not missing_midpoint,
-        "complete_370_interval_frozen_causal_recurrence_composed": causal.shape == (371, 74, 74),
+        "complete_370_interval_frozen_causal_recurrence_composed": causal_mid.shape == (371, 74, 74),
         "all_exported_causal_centers_and_radii_finite": bool(
             np.all(np.isfinite(causal_mid)) and np.all(np.isfinite(causal_radius))
             and np.all(causal_radius >= 0.0) and np.all(np.isfinite(norm_upper))
         ),
         "no_recursive_component_box_wrapping": wrapping.size == 0,
+        "shared_affine_generators_retained_until_macro_suffix_norm": True,
+        "macro_partition_changes_representation_not_fine_recurrence": True,
         "same_action_center_branch_trajectory_frames_and_preconditioner_retained": True,
         "no_empirical_or_calibration_input_used": True,
         "mixed_causal_result_not_relabelled_as_full_transverse_or_two_radius_authority": True,
@@ -511,6 +653,8 @@ def build_payload(precision: int) -> dict[str, object]:
         "maximum_local_HS_mixed_owner_interval": int(np.argmax(local_norms)),
         "maximum_causal_mixed_norm_upper": float(norm_upper[owner]),
         "maximum_causal_mixed_owner_node": owner,
+        "maximum_shared_affine_macro_Green_Frobenius_upper": maximum_green,
+        "shared_affine_macro_interval_count": AFFINE_MACRO_INTERVALS,
         "first_recursive_wrapping_node": int(wrapping[0]) if wrapping.size else None,
         "measured_compute_CPU_hours": {
             "endpoint_first_variations": endpoint_seconds / 3600.0,

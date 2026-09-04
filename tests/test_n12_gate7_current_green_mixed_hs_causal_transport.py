@@ -39,3 +39,9 @@ def test_export_contains_input_balls():
 def test_fingerprints_separate_endpoint_and_midpoint():
     module = _module()
     assert module._fingerprint("endpoint", 192) != module._fingerprint("midpoint", 192)
+
+
+def test_causal_aggregation_preserves_shared_affine_history():
+    source = SCRIPT.read_text(encoding="utf-8")
+    assert "-inverse * test * cert._arb_matrix(left[interval]) * trial" in source
+    assert "shared_affine_generators_retained_until_macro_suffix_norm" in source
