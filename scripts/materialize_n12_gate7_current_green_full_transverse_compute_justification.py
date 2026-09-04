@@ -30,6 +30,11 @@ PARALLEL_SHARDS = (
     WORK / "endpoint_002.npz", WORK / "endpoint_003.npz",
     WORK / "midpoint_000.npz", WORK / "midpoint_001.npz",
 )
+TWO_WORKER_SHARDS = (WORK / "endpoint_006.npz", WORK / "midpoint_004.npz")
+COMPLETED_THROTTLE_SHARDS = (
+    *(WORK / f"endpoint_{index:03d}.npz" for index in range(1, 7)),
+    *(WORK / f"midpoint_{index:03d}.npz" for index in range(5)),
+)
 THIS_SCRIPT = Path(__file__).resolve()
 
 
@@ -54,7 +59,8 @@ def _write(path: Path, payload: dict[str, object]) -> None:
 def build_payload() -> dict[str, object]:
     required = (
         CAMPAIGN, THEORY, ENDPOINT, REPLAY, JACOBIAN, PARTITION, SCALAR,
-        SEED, PRIOR_BENCHMARK, BENCHMARK_SHARD, *PARALLEL_SHARDS, THIS_SCRIPT,
+        SEED, PRIOR_BENCHMARK, BENCHMARK_SHARD, *PARALLEL_SHARDS,
+        *TWO_WORKER_SHARDS, THIS_SCRIPT,
     )
     missing = [str(path) for path in required if not path.is_file()]
     if missing:
@@ -77,11 +83,24 @@ def build_payload() -> dict[str, object]:
         with np.load(path) as source:
             parallel_seconds.append(float(source["elapsed_seconds"]))
     parallel_mean = float(np.mean(parallel_seconds))
-    contention = parallel_mean / elapsed
+    parallel_contention = parallel_mean / elapsed
+    two_worker_seconds = []
+    for path in TWO_WORKER_SHARDS:
+        with np.load(path) as source:
+            two_worker_seconds.append(float(source["elapsed_seconds"]))
+    two_worker_mean = float(np.mean(two_worker_seconds))
+    two_worker_contention = two_worker_mean / elapsed
+    completed_seconds = 0.0
+    for path in COMPLETED_THROTTLE_SHARDS:
+        with np.load(path) as source:
+            completed_seconds += float(source["elapsed_seconds"])
     total_rows = 740
     serial_hours = total_rows * elapsed / 3600.0
-    projected_cpu = total_rows * parallel_mean / 3600.0
-    projected_wall = projected_cpu / 4.0
+    completed_rows = len(COMPLETED_THROTTLE_SHARDS)
+    remaining_rows = total_rows - completed_rows
+    projected_remaining_cpu = remaining_rows * two_worker_mean / 3600.0
+    projected_cpu = completed_seconds / 3600.0 + projected_remaining_cpu
+    projected_wall = projected_remaining_cpu / 2.0
     aborted_eight_worker_pilot_cpu_hours_approx = 2.43
     projected_total_cpu = projected_cpu + aborted_eight_worker_pilot_cpu_hours_approx
     ceiling = 200.0
@@ -97,7 +116,15 @@ def build_payload() -> dict[str, object]:
             "layout": "TWO_ENDPOINT_WORKERS_PLUS_TWO_MIDPOINT_WORKERS",
             "elapsed_seconds": parallel_seconds,
             "mean_elapsed_seconds": parallel_mean,
-            "contention_factor_against_one_worker": contention,
+            "contention_factor_against_one_worker": parallel_contention,
+            "decision": "REJECTED_AFTER_LATER_ROWS_PROJECTED_ABOVE_THE_FIXED_COMPUTE_CEILING",
+        },
+        "two_worker_probe": {
+            "layout": "ONE_ENDPOINT_WORKER_PLUS_ONE_MIDPOINT_WORKER",
+            "elapsed_seconds": two_worker_seconds,
+            "mean_elapsed_seconds": two_worker_mean,
+            "contention_factor_against_one_worker": two_worker_contention,
+            "decision": "SELECTED_TO_RETAIN_THE_FIXED_COMPUTE_CEILING",
         },
         "validation_passed": finite and revision == 4,
         "FULL_BHSM_COMPLETE": False,
@@ -142,10 +169,15 @@ def build_payload() -> dict[str, object]:
         "cost": {
             "total_rows": total_rows,
             "projected_serial_CPU_hours": serial_hours,
-            "selected_worker_count": 4,
-            "four_worker_contention_factor_observed": contention,
-            "projected_campaign_CPU_hours_at_four_workers": projected_cpu,
-            "projected_wall_hours_at_four_workers": projected_wall,
+            "selected_worker_count": 2,
+            "four_worker_contention_factor_observed": parallel_contention,
+            "two_worker_contention_factor_observed": two_worker_contention,
+            "completed_rows_at_throttle_audit": completed_rows,
+            "actual_completed_shard_CPU_hours": completed_seconds / 3600.0,
+            "remaining_rows_at_two_workers": remaining_rows,
+            "projected_remaining_CPU_hours_at_two_workers": projected_remaining_cpu,
+            "projected_campaign_CPU_hours_after_throttle": projected_cpu,
+            "projected_remaining_wall_hours_at_two_workers": projected_wall,
             "aborted_eight_worker_pilot_CPU_hours_approx": aborted_eight_worker_pilot_cpu_hours_approx,
             "projected_total_CPU_hours_including_aborted_pilot": projected_total_cpu,
             "fixed_campaign_CPU_ceiling": ceiling,
@@ -168,6 +200,7 @@ def build_payload() -> dict[str, object]:
             "512-bit decisive directional transverse seed",
             "prior eight-worker contention benchmark",
             "current-kernel four-worker throttle probe",
+            "current-kernel two-worker ceiling-preserving probe",
         ],
         "reusable_outputs": [
             "740 fingerprinted restart-safe center shards",

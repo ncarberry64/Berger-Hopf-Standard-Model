@@ -23,6 +23,7 @@
   },
   "four_worker_probe": {
     "contention_factor_against_one_worker": 1.5261873733449822,
+    "decision": "REJECTED_AFTER_LATER_ROWS_PROJECTED_ABOVE_THE_FIXED_COMPUTE_CEILING",
     "elapsed_seconds": [
       920.1553815000007,
       917.9697327000003,
@@ -36,5 +37,15 @@
   "measured_node": 1,
   "status": "CURRENT_GREEN_FULL_TRANSVERSE_EXACT_SIGNED_TENSOR_BENCHMARK_COMPLETE",
   "tensor_stored": false,
+  "two_worker_probe": {
+    "contention_factor_against_one_worker": 1.3874044673490256,
+    "decision": "SELECTED_TO_RETAIN_THE_FIXED_COMPUTE_CEILING",
+    "elapsed_seconds": [
+      830.8807925000001,
+      836.6819439999999
+    ],
+    "layout": "ONE_ENDPOINT_WORKER_PLUS_ONE_MIDPOINT_WORKER",
+    "mean_elapsed_seconds": 833.78136825
+  },
   "validation_passed": true
 }
