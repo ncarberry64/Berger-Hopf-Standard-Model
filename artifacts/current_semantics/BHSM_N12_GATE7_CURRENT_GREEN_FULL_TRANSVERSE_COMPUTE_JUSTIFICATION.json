@@ -1,0 +1,92 @@
+{
+  "FULL_BHSM_COMPLETE": false,
+  "artifact": "BHSM_N12_GATE7_CURRENT_GREEN_FULL_TRANSVERSE_COMPUTE_JUSTIFICATION",
+  "benchmark": {
+    "elapsed_seconds": 600.9648864999999,
+    "index": 1,
+    "kind": "endpoint",
+    "quadratic_Frobenius_norm": 283341.64780152077,
+    "shard_revision": 4
+  },
+  "campaign_authorized": true,
+  "cheaper_routes_adjudicated": [
+    {
+      "decision": "REJECTED_NO_UNIT_SPHERE_OR_ALL_NODE_AUTHORITY",
+      "route": "DIRECTIONAL_SEED_OR_EXTREMAL_NODE_SAMPLING"
+    },
+    {
+      "decision": "REJECTED_EXACT_SIGNED_BROADCAST_IS_FASTER_AND_ALGEBRAICALLY_COMPLETE",
+      "route": "73_SEPARATE_COMPLEX_STEP_HESSIAN_DIRECTIONS"
+    },
+    {
+      "decision": "REJECTED_COMPLETE_SYMMETRIC_TENSOR_IS_AVAILABLE_DIRECTLY",
+      "route": "POLARIZATION_GRID"
+    },
+    {
+      "decision": "REJECTED_WRONG_REALIZATION_GREEN_COMPLEMENT_AND_DESCRIPTOR_DOMAIN",
+      "route": "HISTORICAL_48_NODE_72D_TENSOR"
+    },
+    {
+      "decision": "REJECTED_INVARIANT_NORMS_AND_VALIDATION_RESIDUALS_ARE_SUFFICIENT_FOR_THE_CENTER_MAJORANT",
+      "route": "STORE_EVERY_FULL_TENSOR"
+    },
+    {
+      "decision": "DEFERRED_USE_CENTER_TENSOR_THEN_SEPARATE_ANALYTIC_OUTWARD_REMAINDER",
+      "route": "UNIFORM_ARB_TENSOR_COMPONENT_CAMPAIGN"
+    }
+  ],
+  "cost": {
+    "eight_worker_contention_factor_reused": 1.4352273904169337,
+    "fixed_campaign_CPU_ceiling": 200.0,
+    "peak_memory_GiB_approx": 3.2,
+    "projected_CPU_hours_at_eight_workers": 177.29603796662965,
+    "projected_serial_CPU_hours": 123.53167111388888,
+    "projected_wall_hours_at_eight_workers": 22.162004745828707,
+    "stop_condition": "STOP_ON_CORRUPT_SHARD_NONFINITE_ROW_PROOF_CONTRACT_CHANGE_OR_MEASURED_CPU_CEILING_VIOLATION",
+    "total_rows": 740
+  },
+  "inputs": {
+    "artifacts/action_extension/BHSM_AE4_CURRENT_C2_GREEN_IMAGE_PARTITION_RECONCILIATION.npz": "6AA5E96C1C26A7788829389C008441648D5182CD70E47BD2398FB18D5A6F6DB6",
+    "artifacts/flagship_integration/BHSM_N12_GATE7_AUGMENTED_FIXED_DESCRIPTOR_NEWTON_ENDPOINT_CANDIDATE.npz": "3E52E013B473938B6959D5D63054FCC4D5057A13A71D10E2874ADB9A53E85B4E",
+    "artifacts/flagship_integration/BHSM_N12_GATE7_AUGMENTED_FIXED_DESCRIPTOR_NEWTON_MIDPOINT_REPLAY.npz": "B47F9C415CF9A7A3D7EB1888A245FB7C66EB11879E70F84202B7E3A557CF2988",
+    "artifacts/flagship_integration/BHSM_N12_GATE7_CORRELATED_DESCRIPTOR_AUGMENTED_JACOBIANS.npz": "09F5441ADD40335C9F3683B5DCC4D21C0D25026629330DD66E3AF684B54497FD",
+    "artifacts/flagship_integration/BHSM_N12_GATE7_CURRENT_GREEN_CORRELATED_SCALAR_ALL_INTERVALS.npz": "156F68374826AA1BC3AD5F0B3D3BF68843FD70D019D886A74DC6131AD619F3EF",
+    "artifacts/flagship_integration/BHSM_N12_GATE7_CURRENT_GREEN_FULL_TRANSVERSE_COMPUTE_BENCHMARK.json": "F1FE6774974E460F7C51FE8D15F5984955C3BA26EE0195539893AA40F1DEBCCD",
+    "artifacts/flagship_integration/BHSM_N12_GATE7_CURRENT_GREEN_MIXED_TRANSVERSE_COMPUTE_BENCHMARK.json": "348056ECC61F1AA6D1B4B60C99EEE66568459CA2E0F8F16C0116809C5354A537",
+    "artifacts/flagship_integration/BHSM_N12_GATE7_CURRENT_GREEN_TRANSVERSE_QUADRATIC_SEED.json": "A28A37DDB9BE8C1674E522373F604FC7108FA7D12913287888C583B5C0A12597",
+    "scripts/derive_n12_gate7_current_green_full_transverse_quadratic_center.py": "40101BFC68E25C084C7A6AC6371667CCC41DE5F27ED25305DEFBE6FA4D521F79",
+    "scripts/materialize_n12_gate7_current_green_full_transverse_compute_justification.py": "D35FDE346F732E8DA5240D6FB74235FD40A3C5543D49D9343FD8047C7FE85A5F",
+    "theory/n12_gate7_current_green_full_transverse_quadratic_majorant.md": "2BC5E7AC722272243F25451041ED23CDC9CDC964D555DD5F0B79C74BCABE743F"
+  },
+  "proof_obligation": "DERIVE_THE_COMPLETE_CURRENT_73_BY_73_TRANSVERSE_QUADRATIC_CENTER_OPERATOR_AT_ALL_370_DEFINED_AXIS_ENDPOINTS_AND_370_HERMITE_SIMPSON_MIDPOINTS",
+  "reusable_outputs": [
+    "740 fingerprinted restart-safe center shards",
+    "all-node Hilbert--Schmidt full-unit-sphere center majorant profile",
+    "owner nodes for the outward certification stage"
+  ],
+  "reused_certified_assets": [
+    "current 371-node action-selected realization and retained birth trace",
+    "current endpoint and midpoint physical tangent frames",
+    "current endpoint and correlated midpoint Green directions",
+    "retained selected-eigenline and bordered hard-response identities",
+    "512-bit decisive directional transverse seed",
+    "prior eight-worker contention benchmark"
+  ],
+  "status": "CURRENT_GREEN_FULL_TRANSVERSE_CENTER_CAMPAIGN_AUTHORIZED_UNDER_FIXED_COMPUTE_CEILING",
+  "validation": {
+    "FULL_BHSM_COMPLETE": false,
+    "all_370_defined_axis_endpoints_and_370_midpoints_are_in_scope": true,
+    "benchmark_is_finite": true,
+    "exact_signed_broadcast_replaces_directional_polarization": true,
+    "existing_valid_shards_are_reused": true,
+    "full_73_by_73_symmetric_input_tensor_is_formed_at_each_center": true,
+    "midpoint_current_axes_reuse_correlated_midpoint_directions": true,
+    "no_empirical_or_calibration_input_used": true,
+    "only_basis_invariant_norms_and_residuals_are_persisted": true,
+    "outward_authority_is_not_claimed_by_the_center_campaign": true,
+    "projected_campaign_below_fixed_compute_ceiling": true,
+    "restart_shard_revision_is_current": true,
+    "zero_Green_axis_at_fixed_endpoint_zero_is_not_normalized_or_invented": true
+  },
+  "validation_passed": true
+}
