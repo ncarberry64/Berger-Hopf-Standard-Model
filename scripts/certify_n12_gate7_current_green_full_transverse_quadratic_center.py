@@ -8,6 +8,7 @@ import math
 from pathlib import Path
 
 import numpy as np
+from flint import arb, ctx
 
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -22,6 +23,7 @@ SEED = F / "BHSM_N12_GATE7_CURRENT_GREEN_TRANSVERSE_QUADRATIC_SEED.json"
 THEORY = ROOT / "theory/n12_gate7_current_green_full_transverse_quadratic_majorant.md"
 THIS_SCRIPT = Path(__file__).resolve()
 SHARD_REVISION = 4
+AGGREGATION_PRECISION = 512
 FIELDS = (
     "quadratic_Frobenius_norm",
     "quadratic_maximum_component_absolute",
@@ -53,6 +55,31 @@ def _relative(path: Path) -> str:
 def _paths(kind: str) -> list[Path]:
     indices = range(1, 371) if kind == "endpoint" else range(370)
     return [WORK / f"{kind}_{index:03d}.npz" for index in indices]
+
+
+def _arb_relative_square_decomposition_residual(
+    total: np.ndarray,
+    parts: np.ndarray,
+) -> float:
+    """Aggregate stored binary center norms with 512-bit directed arithmetic."""
+    maximum = 0.0
+    tiny = arb(float(np.finfo(float).tiny))
+    for value, row in zip(total, parts, strict=True):
+        whole = arb(float(value)) ** 2
+        subtotal = arb(0)
+        for component in row:
+            subtotal += arb(float(component)) ** 2
+        denominator = whole if float(whole.lower()) > float(tiny) else tiny
+        residual = abs(whole - subtotal) / denominator
+        maximum = max(maximum, float(residual.upper()))
+    return math.nextafter(maximum, math.inf)
+
+
+def _arb_sum(values: np.ndarray) -> arb:
+    total = arb(0)
+    for value in np.asarray(values, dtype=float).ravel():
+        total += arb(float(value))
+    return total
 
 
 def _load_kind(kind: str) -> tuple[np.ndarray, np.ndarray, np.ndarray, str, list[str]]:
@@ -87,6 +114,7 @@ def _load_kind(kind: str) -> tuple[np.ndarray, np.ndarray, np.ndarray, str, list
 
 
 def build_payload() -> dict[str, object]:
+    ctx.prec = AGGREGATION_PRECISION
     required = (CAMPAIGN, JUSTIFICATION, SEED, THEORY, THIS_SCRIPT)
     missing = [str(path) for path in required if not path.is_file()]
     if missing:
@@ -112,8 +140,12 @@ def build_payload() -> dict[str, object]:
     )
     f = combined[:, column["field_quadratic_Frobenius_norm"]]
     s = combined[:, column["scalar_quadratic_Frobenius_norm"]]
-    pythagorean_relative = np.max(np.abs(qnorm * qnorm - f * f - s * s)
-                                  / np.maximum(qnorm * qnorm, np.finfo(float).tiny))
+    componentwise_relative = _arb_relative_square_decomposition_residual(
+        qnorm, combined_output,
+    )
+    pythagorean_relative = _arb_relative_square_decomposition_residual(
+        qnorm, np.column_stack((f, s)),
+    )
     manifest = hashlib.sha256("\n".join(endpoint_hashes + midpoint_hashes).encode("ascii")).hexdigest().upper()
     validation = {
         "all_370_defined_axis_endpoint_shards_present": endpoints.shape == (370, len(FIELDS)),
@@ -123,7 +155,7 @@ def build_payload() -> dict[str, object]:
         "all_selected_eigenline_gaps_positive": bool(np.all(combined[:, column["minimum_selected_eigenline_gap"]] > 0.0)),
         "all_maximum_components_below_Frobenius_norm": bool(np.all(combined[:, column["quadratic_maximum_component_absolute"]] <= qnorm)),
         "all_componentwise_maxima_below_componentwise_Frobenius_norms": bool(np.all(combined_maxima <= combined_output)),
-        "componentwise_Frobenius_norms_recompose_total_norms": bool(np.max(np.abs(np.sum(combined_output * combined_output, axis=1) - qnorm * qnorm) / np.maximum(qnorm * qnorm, np.finfo(float).tiny)) < 1.0e-12),
+        "componentwise_Frobenius_norms_recompose_total_norms": componentwise_relative < 1.0e-12,
         "field_scalar_Frobenius_decomposition_consistent": float(pythagorean_relative) < 1.0e-12,
         "all_first_response_relative_residuals_below_1e_minus_10": bool(np.max(combined[:, column["first_response_relative_Frobenius_residual"]]) < 1.0e-10),
         "all_second_response_relative_residuals_below_1e_minus_10": bool(np.max(combined[:, column["second_response_relative_Frobenius_residual"]]) < 1.0e-10),
@@ -132,6 +164,7 @@ def build_payload() -> dict[str, object]:
         "all_midpoint_axis_projection_residuals_below_1e_minus_6": bool(np.max(midpoints[:, column["axis_projection_residual_2_norm"]]) < 1.0e-6),
         "all_seed_directional_Arb_upper_bounds_dominated_by_full_center_Frobenius_norms": seed_dominated,
         "compute_justification_authorized_campaign": justification.get("campaign_authorized") is True,
+        "final_shard_aggregation_uses_512_bit_Arb_arithmetic": ctx.prec == AGGREGATION_PRECISION,
         "full_unit_sphere_center_majorant_follows_by_Hilbert_Schmidt_inequality": True,
         "outward_neighborhood_authority_not_claimed": True,
         "no_empirical_or_calibration_input_used": True,
@@ -174,6 +207,7 @@ def build_payload() -> dict[str, object]:
         "data_SHA256": _sha(DATA),
         "campaign_fingerprint": endpoint_fingerprint,
         "shard_manifest_SHA256": manifest,
+        "aggregation_precision_bits": AGGREGATION_PRECISION,
         "coverage": {
             "endpoint_nodes": "1_THROUGH_370",
             "midpoint_intervals": "0_THROUGH_369",
@@ -189,8 +223,11 @@ def build_payload() -> dict[str, object]:
         "maximum_first_response_relative_residual": float(np.max(combined[:, column["first_response_relative_Frobenius_residual"]])),
         "maximum_second_response_relative_residual": float(np.max(combined[:, column["second_response_relative_Frobenius_residual"]])),
         "maximum_midpoint_axis_projection_residual": float(np.max(midpoints[:, column["axis_projection_residual_2_norm"]])),
+        "componentwise_Frobenius_maximum_relative_recomposition_residual": float(componentwise_relative),
         "field_scalar_Frobenius_maximum_relative_decomposition_residual": float(pythagorean_relative),
-        "measured_CPU_hours": float(np.sum(combined[:, column["elapsed_seconds"]]) / 3600.0),
+        "measured_CPU_hours": float(
+            _arb_sum(combined[:, column["elapsed_seconds"]]) / arb(3600)
+        ),
         "claim_boundary": {
             "CURRENT_GREEN_TRANSVERSE_TRANSVERSE_FULL_CENTER_OPERATOR_DERIVED": True,
             "CURRENT_GREEN_TRANSVERSE_TRANSVERSE_FULL_UNIT_SPHERE_CENTER_MAJORANT_DERIVED": True,
