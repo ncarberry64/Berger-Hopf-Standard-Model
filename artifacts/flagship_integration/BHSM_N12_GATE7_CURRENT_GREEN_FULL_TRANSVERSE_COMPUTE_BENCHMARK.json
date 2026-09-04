@@ -22,16 +22,20 @@
     "shard_revision": 4
   },
   "four_worker_probe": {
-    "contention_factor_against_one_worker": 1.5261873733449822,
-    "decision": "REJECTED_AFTER_LATER_ROWS_PROJECTED_ABOVE_THE_FIXED_COMPUTE_CEILING",
+    "contention_factor_against_one_worker": 1.6629412377074053,
+    "decision": "SELECTED_AFTER_USER_AUTHORIZED_210_CPU_HOUR_OPERATIONAL_CEILING",
     "elapsed_seconds": [
       920.1553815000007,
       917.9697327000003,
+      1082.6759646,
+      1078.2726885000002,
       914.4961842000002,
-      916.1187879999998
+      916.1187879999998,
+      1081.4414468000004,
+      1083.8241510999997
     ],
     "layout": "TWO_ENDPOINT_WORKERS_PLUS_TWO_MIDPOINT_WORKERS",
-    "mean_elapsed_seconds": 917.1850216000003
+    "mean_elapsed_seconds": 999.3692921750002
   },
   "measured_kind": "endpoint",
   "measured_node": 1,
@@ -39,7 +43,7 @@
   "tensor_stored": false,
   "two_worker_probe": {
     "contention_factor_against_one_worker": 1.3874044673490256,
-    "decision": "SELECTED_TO_RETAIN_THE_FIXED_COMPUTE_CEILING",
+    "decision": "SUPERSEDED_BY_USER_AUTHORIZED_FOUR_WORKER_ACCELERATION",
     "elapsed_seconds": [
       830.8807925000001,
       836.6819439999999

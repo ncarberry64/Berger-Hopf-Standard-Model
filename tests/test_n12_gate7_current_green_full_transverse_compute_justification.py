@@ -29,7 +29,9 @@ def test_campaign_is_bounded_and_restart_safe():
     payload = json.loads(RESULT.read_text(encoding="utf-8"))
     cost = payload["cost"]
     assert cost["total_rows"] == 740
-    assert cost["selected_worker_count"] == 2
+    assert cost["selected_worker_count"] == 4
+    assert cost["fixed_campaign_CPU_ceiling"] == 210.0
+    assert cost["completed_rows_at_acceleration_audit"] == 77
     assert cost["projected_total_CPU_hours_including_aborted_pilot"] < cost["fixed_campaign_CPU_ceiling"]
     assert payload["validation"]["existing_valid_shards_are_reused"] is True
     assert payload["validation"]["outward_authority_is_not_claimed_by_the_center_campaign"] is True

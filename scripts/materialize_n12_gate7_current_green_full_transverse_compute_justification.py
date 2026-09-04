@@ -26,14 +26,14 @@ SCALAR = F / "BHSM_N12_GATE7_CURRENT_GREEN_CORRELATED_SCALAR_ALL_INTERVALS.npz"
 SEED = F / "BHSM_N12_GATE7_CURRENT_GREEN_TRANSVERSE_QUADRATIC_SEED.json"
 PRIOR_BENCHMARK = F / "BHSM_N12_GATE7_CURRENT_GREEN_MIXED_TRANSVERSE_COMPUTE_BENCHMARK.json"
 BENCHMARK_SHARD = WORK / "endpoint_001.npz"
-PARALLEL_SHARDS = (
-    WORK / "endpoint_002.npz", WORK / "endpoint_003.npz",
-    WORK / "midpoint_000.npz", WORK / "midpoint_001.npz",
+FOUR_WORKER_SHARDS = (
+    *(WORK / f"endpoint_{index:03d}.npz" for index in range(2, 6)),
+    *(WORK / f"midpoint_{index:03d}.npz" for index in range(4)),
 )
 TWO_WORKER_SHARDS = (WORK / "endpoint_006.npz", WORK / "midpoint_004.npz")
-COMPLETED_THROTTLE_SHARDS = (
-    *(WORK / f"endpoint_{index:03d}.npz" for index in range(1, 7)),
-    *(WORK / f"midpoint_{index:03d}.npz" for index in range(5)),
+COMPLETED_ACCELERATION_AUDIT_SHARDS = (
+    *(WORK / f"endpoint_{index:03d}.npz" for index in range(1, 40)),
+    *(WORK / f"midpoint_{index:03d}.npz" for index in range(38)),
 )
 THIS_SCRIPT = Path(__file__).resolve()
 
@@ -59,7 +59,7 @@ def _write(path: Path, payload: dict[str, object]) -> None:
 def build_payload() -> dict[str, object]:
     required = (
         CAMPAIGN, THEORY, ENDPOINT, REPLAY, JACOBIAN, PARTITION, SCALAR,
-        SEED, PRIOR_BENCHMARK, BENCHMARK_SHARD, *PARALLEL_SHARDS,
+        SEED, PRIOR_BENCHMARK, BENCHMARK_SHARD, *FOUR_WORKER_SHARDS,
         *TWO_WORKER_SHARDS, THIS_SCRIPT,
     )
     missing = [str(path) for path in required if not path.is_file()]
@@ -79,7 +79,7 @@ def build_payload() -> dict[str, object]:
         }
     prior = json.loads(PRIOR_BENCHMARK.read_text(encoding="utf-8"))
     parallel_seconds = []
-    for path in PARALLEL_SHARDS:
+    for path in FOUR_WORKER_SHARDS:
         with np.load(path) as source:
             parallel_seconds.append(float(source["elapsed_seconds"]))
     parallel_mean = float(np.mean(parallel_seconds))
@@ -91,19 +91,19 @@ def build_payload() -> dict[str, object]:
     two_worker_mean = float(np.mean(two_worker_seconds))
     two_worker_contention = two_worker_mean / elapsed
     completed_seconds = 0.0
-    for path in COMPLETED_THROTTLE_SHARDS:
+    for path in COMPLETED_ACCELERATION_AUDIT_SHARDS:
         with np.load(path) as source:
             completed_seconds += float(source["elapsed_seconds"])
     total_rows = 740
     serial_hours = total_rows * elapsed / 3600.0
-    completed_rows = len(COMPLETED_THROTTLE_SHARDS)
+    completed_rows = len(COMPLETED_ACCELERATION_AUDIT_SHARDS)
     remaining_rows = total_rows - completed_rows
-    projected_remaining_cpu = remaining_rows * two_worker_mean / 3600.0
+    projected_remaining_cpu = remaining_rows * parallel_mean / 3600.0
     projected_cpu = completed_seconds / 3600.0 + projected_remaining_cpu
-    projected_wall = projected_remaining_cpu / 2.0
+    projected_wall = projected_remaining_cpu / 4.0
     aborted_eight_worker_pilot_cpu_hours_approx = 2.43
     projected_total_cpu = projected_cpu + aborted_eight_worker_pilot_cpu_hours_approx
-    ceiling = 200.0
+    ceiling = 210.0
     benchmark_payload = {
         "artifact": "BHSM_N12_GATE7_CURRENT_GREEN_FULL_TRANSVERSE_COMPUTE_BENCHMARK",
         "status": "CURRENT_GREEN_FULL_TRANSVERSE_EXACT_SIGNED_TENSOR_BENCHMARK_COMPLETE",
@@ -117,14 +117,14 @@ def build_payload() -> dict[str, object]:
             "elapsed_seconds": parallel_seconds,
             "mean_elapsed_seconds": parallel_mean,
             "contention_factor_against_one_worker": parallel_contention,
-            "decision": "REJECTED_AFTER_LATER_ROWS_PROJECTED_ABOVE_THE_FIXED_COMPUTE_CEILING",
+            "decision": "SELECTED_AFTER_USER_AUTHORIZED_210_CPU_HOUR_OPERATIONAL_CEILING",
         },
         "two_worker_probe": {
             "layout": "ONE_ENDPOINT_WORKER_PLUS_ONE_MIDPOINT_WORKER",
             "elapsed_seconds": two_worker_seconds,
             "mean_elapsed_seconds": two_worker_mean,
             "contention_factor_against_one_worker": two_worker_contention,
-            "decision": "SELECTED_TO_RETAIN_THE_FIXED_COMPUTE_CEILING",
+            "decision": "SUPERSEDED_BY_USER_AUTHORIZED_FOUR_WORKER_ACCELERATION",
         },
         "validation_passed": finite and revision == 4,
         "FULL_BHSM_COMPLETE": False,
@@ -169,15 +169,15 @@ def build_payload() -> dict[str, object]:
         "cost": {
             "total_rows": total_rows,
             "projected_serial_CPU_hours": serial_hours,
-            "selected_worker_count": 2,
+            "selected_worker_count": 4,
             "four_worker_contention_factor_observed": parallel_contention,
             "two_worker_contention_factor_observed": two_worker_contention,
-            "completed_rows_at_throttle_audit": completed_rows,
+            "completed_rows_at_acceleration_audit": completed_rows,
             "actual_completed_shard_CPU_hours": completed_seconds / 3600.0,
-            "remaining_rows_at_two_workers": remaining_rows,
-            "projected_remaining_CPU_hours_at_two_workers": projected_remaining_cpu,
-            "projected_campaign_CPU_hours_after_throttle": projected_cpu,
-            "projected_remaining_wall_hours_at_two_workers": projected_wall,
+            "remaining_rows_at_four_workers": remaining_rows,
+            "projected_remaining_CPU_hours_at_four_workers": projected_remaining_cpu,
+            "projected_campaign_CPU_hours_after_acceleration": projected_cpu,
+            "projected_remaining_wall_hours_at_four_workers": projected_wall,
             "aborted_eight_worker_pilot_CPU_hours_approx": aborted_eight_worker_pilot_cpu_hours_approx,
             "projected_total_CPU_hours_including_aborted_pilot": projected_total_cpu,
             "fixed_campaign_CPU_ceiling": ceiling,
@@ -201,6 +201,7 @@ def build_payload() -> dict[str, object]:
             "prior eight-worker contention benchmark",
             "current-kernel four-worker throttle probe",
             "current-kernel two-worker ceiling-preserving probe",
+            "user-authorized four-worker acceleration under a 210 CPU-hour operational ceiling",
         ],
         "reusable_outputs": [
             "740 fingerprinted restart-safe center shards",
