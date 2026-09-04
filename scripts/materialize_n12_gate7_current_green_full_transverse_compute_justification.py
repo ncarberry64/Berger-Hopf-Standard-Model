@@ -26,6 +26,10 @@ SCALAR = F / "BHSM_N12_GATE7_CURRENT_GREEN_CORRELATED_SCALAR_ALL_INTERVALS.npz"
 SEED = F / "BHSM_N12_GATE7_CURRENT_GREEN_TRANSVERSE_QUADRATIC_SEED.json"
 PRIOR_BENCHMARK = F / "BHSM_N12_GATE7_CURRENT_GREEN_MIXED_TRANSVERSE_COMPUTE_BENCHMARK.json"
 BENCHMARK_SHARD = WORK / "endpoint_001.npz"
+PARALLEL_SHARDS = (
+    WORK / "endpoint_002.npz", WORK / "endpoint_003.npz",
+    WORK / "midpoint_000.npz", WORK / "midpoint_001.npz",
+)
 THIS_SCRIPT = Path(__file__).resolve()
 
 
@@ -50,7 +54,7 @@ def _write(path: Path, payload: dict[str, object]) -> None:
 def build_payload() -> dict[str, object]:
     required = (
         CAMPAIGN, THEORY, ENDPOINT, REPLAY, JACOBIAN, PARTITION, SCALAR,
-        SEED, PRIOR_BENCHMARK, BENCHMARK_SHARD, THIS_SCRIPT,
+        SEED, PRIOR_BENCHMARK, BENCHMARK_SHARD, *PARALLEL_SHARDS, THIS_SCRIPT,
     )
     missing = [str(path) for path in required if not path.is_file()]
     if missing:
@@ -68,13 +72,18 @@ def build_payload() -> dict[str, object]:
             if source[key].shape == () and key != "worker_id"
         }
     prior = json.loads(PRIOR_BENCHMARK.read_text(encoding="utf-8"))
-    one_worker = float(prior["parallel_worker_benchmarks"]["1"]["CPU_hours_per_node"])
-    eight_worker = float(prior["parallel_worker_benchmarks"]["8"]["CPU_hours_per_node"])
-    contention = eight_worker / one_worker
+    parallel_seconds = []
+    for path in PARALLEL_SHARDS:
+        with np.load(path) as source:
+            parallel_seconds.append(float(source["elapsed_seconds"]))
+    parallel_mean = float(np.mean(parallel_seconds))
+    contention = parallel_mean / elapsed
     total_rows = 740
     serial_hours = total_rows * elapsed / 3600.0
-    projected_cpu = serial_hours * contention
-    projected_wall = projected_cpu / 8.0
+    projected_cpu = total_rows * parallel_mean / 3600.0
+    projected_wall = projected_cpu / 4.0
+    aborted_eight_worker_pilot_cpu_hours_approx = 2.43
+    projected_total_cpu = projected_cpu + aborted_eight_worker_pilot_cpu_hours_approx
     ceiling = 200.0
     benchmark_payload = {
         "artifact": "BHSM_N12_GATE7_CURRENT_GREEN_FULL_TRANSVERSE_COMPUTE_BENCHMARK",
@@ -84,6 +93,12 @@ def build_payload() -> dict[str, object]:
         "measured_kind": "endpoint",
         "algorithm": "ONE_EXACT_SIGNED_BROADCAST_TENSOR_WITH_TWO_73_COLUMN_LEGS",
         "tensor_stored": False,
+        "four_worker_probe": {
+            "layout": "TWO_ENDPOINT_WORKERS_PLUS_TWO_MIDPOINT_WORKERS",
+            "elapsed_seconds": parallel_seconds,
+            "mean_elapsed_seconds": parallel_mean,
+            "contention_factor_against_one_worker": contention,
+        },
         "validation_passed": finite and revision == 4,
         "FULL_BHSM_COMPLETE": False,
     }
@@ -103,7 +118,7 @@ def build_payload() -> dict[str, object]:
         "midpoint_current_axes_reuse_correlated_midpoint_directions": True,
         "outward_authority_is_not_claimed_by_the_center_campaign": True,
         "existing_valid_shards_are_reused": True,
-        "projected_campaign_below_fixed_compute_ceiling": projected_cpu < ceiling,
+        "projected_campaign_including_aborted_pilot_below_fixed_compute_ceiling": projected_total_cpu < ceiling,
         "no_empirical_or_calibration_input_used": True,
         "FULL_BHSM_COMPLETE": False,
     }
@@ -127,9 +142,12 @@ def build_payload() -> dict[str, object]:
         "cost": {
             "total_rows": total_rows,
             "projected_serial_CPU_hours": serial_hours,
-            "eight_worker_contention_factor_reused": contention,
-            "projected_CPU_hours_at_eight_workers": projected_cpu,
-            "projected_wall_hours_at_eight_workers": projected_wall,
+            "selected_worker_count": 4,
+            "four_worker_contention_factor_observed": contention,
+            "projected_campaign_CPU_hours_at_four_workers": projected_cpu,
+            "projected_wall_hours_at_four_workers": projected_wall,
+            "aborted_eight_worker_pilot_CPU_hours_approx": aborted_eight_worker_pilot_cpu_hours_approx,
+            "projected_total_CPU_hours_including_aborted_pilot": projected_total_cpu,
             "fixed_campaign_CPU_ceiling": ceiling,
             "peak_memory_GiB_approx": 3.2,
             "stop_condition": "STOP_ON_CORRUPT_SHARD_NONFINITE_ROW_PROOF_CONTRACT_CHANGE_OR_MEASURED_CPU_CEILING_VIOLATION",
@@ -149,6 +167,7 @@ def build_payload() -> dict[str, object]:
             "retained selected-eigenline and bordered hard-response identities",
             "512-bit decisive directional transverse seed",
             "prior eight-worker contention benchmark",
+            "current-kernel four-worker throttle probe",
         ],
         "reusable_outputs": [
             "740 fingerprinted restart-safe center shards",

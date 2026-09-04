@@ -36,12 +36,15 @@
     }
   ],
   "cost": {
-    "eight_worker_contention_factor_reused": 1.4352273904169337,
+    "aborted_eight_worker_pilot_CPU_hours_approx": 2.43,
     "fixed_campaign_CPU_ceiling": 200.0,
+    "four_worker_contention_factor_observed": 1.5261873733449822,
     "peak_memory_GiB_approx": 3.2,
-    "projected_CPU_hours_at_eight_workers": 177.29603796662965,
+    "projected_campaign_CPU_hours_at_four_workers": 188.53247666222228,
     "projected_serial_CPU_hours": 123.53167111388888,
-    "projected_wall_hours_at_eight_workers": 22.162004745828707,
+    "projected_total_CPU_hours_including_aborted_pilot": 190.9624766622223,
+    "projected_wall_hours_at_four_workers": 47.13311916555557,
+    "selected_worker_count": 4,
     "stop_condition": "STOP_ON_CORRUPT_SHARD_NONFINITE_ROW_PROOF_CONTRACT_CHANGE_OR_MEASURED_CPU_CEILING_VIOLATION",
     "total_rows": 740
   },
@@ -51,11 +54,11 @@
     "artifacts/flagship_integration/BHSM_N12_GATE7_AUGMENTED_FIXED_DESCRIPTOR_NEWTON_MIDPOINT_REPLAY.npz": "B47F9C415CF9A7A3D7EB1888A245FB7C66EB11879E70F84202B7E3A557CF2988",
     "artifacts/flagship_integration/BHSM_N12_GATE7_CORRELATED_DESCRIPTOR_AUGMENTED_JACOBIANS.npz": "09F5441ADD40335C9F3683B5DCC4D21C0D25026629330DD66E3AF684B54497FD",
     "artifacts/flagship_integration/BHSM_N12_GATE7_CURRENT_GREEN_CORRELATED_SCALAR_ALL_INTERVALS.npz": "156F68374826AA1BC3AD5F0B3D3BF68843FD70D019D886A74DC6131AD619F3EF",
-    "artifacts/flagship_integration/BHSM_N12_GATE7_CURRENT_GREEN_FULL_TRANSVERSE_COMPUTE_BENCHMARK.json": "F1FE6774974E460F7C51FE8D15F5984955C3BA26EE0195539893AA40F1DEBCCD",
+    "artifacts/flagship_integration/BHSM_N12_GATE7_CURRENT_GREEN_FULL_TRANSVERSE_COMPUTE_BENCHMARK.json": "FBD5BB97615C93442302C5C2402ECC15218E7922624742EFD061705C75613A59",
     "artifacts/flagship_integration/BHSM_N12_GATE7_CURRENT_GREEN_MIXED_TRANSVERSE_COMPUTE_BENCHMARK.json": "348056ECC61F1AA6D1B4B60C99EEE66568459CA2E0F8F16C0116809C5354A537",
     "artifacts/flagship_integration/BHSM_N12_GATE7_CURRENT_GREEN_TRANSVERSE_QUADRATIC_SEED.json": "A28A37DDB9BE8C1674E522373F604FC7108FA7D12913287888C583B5C0A12597",
     "scripts/derive_n12_gate7_current_green_full_transverse_quadratic_center.py": "40101BFC68E25C084C7A6AC6371667CCC41DE5F27ED25305DEFBE6FA4D521F79",
-    "scripts/materialize_n12_gate7_current_green_full_transverse_compute_justification.py": "D35FDE346F732E8DA5240D6FB74235FD40A3C5543D49D9343FD8047C7FE85A5F",
+    "scripts/materialize_n12_gate7_current_green_full_transverse_compute_justification.py": "7BFD4ACD6D1ECA8D21589BCF482EF0D4E897E359605445AC662E58BCA61750A1",
     "theory/n12_gate7_current_green_full_transverse_quadratic_majorant.md": "2BC5E7AC722272243F25451041ED23CDC9CDC964D555DD5F0B79C74BCABE743F"
   },
   "proof_obligation": "DERIVE_THE_COMPLETE_CURRENT_73_BY_73_TRANSVERSE_QUADRATIC_CENTER_OPERATOR_AT_ALL_370_DEFINED_AXIS_ENDPOINTS_AND_370_HERMITE_SIMPSON_MIDPOINTS",
@@ -70,7 +73,8 @@
     "current endpoint and correlated midpoint Green directions",
     "retained selected-eigenline and bordered hard-response identities",
     "512-bit decisive directional transverse seed",
-    "prior eight-worker contention benchmark"
+    "prior eight-worker contention benchmark",
+    "current-kernel four-worker throttle probe"
   ],
   "status": "CURRENT_GREEN_FULL_TRANSVERSE_CENTER_CAMPAIGN_AUTHORIZED_UNDER_FIXED_COMPUTE_CEILING",
   "validation": {
@@ -84,7 +88,7 @@
     "no_empirical_or_calibration_input_used": true,
     "only_basis_invariant_norms_and_residuals_are_persisted": true,
     "outward_authority_is_not_claimed_by_the_center_campaign": true,
-    "projected_campaign_below_fixed_compute_ceiling": true,
+    "projected_campaign_including_aborted_pilot_below_fixed_compute_ceiling": true,
     "restart_shard_revision_is_current": true,
     "zero_Green_axis_at_fixed_endpoint_zero_is_not_normalized_or_invented": true
   },
