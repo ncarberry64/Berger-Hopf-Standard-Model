@@ -1,104 +1,100 @@
-# Gauge-connection reset one-jet split
+# Event-child spatial base attachment audit
 
-Status: `VERTICAL_GAUGE_ONE_JET_CLOSED_IN_THE_AE2_COMMON_RESET_FRAME_BUT_THE_SPATIAL_EVENT_CHILD_BASE_MAP_REMAINS_ABSENT`.
+Status: `CHILD_IS_AN_ABSTRACT_POST_CUT_BOUNDARY_COPY_WITHOUT_AN_ACTION_OWNED_CROSS_COPY_SPATIAL_CORRESPONDENCE`.
 
-This continues the existing gauge-connection adjudication without repeating the reset-boundary canonicality audit and without adding another interface.
+The gauge-vertical result is retained unchanged: in the AE2 common reset gauge frame, `G_R=I` and `dG_R=0`. This audit concerns only the base map.
 
-## Independent base and vertical paths
+## Child spatial ontology
 
-### A. Spatial base attachment — open
+The v15.45 reconstruction firewall starts from a topological `S7`, names a common full-preimage seam `Sigma=S3 times S3`, and writes an oriented cut into disjoint child and parent pieces with separate boundary copies `Sigma_c` and `Sigma_p`. Its chain complex preserves child and parent boundary identities separately and explicitly does not select their exchange. AE2 names the last regular event trace, but no source supplies its local embedding or equates it pointwise with either post-cut copy for spatial transport.
 
-The repository owns an abstract event/child boundary relation and trace identification, but no retained source materializes a local spatial map
+At the firewall, metric, proper distance, proper time, velocity, curvature, local energy density, and canonical metric momentum are not transported primitives. V15.52 makes the event functor metric-erasing: it carries a discrete tuple of degree, orientation, FR parity, endpoint order, incidence, and boundary identities into a reconstructed Cauchy state. The later N3/N12 work closes the field/state boundary solvability relation and positive-duration child evolution, but does not add a map between spatial points of the two boundary copies.
 
-\[
-F_B:\Sigma_{\rm event}\longrightarrow\Sigma_{\rm child}
-\]
+Therefore `Sigma_child` is ontology case 4:
 
-in overlapping boundary charts. Consequently there is no evaluable
+`ABSTRACT_POST_CUT_BOUNDARY_COPY_WITH_STATE_FIELD_INHERITANCE_AND_DISCRETE_INCIDENCE_BUT_NO_SPATIAL_POINT_CORRESPONDENCE`.
 
-\[
-DF_B:T\Sigma_{\rm event}\longrightarrow T\Sigma_{\rm child}.
-\]
+BHSM specifies what discrete data and reconstructed state the child inherits, but not where each event-boundary point attaches to the child boundary. This explains why family, particle-state, and bundle-fiber transport can close while gauge connection one-form transport cannot.
 
-The N12 implicit-function and moving-endpoint machinery does not fill this gap. Its stored derivative is the (57\times196) Jacobian of `F12:R^196_TO_R^57` on paired Cauchy-state variables. Its endpoint derivatives are Jacobi fields of the retained Euler–Dirac state flow. Neither map has a spatial boundary manifold as domain or codomain, so differentiating it cannot produce `DF_B`.
+## Ordered construction audit
 
-The v15.15 common-parent trace law is a smooth material-interface result. It validates a continuous pullback connection on that interface, but does not define the Gate7 firewall-birth event/child spatial attachment map.
+### A. Common ambient embeddings
 
-### B. Gauge-vertical lift — closed in the AE2 common frame
-
-AE2 owner-authorizes one global boundary field domain and fixes the common reset frame
+The notation `Cut_Sigma(S7)` establishes the topological types and separate copies. It does not materialize local embeddings
 
 \[
-U_R=I
+i_{\rm event}:\Sigma_{\rm event}\to M_B,
+\qquad
+i_{\rm child}:\Sigma_{\rm child}\to M_B
 \]
 
-up to the global spin sign and a simultaneous common gauge-frame change. For the gauge factor relevant to the GFHS connection this supplies the local representative
+into one retained post-event geometry, nor cross-copy blow-down maps whose composition could define `F_B`. The post-event metric ambient is absent at the firewall. Route A does not close.
+
+### B. Retained flow map
+
+The Euler–Dirac flow acts on Cauchy/state variables before the event and again after child reconstruction. The event functor between them erases continuous geometric data. No retained spatial vector field transports `Sigma_event` to `Sigma_child` through that reset. The N12 event time and Jacobi fields remain state-space derivatives. Route B does not close.
+
+### C. Collar or normal exponential map
+
+V15.13 defines a scalar oriented geodesic distance between a unique closest parent/child skin pair in a common reconstructed clock slice, before the cut locus. This is a collective ejection coordinate, not an event-wide point map. It also requires reconstructed metric and proper distance, which are not transported through the firewall. No normal exponential attachment is action-owned. Route C does not close.
+
+### D. Implicit event/child construction
+
+The retained N3/N12 systems solve event state, child Cauchy data, constraint rows, flux rows, and discrete incidence. They contain no spatial point variables `(x,y)` and no owned equation `C(B,x,y)=0` from which `y=F_B(x)` could be obtained. Consequently the implicit-function theorem cannot produce `DF_B`. Route D does not close.
+
+## Nonuniqueness at the retained strength
+
+Even adding a marked common point, product metric, and Haar volume does not select a map. On `S3 times S3`, compare
 
 \[
-G_R=I,\qquad dG_R=0.
+F_0=\operatorname{id}\times\operatorname{id},
+\qquad
+F_1=\operatorname{Ad}_a\times\operatorname{id}
 \]
 
-There is no independent relative gauge phase. This is an action-owned representative, not a fitted matrix. A simultaneous common-frame change is gauge redundancy and does not reopen a relative event/child transition. This statement does not claim that the full spin lift `SpinLift(Lambda_R)` has zero derivative.
+for noncentral `a` in `SU(2)`. Both fix the group identity, have degree one, preserve orientation, the product tangent metric, and volume. At the identity their tangent maps are `I_6` and `Ad_a direct-sum I_3`, which differ. A nonzero one-form therefore has different child components under their inverse-transpose maps. Topology, incidence, orientation, metric, volume, and a common marked point do not determine `DF_B`.
 
-Thus the prior combined one-jet blocker is too broad. The exact remaining datum is
+## Consequences
 
-`ACTION_OWNED_LOCAL_EVENT_CHILD_SPATIAL_BOUNDARY_BASE_MAP_F_B_ABSENT`.
-
-## Conditional connection law after the split
-
-The repository convention is
+No local or global `F_B` is earned. Hence `DF_B`, inverse differential, cotangent pullback, conormal map, relative orientation sign, induced boundary-metric relation, and boundary area-density transform are unevaluable. The common-frame connection equation remains
 
 \[
-dG_R+(F_B^*A_c)G_R-G_RA_e=0.
+F_B^*A_{\rm child}=A_{\rm event},
 \]
 
-The closed common-frame vertical data reduce this to
+but it cannot be instantiated as `R_A`. Curvature naturality, the Maxwell weighted cotangent lift, BRST base pullback, complete canonical reset, symplecticity, exactness, `S_RESET_GFHS`, graph jets, and global `S2`–`S4` remain blocked. Global `S1` retains only its reference slice.
 
-\[
-F_B^*A_c=A_e.
-\]
+A local diffeomorphism on the eventual Gate-7 reset neighborhood would be sufficient for the local connection, Maxwell, and action-jet contract; no global boundary diffeomorphism is required at this stage. The local map itself is what is absent.
 
-In components,
-
-\[
-(DF_B)^\mu{}_i(A_c)_\mu=(A_e)_i.
-\]
-
-The affine Maurer–Cartan term is therefore exactly zero in this frame, and the internal `U(1) x SU(2) x SU(3)` representation plus the family identity factor are preserved. But `R_A`, its derivative, and evaluations on nonzero admissible backgrounds still cannot be computed until `F_B` and `DF_B` exist.
-
-A one-dimensional witness shows why boundary incidence is insufficient: two maps can agree at the seam point while having derivatives (1) and (2), producing different child components for the same nonzero event one-form. That remaining ambiguity is entirely in path A.
-
-## Downstream canonical chain
-
-Because `R_A` is not evaluable, the Maxwell conormal cotangent lift and its actual boundary measures cannot yet be fixed. The gauge-vertical ghost and antighost factor is the identity, but their base pullback remains open. The full fermion-plus-gauge symplectic reset, `Delta_omega`, `beta`, `S_RESET_GFHS`, and the first three graph derivatives therefore remain open. The HS normal Legendre rank remains zero and `pi_H=0`; no HS momentum or mixed reset term is introduced.
+At least the first jet of the eventual spatial construction is needed for connection and Maxwell transport. Whether `D2 F_B` and `D3 F_B` enter the local/global reset generator depends on that construction and cannot be decided before it exists; no independent higher maps are introduced.
 
 ## Hindsight 20/20
 
 ### VALIDATED
 
-- v15.53 owns the returned Standard Model bundle isomorphism class.
-- AE2 owns an abstract smooth spin–gauge boundary lift and an action-owned common reset frame.
-- in that frame the gauge vertical one-jet is `G_R=I`, `dG_R=0`.
-- the N12 first-hit Jacobian and moving-endpoint jets are state-space derivatives, not `DF_B`.
-- supplied `F_B,DF_B` would reduce the gauge connection law to `F_B^*A_child=A_event`.
+- the firewall produces separate `S3 times S3` boundary copies and transports discrete incidence plus reconstructed state data;
+- the later “closed boundary map” is a field/state solvability relation, not a spatial point correspondence;
+- the N12 first-hit and moving-endpoint derivatives remain Cauchy/state-space derivatives;
+- the gauge-vertical one-jet remains `(I,0)` in the AE2 common frame;
+- distinct degree-one, orientation/metric/volume-preserving cross-copy maps give different `DF_B` and connection transport.
 
 ### INVALIDATED
 
-- the previous combined base-plus-vertical one-jet blocker;
-- interpreting the N12 `R^196 -> R^57` Jacobian as a spatial boundary Jacobian;
-- inferring `F_B` or `DF_B` from common trace labels, incidence, or orientation;
-- using the v15.15 material-interface trace law as the firewall-birth base map;
-- claiming that the full spin-lift derivative vanishes because the gauge factor is constant.
+- identifying the event and child surfaces merely because they arise from one topological cut;
+- treating separate boundary labels or their incidence as a cross-copy spatial map;
+- treating the retained Euler–Dirac state flow as a spatial transport through the firewall;
+- promoting the v15.13 scalar closest-point separation to an event-wide normal exponential map;
+- applying the implicit-function theorem to state equations that contain no spatial attachment variables.
 
 ### OPEN
 
-- the local spatial event/child boundary map `F_B` and then `DF_B`;
-- `R_A[B;Gamma0_A_event]` and its derivative at admissible backgrounds;
-- the Maxwell cotangent lift, full BRST pullback, symplecticity, exactness, and reset generator;
-- the resulting global event balance and global `S2`–`S4` derivatives.
+- an action/domain-owned cross-copy spatial attachment morphism from `Sigma_event` to `Sigma_child`;
+- all tangent, cotangent, conormal, metric, measure, and relative-orientation data derived from it;
+- `R_A`, curvature naturality, Maxwell/BRST cotangent transport, symplecticity, and the reset generator;
+- graph jets and global `S2`–`S4`.
 
 ### EXACT NEXT OBJECT
 
-`ACTION_OWNED_LOCAL_EVENT_CHILD_SPATIAL_BOUNDARY_BASE_MAP_F_B_ABSENT`
+`ACTION_OWNED_CROSS_COPY_SPATIAL_ATTACHMENT_MORPHISM_SIGMA_EVENT_TO_SIGMA_CHILD_ABSENT`
 
-Materialize `F_B` in overlapping event and child boundary charts from an action-owned spatial attachment—not from the Cauchy-state first-hit relation—then differentiate it to obtain `DF_B`. The gauge-vertical inputs are already fixed as `(I,0)` in the AE2 common reset frame.
+The next admissible derivation must produce this morphism from the action/domain geometry—for example through explicit common embeddings, an owned spatial flow, or an owned spatial incidence equation. A chosen identity, nearest-point projection, or chart match is not authorized.

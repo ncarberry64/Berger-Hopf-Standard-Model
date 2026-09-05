@@ -30,6 +30,9 @@ from bhsm.interface.gauge_connection_reset_bundle_lift_adjudication import (  # 
     ownership_levels,
     one_jet_component_status,
     requested_object_classification,
+    spatial_base_attachment_authority,
+    spatial_base_route_audit,
+    spatial_correspondence_nonuniqueness_witness,
     source_lineage_ledger,
 )
 
@@ -44,6 +47,9 @@ MODULE = ROOT / (
 )
 THEORY = ROOT / "theory/bhsm_gauge_connection_reset_bundle_lift_adjudication.md"
 TEST = ROOT / "tests/test_gauge_connection_reset_bundle_lift_adjudication.py"
+FIREWALL_AUTHORITY = (
+    ROOT / "artifacts/BHSM_aether_n3_firewall_core_child_ownership_v17_98.json"
+)
 
 
 def _sha256(path: Path) -> str:
@@ -106,6 +112,10 @@ def build_payload() -> dict[str, Any]:
     conditional = conditional_geometry_checks()
     downstream = downstream_status()
     object_classification = requested_object_classification()
+    authority = spatial_base_attachment_authority()
+    route_audit = spatial_base_route_audit()
+    spatial_ambiguity = spatial_correspondence_nonuniqueness_witness()
+    firewall_authority = json.loads(FIREWALL_AUTHORITY.read_text(encoding="utf-8"))
     claims = claim_boundary()
     source_paths = (
         "src/bhsm/interface/aether_hybrid_standard_model_bundle_v15_53.py",
@@ -116,6 +126,11 @@ def build_payload() -> dict[str, Any]:
         "src/bhsm/interface/aether_n3_event_attachment_state_incidence_v17_89.py",
         "src/bhsm/interface/aether_n3_terminal_child_boundary_map_v17_85.py",
         "src/bhsm/interface/aether_material_skin_variation_v15_15.py",
+        "src/bhsm/interface/aether_boundary_identity_ejection_v15_13.py",
+        "src/bhsm/interface/aether_hybrid_actualization_persistence_v15_52.py",
+        "src/bhsm/interface/aether_n3_firewall_core_child_ownership_v17_98.py",
+        "src/bhsm/interface/aether_reconstruction_firewall_event_v15_45.py",
+        "artifacts/BHSM_aether_n3_firewall_core_child_ownership_v17_98.json",
         "scripts/audit_n12_intrinsic_state_return_section.py",
         "scripts/derive_n12_reset_stratum_moving_endpoint_jets.py",
         "src/bhsm/interface/reset_boundary_generating_functional_adjudication.py",
@@ -137,7 +152,7 @@ def build_payload() -> dict[str, Any]:
             and levels["induced_connection_transport"]["configuration_map"] is None
         ),
         "focused_source_lineage_classified": (
-            len(lineage) == 13
+            len(lineage) == 17
             and all(row["found"] and row["not_found"] for row in lineage)
         ),
         "AE2_abstract_lift_not_erased": claims[
@@ -166,6 +181,36 @@ def build_payload() -> dict[str, Any]:
         "base_tangent_nonuniqueness_demonstrated": ambiguity[
             "distinct_children_from_missing_base_tangent"
         ],
+        "child_spatial_ontology_is_case_4": authority["child_ontology"].startswith(
+            "CASE_4"
+        ),
+        "all_four_base_map_routes_exhausted": (
+            [row["route"][0] for row in route_audit] == ["A", "B", "C", "D"]
+            and all(row["status"] == "DOES_NOT_CLOSE" for row in route_audit)
+        ),
+        "no_embedding_flow_collar_or_implicit_map_promoted": (
+            authority["event_embedding"] is None
+            and authority["child_embedding"] is None
+            and authority["flow_if_any"]["spatial_event_child_flow"] is None
+            and authority["collar_if_any"]["event_wide_attachment_map"] is None
+            and authority["F_B"] is None
+            and authority["D_F_B"] is None
+        ),
+        "S3_times_S3_cross_copy_nonuniqueness_demonstrated": (
+            spatial_ambiguity["same_degree"] == 1
+            and spatial_ambiguity["same_orientation"]
+            and spatial_ambiguity["same_volume_jacobian"]
+            and spatial_ambiguity["both_preserve_product_tangent_metric"]
+            and spatial_ambiguity["tangent_maps_distinct"]
+            and spatial_ambiguity["connection_components_can_differ"]
+        ),
+        "field_state_boundary_map_not_confused_with_spatial_map": (
+            firewall_authority["firewall_core_child_ownership"][
+                "complete_retained_F_child"
+            ]["boundary_map_closed"]
+            and firewall_authority["validation_passed"]
+            and authority["F_B"] is None
+        ),
         "conditional_connection_law_verified": (
             conditional["connection_pullback_residual"] < 1.0e-12
             and conditional["nonzero_trace_transported"]
@@ -208,11 +253,14 @@ def build_payload() -> dict[str, Any]:
             and not claims["FULL_BHSM_COMPLETE"]
         ),
     }
-    return {
+    payload = {
         "artifact": "BHSM_GAUGE_CONNECTION_RESET_BUNDLE_LIFT_ADJUDICATION",
         "action_version": ACTION_VERSION,
         "classification": CLASSIFICATION,
         "status": STATUS,
+        **authority,
+        "spatial_base_route_audit": route_audit,
+        "spatial_correspondence_nonuniqueness": spatial_ambiguity,
         "prior_blocker_refinement": {
             "prior": (
                 "ACTION_OWNED_NONZERO_GAUGE_CONNECTION_TRACE_AE4_RESET_MAP_"
@@ -220,9 +268,9 @@ def build_payload() -> dict[str, Any]:
             ),
             "refined_first_geometric_datum": EXACT_MISSING_BASE_DATUM,
             "reason": (
-                "THE_AE2_COMMON_RESET_FRAME_CLOSES_G_R_EQUALS_I_AND_dG_R_"
-                "EQUALS_ZERO,_BUT_NO_RETAINED_SOURCE_EXPOSES_THE_SPATIAL_"
-                "EVENT_CHILD_BASE_MAP_F_B_OR_DF_B"
+                "THE_CHILD_IS_A_SEPARATE_POST_CUT_BOUNDARY_COPY_AND_THE_"
+                "RETAINED_ACTION_CLOSES_STATE_INHERITANCE_BUT_SUPPLIES_NO_"
+                "CROSS_COPY_SPATIAL_POINT_CORRESPONDENCE"
             ),
         },
         "ownership_levels": levels,
@@ -237,6 +285,11 @@ def build_payload() -> dict[str, Any]:
             "V15_53_OWNS_THE_RETURNED_SM_BUNDLE_ISOMORPHISM_CLASS",
             "AE2_OWNS_AN_ABSTRACT_SMOOTH_SPIN_GAUGE_BOUNDARY_LIFT_U_R",
             EXACT_CLOSED_VERTICAL_DATUM,
+            "CHILD_ONTOLOGY_IS_CASE_4_ABSTRACT_POST_CUT_BOUNDARY_COPY",
+            (
+                "V17_98_CLOSES_THE_FIELD_STATE_BOUNDARY_SOLVABILITY_RELATION_"
+                "NOT_A_SPATIAL_POINT_MAP"
+            ),
             (
                 "THE_N12_FIRST_HIT_JACOBIAN_AND_MOVING_ENDPOINT_JETS_ACT_ON_"
                 "CAUCHY_STATE_SPACE,_NOT_THE_SPATIAL_BOUNDARY_BASE"
@@ -259,6 +312,9 @@ def build_payload() -> dict[str, Any]:
             "BUNDLE_ISOMORPHISM_CLASS_IS_AN_EVALUABLE_CONNECTION_TRANSPORT",
             "THE_AE2_COMMON_RESET_FRAME_SUPPLIES_THE_SPATIAL_BASE_MAP_F_B_OR_DF_B",
             "THE_N12_R196_TO_R57_STATE_JACOBIAN_IS_DF_B",
+            "THE_TOPOLOGICAL_CUT_NOTATION_ALONE_SUPPLIES_EXECUTABLE_CROSS_COPY_EMBEDDINGS",
+            "THE_V15_13_SCALAR_CLOSEST_POINT_DISTANCE_IS_AN_EVENT_WIDE_NORMAL_EXPONENTIAL_MAP",
+            "THE_RETAINED_CAUCHY_STATE_FLOW_IS_A_SPATIAL_EVENT_CHILD_FLOW",
             (
                 "NABLA_PHI_U_R_EQUALS_ZERO_IN_A_PARAMETER_SPACE_RESPONSE_"
                 "WITNESS_INSTANTIATES_THE_PHYSICAL_SPACETIME_GAUGE_"
@@ -271,10 +327,10 @@ def build_payload() -> dict[str, Any]:
         "OPEN": [EXACT_MISSING_BASE_DATUM],
         "EXACT_NEXT_OBJECT": EXACT_MISSING_BASE_DATUM,
         "exact_next_calculation": (
-            "MATERIALIZE_THE_ACTION_OWNED_SPATIAL_EVENT_CHILD_BOUNDARY_MAP_"
-            "F_B_IN_OVERLAPPING_BOUNDARY_CHARTS_AND_DIFFERENTIATE_IT_TO_DF_B;_"
-            "THEN_USE_THE_ALREADY_CLOSED_COMMON_FRAME_DATA_G_R_EQUALS_I_AND_"
-            "dG_R_EQUALS_ZERO_TO_EVALUATE_F_B_STAR_A_CHILD_EQUALS_A_EVENT"
+            "DERIVE_FROM_THE_ACTION_OR_DOMAIN_AN_EXPLICIT_CROSS_COPY_SPATIAL_"
+            "ATTACHMENT_MORPHISM_BETWEEN_THE_SEPARATE_EVENT_AND_CHILD_S3_"
+            "TIMES_S3_BOUNDARY_COPIES;_ONLY_THEN_DIFFERENTIATE_IT_AND_"
+            "INSTANTIATE_CONNECTION_AND_MAXWELL_TRANSPORT"
         ),
         "empirical_inputs": [],
         "claims": claims,
@@ -282,6 +338,10 @@ def build_payload() -> dict[str, Any]:
         "validation": validation,
         "validation_passed": all(validation.values()),
     }
+    payload["validated"] = payload["VALIDATED"]
+    payload["invalidated"] = payload["INVALIDATED"]
+    payload["open"] = payload["OPEN"]
+    return payload
 
 
 def main() -> Path:

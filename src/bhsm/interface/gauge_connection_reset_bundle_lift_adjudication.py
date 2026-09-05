@@ -24,16 +24,29 @@ from bhsm.interface.ae31_c2_reset_hadamard_transport import (
 from bhsm.interface.aether_hybrid_standard_model_bundle_v15_53 import (
     hybrid_bundle_gluing,
 )
+from bhsm.interface.aether_boundary_identity_ejection_v15_13 import (
+    ejection_gate_payload,
+)
+from bhsm.interface.aether_hybrid_actualization_persistence_v15_52 import (
+    actualization_invariant_tuple,
+    hybrid_cycle_contract,
+)
+from bhsm.interface.aether_reconstruction_firewall_event_v15_45 import (
+    boundary_identity_chain_complex,
+    oriented_cut_and_event_data,
+    reconstruction_seed,
+)
 
 
-ACTION_VERSION = "BHSM-AE-3.2.1-GAUGE-RESET-ONE-JET-SPLIT"
-CLASSIFICATION = "AE4_GAUGE_CONNECTION_RESET_FROM_EVENT_CHILD_BUNDLE_LIFT"
+ACTION_VERSION = "BHSM-AE-3.2.2-SPATIAL-BASE-ATTACHMENT-AUDIT"
+CLASSIFICATION = "AE4_EVENT_CHILD_SPATIAL_BASE_ATTACHMENT_AUTHORITY"
 STATUS = (
-    "VERTICAL_GAUGE_ONE_JET_CLOSED_IN_THE_AE2_COMMON_RESET_FRAME_BUT_"
-    "THE_SPATIAL_EVENT_CHILD_BASE_MAP_REMAINS_ABSENT"
+    "CHILD_IS_AN_ABSTRACT_POST_CUT_BOUNDARY_COPY_WITHOUT_AN_ACTION_OWNED_"
+    "CROSS_COPY_SPATIAL_CORRESPONDENCE"
 )
 EXACT_MISSING_BASE_DATUM = (
-    "ACTION_OWNED_LOCAL_EVENT_CHILD_SPATIAL_BOUNDARY_BASE_MAP_F_B_ABSENT"
+    "ACTION_OWNED_CROSS_COPY_SPATIAL_ATTACHMENT_MORPHISM_"
+    "SIGMA_EVENT_TO_SIGMA_CHILD_ABSENT"
 )
 EXACT_CLOSED_VERTICAL_DATUM = (
     "ACTION_OWNED_COMMON_RESET_FRAME_GAUGE_VERTICAL_ONE_JET_"
@@ -238,6 +251,7 @@ def one_jet_component_status() -> dict[str, Any]:
                 "INAPPLICABLE_BECAUSE_THE_RETAINED_JACOBIAN_HAS_NO_SPATIAL_"
                 "BOUNDARY_MAP_AS_ITS_DOMAIN_OR_CODOMAIN"
             ),
+            "earliest_missing_primitive": EXACT_MISSING_BASE_DATUM,
             "blocked_by": EXACT_MISSING_BASE_DATUM,
         },
         "B_vertical_gauge_lift": {
@@ -250,6 +264,199 @@ def one_jet_component_status() -> dict[str, Any]:
             ],
             "object": EXACT_CLOSED_VERTICAL_DATUM,
         },
+    }
+
+
+def spatial_base_route_audit() -> list[dict[str, Any]]:
+    """Test the four permitted constructions in the requested order."""
+
+    return [
+        {
+            "route": "A_COMMON_AMBIENT_EMBEDDINGS",
+            "status": "DOES_NOT_CLOSE",
+            "found": (
+                "V15_45_NAMES_AN_ORIENTED_TOPOLOGICAL_CUT_ALONG_A_COMMON_"
+                "FULL_PREIMAGE_SEAM_INTO_SEPARATE_SIGMA_C_AND_SIGMA_P_COPIES"
+            ),
+            "missing": (
+                "NO_LOCAL_EVENT_AND_CHILD_EMBEDDINGS_INTO_ONE_RETAINED_POST_"
+                "EVENT_GEOMETRY_AND_NO_ACTION_OWNED_CROSS_COPY_BLOWDOWN_MAP"
+            ),
+        },
+        {
+            "route": "B_RETAINED_FLOW_MAP",
+            "status": "DOES_NOT_CLOSE",
+            "found": (
+                "EULER_DIRAC_FLOW_ON_CAUCHY_STATE_SPACE_BEFORE_THE_EVENT_AND_"
+                "POSITIVE_DURATION_CHILD_FLOW_AFTER_RECONSTRUCTION"
+            ),
+            "missing": (
+                "NO_SPATIAL_VECTOR_FIELD_OR_FLOW_CARRYING_SIGMA_EVENT_TO_"
+                "SIGMA_CHILD_ACROSS_THE_METRIC_ERASING_RESET"
+            ),
+        },
+        {
+            "route": "C_COLLAR_OR_NORMAL_EXPONENTIAL",
+            "status": "DOES_NOT_CLOSE",
+            "found": (
+                "V15_13_DEFINES_A_SCALAR_CLOSEST_POINT_NORMAL_SEPARATION_IN_"
+                "A_COMMON_RECONSTRUCTED_CLOCK_SLICE_BEFORE_THE_CUT_LOCUS"
+            ),
+            "missing": (
+                "NO_EVENT_WIDE_NORMAL_EXPONENTIAL_ATTACHMENT_AND_NO_RETAINED_"
+                "FIREWALL_METRIC_OR_PROPER_DISTANCE_THROUGH_THE_RESET"
+            ),
+        },
+        {
+            "route": "D_IMPLICIT_EVENT_CHILD_CONSTRUCTION",
+            "status": "DOES_NOT_CLOSE",
+            "found": (
+                "N3_AND_N12_IMPLICIT_SYSTEMS_FOR_EVENT_STATE,_CHILD_CAUCHY_"
+                "DATA,_BOUNDARY_ROWS,_AND_DISCRETE_INCIDENCE"
+            ),
+            "missing": (
+                "NO_OWNED_SPATIAL_POINT_VARIABLES_x_y_OR_ATTACHMENT_EQUATION_"
+                "C(B,x,y)=0_FROM_WHICH_y=F_B(x)_COULD_BE_SOLVED"
+            ),
+        },
+    ]
+
+
+def spatial_correspondence_nonuniqueness_witness() -> dict[str, Any]:
+    """Exhibit two indistinguishable degree-one maps on ``S3 x S3``.
+
+    At the identity, ``id x id`` and ``Ad_a x id`` fix the same point and
+    preserve orientation, the product tangent metric, and volume.  Their
+    tangent maps differ, so the retained topology and incidence cannot select
+    the one-form pullback.
+    """
+
+    angle = 0.7
+    rotation = np.asarray(
+        (
+            (np.cos(angle), -np.sin(angle), 0.0),
+            (np.sin(angle), np.cos(angle), 0.0),
+            (0.0, 0.0, 1.0),
+        )
+    )
+    first = np.eye(6)
+    second = np.block(
+        [[rotation, np.zeros((3, 3))], [np.zeros((3, 3)), np.eye(3)]]
+    )
+    metric = np.eye(6)
+    return {
+        "boundary_model": "SIGMA_EVENT_AND_SIGMA_CHILD_ARE_EACH_S3_TIMES_S3",
+        "candidate_0": "IDENTITY_TIMES_IDENTITY",
+        "candidate_1": "INNER_AUTOMORPHISM_Ad_a_TIMES_IDENTITY",
+        "same_marked_group_identity_point": True,
+        "same_degree": 1,
+        "same_orientation": bool(
+            np.linalg.det(first) > 0.0 and np.linalg.det(second) > 0.0
+        ),
+        "same_volume_jacobian": bool(
+            np.isclose(np.linalg.det(first), np.linalg.det(second))
+        ),
+        "both_preserve_product_tangent_metric": bool(
+            np.allclose(first.T @ metric @ first, metric)
+            and np.allclose(second.T @ metric @ second, metric)
+        ),
+        "D_candidate_0": first,
+        "D_candidate_1": second,
+        "tangent_maps_distinct": not np.allclose(first, second),
+        "connection_components_can_differ": not np.allclose(
+            np.linalg.solve(first.T, np.arange(1.0, 7.0)),
+            np.linalg.solve(second.T, np.arange(1.0, 7.0)),
+        ),
+        "interpretation": (
+            "TOPOLOGY,_DEGREE,_ORIENTATION,_A_COMMON_MARKED_POINT,_METRIC,_"
+            "AND_VOLUME_DO_NOT_SELECT_THE_CROSS_COPY_SPATIAL_CORRESPONDENCE"
+        ),
+    }
+
+
+def spatial_base_attachment_authority() -> dict[str, Any]:
+    """State the child ontology and every downstream authority field."""
+
+    event = oriented_cut_and_event_data()
+    identities = boundary_identity_chain_complex()
+    seed = reconstruction_seed()
+    invariants = actualization_invariant_tuple()
+    cycle = hybrid_cycle_contract()
+    ejection = ejection_gate_payload()
+    return {
+        "Sigma_event_definition": (
+            "AE2_LAST_REGULAR_EVENT_TRACE;_V15_45_SUPPLIES_SEPARATE_S3_"
+            "TIMES_S3_BOUNDARY_COPIES_BUT_NO_LOCAL_EVENT_EMBEDDING"
+        ),
+        "Sigma_child_definition": seed["child_boundary"],
+        "child_ontology": (
+            "CASE_4_ABSTRACT_POST_CUT_COPY_WITH_STATE_FIELD_INHERITANCE_AND_"
+            "DISCRETE_INCIDENCE_BUT_NO_SPATIAL_POINT_CORRESPONDENCE"
+        ),
+        "event_embedding": None,
+        "child_embedding": None,
+        "common_ambient_geometry": None,
+        "topological_pre_cut_seam": event["common_full_preimage_seam"],
+        "oriented_cut": event["oriented_cut"],
+        "separate_boundary_identities": seed["boundary_identities"],
+        "discrete_incidence": invariants["incidence"],
+        "cross_copy_boundary_exchange_selected": identities[
+            "boundary_identity_exchange"
+        ],
+        "flow_if_any": {
+            "state_flow": cycle["flow"],
+            "spatial_event_child_flow": None,
+        },
+        "collar_if_any": {
+            "available_scalar_coordinate": ejection["coordinate"],
+            "domain": ejection["coordinate_domain"],
+            "event_wide_attachment_map": None,
+        },
+        "metric_transport_through_firewall": (
+            "metric" not in event["not_transported_as_pregeometric_primitives"]
+        ),
+        "retained_child_boundary_solvability_relation": (
+            "V17_98_STORED_AUTHORITY_ARTIFACT_CLASSIFIES_THE_FIELD_STATE_"
+            "BOUNDARY_MAP_AS_CLOSED"
+        ),
+        "F_B": None,
+        "D_F_B": None,
+        "LOCAL_EVENT_CHILD_BASE_MAP_DERIVED": False,
+        "GLOBAL_EVENT_CHILD_BASE_MAP_DERIVED": False,
+        "authority_scope_required": (
+            "A_LOCAL_DIFFEOMORPHISM_ON_THE_EVENTUAL_GATE7_RESET_NEIGHBORHOOD_"
+            "WOULD_SUFFICE_FOR_LOCAL_CONNECTION_MAXWELL_AND_ACTION_JETS"
+        ),
+        "global_boundary_diffeomorphism_required_now": False,
+        "inverse_D_F_B": None,
+        "cotangent_pullback": None,
+        "conormal_map": None,
+        "induced_boundary_metric_relation": None,
+        "volume_area_density_transformation": None,
+        "orientation_sign": (
+            "CHILD_SIDE_IS_NEGATIVE_x_BUT_RELATIVE_MAP_ORIENTATION_IS_NOT_"
+            "EVALUABLE_WITHOUT_F_B"
+        ),
+        "higher_F_B_jets_required": (
+            "AT_LEAST_j1_FOR_CONNECTION_AND_MAXWELL_TRANSPORT;_j2_AND_j3_"
+            "DEPEND_ON_THE_EVENTUAL_GEOMETRIC_CONSTRUCTION_AND_RESET_GENERATOR"
+        ),
+        "connection_reset": None,
+        "curvature_naturality": None,
+        "Maxwell_cotangent_lift": None,
+        "symplecticity": None,
+        "BRST_reset": "GAUGE_VERTICAL_IDENTITY_ONLY_BASE_PULLBACK_OPEN",
+        "reset_generator": None,
+        "global_S1": "REFERENCE_SLICE_ONLY",
+        "global_S2": "BLOCKED",
+        "global_S3": "BLOCKED",
+        "global_S4": "BLOCKED",
+        "conceptual_interpretation": (
+            "BHSM_SPECIFIES_WHAT_DISCRETE_DATA_AND_RECONSTRUCTED_STATE_THE_"
+            "CHILD_INHERITS_BUT_NOT_WHERE_EACH_EVENT_BOUNDARY_POINT_ATTACHES_"
+            "TO_THE_CHILD_BOUNDARY"
+        ),
+        "exact_next_object": EXACT_MISSING_BASE_DATUM,
     }
 
 
@@ -334,6 +541,26 @@ def source_lineage_ledger() -> list[dict[str, Any]]:
             "not_found": "GATE7_FIREWALL_BIRTH_SPATIAL_BASE_ATTACHMENT_MAP",
         },
         {
+            "source": "V15_45_RECONSTRUCTION_FIREWALL_ORIENTED_CUT",
+            "found": "COMMON_TOPOLOGICAL_SEAM_AND_SEPARATE_SIGMA_C_SIGMA_P_BOUNDARY_COPIES",
+            "not_found": "LOCAL_CROSS_COPY_SPATIAL_CORRESPONDENCE_OR_EMBEDDING_JETS",
+        },
+        {
+            "source": "V15_52_HYBRID_ACTUALIZATION",
+            "found": "METRIC_ERASING_EVENT_FUNCTOR_AND_DISCRETE_TUPLE_TO_CAUCHY_STATE_RECONSTRUCTION",
+            "not_found": "SPATIAL_POINT_TRANSPORT_THROUGH_THE_RESET",
+        },
+        {
+            "source": "V15_13_BOUNDARY_IDENTITY_AND_EJECTION",
+            "found": "SCALAR_CLOSEST_POINT_NORMAL_SEPARATION_ON_A_RECONSTRUCTED_CLOCK_SLICE",
+            "not_found": "EVENT_WIDE_NORMAL_EXPONENTIAL_MAP_ACROSS_THE_FIREWALL",
+        },
+        {
+            "source": "V17_98_FIREWALL_CORE_CHILD_OWNERSHIP",
+            "found": "FIELD_STATE_BOUNDARY_SOLVABILITY_AND_DISCRETE_INCIDENCE",
+            "not_found": "SPATIAL_ATTACHMENT_OF_EVENT_POINTS_TO_CHILD_POINTS",
+        },
+        {
             "source": "V17_84_EVENT_COMPLETE_CHILD_CORRESPONDENCE",
             "found": "BOUNDARY_CANONICAL_RELATION_THEOREM_CLASS",
             "not_found": "NONZERO_GFHS_CONNECTION_TRACE_MAP",
@@ -411,9 +638,9 @@ def local_one_jet_nonuniqueness_witness() -> dict[str, Any]:
             child_identity_base, child_dilated_base
         ),
         "interpretation": (
-            "THE_POINTWISE_VALUE_g_B(x0)=1_DOES_NOT_FIX_dg_B(x0),_AND_A_"
-            "COMMON_INCIDENCE_POINT_DOES_NOT_FIX_DF_B(x0);_BOTH_ARE_PART_"
-            "OF_j1_FHAT_B_AND_CHANGE_THE_CHILD_CONNECTION"
+            "THE_AE2_COMMON_FRAME_CLOSES_THE_GAUGE_VERTICAL_HALF,_BUT_A_"
+            "COMMON_INCIDENCE_POINT_STILL_DOES_NOT_FIX_DF_B(x0)_AND_THUS_"
+            "DOES_NOT_FIX_THE_CHILD_CONNECTION_COMPONENTS"
         ),
     }
 
@@ -502,7 +729,7 @@ def requested_object_classification() -> dict[str, Any]:
     """Give the requested per-object authority boundary after the split."""
 
     return {
-        "F_B": "OPEN_LOCAL_SPATIAL_EVENT_CHILD_BOUNDARY_MAP_ABSENT",
+        "F_B": "OPEN_CROSS_COPY_SPATIAL_ATTACHMENT_MORPHISM_ABSENT",
         "D_F_B": "OPEN_NOT_DERIVABLE_BEFORE_F_B_IS_ACTION_OWNED",
         "U_R": (
             "ABSTRACT_FULL_SPIN_GAUGE_LIFT_EXISTS;_GAUGE_FACTOR_IS_I_IN_"
@@ -539,6 +766,13 @@ def claim_boundary() -> dict[str, Any]:
         "common_reset_frame_dG_R_is_zero": True,
         "action_owned_local_spatial_base_map_F_B_exists": False,
         "action_owned_local_spatial_base_differential_DF_B_exists": False,
+        "child_spatial_boundary_ontology": (
+            "CASE_4_ABSTRACT_COPY_WITH_STATE_INHERITANCE_AND_DISCRETE_INCIDENCE"
+        ),
+        "common_ambient_embedding_route_closed": False,
+        "retained_spatial_flow_route_closed": False,
+        "normal_exponential_route_closed": False,
+        "implicit_spatial_attachment_route_closed": False,
         "evaluable_principal_bundle_lift_local_one_jet_exists": False,
         "connection_transport_derived": False,
         "cotangent_lift_derived": False,
@@ -575,6 +809,9 @@ __all__ = [
     "one_jet_component_status",
     "ownership_levels",
     "requested_object_classification",
+    "spatial_base_attachment_authority",
+    "spatial_base_route_audit",
+    "spatial_correspondence_nonuniqueness_witness",
     "source_lineage_ledger",
     "weighted_cotangent_momentum_map",
 ]

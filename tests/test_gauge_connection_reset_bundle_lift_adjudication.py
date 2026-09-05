@@ -22,6 +22,9 @@ from bhsm.interface.gauge_connection_reset_bundle_lift_adjudication import (
     ownership_levels,
     one_jet_component_status,
     requested_object_classification,
+    spatial_base_attachment_authority,
+    spatial_base_route_audit,
+    spatial_correspondence_nonuniqueness_witness,
     source_lineage_ledger,
     weighted_cotangent_momentum_map,
 )
@@ -83,7 +86,7 @@ def test_connection_law_is_affine_and_linearization_excludes_dg_term() -> None:
 
 def test_focused_source_lineage_separates_state_and_spatial_maps() -> None:
     rows = source_lineage_ledger()
-    assert len(rows) == 13
+    assert len(rows) == 17
     assert any("ABSTRACT_ACTUAL_SMOOTH" in row["found"] for row in rows)
     assert any("PARAMETER_SPACE_RANDOM_FRAME" in row["found"] for row in rows)
     assert not any("LOCAL_F_B_DF_B_g_B_dg_B" in row["found"] for row in rows)
@@ -108,6 +111,44 @@ def test_n12_first_hit_jet_is_not_misidentified_as_spatial_DF_B() -> None:
     assert base["N12_first_hit_map"] == "F12:R^196_TO_R^57_ON_CAUCHY_STATE_VARIABLES"
     assert base["N12_moving_endpoint_jet"].startswith("JACOBI_FIELD")
     assert base["implicit_differentiation_for_DF_B"].startswith("INAPPLICABLE")
+
+
+def test_child_ontology_is_abstract_post_cut_copy_not_same_surface() -> None:
+    authority = spatial_base_attachment_authority()
+    assert authority["Sigma_child_definition"] == "Sigma_c=S3_times_S3"
+    assert authority["child_ontology"].startswith("CASE_4")
+    assert authority["event_embedding"] is None
+    assert authority["child_embedding"] is None
+    assert authority["common_ambient_geometry"] is None
+    assert authority["cross_copy_boundary_exchange_selected"] is False
+    assert authority["metric_transport_through_firewall"] is False
+    assert authority["F_B"] is None
+    assert authority["D_F_B"] is None
+    assert authority["LOCAL_EVENT_CHILD_BASE_MAP_DERIVED"] is False
+    assert authority["GLOBAL_EVENT_CHILD_BASE_MAP_DERIVED"] is False
+    assert authority["global_boundary_diffeomorphism_required_now"] is False
+    assert authority["exact_next_object"] == EXACT_MISSING_BASE_DATUM
+
+
+def test_all_four_owned_base_map_constructions_are_exhausted() -> None:
+    routes = spatial_base_route_audit()
+    assert [row["route"][0] for row in routes] == ["A", "B", "C", "D"]
+    assert all(row["status"] == "DOES_NOT_CLOSE" for row in routes)
+    assert "EMBEDDINGS" in routes[0]["route"]
+    assert "FLOW" in routes[1]["route"]
+    assert "NORMAL" in routes[2]["route"]
+    assert "IMPLICIT" in routes[3]["route"]
+
+
+def test_S3_times_S3_retained_data_do_not_select_DF_B() -> None:
+    witness = spatial_correspondence_nonuniqueness_witness()
+    assert witness["same_marked_group_identity_point"] is True
+    assert witness["same_degree"] == 1
+    assert witness["same_orientation"] is True
+    assert witness["same_volume_jacobian"] is True
+    assert witness["both_preserve_product_tangent_metric"] is True
+    assert witness["tangent_maps_distinct"] is True
+    assert witness["connection_components_can_differ"] is True
 
 
 def test_common_frame_closes_vertical_ambiguity_but_incidence_not_base_jet() -> None:
@@ -208,6 +249,21 @@ def test_materialized_hindsight_payload_is_deterministic() -> None:
     assert first["OPEN"] == [EXACT_MISSING_BASE_DATUM]
     assert first["EXACT_NEXT_OBJECT"] == EXACT_MISSING_BASE_DATUM
     assert first["one_jet_component_split"]["B_vertical_gauge_lift"]["status"] == "CLOSED"
+    assert first["child_ontology"].startswith("CASE_4")
+    assert first["Sigma_event_definition"]
+    assert first["Sigma_child_definition"] == "Sigma_c=S3_times_S3"
+    assert first["event_embedding"] is None
+    assert first["child_embedding"] is None
+    assert first["flow_if_any"]["spatial_event_child_flow"] is None
+    assert first["F_B"] is None
+    assert first["D_F_B"] is None
+    assert first["connection_reset"] is None
+    assert first["Maxwell_cotangent_lift"] is None
+    assert first["global_S1"] == "REFERENCE_SLICE_ONLY"
+    assert first["global_S4"] == "BLOCKED"
+    assert first["validated"] == first["VALIDATED"]
+    assert first["invalidated"] == first["INVALIDATED"]
+    assert first["open"] == first["OPEN"]
     assert first["ownership_levels"]["induced_connection_transport"]["status"] == (
         "CONDITIONAL_FORMULA_ONLY_NOT_ACTION_OWNED_EVALUABLE_MAP"
     )
