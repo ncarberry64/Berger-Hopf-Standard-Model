@@ -11,10 +11,12 @@ from bhsm.interface.gauge_connection_reset_bundle_lift_adjudication import (
     EXACT_ATTACHMENT_QUOTIENT_DATUM,
     EXACT_MISSING_BASE_DATUM,
     EXACT_MISSING_DATUM,
+    EXACT_RELATIVE_DIFFEO_GENERATOR_DATUM,
     STATUS,
     attachment_equivalence_adjudication,
     attachment_representative_naturality_witness,
     attachment_symmetry_group,
+    actual_relative_domain_group_audit,
     canonical_attachment_quotient,
     claim_boundary,
     common_reset_gauge_vertical_one_jet,
@@ -23,15 +25,22 @@ from bhsm.interface.gauge_connection_reset_bundle_lift_adjudication import (
     connection_reset_linearization,
     downstream_status,
     gfhs_naturality,
+    finite_orbit_stabilizer_adversarial_witness,
     induced_connection_transport,
     local_one_jet_nonuniqueness_witness,
     ownership_levels,
+    orbit_stabilizer_identity_theorem,
+    relative_attachment_action_groupoid,
+    relative_diffeomorphism_brst_audit,
+    relative_diffeomorphism_generator_audit,
+    residual_attachment_invariant_audit,
     one_jet_component_status,
     requested_object_classification,
     spatial_base_attachment_authority,
     spatial_base_route_audit,
     spatial_correspondence_nonuniqueness_witness,
     source_lineage_ledger,
+    track2_outcome,
     weighted_cotangent_momentum_map,
 )
 
@@ -251,7 +260,11 @@ def test_claim_boundary_preserves_physical_and_gate7_flags() -> None:
     assert claims["empirical_coefficients_used"] is False
     assert claims["FULL_FIELD_ACTION_ATTACHMENT_READY_FOR_GATE7_BACKGROUND"] is False
     assert claims["FULL_BHSM_COMPLETE"] is False
-    assert claims["exact_missing_datum"] == EXACT_ATTACHMENT_QUOTIENT_DATUM
+    assert claims["relative_attachment_action_groupoid_constructed_conditionally"] is True
+    assert claims["differentiable_relative_boundary_generator_exists"] is False
+    assert claims["relative_diffeomorphism_BRST_complex_exists"] is False
+    assert claims["outcome_D_existing_BHSM_insufficient_derived"] is True
+    assert claims["exact_missing_datum"] == EXACT_RELATIVE_DIFFEO_GENERATOR_DATUM
 
 
 def test_maximal_proved_group_is_not_silently_enlarged_to_full_diff() -> None:
@@ -265,7 +278,7 @@ def test_maximal_proved_group_is_not_silently_enlarged_to_full_diff() -> None:
     assert group["full_Diff_Sigma_admissible"] is False
     assert group["proved_nontrivial_relative_attachment_group"] is None
     assert group["candidate_Ad_family_is_action_owned_relative_gauge"] is False
-    assert group["blocked_by"] == EXACT_ATTACHMENT_QUOTIENT_DATUM
+    assert group["blocked_by"] == EXACT_RELATIVE_DIFFEO_GENERATOR_DATUM
 
 
 def test_id_and_Ad_witness_preserve_tensorial_action_objects() -> None:
@@ -313,7 +326,7 @@ def test_canonical_form_requires_moment_map_reduction_not_naive_quotient() -> No
     assert result["constraints_descend"] is None
     assert result["quotient_phase_space"] is None
     assert result["reduced_reset_canonical"] is None
-    assert result["blocked_by"] == EXACT_ATTACHMENT_QUOTIENT_DATUM
+    assert result["blocked_by"] == EXACT_RELATIVE_DIFFEO_GENERATOR_DATUM
 
 
 def test_no_physical_outcome_or_identity_gauge_is_overclaimed() -> None:
@@ -321,13 +334,86 @@ def test_no_physical_outcome_or_identity_gauge_is_overclaimed() -> None:
     assert result["outcome_A_pure_redundancy"]["proved"] is False
     assert result["outcome_B_partial_redundancy"]["proved"] is False
     assert result["outcome_C_physical_nonuniqueness"]["proved"] is False
+    assert result["outcome_D_existing_theory_insufficient"]["proved"] is True
     assert result["formal_id_Ad_witness_equivalent_after_simultaneous_pullback"] is True
     assert result["formal_witness_sufficient_to_close_physical_equivalence"] is False
     assert result["representative_independence"] is None
     assert result["identity_representative_allowed"] is False
     assert result["residual_physical_attachment_datum"] is None
     assert result["full_field_reset_can_proceed_without_new_physical_law"] is False
-    assert result["exact_next_object"] == EXACT_ATTACHMENT_QUOTIENT_DATUM
+    assert result["exact_next_object"] == EXACT_RELATIVE_DIFFEO_GENERATOR_DATUM
+
+
+def test_candidate_relative_action_is_a_two_sided_groupoid() -> None:
+    result = relative_attachment_action_groupoid()
+    assert "ACTION_GROUPOID" in result["mathematical_structure"]
+    assert result["arrows"].startswith("(phi_event,phi_child)")
+    assert "phi_child_COMPOSE_F_B" in result["action_laws"]["F_B"]
+    assert result["action_laws"]["relative_diffeomorphism_ghost"] is None
+    assert result["candidate_only_not_action_owned"] is True
+
+
+def test_actual_domain_only_owns_fixed_glue_stabilizers() -> None:
+    result = actual_relative_domain_group_audit()
+    assert result["v15_57_configuration_contains_F_B"] is False
+    assert "DIAGONAL_CONFIGURATION_SPACE" in result["v15_57_Diff0_role"]
+    assert result["S7_group_restriction_to_event_child_seam_owned"] is False
+    assert result["AE2_trace_graph_contains_spatial_base_pullback"] is False
+    assert result["AE4_relative_spatial_representation_owned"] is False
+    assert "STABILIZER_SUBGROUPOID" in result[
+        "maximal_proved_domain_preserving_structure"
+    ]
+    assert result["maximal_action_owned_group_moving_F"] is None
+    assert result["blocked_by"] == EXACT_RELATIVE_DIFFEO_GENERATOR_DATUM
+
+
+def test_orbit_stabilizer_and_identity_are_conditional_on_actual_factors() -> None:
+    theorem = orbit_stabilizer_identity_theorem()
+    witness = finite_orbit_stabilizer_adversarial_witness()
+    assert theorem["orbit"].startswith("Orb(F)=H_child")
+    assert theorem["stabilizer"].startswith("Stab(F)")
+    assert theorem["current_BHSM_identity_gauge_status"] == "NOT_AUTHORIZED"
+    assert witness["restricted_orbit_stabilizer_identity"] == witness[
+        "restricted_group_order"
+    ]
+    assert witness["full_orbit_stabilizer_identity"] == witness["full_group_order"]
+    assert witness["identity_in_restricted_orbit"] is False
+    assert witness["identity_in_full_orbit"] is True
+
+
+def test_canonical_and_brst_audits_do_not_invent_a_relative_gauge_sector() -> None:
+    canonical = relative_diffeomorphism_generator_audit()
+    brst = relative_diffeomorphism_brst_audit()
+    assert canonical["differentiable_relative_generator_owned"] is False
+    assert canonical["relative_vector_in_presymplectic_kernel_proved"] is False
+    assert canonical["seam_slide_adversarial_precedent"][
+        "zero_generator_implies_gauge"
+    ] is False
+    assert canonical["canonical_verdict"] == "UNDECIDABLE_FROM_THE_EXISTING_OWNED_DATA"
+    assert brst["relative_event_child_diffeomorphism_ghost_present"] is False
+    assert brst["relative_constraint_present"] is False
+    assert brst["extension_uniquely_forced_by_existing_action"] is False
+    assert brst["new_ghost_or_constraint_now_authorized"] is False
+
+
+def test_relative_hopf_energy_falsifies_a_blanket_hopf_quotient_only() -> None:
+    result = residual_attachment_invariant_audit()
+    hopf = result["relative_Hopf_frame"]
+    assert hopf["sample_relative_rotor_energy_positive"] is True
+    assert hopf["all_relative_Hopf_transformations_are_gauge"] is False
+    assert hopf["attachment_F_B_Hopf_class_identified_with_the_dynamic_rotor"] is False
+    assert result["residual_physical_attachment_datum"] is None
+
+
+def test_track2_earns_outcome_D_and_stops_at_the_generator_boundary() -> None:
+    result = track2_outcome()
+    assert result["selected_outcome"] == "D"
+    assert result["A_relative_attachment_is_gauge"] is False
+    assert result["B_partial_quotient_with_residual"] is False
+    assert result["C_relative_attachment_is_physical"] is False
+    assert result["D_existing_BHSM_insufficient"] is True
+    assert result["reduced_reset_constructed"] is False
+    assert result["exact_next_object"] == EXACT_RELATIVE_DIFFEO_GENERATOR_DATUM
 
 
 def test_materialized_hindsight_payload_is_deterministic() -> None:
@@ -336,8 +422,9 @@ def test_materialized_hindsight_payload_is_deterministic() -> None:
     second = module.build_payload()
     assert first["VALIDATED"]
     assert first["INVALIDATED"]
-    assert first["OPEN"] == [EXACT_ATTACHMENT_QUOTIENT_DATUM]
-    assert first["EXACT_NEXT_OBJECT"] == EXACT_ATTACHMENT_QUOTIENT_DATUM
+    assert first["OPEN"] == [EXACT_RELATIVE_DIFFEO_GENERATOR_DATUM]
+    assert first["EXACT_NEXT_OBJECT"] == EXACT_RELATIVE_DIFFEO_GENERATOR_DATUM
+    assert first["REDUNDANT"]
     assert {
         "attachment_symmetry_group",
         "allowed_representatives",
@@ -359,6 +446,13 @@ def test_materialized_hindsight_payload_is_deterministic() -> None:
         "invalidated",
         "open",
         "exact_next_object",
+        "relative_attachment_action_groupoid",
+        "actual_relative_domain_group_audit",
+        "orbit_stabilizer_identity_theorem",
+        "relative_diffeomorphism_generator_audit",
+        "relative_diffeomorphism_BRST_audit",
+        "residual_attachment_invariant_audit",
+        "track2_outcome",
     }.issubset(first)
     assert first["one_jet_component_split"]["B_vertical_gauge_lift"]["status"] == "CLOSED"
     assert first["child_ontology"].startswith("CASE_4")
@@ -381,6 +475,7 @@ def test_materialized_hindsight_payload_is_deterministic() -> None:
     assert first["validated"] == first["VALIDATED"]
     assert first["invalidated"] == first["INVALIDATED"]
     assert first["open"] == first["OPEN"]
+    assert first["redundant"] == first["REDUNDANT"]
     assert first["ownership_levels"]["induced_connection_transport"]["status"] == (
         "CONDITIONAL_FORMULA_ONLY_NOT_ACTION_OWNED_EVALUABLE_MAP"
     )

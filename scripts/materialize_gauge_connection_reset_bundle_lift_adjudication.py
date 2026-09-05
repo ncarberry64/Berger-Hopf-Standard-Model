@@ -22,24 +22,33 @@ from bhsm.interface.gauge_connection_reset_bundle_lift_adjudication import (  # 
     EXACT_CLOSED_VERTICAL_DATUM,
     EXACT_MISSING_BASE_DATUM,
     EXACT_MISSING_DATUM,
+    EXACT_RELATIVE_DIFFEO_GENERATOR_DATUM,
     STATUS,
     attachment_equivalence_adjudication,
     attachment_representative_naturality_witness,
     attachment_symmetry_group,
+    actual_relative_domain_group_audit,
     canonical_attachment_quotient,
     claim_boundary,
     common_reset_gauge_vertical_one_jet,
     conditional_geometry_checks,
     downstream_status,
     gfhs_naturality,
+    finite_orbit_stabilizer_adversarial_witness,
     local_one_jet_nonuniqueness_witness,
     ownership_levels,
     one_jet_component_status,
+    orbit_stabilizer_identity_theorem,
+    relative_attachment_action_groupoid,
+    relative_diffeomorphism_brst_audit,
+    relative_diffeomorphism_generator_audit,
+    residual_attachment_invariant_audit,
     requested_object_classification,
     spatial_base_attachment_authority,
     spatial_base_route_audit,
     spatial_correspondence_nonuniqueness_witness,
     source_lineage_ledger,
+    track2_outcome,
 )
 
 
@@ -126,6 +135,14 @@ def build_payload() -> dict[str, Any]:
     naturality = gfhs_naturality()
     quotient = canonical_attachment_quotient()
     equivalence = attachment_equivalence_adjudication()
+    groupoid = relative_attachment_action_groupoid()
+    domain_group = actual_relative_domain_group_audit()
+    orbit = orbit_stabilizer_identity_theorem()
+    finite_orbit = finite_orbit_stabilizer_adversarial_witness()
+    generator = relative_diffeomorphism_generator_audit()
+    brst = relative_diffeomorphism_brst_audit()
+    residuals = residual_attachment_invariant_audit()
+    outcome = track2_outcome()
     firewall_authority = json.loads(FIREWALL_AUTHORITY.read_text(encoding="utf-8"))
     claims = claim_boundary()
     source_paths = (
@@ -150,6 +167,13 @@ def build_payload() -> dict[str, Any]:
         "src/bhsm/interface/master_action/fields.py",
         "src/bhsm/interface/master_action/terms.py",
         "src/bhsm/interface/master_action/measures.py",
+        "src/bhsm/interface/aether_full_sobolev_hybrid_actualization_v15_57.py",
+        "src/bhsm/interface/aether_parent_child_relative_rotor_v15_36.py",
+        "src/bhsm/interface/ae4_future_collapse_relative_boundary_domain.py",
+        "src/bhsm/interface/master_action/geometry_only_geon_fr_carrier_completion.py",
+        "src/bhsm/interface/seam_slide_symmetry_quotient.py",
+        "theory/n12_child_boundary_hamiltonian_ownership.md",
+        "theory/n12_ae2_child_boundary_hamiltonian_non_supersession.md",
         str(MODULE.relative_to(ROOT)).replace("\\", "/"),
         str(SCRIPT.relative_to(ROOT)).replace("\\", "/"),
         str(THEORY.relative_to(ROOT)).replace("\\", "/"),
@@ -248,10 +272,12 @@ def build_payload() -> dict[str, Any]:
             and not quotient["alpha_basic_on_full_phase_space"]
             and quotient["quotient_phase_space"] is None
         ),
-        "all_three_physical_outcomes_left_unoverclaimed": (
+        "outcome_D_selected_without_promoting_A_B_or_C": (
             not equivalence["outcome_A_pure_redundancy"]["proved"]
             and not equivalence["outcome_B_partial_redundancy"]["proved"]
             and not equivalence["outcome_C_physical_nonuniqueness"]["proved"]
+            and equivalence["outcome_D_existing_theory_insufficient"]["proved"]
+            and outcome["selected_outcome"] == "D"
             and equivalence["representative_independence"] is None
             and equivalence["residual_physical_attachment_datum"] is None
         ),
@@ -307,9 +333,48 @@ def build_payload() -> dict[str, Any]:
             and not claims["physical_spectrum_derived"]
             and not claims["FULL_BHSM_COMPLETE"]
         ),
-        "exact_next_object_is_relative_diffeomorphism_contract": (
-            claims["exact_missing_datum"] == EXACT_ATTACHMENT_QUOTIENT_DATUM
-            and equivalence["exact_next_object"] == EXACT_ATTACHMENT_QUOTIENT_DATUM
+        "candidate_action_is_groupoid_not_silent_full_Diff": (
+            "ACTION_GROUPOID" in groupoid["mathematical_structure"]
+            and groupoid["candidate_only_not_action_owned"]
+            and domain_group["maximal_action_owned_group_moving_F"] is None
+            and not domain_group["G_rel_subset_Diff_Sigma_derived"]
+        ),
+        "conditional_orbit_stabilizer_and_identity_criterion_derived": (
+            orbit["orbit"].startswith("Orb(F)")
+            and orbit["stabilizer"].startswith("Stab(F)")
+            and not orbit["full_independent_Diff_case_owned_by_BHSM"]
+            and not finite_orbit["identity_in_restricted_orbit"]
+            and finite_orbit["identity_in_full_orbit"]
+            and finite_orbit["restricted_orbit_stabilizer_identity"]
+            == finite_orbit["restricted_group_order"]
+            and finite_orbit["full_orbit_stabilizer_identity"]
+            == finite_orbit["full_group_order"]
+        ),
+        "canonical_generator_exhausted_without_false_null_quotient": (
+            not generator["differentiable_relative_generator_owned"]
+            and not generator["relative_vector_in_presymplectic_kernel_proved"]
+            and not generator["seam_slide_adversarial_precedent"][
+                "zero_generator_implies_gauge"
+            ]
+        ),
+        "relative_spatial_BRST_not_silently_invented": (
+            not brst["relative_event_child_diffeomorphism_ghost_present"]
+            and not brst["relative_constraint_present"]
+            and not brst["new_ghost_or_constraint_now_authorized"]
+        ),
+        "relative_Hopf_overquotient_falsified_without_attachment_promotion": (
+            residuals["relative_Hopf_frame"]["sample_relative_rotor_energy_positive"]
+            and not residuals["relative_Hopf_frame"][
+                "all_relative_Hopf_transformations_are_gauge"
+            ]
+            and not residuals["relative_Hopf_frame"][
+                "attachment_F_B_Hopf_class_identified_with_the_dynamic_rotor"
+            ]
+        ),
+        "exact_next_object_is_differentiable_relative_generator": (
+            claims["exact_missing_datum"] == EXACT_RELATIVE_DIFFEO_GENERATOR_DATUM
+            and equivalence["exact_next_object"] == EXACT_RELATIVE_DIFFEO_GENERATOR_DATUM
+            and outcome["exact_next_object"] == EXACT_RELATIVE_DIFFEO_GENERATOR_DATUM
         ),
     }
     payload = {
@@ -321,10 +386,18 @@ def build_payload() -> dict[str, Any]:
         "spatial_base_route_audit": route_audit,
         "spatial_correspondence_nonuniqueness": spatial_ambiguity,
         "attachment_symmetry_group": symmetry,
+        "relative_attachment_action_groupoid": groupoid,
+        "actual_relative_domain_group_audit": domain_group,
+        "orbit_stabilizer_identity_theorem": orbit,
+        "finite_orbit_stabilizer_adversarial_witness": finite_orbit,
+        "relative_diffeomorphism_generator_audit": generator,
+        "relative_diffeomorphism_BRST_audit": brst,
+        "residual_attachment_invariant_audit": residuals,
+        "track2_outcome": outcome,
         "allowed_representatives": {
             "formal_test_family": ["F_0=id_times_id", "F_a=Ad_a_times_id"],
             "action_owned_physical_equivalence_class": None,
-            "reason": EXACT_ATTACHMENT_QUOTIENT_DATUM,
+            "reason": EXACT_RELATIVE_DIFFEO_GENERATOR_DATUM,
         },
         "nonuniqueness_witness": naturality_witness,
         "GFHS_naturality": naturality["combined_germ"],
@@ -357,6 +430,8 @@ def build_payload() -> dict[str, Any]:
                 EXACT_MISSING_BASE_DATUM
             ),
             "refined_first_physical_decision": EXACT_ATTACHMENT_QUOTIENT_DATUM,
+            "exhausted_contract_result": "OUTCOME_D",
+            "new_exact_boundary": EXACT_RELATIVE_DIFFEO_GENERATOR_DATUM,
             "reason": (
                 "BEFORE_DEMANDING_A_REPRESENTATIVE_MAP,_THE_ACTION_MUST_"
                 "DECIDE_WHETHER_RELATIVE_EVENT_CHILD_SPATIAL_RELABELINGS_"
@@ -410,6 +485,18 @@ def build_payload() -> dict[str, Any]:
                 "THE_CANONICAL_ONE_FORM_IS_COTANGENT_LIFT_INVARIANT_BUT_NOT_"
                 "BASIC_ON_THE_FULL_PHASE_SPACE_AWAY_FROM_THE_MOMENT_MAP_ZERO_SET"
             ),
+            (
+                "THE_CANDIDATE_RELATIVE_ATTACHMENT_TRANSFORMATION_IS_A_TWO_"
+                "SIDED_ACTION_GROUPOID_WITH_ORBIT_H_CHILD_F_H_EVENT_INVERSE"
+            ),
+            (
+                "ONLY_THE_STABILIZER_REPARAMETRIZATIONS_OF_A_SUPPLIED_GLUE_"
+                "ARE_PRESENTLY_PROVED_DOMAIN_PRESERVING"
+            ),
+            (
+                "OUTCOME_D_IS_DERIVED_AFTER_THE_DOMAIN_CANONICAL_BRST_ORBIT_"
+                "AND_RESIDUAL_AUDITS"
+            ),
         ],
         "INVALIDATED": [
             "BUNDLE_ISOMORPHISM_CLASS_IS_AN_EVALUABLE_CONNECTION_TRANSPORT",
@@ -431,14 +518,23 @@ def build_payload() -> dict[str, Any]:
             "TWO_EQUAL_WITNESS_ACTION_VALUES_DEFINE_THE_PHYSICAL_QUOTIENT",
             "THE_IDENTITY_ATTACHMENT_IS_CURRENTLY_AN_ADMISSIBLE_GAUGE_FIXING",
             "ALPHA_DESCENDS_TO_AN_UNCONSTRAINED_DIFFEO_QUOTIENT",
+            "THE_V15_57_DIAGONAL_DIFF0_QUOTIENT_DEFINES_A_RELATIVE_ATTACHMENT_GROUP",
+            "A_PRESYMPLECTIC_NULL_MULTIPLIER_DIRECTION_AUTOMATICALLY_DEFINES_GAUGE",
+            "ALL_RELATIVE_HOPF_TRANSFORMATIONS_ARE_GAUGE",
+            "IDENTITY_IS_A_GLOBAL_REPRESENTATIVE_FOR_AN_UNDERIVED_SUBGROUP",
         ],
-        "OPEN": [EXACT_ATTACHMENT_QUOTIENT_DATUM],
-        "EXACT_NEXT_OBJECT": EXACT_ATTACHMENT_QUOTIENT_DATUM,
+        "REDUNDANT": [
+            "OBJECTWISE_MAXWELL_DIRAC_BRST_CURVATURE_AND_GFHS_COVARIANCE_REPROOFS",
+            "A_SECOND_ID_VERSUS_AD_TENSORIAL_WITNESS",
+            "RECOMPUTING_FROZEN_FAMILY_OR_REPRESENTATION_PROJECTORS",
+        ],
+        "OPEN": [EXACT_RELATIVE_DIFFEO_GENERATOR_DATUM],
+        "EXACT_NEXT_OBJECT": EXACT_RELATIVE_DIFFEO_GENERATOR_DATUM,
         "exact_next_calculation": (
-            "DEFINE_FROM_THE_ACTION_DOMAIN_THE_RELATIVE_EVENT_CHILD_SPATIAL_"
-            "DIFFEO_GROUP,_ITS_ACTION_ON_BACKGROUND_FIELDS_TRACE_GRAPHS_"
-            "GALERKIN_PROJECTORS_AND_CONSTRAINTS,_AND_ITS_MOMENT_MAP_BRST_"
-            "REDUCTION;_THEN_DECIDE_WHETHER_F_B_IS_GAUGE_OR_PHYSICAL_DATA"
+            "DERIVE_FROM_THE_COMPLETE_PARENT_CHILD_VARIATIONAL_ACTION_THE_"
+            "RETAINED_THETA,_BOTH_Q_XI_BOUNDARY_TERMS,_THE_ALLOWED_B_XI_"
+            "ENSEMBLE,_AND_THEIR_ACTION_ON_F_B_AND_THE_RESET_TRACE_DOMAIN;_"
+            "THEN_TEST_WHETHER_THE_RELATIVE_CHARGE_VANISHES_OR_SURVIVES"
         ),
         "empirical_inputs": [],
         "claims": claims,
@@ -448,6 +544,7 @@ def build_payload() -> dict[str, Any]:
     }
     payload["validated"] = payload["VALIDATED"]
     payload["invalidated"] = payload["INVALIDATED"]
+    payload["redundant"] = payload["REDUNDANT"]
     payload["open"] = payload["OPEN"]
     return payload
 

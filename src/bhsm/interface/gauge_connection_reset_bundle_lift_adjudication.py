@@ -38,14 +38,33 @@ from bhsm.interface.aether_reconstruction_firewall_event_v15_45 import (
     oriented_cut_and_event_data,
     reconstruction_seed,
 )
+from bhsm.interface.aether_full_sobolev_hybrid_actualization_v15_57 import (
+    event_quotient_contract,
+    sobolev_phase_space_contract,
+)
+from bhsm.interface.aether_parent_child_relative_rotor_v15_36 import (
+    compact_killing_momentum_constraint_theorem,
+    relative_rotor_terms,
+)
+from bhsm.interface.ae4_future_collapse_relative_boundary_domain import (
+    future_collapse_domain_contract,
+)
+from bhsm.interface.master_action.geometry_only_geon_fr_carrier_completion import (
+    configuration_space_definition,
+    large_diffeomorphism_audit,
+)
 from bhsm.interface.master_action.symmetries import rows as master_symmetry_rows
+from bhsm.interface.seam_slide_symmetry_quotient import (
+    noether_ledger as seam_slide_noether_ledger,
+    quotient_ledger as seam_slide_quotient_ledger,
+)
 
 
-ACTION_VERSION = "BHSM-AE-3.2.3-ATTACHMENT-DIFFEO-QUOTIENT-AUDIT"
+ACTION_VERSION = "BHSM-AE-3.2.4-RELATIVE-DIFFEO-GROUPOID-GENERATOR-AUDIT"
 CLASSIFICATION = "AE4_EVENT_CHILD_ATTACHMENT_DIFFEO_EQUIVALENCE_AUTHORITY"
 STATUS = (
-    "ATTACHMENT_REPRESENTATIVE_PHYSICAL_EQUIVALENCE_UNDECIDED_BECAUSE_THE_"
-    "RELATIVE_EVENT_CHILD_DIFFEO_QUOTIENT_IS_NOT_ACTION_OWNED"
+    "OUTCOME_D_RELATIVE_ATTACHMENT_EQUIVALENCE_UNDECIDABLE_UNTIL_A_"
+    "DIFFERENTIABLE_RELATIVE_BOUNDARY_DIFFEO_GENERATOR_IS_ACTION_OWNED"
 )
 EXACT_MISSING_BASE_DATUM = (
     "ACTION_OWNED_CROSS_COPY_SPATIAL_ATTACHMENT_MORPHISM_"
@@ -59,9 +78,13 @@ EXACT_ATTACHMENT_QUOTIENT_DATUM = (
     "ACTION_OWNED_EVENT_CHILD_RELATIVE_SPATIAL_DIFFEOMORPHISM_"
     "EQUIVALENCE_CONTRACT_ABSENT"
 )
+EXACT_RELATIVE_DIFFEO_GENERATOR_DATUM = (
+    "ACTION_OWNED_DIFFERENTIABLE_RELATIVE_EVENT_CHILD_SPATIAL_DIFFEO_"
+    "GENERATOR_ON_THE_RESET_TRACE_DOMAIN_ABSENT"
+)
 # A representative base map remains absent, but this smaller prior datum now
 # decides whether such a representative is physical input or gauge choice.
-EXACT_MISSING_DATUM = EXACT_ATTACHMENT_QUOTIENT_DATUM
+EXACT_MISSING_DATUM = EXACT_RELATIVE_DIFFEO_GENERATOR_DATUM
 
 
 def _square(value: Sequence[Sequence[complex]], name: str) -> np.ndarray:
@@ -431,7 +454,237 @@ def attachment_symmetry_group() -> dict[str, Any]:
             "ORIENTATION,_PRODUCT_STRUCTURE,_MARKED_IDENTITY,_AND_HAAR_MEASURE"
         ),
         "candidate_Ad_family_is_action_owned_relative_gauge": False,
-        "blocked_by": EXACT_ATTACHMENT_QUOTIENT_DATUM,
+        "blocked_by": EXACT_RELATIVE_DIFFEO_GENERATOR_DATUM,
+    }
+
+
+def relative_attachment_action_groupoid() -> dict[str, Any]:
+    """Construct the maximal candidate without declaring it to be gauge.
+
+    Attachments are arrows between two distinct boundary copies.  Independent
+    reparametrizations therefore act from the left and right; the natural
+    object is an action groupoid, not a canonically selected subgroup of one
+    copy of ``Diff(Sigma)``.
+    """
+
+    return {
+        "mathematical_structure": (
+            "(H_child_times_H_event)_ACTION_GROUPOID_ON_"
+            "Iso_plus_spin(Sigma_event,Sigma_child)"
+        ),
+        "objects": (
+            "ADMISSIBLE_ORIENTATION_AND_SPIN_PRESERVING_ATTACHMENTS_"
+            "F:Sigma_event_TO_Sigma_child"
+        ),
+        "arrows": (
+            "(phi_event,phi_child):F_TO_Fprime_WHEN_"
+            "Fprime=phi_child_COMPOSE_F_COMPOSE_phi_event^(-1)"
+        ),
+        "composition": "COMPONENTWISE_COMPOSITION_OF_THE_TWO_DIFFEO_FACTORS",
+        "identity_arrow": "(id_event,id_child)",
+        "inverse_arrow": "(phi_event^(-1),phi_child^(-1))",
+        "simultaneous_fixed_glue_subgroupoid": (
+            "phi_child_COMPOSE_F=F_COMPOSE_phi_event"
+        ),
+        "fixed_glue_subgroupoid_role": (
+            "STABILIZER_COORDINATE_REPARAMETRIZATIONS_ONLY;_IT_DOES_NOT_"
+            "MOVE_F_TO_A_DISTINCT_ATTACHMENT"
+        ),
+        "internal_gauge_factor": (
+            "G_SM_EVENT_times_G_SM_CHILD_ACTS_ON_FIBERS_AND_IS_DISTINCT_"
+            "FROM_THE_SPATIAL_ACTION_GROUPOID"
+        ),
+        "coordinate_relabeling": (
+            "A_STABILIZER_ARROW_WITH_ALL_GEOMETRIC_DATA_PULLED_BACK_TOGETHER"
+        ),
+        "candidate_physical_attachment_change": (
+            "AN_ARROW_MOVING_F_OUTSIDE_THE_ACTION_OWNED_GAUGE_ORBIT,_IF_ANY"
+        ),
+        "action_laws": {
+            "parent_spatial_fields": "PULLBACK_BY_THE_PARENT_OR_EVENT_FACTOR_AS_TYPED",
+            "event_spatial_fields": "phi_event^STAR_FIELD_event",
+            "child_spatial_fields": "phi_child^STAR_FIELD_child",
+            "F_B": "phi_child_COMPOSE_F_B_COMPOSE_phi_event^(-1)",
+            "metric_and_measure": "TENSOR_PULLBACK_AND_INDUCED_DENSITY_PULLBACK",
+            "connection_and_curvature": "CONNECTION_PULLBACK_AND_CURVATURE_PULLBACK",
+            "Maxwell_variables": "FORM_PULLBACK_WITH_COTANGENT_LIFT_FOR_MOMENTA",
+            "fermions_and_Dirac": "SPIN_LIFT_PULLBACK_AND_NATURAL_DIRAC_INTERTWINER",
+            "canonical_coordinates": "CONFIGURATION_PULLBACK",
+            "canonical_momenta": "INVERSE_ADJOINT_COTANGENT_PULLBACK",
+            "alpha_and_omega": "COTANGENT_LIFT_PRESERVES_ALPHA_AND_OMEGA",
+            "constraints": "PULLBACK_CONDITIONALLY_IF_THE_DOMAIN_AND_BOUNDARY_TERM_ARE_PRESERVED",
+            "internal_BRST_fields_and_ghosts": "TENSOR_PULLBACK_PLUS_INTERNAL_ADJOINT_ACTION",
+            "relative_diffeomorphism_ghost": None,
+            "reset_variables": "WOULD_REQUIRE_AN_EQUIVARIANT_RESET_MAP_NOT_PRESENTLY_OWNED",
+            "reset_graph": "WOULD_MAP_Graph(R_F)_TO_Graph(R_Fprime)",
+            "graph_jets": "WOULD_REQUIRE_THE_INDUCED_JET_PROLONGATION_OF_THE_RESET_GRAPH",
+            "Berger_Hopf_data": "PULLBACK_OR_RESTRICT_TO_ITS_STABILIZER_AT_FIXED_BACKGROUND",
+            "Galerkin_variables": "WOULD_REQUIRE_U_phi_P_N=P_N_U_phi_OR_A_TRANSFORMED_PROJECTOR",
+            "boundary_data": "TRACE_PULLBACK_WITH_NORMAL_AND_ORIENTATION_CONVENTIONS",
+            "seam_gluing_data": "TWO_SIDED_PULLBACK_WITH_F_B_TRANSFORMED_AS_ABOVE",
+            "projectors": "CONJUGATION_BY_THE_INDUCED_TRACE_REPRESENTATION_IF_DEFINED",
+            "frozen_family_representation_content": "SPATIAL_ACTION_TENSOR_ID_ON_FROZEN_INTERNAL_FACTORS",
+            "S1_to_S4": "NATURAL_ONLY_AFTER_AN_EQUIVARIANT_RESET_AND_DOMAIN_ACTION_EXISTS",
+            "beta": "WOULD_BE_R_B^STAR_ALPHA_MINUS_ALPHA_ON_THE_CONSTRAINED_DOMAIN",
+            "generator_data": "WOULD_BE_THE_DIFFERENTIABLE_MOMENT_MAP_OR_NOETHER_HAMILTONIAN",
+            "AE2": "MUST_PRESERVE_Gamma0_child(Psi)=U_R_Gamma0_event(Psi)",
+            "AE4": "MUST_PRESERVE_THE_RETARDED_PARENT_CHILD_TRACE_DOMAIN_AND_SCHUR_BLOCK",
+        },
+        "candidate_only_not_action_owned": True,
+    }
+
+
+def actual_relative_domain_group_audit() -> dict[str, Any]:
+    """Intersect the candidate with every presently declared domain owner."""
+
+    sobolev = sobolev_phase_space_contract()
+    event = event_quotient_contract()
+    geometry = configuration_space_definition()
+    large = large_diffeomorphism_audit()
+    ae2 = action_definition()
+    ae4 = future_collapse_domain_contract()
+    return {
+        "largest_plausible_factors": (
+            "H_event,H_child_SUBSET_Diff^(s+1)_plus_spin(S3_times_S3)"
+        ),
+        "required_intersection": [
+            "H^(s+1)_0_REGULARITY_AND_Hs_FIELD_PULLBACK",
+            "ORIENTATION_AND_SPIN_STRUCTURE",
+            "FIXED_DISCRETE_INCIDENCE_AND_BOUNDARY_IDENTITIES",
+            "AE2_TRACE_VARIATION_AND_SQUARED_OPERATOR_GRAPHS",
+            "AE4_FUTURE_RETARDED_TRACE_DOMAIN",
+            "BERGER_HOPF_BACKGROUND_OR_ITS_TRANSFORMED_BACKGROUND_ORBIT",
+            "GALERKIN_TRACE_REPRESENTATION_AND_PROJECTOR_INTERTWINER",
+            "CANONICAL_CONSTRAINT_SURFACE_AND_ALLOWED_BOUNDARY_ENSEMBLE",
+            "INTERNAL_BRST_DOMAIN_AND_ANY_SPATIAL_BRST_EXTENSION",
+        ],
+        "v15_57_phase_quotient": sobolev["quotient"],
+        "v15_57_configuration_contains_F_B": False,
+        "v15_57_Diff0_role": (
+            "DIAGONAL_CONFIGURATION_SPACE_REDUCTION_OF_EACH_SEVEN_"
+            "DIMENSIONAL_CAUCHY_STATE,_NOT_AN_INDEPENDENT_TWO_COPY_"
+            "ATTACHMENT_ACTION"
+        ),
+        "event_continuous_tangent": event["continuous_event_tangent_after_Aether_quotient"],
+        "event_quotient_defines_pointwise_boundary_attachment": False,
+        "S7_geometry_gauge_group": geometry["gauge_group"],
+        "S7_group_restriction_to_event_child_seam_owned": False,
+        "large_diffeomorphisms_quotiented": large["belongs_to_small_diff_quotient"],
+        "AE2_trace_graph": ae2["trace_graph"],
+        "AE2_trace_graph_contains_spatial_base_pullback": False,
+        "AE4_trace_space": ae4["trace_space"],
+        "AE4_reset_graph_role": ae4["reset_graph_role"],
+        "AE4_relative_spatial_representation_owned": False,
+        "maximal_proved_domain_preserving_structure": (
+            "FOR_EACH_SUPPLIED_F,_ITS_SIMULTANEOUS_REPARAMETRIZATION_"
+            "STABILIZER_SUBGROUPOID"
+        ),
+        "maximal_action_owned_group_moving_F": None,
+        "G_rel_subset_Diff_Sigma_derived": False,
+        "why_no_single_subgroup": (
+            "THE_TWO_BOUNDARY_COPIES_HAVE_INDEPENDENT_LEFT_AND_RIGHT_"
+            "AUTOMORPHISM_FACTORS_AND_NO_REFERENCE_IDENTIFICATION_IS_OWNED"
+        ),
+        "blocked_by": EXACT_RELATIVE_DIFFEO_GENERATOR_DATUM,
+    }
+
+
+def orbit_stabilizer_identity_theorem() -> dict[str, Any]:
+    """Give the exact conditional orbit, stabilizer, and identity criterion."""
+
+    return {
+        "orbit": "Orb(F)=H_child_COMPOSE_F_COMPOSE_H_event^(-1)",
+        "stabilizer": (
+            "Stab(F)={(phi_event,phi_child):phi_child_COMPOSE_F="
+            "F_COMPOSE_phi_event}"
+        ),
+        "stabilizer_graph_form": (
+            "phi_child=F_COMPOSE_phi_event_COMPOSE_F^(-1),_INTERSECTED_"
+            "WITH_H_child"
+        ),
+        "conditional_quotient": (
+            "H_child_BACKSLASH_Iso_plus_spin(Sigma_event,Sigma_child)_"
+            "/H_event"
+        ),
+        "full_independent_Diff_case": (
+            "TRANSITIVE_ON_EACH_ALLOWED_ORIENTATION_SPIN_COMPONENT"
+        ),
+        "full_independent_Diff_case_owned_by_BHSM": False,
+        "identity_requires_reference_identification": True,
+        "identity_global_criterion": (
+            "AFTER_A_REFERENCE_IDENTIFICATION,_id_IS_IN_Orb(F)_IFF_"
+            "F_IN_H_child^(-1)_COMPOSE_H_event_EQUIVALENTLY_"
+            "EXISTS_hc,he_WITH_hc_COMPOSE_F_COMPOSE_he^(-1)=id"
+        ),
+        "identity_local_criterion": (
+            "THE_SAME_ORBIT_CONDITION_FOR_THE_RESTRICTED_GERM_GROUPS"
+        ),
+        "current_BHSM_identity_gauge_status": "NOT_AUTHORIZED",
+        "reason": "H_event_AND_H_child_MOVING_ATTACHMENTS_ARE_NOT_DERIVED",
+    }
+
+
+def finite_orbit_stabilizer_adversarial_witness() -> dict[str, Any]:
+    """Use a finite action-groupoid model to falsify automatic identity gauge."""
+
+    identity = (0, 1, 2)
+    swap = (1, 0, 2)
+    cycle = (1, 2, 0)
+
+    def compose(left: tuple[int, ...], right: tuple[int, ...]) -> tuple[int, ...]:
+        return tuple(left[right[index]] for index in range(len(left)))
+
+    def inverse(permutation: tuple[int, ...]) -> tuple[int, ...]:
+        result = [0] * len(permutation)
+        for index, image in enumerate(permutation):
+            result[image] = index
+        return tuple(result)
+
+    subgroup = (identity, swap)
+    orbit = {
+        compose(child, compose(cycle, inverse(event)))
+        for child in subgroup
+        for event in subgroup
+    }
+    stabilizer = {
+        (event, child)
+        for child in subgroup
+        for event in subgroup
+        if compose(child, cycle) == compose(cycle, event)
+    }
+    full = tuple(
+        permutation
+        for permutation in (
+            (0, 1, 2), (0, 2, 1), (1, 0, 2),
+            (1, 2, 0), (2, 0, 1), (2, 1, 0),
+        )
+    )
+    full_orbit = {
+        compose(child, compose(cycle, inverse(event)))
+        for child in full
+        for event in full
+    }
+    full_stabilizer = {
+        (event, child)
+        for child in full
+        for event in full
+        if compose(child, cycle) == compose(cycle, event)
+    }
+    return {
+        "restricted_group_order": len(subgroup) ** 2,
+        "restricted_orbit_order": len(orbit),
+        "restricted_stabilizer_order": len(stabilizer),
+        "restricted_orbit_stabilizer_identity": len(orbit) * len(stabilizer),
+        "identity_in_restricted_orbit": identity in orbit,
+        "full_group_order": len(full) ** 2,
+        "full_orbit_order": len(full_orbit),
+        "full_stabilizer_order": len(full_stabilizer),
+        "full_orbit_stabilizer_identity": len(full_orbit) * len(full_stabilizer),
+        "identity_in_full_orbit": identity in full_orbit,
+        "lesson": (
+            "IDENTITY_IS_A_REPRESENTATIVE_ONLY_FOR_ORBITS_OF_THE_ACTUAL_"
+            "ADMISSIBLE_FACTORS,_NOT_MERELY_BECAUSE_FULL_DIFF_WOULD_BE_TRANSITIVE"
+        ),
     }
 
 
@@ -684,7 +937,163 @@ def canonical_attachment_quotient() -> dict[str, Any]:
         "beta_representative_invariant": None,
         "beta_basic": None,
         "local_reset_generating_germ": None,
-        "blocked_by": EXACT_ATTACHMENT_QUOTIENT_DATUM,
+        "blocked_by": EXACT_RELATIVE_DIFFEO_GENERATOR_DATUM,
+    }
+
+
+def relative_diffeomorphism_generator_audit() -> dict[str, Any]:
+    """Test the legitimate canonical criterion for a relative gauge orbit."""
+
+    seam_noether = seam_slide_noether_ledger()
+    seam_quotient = seam_slide_quotient_ledger()
+    return {
+        "action_invariance_of_complete_reset_domain": None,
+        "candidate_bulk_generator": seam_noether["actual_momentum_generator"],
+        "required_covariant_boundary_variation": (
+            "delta_H_(xi_event,xi_child)=SUM_sides_INTEGRAL_boundary_"
+            "(delta_Q_xi-i_xi_Theta_retained)-delta_B_xi"
+        ),
+        "required_owned_data": [
+            "COMPLETE_RETAINED_COVARIANT_SYMPLECTIC_POTENTIAL_Theta",
+            "RELATIVE_DIFFEO_NOETHER_CHARGE_Q_xi_ON_BOTH_SIDES",
+            "BOUNDARY_ENSEMBLE_AND_DIFFERENTIABILITY_COUNTERTERM_B_xi",
+            "ACTION_OF_THE_GENERATOR_ON_F_B_AND_THE_RESET_TRACE_GRAPH",
+            "MOMENT_MAP_CONSTRAINT_AND_ALLOWED_BOUNDARY_CHARGE_SECTOR",
+        ],
+        "complete_Theta_owned": False,
+        "complete_relative_Q_xi_owned": False,
+        "boundary_counterterm_or_ensemble_owned": False,
+        "differentiable_relative_generator_owned": False,
+        "relative_vector_tangent_to_nonlinear_reset_solution_domain_proved": False,
+        "relative_vector_in_presymplectic_kernel_proved": False,
+        "relative_boundary_charge_vanishes_proved": False,
+        "relative_boundary_charge_nonzero_proved": False,
+        "cotangent_lift_alpha_invariant": True,
+        "cotangent_lift_alpha_horizontal_before_constraint": False,
+        "gauge_criterion": (
+            "ACTION_SYMMETRY_PLUS_DOMAIN_TANGENCY_PLUS_A_DIFFERENTIABLE_"
+            "FIRST_CLASS_GENERATOR_WITH_VANISHING_GAUGE_CHARGE_OR_AN_"
+            "EQUIVALENT_PRESYMPLECTIC_KERNEL_THEOREM"
+        ),
+        "seam_slide_adversarial_precedent": {
+            "zero_generator_implies_gauge": seam_noether["zero_generator_implies_gauge"],
+            "new_first_class_constraint": seam_noether["new_first_class_constraint"],
+            "quotient_adopted": seam_quotient["quotient_adopted"],
+            "zero_slice_valid": seam_quotient["S_Sigma_zero_slice_valid"],
+            "lesson": (
+                "A_NULL_AUXILIARY_OR_MULTIPLIER_DIRECTION_IS_NOT_GAUGE_"
+                "WITHOUT_ACTION_SYMMETRY_AND_NONLINEAR_DOMAIN_TANGENCY"
+            ),
+        },
+        "canonical_verdict": "UNDECIDABLE_FROM_THE_EXISTING_OWNED_DATA",
+        "blocked_by": EXACT_RELATIVE_DIFFEO_GENERATOR_DATUM,
+    }
+
+
+def relative_diffeomorphism_brst_audit() -> dict[str, Any]:
+    """Separate the retained internal BRST complex from spacetime diffeos."""
+
+    return {
+        "existing_AE2_BRST_sector": (
+            "INTERNAL_G_SM_GAUGE_BRST_TRANSMITTED_BY_U_R_AND_THE_COMMON_"
+            "GAUGE_FRAME"
+        ),
+        "existing_ghost_geometric_role": (
+            "GAUGE_LONGITUDINAL_PARTNER_ON_THE_RETAINED_TRACE_DOMAIN"
+        ),
+        "spatial_diffeomorphism_ghost_present": False,
+        "relative_event_child_diffeomorphism_ghost_present": False,
+        "relative_constraint_present": False,
+        "relative_BRST_differential_present": False,
+        "relative_nilpotency_or_closure_evaluable": False,
+        "v15_57_Diff0_quotient_materializes_a_BRST_complex": False,
+        "global_98_state_spatial_generator_present": False,
+        "extension_uniquely_forced_by_existing_action": False,
+        "why_not_unique": (
+            "THE_BOUNDARY_ENSEMBLE,_COUNTERTERM,_ALLOWED_RELATIVE_CHARGE_"
+            "SECTOR,_AND_DOMAIN_REPRESENTATION_FIRST_HAVE_TO_BE_SELECTED"
+        ),
+        "new_ghost_or_constraint_now_authorized": False,
+        "BRST_verdict": "NOT_OWNED_AND_NOT_UNIQUELY_DERIVABLE",
+        "blocked_by": EXACT_RELATIVE_DIFFEO_GENERATOR_DATUM,
+    }
+
+
+def residual_attachment_invariant_audit() -> dict[str, Any]:
+    """Classify candidates without promoting an invariant before its group."""
+
+    large = large_diffeomorphism_audit()
+    rotor_constraint = compact_killing_momentum_constraint_theorem()
+    rotor = relative_rotor_terms(0.5, relative_charge=0.5, points=4001)
+    return {
+        "orientation": {
+            "status": "FIXED_DOMAIN_SECTOR_NOT_A_CONTINUOUS_RESIDUAL",
+            "value": "DEGREE_ONE_CHILD_x_NEGATIVE_ORIENTATION",
+        },
+        "discrete_incidence_and_cobordism": {
+            "status": "RETAINED_EVENT_DATA",
+            "gauge_invariance_under_unknown_G_rel": None,
+        },
+        "mapping_class": {
+            "S7_large_diffeomorphisms_quotiented": large[
+                "belongs_to_small_diff_quotient"
+            ],
+            "S3_times_S3_attachment_mapping_class_computed": False,
+            "status": "CANDIDATE_NOT_PROMOTED",
+        },
+        "relative_Hopf_frame": {
+            "compact_constraint": rotor_constraint["compact_result"],
+            "admissible_nonzero_sector": rotor_constraint["admissible_nonzero_sector"],
+            "sample_relative_rotor_energy": rotor["relative_rotor_energy"],
+            "sample_relative_rotor_energy_positive": rotor["relative_rotor_energy"] > 0.0,
+            "all_relative_Hopf_transformations_are_gauge": False,
+            "attachment_F_B_Hopf_class_identified_with_the_dynamic_rotor": False,
+            "status": (
+                "PHYSICAL_DYNAMIC_RELATIVE_HOPF_MOTION_IS_AN_ADVERSARIAL_"
+                "OBSTRUCTION;_THE_STATIC_ATTACHMENT_RESIDUAL_REMAINS_UNPROVED"
+            ),
+        },
+        "holonomy_connection_curvature": {
+            "representative_naturality": True,
+            "quotient_classes_defined": False,
+            "status": "CANDIDATES_NOT_PROMOTED",
+        },
+        "seam_topological_sector": {
+            "fixed_incidence_must_be_stabilized": True,
+            "additional_residual_derived": False,
+        },
+        "residual_physical_attachment_datum": None,
+        "reason": (
+            "RESIDUALS_ARE_INVARIANTS_OF_A_DERIVED_GAUGE_ORBIT;_THE_"
+            "ACTION_OWNED_GROUP_MOVING_F_IS_ABSENT"
+        ),
+    }
+
+
+def track2_outcome() -> dict[str, Any]:
+    """Return the final A/B/C/D adjudication at the owned-theory boundary."""
+
+    return {
+        "A_relative_attachment_is_gauge": False,
+        "B_partial_quotient_with_residual": False,
+        "C_relative_attachment_is_physical": False,
+        "D_existing_BHSM_insufficient": True,
+        "selected_outcome": "D",
+        "why_D_is_earned": (
+            "THE_CANDIDATE_ACTION_GROUPOID,_DOMAIN_INTERSECTION,_CONDITIONAL_"
+            "ORBITS,_STABILIZERS,_IDENTITY_CRITERION,_CANONICAL_TEST,_BRST_"
+            "TEST,_AND_RESIDUAL_CANDIDATES_HAVE_BEEN_EXHAUSTED;_THE_ACTION_"
+            "DOES_NOT_OWN_THE_DIFFERENTIABLE_RELATIVE_BOUNDARY_GENERATOR"
+        ),
+        "new_postulate_would_have_to_decide": [
+            "WHICH_TWO_SIDED_BOUNDARY_DIFFEO_FACTORS_ACT_ON_THE_RESET_DOMAIN",
+            "THE_BOUNDARY_ENSEMBLE_AND_COUNTERTERM_MAKING_THE_GENERATOR_DIFFERENTIABLE",
+            "WHETHER_RELATIVE_BOUNDARY_CHARGES_VANISH_AS_GAUGE_OR_SURVIVE_AS_PHYSICAL_DATA",
+            "THE_SPATIAL_DIFFEO_GHOST_COMPLEX_IF_THE_TRANSFORMATION_IS_GAUGE",
+        ],
+        "reduced_reset_constructed": False,
+        "downstream_closure_earned": False,
+        "exact_next_object": EXACT_RELATIVE_DIFFEO_GENERATOR_DATUM,
     }
 
 
@@ -718,7 +1127,15 @@ def attachment_equivalence_adjudication() -> dict[str, Any]:
                 "THROUGH_A_COMPLETE_COMMON_RESET_ACTION_AND_DOMAIN"
             ),
         },
-        "classification": "A_B_AND_C_REMAIN_UNDECIDED_AT_THE_ACTION_DOMAIN_LEVEL",
+        "outcome_D_existing_theory_insufficient": {
+            "proved": True,
+            "reason": (
+                "NO_ACTION_OWNED_DIFFERENTIABLE_RELATIVE_BOUNDARY_DIFFEO_"
+                "GENERATOR_ACTS_ON_THE_RESET_TRACE_DOMAIN_AND_THE_REQUIRED_"
+                "BOUNDARY_CHARGE_ENSEMBLE_IS_UNSELECTED"
+            ),
+        },
+        "classification": "OUTCOME_D_AFTER_ACTION_DOMAIN_CANONICAL_AND_BRST_EXHAUSTION",
         "formal_id_Ad_witness_equivalent_after_simultaneous_pullback": True,
         "formal_witness_sufficient_to_close_physical_equivalence": False,
         "connection_class_unique": None,
@@ -751,7 +1168,7 @@ def attachment_equivalence_adjudication() -> dict[str, Any]:
             "S4": "BLOCKED",
         },
         "full_field_reset_can_proceed_without_new_physical_law": False,
-        "exact_next_object": EXACT_ATTACHMENT_QUOTIENT_DATUM,
+        "exact_next_object": EXACT_RELATIVE_DIFFEO_GENERATOR_DATUM,
     }
 
 
@@ -1161,6 +1578,10 @@ def claim_boundary() -> dict[str, Any]:
         "levelwise_diffeomorphism_covariance_exists": True,
         "cross_level_diffeomorphism_intertwiner_proved": False,
         "action_owned_relative_event_child_diffeomorphism_group_exists": False,
+        "relative_attachment_action_groupoid_constructed_conditionally": True,
+        "differentiable_relative_boundary_generator_exists": False,
+        "relative_diffeomorphism_BRST_complex_exists": False,
+        "outcome_D_existing_BHSM_insufficient_derived": True,
         "attachment_representative_independence_proved": False,
         "attachment_representative_dependence_proved": False,
         "identity_representative_is_admissible_gauge_fixing": False,
@@ -1198,11 +1619,13 @@ __all__ = [
     "EXACT_ATTACHMENT_QUOTIENT_DATUM",
     "EXACT_MISSING_BASE_DATUM",
     "EXACT_MISSING_DATUM",
+    "EXACT_RELATIVE_DIFFEO_GENERATOR_DATUM",
     "STATUS",
     "claim_boundary",
     "attachment_equivalence_adjudication",
     "attachment_representative_naturality_witness",
     "attachment_symmetry_group",
+    "actual_relative_domain_group_audit",
     "canonical_attachment_quotient",
     "common_reset_gauge_vertical_one_jet",
     "conditional_geometry_checks",
@@ -1212,12 +1635,19 @@ __all__ = [
     "gfhs_naturality",
     "induced_connection_transport",
     "local_one_jet_nonuniqueness_witness",
+    "finite_orbit_stabilizer_adversarial_witness",
     "one_jet_component_status",
     "ownership_levels",
+    "orbit_stabilizer_identity_theorem",
+    "relative_attachment_action_groupoid",
+    "relative_diffeomorphism_brst_audit",
+    "relative_diffeomorphism_generator_audit",
+    "residual_attachment_invariant_audit",
     "requested_object_classification",
     "spatial_base_attachment_authority",
     "spatial_base_route_audit",
     "spatial_correspondence_nonuniqueness_witness",
     "source_lineage_ledger",
+    "track2_outcome",
     "weighted_cotangent_momentum_map",
 ]

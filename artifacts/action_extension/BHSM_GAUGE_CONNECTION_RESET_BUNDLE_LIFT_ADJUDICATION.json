@@ -6,7 +6,7 @@
   },
   "BRST_reset": "GAUGE_VERTICAL_IDENTITY_ONLY_BASE_PULLBACK_OPEN",
   "D_F_B": null,
-  "EXACT_NEXT_OBJECT": "ACTION_OWNED_EVENT_CHILD_RELATIVE_SPATIAL_DIFFEOMORPHISM_EQUIVALENCE_CONTRACT_ABSENT",
+  "EXACT_NEXT_OBJECT": "ACTION_OWNED_DIFFERENTIABLE_RELATIVE_EVENT_CHILD_SPATIAL_DIFFEO_GENERATOR_ON_THE_RESET_TRACE_DOMAIN_ABSENT",
   "F_B": null,
   "GFHS_naturality": {
     "formal_levelwise_identity": "Gamma_GFHS[phi^*B;phi^*Phi]=Gamma_GFHS[B;Phi]",
@@ -35,7 +35,11 @@
     "FULL_DIFF_SIGMA_IS_AN_ACTION_OWNED_ATTACHMENT_SYMMETRY_GROUP",
     "TWO_EQUAL_WITNESS_ACTION_VALUES_DEFINE_THE_PHYSICAL_QUOTIENT",
     "THE_IDENTITY_ATTACHMENT_IS_CURRENTLY_AN_ADMISSIBLE_GAUGE_FIXING",
-    "ALPHA_DESCENDS_TO_AN_UNCONSTRAINED_DIFFEO_QUOTIENT"
+    "ALPHA_DESCENDS_TO_AN_UNCONSTRAINED_DIFFEO_QUOTIENT",
+    "THE_V15_57_DIAGONAL_DIFF0_QUOTIENT_DEFINES_A_RELATIVE_ATTACHMENT_GROUP",
+    "A_PRESYMPLECTIC_NULL_MULTIPLIER_DIRECTION_AUTOMATICALLY_DEFINES_GAUGE",
+    "ALL_RELATIVE_HOPF_TRANSFORMATIONS_ARE_GAUGE",
+    "IDENTITY_IS_A_GLOBAL_REPRESENTATIVE_FOR_AN_UNDERIVED_SUBGROUP"
   ],
   "LOCAL_EVENT_CHILD_BASE_MAP_DERIVED": false,
   "Maxwell_cotangent_lift": null,
@@ -45,7 +49,12 @@
     "tensorial_law": "F(phi^*A)=phi^*F(A)"
   },
   "OPEN": [
-    "ACTION_OWNED_EVENT_CHILD_RELATIVE_SPATIAL_DIFFEOMORPHISM_EQUIVALENCE_CONTRACT_ABSENT"
+    "ACTION_OWNED_DIFFERENTIABLE_RELATIVE_EVENT_CHILD_SPATIAL_DIFFEO_GENERATOR_ON_THE_RESET_TRACE_DOMAIN_ABSENT"
+  ],
+  "REDUNDANT": [
+    "OBJECTWISE_MAXWELL_DIRAC_BRST_CURVATURE_AND_GFHS_COVARIANCE_REPROOFS",
+    "A_SECOND_ID_VERSUS_AD_TENSORIAL_WITNESS",
+    "RECOMPUTING_FROZEN_FAMILY_OR_REPRESENTATION_PROJECTORS"
   ],
   "Sigma_child_definition": "Sigma_c=S3_times_S3",
   "Sigma_event_definition": "AE2_LAST_REGULAR_EVENT_TRACE;_V15_45_SUPPLIES_SEPARATE_S3_TIMES_S3_BOUNDARY_COPIES_BUT_NO_LOCAL_EVENT_EMBEDDING",
@@ -62,20 +71,55 @@
     "HS_NORMAL_LEGENDRE_RANK_ZERO_AND_PI_H_ZERO_REMAIN_UNCHANGED",
     "MAXWELL_CURVATURE_CANONICAL_FERMION_BRST_HS_AND_COMBINED_TENSORIAL_IDENTITIES_ARE_NATURAL_UNDER_SIMULTANEOUS_PULLBACK_FOR_THE_ID_AND_Ad_WITNESS",
     "THE_MASTER_ACTION_IS_DIFFEO_COVARIANT_LEVELWISE_BUT_ITS_CROSS_LEVEL_DIFFEO_INTERTWINER_IS_EXPLICITLY_UNPROVED",
-    "THE_CANONICAL_ONE_FORM_IS_COTANGENT_LIFT_INVARIANT_BUT_NOT_BASIC_ON_THE_FULL_PHASE_SPACE_AWAY_FROM_THE_MOMENT_MAP_ZERO_SET"
+    "THE_CANONICAL_ONE_FORM_IS_COTANGENT_LIFT_INVARIANT_BUT_NOT_BASIC_ON_THE_FULL_PHASE_SPACE_AWAY_FROM_THE_MOMENT_MAP_ZERO_SET",
+    "THE_CANDIDATE_RELATIVE_ATTACHMENT_TRANSFORMATION_IS_A_TWO_SIDED_ACTION_GROUPOID_WITH_ORBIT_H_CHILD_F_H_EVENT_INVERSE",
+    "ONLY_THE_STABILIZER_REPARAMETRIZATIONS_OF_A_SUPPLIED_GLUE_ARE_PRESENTLY_PROVED_DOMAIN_PRESERVING",
+    "OUTCOME_D_IS_DERIVED_AFTER_THE_DOMAIN_CANONICAL_BRST_ORBIT_AND_RESIDUAL_AUDITS"
   ],
-  "action_version": "BHSM-AE-3.2.3-ATTACHMENT-DIFFEO-QUOTIENT-AUDIT",
+  "action_version": "BHSM-AE-3.2.4-RELATIVE-DIFFEO-GROUPOID-GENERATOR-AUDIT",
+  "actual_relative_domain_group_audit": {
+    "AE2_trace_graph": "Gamma0_child(Psi)=U_R*Gamma0_event(Psi)",
+    "AE2_trace_graph_contains_spatial_base_pullback": false,
+    "AE4_relative_spatial_representation_owned": false,
+    "AE4_reset_graph_role": "TRACE_AND_VARIATION_IDENTIFICATION_AT_PARENT_CHILD_BIRTH",
+    "AE4_trace_space": "T_parent_direct_sum_T_child_FOR_coexact_gauge_constraint_ghost_spinor_family_HS_scalar_and_metric_blocks",
+    "G_rel_subset_Diff_Sigma_derived": false,
+    "S7_geometry_gauge_group": "Diff^(s+1)_(0,fr)(S7), the identity component fixing p and its oriented frame",
+    "S7_group_restriction_to_event_child_seam_owned": false,
+    "blocked_by": "ACTION_OWNED_DIFFERENTIABLE_RELATIVE_EVENT_CHILD_SPATIAL_DIFFEO_GENERATOR_ON_THE_RESET_TRACE_DOMAIN_ABSENT",
+    "event_continuous_tangent": "zero_space",
+    "event_quotient_defines_pointwise_boundary_attachment": false,
+    "large_diffeomorphisms_quotiented": false,
+    "largest_plausible_factors": "H_event,H_child_SUBSET_Diff^(s+1)_plus_spin(S3_times_S3)",
+    "maximal_action_owned_group_moving_F": null,
+    "maximal_proved_domain_preserving_structure": "FOR_EACH_SUPPLIED_F,_ITS_SIMULTANEOUS_REPARAMETRIZATION_STABILIZER_SUBGROUPOID",
+    "required_intersection": [
+      "H^(s+1)_0_REGULARITY_AND_Hs_FIELD_PULLBACK",
+      "ORIENTATION_AND_SPIN_STRUCTURE",
+      "FIXED_DISCRETE_INCIDENCE_AND_BOUNDARY_IDENTITIES",
+      "AE2_TRACE_VARIATION_AND_SQUARED_OPERATOR_GRAPHS",
+      "AE4_FUTURE_RETARDED_TRACE_DOMAIN",
+      "BERGER_HOPF_BACKGROUND_OR_ITS_TRANSFORMED_BACKGROUND_ORBIT",
+      "GALERKIN_TRACE_REPRESENTATION_AND_PROJECTOR_INTERTWINER",
+      "CANONICAL_CONSTRAINT_SURFACE_AND_ALLOWED_BOUNDARY_ENSEMBLE",
+      "INTERNAL_BRST_DOMAIN_AND_ANY_SPATIAL_BRST_EXTENSION"
+    ],
+    "v15_57_Diff0_role": "DIAGONAL_CONFIGURATION_SPACE_REDUCTION_OF_EACH_SEVEN_DIMENSIONAL_CAUCHY_STATE,_NOT_AN_INDEPENDENT_TWO_COPY_ATTACHMENT_ACTION",
+    "v15_57_configuration_contains_F_B": false,
+    "v15_57_phase_quotient": "X_phys^s=C_constraints^s/(Diff^(s+1)_0_times_Gauge^(s+1)_0)",
+    "why_no_single_subgroup": "THE_TWO_BOUNDARY_COPIES_HAVE_INDEPENDENT_LEFT_AND_RIGHT_AUTOMORPHISM_FACTORS_AND_NO_REFERENCE_IDENTIFICATION_IS_OWNED"
+  },
   "allowed_representatives": {
     "action_owned_physical_equivalence_class": null,
     "formal_test_family": [
       "F_0=id_times_id",
       "F_a=Ad_a_times_id"
     ],
-    "reason": "ACTION_OWNED_EVENT_CHILD_RELATIVE_SPATIAL_DIFFEOMORPHISM_EQUIVALENCE_CONTRACT_ABSENT"
+    "reason": "ACTION_OWNED_DIFFERENTIABLE_RELATIVE_EVENT_CHILD_SPATIAL_DIFFEO_GENERATOR_ON_THE_RESET_TRACE_DOMAIN_ABSENT"
   },
   "artifact": "BHSM_GAUGE_CONNECTION_RESET_BUNDLE_LIFT_ADJUDICATION",
   "attachment_symmetry_group": {
-    "blocked_by": "ACTION_OWNED_EVENT_CHILD_RELATIVE_SPATIAL_DIFFEOMORPHISM_EQUIVALENCE_CONTRACT_ABSENT",
+    "blocked_by": "ACTION_OWNED_DIFFERENTIABLE_RELATIVE_EVENT_CHILD_SPATIAL_DIFFEO_GENERATOR_ON_THE_RESET_TRACE_DOMAIN_ABSENT",
     "boundary": "SIGMA_EVENT_AND_SIGMA_CHILD_ARE_EACH_S3_TIMES_S3",
     "candidate_Ad_family": "Ad_exp(theta*tau3)_TIMES_ID_PRESERVES_THE_BERGER_HOPF_AXIS,_ORIENTATION,_PRODUCT_STRUCTURE,_MARKED_IDENTITY,_AND_HAAR_MEASURE",
     "candidate_Ad_family_is_action_owned_relative_gauge": false,
@@ -126,22 +170,26 @@
     "constant_v15_57_reused": false,
     "cotangent_lift_derived": false,
     "cross_level_diffeomorphism_intertwiner_proved": false,
+    "differentiable_relative_boundary_generator_exists": false,
     "empirical_coefficients_used": false,
     "evaluable_principal_bundle_lift_local_one_jet_exists": false,
-    "exact_missing_datum": "ACTION_OWNED_EVENT_CHILD_RELATIVE_SPATIAL_DIFFEOMORPHISM_EQUIVALENCE_CONTRACT_ABSENT",
+    "exact_missing_datum": "ACTION_OWNED_DIFFERENTIABLE_RELATIVE_EVENT_CHILD_SPATIAL_DIFFEO_GENERATOR_ON_THE_RESET_TRACE_DOMAIN_ABSENT",
     "exact_reset_generating_functional_derived": false,
     "family_spectrum_rebuilt": false,
     "identity_representative_is_admissible_gauge_fixing": false,
     "implicit_spatial_attachment_route_closed": false,
     "levelwise_diffeomorphism_covariance_exists": true,
     "normal_exponential_route_closed": false,
+    "outcome_D_existing_BHSM_insufficient_derived": true,
     "physical_HS_direction_derived": false,
     "physical_background_bound": false,
     "physical_spectrum_derived": false,
     "physical_yukawas_derived": false,
     "quotient_boundary_phase_space_derived": false,
+    "relative_attachment_action_groupoid_constructed_conditionally": true,
+    "relative_diffeomorphism_BRST_complex_exists": false,
     "retained_spatial_flow_route_closed": false,
-    "status": "ATTACHMENT_REPRESENTATIVE_PHYSICAL_EQUIVALENCE_UNDECIDED_BECAUSE_THE_RELATIVE_EVENT_CHILD_DIFFEO_QUOTIENT_IS_NOT_ACTION_OWNED",
+    "status": "OUTCOME_D_RELATIVE_ATTACHMENT_EQUIVALENCE_UNDECIDABLE_UNTIL_A_DIFFERENTIABLE_RELATIVE_BOUNDARY_DIFFEO_GENERATOR_IS_ACTION_OWNED",
     "symplectic_reset_derived": false
   },
   "classification": "AE4_EVENT_CHILD_ATTACHMENT_DIFFEO_EQUIVALENCE_AUTHORITY",
@@ -202,7 +250,7 @@
     "affine_transition_term": "ZERO_IN_THE_AE2_COMMON_RESET_GAUGE_FRAME",
     "antighost_reset": "GAUGE_VERTICAL_FACTOR_IS_IDENTITY_BUT_BASE_PULLBACK_IS_OPEN",
     "beta": null,
-    "blocked_by": "ACTION_OWNED_EVENT_CHILD_RELATIVE_SPATIAL_DIFFEOMORPHISM_EQUIVALENCE_CONTRACT_ABSENT",
+    "blocked_by": "ACTION_OWNED_DIFFERENTIABLE_RELATIVE_EVENT_CHILD_SPATIAL_DIFFEO_GENERATOR_ON_THE_RESET_TRACE_DOMAIN_ABSENT",
     "curvature_transport": "CONDITIONAL_FUNCTORIALITY_ONLY",
     "event_Noether_Hamiltonian_balance": null,
     "fermion_covariant_derivative_intertwining": "EQUIVALENT_CONDITIONALLY_TO_THE_CONNECTION_PRESERVING_EQUATION;_NOT_EVALUABLE_FOR_THE_RETAINED_SEAM",
@@ -216,7 +264,7 @@
   },
   "empirical_inputs": [],
   "event_embedding": null,
-  "exact_next_calculation": "DEFINE_FROM_THE_ACTION_DOMAIN_THE_RELATIVE_EVENT_CHILD_SPATIAL_DIFFEO_GROUP,_ITS_ACTION_ON_BACKGROUND_FIELDS_TRACE_GRAPHS_GALERKIN_PROJECTORS_AND_CONSTRAINTS,_AND_ITS_MOMENT_MAP_BRST_REDUCTION;_THEN_DECIDE_WHETHER_F_B_IS_GAUGE_OR_PHYSICAL_DATA",
+  "exact_next_calculation": "DERIVE_FROM_THE_COMPLETE_PARENT_CHILD_VARIATIONAL_ACTION_THE_RETAINED_THETA,_BOTH_Q_XI_BOUNDARY_TERMS,_THE_ALLOWED_B_XI_ENSEMBLE,_AND_THEIR_ACTION_ON_F_B_AND_THE_RESET_TRACE_DOMAIN;_THEN_TEST_WHETHER_THE_RELATIVE_CHARGE_VANISHES_OR_SURVIVES",
   "exact_next_object": "ACTION_OWNED_CROSS_COPY_SPATIAL_ATTACHMENT_MORPHISM_SIGMA_EVENT_TO_SIGMA_CHILD_ABSENT",
   "fermion_HS_naturality": {
     "action_density": "NATURAL_UNDER_ORIENTATION_SPIN_PRESERVING_DIFFEO_WITH_METRIC,_MEASURE,_FIELDS,_AND_DOMAIN_TRANSFORMED_TOGETHER",
@@ -227,6 +275,19 @@
     "action_density": "NATURAL_UNDER_ORIENTATION_SPIN_PRESERVING_DIFFEO_WITH_METRIC,_MEASURE,_FIELDS,_AND_DOMAIN_TRANSFORMED_TOGETHER",
     "current_C2_relative_reset_test": "NOT_EVALUABLE",
     "tensorial_law": "D_(phi^*B,phi^*A)Lift_phi^spin=Lift_phi^spin D_(B,A)"
+  },
+  "finite_orbit_stabilizer_adversarial_witness": {
+    "full_group_order": 36,
+    "full_orbit_order": 6,
+    "full_orbit_stabilizer_identity": 36,
+    "full_stabilizer_order": 6,
+    "identity_in_full_orbit": true,
+    "identity_in_restricted_orbit": false,
+    "lesson": "IDENTITY_IS_A_REPRESENTATIVE_ONLY_FOR_ORBITS_OF_THE_ACTUAL_ADMISSIBLE_FACTORS,_NOT_MERELY_BECAUSE_FULL_DIFF_WOULD_BE_TRANSITIVE",
+    "restricted_group_order": 4,
+    "restricted_orbit_order": 4,
+    "restricted_orbit_stabilizer_identity": 4,
+    "restricted_stabilizer_order": 1
   },
   "flow_if_any": {
     "spatial_event_child_flow": null,
@@ -355,7 +416,11 @@
     "FULL_DIFF_SIGMA_IS_AN_ACTION_OWNED_ATTACHMENT_SYMMETRY_GROUP",
     "TWO_EQUAL_WITNESS_ACTION_VALUES_DEFINE_THE_PHYSICAL_QUOTIENT",
     "THE_IDENTITY_ATTACHMENT_IS_CURRENTLY_AN_ADMISSIBLE_GAUGE_FIXING",
-    "ALPHA_DESCENDS_TO_AN_UNCONSTRAINED_DIFFEO_QUOTIENT"
+    "ALPHA_DESCENDS_TO_AN_UNCONSTRAINED_DIFFEO_QUOTIENT",
+    "THE_V15_57_DIAGONAL_DIFF0_QUOTIENT_DEFINES_A_RELATIVE_ATTACHMENT_GROUP",
+    "A_PRESYMPLECTIC_NULL_MULTIPLIER_DIRECTION_AUTOMATICALLY_DEFINES_GAUGE",
+    "ALL_RELATIVE_HOPF_TRANSFORMATIONS_ARE_GAUGE",
+    "IDENTITY_IS_A_GLOBAL_REPRESENTATIVE_FOR_AN_UNDERIVED_SUBGROUP"
   ],
   "inverse_D_F_B": null,
   "local_one_jet_nonuniqueness": {
@@ -514,8 +579,21 @@
     }
   },
   "open": [
-    "ACTION_OWNED_EVENT_CHILD_RELATIVE_SPATIAL_DIFFEOMORPHISM_EQUIVALENCE_CONTRACT_ABSENT"
+    "ACTION_OWNED_DIFFERENTIABLE_RELATIVE_EVENT_CHILD_SPATIAL_DIFFEO_GENERATOR_ON_THE_RESET_TRACE_DOMAIN_ABSENT"
   ],
+  "orbit_stabilizer_identity_theorem": {
+    "conditional_quotient": "H_child_BACKSLASH_Iso_plus_spin(Sigma_event,Sigma_child)_/H_event",
+    "current_BHSM_identity_gauge_status": "NOT_AUTHORIZED",
+    "full_independent_Diff_case": "TRANSITIVE_ON_EACH_ALLOWED_ORIENTATION_SPIN_COMPONENT",
+    "full_independent_Diff_case_owned_by_BHSM": false,
+    "identity_global_criterion": "AFTER_A_REFERENCE_IDENTIFICATION,_id_IS_IN_Orb(F)_IFF_F_IN_H_child^(-1)_COMPOSE_H_event_EQUIVALENTLY_EXISTS_hc,he_WITH_hc_COMPOSE_F_COMPOSE_he^(-1)=id",
+    "identity_local_criterion": "THE_SAME_ORBIT_CONDITION_FOR_THE_RESTRICTED_GERM_GROUPS",
+    "identity_requires_reference_identification": true,
+    "orbit": "Orb(F)=H_child_COMPOSE_F_COMPOSE_H_event^(-1)",
+    "reason": "H_event_AND_H_child_MOVING_ATTACHMENTS_ARE_NOT_DERIVED",
+    "stabilizer": "Stab(F)={(phi_event,phi_child):phi_child_COMPOSE_F=F_COMPOSE_phi_event}",
+    "stabilizer_graph_form": "phi_child=F_COMPOSE_phi_event_COMPOSE_F^(-1),_INTERSECTED_WITH_H_child"
+  },
   "orientation_sign": "CHILD_SIDE_IS_NEGATIVE_x_BUT_RELATIVE_MAP_ORIENTATION_IS_NOT_EVALUABLE_WITHOUT_F_B",
   "oriented_cut": "Cut_Sigma(S7)=C_tilde_child_disjoint_union_C_tilde_parent_with_separate_boundary_copies_Sigma_c_and_Sigma_p",
   "ownership_levels": {
@@ -539,7 +617,7 @@
       "status": "EXISTS"
     },
     "induced_connection_transport": {
-      "blocked_by": "ACTION_OWNED_EVENT_CHILD_RELATIVE_SPATIAL_DIFFEOMORPHISM_EQUIVALENCE_CONTRACT_ABSENT",
+      "blocked_by": "ACTION_OWNED_DIFFERENTIABLE_RELATIVE_EVENT_CHILD_SPATIAL_DIFFEO_GENERATOR_ON_THE_RESET_TRACE_DOMAIN_ABSENT",
       "configuration_map": null,
       "derivative_at_zero": null,
       "repository_convention": "dU+(F_B^*A_child)U-UA_event=0",
@@ -561,6 +639,8 @@
     "trace_determinant_invariants": "UNITARY_SIMILARITY_IDENTITY"
   },
   "prior_blocker_refinement": {
+    "exhausted_contract_result": "OUTCOME_D",
+    "new_exact_boundary": "ACTION_OWNED_DIFFERENTIABLE_RELATIVE_EVENT_CHILD_SPATIAL_DIFFEO_GENERATOR_ON_THE_RESET_TRACE_DOMAIN_ABSENT",
     "prior": "ACTION_OWNED_CROSS_COPY_SPATIAL_ATTACHMENT_MORPHISM_SIGMA_EVENT_TO_SIGMA_CHILD_ABSENT",
     "reason": "BEFORE_DEMANDING_A_REPRESENTATIVE_MAP,_THE_ACTION_MUST_DECIDE_WHETHER_RELATIVE_EVENT_CHILD_SPATIAL_RELABELINGS_ARE_GAUGE_AND_DEFINE_THEIR_ACTION_ON_THE_RESET_DOMAIN",
     "refined_first_physical_decision": "ACTION_OWNED_EVENT_CHILD_RELATIVE_SPATIAL_DIFFEOMORPHISM_EQUIVALENCE_CONTRACT_ABSENT"
@@ -572,7 +652,7 @@
     "alpha_invariant_under_cotangent_lift": true,
     "beta_basic": null,
     "beta_representative_invariant": null,
-    "blocked_by": "ACTION_OWNED_EVENT_CHILD_RELATIVE_SPATIAL_DIFFEOMORPHISM_EQUIVALENCE_CONTRACT_ABSENT",
+    "blocked_by": "ACTION_OWNED_DIFFERENTIABLE_RELATIVE_EVENT_CHILD_SPATIAL_DIFFEO_GENERATOR_ON_THE_RESET_TRACE_DOMAIN_ABSENT",
     "candidate_group": "G_ATTACHMENT_SUBSET_DIFF(Sigma_event)_TIMES_DIFF(Sigma_child)",
     "candidate_group_action_owned": false,
     "constraints_descend": null,
@@ -584,6 +664,103 @@
     "reduced_reset_canonical": null,
     "reduced_reset_map": null,
     "unreduced_phase_space": "TSTAR_Q_BOUNDARY"
+  },
+  "redundant": [
+    "OBJECTWISE_MAXWELL_DIRAC_BRST_CURVATURE_AND_GFHS_COVARIANCE_REPROOFS",
+    "A_SECOND_ID_VERSUS_AD_TENSORIAL_WITNESS",
+    "RECOMPUTING_FROZEN_FAMILY_OR_REPRESENTATION_PROJECTORS"
+  ],
+  "relative_attachment_action_groupoid": {
+    "action_laws": {
+      "AE2": "MUST_PRESERVE_Gamma0_child(Psi)=U_R_Gamma0_event(Psi)",
+      "AE4": "MUST_PRESERVE_THE_RETARDED_PARENT_CHILD_TRACE_DOMAIN_AND_SCHUR_BLOCK",
+      "Berger_Hopf_data": "PULLBACK_OR_RESTRICT_TO_ITS_STABILIZER_AT_FIXED_BACKGROUND",
+      "F_B": "phi_child_COMPOSE_F_B_COMPOSE_phi_event^(-1)",
+      "Galerkin_variables": "WOULD_REQUIRE_U_phi_P_N=P_N_U_phi_OR_A_TRANSFORMED_PROJECTOR",
+      "Maxwell_variables": "FORM_PULLBACK_WITH_COTANGENT_LIFT_FOR_MOMENTA",
+      "S1_to_S4": "NATURAL_ONLY_AFTER_AN_EQUIVARIANT_RESET_AND_DOMAIN_ACTION_EXISTS",
+      "alpha_and_omega": "COTANGENT_LIFT_PRESERVES_ALPHA_AND_OMEGA",
+      "beta": "WOULD_BE_R_B^STAR_ALPHA_MINUS_ALPHA_ON_THE_CONSTRAINED_DOMAIN",
+      "boundary_data": "TRACE_PULLBACK_WITH_NORMAL_AND_ORIENTATION_CONVENTIONS",
+      "canonical_coordinates": "CONFIGURATION_PULLBACK",
+      "canonical_momenta": "INVERSE_ADJOINT_COTANGENT_PULLBACK",
+      "child_spatial_fields": "phi_child^STAR_FIELD_child",
+      "connection_and_curvature": "CONNECTION_PULLBACK_AND_CURVATURE_PULLBACK",
+      "constraints": "PULLBACK_CONDITIONALLY_IF_THE_DOMAIN_AND_BOUNDARY_TERM_ARE_PRESERVED",
+      "event_spatial_fields": "phi_event^STAR_FIELD_event",
+      "fermions_and_Dirac": "SPIN_LIFT_PULLBACK_AND_NATURAL_DIRAC_INTERTWINER",
+      "frozen_family_representation_content": "SPATIAL_ACTION_TENSOR_ID_ON_FROZEN_INTERNAL_FACTORS",
+      "generator_data": "WOULD_BE_THE_DIFFERENTIABLE_MOMENT_MAP_OR_NOETHER_HAMILTONIAN",
+      "graph_jets": "WOULD_REQUIRE_THE_INDUCED_JET_PROLONGATION_OF_THE_RESET_GRAPH",
+      "internal_BRST_fields_and_ghosts": "TENSOR_PULLBACK_PLUS_INTERNAL_ADJOINT_ACTION",
+      "metric_and_measure": "TENSOR_PULLBACK_AND_INDUCED_DENSITY_PULLBACK",
+      "parent_spatial_fields": "PULLBACK_BY_THE_PARENT_OR_EVENT_FACTOR_AS_TYPED",
+      "projectors": "CONJUGATION_BY_THE_INDUCED_TRACE_REPRESENTATION_IF_DEFINED",
+      "relative_diffeomorphism_ghost": null,
+      "reset_graph": "WOULD_MAP_Graph(R_F)_TO_Graph(R_Fprime)",
+      "reset_variables": "WOULD_REQUIRE_AN_EQUIVARIANT_RESET_MAP_NOT_PRESENTLY_OWNED",
+      "seam_gluing_data": "TWO_SIDED_PULLBACK_WITH_F_B_TRANSFORMED_AS_ABOVE"
+    },
+    "arrows": "(phi_event,phi_child):F_TO_Fprime_WHEN_Fprime=phi_child_COMPOSE_F_COMPOSE_phi_event^(-1)",
+    "candidate_only_not_action_owned": true,
+    "candidate_physical_attachment_change": "AN_ARROW_MOVING_F_OUTSIDE_THE_ACTION_OWNED_GAUGE_ORBIT,_IF_ANY",
+    "composition": "COMPONENTWISE_COMPOSITION_OF_THE_TWO_DIFFEO_FACTORS",
+    "coordinate_relabeling": "A_STABILIZER_ARROW_WITH_ALL_GEOMETRIC_DATA_PULLED_BACK_TOGETHER",
+    "fixed_glue_subgroupoid_role": "STABILIZER_COORDINATE_REPARAMETRIZATIONS_ONLY;_IT_DOES_NOT_MOVE_F_TO_A_DISTINCT_ATTACHMENT",
+    "identity_arrow": "(id_event,id_child)",
+    "internal_gauge_factor": "G_SM_EVENT_times_G_SM_CHILD_ACTS_ON_FIBERS_AND_IS_DISTINCT_FROM_THE_SPATIAL_ACTION_GROUPOID",
+    "inverse_arrow": "(phi_event^(-1),phi_child^(-1))",
+    "mathematical_structure": "(H_child_times_H_event)_ACTION_GROUPOID_ON_Iso_plus_spin(Sigma_event,Sigma_child)",
+    "objects": "ADMISSIBLE_ORIENTATION_AND_SPIN_PRESERVING_ATTACHMENTS_F:Sigma_event_TO_Sigma_child",
+    "simultaneous_fixed_glue_subgroupoid": "phi_child_COMPOSE_F=F_COMPOSE_phi_event"
+  },
+  "relative_diffeomorphism_BRST_audit": {
+    "BRST_verdict": "NOT_OWNED_AND_NOT_UNIQUELY_DERIVABLE",
+    "blocked_by": "ACTION_OWNED_DIFFERENTIABLE_RELATIVE_EVENT_CHILD_SPATIAL_DIFFEO_GENERATOR_ON_THE_RESET_TRACE_DOMAIN_ABSENT",
+    "existing_AE2_BRST_sector": "INTERNAL_G_SM_GAUGE_BRST_TRANSMITTED_BY_U_R_AND_THE_COMMON_GAUGE_FRAME",
+    "existing_ghost_geometric_role": "GAUGE_LONGITUDINAL_PARTNER_ON_THE_RETAINED_TRACE_DOMAIN",
+    "extension_uniquely_forced_by_existing_action": false,
+    "global_98_state_spatial_generator_present": false,
+    "new_ghost_or_constraint_now_authorized": false,
+    "relative_BRST_differential_present": false,
+    "relative_constraint_present": false,
+    "relative_event_child_diffeomorphism_ghost_present": false,
+    "relative_nilpotency_or_closure_evaluable": false,
+    "spatial_diffeomorphism_ghost_present": false,
+    "v15_57_Diff0_quotient_materializes_a_BRST_complex": false,
+    "why_not_unique": "THE_BOUNDARY_ENSEMBLE,_COUNTERTERM,_ALLOWED_RELATIVE_CHARGE_SECTOR,_AND_DOMAIN_REPRESENTATION_FIRST_HAVE_TO_BE_SELECTED"
+  },
+  "relative_diffeomorphism_generator_audit": {
+    "action_invariance_of_complete_reset_domain": null,
+    "blocked_by": "ACTION_OWNED_DIFFERENTIABLE_RELATIVE_EVENT_CHILD_SPATIAL_DIFFEO_GENERATOR_ON_THE_RESET_TRACE_DOMAIN_ABSENT",
+    "boundary_counterterm_or_ensemble_owned": false,
+    "candidate_bulk_generator": "G_diff[xi]=integral_C xi^mu C_mu plus its allowed boundary term",
+    "canonical_verdict": "UNDECIDABLE_FROM_THE_EXISTING_OWNED_DATA",
+    "complete_Theta_owned": false,
+    "complete_relative_Q_xi_owned": false,
+    "cotangent_lift_alpha_horizontal_before_constraint": false,
+    "cotangent_lift_alpha_invariant": true,
+    "differentiable_relative_generator_owned": false,
+    "gauge_criterion": "ACTION_SYMMETRY_PLUS_DOMAIN_TANGENCY_PLUS_A_DIFFERENTIABLE_FIRST_CLASS_GENERATOR_WITH_VANISHING_GAUGE_CHARGE_OR_AN_EQUIVALENT_PRESYMPLECTIC_KERNEL_THEOREM",
+    "relative_boundary_charge_nonzero_proved": false,
+    "relative_boundary_charge_vanishes_proved": false,
+    "relative_vector_in_presymplectic_kernel_proved": false,
+    "relative_vector_tangent_to_nonlinear_reset_solution_domain_proved": false,
+    "required_covariant_boundary_variation": "delta_H_(xi_event,xi_child)=SUM_sides_INTEGRAL_boundary_(delta_Q_xi-i_xi_Theta_retained)-delta_B_xi",
+    "required_owned_data": [
+      "COMPLETE_RETAINED_COVARIANT_SYMPLECTIC_POTENTIAL_Theta",
+      "RELATIVE_DIFFEO_NOETHER_CHARGE_Q_xi_ON_BOTH_SIDES",
+      "BOUNDARY_ENSEMBLE_AND_DIFFERENTIABILITY_COUNTERTERM_B_xi",
+      "ACTION_OF_THE_GENERATOR_ON_F_B_AND_THE_RESET_TRACE_GRAPH",
+      "MOMENT_MAP_CONSTRAINT_AND_ALLOWED_BOUNDARY_CHARGE_SECTOR"
+    ],
+    "seam_slide_adversarial_precedent": {
+      "lesson": "A_NULL_AUXILIARY_OR_MULTIPLIER_DIRECTION_IS_NOT_GAUGE_WITHOUT_ACTION_SYMMETRY_AND_NONLINEAR_DOMAIN_TANGENCY",
+      "new_first_class_constraint": false,
+      "quotient_adopted": false,
+      "zero_generator_implies_gauge": false,
+      "zero_slice_valid": false
+    }
   },
   "representative_independence": null,
   "requested_object_classification": {
@@ -606,6 +783,41 @@
   },
   "reset_generator": null,
   "reset_generator_status": "BLOCKED_BEFORE_REDUCED_BETA_CAN_BE_FORMED",
+  "residual_attachment_invariant_audit": {
+    "discrete_incidence_and_cobordism": {
+      "gauge_invariance_under_unknown_G_rel": null,
+      "status": "RETAINED_EVENT_DATA"
+    },
+    "holonomy_connection_curvature": {
+      "quotient_classes_defined": false,
+      "representative_naturality": true,
+      "status": "CANDIDATES_NOT_PROMOTED"
+    },
+    "mapping_class": {
+      "S3_times_S3_attachment_mapping_class_computed": false,
+      "S7_large_diffeomorphisms_quotiented": false,
+      "status": "CANDIDATE_NOT_PROMOTED"
+    },
+    "orientation": {
+      "status": "FIXED_DOMAIN_SECTOR_NOT_A_CONTINUOUS_RESIDUAL",
+      "value": "DEGREE_ONE_CHILD_x_NEGATIVE_ORIENTATION"
+    },
+    "reason": "RESIDUALS_ARE_INVARIANTS_OF_A_DERIVED_GAUGE_ORBIT;_THE_ACTION_OWNED_GROUP_MOVING_F_IS_ABSENT",
+    "relative_Hopf_frame": {
+      "admissible_nonzero_sector": "parent-child_relative_rotation_with_J_child+J_parent=0",
+      "all_relative_Hopf_transformations_are_gauge": false,
+      "attachment_F_B_Hopf_class_identified_with_the_dynamic_rotor": false,
+      "compact_constraint": "integral_S7_K^i*P_i_matter=0",
+      "sample_relative_rotor_energy": 1.2357817e-05,
+      "sample_relative_rotor_energy_positive": true,
+      "status": "PHYSICAL_DYNAMIC_RELATIVE_HOPF_MOTION_IS_AN_ADVERSARIAL_OBSTRUCTION;_THE_STATIC_ATTACHMENT_RESIDUAL_REMAINS_UNPROVED"
+    },
+    "residual_physical_attachment_datum": null,
+    "seam_topological_sector": {
+      "additional_residual_derived": false,
+      "fixed_incidence_must_be_stabilized": true
+    }
+  },
   "residual_physical_attachment_datum": null,
   "retained_child_boundary_solvability_relation": "V17_98_STORED_AUTHORITY_ARTIFACT_CLASSIFIES_THE_FIELD_STATE_BOUNDARY_MAP_AS_CLOSED",
   "separate_boundary_identities": [
@@ -616,11 +828,13 @@
     "artifacts/BHSM_aether_n3_firewall_core_child_ownership_v17_98.json": "663324935BA9B3695CF5A0BADBB4BEB0C08EDA4296A8E1CB7B80574858CB6EF7",
     "scripts/audit_n12_intrinsic_state_return_section.py": "7A3D41FAA57D535374669C4CE944578208D43323F972C49931C72133E4727602",
     "scripts/derive_n12_reset_stratum_moving_endpoint_jets.py": "99B0BCEE8F2F6BC3B3FB12042E5B462F2F6AE0F680FE7E9F37ABFFD45C2A0425",
-    "scripts/materialize_gauge_connection_reset_bundle_lift_adjudication.py": "73B25A762A157D478DD6194588B6951F8C2DC2D4E60E60EDF0685FC9716964FD",
+    "scripts/materialize_gauge_connection_reset_bundle_lift_adjudication.py": "0913D37575027E1AB7100CC70A1934776EFF525FDE9F8626C5D8DDFAB03979FA",
     "src/bhsm/interface/action_extension_global_spin_reset_ae2.py": "E1C7710A69F126091011DA3C4BF8C2E3EF379961A65DF524A9634C125FBECC69",
     "src/bhsm/interface/ae2_covariant_seam_response.py": "3F1357D10BA6BB0ACC49393DB1CBA78B499A790719A7E0BE7FB6E26F50D048DC",
     "src/bhsm/interface/ae31_c2_reset_hadamard_transport.py": "1AEF0FE39157C444CED824733D1E608E75564F8A7CBEAF5F75BCCF23B78CF654",
+    "src/bhsm/interface/ae4_future_collapse_relative_boundary_domain.py": "E3A435634C2B4FE8C59B925587AD708E2BC105F3AD842A6EFB798F70C3B8E266",
     "src/bhsm/interface/aether_boundary_identity_ejection_v15_13.py": "F1FF2C9D36D687C4C7B1E7E3C86686505C17C7475A03326E8DD5C330E2AD8AA0",
+    "src/bhsm/interface/aether_full_sobolev_hybrid_actualization_v15_57.py": "F5CD0AE261B2421674176028D9B719C7F03B418B0317B7AE786C5B8EA8636A9B",
     "src/bhsm/interface/aether_hybrid_actualization_persistence_v15_52.py": "78F6A79FBF85733C0857532C85E67CFB28A4FE61D7A66EF0D21E0BCA19808C0A",
     "src/bhsm/interface/aether_hybrid_standard_model_bundle_v15_53.py": "3946D2E0648976FDCDEA03E77DB10365C0AD95BEFB32AA7DF76F21E1CE2D73A3",
     "src/bhsm/interface/aether_material_skin_variation_v15_15.py": "4A9F7F09CD388FF0A59FF0FE20B965B26E449FE8A7C633B4E5C0EDAA615797BA",
@@ -628,16 +842,21 @@
     "src/bhsm/interface/aether_n3_event_complete_child_correspondence_v17_84.py": "A08871DF7A048CB30A4FF6935DC09329826A4137D7560A07B03B29AEF1FF4EB5",
     "src/bhsm/interface/aether_n3_firewall_core_child_ownership_v17_98.py": "B6D3A2B4EAF650ED6D5738C4CCF7566B54E9FD4B5A00F8C61849DCD44B4918F4",
     "src/bhsm/interface/aether_n3_terminal_child_boundary_map_v17_85.py": "660FBB46D128401B23A57FA8A61E8B818349835B419A06A50097231C970792FF",
+    "src/bhsm/interface/aether_parent_child_relative_rotor_v15_36.py": "F102F7C1DD7793741F7D54A551821CE4190308F3923FA71FCDC469DBB363E73E",
     "src/bhsm/interface/aether_reconstruction_firewall_event_v15_45.py": "F81A99BE1B23BF6FBF0D6229309A263C05664272FAA5468FDC8302676B6D87C2",
     "src/bhsm/interface/background_covariant_gfhs_operator_family.py": "100D0BE3F6B8C4AF6D3BA953CA7AC44DBADA38053E8A75668AFC57FDA7CC69AC",
-    "src/bhsm/interface/gauge_connection_reset_bundle_lift_adjudication.py": "B0DFC55BEC51BFE39F12F8408D70906AD122DEAE2754BBA4214904E7A288BAAE",
+    "src/bhsm/interface/gauge_connection_reset_bundle_lift_adjudication.py": "F9C19F8E5B4E1DBA704EA70C9637121F054B1488EA3B128179F0828874751570",
     "src/bhsm/interface/master_action/fields.py": "3E91028D18D17B6BD693860BC2ED690148D728D2F6AE80DD77EBC85932F08D82",
+    "src/bhsm/interface/master_action/geometry_only_geon_fr_carrier_completion.py": "B7A718543A50CF6CED3DEB6B459C9B860E85A9432B0B67B34EF00001819074A4",
     "src/bhsm/interface/master_action/measures.py": "B38E2C30E835A585C7875ABAEC6B198CC43CCA4DA04B4A19A33C9BBEC8578030",
     "src/bhsm/interface/master_action/symmetries.py": "14164ED9B329A7372B7EDA8B43DBF575838398D774244D56D315DAD443613A75",
     "src/bhsm/interface/master_action/terms.py": "FC680F2945B0AB0CCF174EDA5D938FA9221732452F7D09A60C2A7366DEE503BC",
     "src/bhsm/interface/reset_boundary_generating_functional_adjudication.py": "50D3CB53E07DC0ED520EB1BB98599BA73E68B57DC8C0439872150EDF381CE33D",
-    "tests/test_gauge_connection_reset_bundle_lift_adjudication.py": "29BFFFB94F0E51CDFDFA3A644718AE63DB9CED591ED8FDA7674743BC520AC666",
-    "theory/bhsm_gauge_connection_reset_bundle_lift_adjudication.md": "C7F4FC9E4FA28360FA1372162ADF6C7286D6572A1DC6DA77C8B715EEAF5E0F29"
+    "src/bhsm/interface/seam_slide_symmetry_quotient.py": "506321D5CCA92FF1E96DD3129C5B891CE0525AB7BDEBD6E71027FA0C187F5A27",
+    "tests/test_gauge_connection_reset_bundle_lift_adjudication.py": "787EF586B927A18D0C0E8F4CD061CBC2088B960C58FF37953D4B04874028A6B6",
+    "theory/bhsm_gauge_connection_reset_bundle_lift_adjudication.md": "0C419947CC243D94C299E3576263AA3067255F9B93FC147DF8606DA4221D018A",
+    "theory/n12_ae2_child_boundary_hamiltonian_non_supersession.md": "DEB14D589FA82BCEFF5AA9BCFBA13072E1FBC8DA9EE0AFF609CA30899A42A0B8",
+    "theory/n12_child_boundary_hamiltonian_ownership.md": "A3F29216E397782A487F1E9ED6476A7439BE3E2C5921EA82E883DF682D317226"
   },
   "spatial_base_route_audit": [
     {
@@ -778,13 +997,13 @@
     "same_volume_jacobian": true,
     "tangent_maps_distinct": true
   },
-  "status": "ATTACHMENT_REPRESENTATIVE_PHYSICAL_EQUIVALENCE_UNDECIDED_BECAUSE_THE_RELATIVE_EVENT_CHILD_DIFFEO_QUOTIENT_IS_NOT_ACTION_OWNED",
+  "status": "OUTCOME_D_RELATIVE_ATTACHMENT_EQUIVALENCE_UNDECIDABLE_UNTIL_A_DIFFERENTIABLE_RELATIVE_BOUNDARY_DIFFEO_GENERATOR_IS_ACTION_OWNED",
   "symplecticity": null,
   "three_outcome_adjudication": {
-    "classification": "A_B_AND_C_REMAIN_UNDECIDED_AT_THE_ACTION_DOMAIN_LEVEL",
+    "classification": "OUTCOME_D_AFTER_ACTION_DOMAIN_CANONICAL_AND_BRST_EXHAUSTION",
     "connection_class_unique": null,
     "curvature_class_unique": null,
-    "exact_next_object": "ACTION_OWNED_EVENT_CHILD_RELATIVE_SPATIAL_DIFFEOMORPHISM_EQUIVALENCE_CONTRACT_ABSENT",
+    "exact_next_object": "ACTION_OWNED_DIFFERENTIABLE_RELATIVE_EVENT_CHILD_SPATIAL_DIFFEO_GENERATOR_ON_THE_RESET_TRACE_DOMAIN_ABSENT",
     "formal_id_Ad_witness_equivalent_after_simultaneous_pullback": true,
     "formal_witness_sufficient_to_close_physical_equivalence": false,
     "full_field_reset_can_proceed_without_new_physical_law": false,
@@ -814,6 +1033,10 @@
       "proved": false,
       "reason": "NO_TWO_ACTION_OWNED_REPRESENTATIVES_HAVE_BEEN_PROPAGATED_THROUGH_A_COMPLETE_COMMON_RESET_ACTION_AND_DOMAIN"
     },
+    "outcome_D_existing_theory_insufficient": {
+      "proved": true,
+      "reason": "NO_ACTION_OWNED_DIFFERENTIABLE_RELATIVE_BOUNDARY_DIFFEO_GENERATOR_ACTS_ON_THE_RESET_TRACE_DOMAIN_AND_THE_REQUIRED_BOUNDARY_CHARGE_ENSEMBLE_IS_UNSELECTED"
+    },
     "physical_observable_invariance": {
       "BRST_cohomology_on_actual_reset_domain": null,
       "BRST_complex_rank_and_nilpotency": "VERIFIED_FOR_THE_WITNESS",
@@ -832,6 +1055,23 @@
     "residual_physical_attachment_datum": null
   },
   "topological_pre_cut_seam": "Sigma=S3_times_S3",
+  "track2_outcome": {
+    "A_relative_attachment_is_gauge": false,
+    "B_partial_quotient_with_residual": false,
+    "C_relative_attachment_is_physical": false,
+    "D_existing_BHSM_insufficient": true,
+    "downstream_closure_earned": false,
+    "exact_next_object": "ACTION_OWNED_DIFFERENTIABLE_RELATIVE_EVENT_CHILD_SPATIAL_DIFFEO_GENERATOR_ON_THE_RESET_TRACE_DOMAIN_ABSENT",
+    "new_postulate_would_have_to_decide": [
+      "WHICH_TWO_SIDED_BOUNDARY_DIFFEO_FACTORS_ACT_ON_THE_RESET_DOMAIN",
+      "THE_BOUNDARY_ENSEMBLE_AND_COUNTERTERM_MAKING_THE_GENERATOR_DIFFERENTIABLE",
+      "WHETHER_RELATIVE_BOUNDARY_CHARGES_VANISH_AS_GAUGE_OR_SURVIVE_AS_PHYSICAL_DATA",
+      "THE_SPATIAL_DIFFEO_GHOST_COMPLEX_IF_THE_TRANSFORMATION_IS_GAUGE"
+    ],
+    "reduced_reset_constructed": false,
+    "selected_outcome": "D",
+    "why_D_is_earned": "THE_CANDIDATE_ACTION_GROUPOID,_DOMAIN_INTERSECTION,_CONDITIONAL_ORBITS,_STABILIZERS,_IDENTITY_CRITERION,_CANONICAL_TEST,_BRST_TEST,_AND_RESIDUAL_CANDIDATES_HAVE_BEEN_EXHAUSTED;_THE_ACTION_DOES_NOT_OWN_THE_DIFFERENTIABLE_RELATIVE_BOUNDARY_GENERATOR"
+  },
   "validated": [
     "V15_53_OWNS_THE_RETURNED_SM_BUNDLE_ISOMORPHISM_CLASS",
     "AE2_OWNS_AN_ABSTRACT_SMOOTH_SPIN_GAUGE_BOUNDARY_LIFT_U_R",
@@ -845,7 +1085,10 @@
     "HS_NORMAL_LEGENDRE_RANK_ZERO_AND_PI_H_ZERO_REMAIN_UNCHANGED",
     "MAXWELL_CURVATURE_CANONICAL_FERMION_BRST_HS_AND_COMBINED_TENSORIAL_IDENTITIES_ARE_NATURAL_UNDER_SIMULTANEOUS_PULLBACK_FOR_THE_ID_AND_Ad_WITNESS",
     "THE_MASTER_ACTION_IS_DIFFEO_COVARIANT_LEVELWISE_BUT_ITS_CROSS_LEVEL_DIFFEO_INTERTWINER_IS_EXPLICITLY_UNPROVED",
-    "THE_CANONICAL_ONE_FORM_IS_COTANGENT_LIFT_INVARIANT_BUT_NOT_BASIC_ON_THE_FULL_PHASE_SPACE_AWAY_FROM_THE_MOMENT_MAP_ZERO_SET"
+    "THE_CANONICAL_ONE_FORM_IS_COTANGENT_LIFT_INVARIANT_BUT_NOT_BASIC_ON_THE_FULL_PHASE_SPACE_AWAY_FROM_THE_MOMENT_MAP_ZERO_SET",
+    "THE_CANDIDATE_RELATIVE_ATTACHMENT_TRANSFORMATION_IS_A_TWO_SIDED_ACTION_GROUPOID_WITH_ORBIT_H_CHILD_F_H_EVENT_INVERSE",
+    "ONLY_THE_STABILIZER_REPARAMETRIZATIONS_OF_A_SUPPLIED_GLUE_ARE_PRESENTLY_PROVED_DOMAIN_PRESERVING",
+    "OUTCOME_D_IS_DERIVED_AFTER_THE_DOMAIN_CANONICAL_BRST_ORBIT_AND_RESIDUAL_AUDITS"
   ],
   "validation": {
     "AE2_abstract_lift_not_erased": true,
@@ -853,14 +1096,16 @@
     "N12_state_jet_rejected_as_spatial_base_jet": true,
     "S3_times_S3_cross_copy_nonuniqueness_demonstrated": true,
     "all_four_base_map_routes_exhausted": true,
-    "all_three_physical_outcomes_left_unoverclaimed": true,
     "base_tangent_nonuniqueness_demonstrated": true,
+    "candidate_action_is_groupoid_not_silent_full_Diff": true,
     "canonical_chain_fails_closed": true,
     "canonical_cotangent_naturality_verified_but_reduction_not_promoted": true,
+    "canonical_generator_exhausted_without_false_null_quotient": true,
     "child_spatial_ontology_is_case_4": true,
     "conditional_connection_law_verified": true,
+    "conditional_orbit_stabilizer_and_identity_criterion_derived": true,
     "conditional_witness_not_promoted_to_BHSM_background": true,
-    "exact_next_object_is_relative_diffeomorphism_contract": true,
+    "exact_next_object_is_differentiable_relative_generator": true,
     "field_state_boundary_map_not_confused_with_spatial_map": true,
     "focused_source_lineage_classified": true,
     "full_Diff_not_silently_adopted": true,
@@ -872,7 +1117,10 @@
     "no_embedding_flow_collar_or_implicit_map_promoted": true,
     "no_empirical_coefficient_or_physical_promotion": true,
     "no_invalidated_route_reused": true,
+    "outcome_D_selected_without_promoting_A_B_or_C": true,
     "reference_zero_field_recovered": true,
+    "relative_Hopf_overquotient_falsified_without_attachment_promotion": true,
+    "relative_spatial_BRST_not_silently_invented": true,
     "requested_objects_separately_classified": true,
     "three_ownership_levels_distinguished": true,
     "vertical_gauge_one_jet_closed_in_common_frame": true
