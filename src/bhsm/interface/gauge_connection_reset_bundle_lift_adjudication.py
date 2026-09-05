@@ -498,6 +498,37 @@ def downstream_status() -> dict[str, Any]:
     }
 
 
+def requested_object_classification() -> dict[str, Any]:
+    """Give the requested per-object authority boundary after the split."""
+
+    return {
+        "F_B": "OPEN_LOCAL_SPATIAL_EVENT_CHILD_BOUNDARY_MAP_ABSENT",
+        "D_F_B": "OPEN_NOT_DERIVABLE_BEFORE_F_B_IS_ACTION_OWNED",
+        "U_R": (
+            "ABSTRACT_FULL_SPIN_GAUGE_LIFT_EXISTS;_GAUGE_FACTOR_IS_I_IN_"
+            "THE_AE2_COMMON_RESET_FRAME"
+        ),
+        "d_U_R": (
+            "GAUGE_FACTOR_dG_R_EQUALS_ZERO_IS_DERIVED;_FULL_SPIN_LIFT_"
+            "DIFFERENTIAL_IS_NOT_CLAIMED_OR_NEEDED_FOR_GFHS_CONNECTION_TRANSPORT"
+        ),
+        "R_A": "OPEN_BLOCKED_ONLY_BY_F_B_AND_DF_B",
+        "cotangent_lift": "OPEN_BLOCKED_BY_R_A_AND_BOUNDARY_WEIGHT_TRANSPORT",
+        "symplectic_reset": "OPEN_BLOCKED_BY_THE_MAXWELL_COTANGENT_LIFT",
+        "S_RESET_GFHS": "OPEN_BLOCKED_BEFORE_LOCAL_OR_GLOBAL_EXACTNESS_TEST",
+        "graph_jets": (
+            "OPEN_DTheta_THROUGH_D3Theta_NOT_REACHED;_HIGHER_BUNDLE_JET_"
+            "DEPENDENCY_CANNOT_BE_FIXED_BEFORE_THE_F_B_CONSTRUCTION_EXISTS"
+        ),
+        "global_S1_S4": {
+            "S1": "REFERENCE_SLICE_ONLY",
+            "S2": "BLOCKED",
+            "S3": "BLOCKED",
+            "S4": "BLOCKED",
+        },
+    }
+
+
 def claim_boundary() -> dict[str, Any]:
     return {
         "status": STATUS,
@@ -543,6 +574,7 @@ __all__ = [
     "local_one_jet_nonuniqueness_witness",
     "one_jet_component_status",
     "ownership_levels",
+    "requested_object_classification",
     "source_lineage_ledger",
     "weighted_cotangent_momentum_map",
 ]

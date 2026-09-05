@@ -29,6 +29,7 @@ from bhsm.interface.gauge_connection_reset_bundle_lift_adjudication import (  # 
     local_one_jet_nonuniqueness_witness,
     ownership_levels,
     one_jet_component_status,
+    requested_object_classification,
     source_lineage_ledger,
 )
 
@@ -104,6 +105,7 @@ def build_payload() -> dict[str, Any]:
     ambiguity = local_one_jet_nonuniqueness_witness()
     conditional = conditional_geometry_checks()
     downstream = downstream_status()
+    object_classification = requested_object_classification()
     claims = claim_boundary()
     source_paths = (
         "src/bhsm/interface/aether_hybrid_standard_model_bundle_v15_53.py",
@@ -180,6 +182,14 @@ def build_payload() -> dict[str, Any]:
             and downstream["Maxwell_conormal_cotangent_lift"] is None
             and downstream["S_RESET_GFHS"] is None
         ),
+        "requested_objects_separately_classified": (
+            object_classification["F_B"].startswith("OPEN")
+            and object_classification["D_F_B"].startswith("OPEN")
+            and "GAUGE_FACTOR_IS_I" in object_classification["U_R"]
+            and "dG_R_EQUALS_ZERO" in object_classification["d_U_R"]
+            and object_classification["R_A"].startswith("OPEN")
+            and set(object_classification["global_S1_S4"]) == {"S1", "S2", "S3", "S4"}
+        ),
         "HS_rank_zero_retained": (
             downstream["HS_normal_Legendre_rank"] == 0
             and downstream["pi_H"] == 0.0
@@ -222,6 +232,7 @@ def build_payload() -> dict[str, Any]:
         "local_one_jet_nonuniqueness": ambiguity,
         "conditional_connection_geometry": conditional,
         "downstream_canonical_chain": downstream,
+        "requested_object_classification": object_classification,
         "VALIDATED": [
             "V15_53_OWNS_THE_RETURNED_SM_BUNDLE_ISOMORPHISM_CLASS",
             "AE2_OWNS_AN_ABSTRACT_SMOOTH_SPIN_GAUGE_BOUNDARY_LIFT_U_R",

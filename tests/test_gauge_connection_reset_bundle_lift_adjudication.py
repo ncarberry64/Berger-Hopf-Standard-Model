@@ -21,6 +21,7 @@ from bhsm.interface.gauge_connection_reset_bundle_lift_adjudication import (
     local_one_jet_nonuniqueness_witness,
     ownership_levels,
     one_jet_component_status,
+    requested_object_classification,
     source_lineage_ledger,
     weighted_cotangent_momentum_map,
 )
@@ -156,6 +157,27 @@ def test_downstream_chain_fails_closed_at_the_local_one_jet() -> None:
     assert result["HS_normal_Legendre_rank"] == 0
     assert result["pi_H"] == 0.0
     assert result["blocked_by"] == EXACT_MISSING_DATUM
+
+
+def test_every_requested_object_has_a_separate_authority_status() -> None:
+    result = requested_object_classification()
+    assert set(result) == {
+        "F_B",
+        "D_F_B",
+        "U_R",
+        "d_U_R",
+        "R_A",
+        "cotangent_lift",
+        "symplectic_reset",
+        "S_RESET_GFHS",
+        "graph_jets",
+        "global_S1_S4",
+    }
+    assert result["F_B"].startswith("OPEN")
+    assert result["D_F_B"].startswith("OPEN")
+    assert "GAUGE_FACTOR_IS_I" in result["U_R"]
+    assert "dG_R_EQUALS_ZERO" in result["d_U_R"]
+    assert result["R_A"] == "OPEN_BLOCKED_ONLY_BY_F_B_AND_DF_B"
 
 
 def test_claim_boundary_preserves_physical_and_gate7_flags() -> None:
