@@ -1,11 +1,11 @@
 """Adjudicate gauge-connection transport across the AE2/AE4 reset seam.
 
 The retained lineage owns more than a bundle-isomorphism class: AE2 selects
-an abstract smooth spin--gauge boundary lift.  It does not, however, expose
-the local one-jet of a principal-bundle lift.  Without the base Jacobian and
-the vertical derivative of the local gauge transition, a connection one-form
-cannot be pushed to the child trace.  This module records the exact ownership
-levels and supplies only conditional differential-geometric identities.
+an abstract smooth spin--gauge boundary lift and its common reset frame closes
+the gauge-vertical one-jet as ``(G_R,dG_R)=(I,0)``.  The local spatial base map
+``F_B`` and its differential remain absent, so a connection one-form still
+cannot be pushed to the child trace.  This module records that split and
+supplies only conditional differential-geometric identities downstream.
 """
 
 from __future__ import annotations
@@ -26,16 +26,21 @@ from bhsm.interface.aether_hybrid_standard_model_bundle_v15_53 import (
 )
 
 
-ACTION_VERSION = "BHSM-AE-3.2.0-GAUGE-RESET-BUNDLE-LIFT-ADJUDICATION"
+ACTION_VERSION = "BHSM-AE-3.2.1-GAUGE-RESET-ONE-JET-SPLIT"
 CLASSIFICATION = "AE4_GAUGE_CONNECTION_RESET_FROM_EVENT_CHILD_BUNDLE_LIFT"
 STATUS = (
-    "AE2_ABSTRACT_RESET_LIFT_EXISTS_BUT_AE4_CONNECTION_TRANSPORT_"
-    "IS_NOT_EVALUABLE_WITHOUT_ITS_LOCAL_ONE_JET"
+    "VERTICAL_GAUGE_ONE_JET_CLOSED_IN_THE_AE2_COMMON_RESET_FRAME_BUT_"
+    "THE_SPATIAL_EVENT_CHILD_BASE_MAP_REMAINS_ABSENT"
 )
-EXACT_MISSING_DATUM = (
-    "ACTION_OWNED_EVALUABLE_LOCAL_ONE_JET_J1_FHAT_B_OF_THE_AE2_"
-    "EVENT_CHILD_GAUGE_EQUIVARIANT_PRINCIPAL_BUNDLE_LIFT_ABSENT"
+EXACT_MISSING_BASE_DATUM = (
+    "ACTION_OWNED_LOCAL_EVENT_CHILD_SPATIAL_BOUNDARY_BASE_MAP_F_B_ABSENT"
 )
+EXACT_CLOSED_VERTICAL_DATUM = (
+    "ACTION_OWNED_COMMON_RESET_FRAME_GAUGE_VERTICAL_ONE_JET_"
+    "G_R_EQUALS_I_AND_dG_R_EQUALS_ZERO"
+)
+# The former combined blocker is deliberately refined to its open base half.
+EXACT_MISSING_DATUM = EXACT_MISSING_BASE_DATUM
 
 
 def _square(value: Sequence[Sequence[complex]], name: str) -> np.ndarray:
@@ -181,6 +186,73 @@ def weighted_cotangent_momentum_map(
     return np.linalg.solve(child_weight, inverse_adjoint @ event_weight @ momentum)
 
 
+def common_reset_gauge_vertical_one_jet(
+    base_dimension: int, fiber_dimension: int
+) -> dict[str, Any]:
+    """Return the AE2-owned gauge vertical one-jet in its common frame.
+
+    This closes only the gauge-vertical half; it neither supplies ``F_B`` nor
+    asserts that the spin lift is constant.
+    """
+
+    if not isinstance(base_dimension, int) or base_dimension <= 0:
+        raise ValueError("base_dimension must be a positive integer")
+    if not isinstance(fiber_dimension, int) or fiber_dimension <= 0:
+        raise ValueError("fiber_dimension must be a positive integer")
+    ae2 = action_definition()
+    if ae2["common_reset_frame"] != (
+        "U_R=I_UP_TO_GLOBAL_SPIN_SIGN_AND_GAUGE_FRAME"
+    ):
+        raise ValueError("AE2 common reset frame is not available")
+    return {
+        "status": "CLOSED_IN_THE_ACTION_OWNED_AE2_COMMON_RESET_GAUGE_FRAME",
+        "object": EXACT_CLOSED_VERTICAL_DATUM,
+        "G_R": np.eye(fiber_dimension, dtype=complex),
+        "dG_R": np.zeros(
+            (base_dimension, fiber_dimension, fiber_dimension), dtype=complex
+        ),
+        "full_spin_lift_derivative_claimed_zero": False,
+        "independent_relative_gauge_parameter": False,
+        "frame_covariance": (
+            "A_SIMULTANEOUS_COMMON_GAUGE_FRAME_CHANGE_IS_REDUNDANCY_AND_DOES_"
+            "NOT_REOPEN_A_RELATIVE_EVENT_CHILD_TRANSITION"
+        ),
+    }
+
+
+def one_jet_component_status() -> dict[str, Any]:
+    """Classify the base and gauge-vertical halves independently."""
+
+    vertical = common_reset_gauge_vertical_one_jet(3, 2)
+    return {
+        "A_base_attachment": {
+            "status": "OPEN",
+            "abstract_trace_identification": "EXISTS_AS_A_BOUNDARY_RELATION",
+            "local_spatial_map_F_B": None,
+            "local_spatial_differential_DF_B": None,
+            "N12_first_hit_map": "F12:R^196_TO_R^57_ON_CAUCHY_STATE_VARIABLES",
+            "N12_moving_endpoint_jet": (
+                "JACOBI_FIELD_OF_THE_RETAINED_EULER_DIRAC_STATE_FLOW"
+            ),
+            "implicit_differentiation_for_DF_B": (
+                "INAPPLICABLE_BECAUSE_THE_RETAINED_JACOBIAN_HAS_NO_SPATIAL_"
+                "BOUNDARY_MAP_AS_ITS_DOMAIN_OR_CODOMAIN"
+            ),
+            "blocked_by": EXACT_MISSING_BASE_DATUM,
+        },
+        "B_vertical_gauge_lift": {
+            "status": "CLOSED",
+            "abstract_AE2_lift": "EXISTS",
+            "common_reset_gauge_representative": "G_R=I",
+            "common_reset_gauge_derivative": "dG_R=0",
+            "full_spin_lift_derivative_claimed_zero": vertical[
+                "full_spin_lift_derivative_claimed_zero"
+            ],
+            "object": EXACT_CLOSED_VERTICAL_DATUM,
+        },
+    }
+
+
 def ownership_levels() -> dict[str, Any]:
     """Distinguish the three objects requested by the adjudication."""
 
@@ -204,8 +276,10 @@ def ownership_levels() -> dict[str, Any]:
                 "why_Hadamard_is_preserved"
             ],
             "principal_bundle_local_representative_evaluable": False,
-            "local_gauge_transition_g_B_evaluable": False,
-            "vertical_first_derivative_dg_B_evaluable": False,
+            "local_gauge_transition_g_B_evaluable_in_common_reset_frame": True,
+            "local_gauge_transition_g_B": "I",
+            "vertical_first_derivative_dg_B_evaluable_in_common_reset_frame": True,
+            "vertical_first_derivative_dg_B": "0",
             "base_map_F_B_evaluable": False,
             "base_tangent_DF_B_evaluable": False,
         },
@@ -248,6 +322,16 @@ def source_lineage_ledger() -> list[dict[str, Any]]:
             "source": "N12_AE2_COVARIANT_SEAM_ENCLOSURE",
             "found": "PARAMETER_SPACE_RANDOM_FRAME_WITNESS_WITH_NABLA_PHI_U_R_ZERO",
             "not_found": "PHYSICAL_SPACETIME_GAUGE_CONNECTION_RESET",
+        },
+        {
+            "source": "N12_INTRINSIC_FIRST_HIT_AND_MOVING_ENDPOINT_JETS",
+            "found": "STATE_SPACE_MAP_F12_R196_TO_R57_AND_EULER_DIRAC_JACOBI_FIELDS",
+            "not_found": "SPATIAL_BOUNDARY_MAP_F_B_OR_ITS_TANGENT_MAP_DF_B",
+        },
+        {
+            "source": "V15_15_MATERIAL_SKIN_TRACE",
+            "found": "COMMON_PARENT_FRAME_AND_CONTINUOUS_PULLBACK_CONNECTION_FOR_A_MATERIAL_INTERFACE",
+            "not_found": "GATE7_FIREWALL_BIRTH_SPATIAL_BASE_ATTACHMENT_MAP",
         },
         {
             "source": "V17_84_EVENT_COMPLETE_CHILD_CORRESPONDENCE",
@@ -311,9 +395,13 @@ def local_one_jet_nonuniqueness_witness() -> dict[str, Any]:
         "vertical_derivative_candidate_1": derivative_phase,
         "zero_event_child_candidate_0": child_zero,
         "zero_event_child_candidate_1": child_phase,
-        "distinct_children_from_missing_vertical_one_jet": not np.allclose(
+        "distinct_children_without_AE2_common_frame_selection": not np.allclose(
             child_zero, child_phase
         ),
+        "vertical_ambiguity_applies_without_AE2_common_frame_selection": True,
+        "AE2_common_frame_removes_vertical_ambiguity": True,
+        "AE2_selected_gauge_lift": np.eye(1, dtype=complex),
+        "AE2_selected_gauge_lift_derivative": np.zeros((1, 1, 1), dtype=complex),
         "same_base_incidence_point": True,
         "base_tangent_candidate_0": tangent_identity,
         "base_tangent_candidate_1": np.asarray([[2.0]]),
@@ -377,16 +465,14 @@ def downstream_status() -> dict[str, Any]:
         "R_A": None,
         "D_R_A_at_zero": None,
         "D_R_A_at_two_admissible_backgrounds": None,
-        "affine_transition_term": None,
-        "U1_SU2_SU3_representation_preservation": (
-            "CONDITIONAL_ON_g_B_VALUED_IN_RETAINED_G_SM_AND_dg_B_IN_ITS_LIE_ALGEBRA"
-        ),
+        "affine_transition_term": "ZERO_IN_THE_AE2_COMMON_RESET_GAUGE_FRAME",
+        "U1_SU2_SU3_representation_preservation": "CLOSED_FOR_G_R_EQUALS_I",
         "three_family_factor": "I3_UNCHANGED",
         "Maxwell_conormal_cotangent_lift": None,
         "functional_pairing_and_measure_used": None,
         "gauge_symplectic_reset": None,
-        "ghost_reset": "BRST_INDUCED_BUT_NOT_INSTANTIABLE",
-        "antighost_reset": "ADJOINT_INDUCED_BUT_NOT_INSTANTIABLE",
+        "ghost_reset": "GAUGE_VERTICAL_FACTOR_IS_IDENTITY_BUT_BASE_PULLBACK_IS_OPEN",
+        "antighost_reset": "GAUGE_VERTICAL_FACTOR_IS_IDENTITY_BUT_BASE_PULLBACK_IS_OPEN",
         "fermion_covariant_derivative_intertwining": (
             "EQUIVALENT_CONDITIONALLY_TO_THE_CONNECTION_PRESERVING_EQUATION;_"
             "NOT_EVALUABLE_FOR_THE_RETAINED_SEAM"
@@ -417,6 +503,11 @@ def claim_boundary() -> dict[str, Any]:
         "status": STATUS,
         "bundle_isomorphism_class_exists": True,
         "abstract_AE2_equivariant_boundary_lift_exists": True,
+        "common_reset_frame_gauge_vertical_one_jet_derived": True,
+        "common_reset_frame_G_R_is_identity": True,
+        "common_reset_frame_dG_R_is_zero": True,
+        "action_owned_local_spatial_base_map_F_B_exists": False,
+        "action_owned_local_spatial_base_differential_DF_B_exists": False,
         "evaluable_principal_bundle_lift_local_one_jet_exists": False,
         "connection_transport_derived": False,
         "cotangent_lift_derived": False,
@@ -438,15 +529,19 @@ def claim_boundary() -> dict[str, Any]:
 __all__ = [
     "ACTION_VERSION",
     "CLASSIFICATION",
+    "EXACT_CLOSED_VERTICAL_DATUM",
+    "EXACT_MISSING_BASE_DATUM",
     "EXACT_MISSING_DATUM",
     "STATUS",
     "claim_boundary",
+    "common_reset_gauge_vertical_one_jet",
     "conditional_geometry_checks",
     "connection_pullback_residual",
     "connection_reset_linearization",
     "downstream_status",
     "induced_connection_transport",
     "local_one_jet_nonuniqueness_witness",
+    "one_jet_component_status",
     "ownership_levels",
     "source_lineage_ledger",
     "weighted_cotangent_momentum_map",

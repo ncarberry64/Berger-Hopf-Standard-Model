@@ -18,13 +18,17 @@ sys.path.insert(0, str(ROOT / "src"))
 from bhsm.interface.gauge_connection_reset_bundle_lift_adjudication import (  # noqa: E402
     ACTION_VERSION,
     CLASSIFICATION,
+    EXACT_CLOSED_VERTICAL_DATUM,
+    EXACT_MISSING_BASE_DATUM,
     EXACT_MISSING_DATUM,
     STATUS,
     claim_boundary,
+    common_reset_gauge_vertical_one_jet,
     conditional_geometry_checks,
     downstream_status,
     local_one_jet_nonuniqueness_witness,
     ownership_levels,
+    one_jet_component_status,
     source_lineage_ledger,
 )
 
@@ -81,6 +85,21 @@ def deterministic_json(payload: Mapping[str, Any]) -> str:
 
 def build_payload() -> dict[str, Any]:
     levels = ownership_levels()
+    split = one_jet_component_status()
+    vertical_witness = common_reset_gauge_vertical_one_jet(3, 16)
+    vertical = {
+        "status": vertical_witness["status"],
+        "object": vertical_witness["object"],
+        "G_R": "I_16",
+        "dG_R": "ZERO_3_BY_16_BY_16",
+        "full_spin_lift_derivative_claimed_zero": vertical_witness[
+            "full_spin_lift_derivative_claimed_zero"
+        ],
+        "independent_relative_gauge_parameter": vertical_witness[
+            "independent_relative_gauge_parameter"
+        ],
+        "frame_covariance": vertical_witness["frame_covariance"],
+    }
     lineage = source_lineage_ledger()
     ambiguity = local_one_jet_nonuniqueness_witness()
     conditional = conditional_geometry_checks()
@@ -94,6 +113,9 @@ def build_payload() -> dict[str, Any]:
         "src/bhsm/interface/aether_n3_event_complete_child_correspondence_v17_84.py",
         "src/bhsm/interface/aether_n3_event_attachment_state_incidence_v17_89.py",
         "src/bhsm/interface/aether_n3_terminal_child_boundary_map_v17_85.py",
+        "src/bhsm/interface/aether_material_skin_variation_v15_15.py",
+        "scripts/audit_n12_intrinsic_state_return_section.py",
+        "scripts/derive_n12_reset_stratum_moving_endpoint_jets.py",
         "src/bhsm/interface/reset_boundary_generating_functional_adjudication.py",
         str(MODULE.relative_to(ROOT)).replace("\\", "/"),
         str(SCRIPT.relative_to(ROOT)).replace("\\", "/"),
@@ -113,19 +135,32 @@ def build_payload() -> dict[str, Any]:
             and levels["induced_connection_transport"]["configuration_map"] is None
         ),
         "focused_source_lineage_classified": (
-            len(lineage) == 11
+            len(lineage) == 13
             and all(row["found"] and row["not_found"] for row in lineage)
         ),
         "AE2_abstract_lift_not_erased": claims[
             "abstract_AE2_equivariant_boundary_lift_exists"
         ],
-        "missing_local_one_jet_exposed": (
+        "missing_spatial_base_half_exposed": (
             not claims["evaluable_principal_bundle_lift_local_one_jet_exists"]
-            and claims["exact_missing_datum"] == EXACT_MISSING_DATUM
+            and claims["exact_missing_datum"] == EXACT_MISSING_BASE_DATUM
         ),
-        "vertical_one_jet_nonuniqueness_demonstrated": ambiguity[
-            "distinct_children_from_missing_vertical_one_jet"
-        ],
+        "vertical_gauge_one_jet_closed_in_common_frame": (
+            split["B_vertical_gauge_lift"]["status"] == "CLOSED"
+            and np.allclose(vertical_witness["G_R"], np.eye(16))
+            and np.allclose(vertical_witness["dG_R"], 0.0)
+            and claims["common_reset_frame_gauge_vertical_one_jet_derived"]
+        ),
+        "full_spin_lift_derivative_not_overclaimed": (
+            not vertical_witness["full_spin_lift_derivative_claimed_zero"]
+        ),
+        "N12_state_jet_rejected_as_spatial_base_jet": (
+            split["A_base_attachment"]["local_spatial_map_F_B"] is None
+            and "R^196_TO_R^57" in split["A_base_attachment"]["N12_first_hit_map"]
+            and split["A_base_attachment"]["implicit_differentiation_for_DF_B"].startswith(
+                "INAPPLICABLE"
+            )
+        ),
         "base_tangent_nonuniqueness_demonstrated": ambiguity[
             "distinct_children_from_missing_base_tangent"
         ],
@@ -173,14 +208,16 @@ def build_payload() -> dict[str, Any]:
                 "ACTION_OWNED_NONZERO_GAUGE_CONNECTION_TRACE_AE4_RESET_MAP_"
                 "R_A[B;GAMMA0_A_EVENT]_TO_GAMMA0_A_CHILD"
             ),
-            "refined_first_geometric_datum": EXACT_MISSING_DATUM,
+            "refined_first_geometric_datum": EXACT_MISSING_BASE_DATUM,
             "reason": (
-                "THE_AE2_ABSTRACT_BOUNDARY_LIFT_DOES_NOT_EXPOSE_THE_BASE_"
-                "JACOBIAN_OR_VERTICAL_TRANSITION_DERIVATIVE_REQUIRED_TO_"
-                "EVALUATE_THE_PULLBACK_OF_A_CONNECTION_ONE_FORM"
+                "THE_AE2_COMMON_RESET_FRAME_CLOSES_G_R_EQUALS_I_AND_dG_R_"
+                "EQUALS_ZERO,_BUT_NO_RETAINED_SOURCE_EXPOSES_THE_SPATIAL_"
+                "EVENT_CHILD_BASE_MAP_F_B_OR_DF_B"
             ),
         },
         "ownership_levels": levels,
+        "one_jet_component_split": split,
+        "common_reset_gauge_vertical_one_jet": vertical,
         "focused_source_lineage": lineage,
         "local_one_jet_nonuniqueness": ambiguity,
         "conditional_connection_geometry": conditional,
@@ -188,6 +225,11 @@ def build_payload() -> dict[str, Any]:
         "VALIDATED": [
             "V15_53_OWNS_THE_RETURNED_SM_BUNDLE_ISOMORPHISM_CLASS",
             "AE2_OWNS_AN_ABSTRACT_SMOOTH_SPIN_GAUGE_BOUNDARY_LIFT_U_R",
+            EXACT_CLOSED_VERTICAL_DATUM,
+            (
+                "THE_N12_FIRST_HIT_JACOBIAN_AND_MOVING_ENDPOINT_JETS_ACT_ON_"
+                "CAUCHY_STATE_SPACE,_NOT_THE_SPATIAL_BOUNDARY_BASE"
+            ),
             (
                 "THE_REPOSITORY_CONNECTION_COMPATIBILITY_EQUATION_IS_dU_PLUS_"
                 "FSTAR_A_CHILD_U_MINUS_U_A_EVENT_EQUALS_ZERO"
@@ -204,7 +246,8 @@ def build_payload() -> dict[str, Any]:
         ],
         "INVALIDATED": [
             "BUNDLE_ISOMORPHISM_CLASS_IS_AN_EVALUABLE_CONNECTION_TRANSPORT",
-            "THE_AE2_POINTWISE_TRACE_UNITARY_SUPPLIES_dg_B_OR_DF_B",
+            "THE_AE2_COMMON_RESET_FRAME_SUPPLIES_THE_SPATIAL_BASE_MAP_F_B_OR_DF_B",
+            "THE_N12_R196_TO_R57_STATE_JACOBIAN_IS_DF_B",
             (
                 "NABLA_PHI_U_R_EQUALS_ZERO_IN_A_PARAMETER_SPACE_RESPONSE_"
                 "WITNESS_INSTANTIATES_THE_PHYSICAL_SPACETIME_GAUGE_"
@@ -214,13 +257,13 @@ def build_payload() -> dict[str, Any]:
             "V15_57_CONSTANT_ZERO_BACKGROUND_RECONSTRUCTION_DEFINES_THE_NONZERO_RESET",
             "THE_CONDITIONAL_FINITE_WITNESS_IS_AN_ADMISSIBLE_BHSM_BACKGROUND",
         ],
-        "OPEN": [EXACT_MISSING_DATUM],
-        "EXACT_NEXT_OBJECT": EXACT_MISSING_DATUM,
+        "OPEN": [EXACT_MISSING_BASE_DATUM],
+        "EXACT_NEXT_OBJECT": EXACT_MISSING_BASE_DATUM,
         "exact_next_calculation": (
-            "MATERIALIZE_IN_OVERLAPPING_EVENT_AND_CHILD_BOUNDARY_CHARTS_THE_"
-            "ACTION_OWNED_PRINCIPAL_BUNDLE_LIFT_AS_F_B(x),_DF_B(x),_g_B(x),_"
-            "AND_dg_B(x);_THEN_EVALUATE_F_B_STAR_A_CHILD_EQUALS_g_B_A_EVENT_"
-            "g_B_DAGGER_MINUS_dg_B_g_B_DAGGER_AND_DIFFERENTIATE_IT"
+            "MATERIALIZE_THE_ACTION_OWNED_SPATIAL_EVENT_CHILD_BOUNDARY_MAP_"
+            "F_B_IN_OVERLAPPING_BOUNDARY_CHARTS_AND_DIFFERENTIATE_IT_TO_DF_B;_"
+            "THEN_USE_THE_ALREADY_CLOSED_COMMON_FRAME_DATA_G_R_EQUALS_I_AND_"
+            "dG_R_EQUALS_ZERO_TO_EVALUATE_F_B_STAR_A_CHILD_EQUALS_A_EVENT"
         ),
         "empirical_inputs": [],
         "claims": claims,

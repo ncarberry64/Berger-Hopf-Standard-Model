@@ -1,110 +1,104 @@
-# Gauge-connection reset from the event–child bundle lift
+# Gauge-connection reset one-jet split
 
-Status: `AE2_ABSTRACT_RESET_LIFT_EXISTS_BUT_AE4_CONNECTION_TRANSPORT_IS_NOT_EVALUABLE_WITHOUT_ITS_LOCAL_ONE_JET`.
+Status: `VERTICAL_GAUGE_ONE_JET_CLOSED_IN_THE_AE2_COMMON_RESET_FRAME_BUT_THE_SPATIAL_EVENT_CHILD_BASE_MAP_REMAINS_ABSENT`.
 
-This adjudication attacks only the missing nonzero gauge-connection trace map. It does not repeat the preceding reset-boundary canonicality audit.
+This continues the existing gauge-connection adjudication without repeating the reset-boundary canonicality audit and without adding another interface.
 
-## Three different geometric objects
+## Independent base and vertical paths
 
-The retained lineage owns the following objects at different strengths.
+### A. Spatial base attachment — open
 
-1. **Bundle isomorphism class — exists.** v15.53 returns the Standard Model bundle to the same isomorphism class, transports the representation labels, the three family projectors, hypercharge, and FR parity, and explicitly does not transport connection one-forms as pregeometric primitives.
-2. **Actual equivariant boundary lift — exists abstractly.** The owner-authorized AE2 action/domain extension promotes the returned class to a smooth spin–gauge boundary lift
-
-   \[
-   U_R=\rho(\operatorname{SpinLift}\Lambda_R)\otimes G_R
-   \]
-
-   on the last regular event trace and first regular child trace. AE3.1 reuses this abstract lift for CAR/Hadamard transport. This is stronger than the v15.53 class, so the claim that BHSM owns no lift at all is rejected.
-3. **Induced connection transport — not evaluable.** No retained source materializes a local principal-bundle representative
-
-   \[
-   \widehat F_B:(x,h)\longmapsto(F_B(x),g_B(x)h)
-   \]
-
-   or its local one-jet. In particular, the sources do not supply `F_B(x)`, `D F_B(x)`, `g_B(x)`, and `d g_B(x)` in overlapping event and child boundary charts.
-
-Thus the exact missing datum is
-
-`ACTION_OWNED_EVALUABLE_LOCAL_ONE_JET_J1_FHAT_B_OF_THE_AE2_EVENT_CHILD_GAUGE_EQUIVARIANT_PRINCIPAL_BUNDLE_LIFT_ABSENT`.
-
-## Conditional connection law
-
-The repository already uses the transition convention
+The repository owns an abstract event/child boundary relation and trace identification, but no retained source materializes a local spatial map
 
 \[
- dU_R+(F_B^*A_c)U_R-U_RA_e=0.
+F_B:\Sigma_{\rm event}\longrightarrow\Sigma_{\rm child}
 \]
 
-For supplied local one-jet data this gives
+in overlapping boundary charts. Consequently there is no evaluable
 
 \[
- F_B^*A_c=U_RA_eU_R^\dagger-(dU_R)U_R^\dagger.
+DF_B:T\Sigma_{\rm event}\longrightarrow T\Sigma_{\rm child}.
 \]
 
-Writing (J^\mu{}_i=\partial F_B^\mu/\partial x^i), the child components obey
+The N12 implicit-function and moving-endpoint machinery does not fill this gap. Its stored derivative is the (57\times196) Jacobian of `F12:R^196_TO_R^57` on paired Cauchy-state variables. Its endpoint derivatives are Jacobi fields of the retained Euler–Dirac state flow. Neither map has a spatial boundary manifold as domain or codomain, so differentiating it cannot produce `DF_B`.
+
+The v15.15 common-parent trace law is a smooth material-interface result. It validates a continuous pullback connection on that interface, but does not define the Gate7 firewall-birth event/child spatial attachment map.
+
+### B. Gauge-vertical lift — closed in the AE2 common frame
+
+AE2 owner-authorizes one global boundary field domain and fixes the common reset frame
 
 \[
- J^\mu{}_i(A_c)_\mu
- =U_R(A_e)_iU_R^\dagger-(\partial_iU_R)U_R^\dagger.
+U_R=I
 \]
 
-The implementation verifies this identity for supplied theorem-class data. It also separates the affine term from the fixed-background derivative:
+up to the global spin sign and a simultaneous common gauge-frame change. For the gauge factor relevant to the GFHS connection this supplies the local representative
 
 \[
- D_{A_e}R_A=J^{-T}\otimes\operatorname{Ad}_{U_R}.
+G_R=I,\qquad dG_R=0.
 \]
 
-Neither the finite witness nor this standard identity is promoted to a retained BHSM reset map.
+There is no independent relative gauge phase. This is an action-owned representative, not a fitted matrix. A simultaneous common-frame change is gauge redundancy and does not reopen a relative event/child transition. This statement does not claim that the full spin lift `SpinLift(Lambda_R)` has zero derivative.
 
-## Why the abstract lift is insufficient
+Thus the prior combined one-jet blocker is too broad. The exact remaining datum is
 
-At a seam point, the two smooth (U(1)) representatives (g_0(x)=1) and (g_1(x)=e^{ix}) have the same value and the same bundle class, but different first derivatives. For (A_e=0), the affine term therefore gives different child potentials. Likewise, two base maps can share the same incidence point and orientation while having different nonsingular derivatives; a one-form then has different child components. Pointwise trace unitarity, boundary identity, first-hit incidence, and orientation do not remove either ambiguity.
+`ACTION_OWNED_LOCAL_EVENT_CHILD_SPATIAL_BOUNDARY_BASE_MAP_F_B_ABSENT`.
 
-The later statement `NABLA_Phi_U_R=0` occurs in a parameter-space Calderón response witness. Its randomly supplied connection matrices verify covariant frame bookkeeping; they do not instantiate the physical spacetime gauge connection, the seam transition, or the base cotangent map.
+## Conditional connection law after the split
 
-## Consequences
-
-The rank-16 (U(1)\oplus SU(2)\oplus SU(3)) representation algebra and the three family slots would be preserved if the missing representative were (G_{SM})-valued: the adjoint term and Maurer–Cartan term remain in its Lie algebra, while the family factor stays (I_3). This is conditional, not an evaluated representation check.
-
-The fermion covariant-derivative intertwining equation is the same missing connection-preserving equation in the associated representation. It therefore cannot select the absent local one-jet from the retained fermion trace map alone. Curvature and holonomy functoriality are also conditional; no mapped loop and evaluable lift representative are retained.
-
-For a supplied derivative (L=D R_A) and weighted boundary pairing (p^\dagger W\,dq), the Maxwell momentum rule would be
+The repository convention is
 
 \[
- p_c=W_c^{-1}L^{-\dagger}W_e p_e.
+dG_R+(F_B^*A_c)G_R-G_RA_e=0.
 \]
 
-The code verifies this conditional weighted cotangent identity. The actual (L), event/child pairing weights, and measures cannot be evaluated before the missing local one-jet is supplied. Consequently the Maxwell cotangent lift, BRST-induced ghost map, full symplectic reset, `beta`, `S_RESET_GFHS`, and its first three graph derivatives remain open.
+The closed common-frame vertical data reduce this to
 
-The HS normal Legendre rank remains zero and `pi_H=0`; no HS canonical momentum or mixed reset term is manufactured.
+\[
+F_B^*A_c=A_e.
+\]
+
+In components,
+
+\[
+(DF_B)^\mu{}_i(A_c)_\mu=(A_e)_i.
+\]
+
+The affine Maurer–Cartan term is therefore exactly zero in this frame, and the internal `U(1) x SU(2) x SU(3)` representation plus the family identity factor are preserved. But `R_A`, its derivative, and evaluations on nonzero admissible backgrounds still cannot be computed until `F_B` and `DF_B` exist.
+
+A one-dimensional witness shows why boundary incidence is insufficient: two maps can agree at the seam point while having derivatives (1) and (2), producing different child components for the same nonzero event one-form. That remaining ambiguity is entirely in path A.
+
+## Downstream canonical chain
+
+Because `R_A` is not evaluable, the Maxwell conormal cotangent lift and its actual boundary measures cannot yet be fixed. The gauge-vertical ghost and antighost factor is the identity, but their base pullback remains open. The full fermion-plus-gauge symplectic reset, `Delta_omega`, `beta`, `S_RESET_GFHS`, and the first three graph derivatives therefore remain open. The HS normal Legendre rank remains zero and `pi_H=0`; no HS momentum or mixed reset term is introduced.
 
 ## Hindsight 20/20
 
 ### VALIDATED
 
 - v15.53 owns the returned Standard Model bundle isomorphism class.
-- AE2 owns an abstract smooth spin–gauge boundary lift, modulo common gauge frame and global spin sign.
-- supplied local one-jet data canonically produce an affine connection transport and a nonzero derivative.
-- the identity representative recovers the retained zero-field reference slice.
+- AE2 owns an abstract smooth spin–gauge boundary lift and an action-owned common reset frame.
+- in that frame the gauge vertical one-jet is `G_R=I`, `dG_R=0`.
+- the N12 first-hit Jacobian and moving-endpoint jets are state-space derivatives, not `DF_B`.
+- supplied `F_B,DF_B` would reduce the gauge connection law to `F_B^*A_child=A_event`.
 
 ### INVALIDATED
 
-- a bundle isomorphism class is an evaluable connection transport;
-- the AE2 pointwise trace unitary supplies `d g_B` or `D F_B`;
-- the parameter-space `nabla_Phi U_R=0` witness instantiates the spacetime gauge reset;
-- boundary incidence or orientation determines the pullback of a one-form;
-- the v15.57 constant reconstruction extends the reset to nonzero connections.
+- the previous combined base-plus-vertical one-jet blocker;
+- interpreting the N12 `R^196 -> R^57` Jacobian as a spatial boundary Jacobian;
+- inferring `F_B` or `DF_B` from common trace labels, incidence, or orientation;
+- using the v15.15 material-interface trace law as the firewall-birth base map;
+- claiming that the full spin-lift derivative vanishes because the gauge factor is constant.
 
 ### OPEN
 
-- the evaluable local one-jet `j1 Fhat_B`;
-- `R_A[B;Gamma0_A_event]`, its affine term, and `D R_A[B;0]` at admissible backgrounds;
-- the weighted Maxwell cotangent lift, BRST transport, symplecticity, exactness, and reset generating functional;
+- the local spatial event/child boundary map `F_B` and then `DF_B`;
+- `R_A[B;Gamma0_A_event]` and its derivative at admissible backgrounds;
+- the Maxwell cotangent lift, full BRST pullback, symplecticity, exactness, and reset generator;
 - the resulting global event balance and global `S2`–`S4` derivatives.
 
 ### EXACT NEXT OBJECT
 
-`ACTION_OWNED_EVALUABLE_LOCAL_ONE_JET_J1_FHAT_B_OF_THE_AE2_EVENT_CHILD_GAUGE_EQUIVARIANT_PRINCIPAL_BUNDLE_LIFT_ABSENT`
+`ACTION_OWNED_LOCAL_EVENT_CHILD_SPATIAL_BOUNDARY_BASE_MAP_F_B_ABSENT`
 
-Materialize the retained principal-bundle lift in overlapping boundary charts as `F_B`, `D F_B`, `g_B`, and `d g_B`. No new reset matrix or fitted coefficient is admissible.
+Materialize `F_B` in overlapping event and child boundary charts from an action-owned spatial attachment—not from the Cauchy-state first-hit relation—then differentiate it to obtain `DF_B`. The gauge-vertical inputs are already fixed as `(I,0)` in the AE2 common reset frame.

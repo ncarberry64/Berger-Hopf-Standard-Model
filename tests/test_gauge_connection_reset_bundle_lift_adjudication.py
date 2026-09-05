@@ -7,9 +7,12 @@ from pathlib import Path
 import numpy as np
 
 from bhsm.interface.gauge_connection_reset_bundle_lift_adjudication import (
+    EXACT_CLOSED_VERTICAL_DATUM,
+    EXACT_MISSING_BASE_DATUM,
     EXACT_MISSING_DATUM,
     STATUS,
     claim_boundary,
+    common_reset_gauge_vertical_one_jet,
     conditional_geometry_checks,
     connection_pullback_residual,
     connection_reset_linearization,
@@ -17,6 +20,7 @@ from bhsm.interface.gauge_connection_reset_bundle_lift_adjudication import (
     induced_connection_transport,
     local_one_jet_nonuniqueness_witness,
     ownership_levels,
+    one_jet_component_status,
     source_lineage_ledger,
     weighted_cotangent_momentum_map,
 )
@@ -43,7 +47,8 @@ def test_three_ownership_levels_are_not_conflated() -> None:
     actual = levels["actual_equivariant_bundle_morphism"]
     assert actual["smooth"] is True
     assert actual["principal_bundle_local_representative_evaluable"] is False
-    assert actual["vertical_first_derivative_dg_B_evaluable"] is False
+    assert actual["local_gauge_transition_g_B_evaluable_in_common_reset_frame"] is True
+    assert actual["vertical_first_derivative_dg_B_evaluable_in_common_reset_frame"] is True
     assert actual["base_tangent_DF_B_evaluable"] is False
     assert levels["induced_connection_transport"]["configuration_map"] is None
 
@@ -75,20 +80,41 @@ def test_connection_law_is_affine_and_linearization_excludes_dg_term() -> None:
     assert not np.allclose(child_zero, 0.0)
 
 
-def test_focused_source_lineage_finds_no_local_principal_lift_one_jet() -> None:
+def test_focused_source_lineage_separates_state_and_spatial_maps() -> None:
     rows = source_lineage_ledger()
-    assert len(rows) == 11
+    assert len(rows) == 13
     assert any("ABSTRACT_ACTUAL_SMOOTH" in row["found"] for row in rows)
     assert any("PARAMETER_SPACE_RANDOM_FRAME" in row["found"] for row in rows)
     assert not any("LOCAL_F_B_DF_B_g_B_dg_B" in row["found"] for row in rows)
     assert all(row["not_found"] for row in rows)
 
 
-def test_pointwise_lift_and_incidence_do_not_determine_connection_transport() -> None:
+def test_one_jet_split_closes_vertical_gauge_half_only() -> None:
+    split = one_jet_component_status()
+    assert split["A_base_attachment"]["status"] == "OPEN"
+    assert split["A_base_attachment"]["local_spatial_map_F_B"] is None
+    assert split["A_base_attachment"]["blocked_by"] == EXACT_MISSING_BASE_DATUM
+    assert split["B_vertical_gauge_lift"]["status"] == "CLOSED"
+    assert split["B_vertical_gauge_lift"]["object"] == EXACT_CLOSED_VERTICAL_DATUM
+    vertical = common_reset_gauge_vertical_one_jet(3, 16)
+    assert np.array_equal(vertical["G_R"], np.eye(16))
+    assert np.array_equal(vertical["dG_R"], np.zeros((3, 16, 16)))
+    assert vertical["full_spin_lift_derivative_claimed_zero"] is False
+
+
+def test_n12_first_hit_jet_is_not_misidentified_as_spatial_DF_B() -> None:
+    base = one_jet_component_status()["A_base_attachment"]
+    assert base["N12_first_hit_map"] == "F12:R^196_TO_R^57_ON_CAUCHY_STATE_VARIABLES"
+    assert base["N12_moving_endpoint_jet"].startswith("JACOBI_FIELD")
+    assert base["implicit_differentiation_for_DF_B"].startswith("INAPPLICABLE")
+
+
+def test_common_frame_closes_vertical_ambiguity_but_incidence_not_base_jet() -> None:
     witness = local_one_jet_nonuniqueness_witness()
     assert witness["same_pointwise_gauge_lift"] is True
     assert witness["same_bundle_isomorphism_class"] is True
-    assert witness["distinct_children_from_missing_vertical_one_jet"] is True
+    assert witness["distinct_children_without_AE2_common_frame_selection"] is True
+    assert witness["AE2_common_frame_removes_vertical_ambiguity"] is True
     assert witness["same_base_incidence_point"] is True
     assert witness["distinct_children_from_missing_base_tangent"] is True
 
@@ -137,6 +163,10 @@ def test_claim_boundary_preserves_physical_and_gate7_flags() -> None:
     assert claims["status"] == STATUS
     assert claims["bundle_isomorphism_class_exists"] is True
     assert claims["abstract_AE2_equivariant_boundary_lift_exists"] is True
+    assert claims["common_reset_frame_gauge_vertical_one_jet_derived"] is True
+    assert claims["common_reset_frame_G_R_is_identity"] is True
+    assert claims["common_reset_frame_dG_R_is_zero"] is True
+    assert claims["action_owned_local_spatial_base_map_F_B_exists"] is False
     assert claims["evaluable_principal_bundle_lift_local_one_jet_exists"] is False
     assert claims["connection_transport_derived"] is False
     assert claims["constant_v15_57_reused"] is False
@@ -153,8 +183,9 @@ def test_materialized_hindsight_payload_is_deterministic() -> None:
     second = module.build_payload()
     assert first["VALIDATED"]
     assert first["INVALIDATED"]
-    assert first["OPEN"] == [EXACT_MISSING_DATUM]
-    assert first["EXACT_NEXT_OBJECT"] == EXACT_MISSING_DATUM
+    assert first["OPEN"] == [EXACT_MISSING_BASE_DATUM]
+    assert first["EXACT_NEXT_OBJECT"] == EXACT_MISSING_BASE_DATUM
+    assert first["one_jet_component_split"]["B_vertical_gauge_lift"]["status"] == "CLOSED"
     assert first["ownership_levels"]["induced_connection_transport"]["status"] == (
         "CONDITIONAL_FORMULA_ONLY_NOT_ACTION_OWNED_EVALUABLE_MAP"
     )
