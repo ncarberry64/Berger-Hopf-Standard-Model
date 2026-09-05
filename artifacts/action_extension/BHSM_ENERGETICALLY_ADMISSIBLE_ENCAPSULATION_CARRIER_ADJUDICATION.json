@@ -1,0 +1,454 @@
+{
+  "AE3_local_regular_carrier_certificate": {
+    "inside_sign": "sigma<0",
+    "maximum_response_residual": 6.661338147750939e-16,
+    "minimal_even_quadratic": {
+      "constant": 1.0,
+      "sigma_squared": -4.0
+    },
+    "minimum_interior_derivative": 7.490139097095662e-07,
+    "minimum_interior_localization_weight": 3.8299075022507623e-10,
+    "normal": "n_A=grad_A(sigma)/sqrt(abs(grad(sigma)^2))",
+    "outside_sign": "sigma>0",
+    "regular_level_set": true,
+    "samples": 4097,
+    "sigma_endpoints": [
+      -0.5,
+      0.5
+    ],
+    "transversality_at_zero": 1.2732395447351628,
+    "unique_sampled_zero_index": 2048,
+    "zero_coordinate": 0.7853981633974483,
+    "zero_residual": 1.9490859162596877e-17
+  },
+  "action_version": "BHSM-AE-3.2.12-ENERGETIC-CARRIER-ADJUDICATION",
+  "adjudication": {
+    "action_version": "BHSM-AE-3.2.12-ENERGETIC-CARRIER-ADJUDICATION",
+    "available_event_energy": {
+      "E_avail_equals_E_mode": "NOT_DERIVED",
+      "classification": "OPEN_TYPED_CHARGE_DIFFERENCE",
+      "defined": false,
+      "missing_map": "(full_action,solution,xi,carrier,reference,ensemble,mode_projector) -> integrable charge decomposition",
+      "strongest_admissible_definition": "boundary-improved covariant Hamiltonian/Noether charge for a selected time flow xi and carrier, projected to the initiating mode, minus the charge constrained to remain in other degrees of freedom",
+      "symbol": "E_avail[M_event;E_s,Lambda_s]",
+      "total_environmental_energy_equals_E_avail": false
+    },
+    "boundary_operator_package": {
+      "AE3_local_partial_package": {
+        "available_traces": "geometry plus eta/sigma regular traces with smooth same-action matching",
+        "carrier": "sigma=0",
+        "six_sector_closure": false,
+        "terminal_boundary_condition": false
+      },
+      "child_boundary_space": "OPEN_FULL_FIELD_TRACE_AND_CONORMAL_SPACE",
+      "child_operator_domains": "OPEN_BEYOND_CONDITIONAL_OR_FINITE_GALERKIN_DOMAINS",
+      "event_boundary_space": "OPEN_FULL_FIELD_TRACE_AND_CONORMAL_SPACE",
+      "event_operator_domains": "OPEN_BEYOND_CONDITIONAL_OR_FINITE_GALERKIN_DOMAINS",
+      "physical_Calderon_or_DtN_operators": "NOT_INSTANTIATED",
+      "required_sectors": [
+        "geometry",
+        "scalar/topographic",
+        "gauge",
+        "fermion",
+        "ghost",
+        "higher_spin"
+      ]
+    },
+    "carrier_family": {
+      "formal_type": "{Sigma in typed regular surfaces/cuts/seams/last-regular traces/reconstruction boundaries: event compatibility AND environmental support AND full-field domain admissibility AND energetic feasibility}",
+      "full_event_to_child_carrier": {
+        "classification": "CARR5",
+        "reason": "the energetic predicates and full-field boundary domains cannot be evaluated, leaving an infinite-dimensional surface freedom"
+      },
+      "local_AE3_subsystem_carrier": {
+        "classification": "CARR1_WITHIN_THE_ETA_SIGMA_LOCALIZATION_SUBSYSTEM",
+        "energy_selected": false,
+        "geometry": "unique regular identity-branch level set at chi=pi/4",
+        "inside": "D_enc={sigma<0}",
+        "physical_scope": "resolved internal material level set",
+        "surface": "Sigma_enc={sigma=0}",
+        "terminal_reset_boundary": false
+      },
+      "set_evaluable_now": false,
+      "strongest_selection_architecture": "FIRST_FUTURE_SURFACE_WHERE_E_impedance[Phi;Sigma]=E_core[Phi;Sigma] AND_OUTWARD_SPACETIME_SUPPORT_CEASES",
+      "symbol": "S_enc"
+    },
+    "carrier_selection": {
+      "constraint_closure_selects_carrier": false,
+      "exact_blocking_map": "(full_action, event solution, environment, Lambda_s, candidate Sigma) -> (integrable E_avail, integrable E_envlp, admissible full-field domain)",
+      "first_positive_return_role": "set-valued event-to-child timing/reconstruction relation",
+      "first_positive_return_selects_geometry": false,
+      "full_classification": "CARR5",
+      "global_envelopment_extremality": "CONDITIONAL_SYNTHETIC_FIXTURE_ONLY",
+      "physical_stationarity_derived": false,
+      "saturation_derived": false
+    },
+    "claim_boundary": {
+      "ACTUAL_STABILIZER_DERIVED": false,
+      "AE3_SIGMA_ZERO_IS_TERMINAL_RESET_BOUNDARY": false,
+      "AE3_SIGMA_ZERO_LOCAL_MATERIAL_CARRIER_ACTION_OWNED": true,
+      "ENCAPSULATION_RESPONSE_FUNCTION_SELECTED": false,
+      "E_AVAIL_ACTION_OWNED_AND_EVALUABLE": false,
+      "E_ENVLP_ACTION_OWNED_AND_EVALUABLE": false,
+      "FROZEN_PREDICTIONS_MODIFIED": false,
+      "FULL_BHSM_COMPLETE": false,
+      "FULL_BOUNDARY_OPERATOR_PACKAGE_INSTANTIATED": false,
+      "FULL_EVENT_TO_CHILD_ENCAPSULATION_CARRIER_SELECTED": false,
+      "FULL_EVENT_TO_CHILD_INCIDENCE_DERIVED": false,
+      "GATE7_PROMOTED": false,
+      "MULTIPLE_CHILD_DYNAMICS_DERIVED": false,
+      "NO_EX_NIHILO_CONSERVATION_FIREWALL_FORMALIZED": true,
+      "PHYSICAL_SPECTRAL_PROJECTORS_DERIVED": false,
+      "PLANCK_THRESHOLD_INSERTED": false,
+      "RHO_E_ST_PRIVILEGED_SCALAR_DERIVED": false
+    },
+    "classification": "ENERGETICALLY_ADMISSIBLE_ENCAPSULATION_CARRIER_ADJUDICATION",
+    "conservation": {
+      "boundary_charge_form": "Q_xi[Sigma_2]-Q_xi[Sigma_1] = - integral_timelike_boundary J_xi",
+      "closed_generally_covariant_Hamiltonian_is_positive_total_energy": false,
+      "conditional_integrable_scalar_form": "H_xi(event)=H_xi(primary_child)+H_xi(seam/environment)+sum_i H_xi(additional_child_i)+outward_flux",
+      "independent_energy_bearing_actualization": "SEPARATE_CHILD_CANDIDATE",
+      "primary_form": "nabla_A T_total^{AB}=sum_fields E_field nabla^B(field) + connection_equations + boundary_flux",
+      "reset_may_supply_missing_energy": false,
+      "scalar_form_conditions": [
+        "selected time flow xi",
+        "integrable boundary-improved charges",
+        "compatible reference and ensemble",
+        "oriented carrier and corner data"
+      ]
+    },
+    "envelopment_requirement": {
+      "classification": "OPEN_BOUNDARY_IMPROVED_ON_SHELL_COST",
+      "defined": false,
+      "global_envelopment_fixture_is_E_envlp": false,
+      "missing_map": "(Sigma,child_solution,seam_data,xi,reference,ensemble) -> integrable quasilocal charge increment",
+      "strongest_admissible_definition": "on-shell boundary-improved Hamiltonian/quasilocal charge increment for the proposed child plus seam geometry relative to a compatible reference, including gravitational boundary/corner, matter, and constraint contributions",
+      "symbol": "E_envlp[Sigma;E_s,Lambda_s]",
+      "universal_price_per_volume": false
+    },
+    "exact_next_object": {
+      "acceptance": "integrability, common reference/ensemble, full-field domains, conserved oriented balance, and evaluability on every surviving regular carrier",
+      "map": "(full_action,event_solution,environment,Lambda_s,Sigma,xi,reference,ensemble,mode_projector)->(H_xi_mode_available,Delta_H_xi_child_plus_seam)",
+      "object": "BOUNDARY_IMPROVED_EVENT_MODE_AND_ENVELOPMENT_CHARGE_MAP"
+    },
+    "multiple_children": {
+      "action_owned_branching_dynamics": false,
+      "generic_readout_machinery": "1->2, 1->3, and 1->n phase-space/channel combinatorics recovered",
+      "missing": [
+        "physical masses",
+        "vertices/amplitudes",
+        "complete channel ledger",
+        "multi-child incidence"
+      ],
+      "one_child_with_internal_modes_is_multiple_children": false,
+      "owner_rule_effect": "an independently actualized energy-bearing branch must be ledgered as a distinct child, but the rule alone creates no branch"
+    },
+    "n12_rank": {
+      "actual_new_rank": 0,
+      "baseline": "98-31=67",
+      "residual_after_time_quotient": 66,
+      "residual_before_time_quotient": 67,
+      "rows": [
+        {
+          "independent_rank": 0,
+          "raw_equations": 0,
+          "residual": 67,
+          "source": "owner energetic semantics"
+        },
+        {
+          "independent_rank": 0,
+          "raw_equations": 0,
+          "residual": 67,
+          "source": "representation decomposition"
+        },
+        {
+          "independent_rank": 0,
+          "raw_equations": 0,
+          "residual": 67,
+          "source": "AE3 local sigma carrier (already owned, not a new N12 equation)"
+        },
+        {
+          "independent_rank": 0,
+          "raw_equations": 0,
+          "residual": 67,
+          "source": "current energetic-carrier adjudication"
+        }
+      ]
+    },
+    "recovered_candidates": [
+      {
+        "candidate_id": "V6_0_5_ENERGY_GEOMETRY_DIFFERENTIAL",
+        "covariance": "covariant only after the missing action and boundary data",
+        "current_status": "RECOVERED_PRECURSOR_NOT_AN_ENVELOPMENT_COST",
+        "energy_quantity": "qualitative energy differential; no closed Hamiltonian charge",
+        "geometry_quantity": "local geometry variation",
+        "historical_envelopment_role": "historical doctrine for energy--geometry response",
+        "locality": "local/formal",
+        "relevant_stratum_domain": "regular stratum only",
+        "scale_dependence": "qualitative",
+        "units": "not fixed as an energy functional"
+      },
+      {
+        "candidate_id": "T_CORE_MATCHING",
+        "covariance": "scalar support variable is covariant on the regular domain",
+        "current_status": "OPEN_NO_ACTION_OWNED_MATCHING_ENERGY",
+        "energy_quantity": "postulated core matching energy",
+        "geometry_quantity": "multiplicative-support/core endpoint",
+        "historical_envelopment_role": "candidate threshold and exit condition",
+        "locality": "endpoint/global",
+        "relevant_stratum_domain": "ordinary energy is undefined on C_A",
+        "scale_dependence": "q_D=-lambda_D log(upsilon); endpoint is infinite depth",
+        "units": "energy only after an unfixed normalization"
+      },
+      {
+        "candidate_id": "LOCAL_NOETHER_STRESS_IDENTITY",
+        "covariance": "covariant on shell with all field and connection equations",
+        "current_status": "VALIDATED_PRIMARY_CONSERVATION_FORM_NOT_A_POSITIVE_SCALAR_BUDGET",
+        "energy_quantity": "total stress tensor and Noether current/flux",
+        "geometry_quantity": "spacetime hypersurface and boundary flux",
+        "historical_envelopment_role": "conservation firewall",
+        "locality": "local differential identity",
+        "relevant_stratum_domain": "regular bulk and typed boundaries",
+        "scale_dependence": "depends on the selected flow and surface",
+        "units": "stress density / current; integrated charge after a time flow"
+      },
+      {
+        "candidate_id": "BROWN_YORK_QUASILOCAL_ENERGY",
+        "covariance": "covariant after normal, time flow, reference, and ensemble are fixed",
+        "current_status": "OPEN_UNTIL_CARRIER_TIME_FLOW_REFERENCE_AND_ENSEMBLE_ARE_SELECTED",
+        "energy_quantity": "boundary-improved quasilocal Hamiltonian charge",
+        "geometry_quantity": "embedded codimension-one/two boundary geometry",
+        "historical_envelopment_role": "strongest candidate for available/cost accounting",
+        "locality": "quasilocal",
+        "relevant_stratum_domain": "only on a selected regular carrier with corner data",
+        "scale_dependence": "surface size, curvature, reference, and environment dependent",
+        "units": "energy"
+      },
+      {
+        "candidate_id": "CLOSED_S7_HAMILTONIAN_CONSTRAINT",
+        "covariance": "generally covariant constraint",
+        "current_status": "INVALIDATED_AS_POSITIVE_AVAILABLE_ENERGY_BECAUSE_THE_CONSTRAINT_VANISHES",
+        "energy_quantity": "constraint-reduced canonical Hamiltonian",
+        "geometry_quantity": "closed S7 slice",
+        "historical_envelopment_role": "possible total-energy source",
+        "locality": "global/canonical",
+        "relevant_stratum_domain": "closed regular slice",
+        "scale_dependence": "no positive scale budget",
+        "units": "energy constraint"
+      },
+      {
+        "candidate_id": "N12_LEGENDRE_ENERGY",
+        "covariance": "coordinate-canonical within N12",
+        "current_status": "INVALIDATED_AS_AVAILABLE_ENERGY_ON_THE_CONSTRAINT_SET_E_N_EQUALS_ZERO",
+        "energy_quantity": "E_N=partial_v L dot v-L",
+        "geometry_quantity": "N12 event and child trajectory",
+        "historical_envelopment_role": "constraint-compatible Galerkin energy candidate",
+        "locality": "finite Galerkin/canonical",
+        "relevant_stratum_domain": "N12 constrained branch only",
+        "scale_dependence": "inherits N12 nondimensionalization",
+        "units": "energy"
+      },
+      {
+        "candidate_id": "AE3_FAMILY_HARMONIC_ENERGY",
+        "covariance": "covariant only within the frozen reduced construction",
+        "current_status": "OPEN_PARENT_ACTION_MODE_ENERGY_NOT_EVALUATED",
+        "energy_quantity": "mode displacement/spectral stiffness candidate",
+        "geometry_quantity": "family-harmonic localization geometry",
+        "historical_envelopment_role": "initiating-mode energy candidate",
+        "locality": "local reduced sector",
+        "relevant_stratum_domain": "AE3 family fiber",
+        "scale_dependence": "mode and localization scale dependent",
+        "units": "energy after action normalization"
+      },
+      {
+        "candidate_id": "SUPPORT_HAAR_DEPTH",
+        "covariance": "diffeomorphism scalar after constraint reduction",
+        "current_status": "VALIDATED_AS_DEPTH_COORDINATE_NOT_AS_ENVELOPMENT_ENERGY",
+        "energy_quantity": "bare q_D potential is zero in the canonical crystallization audit",
+        "geometry_quantity": "q_D=-lambda_D log(upsilon)",
+        "historical_envelopment_role": "enclosure-depth candidate",
+        "locality": "local on the regular support stratum",
+        "relevant_stratum_domain": "0<upsilon<=1; C_A is a separate stratum",
+        "scale_dependence": "logarithmic and divergent at support loss",
+        "units": "dimensionless depth; energy normalization absent"
+      },
+      {
+        "candidate_id": "ENERGY_GEOMETRY_CONFINEMENT_INVARIANTS",
+        "covariance": "each candidate has its own covariance and measure requirements",
+        "current_status": "RHO_CANDIDATES_NOT_COSELECTED_BY_THE_ACTION",
+        "energy_quantity": "stress/flux/interface/quasilocal candidates",
+        "geometry_quantity": "curvature, Lovelock, trace, K, K2, pressure, coherence",
+        "historical_envelopment_role": "finite conditional diagnostic list",
+        "locality": "mixed local/interface/quasilocal",
+        "relevant_stratum_domain": "regular typed domains only",
+        "scale_dependence": "curvature and spectral scales",
+        "units": "heterogeneous; cannot be quotient-combined without measures"
+      },
+      {
+        "candidate_id": "GLOBAL_ENVELOPMENT_REDUCED_FUNCTIONAL",
+        "covariance": "conditional on the chosen reduction",
+        "current_status": "VALIDATED_CONDITIONAL_FIXTURE_NOT_PROMOTED_TO_E_ENVLP",
+        "energy_quantity": "synthetic reduced objective, not a physical charge",
+        "geometry_quantity": "interior/seam/scale fixture",
+        "historical_envelopment_role": "tests joint stationarity architecture",
+        "locality": "global reduced fixture",
+        "relevant_stratum_domain": "fixture domain",
+        "scale_dependence": "explicit fixture scale variables",
+        "units": "synthetic objective units"
+      },
+      {
+        "candidate_id": "AE4_IMPEDANCE_CORE_CROSSING",
+        "covariance": "intended covariant surface rule; full operator/domain missing",
+        "current_status": "OPEN_HYPOTHESIS_NOT_AN_INSTANTIATED_CARRIER",
+        "energy_quantity": "E_impedance[Phi;Sigma] and E_core[Phi;Sigma] (unevaluated)",
+        "geometry_quantity": "first future surface where equality holds and outward support ceases",
+        "historical_envelopment_role": "strongest recovered physical carrier-selection architecture",
+        "locality": "surface/quasilocal proposal",
+        "relevant_stratum_domain": "not evaluable on current C2",
+        "scale_dependence": "defines a conditional carrier scale",
+        "units": "energy; ell_star=1/E_impedance in natural units"
+      },
+      {
+        "candidate_id": "KKT_TANGENT_RESPONSE",
+        "covariance": "covariant only inside its fixed reduction",
+        "current_status": "REDUNDANT_FOR_ENERGETIC_CARRIER_SELECTION",
+        "energy_quantity": "first-order response multiplier, not an energy budget",
+        "geometry_quantity": "constraint tangent geometry",
+        "historical_envelopment_role": "response diagnostic",
+        "locality": "local reduced system",
+        "relevant_stratum_domain": "KKT fixture domain",
+        "scale_dependence": "depends on fixed normalization",
+        "units": "dual-to-constraint units"
+      }
+    ],
+    "response_and_active_differential": {
+      "F_B_selected": false,
+      "active_differential": "Delta_enc=Pi_child+C(F_B)^*Pi_event",
+      "amplitude": "OPEN",
+      "geometric_location": "OPEN_FOR_FULL_EVENT_TO_CHILD_CARRIER",
+      "mode_content": "OPEN_AT_FULL_FIELD_LEVEL",
+      "response_classification": "RSP5",
+      "sign": "OPEN",
+      "support": "CONDITIONAL_LOCAL_SIGMA_ZERO_SUPPORT_FOR_ATTACHED_AE3_SUBSYSTEM_ONLY",
+      "why": "the full carrier, boundary spaces, domains, stabilizer, projectors, and physical incidence remain uninstantiated"
+    },
+    "rho": {
+      "classification": "RHO5",
+      "closest_recovered_hypothesis": {
+        "crossing": "rho_hold=1 (hypothesized)",
+        "promotion": "NOT_EVALUATED_OR_ACTION_DERIVED",
+        "symbol": "rho_hold=E_mode/E_impedance[Phi;Sigma_enclosure]",
+        "weak_or_stable": "rho_hold<1 (hypothesized)"
+      },
+      "privileged_scalar_derived": false,
+      "reason": "Neither E_avail nor E_envlp is an instantiated invariant charge; time flow, reference, ensemble, mode projection, carrier, and domain choices remain unselected.  Ordinary energy is undefined on C_A.",
+      "regime_audit": {
+        "C_A": "ORDINARY_ENERGY_NOT_EVALUATED_ON_THE_SINGULAR_STRATUM",
+        "regular_spacetime": "CANDIDATE_FUNCTIONALS_EXIST_BUT_NONE_IS_PRIVILEGED",
+        "spacetime_edge": "ONLY_LAST_REGULAR_TRACE_COULD_CARRY_AN_ORDINARY_CHARGE",
+        "strong_envelopment": "UNEVALUABLE_WITHOUT_A_SELECTED_BRANCH",
+        "weak_envelopment": "UNEVALUABLE_WITHOUT_CHARGES"
+      }
+    },
+    "scale": {
+      "R_star_relation": "R_star=2.0232708255441265 ell_kappa",
+      "R_star_role": "environmental reset reconstruction relation, not an envelopment price law",
+      "candidate_triggers": [
+        {
+          "status": "AE4_OWNER_RULE_UNEVALUATED",
+          "trigger": "E_impedance=E_core with outward support cessation"
+        },
+        {
+          "status": "CONDITIONAL_OPERATOR_DOMAIN_OPEN",
+          "trigger": "lambda_phys=0"
+        },
+        {
+          "status": "DEFINED_BUT_NO_ROOT_DERIVED",
+          "trigger": "lambda_surface=0"
+        },
+        {
+          "status": "INVALIDATED_NO_CROSSING_AT_FINITE_TIME",
+          "trigger": "Jensen tachyon crossing"
+        },
+        {
+          "status": "OPEN_MASSES_AND_AMPLITUDES_NOT_ACTION_DERIVED",
+          "trigger": "new decay/channel threshold"
+        }
+      ],
+      "descriptor": "Lambda_s=(ell_kappa,R_reset/ell_kappa,x_s,...owned dimensionless environmental data)",
+      "ell_kappa": "kappa_1^(-1/6)",
+      "manual_Planck_threshold_inserted": false
+    },
+    "stabilizer_spectral_incidence": {
+      "AE3_local_transport": "frozen family-mode tensor-factor transport and projector commutation are algebraically derived on sigma=0",
+      "actual_stabilizer": "OPEN_INTERSECTION_Stab(z_event,E_s,M_event,Sigma_enc)",
+      "default_full_Diff_or_Spin4_or_SU2_used": false,
+      "event_to_child_incidence": "OPEN_AT_FULL_PHYSICAL_LEVEL",
+      "initiating_mode_inheritance": "family/representation/topological labels transport conditionally; amplitude, phase, and energy allocation do not follow automatically",
+      "physical_isotypic_decomposition": "OPEN_UNTIL_G_x_AND_BOUNDARY_HILBERT_SPACES_EXIST",
+      "spectral_projectors": "OPEN"
+    }
+  },
+  "artifact": "BHSM_ENERGETICALLY_ADMISSIBLE_ENCAPSULATION_CARRIER_ADJUDICATION",
+  "classification": "ENERGETICALLY_ADMISSIBLE_ENCAPSULATION_CARRIER_ADJUDICATION",
+  "provenance": {
+    "NEWLY_DERIVED": "scoped CARR1-local/CARR5-full reconciliation, RHO5 persistence, typed charge obstruction, conservation firewall, and rank-zero result",
+    "OWNER_CLARIFICATION": "event mode geometry/amplitude plus local support and scale, subject to no ex-nihilo energy and separate ledgers for independent children",
+    "RECOVERED_PRIOR_BHSM": [
+      "Noether/stress and boundary-flux conservation",
+      "conditional Brown-York/Hamiltonian charges",
+      "support/depth and scale candidates",
+      "AE3 sigma-zero local material carrier",
+      "AE4 first-future impedance/core crossing architecture",
+      "generic decay-channel readout machinery"
+    ]
+  },
+  "scientific_result": "AE3_SIGMA_ZERO_IS_A_UNIQUE_ACTION_OWNED_LOCAL_MATERIAL_CARRIER,_BUT_THE_FULL_EVENT_TO_CHILD_ENERGETIC_CARRIER_REMAINS_CARR5_BECAUSE_THE_BOUNDARY_IMPROVED_AVAILABLE_AND_ENVELOPMENT_CHARGES_AND_FULL_FIELD_DOMAINS_ARE_NOT_INSTANTIATED",
+  "source_hashes_sha256": {
+    "artifacts/action_extension/BHSM_ACTION_AE3_RECIPROCAL_JOIN_LOCALIZATION.json": "858C24D806EAE6574F17D8606CAAE63909E189641A09305B51AA0A95D73A63A1",
+    "artifacts/action_extension/BHSM_AE4_CURRENT_C2_PHYSICAL_ENCLOSURE_STATE_INTEGRATION.json": "8E7B71D67A6363F74176603EB1FFB91B9133A4D63FBE89939575182E4978B68F",
+    "artifacts/intrinsic_state_selection/BHSM_N12_CONSTRAINT_REDUCED_ENERGY_IDENTITY_GATE.json": "EB907DF96C8C9E0A66014D6A6463B853E92F1A5D0CBA2B269789FA28706501D1",
+    "scripts/materialize_energetically_admissible_encapsulation_carrier_adjudication.py": "F790964499ABC755E2E5F69F67A2B4EE98408E68097E8865167D952CB0FB2A05",
+    "src/bhsm/interface/ae3_reciprocal_join_localization.py": "883C2040873CC7E987D7096F54E086C29D5E924A1B31E257A441C168B4E6C099",
+    "src/bhsm/interface/ae4_current_c2_physical_enclosure_state_integration.py": "1507ED3554EEC2D9C3B07289E5B57F0571B1E666087B2E8317ACD2E39581E5B6",
+    "src/bhsm/interface/ae4_stratified_dirac_zeta_induced_owner.py": "68BE04759A02347661141DB56A51EE5615A4B891B196EDDA4C52789CCE4D9336",
+    "src/bhsm/interface/completion/local_environment_finite_time_encapsulation_gate_v14_94.py": "FE3344107B0AD71F55EEF2631B62F4F3F2039C1A3EDC746E0594989EAD7351FD",
+    "src/bhsm/interface/energetically_admissible_encapsulation_carrier_adjudication.py": "9ED59660ED7F348704843480970EA8E968A1D5B1746543B0316A8B3693047A7A",
+    "src/bhsm/interface/energy_geometry_confinement_invariant.py": "2805D6F1A6224962FCF08D87614B3638E34280561F87248C4E281C6D4238BC17",
+    "src/bhsm/interface/envelopment/canonical_crystallization_v11_0.py": "30D1494E2CAE17B3536B5F6190521768C1532CFF008E1C382B686CBDD3350464",
+    "src/bhsm/interface/envelopment/depth_constraint_reduction_v10_4.py": "66E2C6D527BADCB49D1FD09C82D42343BBB70C7DE30D9B40F8C6EF5721E60BD1",
+    "src/bhsm/interface/envelopment/global_conservation.py": "B9DE44B1C5D8E10416B16AD3D95632236C6069CF46D421A07C82C395A6301B51",
+    "src/bhsm/interface/envelopment/proper_volume_depth_v10_4.py": "BD16A983EFB4987853BA5B04B719A7DAE23E7C70AE0BD26C6F9FACB7DAC45064",
+    "src/bhsm/interface/envelopment/spacetime_removal_depth_v10_3.py": "878C7FDCDC68AA4EE828D426D2900FC7605C5B1019891956A36D7229E250A0B5",
+    "src/bhsm/interface/envelopment/spacetime_support_order_parameter_v10_4.py": "4FD97A59408A9542436D8C8092F59EDA9D2CFC05527566DD7ED0D949F2BEA29C",
+    "src/bhsm/interface/environment_conditioned_reset_selector_recovery.py": "EF59F0EFFE2BC64DA981F605DF5E2EC52C57B571C5720C5F32A6FA029C525C23",
+    "src/bhsm/interface/universal_channel_ledger.py": "03D87E5DB8CED54EE99EB0D348E87FB9CE7CC3E79075FBA02604DE363C44A3D2",
+    "src/bhsm/interface/universal_decay_collision.py": "F87B3AAFB434EA1CE185AE5055896FE6DFF1D12E22FC7E9C47B8B9638104BF2D",
+    "tests/test_energetically_admissible_encapsulation_carrier_adjudication.py": "FBBEBE0A85766EB1E2EFFE551D91CDD3DFDABD8F0D2DCDBAF9ED741069502F1F",
+    "theory/bhsm_energetically_admissible_encapsulation_carrier_adjudication.md": "19B524E4353B5804F014A1288DCCBFE669ABC11B20773128410D7CC549B96A4B",
+    "theory/n12_constraint_reduced_energy_identity.md": "E3C3619551EA811B75D336F21FEDDC50062A2828894E9EDA14F949F1CD691E5D"
+  },
+  "validation": {
+    "AE3_local_carrier_is_analytically_regular": true,
+    "AE3_local_carrier_scope_is_not_promoted": true,
+    "Gate7_not_promoted": true,
+    "N12_new_rank_is_zero": true,
+    "N12_time_quotient_residual_is_66": true,
+    "RSP5_is_preserved": true,
+    "actual_stabilizer_and_projectors_fail_closed": true,
+    "available_energy_fails_closed": true,
+    "boundary_operator_package_fails_closed": true,
+    "envelopment_requirement_fails_closed": true,
+    "frozen_predictions_untouched": true,
+    "full_BHSM_not_claimed": true,
+    "full_carrier_remains_CARR5": true,
+    "multiple_child_semantics_do_not_invent_dynamics": true,
+    "no_ex_nihilo_firewall_is_explicit": true,
+    "no_manual_Planck_threshold": true,
+    "recovered_candidate_audit_has_nine_or_more_rows": true,
+    "response_function_not_selected": true,
+    "rho5_is_preserved": true,
+    "saturation_is_not_assumed": true
+  },
+  "validation_passed": true
+}
