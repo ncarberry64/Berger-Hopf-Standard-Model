@@ -8,15 +8,21 @@ import numpy as np
 
 from bhsm.interface.gauge_connection_reset_bundle_lift_adjudication import (
     EXACT_CLOSED_VERTICAL_DATUM,
+    EXACT_ATTACHMENT_QUOTIENT_DATUM,
     EXACT_MISSING_BASE_DATUM,
     EXACT_MISSING_DATUM,
     STATUS,
+    attachment_equivalence_adjudication,
+    attachment_representative_naturality_witness,
+    attachment_symmetry_group,
+    canonical_attachment_quotient,
     claim_boundary,
     common_reset_gauge_vertical_one_jet,
     conditional_geometry_checks,
     connection_pullback_residual,
     connection_reset_linearization,
     downstream_status,
+    gfhs_naturality,
     induced_connection_transport,
     local_one_jet_nonuniqueness_witness,
     ownership_levels,
@@ -204,6 +210,7 @@ def test_every_requested_object_has_a_separate_authority_status() -> None:
     result = requested_object_classification()
     assert set(result) == {
         "F_B",
+        "F_B_equivalence_class",
         "D_F_B",
         "U_R",
         "d_U_R",
@@ -214,11 +221,12 @@ def test_every_requested_object_has_a_separate_authority_status() -> None:
         "graph_jets",
         "global_S1_S4",
     }
-    assert result["F_B"].startswith("OPEN")
-    assert result["D_F_B"].startswith("OPEN")
+    assert "REPRESENTATIVE_ABSENT" in result["F_B"]
+    assert result["F_B_equivalence_class"].startswith("NOT_DEFINED")
+    assert "ABSENT" in result["D_F_B"]
     assert "GAUGE_FACTOR_IS_I" in result["U_R"]
     assert "dG_R_EQUALS_ZERO" in result["d_U_R"]
-    assert result["R_A"] == "OPEN_BLOCKED_ONLY_BY_F_B_AND_DF_B"
+    assert result["R_A"].startswith("CONDITIONAL_FOR_A_REPRESENTATIVE")
 
 
 def test_claim_boundary_preserves_physical_and_gate7_flags() -> None:
@@ -230,6 +238,12 @@ def test_claim_boundary_preserves_physical_and_gate7_flags() -> None:
     assert claims["common_reset_frame_G_R_is_identity"] is True
     assert claims["common_reset_frame_dG_R_is_zero"] is True
     assert claims["action_owned_local_spatial_base_map_F_B_exists"] is False
+    assert claims["levelwise_diffeomorphism_covariance_exists"] is True
+    assert claims["cross_level_diffeomorphism_intertwiner_proved"] is False
+    assert claims["action_owned_relative_event_child_diffeomorphism_group_exists"] is False
+    assert claims["attachment_representative_independence_proved"] is False
+    assert claims["attachment_representative_dependence_proved"] is False
+    assert claims["identity_representative_is_admissible_gauge_fixing"] is False
     assert claims["evaluable_principal_bundle_lift_local_one_jet_exists"] is False
     assert claims["connection_transport_derived"] is False
     assert claims["constant_v15_57_reused"] is False
@@ -237,7 +251,83 @@ def test_claim_boundary_preserves_physical_and_gate7_flags() -> None:
     assert claims["empirical_coefficients_used"] is False
     assert claims["FULL_FIELD_ACTION_ATTACHMENT_READY_FOR_GATE7_BACKGROUND"] is False
     assert claims["FULL_BHSM_COMPLETE"] is False
-    assert claims["exact_missing_datum"] == EXACT_MISSING_DATUM
+    assert claims["exact_missing_datum"] == EXACT_ATTACHMENT_QUOTIENT_DATUM
+
+
+def test_maximal_proved_group_is_not_silently_enlarged_to_full_diff() -> None:
+    group = attachment_symmetry_group()
+    assert group["levelwise_action_covariance"]["S8"] == "YES"
+    assert group["levelwise_action_covariance"]["S5_relative"] == (
+        "YES_BEFORE_ADM_GAUGE_FIX"
+    )
+    assert group["levelwise_action_covariance"]["S4_effective"] == "YES"
+    assert group["levelwise_action_covariance"]["cross_level"] == "UNPROVED"
+    assert group["full_Diff_Sigma_admissible"] is False
+    assert group["proved_nontrivial_relative_attachment_group"] is None
+    assert group["candidate_Ad_family_is_action_owned_relative_gauge"] is False
+    assert group["blocked_by"] == EXACT_ATTACHMENT_QUOTIENT_DATUM
+
+
+def test_id_and_Ad_witness_preserve_tensorial_action_objects() -> None:
+    witness = attachment_representative_naturality_witness()
+    assert witness["representatives"] == ["F_0=id_times_id", "F_a=Ad_a_times_id"]
+    assert witness["metric_invariance_residual"] < 1.0e-12
+    assert witness["measure_jacobian_residual"] < 1.0e-12
+    assert witness["orientation_preserved"] is True
+    assert witness["connection_pullback_residual"] < 1.0e-12
+    assert witness["curvature_pullback_residual"] < 1.0e-12
+    assert witness["Maxwell_quadratic_residual"] < 1.0e-12
+    assert witness["Maxwell_canonical_alpha_residual"] < 1.0e-12
+    assert witness["Maxwell_canonical_omega_residual"] < 1.0e-12
+    assert witness["combined_tensorial_GFHS_value_residual"] < 1.0e-12
+
+
+def test_fermion_brst_hs_and_frozen_fibers_are_natural_in_witness() -> None:
+    witness = attachment_representative_naturality_witness()
+    assert witness["fermion_Dirac_unitary_residual"] < 1.0e-12
+    assert witness["fermion_Dirac_eigenvalue_residual"] < 1.0e-12
+    assert witness["fermion_Dirac_singular_value_residual"] < 1.0e-12
+    assert witness["spatial_spin_lift_commutes_with_U_R_tensor_I3_residual"] < 1.0e-12
+    assert max(witness["BRST_nilpotency_residuals"]) < 1.0e-12
+    assert witness["BRST_rank_invariant"] is True
+    assert witness["ghost_bilinear_residual"] < 1.0e-12
+    assert witness["HS_algebraic_value_residual"] == 0.0
+    assert witness["representation_projector_ranks_unchanged"] is True
+
+
+def test_levelwise_gfhs_naturality_does_not_claim_reset_naturality() -> None:
+    result = gfhs_naturality()
+    for sector in ("Maxwell", "ghost", "fermion", "HS", "gauge_fermion", "fermion_HS"):
+        assert result[sector]["current_C2_relative_reset_test"] == "NOT_EVALUABLE"
+    combined = result["combined_germ"]
+    assert combined["formal_levelwise_identity"].startswith("Gamma_GFHS")
+    assert combined["full_BHSM_reset_natural"] is None
+
+
+def test_canonical_form_requires_moment_map_reduction_not_naive_quotient() -> None:
+    result = canonical_attachment_quotient()
+    assert result["alpha_invariant_under_cotangent_lift"] is True
+    assert result["alpha_horizontal_on_full_phase_space"] is False
+    assert result["alpha_basic_on_full_phase_space"] is False
+    assert result["omega_invariant_under_cotangent_lift"] is True
+    assert result["constraints_descend"] is None
+    assert result["quotient_phase_space"] is None
+    assert result["reduced_reset_canonical"] is None
+    assert result["blocked_by"] == EXACT_ATTACHMENT_QUOTIENT_DATUM
+
+
+def test_no_physical_outcome_or_identity_gauge_is_overclaimed() -> None:
+    result = attachment_equivalence_adjudication()
+    assert result["outcome_A_pure_redundancy"]["proved"] is False
+    assert result["outcome_B_partial_redundancy"]["proved"] is False
+    assert result["outcome_C_physical_nonuniqueness"]["proved"] is False
+    assert result["formal_id_Ad_witness_equivalent_after_simultaneous_pullback"] is True
+    assert result["formal_witness_sufficient_to_close_physical_equivalence"] is False
+    assert result["representative_independence"] is None
+    assert result["identity_representative_allowed"] is False
+    assert result["residual_physical_attachment_datum"] is None
+    assert result["full_field_reset_can_proceed_without_new_physical_law"] is False
+    assert result["exact_next_object"] == EXACT_ATTACHMENT_QUOTIENT_DATUM
 
 
 def test_materialized_hindsight_payload_is_deterministic() -> None:
@@ -246,8 +336,30 @@ def test_materialized_hindsight_payload_is_deterministic() -> None:
     second = module.build_payload()
     assert first["VALIDATED"]
     assert first["INVALIDATED"]
-    assert first["OPEN"] == [EXACT_MISSING_BASE_DATUM]
-    assert first["EXACT_NEXT_OBJECT"] == EXACT_MISSING_BASE_DATUM
+    assert first["OPEN"] == [EXACT_ATTACHMENT_QUOTIENT_DATUM]
+    assert first["EXACT_NEXT_OBJECT"] == EXACT_ATTACHMENT_QUOTIENT_DATUM
+    assert {
+        "attachment_symmetry_group",
+        "allowed_representatives",
+        "nonuniqueness_witness",
+        "GFHS_naturality",
+        "Maxwell_naturality",
+        "fermion_naturality",
+        "BRST_naturality",
+        "canonical_form_naturality",
+        "physical_observable_invariance",
+        "quotient_phase_space",
+        "representative_independence",
+        "identity_representative_allowed",
+        "residual_physical_attachment_datum",
+        "reset_generator_status",
+        "graph_jet_status",
+        "global_S1_S4_status",
+        "validated",
+        "invalidated",
+        "open",
+        "exact_next_object",
+    }.issubset(first)
     assert first["one_jet_component_split"]["B_vertical_gauge_lift"]["status"] == "CLOSED"
     assert first["child_ontology"].startswith("CASE_4")
     assert first["Sigma_event_definition"]
@@ -261,6 +373,11 @@ def test_materialized_hindsight_payload_is_deterministic() -> None:
     assert first["Maxwell_cotangent_lift"] is None
     assert first["global_S1"] == "REFERENCE_SLICE_ONLY"
     assert first["global_S4"] == "BLOCKED"
+    assert first["attachment_symmetry_group"]["full_Diff_Sigma_admissible"] is False
+    assert first["representative_independence"] is None
+    assert first["identity_representative_allowed"] is False
+    assert first["residual_physical_attachment_datum"] is None
+    assert first["quotient_phase_space"]["quotient_phase_space"] is None
     assert first["validated"] == first["VALIDATED"]
     assert first["invalidated"] == first["INVALIDATED"]
     assert first["open"] == first["OPEN"]

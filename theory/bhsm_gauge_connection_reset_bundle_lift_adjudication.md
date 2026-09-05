@@ -1,100 +1,195 @@
-# Event-child spatial base attachment audit
+# Attachment-representative equivalence audit
 
-Status: `CHILD_IS_AN_ABSTRACT_POST_CUT_BOUNDARY_COPY_WITHOUT_AN_ACTION_OWNED_CROSS_COPY_SPATIAL_CORRESPONDENCE`.
+Status: `ATTACHMENT_REPRESENTATIVE_PHYSICAL_EQUIVALENCE_UNDECIDED_BECAUSE_THE_RELATIVE_EVENT_CHILD_DIFFEO_QUOTIENT_IS_NOT_ACTION_OWNED`.
 
-The gauge-vertical result is retained unchanged: in the AE2 common reset gauge frame, `G_R=I` and `dG_R=0`. This audit concerns only the base map.
+This audit begins from the earned case-4 result and does not reopen its
+ontology proof. The event and child boundaries are abstract `S3 times S3`
+copies, the gauge-vertical reset jet is `(G_R,dG_R)=(I,0)`, and no pointwise
+spatial attachment is action-owned. The new question is whether BHSM needs a
+representative `F_B` or only its physical equivalence class.
 
-## Child spatial ontology
+## Which diffeomorphisms are actually gauge?
 
-The v15.45 reconstruction firewall starts from a topological `S7`, names a common full-preimage seam `Sigma=S3 times S3`, and writes an oriented cut into disjoint child and parent pieces with separate boundary copies `Sigma_c` and `Sigma_p`. Its chain complex preserves child and parent boundary identities separately and explicitly does not select their exchange. AE2 names the last regular event trace, but no source supplies its local embedding or equates it pointwise with either post-cut copy for spatial transport.
+The master symmetry ledger gives the controlling answer:
 
-At the firewall, metric, proper distance, proper time, velocity, curvature, local energy density, and canonical metric momentum are not transported primitives. V15.52 makes the event functor metric-erasing: it carries a discrete tuple of degree, orientation, FR parity, endpoint order, incidence, and boundary identities into a reconstructed Cauchy state. The later N3/N12 work closes the field/state boundary solvability relation and positive-duration child evolution, but does not add a map between spatial points of the two boundary copies.
+| Stratum | Diffeomorphism covariance |
+|---|---|
+| `S8` | yes |
+| `S5|4` | yes before ADM gauge fixing |
+| `S4` | yes |
+| cross-level/reset intertwiner | **unproved** |
 
-Therefore `Sigma_child` is ontology case 4:
-
-`ABSTRACT_POST_CUT_BOUNDARY_COPY_WITH_STATE_FIELD_INHERITANCE_AND_DISCRETE_INCIDENCE_BUT_NO_SPATIAL_POINT_CORRESPONDENCE`.
-
-BHSM specifies what discrete data and reconstructed state the child inherits, but not where each event-boundary point attaches to the child boundary. This explains why family, particle-state, and bundle-fiber transport can close while gauge connection one-form transport cannot.
-
-## Ordered construction audit
-
-### A. Common ambient embeddings
-
-The notation `Cut_Sigma(S7)` establishes the topological types and separate copies. It does not materialize local embeddings
-
-\[
-i_{\rm event}:\Sigma_{\rm event}\to M_B,
-\qquad
-i_{\rm child}:\Sigma_{\rm child}\to M_B
-\]
-
-into one retained post-event geometry, nor cross-copy blow-down maps whose composition could define `F_B`. The post-event metric ambient is absent at the firewall. Route A does not close.
-
-### B. Retained flow map
-
-The Euler–Dirac flow acts on Cauchy/state variables before the event and again after child reconstruction. The event functor between them erases continuous geometric data. No retained spatial vector field transports `Sigma_event` to `Sigma_child` through that reset. The N12 event time and Jacobi fields remain state-space derivatives. Route B does not close.
-
-### C. Collar or normal exponential map
-
-V15.13 defines a scalar oriented geodesic distance between a unique closest parent/child skin pair in a common reconstructed clock slice, before the cut locus. This is a collective ejection coordinate, not an event-wide point map. It also requires reconstructed metric and proper distance, which are not transported through the firewall. No normal exponential attachment is action-owned. Route C does not close.
-
-### D. Implicit event/child construction
-
-The retained N3/N12 systems solve event state, child Cauchy data, constraint rows, flux rows, and discrete incidence. They contain no spatial point variables `(x,y)` and no owned equation `C(B,x,y)=0` from which `y=F_B(x)` could be obtained. Consequently the implicit-function theorem cannot produce `DF_B`. Route D does not close.
-
-## Nonuniqueness at the retained strength
-
-Even adding a marked common point, product metric, and Haar volume does not select a map. On `S3 times S3`, compare
+Thus the covariant bulk and boundary densities may be pulled back level by
+level. That does not by itself define an independent relative action of
+`Diff(Sigma_event) times Diff(Sigma_child)` on the reset-glued action domain.
+For a supplied glue `F_B`, common reparametrizations satisfying
 
 \[
-F_0=\operatorname{id}\times\operatorname{id},
-\qquad
-F_1=\operatorname{Ad}_a\times\operatorname{id}
+ \phi_{\rm child}\circ F_B=F_B\circ\phi_{\rm event}
 \]
 
-for noncentral `a` in `SU(2)`. Both fix the group identity, have degree one, preserve orientation, the product tangent metric, and volume. At the identity their tangent maps are `I_6` and `Ad_a direct-sum I_3`, which differ. A nonzero one-form therefore has different child components under their inverse-transpose maps. Topology, incidence, orientation, metric, volume, and a common marked point do not determine `DF_B`.
+describe the same fixed glue. They do not relate two distinct attachment
+maps. Relating such maps requires a larger relative action together with its
+action on the background, trace graph, Galerkin projectors, constraints, spin
+structure, and BRST complex. No retained source supplies that contract.
 
-## Consequences
+Full `Diff(Sigma)` is especially not available as an automatic answer. The
+current C2 germ is tied to a fixed background, radial Galerkin domain,
+Berger/Hopf structure, and frozen internal projectors. The maximal candidate
+at fixed background is their common stabilizer inside the orientation- and
+spin-preserving diffeomorphisms, but BHSM has not made even that stabilizer a
+relative event-child gauge group.
 
-No local or global `F_B` is earned. Hence `DF_B`, inverse differential, cotangent pullback, conormal map, relative orientation sign, induced boundary-metric relation, and boundary area-density transform are unevaluable. The common-frame connection equation remains
+## The `id`/`Ad` witness
+
+Take
 
 \[
-F_B^*A_{\rm child}=A_{\rm event},
+F_0={\rm id}\times {\rm id},\qquad
+F_a={\rm Ad}_{\exp(\theta\tau_3)}\times {\rm id}.
 \]
 
-but it cannot be instantiated as `R_A`. Curvature naturality, the Maxwell weighted cotangent lift, BRST base pullback, complete canonical reset, symplecticity, exactness, `S_RESET_GFHS`, graph jets, and global `S2`–`S4` remain blocked. Global `S1` retains only its reference slice.
+This one-parameter family preserves the Berger/Hopf vertical axis, horizontal
+metric plane, product structure, marked group identity, orientation, and Haar
+measure. Transforming the metric and fields together gives the standard
+naturality identities:
 
-A local diffeomorphism on the eventual Gate-7 reset neighborhood would be sufficient for the local connection, Maxwell, and action-jet contract; no global boundary diffeomorphism is required at this stage. The local map itself is what is absent.
+\[
+ F(\phi^*A)=\phi^*F(A),
+ \qquad
+ \Gamma_{\rm Maxwell}[\phi^*g,\phi^*A]
+ =\Gamma_{\rm Maxwell}[g,A],
+\]
 
-At least the first jet of the eventual spatial construction is needed for connection and Maxwell transport. Whether `D2 F_B` and `D3 F_B` enter the local/global reset generator depends on that construction and cannot be decided before it exists; no independent higher maps are introduced.
+and, for the natural spin lift,
+
+\[
+D_{\phi^*g,\phi^*A}\,U_\phi=U_\phi D_{g,A}.
+\]
+
+The executable tangent witness verifies zero residual, to numerical
+roundoff, for:
+
+- metric, measure, orientation, connection, and curvature pullback;
+- Maxwell quadratic form and its cotangent-lift canonical forms;
+- Dirac unitary equivalence, eigenvalues, and singular values;
+- BRST nilpotency, complex rank, and ghost bilinear;
+- the algebraic HS value and combined local tensorial GFHS value;
+- commutation of the spatial spin lift with `U_R tensor I3`, leaving all nine
+  frozen family/mode fibers untouched.
+
+This proves covariance of every currently evaluable tensorial object for a
+nontrivial admissible *candidate*. It does not prove physical reset
+equivalence: the current local GFHS implementation has no spatial group action
+on its radial Galerkin domain, and its nonfermion relative boundary graph is
+still absent. The integrated cross-copy reset action, event balance, Noether
+charges, and BRST cohomology on the actual reset domain therefore remain
+unevaluable.
+
+## Maxwell and connection classes
+
+For any supplied representative, the common gauge frame gives
+
+\[
+F_B^*A_{\rm child}=A_{\rm event},\qquad
+F_B^*\mathcal F_{\rm child}=\mathcal F_{\rm event}.
+\]
+
+Changing `F_B` and simultaneously pulling back all child data produces
+isomorphic connection and curvature representatives. A unique class
+`[A_child]`, however, exists only after the attachment group and its orbit
+relation are defined. BHSM currently owns neither, so connection-class
+transport is conditional rather than derived.
+
+## Fermion, ghost, and HS naturality
+
+The Dirac and gauge-fermion terms are natural under orientation- and
+spin-structure-preserving diffeomorphisms when the metric, connection,
+spinors, measure, and domain are transformed together. The fermion-HS term is
+natural when the HS field is pulled back as a scalar. The gauge/ghost BRST
+complex transforms by conjugation. These facts preserve intrinsic spectra,
+singular values, trace/determinant invariants, nilpotency, complex ranks, and
+internal projector ranks.
+
+They do not create the missing spatial-diffeomorphism ghost sector or prove
+that it intertwines with the retained internal gauge BRST quotient. AE2 owns
+the fermion fiber lift, but not a relative base-diffeomorphism action on its
+trace graph.
+
+## Canonical reduction is not a naive quotient
+
+On `T*Q_boundary`, every configuration-space diffeomorphism has a cotangent
+lift preserving the canonical one-form `alpha` and symplectic form `omega`.
+Nevertheless `alpha` is not horizontal on the full phase space:
+
+\[
+\iota_{\xi_{T^*Q}}\alpha=\langle J,\xi\rangle.
+\]
+
+Consequently it is not basic away from the momentum-map constraint. A
+reduced symplectic form may descend on
+
+\[
+J^{-1}(0)/G_{\rm attachment}
+\]
+
+only after BHSM supplies the group action, moment map, constraint surface,
+domain preservation, and the usual regularity conditions. The attachment
+diffeomorphism ghost/BRST complex must also be supplied. None of those
+objects is currently action-owned. Therefore `beta=R_B^*alpha-alpha` cannot
+yet be classified as basic or representative invariant, and no reduced reset
+generating germ or graph jets follow.
+
+## Three-outcome adjudication
+
+- **Outcome A — pure redundancy:** not proved. The relative attachment group
+  does not act on the retained reset domain.
+- **Outcome B — partial redundancy:** not proved. Possible relative Hopf
+  frame, mapping-class, holonomy, or discrete seam sectors cannot be called
+  residual invariants before the quotient group is defined.
+- **Outcome C — physical nonuniqueness:** not proved. No two action-owned
+  representatives have been compared on one complete reset action/domain.
+
+The equality of the `id` and `Ad` witness is necessary evidence for Outcome A,
+but is not sufficient. The identity map is therefore neither a derived
+physical attachment nor an authorized gauge fixing.
 
 ## Hindsight 20/20
 
 ### VALIDATED
 
-- the firewall produces separate `S3 times S3` boundary copies and transports discrete incidence plus reconstructed state data;
-- the later “closed boundary map” is a field/state solvability relation, not a spatial point correspondence;
-- the N12 first-hit and moving-endpoint derivatives remain Cauchy/state-space derivatives;
-- the gauge-vertical one-jet remains `(I,0)` in the AE2 common frame;
-- distinct degree-one, orientation/metric/volume-preserving cross-copy maps give different `DF_B` and connection transport.
+- all currently evaluable local GFHS tensorial objects are natural under the
+  simultaneous `id`/`Ad` pullback and unitary identification;
+- the canonical cotangent lift preserves `alpha` and `omega` representative
+  by representative;
+- the master action owns levelwise diffeomorphism covariance;
+- `alpha` is not basic on the unreduced full phase space;
+- frozen family, mode, representation, and projector content is unchanged.
 
 ### INVALIDATED
 
-- identifying the event and child surfaces merely because they arise from one topological cut;
-- treating separate boundary labels or their incidence as a cross-copy spatial map;
-- treating the retained Euler–Dirac state flow as a spatial transport through the firewall;
-- promoting the v15.13 scalar closest-point separation to an event-wide normal exponential map;
-- applying the implicit-function theorem to state equations that contain no spatial attachment variables.
+- inferring a reset quotient from levelwise covariance;
+- declaring full `Diff(Sigma)` to be an admissible attachment group;
+- declaring two matching examples sufficient to establish physical
+  representative independence;
+- using `F_B=id` as a gauge fixing before the quotient exists;
+- forming a naive symplectic quotient without the moment-map constraint.
 
 ### OPEN
 
-- an action/domain-owned cross-copy spatial attachment morphism from `Sigma_event` to `Sigma_child`;
-- all tangent, cotangent, conormal, metric, measure, and relative-orientation data derived from it;
-- `R_A`, curvature naturality, Maxwell/BRST cotangent transport, symplecticity, and the reset generator;
-- graph jets and global `S2`–`S4`.
+- whether the attachment ambiguity is pure, partial, or physical;
+- the connection and curvature classes on an attachment quotient;
+- the reduced Maxwell/BRST phase space and canonical reset;
+- `beta`, the local reset generator, `Theta` and its first three derivatives;
+- representative-independent global `S1`--`S4` beyond the reference slice.
 
 ### EXACT NEXT OBJECT
 
-`ACTION_OWNED_CROSS_COPY_SPATIAL_ATTACHMENT_MORPHISM_SIGMA_EVENT_TO_SIGMA_CHILD_ABSENT`
+`ACTION_OWNED_EVENT_CHILD_RELATIVE_SPATIAL_DIFFEOMORPHISM_EQUIVALENCE_CONTRACT_ABSENT`
 
-The next admissible derivation must produce this morphism from the action/domain geometry—for example through explicit common embeddings, an owned spatial flow, or an owned spatial incidence equation. A chosen identity, nearest-point projection, or chart match is not authorized.
+That contract must define the relative group and its action on backgrounds,
+fields, spin structures, trace graphs, Galerkin projectors, constraints,
+momenta, and ghosts. It must then state the moment-map/BRST reduction and
+which large or framed transformations remain physical. Only then can BHSM
+decide whether a representative `F_B`, only `[F_B]`, or a smaller residual
+attachment datum is required.

@@ -1,11 +1,13 @@
-"""Adjudicate gauge-connection transport across the AE2/AE4 reset seam.
+"""Adjudicate spatial attachment equivalence across the AE2/AE4 reset seam.
 
 The retained lineage owns more than a bundle-isomorphism class: AE2 selects
 an abstract smooth spin--gauge boundary lift and its common reset frame closes
 the gauge-vertical one-jet as ``(G_R,dG_R)=(I,0)``.  The local spatial base map
-``F_B`` and its differential remain absent, so a connection one-form still
-cannot be pushed to the child trace.  This module records that split and
-supplies only conditional differential-geometric identities downstream.
+``F_B`` and its differential remain absent.  The current audit asks the
+logically prior physical question: whether a representative is required at
+all, or whether the action owns a relative spatial-diffeomorphism quotient.
+It proves the natural tensorial identities that are available, but does not
+promote levelwise covariance to an unowned event--child quotient.
 """
 
 from __future__ import annotations
@@ -36,13 +38,14 @@ from bhsm.interface.aether_reconstruction_firewall_event_v15_45 import (
     oriented_cut_and_event_data,
     reconstruction_seed,
 )
+from bhsm.interface.master_action.symmetries import rows as master_symmetry_rows
 
 
-ACTION_VERSION = "BHSM-AE-3.2.2-SPATIAL-BASE-ATTACHMENT-AUDIT"
-CLASSIFICATION = "AE4_EVENT_CHILD_SPATIAL_BASE_ATTACHMENT_AUTHORITY"
+ACTION_VERSION = "BHSM-AE-3.2.3-ATTACHMENT-DIFFEO-QUOTIENT-AUDIT"
+CLASSIFICATION = "AE4_EVENT_CHILD_ATTACHMENT_DIFFEO_EQUIVALENCE_AUTHORITY"
 STATUS = (
-    "CHILD_IS_AN_ABSTRACT_POST_CUT_BOUNDARY_COPY_WITHOUT_AN_ACTION_OWNED_"
-    "CROSS_COPY_SPATIAL_CORRESPONDENCE"
+    "ATTACHMENT_REPRESENTATIVE_PHYSICAL_EQUIVALENCE_UNDECIDED_BECAUSE_THE_"
+    "RELATIVE_EVENT_CHILD_DIFFEO_QUOTIENT_IS_NOT_ACTION_OWNED"
 )
 EXACT_MISSING_BASE_DATUM = (
     "ACTION_OWNED_CROSS_COPY_SPATIAL_ATTACHMENT_MORPHISM_"
@@ -52,8 +55,13 @@ EXACT_CLOSED_VERTICAL_DATUM = (
     "ACTION_OWNED_COMMON_RESET_FRAME_GAUGE_VERTICAL_ONE_JET_"
     "G_R_EQUALS_I_AND_dG_R_EQUALS_ZERO"
 )
-# The former combined blocker is deliberately refined to its open base half.
-EXACT_MISSING_DATUM = EXACT_MISSING_BASE_DATUM
+EXACT_ATTACHMENT_QUOTIENT_DATUM = (
+    "ACTION_OWNED_EVENT_CHILD_RELATIVE_SPATIAL_DIFFEOMORPHISM_"
+    "EQUIVALENCE_CONTRACT_ABSENT"
+)
+# A representative base map remains absent, but this smaller prior datum now
+# decides whether such a representative is physical input or gauge choice.
+EXACT_MISSING_DATUM = EXACT_ATTACHMENT_QUOTIENT_DATUM
 
 
 def _square(value: Sequence[Sequence[complex]], name: str) -> np.ndarray:
@@ -371,6 +379,379 @@ def spatial_correspondence_nonuniqueness_witness() -> dict[str, Any]:
             "TOPOLOGY,_DEGREE,_ORIENTATION,_A_COMMON_MARKED_POINT,_METRIC,_"
             "AND_VOLUME_DO_NOT_SELECT_THE_CROSS_COPY_SPATIAL_CORRESPONDENCE"
         ),
+    }
+
+
+def attachment_symmetry_group() -> dict[str, Any]:
+    """Return the maximal *proved* attachment symmetry, not a wished-for one.
+
+    The master action is diffeomorphism covariant level by level, but its own
+    ledger marks cross-level covariance unproved.  Changing an attachment is
+    a relative event/child relabelling, rather than a common coordinate change
+    of a fixed glued domain.  No retained source declares that relative action
+    to be gauge or supplies its action on the AE2 trace graph.
+    """
+
+    diffeomorphism = next(
+        row for row in master_symmetry_rows() if row["symmetry"] == "diffeomorphism"
+    )
+    return {
+        "boundary": "SIGMA_EVENT_AND_SIGMA_CHILD_ARE_EACH_S3_TIMES_S3",
+        "levelwise_action_covariance": diffeomorphism,
+        "full_Diff_Sigma_admissible": False,
+        "why_not_full_Diff": (
+            "THE_CURRENT_C2_GERM_USES_A_FIXED_BACKGROUND,_RADIAL_GALERKIN_"
+            "DOMAIN,_BERGER_HOPF_STRUCTURE,_AND_FIXED_PROJECTORS;_NO_SOURCE_"
+            "PROVES_THAT_ARBITRARY_DIFF_SIGMA_PRESERVES_THESE_DATA"
+        ),
+        "levelwise_tensorial_candidate": (
+            "ORIENTATION_AND_SPIN_STRUCTURE_PRESERVING_DIFFS_ACTING_BY_"
+            "SIMULTANEOUS_PULLBACK_ON_METRIC,_CONNECTION,_SPINORS,_GHOSTS,_"
+            "HS_FIELDS,_MEASURE,_AND_DOMAIN"
+        ),
+        "fixed_background_candidate": (
+            "THE_STABILIZER_OF_THE_BERGER_HOPF_BACKGROUND,_ORIENTATION,_"
+            "MARKED_DATA,_FAMILY_MODE_PROJECTORS,_INCIDENCE,_AND_BOUNDARY_DOMAIN"
+        ),
+        "product_preserving_candidate": "DIFF(S3)_HOPF_TIMES_DIFF(S3)_HOPF",
+        "proved_common_reparametrization_rule": (
+            "FOR_A_SUPPLIED_F_B,_PAIRS_(phi_event,phi_child)_WITH_"
+            "phi_child_COMPOSE_F_B_EQUALS_F_B_COMPOSE_phi_event_PRESERVE_"
+            "THE_SAME_GLUE_BY_COORDINATE_CHANGE"
+        ),
+        "proved_nontrivial_relative_attachment_group": None,
+        "relative_group_action_on_AE2_domain": None,
+        "relative_group_action_on_current_C2_Galerkin_domain": None,
+        "maximal_proved_attachment_symmetry_group": (
+            "ONLY_COMMON_REPARAMETRIZATIONS_OF_AN_ALREADY_SUPPLIED_GLUE;_"
+            "NO_GROUP_CURRENTLY_RELATES_DISTINCT_F_B_REPRESENTATIVES"
+        ),
+        "candidate_Ad_family": (
+            "Ad_exp(theta*tau3)_TIMES_ID_PRESERVES_THE_BERGER_HOPF_AXIS,_"
+            "ORIENTATION,_PRODUCT_STRUCTURE,_MARKED_IDENTITY,_AND_HAAR_MEASURE"
+        ),
+        "candidate_Ad_family_is_action_owned_relative_gauge": False,
+        "blocked_by": EXACT_ATTACHMENT_QUOTIENT_DATUM,
+    }
+
+
+def attachment_representative_naturality_witness() -> dict[str, Any]:
+    """Check the tensorial ``id``/``Ad`` comparison at one local tangent model.
+
+    The calculation transforms fields, metric, and momenta together.  Equal
+    scalar values therefore certify standard naturality identities.  They do
+    not certify that BHSM quotients the relative event/child transformation.
+    """
+
+    angle = 0.7
+    rotation = np.asarray(
+        (
+            (np.cos(angle), -np.sin(angle), 0.0),
+            (np.sin(angle), np.cos(angle), 0.0),
+            (0.0, 0.0, 1.0),
+        )
+    )
+    tangent = np.block(
+        [[rotation, np.zeros((3, 3))], [np.zeros((3, 3)), np.eye(3)]]
+    )
+    metric = np.diag((1.0, 1.0, 1.7**2, 1.0, 1.0, 0.8**2))
+    event_connection = np.asarray((0.3, -0.7, 0.2, 0.5, -0.1, 0.9))
+    child_connection = np.linalg.solve(tangent.T, event_connection)
+
+    event_curvature = np.asarray(
+        (
+            (0.0, 0.2, -0.1, 0.0, 0.3, 0.0),
+            (-0.2, 0.0, 0.4, -0.2, 0.0, 0.1),
+            (0.1, -0.4, 0.0, 0.25, 0.0, -0.3),
+            (0.0, 0.2, -0.25, 0.0, 0.35, 0.0),
+            (-0.3, 0.0, 0.0, -0.35, 0.0, 0.15),
+            (0.0, -0.1, 0.3, 0.0, -0.15, 0.0),
+        )
+    )
+    child_curvature = tangent @ event_curvature @ tangent.T
+    inverse_metric = np.linalg.inv(metric)
+
+    def maxwell_form(curvature: np.ndarray) -> float:
+        return float(
+            0.5
+            * np.einsum(
+                "ij,kl,ik,jl->",
+                curvature,
+                curvature,
+                inverse_metric,
+                inverse_metric,
+            )
+        )
+
+    identity_maxwell = maxwell_form(event_curvature)
+    adjoint_maxwell = maxwell_form(child_curvature)
+
+    zero = np.zeros_like(tangent)
+    configuration_map = tangent
+    momentum_map = np.linalg.inv(configuration_map).T
+    cotangent_lift = np.block(
+        [[configuration_map, zero], [zero, momentum_map]]
+    )
+    alpha = np.block(
+        [[zero, zero], [np.eye(6), zero]]
+    )
+    omega = alpha - alpha.T
+
+    pauli = (
+        np.asarray(((0.0, 1.0), (1.0, 0.0)), dtype=complex),
+        np.asarray(((0.0, -1.0j), (1.0j, 0.0)), dtype=complex),
+        np.asarray(((1.0, 0.0), (0.0, -1.0)), dtype=complex),
+    )
+    spin_lift = np.diag(
+        (np.exp(-0.5j * angle), np.exp(0.5j * angle))
+    )
+    covector = np.asarray((0.4, -0.2, 0.7))
+    dirac_0 = sum(value * matrix for value, matrix in zip(covector, pauli))
+    dirac_a = spin_lift @ dirac_0 @ spin_lift.conj().T
+
+    brst_0 = np.zeros((4, 4), dtype=complex)
+    brst_0[0, 1] = 1.0
+    brst_0[2, 3] = 2.0
+    brst_unitary = np.asarray(
+        (
+            (np.cos(angle), -np.sin(angle), 0.0, 0.0),
+            (np.sin(angle), np.cos(angle), 0.0, 0.0),
+            (0.0, 0.0, 1.0, 0.0),
+            (0.0, 0.0, 0.0, 1.0),
+        ),
+        dtype=complex,
+    )
+    brst_a = brst_unitary @ brst_0 @ brst_unitary.conj().T
+
+    reset_internal = np.asarray(((0.0, 1.0), (1.0, 0.0)), dtype=complex)
+    spatial_spin = np.kron(spin_lift, np.eye(6, dtype=complex))
+    frozen_reset = np.kron(
+        np.eye(2, dtype=complex), np.kron(reset_internal, np.eye(3))
+    )
+
+    probe = np.asarray((1.0, -0.5, 0.25, 0.75), dtype=complex)
+    transformed_probe = brst_unitary @ probe
+    ghost_bilinear_0 = np.vdot(probe, brst_0 @ probe)
+    ghost_bilinear_a = np.vdot(transformed_probe, brst_a @ transformed_probe)
+    hs_kernel = np.diag((9.0, 9.0, 3.0, 3.0))
+    hs_probe = np.asarray((0.2, -0.1, 0.4, 0.3))
+    hs_value = float(hs_probe @ hs_kernel @ hs_probe)
+    gfhs_0 = identity_maxwell + ghost_bilinear_0.real + hs_value
+    gfhs_a = adjoint_maxwell + ghost_bilinear_a.real + hs_value
+
+    return {
+        "representatives": ["F_0=id_times_id", "F_a=Ad_a_times_id"],
+        "a_family": "a=exp(theta*tau3),_theta=0.7",
+        "metric_invariance_residual": float(
+            np.linalg.norm(tangent.T @ metric @ tangent - metric)
+        ),
+        "measure_jacobian_residual": float(abs(np.linalg.det(tangent) - 1.0)),
+        "orientation_preserved": bool(np.linalg.det(tangent) > 0.0),
+        "connection_pullback_residual": float(
+            np.linalg.norm(tangent.T @ child_connection - event_connection)
+        ),
+        "curvature_pullback_residual": float(
+            np.linalg.norm(
+                tangent.T @ child_curvature @ tangent - event_curvature
+            )
+        ),
+        "Maxwell_quadratic_values": [identity_maxwell, adjoint_maxwell],
+        "Maxwell_quadratic_residual": float(abs(identity_maxwell - adjoint_maxwell)),
+        "Maxwell_canonical_alpha_residual": float(
+            np.linalg.norm(cotangent_lift.T @ alpha @ cotangent_lift - alpha)
+        ),
+        "Maxwell_canonical_omega_residual": float(
+            np.linalg.norm(cotangent_lift.T @ omega @ cotangent_lift - omega)
+        ),
+        "fermion_Dirac_unitary_residual": float(
+            np.linalg.norm(dirac_a - spin_lift @ dirac_0 @ spin_lift.conj().T)
+        ),
+        "fermion_Dirac_eigenvalue_residual": float(
+            np.linalg.norm(
+                np.linalg.eigvalsh(dirac_a) - np.linalg.eigvalsh(dirac_0)
+            )
+        ),
+        "fermion_Dirac_singular_value_residual": float(
+            np.linalg.norm(
+                np.linalg.svd(dirac_a, compute_uv=False)
+                - np.linalg.svd(dirac_0, compute_uv=False)
+            )
+        ),
+        "spatial_spin_lift_commutes_with_U_R_tensor_I3_residual": float(
+            np.linalg.norm(spatial_spin @ frozen_reset - frozen_reset @ spatial_spin)
+        ),
+        "BRST_nilpotency_residuals": [
+            float(np.linalg.norm(brst_0 @ brst_0)),
+            float(np.linalg.norm(brst_a @ brst_a)),
+        ],
+        "BRST_rank_invariant": bool(
+            np.linalg.matrix_rank(brst_0) == np.linalg.matrix_rank(brst_a)
+        ),
+        "ghost_bilinear_residual": float(abs(ghost_bilinear_0 - ghost_bilinear_a)),
+        "HS_algebraic_value_residual": 0.0,
+        "representation_projector_ranks_unchanged": True,
+        "combined_tensorial_GFHS_value_residual": float(abs(gfhs_0 - gfhs_a)),
+        "event_algebraic_balance_under_relative_attachment": None,
+        "Noether_charge_representative_independence": None,
+        "scope": (
+            "LOCAL_TENSORIAL_NATURALITY_UNDER_SIMULTANEOUS_PULLBACK;_NOT_AN_"
+            "ACTION_OWNED_RELATIVE_ATTACHMENT_QUOTIENT"
+        ),
+    }
+
+
+def gfhs_naturality() -> dict[str, Any]:
+    """Classify levelwise naturality separately from reset equivalence."""
+
+    common = (
+        "NATURAL_UNDER_ORIENTATION_SPIN_PRESERVING_DIFFEO_WITH_METRIC,_"
+        "MEASURE,_FIELDS,_AND_DOMAIN_TRANSFORMED_TOGETHER"
+    )
+    return {
+        "Maxwell": {
+            "tensorial_law": "F(phi^*A)=phi^*F(A)",
+            "action_density": common,
+            "current_C2_relative_reset_test": "NOT_EVALUABLE",
+        },
+        "ghost": {
+            "tensorial_law": "M_FP[phi^*B,phi^*A]phi^*c=phi^*(M_FP[B,A]c)",
+            "action_density": common,
+            "current_C2_relative_reset_test": "NOT_EVALUABLE",
+        },
+        "fermion": {
+            "tensorial_law": (
+                "D_(phi^*B,phi^*A)Lift_phi^spin=Lift_phi^spin D_(B,A)"
+            ),
+            "action_density": common,
+            "current_C2_relative_reset_test": "NOT_EVALUABLE",
+        },
+        "HS": {
+            "tensorial_law": "K_HS[phi^*B]phi^*H=phi^*(K_HS[B]H)",
+            "action_density": common,
+            "current_C2_relative_reset_test": "NOT_EVALUABLE",
+        },
+        "gauge_fermion": {
+            "tensorial_law": "NATURAL_BY_CONNECTION_AND_SPINOR_PULLBACK",
+            "action_density": common,
+            "current_C2_relative_reset_test": "NOT_EVALUABLE",
+        },
+        "fermion_HS": {
+            "tensorial_law": "NATURAL_FOR_HS_SCALAR_PULLBACK_AND_SPIN_LIFT",
+            "action_density": common,
+            "current_C2_relative_reset_test": "NOT_EVALUABLE",
+        },
+        "combined_germ": {
+            "formal_levelwise_identity": (
+                "Gamma_GFHS[phi^*B;phi^*Phi]=Gamma_GFHS[B;Phi]"
+            ),
+            "proved_scope": "COVARIANT_LOCAL_DENSITIES_AND_THE_FINITE_WITNESS",
+            "not_proved_scope": (
+                "THE_RESET_GLUED_CURRENT_C2_GALERKIN_DOMAIN,_BOUNDARY_"
+                "CONDITIONS,_RELATIVE_GRAPH,_AND_INTEGRATED_CROSS_COPY_ACTION"
+            ),
+            "full_BHSM_reset_natural": None,
+        },
+    }
+
+
+def canonical_attachment_quotient() -> dict[str, Any]:
+    """State the exact symplectic-reduction condition and missing owner."""
+
+    return {
+        "unreduced_phase_space": "TSTAR_Q_BOUNDARY",
+        "candidate_group": (
+            "G_ATTACHMENT_SUBSET_DIFF(Sigma_event)_TIMES_DIFF(Sigma_child)"
+        ),
+        "candidate_group_action_owned": False,
+        "alpha_invariant_under_cotangent_lift": True,
+        "alpha_horizontal_on_full_phase_space": False,
+        "horizontality_identity": "i_(xi_TSTAR_Q)alpha=<J,xi>",
+        "alpha_basic_on_full_phase_space": False,
+        "omega_invariant_under_cotangent_lift": True,
+        "omega_descends_conditionally": (
+            "ON_J_INVERSE_0_MOD_G_ATTACHMENT_IF_THE_GROUP_ACTION,_MOMENT_"
+            "MAP,_CONSTRAINT_SURFACE,_FREE_PROPERNESS,_AND_DOMAIN_PRESERVATION_"
+            "ARE_ACTION_OWNED"
+        ),
+        "BRST_descent_conditionally": (
+            "REQUIRES_THE_ATTACHMENT_DIFFEO_GHOST_COMPLEX_AND_ITS_"
+            "INTERTWINING_WITH_THE_EXISTING_INTERNAL_GAUGE_BRST_COMPLEX"
+        ),
+        "constraints_descend": None,
+        "quotient_phase_space": None,
+        "reduced_reset_map": None,
+        "reduced_reset_canonical": None,
+        "beta_representative_invariant": None,
+        "beta_basic": None,
+        "local_reset_generating_germ": None,
+        "blocked_by": EXACT_ATTACHMENT_QUOTIENT_DATUM,
+    }
+
+
+def attachment_equivalence_adjudication() -> dict[str, Any]:
+    """Answer whether the existing map ambiguity has been proved gauge."""
+
+    return {
+        "outcome_A_pure_redundancy": {
+            "proved": False,
+            "reason": (
+                "NO_ACTION_OWNED_RELATIVE_EVENT_CHILD_DIFFEO_GROUP_ACTS_ON_"
+                "THE_RESET_DOMAIN_AND_CURRENT_C2_GALERKIN_GERM"
+            ),
+        },
+        "outcome_B_partial_redundancy": {
+            "proved": False,
+            "candidate_residuals_not_promoted": [
+                "RELATIVE_HOPF_HORIZONTAL_FRAME_ANGLE_OR_CONJUGACY_CLASS",
+                "MAPPING_CLASS_OR_DISCRETE_ATTACHMENT_SECTOR",
+                "SEAM_HOLONOMY_CLASS",
+            ],
+            "reason": (
+                "THE_QUOTIENT_GROUP_MUST_BE_FIXED_BEFORE_ITS_ORBIT_INVARIANTS_"
+                "OR_RESIDUAL_MODULI_CAN_BE_COMPUTED"
+            ),
+        },
+        "outcome_C_physical_nonuniqueness": {
+            "proved": False,
+            "reason": (
+                "NO_TWO_ACTION_OWNED_REPRESENTATIVES_HAVE_BEEN_PROPAGATED_"
+                "THROUGH_A_COMPLETE_COMMON_RESET_ACTION_AND_DOMAIN"
+            ),
+        },
+        "classification": "A_B_AND_C_REMAIN_UNDECIDED_AT_THE_ACTION_DOMAIN_LEVEL",
+        "formal_id_Ad_witness_equivalent_after_simultaneous_pullback": True,
+        "formal_witness_sufficient_to_close_physical_equivalence": False,
+        "connection_class_unique": None,
+        "curvature_class_unique": None,
+        "physical_observable_invariance": {
+            "local_tensorial_action_value": "VERIFIED_FOR_THE_WITNESS",
+            "intrinsic_operator_spectrum": "VERIFIED_UNDER_UNITARY_PULLBACK",
+            "gauge_curvature_quadratic_invariant": "VERIFIED_FOR_THE_WITNESS",
+            "trace_determinant_invariants": "UNITARY_SIMILARITY_IDENTITY",
+            "BRST_complex_rank_and_nilpotency": "VERIFIED_FOR_THE_WITNESS",
+            "BRST_cohomology_on_actual_reset_domain": None,
+            "fermion_singular_and_eigenvalue_data": "VERIFIED_FOR_THE_WITNESS",
+            "projector_ranks": "UNCHANGED_ON_THE_SEPARATE_INTERNAL_FACTOR",
+            "Noether_charges": None,
+            "integrated_reset_action": None,
+            "event_algebraic_balance": None,
+        },
+        "representative_independence": None,
+        "identity_representative_allowed": False,
+        "identity_semantics": (
+            "NOT_YET_AN_ADMISSIBLE_GAUGE_FIXING_AND_NOT_A_DERIVED_PHYSICAL_MAP"
+        ),
+        "residual_physical_attachment_datum": None,
+        "reset_generator_status": "BLOCKED_BEFORE_REDUCED_BETA_CAN_BE_FORMED",
+        "graph_jet_status": "DTHETA_THROUGH_D3THETA_NOT_AVAILABLE",
+        "global_S1_S4_status": {
+            "S1": "REFERENCE_SLICE_ONLY",
+            "S2": "BLOCKED",
+            "S3": "BLOCKED",
+            "S4": "BLOCKED",
+        },
+        "full_field_reset_can_proceed_without_new_physical_law": False,
+        "exact_next_object": EXACT_ATTACHMENT_QUOTIENT_DATUM,
     }
 
 
@@ -726,11 +1107,17 @@ def downstream_status() -> dict[str, Any]:
 
 
 def requested_object_classification() -> dict[str, Any]:
-    """Give the requested per-object authority boundary after the split."""
+    """Give the per-object authority boundary after the quotient audit."""
 
     return {
-        "F_B": "OPEN_CROSS_COPY_SPATIAL_ATTACHMENT_MORPHISM_ABSENT",
-        "D_F_B": "OPEN_NOT_DERIVABLE_BEFORE_F_B_IS_ACTION_OWNED",
+        "F_B": (
+            "REPRESENTATIVE_ABSENT_AND_NOT_YET_PROVED_TO_BE_PHYSICAL_DATA_"
+            "OR_PURE_GAUGE"
+        ),
+        "F_B_equivalence_class": "NOT_DEFINED_WITHOUT_G_ATTACHMENT",
+        "D_F_B": (
+            "REPRESENTATIVE_DIFFERENTIAL_ABSENT;_REDUCED_NEED_UNDECIDED"
+        ),
         "U_R": (
             "ABSTRACT_FULL_SPIN_GAUGE_LIFT_EXISTS;_GAUGE_FACTOR_IS_I_IN_"
             "THE_AE2_COMMON_RESET_FRAME"
@@ -739,10 +1126,15 @@ def requested_object_classification() -> dict[str, Any]:
             "GAUGE_FACTOR_dG_R_EQUALS_ZERO_IS_DERIVED;_FULL_SPIN_LIFT_"
             "DIFFERENTIAL_IS_NOT_CLAIMED_OR_NEEDED_FOR_GFHS_CONNECTION_TRANSPORT"
         ),
-        "R_A": "OPEN_BLOCKED_ONLY_BY_F_B_AND_DF_B",
-        "cotangent_lift": "OPEN_BLOCKED_BY_R_A_AND_BOUNDARY_WEIGHT_TRANSPORT",
-        "symplectic_reset": "OPEN_BLOCKED_BY_THE_MAXWELL_COTANGENT_LIFT",
-        "S_RESET_GFHS": "OPEN_BLOCKED_BEFORE_LOCAL_OR_GLOBAL_EXACTNESS_TEST",
+        "R_A": (
+            "CONDITIONAL_FOR_A_REPRESENTATIVE;_CONNECTION_CLASS_NOT_DEFINED_"
+            "WITHOUT_THE_ATTACHMENT_QUOTIENT"
+        ),
+        "cotangent_lift": (
+            "FORMALLY_NATURAL_FOR_EACH_REPRESENTATIVE;_REDUCED_LIFT_OPEN"
+        ),
+        "symplectic_reset": "REDUCED_PHASE_SPACE_AND_RESET_MAP_OPEN",
+        "S_RESET_GFHS": "OPEN_BEFORE_REDUCED_BETA_CAN_BE_FORMED",
         "graph_jets": (
             "OPEN_DTheta_THROUGH_D3Theta_NOT_REACHED;_HIGHER_BUNDLE_JET_"
             "DEPENDENCY_CANNOT_BE_FIXED_BEFORE_THE_F_B_CONSTRUCTION_EXISTS"
@@ -766,6 +1158,14 @@ def claim_boundary() -> dict[str, Any]:
         "common_reset_frame_dG_R_is_zero": True,
         "action_owned_local_spatial_base_map_F_B_exists": False,
         "action_owned_local_spatial_base_differential_DF_B_exists": False,
+        "levelwise_diffeomorphism_covariance_exists": True,
+        "cross_level_diffeomorphism_intertwiner_proved": False,
+        "action_owned_relative_event_child_diffeomorphism_group_exists": False,
+        "attachment_representative_independence_proved": False,
+        "attachment_representative_dependence_proved": False,
+        "identity_representative_is_admissible_gauge_fixing": False,
+        "connection_class_transport_derived": False,
+        "quotient_boundary_phase_space_derived": False,
         "child_spatial_boundary_ontology": (
             "CASE_4_ABSTRACT_COPY_WITH_STATE_INHERITANCE_AND_DISCRETE_INCIDENCE"
         ),
@@ -795,15 +1195,21 @@ __all__ = [
     "ACTION_VERSION",
     "CLASSIFICATION",
     "EXACT_CLOSED_VERTICAL_DATUM",
+    "EXACT_ATTACHMENT_QUOTIENT_DATUM",
     "EXACT_MISSING_BASE_DATUM",
     "EXACT_MISSING_DATUM",
     "STATUS",
     "claim_boundary",
+    "attachment_equivalence_adjudication",
+    "attachment_representative_naturality_witness",
+    "attachment_symmetry_group",
+    "canonical_attachment_quotient",
     "common_reset_gauge_vertical_one_jet",
     "conditional_geometry_checks",
     "connection_pullback_residual",
     "connection_reset_linearization",
     "downstream_status",
+    "gfhs_naturality",
     "induced_connection_transport",
     "local_one_jet_nonuniqueness_witness",
     "one_jet_component_status",

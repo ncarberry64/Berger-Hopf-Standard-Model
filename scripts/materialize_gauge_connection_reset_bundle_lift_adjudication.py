@@ -18,14 +18,20 @@ sys.path.insert(0, str(ROOT / "src"))
 from bhsm.interface.gauge_connection_reset_bundle_lift_adjudication import (  # noqa: E402
     ACTION_VERSION,
     CLASSIFICATION,
+    EXACT_ATTACHMENT_QUOTIENT_DATUM,
     EXACT_CLOSED_VERTICAL_DATUM,
     EXACT_MISSING_BASE_DATUM,
     EXACT_MISSING_DATUM,
     STATUS,
+    attachment_equivalence_adjudication,
+    attachment_representative_naturality_witness,
+    attachment_symmetry_group,
+    canonical_attachment_quotient,
     claim_boundary,
     common_reset_gauge_vertical_one_jet,
     conditional_geometry_checks,
     downstream_status,
+    gfhs_naturality,
     local_one_jet_nonuniqueness_witness,
     ownership_levels,
     one_jet_component_status,
@@ -115,6 +121,11 @@ def build_payload() -> dict[str, Any]:
     authority = spatial_base_attachment_authority()
     route_audit = spatial_base_route_audit()
     spatial_ambiguity = spatial_correspondence_nonuniqueness_witness()
+    symmetry = attachment_symmetry_group()
+    naturality_witness = attachment_representative_naturality_witness()
+    naturality = gfhs_naturality()
+    quotient = canonical_attachment_quotient()
+    equivalence = attachment_equivalence_adjudication()
     firewall_authority = json.loads(FIREWALL_AUTHORITY.read_text(encoding="utf-8"))
     claims = claim_boundary()
     source_paths = (
@@ -134,6 +145,11 @@ def build_payload() -> dict[str, Any]:
         "scripts/audit_n12_intrinsic_state_return_section.py",
         "scripts/derive_n12_reset_stratum_moving_endpoint_jets.py",
         "src/bhsm/interface/reset_boundary_generating_functional_adjudication.py",
+        "src/bhsm/interface/background_covariant_gfhs_operator_family.py",
+        "src/bhsm/interface/master_action/symmetries.py",
+        "src/bhsm/interface/master_action/fields.py",
+        "src/bhsm/interface/master_action/terms.py",
+        "src/bhsm/interface/master_action/measures.py",
         str(MODULE.relative_to(ROOT)).replace("\\", "/"),
         str(SCRIPT.relative_to(ROOT)).replace("\\", "/"),
         str(THEORY.relative_to(ROOT)).replace("\\", "/"),
@@ -160,7 +176,7 @@ def build_payload() -> dict[str, Any]:
         ],
         "missing_spatial_base_half_exposed": (
             not claims["evaluable_principal_bundle_lift_local_one_jet_exists"]
-            and claims["exact_missing_datum"] == EXACT_MISSING_BASE_DATUM
+            and authority["exact_next_object"] == EXACT_MISSING_BASE_DATUM
         ),
         "vertical_gauge_one_jet_closed_in_common_frame": (
             split["B_vertical_gauge_lift"]["status"] == "CLOSED"
@@ -204,6 +220,45 @@ def build_payload() -> dict[str, Any]:
             and spatial_ambiguity["tangent_maps_distinct"]
             and spatial_ambiguity["connection_components_can_differ"]
         ),
+        "master_ledger_cross_level_diffeomorphism_is_unproved": (
+            symmetry["levelwise_action_covariance"]["S8"] == "YES"
+            and symmetry["levelwise_action_covariance"]["S4_effective"] == "YES"
+            and symmetry["levelwise_action_covariance"]["cross_level"] == "UNPROVED"
+        ),
+        "full_Diff_not_silently_adopted": (
+            not symmetry["full_Diff_Sigma_admissible"]
+            and symmetry["proved_nontrivial_relative_attachment_group"] is None
+            and not symmetry["candidate_Ad_family_is_action_owned_relative_gauge"]
+        ),
+        "id_Ad_tensorial_naturality_verified": (
+            naturality_witness["metric_invariance_residual"] < 1.0e-12
+            and naturality_witness["measure_jacobian_residual"] < 1.0e-12
+            and naturality_witness["orientation_preserved"]
+            and naturality_witness["connection_pullback_residual"] < 1.0e-12
+            and naturality_witness["curvature_pullback_residual"] < 1.0e-12
+            and naturality_witness["Maxwell_quadratic_residual"] < 1.0e-12
+            and naturality_witness["fermion_Dirac_eigenvalue_residual"] < 1.0e-12
+            and naturality_witness["ghost_bilinear_residual"] < 1.0e-12
+            and naturality_witness["combined_tensorial_GFHS_value_residual"] < 1.0e-12
+        ),
+        "canonical_cotangent_naturality_verified_but_reduction_not_promoted": (
+            naturality_witness["Maxwell_canonical_alpha_residual"] < 1.0e-12
+            and naturality_witness["Maxwell_canonical_omega_residual"] < 1.0e-12
+            and quotient["alpha_invariant_under_cotangent_lift"]
+            and not quotient["alpha_basic_on_full_phase_space"]
+            and quotient["quotient_phase_space"] is None
+        ),
+        "all_three_physical_outcomes_left_unoverclaimed": (
+            not equivalence["outcome_A_pure_redundancy"]["proved"]
+            and not equivalence["outcome_B_partial_redundancy"]["proved"]
+            and not equivalence["outcome_C_physical_nonuniqueness"]["proved"]
+            and equivalence["representative_independence"] is None
+            and equivalence["residual_physical_attachment_datum"] is None
+        ),
+        "identity_not_used_as_gauge_fixing": (
+            not equivalence["identity_representative_allowed"]
+            and "NOT_YET" in equivalence["identity_semantics"]
+        ),
         "field_state_boundary_map_not_confused_with_spatial_map": (
             firewall_authority["firewall_core_child_ownership"][
                 "complete_retained_F_child"
@@ -228,11 +283,11 @@ def build_payload() -> dict[str, Any]:
             and downstream["S_RESET_GFHS"] is None
         ),
         "requested_objects_separately_classified": (
-            object_classification["F_B"].startswith("OPEN")
-            and object_classification["D_F_B"].startswith("OPEN")
+            "REPRESENTATIVE_ABSENT" in object_classification["F_B"]
+            and "ABSENT" in object_classification["D_F_B"]
             and "GAUGE_FACTOR_IS_I" in object_classification["U_R"]
             and "dG_R_EQUALS_ZERO" in object_classification["d_U_R"]
-            and object_classification["R_A"].startswith("OPEN")
+            and "CONDITIONAL" in object_classification["R_A"]
             and set(object_classification["global_S1_S4"]) == {"S1", "S2", "S3", "S4"}
         ),
         "HS_rank_zero_retained": (
@@ -252,6 +307,10 @@ def build_payload() -> dict[str, Any]:
             and not claims["physical_spectrum_derived"]
             and not claims["FULL_BHSM_COMPLETE"]
         ),
+        "exact_next_object_is_relative_diffeomorphism_contract": (
+            claims["exact_missing_datum"] == EXACT_ATTACHMENT_QUOTIENT_DATUM
+            and equivalence["exact_next_object"] == EXACT_ATTACHMENT_QUOTIENT_DATUM
+        ),
     }
     payload = {
         "artifact": "BHSM_GAUGE_CONNECTION_RESET_BUNDLE_LIFT_ADJUDICATION",
@@ -261,16 +320,47 @@ def build_payload() -> dict[str, Any]:
         **authority,
         "spatial_base_route_audit": route_audit,
         "spatial_correspondence_nonuniqueness": spatial_ambiguity,
+        "attachment_symmetry_group": symmetry,
+        "allowed_representatives": {
+            "formal_test_family": ["F_0=id_times_id", "F_a=Ad_a_times_id"],
+            "action_owned_physical_equivalence_class": None,
+            "reason": EXACT_ATTACHMENT_QUOTIENT_DATUM,
+        },
+        "nonuniqueness_witness": naturality_witness,
+        "GFHS_naturality": naturality["combined_germ"],
+        "Maxwell_naturality": naturality["Maxwell"],
+        "fermion_naturality": naturality["fermion"],
+        "BRST_naturality": naturality["ghost"],
+        "HS_naturality": naturality["HS"],
+        "gauge_fermion_naturality": naturality["gauge_fermion"],
+        "fermion_HS_naturality": naturality["fermion_HS"],
+        "canonical_form_naturality": {
+            "alpha_residual": naturality_witness["Maxwell_canonical_alpha_residual"],
+            "omega_residual": naturality_witness["Maxwell_canonical_omega_residual"],
+            "alpha_basic_on_full_phase_space": quotient["alpha_basic_on_full_phase_space"],
+            "conditional_reduction": quotient["omega_descends_conditionally"],
+        },
+        "physical_observable_invariance": equivalence["physical_observable_invariance"],
+        "quotient_phase_space": quotient,
+        "representative_independence": equivalence["representative_independence"],
+        "identity_representative_allowed": equivalence["identity_representative_allowed"],
+        "identity_representative_semantics": equivalence["identity_semantics"],
+        "residual_physical_attachment_datum": equivalence[
+            "residual_physical_attachment_datum"
+        ],
+        "reset_generator_status": equivalence["reset_generator_status"],
+        "graph_jet_status": equivalence["graph_jet_status"],
+        "global_S1_S4_status": equivalence["global_S1_S4_status"],
+        "three_outcome_adjudication": equivalence,
         "prior_blocker_refinement": {
             "prior": (
-                "ACTION_OWNED_NONZERO_GAUGE_CONNECTION_TRACE_AE4_RESET_MAP_"
-                "R_A[B;GAMMA0_A_EVENT]_TO_GAMMA0_A_CHILD"
+                EXACT_MISSING_BASE_DATUM
             ),
-            "refined_first_geometric_datum": EXACT_MISSING_BASE_DATUM,
+            "refined_first_physical_decision": EXACT_ATTACHMENT_QUOTIENT_DATUM,
             "reason": (
-                "THE_CHILD_IS_A_SEPARATE_POST_CUT_BOUNDARY_COPY_AND_THE_"
-                "RETAINED_ACTION_CLOSES_STATE_INHERITANCE_BUT_SUPPLIES_NO_"
-                "CROSS_COPY_SPATIAL_POINT_CORRESPONDENCE"
+                "BEFORE_DEMANDING_A_REPRESENTATIVE_MAP,_THE_ACTION_MUST_"
+                "DECIDE_WHETHER_RELATIVE_EVENT_CHILD_SPATIAL_RELABELINGS_"
+                "ARE_GAUGE_AND_DEFINE_THEIR_ACTION_ON_THE_RESET_DOMAIN"
             ),
         },
         "ownership_levels": levels,
@@ -307,6 +397,19 @@ def build_payload() -> dict[str, Any]:
                 "CONDITIONALLY_PRESERVED_BY_A_G_SM_VALUED_LIFT"
             ),
             "HS_NORMAL_LEGENDRE_RANK_ZERO_AND_PI_H_ZERO_REMAIN_UNCHANGED",
+            (
+                "MAXWELL_CURVATURE_CANONICAL_FERMION_BRST_HS_AND_COMBINED_"
+                "TENSORIAL_IDENTITIES_ARE_NATURAL_UNDER_SIMULTANEOUS_"
+                "PULLBACK_FOR_THE_ID_AND_Ad_WITNESS"
+            ),
+            (
+                "THE_MASTER_ACTION_IS_DIFFEO_COVARIANT_LEVELWISE_BUT_ITS_"
+                "CROSS_LEVEL_DIFFEO_INTERTWINER_IS_EXPLICITLY_UNPROVED"
+            ),
+            (
+                "THE_CANONICAL_ONE_FORM_IS_COTANGENT_LIFT_INVARIANT_BUT_NOT_"
+                "BASIC_ON_THE_FULL_PHASE_SPACE_AWAY_FROM_THE_MOMENT_MAP_ZERO_SET"
+            ),
         ],
         "INVALIDATED": [
             "BUNDLE_ISOMORPHISM_CLASS_IS_AN_EVALUABLE_CONNECTION_TRANSPORT",
@@ -323,14 +426,19 @@ def build_payload() -> dict[str, Any]:
             "BOUNDARY_INCIDENCE_OR_ORIENTATION_ALONE_DETERMINES_THE_PULLBACK_OF_A_ONE_FORM",
             "V15_57_CONSTANT_ZERO_BACKGROUND_RECONSTRUCTION_DEFINES_THE_NONZERO_RESET",
             "THE_CONDITIONAL_FINITE_WITNESS_IS_AN_ADMISSIBLE_BHSM_BACKGROUND",
+            "LEVELWISE_DIFFEO_NATURALITY_ALONE_PROVES_RELATIVE_ATTACHMENT_GAUGE_REDUNDANCY",
+            "FULL_DIFF_SIGMA_IS_AN_ACTION_OWNED_ATTACHMENT_SYMMETRY_GROUP",
+            "TWO_EQUAL_WITNESS_ACTION_VALUES_DEFINE_THE_PHYSICAL_QUOTIENT",
+            "THE_IDENTITY_ATTACHMENT_IS_CURRENTLY_AN_ADMISSIBLE_GAUGE_FIXING",
+            "ALPHA_DESCENDS_TO_AN_UNCONSTRAINED_DIFFEO_QUOTIENT",
         ],
-        "OPEN": [EXACT_MISSING_BASE_DATUM],
-        "EXACT_NEXT_OBJECT": EXACT_MISSING_BASE_DATUM,
+        "OPEN": [EXACT_ATTACHMENT_QUOTIENT_DATUM],
+        "EXACT_NEXT_OBJECT": EXACT_ATTACHMENT_QUOTIENT_DATUM,
         "exact_next_calculation": (
-            "DERIVE_FROM_THE_ACTION_OR_DOMAIN_AN_EXPLICIT_CROSS_COPY_SPATIAL_"
-            "ATTACHMENT_MORPHISM_BETWEEN_THE_SEPARATE_EVENT_AND_CHILD_S3_"
-            "TIMES_S3_BOUNDARY_COPIES;_ONLY_THEN_DIFFERENTIATE_IT_AND_"
-            "INSTANTIATE_CONNECTION_AND_MAXWELL_TRANSPORT"
+            "DEFINE_FROM_THE_ACTION_DOMAIN_THE_RELATIVE_EVENT_CHILD_SPATIAL_"
+            "DIFFEO_GROUP,_ITS_ACTION_ON_BACKGROUND_FIELDS_TRACE_GRAPHS_"
+            "GALERKIN_PROJECTORS_AND_CONSTRAINTS,_AND_ITS_MOMENT_MAP_BRST_"
+            "REDUCTION;_THEN_DECIDE_WHETHER_F_B_IS_GAUGE_OR_PHYSICAL_DATA"
         ),
         "empirical_inputs": [],
         "claims": claims,
