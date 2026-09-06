@@ -142,6 +142,7 @@ def _quadratic_row(
     axis: np.ndarray,
     field_reference: np.ndarray,
     axis_projection_residual: float,
+    retain_tensor: bool = False,
 ) -> dict[str, float | int | str | np.ndarray]:
     q_weights, reduced_weights, _, _ = metric_data()
     gradient, hessian = _exact_jet(state)
@@ -457,7 +458,7 @@ def _quadratic_row(
         np.einsum("ab,bjk->ajk", bordered, response_VV, optimize=True)
         - response_VV_rhs
     )
-    return {
+    row = {
         "kind": kind,
         "index": index,
         "quadratic_Frobenius_norm": float(np.linalg.norm(quadratic)),
@@ -489,6 +490,9 @@ def _quadratic_row(
             np.einsum("a,ajk->jk", field, field_VV, optimize=True) + field_V.T @ field_V
         )),
     }
+    if retain_tensor:
+        row["quadratic_tensor"] = quadratic
+    return row
 
 
 def _load_inputs():

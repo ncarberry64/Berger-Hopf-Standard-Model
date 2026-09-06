@@ -2,7 +2,7 @@
   "FULL_BHSM_COMPLETE": false,
   "artifact": "BHSM_N12_GATE7_CURRENT_GREEN_SIGNED_TENSOR_RECOVERY_COMPUTE_JUSTIFICATION",
   "benchmark": {
-    "elapsed_seconds": 607.4219200999942,
+    "elapsed_seconds": 599.8945849000011,
     "index": 1,
     "kind": "midpoint",
     "output_Frobenius_maximum_relative_residual": 0.0,
@@ -18,18 +18,20 @@
     "SIGNED_CENTER_TENSORS_RECOVERED": false
   },
   "cost": {
+    "aborted_trace_capture_pilot_CPU_hours": 1.4089071060833278,
     "conservative_recovery_overhead_factor": 1.05,
     "fixed_campaign_CPU_ceiling": 210.0,
     "projected_recovery_CPU_hours": 176.2870465889457,
+    "projected_total_CPU_hours_including_aborted_pilot": 177.69595369502903,
     "published_center_campaign_measured_CPU_hours": 167.89242532280542,
     "selected_worker_count": 4,
     "stop_condition": "STOP_ON_CORRUPT_OR_MISSING_PUBLISHED_SHARD_NONFINITE_TENSOR_NORM_REPRODUCTION_FAILURE_PROOF_CONTRACT_CHANGE_OR_PROJECTED_CPU_CEILING_VIOLATION"
   },
   "inputs": {
-    "artifacts/flagship_integration/.current_green_signed_transverse_tensor_recovery_work/midpoint_001.npz": "870B20B53EA075E4DFB79C6EFF4AB2E9EA26FA558F87FD2AE2B21C7CE7DE664A",
+    "artifacts/flagship_integration/.current_green_signed_transverse_tensor_recovery_work/midpoint_001.npz": "3C4CE28D109369E23AE4D73CD297DF6424A7718CA4CBFD279065B549A455D81D",
     "artifacts/flagship_integration/BHSM_N12_GATE7_CURRENT_GREEN_FULL_TRANSVERSE_QUADRATIC_CENTER.json": "69944D8BB7F33B2B44877F588658F3CC6E16A9DF2D050F8427EAADB7ECF73B94",
-    "scripts/derive_n12_gate7_current_green_signed_transverse_tensor_recovery.py": "E26BED5EFD74F7EB61F0F77E7BD3161B74152EE5A0DB1179C2953D3BC8F29B27",
-    "theory/n12_gate7_current_green_signed_transverse_tensor_recovery.md": "BFF4282AC56DDC4B7C585BF88B892BFA8B13D977B3F6500B947CAC46EB8B4940"
+    "scripts/derive_n12_gate7_current_green_signed_transverse_tensor_recovery.py": "BA2F4033A206E885C470BFA6572B7D0AF29463CD8DB26495BC1CEF1BAD50F5C8",
+    "theory/n12_gate7_current_green_signed_transverse_tensor_recovery.md": "7E196A9E924AA3260FE648CF365E8009B7AACA881FEB3D645AFB085FDF1B1A79"
   },
   "proof_obligation": "RECOVER_THE_ALREADY_EVALUATED_SIGNED_99_BY_73_BY_73_CENTER_TENSORS_AT_ALL_370_DEFINED_AXIS_ENDPOINTS_AND_370_MIDPOINTS_SO_CAUSAL_COMPOSITION_PRECEDES_NORM_EXTRACTION",
   "reused_certified_assets": [

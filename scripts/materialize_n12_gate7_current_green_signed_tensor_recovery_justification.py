@@ -17,6 +17,7 @@ RECOVERY = ROOT / "scripts" / "derive_n12_gate7_current_green_signed_transverse_
 THEORY = ROOT / "theory" / "n12_gate7_current_green_signed_transverse_tensor_recovery.md"
 CPU_CEILING_HOURS = 210.0
 RECOVERY_OVERHEAD_FACTOR = 1.05
+ABORTED_TRACE_CAPTURE_PILOT_CPU_HOURS = 1.4089071060833278
 
 
 def _sha(path: Path) -> str:
@@ -50,8 +51,9 @@ def build_payload() -> dict[str, object]:
         ])
     prior_cpu = float(center["measured_CPU_hours"])
     projected_cpu = RECOVERY_OVERHEAD_FACTOR * prior_cpu
+    projected_total_cpu = projected_cpu + ABORTED_TRACE_CAPTURE_PILOT_CPU_HOURS
     authorized = bool(
-        projected_cpu < CPU_CEILING_HOURS
+        projected_total_cpu < CPU_CEILING_HOURS
         and benchmark_total_residual < 5.0e-13
         and benchmark_output_residual < 5.0e-13
     )
@@ -64,7 +66,7 @@ def build_payload() -> dict[str, object]:
             benchmark_output_residual < 5.0e-13
         ),
         "projected_recovery_CPU_hours_below_fixed_ceiling": (
-            projected_cpu < CPU_CEILING_HOURS
+            projected_total_cpu < CPU_CEILING_HOURS
         ),
         "same_center_kernel_action_mesh_frames_axes_and_branch_reused": True,
         "four_worker_operational_throttle_retained": True,
@@ -100,8 +102,10 @@ def build_payload() -> dict[str, object]:
         },
         "cost": {
             "published_center_campaign_measured_CPU_hours": prior_cpu,
+            "aborted_trace_capture_pilot_CPU_hours": ABORTED_TRACE_CAPTURE_PILOT_CPU_HOURS,
             "conservative_recovery_overhead_factor": RECOVERY_OVERHEAD_FACTOR,
             "projected_recovery_CPU_hours": projected_cpu,
+            "projected_total_CPU_hours_including_aborted_pilot": projected_total_cpu,
             "fixed_campaign_CPU_ceiling": CPU_CEILING_HOURS,
             "selected_worker_count": 4,
             "stop_condition": (

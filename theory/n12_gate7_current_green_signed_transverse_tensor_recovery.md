@@ -16,8 +16,9 @@ screen.
 
 The recovery campaign therefore reruns the unchanged signed center kernel and
 persists its in-memory `99 x 73 x 73` tensor.  No derivative is recomputed by a
-different formula.  The tensor is captured at the return boundary of the same
-kernel used by the published norm campaign.  A shard is admitted only when
+different formula.  A lossless return option exposes the same local array from
+which the published norms are computed; the default norm-only campaign path is
+unchanged.  A shard is admitted only when
 both
 
 \[

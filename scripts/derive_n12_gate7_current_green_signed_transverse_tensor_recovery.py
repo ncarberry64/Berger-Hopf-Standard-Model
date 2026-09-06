@@ -3,8 +3,8 @@
 The completed center campaign retained invariant norms only.  A later causal
 composition showed that taking componentwise absolute values before applying
 the frozen Green map is too lossy.  This restart-safe recovery calls the same
-unchanged center kernel and captures its already-computed local ``quadratic``
-array at function return.  Every recovered tensor is checked against the
+unchanged center kernel and retains its already-computed local ``quadratic``
+return array.  Every recovered tensor is checked against the
 published per-output and total Frobenius norms before it is admitted.
 
 This is center data only.  It neither supplies an outward remainder nor closes
@@ -93,32 +93,12 @@ def _valid(path: Path, kind: str, index: int, fingerprint: str) -> bool:
 
 
 def _capture_quadratic(*args: object) -> tuple[dict[str, object], np.ndarray]:
-    """Call the frozen kernel and capture only its local return-frame tensor."""
-    captured: dict[str, np.ndarray] = {}
-    target_code = center._quadratic_row.__code__
-
-    def local_trace(frame, event, arg):  # type: ignore[no-untyped-def]
-        if event == "return":
-            value = frame.f_locals.get("quadratic")
-            if value is not None:
-                captured["quadratic"] = np.array(value, dtype=float, copy=True)
-        return local_trace
-
-    def global_trace(frame, event, arg):  # type: ignore[no-untyped-def]
-        if event == "call" and frame.f_code is target_code:
-            return local_trace
-        return None
-
-    previous = sys.gettrace()
-    sys.settrace(global_trace)
-    try:
-        row = center._quadratic_row(*args)
-    finally:
-        sys.settrace(previous)
-    tensor = captured.get("quadratic")
-    if tensor is None or tensor.shape != (OUTPUTS, TRANSVERSE, TRANSVERSE):
+    """Call the unchanged kernel with its lossless return option enabled."""
+    row = center._quadratic_row(*args, retain_tensor=True)
+    tensor = np.asarray(row.pop("quadratic_tensor"), dtype=float)
+    if tensor.shape != (OUTPUTS, TRANSVERSE, TRANSVERSE):
         raise RuntimeError("center kernel did not expose the expected quadratic tensor")
-    return row, tensor
+    return row, np.array(tensor, copy=True)
 
 
 def _worker(kind: str, indices: list[int]) -> dict[str, float]:
