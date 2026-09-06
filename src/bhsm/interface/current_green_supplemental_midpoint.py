@@ -181,4 +181,3 @@ def reconstruct_midpoint_hessian(
     cc = np.einsum("ocd,ck,dl->okl", q_cc, d, d, optimize=True)
     result = uu + cu + uc + cc
     return 0.5 * (result + result.transpose(0, 2, 1))
-

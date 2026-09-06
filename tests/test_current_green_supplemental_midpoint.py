@@ -85,4 +85,3 @@ def test_completion_and_reconstruction_fail_closed_on_invalid_inputs() -> None:
     )
     with pytest.raises(np.linalg.LinAlgError):
         solve_midpoint_coordinates(singular, np.eye(4))
-
