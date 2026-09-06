@@ -88,10 +88,23 @@ def build_payload() -> dict[str, object]:
     if not VALIDATION.is_file():
         raise FileNotFoundError("supplemental UU identity validation required")
     identity = json.loads(VALIDATION.read_text(encoding="utf-8"))
-    if identity.get("validation_passed") is not True:
-        raise RuntimeError("supplemental UU identity validation did not pass")
     fingerprint = supplement._fingerprint()
     recovery_fingerprint = recovery._fingerprint()
+    identity_inputs = identity.get("inputs", {})
+    identity_current = bool(
+        identity.get("validation_passed") is True
+        and identity.get("recovery_campaign_fingerprint")
+        == recovery_fingerprint
+        and isinstance(identity_inputs, dict)
+        and identity_inputs
+        and all(
+            (ROOT / relative).is_file()
+            and digest == _sha(ROOT / relative)
+            for relative, digest in identity_inputs.items()
+        )
+    )
+    if not identity_current:
+        raise RuntimeError("current supplemental UU identity validation required")
     aggregates: list[Path] = []
     rows: list[Path] = []
     maximum_diagnostics = np.zeros(5)
@@ -144,7 +157,7 @@ def build_payload() -> dict[str, object]:
         "all_370_midpoint_aggregates_valid": len(aggregates) == 370,
         "all_9620_restart_rows_valid": len(rows) == 370 * 26,
         "exactly_2249_new_direction_pairs_per_midpoint": supplement.NEW_PAIRS == 2249,
-        "rectangular_kernel_matches_recovered_UU_authority": True,
+        "rectangular_kernel_matches_recovered_UU_authority": identity_current,
         "completed_basis_has_no_zero_QR_pivot": minimum_qr_pivot > 0.0,
         "coordinate_basis_residual_below_5e_minus_13": maximum_coordinate_residual < 5.0e-13,
         "normal_frame_residual_below_5e_minus_13": maximum_normal_residual < 5.0e-13,
