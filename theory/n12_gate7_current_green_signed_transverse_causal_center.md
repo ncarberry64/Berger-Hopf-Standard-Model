@@ -210,3 +210,12 @@ valid row and aggregate manifests do not establish this relationship: a
 stale aggregate must be rejected before it reaches the causal pullback.
 These comparisons require no new action contractions and do not change the
 signed-recovery or supplemental campaign fingerprints.
+
+The separate `certify_n12_gate7_current_green_supplemental_basis_inverse.py`
+verifies nonsingularity of each stored binary64 `S=[U C]` using a 512-bit Arb
+inverse enclosure `B` and the strict residual bound `||I-S B||_infinity<1`.
+It records a basis hash and an inverse-norm upper bound for each covered
+midpoint. Partial runs cannot overwrite the all-370 certificate. This removes
+a rank ambiguity for these exact stored direction matrices without discarding
+small nonzero singular directions. It does not enclose the Hessian values,
+the rounded midpoint-coordinate solve, or the physical neighborhood remainder.
