@@ -30,9 +30,6 @@ sys.path.insert(0, str(ROOT / "scripts"))
 from bhsm.interface.current_green_supplemental_midpoint import (  # noqa: E402
     complete_ambient_basis,
 )
-import audit_n12_gate7_current_green_componentwise_two_radius as component  # noqa: E402
-import certify_n12_gate7_accepted_replay_center_outward_74d as cert  # noqa: E402
-import certify_n12_gate7_current_green_signed_transverse_causal_center as causal  # noqa: E402
 import derive_n12_gate7_current_green_full_transverse_quadratic_center as center  # noqa: E402
 import derive_n12_gate7_current_green_signed_transverse_tensor_recovery as recovery  # noqa: E402
 from derive_n12_gate7_current_green_supplemental_mixed_rate import (  # noqa: E402
@@ -66,11 +63,7 @@ def _fingerprint() -> str:
         THIS_SCRIPT,
         Path(mixed_rate_map.__code__.co_filename).resolve(),
         ROOT / "src/bhsm/interface/current_green_supplemental_midpoint.py",
-        Path(causal.__file__).resolve(),
         Path(center.__file__).resolve(),
-        causal.JACOBIAN.with_suffix(".npz"),
-        causal.ENDPOINT.with_suffix(".npz"),
-        causal.PARTITION.with_suffix(".npz"),
     )
     for source in sources:
         digest.update(source.read_bytes())
@@ -115,31 +108,14 @@ def _valid_row(
         return False
 
 
-def _load_geometry() -> dict[str, np.ndarray | dict[str, object]]:
-    inputs = center._load_inputs()
-    endpoint_axes = component._load_axes()
-    with np.load(causal.JACOBIAN.with_suffix(".npz")) as source:
-        endpoint_tangents = np.asarray(
-            source["endpoint_physical_tangent_action"], dtype=float,
-        )
-        midpoint_tangents = np.asarray(
-            source["midpoint_physical_tangent_action"], dtype=float,
-        )
-    with np.load(causal.ENDPOINT.with_suffix(".npz")) as source:
-        times = np.asarray(source["collocation_arc_parameters"], dtype=float)
-    return {
-        "inputs": inputs,
-        "endpoint_axes": endpoint_axes,
-        "endpoint_tangents": endpoint_tangents,
-        "midpoint_tangents": midpoint_tangents,
-        "times": times,
-    }
+def _load_geometry() -> dict[str, object]:
+    return {"inputs": center._load_inputs()}
 
 
 def _completion(interval: int, geometry: dict[str, object]):
     inputs = geometry["inputs"]
     assert isinstance(inputs, dict)
-    midpoint_tangents = np.asarray(geometry["midpoint_tangents"], dtype=float)
+    midpoint_tangents = np.asarray(inputs["midpoint"][2], dtype=float)
     midpoint_axes = np.asarray(inputs["midpoint"][3], dtype=float)
     recovered = recovery._path("midpoint", interval)
     fingerprint = recovery._fingerprint()
