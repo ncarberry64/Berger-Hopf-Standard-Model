@@ -6,6 +6,7 @@ import pytest
 from bhsm.interface.current_green_supplemental_midpoint import (
     AmbientCompletion,
     complete_ambient_basis,
+    reconstruct_mapped_midpoint_hessian,
     reconstruct_midpoint_hessian,
     solve_midpoint_coordinates,
 )
@@ -63,6 +64,41 @@ def test_block_reconstruction_equals_direct_full_hessian_pullback() -> None:
     transform = np.vstack((a, d))
     expected = np.einsum("oab,ai,bj->oij", hessian, transform, transform)
     assert np.allclose(actual, expected, rtol=2.0e-14, atol=2.0e-14)
+
+
+def test_mapped_reconstruction_applies_all_signed_terms_before_output_map() -> None:
+    rng = np.random.default_rng(2123)
+    frame = rng.normal(size=(7, 4))
+    axis = rng.normal(size=4)
+    axis /= np.linalg.norm(axis)
+    q, _ = np.linalg.qr(np.column_stack((axis, np.eye(4))))
+    transverse = q[:, 1:]
+    completion = complete_ambient_basis(frame, axis, transverse)
+    ambient_map = rng.normal(size=(7, 9))
+    output_map = rng.normal(size=(3, 5))
+    full_hessian = rng.normal(size=(5, 7, 7))
+    full_hessian = 0.5 * (
+        full_hessian + full_hessian.transpose(0, 2, 1)
+    )
+    basis = completion.full_basis
+    basis_hessian = np.einsum(
+        "oab,ai,bj->oij", full_hessian, basis, basis, optimize=True,
+    )
+    actual, coordinates = reconstruct_mapped_midpoint_hessian(
+        output_map,
+        basis_hessian[:, :3, :3],
+        basis_hessian[:, 3:, :3],
+        basis_hessian[:, 3:, 3:],
+        completion,
+        ambient_map,
+    )
+    expected = np.einsum(
+        "co,oab,ai,bj->cij",
+        output_map, full_hessian, ambient_map, ambient_map,
+        optimize=True,
+    )
+    assert np.allclose(actual, expected, rtol=5.0e-14, atol=5.0e-14)
+    assert coordinates.relative_reconstruction_residual_2 < 5.0e-14
 
 
 def test_completion_and_reconstruction_fail_closed_on_invalid_inputs() -> None:

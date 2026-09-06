@@ -181,3 +181,40 @@ def reconstruct_midpoint_hessian(
     cc = np.einsum("ocd,ck,dl->okl", q_cc, d, d, optimize=True)
     result = uu + cu + uc + cc
     return 0.5 * (result + result.transpose(0, 2, 1))
+
+
+def reconstruct_mapped_midpoint_hessian(
+    output_map: np.ndarray,
+    retained_retained: np.ndarray,
+    complement_retained: np.ndarray,
+    complement_complement: np.ndarray,
+    completion: AmbientCompletion,
+    ambient_map: np.ndarray,
+) -> tuple[np.ndarray, MidpointCoordinates]:
+    """Return the complete signed ``output_map @ H[ambient_map,ambient_map]``.
+
+    This is the exact center assembly needed by the causal Hermite--Simpson
+    composer.  Coordinate reconstruction, all CU/UC/CC cross terms, and the
+    output map are applied before any norm is permitted.
+    """
+
+    output_map = np.asarray(output_map, dtype=float)
+    q_uu = np.asarray(retained_retained, dtype=float)
+    if (
+        output_map.ndim != 2
+        or q_uu.ndim != 3
+        or output_map.shape[1] != q_uu.shape[0]
+        or not np.all(np.isfinite(output_map))
+    ):
+        raise ValueError("midpoint output map has incompatible coordinates")
+    coordinates = solve_midpoint_coordinates(completion, ambient_map)
+    ambient_hessian = reconstruct_midpoint_hessian(
+        q_uu,
+        complement_retained,
+        complement_complement,
+        coordinates,
+    )
+    mapped = np.einsum("co,oij->cij", output_map, ambient_hessian, optimize=True)
+    if not np.all(np.isfinite(mapped)):
+        raise ValueError("mapped midpoint Hessian is nonfinite")
+    return 0.5 * (mapped + mapped.transpose(0, 2, 1)), coordinates
