@@ -20,7 +20,8 @@ RECOVERY_OVERHEAD_FACTOR = 1.05
 ABORTED_SUPERSEDED_RECOVERY_PILOTS_CPU_HOURS = 2.9
 FOUR_WORKER_DIRECT_PILOT_MAXIMUM_SECONDS = 1143.824539299996
 TWO_WORKER_DIRECT_PILOT_MAXIMUM_SECONDS = 768.2733264999988
-THREE_WORKER_DIRECT_PILOT_MAXIMUM_SECONDS = 917.7202259000042
+THREE_WORKER_DIRECT_PILOT_MAXIMUM_SECONDS = 924.5115030999877
+THREE_WORKER_DIRECT_PILOT_SAFETY_FACTOR = 1.05
 RECOVERY_ROWS = 740
 
 
@@ -62,7 +63,8 @@ def build_payload() -> dict[str, object]:
         TWO_WORKER_DIRECT_PILOT_MAXIMUM_SECONDS * RECOVERY_ROWS / 3600.0
     )
     projected_from_direct_pilot = (
-        THREE_WORKER_DIRECT_PILOT_MAXIMUM_SECONDS * RECOVERY_ROWS / 3600.0
+        THREE_WORKER_DIRECT_PILOT_SAFETY_FACTOR
+        * THREE_WORKER_DIRECT_PILOT_MAXIMUM_SECONDS * RECOVERY_ROWS / 3600.0
     )
     projected_cpu = max(projected_from_parent, projected_from_direct_pilot)
     projected_total_cpu = (
@@ -130,6 +132,7 @@ def build_payload() -> dict[str, object]:
             "two_worker_direct_pilot_maximum_seconds": TWO_WORKER_DIRECT_PILOT_MAXIMUM_SECONDS,
             "two_worker_projected_recovery_CPU_hours": two_worker_projection,
             "three_worker_direct_pilot_maximum_seconds": THREE_WORKER_DIRECT_PILOT_MAXIMUM_SECONDS,
+            "three_worker_direct_pilot_safety_factor": THREE_WORKER_DIRECT_PILOT_SAFETY_FACTOR,
             "projected_from_parent_campaign_CPU_hours": projected_from_parent,
             "projected_from_three_worker_direct_pilot_CPU_hours": projected_from_direct_pilot,
             "projected_recovery_CPU_hours": projected_cpu,
