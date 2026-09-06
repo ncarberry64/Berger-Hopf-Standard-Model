@@ -25,6 +25,7 @@ import audit_n12_gate7_current_green_componentwise_two_radius as component  # no
 import certify_n12_gate7_accepted_replay_center_outward_74d as cert  # noqa: E402
 import derive_n12_gate7_current_green_full_transverse_quadratic_center as center  # noqa: E402
 import derive_n12_gate7_current_green_signed_transverse_tensor_recovery as recovery  # noqa: E402
+import certify_n12_gate7_current_green_signed_transverse_tensor_recovery as recovery_aggregate  # noqa: E402
 
 
 F = ROOT / "artifacts" / "flagship_integration"
@@ -35,6 +36,7 @@ DATA = RESULT.with_suffix(".npz")
 THEORY = ROOT / "theory" / "n12_gate7_current_green_signed_transverse_causal_center.md"
 THIS_SCRIPT = Path(__file__).resolve()
 JUSTIFICATION = C / "BHSM_N12_GATE7_CURRENT_GREEN_SIGNED_TENSOR_RECOVERY_COMPUTE_JUSTIFICATION.json"
+RECOVERY_AGGREGATE = F / "BHSM_N12_GATE7_CURRENT_GREEN_SIGNED_TRANSVERSE_TENSOR_RECOVERY.json"
 FULL = F / "BHSM_N12_GATE7_CURRENT_GREEN_FULL_TRANSVERSE_QUADRATIC_CENTER.json"
 AMBIENT = F / "BHSM_N12_GATE7_CURRENT_GREEN_MIDPOINT_AMBIENT_DF.json"
 CENTRAL = F / "BHSM_N12_GATE7_CURRENT_GREEN_CORRELATED_SCALAR_CAUSAL_COMPOSITION.json"
@@ -274,7 +276,8 @@ def _causal_bounds(
 
 def build_payload() -> dict[str, object]:
     tracked_inputs = (
-        JUSTIFICATION, FULL, AMBIENT, CENTRAL, MIXED, BLOCK_Z1, PARTITION,
+        JUSTIFICATION, RECOVERY_AGGREGATE, FULL, AMBIENT, CENTRAL, MIXED,
+        BLOCK_Z1, PARTITION,
         ENDPOINT, JACOBIAN, PRECONDITIONER, Y_SOURCE, THEORY, THIS_SCRIPT,
         Path(recovery.__file__).resolve(),
     )
@@ -288,11 +291,21 @@ def build_payload() -> dict[str, object]:
     if missing:
         raise FileNotFoundError(f"missing inputs: {len(missing)}; first={missing[0]}")
     justification = json.loads(JUSTIFICATION.read_text(encoding="utf-8"))
+    recovered = json.loads(RECOVERY_AGGREGATE.read_text(encoding="utf-8"))
     if not (
         justification.get("validation_passed") is True
         and justification.get("campaign_authorized") is True
+        and recovered.get("validation_passed") is True
     ):
-        raise RuntimeError("validated signed recovery authorization required")
+        raise RuntimeError("validated signed recovery aggregate required")
+    shard_paths = (
+        recovery_aggregate._paths("endpoint")
+        + recovery_aggregate._paths("midpoint")
+    )
+    if recovery_aggregate._manifest(shard_paths) != recovered.get(
+        "shard_manifest_SHA256"
+    ):
+        raise RuntimeError("signed recovery shard manifest changed")
 
     inputs = center._load_inputs()
     endpoint_axes = np.asarray(inputs["endpoint"][3], dtype=float)
