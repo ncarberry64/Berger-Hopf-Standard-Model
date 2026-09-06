@@ -202,3 +202,11 @@ prescription is not an executed recovery or a certificate.  A completed
 binary64 recovery supplies center-screen data only.  Outward authority
 still requires enclosures for tensor arithmetic, the full-basis solve and
 its residual, and the unchanged neighborhood remainder.
+
+The supplemental certificate also checks that each assembled `CU` row and
+upper-triangular `CC` row equals its validated restart row exactly. It applies
+the same comparison to diagnostics and elapsed-time accounting. Independent
+valid row and aggregate manifests do not establish this relationship: a
+stale aggregate must be rejected before it reaches the causal pullback.
+These comparisons require no new action contractions and do not change the
+signed-recovery or supplemental campaign fingerprints.

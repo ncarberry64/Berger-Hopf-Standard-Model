@@ -5,6 +5,7 @@ from pathlib import Path
 import sys
 
 import numpy as np
+import pytest
 
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -48,3 +49,35 @@ def test_aggregate_validator_accepts_only_complete_symmetric_blocks(tmp_path) ->
     np.savez_compressed(path, **values)
     assert not module._valid_aggregate(path, 0, "F" * 64, "R" * 64)
 
+
+@pytest.mark.parametrize("changed", [
+    "complement_retained", "complement_complement", "row_diagnostics",
+    "row_elapsed_seconds",
+])
+def test_certificate_rejects_aggregate_that_disagrees_with_valid_rows(tmp_path, changed):
+    """Individually well-formed caches must also describe the same calculation."""
+    module = _module()
+    rng = np.random.default_rng(20260906)
+    cu = rng.normal(size=(99, 26, 73))
+    cc = rng.normal(size=(99, 26, 26))
+    cc = cc + cc.transpose(0, 2, 1)
+    diagnostics = np.abs(rng.normal(size=(26, 5)))
+    elapsed = np.arange(1.0, 27.0)
+    rows = []
+    for row in range(26):
+        path = tmp_path / f"row_{row:02d}.npz"
+        np.savez_compressed(
+            path, complement_retained_row=cu[:, row],
+            complement_complement_upper=cc[:, row, row:],
+            diagnostics=diagnostics[row], elapsed_seconds=elapsed[row],
+        )
+        rows.append(path)
+    values = dict(complement_retained=cu, complement_complement=cc,
+                  row_diagnostics=diagnostics, row_elapsed_seconds=elapsed)
+    aggregate = tmp_path / "midpoint_000.npz"
+    np.savez_compressed(aggregate, **values)
+    assert module._aggregate_matches_rows(aggregate, rows)
+    assert not module._aggregate_matches_rows(aggregate, rows[:-1])
+    values[changed].flat[0] += 1.0
+    np.savez_compressed(aggregate, **values)
+    assert not module._aggregate_matches_rows(aggregate, rows)

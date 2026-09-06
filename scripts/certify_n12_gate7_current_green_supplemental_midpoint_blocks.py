@@ -84,6 +84,32 @@ def _valid_aggregate(
         return False
 
 
+def _aggregate_matches_rows(path: Path, rows: list[Path]) -> bool:
+    """Bind the assembled values and accounting to their validated restart rows."""
+    if len(rows) != supplement.COMPLEMENT:
+        return False
+    try:
+        with np.load(path) as aggregate:
+            cu = np.asarray(aggregate["complement_retained"])
+            cc = np.asarray(aggregate["complement_complement"])
+            diagnostics = np.asarray(aggregate["row_diagnostics"])
+            elapsed = np.asarray(aggregate["row_elapsed_seconds"])
+            for row, source_path in enumerate(rows):
+                with np.load(source_path) as source:
+                    if not (
+                        np.array_equal(cu[:, row], source["complement_retained_row"])
+                        and np.array_equal(
+                            cc[:, row, row:], source["complement_complement_upper"],
+                        )
+                        and np.array_equal(diagnostics[row], source["diagnostics"])
+                        and np.array_equal(elapsed[row], source["elapsed_seconds"])
+                    ):
+                        return False
+    except (OSError, ValueError, KeyError, IndexError):
+        return False
+    return True
+
+
 def build_payload() -> dict[str, object]:
     if not VALIDATION.is_file():
         raise FileNotFoundError("supplemental UU identity validation required")
@@ -131,6 +157,10 @@ def build_payload() -> dict[str, object]:
             path, interval, row, fingerprint, recovered_sha,
         ) for row, path in enumerate(row_paths)):
             raise RuntimeError(f"validated supplemental rows required: {interval}")
+        if not _aggregate_matches_rows(aggregate, row_paths):
+            raise RuntimeError(
+                f"supplemental aggregate disagrees with restart rows: {interval}"
+            )
         with np.load(aggregate) as source:
             maximum_diagnostics = np.maximum(
                 maximum_diagnostics,
@@ -156,6 +186,7 @@ def build_payload() -> dict[str, object]:
     validations = {
         "all_370_midpoint_aggregates_valid": len(aggregates) == 370,
         "all_9620_restart_rows_valid": len(rows) == 370 * 26,
+        "all_aggregates_match_their_restart_row_values_and_accounting": True,
         "exactly_2249_new_direction_pairs_per_midpoint": supplement.NEW_PAIRS == 2249,
         "rectangular_kernel_matches_recovered_UU_authority": identity_current,
         "completed_basis_has_no_zero_QR_pivot": minimum_qr_pivot > 0.0,
