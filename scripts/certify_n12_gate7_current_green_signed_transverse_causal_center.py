@@ -20,14 +20,21 @@ import numpy as np
 
 
 ROOT = Path(__file__).resolve().parents[1]
+sys.path.insert(0, str(ROOT / "src"))
 sys.path.insert(0, str(ROOT / "scripts"))
 
+from bhsm.interface.current_green_supplemental_midpoint import (  # noqa: E402
+    complete_ambient_basis,
+    reconstruct_mapped_midpoint_hessian,
+)
 import audit_n12_gate7_current_green_componentwise_two_radius as component  # noqa: E402
 import certify_n12_gate7_accepted_replay_center_outward_74d as cert  # noqa: E402
 import derive_n12_gate7_current_green_full_transverse_quadratic_center as center  # noqa: E402
 import derive_n12_gate7_current_green_signed_transverse_tensor_recovery as recovery  # noqa: E402
 import certify_n12_gate7_current_green_signed_transverse_tensor_recovery as recovery_aggregate  # noqa: E402
 import certify_n12_gate7_current_green_mixed_hs_causal_transport as mixed_hs  # noqa: E402
+import certify_n12_gate7_current_green_supplemental_midpoint_blocks as supplemental_certificate  # noqa: E402
+import derive_n12_gate7_current_green_supplemental_midpoint_blocks as supplemental  # noqa: E402
 
 
 F = ROOT / "artifacts" / "flagship_integration"
@@ -51,6 +58,7 @@ JACOBIAN = F / "BHSM_N12_GATE7_CORRELATED_DESCRIPTOR_AUGMENTED_JACOBIANS.json"
 PRECONDITIONER = F / "BHSM_N12_GATE7_AUGMENTED_FIXED_DESCRIPTOR_BLOCK_NEWTON_PREDICTOR.json"
 Y_SOURCE = F / "BHSM_N12_GATE7_ACCEPTED_REPLAY_ACTION_BLOCK_SCREEN.json"
 MIXED_WORK = F / ".current_green_mixed_hs_causal_transport_work"
+SUPPLEMENTAL = F / "BHSM_N12_GATE7_CURRENT_GREEN_SUPPLEMENTAL_MIDPOINT_BLOCKS.json"
 
 NODES = 371
 INTERVALS = 370
@@ -233,6 +241,44 @@ def _tensor(kind: str, index: int) -> tuple[np.ndarray, np.ndarray]:
         )
 
 
+def _supplemental_midpoint_pullback(
+    interval: int,
+    output_map: np.ndarray,
+    midpoint_tensor: np.ndarray,
+    midpoint_basis: np.ndarray,
+    midpoint_axis: np.ndarray,
+    midpoint_frame: np.ndarray,
+    midpoint_ambient_map: np.ndarray,
+) -> tuple[np.ndarray, float]:
+    """Consume the certified CU/CC blocks and return the full signed pullback."""
+
+    path = supplemental._aggregate_path(interval)
+    with np.load(path) as source:
+        cu = np.asarray(source["complement_retained"], dtype=float)
+        cc = np.asarray(source["complement_complement"], dtype=float)
+        retained = np.asarray(source["retained_directions"], dtype=float)
+        complement = np.asarray(source["complement_directions"], dtype=float)
+    completion = complete_ambient_basis(
+        midpoint_frame, midpoint_axis, midpoint_basis,
+    )
+    if not (
+        np.array_equal(retained, completion.retained_directions)
+        and np.array_equal(complement, completion.complement_directions)
+    ):
+        raise MidpointChainRuleIncomplete(
+            f"interval {interval} supplemental ambient basis changed"
+        )
+    mapped, coordinates = reconstruct_mapped_midpoint_hessian(
+        output_map, midpoint_tensor, cu, cc, completion, midpoint_ambient_map,
+    )
+    if coordinates.relative_reconstruction_residual_2 >= 5.0e-13:
+        raise MidpointChainRuleIncomplete(
+            f"interval {interval} full midpoint coordinate reconstruction failed: "
+            f"{coordinates.relative_reconstruction_residual_2:.17g}"
+        )
+    return mapped, coordinates.relative_reconstruction_residual_2
+
+
 def _transformed(
     output_map: np.ndarray,
     tensor: np.ndarray,
@@ -301,12 +347,14 @@ def _local_covariances(
     times: np.ndarray,
     right_blocks: np.ndarray,
     ambient: np.ndarray,
-) -> tuple[np.ndarray, np.ndarray, np.ndarray]:
+    use_supplemental: bool = False,
+) -> tuple[np.ndarray, np.ndarray, np.ndarray, np.ndarray]:
     covariances = np.empty((INTERVALS, PAIR_BLOCKS, COORDINATES, COORDINATES))
     adjacent_right_left = np.zeros(
         (INTERVALS, COORDINATES, COORDINATES), dtype=float,
     )
     local_norms = np.empty(INTERVALS)
+    reconstruction_residuals = np.zeros(INTERVALS)
     previous_right_flat: np.ndarray | None = None
     zero = np.zeros((OUTPUTS, TRANSVERSE, TRANSVERSE))
     with np.load(CENTRAL_LOCAL.with_suffix(".npz")) as source:
@@ -317,11 +365,11 @@ def _local_covariances(
         midpoint = _kinematic_midpoint_map(
             interval, h, endpoint_axes, endpoint_tangents, midpoint_tangents,
         )
-        # Current shards have no signed normal-Hessian correction.  Stop
-        # before building covariances or presenting an incomplete center norm.
-        _require_resolved_normal(
-            midpoint.normal, f"interval {interval} midpoint input normal",
-        )
+        if not use_supplemental:
+            # Current TT-only shards have no signed normal-Hessian correction.
+            _require_resolved_normal(
+                midpoint.normal, f"interval {interval} midpoint input normal",
+            )
         if interval == 0:
             left_tensor = zero
             left_basis = np.zeros((COORDINATES, TRANSVERSE))
@@ -334,19 +382,20 @@ def _local_covariances(
         midpoint_frame = cert._frame(
             midpoint_tangents[interval], cert.TRIAL_DESCRIPTOR_SCALE,
         )
-        with np.load(MIXED_WORK / f"midpoint_{interval:03d}.npz") as source:
-            mixed_curvature = np.asarray(source["intrinsic_mid"], dtype=float)
-        # The certified mixed shard differentiates the sum of the two endpoint
-        # maps.  Preserve those column coordinates when converting its data.
-        mixed_directions = (
-            midpoint.augmented[:, :COORDINATES]
-            + midpoint.augmented[:, COORDINATES:]
-        )
-        central, mixed = _tangent_blocks_from_directional_data(
-            midpoint_frame, midpoint_axes[interval], midpoint_basis,
-            central_directions[interval], central_curvatures[interval],
-            mixed_directions, mixed_curvature,
-        )
+        if not use_supplemental:
+            with np.load(MIXED_WORK / f"midpoint_{interval:03d}.npz") as source:
+                mixed_curvature = np.asarray(source["intrinsic_mid"], dtype=float)
+            # The certified mixed shard differentiates the sum of the two endpoint
+            # maps.  Preserve those column coordinates when converting its data.
+            mixed_directions = (
+                midpoint.augmented[:, :COORDINATES]
+                + midpoint.augmented[:, COORDINATES:]
+            )
+            central, mixed = _tangent_blocks_from_directional_data(
+                midpoint_frame, midpoint_axes[interval], midpoint_basis,
+                central_directions[interval], central_curvatures[interval],
+                mixed_directions, mixed_curvature,
+            )
 
         test = cert._frame(
             endpoint_tangents[interval + 1], cert.TEST_DESCRIPTOR_SCALE,
@@ -365,10 +414,19 @@ def _local_covariances(
         local[:, COORDINATES:, COORDINATES:] += _transformed(
             right_output, right_tensor, right_input,
         )
-        local += _complete_midpoint_pullback(
-            midpoint_output, midpoint_tensor, midpoint_basis,
-            midpoint_axes[interval], midpoint, central, mixed,
-        )
+        if use_supplemental:
+            mapped, reconstruction_residuals[interval] = (
+                _supplemental_midpoint_pullback(
+                    interval, midpoint_output, midpoint_tensor, midpoint_basis,
+                    midpoint_axes[interval], midpoint_frame, midpoint.augmented,
+                )
+            )
+            local += mapped
+        else:
+            local += _complete_midpoint_pullback(
+                midpoint_output, midpoint_tensor, midpoint_basis,
+                midpoint_axes[interval], midpoint, central, mixed,
+            )
         pair_blocks = _pair_blocks(local)
         covariances[interval] = _covariance_blocks(local)
         left_flat = pair_blocks[0].reshape((COORDINATES, -1))
@@ -379,7 +437,7 @@ def _local_covariances(
             math.sqrt(max(float(np.trace(covariance)), 0.0))
             for covariance in covariances[interval]
         ), math.inf)
-    return covariances, adjacent_right_left, local_norms
+    return covariances, adjacent_right_left, local_norms, reconstruction_residuals
 
 
 def _causal_bounds(
@@ -533,6 +591,9 @@ def build_payload() -> dict[str, object]:
         Path(recovery.__file__).resolve(),
         Path(cert.__file__).resolve(), Path(center.__file__).resolve(),
         Path(component.__file__).resolve(), Path(mixed_hs.__file__).resolve(),
+        Path(supplemental.__file__).resolve(),
+        Path(supplemental_certificate.__file__).resolve(),
+        ROOT / "src/bhsm/interface/current_green_supplemental_midpoint.py",
     )
     tracked_inputs += tuple(
         MIXED_WORK / f"{kind}_{index:03d}.npz"
@@ -540,6 +601,34 @@ def build_payload() -> dict[str, object]:
                               ("midpoint", range(INTERVALS)))
         for index in indices
     )
+    supplemental_ready = SUPPLEMENTAL.is_file()
+    if supplemental_ready:
+        supplemental_record = json.loads(SUPPLEMENTAL.read_text(encoding="utf-8"))
+        supplemental_aggregates = [
+            supplemental._aggregate_path(interval)
+            for interval in range(INTERVALS)
+        ]
+        supplemental_inputs = supplemental_record.get("inputs", {})
+        if not (
+            supplemental_record.get("validation_passed") is True
+            and supplemental_record.get("campaign_fingerprint")
+            == supplemental._fingerprint()
+            and supplemental_record.get("recovery_campaign_fingerprint")
+            == recovery._fingerprint()
+            and isinstance(supplemental_inputs, dict)
+            and supplemental_inputs
+            and all(
+                (ROOT / relative).is_file()
+                and digest == _sha(ROOT / relative)
+                for relative, digest in supplemental_inputs.items()
+            )
+            and all(path.is_file() for path in supplemental_aggregates)
+            and supplemental_certificate._manifest(supplemental_aggregates)
+            == supplemental_record.get("aggregate_manifest_SHA256")
+        ):
+            raise RuntimeError("current supplemental midpoint certificate required")
+        tracked_inputs += (SUPPLEMENTAL,)
+        tracked_inputs += tuple(supplemental_aggregates)
     missing = [str(path) for path in tracked_inputs if not path.is_file()]
     missing += [str(recovery.WORK / f"endpoint_{node:03d}.npz")
                 for node in range(1, NODES)
@@ -591,9 +680,14 @@ def build_payload() -> dict[str, object]:
 
     maps = component._causal_maps(endpoint_tangents, left, right)
     try:
-        local_covariances, adjacent_right_left, local_norms = _local_covariances(
+        (
+            local_covariances,
+            adjacent_right_left,
+            local_norms,
+            midpoint_reconstruction_residuals,
+        ) = _local_covariances(
             endpoint_axes, midpoint_axes, endpoint_tangents, midpoint_tangents,
-            times, right, ambient,
+            times, right, ambient, use_supplemental=supplemental_ready,
         )
     except MidpointChainRuleIncomplete as error:
         return _incomplete_payload(str(error), tracked_inputs)
@@ -641,13 +735,19 @@ def build_payload() -> dict[str, object]:
         causal_signed_transverse_longitudinal_center_upper=transverse_l,
         causal_signed_transverse_transverse_center_upper=transverse_t,
         causal_maps_center=maps,
+        midpoint_ambient_coordinate_reconstruction_relative_residual=(
+            midpoint_reconstruction_residuals
+        ),
     )
     validation = {
         "all_370_endpoint_and_370_midpoint_recovery_shards_consumed": True,
         "endpoint_midpoint_and_second_incidence_signs_composed_before_norms": True,
-        "induced_midpoint_axis_axis_and_both_axis_transverse_legs_included": True,
-        "midpoint_scalar_scale_and_mixed_source_columns_explicitly_converted": True,
-        "no_unresolved_midpoint_input_or_source_normal_direction_discarded": True,
+        "complete_midpoint_UU_CU_UC_CC_blocks_included": supplemental_ready,
+        "induced_midpoint_axis_and_frame_normal_terms_included": supplemental_ready,
+        "all_midpoint_ambient_maps_reconstructed_below_5e_minus_13": bool(
+            np.max(midpoint_reconstruction_residuals) < 5.0e-13
+        ),
+        "no_unresolved_midpoint_input_or_source_normal_direction_discarded": supplemental_ready,
         "test_frame_and_reduced_inverse_composed_before_norms": True,
         "left_cross_and_right_input_block_correlations_retained_locally": True,
         "shared_node_diagonal_contributions_combined_across_adjacent_intervals_before_norms": True,

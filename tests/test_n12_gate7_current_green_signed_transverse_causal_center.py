@@ -181,6 +181,52 @@ def test_directional_conversion_retains_scalar_scale_and_mixed_basis_coordinates
     assert np.allclose(actual, expected, rtol=2.0e-14, atol=2.0e-14)
 
 
+def test_supplemental_blocks_restore_the_complete_ambient_midpoint_pullback(
+    tmp_path, monkeypatch,
+) -> None:
+    module = _module()
+    rng = np.random.default_rng(1777)
+    frame = rng.normal(size=(5, 3))
+    axis = rng.normal(size=3)
+    axis /= np.linalg.norm(axis)
+    q, _ = np.linalg.qr(np.column_stack((axis, np.eye(3))))
+    basis = q[:, 1:]
+    completion = complete = module.complete_ambient_basis(frame, axis, basis)
+    full_hessian = rng.normal(size=(4, 5, 5))
+    full_hessian = 0.5 * (
+        full_hessian + full_hessian.transpose(0, 2, 1)
+    )
+    basis_hessian = np.einsum(
+        "oab,ai,bj->oij",
+        full_hessian, complete.full_basis, complete.full_basis,
+        optimize=True,
+    )
+    aggregate = tmp_path / "midpoint_000.npz"
+    np.savez_compressed(
+        aggregate,
+        complement_retained=basis_hessian[:, 2:, :2],
+        complement_complement=basis_hessian[:, 2:, 2:],
+        retained_directions=completion.retained_directions,
+        complement_directions=completion.complement_directions,
+    )
+    monkeypatch.setattr(
+        module.supplemental, "_aggregate_path", lambda interval: aggregate,
+    )
+    output_map = rng.normal(size=(3, 4))
+    ambient_map = rng.normal(size=(5, 7))
+    actual, residual = module._supplemental_midpoint_pullback(
+        0, output_map, basis_hessian[:, :2, :2], basis, axis, frame,
+        ambient_map,
+    )
+    expected = np.einsum(
+        "co,oab,ai,bj->cij",
+        output_map, full_hessian, ambient_map, ambient_map,
+        optimize=True,
+    )
+    assert np.allclose(actual, expected, rtol=5.0e-14, atol=5.0e-14)
+    assert residual < 5.0e-13
+
+
 def test_nonzero_normal_map_blocks_even_when_all_tangent_hessian_terms_vanish() -> None:
     module = _module()
     frame = np.array([[1.0, 0.0], [0.0, 1.0], [0.0, 0.0]])
