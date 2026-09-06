@@ -11,13 +11,6 @@ from __future__ import annotations
 import math
 from typing import Any
 
-from bhsm.interface.owner_authorized_encapsulation_interface_action import (
-    active_encapsulation_differential,
-    closure_and_rank_status as prior_closure_and_rank_status,
-    invariant_density_ledger,
-)
-
-
 VERSION = "BHSM-FSC-ENC-1.0.0"
 PRIMITIVE_CLASS = "FSC-P1"
 EFFECTIVE_MAP_CLASS = "GEFF5"
@@ -33,6 +26,25 @@ EXACT_NEXT_OBJECT = (
     "ACTION_OWNED_FSC_TO_INTERFACE_CONSTITUTIVE_MAP_FIXING_THE_REFERENCE_"
     "SCALE_AND_NORMALIZATION_CONVENTION_CHANNEL_EXPONENTS_AND_WEIGHTS_AND_"
     "THE_INVARIANT_OPERATOR_COEFFICIENTS_WITHOUT_FIT"
+)
+
+# Snapshot of the certified ORD1 family identifiers/statuses needed by this
+# adjudication.  Keeping this small interface contract local avoids importing
+# the prior module's optional JAX-backed transitive dependency in core CI.  The
+# materializer hashes the full prior authority, so source drift is visible.
+CERTIFIED_ORD1_DENSITY_FAMILIES = (
+    ("canonical_generating", "ALLOWED", 0),
+    ("event_mode_source", "ALLOWED_CONDITIONALLY", 0),
+    ("environment_cauchy_noether", "ALLOWED", 0),
+    ("scale", "ALLOWED", 0),
+    ("attachment_first_jet", "REQUIRED_CLASS", 1),
+    ("carrier_first_jet", "REQUIRED_CLASS", 1),
+    ("field_first_jet", "ALLOWED_CONDITIONALLY", 1),
+    ("gauge_spin_scalar", "ALLOWED_CONDITIONALLY", 1),
+    ("incidence_projector", "ALLOWED_CONDITIONALLY", 1),
+    ("topological_holonomy", "OPTIONAL_DISCRETE_CLASS", 1),
+    ("extrinsic_curvature_or_second_jet", "NOT_REQUIRED", 2),
+    ("owned_GHY_Hayward", "REDUNDANT_NOT_NEW_INTERFACE_STRENGTH", 2),
 )
 
 
@@ -319,8 +331,7 @@ def interface_invariant_coefficient_ledger() -> list[dict[str, Any]]:
     """Attach FSC status to every density family from the certified ORD1 ledger."""
 
     output: list[dict[str, Any]] = []
-    for row in invariant_density_ledger():
-        family = row["family"]
+    for family, prior_status, derivative_order in CERTIFIED_ORD1_DENSITY_FAMILIES:
         if family == "owned_GHY_Hayward":
             fsc_status = "REDUNDANT_EXISTING_COEFFICIENT_NOT_REWEIGHTED_BY_FSC"
         elif family == "extrinsic_curvature_or_second_jet":
@@ -332,8 +343,8 @@ def interface_invariant_coefficient_ledger() -> list[dict[str, Any]]:
         output.append(
             {
                 "family": family,
-                "prior_status": row["status"],
-                "derivative_order": row["derivative_order"],
+                "prior_status": prior_status,
+                "derivative_order": derivative_order,
                 "fsc_power": None,
                 "channel_weight": None,
                 "coefficient_selected": False,
@@ -436,18 +447,20 @@ def perturbative_hierarchy_adjudication() -> dict[str, Any]:
 
 
 def first_variation_and_rank_status() -> dict[str, Any]:
-    prior = prior_closure_and_rank_status()
     return {
         "finite_density_fixed": False,
-        "formal_prior_variation": active_encapsulation_differential()["definition_from_total_seam_equations"],
+        "formal_prior_variation": (
+            "Delta_enc:=Pi_c+C(F_B)^*Pi_e="
+            "-[E_qc(S_enc)+C(F_B)^*E_qe(S_enc)]=:J_enc"
+        ),
         "delta_S_enc_explicit": None,
         "delta_over_iota_enc": None,
         "delta_over_F_B": None,
         "delta_over_L_s": None,
         "Delta_enc": None,
         "N12_rank_added": 0,
-        "N12_residual_before_time_quotient": prior["N12_residual_before_time_quotient"],
-        "N12_residual_after_time_quotient": prior["N12_residual_after_time_quotient"],
+        "N12_residual_before_time_quotient": 67,
+        "N12_residual_after_time_quotient": 66,
         "loop": LOOP_CLASS,
         "RSP": RSP_CLASS,
         "cycle_rerun": False,
@@ -532,7 +545,7 @@ def adjudication_payload() -> dict[str, Any]:
 
 
 __all__ = [
-    "EFFECTIVE_MAP_CLASS", "EM_CLASS", "EXACT_NEXT_OBJECT", "GEOMETRIC_CLASS",
+    "CERTIFIED_ORD1_DENSITY_FAMILIES", "EFFECTIVE_MAP_CLASS", "EM_CLASS", "EXACT_NEXT_OBJECT", "GEOMETRIC_CLASS",
     "INTERFACE_CLASS", "LOOP_CLASS", "PREGEOMETRIC_CLASS", "PRIMITIVE_CLASS",
     "RSP_CLASS", "SCALE_CLASS", "VERSION", "adjudication_payload",
     "allowed_fsc_power_ledger", "alpha_from_canonical_g", "canonical_g_from_alpha",
