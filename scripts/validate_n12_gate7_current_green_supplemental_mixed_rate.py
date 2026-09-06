@@ -8,6 +8,7 @@ or Gate-7 certificate.
 from __future__ import annotations
 
 import argparse
+import hashlib
 import json
 from pathlib import Path
 import sys
@@ -21,9 +22,28 @@ sys.path.insert(0, str(ROOT / "scripts"))
 
 import derive_n12_gate7_current_green_full_transverse_quadratic_center as center  # noqa: E402
 import derive_n12_gate7_current_green_signed_transverse_tensor_recovery as recovery  # noqa: E402
+import derive_n12_gate7_current_green_supplemental_mixed_rate as supplemental  # noqa: E402
 from derive_n12_gate7_current_green_supplemental_mixed_rate import (  # noqa: E402
     mixed_rate_map,
 )
+
+
+RESULT = (
+    ROOT / "artifacts/current_semantics/"
+    "BHSM_N12_GATE7_SUPPLEMENTAL_MIXED_RATE_UU_VALIDATION.json"
+)
+THIS_SCRIPT = Path(__file__).resolve()
+
+
+def _sha(path: Path) -> str:
+    payload = path.read_bytes()
+    if path.suffix.lower() in {".json", ".md", ".py"}:
+        payload = payload.replace(b"\r\n", b"\n")
+    return hashlib.sha256(payload).hexdigest().upper()
+
+
+def _relative(path: Path) -> str:
+    return path.resolve().relative_to(ROOT.resolve()).as_posix()
 
 
 def _comparison(actual: np.ndarray, expected: np.ndarray) -> dict[str, float]:
@@ -78,6 +98,10 @@ def validate(interval: int, left: int, rights: list[int]) -> dict[str, object]:
         comparison["relative_Frobenius_difference"] < 5.0e-10
         and all(np.isfinite(value) for value in diagnostic_values.values())
     )
+    sources = (
+        path, THIS_SCRIPT, Path(supplemental.__file__).resolve(),
+        Path(center.__file__).resolve(), Path(recovery.__file__).resolve(),
+    )
     return {
         "artifact": "BHSM_N12_GATE7_SUPPLEMENTAL_MIXED_RATE_UU_VALIDATION",
         "status": "PASSED" if passed else "FAILED_CLOSED",
@@ -88,6 +112,8 @@ def validate(interval: int, left: int, rights: list[int]) -> dict[str, object]:
         "elapsed_seconds": elapsed,
         "comparison": comparison,
         "diagnostics": diagnostic_values,
+        "recovery_campaign_fingerprint": fingerprint,
+        "inputs": {_relative(source): _sha(source) for source in sources},
         "validation_passed": passed,
         "claim_boundary": {
             "supplemental_rectangular_kernel_matches_recovered_UU_slice": passed,
@@ -108,6 +134,7 @@ def main() -> None:
         args.interval, args.left,
         [int(value) for value in args.rights.split(",") if value],
     )
+    RESULT.write_text(json.dumps(payload, indent=2) + "\n", encoding="utf-8")
     print(json.dumps(payload, indent=2))
     if not payload["validation_passed"]:
         raise SystemExit(1)
