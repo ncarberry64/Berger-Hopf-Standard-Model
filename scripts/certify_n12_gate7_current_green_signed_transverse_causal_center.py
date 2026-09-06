@@ -112,15 +112,19 @@ def _kinematic_midpoint_map(
     return np.linalg.lstsq(midpoint_frame, augmented, rcond=None)[0]
 
 
-def _covariance_blocks(local: np.ndarray) -> np.ndarray:
+def _pair_blocks(local: np.ndarray) -> tuple[np.ndarray, np.ndarray, np.ndarray]:
     left = local[:, :COORDINATES, :COORDINATES]
     cross = (
         local[:, :COORDINATES, COORDINATES:]
         + local[:, COORDINATES:, :COORDINATES].transpose(0, 2, 1)
     )
     right = local[:, COORDINATES:, COORDINATES:]
+    return left, cross, right
+
+
+def _covariance_blocks(local: np.ndarray) -> np.ndarray:
     covariances = np.empty((PAIR_BLOCKS, COORDINATES, COORDINATES))
-    for index, block in enumerate((left, cross, right)):
+    for index, block in enumerate(_pair_blocks(local)):
         flat = block.reshape((COORDINATES, -1))
         covariance = flat @ flat.T
         covariances[index] = 0.5 * (covariance + covariance.T)
@@ -135,9 +139,13 @@ def _local_covariances(
     times: np.ndarray,
     right_blocks: np.ndarray,
     ambient: np.ndarray,
-) -> tuple[np.ndarray, np.ndarray]:
+) -> tuple[np.ndarray, np.ndarray, np.ndarray]:
     covariances = np.empty((INTERVALS, PAIR_BLOCKS, COORDINATES, COORDINATES))
+    adjacent_right_left = np.zeros(
+        (INTERVALS, COORDINATES, COORDINATES), dtype=float,
+    )
     local_norms = np.empty(INTERVALS)
+    previous_right_flat: np.ndarray | None = None
     zero = np.zeros((OUTPUTS, TRANSVERSE, TRANSVERSE))
     for interval in range(INTERVALS):
         h = float(times[interval + 1] - times[interval])
@@ -180,44 +188,85 @@ def _local_covariances(
         local += _transformed(
             midpoint_output, midpoint_tensor, midpoint_input,
         )
+        pair_blocks = _pair_blocks(local)
         covariances[interval] = _covariance_blocks(local)
+        left_flat = pair_blocks[0].reshape((COORDINATES, -1))
+        if previous_right_flat is not None:
+            adjacent_right_left[interval] = previous_right_flat @ left_flat.T
+        previous_right_flat = pair_blocks[2].reshape((COORDINATES, -1))
         local_norms[interval] = math.nextafter(sum(
             math.sqrt(max(float(np.trace(covariance)), 0.0))
             for covariance in covariances[interval]
         ), math.inf)
-    return covariances, local_norms
+    return covariances, adjacent_right_left, local_norms
 
 
 def _causal_bounds(
     local_covariances: np.ndarray,
+    adjacent_right_left: np.ndarray,
     maps: np.ndarray,
     axes: np.ndarray,
 ) -> tuple[np.ndarray, np.ndarray]:
-    longitudinal = np.zeros(NODES)
-    transverse = np.zeros(NODES)
-    transported = np.empty((0, PAIR_BLOCKS, COORDINATES, COORDINATES))
-    for interval in range(INTERVALS):
-        if len(transported):
-            transported = np.matmul(
-                np.matmul(maps[interval], transported), maps[interval].T,
+    intervals = int(local_covariances.shape[0])
+    if (
+        local_covariances.shape != (
+            intervals, PAIR_BLOCKS, COORDINATES, COORDINATES,
+        )
+        or adjacent_right_left.shape != (
+            intervals, COORDINATES, COORDINATES,
+        )
+        or maps.shape != (intervals, COORDINATES, COORDINATES)
+        or axes.shape != (intervals + 1, COORDINATES)
+    ):
+        raise ValueError("causal covariance inputs have incompatible shapes")
+    longitudinal = np.zeros(intervals + 1)
+    transverse = np.zeros(intervals + 1)
+    diagonal = np.empty((0, COORDINATES, COORDINATES))
+    off_diagonal = np.empty((0, COORDINATES, COORDINATES))
+    pending_right: np.ndarray | None = None
+    for interval in range(intervals):
+        causal_map = maps[interval]
+        if len(diagonal):
+            diagonal = np.matmul(
+                np.matmul(causal_map, diagonal), causal_map.T,
             )
-            transported = 0.5 * (
-                transported + transported.transpose(0, 1, 3, 2)
+            diagonal = 0.5 * (
+                diagonal + diagonal.transpose(0, 2, 1)
             )
-        transported = np.concatenate((
-            transported, local_covariances[interval][None, ...],
+        if len(off_diagonal):
+            off_diagonal = np.matmul(
+                np.matmul(causal_map, off_diagonal), causal_map.T,
+            )
+            off_diagonal = 0.5 * (
+                off_diagonal + off_diagonal.transpose(0, 2, 1)
+            )
+        if pending_right is not None:
+            pending_right = causal_map @ pending_right @ causal_map.T
+            cross = causal_map @ adjacent_right_left[interval]
+            completed = (
+                pending_right + local_covariances[interval, 0]
+                + cross + cross.T
+            )
+            diagonal = np.concatenate((
+                diagonal, 0.5 * (completed + completed.T)[None, ...],
+            ), axis=0)
+        pending_right = local_covariances[interval, 2].copy()
+        off_diagonal = np.concatenate((
+            off_diagonal, local_covariances[interval, 1][None, ...],
         ), axis=0)
         axis = axes[interval + 1]
         total_l = 0.0
         total_t = 0.0
-        for source in transported:
-            for covariance in source:
-                l2 = max(float(axis @ covariance @ axis), 0.0)
-                total = max(float(np.trace(covariance)), l2)
-                total_l = math.nextafter(total_l + math.sqrt(l2), math.inf)
-                total_t = math.nextafter(
-                    total_t + math.sqrt(max(total - l2, 0.0)), math.inf,
-                )
+        covariances = [*diagonal, *off_diagonal]
+        if pending_right is not None:
+            covariances.append(pending_right)
+        for covariance in covariances:
+            l2 = max(float(axis @ covariance @ axis), 0.0)
+            total = max(float(np.trace(covariance)), l2)
+            total_l = math.nextafter(total_l + math.sqrt(l2), math.inf)
+            total_t = math.nextafter(
+                total_t + math.sqrt(max(total - l2, 0.0)), math.inf,
+            )
         longitudinal[interval + 1] = total_l
         transverse[interval + 1] = total_t
     return longitudinal, transverse
@@ -268,12 +317,12 @@ def build_payload() -> dict[str, object]:
         ambient = np.asarray(source["ambient_DF_mid"], dtype=float)
 
     maps = component._causal_maps(endpoint_tangents, left, right)
-    local_covariances, local_norms = _local_covariances(
+    local_covariances, adjacent_right_left, local_norms = _local_covariances(
         endpoint_axes, midpoint_axes, endpoint_tangents, midpoint_tangents,
         times, right, ambient,
     )
     transverse_l, transverse_t = _causal_bounds(
-        local_covariances, maps, endpoint_axes,
+        local_covariances, adjacent_right_left, maps, endpoint_axes,
     )
 
     with np.load(Y_SOURCE.with_suffix(".npz")) as source:
@@ -311,6 +360,7 @@ def build_payload() -> dict[str, object]:
     np.savez_compressed(
         DATA,
         local_pair_output_covariances=local_covariances,
+        adjacent_right_left_output_cross_covariances=adjacent_right_left,
         local_pair_block_Frobenius_upper=local_norms,
         causal_signed_transverse_longitudinal_center_upper=transverse_l,
         causal_signed_transverse_transverse_center_upper=transverse_t,
@@ -321,6 +371,7 @@ def build_payload() -> dict[str, object]:
         "endpoint_midpoint_and_second_incidence_signs_composed_before_norms": True,
         "test_frame_and_reduced_inverse_composed_before_norms": True,
         "left_cross_and_right_input_block_correlations_retained_locally": True,
+        "shared_node_diagonal_contributions_combined_across_adjacent_intervals_before_norms": True,
         "complete_370_interval_frozen_center_causal_transport_composed": True,
         "all_center_bounds_finite_and_nonnegative": bool(
             np.all(np.isfinite(local_norms)) and np.all(local_norms >= 0.0)

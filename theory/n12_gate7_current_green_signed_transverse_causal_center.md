@@ -34,9 +34,13 @@ exact center Frobenius identity
 \]
 
 Projection on the current Green axis and its orthogonal complement is also
-performed on `PCP^T`, so no output component box is introduced.  Independent
-source intervals and the three local input-pair blocks are joined only by the
-triangle inequality required by the existing block-sup proof domain.
+performed on `PCP^T`, so no output component box is introduced.  The
+right-right contribution from interval `i-1` and left-left contribution from
+interval `i` act on the same global diagonal input block.  They are causally
+transported and added with their signed cross covariance before a norm is
+taken.  Only distinct global diagonal and nearest-neighbor input monomials are
+joined by the triangle inequality required by the existing block-sup proof
+domain.
 
 The resulting two-radius calculation is still a center screen.  A positive
 screen authorizes the unchanged outward remainder calculation; it does not

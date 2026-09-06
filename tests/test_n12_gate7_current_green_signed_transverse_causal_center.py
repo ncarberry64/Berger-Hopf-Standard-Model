@@ -53,3 +53,38 @@ def test_local_pair_covariances_retain_left_cross_right_evaluations() -> None:
         flat = block.reshape((module.COORDINATES, -1))
         assert np.allclose(covariance, flat @ flat.T, rtol=2.0e-14, atol=2.0e-10)
 
+
+def test_adjacent_diagonal_sources_are_combined_before_the_causal_norm() -> None:
+    module = _module()
+    rng = np.random.default_rng(1741)
+    vectors = rng.normal(size=(2, 3, module.COORDINATES))
+    local_covariances = np.einsum(
+        "ipa,ipb->ipab", vectors, vectors, optimize=True,
+    )
+    adjacent = np.zeros((2, module.COORDINATES, module.COORDINATES))
+    adjacent[1] = np.outer(vectors[0, 2], vectors[1, 0])
+    maps = np.stack((
+        np.eye(module.COORDINATES),
+        np.eye(module.COORDINATES) + 1.0e-3 * rng.normal(
+            size=(module.COORDINATES, module.COORDINATES)
+        ),
+    ))
+    axes = rng.normal(size=(3, module.COORDINATES))
+    axes /= np.linalg.norm(axes, axis=1)[:, None]
+    longitudinal, transverse = module._causal_bounds(
+        local_covariances, adjacent, maps, axes,
+    )
+
+    diagonal_node1_at_node2 = maps[1] @ vectors[0, 2] + vectors[1, 0]
+    expected = [
+        diagonal_node1_at_node2,
+        vectors[1, 2],
+        maps[1] @ vectors[0, 1],
+        vectors[1, 1],
+    ]
+    axis = axes[2]
+    expected_l = sum(abs(float(axis @ value)) for value in expected)
+    expected_t = sum(float(np.linalg.norm(value - axis * (axis @ value)))
+                     for value in expected)
+    assert np.isclose(longitudinal[2], expected_l, rtol=2.0e-14)
+    assert np.isclose(transverse[2], expected_t, rtol=2.0e-14)
