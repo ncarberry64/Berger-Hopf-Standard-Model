@@ -136,7 +136,10 @@ def _completion(interval: int, geometry: dict[str, object]):
     return completion, recovered
 
 
-def _compute_interval(interval: int) -> dict[str, float]:
+def _compute_interval(
+    interval: int,
+    rows: tuple[int, ...] = tuple(range(COMPLEMENT)),
+) -> dict[str, float]:
     geometry = _load_geometry()
     inputs = geometry["inputs"]
     assert isinstance(inputs, dict)
@@ -149,7 +152,9 @@ def _compute_interval(interval: int) -> dict[str, float]:
     computed = reused = 0
     elapsed = 0.0
     WORK.mkdir(parents=True, exist_ok=True)
-    for row in range(COMPLEMENT):
+    if not rows or any(row < 0 or row >= COMPLEMENT for row in rows):
+        raise ValueError("complement row outside 0..25")
+    for row in rows:
         path = _row_path(interval, row)
         if _valid_row(path, interval, row, fingerprint, recovered_sha):
             reused += 1
@@ -248,11 +253,17 @@ def main() -> None:
     parser = argparse.ArgumentParser()
     parser.add_argument("--indices", required=True)
     parser.add_argument("--workers", type=int, default=1)
+    parser.add_argument("--rows", default=",".join(str(row) for row in range(COMPLEMENT)))
     parser.add_argument("--aggregate-only", action="store_true")
     args = parser.parse_args()
     indices = [int(value) for value in args.indices.split(",") if value]
     if any(index < 0 or index >= INTERVALS for index in indices):
         raise ValueError("midpoint index outside 0..369")
+    rows = tuple(dict.fromkeys(
+        int(value) for value in args.rows.split(",") if value
+    ))
+    if not rows or any(row < 0 or row >= COMPLEMENT for row in rows):
+        raise ValueError("complement row outside 0..25")
     if args.aggregate_only:
         for index in indices:
             print(_aggregate_interval(index), flush=True)
@@ -260,14 +271,18 @@ def main() -> None:
     workers = max(1, min(args.workers, os.cpu_count() or 1, len(indices)))
     totals = {"computed": 0.0, "reused": 0.0, "elapsed_seconds": 0.0}
     with ProcessPoolExecutor(max_workers=workers) as executor:
-        futures = {executor.submit(_compute_interval, index): index for index in indices}
+        futures = {
+            executor.submit(_compute_interval, index, rows): index
+            for index in indices
+        }
         for future in as_completed(futures):
             result = future.result()
             for key in totals:
                 totals[key] += result[key]
             print(json.dumps({"completed_interval": futures[future], "totals": totals}), flush=True)
-    for index in indices:
-        _aggregate_interval(index)
+    if len(rows) == COMPLEMENT:
+        for index in indices:
+            _aggregate_interval(index)
 
 
 if __name__ == "__main__":
