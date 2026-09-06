@@ -20,6 +20,7 @@ RECOVERY_OVERHEAD_FACTOR = 1.05
 ABORTED_SUPERSEDED_RECOVERY_PILOTS_CPU_HOURS = 2.9
 FOUR_WORKER_DIRECT_PILOT_MAXIMUM_SECONDS = 1143.824539299996
 TWO_WORKER_DIRECT_PILOT_MAXIMUM_SECONDS = 768.2733264999988
+THREE_WORKER_DIRECT_PILOT_MAXIMUM_SECONDS = 917.7202259000042
 RECOVERY_ROWS = 740
 
 
@@ -57,8 +58,11 @@ def build_payload() -> dict[str, object]:
     four_worker_projection = (
         FOUR_WORKER_DIRECT_PILOT_MAXIMUM_SECONDS * RECOVERY_ROWS / 3600.0
     )
-    projected_from_direct_pilot = (
+    two_worker_projection = (
         TWO_WORKER_DIRECT_PILOT_MAXIMUM_SECONDS * RECOVERY_ROWS / 3600.0
+    )
+    projected_from_direct_pilot = (
+        THREE_WORKER_DIRECT_PILOT_MAXIMUM_SECONDS * RECOVERY_ROWS / 3600.0
     )
     projected_cpu = max(projected_from_parent, projected_from_direct_pilot)
     projected_total_cpu = (
@@ -86,7 +90,7 @@ def build_payload() -> dict[str, object]:
             four_worker_projection + ABORTED_SUPERSEDED_RECOVERY_PILOTS_CPU_HOURS
             > CPU_CEILING_HOURS
         ),
-        "two_worker_ceiling_preserving_throttle_selected": True,
+        "three_worker_ceiling_preserving_throttle_selected": True,
         "all_existing_valid_recovery_shards_reused": True,
         "no_proof_parameter_precision_definition_or_claim_changed": True,
         "raw_recovery_cache_is_not_release_authority": True,
@@ -124,12 +128,14 @@ def build_payload() -> dict[str, object]:
             "four_worker_direct_pilot_maximum_seconds": FOUR_WORKER_DIRECT_PILOT_MAXIMUM_SECONDS,
             "four_worker_projected_recovery_CPU_hours": four_worker_projection,
             "two_worker_direct_pilot_maximum_seconds": TWO_WORKER_DIRECT_PILOT_MAXIMUM_SECONDS,
+            "two_worker_projected_recovery_CPU_hours": two_worker_projection,
+            "three_worker_direct_pilot_maximum_seconds": THREE_WORKER_DIRECT_PILOT_MAXIMUM_SECONDS,
             "projected_from_parent_campaign_CPU_hours": projected_from_parent,
-            "projected_from_two_worker_direct_pilot_CPU_hours": projected_from_direct_pilot,
+            "projected_from_three_worker_direct_pilot_CPU_hours": projected_from_direct_pilot,
             "projected_recovery_CPU_hours": projected_cpu,
             "projected_total_CPU_hours_including_aborted_pilot": projected_total_cpu,
             "fixed_campaign_CPU_ceiling": CPU_CEILING_HOURS,
-            "selected_worker_count": 2,
+            "selected_worker_count": 3,
             "stop_condition": (
                 "STOP_ON_CORRUPT_OR_MISSING_PUBLISHED_SHARD_NONFINITE_TENSOR_"
                 "NORM_REPRODUCTION_FAILURE_PROOF_CONTRACT_CHANGE_OR_PROJECTED_"
@@ -142,7 +148,7 @@ def build_payload() -> dict[str, object]:
             "same endpoint and midpoint physical tangent frames",
             "same endpoint and correlated midpoint current-Green complements",
             "same selected eigenline and bordered hard-response identities",
-            "ceiling-preserving two-worker throttle selected after the measured four-worker violation",
+            "ceiling-preserving three-worker throttle selected after the measured four-worker violation",
         ],
         "claim_boundary": {
             "SIGNED_CENTER_TENSORS_RECOVERED": False,
