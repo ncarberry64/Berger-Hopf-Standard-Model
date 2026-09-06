@@ -1,0 +1,58 @@
+{
+  "FULL_BHSM_COMPLETE": false,
+  "artifact": "BHSM_N12_GATE7_CURRENT_GREEN_SIGNED_TENSOR_RECOVERY_COMPUTE_JUSTIFICATION",
+  "benchmark": {
+    "elapsed_seconds": 607.4219200999942,
+    "index": 1,
+    "kind": "midpoint",
+    "output_Frobenius_maximum_relative_residual": 0.0,
+    "total_Frobenius_relative_residual": 0.0
+  },
+  "campaign_authorized": true,
+  "claim_boundary": {
+    "BHSM_PHYSICAL_BACKGROUND_AUTHORITY": false,
+    "FULL_BHSM_COMPLETE": false,
+    "GATE7_CLOSED": false,
+    "OUTWARD_TRANSVERSE_REMAINDER_DERIVED": false,
+    "SIGNED_CAUSAL_TRANSVERSE_OPERATOR_DERIVED": false,
+    "SIGNED_CENTER_TENSORS_RECOVERED": false
+  },
+  "cost": {
+    "conservative_recovery_overhead_factor": 1.05,
+    "fixed_campaign_CPU_ceiling": 210.0,
+    "projected_recovery_CPU_hours": 176.2870465889457,
+    "published_center_campaign_measured_CPU_hours": 167.89242532280542,
+    "selected_worker_count": 4,
+    "stop_condition": "STOP_ON_CORRUPT_OR_MISSING_PUBLISHED_SHARD_NONFINITE_TENSOR_NORM_REPRODUCTION_FAILURE_PROOF_CONTRACT_CHANGE_OR_PROJECTED_CPU_CEILING_VIOLATION"
+  },
+  "inputs": {
+    "artifacts/flagship_integration/.current_green_signed_transverse_tensor_recovery_work/midpoint_001.npz": "870B20B53EA075E4DFB79C6EFF4AB2E9EA26FA558F87FD2AE2B21C7CE7DE664A",
+    "artifacts/flagship_integration/BHSM_N12_GATE7_CURRENT_GREEN_FULL_TRANSVERSE_QUADRATIC_CENTER.json": "69944D8BB7F33B2B44877F588658F3CC6E16A9DF2D050F8427EAADB7ECF73B94",
+    "scripts/derive_n12_gate7_current_green_signed_transverse_tensor_recovery.py": "E26BED5EFD74F7EB61F0F77E7BD3161B74152EE5A0DB1179C2953D3BC8F29B27",
+    "theory/n12_gate7_current_green_signed_transverse_tensor_recovery.md": "BFF4282AC56DDC4B7C585BF88B892BFA8B13D977B3F6500B947CAC46EB8B4940"
+  },
+  "proof_obligation": "RECOVER_THE_ALREADY_EVALUATED_SIGNED_99_BY_73_BY_73_CENTER_TENSORS_AT_ALL_370_DEFINED_AXIS_ENDPOINTS_AND_370_MIDPOINTS_SO_CAUSAL_COMPOSITION_PRECEDES_NORM_EXTRACTION",
+  "reused_certified_assets": [
+    "complete 740-center signed kernel evaluations and published invariant norms",
+    "same current 371-node realization and retained birth trace",
+    "same endpoint and midpoint physical tangent frames",
+    "same endpoint and correlated midpoint current-Green complements",
+    "same selected eigenline and bordered hard-response identities",
+    "same four-worker operational throttle and 210 CPU-hour ceiling"
+  ],
+  "status": "SIGNED_TENSOR_RECOVERY_AUTHORIZED_UNDER_FIXED_COMPUTE_CEILING",
+  "validation": {
+    "FULL_BHSM_COMPLETE": false,
+    "all_existing_valid_recovery_shards_reused": true,
+    "benchmark_tensor_reproduces_all_published_output_norms": true,
+    "benchmark_tensor_reproduces_published_total_norm": true,
+    "four_worker_operational_throttle_retained": true,
+    "no_proof_parameter_precision_definition_or_claim_changed": true,
+    "outward_remainder_and_Gate7_remain_open": true,
+    "projected_recovery_CPU_hours_below_fixed_ceiling": true,
+    "published_740_center_campaign_is_valid": true,
+    "raw_recovery_cache_is_not_release_authority": true,
+    "same_center_kernel_action_mesh_frames_axes_and_branch_reused": true
+  },
+  "validation_passed": true
+}
