@@ -1,0 +1,600 @@
+{
+  "INVALIDATED": [
+    "1/137 is an exact scale-independent BHSM action constant",
+    "1/(6*pi^2), 1/(12*pi^2), or 1/(13*pi^2) is the current universal interface coupling",
+    "alpha_FSC*W_r is uniquely justified for every channel",
+    "FSC normalizes rho_E/ST or selects a geometric/pregeometric coupling",
+    "factoring alpha_FSC from S_enc collapses IF5"
+  ],
+  "OPEN": [
+    "ACTION_OWNED_FSC_TO_INTERFACE_CONSTITUTIVE_MAP_FIXING_THE_REFERENCE_SCALE_AND_NORMALIZATION_CONVENTION_CHANNEL_EXPONENTS_AND_WEIGHTS_AND_THE_INVARIANT_OPERATOR_COEFFICIENTS_WITHOUT_FIT",
+    "physical U1 projection and reference scale/scheme",
+    "FSC powers and action-attached weights per interface invariant",
+    "event-scale map and interface RG/dressing law",
+    "physical carrier, F_B, L_s, S_enc, and Delta_enc"
+  ],
+  "REDUNDANT": [
+    "absorbing alpha_FSC into an otherwise arbitrary W_s",
+    "recounting the owned GHY/Hayward coefficient as FSC interface strength",
+    "using observed low-energy alpha to refit a historical dressing or interface coefficient"
+  ],
+  "VALIDATED": [
+    "alpha_FSC is an owner-authorized symbolic common reference unit",
+    "canonical gauge normalization permits different FSC powers for kinetic and vertex objects",
+    "v14.19 supplies a conditional relative trace weight while v14.20 blocks the 1:2:7 universal-coupling promotion",
+    "FSC factorization alone leaves the ORD1 constitutive function class unchanged",
+    "GEFF5, SCALE4, FSC-IF5, LOOP3, RSP5, and zero added N12 rank"
+  ],
+  "adjudication": {
+    "channel_weights": [
+      {
+        "channel": "electromagnetic/U1-like",
+        "classification": "W1",
+        "condition": "surviving physical U1 projection and canonical normalization",
+        "selected_physical_weight": false,
+        "source": "owner FSC yardstick plus candidate C_U1=1 convention",
+        "weight": "1 by reference convention"
+      },
+      {
+        "channel": "weak",
+        "classification": "W1",
+        "historical_alternative": "2 from 1:2:7 is W3 and not action-attached",
+        "selected_physical_weight": false,
+        "source": "v14.19 K1:K2=10/3:2",
+        "weight": "5/3 relative to the trace-normalized U1 coefficient, conditionally"
+      },
+      {
+        "channel": "strong/color",
+        "classification": "W1",
+        "historical_alternative": "7 from 1:2:7 is W3 and not action-attached",
+        "selected_physical_weight": false,
+        "source": "v14.19 K1:K3=10/3:2",
+        "weight": "5/3 relative to the trace-normalized U1 coefficient, conditionally"
+      },
+      {
+        "channel": "scalar/topographic",
+        "classification": "W4",
+        "selected_physical_weight": false,
+        "source": "no FSC-to-scalar interface coefficient theorem",
+        "weight": null
+      },
+      {
+        "channel": "geometric/gravitational",
+        "classification": "W4",
+        "selected_physical_weight": false,
+        "source": "no FSC-to-envelopment or curvature coefficient theorem",
+        "weight": null
+      },
+      {
+        "channel": "pregeometric/emergent",
+        "classification": "W4",
+        "selected_physical_weight": false,
+        "source": "no ordinary gauge normalization or carrier exists in C_A",
+        "weight": null
+      }
+    ],
+    "claim_firewall": {
+      "FSC_LITERAL_UNIVERSAL_FORCE_CLAIMED": false,
+      "FSC_SCALE_INDEPENDENT_CLAIMED": false,
+      "FTL_NEUTRINO_CLAIMED": false,
+      "FULL_BHSM_COMPLETION_CLAIMED": false,
+      "GATE7_CLOSURE_CLAIMED": false,
+      "HISTORICAL_COUPLING_CANDIDATE_PROMOTED": false,
+      "INTERFACE_COEFFICIENT_FITTED": false,
+      "INTERFACE_FUNCTION_HAND_SELECTED": false,
+      "NEW_PARTICLE_RESULT_CLAIMED": false
+    },
+    "closure": {
+      "RSP": "RSP5",
+      "effective_map_class": "GEFF5",
+      "exact_next_object": "ACTION_OWNED_FSC_TO_INTERFACE_CONSTITUTIVE_MAP_FIXING_THE_REFERENCE_SCALE_AND_NORMALIZATION_CONVENTION_CHANNEL_EXPONENTS_AND_WEIGHTS_AND_THE_INVARIANT_OPERATOR_COEFFICIENTS_WITHOUT_FIT",
+      "interface_class": "FSC-IF5",
+      "loop": "LOOP3",
+      "owner_question": null,
+      "scale_class": "SCALE4",
+      "selected_Delta_enc": null,
+      "selected_F_B": null,
+      "selected_L_s": null,
+      "selected_S_enc": null,
+      "selected_carrier": null,
+      "why_no_owner_question": "FSC-IF5 is a theorem deficit, not a small owner ambiguity"
+    },
+    "constitutive_closure": {
+      "classification": "FSC-IF5",
+      "factorization": "S_enc=alpha_FSC*S_hat_enc is a bookkeeping factorization for nonzero alpha_FSC",
+      "factorization_has_decision_power": false,
+      "infinite_dimensional_freedom_removed": false,
+      "reason": "rescaling W_s to W_s/alpha_FSC is bijective and does not choose an invariant density, operator kernel, carrier, exponent, or relative coefficient",
+      "selected_coefficients": 0,
+      "selected_functions": 0,
+      "selected_interface_density": null
+    },
+    "coupling_authority": [
+      {
+        "authority": "FSC-P1",
+        "object": "symbolic alpha_FSC yardstick",
+        "use": "permitted as a reference unit"
+      },
+      {
+        "authority": "FSC-P0",
+        "object": "alpha_EM(0)^(-1)=137.035999084",
+        "use": "empirical comparison only"
+      },
+      {
+        "authority": "FSC-P2",
+        "object": "1/(12*pi^2)",
+        "use": "quarantined geometric candidate"
+      },
+      {
+        "authority": "FSC-P3_AS_DENSITY; SUPERSEDED_AS_COMMON_COUPLING",
+        "object": "1/(6*pi^2)",
+        "use": "Weyl factor only"
+      },
+      {
+        "authority": "FSC-P2",
+        "object": "1:2:7",
+        "use": "historical/spectral candidate, not action coefficients"
+      },
+      {
+        "authority": "FSC-P3_CONDITIONAL",
+        "object": "3/5:1:1 squared-coupling ratio",
+        "use": "declared trace domain only"
+      },
+      {
+        "authority": "FSC-P2",
+        "object": "13*pi^2 electroweak inverse alpha",
+        "use": "matching screen only"
+      },
+      {
+        "authority": "FSC-P2",
+        "object": "SM one-loop RG transport",
+        "use": "comparison scaffold, not interface running"
+      }
+    ],
+    "effective_map": {
+      "R_r_status": "arbitrary invariant scalar/matrix/operator-valued response remains",
+      "classification": "GEFF5",
+      "linear_candidate": "alpha_eff^(r)=alpha_FSC*W_r",
+      "linear_candidate_justified": false,
+      "most_specific_current_form": "alpha_eff^(r)(mu,Xi)=alpha_FSC^(p_r) W_r R_r(mu/mu_ref,I_event,I_environment,I_scale;discrete_data)",
+      "no_new_fit_parameter": true,
+      "p_r_status": "unselected except inside already-normalized sector-specific terms",
+      "unique_map": null,
+      "why_GEFF5": "dimensions and covariance type the arguments but do not select p_r, the physical W_r, the event-scale map, or the response operator/function"
+    },
+    "electromagnetic": {
+      "classification": "EM-FSC3",
+      "complete_first_order_response": false,
+      "exact_strength_at_interface_scale_fixed": false,
+      "reason": "the yardstick fixes a channel unit but multiple covariant operator laws remain",
+      "reference_channel_normalization": "alpha_FSC with W_EM=1 by conditional convention",
+      "remaining_operator_classes": [
+        "canonical generating contractions",
+        "field and attachment first-jet invariants",
+        "local matrix-valued multiplicity responses",
+        "nonlocal boundary response kernels when a domain is selected"
+      ],
+      "tensor_operator_shape_fixed": false
+    },
+    "energy_spacetime_ratio": {
+      "candidate": "chi_enc=alpha_eff^(r)*rho_E/ST",
+      "multiplication_derived": false,
+      "reason": "a dimensionless coupling cannot supply the missing common charge, reference, carrier measure, or covariant energy/spacetime contraction",
+      "rho_E/ST_defined_by_FSC": false,
+      "rho_E/ST_dimensionless_after_FSC": false,
+      "selected_control": null
+    },
+    "frozen_cross_check": {
+      "CKM_changed": false,
+      "collider_predictions_changed": false,
+      "family_mode_assignments_changed": false,
+      "frozen_prediction_files_modified": false,
+      "gauge_coupling_screens_changed": false,
+      "masses_changed": false,
+      "neutrino_doctrine_changed": false,
+      "retrofitting_used": false
+    },
+    "geometric_pregeometric": {
+      "derived_geometric_channel_factor": null,
+      "forced_universality": false,
+      "geometric_classification": "GEO-FSC3",
+      "geometric_result": "alpha_FSC may label a normalization yardstick but is not the gravitational/envelopment coupling",
+      "ordinary_carrier_in_C_A_asserted": false,
+      "pregeometric_classification": "GEO-FSC4",
+      "pregeometric_result": "no legitimate current map carries an electromagnetic-style coupling into C_A->G_A"
+    },
+    "invariant_coefficients": [
+      {
+        "channel_weight": null,
+        "coefficient_selected": false,
+        "derivative_order": 0,
+        "family": "canonical_generating",
+        "fsc_power": null,
+        "fsc_status": "NO_ACTION_DERIVED_P_r_W_r_OR_RESPONSE_COEFFICIENT",
+        "prior_status": "ALLOWED"
+      },
+      {
+        "channel_weight": null,
+        "coefficient_selected": false,
+        "derivative_order": 0,
+        "family": "event_mode_source",
+        "fsc_power": null,
+        "fsc_status": "NO_ACTION_DERIVED_P_r_W_r_OR_RESPONSE_COEFFICIENT",
+        "prior_status": "ALLOWED_CONDITIONALLY"
+      },
+      {
+        "channel_weight": null,
+        "coefficient_selected": false,
+        "derivative_order": 0,
+        "family": "environment_cauchy_noether",
+        "fsc_power": null,
+        "fsc_status": "NO_ACTION_DERIVED_P_r_W_r_OR_RESPONSE_COEFFICIENT",
+        "prior_status": "ALLOWED"
+      },
+      {
+        "channel_weight": null,
+        "coefficient_selected": false,
+        "derivative_order": 0,
+        "family": "scale",
+        "fsc_power": null,
+        "fsc_status": "NO_ACTION_DERIVED_P_r_W_r_OR_RESPONSE_COEFFICIENT",
+        "prior_status": "ALLOWED"
+      },
+      {
+        "channel_weight": null,
+        "coefficient_selected": false,
+        "derivative_order": 1,
+        "family": "attachment_first_jet",
+        "fsc_power": null,
+        "fsc_status": "NO_ACTION_DERIVED_P_r_W_r_OR_RESPONSE_COEFFICIENT",
+        "prior_status": "REQUIRED_CLASS"
+      },
+      {
+        "channel_weight": null,
+        "coefficient_selected": false,
+        "derivative_order": 1,
+        "family": "carrier_first_jet",
+        "fsc_power": null,
+        "fsc_status": "NO_ACTION_DERIVED_P_r_W_r_OR_RESPONSE_COEFFICIENT",
+        "prior_status": "REQUIRED_CLASS"
+      },
+      {
+        "channel_weight": null,
+        "coefficient_selected": false,
+        "derivative_order": 1,
+        "family": "field_first_jet",
+        "fsc_power": null,
+        "fsc_status": "NO_ACTION_DERIVED_P_r_W_r_OR_RESPONSE_COEFFICIENT",
+        "prior_status": "ALLOWED_CONDITIONALLY"
+      },
+      {
+        "channel_weight": null,
+        "coefficient_selected": false,
+        "derivative_order": 1,
+        "family": "gauge_spin_scalar",
+        "fsc_power": null,
+        "fsc_status": "NO_ACTION_DERIVED_P_r_W_r_OR_RESPONSE_COEFFICIENT",
+        "prior_status": "ALLOWED_CONDITIONALLY"
+      },
+      {
+        "channel_weight": null,
+        "coefficient_selected": false,
+        "derivative_order": 1,
+        "family": "incidence_projector",
+        "fsc_power": null,
+        "fsc_status": "NO_ACTION_DERIVED_P_r_W_r_OR_RESPONSE_COEFFICIENT",
+        "prior_status": "ALLOWED_CONDITIONALLY"
+      },
+      {
+        "channel_weight": null,
+        "coefficient_selected": false,
+        "derivative_order": 1,
+        "family": "topological_holonomy",
+        "fsc_power": null,
+        "fsc_status": "LEVEL_MUST_BE_TOPOLOGICALLY_QUANTIZED_NOT_SET_BY_FSC",
+        "prior_status": "OPTIONAL_DISCRETE_CLASS"
+      },
+      {
+        "channel_weight": null,
+        "coefficient_selected": false,
+        "derivative_order": 2,
+        "family": "extrinsic_curvature_or_second_jet",
+        "fsc_power": null,
+        "fsc_status": "EXCLUDED_FROM_MINIMAL_ORD1_CLASS",
+        "prior_status": "NOT_REQUIRED"
+      },
+      {
+        "channel_weight": null,
+        "coefficient_selected": false,
+        "derivative_order": 2,
+        "family": "owned_GHY_Hayward",
+        "fsc_power": null,
+        "fsc_status": "REDUNDANT_EXISTING_COEFFICIENT_NOT_REWEIGHTED_BY_FSC",
+        "prior_status": "REDUNDANT_NOT_NEW_INTERFACE_STRENGTH"
+      }
+    ],
+    "lineage": [
+      {
+        "action_derived": false,
+        "classification": "FSC-P0",
+        "disposition": "EMPIRICAL_REFERENCE_ONLY_NOT_A_BHSM_ACTION_INPUT",
+        "id": "LOW_ENERGY_ALPHA_EMPIRICAL",
+        "interpretation": "observed low-energy electromagnetic reference value",
+        "object": "alpha_EM(0)^(-1)=137.035999084 in src/constants.py"
+      },
+      {
+        "action_derived": false,
+        "classification": "FSC-P2",
+        "disposition": "QUARANTINED_CANDIDATE_NOT_ATTACHED_TO_AE2",
+        "id": "HISTORICAL_XI_GEOM",
+        "interpretation": "historical geometric candidate assembled from sphere/trace factors",
+        "object": "Xi_geom=1/(12*pi^2), inverse 12*pi^2=118.435..."
+      },
+      {
+        "action_derived": false,
+        "classification": "SUPERSEDED",
+        "disposition": "NORMALIZATION_CONTRADICTION",
+        "id": "HISTORICAL_XI_COUPLING_MAP",
+        "interpretation": "internally contradictory historical coupling map",
+        "object": "1/e^2=Xi/g^2 versus operational e^2=g^2*Xi"
+      },
+      {
+        "action_derived": false,
+        "classification": "SUPERSEDED",
+        "disposition": "FORBIDDEN_AS_ACTION_OR_INTERFACE_INPUT",
+        "id": "HISTORICAL_LOW_ENERGY_DRESSING_FIT",
+        "interpretation": "post-comparison calibration rather than upstream derivation",
+        "object": "running coefficient fixed by the observed low-energy inverse coupling"
+      },
+      {
+        "action_derived": false,
+        "classification": "FSC-P3",
+        "disposition": "MATHEMATICAL_DENSITY_IDENTITY_ONLY",
+        "id": "WEYL_3D_DENSITY",
+        "interpretation": "exact normalized three-dimensional Weyl/sphere-volume factor",
+        "object": "lambda_Weyl=1/(6*pi^2)=1/[3 Vol(S^3_unit)]"
+      },
+      {
+        "action_derived": false,
+        "classification": "FSC-P2",
+        "disposition": "HISTORICAL_NOT_ACTION_DERIVED",
+        "id": "GAUGE_127_REGISTRY_SCREEN",
+        "interpretation": "registered electroweak-scale matching screen",
+        "object": "alpha_i=w_i/(6*pi^2), w=(1,2,7)"
+      },
+      {
+        "action_derived": false,
+        "classification": "FSC-P2",
+        "disposition": "ACTION_ATTACHMENT_AND_AD_INVARIANCE_NOT_ESTABLISHED",
+        "id": "CASIMIR_SHELL_RESIDUES",
+        "interpretation": "candidate angular Casimir-shell spectral residues",
+        "object": "w=(1,dim(su2)-1,dim(su3)-1)=(1,2,7)"
+      },
+      {
+        "action_derived": true,
+        "classification": "FSC-P3",
+        "disposition": "CONDITIONAL_RATIO_NOT_ABSOLUTE_PHYSICAL_COUPLINGS",
+        "id": "TRACE_RATIO_COUPLING_RELATION",
+        "interpretation": "action-owned chiral-seam trace-ratio theorem in its declared domain",
+        "object": "K1:K2:K3=10/3:2:2 implies conditional g_i^2 ratio 3/5:1:1"
+      },
+      {
+        "action_derived": true,
+        "classification": "FSC-P3",
+        "disposition": "SUPERSEDES_6PI2_AND_127_AS_UNIVERSAL_ACTION_COUPLINGS",
+        "id": "GAUGE_INVARIANCE_6PI2_NO_GO",
+        "interpretation": "later theorem-level no-go on the historical physical identification",
+        "object": "rank-(dim g-1) projectors are not Ad-invariant; 6*pi^2 is not a common coupling"
+      },
+      {
+        "action_derived": false,
+        "classification": "FSC-P2",
+        "disposition": "SCREEN_ONLY",
+        "id": "ELECTROWEAK_ALPHA_SCREEN",
+        "interpretation": "electroweak-scale matching screen, distinct from low-energy alpha",
+        "object": "alpha_EM^(-1)(M_EW)=13*pi^2"
+      },
+      {
+        "action_derived": false,
+        "classification": "FSC-P2",
+        "disposition": "EMPIRICAL_BOUNDARY_AND_INTERFACE_SCALE_MAP_OPEN",
+        "id": "ONE_LOOP_SM_RG_SCAFFOLD",
+        "interpretation": "implemented Standard Model one-loop comparison scaffold",
+        "object": "alpha_i^(-1)(mu)=alpha_i^(-1)(mu0)-b_i log(mu/mu0)/(2*pi)"
+      },
+      {
+        "action_derived": false,
+        "classification": "FSC-P1",
+        "disposition": "TYPED_DIRECTIVE_NOT_A_PHYSICAL_INTERFACE_LAW",
+        "id": "V14_79_ALPHA_SHAPE_CONTRACT",
+        "interpretation": "architectural single-alpha rule with canonical action attachment still open",
+        "object": "Q_b=alpha_FS Qhat_b and H_lift=alpha_FS Omega_b G_b"
+      },
+      {
+        "action_derived": false,
+        "classification": "FSC-P1",
+        "disposition": "ACTIVE_OWNER_RULE_ACTION_ATTACHMENT_OPEN",
+        "id": "CURRENT_FSC_YARDSTICK",
+        "interpretation": "owner-authorized reference yardstick with derived channel factors required",
+        "object": "alpha_FSC is the common primitive dimensionless constitutive unit"
+      }
+    ],
+    "perturbative_hierarchy": {
+      "asymptotic_or_convergent": null,
+      "first_nonzero_allowed_order": null,
+      "global_expansion_valid": false,
+      "reason": "canonical kinetic and vertex conventions expose alpha^-1 and alpha^(1/2), while the interface operator, scale, background, and geometric/pregeometric regime are unselected",
+      "sector_specific_formal_orders": [
+        "alpha^-1 kinetic",
+        "alpha^(1/2) vertex",
+        "alpha loop/response",
+        "alpha^2 higher response"
+      ],
+      "small_parameter_at_relevant_scale_proved": false
+    },
+    "power_ledger": [
+      {
+        "power": -2,
+        "role": "higher inverse-stiffness constructions",
+        "status": "NOT_SELECTED_FOR_ANY_INTERFACE_TERM"
+      },
+      {
+        "power": -1,
+        "role": "canonical Yang-Mills kinetic density after alpha=g^2/(4*pi)",
+        "status": "CONDITIONAL_SECTOR_IDENTITY_NOT_INTERFACE_UNIVERSAL"
+      },
+      {
+        "power": 0,
+        "role": "unscaled or independently topological action term",
+        "status": "ALLOWED_BY_TYPE_NOT_SELECTED"
+      },
+      {
+        "power": "1/2",
+        "role": "canonical gauge vertex g=sqrt(4*pi*alpha)",
+        "status": "CONDITIONAL_PERTURBATIVE_PARAMETERIZATION"
+      },
+      {
+        "power": 1,
+        "role": "two-vertex strength or owner-authorized alpha-scaled shape/lift",
+        "status": "ARCHITECTURAL_CANDIDATE_ACTION_ATTACHMENT_OPEN"
+      },
+      {
+        "power": 2,
+        "role": "second response order and v14.79 quadratic Landau correction",
+        "status": "CONDITIONAL_DERIVED_AFTER_AN_ALPHA_SCALED_FIELD_IS_ASSUMED"
+      },
+      {
+        "power": "other/nonpolynomial",
+        "role": "effective response after elimination or RG",
+        "status": "NOT_EXCLUDED_AND_NOT_SELECTED"
+      }
+    ],
+    "primary_verdict": "PRIMITIVE_FSC_IS_AN_OWNER_AUTHORIZED_DIMENSIONLESS_YARDSTICK_BUT_EXISTING_BHSM_DOES_NOT_DERIVE_ALL_CHANNEL_WEIGHTS_POWERS_SCALE_MAPS_OR_INTERFACE_OPERATOR_COEFFICIENTS_SO_GEFF5_AND_FSC_IF5_REMAIN",
+    "primitive": {
+      "classification": "FSC-P1",
+      "conditional_canonical_conversion": {
+        "condition": "canonically normalized electromagnetic channel with alpha=e^2/(4*pi)",
+        "e_from_alpha": "e=sqrt(4*pi*alpha)",
+        "universal_interface_conversion": false,
+        "yang_mills_density": "-Tr(F^2)/(4*e^2)=-Tr(F^2)/(16*pi*alpha)"
+      },
+      "exact_numeric_value_selected": false,
+      "mathematical_type": "positive dimensionless reference coupling unit",
+      "not_the_primitive": [
+        "e",
+        "g",
+        "1/(6*pi^2)",
+        "1/(12*pi^2)",
+        "1/(13*pi^2)"
+      ],
+      "observed_low_energy_object": "alpha_EM(0) with empirical inverse 137.035999084",
+      "observed_value_role": "downstream comparison only",
+      "owner_approximation": "alpha_FSC approximately 1/137",
+      "physical_U1_projection_selected": false,
+      "primitive": "alpha_FSC",
+      "reference_scale_selected": false,
+      "renormalization_scheme_selected": false
+    },
+    "scale_running": {
+      "boundary_value_owned": false,
+      "classification": "SCALE4",
+      "conditional_SM_subledger": {
+        "formula_implemented": true,
+        "may_be_used_as_interface_running": false,
+        "one_loop_only": true,
+        "shape": "SCALE2_LIKE_COMPARISON_SCAFFOLD",
+        "thresholds_complete": false
+      },
+      "event_scale_map_owned": false,
+      "interface_running_law_owned": false,
+      "primitive_role": "fixed symbolic reference yardstick",
+      "reason": "the registered SM scaffold does not attach alpha_FSC to P-A* or derive mu_s",
+      "reference_scale_owned": false
+    },
+    "variation_rank_cycle": {
+      "Delta_enc": null,
+      "N12_rank_added": 0,
+      "N12_residual_after_time_quotient": 66,
+      "N12_residual_before_time_quotient": 67,
+      "RSP": "RSP5",
+      "cycle_rerun": false,
+      "cycle_stop_reason": "FSC-IF5",
+      "delta_S_enc_explicit": null,
+      "delta_over_F_B": null,
+      "delta_over_L_s": null,
+      "delta_over_iota_enc": null,
+      "finite_density_fixed": false,
+      "formal_prior_variation": "Delta_enc:=Pi_c+C(F_B)^*Pi_e=-[E_qc(S_enc)+C(F_B)^*E_qe(S_enc)]=:J_enc",
+      "loop": "LOOP3"
+    },
+    "version": "BHSM-FSC-ENC-1.0.0",
+    "weak_strong": {
+      "nonlinear_or_RG_relation_selected": false,
+      "standard_model_running_overwritten": false,
+      "strong": {
+        "conditional_weight": "5/3 in the v14.19 trace convention",
+        "historical_127_promoted": false,
+        "historical_127_weight": 7,
+        "result": "NO_UNIQUE_ALPHA_FSC_TIMES_WEIGHT_COUPLING"
+      },
+      "weak": {
+        "conditional_weight": "5/3 in the v14.19 trace convention",
+        "historical_127_promoted": false,
+        "historical_127_weight": 2,
+        "result": "NO_UNIQUE_ALPHA_FSC_TIMES_WEIGHT_COUPLING"
+      }
+    }
+  },
+  "artifact": "BHSM_FSC_ENCAPSULATION_CONSTITUTIVE_ADJUDICATION",
+  "classification": {
+    "RSP": "RSP5",
+    "effective_map": "GEFF5",
+    "electromagnetic": "EM-FSC3",
+    "geometric": "GEO-FSC3",
+    "interface": "FSC-IF5",
+    "loop": "LOOP3",
+    "pregeometric": "GEO-FSC4",
+    "primitive": "FSC-P1",
+    "scale": "SCALE4"
+  },
+  "scientific_result": "PRIMITIVE_FSC_IS_AN_OWNER_AUTHORIZED_DIMENSIONLESS_YARDSTICK_BUT_EXISTING_BHSM_DOES_NOT_DERIVE_ALL_CHANNEL_WEIGHTS_POWERS_SCALE_MAPS_OR_INTERFACE_OPERATOR_COEFFICIENTS_SO_GEFF5_AND_FSC_IF5_REMAIN",
+  "source_sha256": {
+    "scripts/audit_fsc_encapsulation_constitutive_adjudication.py": "2C45415CADB4496607C3132C4FE1E7662BF5B6044F45126D74FE19B472BAA691",
+    "scripts/materialize_fsc_encapsulation_constitutive_adjudication.py": "6333E8AE1B0CFC5FCAE3C75B3204E8FE7DEF57D0C4AF596ADF5F0CF34E380D8A",
+    "src/bhsm/interface/completion/alpha_dynamic_band_p8_bridge_v14_79.py": "53EF913C5763D0CFE5B04BBCD29820CCE9C955AF660CA4C8B2E7B15ACAE170A4",
+    "src/bhsm/interface/completion/v14_9_28_lineage_recovery_v14_29.py": "D49273F123F4077AD0C9415A5C482C2DBC8876C3D6575BF1A74C30299A95349C",
+    "src/bhsm/interface/current_semantic_normalization.py": "01FDC71B39345C892D58588C2ACB9C447FEAEAA17D69E3FA8989DDE305460340",
+    "src/bhsm/interface/fsc_encapsulation_constitutive_adjudication.py": "EA75840DA6E0C22C6F17EF6FC769191A33E8D8EAFF1E534230F0928F0401C953",
+    "src/bhsm/interface/gauge_coupling_quantum/action_attachment.py": "C56D9BAD0A14A6B3C76F24A10E46DA115D58F890D744A04757515660C6735965",
+    "src/bhsm/interface/gauge_coupling_quantum/registry_pattern.py": "3BB329F34CBC93B54EE330BBB05B13B4BCD211B086FCCFBA2FEB32E5AE157465",
+    "src/bhsm/interface/gauge_coupling_quantum/sector_weight_source.py": "A8EC53492AEECAFE2E6632BF8F6ADF35FB0137277F9332D9047C702C276FC66C",
+    "src/bhsm/interface/gauge_coupling_spectral_residue.py": "BC2498F044ECD8AB2935DD607A6ECB56B6177CF45F8D93D9BC5D6EB2C621DC96",
+    "src/bhsm/interface/owner_authorized_encapsulation_interface_action.py": "157D681AA2603CEDDAC37F65F65F4EB9810A49F152D05669AB19497E8B3C9CA2",
+    "src/bhsm/interface/triality_generation_scale_architecture.py": "76CCD6177E9F1303496B49EBA9D0F249E243742994E63C92D467B8ACCE2F99D1",
+    "src/constants.py": "801812D5C0BA7BB3C8E4B66450049CE314AF6ACF81E6F641328FC7672DEC279A",
+    "src/gauge_couplings.py": "98EAA297EC55FB315C793FA8C0D1F93409DD008CB94E9019A236F03C3573E1E9",
+    "src/rg_matching.py": "D79EAE8C8A7902AA255419A4BE1F5097488F215898863CB2F34FCDA0820ED6EF",
+    "tests/test_fsc_encapsulation_constitutive_adjudication.py": "731167C256ECEEC4FDD9A5E4C27D1C2ECB22CEF5223E7C25882F634D2AFCB662",
+    "theory/bhsm_fsc_encapsulation_constitutive_adjudication.md": "9B8BC1B8A8B7232A4653C583AB7613836A8889533F1808AA0D006EDB7193BFF7",
+    "theory/bhsm_full_recall_hindsight_recon_foresight.md": "67F12F4AA9F7DD681603E72737128F794E819565D2497A4B3C2B219D68E11C17"
+  },
+  "validation": {
+    "127_weights_not_promoted": true,
+    "6pi2_identity_not_promoted_to_coupling": true,
+    "EM_and_geometry_claims_are_bounded": true,
+    "FSC_IF5_factorization_does_not_fake_closure": true,
+    "GEFF5_and_SCALE4_are_fail_closed": true,
+    "all_lineage_authority_classes_are_explicit": true,
+    "all_twelve_density_families_audited_without_selection": true,
+    "exact_next_object_and_no_owner_question": true,
+    "frozen_and_claim_firewalls_hold": true,
+    "historical_Xi_conflict_and_fit_are_superseded": true,
+    "minimum_channel_ledger_is_complete": true,
+    "no_interface_object_fabricated": true,
+    "owner_FSC_is_symbolic_P1_not_empirical_decimal": true,
+    "rank_loop_and_RSP_are_unchanged": true,
+    "rho_and_perturbative_shortcuts_rejected": true
+  },
+  "validation_passed": true,
+  "version": "BHSM-FSC-ENC-1.0.0"
+}
