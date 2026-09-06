@@ -54,6 +54,7 @@ jobs:
           tests/test_n12_forward_terminal_chart_reachability.py
           tests/test_n12_gate7_localization_carrier_kill_screen.py
           tests/test_n12_gate7_physical_encapsulation_identification.py
+          tests/test_covariant_bubble_interface_mechanics.py
           tests/test_fsc_encapsulation_constitutive_adjudication.py
           tests/test_post_ae2_localization_carrier_extension_contract.py
           tests/test_bhsm_aether_cross_resolution_reconnaissance_v21_35.py
@@ -63,6 +64,7 @@ jobs:
           tests/test_engine_physics_status_separation.py
       - name: Public status and claim boundaries
         run: |
+          python scripts/audit_covariant_bubble_interface_mechanics.py
           python tools/audit_forbidden_claims.py
           python tools/audit_bhsm_status.py
           python tools/audit_frozen_prediction_integrity.py
