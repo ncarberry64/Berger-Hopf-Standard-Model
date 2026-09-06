@@ -84,21 +84,30 @@ def _valid(path: Path, kind: str, index: int, fingerprint: str) -> bool:
                 and int(source["shard_revision"]) == SHARD_REVISION
                 and str(source["campaign_fingerprint"].item()) == fingerprint
                 and tensor.shape == (OUTPUTS, TRANSVERSE, TRANSVERSE)
+                and source["transverse_basis"].shape == (center.COORDINATES, TRANSVERSE)
                 and np.all(np.isfinite(tensor))
+                and np.all(np.isfinite(source["transverse_basis"]))
                 and float(source["total_Frobenius_relative_residual"]) < 5.0e-13
                 and float(source["output_Frobenius_maximum_relative_residual"]) < 5.0e-13
+                and float(source["basis_orthonormal_residual_2_norm"]) < 5.0e-13
+                and float(source["basis_axis_residual_2_norm"]) < 5.0e-13
             )
     except Exception:
         return False
 
 
-def _capture_quadratic(*args: object) -> tuple[dict[str, object], np.ndarray]:
+def _capture_quadratic(
+    *args: object,
+) -> tuple[dict[str, object], np.ndarray, np.ndarray]:
     """Call the unchanged kernel with its lossless return option enabled."""
     row = center._quadratic_row(*args, retain_tensor=True)
     tensor = np.asarray(row.pop("quadratic_tensor"), dtype=float)
+    basis = np.asarray(row.pop("transverse_basis"), dtype=float)
     if tensor.shape != (OUTPUTS, TRANSVERSE, TRANSVERSE):
         raise RuntimeError("center kernel did not expose the expected quadratic tensor")
-    return row, np.array(tensor, copy=True)
+    if basis.shape != (center.COORDINATES, TRANSVERSE):
+        raise RuntimeError("center kernel did not expose its transverse basis")
+    return row, np.array(tensor, copy=True), np.array(basis, copy=True)
 
 
 def _worker(kind: str, indices: list[int]) -> dict[str, float]:
@@ -117,7 +126,7 @@ def _worker(kind: str, indices: list[int]) -> dict[str, float]:
         if not published.is_file():
             raise FileNotFoundError(f"missing published center shard: {published}")
         started = time.perf_counter()
-        row, tensor = _capture_quadratic(
+        row, tensor, basis = _capture_quadratic(
             kind, index, states[index], float(descriptors[index]),
             inputs["weights"], inputs["reference"], tangents[index], axes[index],
             fields[index], float(axis_residuals[index]),
@@ -138,19 +147,37 @@ def _worker(kind: str, indices: list[int]) -> dict[str, float]:
             abs(recovered_outputs - published_outputs)
             / np.maximum(published_outputs, tiny)
         ))
-        if total_residual >= 5.0e-13 or output_residual >= 5.0e-13:
+        basis_orthonormal_residual = float(np.linalg.norm(
+            basis.T @ basis - np.eye(TRANSVERSE), ord=2,
+        ))
+        basis_axis_residual = float(np.linalg.norm(
+            np.asarray(axes[index], dtype=float) @ basis,
+        ))
+        if (
+            total_residual >= 5.0e-13
+            or output_residual >= 5.0e-13
+            or basis_orthonormal_residual >= 5.0e-13
+            or basis_axis_residual >= 5.0e-13
+        ):
             raise RuntimeError(
                 f"recovered tensor disagrees with published {kind} {index}: "
-                f"total={total_residual}, output={output_residual}"
+                f"total={total_residual}, output={output_residual}, "
+                f"basis_orthonormal={basis_orthonormal_residual}, "
+                f"basis_axis={basis_axis_residual}"
             )
         np.savez_compressed(
             target,
             kind=np.asarray(kind), index=np.asarray(index),
             quadratic_tensor=tensor,
+            transverse_basis=basis,
             recovered_total_Frobenius_norm=np.asarray(recovered_total),
             recovered_output_Frobenius_norms=recovered_outputs,
             total_Frobenius_relative_residual=np.asarray(total_residual),
             output_Frobenius_maximum_relative_residual=np.asarray(output_residual),
+            basis_orthonormal_residual_2_norm=np.asarray(
+                basis_orthonormal_residual
+            ),
+            basis_axis_residual_2_norm=np.asarray(basis_axis_residual),
             published_shard_SHA256=np.asarray(_sha(published)),
             elapsed_seconds=np.asarray(duration), worker_id=np.asarray(os.getpid()),
             shard_revision=np.asarray(SHARD_REVISION),

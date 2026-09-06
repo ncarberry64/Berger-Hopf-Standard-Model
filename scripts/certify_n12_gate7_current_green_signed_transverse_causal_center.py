@@ -15,7 +15,6 @@ from pathlib import Path
 import sys
 
 import numpy as np
-from scipy.linalg import null_space
 
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -68,10 +67,13 @@ def _relative(path: Path) -> str:
     return path.resolve().relative_to(ROOT.resolve()).as_posix()
 
 
-def _tensor(kind: str, index: int) -> np.ndarray:
+def _tensor(kind: str, index: int) -> tuple[np.ndarray, np.ndarray]:
     path = recovery.WORK / f"{kind}_{index:03d}.npz"
     with np.load(path) as source:
-        return np.asarray(source["quadratic_tensor"], dtype=float)
+        return (
+            np.asarray(source["quadratic_tensor"], dtype=float),
+            np.asarray(source["transverse_basis"], dtype=float),
+        )
 
 
 def _transformed(
@@ -135,7 +137,6 @@ def _covariance_blocks(local: np.ndarray) -> np.ndarray:
 
 def _local_covariances(
     endpoint_axes: np.ndarray,
-    midpoint_axes: np.ndarray,
     endpoint_tangents: np.ndarray,
     midpoint_tangents: np.ndarray,
     times: np.ndarray,
@@ -151,18 +152,13 @@ def _local_covariances(
     zero = np.zeros((OUTPUTS, TRANSVERSE, TRANSVERSE))
     for interval in range(INTERVALS):
         h = float(times[interval + 1] - times[interval])
-        left_tensor = zero if interval == 0 else _tensor("endpoint", interval)
-        right_tensor = _tensor("endpoint", interval + 1)
-        midpoint_tensor = _tensor("midpoint", interval)
-
-        left_axis = endpoint_axes[interval]
-        left_basis = (
-            np.zeros((COORDINATES, TRANSVERSE))
-            if interval == 0 else
-            null_space(left_axis.reshape(1, -1))
-        )
-        right_basis = null_space(endpoint_axes[interval + 1].reshape(1, -1))
-        midpoint_basis = null_space(midpoint_axes[interval].reshape(1, -1))
+        if interval == 0:
+            left_tensor = zero
+            left_basis = np.zeros((COORDINATES, TRANSVERSE))
+        else:
+            left_tensor, left_basis = _tensor("endpoint", interval)
+        right_tensor, right_basis = _tensor("endpoint", interval + 1)
+        midpoint_tensor, midpoint_basis = _tensor("midpoint", interval)
         left_input = left_basis.T
         right_input = right_basis.T
         midpoint_coordinate = _kinematic_midpoint_map(
@@ -309,7 +305,6 @@ def build_payload() -> dict[str, object]:
 
     inputs = center._load_inputs()
     endpoint_axes = np.asarray(inputs["endpoint"][3], dtype=float)
-    midpoint_axes = np.asarray(inputs["midpoint"][3], dtype=float)
     with np.load(JACOBIAN.with_suffix(".npz")) as source:
         endpoint_tangents = np.asarray(
             source["endpoint_physical_tangent_action"], dtype=float,
@@ -331,8 +326,8 @@ def build_payload() -> dict[str, object]:
 
     maps = component._causal_maps(endpoint_tangents, left, right)
     local_covariances, adjacent_right_left, local_norms = _local_covariances(
-        endpoint_axes, midpoint_axes, endpoint_tangents, midpoint_tangents,
-        times, right, ambient,
+        endpoint_axes, endpoint_tangents, midpoint_tangents, times, right,
+        ambient,
     )
     transverse_l, transverse_t = _causal_bounds(
         local_covariances, adjacent_right_left, maps, endpoint_axes,

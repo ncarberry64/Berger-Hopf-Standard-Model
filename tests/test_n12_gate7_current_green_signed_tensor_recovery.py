@@ -27,10 +27,13 @@ def test_recovery_benchmark_reproduces_the_published_tensor_norms() -> None:
     assert payload["validation_passed"] is True
     with np.load(BENCHMARK) as source:
         assert source["quadratic_tensor"].shape == (99, 73, 73)
+        assert source["transverse_basis"].shape == (74, 73)
         assert float(source["total_Frobenius_relative_residual"]) < 5.0e-13
         assert float(
             source["output_Frobenius_maximum_relative_residual"]
         ) < 5.0e-13
+        assert float(source["basis_orthonormal_residual_2_norm"]) < 5.0e-13
+        assert float(source["basis_axis_residual_2_norm"]) < 5.0e-13
 
 
 def test_recovery_stays_inside_the_fixed_compute_and_claim_boundaries() -> None:

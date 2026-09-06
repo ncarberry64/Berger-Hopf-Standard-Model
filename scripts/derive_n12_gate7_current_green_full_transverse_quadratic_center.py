@@ -492,6 +492,7 @@ def _quadratic_row(
     }
     if retain_tensor:
         row["quadratic_tensor"] = quadratic
+        row["transverse_basis"] = basis
     return row
 
 

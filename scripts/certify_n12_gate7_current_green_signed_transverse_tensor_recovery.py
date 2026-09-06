@@ -32,6 +32,8 @@ FIELDS = (
     "total_Frobenius_relative_residual",
     "output_Frobenius_maximum_relative_residual",
     "tensor_symmetry_relative_Frobenius_residual",
+    "basis_orthonormal_residual_2_norm",
+    "basis_axis_residual_2_norm",
     "elapsed_seconds",
 )
 
@@ -86,6 +88,8 @@ def _load_kind(
                 float(source["total_Frobenius_relative_residual"]),
                 float(source["output_Frobenius_maximum_relative_residual"]),
                 symmetry,
+                float(source["basis_orthonormal_residual_2_norm"]),
+                float(source["basis_axis_residual_2_norm"]),
                 float(source["elapsed_seconds"]),
             )
     return rows, paths
@@ -141,6 +145,16 @@ def build_payload() -> dict[str, object]:
                 "tensor_symmetry_relative_Frobenius_residual"
             ]]) < 5.0e-13
         ),
+        "all_persisted_transverse_bases_are_orthonormal": bool(
+            np.max(combined[:, column[
+                "basis_orthonormal_residual_2_norm"
+            ]]) < 5.0e-13
+        ),
+        "all_persisted_transverse_bases_annihilate_their_Green_axes": bool(
+            np.max(combined[:, column[
+                "basis_axis_residual_2_norm"
+            ]]) < 5.0e-13
+        ),
         "all_exported_summary_values_finite": bool(np.all(np.isfinite(combined))),
         "512_bit_Arb_CPU_aggregation_used": ctx.prec == PRECISION,
         "no_action_center_mesh_frame_axis_parameter_or_precision_changed": True,
@@ -178,6 +192,12 @@ def build_payload() -> dict[str, object]:
         )),
         "maximum_tensor_symmetry_relative_Frobenius_residual": float(np.max(
             combined[:, column["tensor_symmetry_relative_Frobenius_residual"]]
+        )),
+        "maximum_basis_orthonormal_residual_2_norm": float(np.max(
+            combined[:, column["basis_orthonormal_residual_2_norm"]]
+        )),
+        "maximum_basis_axis_residual_2_norm": float(np.max(
+            combined[:, column["basis_axis_residual_2_norm"]]
         )),
         "data": _relative(DATA),
         "data_SHA256": _sha(DATA),

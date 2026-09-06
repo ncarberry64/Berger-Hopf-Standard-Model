@@ -28,8 +28,11 @@ both
 \]
 
 agree with the previously published shard to a relative tolerance of
-`5e-13`.  The published shard hash, algorithm fingerprint, worker identity,
-and elapsed time are retained with every recovered tensor.
+`5e-13`.  The exact orthonormal complement basis used to evaluate `B` is
+persisted with it and is checked against the corresponding Green axis.  This
+prevents a later null-space recomputation from silently rotating tensor input
+coordinates.  The published shard hash, algorithm fingerprint, worker
+identity, and elapsed time are retained with every recovered tensor.
 
 The recovered tensors allow the Hermite--Simpson second variation, midpoint
 incidence, reduced solve, and causal transport to be composed while signs are

@@ -2,7 +2,7 @@
   "FULL_BHSM_COMPLETE": false,
   "artifact": "BHSM_N12_GATE7_CURRENT_GREEN_SIGNED_TENSOR_RECOVERY_COMPUTE_JUSTIFICATION",
   "benchmark": {
-    "elapsed_seconds": 599.8945849000011,
+    "elapsed_seconds": 614.0066208999779,
     "index": 1,
     "kind": "midpoint",
     "output_Frobenius_maximum_relative_residual": 0.0,
@@ -18,23 +18,23 @@
     "SIGNED_CENTER_TENSORS_RECOVERED": false
   },
   "cost": {
-    "aborted_trace_capture_pilot_CPU_hours": 1.4089071060833278,
+    "aborted_superseded_recovery_pilots_CPU_hours": 2.9,
     "conservative_recovery_overhead_factor": 1.05,
     "fixed_campaign_CPU_ceiling": 210.0,
     "four_worker_direct_pilot_maximum_seconds": 965.0317957999941,
     "projected_from_four_worker_direct_pilot_CPU_hours": 198.36764691444324,
     "projected_from_parent_campaign_CPU_hours": 176.2870465889457,
     "projected_recovery_CPU_hours": 198.36764691444324,
-    "projected_total_CPU_hours_including_aborted_pilot": 199.77655402052656,
+    "projected_total_CPU_hours_including_aborted_pilot": 201.26764691444325,
     "published_center_campaign_measured_CPU_hours": 167.89242532280542,
     "selected_worker_count": 4,
     "stop_condition": "STOP_ON_CORRUPT_OR_MISSING_PUBLISHED_SHARD_NONFINITE_TENSOR_NORM_REPRODUCTION_FAILURE_PROOF_CONTRACT_CHANGE_OR_PROJECTED_CPU_CEILING_VIOLATION"
   },
   "inputs": {
-    "artifacts/flagship_integration/.current_green_signed_transverse_tensor_recovery_work/midpoint_001.npz": "3C4CE28D109369E23AE4D73CD297DF6424A7718CA4CBFD279065B549A455D81D",
+    "artifacts/flagship_integration/.current_green_signed_transverse_tensor_recovery_work/midpoint_001.npz": "DBC968A3A77CAE0785022B61D7968428DC9BA892CB80C2236DA8DD8B535CA076",
     "artifacts/flagship_integration/BHSM_N12_GATE7_CURRENT_GREEN_FULL_TRANSVERSE_QUADRATIC_CENTER.json": "69944D8BB7F33B2B44877F588658F3CC6E16A9DF2D050F8427EAADB7ECF73B94",
-    "scripts/derive_n12_gate7_current_green_signed_transverse_tensor_recovery.py": "BA2F4033A206E885C470BFA6572B7D0AF29463CD8DB26495BC1CEF1BAD50F5C8",
-    "theory/n12_gate7_current_green_signed_transverse_tensor_recovery.md": "7E196A9E924AA3260FE648CF365E8009B7AACA881FEB3D645AFB085FDF1B1A79"
+    "scripts/derive_n12_gate7_current_green_signed_transverse_tensor_recovery.py": "0CC81AAC7F06A2D7456138B65F346DBA78F16049A5514181575283AD417A1CCC",
+    "theory/n12_gate7_current_green_signed_transverse_tensor_recovery.md": "6A5D56D1C4AEFA80E878231D1317BE9E69E47956894F9D3F197322554437B928"
   },
   "proof_obligation": "RECOVER_THE_ALREADY_EVALUATED_SIGNED_99_BY_73_BY_73_CENTER_TENSORS_AT_ALL_370_DEFINED_AXIS_ENDPOINTS_AND_370_MIDPOINTS_SO_CAUSAL_COMPOSITION_PRECEDES_NORM_EXTRACTION",
   "reused_certified_assets": [
@@ -51,6 +51,7 @@
     "all_existing_valid_recovery_shards_reused": true,
     "benchmark_tensor_reproduces_all_published_output_norms": true,
     "benchmark_tensor_reproduces_published_total_norm": true,
+    "exact_tensor_input_basis_persisted_with_every_recovery_shard": true,
     "four_worker_operational_throttle_retained": true,
     "no_proof_parameter_precision_definition_or_claim_changed": true,
     "outward_remainder_and_Gate7_remain_open": true,

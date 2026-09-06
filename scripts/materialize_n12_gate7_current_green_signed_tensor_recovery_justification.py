@@ -17,7 +17,7 @@ RECOVERY = ROOT / "scripts" / "derive_n12_gate7_current_green_signed_transverse_
 THEORY = ROOT / "theory" / "n12_gate7_current_green_signed_transverse_tensor_recovery.md"
 CPU_CEILING_HOURS = 210.0
 RECOVERY_OVERHEAD_FACTOR = 1.05
-ABORTED_TRACE_CAPTURE_PILOT_CPU_HOURS = 1.4089071060833278
+ABORTED_SUPERSEDED_RECOVERY_PILOTS_CPU_HOURS = 2.9
 FOUR_WORKER_DIRECT_PILOT_MAXIMUM_SECONDS = 965.0317957999941
 RECOVERY_ROWS = 740
 
@@ -57,7 +57,9 @@ def build_payload() -> dict[str, object]:
         FOUR_WORKER_DIRECT_PILOT_MAXIMUM_SECONDS * RECOVERY_ROWS / 3600.0
     )
     projected_cpu = max(projected_from_parent, projected_from_direct_pilot)
-    projected_total_cpu = projected_cpu + ABORTED_TRACE_CAPTURE_PILOT_CPU_HOURS
+    projected_total_cpu = (
+        projected_cpu + ABORTED_SUPERSEDED_RECOVERY_PILOTS_CPU_HOURS
+    )
     authorized = bool(
         projected_total_cpu < CPU_CEILING_HOURS
         and benchmark_total_residual < 5.0e-13
@@ -75,6 +77,7 @@ def build_payload() -> dict[str, object]:
             projected_total_cpu < CPU_CEILING_HOURS
         ),
         "same_center_kernel_action_mesh_frames_axes_and_branch_reused": True,
+        "exact_tensor_input_basis_persisted_with_every_recovery_shard": True,
         "four_worker_operational_throttle_retained": True,
         "all_existing_valid_recovery_shards_reused": True,
         "no_proof_parameter_precision_definition_or_claim_changed": True,
@@ -108,7 +111,7 @@ def build_payload() -> dict[str, object]:
         },
         "cost": {
             "published_center_campaign_measured_CPU_hours": prior_cpu,
-            "aborted_trace_capture_pilot_CPU_hours": ABORTED_TRACE_CAPTURE_PILOT_CPU_HOURS,
+            "aborted_superseded_recovery_pilots_CPU_hours": ABORTED_SUPERSEDED_RECOVERY_PILOTS_CPU_HOURS,
             "conservative_recovery_overhead_factor": RECOVERY_OVERHEAD_FACTOR,
             "four_worker_direct_pilot_maximum_seconds": FOUR_WORKER_DIRECT_PILOT_MAXIMUM_SECONDS,
             "projected_from_parent_campaign_CPU_hours": projected_from_parent,
