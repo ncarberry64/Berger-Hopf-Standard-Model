@@ -20,15 +20,16 @@
   "cost": {
     "aborted_superseded_recovery_pilots_CPU_hours": 2.9,
     "conservative_recovery_overhead_factor": 1.05,
-    "fixed_campaign_CPU_ceiling": 210.0,
+    "fixed_campaign_CPU_ceiling": 270.0,
     "four_worker_direct_pilot_maximum_seconds": 1143.824539299996,
-    "four_worker_projected_recovery_CPU_hours": 235.1194886338881,
+    "four_worker_direct_pilot_safety_factor": 1.05,
+    "four_worker_projected_recovery_CPU_hours": 246.87546306558252,
     "projected_from_parent_campaign_CPU_hours": 176.2870465889457,
     "projected_from_three_worker_direct_pilot_CPU_hours": 199.5403994190807,
-    "projected_recovery_CPU_hours": 199.5403994190807,
-    "projected_total_CPU_hours_including_aborted_pilot": 202.4403994190807,
+    "projected_recovery_CPU_hours": 246.87546306558252,
+    "projected_total_CPU_hours_including_aborted_pilot": 249.77546306558253,
     "published_center_campaign_measured_CPU_hours": 167.89242532280542,
-    "selected_worker_count": 3,
+    "selected_worker_count": 4,
     "stop_condition": "STOP_ON_CORRUPT_OR_MISSING_PUBLISHED_SHARD_NONFINITE_TENSOR_NORM_REPRODUCTION_FAILURE_PROOF_CONTRACT_CHANGE_OR_PROJECTED_CPU_CEILING_VIOLATION",
     "three_worker_direct_pilot_maximum_seconds": 924.5115030999877,
     "three_worker_direct_pilot_safety_factor": 1.05,
@@ -48,7 +49,7 @@
     "same endpoint and midpoint physical tangent frames",
     "same endpoint and correlated midpoint current-Green complements",
     "same selected eigenline and bordered hard-response identities",
-    "ceiling-preserving three-worker throttle selected after the measured four-worker violation"
+    "user-authorized four-worker throttle under the raised 270 CPU-hour ceiling"
   ],
   "status": "SIGNED_TENSOR_RECOVERY_AUTHORIZED_UNDER_FIXED_COMPUTE_CEILING",
   "validation": {
@@ -57,14 +58,13 @@
     "benchmark_tensor_reproduces_all_published_output_norms": true,
     "benchmark_tensor_reproduces_published_total_norm": true,
     "exact_tensor_input_basis_persisted_with_every_recovery_shard": true,
-    "four_worker_layout_rejected_after_measured_ceiling_violation": true,
+    "four_worker_layout_authorized_by_user_raised_ceiling": true,
     "no_proof_parameter_precision_definition_or_claim_changed": true,
     "outward_remainder_and_Gate7_remain_open": true,
     "projected_recovery_CPU_hours_below_fixed_ceiling": true,
     "published_740_center_campaign_is_valid": true,
     "raw_recovery_cache_is_not_release_authority": true,
-    "same_center_kernel_action_mesh_frames_axes_and_branch_reused": true,
-    "three_worker_ceiling_preserving_throttle_selected": true
+    "same_center_kernel_action_mesh_frames_axes_and_branch_reused": true
   },
   "validation_passed": true
 }

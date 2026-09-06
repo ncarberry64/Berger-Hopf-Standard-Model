@@ -39,10 +39,10 @@ def test_recovery_benchmark_reproduces_the_published_tensor_norms() -> None:
 def test_recovery_stays_inside_the_fixed_compute_and_claim_boundaries() -> None:
     payload = _payload()
     cost = payload["cost"]
-    assert cost["selected_worker_count"] == 3
+    assert cost["selected_worker_count"] == 4
     assert cost["four_worker_projected_recovery_CPU_hours"] + cost[
         "aborted_superseded_recovery_pilots_CPU_hours"
-    ] > cost["fixed_campaign_CPU_ceiling"]
+    ] < cost["fixed_campaign_CPU_ceiling"]
     assert cost["projected_recovery_CPU_hours"] < cost[
         "fixed_campaign_CPU_ceiling"
     ]

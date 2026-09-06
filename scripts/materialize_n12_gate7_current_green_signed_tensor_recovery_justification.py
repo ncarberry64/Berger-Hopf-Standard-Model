@@ -15,10 +15,11 @@ CENTER = F / "BHSM_N12_GATE7_CURRENT_GREEN_FULL_TRANSVERSE_QUADRATIC_CENTER.json
 BENCHMARK = F / ".current_green_signed_transverse_tensor_recovery_work" / "midpoint_001.npz"
 RECOVERY = ROOT / "scripts" / "derive_n12_gate7_current_green_signed_transverse_tensor_recovery.py"
 THEORY = ROOT / "theory" / "n12_gate7_current_green_signed_transverse_tensor_recovery.md"
-CPU_CEILING_HOURS = 210.0
+CPU_CEILING_HOURS = 270.0
 RECOVERY_OVERHEAD_FACTOR = 1.05
 ABORTED_SUPERSEDED_RECOVERY_PILOTS_CPU_HOURS = 2.9
 FOUR_WORKER_DIRECT_PILOT_MAXIMUM_SECONDS = 1143.824539299996
+FOUR_WORKER_DIRECT_PILOT_SAFETY_FACTOR = 1.05
 TWO_WORKER_DIRECT_PILOT_MAXIMUM_SECONDS = 768.2733264999988
 THREE_WORKER_DIRECT_PILOT_MAXIMUM_SECONDS = 924.5115030999877
 THREE_WORKER_DIRECT_PILOT_SAFETY_FACTOR = 1.05
@@ -57,7 +58,8 @@ def build_payload() -> dict[str, object]:
     prior_cpu = float(center["measured_CPU_hours"])
     projected_from_parent = RECOVERY_OVERHEAD_FACTOR * prior_cpu
     four_worker_projection = (
-        FOUR_WORKER_DIRECT_PILOT_MAXIMUM_SECONDS * RECOVERY_ROWS / 3600.0
+        FOUR_WORKER_DIRECT_PILOT_SAFETY_FACTOR
+        * FOUR_WORKER_DIRECT_PILOT_MAXIMUM_SECONDS * RECOVERY_ROWS / 3600.0
     )
     two_worker_projection = (
         TWO_WORKER_DIRECT_PILOT_MAXIMUM_SECONDS * RECOVERY_ROWS / 3600.0
@@ -66,7 +68,7 @@ def build_payload() -> dict[str, object]:
         THREE_WORKER_DIRECT_PILOT_SAFETY_FACTOR
         * THREE_WORKER_DIRECT_PILOT_MAXIMUM_SECONDS * RECOVERY_ROWS / 3600.0
     )
-    projected_cpu = max(projected_from_parent, projected_from_direct_pilot)
+    projected_cpu = max(projected_from_parent, four_worker_projection)
     projected_total_cpu = (
         projected_cpu + ABORTED_SUPERSEDED_RECOVERY_PILOTS_CPU_HOURS
     )
@@ -88,11 +90,10 @@ def build_payload() -> dict[str, object]:
         ),
         "same_center_kernel_action_mesh_frames_axes_and_branch_reused": True,
         "exact_tensor_input_basis_persisted_with_every_recovery_shard": True,
-        "four_worker_layout_rejected_after_measured_ceiling_violation": (
+        "four_worker_layout_authorized_by_user_raised_ceiling": (
             four_worker_projection + ABORTED_SUPERSEDED_RECOVERY_PILOTS_CPU_HOURS
-            > CPU_CEILING_HOURS
+            < CPU_CEILING_HOURS
         ),
-        "three_worker_ceiling_preserving_throttle_selected": True,
         "all_existing_valid_recovery_shards_reused": True,
         "no_proof_parameter_precision_definition_or_claim_changed": True,
         "raw_recovery_cache_is_not_release_authority": True,
@@ -128,6 +129,7 @@ def build_payload() -> dict[str, object]:
             "aborted_superseded_recovery_pilots_CPU_hours": ABORTED_SUPERSEDED_RECOVERY_PILOTS_CPU_HOURS,
             "conservative_recovery_overhead_factor": RECOVERY_OVERHEAD_FACTOR,
             "four_worker_direct_pilot_maximum_seconds": FOUR_WORKER_DIRECT_PILOT_MAXIMUM_SECONDS,
+            "four_worker_direct_pilot_safety_factor": FOUR_WORKER_DIRECT_PILOT_SAFETY_FACTOR,
             "four_worker_projected_recovery_CPU_hours": four_worker_projection,
             "two_worker_direct_pilot_maximum_seconds": TWO_WORKER_DIRECT_PILOT_MAXIMUM_SECONDS,
             "two_worker_projected_recovery_CPU_hours": two_worker_projection,
@@ -138,7 +140,7 @@ def build_payload() -> dict[str, object]:
             "projected_recovery_CPU_hours": projected_cpu,
             "projected_total_CPU_hours_including_aborted_pilot": projected_total_cpu,
             "fixed_campaign_CPU_ceiling": CPU_CEILING_HOURS,
-            "selected_worker_count": 3,
+            "selected_worker_count": 4,
             "stop_condition": (
                 "STOP_ON_CORRUPT_OR_MISSING_PUBLISHED_SHARD_NONFINITE_TENSOR_"
                 "NORM_REPRODUCTION_FAILURE_PROOF_CONTRACT_CHANGE_OR_PROJECTED_"
@@ -151,7 +153,7 @@ def build_payload() -> dict[str, object]:
             "same endpoint and midpoint physical tangent frames",
             "same endpoint and correlated midpoint current-Green complements",
             "same selected eigenline and bordered hard-response identities",
-            "ceiling-preserving three-worker throttle selected after the measured four-worker violation",
+            "user-authorized four-worker throttle under the raised 270 CPU-hour ceiling",
         ],
         "claim_boundary": {
             "SIGNED_CENTER_TENSORS_RECOVERED": False,
