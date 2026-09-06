@@ -16,6 +16,23 @@ permissions:
   contents: read
 
 jobs:
+  signed-midpoint-completeness:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+      - name: Install exact arithmetic and test dependencies
+        run: python -m pip install -e ".[rigorous]"
+      - name: Check signed midpoint chain rule and retained diagnostics
+        run: >-
+          python -m pytest -q
+          tests/test_n12_gate7_current_green_signed_transverse_causal_center.py
+          tests/test_n12_gate7_signed_midpoint_completeness_audit.py
+
   core-scientific-checkpoint:
     runs-on: ubuntu-latest
     timeout-minutes: 15

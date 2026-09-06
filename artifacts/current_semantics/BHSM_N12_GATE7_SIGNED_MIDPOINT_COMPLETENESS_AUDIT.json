@@ -1,0 +1,61 @@
+{
+  "FULL_BHSM_COMPLETE": false,
+  "all_retained_midpoints_have_nonzero_longitudinal_and_normal_components": true,
+  "artifact": "BHSM_N12_GATE7_SIGNED_MIDPOINT_COMPLETENESS_AUDIT",
+  "authority": "RETAINED_BINARY64_DIRECTION_DIAGNOSTICS_AND_EXACT_ALGEBRAIC_WITNESS_NOT_OUTWARD_OR_PHYSICAL_AUTHORITY",
+  "chain_rule": {
+    "decomposition": "w = ell*g + t + n",
+    "normal_terms": "2*H[ell*g+t,n] + H[n,n]",
+    "radius_owner": "All terms induced from endpoint-transverse input contribute to its r_T^2 coefficient, irrespective of midpoint direction.",
+    "source_conversion": "Existing central and mixed contractions require their actual ambient directions, scales, and span; column labels alone do not identify them with the recovered transverse basis.",
+    "tangent_terms": "ell^2*H[g,g] + 2*ell*H[g,t] + H[t,t]"
+  },
+  "claim_boundary": {
+    "ACTUAL_OMITTED_HESSIAN_MAGNITUDE_EVALUATED": false,
+    "FULL_BHSM_COMPLETE": false,
+    "FULL_MIDPOINT_HESSIAN_CHAIN_RULE_CERTIFIED": false,
+    "GATE7_CLOSED": false,
+    "OUTWARD_TRANSVERSE_REMAINDER_DERIVED": false,
+    "PHYSICAL_INSTABILITY_DERIVED": false,
+    "ROOT_NONEXISTENCE_DERIVED": false
+  },
+  "exact_counterexample": {
+    "arithmetic": "EXACT_RATIONAL",
+    "endpoint_axis_dot_input": 0,
+    "full_quadratic": 1,
+    "midpoint_axis_component": 1,
+    "scope": "ALGEBRAIC_WITNESS_NOT_A_BHSM_ACTION_EVALUATION",
+    "transverse_only_quadratic": 0
+  },
+  "exact_next_calculation": "RESTORE_SIGNED_MIDPOINT_AXIS_AND_NORMAL_CHAIN_RULE_CONTRACTIONS_FROM_PROVENANCE_MATCHED_CURRENT_ACTION_DATA_THEN_EVALUATE_THE_COMPLETE_CENTER_SCREEN_BEFORE_OUTWARD_CERTIFICATION",
+  "inputs": {
+    "artifacts/flagship_integration/BHSM_N12_GATE7_CURRENT_GREEN_COMPONENTWISE_TWO_RADIUS_SCREEN.json": "BBE01FDA170DE53E90B9421D3003FF2692673EFE33A395A32ECB23A250F9C1C0",
+    "artifacts/flagship_integration/BHSM_N12_GATE7_CURRENT_GREEN_COMPONENTWISE_TWO_RADIUS_SCREEN.npz": "6A49C09415CCCD221FF132C5899FAFDCB469CA5950CE1D4966B5E890F6CF529E",
+    "scripts/audit_n12_gate7_signed_midpoint_completeness.py": "24F5E4A530EA34642305DA7EFF316E8FDC4B8E7661FBFAFAB73243F5F095EC3D",
+    "theory/n12_gate7_signed_midpoint_completeness_audit.md": "14322B78420605EBCCA97921626D91B34DFB2C0C5C159B55225E209996E99418"
+  },
+  "midpoint_longitudinal_coordinate_operator_norm": {
+    "count": 370,
+    "maximum": 1.370355215301623,
+    "maximum_interval": 9,
+    "minimum": 0.09115120971071458,
+    "nonzero_count": 370
+  },
+  "midpoint_normal_operator_norm": {
+    "count": 370,
+    "maximum": 3.486887565189012e-05,
+    "maximum_interval": 1,
+    "minimum": 2.7710542280370988e-06,
+    "nonzero_count": 370
+  },
+  "scientific_consequence": "Retained diagnostics do not support dropping midpoint axis or normal components. Restore their signed contractions or supply an explicit bound before full-center or outward authority. No action or tensor rerun follows from this diagnostic alone.",
+  "status": "RETAINED_MIDPOINT_AXIS_AND_NORMAL_COMPONENTS_AUDITED",
+  "validation": {
+    "all_370_midpoint_diagnostics_finite": true,
+    "exact_witness_has_nonzero_omitted_quadratic": true,
+    "exact_witness_is_endpoint_transverse": true,
+    "retained_source_validated_and_data_hash_matched": true,
+    "source_normal_maximum_reproduced": true
+  },
+  "validation_passed": true
+}
