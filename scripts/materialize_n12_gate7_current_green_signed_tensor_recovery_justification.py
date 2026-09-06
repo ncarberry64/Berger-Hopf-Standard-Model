@@ -18,6 +18,8 @@ THEORY = ROOT / "theory" / "n12_gate7_current_green_signed_transverse_tensor_rec
 CPU_CEILING_HOURS = 210.0
 RECOVERY_OVERHEAD_FACTOR = 1.05
 ABORTED_TRACE_CAPTURE_PILOT_CPU_HOURS = 1.4089071060833278
+FOUR_WORKER_DIRECT_PILOT_MAXIMUM_SECONDS = 965.0317957999941
+RECOVERY_ROWS = 740
 
 
 def _sha(path: Path) -> str:
@@ -50,7 +52,11 @@ def build_payload() -> dict[str, object]:
             "output_Frobenius_maximum_relative_residual"
         ])
     prior_cpu = float(center["measured_CPU_hours"])
-    projected_cpu = RECOVERY_OVERHEAD_FACTOR * prior_cpu
+    projected_from_parent = RECOVERY_OVERHEAD_FACTOR * prior_cpu
+    projected_from_direct_pilot = (
+        FOUR_WORKER_DIRECT_PILOT_MAXIMUM_SECONDS * RECOVERY_ROWS / 3600.0
+    )
+    projected_cpu = max(projected_from_parent, projected_from_direct_pilot)
     projected_total_cpu = projected_cpu + ABORTED_TRACE_CAPTURE_PILOT_CPU_HOURS
     authorized = bool(
         projected_total_cpu < CPU_CEILING_HOURS
@@ -104,6 +110,9 @@ def build_payload() -> dict[str, object]:
             "published_center_campaign_measured_CPU_hours": prior_cpu,
             "aborted_trace_capture_pilot_CPU_hours": ABORTED_TRACE_CAPTURE_PILOT_CPU_HOURS,
             "conservative_recovery_overhead_factor": RECOVERY_OVERHEAD_FACTOR,
+            "four_worker_direct_pilot_maximum_seconds": FOUR_WORKER_DIRECT_PILOT_MAXIMUM_SECONDS,
+            "projected_from_parent_campaign_CPU_hours": projected_from_parent,
+            "projected_from_four_worker_direct_pilot_CPU_hours": projected_from_direct_pilot,
             "projected_recovery_CPU_hours": projected_cpu,
             "projected_total_CPU_hours_including_aborted_pilot": projected_total_cpu,
             "fixed_campaign_CPU_ceiling": CPU_CEILING_HOURS,
