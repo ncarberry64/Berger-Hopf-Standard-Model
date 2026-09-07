@@ -53,6 +53,11 @@ INPUTS = tuple(
     ROOT / "artifacts/intrinsic_state_selection/BHSM_N12_FORWARD_TERMINAL_CHART_REACHABILITY_GATE.json",
     ROOT / "artifacts/qxi_relative_energy_preparation/BHSM_POST_PARENT_FLAGSHIP_OBSERVABLE_GATE.json",
     ROOT / "src/bhsm/interface/ae4_existing_asset_system_integration.py",
+    ROOT / "src/bhsm/interface/ae4_current_c2_physical_enclosure_state_integration.py",
+    ROOT / "src/bhsm/interface/ae4_c2_stratified_event_flux_assembly.py",
+    ROOT / "src/bhsm/interface/ae4_current_c2_factorized_hs_calderon.py",
+    ROOT / "src/bhsm/interface/ae4_event_response_jet_integration.py",
+    ROOT / "src/bhsm/interface/ae31_c2_intrinsic_m4_lepton_action.py",
 )
 
 
@@ -68,7 +73,7 @@ def build_payload() -> dict[str, Any]:
     missing = [str(path) for path in INPUTS if not path.is_file()]
     if missing:
         raise FileNotFoundError(", ".join(missing))
-    source_artifacts = [_load(path) for path in INPUTS[:-1]]
+    source_artifacts = [_load(path) for path in INPUTS if path.suffix == ".json"]
     ledger = reused_upstream_asset_ledger()
     reduction = hindsight_gate_reduction()
     graph = one_operator_completion_graph()
@@ -102,6 +107,11 @@ def build_payload() -> dict[str, Any]:
             "STRATIFIED_OPERATOR" in boundary["exact_next_calculation"]
             and "NONZERO_FERMION" in boundary["exact_next_calculation"]
         ),
+        "existing_assembly_and_localization_not_reopened": (
+            frontier["six_sector_assembly_already_derived"]
+            and frontier["local_enclosure_and_state_transport_already_closed"]
+            and not frontier["physical_nonzero_sector_values_evaluated"]
+        ),
         "no_independent_oracles": graph["independent_operator_oracles_remaining"] == 0,
         "global_realization_not_overclaimed": not boundary["AE4_GLOBAL_RETARDED_STRATIFIED_OPERATOR_REALIZED"],
         "museum_claim_firewall_retained": museum["export_only_from_machine_claim_boundaries"],
@@ -128,7 +138,7 @@ def main() -> None:
     if not payload["validation_passed"]:
         raise SystemExit("AE4 system integration failed")
     TARGET.parent.mkdir(parents=True, exist_ok=True)
-    TARGET.write_text(json.dumps(payload, indent=2, sort_keys=True) + "\n", encoding="utf-8")
+    TARGET.write_text(json.dumps(payload, indent=2, sort_keys=True) + "\n", encoding="utf-8", newline="\n")
     print(TARGET.relative_to(ROOT).as_posix())
 
 
