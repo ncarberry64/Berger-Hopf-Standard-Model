@@ -1,7 +1,7 @@
 'use client';
 
 import { useState } from 'react';
-import comparison from '../public/data/sandbox-comparison.json';
+import comparison from './sandbox-comparison.json';
 import { SCIENCE } from './exhibits';
 
 const galleries = [

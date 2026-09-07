@@ -52,6 +52,10 @@ def test_sandbox_pairs_are_complete_source_bound_and_comparison_only():
     for row in data["rows"]:
         assert abs(100*(row["bhsm"]-row["reference"])/row["reference"]) < 20
     assert json.loads((MUSEUM / "public/data/sandbox-comparison.json").read_text(encoding="utf-8")) == data
+    assert json.loads((MUSEUM / "app/sandbox-comparison.json").read_text(encoding="utf-8")) == data
+    gallery = (MUSEUM / "app/science-gallery.tsx").read_text(encoding="utf-8")
+    assert "from './sandbox-comparison.json'" in gallery
+    assert "from '../public/" not in gallery
 
 
 def test_comparison_snapshot_is_not_an_upstream_scientific_dependency():
