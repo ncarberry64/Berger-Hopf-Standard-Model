@@ -1,0 +1,66 @@
+name: Institutional onboarding
+on:
+  push:
+    branches: [main]
+  pull_request:
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  portable-core:
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          - {os: ubuntu-latest, python: '3.10'}
+          - {os: ubuntu-latest, python: '3.12'}
+          - {os: ubuntu-latest, python: '3.14'}
+          - {os: windows-latest, python: '3.12'}
+          - {os: macos-latest, python: '3.12'}
+    runs-on: ${{ matrix.os }}
+    timeout-minutes: 15
+    env:
+      OMP_NUM_THREADS: '1'
+      OPENBLAS_NUM_THREADS: '1'
+      MKL_NUM_THREADS: '1'
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: ${{ matrix.python }}
+          cache: pip
+      - run: python -m pip install -e .
+      - run: python tools/institutional_check.py --smoke --json tmp/institutional-check.json
+      - run: python -m pytest -q tests/test_institutional_check.py tests/test_bhsm_museum_facade.py
+      - run: python -m pip freeze
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: onboarding-${{ matrix.os }}-${{ matrix.python }}
+          path: tmp/institutional-check.json
+  review-container:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+      - run: docker build -f integrations/institutional/Dockerfile -t bhsm-review .
+      - run: docker run --rm --network none bhsm-review
+  museum-build:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: pnpm/action-setup@v4
+        with:
+          version: 11.19.0
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 24
+          cache: pnpm
+          cache-dependency-path: museum/pnpm-lock.yaml
+      - run: pnpm install --frozen-lockfile
+        working-directory: museum
+      - run: pnpm exec tsc --noEmit
+        working-directory: museum
+      - run: pnpm build:pages
+        working-directory: museum

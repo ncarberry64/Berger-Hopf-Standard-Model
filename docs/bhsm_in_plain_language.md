@@ -1,6 +1,21 @@
 # BHSM in plain language
 
-## Current frontier (v15.7)
+## The scientific question
+
+BHSM asks whether a common geometry can explain recurring particle families,
+their mass hierarchies and their interactions. If that proposal is completed
+and survives independent tests, it would offer a deeper account of why the
+pattern of matter looks the way it does. It is not yet an established physical
+theory or a completed derivation of the Standard Model.
+
+The [public Museum](https://ncarberry64.github.io/Berger-Hopf-Standard-Model/)
+now presents the scientific questions and the September 2 sandbox comparisons
+first. Historical calculations, unverified reference markers, real CMS data
+and explanatory simulations carry separate visible labels. The
+[current status](current_bhsm_status.md) scopes later enclosure and response
+results; the chronological discussion below retains the earlier frontier.
+
+## Historical frontier (v15.7)
 
 BHSM assumes one all-encompassing parent surface and treats cavitation-like
 encapsulation as a response to local spacetime instability. It has not yet

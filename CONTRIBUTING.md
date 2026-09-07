@@ -4,6 +4,11 @@ Thank you for taking an interest in the Berger-Hopf Standard Model repository.
 
 ## Before You Start
 
+Use [the institutional check](docs/INSTITUTIONAL_START.md) to record your
+environment before a reproduction. Noncommercial verification, review and
+teaching are covered by [ACADEMIC_USE.md](ACADEMIC_USE.md). Report adverse
+results and deviations as explicitly as successful checks.
+
 - Read `STATUS.md` and `CLAIMS.md` before proposing scientific changes.
 - Search existing issues and discussions for related work.
 - Open a research-source issue before a substantial theory or status change.

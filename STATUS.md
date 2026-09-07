@@ -1,5 +1,11 @@
 # BHSM Status
 
+The current academic entry is [Institutional start](docs/INSTITUTIONAL_START.md).
+The September 7 integration reuses existing AE4 response and enclosure assets
+and includes the full-field boundary/interface research with its open physical
+inputs. The public Museum now leads with the scientific proposal and labeled
+sandbox comparisons. No physical prediction or Gate-7 completion is promoted.
+
 ## Authoritative current checkpoint
 
 `CARRIER_CLOSED`: the correlated 256-bit Arb interaction-Taylor26 homogeneous

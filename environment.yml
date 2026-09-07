@@ -1,6 +1,9 @@
-name: bhsm-hep-handoff
+name: bhsm-review
 channels:
   - conda-forge
 dependencies:
-  - python
+  - python=3.12
+  - pip
+  - pip:
+      - -e .
 

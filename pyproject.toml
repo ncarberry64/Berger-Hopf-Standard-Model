@@ -1,14 +1,24 @@
 [project]
 name = "berger-hopf-sm-completion"
 version = "0.1.0"
-description = "Conditional Berger-Hopf Standard Model completion screens and audits."
+description = "Berger-Hopf geometric physics: conditional models, reproducible evidence and completion audits."
+readme = "README.md"
+authors = [{name = "Norman P. Carberry"}]
+license = {file = "LICENSE.md"}
 requires-python = ">=3.10"
 dependencies = [
   "numpy",
   "scipy",
   "sympy",
+  "mpmath",
   "pytest",
 ]
+
+[project.urls]
+Repository = "https://github.com/ncarberry64/Berger-Hopf-Standard-Model"
+Documentation = "https://github.com/ncarberry64/Berger-Hopf-Standard-Model/blob/main/docs/INSTITUTIONAL_START.md"
+Museum = "https://ncarberry64.github.io/Berger-Hopf-Standard-Model/"
+Issues = "https://github.com/ncarberry64/Berger-Hopf-Standard-Model/issues"
 
 [project.optional-dependencies]
 benchmark = [

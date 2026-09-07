@@ -16,84 +16,99 @@ if (!existsSync(sourceRoot)) {
   for (const name of [
     'data/cms-four-vector-sample.json',
     'data/gate7-scalar-response.json',
+    'data/sandbox-comparison.json',
     'exhibits/pr98_cms_engine_validation.png',
-    'exhibits/bhsm_physical_identification_bridge_animated.gif',
+    'exhibits/bhsm_no_fit_firewall_animated.gif',
   ]) {
     await access(join(publicRoot, name));
   }
   console.log('Using the bundled provenance-tracked Museum assets.');
 } else {
+  if (
+    relative(publicRoot, targetRoot).startsWith('..') ||
+    relative(publicRoot, dataRoot).startsWith('..')
+  ) {
+    throw new Error('Refusing to sync outside museum/public.');
+  }
 
-if (
-  relative(publicRoot, targetRoot).startsWith('..') ||
-  relative(publicRoot, dataRoot).startsWith('..')
-) {
-  throw new Error('Refusing to sync outside museum/public.');
-}
+  const exhibitBases = [
+    'bhsm_geometry_to_prediction',
+    'bhsm_spectral_forecast',
+    'bhsm_muon_g2_pipeline',
+    'bhsm_collision_predictor',
+    'bhsm_decay_stability_engine',
+    'bhsm_no_fit_firewall',
+    'cosmology_hyperspherical_scalar_topography',
+  ];
+  const allowedNames = new Set([
+    ...exhibitBases.flatMap((base) => [
+      `${base}.png`,
+      `${base}.svg`,
+      `${base}_animated.gif`,
+    ]),
+    'bhsm_readme_visual_status.json',
+  ]);
+  const names = (await readdir(sourceRoot)).filter((name) =>
+    allowedNames.has(name),
+  );
 
-const exhibitBases = [
-  'bhsm_geometry_to_prediction',
-  'bhsm_simulated_particle_spectrum',
-  'bhsm_spectral_forecast',
-  'bhsm_muon_g2_pipeline',
-  'bhsm_collision_predictor',
-  'bhsm_decay_stability_engine',
-  'bhsm_no_fit_firewall',
-  'bhsm_physical_identification_bridge',
-  'cosmology_hyperspherical_scalar_topography',
-];
-const allowedNames = new Set([
-  ...exhibitBases.flatMap((base) => [
-    `${base}.png`,
-    `${base}.svg`,
-    `${base}_animated.gif`,
-  ]),
-  'bhsm_readme_visual_status.json',
-]);
-const names = (await readdir(sourceRoot)).filter((name) =>
-  allowedNames.has(name),
-);
+  await mkdir(targetRoot, { recursive: true });
+  await mkdir(dataRoot, { recursive: true });
 
-await mkdir(targetRoot, { recursive: true });
-await mkdir(dataRoot, { recursive: true });
+  for (const existing of await readdir(targetRoot)) {
+    await rm(join(targetRoot, existing), { recursive: true, force: true });
+  }
 
-for (const existing of await readdir(targetRoot)) {
-  await rm(join(targetRoot, existing), { recursive: true, force: true });
-}
+  for (const existing of await readdir(dataRoot)) {
+    await rm(join(dataRoot, existing), { recursive: true, force: true });
+  }
 
-for (const existing of await readdir(dataRoot)) {
-  await rm(join(dataRoot, existing), { recursive: true, force: true });
-}
+  for (const name of names) {
+    await cp(join(sourceRoot, name), join(targetRoot, name));
+  }
 
-for (const name of names) {
-  await cp(join(sourceRoot, name), join(targetRoot, name));
-}
+  const cmsNames = [
+    'pr98_cms_engine_validation.png',
+    'pr98_cms_engine_validation.svg',
+    'pr98_cms_engine_validation_continuous.gif',
+  ];
+  for (const name of cmsNames) {
+    await cp(join(cmsSourceRoot, name), join(targetRoot, name));
+  }
 
-const cmsNames = [
-  'pr98_cms_engine_validation.png',
-  'pr98_cms_engine_validation.svg',
-  'pr98_cms_engine_validation_continuous.gif',
-];
-for (const name of cmsNames) {
-  await cp(join(cmsSourceRoot, name), join(targetRoot, name));
-}
+  await cp(
+    join(cmsSourceRoot, 'pr98_cms_four_vector_sample.json'),
+    join(dataRoot, 'cms-four-vector-sample.json'),
+  );
 
-await cp(
-  join(cmsSourceRoot, 'pr98_cms_four_vector_sample.json'),
-  join(dataRoot, 'cms-four-vector-sample.json'),
-);
+  await cp(
+    resolve(
+      museumRoot,
+      '..',
+      'data',
+      'museum',
+      'bhsm_gate7_scalar_response.json',
+    ),
+    join(dataRoot, 'gate7-scalar-response.json'),
+  );
 
-await cp(
-  resolve(museumRoot, '..', 'data', 'museum', 'bhsm_gate7_scalar_response.json'),
-  join(dataRoot, 'gate7-scalar-response.json'),
-);
+  await cp(
+    resolve(
+      museumRoot,
+      '..',
+      'data',
+      'museum',
+      'bhsm_sandbox_comparison_20260902.json',
+    ),
+    join(dataRoot, 'sandbox-comparison.json'),
+  );
 
-await cp(
-  join(cmsSourceRoot, 'pr98_cms_engine_validation.png'),
-  join(publicRoot, 'og.png'),
-);
+  await cp(
+    join(cmsSourceRoot, 'pr98_cms_engine_validation.png'),
+    join(publicRoot, 'og.png'),
+  );
 
-console.log(
-  `Synced ${names.length + cmsNames.length + 1} provenance-tracked museum assets.`,
-);
+  console.log(
+    `Synced ${names.length + cmsNames.length + 1} provenance-tracked museum assets.`,
+  );
 }

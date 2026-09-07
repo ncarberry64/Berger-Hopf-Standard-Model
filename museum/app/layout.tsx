@@ -16,9 +16,9 @@ export const metadata: Metadata = {
   metadataBase: new URL(
     'https://ncarberry64.github.io/Berger-Hopf-Standard-Model/',
   ),
-  title: 'BHSM Museum | Animated Scientific Archive',
+  title: 'BHSM Museum | Geometry and the Pattern of Matter',
   description:
-    'Real CMS Open Data rendered through the BHSM Engine, the integrated Berger–Hopf Standard Model record, and an artifact-backed scientific archive.',
+    'Explore the scientific potential of the Berger–Hopf Standard Model through particle families, forces, mixing and openly labeled sandbox comparisons.',
   icons: {
     icon: './bhsm-symbol.svg',
   },
@@ -26,9 +26,9 @@ export const metadata: Metadata = {
     canonical: './',
   },
   openGraph: {
-    title: 'BHSM Museum | CMS Open Data and the BHSM Record',
+    title: 'BHSM Museum | Could Geometry Explain the Pattern of Matter?',
     description:
-      'Explore real CMS dimuon data, animated BHSM calculations, integrated provenance, and the open physical-identification bridge.',
+      'Particle families, shared interactions and testable differences: an accessible public collection with visible data provenance and open scientific limits.',
     images: ['./og.png'],
   },
 };

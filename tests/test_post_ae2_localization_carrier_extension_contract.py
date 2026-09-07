@@ -3,8 +3,8 @@ from __future__ import annotations
 import hashlib
 import json
 from pathlib import Path
-import subprocess
-import sys
+from scripts import materialize_post_ae2_localization_carrier_extension_contract as materializer
+import tempfile
 
 from scripts.materialize_post_ae2_localization_carrier_extension_contract import (
     TARGET,
@@ -43,12 +43,18 @@ def test_contract_forbids_state_space_to_spacetime_relabelling() -> None:
     assert "REBUILD_OR_RETUNE_FROZEN_PARTICLE_ASSETS" in forbidden
 
 
-def test_materialized_contract_is_deterministic() -> None:
-    subprocess.run([sys.executable, str(SCRIPT)], cwd=ROOT, check=True)
-    first = hashlib.sha256(TARGET.read_bytes()).hexdigest()
-    subprocess.run([sys.executable, str(SCRIPT)], cwd=ROOT, check=True)
-    second = hashlib.sha256(TARGET.read_bytes()).hexdigest()
-    payload = json.loads(TARGET.read_text(encoding="utf-8"))
+def test_materialized_contract_is_deterministic(monkeypatch) -> None:
+    # Exercise the real writer without rewriting a tracked scientific ledger.
+    scratch = ROOT / "tmp"
+    scratch.mkdir(exist_ok=True)
+    with tempfile.TemporaryDirectory(prefix="bhsm-materializer-", dir=scratch) as folder:
+        target = Path(folder) / TARGET.name
+        monkeypatch.setattr(materializer, "TARGET", target)
+        materializer.main()
+        first = hashlib.sha256(target.read_bytes()).hexdigest()
+        materializer.main()
+        second = hashlib.sha256(target.read_bytes()).hexdigest()
+        payload = json.loads(target.read_text(encoding="utf-8"))
     assert first == second
     assert payload["validation_passed"] is True
     assert payload["FULL_BHSM_COMPLETE"] is False

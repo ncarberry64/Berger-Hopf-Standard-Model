@@ -3,8 +3,8 @@ from __future__ import annotations
 import hashlib
 import json
 from pathlib import Path
-import subprocess
-import sys
+from scripts import materialize_n12_gate7_localization_carrier_kill_screen as materializer
+import tempfile
 
 import numpy as np
 
@@ -93,12 +93,18 @@ def test_candidate_evaluator_requires_the_full_carrier_type() -> None:
     assert result["carrier_exists_in_audited_unchanged_ae2"] is False
 
 
-def test_materialized_kill_screen_is_deterministic() -> None:
-    subprocess.run([sys.executable, str(SCRIPT)], cwd=ROOT, check=True)
-    first = hashlib.sha256(TARGET.read_bytes()).hexdigest()
-    subprocess.run([sys.executable, str(SCRIPT)], cwd=ROOT, check=True)
-    second = hashlib.sha256(TARGET.read_bytes()).hexdigest()
-    payload = json.loads(TARGET.read_text(encoding="utf-8"))
+def test_materialized_kill_screen_is_deterministic(monkeypatch) -> None:
+    # Exercise the real writer without rewriting a tracked scientific ledger.
+    scratch = ROOT / "tmp"
+    scratch.mkdir(exist_ok=True)
+    with tempfile.TemporaryDirectory(prefix="bhsm-materializer-", dir=scratch) as folder:
+        target = Path(folder) / TARGET.name
+        monkeypatch.setattr(materializer, "TARGET", target)
+        materializer.main()
+        first = hashlib.sha256(target.read_bytes()).hexdigest()
+        materializer.main()
+        second = hashlib.sha256(target.read_bytes()).hexdigest()
+        payload = json.loads(target.read_text(encoding="utf-8"))
     assert first == second
     assert payload["validation_passed"] is True
     assert payload["status"].startswith("UNCHANGED_AE2_LOCALIZATION_CARRIER_NOT_FOUND")
