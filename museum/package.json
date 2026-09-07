@@ -15,7 +15,8 @@
     "build:pages": "pnpm build && pnpm export:pages",
     "start": "wrangler dev --config dist/server/wrangler.json",
     "lint": "oxlint app scripts components/ui/button.tsx lib/utils.ts",
-    "format": "oxfmt"
+    "format": "oxfmt",
+    "test:science": "node --experimental-strip-types --test scripts/test-science-demo.mjs"
   },
   "dependencies": {
     "react": "19.2.6",

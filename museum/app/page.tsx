@@ -12,11 +12,13 @@ import {
   type Exhibit,
 } from './exhibits';
 import { ScienceGallery } from './science-gallery';
+import { PrototypeScience } from './prototype-science';
+import { CosmicEnclosure } from './cosmic-enclosure';
 import { CMSExplorer } from './cms-explorer';
 
 const ASSET_REVISION = 'science-first-2026-09-07';
 const researchDisplays = exhibits.filter((row) =>
-  ['01', '02', '04', '05', '06', '07', '08'].includes(row.number),
+  ['01', '08'].includes(row.number),
 );
 
 function MotionImage({
@@ -73,7 +75,8 @@ export default function Home() {
         </a>
         <nav aria-label="Museum navigation">
           <a href="#potential">The possibility</a>
-          <a href="#exhibits">Exhibits</a>
+          <a href="#exhibits">Science exhibits</a>
+          <a href="#comparisons">Additional data</a>
           <a href="#details">Details</a>
           <a href="#creator">Author</a>
           <a href="#other-work">Cosmology</a>
@@ -137,6 +140,7 @@ export default function Home() {
           </p>
         </aside>
       </section>
+      <PrototypeScience motion={motion} setMotion={setMotion} />
       <ScienceGallery />
       <section
         id="research-exhibit"
@@ -144,9 +148,7 @@ export default function Home() {
         aria-labelledby="research-title"
       >
         <div className="section-heading">
-          <p className="eyebrow">
-            Exhibit 06 · computation and research achievements
-          </p>
+          <p className="eyebrow">Computation and research achievements</p>
           <h2 id="research-title">How the scientific record is checked.</h2>
           <p>
             This single exhibit gathers software demonstrations, real-data
@@ -337,7 +339,7 @@ export default function Home() {
         aria-labelledby="other-work-title"
       >
         <div className="section-heading">
-          <p className="eyebrow">Final exhibit · other work · cosmology</p>
+          <p className="eyebrow">Final wing · other work · cosmology</p>
           <h2 id="other-work-title">
             Could a large-scale pattern connect cosmic anomalies?
           </h2>
@@ -378,6 +380,7 @@ export default function Home() {
           confirmation from a survey. Comparison level: order of magnitude; a
           full likelihood analysis remains open.
         </p>
+        <CosmicEnclosure motion={motion} />
       </section>
       <footer>
         <p>

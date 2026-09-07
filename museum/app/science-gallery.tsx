@@ -51,16 +51,17 @@ export function ScienceGallery() {
   const [selected, setSelected] = useState<Record<string, string>>({});
   return (
     <section
-      id="exhibits"
+      id="comparisons"
       className="science-hall"
       aria-labelledby="science-title"
     >
       <div className="section-heading">
-        <p className="eyebrow">The BHSM science exhibits</p>
-        <h2 id="science-title">Follow the patterns. Keep the differences.</h2>
+        <p className="eyebrow">Additional sandbox comparisons</p>
+        <h2 id="science-title">More data for the science exhibits.</h2>
         <p>
-          Explore the September 2 sandbox snapshot. Every number below is a
-          historical BHSM screen or a supplied comparison reference. These are
+          These additional panels supplement the permanent science collection
+          above. Explore the September 2 sandbox snapshot. Every number below is
+          a historical BHSM screen or a supplied comparison reference. These are
           neither simulated particle masses nor newly certified physical
           predictions.
         </p>

@@ -1,6 +1,6 @@
 # Museum asset provenance
 
-- The five primary science exhibits use the ten complete numerical pairs
+- The five supplementary sandbox panels use the ten complete numerical pairs
   and four qualitative sentinels in
   `../data/museum/bhsm_sandbox_comparison_20260902.json`, copied identically to
   `public/data/sandbox-comparison.json`. The source snapshot is
@@ -10,7 +10,8 @@
   panel labels historical BHSM screens and unverified sandbox references;
   no uncertainty, missing numerical pair or physical promotion is invented.
 - Computation and research achievements occupy one separate exhibit.
-  Its seven retained display choices and the final cosmology exhibit use
+  Its CMS and residual-check displays, the restored science prototypes and
+  the final cosmology exhibits use
   assets synchronized from `../docs/assets/`. The PR #98 animation uses
   CMS dimuon Open Data Record 303; its compact sample, pinned source checksum,
   DOI, CC0 license, and benchmark boundary live under
@@ -49,3 +50,20 @@
   (`frontend/src/assets/bhsm-symbol.svg`). That project identifies the mark as
   an original repository asset and publishes it under the MIT License.
 - Lucide interface icons are supplied by the declared `lucide-react` package.
+
+- The permanent science collection is generated from existing prediction,
+  SM-bundle and current-system artifacts by `../tools/materialize_museum_science.py`.
+  Source hashes and classifications remain in `public/data/science-collection.json`.
+  The mirrored app JSON supports local development without importing public assets.
+- `lib/collision-demo.ts` computes deterministic relativistic two-body kinematics
+  for explicitly labeled user-controlled demonstration masses and selected states.
+  Its four-vectors are simulated event outputs, not BHSM amplitudes or probabilities.
+- The force-unification animation is a conceptual connection diagram, not a
+  running-coupling plot. Its historical numeric table retains SCREEN labels.
+- `app/cosmic-enclosure.tsx` illustrates Norman's September 7 author brief,
+  with Bubble/Wave and evaporation context from his privately supplied
+  *The Prints.pptx* (slides 1–2, 7 and 11), as a
+  separate speculative other-work exhibit. Surface flows, body markers, explosive
+  events, black-hole concentrations, smooth phase and whole-surface release are
+  explanatory graphics, not observed or derived cosmic evolution. Context and
+  limits: `../docs/museum/norman_cosmic_enclosure_cycle.md`.

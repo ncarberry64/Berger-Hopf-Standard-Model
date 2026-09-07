@@ -70,18 +70,51 @@ try {
   await writeFile(resolve(pagesRoot, '.nojekyll'), '', 'utf8');
 
   const written = await readFile(resolve(pagesRoot, 'index.html'), 'utf8');
-  for (const expected of ['BHSM Museum', 'historic stakes', 'Sandbox reference', 'COMPARISON ONLY', './_next/']) {
+  for (const expected of [
+    'BHSM Museum',
+    'historic stakes',
+    'Sandbox reference',
+    'COMPARISON ONLY',
+    './_next/',
+    'Full magnetic-moment tracker',
+    'Standard Model equivalence',
+    'Collide selected particles',
+    'Forces unifying',
+  ]) {
     if (!written.includes(expected))
       throw new Error(`Static export is missing: ${expected}`);
   }
-  const sections = ['potential', 'exhibits', 'research-exhibit', 'details', 'creator', 'other-work'];
-  const positions = sections.map(id => written.indexOf(`id="${id}"`));
-  if (positions.some((position, index) => position < 0 || (index > 0 && position <= positions[index - 1]))) {
-    throw new Error('Static export does not preserve the public science section order.');
+  const sections = [
+    'potential',
+    'exhibits',
+    'comparisons',
+    'research-exhibit',
+    'details',
+    'creator',
+    'other-work',
+  ];
+  const positions = sections.map((id) => written.indexOf(`id="${id}"`));
+  if (
+    positions.some(
+      (position, index) =>
+        position < 0 || (index > 0 && position <= positions[index - 1]),
+    )
+  ) {
+    throw new Error(
+      'Static export does not preserve the public science section order.',
+    );
   }
-  const data = JSON.parse(await readFile(resolve(pagesRoot, 'data/sandbox-comparison.json'), 'utf8'));
-  if (data.classification !== 'COMPARISON_ONLY' || data.rows.length !== 10 || data.physical_prediction !== false) {
-    throw new Error('Static export lost the sandbox data or its claim boundary.');
+  const data = JSON.parse(
+    await readFile(resolve(pagesRoot, 'data/sandbox-comparison.json'), 'utf8'),
+  );
+  if (
+    data.classification !== 'COMPARISON_ONLY' ||
+    data.rows.length !== 10 ||
+    data.physical_prediction !== false
+  ) {
+    throw new Error(
+      'Static export lost the sandbox data or its claim boundary.',
+    );
   }
   console.log(
     `Exported GitHub Pages package to ${relative(museumRoot, pagesRoot)}.`,

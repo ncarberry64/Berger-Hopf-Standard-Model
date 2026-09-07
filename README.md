@@ -13,7 +13,11 @@ the complete physical derivation and experimental validation remain open.
 This repository is the **academic record and reproducible research surface**.
 The [BHSM Museum](https://ncarberry64.github.io/Berger-Hopf-Standard-Model/)
 is the public-facing collection, with plain-language exhibits and visible
-measurement, calculation, comparison and simulation labels.
+measurement, calculation, comparison and simulation labels. Its permanent
+science exhibits cover decays/collisions, magnetic moments, SM predictions,
+SM equivalence, force unification and spectral structure. Sandbox comparisons
+are supplementary. The [Museum update contract](docs/MUSEUM_SCIENCE_UPDATE.md)
+connects reviewed derived results to these same public exhibits.
 
 ## Start with your research question
 
