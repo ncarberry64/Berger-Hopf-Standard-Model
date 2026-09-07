@@ -81,11 +81,11 @@ export function CMSExplorer() {
           }
         />
         {loadState !== 'ready' ? (
-          <p role="status">
+          <output>
             {loadState === 'loading'
               ? 'Loading the checked-in CMS sample…'
               : 'The CMS sample could not be loaded. The source record remains available below.'}
-          </p>
+          </output>
         ) : null}
         <div className="cms-event-identity">
           <span>Source row {event?.event_index ?? '—'}</span>

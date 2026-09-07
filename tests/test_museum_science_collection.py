@@ -75,6 +75,11 @@ def test_primary_exhibits_collider_and_other_work_are_not_replaced_by_comparison
     assert 'collisionDemo(' in theatre and 'CMS' in theatre
     assert 'SIMULATED COLLISION' in theatre
     assert 'Decay channel stability' not in primary and 'Full magnetic-moment tracker' not in primary
+    magnetic = (ROOT / 'museum/app/magnetic-lab.tsx').read_text(encoding='utf-8')
+    assert 'references.magnetic.map' in magnetic and 'row.moment.toExponential' in magnetic
+    assert 'larmorHz(row.moment, 0.1)' in magnetic
+    assert 'onPointerMove' not in magnetic and 'setMagnet' not in magnetic
+    assert 'row.uncertainty' in magnetic and 'vector lengths are normalized' in magnetic
     assert '<CosmicEnclosure motion={motion}' in page
     assert page.index('cosmologyExhibit.title') < page.index('<CosmicEnclosure') < page.index('<footer>')
     for text in ('White-hole surface release', 'Cooling, flows and active topology', 'Smooth surface / heat death', 'SPECULATIVE CONCEPTUAL SIMULATION', 'not observational data'):

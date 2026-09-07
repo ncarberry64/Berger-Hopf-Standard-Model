@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 import { Geist, Geist_Mono } from 'next/font/google';
 import './globals.css';
+import './console.css';
 
 const geistSans = Geist({
   variable: '--font-geist-sans',
@@ -16,7 +17,7 @@ export const metadata: Metadata = {
   metadataBase: new URL(
     'https://ncarberry64.github.io/Berger-Hopf-Standard-Model/',
   ),
-  title: 'BHSM Museum | Geometry and the Pattern of Matter',
+  title: 'BHSM Museum | The Prediction Engine',
   description:
     'Explore the scientific potential of the Berger–Hopf Standard Model through particle families, forces, mixing and openly labeled sandbox comparisons.',
   icons: {
@@ -26,7 +27,7 @@ export const metadata: Metadata = {
     canonical: './',
   },
   openGraph: {
-    title: 'BHSM Museum | Could Geometry Explain the Pattern of Matter?',
+    title: 'BHSM Museum | Could Geometry Predict Matter?',
     description:
       'Particle families, shared interactions and testable differences: an accessible public collection with visible data provenance and open scientific limits.',
     images: ['./og.png'],

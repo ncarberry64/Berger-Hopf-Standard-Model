@@ -1,0 +1,1055 @@
+/* The science consoles are scoped so the Author and other-work wings retain their design. */
+.prediction-museum {
+  background: #030406;
+}
+.prediction-museum .site-header {
+  background: #050507f5;
+  border-bottom: 1px solid #35303f;
+}
+.prediction-museum .site-header small {
+  color: #c3adc9;
+}
+.engine-hero,
+.console-collection,
+.prediction-museum > .science-console {
+  max-width: 1380px;
+  margin: 0 auto;
+  padding: 0 36px;
+}
+.engine-hero {
+  padding-top: 30px;
+  padding-bottom: 52px;
+  color: #f2edf5;
+}
+.hero-overline,
+.hero-baseline {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 16px;
+  font:
+    11px var(--font-geist-mono),
+    monospace;
+  letter-spacing: 0.14em;
+  color: #bcabc8;
+}
+.hero-overline {
+  border-top: 14px solid #ffbc77;
+  border-radius: 60px 0 0 0;
+  padding: 15px 0 0 26px;
+}
+.engine-hero button,
+.console-collection button,
+.science-console button {
+  cursor: pointer;
+}
+.hero-overline button,
+.collection-heading button {
+  background: #bda7f5;
+  border: 0;
+  border-radius: 99px;
+  color: #090710;
+  padding: 10px 18px;
+  font:
+    600 12px var(--font-geist-mono),
+    monospace;
+  letter-spacing: 0;
+}
+.hero-layout {
+  display: grid;
+  grid-template-columns: 1.12fr 1fr;
+  align-items: center;
+  gap: 8px;
+  padding: 35px 0 25px;
+}
+.hero-copy h1 {
+  font-size: clamp(42px, 4.9vw, 72px);
+  font-weight: 500;
+  letter-spacing: -0.06em;
+  line-height: 1.04;
+  margin: 15px 0 22px;
+}
+.hero-copy h1 em {
+  font-style: normal;
+  color: #ffbc77;
+}
+.hero-copy > p:not(.eyebrow) {
+  color: #c4bccb;
+  max-width: 570px;
+  font-size: 17px;
+  line-height: 1.7;
+}
+.hero-copy small {
+  display: block;
+  font-size: 12px;
+  line-height: 1.7;
+  color: #a69cad;
+  max-width: 500px;
+  margin-top: 24px;
+}
+.engine-hero .eyebrow {
+  color: #bda7f5;
+  letter-spacing: 0.12em;
+  font-size: 11px;
+}
+.enter-museum {
+  display: inline-flex;
+  margin-top: 20px;
+  background: #ffbc77;
+  border-radius: 0 30px 30px 0;
+  padding: 13px 35px;
+  color: #151019;
+  font-weight: 700;
+}
+.hero-engine {
+  min-width: 0;
+}
+.geometry-field svg {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+.geometry-compact {
+  margin: 0 -25px;
+}
+.engine-sequence {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 18px;
+  font:
+    11px var(--font-geist-mono),
+    monospace;
+  color: #ffbc77;
+}
+.engine-sequence b {
+  display: block;
+  font:
+    500 14px var(--font-geist-sans),
+    sans-serif;
+  color: #d5cbdc;
+  margin-top: 5px;
+}
+.engine-sequence i {
+  font-style: normal;
+  color: #6e6178;
+}
+.hero-baseline {
+  border-bottom: 6px solid #bda7f5;
+  border-radius: 0 0 0 30px;
+  padding: 0 0 17px 26px;
+  font-size: 9px;
+}
+.collection-heading {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 22px;
+  margin: 18px 0 30px;
+}
+.collection-heading .eyebrow {
+  color: #bda7f5;
+}
+.collection-heading h2 {
+  font-size: clamp(23px, 3vw, 34px);
+  font-weight: 500;
+  letter-spacing: -0.035em;
+}
+.collection-heading button {
+  white-space: nowrap;
+}
+.console-index {
+  display: flex;
+  gap: 6px;
+  margin-bottom: 45px;
+}
+.console-index a {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  border-radius: 3px;
+  background: #bda7f5;
+  color: #141017;
+  padding: 14px 17px;
+  font-size: 13px;
+  font-weight: 650;
+}
+.console-index a:first-child {
+  border-radius: 40px 3px 3px 40px;
+}
+.console-index a:last-child {
+  border-radius: 3px 40px 40px 3px;
+  background: #ffbc77;
+}
+.console-index b {
+  font:
+    16px var(--font-geist-mono),
+    monospace;
+  opacity: 0.6;
+}
+.science-console {
+  --console-accent: #ffbc77;
+  scroll-margin-top: 110px;
+  margin-bottom: 48px;
+  color: #f0eaf5;
+}
+.console-lavender {
+  --console-accent: #bda7f5;
+}
+.console-cyan {
+  --console-accent: #71e5eb;
+}
+.console-cap {
+  display: flex;
+  justify-content: space-between;
+  gap: 16px;
+  align-items: center;
+  border-top: 17px solid var(--console-accent);
+  border-radius: 72px 0 0 0;
+  padding: 13px 0 12px 116px;
+  color: var(--console-accent);
+  font:
+    12px var(--font-geist-mono),
+    monospace;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+.console-body {
+  display: grid;
+  grid-template-columns: 90px minmax(0, 1fr);
+  gap: 26px;
+}
+.console-rail {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  align-self: stretch;
+}
+.console-rail > b {
+  background: var(--console-accent);
+  color: #09070e;
+  text-align: right;
+  padding: 24px 10px;
+  font:
+    42px var(--font-geist-mono),
+    monospace;
+  letter-spacing: -0.06em;
+}
+.console-rail > span {
+  background: #bda7f5;
+  color: #0a080e;
+  writing-mode: vertical-rl;
+  transform: rotate(180deg);
+  padding: 26px 14px;
+  min-height: 180px;
+  font:
+    12px var(--font-geist-mono),
+    monospace;
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  text-align: right;
+}
+.console-rail i {
+  display: block;
+  min-height: 35px;
+  background: #9a7ead;
+}
+.console-rail i:nth-last-child(2) {
+  background: #d78a86;
+  min-height: 65px;
+}
+.console-rail i:last-child {
+  background: var(--console-accent);
+  flex: 1;
+  border-radius: 0 0 0 32px;
+  opacity: 0.7;
+}
+.console-content {
+  min-width: 0;
+}
+.console-intro {
+  padding: 8px 0 20px;
+}
+.console-intro h3 {
+  font-size: clamp(26px, 3.3vw, 43px);
+  font-weight: 500;
+  line-height: 1.12;
+  letter-spacing: -0.045em;
+  margin: 0 0 12px;
+  max-width: 900px;
+}
+.console-intro p {
+  color: #b7aebe;
+  max-width: 850px;
+  line-height: 1.65;
+  font-size: 16px;
+  margin: 0;
+}
+.console-foot {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 16px;
+  margin-left: 116px;
+  border-bottom: 6px solid var(--console-accent);
+  padding-bottom: 10px;
+  font:
+    10px var(--font-geist-mono),
+    monospace;
+  letter-spacing: 0.06em;
+  color: #a99db2;
+  text-transform: uppercase;
+}
+.console-foot a {
+  color: var(--console-accent);
+}
+.science-console .data-label,
+.console-caption {
+  font:
+    11px var(--font-geist-mono),
+    monospace !important;
+  letter-spacing: 0.015em !important;
+  line-height: 1.8 !important;
+  color: #ada1b6 !important;
+  padding: 12px 0 !important;
+  border: 0 !important;
+  background: none !important;
+}
+.console-caption b {
+  color: var(--console-accent);
+  font-weight: 500;
+}
+.console-selector {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
+  margin: 14px 0;
+}
+.console-selector label {
+  font-size: 13px;
+  color: #b5a9c1;
+  margin-right: 7px;
+}
+.science-console button:not(.event-stage),
+.science-console select,
+.science-console .console-selector button {
+  background: #17121d;
+  border: 1px solid #483c53;
+  color: #d6cadd;
+  padding: 10px 17px;
+  border-radius: 26px;
+  font-size: 12px;
+  min-height: 42px;
+}
+.science-console button[aria-pressed='true']:not(.event-stage) {
+  background: var(--console-accent);
+  border-color: var(--console-accent);
+  color: #09070e;
+}
+.science-console button:disabled {
+  opacity: 0.4;
+  cursor: default;
+}
+.science-console button:hover:not(:disabled),
+.console-index a:hover {
+  filter: brightness(1.18);
+}
+.prediction-museum :focus-visible {
+  outline: 3px solid #fff1c8;
+  outline-offset: 5px;
+}
+.console-details {
+  border-top: 1px solid #3e324a;
+  padding: 16px 0;
+  color: #b7acbf;
+  font-size: 14px;
+  line-height: 1.8;
+}
+.console-details summary {
+  cursor: pointer;
+  color: #c8b5db;
+  font-size: 13px;
+  list-style-position: inside;
+}
+.console-details[open] summary {
+  margin-bottom: 22px;
+  color: #ffbc77;
+}
+.console-details h3,
+.console-details h4 {
+  font-size: 20px;
+  line-height: 1.5;
+  color: #d7c7e1;
+}
+.console-details p {
+  max-width: 950px;
+  margin: 14px 0;
+}
+.console-details a {
+  color: #71e5eb;
+}
+.console-details td,
+.console-details th {
+  font-size: 12px;
+}
+.matter-scene {
+  display: grid;
+  grid-template-columns: 1.35fr 1fr;
+  background: radial-gradient(ellipse at 30% 50%, #11101d, #050509 70%);
+  border: 1px solid #292331;
+  border-radius: 4px;
+  align-items: center;
+  overflow: hidden;
+}
+.matter-family {
+  padding: 24px 28px 24px 0;
+}
+.matter-family .eyebrow {
+  color: #bda7f5;
+  font-size: 12px;
+}
+.particle-quartet {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+}
+.particle-quartet > div {
+  border-bottom: 2px solid #5f4a78;
+  padding: 15px 0;
+}
+.particle-quartet strong {
+  display: block;
+  color: #d4b8ff;
+  font:
+    42px var(--font-geist-mono),
+    monospace;
+}
+.particle-quartet span {
+  font-size: 11px;
+  color: #b8a8c5;
+}
+.matter-family > p:last-child {
+  font-size: 13px;
+  color: #b8aebe;
+  line-height: 1.7;
+  margin-top: 18px;
+}
+.prediction-stage {
+  background: radial-gradient(ellipse at 50% 65%, #151327, #050509 80%);
+  border: 1px solid #32283e;
+  padding: 30px 36px 20px;
+}
+.prediction-heading > span {
+  font:
+    11px var(--font-geist-mono),
+    monospace;
+  color: #bda7f5;
+  text-transform: uppercase;
+}
+.prediction-heading h4 {
+  font-size: 26px;
+  margin: 9px 0;
+  color: #eee5f3;
+}
+.prediction-heading p {
+  font-size: 13px;
+  color: #b4a8c0;
+  max-width: 750px;
+}
+.science-console .comparison-pair {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 30px;
+  margin: 24px 0 0;
+}
+.science-console .comparison-pair > div {
+  background: none;
+  padding: 0;
+  border: 0;
+}
+.science-console .comparison-pair span {
+  font:
+    11px var(--font-geist-mono),
+    monospace;
+  color: #71e5eb;
+}
+.science-console .comparison-pair strong {
+  display: block;
+  font:
+    clamp(24px, 4vw, 52px) var(--font-geist-mono),
+    monospace;
+  letter-spacing: -0.06em;
+  color: #71e5eb;
+  margin: 8px 0;
+}
+.science-console .comparison-pair small {
+  color: #ad9bbb;
+}
+.science-console .reference-value span,
+.science-console .reference-value strong {
+  color: #ffbc77;
+}
+.prediction-stage svg {
+  display: block;
+  width: 100%;
+}
+.prediction-verdict {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  padding-top: 10px;
+  border-top: 1px solid #34273c;
+}
+.prediction-verdict > strong {
+  font:
+    32px var(--font-geist-mono),
+    monospace;
+  color: #e0c3fa;
+}
+.prediction-verdict p {
+  font-size: 12px;
+  color: #d2c3dc;
+  line-height: 1.7;
+}
+.prediction-verdict span {
+  color: #9e8dac;
+}
+.science-console .event-stage {
+  display: block;
+  width: 100%;
+  padding: 0;
+  background: #050509;
+  border: 1px solid #32283e;
+  border-radius: 4px;
+  overflow: hidden;
+}
+.science-console .event-stage svg {
+  display: block;
+  width: 100%;
+  height: auto;
+  max-height: 620px;
+}
+.science-console .media-toolbar {
+  margin: 12px 0;
+  gap: 10px;
+  align-items: center;
+}
+.science-console .media-toolbar label {
+  font-size: 12px;
+  color: #b8a6c3;
+}
+.science-console .event-story {
+  border: 0;
+  border-top: 1px solid #392d43;
+  padding: 18px 0;
+  margin: 12px 0 0;
+  background: none;
+}
+.science-console .event-story h4 {
+  font-size: 24px;
+  line-height: 1.3;
+  color: #e7d9f0;
+  margin: 8px 0;
+}
+.science-console .event-story > p:not(.eyebrow) {
+  font-size: 13px;
+  line-height: 1.7;
+  color: #b1a2bc;
+  max-width: 850px;
+}
+.science-console .science-readout {
+  display: flex;
+  gap: 35px;
+  margin: 18px 0;
+  flex-wrap: wrap;
+}
+.science-console .science-readout > div {
+  padding: 0;
+  border: 0;
+  background: none;
+  flex: 1;
+  min-width: 180px;
+}
+.science-console .science-readout small {
+  font-size: 11px;
+  color: #a995b9;
+  display: block;
+  line-height: 1.7;
+}
+.science-console .science-readout strong {
+  color: var(--console-accent);
+  font:
+    clamp(18px, 2.4vw, 28px) var(--font-geist-mono),
+    monospace;
+  display: block;
+  margin: 4px 0;
+}
+.science-console .track-key {
+  font-size: 12px;
+}
+.science-console .track-key i {
+  width: 20px;
+  height: 4px;
+  border-radius: 0;
+}
+.science-console .media-slider {
+  font-size: 12px;
+  color: #bba7ca;
+}
+.science-console input[type='range'] {
+  accent-color: var(--console-accent);
+}
+.prediction-museum .research-exhibit {
+  max-width: 1308px;
+  margin: 0 auto 48px;
+  background: #09070e;
+  border: 1px solid #493655;
+  border-top: 16px solid #d99b95;
+  border-radius: 60px 0 0 0;
+  padding: 36px;
+}
+.prediction-museum .research-exhibit h2 {
+  font-size: 36px;
+  letter-spacing: -0.04em;
+}
+.prediction-museum .research-exhibit .section-heading {
+  margin-bottom: 20px;
+}
+.prediction-museum .research-exhibit .section-heading p {
+  font-size: 14px;
+  max-width: 800px;
+}
+.prediction-museum .research-display {
+  display: block;
+  background: none;
+  border: 0;
+}
+.prediction-museum .research-copy {
+  padding: 20px 0;
+}
+.prediction-museum .research-copy > p {
+  font-size: 13px;
+  max-width: 850px;
+}
+.prediction-museum .research-visual {
+  background: #030406;
+}
+.prediction-museum .research-visual img {
+  width: 100%;
+  height: auto;
+}
+.prediction-museum .museum-details {
+  max-width: 1308px;
+  margin: 0 auto 48px;
+  padding: 28px 36px;
+  border-top: 6px solid #bda7f5;
+}
+.prediction-museum .museum-details h2 {
+  font-size: 30px;
+}
+.method-intro {
+  max-width: 860px;
+  color: #bdaec9;
+  font-size: 15px;
+  line-height: 1.8;
+}
+.prediction-museum .review-card {
+  background: #100b16;
+  border-color: #34253f;
+  padding: 20px;
+}
+.prediction-museum .review-card h3 {
+  font-size: 17px;
+}
+.prediction-museum .review-card p {
+  font-size: 12px;
+}
+@media (min-width: 1000px) {
+  .collision-theatre {
+    display: grid;
+    grid-template-columns: minmax(0, 1.4fr) minmax(260px, 0.8fr);
+    gap: 0 24px;
+  }
+  .collision-theatre > .media-toolbar:first-child {
+    grid-column: 1/-1;
+  }
+  .collision-theatre > .event-stage {
+    grid-column: 1;
+    grid-row: 2/5;
+    align-self: start;
+  }
+  .collision-theatre > .event-story {
+    grid-column: 2;
+    grid-row: 2;
+    margin: 0;
+  }
+  .collision-theatre > .track-key {
+    grid-column: 2;
+    grid-row: 3;
+  }
+  .collision-theatre > .media-toolbar:last-of-type {
+    grid-column: 2;
+    grid-row: 4;
+  }
+  .collision-theatre .science-readout {
+    gap: 16px;
+  }
+  .collision-theatre .science-readout strong {
+    font-size: 21px;
+  }
+}
+@media (max-width: 850px) {
+  .engine-hero,
+  .console-collection,
+  .prediction-museum > .science-console {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+  .hero-layout {
+    grid-template-columns: 1fr;
+  }
+  .hero-copy h1 {
+    font-size: clamp(42px, 8vw, 68px);
+  }
+  .hero-engine {
+    max-width: 650px;
+    width: 100%;
+    margin: auto;
+  }
+  .geometry-compact {
+    margin: -10px 0 0;
+  }
+  .hero-layout {
+    gap: 10px;
+  }
+  .console-body {
+    grid-template-columns: 48px minmax(0, 1fr);
+    gap: 16px;
+  }
+  .console-cap {
+    padding-left: 64px;
+  }
+  .console-rail > b {
+    font-size: 28px;
+    padding: 20px 5px;
+  }
+  .console-rail > span {
+    padding: 20px 10px;
+  }
+  .console-foot {
+    margin-left: 64px;
+  }
+  .console-index a {
+    gap: 7px;
+    padding: 12px;
+    font-size: 11px;
+  }
+  .console-index b {
+    font-size: 12px;
+  }
+  .matter-scene {
+    grid-template-columns: 1fr;
+  }
+  .matter-scene .geometry-field {
+    max-width: 580px;
+    width: 100%;
+    margin: auto;
+  }
+  .matter-family {
+    padding: 0 24px 20px;
+  }
+  .particle-quartet {
+    grid-template-columns: repeat(4, 1fr);
+  }
+  .prediction-museum .research-exhibit,
+  .prediction-museum .museum-details {
+    margin-left: 20px;
+    margin-right: 20px;
+    padding: 25px;
+  }
+  .prediction-stage {
+    padding: 22px;
+  }
+  .hero-baseline span:last-child {
+    display: none;
+  }
+}
+@media (max-width: 520px) {
+  .engine-hero,
+  .console-collection,
+  .prediction-museum > .science-console {
+    padding-left: 12px;
+    padding-right: 12px;
+  }
+  .hero-copy h1 {
+    font-size: 42px;
+  }
+  .hero-copy > p:not(.eyebrow) {
+    font-size: 15px;
+  }
+  .hero-overline {
+    font-size: 8px;
+    padding-left: 12px;
+  }
+  .hero-overline button {
+    font-size: 10px;
+    padding: 8px 10px;
+  }
+  .console-rail {
+    display: none;
+  }
+  .console-body {
+    display: block;
+  }
+  .console-cap {
+    padding-left: 22px;
+    font-size: 9px;
+    border-top-width: 12px;
+  }
+  .console-content {
+    padding-left: 0;
+  }
+  .console-foot {
+    margin-left: 0;
+    font-size: 8px;
+  }
+  .console-intro h3 {
+    font-size: 29px;
+  }
+  .console-intro p {
+    font-size: 14px;
+  }
+  .console-index {
+    flex-wrap: wrap;
+  }
+  .console-index a {
+    flex: 1 1 27%;
+  }
+  .collection-heading h2 {
+    font-size: 23px;
+  }
+  .collection-heading {
+    align-items: start;
+  }
+  .collection-heading button {
+    font-size: 10px;
+    padding: 10px;
+  }
+  .particle-quartet strong {
+    font-size: 30px;
+  }
+  .particle-quartet span {
+    font-size: 9px;
+  }
+  .matter-family {
+    padding: 0 15px 15px;
+  }
+  .prediction-stage {
+    padding: 16px 12px;
+  }
+  .science-console .comparison-pair {
+    gap: 12px;
+  }
+  .science-console .comparison-pair strong {
+    font-size: 26px;
+  }
+  .science-console .comparison-pair span {
+    font-size: 9px;
+  }
+  .prediction-verdict > strong {
+    font-size: 27px;
+  }
+  .science-console {
+    margin-bottom: 46px;
+  }
+  .prediction-museum .research-exhibit,
+  .prediction-museum .museum-details {
+    margin-left: 12px;
+    margin-right: 12px;
+    padding: 20px 14px;
+  }
+  .hero-baseline {
+    font-size: 8px;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .prediction-museum * {
+    scroll-behavior: auto !important;
+  }
+}
+
+.magnetic-particles {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 12px;
+}
+.magnetic-particle {
+  background: radial-gradient(ellipse at 50% 40%, #151021, #050509 80%);
+  border: 1px solid #382b43;
+  min-width: 0;
+}
+.magnetic-particle header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 18px 16px 0;
+}
+.magnetic-particle header span {
+  font:
+    27px var(--font-geist-mono),
+    monospace;
+  color: #d5bcef;
+}
+.magnetic-particle h4 {
+  font-size: 17px;
+  margin: 0;
+  color: #dfd0e9;
+}
+.magnetic-particle svg {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+.moment-value {
+  padding: 12px 15px;
+  border-top: 1px solid #37263e;
+}
+.moment-value small {
+  display: block;
+  font-size: 10px;
+  color: #ab97b9;
+  line-height: 1.9;
+}
+.moment-value strong {
+  display: block;
+  font:
+    clamp(11px, 1.2vw, 17px) var(--font-geist-mono),
+    monospace;
+  letter-spacing: -0.04em;
+  margin: 4px 0;
+}
+.moment-frequency {
+  padding: 0 15px 17px;
+}
+.moment-frequency span {
+  display: block;
+  font-size: 10px;
+  color: #ab97b9;
+}
+.moment-frequency strong {
+  font:
+    12px var(--font-geist-mono),
+    monospace;
+  color: #d5bfdc;
+}
+@media (max-width: 1000px) {
+  .magnetic-particles {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+  .moment-value strong {
+    font-size: 17px;
+  }
+}
+@media (max-width: 520px) {
+  .magnetic-particles {
+    gap: 8px;
+  }
+  .magnetic-particle header {
+    padding: 12px 10px 0;
+    gap: 8px;
+  }
+  .magnetic-particle h4 {
+    font-size: 14px;
+  }
+  .moment-value {
+    padding: 10px;
+  }
+  .moment-value strong {
+    font-size: 12px;
+  }
+  .moment-frequency {
+    padding: 0 10px 12px;
+  }
+  .moment-frequency strong {
+    font-size: 10px;
+  }
+}
+
+/* Content determines height: no inherited headline bottleneck or empty grid slots. */
+.hero-copy h1 {
+  max-width: none;
+}
+.science-console .event-stage {
+  margin-top: 0;
+}
+.science-console .table-scroll {
+  overflow-x: auto;
+  max-width: 100%;
+}
+.science-console table {
+  width: 100%;
+  border-collapse: collapse;
+  text-align: left;
+}
+.science-console td,
+.science-console th {
+  padding: 10px 12px;
+  border-bottom: 1px solid #35273f;
+  vertical-align: top;
+}
+.science-console .console-selector select,
+.science-console .media-toolbar select {
+  max-width: 100%;
+  min-width: 0;
+}
+.prediction-museum .review-grid {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  margin-top: 24px;
+  gap: 12px;
+}
+.prediction-museum .review-card {
+  min-height: 0;
+}
+.prediction-museum .review-card h3 {
+  margin: 0 0 10px;
+}
+.prediction-museum .review-card strong {
+  margin-top: 10px;
+}
+.prediction-museum .creator-alcove {
+  padding-block: 56px;
+  gap: clamp(24px, 5vw, 70px);
+}
+.prediction-museum .other-work-wing {
+  padding-block: 56px;
+}
+.prediction-museum .other-work-card,
+.prediction-museum .cosmic-cycle {
+  margin-top: 28px;
+}
+@media (min-width: 1000px) {
+  .collision-theatre > .console-details {
+    grid-column: 1/-1;
+    grid-row: 5;
+  }
+  .collision-theatre > .event-story {
+    align-self: start;
+  }
+}
+@media (max-width: 520px) {
+  .prediction-museum .review-grid {
+    grid-template-columns: 1fr;
+  }
+  .prediction-museum .creator-alcove,
+  .prediction-museum .other-work-wing {
+    padding-block: 36px;
+  }
+  .hero-layout {
+    padding-top: 25px;
+  }
+  .science-console {
+    margin-bottom: 36px;
+  }
+}
