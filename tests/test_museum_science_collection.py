@@ -68,11 +68,13 @@ def test_primary_exhibits_collider_and_other_work_are_not_replaced_by_comparison
     primary = (ROOT / 'museum/app/prototype-science.tsx').read_text(encoding='utf-8')
     cosmic = ' '.join((ROOT / 'museum/app/cosmic-enclosure.tsx').read_text(encoding='utf-8').split())
     assert page.index('<PrototypeScience') < page.index('<ScienceGallery') < page.index('id="research-exhibit"')
-    for title in ('Full magnetic-moment tracker', 'Standard Model predictions', 'Standard Model equivalence', 'Forces unifying', 'Collide selected particles'):
+    for title in ('Magnetic moments in motion', 'Standard Model predictions', 'Standard Model equivalence', 'Forces unifying', 'Collision theatre'):
         assert title in primary
-    assert "['01', '08']" in page
-    assert 'collisionDemo(' in primary and 'Inspect decay record' in primary
-    assert 'SIMULATED KINEMATICS' in primary
+    assert "['01', '08']" in page and "useState('01')" in page
+    theatre = (ROOT / 'museum/app/collision-theatre.tsx').read_text(encoding='utf-8')
+    assert 'collisionDemo(' in theatre and 'CMS' in theatre
+    assert 'SIMULATED COLLISION' in theatre
+    assert 'Decay channel stability' not in primary and 'Full magnetic-moment tracker' not in primary
     assert '<CosmicEnclosure motion={motion}' in page
     assert page.index('cosmologyExhibit.title') < page.index('<CosmicEnclosure') < page.index('<footer>')
     for text in ('White-hole surface release', 'Cooling, flows and active topology', 'Smooth surface / heat death', 'SPECULATIVE CONCEPTUAL SIMULATION', 'not observational data'):

@@ -63,3 +63,16 @@ illustrative choices. No physical time, temperature, entropy, surface tension,
 mass, collapse rate or causal history is inferred from them. Play/pause,
 phase selection and scrubbing let visitors examine the proposed sequence;
 reduced-motion preferences retain the static controls.
+
+
+## Interactive media revision, 7 September 2026
+
+The expanded cycle adds cooling plasma, acoustic shells that stop propagating,
+a filament network, luminous cluster nodes, energetic bursts, accretion streams
+and evaporating dark cores. The diagram labels the acoustic imprint separately
+from filamentary growth. BAO is an observed statistical separation feature
+(roughly 150 Mpc), not a literal shell collapsing into a filament. See
+[DESI's July 2026 explanation](https://www.desi.lbl.gov/2026/07/30/new-desi-dr2-lyman-alpha-results-shed-light-on-dark-energy/).
+The author-requested subsequent enclosure, heat-death and global-release sequence
+remains a speculative cycle, not established cosmic evolution. All spatial
+coordinates, densities, event markers and phase durations are illustrative.

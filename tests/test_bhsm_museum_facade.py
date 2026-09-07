@@ -21,13 +21,13 @@ def test_public_order_leads_with_potential_then_science_details_author_cosmology
 
 def test_science_panels_show_values_and_qualifications_without_hidden_details():
     gallery = " ".join((MUSEUM / "app/science-gallery.tsx").read_text(encoding="utf-8").split())
-    assert "In plain language" in gallery
-    assert "Sandbox reference · unverified" in gallery
+    assert "gallery.lay" in gallery
+    assert "Published reference" in gallery
     assert "COMPARISON ONLY" in gallery
-    assert "not independently verified experimental data" in gallery
+    assert "uncertainty_text" in gallery and "ref.source" in gallery
     assert "not a statistical significance" in json.loads((ROOT / "data/museum/bhsm_sandbox_comparison_20260902.json").read_text(encoding="utf-8"))["difference_definition"]
-    assert "<details" not in gallery
-    assert "comparison-table" in gallery
+    assert "comparison-pair" in gallery
+    assert "<table>" in gallery
     assert "<select" in gallery
     assert "θ23 tension" in gallery
     for group in ("families", "forces", "quarks", "neutrinos", "higgs"):
@@ -82,3 +82,18 @@ def test_research_and_cosmology_labels_and_motion_fallbacks_are_explicit():
     assert (MUSEUM / "public/bhsm-symbol.svg").is_file()
     assert (MUSEUM / "public/data/cms-four-vector-sample.json").is_file()
     assert "sandbox-comparison.json" in (MUSEUM / "scripts/sync-assets.mjs").read_text(encoding="utf-8")
+
+
+def test_published_references_cover_each_comparison_and_remain_external():
+    data=json.loads((ROOT / 'data/museum/experimental_references_20260907.json').read_text(encoding='utf-8'))
+    snapshot=json.loads((ROOT / 'data/museum/bhsm_sandbox_comparison_20260902.json').read_text(encoding='utf-8'))
+    assert {r['id'] for r in data['comparisons']} == {r['id'] for r in snapshot['rows']}
+    for row in data['comparisons']:
+        assert row['source'].startswith('https://') and row['convention'] and row['uncertainty_text']
+        if row['lower'] is not None:
+            assert row['lower'] <= row['value'] <= row['upper']
+    for relative in ('app/reference-data.json', 'public/data/reference-data.json'):
+        assert json.loads((MUSEUM / relative).read_text(encoding='utf-8')) == data
+    for path in (ROOT / 'src').rglob('*.py'):
+        text=path.read_text(encoding='utf-8')
+        assert 'experimental_references_20260907' not in text and 'reference-data.json' not in text

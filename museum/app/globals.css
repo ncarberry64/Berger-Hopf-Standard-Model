@@ -2185,3 +2185,228 @@ select {
   background: #15253c;
   color: #d3e7f3;
 }
+
+/* Interactive science media: instruments lead, concise readouts follow. */
+.event-stage {
+  display: block;
+  width: 100%;
+  padding: 0;
+  margin: 1.4rem 0 0;
+  border: 1px solid #345366;
+  border-radius: 18px;
+  overflow: hidden;
+  background: #040b18;
+  color: var(--ink);
+  cursor: pointer;
+  text-align: left;
+}
+.event-stage:hover {
+  border-color: var(--cyan);
+  background: #040b18;
+}
+.event-stage:focus-visible,
+.magnet-stage:focus-within {
+  outline: 3px solid var(--gold);
+  outline-offset: 5px;
+}
+.event-stage svg {
+  display: block;
+  width: 100%;
+  height: auto;
+  max-height: 660px;
+}
+.media-toolbar {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+  margin: 1rem 0;
+}
+.media-toolbar label {
+  display: flex;
+  align-items: center;
+  gap: 0.65rem;
+  flex-wrap: wrap;
+}
+.media-toolbar button[aria-pressed='true'] {
+  background: #244653;
+  border-color: var(--cyan);
+  color: #edfffa;
+}
+.media-toolbar select {
+  max-width: 100%;
+}
+.media-slider {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+  flex-wrap: wrap;
+  margin: 1.1rem 0;
+  color: var(--muted);
+}
+.media-slider input {
+  flex: 1;
+  min-width: 180px;
+  accent-color: var(--cyan);
+}
+.track-key {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1.6rem;
+  margin: 1.15rem 0;
+  font-size: 0.95rem;
+}
+.track-key span {
+  display: flex;
+  align-items: center;
+  gap: 0.55rem;
+}
+.track-key i {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  display: inline-block;
+}
+.event-story {
+  background: #0b1c2a;
+  border-left: 3px solid var(--cyan);
+  padding: clamp(1rem, 3vw, 2rem);
+  margin-top: 1.5rem;
+}
+.event-story h4 {
+  font-size: clamp(1.35rem, 2.6vw, 1.9rem);
+  margin: 0.2rem 0 1rem;
+}
+.science-readout {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 230px), 1fr));
+  gap: 1.2rem;
+  margin: 1.3rem 0;
+}
+.science-readout > div {
+  min-width: 0;
+  border-top: 1px solid #325061;
+  padding-top: 0.8rem;
+}
+.science-readout small {
+  display: block;
+  color: #b4c8d6;
+  line-height: 1.6;
+  font-size: 0.85rem;
+}
+.science-readout strong {
+  display: block;
+  margin: 0.4rem 0;
+  color: #f5deae;
+  font-size: clamp(1.1rem, 1.7vw, 1.4rem);
+  font-variant-numeric: tabular-nums;
+  overflow-wrap: anywhere;
+}
+.media-note {
+  font-size: 0.9rem;
+  color: var(--muted);
+  line-height: 1.7;
+}
+.magnet-stage {
+  border: 1px solid #345366;
+  border-radius: 18px;
+  overflow: hidden;
+  cursor: none;
+  touch-action: pan-y;
+  margin: 1.5rem 0;
+}
+.magnet-stage svg {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+.reference-details {
+  margin: 1.4rem 0;
+  border-top: 1px solid var(--line);
+  padding-top: 1rem;
+}
+.reference-details summary {
+  cursor: pointer;
+  color: #d8eee9;
+  font-size: 1rem;
+  padding: 0.4rem 0;
+}
+.sm-equivalence {
+  margin-top: 2.8rem;
+  padding-top: 2rem;
+  border-top: 1px solid var(--line);
+}
+.sm-equivalence > h3 {
+  font-size: clamp(1.35rem, 2.5vw, 2rem);
+}
+.comparison-collection {
+  padding-top: 0;
+}
+.comparison-collection .science-exhibit {
+  margin-top: 2rem;
+}
+.cosmic-stage svg {
+  max-height: 760px;
+}
+.cosmic-context {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+  margin-top: 2rem;
+}
+.cosmic-context h4 {
+  font-size: 1.3rem;
+}
+.other-work-card {
+  grid-template-columns: minmax(0, 1fr);
+}
+.other-work-visual {
+  align-self: start;
+  border-right: 0;
+  border-bottom: 1px solid var(--line);
+}
+.other-work-visual > img {
+  padding: 0.75rem;
+  max-height: none;
+  width: 100%;
+  height: auto;
+}
+.other-work-copy {
+  padding: clamp(1.25rem, 3vw, 2.5rem);
+}
+.other-work-copy h3 {
+  max-width: 44ch;
+  font-size: clamp(1.7rem, 3.1vw, 2.65rem);
+}
+.other-work-copy > p {
+  max-width: 90ch;
+}
+@media (max-width: 700px) {
+  .media-toolbar {
+    gap: 0.5rem;
+  }
+  .media-toolbar button {
+    padding: 0.7rem 0.8rem;
+  }
+  .media-toolbar label {
+    width: 100%;
+  }
+  .event-stage svg {
+    min-width: 0;
+  }
+  .magnet-stage {
+    overflow-x: auto;
+    cursor: auto;
+  }
+  .magnet-stage svg {
+    min-width: 620px;
+  }
+  .cosmic-context {
+    grid-template-columns: 1fr;
+    gap: 0.75rem;
+  }
+  .science-readout {
+    grid-template-columns: 1fr;
+  }
+}

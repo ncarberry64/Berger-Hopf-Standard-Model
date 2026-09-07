@@ -73,12 +73,12 @@ try {
   for (const expected of [
     'BHSM Museum',
     'historic stakes',
-    'Sandbox reference',
+    'Published reference',
     'COMPARISON ONLY',
     './_next/',
-    'Full magnetic-moment tracker',
+    'Magnetic moments in motion',
     'Standard Model equivalence',
-    'Collide selected particles',
+    'Collision theatre',
     'Forces unifying',
   ]) {
     if (!written.includes(expected))

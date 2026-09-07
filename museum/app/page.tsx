@@ -46,7 +46,7 @@ function MotionImage({
 
 export default function Home() {
   const [motion, setMotion] = useState(false);
-  const [displayId, setDisplayId] = useState('08');
+  const [displayId, setDisplayId] = useState('01');
   useEffect(() => {
     setMotion(!window.matchMedia('(prefers-reduced-motion: reduce)').matches);
   }, []);
@@ -76,7 +76,7 @@ export default function Home() {
         <nav aria-label="Museum navigation">
           <a href="#potential">The possibility</a>
           <a href="#exhibits">Science exhibits</a>
-          <a href="#comparisons">Additional data</a>
+          <a href="#comparisons">Comparisons</a>
           <a href="#details">Details</a>
           <a href="#creator">Author</a>
           <a href="#other-work">Cosmology</a>
@@ -107,7 +107,7 @@ export default function Home() {
             and experimental validation remain open.
           </p>
           <a className="button button-primary" href="#exhibits">
-            Explore the scientific comparisons ↓
+            Explore the exhibits ↓
           </a>
         </div>
         <aside className="potential-panel" aria-label="The scientific idea">
@@ -151,9 +151,9 @@ export default function Home() {
           <p className="eyebrow">Computation and research achievements</p>
           <h2 id="research-title">How the scientific record is checked.</h2>
           <p>
-            This single exhibit gathers software demonstrations, real-data
-            coordinate checks and mathematical certification work. These support
-            scrutiny of the proposal; they do not replace its physics tests.
+            Explore recorded CMS collisions and the numerical checks behind the
+            research. Experimental data and mathematical certification answer
+            different questions about the scientific record.
           </p>
         </div>
         <div className="research-controls">
@@ -245,9 +245,10 @@ export default function Home() {
           <article>
             <h3>Comparison references</h3>
             <p>
-              The sandbox supplied the reference markers used above. They are
-              labeled unverified throughout. The real CMS sample has its own
-              experimental source and serves a separate software check.
+              Published CODATA, PDG and neutrino-fit references are shown with
+              their editions and uncertainties. Original sandbox markers remain
+              accessible for comparison. CMS events retain their experimental
+              source.
             </p>
           </article>
           <article>
@@ -339,13 +340,13 @@ export default function Home() {
         aria-labelledby="other-work-title"
       >
         <div className="section-heading">
-          <p className="eyebrow">Final wing · other work · cosmology</p>
+          <p className="eyebrow">Other work · cosmology</p>
           <h2 id="other-work-title">
             Could a large-scale pattern connect cosmic anomalies?
           </h2>
           <p>
-            This separate cosmology preprint explores another geometric
-            question. It is presented last and retains its own scientific scope.
+            A hyperspherical cosmology proposal explores whether spatial
+            topography could connect several large-scale anomalies.
           </p>
         </div>
         <article className="other-work-card">
