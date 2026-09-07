@@ -60,7 +60,9 @@
   Its four-vectors are simulated event outputs, not BHSM amplitudes or probabilities.
 - The force-unification animation is a conceptual connection diagram, not a
   running-coupling plot. Its historical numeric table retains SCREEN labels.
-- `app/cosmic-enclosure.tsx` illustrates Norman's September 7 author brief as a
+- `app/cosmic-enclosure.tsx` illustrates Norman's September 7 author brief,
+  with Bubble/Wave and evaporation context from his privately supplied
+  *The Prints.pptx* (slides 1–2, 7 and 11), as a
   separate speculative other-work exhibit. Surface flows, body markers, explosive
   events, black-hole concentrations, smooth phase and whole-surface release are
   explanatory graphics, not observed or derived cosmic evolution. Context and

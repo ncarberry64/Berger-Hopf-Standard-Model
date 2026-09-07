@@ -15,8 +15,8 @@ const phases = [
   },
   {
     start: 72,
-    title: 'Concentration and smoothing',
-    text: 'The proposed dynamics draw the remaining structure into concentrations. The displayed topography fades and the last flows subside.',
+    title: 'Concentration, evaporation and smoothing',
+    text: 'In the author’s Bubble/Wave picture, black holes process the remaining structure and release bound spacetime back to the surface. As the black holes evaporate, surface tension is restored and the displayed topography smooths.',
   },
   {
     start: 94,
@@ -67,6 +67,7 @@ export function CosmicEnclosure({ motion }: { motion: boolean }) {
     smooth = phase >= 94;
   const rough = release ? 0.35 : Math.max(0, 1 - Math.max(0, phase - 50) / 44);
   const turn = phase * 0.018;
+  const evaporation = Math.max(0, Math.min(1, (phase - 80) / 14));
   const line = (kind: string, fixed: number) =>
     Array.from({ length: 91 }, (_, i) => {
       const p =
@@ -85,8 +86,8 @@ export function CosmicEnclosure({ motion }: { motion: boolean }) {
       <p>
         <strong>In plain language.</strong> This exhibit animates Norman’s
         proposed cyclic picture: a whole-surface white-hole event, renewed
-        surface dynamics as it cools, concentration into black holes, a
-        completely smooth heat-death state, and another release.
+        surface dynamics as it cools, concentration into black holes and their
+        evaporation, a completely smooth heat-death state, and another release.
       </p>
       <p className="data-label">
         SPECULATIVE CONCEPTUAL SIMULATION · author-described cycle · not
@@ -156,7 +157,7 @@ export function CosmicEnclosure({ motion }: { motion: boolean }) {
                   <circle
                     cx={xy[0]}
                     cy={xy[1]}
-                    r={12 + 6 * (phase / 94)}
+                    r={(12 + 6 * (phase / 94)) * (1 - evaporation)}
                     fill="#01030a"
                     stroke="#cb9f64"
                     strokeWidth="3"
@@ -164,10 +165,10 @@ export function CosmicEnclosure({ motion }: { motion: boolean }) {
                   <circle
                     cx={xy[0]}
                     cy={xy[1]}
-                    r="25"
+                    r={25 + 45 * evaporation}
                     fill="none"
                     stroke="#cb9f64"
-                    opacity=".35"
+                    opacity={0.35 + 0.35 * evaporation}
                   />
                 </g>
               );
@@ -290,7 +291,17 @@ export function CosmicEnclosure({ motion }: { motion: boolean }) {
       <p className="cycle-legend">
         Cyan: schematic flows · gold: celestial-body markers · dark circles:
         black-hole concentrations · coral rings: explosive-event markers ·
-        whole-surface white flash: proposed white-hole release.
+        expanding gold rings with shrinking centers: proposed evaporation and
+        surface restoration · whole-surface white flash: proposed white-hole
+        release.
+      </p>
+      <p>
+        <strong>From Norman’s original Bubble/Wave picture.</strong> The
+        author’s deck <em>The Prints</em> describes particles as nonlinear
+        surface modes and forces as surface harmonics. Its black-hole sketches
+        link evaporation with restoring surface tension. These are conceptual
+        origins of this other-work exhibit; the September 7 brief supplies the
+        complete heat-death-to-white-hole sequence shown here.
       </p>
       <p>
         The drawn sphere is an illustrative cross-sectional view of a

@@ -9,7 +9,7 @@ The proposed sequence is:
    three-dimensional cosmic spatial hypersurface.
 2. Cooling and renewed surface dynamics: topology and flows carry celestial
    bodies and explosive phenomena toward black-hole concentrations.
-3. Concentration and relaxation until the whole surface is smooth, described
+3. Concentration, black-hole evaporation and relaxation until the whole surface is smooth, described
    in this conceptual picture as heat death.
 4. At that moment the whole surface loses cohesion again and the cycle restarts.
 
@@ -20,6 +20,21 @@ derived by the exhibit. “White hole” here denotes the author's whole-surface
 release concept, not an asserted exact spacetime solution.
 
 ## Context checked
+
+The author supplied *The Prints.pptx* for context on 7 September 2026. All
+15 slides were read. Slides 1–2 describe the Bubble/Wave picture: surface
+resonance, particles containing bound spacetime, black holes releasing it,
+and evaporation restoring surface tension. Slides 7 and 11 distinguish
+particle modes from force harmonics. These are author-proposed concepts,
+not validated physical results. The full smooth-to-global-white-hole sequence
+comes from the September 7 exhibit brief; the deck supplies its conceptual
+background rather than a derivation of that transition.
+
+The deck is retained privately as context, not republished as a Museum asset.
+Its SHA-256 is
+`f5de7c551e2f0dfc7225b9983f05e677551aa0689339ecfccbb8057e7785de9c`.
+The exhibit does not adopt the deck's other speculative particle or quantum
+interpretations as Standard Model facts or change the canonical BHSM ledger.
 
 Project NightCrawler contains Norman's *A Hyperspherical Scalar–Topographic
 Framework for Late-Time Cosmological Anomalies*, including the archived text
@@ -37,7 +52,10 @@ three-sphere or depict a literal two-dimensional outer wall of the universe.
 Deterministic surface coordinates, illustrative scalar roughness and marker
 paths create the animation. Markers are labeled as flows, celestial bodies,
 black-hole concentrations and explosive events. A global flash and broken
-grid represent the requested loss of cohesion. All markers and roughness
+grid represent the requested loss of cohesion. Shrinking dark centers and
+expanding gold rings represent evaporation and surface restoration in the
+author's conceptual picture; they are not a calculated Hawking radiation flux.
+All markers and roughness
 vanish for the fully smooth phase before restart.
 
 Phase durations, roughness, marker motion, colors and playback speeds are
