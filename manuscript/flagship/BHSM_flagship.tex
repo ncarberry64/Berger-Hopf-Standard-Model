@@ -1,0 +1,311 @@
+\documentclass[11pt]{article}
+\usepackage[margin=1in]{geometry}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern,amsmath,amssymb,booktabs,graphicx,hyperref}
+\hypersetup{colorlinks=true,linkcolor=blue,citecolor=blue,urlcolor=blue}
+\setlength{\emergencystretch}{2em}
+\input{generated/scalar_values.tex}
+\title{Berger--Hopf Standard Model:\\Action-domain localization and an auditable route to physical predictions}
+\author{Norman P. Carberry\\Independent Researcher\\
+\href{https://orcid.org/0009-0000-6650-3485}{ORCID: 0009-0000-6650-3485}}
+\date{Working manuscript, 6 September 2026}
+\begin{document}
+\maketitle
+\begin{center}
+\small\textbf{Research draft. Physical completion and journal submission remain open.}
+\end{center}
+
+\begin{abstract}
+The Berger--Hopf Standard Model (BHSM) investigates whether a common
+stratified variational framework can organize Standard Model-associated
+structure without using measured masses or mixing angles to choose its
+upstream dynamics. We formulate the current evidence boundary around
+action-domain localization, finite-history response, and the transfer from
+certified mathematical objects to physical observables. The authorized AE3
+extension promotes a retained reciprocal-join profile to a response
+constraint, yielding a regular local material carrier without a new
+continuous coefficient. Separately, a 512-bit interval calculation composes
+the frozen central scalar response across \ScalarIntervals{} intervals and
+\ScalarNodes{} nodes, with maximum response-norm upper bound
+\(\ScalarMaximum\). We describe the complete ambient midpoint chain rule
+required for the remaining signed transverse calculation and an explicit
+bound on stored coordinate-solve error. These results do not establish the
+joint physical background, particle masses, mixing matrices, scattering
+observables, or full BHSM completion. The manuscript binds numerical values
+to immutable source artifacts and identifies the remaining proof operands
+that must precede a physical prediction.
+\end{abstract}
+
+\section{Scientific scope and provenance}
+BHSM is an evolving mathematical and computational research program.
+Its historical spectral and coupling screens, conditional structural
+results, numerical center calculations, and outward certificates have
+different logical authority. A numerical match cannot close a missing
+action, domain, normalization, or observable map. The present draft therefore
+organizes results by their actual hypotheses and reproducible evidence,
+rather than treating an earlier release label as physical completion.
+
+The current definition of done requires every claimed quantity to share one
+declared parent action and input ledger, with the intervening variational,
+operator, scale, and observable maps closed \cite{status,dod}. Measured mass
+and mixing data may enter a later comparison; they may not select a branch,
+coefficient, normalization, regularization, or eigenvector ordering upstream.
+Frozen historical outputs remain unchanged and retain their original labels.
+
+This manuscript is the working source for the current flagship synthesis.
+It reports completed local results and a precisely delimited computational
+frontier. It is not a submission-ready claim of a complete physical model.
+
+\section{Stratified action and physical ownership}
+The retained architecture distinguishes a provisional \(S^8\) parent,
+a relative two-cap \(S^{5|4}\) construction, and an intrinsic localized
+four-dimensional effective theory. Compatibility maps between these strata
+are part of the model specification. Fields, coefficients, and domains
+cannot be moved between strata without an explicit action-owned map.
+
+At the current finite-history frontier, geometry-local derivative kernels
+are necessary computational inputs. They are not by themselves the complete
+gauge, ghost, fermion, scalar, and mixed-field derivatives of one physical
+background. Similarly, an implemented spectrum, vertex, or collision engine
+does not supply the action-derived operands that it is designed to consume.
+These distinctions prevent a software capability from being counted as a
+physical prediction \cite{status,dod}.
+
+The current program combines compatible local pieces as they become
+available. A composed claim is permitted only when its pieces share the
+action version, background, domain, scale and renormalization conventions,
+and provenance chain. Later candidate action representatives are not
+silently identified with an earlier certified representative.
+
+\section{The AE3 local material carrier}
+\subsection{Response constraint}
+The retained reciprocal-join profile is
+\begin{equation}
+ \sigma_0(\chi)=-\frac12+\frac{2\chi}{\pi}
+                    -\frac{\sin(4\chi)}{2\pi},
+ \qquad 0\leq\chi\leq\frac\pi2.
+\end{equation}
+AE3 promotes this previously fixed profile into the existing eta-to-sigma
+response constraint. On the oriented orbit space \(Q\), define
+\begin{equation}
+ W_J[\eta]=\sin^2f\cos^2f,\qquad
+ Z_J[\eta]=\int_Q W_J[\eta]\,d\ell,
+\end{equation}
+and impose
+\begin{equation}
+ C_\sigma=n_\eta^A\nabla_A\sigma-\frac{W_J[\eta]}{Z_J[\eta]}=0,
+ \qquad \sigma|_{Q_-}=-\frac12.
+\end{equation}
+The nonpropagating multiplier \(\lambda_\sigma\) supplies the response term
+\begin{equation}
+ S_{\rm response}=\int dt\int_Q d\ell\,\mu_Q\lambda_\sigma C_\sigma.
+\end{equation}
+The corresponding action replaces the old fixed profile wherever it occurs
+and adds this constraint once. It does not add the retained Hopf/FR energy a
+second time. This authorized action-domain promotion introduces no new
+continuous coefficient, physical scale, or particle label \cite{ae3}.
+
+\subsection{Regularity and scope}
+On the retained identity branch,
+\begin{equation}
+ \sigma_0'(\chi)=\frac4\pi\sin^2(2\chi)>0
+ \quad(0<\chi<\pi/2),\qquad
+ \sigma_0(\pi/4)=0,\quad \sigma_0'(\pi/4)=\frac4\pi.
+\end{equation}
+Thus the material zero is transverse. The local carrier is
+\begin{equation}
+ D_{\rm enc}=\{\sigma<0\},\qquad
+ \Sigma_{\rm enc}=\{\sigma=0\},\qquad
+ n=\frac{\nabla\sigma}{|\nabla\sigma|}.
+\end{equation}
+The retained weight \(\Lambda(\sigma)=1-4\sigma^2\) is the unique even
+polynomial of degree at most two with unit value at the seam and zeros at
+\(\sigma=\pm1/2\). The associated boundary and flux cancellation statements
+refer to this smooth internal material interface. The event-time condition
+and the material surface are distinct objects.
+
+The current algebraic transport retains three charged sectors and three
+family slots. The resulting nine fibers preserve their supplied BHSM state
+labels through the carrier construction; the geometry does not independently
+select a particle species. This does not establish commutation with the
+still-missing interacting history Hamiltonian or a persistent full-field
+particle \cite{status}. The older unchanged-AE2 audit, in which none of six
+candidate carriers qualified, remains a valid historical result within AE2.
+
+\section{Complete finite-history second variation}
+\subsection{Why the midpoint requires the full ambient space}
+Let \(E\) be the 99-by-74 augmented trial frame, \(e\) its current-Green
+coordinate axis, and \(V\) the stored 74-by-73 transverse basis. The retained
+midpoint tensor contains \(H[U,U]\), where \(U=EV\) and \(H=D^2F\).
+Transverse endpoint variations need not remain transverse at a
+Hermite--Simpson midpoint. They can acquire axis and frame-normal components.
+Dropping those terms is not justified by a small binary64 residual.
+
+For fixed interval length \(h_i\), the endpoint-pair midpoint map has blocks
+\begin{align}
+ M_L&=\tfrac12E_iP_i+\tfrac{h_i}{8}DF_iE_iP_i,\\
+ M_R&=\tfrac12E_{i+1}P_{i+1}-\tfrac{h_i}{8}DF_{i+1}E_{i+1}P_{i+1}.
+\end{align}
+The fixed reset has zero left variation at interval zero. Complete the
+actual retained directions to a square ambient basis \(S=[U\ C]\), with
+26 complement columns, and solve
+\begin{equation}
+ M=[M_L\ M_R]=UA+CD.
+\end{equation}
+For each output component, the full pullback is
+\begin{equation}\label{eq:fullpullback}
+ H[M,M]=A^TQ_{UU}A+A^TQ_{UC}D
+       +D^TQ_{UC}^TA+D^TQ_{CC}D.
+\end{equation}
+Both cross terms and the complement-complement block are required. Their
+signs may reinforce or cancel the retained contribution. An incomplete
+transverse-only norm is neither an upper nor a lower bound for the full
+pullback \cite{signed}.
+
+\subsection{Signed assembly before norms}
+Writing \(\mathcal A_i=-R_i^{-1}E_{i+1}^T\) for the unchanged reduced solve
+and test-frame map, the local second response is
+\begin{align}
+ \mathcal S_i={}&\left(\frac{h_i}{6}\mathcal A_i
+              +\frac{h_i^2}{12}\mathcal A_iDF_{i+1/2}\right)B_i\nonumber\\
+ &+\frac{2h_i}{3}\mathcal A_iH_{i+1/2}[M_i,M_i]\nonumber\\
+ &+\left(\frac{h_i}{6}\mathcal A_i
+              -\frac{h_i^2}{12}\mathcal A_iDF_{i+1/2}\right)B_{i+1}.
+\end{align}
+All tensors are first pulled back to the common endpoint-pair coordinates.
+The midpoint incidence terms retain their signs. If a local block is \(T\)
+and a causal transport is \(P\), the identity
+\begin{equation}
+ \|PT\|_F^2=\operatorname{tr}(P,TT^T P^T)
+\end{equation}
+retains output covariance through the transport. Contributions from adjacent
+intervals acting on the same global diagonal input block must also be added
+with their signed cross covariance before taking a norm. The existing
+block-sup proof domain supplies the remaining triangle inequalities.
+
+\subsection{Stored-basis and coordinate-solve verification}
+Binary64 center assembly is distinct from an outward enclosure. For an exact
+stored binary64 basis \(S\), a 512-bit Arb inverse enclosure verifies
+nonsingularity without deleting a small singular direction. If \(\widehat X\)
+is a computed coordinate matrix and \(M\) the exact stored binary64 target,
+\begin{equation}\label{eq:solveerror}
+ \|S^{-1}M-\widehat X\|_\infty
+ \leq \|S^{-1}\|_\infty\,\|M-S\widehat X\|_\infty.
+\end{equation}
+Arb supplies the residual and inverse bounds \cite{arb,solve}. Equation
+\eqref{eq:solveerror} controls this stored solve only. Physical direction
+construction, Hessian rounding, propagation of coordinate error through
+\eqref{eq:fullpullback}, and the action-neighborhood remainder are separate
+required operands.
+
+\section{Verified numerical evidence}
+The completed correlated scalar calculation uses 512-bit interval arithmetic
+and the frozen causal frames and preconditioner. Table~\ref{tab:scalar} and
+Figure~\ref{fig:scalar} are generated from the source certificate after its
+NPZ data hash is verified \cite{scalar}. No values are fitted to experimental
+particle data.
+\begin{table}[ht]
+\centering
+\caption{Completed frozen central scalar calculation. These are scoped
+mathematical bounds, not physical mass or scattering observables.}
+\label{tab:scalar}
+\begin{tabular}{lr}
+\toprule
+Quantity & Recorded result\\
+\midrule
+Intervals / nodes & \ScalarIntervals{} / \ScalarNodes{}\\
+Arithmetic precision & 512 bits\\
+Maximum causal response norm upper & \ScalarMaximum\\
+Node owning the maximum & \ScalarOwner\\
+Maximum local second-residual norm upper & \ScalarLocalMaximum\\
+\bottomrule
+\end{tabular}
+\end{table}
+\begin{figure}[ht]
+\centering
+\includegraphics[width=\linewidth]{generated/scalar_response.pdf}
+\caption{Actual certified numerical response along the frozen path. The
+horizontal coordinate is a computational node index, not laboratory time.
+The vertical value is a response-norm upper bound. The central scalar
+certificate does not enclose the complete transverse neighborhood.}
+\label{fig:scalar}
+\end{figure}
+
+The signed tensor recovery requires 370 endpoints and 370 midpoints. At each
+midpoint the 26 complement directions require \(73\cdot26+26\cdot27/2=2249\)
+new directional pairs, in addition to the retained symmetric transverse
+block. These are contraction counts, not empirical CPU estimates. At this
+draft's evidence boundary, the recovery and supplemental campaign are still
+in progress; no complete signed center coefficient or outward two-radius
+certificate is reported here.
+
+\section{Physical observables and remaining obligations}
+The project's physical finish line is stronger than successful local
+certificates. It requires the complete joint finite-history operator oracle,
+projected heat-minus-zeta force, KKT root, and constrained physical Hessian,
+together with compatible downstream maps and continuum control. A positive
+center screen alone cannot establish these objects.
+
+Every claimed observable must eventually be classified once as a derived
+point prediction, interval prediction, selection rule, qualitative structure,
+comparison only, open internal blocker, or outside BHSM 1.0 scope
+\cite{dod}. The required coverage includes the universal electromagnetic
+vertex and muon magnetic moment; stability and decays; spectral enclosures
+or exclusions; the known-particle inventory; and representative QED, weak,
+strong, scalar, flavor, and neutrino scattering benchmarks. This draft
+does not substitute a list of implemented engines for that completed matrix.
+
+The minimal Standard Model and any effective neutrino extension must remain
+distinguished. No confinement theorem, completed no-extra-light-state
+theorem, or first-principles derivation of all Standard Model data is asserted.
+A failed numerical representation screen also does not prove physical
+instability or nonexistence of a root.
+
+\section{Reproduction, data availability, and manuscript status}
+The plotted values and the table are generated from the immutable scalar
+source at revision \texttt{d75e77bb}; the downloadable Museum dataset records
+the full 40-character revision and source SHA-256 digests. The exporter
+refuses an unvalidated certificate, a changed data hash, a mismatch with
+the recorded source revision, or an inconsistent array shape or maximum.
+The plotting generator consumes the same dataset. Repeated artifact
+materializations are compared byte for byte.
+
+The complete scientific source and claim ledgers are available in the
+repository \cite{repo}. This draft is maintained separately from frozen
+historical manuscripts. Its abstract, results, and conclusions must be
+updated from completed certificates before external submission; pending
+physical quantities are not represented by simulated replacement values.
+
+Computational and editorial work used Codex assistance. The scientific
+provenance is the repository's retained action, derivations, tests, and
+certificates. Author declarations, venue-specific formatting, and the final
+scientific review remain part of submission preparation. No journal
+submission or acceptance is claimed.
+
+\begin{thebibliography}{9}
+\raggedright
+\bibitem{repo} N. P. Carberry, \emph{Berger--Hopf Standard Model research
+repository}, \url{https://github.com/ncarberry64/Berger-Hopf-Standard-Model}.
+\bibitem{status} N. P. Carberry, \emph{Current BHSM status}, repository
+revision \texttt{d75e77bb}, \texttt{docs/current\_bhsm\_status.md}.
+\bibitem{dod} N. P. Carberry, \emph{BHSM 1.0 definition of done}, same
+revision, \texttt{docs/BHSM\_1\_0\_DEFINITION\_OF\_DONE.md}.
+\bibitem{ae3} N. P. Carberry, \emph{BHSM-AE-3 reciprocal-join localization
+and enclosure theorem}, same revision,
+\texttt{theory/ae3\_reciprocal\_join\_localization\_enclosure.md}.
+\bibitem{signed} N. P. Carberry, \emph{Current-Green signed transverse
+causal center}, same revision,
+\texttt{theory/n12\_gate7\_current\_green\_signed\_transverse\_causal\_center.md}.
+\bibitem{scalar} N. P. Carberry, \emph{Current-Green correlated central
+scalar causal composition certificate}, same revision, artifact
+\texttt{BHSM\_N12\_GATE7\_CURRENT\_GREEN\_CORRELATED\_SCALAR\_CAUSAL\_COMPOSITION}.
+\bibitem{solve} N. P. Carberry, \emph{Stored midpoint coordinate solve
+certificate}, same revision, script
+\texttt{certify\_n12\_gate7\_current\_green\_midpoint\_coordinate\_solve.py}.
+\bibitem{arb} F. Johansson, ``Arb: Efficient arbitrary-precision
+midpoint-radius interval arithmetic,'' \emph{IEEE Transactions on Computers}
+\textbf{66}(8), 1281--1292 (2017).
+\href{https://doi.org/10.1109/TC.2017.2690633}{doi:10.1109/TC.2017.2690633};
+\url{https://arxiv.org/abs/1611.02831}.
+\end{thebibliography}
+\end{document}

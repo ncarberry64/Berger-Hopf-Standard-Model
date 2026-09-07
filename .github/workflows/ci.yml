@@ -32,6 +32,14 @@ jobs:
           python -m pytest -q
           tests/test_n12_gate7_current_green_signed_transverse_causal_center.py
           tests/test_n12_gate7_signed_midpoint_completeness_audit.py
+          tests/test_current_green_supplemental_midpoint.py
+          tests/test_n12_gate7_current_green_supplemental_midpoint_blocks.py
+          tests/test_n12_gate7_current_green_supplemental_midpoint_blocks_certificate.py
+          tests/test_n12_gate7_current_green_supplemental_mixed_rate.py
+          tests/test_n12_gate7_current_green_supplemental_mixed_rate_validation.py
+          tests/test_n12_gate7_current_green_supplemental_compute_justification.py
+          tests/test_n12_gate7_current_green_supplemental_basis_inverse.py
+          tests/test_n12_gate7_current_green_midpoint_coordinate_solve.py
 
   core-scientific-checkpoint:
     runs-on: ubuntu-latest
