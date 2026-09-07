@@ -1,5 +1,16 @@
 # Current BHSM status
 
+## Critique-sprint domain and mass audit — 7 September 2026
+
+The [dependency audit](BHSM_MASS_MIXING_DEPENDENCY_AUDIT_2026_09_07.md)
+independently verifies the retained EC stationary-domain obstruction and
+separates the charged-lepton tree theorem from its uncomputed physical
+dressing. It also records the missing up/down vertex normalizations and
+family-noncentral left-handed embeddings. No retained repair is established;
+the next scientific target is the regular non-EC two-point owner with an
+action-selected global state and domain. These gaps are not resolved by
+completion of the numerical shard campaign.
+
 ## Photon diagnostic scope audit — 7 September 2026
 
 The retained `0.590609601652908` ratio compares a frequency derivative with

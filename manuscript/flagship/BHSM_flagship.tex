@@ -5,10 +5,11 @@
 \hypersetup{colorlinks=true,linkcolor=blue,citecolor=blue,urlcolor=blue}
 \setlength{\emergencystretch}{2em}
 \input{generated/scalar_values.tex}
+\input{generated/photon_values.tex}
 \title{Berger--Hopf Standard Model:\\Action-domain localization and an auditable route to physical predictions}
 \author{Norman P. Carberry\\Independent Researcher\\
 \href{https://orcid.org/0009-0000-6650-3485}{ORCID: 0009-0000-6650-3485}}
-\date{Working manuscript, 6 September 2026}
+\date{Working manuscript, 7 September 2026}
 \begin{document}
 \maketitle
 \begin{center}
@@ -29,7 +30,11 @@ the frozen central scalar response across \ScalarIntervals{} intervals and
 \ScalarNodes{} nodes, with maximum response-norm upper bound
 \(\ScalarMaximum\). We describe the complete ambient midpoint chain rule
 required for the remaining signed transverse calculation and an explicit
-bound on stored coordinate-solve error. These results do not establish the
+bound on stored coordinate-solve error. A separate photon audit corrects a
+finite-mode symmetry diagnostic while retaining a positive-energy obstruction
+on the reference Maxwell shell. We also distinguish a stationary
+Einstein--Cartan domain rejection and a conditional charged-lepton tree
+sum rule from a physical mass prediction. These results do not establish the
 joint physical background, particle masses, mixing matrices, scattering
 observables, or full BHSM completion. The manuscript binds numerical values
 to immutable source artifacts and identifies the remaining proof operands
@@ -176,7 +181,7 @@ All tensors are first pulled back to the common endpoint-pair coordinates.
 The midpoint incidence terms retain their signs. If a local block is \(T\)
 and a causal transport is \(P\), the identity
 \begin{equation}
- \|PT\|_F^2=\operatorname{tr}(P,TT^T P^T)
+ \|PT\|_F^2=\operatorname{tr}(P TT^T P^T)
 \end{equation}
 retains output covariance through the transport. Contributions from adjacent
 intervals acting on the same global diagonal input block must also be added
@@ -239,6 +244,105 @@ draft's evidence boundary, the recovery and supplemental campaign are still
 in progress; no complete signed center coefficient or outward two-radius
 certificate is reported here.
 
+\section{Photon diagnostic and the retained frozen route}
+Write the retained dimensionless transverse Dirichlet-to-Neumann kernel as
+\(N(s,q^2)\), with coexact \(s=n^2\), \(n\geq2\), and
+\(q^2=(\omega R_4)^2\). For the normalized regular extension
+\(u(\pi/2)=1\), put \(p=W\sin\rho\), \(m=W/\sin\rho\), where
+\(W=1-4\sigma^2\), \(\sigma(\rho)=\sigma_0(\rho/2)\), is positive
+in the interior. The stationary energy is
+\begin{equation}
+ N(s,q^2)=\int_0^{\pi/2}\bigl[p(u')^2+(s m-q^2p)u^2\bigr]\,d\rho.
+\end{equation}
+The regular endpoint makes the integration-by-parts term vanish.
+At zero frequency, let \(T=\int p u^2\), \(M=\int m u^2\), and
+\(G=\int p(u')^2\). The variational identities give
+\begin{equation}
+ -\partial_{q^2}N=T,\qquad \partial_sN=M,\qquad N(s,0)=G+sM.
+\end{equation}
+The earlier complete-mode ratio \(sT/N(s,0)\) is therefore distinct from
+the spectral-derivative ratio \(T/M\). At \(n=2\), an independent
+Riccati/sensitivity calculation gives \(\PhotonCompleteRatio\) and
+\(\PhotonDerivativeRatio\), respectively \cite{photon}. These are binary64
+witnesses checked against the retained solver, energy integrals, parameter
+differences, and cutoff halving; they are not outward enclosures.
+
+The first ratio tests an exact whole-kernel identification with
+\(Z(s-q^2)\), but is not a universal Lorentz-symmetry test for a nonlocal
+operator. The flat decaying half-space control \(N=\sqrt{s-q^2}\) has
+complete-mode ratio \(1/2\) and derivative ratio one. Square-root
+Dirichlet-to-Neumann operators are standard \cite{extension}. Freezing the
+retained wall coefficients gives that same formal order-one principal
+symbol on the spacelike branch. This does not construct a global causal
+quantum propagator or control the null/glancing limit.
+
+A direct obstruction remains on the reference Maxwell shell:
+\begin{equation}
+ N(s,s)=\int_0^{\pi/2}\bigl[p(u')^2+s(m-p)u^2\bigr]\,d\rho>0.
+\end{equation}
+The normalized trace is nonzero and \(m-p>0\) in the interior. At the
+lowest mode, \(N(4,4)=\PhotonShellKernel\). The isolated frozen kernel
+has no zero, and its inverse has no pole, on this shell; reflection doubles
+the positive kernel. This rejects the specified frozen Maxwell route. It
+does not exclude every completion or establish a global violation of local
+Lorentz symmetry. Neither diagnostic ratio is a measured speed of light.
+
+\section{Stationary domain and conditional flavor evidence}
+\subsection{The Einstein--Cartan candidate}
+The retained nonzero spin-source mode has
+\(J=\sin^3(2\chi)\), \(u_0=N_0J^{-1/2}\sin\chi\), and
+\(\Lambda\sim64\chi^3/(3\pi)\). Its ordinary norm is finite, but
+\begin{equation}
+ \frac{\sin^4\chi}{J\Lambda}
+ =\frac{3\pi}{512}\chi^{-2}+O(1).
+\end{equation}
+This obstruction survives in the uneliminated projected action
+\(\int(AK^2/2+SK)\,d\chi\). Compactly supported interior variations
+require \(K_*=-S/A\), with \(A=O(\chi^6)\), \(S=O(\chi^2)\).
+The stationary total is \(-S^2/(2A)\sim-c\chi^{-2}\), \(c>0\): its quadratic
+and linear divergences do not cancel. An endpoint condition cannot change
+that unique interior algebraic solution \cite{dependencyaudit}.
+
+For a nonzero pure power-law source mode \(u\sim c\chi^\beta\),
+ordinary normalizability requires \(\beta>-2\), while this EC form
+requires \(\beta>-1/4\). The retained \(\beta=-1/2\) fails the latter.
+The result rejects this candidate on the retained mode; it does not repair
+the action or exclude different backgrounds or vanishing spin sources.
+
+\subsection{The lepton relation and its missing dressing}
+For the admitted heavy, middle, and light charged-lepton slots,
+\((K,q^2)=(0,0),(35,1),(99,9)\), the retained family formula is
+\begin{equation}
+ m_f=M_{\rm common}\exp\!\left[-\frac{K_f+(a^2-1)q_f^2}{4\pi}\right].
+\end{equation}
+Eliminating the common scale and squashing gives the exact conditional
+tree relation
+\begin{equation}
+ R_{\rm tree}=\log\frac{m_e}{m_\tau}
+             -9\log\frac{m_\mu}{m_\tau}-\frac{54}{\pi}=0.
+\end{equation}
+This algebra does not independently select the supplied ledger.
+For positive dressed masses \(M_f=Z_fm_f\), direct substitution gives
+\begin{equation}
+ R_{\rm pole}=\log Z_e-9\log Z_\mu+8\log Z_\tau,
+ \qquad D=e^{R_{\rm pole}}=\frac{Z_eZ_\tau^8}{Z_\mu^9}.
+\end{equation}
+The stored post-derivation comparison requires \(D\simeq1.06056689915\).
+It is not an input for choosing a self-energy. A common multiplicative
+rescaling cancels, but additive or nondiagonal corrections are not excluded.
+The physical calculation of \(D\) and its uncertainty remains open
+\cite{dependencyaudit}.
+
+The family-resolved first-order lepton operator and reset-glued domain
+already exist. Advanced and retarded Green operators exist on each
+finite-core globally hyperbolic history; this uses established causal
+operator theory \cite{baer}. It does not select the physical history or
+Feynman state, evaluate a dressed kernel, or define a global frequency pole
+on a time-dependent history. The quark response additionally lacks its
+action-owned up/down vertex normalizations and the left-handed embedding
+dressing needed for nontrivial physical mixing. These gaps remain distinct
+from the numerical response campaign.
+
 \section{Physical observables and remaining obligations}
 The project's physical finish line is stronger than successful local
 certificates. It requires the complete joint finite-history operator oracle,
@@ -282,7 +386,7 @@ certificates. Author declarations, venue-specific formatting, and the final
 scientific review remain part of submission preparation. No journal
 submission or acceptance is claimed.
 
-\begin{thebibliography}{9}
+\begin{thebibliography}{99}
 \raggedright
 \bibitem{repo} N. P. Carberry, \emph{Berger--Hopf Standard Model research
 repository}, \url{https://github.com/ncarberry64/Berger-Hopf-Standard-Model}.
@@ -307,5 +411,17 @@ midpoint-radius interval arithmetic,'' \emph{IEEE Transactions on Computers}
 \textbf{66}(8), 1281--1292 (2017).
 \href{https://doi.org/10.1109/TC.2017.2690633}{doi:10.1109/TC.2017.2690633};
 \url{https://arxiv.org/abs/1611.02831}.
+\bibitem{photon} N. P. Carberry, \emph{AE3 photon diagnostic scope audit},
+repository revision \texttt{016aa4b4},
+\href{https://github.com/ncarberry64/Berger-Hopf-Standard-Model/blob/016aa4b48a87dcb53cdf50a05e9010d9777d208c/theory/ae3_c2_photon_symbol_audit.md}{derivation and numerical report}.
+\bibitem{dependencyaudit} N. P. Carberry, \emph{BHSM mass and mixing
+dependency audit}, repository revision \texttt{1ad740b5},
+\href{https://github.com/ncarberry64/Berger-Hopf-Standard-Model/blob/1ad740b5ada806e3c5845a379c62d7f29712c6ff/docs/BHSM_MASS_MIXING_DEPENDENCY_AUDIT_2026_09_07.md}{action-domain audit and linked flavor derivations}.
+\bibitem{extension} M. Kwa\'snicki and J. Mucha, \emph{Extension technique
+for complete Bernstein functions of the Laplace operator} (2017),
+\url{https://arxiv.org/abs/1707.02475}.
+\bibitem{baer} C. B\"ar, ``Green-hyperbolic operators on globally hyperbolic
+spacetimes,'' \emph{Communications in Mathematical Physics} \textbf{333},
+1585--1615 (2015), \url{https://arxiv.org/abs/1310.0738}.
 \end{thebibliography}
 \end{document}
