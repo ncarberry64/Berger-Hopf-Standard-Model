@@ -141,11 +141,44 @@ The minimum interval-contraction adjudication fails at the common-domain test.
 The accepted replay-center shift is `2.7017477414680254e8` times the old
 exact-affine `Z2` radius, while the diagnostic old-preconditioner image is
 `5.218603289632254e5` old radii.  Consequently the old cone cannot supply
-current-center interval authority.  Gate 7 is `ACTIVE_NOT_CLOSED` on exactly
-one equation-level owner: outward `Y=||AF||`, `Z1=||I-A DF||`, and a same-center
-causal `Z2` in one 74D norm, followed by a radius satisfying
-`Y+Z1*r+Z2*r^2<r` and `Z1+2*Z2*r<1`.  Failure is not root nonexistence, and the
-background is not certified for universal physical predictions.
+current-center interval authority.  The same-center outward operands were
+subsequently evaluated on the frozen replay center:
+`Y_lower=6.15777040956615e-7`, `Z1_upper=0.4493650871145146`, and
+`Z2_lower=3376470.2602736303`.  Their necessary single-radius discriminant is
+`-7.31661146299723`, so that scalar contraction route is obstructed by
+proof-coordinate amplification.  The BHSM-native Green partition then closes
+the correlation-preserving central scalar on all 370 intervals: the maximum
+intrinsic midpoint norm upper is `0.34991350135064914`, and the maximum local
+HS second-residual norm upper is `0.08778063910324282`.  Its frozen causal
+central-scalar composition is now certified at 512-bit Arb precision with
+terminal norm upper `8.405509181456809`; the apparent 384-bit terminal growth
+was numerical precision amplification, not physical divergence.  By contrast,
+a fresh 512-bit component-box replay preserves the same first midpoint loss at
+interval 355, so additional scalar precision cannot restore the discarded
+normalization/transport dependency.  Gate 7 remains
+`ACTIVE_NOT_CLOSED` on one reduced owner: bound the certified Green-axis
+neighborhood with mixed Green/transverse and transverse-transverse remainders,
+then combine that remainder with the derived causal central scalar and complete
+the longitudinal/transverse two-radius screen.  No new numerical campaign or fitted block scale
+is authorized.  The remaining proof obligation is not root nonexistence or
+physical instability, and the background is not certified for universal
+physical predictions.
+
+The mixed Green/transverse mechanism is now current at every defined-axis
+endpoint.  The direct retained-action survey covers nodes 1--370 and has
+maximum outward Frobenius upper `256.52090126938094` at node 9.  Exact
+Fréchet-Hessian polarization plus one directed common hull reconciles the
+independently rounded direct and polarized graphs on all 296 decisive seed
+columns, and a fresh 512-bit leading-direction polarization check closes the
+survey owner.  The maximum seed-center difference is
+`6.256328788367682e-12`; the owner-direction difference is
+`1.8332002582610585e-12`.  This derives endpoint representation authority,
+not midpoint/causal or two-radius authority.
+
+The matching transverse-quadratic seed is also finite on eight selected
+directions, with maximum upper `283135.9524836309` at node 1.  The remaining
+step is an action-derived majorant over the whole transverse unit sphere, not
+another guessed direction or historical-number import.
 
 The physical-completeness matrix now separates capability maturity from
 scientific output authority.  The universal action expansion, quadratic

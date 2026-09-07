@@ -1,0 +1,123 @@
+{
+  "FULL_BHSM_COMPLETE": false,
+  "action_version": "BHSM-AE-3.1.0",
+  "artifact": "BHSM_AE31_CHARGED_LEPTON_POLE_DRESSING_INVARIANT",
+  "claim_boundary": {
+    "ACTION_DERIVED_DRESSED_TWO_POINT_OPERATOR_AVAILABLE": false,
+    "ADDITIVE_OR_NONDIAGONAL_POLE_CORRECTIONS_EXCLUDED": false,
+    "AE31_CHARGED_LEPTON_POLE_DRESSING_INVARIANT_DERIVED": true,
+    "COMMON_MULTIPLICATIVE_POLE_RESCALING_NO_GO_DERIVED": true,
+    "CURRENT_C2_GLOBAL_PHYSICAL_LEPTON_POLES_DERIVED": false,
+    "CURRENT_C2_PHYSICAL_MUON_POLE_DERIVED": false,
+    "FAMILY_RESOLVED_DRESSING_TARGET_QUANTIFIED": true,
+    "FULL_BHSM_COMPLETE": false,
+    "MICROSCOPIC_SELF_ENERGY_OR_RG_FLOW_DERIVED": false,
+    "MUON_MAGNETIC_MOMENT_DERIVED": false,
+    "exact_next_operator": "ACTION_SELECTED_CHARGED_LEPTON_TWO_POINT_OPERATOR_WITH_FAMILY_RESOLVED_SELF_ENERGY__THEN_EVALUATE_LOG_Z_E_MINUS_9_LOG_Z_MU_PLUS_8_LOG_Z_TAU",
+    "particle_spectrum_rebuilt": false
+  },
+  "classification": "AE31_CHARGED_LEPTON_POLE_DRESSING_INVARIANT",
+  "common_multiplicative_rescaling_witnesses": [
+    {
+      "coefficient_sum": 0.0,
+      "common_factor": 0.25,
+      "dressed_sum_rule_residual": 0.0,
+      "dressing_log_invariant": 0.0,
+      "nonzero_residual_repaired": false,
+      "tree_sum_rule_residual": 0.0
+    },
+    {
+      "coefficient_sum": 0.0,
+      "common_factor": 1.0,
+      "dressed_sum_rule_residual": 0.0,
+      "dressing_log_invariant": 0.0,
+      "nonzero_residual_repaired": false,
+      "tree_sum_rule_residual": 0.0
+    },
+    {
+      "coefficient_sum": 0.0,
+      "common_factor": 4.0,
+      "dressed_sum_rule_residual": 0.0,
+      "dressing_log_invariant": 0.0,
+      "nonzero_residual_repaired": false,
+      "tree_sum_rule_residual": 0.0
+    }
+  ],
+  "frozen_on_shell_reference_target": {
+    "coefficient_norm_squared": 146.0,
+    "effective_dressing_invariant_check": 1.060566899151649,
+    "effective_dressing_ratios_with_Z_tau_gauge_one": [
+      1.0,
+      0.9898303446570662,
+      0.9673529063037377
+    ],
+    "minimum_Euclidean_log_norm_representative": [
+      0.003222113736121815,
+      -0.003624877953137042,
+      0.00040276421701522687
+    ],
+    "minimum_Euclidean_multiplicative_representative": [
+      1.00322731032442,
+      0.9963816839858134,
+      1.000402845337413
+    ],
+    "reference_data_used_only_after_derivation": true,
+    "reference_ratios_heavy_middle_light": [
+      1.0,
+      0.05946353426831603,
+      0.0002875853753250115
+    ],
+    "representative_is_action_solution": false,
+    "required_log_dressing_invariant": 0.05880357568422312,
+    "required_multiplicative_dressing_invariant": 1.0605668991516508,
+    "target_inserted_into_action": false,
+    "tree_ratios_heavy_middle_light": [
+      1.0,
+      0.060074470932609765,
+      0.00029729106456492414
+    ]
+  },
+  "inputs": {
+    "artifacts/action_extension/BHSM_AE31_C2_FERMION_HADAMARD_STATE_CLASS.json": "71B0BE4F25C4D8473DEB10C105588A63B8BD4E040F82F7A5D653C6865D71C3C4",
+    "artifacts/action_extension/BHSM_AE31_C2_FIXED_HISTORY_STATE_NONUNIQUENESS.json": "A62D578BFC58C0C1EC7942DC6D4E9441B4BE38EE2C5F5B1BBB6F04C9A7A9111C",
+    "artifacts/action_extension/BHSM_AE31_C2_INTRINSIC_M4_LEPTON_ACTION.json": "C0E851100FCAA04C1968081A3940D938B7C64C857FE416F7F7795974A9053850",
+    "artifacts/action_extension/BHSM_AE31_CHARGED_LEPTON_SCALE_FREE_SUM_RULE.json": "AC078A750CB3F17606BC51248DD66857FE87E10B8B22DD12267B6DBE0EB3EEFA",
+    "src/bhsm/interface/ae31_charged_lepton_pole_dressing_invariant.py": "77580BF76E7618BDAEC54CB97D9678A1FABFBDC1B428CB82375E5066F7E00D3C",
+    "theory/bhsm_prediction_ledger.json": "AA212C26D86F02FD3E50F86463ECD2C29EDF949C6D90BB0095BB6652855287F6"
+  },
+  "pole_dressing_invariant_theorem": {
+    "action_version": "BHSM-AE-3.1.0",
+    "additive_or_nondiagonal_pole_corrections_excluded": false,
+    "coefficient_sum": 0.0,
+    "common_multiplicative_pole_rescaling_cancels": true,
+    "common_wavefunction_or_unit_rescaling_can_repair_nonzero_residual": false,
+    "effective_pole_map": "M_f=Z_f*m_f_with_Z_f>0",
+    "exact_dressing_identity": "R_pole=log(Z_e)-9*log(Z_mu)+8*log(Z_tau)",
+    "log_dressing_coefficients_heavy_middle_light": [
+      8.0,
+      -9.0,
+      1.0
+    ],
+    "microscopic_self_energy_form_derived": false,
+    "multiplicative_invariant": "D=Z_e*Z_tau^8/Z_mu^9=exp(R_pole)",
+    "one_family_resolved_log_combination_is_observable_by_this_sum_rule": true,
+    "physical_residual": "R_pole=log(M_e/M_tau)-9*log(M_mu/M_tau)-54/pi",
+    "roles": [
+      "tau_slot",
+      "mu_slot",
+      "electron_slot"
+    ],
+    "tree_identity": "R_tree=log(m_e/m_tau)-9*log(m_mu/m_tau)-54/pi=0"
+  },
+  "validation": {
+    "common_multiplicative_rescaling_no_go_verified": true,
+    "exact_dressing_combination_derived": true,
+    "microscopic_correction_class_not_overclaimed": true,
+    "no_spectrum_rebuild_or_g_minus_2_overclaim": true,
+    "post_derivation_reference_target_quantified_without_fit": true,
+    "same_AE31_action_and_local_tree_operator_reused": true,
+    "scale_free_tree_identity_reused_not_rebuilt": true,
+    "state_and_global_pole_obstructions_preserved": true
+  },
+  "validation_passed": true
+}

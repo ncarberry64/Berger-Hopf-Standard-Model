@@ -24,6 +24,57 @@ def test_matrix_tracks_all_required_physical_sectors_without_promotion() -> None
     assert payload["validation_passed"] is True
     assert payload["FULL_BHSM_COMPLETE"] is False
     assert payload["Gate7_authority"]["status"] == "ACTIVE_NOT_CLOSED"
+    assert payload["Gate7_authority"]["single_radius_route"] == "OBSTRUCTED"
+    assert payload["Gate7_authority"][
+        "coarse_field_descriptor_block_route"
+    ] == "OBSTRUCTED"
+    assert payload["Gate7_authority"][
+        "BHSM_native_green_image_partition"
+    ] == "RECOVERED_CURRENT_CENTER"
+    assert payload["Gate7_authority"][
+        "mixed_green_transverse_current_seed"
+    ] == "DERIVED_FOUR_DECISIVE_NODES"
+    assert payload["Gate7_authority"][
+        "mixed_green_transverse_direct_bilinear"
+    ] == (
+        "CENTER_IDENTITY_REPRODUCED__ALL_370_DEFINED_AXIS_ENDPOINT_"
+        "CENTERS_MATERIALIZED__OUTWARD_EQUIVALENCE_DERIVED__"
+        "ALL_ENDPOINTS_DERIVED__MIDPOINTS_OPEN"
+    )
+    assert payload["Gate7_authority"][
+        "transverse_quadratic_current_seed"
+    ] == "DERIVED_EIGHT_DECISIVE_DIRECTIONS"
+    assert payload["Gate7_authority"]["realization_scope"] == (
+        "ONE_ACTION_SELECTED_BACKGROUND_REALIZATION_NOT_A_UNIVERSAL_PARTICLE_TRAJECTORY"
+    )
+    assert payload["encapsulation_realization_scope"][
+        "complete_interacting_spacetime_volume_enclosure"
+    ] == "OPEN"
+    assert payload["validation"][
+        "encapsulation_scope_is_validated_and_particle_specific_realizations_remain_open"
+    ]
+    assert payload["validation"][
+        "same_center_scalar_route_is_now_evaluated_and_obstructed"
+    ]
+    assert payload["validation"][
+        "same_center_coarse_field_descriptor_route_is_now_evaluated_and_obstructed"
+    ]
+    assert payload["validation"][
+        "BHSM_native_green_partition_and_global_scalar_are_integrated"
+    ]
+    assert payload["validation"]["current_green_directional_seed_is_integrated"]
+    assert payload["validation"][
+        "current_green_mixed_transverse_seed_is_integrated"
+    ]
+    assert payload["validation"][
+        "current_green_mixed_direct_bilinear_identity_is_integrated_fail_closed"
+    ]
+    assert payload["validation"][
+        "current_green_mixed_all_endpoint_outward_authority_is_integrated"
+    ]
+    assert payload["validation"][
+        "current_green_transverse_quadratic_seed_is_integrated"
+    ]
     assert tuple(record["id"] for record in payload["records"]) == module.REQUIRED_RECORD_IDS
     assert all(record["prediction_classification"] == "OPEN_INTERNAL_BLOCKER" for record in payload["records"])
     assert not any(record["physical_prediction_materialized"] for record in payload["records"])
@@ -172,6 +223,10 @@ def test_every_row_has_explicit_evidence_and_promotion_fields() -> None:
         assert required <= record.keys()
         assert record["evidence"]
         assert all(item["sha256"] for item in record["evidence"])
+        assert any(
+            item["kind"] == "gate_hindsight_authority"
+            for item in record["evidence"]
+        )
         assert record["last_verified_commit"] == _module().ENGINE_VERIFIED_COMMIT
         assert record["empirical_input_used"] is False
 

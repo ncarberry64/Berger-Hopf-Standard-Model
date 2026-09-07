@@ -10,6 +10,14 @@ coexact dimension = 3,
 longitudinal dimension = 0.
 ```
 
+The finite-core scalar descriptor consumes the already-squared potential
+coefficient.  The component coefficient is therefore `curl_0^2=4`, not the
+unsquared curl value `2`.  The earlier finite-core materialization passed the
+latter and understated this spatial stiffness by a factor of two.  That
+operand is corrected here and its downstream provenance hashes are rebuilt.
+The continuous-frequency Lorentzian calculation is unchanged because its
+radial equation already used `n^2=4`.
+
 On the actual nonuniform C2 finite-core geometry, each component therefore
 has the form
 

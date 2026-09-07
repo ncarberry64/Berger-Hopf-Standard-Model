@@ -1,0 +1,143 @@
+{
+  "FULL_BHSM_COMPLETE": false,
+  "action_version": "BHSM-AE-3.1.0",
+  "artifact": "BHSM_AE31_C2_RESET_HADAMARD_TRANSPORT",
+  "claim_boundary": {
+    "AE2_RESET_HADAMARD_STATE_CLASS_TRANSPORT_DERIVED": true,
+    "BOGOLIUBOV_PARTICLE_PRODUCTION_DERIVED": false,
+    "CURRENT_C2_ACTION_SELECTED_HADAMARD_STATE_DERIVED": false,
+    "CURRENT_C2_DRESSED_CHARGED_LEPTON_POLES_DERIVED": false,
+    "FULL_BHSM_COMPLETE": false,
+    "MUON_MAGNETIC_MOMENT_DERIVED": false,
+    "RESET_SELECTS_UNIQUE_PHYSICAL_FERMION_STATE": false,
+    "RESET_TRANSPORT_PRESERVES_FROZEN_FAMILY_IDENTITY": true,
+    "UPSTREAM_HADAMARD_PARTICLE_STATE_CARRIED_INTO_CURRENT_C2_ENCLOSURE": true,
+    "exact_next_operator": "ACTION_SELECTED_UPSTREAM_CAUCHY_COVARIANCE_OR_MAXIMAL_ASYMPTOTIC_STATE_SELECTOR__THEN_THE_TRANSPORTED_DRESSED_CHARGED_LEPTON_TWO_POINT_OPERATOR",
+    "particle_spectrum_rebuilt": false
+  },
+  "classification": "CURRENT_C2_RESET_HADAMARD_STATE_CLASS_TRANSPORT",
+  "finite_reset_transport_witness": {
+    "child_conjugation_involution_residual": 0.0,
+    "child_eigenvalues": [
+      0.0,
+      0.0,
+      0.9999999999999998,
+      0.9999999999999998
+    ],
+    "child_purity_residual": 2.220446049250313e-16,
+    "child_self_dual_CAR_residual": 2.220446049250313e-16,
+    "covariance_child_imag": [
+      [
+        0.0,
+        -0.4999999999999999,
+        0.0,
+        0.0
+      ],
+      [
+        0.4999999999999999,
+        0.0,
+        0.0,
+        0.0
+      ],
+      [
+        0.0,
+        0.0,
+        0.0,
+        -0.4999999999999999
+      ],
+      [
+        0.0,
+        0.0,
+        0.4999999999999999,
+        0.0
+      ]
+    ],
+    "covariance_child_real": [
+      [
+        0.4999999999999999,
+        0.0,
+        0.0,
+        0.0
+      ],
+      [
+        0.0,
+        0.4999999999999999,
+        0.0,
+        0.0
+      ],
+      [
+        0.0,
+        0.0,
+        0.4999999999999999,
+        0.0
+      ],
+      [
+        0.0,
+        0.0,
+        0.0,
+        0.4999999999999999
+      ]
+    ],
+    "event_Hermitian_residual": 0.0,
+    "event_conjugation_involution_residual": 0.0,
+    "event_eigenvalues": [
+      0.0,
+      0.0,
+      1.0,
+      1.0
+    ],
+    "event_order_margin": 0.0,
+    "event_purity_residual": 0.0,
+    "event_self_dual_CAR_residual": 0.0,
+    "inverse_transport_residual": 3.3306690738754696e-16,
+    "positivity_and_order_preserved": true,
+    "purity_preserved": true,
+    "reset_conjugation_intertwining_residual": 0.0,
+    "self_dual_CAR_constraint_preserved": true,
+    "transport_is_bijective": true
+  },
+  "inputs": {
+    "artifacts/action_extension/BHSM_ACTION_AE2_GLOBAL_SPIN_RESET_ACTION.json": "4C756145A9E303F6E4F7F9536CF5639957D010C1A97AF6BE9299830C549B82DC",
+    "artifacts/action_extension/BHSM_AE31_C2_CHIRAL_GREEN_DOMAIN.json": "C7FA0821A2A21A536D119CC84986FAD8D6AD65E2517953F6120F91CA76760131",
+    "artifacts/action_extension/BHSM_AE31_C2_FERMION_HADAMARD_STATE_CLASS.json": "71B0BE4F25C4D8473DEB10C105588A63B8BD4E040F82F7A5D653C6865D71C3C4",
+    "artifacts/action_extension/BHSM_AE3_C2_HOPF_SEMIGROUP_TRANSPORT.json": "890FD3AD9CF06F8753C463B332F529181C9A1EAA3244836C58F5B59FF3ED3785",
+    "src/bhsm/interface/ae31_c2_reset_hadamard_transport.py": "1AEF0FE39157C444CED824733D1E608E75564F8A7CBEAF5F75BCCF23B78CF654"
+  },
+  "reset_hadamard_transport_theorem": {
+    "Bogoliubov_particle_number_derived": false,
+    "CAR_automorphism": "alpha_R(A(F))=A(U_R*F)",
+    "Dirac_principal_symbol_intertwining": "U_R*gamma_event(xi)*U_R_dagger=gamma_child(Lambda_R_pushforward(xi))",
+    "Hadamard_wavefront_and_polarization_preserved": true,
+    "action_version": "BHSM-AE-3.1.0",
+    "commutes_with_family_mass_endomorphism": true,
+    "commutes_with_frozen_family_projectors": true,
+    "covariance_map": "C_child=U_R*C_event*U_R_dagger",
+    "family_factor_of_reset_lift": "I_F",
+    "future_null_covectors_map_to_future_null_covectors": true,
+    "inverse_map": "C_event=U_R_dagger*C_child*U_R",
+    "new_state_parameter_inserted": false,
+    "one_upstream_or_child_state_selected": false,
+    "positivity_and_0_le_C_le_I_preserved": true,
+    "purity_preserved": true,
+    "quasifree_state_class_transport_bijective": true,
+    "reset_action_version": "BHSM-AE-2.0.0",
+    "reset_lift_intertwines_CAR_conjugation": true,
+    "reset_lift_unitary": true,
+    "self_dual_CAR_constraint_preserved": true,
+    "statement_is_conditional_on_an_upstream_state": true,
+    "upstream_Hadamard_particle_state_reaches_child_enclosure": true,
+    "why_Hadamard_is_preserved": "U_R_IS_A_SMOOTH_SPIN_GAUGE_BUNDLE_ISOMORPHISM_AND_IS_THE_IDENTITY_IN_THE_COMMON_RESET_FRAME_UP_TO_GLOBAL_SPIN_SIGN_AND_GAUGE_FRAME"
+  },
+  "validation": {
+    "AE2_reset_lift_unitary_and_maximal_isotropic": true,
+    "Hadamard_and_family_identity_transport_derived": true,
+    "finite_covariance_transport_passes": true,
+    "frozen_family_operator_already_attached": true,
+    "no_new_parameter_or_spectrum_rebuild": true,
+    "no_pole_particle_production_or_g_minus_2_overclaim": true,
+    "same_AE31_state_class": true,
+    "same_reset_glued_chiral_domain": true,
+    "transport_not_misreported_as_state_selection": true
+  },
+  "validation_passed": true
+}

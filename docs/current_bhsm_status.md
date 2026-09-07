@@ -163,6 +163,279 @@ current-C2 derivation.
 - `CURRENT_C2_DYNAMICAL_HS_KERNEL_DERIVED = FALSE`
 - `CURRENT_C2_BROKEN_LR_SADDLE_DERIVED = FALSE`
 
+The family/mode harmonic-energy proposal has also been tested directly,
+without fitting masses. Pulling the frozen Berger scalar eigenvalues back to
+the three family slots produces noncentral spectral stiffness operators with
+dimensionless values `0,35,99` (charged leptons), `0,48,120` (up), and
+`0,48,80` (down). This confirms that a noncentral observable can originate in
+harmonic space rather than as an arbitrary family matrix.
+
+It does not yet produce the physical mass hierarchy. All slots share one
+current-C2 radius, and every positive monotone scalar harmonic energy orders
+the stored `(heavy,middle,light)` roles as `heavy<middle<light`. The heavy
+`(0,0)` displacement is zero, so ratios relative to it are undefined. The
+current action also lacks the normalized manifestation isometry into an energy
+domain, a spinor lift, a parent-relative energy or fermion-pole functional,
+and an action-selected state-dependent localization scale. The old
+exponential overlap screen is not reused.
+
+- `FAMILY_NONCENTRAL_SPECTRAL_STIFFNESS_DERIVED = TRUE`
+- `FAMILY_MASS_HIERARCHY_DERIVED = FALSE`
+
+The older mass ontology has now been restored to the active audit. v14.54
+defines physical mass through a stable rest-frame composite-minus-matched-
+parent charge or Floquet quasi-energy, with `E_rel=m c^2`. That definition was
+never invalidated, but it was never evaluated on the current C2 history.
+Likewise, v15.56's `I3` result is only a theorem about the local
+fiber-invariant Higgs overlap; it does not prove equal total relative energies
+for distinct complete mode configurations.
+
+The historical Hopf-base construction is also recovered. It uses the
+decreasing response semigroup `exp[-L_a/(4 pi)]`, not positive local gradient
+energy, and reproduces the no-lepton-input charged weights
+`1, 0.0600744709..., 0.0002972911...`. Its dimensionful triplet remains a
+conditional historical candidate because its response time, profile radius,
+trace-normalized source, Planck-to-EW lift, broken-sector insertion, current-C2
+pole, and equivalence to the v14.54 relative charge are not jointly AE3-owned.
+A numeric radius alone cannot replace the missing matched parent and covariant
+charge construction.
+
+- `V14_54_MASS_ONTOLOGY_RECOVERED = TRUE`
+- `HISTORICAL_HOPF_SEMIGROUP_CANDIDATE_RECOVERED = TRUE`
+- `CURRENT_C2_PARENT_RELATIVE_MASS_EVALUATED = FALSE`
+
+The recovered overlap rule has now been transported one step further. The
+round current-C2 birth diagnostic gives `K_l=diag(0,35,99)`,
+`K_u=diag(0,48,120)`, and `K_d=diag(0,48,80)`. Functional calculus with the
+retained BHSM width `S=1/(4 pi)` produces positive, self-adjoint contraction
+operators that satisfy the semigroup law and recover the stored ordering.
+
+More importantly, the current C2 carrier and frozen internal Berger geometry
+are different tensor factors. The round carrier therefore does not erase the
+frozen internal squashing `a=1.157054135733433`. The unchanged internal
+operators reproduce the existing BHSM bare ratio assets in all three charged
+sectors and commute exactly with the reset lift, enclosure restriction, and
+smooth localization carrier. No spectrum is rebuilt and no observed mass is
+used. The frozen hierarchy operator is now attached over current C2; the
+dimensionful triplet is not promoted.
+
+This is a current-C2 finite-family response-shape theorem, not yet a mass
+theorem. The first variational failure is now localized before the absolute
+scale: `BHSM-AE-3.0.0` contains no intrinsic M4 term coupling this operator to
+`bar(L_L) H e_R`. The historical v11.3 term cannot be silently relabeled AE3.
+The trace-normalized source/profile lift, nonzero broken saddle, fermion poles,
+and matched-parent charge comparison remain downstream. Formally setting the
+currently evaluated HS probe to zero gives a zero mass matrix, but not a
+physical massless-pole theorem.
+
+- `CURRENT_C2_FINITE_FAMILY_HOPF_RESPONSE_SHAPE_DERIVED = TRUE`
+- `FROZEN_INTERNAL_HOPF_RESPONSE_OPERATOR_ATTACHED_TO_CURRENT_C2 = TRUE`
+- `FROZEN_MASS_RATIO_SCREENS_TRANSPORTED_UNCHANGED = TRUE`
+- `CHARGED_LEPTON_UP_DOWN_RESPONSE_ORDERINGS_DERIVED = TRUE`
+- `CURRENT_AE3_YUKAWA_OPERATOR_DERIVED = FALSE`
+- `CURRENT_AE3_FAMILY_MASS_HIERARCHY_DERIVED = FALSE`
+
+The charged-lepton sector now advances into a versioned action successor.
+`BHSM-AE-3.1.0` retains the complete AE3.0 carrier/domain action and composes
+the existing v11.3 intrinsic M4 lepton--Higgs block with the attached frozen
+internal operator. Higgs and fermion fields remain on M4; no field moves
+stratum, no independent `Y_e` survives, and no separate post-breaking mass
+term is added. Up/down terms are not inferred from the lepton term.
+
+The action variation derives
+
+```text
+Y_l = (16 sqrt(2 pi)/3969) T_l,
+M_l = (v_BH/sqrt(2)) Y_l.
+```
+
+With the inherited single universal energy calibration, the conditional tree
+eigenvalues are `1.758930614523592`, `0.10566682607467498`, and
+`0.0005229143548875549` GeV in the frozen heavy, middle, and light slots. No
+lepton mass or measured Higgs VEV is used. The absolute unit remains
+conditional, so these are action-composed tree candidates rather than
+current-C2 physical pole masses.
+
+At every regular point inside the smooth AE3 enclosure, the induced Lorentzian
+metric gives the local Dirac symbol `gamma^a e_a^mu p_mu-M_l`. It yields three
+distinct continuous-frequency local mass shells and simple positive/negative
+energy poles with the canonical tree residue; no wavefunction factor is
+fitted. This conditionally closes the charged-lepton local enclosure
+identification bridge.
+
+The global-domain join has now advanced. AE2's owner-selected reset lift
+supersedes the old independent parent/child Cayley phase family for the current
+action version, and AE3's enclosure is a smooth internal material level set,
+not an extra fermion wall. The bounded Hermitian mass endomorphism preserves
+that domain and commutes with reset. Thus the same-domain first-order block
+`[[D_L,M_l],[M_l^dagger,D_R]]` is assembled.
+
+Every exact current-C2 member through the certified 1,222-segment finite cover
+has closed-FLRW geometry `I_tau x S3`, positive proper duration, and strictly
+positive `R4`. It is globally hyperbolic member by member, so unique advanced
+and retarded Green operators exist for compact sources. No explicit kernel is
+yet evaluated, and no physical family member, maximal continuation, Feynman
+state, or asymptotic stationarity is selected. Consequently a global dressed
+frequency pole is still open. The radial/proper-history resolvent retains its
+native variable `z`; it is not promoted to physical `p^2`.
+
+- `AE31_CHARGED_LEPTON_M4_SEMIGROUP_COUPLING_ACTION_OWNED = TRUE`
+- `AE31_CONDITIONAL_TREE_CHARGED_LEPTON_MASS_OPERATOR_DERIVED = TRUE`
+- `CURRENT_C2_LOCAL_TANGENT_FRAME_TREE_POLES_DERIVED = TRUE`
+- `LOCAL_ENCLOSURE_PARTICLE_IDENTIFICATION_BRIDGE_CLOSED_CONDITIONALLY = TRUE`
+- `CURRENT_C2_FIRST_ORDER_CHARGED_LEPTON_LR_OPERATOR_ASSEMBLED = TRUE`
+- `FINITE_CORE_CURRENT_C2_GLOBAL_HYPERBOLICITY_DERIVED_FAMILYWISE = TRUE`
+- `FINITE_CORE_ADVANCED_RETARDED_GREEN_EXISTENCE_DERIVED = TRUE`
+- `CURRENT_C2_PHYSICAL_CHARGED_LEPTON_POLES_DERIVED = FALSE`
+- `UP_DOWN_ACTION_PREFACTORS_DERIVED = FALSE`
+
+The fermion state-class question has now been separated into existence and
+selection. On the open development of every certified finite-core globally
+hyperbolic C2 member, the assembled AE3.1 Dirac operator has a nonempty
+quasifree Hadamard state class. Each chosen member defines a state-dependent
+time-ordered Feynman two-point distribution, and all such two-point functions
+share the universal local Hadamard singularity class.
+
+This does not select a physical state. Two Hadamard two-point functions can
+differ by a smooth bisolution. AE3.1 owns the causal evolution and CAR
+pairing, but not the smoothing part of a Cauchy covariance `0<=C<=I` or an
+equivalent complex structure. On the self-dual CAR space it must also obey
+`C+Gamma C Gamma=I`, with `C^2=C` in the pure case. The covariance must
+intertwine the AE2 reset as
+`C_child=U_R C_event U_R^dagger`. The reset lift, forward time orientation,
+Hadamard condition, instantaneous diagonalization, adiabatic prescription,
+KMS construction, Euclidean cap, in/out asymptotics, and proper-history `z`
+resolvent have all been audited; none is an action-owned state selector.
+
+- `FINITE_CORE_CURRENT_C2_HADAMARD_STATE_CLASS_NONEMPTY_FAMILYWISE = TRUE`
+- `STATE_DEPENDENT_FEYNMAN_TWO_POINT_DISTRIBUTION_EXISTS_FAMILYWISE = TRUE`
+- `LOCAL_HADAMARD_SINGULARITY_CLASS_DERIVED = TRUE`
+- `CURRENT_C2_ACTION_SELECTED_HADAMARD_STATE_DERIVED = FALSE`
+- `CURRENT_C2_ACTION_OWNED_FEYNMAN_TWO_POINT_FUNCTION_DERIVED = FALSE`
+- `CURRENT_C2_DRESSED_CHARGED_LEPTON_POLES_DERIVED = FALSE`
+- `CURRENT_C2_PHYSICAL_MUON_POLE_DERIVED = FALSE`
+
+The event-to-child state transport is now closed independently of state
+selection. For every admissible upstream self-dual CAR covariance,
+`C_child=U_R C_event U_R^dagger` preserves positivity, the CAR reality
+constraint, purity, and the Hadamard wavefront polarization. The inverse is
+conjugation by `U_R^dagger`, so the reset gives a bijection of state classes.
+Because `U_R` acts only on spin--gauge data, the frozen family projectors and
+AE3.1 mass endomorphism pass unchanged into the current-C2 enclosure.
+
+This proves that an upstream family-labelled Hadamard particle state reaches
+the child enclosure; it does not choose that upstream state or derive a
+Bogoliubov particle number.
+
+- `AE2_RESET_HADAMARD_STATE_CLASS_TRANSPORT_DERIVED = TRUE`
+- `UPSTREAM_HADAMARD_PARTICLE_STATE_CARRIED_INTO_CURRENT_C2_ENCLOSURE = TRUE`
+- `RESET_TRANSPORT_PRESERVES_FROZEN_FAMILY_IDENTITY = TRUE`
+- `RESET_SELECTS_UNIQUE_PHYSICAL_FERMION_STATE = FALSE`
+
+The AE3.1 intrinsic Higgs action now supplies the current-C2 broken neutral
+connection Hessian. In the unfitted connection coordinates
+`(W3_hat=g2 W3,B_hat=g1 B)`, it is
+
+```text
+H_neutral=(v_BH^2/4) [[1,-1],[-1,1]].
+```
+
+It has exactly one null vector `(1,1)/sqrt(2)`, selected by
+`Q_em=T3+Y_BH`, and a positive orthogonal broken curvature. The already
+attached same-domain fields and sources rotate together to structural pairs
+`(A_Q,Z_H)` and `(J3+JY,J3-JY)`. No gauge coupling, residue, alpha, or mixing
+angle is inserted.
+
+This does not promote a physical photon. The current gauge/ghost Hessian's
+temporal/spatial Lorentzian residue mismatch still prevents canonical field
+normalization, a photon pole, and its Ward identity.
+
+- `CURRENT_C2_NEUTRAL_CONNECTION_HESSIAN_DERIVED = TRUE`
+- `CURRENT_C2_UNIQUE_QEM_CONNECTION_NULL_DIRECTION_DERIVED = TRUE`
+- `CURRENT_C2_STRUCTURAL_JQ_CURRENT_DERIVED = TRUE`
+- `CURRENT_C2_PHYSICAL_PHOTON_DERIVED = FALSE`
+
+The previously derived coefficient-free first-order Einstein--Cartan
+completion has now been formulated and tested as
+`BHSM-AE-3.2.0-CANDIDATE` on current C2. It would replace the Levi-Civita
+Einstein--Dirac representative rather than add a second Einstein term.
+Eliminating algebraic contorsion locally gives the
+attractive local scalar LR kernel
+
+```text
+G_EC(sigma) = (3/4)/(K_G5 [1-4 sigma^2]).
+```
+
+The exact `3/4` Clifford/Fierz coefficient is inherited without a new
+continuous parameter. The kernel is positive and reflection-even on the
+regular current-C2 interior and attaches to all four LR channels with the
+retained `9,9,3,3` three-family pairing multiplicities. Its family action is
+still `I3`.
+
+The exact endpoint test rejects global promotion. The retained round-join
+degree-one zero mode is `L2`, but its EC quartic density behaves as
+`(3pi/512) chi^(-2)+O(1)` at the collapse endpoint. The cutoff form diverges
+like `1/epsilon`; the mode is not in the reduced EC form domain and the
+contorsion infimum is not bounded below on that source. No counterterm,
+boundary condition, or mode deletion is inserted.
+
+The uneliminated first-order test closes the remaining ambiguity. With the
+actual radial measure, `A=K_G5 J Lambda A_Clifford=O(chi^6)` and the retained
+spin source is `S=J u0^2 S_Clifford=O(chi^2)`. The unique algebraic stationary
+solution is therefore `K_star=-A^-1 S=O(chi^-4)`. At stationarity the
+quadratic, linear, and total densities are respectively `+Q/2`, `-Q`, and
+`-Q/2`, all of order `chi^-2`; the divergences do not cancel. A finite choice
+such as `K=0` is nonstationary, and algebraic contorsion has no derivative
+boundary form that could repair the bulk divergence. The retained zero mode
+is therefore not in the global stationary EC action domain. This is a genuine
+parent-action route obstruction, not only a failure of Schur substitution.
+
+This does not contradict the v15.75 regular-side event-shell crossing. That
+calculation used a different event-control `epsilon` and forced a finite
+crossing before its singular shell. The present limit is the radial
+current-C2 collapse endpoint, for which no same-action gap crossing has been
+derived. V15.82's supersession of the old full `Lambda L_eta` Einstein weight
+is also preserved; only the exact v15.76 Clifford coefficient is retained.
+
+The exact Hubbard--Stratonovich transform supplies an algebraic auxiliary
+quadratic block and unit unnormalized LR vertex, but no derivative kinetic
+term. Therefore no canonical composite Yukawa residue, physical Higgs mixing
+direction, quark mass operator, or nontrivial CKM matrix is promoted. The
+historical charged-boundary `beta,kappa` values belong to a different family
+bridge variation and are not relabelled as quark Yukawa prefactors.
+
+- `BHSM_AE32_FIRST_ORDER_EINSTEIN_CARTAN_COMPLETION_FORMULATED = TRUE`
+- `BHSM_AE32_FIRST_ORDER_EINSTEIN_CARTAN_COMPLETION_GLOBALLY_PROMOTED = FALSE`
+- `CURRENT_C2_LOCAL_ALGEBRAIC_LR_KERNEL_DERIVED = TRUE`
+- `RETAINED_ZERO_MODE_EC_ENDPOINT_DIVERGENCE_DERIVED = TRUE`
+- `CURRENT_C2_EC_ELIMINATED_GLOBAL_ACTION_FINITE = FALSE`
+- `CURRENT_C2_UNELIMINATED_STATIONARY_EC_ACTION_FINITE = FALSE`
+- `RETAINED_AE3_ZERO_MODE_IN_GLOBAL_EC_STATIONARY_ACTION_DOMAIN = FALSE`
+- `EC_ENDPOINT_OBSTRUCTION_IS_ELIMINATION_ONLY = FALSE`
+- `CURRENT_C2_PROPAGATING_HS_KINETIC_KERNEL_DERIVED = FALSE`
+- `UP_DOWN_ACTION_YUKAWA_PREFACTORS_DERIVED = FALSE`
+
+The same-domain weak charged-current piece is now explicit. The retained
+`SU(2)_L` raising/lowering generators attach to the current-C2 lowest-Weyl
+coexact coordinate form as an adjoint `J_plus,J_minus` source/contact pair.
+The current acts as `I3` on family, while the transported bare up/down response
+operators are diagonal in the same frozen family basis. Their commutator is
+therefore zero and the canonical response-basis mixing readout is `I3` with
+zero Jarlskog invariant.
+
+This is a no-mixing theorem for the present family-central action, not a claim
+that the physical CKM matrix is identity. Nontrivial CKM requires an
+action-owned family-noncentral dressing of the common left-handed up/down
+embeddings or an equivalent mixed second variation. The historical middle-up
+`Z_virt=1/2` conditional dressing is not promoted, and the absolute up/down
+Yukawa prefactors remain open.
+
+- `CURRENT_C2_COEXACT_SU2L_CHARGED_SOURCE_PAIR_DERIVED = TRUE`
+- `CURRENT_C2_SU2L_RAISING_CURRENT_FAMILY_KERNEL_IS_I3 = TRUE`
+- `CURRENT_C2_CANONICAL_QUARK_RESPONSE_BASIS_CKM_IS_I3 = TRUE`
+- `PHYSICAL_CKM_MATRIX_DERIVED = FALSE`
+- `MIDDLE_UP_VIRTUAL_DRESSING_PROMOTED = FALSE`
+
 The selected coefficient-free two-sided parent Calderón calculation is also
 now closed. The exact reciprocal reflection `chi -> pi/2-chi` reverses
 `sigma`, preserves the round radius and `Lambda=1-4 sigma^2`, and transports
@@ -201,7 +474,7 @@ remain reusable, but the background/domain/source mismatch cannot be repaired
 by choosing a coefficient.
 
 Exact next object:
-`ONE_AE3_FULL_FIELD_C2_ACTION_ORACLE_WITH_GEOMETRY_GAUGE_GHOST_FERMION_HS_AND_RESPONSE_MULTIPLIER_BLOCKS;_THEN_EVALUATE_THE_EVENT_CANONICAL_FLUX_AND_COMPLETE_NOETHER_HAMILTONIAN_BALANCE_WITHOUT_ADDING_A_CONTACT_COEFFICIENT`.
+`PHYSICAL_CURRENT_C2_HISTORY_MEMBER_OR_MAXIMAL_CONTINUATION_PLUS_FEYNMAN_OR_ASYMPTOTIC_STATE_CLASS_FOR_THE_ASSEMBLED_CHIRAL_OPERATOR_AND_ITS_DRESSED_POLE_RESIDUES`.
 
 Evidence: [`AE3 theorem`](../theory/ae3_reciprocal_join_localization_enclosure.md)
 and [`AE3 machine certificate`](../artifacts/action_extension/BHSM_ACTION_AE3_RECIPROCAL_JOIN_LOCALIZATION.json),
@@ -216,6 +489,23 @@ and [`machine certificate`](../artifacts/action_extension/BHSM_AE3_FAMILY_NONCEN
 The current-C2 reduced mixed variation and HS-kernel screen are recorded in
 the [`HS/fermion theorem`](../theory/ae3_c2_hs_fermion_mixed_variation.md) and
 [`machine certificate`](../artifacts/action_extension/BHSM_AE3_C2_HS_FERMION_MIXED_VARIATION.json).
+The harmonic shortcut screen and recovered mass ontology are recorded in the
+[`harmonic pullback audit`](../theory/ae3_family_harmonic_energy_pullback_audit.md),
+[`recovery audit`](../theory/ae3_family_mass_ontology_recovery_audit.md), and
+their machine certificates
+[`one`](../artifacts/action_extension/BHSM_AE3_FAMILY_HARMONIC_ENERGY_PULLBACK_AUDIT.json)
+and
+[`two`](../artifacts/action_extension/BHSM_AE3_FAMILY_MASS_ONTOLOGY_RECOVERY_AUDIT.json).
+The resulting current-C2 semigroup transport is recorded in the
+[`transport theorem`](../theory/ae3_c2_hopf_semigroup_transport.md) and
+[`machine certificate`](../artifacts/action_extension/BHSM_AE3_C2_HOPF_SEMIGROUP_TRANSPORT.json).
+The versioned charged-lepton action composition is recorded in the
+[`AE3.1 theorem`](../theory/ae31_c2_intrinsic_m4_lepton_action.md) and
+[`machine certificate`](../artifacts/action_extension/BHSM_AE31_C2_INTRINSIC_M4_LEPTON_ACTION.json).
+Its same-domain chiral assembly and finite-core causal Green theorem are
+recorded in the
+[`Green-domain theorem`](../theory/ae31_c2_chiral_green_domain.md) and
+[`machine certificate`](../artifacts/action_extension/BHSM_AE31_C2_CHIRAL_GREEN_DOMAIN.json).
 The transverse hypercharge result is recorded in the
 [`current-C2 source theorem`](../theory/ae3_c2_coexact_hypercharge_source_jet.md)
 and [`source certificate`](../artifacts/action_extension/BHSM_AE3_C2_COEXACT_HYPERCHARGE_SOURCE_JET.json).

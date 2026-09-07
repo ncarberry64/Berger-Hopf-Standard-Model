@@ -60,6 +60,13 @@ def test_decision_surface_has_two_noncentral_structural_routes() -> None:
 
 def test_family_modes_remain_particle_candidates_but_hierarchy_is_open() -> None:
     ledger = family_hierarchy_puzzle_ledger()
+    candidate = ledger["decision_surface"]["newly_tested_route_A_candidate"]
+    semigroup = ledger["decision_surface"]["recovered_historical_semigroup_candidate"]
+    assert candidate["family_noncentral_spectral_seed"] is True
+    assert candidate["physical_mass_operator"] is False
+    assert semigroup["three_distinct_decreasing_weights"] is True
+    assert semigroup["current_AE3_action_owned"] is False
+    assert "Berger_spectral_stiffness_pullback" in "_".join(ledger["fitted_pieces"])
     assert ledger["family_modes_can_manifest_as_SM_particles"] is True
     assert ledger["family_mass_hierarchy_derived"] is False
     assert ledger["CKM_PMNS_derived"] is False

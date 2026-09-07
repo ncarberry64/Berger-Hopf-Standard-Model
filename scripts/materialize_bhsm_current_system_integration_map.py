@@ -128,6 +128,18 @@ PATHS = {
     "augmented_fixed_descriptor_endpoint": "artifacts/flagship_integration/BHSM_N12_GATE7_AUGMENTED_FIXED_DESCRIPTOR_NEWTON_ENDPOINT_CANDIDATE.json",
     "augmented_fixed_descriptor_replay": "artifacts/flagship_integration/BHSM_N12_GATE7_AUGMENTED_FIXED_DESCRIPTOR_NEWTON_MIDPOINT_REPLAY.json",
     "augmented_minimum_contraction": "artifacts/flagship_integration/BHSM_N12_GATE7_AUGMENTED_FIXED_DESCRIPTOR_MINIMUM_CONTRACTION_ADJUDICATION.json",
+    "outward_same_center_74d": "artifacts/flagship_integration/BHSM_N12_GATE7_ACCEPTED_REPLAY_CENTER_OUTWARD_74D_CONTRACTION.json",
+    "action_block_screen": "artifacts/flagship_integration/BHSM_N12_GATE7_ACCEPTED_REPLAY_ACTION_BLOCK_SCREEN.json",
+    "green_image_partition": "artifacts/action_extension/BHSM_AE4_CURRENT_C2_GREEN_IMAGE_PARTITION_RECONCILIATION.json",
+    "green_directional_seed": "artifacts/flagship_integration/BHSM_N12_GATE7_CURRENT_GREEN_DIRECTIONAL_CURVATURE_SEED.json",
+    "green_mixed_transverse_seed": "artifacts/flagship_integration/BHSM_N12_GATE7_CURRENT_GREEN_MIXED_TRANSVERSE_SEED.json",
+    "green_mixed_bilinear_audit": "artifacts/flagship_integration/BHSM_N12_GATE7_CURRENT_GREEN_MIXED_BILINEAR_EQUIVALENCE_AUDIT.json",
+    "green_mixed_all_endpoint_centers": "artifacts/flagship_integration/BHSM_N12_GATE7_CURRENT_GREEN_MIXED_TRANSVERSE_ALL_ENDPOINTS.json",
+    "green_mixed_outward_reconciliation": "artifacts/flagship_integration/BHSM_N12_GATE7_CURRENT_GREEN_MIXED_BILINEAR_OUTWARD_RECONCILIATION.json",
+    "gate7_compute_justification": "artifacts/current_semantics/BHSM_COMPUTE_JUSTIFICATION_AUDIT.json",
+    "gate7_compute_budget_ledger": "artifacts/current_semantics/BHSM_COMPUTE_BUDGET_LEDGER.json",
+    "green_transverse_quadratic_seed": "artifacts/flagship_integration/BHSM_N12_GATE7_CURRENT_GREEN_TRANSVERSE_QUADRATIC_SEED.json",
+    "ae4_nonlinear_carrier_authority": "artifacts/action_extension/BHSM_AE4_CURRENT_C2_NONLINEAR_CARRIER_AUTHORITY_ADJUDICATION.json",
     "final_force_kkt_verdict": "artifacts/flagship_integration/BHSM_N12_GATE7_FINAL_EXACT_CENTER_FORCE_KKT_HESSIAN_VERDICT.json",
     "causal_y_z1_z2_margin_budget": "artifacts/flagship_integration/BHSM_N12_GATE7_CAUSAL_Y_Z1_Z2_MARGIN_BUDGET_AUDIT.json",
     "recentered_cone_spectrum": "artifacts/flagship_integration/BHSM_N12_GATE7_RECENTERED_CONE_BOUNDARY_CLUSTER_SPECTRUM.json",
@@ -154,6 +166,7 @@ PATHS = {
     "definition": "docs/BHSM_1_0_DEFINITION_OF_DONE.md",
     "physical_completeness": "artifacts/BHSM_PHYSICAL_COMPLETENESS_MATRIX.json",
     "full_field_attachment": "artifacts/BHSM_CURRENT_FULL_FIELD_ACTION_ATTACHMENT_AUDIT.json",
+    "encapsulation_scope": "artifacts/current_semantics/BHSM_ENCAPSULATION_REALIZATION_ONTOLOGY.json",
 }
 
 
@@ -286,6 +299,26 @@ def build_payload() -> dict[str, Any]:
     augmented_endpoint = records["augmented_fixed_descriptor_endpoint"]
     augmented_replay = records["augmented_fixed_descriptor_replay"]
     augmented_minimum_contraction = records["augmented_minimum_contraction"]
+    outward_same_center_74d = records["outward_same_center_74d"]
+    action_block_screen = records["action_block_screen"]
+    green_image_partition = records["green_image_partition"]
+    green_directional_seed = records["green_directional_seed"]
+    green_mixed_transverse_seed = records["green_mixed_transverse_seed"]
+    green_mixed_bilinear_audit = records["green_mixed_bilinear_audit"]
+    green_mixed_all_endpoint_centers = records[
+        "green_mixed_all_endpoint_centers"
+    ]
+    green_mixed_outward_reconciliation = records[
+        "green_mixed_outward_reconciliation"
+    ]
+    gate7_compute_justification = records["gate7_compute_justification"]
+    gate7_compute_budget_ledger = records["gate7_compute_budget_ledger"]
+    green_transverse_quadratic_seed = records[
+        "green_transverse_quadratic_seed"
+    ]
+    ae4_nonlinear_carrier_authority = records[
+        "ae4_nonlinear_carrier_authority"
+    ]
     causal_y_z1_z2_margin_budget = records["causal_y_z1_z2_margin_budget"]
     compact_reset_propagation = records["compact_reset_propagation"]
     compact_reset_open_subball = records["compact_reset_open_subball"]
@@ -299,6 +332,7 @@ def build_payload() -> dict[str, Any]:
     ]
     domain_reconciliation = records["dop_domain"]
     one_seam = records["one_seam"]
+    encapsulation_scope = records["encapsulation_scope"]
 
     subsystems = [
         _subsystem(
@@ -374,12 +408,12 @@ def build_payload() -> dict[str, Any]:
             "GATE7_HEAT_ZETA_CHAIN",
             "AE2 joint event/child seam with internal Mf, M_C2, U_R, W_phys and contact blocks",
             "AE2 two-sided transmission plus finite endpoint/Friedrichs alternatives; only external birth trace zero",
-            ["ae2_domain", "source_ontology", "one_seam", "heat_bound", "force_functional", "dop_response", "nhim_tail", "capture_tube", "compact_reset_domain", "compact_reset_propagation", "compact_reset_open_subball", "open_family_stop_reduction", "global_connection", "augmented_fixed_descriptor_jacobians", "augmented_fixed_descriptor_predictor", "augmented_fixed_descriptor_endpoint", "augmented_fixed_descriptor_replay", "augmented_minimum_contraction"],
-            ["completion_dag", "gate_ledger", "augmented_minimum_contraction"],
-            "ACTIVE_NOT_CLOSED_SAME_CENTER_INTERVAL_CONTRACTION", "current AE2 Gate-7 DAG",
+            ["ae2_domain", "source_ontology", "one_seam", "heat_bound", "force_functional", "dop_response", "nhim_tail", "capture_tube", "compact_reset_domain", "compact_reset_propagation", "compact_reset_open_subball", "open_family_stop_reduction", "global_connection", "augmented_fixed_descriptor_jacobians", "augmented_fixed_descriptor_predictor", "augmented_fixed_descriptor_endpoint", "augmented_fixed_descriptor_replay", "augmented_minimum_contraction", "outward_same_center_74d"],
+            ["completion_dag", "gate_ledger", "outward_same_center_74d", "action_block_screen", "green_image_partition", "green_directional_seed", "green_mixed_transverse_seed", "green_mixed_bilinear_audit", "green_mixed_all_endpoint_centers", "green_mixed_outward_reconciliation", "gate7_compute_justification", "gate7_compute_budget_ledger", "green_transverse_quadratic_seed", "ae4_nonlinear_carrier_authority"],
+            "ACTIVE_NOT_CLOSED_SAME_CENTER_GREEN_IMAGE_LONGITUDINAL_TRANSVERSE_RADII_SCREEN", "current AE2 Gate-7 DAG plus AE4 hindsight adjudication",
             ["GATE7_KKT_HESSIAN", "GENERATION_FAMILY_PROJECTORS"],
             ["strict gap, exact power tail, infinite nonrealized angular tail, and chord 3 are not current dependencies"],
-            ["G7_SAME_CENTER_INTERVAL_CONTRACTION"],
+            ["G7_SAME_CENTER_GREEN_IMAGE_LONGITUDINAL_TRANSVERSE_RADII_SCREEN"],
         ),
         _subsystem(
             "GATE7_KKT_HESSIAN",
@@ -433,6 +467,16 @@ def build_payload() -> dict[str, Any]:
             ["CURRENT_AE2_FULL_GAUGE_FERMION_HS_ACTION_WITH_HISTORY_SEAMS_S1_TO_S4_AND_ACTION_SELECTED_SADDLE"],
         ),
         _subsystem(
+            "ENVIRONMENT_CONDITIONED_REALIZATION_SCOPE",
+            "one universal action with mode scale environment boundary history and trajectory dependent realizations",
+            "current 371-node Gate-7 center is one action-selected background realization, not a universal particle trajectory",
+            ["encapsulation_scope", "generation", "ae2_action"], ["encapsulation_scope"],
+            "ONTOLOGY_AND_GATE7_SCOPE_FAIL_CLOSED", "current encapsulation realization ontology",
+            ["GENERATION_FAMILY_PROJECTORS", "CURRENT_FULL_FIELD_ACTION_ATTACHMENT", "RELEASE_DEFINITION_OF_DONE"],
+            ["particle/family/representation/projector assets are reused without spectrum rebuild"],
+            ["PARTICLE_SPECIFIC_ENVIRONMENT_MODE_SCALE_BOUNDARY_AND_HISTORY_REALIZATIONS"],
+        ),
+        _subsystem(
             "RELEASE_DEFINITION_OF_DONE",
             "one canonical action/input ledger through physical observables, benchmark, prediction and package",
             "complete domains/operators/maps, deterministic clean reproduction and synchronized ledgers",
@@ -470,7 +514,10 @@ def build_payload() -> dict[str, Any]:
         {"id": "G7_CORRELATED_QUARTER_STEP_CENTER_STOP_WITNESS", "classification": "RESOLVED_BY_EXACT_TRANSVERSE_FIRST_STOP", "current_effect": "the final exact-center cone, response, causal Z2, strict preterminal selected-eigenvalue margins, canonical earliest stop, uniform negative flow derivative, terminal-cell uniqueness, and local differentiable first-stop time are certified"},
         {"id": "G7_DECORRELATED_BINARY64_CARRIER_COMPOSITION", "classification": "INVALIDATED_PROOF_ROUTE", "current_effect": "independent binary64 component balls produce wrapping blowup and are presentation data only; correlated outward Arb interval strings own global composition"},
         {"id": "G7_OLD_GAUSS12_RECENTERED_NUMERICAL_CONE_TRANSFER", "classification": "INVALIDATED_PROOF_ROUTE", "current_effect": "the old Gauss12 center differs from the exact-affine center by 120901.05128628464 candidate-cone radii; retain its theorem formulas but rebuild the numerical Z2/cone ball at the final center"},
-        {"id": "G7_SAME_CENTER_INTERVAL_CONTRACTION", "classification": "CURRENT_BLOCKER", "current_effect": "the retained-exact-field 741-node augmented derivative and 74D recurrence validate, and the one authorized nonlinear replay contracts the maximum from 1.3706618261694602e-7 to 1.2217621999603292e-7. The replay center is 2.7017477414680254e8 old exact-affine Z2 radii from that theorem's center, and the diagnostic old-preconditioner image is 5.218603289632254e5 old radii, so the old cone cannot transfer. The exact owner is outward same-center Y=||AF||, Z1=||I-A DF||, and causal Z2 in one 74D norm, with Y+Z1*r+Z2*r^2<r and Z1+2*Z2*r<1. No second numerical campaign or root-nonexistence claim is authorized"},
+        {"id": "G7_SAME_CENTER_INTERVAL_CONTRACTION", "classification": "OBSTRUCTED_PROOF_ROUTE", "current_effect": "the outward same-center operands have already been evaluated: Y_lower=6.15777040956615e-7, Z1_upper=0.4493650871145146, Z2_lower=3376470.2602736303, and the necessary scalar discriminant is -7.31661146299723. The single-radius theorem is obstructed by proof-coordinate amplification; this is neither root nonexistence nor physical instability, and no new center or trajectory is authorized"},
+        {"id": "G7_SAME_CENTER_FIELD_DESCRIPTOR_BLOCK_RADII_POLYNOMIAL", "classification": "OBSTRUCTED_PROOF_ROUTE", "current_effect": "the 384-bit outward field defect and existing field-input curvature witness give a necessary field discriminant of -7.316503560971616, so the coarse 73-field plus 1-descriptor block split cannot self-map; this still does not imply root nonexistence or physical instability"},
+        {"id": "G7_SAME_CENTER_COMPONENTWISE_OR_FINER_ACTION_BLOCK_RADII_SCREEN", "classification": "SUPERSEDED_BY_RECOVERED_BHSM_PARTITION", "current_effect": "Recall recovered the already-defined signed Green-image longitudinal axis and causal transverse complement, so no arbitrary componentwise partition search is needed"},
+        {"id": "G7_SAME_CENTER_GREEN_IMAGE_LONGITUDINAL_TRANSVERSE_RADII_SCREEN", "classification": "CURRENT_BLOCKER", "current_effect": "the correlated central Green scalar is certified on all 370 intervals and its 512-bit frozen causal composition has terminal norm upper 8.405509181456809. A separate 512-bit component-box replay preserves the same first midpoint loss at interval 355, proving that additional scalar precision does not recover the discarded normalization/transport dependency. The retained-action mixed Green/transverse graph now has outward representation authority at all 370 post-reset endpoints with a defined Green axis, while transverse quadratic response is finite on eight action-selected directions with maximum upper 283135.9524836309. Transport the mixed endpoint graph through the correlated midpoint and causal preconditioner, majorize the full transverse sphere, and complete the two-radius screen"},
         {"id": "DECORRELATED_SCALAR_SECOND_VARIATION", "classification": "INVALIDATED_PROOF_ROUTE", "current_effect": "finite first variation survives; all 8,692 scalar denominator cells route to signed/common-frame correlation"},
         {"id": "G7_HESSIAN_WARD_SCALAR", "classification": "DOWNSTREAM_ONLY", "current_effect": "follows the force/KKT root"},
         {"id": "CURRENT_FULL_FIELD_ACTION_ATTACHMENT", "classification": "DOWNSTREAM_ONLY", "current_effect": "the retained 98D N12 local oracle is geometry-only; AE2 owns the fermion reset domain but supplies no new propagating field, coefficient, or scale. Physical spectrum and observable promotion require one current same-action gauge/ghost, fermion, HS/scalar attachment with history/seam S1-S4, local momentum symbols, cross-sector blocks, and action-selected saddle data"},
@@ -484,7 +531,7 @@ def build_payload() -> dict[str, Any]:
         {"id": "EVENT_RESET_TO_INTERNAL_SOURCE", "class": "A", "priority": 0, "status": "RESOLVED_BY_EXISTING_CLOSED_SYSTEM_ONTOLOGY", "evidence": PATHS["source_ontology"]},
         {"id": "DOP853_TO_RESPONSE_VARIATION", "class": "C", "priority": 1, "status": "RESOLVED_FOR_EXACT_CENTER_AND_FINITE_DIRECT_FIRST_VARIATION", "evidence": PATHS["dop_second_variation"]},
         {"id": "RESPONSE_TO_CORRELATED_Y_Z1_Z2", "class": "C", "priority": 1, "status": "RESOLVED_FINAL_EXACT_CENTER_AND_CAUSAL_Z2_CERTIFIED", "evidence": PATHS["exact_affine_first_stop"]},
-        {"id": "FINITE_HISTORY_TO_HEAT_ZETA_COVECTOR", "class": "C", "priority": 0, "status": "CURRENT_BLOCKER_SAME_CENTER_OUTWARD_Y_Z1_Z2_INTERVAL_CONTRACTION", "evidence": PATHS["augmented_minimum_contraction"]},
+        {"id": "FINITE_HISTORY_TO_HEAT_ZETA_COVECTOR", "class": "C", "priority": 0, "status": "CURRENT_BLOCKER_SAME_CENTER_GREEN_IMAGE_LONGITUDINAL_TRANSVERSE_RADII_SCREEN", "evidence": PATHS["ae4_nonlinear_carrier_authority"]},
         {"id": "COMPACT_RESET_DOMAIN_TO_CAPTURE_OR_STOP", "class": "B", "priority": 0, "status": "RESOLVED_BY_CERTIFIED_TRANSVERSE_CANONICAL_EARLIEST_STOP_AND_RETAINED_OPEN_FAMILY_THEOREM", "evidence": PATHS["exact_affine_first_hit_interval"]},
         {"id": "FAMILY_PROJECTORS_TO_MASS_CKM", "class": "B", "priority": 2, "status": "MISSING_ACTION_SELECTED_SECTOR_RESPONSE_EIGENBASES", "evidence": PATHS["generation"]},
         {"id": "NEUTRAL_PROPAGATION_TO_PMNS", "class": "B", "priority": 2, "status": "MISSING_THREE_SLOT_PROJECTION_AND_CHARGED_NEUTRAL_EIGENBASES", "evidence": PATHS["pmns"]},
@@ -991,6 +1038,161 @@ def build_payload() -> dict[str, Any]:
                 "next_Gate7_numerical_campaign_authorized"
             ] is False
         ),
+        "same_center_scalar_contraction_is_evaluated_and_obstructed": (
+            outward_same_center_74d["validation_passed"] is True
+            and outward_same_center_74d["decision"][
+                "current_same_center_contraction_theorem_obstructed"
+            ]
+            and outward_same_center_74d["outward_operands"][
+                "necessary_discriminant_upper_1_minus_4_Ylower_Z2lower"
+            ]
+            < 0.0
+            and ae4_nonlinear_carrier_authority["validation_passed"] is True
+            and ae4_nonlinear_carrier_authority["claim_boundary"][
+                "G7_SAME_CENTER_ACTION_BLOCK_RADII_POLYNOMIAL_DERIVED"
+            ]
+            is False
+        ),
+        "same_center_coarse_field_descriptor_block_is_evaluated_and_obstructed": (
+            action_block_screen["validation_passed"] is True
+            and action_block_screen["necessary_field_block_test"][
+                "discriminant_upper"
+            ]
+            < 0.0
+            and ae4_nonlinear_carrier_authority["claim_boundary"][
+                "G7_FIELD_DESCRIPTOR_BLOCK_CONTRACTION_ROUTE_OBSTRUCTED"
+            ]
+        ),
+        "BHSM_native_green_image_partition_is_recovered_on_current_center": (
+            green_image_partition["validation_passed"] is True
+            and green_image_partition["claim_boundary"][
+                "G7_BHSM_NATIVE_GREEN_IMAGE_PARTITION_RECOVERED"
+            ]
+            and green_image_partition["coarse_obstruction_localization"][
+                "transverse_projection_lower"
+            ]
+            > 0.99
+        ),
+        "current_center_green_directional_curvature_seed_is_derived": (
+            green_directional_seed["validation_passed"] is True
+            and green_directional_seed["claim_boundary"][
+                "CURRENT_CENTER_NODE1_GREEN_DIRECTIONAL_RATE_CURVATURE_DERIVED"
+            ]
+            and green_directional_seed[
+                "comparison_to_existing_transverse_obstruction"
+            ]["transverse_to_green_lower_factor"]
+            > 5.0e6
+        ),
+        "current_center_mixed_green_transverse_decisive_seed_is_derived": (
+            green_mixed_transverse_seed["validation_passed"] is True
+            and [row["node"] for row in green_mixed_transverse_seed["rows"]]
+            == [1, 355, 356, 370]
+            and green_mixed_transverse_seed["claim_boundary"][
+                "CURRENT_GREEN_MIXED_TRANSVERSE_DECISIVE_NODE_SEED_DERIVED"
+            ]
+            and not green_mixed_transverse_seed["claim_boundary"][
+                "CURRENT_GREEN_MIXED_TRANSVERSE_ALL_NODES_DERIVED"
+            ]
+            and ae4_nonlinear_carrier_authority["claim_boundary"][
+                "G7_CURRENT_GREEN_MIXED_TRANSVERSE_DECISIVE_NODE_SEED_DERIVED"
+            ]
+        ),
+        "current_center_mixed_green_direct_bilinear_identity_is_reproduced_and_reconciled": (
+            green_mixed_bilinear_audit["validation_passed"] is True
+            and green_mixed_bilinear_audit["maximum_center_absolute_difference"]
+            < 1.0e-8
+            and green_mixed_bilinear_audit["claim_boundary"][
+                "CURRENT_GREEN_MIXED_DIRECT_BILINEAR_CENTER_IDENTITY_REPRODUCED"
+            ]
+            and not green_mixed_bilinear_audit["claim_boundary"][
+                "CURRENT_GREEN_MIXED_DIRECT_BILINEAR_OUTWARD_EQUIVALENCE_DERIVED"
+            ]
+            and ae4_nonlinear_carrier_authority["claim_boundary"][
+                "G7_CURRENT_GREEN_MIXED_DIRECT_BILINEAR_CENTER_IDENTITY_REPRODUCED"
+            ]
+            and ae4_nonlinear_carrier_authority["claim_boundary"][
+                "G7_CURRENT_GREEN_MIXED_DIRECT_BILINEAR_OUTWARD_EQUIVALENCE_DERIVED"
+            ]
+        ),
+        "current_center_mixed_green_all_endpoints_have_outward_authority": (
+            green_mixed_all_endpoint_centers["validation_passed"] is True
+            and green_mixed_all_endpoint_centers[
+                "post_reset_endpoints_with_defined_green_axis"
+            ] == 370
+            and green_mixed_all_endpoint_centers["excluded_birth_node"] == 0
+            and green_mixed_all_endpoint_centers["claim_boundary"][
+                "CURRENT_GREEN_MIXED_DIRECT_BILINEAR_ALL_ENDPOINT_CENTERS_MATERIALIZED"
+            ]
+            and not green_mixed_all_endpoint_centers["claim_boundary"][
+                "CURRENT_GREEN_MIXED_DIRECT_BILINEAR_OUTWARD_EQUIVALENCE_DERIVED"
+            ]
+            and green_mixed_outward_reconciliation["validation_passed"] is True
+            and green_mixed_outward_reconciliation["claim_boundary"][
+                "CURRENT_GREEN_MIXED_DIRECT_BILINEAR_OUTWARD_EQUIVALENCE_DERIVED"
+            ]
+            and green_mixed_outward_reconciliation["claim_boundary"][
+                "CURRENT_GREEN_MIXED_TRANSVERSE_ALL_ENDPOINTS_DERIVED"
+            ]
+            and not green_mixed_outward_reconciliation["claim_boundary"][
+                "CURRENT_GREEN_MIXED_TRANSVERSE_ALL_MIDPOINTS_DERIVED"
+            ]
+            and ae4_nonlinear_carrier_authority["claim_boundary"][
+                "G7_CURRENT_GREEN_MIXED_DIRECT_BILINEAR_ALL_ENDPOINT_CENTERS_MATERIALIZED"
+            ]
+            and ae4_nonlinear_carrier_authority["claim_boundary"][
+                "G7_CURRENT_GREEN_MIXED_TRANSVERSE_ALL_NODES_DERIVED"
+            ]
+        ),
+        "Gate7_compute_conservation_policy_is_active_and_fail_closed": (
+            gate7_compute_justification["validation_passed"] is True
+            and gate7_compute_justification["authorization"]["worker_count"] == 8
+            and gate7_compute_justification["authorization"][
+                "resume_nodes_128_through_370_at_192_bit"
+            ] is True
+            and gate7_compute_justification["authorization"][
+                "automatic_follow_on_global_campaign"
+            ] is False
+            and gate7_compute_budget_ledger["validation_passed"] is True
+            and gate7_compute_budget_ledger["validation"][
+                "unestimated_future_work_is_not_authorized"
+            ] is True
+        ),
+        "current_center_transverse_quadratic_decisive_seed_is_derived": (
+            green_transverse_quadratic_seed["validation_passed"] is True
+            and len(green_transverse_quadratic_seed["rows"]) == 8
+            and green_transverse_quadratic_seed[
+                "maximum_seed_transverse_quadratic_norm_upper"
+            ] < 283136.0
+            and green_transverse_quadratic_seed["claim_boundary"][
+                "CURRENT_GREEN_TRANSVERSE_TRANSVERSE_DECISIVE_DIRECTION_SEED_DERIVED"
+            ]
+            and not green_transverse_quadratic_seed["claim_boundary"][
+                "CURRENT_GREEN_TRANSVERSE_TRANSVERSE_FULL_OPERATOR_BOUND_DERIVED"
+            ]
+        ),
+        "current_center_correlated_green_scalar_is_derived_on_all_intervals": (
+            ae4_nonlinear_carrier_authority["validation_passed"] is True
+            and ae4_nonlinear_carrier_authority["claim_boundary"][
+                "G7_CURRENT_GREEN_CORRELATED_SCALAR_ALL_INTERVALS_DERIVED"
+            ]
+            and ae4_nonlinear_carrier_authority[
+                "recovered_green_correlated_scalar_all_intervals"
+            ]["intervals_certified"]
+            == 370
+            and ae4_nonlinear_carrier_authority[
+                "recovered_green_correlated_scalar_all_intervals"
+            ]["axis_neighborhood_mixed_transverse_bound_derived"]
+            is False
+            and ae4_nonlinear_carrier_authority["claim_boundary"][
+                "G7_CURRENT_GREEN_CORRELATED_CENTRAL_SCALAR_CAUSAL_COMPOSITION_DERIVED"
+            ]
+            and ae4_nonlinear_carrier_authority["claim_boundary"][
+                "G7_CURRENT_CENTER_COMPONENTWISE_GREEN_MIDPOINT_ROUTE_OBSTRUCTED_AT_512_BIT"
+            ]
+            and ae4_nonlinear_carrier_authority[
+                "recovered_green_correlated_central_scalar_causal_composition"
+            ]["maximum_causal_curvature_norm_upper"] < 8.406
+        ),
         "quarter_green_corrected_carrier_is_certified": (
             recentered_cone_spectrum["validation_passed"] is True
             and recentered_cone_projector["validation_passed"] is True
@@ -1083,6 +1285,17 @@ def build_payload() -> dict[str, Any]:
                 "root_nonexistence_claimed"
             ] is False
         ),
+        "environment_conditioned_realization_scope_is_fail_closed": (
+            encapsulation_scope["validation_passed"] is True
+            and encapsulation_scope["scope_adjudication"]["Gate7_status"]
+            == "ACTIVE_NOT_CLOSED"
+            and encapsulation_scope["scope_adjudication"]["Gate7_particle_scope"]
+            == "NO_PARTICLE_SPECIFIC_UNIVERSALITY_CLAIM"
+            and encapsulation_scope["consequences"]["current_Gate7_calculation_changed"]
+            is False
+            and encapsulation_scope["consequences"]["frozen_prediction_changed"]
+            is False
+        ),
     }
     passed = all(validations.values())
     return {
@@ -1100,9 +1313,9 @@ def build_payload() -> dict[str, Any]:
         "version_lineage": lineage,
         "blocker_reconciliation": blockers,
         "interface_gaps": gaps,
-        "current_irreducible_object": "G7_SAME_CENTER_INTERVAL_CONTRACTION",
+        "current_irreducible_object": "G7_SAME_CENTER_GREEN_IMAGE_LONGITUDINAL_TRANSVERSE_RADII_SCREEN",
         "current_irreducible_objects": [
-            "G7_SAME_CENTER_INTERVAL_CONTRACTION",
+            "G7_SAME_CENTER_GREEN_IMAGE_LONGITUDINAL_TRANSVERSE_RADII_SCREEN",
         ],
         "integration_order": ["A_EXISTING_COMPOSITION", "C_IMPLEMENTATION", "B_THEOREM", "D_NEW_THEORY_CHOICE"],
         "validation": validations,
@@ -1114,9 +1327,11 @@ def build_payload() -> dict[str, Any]:
             "measured_data_used_upstream": False,
             "frozen_prediction_retuned": False,
             "Gate7": "ACTIVE_NOT_CLOSED",
+            "Gate7_realization_scope": "ONE_ACTION_SELECTED_BACKGROUND_NOT_ALL_PARTICLE_TRAJECTORIES",
+            "particle_specific_realizations": "OPEN",
             "FULL_BHSM_COMPLETE": False,
         },
-        "exact_next_dependency": "ON_THE_ACCEPTED_ONE_SHOT_REPLAY_CENTER,_PRODUCE_OUTWARD_Y=||A*F||,_Z1=||I-A*DF||,_AND_A_SAME_CENTER_CAUSAL_Z2_IN_ONE_74D_NORM;_EXHIBIT_R_WITH_Y+Z1*R+Z2*R^2<R_AND_Z1+2*Z2*R<1;_DO_NOT_START_ANOTHER_NUMERICAL_CAMPAIGN_OR_TRANSFER_THE_OLD_EXACT_AFFINE_Z2_CONE",
+        "exact_next_dependency": "TRANSPORT_THE_RECONCILED_CURRENT_CENTER_MIXED_GREEN_TRANSVERSE_ENDPOINT_GRAPH_THROUGH_THE_CORRELATED_HERMITE_SIMPSON_MIDPOINT_AND_CAUSAL_PRECONDITIONER,_MAJORIZE_THE_FULL_TRANSVERSE_UNIT_SPHERE_AROUND_THE_EIGHT_VALIDATED_DIRECTIONAL_SEEDS,_THEN_COMBINE_WITH_THE_DERIVED_512_BIT_FROZEN_CAUSAL_CENTRAL_SCALAR_AND_COMPLETE_THE_LONGITUDINAL_TRANSVERSE_TWO_RADIUS_COMPOSITION;_DO_NOT_REUSE_THE_OLD_48_SEAM_NUMBERS,_FIT_A_PARTITION,_OR_RESELECT_THE_CENTER",
         "FULL_BHSM_COMPLETE": False,
     }
 

@@ -1,0 +1,178 @@
+{
+  "FULL_BHSM_COMPLETE": false,
+  "action_version": "BHSM-AE-3.1.0",
+  "artifact": "BHSM_AE31_CHARGED_LEPTON_SCALE_FREE_SUM_RULE",
+  "claim_boundary": {
+    "ABSOLUTE_UNIT_DEPENDENCE_ELIMINATED_FROM_SUM_RULE": true,
+    "AE31_CHARGED_LEPTON_SCALE_FREE_MODE_SUM_RULE_DERIVED": true,
+    "BERGER_SQUASHING_DEPENDENCE_ELIMINATED_FROM_SUM_RULE": true,
+    "CURRENT_C2_GLOBAL_PHYSICAL_LEPTON_POLES_DERIVED": false,
+    "CURRENT_C2_LOCAL_TREE_LEPTON_RELATION_DERIVED_CONDITIONALLY": true,
+    "CURRENT_C2_PHYSICAL_MUON_POLE_DERIVED": false,
+    "FULL_BHSM_COMPLETE": false,
+    "MEASURED_LEPTON_MASS_USED_TO_DERIVE_SUM_RULE": false,
+    "MUON_MAGNETIC_MOMENT_DERIVED": false,
+    "exact_next_operator": "ACTION_SELECTED_GLOBAL_CHARGED_LEPTON_POLES_OR_MATCHED_PARENT_RELATIVE_ENERGIES__THEN_TEST_THE_SCALE_FREE_MODE_SUM_RULE_ON_THE_PHYSICAL_READOUT",
+    "particle_spectrum_rebuilt": false
+  },
+  "classification": "AE31_CHARGED_LEPTON_SCALE_FREE_MODE_SUM_RULE",
+  "composed_AE31_operator_witness": {
+    "absolute_energy_calibration_used": false,
+    "action_version": "BHSM-AE-3.1.0",
+    "eigenvalue_ratios_to_heavy": [
+      1.0,
+      0.060074470932609765,
+      0.00029729106456492414
+    ],
+    "frozen_squashing_used_for_witness": 1.157054135733433,
+    "log_sum_rule_residual": 0.0,
+    "measured_lepton_mass_used": false,
+    "operator": "Y_l=(16*sqrt(2*pi)/3969)*exp[-L_a,l/(4*pi)]",
+    "squashing_value_used_to_derive_identity": false
+  },
+  "frozen_on_shell_reference_diagnostic": {
+    "comparison_is_parameter_fit": false,
+    "dressing_factor_inserted_into_action": false,
+    "log_residual": 0.05880357568422312,
+    "reference_data_used_only_after_derivation": true,
+    "reference_light_over_heavy": 0.0002875853753250115,
+    "reference_middle_over_heavy": 0.05946353426831603,
+    "required_multiplicative_dressing": 1.0605668991516508,
+    "sum_rule_light_over_heavy_from_reference_middle": 0.0002711619375968187,
+    "tree_relation_fractional_residual": -0.05710804212360243
+  },
+  "inputs": {
+    "artifacts/action_extension/BHSM_AE31_C2_INTRINSIC_M4_LEPTON_ACTION.json": "C0E851100FCAA04C1968081A3940D938B7C64C857FE416F7F7795974A9053850",
+    "artifacts/action_extension/BHSM_AE3_C2_HOPF_SEMIGROUP_TRANSPORT.json": "890FD3AD9CF06F8753C463B332F529181C9A1EAA3244836C58F5B59FF3ED3785",
+    "artifacts/action_extension/BHSM_AE3_FAMILY_MASS_ONTOLOGY_RECOVERY_AUDIT.json": "6F2403F5E56F50B02E20D177E6A9BEF23D9986FF7FEA03EEDB5045939A104C71",
+    "src/bhsm/interface/ae31_charged_lepton_scale_free_sum_rule.py": "45D5AB769B72F23A8C419D26B3F57C316BF67FB5806D859C251FFF5DE437335D",
+    "theory/bhsm_prediction_ledger.json": "AA212C26D86F02FD3E50F86463ECD2C29EDF949C6D90BB0095BB6652855287F6",
+    "theory/derived_generation_raw_mode_ledgers.md": "B52108D44E74D5747AEBC09BB9B1A1761E033F9E44396728C036008E437F6D97"
+  },
+  "squashing_independence_witnesses": [
+    {
+      "costs": [
+        0.0,
+        34.64,
+        95.76
+      ],
+      "log_sum_rule_residual": 0.0,
+      "measured_lepton_mass_used": false,
+      "multiplicative_sum_rule_residual": -4.336808689942018e-19,
+      "ratios_to_heavy": [
+        1.0,
+        0.06350963741073548,
+        0.0004903757248702166
+      ],
+      "squashing": 0.8
+    },
+    {
+      "costs": [
+        0.0,
+        35.0,
+        99.0
+      ],
+      "log_sum_rule_residual": 0.0,
+      "measured_lepton_mass_used": false,
+      "multiplicative_sum_rule_residual": 5.421010862427522e-20,
+      "ratios_to_heavy": [
+        1.0,
+        0.061716034455632084,
+        0.00037892597709640596
+      ],
+      "squashing": 1.0
+    },
+    {
+      "costs": [
+        0.0,
+        35.33877427301784,
+        102.04896845716057
+      ],
+      "log_sum_rule_residual": 0.0,
+      "measured_lepton_mass_used": false,
+      "multiplicative_sum_rule_residual": 7.589415207398531e-19,
+      "ratios_to_heavy": [
+        1.0,
+        0.06007447093260976,
+        0.00029729106456492414
+      ],
+      "squashing": 1.157054135733433
+    },
+    {
+      "costs": [
+        0.0,
+        35.96,
+        107.64
+      ],
+      "log_sum_rule_residual": 0.0,
+      "measured_lepton_mass_used": false,
+      "multiplicative_sum_rule_residual": 2.710505431213761e-19,
+      "ratios_to_heavy": [
+        1.0,
+        0.05717686749641515,
+        0.00019052654348857952
+      ],
+      "squashing": 1.4
+    }
+  ],
+  "sum_rule_theorem": {
+    "Berger_elimination_multiplier": 9,
+    "Berger_squashing_cancels": true,
+    "Higgs_saddle_scale_cancels": true,
+    "K_equals_k_times_k_plus_2": [
+      0,
+      35,
+      99
+    ],
+    "absolute_energy_scale_cancels": true,
+    "action_version": "BHSM-AE-3.1.0",
+    "constant_cost_numerator": 216,
+    "cost_formula": "L_f=K_f+(a^2-1)*q_f^2",
+    "exact_log_sum_rule": "log(m_e/m_tau)=9*log(m_mu/m_tau)+54/pi",
+    "exact_multiplicative_sum_rule": "m_e/m_tau=exp(54/pi)*(m_mu/m_tau)^9",
+    "measured_fine_structure_anchor_cancels_with_squashing": true,
+    "measured_lepton_mass_used_to_derive_relation": false,
+    "modes": [
+      [
+        0,
+        0
+      ],
+      [
+        5,
+        2
+      ],
+      [
+        9,
+        3
+      ]
+    ],
+    "q_squared_equals_k_minus_2j_squared": [
+      0,
+      1,
+      9
+    ],
+    "ratio_formula": "log(m_f/m_tau)=-L_f/(4*pi)",
+    "relation_holds_for_every_positive_Berger_squashing": true,
+    "roles": [
+      "tau_slot",
+      "mu_slot",
+      "electron_slot"
+    ],
+    "sector": "charged_lepton",
+    "semigroup_width": 0.07957747154594767,
+    "semigroup_width_exact": "1/(4*pi)",
+    "trace_normalized_Yukawa_prefactor_cancels": true
+  },
+  "validation": {
+    "composed_operator_satisfies_identity": true,
+    "exact_integer_elimination_derived": true,
+    "frozen_mode_ledger_and_semigroup_reused": true,
+    "frozen_reference_used_only_as_post_derivation_test": true,
+    "identity_holds_across_squashing_samples": true,
+    "mass_ontology_and_physical_pole_boundary_preserved": true,
+    "no_spectrum_rebuild_or_g_minus_2_overclaim": true,
+    "same_AE31_composed_lepton_action": true,
+    "scale_squashing_and_lepton_inputs_absent": true
+  },
+  "validation_passed": true
+}

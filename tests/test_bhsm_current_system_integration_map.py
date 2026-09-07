@@ -19,6 +19,21 @@ def _payload():
 def test_canonical_system_and_required_subsystems() -> None:
     payload = _payload()
     assert payload["validation_passed"] is True
+    assert payload["validation"][
+        "current_center_mixed_green_transverse_decisive_seed_is_derived"
+    ] is True
+    assert payload["validation"][
+        "current_center_mixed_green_direct_bilinear_identity_is_reproduced_and_reconciled"
+    ] is True
+    assert payload["validation"][
+        "current_center_mixed_green_all_endpoints_have_outward_authority"
+    ] is True
+    assert payload["validation"][
+        "Gate7_compute_conservation_policy_is_active_and_fail_closed"
+    ] is True
+    assert payload["validation"][
+        "current_center_transverse_quadratic_decisive_seed_is_derived"
+    ] is True
     assert payload["validation"]["causal_Z2_nonlinear_halo_is_certified"] is True
     assert payload["validation"][
         "quarter_green_corrected_carrier_is_certified"
@@ -89,6 +104,9 @@ def test_canonical_system_and_required_subsystems() -> None:
     assert payload["validation"][
         "one_transverse_center_witness_suffices_for_open_stop_stratum"
     ] is True
+    assert payload["validation"][
+        "current_center_correlated_green_scalar_is_derived_on_all_intervals"
+    ] is True
     assert payload["canonical_action_version"] == "BHSM-AE-2.0.0"
     identifiers = {row["id"] for row in payload["subsystems"]}
     assert {
@@ -98,6 +116,7 @@ def test_canonical_system_and_required_subsystems() -> None:
         "C2_DOP853_RESPONSE", "GATE7_HEAT_ZETA_CHAIN", "CKM_SECTOR",
         "NEUTRINO_PMNS_SECTOR", "FROZEN_PREDICTION_SYSTEM",
         "CURRENT_FULL_FIELD_ACTION_ATTACHMENT",
+        "ENVIRONMENT_CONDITIONED_REALIZATION_SCOPE",
         "RELEASE_DEFINITION_OF_DONE",
     } <= identifiers
     required = {
@@ -115,9 +134,11 @@ def test_blocker_and_interface_priority_reconciliation() -> None:
     assert sum(row["classification"] == "CURRENT_BLOCKER" for row in blockers) == 1
     old_domain = next(row for row in blockers if row["id"] == "V6_7_NORMAL_MATTER_DOMAIN_NO_GO")
     assert old_domain["classification"] == "SUPERSEDED_BY_LATER_DOMAIN"
-    assert payload["current_irreducible_object"] == "G7_SAME_CENTER_INTERVAL_CONTRACTION"
+    assert payload["current_irreducible_object"] == (
+        "G7_SAME_CENTER_GREEN_IMAGE_LONGITUDINAL_TRANSVERSE_RADII_SCREEN"
+    )
     assert payload["current_irreducible_objects"] == [
-        "G7_SAME_CENTER_INTERVAL_CONTRACTION",
+        "G7_SAME_CENTER_GREEN_IMAGE_LONGITUDINAL_TRANSVERSE_RADII_SCREEN",
     ]
     assert payload["integration_order"] == [
         "A_EXISTING_COMPOSITION", "C_IMPLEMENTATION", "B_THEOREM", "D_NEW_THEORY_CHOICE"
@@ -158,7 +179,16 @@ def test_blocker_and_interface_priority_reconciliation() -> None:
     assert payload["validation"][
         "minimum_contraction_localizes_same_center_Y_Z1_Z2_blocker"
     ] is True
+    assert payload["validation"][
+        "same_center_scalar_contraction_is_evaluated_and_obstructed"
+    ] is True
     assert payload["claim_boundary"]["Gate7"] == "ACTIVE_NOT_CLOSED"
+    assert payload["claim_boundary"]["Gate7_realization_scope"] == (
+        "ONE_ACTION_SELECTED_BACKGROUND_NOT_ALL_PARTICLE_TRAJECTORIES"
+    )
+    assert payload["validation"][
+        "environment_conditioned_realization_scope_is_fail_closed"
+    ] is True
     attachment_gap = next(
         row for row in payload["interface_gaps"]
         if row["id"] == "CURRENT_BACKGROUND_TO_FULL_FIELD_ACTION"

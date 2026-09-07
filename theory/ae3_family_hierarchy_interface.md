@@ -28,6 +28,22 @@ but a mass operator proportional to `I3` cannot have three distinct charged-
 lepton singular values. This is a structural obstruction, not an unresolved
 normalization.
 
+The harmonic-energy audit reopens the origin of a noncentral observable without
+changing this result. Pulling the already-stored Berger scalar eigenvalues
+back through the family/mode labels gives a diagonal noncentral spectral
+stiffness. It is not part of the family-blind dynamic composition above.
+However, on the one common current-C2 radius its positive monotone energy
+orders `(0,0)` below the excited modes, whereas the frozen ledger calls
+`(0,0)` the heaviest slot. Its zero-mode displacement is also zero. The
+spectral seed is therefore real, but it is not the missing physical mass
+operator.
+
+The separate historical Hopf-base branch is also retained: its decreasing
+heat-semigroup weight `exp[-L/(4 pi)]` has the correct frozen role ordering and
+uses no lepton mass input. It remains a conditional corpus candidate because
+its response time, scale/lift, insertion, and equivalence to the v14.54
+parent-relative mass contract have not been attached to current AE3 C2.
+
 ## Exact missing interface
 
 At least one action-owned returned operator on the current physical domain
@@ -48,12 +64,12 @@ example is inserted into the BHSM action. Current evidence selects neither
 route, and no continuous family coefficient or measured mass is permitted as
 an input.
 
-The exact owner is therefore:
+The exact owner is now narrower:
 
 ```text
-ONE_ACTION_OWNED_FAMILY_NONCENTRAL_RETURNED_MASS_OPERATOR_VIA_EITHER_
-ACTION_SELECTED_C3_BREAKING_OR_A_TRIALITY_CHANGING_INTERTWINER_ON_THE_
-CURRENT_PHYSICAL_DOMAIN
+ONE_SAME_CURRENT_C2_NORMALIZED_MANIFESTATION_MAP_INTO_AN_ACTION_ENERGY_
+DOMAIN_PLUS_THE_COMPLETE_PARENT_RELATIVE_ENERGY_OR_FERMION_POLE_FUNCTIONAL_
+AND_ANY_ACTION_SELECTED_STATE_DEPENDENT_LOCALIZATION_SCALE
 ```
 
 This owner applies separately to the charged-lepton, up-quark, down-quark,
@@ -72,3 +88,5 @@ python -m pytest tests/test_ae3_family_hierarchy_interface.py -q
 
 The machine-readable result is
 `artifacts/action_extension/BHSM_AE3_FAMILY_HIERARCHY_INTERFACE.json`.
+The dedicated no-fit test is
+`artifacts/action_extension/BHSM_AE3_FAMILY_HARMONIC_ENERGY_PULLBACK_AUDIT.json`.

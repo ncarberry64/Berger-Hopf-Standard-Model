@@ -138,6 +138,23 @@ def hierarchy_interface_decision_surface() -> dict[str, Any]:
             "three_distinct_singular_values_are_derived_without_family_fits",
             "particle_manifestation_map_is_transported_to_the_resulting_mass_basis",
         ],
+        "newly_tested_route_A_candidate": {
+            "candidate": "CURRENT_C2_BERGER_HARMONIC_SPECTRAL_PULLBACK",
+            "family_noncentral_spectral_seed": True,
+            "physical_mass_operator": False,
+            "failure": (
+                "POSITIVE_MONOTONE_SCALAR_HARMONIC_ENERGY_HAS_THE_OPPOSITE_"
+                "FROZEN_ROLE_ORDER_AND_THE_HEAVY_ZERO_MODE_HAS_ZERO_"
+                "DISPLACEMENT"
+            ),
+        },
+        "recovered_historical_semigroup_candidate": {
+            "candidate": "HOPF_BASE_EXP_MINUS_L_OVER_4PI_RESPONSE_WEIGHT",
+            "three_distinct_decreasing_weights": True,
+            "no_lepton_mass_input": True,
+            "current_AE3_action_owned": False,
+            "status": "CONDITIONAL_CORPUS_CANDIDATE_RECOVERED_NOT_PROMOTED",
+        },
         "continuous_family_coefficients_may_be_inserted": False,
         "route_selected_by_current_evidence": None,
     }
@@ -154,15 +171,21 @@ def family_hierarchy_puzzle_ledger() -> dict[str, Any]:
             "reset_projector_enclosure_commuting_transport_square",
             "current_C2_family_central_product_Dirac_operator_piece",
             "locality_intersection_C3_family_centrality_theorem",
+            "current_C2_family_noncentral_Berger_spectral_stiffness_pullback",
+            "positive_monotone_harmonic_rest_mass_kill_test",
+            "historical_Hopf_base_semigroup_mass_ontology_recovery",
         ],
         "derived_result": (
-            "THE_PRESENT_AE3_COMPOSITION_PRESERVES_FAMILY_IDENTITY_BUT_CANNOT_"
-            "DERIVE_THE_THREE_DISTINCT_CHARGED_LEPTON_MASSES"
+            "THE_PRESENT_AE3_DYNAMIC_COMPOSITION_IS_FAMILY_CENTRAL;_THE_"
+            "HARMONIC_PULLBACK_IS_NONCENTRAL_BUT_ITS_POSITIVE_MONOTONE_"
+            "ENERGY_HAS_THE_WRONG_FROZEN_ROLE_ORDER_AND_IS_NOT_A_PHYSICAL_"
+            "FERMION_MASS_OPERATOR"
         ),
         "exact_missing_interface": (
-            "ONE_ACTION_OWNED_FAMILY_NONCENTRAL_RETURNED_MASS_OPERATOR_VIA_"
-            "EITHER_ACTION_SELECTED_C3_BREAKING_OR_A_TRIALITY_CHANGING_"
-            "INTERTWINER_ON_THE_CURRENT_PHYSICAL_DOMAIN"
+            "ONE_SAME_CURRENT_C2_NORMALIZED_MANIFESTATION_MAP_INTO_AN_ACTION_"
+            "ENERGY_DOMAIN_PLUS_THE_COMPLETE_PARENT_RELATIVE_ENERGY_OR_"
+            "FERMION_POLE_FUNCTIONAL_AND_ANY_ACTION_SELECTED_STATE_"
+            "DEPENDENT_LOCALIZATION_SCALE"
         ),
         "centrality_certificate": centrality,
         "decision_surface": decision,

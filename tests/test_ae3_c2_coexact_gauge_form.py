@@ -28,6 +28,10 @@ def test_lowest_coexact_gauge_shape_has_exact_curl_multiplicity() -> None:
     assert result["coexact_dimension"] == 3
     assert result["longitudinal_dimension"] == 0
     assert np.array_equal(result["curl_eigenvalues"], np.full(3, 2.0))
+    assert np.array_equal(result["curl_squared_eigenvalues"], np.full(3, 4.0))
+    assert result["component_pencil"]["element_coefficient"][0] == (
+        4.0 * np.exp(-0.1)
+    )
     assert result["component_pencil"]["generalized_gap_lower"] > 0.0
     assert result["BRST_longitudinal_sector_removed_by_coexact_projection"] is True
 
@@ -66,9 +70,16 @@ def test_actual_c2_gauge_form_artifact_is_fail_closed() -> None:
     payload = build_payload()
     assert payload["validation_passed"] is True
     assert payload["CURRENT_C2_COEXACT_GAUGE_FORM_SHAPE_DERIVED"] is True
+    assert payload["CURRENT_C2_COEXACT_GAUGE_SPATIAL_POTENTIAL_CORRECTED"] is True
+    assert payload["historical_correction"]["previous_argument"] == 2.0
+    assert payload["historical_correction"]["corrected_argument"] == 4.0
+    assert payload["historical_correction"][
+        "lorentzian_residue_mismatch_theorem_affected"
+    ] is False
     assert payload["CURRENT_C2_LORENTZIAN_MAXWELL_RESIDUE_DERIVED"] is False
     assert payload["CURRENT_C2_NORMALIZED_PHOTON_PROPAGATOR_DERIVED"] is False
     assert payload["coexact_gauge_form"]["generalized_gap_lower"] > 0.0
+    assert payload["coexact_gauge_form"]["unit_radius_potential_coefficient"] == 4.0
 
 
 def test_materialized_c2_gauge_form_is_deterministic() -> None:

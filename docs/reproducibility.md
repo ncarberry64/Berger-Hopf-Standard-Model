@@ -10,13 +10,15 @@ python scripts/materialize_ae3_c2_action_puzzle.py
 python scripts/materialize_ae3_c2_hs_mixed_variation.py
 python scripts/materialize_ae3_family_hierarchy_interface.py
 python scripts/materialize_ae3_family_noncentral_return_audit.py
+python scripts/materialize_ae3_family_harmonic_energy_pullback.py
+python scripts/materialize_ae3_family_mass_ontology_recovery.py
 python scripts/materialize_ae3_c2_coexact_hypercharge.py
 python scripts/materialize_ae3_c2_coexact_gauge_form.py
 python scripts/materialize_ae3_c2_lorentzian_gauge_ghost_hessian.py
 python scripts/materialize_ae3_c2_coexact_su2l_neutral.py
 python scripts/materialize_ae3_c2_gauge_mismatch_resolution.py
 python scripts/materialize_ae3_c2_two_sided_calderon.py
-python -m pytest -q tests/test_ae3_reciprocal_join_localization.py tests/test_ae3_c2_action_puzzle.py tests/test_ae3_c2_hs_mixed_variation.py tests/test_ae3_family_hierarchy_interface.py tests/test_ae3_family_noncentral_return_audit.py tests/test_ae3_c2_lorentzian_gauge_ghost_hessian.py tests/test_ae3_c2_coexact_su2l_neutral.py tests/test_ae3_c2_gauge_mismatch_resolution.py tests/test_ae3_c2_two_sided_calderon.py
+python -m pytest -q tests/test_ae3_reciprocal_join_localization.py tests/test_ae3_c2_action_puzzle.py tests/test_ae3_c2_hs_mixed_variation.py tests/test_ae3_family_hierarchy_interface.py tests/test_ae3_family_noncentral_return_audit.py tests/test_ae3_family_harmonic_energy_pullback.py tests/test_ae3_family_mass_ontology_recovery.py tests/test_ae3_c2_lorentzian_gauge_ghost_hessian.py tests/test_ae3_c2_coexact_su2l_neutral.py tests/test_ae3_c2_gauge_mismatch_resolution.py tests/test_ae3_c2_two_sided_calderon.py
 ```
 
 This reproduces the analytic eta-to-sigma profile, its unique transverse
@@ -34,6 +36,21 @@ projections, absent junction bilinears with unfixed coefficients, circular
 coherence sources, family-blind constraints, unselected bands, and
 underived intrinsic Wilson matrices. It does not rebuild the particle
 spectrum or insert measured masses.
+
+The harmonic-energy audit then pulls the already-frozen scalar Berger
+eigenvalues onto the three current-C2 family slots. It verifies a genuinely
+noncentral spectral stiffness and tests the positive monotone energy proposal
+before comparison. The test must retain the common radius, the zero heavy-slot
+displacement, the opposite frozen role ordering, the absent spinor/energy
+functional, and the prohibition on reusing the exponential overlap screen.
+
+The recovery audit separately restores the v14.54 parent-relative mass
+contract and the historical decreasing Hopf-base heat-semigroup candidate.
+It hashes both original research packets, reproduces their no-lepton-input
+weights, and requires the conditional scale/action inputs to remain explicit.
+It must not confuse the semigroup with local positive gradient energy, treat
+the local `I3` overlap theorem as a total-energy theorem, or claim that a
+numeric radius alone closes the matched-parent charge.
 
 The current-C2 HS mixed-variation materializer differentiates the attached
 1,222-segment reduced bilinear without importing the historical proper-cycle

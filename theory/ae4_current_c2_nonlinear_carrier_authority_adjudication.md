@@ -1,0 +1,182 @@
+# AE4 nonlinear carrier-authority adjudication
+
+## Recovered result
+
+The same-center 74-dimensional outward calculation requested by the current
+AE4 operator artifacts had already been completed.  On the frozen accepted
+replay center it found
+
+```text
+Y_lower  = 6.15777040956615e-7
+Z1_upper = 0.4493650871145146
+Z2_lower = 3376470.2602736303
+1 - 4 Y_lower Z2_lower = -7.31661146299723.
+```
+
+The necessary scalar radii-polynomial discriminant is strictly negative.
+Consequently the evaluated single-radius contraction theorem cannot certify
+the nonlinear tube.  This agrees with the independent affine-to-nonlinear
+transfer audit, which already rejected promotion of the affine 72D jet.
+
+This is a proof-coordinate result.  The same upstream certificate explicitly
+does **not** infer physical spacetime instability or nonexistence of a root,
+and it authorizes neither a new replay center nor a new trajectory.
+
+## Hindsight reduction
+
+The current dependency graph must therefore stop asking for the already
+evaluated scalar `Y,Z1,Z2` calculation.  A 384-bit Arb recovery of the field
+share of `Y` also tests the first vector-radius proposal: the existing 73 field
+coordinates plus one descriptor coordinate.  The certified field-input
+curvature witness returns more than `3376436.18656192` curvature to the field
+block, while `Y_field > 6.157752658017768e-7`.  Its necessary field
+discriminant is `-7.316503560971616`, so the coarse 73+1 split is obstructed
+too.
+
+Recall supplies the non-arbitrary surviving partition.  BHSM's earlier
+common-frame work defined the signed minus-defect Green image as the
+longitudinal axis and its causal orthogonal complement as the transverse
+sector.  The old 48-seam numerical values are not current-center authority,
+but the current outward `Y` calculation now instantiates that same partition
+at all 370 post-reset nodes.  The localized remaining proof object is the
+same-center longitudinal/transverse two-radius test, not an arbitrary
+componentwise search.
+
+The first current-center retained-action operand is now outward: at node 1,
+`||D2f[u_G,u_G]||` lies in
+`[0.02190794340908502, 0.027451526147420215]`, more than five million times
+below the already-certified almost-purely-transverse raw obstruction
+curvature at that node.  This is a local seed rather than the causal theorem;
+it must be extended to all endpoints and midpoints and joined to the mixed and
+transverse remainder bounds.
+
+The endpoint extension is now complete at all 370 post-reset nodes.  It also
+reveals collapse-side stiffening: the raw local Green-directional curvature
+upper bound grows from `0.027451526147420215` at node 1 to
+`139645314859.80203` at terminal node 370.  This does not by itself obstruct
+the anisotropic route because it precedes Hermite--Simpson step incidence,
+midpoint curvature, signs, and causal preconditioning.  The current missing
+longitudinal object is therefore the correlated midpoint and complete causal
+composition, not another endpoint audit.
+
+That midpoint calculation has now been carried through all 370 intervals.  Its
+induced direction, second incidence, and `DF_m w_m` term remain finite, while
+the intrinsic Hessian enclosure is finite only through interval 354.  On
+intervals 355--369, independently intervalizing the normalized endpoint Green
+axes loses a finite intrinsic enclosure.  This localizes another proof-route
+failure: the Green normalization and endpoint-to-midpoint transport must remain
+one correlated longitudinal scalar object.  It does not establish path
+nonexistence or physical instability.
+
+The correlation-preserving probe at the first failed interval is now finite.
+Using the normalized midpoint of the certified Green-axis enclosure as one
+central scalar direction gives `||D2F_m|| < 0.012206040568732014` and
+`||R_HS''|| < 0.003051599835522847` at interval 355.  The exact Green axis is
+kept inside certified neighborhoods of radius `5.96e-8` and `8.25e-8` at its
+two endpoints; those errors remain obligations of the mixed/transverse
+remainder.  Thus the component-box failure is reconciled at its first onset,
+while global and causal promotion remain open.
+
+The same correlation-preserving construction is now certified on all 370
+retained intervals.  Exact Arb intervals, rather than independently rounded
+component boxes, carry the endpoint direction and its first and second action
+variations into each midpoint.  This closes the global central Green scalar
+operand.  Its maximum intrinsic midpoint curvature norm upper is
+`0.34991350135064914`, its maximum local HS second-residual norm upper is
+`0.08778063910324282`, and interval 355 sharply reproduces the independent
+seed.  The exact Green axis remains inside a persisted neighborhood whose
+maximum error is `5.5312200553564e-6` at node 370, so the
+mixed Green/transverse and transverse/transverse remainder is the next proof
+object; the two-radius theorem is not promoted by the scalar result alone.
+
+The same central scalar is now composed through the frozen causal
+preconditioner at 512-bit Arb precision.  The terminal causal norm upper is
+`8.405509181456809`, and the enclosure remains sharp through node 370.  The
+earlier 384-bit radius growth was precision amplification and disappears when
+the same action calculation is evaluated more deeply.  This closes the causal
+central-scalar operand, not the exact-axis neighborhood or the two-radius
+certificate.
+
+A distinct 512-bit replay of the componentwise exact-axis balls preserves
+the same first nonfinite midpoint at interval 355.  Endpoint and local Arb
+strings were recomputed rather than reusing the 384-bit exports.  More scalar
+precision therefore does not supply the missing bridge: the component boxes
+have already discarded the normalization/transport dependency.  The next
+object remains the correlation-preserving mixed Green/transverse and
+transverse-transverse remainder around the certified central axis.
+
+The retained-action polarization map has now been rebuilt on the current
+center at the four decisive seed nodes 1, 355, 356, and 370.  All 74
+projected columns are evaluated before norming.  This recovers the exact
+mixed-map mechanism without importing the old 48-seam values; extension to
+all endpoints and midpoints, causal composition, and the transverse--
+transverse remainder remain open.  The maximum four-node outward Frobenius
+upper is `30.44882953782609` at node 1.
+
+The direct two-leg implementation has now materialized the mixed-map centers
+at every one of the 370 post-reset endpoints where the normalized Green axis
+exists.  Birth node 0 is excluded because its current Green image is exactly
+zero, so no normalized axis can be defined there.  This survey preserves the
+direct bilinear dependency graph and localizes the endpoint owner for the
+next proof, but it does not convert center agreement into an outward interval
+identity.  The next unit must derive one correlated direct-versus-polarized
+remainder on the owner and decisive nodes before any all-endpoint mixed-map
+or two-radius promotion.
+
+That outward reconciliation is now complete.  The exact Fréchet-Hessian
+polarization identity is paired with one directed common hull containing both
+independently rounded graphs for all 74 columns at the four decisive nodes and
+a fresh 512-bit leading-direction check at the reconnaissance owner.  The
+direct graph consequently has endpoint representation authority on all 370
+defined-axis nodes.  Mixed midpoint/causal transport, the full transverse
+operator majorant, and the two-radius theorem remain open.
+
+The completed direct survey owner is node 9 with maximum Frobenius upper
+`256.52090126938094`.  Across all 296 seed columns the maximum direct/polarized
+center difference is `6.256328788367682e-12`; at the owner leading direction
+it is `1.8332002582610585e-12`.  The common hulls retain both rounding graphs
+with maximum radii `3.129940751023242e-12` on the seed and
+`9.379164112033326e-13` on the owner witness.
+
+The complementary transverse-quadratic seed now evaluates the projected
+coarse direction and each mixed map's leading right-singular direction at the
+same four nodes.  All eight 512-bit action derivatives are finite; the
+largest upper is `283135.9524836309` at node 1.  These directional anchors do
+not yet majorize the entire transverse unit sphere.
+
+Until that test succeeds, the gauge/BRST and nine-particle-fiber Calderón
+first jets remain evaluated affine candidates, not nonlinear physical
+operator authority.
+
+## Claim boundary
+
+```text
+G7_SAME_CENTER_OUTWARD_74D_OPERANDS_ALREADY_EVALUATED = TRUE
+G7_SINGLE_RADIUS_74D_CONTRACTION_ROUTE_OBSTRUCTED = TRUE
+G7_FIELD_DESCRIPTOR_BLOCK_CONTRACTION_ROUTE_OBSTRUCTED = TRUE
+G7_ROOT_NONEXISTENCE_DERIVED = FALSE
+G7_PHYSICAL_SPACETIME_INSTABILITY_DERIVED = FALSE
+NEW_CENTER_OR_TRAJECTORY_AUTHORIZED = FALSE
+AE4_AFFINE_GAUGE_AND_PARTICLE_JETS_NONLINEAR_AUTHORITY_DERIVED = FALSE
+G7_SAME_CENTER_ACTION_BLOCK_RADII_POLYNOMIAL_DERIVED = FALSE
+G7_SAME_CENTER_COMPONENTWISE_OR_FINER_BLOCK_RADII_DERIVED = FALSE
+G7_BHSM_NATIVE_GREEN_IMAGE_PARTITION_RECOVERED = TRUE
+G7_CURRENT_CENTER_GREEN_IMAGE_ANISOTROPIC_RADII_DERIVED = FALSE
+G7_CURRENT_CENTER_NODE1_GREEN_DIRECTIONAL_CURVATURE_DERIVED = TRUE
+G7_CURRENT_CENTER_ALL_POST_RESET_ENDPOINT_GREEN_DIRECTIONAL_CURVATURE_DERIVED = TRUE
+G7_CURRENT_CENTER_GREEN_MIDPOINT_DIRECTIONAL_CURVATURE_DERIVED = FALSE
+G7_CURRENT_CENTER_COMPONENTWISE_GREEN_MIDPOINT_ROUTE_OBSTRUCTED = TRUE
+G7_CURRENT_CENTER_CORRELATED_GREEN_NORMALIZATION_TRANSPORT_DERIVED = TRUE
+G7_CURRENT_GREEN_CORRELATED_SCALAR_INTERVAL355_FINITE = TRUE
+G7_CURRENT_GREEN_CORRELATED_SCALAR_ALL_INTERVALS_DERIVED = TRUE
+G7_CURRENT_GREEN_CORRELATED_CENTRAL_SCALAR_CAUSAL_COMPOSITION_DERIVED = TRUE
+G7_CURRENT_CENTER_COMPONENTWISE_GREEN_MIDPOINT_ROUTE_OBSTRUCTED_AT_512_BIT = TRUE
+G7_CURRENT_GREEN_MIXED_TRANSVERSE_DECISIVE_NODE_SEED_DERIVED = TRUE
+G7_CURRENT_GREEN_MIXED_DIRECT_BILINEAR_CENTER_IDENTITY_REPRODUCED = TRUE
+G7_CURRENT_GREEN_MIXED_DIRECT_BILINEAR_ALL_ENDPOINT_CENTERS_MATERIALIZED = TRUE
+G7_CURRENT_GREEN_MIXED_DIRECT_BILINEAR_OUTWARD_EQUIVALENCE_DERIVED = TRUE
+G7_CURRENT_GREEN_MIXED_TRANSVERSE_ALL_NODES_DERIVED = TRUE
+G7_CURRENT_GREEN_MIXED_TRANSVERSE_ALL_MIDPOINTS_DERIVED = FALSE
+G7_CURRENT_GREEN_TRANSVERSE_TRANSVERSE_DECISIVE_DIRECTION_SEED_DERIVED = TRUE
+FULL_BHSM_COMPLETE = FALSE
+```

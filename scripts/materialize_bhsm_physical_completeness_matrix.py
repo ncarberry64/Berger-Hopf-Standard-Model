@@ -21,6 +21,14 @@ GATE7_AUTHORITY = (
     "artifacts/flagship_integration/"
     "BHSM_N12_GATE7_AUGMENTED_FIXED_DESCRIPTOR_MINIMUM_CONTRACTION_ADJUDICATION.json"
 )
+NONLINEAR_GATE7_AUTHORITY = (
+    "artifacts/action_extension/"
+    "BHSM_AE4_CURRENT_C2_NONLINEAR_CARRIER_AUTHORITY_ADJUDICATION.json"
+)
+ENCAPSULATION_SCOPE_AUTHORITY = (
+    "artifacts/current_semantics/"
+    "BHSM_ENCAPSULATION_REALIZATION_ONTOLOGY.json"
+)
 
 ENGINE_PATHS = {
     "action_expansion": "src/bhsm/interface/universal_physical_action_expansion.py",
@@ -134,7 +142,7 @@ ACTION_OWNED_BY_ID = {
 }
 
 PROMOTION_GATE_BY_ID = {
-    "GATE7_PHYSICAL_BACKGROUND": "SAME_CENTER_OUTWARD_74D_Y_Z1_Z2_CONTRACTION",
+    "GATE7_PHYSICAL_BACKGROUND": "SAME_CENTER_GREEN_IMAGE_LONGITUDINAL_TRANSVERSE_RADII_SCREEN",
     "UNIVERSAL_ACTION_EXPANSION": "GATE7_CLOSED_PLUS_HISTORY_SEAM_ACTION_ASSEMBLY",
     "RETAINED_SM_COMPONENT_ATTACHMENT": "CURRENT_AE2_BACKGROUND_FULL_FIELD_ACTION_QUANTUM_SADDLE_AND_SCALE",
     "UNIVERSAL_QUADRATIC_SPECTRUM_AND_PROPAGATORS": "PHYSICAL_S2_PENCIL_BRST_SCALE_AND_GATE7",
@@ -205,6 +213,10 @@ def _record(
         "kind": "gate_authority",
         "path": GATE7_AUTHORITY,
         "sha256": _sha256(ROOT / GATE7_AUTHORITY),
+    }, {
+        "kind": "gate_hindsight_authority",
+        "path": NONLINEAR_GATE7_AUTHORITY,
+        "sha256": _sha256(ROOT / NONLINEAR_GATE7_AUTHORITY),
     }]
     for key in engine_evidence:
         for kind, paths in (("source", ENGINE_PATHS), ("focused_test", ENGINE_TEST_PATHS)):
@@ -230,18 +242,37 @@ def _record(
 def build_payload() -> dict[str, Any]:
     gate_path = ROOT / GATE7_AUTHORITY
     gate = json.loads(gate_path.read_text(encoding="utf-8"))
-    sources = {GATE7_AUTHORITY: _sha256(gate_path)}
+    nonlinear_gate_path = ROOT / NONLINEAR_GATE7_AUTHORITY
+    nonlinear_gate = json.loads(
+        nonlinear_gate_path.read_text(encoding="utf-8")
+    )
+    encapsulation_scope_path = ROOT / ENCAPSULATION_SCOPE_AUTHORITY
+    encapsulation_scope = json.loads(
+        encapsulation_scope_path.read_text(encoding="utf-8")
+    )
+    sources = {
+        GATE7_AUTHORITY: _sha256(gate_path),
+        NONLINEAR_GATE7_AUTHORITY: _sha256(nonlinear_gate_path),
+        ENCAPSULATION_SCOPE_AUTHORITY: _sha256(encapsulation_scope_path),
+    }
     sources.update({path: _sha256(ROOT / path) for path in ENGINE_PATHS.values()})
     sources.update({path: _sha256(ROOT / path) for path in ENGINE_TEST_PATHS.values()})
 
-    gate_blocker = gate["exact_blocker"]
+    gate_blocker = nonlinear_gate["exact_next_calculation"]
     records = [
         _record(
             "GATE7_PHYSICAL_BACKGROUND",
-            "ONE_FROZEN_ACTION_SELECTED_PHYSICAL_BACKGROUND_WITH_AN_OUTWARD_CONTRACTION_CERTIFICATE",
-            "PRECISE_EQUATION_LEVEL_BLOCKER_LOCALIZED",
+            "ONE_FROZEN_ACTION_SELECTED_PHYSICAL_BACKGROUND_WITH_A_GREEN_IMAGE_LONGITUDINAL_TRANSVERSE_RADII_CERTIFICATE",
+            "SCALAR_AND_COARSE_FIELD_DESCRIPTOR_ROUTES_OBSTRUCTED__BHSM_NATIVE_GREEN_IMAGE_TWO_RADIUS_SCREEN_OPEN",
             (),
-            ("one retained-exact-field 74D replay center", "one-shot nonlinear replay"),
+            (
+                "one retained-exact-field 74D replay center",
+                "one-shot nonlinear replay",
+                "same-center outward Y Z1 Z2 operands",
+                "single-radius proof-coordinate obstruction adjudication",
+                "coarse 73+1 field-descriptor block obstruction adjudication",
+                "current-center signed Green-image partition recovery",
+            ),
             (gate_blocker,),
         ),
         _record(
@@ -386,9 +417,133 @@ def build_payload() -> dict[str, Any]:
     validations = {
         "Gate7_authority_is_validated": gate["validation_passed"] is True,
         "Gate7_is_not_closed": gate["claim_boundary"]["Gate7"] == "ACTIVE_NOT_CLOSED",
-        "same_center_interval_contraction_is_the_exact_Gate7_owner": (
+        "encapsulation_scope_is_validated_and_particle_specific_realizations_remain_open": (
+            encapsulation_scope["validation_passed"] is True
+            and encapsulation_scope["scope_adjudication"]["Gate7_status"]
+            == "ACTIVE_NOT_CLOSED"
+            and encapsulation_scope["scope_adjudication"]["Gate7_particle_scope"]
+            == "NO_PARTICLE_SPECIFIC_UNIVERSALITY_CLAIM"
+            and not any(encapsulation_scope["guardrails"].values())
+        ),
+        "same_center_interval_contraction_was_precisely_localized": (
             gate["claim_boundary"]["current_center_interval_contraction"]
             == "OPEN_PRECISELY_LOCALIZED"
+        ),
+        "same_center_scalar_route_is_now_evaluated_and_obstructed": (
+            nonlinear_gate["validation_passed"] is True
+            and nonlinear_gate["claim_boundary"][
+                "G7_SINGLE_RADIUS_74D_CONTRACTION_ROUTE_OBSTRUCTED"
+            ]
+            and nonlinear_gate["recovered_same_center_operands"][
+                "necessary_discriminant_upper"
+            ]
+            < 0.0
+            and nonlinear_gate["claim_boundary"][
+                "G7_ROOT_NONEXISTENCE_DERIVED"
+            ]
+            is False
+        ),
+        "same_center_coarse_field_descriptor_route_is_now_evaluated_and_obstructed": (
+            nonlinear_gate["claim_boundary"][
+                "G7_FIELD_DESCRIPTOR_BLOCK_CONTRACTION_ROUTE_OBSTRUCTED"
+            ]
+            and nonlinear_gate["recovered_coarse_block_obstruction"][
+                "necessary_field_discriminant_upper"
+            ]
+            < 0.0
+        ),
+        "BHSM_native_green_partition_and_global_scalar_are_integrated": (
+            nonlinear_gate["claim_boundary"][
+                "G7_BHSM_NATIVE_GREEN_IMAGE_PARTITION_RECOVERED"
+            ]
+            and nonlinear_gate["recovered_green_image_partition"][
+                "obstruction_transverse_projection_lower"
+            ]
+            > 0.99
+            and nonlinear_gate["claim_boundary"][
+                "G7_CURRENT_GREEN_CORRELATED_SCALAR_ALL_INTERVALS_DERIVED"
+            ]
+            and nonlinear_gate["recovered_green_correlated_scalar_all_intervals"][
+                "intervals_certified"
+            ] == 370
+            and nonlinear_gate["claim_boundary"][
+                "G7_CURRENT_GREEN_CORRELATED_CENTRAL_SCALAR_CAUSAL_COMPOSITION_DERIVED"
+            ]
+            and nonlinear_gate["claim_boundary"][
+                "G7_CURRENT_CENTER_COMPONENTWISE_GREEN_MIDPOINT_ROUTE_OBSTRUCTED_AT_512_BIT"
+            ]
+            and nonlinear_gate[
+                "recovered_green_correlated_central_scalar_causal_composition"
+            ]["maximum_causal_curvature_norm_upper"] < 8.406
+            and "MIXED_GREEN_TRANSVERSE" in gate_blocker
+        ),
+        "current_green_directional_seed_is_integrated": (
+            nonlinear_gate["claim_boundary"][
+                "G7_CURRENT_CENTER_NODE1_GREEN_DIRECTIONAL_CURVATURE_DERIVED"
+            ]
+            and nonlinear_gate["recovered_green_directional_seed"][
+                "curvature_upper"
+            ]
+            < 0.03
+        ),
+        "current_green_mixed_transverse_seed_is_integrated": (
+            nonlinear_gate["claim_boundary"][
+                "G7_CURRENT_GREEN_MIXED_TRANSVERSE_DECISIVE_NODE_SEED_DERIVED"
+            ]
+            and nonlinear_gate["recovered_green_mixed_transverse_seed"][
+                "nodes"
+            ] == [1, 355, 356, 370]
+            and nonlinear_gate["claim_boundary"][
+                "G7_CURRENT_GREEN_MIXED_TRANSVERSE_ALL_NODES_DERIVED"
+            ]
+        ),
+        "current_green_mixed_direct_bilinear_identity_is_integrated_fail_closed": (
+            nonlinear_gate["claim_boundary"][
+                "G7_CURRENT_GREEN_MIXED_DIRECT_BILINEAR_CENTER_IDENTITY_REPRODUCED"
+            ]
+            and nonlinear_gate["recovered_green_mixed_direct_bilinear_identity"][
+                "maximum_center_absolute_difference"
+            ] < 1.0e-8
+            and not nonlinear_gate["recovered_green_mixed_direct_bilinear_identity"][
+                "all_component_interval_hulls_overlap"
+            ]
+            and nonlinear_gate["claim_boundary"][
+                "G7_CURRENT_GREEN_MIXED_DIRECT_BILINEAR_OUTWARD_EQUIVALENCE_DERIVED"
+            ]
+        ),
+        "current_green_mixed_all_endpoint_outward_authority_is_integrated": (
+            nonlinear_gate["claim_boundary"][
+                "G7_CURRENT_GREEN_MIXED_DIRECT_BILINEAR_ALL_ENDPOINT_CENTERS_MATERIALIZED"
+            ]
+            and nonlinear_gate[
+                "recovered_green_mixed_all_endpoint_center_reconnaissance"
+            ]["post_reset_endpoints_with_defined_green_axis"] == 370
+            and nonlinear_gate[
+                "recovered_green_mixed_all_endpoint_center_reconnaissance"
+            ]["maximum_direct_graph_Frobenius_upper"] > 0.0
+            and nonlinear_gate["claim_boundary"][
+                "G7_CURRENT_GREEN_MIXED_DIRECT_BILINEAR_OUTWARD_EQUIVALENCE_DERIVED"
+            ]
+            and nonlinear_gate["claim_boundary"][
+                "G7_CURRENT_GREEN_MIXED_TRANSVERSE_ALL_NODES_DERIVED"
+            ]
+            and nonlinear_gate[
+                "recovered_green_mixed_outward_reconciliation"
+            ]["seed_columns_reconciled_per_node"] == 74
+            and not nonlinear_gate["claim_boundary"][
+                "G7_CURRENT_GREEN_MIXED_TRANSVERSE_ALL_MIDPOINTS_DERIVED"
+            ]
+        ),
+        "current_green_transverse_quadratic_seed_is_integrated": (
+            nonlinear_gate["claim_boundary"][
+                "G7_CURRENT_GREEN_TRANSVERSE_TRANSVERSE_DECISIVE_DIRECTION_SEED_DERIVED"
+            ]
+            and nonlinear_gate["recovered_green_transverse_quadratic_seed"][
+                "evaluated_direction_count"
+            ] == 8
+            and not nonlinear_gate["claim_boundary"][
+                "G7_CURRENT_GREEN_TRANSVERSE_TRANSVERSE_FULL_OPERATOR_BOUND_DERIVED"
+            ]
         ),
         "all_required_rows_are_present_once": (
             identifiers == REQUIRED_RECORD_IDS and len(set(identifiers)) == len(identifiers)
@@ -432,11 +587,33 @@ def build_payload() -> dict[str, Any]:
         },
         "Gate7_authority": {
             "path": GATE7_AUTHORITY,
+            "hindsight_path": NONLINEAR_GATE7_AUTHORITY,
             "status": gate["claim_boundary"]["Gate7"],
             "exact_blocker": gate_blocker,
+            "single_radius_route": "OBSTRUCTED",
+            "coarse_field_descriptor_block_route": "OBSTRUCTED",
+            "BHSM_native_green_image_partition": "RECOVERED_CURRENT_CENTER",
+            "mixed_green_transverse_current_seed": "DERIVED_FOUR_DECISIVE_NODES",
+            "mixed_green_transverse_direct_bilinear": (
+                "CENTER_IDENTITY_REPRODUCED__ALL_370_DEFINED_AXIS_ENDPOINT_"
+                "CENTERS_MATERIALIZED__OUTWARD_EQUIVALENCE_DERIVED__"
+                "ALL_ENDPOINTS_DERIVED__MIDPOINTS_OPEN"
+            ),
+            "transverse_quadratic_current_seed": "DERIVED_EIGHT_DECISIVE_DIRECTIONS",
+            "root_nonexistence_or_physical_instability": "NOT_DERIVED",
+            "realization_scope": "ONE_ACTION_SELECTED_BACKGROUND_REALIZATION_NOT_A_UNIVERSAL_PARTICLE_TRAJECTORY",
+            "particle_specific_realizations": "OPEN_ENVIRONMENT_MODE_SCALE_BOUNDARY_AND_HISTORY_DEPENDENT",
             "background_freeze_for_universal_physics_engine": gate["adjudication"][
                 "background_freeze_for_universal_physics_engine"
             ],
+        },
+        "encapsulation_realization_scope": {
+            "path": ENCAPSULATION_SCOPE_AUTHORITY,
+            "universal_object": encapsulation_scope["scope_adjudication"]["universal_object"],
+            "current_371_node_object": encapsulation_scope["scope_adjudication"]["current_371_node_object"],
+            "topological_zero_interior_fermion": "HYPOTHESIS",
+            "complete_interacting_spacetime_volume_enclosure": "OPEN",
+            "stability_to_decay_prediction": "OPEN",
         },
         "source_sha256": sources,
         "records": records,
