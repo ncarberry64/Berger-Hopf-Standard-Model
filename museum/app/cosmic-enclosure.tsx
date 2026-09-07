@@ -1,8 +1,17 @@
 'use client';
 /* oxlint-disable jsx-a11y/prefer-tag-over-role -- Inline SVG needs image semantics; an HTML img cannot contain this interactive drawing. */
-import { useEffect, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import { SCIENCE } from './exhibits';
 import references from './reference-data.json';
+import {
+  cosmicProjection as project,
+  filamentPoint,
+  mix,
+  webEdges as edges,
+  webNodes as xyz,
+  webParticles,
+  webHubs,
+} from '../lib/cosmic-web';
 
 const phases = [
   {
@@ -42,35 +51,31 @@ const phases = [
   },
 ];
 const clamp = (v: number) => Math.max(0, Math.min(1, v));
-const xyz = Array.from({ length: 16 }, (_, i) => {
-  const y = 1 - (2 * (i + 0.5)) / 16,
-    r = Math.sqrt(1 - y * y),
-    a = i * 2.399963;
-  return [r * Math.cos(a), y, r * Math.sin(a)];
-});
-const edges = xyz
-  .flatMap((a, i) =>
-    xyz.map((b, j) => ({ i, j, d: Math.hypot(...a.map((v, k) => v - b[k])) })),
-  )
-  .filter((e) => e.i < e.j && e.d < 1.14);
-function project(v: number[], turn: number) {
-  const x = v[0] * Math.cos(turn) + v[2] * Math.sin(turn),
-    z = -v[0] * Math.sin(turn) + v[2] * Math.cos(turn);
-  return [480 + 260 * x, 310 - 260 * v[1], z];
-}
 function point(i: number, turn: number) {
   return project(xyz[i], turn);
 }
 const f = (n: number) => n.toFixed(2);
 
 export function CosmicEnclosure({ motion }: { motion: boolean }) {
+  const sceneRef = useRef<HTMLElement>(null);
   const [phase, setPhase] = useState(0),
     [playing, setPlaying] = useState(true),
     [speed, setSpeed] = useState(1);
   useEffect(() => {
     if (!motion || !playing) return;
-    const t = setInterval(() => setPhase((p) => (p + 0.12 * speed) % 100), 60);
-    return () => clearInterval(t);
+    let visible = false;
+    const observer = new IntersectionObserver(([entry]) => {
+      visible = entry.isIntersecting;
+    });
+    if (sceneRef.current) observer.observe(sceneRef.current);
+    const t = setInterval(() => {
+      if (visible && !document.hidden)
+        setPhase((p) => (p + 0.12 * speed) % 100);
+    }, 60);
+    return () => {
+      clearInterval(t);
+      observer.disconnect();
+    };
   }, [motion, playing, speed]);
   const active = phases.reduce((a, p, i) => (phase >= p.start ? i : a), 0),
     release = phase < 10,
@@ -78,24 +83,28 @@ export function CosmicEnclosure({ motion }: { motion: boolean }) {
   const turn = phase * 0.006,
     web = clamp((phase - 34) / 16) * (1 - clamp((phase - 74) / 22)),
     evap = clamp((phase - 89) / 7),
-    collapse = clamp((phase - 68) / 28);
+    collapse = clamp((phase - 68) / 28),
+    plasma = 1 - clamp((phase - 4) / 18);
   const shellOpacity = clamp((phase - 10) / 8) * (1 - clamp((phase - 32) / 16));
-  const line = (i: number, j: number) => {
-    const a = xyz[i],
-      b = xyz[j];
+  const line = (edge: (typeof edges)[number], offset = 0) => {
+    let visible = false;
     return Array.from({ length: 25 }, (_, k) => {
-      const t = k / 24,
-        v = a.map((n, l) => n * (1 - t) + b[l] * t),
-        r = Math.hypot(...v);
-      const p = project(
-        v.map((n) => n / r),
-        turn,
-      );
-      return `${k ? 'L' : 'M'}${f(p[0])} ${f(p[1])}`;
+      const p = project(filamentPoint(edge, k / 24, offset), turn);
+      if (p[2] < -0.025) {
+        visible = false;
+        return '';
+      }
+      const prefix = visible ? 'L' : 'M';
+      visible = true;
+      return `${prefix}${f(p[0])} ${f(p[1])}`;
     }).join(' ');
   };
   return (
-    <article id="cosmic-enclosure-cycle" className="cosmic-cycle">
+    <article
+      id="cosmic-enclosure-cycle"
+      className="cosmic-cycle"
+      ref={sceneRef}
+    >
       <p className="eyebrow">Cosmic enclosure · other work</p>
       <h3>From a sea of light to the cosmic web.</h3>
       <p>
@@ -117,70 +126,61 @@ export function CosmicEnclosure({ motion }: { motion: boolean }) {
         <svg
           viewBox="0 0 960 650"
           role="img"
-          aria-label={`Cosmic hypersphere: ${phases[active].title}. Stars, acoustic shells and filamentary structures evolve into dark concentrations and finally a smooth surface.`}
+          aria-label={`Cosmic hypersphere: ${phases[active].title}. Irregular filaments, broad voids and dense cluster knots evolve into dark concentrations and finally a smooth surface.`}
         >
           <defs>
             <radialGradient id="cosmic-nebula">
-              <stop stopColor={release ? '#fff8cc' : '#25506a'} />
-              <stop offset=".48" stopColor={release ? '#edcaff' : '#172846'} />
-              <stop offset="1" stopColor="#040a17" />
+              <stop stopColor="#07101b" />
+              <stop offset=".48" stopColor="#060b14" />
+              <stop offset="1" stopColor="#020408" />
             </radialGradient>
             <radialGradient id="cosmic-halo">
               <stop stopColor="#fff9cc" />
-              <stop offset=".12" stopColor="#f1c078" />
-              <stop offset=".36" stopColor="#966ef4" stopOpacity=".55" />
-              <stop offset="1" stopColor="#845df0" stopOpacity="0" />
+              <stop offset=".12" stopColor="#e5d9c2" />
+              <stop offset=".36" stopColor="#97aaca" stopOpacity=".2" />
+              <stop offset="1" stopColor="#637a99" stopOpacity="0" />
             </radialGradient>
             <radialGradient id="cosmic-release">
               <stop stopColor="#fffef0" />
               <stop offset=".55" stopColor="#fff0c4" />
               <stop offset="1" stopColor="#e2e9ff" stopOpacity=".05" />
             </radialGradient>
-            <filter id="cosmic-soft">
+            <filter
+              id="cosmic-soft"
+              filterUnits="userSpaceOnUse"
+              x="180"
+              y="10"
+              width="600"
+              height="600"
+            >
               <feGaussianBlur stdDeviation="3" />
             </filter>
+            <radialGradient id="cosmic-plasma">
+              <stop stopColor="#fffef0" stopOpacity=".65" />
+              <stop offset=".38" stopColor="#e8edff" stopOpacity=".22" />
+              <stop offset="1" stopColor="#b0bded" stopOpacity="0" />
+            </radialGradient>
+            <radialGradient id="cosmic-limb">
+              <stop offset=".72" stopColor="#000" stopOpacity="0" />
+              <stop offset="1" stopColor="#010309" stopOpacity=".82" />
+            </radialGradient>
             <clipPath id="cosmic-surface-clip">
               <circle cx="480" cy="310" r="261" />
             </clipPath>
           </defs>
           <rect width="960" height="650" fill="#030813" />
-          {!smooth &&
-            Array.from({ length: 190 }, (_, i) => (
-              <circle
-                key={i}
-                cx={f((i * 137.507) % 960)}
-                cy={f((i * i * 19.31) % 650)}
-                r={i % 17 === 0 ? 1.5 : 0.65}
-                fill={i % 3 === 0 ? '#efd8a6' : '#a2c9e3'}
-                opacity={(release ? 0.1 : 0.5) * (1 - evap)}
-              />
-            ))}
           <circle
             cx="480"
             cy="310"
             r="260"
             fill={smooth ? '#1b3044' : 'url(#cosmic-nebula)'}
-            stroke="#7393b0"
+            stroke="#25313f"
             strokeWidth="1"
           />
           {!smooth && (
             <g clipPath="url(#cosmic-surface-clip)">
-              {!release &&
-                Array.from({ length: 9 }, (_, i) => (
-                  <ellipse
-                    key={i}
-                    cx="480"
-                    cy="310"
-                    rx={32 + i * 28}
-                    ry="260"
-                    transform={`rotate(${f(turn * 20)} 480 310)`}
-                    fill="none"
-                    stroke="#96cde0"
-                    opacity=".06"
-                  />
-                ))}
               {shellOpacity > 0 &&
-                [2, 7, 11].map((i) => {
+                webHubs.map((i) => {
                   const p = point(i, turn),
                     r = 35 + clamp((phase - 10) / 16) * 105;
                   return (
@@ -206,86 +206,89 @@ export function CosmicEnclosure({ motion }: { motion: boolean }) {
                   );
                 })}
               <g opacity={web}>
-                {edges.map(({ i, j }, k) => (
+                {edges.map((edge, k) => (
                   <g key={k}>
                     <path
-                      d={line(i, j)}
-                      stroke={k % 3 === 0 ? '#b299ef' : '#66cce6'}
-                      strokeWidth="11"
-                      opacity=".18"
+                      d={line(edge)}
+                      stroke="#9eafc8"
+                      strokeWidth={5 * edge.weight}
+                      opacity=".11"
                       fill="none"
+                      strokeLinecap="round"
                       filter="url(#cosmic-soft)"
                     />
-                    <path
-                      d={line(i, j)}
-                      stroke="#92ddec"
-                      strokeWidth="1.1"
-                      fill="none"
-                      opacity=".65"
-                    />
+                    {[-0.012, 0, 0.012].map((offset, j) => (
+                      <path
+                        key={j}
+                        d={line(edge, offset)}
+                        stroke={j === 1 ? '#c2cfdf' : '#728aa7'}
+                        strokeWidth={j === 1 ? 0.55 : 0.35}
+                        fill="none"
+                        opacity={0.1 * edge.weight}
+                        strokeLinecap="round"
+                      />
+                    ))}
                   </g>
                 ))}
               </g>
               {!release &&
-                Array.from({ length: 380 }, (_, i) => {
-                  const edge = edges[i % edges.length],
-                    t = (i * 0.618 + phase * 0.003) % 1;
-                  const a = xyz[edge.i],
-                    b = xyz[edge.j];
-                  const attract = clamp((phase - 26) / 26);
-                  let v = a.map(
-                    (n, k) =>
-                      n * (1 - t) +
-                      b[k] * t +
-                      (1 - attract) * 0.26 * Math.sin(i * (k + 1) * 2.17),
-                  );
-                  const target = xyz[[3, 8, 12][i % 3]];
-                  v = v.map(
-                    (n, k) => n * (1 - collapse) + target[k] * collapse,
-                  );
-                  const r = Math.hypot(...v);
-                  const p = project(
-                    v.map((n) => n / r),
-                    turn,
-                  );
+                webParticles.map((particle, i) => {
+                  const attract = clamp((phase - 20) / 34);
+                  let v = mix(particle.diffuse, particle.position, attract);
+                  v = mix(v, xyz[webHubs[particle.target]], collapse);
+                  const p = project(v, turn),
+                    depth = clamp((p[2] + 0.015) / 0.18);
+                  if (depth === 0) return null;
                   return (
                     <circle
                       key={i}
                       cx={f(p[0])}
                       cy={f(p[1])}
-                      r={i % 23 === 0 ? 2.1 : 0.85}
-                      fill={i % 7 === 0 ? '#ffd294' : '#b3e7f2'}
-                      opacity={(p[2] > 0 ? 0.9 : 0.25) * (1 - evap)}
+                      r={particle.size}
+                      fill={particle.warm ? '#e9d4b8' : '#bacddd'}
+                      opacity={
+                        particle.brightness *
+                        depth *
+                        (1 - evap) *
+                        (0.24 + 0.76 * attract)
+                      }
                     />
                   );
                 })}
               {web > 0 &&
                 xyz.map((_, i) => {
-                  const p = point(i, turn);
+                  const p = point(i, turn),
+                    depth = clamp(p[2] / 0.2);
+                  if (!depth) return null;
                   return (
-                    <g key={i} opacity={web * (p[2] > 0 ? 1 : 0.4)}>
+                    <g key={i} opacity={web * depth}>
                       <circle
                         cx={f(p[0])}
                         cy={f(p[1])}
-                        r={i % 3 === 0 ? 37 : 22}
+                        r={i % 5 === 0 ? 14 : 7}
                         fill="url(#cosmic-halo)"
                       />
-                      <circle cx={f(p[0])} cy={f(p[1])} r="2" fill="#fff7d0" />
-                      {i % 5 === 0 && phase < 76 && (
+                      <circle
+                        cx={f(p[0])}
+                        cy={f(p[1])}
+                        r={i % 5 === 0 ? 0.95 : 0.5}
+                        fill="#f3e5cf"
+                        opacity=".8"
+                      />
+                      {i % 19 === 0 && phase < 76 && (
                         <circle
                           cx={f(p[0])}
                           cy={f(p[1])}
-                          r={f(4 + ((phase + i) % 9) * 2)}
-                          fill="none"
-                          stroke="#ff8b88"
-                          opacity=".8"
+                          r={f(3 + ((phase + i) % 9) * 0.8)}
+                          fill="url(#cosmic-halo)"
+                          opacity={1 - ((phase + i) % 9) / 9}
                         />
                       )}
                     </g>
                   );
                 })}
               {phase > 61 &&
-                [3, 8, 12].map((i, k) => {
+                webHubs.map((i, k) => {
                   const p = point(i, turn),
                     size = (10 + 18 * clamp((phase - 61) / 25)) * (1 - evap);
                   return (
@@ -333,39 +336,59 @@ export function CosmicEnclosure({ motion }: { motion: boolean }) {
                     </g>
                   );
                 })}
-              {release && (
-                <>
+              {plasma > 0 && (
+                <g opacity={plasma}>
                   <circle
                     cx="480"
                     cy="310"
-                    r={f(190 + phase * 12)}
-                    fill="url(#cosmic-release)"
+                    r="260"
+                    fill="#dbe4f4"
+                    opacity=".48"
                   />
-                  {Array.from({ length: 36 }, (_, i) => {
-                    const a = (i * Math.PI) / 18;
+                  <circle
+                    cx="480"
+                    cy="310"
+                    r="260"
+                    fill="url(#cosmic-release)"
+                    opacity=".68"
+                  />
+                  {Array.from({ length: 46 }, (_, i) => {
+                    const a = i * 2.399963 + phase * 0.035,
+                      r = Math.sqrt((i + 0.5) / 46) * 258;
                     return (
-                      <line
+                      <circle
                         key={i}
-                        x1={f(480 + 40 * Math.cos(a))}
-                        y1={f(310 + 40 * Math.sin(a))}
-                        x2={f(480 + 280 * Math.cos(a))}
-                        y2={f(310 + 280 * Math.sin(a))}
-                        stroke="#fff7d5"
-                        strokeWidth="2"
-                        opacity={0.7 - phase * 0.04}
+                        cx={f(480 + r * Math.cos(a))}
+                        cy={f(310 + r * Math.sin(a))}
+                        r={f(44 + 19 * Math.sin(i * 1.7 + phase * 0.3))}
+                        fill="url(#cosmic-plasma)"
+                        opacity={0.46 + 0.14 * Math.sin(i + phase * 0.2)}
                       />
                     );
                   })}
-                  <circle
-                    cx="480"
-                    cy="310"
-                    r="257"
-                    fill="none"
-                    stroke="#fff"
-                    strokeWidth="5"
-                    strokeDasharray="18 10"
-                  />
-                </>
+                  {[0, 1, 2].map((i) => (
+                    <circle
+                      key={i}
+                      cx="480"
+                      cy="310"
+                      r={f(235 + 12 * Math.sin(phase * 0.18 + i * 0.9))}
+                      fill="none"
+                      stroke="#e8eeff"
+                      strokeWidth={9 + i * 4}
+                      opacity={0.025 + 0.01 * Math.sin(phase * 0.3 + i)}
+                      filter="url(#cosmic-soft)"
+                    />
+                  ))}
+                </g>
+              )}
+              {!release && (
+                <circle
+                  cx="480"
+                  cy="310"
+                  r="260"
+                  fill="url(#cosmic-limb)"
+                  opacity={1 - plasma}
+                />
               )}
             </g>
           )}
@@ -425,8 +448,8 @@ export function CosmicEnclosure({ motion }: { motion: boolean }) {
         <h4>{phases[active].title}</h4>
         <p>{phases[active].text}</p>
         <p className="cycle-legend">
-          Cyan: acoustic imprint and filaments · gold: clusters and accretion ·
-          coral: energetic bursts · dark cores: black holes · whole-surface
+          Pale filaments: matter density · warm knots: galaxy groups and
+          clusters · dark cores: enlarged black-hole symbols · diffuse surface
           light: proposed white-hole release.
         </p>
       </div>
@@ -439,6 +462,20 @@ export function CosmicEnclosure({ motion }: { motion: boolean }) {
             animation has no distance or time calibration.
           </p>
           <a href={references.bao_source}>DESI: the observed BAO signal ↗</a>
+          <p>
+            The web’s appearance is informed by galaxy-survey maps: irregular
+            filaments, bright intersections and large voids. Density is enhanced
+            for visibility; individual stars and black-hole horizons would not
+            be resolved at this scale. This is a synthetic illustration, not a
+            photograph or survey reconstruction.
+          </p>
+          <a href="https://www.desi.lbl.gov/2026/07/03/exploring-what-desi-measures-an-interactive-cosmic-web-in-your-browser/">
+            DESI: mapped filaments and voids ↗
+          </a>{' '}
+          ·{' '}
+          <a href="https://eso.org/public/images/potw2504a/">
+            ESO: an observed cosmic filament ↗
+          </a>
         </div>
         <div>
           <h4>Norman’s enclosure picture</h4>
