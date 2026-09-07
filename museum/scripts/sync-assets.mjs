@@ -135,3 +135,18 @@ await cp(
   join(dataRoot, 'science-collection.json'),
   join(museumRoot, 'app', 'science-collection.json'),
 );
+
+const referenceCatalog = resolve(
+  museumRoot,
+  '..',
+  'data',
+  'museum',
+  'experimental_references_20260907.json',
+);
+if (existsSync(referenceCatalog))
+  await cp(referenceCatalog, join(dataRoot, 'reference-data.json'));
+await access(join(dataRoot, 'reference-data.json'));
+await cp(
+  join(dataRoot, 'reference-data.json'),
+  join(museumRoot, 'app', 'reference-data.json'),
+);

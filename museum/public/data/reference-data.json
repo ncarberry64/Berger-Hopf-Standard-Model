@@ -1,0 +1,200 @@
+{
+  "schema": "BHSM_MUSEUM_EXTERNAL_REFERENCES_V1",
+  "checked": "2026-09-07",
+  "policy": "External comparison inputs only. Never inputs to BHSM action selection, normalization or prediction. Published editions are explicitly identified; a fit is not a raw measurement.",
+  "nist_source": "https://physics.nist.gov/cuu/Constants/Table/allascii.txt",
+  "nist_edition": "CODATA 2022 recommended values",
+  "magnetic": [
+    {
+      "id": "electron",
+      "name": "Electron",
+      "symbol": "e⁻",
+      "moment": -9.2847646917e-24,
+      "uncertainty": 2.9e-33,
+      "color": "#67e8ef",
+      "g": -2.00231930436092,
+      "note": "Negative moment: the magnetic moment points opposite to the spin. NIST uses a signed g factor."
+    },
+    {
+      "id": "muon",
+      "name": "Muon",
+      "symbol": "μ⁻",
+      "moment": -4.4904483e-26,
+      "uncertainty": 1e-33,
+      "color": "#f2c774",
+      "g": -2.00233184123,
+      "note": "An unstable, heavier lepton. This fixed CODATA 2022 reference is not a claim to include later muon g−2 measurements."
+    },
+    {
+      "id": "proton",
+      "name": "Proton",
+      "symbol": "p",
+      "moment": 1.41060679545e-26,
+      "uncertainty": 6e-36,
+      "color": "#b99bff",
+      "g": 5.5856946893,
+      "note": "A composite particle: its magnetic moment reflects internal quark and gluon dynamics."
+    },
+    {
+      "id": "neutron",
+      "name": "Neutron",
+      "symbol": "n",
+      "moment": -9.6623653e-27,
+      "uncertainty": 2.3e-33,
+      "color": "#f58ba9",
+      "g": -3.82608552,
+      "note": "Electrically neutral does not mean magnetically inert. The neutron has a nonzero magnetic moment."
+    }
+  ],
+  "comparisons": [
+    {
+      "id": "muon-tau",
+      "value": 0.0594635,
+      "uncertainty": 4e-06,
+      "unit": "ratio",
+      "label": "CODATA 2022 adjusted reference",
+      "source": "https://physics.nist.gov/cuu/Constants/Table/allascii.txt",
+      "convention": "Muon/tau mass ratio; standard uncertainty.",
+      "uncertainty_text": "±4e-06",
+      "lower": 0.059459500000000005,
+      "upper": 0.0594675
+    },
+    {
+      "id": "alpha-s",
+      "value": 0.118,
+      "uncertainty": 0.0009,
+      "unit": "dimensionless",
+      "label": "PDG 2025 world average",
+      "source": "https://pdg.lbl.gov/2025/reviews/rpp2025-rev-qcd.pdf",
+      "convention": "αs at the Z scale, MS-bar convention. The BHSM side is a historical electroweak matching screen.",
+      "uncertainty_text": "±0.0009",
+      "lower": 0.1171,
+      "upper": 0.11889999999999999
+    },
+    {
+      "id": "higgs",
+      "value": 125.2,
+      "uncertainty": 0.11,
+      "unit": "GeV",
+      "label": "PDG 2025 experimental average",
+      "source": "https://pdg.lbl.gov/2025/tables/rpp2025-sum-gauge-higgs-bosons.pdf",
+      "convention": "Higgs mass; PDG scale factor 1.4. Compared with a zeroth-order screen, not a dressed BHSM mass.",
+      "uncertainty_text": "±0.11",
+      "lower": 125.09,
+      "upper": 125.31
+    },
+    {
+      "id": "solar-angle",
+      "value": 0.308,
+      "unit": "dimensionless",
+      "uncertainty_text": "−0.011 / +0.012 (1σ)",
+      "lower": 0.297,
+      "upper": 0.32,
+      "label": "NuFIT 6.0 (2024) global fit",
+      "source": "https://www.nu-fit.org/sites/default/files/v60.tbl-parameters.pdf",
+      "convention": "Normal ordering; IC24 with Super-Kamiokande atmospheric data. Best fit and 1σ interval; not a raw measurement."
+    },
+    {
+      "id": "reactor-angle",
+      "value": 0.02215,
+      "unit": "dimensionless",
+      "uncertainty_text": "−0.00058 / +0.00056 (1σ)",
+      "lower": 0.02157,
+      "upper": 0.02271,
+      "label": "NuFIT 6.0 (2024) global fit",
+      "source": "https://www.nu-fit.org/sites/default/files/v60.tbl-parameters.pdf",
+      "convention": "Normal ordering; IC24 with Super-Kamiokande atmospheric data. Best fit and 1σ interval; not a raw measurement."
+    },
+    {
+      "id": "atmospheric-angle",
+      "value": 0.47,
+      "unit": "dimensionless",
+      "uncertainty_text": "−0.013 / +0.017 (1σ)",
+      "lower": 0.45699999999999996,
+      "upper": 0.487,
+      "label": "NuFIT 6.0 (2024) global fit",
+      "source": "https://www.nu-fit.org/sites/default/files/v60.tbl-parameters.pdf",
+      "convention": "Normal ordering; IC24 with Super-Kamiokande atmospheric data. Best fit and 1σ interval; not a raw measurement."
+    },
+    {
+      "id": "neutrino-gaps",
+      "value": 0.029805013927576604,
+      "unit": "ratio",
+      "lower": null,
+      "upper": null,
+      "uncertainty_text": "Ratio of best fits; no joint uncertainty assigned",
+      "label": "Calculated from NuFIT 6.0 fit",
+      "source": "https://www.nu-fit.org/sites/default/files/v60.tbl-parameters.pdf",
+      "convention": "Normal ordering, IC24 with SK: Δm²21 / Δm²31 = 7.49×10⁻⁵ / 2.513×10⁻³. Correlations are not supplied by this table."
+    },
+    {
+      "id": "quark-ratio",
+      "value": 0.207,
+      "unit": "ratio",
+      "lower": null,
+      "upper": null,
+      "uncertainty_text": "±0.001 experimental ±0.003 theory",
+      "label": "PDG 2025, neutral-B mixing extraction",
+      "source": "https://pdgweb.lbl.gov/2025/reviews/rpp2025-rev-ckm-matrix.pdf",
+      "convention": "|Vtd/Vts| extracted assuming the SM with lattice-QCD input; two uncertainties retained separately."
+    },
+    {
+      "id": "weak-angle",
+      "value": 0.23122,
+      "unit": "dimensionless",
+      "lower": 0.23118,
+      "upper": 0.23126,
+      "uncertainty_text": "±0.00004",
+      "label": "PDG 2025 GUT review reference",
+      "source": "https://pdg.lbl.gov/2025/reviews/rpp2025-rev-guts.pdf",
+      "convention": "sin²θW at mZ in the MS-bar scheme, not the on-shell or effective leptonic angle."
+    },
+    {
+      "id": "electroweak-v",
+      "value": 246.21965079413738,
+      "unit": "GeV",
+      "lower": 246.2195874648814,
+      "upper": 246.21971412339335,
+      "uncertainty_text": "±0.0000633 GeV (propagated)",
+      "label": "Calculated from CODATA 2022 G_F",
+      "source": "https://physics.nist.gov/cuu/Constants/Table/allascii.txt",
+      "convention": "v = (√2 G_F)^−½; G_F = 1.1663787(6)×10⁻⁵ GeV⁻². A reference-derived scale, not a direct mass measurement."
+    }
+  ],
+  "energy_scales": [
+    {
+      "id": "gravity",
+      "label": "Gravity",
+      "scale": "(1.220890 ± 0.000014) × 10¹⁹ GeV",
+      "meaning": "Planck energy, constructed from G, ħ and c; not an observed transition.",
+      "source": "https://physics.nist.gov/cuu/Constants/Table/allascii.txt",
+      "color": "#b99bff"
+    },
+    {
+      "id": "electromagnetic",
+      "label": "Electromagnetic",
+      "scale": "0.51099895069 ± 0.00000000016 MeV",
+      "meaning": "Electron rest-energy benchmark; electromagnetism has no single onset energy.",
+      "source": "https://physics.nist.gov/cuu/Constants/Table/allascii.txt",
+      "color": "#f2c774"
+    },
+    {
+      "id": "weak",
+      "label": "Weak",
+      "scale": "80.3692 ± 0.0133 GeV",
+      "meaning": "W-boson rest-energy benchmark, PDG 2025 average.",
+      "source": "https://pdg.lbl.gov/2025/tables/rpp2025-sum-gauge-higgs-bosons.pdf",
+      "color": "#67e8ef"
+    },
+    {
+      "id": "strong",
+      "label": "Strong",
+      "scale": "91.1880 ± 0.0020 GeV",
+      "meaning": "Z-scale comparison point for αs = 0.1180 ± 0.0009; not the onset of the strong force.",
+      "source": "https://pdg.lbl.gov/2025/reviews/rpp2025-rev-qcd.pdf",
+      "color": "#fc9171"
+    }
+  ],
+  "bao_source": "https://www.desi.lbl.gov/2026/07/30/new-desi-dr2-lyman-alpha-results-shed-light-on-dark-energy/",
+  "bao_note": "The observed BAO feature is an excess of tracer pairs separated by roughly 150 Mpc. It is a statistical imprint of early sound waves, not a literal shell collapsing into a filament."
+}

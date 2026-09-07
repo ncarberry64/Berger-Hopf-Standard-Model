@@ -3,6 +3,7 @@
 import { useState } from 'react';
 import comparison from './sandbox-comparison.json';
 import { SCIENCE } from './exhibits';
+import references from './reference-data.json';
 
 const galleries = [
   {
@@ -27,7 +28,7 @@ const galleries = [
     subtitle: 'A ratio can reveal what two separate numbers hide.',
     lay: 'The weak interaction can change one kind of quark into another. The mixing pattern tells us how strongly the different possibilities are connected.',
     meaning:
-      'The sandbox reports a closer ratio than either individual mixing strength. That is a useful question for the theory, not permission to add a correction chosen from the observed answer.',
+      'The historical ratio can be compared with a neutral-B mixing extraction. Experimental and theory uncertainties remain separate; this comparison cannot choose a correction to the BHSM result.',
   },
   {
     id: 'neutrinos',
@@ -35,7 +36,7 @@ const galleries = [
     subtitle: 'Neutrino mixing puts several parts of the pattern to the test.',
     lay: 'A neutrino created with one flavor can later be detected with another. BHSM studies whether geometry can organize this mixing and the hierarchy of mass differences.',
     meaning:
-      'The same panel shows the closer comparisons and the larger θ23 tension. The supplied marker is a normal-ordering best fit, not the full allowed region. This is an effective neutrino extension, not a claim that the minimal Standard Model contains neutrino masses.',
+      'The same panel shows the closer comparisons and the larger θ23 tension. The reference is an explicitly selected normal-ordering global fit, not the full allowed region. This is an effective neutrino extension, not a claim that the minimal Standard Model contains neutrino masses.',
   },
   {
     id: 'higgs',
@@ -52,35 +53,16 @@ export function ScienceGallery() {
   return (
     <section
       id="comparisons"
-      className="science-hall"
-      aria-labelledby="science-title"
+      className="science-hall comparison-collection"
+      aria-label="BHSM comparisons with published reference data"
     >
-      <div className="section-heading">
-        <p className="eyebrow">Additional sandbox comparisons</p>
-        <h2 id="science-title">More data for the science exhibits.</h2>
-        <p>
-          These additional panels supplement the permanent science collection
-          above. Explore the September 2 sandbox snapshot. Every number below is
-          a historical BHSM screen or a supplied comparison reference. These are
-          neither simulated particle masses nor newly certified physical
-          predictions.
-        </p>
-        <div className="evidence-legend" aria-label="Data labels">
-          <span className="data-label">Historical BHSM calculation</span>
-          <span className="data-label reference-label">
-            Sandbox reference · unverified
-          </span>
-          <span className="data-label simulation-label">
-            Simulated imagery is labeled separately
-          </span>
-        </div>
-      </div>
       {galleries.map((gallery, index) => {
-        const rows = comparison.rows.filter((row) => row.group === gallery.id);
+        const rows = comparison.rows.filter((r) => r.group === gallery.id);
         const chosen =
-          rows.find((row) => row.id === selected[gallery.id]) ?? rows[0];
-        const residual =
-          (100 * (chosen.bhsm - chosen.reference)) / chosen.reference;
+          rows.find((r) => r.id === selected[gallery.id]) ?? rows[0];
+        const ref = references.comparisons.find((r) => r.id === chosen.id)!;
+        const residual = (100 * (chosen.bhsm - ref.value)) / ref.value;
+        const x = (n: number) => 260 + 11.5 * Math.max(-20, Math.min(20, n));
         return (
           <article
             className="science-exhibit"
@@ -89,29 +71,18 @@ export function ScienceGallery() {
           >
             <div className="science-placard">
               <p className="eyebrow">
-                Exhibit {String(index + 1).padStart(2, '0')} ·{' '}
-                {gallery.subtitle}
+                {String(index + 7).padStart(2, '0')} · {gallery.subtitle}
               </p>
               <h3>{gallery.title}</h3>
-              <p className="lay-copy">
-                <strong>In plain language</strong>
-                {gallery.lay}
-              </p>
+              <p className="lay-copy">{gallery.lay}</p>
               <p>{gallery.meaning}</p>
               <p className="data-label">
-                COMPARISON ONLY · historical screen + sandbox reference
+                COMPARISON ONLY · historical BHSM screen + published reference
               </p>
               <p className="reference-note">
-                Reference markers were supplied with the sandbox report and have
-                not been independently verified. No measurement uncertainty or
-                statistical significance is assigned.
+                Differences test the retained screen. They are not a statistical
+                significance or a completed BHSM prediction.
               </p>
-              <a
-                className="text-link"
-                href={`${SCIENCE}/${comparison.source.path}`}
-              >
-                Read the complete source and qualifications ↗
-              </a>
             </div>
             <div className="comparison-display">
               <label htmlFor={`select-${gallery.id}`}>Explore a quantity</label>
@@ -122,23 +93,23 @@ export function ScienceGallery() {
                   setSelected({ ...selected, [gallery.id]: e.target.value })
                 }
               >
-                {rows.map((row) => (
-                  <option value={row.id} key={row.id}>
-                    {row.label}
+                {rows.map((r) => (
+                  <option key={r.id} value={r.id}>
+                    {r.label}
                   </option>
                 ))}
               </select>
               <p className="quantity-explanation">{chosen.explanation}</p>
-              <div className="comparison-pair" aria-live="polite">
+              <div className="comparison-pair">
                 <div>
                   <span>Historical BHSM screen</span>
                   <strong>{chosen.bhsm}</strong>
                   <small>{chosen.unit}</small>
                 </div>
                 <div className="reference-value">
-                  <span>Sandbox reference · unverified</span>
-                  <strong>{chosen.reference}</strong>
-                  <small>{chosen.unit}</small>
+                  <span>{ref.label}</span>
+                  <strong>{Number(ref.value.toPrecision(7))}</strong>
+                  <small>{ref.uncertainty_text}</small>
                 </div>
               </div>
               <div className="difference-readout">
@@ -146,13 +117,13 @@ export function ScienceGallery() {
                   {residual >= 0 ? '+' : ''}
                   {residual.toFixed(3)}%
                 </strong>
-                <span>Relative difference from the sandbox marker</span>
+                <span>Relative difference from the published reference</span>
               </div>
               <svg
                 className="comparison-axis"
                 viewBox="0 0 520 95"
                 role="img"
-                aria-label={`${chosen.label}: ${residual.toFixed(3)} percent relative difference; axis from minus 20 to plus 20 percent`}
+                aria-label={`${chosen.label}: ${residual.toFixed(3)} percent difference from published reference`}
               >
                 <line
                   x1="30"
@@ -165,101 +136,112 @@ export function ScienceGallery() {
                 {[-20, -10, 0, 10, 20].map((v) => (
                   <g key={v}>
                     <line
-                      x1={260 + v * 11.5}
+                      x1={x(v)}
+                      x2={x(v)}
                       y1="27"
-                      x2={260 + v * 11.5}
                       y2="43"
                       stroke="currentColor"
                     />
                     <text
-                      x={260 + v * 11.5}
-                      y="71"
+                      x={x(v)}
+                      y="76"
                       textAnchor="middle"
                       fill="currentColor"
-                      fontSize="22"
+                      fontSize="19"
                     >
                       {v > 0 ? '+' : ''}
                       {v}%
                     </text>
                   </g>
                 ))}
+                {ref.lower !== null && ref.upper !== null && (
+                  <line
+                    x1={x((100 * (ref.lower - ref.value)) / ref.value)}
+                    x2={x((100 * (ref.upper - ref.value)) / ref.value)}
+                    y1="35"
+                    y2="35"
+                    stroke="var(--gold)"
+                    strokeWidth="10"
+                  />
+                )}
                 <line
                   x1="260"
+                  x2={x(residual)}
                   y1="35"
-                  x2={260 + residual * 11.5}
                   y2="35"
                   stroke="var(--cyan)"
-                  strokeWidth="5"
+                  strokeWidth="3"
                 />
-                <circle
-                  cx={260 + residual * 11.5}
-                  cy="35"
-                  r="7"
-                  fill="var(--cyan)"
-                />
-                <path
-                  d="M260 19 L267 35 L260 51 L253 35 Z"
-                  fill="var(--gold)"
-                />
+                <circle cx={x(residual)} cy="35" r="7" fill="var(--cyan)" />
+                <path d="M260 21L267 35L260 49L253 35Z" fill="var(--gold)" />
               </svg>
               <p className="axis-caption">
-                Gold diamond: reference at 0%. Cyan point: BHSM screen. Shared
-                ±20% axis; closer is not proof.
+                Cyan: BHSM screen. Gold: reference and available uncertainty.
+                Very narrow intervals may be smaller than the marker.
               </p>
-              <div className="comparison-table-wrap">
-                <table className="comparison-table">
-                  <caption>Every numerical pair in this exhibit</caption>
-                  <thead>
-                    <tr>
-                      <th>Quantity</th>
-                      <th>BHSM screen</th>
-                      <th>Reference*</th>
-                      <th>Difference</th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    {rows.map((row) => {
-                      const d =
-                        (100 * (row.bhsm - row.reference)) / row.reference;
-                      return (
-                        <tr key={row.id}>
-                          <th>
-                            {row.label} {row.unit === 'GeV' ? '(GeV)' : ''}
-                          </th>
-                          <td>{row.bhsm}</td>
-                          <td>{row.reference}</td>
-                          <td>
-                            {d >= 0 ? '+' : ''}
-                            {d.toFixed(3)}%
-                          </td>
-                        </tr>
-                      );
-                    })}
-                  </tbody>
-                </table>
-              </div>
               <p className="reference-note">
-                *Supplied sandbox marker, not independently verified
-                experimental data. Difference = 100 × (screen − reference) /
-                reference.
+                {ref.convention} <a href={ref.source}>Published reference ↗</a>
               </p>
-              {comparison.qualitative_sentinels
-                .filter((row) => row.group === gallery.id)
-                .map((row) => (
-                  <p className="sentinel" key={row.text}>
-                    {row.text}
-                  </p>
-                ))}
+              <details className="reference-details">
+                <summary>All comparisons and original sandbox markers</summary>
+                <div className="table-scroll">
+                  <table>
+                    <thead>
+                      <tr>
+                        <th>Quantity</th>
+                        <th>BHSM screen</th>
+                        <th>Published reference</th>
+                        <th>Archived sandbox marker</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      {rows.map((r) => {
+                        const rr = references.comparisons.find(
+                          (v) => v.id === r.id,
+                        )!;
+                        return (
+                          <tr key={r.id}>
+                            <th>{r.label}</th>
+                            <td>{r.bhsm}</td>
+                            <td>
+                              {Number(rr.value.toPrecision(7))}
+                              <br />
+                              {rr.uncertainty_text}
+                              <br />
+                              <a href={rr.source}>{rr.label} ↗</a>
+                            </td>
+                            <td>
+                              {r.reference}
+                              <br />
+                              Original supplied marker
+                            </td>
+                          </tr>
+                        );
+                      })}
+                    </tbody>
+                  </table>
+                </div>
+                <p>
+                  The September 2 snapshot remains unchanged. Published
+                  references were checked September 7; editions, fit assumptions
+                  and uncertainties are retained.
+                </p>
+                <a href={`${SCIENCE}/${comparison.source.path}`}>
+                  Original sandbox record ↗
+                </a>
+              </details>
             </div>
           </article>
         );
       })}
       <p className="collection-source">
-        Source snapshot: {comparison.date} ·{' '}
-        <a href="./data/sandbox-comparison.json" download>
-          Download all numerical pairs and provenance
+        <a href="./data/reference-data.json" download>
+          Download published references and provenance
         </a>{' '}
-        · Differences are computed only for this public comparison display.
+        ·{' '}
+        <a href="./data/sandbox-comparison.json" download>
+          Original sandbox snapshot
+        </a>
       </p>
     </section>
   );

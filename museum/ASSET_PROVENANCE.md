@@ -67,3 +67,26 @@
   events, black-hole concentrations, smooth phase and whole-surface release are
   explanatory graphics, not observed or derived cosmic evolution. Context and
   limits: `../docs/museum/norman_cosmic_enclosure_cycle.md`.
+
+
+## Interactive science media, September 7 revision
+
+- `app/collision-theatre.tsx` reuses the existing 64-event CMS sample and
+  computes three selected two-body examples with CODATA 2022 reference masses.
+  Charged-path curvature and glow are original SVG artwork, not CMS detector
+  hits. Event vectors and calculated subsystem masses retain their separate
+  measured/derived roles. The original CMS GIF is again the default data display.
+- `app/magnetic-lab.tsx` uses electron, negative-muon, proton and neutron
+  CODATA 2022 magnetic moments. `lib/science-media.ts` calculates the Larmor
+  frequency; field geometry, tilt and visual speed are pedagogical choices.
+- `app/force-tree.tsx` implements the author's branching graphic. Finite
+  reference benchmarks have explicit definitions and sources; infinity in the
+  aether core is conceptual, not an energy prediction.
+- `app/reference-data.json` and `public/data/reference-data.json` mirror
+  `../data/museum/experimental_references_20260907.json`. Comparisons cite
+  CODATA 2022, PDG 2025 and NuFIT 6.0, without changing the original sandbox
+  values or any frozen scientific prediction.
+- Expanded cosmic shells, nebula-like glow, filament paths, cluster markers and
+  accretion spirals are original deterministic SVG graphics. The DESI BAO
+  comparison is explained separately from Norman's speculative cycle. No
+  survey image or sky positions are reproduced.

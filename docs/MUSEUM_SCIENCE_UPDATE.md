@@ -1,39 +1,45 @@
 # The permanent BHSM science collection
 
-The public Museum retains dedicated exhibits for particle decays/collisions,
-the full magnetic-moment inventory, SM predictions, SM equivalence, force
-unification, the common action and spectral forecasts. Sandbox comparisons
-are additions. They must never displace the science prototypes. Computation
-and research achievements remain a separate exhibit; other-work cosmology
-comes after the author.
+The public Museum leads with collision theatre, magnetic moments in motion,
+combined SM predictions/equivalence, force unification, common action and
+spectral forecasts. Five numbered comparison exhibits follow. CMS animation
+and numerical research remain in a separate data exhibit; cosmology follows
+the author. Publication copy addresses visitors, not the implementation brief.
 
 ## Current data and simulation boundaries
 
-`tools/materialize_museum_science.py` reads the existing 34-entry prediction
-ledger, retained SM-bundle artifact, current system map and reviewed output
-registry. It does not call a solver or modify scientific inputs. The catalog
-tracks 17 SM particle-family labels plus proton/neutron composite benchmarks.
-The collision workbench also offers explicitly selected conjugate channels;
-this does not derive neutral-state conjugacy or a complete physical spectrum.
+The collision theatre cycles between three deterministic two-body examples
+and real CMS dimuon records. Visitors pause the animation to read the selected
+event, or browse all 64 CMS events. Demonstrations use CODATA 2022 reference
+masses and selected energies/angles in GeV; they calculate phase space, not
+BHSM amplitudes or rates. Measured CMS subsystem invariant mass is not called
+the full pp collision energy. Curved track shapes are normalized illustrations,
+not propagated helices in a calibrated detector or reconstructed hit tracks.
+The decay/stability ledger and its old tracker UI were removed at the author's
+request; approved decay results can still be published in the same exhibit.
 
-The default collider returns an elastic prototype for the two selected incoming
-species; the visitor can also inspect a separately selected outgoing channel.
-It calculates relativistic two-body phase space for user-selected
-incoming and outgoing states in arbitrary demonstration units. Charge balance
-and thresholds reject incompatible choices. Four-vectors and their conservation
-residual are genuine calculations of that illustrative setup, not BHSM event
-predictions. A kinematically open channel does not establish an amplitude,
-cross-section, branching fraction or decay. Input masses are clearly labeled
-demonstration parameters. No random branching probabilities are invented.
+Magnetic moments in motion uses four explicitly sourced CODATA 2022 moments:
+electron, negative muon, proton and neutron. All are spin-1/2 benchmarks.
+The numerical Larmor frequency is 2|mu|B/h; the field-distance profile, cone
+and logarithmically compressed playback are illustrative. This supersedes the
+empty all-state tracker. Approved magnetic results remain connected to the
+exhibit, without inventing a BHSM counterpart to the external reference.
 
-The magnetic tracker separates charged-lepton g/a/mu from neutral, confined,
-composite, boson-specific and spin-zero definitions. It does not export a lepton
-formula to every particle. Pending values are never displayed as zero.
+The combined SM exhibit retains all 34 ledger entries and the conditional
+representation/anomaly evidence. Force branching follows the author's
+conceptual topology: gravity from electromagnetic, electromagnetic from weak,
+through strong into the aether core. Its infinity symbol is a conceptual limit,
+not a derived physical energy or observed coupling merger. Reference energies
+have distinct physical definitions and do not form a monotonic energy axis.
 
-SM equivalence displays the retained bundle's representation/anomaly checks
-without promoting them to full interacting physical equivalence. The force
-animation illustrates a proposed common origin, not measured running curves,
-a meeting energy or an established quantum-gravity result.
+`data/museum/experimental_references_20260907.json` contains external comparison
+references from CODATA 2022, PDG 2025 and NuFIT 6.0 (2024), with URLs, conventions
+and uncertainties. They are comparisons only, never upstream BHSM inputs.
+NuFIT values use normal ordering, IC24 with SK atmospheric data. The neutrino
+gap ratio uses central values without inventing an uncertainty from an unknown
+covariance. CKM experimental/theory errors remain separate. The original
+September 2 sandbox snapshot is unchanged and accessible. `sync:assets`
+mirrors the external references into the app and public downloads.
 
 ## Updating these same exhibits with derived data
 
@@ -61,9 +67,8 @@ a meeting energy or an established quantum-gravity result.
    `FULL_BHSM_COMPLETE` for the entire program.
 4. Run `python tools/materialize_museum_science.py` twice; compare the generated
    bytes. Commit the canonical catalog and identical application/download
-   copies. `--check` rejects stale catalog/source copies. Approved magnetic
-   `g`, `a`, and `mu` entries populate the corresponding tracker cells; all
-   reviewed outputs appear in their science exhibit with source provenance.
+   copies. `--check` rejects stale catalog/source copies. All reviewed
+   outputs appear in their science exhibit with source provenance.
 5. Run the Museum tests/build, scientific integrity and publication audits.
    Merge the reviewed change to `main`; the Pages workflow publishes updates
    to these existing exhibits. Publish the same source to the Sites mirror.
