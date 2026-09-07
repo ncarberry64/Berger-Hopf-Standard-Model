@@ -87,7 +87,11 @@ try {
   const sections = [
     'potential',
     'exhibits',
+    'science-predictions',
+    'science-decays',
+    'science-magnetic',
     'comparisons',
+    'science-unification',
     'research-exhibit',
     'details',
     'creator',

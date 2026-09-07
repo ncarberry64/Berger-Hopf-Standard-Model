@@ -1,5 +1,7 @@
 'use client';
-import { useEffect, useState } from 'react';
+/* oxlint-disable jsx-a11y/prefer-tag-over-role -- Inline SVG needs image semantics; an HTML img cannot contain this interactive drawing. */
+import { useState } from 'react';
+import { useSceneClock } from './science-console';
 import references from './reference-data.json';
 
 const nodes = [
@@ -23,17 +25,15 @@ function position(segment: number, t: number) {
 }
 
 export function ForceTree({ motion }: { motion: boolean }) {
-  const [frame, setFrame] = useState(0),
+  const [pausedFrame, setFrame] = useState(0),
     [playing, setPlaying] = useState(true);
-  useEffect(() => {
-    if (!motion || !playing) return;
-    const t = setInterval(() => setFrame((f) => (f + 0.25) % 101), 70);
-    return () => clearInterval(t);
-  }, [motion, playing]);
+  const { ref: sceneRef, time } = useSceneClock(motion && playing);
+  const [start, setStart] = useState(0);
+  const frame = playing ? ((time - start) * 5) % 101 : pausedFrame;
   const chosen = Math.min(4, Math.floor(frame / 20)),
     reference = references.energy_scales[Math.min(3, chosen)];
   return (
-    <div className="force-tree">
+    <div className="force-tree" ref={sceneRef}>
       <p className="data-label">
         PROPOSED BHSM CONNECTIONS · sourced reference scales
       </p>
@@ -45,7 +45,11 @@ export function ForceTree({ motion }: { motion: boolean }) {
             : 'Resume force animation'
         }
         aria-pressed={!playing}
-        onClick={() => setPlaying((p) => !p)}
+        onClick={() => {
+          if (!playing) setStart(time - frame / 5);
+          else setFrame(frame);
+          setPlaying((p) => !p);
+        }}
       >
         <svg
           viewBox="0 0 950 480"
@@ -63,7 +67,7 @@ export function ForceTree({ motion }: { motion: boolean }) {
               <feGaussianBlur stdDeviation="5" />
             </filter>
           </defs>
-          <rect width="950" height="480" fill="#040b18" />
+          <rect width="950" height="480" fill="#050509" />
           <path
             d="M70 65 C310 65 385 150 615 150"
             fill="none"
@@ -85,22 +89,42 @@ export function ForceTree({ motion }: { motion: boolean }) {
             strokeWidth="3"
             opacity=".65"
           />
-          {Array.from({ length: 85 }, (_, i) => (
-            <circle
-              key={i}
-              cx={((i * 137.507) % 950).toFixed(2)}
-              cy={((i * i * 11.31) % 480).toFixed(2)}
-              r={i % 11 === 0 ? 1.8 : 0.7}
-              fill="#b6d3e9"
-              opacity=".4"
-            />
-          ))}
           {nodes.slice(0, 4).map((n, i) => {
             const b = nodes[i + 1],
               color = references.energy_scales[i].color;
             const d = `M${n.x} ${n.y} C${n.x + 85} ${n.y} ${b.x - 85} ${b.y} ${b.x} ${b.y}`;
             return (
               <g key={i}>
+                {Array.from({ length: 11 }, (_, j) => {
+                  const offset = (j - 5) * 3.2;
+                  const points = Array.from({ length: 41 }, (_, k) => {
+                    const t = k / 40,
+                      [x, y] = position(i, t);
+                    const wave =
+                      Math.sin(t * Math.PI) *
+                      (offset + 8 * Math.sin(t * 8 - frame * 0.14 + j * 0.35));
+                    return `${k ? 'L' : 'M'}${x.toFixed(2)},${(y + wave).toFixed(2)}`;
+                  });
+                  return (
+                    <path
+                      key={`ribbon-${j}`}
+                      d={points.join(' ')}
+                      fill="none"
+                      stroke={color}
+                      strokeWidth=".8"
+                      opacity=".26"
+                    />
+                  );
+                })}
+                <circle
+                  cx={n.x}
+                  cy={n.y}
+                  r={chosen === i ? 28 : 20}
+                  fill="none"
+                  stroke={color}
+                  strokeWidth="1"
+                  opacity=".4"
+                />
                 <path
                   d={d}
                   fill="none"
@@ -145,10 +169,23 @@ export function ForceTree({ motion }: { motion: boolean }) {
           <circle
             cx="805"
             cy="150"
-            r={(85 + 8 * Math.sin(frame * 0.1)).toFixed(2)}
+            r={(112 + 12 * Math.sin(frame * 0.1)).toFixed(2)}
             fill="url(#aether-glow)"
           />
-          <circle cx="805" cy="150" r="25" fill="#fffde8" />
+          {Array.from({ length: 8 }, (_, i) => (
+            <ellipse
+              key={`core-${i}`}
+              cx="805"
+              cy="150"
+              rx={34 + i * 4}
+              ry={12 + i * 5}
+              fill="none"
+              stroke="#fff3cb"
+              opacity=".2"
+              transform={`rotate(${frame * 1.2 + i * 22} 805 150)`}
+            />
+          ))}
+          <circle cx="805" cy="150" r="27" fill="#fffde8" />
           <text
             x="805"
             y="161"
@@ -202,7 +239,14 @@ export function ForceTree({ motion }: { motion: boolean }) {
             {name}
           </button>
         ))}
-        <button disabled={!motion} onClick={() => setPlaying((p) => !p)}>
+        <button
+          disabled={!motion}
+          onClick={() => {
+            if (!playing) setStart(time - frame / 5);
+            else setFrame(frame);
+            setPlaying((p) => !p);
+          }}
+        >
           {playing && motion ? 'Pause' : 'Play'}
         </button>
       </div>
@@ -249,18 +293,19 @@ export function ForceTree({ motion }: { motion: boolean }) {
             <small>Author-specified conceptual topology</small>
           </div>
         </div>
+        {chosen < 4 && (
+          <a href={reference.source}>Reference scale and conventions ↗</a>
+        )}
+      </div>
+      <details className="console-details">
+        <summary>Explore the science · physical reference scales</summary>
         <p>
           These branches express Norman’s proposed organization. The benchmarks
           use different physical definitions and are not an increasing energy
           axis or a calculated coupling-merger curve. The luminous ∞ is a
           conceptual endpoint, not evidence of divergent energy.
         </p>
-        {chosen < 4 && (
-          <a href={reference.source}>Reference scale and conventions ↗</a>
-        )}
-      </div>
-      <details className="reference-details">
-        <summary>Compare all four physical reference scales</summary>
+
         <div className="table-scroll">
           <table>
             <thead>

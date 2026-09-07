@@ -1,4 +1,5 @@
 'use client';
+/* oxlint-disable jsx-a11y/prefer-tag-over-role -- Inline SVG needs image semantics; an HTML img cannot contain this interactive drawing. */
 import { useEffect, useState } from 'react';
 import { SCIENCE } from './exhibits';
 import references from './reference-data.json';
@@ -179,7 +180,7 @@ export function CosmicEnclosure({ motion }: { motion: boolean }) {
                   />
                 ))}
               {shellOpacity > 0 &&
-                [2, 7, 11].map((i, k) => {
+                [2, 7, 11].map((i) => {
                   const p = point(i, turn),
                     r = 35 + clamp((phase - 10) / 16) * 105;
                   return (

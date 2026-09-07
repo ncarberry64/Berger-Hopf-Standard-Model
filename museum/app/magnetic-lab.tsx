@@ -1,263 +1,185 @@
 'use client';
-import { useEffect, useState } from 'react';
+/* oxlint-disable jsx-a11y/prefer-tag-over-role -- Inline SVG needs image semantics; an HTML img cannot contain this interactive drawing. */
+import { useState } from 'react';
 import references from './reference-data.json';
 import { larmorHz } from '../lib/science-media';
+import { useSceneClock } from './science-console';
 
 export function MagneticLab({ motion }: { motion: boolean }) {
-  const rows = references.magnetic;
-  const [selected, setSelected] = useState(0),
-    [magnet, setMagnet] = useState({ x: 135, y: 165, active: true }),
-    [field, setField] = useState(0.1),
-    [time, setTime] = useState(0),
-    [paused, setPaused] = useState(false);
-  useEffect(() => {
-    if (!motion || paused) return;
-    const t = setInterval(() => setTime((v) => v + 0.04), 40);
-    return () => clearInterval(t);
-  }, [motion, paused]);
-  const fieldAt = (i: number) =>
-    magnet.active
-      ? field /
-        (1 +
-          (Math.hypot(magnet.x - (135 + i * 210), magnet.y - 270) / 120) ** 2)
-      : 0;
-  const row = rows[selected],
-    b = fieldAt(selected),
-    frequency = larmorHz(row.moment, b);
+  const [paused, setPaused] = useState(false);
+  const { ref, time } = useSceneClock(motion && !paused);
   return (
-    <div className="magnetic-lab">
-      <p className="data-label">
-        CODATA REFERENCE VALUES · simulated spin precession
-      </p>
-      <p>
-        Move your magnet over a particle. Its spin direction precesses around
-        the field, like the axis of a wobbling top. Select a particle to compare
-        its response below.
-      </p>
-      <div
-        className="magnet-stage"
-        onPointerMove={(e) => {
-          const box = e.currentTarget
-            .querySelector('svg')!
-            .getBoundingClientRect();
-          const x = ((e.clientX - box.left) * 900) / box.width,
-            y = ((e.clientY - box.top) * 440) / box.height;
-          setMagnet({ x, y, active: true });
-          setSelected(Math.max(0, Math.min(3, Math.round((x - 135) / 210))));
-        }}
-        onPointerLeave={() => setMagnet((m) => ({ ...m, active: false }))}
-      >
-        <svg
-          viewBox="0 0 900 440"
-          role="img"
-          aria-label="Four spin-precession diagrams respond to the cursor magnet; use the particle buttons and field slider for keyboard control"
-        >
-          <defs>
-            <radialGradient id="magnet-space">
-              <stop stopColor="#153244" />
-              <stop offset="1" stopColor="#030c18" />
-            </radialGradient>
-            <marker
-              id="spin-arrow"
-              markerWidth="6"
-              markerHeight="6"
-              refX="3"
-              refY="3"
-              orient="auto"
-            >
-              <path d="M0 0L6 3L0 6Z" fill="#fff" />
-            </marker>
-          </defs>
-          <rect width="900" height="440" fill="url(#magnet-space)" />
-          {rows.map((p, i) => {
-            const x = 135 + i * 210,
-              localB = fieldAt(i);
-            const f = larmorHz(p.moment, localB);
-            const a = time * Math.sign(p.moment) * Math.log10(1 + f) * 0.65;
-            const dx = 38 * Math.cos(a),
-              dy = 15 * Math.sin(a);
-            return (
-              <g key={p.id}>
-                <circle
-                  cx={x}
-                  cy="270"
-                  r="73"
-                  fill={p.color}
-                  opacity={i === selected ? 0.08 : 0.025}
-                />
-                <ellipse
-                  cx={x}
-                  cy="191"
-                  rx="38"
-                  ry="15"
-                  fill="none"
-                  stroke={p.color}
-                  opacity=".55"
-                  strokeDasharray="3 5"
-                />
-                <path
-                  d={`M${x} 285 L${x - 38} 191 M${x} 285 L${x + 38} 191`}
-                  stroke={p.color}
-                  opacity=".15"
-                />
-                <line
-                  x1={x}
-                  y1="307"
-                  x2={x}
-                  y2="145"
-                  stroke="#567487"
-                  strokeDasharray="5 7"
-                />
-                <line
-                  x1={x}
-                  y1="285"
-                  x2={(x + dx).toFixed(2)}
-                  y2={(191 + dy).toFixed(2)}
-                  stroke={p.color}
-                  strokeWidth="4"
-                  markerEnd="url(#spin-arrow)"
-                />
-                <circle cx={x} cy="285" r="17" fill={p.color} />
-                <text
-                  x={x}
-                  y="292"
-                  textAnchor="middle"
-                  fill="#06101a"
-                  fontSize="20"
-                >
-                  {p.symbol}
-                </text>
-                <text
-                  x={x}
-                  y="365"
-                  textAnchor="middle"
-                  fill="#e5f0f5"
-                  fontSize="21"
-                >
-                  {p.name}
-                </text>
-                <text
-                  x={x}
-                  y="392"
-                  textAnchor="middle"
-                  fill="#9fb6c8"
-                  fontSize="15"
-                >
-                  {(f / 1e6).toFixed(3)} MHz
-                </text>
-              </g>
-            );
-          })}
-          {magnet.active && (
-            <g
-              transform={`translate(${magnet.x.toFixed(2)} ${magnet.y.toFixed(2)})`}
-              pointerEvents="none"
-            >
-              <circle
-                r="58"
-                fill="none"
-                stroke="#82bcc7"
-                strokeDasharray="3 6"
-                opacity=".4"
-              />
-              <rect
-                x="-30"
-                y="-14"
-                width="30"
-                height="28"
-                rx="3"
-                fill="#f58ba9"
-              />
-              <rect y="-14" width="30" height="28" rx="3" fill="#67e8ef" />
-              <text
-                x="-15"
-                y="6"
-                textAnchor="middle"
-                fill="#06101a"
-                fontSize="17"
-              >
-                N
-              </text>
-              <text
-                x="15"
-                y="6"
-                textAnchor="middle"
-                fill="#06101a"
-                fontSize="17"
-              >
-                S
-              </text>
-            </g>
-          )}
-        </svg>
-      </div>
+    <div ref={ref} className="magnetic-lab">
       <div className="media-toolbar">
-        {rows.map((r, i) => (
-          <button
-            key={r.id}
-            aria-pressed={selected === i}
-            onClick={() => {
-              setSelected(i);
-              setMagnet({ x: 135 + i * 210, y: 165, active: true });
-            }}
-          >
-            {r.name}
-          </button>
-        ))}
-        <button disabled={!motion} onClick={() => setPaused((p) => !p)}>
-          {paused || !motion ? 'Play precession' : 'Pause precession'}
+        <span className="data-label">
+          CODATA 2022 measured references · animated magnetic moments
+        </span>
+        <button disabled={!motion} onClick={() => setPaused(!paused)}>
+          {paused || !motion ? '▶ Animate moments' : 'Ⅱ Freeze moments'}
         </button>
       </div>
-      <label className="media-slider">
-        Magnet strength · {field.toFixed(2)} T
-        <input
-          aria-label="Magnet strength in tesla"
-          type="range"
-          min="0"
-          max="1"
-          step=".01"
-          value={field}
-          onChange={(e) => {
-            setField(+e.target.value);
-            setMagnet({ x: 135 + selected * 210, y: 165, active: true });
-          }}
-        />
-      </label>
-      <div className="event-story">
-        <h4>{row.name}: magnetic response</h4>
-        <p>{row.note}</p>
-        <div className="science-readout">
-          <div>
-            <small>CODATA 2022 magnetic moment</small>
-            <strong>{row.moment.toExponential(9)} J/T</strong>
-            <small>
-              Standard uncertainty ±{row.uncertainty.toExponential(1)} J/T
-            </small>
-          </div>
-          <div>
-            <small>Local model field</small>
-            <strong>{b.toFixed(4)} T</strong>
-            <small>Illustrative distance profile</small>
-          </div>
-          <div>
-            <small>Calculated Larmor frequency</small>
-            <strong>{(frequency / 1e6).toFixed(6)} MHz</strong>
-            <small>f = 2|μ|B/h for spin ½</small>
-          </div>
-          <div>
-            <small>BHSM comparison</small>
-            <strong>Derivation open</strong>
-            <small>No reviewed magnetic value yet</small>
-          </div>
-        </div>
-        <p className="media-note">
-          The numerical frequency follows the reference moment and selected
-          field. Visual speed is logarithmically compressed; the cone is a
-          spin-direction schematic, not a particle’s physical shape. Field
-          geometry and initial tilt are illustrative.{' '}
-          <a href={references.nist_source}>NIST / CODATA 2022 values ↗</a>
-        </p>
+      <div className="magnetic-particles">
+        {references.magnetic.map((row) => {
+          const frequency = larmorHz(row.moment, 0.1);
+          // Fixed field for a common physical comparison; logarithmic time scaling makes all four visible.
+          const phase =
+            -Math.sign(row.moment) * time * Math.log10(1 + frequency) * 0.5;
+          const sx = 150 + 57 * Math.cos(phase),
+            sy = 108 + 20 * Math.sin(phase);
+          const sign = Math.sign(row.moment);
+          const mx = 150 + sign * (sx - 150),
+            my = 200 + sign * (sy - 200);
+          return (
+            <article className="magnetic-particle" key={row.id}>
+              <header>
+                <span>{row.symbol}</span>
+                <h4>{row.name}</h4>
+              </header>
+              <svg
+                viewBox="0 0 300 370"
+                role="img"
+                aria-label={`${row.name}: signed magnetic moment ${row.moment} joules per tesla, ${sign < 0 ? 'opposite to' : 'along'} the spin`}
+              >
+                <defs>
+                  <radialGradient id={`moment-${row.id}`}>
+                    <stop stopColor={row.color} stopOpacity=".6" />
+                    <stop offset="1" stopColor={row.color} stopOpacity="0" />
+                  </radialGradient>
+                </defs>
+                <circle
+                  cx="150"
+                  cy="200"
+                  r="100"
+                  fill={`url(#moment-${row.id})`}
+                />
+                <line
+                  x1="150"
+                  x2="150"
+                  y1="45"
+                  y2="330"
+                  stroke="#6a5879"
+                  strokeDasharray="3 5"
+                />
+                <text x="165" y="52" fill="#a999b6" fontSize="12">
+                  B = 0.1 T
+                </text>
+                <ellipse
+                  cx="150"
+                  cy="108"
+                  rx="57"
+                  ry="20"
+                  fill="none"
+                  stroke="#9a8ca6"
+                  strokeDasharray="3 6"
+                  opacity=".4"
+                />
+                {sign < 0 && (
+                  <ellipse
+                    cx="150"
+                    cy="292"
+                    rx="57"
+                    ry="20"
+                    fill="none"
+                    stroke={row.color}
+                    strokeDasharray="3 6"
+                    opacity=".4"
+                  />
+                )}
+                <line
+                  x1="150"
+                  y1="200"
+                  x2={sx.toFixed(2)}
+                  y2={sy.toFixed(2)}
+                  stroke="#ded5e8"
+                  strokeWidth="2"
+                  strokeDasharray="5 4"
+                />
+                <line
+                  x1="150"
+                  y1="200"
+                  x2={mx.toFixed(2)}
+                  y2={my.toFixed(2)}
+                  stroke={row.color}
+                  strokeWidth="5"
+                />
+                <circle
+                  cx={mx.toFixed(2)}
+                  cy={my.toFixed(2)}
+                  r="6"
+                  fill={row.color}
+                />
+                <text
+                  x={(sx + 10).toFixed(2)}
+                  y={(sy - 10).toFixed(2)}
+                  fill="#ded5e8"
+                  fontSize="13"
+                >
+                  S
+                </text>
+                <text
+                  x={(mx - 18).toFixed(2)}
+                  y={(my + (sign < 0 ? 24 : -24)).toFixed(2)}
+                  fill={row.color}
+                  fontSize="21"
+                >
+                  μ
+                </text>
+                <circle cx="150" cy="200" r="7" fill="#fff" />
+                <text
+                  x="150"
+                  y="353"
+                  textAnchor="middle"
+                  fill={row.color}
+                  fontSize="12"
+                >
+                  {sign < 0 ? 'Moment opposite to spin' : 'Moment along spin'}
+                </text>
+              </svg>
+              <div className="moment-value">
+                <small>Magnetic moment · J/T</small>
+                <strong style={{ color: row.color }}>
+                  {row.moment.toExponential()}
+                </strong>
+                <small>±{row.uncertainty.toExponential(2)} J/T</small>
+              </div>
+              <div className="moment-frequency">
+                <span>Precession at 0.1 T</span>
+                <strong>{frequency.toExponential(5)} Hz</strong>
+              </div>
+            </article>
+          );
+        })}
       </div>
+      <p className="console-caption">
+        <b>Measured magnetic moments · explanatory animation</b> · Colored
+        vector: magnetic moment μ. Dashed vector: spin S. A common 0.1 T field
+        illustrates precession; motion is slowed separately for visibility and
+        vector lengths are normalized.
+      </p>
+      <details className="console-details">
+        <summary>Explore the science · four magnetic fingerprints</summary>
+        <p>
+          Magnetic moment measures how strongly a particle responds to a
+          magnetic field. Its sign tells us whether it points along or opposite
+          to the spin. The neutral neutron still has a magnetic moment because
+          its internal constituents carry charge.
+        </p>
+        <p>
+          For these spin-½ particles, the displayed physical frequency is f =
+          2|μ|B/h. The animation uses logarithmic time compression; visual
+          wobble ratios and arrow lengths are not physical frequency or moment
+          ratios. Quantum spin is represented by a vector illustration, not a
+          rotating material surface.
+        </p>
+        {references.magnetic.map((r) => (
+          <p key={r.id}>
+            <strong>{r.name}.</strong> {r.note}
+          </p>
+        ))}
+        <a href={references.nist_source}>
+          CODATA 2022 values and uncertainties ↗
+        </a>
+      </details>
     </div>
   );
 }

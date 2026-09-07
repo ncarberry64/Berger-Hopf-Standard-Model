@@ -1,5 +1,7 @@
 'use client';
+/* oxlint-disable jsx-a11y/prefer-tag-over-role -- Inline SVG needs image semantics; an HTML img cannot contain this interactive drawing. */
 import { useEffect, useState } from 'react';
+import { useSceneClock } from './science-console';
 import { collisionDemo } from '../lib/collision-demo';
 import {
   invariantMass,
@@ -55,10 +57,12 @@ const demos = [
 export function CollisionTheatre({ motion }: { motion: boolean }) {
   const [cms, setCms] = useState<CMSVector[]>([]),
     [failed, setFailed] = useState(false);
-  const [index, setIndex] = useState(0),
-    [clock, setClock] = useState(0),
+  const [baseIndex, setIndex] = useState(0),
+    [started, setStarted] = useState(0),
     [playing, setPlaying] = useState(true),
     [mode, setMode] = useState('all');
+  const { ref: sceneRef, time } = useSceneClock(motion && playing);
+  const clock = (time - started) % 8;
   useEffect(() => {
     fetch('./data/cms-four-vector-sample.json')
       .then((r) => {
@@ -80,22 +84,14 @@ export function CollisionTheatre({ motion }: { motion: boolean }) {
               ? [{ real: true, id: eventIds[id] }]
               : []),
           ]);
+  const index =
+    (baseIndex + Math.floor((time - started) / 8)) %
+    Math.max(1, playlist.length);
   const item = playlist[index % Math.max(1, playlist.length)];
   const current = item?.real
     ? cms.filter((v) => v.event_index === item.id)
     : [];
   const demo = demos[item && !item.real ? item.id : 0];
-  useEffect(() => {
-    if (!motion || !playing || !playlist.length) return;
-    const timer = setInterval(() => setClock((c) => c + 0.08), 80);
-    return () => clearInterval(timer);
-  }, [motion, playing, playlist.length]);
-  useEffect(() => {
-    if (clock >= 8) {
-      setIndex((i) => (i + 1) % Math.max(1, playlist.length));
-      setClock(0);
-    }
-  }, [clock, playlist.length]);
   const result = collisionDemo(
     demo.energy,
     demo.masses,
@@ -115,15 +111,17 @@ export function CollisionTheatre({ motion }: { motion: boolean }) {
         color: demo.colors[i],
       }));
   const reveal =
-    !motion || (!playing && clock === 0) ? 1 : Math.min(1, clock / 2);
+    !motion || (!playing && clock === 0)
+      ? 1
+      : Math.min(1, Math.max(0, (clock - 1.4) / 2.2));
+  const approach =
+    !motion || (!playing && clock === 0) ? 1 : Math.min(1, clock / 1.4);
   const step = (delta: number) => {
-    setIndex(
-      (i) => (i + delta + playlist.length) % Math.max(1, playlist.length),
-    );
-    setClock(0);
+    setIndex((index + delta + playlist.length) % Math.max(1, playlist.length));
+    setStarted(time);
   };
   return (
-    <div className="collision-theatre">
+    <div className="collision-theatre" ref={sceneRef}>
       <div className="media-toolbar">
         <span className="data-label">
           {item?.real
@@ -137,7 +135,7 @@ export function CollisionTheatre({ motion }: { motion: boolean }) {
             onChange={(e) => {
               setMode(e.target.value);
               setIndex(0);
-              setClock(0);
+              setStarted(time);
             }}
           >
             <option value="all">Guided tour · data + demonstrations</option>
@@ -147,16 +145,16 @@ export function CollisionTheatre({ motion }: { motion: boolean }) {
         </label>
       </div>
       {failed && (
-        <p role="status">
+        <output>
           Recorded events are unavailable. Demonstrations remain available.
-        </p>
+        </output>
       )}
       {mode === 'real' && !cms.length ? (
-        <p role="status">
+        <output>
           {failed
             ? 'Choose a demonstration above.'
             : 'Loading the recorded event sample…'}
-        </p>
+        </output>
       ) : (
         <>
           <button
@@ -171,14 +169,14 @@ export function CollisionTheatre({ motion }: { motion: boolean }) {
             aria-pressed={!playing}
           >
             <svg
-              viewBox="0 0 800 570"
+              viewBox="70 0 660 570"
               role="img"
               aria-label="Detector-inspired transverse event display, with charged paths curling and neutral paths straight"
             >
               <defs>
                 <radialGradient id="collision-space">
-                  <stop stopColor="#17364d" />
-                  <stop offset="1" stopColor="#030a16" />
+                  <stop stopColor="#1f1835" />
+                  <stop offset="1" stopColor="#050509" />
                 </radialGradient>
                 <filter id="track-glow">
                   <feGaussianBlur stdDeviation="2" />
@@ -206,11 +204,11 @@ export function CollisionTheatre({ motion }: { motion: boolean }) {
                   stroke="#7993a7"
                 />
               ))}
-              <text x="25" y="35" fill="#b9ccdb" fontSize="15">
-                TRANSVERSE EVENT VIEW
+              <text x="95" y="35" fill="#b9ccdb" fontSize="15">
+                COLLISION / TRANSVERSE VIEW
               </text>
               <text
-                x="775"
+                x="705"
                 y="35"
                 textAnchor="end"
                 fill="#b9ccdb"
@@ -218,6 +216,40 @@ export function CollisionTheatre({ motion }: { motion: boolean }) {
               >
                 {item?.real ? 'CMS · 2010' : 'TWO-BODY KINEMATICS'}
               </text>
+              {[0, 1].map((side) => (
+                <g key={`beam-${side}`} opacity={1 - Math.min(1, reveal * 3)}>
+                  <line
+                    x1="400"
+                    y1={side ? 500 : 45}
+                    x2="400"
+                    y2={side ? 500 - 230 * approach : 45 + 225 * approach}
+                    stroke={side ? '#ffbc77' : '#71e5eb'}
+                    strokeWidth="3"
+                  />
+                  <circle
+                    cx="400"
+                    cy={side ? 500 - 230 * approach : 45 + 225 * approach}
+                    r="6"
+                    fill={side ? '#ffbc77' : '#71e5eb'}
+                  />
+                </g>
+              ))}
+              <circle
+                cx="400"
+                cy="270"
+                r={8 + Math.sin(Math.min(1, reveal) * Math.PI) * 70}
+                fill="#fff"
+                opacity={Math.max(0, 0.3 - reveal * 0.7)}
+              />
+              {Array.from({ length: 32 }, (_, i) => (
+                <path
+                  key={`module-${i}`}
+                  d={`M${400 + 205 * Math.cos((i * Math.PI) / 16)} ${270 + 205 * Math.sin((i * Math.PI) / 16)}L${400 + 220 * Math.cos((i * Math.PI) / 16)} ${270 + 220 * Math.sin((i * Math.PI) / 16)}`}
+                  stroke={i % 2 ? '#8d729c' : '#c09a74'}
+                  strokeWidth="5"
+                  opacity=".6"
+                />
+              ))}
               {tracks.map((v, i) => {
                 const pt = Math.hypot(v.px, v.py);
                 const pts = trackPoints(
@@ -262,7 +294,7 @@ export function CollisionTheatre({ motion }: { motion: boolean }) {
                   </g>
                 );
               })}
-              <circle cx="400" cy="270" r="7" fill="#fff6df" />
+              <circle cx="400" cy="270" r={reveal > 0 ? 7 : 2} fill="#fff6df" />
               <text
                 x="400"
                 y="530"
@@ -343,42 +375,47 @@ export function CollisionTheatre({ motion }: { motion: boolean }) {
                 </strong>
               </div>
             </div>
-            <div className="table-scroll">
-              <table>
-                <caption>
-                  {item?.real
-                    ? 'CMS reconstructed values'
-                    : 'Calculated demonstration values'}{' '}
-                  · natural units c = 1
-                </caption>
-                <thead>
-                  <tr>
-                    <th>Particle</th>
-                    <th>E · GeV</th>
-                    <th>pT · GeV</th>
-                    <th>pz · GeV</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  {tracks.map((v, i) => (
-                    <tr key={i}>
-                      <th>{v.label}</th>
-                      <td>{v.E.toFixed(4)}</td>
-                      <td>{Math.hypot(v.px, v.py).toFixed(4)}</td>
-                      <td>{v.pz.toFixed(4)}</td>
+            <details className="console-details">
+              <summary>Explore the science · particle energies</summary>
+              <div className="table-scroll">
+                <table>
+                  <caption>
+                    {item?.real
+                      ? 'CMS reconstructed values'
+                      : 'Calculated demonstration values'}{' '}
+                    · natural units c = 1
+                  </caption>
+                  <thead>
+                    <tr>
+                      <th>Particle</th>
+                      <th>E · GeV</th>
+                      <th>pT · GeV</th>
+                      <th>pz · GeV</th>
                     </tr>
-                  ))}
-                </tbody>
-              </table>
-            </div>
-            <p className="media-note">
-              Track lengths and curvature are scaled for visibility. No event
-              rates, branching probabilities or BHSM amplitudes are inferred.{' '}
-              <a href="https://opendata.cern.ch/record/303">CMS source ↗</a> ·{' '}
-              <a href="https://physics.nist.gov/cuu/Constants/Table/allascii.txt">
-                CODATA reference masses ↗
-              </a>
-            </p>
+                  </thead>
+                  <tbody>
+                    {tracks.map((v, i) => (
+                      <tr key={i}>
+                        <th>{v.label}</th>
+                        <td>{v.E.toFixed(4)}</td>
+                        <td>{Math.hypot(v.px, v.py).toFixed(4)}</td>
+                        <td>{v.pz.toFixed(4)}</td>
+                      </tr>
+                    ))}
+                  </tbody>
+                </table>
+              </div>
+              <p className="media-note">
+                Incoming beams are shown schematically in the screen plane; real
+                collider beams run along the detector axis. Track lengths and
+                curvature are scaled for visibility. No event rates, branching
+                probabilities or BHSM amplitudes are inferred.{' '}
+                <a href="https://opendata.cern.ch/record/303">CMS source ↗</a> ·{' '}
+                <a href="https://physics.nist.gov/cuu/Constants/Table/allascii.txt">
+                  CODATA reference masses ↗
+                </a>
+              </p>
+            </details>
           </div>
         </>
       )}

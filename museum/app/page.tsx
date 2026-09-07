@@ -2,7 +2,7 @@
 
 import { Pause, Play } from 'lucide-react';
 import Image from 'next/image';
-import { useEffect, useState } from 'react';
+import { useState, useSyncExternalStore } from 'react';
 import { Button } from '@/components/ui/button';
 import {
   cosmologyExhibit,
@@ -12,9 +12,10 @@ import {
   type Exhibit,
 } from './exhibits';
 import { ScienceGallery } from './science-gallery';
-import { PrototypeScience } from './prototype-science';
+import { PrototypeScience, UnificationConsole } from './prototype-science';
 import { CosmicEnclosure } from './cosmic-enclosure';
 import { CMSExplorer } from './cms-explorer';
+import { EngineHero } from './science-console';
 
 const ASSET_REVISION = 'science-first-2026-09-07';
 const researchDisplays = exhibits.filter((row) =>
@@ -44,17 +45,29 @@ function MotionImage({
   );
 }
 
+function subscribeMotionPreference(onChange: () => void) {
+  const query = window.matchMedia('(prefers-reduced-motion: reduce)');
+  query.addEventListener('change', onChange);
+  return () => query.removeEventListener('change', onChange);
+}
 export default function Home() {
-  const [motion, setMotion] = useState(false);
+  const reducedMotion = useSyncExternalStore(
+    subscribeMotionPreference,
+    () => window.matchMedia('(prefers-reduced-motion: reduce)').matches,
+    () => true,
+  );
+  const [motionOverride, setMotion] = useState<boolean | null>(null);
+  const motion = motionOverride ?? !reducedMotion;
   const [displayId, setDisplayId] = useState('01');
-  useEffect(() => {
-    setMotion(!window.matchMedia('(prefers-reduced-motion: reduce)').matches);
-  }, []);
   const display =
     researchDisplays.find((row) => row.number === displayId) ??
     researchDisplays[0];
   return (
-    <main id="top">
+    <main
+      id="top"
+      className="prediction-museum"
+      data-motion={motion ? 'on' : 'off'}
+    >
       <a className="skip-link" href="#exhibits">
         Skip to the exhibits
       </a>
@@ -70,7 +83,7 @@ export default function Home() {
           />
           <span>
             <strong>BHSM Museum</strong>
-            <small>Geometry and the pattern of matter</small>
+            <small>The prediction engine museum</small>
           </span>
         </a>
         <nav aria-label="Museum navigation">
@@ -83,73 +96,18 @@ export default function Home() {
           <a href={REPOSITORY}>Academic repository ↗</a>
         </nav>
       </header>
-      <section
-        id="potential"
-        className="potential"
-        aria-labelledby="potential-title"
-      >
-        <div className="potential-copy">
-          <p className="eyebrow">
-            Berger–Hopf Standard Model · an open scientific proposal
-          </p>
-          <h1 id="potential-title">
-            Could geometry explain <em>the pattern of matter?</em>
-          </h1>
-          <p className="potential-lede">
-            BHSM explores a possibility with historic stakes: that particle
-            families, their mass hierarchies and their interactions could share
-            a geometric origin.
-          </p>
-          <p>
-            If established and tested, that would be a major step toward
-            explaining why nature has this pattern of particles and forces. The
-            proposal is still being developed; a complete physical derivation
-            and experimental validation remain open.
-          </p>
-          <a className="button button-primary" href="#exhibits">
-            Explore the exhibits ↓
-          </a>
-        </div>
-        <aside className="potential-panel" aria-label="The scientific idea">
-          <p className="eyebrow">The question behind the equations</p>
-          <h2>
-            One geometry.
-            <br />A connected account of matter.
-          </h2>
-          <ol>
-            <li>
-              <strong>Shape</strong>
-              <span>A curved internal geometry supplies possible modes.</span>
-            </li>
-            <li>
-              <strong>Families</strong>
-              <span>
-                Different modes could organize repeated particle patterns.
-              </span>
-            </li>
-            <li>
-              <strong>Tests</strong>
-              <span>
-                Mass ratios and mixing patterns give the proposal something
-                concrete to answer.
-              </span>
-            </li>
-          </ol>
-          <p className="data-label">
-            Conceptual explanation · not experimental evidence
-          </p>
-        </aside>
-      </section>
+      <EngineHero motion={motion} setMotion={setMotion} />
       <PrototypeScience motion={motion} setMotion={setMotion} />
-      <ScienceGallery />
+      <ScienceGallery motion={motion} />
+      <UnificationConsole motion={motion} />
       <section
         id="research-exhibit"
         className="research-exhibit"
         aria-labelledby="research-title"
       >
         <div className="section-heading">
-          <p className="eyebrow">Computation and research achievements</p>
-          <h2 id="research-title">How the scientific record is checked.</h2>
+          <p className="eyebrow">06 · Data, computation & research</p>
+          <h2 id="research-title">Inside the real data.</h2>
           <p>
             Explore recorded CMS collisions and the numerical checks behind the
             research. Experimental data and mathematical certification answer
@@ -170,7 +128,7 @@ export default function Home() {
             ))}
           </select>
           <Button
-            onClick={() => setMotion((value) => !value)}
+            onClick={() => setMotion(!motion)}
             aria-pressed={!motion}
             variant="outline"
           >
@@ -192,8 +150,11 @@ export default function Home() {
             <p>
               <strong>In plain language</strong> {display.lay}
             </p>
-            <p>{display.seen}</p>
-            <p>{display.matters}</p>
+            <details className="console-details">
+              <summary>Explore the science · this data display</summary>
+              <p>{display.seen}</p>
+              <p>{display.matters}</p>
+            </details>
             <p className="data-label">{display.statusLabel}</p>
             <div className="record-links">
               {display.links.map((link) => (
@@ -211,18 +172,6 @@ export default function Home() {
           </p>
           <CMSExplorer />
         </details>
-        <p className="research-boundary">
-          The local enclosure and its family-state transport have been derived
-          within their stated scope. The complete interacting physical solution
-          remains open. New derivative handoffs reuse these results while Gate 7
-          certification continues.
-        </p>
-        <a
-          className="text-link"
-          href={`${SCIENCE}/theory/ae4_event_response_jet_integration.md`}
-        >
-          Read the integrated response work and its limits ↗
-        </a>
       </section>
       <section
         id="details"
@@ -231,49 +180,28 @@ export default function Home() {
       >
         <div className="section-heading">
           <p className="eyebrow">The details behind the exhibits</p>
-          <h2 id="details-title">What the evidence can—and cannot—say.</h2>
+          <h2 id="details-title">Follow the science further.</h2>
         </div>
-        <div className="claim-grid">
-          <article>
-            <h3>Historical calculations</h3>
-            <p>
-              Actual recorded BHSM screens and conditional model results. They
-              are not generated display positions, but they are also not newly
-              established physical predictions.
-            </p>
-          </article>
-          <article>
-            <h3>Comparison references</h3>
-            <p>
-              Published CODATA, PDG and neutrino-fit references are shown with
-              their editions and uncertainties. Original sandbox markers remain
-              accessible for comparison. CMS events retain their experimental
-              source.
-            </p>
-          </article>
-          <article>
-            <h3>Explanatory simulations</h3>
-            <p>
-              Animated illustrations help explain an idea or calculation. A
-              simulated trajectory or spectrum is never labeled as a
-              measurement.
-            </p>
-          </article>
-        </div>
-        <div className="details-copy">
-          <h3>One rule: comparisons must not choose the answer.</h3>
+        <p className="method-intro">
+          BHSM is being developed as a prediction engine: derive an answer from
+          the model, then test it against nature. Today’s exhibits distinguish
+          historical calculations, experimental references and explanatory
+          simulations.
+        </p>
+        <details className="console-details">
+          <summary>How to read the evidence</summary>
           <p>
-            BHSM’s action, modes and coefficients must be established
-            independently. A measurement may test a frozen result; it may not
-            quietly choose a branch, repair a mass or set a separate
-            normalization for each observable.
-          </p>
-          <p>
-            Gate 7 is active. The physical background, interacting observables
-            and full completion remain unresolved.{' '}
+            Measurements test the result; they do not choose the model’s answer.
+            Historical screens and conditional structural results are not
+            completed physical predictions. Full physical closure remains open:{' '}
             <code>FULL_BHSM_COMPLETE = FALSE</code>.
           </p>
-        </div>
+          <p>
+            Published CODATA, PDG and neutrino-fit references retain their
+            editions, assumptions and uncertainties. Reviewed BHSM outputs can
+            enter the exhibits as the derivations are completed.
+          </p>
+        </details>
         <div className="review-grid">
           {[
             [
