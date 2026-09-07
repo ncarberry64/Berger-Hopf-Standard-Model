@@ -1,5 +1,11 @@
 # AE3 same-C2 Lorentzian gauge/ghost frequency Hessian
 
+Subsequent scope audit: the spatial coefficient below is the complete-mode
+quotient `N(0)/n^2`, not `partial_(n^2) N`. The numerical values are preserved.
+For the derivative calculation, the precise local-Maxwell obstruction, and
+limits of a general Lorentz-symmetry interpretation, see
+[the photon symbol audit](ae3_c2_photon_symbol_audit.md).
+
 ## Result
 
 The same-action, same-background continuous-frequency quadratic gauge/ghost

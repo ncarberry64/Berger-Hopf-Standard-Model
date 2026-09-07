@@ -1,5 +1,16 @@
 # BHSM Claim Boundaries
 
+## Current photon diagnostic qualification
+
+Supported: the frozen AE3 transverse trace fails an exact local-Maxwell
+identification, and its positive energy gives no zero on the reference Maxwell
+shell. The original complete-mode ratio and the actual spectral-derivative ratio
+are distinct. The former is not a universal test of Lorentz symmetry for a
+nonlocal DtN operator. The formal frozen spacelike boundary principal symbol is
+square-root; its identification is not a global causal or quantum propagator.
+Neither ratio is a measured speed of light. No physical photon or full BHSM
+completion is promoted. See [the scope audit](theory/ae3_c2_photon_symbol_audit.md).
+
 ## Authoritative Gate-7 claim boundary
 
 Supported: the homogeneous exact-affine interaction-Taylor26 carrier is
