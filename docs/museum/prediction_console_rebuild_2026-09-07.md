@@ -31,7 +31,13 @@ The academic repository remains the source of reproducible scientific authority.
   definitions; they are not an increasing energy axis. Infinity remains an
   explicitly conceptual endpoint, not a calculated physical divergence.
 
-The original CMS animation is the default in the separate data/research exhibit.
+The CMS data console now presents a native amber/cyan rendering of the same
+128 records and normalized PR98 coordinate mapping. The original CMS animation
+remains accessible in its source-record drawer. The selected collision is
+highlighted, with its measured muon energies and calculated dimuon invariant
+mass. Interpolation illustrates display coordinates, not trajectories or a new
+run of the validated engine. Numerical research remains a separate display
+within this same exhibit.
 The Author and other-work markup and content are retained. The cosmic animation
 has only a lint annotation and an unused callback argument removed; its visual
 behavior and scientific labels are unchanged.

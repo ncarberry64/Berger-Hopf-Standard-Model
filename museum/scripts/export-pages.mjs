@@ -80,6 +80,9 @@ try {
     'Standard Model equivalence',
     'Collision theatre',
     'Forces unifying',
+    'CMS · Data',
+    'Original CMS animation',
+    'pr98_cms_engine_validation.png',
   ]) {
     if (!written.includes(expected))
       throw new Error(`Static export is missing: ${expected}`);

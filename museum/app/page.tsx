@@ -1,9 +1,7 @@
 'use client';
 
-import { Pause, Play } from 'lucide-react';
 import Image from 'next/image';
 import { useState, useSyncExternalStore } from 'react';
-import { Button } from '@/components/ui/button';
 import {
   cosmologyExhibit,
   exhibits,
@@ -15,7 +13,7 @@ import { ScienceGallery } from './science-gallery';
 import { PrototypeScience, UnificationConsole } from './prototype-science';
 import { CosmicEnclosure } from './cosmic-enclosure';
 import { CMSExplorer } from './cms-explorer';
-import { EngineHero } from './science-console';
+import { EngineHero, ScienceConsole } from './science-console';
 
 const ASSET_REVISION = 'science-first-2026-09-07';
 const researchDisplays = exhibits.filter((row) =>
@@ -100,79 +98,62 @@ export default function Home() {
       <PrototypeScience motion={motion} setMotion={setMotion} />
       <ScienceGallery motion={motion} />
       <UnificationConsole motion={motion} />
-      <section
+      <ScienceConsole
         id="research-exhibit"
-        className="research-exhibit"
-        aria-labelledby="research-title"
+        number="06"
+        label="CMS · Data & discovery"
+        title="The same collision. A different perspective."
+        intro="Follow real muons through two coordinate descriptions. The picture changes; the recorded event stays the same."
+        accent="amber"
       >
-        <div className="section-heading">
-          <p className="eyebrow">06 · Data, computation & research</p>
-          <h2 id="research-title">Inside the real data.</h2>
-          <p>
-            Explore recorded CMS collisions and the numerical checks behind the
-            research. Experimental data and mathematical certification answer
-            different questions about the scientific record.
-          </p>
+        <div
+          className="console-selector cms-display-selector"
+          aria-label="Data exhibit displays"
+        >
+          {researchDisplays.map((row) => (
+            <button
+              key={row.number}
+              aria-pressed={displayId === row.number}
+              onClick={() => setDisplayId(row.number)}
+            >
+              {row.number === '01'
+                ? 'CMS collision data'
+                : 'Numerical research'}
+            </button>
+          ))}
         </div>
-        <div className="research-controls">
-          <label htmlFor="research-display">Choose a research display</label>
-          <select
-            id="research-display"
-            value={displayId}
-            onChange={(e) => setDisplayId(e.target.value)}
-          >
-            {researchDisplays.map((row) => (
-              <option value={row.number} key={row.number}>
-                {row.title}
-              </option>
-            ))}
-          </select>
-          <Button
-            onClick={() => setMotion(!motion)}
-            aria-pressed={!motion}
-            variant="outline"
-          >
-            {motion ? (
-              <Pause aria-hidden="true" />
-            ) : (
-              <Play aria-hidden="true" />
-            )}
-            {motion ? 'Pause animations' : 'Play animations'}
-          </Button>
-        </div>
-        <div className="research-display">
-          <div className="research-visual">
-            <p className="data-label">{display.dataLabel}</p>
-            <MotionImage motion={motion} exhibit={display} />
-          </div>
-          <div className="research-copy">
-            <h3>{display.title}</h3>
-            <p>
-              <strong>In plain language</strong> {display.lay}
+        {displayId === '01' ? (
+          <>
+            <p className="console-caption">
+              <b>Real experimental data · CMS Open Data Record 303 · CC0</b>
             </p>
-            <details className="console-details">
-              <summary>Explore the science · this data display</summary>
-              <p>{display.seen}</p>
-              <p>{display.matters}</p>
+            <CMSExplorer motion={motion} />
+            <details className="console-details cms-original">
+              <summary>Original CMS animation · source record</summary>
+              <MotionImage motion={motion} exhibit={display} />
             </details>
-            <p className="data-label">{display.statusLabel}</p>
-            <div className="record-links">
-              {display.links.map((link) => (
-                <a href={link.href} key={link.label}>
-                  {link.label} ↗
-                </a>
-              ))}
-            </div>
+          </>
+        ) : (
+          <div className="cms-original">
+            <p className="console-caption">{display.dataLabel}</p>
+            <MotionImage motion={motion} exhibit={display} />
+            <p>{display.lay}</p>
           </div>
-        </div>
-        <details className="research-detail">
-          <summary>Explore the real CMS data sample</summary>
-          <p className="data-label">
-            Real experimental data · CMS Open Data Record 303 · CC0
-          </p>
-          <CMSExplorer />
+        )}
+        <details className="console-details">
+          <summary>Explore the science · data, method and research</summary>
+          <p>{display.seen}</p>
+          <p>{display.matters}</p>
+          <p className="console-caption">{display.statusLabel}</p>
+          <div className="record-links">
+            {display.links.map((link) => (
+              <a key={link.href} href={link.href}>
+                {link.label} ↗
+              </a>
+            ))}
+          </div>
         </details>
-      </section>
+      </ScienceConsole>
       <section
         id="details"
         className="museum-details"
