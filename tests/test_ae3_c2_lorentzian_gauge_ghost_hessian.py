@@ -94,15 +94,19 @@ def test_claim_boundary_stops_before_photon_and_mixing() -> None:
     assert claims["electroweak_neutral_Hessian_derived"] is False
 
 
-def test_materialized_hessian_is_valid_and_deterministic() -> None:
+def test_materialized_hessian_is_valid_and_deterministic(tmp_path) -> None:
     payload = build_payload()
     assert payload["validation_passed"] is True
     assert payload["CURRENT_C2_LORENTZIAN_GAUGE_GHOST_FREQUENCY_HESSIAN_DERIVED"] is True
     assert payload["CURRENT_C2_LORENTZIAN_MAXWELL_RESIDUE_DERIVED"] is False
-    subprocess.run([sys.executable, str(SCRIPT)], cwd=ROOT, check=True)
-    first = hashlib.sha256(TARGET.read_bytes()).hexdigest()
-    subprocess.run([sys.executable, str(SCRIPT)], cwd=ROOT, check=True)
-    second = hashlib.sha256(TARGET.read_bytes()).hexdigest()
-    stored = json.loads(TARGET.read_text(encoding="utf-8"))
+    original = TARGET.read_bytes()
+    output = tmp_path / "gauge-hessian.json"
+    command = [sys.executable, str(SCRIPT), "--output", str(output)]
+    subprocess.run(command, cwd=ROOT, check=True)
+    first = hashlib.sha256(output.read_bytes()).hexdigest()
+    subprocess.run(command, cwd=ROOT, check=True)
+    second = hashlib.sha256(output.read_bytes()).hexdigest()
+    stored = json.loads(output.read_text(encoding="utf-8"))
     assert first == second
     assert stored["validation_passed"] is True
+    assert TARGET.read_bytes() == original

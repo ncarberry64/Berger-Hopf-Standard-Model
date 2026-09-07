@@ -2,6 +2,7 @@
 
 from __future__ import annotations
 
+import argparse
 import hashlib
 import json
 from pathlib import Path
@@ -241,14 +242,17 @@ def build_payload() -> dict[str, Any]:
     }
 
 
-def main() -> None:
+def main(argv: list[str] | None = None) -> None:
+    parser = argparse.ArgumentParser(description=__doc__)
+    parser.add_argument("--output", type=Path, default=TARGET)
+    output = parser.parse_args(argv).output
     payload = build_payload()
     if not payload["validation_passed"]:
         failed = [key for key, value in payload["validation"].items() if not value]
         raise SystemExit("C2 Lorentzian gauge/ghost Hessian failed: " + ", ".join(failed))
-    TARGET.parent.mkdir(parents=True, exist_ok=True)
-    TARGET.write_text(json.dumps(payload, indent=2, sort_keys=True) + "\n", encoding="utf-8")
-    print(TARGET.relative_to(ROOT))
+    output.parent.mkdir(parents=True, exist_ok=True)
+    output.write_text(json.dumps(payload, indent=2, sort_keys=True) + "\n", encoding="utf-8")
+    print(output)
 
 
 if __name__ == "__main__":
