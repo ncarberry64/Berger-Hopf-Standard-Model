@@ -119,3 +119,19 @@ await cp(
   join(dataRoot, 'sandbox-comparison.json'),
   join(museumRoot, 'app', 'sandbox-comparison.json'),
 );
+
+const scienceCatalog = resolve(
+  museumRoot,
+  '..',
+  'data',
+  'museum',
+  'bhsm_science_collection.json',
+);
+if (existsSync(scienceCatalog)) {
+  await cp(scienceCatalog, join(dataRoot, 'science-collection.json'));
+}
+await access(join(dataRoot, 'science-collection.json'));
+await cp(
+  join(dataRoot, 'science-collection.json'),
+  join(museumRoot, 'app', 'science-collection.json'),
+);

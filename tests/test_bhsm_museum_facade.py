@@ -9,7 +9,7 @@ MUSEUM = ROOT / "museum"
 
 def test_public_order_leads_with_potential_then_science_details_author_cosmology():
     page = (MUSEUM / "app/page.tsx").read_text(encoding="utf-8")
-    positions = [page.index(token) for token in ('id="potential"', '<ScienceGallery />', 'id="research-exhibit"', 'id="details"', 'id="creator"', 'id="other-work"', '<footer>')]
+    positions = [page.index(token) for token in ('id="potential"', '<PrototypeScience motion={motion} setMotion={setMotion} />', '<ScienceGallery />', 'id="research-exhibit"', 'id="details"', 'id="creator"', 'id="other-work"', '<footer>')]
     assert positions == sorted(positions)
     assert "historic stakes" in page
     assert "If established and tested" in page

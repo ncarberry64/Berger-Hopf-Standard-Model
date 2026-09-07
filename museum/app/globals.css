@@ -1898,3 +1898,290 @@ select {
     scroll-behavior: auto;
   }
 }
+
+/* Permanent science collection: large readable workbenches before comparisons. */
+.prototype-hall {
+  width: min(1240px, calc(100% - 3rem));
+  margin: 5rem auto;
+}
+.science-index {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 0.75rem;
+  margin: 2rem 0;
+}
+.science-index a {
+  display: flex;
+  gap: 1rem;
+  padding: 1.2rem;
+  border: 1px solid #345267;
+  background: #102432;
+  color: #eaf4fa;
+  text-decoration: none;
+  font-size: 1rem;
+}
+.science-index span {
+  color: #efc374;
+}
+.primary-exhibit {
+  scroll-margin-top: 2rem;
+  margin: 3rem 0;
+  padding: clamp(1.25rem, 3vw, 3rem);
+  border: 1px solid #345267;
+  border-radius: 12px;
+  background: #0c1d29;
+}
+.primary-exhibit h3 {
+  font-size: clamp(1.8rem, 4vw, 2.8rem);
+  line-height: 1.15;
+  margin: 0.5rem 0 1.2rem;
+}
+.primary-exhibit h4 {
+  font-size: 1.3rem;
+  margin: 1rem 0;
+}
+.primary-exhibit p {
+  font-size: 1rem;
+  line-height: 1.7;
+  color: #d5e2ea;
+}
+.prototype-hall button,
+.prototype-hall select,
+.prototype-hall input[type='number'] {
+  font: inherit;
+  color: #edf7fb;
+  border: 1px solid #527188;
+  background: #142c3c;
+  border-radius: 6px;
+  padding: 0.7rem 0.9rem;
+  max-width: 100%;
+}
+.prototype-hall button {
+  cursor: pointer;
+}
+.prototype-hall button:hover {
+  border-color: #efc374;
+}
+.prototype-hall input[type='range'] {
+  display: block;
+  width: 100%;
+  accent-color: #7cdfd2;
+  margin-top: 0.8rem;
+}
+.prototype-hall label {
+  display: block;
+  font-size: 1rem;
+}
+.prototype-controls {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 1rem;
+  margin: 1.5rem 0;
+}
+.prototype-controls label {
+  flex: 1 1 240px;
+}
+.prototype-hall .data-label {
+  color: #efc374;
+  font-size: 0.9375rem;
+  padding: 0.8rem 1rem;
+  border-left: 3px solid #efc374;
+  background: #172a36;
+}
+.pending-output {
+  border: 1px dashed #c4a06b;
+  padding: 1rem;
+}
+.prototype-image {
+  margin: 1.5rem 0;
+}
+.prototype-image img {
+  width: 100%;
+  height: auto;
+}
+.prototype-image figcaption {
+  font-size: 0.9375rem;
+  color: #b8cedc;
+  margin-top: 0.5rem;
+}
+.prototype-hall .table-scroll {
+  overflow-x: auto;
+  margin: 1.5rem 0;
+}
+.prototype-hall table {
+  width: 100%;
+  border-collapse: collapse;
+  text-align: left;
+  font-size: 0.9375rem;
+}
+.prototype-hall td,
+.prototype-hall th {
+  padding: 0.8rem;
+  border-bottom: 1px solid #345267;
+  vertical-align: top;
+  min-width: 105px;
+  overflow-wrap: anywhere;
+}
+.prototype-hall th {
+  color: #eaf4fa;
+}
+.prototype-hall td {
+  color: #bed3df;
+}
+.prototype-hall caption {
+  text-align: left;
+  padding: 0.75rem;
+  color: #efc374;
+}
+.numeric-ledger {
+  font-variant-numeric: tabular-nums;
+  min-width: 190px !important;
+}
+.equivalence-columns {
+  display: grid;
+  grid-template-columns: 1.1fr 1fr;
+  gap: 2rem;
+}
+.equivalence-check {
+  border-bottom: 1px solid #345267;
+  padding-bottom: 0.65rem;
+}
+.equivalence-check span {
+  display: block;
+  color: #7cdfd2;
+}
+.collision-workbench {
+  padding: 1.5rem;
+  margin: 1.5rem 0;
+  background: #071722;
+  border: 1px solid #416079;
+  border-radius: 10px;
+}
+.beam-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1rem;
+  margin: 1.5rem 0;
+}
+.beam-grid select {
+  width: 100%;
+  margin: 0.5rem 0;
+}
+.beam-grid .conjugate {
+  font-size: 0.9375rem;
+}
+.prototype-hall .science-action {
+  background: #d9b268;
+  color: #102332;
+  font-weight: 700;
+  margin-top: 1rem;
+}
+.collision-view,
+.force-view {
+  display: block;
+  width: 100%;
+  height: auto;
+  color: #e3eff7;
+  background: #071621;
+  margin: 1rem 0;
+  border: 1px solid #365469;
+}
+.collision-view text,
+.force-view text {
+  font-size: 20px;
+}
+.collection-update {
+  padding: 1.5rem;
+  border-left: 3px solid #7cdfd2;
+  font-size: 1.05rem;
+}
+@media (max-width: 760px) {
+  .prototype-hall {
+    width: calc(100% - 1.5rem);
+  }
+  .science-index,
+  .beam-grid,
+  .equivalence-columns {
+    grid-template-columns: 1fr;
+  }
+  .collision-workbench {
+    padding: 1rem;
+  }
+  .force-view,
+  .collision-view {
+    min-height: 240px;
+  }
+  .prototype-hall td,
+  .prototype-hall th {
+    min-width: 125px;
+  }
+}
+
+.diagram-scroll {
+  overflow-x: auto;
+}
+.diagram-scroll svg {
+  min-width: 720px;
+}
+
+.cosmic-cycle {
+  margin-top: 4rem;
+  padding: clamp(1rem, 3vw, 2.5rem);
+  border: 1px solid #566384;
+  background: #0d192b;
+  border-radius: 12px;
+}
+.cosmic-cycle h3 {
+  font-size: clamp(1.8rem, 4vw, 2.7rem);
+  line-height: 1.2;
+}
+.cosmic-cycle p {
+  font-size: 1rem;
+  line-height: 1.7;
+}
+.cosmic-cycle h4 {
+  font-size: 1.35rem;
+}
+.cosmic-cycle button,
+.cosmic-cycle select {
+  padding: 0.7rem;
+  font: inherit;
+  color: #e1edff;
+  background: #182943;
+  border: 1px solid #6f84a5;
+  border-radius: 6px;
+  cursor: pointer;
+}
+.cosmic-cycle button[aria-pressed='true'] {
+  border-color: #efc374;
+  color: #efc374;
+}
+.cosmic-cycle button:disabled {
+  opacity: 0.55;
+  cursor: default;
+}
+.cycle-phase-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+  margin: 1rem 0;
+}
+.cosmic-view {
+  display: block;
+  width: 100%;
+  background: #050d19;
+}
+.cosmic-view text {
+  font-size: 20px;
+}
+.cosmic-cycle input[type='range'] {
+  display: block;
+  width: 100%;
+  accent-color: #c1adf0;
+}
+.cycle-legend {
+  padding: 1rem;
+  background: #15253c;
+  color: #d3e7f3;
+}

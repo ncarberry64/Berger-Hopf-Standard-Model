@@ -60,6 +60,8 @@ jobs:
           cache-dependency-path: museum/pnpm-lock.yaml
       - run: pnpm install --frozen-lockfile
         working-directory: museum
+      - run: pnpm test:science
+        working-directory: museum
       - run: pnpm exec tsc --noEmit
         working-directory: museum
       - run: pnpm build:pages
