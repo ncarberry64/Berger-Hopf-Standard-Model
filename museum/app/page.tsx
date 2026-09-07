@@ -4,11 +4,13 @@ import { ArrowRight, Code2, Pause, Play, ShieldCheck } from 'lucide-react';
 import Image from 'next/image';
 import { useEffect, useMemo, useState } from 'react';
 import { Button } from '@/components/ui/button';
+import { ScalarResponse } from './scalar-response';
 import {
   cosmologyExhibit,
   exhibits,
   REPOSITORY,
   SCIENCE,
+  CURRENT_SCIENCE,
   type Exhibit,
 } from './exhibits';
 
@@ -216,6 +218,7 @@ export default function Home() {
         <nav aria-label="Museum navigation">
           <a href="#exhibits">Exhibits</a>
           <a href="#cms-data">CMS data</a>
+          <a href="#computed-data">Computed data</a>
           <a href="#reconstruction">Research</a>
           <a href="#professionals">For reviewers</a>
           <a href="#creator">Creator</a>
@@ -236,9 +239,8 @@ export default function Home() {
           </p>
           <h1 id="exhibit-title">Look first. Then go backstage.</h1>
           <p>
-            The CMS exhibit uses real public data. The remaining rooms use
-            normalized simulations or audited records to show calculations
-            happening—never flow charts.
+            Explore real CMS public data, the certified BHSM scalar response,
+            and clearly labeled simulations and historical audit records.
           </p>
           <Button
             className="hall-motion-toggle"
@@ -390,6 +392,7 @@ export default function Home() {
       </section>
 
       <CMSExplorer />
+      <ScalarResponse />
 
       <section
         className="reconstruction-room"
@@ -402,10 +405,9 @@ export default function Home() {
             One program, recovered across an evolving research record.
           </h2>
           <p>
-            Every BHSM lineage is now integrated on main. The reconstruction
-            preserves its calculations while separating an existing particle
-            ontology from the later AE2 stop and event-child dynamics and from
-            the audited but still-missing local-enclosure carrier.
+            The reconstruction preserves the evolving record: the existing
+            particle ontology, AE2 stop and event-child dynamics, and the later
+            AE3 local-enclosure carrier. Each retains its own proof scope.
           </p>
         </div>
 
@@ -431,14 +433,14 @@ export default function Home() {
           </article>
           <div className="bridge-arrow" aria-hidden="true">→</div>
           <article className="bridge-stage bridge-stage-open">
-            <span>03 · Open typed interface</span>
+            <span>03 · AE3 carrier derived</span>
             <h3>Local enclosure → SM manifestation</h3>
             <p>
-              Six stored AE2 candidate classes have now been tested. None
-              supplies the full action-owned localization type needed to carry
-              the frozen state into its existing manifestation class.
+              The authorized AE3 extension supplies the σ = 0 material surface
+              and algebraic transport of all nine charged-sector family fibers.
+              A persistent interacting physical particle remains unproved.
             </p>
-            <strong>6 audited · 0 qualify</strong>
+            <strong>Local carrier derived · physical solution open</strong>
           </article>
         </div>
 
@@ -450,8 +452,8 @@ export default function Home() {
           </article>
           <article>
             <span className="ledger-label ledger-open">Still required</span>
-            <h3>Four proof kernels</h3>
-            <p>Localization carrier, physical interface variation, child inheritance, and actual C2 family/mode instantiation.</p>
+            <h3>Complete physical background</h3>
+            <p>The joint finite-history operator, projected heat-minus-zeta force, KKT root, constrained physical Hessian, and downstream observable gates.</p>
           </article>
           <article>
             <span className="ledger-label ledger-forbidden">Not equivalent</span>
@@ -464,7 +466,7 @@ export default function Home() {
           <a href={`${SCIENCE}/docs/BHSM_NORMAN_SCHOOL_FULL_CORPUS_RECONSTRUCTION.md`}>Full ontology reconstruction ↗</a>
           <a href={`${SCIENCE}/theory/n12_gate7_localization_carrier_kill_screen.md`}>Carrier kill screen ↗</a>
           <a href={`${SCIENCE}/theory/n12_gate7_physical_encapsulation_identification_bridge.md`}>Typed enclosure bridge ↗</a>
-          <a href={`${SCIENCE}/theory/post_ae2_localization_carrier_extension_contract.md`}>Extension acceptance contract ↗</a>
+          <a href={`${CURRENT_SCIENCE}/docs/current_bhsm_status.md`}>AE3 carrier and current proof frontier ↗</a>
         </div>
         <dl className="corpus-facts" aria-label="Integrated BHSM corpus figures">
           <div>
@@ -523,11 +525,11 @@ export default function Home() {
         <div className="status-ribbon" role="note">
           <strong>Current research state</strong>
           <span>
-            AE2 stop and event child are derived · 6 carrier classes audited,
-            0 qualify · owner-authorized action-version decision remains open ·
+            AE3 local carrier and nine-fiber algebraic transport are derived ·
+            Gate 7 physical background and observable proofs remain open ·
             FULL_BHSM_COMPLETE = FALSE
           </span>
-          <a href={`${SCIENCE}/docs/current_bhsm_status.md`}>
+          <a href={`${CURRENT_SCIENCE}/docs/current_bhsm_status.md`}>
             Read current status <ArrowRight aria-hidden="true" size={15} />
           </a>
         </div>
