@@ -112,3 +112,10 @@ if (!existsSync(sourceRoot)) {
     `Synced ${names.length + cmsNames.length + 1} provenance-tracked museum assets.`,
   );
 }
+
+// Vite serves public files by URL; bundled component imports belong in app.
+// Both representations come from the same provenance-bound download snapshot.
+await cp(
+  join(dataRoot, 'sandbox-comparison.json'),
+  join(museumRoot, 'app', 'sandbox-comparison.json'),
+);

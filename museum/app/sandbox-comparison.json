@@ -1,0 +1,125 @@
+{
+  "schema": "BHSM_MUSEUM_SANDBOX_COMPARISON_V1",
+  "date": "2026-09-02",
+  "classification": "COMPARISON_ONLY",
+  "model_label": "Historical BHSM screen",
+  "reference_label": "Sandbox reference · unverified",
+  "reference_is_independently_verified_measurement": false,
+  "physical_prediction": false,
+  "source": {
+    "path": "docs/museum/sandbox_comparison_source_2026-09-02.md",
+    "sha256": "1cfae42fad0462509324f7280343ed83ade1d2a0baed55c896d9c9662d56f7dc",
+    "intake_source_sha256": "E784E09C42282E6CFF59CF935CB718FF793D354606A928C5128DE5BF75D713DF"
+  },
+  "difference_definition": "100 * (historical_BHSM - sandbox_reference) / sandbox_reference; not a statistical significance",
+  "rows": [
+    {
+      "id": "muon-tau",
+      "group": "families",
+      "label": "Muon / tau mass ratio",
+      "bhsm": 0.0600745,
+      "reference": 0.0594635,
+      "unit": "ratio",
+      "explanation": "Two heavier cousins of the electron: this ratio compares their masses without choosing a mass unit."
+    },
+    {
+      "id": "alpha-s",
+      "group": "forces",
+      "label": "Strong interaction strength",
+      "bhsm": 0.118208,
+      "reference": 0.118,
+      "unit": "dimensionless",
+      "explanation": "The strong interaction binds quarks. Comparing its strength requires the same energy and measurement convention."
+    },
+    {
+      "id": "weak-angle",
+      "group": "forces",
+      "label": "Weak mixing parameter",
+      "bhsm": 0.230769,
+      "reference": 0.23122,
+      "unit": "dimensionless",
+      "explanation": "This number describes how the electromagnetic and weak descriptions mix. The report uses an MS-scheme reference."
+    },
+    {
+      "id": "electroweak-v",
+      "group": "forces",
+      "label": "Electroweak scale",
+      "bhsm": 246.17,
+      "reference": 246.22,
+      "unit": "GeV",
+      "explanation": "A common scale enters the model’s mass formulas. A calibrated scale is not an independent prediction."
+    },
+    {
+      "id": "quark-ratio",
+      "group": "quarks",
+      "label": "Quark mixing |Vtd/Vts|",
+      "bhsm": 0.2084,
+      "reference": 0.207,
+      "unit": "ratio",
+      "explanation": "Quarks change flavor through the weak interaction. This compares two mixing strengths."
+    },
+    {
+      "id": "solar-angle",
+      "group": "neutrinos",
+      "label": "Neutrino mixing sin²θ12",
+      "bhsm": 0.311441,
+      "reference": 0.3088,
+      "unit": "dimensionless",
+      "explanation": "Neutrino flavors overlap. This is one of the three parameters describing that overlap."
+    },
+    {
+      "id": "reactor-angle",
+      "group": "neutrinos",
+      "label": "Neutrino mixing sin²θ13",
+      "bhsm": 0.0218921,
+      "reference": 0.02215,
+      "unit": "dimensionless",
+      "explanation": "A second mixing parameter tests a different part of the same three-flavor pattern."
+    },
+    {
+      "id": "neutrino-gaps",
+      "group": "neutrinos",
+      "label": "Neutrino squared-mass gap ratio",
+      "bhsm": 0.0291894,
+      "reference": 0.0298,
+      "unit": "ratio",
+      "explanation": "Oscillations probe differences between squared masses. Their ratio avoids an absolute mass scale."
+    },
+    {
+      "id": "atmospheric-angle",
+      "group": "neutrinos",
+      "label": "Neutrino mixing sin²θ23",
+      "bhsm": 0.543784,
+      "reference": 0.47,
+      "unit": "dimensionless",
+      "explanation": "This is a visible tension with the supplied normal-ordering best-fit marker. The report notes broad allowed regions and octant ambiguity."
+    },
+    {
+      "id": "higgs",
+      "group": "higgs",
+      "label": "Zeroth-order Higgs mass screen",
+      "bhsm": 123.085,
+      "reference": 125.2,
+      "unit": "GeV",
+      "explanation": "The simple mass screen sits below the supplied reference. It is not the completed, dressed physical mass."
+    }
+  ],
+  "qualitative_sentinels": [
+    {
+      "group": "families",
+      "text": "Electron / tau: the supplied report records about +3.4%, but provides no underlying pair of numbers. No point is fabricated here."
+    },
+    {
+      "group": "quarks",
+      "text": "Individual |Vtd| and |Vts| were reported about +4%; their ratio is closer. The source does not supply the individual values."
+    },
+    {
+      "group": "quarks",
+      "text": "CKM gamma is reported near 64.6 degrees versus a mid-60-degree region; no artificial reference point or uncertainty is assigned."
+    },
+    {
+      "group": "quarks",
+      "text": "CKM beta / sin(2 beta) has a reported low-side residual; the source does not give a complete numerical pair."
+    }
+  ]
+}
