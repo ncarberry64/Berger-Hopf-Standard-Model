@@ -1,15 +1,17 @@
 """Generate deterministic, claim-safe BHSM museum simulation displays.
 
-The seven primary exhibits use normalized explanatory data. They visualize the
-kind of calculation performed by the documented machinery; they are not
-measurements and do not supply physical predictions. The CMS gallery has its
-own generator and is intentionally excluded here.
+The provenance/residual engine consumes the pinned Gate-7 numerical certificate.
+Other engines retain explanatory data until compatible physical outputs exist.
+The CMS gallery has its own generator and is intentionally excluded here.
 """
 
 from __future__ import annotations
 
 import base64
+import argparse
+import hashlib
 import io
+import json
 import math
 from pathlib import Path
 
@@ -43,13 +45,14 @@ def text(draw: ImageDraw.ImageDraw, xy: tuple[float, float], value: str, size: i
     draw.text(xy, value, font=font(size, bold), fill=fill, anchor=anchor)
 
 
-def chrome(draw: ImageDraw.ImageDraw, title: str, label: str) -> None:
+def chrome(draw: ImageDraw.ImageDraw, title: str, label: str, *,
+           footer: str = "EXPLANATORY SIMULATION • NORMALIZED VALUES • NOT A PHYSICAL PREDICTION") -> None:
     draw.rectangle((0, 0, W, H), fill=BG)
     draw.rectangle((0, 0, W, 92), fill="#091827")
     draw.line((36, 82, W - 36, 82), fill=CYAN, width=2)
     text(draw, (40, 38), title, 31, bold=True)
     text(draw, (W - 40, 40), label, 16, MUTED, bold=True, anchor="ra")
-    text(draw, (40, 688), "EXPLANATORY SIMULATION • NORMALIZED VALUES • NOT A PHYSICAL PREDICTION", 16, GOLD, bold=True)
+    text(draw, (40, 688), footer, 16, GOLD, bold=True)
     text(draw, (W - 40, 688), "BHSM MUSEUM", 15, MUTED, bold=True, anchor="ra")
 
 
@@ -243,25 +246,61 @@ def decay_frame(k:int)->Image.Image:
     return im
 
 
+CERTIFICATE_DATA = ROOT.parents[1] / "data/museum/bhsm_gate7_scalar_response.json"
+# Normalize Git's CRLF/LF conversion before checking JSON bytes.
+CERTIFICATE_SHA256 = "39EFAA5910D67390A51EAE0FEF077134A8EF281FEAA8927FC5EB6265ADEB56EA"
+
+
+def load_residual_certificate(path: Path = CERTIFICATE_DATA) -> dict:
+    """Fail closed if the immutable export changes; never substitute demo data."""
+    raw = path.read_bytes().replace(b"\r\n", b"\n")
+    if hashlib.sha256(raw).hexdigest().upper() != CERTIFICATE_SHA256:
+        raise ValueError("residual engine certificate hash mismatch")
+    data = json.loads(raw)
+    values = data["local_residual_norm_upper"]
+    if (data["validation_passed"] is not True or data["FULL_BHSM_COMPLETE"] is not False
+            or data["precision_bits"] != 512 or len(values) != 370
+            or not all(math.isfinite(value) and value >= 0 for value in values)):
+        raise ValueError("invalid scoped residual certificate")
+    return data
+
+
 def firewall_frame(k:int)->Image.Image:
+    data = load_residual_certificate()
+    values = data["local_residual_norm_upper"]
     im=Image.new("RGB",(W,H),BG); d=ImageDraw.Draw(im)
-    chrome(d,"NO-FIT PROVENANCE + RESIDUAL MONITOR","ENGINE VIEW 07")
+    chrome(d,"NO-FIT PROVENANCE + RESIDUAL MONITOR","ENGINE VIEW 07",
+           footer="COMPUTED BHSM DATA • FROZEN SCALAR SCOPE • PHYSICAL PROMOTION OPEN")
     panel(d,(36,116,1244,410)); panel(d,(36,434,1244,638))
-    text(d,(58,142),"Comparison residuals — measurement enters only here",22,bold=True)
-    box=(80,182,1200,360); axes(d,box,"comparison index","prediction − measurement")
-    pts=[]
-    for i in range(180):
-        u=i/179; val=.18*math.sin(u*math.pi*10)+.08*math.cos(u*math.pi*23)
-        pts.append((box[0]+u*(box[2]-box[0]),(box[1]+box[3])/2-val*240))
-    line_plot(d,pts,CYAN,3); d.line((box[0],(box[1]+box[3])/2,box[2],(box[1]+box[3])/2),fill=GOLD,width=2)
-    cursor=box[0]+k/(FRAMES-1)*(box[2]-box[0]); d.line((cursor,box[1],cursor,box[3]),fill=INK,width=3)
-    text(d,(58,460),"Immutable upstream provenance",21,bold=True)
-    rows=[("branch", "24", GREEN),("action coefficients", "LOCKED", GREEN),("normalization", "LOCKED", GREEN),("scale", "ACTION-OWNED", GREEN)]
-    for i,(name,value,color) in enumerate(rows):
-        y=502+i*30; text(d,(80,y),name,16,MUTED); text(d,(420,y),value,16,color,bold=True); d.line((560,y,1180,y),fill=GRID,width=8)
-        d.line((560,y,560+(500 if i!=k//9 else 500),y),fill=color,width=8)
-    text(d,(1184,476),"AUDIT PASS",18,GREEN,bold=True,anchor="ra")
-    text(d,(800,604),"Measured values cannot retune upstream choices.",18,GOLD,bold=True,anchor="ma")
+    text(d,(58,142),"Local projected HS second-residual norm — certified upper bounds",22,bold=True)
+    box=(112,198,1200,347)
+    axes(d,box,"computational interval (0–369)","")
+    ymax = max(values) * 1.05
+    for fraction in (0, .5, 1):
+        y=box[3]-fraction*(box[3]-box[1])
+        text(d,(100,y),f"{fraction*ymax:.3g}",14,MUTED,anchor="rm")
+    pts=[(box[0]+i/(len(values)-1)*(box[2]-box[0]),
+          box[3]-value/ymax*(box[3]-box[1])) for i,value in enumerate(values)]
+    line_plot(d,pts,CYAN,3)
+    index=round(k/(FRAMES-1)*(len(values)-1))
+    cursor,ordinate=pts[index]
+    d.line((cursor,box[1],cursor,box[3]),fill=INK,width=2)
+    d.ellipse((cursor-5,ordinate-5,cursor+5,ordinate+5),fill=GOLD)
+    text(d,(1194,177),f"interval {index}: {values[index]:.8g}",17,GOLD,bold=True,anchor="ra")
+    for index in (0,100,200,300,369):
+        text(d,(pts[index][0],357),str(index),13,MUTED,anchor="ma")
+    text(d,(58,460),"Immutable calculation provenance",21,bold=True)
+    rows=[("source revision",data["source_revision"][:12]),
+          ("interval arithmetic",f"{data['precision_bits']} bits"),
+          ("stored interval bounds",str(len(values))),
+          ("physical completion","OPEN")]
+    for i,(name,value) in enumerate(rows):
+        y=502+i*30; text(d,(80,y),name,16,MUTED)
+        text(d,(430,y),value,16,GOLD if i==3 else GREEN,bold=True)
+    text(d,(684,502),"Source arrays SHA-256",16,MUTED)
+    text(d,(684,533),data["source_data_SHA256"][:32],16,CYAN)
+    text(d,(684,558),data["source_data_SHA256"][32:],16,CYAN)
+    text(d,(684,602),"Numerical residuals; no measurement comparison.",16,GOLD)
     return im
 
 
@@ -279,6 +318,13 @@ RENDERERS = {
 def svg_document(name: str, still: Image.Image) -> str:
     data = io.BytesIO(); still.save(data, format="PNG", optimize=True)
     encoded = base64.b64encode(data.getvalue()).decode("ascii")
+    if name == "bhsm_no_fit_firewall":
+        return f'''<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="720" viewBox="0 0 1280 720" data-visual-kind="numerical-certificate">
+<title>BHSM provenance and certified numerical residual engine</title>
+<desc>370 local projected HS second-residual norm upper bounds from the frozen central scalar certificate. Not measurement residuals or physical predictions.</desc>
+<metadata>Generator: docs/assets/generate_bhsm_museum_engines.py; data: data/museum/bhsm_gate7_scalar_response.json; SHA256: {CERTIFICATE_SHA256}</metadata>
+<image width="1280" height="720" href="data:image/png;base64,{encoded}"/>
+</svg>'''
     return f'''<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="720" viewBox="0 0 1280 720" data-visual-kind="simulation-engine">
 <title>BHSM explanatory simulation engine display</title>
 <desc>Normalized animated scientific visualization. This is not measured data and not a physical prediction.</desc>
@@ -293,7 +339,12 @@ def svg_document(name: str, still: Image.Image) -> str:
 
 
 def main() -> None:
+    parser = argparse.ArgumentParser(description=__doc__)
+    parser.add_argument("--engine", choices=sorted(RENDERERS), help="Regenerate only this existing engine")
+    args = parser.parse_args()
     for name, renderer in RENDERERS.items():
+        if args.engine is not None and name != args.engine:
+            continue
         frames = [renderer(k) for k in range(FRAMES)]
         frames[-1].save(ROOT / f"{name}.png", optimize=True)
         frames[0].save(

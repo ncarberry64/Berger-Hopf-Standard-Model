@@ -4,7 +4,6 @@ import { ArrowRight, Code2, Pause, Play, ShieldCheck } from 'lucide-react';
 import Image from 'next/image';
 import { useEffect, useMemo, useState } from 'react';
 import { Button } from '@/components/ui/button';
-import { ScalarResponse } from './scalar-response';
 import {
   cosmologyExhibit,
   exhibits,
@@ -14,7 +13,7 @@ import {
   type Exhibit,
 } from './exhibits';
 
-const ASSET_REVISION = 'cosmology-other-work-2026-09-01';
+const ASSET_REVISION = 'existing-engine-data-2026-09-06';
 
 const creatorLinks = [
   { label: 'ORCID record', href: 'https://orcid.org/0009-0000-6650-3485' },
@@ -218,7 +217,6 @@ export default function Home() {
         <nav aria-label="Museum navigation">
           <a href="#exhibits">Exhibits</a>
           <a href="#cms-data">CMS data</a>
-          <a href="#computed-data">Computed data</a>
           <a href="#reconstruction">Research</a>
           <a href="#professionals">For reviewers</a>
           <a href="#creator">Creator</a>
@@ -239,7 +237,7 @@ export default function Home() {
           </p>
           <h1 id="exhibit-title">Look first. Then go backstage.</h1>
           <p>
-            Explore real CMS public data, the certified BHSM scalar response,
+            Explore real CMS public data, certified BHSM numerical residuals,
             and clearly labeled simulations and historical audit records.
           </p>
           <Button
@@ -267,7 +265,9 @@ export default function Home() {
                   <span>
                     {exhibit.number === '01'
                       ? 'Real-data engine'
-                      : 'Simulation / audit engine'}{' '}
+                      : exhibit.number === '08'
+                        ? 'Computed BHSM data engine'
+                        : 'Simulation / audit engine'}{' '}
                     · {motion ? 'motion on' : 'static view'}
                   </span>
                 </div>
@@ -392,7 +392,6 @@ export default function Home() {
       </section>
 
       <CMSExplorer />
-      <ScalarResponse />
 
       <section
         className="reconstruction-room"

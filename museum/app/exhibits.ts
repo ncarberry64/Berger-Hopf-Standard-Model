@@ -188,19 +188,21 @@ export const exhibits: Exhibit[] = [
   {
     number: '08',
     title: 'The no-fit firewall',
-    subtitle: 'Prediction authority and provenance',
+    subtitle: 'Computed BHSM residuals and immutable provenance',
     animated: 'bhsm_no_fit_firewall_animated.gif',
     still: 'bhsm_no_fit_firewall.png',
-    alt: 'A residual plot compares a frozen calculation with measurements while an immutable provenance monitor keeps branch, coefficients, normalization, and scale locked.',
+    alt: 'The existing residual monitor scans 370 certified local numerical residual bounds from BHSM, alongside the source revision, array hash, precision, and open physical-completion status.',
     lay: 'Measurements may grade the finished answer, but they are not allowed to go backward and quietly change the choices that produced it.',
     seen:
-      'A comparison residual is scanned above a provenance ledger. Branch, action coefficients, normalization, and scale remain locked while measurements enter only at comparison.',
+      'The monitor now reads actual BHSM calculation data: 370 upper bounds on the local projected Hilbert–Schmidt second residual, from the frozen central scalar certificate. The cursor selects saved interval values. These are numerical residual bounds, not differences between predictions and measurements.',
     matters:
       'For any reader, the rule is simple: the answer cannot be adjusted after it is known. Scientifically, immutable provenance separates a frozen prediction from a post-hoc fit and forces incomplete records to fail closed.',
-    dataLabel: 'Explanatory residual simulation · repository policy checks',
+    dataLabel: 'Computed BHSM data · 512-bit scalar certificate',
     status: 'implemented',
-    statusLabel: 'Implemented policy machinery',
+    statusLabel: 'Real calculation data installed',
     links: [
+      { label: 'Engine input data', href: './data/gate7-scalar-response.json' },
+      { label: 'Pinned source certificate', href: `${CURRENT_SCIENCE}/artifacts/flagship_integration/BHSM_N12_GATE7_CURRENT_GREEN_CORRELATED_SCALAR_CAUSAL_COMPOSITION.json` },
       { label: 'Prediction-freeze source', href: `${SCIENCE}/src/bhsm/interface/universal_prediction_freeze.py` },
       { label: 'Integrity audit', href: `${SCIENCE}/tools/audit_frozen_prediction_integrity.py` },
       { label: 'Claim boundaries', href: `${SCIENCE}/CLAIMS.md` },
