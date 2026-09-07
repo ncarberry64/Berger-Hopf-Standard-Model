@@ -226,10 +226,10 @@ export function CosmicEnclosure({ motion }: { motion: boolean }) {
               return (
                 <line
                   key={i}
-                  x1={430 + 215 * Math.cos(a)}
-                  y1={270 + 215 * Math.sin(a)}
-                  x2={430 + r * Math.cos(a)}
-                  y2={270 + r * Math.sin(a)}
+                  x1={(430 + 215 * Math.cos(a)).toFixed(2)}
+                  y1={(270 + 215 * Math.sin(a)).toFixed(2)}
+                  x2={(430 + r * Math.cos(a)).toFixed(2)}
+                  y2={(270 + r * Math.sin(a)).toFixed(2)}
                   stroke="#ffffff"
                   strokeWidth="3"
                   opacity={1 - phase / 12}
