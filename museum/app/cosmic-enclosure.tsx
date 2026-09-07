@@ -362,7 +362,10 @@ export function CosmicEnclosure({ motion }: { motion: boolean }) {
                         cy={f(310 + r * Math.sin(a))}
                         r={f(44 + 19 * Math.sin(i * 1.7 + phase * 0.3))}
                         fill="url(#cosmic-plasma)"
-                        opacity={0.46 + 0.14 * Math.sin(i + phase * 0.2)}
+                        opacity={(
+                          0.46 +
+                          0.14 * Math.sin(i + phase * 0.2)
+                        ).toFixed(4)}
                       />
                     );
                   })}
@@ -375,7 +378,10 @@ export function CosmicEnclosure({ motion }: { motion: boolean }) {
                       fill="none"
                       stroke="#e8eeff"
                       strokeWidth={9 + i * 4}
-                      opacity={0.025 + 0.01 * Math.sin(phase * 0.3 + i)}
+                      opacity={(
+                        0.025 +
+                        0.01 * Math.sin(phase * 0.3 + i)
+                      ).toFixed(4)}
                       filter="url(#cosmic-soft)"
                     />
                   ))}
