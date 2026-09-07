@@ -51,8 +51,8 @@ view representing an S3 spatial hypersurface. It does not embed the full
 three-sphere or depict a literal two-dimensional outer wall of the universe.
 Deterministic surface coordinates, illustrative scalar roughness and marker
 paths create the animation. Markers are labeled as flows, celestial bodies,
-black-hole concentrations and explosive events. A global flash and broken
-grid represent the requested loss of cohesion. Shrinking dark centers and
+black-hole concentrations and explosive events. A continuous, softly textured surface release represents the requested loss
+of cohesion; no broken grid or dashed rectangular rim is drawn. Shrinking dark centers and
 expanding gold rings represent evaporation and surface restoration in the
 author's conceptual picture; they are not a calculated Hawking radiation flux.
 All markers and roughness
@@ -76,3 +76,25 @@ from filamentary growth. BAO is an observed statistical separation feature
 The author-requested subsequent enclosure, heat-death and global-release sequence
 remains a speculative cycle, not established cosmic evolution. All spatial
 coordinates, densities, event markers and phase durations are illustrative.
+
+## Cosmic-web visual revision
+
+The renderer uses an irregular spherical Voronoi skeleton with broad voids,
+uneven filament widths, secondary wisps and 5,200 synthetic density markers.
+Clumpy intersections stand for galaxy groups and clusters. Far-side structures
+are occluded and the limb is shaded; the old regular globe mesh and foreground
+star field are removed. These are procedural visual choices, not an N-body
+calculation, survey reconstruction or physical density calibration.
+
+The morphological reference is the network of filaments, intersections and
+voids shown in [DESI's mapped structure](https://www.desi.lbl.gov/2026/07/03/exploring-what-desi-measures-an-interactive-cosmic-web-in-your-browser/).
+[ESO's observed filament](https://eso.org/public/images/potw2504a/) provides an
+observational reference for diffuse filament emission. Neither supplies the
+positions in this animation. This removed viewpoint enhances density for
+visibility; individual stars and black-hole horizons would be unresolved at
+this scale. Black-hole markers remain enlarged symbols of the author's cycle.
+
+The white-hole phase uses continuous radial light fields and soft overlapping
+plasma patches over the whole circular surface. Straight spokes and rectangular
+dash segments are removed. An explicit full-surface SVG filter region prevents
+narrow per-path filter boxes from clipping diffuse filaments or release halos.

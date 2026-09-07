@@ -244,7 +244,7 @@ export function CollisionTheatre({ motion }: { motion: boolean }) {
               {Array.from({ length: 32 }, (_, i) => (
                 <path
                   key={`module-${i}`}
-                  d={`M${400 + 205 * Math.cos((i * Math.PI) / 16)} ${270 + 205 * Math.sin((i * Math.PI) / 16)}L${400 + 220 * Math.cos((i * Math.PI) / 16)} ${270 + 220 * Math.sin((i * Math.PI) / 16)}`}
+                  d={`M${(400 + 205 * Math.cos((i * Math.PI) / 16)).toFixed(2)} ${(270 + 205 * Math.sin((i * Math.PI) / 16)).toFixed(2)}L${(400 + 220 * Math.cos((i * Math.PI) / 16)).toFixed(2)} ${(270 + 220 * Math.sin((i * Math.PI) / 16)).toFixed(2)}`}
                   stroke={i % 2 ? '#8d729c' : '#c09a74'}
                   strokeWidth="5"
                   opacity=".6"
