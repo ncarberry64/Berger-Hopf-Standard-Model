@@ -1,0 +1,586 @@
+{
+  "FULL_BHSM_COMPLETE": false,
+  "INVALIDATED": [
+    "zero direct area derivatives imply total attachment variation vanishes",
+    "area density by itself chooses the admissible gauge trace domain",
+    "pointwise rank three alone proves a physical attachment or interface solution",
+    "matching only tangential curvature certifies complete Maxwell transport"
+  ],
+  "Maxwell_boundary_variation": {
+    "Cartan_identity": "L_eta a=i_eta f+d(i_eta a)",
+    "after_Gauss_and_corner_reduction": "integral p^a f_ba eta^b dmu_h",
+    "boundary_one_form": "integral p^a delta a_a dmu_h",
+    "canonical_flux": "p^a=-g^(-2) n_mu F^(mu a)",
+    "conditional_flux_glue": "p_c+C(F_B)^*p_e=0",
+    "conditional_trace_glue": "a_e=C(F_B)a_c modulo admitted gauge",
+    "factored_normalization": "positive action-owned g^(-2), no numerical coupling chosen",
+    "map_variation": "<p_e,D_F C(F_B)[eta] a_c>",
+    "missing_coupled_terms": "shape, other-sector, environment and admissibility-constraint terms",
+    "trace_domain_selected_by_area_alone": false,
+    "unrestricted_independent_traces_alternative": "p_e=p_c=0 in this gauge-only sector"
+  },
+  "N12": {
+    "Gate7_result_imported": false,
+    "new_independent_rank": 0
+  },
+  "OPEN": [
+    "instantiate action-owned constrained seam trace and embedding domain",
+    "evaluate complete reduced stationarity and rank on action-owned nonzero fields",
+    "construct coupled interface IVP, first crossing, global F_B and spin/bundle reset"
+  ],
+  "VALIDATED": [
+    "fixed-geometry area density has zero direct F_B, L_s and gauge-trace derivative",
+    "Maxwell boundary and relative-map work terms survive in the total first variation",
+    "conditional cotangent transmission graph is Lagrangian on specified finite reduced spaces",
+    "nonzero Maxwell traces can algebraically remove three relative Lorentz directions",
+    "full-rank illustrative traces fail isolated free-map stationarity and cannot be promoted"
+  ],
+  "action_version": "BHSM-AE-3.2.16-COVARIANT-BUBBLE-INTERFACE-MECHANICS",
+  "artifact": "BHSM_COVARIANT_INTERFACE_SEAM_SELECTION_AUDIT",
+  "audit_version": "COVARIANT-INTERFACE-SEAM-SELECTION-AUDIT-1",
+  "classification": "DERIVED_VARIATION_WITH_CONDITIONAL_EXACT_LOCAL_WITNESSES",
+  "conditional_Lagrangian_graph": {
+    "graph_dimension": 6,
+    "physical_L_s_selected": false,
+    "physical_reduced_trace_space_constructed": false,
+    "product_dimension": 12,
+    "reduced_trace_dimension_per_side": 6,
+    "restricted_Green_form": [
+      [
+        "0",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0"
+      ],
+      [
+        "0",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0"
+      ],
+      [
+        "0",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0"
+      ],
+      [
+        "0",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0"
+      ],
+      [
+        "0",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0"
+      ],
+      [
+        "0",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0"
+      ]
+    ]
+  },
+  "domain": {
+    "corner_ensemble": "compactly supported variations or fixed corner data",
+    "physical_geometry_solved": false,
+    "pregeometric_membrane_variables_introduced": false,
+    "signature": "h=diag(-1,1,1), spacelike outward unit normals",
+    "stratum": "one regular timelike hypersurface in a four-dimensional stratum"
+  },
+  "exact_next_object": "ACTION_OWNED_ADMISSIBLE_SEAM_DOMAIN_AND_COMPLETE_REDUCED_STATIONARITY_JACOBIAN_ON_NONZERO_PHYSICAL_TRACES",
+  "inputs": {
+    "scripts/materialize_covariant_interface_seam_selection.py": "50FF70A6BB364F5014F229CEECFFD9BD82EDF99A9852F67112B8B19F75259B00",
+    "src/bhsm/interface/covariant_bubble_interface_mechanics.py": "51B3403809DF3D3AAC0C47F78443C19BCBB7569F9753BDCF09BBCF81507AED11",
+    "src/bhsm/interface/covariant_interface_seam_selection.py": "334B272C87927BEF0723B5F677B4382FD7412EC7C7A19580C3256323BEDF7511",
+    "tests/test_covariant_interface_seam_selection.py": "A99F259231A1B9440055D4D52D35F077DF44B34265E8FA8A3054DC257021CF14",
+    "theory/bhsm_covariant_bubble_interface_mechanics.md": "5DDF387E0A054AF2E257F3B5FFCF4644B9260A156706A4D90AA8727B1C6FE9F6",
+    "theory/bhsm_covariant_interface_seam_selection_audit.md": "42C40AFF388A194CA80C6F87EF67A6F1CD5A4A54B57294CDC05B2DC939DCCA58",
+    "theory/bhsm_owner_authorized_encapsulation_interface_action.md": "4870EEEC22F11F5D2F03B60EF8516EA28F1A451FDE91CA7FB39B7482B5D81F64"
+  },
+  "nonidentity_reference_check": {
+    "curvature_residual": [
+      [
+        "0",
+        "0",
+        "0"
+      ],
+      [
+        "0",
+        "0",
+        "0"
+      ],
+      [
+        "0",
+        "0",
+        "0"
+      ]
+    ],
+    "determinant": "1",
+    "identity_flux_residual_against_reference": [
+      [
+        "-8/3"
+      ],
+      [
+        "-4/3"
+      ],
+      [
+        "0"
+      ]
+    ],
+    "physical_identity_attachment_selected": false,
+    "preserves_metric": true,
+    "reference_differential": [
+      [
+        "5/3",
+        "4/3",
+        "0"
+      ],
+      [
+        "4/3",
+        "5/3",
+        "0"
+      ],
+      [
+        "0",
+        "0",
+        "1"
+      ]
+    ],
+    "transported_oriented_flux": [
+      [
+        "8/3"
+      ],
+      [
+        "10/3"
+      ],
+      [
+        "0"
+      ]
+    ]
+  },
+  "nonzero_Maxwell_realization": {
+    "ambient_metric": "diag(-1,1,1,1) in (t,x,y,z)",
+    "coupled_interface_solution": false,
+    "curvature": "F=dt wedge dx-2 dz wedge dx",
+    "factored_lowered_event_flux": "(0,2,0)",
+    "half_F_munu_F_up_munu": "3",
+    "isolated_free_map_stationarity_passed": false,
+    "potential": "A=(t-2z) dx",
+    "seam": "z=0; event outward normal +dz",
+    "source_free": "constant F: dF=0 and partial_mu F^(mu nu)=0",
+    "why_not_stationary": "f_ba p^a=(2,0,0), so additional coupled terms or restrictions are required"
+  },
+  "rank_cases": {
+    "aligned_nonzero_flux": {
+      "exact_rank": 2,
+      "isolated_Maxwell_free_map_stationary": true,
+      "isolated_Maxwell_map_work_covector": [
+        [
+          "0"
+        ],
+        [
+          "0"
+        ],
+        [
+          "0"
+        ]
+      ],
+      "jacobian": [
+        [
+          "0",
+          "0",
+          "0"
+        ],
+        [
+          "0",
+          "0",
+          "1"
+        ],
+        [
+          "0",
+          "-1",
+          "0"
+        ],
+        [
+          "0",
+          "1",
+          "0"
+        ],
+        [
+          "0",
+          "0",
+          "-1"
+        ],
+        [
+          "0",
+          "0",
+          "0"
+        ]
+      ],
+      "kernel_basis": [
+        [
+          [
+            "1"
+          ],
+          [
+            "0"
+          ],
+          [
+            "0"
+          ]
+        ]
+      ],
+      "kernel_dimension": 1,
+      "lowered_oriented_canonical_flux": [
+        [
+          "0"
+        ],
+        [
+          "0"
+        ],
+        [
+          "1"
+        ]
+      ],
+      "tangential_curvature": [
+        [
+          "0",
+          "1",
+          "0"
+        ],
+        [
+          "-1",
+          "0",
+          "0"
+        ],
+        [
+          "0",
+          "0",
+          "0"
+        ]
+      ]
+    },
+    "curvature_only": {
+      "exact_rank": 2,
+      "isolated_Maxwell_free_map_stationary": true,
+      "isolated_Maxwell_map_work_covector": [
+        [
+          "0"
+        ],
+        [
+          "0"
+        ],
+        [
+          "0"
+        ]
+      ],
+      "jacobian": [
+        [
+          "0",
+          "0",
+          "0"
+        ],
+        [
+          "0",
+          "0",
+          "1"
+        ],
+        [
+          "0",
+          "-1",
+          "0"
+        ],
+        [
+          "0",
+          "0",
+          "0"
+        ],
+        [
+          "0",
+          "0",
+          "0"
+        ],
+        [
+          "0",
+          "0",
+          "0"
+        ]
+      ],
+      "kernel_basis": [
+        [
+          [
+            "1"
+          ],
+          [
+            "0"
+          ],
+          [
+            "0"
+          ]
+        ]
+      ],
+      "kernel_dimension": 1,
+      "lowered_oriented_canonical_flux": [
+        [
+          "0"
+        ],
+        [
+          "0"
+        ],
+        [
+          "0"
+        ]
+      ],
+      "tangential_curvature": [
+        [
+          "0",
+          "1",
+          "0"
+        ],
+        [
+          "-1",
+          "0",
+          "0"
+        ],
+        [
+          "0",
+          "0",
+          "0"
+        ]
+      ]
+    },
+    "independent_nonzero_flux": {
+      "exact_rank": 3,
+      "isolated_Maxwell_free_map_stationary": false,
+      "isolated_Maxwell_map_work_covector": [
+        [
+          "2"
+        ],
+        [
+          "0"
+        ],
+        [
+          "0"
+        ]
+      ],
+      "jacobian": [
+        [
+          "0",
+          "0",
+          "0"
+        ],
+        [
+          "0",
+          "0",
+          "1"
+        ],
+        [
+          "0",
+          "-1",
+          "0"
+        ],
+        [
+          "2",
+          "0",
+          "0"
+        ],
+        [
+          "0",
+          "0",
+          "0"
+        ],
+        [
+          "0",
+          "0",
+          "2"
+        ]
+      ],
+      "kernel_basis": [],
+      "kernel_dimension": 0,
+      "lowered_oriented_canonical_flux": [
+        [
+          "0"
+        ],
+        [
+          "2"
+        ],
+        [
+          "0"
+        ]
+      ],
+      "tangential_curvature": [
+        [
+          "0",
+          "1",
+          "0"
+        ],
+        [
+          "-1",
+          "0",
+          "0"
+        ],
+        [
+          "0",
+          "0",
+          "0"
+        ]
+      ]
+    },
+    "zero_traces": {
+      "exact_rank": 0,
+      "isolated_Maxwell_free_map_stationary": true,
+      "isolated_Maxwell_map_work_covector": [
+        [
+          "0"
+        ],
+        [
+          "0"
+        ],
+        [
+          "0"
+        ]
+      ],
+      "jacobian": [
+        [
+          "0",
+          "0",
+          "0"
+        ],
+        [
+          "0",
+          "0",
+          "0"
+        ],
+        [
+          "0",
+          "0",
+          "0"
+        ],
+        [
+          "0",
+          "0",
+          "0"
+        ],
+        [
+          "0",
+          "0",
+          "0"
+        ],
+        [
+          "0",
+          "0",
+          "0"
+        ]
+      ],
+      "kernel_basis": [
+        [
+          [
+            "1"
+          ],
+          [
+            "0"
+          ],
+          [
+            "0"
+          ]
+        ],
+        [
+          [
+            "0"
+          ],
+          [
+            "1"
+          ],
+          [
+            "0"
+          ]
+        ],
+        [
+          [
+            "0"
+          ],
+          [
+            "0"
+          ],
+          [
+            "1"
+          ]
+        ]
+      ],
+      "kernel_dimension": 3,
+      "lowered_oriented_canonical_flux": [
+        [
+          "0"
+        ],
+        [
+          "0"
+        ],
+        [
+          "0"
+        ]
+      ],
+      "tangential_curvature": [
+        [
+          "0",
+          "0",
+          "0"
+        ],
+        [
+          "0",
+          "0",
+          "0"
+        ],
+        [
+          "0",
+          "0",
+          "0"
+        ]
+      ]
+    }
+  },
+  "rank_scope": {
+    "arithmetic": "exact rational SymPy matrices; no rank tolerance",
+    "empirical_comparison": null,
+    "inputs_are_physical_BHSM_traces": false,
+    "not_counted": "translations, map integrability, embeddings, gauge/spin lift, physical domains",
+    "relative_error": null,
+    "unknowns": "three infinitesimal relative SO+(1,2) parameters at one known matching"
+  },
+  "selected_area_variation": {
+    "action": "S_Sigma=-integral gamma sqrt(-det h)",
+    "direct_gauge_trace_source": "0",
+    "fixed_gamma_embedding_variation": "delta S_Sigma=integral gamma H_mu V^mu dmu_h + corner",
+    "fixed_geometry_direct_F_B_derivative": "0",
+    "fixed_geometry_direct_L_s_derivative": "0",
+    "generic_no_go": false,
+    "meaning": "partial derivatives of the selected density, not total constrained derivatives",
+    "metric_variation": "delta S_Sigma=-integral gamma h^(ab) delta h_ab/2 dmu_h"
+  },
+  "status": "REGULAR_SEAM_VARIATION_AND_CONDITIONAL_LOCAL_SELECTION_AUDITED",
+  "validation": {
+    "aligned_stationary_case_leaves_kernel": true,
+    "conditional_graph_has_half_dimension_and_zero_Green_form": true,
+    "curvature_only_leaves_kernel": true,
+    "independent_flux_rank_three_but_isolated_stationarity_fails": true,
+    "no_physical_reset_or_rank_promotion": true,
+    "nonidentity_reference_preserves_metric_but_changes_flux": true,
+    "zero_field_rank_zero": true
+  },
+  "validation_passed": true
+}
