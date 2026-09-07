@@ -1,5 +1,29 @@
 # Current BHSM status
 
+## Photon diagnostic scope audit — 7 September 2026
+
+The retained `0.590609601652908` ratio compares a frequency derivative with
+the full static-mode quotient, not a spatial spectral derivative. The direct
+derivative ratio is `0.9089329912282743`. Both are reproduced without changing
+the AE3 action. A flat square-root DtN control has complete-mode ratio `1/2`
+despite depending only on the tangential Lorentzian quadratic form, so the
+old quotient must not be advertised as a universal Lorentz-symmetry test.
+
+The exact local-Maxwell identification remains unsupported. A stronger direct
+test of this isolated frozen trace gives `N(s,s)>0` by positive radial and
+curvature-weight energy; at the lowest mode, `N(4,4)=0.42828102464319007`.
+It has no zero on the reference massless Maxwell shell, and reflection doubles
+the positive kernel. This is a frozen-trace obstruction, not a theorem excluding
+photons from every completion or a global quantum propagator calculation.
+The formal spacelike boundary principal symbol is square-root, of order one;
+this does not supply a local Maxwell pole or control the null/glancing limit.
+
+See the [scope audit](../theory/ae3_c2_photon_symbol_audit.md) and its
+[numerical report](../artifacts/action_extension/BHSM_AE3_C2_PHOTON_SYMBOL_AUDIT.json).
+This qualification governs the earlier gauge-mismatch language retained below.
+`CURRENT_C2_NORMALIZED_PHOTON_PROPAGATOR_DERIVED = FALSE` and
+`FULL_BHSM_COMPLETE = FALSE` remain unchanged.
+
 ## September 7 systems integration and review entry
 
 The [response handoff](../theory/ae4_event_response_jet_integration.md) now

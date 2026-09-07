@@ -1,5 +1,10 @@
 # AE3 current-C2 two-sided Calderon reflection no-go
 
+Subsequent scope audit: doubling preserves the static-quotient mismatch and
+the positive frozen kernel on the reference Maxwell shell. It does not turn
+the quotient into a universal Lorentz-symmetry test or exclude every possible
+photon completion. See [the photon symbol audit](ae3_c2_photon_symbol_audit.md).
+
 The AE3 reciprocal profile is odd about the enclosure interface,
 `sigma(pi/2-chi)=-sigma(chi)`. The round radius and localization weight are
 even there. Consequently reflection maps the regular exterior gauge/ghost

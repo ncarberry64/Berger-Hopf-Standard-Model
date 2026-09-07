@@ -127,3 +127,24 @@ so its subprocess reproducibility test writes twice to a temporary file and
 checks that the tracked certificate is unchanged. The scientific calculation
 and default materialization destination are preserved. Passing these tests
 establishes the internal baseline, not the remaining physical interpretation.
+
+## Photon audit outcome
+
+The [photon symbol audit](../theory/ae3_c2_photon_symbol_audit.md) completes
+the first inference audit. The original `0.590609601652908` is reproduced,
+but its denominator is a static quotient rather than a spatial derivative.
+The independently calculated derivative ratio is `0.9089329912282743`.
+A square-root half-space control shows why the original ratio cannot serve
+as a universal Lorentz-symmetry test for nonlocal kernels.
+
+The retained frozen trace still fails the exact local-Maxwell identification:
+its energy is strictly positive on the reference Maxwell shell `q2=s`,
+with witness `N(4,4)=0.42828102464319007`. Reflection doubles that positive
+kernel. This rejects that isolated frozen route; it does not exclude every
+BHSM completion or derive a global physical propagator. No action or domain
+term was changed, and no retained repair was established.
+
+The audit, retained frequency-Hessian, and two-sided reflection suites pass
+29 tests. The numerical witnesses remain binary64 diagnostics, distinct from
+the analytic energy argument and from an outward numerical certificate.
+The next sprint item is the stationary Einstein–Cartan domain audit above.
