@@ -2,6 +2,7 @@ import hashlib
 
 import numpy as np
 import pytest
+import sympy as sp
 
 from bhsm.interface.ae32_c2_einstein_cartan_lr_action import (
     ACTION_VERSION,
@@ -157,10 +158,47 @@ def test_claim_boundary_promotes_only_the_local_algebraic_lr_kernel():
     assert not result["QUARK_MASS_OPERATORS_DERIVED"]
 
 
-def test_materialized_ae32_action_is_valid_and_deterministic():
+def test_materialized_ae32_action_is_valid_and_deterministic(tmp_path):
+    original = TARGET.read_bytes()
+    output = tmp_path / "ec_action.json"
     assert build_payload()["validation_passed"]
-    main()
-    first = hashlib.sha256(TARGET.read_bytes()).hexdigest()
-    main()
-    second = hashlib.sha256(TARGET.read_bytes()).hexdigest()
+    main(["--output", str(output)])
+    first = hashlib.sha256(output.read_bytes()).hexdigest()
+    main(["--output", str(output)])
+    second = hashlib.sha256(output.read_bytes()).hexdigest()
     assert first == second
+    assert TARGET.read_bytes() == original
+
+
+def test_endpoint_coefficient_follows_from_exact_retained_geometry():
+    chi = sp.symbols("chi", positive=True)
+    sigma = -sp.Rational(1, 2) + 2*chi/sp.pi - sp.sin(4*chi)/(2*sp.pi)
+    weight = 1 - 4*sigma**2
+    jacobian = sp.sin(2*chi)**3
+    assert sp.limit(jacobian/chi**3, chi, 0) == 8
+    assert sp.limit(weight/chi**3, chi, 0) == 64/(3*sp.pi)
+    assert sp.limit(chi**2*sp.sin(chi)**4/(jacobian*weight), chi, 0) == 3*sp.pi/512
+    assert sp.integrate(sp.sin(chi)**2, (chi, 0, sp.pi/4)) == sp.pi/8-sp.Rational(1, 4)
+
+
+def test_first_order_stationarity_does_not_cancel_the_schur_density():
+    coefficient, source = sp.symbols("A S", positive=True)
+    contorsion = sp.symbols("K", real=True)
+    action = coefficient*contorsion**2/2 + source*contorsion
+    stationary = sp.solve(sp.diff(action, contorsion), contorsion)
+    assert stationary == [-source/coefficient]
+    assert sp.simplify(action.subs(contorsion, stationary[0])) == -source**2/(2*coefficient)
+    assert sp.diff(action, contorsion).subs(contorsion, 0) == source
+
+
+def test_power_law_action_domain_is_stricter_than_hilbert_space_domain():
+    beta = sp.symbols("beta", real=True)
+    # J~chi^3, Lambda~chi^3, u~chi^beta with nonzero projected source.
+    l2_exponent = 3+2*beta
+    ec_exponent = 2*(3+2*beta)-6
+    assert sp.solve_univariate_inequality(l2_exponent > -1, beta, relational=False) == sp.Interval.open(-2, sp.oo)
+    assert sp.solve_univariate_inequality(ec_exponent > -1, beta, relational=False) == sp.Interval.open(-sp.Rational(1, 4), sp.oo)
+    assert l2_exponent.subs(beta, -sp.Rational(1, 2)) == 2
+    assert ec_exponent.subs(beta, -sp.Rational(1, 2)) == -2
+    # The threshold is strict: the borderline density has logarithmic divergence.
+    assert ec_exponent.subs(beta, -sp.Rational(1, 4)) == -1

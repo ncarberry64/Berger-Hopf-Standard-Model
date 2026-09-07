@@ -147,4 +147,24 @@ term was changed, and no retained repair was established.
 The audit, retained frequency-Hessian, and two-sided reflection suites pass
 29 tests. The numerical witnesses remain binary64 diagnostics, distinct from
 the analytic energy argument and from an outward numerical certificate.
-The next sprint item is the stationary Einstein–Cartan domain audit above.
+The stationary Einstein–Cartan domain audit is recorded below.
+
+## Stationary domain and mass-dependency outcome
+
+Independent symbolic checks reproduce the EC endpoint coefficient and the
+unique stationary algebraic solution. Compactly supported interior variations
+leave no endpoint-condition escape from the bulk equation. For a nonzero
+pure power-law spin-source mode `u~chi^beta`, ordinary normalizability needs
+`beta>-2`, whereas the retained EC form needs `beta>-1/4`. The supplied
+`beta=-1/2` mode fails the latter. This confirms the specified route's
+rejection and provides no action-preserving repair.
+
+The [mass and mixing dependency audit](BHSM_MASS_MIXING_DEPENDENCY_AUDIT_2026_09_07.md)
+reproduces the conditional lepton sum rule, separates its dressing comparison
+from an action calculation, and identifies the missing quark vertices and
+left-handed embedding variation. The combined scientific audit passes 42
+tests; three legacy tracked-output materialization tests are explicitly
+excluded. The EC reproducibility test is included and now uses temporary
+outputs. The next research target is the regular non-EC fermion/Higgs
+two-point owner and its global state/domain specification. Physical closure,
+literature novelty assessment, and independent academic review remain open.

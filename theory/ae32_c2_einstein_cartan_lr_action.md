@@ -150,6 +150,44 @@ proposed AE3.2 route, not merely a failure of Schur substitution at one point.
 
 ## Historical collapse-domain reconciliation
 
+### Independent stationary-domain audit — 7 September 2026
+
+The endpoint rejection also holds for weak interior stationarity in the
+retained nonzero projected spin channel. For every compactly supported
+variation of the algebraic variable, stationarity requires `A K+S=0`
+almost everywhere in the open interval. Since `A>0` there, its unique
+solution is `K=-S/A`; a special value or boundary condition at the single
+endpoint cannot change it. Substitution into the original sum, before
+taking any limit, gives `-S^2/(2A)`. Its nonintegrable negative density
+precludes a finite stationary action in this block. This is not a
+subtraction of separately infinite integrals.
+
+The obstruction is stronger than a failure of ordinary normalizability.
+For a pure power-law mode `u~c chi^beta` with `c!=0` and a nonzero projected
+spin-current coefficient, the fixed geometry implies
+
+```text
+J |u|^2 ~ chi^(3+2 beta):       L2 near zero iff beta > -2,
+S^2/A ~ (J/Lambda)|u|^4
+      ~ chi^(4 beta):          EC form near zero iff beta > -1/4.
+```
+
+At `beta=-1/4` the EC divergence is logarithmic. The retained mode has
+`beta=-1/2`: it is in the Hilbert space but outside the stationary EC action
+domain. Multiplying that mode by an endpoint power `chi^delta` would need
+`delta>1/4`; this is a diagnostic requirement, not an admitted repair.
+No such change follows from the retained zero-mode equation or domain.
+These power criteria assume a nonzero leading coefficient and no logarithmic
+modification; they are not a classification of arbitrary endpoint profiles.
+
+The exact geometry coefficients and first-order stationarity are now checked
+symbolically in the test suite, independently of the numerical cutoff
+integrals and stored assertion fields. The reproducibility test writes to
+temporary outputs and verifies that the retained artifact is unchanged.
+This audit confirms the rejection of the specified candidate on the retained
+mode. It supplies no theorem excluding a different action, a self-consistently
+changed background, or a vanishing spin-source sector.
+
 V15.75 did classify a divergence as a regular-side forcing mechanism, but it
 was a different limit: its `epsilon` controlled an interior event-shell
 Legendre factor, and its theorem supplied a finite first inward gap crossing
