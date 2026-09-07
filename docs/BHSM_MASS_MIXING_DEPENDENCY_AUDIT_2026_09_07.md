@@ -94,11 +94,22 @@ two-point owner. The [chiral Green-domain theorem](../theory/ae31_c2_chiral_gree
 already assembles the first-order lepton operator on the reset-glued domain
 and establishes advanced/retarded Green existence on each finite-core history.
 The operator and that seam must not be rebuilt. The outstanding operands are
-selection or maximal continuation of the physical history, a compatible
-Feynman/asymptotic state class, and an evaluated dressed kernel. A causal
+selection or maximal continuation of the physical history, selection of a
+compatible state covariance, and an evaluated dressed kernel. A causal
 existence theorem does not select that quantum state or define a global
 frequency pole on a time-dependent history. Record the missing specification
 before evaluating a self-energy; do not choose one using `D_reference`.
+
+The [Hadamard-state class](../theory/ae31_c2_fermion_hadamard_state_class.md)
+is already proved nonempty member by member, and
+[reset transport](../theory/ae31_c2_reset_hadamard_transport.md) already maps
+admissible covariances bijectively. Moreover, the retained
+[fixed-history nonuniqueness result](../theory/ae31_c2_fixed_history_state_nonuniqueness.md)
+exhibits distinct compatible pure covariances even after a history is fixed.
+The remaining datum is one action-selected Cauchy covariance `C`, satisfying
+`0<=C<=I`, self-dual CAR reality, the Hadamard condition, and reset/family
+compatibility. Closing the history alone does not select it. No adiabatic
+order, temperature, or Bogoliubov angle is supplied by this audit.
 
 The [lepton/composite mixing calculation](../theory/ae31_c2_lepton_composite_mixing_structure.md)
 also already fixes the singular Hadamard family direction proportional to
