@@ -29,6 +29,21 @@ values = {
 (OUT / "scalar_values.tex").write_text("".join(
     f"\\newcommand{{\\{key}}}{{{value}}}\n" for key, value in values.items()
 ), encoding="utf-8")
+photon = json.loads((ROOT / "artifacts/action_extension/BHSM_AE3_C2_PHOTON_SYMBOL_AUDIT.json").read_text())
+if not photon["validation_passed"] or photon["claim_boundary"]["physical_photon_pole_derived"]:
+    raise RuntimeError("Photon audit is invalid or its scope has changed")
+for source, expected in photon["inputs"].items():
+    actual = hashlib.sha256((ROOT / source).read_bytes().replace(b"\r\n", b"\n")).hexdigest().upper()
+    if actual != expected:
+        raise RuntimeError("Photon audit source hash mismatch: " + source)
+photon_values = {
+    "PhotonCompleteRatio": photon["mode_witnesses"][0]["complete_mode_ratio"],
+    "PhotonDerivativeRatio": photon["mode_witnesses"][0]["derivative_ratio"],
+    "PhotonShellKernel": photon["reference_Maxwell_shell_witness"]["N_on_reference_Maxwell_shell"],
+}
+(OUT / "photon_values.tex").write_text("".join(
+    f"\\newcommand{{\\{key}}}{{{value:.12g}}}\n" for key, value in photon_values.items()
+), encoding="utf-8")
 plt.rcParams.update({"font.family": "DejaVu Sans", "font.size": 10,
                      "pdf.fonttype": 42, "axes.spines.top": False,
                      "axes.spines.right": False})

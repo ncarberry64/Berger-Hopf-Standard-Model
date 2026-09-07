@@ -4,7 +4,11 @@
 campaign. It is separate from the frozen historical manuscripts and is not
 ready for journal submission. It currently reports the AE3 carrier, the
 complete midpoint chain-rule prescription, stored-solve error methodology,
-and the completed 371-node scalar certificate. All physical-completion
+and the completed 371-node scalar certificate. The September 7 revision adds
+the photon diagnostic scope correction, the retained EC stationary-domain
+obstruction, and the conditional lepton sum rule with its missing physical
+dressing. Photon values are generated from the validated audit report after
+its source hashes are checked. All physical-completion
 claims remain gated by the definition of done.
 
 Run `python manuscript/flagship/build_evidence.py` from the repository root,
@@ -16,7 +20,7 @@ with the plotted Museum dataset before creating these inputs.
 For byte-identical PDF reproduction, set `SOURCE_DATE_EPOCH=1788739200`
 and `FORCE_SOURCE_DATE=1`, use job name `BHSM_flagship_working_manuscript`,
 and the repository's `output/pdf` output directory. The checked-in draft PDF
-matches the visually inspected six-page output. The retained TeX environment
+matches the visually inspected eight-page output. The retained TeX environment
 is pdfTeX 1.40.28 / MiKTeX 25.12; another distribution may typeset identically
 without producing the same PDF bytes.
 
