@@ -1,6 +1,7 @@
 export const REPOSITORY =
   'https://github.com/ncarberry64/Berger-Hopf-Standard-Model';
 export const SCIENCE = `${REPOSITORY}/blob/main`;
+export const CURRENT_SCIENCE = `${REPOSITORY}/blob/d75e77bbdcfba79a83b9c9f9c8c398ae8e7a79d4`;
 
 export type Exhibit = {
   number: string;
@@ -208,31 +209,31 @@ export const exhibits: Exhibit[] = [
   {
     number: '09',
     title: 'The physical identification bridge',
-    subtitle: 'Moving state space · six-class AE2 carrier audit',
+    subtitle: 'Historical AE2 carrier audit · followed by the AE3 extension',
     animated: 'bhsm_physical_identification_bridge_animated.gif',
     still: 'bhsm_physical_identification_bridge.png',
     alt: 'Three reused BHSM state trajectories move through event-child state space beside a six-by-five audit matrix in which none of the unchanged AE2 candidates qualifies as a local enclosure carrier.',
-    lay: 'The moving paths show mathematical states reaching an event, while the audit grid asks whether any existing structure can also define a real local enclosure. None currently passes every test.',
+    lay: 'This historical audit tested six AE2 structures as possible local enclosures; none passed every test. The later, authorized AE3 extension derives a local carrier. A persistent physical particle remains unproved.',
     seen:
       'Colored trajectories carry a reused BHSM family, mode, and current through the certified event-child state space. The matrix tests six stored AE2 candidates against five carrier requirements: action ownership, local-domain selection, an embedded surface, regularity, and interface variation. Green cells are available properties; no row has all five.',
     matters:
-      'For any reader, reaching an event is not the same as forming a place in spacetime. Scientifically, the audit shows that λ₂₄ selects event time but does not define the embedded enclosure surface. An existing family or mode and its reset matching remain reusable, while a future action version would need an owner-approved covariant localization carrier.',
+      'The audit distinguishes the λ₂₄ event-time condition from a local material surface. The later BHSM-AE-3.0.0 extension derives that surface from σ = 0 and transports all nine charged-sector family fibers algebraically. The interacting physical background and persistent particle proof remain open.',
     dataLabel: 'Unchanged AE2 audit · 6 candidates · 0 qualifying carriers',
     status: 'gated',
-    statusLabel: 'Carrier audit complete · extension decision open',
+    statusLabel: 'Historical audit · AE3 carrier subsequently derived',
     facts: [
       { label: 'Candidates audited', value: '6' },
       { label: 'Carrier requirements', value: '5' },
-      { label: 'Qualifying carriers', value: '0' },
+      { label: 'AE2 qualifying carriers', value: '0' },
       { label: 'Reduced kernels', value: '4' },
       { label: 'Reusable subclosures', value: '2' },
-      { label: 'Action change made', value: 'No' },
+      { label: 'Later action extension', value: 'AE3' },
     ],
     links: [
       { label: 'Full ontology reconstruction', href: `${SCIENCE}/docs/BHSM_NORMAN_SCHOOL_FULL_CORPUS_RECONSTRUCTION.md` },
       { label: 'Localization carrier kill screen', href: `${SCIENCE}/theory/n12_gate7_localization_carrier_kill_screen.md` },
       { label: 'Bridge theorem interface', href: `${SCIENCE}/theory/n12_gate7_physical_encapsulation_identification_bridge.md` },
-      { label: 'Future extension acceptance contract', href: `${SCIENCE}/theory/post_ae2_localization_carrier_extension_contract.md` },
+      { label: 'Current AE3 carrier and open gates', href: `${CURRENT_SCIENCE}/docs/current_bhsm_status.md` },
     ],
   },
 ];

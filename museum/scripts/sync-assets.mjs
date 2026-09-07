@@ -1,4 +1,5 @@
-import { cp, mkdir, readdir, rm } from 'node:fs/promises';
+import { access, cp, mkdir, readdir, rm } from 'node:fs/promises';
+import { existsSync } from 'node:fs';
 import { dirname, join, relative, resolve } from 'node:path';
 import { fileURLToPath } from 'node:url';
 
@@ -8,6 +9,20 @@ const cmsSourceRoot = join(sourceRoot, 'pr98_cms_open_data_animation');
 const publicRoot = resolve(museumRoot, 'public');
 const targetRoot = resolve(publicRoot, 'exhibits');
 const dataRoot = resolve(publicRoot, 'data');
+
+// The standalone Sites source retains the exact synchronized public assets.
+// It can rebuild without the scientific monorepo's parent directories.
+if (!existsSync(sourceRoot)) {
+  for (const name of [
+    'data/cms-four-vector-sample.json',
+    'data/gate7-scalar-response.json',
+    'exhibits/pr98_cms_engine_validation.png',
+    'exhibits/bhsm_physical_identification_bridge_animated.gif',
+  ]) {
+    await access(join(publicRoot, name));
+  }
+  console.log('Using the bundled provenance-tracked Museum assets.');
+} else {
 
 if (
   relative(publicRoot, targetRoot).startsWith('..') ||
@@ -69,6 +84,11 @@ await cp(
 );
 
 await cp(
+  resolve(museumRoot, '..', 'data', 'museum', 'bhsm_gate7_scalar_response.json'),
+  join(dataRoot, 'gate7-scalar-response.json'),
+);
+
+await cp(
   join(cmsSourceRoot, 'pr98_cms_engine_validation.png'),
   join(publicRoot, 'og.png'),
 );
@@ -76,3 +96,4 @@ await cp(
 console.log(
   `Synced ${names.length + cmsNames.length + 1} provenance-tracked museum assets.`,
 );
+}
