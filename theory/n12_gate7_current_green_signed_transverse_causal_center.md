@@ -219,3 +219,21 @@ midpoint. Partial runs cannot overwrite the all-370 certificate. This removes
 a rank ambiguity for these exact stored direction matrices without discarding
 small nonzero singular directions. It does not enclose the Hessian values,
 the rounded midpoint-coordinate solve, or the physical neighborhood remainder.
+
+The separate `certify_n12_gate7_current_green_midpoint_coordinate_solve.py`
+then encloses the error of the binary64 coordinate solve itself. For the
+exact stored binary64 matrices `S`, `M`, and computed coordinates `Xhat`,
+512-bit Arb evaluates the residual and supplies
+
+\[
+ \|S^{-1}M-\widehat X\|_\infty
+ \leq \|S^{-1}\|_\infty\,\|M-S\widehat X\|_\infty.
+\]
+
+The matrix infinity norm includes the sum over every endpoint-pair column.
+No nonzero residual is discarded. Basis, target, and approximate-coordinate
+hashes bind each bound to its actual solve. Partial materializations cannot
+overwrite the all-370 artifact. This bound applies to the stored binary64
+map; it does not enclose construction of that map from physical ball inputs,
+propagation of coordinate error through Hessian blocks, or the neighborhood
+remainder. Those remain separate required outward operands.
