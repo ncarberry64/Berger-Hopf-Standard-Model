@@ -45,3 +45,13 @@ science drawers. The approved-output intake and all source-owned promotion gates
 are unchanged. An empty intake no longer generates repeated placeholder cards.
 New physical outputs still require independently reviewed derivations and the
 existing fail-closed source checks. Full BHSM physical closure remains open.
+
+## Content-driven spacing
+
+The opening headline overrides the old 11-character width restriction. Review
+links form a complete two-by-two grid with no inherited minimum card height.
+The collision's expandable particle table spans the full console width instead
+of making an empty column below the animation. Section gaps and the retained
+Author/other-work outer padding are reduced, while their content is unchanged.
+Tables scroll within their drawers on narrow screens; diagrams keep their
+natural proportions without fixed-height blank containers.

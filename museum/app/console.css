@@ -191,7 +191,7 @@
 .science-console {
   --console-accent: #ffbc77;
   scroll-margin-top: 110px;
-  margin-bottom: 76px;
+  margin-bottom: 48px;
   color: #f0eaf5;
 }
 .console-lavender {
@@ -603,7 +603,7 @@
 }
 .prediction-museum .research-exhibit {
   max-width: 1308px;
-  margin: 0 auto 76px;
+  margin: 0 auto 48px;
   background: #09070e;
   border: 1px solid #493655;
   border-top: 16px solid #d99b95;
@@ -642,7 +642,7 @@
 }
 .prediction-museum .museum-details {
   max-width: 1308px;
-  margin: 0 auto 76px;
+  margin: 0 auto 48px;
   padding: 28px 36px;
   border-top: 6px solid #bda7f5;
 }
@@ -974,5 +974,82 @@
   }
   .moment-frequency strong {
     font-size: 10px;
+  }
+}
+
+/* Content determines height: no inherited headline bottleneck or empty grid slots. */
+.hero-copy h1 {
+  max-width: none;
+}
+.science-console .event-stage {
+  margin-top: 0;
+}
+.science-console .table-scroll {
+  overflow-x: auto;
+  max-width: 100%;
+}
+.science-console table {
+  width: 100%;
+  border-collapse: collapse;
+  text-align: left;
+}
+.science-console td,
+.science-console th {
+  padding: 10px 12px;
+  border-bottom: 1px solid #35273f;
+  vertical-align: top;
+}
+.science-console .console-selector select,
+.science-console .media-toolbar select {
+  max-width: 100%;
+  min-width: 0;
+}
+.prediction-museum .review-grid {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  margin-top: 24px;
+  gap: 12px;
+}
+.prediction-museum .review-card {
+  min-height: 0;
+}
+.prediction-museum .review-card h3 {
+  margin: 0 0 10px;
+}
+.prediction-museum .review-card strong {
+  margin-top: 10px;
+}
+.prediction-museum .creator-alcove {
+  padding-block: 56px;
+  gap: clamp(24px, 5vw, 70px);
+}
+.prediction-museum .other-work-wing {
+  padding-block: 56px;
+}
+.prediction-museum .other-work-card,
+.prediction-museum .cosmic-cycle {
+  margin-top: 28px;
+}
+@media (min-width: 1000px) {
+  .collision-theatre > .console-details {
+    grid-column: 1/-1;
+    grid-row: 5;
+  }
+  .collision-theatre > .event-story {
+    align-self: start;
+  }
+}
+@media (max-width: 520px) {
+  .prediction-museum .review-grid {
+    grid-template-columns: 1fr;
+  }
+  .prediction-museum .creator-alcove,
+  .prediction-museum .other-work-wing {
+    padding-block: 36px;
+  }
+  .hero-layout {
+    padding-top: 25px;
+  }
+  .science-console {
+    margin-bottom: 36px;
   }
 }

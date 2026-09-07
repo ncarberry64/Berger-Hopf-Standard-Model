@@ -375,48 +375,48 @@ export function CollisionTheatre({ motion }: { motion: boolean }) {
                 </strong>
               </div>
             </div>
-            <details className="console-details">
-              <summary>Explore the science · particle energies</summary>
-              <div className="table-scroll">
-                <table>
-                  <caption>
-                    {item?.real
-                      ? 'CMS reconstructed values'
-                      : 'Calculated demonstration values'}{' '}
-                    · natural units c = 1
-                  </caption>
-                  <thead>
-                    <tr>
-                      <th>Particle</th>
-                      <th>E · GeV</th>
-                      <th>pT · GeV</th>
-                      <th>pz · GeV</th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    {tracks.map((v, i) => (
-                      <tr key={i}>
-                        <th>{v.label}</th>
-                        <td>{v.E.toFixed(4)}</td>
-                        <td>{Math.hypot(v.px, v.py).toFixed(4)}</td>
-                        <td>{v.pz.toFixed(4)}</td>
-                      </tr>
-                    ))}
-                  </tbody>
-                </table>
-              </div>
-              <p className="media-note">
-                Incoming beams are shown schematically in the screen plane; real
-                collider beams run along the detector axis. Track lengths and
-                curvature are scaled for visibility. No event rates, branching
-                probabilities or BHSM amplitudes are inferred.{' '}
-                <a href="https://opendata.cern.ch/record/303">CMS source ↗</a> ·{' '}
-                <a href="https://physics.nist.gov/cuu/Constants/Table/allascii.txt">
-                  CODATA reference masses ↗
-                </a>
-              </p>
-            </details>
           </div>
+          <details className="console-details">
+            <summary>Explore the science · particle energies</summary>
+            <div className="table-scroll">
+              <table>
+                <caption>
+                  {item?.real
+                    ? 'CMS reconstructed values'
+                    : 'Calculated demonstration values'}{' '}
+                  · natural units c = 1
+                </caption>
+                <thead>
+                  <tr>
+                    <th>Particle</th>
+                    <th>E · GeV</th>
+                    <th>pT · GeV</th>
+                    <th>pz · GeV</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {tracks.map((v, i) => (
+                    <tr key={i}>
+                      <th>{v.label}</th>
+                      <td>{v.E.toFixed(4)}</td>
+                      <td>{Math.hypot(v.px, v.py).toFixed(4)}</td>
+                      <td>{v.pz.toFixed(4)}</td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </div>
+            <p className="media-note">
+              Incoming beams are shown schematically in the screen plane; real
+              collider beams run along the detector axis. Track lengths and
+              curvature are scaled for visibility. No event rates, branching
+              probabilities or BHSM amplitudes are inferred.{' '}
+              <a href="https://opendata.cern.ch/record/303">CMS source ↗</a> ·{' '}
+              <a href="https://physics.nist.gov/cuu/Constants/Table/allascii.txt">
+                CODATA reference masses ↗
+              </a>
+            </p>
+          </details>
         </>
       )}
     </div>
