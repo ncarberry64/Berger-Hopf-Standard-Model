@@ -1053,3 +1053,237 @@
     margin-bottom: 36px;
   }
 }
+
+/* CMS uses the same numbered console and native palette as the science hall. */
+.cms-console {
+  min-width: 0;
+}
+.cms-display-selector {
+  margin-top: 0;
+}
+.cms-instrument-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 12px 0;
+  font:
+    11px var(--font-geist-mono),
+    monospace;
+  color: #bda7f5;
+}
+.cms-station-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1.65fr) minmax(240px, 1fr);
+  gap: 22px;
+  align-items: start;
+}
+.cms-selected-event {
+  min-width: 0;
+  padding: 12px 0;
+}
+.cms-selected-event .eyebrow {
+  font-size: 10px;
+  margin-bottom: 10px;
+  color: #bda7f5;
+}
+.cms-selected-event h4 {
+  font:
+    32px var(--font-geist-mono),
+    monospace;
+  color: #ffbc77;
+  margin: 0 0 18px;
+}
+.cms-selected-event h4 span {
+  font-size: 16px;
+  color: #a58db8;
+}
+.cms-record-id {
+  display: flex;
+  gap: 25px;
+  margin: 0 0 18px;
+}
+.cms-record-id dt {
+  font-size: 10px;
+  color: #ad9abb;
+}
+.cms-record-id dd {
+  margin: 4px 0 0;
+  font:
+    12px var(--font-geist-mono),
+    monospace;
+  color: #d8c6e4;
+}
+.cms-mass {
+  border-top: 1px solid #41304d;
+  padding: 14px 0;
+}
+.cms-mass > span {
+  display: block;
+  font-size: 11px;
+  color: #ad9abb;
+}
+.cms-mass strong {
+  display: block;
+  color: #bda7f5;
+  font:
+    30px var(--font-geist-mono),
+    monospace;
+  margin-top: 6px;
+}
+.cms-mass small {
+  font-size: 14px;
+}
+.cms-muon-readout {
+  display: grid;
+  grid-template-columns: 32px 1fr;
+  gap: 8px 12px;
+  border-left: 3px solid;
+  padding: 8px 12px;
+  margin-top: 12px;
+}
+.cms-muon-readout > b {
+  grid-row: 1/3;
+  font:
+    24px var(--font-geist-mono),
+    monospace;
+}
+.cms-muon-readout span {
+  display: block;
+  font-size: 10px;
+  color: #ad9abb;
+}
+.cms-muon-readout strong {
+  font:
+    13px var(--font-geist-mono),
+    monospace;
+  color: #e0d0ea;
+}
+.cms-mapping-controls {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin: 16px 0 22px;
+}
+.cms-mapping-controls button {
+  white-space: nowrap;
+}
+.cms-mapping-meter {
+  height: 6px;
+  background: #302139;
+  flex: 1;
+  min-width: 25px;
+  border-radius: 5px;
+  overflow: hidden;
+}
+.cms-mapping-meter span {
+  display: block;
+  height: 100%;
+  background: linear-gradient(90deg, #71e5eb, #ffbc77);
+}
+.cms-event-controls {
+  border-top: 1px solid #3c2d46;
+  padding-top: 16px;
+}
+.cms-event-controls label {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  font-size: 12px;
+  color: #bfaacf;
+}
+.cms-event-controls strong {
+  font-family: var(--font-geist-mono), monospace;
+  color: #ffbc77;
+}
+.cms-event-controls input {
+  display: block;
+  width: 100%;
+  margin: 15px 0;
+  accent-color: #bda7f5;
+}
+.cms-original img {
+  display: block;
+  width: 100%;
+  height: auto;
+  margin: 16px 0;
+}
+.cms-original p {
+  font-size: 14px;
+  line-height: 1.7;
+  color: #bdadca;
+}
+.cms-loading {
+  display: block;
+  padding: 24px;
+  border: 1px solid #41304d;
+  color: #c3adce;
+  font-size: 14px;
+}
+@media (max-width: 1050px) {
+  .cms-station-grid {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 10px;
+  }
+  .cms-selected-event {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 8px 20px;
+    align-items: start;
+  }
+  .cms-selected-event .eyebrow,
+  .cms-selected-event h4 {
+    grid-column: 1;
+  }
+  .cms-selected-event .cms-record-id {
+    grid-column: 2;
+    grid-row: 1/3;
+    align-self: center;
+  }
+  .cms-mass {
+    grid-column: 1/-1;
+  }
+  .cms-muon-readout {
+    margin-top: 0;
+  }
+}
+@media (max-width: 520px) {
+  .cms-instrument-top {
+    font-size: 9px;
+  }
+  .cms-instrument-top button {
+    padding: 9px 12px !important;
+    font-size: 10px !important;
+  }
+  .cms-mapping-controls {
+    gap: 7px;
+  }
+  .cms-mapping-controls button {
+    font-size: 10px !important;
+    padding: 9px 10px !important;
+  }
+  .cms-selected-event {
+    gap: 8px 10px;
+  }
+  .cms-selected-event h4 {
+    font-size: 25px;
+  }
+  .cms-record-id {
+    display: block;
+    margin-bottom: 0;
+  }
+  .cms-record-id > div + div {
+    margin-top: 9px;
+  }
+  .cms-muon-readout {
+    padding: 8px;
+    grid-template-columns: 25px 1fr;
+    gap: 6px;
+  }
+  .cms-muon-readout strong {
+    font-size: 11px;
+  }
+  .cms-muon-readout > b {
+    font-size: 20px;
+  }
+}
