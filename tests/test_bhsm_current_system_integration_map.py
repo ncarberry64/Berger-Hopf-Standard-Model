@@ -19,6 +19,11 @@ def _payload():
 def test_canonical_system_and_required_subsystems() -> None:
     payload = _payload()
     assert payload["validation_passed"] is True
+    parallel = payload["parallel_successor_integration"]
+    assert parallel["action_version"] == "BHSM-AE-4.0.0"
+    assert not parallel["Gate7_retained_AE2_action_replaced"]
+    assert not parallel["physical_event_response_evaluated"]
+    assert payload["validation"]["parallel_AE4_response_handoff_preserves_Gate7_and_physical_boundaries"]
     assert payload["validation"][
         "current_center_mixed_green_transverse_decisive_seed_is_derived"
     ] is True

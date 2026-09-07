@@ -1,5 +1,22 @@
 # Current BHSM status
 
+## September 7 systems integration and review entry
+
+The [response handoff](../theory/ae4_event_response_jet_integration.md) now
+transports supplied first and second derivatives through the existing
+retarded Schur/KKT and Noether identities. The existing local carrier,
+family-state transport and six-sector assembly are reused. The separately
+merged full-field boundary/interface research preserves the missing physical
+reset, terminal HS and constitutive data as explicit open objects. These
+implementation and conditional-identity results do not close Gate 7 or
+promote physical observables.
+
+The [institutional start](INSTITUTIONAL_START.md) supplies bounded offline
+reproduction and portable environments. The Museum's historical sandbox
+comparisons are presentation-only and do not feed the action or certificate
+chain. The retained action, accepted center and ongoing shard computation
+are unchanged. `FULL_BHSM_COMPLETE = FALSE`.
+
 ## Authoritative Gate-7 identification frontier: BHSM-AE-3 carrier derived
 
 Work is organized as a systems-integration puzzle, not a serial gate ladder.

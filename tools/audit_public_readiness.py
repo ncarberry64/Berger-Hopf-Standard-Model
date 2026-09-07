@@ -425,6 +425,12 @@ def check_hygiene() -> dict:
     large_files: list[dict[str, object]] = []
     allowed_large_files: list[dict[str, object]] = []
 
+    registry_path = ROOT / "data/retained_large_research_artifacts.json"
+    retained = {}
+    if registry_path.is_file():
+        registry = json.loads(registry_path.read_text(encoding="utf-8"))
+        retained = {row["path"]: row for row in registry["artifacts"]}
+
     for relative in tracked:
         path = ROOT / relative
         parts = set(Path(relative).parts)
@@ -446,6 +452,16 @@ def check_hygiene() -> dict:
                 and size <= ALLOWED_LARGE_ARTIFACT_LIMIT
             ):
                 allowed_large_files.append(row)
+            elif relative in retained:
+                payload = path.read_bytes()
+                if path.suffix == ".json":
+                    payload = payload.replace(b"\r\n", b"\n")
+                expected = retained[relative]
+                if (len(payload) == expected["canonical_bytes"]
+                        and hashlib.sha256(payload).hexdigest() == expected["sha256"]):
+                    allowed_large_files.append({**row, "retention": "EXACT_REVIEWED_HASH"})
+                else:
+                    large_files.append({**row, "retention": "HASH_OR_SIZE_MISMATCH"})
             else:
                 large_files.append(row)
         if not looks_textual(path) or size > 2 * 1024 * 1024:

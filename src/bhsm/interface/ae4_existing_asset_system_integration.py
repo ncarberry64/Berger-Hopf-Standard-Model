@@ -37,6 +37,16 @@ from bhsm.interface.ae31_c2_r2_electron_capture_selection_rule import (
 from bhsm.interface.ae4_stratified_dirac_zeta_induced_owner import (
     ACTION_VERSION,
     claim_boundary as ae4_owner_claims,
+    microscopic_owner_contract,
+)
+from bhsm.interface.ae4_current_c2_physical_enclosure_state_integration import (
+    reconciled_identification_rows,
+)
+from bhsm.interface.ae4_c2_stratified_event_flux_assembly import (
+    claim_boundary as event_assembly_claims,
+)
+from bhsm.interface.ae31_c2_intrinsic_m4_lepton_action import (
+    first_variation_and_pole_gate,
 )
 
 
@@ -270,6 +280,8 @@ def hindsight_gate_reduction() -> list[dict[str, Any]]:
 def authoritative_frontier_reconciliation() -> dict[str, Any]:
     """Apply the repository's later N12 and Gate-7 results to this owner."""
 
+    assembly = event_assembly_claims()
+    enclosure = reconciled_identification_rows()
     return {
         "AE3_ACTION_OWNED_LOCALIZATION_CARRIER_DERIVED": True,
         "AE3_LOCAL_SAME_SPACETIME_ENCLOSURE_SELECTED": True,
@@ -281,12 +293,23 @@ def authoritative_frontier_reconciliation() -> dict[str, Any]:
         "GLOBAL_FORWARD_TERMINAL_CHART_REACHABILITY_DERIVED": False,
         "Q_XI_OR_PARENT_RELATIVE_DELTA_H_EVALUATED": False,
         "PHYSICAL_ENCAPSULATION_IDENTIFIED": False,
+        "local_enclosure_and_state_transport_already_closed": (
+            enclosure["PEI_03"]["status"] == "CLOSED"
+            and enclosure["PEI_11"]["status"] == "CLOSED_WITHOUT_SPECTRUM_REBUILD"
+        ),
+        "six_sector_assembly_already_derived": assembly[
+            "AE4_STRATIFIED_FULL_FIELD_DIRECT_SUM_ASSEMBLY_DERIVED"
+        ],
+        "physical_nonzero_sector_values_evaluated": assembly[
+            "AE4_CURRENT_C2_NONZERO_SECTOR_CALDERON_BLOCKS_EVALUATED"
+        ],
+        "current_identification_rows": enclosure,
         "v21_35_finite_N6_to_M0_bridge_is_current_blocker": False,
         "v21_37_fixed_chart_rank_no_go_is_current_frontier": False,
         "primary_system_integration_object": (
-            "ONE_BACKGROUND_COVARIANT_AE4_C2_STRATIFIED_OPERATOR_WITH_"
-            "EXPLICIT_GAUGE_GHOST_NONZERO_FERMION_HS_SOURCE_AND_RESPONSE_"
-            "MULTIPLIER_BLOCKS_ON_THE_RESET_GLUED_MAXIMAL_HISTORY_DOMAIN"
+            "EVALUATE_AND_INSERT_THE_PHYSICAL_NONZERO_FERMION_HS_AND_OTHER_"
+            "SECTOR_VALUES_IN_THE_EXISTING_AE4_C2_STRATIFIED_OPERATOR_"
+            "SOURCE_RESPONSE_AND_EVENT_FLUX_ASSEMBLY"
         ),
         "parallel_global_readout_object": (
             "ACTION_OWNED_COMPACT_FORWARD_TRAPPING_OR_COMPONENT_RESTRICTED_"
@@ -303,6 +326,55 @@ def authoritative_frontier_reconciliation() -> dict[str, Any]:
     }
 
 
+def existing_variable_completion_handoffs() -> dict[str, Any]:
+    """Keep reuse, implementation readiness and physical closure distinct."""
+
+    return {
+        "gate7": {
+            "owner": "EXISTING_FROZEN_CENTER_CAUSAL_TWO_RADIUS_CERTIFICATION",
+            "integration_may_change_action_center_or_proof_contract": False,
+            "integration_may_promote_uncertified_carrier_jets": False,
+        },
+        "charged_lepton": {
+            "reuse": "AE31_Y_l_AND_CONDITIONAL_M_l_WITH_EXISTING_FAMILY_PROJECTORS",
+            "remaining": first_variation_and_pole_gate(),
+            "new_mass_mechanism_required": False,
+        },
+        "terminal_HS": {
+            "reuse": "FACTORIZED_FINITE_CORE_VALUE_AND_EXACT_TERMINAL_JET_TRANSPORT",
+            "required_physical_inputs": ["L_terminal(z)", "D_H_L_terminal(z)", "D2_H_L_terminal(z)"],
+            "substitution_implementation": "substitute_terminal_hs_jets",
+            "unknown_terminal_jets_may_default_to_zero": False,
+            "negative_axis_probe_is_full_E1_spectral_integral": False,
+        },
+        "event_response": {
+            "reuse": "EXISTING_SIX_SECTOR_RETARDED_SCHUR_KKT_AND_NOETHER_IDENTITIES",
+            "derivative_implementation": "solve_retarded_event_kkt_jet",
+            "required_inputs": [
+                "COMMON_FIXED_DOMAIN_PARENT_COUPLING_AND_RETARDED_CHILD_JETS",
+                "SOURCE_RESPONSE_OPERATOR_AND_RESPONSE_TARGET_JETS",
+            ],
+            "finite_matrix_composition_is_physical_certification": False,
+        },
+        "neutral": {
+            "reuse": "EXISTING_THREE_SLOTS_AND_NONCENTRAL_SEMIGROUP_RESPONSE",
+            "remaining": "ACTION_RETURNED_LORENTZIAN_OPERATOR_AND_WEAK_FLAVOR_INTERTWINER",
+            "response_gaps_may_be_relabelled_as_mass_splittings": False,
+        },
+        "quark": {
+            "reuse": "FROZEN_UP_DOWN_RATIO_OPERATORS",
+            "remaining": "ACTION_THIRD_VARIATIONS_AND_TRACE_DOMAIN_PROJECTIONS_FOR_c_u_AND_c_d",
+            "lepton_prefactor_may_be_copied": False,
+        },
+        "scale": {
+            "finite_input_release": "ONE_EXPLICIT_UNIVERSAL_CALIBRATION_SUBJECT_TO_DEFINITION_OF_DONE",
+            "zero_input_AE4_extension": "ACTION_EVALUATED_FIRST_FUTURE_IMPEDANCE_CROSSING",
+            "calibration_is_first_principles_prediction": False,
+            "symbolic_impedance_owner_is_evaluated_scale": False,
+        },
+    }
+
+
 def one_operator_completion_graph() -> dict[str, Any]:
     """Express the remaining integration as derivatives of one AE4 object."""
 
@@ -312,7 +384,8 @@ def one_operator_completion_graph() -> dict[str, Any]:
             "EVENT_CHILD_RELATION_AND_THE_ACTION_SELECTED_FORWARD_REACHABLE_"
             "COMPONENT"
         ),
-        "owner": "Gamma_AE4=-(1/2)STr E1(ell_star^2 D_strat_ret^dagger D_strat_ret)+relative_zeta_eta",
+        "owner": microscopic_owner_contract()["microscopic_functional"],
+        "zeta_completion_is_second_independent_determinant": False,
         "background_equations": "D_Phi_Gamma_AE4=0_WITH_FIRST_FUTURE_IMPEDANCE_CROSSING",
         "outputs_from_same_evaluation": {
             "complete_child": (
@@ -333,6 +406,8 @@ def one_operator_completion_graph() -> dict[str, Any]:
         "independent_operator_oracles_remaining": 0,
         "single_global_operator_realization_remaining": 1,
         "finite_or_continuum_child_reconstructions_remaining": 0,
+        "one_operator_means_common_owner_not_one_remaining_scalar": True,
+        "existing_variable_handoffs": existing_variable_completion_handoffs(),
     }
 
 
@@ -362,10 +437,10 @@ def integrated_claim_boundary() -> dict[str, Any]:
         "AE4_PHYSICAL_POLE_VERTEX_AND_COLLISION_PACKAGE_EVALUATED": False,
         "FULL_BHSM_COMPLETE": False,
         "exact_next_calculation": (
-            "REALIZE_ONE_BACKGROUND_COVARIANT_AE4_C2_STRATIFIED_OPERATOR_"
-            "WITH_EXPLICIT_GAUGE_GHOST_NONZERO_FERMION_HS_SOURCE_AND_"
-            "RESPONSE_MULTIPLIER_BLOCKS_ON_THE_RESET_GLUED_MAXIMAL_HISTORY_"
-            "DOMAIN_THEN_EVALUATE_THE_EVENT_CANONICAL_FLUX_AND_COMPLETE_"
+            "SUPPLY_ACTION_EVALUATED_NONZERO_FERMION_HS_AND_OTHER_SECTOR_"
+            "VALUES_TO_THE_EXISTING_AE4_C2_STRATIFIED_OPERATOR_ASSEMBLY_"
+            "WITH_SOURCE_AND_RESPONSE_MULTIPLIER_JETS_THEN_EVALUATE_"
+            "THE_EVENT_CANONICAL_FLUX_AND_COMPLETE_"
             "NOETHER_HAMILTONIAN_BALANCE"
         ),
     }
@@ -391,6 +466,7 @@ __all__ = [
     "ACTION_VERSION",
     "CLASSIFICATION",
     "authoritative_frontier_reconciliation",
+    "existing_variable_completion_handoffs",
     "hindsight_gate_reduction",
     "integrated_claim_boundary",
     "museum_science_export_contract",

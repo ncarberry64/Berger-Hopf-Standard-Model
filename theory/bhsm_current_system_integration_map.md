@@ -1,5 +1,12 @@
 # Current canonical BHSM system integration map
 
+The map also links the [AE4 response handoff](ae4_event_response_jet_integration.md)
+as parallel successor work. It reuses the existing enclosure, state transport,
+six-sector assembly and saved HS coefficients. Its conditional derivative
+implementation leaves the retained AE2 Gate-7 action and next proof dependency
+unchanged. Physical terminal data, sector projections and certified response
+values remain explicit inputs before physical promotion.
+
 ## Current Gate-7 owner
 
 The exact-affine interaction-Taylor26 carrier, all 47 retained unaligned

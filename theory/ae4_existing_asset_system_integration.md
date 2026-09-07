@@ -4,6 +4,13 @@ BHSM completion no longer treats each downstream target as requiring a new
 mechanism. Hindsight shows that many broad “open” labels referred to operator
 shapes or identity bridges already present elsewhere in the repository.
 
+The current entry point reuses the later local enclosure/state transport and
+six-sector event assembly. The remaining work supplies their physical values.
+The [response integration](ae4_event_response_jet_integration.md) implements
+first and second derivative handoffs through the existing retarded Schur/KKT
+and Noether identities, and reuses saved terminal-HS transport coefficients.
+It leaves Gate 7's frozen computation and physical promotion gates intact.
+
 The following assets are reused without rebuilding the particle spectrum:
 
 - frozen particle, family, representation, projector and current ledgers;

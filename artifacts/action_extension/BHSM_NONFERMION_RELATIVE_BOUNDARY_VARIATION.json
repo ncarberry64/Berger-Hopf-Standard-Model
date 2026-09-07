@@ -1,0 +1,528 @@
+{
+  "D_Phi_Theta_GFHS_at_zero": {
+    "D_A_Theta": null,
+    "D_H_Theta": null,
+    "D_c_Theta": null,
+    "D_cbar_Theta": null,
+    "derived_relations_only": {
+      "antighost": "D_Theta_cbar=(D_Theta_c)^dagger",
+      "ghost": "D_Theta_c=D_Theta_A_ON_LONGITUDINAL_BRST_IMAGE"
+    },
+    "uniquely_determined": false
+  },
+  "FULL_BHSM_COMPLETE": false,
+  "FULL_FIELD_ACTION_ATTACHMENT_READY_FOR_GATE7_BACKGROUND": false,
+  "S1_global": "REFERENCE_ZERO_FIELD_SLICE_ONLY",
+  "S2_global": "BLOCKED_BY_D_PhiSM_Theta",
+  "S3_global": "ALSO_REQUIRES_D_PhiSM_SQUARED_Theta",
+  "S4_global": "ALSO_REQUIRES_D_PhiSM_CUBED_Theta",
+  "Theta_GFHS_zero_field": {
+    "relative_conormal_graph_coordinate": "Theta_GFHS[B;0]=0",
+    "source": "BHSM_AE4_FUTURE_COLLAPSE_RELATIVE_BOUNDARY_DOMAIN",
+    "status": "AUTHORIZED_KINEMATIC_ZERO_BACKGROUND_MATCH_ONLY",
+    "trace_relation": "Gamma0_child=U_0*Gamma0_event",
+    "variation_relation": "Gamma0_child(deltaPhi)=U_0*Gamma0_event(deltaPhi)"
+  },
+  "action_version": "BHSM-AE-3.2.0-NONFERMION-BOUNDARY-VARIATION",
+  "ae4_reset_gluing": {
+    "fermion_AE2_transport_changed": false,
+    "global_stratified_GFHS_family_derived": false,
+    "nine_frozen_family_mode_fibers_rebuilt": false,
+    "nonfermion_first_order_reset_gluing": false,
+    "retarded_direct_sum_assembler_available": true,
+    "why_not": "ACTION_OWNED_BRST_COMPATIBLE_MIXED_RESET_BOUNDARY_VARIATION_D_PhiSM_D_GAMMA0_SQUARED_S_RESET_GFHS[B;0,0]",
+    "zero_field_trace_match_reused": true
+  },
+  "artifact": "BHSM_NONFERMION_RELATIVE_BOUNDARY_VARIATION",
+  "boundary_green_form": {
+    "HS_variation": {
+      "HS_derivative_kinetic_term_present": false,
+      "all_HS_graph_jets_invisible_to_retained_bulk_boundary_variation": true,
+      "boundary_green_form_value": {
+        "imag": 0.0,
+        "real": 0.0
+      },
+      "canonical_momentum": "pi_H=partial_L_EC_HS/partial(normal_derivative_H)=0",
+      "composite_derivative_kinetic_term_present": false,
+      "configuration_trace": "q_H=Gamma0(H_HS_up,H_HS_down,H_HS_e,H_HS_nu)",
+      "green_form": "0",
+      "heat_derived_HS_kinetic_response_used_as_action": false,
+      "normal_Legendre_rank": 0,
+      "physical_HS_direction_derived": false,
+      "source": "src/bhsm/interface/ae32_c2_einstein_cartan_lr_action.py"
+    },
+    "Maxwell_discrete_identity": {
+      "boundary_green_form": {
+        "imag": 0.0,
+        "real": -1.313184288426
+      },
+      "bulk_green_difference": {
+        "imag": 0.0,
+        "real": -1.313184288426
+      },
+      "green_identity_residual": 0.0,
+      "radial_form_assembled_before_DtN_elimination": true,
+      "stored_response_table_used": false
+    },
+    "canonical_variables": {
+      "HS": {
+        "HS_derivative_kinetic_term_present": false,
+        "canonical_momentum": "pi_H=partial_L_EC_HS/partial(normal_derivative_H)=0",
+        "composite_derivative_kinetic_term_present": false,
+        "configuration_trace": "q_H=Gamma0(H_HS_up,H_HS_down,H_HS_e,H_HS_nu)",
+        "green_form": "0",
+        "source": "src/bhsm/interface/ae32_c2_einstein_cartan_lr_action.py"
+      },
+      "gauge": {
+        "canonical_momentum": "pi_A=Gamma1^A(A)=OUTWARD_WEIGHTED_RADIAL_MAXWELL_CONORMAL",
+        "configuration_trace": "q_A=Gamma0(A_coexact,A_constraint)",
+        "green_form": "<q_A,pi_A'>-<pi_A,q_A'>",
+        "relative_momentum": "Pi_A=pi_A,event+U_A^dagger*pi_A,child",
+        "source": "src/bhsm/interface/ae3_c2_lorentzian_gauge_ghost_hessian.py"
+      },
+      "ghost": {
+        "antighost_independent_value": false,
+        "antighost_relation": "Theta_cbar=Theta_c^dagger",
+        "canonical_momenta": "pi_c=Gamma1_FP(c),pi_cbar=Gamma1_FP^dagger(cbar)",
+        "configuration_traces": "q_c=Gamma0(c),q_cbar=Gamma0(cbar)",
+        "green_form": "<q_cbar,pi_c>-<pi_cbar,q_c>",
+        "source": "constraint_ghost_frequency_block__FP_SYMBOL_IS_DERIVATIVE_OF_THE_SAME_BRST_GAUGE_FUNCTIONAL"
+      }
+    }
+  },
+  "brst_compatibility": {
+    "BRST_selects_common_jet_value": false,
+    "antighost_relation": "D_Theta_cbar=(D_Theta_c)^dagger",
+    "both_nonuniqueness_witnesses_BRST_compatible": true,
+    "candidate_results": [
+      {
+        "BRST_graph_residual": 0.0,
+        "antighost_adjoint_residual": 0.0,
+        "coefficient": 0.0,
+        "gauge_covariance_residual": 0.0
+      },
+      {
+        "BRST_graph_residual": 0.0,
+        "antighost_adjoint_residual": 0.0,
+        "coefficient": 1.0,
+        "gauge_covariance_residual": 0.0
+      }
+    ],
+    "independent_antighost_jet_required": false,
+    "relation": "D_Theta_c=D_Theta_A_ON_LONGITUDINAL_BRST_IMAGE",
+    "spurious_physical_gauge_mode_introduced": false
+  },
+  "child_inheritance": {
+    "HS_child_inheritance_at_zero_field": true,
+    "action_owned_data_only": true,
+    "blocked_by": "ACTION_OWNED_BRST_COMPATIBLE_MIXED_RESET_BOUNDARY_VARIATION_D_PhiSM_D_GAMMA0_SQUARED_S_RESET_GFHS[B;0,0]",
+    "family_projectors_reused": true,
+    "fermion_child_relation_reused": true,
+    "gauge_child_inheritance_at_zero_field": true,
+    "geometry_child_relation_reused": true,
+    "ghost_child_inheritance_at_zero_field": true,
+    "nonzero_first_order_nonfermion_inheritance_unique": false
+  },
+  "claims": {
+    "BRST_relations_between_graph_jets_derived": true,
+    "BRST_selects_common_graph_jet_value": false,
+    "FULL_BHSM_COMPLETE": false,
+    "FULL_FIELD_ACTION_ATTACHMENT_READY_FOR_GATE7_BACKGROUND": false,
+    "HS_boundary_green_form_identically_zero": true,
+    "empirical_inputs_used": false,
+    "exact_missing_variational_datum": "ACTION_OWNED_BRST_COMPATIBLE_MIXED_RESET_BOUNDARY_VARIATION_D_PhiSM_D_GAMMA0_SQUARED_S_RESET_GFHS[B;0,0]",
+    "gauge_boundary_green_form_derived": true,
+    "ghost_boundary_green_form_derived": true,
+    "global_stratified_GFHS_operator_family_derived": false,
+    "physical_HS_direction_derived": false,
+    "physical_background_bound": false,
+    "physical_spectrum_derived": false,
+    "physical_yukawas_derived": false,
+    "retained_bulk_variation_uniquely_determines_D_PhiSM_Theta": false,
+    "status": "RETAINED_GFHS_BULK_VARIATION_DOES_NOT_UNIQUELY_SELECT_NONFERMION_RELATIVE_BOUNDARY_GRAPH_FIRST_FIELD_JET"
+  },
+  "classification": "RETAINED_GFHS_BULK_BOUNDARY_VARIATION_ADJUDICATION",
+  "empirical_inputs": [],
+  "event_balance": {
+    "boundary_reset": {
+      "residual": null,
+      "scope": "D_PhiSM_THETA_CONTRIBUTION_NOT_ACTION_OWNED"
+    },
+    "bulk": {
+      "residual": 0.0,
+      "scope": "LOCAL_GFHS_EULER_LAGRANGE_AND_AE4_ALGEBRAIC_IDENTITY"
+    },
+    "empirical_counterterm_inserted": false,
+    "event_child": {
+      "residual": null,
+      "scope": "NONFERMION_FIRST_ORDER_CHILD_DOMAIN_NOT_UNIQUE"
+    },
+    "exact_owning_term": "ACTION_OWNED_BRST_COMPATIBLE_MIXED_RESET_BOUNDARY_VARIATION_D_PhiSM_D_GAMMA0_SQUARED_S_RESET_GFHS[B;0,0]",
+    "history_seam": {
+      "residual": 0.0,
+      "scope": "RETAINED_FERMION_SEAM_DENSITY_ZERO_ON_OWNED_AE2_GRAPH"
+    },
+    "physical_event_balance_evaluable": false,
+    "total": null
+  },
+  "exact_next_calculation": "DERIVE_THE_BRST_COMPATIBLE_NONFERMION_RESET_BOUNDARY_GENERATING_FUNCTIONAL_S_RESET_GFHS_FROM_AN_ACTION_OWNED_RESET_ATTACHMENT_OR_TRACE_INCIDENCE_AND_EVALUATE_D_PhiSM_D_Gamma0_SQUARED_S_RESET_AT_THE_REFERENCE;_THEN_REPEAT_TO_D_PhiSM_SQUARED_AND_CUBED_THETA_FOR_GLOBAL_S3_S4",
+  "higher_graph_jets_required": {
+    "S1_global": {
+      "available": true,
+      "required_graph_data": "Theta[B;0]"
+    },
+    "S2_global": {
+      "available": false,
+      "required_graph_data": "D_PhiSM_Theta[B;0]"
+    },
+    "S3_global": {
+      "available": false,
+      "required_graph_data": "D_PhiSM_SQUARED_Theta[B;0]"
+    },
+    "S4_global": {
+      "available": false,
+      "required_graph_data": "D_PhiSM_CUBED_Theta[B;0]"
+    },
+    "affine_graph_truncation_action_derived": false,
+    "first_jet_alone_completes_global_S1_through_S4": false,
+    "rule": "THE_kTH_ACTION_VARIATION_DIFFERENTIATES_THE_BOUNDARY_ADMISSIBILITY_CONDITION_k_MINUS_1_TIMES",
+    "same_missing_owner_generates_all_required_jets": "S_RESET_GFHS_REPEATED_MIXED_BOUNDARY_VARIATIONS"
+  },
+  "invalidated": [
+    "RETAINED_BULK_GREEN_FORM_UNIQUELY_SELECTS_D_PhiSM_THETA",
+    "HERMITICITY_GAUGE_CENTRALITY_OR_PROJECTORS_SELECT_THE_JET",
+    "BRST_COMPATIBILITY_SELECTS_THE_COMMON_GAUGE_GHOST_JET_VALUE",
+    "ALGEBRAIC_EC_HS_KERNEL_SUPPLIES_AN_HS_NORMAL_MOMENTUM",
+    "FIRST_GRAPH_JET_ALONE_COMPLETES_GLOBAL_S1_THROUGH_S4",
+    "AE4_RESPONSE_BLOCKS_MAY_BE_PROMOTED_TO_BOUNDARY_ACTION"
+  ],
+  "jet_source": {
+    "first_missing_variational_datum": "ACTION_OWNED_BRST_COMPATIBLE_MIXED_RESET_BOUNDARY_VARIATION_D_PhiSM_D_GAMMA0_SQUARED_S_RESET_GFHS[B;0,0]",
+    "missing_owner": "BRST_COMPATIBLE_NONFERMION_RESET_BOUNDARY_GENERATING_FUNCTIONAL_S_RESET_GFHS",
+    "retained_bulk_variation": "INSUFFICIENT",
+    "why_this_derivative": "D_PhiSM_D_Gamma0_SQUARED_S_RESET_IS_D_PhiSM_THETA_AND_DISTINGUISHES_THETA_0_FROM_THETA_1"
+  },
+  "moving_domain_Hessian": {
+    "Hessians_distinct": true,
+    "blocked_by": "ACTION_OWNED_BRST_COMPATIBLE_MIXED_RESET_BOUNDARY_VARIATION_D_PhiSM_D_GAMMA0_SQUARED_S_RESET_GFHS[B;0,0]",
+    "both_moving_domain_Hessians_internally_consistent": true,
+    "geometry_nonfermion_boundary_mixed_block": null,
+    "hypothetical_completion_rows": [
+      {
+        "analytic_D_Phi_trace_Hessian": [
+          [
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ]
+        ],
+        "coefficient": 0.0,
+        "consistency_residual": 0.0,
+        "direct_D_Phi_trace_Hessian": [
+          [
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ]
+        ]
+      },
+      {
+        "analytic_D_Phi_trace_Hessian": [
+          [
+            1.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            1.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ]
+        ],
+        "coefficient": 1.0,
+        "consistency_residual": 0.0,
+        "direct_D_Phi_trace_Hessian": [
+          [
+            1.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            1.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ]
+        ]
+      }
+    ],
+    "nonfermion_nonfermion_boundary_mixed_block": null,
+    "retained_action_contains_either_hypothetical_completion": false,
+    "second_variation_selects_unique_jet": false
+  },
+  "open": [
+    "ACTION_OWNED_BRST_COMPATIBLE_MIXED_RESET_BOUNDARY_VARIATION_D_PhiSM_D_GAMMA0_SQUARED_S_RESET_GFHS[B;0,0]"
+  ],
+  "physical_HS_direction_derived": false,
+  "physical_background_bound": false,
+  "physical_spectrum_derived": false,
+  "physical_yukawas_derived": false,
+  "source_sha256": {
+    "scripts/materialize_nonfermion_relative_boundary_variation.py": "CFF057157C4B43690B0A4EFA65509FFF49BC00C5F18EF3474DEA76C62FD04792",
+    "src/bhsm/interface/ae31_c2_gauge_composite_hs_action.py": "E597200324124607173CB5A43E73CC39CE9D78E5EED6E67B28ADB271B88B29BF",
+    "src/bhsm/interface/ae32_c2_einstein_cartan_lr_action.py": "8D61C05F848149C18B2E691FCCA60EEE5F088D4F695AAFED9D2663A74E257E43",
+    "src/bhsm/interface/ae3_c2_lorentzian_gauge_ghost_hessian.py": "02E8052C0183A5EB1D9996A03CAEC886C7C73CBF976644731BFEC8B14DA71795",
+    "src/bhsm/interface/ae4_c2_stratified_event_flux_assembly.py": "2B01565BD57E56C5F1CBEB932B55B4823426464B05DF5F8C3387C92CED278312",
+    "src/bhsm/interface/ae4_future_collapse_relative_boundary_domain.py": "E3A435634C2B4FE8C59B925587AD708E2BC105F3AD842A6EFB798F70C3B8E266",
+    "src/bhsm/interface/background_covariant_gfhs_operator_family.py": "100D0BE3F6B8C4AF6D3BA953CA7AC44DBADA38053E8A75668AFC57FDA7CC69AC",
+    "src/bhsm/interface/nonfermion_relative_boundary_variation.py": "1BE2BAB9A20B73EA8CC4902DB3D061D70175A8AE2B729EF0232F2DB9B971C7E2",
+    "tests/test_nonfermion_relative_boundary_variation.py": "13B494E4FECF303B28990B0E68C9B0BC0BFF2A2938B4447606B569D062B9C87D",
+    "theory/bhsm_nonfermion_relative_boundary_variation.md": "8EA58B8F6F49CED95EF1B4857FE852EC63C506AC60FB5F992B5B473BA57A5E0C"
+  },
+  "status": "RETAINED_GFHS_BULK_VARIATION_DOES_NOT_UNIQUELY_SELECT_NONFERMION_RELATIVE_BOUNDARY_GRAPH_FIRST_FIELD_JET",
+  "two_background_geometry_dependence": {
+    "background_coordinates": [
+      {
+        "log_radius": -0.12,
+        "omega": 0.08
+      },
+      {
+        "log_radius": 0.17,
+        "omega": 0.08
+      }
+    ],
+    "background_dependence_selects_graph_jet": false,
+    "both_graph_candidates_admissible_at_both_backgrounds": true,
+    "bulk_background_dependence_nontrivial": true,
+    "radial_Maxwell_boundary_coefficients": [
+      1.681253376688,
+      1.680265546636
+    ]
+  },
+  "validated": [
+    "MAXWELL_AND_FP_GREEN_FORMS_FROM_RETAINED_BULK_ACTION",
+    "HS_BARE_BOUNDARY_GREEN_FORM_IDENTICALLY_ZERO",
+    "ZERO_FIELD_NONFERMION_RESET_MATCH",
+    "BRST_RELATION_BETWEEN_GAUGE_GHOST_AND_ANTIGHOST_GRAPH_JETS",
+    "THETA_0_THETA_1_REMAIN_VARIATIONALLY_UNDISTINGUISHED",
+    "MOVING_DOMAIN_S3_S4_REQUIRE_HIGHER_GRAPH_JETS"
+  ],
+  "validation": {
+    "AE4_and_child_inheritance_fail_closed": true,
+    "BRST_relates_but_does_not_select_jets": true,
+    "Gate7_and_physical_flags_preserved": true,
+    "HS_normal_Legendre_map_rank_zero": true,
+    "Maxwell_boundary_Green_identity_exact": true,
+    "antighost_jet_not_independent": true,
+    "both_candidates_pass_retained_vertical_variation": true,
+    "bulk_variation_does_not_fake_uniqueness": true,
+    "higher_graph_jet_dependency_derived": true,
+    "moving_domain_Hessian_nonuniqueness_exact": true,
+    "one_exact_missing_variational_datum": true,
+    "physical_event_balance_not_fabricated": true,
+    "stored_response_tables_not_used": true,
+    "two_background_dependence_does_not_select_graph": true,
+    "zero_field_graph_shared_but_first_jets_distinct": true
+  },
+  "validation_passed": true,
+  "variational_selection": {
+    "all_fixed_field_vertical_variations_cancel": true,
+    "both_graphs_maximal_isotropic": true,
+    "candidate_results": [
+      {
+        "D_Phi_Theta_at_zero": [
+          [
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ]
+        ],
+        "Hermiticity_residual": 0.0,
+        "Theta_at_zero": [
+          [
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ]
+        ],
+        "gauge_centrality_residual": 0.0,
+        "graph_green_residual": 0.0,
+        "hypothetical_boundary_potential": 0.0,
+        "name": "Theta_0",
+        "projector_preservation_residual": 0.0,
+        "relative_first_variation_residual": 0.0
+      },
+      {
+        "D_Phi_Theta_at_zero": [
+          [
+            1.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            1.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ]
+        ],
+        "Hermiticity_residual": 0.0,
+        "Theta_at_zero": [
+          [
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ]
+        ],
+        "gauge_centrality_residual": 0.0,
+        "graph_green_residual": 0.0,
+        "hypothetical_boundary_potential": 0.1859375,
+        "name": "Theta_1",
+        "projector_preservation_residual": 0.0,
+        "relative_first_variation_residual": 0.0
+      }
+    ],
+    "competing_nonuniqueness_witness_rejected": false,
+    "different_first_field_jets": true,
+    "exact_missing_variational_datum": "ACTION_OWNED_BRST_COMPATIBLE_MIXED_RESET_BOUNDARY_VARIATION_D_PhiSM_D_GAMMA0_SQUARED_S_RESET_GFHS[B;0,0]",
+    "hypothetical_completions_differ": true,
+    "retained_bulk_variation_selects_unique_jet": false,
+    "same_zero_field_graph": true,
+    "why": "THE_BULK_GREEN_FORM_TESTS_A_SUPPLIED_MAXIMAL_ISOTROPIC_GRAPH_BUT_DOES_NOT_GENERATE_ITS_HORIZONTAL_FIELD_DERIVATIVE"
+  }
+}

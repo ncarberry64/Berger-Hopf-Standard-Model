@@ -1,0 +1,257 @@
+{
+  "FULL_BHSM_COMPLETE": false,
+  "Gate7_action_center_caches_or_proof_contract_changed": false,
+  "artifact": "BHSM_AE4_EVENT_RESPONSE_JET_INTEGRATION",
+  "classification": "IMPLEMENTED_CONDITIONAL_RESPONSE_HANDOFF_WITH_EXISTING_OPERATOR_OWNERS",
+  "completion_handoffs": {
+    "charged_lepton": {
+      "new_mass_mechanism_required": false,
+      "remaining": {
+        "Euler_H": "-D^2*H-2*lambda_H*(H_dagger*H-nu_BH^2)*H-bar(e_R)*Y_l_dagger*L_L=0",
+        "Euler_L_L": "i*slash(D)*L_L-Y_l*H*e_R=0",
+        "Euler_e_R": "i*slash(D)*e_R-Y_l_dagger*H_dagger*L_L=0",
+        "action_version": "BHSM-AE-3.1.0",
+        "do_not_use": [
+          "THE_SEPARATE_CHIRAL_SQUARED_PENCILS_AS_IF_THEY_ALREADY_CONTAIN_M_l",
+          "A_FITTED_WAVEFUNCTION_RESIDUE",
+          "AN_OBSERVED_LEPTON_MASS_TO_SELECT_THE_BRANCH"
+        ],
+        "exact_next_operator": "CURRENT_C2_FIRST_ORDER_CHIRAL_BLOCK_[[D_L,M_l],[M_l_DAGGER,D_R]]_ON_THE_RETAINED_MAXIMAL_ISOTROPIC_DOMAIN_WITH_ITS_SIMPLE_POLES",
+        "matched_parent_Delta_H_xi_evaluated": false,
+        "same_current_C2_domain_determinant_evaluated": false,
+        "same_current_C2_first_order_LR_block_assembled": false,
+        "simple_pole_residues_evaluated": false,
+        "variation_is_family_noncentral": true
+      },
+      "reuse": "AE31_Y_l_AND_CONDITIONAL_M_l_WITH_EXISTING_FAMILY_PROJECTORS"
+    },
+    "event_response": {
+      "derivative_implementation": "solve_retarded_event_kkt_jet",
+      "finite_matrix_composition_is_physical_certification": false,
+      "required_inputs": [
+        "COMMON_FIXED_DOMAIN_PARENT_COUPLING_AND_RETARDED_CHILD_JETS",
+        "SOURCE_RESPONSE_OPERATOR_AND_RESPONSE_TARGET_JETS"
+      ],
+      "reuse": "EXISTING_SIX_SECTOR_RETARDED_SCHUR_KKT_AND_NOETHER_IDENTITIES"
+    },
+    "gate7": {
+      "integration_may_change_action_center_or_proof_contract": false,
+      "integration_may_promote_uncertified_carrier_jets": false,
+      "owner": "EXISTING_FROZEN_CENTER_CAUSAL_TWO_RADIUS_CERTIFICATION"
+    },
+    "neutral": {
+      "remaining": "ACTION_RETURNED_LORENTZIAN_OPERATOR_AND_WEAK_FLAVOR_INTERTWINER",
+      "response_gaps_may_be_relabelled_as_mass_splittings": false,
+      "reuse": "EXISTING_THREE_SLOTS_AND_NONCENTRAL_SEMIGROUP_RESPONSE"
+    },
+    "quark": {
+      "lepton_prefactor_may_be_copied": false,
+      "remaining": "ACTION_THIRD_VARIATIONS_AND_TRACE_DOMAIN_PROJECTIONS_FOR_c_u_AND_c_d",
+      "reuse": "FROZEN_UP_DOWN_RATIO_OPERATORS"
+    },
+    "scale": {
+      "calibration_is_first_principles_prediction": false,
+      "finite_input_release": "ONE_EXPLICIT_UNIVERSAL_CALIBRATION_SUBJECT_TO_DEFINITION_OF_DONE",
+      "symbolic_impedance_owner_is_evaluated_scale": false,
+      "zero_input_AE4_extension": "ACTION_EVALUATED_FIRST_FUTURE_IMPEDANCE_CROSSING"
+    },
+    "terminal_HS": {
+      "negative_axis_probe_is_full_E1_spectral_integral": false,
+      "required_physical_inputs": [
+        "L_terminal(z)",
+        "D_H_L_terminal(z)",
+        "D2_H_L_terminal(z)"
+      ],
+      "reuse": "FACTORIZED_FINITE_CORE_VALUE_AND_EXACT_TERMINAL_JET_TRANSPORT",
+      "substitution_implementation": "substitute_terminal_hs_jets",
+      "unknown_terminal_jets_may_default_to_zero": false
+    }
+  },
+  "current_C2_physical_HS_sector_projection_derived_here": false,
+  "current_C2_physical_event_response_evaluated": false,
+  "finite_matrix_witness": {
+    "child_equation_residual_norms": [
+      2.7583073003328607e-18,
+      5.938419867664177e-19,
+      3.439245833776537e-19
+    ],
+    "classification": "SYNTHETIC_SOFTWARE_VERIFICATION_NOT_PHYSICAL_SECTOR_DATA",
+    "event_balance_residual_norms": [
+      5.551115681472668e-17,
+      8.845388854693243e-18,
+      5.0026267829018086e-18
+    ],
+    "noether": {
+      "canonical_noether_flux_residual_jet": [
+        -5.505714157152952e-21,
+        -3.78962540601574e-18,
+        1.1926223897340549e-18
+      ],
+      "canonical_noether_flux_term_jets": {
+        "explicit_source": [
+          -6.954597151581169e-05,
+          0.01999117853515439,
+          0.011035030052636287
+        ],
+        "parent_bulk": [
+          0.0,
+          0.0,
+          -4.336808689942018e-19
+        ],
+        "response_multiplier": [
+          -3.2042213703964847e-06,
+          -0.02000251772016742,
+          -0.011055239580698694
+        ],
+        "returned_future_child": [
+          7.275019288620817e-05,
+          1.1339185013024513e-05,
+          2.0209528062408127e-05
+        ]
+      },
+      "generator_held_fixed": true,
+      "physical_Hamiltonian_readout_closed": false
+    },
+    "response_constraint_residual_norms": [
+      1.3877921810426732e-17,
+      7.454449083786258e-17,
+      5.8233247008312e-18
+    ]
+  },
+  "inputs": {
+    "artifacts/action_extension/BHSM_AE4_CURRENT_C2_TERMINAL_HS_JET_TRANSPORT.json": "8B0598A2330F6F4D7B8940556FC9924AF3172630DD35C346D09684393983F2DA",
+    "scripts/materialize_ae4_event_response_jet_integration.py": "46F05A8E50C0FB02D006CB24A87B374AE1D6EBA5EB33C96B66B967E444A7274C",
+    "src/bhsm/interface/ae4_c2_stratified_event_flux_assembly.py": "2B01565BD57E56C5F1CBEB932B55B4823426464B05DF5F8C3387C92CED278312",
+    "src/bhsm/interface/ae4_event_response_jet_integration.py": "6059B5FA142E1BDD1DA5DDFF7D80EDCF1850051519C46CA2279DE9B0012FB4CE",
+    "src/bhsm/interface/ae4_existing_asset_system_integration.py": "63D1E52FF057B2AD384C40AABE1BE5E2D64A88570307CEEEA175D3CAAE0ADF1A"
+  },
+  "physical_terminal_HS_load_and_jets_derived": false,
+  "saved_current_C2_transport_reuse": {
+    "chirality_minus": {
+      "broad_AE2_child_load_upper_reference": {
+        "either_reference_is_action_selected": false,
+        "nonzero_terminal_jet_witness": {
+          "D2_H_Weyl_birth_decimal": "-0.249999999999999999972068148099805666248125691469279855910109",
+          "D_H_Weyl_birth_decimal": "0.374999999999999999846374798466876143445508069195707722911704",
+          "Weyl_birth_value_decimal": "44505331.0013786703323297462605162087720212801862048478177092",
+          "classification": "CONDITIONAL_SUBSTITUTION_IN_FIXED_CORE_HS_TRANSPORT",
+          "finite_core_recomputed": false,
+          "outward_error_enclosure_certified": false,
+          "physical_terminal_HS_jets_selected": false,
+          "terminal_D2_H_load_decimal": "-0.25",
+          "terminal_D_H_load_decimal": "0.375"
+        },
+        "reference_terminal_load": 44505331.00137867,
+        "segment_count": 1222,
+        "spectral_parameter": -1.0,
+        "zero_terminal_jet_reference": {
+          "D2_H_Weyl_birth_decimal": "2.8048362235524648112429452566690462863791314530605588496167e-46",
+          "D_H_Weyl_birth_decimal": "-0.000000000000000000111727420329057712811976106672328095223172964164429321181745",
+          "Weyl_birth_value_decimal": "44505331.0013786703323297462605162087720212801862048478177092",
+          "classification": "CONDITIONAL_SUBSTITUTION_IN_FIXED_CORE_HS_TRANSPORT",
+          "finite_core_recomputed": false,
+          "outward_error_enclosure_certified": false,
+          "physical_terminal_HS_jets_selected": false,
+          "terminal_D2_H_load_decimal": "0.0",
+          "terminal_D_H_load_decimal": "0.0"
+        }
+      },
+      "zero_reference_load": {
+        "either_reference_is_action_selected": false,
+        "nonzero_terminal_jet_witness": {
+          "D2_H_Weyl_birth_decimal": "-0.250000000000000000000000003182070094451119718845413469317032",
+          "D_H_Weyl_birth_decimal": "0.375000000000000000000000001419330498561975215949447919276512",
+          "Weyl_birth_value_decimal": "1.25521390151661449817774868800917923672866468578692349510389e-27",
+          "classification": "CONDITIONAL_SUBSTITUTION_IN_FIXED_CORE_HS_TRANSPORT",
+          "finite_core_recomputed": false,
+          "outward_error_enclosure_certified": false,
+          "physical_terminal_HS_jets_selected": false,
+          "terminal_D2_H_load_decimal": "-0.25",
+          "terminal_D_H_load_decimal": "0.375"
+        },
+        "reference_terminal_load": 0.0,
+        "segment_count": 1222,
+        "spectral_parameter": -1.0,
+        "zero_terminal_jet_reference": {
+          "D2_H_Weyl_birth_decimal": "2.6368896639755766513010883184589984181423440270237713293851e-81",
+          "D_H_Weyl_birth_decimal": "-1.57556193856056120040858918188694303465958138645390420069464e-54",
+          "Weyl_birth_value_decimal": "1.25521390151661449817774868800917923672866468578692349510389e-27",
+          "classification": "CONDITIONAL_SUBSTITUTION_IN_FIXED_CORE_HS_TRANSPORT",
+          "finite_core_recomputed": false,
+          "outward_error_enclosure_certified": false,
+          "physical_terminal_HS_jets_selected": false,
+          "terminal_D2_H_load_decimal": "0.0",
+          "terminal_D_H_load_decimal": "0.0"
+        }
+      }
+    },
+    "chirality_plus": {
+      "broad_AE2_child_load_upper_reference": {
+        "either_reference_is_action_selected": false,
+        "nonzero_terminal_jet_witness": {
+          "D2_H_Weyl_birth_decimal": "-0.249999999999999999972068146207365001498825403853838883037239",
+          "D_H_Weyl_birth_decimal": "0.374999999999999999846374795628215146321557638618296345386921",
+          "Weyl_birth_value_decimal": "44505331.0013786703323297459236214160314745076635357898380216",
+          "classification": "CONDITIONAL_SUBSTITUTION_IN_FIXED_CORE_HS_TRANSPORT",
+          "finite_core_recomputed": false,
+          "outward_error_enclosure_certified": false,
+          "physical_terminal_HS_jets_selected": false,
+          "terminal_D2_H_load_decimal": "-0.25",
+          "terminal_D_H_load_decimal": "0.375"
+        },
+        "reference_terminal_load": 44505331.00137867,
+        "segment_count": 1222,
+        "spectral_parameter": -1.0,
+        "zero_terminal_jet_reference": {
+          "D2_H_Weyl_birth_decimal": "2.80483622355246481078003630871546495478079105880915013073196e-46",
+          "D_H_Weyl_birth_decimal": "-0.000000000000000000111727420329057712811976105826578040830187181357612441342836",
+          "Weyl_birth_value_decimal": "44505331.0013786703323297459236214160314745076635357898380216",
+          "classification": "CONDITIONAL_SUBSTITUTION_IN_FIXED_CORE_HS_TRANSPORT",
+          "finite_core_recomputed": false,
+          "outward_error_enclosure_certified": false,
+          "physical_terminal_HS_jets_selected": false,
+          "terminal_D2_H_load_decimal": "0.0",
+          "terminal_D_H_load_decimal": "0.0"
+        }
+      },
+      "zero_reference_load": {
+        "either_reference_is_action_selected": false,
+        "nonzero_terminal_jet_witness": {
+          "D2_H_Weyl_birth_decimal": "-0.250000000000000000000000001289629429701819430912816226046792",
+          "D_H_Weyl_birth_decimal": "0.374999999999999999999999998580669501438024784050552081762688",
+          "Weyl_birth_value_decimal": "1.25521390151661449817774868325834357635133531421307650957146e-27",
+          "classification": "CONDITIONAL_SUBSTITUTION_IN_FIXED_CORE_HS_TRANSPORT",
+          "finite_core_recomputed": false,
+          "outward_error_enclosure_certified": false,
+          "physical_terminal_HS_jets_selected": false,
+          "terminal_D2_H_load_decimal": "-0.25",
+          "terminal_D_H_load_decimal": "0.375"
+        },
+        "reference_terminal_load": 0.0,
+        "segment_count": 1222,
+        "spectral_parameter": -1.0,
+        "zero_terminal_jet_reference": {
+          "D2_H_Weyl_birth_decimal": "2.63688966397557665105312478004638681781374700407714229123207e-81",
+          "D_H_Weyl_birth_decimal": "-1.57556193856056120040858917393585641502426430864695890442102e-54",
+          "Weyl_birth_value_decimal": "1.25521390151661449817774868325834357635133531421307650957146e-27",
+          "classification": "CONDITIONAL_SUBSTITUTION_IN_FIXED_CORE_HS_TRANSPORT",
+          "finite_core_recomputed": false,
+          "outward_error_enclosure_certified": false,
+          "physical_terminal_HS_jets_selected": false,
+          "terminal_D2_H_load_decimal": "0.0",
+          "terminal_D_H_load_decimal": "0.0"
+        }
+      }
+    }
+  },
+  "validation": {
+    "all_Noether_orders_balance": true,
+    "all_child_equation_orders_balance": true,
+    "all_constraint_orders_balance": true,
+    "all_response_orders_balance": true,
+    "no_physical_values_promoted": true,
+    "saved_full_core_coefficients_reused": true,
+    "six_existing_sectors_assembled": true
+  },
+  "validation_passed": true
+}

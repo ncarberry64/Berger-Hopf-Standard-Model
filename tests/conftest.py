@@ -60,6 +60,17 @@ def _canonical_test_bytes(path: Path) -> bytes:
 
 
 def _tracked_paths() -> tuple[Path, ...]:
+    # Source archives and the review container intentionally omit Git metadata.
+    # Preserve the write guard there by snapshotting the scientific tree;
+    # never traverse virtual environments, museum dependencies or worker caches.
+    if not (ROOT / ".git").exists():
+        candidates = [path for path in ROOT.iterdir() if path.is_file()]
+        for directory in ("src", "tests", "tools", "scripts", "docs", "theory", "artifacts", "data"):
+            folder = ROOT / directory
+            if folder.is_dir():
+                candidates.extend(path for path in folder.rglob("*") if path.is_file()
+                                  and not any(part.startswith(".") or part == "__pycache__" for part in path.relative_to(ROOT).parts))
+        return tuple(sorted(path.resolve() for path in candidates))
     result = subprocess.run(
         ["git", "ls-files", "-z"],
         cwd=ROOT,

@@ -2,6 +2,7 @@ import hashlib
 
 from bhsm.interface.ae4_existing_asset_system_integration import (
     authoritative_frontier_reconciliation,
+    existing_variable_completion_handoffs,
     hindsight_gate_reduction,
     integrated_claim_boundary,
     museum_science_export_contract,
@@ -79,10 +80,31 @@ def test_museum_export_keeps_real_conditional_and_simulated_data_distinct():
     assert not contract["may_present_neutral_shape_gaps_as_neutrino_mass_splittings"]
 
 
-def test_materialized_system_integration_is_valid_and_deterministic():
-    assert build_payload()["validation_passed"]
-    main()
-    first = hashlib.sha256(TARGET.read_bytes()).hexdigest()
-    main()
-    second = hashlib.sha256(TARGET.read_bytes()).hexdigest()
+def test_handoffs_preserve_existing_variables_and_do_not_promote_missing_values():
+    frontier = authoritative_frontier_reconciliation()
+    assert frontier["six_sector_assembly_already_derived"]
+    assert frontier["local_enclosure_and_state_transport_already_closed"]
+    assert not frontier["physical_nonzero_sector_values_evaluated"]
+    handoffs = existing_variable_completion_handoffs()
+    assert not handoffs["gate7"]["integration_may_change_action_center_or_proof_contract"]
+    assert not handoffs["terminal_HS"]["unknown_terminal_jets_may_default_to_zero"]
+    assert not handoffs["charged_lepton"]["new_mass_mechanism_required"]
+    assert not handoffs["charged_lepton"]["remaining"]["same_current_C2_first_order_LR_block_assembled"]
+    assert not handoffs["quark"]["lepton_prefactor_may_be_copied"]
+
+
+def test_materialized_system_integration_is_valid_and_deterministic(tmp_path, monkeypatch):
+    import scripts.materialize_ae4_existing_asset_system_integration as materializer
+
+    payload = build_payload()
+    assert payload["validation_passed"]
+    assert payload == build_payload()
+    output = tmp_path / TARGET.name
+    monkeypatch.setattr(materializer, "TARGET", output)
+    monkeypatch.setattr(materializer, "ROOT", tmp_path)
+    monkeypatch.setattr(materializer, "build_payload", lambda: payload)
+    materializer.main()
+    first = hashlib.sha256(output.read_bytes()).hexdigest()
+    materializer.main()
+    second = hashlib.sha256(output.read_bytes()).hexdigest()
     assert first == second

@@ -3,8 +3,8 @@ from __future__ import annotations
 import hashlib
 import json
 from pathlib import Path
-import subprocess
-import sys
+from scripts import materialize_n12_gate7_physical_encapsulation_identification as materializer
+import tempfile
 
 import pytest
 
@@ -89,12 +89,18 @@ def test_forbidden_equivalences_raise(kwargs: dict[str, bool]) -> None:
         assert_no_forbidden_equivalence(**values)
 
 
-def test_materialized_artifact_is_deterministic_and_guarded() -> None:
-    subprocess.run([sys.executable, str(SCRIPT)], cwd=ROOT, check=True)
-    first = hashlib.sha256(TARGET.read_bytes()).hexdigest()
-    subprocess.run([sys.executable, str(SCRIPT)], cwd=ROOT, check=True)
-    second = hashlib.sha256(TARGET.read_bytes()).hexdigest()
-    payload = json.loads(TARGET.read_text(encoding="utf-8"))
+def test_materialized_artifact_is_deterministic_and_guarded(monkeypatch) -> None:
+    # Exercise the real writer without rewriting a tracked scientific ledger.
+    scratch = ROOT / "tmp"
+    scratch.mkdir(exist_ok=True)
+    with tempfile.TemporaryDirectory(prefix="bhsm-materializer-", dir=scratch) as folder:
+        target = Path(folder) / TARGET.name
+        monkeypatch.setattr(materializer, "TARGET", target)
+        materializer.main()
+        first = hashlib.sha256(target.read_bytes()).hexdigest()
+        materializer.main()
+        second = hashlib.sha256(target.read_bytes()).hexdigest()
+        payload = json.loads(target.read_text(encoding="utf-8"))
     assert first == second
     assert payload["validation_passed"] is True
     assert payload["claim_boundary"]["first_stop_strengthened"] is False

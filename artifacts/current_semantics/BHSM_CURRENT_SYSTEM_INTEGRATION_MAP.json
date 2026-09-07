@@ -171,8 +171,10 @@
     "artifacts/action_extension/BHSM_ACTION_AE2_GLOBAL_SPIN_RESET_ACTION.json": "4C756145A9E303F6E4F7F9536CF5639957D010C1A97AF6BE9299830C549B82DC",
     "artifacts/action_extension/BHSM_AE4_CURRENT_C2_GREEN_IMAGE_PARTITION_RECONCILIATION.json": "D63558F6F0F894FE638C98C7577DE21AC8D5E2510346CD4E992AC038DAA56A72",
     "artifacts/action_extension/BHSM_AE4_CURRENT_C2_NONLINEAR_CARRIER_AUTHORITY_ADJUDICATION.json": "56965451ACF0110193443FE490DF21DC12B7CE187D4DBC3EFEB4F489C72CC1AB",
-    "artifacts/current_semantics/BHSM_COMPUTE_BUDGET_LEDGER.json": "88886C84E897297C9FC8BD1AE3EE41F310AB1469E9BFED131D1C362B5C61B69E",
-    "artifacts/current_semantics/BHSM_COMPUTE_JUSTIFICATION_AUDIT.json": "88879ED6F2C563E1EBD8A6119244475C776953D2C37DB1A6EC90505211D6D7F6",
+    "artifacts/action_extension/BHSM_AE4_EVENT_RESPONSE_JET_INTEGRATION.json": "99960FD97A69F72D02A71557759D8950DD21BA63AF1706178441A6F8192ABA7D",
+    "artifacts/action_extension/BHSM_AE4_EXISTING_ASSET_SYSTEM_INTEGRATION.json": "62CFCAFE94666DDCC408E27BA4294BFE5D67A09F5C850845DF5448B4951DF443",
+    "artifacts/current_semantics/BHSM_COMPUTE_BUDGET_LEDGER.json": "3E1B94A3E85DF75DF1CEBD4192E6DC2B6CA8D888A524CAADD7A4F74164959805",
+    "artifacts/current_semantics/BHSM_COMPUTE_JUSTIFICATION_AUDIT.json": "A1BB050851E6173539CC324D998A8F09F64383C929E95D0F4AFB6B27A969F291",
     "artifacts/current_semantics/BHSM_CURRENT_COMPLETION_DAG.json": "530D141F5F909FBE5FCB74C24E45AE3B480329622E49A395A78DCD82FE6FB4F5",
     "artifacts/current_semantics/BHSM_CURRENT_GATE_LEDGER.json": "9F6050210D4330993E3EF01EA725780F537B7733C18AEDA1375C89BAD3A2136D",
     "artifacts/current_semantics/BHSM_CURRENT_MATHEMATICAL_BASIS.json": "F9804C63CBA71FE8A78021E9542C3803D43E036423DE16D1388F3DB0EFD2BFCD",
@@ -392,6 +394,78 @@
       "status": "NONE_CURRENTLY_IDENTIFIED"
     }
   ],
+  "parallel_successor_integration": {
+    "Gate7_retained_AE2_action_replaced": false,
+    "action_version": "BHSM-AE-4.0.0",
+    "artifact": "artifacts/action_extension/BHSM_AE4_EVENT_RESPONSE_JET_INTEGRATION.json",
+    "completion_handoffs": {
+      "charged_lepton": {
+        "new_mass_mechanism_required": false,
+        "remaining": {
+          "Euler_H": "-D^2*H-2*lambda_H*(H_dagger*H-nu_BH^2)*H-bar(e_R)*Y_l_dagger*L_L=0",
+          "Euler_L_L": "i*slash(D)*L_L-Y_l*H*e_R=0",
+          "Euler_e_R": "i*slash(D)*e_R-Y_l_dagger*H_dagger*L_L=0",
+          "action_version": "BHSM-AE-3.1.0",
+          "do_not_use": [
+            "THE_SEPARATE_CHIRAL_SQUARED_PENCILS_AS_IF_THEY_ALREADY_CONTAIN_M_l",
+            "A_FITTED_WAVEFUNCTION_RESIDUE",
+            "AN_OBSERVED_LEPTON_MASS_TO_SELECT_THE_BRANCH"
+          ],
+          "exact_next_operator": "CURRENT_C2_FIRST_ORDER_CHIRAL_BLOCK_[[D_L,M_l],[M_l_DAGGER,D_R]]_ON_THE_RETAINED_MAXIMAL_ISOTROPIC_DOMAIN_WITH_ITS_SIMPLE_POLES",
+          "matched_parent_Delta_H_xi_evaluated": false,
+          "same_current_C2_domain_determinant_evaluated": false,
+          "same_current_C2_first_order_LR_block_assembled": false,
+          "simple_pole_residues_evaluated": false,
+          "variation_is_family_noncentral": true
+        },
+        "reuse": "AE31_Y_l_AND_CONDITIONAL_M_l_WITH_EXISTING_FAMILY_PROJECTORS"
+      },
+      "event_response": {
+        "derivative_implementation": "solve_retarded_event_kkt_jet",
+        "finite_matrix_composition_is_physical_certification": false,
+        "required_inputs": [
+          "COMMON_FIXED_DOMAIN_PARENT_COUPLING_AND_RETARDED_CHILD_JETS",
+          "SOURCE_RESPONSE_OPERATOR_AND_RESPONSE_TARGET_JETS"
+        ],
+        "reuse": "EXISTING_SIX_SECTOR_RETARDED_SCHUR_KKT_AND_NOETHER_IDENTITIES"
+      },
+      "gate7": {
+        "integration_may_change_action_center_or_proof_contract": false,
+        "integration_may_promote_uncertified_carrier_jets": false,
+        "owner": "EXISTING_FROZEN_CENTER_CAUSAL_TWO_RADIUS_CERTIFICATION"
+      },
+      "neutral": {
+        "remaining": "ACTION_RETURNED_LORENTZIAN_OPERATOR_AND_WEAK_FLAVOR_INTERTWINER",
+        "response_gaps_may_be_relabelled_as_mass_splittings": false,
+        "reuse": "EXISTING_THREE_SLOTS_AND_NONCENTRAL_SEMIGROUP_RESPONSE"
+      },
+      "quark": {
+        "lepton_prefactor_may_be_copied": false,
+        "remaining": "ACTION_THIRD_VARIATIONS_AND_TRACE_DOMAIN_PROJECTIONS_FOR_c_u_AND_c_d",
+        "reuse": "FROZEN_UP_DOWN_RATIO_OPERATORS"
+      },
+      "scale": {
+        "calibration_is_first_principles_prediction": false,
+        "finite_input_release": "ONE_EXPLICIT_UNIVERSAL_CALIBRATION_SUBJECT_TO_DEFINITION_OF_DONE",
+        "symbolic_impedance_owner_is_evaluated_scale": false,
+        "zero_input_AE4_extension": "ACTION_EVALUATED_FIRST_FUTURE_IMPEDANCE_CROSSING"
+      },
+      "terminal_HS": {
+        "negative_axis_probe_is_full_E1_spectral_integral": false,
+        "required_physical_inputs": [
+          "L_terminal(z)",
+          "D_H_L_terminal(z)",
+          "D2_H_L_terminal(z)"
+        ],
+        "reuse": "FACTORIZED_FINITE_CORE_VALUE_AND_EXACT_TERMINAL_JET_TRANSPORT",
+        "substitution_implementation": "substitute_terminal_hs_jets",
+        "unknown_terminal_jets_may_default_to_zero": false
+      }
+    },
+    "existing_asset_entry_point": "artifacts/action_extension/BHSM_AE4_EXISTING_ASSET_SYSTEM_INTEGRATION.json",
+    "implementation_status": "IMPLEMENTED_CONDITIONAL_RESPONSE_HANDOFF_WITH_EXISTING_OPERATOR_OWNERS",
+    "physical_event_response_evaluated": false
+  },
   "schema": "BHSM_SYSTEM_INTEGRATION_MAP_V1",
   "subsystems": [
     {
@@ -889,6 +963,7 @@
     "one_seam_AE2_composition_already_exists": true,
     "one_transverse_center_witness_suffices_for_open_stop_stratum": true,
     "one_universal_G_F_calibration_only": true,
+    "parallel_AE4_response_handoff_preserves_Gate7_and_physical_boundaries": true,
     "physical_completeness_matrix_is_required_and_open": true,
     "projected_dense_flow_defect_is_localized_not_promoted": true,
     "projected_exact_affine_center_supersedes_native_only_candidate": true,

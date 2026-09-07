@@ -1,5 +1,11 @@
 # BHSM Quickstart
 
+For a portable institutional setup, start with
+[the institutional guide](docs/INSTITUTIONAL_START.md). Noncommercial research,
+review and teaching use is covered by [ACADEMIC_USE.md](ACADEMIC_USE.md).
+After installing, run `python tools/institutional_check.py --smoke` for a
+bounded offline check; it launches no proof campaign.
+
 Run these commands from the repository root. BHSM supports Python 3.10 or
 newer.
 

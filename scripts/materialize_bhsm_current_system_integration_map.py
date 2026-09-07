@@ -18,6 +18,8 @@ ROOT = Path(__file__).resolve().parents[1]
 RESULT = ROOT / "artifacts" / "current_semantics" / "BHSM_CURRENT_SYSTEM_INTEGRATION_MAP.json"
 
 PATHS = {
+    "ae4_response_integration": "artifacts/action_extension/BHSM_AE4_EVENT_RESPONSE_JET_INTEGRATION.json",
+    "ae4_existing_asset_integration": "artifacts/action_extension/BHSM_AE4_EXISTING_ASSET_SYSTEM_INTEGRATION.json",
     "v7_functor": "artifacts/BHSM_covariant_bulk_boundary_reduction_functor_v7_1.json",
     "v7_transport": "artifacts/BHSM_common_scheme_observable_transport_v7_2.json",
     "generation": "artifacts/BHSM_generation_projector_action_attachment_v8_2.json",
@@ -1297,6 +1299,16 @@ def build_payload() -> dict[str, Any]:
             is False
         ),
     }
+    response_integration = records["ae4_response_integration"]
+    asset_integration = records["ae4_existing_asset_integration"]
+    validations["parallel_AE4_response_handoff_preserves_Gate7_and_physical_boundaries"] = (
+        response_integration["validation_passed"]
+        and asset_integration["validation_passed"]
+        and not response_integration["Gate7_action_center_caches_or_proof_contract_changed"]
+        and not response_integration["current_C2_physical_event_response_evaluated"]
+        and asset_integration["authoritative_frontier_reconciliation"]["six_sector_assembly_already_derived"]
+        and all(_sha256(ROOT / path) == digest for path, digest in response_integration["inputs"].items())
+    )
     passed = all(validations.values())
     return {
         "artifact": "BHSM_CURRENT_SYSTEM_INTEGRATION_MAP",
@@ -1318,6 +1330,15 @@ def build_payload() -> dict[str, Any]:
             "G7_SAME_CENTER_GREEN_IMAGE_LONGITUDINAL_TRANSVERSE_RADII_SCREEN",
         ],
         "integration_order": ["A_EXISTING_COMPOSITION", "C_IMPLEMENTATION", "B_THEOREM", "D_NEW_THEORY_CHOICE"],
+        "parallel_successor_integration": {
+            "action_version": "BHSM-AE-4.0.0",
+            "Gate7_retained_AE2_action_replaced": False,
+            "artifact": PATHS["ae4_response_integration"],
+            "existing_asset_entry_point": PATHS["ae4_existing_asset_integration"],
+            "implementation_status": response_integration["classification"],
+            "completion_handoffs": response_integration["completion_handoffs"],
+            "physical_event_response_evaluated": False,
+        },
         "validation": validations,
         "validation_passed": passed,
         "inputs": {PATHS[key]: _sha256(_path(key)) for key in PATHS},
