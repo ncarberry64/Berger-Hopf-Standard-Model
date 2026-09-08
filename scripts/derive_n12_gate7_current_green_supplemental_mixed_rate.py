@@ -125,14 +125,9 @@ def mixed_rate_map(
     )
 
     h_u = center._signed(state, full_lift, full_lift, state_u)
-    h_v = center._signed(state, full_lift, full_lift, state_v)
     h_u_reduced = 0.5 * (
         h_u[center.QDIM:, center.QDIM:]
         + h_u[center.QDIM:, center.QDIM:].T
-    )
-    h_v_reduced = 0.5 * (
-        h_v[center.QDIM:, center.QDIM:]
-        + h_v[center.QDIM:, center.QDIM:].transpose(1, 0, 2)
     )
     other = np.arange(center.REDUCED) != center.SELECTED
     denominators = eigenvalues - eigenvalues[center.SELECTED]
@@ -210,9 +205,42 @@ def mixed_rate_map(
     response_u = response_u_m[:, 0]
     hard_u, b_u = response_u[:-1], float(response_u[-1])
     h_u_psi = h_u_psi_m[:, 0]
-    lambda_v, psi_v, response_v, h_v_psi, residual_v = first_variation(
-        state_v, raw_v, configuration_v, h_v, h_v_reduced,
+    # Contract the six right-leg Hessian products actually consumed below.
+    # Forming all 98x98 entries for every right direction dominated the
+    # supplemental campaign; multilinearity permits these products directly.
+    configuration_u_action = np.zeros(center.STATE)
+    configuration_u_action[:center.QDIM] = configuration_u
+    right_products = center._signed(
+        state, reduced_lift, state_v,
+        np.column_stack((reduced_lift @ psi, reduced_lift @ hard,
+                         configuration_action, reduced_lift @ psi_u,
+                         reduced_lift @ hard_u, configuration_u_action)),
     )
+    h_v_psi = right_products[:, :, 0]
+    h_v_hard = right_products[:, :, 1]
+    h_v_configuration = right_products[:, :, 2]
+    h_v_psi_u = right_products[:, :, 3]
+    h_v_hard_u = right_products[:, :, 4]
+    h_v_configuration_u = right_products[:, :, 5]
+    h_v_psi_eigen = eigenvectors.T @ h_v_psi
+    lambda_v = h_v_psi_eigen[center.SELECTED]
+    psi_v_coefficients = np.zeros_like(h_v_psi_eigen)
+    psi_v_coefficients[other] = -h_v_psi_eigen[other] / denominators[other, None]
+    psi_v = eigenvectors @ psi_v_coefficients
+    gradient_v = hessian @ raw_v
+    forcing_v = reduced_weights[:, None] * (
+        np.vstack((q_weights[:, None] * gradient_v[:center.QDIM]
+                   / weights[:center.QDIM, None],
+                   np.zeros((center.REDUCED - center.QDIM, v.shape[1]))))
+        - hessian_action[center.QDIM:, :center.QDIM] @ configuration_v
+    ) - h_v_configuration
+    k_v_response = np.vstack((
+        h_v_hard - hard[:, None] * lambda_v + bpsi * psi_v,
+        psi_v.T @ hard,
+    ))
+    response_v_rhs = np.vstack((forcing_v, np.zeros((1, v.shape[1])))) - k_v_response
+    response_v = np.linalg.solve(bordered, response_v_rhs)
+    residual_v = bordered @ response_v - response_v_rhs
     hard_v, b_v = response_v[:-1], response_v[-1]
 
     right_vectors = np.column_stack((
@@ -227,9 +255,6 @@ def mixed_rate_map(
     h_uv_hard = fourth[:, :, 1]
     h_uv_configuration = fourth[:, :, 2]
     h_u_psi_v = h_u_reduced @ psi_v
-    h_v_psi_u = np.einsum(
-        "abj,b->aj", h_v_reduced, psi_u, optimize=True,
-    )
     lambda_uv = (
         psi @ h_uv_psi
         + np.einsum("aj,a->j", psi_v, h_u_psi, optimize=True)
@@ -251,7 +276,6 @@ def mixed_rate_map(
 
     gradient_uv = center._signed(state, full_lift, state_u, state_v)
     h_u_action = h_u / weights[:, None] / weights[None, :]
-    h_v_action = h_v / weights[:, None, None] / weights[None, :, None]
     forcing_uv = reduced_weights[:, None] * (
         np.vstack((
             q_weights[:, None]
@@ -260,13 +284,7 @@ def mixed_rate_map(
             np.zeros((center.REDUCED - center.QDIM, v.shape[1])),
         ))
         - h_u_action[center.QDIM:, :center.QDIM] @ configuration_v
-        - np.einsum(
-            "abj,b->aj",
-            h_v_action[center.QDIM:, :center.QDIM],
-            configuration_u,
-            optimize=True,
-        )
-    ) - h_uv_configuration
+    ) - h_v_configuration_u - h_uv_configuration
 
     k_uv_response = np.vstack((
         h_uv_hard - hard[:, None] * lambda_uv[None, :] + bpsi * psi_uv,
@@ -277,7 +295,7 @@ def mixed_rate_map(
         psi_u @ hard_v,
     ))
     k_v_response_u = np.vstack((
-        np.einsum("abj,b->aj", h_v_reduced, hard_u, optimize=True)
+        h_v_hard_u
         - hard_u[:, None] * lambda_v[None, :]
         + psi_v * b_u,
         psi_v.T @ hard_u,

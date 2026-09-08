@@ -19,6 +19,8 @@ sys.path.insert(0, str(ROOT / "scripts"))
 from bhsm.interface import current_green_midpoint_coordinate_error as propagation
 import certify_n12_gate7_current_green_midpoint_coordinate_solve as coordinate
 import certify_n12_gate7_current_green_supplemental_midpoint_blocks as blocks
+import certify_n12_gate7_symmetric_quadratic_representatives as quadratic_representatives
+import certify_n12_gate7_current_green_scalar_covector_correction as scalar_correction_certificate
 
 causal = coordinate.causal
 supplement = coordinate.supplement
@@ -57,12 +59,24 @@ def build_payload():
     fingerprint = supplement._fingerprint()
     if validated.get("campaign_fingerprint") != fingerprint:
         raise RuntimeError("supplemental validation fingerprint changed")
+    raw_recovery = json.loads(quadratic_representatives.raw_certificate.RESULT.read_text(encoding="utf-8"))
+    represented = json.loads(quadratic_representatives.RESULT.read_text(encoding="utf-8"))
+    quadratic_representatives.validate_for_consumption(raw_recovery, represented)
+    corrected = json.loads(scalar_correction_certificate.RESULT.read_text(encoding='utf-8'))
+    scalar_correction_certificate.validate_for_consumption(corrected)
+    representative_rows = {row['index']: row for row in corrected['rows'] if row['kind'] == 'midpoint'}
     paths = {Path(__file__), Path(propagation.__file__), Path(coordinate.__file__),
              Path(coordinate.basis_certificate.__file__), Path(blocks.__file__),
              Path(causal.__file__), Path(supplement.__file__),
              Path(causal.center.__file__), Path(causal.cert.__file__),
              Path(causal.component.scalar.__file__),
              ROOT / "src/bhsm/interface/current_green_supplemental_midpoint.py",
+             quadratic_representatives.RESULT,
+             Path(quadratic_representatives.__file__),
+             Path(quadratic_representatives.representation.__file__),
+             scalar_correction_certificate.RESULT,
+             Path(scalar_correction_certificate.__file__),
+             Path(scalar_correction_certificate.correction.__file__),
              blocks.VALIDATION}
     paths.update(path.with_suffix(".npz") for path in (
         causal.center.ENDPOINT, causal.center.REPLAY, causal.center.JACOBIAN,
@@ -71,6 +85,7 @@ def build_payload():
     # Bind the validated values before reading them for certificate arithmetic.
     for index in range(370):
         paths.add(supplement.recovery._path("midpoint", index))
+        paths.add(scalar_correction_certificate.correction._path('midpoint', index))
         paths.add(supplement._aggregate_path(index))
         paths.update(causal.MIXED_WORK / f"endpoint_{node:03d}.npz"
                      for node in (index, index + 1) if node > 0)
@@ -84,8 +99,10 @@ def build_payload():
     rows = []
     for index in range(370):
         completion, recovered = supplement._completion(index, geometry)
-        with np.load(recovered) as source:
-            uu = np.asarray(source["quadratic_tensor"], dtype=float)
+        corrected_tensor, _ = scalar_correction_certificate.correction.corrected_tensor('midpoint', index)
+        uu = quadratic_representatives.representation.symmetric_center(corrected_tensor)
+        if quadratic_representatives.array_hash(uu) != representative_rows[index]['represented_tensor_binary64_SHA256']:
+            raise RuntimeError(f'certified midpoint representative changed: {index}')
         with np.load(supplement._aggregate_path(index)) as source:
             if not (np.array_equal(source["retained_directions"], completion.retained_directions)
                     and np.array_equal(source["complement_directions"], completion.complement_directions)):
@@ -99,6 +116,8 @@ def build_payload():
         approximate = np.linalg.solve(completion.full_basis, target)
         row = certify_stored_pullback(completion.full_basis, target, approximate, uu, cu, cc)
         row["interval"] = index
+        row['stored_UU_representation_rounding_Frobenius_upper'] = representative_rows[index]['projection_rounding_Frobenius_upper']
+        row['stored_UU_scalar_addition_rounding_Frobenius_upper'] = representative_rows[index]['scalar_addition_rounding_Frobenius_upper']
         rows.append(row)
     if any(supplement._sha(path) != digest for path, digest in before.items()):
         raise RuntimeError("certificate inputs changed during evaluation")
@@ -126,6 +145,7 @@ def build_payload():
             "physical_direction_construction_rounding_enclosed": False,
             "physical_Hessian_rounding_enclosed": False,
             "pullback_assembly_rounding_enclosed": False,
+            "stored_quadratic_representation_rounding_propagated": False,
             "causal_output_maps_and_accumulation_enclosed": False,
             "physical_neighborhood_remainder_derived": False,
             "Gate7_closed": False,
