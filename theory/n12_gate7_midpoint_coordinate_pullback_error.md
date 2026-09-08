@@ -5,6 +5,18 @@ The all-370 production certificate requires the completed supplemental tensor
 campaign and has not been materialized. Gate 7 remains active and
 `FULL_BHSM_COMPLETE = FALSE`.
 
+The prerequisite basis and coordinate-solve verification has now executed on
+all 370 stored midpoint inputs, with two byte-identical materializations per
+certificate. The maximum stored-coordinate error upper bound is
+`8.043318260186595e-8` in matrix row-sum norm. This completed prerequisite
+does not substitute for the still-pending full-tensor pullback certificate.
+
+The committed reports bind the recovered midpoint and mixed-transport input
+shards by hash. Those generated NPZ caches are not included in these JSON
+reports; reproducing them requires the corresponding documented upstream
+campaigns or the matching retained input caches. All 13 non-cache inputs in
+their combined manifest match the mainline source and geometry files.
+
 ## Operand and inequality
 
 For each midpoint let the exact values of the stored binary64 matrices be
