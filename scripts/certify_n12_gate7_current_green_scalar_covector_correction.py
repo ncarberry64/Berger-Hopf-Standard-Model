@@ -17,6 +17,7 @@ ROOT=Path(__file__).resolve().parents[1]
 sys.path.insert(0,str(ROOT/'scripts'))
 import derive_n12_gate7_current_green_scalar_covector_correction as correction
 import certify_n12_gate7_symmetric_quadratic_representatives as representatives
+from bhsm.interface import scalar_updated_quadratic_representation as updated_representation
 
 RESULT=ROOT/'artifacts/flagship_integration/BHSM_N12_GATE7_SCALAR_COVECTOR_CORRECTION.json'
 IDENTITY=ROOT/'artifacts/current_semantics/BHSM_N12_GATE7_SUPPLEMENTAL_MIXED_RATE_UU_VALIDATION.json'
@@ -60,10 +61,12 @@ def build_payload():
             or any(_sha(ROOT/p)!=digest for p,digest in identity['inputs'].items())):
         raise RuntimeError('Current corrected supplemental UU identity required')
     paths=[Path(__file__),Path(correction.__file__),Path(representatives.__file__),
+           Path(updated_representation.__file__),
            Path(representatives.representation.__file__),representatives.RESULT,
            representatives.raw_certificate.RESULT,IDENTITY]
     inputs={p.relative_to(ROOT).as_posix():_sha(p) for p in paths}
     fingerprint=correction._fingerprint();rows=[]
+    raw_rows={(r['kind'],r['index']):r for r in representation['rows']}
     manifest=_manifest()
     for kind,index in KEYS:
         corrected,basis=correction.corrected_tensor(kind,index)
@@ -73,9 +76,15 @@ def build_payload():
             delta=source['scalar_correction'].copy()
         if not np.array_equal(corrected[:-1],raw_tensor[:-1]):
             raise RuntimeError('Correction changed a field output')
-        represented,row=representatives.representation.certify_representation(corrected)
+        raw_sha=_sha(correction.recovery._path(kind,index))
+        raw_row=raw_rows[kind,index]
+        if raw_row['raw_shard_SHA256']!=raw_sha:
+            raise RuntimeError('Reused field rounding bound has stale raw provenance')
+        represented,row=updated_representation.certify_scalar_update(
+            raw_tensor,corrected,raw_row['projection_rounding_Frobenius_upper'])
+        row['raw_bound_requires_external_verification']=False
         row.update(kind=kind,index=index,
-            raw_shard_SHA256=_sha(correction.recovery._path(kind,index)),
+            raw_shard_SHA256=raw_sha,
             correction_shard_SHA256=_sha(correction._path(kind,index)),
             represented_tensor_binary64_SHA256=representatives.array_hash(represented),
             scalar_correction_Frobenius_norm=float(np.linalg.norm(delta)),
