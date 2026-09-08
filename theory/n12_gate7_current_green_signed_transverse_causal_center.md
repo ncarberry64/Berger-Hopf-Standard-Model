@@ -237,3 +237,9 @@ overwrite the all-370 artifact. This bound applies to the stored binary64
 map; it does not enclose construction of that map from physical ball inputs,
 propagation of coordinate error through Hessian blocks, or the neighborhood
 remainder. Those remain separate required outward operands.
+
+The separate [coordinate pullback verifier](n12_gate7_midpoint_coordinate_pullback_error.md)
+now implements propagation of that stored-coordinate error through all four
+tensor blocks at 512-bit Arb precision. Its all-370 production execution awaits
+the complete supplemental tensors. It does not enclose the physical tensor
+contractions, pullback assembly rounding, causal maps, or neighborhood remainder.

@@ -1,5 +1,15 @@
 # Current BHSM status
 
+## Midpoint coordinate-error propagation — 7 September 2026
+
+The [pullback error bound](../theory/n12_gate7_midpoint_coordinate_pullback_error.md)
+propagates a verified stored-coordinate solve error through all `UU`, `CU`,
+`UC`, and `CC` terms using 512-bit Arb. The guarded all-370 certifier is
+implemented and tested; its production report awaits the complete supplemental
+campaign. It is one scoped rounding operand, not an enclosure of physical
+Hessian contractions, causal assembly, or the neighborhood remainder.
+The running contraction sources and fingerprints are unchanged.
+
 ## State selection and observable independence — 7 September 2026
 
 The [observable audit](../theory/ae31_c2_state_observable_audit.md) distinguishes
