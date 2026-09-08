@@ -1,5 +1,14 @@
 # BHSM Claim Boundaries
 
+## Stored midpoint coordinate-error propagation
+
+Supported: a proved perturbation bound and 512-bit Arb implementation propagate
+a verified coordinate-solve error through the complete stored midpoint tensor.
+The guarded all-370 campaign runner is implemented; its production certificate
+is pending the supplemental tensors. This does not enclose physical tensor
+construction, binary64 assembly, causal accumulation, or the neighborhood
+remainder. See the [operand scope](theory/n12_gate7_midpoint_coordinate_pullback_error.md).
+
 ## State ambiguity and observable scope
 
 A nonunique state does not by itself make every observable undetermined.
