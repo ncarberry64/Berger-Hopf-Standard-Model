@@ -10,6 +10,16 @@ campaign. It is one scoped rounding operand, not an enclosure of physical
 Hessian contractions, causal assembly, or the neighborhood remainder.
 The running contraction sources and fingerprints are unchanged.
 
+The prerequisite stored-basis and coordinate-solve certificates are now
+materialized on **all 370 actual midpoints**, each twice with identical bytes.
+All full bases are nonsingular; the maximum inverse-verification residual
+upper bound is `1.0658353215120433e-143`. The maximum coordinate-solve error
+upper bound is `8.043318260186595e-8` in matrix row-sum norm. These are bounds
+for exact stored binary64 operands. They do not certify physical direction
+construction, Hessian contractions, or the final Gate-7 radius inequality.
+See the [basis certificate](../artifacts/flagship_integration/BHSM_N12_GATE7_SUPPLEMENTAL_BASIS_INVERSE.json)
+and [coordinate certificate](../artifacts/flagship_integration/BHSM_N12_GATE7_MIDPOINT_COORDINATE_SOLVE.json).
+
 ## State selection and observable independence — 7 September 2026
 
 The [observable audit](../theory/ae31_c2_state_observable_audit.md) distinguishes
