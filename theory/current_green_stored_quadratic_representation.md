@@ -77,3 +77,17 @@ evaluation order. The optimized midpoint-0 comparison is
 20.1890/17.8936 seconds, compared with 132.2976/106.1959 seconds previously.
 The all-740 scalar correction and all-370 supplemental campaigns are
 required before the complete causal center can be materialized.
+# Reusing unchanged field-output rounding
+
+The scalar covector update leaves every field-output tensor byte-for-byte
+unchanged. Its certificate therefore reuses the original all-output rounding
+bound `E`, after validating the original certificate and the individual raw
+shard hash, and calculates only the updated scalar's rounding bound `e`.
+The new full-tensor bound is `sqrt(E^2 + e^2)`, evaluated at 512 bits.
+The unchanged field contribution is at most `E`; retaining the old scalar
+contribution inside `E` is conservative. No uncertified contribution is
+subtracted. The represented tensor remains exactly the same binary64 array.
+Scalar addition error remains separately evaluated and reported.
+
+This changes the cost of certification, not the raw numerical campaign,
+action, retained tensors, physical error scope, or completion criteria.
