@@ -1,0 +1,137 @@
+{
+  "FULL_BHSM_COMPLETE": false,
+  "action_version": "BHSM-AE-3.1.0",
+  "artifact": "BHSM_AE31_C2_STATE_OBSERVABLE_AUDIT",
+  "claim_boundary": {
+    "FULL_BHSM_COMPLETE": false,
+    "action_selected_state_derived": false,
+    "affine_criterion_applies_to_arbitrary_nonlinear_pole_functional": false,
+    "complex_phase_CAR_family_derived": true,
+    "empirical_input_used": false,
+    "exact_affine_response_criterion_on_this_family_derived": true,
+    "full_Hadamard_class_observable_independence_proved": false,
+    "new_physical_state_or_self_energy_inserted": false,
+    "numerical_outward_certificate": false,
+    "physical_lepton_dressing_invariant_state_independent": false,
+    "physical_lepton_dressing_response_operator_derived": false,
+    "real_angle_only_test_can_miss_state_sensitivity": true,
+    "state_nonuniqueness_alone_excludes_every_observable": false,
+    "test_at_one_covariance_proves_global_state_independence": false
+  },
+  "classification": "EXACT_ALGEBRAIC_CRITERION_WITH_BINARY64_CONTROLS",
+  "controls": {
+    "charge": {
+      "a": 0.0,
+      "affine_difference_formula": "a*sin(theta)^2+sin(2*theta)*Re(exp(i*phase)*b)",
+      "affine_difference_range": [
+        0.0,
+        0.0
+      ],
+      "affine_range_diameter": 0.0,
+      "b_imag": 0.0,
+      "b_real": 0.0,
+      "floating_coefficients_exactly_zero": true,
+      "maximum_reference_tangent_response": 0.0,
+      "physical_promotion": false,
+      "scope": "This four-mode family and an affine functional only"
+    },
+    "identity": {
+      "a": 0.0,
+      "affine_difference_formula": "a*sin(theta)^2+sin(2*theta)*Re(exp(i*phase)*b)",
+      "affine_difference_range": [
+        0.0,
+        0.0
+      ],
+      "affine_range_diameter": 0.0,
+      "b_imag": 0.0,
+      "b_real": 0.0,
+      "floating_coefficients_exactly_zero": true,
+      "maximum_reference_tangent_response": 0.0,
+      "physical_promotion": false,
+      "scope": "This four-mode family and an affine functional only"
+    },
+    "imaginary_mixed_response": {
+      "a": 0.0,
+      "affine_difference_formula": "a*sin(theta)^2+sin(2*theta)*Re(exp(i*phase)*b)",
+      "affine_difference_range": [
+        -1.0,
+        1.0
+      ],
+      "affine_range_diameter": 2.0,
+      "b_imag": 1.0,
+      "b_real": 0.0,
+      "floating_coefficients_exactly_zero": false,
+      "maximum_reference_tangent_response": 2.0,
+      "physical_promotion": false,
+      "scope": "This four-mode family and an affine functional only"
+    },
+    "reference_occupation": {
+      "a": -2.0,
+      "affine_difference_formula": "a*sin(theta)^2+sin(2*theta)*Re(exp(i*phase)*b)",
+      "affine_difference_range": [
+        -2.0,
+        0.0
+      ],
+      "affine_range_diameter": 2.0,
+      "b_imag": 0.0,
+      "b_real": 0.0,
+      "floating_coefficients_exactly_zero": false,
+      "maximum_reference_tangent_response": 0.0,
+      "physical_promotion": false,
+      "scope": "This four-mode family and an affine functional only"
+    }
+  },
+  "controls_are_physical_operators": false,
+  "inputs": {
+    "scripts/materialize_ae31_c2_state_observable_audit.py": "52937677236768D08FE934F6F81BC701D89F0574276E8504D7FC13268AE61C60",
+    "src/bhsm/interface/ae31_c2_fixed_history_state_nonuniqueness.py": "24EED011BB054F6EC3317C4F2D8C8171A8DD0CEE47A17BE22E4993645B42D86E",
+    "src/bhsm/interface/ae31_c2_state_observable_audit.py": "F3804450C463EAD834017BB345FADD197F2952021FF46B4D3A785C100FBA02C5"
+  },
+  "lepton_target": {
+    "covariance_response_operator_available": false,
+    "first_variation": "delta_M_e/M_e-9*delta_M_mu/M_mu+8*delta_M_tau/M_tau",
+    "functional": "log(M_e)-9*log(M_mu)+8*log(M_tau)-54/pi",
+    "numerical_target_used": false,
+    "physical_mass_functionals_defined_here": false
+  },
+  "maximum_sampled_residuals": {
+    "CAR_reality": 4.440892098500626e-16,
+    "affine_formula": 3.191891195797325e-16,
+    "charge": 0.0,
+    "purity": 3.2024329741404473e-16
+  },
+  "nonlinear_counterexample": {
+    "functional": "F(C)=Tr(C^2)",
+    "incorrect_affine_extension_of_reference_gradient_changes_by": -0.5230628825408239,
+    "purpose": "Counterexample to applying an affine finite-change test to a nonlinear functional",
+    "reference_gradient": "2*P0",
+    "reference_value": 2.0,
+    "rotated_value": 2.0000000000000004
+  },
+  "quadratic_causal_control": {
+    "classification": "FIXED_QUADRATIC_CAR_ALGEBRA_CONTROL",
+    "control_energies_are_BHSM_masses": false,
+    "dimensionless_control_energies": [
+      1.0,
+      2.0,
+      -1.0,
+      -2.0
+    ],
+    "interacting_or_composite_response_independence_inferred": false,
+    "retarded_identity": "G_retarded=-i*theta(t-s)*U(t,s), independent of C for this fixed quadratic operator",
+    "retarded_state_difference_norm": 2.0014830212433605e-16,
+    "time_ordered_state_difference_norm": 0.7232308639299241
+  },
+  "sample_grid_is_a_proof": false,
+  "validation": {
+    "charge_control_is_invariant": true,
+    "complex_phase_reveals_real_angle_blind_spot": true,
+    "identity_control_is_invariant": true,
+    "nonlinear_counterexample_verified": true,
+    "numerical_algebra_residuals_small": true,
+    "occupation_control_is_not_invariant": true,
+    "quadratic_retarded_control_does_not_select_time_ordered_state": true,
+    "real_phase_reproduces_retained_covariance": true
+  },
+  "validation_passed": true
+}

@@ -1,5 +1,17 @@
 # Current BHSM status
 
+## State selection and observable independence — 7 September 2026
+
+The [observable audit](../theory/ae31_c2_state_observable_audit.md) distinguishes
+nonuniqueness of the quantum state from indeterminacy of every observable.
+It derives an exact affine-response criterion on a complex four-mode CAR
+covariance family and identifies real-angle and nonlinear-linearization
+pitfalls. The existing real-angle nonuniqueness proof remains valid.
+For a particular physical target, a proof of independence or a controlled
+uniform interval could remove its state ambiguity. Neither has been derived
+for the lepton dressing invariant: its physical response operator remains
+missing. No state, self-energy, photon, or physical mass result is promoted.
+
 ## Critique-sprint domain and mass audit — 7 September 2026
 
 The [dependency audit](BHSM_MASS_MIXING_DEPENDENCY_AUDIT_2026_09_07.md)

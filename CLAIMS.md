@@ -1,5 +1,14 @@
 # BHSM Claim Boundaries
 
+## State ambiguity and observable scope
+
+A nonunique state does not by itself make every observable undetermined.
+The [four-mode response audit](theory/ae31_c2_state_observable_audit.md)
+supplies an exact criterion only for affine functionals on its specified
+covariance family. Passing it at one state or for a frozen nonlinear gradient
+does not prove a physical pole invariant independent of the full Hadamard
+class. No such independence, physical state, or lepton dressing is promoted.
+
 ## Current photon diagnostic qualification
 
 Supported: the frozen AE3 transverse trace fails an exact local-Maxwell
