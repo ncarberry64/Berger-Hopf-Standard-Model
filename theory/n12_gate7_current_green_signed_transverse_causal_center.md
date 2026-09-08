@@ -238,6 +238,11 @@ map; it does not enclose construction of that map from physical ball inputs,
 propagation of coordinate error through Hessian blocks, or the neighborhood
 remainder. Those remain separate required outward operands.
 
+The [stored quadratic correction](current_green_stored_quadratic_representation.md)
+is required before consuming the recovered UU and endpoint tensors. It
+repairs the raw scalar covector units, preserves all raw data, and supplies
+an explicit symmetric center. Its evaluation error remains an outward operand.
+
 The separate [coordinate pullback verifier](n12_gate7_midpoint_coordinate_pullback_error.md)
 now implements propagation of that stored-coordinate error through all four
 tensor blocks at 512-bit Arb precision. Its all-370 production execution awaits

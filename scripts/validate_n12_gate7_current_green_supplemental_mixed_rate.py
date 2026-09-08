@@ -23,6 +23,7 @@ sys.path.insert(0, str(ROOT / "scripts"))
 import derive_n12_gate7_current_green_full_transverse_quadratic_center as center  # noqa: E402
 import derive_n12_gate7_current_green_signed_transverse_tensor_recovery as recovery  # noqa: E402
 import derive_n12_gate7_current_green_supplemental_mixed_rate as supplemental  # noqa: E402
+import derive_n12_gate7_current_green_scalar_covector_correction as covector_correction
 from derive_n12_gate7_current_green_supplemental_mixed_rate import (  # noqa: E402
     mixed_rate_map,
 )
@@ -74,8 +75,11 @@ def validate(interval: int, left: int, rights: list[int]) -> dict[str, object]:
     if not recovery._valid(path, "midpoint", interval, fingerprint):
         raise RuntimeError(f"validated signed midpoint shard required: {interval}")
     with np.load(path) as source:
-        tensor = np.asarray(source["quadratic_tensor"], dtype=float)
+        raw_tensor = np.asarray(source["quadratic_tensor"], dtype=float)
         basis = np.asarray(source["transverse_basis"], dtype=float)
+    tensor, corrected_basis = covector_correction.corrected_tensor('midpoint', interval)
+    if not np.array_equal(basis, corrected_basis):
+        raise RuntimeError('Covector correction basis changed')
     inputs = center._load_inputs()
     states, descriptors, tangents = inputs["midpoint"][:3]
     directions = center._frame(tangents[interval]) @ basis
@@ -87,6 +91,7 @@ def validate(interval: int, left: int, rights: list[int]) -> dict[str, object]:
     )
     elapsed = time.perf_counter() - started
     comparison = _comparison(actual, tensor[:, left, rights])
+    raw_comparison = _comparison(actual, raw_tensor[:, left, rights])
     diagnostic_values = {
         "base_response_residual_2_norm": diagnostics.base_response_residual_2_norm,
         "left_first_response_relative_residual": diagnostics.left_first_response_relative_residual,
@@ -101,6 +106,8 @@ def validate(interval: int, left: int, rights: list[int]) -> dict[str, object]:
     sources = (
         path, THIS_SCRIPT, Path(supplemental.__file__).resolve(),
         Path(center.__file__).resolve(), Path(recovery.__file__).resolve(),
+        Path(covector_correction.__file__).resolve(),
+        covector_correction._path('midpoint', interval),
     )
     return {
         "artifact": "BHSM_N12_GATE7_SUPPLEMENTAL_MIXED_RATE_UU_VALIDATION",
@@ -111,6 +118,8 @@ def validate(interval: int, left: int, rights: list[int]) -> dict[str, object]:
         "right_indices": rights,
         "elapsed_seconds": elapsed,
         "comparison": comparison,
+        "uncorrected_raw_comparison": raw_comparison,
+        "scalar_covector_correction_applied": True,
         "diagnostics": diagnostic_values,
         "recovery_campaign_fingerprint": fingerprint,
         "inputs": {_relative(source): _sha(source) for source in sources},

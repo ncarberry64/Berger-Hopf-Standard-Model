@@ -1,0 +1,56 @@
+{
+  "FULL_BHSM_COMPLETE": false,
+  "aggregation_precision_bits": 512,
+  "artifact": "BHSM_N12_GATE7_CURRENT_GREEN_SIGNED_TRANSVERSE_TENSOR_RECOVERY",
+  "authority": "COMPLETE_BINARY64_SIGNED_CENTER_TENSOR_CACHE_VALIDATED_AGAINST_THE_PUBLISHED_512_BIT_AGGREGATED_NORM_CAMPAIGN",
+  "campaign_fingerprint": "A1F06E0348C4DB39B5FCCA689872C595E3C9E19C5D09345946E0C1ECD8B743CA",
+  "claim_boundary": {
+    "BHSM_PHYSICAL_BACKGROUND_AUTHORITY": false,
+    "FULL_BHSM_COMPLETE": false,
+    "GATE7_CLOSED": false,
+    "OUTWARD_TRANSVERSE_REMAINDER_DERIVED": false,
+    "SIGNED_CAUSAL_TRANSVERSE_CENTER_OPERATOR_DERIVED": false,
+    "SIGNED_CENTER_TENSORS_RECOVERED": true
+  },
+  "coverage": {
+    "augmented_output_dimension": 99,
+    "current_Green_complement_dimension": 73,
+    "endpoint_nodes": "1_THROUGH_370",
+    "midpoint_intervals": "0_THROUGH_369"
+  },
+  "data": "artifacts/flagship_integration/BHSM_N12_GATE7_CURRENT_GREEN_SIGNED_TRANSVERSE_TENSOR_RECOVERY.npz",
+  "data_SHA256": "841FE1E426F926F293886CB1760A170D8A3B6BE213E1B83B48F4C9D68ABD2FF8",
+  "exact_next_calculation": "COMPOSE_THE_SIGNED_ENDPOINT_MIDPOINT_INCIDENCE_REDUCED_SOLVE_AND_FROZEN_CAUSAL_PRODUCTS_BEFORE_TAKING_TRANSVERSE_NORMS",
+  "inputs": {
+    "artifacts/current_semantics/BHSM_N12_GATE7_CURRENT_GREEN_SIGNED_TENSOR_RECOVERY_COMPUTE_JUSTIFICATION.json": "5841265F8417D3978E01CFACFEEB435EA11C35E5E482C77757A0D7CDE05D8713",
+    "artifacts/flagship_integration/BHSM_N12_GATE7_CURRENT_GREEN_FULL_TRANSVERSE_QUADRATIC_CENTER.json": "69944D8BB7F33B2B44877F588658F3CC6E16A9DF2D050F8427EAADB7ECF73B94",
+    "scripts/certify_n12_gate7_current_green_signed_transverse_tensor_recovery.py": "136F174B09813D1C5F16B7FCDA5854789AA58C8A587F173419A96AB5EEEEC362",
+    "scripts/derive_n12_gate7_current_green_signed_transverse_tensor_recovery.py": "0CC81AAC7F06A2D7456138B65F346DBA78F16049A5514181575283AD417A1CCC",
+    "theory/n12_gate7_current_green_signed_transverse_tensor_recovery.md": "6A5D56D1C4AEFA80E878231D1317BE9E69E47956894F9D3F197322554437B928"
+  },
+  "maximum_basis_axis_residual_2_norm": 6.578013139645549e-16,
+  "maximum_basis_orthonormal_residual_2_norm": 9.9920200619828e-16,
+  "maximum_output_Frobenius_relative_residual": 1.2714085806812622e-13,
+  "maximum_tensor_symmetry_relative_Frobenius_residual": 8.219560133856679e-13,
+  "maximum_total_Frobenius_relative_residual": 1.297421119460532e-15,
+  "measured_CPU_hours": 227.75147311958338,
+  "shard_manifest_SHA256": "3CAA7E58E1214281F7BA148D6B665A8DE5627E4E3365A472D053AEEEC66734A2",
+  "status": "ALL_740_SIGNED_TRANSVERSE_CENTER_TENSORS_RECOVERED",
+  "validation": {
+    "512_bit_Arb_CPU_aggregation_used": true,
+    "FULL_BHSM_COMPLETE": false,
+    "all_370_defined_axis_endpoint_tensors_recovered": true,
+    "all_370_midpoint_tensors_recovered": true,
+    "all_exported_summary_values_finite": true,
+    "all_persisted_transverse_bases_annihilate_their_Green_axes": true,
+    "all_persisted_transverse_bases_are_orthonormal": true,
+    "all_recovered_output_norms_reproduce_published_norms": true,
+    "all_recovered_tensors_are_symmetric_to_binary64_roundoff": false,
+    "all_recovered_total_norms_reproduce_published_norms": true,
+    "no_action_center_mesh_frame_axis_parameter_or_precision_changed": true,
+    "one_recovery_campaign_fingerprint_retained": true,
+    "outward_remainder_and_Gate7_not_claimed": true,
+    "raw_tensor_cache_not_committed_as_release_payload": true
+  },
+  "validation_passed": false
+}

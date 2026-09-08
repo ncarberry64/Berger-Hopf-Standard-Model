@@ -1,5 +1,10 @@
 # Current-Green full transverse quadratic majorant
 
+The recovered raw tensors require the separately retained
+[scalar covector correction and symmetric representation](current_green_stored_quadratic_representation.md)
+identified on 2026-09-08. Their original norm summaries remain provenance
+records; current signed center composition requires the corrected tensors.
+
 ## Obligation
 
 The certified mixed Green/transverse causal operator does not control the

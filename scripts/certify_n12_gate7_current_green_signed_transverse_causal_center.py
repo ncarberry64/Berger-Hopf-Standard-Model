@@ -32,6 +32,9 @@ import certify_n12_gate7_accepted_replay_center_outward_74d as cert  # noqa: E40
 import derive_n12_gate7_current_green_full_transverse_quadratic_center as center  # noqa: E402
 import derive_n12_gate7_current_green_signed_transverse_tensor_recovery as recovery  # noqa: E402
 import certify_n12_gate7_current_green_signed_transverse_tensor_recovery as recovery_aggregate  # noqa: E402
+import certify_n12_gate7_symmetric_quadratic_representatives as quadratic_representatives  # noqa: E402
+import certify_n12_gate7_current_green_scalar_covector_correction as scalar_correction_certificate
+from bhsm.interface.symmetric_quadratic_center import symmetric_center  # noqa: E402
 import certify_n12_gate7_current_green_mixed_hs_causal_transport as mixed_hs  # noqa: E402
 import certify_n12_gate7_current_green_supplemental_midpoint_blocks as supplemental_certificate  # noqa: E402
 import derive_n12_gate7_current_green_supplemental_midpoint_blocks as supplemental  # noqa: E402
@@ -233,12 +236,8 @@ def _relative(path: Path) -> str:
 
 
 def _tensor(kind: str, index: int) -> tuple[np.ndarray, np.ndarray]:
-    path = recovery.WORK / f"{kind}_{index:03d}.npz"
-    with np.load(path) as source:
-        return (
-            np.asarray(source["quadratic_tensor"], dtype=float),
-            np.asarray(source["transverse_basis"], dtype=float),
-        )
+    tensor, basis = scalar_correction_certificate.correction.corrected_tensor(kind, index)
+    return symmetric_center(tensor), basis
 
 
 def _supplemental_midpoint_pullback(
@@ -594,6 +593,12 @@ def build_payload() -> dict[str, object]:
         Path(supplemental.__file__).resolve(),
         Path(supplemental_certificate.__file__).resolve(),
         ROOT / "src/bhsm/interface/current_green_supplemental_midpoint.py",
+        quadratic_representatives.RESULT,
+        Path(quadratic_representatives.__file__).resolve(),
+        ROOT / "src/bhsm/interface/symmetric_quadratic_center.py",
+        scalar_correction_certificate.RESULT,
+        Path(scalar_correction_certificate.__file__),
+        Path(scalar_correction_certificate.correction.__file__),
     )
     tracked_inputs += tuple(
         MIXED_WORK / f"{kind}_{index:03d}.npz"
@@ -643,9 +648,12 @@ def build_payload() -> dict[str, object]:
     if not (
         justification.get("validation_passed") is True
         and justification.get("campaign_authorized") is True
-        and recovered.get("validation_passed") is True
     ):
-        raise RuntimeError("validated signed recovery aggregate required")
+        raise RuntimeError("validated signed recovery authorization required")
+    represented = json.loads(quadratic_representatives.RESULT.read_text(encoding="utf-8"))
+    quadratic_representatives.validate_for_consumption(recovered, represented)
+    corrected = json.loads(scalar_correction_certificate.RESULT.read_text(encoding="utf-8"))
+    scalar_correction_certificate.validate_for_consumption(corrected)
     shard_paths = (
         recovery_aggregate._paths("endpoint")
         + recovery_aggregate._paths("midpoint")
@@ -771,6 +779,16 @@ def build_payload() -> dict[str, object]:
     return {
         "artifact": "BHSM_N12_GATE7_CURRENT_GREEN_SIGNED_TRANSVERSE_CAUSAL_CENTER",
         "status": "SIGNED_TRANSVERSE_CAUSAL_CENTER_COMPOSED",
+        "quadratic_representation": {
+            "certificate": _relative(quadratic_representatives.RESULT),
+            "raw_skew_failure_count": represented['raw_skew_failure_count'],
+            "maximum_local_representation_rounding_Frobenius_upper": represented['maximum_projection_rounding_Frobenius_upper'],
+            "scalar_covector_correction_certificate": _relative(scalar_correction_certificate.RESULT),
+            "corrected_representation_rounding_Frobenius_upper": corrected['maximum_projection_rounding_Frobenius_upper'],
+            "scalar_addition_rounding_Frobenius_upper": corrected['maximum_scalar_addition_rounding_Frobenius_upper'],
+            "representation_rounding_through_causal_maps_enclosed": False,
+            "physical_Hessian_error_enclosed": False,
+        },
         "authority": (
             "COMPLETE_BINARY64_SIGNED_CENTER_HERMITE_SIMPSON_CAUSAL_"
             "COMPOSITION_NOT_OUTWARD_NEIGHBORHOOD_AUTHORITY"
