@@ -31,6 +31,15 @@ def validate_point(record,index):
         raise RuntimeError('matching stored midpoint construction certificate required')
 
 
+def match_prior_operands(record,operands,output):
+    # The earlier certificate hashes little-endian array bytes only. The new
+    # physical cache hashes shape plus bytes. Verify each under its own schema.
+    historical_hash=prior.coordinate.old.coordinate._array_hash
+    if ({k:historical_hash(v) for k,v in operands.items()}!=record['operand_binary64_SHA256']
+            or historical_hash(output)!=record['output_map_SHA256']):
+        raise RuntimeError('kinematic and original coordinate operands differ')
+
+
 def build_payload():
     # Reuse all existing certificate/operand checks; preserve the prior artifact.
     old=prior.build_payload()
@@ -80,11 +89,9 @@ def build_payload():
             expected=dict(basis=values['basis'],target=arrays['stored_target'],
                 approximate_coordinates=x,retained_retained=q[:,:73,:73],
                 complement_retained=q[:,73:,:73],complement_complement=q[:,73:,73:])
-            if {k:construction.campaign.array_sha(v) for k,v in expected.items()}!=coordinate_row['operand_binary64_SHA256']:
-                raise RuntimeError('kinematic and original coordinate operands differ')
-            if (construction.campaign.array_sha(l)!=record['output_map_SHA256']
-                    or record['output_map_SHA256']!=coordinate_row['output_map_SHA256']):
-                raise RuntimeError('kinematic and original output maps differ')
+            match_prior_operands(coordinate_row,expected,l)
+            if construction.campaign.array_sha(l)!=record['output_map_SHA256']:
+                raise RuntimeError('kinematic output map changed')
             # load_inputs selects physical Arb256; restore this composition's precision.
             ctx.prec=512
             bound=record['construction']['combined_construction_and_solve_error']
@@ -117,7 +124,7 @@ def build_payload():
                 combined_local_coefficient_upper=resolved._float_upper(local)))
             if (index+1)%50==0:print(json.dumps(dict(kinematic_composition_intervals=index+1)),flush=True)
         with np.load(prior.center.DATA) as source:maps=source['causal_maps_center'].copy()
-        if construction.campaign.array_sha(maps)!=old['causal_maps_SHA256']:raise RuntimeError('causal maps differ')
+        if prior.maps._array_hash(maps)!=old['causal_maps_SHA256']:raise RuntimeError('causal maps differ')
         transport=causal.transport_local_errors(maps,np.array([r['combined_local_coefficient_upper'] for r in rows]))
         errors=dict(assembly=old['stored_source_error_coefficients']['assembly'],
             storage=old['stored_source_error_coefficients']['storage'],
