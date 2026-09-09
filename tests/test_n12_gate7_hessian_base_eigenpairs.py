@@ -90,3 +90,11 @@ def test_missing_index_evidence_cannot_be_reused(base_campaign):
     path.write_text(json.dumps(record))
     with pytest.raises(RuntimeError, match='cache binding failed'):
         producer.worker('bulk', 13, 'fingerprint', {})
+
+
+def test_changed_proof_source_blocks_base_evaluation(base_campaign, monkeypatch):
+    _, calls, _ = base_campaign
+    monkeypatch.setattr(producer, 'proof_sources', lambda: {'primitive': 'new'})
+    with pytest.raises(RuntimeError, match='proof source changed'):
+        producer.worker('bulk', 13, 'fingerprint', {'primitive': 'old'})
+    assert calls == []

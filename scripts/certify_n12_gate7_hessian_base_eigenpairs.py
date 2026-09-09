@@ -50,7 +50,9 @@ def install(name):
 
 
 def proof_sources():
-    paths = [Path(__file__), Path(hs.__file__), Path(inclusion.__file__), Path(inertia.__file__)]
+    paths = [Path(__file__), Path(hs.__file__), Path(inclusion.__file__), Path(inertia.__file__),
+             Path(inclusion._float_upper.__code__.co_filename),
+             Path(inertia._real_binary64.__code__.co_filename)]
     return {p.relative_to(ROOT).as_posix(): sha(p) for p in paths}
 
 
