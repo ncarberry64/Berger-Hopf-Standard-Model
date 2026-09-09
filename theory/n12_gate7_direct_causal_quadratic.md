@@ -23,6 +23,8 @@ input indices in Q10 before joining Q01+transpose_inputs(Q10). LT retains
 two distinct ordered terms: l_j t_(j+1) and l_(j+1) t_j. The TL family is
 supplied by symmetry of the complete physical Hessian. Thus the final
 two-radius quadratic majorant is LL*rL^2 + 2*LT*rL*rT + TT*rT^2.
+LL and TT evaluate quadratic forms on a single input history; LT evaluates
+the bilinear cross term between the longitudinal and transverse histories.
 
 The algorithm streams one input term through all later output nodes. Only
 two consecutive local interval records and one transported tensor are

@@ -57,10 +57,12 @@ def test_vector_recurrence_interval_corners_and_nonunit_output_axes(family):
     result=bound_causal_quadratic_family(maps,axes,blocks.__getitem__,family,0,precision=128,block_size=2)
     bound=[arb(v) for v in result['frozen_inverse_quadratic_coefficients_upper']]
     # Deterministic input corners for a unit block-sup ball. For LL use
-    # scalar +/-1; LT one scalar family and one vector family; TT two vectors.
+    # scalar +/-1; LT one scalar family and one vector family. LL and TT
+    # evaluate the quadratic form of one history, while LT is bilinear.
     for signs in product((-1,1),repeat=6):
         us=[None]+[([arb(signs[j])] if family!='TT' else [arb(signs[j])/2,arb(signs[j+3])/2]) for j in range(3)]
         vs=[None]+[([arb(signs[j+3])] if family=='LL' else [arb(signs[j+3])/2,arb(signs[j])/2]) for j in range(3)]
+        if family in ('LL','TT'):vs=us
         for corner in (-1,1):
             z=arb_mat(n,1)
             for i in range(3):
