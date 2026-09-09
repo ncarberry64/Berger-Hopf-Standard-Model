@@ -50,6 +50,18 @@
   (`frontend/src/assets/bhsm-symbol.svg`). That project identifies the mark as
   an original repository asset and publishes it under the MIT License.
 - Lucide interface icons are supplied by the declared `lucide-react` package.
+- The visitor-started museum soundtrack alternates two tracks by PaulYudin:
+  [Inspiring Epic](https://pixabay.com/music/main-title-inspiring-epic-164829/)
+  and [Epic Cinematic Victory](https://pixabay.com/music/main-title-epic-cinematic-victory-155790/).
+  Both MP3 files were downloaded from their official Pixabay CDN links on
+  2026-09-09 and are used under the Pixabay Content License as background audio
+  within this larger museum experience. They are not offered as a standalone
+  audio collection. The tracks are marked Content ID Registered; the public
+  source records and creator credit are retained in the player and here.
+  `paulyudin-inspiring-epic-164829.mp3` has SHA-256
+  `30130c288ba87afd8e0c5ec3c67d102e1e4731d8465945ca0d3c8b564f1ad5a6`;
+  `paulyudin-epic-cinematic-victory-155790.mp3` has SHA-256
+  `5ffa8e361068f0e3d2df26647a70d31da6a846b2c4057e859f7c3414efd1105f`.
 
 - The permanent science collection is generated from existing prediction,
   SM-bundle and current-system artifacts by `../tools/materialize_museum_science.py`.

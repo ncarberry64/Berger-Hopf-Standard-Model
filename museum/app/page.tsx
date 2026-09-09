@@ -14,6 +14,7 @@ import { PrototypeScience, UnificationConsole } from './prototype-science';
 import { CosmicEnclosure } from './cosmic-enclosure';
 import { CMSExplorer } from './cms-explorer';
 import { EngineHero, ScienceConsole } from './science-console';
+import { MuseumSoundtrack } from './museum-soundtrack';
 
 const ASSET_REVISION = 'science-first-2026-09-07';
 const researchDisplays = exhibits.filter((row) =>
@@ -94,6 +95,7 @@ export default function Home() {
           <a href={REPOSITORY}>Academic repository ↗</a>
         </nav>
       </header>
+      <MuseumSoundtrack />
       <EngineHero motion={motion} setMotion={setMotion} />
       <PrototypeScience motion={motion} setMotion={setMotion} />
       <ScienceGallery motion={motion} />
