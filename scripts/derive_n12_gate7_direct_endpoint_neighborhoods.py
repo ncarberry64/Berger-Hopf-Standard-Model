@@ -71,6 +71,7 @@ def build_payload():
         residual.foundation.coordinate._verified_inputs(dict(inputs=inputs))
         df.values.verify_binding(dict(files=raw))
         record = dict(algorithm=ALGORITHM, precision_bits=512,
+            runtime=dict(python=sys.version, numpy=np.__version__, python_flint=df.values.flint.__version__),
             scope='FROZEN_AFFINE_TRIAL_ENDPOINT_DOMAIN_GEOMETRY', endpoints=list(range(371)), shape=[371, 99],
             radii_exact_binary64_rationals=[str(v.fmpq()) for v in radii],
             radii_status='TRIAL_RADII_FROM_OLD_CONDITIONAL_POLYNOMIAL_NOT_RECERTIFIED',
