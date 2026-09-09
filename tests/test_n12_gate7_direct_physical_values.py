@@ -26,8 +26,10 @@ def tiny_campaign(tmp_path, monkeypatch):
     calls = []
     from contextlib import contextmanager
     @contextmanager
-    def verified(cert, checks):
-        checks.append(dict(validation_passed=True))
+    def verified(cert, checks, *, expected_index):
+        assert expected_index == 24
+        checks.append(dict(validation_passed=True, selected_zero_based_index_verified=24,
+                           spectral_index_verification=dict(validation_passed=True)))
         yield
     monkeypatch.setattr(producer.hs, 'verified_eigenline', verified)
     def rate(state, descriptor, weights, reference, directions):

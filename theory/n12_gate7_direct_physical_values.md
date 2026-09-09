@@ -17,9 +17,11 @@ the full midpoint enclosure. Direct evaluation includes the full nonlinear
 midpoint displacement; no Taylor remainder is discarded.
 
 Every endpoint and midpoint evaluation independently verifies the proposed
-normalized eigenpair with `verify_eigenpair_box`. The floating spectral gap
-only helps propose the box. A strict positive overlap fixes orientation
-relative to the stored reference. The same original rate graph, action jets,
+normalized eigenpair with `verify_eigenpair_box`. Version V2 also verifies
+that its eigenvalue interval contains exactly the zero-based index 24 of
+the retained real symmetric Hessian, using two outward inertia counts.
+The floating spectral gap only helps propose the box. A strict positive
+overlap fixes orientation relative to the stored reference. The same original rate graph, action jets,
 quadrature, coefficients, and bordered verified solve are used. No factored
 integrand designed for point-valued states is applied to interval states.
 
@@ -45,9 +47,9 @@ python scripts/derive_n12_gate7_direct_physical_values.py --all-points --workers
 
 Do not overlap this pool with an existing six-worker Hessian pool.
 
-These values remain conditional on the selected eigenpair branch. Local
-inclusion and reference orientation do not prove spectral index, branch
-continuation, the physical quotient, or the complete operator oracle. A
+These values remain conditional on the physical interpretation of the
+selected eigenpair branch. Pointwise inclusion, verified index and reference
+orientation do not prove branch continuation, the physical quotient, or the complete operator oracle. A
 physical `Y` certificate additionally requires the exact residual assembly,
 signed causal propagation and all associated arithmetic error bounds.
 This campaign does not supply `Z1`, central/mixed/neighborhood bounds or
