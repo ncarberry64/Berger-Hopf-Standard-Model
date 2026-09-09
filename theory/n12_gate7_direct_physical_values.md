@@ -25,6 +25,20 @@ overlap fixes orientation relative to the stored reference. The same original ra
 quadrature, coefficients, and bordered verified solve are used. No factored
 integrand designed for point-valued states is applied to interval states.
 
+Version V3 first normalizes the proposed vector center in Arb and recenters
+the proposal at that approximation, outwardly preserving its vector radii
+and leaving the eigenvalue box unchanged. The independent inclusion proves
+this new box from scratch. This is necessary because an eigen-equation
+residual alone cannot bound the normalization defect: in the failed V2
+endpoint-4 run the squared-norm defect was about `4.60e-117`, while the vector
+radii were about `6.29e-125`. Normalizing the center changed its independently
+verified inclusion ratio from about `1.44e7` (failure) to `7.73e-10` (success).
+No failed certificate is accepted or reinterpreted. Historical common-base
+verification keeps its original proposal unless explicitly requested
+otherwise; previously computed Hessian rows are not recertified by this fix.
+The legacy gap/residual diagnostics remain proposal diagnostics, not proof
+inputs. Index, orientation, and normalized inclusion remain mandatory.
+
 The producer uses a separate cache, exact rational midpoint/radius exports,
 source/input and runtime bindings, and hashes of the two newly computed
 endpoint artifacts for each midpoint. Restoring rational balls may inflate

@@ -26,8 +26,9 @@ def tiny_campaign(tmp_path, monkeypatch):
     calls = []
     from contextlib import contextmanager
     @contextmanager
-    def verified(cert, checks, *, expected_index):
+    def verified(cert, checks, *, expected_index, normalize_proposal_center):
         assert expected_index == 24
+        assert normalize_proposal_center is True
         checks.append(dict(validation_passed=True, selected_zero_based_index_verified=24,
                            spectral_index_verification=dict(validation_passed=True)))
         yield

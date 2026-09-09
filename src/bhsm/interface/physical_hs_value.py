@@ -65,13 +65,27 @@ def restore_balls(midpoints, radii):
 
 
 @contextmanager
-def verified_eigenline(cert, checks, *, expected_index=None):
+def verified_eigenline(cert, checks, *, expected_index=None, normalize_proposal_center=False):
     """Process-local proposal verification; restore parent even on failure."""
     original = cert._eigenline
 
     def checked(hessian, midpoint, reference):
         result = original(hessian, midpoint, reference)
+        if normalize_proposal_center:
+            # A small eigen-equation residual does not bound normalization
+            # error. Recenter only the proposal, outwardly preserving vector radii
+            # and eigenvalue box. The independent inclusion below must prove
+            # the resulting NEW box; no old-box certificate is transferred.
+            center = [v.mid() for v in result[0]]
+            norm = sum((v*v for v in center), arb(0)).sqrt()
+            if not norm.is_finite() or not norm > 0:
+                raise ArithmeticError('nonzero finite eigenvector proposal center required')
+            vector = np.array([(v/norm).mid()+arb(0, old.rad())
+                for v, old in zip(center, result[0], strict=True)], dtype=object)
+            result = (vector, *result[1:])
         report = verify_eigenpair_box(hessian[cert.QDIM:, cert.QDIM:], result[0], result[1])
+        if normalize_proposal_center:
+            report['proposal_center_normalized_before_verification'] = True
         if not report['validation_passed']:
             error = ArithmeticError('normalized eigenpair inclusion failed')
             error.eigenpair_inclusion = report
