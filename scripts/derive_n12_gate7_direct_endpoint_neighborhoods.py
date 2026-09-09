@@ -42,6 +42,7 @@ def build_payload():
         raw = {}
         sources = dict(expected['files'])
         for path in (Path(__file__), THEORY, TRIAL_RADII, Path(neighborhood.__file__),
+                     Path(neighborhood.preserve_ball.__code__.co_filename),
                      residual.foundation.RESULT, Path(residual.__file__)):
             residual.merge(sources, {df.file_key(path): df.values.sha(path)})
         manifest = json.loads((df.values.WORK/'manifest.json').read_text())
