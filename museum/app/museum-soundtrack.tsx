@@ -1,7 +1,7 @@
 'use client';
 
 import { Music2, Pause, Play, Volume2, VolumeX } from 'lucide-react';
-import { useRef, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 
 const TRACKS = [
   {
@@ -22,6 +22,35 @@ export function MuseumSoundtrack() {
   const [playing, setPlaying] = useState(false);
   const [muted, setMuted] = useState(false);
   const track = TRACKS[trackIndex];
+
+  useEffect(() => {
+    const firstTrack = audioRefs.current[0];
+    if (!firstTrack) return;
+
+    function attemptPlayback() {
+      void firstTrack?.play().catch(() => {
+        setPlaying(false);
+      });
+    }
+
+    function removeInteractionFallback() {
+      window.removeEventListener('pointerdown', startAfterInteraction, true);
+      window.removeEventListener('keydown', startAfterInteraction, true);
+      window.removeEventListener('touchstart', startAfterInteraction, true);
+    }
+
+    function startAfterInteraction() {
+      attemptPlayback();
+      removeInteractionFallback();
+    }
+
+    attemptPlayback();
+    window.addEventListener('pointerdown', startAfterInteraction, true);
+    window.addEventListener('keydown', startAfterInteraction, true);
+    window.addEventListener('touchstart', startAfterInteraction, true);
+
+    return removeInteractionFallback;
+  }, []);
 
   async function play(index: number) {
     const audio = audioRefs.current[index];
@@ -76,6 +105,9 @@ export function MuseumSoundtrack() {
           }}
           src={item.source}
           preload="auto"
+          autoPlay={index === 0}
+          onPlay={() => setPlaying(true)}
+          onPause={() => setPlaying(false)}
           onEnded={() => advancePlaylist(index)}
         />
       ))}
