@@ -86,3 +86,40 @@ def test_value_wrapper_checks_the_requested_spectral_index():
             cert._eigenline(matrix, matrix, [1., 0.])
     assert failure.value.eigenpair_inclusion['spectral_index_verification']['validation_passed'] is False
     assert cert._eigenline is proposal
+
+
+def test_normalization_defect_is_recentered_only_when_explicitly_requested():
+    previous = ctx.prec
+    ctx.prec = 256
+    try:
+        def proposal(*args):
+            return np.array([arb(1)+arb(2)**-80+arb(0, arb(2)**-120),
+                arb(0, arb(2)**-120)]), arb(1, arb(2)**-110), 2., 0.
+        cert = SimpleNamespace(_eigenline=proposal, QDIM=0)
+        matrix = np.diag([1., 3.])
+        with pytest.raises(ArithmeticError, match='inclusion'):
+            with hs.verified_eigenline(cert, []):
+                cert._eigenline(matrix, matrix, [1., 0.])
+        checks = []
+        with hs.verified_eigenline(cert, checks, expected_index=0, normalize_proposal_center=True):
+            result = cert._eigenline(matrix, matrix, [1., 0.])
+        assert result[0][0].contains(1)
+        assert checks[0]['validation_passed']
+        assert checks[0]['proposal_center_normalized_before_verification']
+        assert checks[0]['selected_zero_based_index_verified'] == 0
+        assert all(old.rad() <= new.rad() < 2*old.rad()
+            for new, old in zip(result[0], proposal()[0]))
+        assert cert._eigenline is proposal
+    finally:
+        ctx.prec = previous
+
+
+@pytest.mark.parametrize('vector,eigenvalue', [([0., 0.], 1.), ([2., 0.], 2.)])
+def test_normalizing_proposal_cannot_bypass_invalid_eigenpair(vector, eigenvalue):
+    def proposal(*args):
+        return np.array([arb(v, '1e-5') for v in vector]), arb(eigenvalue, '1e-5'), 2., 0.
+    cert = SimpleNamespace(_eigenline=proposal, QDIM=0)
+    with pytest.raises(ArithmeticError):
+        with hs.verified_eigenline(cert, [], normalize_proposal_center=True):
+            cert._eigenline(np.diag([1., 3.]), None, [1., 0.])
+    assert cert._eigenline is proposal
