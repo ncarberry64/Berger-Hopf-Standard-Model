@@ -27,6 +27,20 @@ def merge(inputs, additional):
         inputs[name] = digest
 
 
+def merge_verified_raw_sources(inputs, raw_inputs, additional):
+    """Keep raw-byte attestations alongside the legacy text-normalized map.
+
+    Verify raw bytes before deriving a normalized digest. Neither convention
+    substitutes for the other, and a conflicting earlier binding is retained.
+    """
+    values.verify_binding(dict(files=additional))
+    new_raw, new_normalized = dict(raw_inputs), dict(inputs)
+    merge(new_raw, additional)
+    merge(new_normalized, {name: center._sha(ROOT/name) for name in additional})
+    inputs.update(new_normalized)
+    raw_inputs.update(new_raw)
+
+
 def load_foundation():
     record = json.loads(foundation.RESULT.read_text())
     if (record.get('artifact') != 'BHSM_N12_GATE7_STORED_CAUSAL_ARITHMETIC_ENVELOPE'
@@ -84,7 +98,8 @@ def build_payload():
     try:
         base, inputs, maps, axes = load_foundation()
         endpoints, midpoints, value_inputs = load_all_values()
-        merge(inputs, value_inputs)
+        raw_inputs = {}
+        merge_verified_raw_sources(inputs, raw_inputs, value_inputs)
         if values.cert.ENDPOINT != center.ENDPOINT:
             raise RuntimeError('physical value and residual endpoint sources differ')
         x, w, s, _, steps = values.operands()
@@ -107,11 +122,14 @@ def build_payload():
                      foundation.RESULT, Path(foundation.maps.__file__),
                      Path(residual.transport_local_errors.__code__.co_filename),
                      Path(residual.combine_stored_causal_errors.__code__.co_filename)):
-            merge(inputs, {path.relative_to(ROOT).as_posix(): values.sha(path)})
+            merge_verified_raw_sources(inputs, raw_inputs, {path.relative_to(ROOT).as_posix(): values.sha(path)})
         foundation.coordinate._verified_inputs(dict(inputs=inputs))
+        values.verify_binding(dict(files=raw_inputs))
         return dict(artifact='BHSM_N12_GATE7_DIRECT_PHYSICAL_VALUE_RESIDUAL_ENVELOPE',
             scope=response['scope'], coverage=dict(intervals=370, endpoints=371, direct_values=741, complete=True),
-            inputs=inputs, causal_maps_SHA256=base['causal_maps_SHA256'], axes_SHA256=base['axes_SHA256'],
+            inputs=inputs, input_hash_convention='SHA256_CRLF_TO_LF_FOR_JSON_MD_PY',
+            raw_input_SHA256=raw_inputs, raw_input_hash_convention='SHA256_EXACT_FILE_BYTES',
+            causal_maps_SHA256=base['causal_maps_SHA256'], axes_SHA256=base['axes_SHA256'],
             response=response, validation_passed=True,
             claim_boundary=dict(selected_branch_finite_history_residual_enclosed=True,
                 endpoint_product_rounding_enclosed=True, actual_HS_midpoint_rates_used=True,

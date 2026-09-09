@@ -53,3 +53,55 @@ def test_common_operand_bindings_cannot_be_overwritten():
     with pytest.raises(RuntimeError, match='inconsistent residual source'):
         consumer.merge(existing, {'input': 'B'})
     assert existing == {'input': 'A'}
+
+
+@pytest.fixture
+def crlf_source(tmp_path, monkeypatch):
+    monkeypatch.setattr(consumer, 'ROOT', tmp_path)
+    monkeypatch.setattr(consumer.values, 'ROOT', tmp_path)
+    path = tmp_path/'source.py'
+    path.write_bytes(b'x = 1\r\n')
+    return path
+
+
+def test_raw_and_normalized_hashes_are_retained_as_distinct_attestations(crlf_source):
+    path=crlf_source
+    normalized={'source.py':consumer.center._sha(path)}
+    raw={}
+    supplied={'source.py':consumer.values.sha(path)}
+    assert supplied['source.py'] != normalized['source.py']
+    consumer.merge_verified_raw_sources(normalized,raw,supplied)
+    assert raw==supplied
+    assert normalized['source.py']==consumer.center._sha(path)
+
+
+def test_line_ending_change_does_not_bypass_raw_byte_attestation(crlf_source):
+    path=crlf_source
+    normalized={'source.py':consumer.center._sha(path)}
+    supplied={'source.py':consumer.values.sha(path)}
+    path.write_bytes(b'x = 1\n')
+    assert normalized['source.py']==consumer.center._sha(path)
+    raw={}
+    with pytest.raises(RuntimeError,match='input changed'):
+        consumer.merge_verified_raw_sources(normalized,raw,supplied)
+    assert not raw
+
+
+def test_semantic_source_change_cannot_replace_legacy_binding(crlf_source):
+    path=crlf_source
+    normalized={'source.py':consumer.center._sha(path)}
+    original=dict(normalized)
+    path.write_bytes(b'x = 2\r\n')
+    raw={}
+    with pytest.raises(RuntimeError,match='inconsistent residual source'):
+        consumer.merge_verified_raw_sources(normalized,raw,{'source.py':consumer.values.sha(path)})
+    assert normalized==original and not raw
+
+
+def test_conflicting_raw_attestation_cannot_be_replaced(crlf_source):
+    path=crlf_source
+    normalized={'source.py':consumer.center._sha(path)}
+    raw={'source.py':'PRIOR_DIGEST'}
+    with pytest.raises(RuntimeError,match='inconsistent residual source'):
+        consumer.merge_verified_raw_sources(normalized,raw,{'source.py':consumer.values.sha(path)})
+    assert raw=={'source.py':'PRIOR_DIGEST'}
