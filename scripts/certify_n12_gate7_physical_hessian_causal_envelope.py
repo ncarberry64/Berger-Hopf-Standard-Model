@@ -84,7 +84,7 @@ def validate_endpoint(record, node):
 
 def load_midpoint(index, inputs, output):
     candidates = [ROOT/f'artifacts/flagship_integration/.physical_first_{b}_hessian_pullback_work/midpoint_{index:03d}'
-                  for b in ('original', 'factored')]
+                  for b in ('original', 'factored', 'bulk')]
     stem = next((p for p in candidates if p.with_suffix('.json').exists()), candidates[0])
     record, arrays = read_point(stem, inputs, 'source_SHA256')
     value = validate_midpoint(record, index)
