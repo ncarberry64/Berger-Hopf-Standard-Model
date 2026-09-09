@@ -32,6 +32,16 @@ axes, right blocks, test-frame operands, and endpoint states must agree with
 the complete stored arithmetic foundation; the direct-value source bindings
 must agree with those same operands.
 
+The legacy foundation hashes `.json`, `.md`, and `.py` after replacing CRLF
+line endings with LF. The direct-value campaign instead attests exact file
+bytes. The consumer verifies those raw attestations before deriving a
+normalized digest for the combined `inputs` map. It separately retains
+`raw_input_SHA256` and names both conventions in the result. Both maps are
+verified again after computation. A line-ending-only change still fails an
+existing raw attestation; a semantic change cannot replace a legacy binding.
+This bridge preserves both provenance checks rather than treating unlike
+hash conventions as evidence that the scientific source changed.
+
 This is a finite-history residual bound conditional on identification of
 the selected eigenpair branch. Local inclusion and fixed-reference
 orientation do not establish global branch continuation, the physical
