@@ -3,6 +3,7 @@ from contextlib import contextmanager
 import numpy as np
 from flint import arb, fmpq
 from bhsm.interface.arb_eigenpair_inclusion import verify_eigenpair_box
+from bhsm.interface.arb_symmetric_inertia import isolate_index
 
 
 def finite_vector(values, size):
@@ -64,7 +65,7 @@ def restore_balls(midpoints, radii):
 
 
 @contextmanager
-def verified_eigenline(cert, checks):
+def verified_eigenline(cert, checks, *, expected_index=None):
     """Process-local proposal verification; restore parent even on failure."""
     original = cert._eigenline
 
@@ -81,6 +82,21 @@ def verified_eigenline(cert, checks):
         if not overlap > 0:
             raise ArithmeticError('eigenpair orientation is unresolved')
         report['positive_stored_reference_overlap'] = True
+        if expected_index is not None:
+            # Floating eigenvectors provide a fixed change of basis only.
+            # Arb verifies its nonsingularity and both threshold inertias.
+            reduced = hessian[cert.QDIM:, cert.QDIM:]
+            basis = np.linalg.eigh(np.asarray(midpoint[cert.QDIM:, cert.QDIM:], dtype=float))[1]
+            try:
+                index = isolate_index(reduced, result[1].lower(), result[1].upper(), expected_index, basis=basis)
+                report['spectral_index_verification'] = index
+                if not index['validation_passed']:
+                    raise ArithmeticError('selected eigenvalue index verification failed')
+            except ArithmeticError as error:
+                report['spectral_index_failure'] = str(error)
+                error.eigenpair_inclusion = report
+                raise
+            report['selected_zero_based_index_verified'] = expected_index
         checks.append(report)
         return result
 

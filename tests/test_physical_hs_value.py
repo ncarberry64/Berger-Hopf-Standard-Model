@@ -70,3 +70,19 @@ def test_nonfinite_or_nonpositive_operands_are_rejected():
         hs.weighted_endpoint([1.], 0., [0.])
     with pytest.raises(ValueError):
         hs.finite_vector([arb('nan')], 1)
+
+
+def test_value_wrapper_checks_the_requested_spectral_index():
+    def proposal(hessian, midpoint, reference):
+        return np.array([arb(1, '1e-5'), arb(0, '1e-5')]), arb(1, '1e-5'), 10., 0.
+    cert = SimpleNamespace(_eigenline=proposal, QDIM=0)
+    matrix = np.diag([1., 3.])
+    checks = []
+    with hs.verified_eigenline(cert, checks, expected_index=0):
+        cert._eigenline(matrix, matrix, [1., 0.])
+    assert checks[0]['selected_zero_based_index_verified'] == 0
+    with pytest.raises(ArithmeticError, match='index verification') as failure:
+        with hs.verified_eigenline(cert, [], expected_index=1):
+            cert._eigenline(matrix, matrix, [1., 0.])
+    assert failure.value.eigenpair_inclusion['spectral_index_verification']['validation_passed'] is False
+    assert cert._eigenline is proposal

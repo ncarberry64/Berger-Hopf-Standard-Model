@@ -24,7 +24,7 @@ import certify_n12_gate7_accepted_replay_center_outward_74d as cert
 from bhsm.interface import physical_hs_value as hs
 
 WORK = ROOT/'artifacts/flagship_integration/.direct_physical_value_work'
-ALGORITHM = 'DIRECT_PHYSICAL_HS_VALUES_VERIFIED_EIGENPAIR_ARB512_V1'
+ALGORITHM = 'DIRECT_PHYSICAL_HS_VALUES_VERIFIED_EIGENPAIR_AND_INDEX_ARB512_V2'
 PRECISION = 512
 RATE_SHA256 = '0DC531574372EAA6C69AFAD3B4790A1C7EF52C18E7BA52B6C8FAAA1D442BFC2C'
 
@@ -85,6 +85,8 @@ def load_cached(stage, index, expected, dependencies):
             or record.get('stage') != stage or record.get('index') != index
             or record.get('data_SHA256') != sha(path)
             or record.get('eigenpair_inclusion', {}).get('validation_passed') is not True
+            or record.get('eigenpair_inclusion', {}).get('selected_zero_based_index_verified') != 24
+            or record.get('eigenpair_inclusion', {}).get('spectral_index_verification', {}).get('validation_passed') is not True
             or record.get('outward_serialization_contains_source') is not True):
         raise RuntimeError('physical value cache binding failed')
     with np.load(path) as source:
@@ -127,7 +129,7 @@ def worker(stage, index, expected, recompute=False):
         if not recompute:
             return dict(stage=stage, index=index, reused=True)
     checks = []
-    with hs.verified_eigenline(cert, checks):
+    with hs.verified_eigenline(cert, checks, expected_index=24):
         result = cert._rate_enclosure(state, descriptor, w, reference, None)
     values = hs.finite_vector(result.value, 99)
     if len(checks) != 1:
