@@ -31,6 +31,15 @@ def _stored_error(stored,alternative,record):
                 stored_assembly_error_frobenius_upper=total)
 
 
+def _verify_output_maps(components,outputs,interval):
+    for slot,label in enumerate(('left','right','midpoint')):
+        if interval==0 and label=='left':continue
+        matches=[row for row in components if row.get('output_label')==label]
+        if len(matches)!=1:
+            raise RuntimeError('Unique certified output-map component required')
+        output_certificate._match_output(matches[0],outputs[slot])
+
+
 def build_payload():
     prior=json.loads(coordinate.RESULT.read_text())
     prior_rows=output_certificate._coordinate_rows(prior)
@@ -84,6 +93,7 @@ def build_payload():
             b=-np.linalg.solve(right[i],test)
             incidence=b@ambient[i]
             outputs=[h*b/6+h*h*incidence/12,h*b/6-h*h*incidence/12,2*h*b/3]
+            _verify_output_maps(output_prior['rows'][i]['components'],outputs,i)
             local=np.zeros((74,148,148))
             parts=[]
             for node,label,out,selection in ((i,'left',outputs[0],slice(0,74)),

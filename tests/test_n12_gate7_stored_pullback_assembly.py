@@ -32,3 +32,16 @@ def test_algorithm_difference_is_added_to_analytic_rounding_bound():
         assert F(result['stored_assembly_error_frobenius_upper'])>=F(difference)+F(.125)
     finally:
         ctx.prec=previous
+
+
+def test_every_used_output_map_matches_the_existing_certificate():
+    outputs=[np.ones((2,3))*v for v in (1.,2.,3.)]
+    parts=[dict(output_label=label,output_map_SHA256=certificate._array_hash(value))
+           for label,value in zip(('left','right','midpoint'),outputs)]
+    certificate._verify_output_maps(parts,outputs,1)
+    certificate._verify_output_maps(parts[1:],outputs,0)
+    with pytest.raises(RuntimeError,match='Unique'):
+        certificate._verify_output_maps(parts[1:],outputs,1)
+    outputs[0][0,0]=np.nextafter(outputs[0][0,0],np.inf)
+    with pytest.raises(RuntimeError,match='differs'):
+        certificate._verify_output_maps(parts,outputs,1)
