@@ -1524,6 +1524,111 @@ footer > div:first-child strong {
     scroll-behavior: auto;
   }
 }
+
+/* Visitor-started, continuously alternating museum soundtrack. */
+.soundtrack-dock {
+  align-items: center;
+  background: rgb(8 21 26 / 0.96);
+  border: 1px solid #365966;
+  border-radius: 12px;
+  bottom: 1rem;
+  box-shadow: 0 18px 50px rgb(0 0 0 / 0.42);
+  display: grid;
+  gap: 0.75rem;
+  grid-template-columns: auto minmax(0, 1fr) auto;
+  max-width: min(31rem, calc(100vw - 2rem));
+  padding: 0.75rem;
+  position: fixed;
+  right: 1rem;
+  z-index: 40;
+}
+.soundtrack-dock audio {
+  display: none;
+}
+.soundtrack-mark {
+  align-items: center;
+  background: var(--cyan-deep);
+  border: 1px solid #34606a;
+  border-radius: 8px;
+  color: var(--cyan);
+  display: flex;
+  height: 44px;
+  justify-content: center;
+  width: 44px;
+}
+.soundtrack-mark svg,
+.soundtrack-controls svg {
+  height: 20px;
+  width: 20px;
+}
+.soundtrack-copy {
+  min-width: 0;
+}
+.soundtrack-copy small,
+.soundtrack-copy strong,
+.soundtrack-copy a {
+  display: block;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.soundtrack-copy small {
+  color: var(--muted);
+  font-family: var(--font-geist-mono), monospace;
+  font-size: 0.75rem;
+  line-height: 1.35;
+}
+.soundtrack-copy strong {
+  color: var(--ink);
+  font-size: 0.95rem;
+  line-height: 1.4;
+}
+.soundtrack-copy a {
+  color: var(--cyan);
+  font-size: 0.78rem;
+  line-height: 1.35;
+}
+.soundtrack-copy a:hover {
+  text-decoration: underline;
+  text-underline-offset: 0.2em;
+}
+.soundtrack-controls {
+  display: flex;
+  gap: 0.45rem;
+}
+.soundtrack-controls button {
+  align-items: center;
+  background: #102a32;
+  border: 1px solid #416773;
+  border-radius: 50%;
+  color: var(--ink);
+  cursor: pointer;
+  display: flex;
+  height: 44px;
+  justify-content: center;
+  padding: 0;
+  width: 44px;
+}
+.soundtrack-controls button:hover,
+.soundtrack-controls button[aria-pressed='true'] {
+  background: var(--cyan);
+  border-color: var(--cyan);
+  color: var(--ground);
+}
+@media (max-width: 560px) {
+  .soundtrack-dock {
+    bottom: 0.65rem;
+    left: 0.65rem;
+    max-width: none;
+    right: 0.65rem;
+  }
+  .soundtrack-mark {
+    display: none;
+  }
+  .soundtrack-copy small {
+    font-size: 0.72rem;
+  }
+}
 /* Science-first public collection: readable comparisons and explicit labels. */
 body {
   font-size: 1rem;
