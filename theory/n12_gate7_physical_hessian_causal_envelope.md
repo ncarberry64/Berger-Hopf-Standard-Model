@@ -33,9 +33,9 @@ coefficients, applying the map perturbation formula once to their total.
 
 Default execution requires all 370 midpoint and 370 noninitial endpoint
 certificates. It fails on absent points, missing endpoint incidences, source
-conflicts, changed data, or incompatible maps. Original and factored midpoint
-backends are allowed through their existing source-bound certificates;
-original is selected first if both exist, independently of numerical values.
+conflicts, changed data, or incompatible maps. Original, factored, and bulk
+matrix-transfer midpoint backends are allowed through their source-bound
+certificates, in that fixed preference order independently of numerical values.
 
 An explicit `--selected-only --midpoints ... --nodes ...` run instead bounds
 only the indicated additive component. Outside that component the transport
