@@ -20,13 +20,14 @@ from flint import ctx
 ROOT = Path(__file__).resolve().parents[1]
 sys.path[:0] = [str(ROOT/'src'), str(ROOT/'scripts')]
 import derive_n12_gate7_direct_endpoint_neighborhoods as geometry
+from bhsm.interface import uniform_eigenpair_proposal as proposal
 
 df = geometry.df
 values = df.values
 hs = values.hs
 WORK = ROOT/'artifacts/flagship_integration/.uniform_physical_value_pilot_work'
 THEORY = ROOT/'theory/n12_gate7_uniform_physical_value_pilot.md'
-ALGORITHM = 'UNIFORM_PHYSICAL_HS_BOX_RATE_PILOT_NORMALIZED_INDEX24_ARB512_V1'
+ALGORITHM = 'UNIFORM_PHYSICAL_HS_BOX_RATE_PILOT_NORMALIZED_INDEX24_ARB512_V2'
 
 
 def verify_sources(expected):
@@ -86,7 +87,7 @@ def load_inputs():
     point_binding = df.binding()
     geometry.residual.merge(sources, point_binding['files'])
     for p in (Path(__file__), THEORY, Path(geometry.__file__), Path(hs.__file__),
-              Path(values.__file__), Path(values.cert.__file__)):
+              Path(values.__file__), Path(values.cert.__file__), Path(proposal.__file__)):
         geometry.residual.merge(sources, {df.file_key(p): values.sha(p)})
     if hashlib.sha256(inspect.getsource(values.cert._rate_enclosure).encode()).hexdigest().upper() != values.RATE_SHA256:
         raise RuntimeError('frozen physical rate function changed')
@@ -157,7 +158,8 @@ def evaluate(raw, source):
     """Call the unchanged interval kernel with independent eigenpair checks."""
     ctx.prec = 512
     checks = []
-    with hs.verified_eigenline(values.cert, checks, expected_index=24, normalize_proposal_center=True):
+    with proposal.use_uniform_proposal(values.cert), \
+            hs.verified_eigenline(values.cert, checks, expected_index=24, normalize_proposal_center=True):
         result = values.cert._rate_enclosure(raw[:98], raw[98], source['weights'], source['reference'], None)
     output = hs.finite_vector(result.value, 99)
     if len(checks) != 1 or not proof_valid(checks[0]):

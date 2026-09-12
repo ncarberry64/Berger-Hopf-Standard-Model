@@ -89,7 +89,8 @@ def evaluate(context, row, columns):
             or any(type(i) is not int or not 0 <= i < 99 for i in columns)):
         raise ValueError('valid row and distinct explicit ambient columns required')
     ctx.prec = 512
-    with hessian.df.sparse.use_optimized_mixed(hessian.graph.cert):
+    with pilot.proposal.use_uniform_proposal(hessian.graph.cert), \
+            hessian.df.sparse.use_optimized_mixed(hessian.graph.cert):
         prepared = hessian.base.VerifiedHessianBase(hessian.graph.cert, context['state'], context['reference'])
     if not pilot.proof_valid(prepared.eigenpair_verification):
         raise ArithmeticError('new uniform normalized index24 eigenpair proof required')
