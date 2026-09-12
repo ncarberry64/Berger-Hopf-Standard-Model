@@ -22,6 +22,27 @@ bindings are verified; no uncertain state coordinate is converted to a float.
 Every output coordinate must be finite. The original field normalization and
 its interval arithmetic remain unchanged.
 
+The V2 proposal refines only the midpoint matrix when constructing an approximate
+eigenpair center. This avoids asking an uncertain bordered matrix to produce a
+center before a box has been proposed. The complete uncertain action Hessian is
+then used for every residual, normalized eigenpair inclusion, and index check.
+Coordinate radii start from the preconditioned interval residual; failed rows
+may enlarge their proposed radii. Radius growth supplies no proof by itself.
+The existing independent verifier must prove strict inclusion and contraction
+on the whole matrix family, followed by the unchanged orientation and inertia
+checks. No midpoint-only certificate is transferred to the uncertain domain.
+The legacy gap diagnostic makes no positive gap claim; it is not a proof input.
+The proposal search stops if a vector-coordinate radius exceeds one, retaining
+the last finite failed inclusion report. This is a computational search limit,
+not a proof that a larger eigenpair box or another enclosure method cannot work.
+It changes neither the physical input domain nor the trial radii.
+
+The original interval-proposal failure is retained as failed-method evidence.
+The separately bound proposal module is installed only in the uniform value
+and derivative pilots. Completed pointwise value, Jacobian, and Hessian
+campaigns retain their original implementation and certificates. The derivative
+pilot constructs and proves a fresh base on its entire consumed outer box.
+
 With uniform endpoint rate enclosures F(Z_0) and F(Z_1), the midpoint box is
 
     M = (Z_0 + Z_1)/2 + h (F(Z_0) - F(Z_1))/8.
