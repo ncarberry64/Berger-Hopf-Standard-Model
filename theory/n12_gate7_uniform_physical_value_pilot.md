@@ -32,6 +32,10 @@ The existing independent verifier must prove strict inclusion and contraction
 on the whole matrix family, followed by the unchanged orientation and inertia
 checks. No midpoint-only certificate is transferred to the uncertain domain.
 The legacy gap diagnostic makes no positive gap claim; it is not a proof input.
+The proposal search stops if a vector-coordinate radius exceeds one, retaining
+the last finite failed inclusion report. This is a computational search limit,
+not a proof that a larger eigenpair box or another enclosure method cannot work.
+It changes neither the physical input domain nor the trial radii.
 
 The original interval-proposal failure is retained as failed-method evidence.
 The separately bound proposal module is installed only in the uniform value

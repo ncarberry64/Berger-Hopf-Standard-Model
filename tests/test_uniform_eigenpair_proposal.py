@@ -57,3 +57,14 @@ def test_restore_on_error_and_repeated_eigenvalue_fail_closed():
 def test_nonfinite_matrix_rejected():
     with pytest.raises(ValueError, match='finite matrix'):
         propose(np.diag([float('nan'), 3]), [1., 0.], selected=0)
+
+
+def test_diverging_search_preserves_failed_inclusion_without_singularity_claim():
+    h = np.array([[arb(1, '.3'), arb(0, '.3')],
+                  [arb(0, '.3'), arb(1.1, '.3')]])
+    with pytest.raises(ArithmeticError) as caught:
+        propose(h, [1., 0.], selected=0)
+    report = caught.value.eigenpair_inclusion
+    assert report['proposal_search_exhausted']
+    assert not report['matrix_family_singularity_proved']
+    assert report['proposal_failure_reason'] == 'proposal_vector_radius_exceeds_search_limit'

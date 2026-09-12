@@ -70,13 +70,37 @@ def propose(matrix, reference, *, selected, max_attempts=16):
     matrix_scale = max([abs(x).upper() for x in center.entries()]+[floor])
     radii = [max(2*abs(correction[i, 0]).upper(), floor*(1 if i < n else matrix_scale))
              for i in range(n+1)]
+    diagnostics = dict(
+        matrix_max_radius_upper_rational=str(max(x.rad() for x in h.entries()).upper().fmpq()),
+        matrix_max_midpoint_abs_upper_rational=str(matrix_scale.upper().fmpq()),
+        initial_vector_radius_max_upper_rational=str(max(radii[:n]).upper().fmpq()),
+        initial_eigenvalue_radius_upper_rational=str(radii[n].upper().fmpq()),
+        midpoint_selected_eigenvalue_rational=str(lam.fmpq()))
     centers = p.entries()+[lam]
     report = None
-    for _ in range(max_attempts):
+    attempts = []
+    failure_reason = 'attempt_limit'
+    for attempt in range(max_attempts):
+        # This is a bounded proposal search, not a theorem that a larger box
+        # cannot work. Avoid letting a diverging heuristic obscure the last
+        # finite failed inclusion report with a binary64 diagnostic overflow.
+        if any(r > 1 for r in radii[:n]):
+            failure_reason = 'proposal_vector_radius_exceeds_search_limit'
+            break
         boxes = [c+arb(0, r) for c, r in zip(centers, radii, strict=True)]
         if not all(x.is_finite() for x in boxes):
+            failure_reason = 'nonfinite_proposed_box'
             break
-        report = verify_eigenpair_box(a, boxes[:n], boxes[n], precision=ctx.prec)
+        try:
+            report = verify_eigenpair_box(a, boxes[:n], boxes[n], precision=ctx.prec)
+        except RuntimeError as error:
+            if 'not finite in binary64' not in str(error):
+                raise
+            failure_reason = 'inclusion_diagnostic_exceeds_binary64_range'
+            break
+        attempts.append(dict(attempt=attempt+1,
+            maximum_image_radius_ratio_upper=report['maximum_image_radius_ratio_upper'],
+            weighted_contraction_upper=report['weighted_contraction_upper']))
         if report['validation_passed']:
             residual_norm = sum((abs(x).upper()**2 for x in residual.entries()), arb(0)).sqrt()
             # No positive gap claim is made. The caller separately proves index
@@ -84,11 +108,14 @@ def propose(matrix, reference, *, selected, max_attempts=16):
             return np.array(boxes[:n], dtype=object), boxes[n], 0., math.nextafter(float(residual_norm.upper()), math.inf)
         ratios = [row['image_radius_ratio_upper'] for row in report['rows']]
         if not all(math.isfinite(x) for x in ratios):
+            failure_reason = 'nonfinite_inclusion_ratio'
             break
         radii = [r*arb(1.25*x) if x >= 1 else r
                  for r, x in zip(radii, ratios, strict=True)]
     error = ArithmeticError('uniform eigenpair proposal failed independent inclusion')
-    error.eigenpair_inclusion = report
+    error.eigenpair_inclusion = dict(report or {}, proposal_failure_reason=failure_reason,
+        proposal_attempts=attempts, proposal_diagnostics=diagnostics, proposal_search_exhausted=True,
+        matrix_family_singularity_proved=False, FULL_BHSM_COMPLETE=False)
     raise error
 
 
