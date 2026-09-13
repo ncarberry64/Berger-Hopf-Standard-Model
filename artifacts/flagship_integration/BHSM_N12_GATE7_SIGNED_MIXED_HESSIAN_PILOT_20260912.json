@@ -1,0 +1,97 @@
+{
+  "FULL_BHSM_COMPLETE": false,
+  "Gate7_closed": false,
+  "classification": "INDEPENDENTLY_REPRODUCED_SINGLE_DIRECTION_UNIFORM_HESSIAN_ENCLOSURE",
+  "full_affine_direction_coverage": false,
+  "full_path_uniform_contraction": false,
+  "motivating_width_attribution": {
+    "counterfactual_values_are_not_physical_enclosures": true,
+    "counterfactuals_may_violate_coupled_identities": true,
+    "independent_recomputation": false,
+    "maximum_radius_by_counterfactual": {
+      "all_first_variations_exact": 167.65751218795776,
+      "all_mixed_exact": 4.2551836884285876e-05,
+      "all_scalar_variations_exact": 167.6575484275818,
+      "base_operands_exact": 167.64769053459167,
+      "mixed_line_exact": 144.64404034614563,
+      "mixed_response_exact": 27.269406527280807,
+      "mixed_scalar_exact": 167.6575484275818
+    },
+    "record_SHA256": "2BB5A7E59096410F240D6C0D9DEAF75C3A537100BBD939EB3F9D08A347EA1B63",
+    "record_path": "tmp/bhsm_saved_hessian_width_attribution_20260912/normalized/record.json"
+  },
+  "outputs": {
+    "direct": {
+      "data_SHA256": "F69A65426721DB77DC00687EB9B144C032D5C7B7A0E390D11F6857C1A97A88C7",
+      "record_SHA256": "4551888AF6C6E23294913011FEF2F60BFB75687596A5E6E65ECAD0935CFC317D",
+      "record_path": "tmp/bhsm_signed_mixed_hessian_pilot_20260912/direct/record.json",
+      "report": {
+        "FULL_BHSM_COMPLETE": false,
+        "Gate7_closed": false,
+        "complete_original_scalar_contractions_used": true,
+        "complete_original_seven_solve_graph_used": true,
+        "complete_signed_mixed_line_and_response_residuals_used": true,
+        "full_affine_direction_coverage": false,
+        "maximum_point_absolute": 8.180233146587588e-05,
+        "maximum_uniform_absolute": 10.18837858336974,
+        "maximum_uniform_radius": 10.188362881541252,
+        "one_scaled_longitudinal_direction_only": true
+      },
+      "solve_maximum_radius": [
+        0.07830655016005039,
+        2.1403203133429916e-09,
+        0.0013586047225544462,
+        1.3224718812853098,
+        887039.1220703125,
+        0.07788556069135666,
+        51660.65643310547
+      ]
+    },
+    "normalized": {
+      "data_SHA256": "A410BBF7C8348A30360AA20EEF67F3754A590A84257020BE8DAB12A817F15462",
+      "record_SHA256": "6DF3298C48DB3A9DB90CC4DBF7656DA5D4145639642F3AF36C0F779AD69BFAD3",
+      "record_path": "tmp/bhsm_signed_mixed_hessian_pilot_20260912/normalized/record.json",
+      "report": {
+        "FULL_BHSM_COMPLETE": false,
+        "Gate7_closed": false,
+        "action_domain_bound": false,
+        "border_sign": 1,
+        "common_border_scale_canceled_before_second_differentiation": true,
+        "coupled_identities_through_mixed_second_order_required": true,
+        "full_affine_direction_coverage": false,
+        "independent_recomputation": false,
+        "maximum_normalized_radius": 0.2161599979735911,
+        "maximum_original_radius": 10.188362896442413,
+        "maximum_point_absolute": 8.180233146587588e-05,
+        "original_enclosure_overlap": true,
+        "point_contained": true,
+        "saved_complete_original_scalar_contractions_used": true
+      }
+    }
+  },
+  "physical_domain_action_or_parameters_changed": false,
+  "physical_predictions_added": false,
+  "reproduction": {
+    "FULL_BHSM_COMPLETE": false,
+    "Gate7_closed": false,
+    "byte_identical": true,
+    "column": 0,
+    "driver_sources_SHA256": {
+      "scripts/diagnose_n12_gate7_saved_coupled_hessian_normalization_v2.py": "E283450919CF2C887ACFE02EB514B69EFBF8D1322E95E2D32658C43838C339CC",
+      "scripts/diagnose_n12_gate7_signed_mixed_uniform_hessian.py": "5D39F04BD590FB5B75C28C808F6A6AB3ACA672B3EB111FD0B43465162C0069D1",
+      "scripts/reproduce_n12_gate7_signed_mixed_hessian_pilot.py": "03B7D2A6BEA4A271CFD5347FF686BAE92D2471451DB3CC302FDC780023BBB85C"
+    },
+    "endpoint": 13,
+    "files_SHA256": {
+      "direct/hessian.npz": "F69A65426721DB77DC00687EB9B144C032D5C7B7A0E390D11F6857C1A97A88C7",
+      "direct/record.json": "4551888AF6C6E23294913011FEF2F60BFB75687596A5E6E65ECAD0935CFC317D",
+      "normalized/normalized_hessian.npz": "A410BBF7C8348A30360AA20EEF67F3754A590A84257020BE8DAB12A817F15462",
+      "normalized/record.json": "6DF3298C48DB3A9DB90CC4DBF7656DA5D4145639642F3AF36C0F779AD69BFAD3"
+    },
+    "full_affine_direction_coverage": false,
+    "full_path_uniform_contraction": false,
+    "independent_recomputation": true,
+    "scope": "ONE_SCALED_LONGITUDINAL_DIRECTION_AND_ONE_TRANSVERSE_COLUMN_ON_ENDPOINT_TUBE"
+  },
+  "reproduction_receipt_SHA256": "B39D3576C473D542F299C21F770A1DD2F613B086CB6C4BD08232C43AF338638B"
+}
