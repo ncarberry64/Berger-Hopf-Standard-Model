@@ -9,20 +9,34 @@ the photon diagnostic scope correction, the retained EC stationary-domain
 obstruction, and the conditional lepton sum rule with its missing physical
 dressing. Photon values are generated from the validated audit report after
 its source hashes are checked. All physical-completion
-claims remain gated by the definition of done.
+claims remain gated by the definition of done. The September 13 revision
+adds the paired local midpoint/endpoint refinement, its limited scope, and
+the exact two-radius self-map and derivative conditions. Its local numbers
+come from the reviewed artifact at revision `68a18555`. The separate
+`generated/stored_margin_source.json` supplies all stored-polynomial inputs,
+exact rational margins and original raw source hashes; the generator replays
+its self-map inequalities exactly. The complete physical certification margin
+remains unknown.
 
 Run `python manuscript/flagship/build_evidence.py` from the repository root,
-then compile `BHSM_flagship.tex` twice with pdfLaTeX from this directory.
+and `python manuscript/flagship/build_local_evidence.py`, then compile
+`BHSM_flagship.tex` twice with pdfLaTeX from this directory.
 `generated/` contains deterministic figure and numeric inputs. The generator
 verifies the source certificate, NPZ hash, immutable Git revision, and equality
 with the plotted Museum dataset before creating these inputs.
 
 For byte-identical PDF reproduction, set `SOURCE_DATE_EPOCH=1788739200`
 and `FORCE_SOURCE_DATE=1`, use job name `BHSM_flagship_working_manuscript`,
-and the repository's `output/pdf` output directory. The checked-in draft PDF
-matches the visually inspected eight-page output. The retained TeX environment
+and the repository's `output/pdf` output directory. The earlier draft PDF is
+preserved; the September 13 evidence update uses job name
+`BHSM_flagship_numerical_update_20260913`. The retained TeX environment
 is pdfTeX 1.40.28 / MiKTeX 25.12; another distribution may typeset identically
 without producing the same PDF bytes.
+
+The September 13 PDF has ten pages. The affected pages were rendered and
+visually checked; the numerical inputs and final PDF each reproduced byte
+for byte. The final LaTeX log has no overfull boxes or undefined references.
+Existing scalar and photon inputs were reused without rerunning their science.
 
 The final submission version requires the completed scientific certificates,
 an observable classification matrix, full derivation and comparison sections

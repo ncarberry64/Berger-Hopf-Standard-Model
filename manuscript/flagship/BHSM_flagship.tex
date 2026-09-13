@@ -6,10 +6,11 @@
 \setlength{\emergencystretch}{2em}
 \input{generated/scalar_values.tex}
 \input{generated/photon_values.tex}
+\input{generated/local_values.tex}
 \title{Berger--Hopf Standard Model:\\Action-domain localization and an auditable route to physical predictions}
 \author{Norman P. Carberry\\Independent Researcher\\
 \href{https://orcid.org/0009-0000-6650-3485}{ORCID: 0009-0000-6650-3485}}
-\date{Working manuscript, 7 September 2026}
+\date{Working manuscript, 13 September 2026}
 \begin{document}
 \maketitle
 \begin{center}
@@ -30,7 +31,10 @@ the frozen central scalar response across \ScalarIntervals{} intervals and
 \ScalarNodes{} nodes, with maximum response-norm upper bound
 \(\ScalarMaximum\). We describe the complete ambient midpoint chain rule
 required for the remaining signed transverse calculation and an explicit
-bound on stored coordinate-solve error. A separate photon audit corrects a
+bound on stored coordinate-solve error. A finite-history local refinement
+now supplies independently reproduced
+mean-value enclosures for one trial column; its improvement is distinguished
+from the still-missing global physical contraction. A separate photon audit corrects a
 finite-mode symmetry diagnostic while retaining a positive-energy obstruction
 on the reference Maxwell shell. We also distinguish a stationary
 Einstein--Cartan domain rejection and a conditional charged-lepton tree
@@ -236,13 +240,75 @@ certificate does not enclose the complete transverse neighborhood.}
 \label{fig:scalar}
 \end{figure}
 
-The signed tensor recovery requires 370 endpoints and 370 midpoints. At each
-midpoint the 26 complement directions require \(73\cdot26+26\cdot27/2=2249\)
-new directional pairs, in addition to the retained symmetric transverse
-block. These are contraction counts, not empirical CPU estimates. At this
-draft's evidence boundary, the recovery and supplemental campaign are still
-in progress; no complete signed center coefficient or outward two-radius
-certificate is reported here.
+The direct physical curvature campaign covers 371 endpoints and 370
+midpoints, followed by the twelve local quadratic source blocks on each of
+370 intervals and their signed causal composition. Every point and local
+source is independently recomputed. Its intended output is a complete
+fixed-frame center calculation; point coverage alone does not establish a
+uniform neighborhood bound or the physical quotient \cite{directcampaign}.
+
+\subsection{Paired local mean-value refinement}
+At interval 13 and frozen trial column 14, paired endpoint and midpoint
+mean-value calculations retain the original input tubes, all seven bordered
+solves, scalar contractions, and coupled normalization. The midpoint uses
+all 249 scaled directions of its actual outer domain. The local integration
+retains the original exact midpoint center direction, full midpoint first
+derivative, and center-shift remainder. Table~\ref{tab:local} reports the
+maximum coordinate radii of these enclosures, with inputs generated from
+the reviewed source artifact \cite{localrefinement}.
+\begin{table}[ht]
+\centering
+\caption{Local enclosure refinement at one interval and one trial column.
+The quantities are interval radii, not measured variations or global operator norms.}
+\label{tab:local}
+\begin{tabular}{lrr}
+\toprule
+Quantity & Before & After\\
+\midrule
+Midpoint center action, left & \(\MidpointBeforeLeft\) & \(\MidpointAfterLeft\)\\
+Midpoint center action, right & \(\MidpointBeforeRight\) & \(\MidpointAfterRight\)\\
+Local Newton defect, left & \(\LocalBeforeLeft\) & \(\LocalAfterLeft\)\\
+Local Newton defect, right & \(\LocalBeforeRight\) & \(\LocalAfterRight\)\\
+\bottomrule
+\end{tabular}
+\end{table}
+The complete batch reduces the two local maxima by approximately 15\% and
+14\%. Independent fresh-process runs reproduce their records and arrays
+byte for byte. The last paired attribution before this refinement identified
+midpoint center-action uncertainty as the dominant local term. A subsequent
+saved-data output-projection probe improved its maximum radius by only about
+0.0035\%, documenting a limitation of that rearrangement. Neither result
+establishes full trial coverage or a global physical contraction.
+
+\subsection{Self-map headroom and the missing physical certificate}
+In longitudinal and transverse radii, the nonnegative majorant has the form
+\begin{equation}
+ B_i(r)=Y_i+\sum_j Z_{ij}r_j+C_i r_L^2+2M_i r_Lr_T+T_i r_T^2,
+ \qquad i\in\{L,T\}.
+\end{equation}
+The quadratic coefficients include the Taylor factor one half. With
+compatible uniform bounds on the Newton map and its derivative, sufficient
+conditions in the radius-weighted maximum norm are
+\begin{equation}
+ r_i-B_i(r)>0\quad(i=L,T),\qquad
+ \max_i\frac{\sum_j\partial_j B_i(r)r_j}{r_i}<1.
+\end{equation}
+The stored incidence-screen polynomial has trial radii
+\((\TrialRadiusLongitudinal,\TrialRadiusTransverse)\). Exact rational
+evaluation of its stored binary64 coefficients gives positive self-map
+margins \((\StoredMarginLongitudinal,\StoredMarginTransverse)\)
+\cite{incidencescreen}. This screen does not recertify \(Y\), \(Z\), or
+the central and mixed coefficients and does not include every physical
+Hessian, frame, or neighborhood error. Its positive headroom is therefore
+conditional. The complete physical margin remains uncomputed; the local
+radii in Table~\ref{tab:local} cannot be substituted for \(Z\).
+
+The remaining numerical task is to transport compatible uniform errors
+through the full causal map and demonstrate that their simultaneous costs
+fit both inequalities. The current widths motivate a uniform enclosure that
+preserves correlations through the coupled implicit solves and normalized
+field. Neither greater arithmetic precision nor additional point samples
+alone supply the missing neighborhood certificate.
 
 \section{Photon diagnostic and the retained frozen route}
 Write the retained dimensionless transverse Dirichlet-to-Neumann kernel as
@@ -374,6 +440,18 @@ the recorded source revision, or an inconsistent array shape or maximum.
 The plotting generator consumes the same dataset. Repeated artifact
 materializations are compared byte for byte.
 
+The local table uses revision \texttt{68a18555}. The separate local-evidence
+generator checks that its local-refinement JSON input matches that immutable
+Git revision. The supplied stored-polynomial snapshot includes all
+coefficients, radii, exact rational margins, and raw source hashes; its
+self-map margins are independently replayed with rational arithmetic before
+writing numerical TeX inputs. This does not verify the missing physical
+coefficient bounds. No new physical derivatives are evaluated. The local
+report records raw evidence and reproduction-receipt
+hashes; exact numerical reproduction additionally requires those retained
+files and their bound LIVE source bytes, which Git newline normalization
+must not silently replace.
+
 The complete scientific source and claim ledgers are available in the
 repository \cite{repo}. This draft is maintained separately from frozen
 historical manuscripts. Its abstract, results, and conclusions must be
@@ -411,6 +489,16 @@ midpoint-radius interval arithmetic,'' \emph{IEEE Transactions on Computers}
 \textbf{66}(8), 1281--1292 (2017).
 \href{https://doi.org/10.1109/TC.2017.2690633}{doi:10.1109/TC.2017.2690633};
 \url{https://arxiv.org/abs/1611.02831}.
+\bibitem{localrefinement} N. P. Carberry, \emph{Paired midpoint and endpoint
+bootstrap integration}, repository revision \texttt{68a18555},
+\href{https://github.com/ncarberry64/Berger-Hopf-Standard-Model/blob/68a185556d786fc5e13ff533c358f1cbfaaf074f/docs/BHSM_N12_GATE7_MIDPOINT_AND_BOOTSTRAP_INTEGRATION_20260913.md}{numerical report and evidence inventory}.
+\bibitem{directcampaign} N. P. Carberry, \emph{Full direct physical curvature
+campaign}, same revision,
+\href{https://github.com/ncarberry64/Berger-Hopf-Standard-Model/blob/68a185556d786fc5e13ff533c358f1cbfaaf074f/theory/n12_gate7_full_direct_curvature_campaign.md}{coverage, execution and claim boundary}.
+\bibitem{incidencescreen} N. P. Carberry, \emph{Physical incidence causal
+envelope: stored-polynomial input snapshot}, supplied manuscript evidence,
+\texttt{generated/stored\_margin\_source.json}. The snapshot records the
+retained source hashes, exact rational witness, and missing physical authority.
 \bibitem{photon} N. P. Carberry, \emph{AE3 photon diagnostic scope audit},
 repository revision \texttt{016aa4b4},
 \href{https://github.com/ncarberry64/Berger-Hopf-Standard-Model/blob/016aa4b48a87dcb53cdf50a05e9010d9777d208c/theory/ae3_c2_photon_symbol_audit.md}{derivation and numerical report}.
