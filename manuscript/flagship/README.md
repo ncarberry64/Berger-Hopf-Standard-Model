@@ -18,6 +18,15 @@ exact rational margins and original raw source hashes; the generator replays
 its self-map inequalities exactly. The complete physical certification margin
 remains unknown.
 
+A subsequent saved-data supplement, `column_box_obstruction.md`, proves that
+the current independent-coordinate right-column enclosure permits normalized
+gain at least 54.843547458166. It therefore cannot by itself certify
+contraction. This is a limitation of the Cartesian relaxation, not physical
+noncontraction. The supplied JSON contains every exact arithmetic operand;
+`python manuscript/flagship/replay_column_box_obstruction.py` verifies the
+proof with the standard library. This supplement accompanies the ten-page
+PDF; it is not a new physical derivative calculation or a completion claim.
+
 Run `python manuscript/flagship/build_evidence.py` from the repository root,
 and `python manuscript/flagship/build_local_evidence.py`, then compile
 `BHSM_flagship.tex` twice with pdfLaTeX from this directory.
