@@ -38,9 +38,17 @@ and a strictly positive physical norm. Endpoint scope cannot substitute.
 Eleven focused tests passed for the midpoint analytic prerequisites,
 actual-domain inclusion and complete signed derivative residuals. Source
 preflight also accepted the paired midpoint domain and both refined endpoint
-matrices. Numerical midpoint values, its full derivative matrix and the
-resulting local integration remain pending until their independent pairs
-finish; this document makes no claim that these pending results passed.
+matrices. The actual midpoint primal values, complete 99-column derivative matrix and
+resulting local operator have now independently reproduced byte-for-byte.
+The midpoint derivative maximum radius fell from 1965.7421875 to
+1340.765625, and its maximum state-column radius from 6.412255391 to
+4.391752042. The local DL and DR maximum entry radii fell from 312.2013636
+and 304.6587358 to 197.0804090 and 192.6304617 (about 37 percent).
+These entry-radius improvements do not establish full-path contraction.
+Exact radii and reproducibility hashes are recorded in
+`BHSM_N12_GATE7_PRIMAL_MIDPOINT_INTEGRATION_20260913.json`.
+The complete 99-row point Hessian at midpoint 24 also reproduced under the
+unchanged Arb256 producer, using four workers alongside the midpoint pilot.
 
 The local consumer combines the refined endpoints 13 and 14 and actual
 midpoint 13 in the existing preconditioned local operator. It retains the
