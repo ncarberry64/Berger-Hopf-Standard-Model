@@ -40,18 +40,38 @@ the immutable input hash cache. A local integration consumer requires paired
 full endpoint, actual-midpoint and next-endpoint derivatives before using
 the unchanged frozen HS local operator.
 
-The first full-basis integration pilot targets endpoints 13 and 14 plus
-actual midpoint 13, each with a separate repeat, then local interval 13 with
-its own repeat. It is in progress at this document's cutoff. No full-basis
-or local improvement is asserted from the one-column diagnostic table.
+The full-basis integration pilot is now independently reproduced: endpoints
+13 and 14, actual midpoint 13, and local interval 13 each have byte-identical
+first/repeat records and data. The complete numerical evidence is in
+`artifacts/flagship_integration/BHSM_N12_GATE7_COMPONENT_CENTERED_INTEGRATION_20260912.json`.
+
+| Paired array | Shape | Maximum radius |
+| --- | --- | ---: |
+| Endpoint 13 DF | 99 by 99 | 620.281251 |
+| Endpoint 14 DF | 99 by 99 | 580.585938 |
+| Actual midpoint 13 DF | 99 by 99 | 1965.742189 |
+| Local interval 13 C | 74 by 74 | 4.208756e-153 |
+| Local interval 13 DL | 74 by 74 | 486.432636 |
+| Local interval 13 DR | 74 by 74 | 485.949672 |
+
+The descriptor column, rather than the diagnostic's column 0, dominates the
+full DF radii. The unchanged local integration rescales and combines the
+complete matrices through its frozen frames and preconditioner; its bounds
+cannot be inferred from a single largest raw derivative entry.
+
+The previously paired normalization-only local DL/DR radii were
+62715518.8125 and 73728779.875. The new local radii are over 100,000 times
+narrower, but remain far too broad to establish contraction. C retains its
+previous sharp enclosure. This is a measured local numerical improvement,
+not a physical quotient or full-path Z1 certificate.
 
 Validation at this cutoff: 24 focused tests passed, including direct
 polynomial residual identities, exact polynomial state differences,
 independently constructed perturbed bordered systems, the original
 normalization/local integration helpers and immutable-cache behavior.
 
-Even successful completion of this pilot would leave full-domain coverage,
-acceptable uniform integration bounds, physical quotient identification,
+Completion of this pilot leaves full-domain coverage, acceptable uniform
+integration bounds, physical quotient identification,
 higher remainders and the remaining action-to-prediction dependencies open.
 The results therefore do not supply new data for a Museum observable or
 establish manuscript completion.
