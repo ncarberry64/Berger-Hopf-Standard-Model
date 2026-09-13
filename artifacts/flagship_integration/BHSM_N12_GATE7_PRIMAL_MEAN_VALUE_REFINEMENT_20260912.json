@@ -1,0 +1,77 @@
+{
+  "scope": "ENDPOINT_13_PRIMAL_MEAN_VALUE_REFINEMENT",
+  "paired_bootstrap_hessian": {
+    "directory": "tmp/bhsm_mean_value_bootstrap_pilot_20260912/basis",
+    "record_SHA256": "2C04D0F06E41E3F8D0FBC8CB42A8FC4512F1234C78CDE3B1B294E2AE8A4F316D",
+    "data_SHA256": "8CC1F3A5C08E6BE233F06F72154A1BB74EFF28A15FF94404BE6E88EC0856A68C",
+    "independent_recomputation": true,
+    "report": {
+      "maximum_physical_mean_value_support": 0.29145248075213015,
+      "maximum_normalized_hessian_radius": 0.11929948127362877
+    },
+    "reproduction_receipt_SHA256": "9D7EA7E87AF3C323B7F6DE88519D9491234CFF8039E9F9F89ED22F3F12DCD4E3"
+  },
+  "paired_primal_values": {
+    "directory": "tmp/bhsm_bootstrap_repeat_primal_pair_20260912/mean_value/first",
+    "record_SHA256": "031286C27334F88BDA984B8A1510369DC72068B62D7946CBE7483A0F7AB950E3",
+    "data_SHA256": "2121EF8AB3B8A50584B7E9396E6A6EF8FBD07704BCAA2135FACEBD22668D82C2",
+    "independent_recomputation": true,
+    "report": {
+      "maximum_derivative_radius": 0.29145248187705874,
+      "maximum_line_radius": 0.11171097692567855,
+      "maximum_response_radius": 67501.55297851562,
+      "maximum_psi_value_radius": 5.379803241778447E-08,
+      "maximum_response_value_radius": 0.00926301621075254,
+      "uniform_primal_psi_and_response_enclosed": true
+    },
+    "reproduction_receipt_SHA256": "5DFD6607AB4BC034832918A772CEBF1DFA99BCCEDA50F0701E2D4DC222F0048E"
+  },
+  "primal_bootstrap_hessian": {
+    "directory": "tmp/bhsm_primal_mean_value_bootstrap_pilot_20260912/basis",
+    "record_SHA256": "ECFD4F2EC57B73ECAF61B87BA0F17F32732E85A50B59D1BC2D4FC612E76FF7DF",
+    "data_SHA256": "C6EE0D02C64914FD4EC79947138D6563C3623EB158E5E9B061D11F787EA137C3",
+    "independent_recomputation": true,
+    "report": {
+      "maximum_physical_mean_value_support": 0.12946151802933323,
+      "maximum_normalized_hessian_radius": 0.05042305670212954
+    },
+    "reproduction_receipt_SHA256": "A758F173B298ABB0CE9E9DAF4B4D60D38FAE997B1CC0CB53ACF69AFE782B7FF0"
+  },
+  "full_endpoint_derivatives": {
+    "directory": "artifacts/flagship_integration/.primal_mean_value_component_centered_endpoint_uniform_df_work/endpoint_013",
+    "record_SHA256": "F3D8C7ED156A9B503EB210FD38E1CAEEA193BBA1A74DA1683DBEAB163974F214",
+    "data_SHA256": "537BB86076FC31702E10D81193DB46EA52CF0C148929660D246AB21B37AF38EF",
+    "independent_recomputation": true,
+    "report": {
+      "weighted_augmented_basis_columns": 99,
+      "uniform_physical_first_derivatives_enclosed": true,
+      "paired_uniform_primal_values_used": true
+    },
+    "reproduction_receipt_SHA256": "91C0EEA9CC3A08D7C8F28B9EB5EC079770B4297B8A8B84A5A6A1ECFA96E277B3",
+    "radii_upper_from_serialized_data": {
+      "maximum": 71.78906250000001,
+      "state_columns": 2.1015992984175687,
+      "column_0": 1.5213584899902346
+    }
+  },
+  "full_path_uniform_contraction": false,
+  "physical_quotient_identified": false,
+  "Gate7_closed": false,
+  "FULL_BHSM_COMPLETE": false,
+  "latest_paired_mean_value": {
+    "directory": "tmp/bhsm_primal_bootstrap_repeat_pair_20260912_v2/mean_value",
+    "files_SHA256": {
+      "column.npz": "4E0B65802FF3EC102244B39500A30DBD3972D2069C88CEA850BE73D9A32FF8D4",
+      "record.json": "2CE6FFED8EA03578E9EABA87CA675A275888CE64842A530EBA1E003C13B9D607"
+    },
+    "independent_recomputation": true,
+    "reproduction_receipt_SHA256": "ED18F0603B56C0EE5649210F524FD8581DB41FDE08C50F2622F721BE00A22BF8",
+    "report": {
+      "maximum_derivative_radius": 0.12946151848882437,
+      "maximum_line_radius": 0.08072629407979548,
+      "maximum_response_radius": 18177.287689208984,
+      "maximum_psi_value_radius": 5.256706009371115E-08,
+      "maximum_response_value_radius": 0.0071089502816903405
+    }
+  }
+}
