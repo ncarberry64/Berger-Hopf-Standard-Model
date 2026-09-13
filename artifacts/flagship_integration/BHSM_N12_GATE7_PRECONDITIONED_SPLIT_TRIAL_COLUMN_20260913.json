@@ -1,0 +1,78 @@
+{
+  "FULL_BHSM_COMPLETE": false,
+  "Gate7_closed": false,
+  "algorithm": "PRECONDITIONED_CENTER_SPLIT_FROZEN_TRIAL_COLUMN_ARB512_V1",
+  "decision": "RETAIN_BOUND; STOP_REORDERING_ONLY_REFINEMENTS; INVESTIGATE_ACTUAL_VARIATION",
+  "evidence": {
+    "column.npz": {
+      "SHA256": "B373E554C2232A0FB9CBDB8E27D9381B8ED53C11489264686D233023EFDEC21A",
+      "path": "tmp/bhsm_preconditioned_split_trial13_pair_20260913/value/first/column.npz"
+    },
+    "record.json": {
+      "SHA256": "B2CD99C1DB0590F8973A4773E7C30AF711FCC3C748E9D05B34C6DC8DBE557497",
+      "path": "tmp/bhsm_preconditioned_split_trial13_pair_20260913/value/first/record.json"
+    },
+    "reproduction.json": {
+      "SHA256": "15D07DB473BE09B31A000FDC3B9996ED1C2FD448F812F0FECAD31AAD56DCF938",
+      "path": "tmp/bhsm_preconditioned_split_trial13_pair_20260913/value/reproduction.json"
+    }
+  },
+  "focused_tests_passed": 3,
+  "interval": 13,
+  "measured_data_used": false,
+  "report": {
+    "FULL_BHSM_COMPLETE": false,
+    "Gate7_closed": false,
+    "center_rounding_remainder_included": true,
+    "columns": {
+      "DL": {
+        "coordinates_tightened": 74,
+        "methods": {
+          "combined_endpoint_tail": {
+            "coordinates_selected": 74,
+            "maximum_radius": 71.78772759437561
+          },
+          "preconditioned_tail": {
+            "coordinates_selected": 74,
+            "maximum_radius": 71.78827059268951
+          }
+        },
+        "previous_maximum_radius": 71.96129059791565,
+        "relative_improvement_percent_approx": 0.24118939793593697,
+        "selected_maximum_radius": 71.78772759437561
+      },
+      "DR": {
+        "coordinates_tightened": 74,
+        "methods": {
+          "combined_endpoint_tail": {
+            "coordinates_selected": 74,
+            "maximum_radius": 70.04334008693695
+          },
+          "preconditioned_tail": {
+            "coordinates_selected": 74,
+            "maximum_radius": 70.12230157852173
+          }
+        },
+        "previous_maximum_radius": 70.26982605457306,
+        "relative_improvement_percent_approx": 0.32230899142999814,
+        "selected_maximum_radius": 70.04334008693695
+      }
+    },
+    "complete_causal_Z1_enclosed": false,
+    "fixed_preconditioner_before_uncertain_tail": true,
+    "full_trial_basis_enclosed": false,
+    "new_action_derivative_evaluations": 0,
+    "paired_center_split_operands_used": true,
+    "physical_quotient_identified": false,
+    "shared_endpoint_tail_coefficient_used": true,
+    "state_dependent_frame_derivatives_enclosed": false
+  },
+  "source_SHA256": {
+    "scripts/diagnose_n12_gate7_preconditioned_split_trial_column.py": "003A6223C9051718AAE9DFBC43A41DD8B20D6EACEB6AAB538FB1D1E6683FDCDE",
+    "src/bhsm/interface/preconditioned_split_hs_column.py": "297A8D4CBC99831D2190F74677782D52965242EA71AA966689A320B578BB9DBB",
+    "tests/test_preconditioned_split_hs_column.py": "1BB29AE8A6DB00452A75CEB76AA8F410D8748502C0631269A42EAAEAF7266F0D",
+    "theory/n12_gate7_preconditioned_split_trial_column.md": "FB6D68115AEC3295CD297241C2E39E1EB4C9C9FD2C64638A5B4C171713EE1163"
+  },
+  "status": "PAIRED_REORDERING_HAS_SMALL_ADDITIONAL_GAIN",
+  "trial_column": 14
+}
