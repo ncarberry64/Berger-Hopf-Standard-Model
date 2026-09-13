@@ -104,6 +104,96 @@
       }
     }
   },
+  "fixed_output_projection_probe": {
+    "left": {
+      "algorithm": "PAIRED_MIDPOINT_JETS_FIXED_OUTPUT_MEAN_VALUE_ARB512_V1",
+      "evidence": {
+        "column.npz": {
+          "SHA256": "6C593D931CA4C91103B269155F1A577CA55793C704D4A9F16562C201EAA31FA4",
+          "path": "tmp/bhsm_projected_midpoint_mean_value_pair_20260913/left/first/column.npz"
+        },
+        "record.json": {
+          "SHA256": "FD4E4C0447F783702F6E4B47B7B9898985B59ED5223A465A91D2563F9543AAB5",
+          "path": "tmp/bhsm_projected_midpoint_mean_value_pair_20260913/left/first/record.json"
+        },
+        "reproduction.json": {
+          "SHA256": "5F1F2D5CE5AD5559A283BE955FFF217FACFA5948DD34ED82E1EABD7D276536F5",
+          "path": "tmp/bhsm_projected_midpoint_mean_value_pair_20260913/left/reproduction.json"
+        }
+      },
+      "report": {
+        "FULL_BHSM_COMPLETE": false,
+        "Gate7_closed": false,
+        "all_249_projected_point_columns_contained": true,
+        "coordinates_tightened": 74,
+        "full_path_contraction": false,
+        "full_trial_basis_enclosed": false,
+        "maximum_mean_value_support": 311.889675945787,
+        "new_action_derivative_evaluations": 0,
+        "normalization": {
+          "FULL_BHSM_COMPLETE": false,
+          "Gate7_closed": false,
+          "action_domain_bound": false,
+          "border_sign": 1,
+          "common_border_scale_canceled_before_second_differentiation": true,
+          "coupled_identities_through_mixed_second_order_required": true,
+          "fixed_output_map_before_scalar_products": true,
+          "original_unprojected_physical_norm_retained": true
+        },
+        "paired_complete_midpoint_jets_reused": true,
+        "physical_quotient_identified": false,
+        "previous_maximum_radius": 311.9005126953125,
+        "projected_hessian_coordinates_tightened": 18426,
+        "same_family_segment_smoothness_inherited": true,
+        "selected_maximum_radius": 311.88967657089233,
+        "uniform_projected_center_derivative_enclosed": true
+      }
+    },
+    "right": {
+      "algorithm": "PAIRED_MIDPOINT_JETS_FIXED_OUTPUT_MEAN_VALUE_ARB512_V1",
+      "evidence": {
+        "column.npz": {
+          "SHA256": "CD69F92458D972C4B3C938223B1C2BF841CBD83FFBFA2DE77F244208807B2555",
+          "path": "tmp/bhsm_projected_midpoint_mean_value_pair_20260913/right/first/column.npz"
+        },
+        "record.json": {
+          "SHA256": "93330B9CA950B36D19E9C138AF75C2B301E0CC1E411218BC10368A96FE37D8E4",
+          "path": "tmp/bhsm_projected_midpoint_mean_value_pair_20260913/right/first/record.json"
+        },
+        "reproduction.json": {
+          "SHA256": "6447A1D3E4F7C70A7D2EBC3F1D48B77EADEB8386880F8BC163E87C322CE6497F",
+          "path": "tmp/bhsm_projected_midpoint_mean_value_pair_20260913/right/reproduction.json"
+        }
+      },
+      "report": {
+        "FULL_BHSM_COMPLETE": false,
+        "Gate7_closed": false,
+        "all_249_projected_point_columns_contained": true,
+        "coordinates_tightened": 74,
+        "full_path_contraction": false,
+        "full_trial_basis_enclosed": false,
+        "maximum_mean_value_support": 312.6065541072351,
+        "new_action_derivative_evaluations": 0,
+        "normalization": {
+          "FULL_BHSM_COMPLETE": false,
+          "Gate7_closed": false,
+          "action_domain_bound": false,
+          "border_sign": 1,
+          "common_border_scale_canceled_before_second_differentiation": true,
+          "coupled_identities_through_mixed_second_order_required": true,
+          "fixed_output_map_before_scalar_products": true,
+          "original_unprojected_physical_norm_retained": true
+        },
+        "paired_complete_midpoint_jets_reused": true,
+        "physical_quotient_identified": false,
+        "previous_maximum_radius": 312.61742210388184,
+        "projected_hessian_coordinates_tightened": 18426,
+        "same_family_segment_smoothness_inherited": true,
+        "selected_maximum_radius": 312.6065549850464,
+        "uniform_projected_center_derivative_enclosed": true
+      }
+    }
+  },
   "full_path_contraction_established": false,
   "full_trial_basis_enclosed": false,
   "interval": 13,
@@ -111,12 +201,16 @@
     "scripts/certify_n12_gate7_bootstrap_endpoint_midpoint_local_integration.py": "D0546F315547E4BF1C33D5AFBED7165E1513185B53C16DF02FEE0491C89673C0",
     "scripts/certify_n12_gate7_endpoint_midpoint_mean_value_local_integration.py": "AEAC8D9534735AEF3116A986D60C4B3B831CDDE670296DB311D7B652B10A42B5",
     "scripts/certify_n12_gate7_midpoint_center_mean_value_derivative.py": "C1F636307FD156368F80EBEF55F53DC48E8191991589E9E8A3910D4D3CD997D3",
+    "scripts/certify_n12_gate7_projected_midpoint_mean_value.py": "84189516C165DF12E26365650D0BED4F90F57669C7246659D0B93AA996815106",
     "scripts/certify_n12_gate7_trial_mean_value_seed_bootstrap.py": "B4009F423BB7926E5A952427066156EA5246CDE424162AA9F846CADF4DF33A00",
     "scripts/diagnose_n12_gate7_mean_value_local_term_attribution.py": "E335BF4DC0AC1DBCDE6C9954A71A06688D68F6E297E2B1C65461C9753ED4EAC5",
     "scripts/n12_gate7_midpoint_center_uniform_mixed_variation.py": "36C8A20D546F7A6AA8CB2306C3189D9159A0FE1A14448FB6437E71A1BCBC2099",
+    "src/bhsm/interface/projected_coupled_physical_normalization_second.py": "5302EB68A28FEEF17836EA0914CF51ED3CEE007FA59564B89ED4393B476ACB9F",
+    "tests/test_projected_coupled_physical_normalization_second.py": "5A91FEC1B4313C22C6723B0E5EEBF4702CAD9D205874DCCDC5DFECEA89AF1309",
     "theory/n12_gate7_bootstrap_endpoint_midpoint_local_integration.md": "075293E3340F310590152FA5B843F3CD0345000C65C8135B40FA761531F2F797",
     "theory/n12_gate7_endpoint_midpoint_mean_value_local_integration.md": "B24FBE0E72ABF4A23679F67C65CD7CC63090761460C17AA526C4EE657D29C984",
     "theory/n12_gate7_midpoint_center_mean_value_derivative.md": "0AADCDE68E380D2C32A31A03C97101AA1C6A9C6E8BD733D8B912195BC516849A",
+    "theory/n12_gate7_projected_midpoint_mean_value.md": "FE62FB0F18369336062E1619C628D11B8B443ED3C28591AE64408015E91859AF",
     "theory/n12_gate7_trial_mean_value_seed_bootstrap.md": "895C7D682AB92E0A20D33D02CD3823D6B95A458254A8F57090DA2A16274A1EF4"
   },
   "local": {
@@ -430,6 +524,8 @@
       "new_action_derivative_evaluations": 0
     }
   },
+  "projection_focused_tests_passed": 3,
+  "projection_followup_decision": "NO_FURTHER_OUTPUT_REORDERING_REFINEMENT_FROM_THIS_RESULT",
   "radii_changed": false,
   "status": "PAIRED_MIDPOINT_AND_ENDPOINT_BOOTSTRAP_LOCAL_INTEGRATION",
   "trial_column": 14

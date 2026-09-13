@@ -83,3 +83,29 @@ The LIVE source bytes are bound to immutable evidence. Git normalization does
 not replace those bytes; exact reproduction requires the recorded sources and
 prerequisite bindings. The existing Museum scalar certificate and frozen
 prediction files remain unchanged.
+
+
+## Fixed output projection probe
+
+A separate paired saved-data calculation applies the fixed output map before
+shared scalar products and normalization. It retains the original unprojected
+physical norm and all 249 mixed columns. All projected point columns remain
+contained. No new action derivatives are evaluated.
+
+| Projected midpoint center-action radius | Previous | Selected |
+| --- | ---: | ---: |
+| Left | 311.900512695 | 311.889676571 |
+| Right | 312.617422104 | 312.606554985 |
+
+This tightens every output coordinate but reduces the maximum radius by only
+about 0.0035%. It is a recorded limitation of this output-reordering route,
+not an additional material local-operator improvement. Further refinement of
+this route is not justified by this result. The local table above retains the
+paired integration before this separate projection probe.
+
+Three focused tests pass: exact cancellation on an entire descriptor interval,
+a nonzero projected second derivative against its closed-form expression, and
+rejection of incomplete projection dimensions. Both real-data sides reproduce
+byte-for-byte in fresh processes. Run the projection producer with the original
+midpoint primal pair and each paired midpoint mixed-jet source; exact paths and
+hashes are recorded in the companion artifact.
