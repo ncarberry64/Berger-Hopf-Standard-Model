@@ -1,0 +1,159 @@
+{
+  "FULL_BHSM_COMPLETE": false,
+  "Gate7_closed": false,
+  "decision": "TEST_UNIFORM_MIXED_HESSIAN_MEAN_VALUE_BOUND_ON_ACTUAL_TRIAL_DIRECTION",
+  "endpoint": 13,
+  "focused_tests_passed": 3,
+  "full_path_contraction_established": false,
+  "interval": 13,
+  "live_source_SHA256": {
+    "scripts/diagnose_n12_gate7_endpoint_trial_point_variation.py": "A6601A2FC56ADFA612AA055464DEC014F4009571885F2006F07F0D84B32B3210",
+    "scripts/diagnose_n12_gate7_trial_point_hessian_support.py": "36A49BED51A97B74F9349447E141648741169A1570378315485432FD9D731573",
+    "src/bhsm/interface/verified_point_variation.py": "AA6102299EE0BEAF78F96B1B32E026A081D1A4DBB473A8BA699D0F6856CDD2D7",
+    "tests/test_verified_point_variation.py": "EF7AC27D632A09289945C610FD234871877FD79207E8A04235477D71CFD5B7CA",
+    "theory/n12_gate7_endpoint_trial_point_variation.md": "84B54EB88C6F9975975DAD28CD360D42557EC54C7A070EB2DE124A78F93BE307",
+    "theory/n12_gate7_trial_point_hessian_support.md": "21B0419946AD7BF4DBF5EBE00638F60CD535E4F7AF0D2A0B4029773191579696"
+  },
+  "measured_data_used": false,
+  "point_evidence_does_not_establish_uniform_upper_bound": true,
+  "point_hessian": {
+    "algorithm": "PAIRED_POINT_HESSIAN_TRIAL_TUBE_SENSITIVITY_ARB512_V1",
+    "evidence": {
+      "column.npz": {
+        "SHA256": "605A280F0E0404742CBD28500B25D0123A79175583C3F2500857C6DA849F32EB",
+        "path": "tmp/bhsm_endpoint13_trial_point_hessian_support_pair_20260913/value/first/column.npz"
+      },
+      "record.json": {
+        "SHA256": "DA9C9354515011FAC782EB6C6A290E1FB45522B56C82DEA4DD7D990E8AD6BB0E",
+        "path": "tmp/bhsm_endpoint13_trial_point_hessian_support_pair_20260913/value/first/record.json"
+      },
+      "reproduction.json": {
+        "SHA256": "84093B40FF665D4241B333005B30193E716F670A91D21112E676D1AF4376376A",
+        "path": "tmp/bhsm_endpoint13_trial_point_hessian_support_pair_20260913/value/reproduction.json"
+      }
+    },
+    "report": {
+      "FULL_BHSM_COMPLETE": false,
+      "Gate7_closed": false,
+      "all_75_scaled_tube_directions_used": true,
+      "exact_anchor_weights_reference_graph_matched": true,
+      "local_or_global_contraction_established": false,
+      "maximum_longitudinal_linearized_support_approx": 9.943277266004833e-06,
+      "maximum_total_linearized_support_approx": 2.6778142471922355e-05,
+      "maximum_transverse_linearized_support_approx": 1.6834865205917522e-05,
+      "neighborhood_remainder_enclosed": false,
+      "new_action_derivative_evaluations": 0,
+      "paired_complete_point_hessian_used": true,
+      "point_linearization_only": true,
+      "samples": {
+        "minus": {
+          "maximum_sample_linearization_remainder_upper_approx": 1.4349723557261807e-11,
+          "observed_difference_upper_approx": 7.457443599780067e-06,
+          "row": 55,
+          "same_row_longitudinal_linearized_support_approx": 9.943277266004833e-06,
+          "same_row_sample_linearization_remainder_upper_approx": 1.4349723557261807e-11,
+          "same_row_transverse_linearized_support_approx": 1.6834865205917522e-05,
+          "same_row_uniform_action_radius_approx": 0.6004478167742491
+        },
+        "plus": {
+          "maximum_sample_linearization_remainder_upper_approx": 1.4349768079234401e-11,
+          "observed_difference_upper_approx": 7.457472299271703e-06,
+          "row": 55,
+          "same_row_longitudinal_linearized_support_approx": 9.943277266004833e-06,
+          "same_row_sample_linearization_remainder_upper_approx": 1.4349768079234401e-11,
+          "same_row_transverse_linearized_support_approx": 1.6834865205917522e-05,
+          "same_row_uniform_action_radius_approx": 0.6004478167742491
+        }
+      },
+      "uniform_derivative_enclosure_established": false
+    }
+  },
+  "point_samples": {
+    "minus": {
+      "algorithm": "VERIFIED_ENDPOINT_TRIAL_POINT_VARIATION_ARB512_V1",
+      "evidence": {
+        "column.npz": {
+          "SHA256": "E7E960F8640164A4FA62B12CF96346C4485D3A0A2A214E4B48A1FECDAEDAB942",
+          "path": "tmp/bhsm_endpoint13_trial_point_variation_pair_20260913/minus/first/column.npz"
+        },
+        "record.json": {
+          "SHA256": "70DB26EA2877CAD0AEAD3B656105CF66E86D39792C835DFB2D612D3A07379276",
+          "path": "tmp/bhsm_endpoint13_trial_point_variation_pair_20260913/minus/first/record.json"
+        },
+        "reproduction.json": {
+          "SHA256": "A84AC6F1E1282DFA172A94183990C1186C6BCC5B20680394B8CD3C9118AA0A5A",
+          "path": "tmp/bhsm_endpoint13_trial_point_variation_pair_20260913/minus/reproduction.json"
+        }
+      },
+      "report": {
+        "FULL_BHSM_COMPLETE": false,
+        "Gate7_closed": false,
+        "all_transverse_parameters_zero": true,
+        "complete_original_point_graph": true,
+        "exact_baseline_primal_selection": {
+          "eigenvalue_refined": false,
+          "psi": 56,
+          "response": 58
+        },
+        "largest_proven_difference_row": 55,
+        "local_or_global_contraction_established": false,
+        "longitudinal_parameter_rational": "-3/4",
+        "maximum_absolute_difference_lower_rational": "2295611241623410516152173704981729343177532210404692871582729333439185731497372967576182875566611660362994035/307828173409331868845930000782371982852185463050511302093346042220669701339821957901673955116288403443801781174272",
+        "maximum_absolute_difference_upper_approx": 7.457443599780067e-06,
+        "necessary_single_coordinate_radius_lower_approx": 3.7287217998900334e-06,
+        "outward_construction_rounding_retained": true,
+        "paired_branch_containment": true,
+        "paired_primal_response_containment": true,
+        "paired_uniform_action_containment": true,
+        "sampled_variation_only": true,
+        "uniform_action_maximum_radius_approx": 0.6004478158429265,
+        "uniform_upper_bound_established": false,
+        "verified_linear_solves": 3
+      }
+    },
+    "plus": {
+      "algorithm": "VERIFIED_ENDPOINT_TRIAL_POINT_VARIATION_ARB512_V1",
+      "evidence": {
+        "column.npz": {
+          "SHA256": "89B8C5F0FFF8B41071ACA0F1CCDCB0B072357B363D3942AE9EFB917B5235C714",
+          "path": "tmp/bhsm_endpoint13_trial_point_variation_pair_20260913/plus/first/column.npz"
+        },
+        "record.json": {
+          "SHA256": "B77E03AEEF201BD8ACF753803B1B58A7BC7DE6CFB3F44C2B6696F67C97172E78",
+          "path": "tmp/bhsm_endpoint13_trial_point_variation_pair_20260913/plus/first/record.json"
+        },
+        "reproduction.json": {
+          "SHA256": "229F9DDD5411D76E4D39A01456AF39C3EDC0A7DCA50610DF42C7661F56A69363",
+          "path": "tmp/bhsm_endpoint13_trial_point_variation_pair_20260913/plus/reproduction.json"
+        }
+      },
+      "report": {
+        "FULL_BHSM_COMPLETE": false,
+        "Gate7_closed": false,
+        "all_transverse_parameters_zero": true,
+        "complete_original_point_graph": true,
+        "exact_baseline_primal_selection": {
+          "eigenvalue_refined": false,
+          "psi": 56,
+          "response": 58
+        },
+        "largest_proven_difference_row": 55,
+        "local_or_global_contraction_established": false,
+        "longitudinal_parameter_rational": "3/4",
+        "maximum_absolute_difference_lower_rational": "9182480304541995020706055100477249099348913658402096258715982674813895518535614027109321236862714305453197007/1231312693637327475383720003129487931408741852202045208373384168882678805359287831606695820465153613775207124697088",
+        "maximum_absolute_difference_upper_approx": 7.457472299271703e-06,
+        "necessary_single_coordinate_radius_lower_approx": 3.7287361496358517e-06,
+        "outward_construction_rounding_retained": true,
+        "paired_branch_containment": true,
+        "paired_primal_response_containment": true,
+        "paired_uniform_action_containment": true,
+        "sampled_variation_only": true,
+        "uniform_action_maximum_radius_approx": 0.6004478158429265,
+        "uniform_upper_bound_established": false,
+        "verified_linear_solves": 3
+      }
+    }
+  },
+  "status": "PAIRED_POINT_SENSITIVITIES_SMALL_UNIFORM_NEIGHBORHOOD_BOUND_OPEN",
+  "trial_column": 14
+}
