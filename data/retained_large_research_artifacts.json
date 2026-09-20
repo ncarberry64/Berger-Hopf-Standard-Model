@@ -1,7 +1,7 @@
 {
   "schema": "BHSM_RETAINED_LARGE_RESEARCH_ARTIFACTS_V1",
   "reviewed_public_main": "d0844d009fd12a10c97d79f21443df6764391203",
-  "purpose": "Retain reproducibility inputs already in public main; no blanket exemption for new large files. JSON hashes use LF, NPZ hashes use exact bytes.",
+  "purpose": "Retain explicitly reviewed reproducibility inputs by exact canonical size and hash; no blanket exemption for large files. JSON hashes use LF; binary archives use exact bytes.",
   "physical_completion": false,
   "artifacts": [
     {
@@ -203,6 +203,24 @@
       "path": "artifacts/flagship_integration/BHSM_N12_GATE7_SIGNED_GREEN_CURRENT_CENTER_GRAPH_JACOBIAN.npz",
       "canonical_bytes": 27774601,
       "sha256": "6eab2efec9fe3460ff94de43d8fab3e9188b9e601c4c559f9ece8047a96ffedc"
+    },
+    {
+      "path": "artifacts/gate7/GATE7_PROJECTED_VECTOR_CERTIFICATE_v1.json",
+      "canonical_bytes": 19928970,
+      "sha256": "dc23da79789ed590437db04813a7571b079f584357e07430158fbe3cfc56b6bf",
+      "review_basis": "Independently recomputed byte-identical Gate-7 local vector evidence; exact supports replayed by scripts/verify_n12_gate7_vector_certificates.py; no global completion promotion."
+    },
+    {
+      "path": "artifacts/gate7/GATE7_PROJECTED_VECTOR_CERTIFICATE_v2.json",
+      "canonical_bytes": 20159262,
+      "sha256": "8e9e931cccd41c6217a4683f014d58edcc17edaedff64886868b720bebf2c232",
+      "review_basis": "Independently recomputed byte-identical Gate-7 local vector evidence; exact supports replayed by scripts/verify_n12_gate7_vector_certificates.py; no global completion promotion."
+    },
+    {
+      "path": "artifacts/gate7/GATE7_ENDPOINT_VECTOR_CERTIFICATE_v1/models.json.gz",
+      "canonical_bytes": 11575023,
+      "sha256": "fdd60ace9a639a09b1655a23def4dc0733bb811a20a3f63e7e5776aa80a94f36",
+      "review_basis": "Independently recomputed byte-identical Gate-7 local vector evidence; exact supports replayed by scripts/verify_n12_gate7_vector_certificates.py; no global completion promotion."
     }
   ]
 }

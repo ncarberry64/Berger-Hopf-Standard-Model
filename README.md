@@ -30,6 +30,11 @@ connects reviewed derived results to these same public exhibits.
 | Examine the sandbox comparisons | [Complete source snapshot](docs/museum/sandbox_comparison_source_2026-09-02.md), [machine-readable values](data/museum/bhsm_sandbox_comparison_20260902.json) |
 | Reuse an external-runtime adapter | [Integration guide](integrations/README.md), [CERN ROOT](integrations/cern-root/README.md) |
 
+The [boundary-mapping explainer](docs/assets/bhsm_boundary_mapping_explainer.gif)
+illustrates the synthetic coordinate benchmark: a coordinate seam is not a detector failure.
+See the [benchmark interpretation](docs/coordinate_method_benchmark.md)
+for its algorithmic scope and limits.
+
 ## Scientific structure and present limits
 
 The retained historical mode screen uses the Berger scalar-spectrum proxy
