@@ -68,3 +68,34 @@ There is no allocated midpoint-only Gate-7 acceptance threshold. In particular,
 the difference between this bound and the complete-column budget is not a
 global contraction margin. The next required operation is the complete
 same-parameter endpoint/midpoint chain documented in the progress packet.
+
+## Validated correction refinement (V2)
+
+The complete vector bound improves to
+
+    ||Y_phys(theta)-Y_phys,0||_2 <= 0.409189271846.
+
+For a saved implicit predictor `u_hat=u0+J0 theta`, the original uniform
+derivative solve enclosure `[Du]` and verified point solve `[u(0)]` give
+
+    |u(theta)-u_hat(theta)|
+      <= |[u(0)]-u0| + support(([Du]-J0) theta).
+
+Intersect this correction radius with the original one. This is a bound on
+the same physical solution over the unchanged input domain. The source
+graph pairs solve blocks `(0,4)`, `(1,5)` and `(2,6)` as response/derivative,
+axis-eigenline/mixed derivative and axis-response/mixed derivative. Its
+normalization border equations are retained as well.
+
+Substitute `eta_old=(rho_new/rho_old) eta_new` in the existing scalar Taylor
+model, retaining its entire old nonlinear remainder. Reconstruct the
+normalized numerator with the new correction radii and apply the same exact
+descriptor identity. No action derivative is recomputed. The input domain,
+parameters, norm and physical projector remain unchanged.
+
+The refined certificate is `artifacts/gate7/GATE7_PROJECTED_VECTOR_CERTIFICATE_v2.json`;
+its independent pair has SHA256
+`8E9E931CCCD41C6217A4683F014D58EDCC17EDAEDFF64886868B720BEBF2C232`.
+Use the same command above with producer
+`scripts/certify_n12_gate7_projected_vector_lift_refined.py` and fresh output
+paths to reproduce it. V1 remains valid and preserved.
