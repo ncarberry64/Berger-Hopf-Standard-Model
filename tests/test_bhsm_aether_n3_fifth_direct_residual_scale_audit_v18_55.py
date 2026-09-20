@@ -1,5 +1,7 @@
+import json
 import os
 from pathlib import Path
+from bhsm.interface.aether_n3_fifth_direct_residual_scale_audit_v18_55 import deterministic_json
 
 
 def test_v18_55_fifth_direct_residual_scale_audit() -> None:

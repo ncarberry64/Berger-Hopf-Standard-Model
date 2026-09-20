@@ -7,6 +7,16 @@ src/bhsm/interface/shared_action_taylor.py text eol=lf
 src/bhsm/interface/shared_parameter_residual.py text eol=lf
 src/bhsm/interface/shared_triangular_residual.py text eol=lf
 src/bhsm/interface/coupled_action_output_adjoint.py text eol=lf
+src/bhsm/interface/input_linear_taylor.py text eol=lf
+src/bhsm/interface/input_linear_anchor_jet.py text eol=lf
+src/bhsm/interface/local_input_taylor_action.py text eol=lf
+src/bhsm/interface/local_input_taylor_action_fast.py text eol=lf
+src/bhsm/interface/local_input_taylor_action_top.py text eol=lf
+src/bhsm/interface/local_input_anchor_action.py text eol=lf
+src/bhsm/interface/common_input_error_pullback.py text eol=lf
+src/bhsm/interface/common_input_error_full_pullback.py text eol=lf
+src/bhsm/interface/joint_output_support.py text eol=lf
+src/bhsm/interface/velocity_residual_adjoint.py text eol=lf
 src/bhsm_model.py text eol=lf
 # Materialized scientific ledgers are byte-compared with canonical LF output.
 artifacts/*.json text eol=lf
@@ -20,3 +30,5 @@ artifacts/CKM_no_fit_operator_output_v1.json text eol=crlf
 src/bhsm/interface/predictions.py text eol=crlf
 # Download research packets are immutable byte-for-byte source archives.
 docs/research_packets/2026-08-03/*.md -text -diff
+src/bhsm/interface/base_residual_cancellation.py text eol=lf
+src/bhsm/interface/directional_error_refinement.py text eol=lf

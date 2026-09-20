@@ -139,3 +139,7 @@ The external handoffs in `C:/Users/carbe/Downloads/`, including
 `BHSM_Gate7_Resume_Addendum_20260914.md` and
 `BHSM_AI_Handoff_State_20260915.json`, were reconciled with the repository.
 They do not supply the missing complete physical column certificate.
+
+## Complete physical input block, 2026-09-20
+
+The interval-13 right block now covers all 74 physical inputs and 74 projected outputs. Shared base cancellation before interval transport and certified directional-error intersections give original two-radius weighted rows 0.0005576922403983423 and 0.5832743292213708. The local margin is at least 0.4167256707786291. Both independent transport runs and norm replays are byte-identical. See `GATE_7_FULL_INPUT_LOCAL_VECTOR.md` and `GATE_7_FINAL_VERDICT.md`. Gate 7 remains open at the full nonlinear history first-Jacobi/operator-force boundary; the canonical geometric stop is not reopened.
