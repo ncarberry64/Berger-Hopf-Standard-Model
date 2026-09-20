@@ -1,5 +1,16 @@
 # Current BHSM status
 
+## Gate-7 residual-cancelled scalar enclosure — 19 September 2026
+
+The [projected action packet](research_packets/2026-09-19/GATE_7_CLOSURE_PROGRESS.md)
+records a source-bound physical scalar enclosure on the original interval-13
+midpoint family: `|Y-Y0| <= 0.341177266859`. The full nonlinear remainder is
+included after combining the physical output and all four coupled action
+residual blocks. The calculation independently reproduced byte-for-byte.
+This supplies one projected row and direction; the complete column norm,
+endpoint chain and global physical margin remain unproved. Gate 7 remains
+open and no frozen prediction or downstream gate is promoted.
+
 ## Midpoint coordinate-error propagation — 7 September 2026
 
 The [pullback error bound](../theory/n12_gate7_midpoint_coordinate_pullback_error.md)

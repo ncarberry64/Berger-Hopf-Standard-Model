@@ -62,6 +62,22 @@ def test_coefficient_uncertainty_cannot_cancel_as_exact():
     assert (a-b).support() >= arb('0.2')
 
 
+def test_residual_identity_cancels_correction_before_support():
+    # G=e+e^2-theta, Y=e, beta=1. On G=0, Y=theta-e^2.
+    # The inherited e box is retained, but its linear error cancels exactly.
+    d = TaylorDomain([(0, 2, 'box')], 2)
+    theta = d.affine(0, [arb(1)/128, arb(0)])
+    e = d.affine(0, [arb(0), arb(1)/64])
+    W = e-(e+e*e-theta)
+    assert W.a[0, 1].is_zero()
+    assert W.support() < arb('0.008057')
+    for sign in [-1, 0, 1]:
+        t = arb(sign)/128
+        solution = ((1+4*t).sqrt()-1)/2
+        assert abs(solution) < arb(1)/64
+        assert W.enclosure().contains(solution)
+
+
 def test_retained_action_adapter_includes_global_inertia_and_boundary():
     import importlib.util
     from pathlib import Path

@@ -151,11 +151,17 @@ All terms and the original parameter groups are retained. Independent fresh
 processes produced byte-identical midpoint and endpoint records. These values
 remain covector-contracted equation residuals, not physical error margins.
 
-The artifact names are
-`BHSM_N12_GATE7_SHARED_ACTION_RESIDUAL_MIDPOINT_20260919.json`,
-`BHSM_N12_GATE7_SHARED_ACTION_RESIDUAL_ENDPOINT_20260919.json`, and
-`BHSM_N12_GATE7_SHARED_ACTION_RESIDUAL_REPRODUCTION_20260919.json`
+The current artifact names are
+`BHSM_N12_GATE7_SHARED_ACTION_RESIDUAL_MIDPOINT_V2_20260919.json`,
+`BHSM_N12_GATE7_SHARED_ACTION_RESIDUAL_ENDPOINT_V2_20260919.json`, and
+`BHSM_N12_GATE7_SHARED_ACTION_ADJOINT_REPRODUCTION_V2_20260919.json`
 under `artifacts/flagship_integration/`.
+The V1 records and implementation commit `ca2b0284` remain historical
+predictor probes. V1 took midpoints of the state-direction coefficients;
+V2 retains their nonzero rounding radii (up to about 1e-160). V1 therefore
+does not establish the full original state-domain coverage claimed in its
+metadata. V2 supersedes that coverage claim and independently reproduces;
+the displayed support values are unchanged. No V1 gate promotion occurred.
 
 From the repository root, use a fresh output path:
 

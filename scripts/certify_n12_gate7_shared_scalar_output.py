@@ -1,7 +1,8 @@
-"""Evaluate a signed action residual on the saved common-parameter predictor.
+"""Bound one physical scalar via Y-beta*G on an inherited solution domain.
 
-This bounded probe supplies an actual action-owned Taylor enclosure. It does
-not infer a physical output error from one residual or an approximate adjoint.
+The full nonlinear action and output are evaluated before support bounds.
+G=0 on the inherited physical graph, so Y=Y-beta*G there for ANY fixed beta.
+An approximate anchor adjoint improves cancellation but is not an assumption.
 """
 import os
 for key in ('OPENBLAS_NUM_THREADS', 'OMP_NUM_THREADS', 'MKL_NUM_THREADS'):
@@ -36,7 +37,7 @@ def summary(value):
                      for v in [value.c, *value.a.entries(), value.r]])).hexdigest().upper())
 
 
-def evaluate(root, family, progress, checkpoint):
+def evaluate(root, family, adjoint_path, progress, checkpoint):
     # Verification owns no action derivative evaluations. All seven predictors,
     # original groups, paired bytes and complete source bindings are checked.
     # The immutable readers bind their own module paths. Keep those imports in
@@ -53,8 +54,20 @@ def evaluate(root, family, progress, checkpoint):
                   else '.affine_eigenpair_pilot_work/endpoint_014')
     data = root/'tmp'/pair/'value/first/column.npz'
     eigenfile = root/'artifacts/flagship_integration'/eigen_name/'eigenpair.npz'
-    nparam = verified['families'][family]['parameters']
-    domain = TaylorDomain(verified['families'][family]['groups'], nparam)
+    ninput = verified['families'][family]['parameters']
+    nparam = ninput+248
+    groups = verified['families'][family]['groups']+[(ninput, nparam, 'box')]
+    domain = TaylorDomain(groups, nparam)
+    adjoint = json.loads(adjoint_path.read_bytes())
+    if (adjoint.get('algorithm') != 'COMPLETE_COUPLED_ANCHOR_OUTPUT_ADJOINT_ARB512_V1'
+            or adjoint.get('family') != family or adjoint.get('unknowns') != 248):
+        raise ValueError('matching complete anchor adjoint proposal required')
+    if any(adjoint['source_hashes'].get(k) != v for k, v in verified['paired_source_hashes'].items()):
+        raise ValueError('adjoint belongs to a different physical source family')
+    betas = {k:[arb(x) for x in v] for k, v in adjoint['exact_covectors'].items()}
+    if (set(betas) != {'eigenline','response','axis_line','axis_response'}
+            or any(len(v) != 62 or any(not x.rad().is_zero() or not x.is_finite() for x in v) for v in betas.values())):
+        raise ValueError('complete exact fixed residual covectors required')
     with np.load(data, allow_pickle=False) as z, np.load(eigenfile, allow_pickle=False) as eigen:
         read = lambda name: saved_reader.read_matrix(z, name, center=True)
         centers = [read(f'point_center_{i}') for i in range(7)]
@@ -65,19 +78,26 @@ def evaluate(root, family, progress, checkpoint):
         axis = read('weighted_input_axis')
         raw_domain = saved_reader.read_matrix(z, 'raw_domain')
         descriptor = read('descriptor_base')
+        boxes = saved_reader.read_matrix(eigen, 'eigenpair_box').entries()
+        boxes += sum([saved_reader.read_matrix(z, f'uniform_solve_{i}').entries() for i in range(3)], [])
+        point_derivative = saved_reader.read_matrix(z, 'point_derivative')
+    report = json.loads((data.parent/'record.json').read_bytes())['report']
+    if not all(report.get(k) is True for k in ('same_family_segment_smoothness_established',
+        'complete_original_seven_solve_graph_used','complete_original_scalar_contractions_used')):
+        raise ValueError('complete same-family implicit physical graph required')
     _, weights, _, _, _ = p.values.operands()
     qw, rw, _, _ = cert.metric_data()
     weights = [arb(float(x)) for x in weights]
     qw, rw = [[arb(float(x)) for x in v] for v in (qw, rw)]
     raw_axis = [axis[i, 0]/weights[i] for i in range(98)]
-    state = [domain.affine(center[i, 0], [directions[i, j]/weights[i] for j in range(nparam)])
+    state = [domain.affine(center[i, 0], [directions[i, j]/weights[i] for j in range(ninput)]+[arb(0)]*248)
              for i in range(98)]
     # This independently checks the saved affine predictor's original outer
     # domain, not a newly chosen smaller domain.
     if any(not raw_domain[i, 0].contains(x.enclosure()) for i, x in enumerate(state)):
         raise ArithmeticError('common-parameter state not enclosed by original source domain')
     def model(c, deriv, rows):
-        return [domain.affine(c[i, 0], [deriv[i, j] for j in range(nparam)]) for i in range(rows)]
+        return [domain.affine(c[i, 0], [deriv[i, j] for j in range(ninput)]+[arb(0)]*248) for i in range(rows)]
     psi = model(ep, centers[3], 61)
     hard = model(centers[0], centers[4], 62)
     psi_u = model(centers[1], centers[5], 62)
@@ -90,6 +110,7 @@ def evaluate(root, family, progress, checkpoint):
     sources['retained_action_parent'] = saved_reader.sha(Path(cert.__file__))
     sources['shared_action_taylor'] = saved_reader.sha(Path(implementation.__file__))
     sources['evaluator'] = saved_reader.sha(Path(__file__))
+    sources['full_output_adjoint'] = saved_reader.sha(adjoint_path)
     binding = hashlib.sha256(saved_reader.encoded(dict(sources=sources, family=family,
                                   precision=ctx.prec))).hexdigest().upper()
     checkpoint.mkdir(parents=True, exist_ok=True)
@@ -126,8 +147,22 @@ def evaluate(root, family, progress, checkpoint):
     rayleigh = action('rayleigh_action', [pad(psi), pad(psi)])/dot(psi, psi)
     eigenvalue = domain.affine(ep[61, 0], [v.mid() for v in rayleigh.a.entries()])
 
-    # Choose an output-informed exact covector proposal using the frozen QP
-    # row. It is NOT asserted to be the exact full stacked output adjoint.
+    # The source boxes already contain the true same-family implicit solution.
+    # For each theta, U-Uhat lies in this explicit correction box. Parameter
+    # dependencies are preserved until after Y-beta*G has been formed.
+    predictors = psi+[eigenvalue]+hard+psi_u+hard_u
+    correction_radii = []
+    corrected = []
+    for i, (value, box) in enumerate(zip(predictors, boxes, strict=True)):
+        radius = (abs(box-value.c).upper()+value.linear_bound()+value.r).upper()
+        coefficients = value.a.entries()
+        coefficients[ninput+i] = radius
+        corrected.append(domain.affine(value.c, coefficients, value.r))
+        correction_radii.append(str(radius.fmpq()))
+    psi, eigenvalue = corrected[:61], corrected[61]
+    hard, psi_u, hard_u = corrected[62:124], corrected[124:186], corrected[186:248]
+
+    # Reconstruct the unchanged scalar output itself, independently of beta.
     residual = p.geometry.residual
     with base.cache.cache_hashes([(p.values, 'sha'), (residual.center, '_sha'),
                                  (residual.foundation.coordinate.center, '_sha')]):
@@ -143,81 +178,100 @@ def evaluate(root, family, progress, checkpoint):
     a = [arb(float(x)) for x in axes[14]]
     qrow = arb_mat(1, 74, [arb(i == 73)-a[73]*a[i] for i in range(74)])
     zrow = qrow*P*(2*arb(float(local['step']))/3)
-    # Use the same documented proposal for both anchor families. It selects
-    # an action covector; no endpoint HS chain coefficient is inferred here.
-    s = raw_domain[98, 0].mid()
-    pc, hc = [v.c for v in psi], [v.c for v in hard]
-    configuration = [qw[i]*center[37+i, 0] for i in range(37)]
-    N = [s*x for x in configuration]+[rw[i]*(hc[61]*pc[i]+s*hc[i]) for i in range(61)]
-    norm = dot(N, N).sqrt()
-    delta = descriptor[0, 0]*hc[61]+s*descriptor[1, 0]
-    zy = dot(zrow.entries(), N+[delta])
-    cN = [zrow[0, i]/norm-zy*N[i]/norm**3 for i in range(98)]
-    cd = zrow[0, 98]/norm
-    ch = [s*rw[i]*cN[37+i]+cd*s*rw[i]/weights[37+i]*ep[61, 0]*pc[i] for i in range(61)]
-    cb = dot(cN[37:], [rw[i]*pc[i] for i in range(61)])+cd*descriptor[0, 0]
-    # The saved eigenpair inverse uses -p in its final column. Flip the last
-    # solution coordinate to form a proposal for the response's +p border.
-    candidate = arb_mat(1, 62, ch+[-cb])*inverse
-    beta = [v.mid() for v in candidate.entries()]
-    v, bottom = beta[:61], beta[61]
-    raw_v = pad(v)
-    g = [v[i]*rw[i]*qw[i]/weights[i] for i in range(37)]+[arb(0)]*61
-    c = [arb(0)]*37+[v[i]*rw[i]/weights[37+i] for i in range(61)]
+    v0, v1, v2, v3 = [betas[k][:61] for k in ('eigenline','response','axis_line','axis_response')]
+    bottom = {k:v[61] for k,v in betas.items()}
+    def source_legs(v):
+        return ([v[i]*rw[i]*qw[i]/weights[i] for i in range(37)]+[arb(0)]*61,
+                [arb(0)]*37+[v[i]*rw[i]/weights[37+i] for i in range(61)])
+    g1, c1 = source_legs(v1)
+    g3, c3 = source_legs(v3)
     d = [qw[i]*state[37+i]/weights[i] for i in range(37)]+[arb(0)]*61
     du = [qw[i]*raw_axis[37+i]/weights[i] for i in range(37)]+[arb(0)]*61
-    f = action('source_gradient', [g])-action('source_hessian', [c, d])
-    fu = (action('source_axis_gradient', [g, raw_axis])
-          -action('source_axis_hessian', [c, d, raw_axis])
-          -action('source_axis_configuration', [c, du]))
+    f = action('source_gradient', [g1])-action('source_hessian', [c1, d])
+    fu = (action('source_axis_gradient', [g3, raw_axis])
+          -action('source_axis_hessian', [c3, d, raw_axis])
+          -action('source_axis_configuration', [c3, du]))
     slope = action('eigenvalue_axis', [pad(psi), pad(psi), raw_axis])
     residuals = {}
-    residuals['eigenline'] = (action('eigenline_action', [raw_v, pad(psi)])
-        -eigenvalue*dot(v, psi)+bottom*(dot(psi, psi)-1)/2)
-    residuals['response'] = (action('response_action', [raw_v, pad(hard)])-eigenvalue*dot(v, hard[:61])
-        +hard[61]*dot(v, psi)-f+bottom*dot(psi, hard[:61]))
-    residuals['axis_line'] = (action('axis_line_action', [raw_v, pad(psi_u)])
-        -eigenvalue*dot(v, psi_u[:61])+psi_u[61]*dot(v, psi)
-        +action('axis_line_source', [raw_v, pad(psi), raw_axis])-slope*dot(v, psi)
-        +bottom*dot(psi, psi_u[:61]))
-    residuals['axis_response'] = (action('axis_response_action', [raw_v, pad(hard_u)])
-        -eigenvalue*dot(v, hard_u[:61])+hard_u[61]*dot(v, psi)
-        +action('axis_response_source', [raw_v, pad(hard), raw_axis])-slope*dot(v, hard[:61])
-        +hard[61]*dot(v, psi_u[:61])-fu
-        +bottom*(dot(psi, hard_u[:61])+dot(psi_u[:61], hard[:61])))
+    residuals['eigenline'] = (action('eigenline_action', [pad(v0), pad(psi)])
+        -eigenvalue*dot(v0, psi)+bottom['eigenline']*(dot(psi, psi)-1)/2)
+    residuals['response'] = (action('response_action', [pad(v1), pad(hard)])-eigenvalue*dot(v1, hard[:61])
+        +hard[61]*dot(v1, psi)-f+bottom['response']*dot(psi, hard[:61]))
+    residuals['axis_line'] = (action('axis_line_action', [pad(v2), pad(psi_u)])
+        -eigenvalue*dot(v2, psi_u[:61])+psi_u[61]*dot(v2, psi)
+        +action('axis_line_source', [pad(v2), pad(psi), raw_axis])-slope*dot(v2, psi)
+        +bottom['axis_line']*dot(psi, psi_u[:61]))
+    residuals['axis_response'] = (action('axis_response_action', [pad(v3), pad(hard_u)])
+        -eigenvalue*dot(v3, hard_u[:61])+hard_u[61]*dot(v3, psi)
+        +action('axis_response_source', [pad(v3), pad(hard), raw_axis])-slope*dot(v3, hard[:61])
+        +hard[61]*dot(v3, psi_u[:61])-fu
+        +bottom['axis_response']*(dot(psi, hard_u[:61])+dot(psi_u[:61], hard[:61])))
+
+    s = domain.affine(raw_domain[98, 0].mid(), [directions[98, j] for j in range(ninput)]+[arb(0)]*248)
+    su = axis[98, 0]
+    configuration = [qw[i]*state[37+i] for i in range(37)]
+    configuration_u = [qw[i]*raw_axis[37+i] for i in range(37)]
+    scale = lambda vec: [rw[i]/weights[37+i]*vec[i] for i in range(61)]
+    aa, au = pad(scale(psi)), pad(scale(psi_u))
+    dd = [configuration[i]/weights[i] for i in range(37)]+scale(hard)
+    ddu = [configuration_u[i]/weights[i] for i in range(37)]+scale(hard_u)
+    pp, pu = pad(psi), pad(psi_u)
+    cpsi = action('descriptor_c', [pp, pp, aa])
+    rem = action('descriptor_r', [pp, pp, dd])
+    cu = (action('descriptor_cu_4', [pp, pp, aa, raw_axis])
+        +2*action('descriptor_cu_3a', [pp, pu, aa])+action('descriptor_cu_3b', [pp, pp, au]))
+    ru = (action('descriptor_ru_4', [pp, pp, dd, raw_axis])
+        +2*action('descriptor_ru_3a', [pp, pu, dd])+action('descriptor_ru_3b', [pp, pp, ddu]))
+    N = [s*x for x in configuration]+[rw[i]*(hard[61]*psi[i]+s*hard[i]) for i in range(61)]
+    Nu = [su*x+s*y for x,y in zip(configuration, configuration_u)]
+    Nu += [rw[i]*(hard_u[61]*psi[i]+hard[61]*psi_u[i]+su*hard[i]+s*hard_u[i]) for i in range(61)]
+    delta = hard[61]*cpsi+s*rem
+    deltau = hard_u[61]*cpsi+hard[61]*cu+su*rem+s*ru
+    norm = (dot(N, N).log()/2).exp()
+    Y = dot(zrow.entries(), Nu+[deltau])/norm-dot(zrow.entries(), N+[delta])*dot(N, Nu)/(norm**3)
+    W = Y-sum(residuals.values(), domain.affine(0))
+    anchor = (zrow*point_derivative)[0, 0]
+    deviation = W-anchor
     p.verify_sources(json.loads((data.parent/'record.json').read_bytes())['binding'])
-    return dict(algorithm='SHARED_PARAMETER_ACTION_RESIDUAL_TAYLOR_ARB512_V2', family=family,
+    return dict(algorithm='SHARED_PARAMETER_RESIDUAL_CANCELLED_PHYSICAL_SCALAR_ARB512_V1', family=family,
         parameters=nparam, groups=domain.groups, binding=binding, source_hashes=sources,
         residuals={k: summary(v) for k, v in residuals.items()}, action_terms=terms,
-        exact_covector=[str(x.fmpq()) for x in beta],
+        correction_radii_exact=correction_radii,
+        exact_covectors=adjoint['exact_covectors'],
+        physical_scalar=summary(W), physical_scalar_anchor_deviation=summary(deviation),
+        scalar_remainder_support=summary(W)['nonlinear_remainder'],
+        correction_linear_support=summary(domain.affine(0,[arb(0)]*ninput+W.a.entries()[ninput:]))['signed_linear_support'],
+        inherited_solution_boxes_enclose_graph=True, residual_identity_used_before_support=True,
         all_seven_predictors_reused=True, action_boundary_and_global_inertia_included=True,
         signed_linear_parameters_retained=True, nonlinear_remainders_included=True,
-        state_direction_coefficient_rounding_retained=True,
         physical_domain_shrunk=False, predictor_is_solution_enclosure=False,
         covector_kind='FROZEN_LAST_RESPONSE_OUTPUT_ADJOINT_PROPOSAL',
-        full_stacked_adjoint_certified=False, stacked_correction_inclusion=False,
+        full_stacked_adjoint_certified=False, stacked_correction_inclusion='INHERITED_SAME_FAMILY_SOLUTION_BOXES',
         complete_projected_physical_error=None, physical_global_margin=None,
         Gate7_closed=False, FULL_BHSM_COMPLETE=False,
-        missing='Full stacked adjoint/secant correction bound, lifted descriptor/output residual and exact endpoint-to-midpoint joint graph.')
+        missing='This is one fixed scalar directional output. Complete vector norm, endpoint chain, full-history physical coefficients and remaining Gate-7 obligations are not certified.')
 
 
 def main():
     parser = argparse.ArgumentParser()
     parser.add_argument('--evidence-root', type=Path, required=True)
     parser.add_argument('--family', choices=['midpoint', 'endpoint'], default='midpoint')
+    parser.add_argument('--adjoint', type=Path, required=True)
     parser.add_argument('--out', type=Path, required=True)
     args = parser.parse_args()
     ctx.prec = 512
     if args.out.exists():
         raise FileExistsError('preserve prior evidence; use a new output path')
-    result = evaluate(args.evidence_root.resolve(), args.family,
+    result = evaluate(args.evidence_root.resolve(), args.family, args.adjoint.resolve(),
         lambda name, bound: print(json.dumps(dict(term=name, support=bound['complete_support']['approximate'],
             remainder=bound['nonlinear_remainder']['approximate'])), flush=True), args.out.with_suffix('.terms'))
     args.out.parent.mkdir(parents=True, exist_ok=True)
     with args.out.open('xb') as output:
         output.write(saved_reader.encoded(result))
-    print(json.dumps(dict(family=args.family, residuals={k: v['complete_support']['approximate']
-        for k, v in result['residuals'].items()}, physical_global_margin=None)), flush=True)
+    print(json.dumps(dict(family=args.family,
+        physical_scalar_anchor_deviation=result['physical_scalar_anchor_deviation']['complete_support']['approximate'],
+        nonlinear_remainder=result['physical_scalar']['nonlinear_remainder']['approximate'],
+        physical_global_margin=None)), flush=True)
 
 
 if __name__ == '__main__':

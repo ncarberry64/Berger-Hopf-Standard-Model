@@ -3,6 +3,10 @@
 *.gif -text -diff
 # Deterministic line endings for hash-audited source files.
 scripts/*.py text eol=lf
+src/bhsm/interface/shared_action_taylor.py text eol=lf
+src/bhsm/interface/shared_parameter_residual.py text eol=lf
+src/bhsm/interface/shared_triangular_residual.py text eol=lf
+src/bhsm/interface/coupled_action_output_adjoint.py text eol=lf
 src/bhsm_model.py text eol=lf
 # Materialized scientific ledgers are byte-compared with canonical LF output.
 artifacts/*.json text eol=lf
