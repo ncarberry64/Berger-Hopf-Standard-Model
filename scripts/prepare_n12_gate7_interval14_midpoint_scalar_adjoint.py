@@ -35,9 +35,13 @@ def evaluate(root,operands,predictors,direction,out):
         ore,a=load(operands,'operands.npz');pre,s=load(predictors,'predictors.npz')
         if pre['stage']!='midpoint' or pre['interval']!=14:raise ValueError('Midpoint 14 only')
         p.verify_sources(ore['binding'])
-        old=json.loads(direction.read_bytes())
-        if old['stage']!='midpoint' or any(sha(Path(path))!=digest for path,digest in old['input_source_SHA256'].items()):
-            raise ValueError('Complete original midpoint directional enclosure required')
+        # The adjoint is an arbitrary exact anchor proposal. Its construction
+        # does not need the uniform directional proof that will later bound
+        # the residual; optionally bind one when it already exists.
+        if direction is not None:
+            old=json.loads(direction.read_bytes())
+            if old['stage']!='midpoint' or any(sha(Path(path))!=digest for path,digest in old['input_source_SHA256'].items()):
+                raise ValueError('Matching original midpoint directional enclosure required')
         eigen=root/'artifacts/flagship_integration/.coupled_midpoint_eigenpair_pilot_work/interval_014/eigenpair.npz'
         with np.load(eigen,allow_pickle=False) as z:
             D=matrix(p.hs.restore_balls(z['center_defect_mid_q'],z['center_defect_rad_q']))
@@ -101,7 +105,8 @@ def evaluate(root,operands,predictors,direction,out):
             output,centers,descriptor)
         beta,defect=adjoint.adjoint_proposal(J,gradient)
         paths=[operands/'record.json',operands/'operands.npz',predictors/'record.json',predictors/'predictors.npz',
-               direction,eigen,tangent_path,frozen_path,Path(__file__),Path(cert.__file__),Path(adjoint.__file__),Path(prescribed.__file__),Path(factored.__file__)]
+               eigen,tangent_path,frozen_path,Path(__file__),Path(cert.__file__),Path(adjoint.__file__),Path(prescribed.__file__),Path(factored.__file__)]
+        if direction is not None:paths.append(direction)
         result=dict(algorithm='INTERVAL14_MIDPOINT_LOCAL_SCALAR_COMPLETE_ANCHOR_ADJOINT_V1',interval=14,stage='midpoint',
             output_coordinate=73,input_coordinate=14,unknowns=248,
             output_formula='(2*h/3) e73^T P DF(midpoint) (u/2-h*DF(endpoint)*u/8)',
@@ -119,5 +124,7 @@ def evaluate(root,operands,predictors,direction,out):
 
 if __name__=='__main__':
     parser=argparse.ArgumentParser()
-    for key in ('evidence-root','operands','predictors','direction','out'):parser.add_argument('--'+key,type=Path,required=True)
-    args=parser.parse_args();evaluate(args.evidence_root.resolve(),args.operands.resolve(),args.predictors.resolve(),args.direction.resolve(),args.out.resolve())
+    for key in ('evidence-root','operands','predictors','out'):parser.add_argument('--'+key,type=Path,required=True)
+    parser.add_argument('--direction',type=Path)
+    args=parser.parse_args();evaluate(args.evidence_root.resolve(),args.operands.resolve(),args.predictors.resolve(),
+        None if args.direction is None else args.direction.resolve(),args.out.resolve())
