@@ -6,6 +6,55 @@ and `artifacts/mission_state/BHSM_GATE7_CRITICAL_PATH_RECONCILIATION_20260923.js
 Gate 7 is OPEN. `FULL_BHSM_COMPLETE=False`. No new Museum physical outputs are
 certified or exported by this checkpoint.
 
+## New missing-object formulation and action prototype
+
+The [exact formulas and factor classifications](../theory/n12_gate7_uniform_remainder_formulation.md)
+identify the required full bilinear operator, including the actual midpoint's
+second incidence and the interval-14 Jacobian-entry booking. They distinguish
+a remainder-vector Hessian from a masked Jacobian derivative; the same current
+numerical targets follow without assuming a masked field is integrable.
+
+`uniform_action_contraction.py` is a new shared-parameter action derivative
+producer. It supports one to six prescribed legs, retains signed parameter
+coefficients, evaluates polynomial terms algebraically, and includes the
+exponential, global inertia reciprocal and boundary terms with rigorous tails.
+No physical implicit solve is replaced by a center predictor.
+
+The new endpoint-19 fifth-action probe is in
+`artifacts/flagship_integration/gate7_uniform_action_20260923/`.
+Its first/repeat certificate is for newly computed quantities only; it is not
+a repeat of any frozen eigenbranch, point Hessian or first-variation campaign.
+The saved raw operands remain at their catalogued historical location.
+
+The [collective-response candidate](../theory/bhsm_collective_encapsulation_response_candidate.md)
+separates conditional susceptibility theorems from the owner's physical
+interpretation. Its Gate-7 application uses the actual nonlinear HS map, with
+the second-incidence term retained. The new signed history-composition kernel
+has analytic tests; it does not certify missing physical model tails.
+
+To reproduce only this new scalar probe in a fresh output file:
+
+```powershell
+C:/Python314/python.exe scripts/derive_n12_gate7_uniform_fifth_action_prototype.py --evidence-root ../BHSM-ae32-crossing-correction --out tmp/new_fifth_action_repeat.json
+C:/Python314/python.exe -m pytest -q tests/test_uniform_action_contraction.py
+```
+
+For the new full-input bilinear action leaf, use the packaged scalar seed
+and a fresh output path:
+
+```powershell
+C:/Python314/python.exe scripts/derive_n12_gate7_uniform_fifth_action_operator_probe.py --seed artifacts/flagship_integration/gate7_uniform_action_20260923/scalar.json --out tmp/new_fifth_bilinear_repeat.json
+C:/Python314/python.exe -m pytest -q tests/test_shared_history_pullback.py
+```
+
+The original-domain radii are consumed from the current ledger and matched to
+the saved endpoint tube. The state has all 75 parameters. The two action input
+legs in this scalar probe are the radius-scaled longitudinal direction; its
+three eigenvector-related legs are frozen center legs. The new bilinear probe
+adds two complete independent L/T test-direction balls while preserving the
+same original state parameters. Neither probe supplies the missing moving-leg,
+implicit-solve, normalization or actual-midpoint operator bounds.
+
 ## Current mathematical obligation
 
 Construct a same-action, shared-parameter global physical remainder certificate

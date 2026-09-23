@@ -1,5 +1,42 @@
 # Current BHSM status
 
+## Collective encapsulation response candidate — 23 September 2026
+
+The [owner-hypothesis note](../theory/bhsm_collective_encapsulation_response_candidate.md)
+has status `CANDIDATE_PHYSICAL_PRINCIPLE_ACTION_DERIVATION_OPEN`. It proves
+conditional energy/reducing-subspace response inequalities and gives an exact
+counterexample to unconditional ordinary-norm monotonicity. The actual nonlinear
+HS shared-input map is identified, including its required midpoint-curvature
+term; no physical many-body susceptibility or rigidity scaling is inferred.
+
+A signed polynomial history-composition kernel is implemented and tested.
+The endpoint-19 restricted fifth-action bilinear leaf independently reproduced
+with bound approximately `1.3109964100037637e-23`. It covers the original state
+tube and all L/T direction pairs for fixed eigenvector-related center legs;
+the complete physical remainder and both kappa bounds remain open. Existing
+encapsulation, child-fiber and state-nonuniqueness verdicts are preserved.
+
+## Gate-7 action-derived remainder formulation — 23 September 2026
+
+The [explicit dependency formulation](../theory/n12_gate7_uniform_remainder_formulation.md)
+now gives the full HS second chain rule, bordered mixed solves, normalization,
+projected causal transport and current-radius kappa expressions. Direct uniform
+physical Hessians require action derivatives through order five; order six is
+needed only for a separate physical-Hessian Lipschitz construction.
+
+A new endpoint-19 shared-parameter fifth-action contraction on the unchanged
+75-parameter tube independently reproduced byte-for-byte. Its uniform scalar
+bound is approximately `3.354128883106707e-24`, with nonlinear Taylor-model
+remainder `4.1218506326963676e-39`. These are bounds for fixed center action
+legs, not a complete physical Hessian or either kappa. The signed center also
+overlaps an independent evaluation using the original unfactored action.
+
+The remaining producer must attach the moving eigenvector/response legs,
+two mixed implicit solutions, positive physical normalization, actual midpoint
+and all-direction output operator. A raw action contraction cannot be multiplied
+by history weights as though it were a physical local remainder. No full-history
+campaign or endpoint-71 refinement was launched. Gate 7 remains open.
+
 ## Gate-7 global physical remainder checkpoint — 23 September 2026
 
 The [current reproduction guide](GATE7_CURRENT_REPRODUCTION.md) is the entry
