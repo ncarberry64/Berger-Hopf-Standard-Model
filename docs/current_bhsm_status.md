@@ -1,5 +1,22 @@
 # Current BHSM status
 
+## Gate-7 global physical remainder checkpoint — 23 September 2026
+
+The [current reproduction guide](GATE7_CURRENT_REPRODUCTION.md) is the entry
+point for the consolidated Gate-7 record. Interval 13, the single interval-14
+booking, endpoint-71 point/primal/eigenvalue results and completed full-history
+DF/incidence/kinematic and stored arithmetic layers are frozen. Historical
+evidence is preserved with explicit provenance reconciliation.
+
+The complete global physical self-map and contraction remain **FAIL TO CERTIFY
+/ UNKNOWN** because the current-domain uniform shared-parameter remainder is
+not yet enclosed. The sufficient normalized-Hessian targets are
+`kappa_L < 0.6542911248664067` and `kappa_T < 0.7452414479024602`; these are not
+proved bounds. Endpoint 71's isolated diagnostic is not a global physical
+failure. No endpoint optimization campaign is authorized by this checkpoint.
+Gate 7, downstream action-owned projected-root/operator obligations and full
+BHSM completion remain open. No new physical Museum quantity is promoted.
+
 ## Gate-7 residual-cancelled scalar enclosure — 19 September 2026
 
 The [projected action packet](research_packets/2026-09-19/GATE_7_CLOSURE_PROGRESS.md)

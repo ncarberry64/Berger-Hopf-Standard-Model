@@ -20,13 +20,14 @@ def encoded(value):
     return (json.dumps(value, sort_keys=True, indent=2)+'\n').encode()
 
 
-def evaluate(root, work, workers):
+def evaluate(root, work, workers, midpoint_repair=None):
     repo = Path(__file__).resolve().parents[1]
     evidence = root.resolve()
     work = work.resolve()
     comparisons = []
     commands = []
     driver_hash = sha(Path(__file__))
+    repair_binding = None
 
     def folder(name):
         name = {'endpoint15_base_taylor_repeat': 'endpoint15_base_taylor_repeat_serial',
@@ -34,6 +35,14 @@ def evaluate(root, work, workers):
         return work / ('interval14_'+name)
 
     def run(script, **kwargs):
+        destination = Path(kwargs['out']) if 'out' in kwargs else None
+        if destination is not None and ((destination.is_dir() and (destination/'record.json').exists())
+                                        or destination.is_file()):
+            # The immediately following comparison still validates all saved
+            # math and source hashes. Do not re-accumulate a completed proof
+            # merely to resume a later interrupted stage.
+            print(json.dumps({'reuse_completed_stage':script,'out':str(destination)}),flush=True)
+            return
         argv = [sys.executable, str(repo/'scripts'/script), '--evidence-root', str(evidence)]
         for key, value in kwargs.items():
             argv.extend(['--'+key.replace('_', '-'), str(value)])
@@ -95,12 +104,38 @@ def evaluate(root, work, workers):
         run('certify_n12_gate7_interval14_base_taylor.py', **common,
             out=folder(stage+'_base_taylor_repeat'))
 
-    with ThreadPoolExecutor(max_workers=2) as pool:
-        futures = [pool.submit(reproduce_base, stage) for stage in ('endpoint15', 'midpoint14')]
-        for future in futures:
-            future.result()
-    for stage in ('endpoint15', 'midpoint14'):
-        compare_folder(stage+'_base_taylor')
+    if midpoint_repair is None:
+        with ThreadPoolExecutor(max_workers=2) as pool:
+            futures = [pool.submit(reproduce_base, stage) for stage in ('endpoint15', 'midpoint14')]
+            for future in futures:
+                future.result()
+        for stage in ('endpoint15', 'midpoint14'):
+            compare_folder(stage+'_base_taylor')
+    else:
+        midpoint_repair = midpoint_repair.resolve()
+        receipt_path = midpoint_repair/'repair_receipt.json'
+        repair = json.loads(receipt_path.read_bytes())
+        if (repair['algorithm'] != 'MIDPOINT14_SERIAL_RAW_EXACT_REPAIR_RECEIPT_V1'
+                or not repair['raw_ball_bytes_identical'] or not repair['complete_operand_hashes_equal']
+                or repair['canonical_coarsening_used'] or repair['numerical_tolerance_used']):
+            raise ValueError('Exact serial raw repair required')
+        for path, digest in repair['actual_execution_source_SHA256'].items():
+            if sha(Path(path)) != digest:
+                raise ValueError('Repair prerequisite changed: '+path)
+        if sha(midpoint_repair/'record.json') != repair['repaired_base_record_SHA256']:
+            raise ValueError('Repaired base record changed')
+        first, repeat = folder('midpoint14_base_taylor_first'), folder('midpoint14_base_taylor_repeat')
+        if str(first) != repair['original_first_directory'] or str(repeat) != repair['unchanged_repeat_directory']:
+            raise ValueError('Matching original base proof paths required')
+        compare_folder('endpoint15_base_taylor')
+        for path in sorted(first.glob('*.json')):
+            data = json.loads(path.read_bytes())
+            if path.name in ('record.json', 'sources.json') or ('binding' in data and 'values' in data):
+                target = midpoint_repair/path.name if path.name == 'record.json' or path.stem in repair['source_term_repair_SHA256'] else repeat/path.name
+                compare_files(path, target)
+        verify_sources(json.loads((first/'record.json').read_bytes()))
+        repair_binding = {'path': str(receipt_path), 'SHA256': sha(receipt_path)}
+        print(json.dumps({'exact_base_repair_verified': True, 'resuming_directional_reproduction': True}), flush=True)
 
     common = dict(operands=folder('endpoint15_point_first'), predictors=folder('endpoint15_seven_first'),
         base=folder('endpoint15_base_taylor_first')/'record.json')
@@ -137,12 +172,15 @@ def evaluate(root, work, workers):
         raise ArithmeticError('Strict entry and transport targets must both pass')
     if sha(Path(__file__)) != driver_hash:
         raise ValueError('Reproduction driver changed during execution')
+    if repair_binding is not None and sha(Path(repair_binding['path'])) != repair_binding['SHA256']:
+        raise ValueError('Base repair receipt changed')
     receipt = dict(algorithm='INTERVAL14_ENTRY_INDEPENDENT_PROCESS_REPRODUCTION_V1',
         interval=14, output_coordinate=73, input_coordinate=14,
         independent_process_recomputation=True, comparisons=comparisons,
         numerical_artifacts_byte_identical=True, wrapper_provenance_differences_explicit=True,
         commands=commands, original_domain_unchanged=True, interval13_recomputed=False,
-        driver_SHA256=driver_hash, Gate7_closed=False, transverse_ledger_debited=False)
+        driver_SHA256=driver_hash, exact_midpoint_base_repair=repair_binding,
+        Gate7_closed=False, transverse_ledger_debited=False)
     for suffix in ('first', 'repeat'):
         with folder('entry_reproduction_'+suffix+'.json').open('xb') as stream:
             stream.write(encoded(receipt))
@@ -155,5 +193,6 @@ if __name__ == '__main__':
     parser.add_argument('--evidence-root', type=Path, required=True)
     parser.add_argument('--work', type=Path, required=True)
     parser.add_argument('--workers', type=int, default=10)
+    parser.add_argument('--midpoint-repair', type=Path)
     args = parser.parse_args()
-    evaluate(args.evidence_root, args.work, args.workers)
+    evaluate(args.evidence_root, args.work, args.workers, args.midpoint_repair)

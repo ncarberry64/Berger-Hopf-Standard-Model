@@ -39,3 +39,13 @@ src/bhsm/interface/history_completion_budget.py text eol=lf
 theory/n12_gate7_interval14_entry_taylor.md text eol=lf
 theory/n12_gate7_local_state_compression.md text eol=lf
 theory/n12_gate7_two_sided_shared_transport.md text eol=lf
+# Imported Gate-7 certificates retain their original hash-bound bytes.
+artifacts/flagship_integration/gate7_global_checkpoint_20260923/** -text whitespace=cr-at-eol
+# This capsule is an immutable historical source archive, not edited code.
+artifacts/flagship_integration/gate7_global_checkpoint_20260923/historical_source_capsule/** -diff
+artifacts/mission_state/BHSM_GATE7_*.json -text whitespace=cr-at-eol
+artifacts/mission_state/BHSM_SYSTEMS_INTEGRATION_FINGERPRINT_COMPONENTS_V26.json -text whitespace=cr-at-eol
+artifacts/flagship_integration/BHSM_N12_GATE7_*.json -text whitespace=cr-at-eol
+artifacts/current_semantics/BHSM_N12_GATE7_SUPPLEMENTAL_MIXED_RATE_UU_VALIDATION.json -text whitespace=cr-at-eol
+src/bhsm/interface/global_physical_remainder_checkpoint.py text eol=lf
+theory/n12_gate7_global_remainder_checkpoint.md text eol=lf

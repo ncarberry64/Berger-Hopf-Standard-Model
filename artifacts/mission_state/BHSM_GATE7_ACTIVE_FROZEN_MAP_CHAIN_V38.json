@@ -1,0 +1,41 @@
+{
+  "FULL_BHSM_COMPLETE": false,
+  "Gate7_closed": false,
+  "active_lineage_producers_used": true,
+  "algorithm": "BHSM_GATE7_ACTIVE_FROZEN_MAP_CHAIN_V38",
+  "historical_artifact_imported": false,
+  "resolved_prerequisite": {
+    "guards": {
+      "artifact": true,
+      "coverage": true,
+      "validation": true
+    },
+    "sha256": "DE89C259D2E41E870B1270FFEE4B0B5D32DEA7D8794C4546D1C00AD43181B3AB"
+  },
+  "stages": [
+    {
+      "coverage": {
+        "complete": true,
+        "intervals": 370,
+        "nodes": 371
+      },
+      "scope": "EXACT_STORED_OPERANDS_AND_FROZEN_INVERSE_CAUSAL_MAP_CONSTRUCTION_ONLY",
+      "sha256": "317A29D9B13405FF3CAE26E11FE5A3084D452171AB21D0D6B932A9B93629A62C",
+      "stage": "frozen_causal_map_construction",
+      "status": null,
+      "validation_passed": true
+    },
+    {
+      "coverage": {
+        "complete": true,
+        "intervals": 370,
+        "nodes": 371
+      },
+      "scope": "FROZEN_OUTPUT_MAP_CONSTRUCTION_WITH_COORDINATE_AND_STORAGE_CROSS_ERRORS_ONLY",
+      "sha256": "12A35E0071C87A974624BB88B33B16BC54B81293B5D016A9ED867C9DCB778638",
+      "stage": "frozen_output_map_construction",
+      "status": null,
+      "validation_passed": true
+    }
+  ]
+}

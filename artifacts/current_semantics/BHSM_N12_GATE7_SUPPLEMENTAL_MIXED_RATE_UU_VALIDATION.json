@@ -1,0 +1,47 @@
+{
+  "artifact": "BHSM_N12_GATE7_SUPPLEMENTAL_MIXED_RATE_UU_VALIDATION",
+  "status": "PASSED",
+  "scope": "BINARY64_CENTER_IMPLEMENTATION_IDENTITY_ONLY",
+  "interval": 0,
+  "left_index": 0,
+  "right_indices": [
+    0,
+    1
+  ],
+  "elapsed_seconds": 10.630039800016675,
+  "comparison": {
+    "maximum_absolute_difference": 6.023554988132673e-10,
+    "Frobenius_difference": 1.3437493147524439e-09,
+    "relative_Frobenius_difference": 6.957730366159884e-12
+  },
+  "uncorrected_raw_comparison": {
+    "maximum_absolute_difference": 7.907511489069757e-05,
+    "Frobenius_difference": 9.175188392667468e-05,
+    "relative_Frobenius_difference": 4.750773540424476e-07
+  },
+  "scalar_covector_correction_applied": true,
+  "diagnostics": {
+    "base_response_residual_2_norm": 1.0834566338995592e-10,
+    "left_first_response_relative_residual": 7.707584195250053e-15,
+    "right_first_response_relative_residual": 8.29083609845211e-15,
+    "mixed_response_relative_residual": 7.147801441278185e-15,
+    "mixed_eigenline_normalization_residual": 6.910832898742605e-14
+  },
+  "recovery_campaign_fingerprint": "A1F06E0348C4DB39B5FCCA689872C595E3C9E19C5D09345946E0C1ECD8B743CA",
+  "inputs": {
+    "artifacts/flagship_integration/.current_green_signed_transverse_tensor_recovery_work/midpoint_000.npz": "862315BB5BECF2AA6E8A666507EFE2D68AD126B2AA6107FD5C61D0FFBD28489E",
+    "scripts/validate_n12_gate7_current_green_supplemental_mixed_rate.py": "16D7D37F7A3A50B574A64F0EDE352E20CDBF3A756A3E926540EC518379747A93",
+    "scripts/derive_n12_gate7_current_green_supplemental_mixed_rate.py": "7B8FFD80779304881F0FF0669987585BFF82B9F8070F0887DBA264A06DB0993C",
+    "scripts/derive_n12_gate7_current_green_full_transverse_quadratic_center.py": "D7C145FCF249F84FDE68A68B64494869C39264E2CDFF6201470215C9B8325CF4",
+    "scripts/derive_n12_gate7_current_green_signed_transverse_tensor_recovery.py": "0CC81AAC7F06A2D7456138B65F346DBA78F16049A5514181575283AD417A1CCC",
+    "scripts/derive_n12_gate7_current_green_scalar_covector_correction.py": "E9EC21E03A0BB7BA56472BE30B28A59A31C94D183C1BD99BD7CD1B7BF890A39F",
+    "artifacts/flagship_integration/.current_green_scalar_covector_correction_work/midpoint_000.npz": "EB24F7121BCF3899008A59E6447DDCF14812A0373EA2CD8E9890AC53EA56DC57"
+  },
+  "validation_passed": true,
+  "claim_boundary": {
+    "supplemental_rectangular_kernel_matches_recovered_UU_slice": true,
+    "outward_remainder_derived": false,
+    "Gate7_closed": false,
+    "FULL_BHSM_COMPLETE": false
+  }
+}
