@@ -9,7 +9,7 @@ from bhsm.interface.shared_implicit_response_jet import dot,solve_with_operator,
 
 
 def second_variations(evaluate,psi,eigenvalue,u,v,raw_offset,
-                      preconditioner,weights,defect_upper):
+                      preconditioner,weights,defect_upper,first_variations=None):
     """Produce (psi_u,lambda_u,psi_v,lambda_v,psi_uv,lambda_uv).
 
     evaluate(legs) must return the shared Taylor enclosure of D^len(legs) S
@@ -34,25 +34,40 @@ def second_variations(evaluate,psi,eigenvalue,u,v,raw_offset,
         result=evaluate(legs)
         if _domain([zero,result]) is not d:raise ValueError('same-domain action required')
         return result
+    def rows(legs):
+        if hasattr(evaluate,'gradient'):
+            result=evaluate.gradient(legs)
+            if len(result)!=size or _domain([zero]+list(result)) is not d:
+                raise ValueError('complete same-domain raw action gradient required')
+            return result[raw_offset:]
+        return [checked([e]+legs) for e in basis]
     def apply_K(z):
         leg=pad(z[:n])
-        return [checked([e,leg])-eigenvalue*z[i]+psi[i]*z[-1]
-                for i,e in enumerate(basis)]+[dot(psi,z[:n])]
+        return [h-eigenvalue*z[i]+psi[i]*z[-1]
+                for i,h in enumerate(rows([leg]))]+[dot(psi,z[:n])]
     def solve_rhs(rhs):
         return solve_with_operator(rhs,apply_K,preconditioner,weights,defect_upper)
-    hu=[checked([e,p,u]) for e in basis]
-    hv=[checked([e,p,v]) for e in basis]
-    zu,proofu=solve_rhs([-h for h in hu]+[zero])
-    zv,proofv=solve_rhs([-h for h in hv]+[zero])
+    if first_variations is None:
+        hu=rows([p,u]);hv=rows([p,v])
+        zu,proofu=solve_rhs([-h for h in hu]+[zero])
+        zv,proofv=solve_rhs([-h for h in hv]+[zero])
+    else:
+        zu=list(first_variations['psi_u'])+[-first_variations['lambda_u']]
+        zv=list(first_variations['psi_v'])+[-first_variations['lambda_v']]
+        if len(zu)!=n+1 or len(zv)!=n+1 or _domain(zu+zv) is not d:
+            raise ValueError('certified complete same-domain first variations required')
+        proofu=proofv={'inherited_first_variations_reused':True}
     pu,pv=pad(zu[:n]),pad(zv[:n])
     # K(psi_uv,-lambda_uv) = (-H_uv psi-H_u psi_v-H_v psi_u
     #                        +lambda_u psi_v+lambda_v psi_u, -psi_u.psi_v).
-    rhs=[-checked([e,p,u,v])-checked([e,pv,u])-checked([e,pu,v])
-         -zu[-1]*zv[i]-zv[-1]*zu[i] for i,e in enumerate(basis)]
-    rhs.append(-dot(zu[:n],zv[:n]))
+    terms=[rows([p,u,v]),rows([pv,u]),rows([pu,v]),
+           [-zu[-1]*zv[i] for i in range(n)],[-zv[-1]*zu[i] for i in range(n)]]
+    rhs=[-terms[0][i]-terms[1][i]-terms[2][i]+terms[3][i]+terms[4][i] for i in range(n)]
+    border=-dot(zu[:n],zv[:n]);rhs.append(border)
     zuv,proofuv=solve_rhs(rhs)
     return dict(psi_u=zu[:n],lambda_u=-zu[-1],psi_v=zv[:n],lambda_v=-zv[-1],
                 psi_uv=zuv[:n],lambda_uv=-zuv[-1],
                 first_u_proof=proofu,first_v_proof=proofv,mixed_proof=proofuv,
+                mixed_rhs_terms=terms,normalization_border=border,
                 complete_mixed_rhs_models=rhs,normalization_border_retained=True,
                 existing_point_quantities_recomputed=False)

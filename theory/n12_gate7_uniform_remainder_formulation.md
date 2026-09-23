@@ -454,3 +454,106 @@ change is made. The stopping condition is B at the explicitly displayed E_uv.
 | Contraction | Unknown: max(known_dL+kappa_L,known_dT+kappa_T) | 1 | Unknown | FAIL TO CERTIFY / UNKNOWN |
 
 This is missing certified information, not a demonstrated physical violation.
+
+
+## 7. Complete endpoint-19 prototype and the connecting-domain operator
+
+This section supersedes section 6's historical missing-mixed-eigenline status.
+The mixed eigenline and mixed response are now independently reproduced frozen
+inputs. The complete 99-component prototype with canonical independent reproduction gives
+
+| Uniform original-domain quantity | Certified upper bound |
+|---|---:|
+| Physical eigenvector mixed variation | 0.03858718770821388 |
+| Eigenvalue mixed variation | 2.763611776529177e-9 |
+| Weighted physical-response mixed variation | 79717.41435603092 |
+| Response border mixed variation | 0.005709355830092981 |
+| Complete normalized 99-component rate mixed variation | 0.48724971174089476 |
+| State-only 98-component rate mixed variation | 0.48724971172142256 |
+| Normalized descriptor mixed variation | 4.3561058972606416e-6 |
+
+The complete-rate canonical certificate and independent reproduction receipt
+are in `gate7_complete_rate_20260923/`. All 19 independent action blocks match
+exactly. The raw final assemblies differed because fresh and reloaded Arb
+balls followed different outward-decoding paths in C_u and J_u. Canonical
+assembly requires every action operand to pass through the same persisted
+exact midpoint/radius decoder. No action evaluation is permitted in that
+assembly stage. The resulting certificates are byte-identical, and their
+99 exact remainder radii dominate both raw assemblies with identical c/a
+coefficients. No arbitrary tolerance is used; the raw discrepancy is retained.
+Frozen dependencies remain in `gate7_mixed_eigenline_20260923/` and
+`gate7_mixed_response_20260923/`.
+These are upper bounds, not measurements of the exact physical Hessian norm.
+They are not current-ledger kappa values and are not charged to history.
+
+### Cancellation before normalization
+
+Let the positive response border be b and put t=s/b, k=psi+t*h. The same
+shared eigenline and response equations give psi.psi=1 and psi.h=0. Thus the
+state norm after canceling b satisfies
+
+    Q = 1 + sum_i (rw_i^2-1)*k_i^2 + t^2*(h.h+c.c) >= 1,
+    f = (t*c, rw*k, C+t*Jscalar)/sqrt(Q).
+
+The jets of t, Q and the complete numerator are taken from those equations.
+No separately bounded b-normalization error is added. The original affine
+s has the same 75 state parameters. All 16 moving-leg assignments in each
+trilinear descriptor are included; exact action-leg and u/v permutations
+reduce the work to 19 unique new contractions. The frozen moving-eigenpair
+fifth-action leaf is consumed rather than recalculated.
+
+There are 349 model parameters: 75 state, 75 u, 75 v, 62 inherited eigenpair
+error symbols and 62 response-value error symbols. The last two groups are
+auxiliary enclosing errors, not changes to the physical domain. Affine signed
+coefficients remain shared. Higher-degree u/v products are enclosed by scalar
+outward tails; this is not a signed higher-degree history Taylor model. The
+finite prototype does not establish that its bounds are sufficiently sharp
+for either kappa target. No endpoint-19 refinement is authorized by this fact.
+
+### Existing cover boundary and exact next operator
+
+`gate7_eigenbranch_cover_20260923/certificate.json` classifies all 370 history
+intervals. The eight frozen endpoint-domain hulls are pairwise disjoint.
+Every other retained endpoint center is rigorously outside their union.
+Consequently this existing union covers zero complete connecting intervals.
+This conclusion does not reopen interval 13 or the full-history DF/incidence
+certificates; it concerns a uniform eigenbranch cover of connecting domains.
+
+Each frozen endpoint supplies a new derived gap lower bound without a new
+eigenpair calculation. With its saved positive weights w, preconditioner R,
+and uniform weighted defect q<1,
+
+    ||K^-1||_2 <= ||w||_2 * ||diag(w)^-1 R||_infinity / (1-q).
+
+Since psi is normalized, the symmetric physical bordered K has eigenvalues
++/-1 and the other eigenvalue differences. The reciprocal of this inverse
+upper bound is therefore a rigorous positive gap lower bound on that frozen
+family. It does not extend the domain of its action derivatives.
+
+For anchor a and a candidate connected history domain X_[a,b], the first
+missing new action operator is
+
+    Delta_a(X;eta) = R_a * ((H_red(x)-H_red(x_a))*eta, 0), x in X_[a,b],
+    H_red = D2S restricted to the reduced Hessian rows/columns.
+
+Certify its weighted support for eta=psi_a (the new residual) and all
+|eta_i|<=w_a,i (the new derivative defect). Its action-owned expression is
+
+    integral_0^1 R_a * (D3S(x_a+t*(x-x_a))[e_red, eta, x-x_a],0) dt.
+
+State, direction and preconditioner must be combined before support; action
+bounds proved only on the old endpoint tube cannot be extrapolated. A new
+segment proof must include the original endpoint tubes and actual HS midpoint
+images, or attach a separately proved midpoint containment. It must establish
+self-inclusion, a positive gap/inverse bound and branch identity on overlaps.
+Growing an eigenpair witness box is distinct from shrinking physical radii.
+
+Route A has not yet bounded this connecting-domain operator. Route B segment
+sizes and the minimum new-anchor set therefore remain undetermined; Route C
+has not been launched. The coverage certificate is a boundary of established
+evidence, not a proof that continuation fails. It forbids interpreting eight
+endpoint certificates as a full history cover or scheduling all missing
+endpoints automatically.
+
+Both kappa values, the complete nonlinear remainder, and all three global
+physical inequalities remain unknown. `Gate7_closed=False`; no ledger debit.

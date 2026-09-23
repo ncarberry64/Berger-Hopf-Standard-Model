@@ -6,7 +6,42 @@ and `artifacts/mission_state/BHSM_GATE7_CRITICAL_PATH_RECONCILIATION_20260923.js
 Gate 7 is OPEN. `FULL_BHSM_COMPLETE=False`. No new Museum physical outputs are
 certified or exported by this checkpoint.
 
-## Latest moving-eigenpair checkpoint
+## Current complete-rate calculation and resume policy
+
+The endpoint-19 99-component mixed rate is now FROZEN in
+`artifacts/flagship_integration/gate7_complete_rate_20260923/`.
+`certificate.json` and `reproduction.json` bind the 19 unique independent action
+blocks and the canonical final assembly. The two raw final assemblies differed
+in outward ball decoding during C_u/J_u accumulation. Both are retained, and
+exact rational comparisons prove the canonical 99-component enclosure contains
+both. This is canonical-enclosure reproduction, not raw-arithmetic byte identity.
+
+The canonical assembly entry point is
+`scripts/assemble_n12_gate7_complete_rate_from_cache.py`. It requires all 19
+completed blocks and forbids new action evaluation. Each run consumes its own
+independently generated cache with identical persisted-ball decoding. It must
+not be rerun merely for confidence. The numerical stage is complete; both
+original caches and their completion manifests remain available in
+`tmp/gate7_complete_rate_20260923/` for interruption recovery.
+
+Frozen inputs are packaged in `gate7_mixed_eigenline_20260923/` and
+`gate7_mixed_response_20260923/` under `artifacts/flagship_integration/`.
+Their independent repeats have already passed. The moving-eigenpair value
+and fifth-action packages below are inherited; do not repeat them.
+
+`gate7_eigenbranch_cover_20260923/certificate.json` and its reproduction receipt
+record all 370 interval classifications and gap lower bounds derived from
+saved inverse data. Existing endpoint neighborhoods cover zero whole connecting
+intervals. Route A still needs the uniform preconditioned Hessian variation
+on a connecting domain including original tubes and HS midpoint images.
+No minimum new-anchor set is yet established. Do not start hundreds of endpoint
+calculations or silently reinterpret this boundary as a failed physical proof.
+
+See section 7 of `theory/n12_gate7_uniform_remainder_formulation.md` for exact
+operator definitions, common-border cancellation and the prototype's limits.
+Both kappas remain null, Gate 7 is open and no new contribution is booked.
+
+## Historical moving-eigenpair checkpoint
 
 Consume `artifacts/flagship_integration/gate7_moving_response_20260923/result.json`
 and its two reproduction receipts. The fixed-leg calculation and ten earlier

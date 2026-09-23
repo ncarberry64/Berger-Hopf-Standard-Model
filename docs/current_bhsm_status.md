@@ -1,6 +1,35 @@
 # Current BHSM status
 
-## Moving eigenpair and implicit-jet checkpoint — 23 September 2026
+## Complete endpoint-19 mixed rate and coverage boundary — 23 September 2026
+
+The complete original-domain 99-component mixed rate is frozen with bound
+`0.48724971174089476`; the normalized descriptor bound is
+`4.3561058972606416e-6`. Common-border cancellation is applied before
+normalization, with all 16 moving-leg assignments and the same shared inputs.
+The mixed eigenline and response certificates are also frozen and reproduced.
+
+All 19 new independent action blocks matched exactly. Raw final assembly had
+last-bit differences from fresh versus reloaded Arb balls. Canonical assembly
+uses the same outward persisted-ball decoding for both runs and reproduces
+byte-for-byte. Exact rational comparisons show that its 99-component enclosure
+contains both raw results, without numerical tolerance. The certificate,
+raw assemblies and reproduction receipt are saved under
+`artifacts/flagship_integration/gate7_complete_rate_20260923/`.
+
+The independently reproduced eigenbranch coverage map lists all 370 intervals.
+The eight existing endpoint neighborhoods are disjoint and cover **0/370
+complete connecting intervals**. Frozen local certificates and full-history
+DF/incidence envelopes remain reusable. Route A needs a preconditioned Hessian
+variation bound on connecting history domains. Segment sizes and the minimum
+new-anchor set remain undetermined; no endpoint campaign was started.
+
+This endpoint bound is not kappa, and its sufficiency for the kappa targets is
+unestablished. Both kappas, the composed remainder and the three global
+inequalities remain unknown. No history debit; Gate 7 remains OPEN. See section
+7 of `theory/n12_gate7_uniform_remainder_formulation.md` for the exact next
+operator and the distinction between finite prototype and history closure.
+
+## Historical moving eigenpair and implicit-jet checkpoint — 23 September 2026
 
 The new endpoint-19 fifth-action leaf includes certified moving eigenpair
 values on the unchanged state domain and all L/T input pairs. Its bound is
