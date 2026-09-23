@@ -304,3 +304,153 @@ identify endpoint-71 dominance or justify a 370-interval campaign. The recorded
 outcome is B: a specific action-derived uniform contraction producer and an
 explicit remaining implicit/operator composition, rather than a claimed
 closure path. Gate 7 and the full physical inequalities remain open.
+
+## 6. Moving-eigenpair checkpoint: values are not derivative jets
+
+The frozen fixed-leg bilinear calculation has NOT been rerun. New receipts in
+`artifacts/flagship_integration/gate7_moving_response_20260923/` derive a shared
+affine eigenpair from the endpoint-19 contraction already owned by the proof,
+and insert that moving eigenpair in the fifth-action leaf. Original radii,
+state directions, action, eigenbranch and point witnesses are unchanged.
+
+### Affine values from the frozen contraction
+
+Let y=(psi,lambda), F=(H(x)psi-lambda psi,(psi^T psi-1)/2), y0 the saved
+center, and R the frozen preconditioner of J=F_y. The existing certificate
+gives |y-y0|<=w and |I-RJ|w<=V throughout the original domain and eigenbox.
+Its saved A encloses R F_x(x,y0) D_raw. Scale its columns by rL,rT to A_r.
+The exact identity and an enclosing affine value model are
+
+    y(theta)=y0-R F(x(theta),y0)+Ebar(theta)*(y(theta)-y0),
+    y(theta) in y0-mid(A_r)*theta+[-t,t],
+    t_i = bound_i(R F(x0,y0)) + support(rad(A_r[i,:])) + V_i.
+
+The center residual is bounded using the already-certified point witness
+y*=y0+e, |e|<=eps, and the exact quadratic identity
+
+    0=R F(x0,y0)+(I-D)e+R*(-e_lambda*e_psi, ||e_psi||^2/2),
+    D=I-R J(x0,y0).
+
+This requires no new point action/eigenbranch evaluation. The largest psi
+tail is 9.697081627007817e-10 and the lambda tail is
+8.260267173516628e-17. The inherited weighted defect is bounded by
+0.5925134063039683 (display only; exact outward rationals control).
+
+For action evaluation, one auxiliary error coordinate per eigenpair component
+represents these tails. The SAME error coordinate and state coefficients are
+used wherever that component occurs in p and a. This enlarges an unknown error
+set; it does not assert those errors are physically independent or shrink the
+state domain. All original L/T test directions remain present. The resulting
+287-parameter enclosure is
+
+    |D5 S(x(theta))[p(theta),p(theta),a(theta),D_r u,D_r v]|
+        <= 1.3110187652587739e-23  (display).
+
+Its exact rational upper bound is in `action.json`. This replaces the
+fixed-leg leaf within a future physical assembly; it is NOT added to it.
+The difference between two displayed upper bounds is NOT a certified bound
+on their difference as functions. The mixed derivatives of p,a are still
+separate terms in the 16-term rule. A Taylor value model cannot be
+differentiated to infer them.
+
+### First missing derivative operator and its action-derived producer
+
+The checkpoint's first unprovided operator is
+
+    E_uv(theta;u,v) = (D2 psi(x(theta))[D_r u,D_r v],
+                      D2 lambda(x(theta))[D_r u,D_r v])
+
+uniformly on the original endpoint-19 state tube and both complete L/T input
+balls, in the same parameter namespace. Frozen point Hessians/first variations
+do not certify this domain-wide operator. First-variation models required by
+its equation are intermediate parts of the new operator producer, not
+recomputations of the frozen point results.
+
+`shared_eigenline_jet.second_variations` implements its smallest contracted
+action dependency chain. Set K=[[H-lambda I,psi],[psi^T,0]], then solve
+
+    K (psi_u,-lambda_u) = (-H_u psi,0),
+    K (psi_v,-lambda_v) = (-H_v psi,0),
+    K (psi_uv,-lambda_uv) =
+       (-H_uv psi-H_u psi_v-H_v psi_u
+          +lambda_u psi_v+lambda_v psi_u, -psi_u^T psi_v).
+
+For a reduced basis vector e_i padded with 37 raw zeros, every row uses only
+S3[e_i,p,u], S3[e_i,p,v], S4[e_i,p,u,v], S3[e_i,p_v,u], S3[e_i,p_u,v].
+The last coordinate solves for minus the eigenvalue derivative; hence no
+separate independently boxed lambda_uv term is needed. The norm identity
+psi^T psi=1 supplies the last row, including its mixed curvature.
+
+The preconditioner for this K is diag(I,-1)*R: flip R's last ROW. The defect
+is sign-conjugate to the frozen one, so its weighted norm bound is reusable.
+To solve K z=b choose an exact affine predictor zhat from midpoint
+coefficients of R_K b; then form the complete shared residual
+
+    r=R_K*(b-K*zhat), eta=max_i support(r_i)/w_i,
+    |z_i-zhat_i| <= w_i*eta/(1-q).
+
+The application K*zhat needs only S2[e_i,padded(zhat_psi)] per reduced row,
+plus the shared lambda/psi border terms. No dense action Hessian is rebuilt.
+All forcing terms and the operator action retain signed coefficients before
+support. q certifies K on the actual eigenpair locus; an enlarged auxiliary
+error box used to bound residuals need not independently certify that every
+spurious point in that box is an eigenpair.
+
+Production binding is explicit:
+
+```python
+evaluate = lambda legs: uniform_action_contraction.contract(action, state, legs)[0]
+jet = shared_eigenline_jet.second_variations(
+    evaluate, psi, eigenvalue, u, v, 37, R_K, frozen_weights, frozen_q)
+```
+
+This checkpoint implements and tests the producer; it does NOT contain a
+successful BHSM evaluation of E_uv. There is no serialized eigenline second
+jet to freeze yet. Downstream response, normalization and transport remain
+conditional on it and their own bounds; this is the first missing object,
+not a claim that all subsequent quantities are already certified.
+
+### Complete-composition accounting
+
+For any genuinely moving output map P and action contraction A[l1,l2], assign
+each of the labels u,v to one of P,A,l1,l2 and sum all 16 resulting terms.
+Both labels on A give its second state variation (including state curvature
+if the state map is nonlinear). Labels on the same leg give its mixed
+variation; labels on different slots give both cross terms. This rule also
+applies to C=S3[p,p,a] and Jscalar=S3[p,p,d] with their three moving legs.
+Do not differentiate an enclosure tail as if it were an exact polynomial.
+
+| Contribution | Classification / current bound |
+|---|---|
+| Original state/input radii, action operands, endpoint-19 eigenbranch contraction | Already certified; consumed through boundary receipts |
+| Fixed-leg fifth-action leaf | Frozen 1.3109964100037637e-23; not rerun |
+| Fifth-action leaf with moving eigenpair VALUES | New 1.3110187652587739e-23; all original input pairs, exact repeat |
+| Eigenline first/mixed derivatives and the other moving-leg terms in C | New original-domain operator bound required; contracted implicit producer implemented |
+| Response q_uv | Exact equation F_uv-K_uv*q-K_u*q_v-K_v*q_u; common-residual solve implemented, physical operands not yet enclosed |
+| N, descriptor numerator delta, their first/mixed products | Algebraically exact product rules; must consume the same s,c,psi,h,b jets |
+| nu and f_uv | Exact shared normalization equation implemented in normalized_mixed; original-domain physical positivity/jet bound still required |
+| Actual midpoint first/second incidence | Algebraically exact existing composition; curvature retained, physical rate tails still required |
+| Fixed Newton B_i, causal C_i and output Pi_beta | Frozen maps; their derivatives are zero by the definition of this fixed-preconditioner Newton map, with existing map-error bounds retained |
+| Any state-dependent physical quotient/projector inside the rate | Must be differentiated through its defining response/eigenline equations; not covered by declaring the external Newton frame fixed |
+| Signed full-history accumulation, booking mask, kappa_L/T | Composition defined; complete certified physical input operator still missing |
+
+For the response solve, `shared_implicit_response_jet.mixed_response` combines
+all four signed terms before support. `normalized_mixed` derives nu_u,nu_v,
+nu_uv from nu^2=N.N and excludes the descriptor from N's norm. It refuses a
+domain crossing nu=0. Neither algebraic implementation supplies missing BHSM
+operands or a positive physical normalization certificate.
+
+No physical accumulated bound can yet be reported for these unprovided rows.
+In particular, the new raw action leaf cannot be charged to the transverse
+budget or multiplied by causal weights without the missing physical factors.
+The endpoint-19 operator is not automatically a bound at all history nodes.
+No endpoint-71 computation, ledger debit, radius change or physical prediction
+change is made. The stopping condition is B at the explicitly displayed E_uv.
+
+| Full-history inequality | Certified complete LHS | Required RHS | Rigorous margin | Verdict |
+|---|---|---|---|---|
+| Longitudinal self-map | Unknown: known_L+rL*kappa_L/2 | rL | Unknown | FAIL TO CERTIFY / UNKNOWN |
+| Transverse self-map | Unknown: known_T+rT*kappa_T/2 | rT | Unknown | FAIL TO CERTIFY / UNKNOWN |
+| Contraction | Unknown: max(known_dL+kappa_L,known_dT+kappa_T) | 1 | Unknown | FAIL TO CERTIFY / UNKNOWN |
+
+This is missing certified information, not a demonstrated physical violation.

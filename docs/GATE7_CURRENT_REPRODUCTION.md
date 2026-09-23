@@ -6,6 +6,43 @@ and `artifacts/mission_state/BHSM_GATE7_CRITICAL_PATH_RECONCILIATION_20260923.js
 Gate 7 is OPEN. `FULL_BHSM_COMPLETE=False`. No new Museum physical outputs are
 certified or exported by this checkpoint.
 
+## Latest moving-eigenpair checkpoint
+
+Consume `artifacts/flagship_integration/gate7_moving_response_20260923/result.json`
+and its two reproduction receipts. The fixed-leg calculation and ten earlier
+tests are frozen and were not rerun. Only the new affine eigenpair derivation
+and the new moving-value fifth-action leaf were independently repeated.
+
+The new leaf bound is `1.3110187652587739e-23`; this includes moving eigenpair
+values but does not differentiate their Taylor enclosure. The first unavailable
+derivative is the original-domain mixed eigenline operator `(psi_uv,lambda_uv)`.
+Its matrix-free action-derived producer, shared mixed-response solve, and
+normalization kernel are implemented with nine focused tests. The complete
+physical remainder, kappa values and three global inequalities remain unknown.
+
+See [section 6 of the formulation](../theory/n12_gate7_uniform_remainder_formulation.md#6-moving-eigenpair-checkpoint-values-are-not-derivative-jets)
+for the exact missing equation, production binding, classification of every
+composition stage, and the distinction between fixed Newton maps and moving
+physical maps. Stop B is recorded; no historical point campaign or local
+endpoint refinement is launched.
+
+The source pair can be reconstructed with the following commands ONLY if its
+required repeat becomes missing or scientific inputs change; do not repeat
+completed certificates for confidence. Both action runs use the same eigenpair
+file bytes. Comparing the two eigenpair derivations precedes consuming them.
+
+```powershell
+C:/Python314/python.exe scripts/derive_n12_gate7_shared_moving_eigenpair.py --evidence-root ../BHSM-ae32-crossing-correction --out tmp/new_eigenpair_first.json
+C:/Python314/python.exe scripts/derive_n12_gate7_shared_moving_eigenpair.py --evidence-root ../BHSM-ae32-crossing-correction --out tmp/new_eigenpair_repeat.json
+C:/Python314/python.exe scripts/derive_n12_gate7_moving_fifth_action.py --eigenpair tmp/new_eigenpair_first.json --out tmp/new_moving_action_first.json
+C:/Python314/python.exe scripts/derive_n12_gate7_moving_fifth_action.py --eigenpair tmp/new_eigenpair_first.json --out tmp/new_moving_action_repeat.json
+C:/Python314/python.exe -m pytest -q tests/test_shared_implicit_response_jet.py
+```
+
+Source-path-only changes in generated metadata require explicit provenance
+reconciliation, not a rerun of unchanged scientific arithmetic. Archive the
+full exact-ball/rational representation; do not compare rounded displays.
+
 ## New missing-object formulation and action prototype
 
 The [exact formulas and factor classifications](../theory/n12_gate7_uniform_remainder_formulation.md)

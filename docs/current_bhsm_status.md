@@ -1,5 +1,26 @@
 # Current BHSM status
 
+## Moving eigenpair and implicit-jet checkpoint — 23 September 2026
+
+The new endpoint-19 fifth-action leaf includes certified moving eigenpair
+values on the unchanged state domain and all L/T input pairs. Its bound is
+`1.3110187652587739e-23`; the frozen fixed-leg result was not rerun. The
+shared affine eigenvector/eigenvalue tails are `9.697081627007817e-10` and
+`8.260267173516628e-17`. New first/repeat artifacts are in
+`artifacts/flagship_integration/gate7_moving_response_20260923/`.
+
+The first missing original-domain operator is the mixed eigenline variation
+`(psi_uv,lambda_uv)`. An action-derived matrix-free bordered producer now
+implements its first/mixed implicit equations with the normalization border;
+nine focused tests pass. Generic shared response and normalization kernels
+are implemented too, but no successful BHSM mixed-jet enclosure is asserted.
+See [the exact equation and stage ledger](../theory/n12_gate7_uniform_remainder_formulation.md#6-moving-eigenpair-checkpoint-values-are-not-derivative-jets).
+
+This is stopping condition B. The moving-value action leaf is not a complete
+physical remainder. Both kappa values and all three full-history inequalities
+remain **FAIL TO CERTIFY / UNKNOWN**. No budget debit, endpoint refinement,
+new physical prediction or Gate-7 closure is made.
+
 ## Collective encapsulation response candidate — 23 September 2026
 
 The [owner-hypothesis note](../theory/bhsm_collective_encapsulation_response_candidate.md)
