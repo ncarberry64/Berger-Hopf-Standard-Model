@@ -6,6 +6,29 @@ and `artifacts/mission_state/BHSM_GATE7_CRITICAL_PATH_RECONCILIATION_20260923.js
 Gate 7 is OPEN. `FULL_BHSM_COMPLETE=False`. No new Museum physical outputs are
 certified or exported by this checkpoint.
 
+## Latest connecting-history certificate
+
+Consume `gate7_history_variation_20260923/certificate.json` and
+`fixed_anchor_obstruction.json` under `artifacts/flagship_integration/`.
+Both have exact independent reproduction receipts. The eight new subdivided
+action blocks are frozen in `completed_action_blocks.zip`, with payload and
+completion hashes in `completion_manifest.json`. `import_receipt.json`
+records the direct frozen inputs. The initial unsplit file is explicitly an
+unreproduced diagnostic; it is not promoted to a frozen mathematical lemma.
+
+The producer is
+`scripts/certify_n12_gate7_preconditioned_hessian_history_variation.py`.
+Its completed blocks resume from the same work directory. The independent
+first/repeat caches remain in `tmp/gate7_history_variation_20260923/`.
+Do not rerun completed contractions or endpoint-19 work for confidence.
+
+The existing R18/W18 pair has a rigorous defect lower bound exceeding 6.05413
+at endpoint 19. Further subdivision alone with that same pair cannot yield
+full coverage. Witness rebalancing or a uniform overlap certificate using
+existing inverse data remains open; no new-anchor count has been inferred.
+`coverage_checkpoint.json` records existing anchors, empty complete-interval
+coverage, all remaining gaps and zero new anchor evaluations. Gate 7 stays open.
+
 ## Current complete-rate calculation and resume policy
 
 The endpoint-19 99-component mixed rate is now FROZEN in

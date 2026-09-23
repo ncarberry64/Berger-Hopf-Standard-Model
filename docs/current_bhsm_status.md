@@ -1,5 +1,30 @@
 # Current BHSM status
 
+## Connecting-history variation prototype — 23 September 2026
+
+Interval 18 (endpoints 18–19), using frozen anchor 18, now has an
+independently reproduced preconditioned Hessian-variation calculation.
+The original Hermite–Simpson domain and both endpoint physical radii are
+retained. After splitting history and integration parameters into halves,
+the two contraction upper bounds are `25967.911558321965` and
+`26240.09871944677`; both fail to certify continuation. Row 30 dominates
+these conservative bounds. All eight new action blocks reproduced exactly.
+
+A separate frozen-operator calculation gives a decisive necessary-condition
+failure: at the actual normalized endpoint-19 root, anchor 18's fixed
+preconditioner and witness norm have defect **greater than 6.05413 > 1**.
+That certificate also reproduced exactly. Subdivision alone cannot fix this
+same inverse/norm pair. This does not prove eigenbranch failure or rule out
+changed witness weights, the existing anchor-19 inverse, or a varying inverse.
+
+The certificates, raw-action completion archive and coverage checkpoint are
+in `artifacts/flagship_integration/gate7_history_variation_20260923/`.
+No new anchor was evaluated; no full connecting interval was added: **0/370**.
+A minimum new-anchor set is still undetermined. No point Hessian or endpoint-19
+prototype was recomputed. No physical debit; both kappas remain unknown.
+See `theory/n12_gate7_history_variation_prototype.md` for the exact row test,
+original-domain definition and fixed-norm obstruction proof.
+
 ## Complete endpoint-19 mixed rate and coverage boundary — 23 September 2026
 
 The complete original-domain 99-component mixed rate is frozen with bound
