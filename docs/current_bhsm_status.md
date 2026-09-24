@@ -1,5 +1,27 @@
 # Current BHSM status
 
+## Layer C: interval-13 correlation audit — 24 September 2026
+
+The Layer-B checkpoint `baf41b96` remains frozen. The first explicit loss of
+shared directional coefficients is `direction_support` in the inherited
+site-rate producer, before normalization. Its actual site norm lower bounds
+are about 3.5e-4; the smaller global tube lower bound is not used there.
+
+Composing the retained HS incidence, causal and output matrices before
+support lowers the isolated upper bounds to approximately `8.02e15` and
+`1.55e18`. The midpoint descriptor enclosure dominates after transport.
+These are partial correlation-recovery diagnostics, not global kappas or a
+full shared Layer-C certificate. The normalized final balls do not retain
+the common mixed eigenline/response, C/J or normalization models needed for
+that certificate. The inspected older archives do not fill this gap.
+
+No physical calculation was rerun, no physical budget debited, and intervals
+14–18 remain untouched. No physical instability or branch failure follows.
+See `theory/n12_gate7_layer_c_correlation_audit.md` and
+`artifacts/flagship_integration/gate7_layer_c_correlation_20260924/` for the
+dependency ledger, term table, retained-data inventory and exact next scope.
+Gate 7 remains open and `FULL_BHSM_COMPLETE = FALSE`.
+
 ## Layer B: interval-13 physical tube — 24 September 2026
 
 Layer A remains frozen at `452c80a7` for the 13–19 child atlas. Interval 13
