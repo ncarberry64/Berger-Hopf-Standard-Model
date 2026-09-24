@@ -1,5 +1,35 @@
 # Current BHSM status
 
+## Layer C: interval-13 sparse quadratic prototype — 24 September 2026
+
+The numerical compiler now retains degree-two dependence on the frozen
+`cef38b6b` physical symbols. The three dominant midpoint descriptor J
+assignments decrease from an affine scalar-tail sum of approximately
+10.0124712780 to combined quadratic support at most 5.004286125, a reduction
+of about 2.000779 times. The model retains 22500 canonical mixed monomials
+and supports transverse Euclidean blocks without coordinate boxing.
+
+The remaining scalar tail is at most 4.998578356; q-based implicit
+correction loss contributes 99.9981552% of it. The first missing object is
+the signed shared mixed bordered-resolvent correction jet, including
+eigenline/response row and common-border coupling. Frozen q-norm scalar
+leaves do not contain that directional dependence. Higher polynomial order
+alone cannot recover it. The outcome remains
+`CASE_1 = NUMERICAL_COMPILER_CORRELATION_LOSS`, with no physical failure
+established. No scientific producer or frozen calculation was rerun.
+
+This is a selected-source prototype, not a complete interval remainder.
+At the user's requested Git checkpoint, all 405 selected forward models are
+saved; signed LL/LT booking and the projected source ledger remain pending.
+Resume instructions are in `docs/GATE7_QUADRATIC_RESUME_20260924.md`.
+The historical `cef38b6b` diagnostics remain `kappa_L <= 2.98824e10` and
+`kappa_T <= 5.77960e12`; no revised isolated kappas or contraction are
+claimed. Physical radii are unchanged, no physical budget is debited,
+intervals 14–18 remain outside this work, and `Gate7_closed = False`.
+Methods, exact representation requirements and numerical scope are in
+`theory/n12_gate7_sparse_quadratic_compiler.md`; retained evidence is in
+`artifacts/flagship_integration/gate7_quadratic_models_20260924/`.
+
 ## Layer C: interval-13 shared-model serialization — 24 September 2026
 
 The authorized missing-model exception produced independently reproduced
