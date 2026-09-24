@@ -1,4 +1,4 @@
-# Gate-7 authoritative checkpoint — 23 September 2026
+# Gate-7 authoritative checkpoint — 24 September 2026
 
 The active scientific record is `Berger-Hopf-Standard-Model`. Start with
 `artifacts/flagship_integration/gate7_global_checkpoint_20260923/global_remainder_checkpoint.json`
@@ -6,7 +6,91 @@ and `artifacts/mission_state/BHSM_GATE7_CRITICAL_PATH_RECONCILIATION_20260923.js
 Gate 7 is OPEN. `FULL_BHSM_COMPLETE=False`. No new Museum physical outputs are
 certified or exported by this checkpoint.
 
-## Latest connecting-history certificate
+## Latest child-chart atlas: endpoint 13 through endpoint 19
+
+Consume
+`artifacts/flagship_integration/gate7_child_atlas_20260924/atlas.json`
+and its `reproduction.json`. This reconciles the separate child-coherent
+commit `86b05bc9633a8d27257c8e391e944bee23372f74`, integrated as `7f180488`,
+with the active `codex/g7-vector-endpoint-final-closure` line. Its successful
+interval-13 calculations were not rerun. The existing certificate and repeat
+remain byte-identical to the imported checkpoint.
+
+Interval 18 was assessed first using hash-verified, independently reproduced
+endpoint 18/19 eigenpair data, coupled midpoint-18 eigenpair data and the
+actual HS midpoint domain. Both moving-chart links passed. Intervals 14--17
+then passed using their existing endpoint/midpoint charts. Each new interval
+has four new D4 contractions, evaluated twice independently with byte-identical
+outputs; its package was also materialized twice. All 17 compared interval
+package/atlas/capsule files agree byte-for-byte.
+
+The connected evaluation cover now has seven original endpoint domains,
+six original actual-HS midpoint domains and twelve certified center-line
+links. The assembler checks that adjacent intervals share the identical
+hash-bound endpoint chart. No new endpoint anchor, eigenpair solve, physical
+radius change or physical budget debit was needed.
+
+| Interval | Endpoint to midpoint image bound | Midpoint to endpoint image bound | Largest link contraction bound |
+|---|---:|---:|---:|
+| 13 (reused) | 0.15269233 | 0.14780436 | 0.08756833 |
+| 14 | 0.14639937 | 0.14194412 | 0.08679619 |
+| 15 | 0.14385728 | 0.14004839 | 0.09307130 |
+| 16 | 0.13954597 | 0.13397003 | 0.09385809 |
+| 17 | 0.13502712 | 0.13279002 | 0.08462742 |
+| 18 | 0.13482858 | 0.13573587 | 0.05020849 |
+
+Displayed bounds are rounded upward. Exact rational inequalities and positive
+gap lower bounds are in each certificate. Every listed link passed; there
+is no demonstrated physical closure boundary. The previously proved fixed
+`(R18,W18)` obstruction remains valid for that fixed chart, while this moving
+predictor/preconditioner construction connects the same oriented index-24
+branch through the actual midpoint. The signed residual, normalization
+border, action-derived curvature and nonlinear witness correction are retained.
+
+The imported interval-13 dependency
+`aether_m4_standard_model_zeta_backreaction_v15_51.py` differs between historical
+and active checkouts only by CRLF/LF line endings. Its original hash-bound
+bytes are retained in `historical_source_capsule/`; `atlas.json` explicitly
+records both hashes and normalized-byte equivalence. No historical hash was
+rewritten or silently treated as an exact active-file hash.
+
+The new driver is `scripts/certify_n12_gate7_child_chart_interval.py`; it
+reuses the imported `prove_link` kernel without modifying it. The interval
+and atlas packagers perform acceptance/assembly only, with no action work.
+Routine continuation should consume these receipts, not rerun the producers.
+Read-only validation is:
+
+```powershell
+python -m pytest -q tests/test_shared_connecting_hessian.py tests/test_shared_eigenpair_transport.py tests/test_shared_eigenbranch_link_certificate.py tests/test_child_chart_atlas.py
+```
+
+Validation: all 31 focused tests pass. Status, forbidden-claim (including
+the new theory note), frozen-integrity and retained precision audits pass.
+The full public-readiness audit still fails its pre-existing repository
+hygiene check; its other eight checks pass. This research checkpoint does
+not declare public-release readiness.
+
+This closes **Layer A for this connected evaluation cover**, not the entire
+physical history or the remaining intervals. Layer B still requires uniform
+coverage of every allowed state/midpoint/output perturbation, including the
+required dense-output tube. Layer C still requires complete physical response
+and rate jets, true HS first/second incidence, normalization, booked quadratic
+subtraction and signed causal transport across the required history. Only
+then can `kappa_L`, `kappa_T` and Layer D's self-map/contraction be settled.
+The new center-line bounds cannot be charged to those physical budgets.
+
+The next bounded task is to attach those physical-neighborhood and complete
+rate-jet obligations to the existing atlas, preserving shared inputs and
+moving-chart derivative terms. Exhaust the existing charts before proposing
+new anchors. The earlier interval-13 full-star/translated-tube enclosure
+failure remains an enclosure failure and is not rerun or relabeled as decay.
+No 370-endpoint campaign follows from this result.
+
+The owner formulation and remaining sector program are in
+[the recursive child-path principle](../theory/bhsm_recursive_child_path_principle.md),
+status `OWNER_HYPOTHESIS_WITH_PARTIAL_ACTION_LEVEL_REALIZATION`.
+
+## Earlier connecting-history certificate and fixed-chart obstruction
 
 Consume `gate7_history_variation_20260923/certificate.json` and
 `fixed_anchor_obstruction.json` under `artifacts/flagship_integration/`.
