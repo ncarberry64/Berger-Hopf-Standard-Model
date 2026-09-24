@@ -1,5 +1,27 @@
 # Current BHSM status
 
+## Layer B: interval-13 physical tube — 24 September 2026
+
+Layer A remains frozen at `452c80a7` for the 13–19 child atlas. Interval 13
+now has an independently reproduced complete physical-tube cover: eight
+closed time cells at unchanged radii, with descriptor, positive normalization
+and rigorous local-chart handoff. The largest self-map bound is 0.704104.
+No endpoint was added and no fixed-anchor continuation was used.
+
+Complete mixed physical-rate enclosures at both endpoints and the actual HS
+midpoint now feed a reproduced signed local remainder, including non-affine
+midpoint incidence and booked LL/LT subtraction. After all 357 causal
+destinations and the frozen-map error, the isolated interval bounds are
+approximately `1.31e16` and `1.25e19`, above the sufficient κL/κT targets.
+This enclosure failure does not establish physical growth, decay, or failure
+of the child branch. Shared signed correlations through the midpoint and
+rate normalization remain the needed refinement before extending to 14–18.
+
+Certificates: `artifacts/flagship_integration/gate7_physical_tube_20260924/`.
+See `theory/n12_gate7_chart_local_physical_tube.md` for exact promotion terms,
+scope and the remaining operator. Global kappas remain unknown; Gate 7 is
+open and `FULL_BHSM_COMPLETE = FALSE`.
+
 ## Connecting-history variation prototype — 23 September 2026
 
 Interval 18 (endpoints 18–19), using frozen anchor 18, now has an
