@@ -1,5 +1,38 @@
 # Current BHSM status
 
+## Layer C: interval-13 shared-model serialization — 24 September 2026
+
+The authorized missing-model exception produced independently reproduced
+endpoint/actual-HS-midpoint expression graphs, eight restrictions of the
+same Hermite history, and a signed remainder diagnostic over all 357 causal
+destinations. All 117 new action blocks and all twelve final artifact pairs
+reproduce byte-for-byte. Layer A at `452c80a7` and Layer B at `baf41b96`
+remain inherited authorities; their producers were not rerun.
+
+Common-border normalization and signed composition lower the isolated
+upper enclosures to `kappa_L <= 2.98824e10` and `kappa_T <= 5.77960e12`
+(rounded outward), reductions of approximately 268507 and 267892 relative
+to the `f5b6b4b6` audit. These bounds do not certify the sufficient targets
+near 0.6543 and 0.7452. The midpoint descriptor remains the largest source
+class, followed by full second incidence.
+
+This is **case 1: remaining representation/correlation loss**. The graphs
+retain exact shared products and all sixteen C/J mixed assignments, but
+the affine numerical compiler moves bilinear directional products into
+scalar tails. Shared implicit-correction dependence and inherited
+value/DF coefficient dependence on theta also remain unresolved. The new
+diagnostic is therefore not a full correlation-preserving Layer-C
+certificate and does not establish physical failure. The next derived
+object is a bilinear/shared-correction compiler using these retained graphs.
+
+Evidence: `artifacts/flagship_integration/gate7_shared_models_20260924/`.
+The exact bounds, source-class table, internal assignment attribution,
+reproduction protocol and limitations are documented in
+`theory/n12_gate7_shared_model_recipe.md`. Physical radii are unchanged,
+no physical budget is debited, and intervals 14–18 remain unevaluated in
+this campaign. Global kappas and contraction remain unestablished.
+Gate 7 remains open and `FULL_BHSM_COMPLETE = FALSE`.
+
 ## Layer C: interval-13 correlation audit — 24 September 2026
 
 The Layer-B checkpoint `baf41b96` remains frozen. The first explicit loss of

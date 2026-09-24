@@ -107,3 +107,36 @@ tests/test_shared_hs_output_operator.py text eol=lf
 theory/n12_gate7_layer_c_correlation_audit.md text eol=lf
 artifacts/flagship_integration/gate7_layer_c_correlation_20260924/** -text
 scripts/inventory_n12_gate7_layer_c_models.py text eol=lf
+
+# Authorized missing interval-13 shared models; retain exact source/archive bytes.
+src/bhsm/interface/shared_expression_graph.py text eol=lf
+src/bhsm/interface/sparse_affine_enclosure.py text eol=lf
+src/bhsm/interface/disk_expression_graph.py text eol=lf
+src/bhsm/interface/disk_affine_cache.py text eol=lf
+src/bhsm/interface/shared_mixed_rate_graph.py text eol=lf
+src/bhsm/interface/streamed_expression_artifact.py text eol=lf
+src/bhsm/interface/shared_history_expression.py text eol=lf
+src/bhsm/interface/certified_expression_constraints.py text eol=lf
+src/bhsm/interface/shared_projected_rate.py text eol=lf
+src/bhsm/interface/projected_affine_enclosures.py text eol=lf
+src/bhsm/interface/adaptive_expression_reader.py text eol=lf
+scripts/regenerate_n12_gate7_shared_site_models.py text eol=lf
+scripts/resume_n12_gate7_shared_site_models.py text eol=lf
+scripts/continue_n12_gate7_shared_site_disk.py text eol=lf
+scripts/produce_n12_gate7_shared_models.py text eol=lf
+scripts/produce_n12_gate7_shared_midpoint_models.py text eol=lf
+scripts/materialize_n12_gate7_shared_history_cells.py text eol=lf
+scripts/assemble_n12_gate7_shared_remainder.py text eol=lf
+scripts/freeze_n12_gate7_shared_models.py text eol=lf
+tests/test_shared_expression_graph.py text eol=lf
+tests/test_shared_history_expression.py text eol=lf
+tests/test_disk_affine_cache.py text eol=lf
+tests/test_shared_projected_rate.py text eol=lf
+tests/test_shared_model_archive.py text eol=lf
+tests/test_shared_mixed_normalization.py text eol=lf
+tests/test_projected_affine_enclosures.py text eol=lf
+tests/test_adaptive_expression_reader.py text eol=lf
+theory/n12_gate7_shared_model_recipe.md text eol=lf
+artifacts/flagship_integration/gate7_shared_models_20260924/** -text
+artifacts/flagship_integration/gate7_shared_models_20260924/models/** -diff
+artifacts/flagship_integration/gate7_shared_models_20260924/cells/** -diff
