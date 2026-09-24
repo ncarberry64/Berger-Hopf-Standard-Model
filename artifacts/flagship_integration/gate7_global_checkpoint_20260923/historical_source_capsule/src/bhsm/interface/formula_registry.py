@@ -1,0 +1,245 @@
+"""Claim-aware registry for artifact-backed and interface-default formulas."""
+
+from __future__ import annotations
+
+from dataclasses import asdict, dataclass
+from pathlib import Path
+from typing import Any, Callable
+
+from .boundary_adapters import load_boundary_constants_artifact
+from .mass_ratio_adapters import load_mass_ratio_predictions_artifact
+from .matrix_adapters import load_ckm_matrix_artifact, load_cp_phase_artifact, load_pmns_matrix_artifact
+from .minimal_action.neutrino_basis_closure import propagation_conditioned_neutrino_mass
+from .minimal_action.x_ch_closure import apply_x_ch_boundary_response
+from .neutrino_propagation.numerical_closure import build_numerical_closure
+from .neutrino_scale.unit_map import derive_neutral_scale_law
+from .neutrino_scale.curvature_mass_functional import load_curvature_mass_functional_from_legacy_artifacts
+from .neutrino_scale.legacy_neutral_scale_candidate import build_legacy_neutral_scale_candidate
+from .neutrino_scale.neutral_physical_curvature import search_neutral_physical_curvature_map
+from .neutrino_scale.neutral_radius_curvature_report import build_neutral_radius_curvature_closure
+from .neutrino_scale.propagation_radius_search import search_neutral_propagation_radius
+from .neutrino_spectral import (
+    audit_legacy_gravitational_mass_formula_dimensions,
+    audit_neutral_kernel_positivity,
+    build_neutral_spectral_gap_candidate,
+    load_neutral_mass_gap_action,
+    search_neutral_stiffness_ratio,
+    audit_neutral_kernel_exact,
+    build_neutral_positivity_report,
+    derive_or_load_neutral_admissible_domain,
+    prove_neutral_positivity_on_domain,
+    search_admissible_positivity_counterexample,
+)
+from .neutrino_action import (
+    build_neutral_action_closure_report,
+    build_neutral_action_spectral_closure,
+    derive_neutral_stiffness_length,
+    derive_or_locate_physical_neutral_curvature_map,
+    derive_response_cone_from_neutral_action,
+    search_neutral_action_sources,
+)
+
+FORMULA_STATUSES = (
+    "AVAILABLE_ARTIFACT_BACKED",
+    "AVAILABLE_INTERFACE_DEFAULT",
+    "AVAILABLE_AUTHOR_SUPPLIED_CONDITIONAL",
+    "RETIRED_TARGET",
+    "PLACEHOLDER_INTERFACE_ONLY",
+    "CALLABLE_NOT_AVAILABLE",
+    "OPEN_THEOREM_REQUIRED",
+    "DISABLED_UNTIL_RUNTIME_VALIDATED",
+)
+
+
+@dataclass(frozen=True)
+class FormulaCallableEntry:
+    formula_key: str
+    display_name: str
+    description: str
+    callable_path: str | None
+    input_schema: dict[str, Any]
+    output_schema: dict[str, Any]
+    status: str
+    source_type: str
+    source_artifacts: tuple[str, ...]
+    theorem_status: str
+    claim_boundary: str
+    safe_for_default_report: bool
+    notes: tuple[str, ...] = ()
+
+    def to_dict(self) -> dict[str, Any]:
+        payload = asdict(self)
+        payload["source_artifacts"] = list(self.source_artifacts)
+        payload["notes"] = list(self.notes)
+        return payload
+
+
+@dataclass(frozen=True)
+class FormulaEvaluationResult:
+    formula_key: str
+    registry_status: str
+    evaluation_status: str
+    value: Any
+    callable_path: str | None
+    claim_boundary: str
+    empirical_derivation_inputs_used: bool = False
+
+    def to_dict(self) -> dict[str, Any]:
+        return asdict(self)
+
+
+@dataclass
+class FormulaRegistry:
+    entries: dict[str, FormulaCallableEntry]
+    registry_name: str = "BHSM Formula Registry"
+    version: str = "0.3"
+
+    def get(self, formula_key: str) -> FormulaCallableEntry | None:
+        return self.entries.get(formula_key)
+
+    def to_dict(self) -> dict[str, Any]:
+        rows = [self.entries[key].to_dict() for key in sorted(self.entries)]
+        return {
+            "registry_name": self.registry_name,
+            "version": self.version,
+            "formula_entries": rows,
+            "available_artifact_backed": [row["formula_key"] for row in rows if row["status"] == "AVAILABLE_ARTIFACT_BACKED"],
+            "available_interface_default": [row["formula_key"] for row in rows if row["status"] == "AVAILABLE_INTERFACE_DEFAULT"],
+            "available_author_supplied_conditional": [row["formula_key"] for row in rows if row["status"] == "AVAILABLE_AUTHOR_SUPPLIED_CONDITIONAL"],
+            "retired_targets": [row["formula_key"] for row in rows if row["status"] == "RETIRED_TARGET"],
+            "open_theorem_required": [row["formula_key"] for row in rows if row["status"] == "OPEN_THEOREM_REQUIRED"],
+            "callable_not_available": [row["formula_key"] for row in rows if row["status"] == "CALLABLE_NOT_AVAILABLE"],
+            "disabled_until_runtime_validated": [row["formula_key"] for row in rows if row["status"] == "DISABLED_UNTIL_RUNTIME_VALIDATED"],
+            "claim_boundary": "Formula availability does not promote an open theorem or turn an interface default into a BHSM derivation.",
+        }
+
+
+def register_formula(registry: FormulaRegistry, entry: FormulaCallableEntry) -> None:
+    if entry.status not in FORMULA_STATUSES:
+        raise ValueError(f"unsupported formula status: {entry.status}")
+    registry.entries[entry.formula_key] = entry
+
+
+def _artifact_status(loader: Callable[..., Any], repository: str | Path | None) -> str:
+    return "AVAILABLE_ARTIFACT_BACKED" if loader(repository).source_status == "DISCOVERED" else "CALLABLE_NOT_AVAILABLE"
+
+
+def default_formula_registry(repository: str | Path | None = None) -> FormulaRegistry:
+    """Build the registry from local artifact availability only."""
+
+    registry = FormulaRegistry({})
+
+    def artifact_entry(key: str, name: str, description: str, loader: Callable[..., Any], path: str) -> FormulaCallableEntry:
+        status = _artifact_status(loader, repository)
+        return FormulaCallableEntry(
+            key, name, description,
+            f"{loader.__module__}.{loader.__name__}" if status == "AVAILABLE_ARTIFACT_BACKED" else None,
+            {}, {"type": "ValueWithProvenance"}, status, "local BHSM artifact", (path,),
+            "ARTIFACT_AVAILABLE_NOT_THEOREM_PROMOTION" if status == "AVAILABLE_ARTIFACT_BACKED" else "MISSING",
+            "Artifact-backed output with provenance; not an empirical validation claim.", True,
+        )
+
+    entries = (
+        artifact_entry("ckm_matrix_from_artifact", "CKM matrix artifact", "Load BHSM CKM magnitudes.", load_ckm_matrix_artifact, "artifacts/CKM_no_fit_operator_output_v1.json"),
+        artifact_entry("pmns_matrix_from_artifact", "PMNS matrix artifact", "Load BHSM PMNS magnitudes.", load_pmns_matrix_artifact, "artifacts/PMNS_no_fit_operator_output_v1.json"),
+        artifact_entry("cp_phase_from_artifact", "CP phase artifact", "Load the BHSM holonomy phase seed.", load_cp_phase_artifact, "artifacts/CP_no_fit_holonomy_output_v1.json"),
+        artifact_entry("boundary_constants_from_artifact", "Boundary constants artifact", "Load no-fit boundary profile constants.", load_boundary_constants_artifact, "artifacts/BHSM_boundary_no_fit_prediction_package_v1.json"),
+        artifact_entry("mass_ratios_from_artifact", "Frozen mass ratios", "Load frozen BHSM charged-sector mass ratios.", load_mass_ratio_predictions_artifact, "theory/bhsm_v1_frozen_prediction_set.json"),
+        FormulaCallableEntry("hyperspherical_default_metric", "Default interface metric", "Deterministic interface-default metric.", "bhsm.interface.geometry.HypersphericalGeometry.geometric_metric", {"geometry": "HypersphericalGeometry"}, {"type": "number"}, "AVAILABLE_INTERFACE_DEFAULT", "interface default", (), "PLACEHOLDER_UNTIL_BHSM_THEOREM_SUPPLIED", "Interface default formulas remain interface defaults unless a theorem-backed artifact or callable replaces them.", True),
+        FormulaCallableEntry("hyperspherical_default_tension", "Default interface tension", "Deterministic interface-default tension.", "bhsm.interface.geometry.HypersphericalGeometry.geometric_tension", {"geometry": "HypersphericalGeometry"}, {"type": "number"}, "AVAILABLE_INTERFACE_DEFAULT", "interface default", (), "PLACEHOLDER_UNTIL_BHSM_THEOREM_SUPPLIED", "Interface default formulas remain interface defaults unless a theorem-backed artifact or callable replaces them.", True),
+        FormulaCallableEntry("charged_response_from_artifact", "Charged boundary response", "Ontology-defined charged boundary-response callable.", "bhsm.interface.minimal_action.x_ch_closure.apply_x_ch_boundary_response", {"boundary_field": "string"}, {"type": "boundary_response_chain"}, "AVAILABLE_AUTHOR_SUPPLIED_CONDITIONAL", "author ontology plus local boundary source", ("artifacts/BHSM_x_ch_charged_boundary_response_theorem_v1_1.json", "artifacts/BHSM_x_ch_minimal_action_closure_v0_8.json", "artifacts/BHSM_author_ontology_v0_8.json"), "CONDITIONAL_ACTION_THEOREM", "Conditional boundary-response theorem only; no standalone production-field claim.", True),
+        FormulaCallableEntry("neutral_kernel_from_artifact", "Neutral boundary kernel", "Loadable neutral boundary seed; physical observable is propagation conditioned.", None, {}, {}, "AVAILABLE_ARTIFACT_BACKED", "local BHSM artifact", ("artifacts/neutral_operator_no_fit_output_v1.json",), "ARTIFACT_BACKED_BOUNDARY_SEED", "K_nu is a boundary seed, not a static physical mass matrix.", True),
+        FormulaCallableEntry("x_ch_production_vertex", "X_ch production vertex", "Retired standalone production-field target.", None, {}, {}, "RETIRED_TARGET", "author ontology", ("artifacts/BHSM_author_ontology_v0_8.json",), "RETIRED_TARGET", "X_ch is modeled as a charged boundary-response operator, not a standalone production field.", False),
+        FormulaCallableEntry("neutrino_physical_basis_scale", "Neutrino propagation-mass response", "Propagation-conditioned curvature-response callable.", "bhsm.interface.minimal_action.neutrino_basis_closure.propagation_conditioned_neutrino_mass", {"curvature_response": "value", "propagating": "bool", "threshold_met": "bool"}, {"type": "effective_mass_response"}, "AVAILABLE_AUTHOR_SUPPLIED_CONDITIONAL", "author ontology plus neutral boundary seed", ("artifacts/BHSM_neutrino_basis_scale_minimal_action_closure_v0_8.json", "artifacts/BHSM_author_ontology_v0_8.json"), "CONDITIONAL_PROPAGATION_THEOREM", "Structural propagation theorem only; numerical curvature scale remains open.", True),
+        FormulaCallableEntry("neutrino_propagation_mass_candidate", "Neutrino dimensionless propagation-mass candidate", "Build the ordering-free dimensionless threshold-response candidate.", "bhsm.interface.neutrino_propagation.numerical_closure.build_numerical_closure", {}, {"type": "NeutrinoNumericalClosureReport"}, "AVAILABLE_AUTHOR_SUPPLIED_CONDITIONAL", "author ontology plus local no-fit artifacts", ("artifacts/BHSM_neutrino_numerical_closure_report_v0_9.json", "artifacts/BHSM_author_ontology_v0_8.json"), "CONDITIONAL_NUMERICAL_CLOSURE_CANDIDATE", "Dimensionless-only conditional candidate; eV/GeV scale remains open.", True),
+        FormulaCallableEntry("neutral_dimensionful_scale_search", "Neutral dimensionful scale search", "Classify local neutral scale candidates and fail closed when no physical unit anchor exists.", "bhsm.interface.neutrino_scale.unit_map.derive_neutral_scale_law", {}, {"type": "NeutralDimensionfulScaleResult"}, "AVAILABLE_AUTHOR_SUPPLIED_CONDITIONAL", "local artifact inventory and author ontology", ("artifacts/BHSM_neutral_scale_closure_report_v1_0.json", "artifacts/BHSM_author_ontology_v0_8.json"), "OPEN_MISSING_NEUTRAL_SCALE", "A dimensionless BHSM response is not, by itself, a physical eV/GeV mass.", True),
+        FormulaCallableEntry("legacy_curvature_mass_functional", "Legacy curvature mass functional", "Load the author-supplied geometric matching functional with its explicit ansatz boundary.", "bhsm.interface.neutrino_scale.curvature_mass_functional.load_curvature_mass_functional_from_legacy_artifacts", {}, {"type": "CurvatureMassFunctional"}, "AVAILABLE_AUTHOR_SUPPLIED_CONDITIONAL", "bundled author-supplied legacy theory artifact", ("artifacts/BHSM_curvature_mass_functional_v1_1.json",), "ARTIFACT_BACKED_CURVATURE_MASS_FUNCTIONAL", "The functional is artifact-backed, but it is not an action-derived neutrino mass and supplies no r_prop or physical k_neutral,eff.", True),
+        FormulaCallableEntry("legacy_neutral_scale_candidate", "Legacy neutral scale candidate", "Test the curvature functional against the independent neutral radius and curvature-unit gates.", "bhsm.interface.neutrino_scale.legacy_neutral_scale_candidate.build_legacy_neutral_scale_candidate", {}, {"type": "LegacyNeutralScaleCandidate"}, "AVAILABLE_AUTHOR_SUPPLIED_CONDITIONAL", "legacy theory artifacts plus current BHSM neutral audit", ("artifacts/BHSM_legacy_neutral_scale_report_v1_1.json",), "OPEN_MISSING_PROPAGATION_LOCALIZATION_RADIUS", "No eV/GeV output is produced without both a physical propagation radius and neutral curvature map.", True),
+        FormulaCallableEntry("neutral_propagation_radius_search", "Neutral propagation radius search", "Separate symbolic and numeric physical radius candidates.", "bhsm.interface.neutrino_scale.propagation_radius_search.search_neutral_propagation_radius", {}, {"type": "PropagationRadiusSearchResult"}, "AVAILABLE_AUTHOR_SUPPLIED_CONDITIONAL", "author ontology plus local radius inventory", ("artifacts/BHSM_neutral_propagation_radius_search_v1_2.json",), "CONDITIONAL_PROPAGATION_RADIUS_CANDIDATE", "The candidate defines a length domain but no numeric metre value.", True),
+        FormulaCallableEntry("neutral_physical_curvature_map", "Neutral physical curvature map", "Separate the dimensionless kernel response from a physical m^-2 normalization.", "bhsm.interface.neutrino_scale.neutral_physical_curvature.search_neutral_physical_curvature_map", {}, {"type": "NeutralPhysicalCurvatureMap"}, "AVAILABLE_AUTHOR_SUPPLIED_CONDITIONAL", "author ontology, neutral kernel, and legacy curvature operator", ("artifacts/BHSM_neutral_physical_curvature_map_v1_2.json",), "CONDITIONAL_PHYSICAL_CURVATURE_MAP_CANDIDATE", "The symbolic map contains an unresolved kappa_curv normalization in m^-2.", True),
+        FormulaCallableEntry("neutral_radius_curvature_closure", "Neutral radius/curvature closure", "Apply radius, physical-curvature, transport, stiffness, and dimensional-consistency gates.", "bhsm.interface.neutrino_scale.neutral_radius_curvature_report.build_neutral_radius_curvature_closure", {}, {"type": "NeutralRadiusCurvatureClosureResult"}, "AVAILABLE_AUTHOR_SUPPLIED_CONDITIONAL", "local theorem artifacts and author ontology", ("artifacts/BHSM_neutral_radius_curvature_closure_v1_2.json",), "DIMENSIONFUL_MASS_NOT_AVAILABLE", "No eV/GeV result: numeric unit inputs are absent and the documented r^2 k functional has dimension mass/length under K=-nabla^2 ln rho.", True),
+        FormulaCallableEntry("neutral_mass_gap_action", "Neutral mass-gap action analogue", "Load the artifact-backed scalar action and conditional neutral normalization.", "bhsm.interface.neutrino_spectral.mass_gap_action.load_neutral_mass_gap_action", {}, {"type": "MassGapActionCandidate"}, "AVAILABLE_AUTHOR_SUPPLIED_CONDITIONAL", "bundled scalar EFT analogue", ("artifacts/BHSM_mass_gap_action_candidate_v1_3.json",), "ARTIFACT_BACKED_MASS_GAP_ACTION", "The scalar action shape is artifact-backed; neutral A_nu, Z_nu, and physical curvature remain open.", True),
+        FormulaCallableEntry("legacy_gravitational_dimensional_gate", "Legacy gravitational dimensional gate", "Classify the historical r^2 K expression as mass per length for K=L^-2.", "bhsm.interface.neutrino_spectral.legacy_dimensional_gate.audit_legacy_gravitational_mass_formula_dimensions", {}, {"type": "LegacyDimensionalGateResult"}, "AVAILABLE_AUTHOR_SUPPLIED_CONDITIONAL", "dimensional audit", ("artifacts/BHSM_legacy_dimensional_gate_v1_3.json",), "DIMENSIONALLY_GATED_LEGACY_FUNCTIONAL", "The legacy expression is not used as a direct particle mass formula.", True),
+        FormulaCallableEntry("neutral_stiffness_ratio", "Neutral stiffness ratio", "Search for sqrt(A_nu/Z_nu) without empirical calibration.", "bhsm.interface.neutrino_spectral.stiffness_ratio.search_neutral_stiffness_ratio", {}, {"type": "NeutralStiffnessRatio"}, "AVAILABLE_AUTHOR_SUPPLIED_CONDITIONAL", "local symbolic action inventory", ("artifacts/BHSM_neutral_stiffness_ratio_v1_3.json",), "CONDITIONAL_NEUTRAL_STIFFNESS_RATIO_CANDIDATE", "The ratio is symbolic and has no numeric metre value.", True),
+        FormulaCallableEntry("neutral_spectral_gap", "Neutral spectral-gap candidate", "Build the action-normalized conditional neutral inverse-length gap.", "bhsm.interface.neutrino_spectral.neutral_spectral_gap.build_neutral_spectral_gap_candidate", {}, {"type": "NeutralSpectralGapCandidate"}, "AVAILABLE_AUTHOR_SUPPLIED_CONDITIONAL", "neutral action normalization and curvature gates", ("artifacts/BHSM_neutral_spectral_gap_candidate_v1_3.json",), "CONDITIONAL_NEUTRAL_SPECTRAL_MASS_CANDIDATE", "Symbolic theorem shape only; no default kg/eV/GeV mass is produced.", True),
+        FormulaCallableEntry("neutral_kernel_positivity", "Neutral kernel positivity audit", "Separate the raw eigenspectrum from thresholded/admissible positivity.", "bhsm.interface.neutrino_spectral.neutral_kernel_positivity.audit_neutral_kernel_positivity", {}, {"type": "NeutralKernelPositivityAudit"}, "AVAILABLE_AUTHOR_SUPPLIED_CONDITIONAL", "artifact-backed finite kernel", ("artifacts/BHSM_neutral_kernel_positivity_audit_v1_3.json",), "OPEN_MISSING_ADMISSIBLE_NEUTRAL_POSITIVITY_PROOF", "The raw kernel is not PSD; nonnegative thresholding is not a full admissible-subspace proof.", True),
+        FormulaCallableEntry("neutral_kernel_exact_audit", "Exact neutral-kernel audit", "Compute the exact rational quadratic form and raw eigenspectrum.", "bhsm.interface.neutrino_spectral.neutral_quadratic_form.audit_neutral_kernel_exact", {}, {"type": "NeutralKernelExactAudit"}, "AVAILABLE_AUTHOR_SUPPLIED_CONDITIONAL", "artifact-backed neutral kernel", ("artifacts/BHSM_neutral_kernel_exact_audit_v1_4.json",), "RAW_KERNEL_NOT_POSITIVE_SEMIDEFINITE", "The raw kernel is indefinite; this is not the admissible-cone verdict.", True),
+        FormulaCallableEntry("neutral_admissible_domain", "Neutral admissible response cone", "Load the ontology-conditional measurement-supported response domain.", "bhsm.interface.neutrino_spectral.admissible_domain.derive_or_load_neutral_admissible_domain", {}, {"type": "NeutralAdmissibleDomain"}, "AVAILABLE_AUTHOR_SUPPLIED_CONDITIONAL", "author ontology and propagation modules", ("artifacts/BHSM_neutral_admissible_domain_v1_4.json",), "CONDITIONAL_MEASUREMENT_SUPPORTED_NEUTRAL_POSITIVITY_CANDIDATE", "The response cone is explicit but not derived from the complete neutral action.", True),
+        FormulaCallableEntry("neutral_admissible_positivity", "Admissible neutral copositivity", "Prove the exact quadratic form nonnegative on the response cone without clipping.", "bhsm.interface.neutrino_spectral.positivity_proof.prove_neutral_positivity_on_domain", {}, {"type": "AdmissiblePositivityProof"}, "AVAILABLE_AUTHOR_SUPPLIED_CONDITIONAL", "exact rational kernel plus author-ontology response cone", ("artifacts/BHSM_neutral_positivity_proof_v1_4.json",), "CONDITIONAL_MEASUREMENT_SUPPORTED_NEUTRAL_POSITIVITY_CANDIDATE", "Exact on the stated cone; not raw PSD and not complete-action domain derivation.", True),
+        FormulaCallableEntry("neutral_positivity_counterexample", "Neutral admissible counterexample search", "Search the explicit response cone for q(x)<0.", "bhsm.interface.neutrino_spectral.positivity_counterexample.search_admissible_positivity_counterexample", {}, {"type": "NeutralPositivityCounterexample"}, "AVAILABLE_AUTHOR_SUPPLIED_CONDITIONAL", "exact proof and bounded cone scan", ("artifacts/BHSM_neutral_positivity_counterexample_v1_4.json",), "CONDITIONAL_MEASUREMENT_SUPPORTED_NEUTRAL_POSITIVITY_CANDIDATE", "No admissible counterexample is reported only because an exact cone proof applies.", True),
+        FormulaCallableEntry("neutral_positivity_report", "Neutral positivity report", "Combine raw, domain, proof, and counterexample gates.", "bhsm.interface.neutrino_spectral.positivity_report.build_neutral_positivity_report", {}, {"type": "NeutralPositivityReport"}, "AVAILABLE_AUTHOR_SUPPLIED_CONDITIONAL", "neutral positivity theorem package", ("artifacts/BHSM_neutral_positivity_report_v1_4.json",), "CONDITIONAL_MEASUREMENT_SUPPORTED_NEUTRAL_POSITIVITY_CANDIDATE", "Conditional response-cone positivity only; raw PSD remains false.", True),
+        FormulaCallableEntry("neutral_action_source_search", "Neutral action source search", "Inventory the partial action chain and exact missing normalizations.", "bhsm.interface.neutrino_action.action_source_search.search_neutral_action_sources", {}, {"type": "NeutralActionSourceSearchResult"}, "AVAILABLE_AUTHOR_SUPPLIED_CONDITIONAL", "local action and theorem-discharge inventory", ("artifacts/BHSM_neutral_action_source_search_v1_5.json",), "OPEN_MISSING_NEUTRAL_ACTION_NORMALIZATION", "A partial variational chain exists, but no complete normalized neutral action is present.", True),
+        FormulaCallableEntry("neutral_action_stiffness", "Neutral action stiffness", "Extract Z_nu, A_nu_gap, and their stiffness-length ratio with unit gates.", "bhsm.interface.neutrino_action.stiffness_extraction.derive_neutral_stiffness_length", {}, {"type": "NeutralStiffnessLengthResult"}, "AVAILABLE_AUTHOR_SUPPLIED_CONDITIONAL", "partial neutral action", ("artifacts/BHSM_neutral_stiffness_length_v1_5.json",), "OPEN_MISSING_NUMERIC_STIFFNESS_LENGTH", "Both coefficients are symbolic and no metre value is derived.", True),
+        FormulaCallableEntry("physical_neutral_curvature_map", "Physical neutral curvature map", "Separate the dimensionless response from the missing m^-2 normalization.", "bhsm.interface.neutrino_action.curvature_unit_map.derive_or_locate_physical_neutral_curvature_map", {}, {"type": "PhysicalNeutralCurvatureMapResult"}, "AVAILABLE_AUTHOR_SUPPLIED_CONDITIONAL", "neutral response and collar geometry", ("artifacts/BHSM_physical_neutral_curvature_map_v1_5.json",), "CONDITIONAL_PHYSICAL_NEUTRAL_CURVATURE_MAP_CANDIDATE", "The symbolic map exists; boundary-measure normalization and transport length remain open.", True),
+        FormulaCallableEntry("neutral_action_response_cone", "Action-supported neutral response cone", "Audit action-level support for the measurement-supported cone.", "bhsm.interface.neutrino_action.response_cone_derivation.derive_response_cone_from_neutral_action", {}, {"type": "ActionDerivedResponseConeResult"}, "AVAILABLE_AUTHOR_SUPPLIED_CONDITIONAL", "ontology plus partial boundary/collar action", ("artifacts/BHSM_action_derived_response_cone_v1_5.json",), "CONDITIONAL_ACTION_DERIVED_RESPONSE_CONE_CANDIDATE", "Partial action support exists; complete-action derivation remains open.", True),
+        FormulaCallableEntry("neutral_action_spectral_closure", "Neutral action spectral closure", "Combine stiffness, curvature, cone, and positivity gates.", "bhsm.interface.neutrino_action.action_closure_report.build_neutral_action_spectral_closure", {}, {"type": "NeutralActionSpectralClosureResult"}, "AVAILABLE_AUTHOR_SUPPLIED_CONDITIONAL", "neutral action closure package", ("artifacts/BHSM_neutral_action_spectral_closure_v1_5.json",), "CONDITIONAL_NEUTRAL_SPECTRAL_MASS_CANDIDATE", "No default physical mass: numeric stiffness length and physical curvature remain absent.", True),
+        FormulaCallableEntry("neutral_action_closure_report", "Neutral action closure report", "Render the exact action, unit, cone, and mass blockers.", "bhsm.interface.neutrino_action.action_closure_report.build_neutral_action_closure_report", {}, {"type": "NeutralActionClosureReport"}, "AVAILABLE_AUTHOR_SUPPLIED_CONDITIONAL", "neutral action closure package", ("artifacts/BHSM_neutral_action_closure_report_v1_5.json",), "DIMENSIONFUL_MASS_NOT_AVAILABLE", "Physical eV/GeV mass closure remains open without both numeric dimensional ingredients.", True),
+        FormulaCallableEntry("cp_o_int_standalone_attachment", "Standalone CP O_int attachment", "Retired standalone production target.", None, {}, {}, "RETIRED_TARGET", "author ontology", ("artifacts/CP_no_fit_holonomy_output_v1.json", "artifacts/BHSM_cp_o_int_minimal_action_closure_v0_8.json", "artifacts/BHSM_author_ontology_v0_8.json"), "RETIRED_TARGET", "CP is represented by the artifact-backed Z6 holonomy constraint; no standalone production vertex is required.", False),
+    )
+    for entry in entries:
+        register_formula(registry, entry)
+    return registry
+
+
+_LOADERS: dict[str, Callable[..., Any]] = {
+    "ckm_matrix_from_artifact": load_ckm_matrix_artifact,
+    "pmns_matrix_from_artifact": load_pmns_matrix_artifact,
+    "cp_phase_from_artifact": load_cp_phase_artifact,
+    "boundary_constants_from_artifact": load_boundary_constants_artifact,
+    "mass_ratios_from_artifact": load_mass_ratio_predictions_artifact,
+}
+
+_CONDITIONAL_CALLABLES: dict[str, Callable[..., Any]] = {
+    "charged_response_from_artifact": apply_x_ch_boundary_response,
+    "neutrino_physical_basis_scale": propagation_conditioned_neutrino_mass,
+    "neutrino_propagation_mass_candidate": build_numerical_closure,
+    "neutral_dimensionful_scale_search": derive_neutral_scale_law,
+    "legacy_curvature_mass_functional": load_curvature_mass_functional_from_legacy_artifacts,
+    "legacy_neutral_scale_candidate": build_legacy_neutral_scale_candidate,
+    "neutral_propagation_radius_search": search_neutral_propagation_radius,
+    "neutral_physical_curvature_map": search_neutral_physical_curvature_map,
+    "neutral_radius_curvature_closure": build_neutral_radius_curvature_closure,
+    "neutral_mass_gap_action": load_neutral_mass_gap_action,
+    "legacy_gravitational_dimensional_gate": audit_legacy_gravitational_mass_formula_dimensions,
+    "neutral_stiffness_ratio": search_neutral_stiffness_ratio,
+    "neutral_spectral_gap": build_neutral_spectral_gap_candidate,
+    "neutral_kernel_positivity": audit_neutral_kernel_positivity,
+    "neutral_kernel_exact_audit": audit_neutral_kernel_exact,
+    "neutral_admissible_domain": derive_or_load_neutral_admissible_domain,
+    "neutral_admissible_positivity": prove_neutral_positivity_on_domain,
+    "neutral_positivity_counterexample": search_admissible_positivity_counterexample,
+    "neutral_positivity_report": build_neutral_positivity_report,
+    "neutral_action_source_search": search_neutral_action_sources,
+    "neutral_action_stiffness": derive_neutral_stiffness_length,
+    "physical_neutral_curvature_map": derive_or_locate_physical_neutral_curvature_map,
+    "neutral_action_response_cone": derive_response_cone_from_neutral_action,
+    "neutral_action_spectral_closure": build_neutral_action_spectral_closure,
+    "neutral_action_closure_report": build_neutral_action_closure_report,
+}
+
+
+def evaluate_formula(formula_key: str, repository: str | Path | None = None, **inputs: Any) -> FormulaEvaluationResult:
+    """Evaluate available artifact callables; fail closed for missing callables."""
+
+    registry = default_formula_registry(repository)
+    entry = registry.get(formula_key)
+    if entry is None:
+        return FormulaEvaluationResult(formula_key, "CALLABLE_NOT_AVAILABLE", "CALLABLE_NOT_AVAILABLE", None, None, "Unknown formula key; no formula was guessed.")
+    loader = _LOADERS.get(formula_key)
+    if loader is not None and entry.status == "AVAILABLE_ARTIFACT_BACKED":
+        value = loader(repository)
+        return FormulaEvaluationResult(formula_key, entry.status, "EVALUATED", value.to_dict(), entry.callable_path, entry.claim_boundary, value.provenance.empirical_derivation_input)
+    conditional = _CONDITIONAL_CALLABLES.get(formula_key)
+    if conditional is not None and entry.status == "AVAILABLE_AUTHOR_SUPPLIED_CONDITIONAL":
+        try:
+            value = conditional(**inputs)
+        except (TypeError, ValueError) as exc:
+            return FormulaEvaluationResult(formula_key, entry.status, "INPUT_REQUIRED", None, entry.callable_path, f"{entry.claim_boundary} {exc}")
+        serialized = value.to_dict() if hasattr(value, "to_dict") else value
+        return FormulaEvaluationResult(formula_key, entry.status, "EVALUATED_CONDITIONAL", serialized, entry.callable_path, entry.claim_boundary)
+    # Geometry defaults require a caller-supplied geometry and remain defaults.
+    if formula_key in {"hyperspherical_default_metric", "hyperspherical_default_tension"} and "geometry" in inputs:
+        geometry = inputs["geometry"]
+        result = geometry.geometric_metric() if formula_key.endswith("metric") else geometry.geometric_tension()
+        return FormulaEvaluationResult(formula_key, entry.status, "EVALUATED_INTERFACE_DEFAULT", result, entry.callable_path, entry.claim_boundary)
+    return FormulaEvaluationResult(formula_key, entry.status, "CALLABLE_NOT_AVAILABLE", None, entry.callable_path, entry.claim_boundary)

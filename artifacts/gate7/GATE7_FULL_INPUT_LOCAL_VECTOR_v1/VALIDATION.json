@@ -1,0 +1,85 @@
+{
+  "FULL_BHSM_COMPLETE": false,
+  "Gate7_closed": false,
+  "artifact_hygiene_tests": {
+    "failed": 0,
+    "passed": 1
+  },
+  "focused_vector_tests": {
+    "failed": 0,
+    "passed": 36,
+    "xfailed": 0,
+    "xml_SHA256": "AF6E2790B13F6BBD672C4CE96310DE6D2AD916D71CD150AD54C887703DA633BA"
+  },
+  "frozen_predictions_changed": false,
+  "full_repository_suite": {
+    "collected": 10811,
+    "complete": false,
+    "failed_so_far": 80,
+    "passed_so_far": 1787,
+    "snapshot_SHA256": "C1FEFEFA38B1DDF41E0EE91FA946EDCD8B5D5575444D9E66CC5A151D365F69AE",
+    "snapshot_local_time": "2026-09-20 04:28:12 America/Chicago",
+    "test_generated_historical_artifact_changes_preserved_while_running": true,
+    "xfailed_so_far": 0
+  },
+  "packaged_public_readiness_passed": true,
+  "required_invariant_audits": [
+    {
+      "command": [
+        "C:\\Python314\\python.exe",
+        "scripts/audit_covariant_bubble_interface_mechanics.py"
+      ],
+      "exit_code": 0,
+      "log": "tmp\\gate7_vector_20260919\\final_audit_covariant_bubble_interface_mechanics.log"
+    },
+    {
+      "command": [
+        "C:\\Python314\\python.exe",
+        "tools/audit_forbidden_claims.py"
+      ],
+      "exit_code": 0,
+      "log": "tmp\\gate7_vector_20260919\\final_audit_forbidden_claims.log"
+    },
+    {
+      "command": [
+        "C:\\Python314\\python.exe",
+        "tools/audit_bhsm_status.py"
+      ],
+      "exit_code": 0,
+      "log": "tmp\\gate7_vector_20260919\\final_audit_bhsm_status.log"
+    },
+    {
+      "command": [
+        "C:\\Python314\\python.exe",
+        "tools/audit_frozen_prediction_integrity.py"
+      ],
+      "exit_code": 0,
+      "log": "tmp\\gate7_vector_20260919\\final_audit_frozen_prediction_integrity.log"
+    },
+    {
+      "command": [
+        "C:\\Python314\\python.exe",
+        "tools/audit_public_readiness.py"
+      ],
+      "exit_code": 0,
+      "log": "tmp\\gate7_vector_20260919\\final_audit_public_readiness.log"
+    },
+    {
+      "command": [
+        "C:\\Python314\\python.exe",
+        "tools/materialize_museum_science.py",
+        "--check"
+      ],
+      "exit_code": 0,
+      "log": "tmp\\gate7_vector_20260919\\final_materialize_museum_science.log"
+    },
+    {
+      "command": [
+        "C:\\Python314\\python.exe",
+        "tools/verify_precision.py"
+      ],
+      "exit_code": 0,
+      "log": "tmp\\gate7_vector_20260919\\final_verify_precision.log"
+    }
+  ]
+}

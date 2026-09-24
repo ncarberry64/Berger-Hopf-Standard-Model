@@ -1,5 +1,17 @@
 # Gate Ledger
 
+## Gate-7 shared action and physical scalar enclosure — 19 September 2026
+
+The original interval-13 midpoint scalar
+`Y = row_73[(2 dt/3) Q P] DF(Z_M(theta)) w0` has the independently reproduced
+outward bound `|Y-Y0| <= 0.341177266859`. All original parameters, inherited
+solution boxes, action/normalization residuals and nonlinear remainders are
+retained. See the [proof](n12_gate7_residual_cancelled_scalar_output.md) and
+[progress packet](../docs/research_packets/2026-09-19/GATE_7_CLOSURE_PROGRESS.md).
+Gate 7 remains `ACTIVE`: the full vector and endpoint chain, full-history
+physical inequalities and existing operator/quotient/KKT/continuum obligations
+are not certified by this scalar result. No gate status is promoted.
+
 ## AE3.1 current-C2 lepton/composite mixing structure
 
 - The nonzero gauge auxiliary block extends to the charged-lepton channel with

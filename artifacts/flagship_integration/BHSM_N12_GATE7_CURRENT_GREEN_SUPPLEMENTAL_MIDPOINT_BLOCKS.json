@@ -1,0 +1,53 @@
+{
+  "artifact": "BHSM_N12_GATE7_CURRENT_GREEN_SUPPLEMENTAL_MIDPOINT_BLOCKS",
+  "status": "ALL_SIGNED_CU_CC_MIDPOINT_CENTER_BLOCKS_DERIVED",
+  "authority": "UNCHANGED_ACTION_SIGNED_RECTANGULAR_D2_RATE_CENTER",
+  "summary": {
+    "midpoint_count": 370,
+    "restart_row_count": 9620,
+    "new_direction_pairs_per_midpoint": 2249,
+    "total_new_direction_pairs": 832130,
+    "center_compute_CPU_hours": 70.79988899661151,
+    "minimum_frame_QR_pivot": 1e-07,
+    "maximum_coordinate_basis_residual": 1.0884877009268805e-15,
+    "maximum_normal_frame_residual": 1.2761513159760876e-15,
+    "maximum_full_basis_condition_2": 10000000.000000017,
+    "maximum_row_diagnostics": [
+      1.7143412973501994e-10,
+      1.3675647993849617e-14,
+      8.851761335525797e-15,
+      1.0674164141424321e-14,
+      5.164968917966943e-10
+    ]
+  },
+  "aggregate_manifest_SHA256": "2A560E8B1D8447BF07432AF7753A7D6F559D87CB8847E2F3E630D36973F228ED",
+  "restart_row_manifest_SHA256": "8395ED471DDDB0AFC1E651675BB980F8540C6D1C6467E1EE85508A2CEF1587BD",
+  "campaign_fingerprint": "35A0C97E7AB0C997EC166F72BD584794E6C0C756E12ECF47753B067E7FB6810B",
+  "recovery_campaign_fingerprint": "A1F06E0348C4DB39B5FCCA689872C595E3C9E19C5D09345946E0C1ECD8B743CA",
+  "validation": {
+    "all_370_midpoint_aggregates_valid": true,
+    "all_9620_restart_rows_valid": true,
+    "all_aggregates_match_their_restart_row_values_and_accounting": true,
+    "exactly_2249_new_direction_pairs_per_midpoint": true,
+    "rectangular_kernel_matches_recovered_UU_authority": true,
+    "completed_basis_has_no_zero_QR_pivot": true,
+    "coordinate_basis_residual_below_5e_minus_13": true,
+    "normal_frame_residual_below_5e_minus_13": true,
+    "all_center_diagnostics_finite": true,
+    "no_action_mesh_frame_axis_or_proof_parameter_changed": true
+  },
+  "validation_passed": true,
+  "claim_boundary": {
+    "complete_signed_midpoint_center_Hessian": "DERIVED",
+    "outward_midpoint_Hessian_remainder": "OPEN",
+    "causal_two_radius_certificate": "OPEN",
+    "Gate7": "ACTIVE",
+    "FULL_BHSM_COMPLETE": false
+  },
+  "exact_next_dependency": "RECONSTRUCT_EACH_ACTUAL_HERMITE_SIMPSON_MIDPOINT_PULLBACK_THROUGH_THE_COMPLETE_S_EQUALS_U_C_BASIS_BEFORE_CAUSAL_NORMS",
+  "inputs": {
+    "artifacts/current_semantics/BHSM_N12_GATE7_SUPPLEMENTAL_MIXED_RATE_UU_VALIDATION.json": "34B4E62142A0AC27C071C41B06154D9A968F0272EE00B38AA5443C461A596336",
+    "scripts/certify_n12_gate7_current_green_supplemental_midpoint_blocks.py": "64C823365545E60888D736EEEFD4406488920B353318096A125F3C3BD981C2C4",
+    "scripts/derive_n12_gate7_current_green_supplemental_midpoint_blocks.py": "14C9A26A78C7C3E7BBFEEF026AF0991900FB311145B5A46ECB148489A2BA3869"
+  }
+}

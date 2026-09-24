@@ -1,0 +1,50 @@
+{
+  "FULL_BHSM_COMPLETE": false,
+  "Gate7_closed": false,
+  "algorithm": "BHSM_GATE7_POST_INTEGRATION_CHAIN_V28",
+  "campaign_checks": {
+    "raw_fingerprint": true,
+    "raw_manifest": true,
+    "reps_complete_740": true,
+    "reps_fingerprint": true,
+    "reps_manifest": true,
+    "reps_validation": true
+  },
+  "stages": [
+    {
+      "Gate7_closed": false,
+      "coverage": {
+        "complete": true,
+        "endpoints": 370,
+        "midpoints": 370
+      },
+      "result": "artifacts\\flagship_integration\\BHSM_N12_GATE7_SCALAR_COVECTOR_CORRECTION.json",
+      "sha256": "CAEC332DE64D947999507AD80D0A9D8AA00A4C973DB8964D3BFC6CC454D9E91D",
+      "stage": "scalar_covector_correction",
+      "validation_passed": true
+    },
+    {
+      "Gate7_closed": false,
+      "coverage": {
+        "complete": true,
+        "intervals": 370
+      },
+      "result": "artifacts\\flagship_integration\\BHSM_N12_GATE7_STORED_ROUNDING_LOCAL_TRANSPORT.json",
+      "sha256": "523CC5C2786C73FCDA85540F229219143EADF127CCFB64C0C48F3BBE87531577",
+      "stage": "stored_rounding_local_transport",
+      "validation_passed": true
+    },
+    {
+      "Gate7_closed": false,
+      "coverage": {
+        "complete": true,
+        "intervals": 370,
+        "nodes": 371
+      },
+      "result": "artifacts\\flagship_integration\\BHSM_N12_GATE7_STORED_ROUNDING_CAUSAL_TRANSPORT.json",
+      "sha256": "C4C60D82B63AEEB5AA2AAE1AC84D614AC226FDA361D183D931F9BC73167C4A92",
+      "stage": "stored_rounding_causal_transport",
+      "validation_passed": true
+    }
+  ]
+}

@@ -1,0 +1,73 @@
+{
+  "FULL_BHSM_COMPLETE": false,
+  "Gate7_closed": false,
+  "action_derivative_orders_required": [
+    2,
+    3,
+    4
+  ],
+  "algorithm": "MOVING_RESPONSE_CHECKPOINT_V1",
+  "complete_physical_Hessian_enclosed": false,
+  "eigenvalue_affine_tail": {
+    "approximate": 8.260267173516628e-17,
+    "exact": "4987830069094174745070289775524009057611434938111691571929230298752573596205284809585969564707778871612692642784039716160971417121523565157228491749332165/60383398797144661635864873295812302254670739526663046854019300803929986598274381633378027602842540280663494000492221518396329354078796682120982948022923136698390325231616"
+  },
+  "endpoint": 19,
+  "first_missing_operator": "E_uv(theta;u,v)=(D2 psi(x(theta))[D_r*u,D_r*v],D2 lambda(x(theta))[D_r*u,D_r*v])",
+  "focused_test_command": "python -m pytest -q tests/test_shared_implicit_response_jet.py",
+  "frozen_fixed_leg_recomputed": false,
+  "global_feasibility_established": false,
+  "kappa_L": null,
+  "kappa_T": null,
+  "kappa_targets": {
+    "L": "0.6542911248664067",
+    "T": "0.7452414479024602"
+  },
+  "maximum_eigenvector_affine_tail": {
+    "approximate": 9.697081627007817e-10,
+    "exact": "6980213487769096125445954799185629254498720591131454148992015635982045408337120722931756987569606258011917835709259011223892576686085479834500341460142567/7198262071269114212496861612297570974191515389283066612961208916178940129074380592510465097766225371439873457013633432197133225688790879502413624289384262168215552"
+  },
+  "missing_operator_BHSM_evaluation_completed": false,
+  "missing_operator_equation": "K*(psi_uv,-lambda_uv)=(-H_uv*psi-H_u*psi_v-H_v*psi_u+lambda_u*psi_v+lambda_v*psi_u,-psi_u^T*psi_v)",
+  "moving_eigenpair_value_certificate_SHA256": "439464B5D01E99F8625312FBF2EDFC825B2CA55A73512C13B87C6458D994212C",
+  "moving_fifth_action_certificate_SHA256": "2B554B02E11FC7E5F617A6DC8CF5CF4F5B470EFEA7DB89DF48912D81B3FBBFBC",
+  "moving_fifth_action_uniform_absolute_upper": {
+    "approximate": 1.3110187652587739e-23,
+    "exact": "6640738253828635225001127734882010235097209141042828630856044031790166150606859852897322242168532639740585927729946439492081301028493602211155878783205279/506532662216918085755909163048237445191949002959281848144001138878253517018177263964807989373425756138696031080481053366991595590260226478013534525648677207893210669360535830528"
+  },
+  "new_numerical_certificates_independently_reproduced": true,
+  "new_physical_ledger_debit": false,
+  "next_dependencies": [
+    "physical response mixed jet",
+    "positive shared normalization",
+    "actual midpoint/output/causal composition and booking mask"
+  ],
+  "original_domain_shrunk": false,
+  "physical_inequalities": {
+    "contraction": {
+      "certified_LHS": null,
+      "rigorous_margin": null,
+      "verdict": "FAIL_TO_CERTIFY_UNKNOWN"
+    },
+    "longitudinal_self_map": {
+      "certified_LHS": null,
+      "rigorous_margin": null,
+      "verdict": "FAIL_TO_CERTIFY_UNKNOWN"
+    },
+    "transverse_self_map": {
+      "certified_LHS": null,
+      "rigorous_margin": null,
+      "verdict": "FAIL_TO_CERTIFY_UNKNOWN"
+    }
+  },
+  "point_hessian_recomputed": false,
+  "smallest_action_producer": "bhsm.interface.shared_eigenline_jet.second_variations",
+  "source_SHA256": {
+    "C:\\Users\\carbe\\OneDrive\\Documents\\CODEX\\Berger-Hopf-Standard-Model\\scripts\\package_n12_gate7_moving_response_checkpoint.py": "CBDEC0A60C7D8A7B19DBFC61ED17F291921F324B052250210C430571F1B2D1FE",
+    "C:\\Users\\carbe\\OneDrive\\Documents\\CODEX\\Berger-Hopf-Standard-Model\\src\\bhsm\\interface\\shared_eigenline_jet.py": "4E83600882EF9987CE7F2269B9272E422E09D24EF5901317A305D3FE2A866D41",
+    "C:\\Users\\carbe\\OneDrive\\Documents\\CODEX\\Berger-Hopf-Standard-Model\\src\\bhsm\\interface\\shared_implicit_response_jet.py": "0D04940BFF49ECE78C8DC78103E2D0725C3F1F4FE42177B9A335556D003BAD66",
+    "C:\\Users\\carbe\\OneDrive\\Documents\\CODEX\\Berger-Hopf-Standard-Model\\tests\\test_shared_implicit_response_jet.py": "65A503C9BA79151226681880AF6965C2D27911B00E9BB492C45BF757D9CE8C17"
+  },
+  "stage_scope": "New bound is one raw action leaf with moving eigenpair values, not the physical second derivative.",
+  "stop_condition": "B"
+}

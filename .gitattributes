@@ -3,6 +3,20 @@
 *.gif -text -diff
 # Deterministic line endings for hash-audited source files.
 scripts/*.py text eol=lf
+src/bhsm/interface/shared_action_taylor.py text eol=lf
+src/bhsm/interface/shared_parameter_residual.py text eol=lf
+src/bhsm/interface/shared_triangular_residual.py text eol=lf
+src/bhsm/interface/coupled_action_output_adjoint.py text eol=lf
+src/bhsm/interface/input_linear_taylor.py text eol=lf
+src/bhsm/interface/input_linear_anchor_jet.py text eol=lf
+src/bhsm/interface/local_input_taylor_action.py text eol=lf
+src/bhsm/interface/local_input_taylor_action_fast.py text eol=lf
+src/bhsm/interface/local_input_taylor_action_top.py text eol=lf
+src/bhsm/interface/local_input_anchor_action.py text eol=lf
+src/bhsm/interface/common_input_error_pullback.py text eol=lf
+src/bhsm/interface/common_input_error_full_pullback.py text eol=lf
+src/bhsm/interface/joint_output_support.py text eol=lf
+src/bhsm/interface/velocity_residual_adjoint.py text eol=lf
 src/bhsm_model.py text eol=lf
 # Materialized scientific ledgers are byte-compared with canonical LF output.
 artifacts/*.json text eol=lf
@@ -16,3 +30,136 @@ artifacts/CKM_no_fit_operator_output_v1.json text eol=crlf
 src/bhsm/interface/predictions.py text eol=crlf
 # Download research packets are immutable byte-for-byte source archives.
 docs/research_packets/2026-08-03/*.md -text -diff
+src/bhsm/interface/base_residual_cancellation.py text eol=lf
+src/bhsm/interface/directional_error_refinement.py text eol=lf
+src/bhsm/interface/two_sided_input_transport.py text eol=lf
+src/bhsm/interface/local_state_input_taylor_action.py text eol=lf
+src/bhsm/interface/fixed_axis_input_restriction.py text eol=lf
+src/bhsm/interface/history_completion_budget.py text eol=lf
+theory/n12_gate7_interval14_entry_taylor.md text eol=lf
+theory/n12_gate7_local_state_compression.md text eol=lf
+theory/n12_gate7_two_sided_shared_transport.md text eol=lf
+# Imported Gate-7 certificates retain their original hash-bound bytes.
+artifacts/flagship_integration/gate7_global_checkpoint_20260923/** -text whitespace=cr-at-eol
+# This capsule is an immutable historical source archive, not edited code.
+artifacts/flagship_integration/gate7_global_checkpoint_20260923/historical_source_capsule/** -diff
+artifacts/mission_state/BHSM_GATE7_*.json -text whitespace=cr-at-eol
+artifacts/mission_state/BHSM_SYSTEMS_INTEGRATION_FINGERPRINT_COMPONENTS_V26.json -text whitespace=cr-at-eol
+artifacts/flagship_integration/BHSM_N12_GATE7_*.json -text whitespace=cr-at-eol
+artifacts/current_semantics/BHSM_N12_GATE7_SUPPLEMENTAL_MIXED_RATE_UU_VALIDATION.json -text whitespace=cr-at-eol
+src/bhsm/interface/global_physical_remainder_checkpoint.py text eol=lf
+theory/n12_gate7_global_remainder_checkpoint.md text eol=lf
+src/bhsm/interface/uniform_action_contraction.py text eol=lf
+theory/n12_gate7_uniform_remainder_formulation.md text eol=lf
+tests/test_uniform_action_contraction.py text eol=lf
+src/bhsm/interface/shared_history_pullback.py text eol=lf
+tests/test_shared_history_pullback.py text eol=lf
+theory/bhsm_collective_encapsulation_response_candidate.md text eol=lf
+src/bhsm/interface/shared_implicit_response_jet.py text eol=lf
+src/bhsm/interface/shared_eigenline_jet.py text eol=lf
+tests/test_shared_implicit_response_jet.py text eol=lf
+artifacts/flagship_integration/gate7_moving_response_20260923/** -text
+src/bhsm/interface/shared_action_gradient.py text eol=lf
+src/bhsm/interface/shared_positive_norm_jet.py text eol=lf
+src/bhsm/interface/shared_complete_rate_jet.py text eol=lf
+tests/test_shared_action_gradient.py text eol=lf
+tests/test_shared_positive_norm_jet.py text eol=lf
+tests/test_shared_complete_rate_jet.py text eol=lf
+tests/test_complete_rate_action_cache.py text eol=lf
+artifacts/flagship_integration/gate7_mixed_eigenline_20260923/** -text
+artifacts/flagship_integration/gate7_mixed_response_20260923/** -text
+artifacts/flagship_integration/gate7_complete_rate_20260923/** -text
+artifacts/flagship_integration/gate7_eigenbranch_cover_20260923/** -text
+src/bhsm/interface/history_eigenbranch_variation.py text eol=lf
+tests/test_history_eigenbranch_variation.py text eol=lf
+theory/n12_gate7_history_variation_prototype.md text eol=lf
+artifacts/flagship_integration/gate7_history_variation_20260923/** -text
+# Separate child-coherence link proof: retain hash-bound source/package bytes.
+src/bhsm/interface/shared_connecting_hessian.py text eol=lf
+src/bhsm/interface/shared_eigenpair_transport.py text eol=lf
+tests/test_shared_connecting_hessian.py text eol=lf
+tests/test_shared_eigenpair_transport.py text eol=lf
+tests/test_shared_eigenbranch_link_certificate.py text eol=lf
+theory/n12_gate7_child_coherent_eigenbranch_links.md text eol=lf
+artifacts/flagship_integration/gate7_shared_eigenbranch_links_20260923/** -text
+
+# Frozen connected child-chart atlas and historical byte reconciliation.
+artifacts/flagship_integration/gate7_child_atlas_20260924/** -text
+artifacts/flagship_integration/gate7_child_atlas_20260924/historical_source_capsule/** -diff
+theory/bhsm_recursive_child_path_principle.md text eol=lf
+tests/test_child_chart_atlas.py text eol=lf
+
+src/bhsm/interface/shared_physical_tube.py text eol=lf
+src/bhsm/interface/hermite_tube_directions.py text eol=lf
+src/bhsm/interface/shared_hs_physical_pullback.py text eol=lf
+src/bhsm/interface/shared_moving_chart_solve.py text eol=lf
+src/bhsm/interface/physical_ball_rate_jet.py text eol=lf
+tests/test_physical_tube_pullback.py text eol=lf
+tests/test_physical_ball_rate_jet.py text eol=lf
+tests/test_physical_tube_atlas_certificate.py text eol=lf
+theory/n12_gate7_chart_local_physical_tube.md text eol=lf
+artifacts/flagship_integration/gate7_physical_tube_20260924/** -text
+
+# Interval-13 Layer-C correlation audit; frozen producers remain unchanged.
+src/bhsm/interface/shared_hs_output_operator.py text eol=lf
+scripts/audit_n12_gate7_layer_c_correlation.py text eol=lf
+tests/test_shared_hs_output_operator.py text eol=lf
+theory/n12_gate7_layer_c_correlation_audit.md text eol=lf
+artifacts/flagship_integration/gate7_layer_c_correlation_20260924/** -text
+scripts/inventory_n12_gate7_layer_c_models.py text eol=lf
+
+# Authorized missing interval-13 shared models; retain exact source/archive bytes.
+src/bhsm/interface/shared_expression_graph.py text eol=lf
+src/bhsm/interface/sparse_affine_enclosure.py text eol=lf
+src/bhsm/interface/disk_expression_graph.py text eol=lf
+src/bhsm/interface/disk_affine_cache.py text eol=lf
+src/bhsm/interface/shared_mixed_rate_graph.py text eol=lf
+src/bhsm/interface/streamed_expression_artifact.py text eol=lf
+src/bhsm/interface/shared_history_expression.py text eol=lf
+src/bhsm/interface/certified_expression_constraints.py text eol=lf
+src/bhsm/interface/shared_projected_rate.py text eol=lf
+src/bhsm/interface/projected_affine_enclosures.py text eol=lf
+src/bhsm/interface/adaptive_expression_reader.py text eol=lf
+scripts/regenerate_n12_gate7_shared_site_models.py text eol=lf
+scripts/resume_n12_gate7_shared_site_models.py text eol=lf
+scripts/continue_n12_gate7_shared_site_disk.py text eol=lf
+scripts/produce_n12_gate7_shared_models.py text eol=lf
+scripts/produce_n12_gate7_shared_midpoint_models.py text eol=lf
+scripts/materialize_n12_gate7_shared_history_cells.py text eol=lf
+scripts/assemble_n12_gate7_shared_remainder.py text eol=lf
+scripts/freeze_n12_gate7_shared_models.py text eol=lf
+tests/test_shared_expression_graph.py text eol=lf
+tests/test_shared_history_expression.py text eol=lf
+tests/test_disk_affine_cache.py text eol=lf
+tests/test_shared_projected_rate.py text eol=lf
+tests/test_shared_model_archive.py text eol=lf
+tests/test_shared_mixed_normalization.py text eol=lf
+tests/test_projected_affine_enclosures.py text eol=lf
+tests/test_adaptive_expression_reader.py text eol=lf
+theory/n12_gate7_shared_model_recipe.md text eol=lf
+artifacts/flagship_integration/gate7_shared_models_20260924/** -text
+artifacts/flagship_integration/gate7_shared_models_20260924/models/** -diff
+artifacts/flagship_integration/gate7_shared_models_20260924/cells/** -diff
+
+# Frozen-DAG quadratic numerical prototype; preserve archived evidence bytes.
+src/bhsm/interface/sparse_quadratic_enclosure.py text eol=lf
+src/bhsm/interface/frozen_quadratic_compiler.py text eol=lf
+src/bhsm/interface/quadratic_frontier_cache.py text eol=lf
+src/bhsm/interface/shared_quadratic_booking.py text eol=lf
+src/bhsm/interface/block_quadratic_expansion.py text eol=lf
+src/bhsm/interface/quadratic_group_support.py text eol=lf
+src/bhsm/interface/quadratic_circuit_identity.py text eol=lf
+tests/test_sparse_quadratic_enclosure.py text eol=lf
+theory/n12_gate7_sparse_quadratic_compiler.md text eol=lf
+artifacts/flagship_integration/gate7_quadratic_models_20260924/** -text
+artifacts/flagship_integration/gate7_quadratic_models_20260924/*.gz -diff
+scripts/index_n12_gate7_frozen_quadratic_graph.py text eol=lf
+scripts/prototype_n12_gate7_sparse_quadratic.py text eol=lf
+scripts/checkpoint_n12_gate7_quadratic_worker.py text eol=lf
+scripts/support_n12_gate7_quadratic_checkpoint.py text eol=lf
+scripts/reuse_n12_gate7_descriptor_support.py text eol=lf
+scripts/screen_n12_gate7_quadratic_targets.py text eol=lf
+scripts/freeze_n12_gate7_quadratic_prototype.py text eol=lf
+scripts/freeze_n12_gate7_quadratic_pause.py text eol=lf
+docs/GATE7_QUADRATIC_RESUME_20260924.md text eol=lf
+artifacts/flagship_integration/gate7_quadratic_models_20260924/** whitespace=cr-at-eol

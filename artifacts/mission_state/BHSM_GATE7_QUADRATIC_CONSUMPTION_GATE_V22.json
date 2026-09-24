@@ -1,0 +1,87 @@
+{
+  "actual_validate_for_consumption": false,
+  "actual_validator_error": "RuntimeError('complete current quadratic representation certificate required')",
+  "algorithm": "BHSM_GATE7_QUADRATIC_CONSUMPTION_GATE_V22",
+  "checks": [
+    {
+      "actual": "PASS",
+      "expected": "PASS",
+      "name": "raw_scope_valid",
+      "ok": true
+    },
+    {
+      "actual": true,
+      "expected": true,
+      "name": "validation_passed",
+      "ok": true
+    },
+    {
+      "actual": "SYMMETRIC_POLARIZATION_OF_STORED_QUADRATIC_FORMS_ONLY",
+      "expected": "SYMMETRIC_POLARIZATION_OF_STORED_QUADRATIC_FORMS_ONLY",
+      "name": "scope_exact",
+      "ok": true
+    },
+    {
+      "actual": {
+        "complete": true,
+        "endpoints": 370,
+        "midpoints": 370
+      },
+      "expected": {
+        "complete": true,
+        "endpoints": 370,
+        "midpoints": 370
+      },
+      "name": "coverage_exact",
+      "ok": true
+    },
+    {
+      "actual": "A1F06E0348C4DB39B5FCCA689872C595E3C9E19C5D09345946E0C1ECD8B743CA",
+      "expected": "6FF96F7B99B89D1C83D4A65334A3AAB780CBDA298A9F0224B0BA73ECC76C6229",
+      "name": "campaign_fingerprint_exact",
+      "ok": false
+    },
+    {
+      "actual": "3CAA7E58E1214281F7BA148D6B665A8DE5627E4E3365A472D053AEEEC66734A2",
+      "expected": "3CAA7E58E1214281F7BA148D6B665A8DE5627E4E3365A472D053AEEEC66734A2",
+      "name": "shard_manifest_SHA256_exact",
+      "ok": true
+    },
+    {
+      "actual": 5e-13,
+      "expected": 5e-13,
+      "name": "unchanged_tolerance_exact",
+      "ok": true
+    },
+    {
+      "actual": 9,
+      "expected": "> 0",
+      "name": "inputs_nonempty",
+      "ok": true
+    },
+    {
+      "actual": [],
+      "expected": "no missing or changed inputs",
+      "name": "all_input_hashes_exact",
+      "ok": true
+    },
+    {
+      "actual": {
+        "first_difference": null,
+        "length": 740
+      },
+      "expected": {
+        "first_difference": null,
+        "length": 740
+      },
+      "name": "row_sequence_exact",
+      "ok": true
+    }
+  ],
+  "failed_clauses": [
+    "campaign_fingerprint_exact"
+  ],
+  "raw_RESULT": "C:\\Users\\carbe\\OneDrive\\Documents\\CODEX\\Berger-Hopf-Standard-Model\\artifacts\\flagship_integration\\BHSM_N12_GATE7_CURRENT_GREEN_SIGNED_TRANSVERSE_TENSOR_RECOVERY.json",
+  "representation_RESULT": "C:\\Users\\carbe\\OneDrive\\Documents\\CODEX\\Berger-Hopf-Standard-Model\\artifacts\\flagship_integration\\BHSM_N12_GATE7_SYMMETRIC_QUADRATIC_REPRESENTATIVES.json",
+  "scientific_files_modified": false
+}

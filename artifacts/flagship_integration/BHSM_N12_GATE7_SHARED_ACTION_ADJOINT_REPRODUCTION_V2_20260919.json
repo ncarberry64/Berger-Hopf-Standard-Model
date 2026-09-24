@@ -1,0 +1,36 @@
+{
+  "FULL_BHSM_COMPLETE": false,
+  "Gate7_closed": false,
+  "algorithm": "GATE7_SHARED_ACTION_AND_FULL_ANCHOR_ADJOINT_REPRODUCTION_V2",
+  "pairs": {
+    "endpoint": {
+      "SHA256": "D4DD12B38406F318AE02DBBA258E98F027E3774C0024CBF9B9C96AB236078F65",
+      "artifact": "artifacts/flagship_integration/BHSM_N12_GATE7_SHARED_ACTION_RESIDUAL_ENDPOINT_V2_20260919.json",
+      "byte_identical": true,
+      "fresh_process": true,
+      "independent_arithmetic_recomputation": true
+    },
+    "full_midpoint_adjoint": {
+      "SHA256": "D05A767865DB5A09BF2C390202A2F617BED4F1735A429C0887FFB3102D46DB0D",
+      "artifact": "artifacts/flagship_integration/BHSM_N12_GATE7_FULL_MIDPOINT_OUTPUT_ADJOINT_20260919.json",
+      "byte_identical": true,
+      "fresh_process": true,
+      "independent_arithmetic_recomputation": true
+    },
+    "midpoint": {
+      "SHA256": "AB86B7F0B084316D7023BE91665E3953160A7F2CDD0DE1F4FD3DEE6002024D5F",
+      "artifact": "artifacts/flagship_integration/BHSM_N12_GATE7_SHARED_ACTION_RESIDUAL_MIDPOINT_V2_20260919.json",
+      "byte_identical": true,
+      "fresh_process": true,
+      "independent_arithmetic_recomputation": true
+    }
+  },
+  "runtime": {
+    "numpy": "2.4.6",
+    "precision_bits": 512,
+    "python": "3.14.3",
+    "python_flint": "0.9.0"
+  },
+  "supersedes_v1_state_domain_coverage_claim": true,
+  "v1_limitation": "V1 used midpoints of state-direction coefficient balls. V2 retains their small but nonzero rounding radii. V1 remains a predictor probe only."
+}

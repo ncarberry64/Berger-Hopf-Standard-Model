@@ -1,0 +1,59 @@
+{
+  "FULL_BHSM_COMPLETE": false,
+  "Gate7_closed": false,
+  "algorithm": "BHSM_GATE7_COVARIANCE_ENVELOPE_CHAIN_V39",
+  "prerequisites": [
+    {
+      "artifact": "BHSM_N12_GATE7_STORED_PULLBACK_ASSEMBLY",
+      "coverage": {
+        "complete": true,
+        "intervals": 370,
+        "nodes": 371
+      },
+      "exists": true,
+      "path": "artifacts/flagship_integration/BHSM_N12_GATE7_STORED_PULLBACK_ASSEMBLY.json",
+      "sha256": "B88C1C54AB00F548B652120C9E6EE5EB42966FA1DF82442899861AB648EB66AF",
+      "validation_passed": true
+    },
+    {
+      "artifact": "BHSM_N12_GATE7_STORED_COVARIANCE_FORMATION",
+      "coverage": {
+        "adjacent_covariances": 370,
+        "complete": true,
+        "intervals": 370,
+        "local_covariances": 1110
+      },
+      "exists": true,
+      "path": "artifacts/flagship_integration/BHSM_N12_GATE7_STORED_COVARIANCE_FORMATION.json",
+      "sha256": "625F9DEE00BB52C3093136E68999F37B4027C0BFBB01F7D6BA752B6467869D8D",
+      "validation_passed": true
+    }
+  ],
+  "stages": [
+    {
+      "coverage": {
+        "complete": true,
+        "intervals": 370,
+        "nodes": 371
+      },
+      "scope": "RECONSTRUCTED_LOCAL_TENSOR_RESPONSE_THROUGH_EXACT_STORED_CAUSAL_MAPS_AND_AXES",
+      "sha256": "C1F1B92A4282B4247101012B401BD8E3D7DC68566D460D1F18F1981A6A98F5C8",
+      "stage": "signed_covariance_causal_recomposition",
+      "status": "SIGNED_COVARIANCE_RECOMPOSITION_ENCLOSED",
+      "validation_passed": true
+    },
+    {
+      "coverage": {
+        "complete": true,
+        "intervals": 370,
+        "nodes": 371
+      },
+      "scope": "VERIFIED_STORED_PULLBACK_AND_CAUSAL_COMPOSITION_ARITHMETIC_ONLY",
+      "sha256": "4B4D14F1E6B90E7778A81BB3AF297C1562DBC73F1FD3A7205A78CAD351D7DA8B",
+      "stage": "stored_causal_arithmetic_envelope",
+      "status": null,
+      "validation_passed": true
+    }
+  ],
+  "workers": 6
+}

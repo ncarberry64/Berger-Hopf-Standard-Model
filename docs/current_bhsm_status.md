@@ -1,5 +1,252 @@
 # Current BHSM status
 
+## Layer C: interval-13 sparse quadratic prototype — 24 September 2026
+
+The numerical compiler now retains degree-two dependence on the frozen
+`cef38b6b` physical symbols. The three dominant midpoint descriptor J
+assignments decrease from an affine scalar-tail sum of approximately
+10.0124712780 to combined quadratic support at most 5.004286125, a reduction
+of about 2.000779 times. The model retains 22500 canonical mixed monomials
+and supports transverse Euclidean blocks without coordinate boxing.
+
+The remaining scalar tail is at most 4.998578356; q-based implicit
+correction loss contributes 99.9981552% of it. The first missing object is
+the signed shared mixed bordered-resolvent correction jet, including
+eigenline/response row and common-border coupling. Frozen q-norm scalar
+leaves do not contain that directional dependence. Higher polynomial order
+alone cannot recover it. The outcome remains
+`CASE_1 = NUMERICAL_COMPILER_CORRELATION_LOSS`, with no physical failure
+established. No scientific producer or frozen calculation was rerun.
+
+This is a selected-source prototype, not a complete interval remainder.
+At the user's requested Git checkpoint, all 405 selected forward models are
+saved; signed LL/LT booking and the projected source ledger remain pending.
+Resume instructions are in `docs/GATE7_QUADRATIC_RESUME_20260924.md`.
+The historical `cef38b6b` diagnostics remain `kappa_L <= 2.98824e10` and
+`kappa_T <= 5.77960e12`; no revised isolated kappas or contraction are
+claimed. Physical radii are unchanged, no physical budget is debited,
+intervals 14–18 remain outside this work, and `Gate7_closed = False`.
+Methods, exact representation requirements and numerical scope are in
+`theory/n12_gate7_sparse_quadratic_compiler.md`; retained evidence is in
+`artifacts/flagship_integration/gate7_quadratic_models_20260924/`.
+
+## Layer C: interval-13 shared-model serialization — 24 September 2026
+
+The authorized missing-model exception produced independently reproduced
+endpoint/actual-HS-midpoint expression graphs, eight restrictions of the
+same Hermite history, and a signed remainder diagnostic over all 357 causal
+destinations. All 117 new action blocks and all twelve final artifact pairs
+reproduce byte-for-byte. Layer A at `452c80a7` and Layer B at `baf41b96`
+remain inherited authorities; their producers were not rerun.
+
+Common-border normalization and signed composition lower the isolated
+upper enclosures to `kappa_L <= 2.98824e10` and `kappa_T <= 5.77960e12`
+(rounded outward), reductions of approximately 268507 and 267892 relative
+to the `f5b6b4b6` audit. These bounds do not certify the sufficient targets
+near 0.6543 and 0.7452. The midpoint descriptor remains the largest source
+class, followed by full second incidence.
+
+This is **case 1: remaining representation/correlation loss**. The graphs
+retain exact shared products and all sixteen C/J mixed assignments, but
+the affine numerical compiler moves bilinear directional products into
+scalar tails. Shared implicit-correction dependence and inherited
+value/DF coefficient dependence on theta also remain unresolved. The new
+diagnostic is therefore not a full correlation-preserving Layer-C
+certificate and does not establish physical failure. The next derived
+object is a bilinear/shared-correction compiler using these retained graphs.
+
+Evidence: `artifacts/flagship_integration/gate7_shared_models_20260924/`.
+The exact bounds, source-class table, internal assignment attribution,
+reproduction protocol and limitations are documented in
+`theory/n12_gate7_shared_model_recipe.md`. Physical radii are unchanged,
+no physical budget is debited, and intervals 14–18 remain unevaluated in
+this campaign. Global kappas and contraction remain unestablished.
+Gate 7 remains open and `FULL_BHSM_COMPLETE = FALSE`.
+
+## Layer C: interval-13 correlation audit — 24 September 2026
+
+The Layer-B checkpoint `baf41b96` remains frozen. The first explicit loss of
+shared directional coefficients is `direction_support` in the inherited
+site-rate producer, before normalization. Its actual site norm lower bounds
+are about 3.5e-4; the smaller global tube lower bound is not used there.
+
+Composing the retained HS incidence, causal and output matrices before
+support lowers the isolated upper bounds to approximately `8.02e15` and
+`1.55e18`. The midpoint descriptor enclosure dominates after transport.
+These are partial correlation-recovery diagnostics, not global kappas or a
+full shared Layer-C certificate. The normalized final balls do not retain
+the common mixed eigenline/response, C/J or normalization models needed for
+that certificate. The inspected older archives do not fill this gap.
+
+No physical calculation was rerun, no physical budget debited, and intervals
+14–18 remain untouched. No physical instability or branch failure follows.
+See `theory/n12_gate7_layer_c_correlation_audit.md` and
+`artifacts/flagship_integration/gate7_layer_c_correlation_20260924/` for the
+dependency ledger, term table, retained-data inventory and exact next scope.
+Gate 7 remains open and `FULL_BHSM_COMPLETE = FALSE`.
+
+## Layer B: interval-13 physical tube — 24 September 2026
+
+Layer A remains frozen at `452c80a7` for the 13–19 child atlas. Interval 13
+now has an independently reproduced complete physical-tube cover: eight
+closed time cells at unchanged radii, with descriptor, positive normalization
+and rigorous local-chart handoff. The largest self-map bound is 0.704104.
+No endpoint was added and no fixed-anchor continuation was used.
+
+Complete mixed physical-rate enclosures at both endpoints and the actual HS
+midpoint now feed a reproduced signed local remainder, including non-affine
+midpoint incidence and booked LL/LT subtraction. After all 357 causal
+destinations and the frozen-map error, the isolated interval bounds are
+approximately `1.31e16` and `1.25e19`, above the sufficient κL/κT targets.
+This enclosure failure does not establish physical growth, decay, or failure
+of the child branch. Shared signed correlations through the midpoint and
+rate normalization remain the needed refinement before extending to 14–18.
+
+Certificates: `artifacts/flagship_integration/gate7_physical_tube_20260924/`.
+See `theory/n12_gate7_chart_local_physical_tube.md` for exact promotion terms,
+scope and the remaining operator. Global kappas remain unknown; Gate 7 is
+open and `FULL_BHSM_COMPLETE = FALSE`.
+
+## Connecting-history variation prototype — 23 September 2026
+
+Interval 18 (endpoints 18–19), using frozen anchor 18, now has an
+independently reproduced preconditioned Hessian-variation calculation.
+The original Hermite–Simpson domain and both endpoint physical radii are
+retained. After splitting history and integration parameters into halves,
+the two contraction upper bounds are `25967.911558321965` and
+`26240.09871944677`; both fail to certify continuation. Row 30 dominates
+these conservative bounds. All eight new action blocks reproduced exactly.
+
+A separate frozen-operator calculation gives a decisive necessary-condition
+failure: at the actual normalized endpoint-19 root, anchor 18's fixed
+preconditioner and witness norm have defect **greater than 6.05413 > 1**.
+That certificate also reproduced exactly. Subdivision alone cannot fix this
+same inverse/norm pair. This does not prove eigenbranch failure or rule out
+changed witness weights, the existing anchor-19 inverse, or a varying inverse.
+
+The certificates, raw-action completion archive and coverage checkpoint are
+in `artifacts/flagship_integration/gate7_history_variation_20260923/`.
+No new anchor was evaluated; no full connecting interval was added: **0/370**.
+A minimum new-anchor set is still undetermined. No point Hessian or endpoint-19
+prototype was recomputed. No physical debit; both kappas remain unknown.
+See `theory/n12_gate7_history_variation_prototype.md` for the exact row test,
+original-domain definition and fixed-norm obstruction proof.
+
+## Complete endpoint-19 mixed rate and coverage boundary — 23 September 2026
+
+The complete original-domain 99-component mixed rate is frozen with bound
+`0.48724971174089476`; the normalized descriptor bound is
+`4.3561058972606416e-6`. Common-border cancellation is applied before
+normalization, with all 16 moving-leg assignments and the same shared inputs.
+The mixed eigenline and response certificates are also frozen and reproduced.
+
+All 19 new independent action blocks matched exactly. Raw final assembly had
+last-bit differences from fresh versus reloaded Arb balls. Canonical assembly
+uses the same outward persisted-ball decoding for both runs and reproduces
+byte-for-byte. Exact rational comparisons show that its 99-component enclosure
+contains both raw results, without numerical tolerance. The certificate,
+raw assemblies and reproduction receipt are saved under
+`artifacts/flagship_integration/gate7_complete_rate_20260923/`.
+
+The independently reproduced eigenbranch coverage map lists all 370 intervals.
+The eight existing endpoint neighborhoods are disjoint and cover **0/370
+complete connecting intervals**. Frozen local certificates and full-history
+DF/incidence envelopes remain reusable. Route A needs a preconditioned Hessian
+variation bound on connecting history domains. Segment sizes and the minimum
+new-anchor set remain undetermined; no endpoint campaign was started.
+
+This endpoint bound is not kappa, and its sufficiency for the kappa targets is
+unestablished. Both kappas, the composed remainder and the three global
+inequalities remain unknown. No history debit; Gate 7 remains OPEN. See section
+7 of `theory/n12_gate7_uniform_remainder_formulation.md` for the exact next
+operator and the distinction between finite prototype and history closure.
+
+## Historical moving eigenpair and implicit-jet checkpoint — 23 September 2026
+
+The new endpoint-19 fifth-action leaf includes certified moving eigenpair
+values on the unchanged state domain and all L/T input pairs. Its bound is
+`1.3110187652587739e-23`; the frozen fixed-leg result was not rerun. The
+shared affine eigenvector/eigenvalue tails are `9.697081627007817e-10` and
+`8.260267173516628e-17`. New first/repeat artifacts are in
+`artifacts/flagship_integration/gate7_moving_response_20260923/`.
+
+The first missing original-domain operator is the mixed eigenline variation
+`(psi_uv,lambda_uv)`. An action-derived matrix-free bordered producer now
+implements its first/mixed implicit equations with the normalization border;
+nine focused tests pass. Generic shared response and normalization kernels
+are implemented too, but no successful BHSM mixed-jet enclosure is asserted.
+See [the exact equation and stage ledger](../theory/n12_gate7_uniform_remainder_formulation.md#6-moving-eigenpair-checkpoint-values-are-not-derivative-jets).
+
+This is stopping condition B. The moving-value action leaf is not a complete
+physical remainder. Both kappa values and all three full-history inequalities
+remain **FAIL TO CERTIFY / UNKNOWN**. No budget debit, endpoint refinement,
+new physical prediction or Gate-7 closure is made.
+
+## Collective encapsulation response candidate — 23 September 2026
+
+The [owner-hypothesis note](../theory/bhsm_collective_encapsulation_response_candidate.md)
+has status `CANDIDATE_PHYSICAL_PRINCIPLE_ACTION_DERIVATION_OPEN`. It proves
+conditional energy/reducing-subspace response inequalities and gives an exact
+counterexample to unconditional ordinary-norm monotonicity. The actual nonlinear
+HS shared-input map is identified, including its required midpoint-curvature
+term; no physical many-body susceptibility or rigidity scaling is inferred.
+
+A signed polynomial history-composition kernel is implemented and tested.
+The endpoint-19 restricted fifth-action bilinear leaf independently reproduced
+with bound approximately `1.3109964100037637e-23`. It covers the original state
+tube and all L/T direction pairs for fixed eigenvector-related center legs;
+the complete physical remainder and both kappa bounds remain open. Existing
+encapsulation, child-fiber and state-nonuniqueness verdicts are preserved.
+
+## Gate-7 action-derived remainder formulation — 23 September 2026
+
+The [explicit dependency formulation](../theory/n12_gate7_uniform_remainder_formulation.md)
+now gives the full HS second chain rule, bordered mixed solves, normalization,
+projected causal transport and current-radius kappa expressions. Direct uniform
+physical Hessians require action derivatives through order five; order six is
+needed only for a separate physical-Hessian Lipschitz construction.
+
+A new endpoint-19 shared-parameter fifth-action contraction on the unchanged
+75-parameter tube independently reproduced byte-for-byte. Its uniform scalar
+bound is approximately `3.354128883106707e-24`, with nonlinear Taylor-model
+remainder `4.1218506326963676e-39`. These are bounds for fixed center action
+legs, not a complete physical Hessian or either kappa. The signed center also
+overlaps an independent evaluation using the original unfactored action.
+
+The remaining producer must attach the moving eigenvector/response legs,
+two mixed implicit solutions, positive physical normalization, actual midpoint
+and all-direction output operator. A raw action contraction cannot be multiplied
+by history weights as though it were a physical local remainder. No full-history
+campaign or endpoint-71 refinement was launched. Gate 7 remains open.
+
+## Gate-7 global physical remainder checkpoint — 23 September 2026
+
+The [current reproduction guide](GATE7_CURRENT_REPRODUCTION.md) is the entry
+point for the consolidated Gate-7 record. Interval 13, the single interval-14
+booking, endpoint-71 point/primal/eigenvalue results and completed full-history
+DF/incidence/kinematic and stored arithmetic layers are frozen. Historical
+evidence is preserved with explicit provenance reconciliation.
+
+The complete global physical self-map and contraction remain **FAIL TO CERTIFY
+/ UNKNOWN** because the current-domain uniform shared-parameter remainder is
+not yet enclosed. The sufficient normalized-Hessian targets are
+`kappa_L < 0.6542911248664067` and `kappa_T < 0.7452414479024602`; these are not
+proved bounds. Endpoint 71's isolated diagnostic is not a global physical
+failure. No endpoint optimization campaign is authorized by this checkpoint.
+Gate 7, downstream action-owned projected-root/operator obligations and full
+BHSM completion remain open. No new physical Museum quantity is promoted.
+
+## Gate-7 residual-cancelled scalar enclosure — 19 September 2026
+
+The [projected action packet](research_packets/2026-09-19/GATE_7_CLOSURE_PROGRESS.md)
+records a source-bound physical scalar enclosure on the original interval-13
+midpoint family: `|Y-Y0| <= 0.341177266859`. The full nonlinear remainder is
+included after combining the physical output and all four coupled action
+residual blocks. The calculation independently reproduced byte-for-byte.
+This supplies one projected row and direction; the complete column norm,
+endpoint chain and global physical margin remain unproved. Gate 7 remains
+open and no frozen prediction or downstream gate is promoted.
+
 ## Midpoint coordinate-error propagation — 7 September 2026
 
 The [pullback error bound](../theory/n12_gate7_midpoint_coordinate_pullback_error.md)
