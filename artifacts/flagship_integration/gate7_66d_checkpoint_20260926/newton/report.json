@@ -1,0 +1,52 @@
+{
+  "FULL_BHSM_COMPLETE": false,
+  "Gate7_closed": false,
+  "arrays_SHA256": "437511940B9A2CED3727FF7989810D8E65C866510FC2E986577FB2A59971FE61",
+  "authority": "STORED_CENTER_MATRIX_ONLY_NOT_UNIFORM_NONLINEAR_AUTHORITY",
+  "condition_2": 49.36240341128784,
+  "coordinate_convention": "99D action coordinates: first 98 weighted state coordinates, last physical descriptor; columns 0:73 are endpoint-14 physical tangent coefficients; column 73 has physical descriptor = 1e-7 times coefficient. Test frame has descriptor scale 1e6.",
+  "exact_stored_frame_replay_error": {
+    "approximate_upper": 4.208348491370938e-15,
+    "exact_upper": "7941074538494170101528101329449583617940831291921124864084675498980471203140710496110811388170497203029196598193613901081416142636089767761035406505942283/1886981212410770676120777290494134445458460610208220214188103150122812081196074426043063362588829383770734187515381922449885292314962396316280717125716348021824697663488",
+    "method": "Arb512_Frobenius"
+  },
+  "floating_HS_right_replay_max_abs": 0.0,
+  "floating_frame_replay_max_abs": 0.0,
+  "formula": "M_13 = E_test(14)^T R_13 E_trial(14); R_13 = I - h/6 [4 J_mid (I/2 - h J_14/8) + J_14]",
+  "h": 0.25,
+  "interval": 13,
+  "inverse_left_residual": {
+    "approximate_upper": 1.9764122420461542e-15,
+    "exact_upper": "3729452768719741806731381892333606208224773273161851561531492166682558838546669708395936287868819031281715329880345756540680361536821460335148514529997949/1886981212410770676120777290494134445458460610208220214188103150122812081196074426043063362588829383770734187515381922449885292314962396316280717125716348021824697663488",
+    "method": "Arb512_Frobenius"
+  },
+  "inverse_right_residual": {
+    "approximate_upper": 2.0219409203670165e-15,
+    "exact_upper": "7630729058674204825862613615751190343534158205130573811477600367376944729144272939349783774141909471584105158387438675479072159031852267535695060722762687/3773962424821541352241554580988268890916921220416440428376206300245624162392148852086126725177658767541468375030763844899770584629924792632561434251432696043649395326976",
+    "method": "Arb512_Frobenius"
+  },
+  "nonlinear_Mqq_variation_proved": false,
+  "partition_available": false,
+  "required_partition_data": [
+    "Stage-B 73x66 child coefficients transported into the endpoint-14 physical tangent frame, with retained reprojection residual.",
+    "Seven owner-bound boundary/interface complement columns completing the 73D frame, including normalization and conditioning.",
+    "Matching boundary residual rows or dual test transformation, with row ownership and descriptor scaling; descriptor is the eighth reaction coordinate.",
+    "The existing 99D-to-74D construction records normal residuals; this extraction adds no nonlinear authority for them."
+  ],
+  "right_endpoint": 14,
+  "shape": [
+    74,
+    74
+  ],
+  "source_SHA256": {
+    "artifacts\\flagship_integration\\BHSM_N12_GATE7_AUGMENTED_FIXED_DESCRIPTOR_BLOCK_NEWTON_PREDICTOR.npz": "27D8365FBE86CC0784EB089E2F9F7C0DFE40A451C90AD4891366D2DD0DAE0F3B",
+    "artifacts\\flagship_integration\\BHSM_N12_GATE7_CORRELATED_DESCRIPTOR_AUGMENTED_JACOBIANS.npz": "09F5441ADD40335C9F3683B5DCC4D21C0D25026629330DD66E3AF684B54497FD",
+    "scripts\\checkpoint_n12_gate7_interval13_newton_center.py": "68D96564EB3D81089C6BAB411911EF9DB1F1746CF5C9024A6D36B8AB8C17C72F",
+    "scripts\\materialize_n12_gate7_augmented_fixed_descriptor_block_newton_predictor.py": "67860A51301A260F30D4CBC35B70E550CFFF36057B6A16698C9CD283F2F0161E"
+  },
+  "source_key": "reduced_right_Newton_blocks[13]",
+  "stored_center_invertible_by_residual": true,
+  "stored_condition_2": 49.36240341128784,
+  "test_descriptor_scale": 1000000.0,
+  "trial_descriptor_scale": 1e-07
+}

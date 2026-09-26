@@ -1,0 +1,167 @@
+{
+  "FULL_BHSM_COMPLETE": false,
+  "Gate7_closed": false,
+  "adjoint_semantic_SHA256": "320084B8E78737C41C6D24FF4C4C5D07E0DAC858EB893C9E6C50F866F713240A",
+  "arrays_SHA256": "0896CF7804EA1621281CF9E89C52C648772CEB0778A8EA80F4C6DC405FA767EA",
+  "binding": {
+    "base_adjoint_is_fixed_proposal": true,
+    "both_endpoint_history_map": false,
+    "fixed_adjoint_66x124_operator_diagnostic": 100188.07173564723,
+    "full_input_uniform_certificate": false,
+    "h": "1/4",
+    "input_endpoint": 14,
+    "input_map_authority": "frozen full_input_midpoint_adjoint_first.json",
+    "input_side": "right endpoint partial HS derivative",
+    "midpoint_child_rank": 66,
+    "midpoint_reprojection_allowance": {
+      "approximate_upper": 5.234941881468575e-08,
+      "exact_upper": "5887888061042720931067519632797092126919960367502855097903808569393949521744350596805257921784288765064405230338215033235369163348459721778877988620375707/112472844863579909570263462692149546471742427957547915827518889315295939516787196757976017152597271428748022765838022378080206651387357492225212879521629096378368",
+      "method": "Arb512_Frobenius"
+    },
+    "nonlinear_child_graph_certified": false,
+    "response_midpoints_only_difference_op2": 3.3527154692685223e-10,
+    "response_reprojection_allowance": {
+      "approximate_upper": 0.2986504926398091,
+      "exact_upper": "500531055437161975905509424857572920937530422111564199966275759539709477898138175862350817372063586544992574822932961247172336129109130787962618791438625/1675975991242824637446753124775730765934920727574049172215445180465220503759193372100234287270862928461253982273310756356719235351493321243304206125760512",
+      "method": "Arb512_Frobenius"
+    },
+    "response_uniform_point_difference": {
+      "approximate_upper": 1383146.3048797231,
+      "exact_upper": "8842926022928788234864256213222965742203048352688239557798250828293608447034064537338812984216204861147220693083379178770784880980626538959612821964902977/6393341031047152089869511126616404594173128996177860916959553453312761321102879990006386899074031556935325554936640763689877454191182408307282280448",
+      "method": "Arb512_Frobenius"
+    },
+    "saved_input_map_vs_right_HS_formula": {
+      "approximate_upper": 1.9155311809265255e-08,
+      "exact_upper": "8617809653747965505892654053850300800034666955147452470107082970027630402640706309573552102734945490959063444985746503933357505360121094314482588572300633/449891379454319638281053850768598185886969711830191663310075557261183758067148787031904068610389085714992091063352089512320826605549429968900851518086516385513472",
+      "method": "Arb512_Frobenius"
+    },
+    "selected_line_midpoints_only_difference_op2": 4.309540877807135e-16,
+    "selected_line_reprojection_allowance": {
+      "approximate_upper": 1.5600344860857068e-07,
+      "exact_upper": "8773075836767615900773446048221935548533089581160575992972663439869804280718285498293363608974007071450876646478640884035719988954711793290153059335910587/56236422431789954785131731346074773235871213978773957913759444657647969758393598378988008576298635714374011382919011189040103325693678746112606439760814548189184",
+      "method": "Arb512_Frobenius"
+    },
+    "selected_line_uniform_point_difference": {
+      "approximate_upper": 2.1941570292475645,
+      "exact_upper": "7354709004071195845590086255155632727670625100720504078773872455469321815993532767289227284491374585035972117925283423969265281423668741904730761097993583/3351951982485649274893506249551461531869841455148098344430890360930441007518386744200468574541725856922507964546621512713438470702986642486608412251521024",
+      "method": "Arb512_Frobenius"
+    },
+    "test_descriptor_scale": 1000000.0,
+    "trial_descriptor_scale": 1e-07
+  },
+  "classification": "B_WITH_EXPLICIT_STORED_REPROJECTION_ERROR",
+  "contraction_status": "BLOCKED_ON_REDUCED_REACTION_AUTHORITY",
+  "first_blocker": "No certified nonlinear slaving map for seven boundary/interface reactions plus descriptor response over the 66D child. The 124-variable eigenline/response fixed adjoint does not eliminate these eight variables.",
+  "interpretation": "First-order binding and numerical proposal only. No derivative is inferred from a pointwise affine enclosure.",
+  "nodes": [
+    {
+      "caveat": "Same constraint construction at nearby Newton centers, not identical tangent spaces or merely machine rounding.",
+      "center_shift_action_norm": 8.592738246676935e-06,
+      "child_change_basis_rounding": {
+        "approximate_upper": 2.032712549568145e-15,
+        "exact_upper": "3835690391266686970218706354384256437336981567190563837479048435779776716469217609174526251416876363647815196085578429811192078988840716918632253786129429/1886981212410770676120777290494134445458460610208220214188103150122812081196074426043063362588829383770734187515381922449885292314962396316280717125716348021824697663488",
+        "method": "Arb512_Frobenius"
+      },
+      "child_rank": 66,
+      "child_reprojection_error": {
+        "approximate_upper": 3.752172121004065e-08,
+        "exact_upper": "527521841083924683252714358945101417066281265651902390087420829810002474768340874746001101285798843431576878548903708617882351340782196609867131846085995/14059105607947488696282932836518693308967803494693489478439861164411992439598399594747002144074658928593502845729752797260025831423419686528151609940203637047296",
+        "method": "Arb512_Frobenius"
+      },
+      "child_reprojection_operator_diagnostic": 3.1088062780421787e-08,
+      "child_reprojection_relative_residual": 4.618604607905626e-09,
+      "classification": "B_STORED_FRAME_RELATION_WITH_EXPLICIT_RESIDUAL",
+      "descriptor_input_independent": false,
+      "descriptor_relation_authority": "frozen center causal/reset-plus-flow graph; pointwise proposal, not a uniform nonlinear slaving certificate",
+      "descriptor_response_physical_norm": 7.597030507306971e-09,
+      "descriptor_vs_diagnostic_eigenvalue_gradient": 9.59187389818468e-14,
+      "fixed_into_physical_relative_residual": 1.0571371260416109e-08,
+      "fixed_to_physical_error": {
+        "approximate_upper": 9.032183565505415e-08,
+        "exact_upper": "10158753809424666469248322870888153202574091136045937683508371807217405748335229951376046775971354772795204044199982836562450832386499201874261136554909287/112472844863579909570263462692149546471742427957547915827518889315295939516787196757976017152597271428748022765838022378080206651387357492225212879521629096378368",
+        "method": "Arb512_Frobenius"
+      },
+      "gram_error_upper_fixed": 3.1094247529037452e-15,
+      "gram_error_upper_physical": 3.3534214523443918e-15,
+      "launch_condition": 92789.73084380644,
+      "node": 13,
+      "physical_into_fixed_relative_residual": 1.057137126071028e-08,
+      "principal_angle_degrees": 3.840794195998998e-06,
+      "projector_difference_op2": 6.703450441706573e-08,
+      "rank_certified_for_stored_arrays": true,
+      "rank_fixed": 73,
+      "rank_physical": 73,
+      "stageB_product_rounding": {
+        "approximate_upper": 1.9368206213902933e-15,
+        "exact_upper": "7309488248746475624863894796985487699575722800710323206679741935221261867564367281730942865217229188250817332139502828169750298663623656500796201294038161/3773962424821541352241554580988268890916921220416440428376206300245624162392148852086126725177658767541468375030763844899770584629924792632561434251432696043649395326976",
+        "method": "Arb512_Frobenius"
+      }
+    },
+    {
+      "caveat": "Same constraint construction at nearby Newton centers, not identical tangent spaces or merely machine rounding.",
+      "center_shift_action_norm": 9.23021770832116e-06,
+      "child_change_basis_rounding": {
+        "approximate_upper": 1.635949571127182e-15,
+        "exact_upper": "771751526292112548693036022242789615439134493190804893731014613284482217724067114139327502489610095395284379141967282771647968484973110107765016813133435/471745303102692669030194322623533611364615152552055053547025787530703020299018606510765840647207345942683546878845480612471323078740599079070179281429087005456174415872",
+        "method": "Arb512_Frobenius"
+      },
+      "child_rank": 66,
+      "child_reprojection_error": {
+        "approximate_upper": 3.983630195427125e-08,
+        "exact_upper": "1120125552410368819005704552467752310291552327432391728851528416019648033832643480248893112712766928208918553600310647290987159215975271028354303884307445/28118211215894977392565865673037386617935606989386978956879722328823984879196799189494004288149317857187005691459505594520051662846839373056303219880407274094592",
+        "method": "Arb512_Frobenius"
+      },
+      "child_reprojection_operator_diagnostic": 3.296531236582241e-08,
+      "child_reprojection_relative_residual": 4.9035097990682775e-09,
+      "classification": "B_STORED_FRAME_RELATION_WITH_EXPLICIT_RESIDUAL",
+      "descriptor_input_independent": false,
+      "descriptor_relation_authority": "frozen center causal/reset-plus-flow graph; pointwise proposal, not a uniform nonlinear slaving certificate",
+      "descriptor_response_physical_norm": 7.806854412027378e-09,
+      "descriptor_vs_diagnostic_eigenvalue_gradient": 1.0303204726813286e-13,
+      "fixed_into_physical_relative_residual": 1.1293937242307178e-08,
+      "fixed_to_physical_error": {
+        "approximate_upper": 9.649544207199525e-08,
+        "exact_upper": "678319805387880282757034061091222349365307166597621178822064326217350063547733355141538326421516754074002918433317229090480733713627005890055575683095461/7029552803973744348141466418259346654483901747346744739219930582205996219799199797373501072037329464296751422864876398630012915711709843264075804970101818523648",
+        "method": "Arb512_Frobenius"
+      },
+      "gram_error_upper_fixed": 2.5509418636666042e-15,
+      "gram_error_upper_physical": 2.8505757200472305e-15,
+      "launch_condition": 98792.94326393973,
+      "node": 14,
+      "physical_into_fixed_relative_residual": 1.1293937238315489e-08,
+      "principal_angle_degrees": 4.132251198777415e-06,
+      "projector_difference_op2": 7.212138892901072e-08,
+      "rank_certified_for_stored_arrays": true,
+      "rank_fixed": 73,
+      "rank_physical": 73,
+      "stageB_product_rounding": {
+        "approximate_upper": 2.0146910192648714e-15,
+        "exact_upper": "950421025541379588448368695818872953151028422609448022417623969949814098454678045049805530121880757093453870170860011226250594869025561551249946921926919/471745303102692669030194322623533611364615152552055053547025787530703020299018606510765840647207345942683546878845480612471323078740599079070179281429087005456174415872",
+        "method": "Arb512_Frobenius"
+      }
+    }
+  ],
+  "prior_constraint_normal_reduction": 25,
+  "reduced_mixed_contribution": null,
+  "reduction_factor": null,
+  "required_next_object": "Owner-bound Stage-B boundary complement and residual rows in the 74D convention, followed by a certified nonlinear eight-reaction slaving map and mixed residual curvature.",
+  "required_reaction_unknowns": {
+    "boundary_interface": 7,
+    "descriptor": 1
+  },
+  "scientific_producers_run": false,
+  "source_SHA256": {
+    "C:\\Users\\carbe\\Downloads\\BHSM_GATE7_STAGEB_RANK_REFINEMENT_20260925_173630.npz": "F22BC07A436E47583C4EEF164CFC80F9F7E8C208736F982371B3B0B226858EB2",
+    "C:\\Users\\carbe\\OneDrive\\Documents\\CODEX\\BHSM-ae32-crossing-correction\\artifacts\\flagship_integration\\.coupled_midpoint_eigenpair_pilot_work\\interval_013\\eigenpair.npz": "60CABA68D3C017B5C6F1A605A7474A970EEB914F5A4F49789FD31B7A51032489",
+    "C:\\Users\\carbe\\OneDrive\\Documents\\CODEX\\BHSM-ae32-crossing-correction\\artifacts\\flagship_integration\\.primal_mean_value_component_centered_endpoint_uniform_df_work\\endpoint_014\\derivative.npz": "564DACFE643880ABF2CA3596A359F2F7D709044E4FAF640FF0A5B0029EB91B83",
+    "C:\\Users\\carbe\\OneDrive\\Documents\\CODEX\\BHSM-ae32-crossing-correction\\artifacts\\flagship_integration\\.primal_mean_value_component_centered_midpoint_uniform_df_work\\interval_013\\derivative.npz": "D58D440D259FEEC2AE1FBA518F21508C2716233E772EA8F0F0E0A79A552355B1",
+    "C:\\Users\\carbe\\OneDrive\\Documents\\CODEX\\BHSM-ae32-crossing-correction\\tmp\\bhsm_midpoint_center_mean_value_right_pair_20260913\\value\\first\\column.npz": "8D9F46D9D7C958FD6D367264C72FA3A02DBA2DF5CB277DC27BA942A4D68BBC8D",
+    "C:\\Users\\carbe\\OneDrive\\Documents\\CODEX\\Berger-Hopf-Standard-Model\\artifacts\\flagship_integration\\BHSM_N12_GATE7_AUGMENTED_FIXED_DESCRIPTOR_NEWTON_ENDPOINT_CANDIDATE.npz": "3E52E013B473938B6959D5D63054FCC4D5057A13A71D10E2874ADB9A53E85B4E",
+    "C:\\Users\\carbe\\OneDrive\\Documents\\CODEX\\Berger-Hopf-Standard-Model\\artifacts\\flagship_integration\\BHSM_N12_GATE7_COMPACT_RESET_QUOTIENT_DOMAIN.npz": "AD52B1E531B882B2699D62660C3F20DBD817D5967481E83EDA42A91F922E531A",
+    "C:\\Users\\carbe\\OneDrive\\Documents\\CODEX\\Berger-Hopf-Standard-Model\\artifacts\\flagship_integration\\BHSM_N12_GATE7_CORRELATED_DESCRIPTOR_AUGMENTED_JACOBIANS.npz": "09F5441ADD40335C9F3683B5DCC4D21C0D25026629330DD66E3AF684B54497FD",
+    "C:\\Users\\carbe\\OneDrive\\Documents\\CODEX\\Berger-Hopf-Standard-Model\\artifacts\\flagship_integration\\BHSM_N12_GATE7_CORRELATED_DESCRIPTOR_NEWTON_ENDPOINT_CANDIDATE.npz": "C751AAAB1334CD0F1DADF5BB4549D06CED0E42627CC94C104089872C9756DE66",
+    "C:\\Users\\carbe\\OneDrive\\Documents\\CODEX\\Berger-Hopf-Standard-Model\\artifacts\\flagship_integration\\BHSM_N12_GATE7_CURRENT_GREEN_SIGNED_TRANSVERSE_CAUSAL_CENTER.npz": "CDAC1CAA0BB192E604FE81EC70904A44DE96F2F19C8DBE60E4C210FACF5FBD8D",
+    "C:\\Users\\carbe\\OneDrive\\Documents\\CODEX\\Berger-Hopf-Standard-Model\\scripts\\checkpoint_n12_gate7_66d_tangent_binding.py": "F4D589FD68CAD23EB2D901E477FBAEB0954043110ED378BF9D1B590AC314776B",
+    "C:\\Users\\carbe\\OneDrive\\Documents\\CODEX\\Berger-Hopf-Standard-Model\\tmp\\gate7_vector_20260919\\full_input_midpoint_adjoint_first.json": "51FF0A810BB6134C2898B20ECB707014007DD6A86023ACDE92BDA4D3794B6328"
+  }
+}
