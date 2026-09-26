@@ -2,6 +2,14 @@
 
 import { useEffect, useRef, useState } from 'react';
 import { useSceneClock } from './science-console';
+import {
+  coneRadius,
+  electromagneticCloud,
+  originCloud,
+  weakCollision,
+  surfaceCollision,
+  type Dot,
+} from '../lib/force-particles';
 
 const studies = [
   {
@@ -18,9 +26,9 @@ const studies = [
     name: 'Electromagnetic',
     motif: 'A controlled release',
     color: '#f2c774',
-    text: 'A pulse travels through a narrow connection into a field.',
+    text: 'Yellow particles fill the left cone and feed a narrow release.',
     meaning:
-      'A small luminous packet leaves the concentrated region through an extended support. This animates the proposed geometric release mechanism.',
+      'A dense cloud of yellow particles circulates inside the left cone while packets move through its narrow connection. This illustrates the proposed geometric release mechanism.',
     boundary:
       'The packet is illustrative. Its size does not encode the fine-structure constant, a charge or a derived emission rate.',
   },
@@ -28,9 +36,9 @@ const studies = [
     name: 'Weak force',
     motif: 'Imbalance & transition',
     color: '#fc9171',
-    text: 'An asymmetric surface relaxes and releases a brief pulse.',
+    text: 'Spinning particle paths meet and scatter inside the right cone.',
     meaning:
-      'An imbalance grows between two sides of the mesh, followed by an outward burst. The sequence illustrates the proposed connection between imbalance and decay.',
+      'Inside the right cone, yellow particles follow spiral paths toward shared collision points and scatter as smaller red particles. This choreographed motion illustrates transitions; it is not a computed collision event.',
     boundary:
       'Weak interactions mediate particle transformations. This geometric analogy does not compute a decay channel, lifetime or interaction range.',
   },
@@ -48,9 +56,9 @@ const studies = [
     name: 'One geometric origin',
     motif: 'The hypersphere',
     color: '#67e8ef',
-    text: 'Four colored paths share one rotating geometric support.',
+    text: 'A yellow interior; surface particles collide into smaller red dots.',
     meaning:
-      'The final study brings the four motifs onto one support, expressing BHSM’s proposed common geometric origin. The globe is a lower-dimensional visualization of the S³ idea.',
+      'A yellow particle cloud fills the sphere. A few larger yellow particles move along its surface, meet, and scatter into smaller red particles. The globe is a lower-dimensional visualization of BHSM’s proposed S³ support.',
     boundary:
       'A common picture is not a completed unification. Physical mode identification, normalized couplings and quantitative predictions remain open.',
   },
@@ -91,6 +99,15 @@ function ForceField({ kind, phase }: { kind: number; phase: number }) {
       ctx.globalAlpha = opacity;
       ctx.fillStyle = g;
       ctx.fillRect(x - r, y - r, r * 2, r * 2);
+      ctx.globalAlpha = 1;
+    };
+    const dot = ({ point, radius, color }: Dot) => {
+      const [x, y] = project(point);
+      ctx.globalAlpha = 0.5 + (0.4 * (point[2] + 180)) / 360;
+      ctx.fillStyle = color;
+      ctx.beginPath();
+      ctx.arc(x, y, radius, 0, TAU);
+      ctx.fill();
       ctx.globalAlpha = 1;
     };
     // Deterministic background points; geometry, not a measured sky map.
@@ -140,11 +157,7 @@ function ForceField({ kind, phase }: { kind: number; phase: number }) {
         ];
       }
       const x = (u - 0.5) * 425;
-      const neck = kind === 1 ? 0.64 : 0.52;
-      const r =
-        10 +
-        190 * Math.pow(Math.abs(u - neck), 1.45) +
-        (kind === 2 ? 13 * u * (1 + Math.sin(t)) : 0);
+      const r = coneRadius(u, kind, phase);
       return [x, r * Math.cos(v * TAU), r * Math.sin(v * TAU)];
     };
     for (let j = 0; j <= 18; j++) {
@@ -178,31 +191,42 @@ function ForceField({ kind, phase }: { kind: number; phase: number }) {
           2,
         );
       }
-    } else if (kind === 1 || kind === 2) {
-      glow(
-        ...project([kind === 1 ? 55 : 8, 0, 0]),
-        52,
-        studies[kind].color,
-        0.85,
-      );
+    } else if (kind === 1) {
+      electromagneticCloud(phase)
+        .sort((a, b) => a.point[2] - b.point[2])
+        .forEach(dot);
+      glow(...project([55, 0, 0]), 36, '#ffe073', 0.65);
       for (let j = 0; j < 5; j++) {
         const q = (phase * 2 + j / 5) % 1;
-        const p: Point =
-          kind === 1
-            ? [-190 + q * 360, 7 * Math.sin(q * TAU - t), 0]
-            : [
-                10 + q * 200,
-                Math.sin(j * 2.4) * q * q * 90,
-                q * 45 * Math.cos(j * 2.4),
-              ];
-        glow(
-          ...project(p),
-          kind === 1 ? 17 : 12,
-          studies[kind].color,
-          (1 - q) * 0.8 + 0.2,
-        );
+        dot({
+          point: [-15 + q * 210, 5 * Math.sin(q * TAU), 0],
+          radius: 4,
+          color: '#ffe073',
+        });
       }
-      if (kind === 1) glow(...project([198, 0, 0]), 32, '#72d9ff', 0.9);
+      glow(...project([198, 0, 0]), 25, '#72d9ff', 0.8);
+    } else if (kind === 2) {
+      for (let lane = 0; lane < 8; lane++) {
+        const current = weakCollision(phase, lane);
+        line(
+          Array.from(
+            { length: 25 },
+            (_, j) => weakCollision(phase - (24 - j) / 900, lane).point,
+          ),
+          current.color,
+          0.55,
+          2,
+        );
+        dot(current);
+        const q = (((phase * 2 + Math.floor(lane / 2) / 4) % 1) + 1) % 1;
+        if (Math.abs(q - 0.5) < 0.035)
+          glow(
+            ...project([(0.77 - 0.5) * 425, 0, 0]),
+            22,
+            '#ffe073',
+            1 - Math.abs(q - 0.5) / 0.035,
+          );
+      }
     } else if (kind === 3) {
       line(
         Array.from({ length: 81 }, (_, i): Point => {
@@ -220,27 +244,19 @@ function ForceField({ kind, phase }: { kind: number; phase: number }) {
         2.8,
       );
     } else {
-      for (let j = 0; j < 4; j++) {
-        const angle = t + (j * TAU) / 4;
-        const p: Point = [
-          172 * Math.cos(angle),
-          105 * Math.sin(angle + j * 0.5),
-          100 * Math.sin(angle),
-        ];
-        line(
-          Array.from({ length: 81 }, (_, i): Point => {
-            const a = (i / 80) * TAU;
-            return [
-              172 * Math.cos(a),
-              105 * Math.sin(a + j * 0.5),
-              100 * Math.sin(a),
-            ];
-          }),
-          studies[j].color,
-          0.55,
-          1.8,
-        );
-        glow(...project(p), 20, studies[j].color);
+      originCloud()
+        .sort((a, b) => a.point[2] - b.point[2])
+        .forEach(dot);
+      for (let lane = 0; lane < 3; lane++) {
+        const dots = surfaceCollision(phase, lane);
+        dots.forEach(dot);
+        for (let j = 0; j < dots.length; j++) {
+          const trail = Array.from(
+            { length: 16 },
+            (_, k) => surfaceCollision(phase - (15 - k) / 1000, lane)[j]?.point,
+          ).filter((p): p is Point => Boolean(p));
+          if (trail.length > 1) line(trail, dots[j].color, 0.65, 1.8);
+        }
       }
     }
   }, [kind, phase]);
@@ -249,6 +265,8 @@ function ForceField({ kind, phase }: { kind: number; phase: number }) {
       ref={ref}
       width={600}
       height={470}
+      // Canvas draws the moving study; an image role exposes its description.
+      // oxlint-disable-next-line jsx-a11y/prefer-tag-over-role
       role="img"
       aria-label={`${studies[kind].name}: ${studies[kind].text}`}
     />

@@ -1,0 +1,216 @@
+.prediction-museum {
+  height: 100dvh;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+.prediction-museum .site-header {
+  position: relative;
+  flex: 0 0 auto;
+  padding-top: 0.65rem;
+  padding-bottom: 0.65rem;
+}
+.museum-deck {
+  display: flex;
+  flex-direction: column;
+  min-height: 0;
+  flex: 1;
+}
+.deck-controls {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 0.7rem max(1rem, 3vw);
+  background: #0d111b;
+  border-bottom: 1px solid #373448;
+  flex-shrink: 0;
+}
+.deck-controls button {
+  padding: 0.7rem 1rem;
+  border: 1px solid #685373;
+  border-radius: 24px;
+  color: #f4e7ff;
+  background: #221c2d;
+  cursor: pointer;
+  font-size: 0.95rem;
+  min-height: 44px;
+}
+.deck-controls button:disabled {
+  opacity: 0.35;
+  cursor: default;
+}
+.deck-controls label {
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+  min-width: 0;
+}
+.deck-controls label > span {
+  color: #b9a4c8;
+  font:
+    0.75rem var(--font-geist-mono),
+    monospace;
+  letter-spacing: 0.1em;
+}
+.deck-controls select {
+  color: #fff2df;
+  background: #0d111b;
+  border: 0;
+  font-size: 1.05rem;
+  max-width: 100%;
+  cursor: pointer;
+}
+.deck-controls p {
+  margin: 0 0 0 auto;
+  color: #b9a4c8;
+  font-size: 0.875rem;
+}
+.deck-controls p span {
+  margin-left: 0.6rem;
+  color: #ffbc77;
+}
+.deck-progress {
+  height: 3px;
+  background: #191426;
+  flex-shrink: 0;
+}
+.deck-progress i {
+  display: block;
+  height: 100%;
+  background: #ffbc77;
+  transition: width 0.2s;
+}
+.museum-track {
+  display: flex;
+  overflow-x: auto;
+  overflow-y: hidden;
+  scroll-snap-type: x mandatory;
+  scrollbar-width: none;
+  flex: 1;
+  min-height: 0;
+  overscroll-behavior-x: contain;
+}
+.museum-track::-webkit-scrollbar {
+  display: none;
+}
+.museum-track > .console-collection {
+  display: contents;
+}
+.museum-track .collection-heading,
+.museum-track .console-index {
+  display: none;
+}
+.museum-track > .engine-hero,
+.museum-track .science-console,
+.museum-track > .museum-details,
+.museum-track > .creator-section,
+.museum-track > .other-work-wing,
+.museum-track > footer {
+  flex: 0 0 100%;
+  width: 100%;
+  max-width: none;
+  height: 100%;
+  min-width: 0;
+  overflow-y: auto;
+  overflow-x: hidden;
+  scroll-snap-align: start;
+  scroll-snap-stop: always;
+  margin: 0;
+  padding: 1.5rem max(1rem, 4vw) 6rem;
+  overscroll-behavior-y: contain;
+}
+.museum-track > #creator {
+  flex: 0 0 100%;
+  width: 100%;
+  max-width: none;
+  height: 100%;
+  min-width: 0;
+  overflow-y: auto;
+  scroll-snap-align: start;
+  scroll-snap-stop: always;
+  margin: 0;
+  padding: 2rem max(1rem, 4vw) 6rem;
+}
+.museum-track .console-intro h3 {
+  font-size: clamp(1.6rem, 3vw, 2.8rem);
+}
+.museum-track .console-intro {
+  margin-bottom: 1.4rem;
+}
+.museum-track .section-heading h2 {
+  font-size: clamp(1.8rem, 4vw, 3.6rem);
+}
+.museum-track .console-body {
+  grid-template-columns: 64px minmax(0, 1fr);
+}
+.museum-track .console-content {
+  min-width: 0;
+  padding-top: 1.2rem;
+}
+.museum-track .console-rail b {
+  font-size: 1.7rem;
+}
+.museum-track .force-atlas {
+  margin-top: 1rem;
+}
+.museum-track .other-work-card {
+  margin-top: 1.5rem;
+}
+.museum-track footer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 3rem;
+}
+.force-lines-restored {
+  margin-top: 2rem;
+  border-top: 1px solid #483c53;
+  padding-top: 1.5rem;
+}
+.force-lines-restored > h4 {
+  color: #ffbc77;
+  font-size: 1.5rem;
+  margin: 0.5rem 0;
+}
+@media (max-width: 700px) {
+  .deck-controls {
+    gap: 0.5rem;
+    padding: 0.6rem 0.75rem;
+  }
+  .deck-controls p {
+    display: none;
+  }
+  .deck-controls label {
+    flex: 1;
+  }
+  .deck-controls button span {
+    display: none;
+  }
+  .deck-controls select {
+    font-size: 0.95rem;
+  }
+  .museum-track .console-body {
+    display: block;
+  }
+  .museum-track .console-rail {
+    display: none;
+  }
+  .museum-track .console-content {
+    padding-left: 0;
+    padding-right: 0;
+  }
+  .museum-track .science-console,
+  .museum-track > .engine-hero,
+  .museum-track > .other-work-wing {
+    padding-left: 0.8rem;
+    padding-right: 0.8rem;
+  }
+  .museum-track footer {
+    flex-direction: column;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .deck-progress i {
+    transition: none;
+  }
+}

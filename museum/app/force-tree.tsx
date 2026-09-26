@@ -1,5 +1,6 @@
 'use client';
 import { ForceGeometry } from './force-geometry';
+import { ForceLines } from './force-lines';
 import references from './reference-data.json';
 import { SCIENCE } from './exhibits';
 
@@ -13,6 +14,14 @@ export function ForceTree({
   return (
     <div className="force-tree">
       <ForceGeometry motion={motion} setMotion={setMotion} />
+      <section
+        className="force-lines-restored"
+        aria-label="Original force lines"
+      >
+        <p className="eyebrow">The original geometric hierarchy</p>
+        <h4>Follow the force lines.</h4>
+        <ForceLines motion={motion} />
+      </section>
       <details className="console-details">
         <summary>
           Explore the science · interpretation and conventional references
