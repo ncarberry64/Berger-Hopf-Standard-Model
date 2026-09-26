@@ -17,9 +17,9 @@ export const metadata: Metadata = {
   metadataBase: new URL(
     'https://ncarberry64.github.io/Berger-Hopf-Standard-Model/',
   ),
-  title: 'BHSM Museum | The Prediction Engine',
+  title: 'BHSM Museum | Geometry, Evidence and Open Questions',
   description:
-    'Explore the scientific potential of the Berger–Hopf Standard Model through particle families, forces, mixing and openly labeled sandbox comparisons.',
+    'Explore the Berger–Hopf Standard Model: conditional structural results, historical screens, geometric interpretations and conventional reference data.',
   icons: {
     icon: './bhsm-symbol.svg',
   },
@@ -27,7 +27,7 @@ export const metadata: Metadata = {
     canonical: './',
   },
   openGraph: {
-    title: 'BHSM Museum | Could Geometry Predict Matter?',
+    title: 'BHSM Museum | The Scientific Record',
     description:
       'Particle families, shared interactions and testable differences: an accessible public collection with visible data provenance and open scientific limits.',
     images: ['./og.png'],

@@ -9,15 +9,15 @@ MUSEUM = ROOT / "museum"
 
 def test_public_order_leads_with_potential_then_science_details_author_cosmology():
     page = (MUSEUM / "app/page.tsx").read_text(encoding="utf-8")
-    positions = [page.index(token) for token in ('<EngineHero motion={motion} setMotion={setMotion} />', '<PrototypeScience motion={motion} setMotion={setMotion} />', '<ScienceGallery motion={motion} />', '<UnificationConsole motion={motion} />', 'id="research-exhibit"', 'id="details"', 'id="creator"', 'id="other-work"', '<footer>')]
+    positions = [page.index(token) for token in ('<EngineHero motion={motion} setMotion={setMotion} />', '<PrototypeScience motion={motion} setMotion={setMotion} />', '<ScienceGallery motion={motion} />', '<UnificationConsole motion={motion} setMotion={setMotion} />', 'id="research-exhibit"', 'id="details"', 'id="creator"', 'id="other-work"', 'id="cosmology-original"', '<footer>')]
     assert positions == sorted(positions)
     hero = (MUSEUM / "app/science-console.tsx").read_text(encoding="utf-8")
-    assert "historic stakes" in hero
-    assert "If established and tested" in hero
-    assert "prediction engine" in hero
+    assert "conditional structural results" in hero
+    assert "historical" in hero
+    assert "Full physical derivation remains open." in hero
     assert "FULL_BHSM_COMPLETE = FALSE" in page
     assert page.count('id="research-exhibit"') == 1
-    assert "Norman P. Carberry" in page
+    assert "Citation metadata" in page
     assert "0009-0000-6650-3485" in page
 
 
@@ -71,10 +71,18 @@ def test_research_and_cosmology_labels_and_motion_fallbacks_are_explicit():
     page = (MUSEUM / "app/page.tsx").read_text(encoding="utf-8")
     exhibits = (MUSEUM / "app/exhibits.ts").read_text(encoding="utf-8")
     assert "Real experimental data · CMS Open Data" in page
-    assert "Simulated schematic · not observational data" in page
-    assert "Independent preprint · not peer reviewed" in page
-    assert "not a sky map" in page
-    assert "cosmologyExhibit.lay" in page
+    assert "Historical conceptual animations" in page
+    assert "not sky maps or current numerical" in page
+    assert "do not establish a physical cosmic cycle" in page
+    assert "cosmologyExhibit.seen" in page
+    assert '<CosmologyRealization motion={motion} setMotion={setMotion}' in page
+    assert '<CosmicEnclosure motion={motion}' in page
+    cosmology = (MUSEUM / "app/cosmology-update.tsx").read_text(encoding="utf-8")
+    assert "A coherent supernova residual is not established." in cosmology
+    force = (MUSEUM / "app/force-geometry.tsx").read_text(encoding="utf-8")
+    assert 'aria-label="Five geometric studies"' in force
+    assert "Gravity is distinct from electromagnetism." in force
+    assert "useSceneClock(motion && playing)" in force
     assert "prefers-reduced-motion" in page
     assert "onError={() => setFailedSource(desired)}" in page
     assert "ASSET_REVISION" in page

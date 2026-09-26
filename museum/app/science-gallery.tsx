@@ -12,7 +12,7 @@ const galleries = [
     subtitle: 'The electron has heavier relatives.',
     lay: 'Electrons, muons and tau particles share the same electric charge but have very different masses. BHSM asks whether their hierarchy can follow from different modes of one internal geometry.',
     meaning:
-      'A shared geometric origin would explain a pattern rather than assign each mass separately. The historical ratio is encouraging; the electron residual and the unfinished physical mass calculation remain part of the test.',
+      'BHSM interprets the hierarchy through internal modes. The historical ratio, electron residual and unfinished physical mass calculation are retained with their separate claim status.',
   },
   {
     id: 'forces',
@@ -77,9 +77,9 @@ export function ScienceGallery({ motion }: { motion: boolean }) {
       <ScienceConsole
         id="science-test"
         number="04"
-        label="The prediction test"
-        title="Ask the model. Then ask nature."
-        intro="An explanation earns its place by facing a measurement. Watch a retained BHSM calculation meet its published reference—including the differences."
+        label="Historical screens and reference data"
+        title="Compare the calculation with the reference."
+        intro="Explore retained BHSM screens alongside independently sourced conventional references. These comparisons do not establish action-derived physical predictions."
         accent="cyan"
       >
         <div className="console-selector">
@@ -108,7 +108,7 @@ export function ScienceGallery({ motion }: { motion: boolean }) {
           <div className="comparison-pair">
             <div>
               <span>Historical BHSM calculation</span>
-              <strong>{chosen.bhsm}</strong>
+              <strong>{Number(chosen.bhsm.toPrecision(6))}</strong>
               <small>{chosen.unit}</small>
             </div>
             <div
@@ -116,7 +116,7 @@ export function ScienceGallery({ motion }: { motion: boolean }) {
               style={{ opacity: 0.2 + reveal * 0.8 }}
             >
               <span>Published reference</span>
-              <strong>{Number(ref.value.toPrecision(7))}</strong>
+              <strong>{Number(ref.value.toPrecision(10))}</strong>
               <small>{ref.uncertainty_text}</small>
             </div>
           </div>
@@ -216,6 +216,12 @@ export function ScienceGallery({ motion }: { motion: boolean }) {
           Marker motion reveals the comparison; it is not a live derivation or
           statistical significance.
         </p>
+        <p className="console-caption">
+          {ref.convention} <a href={ref.source}>Reference and conventions ↗</a>{' '}
+          · Screen readouts are rounded for display; stored digits are not a
+          certified prediction uncertainty. The downloads retain source
+          precision.
+        </p>
         <details className="console-details">
           <summary>Explore the science · all ten comparisons</summary>
           <p>{gallery.lay}</p>
@@ -244,9 +250,12 @@ export function ScienceGallery({ motion }: { motion: boolean }) {
                   return (
                     <tr key={r.id}>
                       <th>{r.label}</th>
-                      <td>{r.bhsm}</td>
                       <td>
-                        {Number(rr.value.toPrecision(7))} {rr.uncertainty_text}
+                        {Number(r.bhsm.toPrecision(6))} {r.unit}
+                      </td>
+                      <td>
+                        {Number(rr.value.toPrecision(10))} {rr.unit}{' '}
+                        {rr.uncertainty_text}
                         <br />
                         <a href={rr.source}>{rr.label} ↗</a>
                       </td>

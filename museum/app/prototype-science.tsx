@@ -129,7 +129,7 @@ export function PrototypeScience({
           ['predictions', '01', 'Matter'],
           ['decays', '02', 'Collisions'],
           ['magnetic', '03', 'Magnetism'],
-          ['test', '04', 'Predictions'],
+          ['test', '04', 'Comparisons'],
           ['unification', '05', 'Forces'],
         ].map(([id, n, name]) => (
           <a key={id} href={id === 'test' ? '#comparisons' : `#science-${id}`}>
@@ -142,7 +142,7 @@ export function PrototypeScience({
         id="science-predictions"
         number="01"
         label="Matter from geometry"
-        title="One geometry. Three families."
+        title="Three families in the BHSM framework."
         intro="Nature repeats a pattern. BHSM asks whether the repetition comes from different modes of a shared internal geometry."
         accent="lavender"
       >
@@ -183,10 +183,10 @@ export function PrototypeScience({
         </p>
         <details className="console-details">
           <summary>
-            Explore the science · Standard Model predictions & equivalence
+            Explore the science · historical ledger & conditional SM structure
           </summary>
           <div className="prototype-controls">
-            <label htmlFor="prediction-sector">Prediction family</label>
+            <label htmlFor="prediction-sector">Ledger sector</label>
             <select
               id="prediction-sector"
               value={sector}
@@ -337,8 +337,8 @@ export function PrototypeScience({
         id="science-magnetic"
         number="03"
         label="Magnetic moments in motion"
-        title="Every particle has a magnetic fingerprint."
-        intro="Four particles, four measured magnetic moments. Watch each moment precess and see how its direction relates to the particle’s spin."
+        title="Four reference magnetic moments."
+        intro="Explore conventional measured moments for four spin-½ particles. The animation illustrates precession; BHSM magnetic-moment predictions remain open."
         accent="lavender"
       >
         <MagneticLab motion={motion} />
@@ -347,17 +347,23 @@ export function PrototypeScience({
     </section>
   );
 }
-export function UnificationConsole({ motion }: { motion: boolean }) {
+export function UnificationConsole({
+  motion,
+  setMotion,
+}: {
+  motion: boolean;
+  setMotion: (value: boolean) => void;
+}) {
   return (
     <ScienceConsole
       id="science-unification"
       number="05"
-      label="Forces unifying"
-      title="Different forces. A shared origin?"
-      intro="Follow Norman’s proposed connections: gravity branches from electromagnetism, electromagnetism from weak, then through strong to the luminous aether core."
+      label="Forces · one geometric origin"
+      title="One geometry. Four interaction regimes."
+      intro="Explore four interactions and the geometric origin proposed by BHSM. Five moving studies illustrate binding, release, imbalance, curvature and shared geometry."
       accent="amber"
     >
-      <ForceTree motion={motion} />
+      <ForceTree motion={motion} setMotion={setMotion} />
       <Outputs exhibit="forces" />
     </ScienceConsole>
   );

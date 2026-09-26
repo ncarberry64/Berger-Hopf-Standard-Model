@@ -16,3 +16,6 @@ artifacts/CKM_no_fit_operator_output_v1.json text eol=crlf
 src/bhsm/interface/predictions.py text eol=crlf
 # Download research packets are immutable byte-for-byte source archives.
 docs/research_packets/2026-08-03/*.md -text -diff
+
+# Preserve downloaded museum research snapshots and their recorded hashes.
+museum/public/research/** -text whitespace=cr-at-eol

@@ -68,7 +68,7 @@ def test_primary_exhibits_collider_and_other_work_are_not_replaced_by_comparison
     primary = (ROOT / 'museum/app/prototype-science.tsx').read_text(encoding='utf-8')
     cosmic = ' '.join((ROOT / 'museum/app/cosmic-enclosure.tsx').read_text(encoding='utf-8').split())
     assert page.index('<PrototypeScience') < page.index('<ScienceGallery') < page.index('id="research-exhibit"')
-    for title in ('Magnetic moments in motion', 'Standard Model predictions', 'Standard Model equivalence', 'Forces unifying', 'Collision theatre'):
+    for title in ('Magnetic moments in motion', 'Matter from geometry', 'historical ledger & conditional SM structure', 'Forces · one geometric origin', 'Collision theatre'):
         assert title in primary
     assert "['01', '08']" in page and "useState('01')" in page
     theatre = (ROOT / 'museum/app/collision-theatre.tsx').read_text(encoding='utf-8')
@@ -81,6 +81,6 @@ def test_primary_exhibits_collider_and_other_work_are_not_replaced_by_comparison
     assert 'onPointerMove' not in magnetic and 'setMagnet' not in magnetic
     assert 'row.uncertainty' in magnetic and 'vector lengths are normalized' in magnetic
     assert '<CosmicEnclosure motion={motion}' in page
-    assert page.index('cosmologyExhibit.title') < page.index('<CosmicEnclosure') < page.index('<footer>')
+    assert page.index('<CosmologyRealization') < page.index('id="cosmology-original"') < page.index('<CosmicEnclosure') < page.index('<footer>')
     for text in ('White-hole surface release', 'Cooling, flows and active topology', 'Smooth surface / heat death', 'SPECULATIVE CONCEPTUAL SIMULATION', 'not observational data'):
         assert text in cosmic

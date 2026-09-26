@@ -72,14 +72,16 @@ try {
   const written = await readFile(resolve(pagesRoot, 'index.html'), 'utf8');
   for (const expected of [
     'BHSM Museum',
-    'historic stakes',
     'Published reference',
     'COMPARISON ONLY',
     './_next/',
     'Magnetic moments in motion',
-    'Standard Model equivalence',
+    'Historical screens and reference data',
     'Collision theatre',
-    'Forces unifying',
+    'Five geometric studies',
+    'force-atlas',
+    'r1-realization',
+    'cosmology-original',
     'CMS · Data',
     'Original CMS animation',
     'pr98_cms_engine_validation.png',
@@ -99,6 +101,7 @@ try {
     'details',
     'creator',
     'other-work',
+    'cosmology-original',
   ];
   const positions = sections.map((id) => written.indexOf(`id="${id}"`));
   if (

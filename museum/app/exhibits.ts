@@ -77,11 +77,12 @@ export const exhibits: Exhibit[] = [
     animated: 'bhsm_geometry_to_prediction_animated.gif',
     still: 'bhsm_geometry_to_prediction.png',
     alt: 'A simulated sample moves across a normalized action landscape while second-, third-, and fourth-derivative traces update beside it.',
-    lay: 'Think of one mathematical landscape examined at different levels of detail: its shape supplies the rules for motion and interaction instead of using a separate formula for each result.',
+    lay: 'BHSM uses one universal action with many environment-conditioned realizations. This normalized landscape illustrates derivative machinery; it is not the action-selected background of every particle.',
     seen: 'A simulated sample moves across one normalized action landscape while S², S³, and S⁴ traces update from the same sample position.',
     matters:
       'For a general reader, this is the project’s one-source rule: the displayed observables are meant to share a mathematical origin. Scientifically, it makes each pole, vertex, and amplitude traceable to the same action instead of to separately selected formulas.',
-    dataLabel: 'Explanatory simulation · repository-derived structure',
+    dataLabel:
+      'Explanatory simulation · implemented action-expansion machinery · physical instance open',
     status: 'implemented',
     statusLabel: 'Implemented machinery',
     links: [
@@ -168,7 +169,8 @@ export const exhibits: Exhibit[] = [
     seen: 'Two incoming tracks converge on a shared amplitude vertex and two final-state tracks separate while normalized threshold, balance, average, and symmetry monitors remain visible.',
     matters:
       'This is the familiar collider question—what can go in, what can come out, and with what probability—shown as an implemented calculation path. It does not display a BHSM cross-section value or claim collider readiness.',
-    dataLabel: 'Explanatory event simulation · action-derived engine topology',
+    dataLabel:
+      'Explanatory event simulation · implemented readout machinery · physical instance open',
     status: 'gated',
     statusLabel: 'Implemented · collider claim gated',
     links: [
@@ -226,7 +228,8 @@ export const exhibits: Exhibit[] = [
     seen: 'The monitor now reads actual BHSM calculation data: 370 upper bounds on the local projected Hilbert–Schmidt second residual, from the frozen central scalar certificate. The cursor selects saved interval values. These are numerical residual bounds, not differences between predictions and measurements.',
     matters:
       'For any reader, the rule is simple: the answer cannot be adjusted after it is known. Scientifically, immutable provenance separates a frozen prediction from a post-hoc fit and forces incomplete records to fail closed.',
-    dataLabel: 'Computed BHSM data · 512-bit scalar certificate',
+    dataLabel:
+      'Computed BHSM data · 512-bit central scalar certificate · Gate-7 closure remains open',
     status: 'implemented',
     statusLabel: 'Real calculation data installed',
     links: [
@@ -250,30 +253,26 @@ export const exhibits: Exhibit[] = [
 
 export const cosmologyExhibit: Exhibit = {
   number: 'OW-01',
-  title: 'A Hyperspherical Scalar-Topographic Framework',
-  subtitle:
-    'Other work · late-time cosmological anomalies · January 2026 preprint',
+  title: 'Geometry Before Fields',
+  subtitle: 'Conditional cosmology · September 2026 research update',
   animated: 'cosmology_hyperspherical_scalar_topography_animated.gif',
   still: 'cosmology_hyperspherical_scalar_topography.png',
-  alt: 'A schematic hyperspherical scalar mode changes directional distance rings while a synchronized redshift cursor samples BAO, supernova, and overlap kernels.',
-  lay: 'This separate cosmology paper asks whether one very large, smooth variation across a curved Universe could leave related fingerprints in galaxy-distance measurements, supernova directions, and the measured expansion rate.',
-  seen: 'The colored hypersphere represents the paper’s proposed long-wavelength scalar mode. Its changing direction slightly stretches and compresses the white distance rings. At right, one moving redshift cursor samples the BAO, supernova, and shared-overlap response curves together.',
-  matters:
-    'The preprint proposes a common late-time origin for several reported cosmological anomalies and identifies observations that could rule it out. It reports qualitative and order-of-magnitude consistency rather than a full likelihood analysis; the scalar field’s microphysical origin and a full perturbation treatment remain open.',
-  dataLabel: 'Schematic preprint model · not observational data',
+  alt: 'Historical schematic of a hyperspherical mode and illustrative distance-response curves; not observed sky data or the September numerical result.',
+  lay: 'Could a smooth geometric pattern leave related traces in matter, galaxy distances and supernova light? The current framework makes the response and its assumptions explicit enough to test.',
+  seen: 'The retained January animation illustrates a proposed long-wavelength pattern and schematic response curves. It does not visualize the new six-state numerical propagator or the measured supernova residuals.',
+  matters: 'The September work separates coupled environmental realization from spatial-profile selection. Both temporal components can respond to specified matter data at the audited epochs, but a unique axis, an early-Universe initial state and the microscopic BHSM normalization have not been derived.',
+  dataLabel: 'Historical schematic · current results and source records below',
   status: 'provisional',
-  statusLabel: 'Independent preprint · not peer reviewed',
+  statusLabel: 'Conditional research · observational confirmation not established',
   facts: [
-    { label: 'Posted', value: '20 January 2026' },
-    { label: 'Geometry', value: 'S³(R_H)' },
-    { label: 'Reported bound', value: 'R_H ≳ 24 Gpc' },
-    { label: 'Comparison level', value: 'Order of magnitude' },
+    { label: 'Exhibit reviewed', value: '24 September 2026' },
+    { label: 'Temporal transfer', value: 'Rank 2 at eight audited epochs' },
+    { label: 'Spatial n = 2 sector', value: 'Nine coefficients' },
+    { label: 'BHSM normalization', value: 'Open' },
   ],
   links: [
-    {
-      label: 'Read the cosmology preprint',
-      href: 'https://doi.org/10.20944/preprints202601.1427.v1',
-    },
-    { label: 'Creator ORCID', href: 'https://orcid.org/0009-0000-6650-3485' },
+    { label: 'Current cosmology repository', href: 'https://github.com/ncarberry64/Manuscript-Generation' },
+    { label: 'January 2026 preprint · historical context', href: 'https://doi.org/10.20944/preprints202601.1427.v1' },
+    { label: 'Exhibit source snapshot', href: './research/museum-update-record.json' },
   ],
 };

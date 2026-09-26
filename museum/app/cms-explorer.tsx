@@ -328,7 +328,9 @@ export function CMSExplorer({ motion }: { motion: boolean }) {
           original CMS animation. Momentum coordinates use signed asinh
           compression; the angular chart uses (φ + π)/(2π) and (tanh(η/3) +
           1)/2. Interpolation between those endpoints is illustrative. It is not
-          a new run of the validated BHSM Engine.
+          a new run of the validated BHSM Engine. Display decimals retain sample
+          precision and are not measurement uncertainties or new physical
+          predictions.
         </p>
         <div className="table-scroll">
           <table>

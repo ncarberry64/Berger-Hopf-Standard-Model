@@ -143,7 +143,7 @@ export function MagneticLab({ motion }: { motion: boolean }) {
                 <small>±{row.uncertainty.toExponential(2)} J/T</small>
               </div>
               <div className="moment-frequency">
-                <span>Precession at 0.1 T</span>
+                <span>Reference-derived frequency · chosen B = 0.1 T</span>
                 <strong>{frequency.toExponential(5)} Hz</strong>
               </div>
             </article>
@@ -154,7 +154,9 @@ export function MagneticLab({ motion }: { motion: boolean }) {
         <b>Measured magnetic moments · explanatory animation</b> · Colored
         vector: magnetic moment μ. Dashed vector: spin S. A common 0.1 T field
         illustrates precession; motion is slowed separately for visibility and
-        vector lengths are normalized.
+        vector lengths are normalized. The field is a demonstration input, not a
+        BHSM-derived or measured exhibit field; frequencies are conventional
+        calculations from the reference moments, not BHSM predictions.
       </p>
       <details className="console-details">
         <summary>Explore the science · four magnetic fingerprints</summary>

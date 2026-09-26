@@ -15,6 +15,9 @@ import { CosmicEnclosure } from './cosmic-enclosure';
 import { CMSExplorer } from './cms-explorer';
 import { EngineHero, ScienceConsole } from './science-console';
 import { MuseumSoundtrack } from './museum-soundtrack';
+import { CosmologyUpdate } from './cosmology-update';
+import { CosmologyRealization } from './cosmology-realization';
+import { BHSMResearchUpdate } from './research-update';
 
 const ASSET_REVISION = 'science-first-2026-09-07';
 const researchDisplays = exhibits.filter((row) =>
@@ -82,15 +85,15 @@ export default function Home() {
           />
           <span>
             <strong>BHSM Museum</strong>
-            <small>The prediction engine museum</small>
+            <small>Geometry, evidence and open questions</small>
           </span>
         </a>
         <nav aria-label="Museum navigation">
-          <a href="#potential">The possibility</a>
+          <a href="#potential">Framework</a>
           <a href="#exhibits">Science exhibits</a>
           <a href="#comparisons">Comparisons</a>
           <a href="#details">Details</a>
-          <a href="#creator">Author</a>
+          <a href="#creator">Scientific record</a>
           <a href="#other-work">Cosmology</a>
           <a href={REPOSITORY}>Academic repository ↗</a>
         </nav>
@@ -99,7 +102,7 @@ export default function Home() {
       <EngineHero motion={motion} setMotion={setMotion} />
       <PrototypeScience motion={motion} setMotion={setMotion} />
       <ScienceGallery motion={motion} />
-      <UnificationConsole motion={motion} />
+      <UnificationConsole motion={motion} setMotion={setMotion} />
       <ScienceConsole
         id="research-exhibit"
         number="06"
@@ -140,6 +143,7 @@ export default function Home() {
             <p className="console-caption">{display.dataLabel}</p>
             <MotionImage motion={motion} exhibit={display} />
             <p>{display.lay}</p>
+            <BHSMResearchUpdate />
           </div>
         )}
         <details className="console-details">
@@ -166,10 +170,29 @@ export default function Home() {
           <h2 id="details-title">Follow the science further.</h2>
         </div>
         <p className="method-intro">
-          BHSM is being developed as a prediction engine: derive an answer from
-          the model, then test it against nature. Today’s exhibits distinguish
-          historical calculations, experimental references and explanatory
-          simulations.
+          Collection reviewed 24 September 2026. Local BHSM certificates have
+          advanced; no new physical particle observable has passed the museum’s
+          reviewed-output requirements. Historical values retain their original
+          classifications and experimental reference editions.{' '}
+          <a href="./research/museum-update-record.json">
+            Update sources and exhibit coverage ↗
+          </a>
+        </p>
+        <p className="method-intro">
+          BHSM organizes one universal action, many environment-conditioned
+          realizations. Universality does not mean one trajectory, scale or
+          boundary condition for every particle and environment. The retained
+          Gate-7 background is one proof carrier, not a universal particle
+          history.
+        </p>
+        <p className="method-intro">
+          The collection distinguishes action-derived results within their
+          certified scope, historical BHSM screens and ontology, conceptual
+          interpretations, and conventional experimental references. A geometric
+          interpretation does not by itself establish a physical prediction.{' '}
+          <a href={`${SCIENCE}/docs/BHSM_CURRENT_ENCAPSULATION_SCOPE.md`}>
+            Action and realization scope ↗
+          </a>
         </p>
         <details className="console-details">
           <summary>How to read the evidence</summary>
@@ -177,7 +200,8 @@ export default function Home() {
             Measurements test the result; they do not choose the model’s answer.
             Historical screens and conditional structural results are not
             completed physical predictions. Full physical closure remains open:{' '}
-            <code>FULL_BHSM_COMPLETE = FALSE</code>.
+            <code>FULL_BHSM_COMPLETE = FALSE</code> and{' '}
+            <code>GATE7_CLOSED = FALSE</code>.
           </p>
           <p>
             Published CODATA, PDG and neutrino-fit references retain their
@@ -222,16 +246,17 @@ export default function Home() {
         aria-labelledby="creator-title"
       >
         <div className="creator-mark" aria-hidden="true">
-          <span>NPC</span>
-          <small>Primary author</small>
+          <span>BHSM</span>
+          <small>Research record</small>
         </div>
         <div className="creator-copy">
-          <p className="eyebrow">The author</p>
-          <h2 id="creator-title">Norman P. Carberry</h2>
+          <p className="eyebrow">Scientific record</p>
+          <h2 id="creator-title">Sources, citations and archival records</h2>
           <p>
-            Independent researcher and author of the Berger–Hopf Standard Model
-            program. The public record connects the proposal, its derivations,
-            its evolving tests and the questions still to be resolved.
+            The Berger–Hopf Standard Model record connects model assumptions,
+            scoped derivations, reproducible tests and unresolved physical
+            questions. Citation metadata preserves research credit; current
+            claim boundaries determine how each result may be used.
           </p>
           <div className="creator-links">
             <a href="https://orcid.org/0009-0000-6650-3485">
@@ -251,54 +276,69 @@ export default function Home() {
         aria-labelledby="other-work-title"
       >
         <div className="section-heading">
-          <p className="eyebrow">Other work · cosmology</p>
+          <p className="eyebrow">Cosmology · updated 24 September 2026</p>
           <h2 id="other-work-title">
-            Could a large-scale pattern connect cosmic anomalies?
+            From a cosmic pattern to a testable response.
           </h2>
           <p>
-            A hyperspherical cosmology proposal explores whether spatial
-            topography could connect several large-scale anomalies.
+            Geometry Before Fields develops a conditional link from geometry
+            through matter and light propagation to observations. New
+            environmental-state calculations sharpen the model; supernova tests
+            have not established its proposed common signal.
           </p>
         </div>
+        <div className="creator-links">
+          <a href="#cosmology-original">
+            Explore the original cosmology exhibit ↓
+          </a>
+        </div>
+        <CosmologyRealization motion={motion} setMotion={setMotion} />
+        <details className="console-details cosmology-evidence">
+          <summary>Evidence and open questions · cosmology results</summary>
+          <CosmologyUpdate />
+        </details>
+      </section>
+      <section
+        id="cosmology-original"
+        className="other-work-wing"
+        aria-labelledby="cosmology-original-title"
+      >
+        <div className="section-heading">
+          <p className="eyebrow">Cosmology · original exhibit</p>
+          <h2 id="cosmology-original-title">
+            Geometry, light and the cosmic cycle.
+          </h2>
+          <p>
+            Explore the original geometric proposal and its animated journey
+            from a sea of light through the cosmic web to a proposed cycle.
+          </p>
+        </div>
+        <div className="creator-links">
+          <a href="#other-work">Explore the updated cosmology exhibit ↑</a>
+        </div>
+        <p className="other-work-boundary">
+          Historical conceptual animations · not sky maps or current numerical
+          fits. These illustrations do not establish a physical cosmic cycle.
+        </p>
         <article className="other-work-card">
           <div className="other-work-visual">
-            <p className="data-label">
-              Simulated schematic · not observational data
-            </p>
             <MotionImage motion={motion} exhibit={cosmologyExhibit} />
           </div>
           <div className="other-work-copy">
-            <h3>{cosmologyExhibit.title}</h3>
-            <p className="data-label">{cosmologyExhibit.dataLabel}</p>
-            <p>
-              <strong>In plain language</strong> {cosmologyExhibit.lay}
-            </p>
+            <h3>The January proposal</h3>
             <p>{cosmologyExhibit.seen}</p>
-            <p>{cosmologyExhibit.matters}</p>
-            <p className="data-label">
-              Independent preprint · not peer reviewed
-            </p>
-            <div className="record-links">
-              {cosmologyExhibit.links.map((link) => (
-                <a href={link.href} key={link.label}>
-                  {link.label} ↗
-                </a>
-              ))}
-            </div>
+            <a href="https://doi.org/10.20944/preprints202601.1427.v1">
+              Original preprint ↗
+            </a>
           </div>
         </article>
-        <p className="other-work-boundary">
-          Posted 20 January 2026. This is a schematic model, not a sky map or
-          confirmation from a survey. Comparison level: order of magnitude; a
-          full likelihood analysis remains open.
-        </p>
         <CosmicEnclosure motion={motion} />
       </section>
       <footer>
         <p>
           <strong>BHSM Museum</strong>
           <br />
-          The public science collection of Norman P. Carberry.
+          The Berger–Hopf Standard Model scientific collection.
         </p>
         <div className="footer-links">
           <a href={REPOSITORY}>Academic repository</a>
