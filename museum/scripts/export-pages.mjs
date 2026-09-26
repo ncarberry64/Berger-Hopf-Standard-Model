@@ -80,6 +80,8 @@ try {
     'Collision theatre',
     'Five geometric studies',
     'force-atlas',
+    'museum-track',
+    'Follow the force lines.',
     'r1-realization',
     'cosmology-original',
     'CMS · Data',

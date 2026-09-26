@@ -195,7 +195,7 @@ export function EngineHero({
             numerical screens and open physical questions.
           </p>
           <a className="enter-museum" href="#exhibits">
-            Enter the science ↓
+            Enter the science →
           </a>
           <small>
             One universal action, many environment-conditioned realizations.

@@ -81,6 +81,6 @@ def test_primary_exhibits_collider_and_other_work_are_not_replaced_by_comparison
     assert 'onPointerMove' not in magnetic and 'setMagnet' not in magnetic
     assert 'row.uncertainty' in magnetic and 'vector lengths are normalized' in magnetic
     assert '<CosmicEnclosure motion={motion}' in page
-    assert page.index('<CosmologyRealization') < page.index('id="cosmology-original"') < page.index('<CosmicEnclosure') < page.index('<footer>')
+    assert page.index('<CosmologyRealization') < page.index('id="cosmology-original"') < page.index('<CosmicEnclosure') < page.index('<footer id="museum-exit">')
     for text in ('White-hole surface release', 'Cooling, flows and active topology', 'Smooth surface / heat death', 'SPECULATIVE CONCEPTUAL SIMULATION', 'not observational data'):
         assert text in cosmic

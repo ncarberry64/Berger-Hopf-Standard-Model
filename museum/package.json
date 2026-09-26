@@ -16,7 +16,7 @@
     "start": "wrangler dev --config dist/server/wrangler.json",
     "lint": "oxlint app scripts components/ui/button.tsx lib/utils.ts",
     "format": "oxfmt",
-    "test:science": "node --experimental-strip-types --test scripts/test-science-demo.mjs"
+    "test:science": "node --experimental-strip-types --test scripts/test-science-demo.mjs scripts/test-cosmology-realization.mjs scripts/test-force-particles.mjs"
   },
   "dependencies": {
     "react": "19.2.6",

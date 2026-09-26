@@ -83,3 +83,24 @@ Replaced the force-tree visualization with five coordinated parametric mesh anim
 Synchronized the public GitHub Pages museum with the reviewed Sites exhibits, including both cosmology sections and the animated Force studies. Updated the static exporter to verify the current exhibit labels and the original cosmology section. Corrected conventional reference labels at their canonical museum data source so the asset synchronization retains them.
 
 Validation: production static export, TypeScript, 10 numerical/interaction tests, subdirectory asset checks, static-browser hydration and Force selection, immutable source hashes, repeated byte-identical asset synchronization, and all five required repository publication audits passed.
+
+## Horizontal exhibits and particle studies — 26 September 2026
+
+The museum now presents twelve full-width slides with native horizontal swiping,
+previous/next controls, a labeled exhibit picker, arrow-key navigation and direct
+exhibit links. Long exhibit content scrolls inside its own slide. Inactive slides
+are inert, reduced motion is respected, and resizing preserves the current slide.
+Both cosmology exhibits remain visible in the picker.
+
+The electromagnetic study has a dense yellow cloud confined to its left cone.
+Weak-force particles spiral into collisions within the right cone and scatter
+as smaller red particles. The common-origin sphere contains a yellow cloud and
+surface collisions that produce smaller red dots. These are deterministic visual
+analogies without physical rates or scales. The earlier interactive force-line
+diagram is restored below the five studies with its qualitative scope intact.
+
+Validation: 13 Node tests, 13 museum Python tests, TypeScript, focused lint,
+production build/static export, repeated byte-identical asset synchronization,
+and all five publication audits passed. Browser checks covered deep links,
+picker/buttons, keyboard and horizontal gestures, desktop/390px layouts,
+resize preservation, and the restored force-line controls.
