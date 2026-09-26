@@ -1,0 +1,312 @@
+{
+  "FULL_BHSM_COMPLETE": false,
+  "Gate7_closed": false,
+  "arrays_SHA256": "95460CF92D679D2F32BD867C84E4D569D094C63EA8A8C914C4CADF26EA7E41E4",
+  "attachment_formula": "u_b=sum((-1)^k q_u,k); v_b=sum((-1)^j q_v,j); q_w=q0+u_b-log(cosh(2v_b))/2; x_D=q0-q_w; fourth raw row=x_D(child)-x_D(event)",
+  "base_commit": "ed61d89c3a7946f5cd4f5af9e321771dabe2edc1",
+  "boundary_graph": {
+    "formula": "q_e=C(F_B)q_c; p_c+C(F_B)^*p_e=J_enc, with opposite outward conormals; intersect L_child with the pulled-back opposite-side graph",
+    "missing_object": "A source-bound lift from (s13,p,q) to both boundary traces/attachment/arm responses and its derivative, selecting a scalar row of the existing seam equations at the same physical interface.",
+    "node13_node14_not_identified_as_two_seam_sides": true,
+    "seam_operator": "S=M_e+U_R^dagger M_c U_R+W_phys; local W=0 does not erase the opposite arm"
+  },
+  "boundary_split_changed": false,
+  "candidate_evaluations": [
+    {
+      "DB": 0.0,
+      "name": "fourth_attachment_configuration",
+      "scope": "Left state and fixed opposite state; exact structural zero."
+    },
+    {
+      "DB": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "name": "three_configuration_traces",
+      "scope": "Same fixed-opposite-state restriction."
+    },
+    {
+      "DB": 0.0,
+      "name": "relative_depth_identity_minus_scale_plus_radius_plus_depth",
+      "scope": "Identically zero pullback at every state."
+    },
+    {
+      "DB": [
+        0.0,
+        0.0
+      ],
+      "name": "two_canonical_momentum_matches",
+      "scope": "Stored reset rows 55:57; state-only, fixed opposite side."
+    },
+    {
+      "DB": [
+        0.0,
+        0.0
+      ],
+      "name": "two_persistence_dynamic_flux_rows",
+      "scope": "Owned state-only interface with fixed event flux; no independent s argument."
+    },
+    {
+      "DB": 0.0,
+      "name": "boundary_lapse_difference_if_compared_at_fixed_opposite_state",
+      "scope": "State-only lapse; no separate lapse-equality condition found in the 57 reset rows."
+    },
+    {
+      "DB": 0.00011838581180436112,
+      "name": "proper_time_density",
+      "scope": "Derived clock density, NOT an owned two-sided matching equation."
+    },
+    {
+      "DB": null,
+      "name": "full_seam_attachment_stationarity_or_boundary_graph_response",
+      "scope": "No owner-bound derivative of opposite arm/trace/map with respect to s13 is supplied."
+    }
+  ],
+  "center_75_condition": null,
+  "center_75_rank": null,
+  "center_75_system_formed": false,
+  "descriptor": {
+    "attachment_map": "x_D=x_D(q); partial x_D/partial independently carried s at fixed state = 0",
+    "lapse_map": "N_boundary=exp(sum((-1)^k m_k)); a function of the 98-state multipliers",
+    "meaning": "Independently carried signed selected eigenvalue of the child reduced raw Euler-Dirac Hessian L_zz, z=(velocity,multipliers). It represents lambda(Y) on the physical descriptor fiber.",
+    "not_identified_as": [
+      "boundary lapse",
+      "proper time",
+      "environment descriptor",
+      "relative attachment depth",
+      "seam spectral parameter z"
+    ],
+    "paired_map": "(Y_event,Y_child,s_child) -> (x_D(event),x_D(child),N(event),N(child),s_child); no owned inverse or additional equation tying s_child to the two-sided quantities",
+    "proper_time_map": "d tau/d arc=N_boundary*s/||G(Y,s)||"
+  },
+  "fixed_event_ledger": "25 child constraint/energy + 4 boundary configuration + 2 canonical momentum = 31",
+  "inverse_replay": null,
+  "local_left_attachment_on_null": 0.0,
+  "nonlinear_work_attempted": false,
+  "normalization": "Use frozen unit null; physical ds=1e-7*d_descriptor_proof. Test scale 1e6 is not a physical datum.",
+  "normalized_reset_configuration_replay_maxabs": 1.6653345369377348e-15,
+  "physical_child_tangent_changed": false,
+  "rank_consequence": "Any additional left-state-only row is zero on the exact local null; appending it cannot raise rank to 75. No legitimate nonzero scalar row has been recovered.",
+  "reaction_replay_repeated": false,
+  "reset_rows": {
+    "boundary_configuration": [
+      26,
+      30
+    ],
+    "canonical_momentum": [
+      55,
+      57
+    ],
+    "child_constraints": [
+      30,
+      55
+    ],
+    "event_constraints": [
+      0,
+      25
+    ],
+    "event_selected_eigenvalue": [
+      25,
+      26
+    ],
+    "slice_convention": "zero-based half-open"
+  },
+  "right_attachment_on_complete_child_norm_diagnostic": 0.0666540603526929,
+  "right_attachment_on_null_diagnostic": -4.8388031429479955e-05,
+  "right_row_caveat": "Node 14 is a later history endpoint, not the opposite side of the seam. Adding its fixed attachment row would act nontrivially on the frozen 66D tangent; no persistence descendant authorizes that substitution.",
+  "scientific_producers_run": false,
+  "source_SHA256": {
+    "artifacts/flagship_integration/BHSM_N12_FULL_RESET_ACTION_JACOBIAN.json": "6F669531A372F9BCC9D04AC26DB4F53A25DE38867036D0A8C1B779B7CB1C477B",
+    "artifacts/flagship_integration/BHSM_N12_FULL_RESET_ACTION_JACOBIAN.npz": "35BB2B67FF784206D3A5B9DC82881F5FFD8F844B55342F2032D29CDAFB38A67A",
+    "artifacts/flagship_integration/BHSM_N12_GATE7_AUGMENTED_FIXED_DESCRIPTOR_NEWTON_ENDPOINT_CANDIDATE.npz": "3E52E013B473938B6959D5D63054FCC4D5057A13A71D10E2874ADB9A53E85B4E",
+    "artifacts/flagship_integration/gate7_66d_checkpoint_20260926/binding/arrays.npz": "0896CF7804EA1621281CF9E89C52C648772CEB0778A8EA80F4C6DC405FA767EA",
+    "artifacts/flagship_integration/gate7_66d_checkpoint_20260926/binding/report.json": "5CF382DC436A34DAD523576BFB1A2ED41E536E3F846A5EACDDE7B66A01437242",
+    "artifacts/flagship_integration/gate7_8reaction_center_20260926/source/bhsm_gate7_stageB_direct_interface.py": "2CF5BCA793C51B0F9054AB09C42797E2035EBC06AB6B7AD048D036D1D11192EF",
+    "artifacts/flagship_integration/gate7_local_null_classification_20260926/arrays.npz": "1DE519899E719C181347000031215D68B30605B97EDB909B2C744FC9679214B1",
+    "artifacts/flagship_integration/gate7_local_null_classification_20260926/report.json": "056C2976AD88BAEA048D55F39780EEB21EDE8AEE1F608EE45C4593B2E7BC9814",
+    "scripts/audit_n12_gate7_constraint_descriptor_hermite_collocation_candidate.py": "BDA316B056CF7794B5D793B2E8C36E2A9AC3604D1F532B51FAD6A448D1D5D553",
+    "scripts/audit_n12_gate7_two_sided_null_owner.py": "2F9C6B4ED9324A6FB27FEF64A230E73CFC36A8252BD318A56DC75EB989AC822E",
+    "scripts/certify_n12_candidate_positive_duration_persistence.py": "BA671026408A5DAFFC7EEADAD62CC4B16949BB89D5F9DFBDBE1C37F4A92D1D5D",
+    "scripts/materialize_n12_gate7_augmented_fixed_descriptor_newton_endpoint_candidate.py": "FBB684125D0F6A55EFB60E544361498B9312462CA77EBDDC6456E6EB4C22899C",
+    "src/bhsm/interface/aether_cross_resolution_reconnaissance_v21_35.py": "7B284BA9A777CC8CDEB375CB9B6DF1D9F697FF416FC11F79C1FC07E109D414ED",
+    "src/bhsm/interface/aether_forward_c2_exact_fixed_s_field.py": "FBB710D2D42EA40945B5B7C83EEF7C8043F1A9BADF1CA1D35A0BD019260EC3F6",
+    "src/bhsm/interface/aether_full_reset_action_jacobian.py": "243E9348E52F0F54A236FFBD448A309DCB4FEEC9BF4B45ADBEEA42763E2E745C",
+    "src/bhsm/interface/aether_n3_event_attachment_state_incidence_v17_89.py": "FDF754C1FAC57D7FCE70B6B5F81B335BF687C4BD0C4C231DE80FFA793C4A47E5",
+    "src/bhsm/interface/aether_n3_exact_full_local_action_jet_v17_60.py": "25EC0F9268FAAA9989A8CCE7A7F6F8172244CCA45F9BA054CB3273A25F81FC1B",
+    "theory/bhsm_covariant_interface_seam_selection_audit.md": "2FF8187D772F4D9B6AC89EB4AE43D229C074CD359073C839EA9747385086EF86",
+    "theory/bhsm_owner_authorized_encapsulation_interface_action.md": "4E1C8C2D58E8965EFCCC536956170086BE1930229FBDA37F21E08B2CECA25B18",
+    "theory/n12_ae2_child_boundary_hamiltonian_non_supersession.md": "3658735E1EB8B60AA14C9A470FD4196D2DBD4A3D04A3613E1CF5A0143DDAF1EF",
+    "theory/n12_event_normal_two_sided_seam_correction.md": "1D6ABE7250F06A43626A1D16E9670A82EF089E514EC2B6FBD1D12B4C23DA160C",
+    "theory/n12_gate7_ae2_one_seam_direct_descriptor.md": "EC2CC2D35791A2EDA37EC90C4A9D5CC63B6F7C2FBD5BB69703867102D2834150",
+    "theory/n12_gate7_two_seam_closed_operator_assembly.md": "FD60C038D65F270BDA47303C3938FEB6404E43A3290F49012C216CDF125A8DC7"
+  },
+  "source_line_provenance": {
+    "artifacts/flagship_integration/gate7_8reaction_center_20260926/source/bhsm_gate7_stageB_direct_interface.py": [
+      {
+        "end": 136,
+        "start": 91,
+        "text": "    flux_relative_step: float,\n) -> np.ndarray:\n    from bhsm.interface.aether_cross_resolution_reconnaissance_v21_35 import (\n        _child_rows_at_order,\n    )\n\n    event_q = np.zeros(QDIM)\n    event_momentum = np.zeros(2)\n    event_flux = np.zeros(2)\n\n    rows = np.asarray(\n        _child_rows_at_order(\n            ORDER,\n            np.asarray(child, dtype=float),\n            event_q,\n            event_momentum,\n            event_flux,\n            points=points,\n            relative_flux_step=flux_relative_step,\n            richardson_flux=True,\n            flux_derivative_method=\"richardson\",\n        ),\n        dtype=float,\n    )\n\n    if rows.shape != (32,):\n        raise RuntimeError(f\"unexpected complete-child row shape {rows.shape}\")\n\n    return np.concatenate(\n        (\n            rows[:3],\n            rows[3 + CONSTRAINT_ROWS : 3 + CONSTRAINT_ROWS + 2],\n            rows[-2:],\n        )\n    )\n\n\ndef directional_interface_jacobian(\n    x: np.ndarray,\n    weights: np.ndarray,\n    tangent_action: np.ndarray,\n    *,\n    points: int,\n    flux_relative_step: float,\n    outer_step: float,\n) -> np.ndarray:"
+      }
+    ],
+    "scripts/audit_n12_gate7_constraint_descriptor_hermite_collocation_candidate.py": [
+      {
+        "end": 77,
+        "start": 67,
+        "text": "def _field(state: np.ndarray, descriptor: float, weights: np.ndarray, reference: np.ndarray) -> tuple[np.ndarray, dict[str, object]]:\n    value = exact_cancelled_euler_dirac_field_action(\n        state=state,\n        weights=weights,\n        reference=reference,\n        signed_descriptor=max(float(descriptor), 0.0),\n    )\n    cancelled = np.asarray(value[\"cancelled_field_action\"], dtype=float)\n    norm = float(np.linalg.norm(cancelled))\n    rate = np.concatenate((cancelled / norm, [float(value[\"Delta\"]) / norm]))\n    return rate, value"
+      }
+    ],
+    "scripts/certify_n12_candidate_positive_duration_persistence.py": [
+      {
+        "end": 84,
+        "start": 81,
+        "text": "    signs_k = (-1.0) ** np.arange(1, ORDER + 1)\n\n    def boundary_lapse(multipliers: np.ndarray) -> float:\n        return float(math.exp(float(multipliers[:ORDER] @ signs_k)))"
+      }
+    ],
+    "scripts/materialize_n12_gate7_augmented_fixed_descriptor_newton_endpoint_candidate.py": [
+      {
+        "end": 76,
+        "start": 68,
+        "text": "def _node(task: tuple[int, np.ndarray, float, np.ndarray]) -> tuple[object, ...]:\n    index, parent_state, parent_descriptor, correction = task\n    weights = _WORK[\"weights\"]\n    reference = _WORK[\"reference\"]\n    trial = parent_state + correction[:98] / weights\n    state, projection, initial_constraint, final_constraint = _project(trial, weights)\n    descriptor = float(parent_descriptor + correction[98])\n    if descriptor < 0.0:\n        raise ArithmeticError(f\"node {index} left signed-descriptor domain\")"
+      },
+      {
+        "end": 195,
+        "start": 180,
+        "text": "        \"cancelled_norm_realizations_agree\": max(row[\"norm_realization_absolute_residual\"] for row in rows) < 1.0e-14,\n        \"regular_cancelled_norm_state_and_descriptor_derivatives_persisted\": norm_state_gradients.shape == (371, 98) and norm_descriptor_derivatives.shape == (371,),\n        \"fresh_endpoint_constraint_tangents_persisted\": tangents.shape == (371, 98, 73),\n        \"collocation_abscissae_are_not_labeled_proper_time\": True,\n        \"proper_time_density_requires_N_boundary_times_s_over_cancelled_norm\": True,\n        \"72D_reset_history_first_jet_not_claimed\": True,\n        \"all_quantities_finite\": bool(np.all(np.isfinite(np.concatenate((states.ravel(), descriptors, rates.ravel(), norms))))),\n        \"no_action_source_selector_scale_gate_or_chord_changed\": True,\n    }\n    validation = {key: bool(value) for key, value in validation.items()}\n    passed = all(validation.values())\n    payload = {\n        \"artifact\": \"BHSM_N12_GATE7_AUGMENTED_FIXED_DESCRIPTOR_NEWTON_ENDPOINT_CANDIDATE\",\n        \"status\": \"AUGMENTED_FIXED_DESCRIPTOR_ENDPOINT_CANDIDATE_REPLAYED_WITH_REGULAR_NORM_JETS\" if passed else \"AUGMENTED_FIXED_DESCRIPTOR_ENDPOINT_CANDIDATE_INVALID\",\n        \"authority\": \"RETAINED_EXACT_ENDPOINT_FIELD_REPLAY_NUMERICAL_CANDIDATE_NOT_INTERVAL_AUTHORITY\",\n        \"parameterization\": {\"stored_abscissa\": \"NORMALIZED_CANCELLED_FIELD_ARC_COLLOCATION_PARAMETER\", \"proper_time_density\": \"N_boundary*s/cancelled_field_action_norm\"},"
+      }
+    ],
+    "src/bhsm/interface/aether_cross_resolution_reconnaissance_v21_35.py": [
+      {
+        "end": 2795,
+        "start": 2751,
+        "text": "def _trace_jacobian_at_order(order: int) -> np.ndarray:\n    qdim = dimensions(order)[\"coordinates\"]\n    signs_k = (-1.0) ** np.arange(1, order + 1)\n    signs_j = (-1.0) ** np.arange(order)\n    trace = np.zeros((3, qdim))\n    trace[:, 0] = 1.0\n    trace[:, 1:1 + order] = signs_k\n    trace[0, 1 + order:1 + 2 * order] = signs_j\n    trace[1, 1 + 2 * order:1 + 3 * order] = signs_j\n    trace[2, 1 + 2 * order:1 + 3 * order] = -signs_j\n    return trace\n\n\ndef _attachment_jacobian_at_order(\n    order: int, coordinates: np.ndarray,\n) -> np.ndarray:\n    q = np.asarray(coordinates)\n    qdim = dimensions(order)[\"coordinates\"]\n    signs_k = (-1.0) ** np.arange(1, order + 1)\n    signs_j = (-1.0) ** np.arange(order)\n    v_boundary = q[1 + 2 * order:1 + 3 * order] @ signs_j\n    dtype = np.result_type(q, float)\n    j_w = np.zeros(qdim, dtype=dtype)\n    j_w[0] = 1.0\n    j_w[1:1 + order] = signs_k\n    j_w[1 + 2 * order:1 + 3 * order] = (\n        -np.tanh(2.0 * v_boundary) * signs_j\n    )\n    j_c = np.zeros(qdim, dtype=dtype)\n    j_c[0] = 1.0\n    return np.vstack((j_w, j_c - j_w))\n\n\ndef _attachment_coordinates_at_order(\n    order: int, coordinates: np.ndarray,\n) -> np.ndarray:\n    \"\"\"Exact two-coordinate attachment chart whose derivative is B(q).\"\"\"\n\n    q = np.asarray(coordinates)\n    signs_k = (-1.0) ** np.arange(1, order + 1)\n    signs_j = (-1.0) ** np.arange(order)\n    u_boundary = q[1:1 + order] @ signs_k\n    v_boundary = q[1 + 2 * order:1 + 3 * order] @ signs_j\n    q_w = q[0] + u_boundary - 0.5 * np.log(np.cosh(2.0 * v_boundary))\n    return np.asarray([q_w, q[0] - q_w])"
+      },
+      {
+        "end": 3218,
+        "start": 3199,
+        "text": "def _child_rows_at_order(\n    order: int,\n    child: np.ndarray,\n    event_coordinates: np.ndarray,\n    event_momentum: np.ndarray,\n    event_flux: np.ndarray,\n    *,\n    points: int,\n    relative_flux_step: float = 1.0e-1,\n    fixed_flux_time_step: float | None = None,\n    richardson_flux: bool = True,\n    flux_derivative_method: str = \"richardson\",\n) -> np.ndarray:\n    size = dimensions(order)\n    qdim = size[\"coordinates\"]\n    q = np.asarray(child[:qdim], dtype=float)\n    velocity = np.asarray(child[qdim:2 * qdim], dtype=float)\n    multipliers = np.asarray(child[2 * qdim:], dtype=float)\n    momentum, force, q_lift, _ = _canonical_pair_at_order(\n        order, q, velocity, multipliers, points=points"
+      },
+      {
+        "end": 3282,
+        "start": 3273,
+        "text": "        raise ValueError(\"unknown dynamic-flux derivative method\")\n    flux = child_flux - (-momentum_rate + force - event_flux)\n    return np.concatenate((\n        _trace_jacobian_at_order(order) @ (q - event_coordinates),\n        constraint_residual(\n            order, q, velocity, multipliers, points=points\n        ),\n        momentum - event_momentum,\n        flux,\n    ))"
+      }
+    ],
+    "src/bhsm/interface/aether_forward_c2_exact_fixed_s_field.py": [
+      {
+        "end": 48,
+        "start": 28,
+        "text": "def _selected_line(\n    reduced_hessian: np.ndarray, reference: np.ndarray\n) -> tuple[int, float, np.ndarray, np.ndarray, np.ndarray]:\n    values, vectors = np.linalg.eigh(reduced_hessian)\n    selected = int(np.argmax(np.abs(vectors.T @ reference)))\n    psi = vectors[:, selected]\n    if float(psi @ reference) < 0.0:\n        psi = -psi\n    complement = np.delete(vectors, selected, axis=1)\n    hard_values = np.delete(values, selected)\n    return selected, float(values[selected]), psi, complement, hard_values\n\n\ndef _eigenvalue_directional_derivative(\n    state: np.ndarray, psi: np.ndarray, action_direction: np.ndarray,\n    weights: np.ndarray,\n) -> float:\n    raw_direction = np.asarray(action_direction, dtype=float) / weights\n    shifted = np.asarray(state, dtype=complex) + 1j * COMPLEX_STEP * raw_direction\n    reduced = np.asarray(_jet(shifted).hessian)[QDIM:, QDIM:]\n    return float(np.imag(psi @ reduced @ psi) / COMPLEX_STEP)"
+      },
+      {
+        "end": 87,
+        "start": 73,
+        "text": "        or not np.isfinite(s)\n        or s < 0.0\n    ):\n        raise ValueError(\"finite N12 state, weights, line reference, and s>=0 required\")\n    # A fixed-s orbit is restricted to the descriptor fiber lambda(Y)=s.\n    # Keep the supplied descriptor in the cancellation formula so callers can\n    # enclose a nearby fiber without replacing it by a binary64 eigenvalue.\n    jet = _jet(y)\n    gradient_action = np.asarray(jet.gradient, dtype=float) / w\n    hessian_raw = np.asarray(jet.hessian, dtype=float)\n    hessian_action = hessian_raw / w[:, None] / w[None, :]\n    reduced_raw = hessian_raw[QDIM:, QDIM:]\n    selected, eigenvalue, psi, complement, hard_values = _selected_line(\n        reduced_raw, ref\n    )"
+      },
+      {
+        "end": 145,
+        "start": 108,
+        "text": "    )\n    remainder = _eigenvalue_directional_derivative(\n        y, psi, full_hard_action, w\n    )\n    delta = c_psi * b_psi + s * remainder\n    numerator = np.concatenate((\n        s * configuration,\n        reduced_weights * (b_psi * psi + s * hard_raw),\n    ))\n    if not delta > 0.0:\n        raise ArithmeticError(\"fixed-s denominator is not positive\")\n    field = numerator / delta\n    return {\n        \"field_action\": field,\n        \"selected_branch\": selected,\n        \"selected_eigenvalue\": eigenvalue,\n        \"b_psi\": b_psi,\n        \"c_psi\": c_psi,\n        \"R_Dlambda_Vhard\": remainder,\n        \"Delta\": delta,\n        \"Dlambda_field\": (\n            c_psi * b_psi + s * remainder\n        ) / delta,\n        \"explicit_full_Euler_Dirac_inverse_formed\": False,\n    }\n\n\ndef exact_cancelled_euler_dirac_field_action(\n    *, state: np.ndarray, weights: np.ndarray, reference: np.ndarray,\n    signed_descriptor: float,\n) -> dict[str, object]:\n    \"\"\"Evaluate the denominator-free selected-line Euler--Dirac field.\n\n    The field is ``G_theta=Delta*F_s`` on the propagated descriptor fiber.\n    The signed descriptor is supplied independently because the near-birth\n    value is far below the cancellation floor of a binary64 eigensolve.  It\n    remains regular at a zero of ``Delta=Dlambda[G_theta]`` and changes only\n    the parametrization while ``s>0``.  It does not continue through the"
+      },
+      {
+        "end": 217,
+        "start": 197,
+        "text": "        y, psi, full_hard_action, w\n    )\n    delta = c_psi * b_psi + s * remainder\n    numerator = np.concatenate((\n        s * configuration,\n        reduced_weights * (b_psi * psi + s * hard_raw),\n    ))\n    hard_gap = float(np.min(np.abs(hard_values - eigenvalue)))\n    return {\n        \"cancelled_field_action\": numerator,\n        \"selected_branch\": selected,\n        \"signed_descriptor\": s,\n        \"numeric_selected_eigenvalue_not_used_as_descriptor\": eigenvalue,\n        \"selected_eigenline_gap\": hard_gap,\n        \"b_psi\": b_psi,\n        \"c_psi\": c_psi,\n        \"R_Dlambda_Vhard\": remainder,\n        \"Delta\": delta,\n        \"Dlambda_cancelled_field\": delta,\n        \"explicit_full_Euler_Dirac_inverse_formed\": False,\n        \"Delta_divided_out\": False,"
+      }
+    ],
+    "src/bhsm/interface/aether_full_reset_action_jacobian.py": [
+      {
+        "end": 278,
+        "start": 248,
+        "text": "def full_reset_residual(\n    order: int,\n    joint_state: np.ndarray,\n    state_weights: np.ndarray,\n    branch_reference: np.ndarray,\n    ordered_scale: float,\n    normalization_coordinates: np.ndarray,\n    *,\n    points: int = 96,\n    refine_ordered_eigenvalue: bool = True,\n    high_precision_momentum: bool = False,\n    high_precision_action: bool = False,\n) -> tuple[np.ndarray, int]:\n    \"\"\"Evaluate the unchanged normalized 57-row event/child reset residual.\"\"\"\n    size = dimensions(order)\n    qdim = size[\"coordinates\"]\n    mdim = size[\"multipliers\"]\n    state_dimension = 2 * qdim + mdim\n    joint_state = np.asarray(joint_state, dtype=float)\n    state_weights = np.asarray(state_weights, dtype=float)\n    normalization_coordinates = np.asarray(\n        normalization_coordinates, dtype=float\n    )\n    if joint_state.shape != (2 * state_dimension,):\n        raise ValueError(\"joint state has the wrong event/child dimension\")\n    event = joint_state[:state_dimension]\n    child = joint_state[state_dimension:]\n    event_blocks = None\n    child_blocks = None\n    if high_precision_action:\n        event_blocks = high_precision_velocity_jet_blocks("
+      },
+      {
+        "end": 358,
+        "start": 335,
+        "text": "\n    q_weights = state_weights[:qdim]\n    multiplier_weights = state_weights[2 * qdim:]\n    trace = _trace_jacobian_at_order(order)\n    normalization_attachment = _attachment_jacobian_at_order(\n        order, normalization_coordinates\n    )\n    normalization_boundary = np.vstack((\n        trace,\n        normalization_attachment[1],\n    ))\n    boundary_inverse_sqrt = _symmetric_power(\n        normalization_boundary\n        @ np.diag(1.0 / q_weights**2)\n        @ normalization_boundary.T,\n        -0.5,\n    )\n    boundary_raw = np.concatenate((\n        trace @ (child[:qdim] - event[:qdim]),\n        [\n            _attachment_coordinates_at_order(order, child[:qdim])[1]\n            - _attachment_coordinates_at_order(order, event[:qdim])[1]\n        ],\n    ))"
+      },
+      {
+        "end": 410,
+        "start": 396,
+        "text": "    momentum_sqrt = _symmetric_power(\n        normalization_attachment @ normalization_attachment.T,\n        0.5,\n    )\n    rows = np.concatenate((\n        event_constraint[:mdim] / multiplier_weights,\n        event_constraint[mdim:],\n        [eigenvalue / ordered_scale],\n        boundary_inverse_sqrt @ boundary_raw,\n        child_constraint[:mdim] / multiplier_weights,\n        child_constraint[mdim:],\n        momentum_sqrt @ (child_momentum - event_momentum),\n    ))\n    if rows.shape != (57,):\n        raise RuntimeError(\"assembled reset residual has the wrong shape\")"
+      },
+      {
+        "end": 635,
+        "start": 565,
+        "text": "    normalization_attachment = _attachment_jacobian_at_order(\n        order, normalization_coordinates\n    )\n    normalization_boundary = np.vstack((\n        trace,\n        normalization_attachment[1],\n    ))\n    boundary_inverse_sqrt = _symmetric_power(\n        normalization_boundary\n        @ np.diag(1.0 / q_weights**2)\n        @ normalization_boundary.T,\n        -0.5,\n    )\n    event_boundary = np.vstack((\n        trace,\n        _attachment_jacobian_at_order(order, event[:qdim])[1],\n    ))\n    child_boundary = np.vstack((\n        trace,\n        _attachment_jacobian_at_order(order, child[:qdim])[1],\n    ))\n    boundary_rows = np.zeros((4, 2 * state_dimension))\n    boundary_rows[:, :qdim] = (\n        -boundary_inverse_sqrt @ event_boundary / q_weights[None, :]\n    )\n    boundary_rows[:, state_dimension:state_dimension + qdim] = (\n        boundary_inverse_sqrt @ child_boundary / q_weights[None, :]\n    )\n\n    event_momentum = canonical_momentum_action_jacobian(\n        order,\n        event,\n        event_third_action,\n        state_weights,\n        points=points,\n    )\n    child_momentum = canonical_momentum_action_jacobian(\n        order,\n        child,\n        child_third_action,\n        state_weights,\n        points=points,\n    )\n    momentum_sqrt = _symmetric_power(\n        normalization_attachment @ normalization_attachment.T,\n        0.5,\n    )\n    momentum_rows = np.hstack((\n        -momentum_sqrt @ event_momentum,\n        momentum_sqrt @ child_momentum,\n    ))\n\n    event_rows = np.hstack((\n        event_constraints,\n        np.zeros((mdim + 1, state_dimension)),\n    ))\n    ordered_full = np.concatenate((ordered_row, np.zeros(state_dimension)))\n    child_rows = np.hstack((\n        np.zeros((mdim + 1, state_dimension)),\n        child_constraints,\n    ))\n    jacobian = np.vstack((\n        event_rows,\n        ordered_full[None],\n        boundary_rows,\n        child_rows,\n        momentum_rows,\n    ))\n    expected_rows = 2 * (mdim + 1) + 1 + 4 + 2\n    if jacobian.shape != (expected_rows, 2 * state_dimension):\n        raise RuntimeError(\"assembled reset Jacobian has the wrong shape\")"
+      }
+    ],
+    "src/bhsm/interface/aether_n3_event_attachment_state_incidence_v17_89.py": [
+      {
+        "end": 65,
+        "start": 38,
+        "text": "\n    q_C is the action's global log-radius mode. q_W is the logarithm of the\n    same action's boundary-radius functional. The reciprocal depth coordinate\n    is consequently x_D=q_C-q_W, so the exact matcher\n    -q_C+q_W+x_D=0 is an identity rather than an added constraint.\n    \"\"\"\n\n    state = unpack_reduced(np.asarray(raw_vector, dtype=float))\n    terminal = np.asarray(state[\"coordinates\"], dtype=float)[-1]\n    radius, log_radius_jacobian = boundary_radius_and_jacobian(terminal[None, :])\n    q_c = float(terminal[0])\n    q_w = float(math.log(float(radius[0])))\n    x_d = q_c - q_w\n    attachment = np.asarray([q_c, q_w, x_d])\n\n    j_c = np.zeros(Q_DIMENSION)\n    j_c[0] = 1.0\n    j_w = np.asarray(log_radius_jacobian[0], dtype=float)\n    jacobian = np.vstack((j_c, j_w, j_c - j_w))\n    matcher = np.asarray([[-1.0, 1.0, 1.0]])\n    tangent = np.asarray([[1.0, 1.0], [1.0, 0.0], [0.0, 1.0]])\n\n    vertex_map = scalar_stratum_incidence_map()\n    vertex_state = vertex_map @ attachment\n    vertex_jacobian = vertex_map @ jacobian\n\n    # This uses the archived representative curvatures only to demonstrate\n    # the exact pullback required at the event. It is never promoted as the"
+      }
+    ],
+    "src/bhsm/interface/aether_n3_exact_full_local_action_jet_v17_60.py": [
+      {
+        "end": 225,
+        "start": 217,
+        "text": "    signs_j = (-1.0) ** np.arange(order)\n    u_boundary = _linear(u_coeff, signs_k)\n    b_boundary = _linear(b_coeff, signs_j)\n    A_boundary = radius * (u_boundary + b_boundary).exp() / math.sqrt(2.0)\n    B_boundary = radius * (u_boundary - b_boundary).exp() / math.sqrt(2.0)\n    R4 = A_boundary * B_boundary / _sqrt(A_boundary**2 + B_boundary**2)\n    boundary_lapse_coeff = np.zeros(mdim); boundary_lapse_coeff[:order] = signs_k\n    boundary_log_n = _linear(mj, boundary_lapse_coeff)\n    return action - standard_model_casimir_coefficient() / R4 * boundary_log_n.exp()"
+      }
+    ],
+    "theory/bhsm_covariant_interface_seam_selection_audit.md": [
+      {
+        "end": 54,
+        "start": 34,
+        "text": "`V=v n`, the surface normal coefficient is `-gamma K v`.\n\nThe area density contains no independent attachment, boundary-relation, or\ngauge-trace variable. Thus its **direct partial derivatives**, holding the\ninduced geometry and scale fixed, satisfy\n\n\\[\n(D_{F_B}S_\\Sigma)_{h,\\ell}=0,\\qquad\n(D_{L_s}S_\\Sigma)_{h,\\ell}=0,\\qquad\n(D_aS_\\Sigma)_{h,\\ell}=0.\n\\]\n\n`L_s` is a domain relation in a Lagrangian Grassmannian; this is not a claim\nthat differentiating the full bulk action with a moving domain gives zero.\nLikewise, when metric/trace compatibility ties `F_B` to the two embeddings,\ntheir allowed variations are coupled. The chain rule and constraint forces\nremain. The two embeddings have not been identified or independently solved.\n\nLet `B_mu` denote the coefficient of the admitted shape variation from both\nbulk actions and the already-owned boundary/corner terms. The projected shape\nequation is `Pr_allowed(B+gamma H)=0`. Its normal component has the selected"
+      },
+      {
+        "end": 108,
+        "start": 73,
+        "text": "selection. Normalization belongs in the physical canonical flux.\n\nIf the admissible trace space has already supplied\n`a_e=C(F_B)a_c` modulo admitted gauge, then\n\n\\[\n\\delta a_e=C\\,\\delta a_c+D_FC[\\eta]a_c,\n\\]\n\nand the gauge part of the seam first variation becomes\n\n\\[\n\\langle p_c+C^*p_e,\\delta a_c\\rangle\n+\\langle p_e,D_FC[\\eta]a_c\\rangle.\n\\]\n\nConsequently the gauge component of the selected source law is\n`p_c+C^*p_e=0`, conditional on that trace domain. The area derivative is zero\nin this component; its active normal geometric derivative remains nonzero.\nFor completely independent event/child gauge variations the natural\nconditions instead are `p_e=p_c=0`. These are two different variational\ndomains. Their distinction shows what must be supplied by the existing\nadmissibility/compatibility construction; it does not prescribe a new choice.\n\nFor a supplied linear transport `C` on a finite, **already reduced** canonical\ntrace space, `q_e=C q_c`, `p_c=-C^T p_e` has free variables `(q_c,p_e)`.\nThe parameterization is injective, has half the product dimension, and the\nsum of the two outward-normal Green forms pulls back to zero. This proves\nthe conditional Lagrangian graph lemma. It does not construct the physical\nGauss/BRST reduction or choose the physical `L_s`.\n\n## 3. Attachment work cannot be omitted\n\nFor connection transport, the attachment variation contains the Cartan term\n\n\\["
+      },
+      {
+        "end": 221,
+        "start": 207,
+        "text": "algebraic rank witnesses with their isolated stationarity residuals.\n\nInvalidated: promoting a zero direct area derivative to a zero total\nattachment equation; selecting a trace domain from area density alone;\nusing curvature-only matching or pointwise rank as physical attachment proof.\n\nOpen: the action-owned admissible seam/embedding domain; the complete\nreduced stationarity Jacobian evaluated on physical nonzero traces; and the\ncoupled interface IVP, unique simple first crossing, induced global map,\nspin/bundle transport, and full reset domains. Constant illustrative fields\ndo not select translations, map integrability, or global topology. No\nphysical `F_B`, `L_s`, carrier, or new N12 rank is earned here.\n\nThe next concrete object is\n`ACTION_OWNED_ADMISSIBLE_SEAM_DOMAIN_AND_COMPLETE_REDUCED_STATIONARITY_JACOBIAN_ON_NONZERO_PHYSICAL_TRACES`."
+      }
+    ],
+    "theory/bhsm_owner_authorized_encapsulation_interface_action.md": [
+      {
+        "end": 99,
+        "start": 65,
+        "text": "\nThe event and child sides are two trace copies of the same abstract carrier,\nwith\n\n\\[\n\\iota_{\\rm enc}=(\\iota_e,\\iota_c),\\qquad\n\\iota_e:\\Sigma_{\\rm enc}\\hookrightarrow M_e,\n\\quad\n\\iota_c:\\Sigma_{\\rm enc}\\hookrightarrow M_c.\n\\]\n\nThe event outward conormal and child outward conormal have opposite signs.\nWhere the induced metric is non-null this gives unit normals; otherwise the\ncanonical object is a conormal density.  The retained branch is orientation\npreserving.\n\nThe attachment is a dynamical map\n\n\\[\nF_B:\\Sigma_e\\longrightarrow\\Sigma_c,\n\\]\n\nwith natural sector transport\n\\(C_s(F_B):Q_{c,s}\\to Q_{e,s}\\) and cotangent adjoint\n\\(C_s(F_B)^*\\).  Its variation is represented by\n\n\\[\n\\eta_c=\\delta F_B\\circ F_B^{-1}.\n\\]\n\nFor every nonfermion sector, \\(L_s\\) is a section of the Lagrangian\nGrassmannian bundle of the reduced boundary trace symplectic space.  Its\nvariation lies in \\(T_{L_s}\\operatorname{Lag}(\\mathbb T_s)\\).  It is not\nreplaced by an arbitrary matrix.  The separately owned AE2 fermion graph is\nnot refitted."
+      },
+      {
+        "end": 328,
+        "start": 263,
+        "text": "\nThe carrier equation of the total action is\n\n\\[\n\\operatorname{Pr}_{\\perp}\n\\left([T_{\\rm bulk}\\cdot n]_{e,c}\n+\\mathcal E_\\iota(S_{\\rm enc})\\right)=0.\n\\]\n\nThe tangential embedding variation is the reparametrization/Noether identity,\nnot an independent carrier-selection equation.\n\nThe attachment equation is\n\n\\[\n\\sum_s\\langle\\Pi_{e,s},D_FC_s(F_B)[\\eta]q_{c,s}\\rangle\n+D_FS_{\\rm enc}[\\eta]=0\n\\quad\\text{for every admissible }\\eta,\n\\]\n\nmodulo proven carrier reparametrization and internal gauge/spin redundancy.\n\nThe nonfermion boundary-relation equation is\n\n\\[\n\\operatorname{Pr}_{T_{L_s}\\operatorname{Lag}(\\mathbb T_s)}\nD_{L_s}S_{\\rm enc}=0.\n\\]\n\nThe event and child seam equations are\n\n\\[\n\\Pi_e+\\mathcal E_{q_e}(S_{\\rm enc})=0,\n\\qquad\n\\Pi_c+\\mathcal E_{q_c}(S_{\\rm enc})=0.\n\\]\n\nAll equations must be projected to the Hamiltonian, momentum, Gauss, BRST,\nincidence, FR, and retarded admissible directions.  These formulas identify\nthe equations that a selected density would provide; their values and ranks\ncannot be evaluated while \\(\\mathcal W_s\\) is unknown.\n\n## Active encapsulation differential\n\nCombining the two field seam equations gives, in the retained orientation\nconvention,\n\n\\[\n\\boxed{\n\\Delta_{\\rm enc}\n:=\\Pi_c+C(F_B)^*\\Pi_e\n=-\\left[\n\\mathcal E_{q_c}(S_{\\rm enc})\n+C(F_B)^*\\mathcal E_{q_e}(S_{\\rm enc})\n\\right]\n=:J_{\\rm enc}.}\n\\]\n\nThus \\(\\Delta_{\\rm enc}\\) is derived from the interface action as a reduced\nboundary cotangent source.  Its support is the support of the selected density\nand any explicit environment seam variables.  Its sign is fixed by the\nopposite outward conormals.  Its transformation is the cotangent pullback and\nthe appropriate adjoint gauge covariance.\n\nIts amplitude and physical mode content are not yet derived.  A crucial\nadversarial result is that an action depending only on the passive mismatch"
+      }
+    ],
+    "theory/n12_ae2_child_boundary_hamiltonian_non_supersession.md": [
+      {
+        "end": 44,
+        "start": 1,
+        "text": "# AE2 child-boundary Hamiltonian non-supersession audit\n\nStatus: `AE2_FERMION_DOMAIN_EXTENSION_DOES_NOT_SUPPLY_CHILD_BOUNDARY_HAMILTONIAN`.\n\nThe pre-AE2 child-boundary ownership gate asks whether the retained theory\nowns a differentiable generator of the child time flow,\n\n`delta H_xi^child = integral_boundary(delta Q_xi-i_xi Theta_retained) - delta B_xi^child`.\n\nAE2 changes the fermion configuration space: the event and child traces are\nrestrictions of one global `Spin x G_SM` section glued by the reset lift\n`U_R`.  The graph is maximal isotropic, its two outward-normal Green forms\ncancel, and the independent fermion seam action is exactly\n`S_Sigma,F^AE2=0`.  This closes the fermion self-adjoint transmission domain.\n\nThat domain extension does not add a child-boundary Hamiltonian.  In\nparticular, AE2 introduces no delta-supported seam density, continuous\ncoefficient, physical scale, propagating core field, metric time-velocity\ntransport, or core flux.  It does not select a child gravitational boundary\nensemble or counterterm and does not provide a complete combined-action\ncovariant symplectic potential, Noether charge assembler, or matched-parent\nsubtraction.  The bulk Dirac term may contribute its ordinary bulk matter\nvariation; this is not a new localized seam charge and cannot be relabelled\nas the missing complete `H_xi^child`.\n\nConsequently the earlier ownership gate is not stale under BHSM-AE-2.0.0.\nThe reduced constraint energy remains identically zero, the unreduced ADM\nvelocity form remains indefinite, and no action-owned coercive `S_2` bound is\ncreated.  AE2 therefore neither proves nor disproves a future completed\nboundary charge; it only fails to supply the ingredients needed to evaluate\none now.\n\nThis result does not add another Gate-7 condition.  It closes one possible\ndependency escape: the rank-72 maximal relative-form cotangent cannot be\nreplaced by an AE2 boundary-energy estimate.  The live alternatives remain\nthe signed source-contracted rank-72 Cauchy theorem on the action-owned\nmaximal child domain, or an actual later retained event/canonical stop.\n\nOnly the external Cauchy/birth source is zero.  Every internal event, child,\nreset, gauge, scalar, and contact block remains in the joint operator and is\ncounted once.\n\n`FULL_BHSM_COMPLETE=false`."
+      }
+    ],
+    "theory/n12_event_normal_two_sided_seam_correction.md": [
+      {
+        "end": 51,
+        "start": 1,
+        "text": "# N12 event-normal two-sided seam correction\n\nStatus: `ONE_SIDED_W_ONLY_INITIALIZATION_SUPERSEDED_TWO_SIDED_AE2_SEAM_RESPONSE_OPEN`.\n\nThe event-normal Riccati equation remains an exact transfer identity on each\nregular arm,\n\n`D_s M=L_spatial(Y(s))-zI-M^2`,\n\nwith linearized geometry equation\n\n`D_s(delta M)=delta L-M delta M-delta M M`.\n\nThe physical AE2 event, however, is an internal two-sided transmission seam,\nnot a one-sided terminal Robin wall.  Eliminating the child arm gives\n\n`S_AE2(z)=M_event(z)+U_R^dagger M_child(z) U_R+W_phys`,\n\nso the effective load seen by the event arm is\n\n`B_event(z)=U_R^dagger M_child(z) U_R+W_phys`.\n\nConsequently the physical event-arm Riccati transfer may be initialized only\nafter `B_event(z)` is known.  The earlier statement `M(0,z)=W_phys` omitted\nthe opposite-arm Calderon response and is superseded.  For AE2 fermions the\nlocal surface block is exactly `W_phys=0`, but this makes the effective load\n`U_R^dagger M_child U_R`; it does not make the child response zero.\n\nThe geometry force also requires the complete derivative\n\n`D B_event=(D U_R^dagger) M_child U_R`\n`+U_R^dagger (D M_child) U_R`\n`+U_R^dagger M_child (D U_R)+D W_phys`.\n\nThe nonfermionic lower-bound theorem is unchanged: positivity of the child\nmap and retained Wentzell block closes the zero-threshold sign without their\nfull values.  That order argument does not provide the spectral family and\ngeometry jets needed by the heat-minus-zeta force.\n\nFinite-encapsulation ontology removes infinite nonencapsulating histories\nfrom the particle observable domain, but it does not remove the AE2 internal\nevent-to-child glue.  Formation ends at the event and child decay/evolution\nbegins immediately; both regular traces remain in the action domain.\n\nThe exact missing theorem is therefore the child-arm Calderon map and its\ngeometry/reset-lift jets on the realized finite event-child history, or an\nequivalent joint two-sided finite-history operator solve.  No arbitrary\ncutoff, Robin datum, contour, selector, phase, scale, or new gate is allowed.\n\n`FULL_BHSM_COMPLETE=false`."
+      }
+    ],
+    "theory/n12_gate7_ae2_one_seam_direct_descriptor.md": [
+      {
+        "end": 48,
+        "start": 1,
+        "text": "# Gate-7 AE2 one-seam direct descriptor\n\nStatus: `ONE_SEAM_DIRECT_DESCRIPTOR_AND_SCHUR_EQUIVALENCE_DERIVED`.\n\nThe owner-authorized zero-source rule fixes the external E0 birth trace to\nzero only after the closed action has been differentiated.  On a finite\nformation prefix and a finite C2 Friedrichs core, the most direct Galerkin\nrealization therefore has Dirichlet data at E0 and at the far proof cutoff, but\nit retains the E1/C2 trace as one internal degree of freedom.  If the two arm\nforms are `K_f` and `K_c`, the direct action form is\n\n`K_joint = K_f glued_at_E1 K_c + W_phys at E1`.\n\nThe seam node occurs once.  There is no pre-E0 arm, no `M_E0`, no dynamical\nbirth load, and no separately added seam force.  The reset lift is absorbed\nby expressing the child coefficients in the common AE2 frame before the\nelement forms are assembled.\n\nFor scalar and factorized product-Dirac channels, each element is exactly the\nretained action element already used by the C2 finite-core descriptor.  The\nexternal nodes are eliminated by their fixed Dirichlet traces; this is not an\ninverse of a kinetic or Euler--Dirac block.  The returned descriptor includes\nthe elementwise `D_x K`, `D_h K`, and `D_h M` arrays, so a reverse contraction\ncan act on the actual joint form without first constructing either arm's\nDirichlet-to-Neumann map.\n\nFor any positive shift, ordinary block elimination is only an equivalence\ncheck.  Eliminating the formation and child interiors independently leaves\n\n`S_AE2 = M_f + U_R^dagger M_C2 U_R + W_phys`.\n\nAccordingly,\n\n`det(P_joint) = det(P_f,int) det(P_c,int) det(S_AE2)`.\n\nThe implementation checks this identity with linear solves and never forms a\nmatrix inverse.  The direct and Schur routes are two representations of the\nsame operator and must not be summed.\n\nThis closes the exact finite-core one-seam descriptor type and its local\ncoefficient jets.  It does not select a member of the retained incoming\namplitude family, promote the 1,222-segment C2 edge to a physical endpoint,\nor supply the maximal C2 quotient tail.  The remaining numerical owner is the\nparametric interval realization of the incoming arm together with the\nmaximal graded C2 cotangent and projected Cauchy limit.\n\nNo selector, extra source, scale, recurrence condition, gate, or chord is\nintroduced.  Gate 7 remains open, Gate 8 remains locked, chord 3 remains"
+      }
+    ],
+    "theory/n12_gate7_two_seam_closed_operator_assembly.md": [
+      {
+        "end": 73,
+        "start": 1,
+        "text": "# Gate-7 two-seam closed-operator assembly\n\nStatus: `TWO_SEAM_CLOSED_OPERATOR_TOPOLOGY_AND_SCHUR_EQUIVALENCE_DERIVED`.\n\nThe closed Gate-7 history has two internal seams:\n\n`pre-E0 -- E0/C1 -- compact C1 formation -- E1/C2 -- C2 exterior`.\n\nLet the free compact formation Calder\u00f3n matrix in its `(C1 birth,E1 event)`\nframes be\n\n`M_form=[[M00,M01],[M10,M11]]`.\n\nLet `U0` map the E0 event trace to the C1 birth trace, let `U1` map the E1\nevent trace to the C2 birth trace, and define the two event-frame loads\n\n`L0=M_E0+W0`,\n\n`L1=U1^dagger M_C2 U1+W1`.\n\nAfter eliminating only the three Dirichlet interiors, but retaining both\nphysical seam traces, the exact two-seam block is\n\n`S_01=[[L0+U0^dagger M00 U0, U0^dagger M01],`\n\n`      [M10 U0,                 M11+L1        ]]`.\n\nThe external datum couples linearly only to the E0 trace.  Setting `J_ext=0`\nremoves that linear term; it does not delete the first row and column of\n`S_01`.\n\nBecause `U0` is unitary, define\n\n`B_birth=U0 L0 U0^dagger`,\n\n`H_birth=M00+B_birth`.\n\nBordered elimination of the E0 seam gives\n\n`H_birth X_birth=M01`,\n\n`S_E1=M11-M10 X_birth+L1=M_f^phys+L1`.\n\nConsequently\n\n`det(S_01)=det(L0+U0^dagger M00 U0)*det(S_E1)`.\n\nTogether with the Dirichlet-interior determinants, this is exactly the\ndeterminant of the unreduced closed operator.  It is an evaluation identity,\nnot permission to count the direct and Schur forms separately.  The graded\nheat-minus-zeta functional and its Fr\u00e9chet derivative belong to the complete\noperator; a resolvent/relative-determinant implementation must reproduce that\nsingle functional.\n\nEvery first jet is fixed by the product rule.  In particular,\n\n`D A0=D L0+(D U0^dagger)M00 U0+U0^dagger(D M00)U0+U0^dagger M00(D U0)`,\n\n`D C01=(D U0^dagger)M01+U0^dagger(D M01)`,\n\nand `D(M11+L1)` contains the corresponding `M_C2`, `U1`, and `W1` terms.\nOne reverse cotangent through this two-seam block therefore reaches the E0\nevent arm, compact formation arm, E1 reset, and C2 arm exactly once.\n\nThe operator topology, frame transports, determinant identity, and derivative\nroute are closed.  The numerical family is not: `M_E0` and its first jet are\nmissing, and the existing C2 family remains finite-core with maximal tail\nopen.  No source, seam force, selector, action term, scale, endpoint,\nrecurrence, gate, or chord is introduced.  Gate 7 remains open and\n`FULL_BHSM_COMPLETE=false`."
+      }
+    ]
+  },
+  "status": "TWO_SIDED_SCALAR_OWNER_NOT_YET_DERIVED"
+}
