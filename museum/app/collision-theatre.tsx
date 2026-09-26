@@ -354,12 +354,12 @@ export function CollisionTheatre({ motion }: { motion: boolean }) {
               <div>
                 <small>
                   {item?.real
-                    ? 'Measured dimuon subsystem mass'
+                    ? 'Invariant mass from reconstructed CMS muons'
                     : 'Selected center-of-mass energy'}
                 </small>
                 <strong>
                   {(item?.real ? invariantMass(current) : demo.energy).toFixed(
-                    4,
+                    item?.real ? 3 : 1,
                   )}{' '}
                   GeV
                 </strong>
@@ -410,7 +410,9 @@ export function CollisionTheatre({ motion }: { motion: boolean }) {
               Incoming beams are shown schematically in the screen plane; real
               collider beams run along the detector axis. Track lengths and
               curvature are scaled for visibility. No event rates, branching
-              probabilities or BHSM amplitudes are inferred.{' '}
+              probabilities or BHSM amplitudes are inferred. Demonstration
+              masses use CODATA references; beam energies and angles are chosen
+              inputs. Display decimals do not express detector uncertainty.{' '}
               <a href="https://opendata.cern.ch/record/303">CMS source ↗</a> ·{' '}
               <a href="https://physics.nist.gov/cuu/Constants/Table/allascii.txt">
                 CODATA reference masses ↗

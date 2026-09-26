@@ -182,24 +182,24 @@ export function EngineHero({
       <div className="hero-layout">
         <div className="hero-copy">
           <p className="eyebrow">
-            A prediction engine. A historic possibility.
+            Berger–Hopf Standard Model · scientific collection
           </p>
           <h1 id="potential-title">
-            What if geometry
+            Geometry, matter
             <br />
-            could <em>predict matter?</em>
+            and <em>interaction.</em>
           </h1>
           <p>
-            One geometric origin for the particles and forces of nature. BHSM
-            pursues that possibility with historic stakes: explaining the
-            pattern of matter from a common foundation.
+            BHSM investigates a common geometric description of particles and
+            interactions. Explore its conditional structural results, historical
+            numerical screens and open physical questions.
           </p>
           <a className="enter-museum" href="#exhibits">
             Enter the science ↓
           </a>
           <small>
-            If established and tested, this could reshape our understanding of
-            matter. Full physical derivation remains open.
+            One universal action, many environment-conditioned realizations.
+            Full physical derivation remains open.
           </small>
         </div>
         <div className="hero-engine">
@@ -220,7 +220,7 @@ export function EngineHero({
         </div>
       </div>
       <div className="hero-baseline">
-        <span>THE SCIENCE MUSEUM OF NORMAN P. CARBERRY</span>
+        <span>THE BHSM SCIENTIFIC RECORD</span>
         <span>Explore. Interact. Question.</span>
       </div>
     </section>

@@ -17,7 +17,7 @@ const phases = [
   {
     start: 0,
     title: 'White-hole surface release',
-    text: 'The proposed cycle begins with a global loss of cohesion: the whole cosmic surface releases, rather than one white hole opening at a point.',
+    text: 'In this historical BHSM cyclic interpretation, a global loss of cohesion releases the whole support surface. “White hole” names this conceptual release, not an established spacetime solution.',
   },
   {
     start: 10,
@@ -37,12 +37,12 @@ const phases = [
   {
     start: 68,
     title: 'Accretion and concentration',
-    text: 'In Norman’s proposed enclosure cycle, structure and surface flows concentrate toward black holes. Streams spiral inward as the surrounding web thins.',
+    text: 'In the BHSM enclosure interpretation, structure and surface flows concentrate toward black holes. The inward streams and thinning web illustrate the hypothesis, not a computed cosmic history.',
   },
   {
     start: 89,
     title: 'Evaporation and surface restoration',
-    text: 'The author’s Bubble/Wave picture links black-hole evaporation with restoring surface tension. Dark cores shrink, their halos expand and remaining topography relaxes.',
+    text: 'The historical BHSM Bubble/Wave interpretation links black-hole evaporation with restoration of surface tension. Shrinking cores and expanding halos illustrate this unestablished link; no evaporation flux is calculated.',
   },
   {
     start: 96,
@@ -437,7 +437,7 @@ export function CosmicEnclosure({ motion }: { motion: boolean }) {
         </label>
       </div>
       <label className="media-slider">
-        Cycle position
+        Illustrative cycle position · no physical time scale
         <input
           type="range"
           min="0"
@@ -484,12 +484,14 @@ export function CosmicEnclosure({ motion }: { motion: boolean }) {
           </a>
         </div>
         <div>
-          <h4>Norman’s enclosure picture</h4>
+          <h4>Historical BHSM enclosure interpretation</h4>
           <p>
-            <em>The Prints</em> describes surface modes, harmonics and
-            black-hole evaporation restoring surface tension. The whole-surface
-            white-hole cycle is the author’s proposed extension. The
-            smooth-to-release transition remains unproved.
+            The historical Bubble/Wave picture connects surface modes and
+            harmonics with a hypothesized restoration of support through
+            black-hole evaporation. The whole-surface release cycle extends that
+            interpretation; the smooth-to-release transition remains unproved.
+            It is separate from the late-time cosmology preprint and from
+            action-derived BHSM results.
           </p>
           <p>
             The sphere is an illustrative cross-sectional view of an S³ spatial

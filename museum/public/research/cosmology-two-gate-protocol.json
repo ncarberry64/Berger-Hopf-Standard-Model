@@ -1,0 +1,49 @@
+{
+  "schema": "bhsm-geometry-first-make-or-break-v1",
+  "status": "FROZEN_STRUCTURAL_PROTOCOL_NO_TARGET_DATA_EVALUATION",
+  "scope": "Prospective two-state deterministic and one-channel stochastic cosmological realizations, not all BHSM theories",
+  "supersedes_for_decisive_testing": "bhsm_optical_low_rank_covariance_test_v1.json; retained unchanged as provenance",
+  "gate_a": {
+    "state_dimension": 2,
+    "model": "d = F X_2 + epsilon; fixed source response removed from d before fit",
+    "statistic": "min_X (d-FX)^T Sigma^-1 (d-FX)",
+    "requirements": "N > 2 independent combinations; fixed rank(F)=2; known SPD covariance; fixed kernels and axis",
+    "reference_calibration": "chi-square N-2 only for known Gaussian covariance, fixed design and no fitted nuisances",
+    "rejection_p_less_than": 0.01,
+    "failure_scope": "Reject the specific two-state deterministic realization"
+  },
+  "gate_b": {
+    "texture_channels": 1,
+    "null": "rank(C_topo) <= 1 for a globally finite latent-amplitude response O=Mq",
+    "separability_required": "A single local field/noise type does not imply one global random amplitude after path integration",
+    "primary_statistic": "second largest eigenvalue of unprojected residual covariance in independently fixed dimensionless units, upper tail",
+    "diagnostics": ["all signed eigenvalues", "rho21=lambda2/lambda1 when lambda1>0", "all 2x2 principal minors"],
+    "finite_sample_procedure": "Predeclare full likelihood or selection-aware Monte Carlo/bootstrap, jointly propagating standard/noise covariance uncertainty; refit declared nuisance parameters within each replicate",
+    "implemented_benchmark": "iid Gaussian null with independently fixed standard/noise covariance and one fixed loading; 9999 null draws; seed 20260919; p=(1+exceedances)/(B+1)",
+    "benchmark_limit": "Not a calibration for a fitted composite rank-one null or correlated survey samples",
+    "rejection_p_less_than": 0.01,
+    "psd_projection": "Forbidden for decisive test; preserve signed eigenvalues",
+    "failure_scope": "Reject the minimal one-channel stochastic realization only after nuisance and survey calibration is valid"
+  },
+  "joint_reporting": "Two distinct null hypotheses with separate p<0.01 gates. Statistical independence is not assumed. Either-gate rejection has family-wise size at most 0.02 by the union bound; do not advertise it as a joint 1% test.",
+  "forbidden_rescues": [
+    "independent state or amplitude per observable",
+    "increase state dimension or texture channel count after target inspection",
+    "drop bad bins or observables after inspection",
+    "change kernels or angular axis after inspection",
+    "fit standard covariance to enforce low rank",
+    "PSD clipping or projection to manufacture rank one"
+  ],
+  "higher_channel_policy": "Only a separate action-derived realization frozen before decisive target inspection; never rescue this m=1 test",
+  "required_target_freeze_before_unblinding": [
+    "dataset release IDs, checksums, exposure history and training/target disjointness",
+    "observable definitions, source matching, redshift bins, angular masks, selection functions and missing-data policy",
+    "fixed equatorial ICRS axis RA=211.48 deg Dec=-12.81 deg and coordinate-transform convention",
+    "kernel file hashes, state anchor and basis transform, source subtraction and independent normalization",
+    "standard/noise covariance model, cross-survey covariance, nuisance priors and fitting degrees of freedom",
+    "fixed observable unit scales, covariance estimator and finite-sample simulation procedure",
+    "multiplicity policy, null-calibration coverage and predeclared power study"
+  ],
+  "target_design_status": "NOT_YET_FROZEN; structural preregistration is not an executable observational preregistration",
+  "prior_exposure": "Existing R1/Pantheon+/2MRS results are development or calibration, not new blind targets"
+}
