@@ -1,6 +1,7 @@
 'use client';
 /* oxlint-disable jsx-a11y/prefer-tag-over-role -- Inline SVG needs image semantics; an HTML img cannot contain this interactive drawing. */
 import { useEffect, useRef, useState, type ReactNode } from 'react';
+import { ChildrenOfBHSM } from './children-of-bhsm';
 
 // A shared scene clock stops outside the viewport and while the tab is hidden.
 export function useSceneClock(running: boolean) {
@@ -223,6 +224,7 @@ export function EngineHero({
         <span>THE BHSM SCIENTIFIC RECORD</span>
         <span>Explore. Interact. Question.</span>
       </div>
+      <ChildrenOfBHSM />
     </section>
   );
 }
