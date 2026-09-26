@@ -99,7 +99,6 @@ export default function Home() {
           <a href={REPOSITORY}>Academic repository ↗</a>
         </nav>
       </header>
-      <MuseumSoundtrack />
       <MuseumDeck>
         <EngineHero motion={motion} setMotion={setMotion} />
         <PrototypeScience motion={motion} setMotion={setMotion} />
@@ -350,6 +349,7 @@ export default function Home() {
             <a href={`${SCIENCE}/LICENSE.md`}>License</a>
             <a href="#top">Back to top ↑</a>
           </div>
+          <MuseumSoundtrack />
         </footer>
       </MuseumDeck>
     </main>

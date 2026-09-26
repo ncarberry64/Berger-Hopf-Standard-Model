@@ -123,3 +123,12 @@ Validation: production export, TypeScript, focused lint, 13 Node tests, 13 museu
 Python tests, and all five publication audits passed. Browser checks confirmed
 the desktop diagram, no horizontal page overflow at 390px, the Aether readout,
 and absence of particle-color wording in the Forces exhibit.
+
+## Soundtrack controls at the exit — 26 September 2026
+
+Moved the soundtrack panel into the final Sources & links slide and removed
+its fixed overlay positioning. Audio remains mounted throughout the museum,
+with the existing playlist and interaction-triggered playback. Desktop and
+390px browser checks confirmed continuous playback across slides and working
+play/pause controls. TypeScript, static export, 13 museum Python tests, and
+all five required publication audits passed.
