@@ -2,6 +2,7 @@
 
 import { Music2, Pause, Play, Volume2, VolumeX } from 'lucide-react';
 import { useEffect, useRef, useState } from 'react';
+import { startSoundtrackOnInteraction } from '../lib/start-soundtrack';
 
 const TRACKS = [
   {
@@ -27,29 +28,20 @@ export function MuseumSoundtrack() {
     const firstTrack = audioRefs.current[0];
     if (!firstTrack) return;
 
-    function attemptPlayback() {
-      void firstTrack?.play().catch(() => {
-        setPlaying(false);
-      });
-    }
-
-    function removeInteractionFallback() {
-      window.removeEventListener('pointerdown', startAfterInteraction, true);
-      window.removeEventListener('keydown', startAfterInteraction, true);
-      window.removeEventListener('touchstart', startAfterInteraction, true);
-    }
-
-    function startAfterInteraction() {
-      attemptPlayback();
-      removeInteractionFallback();
-    }
-
-    attemptPlayback();
-    window.addEventListener('pointerdown', startAfterInteraction, true);
-    window.addEventListener('keydown', startAfterInteraction, true);
-    window.addEventListener('touchstart', startAfterInteraction, true);
-
-    return removeInteractionFallback;
+    return startSoundtrackOnInteraction(window, firstTrack, (event) => {
+      // The final-slide player handles its own buttons. Do not start and
+      // toggle playback twice on the same click.
+      if (
+        event.target instanceof Element &&
+        event.target.closest('.soundtrack-controls')
+      )
+        return false;
+      return !(
+        event instanceof KeyboardEvent &&
+        (event.repeat ||
+          ['Shift', 'Control', 'Alt', 'Meta', 'Escape'].includes(event.key))
+      );
+    });
   }, []);
 
   async function play(index: number) {
@@ -105,7 +97,6 @@ export function MuseumSoundtrack() {
           }}
           src={item.source}
           preload="auto"
-          autoPlay={index === 0}
           onPlay={() => setPlaying(true)}
           onPause={() => setPlaying(false)}
           onEnded={() => advancePlaylist(index)}
@@ -131,7 +122,9 @@ export function MuseumSoundtrack() {
         <button
           type="button"
           onClick={togglePlayback}
-          aria-label={playing ? 'Pause museum soundtrack' : 'Play museum soundtrack'}
+          aria-label={
+            playing ? 'Pause museum soundtrack' : 'Play museum soundtrack'
+          }
           aria-pressed={playing}
         >
           {playing ? <Pause aria-hidden="true" /> : <Play aria-hidden="true" />}
@@ -139,7 +132,9 @@ export function MuseumSoundtrack() {
         <button
           type="button"
           onClick={toggleMute}
-          aria-label={muted ? 'Unmute museum soundtrack' : 'Mute museum soundtrack'}
+          aria-label={
+            muted ? 'Unmute museum soundtrack' : 'Mute museum soundtrack'
+          }
           aria-pressed={muted}
         >
           {muted ? (

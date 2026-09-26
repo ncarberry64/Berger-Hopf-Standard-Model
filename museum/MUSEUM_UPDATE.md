@@ -132,3 +132,18 @@ with the existing playlist and interaction-triggered playback. Desktop and
 390px browser checks confirmed continuous playback across slides and working
 play/pause controls. TypeScript, static export, 13 museum Python tests, and
 all five required publication audits passed.
+
+## Music starts with the visit — 26 September 2026
+
+The soundtrack now starts from the first accepted click, completed pointer/touch
+gesture, or keypress. Playback is requested synchronously inside the gesture;
+denied attempts retain the listeners for another interaction. Successful or
+manual playback removes the fallback so subsequent navigation respects Pause.
+Controls remain on the final slide with no floating panel. Removed the ungated
+autoplay attempt so entry and sound begin together on visitor interaction.
+
+Four startup regression tests cover gesture activation, rejected-play retry,
+manual-player exclusion, and cleanup. Browser checks confirmed Enter the science,
+keyboard activation, continued playback, and deliberate pause persistence.
+TypeScript, focused lint, static export, 13 museum Python tests, and all five
+required publication audits passed.
