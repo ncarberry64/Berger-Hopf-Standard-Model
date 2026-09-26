@@ -20,12 +20,12 @@ const regimes = [
   {
     name: 'Electromagnetic',
     color: '#f2c774',
-    description: 'Propagating field regime in greater spacetime support',
+    description: 'Limited surface availability · fine-structure constant',
   },
   {
     name: 'Weak',
     color: '#67e8ef',
-    description: 'Intermediate geometric interaction regime',
+    description: 'Decay and transformation of unstable configurations',
   },
   {
     name: 'Strong',
@@ -35,7 +35,7 @@ const regimes = [
   {
     name: 'Aether / Core',
     color: '#fff4c7',
-    description: 'Condensed mass-energy limit',
+    description: 'Aether · absence of spacetime support',
   },
 ];
 const names = regimes.map((regime) => regime.name);
@@ -238,7 +238,7 @@ export function ForceLines({ motion }: { motion: boolean }) {
             fill="#b6c5d6"
             fontSize="15"
           >
-            Condensed limit · E = mc²
+            No spacetime · BHSM interpretation
           </text>
           <text
             x="475"
@@ -301,8 +301,12 @@ export function ForceLines({ motion }: { motion: boolean }) {
             <strong>{regime.description}</strong>
             <small>
               {chosen === 4
-                ? 'Mass–energy equivalent: E = mc². This relation does not assign a measured core energy.'
-                : 'A qualitative interpretation within stretched spacetime support; no transition energy or coupling is assigned.'}
+                ? 'In this BHSM interpretation, Aether is the lack of spacetime: the underlying core before extended spacetime support. Stretch gives rise to that support. This is a proposed ontology, not an established spacetime solution.'
+                : chosen === 1
+                  ? 'BHSM associates the electromagnetic component freely available on the surface with the fine-structure constant (FSC, α). This diagram does not derive or measure that availability.'
+                  : chosen === 2
+                    ? 'The weak-force display illustrates decay into daughter products; it does not calculate a decay channel or lifetime.'
+                    : 'A qualitative interpretation within stretched spacetime support; no transition energy or coupling is assigned.'}
             </small>
           </div>
           <div>

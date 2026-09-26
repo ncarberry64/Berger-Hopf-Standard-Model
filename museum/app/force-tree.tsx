@@ -36,12 +36,13 @@ export function ForceTree({
           not a measured energy axis or a calculated coupling-merger curve.
         </p>
         <p>
-          Aether names BHSM’s underlying energy–geometry interpretation; it does
-          not introduce a material ether or a preferred frame. A mathematical
-          map from stretch and condensation to physical modes, normalized
-          interactions and scales remains open. E = mc² expresses the
-          conventional mass–energy relation, not a BHSM derivation of core
-          energy.
+          In this BHSM interpretation, Aether denotes the lack of spacetime,
+          before extended spacetime support arises through stretch. It names the
+          underlying energy–geometry interpretation; it does not introduce a
+          material ether or a preferred frame. A mathematical map from stretch
+          and condensation to physical modes, normalized interactions and scales
+          remains open. E = mc² expresses the conventional mass–energy relation,
+          not a BHSM derivation of core energy.
         </p>
         <p>
           <a

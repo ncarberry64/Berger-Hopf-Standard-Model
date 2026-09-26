@@ -24,21 +24,21 @@ const studies = [
   },
   {
     name: 'Electromagnetic',
-    motif: 'A controlled release',
+    motif: 'Limited surface availability',
     color: '#f2c774',
-    text: 'Yellow particles fill the left cone and feed a narrow release.',
+    text: 'A limited electromagnetic component is freely available at the surface.',
     meaning:
-      'A dense cloud of yellow particles circulates inside the left cone while packets move through its narrow connection. This illustrates the proposed geometric release mechanism.',
+      'In this BHSM interpretation, only a limited electromagnetic component is freely available on the surface, corresponding to the fine-structure constant (FSC, α). The circulating interior and narrow release illustrate that proposed relationship.',
     boundary:
-      'The packet is illustrative. Its size does not encode the fine-structure constant, a charge or a derived emission rate.',
+      'The fine-structure constant measures electromagnetic coupling. The proposed surface interpretation is qualitative here; the animation does not calculate α or calibrate surface availability.',
   },
   {
     name: 'Weak force',
-    motif: 'Imbalance & transition',
+    motif: 'Decay & transformation',
     color: '#fc9171',
-    text: 'Spinning particle paths meet and scatter inside the right cone.',
+    text: 'An unstable configuration transforms into decay products.',
     meaning:
-      'Inside the right cone, yellow particles follow spiral paths toward shared collision points and scatter as smaller red particles. This choreographed motion illustrates transitions; it is not a computed collision event.',
+      'The weak-force study illustrates decay: an unstable configuration transforms and releases daughter products. The spinning paths in the right cone provide a visual language for that transition, rather than a simulated collision process.',
     boundary:
       'Weak interactions mediate particle transformations. This geometric analogy does not compute a decay channel, lifetime or interaction range.',
   },
@@ -56,9 +56,9 @@ const studies = [
     name: 'One geometric origin',
     motif: 'The hypersphere',
     color: '#67e8ef',
-    text: 'A yellow interior; surface particles collide into smaller red dots.',
+    text: 'A shared interior and interacting surface modes connect the four studies.',
     meaning:
-      'A yellow particle cloud fills the sphere. A few larger yellow particles move along its surface, meet, and scatter into smaller red particles. The globe is a lower-dimensional visualization of BHSM’s proposed S³ support.',
+      'The sphere brings the interior and surface modes into one geometric picture. Surface interactions release daughter modes. The globe is a lower-dimensional visualization of BHSM’s proposed S³ support.',
     boundary:
       'A common picture is not a completed unification. Physical mode identification, normalized couplings and quantitative predictions remain open.',
   },

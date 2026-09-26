@@ -104,3 +104,22 @@ production build/static export, repeated byte-identical asset synchronization,
 and all five publication audits passed. Browser checks covered deep links,
 picker/buttons, keyboard and horizontal gestures, desktop/390px layouts,
 resize preservation, and the restored force-line controls.
+
+## Children of BHSM and interpretive descriptions — 26 September 2026
+
+Added a responsive, code-drawn Children of BHSM map below the welcome panel:
+proposed core/topology, modes and geometry; the Standard Model particle families;
+and structures from hadrons to galaxies. Its caption distinguishes proposed
+relationships from established categories. The diagram retains the museum palette
+and typography and reflows vertically on phones.
+
+Removed particle-color language from the Forces captions and accessible labels.
+Electromagnetism now describes limited surface availability associated with the
+FSC in the supplied BHSM interpretation; weak motion describes decay. The Aether
+node and its selected readout explicitly describe the lack of spacetime support.
+The conceptual scope and absence of quantitative calibration remain explicit.
+
+Validation: production export, TypeScript, focused lint, 13 Node tests, 13 museum
+Python tests, and all five publication audits passed. Browser checks confirmed
+the desktop diagram, no horizontal page overflow at 390px, the Aether readout,
+and absence of particle-color wording in the Forces exhibit.
