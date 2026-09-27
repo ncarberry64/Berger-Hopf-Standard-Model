@@ -103,15 +103,16 @@ if (!existsSync(sourceRoot)) {
     join(dataRoot, 'sandbox-comparison.json'),
   );
 
-  await cp(
-    join(cmsSourceRoot, 'pr98_cms_engine_validation.png'),
-    join(publicRoot, 'og.png'),
-  );
-
   console.log(
     `Synced ${names.length + cmsNames.length + 1} provenance-tracked museum assets.`,
   );
 }
+
+// Keep the legacy image URL current as well as the versioned sharing URL.
+await cp(
+  join(publicRoot, 'bhsm-museum-social-2026-09-27.png'),
+  join(publicRoot, 'og.png'),
+);
 
 // Vite serves public files by URL; bundled component imports belong in app.
 // Both representations come from the same provenance-bound download snapshot.

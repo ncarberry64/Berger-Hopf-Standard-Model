@@ -29,10 +29,33 @@ export const metadata: Metadata = {
     canonical: './',
   },
   openGraph: {
-    title: 'BHSM Museum | The Scientific Record',
+    type: 'website',
+    url: 'https://ncarberry64.github.io/Berger-Hopf-Standard-Model/',
+    siteName: 'BHSM Museum',
+    title: 'BHSM Museum | Geometry, Matter and Interaction',
     description:
-      'Particle families, shared interactions and testable differences: an accessible public collection with visible data provenance and open scientific limits.',
-    images: ['./og.png'],
+      'Explore interactive exhibits on matter, forces and cosmology. Geometry, evidence and open scientific questions in the Berger–Hopf Standard Model.',
+    images: [
+      {
+        url: 'https://ncarberry64.github.io/Berger-Hopf-Standard-Model/bhsm-museum-social-2026-09-27.png',
+        width: 1200,
+        height: 630,
+        type: 'image/png',
+        alt: 'BHSM Museum — Geometry, matter and interaction, with linked geometric fibers in amber, lavender and cyan.',
+      },
+    ],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'BHSM Museum | Geometry, Matter and Interaction',
+    description:
+      'Explore interactive exhibits on matter, forces and cosmology. Geometry, evidence and open questions.',
+    images: [
+      {
+        url: 'https://ncarberry64.github.io/Berger-Hopf-Standard-Model/bhsm-museum-social-2026-09-27.png',
+        alt: 'BHSM Museum — Geometry, matter and interaction, with linked geometric fibers in amber, lavender and cyan.',
+      },
+    ],
   },
 };
 

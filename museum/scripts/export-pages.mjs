@@ -62,14 +62,29 @@ try {
   await mkdir(pagesRoot, { recursive: true });
   await cp(clientRoot, pagesRoot, { recursive: true });
 
-  const html = sourceHtml
-    .replaceAll('/_next/', './_next/')
-    .replaceAll('http://localhost:3000/og.png', `${publicUrl}og.png`);
+  const html = sourceHtml.replaceAll('/_next/', './_next/');
 
   await writeFile(resolve(pagesRoot, 'index.html'), html, 'utf8');
   await writeFile(resolve(pagesRoot, '.nojekyll'), '', 'utf8');
 
   const written = await readFile(resolve(pagesRoot, 'index.html'), 'utf8');
+  // Social crawlers read this static HTML without running the museum app.
+  const socialImage = `${publicUrl}bhsm-museum-social-2026-09-27.png`;
+  for (const tag of [
+    `property="og:image" content="${socialImage}"`,
+    'property="og:image:width" content="1200"',
+    'property="og:image:height" content="630"',
+    'name="twitter:card" content="summary_large_image"',
+    `name="twitter:image" content="${socialImage}"`,
+  ]) {
+    if (!written.includes(tag))
+      throw new Error(`Missing social metadata: ${tag}`);
+  }
+  const preview = await readFile(
+    resolve(pagesRoot, 'bhsm-museum-social-2026-09-27.png'),
+  );
+  if (preview.readUInt32BE(16) !== 1200 || preview.readUInt32BE(20) !== 630)
+    throw new Error('Social preview must be a 1200 × 630 PNG.');
   for (const expected of [
     'BHSM Museum',
     'Published reference',
