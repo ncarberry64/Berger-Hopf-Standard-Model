@@ -1,0 +1,724 @@
+{
+  "FULL_BHSM_COMPLETE": false,
+  "Gate7_closed": false,
+  "Layer_C_rebound": false,
+  "N12_ADDITIONAL_ENVIRONMENT_BOUNDARY_ACTION": "ABSENT_BY_DECLARED_MODEL",
+  "absence_scope": "Independent additional external/pre-E0 birth-response arm in the declared first N12 model. Not a claim that all environment/internal response vanishes.",
+  "abstract_interface_action_class": "owner_authorized_encapsulation_interface_action declares an unselected density class, not an instantiated N12 W_E; excluded from this frozen action",
+  "base_commit": "b3fc521e80618bf49301fa10e78f4e5b66316cdd",
+  "boundary_solve_run": false,
+  "derivative_7x73_recomputed": false,
+  "distinctions": {
+    "native": "D[Tq,P,Lq^T radial] evaluated on a local state/chart",
+    "on_shell": "Lambda_event/child from complete variational history boundary reaction",
+    "quantum": "D Gamma_closed[P_joint;j_birth] at fixed source, then source=0",
+    "replacement": "D Gamma_heat[P_joint] - D Gamma_SM_zeta; static zeta already in local action"
+  },
+  "exact_first_remaining_identity": "Bind the complete fixed-source joint history boundary reaction and its material derivative to the seven native rows on the declared launch chart, or prove its reduction to those rows. Local action exhaustiveness alone is not that identity.",
+  "external_birth_cauchy_forcing": 0,
+  "extra_environment_law_added": false,
+  "frozen_artifact_SHA256": {
+    "artifacts/flagship_integration/gate7_event_conormal_20260927/arrays.npz": "F19D6F46332E7BCD7B30E59B64D4C72D09AE2DAE57D0037CE8ADA705AE3261CB",
+    "artifacts/flagship_integration/gate7_event_conormal_20260927/report.json": "5B2903198A76905C45ED9061E09229DD054AC4F89C85159A0183E4FB6294ADD0",
+    "artifacts/flagship_integration/gate7_event_conormal_20260927/reproduction.json": "5949BE358C6445E1753860DB018FAF8ABFA73CD978099774575853F8E76411BF",
+    "artifacts/flagship_integration/gate7_launch_response_20260927/arrays.npz": "604545EDB6E8690799BE1CB88C384420FEB29A8F35538759ADC3B22349DD95AB",
+    "artifacts/flagship_integration/gate7_launch_response_20260927/report.json": "BF196C4937341F2C5FAB5F308FEBEDA905C501771426B4D483B5C35F9AE9F6D3",
+    "artifacts/flagship_integration/gate7_launch_response_20260927/reproduction.json": "C00EBA68C255F5A14DC49D6EA1EC94091647581C9E154EBCF73126B820A1E897",
+    "artifacts/flagship_integration/gate7_parent_sectors_20260927/arrays.npz": "1914D9CFB29E699891D709DEE87B9A857F05659EDE7524160A815585C7E6B77C",
+    "artifacts/flagship_integration/gate7_parent_sectors_20260927/report.json": "78B9A02F6B1BEA4185D592EA7655E1964B217003F4A1A8BB308A4B914299DE32",
+    "artifacts/flagship_integration/gate7_parent_sectors_20260927/reproduction.json": "05BA1E1DF24041075AB4FC1F4963CA7EF35FE23C422FEA9BB666FA36F641C18F"
+  },
+  "frozen_tolerances_changed": false,
+  "full_outside_closed_operator_response_exhausted_by_ten_terms": false,
+  "function_provenance": {
+    "scripts/bind_n12_gate7_recentered_launch_response.py": {
+      "SHA256": "A72E541C49A26D4DBD310ACC63FA95380D26FFCB6F35A5C34BB438933F89056F",
+      "functions": {
+        "calculate": {
+          "calls": [
+            "(CENTER / 'uniform_inputs/report.json').read_bytes",
+            "(CHILD / 'report.json').read_bytes",
+            "(Tmid.transpose() * Tmid).solve",
+            "(out / 'report.json').write_bytes",
+            "ArithmeticError",
+            "C.inv",
+            "C.solve",
+            "Path",
+            "T.entries",
+            "T.tolist",
+            "Tmid.transpose",
+            "ValueError",
+            "abs",
+            "abs(v).lower",
+            "amat",
+            "any",
+            "arb",
+            "arb_mat",
+            "block",
+            "bound",
+            "child_report['source_SHA256'].values",
+            "conormal",
+            "delta.entries",
+            "dict",
+            "digest",
+            "ds.tolist",
+            "encoded",
+            "first72.tolist",
+            "float",
+            "flux['jet'].tolist",
+            "identity",
+            "json.dumps",
+            "json.loads",
+            "max",
+            "native5.tolist",
+            "np.array",
+            "np.array_equal",
+            "np.column_stack",
+            "np.linalg.cond",
+            "np.linalg.lstsq",
+            "np.load",
+            "np.vstack",
+            "np.zeros",
+            "pieces.items",
+            "print",
+            "project",
+            "pullback_sector_five",
+            "r.load",
+            "r.mat",
+            "r.save_arrays",
+            "range",
+            "str",
+            "v.contains",
+            "v.mid"
+          ],
+          "end": 165,
+          "start": 67,
+          "text": "def calculate(out):\n    ctx.prec=512\n    paths=[ROOT/FIXED,ROOT/PHYSICAL,ROOT/PARENT,ROOT/CAUSAL,ROOT/RESET,\n        OLD/'arrays.npz',OLD/'report.json',CENTER/'neighborhood/arrays.npz',\n        CENTER/'neighborhood/report.json',CENTER/'uniform_inputs/left.npz',\n        CENTER/'uniform_inputs/report.json',CHILD/'arrays.npz',CHILD/'report.json',\n        e.BASE/'arrays.npz',LAUNCH_OWNER,Path(__file__),Path(A.__file__),Path(r.__file__)]\n    inputs={str(p):digest(p) for p in paths}\n    cert=json.loads((CENTER/'uniform_inputs/report.json').read_bytes())\n    child_report=json.loads((CHILD/'report.json').read_bytes())\n    if cert['status']!='LOCAL_COUPLED_CENTER_NEIGHBORHOOD_CERTIFIED':raise ValueError('current center not certified')\n    if digest(CENTER/'uniform_inputs/left.npz')!=cert['local_derivative_SHA256']['left']:raise ValueError('left jet changed')\n    if digest(CHILD/'arrays.npz')!=child_report['arrays_SHA256']:raise ValueError('native first five changed')\n    if digest(CENTER/'neighborhood/arrays.npz') not in child_report['source_SHA256'].values():raise ValueError('child jet center mismatch')\n    geom=r.load(CENTER/'neighborhood/arrays.npz');local=r.load(CENTER/'uniform_inputs/left.npz')\n    child=r.load(CHILD/'arrays.npz');parent=r.load(e.BASE/'arrays.npz')\n    with np.load(ROOT/FIXED) as z:\n        weights=np.array([arb(float(x)) for x in z['state_weights']],dtype=object)\n        old13=amat(z['projected_states'][13][:,None]);flow_old=z['exact_endpoint_augmented_rates'][13]\n    with np.load(ROOT/PARENT) as z:basis_center=amat(z['projected_states'][13][:,None])\n    with np.load(ROOT/PHYSICAL) as z:T73=z['endpoint_physical_tangent_action'][13];T0=z['endpoint_physical_tangent_action'][0]\n    with np.load(ROOT/RESET) as z:seed=z['projected_C2_parameter_lift']\n    family=np.vstack((np.linalg.lstsq(T0,seed,rcond=None)[0],np.zeros((1,72))))\n    with np.load(ROOT/CAUSAL) as z:\n        for i in range(13):family=z['causal_maps_center'][i]@family\n    qflow=np.linalg.lstsq(T73,flow_old[:98],rcond=None)[0]\n    launch_state=np.column_stack((family[:73],qflow))\n    with np.load(OLD/'arrays.npz') as z:\n        if not np.array_equal(launch_state,z['node_013_launch_state']):raise ValueError('launch reconstruction differs from frozen checkpoint')\n    initial=amat(T73)*amat(launch_state)\n    current=r.mat(geom['left_state_domain'][:98,None]);W=arb_mat(98,98)\n    for i in range(98):W[i,i]=weights[i]\n    old_event=W*r.mat(parent['parent_center'][:,None])\n    delta=old_event-current\n    if not any(not v.contains(0) for v in delta.entries()):raise ValueError('unexpected coincident centers; review binding branch')\n    # Fixed-normal implicit chart, using the existing center's normal coordinates.\n    # This is a chart change, not a physical boundary condition on seven reactions.\n    DC=r.mat(local['DC']);N=r.mat(geom['left_phase_chart'][:98,:25]);C=DC*N\n    project=lambda V:V-N*C.solve(DC*V)\n    first72=project(block(initial,range(98),range(72)))\n    flow=project(r.mat(local['rate'][:98,None]))\n    T=arb_mat([first72.tolist()[i]+[flow[i,0]] for i in range(98)])\n    g=r.mat(local['covector'][None,:]);ds=g*T\n    # Fixed midpoint left inverse avoids squaring interval dependencies in\n    # the ill-conditioned launch Gram inverse. ||I-R0 T||<1 certifies rank.\n    Tmid=arb_mat(98,73,[v.mid() for v in T.entries()])\n    R0=(Tmid.transpose()*Tmid).solve(Tmid.transpose())\n    rankdef=identity(73)-R0*T\n    if bound(rankdef)['approximate_upper']>=1:raise ArithmeticError('launch rank not certified')\n    print('launch reconstructed, centers disjoint, current chart rank certified',flush=True)\n    flux=conormal(geom['left_state_domain'][:98]/weights,weights)\n    native5=block(r.mat(child['derivative_action']),range(5),range(98))\n    native7=arb_mat(native5.tolist()+flux['jet'].tolist())\n    # Native retained owner has only q,v,m arguments and fixed material section.\n    # Its direct seam geometry and moving canonical lift are already in J.\n    explicit_native_shape=arb_mat(7,73)\n    response=native7*T+explicit_native_shape\n    sectors={n:arb_mat(2,98) for n in e.s.NAMES}\n    sectors['adm_kinetic']=block(native5,[3,4],range(98))\n    five,pieces=pullback_sector_five(block(native5,range(3),range(98)),sectors,T,arb_mat(5,73))\n    data=dict(historical_launch_state=amat(launch_state),historical_launch_action=initial,\n        launch_action=T,launch_descriptor=ds,launch_augmented=arb_mat(T.tolist()+ds.tolist()),\n        constraint_derivative=DC,constraint_normal=N,constraint_normal_inverse=C.inv(),\n        chart_left_inverse_proposal=R0,corrected_state_action=current,historical_event_state_action=old_event,\n        center_difference_action=delta,native_event_7x98=native7,response_7x73=response,\n        native_explicit_shape_7x73=explicit_native_shape,\n        response_trace=block(response,range(3),range(73)),\n        response_momentum=block(response,[3,4],range(73)),response_flux=block(response,[5,6],range(73)),\n        flux_replay=flux['replay'],chart_constraint_replay=DC*T,\n        chart_rank_inverse_replay=rankdef,sector_five_replay=five-block(response,range(5),range(73)))\n    for n,piece in pieces.items():data[n+'_pulled_momentum']=piece\n    r.save_arrays(out/'arrays.npz',data)\n    report=dict(status='RECENTERED_LAUNCH_CHART_AND_NATIVE_SEVEN_ROW_COMPOSITION',\n        node=13,historical_event_center_agrees=False,\n        historical_event_to_current=bound(delta),old_node13_to_current=bound(W*old13-current),\n        physical_basis_center_to_current=bound(W*basis_center-current),\n        disjoint_coordinate_lower=max(float(abs(v).lower()) for v in delta.entries()),\n        launch_reconstruction_byte_equal_to_frozen=True,\n        original_launch_condition=float(np.linalg.cond(launch_state)),\n        chart_transport='T72_new=(I-N(DC N)^-1 DC) T72_old; last column is the similarly projected current certified flow',\n        chart_parameter_order='72 inherited reset-family labels, then one current forward-flow phase; NOT 66+7',\n        descriptor_relation='ds=Dlambda_event*T_new in physical units; independent descriptor input absent',\n        chart_rank_certified=73,chart_rank_inverse_defect=bound(rankdef),\n        chart_constraint_replay=bound(DC*T),chart_change=bound(T-initial),\n        current_flow_normal_correction=bound(flow-r.mat(local['rate'][:98,None])),\n        first_five_reused_at_identical_certified_domain=True,\n        conormal_replay={k:bound(flux[k]) for k in ('replay','inverse_defect','lift_replay','dl_replay')},\n        conormal_lift_vs_frozen_child=bound(flux['lift']-r.mat(child['canonical_lift_q'])),\n        response_shape=[7,73],row_order=['trace1','trace2','trace3','momentum1','momentum2','event_conormal1','event_conormal2'],\n        response_norm=bound(response),sector_sum_replay=bound(five-block(response,range(5),range(73))),\n        native_direct_shape_term='Zero: native owner has only retained q,v,m arguments at fixed material chi=pi/4; DLq and state geometry included before composition.',\n        general_environment_frame_shape_jet_inferred=False,\n        material_environment_identity_proved=False,\n        scope='Certified local constraint/fiber chart and native event-functional composition at the corrected node13 box. Recentring does not prove this is a fixed external environment material solution or transport the old parent point to node13.',\n        historical_72_family_uniform_transport_proved=False,\n        boundary_reactions_solved=False,Layer_C_rebound=False,Gate7_closed=False,FULL_BHSM_COMPLETE=False,\n        frozen_tolerances_changed=False,source_SHA256=inputs,arrays_SHA256=digest(out/'arrays.npz'))\n    (out/'report.json').write_bytes(encoded(report))\n    print(json.dumps({k:report[k] for k in ('status','historical_event_to_current','chart_rank_inverse_defect','chart_constraint_replay','conormal_replay')},indent=2))"
+        },
+        "conormal": {
+          "calls": [
+            "(uq + vq).exp",
+            "(uq + wq).exp",
+            "(uq - vq).exp",
+            "A._arb_action_jets",
+            "A._contracted_action",
+            "K.inv",
+            "K.solve",
+            "KL.reshape",
+            "L.transpose",
+            "arb",
+            "arb_mat",
+            "block",
+            "db.transpose",
+            "dict",
+            "dl.transpose",
+            "eta.transpose",
+            "float",
+            "identity",
+            "math.sqrt",
+            "np.asarray",
+            "np.concatenate",
+            "r.arr",
+            "r.attachment",
+            "r.attachment_variation",
+            "r.center.factored.use_ball_factored_integrand",
+            "r.center.sparse.use_optimized_mixed",
+            "r.components",
+            "r.kkt",
+            "r.mat",
+            "r.zeros",
+            "range",
+            "state[0].exp",
+            "sum",
+            "sum((state[74 + j] * sk[j] for j in range(12)), arb(0)).exp"
+          ],
+          "end": 64,
+          "start": 25,
+          "text": "def conormal(state, weights):\n    \"\"\"Outward D(Lq.T radial) at the supplied current state box, in W^-1 columns.\"\"\"\n    U=arb_mat(98,98)\n    for i in range(98):U[i,i]=1/weights[i]\n    with r.center.sparse.use_optimized_mixed(A),r.center.factored.use_ball_factored_integrand(A,state):\n        jets=A._arb_action_jets(state);H=r.mat(jets.hessian_arb)\n        B,signs,t,sech=r.attachment(state[:37]);dB=r.attachment_variation(r.arr(U),signs,t,sech)\n        K,L,target=r.kkt(H,B,0)\n        eye=r.zeros((98,98))\n        for i in range(98):eye[i,i]=1\n        lq,lm=r.components(L,0);legs=np.concatenate((lq+lm,lq),axis=1)\n        third=np.asarray(A._contracted_action(state,[eye[:,:,None,None],legs[:,None,:,None],\n            r.arr(U)[:,None,None,:]],jets.dense_maps),dtype=object)\n    KL=r.zeros((63,2,98))\n    for k in range(98):\n        KL[:37,:,k]=third[:37,:2,k];KL[39:,:,k]=third[74:,2:,k]\n        db=r.mat(dB[:,:,k])\n        KL[:37,:,k]+=r.arr(db.transpose()*block(L,[37,38],range(2)))\n        KL[37:39,:,k]=r.arr(db*block(L,range(37),range(2)))\n    DL=-K.solve(r.mat(KL.reshape(63,196)))\n    sk=[arb((-1)**(j+1)) for j in range(12)]\n    uq=sum((state[1+j]*sk[j] for j in range(12)),arb(0))\n    wq=sum((state[13+j]*signs[j] for j in range(12)),arb(0))\n    vq=sum((state[25+j]*signs[j] for j in range(12)),arb(0))\n    lapse=sum((state[74+j]*sk[j] for j in range(12)),arb(0)).exp()\n    radius=arb(float(A.RADIUS0))*state[0].exp();rt=arb(math.sqrt(2.0))\n    aa=radius*(uq+vq).exp()/rt;bb=radius*(uq-vq).exp()/rt;cc=radius*(uq+wq).exp()\n    pref=3*lapse*aa**3*bb**3/cc\n    raw=arb_mat(63,1);log=arb_mat(1,98);log[0,0]=5\n    for j in range(12):\n        raw[25+j,0]=2*pref*signs[j];log[0,1+j]=5*sk[j]\n        log[0,13+j]=-signs[j];log[0,74+j]=sk[j]\n    draw=raw*log*U;direct=L.transpose()*draw;adjoint=L.transpose()*draw;eta=K.solve(raw)\n    for k in range(98):\n        dl=arb_mat([[DL[i,j*98+k] for j in range(2)] for i in range(63)])\n        dx=dl.transpose()*raw;corr=eta.transpose()*r.mat(KL[:,:,k])\n        for j in range(2):direct[j,k]+=dx[j,0];adjoint[j,k]-=corr[0,j]\n    return dict(value=L.transpose()*raw,jet=direct,lift=L,\n        replay=direct-adjoint,inverse_defect=identity(63)-K*K.inv(),\n        lift_replay=K*L-target,dl_replay=K*DL+r.mat(KL.reshape(63,196)))"
+        }
+      }
+    },
+    "scripts/certify_n12_gate7_accepted_replay_center_outward_74d.py": {
+      "SHA256": "EB4D62734214B4E198B3EF5D3A8244E166871759B8E10FA295FBFBA89ABD2481",
+      "functions": {
+        "_arb_action_jets": {
+          "calls": [
+            "ActionJets",
+            "_a",
+            "_boundary",
+            "_dense_mapping",
+            "_integrand",
+            "_midrad",
+            "accumulate",
+            "bulk_third_terms.append",
+            "enumerate",
+            "inertia_third_terms.append",
+            "len",
+            "np.abs",
+            "np.asarray",
+            "np.asarray(term.d[1], dtype=object).reshape",
+            "np.asarray(term.d[3], dtype=object).reshape",
+            "np.empty",
+            "range"
+          ],
+          "end": 1357,
+          "start": 1292,
+          "text": "def _arb_action_jets(state_values: np.ndarray) -> ActionJets:\n    \"\"\"Outward raw g/H and a correlated local representation of D3S.\"\"\"\n    state = [_a(value) for value in np.asarray(state_values, dtype=object)]\n    bulk_value = _a(0); inertia_value = _a(0)\n    bulk_gradient = [_a(0) for _ in range(STATE)]\n    inertia_gradient = [_a(0) for _ in range(STATE)]\n    bulk_hessian = [[_a(0) for _ in range(STATE)] for _ in range(STATE)]\n    inertia_hessian = [[_a(0) for _ in range(STATE)] for _ in range(STATE)]\n    bulk_third_terms: list[tuple[np.ndarray, np.ndarray, np.ndarray]] = []\n    inertia_third_terms: list[tuple[np.ndarray, np.ndarray, np.ndarray]] = []\n\n    def accumulate(term: Mixed, maps: Sequence[Sequence[tuple[int, arb]]], gradient: list[arb], hessian: list[list[arb]]) -> None:\n        local_gradient = np.asarray(term.d[1], dtype=object).reshape(len(maps))\n        local_hessian = np.asarray(term.d[3], dtype=object).reshape(len(maps), len(maps))\n        for a, mapping in enumerate(maps):\n            for i, ci in mapping:\n                gradient[i] += local_gradient[a] * ci\n        for a, left_map in enumerate(maps):\n            for b, right_map in enumerate(maps):\n                coefficient = local_hessian[a, b]\n                for i, ci in left_map:\n                    for j, cj in right_map:\n                        hessian[i][j] += coefficient * ci * cj\n\n    for node in range(POINTS):\n        term = _integrand(state, node, 2)\n        bulk_value += term.bulk.d[0]; inertia_value += term.inertia.d[0]\n        accumulate(term.bulk, term.maps, bulk_gradient, bulk_hessian)\n        accumulate(term.inertia, term.maps, inertia_gradient, inertia_hessian)\n        mapping = _dense_mapping(term.maps)\n        bulk_third_terms.append((mapping, np.empty(0), np.empty(0)))\n        inertia_third_terms.append((mapping, np.empty(0), np.empty(0)))\n\n    boundary_maps, boundary = _boundary(state, 2)\n    accumulate(boundary, boundary_maps, bulk_gradient, bulk_hessian)\n    boundary_mapping = _dense_mapping(boundary_maps)\n    bulk_third_terms.append((boundary_mapping, np.empty(0), np.empty(0)))\n\n    coefficient = _a(0.25 / (2.0 * HOPF_ORBIT_VOLUME**2))\n    gradient = [\n        bulk_gradient[i] + coefficient * inertia_gradient[i] / inertia_value**2\n        for i in range(STATE)\n    ]\n    hessian = [[\n        bulk_hessian[i][j] + coefficient * (\n            inertia_hessian[i][j] / inertia_value**2\n            - 2 * inertia_gradient[i] * inertia_gradient[j] / inertia_value**3\n        )\n        for j in range(STATE)] for i in range(STATE)\n    ]\n\n    gm, gr = _midrad(np.asarray(gradient, dtype=object))\n    hm, hr = _midrad(np.asarray(hessian, dtype=object))\n\n    igm, igr = _midrad(np.asarray(inertia_gradient, dtype=object))\n    ihm, ihr = _midrad(np.asarray(inertia_hessian, dtype=object))\n\n    return ActionJets(\n        np.asarray(gradient, dtype=object), np.asarray(hessian, dtype=object),\n        np.asarray(gm, dtype=float), np.asarray(gr + np.abs(gm - np.asarray(gm, dtype=float)), dtype=float),\n        np.asarray(hm, dtype=float), np.asarray(hr + np.abs(hm - np.asarray(hm, dtype=float)), dtype=float),\n        bulk_third_terms, inertia_third_terms, inertia_value,\n        np.asarray(igm, dtype=float), np.asarray(igr, dtype=float),\n        np.asarray(ihm, dtype=float), np.asarray(ihr, dtype=float),\n        [item[0] for item in bulk_third_terms[:POINTS]],\n    )"
+        },
+        "_boundary": {
+          "calls": [
+            "(A ** 2 + B ** 2).positive_power",
+            "_local_variables",
+            "_mapped",
+            "_sparse",
+            "a.exp",
+            "b.exp",
+            "local_legs.append",
+            "math.sqrt",
+            "n.exp",
+            "np.arange",
+            "np.asarray",
+            "np.zeros",
+            "standard_model_casimir_coefficient",
+            "sum",
+            "tuple"
+          ],
+          "end": 365,
+          "start": 341,
+          "text": "def _boundary(\n    state: Sequence[arb], directions: int,\n    raw_legs: Sequence[np.ndarray] | None = None,\n) -> tuple[tuple[list[tuple[int, arb]], ...], Mixed]:\n    sk = (-1.0) ** np.arange(1, 13)\n    sj = (-1.0) ** np.arange(12)\n    la = np.zeros(QDIM); lb = np.zeros(QDIM); ln = np.zeros(MDIM)\n    la[0] = lb[0] = 1.0\n    la[1:13] = lb[1:13] = sk\n    la[25:37] = sj; lb[25:37] = -sj; ln[:12] = sk\n    maps = (_sparse(la), _sparse(lb), _sparse(ln, 2 * QDIM))\n    values = tuple(_mapped(state, m) for m in maps)\n    local_legs = None\n    if raw_legs is not None:\n        local_legs = []\n        for leg in raw_legs:\n            local_legs.append(np.asarray([\n                sum(coef * leg[index] for index, coef in mapping)\n                for mapping in maps\n            ], dtype=object))\n    a, b, n = _local_variables(values, directions, local_legs)\n    A = RADIUS0 * a.exp() / math.sqrt(2.0)\n    B = RADIUS0 * b.exp() / math.sqrt(2.0)\n    r4 = A * B / (A**2 + B**2).positive_power(0.5)\n    return maps, -standard_model_casimir_coefficient() * n.exp() / r4"
+        },
+        "_contracted_action": {
+          "calls": [
+            "Mixed.constant",
+            "_a",
+            "_boundary",
+            "_integrand",
+            "float",
+            "len",
+            "local_legs.append",
+            "np.asarray",
+            "np.flatnonzero",
+            "range",
+            "rows.append"
+          ],
+          "end": 430,
+          "start": 405,
+          "text": "def _contracted_action(\n    state_values: np.ndarray, raw_legs: Sequence[np.ndarray],\n    dense_maps: Sequence[np.ndarray],\n) -> object:\n    \"\"\"Outward retained-action mixed contraction in fixed global legs.\"\"\"\n    state = [_a(value) for value in np.asarray(state_values, dtype=object)]\n    directions = len(raw_legs)\n    bulk = Mixed.constant(0, directions); inertia = Mixed.constant(0, directions)\n    for node in range(POINTS):\n        mapping = dense_maps[node]\n        local_legs: list[np.ndarray] = []\n        for leg in raw_legs:\n            leg_array = np.asarray(leg, dtype=object)\n            rows = []\n            for local in range(LOCAL):\n                total: object = _a(0)\n                for column in np.flatnonzero(mapping[local]):\n                    total = total + _a(float(mapping[local, column])) * leg_array[column]\n                rows.append(total)\n            local_legs.append(np.asarray(rows, dtype=object))\n        term = _integrand(state, node, directions, local_legs)\n        bulk += term.bulk; inertia += term.inertia\n    action = bulk - (0.25 / (2.0 * HOPF_ORBIT_VOLUME**2)) / inertia\n    _, boundary = _boundary(state, directions, raw_legs)\n    action += boundary\n    return action.d[-1]"
+        },
+        "_integrand": {
+          "calls": [
+            "LocalTerm",
+            "_local_variables",
+            "_mapped",
+            "_sparse",
+            "array.copy",
+            "float",
+            "log_a.exp",
+            "log_b.exp",
+            "log_c.exp",
+            "log_n.exp",
+            "math.cos",
+            "math.sin",
+            "math.tan",
+            "np.zeros",
+            "range",
+            "tuple",
+            "zip"
+          ],
+          "end": 338,
+          "start": 274,
+          "text": "def _integrand(\n    state: Sequence[arb], node: int, directions: int,\n    leg_values: Sequence[np.ndarray] | None = None,\n) -> LocalTerm:\n    chi, quadrature, ks, js, cos_k, sin_k, cos_j, sin_j = _BASIS\n    coordinate = float(chi[node])\n    window = math.sin(2.0 * coordinate) ** 2\n    window_prime = 2.0 * math.sin(4.0 * coordinate)\n    qmaps = [np.zeros(QDIM) for _ in range(6)]\n    logc, loga, logb, cp, ap, bp = qmaps\n    logc[0] = loga[0] = logb[0] = 1.0\n    logc[1:13] = loga[1:13] = logb[1:13] = cos_k[:, node]\n    logc[13:25] = window * cos_j[:, node]\n    loga[25:37] = window * cos_j[:, node]\n    logb[25:37] = -window * cos_j[:, node]\n    up = -4.0 * ks * sin_k[:, node]\n    wp = window_prime * cos_j[:, node] + window * (-4.0 * js * sin_j[:, node])\n    cp[1:13] = ap[1:13] = bp[1:13] = up\n    cp[13:25] = wp\n    ap[25:37] = wp\n    bp[25:37] = -wp\n    vmaps = [array.copy() for array in (logc, loga, logb)]\n    mmaps = [np.zeros(MDIM) for _ in range(4)]\n    logn, nprime, beta, betaprime = mmaps\n    logn[:12] = cos_k[:, node]\n    nprime[:12] = -4.0 * ks * sin_k[:, node]\n    beta[12:] = math.sin(4.0 * coordinate) * cos_j[:, node]\n    betaprime[12:] = (\n        4.0 * math.cos(4.0 * coordinate) * cos_j[:, node]\n        + math.sin(4.0 * coordinate) * (-4.0 * js * sin_j[:, node])\n    )\n    maps = tuple(\n        [_sparse(x) for x in qmaps]\n        + [_sparse(x, QDIM) for x in vmaps]\n        + [_sparse(x, 2 * QDIM) for x in mmaps]\n    )\n    constants = (\n        0.0, 0.0, 0.0, 0.0, -math.tan(coordinate),\n        1.0 / math.tan(coordinate), 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0,\n    )\n    local_values = tuple(_mapped(state, m, c) for m, c in zip(maps, constants))\n    z = _local_variables(local_values, directions, leg_values)\n    log_c, log_a, log_b, cpj, apj, bpj, lc, la, lb, log_n, npj, bet, betp = z\n    C = RADIUS0 * log_c.exp()\n    A = (RADIUS0 * math.cos(coordinate)) * log_a.exp()\n    B = (RADIUS0 * math.sin(coordinate)) * log_b.exp()\n    N = log_n.exp()\n    hc = (lc - bet * cpj - betp) / N\n    ha = (la - bet * apj) / N\n    hb = (lb - bet * bpj) / N\n    adm = hc**2 + 3 * ha**2 + 3 * hb**2 - (hc + 3 * ha + 3 * hb)**2\n    xeta = 1 / C**2 + 3 * math.cos(coordinate) ** 2 / A**2 + 3 * math.sin(coordinate) ** 2 / B**2 - (-bet / N)**2\n    fixed = apj**2 + bpj**2 + 3 * apj * bpj\n    volume = C * A**3 * B**3\n    spatial = A**3 * B**3\n    sigma = -0.5 + 2.0 * coordinate / math.pi - math.sin(4.0 * coordinate) / (2.0 * math.pi)\n    localization = 1.0 - 4.0 * sigma**2\n    kappa0 = 15.0 * 5.0 ** (1.0 / 3.0) / 4.0\n    gravity = 3 * spatial / C * N * (npj * (apj + bpj) + fixed)\n    algebraic = N * volume * (\n        3 / A**2 + 3 / B**2 - 0.5 * kappa0\n        - localization * (0.5 * xeta + 0.125 * xeta**4) + 0.5 * adm\n    )\n    weight = float(quadrature[node])\n    return LocalTerm(maps, local_values, weight * (gravity + algebraic), weight * volume * localization * (1 + xeta**3) / N)"
+        }
+      }
+    },
+    "scripts/derive_n12_gate7_parent_sector_jets.py": {
+      "SHA256": "6D83DE29E02318226B17FCC062513DC7BAE67EDEE0B26146653862DDB8641795",
+      "functions": {
+        "calculate": {
+          "calls": [
+            "(gsum - g).entries",
+            "(hsum - H).entries",
+            "(out / 'report.json').write_bytes",
+            "(total_dp - direct).entries",
+            "(trace * U).tolist",
+            "A._arb_action_jets",
+            "A._boundary",
+            "A._contracted_action",
+            "A._integrand",
+            "A.standard_model_casimir_coefficient",
+            "ArithmeticError",
+            "K.inv",
+            "K.solve",
+            "KL.reshape",
+            "L.transpose",
+            "Path",
+            "SOURCE.with_suffix",
+            "SOURCE.with_suffix('.json').read_bytes",
+            "ValueError",
+            "accumulate",
+            "all",
+            "arb",
+            "arb(A.standard_model_casimir_coefficient()).fmpq",
+            "arb_mat",
+            "block",
+            "block(H * U, range(37, 74), range(98)).tolist",
+            "block(g, range(37, 74), [0]).tolist",
+            "block(grads[name], range(37, 74), [0]).tolist",
+            "block(hess[name] * U, range(37, 74), range(98)).tolist",
+            "bound",
+            "db.transpose",
+            "dict",
+            "digest",
+            "dl.transpose",
+            "encoded",
+            "eta.transpose",
+            "float",
+            "grads.values",
+            "hess.values",
+            "identity",
+            "ig.transpose",
+            "json.dumps",
+            "json.loads",
+            "list",
+            "local_sectors",
+            "momenta.values",
+            "momentum_jets.values",
+            "np.array",
+            "np.asarray",
+            "np.concatenate",
+            "np.full",
+            "np.load",
+            "print",
+            "r.arr",
+            "r.attachment",
+            "r.attachment_variation",
+            "r.center.action_value",
+            "r.center.factored.use_ball_factored_integrand",
+            "r.center.sparse.use_optimized_mixed",
+            "r.components",
+            "r.kkt",
+            "r.mat",
+            "r.save_arrays",
+            "r.zeros",
+            "range",
+            "replays.items",
+            "str",
+            "sum",
+            "total_dp.tolist",
+            "values.values",
+            "values[name].mid",
+            "values[name].mid().fmpq",
+            "x.contains",
+            "zip"
+          ],
+          "end": 168,
+          "start": 51,
+          "text": "def calculate(out):\n    ctx.prec=512\n    meta=json.loads(SOURCE.with_suffix('.json').read_bytes())\n    if digest(SOURCE)!=meta['data']['SHA256']:raise ValueError('parent/reset packet changed')\n    with np.load(SOURCE) as f:\n        state=np.array([arb(float(v)) for v in f['center_state'][:98]],dtype=object)\n        weights=np.array([arb(float(v)) for v in f['state_weights']],dtype=object)\n        stored=f['analytic_full_reset_jacobian']\n        normq=f['normalization_coordinates']\n    values={name:arb(0) for name in NAMES}\n    grads={name:arb_mat(98,1) for name in NAMES}\n    hess={name:arb_mat(98,98) for name in NAMES}\n    iv=arb(0);ig=arb_mat(98,1);ih=arb_mat(98,98)\n    U=arb_mat(98,98)\n    for i in range(98):U[i,i]=1/weights[i]\n    with r.center.sparse.use_optimized_mixed(A):\n        for node in range(A.POINTS):\n            base=A._integrand(state,node,0)\n            terms,inertia=local_sectors(base,node)\n            for name,term in zip(NAMES[:6],terms):\n                v,g,h=accumulate(term,base.maps)\n                values[name]+=v;grads[name]+=g;hess[name]+=h\n            v,g,h=accumulate(inertia,base.maps);iv+=v;ig+=g;ih+=h\n        coefficient=arb(0.25/(2*A.HOPF_ORBIT_VOLUME**2))\n        values['hopf_inertia']=-coefficient/iv\n        grads['hopf_inertia']=coefficient*ig/iv**2\n        hess['hopf_inertia']=coefficient*(ih/iv**2-2*ig*ig.transpose()/iv**3)\n        maps,boundary=A._boundary(state,2);v,g,h=accumulate(boundary,maps)\n        # Exact shares of the ALREADY ROUNDED total 59/30 coefficient.\n        # They reproduce the frozen action rather than silently rationalizing it.\n        shares=(arb(1)/118,arb(33)/59,arb(51)/118)\n        for name,share in zip(NAMES[7:],shares):\n            values[name]=v*share;grads[name]=share*g;hess[name]=share*h\n        print('parent sector values and Hessians assembled',flush=True)\n        with r.center.factored.use_ball_factored_integrand(A,state):\n            owned=A._arb_action_jets(state)\n            H=r.mat(owned.hessian_arb);g=r.mat(owned.gradient_arb[:,None])\n            B,signs,t,sech=r.attachment(state[:37])\n            dB=r.attachment_variation(r.arr(U),signs,t,sech)\n            K,L,target=r.kkt(H,B,37)\n            eye=np.full((98,98),arb(0),dtype=object)\n            for i in range(98):eye[i,i]=arb(1)\n            lv,lm=r.components(L,37);legs=np.concatenate((lv+lm,lv),axis=1)\n            T=np.asarray(A._contracted_action(state,[eye[:,:,None,None],legs[:,None,:,None],r.arr(U)[:,None,None,:]],owned.dense_maps),dtype=object)\n            KL=r.zeros((63,2,98))\n            for k in range(98):\n                KL[:37,:,k]=T[37:74,:2,k];KL[39:,:,k]=T[74:,2:,k]\n                db=r.mat(dB[:,:,k])\n                KL[:37,:,k]+=r.arr(db.transpose()*block(L,[37,38],range(2)))\n                KL[37:39,:,k]=r.arr(db*block(L,range(37),range(2)))\n            DL=-K.solve(r.mat(KL.reshape(63,196)))\n            momenta={};momentum_jets={}\n            for name in NAMES:\n                gv=arb_mat(block(grads[name],range(37,74),[0]).tolist()+[[arb(0)]]*26)\n                eta=K.solve(gv)\n                gu=arb_mat(block(hess[name]*U,range(37,74),range(98)).tolist()+[[arb(0)]*98]*26)\n                momenta[name]=L.transpose()*gv\n                deriv=L.transpose()*gu\n                for k in range(98):\n                    corr=eta.transpose()*r.mat(KL[:,:,k])\n                    for j in range(2):deriv[j,k]-=corr[0,j]\n                momentum_jets[name]=deriv\n            total_mom=sum(momenta.values(),arb_mat(2,1))\n            total_dp=sum(momentum_jets.values(),arb_mat(2,98))\n            gv=arb_mat(block(g,range(37,74),[0]).tolist()+[[arb(0)]]*26)\n            gu=arb_mat(block(H*U,range(37,74),range(98)).tolist()+[[arb(0)]*98]*26)\n            direct=L.transpose()*gu\n            for k in range(98):\n                dl=arb_mat([[DL[i,j*98+k] for j in range(2)] for i in range(63)])\n                contribution=dl.transpose()*gv\n                for j in range(2):direct[j,k]+=contribution[j,0]\n    gsum=sum(grads.values(),arb_mat(98,1));hsum=sum(hess.values(),arb_mat(98,98))\n    # Raw point value independently recomputed through the unchanged action.\n    fullvalue=r.center.action_value(state)\n    trace=arb_mat(3,98)\n    for i in range(3):trace[i,0]=1\n    for j in range(12):\n        for i in range(3):trace[i,1+j]=(-1)**(j+1)\n        trace[0,13+j]=(-1)**j;trace[1,25+j]=(-1)**j;trace[2,25+j]=-(-1)**j\n    native5=arb_mat((trace*U).tolist()+total_dp.tolist())\n    data=dict(parent_center=state,weights=weights,native_trace_momentum_jet=native5,\n        common_canonical_lift=L,common_lift_derivative=DL,canonical_K=K,\n        gradient_sum=gsum,hessian_sum=hsum,gradient_owner=g,hessian_owner=H)\n    ledger={}\n    for name in NAMES:\n        data[name+'_value']=np.array([values[name]],dtype=object)\n        data[name+'_gradient']=grads[name];data[name+'_hessian']=hess[name]\n        data[name+'_momentum']=momenta[name];data[name+'_momentum_jet']=momentum_jets[name]\n        ledger[name]=dict(value_mid=str(values[name].mid().fmpq()),value_approx=float(values[name].mid()),\n            gradient_norm=bound(grads[name]),hessian_norm=bound(hess[name]),\n            canonical_momentum_jet_norm=bound(momentum_jets[name]))\n    r.save_arrays(out/'arrays.npz',data)\n    replays=dict(gradient=bound(gsum-g),hessian=bound(hsum-H),\n        value=bound(arb_mat([[sum(values.values(),arb(0))-fullvalue]])),\n        momentum_value=bound(total_mom-L.transpose()*gv),momentum_derivative=bound(total_dp-direct),\n        canonical_inverse=bound(identity(63)-K*K.inv()))\n    if not all(x.contains(0) for x in (gsum-g).entries()+(hsum-H).entries()+(total_dp-direct).entries()):\n        raise ArithmeticError('sector sum fails interval replay')\n    sources=(Path(__file__),Path(r.__file__),Path(A.__file__),SOURCE,SOURCE.with_suffix('.json'),\n        Path(r.center.sparse.__file__),Path(r.center.factored.__file__),\n        r.ROOT/'src/bhsm/interface/aether_full_reset_action_jacobian.py',\n        r.ROOT/'src/bhsm/interface/aether_m4_standard_model_zeta_backreaction_v15_51.py')\n    report=dict(status='N12_PARENT_NATIVE_SECTOR_JETS_AND_FIVE_ROW_RESPONSE_DERIVED',\n        point_source=str(SOURCE),point_key='center_state[:98]',\n        coordinate_domain='Exact stored binary64 parent/event point; 98 raw state coordinates; derivative columns W^-1. Not a uniform parent history or interval-13 seam image.',\n        sector_ledger=ledger,sector_names=list(NAMES),sector_split_is_algebraic_not_independent_energy_decomposition=True,\n        boundary_shares=dict(scalar='1/118',vector='33/59',Weyl='51/118'),\n        frozen_total_Casimir=str(arb(A.standard_model_casimir_coefficient()).fmpq()),\n        same_total_canonical_lift_for_all_sectors=True,independent_sector_inverse_used=False,\n        native_response_shape=[5,98],native_response_rows=['trace_1','trace_2','trace_3','canonical_momentum_1','canonical_momentum_2'],\n        environment_physical_inputs=0,\n        missing_for_7x73=['owned fixed-environment seam embedding/normal/measure jet with 73 p/q columns',\n            'two dynamic-flux material jets on that same environmental realization; radial flux alone is not their replacement'],\n        on_shell_environment_Hessian_derived=False,environment_response_7x73_derived=False,\n        replay=replays,source_SHA256={str(p):digest(p) for p in sources},arrays_SHA256=digest(out/'arrays.npz'),\n        Gate7_closed=False,FULL_BHSM_COMPLETE=False,tolerances_changed=False)\n    (out/'report.json').write_bytes(encoded(report))\n    print(json.dumps({'status':report['status'],'replay':{k:v['approximate_upper'] for k,v in replays.items()}},indent=2))"
+        },
+        "local_sectors": {
+          "calls": [
+            "A._local_variables",
+            "float",
+            "log_a.exp",
+            "log_b.exp",
+            "log_c.exp",
+            "log_n.exp",
+            "math.cos",
+            "math.sin"
+          ],
+          "end": 39,
+          "start": 24,
+          "text": "def local_sectors(base,node):\n    \"\"\"Algebraic split of the unchanged _integrand, with its exact float constants.\"\"\"\n    x=float(A._BASIS[0][node]);z=A._local_variables(base.values,2,None)\n    log_c,log_a,log_b,cp,ap,bp,lc,la,lb,log_n,np_,beta,betap=z\n    C=A.RADIUS0*log_c.exp();aa=(A.RADIUS0*math.cos(x))*log_a.exp()\n    bb=(A.RADIUS0*math.sin(x))*log_b.exp();N=log_n.exp()\n    hc=(lc-beta*cp-betap)/N;ha=(la-beta*ap)/N;hb=(lb-beta*bp)/N\n    adm=hc**2+3*ha**2+3*hb**2-(hc+3*ha+3*hb)**2\n    X=1/C**2+3*math.cos(x)**2/aa**2+3*math.sin(x)**2/bb**2-(-beta/N)**2\n    sig=-0.5+2*x/math.pi-math.sin(4*x)/(2*math.pi)\n    loc=1-4*sig**2;kappa=15*5**(1/3)/4\n    vol=C*aa**3*bb**3;NV=N*vol;w=float(A._BASIS[1][node])\n    terms=(3*aa**3*bb**3/C*N*(np_*(ap+bp)+ap**2+bp**2+3*ap*bp),\n           NV*(3/aa**2+3/bb**2),NV*(-0.5*kappa),\n           -NV*loc*(0.5*X),-NV*loc*(0.125*X**4),NV*(0.5*adm))\n    return [w*t for t in terms], w*vol*loc*(1+X**3)/N"
+        }
+      }
+    },
+    "src/bhsm/interface/ae2_covariant_seam_response.py": {
+      "SHA256": "56CF248FD9EC2F7FBB39AC5BD44052EBE37A257A80EF5BBF1665CFEFA259093A",
+      "functions": {
+        "covariant_effective_event_load": {
+          "calls": [
+            "ValueError",
+            "_square",
+            "_unitary",
+            "lift.conj"
+          ],
+          "end": 38,
+          "start": 26,
+          "text": "def covariant_effective_event_load(\n    child_calderon: np.ndarray,\n    wentzell: np.ndarray,\n    reset_lift: np.ndarray,\n) -> np.ndarray:\n    \"\"\"Return ``U_R^* M_child U_R + W_phys`` in the event frame.\"\"\"\n\n    child = _square(child_calderon, \"child Calderon response\")\n    boundary = _square(wentzell, \"Wentzell response\")\n    lift = _unitary(reset_lift)\n    if child.shape != boundary.shape or child.shape != lift.shape:\n        raise ValueError(\"seam matrices must have one square shape\")\n    return lift.conj().T @ child @ lift + boundary"
+        },
+        "covariant_effective_event_load_jet": {
+          "calls": [
+            "ValueError",
+            "_square",
+            "_unitary",
+            "lift.conj"
+          ],
+          "end": 59,
+          "start": 41,
+          "text": "def covariant_effective_event_load_jet(\n    child_covariant_jet: np.ndarray,\n    wentzell_covariant_jet: np.ndarray,\n    reset_lift: np.ndarray,\n) -> np.ndarray:\n    \"\"\"Return the covariant jet of the effective event load.\n\n    The AE2 reset lift is a transition map of one global bundle.  With the\n    compatible parameter-space connection ``nabla U_R=0``.  Ordinary frame\n    derivatives of ``U_R`` are therefore absorbed into the covariant child\n    response jet rather than treated as an independent physical source.\n    \"\"\"\n\n    child = _square(child_covariant_jet, \"child covariant jet\")\n    boundary = _square(wentzell_covariant_jet, \"Wentzell covariant jet\")\n    lift = _unitary(reset_lift)\n    if child.shape != boundary.shape or child.shape != lift.shape:\n        raise ValueError(\"seam jet matrices must have one square shape\")\n    return lift.conj().T @ child @ lift + boundary"
+        },
+        "covariant_seam_response": {
+          "calls": [
+            "ValueError",
+            "_square",
+            "covariant_effective_event_load"
+          ],
+          "end": 74,
+          "start": 62,
+          "text": "def covariant_seam_response(\n    event_calderon: np.ndarray,\n    child_calderon: np.ndarray,\n    wentzell: np.ndarray,\n    reset_lift: np.ndarray,\n) -> np.ndarray:\n    \"\"\"Return ``M_event + U_R^* M_child U_R + W_phys``.\"\"\"\n\n    event = _square(event_calderon, \"event Calderon response\")\n    load = covariant_effective_event_load(child_calderon, wentzell, reset_lift)\n    if event.shape != load.shape:\n        raise ValueError(\"event response must match the effective load\")\n    return event + load"
+        }
+      }
+    },
+    "src/bhsm/interface/aether_cross_resolution_reconnaissance_v21_35.py": {
+      "SHA256": "7B284BA9A777CC8CDEB375CB9B6DF1D9F697FF416FC11F79C1FC07E109D414ED",
+      "functions": {
+        "event_to_child_on_shell_calderon_interface": {
+          "calls": [
+            "child_jacobi_radial_principal_symbol_audit",
+            "weighted_pole_attachment_principal_estimate"
+          ],
+          "end": 11139,
+          "start": 11025,
+          "text": "def event_to_child_on_shell_calderon_interface() -> dict[str, Any]:\n    \"\"\"Reconcile the validated local child roots with the required full BVP.\"\"\"\n\n    missing = (\n        \"PROVE_OR_MEASURE_THE_N_UNIFORM_POSITIVE_DURATION_NORMAL_\"\n        \"CLOSED_RANGE_BOUND_AND_WEAK_CONORMAL_CALDERON_GRAPH_\"\n        \"CONVERGENCE_ON_THE_ACTION_ENERGY_COHERENT_BRANCH\"\n    )\n    principal_symbol = child_jacobi_radial_principal_symbol_audit()\n    weighted_principal = weighted_pole_attachment_principal_estimate()\n    return {\n        \"classification\": (\n            \"VARIATIONAL_EVENT_TO_ON_SHELL_CHILD_WEAK_CONORMAL_CALDERON_\"\n            \"INTERFACE_DERIVED;_N_UNIFORM_NORMAL_CLOSED_RANGE_AND_GRAPH_\"\n            \"CONVERGENCE_ESTIMATE_OPEN\"\n        ),\n        \"retained_total_functional\": (\n            \"Gamma_total=Gamma_pre[z]+Gamma_child[Phi]+\"\n            \"Gamma_match[Gamma0_event(z),Gamma0_child(Phi);I_event,I_env,B_SM]\"\n        ),\n        \"on_shell_child_relation\": {\n            \"definition\": (\n                \"C_child={(Gamma0(Phi),Gamma1(Phi)):delta_Gamma_child(Phi)=0,_\"\n                \"CONSTRAINTS=0,_POLE_AND_TRANSMISSION_DOMAIN,_L_eta>0}\"\n            ),\n            \"event_trace_matching\": \"Gamma0_child=Gamma0_event\",\n            \"canonical_momentum_matching\": \"p_child=p_event\",\n            \"dynamic_flux_balance\": (\n                \"Gamma1_event+Gamma1_child+D_t(p_child)-partial_q(L_child)=0\"\n            ),\n            \"topology_bundle_and_FR_block\": (\n                \"THE_EXISTING_I_event_I_env_B_SM_SUPERSELECTION_BLOCK\"\n            ),\n            \"staticity_zero_momentum_or_zero_flux_required\": False,\n        },\n        \"validated_finite_N_local_map\": {\n            \"formula\": (\n                \"F_N=(TRACE_3,CONSTRAINTS_(2N+1),MOMENTUM_2,DYNAMIC_FLUX_2)\"\n            ),\n            \"role\": (\n                \"CONSTRAINT_CONSISTENT_LOCAL_CAUCHY_GERM_INTERSECTION_WITH_\"\n                \"THE_EVENT_BOUNDARY_RELATION\"\n            ),\n            \"N3_N4_N5_roots_and_positive_duration_persistence\": True,\n            \"is_already_a_global_function_space_child_BVP\": False,\n            \"is_sufficient_to_prove_a_single_valued_return_map\": False,\n        },\n        \"full_BVP_solution_and_return_map\": {\n            \"solution\": (\n                \"Phi_e=SolveChildBVP[Gamma0_event(e),p_event(e),I_event,I_env,B_SM]\"\n            ),\n            \"calderon_output\": \"Lambda_child(e)=Gamma1(Phi_e)\",\n            \"return_output\": (\n                \"R_return(e)=Trace_return(Phi_e)_OR_THE_SET_OF_SUCH_TRACES_\"\n                \"WHEN_THE_INTERIOR_SOLUTION_IS_NOT_UNIQUE\"\n            ),\n            \"reconstructed_radius\": (\n                \"R_rec(e)=R_star*exp(q_scale(Trace_return(Phi_e)))\"\n            ),\n            \"single_valuedness_assumed\": False,\n        },\n        \"differentiated_BVP\": {\n            \"Jacobi_operator\": (\n                \"J_e=D_Phi(delta_Gamma_child,CONSTRAINTS,BOUNDARY_MATCHING)\"\n            ),\n            \"variation_solve\": \"J_e*delta_Phi=-D_e(E_child,B_child)*delta_e\",\n            \"calderon_derivative\": (\n                \"D_Lambda_child*delta_e=Gamma1_Phi*delta_Phi+Gamma1_e*delta_e\"\n            ),\n            \"uses_only_the_retained_action_Hessian_after_the_BVP_is_defined\": True,\n            \"replaces_the_validated_exact_F_N_residual\": False,\n            \"N5_proposal_Jacobian_reopened\": False,\n        },\n        \"lift_independent_boundary_reaction\": {\n            \"vertical_on_shell_equation\": (\n                \"E_child(Phi)_RESTRICTED_TO_KER(D_Gamma0)=0\"\n            ),\n            \"reaction_definition\": (\n                \"Lambda_child=H^star*E_child,_D_Gamma0*H=IDENTITY\"\n            ),\n            \"independence\": (\n                \"(H1-H2)^star*E_child=0_BECAUSE_H1-H2_IS_VERTICAL\"\n            ),\n            \"event_to_complete_child_map\": (\n                \"F_child(e)=Lambda_event(e)+Lambda_child(Phi_e)=0\"\n            ),\n            \"raw_Gamma1_event_plus_raw_Gamma1_child_is_sufficient\": False,\n            \"existing_local_Hessian_lift_is_the_general_N_projector\": False,\n        },\n        \"required_function_space_proof\": {\n            \"gauge_reduction\": (\n                \"QUOTIENT_TIME_REPARAMETERIZATION_AND_RADIAL_\"\n                \"DIFFEOMORPHISM_WITH_THE_EXISTING_ETA_CLOCK_INVARIANTS\"\n            ),\n            \"domain\": (\n                \"THE_VALIDATED_CAP_0_LE_chi_LE_pi/4_WITH_ONE_REGULAR_POLE_\"\n                \"AND_THE_EXISTING_ATTACHMENT_BOUNDARY_MODE;_A_FULL_TWO_POLE_\"\n                \"CHILD_REQUIRES_THE_DERIVED_GLUE_TRANSMISSION\"\n            ),\n            \"complementing_condition\": (\n                \"THE_GAUGE_FIXED_JACOBI_PRINCIPAL_BOUNDARY_SYMBOL_HAS_NO_\"\n                \"NONZERO_DECAYING_HOMOGENEOUS_SOLUTION\"\n            ),\n            \"inf_sup\": (\n                \"THE_NORMAL_JACOBI_CALDERON_SCHUR_COMPLEMENT_HAS_beta_0>0\"\n            ),\n            \"eta_margin\": \"inf(L_eta)>=eta_0>0\",\n        },\n        \"retained_radial_principal_symbol_audit\": principal_symbol,\n        \"weighted_pole_attachment_principal_estimate\": weighted_principal,\n        \"first_missing_mathematical_object\": missing,\n        \"required_next\": missing,\n        \"new_action_terms_equations_constraints_or_gates\": False,\n        \"FULL_BHSM_COMPLETE\": False,\n    }"
+        }
+      }
+    },
+    "src/bhsm/interface/aether_forward_channel_transfer.py": {
+      "SHA256": "FE5CF24EF6B6BE45AF0A77D9559E855CB3B08F79F2AC5C6CC0CDE19EBFE56EEA",
+      "functions": {
+        "restrict_two_boundary_weyl_to_dirichlet_birth_jets": {
+          "calls": [
+            "KeyError",
+            "ValueError",
+            "all",
+            "any",
+            "len",
+            "matrices.items",
+            "matrices.values",
+            "matrix[block_size:, block_size:].copy",
+            "np.all",
+            "np.asarray",
+            "np.isfinite"
+          ],
+          "end": 877,
+          "start": 835,
+          "text": "def restrict_two_boundary_weyl_to_dirichlet_birth_jets(\n    two_boundary_weyl_jets: dict[str, np.ndarray],\n) -> dict[str, Any]:\n    \"\"\"Restrict a two-boundary Calderon graph to zero birth trace.\n\n    With endpoint order ``(birth, new_event)`` and\n\n    ``[n_0,n_1]^T = [[M00,M01],[M10,M11]] [u_0,u_1]^T``,\n\n    the retained zero-source Dirichlet reference is ``u_0=0``.  The incoming\n    formation response at the new event is therefore exactly ``M_f=M11``.\n    The operation is a boundary-space restriction, not an endpoint load or a\n    Schur solve, and applies componentwise to all supplied jets.\n    \"\"\"\n\n    keys = (\"base\", \"first_left\", \"first_right\", \"mixed_second\")\n    if not all(key in two_boundary_weyl_jets for key in keys):\n        raise KeyError(\"base, first_left, first_right, and mixed_second required\")\n    matrices = {\n        key: np.asarray(two_boundary_weyl_jets[key], dtype=complex)\n        for key in keys\n    }\n    base_shape = matrices[\"base\"].shape\n    if (\n        len(base_shape) != 2\n        or base_shape[0] != base_shape[1]\n        or base_shape[0] % 2 != 0\n        or any(matrix.shape != base_shape for matrix in matrices.values())\n        or any(not np.all(np.isfinite(matrix)) for matrix in matrices.values())\n    ):\n        raise ValueError(\"finite even-dimensional square Weyl jets required\")\n    block_size = base_shape[0] // 2\n    return {\n        key: matrix[block_size:, block_size:].copy()\n        for key, matrix in matrices.items()\n    } | {\n        \"endpoint_partition\": (\"birth\", \"new_event\"),\n        \"birth_trace\": \"ZERO_SOURCE_DIRICHLET_REFERENCE\",\n        \"response\": \"M_f=M11\",\n        \"block_size\": block_size,\n        \"explicit_matrix_inverse_formed\": False,\n        \"endpoint_load_imposed\": False,\n    }"
+        }
+      }
+    },
+    "src/bhsm/interface/aether_forward_common_source_incidence.py": {
+      "SHA256": "2C66699B3599B7B5B41C197027E0EF6207C84C3DDB432D06B5D2CF2F32390B21",
+      "functions": {
+        "forward_hs_scalar_operator_and_gauge_vertices": {
+          "calls": [
+            "ValueError",
+            "_temporal_matrix",
+            "block_diag",
+            "contact.astype",
+            "int",
+            "len",
+            "np.any",
+            "np.asarray",
+            "np.eye",
+            "np.kron",
+            "operator.astype",
+            "spin_matrices",
+            "vertex.astype",
+            "zip"
+          ],
+          "end": 275,
+          "start": 243,
+          "text": "def forward_hs_scalar_operator_and_gauge_vertices(\n    level: int,\n    radii: np.ndarray,\n    temporal_laplacian: np.ndarray,\n    profile: np.ndarray,\n) -> tuple[np.ndarray, np.ndarray, np.ndarray]:\n    \"\"\"Complex HS-doublet incidence for a realized temporal Laplacian.\"\"\"\n\n    k = int(level)\n    r = np.asarray(radii, dtype=float)\n    section = np.asarray(profile, dtype=float)\n    if k < 0 or r.ndim != 1 or section.shape != r.shape or np.any(r <= 0.0):\n        raise ValueError(\"invalid level, radii, or source section\")\n    points = len(r)\n    laplacian = _temporal_matrix(\n        temporal_laplacian, points, \"temporal Laplacian\"\n    )\n    orbital = k + 1\n    j_z = spin_matrices(k)[2]\n    operator = np.kron(laplacian, np.eye(orbital))\n    operator += block_diag(\n        *[((k + 1.0) / radius) ** 2 * np.eye(orbital) for radius in r]\n    )\n    vertex = block_diag(\n        *[\n            value * (4.0 / radius) * j_z\n            for value, radius in zip(section, r, strict=True)\n        ]\n    )\n    contact = block_diag(\n        *[2.0 * value**2 * np.eye(orbital) for value in section]\n    )\n    return operator.astype(complex), vertex.astype(complex), contact.astype(complex)"
+        },
+        "forward_oneform_ghost_matrices": {
+          "calls": [
+            "ValueError",
+            "_remove_global_scalar_zero",
+            "_temporal_matrix",
+            "angular_derham_blocks",
+            "block_diag",
+            "cross.conj",
+            "float",
+            "int",
+            "len",
+            "np.any",
+            "np.asarray",
+            "np.block",
+            "np.eye",
+            "np.kron",
+            "row['temporal_spatial_injection'].conj",
+            "scalar_basis.conj",
+            "zip"
+          ],
+          "end": 419,
+          "start": 350,
+          "text": "def forward_oneform_ghost_matrices(\n    level: int,\n    radii: np.ndarray,\n    temporal_first_derivative: np.ndarray,\n    temporal_laplacian: np.ndarray,\n    profile: np.ndarray,\n) -> dict[str, np.ndarray]:\n    \"\"\"Non-Abelian one-form minus ghost incidence on a realized time graph.\"\"\"\n\n    n = int(level)\n    r = np.asarray(radii, dtype=float)\n    section = np.asarray(profile, dtype=float)\n    if n < 0 or r.ndim != 1 or section.shape != r.shape or np.any(r <= 0.0):\n        raise ValueError(\"invalid level, radii, or source section\")\n    points = len(r)\n    derivative = _temporal_matrix(\n        temporal_first_derivative, points, \"temporal first derivative\"\n    )\n    laplacian = _temporal_matrix(\n        temporal_laplacian, points, \"temporal Laplacian\"\n    )\n    scalar_dimension = n + 1\n    vector_dimension = 3 * scalar_dimension\n    blocks = [angular_derham_blocks(n, float(radius)) for radius in r]\n    scalar_operator = np.kron(laplacian, np.eye(scalar_dimension)) + block_diag(\n        *[row[\"scalar_operator\"] for row in blocks]\n    )\n    spatial_operator = np.kron(laplacian, np.eye(vector_dimension)) + block_diag(\n        *[row[\"vector_operator\"] for row in blocks]\n    )\n    scalar_vertex = block_diag(\n        *[value * row[\"scalar_vertex\"] for value, row in zip(section, blocks, strict=True)]\n    )\n    spatial_vertex = block_diag(\n        *[value * row[\"vector_vertex\"] for value, row in zip(section, blocks, strict=True)]\n    )\n    scalar_contact = block_diag(\n        *[value**2 * row[\"scalar_contact\"] for value, row in zip(section, blocks, strict=True)]\n    )\n    spatial_contact = block_diag(\n        *[value**2 * row[\"vector_contact\"] for value, row in zip(section, blocks, strict=True)]\n    )\n    source_derivative = derivative @ section\n    cross = block_diag(\n        *[\n            -2.0j * value * row[\"temporal_spatial_injection\"].conj().T\n            for value, row in zip(source_derivative, blocks, strict=True)\n        ]\n    )\n    scalar_basis = np.eye(points * scalar_dimension, dtype=complex)\n    if n == 0:\n        scalar_operator, scalar_vertex, scalar_contact, scalar_basis = (\n            _remove_global_scalar_zero(\n                scalar_operator, scalar_vertex, scalar_contact, points\n            )\n        )\n        cross = scalar_basis.conj().T @ cross\n    oneform_operator = block_diag(scalar_operator, spatial_operator)\n    oneform_vertex = np.block(\n        [[scalar_vertex, cross], [cross.conj().T, spatial_vertex]]\n    )\n    oneform_contact = block_diag(scalar_contact, spatial_contact)\n    return {\n        \"oneform_operator\": oneform_operator,\n        \"oneform_vertex\": oneform_vertex,\n        \"oneform_contact\": oneform_contact,\n        \"ghost_operator\": scalar_operator,\n        \"ghost_vertex\": scalar_vertex,\n        \"ghost_contact\": scalar_contact,\n    }"
+        },
+        "forward_weyl_squared_operator_and_vertices": {
+          "calls": [
+            "_weyl_dirac_and_source_matrix"
+          ],
+          "end": 160,
+          "start": 144,
+          "text": "def forward_weyl_squared_operator_and_vertices(\n    level: int,\n    radii: np.ndarray,\n    temporal_first_derivative: np.ndarray,\n    profile: np.ndarray,\n    *,\n    source: str,\n) -> tuple[np.ndarray, np.ndarray, np.ndarray]:\n    \"\"\"Rank-16 Weyl/HS product-Dirac incidence for a realized time graph.\"\"\"\n\n    dirac, first_order_vertex, _ = _weyl_dirac_and_source_matrix(\n        level, radii, temporal_first_derivative, profile, source\n    )\n    operator = dirac @ dirac\n    vertex = dirac @ first_order_vertex + first_order_vertex @ dirac\n    contact = 2.0 * first_order_vertex @ first_order_vertex\n    return operator, vertex, contact"
+        }
+      }
+    },
+    "src/bhsm/interface/aether_m4_standard_model_zeta_backreaction_v15_51.py": {
+      "SHA256": "163C4F2415C3B92E26F4AC9D8D27042D3860107EC7EB0E817F8F54F7B8F864C8",
+      "functions": {
+        "standard_model_casimir_coefficient": {
+          "calls": [
+            "Fraction",
+            "float"
+          ],
+          "end": 103,
+          "start": 102,
+          "text": "def standard_model_casimir_coefficient() -> float:\n    return float(Fraction(59, 30))"
+        },
+        "standard_model_zeta_contract": {
+          "calls": [
+            "all",
+            "anomalies.items",
+            "anomaly_coefficients",
+            "bool",
+            "coefficients.items",
+            "family_dimension",
+            "float",
+            "str",
+            "zeta_coefficients"
+          ],
+          "end": 99,
+          "start": 53,
+          "text": "def standard_model_zeta_contract() -> dict[str, Any]:\n    \"\"\"Select the complete rank-16 three-family chiral carrier.\"\"\"\n\n    anomalies = anomaly_coefficients(3, include_neutral_singlet=True)\n    coefficients = zeta_coefficients()\n    counts = {\n        \"real_conformal_scalars\": 4,\n        \"physical_massless_vectors\": 8 + 3 + 1,\n        \"complex_two_component_Weyl\": 3 * family_dimension(True),\n    }\n    total = (\n        counts[\"real_conformal_scalars\"] * coefficients[\"real_conformal_scalar\"]\n        + counts[\"physical_massless_vectors\"]\n        * coefficients[\"physical_massless_vector\"]\n        + counts[\"complex_two_component_Weyl\"]\n        * coefficients[\"complex_two_component_Weyl\"]\n    )\n    return {\n        \"M4\": \"R_t_times_S3_R4\",\n        \"state\": \"static_conformal_vacuum_on_the_closed_spatial_S3\",\n        \"scalar_spectrum\": \"omega_m=m/R4,_degeneracy=m^2,_m>=1\",\n        \"scalar_zeta\": \"zeta_s(s)=R4^s*zeta_R(s-2)\",\n        \"vector_spectrum\": \"omega_m=m/R4,_degeneracy=2(m^2-1),_m>=2\",\n        \"vector_zeta\": \"zeta_v(s)=2R4^s[zeta_R(s-2)-zeta_R(s)]\",\n        \"vector_domain\": \"coexact_one_forms;_longitudinal_and_ghost_pair_removed\",\n        \"Weyl_spectrum\": (\n            \"abs(lambda_n)=(n+3/2)/R4,_degeneracy_each_sign=(n+1)(n+2)\"\n        ),\n        \"rank_16_family_selected\": True,\n        \"neutral_singlet_role\": \"completes_the_rank_16_family_carrier\",\n        \"families\": 3,\n        \"gauge_algebra_dimensions\": {\"SU3\": 8, \"Sp1\": 3, \"U1\": 1},\n        \"counts\": counts,\n        \"coefficients\": {key: str(value) for key, value in coefficients.items()},\n        \"total_C_SM\": str(total),\n        \"total_C_SM_float\": float(total),\n        \"anomalies\": {key: str(value) for key, value in anomalies.items()},\n        \"all_local_anomalies_zero\": all(\n            anomalies[key] == 0\n            for key in (\n                \"SU3_cubed\", \"SU3_squared_U1\", \"Sp1_squared_U1\",\n                \"U1_cubed\", \"gravity_squared_U1\",\n            )\n        ),\n        \"Witten_parity_even\": bool(anomalies[\"Witten_parity_even\"]),\n        \"new_continuous_coefficient\": False,\n    }"
+        }
+      }
+    },
+    "src/bhsm/interface/forward_finite_endpoint_heat_force.py": {
+      "SHA256": "80CB6E87E695DC3EBD74E5745A8E2328D5D2ABA790372954B565B226086BB359",
+      "functions": {
+        "heat_regulator_value_and_force": {
+          "calls": [
+            "ValueError",
+            "_hermitian",
+            "abs",
+            "eigenvectors.conj",
+            "exp1",
+            "float",
+            "geometry_jets.items",
+            "int",
+            "math.isfinite",
+            "max",
+            "np.exp",
+            "np.linalg.eigh",
+            "np.sum",
+            "np.trace",
+            "str"
+          ],
+          "end": 78,
+          "start": 32,
+          "text": "def heat_regulator_value_and_force(\n    operator: np.ndarray,\n    geometry_jets: Mapping[str, np.ndarray],\n    *,\n    heat_length: float = 1.0,\n    gap_tolerance: float = 1.0e-12,\n) -> dict[str, Any]:\n    \"\"\"Evaluate Gamma and D Gamma for ``f(P)=-E1(ell^2 P)/2``.\n\n    For a positive self-adjoint matrix ``P`` and any Hermitian action-owned\n    first variation ``dP``, cyclicity of the trace gives the exact identity\n\n        D Tr f(P)[dP] = Tr(f'(P)dP),\n        f'(P) = exp(-ell^2 P)/(2P).\n\n    The identity remains valid when ``P`` and ``dP`` do not commute.\n    \"\"\"\n\n    if not math.isfinite(heat_length) or heat_length <= 0.0:\n        raise ValueError(\"heat_length must be positive and finite\")\n    if not math.isfinite(gap_tolerance) or gap_tolerance < 0.0:\n        raise ValueError(\"gap_tolerance must be finite and nonnegative\")\n    matrix = _hermitian(operator, \"operator\")\n    eigenvalues, eigenvectors = np.linalg.eigh(matrix)\n    gap = float(eigenvalues[0])\n    if gap <= gap_tolerance:\n        raise ValueError(\"strictly positive quotient operator required\")\n    scaled = heat_length**2 * eigenvalues\n    regulator = -0.5 * exp1(scaled)\n    derivative_values = 0.5 * np.exp(-scaled) / eigenvalues\n    gradient = (eigenvectors * derivative_values) @ eigenvectors.conj().T\n    forces: dict[str, float] = {}\n    for name, value in geometry_jets.items():\n        jet = _hermitian(value, f\"geometry jet {name}\")\n        if jet.shape != matrix.shape:\n            raise ValueError(\"every geometry jet must match the operator\")\n        force = np.trace(gradient @ jet)\n        if abs(float(force.imag)) > 1.0e-9 * max(1.0, abs(float(force.real))):\n            raise ValueError(\"Hermitian force acquired a nonreal trace\")\n        forces[str(name)] = float(force.real)\n    return {\n        \"Gamma_heat\": float(np.sum(regulator)),\n        \"minimum_eigenvalue\": gap,\n        \"dimension\": int(matrix.shape[0]),\n        \"forces\": forces,\n        \"gradient\": gradient,\n    }"
+        },
+        "replacement_heat_minus_zeta_force": {
+          "calls": [
+            "ValueError",
+            "float",
+            "heat['forces'].items",
+            "set",
+            "str",
+            "zeta['forces'].items"
+          ],
+          "end": 400,
+          "start": 384,
+          "text": "def replacement_heat_minus_zeta_force(\n    heat: Mapping[str, Any], zeta: Mapping[str, Any],\n) -> dict[str, Any]:\n    \"\"\"Return the replacement correction ``Gamma_heat-Gamma_SM_zeta``.\"\"\"\n\n    heat_forces = {str(k): float(v) for k, v in heat[\"forces\"].items()}\n    zeta_forces = {str(k): float(v) for k, v in zeta[\"forces\"].items()}\n    if set(heat_forces) != set(zeta_forces):\n        raise ValueError(\"heat and zeta force directions must agree\")\n    return {\n        \"Gamma_heat_minus_zeta\": float(heat[\"Gamma_heat\"])\n        - float(zeta[\"Gamma_SM_zeta\"]),\n        \"forces\": {\n            name: heat_forces[name] - zeta_forces[name]\n            for name in heat_forces\n        },\n    }"
+        }
+      }
+    },
+    "src/bhsm/interface/owner_authorized_encapsulation_interface_action.py": {
+      "SHA256": "A89DD9B7AC160CF19FDADB91E052379A505DB45587DAFE7A93A0BF64862820BA",
+      "functions": {
+        "owner_authorization": {
+          "calls": [],
+          "end": 86,
+          "start": 71,
+          "text": "def owner_authorization() -> dict[str, Any]:\n    \"\"\"Record the new authority without retroactively changing the old action.\"\"\"\n\n    return {\n        \"authority\": \"NORMAN_P_CARBERRY_OWNER_AUTHORIZATION_2026_09_06\",\n        \"new_primitive\": \"P-A*\",\n        \"physical_meaning\": (\n            \"physical work/process by which the initiating event mode envelops \"\n            \"its local spacetime environment\"\n        ),\n        \"must_determine\": [\"iota_enc\", \"F_B\", \"L_s\", \"Delta_enc\"],\n        \"strength_controls\": [\"M_event\", \"E_s\", \"Lambda_s\"],\n        \"independently_fitted_interface_parameters_allowed\": False,\n        \"part_of_previous_13_term_action\": False,\n        \"mathematical_density_selected_by_authorization\": False,\n    }"
+        }
+      }
+    }
+  },
+  "internal_response_blocks_zeroed": false,
+  "local_action_exhausted_by_ten_terms": true,
+  "local_ten_term_ledger": [
+    {
+      "active_closed_history_operator_response_evaluated_by_this_term": false,
+      "classification": "parent/event geometry",
+      "evaluation_side": "native event functional; same action law used separately on the child",
+      "included_in_frozen_local_derivative": true,
+      "independent_external_environment_action": false,
+      "name": "spatial_gravity",
+      "sector": "cap geometry"
+    },
+    {
+      "active_closed_history_operator_response_evaluated_by_this_term": false,
+      "classification": "parent/event geometry",
+      "evaluation_side": "native event functional; same action law used separately on the child",
+      "included_in_frozen_local_derivative": true,
+      "independent_external_environment_action": false,
+      "name": "intrinsic_curvature",
+      "sector": "cap geometry"
+    },
+    {
+      "active_closed_history_operator_response_evaluated_by_this_term": false,
+      "classification": "parent/event geometry",
+      "evaluation_side": "native event functional; same action law used separately on the child",
+      "included_in_frozen_local_derivative": true,
+      "independent_external_environment_action": false,
+      "name": "cosmological",
+      "sector": "cap geometry"
+    },
+    {
+      "active_closed_history_operator_response_evaluated_by_this_term": false,
+      "classification": "parent/event geometry",
+      "evaluation_side": "native event functional; same action law used separately on the child",
+      "included_in_frozen_local_derivative": true,
+      "independent_external_environment_action": false,
+      "name": "eta_quadratic",
+      "sector": "topographic scalar/geometry"
+    },
+    {
+      "active_closed_history_operator_response_evaluated_by_this_term": false,
+      "classification": "parent/event geometry",
+      "evaluation_side": "native event functional; same action law used separately on the child",
+      "included_in_frozen_local_derivative": true,
+      "independent_external_environment_action": false,
+      "name": "eta_quartic",
+      "sector": "topographic scalar/geometry"
+    },
+    {
+      "active_closed_history_operator_response_evaluated_by_this_term": false,
+      "classification": "parent/event geometry",
+      "evaluation_side": "native event functional; same action law used separately on the child",
+      "included_in_frozen_local_derivative": true,
+      "independent_external_environment_action": false,
+      "name": "adm_kinetic",
+      "sector": "cap geometry"
+    },
+    {
+      "active_closed_history_operator_response_evaluated_by_this_term": false,
+      "classification": "parent/event geometry",
+      "evaluation_side": "native event functional; same action law used separately on the child",
+      "included_in_frozen_local_derivative": true,
+      "independent_external_environment_action": false,
+      "name": "hopf_inertia",
+      "sector": "global retained Hopf inertia"
+    },
+    {
+      "active_closed_history_operator_response_evaluated_by_this_term": false,
+      "classification": "shared/common term",
+      "evaluation_side": "native event functional; same action law used separately on the child",
+      "included_in_frozen_local_derivative": true,
+      "independent_external_environment_action": false,
+      "name": "boundary_scalar_vacuum",
+      "sector": "fixed-species static conformal vacuum"
+    },
+    {
+      "active_closed_history_operator_response_evaluated_by_this_term": false,
+      "classification": "shared/common term",
+      "evaluation_side": "native event functional; same action law used separately on the child",
+      "included_in_frozen_local_derivative": true,
+      "independent_external_environment_action": false,
+      "name": "boundary_vector_vacuum",
+      "sector": "fixed-species static conformal vacuum"
+    },
+    {
+      "active_closed_history_operator_response_evaluated_by_this_term": false,
+      "classification": "shared/common term",
+      "evaluation_side": "native event functional; same action law used separately on the child",
+      "included_in_frozen_local_derivative": true,
+      "independent_external_environment_action": false,
+      "name": "boundary_Weyl_vacuum",
+      "sector": "fixed-species static conformal vacuum"
+    }
+  ],
+  "native_packet_status": "RECENTERED_LAUNCH_CHART_AND_NATIVE_SEVEN_ROW_COMPOSITION",
+  "no_internal_response_relabelled_as_extra_Lambda_E": true,
+  "promoted_to_N12_FIXED_ENVIRONMENT_MATERIAL_RESPONSE_7x73": false,
+  "promotion_conditions": {
+    "all_active_fixed_environment_blocks_inside_native_packet": false,
+    "external_birth_forcing_zero": true,
+    "no_separate_instantiated_N12_W_E": true
+  },
+  "retained_internal_blocks": [
+    {
+      "explicitly_assembled_in_native_7x73_derivative": false,
+      "name": "M_f",
+      "owner": "aether_forward_channel_transfer.py::restrict_two_boundary_weyl_to_dirichlet_birth_jets",
+      "retained_in_declared_closed_model": true,
+      "role": "nonzero upstream formation response M11",
+      "zeroed_by_this_audit": false
+    },
+    {
+      "explicitly_assembled_in_native_7x73_derivative": false,
+      "name": "M_C2",
+      "owner": "ae2_covariant_seam_response.py::covariant_effective_event_load",
+      "retained_in_declared_closed_model": true,
+      "role": "transported child Calderon response",
+      "zeroed_by_this_audit": false
+    },
+    {
+      "explicitly_assembled_in_native_7x73_derivative": false,
+      "name": "U_R",
+      "owner": "ae2_covariant_seam_response.py::covariant_effective_event_load_jet",
+      "retained_in_declared_closed_model": true,
+      "role": "bundle transition, covariantly parallel, not a free source",
+      "zeroed_by_this_audit": false
+    },
+    {
+      "explicitly_assembled_in_native_7x73_derivative": false,
+      "name": "W_phys",
+      "owner": "ae2_covariant_seam_response.py::covariant_seam_response",
+      "retained_in_declared_closed_model": true,
+      "role": "retained contact block; fermion block exactly zero, other sectors not globally zero",
+      "zeroed_by_this_audit": false
+    },
+    {
+      "explicitly_assembled_in_native_7x73_derivative": false,
+      "name": "gauge_transverse_contact",
+      "owner": "aether_forward_common_source_incidence.py::forward_oneform_ghost_matrices",
+      "retained_in_declared_closed_model": true,
+      "role": "one-form/ghost pair and contact vertices",
+      "zeroed_by_this_audit": false
+    },
+    {
+      "explicitly_assembled_in_native_7x73_derivative": false,
+      "name": "scalar_topographic_contact",
+      "owner": "aether_forward_common_source_incidence.py::forward_hs_scalar_operator_and_gauge_vertices",
+      "retained_in_declared_closed_model": true,
+      "role": "HS scalar pair/contact; local eta action separately retained",
+      "zeroed_by_this_audit": false
+    },
+    {
+      "explicitly_assembled_in_native_7x73_derivative": false,
+      "name": "AE2_pair_contact",
+      "owner": "aether_forward_common_source_incidence.py::forward_weyl_squared_operator_and_vertices",
+      "retained_in_declared_closed_model": true,
+      "role": "retained Weyl pair/contact vertices and joint seam assembly",
+      "zeroed_by_this_audit": false
+    }
+  ],
+  "scientific_producers_run": false,
+  "search_scope": "Current N12 local action, producer call paths, zero-source semantics, complete-child reaction owner, joint AE2/Weyl and contact builders; abstract environment/interface notation inspected but not instantiated.",
+  "separate_instantiated_N12_W_E_found": false,
+  "source_SHA256": {
+    "scripts/record_n12_gate7_environment_action_ownership.py": "DB02D3B3552A4DBA6254FB2D93BB20FF1D3B1F090CDD9EE6CF02E2DC86645201",
+    "src/bhsm/interface/current_semantic_normalization.py": "388961A6FC211B11559C5D72463241C48B7575D53A923F6A7D96F825D333F05E",
+    "theory/n12_ae2_covariant_seam_enclosure_z_minus_1.md": "A990F36AD1003C43CFF4199EF6E3ADE7B45876950636431BD721C368C92647CD",
+    "theory/n12_c2_fixed_seed_upstream_force_owner.md": "95C153F0EC19CB3856EA22EF3BB50E7562E808B5D02213D9C51DEF36FC257D3D",
+    "theory/n12_c2_projected_adjoint_cauchy_criterion.md": "6461290A8FD13ADD3C39D73D5A63B91F67CEDFD7F97B00DE5C35E793D4B1134F",
+    "theory/n12_compact_history_endpoint_role_provenance.md": "DD6E020EE2B3478F76A73085EDB9BE47889F52C8C10828AF04E0460DC5F2ED4A",
+    "theory/n12_finite_endpoint_zero_source_force_functional.md": "5D224195E5BC9852DA8A5405C8658BEE12FC77E440DC20C32CAC07F335B6EE9E",
+    "theory/n12_finite_history_gluing_force_provenance.md": "6B002ECAA35CCF250718C9A30D5D83D4E31B29E3575801C80420517948742C90",
+    "theory/n12_forward_common_source_incidence.md": "C852FD44525ECA8F4A88B31AB34BD10BD4C7BD5DE3DE7A216D3246796ED00372"
+  },
+  "status": "N12_EXTERNAL_BIRTH_ARM_ABSENT_NATIVE_LOCAL_RESPONSE_NOT_FULL_JOINT_RESPONSE"
+}
