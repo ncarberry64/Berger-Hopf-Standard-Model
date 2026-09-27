@@ -1,0 +1,245 @@
+{
+  "FULL_BHSM_COMPLETE": false,
+  "Gate7_closed": false,
+  "Layer_C_rebound": false,
+  "arrays_SHA256": "015AB99B3125445E88661A659AEE771F892B0B348C761455BD3B6E388EAA4F54",
+  "authority": "Exact action-derived child output graph. Its triangular Schur identity does not select the complete fixed-environment physical tangent.",
+  "boundary_sources": {
+    "_attachment_jacobian_at_order": {
+      "end": 2781,
+      "start": 2764,
+      "text": "def _attachment_jacobian_at_order(\n    order: int, coordinates: np.ndarray,\n) -> np.ndarray:\n    q = np.asarray(coordinates)\n    qdim = dimensions(order)[\"coordinates\"]\n    signs_k = (-1.0) ** np.arange(1, order + 1)\n    signs_j = (-1.0) ** np.arange(order)\n    v_boundary = q[1 + 2 * order:1 + 3 * order] @ signs_j\n    dtype = np.result_type(q, float)\n    j_w = np.zeros(qdim, dtype=dtype)\n    j_w[0] = 1.0\n    j_w[1:1 + order] = signs_k\n    j_w[1 + 2 * order:1 + 3 * order] = (\n        -np.tanh(2.0 * v_boundary) * signs_j\n    )\n    j_c = np.zeros(qdim, dtype=dtype)\n    j_c[0] = 1.0\n    return np.vstack((j_w, j_c - j_w))"
+    },
+    "_boundary_lift": {
+      "end": 2824,
+      "start": 2816,
+      "text": "def _boundary_lift(\n    form: np.ndarray, boundary: np.ndarray, constraints: np.ndarray,\n) -> np.ndarray:\n    combined = np.vstack((boundary, constraints))\n    target = np.zeros((combined.shape[0], 2))\n    target[:2] = np.eye(2)\n    inverse_times = np.linalg.solve(form, combined.T)\n    compliance = combined @ inverse_times\n    return inverse_times @ np.linalg.solve(compliance, target)"
+    },
+    "_canonical_pair_at_order": {
+      "end": 3022,
+      "start": 2998,
+      "text": "def _canonical_pair_at_order(\n    order: int,\n    coordinates: np.ndarray,\n    velocities: np.ndarray,\n    multipliers: np.ndarray,\n    *,\n    points: int,\n) -> tuple[np.ndarray, np.ndarray, np.ndarray, np.ndarray]:\n    size = dimensions(order)\n    qdim = size[\"coordinates\"]\n    jet = exact_full_action_jet_at_state(\n        order, coordinates, velocities, multipliers, points=points\n    )\n    gradient = np.asarray(jet.gradient)\n    hessian = np.asarray(jet.hessian)\n    boundary = _attachment_jacobian_at_order(order, coordinates)\n    q_form = hessian[:qdim, :qdim]\n    v_form = hessian[qdim:2 * qdim, qdim:2 * qdim]\n    cq = hessian[2 * qdim:, :qdim]\n    cv = hessian[2 * qdim:, qdim:2 * qdim]\n    q_lift = _boundary_lift(q_form, boundary, cq)\n    v_lift = _boundary_lift(v_form, boundary, cv)\n    momentum = v_lift.T @ gradient[qdim:2 * qdim]\n    force = q_lift.T @ gradient[:qdim]\n    return momentum, force, q_lift, v_lift"
+    },
+    "_child_rows_at_order": {
+      "end": 3282,
+      "start": 3199,
+      "text": "def _child_rows_at_order(\n    order: int,\n    child: np.ndarray,\n    event_coordinates: np.ndarray,\n    event_momentum: np.ndarray,\n    event_flux: np.ndarray,\n    *,\n    points: int,\n    relative_flux_step: float = 1.0e-1,\n    fixed_flux_time_step: float | None = None,\n    richardson_flux: bool = True,\n    flux_derivative_method: str = \"richardson\",\n) -> np.ndarray:\n    size = dimensions(order)\n    qdim = size[\"coordinates\"]\n    q = np.asarray(child[:qdim], dtype=float)\n    velocity = np.asarray(child[qdim:2 * qdim], dtype=float)\n    multipliers = np.asarray(child[2 * qdim:], dtype=float)\n    momentum, force, q_lift, _ = _canonical_pair_at_order(\n        order, q, velocity, multipliers, points=points\n    )\n    child_covector = _metric_radial_flux_covector_at_order(\n        order, q, multipliers\n    )\n    child_flux = q_lift.T @ child_covector\n    dynamics = _exact_full_jet_euler_dirac_acceleration(\n        order, q, velocity, multipliers, points=points\n    )\n    acceleration = np.asarray(dynamics[\"acceleration\"], dtype=float)\n    multiplier_rate = np.asarray(dynamics[\"multiplier_rate\"], dtype=float)\n    tangent_scale = max(\n        1.0,\n        float(np.max(np.abs(velocity))),\n        float(np.max(np.abs(acceleration))),\n        float(np.max(np.abs(multiplier_rate))),\n    )\n    epsilon = (\n        relative_flux_step / tangent_scale\n        if fixed_flux_time_step is None else float(fixed_flux_time_step)\n    )\n\n    def centered_momentum_rate(step: float) -> np.ndarray:\n        plus, _, _, _ = _canonical_pair_at_order(\n            order,\n            q + step * velocity,\n            velocity + step * acceleration,\n            multipliers + step * multiplier_rate,\n            points=points,\n        )\n        minus, _, _, _ = _canonical_pair_at_order(\n            order,\n            q - step * velocity,\n            velocity - step * acceleration,\n            multipliers - step * multiplier_rate,\n            points=points,\n        )\n        return (plus - minus) / (2.0 * step)\n\n    if flux_derivative_method == \"complex_step\":\n        momentum_rate = _complex_step_canonical_momentum_rate(\n            order,\n            q,\n            velocity,\n            multipliers,\n            acceleration,\n            multiplier_rate,\n            points=points,\n        )\n    elif flux_derivative_method == \"richardson\":\n        momentum_rate = centered_momentum_rate(epsilon)\n        if richardson_flux:\n            half_rate = centered_momentum_rate(0.5 * epsilon)\n            momentum_rate = (4.0 * half_rate - momentum_rate) / 3.0\n    else:\n        raise ValueError(\"unknown dynamic-flux derivative method\")\n    flux = child_flux - (-momentum_rate + force - event_flux)\n    return np.concatenate((\n        _trace_jacobian_at_order(order) @ (q - event_coordinates),\n        constraint_residual(\n            order, q, velocity, multipliers, points=points\n        ),\n        momentum - event_momentum,\n        flux,\n    ))"
+    },
+    "_exact_full_jet_euler_dirac_acceleration": {
+      "end": 3196,
+      "start": 3162,
+      "text": "def _exact_full_jet_euler_dirac_acceleration(\n    order: int,\n    coordinates: np.ndarray,\n    velocities: np.ndarray,\n    multipliers: np.ndarray,\n    *,\n    points: int,\n) -> dict[str, Any]:\n    \"\"\"Solve Euler--Dirac using the existing exact full q,v,m action jet.\"\"\"\n\n    q = np.asarray(coordinates)\n    velocity = np.asarray(velocities)\n    m = np.asarray(multipliers)\n    qdim = dimensions(order)[\"coordinates\"]\n    jet = exact_full_action_jet_at_state(\n        order, q, velocity, m, points=points\n    )\n    dirac_hessian = np.asarray(jet.hessian[qdim:, qdim:])\n    mixed_z_q = np.asarray(jet.hessian[qdim:, :qdim])\n    gradient_q = np.asarray(jet.gradient[:qdim])\n    rhs = np.concatenate((\n        gradient_q - mixed_z_q[:qdim] @ velocity,\n        -mixed_z_q[qdim:] @ velocity,\n    ))\n    solved = np.linalg.solve(dirac_hessian, rhs)\n    return {\n        \"coordinate_rate\": velocity.copy(),\n        \"acceleration\": solved[:qdim],\n        \"multiplier_rate\": solved[qdim:],\n        \"Dirac_hessian\": dirac_hessian,\n        \"Dirac_condition_number\": float(np.linalg.cond(dirac_hessian)),\n        \"finite\": bool(np.all(np.isfinite(solved))),\n        \"coordinate_finite_difference_used\": False,\n        \"physical_action_changed\": False,\n    }"
+    },
+    "_metric_radial_flux_covector_at_order": {
+      "end": 3159,
+      "start": 3133,
+      "text": "def _metric_radial_flux_covector_at_order(\n    order: int, coordinates: np.ndarray, multipliers: np.ndarray,\n) -> np.ndarray:\n    q = np.asarray(coordinates)\n    m = np.asarray(multipliers)\n    qdim = dimensions(order)[\"coordinates\"]\n    signs_k = (-1.0) ** np.arange(1, order + 1)\n    signs_j = (-1.0) ** np.arange(order)\n    scale = q[0]\n    u = q[1:1 + order] @ signs_k\n    w = q[1 + order:1 + 2 * order] @ signs_j\n    v = q[1 + 2 * order:1 + 3 * order] @ signs_j\n    radius = RADIUS0 * np.exp(scale)\n    c_radius = radius * np.exp(u + w)\n    a_radius = radius * np.exp(u + v) / np.sqrt(2.0)\n    b_radius = radius * np.exp(u - v) / np.sqrt(2.0)\n    lapse = np.exp(m[:order] @ signs_k)\n    prefactor = 3.0 * lapse * a_radius**3 * b_radius**3 / c_radius\n    dtype = np.result_type(q, m, float)\n    d_log_a = np.zeros(qdim, dtype=dtype)\n    d_log_b = np.zeros(qdim, dtype=dtype)\n    d_log_a[0] = d_log_b[0] = 1.0\n    d_log_a[1:1 + order] = signs_k\n    d_log_b[1:1 + order] = signs_k\n    d_log_a[1 + 2 * order:1 + 3 * order] = signs_j\n    d_log_b[1 + 2 * order:1 + 3 * order] = -signs_j\n    return prefactor * d_log_a - prefactor * d_log_b"
+    },
+    "_trace_jacobian_at_order": {
+      "end": 2761,
+      "start": 2751,
+      "text": "def _trace_jacobian_at_order(order: int) -> np.ndarray:\n    qdim = dimensions(order)[\"coordinates\"]\n    signs_k = (-1.0) ** np.arange(1, order + 1)\n    signs_j = (-1.0) ** np.arange(order)\n    trace = np.zeros((3, qdim))\n    trace[:, 0] = 1.0\n    trace[:, 1:1 + order] = signs_k\n    trace[0, 1 + order:1 + 2 * order] = signs_j\n    trace[1, 1 + 2 * order:1 + 3 * order] = signs_j\n    trace[2, 1 + 2 * order:1 + 3 * order] = -signs_j\n    return trace"
+    }
+  },
+  "center_boundary_zero": "b_star is the same beta(Y_star) object; B(Y_star,b_star;e0)=0 by the exact solved boundary rows, not by setting beta(Y_star) to zero.",
+  "certified_rank": 139,
+  "complete_boundary_problem_solved": false,
+  "coupled_derivative_replay": {
+    "approximate_upper": 7.17793914860167e-13,
+    "exact_upper": "5290873561421528857730891343320594279211042557362552938939081157765283521311011307060160793362560171011146034647539107192231235811895875392120218688178381/7371020360979572953596786290992712677572111758625860211672277930167234692172165726730716260112614780354430419981960634569864423105321860610471551272329484460252725248",
+    "method": "Arb512_Frobenius"
+  },
+  "coupled_formula": "K=[[J,0],[-S*Db*Y_x,S]], Fp=[F_core,p;-S*Db*Y_p], Dphi_b=Db*(Y_p+Y_x*x_p).",
+  "coupled_shape": [
+    139,
+    139
+  ],
+  "environment_variation": 0,
+  "equivalence_scope": "Solving B(Y,b)=S(b-beta(Y))=0 for outputs at a prescribed state. No opposite-side compatibility is implied by this identity, and the remaining left state complement is not solved by appending these output rows.",
+  "independent_environment_inputs": 0,
+  "independent_interface_inputs": 0,
+  "inverse_replay": {
+    "approximate_upper": 8.891096359603971e-08,
+    "exact_upper": "10000069015208775902706059775420468807931448682781336624771745127428176573093918001675835564904758635481308215698621759938353319218893541787332074208650523/112472844863579909570263462692149546471742427957547915827518889315295939516787196757976017152597271428748022765838022378080206651387357492225212879521629096378368",
+    "method": "Arb512_Frobenius"
+  },
+  "output_graph_state_chart_equals_fixed_label_chart": true,
+  "physical_definition": "Fixed external environment e0 and boundary-class labels; seven interface quantities must be slaved by the complete boundary problem. The present calculation supplies its child output derivative only.",
+  "physical_input_dimension": 66,
+  "physical_tangent_comparison_completed": false,
+  "physical_tube_extension_certified": false,
+  "principal_angle_comparison": {
+    "maximum_angle_degrees": 2.4436581734296917e-13,
+    "original_rank": 66,
+    "owner_consistent_rank": 66,
+    "principal_angles_degrees": [
+      2.4436581734296917e-13,
+      2.411252728363415e-13,
+      2.1970500787639258e-13,
+      2.089154298463526e-13,
+      1.9588252999778186e-13,
+      1.8040342742691273e-13,
+      1.7585669357508208e-13,
+      1.6390893288054095e-13,
+      1.5822536873951805e-13,
+      1.5708636384455218e-13,
+      1.532440682763476e-13,
+      1.4537739612799973e-13,
+      1.3445310938798813e-13,
+      1.3155370879745426e-13,
+      1.28187052900289e-13,
+      1.203068871633162e-13,
+      1.1872021612051695e-13,
+      1.1548158646577792e-13,
+      1.123228782829883e-13,
+      1.0848195218571159e-13,
+      1.0373661372982832e-13,
+      1.0038281492942252e-13,
+      9.948275882571161e-14,
+      9.557484905191772e-14,
+      9.39494629643749e-14,
+      9.065390592492358e-14,
+      8.721459219313286e-14,
+      8.252260377255317e-14,
+      7.986557950801338e-14,
+      7.784229332714695e-14,
+      7.602769454111346e-14,
+      7.45969128927058e-14,
+      7.377527713047441e-14,
+      7.000179898650185e-14,
+      6.76435557733796e-14,
+      6.33805788010458e-14,
+      6.165151742702374e-14,
+      5.89858286413458e-14,
+      5.437084672561366e-14,
+      5.350716271800923e-14,
+      5.2233640319246344e-14,
+      4.8233113287624424e-14,
+      4.658316577193631e-14,
+      4.487954925150661e-14,
+      4.204105252556052e-14,
+      4.102477660805731e-14,
+      3.836146746138837e-14,
+      3.7053064539215965e-14,
+      3.416978517054384e-14,
+      3.2137747436466885e-14,
+      3.06704016548934e-14,
+      2.865476909424918e-14,
+      2.735131837981157e-14,
+      2.4426460893174472e-14,
+      2.1945117946329156e-14,
+      2.080923950683598e-14,
+      1.869161433604825e-14,
+      1.6796031135294602e-14,
+      1.6353255743845307e-14,
+      1.488868510772012e-14,
+      1.2264317339648637e-14,
+      1.028138000444994e-14,
+      8.32759017331166e-15,
+      5.211318466816805e-15,
+      3.723636706075463e-15,
+      3.144051561870046e-15
+    ],
+    "projector_Frobenius_residual": 0.0,
+    "projector_operator_residual": 0.0
+  },
+  "projector_difference_outward": {
+    "approximate_upper": 1.0058313328864415e-06,
+    "exact_upper": "7070544466416534019692473181741876005330525616738989497947284596255415954278343062937931628481344181200560952039320017800202757642900320094649138709070179/7029552803973744348141466418259346654483901747346744739219930582205996219799199797373501072037329464296751422864876398630012915711709843264075804970101818523648",
+    "method": "Arb512_Frobenius"
+  },
+  "rank_argument": "The verified 125-dimensional core Jacobian and exact invertible S=diag(-I5,+I2) at both endpoints form a lower-triangular coupled operator.",
+  "reaction_coordinates": 7,
+  "reaction_endpoint_instances": 2,
+  "reaction_row_norms": [
+    {
+      "approximate_upper": 0.0005965488187902267,
+      "exact_upper": "3999205991586745711030908135996207096724812200972955468584323725454789019833833533051772920215140676901630710022010841496615268923286523555769137677545/6703903964971298549787012499102923063739682910296196688861780721860882015036773488400937149083451713845015929093243025426876941405973284973216824503042048",
+      "method": "Arb512_Frobenius"
+    },
+    {
+      "approximate_upper": 3.923923336056206e-05,
+      "exact_upper": "2154955178871243305374958357057870281918628217120020616350755132929620822265860533440738527583497309766490758235965878727857726277736225305479897111028413/54918381281044877719855206392651145738155482401146443275155707673484345467181248416980477125291636439818370491131846864296975903997733150500592226328920457216",
+      "method": "Arb512_Frobenius"
+    },
+    {
+      "approximate_upper": 2.4390693044181433e-05,
+      "exact_upper": "10715979042474281195414891255986763717518976826092544516526290484752438553466228700833460308995076050937582902438539513726073717037936069870321038241280951/439347050248359021758841651141209165905243859209171546201245661387874763737449987335843817002333091518546963929054774914375807231981865204004737810631363657728",
+      "method": "Arb512_Frobenius"
+    },
+    {
+      "approximate_upper": 0.0024045170810388355,
+      "exact_upper": "8253261615829740908267019245950914793039139040657430963007889070699858133607098249670050995999335573914565753396724414112045103879909278189491243901143483/3432398830065304857490950399540696608634717650071652704697231729592771591698828026061279820330727277488648155695740429018560993999858321906287014145557528576",
+      "method": "Arb512_Frobenius"
+    },
+    {
+      "approximate_upper": 0.006213400170057704,
+      "exact_upper": "10663433737216814221472173645274308251740246767165628462306002930509017666688046535554591195260371845364309691735648286420133088623265881770126054513843701/1716199415032652428745475199770348304317358825035826352348615864796385795849414013030639910165363638744324077847870214509280496999929160953143507072778764288",
+      "method": "Arb512_Frobenius"
+    },
+    {
+      "approximate_upper": 3319.7236004530964,
+      "exact_upper": "10866752054534329570799376387371448036528377854488131334957267578854000248641480713648789294854246059683450927568757853222875196282419862091263781687139907/3273390607896141870013189696827599152216642046043064789483291368096133796404674554883270092325904157150886684127560071009217256545885393053328527589376",
+      "method": "Arb512_Frobenius"
+    },
+    {
+      "approximate_upper": 871.6898677380846,
+      "exact_upper": "2853381426052076196944133905730346991480270505936677423570741285761242712147576625806114033105856914933729244743296145899331549039110126033484265540826683/3273390607896141870013189696827599152216642046043064789483291368096133796404674554883270092325904157150886684127560071009217256545885393053328527589376",
+      "method": "Arb512_Frobenius"
+    },
+    {
+      "approximate_upper": 0.000618446558268832,
+      "exact_upper": "4245510486119706679588230944767777331277018914538238725784505340245859169212059303918750294058770818814636894084283809713574381081254734607984189728696643/6864797660130609714981900799081393217269435300143305409394463459185543183397656052122559640661454554977296311391480858037121987999716643812574028291115057152",
+      "method": "Arb512_Frobenius"
+    },
+    {
+      "approximate_upper": 4.05290753285839e-05,
+      "exact_upper": "8903164847453438869279627406294497169488133167878060704439313037692487902094477002889840525530939333285023032060779182008543036106848681103503008639456725/219673525124179510879420825570604582952621929604585773100622830693937381868724993667921908501166545759273481964527387457187903615990932602002368905315681828864",
+      "method": "Arb512_Frobenius"
+    },
+    {
+      "approximate_upper": 2.513197217085443e-05,
+      "exact_upper": "11041657840188741861736518305376065562652372173292733563005917265030411316021305704276374417025223682891802240398524922522190805924995510143397344133005193/439347050248359021758841651141209165905243859209171546201245661387874763737449987335843817002333091518546963929054774914375807231981865204004737810631363657728",
+      "method": "Arb512_Frobenius"
+    },
+    {
+      "approximate_upper": 0.0031756330105867842,
+      "exact_upper": "10900039030254840528096142140937978951342424737118775386015326930662085502547873179214386293946253131620466974923064148924375058792412771247882188844224391/3432398830065304857490950399540696608634717650071652704697231729592771591698828026061279820330727277488648155695740429018560993999858321906287014145557528576",
+      "method": "Arb512_Frobenius"
+    },
+    {
+      "approximate_upper": 0.006452837167860298,
+      "exact_upper": "11074355372782801268413611918029199880698319256354191274930916267809535194307335221625053693669079845625891060828973325896180124559586844778402974207115741/1716199415032652428745475199770348304317358825035826352348615864796385795849414013030639910165363638744324077847870214509280496999929160953143507072778764288",
+      "method": "Arb512_Frobenius"
+    },
+    {
+      "approximate_upper": 3153.7369943554218,
+      "exact_upper": "5161706528548822443467663733616763987357091283419222406671141508573489556448207488327535102436507598718262869465259407991386450384698097414080760629509465/1636695303948070935006594848413799576108321023021532394741645684048066898202337277441635046162952078575443342063780035504608628272942696526664263794688",
+      "method": "Arb512_Frobenius"
+    },
+    {
+      "approximate_upper": 906.9404648805806,
+      "exact_upper": "11875081598644213255814967902686063791782597944041259137714077710547614154899661631973014827577723291230786226823355579470752449581429446485566278722861669/13093562431584567480052758787310396608866568184172259157933165472384535185618698219533080369303616628603546736510240284036869026183541572213314110357504",
+      "method": "Arb512_Frobenius"
+    }
+  ],
+  "reaction_solution_unique_given_state": true,
+  "source_SHA256": {
+    "C:\\Users\\carbe\\OneDrive\\Documents\\CODEX\\Berger-Hopf-Standard-Model\\artifacts\\flagship_integration\\gate7_coupled_fiber_center_20260927\\jet\\arrays.npz": "03D8AF00C7E00794BE898427A6267122F666643D15F491A76E4E452037A2205A",
+    "C:\\Users\\carbe\\OneDrive\\Documents\\CODEX\\Berger-Hopf-Standard-Model\\artifacts\\flagship_integration\\gate7_coupled_fiber_center_20260927\\neighborhood\\arrays.npz": "DD6CBB56B7157C3DF05A88A413E28A14B3201CE9F6E870055F09508CBFE822F6",
+    "C:\\Users\\carbe\\OneDrive\\Documents\\CODEX\\Berger-Hopf-Standard-Model\\scripts\\bind_n12_gate7_comoving_interface.py": "E91672479F7137F7EC9F12336934A8D966DEA0B5DA3451FCEB9AB085C62A1FE4",
+    "C:\\Users\\carbe\\OneDrive\\Documents\\CODEX\\Berger-Hopf-Standard-Model\\src\\bhsm\\interface\\aether_cross_resolution_reconnaissance_v21_35.py": "7B284BA9A777CC8CDEB375CB9B6DF1D9F697FF416FC11F79C1FC07E109D414ED",
+    "artifacts\\flagship_integration\\gate7_comoving_interface_20260927\\node13\\arrays.npz": "6FA561F98E186FB81755366C97A77EB7F77EA883163D43E2C7FFCE4AF6C5FDA5",
+    "artifacts\\flagship_integration\\gate7_comoving_interface_20260927\\node13\\report.json": "31EAEF3DFAD903E2C3E4FCE98996F02E5B15E2D158FBCE306859030A4CE339A3",
+    "artifacts\\flagship_integration\\gate7_comoving_interface_20260927\\node14\\arrays.npz": "5C0A98708926E61BD1258C72F4C93AC21128875C6F801A8BF92CF7F7E5A3C73A",
+    "artifacts\\flagship_integration\\gate7_comoving_interface_20260927\\node14\\report.json": "AD562BB87A3F7FC6C5EB9E1F195BFD0D7C25119DCE9B0B1BB47B74F7C0C00880"
+  },
+  "state_tangent_difference_outward": {
+    "approximate_upper": 1.187608200926945e-18,
+    "exact_upper": "4589556455125198231240844067984316566398746190460853789870517393217668790890122914423209428322661501522339875905973399287182795022708703865319119328845377/3864537523017258344695351890931987344298927329706434998657235251451519142289560424536193766581922577962463616031502177177365078661042987655742908673467080748696980814823424",
+    "method": "Arb512_Frobenius"
+  },
+  "status": "CHILD_BOUNDARY_OUTPUT_GRAPH_DIFFERENTIATED",
+  "tolerances_changed": false,
+  "total_forcing_formula": "delta e=0; retain the left and right history/phase/constraint reactions inside Y_p+Y_x*x_p before applying Db."
+}

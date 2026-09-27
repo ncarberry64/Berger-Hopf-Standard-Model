@@ -1,5 +1,13 @@
 # Coupled interval-13 fiber center and signed physical-chart derivatives
 
+Subsequent physical clarification: fix the external environment and its
+boundary-class labels, while allowing action-slaved interface reactions.
+Do not interpret the alternatives below as a request for seven free external
+inputs or for manually fixed interface values. The local derivative work and
+remaining coupled binding are recorded in
+`n12_gate7_comoving_slaved_interface.md`; the original numerical certificate
+below is preserved unchanged.
+
 Continuation of `752fff23b4809572b292c5a25deb1f8675ef32c1` on
 `theory/gate7-66d-reduced-adjoint-integration`.
 
