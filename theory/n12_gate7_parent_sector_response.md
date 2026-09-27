@@ -47,6 +47,14 @@ not substituted for the environment. The new calculation uses the stored
 parent point as exact binary64 data lifted to Arb512. It does not claim a
 uniform enclosure of the true parent root or the interval-13 seam image.
 
+The original reset role is not a current environment identification.
+`n12_finite_terminal_two_sided_interface.md` explicitly swaps the historical
+pair for forward chronology: `E1=C_star`, `C2=E_star`. The packet's historical
+event point must therefore **not** be adopted as the fixed environment from
+its name. `role_scope.json` records this distinction. The native formulas and
+point replays remain valid, but their binding to the actual fixed environment
+is not established. No closest-state comparison selects that environment.
+
 Each contribution now has its value, 98-vector raw gradient and 98x98 raw
 Hessian saved separately. Their signed sum replays the unchanged action:
 
@@ -130,7 +138,8 @@ not supplied by these owners. No such choice is made.
 
 Thus the next exact object is the **N12 parent/environment seam solution
 jet at fixed e0 in the existing 73-column chart**, using these native sector
-coefficients. The final 7x73 environment operator, co-moving 66D tangent,
+formulas evaluated at its owned realization, not an assumed reset half.
+The final 7x73 environment operator, co-moving 66D tangent,
 and Layer-C rebinding remain open. This is not a mismatch with an old tangent,
 loss of seam protection, or a decay result.
 

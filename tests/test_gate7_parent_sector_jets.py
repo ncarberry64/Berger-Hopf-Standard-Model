@@ -78,6 +78,9 @@ def test_point_packet_does_not_claim_seam_or_dynamic_flux_authority():
     assert len(report['missing_for_7x73'])==2
     assert report['environment_physical_inputs']==0
     assert not report['Gate7_closed'] and not report['FULL_BHSM_COMPLETE']
+    role=json.loads((OUT/'role_scope.json').read_bytes())
+    assert not role['identified_as_current_fixed_environment']
+    assert not role['distance_used_to_select_environment']
     with np.load(s.SOURCE) as z:
         assert all(a['parent_center'][i].contains(arb(float(z['center_state'][i]))) for i in range(98))
 
@@ -86,6 +89,8 @@ def test_frozen_sources_and_independent_reproduction():
     report,_=packet();h=lambda p:hashlib.sha256(p.read_bytes()).hexdigest().upper()
     assert h(OUT/'arrays.npz')==report['arrays_SHA256']
     for p,sha in report['source_SHA256'].items():assert h(Path(p))==sha
+    role=json.loads((OUT/'role_scope.json').read_bytes())
+    for p,sha in role['source_SHA256'].items():assert h(Path(p))==sha
     receipt=json.loads((OUT/'reproduction.json').read_bytes())
     for name,item in receipt['files'].items():
         assert item['byte_identical'] and h(OUT/name)==item['SHA256']
