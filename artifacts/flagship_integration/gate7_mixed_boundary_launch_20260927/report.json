@@ -1,0 +1,181 @@
+{
+  "FULL_BHSM_COMPLETE": false,
+  "Gate7_closed": false,
+  "R_complete_7x73": null,
+  "R_history_7x73": null,
+  "R_reset_total_7x73": null,
+  "arbitrary_seeds_used_for_physical_data": false,
+  "arrays_SHA256": "526B31A1308D1102B1696726D9F72DDC0380ADADF99B2D9B9CC4AD31DB570CE1",
+  "cancellation_factor": null,
+  "coefficient_partial_is_not_boundary_seed": true,
+  "complete_rank": null,
+  "contacts": [
+    {
+      "classification": "ZERO",
+      "owner": "independent reset frame source",
+      "reason": "nabla U_R=0; transport remains ALREADY_INCLUDED in covariant child jets"
+    },
+    {
+      "classification": "ZERO",
+      "owner": "independent fermion delta-supported W_phys",
+      "reason": "AE2 S_Sigma_F=0"
+    },
+    {
+      "classification": "ACTIVE",
+      "owner": "transverse gauge Wentzell",
+      "reason": "W=K_F*c_group*sqrt(Delta1); mixed radius/moving-form jets retained"
+    },
+    {
+      "classification": "ACTIVE",
+      "owner": "scalar/topographic local response",
+      "reason": "Nonaffine radius potential and owned scalar-source incidence retained; no independent scalar delta term inferred"
+    },
+    {
+      "classification": "ALREADY_INCLUDED",
+      "owner": "pair/contact vertices",
+      "reason": "Pair DQ[P_j]P_b and mixed/contact Q P_bj are assembled once, not added again as independent forces"
+    },
+    {
+      "classification": "INTERNAL_REACTION",
+      "owner": "descriptor/constraint/history normal response",
+      "reason": "Compose through common F and objective adjoint; not zeroed"
+    }
+  ],
+  "elimination_result": "Adjoints remove explicit Phi_bp, not genuine P_bp or the contracted F_bp terms in L.",
+  "existing_incidence_scope": "Mixed log-radius vertices at supplied fixed temporal graph/profile; not the complete moving-duration, material-seed or implicit-history mixed jet.",
+  "generic_second_operator_jet_computed": false,
+  "genuine_mixed_formula": "Re Tr(Q(P) P_ba,j); stream only 7x73 scalars",
+  "historical_actions_run": false,
+  "history_sector_general_adjoint": "eta=F_n^-T Gamma_history,n^T; L=Gamma_history-eta^T F; Phi_b=-F_n^-1 F_b; F_n^T lambda=(L_bn+Phi_b^T L_nn)^T; H_red=L_bp+Phi_b^T L_np-lambda^T F_p",
+  "moving_seed": {
+    "connection_corrected": "D(DGamma[B_a])[P_j]-DGamma[D_Pj B_a]=H_red[P_j,B_a]",
+    "current_material_connection_bound": false,
+    "ordinary_derivative": "D(DGamma[B_a])[P_j]=H_red[P_j,B_a]+DGamma[D_Pj B_a]",
+    "requested_minus": "H_red[P_j,B_a]-DGamma[D_Pj B_a]"
+  },
+  "nonaffine_current_coefficients": {
+    "unit_Weyl_W_xx": {
+      "lower": "206738954819669530327045350238081009369165607744074497161258983/205688069665150755269371147819668813122841983204197482918576128",
+      "midpoint": 1.005109120603006,
+      "radius_upper": 2.75048120156408e-54,
+      "upper": "206738954819669530327045350238081009369165607744074498292741321/205688069665150755269371147819668813122841983204197482918576128"
+    },
+    "unit_scalar_V_xx": {
+      "lower": "6493600283536957828245965552501556816925020717739920055708039/1606938044258990275541962092341162602522202993782792835301376",
+      "midpoint": 4.040977377277393,
+      "radius_upper": 2.2116270133730247e-53,
+      "upper": "25974401134147831312983862210006227267700082870959680507147963/6427752177035961102167848369364650410088811975131171341205504"
+    }
+  },
+  "object": "CURRENT_CENTER_HEAT_ZETA_MIXED_BOUNDARY_LAUNCH_JET_7x73",
+  "pair_formula": "Re Tr(DQ(P)[P_j] P_ba), Q=exp(-ell^2 P)/(2P)",
+  "physical_7x73_materialized": false,
+  "prefix_rebuilt": false,
+  "required_numerical_inputs": [
+    "Current joint operator and owned common spectral/form frame",
+    "Seven material boundary seeds, their operator first variations and material derivatives",
+    "Formation/reset/contact first pullbacks at the same current center",
+    "Contracted mixed coefficient/duration/seed incidences x_bj and h_bj, or equivalent adjoint contractions",
+    "Full internal F_n,F_b,F_p and contracted Lagrange-adjoint mixed blocks for the history-only objective"
+  ],
+  "row_norms": null,
+  "source_SHA256": {
+    "artifacts/action_extension/BHSM_ACTION_AE2_GLOBAL_SPIN_RESET_ACTION.json": "4C756145A9E303F6E4F7F9536CF5639957D010C1A97AF6BE9299830C549B82DC",
+    "artifacts/flagship_integration/BHSM_N12_C2_FIXED_SEED_UPSTREAM_FORCE_OWNER.json": "396F39A4F98ECE7F903221EFD01A1C126479EE56DC4F8A72C976501D0D4F8A71",
+    "artifacts/flagship_integration/BHSM_N12_FORWARD_COMMON_SOURCE_INCIDENCE.json": "943359A4649960D7D2293B396D5C3B661B6D6F2C8D36A68FC6E36895141CEF33",
+    "artifacts/flagship_integration/BHSM_N12_GATE7_JOINT_HEAT_COTANGENT_REVERSE_SEED.json": "314C8A6C77A062A76F92CAD1D3833EED363DA105FC12265A292A1BD874F85901",
+    "artifacts/flagship_integration/gate7_current_history_20260927/core/arrays.npz": "42D7B332728BCF66D55828E4EE3B6060F259D032BA3A757A4383D968F3074E51",
+    "artifacts/flagship_integration/gate7_current_history_20260927/core/report.json": "0737770A37D60CD0DB39A9B2EE6D995D9A706EE779B067782CE88CA86D77A363",
+    "artifacts/flagship_integration/gate7_current_spectral_20260927/arrays.npz": "5EB08BE9C78DC1D8C20358F87702F7E6E276C598858D607F567B5FC7C806AE93",
+    "artifacts/flagship_integration/gate7_current_spectral_20260927/report.json": "AC0970B1850A7190F55200CF95565BBF49AD1A75F81ECF2D958810C07CB6894C",
+    "artifacts/flagship_integration/gate7_launch_response_20260927/arrays.npz": "604545EDB6E8690799BE1CB88C384420FEB29A8F35538759ADC3B22349DD95AB",
+    "artifacts/flagship_integration/gate7_launch_response_20260927/report.json": "BF196C4937341F2C5FAB5F308FEBEDA905C501771426B4D483B5C35F9AE9F6D3",
+    "scripts/derive_n12_gate7_mixed_boundary_launch_contract.py": "8D1D044DE348B4B4D2FF3E47B5BED1BA06D224ED56288CE587CEB78F95672730",
+    "src/bhsm/interface/ae2_covariant_seam_response.py": "56CF248FD9EC2F7FBB39AC5BD44052EBE37A257A80EF5BBF1665CFEFA259093A",
+    "src/bhsm/interface/aether_ae2_one_seam_descriptor.py": "C8A11EFB1E3150F55BF28790042C863B061AB41F8FE48E073A1CB1F0C4E43B9E",
+    "src/bhsm/interface/aether_forward_common_source_incidence.py": "2C66699B3599B7B5B41C197027E0EF6207C84C3DDB432D06B5D2CF2F32390B21",
+    "src/bhsm/interface/forward_finite_endpoint_heat_force.py": "80CB6E87E695DC3EBD74E5745A8E2328D5D2ABA790372954B565B226086BB359",
+    "src/bhsm/interface/heat_zeta_mixed_boundary_launch.py": "9F5539480C52082816B348AB7F60EA0C26FEB6282609DF7FB739C1F6933D3CA2",
+    "src/bhsm/interface/joint_boundary_port_reduction.py": "B4070554E9CA69CD05EF5A6EB409D6A1F9D37CF959A47F6DE35A9190058E2DED"
+  },
+  "source_lines": {
+    "ae2_covariant_seam_response.py": {
+      "covariant_effective_event_load_jet": {
+        "first_line": 41,
+        "last_line": 59
+      },
+      "transition_covariant_derivative": {
+        "first_line": 77,
+        "last_line": 91
+      }
+    },
+    "aether_ae2_one_seam_descriptor.py": {
+      "_element": {
+        "first_line": 22,
+        "last_line": 50
+      },
+      "assemble_ae2_one_seam_descriptor": {
+        "first_line": 53,
+        "last_line": 166
+      }
+    },
+    "aether_forward_common_source_incidence.py": {
+      "forward_hs_scalar_log_radius_jets": {
+        "first_line": 278,
+        "last_line": 331
+      },
+      "forward_oneform_ghost_log_radius_jets": {
+        "first_line": 422,
+        "last_line": 504
+      },
+      "forward_weyl_log_radius_jets": {
+        "first_line": 163,
+        "last_line": 240
+      }
+    },
+    "forward_finite_endpoint_heat_force.py": {
+      "heat_regulator_value_and_force": {
+        "first_line": 32,
+        "last_line": 78
+      },
+      "piecewise_linear_zeta_coefficient_cotangent": {
+        "first_line": 211,
+        "last_line": 284
+      }
+    },
+    "heat_zeta_mixed_boundary_launch.py": {
+      "element_mixed": {
+        "first_line": 70,
+        "last_line": 90
+      },
+      "heat_pair_7x73": {
+        "first_line": 48,
+        "last_line": 67
+      },
+      "reduce_implicit_mixed": {
+        "first_line": 136,
+        "last_line": 155
+      },
+      "reduce_mixed_reactions": {
+        "first_line": 106,
+        "last_line": 125
+      },
+      "zeta_element_mixed": {
+        "first_line": 93,
+        "last_line": 103
+      }
+    },
+    "joint_boundary_port_reduction.py": {
+      "moving_port_jet": {
+        "first_line": 31,
+        "last_line": 42
+      },
+      "reduce_seven_port": {
+        "first_line": 10,
+        "last_line": 28
+      }
+    }
+  },
+  "stationary_schur": "Gamma_bp - lambda^T F_p, F_n^T lambda=Gamma_bn^T; requires F=Gamma_n or owned bordered stationary equivalent",
+  "status": "MIXED_TERM_NOT_ELIMINATED_NARROW_CONTRACTION_RECIPE_DERIVED"
+}
