@@ -3,6 +3,7 @@
 import { Music2, Pause, Play, Volume2, VolumeX } from 'lucide-react';
 import { useEffect, useRef, useState } from 'react';
 import { startSoundtrackOnInteraction } from '../lib/start-soundtrack';
+import { manageSoundtrackSession } from '../lib/soundtrack-session';
 
 const TRACKS = [
   {
@@ -22,13 +23,18 @@ export function MuseumSoundtrack() {
   const [trackIndex, setTrackIndex] = useState(0);
   const [playing, setPlaying] = useState(false);
   const [muted, setMuted] = useState(false);
+  const currentTrack = useRef(0);
+  const manuallyPaused = useRef(false);
+  const stopGesture = useRef<() => void>(() => {});
   const track = TRACKS[trackIndex];
 
   useEffect(() => {
-    const firstTrack = audioRefs.current[0];
-    if (!firstTrack) return;
-
-    return startSoundtrackOnInteraction(window, firstTrack, (event) => {
+    const players = audioRefs.current.filter(
+      (audio): audio is HTMLAudioElement => audio !== null,
+    );
+    const isActive = () => !document.hidden && document.hasFocus();
+    const shouldStart = (event: Event) => {
+      if (!isActive()) return false;
       // The final-slide player handles its own buttons. Do not start and
       // toggle playback twice on the same click.
       if (
@@ -41,16 +47,47 @@ export function MuseumSoundtrack() {
         (event.repeat ||
           ['Shift', 'Control', 'Alt', 'Meta', 'Escape'].includes(event.key))
       );
+    };
+    const armGesture = () => {
+      stopGesture.current();
+      const audio = audioRefs.current[currentTrack.current];
+      if (audio && !manuallyPaused.current)
+        stopGesture.current = startSoundtrackOnInteraction(
+          window,
+          audio,
+          shouldStart,
+        );
+    };
+    let channel: BroadcastChannel | undefined;
+    try {
+      if (typeof BroadcastChannel !== 'undefined')
+        channel = new BroadcastChannel('bhsm-museum-soundtrack');
+    } catch {
+      /* Focus and visibility guards still apply if channels are unavailable. */
+    }
+    const stopSession = manageSoundtrackSession({
+      windowTarget: window,
+      documentTarget: document,
+      players,
+      isActive,
+      channel,
+      owner: crypto.randomUUID(),
+      onChange: setPlaying,
+      onSuspend: armGesture,
     });
+    armGesture();
+    return () => {
+      stopGesture.current();
+      stopSession();
+    };
   }, []);
 
   async function play(index: number) {
     const audio = audioRefs.current[index];
-    if (!audio) return;
+    if (!audio || document.hidden || !document.hasFocus()) return;
 
     try {
       await audio.play();
-      setPlaying(true);
     } catch {
       setPlaying(false);
     }
@@ -61,11 +98,14 @@ export function MuseumSoundtrack() {
     if (!audio) return;
 
     if (playing) {
+      manuallyPaused.current = true;
+      stopGesture.current();
       audio.pause();
       setPlaying(false);
       return;
     }
 
+    manuallyPaused.current = false;
     void play(trackIndex);
   }
 
@@ -74,6 +114,7 @@ export function MuseumSoundtrack() {
     if (endedTrack) endedTrack.currentTime = 0;
 
     const nextIndex = (endedIndex + 1) % TRACKS.length;
+    currentTrack.current = nextIndex;
     setTrackIndex(nextIndex);
     void play(nextIndex);
   }
@@ -97,8 +138,6 @@ export function MuseumSoundtrack() {
           }}
           src={item.source}
           preload="auto"
-          onPlay={() => setPlaying(true)}
-          onPause={() => setPlaying(false)}
           onEnded={() => advancePlaylist(index)}
         />
       ))}
