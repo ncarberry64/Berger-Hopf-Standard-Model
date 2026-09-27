@@ -1,0 +1,86 @@
+{
+  "FULL_BHSM_COMPLETE": false,
+  "Gate7_closed": false,
+  "Layer_C_rebound": false,
+  "arrays_SHA256": "2564BD0AB73436AD472C3E1714624A71B6B4BF18CBA76D6A189B0EFF3A90B3B3",
+  "coupled_balance": "Kp=Cp+O*Ep; Kq=Cq+O*Eq; Dq=-Kq^-1*Kp; T=Tp+Tq*Dq",
+  "coupling_Gram_inverse_defect": {
+    "approximate_upper": 8.029099887837322e-36,
+    "exact_upper": "8943430530081741447128007563809046112865537008676264337974359255581041495157955716678589671313042212103217582312053770230889890953315193205576992172047813/1113877103911668754551067286547922686741510866027480451801560673315252726369306002564920119950530126899082595110740822097336109551117050292542153642510306198303709637294986560078826707091456",
+    "method": "Arb512_Frobenius"
+  },
+  "coupling_norm_raw_units": {
+    "approximate_upper": 1838371.70465045,
+    "exact_upper": "2938334312414454713106685117017113048263676591929738040883743091340814988045653127789744235927341629094128016795332290296334847681085419642930834635011069/1598335257761788022467377781654101148543282249044465229239888363328190330275719997501596724768507889233831388734160190922469363547795602076820570112",
+    "method": "Arb512_Frobenius"
+  },
+  "coupling_rank_certified": 2,
+  "delta_environment_state": 0,
+  "equation": "Dnu=nu_Y|rho*DY + nu_rho*Drho_env; Drho_env includes the moving-seam pullback at fixed e0",
+  "first_missing_representation": "An owner-bound native environment trace/reaction first jet together with the embedding, frame, normal and measure pullback jet induced by the 73 p/q state directions at interval 13.",
+  "independent_environment_inputs": 0,
+  "intrinsic_columns": 66,
+  "physical_environment_response_constructed": false,
+  "physical_tangent_comparison_completed": false,
+  "reaction_columns": 7,
+  "reaction_q_columns_required": true,
+  "response_required_shape": [
+    7,
+    73
+  ],
+  "reuse_decisions": {
+    "Riccati": "Valid along an owned arm-normal displacement given M and L; not a seven-row response or general shape derivative without an owner map.",
+    "canonical_momentum": "Differentiate the existing weighted inverse-adjoint transport; native value derivative is mandatory.",
+    "dynamic_flux": "Requires the same-action native dynamic-flux shape jet, including momentum material-rate derivative; not determined by trace values alone.",
+    "fixed_rho_checkpoint": "Its missing nu_rho*Drho term is now available as a signed rank-two coupling. No zero Drho assumption is made.",
+    "material_pullback": "Reuse D(P r)=DP r+P Dr, including density, normal and moved projector contributions in DP.",
+    "parent_provenance": "Stored spectral M_E0 value/jet is open. This does not by itself prove a local seven-row realization needs the whole spectral parent campaign.",
+    "v04": "Defines W_E schematically; does not instantiate its Hessian, shape jet or seam embedding."
+  },
+  "scientific_action_producers_run": false,
+  "source_SHA256": {
+    "C:\\Users\\carbe\\Downloads\\BHSM_ENVIRONMENT_BOUNDARY_GRAPH_ENCLOSURE_v0.4.md": "F6399BEA3BB174645281D7319D7E1D71B29C6673D9D94F46FC8B1216657C8072",
+    "C:\\Users\\carbe\\OneDrive\\Documents\\CODEX\\Berger-Hopf-Standard-Model\\artifacts\\flagship_integration\\BHSM_N12_GATE7_E0_EVENT_SIDE_RESPONSE_PROVENANCE_AUDIT.json": "392FF0C6CDF160E5EBAB4B6AB6686F209F77B2B61FD27C4EE8EB928BF7DBE6FC",
+    "C:\\Users\\carbe\\OneDrive\\Documents\\CODEX\\Berger-Hopf-Standard-Model\\artifacts\\flagship_integration\\gate7_comoving_interface_20260927\\feedback13\\arrays.npz": "0AB1C46CA5217C28C7693D77EFF0E55698C338FE41161B0C5C754CCFC2CA6AAB",
+    "C:\\Users\\carbe\\OneDrive\\Documents\\CODEX\\Berger-Hopf-Standard-Model\\artifacts\\flagship_integration\\gate7_comoving_interface_20260927\\feedback13\\report.json": "2C32C205704FCAC2147C686B2BD52A8D5CEA1470DE200D9CE2489DC3D3B429CC",
+    "C:\\Users\\carbe\\OneDrive\\Documents\\CODEX\\Berger-Hopf-Standard-Model\\scripts\\compile_n12_gate7_environment_seam_pullback.py": "B237446349A819B24E51AB8027DC9C4A13141C954388244B7734CF088C4D3ED7",
+    "C:\\Users\\carbe\\OneDrive\\Documents\\CODEX\\Berger-Hopf-Standard-Model\\src\\bhsm\\interface\\aether_forward_history_weyl_first_jet.py": "FF8E7BEAC608E700534166EBA1CF31AC3A6915FD5B177BAC3D27B931BD2C9D38",
+    "C:\\Users\\carbe\\OneDrive\\Documents\\CODEX\\Berger-Hopf-Standard-Model\\src\\bhsm\\interface\\event_normal_weyl_riccati.py": "EC006A34D2AEF608860184611F8DF39C9A7058036CB242ADBB7FEBE47550FEDA",
+    "C:\\Users\\carbe\\OneDrive\\Documents\\CODEX\\Berger-Hopf-Standard-Model\\src\\bhsm\\interface\\full_field_moving_reset_graph_decision.py": "D51DC1A473FE77A0E6D4212F4D64F746BBF702D1A823EC5470E5E5817C2F658A",
+    "C:\\Users\\carbe\\OneDrive\\Documents\\CODEX\\Berger-Hopf-Standard-Model\\src\\bhsm\\interface\\gauge_connection_reset_bundle_lift_adjudication.py": "A7C5363E4486B4C56D3EBF356A09131205A60A9BB168A4F811725017F06ED8ED",
+    "C:\\Users\\carbe\\OneDrive\\Documents\\CODEX\\Berger-Hopf-Standard-Model\\src\\bhsm\\interface\\moving_seam_response.py": "A0B3703275A4E6E2F7F7E66644262C64E5489102487A3296361E0BA30C33E529",
+    "C:\\Users\\carbe\\OneDrive\\Documents\\CODEX\\Berger-Hopf-Standard-Model\\theory\\n12_gate7_outgoing_flow_tail_closure.md": "0D13F2D06526305FB5392F1F0328CCDCCD13416648024C700D27A2716F9A22A7"
+  },
+  "source_lines": {
+    "src/bhsm/interface/aether_forward_history_weyl_first_jet.py": {},
+    "src/bhsm/interface/event_normal_weyl_riccati.py": {
+      "weyl_geometry_jet_rhs": {
+        "end": 44,
+        "start": 30,
+        "text": "def weyl_geometry_jet_rhs(\n    weyl: np.ndarray,\n    geometry_jet: np.ndarray,\n    spatial_geometry_jet: np.ndarray,\n) -> np.ndarray:\n    \"\"\"Return the exact linearized Riccati equation for ``D_Phi M``.\"\"\"\n\n    m = np.asarray(weyl, dtype=complex)\n    dm = np.asarray(geometry_jet, dtype=complex)\n    dv = np.asarray(spatial_geometry_jet, dtype=complex)\n    if m.ndim != 2 or m.shape[0] != m.shape[1] or dm.shape != m.shape or dv.shape != m.shape:\n        raise ValueError(\"Weyl value and geometry jets must have one square shape\")\n    if not all(np.all(np.isfinite(value)) for value in (m, dm, dv)):\n        raise ValueError(\"finite Weyl geometry-jet data required\")\n    return dv - m @ dm - dm @ m"
+      },
+      "weyl_riccati_rhs": {
+        "end": 27,
+        "start": 8,
+        "text": "def weyl_riccati_rhs(\n    weyl: np.ndarray, spatial_operator: np.ndarray, spectral_parameter: float,\n) -> np.ndarray:\n    \"\"\"Return ``dM/ds=(L-zI)-M^2`` from the terminal event inward.\"\"\"\n\n    m = np.asarray(weyl, dtype=complex)\n    potential = np.asarray(spatial_operator, dtype=complex)\n    if (\n        m.ndim != 2\n        or m.shape[0] != m.shape[1]\n        or potential.shape != m.shape\n        or not np.all(np.isfinite(m))\n        or not np.all(np.isfinite(potential))\n    ):\n        raise ValueError(\"finite same-size square Weyl and spatial matrices required\")\n    if not np.allclose(m, m.conj().T, rtol=0.0, atol=1.0e-11):\n        raise ValueError(\"Weyl matrix must be Hermitian on the real resolvent axis\")\n    if not np.allclose(potential, potential.conj().T, rtol=0.0, atol=1.0e-11):\n        raise ValueError(\"spatial operator must be Hermitian\")\n    return potential - float(spectral_parameter) * np.eye(m.shape[0]) - m @ m"
+      }
+    },
+    "src/bhsm/interface/full_field_moving_reset_graph_decision.py": {
+      "first_moving_domain_variation": {
+        "end": 329,
+        "start": 300,
+        "text": "def first_moving_domain_variation() -> dict[str, Any]:\n    \"\"\"Give the exact first variation of the conditional graph family.\"\"\"\n\n    return {\n        \"map_velocity\": \"eta_child=delta_F_B_COMPOSE_F_B^(-1)\",\n        \"natural_pullback\": \"delta(F_B^*X_c)=F_B^*(delta_X_c+mathfrak_L_(eta_child)X_c)\",\n        \"geometric_derivatives\": {\n            \"tensor_scalar_density\": \"ordinary_Lie_derivative_with_the_correct_tensor_and_density_weight\",\n            \"spinor\": \"Kosmann_or_induced_spin_geometric_derivative_including_the_spin_lift_variation\",\n            \"connection\": \"delta(F_B^*A_c)=F_B^*(delta_A_c+L_eta A_c)_before_internal_lift_terms\",\n            \"curvature\": \"F_B^*(delta_mathcalF_c+L_eta mathcalF_c)\",\n            \"canonical_momentum\": \"cotangent_lift_derivative_including_density_Jacobian_and_conormal\",\n            \"projector\": \"delta_P=[mathfrak_L_eta,P]_when_the_subspace_is_moved\",\n            \"Galerkin\": \"delta_a=projection_of_mathfrak_L_eta_X_plus_basis_or_projector_derivative\",\n        },\n        \"residual\": \"R_s=Gamma_e(X_e)-C_s(F_B,lambda_s)Gamma_c(X_c)\",\n        \"D_R\": (\n            \"D R_s[delta X_e,delta X_c,delta F_B,delta lambda_s]=\"\n            \"D Gamma_e[delta X_e]-C_s D Gamma_c[delta X_c]-\"\n            \"D_F C_s[delta F_B]Gamma_c(X_c)-\"\n            \"D_lambda C_s[delta lambda_s]Gamma_c(X_c)=0\"\n        ),\n        \"connection_D_R\": (\n            \"d(delta U)+F_B^*(delta A_c+L_eta A_c)U+\"\n            \"(F_B^*A_c)delta U-delta U A_e-U delta A_e=0\"\n        ),\n        \"AE2_common_gauge_frame\": \"delta_G_R=0_BUT_THE_SPATIAL_SPIN_LIFT_VARIATION_IS_NOT_SET_TO_ZERO\",\n        \"first_variation_derived_for_entire_conditional_family\": True,\n        \"first_variation_action_owned\": False,\n    }"
+      }
+    },
+    "src/bhsm/interface/gauge_connection_reset_bundle_lift_adjudication.py": {
+      "weighted_cotangent_momentum_map": {
+        "end": 230,
+        "start": 206,
+        "text": "def weighted_cotangent_momentum_map(\n    event_momentum: Sequence[complex],\n    reset_derivative: Sequence[Sequence[complex]],\n    event_pairing_weight: Sequence[Sequence[complex]],\n    child_pairing_weight: Sequence[Sequence[complex]],\n) -> np.ndarray:\n    \"\"\"Return the conditional inverse-adjoint momentum transport.\n\n    For ``q_child=L q_event`` and pairings ``p^dagger W dq``, exact canonical\n    transport requires ``p_child=W_child^-1 L^-dagger W_event p_event``.\n    \"\"\"\n\n    momentum = np.asarray(event_momentum, dtype=complex)\n    derivative = _square(reset_derivative, \"reset_derivative\")\n    event_weight = _square(event_pairing_weight, \"event_pairing_weight\")\n    child_weight = _square(child_pairing_weight, \"child_pairing_weight\")\n    size = derivative.shape[0]\n    if (\n        momentum.shape != (size,)\n        or event_weight.shape != derivative.shape\n        or child_weight.shape != derivative.shape\n    ):\n        raise ValueError(\"momentum, derivative, and weights must agree\")\n    inverse_adjoint = np.linalg.inv(derivative).conj().T\n    return np.linalg.solve(child_weight, inverse_adjoint @ event_weight @ momentum)"
+      }
+    },
+    "src/bhsm/interface/moving_seam_response.py": {}
+  },
+  "status": "ENVIRONMENT_SEAM_COMPOSITION_DERIVED_REALIZATION_OPEN",
+  "tolerances_changed": false
+}
