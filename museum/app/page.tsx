@@ -19,6 +19,7 @@ import { CosmologyUpdate } from './cosmology-update';
 import { CosmologyRealization } from './cosmology-realization';
 import { BHSMResearchUpdate } from './research-update';
 import { MuseumDeck } from './museum-deck';
+import { BergerHopf } from './berger-hopf';
 
 const ASSET_REVISION = 'science-first-2026-09-07';
 const researchDisplays = exhibits.filter((row) =>
@@ -90,7 +91,7 @@ export default function Home() {
           </span>
         </a>
         <nav aria-label="Museum navigation">
-          <a href="#potential">Framework</a>
+          <a href="#berger-hopf">Berger &amp; Hopf</a>
           <a href="#exhibits">Science exhibits</a>
           <a href="#comparisons">Comparisons</a>
           <a href="#details">Details</a>
@@ -101,12 +102,79 @@ export default function Home() {
       </header>
       <MuseumDeck>
         <EngineHero motion={motion} setMotion={setMotion} />
-        <PrototypeScience motion={motion} setMotion={setMotion} />
-        <ScienceGallery motion={motion} />
+        <BergerHopf motion={motion} setMotion={setMotion} />
         <UnificationConsole motion={motion} setMotion={setMotion} />
+        <PrototypeScience motion={motion} setMotion={setMotion} />
+        <section
+          id="cosmology-original"
+          className="other-work-wing"
+          aria-labelledby="cosmology-original-title"
+        >
+          <div className="section-heading">
+            <p className="eyebrow">Cosmology · original exhibit</p>
+            <h2 id="cosmology-original-title">
+              Geometry, light and the cosmic cycle.
+            </h2>
+            <p>
+              Explore the original geometric proposal and its animated journey
+              from a sea of light through the cosmic web to a proposed cycle.
+            </p>
+          </div>
+          <div className="creator-links">
+            <a href="#other-work">
+              Follow the proposal into testable responses →
+            </a>
+          </div>
+          <p className="other-work-boundary">
+            Historical conceptual animations · not sky maps or current numerical
+            fits. These illustrations do not establish a physical cosmic cycle.
+          </p>
+          <article className="other-work-card">
+            <div className="other-work-visual">
+              <MotionImage motion={motion} exhibit={cosmologyExhibit} />
+            </div>
+            <div className="other-work-copy">
+              <h3>The January proposal</h3>
+              <p>{cosmologyExhibit.seen}</p>
+              <a href="https://doi.org/10.20944/preprints202601.1427.v1">
+                Original preprint ↗
+              </a>
+            </div>
+          </article>
+          <CosmicEnclosure motion={motion} />
+        </section>
+        <section
+          id="other-work"
+          className="other-work-wing"
+          aria-labelledby="other-work-title"
+        >
+          <div className="section-heading">
+            <p className="eyebrow">Cosmology · updated 24 September 2026</p>
+            <h2 id="other-work-title">
+              From a cosmic pattern to a testable response.
+            </h2>
+            <p>
+              Geometry Before Fields develops a conditional link from geometry
+              through matter and light propagation to observations. New
+              environmental-state calculations sharpen the model; supernova
+              tests have not established its proposed common signal.
+            </p>
+          </div>
+          <div className="creator-links">
+            <a href="#cosmology-original">
+              Revisit the original cosmology proposal ←
+            </a>
+          </div>
+          <CosmologyRealization motion={motion} setMotion={setMotion} />
+          <details className="console-details cosmology-evidence">
+            <summary>Evidence and open questions · cosmology results</summary>
+            <CosmologyUpdate />
+          </details>
+        </section>
+        <ScienceGallery motion={motion} />
         <ScienceConsole
           id="research-exhibit"
-          number="06"
+          number="10"
           label="CMS · Data & discovery"
           title="The same collision. A different perspective."
           intro="Follow real muons through two coordinate descriptions. The picture changes; the recorded event stays the same."
@@ -167,14 +235,23 @@ export default function Home() {
           aria-labelledby="details-title"
         >
           <div className="section-heading">
-            <p className="eyebrow">The details behind the exhibits</p>
-            <h2 id="details-title">Follow the science further.</h2>
+            <p className="eyebrow">From explanation to prediction</p>
+            <h2 id="details-title">What would make it predictive?</h2>
           </div>
+          <p className="method-intro">
+            A shared geometric description could connect questions about
+            particles and the cosmos. Predictive power comes when independently
+            specified assumptions produce a quantitative answer before the
+            experimental comparison. Follow the chain: derive the dynamics, fix
+            the units and scope, freeze the result, then test it against
+            observations that did not choose the answer.
+          </p>
           <p className="method-intro">
             Collection reviewed 24 September 2026. Local BHSM certificates have
             advanced; no new physical particle observable has passed the
             museum’s reviewed-output requirements. Historical values retain
             their original classifications and experimental reference editions.{' '}
+            {/* oxlint-disable-next-line next/no-html-link-for-pages -- This opens a static JSON source record, not an application route. */}
             <a href="./research/museum-update-record.json">
               Update sources and exhibit coverage ↗
             </a>
@@ -273,70 +350,6 @@ export default function Home() {
               </a>
             </div>
           </div>
-        </section>
-        <section
-          id="other-work"
-          className="other-work-wing"
-          aria-labelledby="other-work-title"
-        >
-          <div className="section-heading">
-            <p className="eyebrow">Cosmology · updated 24 September 2026</p>
-            <h2 id="other-work-title">
-              From a cosmic pattern to a testable response.
-            </h2>
-            <p>
-              Geometry Before Fields develops a conditional link from geometry
-              through matter and light propagation to observations. New
-              environmental-state calculations sharpen the model; supernova
-              tests have not established its proposed common signal.
-            </p>
-          </div>
-          <div className="creator-links">
-            <a href="#cosmology-original">
-              Explore the original cosmology exhibit →
-            </a>
-          </div>
-          <CosmologyRealization motion={motion} setMotion={setMotion} />
-          <details className="console-details cosmology-evidence">
-            <summary>Evidence and open questions · cosmology results</summary>
-            <CosmologyUpdate />
-          </details>
-        </section>
-        <section
-          id="cosmology-original"
-          className="other-work-wing"
-          aria-labelledby="cosmology-original-title"
-        >
-          <div className="section-heading">
-            <p className="eyebrow">Cosmology · original exhibit</p>
-            <h2 id="cosmology-original-title">
-              Geometry, light and the cosmic cycle.
-            </h2>
-            <p>
-              Explore the original geometric proposal and its animated journey
-              from a sea of light through the cosmic web to a proposed cycle.
-            </p>
-          </div>
-          <div className="creator-links">
-            <a href="#other-work">Explore the updated cosmology exhibit ←</a>
-          </div>
-          <p className="other-work-boundary">
-            Historical conceptual animations · not sky maps or current numerical
-            fits. These illustrations do not establish a physical cosmic cycle.
-          </p>
-          <article className="other-work-card">
-            <div className="other-work-visual">
-              <MotionImage motion={motion} exhibit={cosmologyExhibit} />
-            </div>
-            <div className="other-work-copy">
-              <h3>The January proposal</h3>
-              <p>{cosmologyExhibit.seen}</p>
-              <a href="https://doi.org/10.20944/preprints202601.1427.v1">
-                Original preprint ↗
-              </a>
-            </div>
-          </article>
-          <CosmicEnclosure motion={motion} />
         </section>
         <footer id="museum-exit">
           <p>

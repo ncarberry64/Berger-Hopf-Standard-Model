@@ -126,11 +126,11 @@ export function PrototypeScience({
       </div>
       <nav className="console-index" aria-label="Science exhibits">
         {[
-          ['predictions', '01', 'Matter'],
-          ['decays', '02', 'Collisions'],
-          ['magnetic', '03', 'Magnetism'],
-          ['test', '04', 'Comparisons'],
-          ['unification', '05', 'Forces'],
+          ['unification', '03', 'Forces'],
+          ['predictions', '04', 'Matter'],
+          ['magnetic', '05', 'Magnetism'],
+          ['decays', '06', 'Collisions'],
+          ['test', '09', 'Comparisons'],
         ].map(([id, n, name]) => (
           <a key={id} href={id === 'test' ? '#comparisons' : `#science-${id}`}>
             <b>{n}</b>
@@ -140,7 +140,7 @@ export function PrototypeScience({
       </nav>
       <ScienceConsole
         id="science-predictions"
-        number="01"
+        number="04"
         label="Matter from geometry"
         title="Three families in the BHSM framework."
         intro="Nature repeats a pattern. BHSM asks whether the repetition comes from different modes of a shared internal geometry."
@@ -323,19 +323,8 @@ export function PrototypeScience({
         </details>
       </ScienceConsole>
       <ScienceConsole
-        id="science-decays"
-        number="02"
-        label="Collision theatre"
-        title="Energy in. New particles out."
-        intro="Watch a collision unfold. Click the chamber to freeze the tracks and discover what came out."
-        accent="cyan"
-      >
-        <CollisionTheatre motion={motion} />
-        <Outputs exhibit="decays" />
-      </ScienceConsole>
-      <ScienceConsole
         id="science-magnetic"
-        number="03"
+        number="05"
         label="Magnetic moments in motion"
         title="Four reference magnetic moments."
         intro="Explore conventional measured moments for four spin-½ particles. The animation illustrates precession; BHSM magnetic-moment predictions remain open."
@@ -343,6 +332,17 @@ export function PrototypeScience({
       >
         <MagneticLab motion={motion} />
         <Outputs exhibit="magnetic" />
+      </ScienceConsole>
+      <ScienceConsole
+        id="science-decays"
+        number="06"
+        label="Collision theatre"
+        title="Energy in. New particles out."
+        intro="Watch a collision unfold. Click the chamber to freeze the tracks and discover what came out."
+        accent="cyan"
+      >
+        <CollisionTheatre motion={motion} />
+        <Outputs exhibit="decays" />
       </ScienceConsole>
     </section>
   );
@@ -357,7 +357,7 @@ export function UnificationConsole({
   return (
     <ScienceConsole
       id="science-unification"
-      number="05"
+      number="03"
       label="Forces · one geometric origin"
       title="One geometry. Four interaction regimes."
       intro="Explore four interactions and the geometric origin proposed by BHSM. Five moving studies illustrate binding, release, imbalance, curvature and shared geometry."

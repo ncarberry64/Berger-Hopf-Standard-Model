@@ -195,7 +195,7 @@ export function EngineHero({
             interactions. Explore its conditional structural results, historical
             numerical screens and open physical questions.
           </p>
-          <a className="enter-museum" href="#exhibits">
+          <a className="enter-museum" href="#berger-hopf">
             Enter the science →
           </a>
           <small>
