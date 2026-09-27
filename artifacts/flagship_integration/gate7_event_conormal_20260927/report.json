@@ -1,0 +1,140 @@
+{
+  "FULL_BHSM_COMPLETE": false,
+  "Gate7_closed": false,
+  "arrays_SHA256": "F19D6F46332E7BCD7B30E59B64D4C72D09AE2DAE57D0037CE8ADA705AE3261CB",
+  "child_derivative": "D2P_child[X_child,u]+DP_child[DX_child u]-DF_child[u]+D Gamma_child[u]",
+  "current_environment_identified": false,
+  "derivative_norm": {
+    "approximate_upper": 209475.10865893617,
+    "exact_upper": "10713966457377896765511753237941255873738803797311555760426375388469300720547297088144972866679516997661668632975409804698694756472690137578118996895839405/51146728248377216718956089012931236753385031969422887335676427626502090568823039920051095192592252455482604439493126109519019633529459266458258243584",
+    "method": "Arb512_Frobenius"
+  },
+  "dynamic_flux_owner_exists": true,
+  "event_derivative": "D Gamma_event[u]=(DLq[u])^T radial + Lq^T D radial[u]",
+  "event_momentum_rate_added": false,
+  "finite_difference_used": false,
+  "fixed_environment_variation": 0,
+  "frozen_gradient_hessian_reused": true,
+  "frozen_scientific_producers_rerun": false,
+  "lift_contribution_norm": {
+    "approximate_upper": 210566.21697841864,
+    "exact_upper": "5384886539042005206128108329876263953472694368894110227338146862491078722572039155918941906460247955609661796080220450295174767773637543877595002751203417/25573364124188608359478044506465618376692515984711443667838213813251045284411519960025547596296126227741302219746563054759509816764729633229129121792",
+    "method": "Arb512_Frobenius"
+  },
+  "material_response_7x73_derived": false,
+  "native_response_shape": [
+    7,
+    98
+  ],
+  "new_calculation": "configuration-lift contracted D3 at the same stored native point",
+  "new_environment_inputs": 0,
+  "owner_equation": "R_flux=DP_child[X_child]-F_child+Gamma_child+Gamma_event",
+  "point_key": "frozen parent-sector parent_center; historical reset center_state[:98]",
+  "provenance": {
+    "C:\\Users\\carbe\\OneDrive\\Documents\\CODEX\\Berger-Hopf-Standard-Model\\src\\bhsm\\interface\\aether_cross_resolution_reconnaissance_v21_35.py": {
+      "SHA256": "7B284BA9A777CC8CDEB375CB9B6DF1D9F697FF416FC11F79C1FC07E109D414ED",
+      "functions": {
+        "_canonical_pair_at_order": {
+          "end": 3022,
+          "start": 2998,
+          "text": "def _canonical_pair_at_order(\n    order: int,\n    coordinates: np.ndarray,\n    velocities: np.ndarray,\n    multipliers: np.ndarray,\n    *,\n    points: int,\n) -> tuple[np.ndarray, np.ndarray, np.ndarray, np.ndarray]:\n    size = dimensions(order)\n    qdim = size[\"coordinates\"]\n    jet = exact_full_action_jet_at_state(\n        order, coordinates, velocities, multipliers, points=points\n    )\n    gradient = np.asarray(jet.gradient)\n    hessian = np.asarray(jet.hessian)\n    boundary = _attachment_jacobian_at_order(order, coordinates)\n    q_form = hessian[:qdim, :qdim]\n    v_form = hessian[qdim:2 * qdim, qdim:2 * qdim]\n    cq = hessian[2 * qdim:, :qdim]\n    cv = hessian[2 * qdim:, qdim:2 * qdim]\n    q_lift = _boundary_lift(q_form, boundary, cq)\n    v_lift = _boundary_lift(v_form, boundary, cv)\n    momentum = v_lift.T @ gradient[qdim:2 * qdim]\n    force = q_lift.T @ gradient[:qdim]\n    return momentum, force, q_lift, v_lift"
+        },
+        "_child_rows_at_order": {
+          "end": 3282,
+          "start": 3199,
+          "text": "def _child_rows_at_order(\n    order: int,\n    child: np.ndarray,\n    event_coordinates: np.ndarray,\n    event_momentum: np.ndarray,\n    event_flux: np.ndarray,\n    *,\n    points: int,\n    relative_flux_step: float = 1.0e-1,\n    fixed_flux_time_step: float | None = None,\n    richardson_flux: bool = True,\n    flux_derivative_method: str = \"richardson\",\n) -> np.ndarray:\n    size = dimensions(order)\n    qdim = size[\"coordinates\"]\n    q = np.asarray(child[:qdim], dtype=float)\n    velocity = np.asarray(child[qdim:2 * qdim], dtype=float)\n    multipliers = np.asarray(child[2 * qdim:], dtype=float)\n    momentum, force, q_lift, _ = _canonical_pair_at_order(\n        order, q, velocity, multipliers, points=points\n    )\n    child_covector = _metric_radial_flux_covector_at_order(\n        order, q, multipliers\n    )\n    child_flux = q_lift.T @ child_covector\n    dynamics = _exact_full_jet_euler_dirac_acceleration(\n        order, q, velocity, multipliers, points=points\n    )\n    acceleration = np.asarray(dynamics[\"acceleration\"], dtype=float)\n    multiplier_rate = np.asarray(dynamics[\"multiplier_rate\"], dtype=float)\n    tangent_scale = max(\n        1.0,\n        float(np.max(np.abs(velocity))),\n        float(np.max(np.abs(acceleration))),\n        float(np.max(np.abs(multiplier_rate))),\n    )\n    epsilon = (\n        relative_flux_step / tangent_scale\n        if fixed_flux_time_step is None else float(fixed_flux_time_step)\n    )\n\n    def centered_momentum_rate(step: float) -> np.ndarray:\n        plus, _, _, _ = _canonical_pair_at_order(\n            order,\n            q + step * velocity,\n            velocity + step * acceleration,\n            multipliers + step * multiplier_rate,\n            points=points,\n        )\n        minus, _, _, _ = _canonical_pair_at_order(\n            order,\n            q - step * velocity,\n            velocity - step * acceleration,\n            multipliers - step * multiplier_rate,\n            points=points,\n        )\n        return (plus - minus) / (2.0 * step)\n\n    if flux_derivative_method == \"complex_step\":\n        momentum_rate = _complex_step_canonical_momentum_rate(\n            order,\n            q,\n            velocity,\n            multipliers,\n            acceleration,\n            multiplier_rate,\n            points=points,\n        )\n    elif flux_derivative_method == \"richardson\":\n        momentum_rate = centered_momentum_rate(epsilon)\n        if richardson_flux:\n            half_rate = centered_momentum_rate(0.5 * epsilon)\n            momentum_rate = (4.0 * half_rate - momentum_rate) / 3.0\n    else:\n        raise ValueError(\"unknown dynamic-flux derivative method\")\n    flux = child_flux - (-momentum_rate + force - event_flux)\n    return np.concatenate((\n        _trace_jacobian_at_order(order) @ (q - event_coordinates),\n        constraint_residual(\n            order, q, velocity, multipliers, points=points\n        ),\n        momentum - event_momentum,\n        flux,\n    ))"
+        }
+      }
+    },
+    "C:\\Users\\carbe\\OneDrive\\Documents\\CODEX\\Berger-Hopf-Standard-Model\\src\\bhsm\\interface\\aether_n3_child_constraint_cauchy_match_v17_94.py": {
+      "SHA256": "069202618DCF4E2374C8E6A659982B6515963A6C31D5041FCE1236F4E694C425",
+      "functions": {
+        "_metric_radial_flux_covector": {
+          "end": 80,
+          "start": 47,
+          "text": "def _metric_radial_flux_covector(\n    q: np.ndarray, multipliers: np.ndarray\n) -> tuple[np.ndarray, dict[str, float]]:\n    \"\"\"Return the action-owned terminal metric flux in N=3 coordinates.\"\"\"\n\n    coordinates = np.asarray(q, dtype=float)\n    lapse_shift = np.asarray(multipliers, dtype=float)\n    signs_k = (-1.0) ** np.arange(1, ORDER + 1)\n    signs_j = (-1.0) ** np.arange(ORDER)\n    scale = float(coordinates[0])\n    u = float(coordinates[1:1 + ORDER] @ signs_k)\n    w = float(coordinates[1 + ORDER:1 + 2 * ORDER] @ signs_j)\n    v = float(coordinates[1 + 2 * ORDER:1 + 3 * ORDER] @ signs_j)\n    radius = float(RADIUS0 * math.exp(scale))\n    c_radius = float(radius * math.exp(u + w))\n    a_radius = float(radius * math.exp(u + v) / math.sqrt(2.0))\n    b_radius = float(radius * math.exp(u - v) / math.sqrt(2.0))\n    lapse = float(math.exp(float(lapse_shift[:ORDER] @ signs_k)))\n    prefactor = float(3.0 * lapse * a_radius**3 * b_radius**3 / c_radius)\n\n    d_log_a = np.zeros(Q_DIMENSION)\n    d_log_b = np.zeros(Q_DIMENSION)\n    d_log_a[0] = d_log_b[0] = 1.0\n    d_log_a[1:1 + ORDER] = signs_k\n    d_log_b[1:1 + ORDER] = signs_k\n    d_log_a[1 + 2 * ORDER:1 + 3 * ORDER] = signs_j\n    d_log_b[1 + 2 * ORDER:1 + 3 * ORDER] = -signs_j\n    covector = prefactor * d_log_a - prefactor * d_log_b\n    return covector, {\n        \"Pi_log_A\": prefactor,\n        \"Pi_log_B\": -prefactor,\n        \"Pi_log_N\": 0.0,\n        \"lapse\": lapse,\n    }"
+        }
+      }
+    },
+    "C:\\Users\\carbe\\OneDrive\\Documents\\CODEX\\Berger-Hopf-Standard-Model\\src\\bhsm\\interface\\aether_n3_complete_child_chart_reconstruction_v18_24.py": {
+      "SHA256": "88940E12D98D8FA84AF3602985C031AE4BB562267EB6D7AA53AAC9F4324D2463",
+      "functions": {
+        "_child_rows": {
+          "end": 57,
+          "start": 38,
+          "text": "def _child_rows(z: np.ndarray, qe: np.ndarray, pe: np.ndarray, event_flux: np.ndarray) -> np.ndarray:\n    q, v, m = _unpack_child(z)\n    pc, force, lc, _ = _canonical_pair(q, v, m)\n    child_covector, _ = _metric_radial_flux_covector(q, m)\n    child_flux = lc.T @ child_covector\n    dynamics = exact_euler_dirac_acceleration(3, q, v, m, points=44)\n    acceleration = np.asarray(dynamics[\"acceleration\"])\n    multiplier_rate = np.asarray(dynamics[\"multiplier_rate\"])\n    tangent_scale = max(1.0, float(np.max(np.abs(v))), float(np.max(np.abs(acceleration))), float(np.max(np.abs(multiplier_rate))))\n    epsilon = 4.0e-4 / tangent_scale\n    plus, _, _, _ = _canonical_pair(q + epsilon * v, v + epsilon * acceleration, m + epsilon * multiplier_rate)\n    minus, _, _, _ = _canonical_pair(q - epsilon * v, v - epsilon * acceleration, m - epsilon * multiplier_rate)\n    momentum_rate = (plus - minus) / (2.0 * epsilon)\n    flux = child_flux - (-momentum_rate + force - event_flux)\n    return np.concatenate((\n        _trace_jacobian() @ (q - qe),\n        constraint_residual(3, q, v, m, points=44),\n        pc - pe,\n        flux,\n    ))"
+        },
+        "complete_child_chart_reconstruction": {
+          "end": 132,
+          "start": 60,
+          "text": "def complete_child_chart_reconstruction() -> dict[str, Any]:\n    raw = v18_22_selected_raw_vector(); state = unpack_reduced(raw)\n    qh = np.asarray(state[\"coordinates\"]); mh = np.asarray(state[\"multipliers\"])\n    vh = trapezoid_sbp_difference() @ qh / float(state[\"period\"])\n    qe, ve, me = qh[-1], vh[-1], mh[-1]\n    pe, _, le, _ = _canonical_pair(qe, ve, me)\n    event_covector, _ = _metric_radial_flux_covector(qe, me)\n    event_flux = le.T @ event_covector\n    germ = _pack_child(_CHILD_Q, _CHILD_V, _CHILD_M)\n    initial_rows = _child_rows(germ, qe, pe, event_flux)\n    jacobian = np.empty((14, 26))\n    for column in range(26):\n        delta = np.zeros(26); delta[column] = JACOBIAN_STEP\n        jacobian[:, column] = (\n            _child_rows(germ + delta, qe, pe, event_flux)\n            - _child_rows(germ - delta, qe, pe, event_flux)\n        ) / (2.0 * JACOBIAN_STEP)\n    row_scales = np.maximum(np.linalg.norm(jacobian, axis=1), 1.0)\n    scaled_jacobian = jacobian / row_scales[:, None]\n    _, triangular, pivots = qr(scaled_jacobian, mode=\"economic\", pivoting=True)\n    singular = np.linalg.svd(scaled_jacobian, compute_uv=False)\n    tolerance = np.finfo(float).eps * max(scaled_jacobian.shape) * singular[0]\n    rank = int(np.count_nonzero(singular > tolerance))\n    chart = np.asarray(pivots[:14], dtype=int)\n    fixed = germ.copy(); initial_chart = germ[chart].copy()\n\n    def residual(chart_values: np.ndarray) -> np.ndarray:\n        value = fixed.copy(); value[chart] = chart_values\n        return _child_rows(value, qe, pe, event_flux) / row_scales\n\n    solution = least_squares(\n        residual, initial_chart, method=\"lm\",\n        ftol=1.0e-13, xtol=1.0e-13, gtol=1.0e-13,\n        max_nfev=900,\n    )\n    child = fixed.copy(); child[chart] = solution.x\n    final_rows = _child_rows(child, qe, pe, event_flux)\n    q, v, m = _unpack_child(child)\n    return {\n        \"source_event\": \"v18.22_exact_directional_merit_candidate\",\n        \"whole_child_variable_count\": 26,\n        \"physical_row_count\": 14,\n        \"additional_global_KKT_rows\": 0,\n        \"chart\": {\n            \"jacobian_step\": JACOBIAN_STEP,\n            \"full_chart_rank\": rank,\n            \"selected_variable_indices\": chart.tolist(),\n            \"smallest_resolved_singular_value\": float(singular[rank - 1]),\n            \"row_scaling\": \"LOCAL_JACOBIAN_ROW_NORMS_NUMERICAL_ONLY_SAME_ZERO_SET\",\n            \"solver_success\": bool(solution.success),\n            \"solver_message\": str(solution.message),\n            \"function_evaluations\": int(solution.nfev),\n            \"scaled_final_norm\": float(np.linalg.norm(solution.fun)),\n        },\n        \"initial_physical_rows\": initial_rows.tolist(),\n        \"final_physical_rows\": final_rows.tolist(),\n        \"child_state\": {\n            \"coordinates\": q.tolist(),\n            \"velocities\": v.tolist(),\n            \"multipliers\": m.tolist(),\n            \"velocity_norm\": float(np.linalg.norm(v)),\n            \"eta_Legendre_minimum\": eta_legendre_minimum(q, m, points=5000),\n        },\n        \"physical_residuals\": {\n            \"maximum_trace\": float(np.max(np.abs(final_rows[:3]))),\n            \"maximum_seven_constraints\": float(np.max(np.abs(final_rows[3:10]))),\n            \"momentum_norm\": float(np.linalg.norm(final_rows[10:12])),\n            \"dynamic_flux_norm_at_4e-4\": float(np.linalg.norm(final_rows[12:14])),\n        },\n        \"nonzero_motion_retained\": bool(np.linalg.norm(v) > 0.0),\n        \"physical_equations_changed\": False,\n        \"event_definition_changed\": False,\n    }"
+        }
+      }
+    },
+    "C:\\Users\\carbe\\OneDrive\\Documents\\CODEX\\Berger-Hopf-Standard-Model\\src\\bhsm\\interface\\aether_n3_constraint_solved_orbit_v16_08.py": {
+      "SHA256": "1386B0DD298F1E119501B480189F6616CAD349EC2FA98832B1A4BD40ABCA8682",
+      "functions": {
+        "exact_euler_dirac_acceleration": {
+          "end": 134,
+          "start": 82,
+          "text": "def exact_euler_dirac_acceleration(\n    order: int,\n    coordinates: np.ndarray,\n    velocities: np.ndarray,\n    multipliers: np.ndarray,\n    *,\n    points: int = 44,\n    coordinate_step: float = 2.0e-5,\n) -> dict[str, Any]:\n    \"\"\"Solve the exact-z Hessian Euler--Dirac system at one physical state.\"\"\"\n\n    q = np.asarray(coordinates, dtype=float)\n    velocity = np.asarray(velocities, dtype=float)\n    multipliers = np.asarray(multipliers, dtype=float)\n    size = dimensions(order)\n    if q.shape != (size[\"coordinates\"],) or velocity.shape != q.shape:\n        raise ValueError(\"coordinate dimensions do not match order\")\n    if multipliers.shape != (size[\"multipliers\"],):\n        raise ValueError(\"multiplier dimensions do not match order\")\n    center = exact_action_jet_at_state(\n        order, q, velocity, multipliers, points=points\n    )\n    gradient_q = np.empty(q.size)\n    mixed_z_q = np.empty((center.gradient.size, q.size))\n    for column in range(q.size):\n        delta = np.zeros_like(q)\n        delta[column] = coordinate_step\n        plus = exact_action_jet_at_state(\n            order, q + delta, velocity, multipliers, points=points\n        )\n        minus = exact_action_jet_at_state(\n            order, q - delta, velocity, multipliers, points=points\n        )\n        gradient_q[column] = (plus.value - minus.value) / (\n            2.0 * coordinate_step\n        )\n        mixed_z_q[:, column] = (plus.gradient - minus.gradient) / (\n            2.0 * coordinate_step\n        )\n    nv = q.size\n    rhs = np.concatenate((\n        gradient_q - mixed_z_q[:nv] @ velocity,\n        -mixed_z_q[nv:] @ velocity,\n    ))\n    solved = np.linalg.solve(center.hessian, rhs)\n    return {\n        \"coordinate_rate\": velocity.copy(),\n        \"acceleration\": solved[:nv],\n        \"multiplier_rate\": solved[nv:],\n        \"Dirac_hessian\": center.hessian.copy(),\n        \"Dirac_condition_number\": float(np.linalg.cond(center.hessian)),\n        \"finite\": bool(np.all(np.isfinite(solved))),\n    }"
+        }
+      }
+    },
+    "C:\\Users\\carbe\\OneDrive\\Documents\\CODEX\\Berger-Hopf-Standard-Model\\src\\bhsm\\interface\\aether_n3_required_child_cauchy_flux_v17_93.py": {
+      "SHA256": "AC2D24A34FD1B9AB261F791252F543F2205867B9EDD4267B81FD70F6F0D2235A",
+      "functions": {
+        "_canonical_pair": {
+          "end": 90,
+          "start": 70,
+          "text": "def _canonical_pair(\n    q: np.ndarray, velocity: np.ndarray, multipliers: np.ndarray\n) -> tuple[np.ndarray, np.ndarray, np.ndarray, np.ndarray]:\n    jet = exact_full_action_jet_at_state(\n        ORDER, q, velocity, multipliers, points=44\n    )\n    gradient = np.asarray(jet.gradient, dtype=float)\n    hessian = np.asarray(jet.hessian, dtype=float)\n    boundary = _attachment_jacobian(q)\n    q_form = hessian[:Q_DIMENSION, :Q_DIMENSION]\n    v_form = hessian[\n        Q_DIMENSION:2 * Q_DIMENSION,\n        Q_DIMENSION:2 * Q_DIMENSION,\n    ]\n    cq = hessian[2 * Q_DIMENSION:, :Q_DIMENSION]\n    cv = hessian[2 * Q_DIMENSION:, Q_DIMENSION:2 * Q_DIMENSION]\n    q_lift = _lift(q_form, boundary, cq)\n    v_lift = _lift(v_form, boundary, cv)\n    momentum = v_lift.T @ gradient[Q_DIMENSION:2 * Q_DIMENSION]\n    force = q_lift.T @ gradient[:Q_DIMENSION]\n    return momentum, force, q_lift, v_lift"
+        },
+        "required_child_cauchy_flux": {
+          "end": 211,
+          "start": 93,
+          "text": "def required_child_cauchy_flux() -> dict[str, Any]:\n    raw = v17_75_selected_raw_vector()\n    state = unpack_reduced(raw)\n    q_history = np.asarray(state[\"coordinates\"], dtype=float)\n    m_history = np.asarray(state[\"multipliers\"], dtype=float)\n    velocity_history = (\n        trapezoid_sbp_difference() @ q_history / float(state[\"period\"])\n    )\n    q = q_history[-1]\n    velocity = velocity_history[-1]\n    multipliers = m_history[-1]\n    momentum, force, q_lift, _ = _canonical_pair(q, velocity, multipliers)\n    event_local_constraints = constraint_residual(\n        ORDER, q, velocity, multipliers, points=44\n    )\n\n    dynamics = exact_euler_dirac_acceleration(\n        ORDER, q, velocity, multipliers, points=44\n    )\n    acceleration = np.asarray(dynamics[\"acceleration\"], dtype=float)\n    multiplier_rate = np.asarray(dynamics[\"multiplier_rate\"], dtype=float)\n    tangent_norm = max(\n        1.0,\n        float(np.max(np.abs(velocity))),\n        float(np.max(np.abs(acceleration))),\n        float(np.max(np.abs(multiplier_rate))),\n    )\n    epsilon = 2.0e-6 / tangent_norm\n    plus_momentum, _, _, _ = _canonical_pair(\n        q + epsilon * velocity,\n        velocity + epsilon * acceleration,\n        multipliers + epsilon * multiplier_rate,\n    )\n    minus_momentum, _, _, _ = _canonical_pair(\n        q - epsilon * velocity,\n        velocity - epsilon * acceleration,\n        multipliers - epsilon * multiplier_rate,\n    )\n    momentum_rate = (plus_momentum - minus_momentum) / (2.0 * epsilon)\n\n    boundary = terminal_event_boundary_data(raw)\n    radial = boundary[\"GHY_eta_radial_flux_Gamma1\"]\n    signs_k = (-1.0) ** np.arange(1, ORDER + 1)\n    signs_j = (-1.0) ** np.arange(ORDER)\n    d_log_a = np.zeros(Q_DIMENSION)\n    d_log_b = np.zeros(Q_DIMENSION)\n    d_log_a[0] = d_log_b[0] = 1.0\n    d_log_a[1:1 + ORDER] = signs_k\n    d_log_b[1:1 + ORDER] = signs_k\n    d_log_a[1 + 2 * ORDER:1 + 3 * ORDER] = signs_j\n    d_log_b[1 + 2 * ORDER:1 + 3 * ORDER] = -signs_j\n    raw_event_flux = (\n        float(radial[\"Pi_log_A\"]) * d_log_a\n        + float(radial[\"Pi_log_B\"]) * d_log_b\n    )\n    event_flux = q_lift.T @ raw_event_flux\n\n    # Coordinate-time Euler boundary equation:\n    # D_t p_c - partial_c L + Gamma1_event + Gamma1_child = 0.\n    child_required = -momentum_rate + force - event_flux\n    smooth_opposite_normal = -event_flux\n    dynamic_correction = child_required - smooth_opposite_normal\n    return {\n        \"coordinate_order\": [\"q_W\", \"x_D\"],\n        \"canonical_momentum\": momentum.tolist(),\n        \"coordinate_time_momentum_rate\": momentum_rate.tolist(),\n        \"instantaneous_action_force\": force.tolist(),\n        \"event_projected_flux\": event_flux.tolist(),\n        \"required_child_projected_flux\": child_required.tolist(),\n        \"smooth_opposite_normal_reference\": smooth_opposite_normal.tolist(),\n        \"dynamic_attachment_correction_to_smooth_reference\": (\n            dynamic_correction.tolist()\n        ),\n        \"finite_difference\": {\n            \"epsilon\": epsilon,\n            \"follows_full_Euler_Dirac_tangent\": True,\n            \"state_dependent_lift_recomputed_at_both_sides\": True,\n            \"primitive_background_time_introduced\": False,\n        },\n        \"boundary_map\": {\n            \"Dirichlet_Gamma0\": boundary[\"spatial_trace_Gamma0\"],\n            \"Cauchy_configuration\": q.tolist(),\n            \"Cauchy_velocity\": velocity.tolist(),\n            \"lapse_shift\": multipliers.tolist(),\n            \"Neumann_Gamma1_child_required_attachment_projection\": (\n                child_required.tolist()\n            ),\n            \"definition\": (\n                \"B_child_required(z_event)=(Gamma0_event,q_event,dot_q_\"\n                \"event,m_event,Gamma1_child_required)\"\n            ),\n        },\n        \"F_child_scalar\": {\n            \"definition\": (\n                \"F_child_scalar(z_event)=Gamma1_child_actual_from_the_\"\n                \"reconstructed_Lorentzian_child_minus_Gamma1_child_required\"\n            ),\n            \"actual_reconstructed_child_flux\": \"OPEN\",\n            \"required_flux_derived_algebraically\": True,\n            \"event_local_constraint_residual\": event_local_constraints.tolist(),\n            \"event_local_maximum_constraint_residual\": float(\n                np.max(np.abs(event_local_constraints))\n            ),\n            \"physical_target_promotable\": False,\n            \"why_not_promotable\": (\n                \"THE_MOMENTUM_RATE_WAS_DIFFERENTIATED_ALONG_THE_PRE_EVENT_\"\n                \"TERMINAL_LOCAL_STATE_BEFORE_THAT_STATE_WAS_RECONSTRUCTED_\"\n                \"ON_THE_SEVEN_CONSTRAINT_CHILD_SURFACE\"\n            ),\n            \"static_zero_flux_required\": False,\n            \"smooth_reflection_assumed_as_solution\": False,\n        },\n        \"interpretation\": (\n            \"THE_ALGEBRAIC_DYNAMIC_SCALAR_BOUNDARY_FORM_IS_DERIVED_BUT_\"\n            \"ITS_PRE_EVENT_TANGENT_EVALUATION_IS_PROVISIONAL;NONZERO_\"\n            \"MOMENTUM_FORCE_ACCELERATION_AND_FLUX_ARE_BALANCED_TERMS_NOT_\"\n            \"INDIVIDUAL_DEFECTS\"\n        ),\n    }"
+        }
+      }
+    }
+  },
+  "radial_contribution_norm": {
+    "approximate_upper": 3603.525784074456,
+    "exact_upper": "11795747456900905738583052093638164458760177104800810352466279907393017686555420592145723071162621513509667167273014867742506873315064942441350369596048849/3273390607896141870013189696827599152216642046043064789483291368096133796404674554883270092325904157150886684127560071009217256545885393053328527589376",
+    "method": "Arb512_Frobenius"
+  },
+  "remaining_composition": "fixed-environment material/seam map, explicit frame terms, and base-point binding",
+  "replay": {
+    "adjoint_direct": {
+      "approximate_upper": 5.283633706642839e-134,
+      "exact_upper": "8045417123820589401839590922207588134230220549933449354636682452280212318665691292633813701176517577694048519137562938911193857184481761586598983509528249/152270531428124985630521599810549817357441044649921992607311038393952323293225407851025235404406410300395389316115760440366549529143798344477781051504885209680176214061819891091731088367032088255512493648112787169901337467584294921027286931491702587700433418798504336673153571718623657984",
+      "method": "Arb512_Frobenius"
+    },
+    "differentiated_lift": {
+      "approximate_upper": 1.1952359143065672e-130,
+      "exact_upper": "1110835008871105028713125129889749816659435618835884990534117309919166165071510827514312543738546273149942221831122916341151550250974236550968033847830179/9293855677986144142487890613436878500820376260371215369098574120724629107252527334657301965600977191186242023688706081565341157784655660673692691131889966411143567752796624212141790061464360855438994973639696482537923429417986750550981868377179113018825281909088399455148533430091776",
+      "method": "Arb512_Frobenius"
+    },
+    "inverse": {
+      "approximate_upper": 2.789259613671734e-134,
+      "exact_upper": "8494440873296030425155434174685616330692639418427240932016857390782303680601318063118475453878216088696987446234576452694097120830099517543550240898368023/304541062856249971261043199621099634714882089299843985214622076787904646586450815702050470808812820600790778632231520880733099058287596688955562103009770419360352428123639782183462176734064176511024987296225574339802674935168589842054573862983405175400866837597008673346307143437247315968",
+      "method": "Arb512_Frobenius"
+    },
+    "lift": {
+      "approximate_upper": 1.319701657520586e-138,
+      "exact_upper": "13169568823196845722620018548425835353909160909195625130777597504473336563099169892690980525079308169456842173432706444381358603635805634783967907727230321/9979201547673599058281863565184192830337256302177287707512736212186059459344820328924789827463178505446712234220962476219862189941967968303695858991424157101600028364755428382587688607221814935913266783722719619966654052275604351944444276342240220787535604534378780208211792476151720049639424",
+      "method": "Arb512_Frobenius"
+    }
+  },
+  "source_SHA256": {
+    "C:\\Users\\carbe\\OneDrive\\Documents\\CODEX\\Berger-Hopf-Standard-Model\\artifacts\\flagship_integration\\gate7_parent_sectors_20260927\\arrays.npz": "1914D9CFB29E699891D709DEE87B9A857F05659EDE7524160A815585C7E6B77C",
+    "C:\\Users\\carbe\\OneDrive\\Documents\\CODEX\\Berger-Hopf-Standard-Model\\artifacts\\flagship_integration\\gate7_parent_sectors_20260927\\report.json": "78B9A02F6B1BEA4185D592EA7655E1964B217003F4A1A8BB308A4B914299DE32",
+    "C:\\Users\\carbe\\OneDrive\\Documents\\CODEX\\Berger-Hopf-Standard-Model\\artifacts\\flagship_integration\\gate7_parent_sectors_20260927\\role_scope.json": "095E155F34C86A3271905D0C5B31BB89FAD417CCEB0D482E54A5477460EBD953",
+    "C:\\Users\\carbe\\OneDrive\\Documents\\CODEX\\Berger-Hopf-Standard-Model\\scripts\\certify_n12_gate7_accepted_replay_center_outward_74d.py": "EB4D62734214B4E198B3EF5D3A8244E166871759B8E10FA295FBFBA89ABD2481",
+    "C:\\Users\\carbe\\OneDrive\\Documents\\CODEX\\Berger-Hopf-Standard-Model\\scripts\\derive_n12_gate7_event_conormal_jet.py": "F9094EC6B0F80B7CB906E040760E5B7C0B77F50C4EA57FFC5601DB42FE9A46A0",
+    "C:\\Users\\carbe\\OneDrive\\Documents\\CODEX\\Berger-Hopf-Standard-Model\\scripts\\derive_n12_gate7_slaved_interface.py": "E8FFB73F06F74BCCBDEEE6A26853C8A3B4FBC6DE0B51510468BA411757648416",
+    "C:\\Users\\carbe\\OneDrive\\Documents\\CODEX\\Berger-Hopf-Standard-Model\\src\\bhsm\\interface\\ball_factored_arb_integrand.py": "883D0A5361CB06420CF94A75A607DB4E9BEC466BB8B0ED01D98BA3E687203B3D",
+    "C:\\Users\\carbe\\OneDrive\\Documents\\CODEX\\Berger-Hopf-Standard-Model\\src\\bhsm\\interface\\sparse_arb_mixed_jets.py": "EB707805932CA7A7377FFC6AE2F2BAD6D31ED2B3D5A67BD49BF8EFAB1FFF7812"
+  },
+  "status": "CANONICAL_DYNAMIC_FLUX_OWNER_AND_NATIVE_EVENT_SEVEN_ROW_JET_DERIVED",
+  "tolerances_changed": false
+}
