@@ -7,9 +7,9 @@ ROOT = Path(__file__).resolve().parents[1]
 MUSEUM = ROOT / "museum"
 
 
-def test_public_order_leads_with_potential_then_science_details_author_cosmology():
+def test_public_order_connects_geometry_particles_cosmology_and_predictive_tests():
     page = (MUSEUM / "app/page.tsx").read_text(encoding="utf-8")
-    positions = [page.index(token) for token in ('<EngineHero motion={motion} setMotion={setMotion} />', '<PrototypeScience motion={motion} setMotion={setMotion} />', '<ScienceGallery motion={motion} />', '<UnificationConsole motion={motion} setMotion={setMotion} />', 'id="research-exhibit"', 'id="details"', 'id="creator"', 'id="other-work"', 'id="cosmology-original"', '<footer id="museum-exit">')]
+    positions = [page.index(token) for token in ('<EngineHero motion={motion} setMotion={setMotion} />', '<BergerHopf motion={motion} setMotion={setMotion} />', '<UnificationConsole motion={motion} setMotion={setMotion} />', '<PrototypeScience motion={motion} setMotion={setMotion} />', 'id="cosmology-original"', 'id="other-work"', '<ScienceGallery motion={motion} />', 'id="research-exhibit"', 'id="details"', 'id="creator"', '<footer id="museum-exit">')]
     assert positions == sorted(positions)
     hero = (MUSEUM / "app/science-console.tsx").read_text(encoding="utf-8")
     assert "conditional structural results" in hero

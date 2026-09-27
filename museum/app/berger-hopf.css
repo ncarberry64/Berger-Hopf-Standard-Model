@@ -1,0 +1,213 @@
+.bh-chapters {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 0.7rem;
+  margin: 1rem 0;
+}
+.bh-chapters button {
+  text-align: left;
+  background: #10121c;
+  border: 1px solid #45394f;
+  border-radius: 14px;
+  padding: 1rem 1.2rem;
+  cursor: pointer;
+  color: #c8c0d6;
+}
+.science-console .bh-chapters button[aria-pressed='true'] {
+  color: #c8c0d6;
+  border-color: #ffbc77;
+  background: #241d21;
+  box-shadow: inset 0 3px #ffbc77;
+}
+.bh-chapters small {
+  display: block;
+  font:
+    0.65rem var(--font-geist-mono),
+    monospace;
+  letter-spacing: 0.07em;
+  color: #bda7f5;
+}
+.bh-chapters strong {
+  display: block;
+  font-size: 1.55rem;
+  margin: 0.25rem 0;
+  color: #fff1df;
+}
+.bh-chapters span {
+  font-size: 0.85rem;
+}
+.bh-theatre {
+  display: grid;
+  grid-template-columns: minmax(0, 1.55fr) minmax(260px, 1fr);
+  border: 1px solid #3f354b;
+  border-radius: 16px;
+  overflow: hidden;
+  background: #06070b;
+}
+.bh-projection {
+  display: flex;
+  align-items: center;
+  min-width: 0;
+}
+.bh-projection svg {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+.bh-story {
+  border-left: 1px solid #332b3f;
+  padding: 1.5rem;
+  align-self: stretch;
+  background: linear-gradient(140deg, #1a162580, #06070b);
+}
+.bh-story h4 {
+  font-size: clamp(1.35rem, 2vw, 2rem);
+  line-height: 1.15;
+  color: #ffbc77;
+  margin: 0.5rem 0 1rem;
+}
+.bh-story p {
+  color: #d3cbdc;
+  font-size: 0.95rem;
+  line-height: 1.6;
+}
+.bh-story .bh-invitation {
+  color: #a9e3e7;
+  font-size: 0.85rem;
+  border-top: 1px solid #3a3248;
+  padding-top: 1rem;
+}
+.bh-controls {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.7rem;
+  padding: 1rem 0;
+}
+.bh-controls button {
+  border: 1px solid #5b496b;
+  border-radius: 22px;
+  background: #1a1623;
+  color: #eee0ff;
+  padding: 0.7rem 1rem;
+  cursor: pointer;
+  min-height: 44px;
+  font-size: 0.8rem;
+}
+.bh-controls label {
+  flex: 1;
+  min-width: 180px;
+  font-size: 0.8rem;
+  color: #ffbc77;
+}
+.bh-controls output {
+  float: right;
+  font-family: var(--font-geist-mono), monospace;
+}
+.bh-controls input {
+  width: 100%;
+  display: block;
+  accent-color: #ffbc77;
+  margin-top: 0.5rem;
+}
+.bh-levels {
+  margin-top: 1.2rem;
+  padding-top: 1rem;
+  border-top: 1px solid #453a51;
+  font-size: 0.8rem;
+}
+.bh-levels strong {
+  color: #e9d9ff;
+  font-weight: 500;
+}
+.bh-levels div {
+  margin-top: 0.9rem;
+}
+.bh-levels b {
+  float: right;
+  color: #fff1dc;
+}
+.bh-levels i {
+  display: block;
+  height: 4px;
+  max-width: 100%;
+  margin-top: 0.4rem;
+}
+.bh-levels small {
+  display: block;
+  margin-top: 0.8rem;
+  color: #a9a2b8;
+  line-height: 1.5;
+}
+.bh-pathway {
+  display: grid;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  border-block: 1px solid #44374e;
+  margin: 0.5rem 0 1rem;
+}
+.bh-pathway span {
+  padding: 1rem 0.7rem;
+  color: #ccc1d8;
+  font-size: 0.8rem;
+  border-right: 1px solid #332a40;
+}
+.bh-pathway span.lit {
+  background: #332521;
+  color: #ffca8d;
+}
+.bh-pathway small {
+  display: block;
+  font-size: 0.65rem;
+  color: #71e5eb;
+  margin-bottom: 0.35rem;
+}
+.bh-next {
+  display: inline-block;
+  margin-top: 1rem;
+  color: #ffbc77;
+}
+@media (max-width: 1000px) {
+  .bh-theatre {
+    grid-template-columns: 1fr;
+  }
+  .bh-story {
+    border-left: 0;
+    border-top: 1px solid #332b3f;
+  }
+  .bh-projection svg {
+    max-height: 430px;
+  }
+}
+@media (max-width: 600px) {
+  .bh-chapters {
+    gap: 0.4rem;
+  }
+  .bh-chapters button {
+    padding: 0.7rem 0.5rem;
+  }
+  .bh-chapters small {
+    font-size: 0.5rem;
+  }
+  .bh-chapters strong {
+    font-size: 1.2rem;
+  }
+  .bh-chapters span {
+    font-size: 0.7rem;
+  }
+  .bh-pathway {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  .bh-story {
+    padding: 1rem;
+  }
+}
+.museum-track #berger-hopf .console-content {
+  padding-top: 0.5rem;
+}
+.museum-track #berger-hopf .console-intro {
+  padding-bottom: 0;
+  margin-bottom: 0.5rem;
+}
+.museum-track #berger-hopf .console-intro h3 {
+  font-size: clamp(1.55rem, 2.5vw, 2.3rem);
+}

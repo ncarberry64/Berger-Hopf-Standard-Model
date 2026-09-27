@@ -8,20 +8,7 @@ import {
   useState,
 } from 'react';
 
-const slides = [
-  ['potential', 'Welcome'],
-  ['science-predictions', 'Matter'],
-  ['science-decays', 'Collisions'],
-  ['science-magnetic', 'Magnetism'],
-  ['science-test', 'Comparisons'],
-  ['science-unification', 'Forces'],
-  ['research-exhibit', 'CMS & research'],
-  ['details', 'Evidence & methods'],
-  ['creator', 'Scientific record'],
-  ['other-work', 'Cosmology · response'],
-  ['cosmology-original', 'Cosmology · original'],
-  ['museum-exit', 'Sources & links'],
-];
+import { slides } from '../lib/museum-slides.mjs';
 const aliases: Record<string, string> = {
   top: 'potential',
   exhibits: 'science-predictions',

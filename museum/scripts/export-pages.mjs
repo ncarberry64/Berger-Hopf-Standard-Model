@@ -2,6 +2,7 @@ import { cp, mkdir, readFile, rm, writeFile } from 'node:fs/promises';
 import { spawn } from 'node:child_process';
 import { dirname, relative, resolve } from 'node:path';
 import { fileURLToPath } from 'node:url';
+import { slides } from '../lib/museum-slides.mjs';
 
 const museumRoot = resolve(dirname(fileURLToPath(import.meta.url)), '..');
 const distRoot = resolve(museumRoot, 'dist');
@@ -102,24 +103,13 @@ try {
     'CMS · Data',
     'Original CMS animation',
     'pr98_cms_engine_validation.png',
+    'Two mathematical ideas. One deeper question.',
+    'The path from geometry to predictive tests',
   ]) {
     if (!written.includes(expected))
       throw new Error(`Static export is missing: ${expected}`);
   }
-  const sections = [
-    'potential',
-    'exhibits',
-    'science-predictions',
-    'science-decays',
-    'science-magnetic',
-    'comparisons',
-    'science-unification',
-    'research-exhibit',
-    'details',
-    'creator',
-    'other-work',
-    'cosmology-original',
-  ];
+  const sections = slides.map(([id]) => id);
   const positions = sections.map((id) => written.indexOf(`id="${id}"`));
   if (
     positions.some(
