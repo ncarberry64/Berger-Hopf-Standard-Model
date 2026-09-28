@@ -1,5 +1,34 @@
 # Museum content update — 24 September 2026
 
+## Orbital densities, matter cycle and large-scale structures — 28 September 2026
+
+Replaced the atom waveform sketches with code-rendered, glowing hydrogenic
+probability-density sections inspired by the supplied reference. Hydrogen has
+seven selectable orbital views (1s, 2s, 2p, 3s, 3p, 3d and 4f); helium and carbon
+offer illustrative occupied-orbital shapes. The view rotates, while the underlying
+density stays fixed. Each image has its own brightness and spatial scaling;
+many-electron examples are explicitly illustrations rather than full solutions.
+The center marker and the two nucleus illustrations have circular outlines.
+
+Matter now cycles solid, liquid, gas and plasma every six seconds on the existing
+visibility-aware museum clock. Manual selection holds a state; a cycle control
+resumes the sequence. Automatic cycling suppresses live-region announcements.
+
+Removed Earth and Sun from astronomical structures. Added BAO, Laniakea,
+the Great Attractor and Shapley alongside the Milky Way and cosmic web.
+The BAO scene represents a statistical separation preference, and the attraction
+scenes are qualitative rather than survey reconstructions. Source links point to
+ESA, ESO and the original Laniakea research paper.
+
+Validation includes exact radial/angular-node checks, symmetric finite density
+sections, byte-identical repeated raster generation, and cycle order/hold tests.
+TypeScript, focused lint, static export, 31 Node tests, 13 museum Python tests
+and all five publication audits passed. Browser checks covered all seven
+hydrogen orbitals, the carbon orbital subset, all six cosmic choices, visible
+nucleus outlines, automatic cycling/manual hold, global pause, and desktop,
+tablet and phone layouts. The rotating image uses a soft aperture to avoid
+exposing the square raster edges.
+
 ## Selectable structures and quantum illustrations — 28 September 2026
 
 All six structures-across-scales cards now offer independent selections: 18

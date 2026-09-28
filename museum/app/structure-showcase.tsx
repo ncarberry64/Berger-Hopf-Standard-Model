@@ -2,6 +2,8 @@
 /* oxlint-disable jsx-a11y/prefer-tag-over-role -- Named inline SVG illustrations. */
 import { useId, useState } from 'react';
 import { curve } from '../lib/children-geometry';
+import { OrbitalStudy } from './orbital-study';
+import { matterCycle } from '../lib/orbital-density';
 
 const catalog = [
   {
@@ -37,11 +39,12 @@ const catalog = [
   {
     name: 'Atoms',
     kind: 'atoms',
-    caption: 'Electron wavefunctions extend around the nucleus.',
+    caption:
+      'Glowing probability densities reveal orbital shapes and dark nodes.',
     choices: [
       [
         'Hydrogen',
-        'Hydrogen-1 · 1 proton · 1 electron · 1s¹. A spherical s-state probability envelope.',
+        'Hydrogen-1 · 1 proton · 1 electron. Explore the ground-state 1s orbital and selected excited states.',
       ],
       [
         'Helium',
@@ -49,10 +52,10 @@ const catalog = [
       ],
       [
         'Carbon',
-        'Carbon-12 · 6 protons + 6 neutrons · 6 electrons · 1s² 2s² 2p². Inner s states and directional p lobes.',
+        'Carbon-12 · 6 protons + 6 neutrons · 6 electrons · 1s² 2s² 2p². Inspect illustrative s and p orbital sections.',
       ],
     ],
-    note: 'Shading suggests probability density; waveform packets illustrate phase. Ground-state density is stationary. These are orbital sketches, not electron trajectories or a computed atomic solution.',
+    note: 'Brightness represents relative probability density. Dark nodes are places where the displayed wavefunction vanishes; electrons do not follow the outlines as paths.',
     source: [
       'Quantum model of the atom',
       'https://openstax.org/books/chemistry-atoms-first-2e/pages/3-3-development-of-quantum-theory',
@@ -105,26 +108,34 @@ const catalog = [
   {
     name: 'Astronomical structures',
     kind: 'cosmos',
-    caption: 'Explore the forms of matter on larger scales.',
+    caption: 'Galaxies, clustering patterns and immense flows of matter.',
     choices: [
-      [
-        'Earth',
-        'A rotating rocky planet, with an ocean, continents and atmosphere.',
-      ],
-      [
-        'Sun',
-        'A star: a luminous plasma sphere with schematic surface activity and coronal loops.',
-      ],
       [
         'Milky Way',
         'A schematic spiral galaxy with a central bulge and star-filled arms.',
       ],
       [
         'Cosmic web',
-        'A network of filaments and dense galaxy clusters surrounding broad voids.',
+        'Filaments and dense galaxy clusters surround broad voids.',
+      ],
+      [
+        'BAO',
+        'Baryon acoustic oscillations leave a preferred separation in galaxy clustering. The ring marks a statistical excess of pairs, not a physical shell around every galaxy.',
+      ],
+      [
+        'Laniakea',
+        'A supercluster mapped as a basin of galaxy flows, including our Milky Way. Streamlines illustrate the flow toward its interior.',
+      ],
+      [
+        'Great Attractor',
+        'A large concentration of matter associated with coherent galaxy motions in the local Universe. It is a gravitational region, not a single object.',
+      ],
+      [
+        'Shapley',
+        'The Shapley Supercluster is a rich concentration of galaxy clusters on still larger scales.',
       ],
     ],
-    note: 'These scenes illustrate structure, not measured maps, orbits or evolution rates.',
+    note: 'Qualitative views, not survey reconstructions. Flow-basin boundaries depend on the velocity data and analysis.',
   },
 ];
 
@@ -146,6 +157,19 @@ function Nucleus({
   const radius = small ? 2.7 : count === 4 ? 15 : 9;
   return (
     <g>
+      <circle
+        cx="110"
+        cy="59"
+        r={
+          small
+            ? Math.max(6, Math.sqrt(count) * radius * 1.45 + radius + 2)
+            : 51
+        }
+        fill="none"
+        stroke="#ffdcaa"
+        strokeWidth={small ? 0.7 : 1.2}
+        opacity=".7"
+      />
       {Array.from({ length: count }, (_, i) => {
         const angle = i * 2.39996;
         const spread = count === 1 ? 0 : Math.sqrt(i + 0.5) * radius * 1.45;
@@ -238,134 +262,6 @@ function Hadron({ selected, time }: { selected: number; time: number }) {
       ))}
       <text x="110" y="113" textAnchor="middle">
         g · gluon exchange
-      </text>
-    </g>
-  );
-}
-
-function Packet({
-  x,
-  y,
-  rx,
-  ry,
-  time,
-  tone,
-  angle = 0,
-  gradient,
-}: {
-  x: number;
-  y: number;
-  rx: number;
-  ry: number;
-  time: number;
-  tone: string;
-  angle?: number;
-  gradient: string;
-}) {
-  return (
-    <g transform={`translate(${x} ${y}) rotate(${angle})`}>
-      <ellipse rx={rx} ry={ry} fill={`url(#${gradient})`} />
-      {[-0.45, 0, 0.45].map((offset, i) => (
-        <path
-          key={i}
-          d={curve(
-            Array.from({ length: 65 }, (_, k) => {
-              const u = (k / 64) * 2 - 1;
-              const envelope = Math.exp(-4 * u * u) * (1 - u * u);
-              return [
-                u * rx,
-                offset * ry +
-                  Math.sin(u * Math.PI * 3 - time * 1.6 + i) *
-                    ry *
-                    0.23 *
-                    envelope,
-              ];
-            }),
-          )}
-          stroke={tone}
-          fill="none"
-          strokeWidth=".9"
-          opacity={0.45 + 0.15 * Math.cos(time + i)}
-        />
-      ))}
-    </g>
-  );
-}
-
-function Atom({
-  selected,
-  time,
-  id,
-}: {
-  selected: number;
-  time: number;
-  id: string;
-}) {
-  return (
-    <g>
-      <defs>
-        {tones.slice(1).map((tone, i) => (
-          <radialGradient id={`${id}-orbital-${i}`} key={tone}>
-            <stop stopColor={tone} stopOpacity=".42" />
-            <stop offset=".65" stopColor={tone} stopOpacity=".16" />
-            <stop offset="1" stopColor={tone} stopOpacity="0" />
-          </radialGradient>
-        ))}
-      </defs>
-      {selected < 2 ? (
-        <Packet
-          x={110}
-          y={59}
-          rx={selected ? 43 : 50}
-          ry={selected ? 43 : 50}
-          time={time}
-          tone={tones[1]}
-          gradient={`${id}-orbital-0`}
-        />
-      ) : (
-        <g>
-          {[0, 90].map((angle) => (
-            <g key={angle} transform={`rotate(${angle} 110 59)`}>
-              {[-1, 1].map((side) => (
-                <Packet
-                  key={side}
-                  x={110 + side * 32}
-                  y={59}
-                  rx={27}
-                  ry={15}
-                  time={time + (side < 0 ? Math.PI : 0)}
-                  tone={tones[side < 0 ? 1 : 2]}
-                  gradient={`${id}-orbital-${side < 0 ? 0 : 1}`}
-                />
-              ))}
-            </g>
-          ))}
-          <Packet
-            x={110}
-            y={59}
-            rx={22}
-            ry={22}
-            time={time}
-            tone={tones[1]}
-            gradient={`${id}-orbital-0`}
-          />
-          <circle
-            cx="110"
-            cy="59"
-            r="15"
-            fill="none"
-            stroke="#0a101c"
-            strokeWidth="2"
-            opacity=".65"
-          />
-        </g>
-      )}
-      <Nucleus small count={[1, 4, 12][selected]} time={0} />
-      <text x="8" y="14">
-        {['1s¹', '1s²', '1s² 2s² 2p²'][selected]}
-      </text>
-      <text x="110" y="113" textAnchor="middle">
-        wave phase · probability envelope
       </text>
     </g>
   );
@@ -503,84 +399,127 @@ function Matter({ selected, time }: { selected: number; time: number }) {
   );
 }
 
-function Cosmos({
-  selected,
-  time,
-  id,
-}: {
-  selected: number;
-  time: number;
-  id: string;
-}) {
-  if (selected === 0)
+function Cosmos({ selected, time }: { selected: number; time: number }) {
+  if (selected === 2)
     return (
       <g>
-        <defs>
-          <clipPath id={`${id}-planet`}>
-            <circle cx="110" cy="59" r="40" />
-          </clipPath>
-        </defs>
-        <circle cx="110" cy="59" r="44" fill="#71e5eb10" stroke="#71e5eb40" />
-        <circle cx="110" cy="59" r="40" fill="#163e61" />
-        <g clipPath={`url(#${id}-planet)`}>
-          {[0, 1, 2].map((i) => (
-            <g
-              key={i}
-              transform={`translate(${((time * 7) % 125) + i * 125 - 170} 0)`}
-            >
-              <path
-                d="M71 28L86 19L102 27L97 41L110 49L99 63L85 56L81 41ZM103 68L121 62L130 73L119 95L110 99Z"
-                fill="#72bda2"
-              />
-            </g>
-          ))}
-          {[-20, 0, 20].map((y) => (
-            <ellipse
-              key={y}
-              cx="110"
-              cy={59 + y}
-              rx={Math.sqrt(1600 - y * y)}
-              ry="6"
-              fill="none"
-              stroke="#71e5eb30"
-            />
-          ))}
-        </g>
-      </g>
-    );
-  if (selected === 1)
-    return (
-      <g>
-        {[48, 43, 37].map((r, i) => (
-          <circle
-            key={r}
-            cx="110"
-            cy="59"
-            r={r}
-            fill={i === 2 ? '#d98940' : '#ffbc7710'}
-          />
-        ))}
-        {Array.from({ length: 14 }, (_, i) => {
-          const a = (i * Math.PI * 2) / 14 + time * 0.08;
-          const [x, y] = point(a, 36);
+        <ellipse
+          cx="110"
+          cy="57"
+          rx="70"
+          ry="40"
+          fill="none"
+          stroke="#ffbc7755"
+          strokeWidth="7"
+        />
+        {Array.from({ length: 110 }, (_, i) => {
+          const a = i * 2.39996,
+            radius = i < 62 ? 39 + 4 * Math.sin(i * 3.2) : 8 + (i % 43);
           return (
-            <ellipse
+            <circle
               key={i}
-              cx={x}
-              cy={y}
-              rx={7 + 2 * Math.sin(time + i)}
-              ry="3"
-              fill="none"
-              stroke="#ffe2b7"
-              transform={`rotate(${(a * 180) / Math.PI} ${x} ${y})`}
-              opacity=".7"
+              cx={110 + Math.cos(a) * radius * 1.75}
+              cy={57 + Math.sin(a) * radius}
+              r={i < 62 ? 1.2 : 0.8}
+              fill={tones[i % 3]}
+              opacity={0.5 + 0.2 * Math.sin(time * 0.5 + i)}
             />
           );
         })}
-        <circle cx="101" cy="48" r="22" fill="#ffc46a40" />
+        <circle cx="110" cy="57" r="3" fill="#fff3da" />
+        <path d="M110 57H180" stroke="#ffe2b7" strokeDasharray="3 3" />
+        <text x="110" y="115" textAnchor="middle">
+          Preferred galaxy separation
+        </text>
       </g>
     );
-  if (selected === 3) {
+  if (selected === 3 || selected === 4) {
+    const target = selected === 3 ? [132, 57] : [110, 57];
+    const at = (i: number, s: number) => {
+      const a = (i * Math.PI * 2) / 12;
+      const bend = (selected === 3 ? 22 : 8) * Math.sin(Math.PI * s);
+      return [
+        (110 + Math.cos(a) * 95) * (1 - s) + target[0] * s + Math.sin(a) * bend,
+        (57 + Math.sin(a) * 44) * (1 - s) + target[1] * s + Math.cos(a) * bend,
+      ];
+    };
+    return (
+      <g>
+        {selected === 3 && (
+          <path
+            d="M12 42Q30 0 99 15T204 43Q214 81 161 100T64 96Q5 85 12 42Z"
+            fill="#bda7f508"
+            stroke="#bda7f5"
+            strokeDasharray="3 4"
+            opacity=".6"
+          />
+        )}
+        {Array.from({ length: 12 }, (_, i) => {
+          const [x, y] = at(i, (time * 0.1 + i / 12) % 1);
+          return (
+            <g key={i}>
+              <path
+                d={curve(Array.from({ length: 40 }, (_, j) => at(i, j / 39)))}
+                stroke={tones[i % 3]}
+                fill="none"
+                opacity=".4"
+              />
+              <circle cx={x} cy={y} r="1.8" fill={tones[i % 3]} />
+            </g>
+          );
+        })}
+        {Array.from({ length: selected === 3 ? 20 : 65 }, (_, i) => (
+          <circle
+            key={i}
+            cx={target[0] + Math.cos(i * 2.4) * Math.sqrt(i + 1) * 2.4}
+            cy={target[1] + Math.sin(i * 2.4) * Math.sqrt(i + 1) * 1.8}
+            r={i % 4 ? 1 : 2}
+            fill={i % 3 ? '#ffbc77' : '#fff3da'}
+          />
+        ))}
+        <text x="110" y="115" textAnchor="middle">
+          {selected === 3
+            ? 'Flow basin · Laniakea'
+            : 'Matter concentration · local flows'}
+        </text>
+      </g>
+    );
+  }
+  if (selected === 5)
+    return (
+      <g>
+        <path
+          d="M28 75Q62 22 111 56T194 31"
+          stroke="#bda7f5"
+          strokeWidth="15"
+          opacity=".12"
+          fill="none"
+        />
+        {[
+          [52, 60],
+          [110, 51],
+          [171, 41],
+        ].map(([cx, cy], cluster) => (
+          <g key={cluster}>
+            <ellipse cx={cx} cy={cy} rx="28" ry="22" fill="#ffbc7708" />
+            {Array.from({ length: 42 }, (_, i) => (
+              <circle
+                key={i}
+                cx={cx + Math.cos(i * 2.399) * Math.sqrt(i + 1) * 3.5}
+                cy={cy + Math.sin(i * 2.399) * Math.sqrt(i + 1) * 2.6}
+                r={i % 7 ? 1 : 2}
+                fill={tones[(i + cluster) % 3]}
+                opacity={0.65 + 0.15 * Math.sin(time * 0.4 + i)}
+              />
+            ))}
+          </g>
+        ))}
+        <text x="110" y="115" textAnchor="middle">
+          Clusters within a supercluster
+        </text>
+      </g>
+    );
+  if (selected === 1) {
     const nodes = [
       [18, 32],
       [48, 19],
@@ -703,34 +642,45 @@ function StructureCard({
   item: (typeof catalog)[number];
   time: number;
 }) {
-  const [selected, setSelected] = useState(item.kind === 'cosmos' ? 2 : 0);
+  const [choice, setChoice] = useState({ index: 0, at: time });
+  const [cycling, setCycling] = useState(true);
+  const selected =
+    item.kind === 'matter'
+      ? matterCycle(choice.index, choice.at, time, cycling)
+      : choice.index;
   const id = useId();
   const [label, detail] = item.choices[selected];
   return (
     <li className={`children-example children-example-${item.kind}`}>
       <strong>{item.name}</strong>
-      <svg
-        className="children-scene children-interactive-scene"
-        viewBox="0 0 220 120"
-        role="img"
-        aria-label={`${label}: ${detail}`}
-        id={`${id}-scene`}
-      >
-        {item.kind === 'hadrons' && <Hadron selected={selected} time={time} />}
-        {item.kind === 'nuclei' && (
-          <Nucleus count={selected ? 12 : 4} time={time} />
-        )}
-        {item.kind === 'atoms' && (
-          <Atom selected={selected} time={time} id={id} />
-        )}
-        {item.kind === 'molecules' && (
-          <Molecule selected={selected} time={time} />
-        )}
-        {item.kind === 'matter' && <Matter selected={selected} time={time} />}
-        {item.kind === 'cosmos' && (
-          <Cosmos selected={selected} time={time} id={id} />
-        )}
-      </svg>
+      {item.kind === 'atoms' ? (
+        <OrbitalStudy
+          key={selected}
+          atom={selected}
+          time={time}
+          id={`${id}-scene`}
+        />
+      ) : (
+        <svg
+          className="children-scene children-interactive-scene"
+          viewBox="0 0 220 120"
+          role="img"
+          aria-label={`${label}: ${detail}`}
+          id={`${id}-scene`}
+        >
+          {item.kind === 'hadrons' && (
+            <Hadron selected={selected} time={time} />
+          )}
+          {item.kind === 'nuclei' && (
+            <Nucleus count={selected ? 12 : 4} time={time} />
+          )}
+          {item.kind === 'molecules' && (
+            <Molecule selected={selected} time={time} />
+          )}
+          {item.kind === 'matter' && <Matter selected={selected} time={time} />}
+          {item.kind === 'cosmos' && <Cosmos selected={selected} time={time} />}
+        </svg>
+      )}
       <p>{item.caption}</p>
       <div
         className="children-choices"
@@ -743,21 +693,67 @@ function StructureCard({
             key={name}
             aria-pressed={selected === i}
             aria-controls={`${id}-scene ${id}-detail`}
-            onClick={() => setSelected(i)}
+            onClick={() => {
+              setChoice({ index: i, at: time });
+              if (item.kind === 'matter') setCycling(false);
+            }}
           >
             {name}
           </button>
         ))}
       </div>
+      {item.kind === 'matter' && (
+        <div className="matter-cycle-control">
+          <button
+            type="button"
+            aria-pressed={cycling}
+            onClick={() => {
+              setChoice({ index: selected, at: time });
+              setCycling(!cycling);
+            }}
+          >
+            {cycling ? 'Pause state cycle' : 'Cycle states'}
+          </button>
+          <small>
+            {cycling
+              ? 'Solid → liquid → gas → plasma · 6 s each'
+              : 'Selected state held for inspection'}
+          </small>
+          <div className="matter-cycle-progress" aria-hidden="true">
+            <span
+              style={{
+                transform: `scaleX(${cycling ? (Math.max(0, time - choice.at) % 6) / 6 : 0})`,
+              }}
+            />
+          </div>
+        </div>
+      )}
       <p
         className="children-selection"
         id={`${id}-detail`}
-        aria-live="polite"
+        aria-live={item.kind === 'matter' && cycling ? 'off' : 'polite'}
         aria-atomic="true"
       >
         {detail}
       </p>
       <small>{item.note}</small>
+      {item.kind === 'cosmos' && selected >= 2 && (
+        <a
+          className="children-source"
+          target="_blank"
+          rel="noreferrer"
+          href={
+            [
+              'https://www.esa.int/ESA_Multimedia/Images/2023/05/What_Euclid_will_measure_baryonic_acoustic_oscillations',
+              'https://www.nature.com/articles/nature13674',
+              'https://www.eso.org/sci/publications/messenger/archive/no.84-jun96/messenger-no84-17-18.pdf',
+              'https://www.esa.int/ESA_Multimedia/Images/2013/10/Shapley_Supercluster',
+            ][selected - 2]
+          }
+        >
+          Explore {label} ↗
+        </a>
+      )}
       {item.source && (
         <a
           className="children-source"
