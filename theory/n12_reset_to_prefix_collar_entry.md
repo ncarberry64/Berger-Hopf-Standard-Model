@@ -108,3 +108,107 @@ has been inferred from the coarse fixed-channel heat bounds. Root,
 H/B, material response and persistence remain active existing work.
 
 `Gate7_closed=False`. `FULL_BHSM_COMPLETE=False`.
+
+## Shared first-segment normal graph
+
+The continuation after `2a333fb5` replaces the Cartesian support of the
+first local predictor with one shared scalar parameter. It reuses the
+frozen state, selected descriptor and 124-variable normal first jet:
+
+```
+s(theta) = s0 + h theta,
+y(theta) = y0 + h U_raw theta,
+n_hat(theta) = n0 + h Dn theta,      -1 <= theta <= 1.
+```
+
+Here `n=(psi[61],lambda,hard[61],b)`. Its center is recovered from the
+documented blocks of the saved normal Jacobian, with block-sign checks;
+no new eigensolve supplies a different eigenline. Every action contraction
+uses the original quadrature, global inertia inverse and boundary term.
+The binary64 constants and action/raw coordinate weights are preserved.
+
+`contract_n12_collar_shared_speed.py` retains this same theta in the
+state, both eigenvector legs, the response leg, border, independent
+descriptor and normalization. Its constant and linear coefficients replay
+the frozen value and directional derivative. At `h=2^-45`, the predictor
+speed's arithmetic tail is `1.397155e-17`. This predictor result alone
+does not bound the true normal solution.
+
+`certify_n12_collar_normal_graph.py` supplies that missing normal inclusion
+**on this affine state family**. Write `D=diag(r)` and let R be the exact
+dyadic midpoint of the saved normal Jacobian inverse. The common residual
+and Jacobian are composed before support:
+
+```
+Y >= sup_theta ||D^-1 R F(y(theta),n_hat(theta))||_2,
+Z >= sup_theta,||e||<=1 ||I-D^-1 R F_n(y(theta),n_hat(theta)+D e) D||_2.
+```
+
+An arbitrary Euclidean output covector carries all rows through the signed
+action contractions. For the Jacobian, only its two repeated action-Hessian
+blocks require action evaluation. Their 61 columns are normal-system
+columns, not new launch/history variations. Constant and common-theta
+matrix coefficients are combined before matrix support. Each action tail
+bounds a pair of complete columns in Euclidean norm; the sum of their
+squares gives a Frobenius bound. The separate algebraic tail encloses the
+full normal correction ball. No sampled derivative replaces this uniform
+Jacobian bound.
+
+The initial correction proposal is enlarged uniformly by 16. This is a
+normal-solution proof radius, not a physical tube radius or an acceptance
+tolerance. Because F_n is affine in the normal coordinates, under
+`r -> g r`, Y scales as `Y/g`; the constant, theta-linear and action-tail
+matrices are unchanged; only the normal-correction tail scales by g. The
+producer tests these inequalities rather than presuming enlargement works.
+
+The resulting certified bounds at `h=2^-45` are
+
+```
+Y <= 0.584115592539051,
+Z <= 0.064034485032383,
+Y+Z <= 0.648150077571434 < 1.
+```
+
+Banach inclusion therefore gives a unique normal graph with scaled
+distance at most `Y/(1-Z) <= 0.624078113133539` from the predictor. The
+saved normalized index-24 center lies in the initial ball and the reference
+overlap stays positive. Invertibility of the coupled normal Jacobian
+excludes eigenline degeneracy on this connected graph, preserving its
+selected index and orientation.
+
+Substituting the proved posterior normal error in the same shared action
+and normalization gives
+
+```
+kappa in 2.0774511610188984e-10 +/- 2.6901324890566888e-11,
+```
+
+which is strictly positive. This is a uniform normal-graph speed bound,
+stronger than the point jet or the affine predictor alone.
+
+The actual trajectory still departs from the affine state family. Its
+transverse/curve remainder and the required derivative transition into the
+old prefix are not certified here. In particular, this certificate is not
+a flow step, a positive proper-duration operator history, an overlap, or a
+completed signed heat force. The negative selected descriptor at the
+initial off-root candidate is retained. The next consumed object is the
+trajectory remainder composed with this normal graph, followed by the
+full-state prefix transition; no frozen prefix cells have been rebuilt.
+
+The next remainder can be written without new physical inputs. For
+`y=y0+h theta U0+rho(theta)`, in weighted state coordinates, its existing
+fixed-descriptor evolution is
+
+```
+rho'(theta) = h [U(y0+h theta U0+rho(theta), s0+h theta)-U0],
+rho(0) = 0.
+```
+
+The normal graph must be enclosed on the same rho domain before using this
+equation in a first-exit or integral inclusion. The saved point curvature
+is a predictor for rho, not a bound on this equation's full remainder.
+
+Authoritative paired outputs are in
+`reset_prefix_collar_20260928/shared_speed_final{1,2}` and
+`reset_prefix_collar_20260928/normal45_final{1,2}`. Earlier development
+attempt directories are preserved and are not substituted for these pairs.

@@ -1,11 +1,15 @@
 {
+  "actual_flow_tube_included": false,
   "authority": "docs/GATE7_CURRENT_CALCULATION_SCOPE.md",
   "complete_force_evaluated": false,
   "consumed_term": "C2 response in Gamma_joint reduced force; prefix reuse requires a contained state/derivative transition",
+  "current_evidence": "normal45_final1/report.json",
+  "current_local_result": "Uniform 124-variable normal graph on the common-parameter affine state family, with positive descriptor speed including implicit error",
   "existing_obligation": "Same-base reset-to-prefix connection for the current joint heat force",
   "first_failing_location": "First reversed predictor segment, before entering the old prefix chart",
-  "first_failing_operand": "Cartesian normalized-line inclusion, then positive descriptor-speed enclosure after local refinement",
-  "next": "Correlated fixed-s tube with shared internal response and a uniform remainder, then certify the prefix transition",
+  "first_failing_operand": "Actual trajectory remainder away from the affine state family and required derivative containment at prefix overlap",
+  "next": "Compose the trajectory remainder with the certified shared normal graph; enclose the first flow segment, then the full-state and derivative prefix transition",
+  "normal_graph_certified_on_affine_state_family": true,
   "prefix_overlap_certified": false,
   "rows": [
     {
@@ -21,7 +25,7 @@
     {
       "classification": "HISTORY-COMPRESSIBLE",
       "input": "correlated fixed-s response",
-      "retained": "One proof direction and common 124-variable first response; uniform local tube still required"
+      "retained": "Frozen point jet plus uniform common-parameter normal inclusion and speed; no trajectory or overlap promotion"
     },
     {
       "classification": "CHILD-SPECIFIC",
@@ -32,6 +36,11 @@
       "classification": "SLAVED",
       "input": "active contacts and moving launch jet",
       "retained": "Existing owners; no zeroing or completed transition claim"
+    },
+    {
+      "classification": "NECESSARY",
+      "input": "complete preconditioned normal Jacobian",
+      "retained": "Constant, shared linear and action/normal tails composed before support; Banach Y+Z<1 at h=2^-45"
     }
   ]
 }

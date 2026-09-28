@@ -1,6 +1,8 @@
 {
   "FULL_BHSM_COMPLETE": false,
   "Gate7_closed": false,
+  "actual_flow_tube_included": false,
+  "normal_graph_certified_on_affine_state_family": true,
   "outputs": {
     "directional1/arrays.npz": {
       "SHA256": "BCF39AECB6CCCE65C7DCB263CB01871DE64A06F7235400222D34E85A589C0AF0",
@@ -41,11 +43,34 @@
       "SHA256": "F6897BD6CB31540DE700DFBFC323880E7F0516794EF6069EF1CAE782935F7F16",
       "byte_identical": true,
       "repeat": "entry1099511627776_repeat/report.json"
+    },
+    "normal45_final1/arrays.npz": {
+      "SHA256": "E8FB8F29894B9E8416477C3F0ECBCA2CC159AB3CB242D60896F567634146539A",
+      "byte_identical": true,
+      "repeat": "normal45_final2/arrays.npz"
+    },
+    "normal45_final1/report.json": {
+      "SHA256": "F4826FBE45B36C89A9D0526F877E28DF24CDD4A42C14D43BE3C2D584DC0B4DDB",
+      "byte_identical": true,
+      "repeat": "normal45_final2/report.json"
+    },
+    "shared_speed_final1/arrays.npz": {
+      "SHA256": "8BAD1672D67ED39326927F192D7690BB055178DE4E01A5FC069716BBA3DD07E2",
+      "byte_identical": true,
+      "repeat": "shared_speed_final2/arrays.npz"
+    },
+    "shared_speed_final1/report.json": {
+      "SHA256": "8721F64C75A7A7CEE2F48A3F64E781D841AEF866A6E2EA6E6682F0A6B2B37EE9",
+      "byte_identical": true,
+      "repeat": "shared_speed_final2/report.json"
     }
   },
+  "prefix_overlap_certified": false,
   "test_exit_code": 0,
-  "test_output": ".......................                                                  [100%]\n23 passed in 2.03s",
+  "test_output": "37 passed in 4.79s",
   "tests": [
+    "tests/test_collar_normal_graph.py",
+    "tests/test_shared_action_taylor.py",
     "tests/test_reset_prefix_collar.py",
     "tests/test_joint_trial_collar.py",
     "tests/test_boundary_heat_moment.py",
