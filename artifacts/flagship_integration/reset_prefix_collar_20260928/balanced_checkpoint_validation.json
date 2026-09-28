@@ -1,0 +1,44 @@
+{
+  "FULL_BHSM_COMPLETE": false,
+  "Gate7_closed": false,
+  "balanced_flow_evaluator_executed": false,
+  "balanced_normal_graph_certified": true,
+  "outputs": {
+    "balanced45_normal1/arrays.npz": {
+      "SHA256": "C5095959793E554562349B288A10F1390F05C3E3A534952AFC6B55ECE1CF9707",
+      "byte_identical": true,
+      "repeat": "balanced45_normal2/arrays.npz"
+    },
+    "balanced45_normal1/report.json": {
+      "SHA256": "09240A6E2F0BE35B1D1C836753622B0EDA6618472B793E89BB1DEADD3C97C9CB",
+      "byte_identical": true,
+      "repeat": "balanced45_normal2/report.json"
+    },
+    "balanced45_proposal1/arrays.npz": {
+      "SHA256": "BB03B87E78276D7923DCFFB90CED2D37C0196FF5089126DD331A2CE8FFF0B445",
+      "byte_identical": true,
+      "repeat": "balanced45_proposal2/arrays.npz"
+    },
+    "balanced45_proposal1/report.json": {
+      "SHA256": "B8641D83A0F6AE1512304463FD6409991554A132B46113F77F160E4C95E08BD9",
+      "byte_identical": true,
+      "repeat": "balanced45_proposal2/report.json"
+    }
+  },
+  "prefix_overlap_certified": false,
+  "stop_reason": "User requested usage-limit checkpoint; no next scientific calculation started",
+  "test_exit_code": 0,
+  "test_output": "55 passed",
+  "tests": [
+    "tests/test_balanced_collar.py",
+    "tests/test_collar_flow_reduction.py",
+    "tests/test_longitudinal_quadratic_taylor.py",
+    "tests/test_collar_normal_graph.py",
+    "tests/test_shared_action_taylor.py",
+    "tests/test_reset_prefix_collar.py",
+    "tests/test_joint_trial_collar.py",
+    "tests/test_boundary_heat_moment.py",
+    "tests/test_formation_amplitude.py",
+    "tests/test_gate7_current_action.py"
+  ]
+}

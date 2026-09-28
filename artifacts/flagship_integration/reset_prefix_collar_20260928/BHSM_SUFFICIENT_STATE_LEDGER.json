@@ -1,18 +1,22 @@
 {
   "actual_flow_tube_included": true,
   "authority": "docs/GATE7_CURRENT_CALCULATION_SCOPE.md",
+  "balanced_chart_actual_flow_tube_included": false,
+  "balanced_chart_normal_graph_certified": true,
   "complete_force_evaluated": false,
   "consumed_term": "C2 response in Gamma_joint reduced force; prefix reuse requires a contained state/derivative transition",
   "current_evidence": [
     "flow55_partial1/report.json",
-    "flow55_endpoint1/report.json"
+    "flow55_endpoint1/report.json",
+    "balanced45_proposal1/report.json",
+    "balanced45_normal1/report.json"
   ],
-  "current_local_result": "First actual current-reset fixed-s flow segment certified; shared endpoint enclosed with induced curve-normal response",
+  "current_local_result": "Existing first actual flow segment preserved; larger coupled curve-normal graph certified at h=2^-45; larger flow test not yet run",
   "existing_obligation": "Same-base reset-to-prefix connection for the current joint heat force",
   "first_failing_location": "Certified first-segment endpoint still outside the saved prefix domain",
   "first_failing_operand": "Continuation and needed derivative containment at the prefix transition",
   "flow_scope": "Only the first local segment: (15/16)*2^-55",
-  "next": "Continue the shared endpoint with an adaptive correlated curve/normal chart; certify full-state and required derivative overlap before consuming the prefix heat response",
+  "next": "Resume with certify_n12_balanced_collar_flow.py on balanced45_normal1; establish actual first-exit inclusion before continuing to prefix containment and signed joint force",
   "normal_graph_certified_on_affine_state_family": true,
   "prefix_overlap_certified": false,
   "rows": [
@@ -51,5 +55,7 @@
       "input": "first collar endpoint",
       "retained": "99x222 common affine endpoint map and explicit output tail; time-averaged proof parameters, no new physical inputs"
     }
-  ]
+  ],
+  "usage_limit_checkpoint": "theory/n12_balanced_reset_collar_checkpoint.md",
+  "work_paused_at_user_request": true
 }
