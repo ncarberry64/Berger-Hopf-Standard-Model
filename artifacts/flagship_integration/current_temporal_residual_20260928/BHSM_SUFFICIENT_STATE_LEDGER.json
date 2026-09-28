@@ -1,0 +1,44 @@
+{
+  "authority": "docs/GATE7_CURRENT_CALCULATION_SCOPE.md",
+  "current_new_contraction": "Attached-action temporal Euler source and D_Q66 source at the frozen incoming point",
+  "existing_obligation": "Complete projected same-action force and its root/persistence derivatives",
+  "force_accounting": "Attached endpoints + attached Euler/multiplier residual integral + heat-minus-zeta, with common internal response",
+  "remaining": {
+    "current_point_does_not_bound_integral": true,
+    "minimum": "Adjoint contraction with uniform consumed-norm error; no full trajectory required",
+    "term": "Integral of the composed residual/heat-minus-zeta source pulled through the owned internal graph, plus other endpoint/time terms"
+  },
+  "report_SHA256": "26A1827099E44170D772489A26C9E19B5C083486EA080412E07531FD0F9D4ABA",
+  "rows": [
+    {
+      "classification": "SLAVED",
+      "input": "local eigenline/hard response",
+      "retained": "Frozen common normal packet; no reevaluation"
+    },
+    {
+      "classification": "HISTORY-COMPRESSIBLE",
+      "input": "temporal attached action",
+      "retained": "Endpoint cotangents plus residual-source adjoint integral"
+    },
+    {
+      "classification": "NECESSARY",
+      "input": "moving coordinate clock",
+      "retained": "Signed nu and time source; endpoint time derivative remains to be supplied"
+    },
+    {
+      "classification": "REDUNDANT",
+      "input": "complete trajectory storage",
+      "retained": "Not required if the consumed adjoint integral and errors are preserved"
+    },
+    {
+      "classification": "HISTORY-COMPRESSIBLE",
+      "input": "incoming/child joint heat operator",
+      "retained": "Complete graded trace/transfer contractions including interior spectrum"
+    },
+    {
+      "classification": "ENVIRONMENT-SPECIFIC",
+      "input": "fixed external data",
+      "retained": "No new inputs; J_ext=0 with internal blocks active"
+    }
+  ]
+}

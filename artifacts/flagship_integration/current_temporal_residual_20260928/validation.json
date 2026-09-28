@@ -1,0 +1,23 @@
+{
+  "FULL_BHSM_COMPLETE": false,
+  "Gate7_closed": false,
+  "complete_q66_evaluated": false,
+  "outputs": {
+    "arrays.npz": {
+      "SHA256": "86E2A73CF0BC96D517716BE7709D20582A489B25D95C844646BEDCF02DD99633",
+      "byte_identical": true
+    },
+    "report.json": {
+      "SHA256": "26A1827099E44170D772489A26C9E19B5C083486EA080412E07531FD0F9D4ABA",
+      "byte_identical": true
+    }
+  },
+  "primary": "run2",
+  "repeat": "run3",
+  "source_hashes_verified": true,
+  "tests": {
+    "command": "C:/Python314/python.exe -m pytest --noconftest tests/test_temporal_action_residual.py tests/test_gate7_current_action.py tests/test_heat_zeta_mixed_boundary_launch.py -q",
+    "failed": 0,
+    "passed": 22
+  }
+}
