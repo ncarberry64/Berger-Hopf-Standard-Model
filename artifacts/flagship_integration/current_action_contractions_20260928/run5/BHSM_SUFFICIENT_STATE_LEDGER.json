@@ -1,0 +1,48 @@
+{
+  "authority": "docs/GATE7_CURRENT_CALCULATION_SCOPE.md",
+  "complete_q66_evaluated": false,
+  "next_contraction": {
+    "consumed_term": "Q66^T D Gamma_classical + Q66^T D Gamma_heat after common normal elimination",
+    "existing_obligation": "Projected same-action force / coupled KKT realization",
+    "full_history_storage_required": false,
+    "smallest_representation": "Classical endpoint plus contracted Euler/multiplier residual and joint heat trace with owned endpoint/domain errors",
+    "why_endpoint_packet_insufficient": "Endpoint density and a local 124-variable solve do not determine either integrated contraction"
+  },
+  "rows": [
+    {
+      "classification": "NECESSARY",
+      "input": "fixed Q66 and reset frame",
+      "retained": "frozen source hashes"
+    },
+    {
+      "classification": "SLAVED",
+      "input": "124 local normal variables",
+      "retained": "directional/adjoint solve, frozen current response"
+    },
+    {
+      "classification": "REDUNDANT",
+      "input": "attached vacuum and prescribed zeta subtraction",
+      "retained": "one shared functional identity; subtract before support"
+    },
+    {
+      "classification": "HISTORY-COMPRESSIBLE",
+      "input": "incoming classical action",
+      "retained": "terminal covector evaluated; other endpoint and contracted Euler/multiplier residual retained"
+    },
+    {
+      "classification": "HISTORY-COMPRESSIBLE",
+      "input": "joint graded heat",
+      "retained": "pencil/transfer trace contractions including interior spectrum; current complete coefficients still unsupplied"
+    },
+    {
+      "classification": "CHILD-SPECIFIC",
+      "input": "current C2 finite prefix",
+      "retained": "frozen coefficient/duration packet; finite-prefix contractions only"
+    },
+    {
+      "classification": "ENVIRONMENT-SPECIFIC",
+      "input": "fixed external data",
+      "retained": "J_ext=0; all internal contact/transport retained"
+    }
+  ]
+}

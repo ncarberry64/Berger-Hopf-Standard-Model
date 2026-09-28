@@ -1,0 +1,27 @@
+{
+  "FULL_BHSM_COMPLETE": false,
+  "Gate7_closed": false,
+  "complete_q66_evaluated": false,
+  "outputs": {
+    "BHSM_SUFFICIENT_STATE_LEDGER.json": {
+      "SHA256": "94BE4889C281265F7970973F28AD8C38A068842395B1E828DF6C0177A19C63D6",
+      "byte_identical": true
+    },
+    "arrays.npz": {
+      "SHA256": "6EE0771943CFEE26963346F9731318D633EE2A347A053C8B2223B44F2CDD896F",
+      "byte_identical": true
+    },
+    "report.json": {
+      "SHA256": "F1A2706ABD5CFFAE506D71B67BDC5651A983CDE48DFDB0BD77AB2E71F09E225A",
+      "byte_identical": true
+    }
+  },
+  "primary": "run4",
+  "repeat": "run5",
+  "source_hashes_verified": true,
+  "tests": {
+    "command": "C:/Python314/python.exe -m pytest --noconftest tests/test_gate7_current_action.py tests/test_heat_zeta_mixed_boundary_launch.py tests/test_current_incoming_formation_family.py tests/test_formation_stationarity_kkt.py -q",
+    "failed": 0,
+    "passed": 35
+  }
+}
