@@ -1,0 +1,34 @@
+{
+  "authority": "docs/GATE7_CURRENT_CALCULATION_SCOPE.md",
+  "consumed_equation": "F_A=Gamma_A+mu^T R_A-eta^T F_A_internal, F_n^T eta=Gamma_n+R_n^T mu",
+  "existing_obligation": "Same-action constrained force/root",
+  "remaining": "Instantiate the same joint internal graph and signed heat/contact contraction as functions of the unsolved amplitude",
+  "report_SHA256": "7588D3A5E9C7E3C2B8162926A066FE0E8D8D85D225AA03ACCE20598CC2D1BBEE",
+  "rows": [
+    {
+      "classification": "NECESSARY",
+      "input": "formation amplitude",
+      "retained": "Existing constrained saddle coordinate; no independent birth law"
+    },
+    {
+      "classification": "SLAVED",
+      "input": "constraint/event multipliers",
+      "retained": "Existing saddle unknowns; not set from J_ext=0"
+    },
+    {
+      "classification": "HISTORY-COMPRESSIBLE",
+      "input": "temporal orbit-cut response",
+      "retained": "Endpoint contraction and proved tangential source cancellation; general physical directions still need their adjoint"
+    },
+    {
+      "classification": "HISTORY-COMPRESSIBLE",
+      "input": "joint birth heat pressure",
+      "retained": "One scalar full-domain graded spectral contraction for the amplitude row"
+    },
+    {
+      "classification": "REDUNDANT",
+      "input": "complete incoming trajectory storage",
+      "retained": "Not required by the contraction interface"
+    }
+  ]
+}

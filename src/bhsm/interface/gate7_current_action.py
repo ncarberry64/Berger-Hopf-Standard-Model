@@ -55,6 +55,27 @@ class ActionSector:
     gamma_xi: arb_mat
     gamma_n: arb_mat
     objective_product: Callable | None = None
+    gamma_amplitude: arb_mat | None = None
+    amplitude_role: str = 'bulk'
+
+
+@dataclass
+class ConstraintSector:
+    """An existing KKT row group, with the repository convention +mu^T R.
+
+    Multipliers are supplied saddle coordinates, never estimated from zero
+    external forcing. ``curvature_product`` returns (mu R_xi,d, mu R_n,d).
+    Rows already eliminated in F must not also be registered here.
+    """
+    name: str
+    owner: str
+    base: ActionBase
+    multipliers: arb_mat
+    residual: arb_mat
+    R_xi: arb_mat
+    R_n: arb_mat
+    R_amplitude: arb_mat | None = None
+    curvature_product: Callable | None = None
 
 
 @dataclass
@@ -69,6 +90,10 @@ class ImplicitAction:
     errors: dict
     residual_curvature_product: Callable | None = None
     normal_residual: arb_mat | None = None
+    constraints: tuple[ConstraintSector, ...] = ()
+    F_amplitude: arb_mat | None = None
+    amplitude_owner: str | None = None
+    required_constraints: tuple[str, ...] = ()
 
     def validate(self):
         n, d = self.F_n.nrows(), self.F_xi.ncols()
@@ -86,13 +111,31 @@ class ImplicitAction:
                 raise ValueError('mixed-base action assembly')
             checked(sector.gamma_xi, d, 1, sector.name+' Gamma_xi')
             checked(sector.gamma_n, n, 1, sector.name+' Gamma_n')
+        cnames = tuple(c.name for c in self.constraints)
+        if (len(set(cnames)) != len(cnames) or set(cnames).intersection(names)
+                or set(cnames) != set(self.required_constraints)):
+            raise ValueError('constraint row groups omitted or double counted')
+        for c in self.constraints:
+            if c.base != self.base or not c.owner:
+                raise ValueError('current action-owned constraint base required')
+            m = c.multipliers.nrows()
+            if m < 1:
+                raise ValueError('nonempty existing constraint row group required')
+            checked(c.multipliers, m, 1, c.name+' multipliers')
+            checked(c.residual, m, 1, c.name+' residual')
+            checked(c.R_xi, m, d, c.name+' R_xi')
+            checked(c.R_n, m, n, c.name+' R_n')
         return n, d
 
 
 def evaluate_gate7_current_action(query, requested_products):
     """Return requested force or directional H/B using one signed adjoint.
 
-    requested_products may contain q66=True, H66_u=<column>, B66x73_v=<column>.
+    requested_products may contain q66=True, amplitude=True, H66_u=<column>,
+    B66x73_v=<column>. Amplitude partials are required only when requested.
+    For uneliminated existing constraints, products are Lagrangian products
+    at the supplied multiplier coordinates, as in assemble_stationarity.
+    The caller assembles their multiplier equations in the same KKT solve.
     The underlying reducer also supports smaller dimensions for exact tests.
     Only one normal directional solve and one transpose solve per H/B product
     are needed. The final transpose solve maps the contracted normal output
@@ -102,11 +145,14 @@ def evaluate_gate7_current_action(query, requested_products):
     not replaced by point radii or interpreted as zero.
     """
     n, d = query.validate()
-    unknown = set(requested_products)-{'q66', 'H66_u', 'B66x73_v'}
+    unknown = set(requested_products)-{'q66', 'H66_u', 'B66x73_v', 'amplitude'}
     if unknown:
         raise ValueError('unknown requested product: '+str(sorted(unknown)))
     gn = sum((s.gamma_n for s in query.sectors), arb_mat(n, 1))
     gx = sum((s.gamma_xi for s in query.sectors), arb_mat(d, 1))
+    for c in query.constraints:
+        gn += c.R_n.transpose()*c.multipliers
+        gx += c.R_xi.transpose()*c.multipliers
     eta = query.F_n.transpose().solve(gn)
     result = dict(base_SHA256=query.base.digest, scope=query.scope,
                   errors=query.errors, adjoint=eta,
@@ -115,6 +161,31 @@ def evaluate_gate7_current_action(query, requested_products):
                                 checked(query.normal_residual, n, 1, 'normal residual'))
     if requested_products.get('q66'):
         result['q66'] = checked(gx-query.F_xi.transpose()*eta, d, 1, 'q')
+    if requested_products.get('amplitude'):
+        if not query.amplitude_owner:
+            raise ValueError('existing amplitude coordinate owner required')
+        FA = checked(query.F_amplitude, n, 1, 'F_amplitude')
+        roles = {k: arb_mat(1, 1) for k in ('bulk', 'endpoint_event', 'contact_heat')}
+        for s in query.sectors:
+            if s.amplitude_role not in roles:
+                raise ValueError('explicit amplitude contribution role required')
+            roles[s.amplitude_role] += checked(s.gamma_amplitude, 1, 1,
+                                               s.name+' Gamma_amplitude')
+        raw = sum(roles.values(), arb_mat(1, 1))
+        multiplier = arb_mat(1, 1)
+        for c in query.constraints:
+            RA = checked(c.R_amplitude, c.multipliers.nrows(), 1, c.name+' R_amplitude')
+            multiplier += c.multipliers.transpose()*RA
+        normal = -eta.transpose()*FA
+        result['amplitude'] = dict(raw_partial=raw,
+            explicit_constraint_multiplier=multiplier,
+            internal_adjoint=normal, constraint_multiplier_total=multiplier+normal,
+            endpoint_event=roles['endpoint_event'], contact_heat=roles['contact_heat'],
+            bulk=roles['bulk'], final_row=raw+multiplier+normal,
+            owner=query.amplitude_owner,
+            accounting='endpoint_event and contact_heat are subsets of raw_partial, not extra addends')
+        result['amplitude_normal_replay'] = query.F_n*(-query.F_n.solve(FA))+FA
+    result['constraint_residuals'] = {c.name: c.residual for c in query.constraints}
     for key, kind in [('H66_u', 'H'), ('B66x73_v', 'B')]:
         if key not in requested_products:
             continue
@@ -130,6 +201,12 @@ def evaluate_gate7_current_action(query, requested_products):
             sx, sn = sector.objective_product(kind, direction, dn)
             cx += checked(sx, d, 1, sector.name+' Gamma_xi,d')
             cn += checked(sn, n, 1, sector.name+' Gamma_n,d')
+        for c in query.constraints:
+            if c.curvature_product is None:
+                raise ValueError(c.name+': constrained curvature missing')
+            sx, sn = c.curvature_product(kind, direction, dn, c.multipliers)
+            cx += checked(sx, d, 1, c.name+' mu R_xi,d')
+            cn += checked(sn, n, 1, c.name+' mu R_n,d')
         if query.residual_curvature_product is None:
             raise ValueError('contracted residual curvature missing')
         # The callback returns +eta^T F_ab. Subtract once for L=Gamma-eta F.
