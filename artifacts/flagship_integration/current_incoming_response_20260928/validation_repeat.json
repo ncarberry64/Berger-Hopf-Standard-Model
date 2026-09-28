@@ -1,0 +1,57 @@
+{
+  "FULL_BHSM_COMPLETE": false,
+  "Gate7_closed": false,
+  "base_commit": "6ccc130e",
+  "complete": false,
+  "fixed_initial_failures": [
+    "New test wrongly assumed RADIUS0/2=1; corrected to test the density-to-superpotential ratio",
+    "Prototype modified frozen evaluator; restored exact evaluator bytes and used an external fingerprinted return observer",
+    "First secant report used an unresolved relative path; resolved paths before complete repeated runs"
+  ],
+  "new_unsplit_local_derivative_evaluations_for_shared_response": true,
+  "no_ten_sector_producer_reexecution": true,
+  "preserved_untracked_development": [
+    "run1",
+    "secants1"
+  ],
+  "publication_attempted": false,
+  "reproduction": [
+    {
+      "SHA256": "0FE84E15DA977DFC166F4927BF1B61EE87C80F4BDB4D395E2928C5A82332C3E3",
+      "byte_identical": true,
+      "first": "run2/arrays.npz",
+      "repeat": "run3/arrays.npz"
+    },
+    {
+      "SHA256": "3CA6A1C8F07A533665364C6A0D2413D04A09891D72D579C580AF246045C0D8B6",
+      "byte_identical": true,
+      "first": "run2/report.json",
+      "repeat": "run3/report.json"
+    },
+    {
+      "SHA256": "E0F9E3CEE8B7A22E732C6ADFA6D06C0B673E237EFC721CA5DB05CE828983C590",
+      "byte_identical": true,
+      "first": "secants2/arrays.npz",
+      "repeat": "secants3/arrays.npz"
+    },
+    {
+      "SHA256": "6A050B5A9BAC4EC5937C2979605F26C95558D409E88A5C8096FAEC65522235B2",
+      "byte_identical": true,
+      "first": "secants2/report.json",
+      "repeat": "secants3/report.json"
+    },
+    {
+      "SHA256": "EF0F78E3C12B28505666CAC294B7359F7074D6E1F1C787C30836FE67B2A9657B",
+      "byte_identical": true,
+      "first": "FORMATION_SUFFICIENT_STATE_LEDGER.json",
+      "repeat": "FORMATION_SUFFICIENT_STATE_LEDGER_repeat.json"
+    }
+  ],
+  "tests": {
+    "final_new_module_command_passed": 9,
+    "new_test_file": "tests/test_current_incoming_formation_family.py",
+    "prior_focused_command_passed": 94,
+    "pytest_options": "--noconftest -q",
+    "unique_tests_covered": 97
+  }
+}
