@@ -1,0 +1,87 @@
+{
+  "base_commit": "b994615e",
+  "current_source_role": "External E0 Dirichlet generating trace; one internal E1/C2 seam. Supersedes older dynamic birth-graph interpretation.",
+  "dependencies": [
+    {
+      "expected_base": "Explicit 98D state; old driver uses historical center_state[:98]",
+      "history": [
+        "endpoint-only"
+      ],
+      "operand": "Current branch-23 local action sector values/derivatives",
+      "producer": "derive_n12_gate7_parent_sector_jets.local_sectors + accumulate",
+      "recenterable": true,
+      "recomputation": "One current incoming point; existing spatial quadrature; project local Hessians onto saved Q66 only"
+    },
+    {
+      "expected_base": "Current branch-23 field/domain and owned incoming duration/amplitude family",
+      "history": [
+        "finite integrated history",
+        "coefficient-history dependent",
+        "duration dependent"
+      ],
+      "operand": "Current incoming x(tau), durations, coefficient and duration jets",
+      "producer": "regularized branch-23 action field; arb_current_history_transport; aether_forward_boundary_radius",
+      "recenterable": true,
+      "recomputation": "New incoming family integration/implicit response; no node13/reset connection or C2 prefix integration"
+    },
+    {
+      "expected_base": "Current incoming coefficient and duration family, not a historical radius germ",
+      "history": [
+        "spectral-history dependent",
+        "contact-history dependent"
+      ],
+      "operand": "Incoming Weyl/Calderon forms and their mixed contractions",
+      "producer": "arb_weyl_first_pullback; aether_ae2_one_seam_descriptor; heat_zeta_mixed_boundary_launch.element_mixed",
+      "recenterable": true,
+      "recomputation": "Stream incoming element contractions and glue to retained current child response once"
+    },
+    {
+      "expected_base": "Same current positive joint operator/domain and coefficient jets",
+      "history": [
+        "spectral-history dependent",
+        "coefficient-history dependent",
+        "duration dependent"
+      ],
+      "operand": "Joint graded heat-minus-zeta coefficient cotangent and mixed terms",
+      "producer": "forward_finite_endpoint_heat_force; heat_zeta_mixed_boundary_launch",
+      "recenterable": true,
+      "recomputation": "Joint operator functional; no generic second operator tensor; maximal-tail scope must remain explicit"
+    },
+    {
+      "expected_base": "Complete current internal residual/base, its inverse or owned quotient, and contracted objective derivatives",
+      "history": [
+        "finite integrated history",
+        "contact-history dependent"
+      ],
+      "operand": "Reduced q66, H66 and B66x73",
+      "producer": "implicit_objective_adjoint / reduce_implicit_mixed; formation_stationarity_kkt",
+      "recenterable": true,
+      "recomputation": "Same-action internal reduction then saved-frame contraction; no stationary solve before these exist"
+    }
+  ],
+  "no_Q66_reset_connection_or_C2_prefix_recomputed": true,
+  "retention_findings_not_scientific_blockers": [
+    {
+      "SHA256": "50D1212F52A913FCBF70C8E8D19367D98024902B0E9D20FC0A0493EB247890C9",
+      "bytes": 19155870,
+      "path": "artifacts/flagship_integration/gate7_coupled_fiber_center_20260927/inverse_proposal/arrays.npz"
+    },
+    {
+      "SHA256": "03D8AF00C7E00794BE898427A6267122F666643D15F491A76E4E452037A2205A",
+      "bytes": 16407558,
+      "path": "artifacts/flagship_integration/gate7_coupled_fiber_center_20260927/jet/arrays.npz"
+    },
+    {
+      "SHA256": "42D7B332728BCF66D55828E4EE3B6060F259D032BA3A757A4383D968F3074E51",
+      "bytes": 20390658,
+      "path": "artifacts/flagship_integration/gate7_current_history_20260927/core/arrays.npz"
+    },
+    {
+      "SHA256": "1914D9CFB29E699891D709DEE87B9A857F05659EDE7524160A815585C7E6B77C",
+      "bytes": 12668296,
+      "path": "artifacts/flagship_integration/gate7_parent_sectors_20260927/arrays.npz"
+    }
+  ],
+  "source_role_owner": "theory/n12_gate7_external_birth_source_role_supersession.md",
+  "target": "CURRENT_INCOMING_FORMATION_HISTORY_OPERATOR_ASSEMBLY"
+}

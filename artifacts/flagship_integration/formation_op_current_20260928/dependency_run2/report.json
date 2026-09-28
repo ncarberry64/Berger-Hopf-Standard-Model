@@ -1,0 +1,79 @@
+{
+  "arrays_SHA256": "C1D9C012A9E4507C2BD51EE9B392202D8753E0437374895195060A2943BFC62F",
+  "endpoint_data_do_not_determine_the_complete_history_operator": true,
+  "history_compression_is_sector_specific": true,
+  "input_dimension_optimized": false,
+  "ledger": [
+    {
+      "combination": "log R4 at the reset",
+      "numerical_replay": {
+        "approximate_upper": 2.2745468532148863e-70,
+        "exact_upper": "10524020020370948099009537758695544051409887729727960635865323995527061910066589940295858217808358425287521550163384074629911228906414852974915387545409381/46268644699475435470014199270680622913148582491776246164412857235254375716637876222457838321585848270371190628323884999935972095850551557285913445801770125007762163162852820919462003875720454598226040577701224945512200798208",
+        "method": "Arb512_Frobenius"
+      },
+      "scope": "First-order variation on the fixed-child reset-compatible 66D tangent only; follows from the retained trace/attachment rows",
+      "status": "REDUNDANT",
+      "variable": "37 incoming endpoint geometry coordinates"
+    },
+    {
+      "combination": "proper radius rate at the endpoint",
+      "numerical_replay": {
+        "approximate_upper": 0.17317741469247414,
+        "exact_upper": "4643859028001424641302533781515863211503373009054584552282573473667946705503885655343043767415892073429428592093658389080171518970418389293707597606137175/26815615859885194199148049996411692254958731641184786755447122887443528060147093953603748596333806855380063716372972101707507765623893139892867298012168192",
+        "method": "Arb512_Frobenius"
+      },
+      "scope": "Actual endpoint directional dependence; no full incoming path is inferred from it",
+      "status": "SURVIVES",
+      "variable": "Incoming coordinate velocities, lapse and geometry"
+    },
+    {
+      "combination": "x(tau)=log R4(tau) and proper durations",
+      "scope": "Sufficient coefficient data for compact fixed-channel scalar/Dirac transfer; not sufficient for the classical attached action",
+      "status": "SURVIVES",
+      "variable": "Full incoming field history"
+    },
+    {
+      "combination": "Signed attached-action spatial integrals and Hopf inertia at each history point",
+      "scope": "Classical action still needs finite integration; endpoint density is only a local operand",
+      "status": "SURVIVES",
+      "variable": "Spatial geometry, eta, fixed inertia, lapse/shift along history"
+    },
+    {
+      "combination": "Common implicit-history solution and objective adjoint",
+      "scope": "Required internal-elimination route; current numerical solve remains uninstantiated",
+      "status": "SLAVED",
+      "variable": "Descriptor, normalized eigenline, hard response and history internals"
+    },
+    {
+      "combination": "Retained graded operator sum",
+      "scope": "Existing mode-by-mode BRST identity; transverse gauge, Weyl and HS remain",
+      "status": "CANCELS",
+      "variable": "Longitudinal gauge and matching complex ghost modes"
+    },
+    {
+      "combination": "Covariant reset transport",
+      "scope": "Owned parallel transport identity; physical child/attachment variations remain",
+      "status": "CANCELS",
+      "variable": "Independent reset-frame source"
+    },
+    {
+      "combination": "Intrinsic birth/event labels and duration",
+      "scope": "Absent from the endpoint-labelled operator representation; does not identify or delete a Q66 column",
+      "status": "REDUNDANT",
+      "variable": "Absolute proper-time origin"
+    }
+  ],
+  "physical_B66x73_evaluated": false,
+  "physical_H66_evaluated": false,
+  "physical_q66_evaluated": false,
+  "source_SHA256": {
+    "artifacts/flagship_integration/formation_op_current_20260928/local_run1/arrays.npz": "A3DBF178745BF1802C91EF50F278C233C02688329B2DFA2591D3007E741AA279",
+    "artifacts/flagship_integration/formation_op_current_20260928/local_run1/report.json": "EFB6BD4B33C396DD09C4A97419EE91DF53B51A54CCFEFAC9FF3EE0AD944E0C14",
+    "artifacts/flagship_integration/gate7_formation_action_basis_20260928/run1/arrays.npz": "A190266C88AA4D0D03D5DC84C8CA14249521DF24CBB014F3B42A995A8A10B5E1",
+    "scripts/record_n12_current_formation_dependencies.py": "47811AEA58773C014A764E3B11101DC531431126AE4AD41E3584B1235FFED7B7",
+    "src/bhsm/interface/aether_forward_boundary_radius.py": "E60D8EABCD291453FEB82B912628999785E9D3678D407EA5274BEC851A623885",
+    "src/bhsm/interface/aether_forward_history_weyl_first_jet.py": "FF8E7BEAC608E700534166EBA1CF31AC3A6915FD5B177BAC3D27B931BD2C9D38",
+    "theory/n12_gate7_external_birth_source_role_supersession.md": "8F80EEFFCDC75F6D25000ADB5C22BCF3CBC8DFCDF0880FFAE7F9B19BD65267EF"
+  },
+  "status": "CURRENT_ENDPOINT_DEPENDENCY_CONTRACTIONS_EVALUATED"
+}
