@@ -1,5 +1,28 @@
 # Museum content update — 24 September 2026
 
+## Selectable structures and quantum illustrations — 28 September 2026
+
+All six structures-across-scales cards now offer independent selections: 18
+examples spanning hadrons, nuclei, atoms, molecules, matter and cosmic structures.
+Selecting an example changes its SVG, accessible description, explanation and
+pressed state. Keyboard activation uses native buttons and selections survive
+exhibit navigation.
+
+Proton and neutron views show their distinct valence-quark content with animated,
+labeled gluon exchanges. Hydrogen, helium and carbon show waveform packets
+inside stationary probability envelopes, including directional p lobes for
+carbon. Captions distinguish illustrative phase motion from stationary density
+and from classical trajectories. DOE and OpenStax references are linked locally
+to those cards. The molecular choices show bent H2O, linear double-bonded CO2,
+and a DNA double helix. Each remaining choice also has a distinct scene.
+
+Validation: TypeScript, focused lint, static production export, 28 Node tests,
+13 museum Python tests, and all five publication audits passed. The initial
+Python invocation from the museum subdirectory failed to import the root tools
+package; rerunning from the repository root passed. Browser checks exercised
+all 18 selections, unique scenes, matching accessible descriptions, keyboard
+activation, pause/resume, and desktop/tablet/phone layouts without page overflow.
+
 ## Children of BHSM example showcase — 28 September 2026
 
 Expanded all three welcome-map panels with named examples and explanations.
