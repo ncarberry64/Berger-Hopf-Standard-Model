@@ -1,0 +1,42 @@
+{
+  "C2_prefix_rerun": false,
+  "FULL_BHSM_COMPLETE": false,
+  "Gate7_closed": false,
+  "audits": {
+    "forbidden_claims": true,
+    "frozen_prediction_integrity": true,
+    "precision": true,
+    "public_readiness": false,
+    "status": true
+  },
+  "base_commit": "2e0a5fbd001df789e3b0ac0f9dd85659e2f0beb1",
+  "missing_current_input": "Internally reduced current incoming coefficient/duration/operator history and its same-action normal/launch derivatives",
+  "publication_blocker": "Four pre-existing large research arrays are absent from the reviewed retention registry; see public_readiness.json.",
+  "reproduction": {
+    "arrays.npz": {
+      "SHA256": "A190266C88AA4D0D03D5DC84C8CA14249521DF24CBB014F3B42A995A8A10B5E1",
+      "byte_identical": true,
+      "bytes": 2336811
+    },
+    "report.json": {
+      "SHA256": "EE592F3C69908C89BF46111EE106FD91A09AD66D25F5943B95F20EF9CDE1FE8E",
+      "byte_identical": true,
+      "bytes": 3085
+    }
+  },
+  "required_products": {
+    "Q66_current": "run1/arrays.npz:Q66_current",
+    "formation_action_covector_current": null,
+    "formation_constrained_hessian_66x66": null,
+    "formation_launch_forcing_66x73": null,
+    "formation_parent_state_first_jet": null,
+    "formation_physical_covector_66": null,
+    "formation_stationary_first_jet_66x73": null,
+    "formation_stationary_root": null
+  },
+  "reset_matching_changed": false,
+  "scope": "Current action-metric reset kernel and exact reduced launch assembly; not a formation-action solve",
+  "selector_added": false,
+  "tests_failed": 0,
+  "tests_passed": 77
+}

@@ -1,0 +1,41 @@
+{
+  "FULL_BHSM_COMPLETE": false,
+  "Gate7_closed": false,
+  "action_orthonormality": {
+    "approximate_upper": 7.628858750627924e-68,
+    "exact_upper": "6894081152251709113373462033579855570379311290941421501604739047226108837510784503405209976265344098781579101483464419740308006529681589885731095803816997/90368446678662959902371482950548091627243325179250480789868861787606202571558351996987965471847359903068731695945087890499945499708108510324049698831582275405785474927446915858324226319766512887160235503322704971703517184",
+    "method": "Arb512_Frobenius"
+  },
+  "ambient_dimension": 98,
+  "arrays_SHA256": "A190266C88AA4D0D03D5DC84C8CA14249521DF24CBB014F3B42A995A8A10B5E1",
+  "coordinates": "action coordinates a=W*delta_state_raw; J_reset differentiates a",
+  "covector_pairing": "q_form=Q66_current^T*g_action=Q66_current_raw^T*g_raw",
+  "formation_covector_evaluated": false,
+  "formation_hessian_evaluated": false,
+  "frame_convention": "Project the saved basis and preserve its column order/orientation; no physical direction discarded",
+  "full_kernel_spanned": true,
+  "launch_forcing_evaluated": false,
+  "metric_raw": "W^T W with the unchanged positive state_weights from the current candidate",
+  "physical_null_ownership": "All 66 directions retained for formation stationarity; gauge/time ownership not inferred from reset rank",
+  "prefix_rerun": false,
+  "reset_annihilator": {
+    "approximate_upper": 1.0211717221174525e-66,
+    "exact_upper": "11535212789991179575652023598596157718839869197313351552523063231690204557023015711790959442313389893861189352740938869604630833419580149275251359205137709/11296055834832869987796435368818511453405415647406310098733607723450775321444793999623495683980919987883591461993135986312493187463513563790506212353947784425723184365930864482290528289970814110895029437915338121462939648",
+    "method": "Arb512_Frobenius"
+  },
+  "reset_matching_changed": false,
+  "reset_rank": 32,
+  "scope": "Pointwise tangent enclosure at the saved candidate; not a stationary root or neighborhood certificate",
+  "selector_added": false,
+  "source_SHA256": {
+    "artifacts/flagship_integration/gate7_current_formation_stationarity_20260927/run1/arrays.npz": "218709F31B22E4855B77C525586CFC0D81AA97D60B104227BE75C61C3B15C8B7",
+    "artifacts/flagship_integration/gate7_current_formation_stationarity_20260927/run1/report.json": "0D7D0CCA99E60E26A5247C57CB67F29D18121F1AC4370A377922CB3A352D94CF",
+    "artifacts/flagship_integration/gate7_current_reset_connection_20260927/reset_match_complete/candidate.npz": "C6AFA87DCEE5C9F4071EB78FA01FEC5FBC1C1826EE4D2CAFD8D1D3648FC4E40F",
+    "scripts/freeze_n12_gate7_formation_action_basis.py": "22C63561E4F1EBF7E243C86ECF044B1284098AD9D22C0D906A72A5E36419A62F",
+    "src/bhsm/interface/aether_full_reset_action_jacobian.py": "243E9348E52F0F54A236FFBD448A309DCB4FEEC9BF4B45ADBEEA42763E2E745C"
+  },
+  "source_commit": "2e0a5fbd001df789e3b0ac0f9dd85659e2f0beb1",
+  "stationary_history_solved": false,
+  "status": "CURRENT_RESET_COMPATIBLE_ACTION_METRIC_FRAME_FROZEN",
+  "tangent_dimension": 66
+}

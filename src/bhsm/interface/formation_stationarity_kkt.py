@@ -70,3 +70,38 @@ def stationary_first_jet(system,*,owned_border=None):
     total_F=arb_mat(F.tolist()+forcing.tolist())
     response=-bordered.solve(total_F)
     return dict(response=response,replay=bordered*response+total_F,border_owner=owner)
+
+
+def reset_tangent_blocks(system, basis):
+    """Reduce the assembled Lagrangian jet onto the complete reset tangent.
+
+    Consume assemble_stationarity output after the joint internal action has
+    been reduced. H includes multiplier-weighted constraint curvature. A
+    moving constraint supplies the normal lift Np=-J^T(J J^T)^-1 Rp;
+    consequently B=Q^T(L_yp+H Np), not just Q^T L_yp.
+
+    These are pointwise contractions. Solving them as a stationary first jet
+    requires a separately certified stationary base and any owned quotient.
+    The normal lift is only a coordinate decomposition: all kernel directions
+    remain in Q and no physical solution is chosen by this right inverse.
+    """
+    K, F = system['jacobian'], system['forcing']
+    H = system['constrained_hessian']
+    n = H.nrows()
+    m = K.nrows() - n
+    k = basis.ncols()
+    if (H.ncols() != n or basis.nrows() != n or k != n-m or m <= 0
+            or K.ncols() != n+m or F.nrows() != n+m
+            or system['residual'].nrows() != n+m):
+        raise ValueError('complete assembled reset tangent system required')
+    J = arb_mat(m, n, [K[n+i, j] for i in range(m) for j in range(n)])
+    Rp = arb_mat(m, F.ncols(), [F[n+i, j] for i in range(m) for j in range(F.ncols())])
+    mixed = arb_mat(n, F.ncols(), [F[i, j] for i in range(n) for j in range(F.ncols())])
+    normal = -J.transpose() * (J * J.transpose()).solve(Rp)
+    stationary = arb_mat(n, 1, [system['residual'][i, 0] for i in range(n)])
+    return dict(physical_covector=basis.transpose()*stationary,
+                hessian=basis.transpose()*H*basis,
+                launch_forcing=basis.transpose()*(mixed+H*normal),
+                constraint_normal_launch=normal,
+                reset_tangent_replay=J*basis,
+                reset_normal_replay=J*normal+Rp)
