@@ -1,0 +1,454 @@
+{
+  "FULL_BHSM_COMPLETE": false,
+  "Gate7_closed": false,
+  "arrays_SHA256": "F40D89473396BACAA6F29F6F2E5A21D395C0BB426496F75ADEC47E9609A66883",
+  "complete_child_reaction": null,
+  "complete_parent_reaction": null,
+  "current_73_formation_jet_computed": false,
+  "equations": {
+    "equivalent_tangent": "Z^T Gamma_red,y = 0, columns of Z span ker R_y",
+    "external": "J_ext=0; retained internal action/contact responses remain active",
+    "first_jet": "[[Gamma_yy+sum mu_a R_a,yy, R_y^T],[R_y,0]] [y_p;mu_p] = -[Gamma_yp+sum mu_a R_a,yp;R_p]",
+    "internal": "F_history(p,y,n)=0; Gamma_red composes n and owned moving endpoints before differentiation",
+    "reset": "R(p,y)=0 (32 incoming-sensitive rows); outgoing 26 rows retained as compatibility checks",
+    "stationary": "Gamma_red,y + R_y^T mu = 0"
+  },
+  "forward_orientation": {
+    "child": "C2 = stored first half, branch24",
+    "flux": "G_C2+DP_C2[X_C2]-F_C2+G_E1; history additions must use the same common reduction",
+    "momentum": "P_C2-P_E1",
+    "parent": "E1 = stored second half, branch23"
+  },
+  "full_flux_residual": null,
+  "full_stationarity_jacobian_rank": null,
+  "full_stationarity_residual": null,
+  "local_flux_piece_is_not_full_flux": true,
+  "local_force_conormal_piece": {
+    "approximate_upper": 107.40013632303037,
+    "exact_upper": "5625001560425165831111958861584163530835470822766799212423994806792969833283485082080475246263672350208691334299280835487441204627792449153858049699384029/52374249726338269920211035149241586435466272736689036631732661889538140742474792878132321477214466514414186946040961136147476104734166288853256441430016",
+    "method": "Arb512_Frobenius"
+  },
+  "local_momentum_balance": {
+    "approximate_upper": 1.030115716522587e-14,
+    "exact_upper": "607440313652244050806566891642507396751003087899685492174635818516149621671211547504247939572174502971041202732828394654486358309772457652704897416149507/58968162887836583628774290327941701420576894069006881693378223441337877537377325813845730080900918242835443359855685076558915384842574884883772410178635875682021801984",
+    "method": "Arb512_Frobenius"
+  },
+  "missing_object": "CURRENT_CENTER_REDUCED_INCOMING_FORMATION_CONTACT_ACTION_COVECTOR_AND_NORMAL_LAUNCH_JETS",
+  "missing_object_definition": "Gamma_red,y (or its 66 reset-tangent contractions), the Lagrangian normal Hessian, and the total 73-column mixed forcing, from the current incoming coefficient/duration path and retained signed heat-minus-zeta/contact adjoint",
+  "missing_physics_claim": false,
+  "new_environment_or_selector_introduced": false,
+  "null_directions": [
+    {
+      "classification": "UNRESOLVED_UPSTREAM_RESET_TANGENT",
+      "column": 0,
+      "reason": "Current history stationarity derivative not instantiated; gauge/time/physical-modulus status not inferred from reset rank"
+    },
+    {
+      "classification": "UNRESOLVED_UPSTREAM_RESET_TANGENT",
+      "column": 1,
+      "reason": "Current history stationarity derivative not instantiated; gauge/time/physical-modulus status not inferred from reset rank"
+    },
+    {
+      "classification": "UNRESOLVED_UPSTREAM_RESET_TANGENT",
+      "column": 2,
+      "reason": "Current history stationarity derivative not instantiated; gauge/time/physical-modulus status not inferred from reset rank"
+    },
+    {
+      "classification": "UNRESOLVED_UPSTREAM_RESET_TANGENT",
+      "column": 3,
+      "reason": "Current history stationarity derivative not instantiated; gauge/time/physical-modulus status not inferred from reset rank"
+    },
+    {
+      "classification": "UNRESOLVED_UPSTREAM_RESET_TANGENT",
+      "column": 4,
+      "reason": "Current history stationarity derivative not instantiated; gauge/time/physical-modulus status not inferred from reset rank"
+    },
+    {
+      "classification": "UNRESOLVED_UPSTREAM_RESET_TANGENT",
+      "column": 5,
+      "reason": "Current history stationarity derivative not instantiated; gauge/time/physical-modulus status not inferred from reset rank"
+    },
+    {
+      "classification": "UNRESOLVED_UPSTREAM_RESET_TANGENT",
+      "column": 6,
+      "reason": "Current history stationarity derivative not instantiated; gauge/time/physical-modulus status not inferred from reset rank"
+    },
+    {
+      "classification": "UNRESOLVED_UPSTREAM_RESET_TANGENT",
+      "column": 7,
+      "reason": "Current history stationarity derivative not instantiated; gauge/time/physical-modulus status not inferred from reset rank"
+    },
+    {
+      "classification": "UNRESOLVED_UPSTREAM_RESET_TANGENT",
+      "column": 8,
+      "reason": "Current history stationarity derivative not instantiated; gauge/time/physical-modulus status not inferred from reset rank"
+    },
+    {
+      "classification": "UNRESOLVED_UPSTREAM_RESET_TANGENT",
+      "column": 9,
+      "reason": "Current history stationarity derivative not instantiated; gauge/time/physical-modulus status not inferred from reset rank"
+    },
+    {
+      "classification": "UNRESOLVED_UPSTREAM_RESET_TANGENT",
+      "column": 10,
+      "reason": "Current history stationarity derivative not instantiated; gauge/time/physical-modulus status not inferred from reset rank"
+    },
+    {
+      "classification": "UNRESOLVED_UPSTREAM_RESET_TANGENT",
+      "column": 11,
+      "reason": "Current history stationarity derivative not instantiated; gauge/time/physical-modulus status not inferred from reset rank"
+    },
+    {
+      "classification": "UNRESOLVED_UPSTREAM_RESET_TANGENT",
+      "column": 12,
+      "reason": "Current history stationarity derivative not instantiated; gauge/time/physical-modulus status not inferred from reset rank"
+    },
+    {
+      "classification": "UNRESOLVED_UPSTREAM_RESET_TANGENT",
+      "column": 13,
+      "reason": "Current history stationarity derivative not instantiated; gauge/time/physical-modulus status not inferred from reset rank"
+    },
+    {
+      "classification": "UNRESOLVED_UPSTREAM_RESET_TANGENT",
+      "column": 14,
+      "reason": "Current history stationarity derivative not instantiated; gauge/time/physical-modulus status not inferred from reset rank"
+    },
+    {
+      "classification": "UNRESOLVED_UPSTREAM_RESET_TANGENT",
+      "column": 15,
+      "reason": "Current history stationarity derivative not instantiated; gauge/time/physical-modulus status not inferred from reset rank"
+    },
+    {
+      "classification": "UNRESOLVED_UPSTREAM_RESET_TANGENT",
+      "column": 16,
+      "reason": "Current history stationarity derivative not instantiated; gauge/time/physical-modulus status not inferred from reset rank"
+    },
+    {
+      "classification": "UNRESOLVED_UPSTREAM_RESET_TANGENT",
+      "column": 17,
+      "reason": "Current history stationarity derivative not instantiated; gauge/time/physical-modulus status not inferred from reset rank"
+    },
+    {
+      "classification": "UNRESOLVED_UPSTREAM_RESET_TANGENT",
+      "column": 18,
+      "reason": "Current history stationarity derivative not instantiated; gauge/time/physical-modulus status not inferred from reset rank"
+    },
+    {
+      "classification": "UNRESOLVED_UPSTREAM_RESET_TANGENT",
+      "column": 19,
+      "reason": "Current history stationarity derivative not instantiated; gauge/time/physical-modulus status not inferred from reset rank"
+    },
+    {
+      "classification": "UNRESOLVED_UPSTREAM_RESET_TANGENT",
+      "column": 20,
+      "reason": "Current history stationarity derivative not instantiated; gauge/time/physical-modulus status not inferred from reset rank"
+    },
+    {
+      "classification": "UNRESOLVED_UPSTREAM_RESET_TANGENT",
+      "column": 21,
+      "reason": "Current history stationarity derivative not instantiated; gauge/time/physical-modulus status not inferred from reset rank"
+    },
+    {
+      "classification": "UNRESOLVED_UPSTREAM_RESET_TANGENT",
+      "column": 22,
+      "reason": "Current history stationarity derivative not instantiated; gauge/time/physical-modulus status not inferred from reset rank"
+    },
+    {
+      "classification": "UNRESOLVED_UPSTREAM_RESET_TANGENT",
+      "column": 23,
+      "reason": "Current history stationarity derivative not instantiated; gauge/time/physical-modulus status not inferred from reset rank"
+    },
+    {
+      "classification": "UNRESOLVED_UPSTREAM_RESET_TANGENT",
+      "column": 24,
+      "reason": "Current history stationarity derivative not instantiated; gauge/time/physical-modulus status not inferred from reset rank"
+    },
+    {
+      "classification": "UNRESOLVED_UPSTREAM_RESET_TANGENT",
+      "column": 25,
+      "reason": "Current history stationarity derivative not instantiated; gauge/time/physical-modulus status not inferred from reset rank"
+    },
+    {
+      "classification": "UNRESOLVED_UPSTREAM_RESET_TANGENT",
+      "column": 26,
+      "reason": "Current history stationarity derivative not instantiated; gauge/time/physical-modulus status not inferred from reset rank"
+    },
+    {
+      "classification": "UNRESOLVED_UPSTREAM_RESET_TANGENT",
+      "column": 27,
+      "reason": "Current history stationarity derivative not instantiated; gauge/time/physical-modulus status not inferred from reset rank"
+    },
+    {
+      "classification": "UNRESOLVED_UPSTREAM_RESET_TANGENT",
+      "column": 28,
+      "reason": "Current history stationarity derivative not instantiated; gauge/time/physical-modulus status not inferred from reset rank"
+    },
+    {
+      "classification": "UNRESOLVED_UPSTREAM_RESET_TANGENT",
+      "column": 29,
+      "reason": "Current history stationarity derivative not instantiated; gauge/time/physical-modulus status not inferred from reset rank"
+    },
+    {
+      "classification": "UNRESOLVED_UPSTREAM_RESET_TANGENT",
+      "column": 30,
+      "reason": "Current history stationarity derivative not instantiated; gauge/time/physical-modulus status not inferred from reset rank"
+    },
+    {
+      "classification": "UNRESOLVED_UPSTREAM_RESET_TANGENT",
+      "column": 31,
+      "reason": "Current history stationarity derivative not instantiated; gauge/time/physical-modulus status not inferred from reset rank"
+    },
+    {
+      "classification": "UNRESOLVED_UPSTREAM_RESET_TANGENT",
+      "column": 32,
+      "reason": "Current history stationarity derivative not instantiated; gauge/time/physical-modulus status not inferred from reset rank"
+    },
+    {
+      "classification": "UNRESOLVED_UPSTREAM_RESET_TANGENT",
+      "column": 33,
+      "reason": "Current history stationarity derivative not instantiated; gauge/time/physical-modulus status not inferred from reset rank"
+    },
+    {
+      "classification": "UNRESOLVED_UPSTREAM_RESET_TANGENT",
+      "column": 34,
+      "reason": "Current history stationarity derivative not instantiated; gauge/time/physical-modulus status not inferred from reset rank"
+    },
+    {
+      "classification": "UNRESOLVED_UPSTREAM_RESET_TANGENT",
+      "column": 35,
+      "reason": "Current history stationarity derivative not instantiated; gauge/time/physical-modulus status not inferred from reset rank"
+    },
+    {
+      "classification": "UNRESOLVED_UPSTREAM_RESET_TANGENT",
+      "column": 36,
+      "reason": "Current history stationarity derivative not instantiated; gauge/time/physical-modulus status not inferred from reset rank"
+    },
+    {
+      "classification": "UNRESOLVED_UPSTREAM_RESET_TANGENT",
+      "column": 37,
+      "reason": "Current history stationarity derivative not instantiated; gauge/time/physical-modulus status not inferred from reset rank"
+    },
+    {
+      "classification": "UNRESOLVED_UPSTREAM_RESET_TANGENT",
+      "column": 38,
+      "reason": "Current history stationarity derivative not instantiated; gauge/time/physical-modulus status not inferred from reset rank"
+    },
+    {
+      "classification": "UNRESOLVED_UPSTREAM_RESET_TANGENT",
+      "column": 39,
+      "reason": "Current history stationarity derivative not instantiated; gauge/time/physical-modulus status not inferred from reset rank"
+    },
+    {
+      "classification": "UNRESOLVED_UPSTREAM_RESET_TANGENT",
+      "column": 40,
+      "reason": "Current history stationarity derivative not instantiated; gauge/time/physical-modulus status not inferred from reset rank"
+    },
+    {
+      "classification": "UNRESOLVED_UPSTREAM_RESET_TANGENT",
+      "column": 41,
+      "reason": "Current history stationarity derivative not instantiated; gauge/time/physical-modulus status not inferred from reset rank"
+    },
+    {
+      "classification": "UNRESOLVED_UPSTREAM_RESET_TANGENT",
+      "column": 42,
+      "reason": "Current history stationarity derivative not instantiated; gauge/time/physical-modulus status not inferred from reset rank"
+    },
+    {
+      "classification": "UNRESOLVED_UPSTREAM_RESET_TANGENT",
+      "column": 43,
+      "reason": "Current history stationarity derivative not instantiated; gauge/time/physical-modulus status not inferred from reset rank"
+    },
+    {
+      "classification": "UNRESOLVED_UPSTREAM_RESET_TANGENT",
+      "column": 44,
+      "reason": "Current history stationarity derivative not instantiated; gauge/time/physical-modulus status not inferred from reset rank"
+    },
+    {
+      "classification": "UNRESOLVED_UPSTREAM_RESET_TANGENT",
+      "column": 45,
+      "reason": "Current history stationarity derivative not instantiated; gauge/time/physical-modulus status not inferred from reset rank"
+    },
+    {
+      "classification": "UNRESOLVED_UPSTREAM_RESET_TANGENT",
+      "column": 46,
+      "reason": "Current history stationarity derivative not instantiated; gauge/time/physical-modulus status not inferred from reset rank"
+    },
+    {
+      "classification": "UNRESOLVED_UPSTREAM_RESET_TANGENT",
+      "column": 47,
+      "reason": "Current history stationarity derivative not instantiated; gauge/time/physical-modulus status not inferred from reset rank"
+    },
+    {
+      "classification": "UNRESOLVED_UPSTREAM_RESET_TANGENT",
+      "column": 48,
+      "reason": "Current history stationarity derivative not instantiated; gauge/time/physical-modulus status not inferred from reset rank"
+    },
+    {
+      "classification": "UNRESOLVED_UPSTREAM_RESET_TANGENT",
+      "column": 49,
+      "reason": "Current history stationarity derivative not instantiated; gauge/time/physical-modulus status not inferred from reset rank"
+    },
+    {
+      "classification": "UNRESOLVED_UPSTREAM_RESET_TANGENT",
+      "column": 50,
+      "reason": "Current history stationarity derivative not instantiated; gauge/time/physical-modulus status not inferred from reset rank"
+    },
+    {
+      "classification": "UNRESOLVED_UPSTREAM_RESET_TANGENT",
+      "column": 51,
+      "reason": "Current history stationarity derivative not instantiated; gauge/time/physical-modulus status not inferred from reset rank"
+    },
+    {
+      "classification": "UNRESOLVED_UPSTREAM_RESET_TANGENT",
+      "column": 52,
+      "reason": "Current history stationarity derivative not instantiated; gauge/time/physical-modulus status not inferred from reset rank"
+    },
+    {
+      "classification": "UNRESOLVED_UPSTREAM_RESET_TANGENT",
+      "column": 53,
+      "reason": "Current history stationarity derivative not instantiated; gauge/time/physical-modulus status not inferred from reset rank"
+    },
+    {
+      "classification": "UNRESOLVED_UPSTREAM_RESET_TANGENT",
+      "column": 54,
+      "reason": "Current history stationarity derivative not instantiated; gauge/time/physical-modulus status not inferred from reset rank"
+    },
+    {
+      "classification": "UNRESOLVED_UPSTREAM_RESET_TANGENT",
+      "column": 55,
+      "reason": "Current history stationarity derivative not instantiated; gauge/time/physical-modulus status not inferred from reset rank"
+    },
+    {
+      "classification": "UNRESOLVED_UPSTREAM_RESET_TANGENT",
+      "column": 56,
+      "reason": "Current history stationarity derivative not instantiated; gauge/time/physical-modulus status not inferred from reset rank"
+    },
+    {
+      "classification": "UNRESOLVED_UPSTREAM_RESET_TANGENT",
+      "column": 57,
+      "reason": "Current history stationarity derivative not instantiated; gauge/time/physical-modulus status not inferred from reset rank"
+    },
+    {
+      "classification": "UNRESOLVED_UPSTREAM_RESET_TANGENT",
+      "column": 58,
+      "reason": "Current history stationarity derivative not instantiated; gauge/time/physical-modulus status not inferred from reset rank"
+    },
+    {
+      "classification": "UNRESOLVED_UPSTREAM_RESET_TANGENT",
+      "column": 59,
+      "reason": "Current history stationarity derivative not instantiated; gauge/time/physical-modulus status not inferred from reset rank"
+    },
+    {
+      "classification": "UNRESOLVED_UPSTREAM_RESET_TANGENT",
+      "column": 60,
+      "reason": "Current history stationarity derivative not instantiated; gauge/time/physical-modulus status not inferred from reset rank"
+    },
+    {
+      "classification": "UNRESOLVED_UPSTREAM_RESET_TANGENT",
+      "column": 61,
+      "reason": "Current history stationarity derivative not instantiated; gauge/time/physical-modulus status not inferred from reset rank"
+    },
+    {
+      "classification": "UNRESOLVED_UPSTREAM_RESET_TANGENT",
+      "column": 62,
+      "reason": "Current history stationarity derivative not instantiated; gauge/time/physical-modulus status not inferred from reset rank"
+    },
+    {
+      "classification": "UNRESOLVED_UPSTREAM_RESET_TANGENT",
+      "column": 63,
+      "reason": "Current history stationarity derivative not instantiated; gauge/time/physical-modulus status not inferred from reset rank"
+    },
+    {
+      "classification": "UNRESOLVED_UPSTREAM_RESET_TANGENT",
+      "column": 64,
+      "reason": "Current history stationarity derivative not instantiated; gauge/time/physical-modulus status not inferred from reset rank"
+    },
+    {
+      "classification": "UNRESOLVED_UPSTREAM_RESET_TANGENT",
+      "column": 65,
+      "reason": "Current history stationarity derivative not instantiated; gauge/time/physical-modulus status not inferred from reset rank"
+    }
+  ],
+  "same_action_normal_transversality_proved": false,
+  "source_SHA256": {
+    "artifacts\\flagship_integration\\BHSM_N12_C2_FIXED_SEED_UPSTREAM_FORCE_OWNER.json": "396F39A4F98ECE7F903221EFD01A1C126479EE56DC4F8A72C976501D0D4F8A71",
+    "artifacts\\flagship_integration\\BHSM_N12_FORCE_ADJOINT_PULLBACK.json": "CD8A55728672AE5CACEC16268AF5B00A267A06F4A0A92BE5F10989CD58189CDF",
+    "artifacts\\flagship_integration\\gate7_current_formation_stationarity_20260927\\run1\\arrays.npz": "218709F31B22E4855B77C525586CFC0D81AA97D60B104227BE75C61C3B15C8B7",
+    "artifacts\\flagship_integration\\gate7_current_formation_stationarity_20260927\\run1\\report.json": "0D7D0CCA99E60E26A5247C57CB67F29D18121F1AC4370A377922CB3A352D94CF",
+    "artifacts\\flagship_integration\\gate7_current_history_20260927\\core\\report.json": "0737770A37D60CD0DB39A9B2EE6D995D9A706EE779B067782CE88CA86D77A363",
+    "artifacts\\flagship_integration\\gate7_current_spectral_20260927\\report.json": "AC0970B1850A7190F55200CF95565BBF49AD1A75F81ECF2D958810C07CB6894C",
+    "scripts\\audit_n12_finite_terminal_directed_center.py": "1569C7E64208A6204233547D64BB7E138BE5625C788FE30334E5FF5B940C5EBC",
+    "scripts\\bind_n12_gate7_formation_stationarity.py": "18707E673DEE54536DE3C56BE41F5B90A171F2E276E0F6212E9CFF103B01C645",
+    "scripts\\bind_n12_gate7_geometric_material_port.py": "FF23E4E82FE5CBBBE8936B180BDA45888CDDACB1B073429CB592000EBBC4B6A1",
+    "scripts\\recenter_n12_gate7_current_history_box.py": "598079AB8BECC46CEE8B44DAF437E4B7DE7A69FAEA9B68D53CEAB4D43925BFC4",
+    "scripts\\solve_n12_gate7_fiber_constrained_center.py": "031EEBED785BC70EFA6DE1EC39687BCBF5F93777902406F77FE6ADB266FFD5A9",
+    "src\\bhsm\\interface\\aether_cross_resolution_reconnaissance_v21_35.py": "7B284BA9A777CC8CDEB375CB9B6DF1D9F697FF416FC11F79C1FC07E109D414ED",
+    "src\\bhsm\\interface\\aether_full_reset_action_jacobian.py": "243E9348E52F0F54A236FFBD448A309DCB4FEEC9BF4B45ADBEEA42763E2E745C",
+    "src\\bhsm\\interface\\formation_stationarity_kkt.py": "EEB9C82C03140092B166B7DD61F307B50D027004084AB2493FA6B88CB402B080",
+    "src\\bhsm\\interface\\forward_finite_endpoint_heat_force.py": "80CB6E87E695DC3EBD74E5745A8E2328D5D2ABA790372954B565B226086BB359",
+    "src\\bhsm\\interface\\physical_hs_value.py": "F5C913BF1E19F571DD4B60EEE748AFF8EA700892BF20F1397E4B6104996F827E"
+  },
+  "source_lines": {
+    "src/bhsm/interface/aether_cross_resolution_reconnaissance_v21_35.py": {
+      "_canonical_pair_at_order": {
+        "first_line": 2998,
+        "last_line": 3022,
+        "text": "def _canonical_pair_at_order(\n    order: int,\n    coordinates: np.ndarray,\n    velocities: np.ndarray,\n    multipliers: np.ndarray,\n    *,\n    points: int,\n) -> tuple[np.ndarray, np.ndarray, np.ndarray, np.ndarray]:\n    size = dimensions(order)\n    qdim = size[\"coordinates\"]\n    jet = exact_full_action_jet_at_state(\n        order, coordinates, velocities, multipliers, points=points\n    )\n    gradient = np.asarray(jet.gradient)\n    hessian = np.asarray(jet.hessian)\n    boundary = _attachment_jacobian_at_order(order, coordinates)\n    q_form = hessian[:qdim, :qdim]\n    v_form = hessian[qdim:2 * qdim, qdim:2 * qdim]\n    cq = hessian[2 * qdim:, :qdim]\n    cv = hessian[2 * qdim:, qdim:2 * qdim]\n    q_lift = _boundary_lift(q_form, boundary, cq)\n    v_lift = _boundary_lift(v_form, boundary, cv)\n    momentum = v_lift.T @ gradient[qdim:2 * qdim]\n    force = q_lift.T @ gradient[:qdim]\n    return momentum, force, q_lift, v_lift"
+      },
+      "_child_rows_at_order": {
+        "first_line": 3199,
+        "last_line": 3282,
+        "text": "def _child_rows_at_order(\n    order: int,\n    child: np.ndarray,\n    event_coordinates: np.ndarray,\n    event_momentum: np.ndarray,\n    event_flux: np.ndarray,\n    *,\n    points: int,\n    relative_flux_step: float = 1.0e-1,\n    fixed_flux_time_step: float | None = None,\n    richardson_flux: bool = True,\n    flux_derivative_method: str = \"richardson\",\n) -> np.ndarray:\n    size = dimensions(order)\n    qdim = size[\"coordinates\"]\n    q = np.asarray(child[:qdim], dtype=float)\n    velocity = np.asarray(child[qdim:2 * qdim], dtype=float)\n    multipliers = np.asarray(child[2 * qdim:], dtype=float)\n    momentum, force, q_lift, _ = _canonical_pair_at_order(\n        order, q, velocity, multipliers, points=points\n    )\n    child_covector = _metric_radial_flux_covector_at_order(\n        order, q, multipliers\n    )\n    child_flux = q_lift.T @ child_covector\n    dynamics = _exact_full_jet_euler_dirac_acceleration(\n        order, q, velocity, multipliers, points=points\n    )\n    acceleration = np.asarray(dynamics[\"acceleration\"], dtype=float)\n    multiplier_rate = np.asarray(dynamics[\"multiplier_rate\"], dtype=float)\n    tangent_scale = max(\n        1.0,\n        float(np.max(np.abs(velocity))),\n        float(np.max(np.abs(acceleration))),\n        float(np.max(np.abs(multiplier_rate))),\n    )\n    epsilon = (\n        relative_flux_step / tangent_scale\n        if fixed_flux_time_step is None else float(fixed_flux_time_step)\n    )\n\n    def centered_momentum_rate(step: float) -> np.ndarray:\n        plus, _, _, _ = _canonical_pair_at_order(\n            order,\n            q + step * velocity,\n            velocity + step * acceleration,\n            multipliers + step * multiplier_rate,\n            points=points,\n        )\n        minus, _, _, _ = _canonical_pair_at_order(\n            order,\n            q - step * velocity,\n            velocity - step * acceleration,\n            multipliers - step * multiplier_rate,\n            points=points,\n        )\n        return (plus - minus) / (2.0 * step)\n\n    if flux_derivative_method == \"complex_step\":\n        momentum_rate = _complex_step_canonical_momentum_rate(\n            order,\n            q,\n            velocity,\n            multipliers,\n            acceleration,\n            multiplier_rate,\n            points=points,\n        )\n    elif flux_derivative_method == \"richardson\":\n        momentum_rate = centered_momentum_rate(epsilon)\n        if richardson_flux:\n            half_rate = centered_momentum_rate(0.5 * epsilon)\n            momentum_rate = (4.0 * half_rate - momentum_rate) / 3.0\n    else:\n        raise ValueError(\"unknown dynamic-flux derivative method\")\n    flux = child_flux - (-momentum_rate + force - event_flux)\n    return np.concatenate((\n        _trace_jacobian_at_order(order) @ (q - event_coordinates),\n        constraint_residual(\n            order, q, velocity, multipliers, points=points\n        ),\n        momentum - event_momentum,\n        flux,\n    ))"
+      }
+    },
+    "src/bhsm/interface/aether_full_reset_action_jacobian.py": {
+      "full_reset_action_jacobian": {
+        "first_line": 511,
+        "last_line": 636,
+        "text": "def full_reset_action_jacobian(\n    order: int,\n    joint_state: np.ndarray,\n    event_third_action: np.ndarray,\n    child_third_action: np.ndarray,\n    state_weights: np.ndarray,\n    branch_reference: np.ndarray,\n    ordered_scale: float,\n    normalization_coordinates: np.ndarray,\n    *,\n    points: int = 96,\n) -> tuple[np.ndarray, int]:\n    \"\"\"Return the full retained reset Jacobian and selected branch index.\n\n    ``normalization_coordinates`` is the fixed action-owned N6 child embedded\n    into the current Galerkin order.  It fixes both the boundary trace and\n    momentum row normalizations exactly as in the retained reset residual.\n    \"\"\"\n    size = dimensions(order)\n    qdim = size[\"coordinates\"]\n    mdim = size[\"multipliers\"]\n    state_dimension = 2 * qdim + mdim\n    joint_state = np.asarray(joint_state, dtype=float)\n    state_weights = np.asarray(state_weights, dtype=float)\n    normalization_coordinates = np.asarray(\n        normalization_coordinates, dtype=float\n    )\n    if joint_state.shape != (2 * state_dimension,):\n        raise ValueError(\"joint state has the wrong event/child dimension\")\n    if state_weights.shape != (state_dimension,):\n        raise ValueError(\"state weights have the wrong dimension\")\n    if normalization_coordinates.shape != (qdim,):\n        raise ValueError(\"normalization coordinates have the wrong dimension\")\n\n    event = joint_state[:state_dimension]\n    child = joint_state[state_dimension:]\n    event_constraints = sector_constraint_action_jacobian(\n        order, event, state_weights, points=points\n    )\n    child_constraints = sector_constraint_action_jacobian(\n        order, child, state_weights, points=points\n    )\n    ordered_row, selected = selected_ordered_event_action_gradient(\n        order,\n        event,\n        event_third_action,\n        state_weights,\n        branch_reference,\n        ordered_scale,\n        points=points,\n    )\n\n    q_weights = state_weights[:qdim]\n    trace = _trace_jacobian_at_order(order)\n    normalization_attachment = _attachment_jacobian_at_order(\n        order, normalization_coordinates\n    )\n    normalization_boundary = np.vstack((\n        trace,\n        normalization_attachment[1],\n    ))\n    boundary_inverse_sqrt = _symmetric_power(\n        normalization_boundary\n        @ np.diag(1.0 / q_weights**2)\n        @ normalization_boundary.T,\n        -0.5,\n    )\n    event_boundary = np.vstack((\n        trace,\n        _attachment_jacobian_at_order(order, event[:qdim])[1],\n    ))\n    child_boundary = np.vstack((\n        trace,\n        _attachment_jacobian_at_order(order, child[:qdim])[1],\n    ))\n    boundary_rows = np.zeros((4, 2 * state_dimension))\n    boundary_rows[:, :qdim] = (\n        -boundary_inverse_sqrt @ event_boundary / q_weights[None, :]\n    )\n    boundary_rows[:, state_dimension:state_dimension + qdim] = (\n        boundary_inverse_sqrt @ child_boundary / q_weights[None, :]\n    )\n\n    event_momentum = canonical_momentum_action_jacobian(\n        order,\n        event,\n        event_third_action,\n        state_weights,\n        points=points,\n    )\n    child_momentum = canonical_momentum_action_jacobian(\n        order,\n        child,\n        child_third_action,\n        state_weights,\n        points=points,\n    )\n    momentum_sqrt = _symmetric_power(\n        normalization_attachment @ normalization_attachment.T,\n        0.5,\n    )\n    momentum_rows = np.hstack((\n        -momentum_sqrt @ event_momentum,\n        momentum_sqrt @ child_momentum,\n    ))\n\n    event_rows = np.hstack((\n        event_constraints,\n        np.zeros((mdim + 1, state_dimension)),\n    ))\n    ordered_full = np.concatenate((ordered_row, np.zeros(state_dimension)))\n    child_rows = np.hstack((\n        np.zeros((mdim + 1, state_dimension)),\n        child_constraints,\n    ))\n    jacobian = np.vstack((\n        event_rows,\n        ordered_full[None],\n        boundary_rows,\n        child_rows,\n        momentum_rows,\n    ))\n    expected_rows = 2 * (mdim + 1) + 1 + 4 + 2\n    if jacobian.shape != (expected_rows, 2 * state_dimension):\n        raise RuntimeError(\"assembled reset Jacobian has the wrong shape\")\n    return jacobian, selected"
+      },
+      "full_reset_residual": {
+        "first_line": 248,
+        "last_line": 411,
+        "text": "def full_reset_residual(\n    order: int,\n    joint_state: np.ndarray,\n    state_weights: np.ndarray,\n    branch_reference: np.ndarray,\n    ordered_scale: float,\n    normalization_coordinates: np.ndarray,\n    *,\n    points: int = 96,\n    refine_ordered_eigenvalue: bool = True,\n    high_precision_momentum: bool = False,\n    high_precision_action: bool = False,\n) -> tuple[np.ndarray, int]:\n    \"\"\"Evaluate the unchanged normalized 57-row event/child reset residual.\"\"\"\n    size = dimensions(order)\n    qdim = size[\"coordinates\"]\n    mdim = size[\"multipliers\"]\n    state_dimension = 2 * qdim + mdim\n    joint_state = np.asarray(joint_state, dtype=float)\n    state_weights = np.asarray(state_weights, dtype=float)\n    normalization_coordinates = np.asarray(\n        normalization_coordinates, dtype=float\n    )\n    if joint_state.shape != (2 * state_dimension,):\n        raise ValueError(\"joint state has the wrong event/child dimension\")\n    event = joint_state[:state_dimension]\n    child = joint_state[state_dimension:]\n    event_blocks = None\n    child_blocks = None\n    if high_precision_action:\n        event_blocks = high_precision_velocity_jet_blocks(\n            order,\n            event[:qdim],\n            event[qdim:2 * qdim],\n            event[2 * qdim:],\n            points=points,\n            precision=60,\n        )\n        child_blocks = high_precision_velocity_jet_blocks(\n            order,\n            child[:qdim],\n            child[qdim:2 * qdim],\n            child[2 * qdim:],\n            points=points,\n            precision=60,\n        )\n        event_constraint = high_precision_constraint_residual_from_blocks(\n            event[qdim:2 * qdim], event_blocks\n        )\n        child_constraint = high_precision_constraint_residual_from_blocks(\n            child[qdim:2 * qdim], child_blocks\n        )\n        ordered = high_precision_ordered_eigenpair_from_blocks(\n            event_blocks, branch_reference, precision=60\n        )\n        selected = int(ordered[\"index\"])\n        eigenvalue = float(ordered[\"eigenvalue\"])\n    else:\n        event_constraint = constraint_residual(\n            order,\n            event[:qdim],\n            event[qdim:2 * qdim],\n            event[2 * qdim:],\n            points=points,\n        )\n        child_constraint = constraint_residual(\n            order,\n            child[:qdim],\n            child[qdim:2 * qdim],\n            child[2 * qdim:],\n            points=points,\n        )\n        jet = exact_full_action_jet_at_state(\n            order,\n            event[:qdim],\n            event[qdim:2 * qdim],\n            event[2 * qdim:],\n            points=points,\n        )\n        reduced_hessian = np.asarray(jet.hessian, dtype=float)[qdim:, qdim:]\n        values, vectors = np.linalg.eigh(reduced_hessian)\n        selected = int(np.argmax(np.abs(vectors.T @ branch_reference)))\n        eigenvalue = float(values[selected])\n        if refine_ordered_eigenvalue:\n            eigenvalue = _refined_selected_eigenvalue(\n                reduced_hessian, eigenvalue, vectors[:, selected]\n            )\n\n    q_weights = state_weights[:qdim]\n    multiplier_weights = state_weights[2 * qdim:]\n    trace = _trace_jacobian_at_order(order)\n    normalization_attachment = _attachment_jacobian_at_order(\n        order, normalization_coordinates\n    )\n    normalization_boundary = np.vstack((\n        trace,\n        normalization_attachment[1],\n    ))\n    boundary_inverse_sqrt = _symmetric_power(\n        normalization_boundary\n        @ np.diag(1.0 / q_weights**2)\n        @ normalization_boundary.T,\n        -0.5,\n    )\n    boundary_raw = np.concatenate((\n        trace @ (child[:qdim] - event[:qdim]),\n        [\n            _attachment_coordinates_at_order(order, child[:qdim])[1]\n            - _attachment_coordinates_at_order(order, event[:qdim])[1]\n        ],\n    ))\n    if high_precision_action:\n        if event_blocks is None or child_blocks is None:\n            raise RuntimeError(\"high-precision sector blocks were not built\")\n        event_momentum = high_precision_canonical_momentum_from_blocks(\n            order,\n            event[:qdim],\n            event_blocks,\n            precision=60,\n        )\n        child_momentum = high_precision_canonical_momentum_from_blocks(\n            order,\n            child[:qdim],\n            child_blocks,\n            precision=60,\n        )\n    elif high_precision_momentum:\n        event_momentum = _decimal_canonical_momentum(\n            order, event, points=points\n        )\n        child_momentum = _decimal_canonical_momentum(\n            order, child, points=points\n        )\n    else:\n        event_momentum = _canonical_pair_at_order(\n            order,\n            event[:qdim],\n            event[qdim:2 * qdim],\n            event[2 * qdim:],\n            points=points,\n        )[0]\n        child_momentum = _canonical_pair_at_order(\n            order,\n            child[:qdim],\n            child[qdim:2 * qdim],\n            child[2 * qdim:],\n            points=points,\n        )[0]\n    momentum_sqrt = _symmetric_power(\n        normalization_attachment @ normalization_attachment.T,\n        0.5,\n    )\n    rows = np.concatenate((\n        event_constraint[:mdim] / multiplier_weights,\n        event_constraint[mdim:],\n        [eigenvalue / ordered_scale],\n        boundary_inverse_sqrt @ boundary_raw,\n        child_constraint[:mdim] / multiplier_weights,\n        child_constraint[mdim:],\n        momentum_sqrt @ (child_momentum - event_momentum),\n    ))\n    if rows.shape != (57,):\n        raise RuntimeError(\"assembled reset residual has the wrong shape\")\n    return rows, selected"
+      }
+    },
+    "src/bhsm/interface/formation_stationarity_kkt.py": {
+      "assemble_stationarity": {
+        "first_line": 10,
+        "last_line": 45,
+        "text": "def assemble_stationarity(*, constraints, constraint_y, constraint_p,\n                          multipliers, action_y, action_yy, action_yp,\n                          constraint_yy, constraint_yp):\n    \"\"\"Assemble F=[Gamma_y+R_y^T mu; R], K=F_(y,mu), and F_p.\n\n    Moving reset normals contribute mu*R_yy and mu*R_yp. Omitting them\n    would differentiate a different problem even when R=0 at the center.\n    No missing action or constraint derivative defaults to zero.\n    \"\"\"\n    required=(constraints,constraint_y,constraint_p,multipliers,action_y,\n              action_yy,action_yp,constraint_yy,constraint_yp)\n    if any(x is None for x in required):\n        raise ValueError('complete current joint-action and reset derivatives required')\n    m,n=constraint_y.nrows(),constraint_y.ncols();p=constraint_p.ncols()\n    checks=((constraints,m,1),(multipliers,m,1),(constraint_p,m,p),\n            (action_y,n,1),(action_yy,n,n),(action_yp,n,p))\n    if any((x.nrows(),x.ncols())!=(a,b) for x,a,b in checks):\n        raise ValueError('shared action/reset coordinates required')\n    if len(constraint_yy)!=m or len(constraint_yp)!=m:\n        raise ValueError('one explicit curvature block per reset equation required')\n    if any(x is None or (x.nrows(),x.ncols())!=(n,n) for x in constraint_yy):\n        raise ValueError('complete normal curvature required')\n    if any(x is None or (x.nrows(),x.ncols())!=(n,p) for x in constraint_yp):\n        raise ValueError('complete mixed normal curvature required')\n    H=arb_mat(action_yy.tolist());mixed=arb_mat(action_yp.tolist())\n    for i in range(m):\n        H+=constraint_yy[i]*multipliers[i,0]\n        mixed+=constraint_yp[i]*multipliers[i,0]\n    stationary=action_y+constraint_y.transpose()*multipliers\n    K=arb_mat(n+m,n+m)\n    for i in range(n):\n        for j in range(n):K[i,j]=H[i,j]\n        for j in range(m):K[i,n+j]=constraint_y[j,i];K[n+j,i]=constraint_y[j,i]\n    return dict(residual=arb_mat(stationary.tolist()+constraints.tolist()),\n        jacobian=K,forcing=arb_mat(mixed.tolist()+constraint_p.tolist()),\n        constrained_hessian=H)"
+      },
+      "stationary_first_jet": {
+        "first_line": 48,
+        "last_line": 72,
+        "text": "def stationary_first_jet(system,*,owned_border=None):\n    \"\"\"Differentiate an established stationary base, optionally in an owned slice.\n\n    The caller must establish base stationarity. If a physical/gauge/time\n    null remains, its authorized border and parameter forcing must be supplied;\n    this function never silently takes a pseudoinverse or fixes a microstate.\n    \"\"\"\n    K,F=system['jacobian'],system['forcing'];n=K.nrows()\n    if owned_border is None:\n        response=-K.solve(F)\n        return dict(response=response,replay=K*response+F)\n    columns=owned_border.get('columns');rows=owned_border.get('rows')\n    forcing=owned_border.get('forcing');owner=owned_border.get('owner')\n    if not owner or any(x is None for x in (columns,rows,forcing)):\n        raise ValueError('explicit action-owned quotient/parameter border required')\n    k=columns.ncols()\n    if columns.nrows()!=n or (rows.nrows(),rows.ncols())!=(k,n) or (forcing.nrows(),forcing.ncols())!=(k,F.ncols()):\n        raise ValueError('matching owned border and shared parameter columns required')\n    bordered=arb_mat(n+k,n+k)\n    for i in range(n):\n        for j in range(n):bordered[i,j]=K[i,j]\n        for j in range(k):bordered[i,n+j]=columns[i,j];bordered[n+j,i]=rows[j,i]\n    total_F=arb_mat(F.tolist()+forcing.tolist())\n    response=-bordered.solve(total_F)\n    return dict(response=response,replay=bordered*response+total_F,border_owner=owner)"
+      }
+    },
+    "src/bhsm/interface/forward_finite_endpoint_heat_force.py": {
+      "heat_regulator_value_and_force": {
+        "first_line": 32,
+        "last_line": 78,
+        "text": "def heat_regulator_value_and_force(\n    operator: np.ndarray,\n    geometry_jets: Mapping[str, np.ndarray],\n    *,\n    heat_length: float = 1.0,\n    gap_tolerance: float = 1.0e-12,\n) -> dict[str, Any]:\n    \"\"\"Evaluate Gamma and D Gamma for ``f(P)=-E1(ell^2 P)/2``.\n\n    For a positive self-adjoint matrix ``P`` and any Hermitian action-owned\n    first variation ``dP``, cyclicity of the trace gives the exact identity\n\n        D Tr f(P)[dP] = Tr(f'(P)dP),\n        f'(P) = exp(-ell^2 P)/(2P).\n\n    The identity remains valid when ``P`` and ``dP`` do not commute.\n    \"\"\"\n\n    if not math.isfinite(heat_length) or heat_length <= 0.0:\n        raise ValueError(\"heat_length must be positive and finite\")\n    if not math.isfinite(gap_tolerance) or gap_tolerance < 0.0:\n        raise ValueError(\"gap_tolerance must be finite and nonnegative\")\n    matrix = _hermitian(operator, \"operator\")\n    eigenvalues, eigenvectors = np.linalg.eigh(matrix)\n    gap = float(eigenvalues[0])\n    if gap <= gap_tolerance:\n        raise ValueError(\"strictly positive quotient operator required\")\n    scaled = heat_length**2 * eigenvalues\n    regulator = -0.5 * exp1(scaled)\n    derivative_values = 0.5 * np.exp(-scaled) / eigenvalues\n    gradient = (eigenvectors * derivative_values) @ eigenvectors.conj().T\n    forces: dict[str, float] = {}\n    for name, value in geometry_jets.items():\n        jet = _hermitian(value, f\"geometry jet {name}\")\n        if jet.shape != matrix.shape:\n            raise ValueError(\"every geometry jet must match the operator\")\n        force = np.trace(gradient @ jet)\n        if abs(float(force.imag)) > 1.0e-9 * max(1.0, abs(float(force.real))):\n            raise ValueError(\"Hermitian force acquired a nonreal trace\")\n        forces[str(name)] = float(force.real)\n    return {\n        \"Gamma_heat\": float(np.sum(regulator)),\n        \"minimum_eigenvalue\": gap,\n        \"dimension\": int(matrix.shape[0]),\n        \"forces\": forces,\n        \"gradient\": gradient,\n    }"
+      },
+      "piecewise_linear_zeta_coefficient_cotangent": {
+        "first_line": 211,
+        "last_line": 284,
+        "text": "def piecewise_linear_zeta_coefficient_cotangent(\n    log_radii: np.ndarray,\n    proper_durations: np.ndarray,\n    *,\n    coefficient: float = 59.0 / 30.0,\n) -> dict[str, Any]:\n    \"\"\"Return the exact linear-element zeta value and coefficient cotangent.\n\n    On each segment ``x(s)=(1-s)x_j+s*x_(j+1)`` and\n    ``d tau=h_j ds``.  The function integrates ``exp(-x(s))`` analytically,\n    including a cancellation-safe power series when the endpoint difference\n    is small.  Both node-radius and moving-duration derivatives are returned.\n    \"\"\"\n\n    x = np.asarray(log_radii, dtype=float)\n    h = np.asarray(proper_durations, dtype=float)\n    c = float(coefficient)\n    if (\n        x.ndim != 1\n        or h.ndim != 1\n        or x.size != h.size + 1\n        or h.size < 1\n        or not np.all(np.isfinite(x))\n        or not np.all(np.isfinite(h))\n        or np.any(h <= 0.0)\n        or not math.isfinite(c)\n    ):\n        raise ValueError(\"finite node log radii, positive durations, and finite coefficient required\")\n\n    def moments(delta: float) -> tuple[float, float]:\n        if abs(delta) < 1.0e-5:\n            i0 = 0.0\n            i1 = 0.0\n            factorial = 1.0\n            power = 1.0\n            for order in range(24):\n                if order:\n                    factorial *= order\n                    power *= -delta\n                i0 += power / (factorial * (order + 1))\n                i1 += power / (factorial * (order + 2))\n            return i0, i1\n        exponential = math.exp(-delta)\n        i0 = -math.expm1(-delta) / delta\n        i1 = (1.0 - (1.0 + delta) * exponential) / (delta * delta)\n        return i0, i1\n\n    integral = 0.0\n    d_integral_x = np.zeros(x.size)\n    d_integral_h = np.zeros(h.size)\n    for index, duration in enumerate(h):\n        delta = float(x[index + 1] - x[index])\n        i0, i1 = moments(delta)\n        scale = math.exp(-float(x[index]))\n        phi = scale * i0\n        left = -scale * (i0 - i1)\n        right = -scale * i1\n        integral += duration * phi\n        d_integral_x[index] += duration * left\n        d_integral_x[index + 1] += duration * right\n        d_integral_h[index] = phi\n\n    d_gamma_x = -c * d_integral_x\n    d_gamma_h = -c * d_integral_h\n    common_scale_residual = float(d_gamma_x.sum() + d_gamma_h @ h)\n    return {\n        \"integral_d_tau_over_R4\": float(integral),\n        \"Gamma_SM_zeta\": float(-c * integral),\n        \"D_log_R4_Gamma_SM_zeta\": d_gamma_x,\n        \"D_proper_duration_Gamma_SM_zeta\": d_gamma_h,\n        \"common_scale_zeta_force_residual\": common_scale_residual,\n        \"coefficient\": c,\n        \"quadrature\": \"EXACT_ON_EACH_PIECEWISE_LINEAR_LOG_RADIUS_ELEMENT\",\n    }"
+      }
+    }
+  },
+  "stationary_history_solved": false,
+  "status": "CURRENT_COUPLED_STATIONARITY_EQUATIONS_BOUND_ACTION_COVECTOR_UNINSTANTIATED",
+  "terminal_flux_scope": "No division by signed descriptor zero is made. The regularized arc momentum derivative is not the physical-time momentum derivative; complete material boundary limits must come from the solved formation/reset history.",
+  "unknowns": {
+    "history_internals": "Incoming coefficients, duration/amplitude, contact and operator internal variables must be solved or eliminated by their owned equations; their current numerical dimension/normal inverse is not supplied by a terminal reset Jacobian.",
+    "incoming_independent_reset_rows": 32,
+    "incoming_reset_compatible_directions": 66,
+    "independent_environment_inputs": 0,
+    "physical_parameters": 73,
+    "seam_reactions": "Momentum/flux are action outputs or internal multipliers, not 73 new reactions",
+    "terminal_KKT_coordinates_if_history_internals_slaved": 130,
+    "terminal_incoming_state": 98
+  }
+}
