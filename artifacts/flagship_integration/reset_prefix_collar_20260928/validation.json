@@ -1,7 +1,8 @@
 {
   "FULL_BHSM_COMPLETE": false,
   "Gate7_closed": false,
-  "actual_flow_tube_included": false,
+  "actual_flow_tube_included": true,
+  "flow_scope": "First current-reset segment of fixed-s length (15/16)*2^-55 only",
   "normal_graph_certified_on_affine_state_family": true,
   "outputs": {
     "directional1/arrays.npz": {
@@ -44,6 +45,86 @@
       "byte_identical": true,
       "repeat": "entry1099511627776_repeat/report.json"
     },
+    "flow55_box1/arrays.npz": {
+      "SHA256": "751266E4678B4F591A3A2D0636EDDD7F966316DDA146217DF4C3B13862C34471",
+      "byte_identical": true,
+      "repeat": "flow55_box2/arrays.npz"
+    },
+    "flow55_box1/report.json": {
+      "SHA256": "BF5474BC94A01F1FB5813491E1D23B070A2718924E43AB0A8395DF1458FC77D0",
+      "byte_identical": true,
+      "repeat": "flow55_box2/report.json"
+    },
+    "flow55_composed1/arrays.npz": {
+      "SHA256": "670DA8CDB8871D0E639F450881BCD39D49E125B3286D1B941DF2450C9C612D7A",
+      "byte_identical": true,
+      "repeat": "flow55_composed2/arrays.npz"
+    },
+    "flow55_composed1/report.json": {
+      "SHA256": "F42EB52B3D3EEE58BB41902338943CBB9EF4E1B5993CDED79C5F19ED83FF231F",
+      "byte_identical": true,
+      "repeat": "flow55_composed2/report.json"
+    },
+    "flow55_curve_normal1/arrays.npz": {
+      "SHA256": "0F35408A24B015AB7529EFEADAFA1B2B1D98246D0842273D3849208F390E3EBA",
+      "byte_identical": true,
+      "repeat": "flow55_curve_normal2/arrays.npz"
+    },
+    "flow55_curve_normal1/report.json": {
+      "SHA256": "D0BA384C6047226FAD07B5732F7C9772ED58BD3800C4EBCA4BE0FC55AA515B44",
+      "byte_identical": true,
+      "repeat": "flow55_curve_normal2/report.json"
+    },
+    "flow55_descriptor1/arrays.npz": {
+      "SHA256": "3EC74C70E77386B70EF2FB1E9B0E445B3B8161884A5240E07D9AC60CD109E838",
+      "byte_identical": true,
+      "repeat": "flow55_descriptor2/arrays.npz"
+    },
+    "flow55_descriptor1/report.json": {
+      "SHA256": "696C4ABCA25FB068F5A2FDCC7DE2B67547D2896B62717B3A7F19233AE870E3B1",
+      "byte_identical": true,
+      "repeat": "flow55_descriptor2/report.json"
+    },
+    "flow55_endpoint1/arrays.npz": {
+      "SHA256": "F405D3C5F80171C0311029AD82C57362CE2CDBA4C6EA7E8B04F3042B02F60A73",
+      "byte_identical": true,
+      "repeat": "flow55_endpoint2/arrays.npz"
+    },
+    "flow55_endpoint1/report.json": {
+      "SHA256": "DD191B453D0D8F0915BCD12A9F5291CD93459F5C82770A1594B15337D0FFEC6A",
+      "byte_identical": true,
+      "repeat": "flow55_endpoint2/report.json"
+    },
+    "flow55_numerator1/arrays.npz": {
+      "SHA256": "D4AA80AD3CD19B323B466F6E927A267C9F7B0905DA0F80B81381CC7B96D8365A",
+      "byte_identical": true,
+      "repeat": "flow55_numerator2/arrays.npz"
+    },
+    "flow55_numerator1/report.json": {
+      "SHA256": "59DAD0D41A95BB73AA2F79D8F50A18F3FA0D749B463F0F7F742005291FBB20E0",
+      "byte_identical": true,
+      "repeat": "flow55_numerator2/report.json"
+    },
+    "flow55_partial1/arrays.npz": {
+      "SHA256": "C272C9CD0BF33F4158F191707DB8E26C10259497EB4615601CF8E82A0367BF78",
+      "byte_identical": true,
+      "repeat": "flow55_partial2/arrays.npz"
+    },
+    "flow55_partial1/report.json": {
+      "SHA256": "15C6C26E12BF12DF096E41780DE8ED544838A4913DAB882CC76B86C0EA3F1C37",
+      "byte_identical": true,
+      "repeat": "flow55_partial2/report.json"
+    },
+    "flow55_quadratic82a/arrays.npz": {
+      "SHA256": "7CFB2919006898C47A675478FE84A53ABD4631037C57AA245218AC7640C52ACF",
+      "byte_identical": true,
+      "repeat": "flow55_quadratic82b/arrays.npz"
+    },
+    "flow55_quadratic82a/report.json": {
+      "SHA256": "C46326208C660992C8A61133B67DBB17908D7BF77EB2A3882E20E1D6A139490B",
+      "byte_identical": true,
+      "repeat": "flow55_quadratic82b/report.json"
+    },
     "normal45_final1/arrays.npz": {
       "SHA256": "E8FB8F29894B9E8416477C3F0ECBCA2CC159AB3CB242D60896F567634146539A",
       "byte_identical": true,
@@ -67,8 +148,10 @@
   },
   "prefix_overlap_certified": false,
   "test_exit_code": 0,
-  "test_output": "37 passed in 4.79s",
+  "test_output": "51 passed",
   "tests": [
+    "tests/test_collar_flow_reduction.py",
+    "tests/test_longitudinal_quadratic_taylor.py",
     "tests/test_collar_normal_graph.py",
     "tests/test_shared_action_taylor.py",
     "tests/test_reset_prefix_collar.py",

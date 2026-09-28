@@ -1,14 +1,18 @@
 {
-  "actual_flow_tube_included": false,
+  "actual_flow_tube_included": true,
   "authority": "docs/GATE7_CURRENT_CALCULATION_SCOPE.md",
   "complete_force_evaluated": false,
   "consumed_term": "C2 response in Gamma_joint reduced force; prefix reuse requires a contained state/derivative transition",
-  "current_evidence": "normal45_final1/report.json",
-  "current_local_result": "Uniform 124-variable normal graph on the common-parameter affine state family, with positive descriptor speed including implicit error",
+  "current_evidence": [
+    "flow55_partial1/report.json",
+    "flow55_endpoint1/report.json"
+  ],
+  "current_local_result": "First actual current-reset fixed-s flow segment certified; shared endpoint enclosed with induced curve-normal response",
   "existing_obligation": "Same-base reset-to-prefix connection for the current joint heat force",
-  "first_failing_location": "First reversed predictor segment, before entering the old prefix chart",
-  "first_failing_operand": "Actual trajectory remainder away from the affine state family and required derivative containment at prefix overlap",
-  "next": "Compose the trajectory remainder with the certified shared normal graph; enclose the first flow segment, then the full-state and derivative prefix transition",
+  "first_failing_location": "Certified first-segment endpoint still outside the saved prefix domain",
+  "first_failing_operand": "Continuation and needed derivative containment at the prefix transition",
+  "flow_scope": "Only the first local segment: (15/16)*2^-55",
+  "next": "Continue the shared endpoint with an adaptive correlated curve/normal chart; certify full-state and required derivative overlap before consuming the prefix heat response",
   "normal_graph_certified_on_affine_state_family": true,
   "prefix_overlap_certified": false,
   "rows": [
@@ -25,7 +29,7 @@
     {
       "classification": "HISTORY-COMPRESSIBLE",
       "input": "correlated fixed-s response",
-      "retained": "Frozen point jet plus uniform common-parameter normal inclusion and speed; no trajectory or overlap promotion"
+      "retained": "Current point jet, uniform normal graph, induced curve response, exact residual identities and first actual flow segment"
     },
     {
       "classification": "CHILD-SPECIFIC",
@@ -41,6 +45,11 @@
       "classification": "NECESSARY",
       "input": "complete preconditioned normal Jacobian",
       "retained": "Constant, shared linear and action/normal tails composed before support; Banach Y+Z<1 at h=2^-45"
+    },
+    {
+      "classification": "HISTORY-COMPRESSIBLE",
+      "input": "first collar endpoint",
+      "retained": "99x222 common affine endpoint map and explicit output tail; time-averaged proof parameters, no new physical inputs"
     }
   ]
 }

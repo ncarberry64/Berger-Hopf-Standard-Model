@@ -212,3 +212,8 @@ Authoritative paired outputs are in
 `reset_prefix_collar_20260928/shared_speed_final{1,2}` and
 `reset_prefix_collar_20260928/normal45_final{1,2}`. Earlier development
 attempt directories are preserved and are not substituted for these pairs.
+
+The subsequent actual first-flow certificate and shared endpoint are in
+[First current-reset collar flow segment](n12_reset_collar_first_flow_segment.md).
+That result advances beyond the affine family above; the full prefix overlap
+and signed force remain open.
