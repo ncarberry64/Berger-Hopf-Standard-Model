@@ -168,6 +168,128 @@
 .children-scene .children-gluon-label {
   font-size: 8px;
 }
+.orbital-study {
+  margin: 0.6rem 0;
+}
+.orbital-density-frame {
+  position: relative;
+  width: 100%;
+  max-width: 220px;
+  aspect-ratio: 1;
+  margin: 0 auto;
+  overflow: hidden;
+  background: #030208;
+  border: 1px solid #504358;
+  border-radius: 10px;
+}
+.orbital-study canvas {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+.orbital-density-frame canvas {
+  mask-image: radial-gradient(circle at center, #000 50%, transparent 70%);
+}
+.orbital-nucleus {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 12px;
+  height: 12px;
+  transform: translate(-50%, -50%);
+  border: 1px solid #fff0c7;
+  border-radius: 50%;
+  box-shadow: 0 0 0 1px #08040d;
+}
+.orbital-nucleus::after {
+  content: '';
+  position: absolute;
+  inset: 4px;
+  background: #fff6dd;
+  border-radius: 50%;
+}
+.orbital-legend {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  color: #d7c8e4;
+  font-size: 0.65rem;
+  margin: 0.5rem 0;
+}
+.orbital-legend > span {
+  width: 45px;
+  height: 7px;
+  background: linear-gradient(
+    90deg,
+    #210b45,
+    #681683,
+    #e74d27,
+    #ffb530,
+    #fffce3
+  );
+}
+.orbital-picker {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(38px, 1fr));
+  gap: 0.3rem;
+}
+.orbital-picker button {
+  min-width: 0;
+  padding: 2px;
+  background: #07060c;
+  border: 1px solid #514259;
+  border-radius: 5px;
+  color: #dfcfee;
+  cursor: pointer;
+}
+.orbital-picker button[aria-pressed='true'] {
+  border-color: #ffbc77;
+  color: #ffcf99;
+  box-shadow: 0 0 0 1px #ffbc77;
+}
+.orbital-picker button:focus-visible,
+.matter-cycle-control button:focus-visible {
+  outline: 2px solid #71e5eb;
+  outline-offset: 3px;
+}
+.orbital-thumbnail {
+  aspect-ratio: 1;
+}
+.orbital-picker button > span {
+  font-size: 0.7rem;
+  display: block;
+  padding: 0.25rem 0;
+}
+.orbital-description {
+  font-size: 0.75rem;
+  color: #ffe2b7;
+  line-height: 1.5;
+  margin: 0.7rem 0 0.35rem;
+}
+.matter-cycle-control {
+  margin: 0 0 0.8rem;
+}
+.matter-cycle-control button {
+  border: 1px solid #8f759e;
+  border-radius: 6px;
+  padding: 0.4rem 0.6rem;
+  min-height: 36px;
+  background: #231b31;
+  color: #e7d7fd;
+  font-size: 0.73rem;
+  cursor: pointer;
+}
+.matter-cycle-progress {
+  height: 2px;
+  background: #392c47;
+  margin-top: 0.5rem;
+}
+.matter-cycle-progress span {
+  display: block;
+  height: 100%;
+  background: #ffbc77;
+  transform-origin: left;
+}
 .children-foundations ol {
   display: grid;
   gap: 0.55rem;
