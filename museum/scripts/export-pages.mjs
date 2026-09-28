@@ -105,6 +105,9 @@ try {
     'pr98_cms_engine_validation.png',
     'Two mathematical ideas. One deeper question.',
     'The path from geometry to predictive tests',
+    'BHSM Transition Diagram',
+    'Active boundary imbalance',
+    'Download transition record',
   ]) {
     if (!written.includes(expected))
       throw new Error(`Static export is missing: ${expected}`);
