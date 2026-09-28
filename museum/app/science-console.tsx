@@ -224,7 +224,7 @@ export function EngineHero({
         <span>THE BHSM SCIENTIFIC RECORD</span>
         <span>Explore. Interact. Question.</span>
       </div>
-      <ChildrenOfBHSM />
+      <ChildrenOfBHSM motion={motion} />
     </section>
   );
 }
