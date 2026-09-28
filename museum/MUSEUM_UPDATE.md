@@ -1,5 +1,32 @@
 # Museum content update — 24 September 2026
 
+## AI handoff and animated particle families — 28 September 2026
+
+Added a “Copy BHSM for AI” button to the welcome slide and Sources & links.
+It copies a provider-neutral JSON packet pointing to the public GitHub repository,
+current status, claim boundaries, existing definition of done and gate ledger.
+The packet asks assistants to read and cite sources, preserve their scope and
+report inaccessible material. It creates no new scientific completion criteria.
+A manual-copy field and JSON download provide alternatives to clipboard access.
+The museum does not host a language model or transmit visitors’ questions.
+
+Added deterministic, public `llms.txt`, `ai/index.json` and `ai/handoff.json`
+assets, with all 13 exhibits mapped to scoped summaries and source links.
+Generation runs with asset synchronization and static export validates the map.
+The guide distinguishes mutable repository sources from dated museum snapshots.
+
+Removed Helium from the atom selector while retaining the Helium-4 nucleus.
+Hydrogen and Carbon use explicit identities so their seven- and three-orbital
+sets remain correct. Animated family halos now surround all 18 Standard Model
+labels; the labels stay fixed and the existing motion/visibility controls govern
+the animation. Halos and labels scale to narrow phone cards.
+
+Validation: 34 Node tests, 13 museum Python tests, TypeScript, focused lint,
+production build/static export, byte-identical repeated guide generation and all
+five publication audits passed. Browser checks verified actual copy/paste of
+valid JSON, the manual-copy panel, Hydrogen/Carbon choices, motion/pause and
+390px/desktop layouts without page overflow or console errors.
+
 ## Orbital densities, matter cycle and large-scale structures — 28 September 2026
 
 Replaced the atom waveform sketches with code-rendered, glowing hydrogenic

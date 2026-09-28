@@ -344,7 +344,7 @@
   font-weight: 500;
   margin: 0 0 0.45rem;
 }
-.children-family > div {
+.children-particle-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 0.3rem;
@@ -360,23 +360,39 @@
   line-height: 1.6;
   color: #e2c69f;
 }
-.children-family span {
+.children-particle-cell {
+  position: relative;
+  display: grid;
+  place-items: center;
+  width: 100%;
+  max-width: 68px;
+  aspect-ratio: 1;
+  color: var(--family);
+}
+.children-particle-cell svg {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  filter: drop-shadow(0 0 3px var(--family));
+}
+.children-particle-cell > span {
   display: grid;
   place-items: center;
   color: #0b0b10;
   background: var(--family);
   border-radius: 50%;
-  width: 30px;
-  height: 30px;
-  font-size: 0.9rem;
+  width: 60%;
+  max-width: 30px;
+  aspect-ratio: 1;
+  font-size: 0.8rem;
   box-shadow: inset -3px -3px 6px #0003;
 }
-.children-scalar > div {
+.children-scalar .children-particle-grid {
   grid-template-columns: 1fr;
 }
-.children-scalar span {
-  width: 35px;
-  height: 35px;
+.children-scalar .children-particle-cell > span {
+  max-width: 35px;
   font-size: 1.2rem;
 }
 .children-structures ol {
@@ -462,8 +478,7 @@
   .children-scope {
     font-size: 0.72rem;
   }
-  .children-family span {
-    width: 30px;
-    height: 30px;
+  .children-particle-cell > span {
+    font-size: 0.7rem;
   }
 }

@@ -1,0 +1,88 @@
+.ai-access {
+  grid-column: 1 / -1;
+  width: 100%;
+  min-width: 0;
+  padding: clamp(1rem, 3vw, 2rem);
+  border: 1px solid #6e587c;
+  border-left: 5px solid #bda7f5;
+  border-radius: 0 22px 0 22px;
+  background: radial-gradient(ellipse at top right, #262037, #090b12 70%);
+  color: #ddd4e9;
+}
+.ai-access h2 {
+  color: #ffe2b7;
+  font-size: clamp(1.5rem, 3vw, 2.3rem);
+  margin: 0.5rem 0 1rem;
+}
+.ai-access p,
+.ai-access small {
+  font-size: 0.85rem;
+  line-height: 1.7;
+  max-width: 85ch;
+}
+.ai-access textarea {
+  display: block;
+  width: 100%;
+  min-width: 0;
+  padding: 0.85rem;
+  border: 1px solid #776383;
+  border-radius: 8px;
+  background: #0a0811;
+  color: #f3ecfb;
+  resize: vertical;
+  font: 0.8rem/1.6 monospace;
+  margin: 0.8rem 0;
+}
+.ai-access small {
+  color: #b8aec8;
+  font-size: 0.75rem;
+}
+.ai-access a {
+  color: #bda7f5;
+  text-underline-offset: 4px;
+}
+.ai-access-actions {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+  font-size: 0.85rem;
+  margin: 1.2rem 0;
+}
+.ai-copy-control {
+  margin: 1rem 0;
+}
+.ai-copy-button {
+  border: 1px solid #bda7f5;
+  border-radius: 8px;
+  background: #20182e;
+  color: #e3d5fc;
+  padding: 0.8rem 1rem;
+  font: inherit;
+  font-size: 0.85rem;
+  cursor: pointer;
+}
+.ai-copy-button:hover {
+  background: #342445;
+}
+.ai-copy-control > output {
+  display: block;
+  margin-top: 0.5rem;
+  max-width: 65ch;
+  font-size: 0.75rem;
+  line-height: 1.5;
+  color: #71e5eb;
+}
+.ai-copy-control > output:empty {
+  display: none;
+}
+.ai-access summary {
+  cursor: pointer;
+  color: #71e5eb;
+  margin-bottom: 0.8rem;
+}
+.ai-copy-button:focus-visible,
+.ai-access :is(textarea, a, summary):focus-visible {
+  outline: 2px solid #71e5eb;
+  outline-offset: 3px;
+}
