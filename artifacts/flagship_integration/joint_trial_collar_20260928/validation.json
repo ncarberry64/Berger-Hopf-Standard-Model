@@ -1,0 +1,34 @@
+{
+  "FULL_BHSM_COMPLETE": false,
+  "Gate7_closed": false,
+  "outputs": {
+    "heat2/arrays.npz": {
+      "SHA256": "8C480232F251A7776B59237B64B18471FCE47C2C0D6F4DA2C135C6EC107D8387",
+      "byte_identical": true,
+      "repeat": "heat3/arrays.npz"
+    },
+    "heat2/report.json": {
+      "SHA256": "54CA60C009740B56A736D1F4F25751A89E94ABC365ECCAFDD5543FC57462ADDD",
+      "byte_identical": true,
+      "repeat": "heat3/report.json"
+    },
+    "run2/arrays.npz": {
+      "SHA256": "1D5F7FCE5BC9B269CB17624A527C5FB3B6826301EA5789BE7582F6C2CE64FC5B",
+      "byte_identical": true,
+      "repeat": "run3/arrays.npz"
+    },
+    "run2/report.json": {
+      "SHA256": "AF90B8D0E8E272EA63CF7B17A14940B1EBC916E3263B3F5AD309528E2E776829",
+      "byte_identical": true,
+      "repeat": "run3/report.json"
+    }
+  },
+  "test_exit_code": 0,
+  "test_output": ".....................                                                    [100%]\n21 passed in 1.72s",
+  "tests": [
+    "tests/test_joint_trial_collar.py",
+    "tests/test_boundary_heat_moment.py",
+    "tests/test_formation_amplitude.py",
+    "tests/test_gate7_current_action.py"
+  ]
+}

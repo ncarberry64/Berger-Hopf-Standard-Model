@@ -1,0 +1,55 @@
+{
+  "FULL_BHSM_COMPLETE": false,
+  "Gate7_closed": false,
+  "outputs": {
+    "directional1/arrays.npz": {
+      "SHA256": "BCF39AECB6CCCE65C7DCB263CB01871DE64A06F7235400222D34E85A589C0AF0",
+      "byte_identical": true,
+      "repeat": "directional2/arrays.npz"
+    },
+    "directional1/report.json": {
+      "SHA256": "07213041CC916EAFB78F7E692DEDEA6BF1D22F0BECED305BE644DD03B0944F3D",
+      "byte_identical": true,
+      "repeat": "directional2/report.json"
+    },
+    "entry1024/arrays.npz": {
+      "SHA256": "AC704AE40556B5DC1C7A5B4250E18DD88E3520580D1C56F9E970E8B36E31793D",
+      "byte_identical": true,
+      "repeat": "entry1024_repeat/arrays.npz"
+    },
+    "entry1024/report.json": {
+      "SHA256": "3A8513D0D465A413B64ACE78989A19AE19D5274C7411B33A7304C283E651481A",
+      "byte_identical": true,
+      "repeat": "entry1024_repeat/report.json"
+    },
+    "entry1048576/arrays.npz": {
+      "SHA256": "B9254520C46B871D334AA00064F068C7154ED8D9457EFFAE59E3849DC53BA011",
+      "byte_identical": true,
+      "repeat": "entry1048576_repeat/arrays.npz"
+    },
+    "entry1048576/report.json": {
+      "SHA256": "23250B44E32E06ECD8101D2408321B083ADEBBF6EDEE5EB82D92FF377A8CAEDC",
+      "byte_identical": true,
+      "repeat": "entry1048576_repeat/report.json"
+    },
+    "entry1099511627776/arrays.npz": {
+      "SHA256": "1B20CF22AAAEC984F21CB1F08D765043065D42855601D88EAEAFA9DF4D368EB9",
+      "byte_identical": true,
+      "repeat": "entry1099511627776_repeat/arrays.npz"
+    },
+    "entry1099511627776/report.json": {
+      "SHA256": "F6897BD6CB31540DE700DFBFC323880E7F0516794EF6069EF1CAE782935F7F16",
+      "byte_identical": true,
+      "repeat": "entry1099511627776_repeat/report.json"
+    }
+  },
+  "test_exit_code": 0,
+  "test_output": ".......................                                                  [100%]\n23 passed in 2.03s",
+  "tests": [
+    "tests/test_reset_prefix_collar.py",
+    "tests/test_joint_trial_collar.py",
+    "tests/test_boundary_heat_moment.py",
+    "tests/test_formation_amplitude.py",
+    "tests/test_gate7_current_action.py"
+  ]
+}
