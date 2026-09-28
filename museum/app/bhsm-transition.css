@@ -1,0 +1,210 @@
+.bhsm-transition {
+  grid-column: 1/-1;
+  border: 1px solid #50415f;
+  border-radius: 16px;
+  margin: 1.5rem 0;
+  padding: 1.2rem;
+  background: linear-gradient(135deg, #14101d, #07090e);
+  min-width: 0;
+}
+.bhsm-transition > header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+.bhsm-transition h4 {
+  font-size: 1.5rem;
+  color: #ffbc77;
+  margin: 0.2rem 0;
+}
+.transition-status {
+  font-size: 0.7rem;
+  color: #bda7f5;
+  border: 1px solid #66517a;
+  border-radius: 20px;
+  padding: 0.5rem 0.7rem;
+}
+.transition-intro {
+  font-size: 0.85rem;
+  color: #c6bdcf;
+  line-height: 1.6;
+  max-width: 920px;
+}
+.transition-stages {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 0.7rem;
+  list-style: none;
+  padding: 0;
+  margin: 1rem 0;
+}
+.transition-stages > li {
+  min-width: 0;
+  border: 1px solid #40384b;
+  border-top: 3px solid #40384b;
+  border-radius: 10px;
+  padding: 0.85rem;
+  background: #090b12;
+}
+.transition-stages > li.active {
+  border-top-color: #71e5eb;
+  background: #111523;
+}
+.transition-stages > li > small {
+  font:
+    0.6rem var(--font-geist-mono),
+    monospace;
+  letter-spacing: 0.05em;
+  color: #bda7f5;
+}
+.transition-stages h5 {
+  font-size: 0.95rem;
+  color: #f5e9dd;
+  margin: 0.55rem 0;
+  min-height: 2.4em;
+}
+.transition-stages svg {
+  display: block;
+  width: 100%;
+  height: 76px;
+}
+.transition-stages strong {
+  font-size: 0.85rem;
+  color: #ffca90;
+  display: block;
+  margin: 0.5rem 0;
+}
+.transition-stages p {
+  font-size: 0.75rem;
+  line-height: 1.55;
+  color: #c7bece;
+  margin: 0.5rem 0;
+}
+.transition-stages em {
+  display: block;
+  font-size: 0.68rem;
+  line-height: 1.5;
+  color: #b6a6c4;
+  font-style: normal;
+  margin-top: 0.7rem;
+}
+.transition-stages .transition-small {
+  font-size: 0.68rem;
+  color: #71e5eb;
+}
+.transition-branches {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.transition-branches li {
+  border-bottom: 1px solid #332b41;
+  padding: 0.4rem 0;
+}
+.transition-branches div {
+  display: flex;
+  justify-content: space-between;
+  gap: 0.25rem;
+  align-items: center;
+}
+.transition-branches b {
+  font-size: 0.8rem;
+  color: #eee0f5;
+}
+.transition-branches span {
+  font-size: 0.68rem;
+  color: #baa9c9;
+  display: block;
+  margin: 0.2rem 0;
+}
+.transition-branches [data-state='kinematic-pass'] span {
+  color: #71e5eb;
+}
+.transition-branches small {
+  font-size: 0.55rem;
+  color: #b5a5c3;
+  display: block;
+}
+.transition-branches div small {
+  color: #ffbc77;
+}
+.transition-stages .transition-mass {
+  font:
+    1.5rem var(--font-geist-mono),
+    monospace;
+  color: #71e5eb;
+}
+.transition-mass small {
+  font-size: 0.7rem;
+}
+.transition-particle {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  align-items: center;
+  padding: 0.35rem 0;
+  border-top: 1px solid #332b41;
+}
+.transition-particle b {
+  font-size: 0.8rem;
+  color: #ffbc77;
+}
+.transition-particle span {
+  font-size: 0.65rem;
+  color: #ddd0e9;
+}
+.transition-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+  border-top: 1px solid #473950;
+  padding-top: 0.8rem;
+}
+.transition-footer p {
+  font-size: 0.7rem;
+  color: #b3a7bf;
+  max-width: 65ch;
+  margin: 0;
+}
+.transition-footer a {
+  font-size: 0.8rem;
+  color: #ffbc77;
+  border: 1px solid #715638;
+  border-radius: 20px;
+  padding: 0.7rem 1rem;
+  text-decoration: none;
+}
+@media (min-width: 1000px) {
+  .collision-theatre > .bhsm-transition {
+    grid-row: 5;
+  }
+  .collision-theatre > .console-details {
+    grid-row: 6;
+  }
+}
+@media (max-width: 1050px) {
+  .transition-stages {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+@media (max-width: 480px) {
+  .bhsm-transition {
+    padding: 0.85rem;
+  }
+  .transition-stages {
+    grid-template-columns: 1fr;
+  }
+  .transition-stages h5 {
+    min-height: 0;
+  }
+  .transition-stages svg {
+    height: 66px;
+  }
+  .transition-stages > li {
+    padding: 0.75rem;
+  }
+}

@@ -3,6 +3,9 @@
 import { useEffect, useState } from 'react';
 import { useSceneClock } from './science-console';
 import { collisionDemo } from '../lib/collision-demo';
+import { demos } from '../lib/collision-scenarios';
+import { buildTransitionRecord } from '../lib/bhsm-transition';
+import { BHSMTransition } from './bhsm-transition';
 import {
   invariantMass,
   trackPoints,
@@ -18,41 +21,6 @@ type CMSVector = FourVector & {
   pt: number;
   phi: number;
 };
-const demos = [
-  {
-    title: 'Electron + positron → muon pair',
-    input: 'e⁻ + e⁺',
-    energy: 10,
-    masses: [0.00051099895069, 0.00051099895069, 0.1056583755, 0.1056583755],
-    charges: [-1, 1, -1, 1],
-    labels: ['μ⁻', 'μ⁺'],
-    colors: ['#65e6ef', '#f6c46f'],
-    angle: 58,
-    text: 'An electron and its antiparticle can annihilate into a heavier muon pair. This selected channel illustrates two-body energy and momentum conservation; its frequency of occurrence is not simulated.',
-  },
-  {
-    title: 'Electron + positron → two photons',
-    input: 'e⁻ + e⁺',
-    energy: 4,
-    masses: [0.00051099895069, 0.00051099895069, 0, 0],
-    charges: [-1, 1, 0, 0],
-    labels: ['γ₁', 'γ₂'],
-    colors: ['#f296d9', '#f296d9'],
-    angle: 112,
-    text: 'The incoming electric charges cancel. Two neutral photons carry away the energy and momentum. Neutral tracks are drawn straight; visible photon lines are an explanatory convention.',
-  },
-  {
-    title: 'Proton + proton → elastic scattering',
-    input: 'p + p',
-    energy: 10,
-    masses: [0.93827208943, 0.93827208943, 0.93827208943, 0.93827208943],
-    charges: [1, 1, 1, 1],
-    labels: ['p₁', 'p₂'],
-    colors: ['#b99cff', '#b99cff'],
-    angle: 39,
-    text: 'In this elastic example the outgoing particles remain protons. The scattering angle is selected for the demonstration, not sampled from a physical differential cross-section.',
-  },
-];
 
 export function CollisionTheatre({ motion }: { motion: boolean }) {
   const [cms, setCms] = useState<CMSVector[]>([]),
@@ -110,6 +78,18 @@ export function CollisionTheatre({ motion }: { motion: boolean }) {
         charge: demo.charges[i + 2],
         color: demo.colors[i],
       }));
+  const transition = buildTransitionRecord(
+    item?.real
+      ? {
+          kind: 'cms',
+          tracks,
+          run: current[0]?.run ?? null,
+          event: current[0]?.event ?? null,
+          subsystemMass: invariantMass(current),
+        }
+      : { kind: 'demo', scenario: demo, kinematics: result },
+    demos,
+  );
   const reveal =
     !motion || (!playing && clock === 0)
       ? 1
@@ -376,6 +356,11 @@ export function CollisionTheatre({ motion }: { motion: boolean }) {
               </div>
             </div>
           </div>
+          <BHSMTransition
+            record={transition}
+            approach={approach}
+            reveal={reveal}
+          />
           <details className="console-details">
             <summary>Explore the science · particle energies</summary>
             <div className="table-scroll">

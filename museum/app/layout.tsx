@@ -5,6 +5,7 @@ import './console.css';
 import './museum-deck.css';
 import './children-of-bhsm.css';
 import './berger-hopf.css';
+import './bhsm-transition.css';
 
 const geistSans = Geist({
   variable: '--font-geist-sans',
