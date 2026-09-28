@@ -1,5 +1,24 @@
 # Museum content update — 24 September 2026
 
+## Children of BHSM example showcase — 28 September 2026
+
+Expanded all three welcome-map panels with named examples and explanations.
+The foundation cards show a rotating projection of S³ in R⁴, three standing-wave
+harmonics, and overlapping hexagonal patterns that produce a changing moiré
+pattern. The supplied hypersphere-only statement is explicitly a BHSM proposition.
+The six structures cards show a proton, helium-4 nucleus, hydrogen cloud,
+vibrating water molecule, four states of matter, and spiral galaxy, with further
+examples listed in each card. Standard Model families also have short explanations.
+
+All nine scenes share the existing visibility-aware scene clock and global motion
+preference. Animations remain schematic rather than new numerical predictions.
+Responsive cards retain the museum palette, slide navigation and soundtrack.
+
+Validation: TypeScript, focused lint, production build/static export, 28 existing
+Node tests, 13 museum Python tests, and all five repository publication audits
+passed. Browser checks covered 1440px desktop, 768px tablet and 390px phone
+layouts, absence of horizontal overflow, pause/resume, and no console errors.
+
 The existing museum now presents the September cosmology results in context,
 the ready interval-13 BHSM numerical certificates in the numerical-research
 exhibit, and the previously verified museum authenticity corrections.
