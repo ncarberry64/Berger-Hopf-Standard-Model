@@ -121,6 +121,53 @@
   font-size: 0.68rem;
   line-height: 1.4;
 }
+.children-map .children-interactive-scene {
+  height: 145px;
+}
+.children-choices {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.35rem;
+  margin: 0 0 0.7rem;
+}
+.children-choices button {
+  min-height: 36px;
+  padding: 0.4rem 0.55rem;
+  border: 1px solid #696078;
+  border-radius: 7px;
+  background: #161322;
+  color: #e4cef9;
+  font-size: 0.73rem;
+  line-height: 1.4;
+  cursor: pointer;
+  text-align: left;
+}
+.children-choices button[aria-pressed='true'] {
+  background: #ffbc77;
+  color: #16101a;
+  border-color: #ffbc77;
+}
+.children-choices button:hover {
+  border-color: #ffe2b7;
+}
+.children-choices button:focus-visible {
+  outline: 2px solid #71e5eb;
+  outline-offset: 3px;
+}
+.children-example > .children-selection {
+  font-size: 0.74rem;
+  min-height: 4.6em;
+  color: #f2ddbe;
+}
+.children-source {
+  margin-top: 0.55rem;
+  font-size: 0.7rem;
+  color: #bda7f5;
+  text-underline-offset: 3px;
+}
+.children-scene .children-gluon-label {
+  font-size: 8px;
+}
 .children-foundations ol {
   display: grid;
   gap: 0.55rem;
