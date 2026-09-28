@@ -192,12 +192,38 @@ export function ChildrenOfBHSM({ motion }: { motion: boolean }) {
           </h3>
           <p>One layer in the proposed BHSM child graph</p>
           <div className="children-families">
-            {families.map(({ name, particles, tone, detail }) => (
+            {families.map(({ name, particles, tone, detail }, family) => (
               <div className={`children-family children-${tone}`} key={name}>
                 <h4>{name}</h4>
-                <div>
-                  {particles.map((p) => (
-                    <span key={p}>{p}</span>
+                <div className="children-particle-grid">
+                  {particles.map((p, index) => (
+                    <div className="children-particle-cell" key={p}>
+                      <svg viewBox="0 0 64 64" aria-hidden="true">
+                        <circle
+                          cx="32"
+                          cy="32"
+                          r={23 + 3 * Math.sin(time * 1.4 + index + family)}
+                          fill="none"
+                          stroke="currentColor"
+                          opacity=".25"
+                        />
+                        <g
+                          transform={`rotate(${(time * 35 + index * 55 + family * 25) % 360} 32 32)`}
+                        >
+                          <circle
+                            cx="32"
+                            cy="32"
+                            r="26"
+                            fill="none"
+                            stroke="currentColor"
+                            strokeWidth="1.5"
+                            strokeDasharray="24 140"
+                          />
+                          <circle cx="58" cy="32" r="2" fill="currentColor" />
+                        </g>
+                      </svg>
+                      <span>{p}</span>
+                    </div>
                   ))}
                 </div>
                 <p>{detail}</p>
@@ -208,6 +234,9 @@ export function ChildrenOfBHSM({ motion }: { motion: boolean }) {
             Particle families provide the ingredients. Binding and collective
             behavior build the structures in the next panel.
           </p>
+          <small>
+            Animated family markers · schematic, not particle trajectories.
+          </small>
         </div>
         <span className="children-bridge" aria-hidden="true">
           →

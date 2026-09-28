@@ -127,6 +127,20 @@ try {
   const data = JSON.parse(
     await readFile(resolve(pagesRoot, 'data/sandbox-comparison.json'), 'utf8'),
   );
+  const aiIndex = JSON.parse(
+    await readFile(resolve(pagesRoot, 'ai/index.json'), 'utf8'),
+  );
+  const aiPacket = JSON.parse(
+    await readFile(resolve(pagesRoot, 'ai/handoff.json'), 'utf8'),
+  );
+  if (
+    aiIndex.exhibits.map(({ id }) => id).join(',') !== sections.join(',') ||
+    aiPacket.schema !== 'bhsm-ai-handoff/v1' ||
+    !written.includes('Copy BHSM for AI')
+  ) {
+    throw new Error('Static export lost the AI interface or its exhibit map.');
+  }
+  await readFile(resolve(pagesRoot, 'llms.txt'), 'utf8');
   if (
     data.classification !== 'COMPARISON_ONLY' ||
     data.rows.length !== 10 ||

@@ -20,6 +20,7 @@ import { CosmologyRealization } from './cosmology-realization';
 import { BHSMResearchUpdate } from './research-update';
 import { MuseumDeck } from './museum-deck';
 import { BergerHopf } from './berger-hopf';
+import { AIAccess } from './ai-access';
 
 const ASSET_REVISION = 'science-first-2026-09-07';
 const researchDisplays = exhibits.filter((row) =>
@@ -97,6 +98,7 @@ export default function Home() {
           <a href="#details">Details</a>
           <a href="#creator">Scientific record</a>
           <a href="#other-work">Cosmology</a>
+          <a href="#museum-exit">AI access</a>
           <a href={REPOSITORY}>Academic repository ↗</a>
         </nav>
       </header>
@@ -363,6 +365,7 @@ export default function Home() {
             <a href="#top">Back to top ↑</a>
           </div>
           <MuseumSoundtrack />
+          <AIAccess />
         </footer>
       </MuseumDeck>
     </main>

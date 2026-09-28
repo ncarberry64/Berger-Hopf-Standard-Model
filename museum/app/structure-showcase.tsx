@@ -47,10 +47,6 @@ const catalog = [
         'Hydrogen-1 · 1 proton · 1 electron. Explore the ground-state 1s orbital and selected excited states.',
       ],
       [
-        'Helium',
-        'Helium-4 · 2 protons + 2 neutrons · 2 electrons · 1s². Paired electrons occupy the 1s orbital.',
-      ],
-      [
         'Carbon',
         'Carbon-12 · 6 protons + 6 neutrons · 6 electrons · 1s² 2s² 2p². Inspect illustrative s and p orbital sections.',
       ],
@@ -656,7 +652,7 @@ function StructureCard({
       {item.kind === 'atoms' ? (
         <OrbitalStudy
           key={selected}
-          atom={selected}
+          atom={label === 'Hydrogen' ? 'hydrogen' : 'carbon'}
           time={time}
           id={`${id}-scene`}
         />

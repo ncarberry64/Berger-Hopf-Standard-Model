@@ -2,6 +2,7 @@
 /* oxlint-disable jsx-a11y/prefer-tag-over-role -- Inline SVG needs image semantics; an HTML img cannot contain this interactive drawing. */
 import { useEffect, useRef, useState, type ReactNode } from 'react';
 import { ChildrenOfBHSM } from './children-of-bhsm';
+import { AIInterfaceButton } from './ai-access';
 
 // A shared scene clock stops outside the viewport and while the tab is hidden.
 export function useSceneClock(running: boolean) {
@@ -198,6 +199,7 @@ export function EngineHero({
           <a className="enter-museum" href="#berger-hopf">
             Enter the science →
           </a>
+          <AIInterfaceButton />
           <small>
             One universal action, many environment-conditioned realizations.
             Full physical derivation remains open.

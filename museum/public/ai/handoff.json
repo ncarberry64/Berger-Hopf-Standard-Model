@@ -1,0 +1,45 @@
+{
+  "schema": "bhsm-ai-handoff/v1",
+  "purpose": "Use the public BHSM GitHub scientific record to answer my questions about the Berger–Hopf Standard Model.",
+  "repository": {
+    "url": "https://github.com/ncarberry64/Berger-Hopf-Standard-Model",
+    "branch": "main",
+    "raw_base_url": "https://raw.githubusercontent.com/ncarberry64/Berger-Hopf-Standard-Model/main/",
+    "freshness": "Read the current files when answering. Record the revision or access date; do not assume the museum snapshot is the newest research."
+  },
+  "start_here": [
+    {
+      "title": "Current research status (main; may change)",
+      "url": "https://raw.githubusercontent.com/ncarberry64/Berger-Hopf-Standard-Model/main/docs/current_bhsm_status.md"
+    },
+    {
+      "title": "Claim boundaries",
+      "url": "https://raw.githubusercontent.com/ncarberry64/Berger-Hopf-Standard-Model/main/CLAIMS.md"
+    },
+    {
+      "title": "Existing definition of done",
+      "url": "https://raw.githubusercontent.com/ncarberry64/Berger-Hopf-Standard-Model/main/docs/BHSM_1_0_DEFINITION_OF_DONE.md"
+    },
+    {
+      "title": "Existing gate ledger",
+      "url": "https://raw.githubusercontent.com/ncarberry64/Berger-Hopf-Standard-Model/main/theory/gate_ledger.md"
+    }
+  ],
+  "navigation": {
+    "overview": "https://raw.githubusercontent.com/ncarberry64/Berger-Hopf-Standard-Model/main/README.md",
+    "reproduction": "https://raw.githubusercontent.com/ncarberry64/Berger-Hopf-Standard-Model/main/docs/INSTITUTIONAL_START.md",
+    "citation": "https://raw.githubusercontent.com/ncarberry64/Berger-Hopf-Standard-Model/main/CITATION.cff",
+    "museum": "https://ncarberry64.github.io/Berger-Hopf-Standard-Model/",
+    "exhibit_index": "https://ncarberry64.github.io/Berger-Hopf-Standard-Model/ai/index.json",
+    "readable_guide": "https://ncarberry64.github.io/Berger-Hopf-Standard-Model/llms.txt"
+  },
+  "answer_guidance": [
+    "This is a navigation index, not a new scientific result or a live computation service.",
+    "Read the linked source before answering; cite its URL, revision or snapshot date and scope. If it cannot be read, say so.",
+    "Separate established reference physics, BHSM propositions, conditional results, historical numerical screens and action-derived physical predictions. A visual analogy or numerical match is not a physical derivation.",
+    "Museum downloads are dated snapshots. Check the current repository status for later work; do not silently combine results from different revisions.",
+    "Preserve open dependencies and missing values. Kinematic admissibility does not supply a transition probability, cross section or lifetime.",
+    "Use the existing definition of done and gate ledger for completion questions. Do not invent additional completion gates."
+  ],
+  "capability_note": "Requires an assistant able to read public web or GitHub links. If unavailable, ask the user for the relevant source text instead of claiming to have read it."
+}

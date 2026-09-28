@@ -6,7 +6,7 @@
     "node": ">=22.13.0"
   },
   "scripts": {
-    "sync:assets": "node scripts/sync-assets.mjs",
+    "sync:assets": "node scripts/sync-assets.mjs && node scripts/build-ai-guide.mjs",
     "predev": "pnpm sync:assets",
     "dev": "vinext dev",
     "prebuild": "pnpm sync:assets",
@@ -16,7 +16,7 @@
     "start": "wrangler dev --config dist/server/wrangler.json",
     "lint": "oxlint app scripts components/ui/button.tsx lib/utils.ts",
     "format": "oxfmt",
-    "test:science": "node --experimental-strip-types --test scripts/test-science-demo.mjs scripts/test-cosmology-realization.mjs scripts/test-force-particles.mjs scripts/test-soundtrack-start.mjs scripts/test-soundtrack-session.mjs scripts/test-berger-hopf.mjs scripts/test-bhsm-transition.mjs scripts/test-orbital-density.mjs"
+    "test:science": "node --experimental-strip-types --test scripts/test-science-demo.mjs scripts/test-cosmology-realization.mjs scripts/test-force-particles.mjs scripts/test-soundtrack-start.mjs scripts/test-soundtrack-session.mjs scripts/test-berger-hopf.mjs scripts/test-bhsm-transition.mjs scripts/test-orbital-density.mjs scripts/test-ai-guide.mjs"
   },
   "dependencies": {
     "react": "19.2.6",

@@ -6,6 +6,7 @@ import './museum-deck.css';
 import './children-of-bhsm.css';
 import './berger-hopf.css';
 import './bhsm-transition.css';
+import './ai-access.css';
 
 const geistSans = Geist({
   variable: '--font-geist-sans',
@@ -68,6 +69,20 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
+      <head>
+        <link
+          rel="alternate"
+          type="text/plain"
+          title="BHSM AI-readable guide"
+          href="./llms.txt"
+        />
+        <link
+          rel="alternate"
+          type="application/json"
+          title="BHSM exhibit index"
+          href="./ai/index.json"
+        />
+      </head>
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >

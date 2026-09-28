@@ -49,13 +49,12 @@ export function OrbitalStudy({
   time,
   id,
 }: {
-  atom: number;
+  atom: 'hydrogen' | 'carbon';
   time: number;
   id: string;
 }) {
-  const available =
-    atom === 0 ? [0, 1, 2, 3, 4, 5, 6] : atom === 1 ? [0] : [0, 1, 2];
-  const [chosen, setChosen] = useState(atom === 2 ? 2 : 0);
+  const available = atom === 'hydrogen' ? [0, 1, 2, 3, 4, 5, 6] : [0, 1, 2];
+  const [chosen, setChosen] = useState(atom === 'carbon' ? 2 : 0);
   const orbital = available.includes(chosen) ? chosen : available[0];
   return (
     <div className="orbital-study" id={id}>
@@ -83,7 +82,7 @@ export function OrbitalStudy({
       <small>
         Rotating view of a stationary density. Each image has its own brightness
         and spatial scale.{' '}
-        {atom === 0
+        {atom === 'hydrogen'
           ? 'Hydrogen examples include ground and excited states.'
           : 'Hydrogen-like shapes illustrate individual occupied orbitals; this is not the full many-electron density.'}
       </small>
