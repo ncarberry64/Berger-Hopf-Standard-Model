@@ -3072,3 +3072,19 @@ flavor observables, absolute spectrum, Unique Actualization, or completion.
   resolved soft branch and positive Legendre domain.
 - N=3 closure and every downstream physical prediction remain unproved.
 <!-- /BHSM_V17_06_TO_V17_14_CLAIM_BOUNDARY -->
+
+<!-- BHSM_FOUNDATIONAL_JUNCTIONS_CANONICAL_2026_09_28 -->
+## Canonical foundational-junction status — 28 September 2026
+
+For absolute-scale/localization, dimensional normalization, physical variational masses, chiral index/domain, and scattering/S-matrix questions, the controlling status is now [`theory/bhsm_five_foundational_junctions_status.md`](theory/bhsm_five_foundational_junctions_status.md), with the scale theorem in [`theory/bhsm_scale_bridge_dimensional_closure.md`](theory/bhsm_scale_bridge_dimensional_closure.md).
+
+In particular:
+
+- the present classical action retains an overall absolute-scale degeneracy;
+- exactly one universal `G_F` calibration of `ell_star` may be retained, but calibration is not the same claim as generating an absolute unit;
+- the remaining scale problem is an action-selected, state-dependent dimensionless localization modulus and the corresponding physical mass/pole functional;
+- the claim that compact Berger `S^3` automatically forces a simple left/right mirror-paired spectrum is not the governing chirality test; the physical boundary/seam Dirac domain and index remain open;
+- advanced/retarded Green and restricted Feynman/state machinery are prerequisites for scattering, not a completed physical S-matrix;
+- no historical harmonic/proxy mass formula is promoted to a physical mass unless it is recovered from the normalized quadratic operator on the same stationary physical action/domain.
+
+These statements refine and constrain older obstruction language; historical files remain preserved as provenance.
