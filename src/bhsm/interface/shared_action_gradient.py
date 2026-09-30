@@ -2,7 +2,9 @@
 
 Returns all raw rows of D^(m+1)S[.,legs], treating the prescribed legs as
 pointwise constants for the outer action gradient. Their physical variations
-are separate terms. No eigenpair or point Hessian is calculated here.
+are separate terms. With no legs (m=0), this returns the ordinary action
+gradient on the same Taylor domain. No eigenpair or point Hessian is calculated
+here.
 """
 import math
 from flint import arb
@@ -56,8 +58,9 @@ def reverse(output,inputs):
 
 
 def gradient(module,state,legs,progress=None):
-    if len(state)!=module.STATE or not 1<=len(legs)<=4:
-        raise ValueError('complete raw state and one through four action legs required')
+    """Return the shared raw action gradient with zero through four mixed legs."""
+    if len(state)!=module.STATE or not 0<=len(legs)<=4:
+        raise ValueError('complete raw state and zero through four action legs required')
     if any(not isinstance(v,Taylor) for v in state):raise ValueError('shared Taylor state required')
     d=state[0].domain
     if any(v.domain is not d for v in state):raise ValueError('one common state namespace required')

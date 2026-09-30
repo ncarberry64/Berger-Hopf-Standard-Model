@@ -91,6 +91,28 @@ exact polynomial-jet tests pass. The producer and full operands are
 `artifacts/current_runtime/current_stop_curve_derivative_pilot/`.
 These are point enclosures, not a uniform derivative or remainder bound.
 
+The native curve now has a reusable exact common-parameter owner,
+`src/bhsm/interface/current_native_curve.py`. It retains all degree-seven
+coefficients and action-arc jets through order three, with one
+`theta in [-1,1]` and exact rational Bernstein containing ranges. Three
+independent basis, derivative-scaling, and interior-range tests pass.
+The existing shared action gradient now also supports zero mixed legs,
+giving the ordinary raw98 gradient without 98 separate action evaluations;
+its independent action-jet and directional-contraction tests pass.
+
+A contracted common-curve moving-eigenline residual is enclosed uniformly
+on native interval 0, fraction `[0,1/32]` (action arc `[0,1/64]`). The
+normalized residual upper bound is `1.004597121138642e-7`, below half of
+the imported same-curve spectral gap `2.1128066336223808e-7`. Nonzero
+predictor normalization, exact native initial-point matching, and
+continuity identify branch 24 throughout this connected cell. The method
+contracts `H(P) psi_hat` before bounding the signed residual; it does not
+form a containing-box Hessian. Its oriented unit-vector distance bound
+`1.8130093810278187` is loose and is not a useful history radius. The
+producer and saved operands are
+`scripts/certify_n12_current_curve_moving_eigenline_pilot.py` and
+`artifacts/current_runtime/current_first_native_moving_eigenline_pilot/`.
+
 All 184 polynomial seam jumps have been retained as signed exact dyadic
 vectors. Their largest state norm is at most `6.748233187350258e-18`.
 The continuous shadow equation must include point sources `-jump` along
@@ -122,6 +144,24 @@ the stored-path spectral certificates or the numerical mode response.
 The current center starts inside the certified segment-1222 endpoint tube.
 Its fixed-descriptor fiber must be retained: replacing it by an unrelated
 ambient eigenvalue ball would lose the tiny positive initial descriptor.
+
+The first-cell continuous defect and parameter-uniform C25 chart are still
+open. A containing-box defect pilot fails before its response derivative
+solve: full-basis Weyl error is about `487.246` on native fraction `[0,1/8]`
+and `243.386` on `[0,1/16]`, versus midpoint separation about `2.594e-7`.
+The current exact-curve spectral proof remains closed. Both failed
+attempts retain all action operands in
+`artifacts/current_runtime/current_first_native_ftc_defect_pilot/`.
+
+On the first quarter-cell, common-theta constraint evaluation reduces
+`||B C||` from `396.6876` to `0.090079`, but the enlarged normal derivative
+box still crosses the owned reciprocal's domain. Its constraint constant
+and linear coefficient norms are about `2.97e-13` and `2.02e-13`; the
+generic first-order remainder is `0.0293905352`. This localizes the
+obstruction to retained higher-order cancellation and its uniform tail,
+not point constraint drift. No parameter-uniform normal zero is claimed.
+Both methods are saved in
+`artifacts/current_runtime/current_first_cell_normal_restoration/`.
 
 After a finite-history witness, the reset pullback, complete projected
 joint-action gradient, same-action KKT root, and constrained Hessian remain
@@ -222,6 +262,15 @@ arithmetic after the current physical map and operand errors are enclosed.
 The local normal zero and point curve jets now provide current inputs.
 The missing dependency remains their uniform shared-curve and tube
 remainders and the resulting current constrained Green bounds.
+
+Work stopped at the user's request after these pilot calculations. No
+process or automatic continuation is running. The concrete next owner is
+higher-order common-theta action arithmetic that retains the native
+polynomial's quadratic and higher cancellations before enclosing its
+analytic tail. A degree-eight model is proposed but has not been
+implemented. Reuse the saved constant/linear/residual operands, then
+construct the correlated bordered response and restored-normal bounds;
+do not resume independent coordinate-box subdivision as a global campaign.
 
 Transfer the completed exact rational descriptor positivity/root data,
 certified initial fiber, and outward endpoint action rates through the
