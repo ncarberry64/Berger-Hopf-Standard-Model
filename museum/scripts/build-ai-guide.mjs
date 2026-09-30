@@ -50,6 +50,14 @@ const guide = [
     '',
     `[Open exhibit](${entry.url})`,
     '',
+    ...(entry.statement
+      ? [
+          `${entry.classification}: ${entry.statement}`,
+          '',
+          `Review question: ${entry.question}`,
+          '',
+        ]
+      : []),
     entry.summary,
     '',
     `Scope: ${entry.scope}`,

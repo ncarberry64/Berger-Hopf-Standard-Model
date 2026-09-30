@@ -1,5 +1,32 @@
 # Museum content update — 24 September 2026
 
+## Claims, calculations and open scientific review — 30 September 2026
+
+Applied the accepted editorial approach throughout the twelve science/record
+exhibits: attributed BHSM statements lead, animations and existing numerical
+results remain central, and expandable review sections collect source links,
+scoped limitations and a concrete reproduction or critique question. The R1
+statement surfaces its retained rank-two result at all eight audited post-anchor
+epochs; the local-certificate heading names the eight interval-13 cells.
+Historical comparisons remain historical screens, with their numerical values
+and reference editions unchanged. No numerical match is promoted to an
+independently selected physical prediction.
+
+The welcome slide invites visitors to explore claims, inspect calculations and
+help test what follows. Sources & links introduces the museum as a living, open
+scientific review forum and distinguishes public scrutiny from journal review.
+Each review section opens a prefilled GitHub issue draft for the visitor to review
+and submit; nothing is submitted automatically. The AI-readable catalog and guide
+carry the same statements and review questions.
+
+Validation: 35 Node tests, 13 museum Python tests, TypeScript, focused lint,
+production export and all five publication audits passed.
+Browser checks confirmed all twelve review sections, correctly scoped issue-draft
+links, source links and 390px readability. Existing scientific classifications,
+frozen predictions and numerical source files are preserved. Two presentation
+tests were updated to verify relocated scope statements in the review sections
+instead of requiring the former headline wording.
+
 ## Scrollable panels, matter explanation and AI search fallback — 30 September 2026
 
 All three Children of BHSM panels now have matching viewport-relative heights,

@@ -1,8 +1,9 @@
+/* oxlint-disable next/no-html-link-for-pages -- Source links download static research documents, not application routes. */
 export function BHSMResearchUpdate() {
   return (
     <div className="research-update">
       <p className="eyebrow">Numerical research · 24 September 2026</p>
-      <h3>A local certificate has advanced. The full history remains open.</h3>
+      <h3>BHSM certifies eight cells of the interval-13 physical tube.</h3>
       <p>
         The existing monitor retains its 370 frozen central-scalar residual
         bounds. New physical-domain calculations concern different quantities

@@ -8,6 +8,22 @@ import {
   museumUrl,
 } from '../lib/ai-guide.mjs';
 import { slides } from '../lib/museum-slides.mjs';
+import { reviewEntries } from '../lib/museum-review.mjs';
+
+test('every science exhibit has an attributed statement and a review question', () => {
+  assert.deepEqual(
+    Object.keys(reviewEntries),
+    slides.slice(0, -1).map(([id]) => id),
+  );
+  for (const entry of catalog.exhibits.slice(0, -1)) {
+    assert.equal(entry.statement, reviewEntries[entry.id].statement);
+    assert(
+      entry.classification &&
+        entry.question.endsWith('?') &&
+        entry.sources.length,
+    );
+  }
+});
 
 test('the clipboard packet is valid JSON with current GitHub entry points', async () => {
   assert.deepEqual(JSON.parse(aiHandoffJSON), aiHandoff);

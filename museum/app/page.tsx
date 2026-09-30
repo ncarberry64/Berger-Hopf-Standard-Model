@@ -21,6 +21,11 @@ import { BHSMResearchUpdate } from './research-update';
 import { MuseumDeck } from './museum-deck';
 import { BergerHopf } from './berger-hopf';
 import { AIAccess } from './ai-access';
+import {
+  ExhibitStatement,
+  ExhibitReview,
+  OpenReviewInvitation,
+} from './exhibit-review';
 
 const ASSET_REVISION = 'science-first-2026-09-07';
 const researchDisplays = exhibits.filter((row) =>
@@ -128,9 +133,9 @@ export default function Home() {
             </a>
           </div>
           <p className="other-work-boundary">
-            Historical conceptual animations · not sky maps or current numerical
-            fits. These illustrations do not establish a physical cosmic cycle.
+            Historical conceptual animations · BHSM cosmology proposal
           </p>
+          <ExhibitStatement id="cosmology-original" />
           <article className="other-work-card">
             <div className="other-work-visual">
               <MotionImage motion={motion} exhibit={cosmologyExhibit} />
@@ -144,6 +149,7 @@ export default function Home() {
             </div>
           </article>
           <CosmicEnclosure motion={motion} />
+          <ExhibitReview id="cosmology-original" />
         </section>
         <section
           id="other-work"
@@ -156,10 +162,10 @@ export default function Home() {
               From a cosmic pattern to a testable response.
             </h2>
             <p>
-              Geometry Before Fields develops a conditional link from geometry
-              through matter and light propagation to observations. New
-              environmental-state calculations sharpen the model; supernova
-              tests have not established its proposed common signal.
+              Geometry Before Fields connects a proposed geometric framework
+              with matter, light propagation and observational tests. Explore
+              the computed environmental response, then inspect the numerical
+              replay and the supernova comparisons below.
             </p>
           </div>
           <div className="creator-links">
@@ -167,11 +173,13 @@ export default function Home() {
               Revisit the original cosmology proposal ←
             </a>
           </div>
+          <ExhibitStatement id="other-work" />
           <CosmologyRealization motion={motion} setMotion={setMotion} />
           <details className="console-details cosmology-evidence">
             <summary>Evidence and open questions · cosmology results</summary>
             <CosmologyUpdate />
           </details>
+          <ExhibitReview id="other-work" />
         </section>
         <ScienceGallery motion={motion} />
         <ScienceConsole
@@ -240,6 +248,7 @@ export default function Home() {
             <p className="eyebrow">From explanation to prediction</p>
             <h2 id="details-title">What would make it predictive?</h2>
           </div>
+          <ExhibitStatement id="details" />
           <p className="method-intro">
             A shared geometric description could connect questions about
             particles and the cosmos. Predictive power comes when independently
@@ -320,6 +329,7 @@ export default function Home() {
               </a>
             ))}
           </div>
+          <ExhibitReview id="details" />
         </section>
         <section
           id="creator"
@@ -333,6 +343,7 @@ export default function Home() {
           <div className="creator-copy">
             <p className="eyebrow">Scientific record</p>
             <h2 id="creator-title">Sources, citations and archival records</h2>
+            <ExhibitStatement id="creator" />
             <p>
               The Berger–Hopf Standard Model record connects model assumptions,
               scoped derivations, reproducible tests and unresolved physical
@@ -351,6 +362,7 @@ export default function Home() {
                 Frozen preprint PDF ↗
               </a>
             </div>
+            <ExhibitReview id="creator" />
           </div>
         </section>
         <footer id="museum-exit">
@@ -365,6 +377,7 @@ export default function Home() {
             <a href="#top">Back to top ↑</a>
           </div>
           <MuseumSoundtrack />
+          <OpenReviewInvitation />
           <AIAccess />
         </footer>
       </MuseumDeck>

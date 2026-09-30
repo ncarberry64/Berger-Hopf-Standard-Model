@@ -79,7 +79,7 @@ export function ScienceGallery({ motion }: { motion: boolean }) {
         number="09"
         label="Historical screens and reference data"
         title="Compare the calculation with the reference."
-        intro="Explore retained BHSM screens alongside independently sourced conventional references. These comparisons do not establish action-derived physical predictions."
+        intro="Choose a quantity to see the retained BHSM calculation, the published reference and their relative difference. Open the source record to inspect the inputs and reproduce the comparison."
         accent="cyan"
       >
         <div className="console-selector">

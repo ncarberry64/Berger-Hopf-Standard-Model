@@ -1,4 +1,5 @@
 import { slides } from './museum-slides.mjs';
+import { reviewEntries } from './museum-review.mjs';
 
 export const museumUrl =
   'https://ncarberry64.github.io/Berger-Hopf-Standard-Model/';
@@ -269,7 +270,13 @@ export const catalog = {
   current_sources: currentSources,
   exhibits: slides.map(([id, title]) => {
     if (!topics[id]) throw new Error(`Missing AI guide entry: ${id}`);
-    return { id, title, url: `${museumUrl}#${id}`, ...topics[id] };
+    return {
+      id,
+      title,
+      url: `${museumUrl}#${id}`,
+      ...topics[id],
+      ...reviewEntries[id],
+    };
   }),
 };
 

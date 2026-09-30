@@ -1,0 +1,77 @@
+.exhibit-statement {
+  margin: 1rem 0 1.4rem;
+  padding: 0.9rem 1.1rem;
+  border-left: 3px solid #ffbc77;
+  background: linear-gradient(90deg, #ffbc7710, transparent);
+}
+.exhibit-statement > p:last-child {
+  margin: 0.4rem 0 0;
+  color: #f3e4cf;
+  line-height: 1.65;
+  font-size: clamp(0.95rem, 1.2vw, 1.1rem);
+  max-width: 95ch;
+}
+.exhibit-review {
+  margin: 1.5rem 0;
+  padding: 1rem;
+  border: 1px solid #53425f;
+  border-radius: 10px;
+  background: #100d18;
+  color: #cec3dc;
+}
+.exhibit-review summary {
+  color: #bda7f5;
+  cursor: pointer;
+  line-height: 1.5;
+}
+.exhibit-review h4 {
+  color: #ffcf99;
+  font-size: 0.9rem;
+  margin: 1.2rem 0 0.4rem;
+}
+.exhibit-review p {
+  font-size: 0.85rem;
+  line-height: 1.7;
+  max-width: 95ch;
+}
+.exhibit-review .review-question {
+  color: #f1e8fa;
+  font-size: 1rem;
+}
+.exhibit-review a,
+.open-review-invitation a {
+  color: #71e5eb;
+  text-underline-offset: 4px;
+}
+.exhibit-review li {
+  font-size: 0.85rem;
+  margin: 0.5rem 0;
+}
+.exhibit-review small {
+  display: block;
+  font-size: 0.75rem;
+  line-height: 1.6;
+  margin-top: 0.7rem;
+}
+.exhibit-review :is(summary, a):focus-visible,
+.open-review-invitation a:focus-visible {
+  outline: 2px solid #71e5eb;
+  outline-offset: 3px;
+}
+.open-review-invitation {
+  grid-column: 1/-1;
+  padding: 1.3rem;
+  border-left: 4px solid #ffbc77;
+  background: #17121e;
+}
+.open-review-invitation h2 {
+  color: #ffe2b7;
+  font-size: clamp(1.5rem, 3vw, 2rem);
+  line-height: 1.35;
+  max-width: 40ch;
+}
+.open-review-invitation p {
+  font-size: 0.9rem;
+  line-height: 1.75;
+  max-width: 90ch;
+}
