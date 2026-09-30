@@ -7,6 +7,7 @@ import './children-of-bhsm.css';
 import './berger-hopf.css';
 import './bhsm-transition.css';
 import './ai-access.css';
+import './exhibit-review.css';
 
 const geistSans = Geist({
   variable: '--font-geist-sans',

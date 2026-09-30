@@ -1,5 +1,57 @@
 # Museum content update — 24 September 2026
 
+## Claims, calculations and open scientific review — 30 September 2026
+
+Applied the accepted editorial approach throughout the twelve science/record
+exhibits: attributed BHSM statements lead, animations and existing numerical
+results remain central, and expandable review sections collect source links,
+scoped limitations and a concrete reproduction or critique question. The R1
+statement surfaces its retained rank-two result at all eight audited post-anchor
+epochs; the local-certificate heading names the eight interval-13 cells.
+Historical comparisons remain historical screens, with their numerical values
+and reference editions unchanged. No numerical match is promoted to an
+independently selected physical prediction.
+
+The welcome slide invites visitors to explore claims, inspect calculations and
+help test what follows. Sources & links introduces the museum as a living, open
+scientific review forum and distinguishes public scrutiny from journal review.
+Each review section opens a prefilled GitHub issue draft for the visitor to review
+and submit; nothing is submitted automatically. The AI-readable catalog and guide
+carry the same statements and review questions.
+
+Validation: 35 Node tests, 13 museum Python tests, TypeScript, focused lint,
+production export and all five publication audits passed.
+Browser checks confirmed all twelve review sections, correctly scoped issue-draft
+links, source links and 390px readability. Existing scientific classifications,
+frozen predictions and numerical source files are preserved. Two presentation
+tests were updated to verify relocated scope statements in the review sections
+instead of requiring the former headline wording.
+
+## Scrollable panels, matter explanation and AI search fallback — 30 September 2026
+
+All three Children of BHSM panels now have matching viewport-relative heights,
+independent vertical scrolling, visible scrollbars, sticky headings and keyboard
+focus. Structure cards use natural-height columns, removing the molecule card's
+stretch to the much taller atom card. The phone layout keeps one structure column.
+
+Exhibit 4 identifies the repeating charged-lepton/neutrino/up-quark/down-quark
+family pattern and explains the projected Hopf-fiber animation and family selector.
+
+The AI handoff now supplies ordinary GitHub file pages alongside raw URLs and a
+capability-aware BHSM search plan. It directs assistants to use available search,
+browsing, connectors or local sources before asking for excerpts, without claiming
+access to unread material or changing completion obligations. Clipboard failure
+reveals a selectable JSON field and download link immediately beside the button.
+
+Validation: TypeScript, focused lint, 34 Node tests, 13 museum Python tests and
+production export and all five publication audits passed. Repeated guide generation
+was byte-identical. Desktop
+and 390px browser checks covered independent keyboard scrolling, natural molecule
+height, example selection and the Exhibit 4 text. Successful-copy feedback was
+verified; a controlled denial fixture verified valid, fully selectable fallback
+JSON. The automation's virtual clipboard did not expose the browser's successful
+clipboard write, so end-to-end paste was not asserted in this run.
+
 ## AI handoff and animated particle families — 28 September 2026
 
 Added a “Copy BHSM for AI” button to the welcome slide and Sources & links.

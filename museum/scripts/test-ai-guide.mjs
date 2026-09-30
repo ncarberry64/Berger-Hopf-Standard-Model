@@ -8,6 +8,22 @@ import {
   museumUrl,
 } from '../lib/ai-guide.mjs';
 import { slides } from '../lib/museum-slides.mjs';
+import { reviewEntries } from '../lib/museum-review.mjs';
+
+test('every science exhibit has an attributed statement and a review question', () => {
+  assert.deepEqual(
+    Object.keys(reviewEntries),
+    slides.slice(0, -1).map(([id]) => id),
+  );
+  for (const entry of catalog.exhibits.slice(0, -1)) {
+    assert.equal(entry.statement, reviewEntries[entry.id].statement);
+    assert(
+      entry.classification &&
+        entry.question.endsWith('?') &&
+        entry.sources.length,
+    );
+  }
+});
 
 test('the clipboard packet is valid JSON with current GitHub entry points', async () => {
   assert.deepEqual(JSON.parse(aiHandoffJSON), aiHandoff);
@@ -16,6 +32,11 @@ test('the clipboard packet is valid JSON with current GitHub entry points', asyn
   for (const source of aiHandoff.start_here) {
     assert(source.url.startsWith(aiHandoff.repository.raw_base_url));
     const path = source.url.slice(aiHandoff.repository.raw_base_url.length);
+    assert.equal(source.path, path);
+    assert.equal(
+      source.github_url,
+      `${aiHandoff.repository.url}/blob/main/${path}`,
+    );
     await access(new URL(`../../${path}`, import.meta.url));
   }
 });
@@ -57,6 +78,12 @@ test('downloadable context matches the clipboard and covers completion boundarie
     ),
   );
   assert.deepEqual(packet, JSON.parse(aiHandoffJSON));
+  assert.deepEqual(packet.retrieval_plan, catalog.retrieval_plan);
+  assert(
+    packet.retrieval_plan.suggested_searches.some((query) =>
+      query.includes('site:github.com/'),
+    ),
+  );
   assert(
     packet.answer_guidance.some((line) =>
       line.includes('existing definition of done'),

@@ -143,7 +143,7 @@ export function PrototypeScience({
         number="04"
         label="Matter from geometry"
         title="Three families in the BHSM framework."
-        intro="Nature repeats a pattern. BHSM asks whether the repetition comes from different modes of a shared internal geometry."
+        intro="The repeating pattern is three particle families: each contains a charged lepton, a neutrino, an up-type quark and a down-type quark. The electric charges repeat across families, while the charged particles have different masses. Select a family to explore the pattern."
         accent="lavender"
       >
         <div className="matter-scene">
@@ -179,7 +179,11 @@ export function PrototypeScience({
         </div>
         <p className="console-caption">
           <b>Conditional BHSM structure</b> · Mathematical geometry animation;
-          particle symbols are a schematic family map.
+          particle symbols are a schematic family map. The looping lines show
+          projected Hopf fibers. Selecting a family changes the highlighted
+          curves and their geometric arrangement as a visual analogy for
+          different modes; these curves are not measured particle paths or
+          calculated mass predictions.
         </p>
         <details className="console-details">
           <summary>
@@ -327,7 +331,7 @@ export function PrototypeScience({
         number="05"
         label="Magnetic moments in motion"
         title="Four reference magnetic moments."
-        intro="Explore conventional measured moments for four spin-½ particles. The animation illustrates precession; BHSM magnetic-moment predictions remain open."
+        intro="Explore conventional measured moments for four spin-½ particles. Watch their precession in a shared demonstration field, then inspect the values and conventions below."
         accent="lavender"
       >
         <MagneticLab motion={motion} />

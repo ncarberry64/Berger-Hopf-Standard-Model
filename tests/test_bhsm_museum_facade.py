@@ -12,9 +12,14 @@ def test_public_order_connects_geometry_particles_cosmology_and_predictive_tests
     positions = [page.index(token) for token in ('<EngineHero motion={motion} setMotion={setMotion} />', '<BergerHopf motion={motion} setMotion={setMotion} />', '<UnificationConsole motion={motion} setMotion={setMotion} />', '<PrototypeScience motion={motion} setMotion={setMotion} />', 'id="cosmology-original"', 'id="other-work"', '<ScienceGallery motion={motion} />', 'id="research-exhibit"', 'id="details"', 'id="creator"', '<footer id="museum-exit">')]
     assert positions == sorted(positions)
     hero = (MUSEUM / "app/science-console.tsx").read_text(encoding="utf-8")
-    assert "conditional structural results" in hero
-    assert "historical" in hero
-    assert "Full physical derivation remains open." in hero
+    assert "BHSM proposes" in hero
+    assert '<ExhibitReview id="potential" />' in hero
+    review = (MUSEUM / "app/exhibit-review.tsx").read_text(encoding="utf-8")
+    assert "entry.scope" in review and "entry.sources" in review
+    guide = json.loads((MUSEUM / "public/ai/index.json").read_text(encoding="utf-8"))
+    assert any("conditional results" in rule and "historical numerical screens" in rule for rule in guide["reading_rules"])
+    children = (MUSEUM / "app/children-of-bhsm.tsx").read_text(encoding="utf-8")
+    assert "their physical derivation remains open" in children
     assert "FULL_BHSM_COMPLETE = FALSE" in page
     assert page.count('id="research-exhibit"') == 1
     assert "Citation metadata" in page
@@ -72,8 +77,10 @@ def test_research_and_cosmology_labels_and_motion_fallbacks_are_explicit():
     exhibits = (MUSEUM / "app/exhibits.ts").read_text(encoding="utf-8")
     assert "Real experimental data · CMS Open Data" in page
     assert "Historical conceptual animations" in page
-    assert "not sky maps or current numerical" in page
-    assert "do not establish a physical cosmic cycle" in page
+    assert '<ExhibitReview id="cosmology-original" />' in page
+    guide = json.loads((MUSEUM / "public/ai/index.json").read_text(encoding="utf-8"))
+    original = next(entry for entry in guide["exhibits"] if entry["id"] == "cosmology-original")
+    assert "not a sky map, current numerical fit or demonstrated physical cosmic cycle" in original["scope"]
     assert "cosmologyExhibit.seen" in page
     assert '<CosmologyRealization motion={motion} setMotion={setMotion}' in page
     assert '<CosmicEnclosure motion={motion}' in page
