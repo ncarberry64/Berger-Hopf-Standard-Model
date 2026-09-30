@@ -1,0 +1,136 @@
+{
+  "actual_path_derivative_check": {
+    "chirality_checks": {
+      "minus": {
+        "passed": true,
+        "steps": [
+          {
+            "relative_errors": {
+              "K": 9.008288552177311e-08,
+              "M": 1.7066204674563754e-13,
+              "Q": 9.000028909442796e-08,
+              "V": 5.625086729252193e-08
+            },
+            "step": 0.001
+          },
+          {
+            "relative_errors": {
+              "K": 2.2520705942974704e-08,
+              "M": 3.2550731392165024e-13,
+              "Q": 2.250048547553555e-08,
+              "V": 1.4061606685910665e-08
+            },
+            "step": 0.0005
+          }
+        ]
+      },
+      "plus": {
+        "passed": true,
+        "steps": [
+          {
+            "relative_errors": {
+              "K": 9.008288552177311e-08,
+              "M": 1.7066204674563754e-13,
+              "Q": 9.000028909442796e-08,
+              "V": 5.625086729252193e-08
+            },
+            "step": 0.001
+          },
+          {
+            "relative_errors": {
+              "K": 2.2520705942974704e-08,
+              "M": 3.2550731392165024e-13,
+              "Q": 2.250048547553555e-08,
+              "V": 1.4061606685910665e-08
+            },
+            "step": 0.0005
+          }
+        ]
+      }
+    },
+    "direction": "MATHEMATICAL_CHECK_MOTION_OF_RADIUS_DURATION_AND_CANONICAL_SOURCE;_NOT_A_NEW_PHYSICAL_BACKGROUND",
+    "passed": true,
+    "source_normalization_varied_in_difference": true
+  },
+  "arrays": "C:\\Users\\carbe\\OneDrive\\Documents\\CODEX\\Berger-Hopf-Standard-Model\\artifacts\\current_runtime\\current_mixed_child_operators\\arrays.npz",
+  "chirality_blocks": {
+    "minus": {
+      "chirality": -1,
+      "coefficient_jet_direction_count": 0,
+      "element_count": 370,
+      "inherited_K_M_assembly_residual": 0.0,
+      "mixed_duration_source_element_frobenius_norm": 2515.5529785888834,
+      "mixed_log_radius_source_element_frobenius_norm": 0.0011028053668669594,
+      "proper_duration": 0.00014767085074043836,
+      "retained_form_dimension": 370,
+      "source_normalization_first_jet_residual": 0.0,
+      "source_normalization_residual": 3.3306690738754696e-16
+    },
+    "plus": {
+      "chirality": 1,
+      "coefficient_jet_direction_count": 0,
+      "element_count": 370,
+      "inherited_K_M_assembly_residual": 0.0,
+      "mixed_duration_source_element_frobenius_norm": 2515.5529785888834,
+      "mixed_log_radius_source_element_frobenius_norm": 0.0011028053668669594,
+      "proper_duration": 0.00014767085074043836,
+      "retained_form_dimension": 370,
+      "source_normalization_first_jet_residual": 0.0,
+      "source_normalization_residual": 3.3306690738754696e-16
+    }
+  },
+  "coefficient_path": "C:\\Users\\carbe\\OneDrive\\Documents\\CODEX\\Berger-Hopf-Standard-Model\\artifacts\\current_runtime\\dop853_system_integration_current_finer\\coefficient_path.npz",
+  "coefficient_path_SHA256": "4a553d6fbc9073f3f6426fbdf828f793aeaf193c89a4a6f5323b07862636d772",
+  "element_count": 370,
+  "execution": {
+    "fermion_background_selected": false,
+    "new_exact_action_evaluations": 0,
+    "retarded_child_packet_invented": false,
+    "trajectory_reintegrated": false
+  },
+  "form_conventions": {
+    "D_h_V_at_fixed_source": "2*W*p*A/6",
+    "D_source_profile": "-p*D_T/(2*T)",
+    "D_x_mid_V_at_fixed_source": "-2*W*p*M",
+    "K": "S/h+W^2*M+W*C",
+    "M": "h*A/6",
+    "Q": "2*p^2*M",
+    "V": "2*W*p*M+p*C",
+    "W": "chi*1.5*exp(-x_mid)",
+    "coefficient_jets": "FIXED_NODE_INDEX_WITH_SUPPLIED_RADIUS_AND_DURATION_MOTION",
+    "far_node": "EXISTING_FRIEDRICHS_FORM_CORE_DIRICHLET_TRUNCATION",
+    "source_center": 0.0,
+    "source_kind": "INHERITED_UNIT_COMMUTING_REDUCED_LR_HS_PROBE",
+    "source_profile": "p=1/sqrt(T)"
+  },
+  "lepton_intrinsic_auxiliary": {
+    "V_HS": "sigma1_LR_tensor_I3",
+    "V_intrinsic": "sigma1_LR_tensor_Y_l",
+    "array_keys": [
+      "lepton_intrinsic_vertex_matrix",
+      "lepton_auxiliary_vertex_matrix",
+      "lepton_squared_pencil_mixed_contact"
+    ],
+    "auxiliary_grading_residual": 0.0,
+    "auxiliary_vertex_frobenius_norm": 2.449489742783178,
+    "combined_first_order_pencil": "D_e(h,h_HS)=D_e0+h*V_intrinsic+h_HS*V_HS",
+    "first_order_mixed_contact": 0.0,
+    "intrinsic_grading_residual": 0.0,
+    "intrinsic_vertex_frobenius_norm": 0.01431614524769415,
+    "measured_lepton_mass_used": false,
+    "shared_fermion_bilinear": "bar(L_L)*e_R+h.c.",
+    "squared_pencil_cross_contact_formula": "Q_intrinsic,HS=2*I_LR*Y_l",
+    "squared_pencil_cross_contact_residual": 0.0,
+    "vertex_dimensions": [
+      6,
+      6
+    ]
+  },
+  "mode_jet_node_alignment_checked": false,
+  "mode_jets": null,
+  "node_count": 371,
+  "proper_duration": 0.00014767085074043836,
+  "scope": "ACTUAL_FINITE_CORE_OPERATOR_VERTICES_AND_MIXED_FORM_JETS;_CHILD_STRESS_EXPECTATION_NOT_SELECTED",
+  "status": "CURRENT_N12_MIXED_GEOMETRY_SOURCE_CHILD_OPERATORS_EVALUATED",
+  "stop_action_length": 92.30514373112729
+}

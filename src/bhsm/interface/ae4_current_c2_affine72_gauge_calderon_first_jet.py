@@ -89,7 +89,7 @@ def scalar_friedrichs_weyl_first_jet(
         "D_parameter_Weyl_radius_part": radius_part,
         "D_parameter_Weyl_duration_part": duration_part,
         "D_parameter_Weyl_2_norm": float(np.linalg.norm(total)),
-        "D_parameter_Weyl_max_abs": float(np.max(np.abs(total))),
+        "D_parameter_Weyl_max_abs": float(np.max(np.abs(total), initial=0.0)),
         "all_first_jet_values_finite": bool(np.all(np.isfinite(total))),
         "explicit_matrix_inverse_formed": False,
         "terminal_load_or_jet_inserted": False,

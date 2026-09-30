@@ -1,0 +1,199 @@
+{
+  "admissible_birth_directions": {
+    "Q72_orthogonality_residual": 4.44089231154055e-16,
+    "admissible_linearized_cone": "BIRTH_DESCRIPTOR_MODE_COVECTOR_DOT_DELTA_PARAMETER_GREATER_OR_EQUAL_ZERO_AT_ZERO_DESCRIPTOR",
+    "clock_density_slice_first_norm": 1.5943372617200772e-15,
+    "descriptor_mode_covector_norm": 4.181061480129194e-06,
+    "dimension": 72,
+    "fixed_descriptor_tangency_residual": 1.7222798458304693e-23,
+    "mathematical_condition": "At finite anchor require s_birth+b_birth.dot(delta_parameter)>=0 to first order",
+    "nonlinear_birth_constraint_curvature_evaluated": false,
+    "outgoing_descriptor_first": 4.181061480129194e-06,
+    "signed_descriptor": 1.7739272048543877e-20
+  },
+  "callable": {
+    "function": "evaluate_current_coupled_environment_children",
+    "gradient": "result.parent_gradient_component(representation='action_dual',fixed_birth_slice=True)",
+    "gradient_addition_to_parent_owned_by_caller": true,
+    "heat_channels_kept_scaled_and_separate": true,
+    "jet_coordinates": "operator_jets['parent_coordinates']; full73 and explicit fixed_birth72 jets",
+    "receiver": "result.deliver_to_parent(receiver);receiver(known_partial_frontier_gradient,operator_jets)"
+  },
+  "center": "C:\\Users\\carbe\\OneDrive\\Documents\\CODEX\\Berger-Hopf-Standard-Model\\artifacts\\flagship_integration\\BHSM_N12_C2_STOP_HIGH_ORDER_QUARTER_STEP_RETAINED_RECONNAISSANCE.npz",
+  "center_SHA256": "6D966CB6C731DC545D520522F897B82250E0A7817C0447F262363D6D22858635",
+  "child_boundary_responses": [
+    {
+      "Weyl_birth_value": 6778.116172022708,
+      "channel": "GAUGE_COEXACT_C4",
+      "direct_api_relative_residual": 0.0,
+      "duality_relative_residual": 5.326541575580328e-14,
+      "first_jet_fixed_birth72_norm": 839117.4584158518,
+      "first_jet_full73_norm": 12560033.424811874,
+      "spectral_parameter": -1.0
+    },
+    {
+      "Weyl_birth_value": 6778.116122341353,
+      "channel": "BRST_SCALAR_C3",
+      "direct_api_relative_residual": 0.0,
+      "duality_relative_residual": 2.9619376169022645e-13,
+      "first_jet_fixed_birth72_norm": 839117.4646129222,
+      "first_jet_full73_norm": 12560033.516918747,
+      "spectral_parameter": -1.0
+    },
+    {
+      "Weyl_birth_value": 6776.608427793767,
+      "channel": "PRODUCT_DIRAC_N0_PLUS",
+      "direct_api_relative_residual": 0.0,
+      "duality_relative_residual": 2.25640784093838e-14,
+      "first_jet_fixed_birth72_norm": 839118.1763733929,
+      "first_jet_full73_norm": 12560034.28037279,
+      "spectral_parameter": -1.0
+    },
+    {
+      "Weyl_birth_value": 6779.6237423669045,
+      "channel": "PRODUCT_DIRAC_N0_MINUS",
+      "direct_api_relative_residual": 0.0,
+      "duality_relative_residual": 1.1299400449407733e-13,
+      "first_jet_fixed_birth72_norm": 839116.7621481416,
+      "first_jet_full73_norm": 12560032.891625045,
+      "spectral_parameter": -1.0
+    }
+  ],
+  "coefficient_mesh": {
+    "coefficient_jet_count": 73,
+    "element_count": 47,
+    "fixed_birth_slice_dimension": 72,
+    "mode_transport_substeps_per_macro_interval": 4,
+    "node_count": 48,
+    "proper_duration": 0.00014753362308861907,
+    "terminal_arc_motion_and_zero_hit_density_included": true
+  },
+  "execution": {
+    "full73_two_sided_admissibility_assumed": false,
+    "mixed_forms_use_actual48_node_coefficient_jets": true,
+    "new_exact_action_evaluations": 0,
+    "retarded_Hpc_packet_invented": false,
+    "trajectory_reintegrated": false
+  },
+  "individual_finite_core_heat_channels": [
+    {
+      "Gamma_heat": -0.0,
+      "binary64_cotangent_underflow": true,
+      "channel": "GAUGE_COEXACT_C4",
+      "cotangent_common_log_factor": -113379602.65370369,
+      "forward_reverse_duality_relative_residual": 1.8735596923292206e-13,
+      "graded_weight_or_sum_inserted": false,
+      "heat_length": 1.0,
+      "log_absolute_Gamma_heat": -113379602.6537037,
+      "minimum_generalized_eigenvalue": 113379583.41430461,
+      "parent_covector_log_norm": -113379575.8897287,
+      "scaled_parent_covector_birth72_norm": 28072340193.736217,
+      "scaled_parent_covector_norm": 420190913180.3285
+    },
+    {
+      "Gamma_heat": -0.0,
+      "binary64_cotangent_underflow": true,
+      "channel": "BRST_SCALAR_C3",
+      "cotangent_common_log_factor": -113379601.70007804,
+      "forward_reverse_duality_relative_residual": 7.48788101089907e-14,
+      "graded_weight_or_sum_inserted": false,
+      "heat_length": 1.0,
+      "log_absolute_Gamma_heat": -113379601.70007806,
+      "minimum_generalized_eigenvalue": 113379582.46067898,
+      "parent_covector_log_norm": -113379574.93610305,
+      "scaled_parent_covector_birth72_norm": 28072340201.692314,
+      "scaled_parent_covector_norm": 420190913286.16284
+    },
+    {
+      "Gamma_heat": -0.0,
+      "binary64_cotangent_underflow": true,
+      "channel": "PRODUCT_DIRAC_N0_PLUS",
+      "cotangent_common_log_factor": -113359154.76662251,
+      "forward_reverse_duality_relative_residual": 3.664162669961576e-14,
+      "graded_weight_or_sum_inserted": false,
+      "heat_length": 1.0,
+      "log_absolute_Gamma_heat": -113359154.76662253,
+      "minimum_generalized_eigenvalue": 113359135.5274038,
+      "parent_covector_log_norm": -113359128.00273766,
+      "scaled_parent_covector_birth72_norm": 28069818704.456173,
+      "scaled_parent_covector_norm": 420153037006.2491
+    },
+    {
+      "Gamma_heat": -0.0,
+      "binary64_cotangent_underflow": true,
+      "channel": "PRODUCT_DIRAC_N0_MINUS",
+      "cotangent_common_log_factor": -113400045.84622365,
+      "forward_reverse_duality_relative_residual": 2.3501289582946964e-13,
+      "graded_weight_or_sum_inserted": false,
+      "heat_length": 1.0,
+      "log_absolute_Gamma_heat": -113400045.84622367,
+      "minimum_generalized_eigenvalue": 113400026.60664429,
+      "parent_covector_log_norm": -113400019.0821585,
+      "scaled_parent_covector_birth72_norm": 28074861772.61168,
+      "scaled_parent_covector_norm": 420228790624.92865
+    }
+  ],
+  "known_parent_action_component": {
+    "Gamma_SM_zeta": -0.0002916299944771451,
+    "coefficient": 1.9666666666666666,
+    "common_scale_residual": 5.421010862427522e-20,
+    "component": "MINUS_D_GAMMA_SM_ZETA",
+    "coordinate_owner": "FIRST_STORED_CURRENT_C2_FRONTIER_RAW98_AND_WEIGHTED_ACTION98",
+    "fixed_birth72_action_dual_norm": 0.036239958438990916,
+    "fixed_birth72_covector_norm": 0.036239958438990916,
+    "forward_reverse_duality_absolute_residual": 3.0028928313854814e-14,
+    "forward_reverse_duality_relative_residual": 5.5554447116213236e-14,
+    "full73_covector_norm": 0.5405314942841192,
+    "incoming_E1_formation_Gamma_y_directly_available": false,
+    "incoming_formation_role": "LAUNCH_COMPONENT_AFTER_OWNED_SEED_TO_FRONTIER_PULLBACK; NOT_DIRECT_E1_GRADIENT",
+    "minus_D_Gamma_SM_zeta_birth72_norm": 0.036239958438990916,
+    "minus_D_Gamma_SM_zeta_outgoing_normal_component": 0.539315271177595,
+    "minus_D_Gamma_SM_zeta_parent_max_abs": 0.5405082474876862,
+    "minus_D_Gamma_SM_zeta_parent_norm": 0.5405314942841192,
+    "quadrature": "EXACT_ON_EACH_PIECEWISE_LINEAR_LOG_RADIUS_ELEMENT",
+    "receiver_default": "98_COMPONENT_ACTION_DUAL_ON_CURRENT72_FIXED_BIRTH_DESCRIPTOR_SLICE"
+  },
+  "lepton_vertices": {
+    "cross_contact_residual": 0.0,
+    "dimensions": [
+      6,
+      6
+    ],
+    "inserted_into_current_carrier": false
+  },
+  "mixed_geometry_source_forms": {
+    "minus": {
+      "chirality": -1,
+      "coefficient_jet_direction_count": 73,
+      "element_count": 47,
+      "inherited_K_M_assembly_residual": 0.0,
+      "mixed_duration_source_element_frobenius_norm": 896.9812837273128,
+      "mixed_log_radius_source_element_frobenius_norm": 0.003117874002758884,
+      "proper_duration": 0.00014753362308861907,
+      "retained_form_dimension": 47,
+      "source_normalization_first_jet_residual": 2.629146900190449e-13,
+      "source_normalization_residual": 1.1102230246251565e-16
+    },
+    "plus": {
+      "chirality": 1,
+      "coefficient_jet_direction_count": 73,
+      "element_count": 47,
+      "inherited_K_M_assembly_residual": 0.0,
+      "mixed_duration_source_element_frobenius_norm": 896.9812837273128,
+      "mixed_log_radius_source_element_frobenius_norm": 0.003117874002758884,
+      "proper_duration": 0.00014753362308861907,
+      "retained_form_dimension": 47,
+      "source_normalization_first_jet_residual": 2.629146900190449e-13,
+      "source_normalization_residual": 1.1102230246251565e-16
+    }
+  },
+  "mode_response": "C:\\Users\\carbe\\OneDrive\\Documents\\CODEX\\Berger-Hopf-Standard-Model\\artifacts\\current_runtime\\current_physical_mode_response",
+  "outputs": {
+    "backreaction_report": "C:\\Users\\carbe\\OneDrive\\Documents\\CODEX\\Berger-Hopf-Standard-Model\\artifacts\\current_runtime\\current_coupled_environment_children\\backreaction\\report.json",
+    "mixed_operator_jets": "C:\\Users\\carbe\\OneDrive\\Documents\\CODEX\\Berger-Hopf-Standard-Model\\artifacts\\current_runtime\\current_coupled_environment_children\\mixed_operator_jets.npz",
+    "parent_loads": "C:\\Users\\carbe\\OneDrive\\Documents\\CODEX\\Berger-Hopf-Standard-Model\\artifacts\\current_runtime\\current_coupled_environment_children\\parent_loads.npz"
+  },
+  "physical_mode_scope": "NUMERICAL_CENTER_FINITE_HISTORY_RESPONSE; MACRO_DISCRETIZATION_AND_TANGENT_LEAKAGE_REPORTED",
+  "scope": "KNOWN_MINUS_ZETA_PARENT_ACTION_COMPONENT_AND_INDIVIDUAL_FINITE_CORE_HEAT_COTANGENTS;_NOT_FULL_GAMMA_OR_A_NONLINEAR_BACKREACTED_TRAJECTORY",
+  "status": "CURRENT_N12_COUPLED_CHILD_OPERATORS_AND_KNOWN_PARENT_ACTION_LOAD_EVALUATED"
+}

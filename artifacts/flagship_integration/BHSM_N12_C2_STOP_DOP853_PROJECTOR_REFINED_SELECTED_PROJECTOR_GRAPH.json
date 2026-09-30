@@ -1,25 +1,61 @@
 {
   "FLAGSHIP_READY": false,
   "FULL_BHSM_COMPLETE": false,
-  "artifact": "BHSM_N12_C2_STOP_DOP853_ADAPTIVE_SELECTED_PROJECTOR_GRAPH",
+  "artifact": "BHSM_N12_C2_STOP_DOP853_PROJECTOR_REFINED_SELECTED_PROJECTOR_GRAPH",
   "claim_boundary": {
     "FULL_BHSM_COMPLETE": false,
     "Gate7": "ACTIVE",
     "bordered_hard_response_tube": "OPEN",
     "correlated_shadowing_tube": "OPEN",
-    "selected_projector_graph_on_stored_DOP853_stop_path": "OPEN"
+    "selected_projector_graph_on_stored_DOP853_stop_path": "CERTIFIED"
   },
-  "exact_next_dependency": "REFINE_ONLY_THE_REPORTED_PROJECTOR_GRAPH_OWNER",
+  "exact_next_dependency": "ASSEMBLE_THE_ACTION_OWNED_INTERNAL_BORDERED_RIGHT_HAND_SIDE_ON_THE_IDENTICAL_PROJECTOR_REFINED_DOP853_ADAPTIVE_COVER",
   "inputs": {
     "artifacts/flagship_integration/BHSM_N12_C2_STOP_DOP853_ADAPTIVE_BOUNDARY_CLUSTER_SPECTRUM.json": "030FE843FC0F761B5B1026DBA4DC553F79FEC32192E4D4F6C711DD43416A0C90",
+    "artifacts/flagship_integration/BHSM_N12_C2_STOP_DOP853_ADAPTIVE_SELECTED_PROJECTOR_GRAPH.json": "D735888C15B0CED16D04C1865A0EF40CEDE824E0EB16C8DE595F89CB21754384",
+    "artifacts/flagship_integration/BHSM_N12_C2_STOP_DOP853_PROJECTOR_REFINED_BOUNDARY_CLUSTER_SPECTRUM.json": "4567A99AF1C95FD0E65DFAB4EE5A2000B2920C7B6C28B306C89BE72446195D9A",
     "artifacts/flagship_integration/BHSM_N12_C2_STOP_HIGH_ORDER_QUARTER_STEP_RETAINED_RECONNAISSANCE.npz": "6D966CB6C731DC545D520522F897B82250E0A7817C0447F262363D6D22858635",
-    "scripts/audit_n12_c2_stop_dop853_boundary_cluster_probe.py": "A9F44D6DE9CD9659BFC50D46AEF2F2501C29BCB93A035781D4AC3DCDABD00FF6"
+    "scripts/audit_n12_c2_stop_dop853_boundary_cluster_probe.py": "A9F44D6DE9CD9659BFC50D46AEF2F2501C29BCB93A035781D4AC3DCDABD00FF6",
+    "scripts/refine_n12_current_dop853_projector_cover.py": "5F1E6A8F4F9E66398EE7E34C96837A06F3B4D35E4B47BDB833EB251B4F333DCF"
   },
   "mesh": {
-    "adaptive_cover_cells": 1391,
-    "workers": 16
+    "adaptive_cover_cells": 1395,
+    "workers": 4
   },
   "method": "DENOMINATOR_RESOLVED_KATO_GRAPH_ON_THE_EXACT_ADAPTIVE_DOP853_BERNSTEIN_COVER",
+  "refinement": {
+    "additional_children_audited_by_subdivisions": {
+      "8": 8
+    },
+    "initial_projector_directed_source_cells_replaced": 4,
+    "projector_directed_parent_cells_replaced_total": 4,
+    "projector_directed_replaced_parent_keys": [
+      [
+        182,
+        3,
+        4
+      ],
+      [
+        183,
+        0,
+        4
+      ],
+      [
+        183,
+        1,
+        4
+      ],
+      [
+        183,
+        2,
+        4
+      ]
+    ],
+    "refinement_reason": "JOINT_SPECTRAL_BOOTSTRAP_OR_PROJECTOR_NEUMANN_FAILURE_ONLY",
+    "source_spectrum_coarse_cells_replaced": 409,
+    "source_spectrum_cover_cells": 1391,
+    "unchanged_source_cells_reused": 1387
+  },
   "rows": [
     {
       "ambient_D3_Hessian_shift_upper": 0.010536555059005874,
@@ -314677,106 +314713,106 @@
       "subspan": 2
     },
     {
-      "ambient_D3_Hessian_shift_upper": 0.024757843288085606,
-      "ambient_D4_Hessian_remainder_upper": 0.0033351209881555197,
-      "ambient_Hessian_shift_upper": 0.028092964279050427,
-      "certified_global_gap_lower": 1.3213456940783536e-07,
-      "graph_Neumann_closed": false,
+      "ambient_D3_Hessian_shift_upper": 0.012354054045577637,
+      "ambient_D4_Hessian_remainder_upper": 0.0008314470884918194,
+      "ambient_Hessian_shift_upper": 0.013185501135388007,
+      "certified_global_gap_lower": 1.6488470242735027e-07,
+      "graph_Neumann_closed": true,
       "groups": [
         {
-          "D4_coupling_change_upper": 2.1998418231281998e-10,
+          "D4_coupling_change_upper": 5.479448995315208e-11,
           "branches": [
             25
           ],
-          "center_D3_coupling_l2_norm": 2.7932317966457996e-12,
-          "consumed_gap_lower": 1.3213456940783536e-07,
-          "coupling_numerator_upper": 2.2277741413174353e-10,
-          "minimum_center_distance": 1.7392216290517826e-07,
-          "ordered_Weyl_gap_lower": -0.02809279039898827,
-          "selected_graph_derivative_upper": 0.0033719777519600554
+          "center_D3_coupling_l2_norm": 1.3987381685655724e-12,
+          "consumed_gap_lower": 1.6488470242735027e-07,
+          "coupling_numerator_upper": 5.619322812733698e-11,
+          "minimum_center_distance": 1.7394036264472077e-07,
+          "ordered_Weyl_gap_lower": -0.013185327203609674,
+          "selected_graph_derivative_upper": 0.0006816063261868162
         },
         {
-          "D4_coupling_change_upper": 1.6584609238581073e-09,
+          "D4_coupling_change_upper": 4.1333525628588395e-10,
           "branches": [
             26,
             27
           ],
-          "center_D3_coupling_l2_norm": 7.96317084688549e-11,
-          "consumed_gap_lower": 1.3213456940783536e-07,
-          "coupling_numerator_upper": 1.7380926325007716e-09,
-          "minimum_center_distance": 1.0731017729321208e-06,
-          "ordered_Weyl_gap_lower": -0.028091891219378242,
-          "selected_graph_derivative_upper": 0.026307916852703877
+          "center_D3_coupling_l2_norm": 3.978380823680892e-11,
+          "consumed_gap_lower": 1.6488470242735027e-07,
+          "coupling_numerator_upper": 4.5311906456800483e-10,
+          "minimum_center_distance": 1.073177471383179e-06,
+          "ordered_Weyl_gap_lower": -0.013184427966500937,
+          "selected_graph_derivative_upper": 0.005496192890458899
         },
         {
-          "D4_coupling_change_upper": 3.6985997073392054e-09,
+          "D4_coupling_change_upper": 9.217732303484746e-10,
           "branches": [
             22,
             23
           ],
-          "center_D3_coupling_l2_norm": 8.217453693937256e-11,
-          "consumed_gap_lower": 1.3213456940783536e-07,
-          "coupling_numerator_upper": 3.7807742446566565e-09,
-          "minimum_center_distance": 8.643590252575061e-06,
-          "ordered_Weyl_gap_lower": -0.028084320730898598,
-          "selected_graph_derivative_upper": 0.057226118221421936
+          "center_D3_coupling_l2_norm": 4.10964215853569e-11,
+          "consumed_gap_lower": 1.6488470242735027e-07,
+          "coupling_numerator_upper": 9.628696520301187e-10,
+          "minimum_center_distance": 8.643470361800724e-06,
+          "ordered_Weyl_gap_lower": -0.01317685767361052,
+          "selected_graph_derivative_upper": 0.011679308485887647
         },
         {
-          "D4_coupling_change_upper": 5.3953716370676795e-09,
+          "D4_coupling_change_upper": 1.3454660731169766e-09,
           "branches": [
             28,
             29
           ],
-          "center_D3_coupling_l2_norm": 5.531925966575167e-10,
-          "consumed_gap_lower": 1.3213456940783536e-07,
-          "coupling_numerator_upper": 5.948564234320053e-09,
-          "minimum_center_distance": 5.3955218701529645e-05,
-          "ordered_Weyl_gap_lower": -0.028039009102449643,
-          "selected_graph_derivative_upper": 0.09003797055643442
+          "center_D3_coupling_l2_norm": 2.7663397322665296e-10,
+          "consumed_gap_lower": 1.6488470242735027e-07,
+          "coupling_numerator_upper": 1.6221000465058398e-09,
+          "minimum_center_distance": 5.3937187041309506e-05,
+          "ordered_Weyl_gap_lower": -0.01313156395693101,
+          "selected_graph_derivative_upper": 0.01967556750612159
         },
         {
-          "D4_coupling_change_upper": 1.29257650345445e-08,
+          "D4_coupling_change_upper": 3.222018452035367e-09,
           "branches": [
             20,
             21
           ],
-          "center_D3_coupling_l2_norm": 1.0072405881023617e-09,
-          "consumed_gap_lower": 1.3213456940783536e-07,
-          "coupling_numerator_upper": 1.3933005624040165e-08,
-          "minimum_center_distance": 0.000317098273867251,
-          "ordered_Weyl_gap_lower": -0.027775866047283923,
-          "selected_graph_derivative_upper": 0.2108911496495521
+          "center_D3_coupling_l2_norm": 5.033542865790343e-10,
+          "consumed_gap_lower": 1.6488470242735027e-07,
+          "coupling_numerator_upper": 3.72537273898694e-09,
+          "minimum_center_distance": 0.0003170674883432353,
+          "ordered_Weyl_gap_lower": -0.012868433655629084,
+          "selected_graph_derivative_upper": 0.04518760909309839
         },
         {
-          "D4_coupling_change_upper": 3.8196452480515735e-08,
+          "D4_coupling_change_upper": 9.521138566185013e-09,
           "branches": [
             18,
             19,
             30
           ],
-          "center_D3_coupling_l2_norm": 2.4706500653801744e-09,
-          "consumed_gap_lower": 1.3213456940783536e-07,
-          "coupling_numerator_upper": 4.0667102549962626e-08,
-          "minimum_center_distance": 0.0015701698603756789,
-          "ordered_Weyl_gap_lower": -0.026522794460775496,
-          "selected_graph_derivative_upper": 0.6155406981879165
+          "center_D3_coupling_l2_norm": 1.2361407722920386e-09,
+          "consumed_gap_lower": 1.6488470242735027e-07,
+          "coupling_numerator_upper": 1.0757279339552782e-08,
+          "minimum_center_distance": 0.0015695587117773606,
+          "ordered_Weyl_gap_lower": -0.01161594243219496,
+          "selected_graph_derivative_upper": 0.1304824423644549
         },
         {
-          "D4_coupling_change_upper": 4.6920106067642496e-08,
+          "D4_coupling_change_upper": 1.1689912915926163e-08,
           "branches": [
             17,
             31,
             32
           ],
-          "center_D3_coupling_l2_norm": 3.285422740074739e-09,
-          "consumed_gap_lower": 1.3213456940783536e-07,
-          "coupling_numerator_upper": 5.0205528812737796e-08,
-          "minimum_center_distance": 0.016327527186495123,
-          "ordered_Weyl_gap_lower": -0.01176543713465605,
-          "selected_graph_derivative_upper": 0.7599151235404299
+          "center_D3_coupling_l2_norm": 1.6419005945572507e-09,
+          "consumed_gap_lower": 0.003140890937641411,
+          "coupling_numerator_upper": 1.3331813511816598e-08,
+          "minimum_center_distance": 0.01632639208161373,
+          "ordered_Weyl_gap_lower": 0.003140890937641411,
+          "selected_graph_derivative_upper": 8.489192256488244e-06
         },
         {
-          "D4_coupling_change_upper": 7.693784485325619e-08,
+          "D4_coupling_change_upper": 1.9183416488094015e-08,
           "branches": [
             15,
             16,
@@ -314784,15 +314820,15 @@
             34,
             35
           ],
-          "center_D3_coupling_l2_norm": 9.677747388624516e-09,
-          "consumed_gap_lower": 0.04304796463749975,
-          "coupling_numerator_upper": 8.661559225054228e-08,
-          "minimum_center_distance": 0.07114092895865093,
-          "ordered_Weyl_gap_lower": 0.04304796463749975,
-          "selected_graph_derivative_upper": 4.024143440396328e-06
+          "center_D3_coupling_l2_norm": 4.8398513235137144e-09,
+          "consumed_gap_lower": 0.057955803030732195,
+          "coupling_numerator_upper": 2.402326781401006e-08,
+          "minimum_center_distance": 0.07114130417470452,
+          "ordered_Weyl_gap_lower": 0.057955803030732195,
+          "selected_graph_derivative_upper": 8.290202726955085e-07
         },
         {
-          "D4_coupling_change_upper": 2.772851733191453e-07,
+          "D4_coupling_change_upper": 6.911387020539939e-08,
           "branches": [
             14,
             36,
@@ -314802,15 +314838,15 @@
             40,
             41
           ],
-          "center_D3_coupling_l2_norm": 3.1314055869035805e-08,
-          "consumed_gap_lower": 0.5320343006901688,
-          "coupling_numerator_upper": 3.0859922921904114e-07,
-          "minimum_center_distance": 0.5601272650113199,
-          "ordered_Weyl_gap_lower": 0.5320343006901688,
-          "selected_graph_derivative_upper": 1.1600726827183065e-06
+          "center_D3_coupling_l2_norm": 1.565569560270907e-08,
+          "consumed_gap_lower": 0.5469866866641141,
+          "coupling_numerator_upper": 8.476956581658543e-08,
+          "minimum_center_distance": 0.5601721878080864,
+          "ordered_Weyl_gap_lower": 0.5469866866641141,
+          "selected_graph_derivative_upper": 3.099511117612137e-07
         },
         {
-          "D4_coupling_change_upper": 2.5663259388244906e-07,
+          "D4_coupling_change_upper": 6.395866016662527e-08,
           "branches": [
             10,
             11,
@@ -314820,15 +314856,15 @@
             43,
             44
           ],
-          "center_D3_coupling_l2_norm": 1.0474715152240296e-07,
-          "consumed_gap_lower": 2.4635554476132606,
-          "coupling_numerator_upper": 3.613797454409901e-07,
-          "minimum_center_distance": 2.4916484119344116,
-          "ordered_Weyl_gap_lower": 2.4635554476132606,
-          "selected_graph_derivative_upper": 2.9338064692413535e-07
+          "center_D3_coupling_l2_norm": 5.2385423183524585e-08,
+          "consumed_gap_lower": 2.478464645780675,
+          "coupling_numerator_upper": 1.1634408336178427e-07,
+          "minimum_center_distance": 2.491650146924647,
+          "ordered_Weyl_gap_lower": 2.478464645780675,
+          "selected_graph_derivative_upper": 9.388399674894072e-08
         },
         {
-          "D4_coupling_change_upper": 9.562826879309816e-08,
+          "D4_coupling_change_upper": 2.3828793110427574e-08,
           "branches": [
             9,
             45,
@@ -314837,15 +314873,15 @@
             48,
             49
           ],
-          "center_D3_coupling_l2_norm": 5.5781510879496926e-08,
-          "consumed_gap_lower": 11.411184269782794,
-          "coupling_numerator_upper": 1.514097796877361e-07,
-          "minimum_center_distance": 11.439277234103946,
-          "ordered_Weyl_gap_lower": 11.411184269782794,
-          "selected_graph_derivative_upper": 2.6537084341686667e-08
+          "center_D3_coupling_l2_norm": 2.7858217341363033e-08,
+          "consumed_gap_lower": 11.426054183830377,
+          "coupling_numerator_upper": 5.1687010456959314e-08,
+          "minimum_center_distance": 11.43923968497435,
+          "ordered_Weyl_gap_lower": 11.426054183830377,
+          "selected_graph_derivative_upper": 9.047219561635388e-09
         },
         {
-          "D4_coupling_change_upper": 8.833279418540444e-08,
+          "D4_coupling_change_upper": 2.2002782276940647e-08,
           "branches": [
             8,
             50,
@@ -314855,15 +314891,15 @@
             54,
             55
           ],
-          "center_D3_coupling_l2_norm": 1.0405983697040872e-07,
-          "consumed_gap_lower": 49.54059911541702,
-          "coupling_numerator_upper": 1.9239263117505244e-07,
-          "minimum_center_distance": 49.56869207973817,
-          "ordered_Weyl_gap_lower": 49.54059911541702,
-          "selected_graph_derivative_upper": 7.767069217151201e-09
+          "center_D3_coupling_l2_norm": 5.184851473545371e-08,
+          "consumed_gap_lower": 49.555208260202136,
+          "coupling_numerator_upper": 7.38512970197795e-08,
+          "minimum_center_distance": 49.56839376134611,
+          "ordered_Weyl_gap_lower": 49.555208260202136,
+          "selected_graph_derivative_upper": 2.9805665083431698e-09
         },
         {
-          "D4_coupling_change_upper": 1.1285987656369098e-07,
+          "D4_coupling_change_upper": 2.8106701430107335e-08,
           "branches": [
             2,
             3,
@@ -314876,138 +314912,138 @@
             58,
             59
           ],
-          "center_D3_coupling_l2_norm": 4.817681994780498e-07,
-          "consumed_gap_lower": 247.32061992540807,
-          "coupling_numerator_upper": 5.946280761012036e-07,
-          "minimum_center_distance": 247.3487128897292,
-          "ordered_Weyl_gap_lower": 247.32061992540807,
-          "selected_graph_derivative_upper": 4.8085604535522055e-09
+          "center_D3_coupling_l2_norm": 2.403557387809972e-07,
+          "consumed_gap_lower": 247.33464276267767,
+          "coupling_numerator_upper": 2.6846244023795084e-07,
+          "minimum_center_distance": 247.34782826382164,
+          "ordered_Weyl_gap_lower": 247.33464276267767,
+          "selected_graph_derivative_upper": 2.1708438192573936e-09
         },
         {
-          "D4_coupling_change_upper": 7.020138016809914e-08,
+          "D4_coupling_change_upper": 1.7482375907671173e-08,
           "branches": [
             0,
             1,
             60
           ],
-          "center_D3_coupling_l2_norm": 6.384907197892152e-08,
-          "consumed_gap_lower": 999.1487982396453,
-          "coupling_numerator_upper": 1.3405045216042572e-07,
-          "minimum_center_distance": 999.1768912039664,
-          "ordered_Weyl_gap_lower": 999.1487982396453,
-          "selected_graph_derivative_upper": 2.683293067259014e-10
+          "center_D3_coupling_l2_norm": 3.189006336042821e-08,
+          "consumed_gap_lower": 999.159188240972,
+          "coupling_numerator_upper": 4.937243927303663e-08,
+          "minimum_center_distance": 999.172373742116,
+          "ordered_Weyl_gap_lower": 999.159188240972,
+          "selected_graph_derivative_upper": 9.882797427884233e-11
         }
       ],
       "interval": 182,
       "selected_branch": 24,
-      "selected_graph_derivative_l2_upper": 1.0064400453099813,
-      "selected_line_shift_upper": 4.2100747341053637e-11,
-      "selected_projector_motion_upper": 1.0064400453099813,
+      "selected_graph_derivative_l2_upper": 0.14007781688974338,
+      "selected_line_shift_upper": 8.584313121407166e-12,
+      "selected_projector_motion_upper": 0.14007781688974338,
       "spectral_distance_bands": 14,
-      "subdivisions": 4,
-      "subspan": 3
+      "subdivisions": 8,
+      "subspan": 6
     },
     {
-      "ambient_D3_Hessian_shift_upper": 0.024956079768708436,
-      "ambient_D4_Hessian_remainder_upper": 0.0033711367722620623,
-      "ambient_Hessian_shift_upper": 0.028327216543803223,
-      "certified_global_gap_lower": 1.3158438398559974e-07,
-      "graph_Neumann_closed": false,
+      "ambient_D3_Hessian_shift_upper": 0.01240372495382134,
+      "ambient_D4_Hessian_remainder_upper": 0.000835949265736246,
+      "ambient_Hessian_shift_upper": 0.013239674220881554,
+      "certified_global_gap_lower": 1.6480560771277413e-07,
+      "graph_Neumann_closed": true,
       "groups": [
         {
-          "D4_coupling_change_upper": 2.2313101740003154e-10,
+          "D4_coupling_change_upper": 5.518664170521043e-11,
           "branches": [
             25
           ],
-          "center_D3_coupling_l2_norm": 2.776340551786394e-12,
-          "consumed_gap_lower": 1.3158438398559974e-07,
-          "coupling_numerator_upper": 2.259073579744087e-10,
-          "minimum_center_distance": 1.738496564656433e-07,
-          "ordered_Weyl_gap_lower": -0.028327042736939118,
-          "selected_graph_derivative_upper": 0.003433649969007298
+          "center_D3_coupling_l2_norm": 1.3944757240645368e-12,
+          "consumed_gap_lower": 1.6480560771277413e-07,
+          "coupling_numerator_upper": 5.6581117434933083e-11,
+          "minimum_center_distance": 1.7390414707129698e-07,
+          "ordered_Weyl_gap_lower": -0.013239500325376222,
+          "selected_graph_derivative_upper": 0.0006866406820234137
         },
         {
-          "D4_coupling_change_upper": 1.6783170724769653e-09,
+          "D4_coupling_change_upper": 4.1580891181766357e-10,
           "branches": [
             26,
             27
           ],
-          "center_D3_coupling_l2_norm": 7.988774871486359e-11,
-          "consumed_gap_lower": 1.3158438398559974e-07,
-          "coupling_numerator_upper": 1.7582048213676496e-09,
-          "minimum_center_distance": 1.072799403418817e-06,
-          "ordered_Weyl_gap_lower": -0.028326143787192164,
-          "selected_graph_derivative_upper": 0.026723609113614634
+          "center_D3_coupling_l2_norm": 3.984789729516212e-11,
+          "consumed_gap_lower": 1.6480560771277413e-07,
+          "coupling_numerator_upper": 4.5565680915839146e-10,
+          "minimum_center_distance": 1.073026283207196e-06,
+          "ordered_Weyl_gap_lower": -0.013238601203240087,
+          "selected_graph_derivative_upper": 0.005529627486924878
         },
         {
-          "D4_coupling_change_upper": 3.743273885319092e-09,
+          "D4_coupling_change_upper": 9.273389471138745e-10,
           "branches": [
             22,
             23
           ],
-          "center_D3_coupling_l2_norm": 8.210127433884901e-11,
-          "consumed_gap_lower": 1.3158438398559974e-07,
-          "coupling_numerator_upper": 3.82537516004048e-09,
-          "minimum_center_distance": 8.644066289789417e-06,
-          "ordered_Weyl_gap_lower": -0.02831857252030579,
-          "selected_graph_derivative_upper": 0.058143300056664134
+          "center_D3_coupling_l2_norm": 4.107789324455498e-11,
+          "consumed_gap_lower": 1.6480560771277413e-07,
+          "coupling_numerator_upper": 9.684168404552714e-10,
+          "minimum_center_distance": 8.643709811470562e-06,
+          "ordered_Weyl_gap_lower": -0.013231030519711823,
+          "selected_graph_derivative_upper": 0.011752231662406605
         },
         {
-          "D4_coupling_change_upper": 5.447535305731824e-09,
+          "D4_coupling_change_upper": 1.351956577186921e-09,
           "branches": [
             28,
             29
           ],
-          "center_D3_coupling_l2_norm": 5.528742851611459e-10,
-          "consumed_gap_lower": 1.3158438398559974e-07,
-          "coupling_numerator_upper": 6.000409591493012e-09,
-          "minimum_center_distance": 5.402731972204326e-05,
-          "ordered_Weyl_gap_lower": -0.028273189266873538,
-          "selected_graph_derivative_upper": 0.09120245747017706
+          "center_D3_coupling_l2_norm": 2.765581380005181e-10,
+          "consumed_gap_lower": 1.6480560771277413e-07,
+          "coupling_numerator_upper": 1.6285147153502907e-09,
+          "minimum_center_distance": 5.397324905684062e-05,
+          "ordered_Weyl_gap_lower": -0.013185700980466453,
+          "selected_graph_derivative_upper": 0.019762855622623525
         },
         {
-          "D4_coupling_change_upper": 1.3072404721720058e-08,
+          "D4_coupling_change_upper": 3.2402755194085462e-09,
           "branches": [
             20,
             21
           ],
-          "center_D3_coupling_l2_norm": 1.0093613395610896e-09,
-          "consumed_gap_lower": 1.3158438398559974e-07,
-          "coupling_numerator_upper": 1.4081766062689327e-08,
-          "minimum_center_distance": 0.00031722181139586745,
-          "ordered_Weyl_gap_lower": -0.028009994775199717,
-          "selected_graph_derivative_upper": 0.21403400065525371
+          "center_D3_coupling_l2_norm": 5.038854039662803e-10,
+          "consumed_gap_lower": 1.6480560771277413e-07,
+          "coupling_numerator_upper": 3.744160923749243e-09,
+          "minimum_center_distance": 0.0003171290532894413,
+          "ordered_Weyl_gap_lower": -0.012922545176233853,
+          "selected_graph_derivative_upper": 0.045437300054122484
         },
         {
-          "D4_coupling_change_upper": 3.863109874776495e-08,
+          "D4_coupling_change_upper": 9.575306758537772e-09,
           "branches": [
             18,
             19,
             30
           ],
-          "center_D3_coupling_l2_norm": 2.4639960986862756e-09,
-          "consumed_gap_lower": 1.3158438398559974e-07,
-          "coupling_numerator_upper": 4.109509485056074e-08,
-          "minimum_center_distance": 0.001572613939233651,
-          "ordered_Weyl_gap_lower": -0.02675460264736193,
-          "selected_graph_derivative_upper": 0.6246196335754796
+          "center_D3_coupling_l2_norm": 1.2345073021219301e-09,
+          "consumed_gap_lower": 1.6480560771277413e-07,
+          "coupling_numerator_upper": 1.0809814061740684e-08,
+          "minimum_center_distance": 0.00157078105292908,
+          "ordered_Weyl_gap_lower": -0.011668893176594213,
+          "selected_graph_derivative_upper": 0.13118260006857516
         },
         {
-          "D4_coupling_change_upper": 4.754573650225279e-08,
+          "D4_coupling_change_upper": 1.176784729588679e-08,
           "branches": [
             17,
             31,
             32
           ],
-          "center_D3_coupling_l2_norm": 3.2917939979238543e-09,
-          "consumed_gap_lower": 1.3158438398559974e-07,
-          "coupling_numerator_upper": 5.0837530505260405e-08,
-          "minimum_center_distance": 0.016332075597238878,
-          "ordered_Weyl_gap_lower": -0.011995140989356706,
-          "selected_graph_derivative_upper": 0.7726985371745586
+          "center_D3_coupling_l2_norm": 1.6435243222771332e-09,
+          "consumed_gap_lower": 0.003088988304004189,
+          "coupling_numerator_upper": 1.3411371619505064e-08,
+          "minimum_center_distance": 0.016328662533527483,
+          "ordered_Weyl_gap_lower": 0.003088988304004189,
+          "selected_graph_derivative_upper": 8.683342441576312e-06
         },
         {
-          "D4_coupling_change_upper": 7.772318540156686e-08,
+          "D4_coupling_change_upper": 1.9281410933982965e-08,
           "branches": [
             15,
             16,
@@ -315015,15 +315051,15 @@
             34,
             35
           ],
-          "center_D3_coupling_l2_norm": 9.669657356617029e-09,
-          "consumed_gap_lower": 0.042812203388173736,
-          "coupling_numerator_upper": 8.739284276692318e-08,
-          "minimum_center_distance": 0.07113941997476932,
-          "ordered_Weyl_gap_lower": 0.042812203388173736,
-          "selected_graph_derivative_upper": 4.082613640941616e-06
+          "center_D3_coupling_l2_norm": 4.837889160787808e-09,
+          "consumed_gap_lower": 0.057900879452420465,
+          "coupling_numerator_upper": 2.4119300097182706e-08,
+          "minimum_center_distance": 0.07114055368194376,
+          "ordered_Weyl_gap_lower": 0.057900879452420465,
+          "selected_graph_derivative_upper": 8.331237911304771e-07
         },
         {
-          "D4_coupling_change_upper": 2.8049758581317167e-07,
+          "D4_coupling_change_upper": 6.951409576502332e-08,
           "branches": [
             14,
             36,
@@ -315033,15 +315069,15 @@
             40,
             41
           ],
-          "center_D3_coupling_l2_norm": 3.13237643395872e-08,
-          "consumed_gap_lower": 0.5316200706350752,
-          "coupling_numerator_upper": 3.1182135018394106e-07,
-          "minimum_center_distance": 0.5599472872216708,
-          "ordered_Weyl_gap_lower": 0.5316200706350752,
-          "selected_graph_derivative_upper": 1.17309848682959e-06
+          "center_D3_coupling_l2_norm": 1.565837077724006e-08,
+          "consumed_gap_lower": 0.5468426659711965,
+          "coupling_numerator_upper": 8.517246655078065e-08,
+          "minimum_center_distance": 0.5600823402007198,
+          "ordered_Weyl_gap_lower": 0.5468426659711965,
+          "selected_graph_derivative_upper": 3.115062955376059e-07
         },
         {
-          "D4_coupling_change_upper": 2.5973373773285345e-07,
+          "D4_coupling_change_upper": 6.43451587165202e-08,
           "branches": [
             10,
             11,
@@ -315051,15 +315087,15 @@
             43,
             44
           ],
-          "center_D3_coupling_l2_norm": 1.0464819126937304e-07,
-          "consumed_gap_lower": 2.4633143440325775,
-          "coupling_numerator_upper": 3.643819290386647e-07,
-          "minimum_center_distance": 2.4916415606191733,
-          "ordered_Weyl_gap_lower": 2.4633143440325775,
-          "selected_graph_derivative_upper": 2.9584687797383605e-07
+          "center_D3_coupling_l2_norm": 5.236170178483762e-08,
+          "consumed_gap_lower": 2.4784070024794684,
+          "coupling_numerator_upper": 1.167068605130285e-07,
+          "minimum_center_distance": 2.4916466767089913,
+          "ordered_Weyl_gap_lower": 2.4784070024794684,
+          "selected_graph_derivative_upper": 9.41789305856079e-08
         },
         {
-          "D4_coupling_change_upper": 9.684735380656964e-08,
+          "D4_coupling_change_upper": 2.3980673053025357e-08,
           "branches": [
             9,
             45,
@@ -315068,15 +315104,15 @@
             48,
             49
           ],
-          "center_D3_coupling_l2_norm": 5.604309972150879e-08,
-          "consumed_gap_lower": 11.41110058198304,
-          "coupling_numerator_upper": 1.5289045354336752e-07,
-          "minimum_center_distance": 11.439427798569636,
-          "ordered_Weyl_gap_lower": 11.41110058198304,
-          "selected_graph_derivative_upper": 2.6796793606403743e-08
+          "center_D3_coupling_l2_norm": 2.7923433385610046e-08,
+          "consumed_gap_lower": 11.42607510710134,
+          "coupling_numerator_upper": 5.190410644382582e-08,
+          "minimum_center_distance": 11.439314781330864,
+          "ordered_Weyl_gap_lower": 11.42607510710134,
+          "selected_graph_derivative_upper": 9.085203092487584e-09
         },
         {
-          "D4_coupling_change_upper": 8.959096392221356e-08,
+          "D4_coupling_change_upper": 2.2159470474391116e-08,
           "branches": [
             8,
             50,
@@ -315086,15 +315122,15 @@
             54,
             55
           ],
-          "center_D3_coupling_l2_norm": 1.0551890246255758e-07,
-          "consumed_gap_lower": 49.541562880353695,
-          "coupling_numerator_upper": 1.9510986640428215e-07,
-          "minimum_center_distance": 49.569890096940284,
-          "ordered_Weyl_gap_lower": 49.541562880353695,
-          "selected_graph_derivative_upper": 7.876613295183965e-09
+          "center_D3_coupling_l2_norm": 5.2211746069263555e-08,
+          "consumed_gap_lower": 49.55575072542518,
+          "coupling_numerator_upper": 7.43712165510918e-08,
+          "minimum_center_distance": 49.5689903996547,
+          "ordered_Weyl_gap_lower": 49.55575072542518,
+          "selected_graph_derivative_upper": 3.0015170982112427e-09
         },
         {
-          "D4_coupling_change_upper": 1.1455745343337006e-07,
+          "D4_coupling_change_upper": 2.831827620283836e-08,
           "branches": [
             2,
             3,
@@ -315107,138 +315143,369 @@
             58,
             59
           ],
-          "center_D3_coupling_l2_norm": 4.860019651969974e-07,
-          "consumed_gap_lower": 247.32393984699758,
-          "coupling_numerator_upper": 6.005594186904235e-07,
-          "minimum_center_distance": 247.35226706358418,
-          "ordered_Weyl_gap_lower": 247.32393984699758,
-          "selected_graph_derivative_upper": 4.856460067084526e-09
+          "center_D3_coupling_l2_norm": 2.414134571807297e-07,
+          "consumed_gap_lower": 247.33635783943134,
+          "coupling_numerator_upper": 2.697317334105413e-07,
+          "minimum_center_distance": 247.34959751366085,
+          "ordered_Weyl_gap_lower": 247.33635783943134,
+          "selected_graph_derivative_upper": 2.181092466903892e-09
         },
         {
-          "D4_coupling_change_upper": 7.126891420071828e-08,
+          "D4_coupling_change_upper": 1.761550031059478e-08,
           "branches": [
             0,
             1,
             60
           ],
-          "center_D3_coupling_l2_norm": 6.412458330392177e-08,
-          "consumed_gap_lower": 999.1667090454481,
-          "coupling_numerator_upper": 1.3539349751817942e-07,
-          "minimum_center_distance": 999.1950362620347,
-          "ordered_Weyl_gap_lower": 999.1667090454481,
-          "selected_graph_derivative_upper": 2.7101282760124526e-10
+          "center_D3_coupling_l2_norm": 3.1959076046712656e-08,
+          "consumed_gap_lower": 999.1681690111469,
+          "coupling_numerator_upper": 4.95745763622649e-08,
+          "minimum_center_distance": 999.1814086853765,
+          "ordered_Weyl_gap_lower": 999.1681690111469,
+          "selected_graph_derivative_upper": 9.923169673486525e-11
+        }
+      ],
+      "interval": 182,
+      "selected_branch": 24,
+      "selected_graph_derivative_l2_upper": 0.1408302401620659,
+      "selected_line_shift_upper": 8.641739195116073e-12,
+      "selected_projector_motion_upper": 0.1408302401620659,
+      "spectral_distance_bands": 14,
+      "subdivisions": 8,
+      "subspan": 7
+    },
+    {
+      "ambient_D3_Hessian_shift_upper": 0.012453082001256008,
+      "ambient_D4_Hessian_remainder_upper": 0.0008404285129236108,
+      "ambient_Hessian_shift_upper": 0.013293510515508972,
+      "certified_global_gap_lower": 1.6472648864049586e-07,
+      "graph_Neumann_closed": true,
+      "groups": [
+        {
+          "D4_coupling_change_upper": 5.557832280748144e-11,
+          "branches": [
+            25
+          ],
+          "center_D3_coupling_l2_norm": 1.3903247367715059e-12,
+          "consumed_gap_lower": 1.6472648864049586e-07,
+          "coupling_numerator_upper": 5.6968647549949814e-11,
+          "minimum_center_distance": 1.7386774853694487e-07,
+          "ordered_Weyl_gap_lower": -0.013293336656459747,
+          "selected_graph_derivative_upper": 0.0006916756136285623
+        },
+        {
+          "D4_coupling_change_upper": 4.182815949394774e-10,
+          "branches": [
+            26,
+            27
+          ],
+          "center_D3_coupling_l2_norm": 3.9911570451850747e-11,
+          "consumed_gap_lower": 1.6472648864049586e-07,
+          "coupling_numerator_upper": 4.5819316543714756e-10,
+          "minimum_center_distance": 1.0728749560928864e-06,
+          "ordered_Weyl_gap_lower": -0.013292437649252191,
+          "selected_graph_derivative_upper": 0.005563078157793331
+        },
+        {
+          "D4_coupling_change_upper": 9.329018739976665e-10,
+          "branches": [
+            22,
+            23
+          ],
+          "center_D3_coupling_l2_norm": 4.1059998236658593e-11,
+          "consumed_gap_lower": 1.6472648864049586e-07,
+          "coupling_numerator_upper": 9.739618723317215e-10,
+          "minimum_center_distance": 8.643948082321653e-06,
+          "ordered_Weyl_gap_lower": -0.013284866576125962,
+          "selected_graph_derivative_upper": 0.01182520043336469
+        },
+        {
+          "D4_coupling_change_upper": 1.3584599036318623e-09,
+          "branches": [
+            28,
+            29
+          ],
+          "center_D3_coupling_l2_norm": 2.7647568025422186e-10,
+          "consumed_gap_lower": 1.6472648864049586e-07,
+          "coupling_numerator_upper": 1.6349355840495778e-09,
+          "minimum_center_distance": 5.4009299360257785e-05,
+          "ordered_Weyl_gap_lower": -0.013239501224848026,
+          "selected_graph_derivative_upper": 0.019850305772998112
+        },
+        {
+          "D4_coupling_change_upper": 3.258545555044392e-09,
+          "branches": [
+            20,
+            21
+          ],
+          "center_D3_coupling_l2_norm": 5.044138799117218e-10,
+          "consumed_gap_lower": 1.6472648864049586e-07,
+          "coupling_numerator_upper": 3.762959435332411e-09,
+          "minimum_center_distance": 0.0003171908220116639,
+          "ordered_Weyl_gap_lower": -0.01297631970219662,
+          "selected_graph_derivative_upper": 0.045687362934337845
+        },
+        {
+          "D4_coupling_change_upper": 9.629418665979172e-09,
+          "branches": [
+            18,
+            19,
+            30
+          ],
+          "center_D3_coupling_l2_norm": 1.232820452011901e-09,
+          "consumed_gap_lower": 1.6472648864049586e-07,
+          "coupling_numerator_upper": 1.0862239119077298e-08,
+          "minimum_center_distance": 0.0015720030915693946,
+          "ordered_Weyl_gap_lower": -0.011721507432638889,
+          "selected_graph_derivative_upper": 0.1318821181682517
+        },
+        {
+          "D4_coupling_change_upper": 1.184573943383117e-08,
+          "branches": [
+            17,
+            31,
+            32
+          ],
+          "center_D3_coupling_l2_norm": 1.6450803027695793e-09,
+          "consumed_gap_lower": 0.0030374262090210966,
+          "coupling_numerator_upper": 1.3490819737949832e-08,
+          "minimum_center_distance": 0.01633093673322938,
+          "ordered_Weyl_gap_lower": 0.0030374262090210966,
+          "selected_graph_derivative_upper": 8.88306007186706e-06
+        },
+        {
+          "D4_coupling_change_upper": 1.9379128983496333e-08,
+          "branches": [
+            15,
+            16,
+            33,
+            34,
+            35
+          ],
+          "center_D3_coupling_l2_norm": 4.835814230298459e-09,
+          "consumed_gap_lower": 0.05784628866897382,
+          "coupling_numerator_upper": 2.421494321621629e-08,
+          "minimum_center_distance": 0.0711397991931821,
+          "ordered_Weyl_gap_lower": 0.05784628866897382,
+          "selected_graph_derivative_upper": 8.37216830182767e-07
+        },
+        {
+          "D4_coupling_change_upper": 6.991408707337534e-08,
+          "branches": [
+            14,
+            36,
+            37,
+            38,
+            39,
+            40,
+            41
+          ],
+          "center_D3_coupling_l2_norm": 1.566049301671198e-08,
+          "consumed_gap_lower": 0.5466988409907758,
+          "coupling_numerator_upper": 8.557458009864479e-08,
+          "minimum_center_distance": 0.559992351514984,
+          "ordered_Weyl_gap_lower": 0.5466988409907758,
+          "selected_graph_derivative_upper": 3.1305930684658656e-07
+        },
+        {
+          "D4_coupling_change_upper": 6.473119568054192e-08,
+          "branches": [
+            10,
+            11,
+            12,
+            13,
+            42,
+            43,
+            44
+          ],
+          "center_D3_coupling_l2_norm": 5.233602973170865e-08,
+          "consumed_gap_lower": 2.4783497405088584,
+          "coupling_numerator_upper": 1.170672254239573e-07,
+          "minimum_center_distance": 2.4916432510330666,
+          "ordered_Weyl_gap_lower": 2.4783497405088584,
+          "selected_graph_derivative_upper": 9.447191695521361e-08
+        },
+        {
+          "D4_coupling_change_upper": 2.4132449968272798e-08,
+          "branches": [
+            9,
+            45,
+            46,
+            47,
+            48,
+            49
+          ],
+          "center_D3_coupling_l2_norm": 2.798831640918134e-08,
+          "consumed_gap_lower": 11.426096552767257,
+          "coupling_numerator_upper": 5.2120766382666224e-08,
+          "minimum_center_distance": 11.439390063291464,
+          "ordered_Weyl_gap_lower": 11.426096552767257,
+          "selected_graph_derivative_upper": 9.123109742190182e-09
+        },
+        {
+          "D4_coupling_change_upper": 2.231612486269617e-08,
+          "branches": [
+            8,
+            50,
+            51,
+            52,
+            53,
+            54,
+            55
+          ],
+          "center_D3_coupling_l2_norm": 5.257551649680711e-08,
+          "consumed_gap_lower": 49.55629589481746,
+          "coupling_numerator_upper": 7.489164136699246e-08,
+          "minimum_center_distance": 49.56958940534167,
+          "ordered_Weyl_gap_lower": 49.55629589481746,
+          "selected_graph_derivative_upper": 3.0224874568284156e-09
+        },
+        {
+          "D4_coupling_change_upper": 2.852953588877614e-08,
+          "branches": [
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            56,
+            57,
+            58,
+            59
+          ],
+          "center_D3_coupling_l2_norm": 2.424674341469048e-07,
+          "consumed_gap_lower": 247.33808108065165,
+          "coupling_numerator_upper": 2.709969700627807e-07,
+          "minimum_center_distance": 247.35137459117584,
+          "ordered_Weyl_gap_lower": 247.33808108065165,
+          "selected_graph_derivative_upper": 2.1913080986628515e-09
+        },
+        {
+          "D4_coupling_change_upper": 1.774831413095245e-08,
+          "branches": [
+            0,
+            1,
+            60
+          ],
+          "center_D3_coupling_l2_norm": 3.202736632377392e-08,
+          "consumed_gap_lower": 999.1771876585639,
+          "coupling_numerator_upper": 4.9775680459703944e-08,
+          "minimum_center_distance": 999.1904811690881,
+          "ordered_Weyl_gap_lower": 999.1771876585639,
+          "selected_graph_derivative_upper": 9.963334047152151e-11
         }
       ],
       "interval": 183,
       "selected_branch": 24,
-      "selected_graph_derivative_l2_upper": 1.022471389570207,
-      "selected_line_shift_upper": 4.279235908600949e-11,
-      "selected_projector_motion_upper": 1.022471389570207,
+      "selected_graph_derivative_l2_upper": 0.14158221839793095,
+      "selected_line_shift_upper": 8.699311593947997e-12,
+      "selected_projector_motion_upper": 0.14158221839793095,
       "spectral_distance_bands": 14,
-      "subdivisions": 4,
+      "subdivisions": 8,
       "subspan": 0
     },
     {
-      "ambient_D3_Hessian_shift_upper": 0.025155968629543907,
-      "ambient_D4_Hessian_remainder_upper": 0.003407708092036824,
-      "ambient_Hessian_shift_upper": 0.028563676724437104,
-      "certified_global_gap_lower": 1.310255975992617e-07,
-      "graph_Neumann_closed": false,
+      "ambient_D3_Hessian_shift_upper": 0.012502997795511641,
+      "ambient_D4_Hessian_remainder_upper": 0.0008449809694368644,
+      "ambient_Hessian_shift_upper": 0.013347978766283306,
+      "certified_global_gap_lower": 1.6464674384382597e-07,
+      "graph_Neumann_closed": true,
       "groups": [
         {
-          "D4_coupling_change_upper": 2.2633038480586124e-10,
+          "D4_coupling_change_upper": 5.597598325162957e-11,
           "branches": [
             25
           ],
-          "center_D3_coupling_l2_norm": 2.759091348449728e-12,
-          "consumed_gap_lower": 1.310255975992617e-07,
-          "coupling_numerator_upper": 2.2908947617721995e-10,
-          "minimum_center_distance": 1.737767302461816e-07,
-          "ordered_Weyl_gap_lower": -0.028563502991205483,
-          "selected_graph_derivative_upper": 0.0034968659620357996
+          "center_D3_coupling_l2_norm": 1.3860187875510642e-12,
+          "consumed_gap_lower": 1.6464674384382597e-07,
+          "coupling_numerator_upper": 5.736200204491684e-11,
+          "minimum_center_distance": 1.7383139536969488e-07,
+          "ordered_Weyl_gap_lower": -0.013347804943645642,
+          "selected_graph_derivative_upper": 0.0006967887819884637
         },
         {
-          "D4_coupling_change_upper": 1.698468069176505e-09,
+          "D4_coupling_change_upper": 4.2078819737510414e-10,
           "branches": [
             26,
             27
           ],
-          "center_D3_coupling_l2_norm": 8.01463858512381e-11,
-          "consumed_gap_lower": 1.310255975992617e-07,
-          "coupling_numerator_upper": 1.7786144552056047e-09,
-          "minimum_center_distance": 1.0724964260834074e-06,
-          "ordered_Weyl_gap_lower": -0.028562604271509643,
-          "selected_graph_derivative_upper": 0.027149114187951448
+          "center_D3_coupling_l2_norm": 3.997611174941904e-11,
+          "consumed_gap_lower": 1.6464674384382597e-07,
+          "coupling_numerator_upper": 4.607643091705997e-10,
+          "minimum_center_distance": 1.0727236294475175e-06,
+          "ordered_Weyl_gap_lower": -0.013346906051411565,
+          "selected_graph_derivative_upper": 0.005597004817219217
         },
         {
-          "D4_coupling_change_upper": 3.788626398886484e-09,
+          "D4_coupling_change_upper": 9.385425610115782e-10,
           "branches": [
             22,
             23
           ],
-          "center_D3_coupling_l2_norm": 8.202701324218321e-11,
-          "consumed_gap_lower": 1.310255975992617e-07,
-          "coupling_numerator_upper": 3.870653412515733e-09,
-          "minimum_center_distance": 8.644536561534358e-06,
-          "ordered_Weyl_gap_lower": -0.028555032231374195,
-          "selected_graph_derivative_upper": 0.059082400444241276
+          "center_D3_coupling_l2_norm": 4.104130189839473e-11,
+          "consumed_gap_lower": 1.6464674384382597e-07,
+          "coupling_numerator_upper": 9.795838630079315e-10,
+          "minimum_center_distance": 8.644184567682046e-06,
+          "ordered_Weyl_gap_lower": -0.01333933459047333,
+          "selected_graph_derivative_upper": 0.011899219386143033
         },
         {
-          "D4_coupling_change_upper": 5.500349525229036e-09,
+          "D4_coupling_change_upper": 1.3650350069525103e-09,
           "branches": [
             28,
             29
           ],
-          "center_D3_coupling_l2_norm": 5.525616362915643e-10,
-          "consumed_gap_lower": 1.310255975992617e-07,
-          "coupling_numerator_upper": 6.052911162125892e-09,
-          "minimum_center_distance": 5.409937510834214e-05,
-          "ordered_Weyl_gap_lower": -0.028509577392827386,
-          "selected_graph_derivative_upper": 0.0923928037518875
+          "center_D3_coupling_l2_norm": 2.7639803658039456e-10,
+          "consumed_gap_lower": 1.6464674384382597e-07,
+          "coupling_numerator_upper": 1.6414330436970483e-09,
+          "minimum_center_distance": 5.404533825705191e-05,
+          "ordered_Weyl_gap_lower": -0.01329393343678396,
+          "selected_graph_derivative_upper": 0.019938846108224974
         },
         {
-          "D4_coupling_change_upper": 1.322117674803984e-08,
+          "D4_coupling_change_upper": 3.277052292417547e-09,
           "branches": [
             20,
             21
           ],
-          "center_D3_coupling_l2_norm": 1.0115000305245034e-09,
-          "consumed_gap_lower": 1.310255975992617e-07,
-          "coupling_numerator_upper": 1.4232676779987614e-08,
-          "minimum_center_distance": 0.0003173461676331137,
-          "ordered_Weyl_gap_lower": -0.028246330600302613,
-          "selected_graph_derivative_upper": 0.21725032424490287
+          "center_D3_coupling_l2_norm": 5.049470868771508e-10,
+          "consumed_gap_lower": 1.6464674384382597e-07,
+          "coupling_numerator_upper": 3.7819993796728986e-09,
+          "minimum_center_distance": 0.0003172527949546234,
+          "ordered_Weyl_gap_lower": -0.013030725980086389,
+          "selected_graph_derivative_upper": 0.045940773461496165
         },
         {
-          "D4_coupling_change_upper": 3.907233420471502e-08,
+          "D4_coupling_change_upper": 9.68430644535757e-09,
           "branches": [
             18,
             19,
             30
           ],
-          "center_D3_coupling_l2_norm": 2.4573661116363593e-09,
-          "consumed_gap_lower": 1.310255975992617e-07,
-          "coupling_numerator_upper": 4.1529700320504356e-08,
-          "minimum_center_distance": 0.0015750568068917607,
-          "ordered_Weyl_gap_lower": -0.02698861996104397,
-          "selected_graph_derivative_upper": 0.6339173579146697
+          "center_D3_coupling_l2_norm": 1.231170547026001e-09,
+          "consumed_gap_lower": 1.6464674384382597e-07,
+          "coupling_numerator_upper": 1.091547699347512e-08,
+          "minimum_center_distance": 0.0015732248269046938,
+          "ordered_Weyl_gap_lower": -0.011774753948136318,
+          "selected_graph_derivative_upper": 0.13259268588901385
         },
         {
-          "D4_coupling_change_upper": 4.818156943726845e-08,
+          "D4_coupling_change_upper": 1.192477901006556e-08,
           "branches": [
             17,
             31,
             32
           ],
-          "center_D3_coupling_l2_norm": 3.2983068962248405e-09,
-          "consumed_gap_lower": 1.310255975992617e-07,
-          "coupling_numerator_upper": 5.1479876338641286e-08,
-          "minimum_center_distance": 0.016336639140561715,
-          "ordered_Weyl_gap_lower": -0.012227037627374013,
-          "selected_graph_derivative_upper": 0.7857987643183909
+          "center_D3_coupling_l2_norm": 1.6467089591347032e-09,
+          "consumed_gap_lower": 0.002985235928748371,
+          "coupling_numerator_upper": 1.3571487970557414e-08,
+          "minimum_center_distance": 0.016333214703789383,
+          "ordered_Weyl_gap_lower": 0.002985235928748371,
+          "selected_graph_derivative_upper": 9.092405622764112e-06
         },
         {
-          "D4_coupling_change_upper": 7.851999613492499e-08,
+          "D4_coupling_change_upper": 1.9478280715825387e-08,
           "branches": [
             15,
             16,
@@ -315246,15 +315513,15 @@
             34,
             35
           ],
-          "center_D3_coupling_l2_norm": 9.661788406171308e-09,
-          "consumed_gap_lower": 0.04257421819564339,
-          "coupling_numerator_upper": 8.81817845499145e-08,
-          "minimum_center_distance": 0.07113789496357911,
-          "ordered_Weyl_gap_lower": 0.04257421819564339,
-          "selected_graph_derivative_upper": 4.142496952193304e-06
+          "center_D3_coupling_l2_norm": 4.8338385481143015e-09,
+          "consumed_gap_lower": 0.05779106192073185,
+          "coupling_numerator_upper": 2.4312119266370906e-08,
+          "minimum_center_distance": 0.07113904069577286,
+          "ordered_Weyl_gap_lower": 0.05779106192073185,
+          "selected_graph_derivative_upper": 8.413799110370886e-07
         },
         {
-          "D4_coupling_change_upper": 2.8375842134066324e-07,
+          "D4_coupling_change_upper": 7.031966481357312e-08,
           "branches": [
             14,
             36,
@@ -315264,15 +315531,15 @@
             40,
             41
           ],
-          "center_D3_coupling_l2_norm": 3.1334822302281374e-08,
-          "consumed_gap_lower": 0.5312030635408354,
-          "coupling_numerator_upper": 3.1509324367445396e-07,
-          "minimum_center_distance": 0.559766740308771,
-          "ordered_Weyl_gap_lower": 0.5312030635408354,
-          "selected_graph_derivative_upper": 1.1863382022146077e-06
+          "center_D3_coupling_l2_norm": 1.5663233465975066e-08,
+          "consumed_gap_lower": 0.5465542421906968,
+          "coupling_numerator_upper": 8.598289828814648e-08,
+          "minimum_center_distance": 0.5599022209657378,
+          "ordered_Weyl_gap_lower": 0.5465542421906968,
+          "selected_graph_derivative_upper": 3.146362855116024e-07
         },
         {
-          "D4_coupling_change_upper": 2.6288386013339997e-07,
+          "D4_coupling_change_upper": 6.512293184636588e-08,
           "branches": [
             10,
             11,
@@ -315282,15 +315549,15 @@
             43,
             44
           ],
-          "center_D3_coupling_l2_norm": 1.0455162584098866e-07,
-          "consumed_gap_lower": 2.4630712108368416,
-          "coupling_numerator_upper": 3.6743548601113223e-07,
-          "minimum_center_distance": 2.491634887604777,
-          "ordered_Weyl_gap_lower": 2.4630712108368416,
-          "selected_graph_derivative_upper": 2.9835555255671044e-07
+          "center_D3_coupling_l2_norm": 5.2312015294285637e-08,
+          "consumed_gap_lower": 2.4782918911976055,
+          "coupling_numerator_upper": 1.1743494715239502e-07,
+          "minimum_center_distance": 2.4916398699726465,
+          "ordered_Weyl_gap_lower": 2.4782918911976055,
+          "selected_graph_derivative_upper": 9.47708763291716e-08
         },
         {
-          "D4_coupling_change_upper": 9.808581496649435e-08,
+          "D4_coupling_change_upper": 2.4286432631716013e-08,
           "branches": [
             9,
             45,
@@ -315299,15 +315566,15 @@
             48,
             49
           ],
-          "center_D3_coupling_l2_norm": 5.6311278147633955e-08,
-          "consumed_gap_lower": 11.411015435654477,
-          "coupling_numerator_upper": 1.5439709312956806e-07,
-          "minimum_center_distance": 11.439579112422413,
-          "ordered_Weyl_gap_lower": 11.411015435654477,
-          "selected_graph_derivative_upper": 2.706106113266376e-08
+          "center_D3_coupling_l2_norm": 2.805480589639435e-08,
+          "consumed_gap_lower": 11.426117553176002,
+          "coupling_numerator_upper": 5.234123853334449e-08,
+          "minimum_center_distance": 11.439465531951043,
+          "ordered_Weyl_gap_lower": 11.426117553176002,
+          "selected_graph_derivative_upper": 9.161683886934957e-09
         },
         {
-          "D4_coupling_change_upper": 9.087004053309182e-08,
+          "D4_coupling_change_upper": 2.2475093643068824e-08,
           "branches": [
             8,
             50,
@@ -315317,15 +315584,15 @@
             54,
             55
           ],
-          "center_D3_coupling_l2_norm": 1.069979201453888e-07,
-          "consumed_gap_lower": 49.542533974308625,
-          "coupling_numerator_upper": 1.9786796069826743e-07,
-          "minimum_center_distance": 49.57109765107656,
-          "ordered_Weyl_gap_lower": 49.542533974308625,
-          "selected_graph_derivative_upper": 7.987801383783198e-09
+          "center_D3_coupling_l2_norm": 5.2943413640478254e-08,
+          "consumed_gap_lower": 49.55684281131316,
+          "coupling_numerator_upper": 7.541850729108894e-08,
+          "minimum_center_distance": 49.570190790088205,
+          "ordered_Weyl_gap_lower": 49.55684281131316,
+          "selected_graph_derivative_upper": 3.0437171950515693e-09
         },
         {
-          "D4_coupling_change_upper": 1.1628427899266263e-07,
+          "D4_coupling_change_upper": 2.8744125640020874e-08,
           "branches": [
             2,
             3,
@@ -315338,138 +315605,138 @@
             58,
             59
           ],
-          "center_D3_coupling_l2_norm": 4.902818039869251e-07,
-          "consumed_gap_lower": 247.3272891006125,
-          "coupling_numerator_upper": 6.065660830402446e-07,
-          "minimum_center_distance": 247.35585277738042,
-          "ordered_Weyl_gap_lower": 247.3272891006125,
-          "selected_graph_derivative_upper": 4.904966898773154e-09
+          "center_D3_coupling_l2_norm": 2.4353418895496015e-07,
+          "consumed_gap_lower": 247.33981155531296,
+          "coupling_numerator_upper": 2.722783146222089e-07,
+          "minimum_center_distance": 247.353159534088,
+          "ordered_Weyl_gap_lower": 247.33981155531296,
+          "selected_graph_derivative_upper": 2.201653772898964e-09
         },
         {
-          "D4_coupling_change_upper": 7.23550061997793e-08,
+          "D4_coupling_change_upper": 1.7883284985412356e-08,
           "branches": [
             0,
             1,
             60
           ],
-          "center_D3_coupling_l2_norm": 6.440529764116441e-08,
-          "consumed_gap_lower": 999.1847688899977,
-          "coupling_numerator_upper": 1.3676030385461977e-07,
-          "minimum_center_distance": 999.2133325667656,
-          "ordered_Weyl_gap_lower": 999.1847688899977,
-          "selected_graph_derivative_upper": 2.737437721758388e-10
+          "center_D3_coupling_l2_norm": 3.209718459297822e-08,
+          "consumed_gap_lower": 999.18624339624,
+          "coupling_numerator_upper": 4.998046958338863e-08,
+          "minimum_center_distance": 999.1995913750151,
+          "ordered_Weyl_gap_lower": 999.18624339624,
+          "selected_graph_derivative_upper": 1.0004234929917124e-10
         }
       ],
       "interval": 183,
       "selected_branch": 24,
-      "selected_graph_derivative_l2_upper": 1.0388960876762385,
-      "selected_line_shift_upper": 4.349862408080515e-11,
-      "selected_projector_motion_upper": 1.0388960876762385,
+      "selected_graph_derivative_l2_upper": 0.14234583270577766,
+      "selected_line_shift_upper": 8.75770590542231e-12,
+      "selected_projector_motion_upper": 0.14234583270577766,
       "spectral_distance_bands": 14,
-      "subdivisions": 4,
+      "subdivisions": 8,
       "subspan": 1
     },
     {
-      "ambient_D3_Hessian_shift_upper": 0.02535740666759876,
-      "ambient_D4_Hessian_remainder_upper": 0.003444814503312169,
-      "ambient_Hessian_shift_upper": 0.028802221173791154,
-      "certified_global_gap_lower": 1.304584780247392e-07,
-      "graph_Neumann_closed": false,
+      "ambient_D3_Hessian_shift_upper": 0.012552971112168737,
+      "ambient_D4_Hessian_remainder_upper": 0.0008495517383716454,
+      "ambient_Hessian_shift_upper": 0.013402522851880637,
+      "certified_global_gap_lower": 1.6456673974748956e-07,
+      "graph_Neumann_closed": true,
       "groups": [
         {
-          "D4_coupling_change_upper": 2.295829557281314e-10,
+          "D4_coupling_change_upper": 5.6375976408775973e-11,
           "branches": [
             25
           ],
-          "center_D3_coupling_l2_norm": 2.741549730019059e-12,
-          "consumed_gap_lower": 1.304584780247392e-07,
-          "coupling_numerator_upper": 2.3232450548138294e-10,
-          "minimum_center_distance": 1.7370384092711788e-07,
-          "ordered_Weyl_gap_lower": -0.02880204751417062,
-          "selected_graph_derivative_upper": 0.003561662055578467
+          "center_D3_coupling_l2_norm": 1.3816933150014548e-12,
+          "consumed_gap_lower": 1.6456673974748956e-07,
+          "coupling_numerator_upper": 5.7757669729553204e-11,
+          "minimum_center_distance": 1.737949448561771e-07,
+          "ordered_Weyl_gap_lower": -0.013402349065752306,
+          "selected_graph_derivative_upper": 0.0007019361242004561
         },
         {
-          "D4_coupling_change_upper": 1.7189295079746552e-09,
+          "D4_coupling_change_upper": 4.233075693446538e-10,
           "branches": [
             26,
             27
           ],
-          "center_D3_coupling_l2_norm": 8.04078927483472e-11,
-          "consumed_gap_lower": 1.304584780247392e-07,
-          "coupling_numerator_upper": 1.7993374009029362e-09,
-          "minimum_center_distance": 1.0721932711581539e-06,
-          "ordered_Weyl_gap_lower": -0.02880114902474039,
-          "selected_graph_derivative_upper": 0.02758482895594807
+          "center_D3_coupling_l2_norm": 4.0040814485095284e-11,
+          "consumed_gap_lower": 1.6456673974748956e-07,
+          "coupling_numerator_upper": 4.6334838387608396e-10,
+          "minimum_center_distance": 1.0725722067534126e-06,
+          "ordered_Weyl_gap_lower": -0.01340145028849041,
+          "selected_graph_derivative_upper": 0.005631130380699994
         },
         {
-          "D4_coupling_change_upper": 3.834690979639107e-09,
+          "D4_coupling_change_upper": 9.44212792694078e-10,
           "branches": [
             22,
             23
           ],
-          "center_D3_coupling_l2_norm": 8.195181772356203e-11,
-          "consumed_gap_lower": 1.304584780247392e-07,
-          "coupling_numerator_upper": 3.916642797754334e-09,
-          "minimum_center_distance": 8.645000807973457e-06,
-          "ordered_Weyl_gap_lower": -0.028793576217203572,
-          "selected_graph_derivative_upper": 0.06004428163577496
+          "center_D3_coupling_l2_norm": 4.102261071965765e-11,
+          "consumed_gap_lower": 1.6456673974748956e-07,
+          "coupling_numerator_upper": 9.852354035122595e-10,
+          "minimum_center_distance": 8.644419730063178e-06,
+          "ordered_Weyl_gap_lower": -0.0133938784409671,
+          "selected_graph_derivative_upper": 0.011973688062636762
         },
         {
-          "D4_coupling_change_upper": 5.553908941868023e-09,
+          "D4_coupling_change_upper": 1.3716375442853176e-09,
           "branches": [
             28,
             29
           ],
-          "center_D3_coupling_l2_norm": 5.522512138251136e-10,
-          "consumed_gap_lower": 1.304584780247392e-07,
-          "coupling_numerator_upper": 6.106160156303754e-09,
-          "minimum_center_distance": 5.417138534664546e-05,
-          "ordered_Weyl_gap_lower": -0.0287480498326649,
-          "selected_graph_derivative_upper": 0.09361078328319059
+          "center_D3_coupling_l2_norm": 2.763201682122976e-10,
+          "consumed_gap_lower": 1.6456673974748956e-07,
+          "coupling_numerator_upper": 1.6479577126624112e-09,
+          "minimum_center_distance": 5.40813660947495e-05,
+          "ordered_Weyl_gap_lower": -0.013348441494602414,
+          "selected_graph_derivative_upper": 0.02002783448655331
         },
         {
-          "D4_coupling_change_upper": 1.3372251050594497e-08,
+          "D4_coupling_change_upper": 3.295652277696493e-09,
           "branches": [
             20,
             21
           ],
-          "center_D3_coupling_l2_norm": 1.013656548463348e-09,
-          "consumed_gap_lower": 1.304584780247392e-07,
-          "coupling_numerator_upper": 1.4385907600496438e-08,
-          "minimum_center_distance": 0.000317471345236245,
-          "ordered_Weyl_gap_lower": -0.0284847498727753,
-          "selected_graph_derivative_upper": 0.2205438514959065
+          "center_D3_coupling_l2_norm": 5.054816916503929e-10,
+          "consumed_gap_lower": 1.6456673974748956e-07,
+          "coupling_numerator_upper": 3.801133969727e-09,
+          "minimum_center_distance": 0.00031731497306287037,
+          "ordered_Weyl_gap_lower": -0.013085207887634292,
+          "selected_graph_derivative_upper": 0.046195652608048955
         },
         {
-          "D4_coupling_change_upper": 3.952045719304012e-08,
+          "D4_coupling_change_upper": 9.739473912238237e-09,
           "branches": [
             18,
             19,
             30
           ],
-          "center_D3_coupling_l2_norm": 2.450734028048217e-09,
-          "consumed_gap_lower": 1.304584780247392e-07,
-          "coupling_numerator_upper": 4.197119122528547e-08,
-          "minimum_center_distance": 0.0015774984104953028,
-          "ordered_Weyl_gap_lower": -0.027224722807516245,
-          "selected_graph_derivative_upper": 0.6434413748338148
+          "center_D3_coupling_l2_norm": 1.2295163192303447e-09,
+          "consumed_gap_lower": 1.6456673974748956e-07,
+          "coupling_numerator_upper": 1.0968990232565483e-08,
+          "minimum_center_distance": 0.0015744462636421784,
+          "ordered_Weyl_gap_lower": -0.011828076597054983,
+          "selected_graph_derivative_upper": 0.13330749883595133
         },
         {
-          "D4_coupling_change_upper": 4.8827962925492835e-08,
+          "D4_coupling_change_upper": 1.2004275580892576e-08,
           "branches": [
             17,
             31,
             32
           ],
-          "center_D3_coupling_l2_norm": 3.304935304164592e-09,
-          "consumed_gap_lower": 1.304584780247392e-07,
-          "coupling_numerator_upper": 5.2132898234870724e-08,
-          "minimum_center_distance": 0.01634121790757159,
-          "ordered_Weyl_gap_lower": -0.012461003310439957,
-          "selected_graph_derivative_upper": 0.7992259150869125
+          "center_D3_coupling_l2_norm": 1.6483429964855878e-09,
+          "consumed_gap_lower": 0.002932973616653659,
+          "coupling_numerator_upper": 1.3652618578743426e-08,
+          "minimum_center_distance": 0.01633549647735082,
+          "ordered_Weyl_gap_lower": 0.002932973616653659,
+          "selected_graph_derivative_upper": 9.309745237794181e-06
         },
         {
-          "D4_coupling_change_upper": 7.932852936053255e-08,
+          "D4_coupling_change_upper": 1.9577903682366527e-08,
           "branches": [
             15,
             16,
@@ -315477,15 +315744,15 @@
             34,
             35
           ],
-          "center_D3_coupling_l2_norm": 9.65405012667198e-09,
-          "consumed_gap_lower": 0.04233413265888106,
-          "coupling_numerator_upper": 8.89825794961028e-08,
-          "minimum_center_distance": 0.0711363538768926,
-          "ordered_Weyl_gap_lower": 0.04233413265888106,
-          "selected_graph_derivative_upper": 4.203822018606251e-06
+          "center_D3_coupling_l2_norm": 4.8318757992988494e-09,
+          "consumed_gap_lower": 0.057735755329864996,
+          "coupling_numerator_upper": 2.4409779484106356e-08,
+          "minimum_center_distance": 0.07113827819056216,
+          "ordered_Weyl_gap_lower": 0.057735755329864996,
+          "selected_graph_derivative_upper": 8.455688973699416e-07
         },
         {
-          "D4_coupling_change_upper": 2.870698928343328e-07,
+          "D4_coupling_change_upper": 7.072734848155949e-08,
           "branches": [
             14,
             36,
@@ -315495,15 +315762,15 @@
             40,
             41
           ],
-          "center_D3_coupling_l2_norm": 3.134697772150054e-08,
-          "consumed_gap_lower": 0.5307834002257406,
-          "coupling_numerator_upper": 3.1841687058767515e-07,
-          "minimum_center_distance": 0.5595856214437521,
-          "ordered_Weyl_gap_lower": 0.5307834002257406,
-          "selected_graph_derivative_upper": 1.1997996564477907e-06
+          "center_D3_coupling_l2_norm": 1.5666042956745267e-08,
+          "consumed_gap_lower": 0.5464094245715264,
+          "coupling_numerator_upper": 8.639339144694411e-08,
+          "minimum_center_distance": 0.5598119474322235,
+          "ordered_Weyl_gap_lower": 0.5464094245715264,
+          "selected_graph_derivative_upper": 3.162221864065756e-07
         },
         {
-          "D4_coupling_change_upper": 2.6608448372800165e-07,
+          "D4_coupling_change_upper": 6.551678864355717e-08,
           "branches": [
             10,
             11,
@@ -315513,15 +315780,15 @@
             43,
             44
           ],
-          "center_D3_coupling_l2_norm": 1.0445647539931732e-07,
-          "consumed_gap_lower": 2.462826172009015,
-          "coupling_numerator_upper": 3.705409591643731e-07,
-          "minimum_center_distance": 2.4916283932270265,
-          "ordered_Weyl_gap_lower": 2.462826172009015,
-          "selected_graph_derivative_upper": 3.009071150962829e-07
+          "center_D3_coupling_l2_norm": 5.228800393234318e-08,
+          "consumed_gap_lower": 2.4782340105979137,
+          "coupling_numerator_upper": 1.1780479258768084e-07,
+          "minimum_center_distance": 2.491636533458611,
+          "ordered_Weyl_gap_lower": 2.4782340105979137,
+          "selected_graph_derivative_upper": 9.507156474786578e-08
         },
         {
-          "D4_coupling_change_upper": 9.934432169003283e-08,
+          "D4_coupling_change_upper": 2.4441273763019374e-08,
           "branches": [
             9,
             45,
@@ -315530,15 +315797,15 @@
             48,
             49
           ],
-          "center_D3_coupling_l2_norm": 5.658598381575343e-08,
-          "consumed_gap_lower": 11.410928960767562,
-          "coupling_numerator_upper": 1.5593030552137931e-07,
-          "minimum_center_distance": 11.439731181985573,
-          "ordered_Weyl_gap_lower": 11.410928960767562,
-          "selected_graph_derivative_upper": 2.732999321494043e-08
+          "center_D3_coupling_l2_norm": 2.812193312128884e-08,
+          "consumed_gap_lower": 11.426138665969097,
+          "coupling_numerator_upper": 5.256320688956454e-08,
+          "minimum_center_distance": 11.439541188829793,
+          "ordered_Weyl_gap_lower": 11.426138665969097,
+          "selected_graph_derivative_upper": 9.200519691113476e-09
         },
         {
-          "D4_coupling_change_upper": 9.217075036317187e-08,
+          "D4_coupling_change_upper": 2.2635013699117792e-08,
           "branches": [
             8,
             50,
@@ -315548,15 +315815,15 @@
             54,
             55
           ],
-          "center_D3_coupling_l2_norm": 1.0849793258124826e-07,
-          "consumed_gap_lower": 49.54351258122945,
-          "coupling_numerator_upper": 2.0066868296448703e-07,
-          "minimum_center_distance": 49.57231480244746,
-          "ordered_Weyl_gap_lower": 49.54351258122945,
-          "selected_graph_derivative_upper": 8.100704715094476e-09
+          "center_D3_coupling_l2_norm": 5.331336634435353e-08,
+          "consumed_gap_lower": 49.557392044043546,
+          "coupling_numerator_upper": 7.594838005106618e-08,
+          "minimum_center_distance": 49.57079456690425,
+          "ordered_Weyl_gap_lower": 49.557392044043546,
+          "selected_graph_derivative_upper": 3.0650676690638927e-09
         },
         {
-          "D4_coupling_change_upper": 1.1804058012053573e-07,
+          "D4_coupling_change_upper": 2.8960035911448172e-08,
           "branches": [
             2,
             3,
@@ -315569,36 +315836,729 @@
             58,
             59
           ],
-          "center_D3_coupling_l2_norm": 4.946094065478232e-07,
-          "consumed_gap_lower": 247.33066803250446,
-          "coupling_numerator_upper": 6.126499867296241e-07,
-          "minimum_center_distance": 247.3594702537225,
-          "ordered_Weyl_gap_lower": 247.33066803250446,
-          "selected_graph_derivative_upper": 4.954096405952974e-09
+          "center_D3_coupling_l2_norm": 2.4460493737284487e-07,
+          "consumed_gap_lower": 247.3415498655673,
+          "coupling_numerator_upper": 2.7356497331164964e-07,
+          "minimum_center_distance": 247.354952388428,
+          "ordered_Weyl_gap_lower": 247.3415498655673,
+          "selected_graph_derivative_upper": 2.2120422022720534e-09
         },
         {
-          "D4_coupling_change_upper": 7.345952546237117e-08,
+          "D4_coupling_change_upper": 1.8019086352090822e-08,
           "branches": [
             0,
             1,
             60
           ],
-          "center_D3_coupling_l2_norm": 6.469091640169276e-08,
-          "consumed_gap_lower": 999.2029789140569,
-          "coupling_numerator_upper": 1.3815044187787902e-07,
-          "minimum_center_distance": 999.2317811352749,
-          "ordered_Weyl_gap_lower": 999.2029789140569,
-          "selected_graph_derivative_upper": 2.7652127707192643e-10
+          "center_D3_coupling_l2_norm": 3.216745036420237e-08,
+          "consumed_gap_lower": 999.195336995947,
+          "coupling_numerator_upper": 5.018653672131185e-08,
+          "minimum_center_distance": 999.2087395188076,
+          "ordered_Weyl_gap_lower": 999.195336995947,
+          "selected_graph_derivative_upper": 1.0045390499362206e-10
         }
       ],
       "interval": 183,
       "selected_branch": 24,
-      "selected_graph_derivative_l2_upper": 1.0557274078087024,
-      "selected_line_shift_upper": 4.4220392416444464e-11,
-      "selected_projector_motion_upper": 1.0557274078087024,
+      "selected_graph_derivative_l2_upper": 0.1431139873006881,
+      "selected_line_shift_upper": 8.81652524744747e-12,
+      "selected_projector_motion_upper": 0.1431139873006881,
       "spectral_distance_bands": 14,
-      "subdivisions": 4,
+      "subdivisions": 8,
       "subspan": 2
+    },
+    {
+      "ambient_D3_Hessian_shift_upper": 0.012602994835373152,
+      "ambient_D4_Hessian_remainder_upper": 0.0008541401875665142,
+      "ambient_Hessian_shift_upper": 0.013457135024285381,
+      "certified_global_gap_lower": 1.6448658903608104e-07,
+      "graph_Neumann_closed": true,
+      "groups": [
+        {
+          "D4_coupling_change_upper": 5.677800560727595e-11,
+          "branches": [
+            25
+          ],
+          "center_D3_coupling_l2_norm": 1.3773757508823615e-12,
+          "consumed_gap_lower": 1.6448658903608104e-07,
+          "coupling_numerator_upper": 5.8155381363973853e-11,
+          "minimum_center_distance": 1.7375850512870135e-07,
+          "ordered_Weyl_gap_lower": -0.013456961274655956,
+          "selected_graph_derivative_upper": 0.000707113956348535
+        },
+        {
+          "D4_coupling_change_upper": 4.258376006990927e-10,
+          "branches": [
+            26,
+            27
+          ],
+          "center_D3_coupling_l2_norm": 4.010562585372177e-11,
+          "consumed_gap_lower": 1.6448658903608104e-07,
+          "coupling_numerator_upper": 4.659432265994089e-10,
+          "minimum_center_distance": 1.0724206844262358e-06,
+          "ordered_Weyl_gap_lower": -0.013456062612476657,
+          "selected_graph_derivative_upper": 0.005665425119172433
+        },
+        {
+          "D4_coupling_change_upper": 9.499077608505162e-10,
+          "branches": [
+            22,
+            23
+          ],
+          "center_D3_coupling_l2_norm": 4.1004248552652586e-11,
+          "consumed_gap_lower": 1.6448658903608104e-07,
+          "coupling_numerator_upper": 9.909120095022603e-10,
+          "minimum_center_distance": 8.644653346576858e-06,
+          "ordered_Weyl_gap_lower": -0.013448490379814508,
+          "selected_graph_derivative_upper": 0.012048544691798425
+        },
+        {
+          "D4_coupling_change_upper": 1.378262304436759e-09,
+          "branches": [
+            28,
+            29
+          ],
+          "center_D3_coupling_l2_norm": 2.762416879211059e-10,
+          "consumed_gap_lower": 1.6448658903608104e-07,
+          "coupling_numerator_upper": 1.6545039925233155e-09,
+          "minimum_center_distance": 5.4117382434977346e-05,
+          "ordered_Weyl_gap_lower": -0.013403017650726106,
+          "selected_graph_derivative_upper": 0.020117190129413428
+        },
+        {
+          "D4_coupling_change_upper": 3.3143300495939988e-09,
+          "branches": [
+            20,
+            21
+          ],
+          "center_D3_coupling_l2_norm": 5.060183231326538e-10,
+          "consumed_gap_lower": 1.6448658903608104e-07,
+          "coupling_numerator_upper": 3.820348373108688e-09,
+          "minimum_center_distance": 0.0003173773562191031,
+          "ordered_Weyl_gap_lower": -0.013139757676941982,
+          "selected_graph_derivative_upper": 0.04645179155186578
+        },
+        {
+          "D4_coupling_change_upper": 9.794871462894616e-09,
+          "branches": [
+            18,
+            19,
+            30
+          ],
+          "center_D3_coupling_l2_norm": 1.2278519503841862e-09,
+          "consumed_gap_lower": 1.6448658903608104e-07,
+          "coupling_numerator_upper": 1.1022723414381078e-08,
+          "minimum_center_distance": 0.0015756673856936875,
+          "ordered_Weyl_gap_lower": -0.011881467647467397,
+          "selected_graph_derivative_upper": 0.13402580088842936
+        },
+        {
+          "D4_coupling_change_upper": 1.2084162312985906e-08,
+          "branches": [
+            17,
+            31,
+            32
+          ],
+          "center_D3_coupling_l2_norm": 1.649971336046587e-09,
+          "consumed_gap_lower": 0.0028806470129166713,
+          "coupling_numerator_upper": 1.3734133650405909e-08,
+          "minimum_center_distance": 0.016337782046077755,
+          "ordered_Weyl_gap_lower": 0.0028806470129166713,
+          "selected_graph_derivative_upper": 9.535450605503683e-06
+        },
+        {
+          "D4_coupling_change_upper": 1.96779137982779e-08,
+          "branches": [
+            15,
+            16,
+            33,
+            34,
+            35
+          ],
+          "center_D3_coupling_l2_norm": 4.82991983146583e-09,
+          "consumed_gap_lower": 0.05768037664336167,
+          "coupling_numerator_upper": 2.4507833632194518e-08,
+          "minimum_center_distance": 0.07113751167652275,
+          "ordered_Weyl_gap_lower": 0.05768037664336167,
+          "selected_graph_derivative_upper": 8.497806380904022e-07
+        },
+        {
+          "D4_coupling_change_upper": 7.113679731155718e-08,
+          "branches": [
+            14,
+            36,
+            37,
+            38,
+            39,
+            40,
+            41
+          ],
+          "center_D3_coupling_l2_norm": 1.5668839649212295e-08,
+          "consumed_gap_lower": 0.5462643962412941,
+          "coupling_numerator_upper": 8.680563696945006e-08,
+          "minimum_center_distance": 0.5597215312744551,
+          "ordered_Weyl_gap_lower": 0.5462643962412941,
+          "selected_graph_derivative_upper": 3.1781546655948314e-07
+        },
+        {
+          "D4_coupling_change_upper": 6.591242787365464e-08,
+          "branches": [
+            10,
+            11,
+            12,
+            13,
+            42,
+            43,
+            44
+          ],
+          "center_D3_coupling_l2_norm": 5.2263762696133407e-08,
+          "consumed_gap_lower": 2.4781761064882932,
+          "coupling_numerator_upper": 1.1817619058160567e-07,
+          "minimum_center_distance": 2.491633241521454,
+          "ordered_Weyl_gap_lower": 2.4781761064882932,
+          "selected_graph_derivative_upper": 9.537352110208603e-08
+        },
+        {
+          "D4_coupling_change_upper": 2.4596844719999573e-08,
+          "branches": [
+            9,
+            45,
+            46,
+            47,
+            48,
+            49
+          ],
+          "center_D3_coupling_l2_norm": 2.81895388547521e-08,
+          "consumed_gap_lower": 11.426159899091358,
+          "coupling_numerator_upper": 5.2786383580030315e-08,
+          "minimum_center_distance": 11.43961703412452,
+          "ordered_Weyl_gap_lower": 11.426159899091358,
+          "selected_graph_derivative_upper": 9.239566757595734e-09
+        },
+        {
+          "D4_coupling_change_upper": 2.2795751708676406e-08,
+          "branches": [
+            8,
+            50,
+            51,
+            52,
+            53,
+            54,
+            55
+          ],
+          "center_D3_coupling_l2_norm": 5.3684950573717674e-08,
+          "consumed_gap_lower": 49.55794360179056,
+          "coupling_numerator_upper": 7.648070229004216e-08,
+          "minimum_center_distance": 49.57140073682372,
+          "ordered_Weyl_gap_lower": 49.55794360179056,
+          "selected_graph_derivative_upper": 3.0865163781705803e-09
+        },
+        {
+          "D4_coupling_change_upper": 2.917708636835194e-08,
+          "branches": [
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            56,
+            57,
+            58,
+            59
+          ],
+          "center_D3_coupling_l2_norm": 2.456780896883253e-07,
+          "consumed_gap_lower": 247.34329602946852,
+          "coupling_numerator_upper": 2.748551760841628e-07,
+          "minimum_center_distance": 247.35675316450167,
+          "ordered_Weyl_gap_lower": 247.34329602946852,
+          "selected_graph_derivative_upper": 2.222459072259651e-09
+        },
+        {
+          "D4_coupling_change_upper": 1.8155604360582554e-08,
+          "branches": [
+            0,
+            1,
+            60
+          ],
+          "center_D3_coupling_l2_norm": 3.223800419901236e-08,
+          "consumed_gap_lower": 999.2044685002066,
+          "coupling_numerator_upper": 5.039360856463428e-08,
+          "minimum_center_distance": 999.2179256352398,
+          "ordered_Weyl_gap_lower": 999.2044685002066,
+          "selected_graph_derivative_upper": 1.0086746038138485e-10
+        }
+      ],
+      "interval": 183,
+      "selected_branch": 24,
+      "selected_graph_derivative_l2_upper": 0.14388589283832567,
+      "selected_line_shift_upper": 8.875703137446772e-12,
+      "selected_projector_motion_upper": 0.14388589283832567,
+      "spectral_distance_bands": 14,
+      "subdivisions": 8,
+      "subspan": 3
+    },
+    {
+      "ambient_D3_Hessian_shift_upper": 0.012653299871336425,
+      "ambient_D4_Hessian_remainder_upper": 0.0008587715862482131,
+      "ambient_Hessian_shift_upper": 0.013512071458935846,
+      "certified_global_gap_lower": 1.6440602538631085e-07,
+      "graph_Neumann_closed": true,
+      "groups": [
+        {
+          "D4_coupling_change_upper": 5.7184154870057155e-11,
+          "branches": [
+            25
+          ],
+          "center_D3_coupling_l2_norm": 1.3729992161654221e-12,
+          "consumed_gap_lower": 1.6440602538631085e-07,
+          "coupling_numerator_upper": 5.855715409207831e-11,
+          "minimum_center_distance": 1.7372208088556966e-07,
+          "ordered_Weyl_gap_lower": -0.013511897745790513,
+          "selected_graph_derivative_upper": 0.0007123480293418705
+        },
+        {
+          "D4_coupling_change_upper": 4.2839251010541214e-10,
+          "branches": [
+            26,
+            27
+          ],
+          "center_D3_coupling_l2_norm": 4.017095048744712e-11,
+          "consumed_gap_lower": 1.6440602538631085e-07,
+          "coupling_numerator_upper": 4.685634606397157e-10,
+          "minimum_center_distance": 1.0722691315790612e-06,
+          "ordered_Weyl_gap_lower": -0.01351099919873982,
+          "selected_graph_derivative_upper": 0.005700076497629225
+        },
+        {
+          "D4_coupling_change_upper": 9.55659589023185e-10,
+          "branches": [
+            22,
+            23
+          ],
+          "center_D3_coupling_l2_norm": 4.0985506364906484e-11,
+          "consumed_gap_lower": 1.6440602538631085e-07,
+          "coupling_numerator_upper": 9.966450954877562e-10,
+          "minimum_center_distance": 8.644885551295568e-06,
+          "ordered_Weyl_gap_lower": -0.013503426582320103,
+          "selected_graph_derivative_upper": 0.012124191838414284
+        },
+        {
+          "D4_coupling_change_upper": 1.384949591954781e-09,
+          "branches": [
+            28,
+            29
+          ],
+          "center_D3_coupling_l2_norm": 2.761639445708294e-10,
+          "consumed_gap_lower": 1.6440602538631085e-07,
+          "coupling_numerator_upper": 1.6611135366917219e-09,
+          "minimum_center_distance": 5.4153387530438215e-05,
+          "ordered_Weyl_gap_lower": -0.01345791808034096,
+          "selected_graph_derivative_upper": 0.020207453260361403
+        },
+        {
+          "D4_coupling_change_upper": 3.3331939151912896e-09,
+          "branches": [
+            20,
+            21
+          ],
+          "center_D3_coupling_l2_norm": 5.065573249315905e-10,
+          "consumed_gap_lower": 1.6440602538631085e-07,
+          "coupling_numerator_upper": 3.839751240506856e-09,
+          "minimum_center_distance": 0.00031743994466911695,
+          "ordered_Weyl_gap_lower": -0.013194631523202282,
+          "selected_graph_derivative_upper": 0.04671059022159836
+        },
+        {
+          "D4_coupling_change_upper": 9.850824724598333e-09,
+          "branches": [
+            18,
+            19,
+            30
+          ],
+          "center_D3_coupling_l2_norm": 1.226192489751578e-09,
+          "consumed_gap_lower": 1.6440602538631085e-07,
+          "coupling_numerator_upper": 1.1077017215457616e-08,
+          "minimum_center_distance": 0.001576888184355695,
+          "ordered_Weyl_gap_lower": -0.011935183283515704,
+          "selected_graph_derivative_upper": 0.1347519616819061
+        },
+        {
+          "D4_coupling_change_upper": 1.2164876415949489e-08,
+          "branches": [
+            17,
+            31,
+            32
+          ],
+          "center_D3_coupling_l2_norm": 1.651625389948398e-09,
+          "consumed_gap_lower": 0.0028279999504644427,
+          "coupling_numerator_upper": 1.3816501807279537e-08,
+          "minimum_center_distance": 0.016340071418335843,
+          "ordered_Weyl_gap_lower": 0.0028279999504644427,
+          "selected_graph_derivative_upper": 9.771217857618495e-06
+        },
+        {
+          "D4_coupling_change_upper": 1.9778868562761972e-08,
+          "branches": [
+            15,
+            16,
+            33,
+            34,
+            35
+          ],
+          "center_D3_coupling_l2_norm": 4.827984451823941e-09,
+          "consumed_gap_lower": 0.05762466967442775,
+          "coupling_numerator_upper": 2.4606853017046604e-08,
+          "minimum_center_distance": 0.07113674114229915,
+          "ordered_Weyl_gap_lower": 0.05762466967442775,
+          "selected_graph_derivative_upper": 8.540388399112035e-07
+        },
+        {
+          "D4_coupling_change_upper": 7.155028501985025e-08,
+          "branches": [
+            14,
+            36,
+            37,
+            38,
+            39,
+            40,
+            41
+          ],
+          "center_D3_coupling_l2_norm": 1.5671855674817083e-08,
+          "consumed_gap_lower": 0.5461189007785392,
+          "coupling_numerator_upper": 8.722214070338956e-08,
+          "minimum_center_distance": 0.5596309722464106,
+          "ordered_Weyl_gap_lower": 0.5461189007785392,
+          "selected_graph_derivative_upper": 3.1942546060123234e-07
+        },
+        {
+          "D4_coupling_change_upper": 6.631207311909731e-08,
+          "branches": [
+            10,
+            11,
+            12,
+            13,
+            42,
+            43,
+            44
+          ],
+          "center_D3_coupling_l2_norm": 5.2239916099176556e-08,
+          "consumed_gap_lower": 2.4781179227958683,
+          "coupling_numerator_upper": 1.1855198923012909e-07,
+          "minimum_center_distance": 2.4916299942637394,
+          "ordered_Weyl_gap_lower": 2.4781179227958683,
+          "selected_graph_derivative_upper": 9.567905397192019e-08
+        },
+        {
+          "D4_coupling_change_upper": 2.4753992642345065e-08,
+          "branches": [
+            9,
+            45,
+            46,
+            47,
+            48,
+            49
+          ],
+          "center_D3_coupling_l2_norm": 2.825816066696063e-08,
+          "consumed_gap_lower": 11.426180997029435,
+          "coupling_numerator_upper": 5.301215331460692e-08,
+          "minimum_center_distance": 11.439693068497306,
+          "ordered_Weyl_gap_lower": 11.426180997029435,
+          "selected_graph_derivative_upper": 9.279067666386551e-09
+        },
+        {
+          "D4_coupling_change_upper": 2.2958172674726006e-08,
+          "branches": [
+            8,
+            50,
+            51,
+            52,
+            53,
+            54,
+            55
+          ],
+          "center_D3_coupling_l2_norm": 5.405978612763409e-08,
+          "consumed_gap_lower": 49.55849723574648,
+          "coupling_numerator_upper": 7.70179588100619e-08,
+          "minimum_center_distance": 49.57200930721435,
+          "ordered_Weyl_gap_lower": 49.55849723574648,
+          "selected_graph_derivative_upper": 3.108163609214961e-09
+        },
+        {
+          "D4_coupling_change_upper": 2.9396403831265614e-08,
+          "branches": [
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            56,
+            57,
+            58,
+            59
+          ],
+          "center_D3_coupling_l2_norm": 2.467594048474628e-07,
+          "consumed_gap_lower": 247.34504981655067,
+          "coupling_numerator_upper": 2.7615580870634405e-07,
+          "minimum_center_distance": 247.35856188801853,
+          "ordered_Weyl_gap_lower": 247.34504981655067,
+          "selected_graph_derivative_upper": 2.232960060763514e-09
+        },
+        {
+          "D4_coupling_change_upper": 1.829353379204703e-08,
+          "branches": [
+            0,
+            1,
+            60
+          ],
+          "center_D3_coupling_l2_norm": 3.23093568583997e-08,
+          "consumed_gap_lower": 999.2136377723807,
+          "coupling_numerator_upper": 5.0602890655507023e-08,
+          "minimum_center_distance": 999.2271498438487,
+          "ordered_Weyl_gap_lower": 999.2136377723807,
+          "selected_graph_derivative_upper": 1.012854283562022e-10
+        }
+      ],
+      "interval": 183,
+      "selected_branch": 24,
+      "selected_graph_derivative_l2_upper": 0.14466618825168895,
+      "selected_line_shift_upper": 8.935552489706387e-12,
+      "selected_projector_motion_upper": 0.14466618825168895,
+      "spectral_distance_bands": 14,
+      "subdivisions": 8,
+      "subspan": 4
+    },
+    {
+      "ambient_D3_Hessian_shift_upper": 0.012704153269968944,
+      "ambient_D4_Hessian_remainder_upper": 0.0008634757166762809,
+      "ambient_Hessian_shift_upper": 0.013567628988001991,
+      "certified_global_gap_lower": 1.6432469772798813e-07,
+      "graph_Neumann_closed": true,
+      "groups": [
+        {
+          "D4_coupling_change_upper": 5.759642568474946e-11,
+          "branches": [
+            25
+          ],
+          "center_D3_coupling_l2_norm": 1.368515181786157e-12,
+          "consumed_gap_lower": 1.6432469772798813e-07,
+          "coupling_numerator_upper": 5.896494087243213e-11,
+          "minimum_center_distance": 1.7368564310929672e-07,
+          "ordered_Weyl_gap_lower": -0.013567455311355205,
+          "selected_graph_derivative_upper": 0.0007176637680592014
+        },
+        {
+          "D4_coupling_change_upper": 4.30985634173308e-10,
+          "branches": [
+            26,
+            27
+          ],
+          "center_D3_coupling_l2_norm": 4.0237142140630035e-11,
+          "consumed_gap_lower": 1.6432469772798813e-07,
+          "coupling_numerator_upper": 4.712227763610605e-10,
+          "minimum_center_distance": 1.0721174222061479e-06,
+          "ordered_Weyl_gap_lower": -0.013566556879576109,
+          "selected_graph_derivative_upper": 0.005735264180290327
+        },
+        {
+          "D4_coupling_change_upper": 9.614984507467319e-10,
+          "branches": [
+            22,
+            23
+          ],
+          "center_D3_coupling_l2_norm": 4.096596694995164e-11,
+          "consumed_gap_lower": 1.6432469772798813e-07,
+          "coupling_numerator_upper": 1.00246441779693e-09,
+          "minimum_center_distance": 8.645116174747115e-06,
+          "ordered_Weyl_gap_lower": -0.013558983880823567,
+          "selected_graph_derivative_upper": 0.012201019466429663
+        },
+        {
+          "D4_coupling_change_upper": 1.3917376696792356e-09,
+          "branches": [
+            28,
+            29
+          ],
+          "center_D3_coupling_l2_norm": 2.7608785135193573e-10,
+          "consumed_gap_lower": 1.6432469772798813e-07,
+          "coupling_numerator_upper": 1.6678255211979541e-09,
+          "minimum_center_distance": 5.4189381500726916e-05,
+          "ordered_Weyl_gap_lower": -0.013513439615497587,
+          "selected_graph_derivative_upper": 0.02029914607389744
+        },
+        {
+          "D4_coupling_change_upper": 3.3523458813429936e-09,
+          "branches": [
+            20,
+            21
+          ],
+          "center_D3_coupling_l2_norm": 5.070995022113719e-10,
+          "consumed_gap_lower": 1.6432469772798813e-07,
+          "coupling_numerator_upper": 3.8594453839403105e-09,
+          "minimum_center_distance": 0.00031750273977981764,
+          "ordered_Weyl_gap_lower": -0.013250126257218497,
+          "selected_graph_derivative_upper": 0.04697340616095236
+        },
+        {
+          "D4_coupling_change_upper": 9.907638675435173e-09,
+          "branches": [
+            18,
+            19,
+            30
+          ],
+          "center_D3_coupling_l2_norm": 1.2245474669895452e-09,
+          "consumed_gap_lower": 1.6432469772798813e-07,
+          "coupling_numerator_upper": 1.1132186143537938e-08,
+          "minimum_center_distance": 0.001578108667667512,
+          "ordered_Weyl_gap_lower": -0.011989520329330802,
+          "selected_graph_derivative_upper": 0.13549011558905916
+        },
+        {
+          "D4_coupling_change_upper": 1.2246827929026552e-08,
+          "branches": [
+            17,
+            31,
+            32
+          ],
+          "center_D3_coupling_l2_norm": 1.6533259373891097e-09,
+          "consumed_gap_lower": 0.002774735642148935,
+          "coupling_numerator_upper": 1.3900153867805679e-08,
+          "minimum_center_distance": 0.01634236463914725,
+          "ordered_Weyl_gap_lower": 0.002774735642148935,
+          "selected_graph_derivative_upper": 1.0019083373600604e-05
+        },
+        {
+          "D4_coupling_change_upper": 1.9881291979668743e-08,
+          "branches": [
+            15,
+            16,
+            33,
+            34,
+            35
+          ],
+          "center_D3_coupling_l2_norm": 4.82607522911335e-09,
+          "consumed_gap_lower": 0.05756833755477055,
+          "coupling_numerator_upper": 2.470736721125283e-08,
+          "minimum_center_distance": 0.07113596655176886,
+          "ordered_Weyl_gap_lower": 0.05756833755477055,
+          "selected_graph_derivative_upper": 8.583665349105127e-07
+        },
+        {
+          "D4_coupling_change_upper": 7.196993915419882e-08,
+          "branches": [
+            14,
+            36,
+            37,
+            38,
+            39,
+            40,
+            41
+          ],
+          "center_D3_coupling_l2_norm": 1.5675244273506695e-08,
+          "consumed_gap_lower": 0.5459726397848343,
+          "coupling_numerator_upper": 8.764518343647005e-08,
+          "minimum_center_distance": 0.5595402687818327,
+          "ordered_Weyl_gap_lower": 0.5459726397848343,
+          "selected_graph_derivative_upper": 3.2106071644826455e-07
+        },
+        {
+          "D4_coupling_change_upper": 6.671781028759025e-08,
+          "branches": [
+            10,
+            11,
+            12,
+            13,
+            42,
+            43,
+            44
+          ],
+          "center_D3_coupling_l2_norm": 5.221686159582245e-08,
+          "consumed_gap_lower": 2.4780591629669506,
+          "coupling_numerator_upper": 1.1893467189530619e-07,
+          "minimum_center_distance": 2.4916267919639488,
+          "ordered_Weyl_gap_lower": 2.4780591629669506,
+          "selected_graph_derivative_upper": 9.599017947965423e-08
+        },
+        {
+          "D4_coupling_change_upper": 2.4913511148164797e-08,
+          "branches": [
+            9,
+            45,
+            46,
+            47,
+            48,
+            49
+          ],
+          "center_D3_coupling_l2_norm": 2.832817970244386e-08,
+          "consumed_gap_lower": 11.426201664592545,
+          "coupling_numerator_upper": 5.324169085593283e-08,
+          "minimum_center_distance": 11.439769293589542,
+          "ordered_Weyl_gap_lower": 11.426201664592545,
+          "selected_graph_derivative_upper": 9.319228283225928e-09
+        },
+        {
+          "D4_coupling_change_upper": 2.3123087082134395e-08,
+          "branches": [
+            8,
+            50,
+            51,
+            52,
+            53,
+            54,
+            55
+          ],
+          "center_D3_coupling_l2_norm": 5.443907653555663e-08,
+          "consumed_gap_lower": 49.5590526702843,
+          "coupling_numerator_upper": 7.756216362544725e-08,
+          "minimum_center_distance": 49.5726202992813,
+          "ordered_Weyl_gap_lower": 49.5590526702843,
+          "selected_graph_derivative_upper": 3.1300906475845487e-09
+        },
+        {
+          "D4_coupling_change_upper": 2.9619042284533503e-08,
+          "branches": [
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            56,
+            57,
+            58,
+            59
+          ],
+          "center_D3_coupling_l2_norm": 2.478530446134545e-07,
+          "consumed_gap_lower": 247.346810988671,
+          "coupling_numerator_upper": 2.774720869257353e-07,
+          "minimum_center_distance": 247.360378617668,
+          "ordered_Weyl_gap_lower": 247.346810988671,
+          "selected_graph_derivative_upper": 2.2435873407415094e-09
+        },
+        {
+          "D4_coupling_change_upper": 1.843352333240915e-08,
+          "branches": [
+            0,
+            1,
+            60
+          ],
+          "center_D3_coupling_l2_norm": 3.238185583479724e-08,
+          "consumed_gap_lower": 999.2228448187072,
+          "coupling_numerator_upper": 5.081537917228793e-08,
+          "minimum_center_distance": 999.2364124477042,
+          "ordered_Weyl_gap_lower": 999.2228448187072,
+          "selected_graph_derivative_upper": 1.0170980265486045e-10
+        }
+      ],
+      "interval": 183,
+      "selected_branch": 24,
+      "selected_graph_derivative_l2_upper": 0.14545927580602291,
+      "selected_line_shift_upper": 8.996323272200555e-12,
+      "selected_projector_motion_upper": 0.14545927580602291,
+      "spectral_distance_bands": 14,
+      "subdivisions": 8,
+      "subspan": 5
     },
     {
       "ambient_D3_Hessian_shift_upper": 0.012755559530325374,
@@ -316987,114 +317947,114 @@
       "subspan": 3
     }
   ],
-  "status": "DOP853_ADAPTIVE_STOP_PATH_SELECTED_PROJECTOR_GRAPH_OPEN",
+  "status": "ALL_DOP853_ADAPTIVE_STOP_PATH_SELECTED_PROJECTOR_GRAPHS_CERTIFIED",
   "summary": {
     "Neumann_factor": 2.0,
-    "maximum_selected_graph_derivative_l2_upper": 1.0557274078087024,
-    "maximum_selected_projector_motion_upper": 1.0557274078087024,
+    "maximum_selected_graph_derivative_l2_upper": 0.990738859515511,
+    "maximum_selected_projector_motion_upper": 0.990738859515511,
     "maximum_spectral_distance_bands": 15,
-    "minimum_consumed_gap_lower": 1.304584780247392e-07,
+    "minimum_consumed_gap_lower": 1.3267891608257942e-07,
     "owner": {
-      "ambient_D3_Hessian_shift_upper": 0.02535740666759876,
-      "ambient_D4_Hessian_remainder_upper": 0.003444814503312169,
-      "ambient_Hessian_shift_upper": 0.028802221173791154,
-      "certified_global_gap_lower": 1.304584780247392e-07,
-      "graph_Neumann_closed": false,
+      "ambient_D3_Hessian_shift_upper": 0.024559546798144653,
+      "ambient_D4_Hessian_remainder_upper": 0.0032994723518151724,
+      "ambient_Hessian_shift_upper": 0.02785901915274573,
+      "certified_global_gap_lower": 1.3267891608257942e-07,
+      "graph_Neumann_closed": true,
       "groups": [
         {
-          "D4_coupling_change_upper": 2.295829557281314e-10,
+          "D4_coupling_change_upper": 2.1687821810011584e-10,
           "branches": [
             25
           ],
-          "center_D3_coupling_l2_norm": 2.741549730019059e-12,
-          "consumed_gap_lower": 1.304584780247392e-07,
-          "coupling_numerator_upper": 2.3232450548138294e-10,
-          "minimum_center_distance": 1.7370384092711788e-07,
-          "ordered_Weyl_gap_lower": -0.02880204751417062,
-          "selected_graph_derivative_upper": 0.003561662055578467
+          "center_D3_coupling_l2_norm": 2.8101592707152305e-12,
+          "consumed_gap_lower": 1.3267891608257942e-07,
+          "coupling_numerator_upper": 2.1968837739279993e-10,
+          "minimum_center_distance": 1.7399486647441032e-07,
+          "ordered_Weyl_gap_lower": -0.027858845199301797,
+          "selected_graph_derivative_upper": 0.003311579320983217
         },
         {
-          "D4_coupling_change_upper": 1.7189295079746552e-09,
+          "D4_coupling_change_upper": 1.638856651094639e-09,
           "branches": [
             26,
             27
           ],
-          "center_D3_coupling_l2_norm": 8.04078927483472e-11,
-          "consumed_gap_lower": 1.304584780247392e-07,
-          "coupling_numerator_upper": 1.7993374009029362e-09,
-          "minimum_center_distance": 1.0721932711581539e-06,
-          "ordered_Weyl_gap_lower": -0.02880114902474039,
-          "selected_graph_derivative_upper": 0.02758482895594807
+          "center_D3_coupling_l2_norm": 7.937602059662948e-11,
+          "consumed_gap_lower": 1.3267891608257942e-07,
+          "coupling_numerator_upper": 1.7182326718630919e-09,
+          "minimum_center_distance": 1.0734041644331481e-06,
+          "ordered_Weyl_gap_lower": -0.02785794579000384,
+          "selected_graph_derivative_upper": 0.0259006136433235
         },
         {
-          "D4_coupling_change_upper": 3.834690979639107e-09,
+          "D4_coupling_change_upper": 3.6545008344964607e-09,
           "branches": [
             22,
             23
           ],
-          "center_D3_coupling_l2_norm": 8.195181772356203e-11,
-          "consumed_gap_lower": 1.304584780247392e-07,
-          "coupling_numerator_upper": 3.916642797754334e-09,
-          "minimum_center_distance": 8.645000807973457e-06,
-          "ordered_Weyl_gap_lower": -0.028793576217203572,
-          "selected_graph_derivative_upper": 0.06004428163577496
+          "center_D3_coupling_l2_norm": 8.224774340730254e-11,
+          "consumed_gap_lower": 1.3267891608257942e-07,
+          "coupling_numerator_upper": 3.736748578277439e-09,
+          "minimum_center_distance": 8.64310804979962e-06,
+          "ordered_Weyl_gap_lower": -0.027850376086118473,
+          "selected_graph_derivative_upper": 0.056327692281196516
         },
         {
-          "D4_coupling_change_upper": 5.553908941868023e-09,
+          "D4_coupling_change_upper": 5.343851657369237e-09,
           "branches": [
             28,
             29
           ],
-          "center_D3_coupling_l2_norm": 5.522512138251136e-10,
-          "consumed_gap_lower": 1.304584780247392e-07,
-          "coupling_numerator_upper": 6.106160156303754e-09,
-          "minimum_center_distance": 5.417138534664546e-05,
-          "ordered_Weyl_gap_lower": -0.0287480498326649,
-          "selected_graph_derivative_upper": 0.09361078328319059
+          "center_D3_coupling_l2_norm": 5.534900071032476e-10,
+          "consumed_gap_lower": 1.3267891608257942e-07,
+          "coupling_numerator_upper": 5.89734166506222e-09,
+          "minimum_center_distance": 5.388307399949879e-05,
+          "ordered_Weyl_gap_lower": -0.027805136120168772,
+          "selected_graph_derivative_upper": 0.08889644021483332
         },
         {
-          "D4_coupling_change_upper": 1.3372251050594497e-08,
+          "D4_coupling_change_upper": 1.2781233533151528e-08,
           "branches": [
             20,
             21
           ],
-          "center_D3_coupling_l2_norm": 1.013656548463348e-09,
-          "consumed_gap_lower": 1.304584780247392e-07,
-          "coupling_numerator_upper": 1.4385907600496438e-08,
-          "minimum_center_distance": 0.000317471345236245,
-          "ordered_Weyl_gap_lower": -0.0284847498727753,
-          "selected_graph_derivative_upper": 0.2205438514959065
+          "center_D3_coupling_l2_norm": 1.0051157835633067e-09,
+          "consumed_gap_lower": 1.3267891608257942e-07,
+          "coupling_numerator_upper": 1.3786349318093471e-08,
+          "minimum_center_distance": 0.00031697555347147936,
+          "ordered_Weyl_gap_lower": -0.027542043640696793,
+          "selected_graph_derivative_upper": 0.2078152237977506
         },
         {
-          "D4_coupling_change_upper": 3.952045719304012e-08,
+          "D4_coupling_change_upper": 3.776781395073583e-08,
           "branches": [
             18,
             19,
             30
           ],
-          "center_D3_coupling_l2_norm": 2.450734028048217e-09,
-          "consumed_gap_lower": 1.304584780247392e-07,
-          "coupling_numerator_upper": 4.197119122528547e-08,
-          "minimum_center_distance": 0.0015774984104953028,
-          "ordered_Weyl_gap_lower": -0.027224722807516245,
-          "selected_graph_derivative_upper": 0.6434413748338148
+          "center_D3_coupling_l2_norm": 2.477143032002502e-09,
+          "consumed_gap_lower": 1.3267891608257942e-07,
+          "coupling_numerator_upper": 4.024495698676284e-08,
+          "minimum_center_distance": 0.0015677246810757218,
+          "ordered_Weyl_gap_lower": -0.02629129451309255,
+          "selected_graph_derivative_upper": 0.606651880781704
         },
         {
-          "D4_coupling_change_upper": 4.8827962925492835e-08,
+          "D4_coupling_change_upper": 4.6302553134216805e-08,
           "branches": [
             17,
             31,
             32
           ],
-          "center_D3_coupling_l2_norm": 3.304935304164592e-09,
-          "consumed_gap_lower": 1.304584780247392e-07,
-          "coupling_numerator_upper": 5.2132898234870724e-08,
-          "minimum_center_distance": 0.01634121790757159,
-          "ordered_Weyl_gap_lower": -0.012461003310439957,
-          "selected_graph_derivative_upper": 0.7992259150869125
+          "center_D3_coupling_l2_norm": 3.278930322991326e-09,
+          "consumed_gap_lower": 1.3267891608257942e-07,
+          "coupling_numerator_upper": 4.958148346216629e-08,
+          "minimum_center_distance": 0.016322993913829374,
+          "ordered_Weyl_gap_lower": -0.011536025280338896,
+          "selected_graph_derivative_upper": 0.7473905414823393
         },
         {
-          "D4_coupling_change_upper": 7.932852936053255e-08,
+          "D4_coupling_change_upper": 7.616006329880725e-08,
           "branches": [
             15,
             16,
@@ -317102,15 +318062,15 @@
             34,
             35
           ],
-          "center_D3_coupling_l2_norm": 9.65405012667198e-09,
-          "consumed_gap_lower": 0.04233413265888106,
-          "coupling_numerator_upper": 8.89825794961028e-08,
-          "minimum_center_distance": 0.0711363538768926,
-          "ordered_Weyl_gap_lower": 0.04233413265888106,
-          "selected_graph_derivative_upper": 4.203822018606251e-06
+          "center_D3_coupling_l2_norm": 9.685519589158593e-09,
+          "consumed_gap_lower": 0.04328340285483255,
+          "coupling_numerator_upper": 8.584558289655042e-08,
+          "minimum_center_distance": 0.07114242204900083,
+          "ordered_Weyl_gap_lower": 0.04328340285483255,
+          "selected_graph_derivative_upper": 3.9666743944809975e-06
         },
         {
-          "D4_coupling_change_upper": 2.870698928343328e-07,
+          "D4_coupling_change_upper": 2.741111890238758e-07,
           "branches": [
             14,
             36,
@@ -317120,15 +318080,15 @@
             40,
             41
           ],
-          "center_D3_coupling_l2_norm": 3.134697772150054e-08,
-          "consumed_gap_lower": 0.5307834002257406,
-          "coupling_numerator_upper": 3.1841687058767515e-07,
-          "minimum_center_distance": 0.5595856214437521,
-          "ordered_Weyl_gap_lower": 0.5307834002257406,
-          "selected_graph_derivative_upper": 1.1997996564477907e-06
+          "center_D3_coupling_l2_norm": 3.13033959252892e-08,
+          "consumed_gap_lower": 0.5324476535438819,
+          "coupling_numerator_upper": 3.054145849797065e-07,
+          "minimum_center_distance": 0.5603066727380501,
+          "ordered_Weyl_gap_lower": 0.5324476535438819,
+          "selected_graph_derivative_upper": 1.1472098073020324e-06
         },
         {
-          "D4_coupling_change_upper": 2.6608448372800165e-07,
+          "D4_coupling_change_upper": 2.535777672446439e-07,
           "branches": [
             10,
             11,
@@ -317138,15 +318098,15 @@
             43,
             44
           ],
-          "center_D3_coupling_l2_norm": 1.0445647539931732e-07,
-          "consumed_gap_lower": 2.462826172009015,
-          "coupling_numerator_upper": 3.705409591643731e-07,
-          "minimum_center_distance": 2.4916283932270265,
-          "ordered_Weyl_gap_lower": 2.462826172009015,
-          "selected_graph_derivative_upper": 3.009071150962829e-07
+          "center_D3_coupling_l2_norm": 1.048410882173773e-07,
+          "consumed_gap_lower": 2.463796420707825,
+          "coupling_numerator_upper": 3.5841885549786313e-07,
+          "minimum_center_distance": 2.4916554399019932,
+          "ordered_Weyl_gap_lower": 2.463796420707825,
+          "selected_graph_derivative_upper": 2.909484343115774e-07
         },
         {
-          "D4_coupling_change_upper": 9.934432169003283e-08,
+          "D4_coupling_change_upper": 9.442497666914594e-08,
           "branches": [
             9,
             45,
@@ -317155,15 +318115,15 @@
             48,
             49
           ],
-          "center_D3_coupling_l2_norm": 5.658598381575343e-08,
-          "consumed_gap_lower": 11.410928960767562,
-          "coupling_numerator_upper": 1.5593030552137931e-07,
-          "minimum_center_distance": 11.439731181985573,
-          "ordered_Weyl_gap_lower": 11.410928960767562,
-          "selected_graph_derivative_upper": 2.732999321494043e-08
+          "center_D3_coupling_l2_norm": 5.55230644811984e-08,
+          "consumed_gap_lower": 11.411268397972982,
+          "coupling_numerator_upper": 1.4994804116533917e-07,
+          "minimum_center_distance": 11.439127417167152,
+          "ordered_Weyl_gap_lower": 11.411268397972982,
+          "selected_graph_derivative_upper": 2.6280696580052346e-08
         },
         {
-          "D4_coupling_change_upper": 9.217075036317187e-08,
+          "D4_coupling_change_upper": 8.709036457307051e-08,
           "branches": [
             8,
             50,
@@ -317173,15 +318133,15 @@
             54,
             55
           ],
-          "center_D3_coupling_l2_norm": 1.0849793258124826e-07,
-          "consumed_gap_lower": 49.54351258122945,
-          "coupling_numerator_upper": 2.0066868296448703e-07,
-          "minimum_center_distance": 49.57231480244746,
-          "ordered_Weyl_gap_lower": 49.54351258122945,
-          "selected_graph_derivative_upper": 8.100704715094476e-09
+          "center_D3_coupling_l2_norm": 1.0261635848895063e-07,
+          "consumed_gap_lower": 49.53964453670281,
+          "coupling_numerator_upper": 1.8970672308099183e-07,
+          "minimum_center_distance": 49.56750355589698,
+          "ordered_Weyl_gap_lower": 49.53964453670281,
+          "selected_graph_derivative_upper": 7.658784186851122e-09
         },
         {
-          "D4_coupling_change_upper": 1.1804058012053573e-07,
+          "D4_coupling_change_upper": 1.1118468892589209e-07,
           "branches": [
             2,
             3,
@@ -317194,49 +318154,58 @@
             58,
             59
           ],
-          "center_D3_coupling_l2_norm": 4.946094065478232e-07,
-          "consumed_gap_lower": 247.33066803250446,
-          "coupling_numerator_upper": 6.126499867296241e-07,
-          "minimum_center_distance": 247.3594702537225,
-          "ordered_Weyl_gap_lower": 247.33066803250446,
-          "selected_graph_derivative_upper": 4.954096405952974e-09
+          "center_D3_coupling_l2_norm": 4.775550174624407e-07,
+          "consumed_gap_lower": 247.31733109819447,
+          "coupling_numerator_upper": 5.887397064472068e-07,
+          "minimum_center_distance": 247.34519011738863,
+          "ordered_Weyl_gap_lower": 247.31733109819447,
+          "selected_graph_derivative_upper": 4.761006468020865e-09
         },
         {
-          "D4_coupling_change_upper": 7.345952546237117e-08,
+          "D4_coupling_change_upper": 6.914790719660016e-08,
           "branches": [
             0,
             1,
             60
           ],
-          "center_D3_coupling_l2_norm": 6.469091640169276e-08,
-          "consumed_gap_lower": 999.2029789140569,
-          "coupling_numerator_upper": 1.3815044187787902e-07,
-          "minimum_center_distance": 999.2317811352749,
-          "ordered_Weyl_gap_lower": 999.2029789140569,
-          "selected_graph_derivative_upper": 2.7652127707192643e-10
+          "center_D3_coupling_l2_norm": 6.357449875528562e-08,
+          "consumed_gap_lower": 999.1310377282468,
+          "coupling_numerator_upper": 1.3272240596515805e-07,
+          "minimum_center_distance": 999.158896747441,
+          "ordered_Weyl_gap_lower": 999.1310377282468,
+          "selected_graph_derivative_upper": 2.656756740941711e-10
         }
       ],
-      "interval": 183,
+      "interval": 182,
       "selected_branch": 24,
-      "selected_graph_derivative_l2_upper": 1.0557274078087024,
-      "selected_line_shift_upper": 4.4220392416444464e-11,
-      "selected_projector_motion_upper": 1.0557274078087024,
+      "selected_graph_derivative_l2_upper": 0.990738859515511,
+      "selected_line_shift_upper": 4.142254011692446e-11,
+      "selected_projector_motion_upper": 0.990738859515511,
       "spectral_distance_bands": 14,
       "subdivisions": 4,
       "subspan": 2
     }
   },
+  "unresolved_cells": [],
   "validation": {
-    "all_distance_band_graph_Neumann_bounds_below_one": false,
+    "adaptive_cover_is_exact_Fraction_partition": true,
+    "all_distance_band_graph_Neumann_bounds_below_one": true,
     "branch_24_selected_everywhere": true,
+    "current_input_hashes_and_NPZ_stop_mesh_match": true,
     "every_adaptive_spectrum_cell_consumed_once_in_order": true,
     "every_certified_gap_strictly_positive": true,
+    "every_projector_Neumann_motion_is_finite_and_below_one": true,
+    "every_spectral_row_has_positive_gaps_and_unchanged_bootstraps": true,
     "exact_center_D3_and_retained_D4_action_majorant_used": true,
     "far_branch_ordered_Weyl_denominators_combined_with_global_gap": true,
     "hard_26_27_internal_denominator_not_reintroduced": true,
     "no_cubic_Hermite_surrogate_inserted": true,
     "no_full_Euler_Dirac_or_dense_history_inverse_used": true,
-    "same_DOP853_Bernstein_cover_as_spectrum": true
+    "only_failed_joint_cells_replaced_by_exact_dyadic_children": true,
+    "same_DOP853_Bernstein_cover_as_spectrum": true,
+    "same_retained_DOP853_center_without_new_trajectory": true,
+    "spectrum_projector_pairing_and_consumed_gaps_match": true,
+    "unaffected_source_spectrum_and_projector_rows_reused_unchanged": true
   },
-  "validation_passed": false
+  "validation_passed": true
 }
