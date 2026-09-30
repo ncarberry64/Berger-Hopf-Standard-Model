@@ -53,6 +53,8 @@
   letter-spacing: 0.1em;
 }
 .deck-controls select {
+  padding: 0.2rem 0.5rem;
+  min-height: 30px;
   color: #fff2df;
   background: #0d111b;
   border: 0;
@@ -73,6 +75,41 @@
   height: 3px;
   background: #191426;
   flex-shrink: 0;
+}
+.deck-numbers {
+  display: flex;
+  justify-content: center;
+  gap: 0.35rem;
+  padding: 0.15rem 0.75rem;
+  flex: 0 0 auto;
+  overflow-x: auto;
+  background: #0d111b;
+  scrollbar-width: thin;
+}
+.deck-numbers a {
+  flex: 0 0 40px;
+  min-height: 40px;
+  display: grid;
+  place-items: center;
+  color: #c3b4d6;
+  font:
+    0.75rem var(--font-geist-mono),
+    monospace;
+  text-decoration: none;
+  border-bottom: 2px solid transparent;
+}
+.deck-numbers a[aria-current='step'] {
+  color: #ffbc77;
+  border-color: #ffbc77;
+  background: #282131;
+}
+.deck-numbers a:hover {
+  color: #fff2df;
+  background: #282131;
+}
+.deck-numbers a:focus-visible {
+  outline: 2px solid #71e5eb;
+  outline-offset: -2px;
 }
 .deck-progress i {
   display: block;
@@ -174,6 +211,14 @@
   margin: 0.5rem 0;
 }
 @media (max-width: 700px) {
+  .deck-numbers {
+    justify-content: flex-start;
+    gap: 0;
+  }
+  .deck-numbers a {
+    flex-basis: 44px;
+    min-height: 44px;
+  }
   .deck-controls {
     gap: 0.5rem;
     padding: 0.6rem 0.75rem;
@@ -208,6 +253,55 @@
   }
   .museum-track footer {
     flex-direction: column;
+  }
+}
+@media (min-width: 1100px) {
+  .prediction-museum .site-header {
+    min-height: 56px;
+    padding-block: 0.4rem;
+  }
+  .deck-controls {
+    padding-block: 0.4rem;
+  }
+  .museum-track .console-intro .exhibit-statement {
+    margin: 0.6rem 0;
+    padding: 0.6rem 1rem;
+  }
+  .museum-track .console-intro {
+    margin-bottom: 1rem;
+  }
+  #cosmology-original .section-heading :is(h2, p) {
+    margin-block: 0.4rem;
+  }
+  .museum-track > .engine-hero,
+  .museum-track .science-console,
+  .museum-track > .museum-details,
+  .museum-track > #creator,
+  .museum-track > .other-work-wing,
+  .museum-track > footer {
+    padding: 1.25rem max(2rem, calc((100vw - 1400px) / 2)) 3rem;
+  }
+  .museum-track .console-content {
+    padding-right: 1.5rem;
+  }
+  .museum-track .section-heading h2 {
+    font-size: clamp(1.8rem, 2.6vw, 2.7rem);
+  }
+  .museum-track .console-intro h3 {
+    font-size: clamp(1.6rem, 2.4vw, 2.4rem);
+  }
+  .museum-track .cosmic-cycle {
+    margin-top: 1rem;
+    padding: 1.25rem;
+  }
+  .museum-track .other-work-wing > .section-heading {
+    margin-bottom: 1rem;
+  }
+  .museum-track .cosmic-cycle h3 {
+    font-size: 1.8rem;
+  }
+  .museum-track .cosmic-context {
+    gap: 1.5rem;
   }
 }
 @media (prefers-reduced-motion: reduce) {
