@@ -124,13 +124,13 @@ export default function Home() {
             <h2 id="cosmology-original-title">
               Geometry, light and the cosmic cycle.
             </h2>
-            <p>
-              Explore the original geometric proposal and its selectable
-              storyboard from a sea of light through the cosmic web to a
-              proposed cycle.
-            </p>
           </div>
           <CosmicEnclosure motion={motion} />
+          <p>
+            Explore the original geometric proposal and its selectable
+            storyboard from a sea of light through the cosmic web to a proposed
+            cycle.
+          </p>
           <ExhibitStatement id="cosmology-original" />
           <p className="other-work-boundary">
             Historical conceptual storyboard · BHSM cosmology proposal
@@ -169,20 +169,20 @@ export default function Home() {
             <h2 id="other-work-title">
               From a cosmic pattern to a testable response.
             </h2>
-            <p>
-              Geometry Before Fields connects a proposed geometric framework
-              with matter, light propagation and observational tests. Explore
-              the computed environmental response, then inspect the numerical
-              replay and the supernova comparisons below.
-            </p>
           </div>
           <div className="creator-links">
             <a href="#cosmology-original">
               Revisit the original cosmology proposal ←
             </a>
           </div>
-          <ExhibitStatement id="other-work" />
           <CosmologyRealization motion={motion} setMotion={setMotion} />
+          <ExhibitStatement id="other-work" />
+          <p>
+            Geometry Before Fields connects a proposed geometric framework with
+            matter, light propagation and observational tests. Explore the
+            computed environmental response, then inspect the numerical replay
+            and the supernova comparisons below.
+          </p>
           <details className="console-details cosmology-evidence">
             <summary>Evidence and open questions · cosmology results</summary>
             <CosmologyUpdate />

@@ -77,6 +77,7 @@ export function BergerHopf({
       title="Two mathematical ideas. One deeper question."
       intro="Meet the geometry behind the name: Hopf gives the linked fibers, Berger changes their metric, and BHSM investigates what that structure could explain."
       accent="lavender"
+      introAfter={2}
     >
       <div className="bh-chapters" aria-label="Animation chapters">
         {chapters.map((item, i) => (

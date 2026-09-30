@@ -172,10 +172,6 @@ export function CosmologyRealization({
           <p className="eyebrow">Matter → geometric response</p>
           <h3 id="r1-title">Watch the environment shape the response.</h3>
         </div>
-        <p>
-          Choose the starting patterns. Follow their computed effect on the two
-          topographic components as the reference model evolves.
-        </p>
       </div>
       <div
         className="console-selector r1-presets"
@@ -267,6 +263,10 @@ export function CosmologyRealization({
           </div>
         </div>
       </div>
+      <p>
+        Choose the starting patterns. Follow their computed effect on the two
+        topographic components as the reference model evolves.
+      </p>
       <p className="r1-legend">
         <span className="r1-positive">● Positive</span>
         <span className="r1-negative">● Negative</span>

@@ -1,7 +1,9 @@
 'use client';
+/* oxlint-disable next/no-html-link-for-pages -- This link opens a static Markdown source note. */
 import { useState } from 'react';
 import { useSceneClock } from './science-console';
 import { SCIENCE } from './exhibits';
+import { MassVisual } from './mass-visual';
 
 const steps = [
   [
@@ -36,8 +38,26 @@ export function MassStudy({ motion }: { motion: boolean }) {
       ref={ref}
       aria-label="BHSM mass: the relative-energy definition"
     >
-      <p className="eyebrow">BHSM mass contract · v14.54, recovered in AE3</p>
-      <h4>Mass is the energy difference a child brings.</h4>
+      <p className="eyebrow">BHSM mass · the physical picture</p>
+      <h4>Holding back the surrounding field.</h4>
+      <MassVisual motion={motion} />
+      <p>
+        BHSM proposes that a localized configuration displaces the surrounding
+        energy–geometry response. Here three quarks, connected by color threads,
+        move within an electron cloud as a region clears in the surrounding
+        virtual-particle sea. In this picture, mass expresses the energy
+        involved in maintaining that displacement: how much of the surrounding
+        response is held back.
+      </p>
+      <p className="console-caption">
+        Author’s conceptual illustration, using a proton’s uud content and an
+        enlarged electron probability cloud. Threads depict color interaction;
+        the cloud’s rotating view is not an electron orbit. The sea represents
+        vacuum response, not a measured gas of virtual particles. Sizes, motion
+        and the cleared area are explanatory, not a QCD solution or a mass
+        scale.
+      </p>
+      <h4>From that picture to the mass calculation.</h4>
       <p>
         BHSM defines a particle’s mass through the energy of the whole
         parent-and-child configuration minus a matched parent. Divide that
@@ -66,13 +86,17 @@ export function MassStudy({ motion }: { motion: boolean }) {
         {selected === null ? 'Pause explanation' : 'Follow the calculation'}
       </button>
       <p className="console-caption">
-        The animation follows the documented equation; it does not assign
-        invented energies or evolve a particle. Numerical masses require each
-        normalized configuration, matched parent and physical energy readout.
-        Those existing obligations remain open.
+        The equation tour follows the documented mass contract, m = Erel / c². A
+        cleared area or a count of dots alone is not that energy. Numerical
+        masses require each normalized configuration, matched parent and
+        physical energy readout. Those existing obligations remain open.
       </p>
       <a href={`${SCIENCE}/theory/ae3_family_mass_ontology_recovery_audit.md`}>
         Mass definition, recovered calculation and exact remaining bridge ↗
+      </a>
+      {' · '}
+      <a href="./research/mass-and-hypersphere-context.md">
+        Curvature papers and displaced-energy context ↗
       </a>
     </section>
   );

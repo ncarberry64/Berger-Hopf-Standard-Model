@@ -7,7 +7,8 @@ import { MagneticLab } from './magnetic-lab';
 import { MassStudy } from './mass-study';
 import { MuonResult } from './muon-result';
 import { ForceTree } from './force-tree';
-import { GeometryField, ScienceConsole } from './science-console';
+import { ScienceConsole } from './science-console';
+import { FamilyStudy } from './family-study';
 type Result = {
   classification: string;
   value: number | number[];
@@ -68,35 +69,6 @@ function Outputs({
   ) : null;
 }
 
-const generations = [
-  {
-    name: 'First family',
-    lepton: 'e⁻',
-    neutrino: 'νe',
-    up: 'u',
-    down: 'd',
-    meaning:
-      'The electron and the up and down quarks are the building blocks of ordinary atoms.',
-  },
-  {
-    name: 'Second family',
-    lepton: 'μ⁻',
-    neutrino: 'νμ',
-    up: 'c',
-    down: 's',
-    meaning:
-      'Muon, charm and strange: a second family repeats the charge pattern with heavier charged particles.',
-  },
-  {
-    name: 'Third family',
-    lepton: 'τ⁻',
-    neutrino: 'ντ',
-    up: 't',
-    down: 'b',
-    meaning:
-      'Tau, top and bottom complete the three-family pattern that BHSM seeks to explain.',
-  },
-];
 export function PrototypeScience({
   motion,
   setMotion,
@@ -104,13 +76,11 @@ export function PrototypeScience({
   motion: boolean;
   setMotion: (b: boolean) => void;
 }) {
-  const [family, setFamily] = useState(0);
   const [sector, setSector] = useState('all');
   const rows = catalog.prediction_ledger.filter(
     (r) => sector === 'all' || r.sector === sector,
   );
   const bundle = catalog.sm_bundle;
-  const selected = generations[family];
   return (
     <section
       id="exhibits"
@@ -145,50 +115,17 @@ export function PrototypeScience({
         number="04"
         label="Matter from geometry"
         title="Three families in the BHSM framework."
+        introAfter={2}
         intro="The repeating pattern is three particle families: each contains a charged lepton, a neutrino, an up-type quark and a down-type quark. The electric charges repeat across families, while the charged particles have different masses. Select a family to explore the pattern."
         accent="lavender"
       >
-        <div className="matter-scene">
-          <GeometryField motion={motion} />
-          <div className="matter-family" key={family}>
-            <p className="eyebrow">{selected.name}</p>
-            <div className="particle-quartet">
-              {[
-                [selected.lepton, 'Charged lepton'],
-                [selected.neutrino, 'Neutrino'],
-                [selected.up, 'Up-type quark'],
-                [selected.down, 'Down-type quark'],
-              ].map(([symbol, label]) => (
-                <div key={label}>
-                  <strong>{symbol}</strong>
-                  <span>{label}</span>
-                </div>
-              ))}
-            </div>
-            <p>{selected.meaning}</p>
-          </div>
-        </div>
-        <p className="console-caption">
-          Rotating Hopf fibers show the underlying mathematical geometry. The
-          viewing rotation is independent of the selected particle family.
-        </p>
-        <div className="console-selector">
-          {generations.map((g, i) => (
-            <button
-              key={g.name}
-              aria-pressed={family === i}
-              onClick={() => setFamily(i)}
-            >
-              {g.name}
-            </button>
-          ))}
-        </div>
+        <FamilyStudy motion={motion} />
         <MassStudy motion={motion} />
         <p className="console-caption">
           <b>Conditional BHSM structure</b> · The family selector shows the
-          established charge pattern. The mass animation follows BHSM’s
-          relative-energy definition; neither display assigns a measured
-          particle to an arbitrary animated fiber.
+          established charge pattern. The mass study pairs the displaced-energy
+          picture with BHSM’s relative-energy definition; neither display
+          assigns a measured particle to an arbitrary animated fiber.
         </p>
         <details className="console-details">
           <summary>
@@ -339,8 +276,8 @@ export function PrototypeScience({
         intro="Explore conventional measured moments for four spin-½ particles. Watch their precession in a shared demonstration field, then inspect the values and conventions below."
         accent="lavender"
       >
-        <MuonResult />
         <MagneticLab motion={motion} />
+        <MuonResult />
         <Outputs exhibit="magnetic" />
       </ScienceConsole>
       <ScienceConsole

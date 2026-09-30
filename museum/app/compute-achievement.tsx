@@ -28,16 +28,7 @@ export function ComputeAchievement({ motion }: { motion: boolean }) {
         {benchmark.comparisons.speedup_vs_vectorized_control.toFixed(3)}× the
         throughput of the vectorized control.
       </h4>
-      <p>
-        The BHSM-inspired direct map processed{' '}
-        {(
-          benchmark.results.bhsm_boundary_vectorized.vectors_per_second / 1e6
-        ).toFixed(2)}{' '}
-        million four-vectors per second in this recorded test. It reduces
-        coordinate-conversion overhead by expressing the transformation directly
-        instead of routing it through the benchmark’s cylindrical calculation.
-        The gain creates room for more analysis on the tested hardware.
-      </p>
+
       <p className="data-label">
         2,000,000 vectors per pass · 200,000 unique CMS vectors repeated 10× ·
         median of 7 runs
@@ -67,6 +58,16 @@ export function ComputeAchievement({ motion }: { motion: boolean }) {
       <button className="evidence-play" onClick={() => setPlaying(!playing)}>
         {playing ? 'Pause timing replay' : 'Replay timings'}
       </button>
+      <p>
+        The BHSM-inspired direct map processed{' '}
+        {(
+          benchmark.results.bhsm_boundary_vectorized.vectors_per_second / 1e6
+        ).toFixed(2)}{' '}
+        million four-vectors per second in this recorded test. It reduces
+        coordinate-conversion overhead by expressing the transformation directly
+        instead of routing it through the benchmark’s cylindrical calculation.
+        The gain creates room for more analysis on the tested hardware.
+      </p>
       <p className="console-caption">
         Bar progress is computed from the recorded median runtimes, slowed 3×
         for viewing; this is not a live benchmark. The{' '}
