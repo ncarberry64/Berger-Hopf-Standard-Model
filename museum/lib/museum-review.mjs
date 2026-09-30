@@ -29,11 +29,11 @@ export const reviewEntries = {
       'Can the family or mode-selection rule be obtained independently of the measured masses it is meant to explain?',
   },
   'science-magnetic': {
-    classification: 'BHSM research target · measured references',
+    classification: 'BHSM local tree result · quantum correction open',
     statement:
-      'BHSM aims to connect magnetic moments to its common geometric framework. The displayed measurements provide quantitative targets for that calculation.',
+      'BHSM derives the local charged-lepton electromagnetic vertex and its Ward identity. The minimal tree Pauli term is zero; the physical quantum magnetic correction remains to be evaluated.',
     question:
-      'What action-derived magnetic response would permit a comparison with these reference moments using the same units and conventions?',
+      'Can you reproduce the local Ward identity and the Pauli readout, then identify the same-action quantum contribution that determines the physical correction?',
   },
   'science-decays': {
     classification: 'BHSM transition proposal · computed kinematics',
@@ -74,14 +74,12 @@ export const reviewEntries = {
     classification: 'BHSM predictive programme',
     statement:
       'BHSM seeks testable predictions from independently specified dynamics, physical normalization and observable calculations.',
-    question:
-      'For a claimed observable, which existing completion obligations are satisfied by the cited evidence, and which remain unresolved?',
+    question: null,
   },
   creator: {
     classification: 'Open scientific record',
     statement:
       'BHSM makes its research record available for inspection, reproduction and scientific criticism.',
-    question:
-      'Does the cited revision support the exact claim being discussed, and can another reviewer locate and reproduce the same result?',
+    question: null,
   },
 };

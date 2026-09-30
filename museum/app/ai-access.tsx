@@ -18,7 +18,7 @@ export function AIInterfaceButton() {
             await navigator.clipboard.writeText(aiHandoffJSON);
             setManualCopy(false);
             setStatus(
-              'JSON copied. Paste into your AI, then ask your question.',
+              'JSON and source excerpts copied. Paste into your AI, then ask your question—even without browsing.',
             );
           } catch {
             setManualCopy(true);
@@ -68,10 +68,10 @@ export function AIAccess() {
       <h2 id="ai-access-title">Bring your questions to BHSM.</h2>
       <p>
         Copy the JSON below and paste it into your preferred AI. It provides the
-        BHSM GitHub repository, key source files and guidance for answering from
-        the scientific record. It asks your AI to search BHSM using its
-        available tools if direct file access is blocked. Then ask your
-        questions.
+        BHSM GitHub repository plus actual source excerpts, dated and linked to
+        their revisions. An AI with browsing disabled can answer from that text.
+        If it has tools, the packet asks it to search for additional or newer
+        evidence. Then ask your questions.
       </p>
       <AIInterfaceButton />
       <div className="ai-access-actions">
@@ -93,9 +93,10 @@ export function AIAccess() {
       <small>
         Your AI can use web search, ordinary GitHub pages or a repository
         connector, depending on its capabilities. This button only copies
-        context; it does not send information to an AI service. The packet asks
-        your assistant to cite sources and distinguish established results, BHSM
-        proposals and open questions.
+        context and source text; it cannot enable disabled tools or send
+        information to an AI service. The packet asks your assistant to cite
+        sources and distinguish established results, BHSM proposals and open
+        questions.
       </small>
     </section>
   );

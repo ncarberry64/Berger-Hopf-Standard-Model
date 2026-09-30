@@ -18,6 +18,7 @@ import { MuseumSoundtrack } from './museum-soundtrack';
 import { CosmologyUpdate } from './cosmology-update';
 import { CosmologyRealization } from './cosmology-realization';
 import { BHSMResearchUpdate } from './research-update';
+import { ComputeAchievement } from './compute-achievement';
 import { MuseumDeck } from './museum-deck';
 import { BergerHopf } from './berger-hopf';
 import { AIAccess } from './ai-access';
@@ -123,8 +124,9 @@ export default function Home() {
               Geometry, light and the cosmic cycle.
             </h2>
             <p>
-              Explore the original geometric proposal and its animated journey
-              from a sea of light through the cosmic web to a proposed cycle.
+              Explore the original geometric proposal and its selectable
+              storyboard from a sea of light through the cosmic web to a
+              proposed cycle.
             </p>
           </div>
           <div className="creator-links">
@@ -133,12 +135,12 @@ export default function Home() {
             </a>
           </div>
           <p className="other-work-boundary">
-            Historical conceptual animations · BHSM cosmology proposal
+            Historical conceptual storyboard · BHSM cosmology proposal
           </p>
           <ExhibitStatement id="cosmology-original" />
           <article className="other-work-card">
             <div className="other-work-visual">
-              <MotionImage motion={motion} exhibit={cosmologyExhibit} />
+              <MotionImage motion={false} exhibit={cosmologyExhibit} />
             </div>
             <div className="other-work-copy">
               <h3>The January proposal</h3>
@@ -186,10 +188,11 @@ export default function Home() {
           id="research-exhibit"
           number="10"
           label="CMS · Data & discovery"
-          title="The same collision. A different perspective."
+          title="More computation from a better coordinate map."
           intro="Follow real muons through two coordinate descriptions. The picture changes; the recorded event stays the same."
           accent="amber"
         >
+          <ComputeAchievement motion={motion} />
           <div
             className="console-selector cms-display-selector"
             aria-label="Data exhibit displays"
@@ -246,7 +249,7 @@ export default function Home() {
         >
           <div className="section-heading">
             <p className="eyebrow">From explanation to prediction</p>
-            <h2 id="details-title">What would make it predictive?</h2>
+            <h2 id="details-title">What makes it predictive?</h2>
           </div>
           <ExhibitStatement id="details" />
           <p className="method-intro">
@@ -329,7 +332,6 @@ export default function Home() {
               </a>
             ))}
           </div>
-          <ExhibitReview id="details" />
         </section>
         <section
           id="creator"
@@ -362,7 +364,6 @@ export default function Home() {
                 Frozen preprint PDF ↗
               </a>
             </div>
-            <ExhibitReview id="creator" />
           </div>
         </section>
         <footer id="museum-exit">
@@ -374,7 +375,7 @@ export default function Home() {
           <div className="footer-links">
             <a href={REPOSITORY}>Academic repository</a>
             <a href={`${SCIENCE}/LICENSE.md`}>License</a>
-            <a href="#top">Back to top ↑</a>
+            <a href="#top">Back to the future ↑</a>
           </div>
           <MuseumSoundtrack />
           <OpenReviewInvitation />

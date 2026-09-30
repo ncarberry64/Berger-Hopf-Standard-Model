@@ -62,7 +62,7 @@ export function ForceLines({ motion }: { motion: boolean }) {
   return (
     <div className="force-tree" ref={sceneRef}>
       <p className="data-label">
-        BHSM geometric interpretation · qualitative regimes
+        BHSM geometric interpretation · guided labels, static uncalibrated lines
       </p>
       <button
         className="event-stage"
@@ -129,7 +129,7 @@ export function ForceLines({ motion }: { motion: boolean }) {
                       [x, y] = position(i, t);
                     const wave =
                       Math.sin(t * Math.PI) *
-                      (offset + 8 * Math.sin(t * 8 - frame * 0.14 + j * 0.35));
+                      (offset + 8 * Math.sin(t * 8 - 0 + j * 0.35));
                     return `${k ? 'L' : 'M'}${x.toFixed(2)},${(y + wave).toFixed(2)}`;
                   });
                   return (
@@ -162,7 +162,7 @@ export function ForceLines({ motion }: { motion: boolean }) {
                 />
                 <path d={d} fill="none" stroke={color} strokeWidth="3" />
                 {Array.from({ length: 6 }, (_, j) => {
-                  const t = (frame / 25 + j / 6) % 1,
+                  const t = j / 6,
                     p = position(i, t);
                   return (
                     <circle
@@ -193,12 +193,7 @@ export function ForceLines({ motion }: { motion: boolean }) {
               </g>
             );
           })}
-          <circle
-            cx="805"
-            cy="150"
-            r={(112 + 12 * Math.sin(frame * 0.1)).toFixed(2)}
-            fill="url(#aether-glow)"
-          />
+          <circle cx="805" cy="150" r="112" fill="url(#aether-glow)" />
           {Array.from({ length: 8 }, (_, i) => (
             <ellipse
               key={`core-${i}`}
@@ -209,7 +204,7 @@ export function ForceLines({ motion }: { motion: boolean }) {
               fill="none"
               stroke="#fff3cb"
               opacity=".2"
-              transform={`rotate(${frame * 1.2 + i * 22} 805 150)`}
+              transform={`rotate(${i * 22} 805 150)`}
             />
           ))}
           <circle cx="805" cy="150" r="27" fill="#fffde8" />

@@ -15,7 +15,7 @@ const chapters = [
     name: 'Hopf',
     title: 'A sphere woven from circles.',
     tag: 'THE STRUCTURE',
-    copy: 'Heinz Hopf’s fibration organizes the three-sphere S³ into circles. Each circle corresponds to one point on an ordinary sphere S². Distinct fibers are linked.',
+    copy: 'The three-sphere S³ consists of points (x₁,x₂,x₃,x₄) in four-dimensional Euclidean space with x₁²+x₂²+x₃²+x₄² = 1. Hopf’s map provides an interface to this geometry: one circle of S³ becomes one point of an ordinary S². Follow the single selected fiber here.',
     prompt:
       'Follow a moving light around a fiber. Its matching point on the base sphere stays fixed.',
   },
@@ -23,7 +23,7 @@ const chapters = [
     name: 'Berger',
     title: 'Change the distances. Keep the links.',
     tag: 'THE GEOMETRY',
-    copy: 'Marcel Berger’s sphere metrics change distances along the Hopf fibers relative to distances across them. The same linked structure can carry different geometries.',
+    copy: 'Berger’s construction changes the metric of that same S³ hypersphere in R⁴: distances along its Hopf fibers change relative to distances across them. The hypersphere has three intrinsic dimensions; a genuinely four-dimensional sphere is S⁴ in R⁵, a different object. These embedding coordinates are not automatically physical spacetime.',
     prompt:
       'Move the fiber-scale slider. The ruler changes; the circles remain linked. This is a change of metric, not a squeezed drawing.',
   },
@@ -117,6 +117,7 @@ export function BergerHopf({
               S³ · PROJECTED FIBERS
             </text>
             {fibers.map(({ eta, phi }, i) => {
+              if (stage === 0 && i !== focus) return null;
               const points = Array.from({ length: 97 }, (_, n) =>
                 projectFiber(hopfPoint(eta, phi, (n * Math.PI) / 48), angle),
               );

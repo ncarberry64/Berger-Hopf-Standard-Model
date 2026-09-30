@@ -1,0 +1,123 @@
+{
+  "boundary_diagnostics": {
+    "near_azimuth_seam_1e_4_rad": 80,
+    "near_polar_axis_1e_6": 0,
+    "near_zero_momentum_1e_6_gev": 0
+  },
+  "claim_boundaries": [
+    "real published CMS collision-derived four-vectors",
+    "coordinate transformation only",
+    "not track fitting or track reconstruction",
+    "derived education dataset not suitable for a full physics analysis",
+    "no CMS or CERN endorsement",
+    "no frozen BHSM prediction changes"
+  ],
+  "comparisons": {
+    "speedup_vs_scalar": 41.074830864549206,
+    "speedup_vs_vectorized_control": 3.2254575559037173
+  },
+  "configuration": {
+    "numpy": "2.4.6",
+    "platform": "Windows-11-10.0.26200-SP0",
+    "processed_four_vectors_per_pass": 2000000,
+    "python": "3.14.3",
+    "repeats": 7,
+    "replication_factor": 10,
+    "unique_event_count": 100000,
+    "unique_four_vector_count": 200000
+  },
+  "correctness": {
+    "all_kernels_equivalent": false,
+    "maximum_absolute_difference": 5.820766091346741e-11,
+    "rows": {
+      "bhsm_boundary_vectorized": {
+        "allclose_rtol_1e_12_atol_1e_12": false,
+        "max_absolute_difference": 5.820766091346741e-11,
+        "mean_absolute_difference": 5.012444767771245e-15
+      },
+      "cylindrical_vectorized_control": {
+        "allclose_rtol_1e_12_atol_1e_12": false,
+        "max_absolute_difference": 4.3655745685100555e-11,
+        "mean_absolute_difference": 4.3502178703721486e-15
+      }
+    },
+    "scale_aware_float64_consistency": {
+      "all_within_bound": true,
+      "component_scale": "radius=max(1,abs(r)); unit=1; invariant=max(1,E^2+|p|^2)",
+      "epsilon_unit_bound": 128.0,
+      "maximum_input_squared_scale": 67724454653.4,
+      "method": "abs(candidate-baseline)/(float64_epsilon*component_scale)",
+      "rows": {
+        "bhsm_boundary_vectorized": {
+          "max_scale_normalized_epsilon_units": 1.934040664034858,
+          "within_128_epsilon_bound": true
+        },
+        "cylindrical_vectorized_control": {
+          "max_scale_normalized_epsilon_units": 2.3860841873336893,
+          "within_128_epsilon_bound": true
+        }
+      }
+    },
+    "strict_synthetic_tolerance_applied": true
+  },
+  "results": {
+    "bhsm_boundary_vectorized": {
+      "maximum_seconds": 0.0584711,
+      "median_seconds": 0.056168,
+      "minimum_seconds": 0.0555365,
+      "output_checksum": 29318607.72514067,
+      "timings_seconds": [
+        0.0555757,
+        0.0557805,
+        0.0574621,
+        0.0584711,
+        0.056168,
+        0.0580097,
+        0.0555365
+      ],
+      "vectors_per_second": 35607463.32431278
+    },
+    "branchy_cylindrical_scalar": {
+      "maximum_seconds": 2.3465559,
+      "median_seconds": 2.3070911,
+      "minimum_seconds": 2.2599945,
+      "output_checksum": 29318607.72514067,
+      "timings_seconds": [
+        2.3465559,
+        2.2981306,
+        2.2599945,
+        2.3070911,
+        2.3437842,
+        2.2849382,
+        2.3160646
+      ],
+      "vectors_per_second": 866892.5123936371
+    },
+    "cylindrical_vectorized_control": {
+      "maximum_seconds": 0.1913516,
+      "median_seconds": 0.1811675,
+      "minimum_seconds": 0.1686565,
+      "output_checksum": 29318607.72514067,
+      "timings_seconds": [
+        0.1686565,
+        0.1745177,
+        0.1872962,
+        0.1913516,
+        0.191236,
+        0.1744523,
+        0.1811675
+      ],
+      "vectors_per_second": 11039507.637959346
+    }
+  },
+  "source": {
+    "doi": "10.7483/OPENDATA.CMS.4M97.3SQ9",
+    "license": "CC0-1.0",
+    "portal_checksum": "adler32:b47f7436",
+    "record_id": 303,
+    "record_url": "https://opendata.cern.ch/record/303",
+    "source_sha256": "1ac3a44aa66562fa201882ac6e7fd550ac186df3586c0478095df4c77c529710",
+    "title": "Events with two muons from 2010"
+  },
+  "status": "CERN_OPEN_DATA_FOUR_VECTOR_BENCHMARK_NOT_TRACK_RECONSTRUCTION"
+}

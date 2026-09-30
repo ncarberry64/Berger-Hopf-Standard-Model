@@ -10,12 +10,12 @@ import {
 import { slides } from '../lib/museum-slides.mjs';
 import { reviewEntries } from '../lib/museum-review.mjs';
 
-test('every science exhibit has an attributed statement and a review question', () => {
+test('science exhibits 1–10 have review questions; record exhibits retain statements', () => {
   assert.deepEqual(
     Object.keys(reviewEntries),
     slides.slice(0, -1).map(([id]) => id),
   );
-  for (const entry of catalog.exhibits.slice(0, -1)) {
+  for (const entry of catalog.exhibits.slice(0, 10)) {
     assert.equal(entry.statement, reviewEntries[entry.id].statement);
     assert(
       entry.classification &&
@@ -98,4 +98,55 @@ test('downloadable context matches the clipboard and covers completion boundarie
     await readFile(new URL('../public/ai/index.json', import.meta.url), 'utf8'),
   );
   assert.deepEqual(index, catalog);
+});
+
+test('offline packet contains verifiable verbatim source text and provenance', async () => {
+  const { createHash } = await import('node:crypto');
+  assert.equal(aiHandoff.schema, 'bhsm-ai-handoff/v2');
+  assert(aiHandoff.offline_instruction.includes('embedded_source_snapshot'));
+  assert(aiHandoff.embedded_source_snapshot.sources.length >= 8);
+  for (const source of aiHandoff.embedded_source_snapshot.sources) {
+    const full = (
+      await readFile(new URL(`../../${source.path}`, import.meta.url), 'utf8')
+    ).replaceAll('\r\n', '\n');
+    assert.equal(
+      source.text,
+      full
+        .split('\n')
+        .slice(source.first_line - 1, source.last_line)
+        .join('\n'),
+    );
+    assert.equal(
+      source.normalized_source_sha256,
+      createHash('sha256').update(full).digest('hex'),
+    );
+    assert.match(source.revision, /^[0-9a-f]{40}$/);
+    assert(source.source_url.includes(source.revision));
+  }
+  for (const entry of catalog.exhibits.slice(10, 12))
+    assert.equal(entry.question, null);
+});
+
+test('computing replay retains the exact recorded benchmark and its adverse precision result', async () => {
+  const copy = JSON.parse(
+    await readFile(
+      new URL('../lib/cms-benchmark.json', import.meta.url),
+      'utf8',
+    ),
+  );
+  const source = JSON.parse(
+    await readFile(
+      new URL(
+        '../../artifacts/cern_open_data_benchmark/results.json',
+        import.meta.url,
+      ),
+      'utf8',
+    ),
+  );
+  assert.deepEqual(copy, source);
+  assert.equal(copy.correctness.all_kernels_equivalent, false);
+  assert.equal(
+    copy.correctness.scale_aware_float64_consistency.all_within_bound,
+    true,
+  );
 });

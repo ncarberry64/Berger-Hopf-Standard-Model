@@ -297,3 +297,48 @@ manual-player exclusion, and cleanup. Browser checks confirmed Enter the science
 keyboard activation, continued playback, and deliberate pause persistence.
 TypeScript, focused lint, static export, 13 museum Python tests, and all five
 required publication audits passed.
+# 30 September 2026 — evidence-based motion and visitor responses
+
+- Added a first-page BHSM abstract. Replaced decorative Standard Model rotations
+  with selectable charge/spin properties. The Hopf chapter isolates its selected
+  fiber and explains S³ in R⁴ versus S⁴; Berger changes the S³ metric.
+- Added a source-linked, animated explanation of BHSM's matched-parent
+  relative-energy mass definition. Removed the arbitrary family/fiber animation
+  association. The muon card has a 3px border and an explanation of the achieved
+  local electromagnetic identity and tree Pauli result.
+- At the user's request, worked through the muon derivation beyond the status
+  flag. `theory/muon_minimum_pauli_readout_20260930.md` derives a minimal Pauli
+  linear functional, its required remainder check and the controlled q→0 limit,
+  reduced further to one projected soft-transfer scalar derivative.
+  Tests agree with the existing form-factor solver and re-evaluate the local
+  Ward identity. No quantum-corrected physical muon anomaly was derived: the
+  projected renormalized vertex on physical states is not supplied by the
+  inspected work. This is an open calculation, not a failed prediction. No
+  action, frozen prediction, completion rule or gate is changed.
+- Replaced invented force-surface dynamics with QCD/decay explanations,
+  inverse-square reference laws and a mathematical S³ projection. Retained the
+  historical cosmic cycle as selectable static panels; retained source-driven
+  R1, CMS and certificate animations. Added a per-display evidence register at
+  `public/research/animation-evidence.md`. Water now bends about the reference
+  104.5° angle; decorative nuclear jitter and star twinkling are removed.
+- Exhibit 10 replays the exact recorded CMS benchmark medians and highlights
+  3.225× versus the vectorized control, with workload and precision limits.
+- Review questions in exhibits 1–10 now have answer/evidence fields, a GitHub
+  submission draft, existing-response links and a text-file export. Nothing is
+  submitted automatically. Removed review panels/questions from 11 and 12.
+  Applied “What makes it predictive?” and “Back to the future”.
+- The AI clipboard/download packet now embeds eight verbatim source excerpts
+  (about 36 kB total packet), with per-file revisions, line ranges and normalized
+  SHA-256 hashes. It explicitly answers from these when no browsing is available.
+  The static export checks v2 and embedded sources. It cannot enable AI tools.
+
+Validation: 24 Python tests (museum plus Pauli derivation/precision readout),
+37 Node tests, TypeScript, focused lint, production static export, deterministic
+guide regeneration, and all five publication audits. Browser checks covered
+the reviewer draft contents without submitting, ten review panels, reference
+properties, single Hopf focus, mass steps at phone width without overflow,
+3px muon border, benchmark medians, offline packet contents and copy success,
+renamed link, and no console errors. Browser clipboard inspection is virtual;
+the success message and packet contents were checked, not a third-party AI's
+response. Existing broad lint findings in untouched `cosmology-realization.tsx`
+are outside these focused checks.

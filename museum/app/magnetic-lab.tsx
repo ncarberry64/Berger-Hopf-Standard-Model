@@ -30,7 +30,10 @@ export function MagneticLab({ motion }: { motion: boolean }) {
           const mx = 150 + sign * (sx - 150),
             my = 200 + sign * (sy - 200);
           return (
-            <article className="magnetic-particle" key={row.id}>
+            <article
+              className={`magnetic-particle ${row.id === 'muon' ? 'magnetic-muon' : ''}`}
+              key={row.id}
+            >
               <header>
                 <span>{row.symbol}</span>
                 <h4>{row.name}</h4>

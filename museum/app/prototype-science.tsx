@@ -4,8 +4,10 @@ import catalog from './science-collection.json';
 import { SCIENCE } from './exhibits';
 import { CollisionTheatre } from './collision-theatre';
 import { MagneticLab } from './magnetic-lab';
+import { MassStudy } from './mass-study';
+import { MuonResult } from './muon-result';
 import { ForceTree } from './force-tree';
-import { GeometryField, ScienceConsole } from './science-console';
+import { ScienceConsole } from './science-console';
 type Result = {
   classification: string;
   value: number | number[];
@@ -146,8 +148,8 @@ export function PrototypeScience({
         intro="The repeating pattern is three particle families: each contains a charged lepton, a neutrino, an up-type quark and a down-type quark. The electric charges repeat across families, while the charged particles have different masses. Select a family to explore the pattern."
         accent="lavender"
       >
+        <MassStudy motion={motion} />
         <div className="matter-scene">
-          <GeometryField motion={motion} family={family} />
           <div className="matter-family" key={family}>
             <p className="eyebrow">{selected.name}</p>
             <div className="particle-quartet">
@@ -178,12 +180,10 @@ export function PrototypeScience({
           ))}
         </div>
         <p className="console-caption">
-          <b>Conditional BHSM structure</b> · Mathematical geometry animation;
-          particle symbols are a schematic family map. The looping lines show
-          projected Hopf fibers. Selecting a family changes the highlighted
-          curves and their geometric arrangement as a visual analogy for
-          different modes; these curves are not measured particle paths or
-          calculated mass predictions.
+          <b>Conditional BHSM structure</b> · The family selector shows the
+          established charge pattern. The mass animation follows BHSM’s
+          relative-energy definition; neither display assigns a measured
+          particle to an arbitrary animated fiber.
         </p>
         <details className="console-details">
           <summary>
@@ -330,10 +330,11 @@ export function PrototypeScience({
         id="science-magnetic"
         number="05"
         label="Magnetic moments in motion"
-        title="Four reference magnetic moments."
+        title="The muon: from charge to magnetic response."
         intro="Explore conventional measured moments for four spin-½ particles. Watch their precession in a shared demonstration field, then inspect the values and conventions below."
         accent="lavender"
       >
+        <MuonResult />
         <MagneticLab motion={motion} />
         <Outputs exhibit="magnetic" />
       </ScienceConsole>
@@ -364,7 +365,7 @@ export function UnificationConsole({
       number="03"
       label="Forces · one geometric origin"
       title="One geometry. Four interaction regimes."
-      intro="Explore four interactions and the geometric origin proposed by BHSM. Five moving studies illustrate binding, release, imbalance, curvature and shared geometry."
+      intro="Explore four interactions and the geometric origin proposed by BHSM. Five studies connect known reference mechanisms and mathematical geometry to the proposed interpretation."
       accent="amber"
     >
       <ForceTree motion={motion} setMotion={setMotion} />

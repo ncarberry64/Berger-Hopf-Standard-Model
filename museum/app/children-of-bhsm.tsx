@@ -1,6 +1,7 @@
 'use client';
 /* oxlint-disable jsx-a11y/prefer-tag-over-role -- Named inline SVG illustrations. */
 /* oxlint-disable jsx-a11y/no-noninteractive-tabindex -- Independent scroll regions need keyboard focus for arrow/PageDown scrolling. */
+import { useState } from 'react';
 import { useSceneClock } from './science-console';
 import { StructureShowcase } from './structure-showcase';
 import {
@@ -162,6 +163,7 @@ function ExampleCard({
 
 export function ChildrenOfBHSM({ motion }: { motion: boolean }) {
   const { ref, time } = useSceneClock(motion);
+  const [property, setProperty] = useState('charge');
   return (
     <section className="bhsm-children" aria-labelledby="children-title">
       <header className="children-heading">
@@ -200,38 +202,34 @@ export function ChildrenOfBHSM({ motion }: { motion: boolean }) {
             02 <span>Standard Model particle table</span>
           </h3>
           <p>One layer in the proposed BHSM child graph</p>
+          <div className="particle-properties" aria-label="Particle property">
+            {['charge', 'spin'].map((name) => (
+              <button
+                key={name}
+                aria-pressed={property === name}
+                onClick={() => setProperty(name)}
+              >
+                {name === 'charge' ? 'Electric charge' : 'Quantum spin'}
+              </button>
+            ))}
+          </div>
           <div className="children-families">
-            {families.map(({ name, particles, tone, detail }, family) => (
+            {families.map(({ name, particles, tone, detail }) => (
               <div className={`children-family children-${tone}`} key={name}>
                 <h4>{name}</h4>
                 <div className="children-particle-grid">
                   {particles.map((p, index) => (
                     <div className="children-particle-cell" key={p}>
-                      <svg viewBox="0 0 64 64" aria-hidden="true">
-                        <circle
-                          cx="32"
-                          cy="32"
-                          r={23 + 3 * Math.sin(time * 1.4 + index + family)}
-                          fill="none"
-                          stroke="currentColor"
-                          opacity=".25"
-                        />
-                        <g
-                          transform={`rotate(${(time * 35 + index * 55 + family * 25) % 360} 32 32)`}
-                        >
-                          <circle
-                            cx="32"
-                            cy="32"
-                            r="26"
-                            fill="none"
-                            stroke="currentColor"
-                            strokeWidth="1.5"
-                            strokeDasharray="24 140"
-                          />
-                          <circle cx="58" cy="32" r="2" fill="currentColor" />
-                        </g>
-                      </svg>
                       <span>{p}</span>
+                      <small>
+                        {property === 'spin'
+                          ? tone === 'scalar'
+                            ? 's = 0'
+                            : tone === 'bosons'
+                              ? 's = 1'
+                              : 's = ½'
+                          : `Q = ${tone === 'quarks' ? (index < 3 ? '+⅔' : '−⅓') : tone === 'leptons' ? (index < 3 ? '−1' : '0') : p === 'W⁺' ? '+1' : p === 'W⁻' ? '−1' : '0'}`}
+                      </small>
                     </div>
                   ))}
                 </div>
@@ -244,8 +242,12 @@ export function ChildrenOfBHSM({ motion }: { motion: boolean }) {
             behavior build the structures in the next panel.
           </p>
           <small>
-            Animated family markers · schematic, not particle trajectories.
+            Charge is in units of e. Spin is in units of ℏ: an intrinsic quantum
+            property, not a rotating surface.
           </small>
+          <a href="https://home.cern/science/physics/standard-model">
+            Standard Model reference ↗
+          </a>
         </section>
         <span className="children-bridge" aria-hidden="true">
           →
