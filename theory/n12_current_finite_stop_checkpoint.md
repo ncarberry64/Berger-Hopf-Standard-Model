@@ -41,10 +41,24 @@ Outward evaluation of the actual retained constraints
 points. At the native terminal point, `||C||` is at most
 `1.4329435060435988e-8`, dominated by the Legendre energy. Its fixed-normal
 linearized action correction has norm at most `3.013905934473462e-9`.
-This is not a certified nonlinear correction. The separately retained
+The separately retained
 unshifted descriptor relation `lambda_selected(Y)-s=0` has terminal
 residual approximately `-9.33986762640091e-17`; the point does not satisfy
 that graph exactly. Both defects must be included in the history proof.
+
+The native terminal fixed-normal slice now has a certified unique nonlinear
+`C25=0` solution. The unchanged action is evaluated outward on a containing
+raw-coordinate box for `Y(nu)=P+W^-1 N nu`, with `||nu||_2<=r` and
+`r=6.027811868946925e-9`. For the fixed midpoint inverse `B`, the map
+`T(nu)=nu-B C(Y(nu))` has `||DT||_2<=q=0.008133503979530058` and strict
+self-inclusion slack at least `2.9648787026495234e-9`. Banach contraction
+therefore gives a unique zero in this normal ball, with action correction
+norm at most `3.0386205669470115e-9`. This restores all 25 nonlinear retained
+constraints locally. It does not certify the selected-eigenvalue graph,
+the canonical stop, a parameter-uniform chart, or continuous history.
+The producer and saved interval operands are
+`scripts/certify_n12_current_stop_normal_restoration_pilot.py` and
+`artifacts/current_runtime/current_stop_normal_restoration_pilot/`.
 
 The exact native polynomial derivative minus the cached outward action
 field gives a signed same-point terminal defect with action norm in
@@ -61,6 +75,21 @@ same-point action defect norm is enclosed in
 approximately `+4.307034633641086e-16` and its descriptor rate remains
 strictly positive. The earlier cached-reference packet remains explicitly
 labeled as such. Neither endpoint packet supplies a uniform curve bound.
+
+The current native curve point pilot also encloses
+`d'=P''-DF(P)P'`, using exact polynomial jets and the unchanged outward
+action derivative. Its action norm is enclosed in
+`[1.5198826842313595e-5,1.5198826842313599e-5]` at the native initial point
+and `[5.660402484722399e-4,5.660402484722401e-4]` at the native terminal
+point. The bordered first response solves `K x'=r'-K'x` with the signed
+combined source assembled before solving. Both bordered and eigenline
+derivative residual balls contain zero. An independent second-order
+finite-difference diagnostic at the initial point agrees to relative
+error `3.4111e-11`, with error ratio `0.249961` on halving the step; two
+exact polynomial-jet tests pass. The producer and full operands are
+`scripts/certify_n12_current_stop_curve_derivative_pilot.py` and
+`artifacts/current_runtime/current_stop_curve_derivative_pilot/`.
+These are point enclosures, not a uniform derivative or remainder bound.
 
 All 184 polynomial seam jumps have been retained as signed exact dyadic
 vectors. Their largest state norm is at most `6.748233187350258e-18`.
@@ -106,6 +135,15 @@ mathematical results on their original inputs are not retracted. In
 particular, the old response chain binds center SHA256
 `086C41068B9F3A6C0E5F8040B661202E067D017C909A381010E45FF352498D00`.
 
+Local and Git searches found reusable normal-chart and Green algorithms,
+but no completed continuous-history certificate for the current center.
+A historical half-step center also has 185 intervals and the same grid
+and weights, yet different coefficients; matching shape is insufficient.
+The first-chord physical-`u` Green proof in `BHSM-singular-event-reset`
+uses a different center and `u=lambda_event^2`. Its transfer is local to
+that chord, and `Du=0` at the stop, so its constants and chart cannot close
+the current unshifted `lambda_selected-s` stop relation.
+
 ## NEXT
 
 Use the current 1395-cell uniform bordered inverse to enclose the complete
@@ -116,7 +154,7 @@ refine only reported owners when a subsequent Green estimate needs
 tighter bounds.
 
 The restartable current response driver is
-`scripts/certify_n12_current_dop853_bordered_rhs_response.py`. Its three
+`scripts/certify_n12_current_dop853_bordered_rhs_response.py`. Its
 full pass has completed. Its response caps reach `2.8568106410434864e16`,
 too loose for a useful shadowing estimate. The direct raw-source producer
 `scripts/tighten_n12_current_dop853_rhs_raw_source_caps.py` reuses these
@@ -161,6 +199,29 @@ The augmented descriptor also has the retained graph relation
 descriptor is not automatically a zero of the selected eigenvalue on the
 stored raw-state curve; the outward terminal graph residual above makes
 this distinction explicit.
+
+The recovered constraint-curvature owner is
+`scripts/certify_n12_finite_terminal_radii.py`. For raw directions `a,b`,
+its reusable identities are
+`D2 C_m[a,b]=D3 S[e_m,a,b]` and
+`D2 E[a,b]=v.D3 S_v[a,b]+a_v.H_v b+b_v.H_v a-H[a,b]`.
+Its historical numerical constants are not current bounds. After a
+parameter-uniform `DCN` inclusion, the augmented normal/descriptor
+derivative is triangular:
+`D(C25,lambda-s)N_aug=[[DCN,0],[Dlambda N,-1]]`.
+Thus the graph can be restored using the retained 25-dimensional normal
+solve and the descriptor equation; no new full history inverse is needed.
+For total chart directions `y_a,y_b`, the second normal jet is
+`nu_ab=-(DCN)^-1 D2 C[y_a,y_b]` and the descriptor jet is
+`s_ab=D2 lambda[y_a,y_b]+Dlambda N nu_ab`.
+
+Reuse `src/bhsm/interface/shared_parameter_residual.py` to preserve common
+polynomial parameters before residual hulls, and
+`src/bhsm/interface/frozen_causal_map_error.py` for outward composition
+arithmetic after the current physical map and operand errors are enclosed.
+The local normal zero and point curve jets now provide current inputs.
+The missing dependency remains their uniform shared-curve and tube
+remainders and the resulting current constrained Green bounds.
 
 Transfer the completed exact rational descriptor positivity/root data,
 certified initial fiber, and outward endpoint action rates through the
