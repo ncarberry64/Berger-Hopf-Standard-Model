@@ -17,6 +17,12 @@ minimum selected-to-hard gap lower bound is `1.3267891608257942e-7`.
 These certificates apply to the stored path; they are not exact-flow
 shadowing certificates.
 
+The complete action-owned internal RHS and finite instantaneous bordered
+response are now bounded on all 1395 identical cells, with validation
+passed and no unresolved cells. No new trajectory, global subdivision, or
+full kinetic/Dirac inverse was used. The separate fixed-center Neumann
+diagnostic is open on every cell and is not used for this conclusion.
+
 Exact rational scalar replay on the current 185 native intervals proves
 positivity on all 184 complete preterminal intervals and one descending
 polynomial root in `[92.30514373112727,92.30514373112730]`.
@@ -29,6 +35,32 @@ gives a positive first descriptor rate and a negative native terminal rate
 and Delta. The terminal point uses the exact native polynomial at the saved
 binary fraction; its descriptor is approximately `-6.41317e-27`, without
 clamping. This is a point orientation check, not a certified stop-face orbit.
+
+Outward evaluation of the actual retained constraints
+`C=(S_m[24],v.S_v-S)` closes rank-25 normal linearizations at both saved
+points. At the native terminal point, `||C||` is at most
+`1.4329435060435988e-8`, dominated by the Legendre energy. Its fixed-normal
+linearized action correction has norm at most `3.013905934473462e-9`.
+This is not a certified nonlinear correction. The separately retained
+unshifted descriptor relation `lambda_selected(Y)-s=0` has terminal
+residual approximately `-9.33986762640091e-17`; the point does not satisfy
+that graph exactly. Both defects must be included in the history proof.
+
+The exact native polynomial derivative minus the cached outward action
+field gives a signed same-point terminal defect with action norm in
+`[3.045050544853228e-5,3.0450505448532287e-5]`. Its descriptor defect is
+positive, approximately `7.738066798494717e-15`, and its causal forcing is
+the negative. This is a point operand for Green `Y`, not a uniform curve
+bound. The endpoint source is materially larger than the native seam
+jumps; preserving only seam-rounding sources would omit it.
+
+A separate outward action evaluation at the exact native initial point
+removes the stored-raw/native coordinate rate-translation obligation. Its
+same-point action defect norm is enclosed in
+`[9.092967190545771e-8,9.092967190545774e-8]`; its descriptor defect is
+approximately `+4.307034633641086e-16` and its descriptor rate remains
+strictly positive. The earlier cached-reference packet remains explicitly
+labeled as such. Neither endpoint packet supplies a uniform curve bound.
 
 All 184 polynomial seam jumps have been retained as signed exact dyadic
 vectors. Their largest state norm is at most `6.748233187350258e-18`.
@@ -77,22 +109,61 @@ particular, the old response chain binds center SHA256
 ## NEXT
 
 Use the current 1395-cell uniform bordered inverse to enclose the complete
-internal action-owned source on that identical cover. A finite bound from
-the uniform inverse is distinct from closure of a tighter local Neumann
-estimate. Preserve completed cell calculations and refine only reported
-owners when a subsequent Green estimate needs tighter bounds.
+internal action-owned source in the correlated history construction. A
+finite bound from the uniform inverse is distinct from closure of a
+tighter local Neumann estimate. Preserve completed cell calculations and
+refine only reported owners when a subsequent Green estimate needs
+tighter bounds.
 
 The restartable current response driver is
 `scripts/certify_n12_current_dop853_bordered_rhs_response.py`. Its three
-pilot rows pass the finite-cap and center backward-error checks. Their
-response caps are about `1e16` to `3e16`, too loose for a useful shadowing
-estimate. The relative-operator Neumann diagnoses remain open and are
-explicitly not promoted by the finite-cap fallback. Completed rows are
-saved before reporting; an interrupted final append is recovered without
-discarding completed work.
+full pass has completed. Its response caps reach `2.8568106410434864e16`,
+too loose for a useful shadowing estimate. The direct raw-source producer
+`scripts/tighten_n12_current_dop853_rhs_raw_source_caps.py` reuses these
+center solves, computes the exact action-dual output legs, and rebuilds
+only their existing tangent/remainder geometry. The relative-operator
+Neumann diagnoses remain open and are explicitly not promoted by either
+finite-cap method. Completed rows are saved before reporting; an
+interrupted final append is recovered without discarding completed work.
+The hash-bound JSONL checkpoints retain their exact bytes through Git.
+The full direct-raw pass also closes all 1395 cells. Its maximum source
+cap is `1366.3964864279828`, and its maximum instantaneous response cap is
+`1.0298520119434927e10`, owned by interval 182, subspan 2 of 4. Every raw
+source variation bound improves the fallback by at least
+`3.040597534813045e7`. These remain norm bounds on the stored curve, not a
+small correlated shadowing radius.
 
-Replay exact rational descriptor positivity/root data on the current 185
-intervals, bind the certified initial fiber, and evaluate the current
-terminal action rate outward. These establish inputs to shadowing; a
-polynomial root or a pointwise negative terminal rate alone does not prove
-an exact retained-action first hit or close Gate 7.
+The next mathematical dependency is a shared-curve enclosure of
+`d(a)=P'(a)-F(P(a))`, together with the current constrained linear
+propagator and nonlinear remainder. Differentiate the bordered system
+with `r'-K'x` assembled before norm bounds. Carry the signed dyadic seam
+impulses and the fixed-descriptor initial member through that same Green
+operator. Separate interval boxes for `P'` and `F(P)` lose the cancellation
+needed here. Cached numerical Jacobians are proposals, not uniform
+interval derivative or propagator bounds.
+The existing outward `_rate_enclosure` and `_rate_second_directional`
+routines provide directional action responses. Enclose the common-curve
+derivative `d'=P''-DF(P)P'` and its remainder with shared implicit response
+operands. Existing causal `_linear_composition`, `_compose_z1`, and
+`_compose_z2` algebra may be reused after its maps and remainders are
+bound to this center. Historical 370-interval packets cannot substitute
+for those inputs.
+
+The raw98 retained constraints have the existing owner
+`recon_n12_c2_stop_physical_tangent_transfer._constraint_geometry`:
+`C=(S_m[24],v.S_v-S)`. A 73-dimensional nullspace at a point does not
+certify a nonlinear physical chart. The Green tube must restore its
+normal coordinates through `C=0`, with a uniformly invertible normal
+derivative and its nonlinear remainder, rather than discard the normal
+component of the center defect.
+The augmented descriptor also has the retained graph relation
+`lambda_selected(Y)=s`. A root of the independently stored polynomial
+descriptor is not automatically a zero of the selected eigenvalue on the
+stored raw-state curve; the outward terminal graph residual above makes
+this distinction explicit.
+
+Transfer the completed exact rational descriptor positivity/root data,
+certified initial fiber, and outward endpoint action rates through the
+validated history tube. These establish inputs to shadowing; a polynomial
+root or a pointwise negative terminal rate alone does not prove an exact
+retained-action first hit or close Gate 7.

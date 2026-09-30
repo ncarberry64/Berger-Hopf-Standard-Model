@@ -1,6 +1,9 @@
 *.pdf -text -diff
 *.png -text -diff
 *.gif -text -diff
+# Current finite-stop response checkpoints are bound by their exact bytes.
+artifacts/current_runtime/current_stop_rhs_checkpoint/*.jsonl -text whitespace=cr-at-eol
+artifacts/flagship_integration/BHSM_N12_C2_STOP_DOP853_PROJECTOR_REFINED_*.jsonl -text whitespace=cr-at-eol
 # Deterministic line endings for hash-audited source files.
 scripts/*.py text eol=lf
 src/bhsm/interface/shared_action_taylor.py text eol=lf
