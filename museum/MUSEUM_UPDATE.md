@@ -18,7 +18,7 @@ from 5,200 to 650, invisible filament groups are omitted, and repeated SVG blur
 filters are removed. Desktop content is bounded at roughly 1,400 pixels and
 the cosmic drawing is capped at 440 pixels high. Phone layouts remain stacked.
 
-Validation: TypeScript, focused lint, 37 Node checks, six museum facade checks,
+Validation: TypeScript, focused lint, 37 Node checks, thirteen museum Python checks,
 production build/static export, and all five publication audits pass. Two AI
 artifact regenerations are byte-identical; the successful AI handoff is intact.
 Browser checks verify restored geometry changes, all thirteen direct destinations
