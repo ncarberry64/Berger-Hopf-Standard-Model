@@ -1,0 +1,165 @@
+.evidence-feature,
+.bhsm-abstract {
+  margin: 1.5rem 0;
+  padding: 1.3rem;
+  border: 1px solid #554561;
+  border-radius: 12px;
+  background: #110e19;
+}
+.evidence-feature h4,
+.bhsm-abstract h2 {
+  color: #ffd6a1;
+  font-size: clamp(1.2rem, 2vw, 1.75rem);
+  margin: 0.4rem 0 1rem;
+}
+.evidence-feature p,
+.evidence-feature li,
+.bhsm-abstract p {
+  color: #d9cfe3;
+  line-height: 1.75;
+  font-size: 0.9rem;
+}
+.evidence-feature a,
+.bhsm-abstract a {
+  color: #71e5eb;
+}
+.mass-steps {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 0.5rem;
+  margin: 1.5rem 0;
+}
+.mass-steps button {
+  padding: 1rem 0.6rem;
+  border: 1px solid #5d4a70;
+  border-radius: 8px;
+  background: #1a1424;
+  color: #d1bfdc;
+  text-align: left;
+}
+.mass-steps button[aria-pressed='true'] {
+  border: 2px solid #ffbc77;
+  background: #392a21;
+}
+.mass-steps small,
+.mass-steps strong {
+  display: block;
+}
+.mass-steps strong {
+  margin-top: 1rem;
+  font-size: 1rem;
+  overflow-wrap: anywhere;
+}
+.mass-step-copy {
+  min-height: 3.5em;
+}
+.evidence-play {
+  border: 1px solid #887598;
+  border-radius: 20px;
+  padding: 0.5rem 0.9rem;
+  color: #eedff8;
+  background: #22182b;
+  cursor: pointer;
+}
+.muon-result {
+  border: 2px solid #ffbc77;
+}
+.muon-readouts {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.8rem;
+}
+.muon-readouts p {
+  border: 1px solid #665175;
+  padding: 1rem;
+}
+.muon-readouts :is(small, strong, span) {
+  display: block;
+}
+.muon-readouts strong {
+  color: #ffcf99;
+  font-size: 1.5rem;
+  margin: 0.5rem 0;
+}
+.magnetic-particle.magnetic-muon {
+  border: 3px solid #ffbc77;
+}
+.benchmark-race {
+  display: grid;
+  gap: 1rem;
+  margin: 1rem 0;
+}
+.benchmark-race > div {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 0.5rem;
+  font-size: 0.85rem;
+  color: #d6c7e3;
+}
+.benchmark-track {
+  grid-column: 1/-1;
+  height: 12px;
+  border-radius: 6px;
+  background: #302638;
+  overflow: hidden;
+}
+.benchmark-track i {
+  display: block;
+  height: 100%;
+  background: #ac95d4;
+}
+.benchmark-bhsm .benchmark-track i {
+  background: #ffbc77;
+}
+.particle-properties {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+  margin: 0.6rem 0;
+}
+.particle-properties button {
+  color: #decfea;
+  background: #24192d;
+  border: 1px solid #745d85;
+  border-radius: 15px;
+  padding: 0.4rem 0.6rem;
+  font-size: 0.75rem;
+}
+.particle-properties button[aria-pressed='true'] {
+  background: #ffbc77;
+  color: #171019;
+}
+.children-particle-cell small {
+  position: absolute;
+  bottom: -5px;
+  color: #f4eaff;
+  font-size: 0.6rem;
+  white-space: nowrap;
+}
+.children-particle-grid {
+  row-gap: 0.7rem;
+}
+@media (max-width: 700px) {
+  .mass-steps {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+  .muon-readouts {
+    grid-template-columns: 1fr;
+  }
+  .evidence-feature {
+    padding: 1rem;
+  }
+}
+
+.matter-scene {
+  grid-template-columns: 1fr;
+}
+.matter-family {
+  padding: 1rem 1.5rem;
+}
+.force-study svg {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: 6px;
+}

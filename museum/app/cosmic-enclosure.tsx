@@ -1,6 +1,6 @@
 'use client';
 /* oxlint-disable jsx-a11y/prefer-tag-over-role -- Inline SVG needs image semantics; an HTML img cannot contain this interactive drawing. */
-import { useEffect, useRef, useState } from 'react';
+import { useRef, useState } from 'react';
 import { SCIENCE } from './exhibits';
 import references from './reference-data.json';
 import {
@@ -56,27 +56,11 @@ function point(i: number, turn: number) {
 }
 const f = (n: number) => n.toFixed(2);
 
-export function CosmicEnclosure({ motion }: { motion: boolean }) {
+export function CosmicEnclosure({ motion: _motion }: { motion: boolean }) {
   const sceneRef = useRef<HTMLElement>(null);
-  const [phase, setPhase] = useState(0),
-    [playing, setPlaying] = useState(true),
-    [speed, setSpeed] = useState(1);
-  useEffect(() => {
-    if (!motion || !playing) return;
-    let visible = false;
-    const observer = new IntersectionObserver(([entry]) => {
-      visible = entry.isIntersecting;
-    });
-    if (sceneRef.current) observer.observe(sceneRef.current);
-    const t = setInterval(() => {
-      if (visible && !document.hidden)
-        setPhase((p) => (p + 0.12 * speed) % 100);
-    }, 60);
-    return () => {
-      clearInterval(t);
-      observer.disconnect();
-    };
-  }, [motion, playing, speed]);
+  const [phase, setPhase] = useState(0);
+  // The historical proposal has no source-derived evolution law. Keep its
+  // storyboard selectable without animating an invented physical history.
   const active = phases.reduce((a, p, i) => (phase >= p.start ? i : a), 0),
     release = phase < 10,
     smooth = phase >= 96;
@@ -117,11 +101,8 @@ export function CosmicEnclosure({ motion }: { motion: boolean }) {
       </p>
       <button
         className="event-stage cosmic-stage"
-        aria-label={
-          playing && motion ? 'Pause cosmic cycle' : 'Play cosmic cycle'
-        }
-        aria-pressed={!playing}
-        onClick={() => setPlaying((p) => !p)}
+        aria-label={'Next historical storyboard panel'}
+        onClick={() => setPhase(phases[(active + 1) % phases.length].start)}
       >
         <svg
           viewBox="0 0 960 650"
@@ -416,40 +397,17 @@ export function CosmicEnclosure({ motion }: { motion: boolean }) {
             aria-pressed={active === i}
             onClick={() => {
               setPhase(p.start);
-              setPlaying(false);
             }}
           >
             {i + 1}. {p.title}
           </button>
         ))}
       </div>
-      <div className="media-toolbar">
-        <button disabled={!motion} onClick={() => setPlaying((p) => !p)}>
-          {playing && motion ? 'Pause cycle' : 'Play cycle'}
-        </button>
-        <label>
-          Speed{' '}
-          <select value={speed} onChange={(e) => setSpeed(+e.target.value)}>
-            <option value=".5">½×</option>
-            <option value="1">1×</option>
-            <option value="2">2×</option>
-          </select>
-        </label>
-      </div>
-      <label className="media-slider">
-        Illustrative cycle position · no physical time scale
-        <input
-          type="range"
-          min="0"
-          max="99.9"
-          step=".1"
-          value={phase}
-          onChange={(e) => {
-            setPhase(+e.target.value);
-            setPlaying(false);
-          }}
-        />
-      </label>
+      <p className="console-caption">
+        Static historical storyboard. Select a panel above. The original BHSM
+        cosmic cycle has no evaluated evolution law in this source; the
+        numerical R1 response is animated in the next exhibit.
+      </p>
       <div className="event-story">
         <h4>{phases[active].title}</h4>
         <p>{phases[active].text}</p>

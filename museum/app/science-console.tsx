@@ -1,4 +1,5 @@
 'use client';
+/* oxlint-disable next/no-html-link-for-pages -- The evidence link reads a static Markdown file. */
 /* oxlint-disable jsx-a11y/prefer-tag-over-role -- Inline SVG needs image semantics; an HTML img cannot contain this interactive drawing. */
 import { useEffect, useRef, useState, type ReactNode } from 'react';
 import { ChildrenOfBHSM } from './children-of-bhsm';
@@ -229,6 +230,36 @@ export function EngineHero({
         <span>THE BHSM SCIENTIFIC RECORD</span>
         <span>Explore. Interact. Question.</span>
       </div>
+      <section className="bhsm-abstract" aria-labelledby="bhsm-abstract-title">
+        <p className="eyebrow">Berger–Hopf Standard Model</p>
+        <h2 id="bhsm-abstract-title">Abstract</h2>
+        <p>
+          BHSM investigates whether matter, interactions and cosmic structure
+          can be described through one geometric action with
+          environment-dependent realizations. Hopf fibers organize internal
+          modes; Berger geometry changes their relative metric. The programme
+          connects these structures to particle representations, conserved
+          currents, relative energies and experimentally testable observables.
+        </p>
+        <p>
+          The research record includes conditional Standard Model structure,
+          historical numerical comparisons, certified calculations on specified
+          backgrounds and a measured computing advantage on a CMS coordinate
+          workload. Its physical targets include particle masses, magnetic
+          moments, collision outcomes and cosmological response. Each exhibit
+          identifies what was calculated, what is established reference science,
+          and which physical identifications remain open. This museum makes the
+          work accessible for reproduction, criticism and new tests.
+        </p>
+        <a href="https://github.com/ncarberry64/Berger-Hopf-Standard-Model/blob/main/docs/current_bhsm_status.md">
+          Read the research status and claim boundaries ↗
+        </a>
+      </section>
+      <p className="console-caption">
+        <a href="./research/animation-evidence.md">
+          What drives the animations: data, equations and reference science ↗
+        </a>
+      </p>
       <ChildrenOfBHSM motion={motion} />
       <ExhibitReview id="potential" />
     </section>

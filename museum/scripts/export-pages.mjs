@@ -135,7 +135,10 @@ try {
   );
   if (
     aiIndex.exhibits.map(({ id }) => id).join(',') !== sections.join(',') ||
-    aiPacket.schema !== 'bhsm-ai-handoff/v1' ||
+    aiPacket.schema !== 'bhsm-ai-handoff/v2' ||
+    !aiPacket.embedded_source_snapshot?.sources?.every(
+      (source) => source.text && source.revision,
+    ) ||
     !written.includes('Copy BHSM for AI')
   ) {
     throw new Error('Static export lost the AI interface or its exhibit map.');

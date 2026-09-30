@@ -76,7 +76,7 @@ def test_research_and_cosmology_labels_and_motion_fallbacks_are_explicit():
     page = (MUSEUM / "app/page.tsx").read_text(encoding="utf-8")
     exhibits = (MUSEUM / "app/exhibits.ts").read_text(encoding="utf-8")
     assert "Real experimental data · CMS Open Data" in page
-    assert "Historical conceptual animations" in page
+    assert "Historical conceptual storyboard" in page
     assert '<ExhibitReview id="cosmology-original" />' in page
     guide = json.loads((MUSEUM / "public/ai/index.json").read_text(encoding="utf-8"))
     original = next(entry for entry in guide["exhibits"] if entry["id"] == "cosmology-original")

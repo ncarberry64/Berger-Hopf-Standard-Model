@@ -1,5 +1,6 @@
 import { mkdir, writeFile } from 'node:fs/promises';
-import { catalog, aiHandoffJSON } from '../lib/ai-guide.mjs';
+await import('./build-ai-snapshot.mjs');
+const { catalog, aiHandoffJSON } = await import('../lib/ai-guide.mjs');
 
 const publicRoot = new URL('../public/', import.meta.url);
 await mkdir(new URL('ai/', publicRoot), { recursive: true });
@@ -54,7 +55,7 @@ const guide = [
       ? [
           `${entry.classification}: ${entry.statement}`,
           '',
-          `Review question: ${entry.question}`,
+          ...(entry.question ? [`Review question: ${entry.question}`] : []),
           '',
         ]
       : []),

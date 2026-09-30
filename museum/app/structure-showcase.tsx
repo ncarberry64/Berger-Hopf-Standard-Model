@@ -34,7 +34,11 @@ const catalog = [
       ['Helium-4 · 2p + 2n', 'Four nucleons: two protons and two neutrons.'],
       ['Carbon-12 · 6p + 6n', 'Twelve nucleons: six protons and six neutrons.'],
     ],
-    note: 'A constituent-count illustration; positions and motion are schematic.',
+    note: 'A static constituent-count illustration; positions are schematic.',
+    source: [
+      'Nuclear structure',
+      'https://openstax.org/books/university-physics-volume-3/pages/10-1-properties-of-nuclei',
+    ],
   },
   {
     name: 'Atoms',
@@ -64,7 +68,7 @@ const catalog = [
     choices: [
       [
         'Water · H₂O',
-        'Two hydrogen atoms bond to oxygen in a bent geometry. Shown with a schematic bending vibration.',
+        'Water’s equilibrium H–O–H angle is about 104.5°. A small bending oscillation illustrates the vibrational mode; amplitude and speed are illustrative.',
       ],
       [
         'Carbon dioxide · CO₂',
@@ -76,6 +80,10 @@ const catalog = [
       ],
     ],
     note: 'Illustrative shapes and motion; sizes and vibration rates are not calibrated.',
+    source: [
+      'Molecular structure and bond angles',
+      'https://openstax.org/books/chemistry-atoms-first-2e/pages/4-6-molecular-structure-and-polarity',
+    ],
   },
   {
     name: 'Matter',
@@ -99,7 +107,11 @@ const catalog = [
         'A plasma: mobile ions and electrons form a charged collective system.',
       ],
     ],
-    note: 'Particle arrangements are simplified; ice’s crystal lattice and molecular detail are not resolved.',
+    note: 'Reference-science diagrams: particles vibrate, rearrange or move freely according to the selected state. This is not a molecular-dynamics solver or a time-resolved phase transition.',
+    source: [
+      'States of matter',
+      'https://openstax.org/books/chemistry-2e/pages/1-2-phases-and-classification-of-matter',
+    ],
   },
   {
     name: 'Astronomical structures',
@@ -306,8 +318,14 @@ function Molecule({ selected, time }: { selected: number; time: number }) {
         const x =
           110 +
           side *
-            (co2 ? 56 + 4 * Math.sin(time * 2) : 35 + 2 * Math.sin(time * 2));
-        const y = co2 ? 59 : 76 + 3 * Math.sin(time * 2);
+            (co2
+              ? 56 + 4 * Math.sin(time * 2)
+              : 44 *
+                Math.sin(((52.25 + 1.5 * Math.sin(time * 2)) * Math.PI) / 180));
+        const y = co2
+          ? 59
+          : 48 +
+            44 * Math.cos(((52.25 + 1.5 * Math.sin(time * 2)) * Math.PI) / 180);
         return (
           <g key={side}>
             {(co2 ? [-3, 3] : [0]).map((offset) => (
@@ -418,7 +436,7 @@ function Cosmos({ selected, time }: { selected: number; time: number }) {
               cy={57 + Math.sin(a) * radius}
               r={i < 62 ? 1.2 : 0.8}
               fill={tones[i % 3]}
-              opacity={0.5 + 0.2 * Math.sin(time * 0.5 + i)}
+              opacity=".7"
             />
           );
         })}
@@ -505,7 +523,7 @@ function Cosmos({ selected, time }: { selected: number; time: number }) {
                 cy={cy + Math.sin(i * 2.399) * Math.sqrt(i + 1) * 2.6}
                 r={i % 7 ? 1 : 2}
                 fill={tones[(i + cluster) % 3]}
-                opacity={0.65 + 0.15 * Math.sin(time * 0.4 + i)}
+                opacity=".7"
               />
             ))}
           </g>
@@ -567,7 +585,7 @@ function Cosmos({ selected, time }: { selected: number; time: number }) {
                 }
                 r="1"
                 fill={tones[1]}
-                opacity={0.35 + 0.15 * Math.sin(time + j)}
+                opacity=".5"
               />
             ))}
           </g>
@@ -668,7 +686,7 @@ function StructureCard({
             <Hadron selected={selected} time={time} />
           )}
           {item.kind === 'nuclei' && (
-            <Nucleus count={selected ? 12 : 4} time={time} />
+            <Nucleus count={selected ? 12 : 4} time={0} />
           )}
           {item.kind === 'molecules' && (
             <Molecule selected={selected} time={time} />
