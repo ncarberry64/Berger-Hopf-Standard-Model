@@ -112,10 +112,7 @@ export function CosmicEnclosure({ motion }: { motion: boolean }) {
       className="cosmic-cycle"
       ref={sceneRef}
     >
-      <p className="data-label">
-        HISTORICAL BHSM STORYBOARD · not observational data or a BHSM closure
-        result
-      </p>
+      <p className="data-label">HISTORICAL BHSM STORYBOARD</p>
       <div className="cosmic-presentation">
         <button
           className="event-stage cosmic-stage"
@@ -444,8 +441,9 @@ export function CosmicEnclosure({ motion }: { motion: boolean }) {
         </div>
       </div>
       <p className="console-caption">
-        Guided historical storyboard · one panel every three seconds while
-        visible. Select any panel to pause and inspect it. Playback presents the
+        This is not observational data or a BHSM closure result. Guided
+        historical storyboard · one panel every three seconds while visible.
+        Select any panel to pause and inspect it. Playback presents the
         proposal; it does not simulate cosmic time. The numerical R1 response is
         animated in the next exhibit. System reduced-motion and museum pause
         settings stop automatic playback.
