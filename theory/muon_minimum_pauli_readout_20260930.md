@@ -63,6 +63,34 @@ projection is not a zero-momentum result. One needs a controlled limiting
 coefficient (or the corresponding derivative at zero), not a direct solve on
 the zero tensor.
 
+The needed derivative can itself be reduced. In the charge-normalized,
+on-shell two-tensor representative, choose a fixed nonzero transfer direction
+u and write `q=t u`, so `P(t)=t P_u` at fixed physical rest mass. Construct
+`L_u` from D and P_u by the same orthogonalization. Exactly, at nonzero t,
+
+`<L_u, Gamma_R(t u)> = t F2(t^2 u^2)`.
+
+Consequently the smallest soft-transfer numerical object is the **one scalar
+directional derivative**
+
+`a_mu = lim_(t -> 0) <L_u, Gamma_R(t u)-Gamma_R(0)>/t`.
+
+The Dirac/charge contribution cancels before differentiation, so this identity
+does not require every component of the full vertex to have a regular Taylor
+series. It requires the physical Pauli limit to exist and the stated on-shell
+decomposition to hold. A calculation performed on spinor-sandwiched amplitudes
+must include their external-state kinematic derivatives, or reduce to this
+covariant representative first. Arbitrarily differentiating an off-shell
+vertex does not meet these conditions. Agreement between allowed directions,
+normalization and control of the omitted tensor remainder belong to the
+existing physical readout obligation.
+
+This refines the target from a full vertex function or full tensor jet to one
+projected soft-transfer derivative, plus its physical-domain and error
+justification. The supplied local tree vertex is independent of q and gives
+zero for this derivative. Its quantum value requires evaluation of the same
+projection of the quantum action's vertex; no status flag is used to set it.
+
 Linearity permits summing the projected contributions from the existing
 action-owned diagram ledger, preserving their shared regulator and signed
 cancellations. It does not permit omitting diagrams, inventing their finite
@@ -112,6 +140,9 @@ tests/test_universal_precision_form_factor.py` from the repository environment.
 The tests compare the reduced functional with the existing complex
 least-squares readout, retain out-of-basis remainders, reject a vanishing
 Pauli basis, and re-evaluate the local action identity.
+An additional algebraic control checks the soft-transfer scalar derivative
+while varying an arbitrary Dirac term; these synthetic coefficients test the
+reduction only and are never treated as BHSM predictions.
 
 - [Local action derivation](ae31_c2_local_em_ward_identity.md)
 - [Recovered muon dependency](../docs/BHSM_NORMAN_SCHOOL_FULL_CORPUS_RECONSTRUCTION.md#muon-f20-dependency)

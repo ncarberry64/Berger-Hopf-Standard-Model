@@ -50,3 +50,16 @@ def test_existing_action_identity_cannot_fix_transverse_correction():
     # Arbitrary coefficients are an identifiability witness, never predictions.
     for coefficient in [0, 0.1, -0.2]:
         assert abs(coefficient * transverse['q_sigma_q_residual']) < 1e-14
+
+
+def test_soft_transfer_needs_only_the_projected_scalar_derivative():
+    d = np.array([1, 1j, 0], dtype=complex)
+    p_direction = np.array([2, 0, 1j], dtype=complex)
+    dual = readout(d, d, p_direction)['dual']
+    # An algebraic control, not a physical vertex or a muon prediction.
+    target = 0.04
+    for t in [0.01, 0.001, -0.001]:
+        vertex = (1 + 3*t*t) * d + t * (target + 2*t*t) * p_direction
+        projected_difference = np.vdot(dual, vertex-d) / t
+        assert projected_difference == pytest.approx(target + 2*t*t, abs=1e-12)
+    assert np.vdot(dual, target*p_direction + 7*d) == pytest.approx(target)

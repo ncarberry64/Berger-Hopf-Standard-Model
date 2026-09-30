@@ -308,7 +308,8 @@ required publication audits passed.
   local electromagnetic identity and tree Pauli result.
 - At the user's request, worked through the muon derivation beyond the status
   flag. `theory/muon_minimum_pauli_readout_20260930.md` derives a minimal Pauli
-  linear functional, its required remainder check and the controlled q→0 limit.
+  linear functional, its required remainder check and the controlled q→0 limit,
+  reduced further to one projected soft-transfer scalar derivative.
   Tests agree with the existing form-factor solver and re-evaluate the local
   Ward identity. No quantum-corrected physical muon anomaly was derived: the
   projected renormalized vertex on physical states is not supplied by the
@@ -331,7 +332,7 @@ required publication audits passed.
   SHA-256 hashes. It explicitly answers from these when no browsing is available.
   The static export checks v2 and embedded sources. It cannot enable AI tools.
 
-Validation: 23 Python tests (museum plus Pauli derivation/precision readout),
+Validation: 24 Python tests (museum plus Pauli derivation/precision readout),
 37 Node tests, TypeScript, focused lint, production static export, deterministic
 guide regeneration, and all five publication audits. Browser checks covered
 the reviewer draft contents without submitting, ten review panels, reference

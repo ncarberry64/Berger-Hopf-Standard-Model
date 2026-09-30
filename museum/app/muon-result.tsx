@@ -55,6 +55,13 @@ export function MuonResult() {
         completing the identity is an achievement, but is not yet a numerical
         prediction of the observed anomaly.
       </p>
+      <p>
+        The readout can be reduced to one scalar: project out the charge term,
+        then measure the Pauli component’s change as momentum transfer tends to
+        zero. The linked derivation makes this the precise numerical target; it
+        does not require storing the entire vertex merely to extract the
+        magnetic correction.
+      </p>
       <p className="console-caption">
         The muon card below shows the edition-labeled CODATA measurement, not a
         BHSM output. The 2025 Fermilab anomaly measurement is a separate
