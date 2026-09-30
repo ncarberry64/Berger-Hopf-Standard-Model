@@ -1,7 +1,7 @@
 {
   "schema_version": "1.0",
   "title": "BHSM Museum AI navigation index",
-  "updated": "2026-09-28",
+  "updated": "2026-09-30",
   "museum_url": "https://ncarberry64.github.io/Berger-Hopf-Standard-Model/",
   "repository_url": "https://github.com/ncarberry64/Berger-Hopf-Standard-Model",
   "guide_url": "https://ncarberry64.github.io/Berger-Hopf-Standard-Model/llms.txt",
@@ -14,27 +14,54 @@
   "reading_rules": [
     "This is a navigation index, not a new scientific result or a live computation service.",
     "Read the linked source before answering; cite its URL, revision or snapshot date and scope. If it cannot be read, say so.",
+    "Before asking for pasted source text, perform a relevant BHSM search using any available search, browsing or repository capability. Follow the retrieval plan and respect actual access restrictions.",
     "Separate established reference physics, BHSM propositions, conditional results, historical numerical screens and action-derived physical predictions. A visual analogy or numerical match is not a physical derivation.",
     "Museum downloads are dated snapshots. Check the current repository status for later work; do not silently combine results from different revisions.",
     "Preserve open dependencies and missing values. Kinematic admissibility does not supply a transition probability, cross section or lifetime.",
     "Use the existing definition of done and gate ledger for completion questions. Do not invent additional completion gates."
   ],
+  "retrieval_plan": {
+    "objective": "Do a BHSM search relevant to the user question using the tools and access available to you.",
+    "steps": [
+      "Identify your available capabilities: web search, page browsing, GitHub connector, or a local repository. Use the permitted capabilities you actually have; do not claim a tool was used when it was not.",
+      "Use a GitHub connector or local checkout if available. Otherwise read the regular github.com repository and file pages; raw file URLs and the museum are optional alternatives.",
+      "If direct source access is unavailable, use your web search tool to search for Berger-Hopf Standard Model (BHSM), the question topic and the relevant document title. A blocked raw.githubusercontent.com or github.io URL does not establish that search or normal GitHub pages are unavailable.",
+      "Use the suggested searches as starting points, adapting them to the question. Prefer the project repository, author-linked publications and archival DOI records. Open relevant results where permitted, check their dates and revisions, and distinguish current work from historical material.",
+      "Answer only what the accessible evidence supports, with citations. Search snippets can locate sources but do not establish a full proof, current completion status or the contents of an unread document.",
+      "If your available search and reading tools still cannot access the necessary evidence, explain the specific limitation and ask for the smallest relevant excerpt. If you have no search or browsing capability, say so directly. Never bypass access restrictions or pretend to have read blocked sources."
+    ],
+    "suggested_searches": [
+      "\"Berger-Hopf Standard Model\" BHSM [question topic]",
+      "site:github.com/ncarberry64/Berger-Hopf-Standard-Model \"current_bhsm_status\"",
+      "site:github.com/ncarberry64/Berger-Hopf-Standard-Model \"CLAIMS.md\"",
+      "\"Berger-Hopf Standard Model\" \"Norman\" \"Carberry\" [question topic]",
+      "\"Berger-Hopf Standard Model\" site:zenodo.org"
+    ]
+  },
   "current_sources": [
     {
       "title": "Current research status (main; may change)",
-      "url": "https://raw.githubusercontent.com/ncarberry64/Berger-Hopf-Standard-Model/main/docs/current_bhsm_status.md"
+      "path": "docs/current_bhsm_status.md",
+      "url": "https://raw.githubusercontent.com/ncarberry64/Berger-Hopf-Standard-Model/main/docs/current_bhsm_status.md",
+      "github_url": "https://github.com/ncarberry64/Berger-Hopf-Standard-Model/blob/main/docs/current_bhsm_status.md"
     },
     {
       "title": "Claim boundaries",
-      "url": "https://raw.githubusercontent.com/ncarberry64/Berger-Hopf-Standard-Model/main/CLAIMS.md"
+      "path": "CLAIMS.md",
+      "url": "https://raw.githubusercontent.com/ncarberry64/Berger-Hopf-Standard-Model/main/CLAIMS.md",
+      "github_url": "https://github.com/ncarberry64/Berger-Hopf-Standard-Model/blob/main/CLAIMS.md"
     },
     {
       "title": "Existing definition of done",
-      "url": "https://raw.githubusercontent.com/ncarberry64/Berger-Hopf-Standard-Model/main/docs/BHSM_1_0_DEFINITION_OF_DONE.md"
+      "path": "docs/BHSM_1_0_DEFINITION_OF_DONE.md",
+      "url": "https://raw.githubusercontent.com/ncarberry64/Berger-Hopf-Standard-Model/main/docs/BHSM_1_0_DEFINITION_OF_DONE.md",
+      "github_url": "https://github.com/ncarberry64/Berger-Hopf-Standard-Model/blob/main/docs/BHSM_1_0_DEFINITION_OF_DONE.md"
     },
     {
       "title": "Existing gate ledger",
-      "url": "https://raw.githubusercontent.com/ncarberry64/Berger-Hopf-Standard-Model/main/theory/gate_ledger.md"
+      "path": "theory/gate_ledger.md",
+      "url": "https://raw.githubusercontent.com/ncarberry64/Berger-Hopf-Standard-Model/main/theory/gate_ledger.md",
+      "github_url": "https://github.com/ncarberry64/Berger-Hopf-Standard-Model/blob/main/theory/gate_ledger.md"
     }
   ],
   "exhibits": [
@@ -52,7 +79,9 @@
         },
         {
           "title": "Claim boundaries",
-          "url": "https://raw.githubusercontent.com/ncarberry64/Berger-Hopf-Standard-Model/main/CLAIMS.md"
+          "path": "CLAIMS.md",
+          "url": "https://raw.githubusercontent.com/ncarberry64/Berger-Hopf-Standard-Model/main/CLAIMS.md",
+          "github_url": "https://github.com/ncarberry64/Berger-Hopf-Standard-Model/blob/main/CLAIMS.md"
         }
       ]
     },
@@ -66,11 +95,15 @@
       "sources": [
         {
           "title": "Claim boundaries",
-          "url": "https://raw.githubusercontent.com/ncarberry64/Berger-Hopf-Standard-Model/main/CLAIMS.md"
+          "path": "CLAIMS.md",
+          "url": "https://raw.githubusercontent.com/ncarberry64/Berger-Hopf-Standard-Model/main/CLAIMS.md",
+          "github_url": "https://github.com/ncarberry64/Berger-Hopf-Standard-Model/blob/main/CLAIMS.md"
         },
         {
           "title": "Framework overview",
-          "url": "https://raw.githubusercontent.com/ncarberry64/Berger-Hopf-Standard-Model/main/README.md"
+          "path": "README.md",
+          "url": "https://raw.githubusercontent.com/ncarberry64/Berger-Hopf-Standard-Model/main/README.md",
+          "github_url": "https://github.com/ncarberry64/Berger-Hopf-Standard-Model/blob/main/README.md"
         }
       ]
     },
@@ -84,7 +117,9 @@
       "sources": [
         {
           "title": "Claim boundaries",
-          "url": "https://raw.githubusercontent.com/ncarberry64/Berger-Hopf-Standard-Model/main/CLAIMS.md"
+          "path": "CLAIMS.md",
+          "url": "https://raw.githubusercontent.com/ncarberry64/Berger-Hopf-Standard-Model/main/CLAIMS.md",
+          "github_url": "https://github.com/ncarberry64/Berger-Hopf-Standard-Model/blob/main/CLAIMS.md"
         },
         {
           "title": "Exhibit scope and provenance",
@@ -106,11 +141,15 @@
         },
         {
           "title": "Mass and mixing dependency audit",
-          "url": "https://raw.githubusercontent.com/ncarberry64/Berger-Hopf-Standard-Model/main/docs/BHSM_MASS_MIXING_DEPENDENCY_AUDIT_2026_09_07.md"
+          "path": "docs/BHSM_MASS_MIXING_DEPENDENCY_AUDIT_2026_09_07.md",
+          "url": "https://raw.githubusercontent.com/ncarberry64/Berger-Hopf-Standard-Model/main/docs/BHSM_MASS_MIXING_DEPENDENCY_AUDIT_2026_09_07.md",
+          "github_url": "https://github.com/ncarberry64/Berger-Hopf-Standard-Model/blob/main/docs/BHSM_MASS_MIXING_DEPENDENCY_AUDIT_2026_09_07.md"
         },
         {
           "title": "Current research status (main; may change)",
-          "url": "https://raw.githubusercontent.com/ncarberry64/Berger-Hopf-Standard-Model/main/docs/current_bhsm_status.md"
+          "path": "docs/current_bhsm_status.md",
+          "url": "https://raw.githubusercontent.com/ncarberry64/Berger-Hopf-Standard-Model/main/docs/current_bhsm_status.md",
+          "github_url": "https://github.com/ncarberry64/Berger-Hopf-Standard-Model/blob/main/docs/current_bhsm_status.md"
         }
       ]
     },
@@ -128,7 +167,9 @@
         },
         {
           "title": "Current research status (main; may change)",
-          "url": "https://raw.githubusercontent.com/ncarberry64/Berger-Hopf-Standard-Model/main/docs/current_bhsm_status.md"
+          "path": "docs/current_bhsm_status.md",
+          "url": "https://raw.githubusercontent.com/ncarberry64/Berger-Hopf-Standard-Model/main/docs/current_bhsm_status.md",
+          "github_url": "https://github.com/ncarberry64/Berger-Hopf-Standard-Model/blob/main/docs/current_bhsm_status.md"
         }
       ]
     },
@@ -142,7 +183,9 @@
       "sources": [
         {
           "title": "Transition record implementation and source references",
-          "url": "https://raw.githubusercontent.com/ncarberry64/Berger-Hopf-Standard-Model/main/museum/lib/bhsm-transition.ts"
+          "path": "museum/lib/bhsm-transition.ts",
+          "url": "https://raw.githubusercontent.com/ncarberry64/Berger-Hopf-Standard-Model/main/museum/lib/bhsm-transition.ts",
+          "github_url": "https://github.com/ncarberry64/Berger-Hopf-Standard-Model/blob/main/museum/lib/bhsm-transition.ts"
         },
         {
           "title": "CMS sample four-vectors",
@@ -150,7 +193,9 @@
         },
         {
           "title": "Current research status (main; may change)",
-          "url": "https://raw.githubusercontent.com/ncarberry64/Berger-Hopf-Standard-Model/main/docs/current_bhsm_status.md"
+          "path": "docs/current_bhsm_status.md",
+          "url": "https://raw.githubusercontent.com/ncarberry64/Berger-Hopf-Standard-Model/main/docs/current_bhsm_status.md",
+          "github_url": "https://github.com/ncarberry64/Berger-Hopf-Standard-Model/blob/main/docs/current_bhsm_status.md"
         }
       ]
     },
@@ -238,15 +283,21 @@
         },
         {
           "title": "Current research status (main; may change)",
-          "url": "https://raw.githubusercontent.com/ncarberry64/Berger-Hopf-Standard-Model/main/docs/current_bhsm_status.md"
+          "path": "docs/current_bhsm_status.md",
+          "url": "https://raw.githubusercontent.com/ncarberry64/Berger-Hopf-Standard-Model/main/docs/current_bhsm_status.md",
+          "github_url": "https://github.com/ncarberry64/Berger-Hopf-Standard-Model/blob/main/docs/current_bhsm_status.md"
         },
         {
           "title": "Existing definition of done",
-          "url": "https://raw.githubusercontent.com/ncarberry64/Berger-Hopf-Standard-Model/main/docs/BHSM_1_0_DEFINITION_OF_DONE.md"
+          "path": "docs/BHSM_1_0_DEFINITION_OF_DONE.md",
+          "url": "https://raw.githubusercontent.com/ncarberry64/Berger-Hopf-Standard-Model/main/docs/BHSM_1_0_DEFINITION_OF_DONE.md",
+          "github_url": "https://github.com/ncarberry64/Berger-Hopf-Standard-Model/blob/main/docs/BHSM_1_0_DEFINITION_OF_DONE.md"
         },
         {
           "title": "Existing gate ledger",
-          "url": "https://raw.githubusercontent.com/ncarberry64/Berger-Hopf-Standard-Model/main/theory/gate_ledger.md"
+          "path": "theory/gate_ledger.md",
+          "url": "https://raw.githubusercontent.com/ncarberry64/Berger-Hopf-Standard-Model/main/theory/gate_ledger.md",
+          "github_url": "https://github.com/ncarberry64/Berger-Hopf-Standard-Model/blob/main/theory/gate_ledger.md"
         }
       ]
     },
@@ -260,23 +311,33 @@
       "sources": [
         {
           "title": "Current research status (main; may change)",
-          "url": "https://raw.githubusercontent.com/ncarberry64/Berger-Hopf-Standard-Model/main/docs/current_bhsm_status.md"
+          "path": "docs/current_bhsm_status.md",
+          "url": "https://raw.githubusercontent.com/ncarberry64/Berger-Hopf-Standard-Model/main/docs/current_bhsm_status.md",
+          "github_url": "https://github.com/ncarberry64/Berger-Hopf-Standard-Model/blob/main/docs/current_bhsm_status.md"
         },
         {
           "title": "Claim boundaries",
-          "url": "https://raw.githubusercontent.com/ncarberry64/Berger-Hopf-Standard-Model/main/CLAIMS.md"
+          "path": "CLAIMS.md",
+          "url": "https://raw.githubusercontent.com/ncarberry64/Berger-Hopf-Standard-Model/main/CLAIMS.md",
+          "github_url": "https://github.com/ncarberry64/Berger-Hopf-Standard-Model/blob/main/CLAIMS.md"
         },
         {
           "title": "Existing definition of done",
-          "url": "https://raw.githubusercontent.com/ncarberry64/Berger-Hopf-Standard-Model/main/docs/BHSM_1_0_DEFINITION_OF_DONE.md"
+          "path": "docs/BHSM_1_0_DEFINITION_OF_DONE.md",
+          "url": "https://raw.githubusercontent.com/ncarberry64/Berger-Hopf-Standard-Model/main/docs/BHSM_1_0_DEFINITION_OF_DONE.md",
+          "github_url": "https://github.com/ncarberry64/Berger-Hopf-Standard-Model/blob/main/docs/BHSM_1_0_DEFINITION_OF_DONE.md"
         },
         {
           "title": "Existing gate ledger",
-          "url": "https://raw.githubusercontent.com/ncarberry64/Berger-Hopf-Standard-Model/main/theory/gate_ledger.md"
+          "path": "theory/gate_ledger.md",
+          "url": "https://raw.githubusercontent.com/ncarberry64/Berger-Hopf-Standard-Model/main/theory/gate_ledger.md",
+          "github_url": "https://github.com/ncarberry64/Berger-Hopf-Standard-Model/blob/main/theory/gate_ledger.md"
         },
         {
           "title": "Institutional reproduction guide",
-          "url": "https://raw.githubusercontent.com/ncarberry64/Berger-Hopf-Standard-Model/main/docs/INSTITUTIONAL_START.md"
+          "path": "docs/INSTITUTIONAL_START.md",
+          "url": "https://raw.githubusercontent.com/ncarberry64/Berger-Hopf-Standard-Model/main/docs/INSTITUTIONAL_START.md",
+          "github_url": "https://github.com/ncarberry64/Berger-Hopf-Standard-Model/blob/main/docs/INSTITUTIONAL_START.md"
         }
       ]
     },
@@ -290,7 +351,9 @@
       "sources": [
         {
           "title": "Citation metadata",
-          "url": "https://raw.githubusercontent.com/ncarberry64/Berger-Hopf-Standard-Model/main/CITATION.cff"
+          "path": "CITATION.cff",
+          "url": "https://raw.githubusercontent.com/ncarberry64/Berger-Hopf-Standard-Model/main/CITATION.cff",
+          "github_url": "https://github.com/ncarberry64/Berger-Hopf-Standard-Model/blob/main/CITATION.cff"
         },
         {
           "title": "Archival DOI",
@@ -316,7 +379,9 @@
         },
         {
           "title": "License",
-          "url": "https://raw.githubusercontent.com/ncarberry64/Berger-Hopf-Standard-Model/main/LICENSE.md"
+          "path": "LICENSE.md",
+          "url": "https://raw.githubusercontent.com/ncarberry64/Berger-Hopf-Standard-Model/main/LICENSE.md",
+          "github_url": "https://github.com/ncarberry64/Berger-Hopf-Standard-Model/blob/main/LICENSE.md"
         }
       ]
     }

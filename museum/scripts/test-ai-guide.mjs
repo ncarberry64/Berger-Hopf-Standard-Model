@@ -16,6 +16,11 @@ test('the clipboard packet is valid JSON with current GitHub entry points', asyn
   for (const source of aiHandoff.start_here) {
     assert(source.url.startsWith(aiHandoff.repository.raw_base_url));
     const path = source.url.slice(aiHandoff.repository.raw_base_url.length);
+    assert.equal(source.path, path);
+    assert.equal(
+      source.github_url,
+      `${aiHandoff.repository.url}/blob/main/${path}`,
+    );
     await access(new URL(`../../${path}`, import.meta.url));
   }
 });
@@ -57,6 +62,12 @@ test('downloadable context matches the clipboard and covers completion boundarie
     ),
   );
   assert.deepEqual(packet, JSON.parse(aiHandoffJSON));
+  assert.deepEqual(packet.retrieval_plan, catalog.retrieval_plan);
+  assert(
+    packet.retrieval_plan.suggested_searches.some((query) =>
+      query.includes('site:github.com/'),
+    ),
+  );
   assert(
     packet.answer_guidance.some((line) =>
       line.includes('existing definition of done'),

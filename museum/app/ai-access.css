@@ -20,7 +20,8 @@
   line-height: 1.7;
   max-width: 85ch;
 }
-.ai-access textarea {
+.ai-access textarea,
+.ai-manual-copy textarea {
   display: block;
   width: 100%;
   min-width: 0;
@@ -32,6 +33,15 @@
   resize: vertical;
   font: 0.8rem/1.6 monospace;
   margin: 0.8rem 0;
+}
+.ai-manual-copy {
+  margin-top: 0.8rem;
+}
+.ai-manual-copy a {
+  display: inline-block;
+  margin: 0.6rem;
+  color: #bda7f5;
+  font-size: 0.8rem;
 }
 .ai-access small {
   color: #b8aec8;

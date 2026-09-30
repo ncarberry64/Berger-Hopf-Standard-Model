@@ -29,9 +29,19 @@ const guide = [
   '',
   ...catalog.reading_rules.map((rule) => `- ${rule}`),
   '',
+  '## Search and access fallbacks',
+  '',
+  catalog.retrieval_plan.objective,
+  ...catalog.retrieval_plan.steps.map((step, i) => `${i + 1}. ${step}`),
+  '',
+  ...catalog.retrieval_plan.suggested_searches.map((query) => `- ${query}`),
+  '',
   '## Current scientific record',
   '',
-  ...catalog.current_sources.map(({ title, url }) => `- [${title}](${url})`),
+  ...catalog.current_sources.map(
+    ({ title, url, github_url }) =>
+      `- [${title}](${github_url}) · [Raw text](${url})`,
+  ),
   '',
   '## Exhibits',
   ...catalog.exhibits.flatMap((entry) => [

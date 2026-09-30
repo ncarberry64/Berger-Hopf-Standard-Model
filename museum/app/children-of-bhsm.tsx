@@ -1,5 +1,6 @@
 'use client';
 /* oxlint-disable jsx-a11y/prefer-tag-over-role -- Named inline SVG illustrations. */
+/* oxlint-disable jsx-a11y/no-noninteractive-tabindex -- Independent scroll regions need keyboard focus for arrow/PageDown scrolling. */
 import { useSceneClock } from './science-console';
 import { StructureShowcase } from './structure-showcase';
 import {
@@ -173,7 +174,11 @@ export function ChildrenOfBHSM({ motion }: { motion: boolean }) {
         <p>From deep structure to a universe of structure.</p>
       </header>
       <div className="children-map" ref={ref}>
-        <div className="children-foundations">
+        <section
+          className="children-foundations children-panel"
+          tabIndex={0}
+          aria-label="01 Proposed foundations — scroll to explore"
+        >
           <h3>
             01 <span>Proposed foundations</span>
           </h3>
@@ -182,11 +187,15 @@ export function ChildrenOfBHSM({ motion }: { motion: boolean }) {
               <ExampleCard key={item.kind} item={item} time={time} />
             ))}
           </ol>
-        </div>
+        </section>
         <span className="children-bridge" aria-hidden="true">
           →
         </span>
-        <div className="children-particles">
+        <section
+          className="children-particles children-panel"
+          tabIndex={0}
+          aria-label="02 Standard Model particle table — scroll to explore"
+        >
           <h3>
             02 <span>Standard Model particle table</span>
           </h3>
@@ -237,16 +246,20 @@ export function ChildrenOfBHSM({ motion }: { motion: boolean }) {
           <small>
             Animated family markers · schematic, not particle trajectories.
           </small>
-        </div>
+        </section>
         <span className="children-bridge" aria-hidden="true">
           →
         </span>
-        <div className="children-structures">
+        <section
+          className="children-structures children-panel"
+          tabIndex={0}
+          aria-label="03 Structures across scales — scroll to explore"
+        >
           <h3>
             03 <span>Structures across scales</span>
           </h3>
           <StructureShowcase time={time} />
-        </div>
+        </section>
       </div>
       <p className="children-scope">
         The hypersphere foundation and core–modes–geometry connections are BHSM

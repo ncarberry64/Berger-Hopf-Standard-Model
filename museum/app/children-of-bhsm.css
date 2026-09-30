@@ -50,6 +50,32 @@
   margin: 0 0 0.7rem;
   letter-spacing: 0.03em;
 }
+.children-panel {
+  height: min(760px, 70dvh);
+  min-height: 300px;
+  min-width: 0;
+  overflow-y: auto;
+  overflow-x: hidden;
+  scrollbar-width: thin;
+  scrollbar-color: #bda7f5 #171320;
+  border: 1px solid #504358;
+  border-radius: 14px;
+  padding: 0 0.8rem 0.8rem;
+  background: #090b12;
+  scroll-padding-top: 3.5rem;
+}
+.children-panel:focus-visible {
+  outline: 2px solid #71e5eb;
+  outline-offset: 3px;
+}
+.children-panel > h3 {
+  position: sticky;
+  top: 0;
+  z-index: 1;
+  padding: 0.8rem 0;
+  background: #090b12;
+  line-height: 1.6;
+}
 .children-map h3 span {
   color: #d9cfea;
   margin-left: 0.35rem;
@@ -156,7 +182,6 @@
 }
 .children-example > .children-selection {
   font-size: 0.74rem;
-  min-height: 4.6em;
   color: #f2ddbe;
 }
 .children-source {
@@ -305,11 +330,7 @@
 .children-particles {
   border: 1px solid #c89a63;
   border-radius: 14px;
-  padding: 0.8rem;
   box-shadow: 0 0 22px #f0b26a0b;
-  align-self: start;
-  position: sticky;
-  top: 0.75rem;
 }
 .children-particles > p {
   margin: -0.2rem 0 0.75rem;
@@ -396,9 +417,12 @@
   font-size: 1.2rem;
 }
 .children-structures ol {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 0.45rem;
+  columns: 2;
+  column-gap: 0.45rem;
+}
+.children-structures .children-example {
+  break-inside: avoid;
+  margin-bottom: 0.45rem;
 }
 .children-scope {
   margin: 1rem 0 0;
@@ -439,10 +463,7 @@
     margin-top: 0.5rem;
   }
   .children-structures ol {
-    grid-template-columns: repeat(3, 1fr);
-  }
-  .children-particles {
-    position: static;
+    columns: 3;
   }
   .children-families {
     grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
@@ -469,7 +490,7 @@
     display: block;
   }
   .children-structures ol {
-    grid-template-columns: 1fr;
+    columns: 1;
   }
   .children-map strong {
     font-size: 0.85rem;

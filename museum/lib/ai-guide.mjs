@@ -7,11 +7,37 @@ const raw =
   'https://raw.githubusercontent.com/ncarberry64/Berger-Hopf-Standard-Model/main/';
 const local = (path) => new URL(path, museumUrl).href;
 const source = (title, path) => ({ title, url: local(path) });
-const repoSource = (title, path) => ({ title, url: raw + path });
+const repoSource = (title, path) => ({
+  title,
+  path,
+  url: raw + path,
+  github_url: `${repository}/blob/main/${path}`,
+});
+
+export const retrievalPlan = {
+  objective:
+    'Do a BHSM search relevant to the user question using the tools and access available to you.',
+  steps: [
+    'Identify your available capabilities: web search, page browsing, GitHub connector, or a local repository. Use the permitted capabilities you actually have; do not claim a tool was used when it was not.',
+    'Use a GitHub connector or local checkout if available. Otherwise read the regular github.com repository and file pages; raw file URLs and the museum are optional alternatives.',
+    'If direct source access is unavailable, use your web search tool to search for Berger-Hopf Standard Model (BHSM), the question topic and the relevant document title. A blocked raw.githubusercontent.com or github.io URL does not establish that search or normal GitHub pages are unavailable.',
+    'Use the suggested searches as starting points, adapting them to the question. Prefer the project repository, author-linked publications and archival DOI records. Open relevant results where permitted, check their dates and revisions, and distinguish current work from historical material.',
+    'Answer only what the accessible evidence supports, with citations. Search snippets can locate sources but do not establish a full proof, current completion status or the contents of an unread document.',
+    'If your available search and reading tools still cannot access the necessary evidence, explain the specific limitation and ask for the smallest relevant excerpt. If you have no search or browsing capability, say so directly. Never bypass access restrictions or pretend to have read blocked sources.',
+  ],
+  suggested_searches: [
+    '"Berger-Hopf Standard Model" BHSM [question topic]',
+    'site:github.com/ncarberry64/Berger-Hopf-Standard-Model "current_bhsm_status"',
+    'site:github.com/ncarberry64/Berger-Hopf-Standard-Model "CLAIMS.md"',
+    '"Berger-Hopf Standard Model" "Norman" "Carberry" [question topic]',
+    '"Berger-Hopf Standard Model" site:zenodo.org',
+  ],
+};
 
 export const readingRules = [
   'This is a navigation index, not a new scientific result or a live computation service.',
   'Read the linked source before answering; cite its URL, revision or snapshot date and scope. If it cannot be read, say so.',
+  'Before asking for pasted source text, perform a relevant BHSM search using any available search, browsing or repository capability. Follow the retrieval plan and respect actual access restrictions.',
   'Separate established reference physics, BHSM propositions, conditional results, historical numerical screens and action-derived physical predictions. A visual analogy or numerical match is not a physical derivation.',
   'Museum downloads are dated snapshots. Check the current repository status for later work; do not silently combine results from different revisions.',
   'Preserve open dependencies and missing values. Kinematic admissibility does not supply a transition probability, cross section or lifetime.',
@@ -228,7 +254,7 @@ const topics = {
 export const catalog = {
   schema_version: '1.0',
   title: 'BHSM Museum AI navigation index',
-  updated: '2026-09-28',
+  updated: '2026-09-30',
   museum_url: museumUrl,
   repository_url: repository,
   guide_url: local('llms.txt'),
@@ -239,6 +265,7 @@ export const catalog = {
     javascript_required: false,
   },
   reading_rules: readingRules,
+  retrieval_plan: retrievalPlan,
   current_sources: currentSources,
   exhibits: slides.map(([id, title]) => {
     if (!topics[id]) throw new Error(`Missing AI guide entry: ${id}`);
@@ -259,6 +286,7 @@ export const aiHandoff = {
       'Read the current files when answering. Record the revision or access date; do not assume the museum snapshot is the newest research.',
   },
   start_here: currentSources,
+  retrieval_plan: retrievalPlan,
   navigation: {
     overview: raw + 'README.md',
     reproduction: raw + 'docs/INSTITUTIONAL_START.md',
@@ -269,6 +297,6 @@ export const aiHandoff = {
   },
   answer_guidance: readingRules,
   capability_note:
-    'Requires an assistant able to read public web or GitHub links. If unavailable, ask the user for the relevant source text instead of claiming to have read it.',
+    'Adapt to your capabilities: search, ordinary web pages, a GitHub connector or local source files. Direct raw-file access is not required. Request relevant source text only if the available methods cannot supply the evidence needed for the question.',
 };
 export const aiHandoffJSON = JSON.stringify(aiHandoff, null, 2);
