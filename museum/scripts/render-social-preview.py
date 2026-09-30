@@ -59,7 +59,7 @@ def render(font_dir: Path) -> Path:
     text(66, 548, "MATTER   /   FORCES   /   COSMOLOGY", 19, amber)
     text(873, 548, "Explore. Interact. Question.", 16, "#b9b5c5")
 
-    output = Path(__file__).resolve().parents[1] / "public" / "bhsm-museum-social-2026-09-27.png"
+    output = Path(__file__).resolve().parents[1] / "public" / "bhsm-museum-social-2026-09-30.png"
     image.resize((1200, 630), Image.Resampling.LANCZOS).save(output, optimize=True)
     return output
 

@@ -17,6 +17,7 @@ const aliases: Record<string, string> = {
 
 export function MuseumDeck({ children }: { children: ReactNode }) {
   const track = useRef<HTMLDivElement>(null);
+  const numberLinks = useRef<HTMLElement>(null);
   const activeIndex = useRef(0);
   const trackWidth = useRef(0);
   const [active, setActive] = useState(0);
@@ -88,6 +89,22 @@ export function MuseumDeck({ children }: { children: ReactNode }) {
   }, [go]);
 
   useEffect(() => {
+    const bar = numberLinks.current;
+    const selected = bar?.querySelector<HTMLElement>('a[aria-current]');
+    if (bar && selected) {
+      const barBox = bar.getBoundingClientRect();
+      const linkBox = selected.getBoundingClientRect();
+      if (linkBox.left < barBox.left || linkBox.right > barBox.right) {
+        bar.scrollTo({
+          left:
+            bar.scrollLeft +
+            linkBox.left -
+            barBox.left -
+            (bar.clientWidth - linkBox.width) / 2,
+          behavior: 'instant',
+        });
+      }
+    }
     slides.forEach(([id], index) => {
       const slide = document.getElementById(id);
       if (slide) {
@@ -137,7 +154,11 @@ export function MuseumDeck({ children }: { children: ReactNode }) {
           <span>Next</span> →
         </button>
       </nav>
-      <nav className="deck-numbers" aria-label="Jump to an exhibit">
+      <nav
+        ref={numberLinks}
+        className="deck-numbers"
+        aria-label="Jump to an exhibit"
+      >
         {slides.map(([id, title], index) => (
           <a
             key={id}

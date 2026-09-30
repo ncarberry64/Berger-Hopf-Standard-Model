@@ -1,5 +1,33 @@
 # Museum content update — 24 September 2026
 
+## Phone-first balance, sharing cache and mobile playlist — 30 September 2026
+
+Added a final phone/tablet stylesheet: shorter persistent navigation, a welcome
+geometry and entrance button visible without scrolling at 320/390px, legible
+body copy, larger touch targets, stacked instruments, and two-column phase
+buttons. The numbered strip follows the active exhibit when it moves outside
+the phone viewport. Desktop content bounds and side-by-side instruments remain.
+
+The soundtrack now reuses one gesture-activated inline audio element across
+both tracks, with metadata-only preloading and retry on a later gesture when
+playback is rejected. Existing visibility/focus, cross-tab ownership and manual
+pause guards remain. No floating console was introduced. Actual first-click
+playback, time progression, automatic transition to the second track and manual
+pause were checked in the available browser; hardware
+iPhone/Safari and Facebook's in-app browser are not available for direct tests.
+
+The public homepage already served the geometry Open Graph card; Meta's debugger
+requires login in this session. Added a versioned copy of the correct image and
+a fresh full-museum sharing page at `visit/2026-09-30/`, with its own canonical
+and Open Graph URL. It serves the full museum rather than redirecting to the
+previously cached homepage. Old Facebook post attachments are outside this
+site deployment's control. The exporter verifies both metadata and image size.
+
+Validation: 39 Node checks, 13 museum Python checks, TypeScript, focused lint,
+production export, five publication audits, and byte-identical AI regeneration.
+Responsive browser checks cover 320, 390, 768 and 1440px with no document-width
+overflow. The original correct social image remains available at its old URL.
+
 ## Desktop navigation and restored matter motion — 30 September 2026
 
 Restored the rotating mathematical Hopf study beside the family selector in

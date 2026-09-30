@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+import { museumPublicURL, socialImageFile } from '../lib/social-preview.mjs';
 import { Geist, Geist_Mono } from 'next/font/google';
 import './globals.css';
 import './console.css';
@@ -9,6 +10,7 @@ import './bhsm-transition.css';
 import './ai-access.css';
 import './exhibit-review.css';
 import './evidence-features.css';
+import './phone-experience.css';
 
 const geistSans = Geist({
   variable: '--font-geist-sans',
@@ -42,7 +44,7 @@ export const metadata: Metadata = {
       'Explore interactive exhibits on matter, forces and cosmology. Geometry, evidence and open scientific questions in the Berger–Hopf Standard Model.',
     images: [
       {
-        url: 'https://ncarberry64.github.io/Berger-Hopf-Standard-Model/bhsm-museum-social-2026-09-27.png',
+        url: `${museumPublicURL}${socialImageFile}`,
         width: 1200,
         height: 630,
         type: 'image/png',
@@ -57,7 +59,7 @@ export const metadata: Metadata = {
       'Explore interactive exhibits on matter, forces and cosmology. Geometry, evidence and open questions.',
     images: [
       {
-        url: 'https://ncarberry64.github.io/Berger-Hopf-Standard-Model/bhsm-museum-social-2026-09-27.png',
+        url: `${museumPublicURL}${socialImageFile}`,
         alt: 'BHSM Museum — Geometry, matter and interaction, with linked geometric fibers in amber, lavender and cyan.',
       },
     ],
