@@ -1,5 +1,30 @@
 # Museum content update — 24 September 2026
 
+## Desktop navigation and restored matter motion — 30 September 2026
+
+Restored the rotating mathematical Hopf study beside the family selector in
+Exhibit 4, keeping the relative-energy mass explanation and avoiding a claimed
+particle-family-to-fiber identification. Added thirteen numbered direct exhibit
+links with the active destination marked. Direct links jump immediately so rapid
+selections cannot race an unfinished animated journey through other exhibits.
+
+Exhibit 7 now leads with a compact two-column scene and controls on desktop;
+the original proposal illustration remains available in an expandable source
+panel. The guided historical storyboard advances every six seconds, stops when
+offscreen/hidden, respects reduced motion and the museum pause setting, and
+pauses on manual selection. This is presentation cadence, not calculated cosmic
+evolution. A deterministic one-in-eight sample reduces decorative particles
+from 5,200 to 650, invisible filament groups are omitted, and repeated SVG blur
+filters are removed. Desktop content is bounded at roughly 1,400 pixels and
+the cosmic drawing is capped at 440 pixels high. Phone layouts remain stacked.
+
+Validation: TypeScript, focused lint, 37 Node checks, thirteen museum Python checks,
+production build/static export, and all five publication audits pass. Two AI
+artifact regenerations are byte-identical; the successful AI handoff is intact.
+Browser checks verify restored geometry changes, all thirteen direct destinations
+(including rapid selection), guided playback and manual selection, no page-width
+overflow at 390 pixels, and bounded media at 1440/1920 desktop widths.
+
 ## Claims, calculations and open scientific review — 30 September 2026
 
 Applied the accepted editorial approach throughout the twelve science/record

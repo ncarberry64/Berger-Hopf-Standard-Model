@@ -129,28 +129,33 @@ export default function Home() {
               proposed cycle.
             </p>
           </div>
+          <CosmicEnclosure motion={motion} />
+          <ExhibitStatement id="cosmology-original" />
+          <p className="other-work-boundary">
+            Historical conceptual storyboard · BHSM cosmology proposal
+          </p>
           <div className="creator-links">
             <a href="#other-work">
               Follow the proposal into testable responses →
             </a>
           </div>
-          <p className="other-work-boundary">
-            Historical conceptual storyboard · BHSM cosmology proposal
-          </p>
-          <ExhibitStatement id="cosmology-original" />
-          <article className="other-work-card">
-            <div className="other-work-visual">
-              <MotionImage motion={false} exhibit={cosmologyExhibit} />
-            </div>
-            <div className="other-work-copy">
-              <h3>The January proposal</h3>
-              <p>{cosmologyExhibit.seen}</p>
-              <a href="https://doi.org/10.20944/preprints202601.1427.v1">
-                Original preprint ↗
-              </a>
-            </div>
-          </article>
-          <CosmicEnclosure motion={motion} />
+          <details className="original-proposal-details">
+            <summary>
+              The January proposal · original illustration and source
+            </summary>
+            <article className="other-work-card">
+              <div className="other-work-visual">
+                <MotionImage motion={false} exhibit={cosmologyExhibit} />
+              </div>
+              <div className="other-work-copy">
+                <h3>The January proposal</h3>
+                <p>{cosmologyExhibit.seen}</p>
+                <a href="https://doi.org/10.20944/preprints202601.1427.v1">
+                  Original preprint ↗
+                </a>
+              </div>
+            </article>
+          </details>
           <ExhibitReview id="cosmology-original" />
         </section>
         <section

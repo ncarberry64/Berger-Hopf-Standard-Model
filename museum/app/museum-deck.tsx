@@ -26,6 +26,7 @@ export function MuseumDeck({ children }: { children: ReactNode }) {
     const next = Math.max(0, Math.min(slides.length - 1, index));
     // A deep link may already have scrolled before hydration, so no scroll
     // event is guaranteed. Synchronize the controls and accessible slide too.
+    const adjacent = Math.abs(next - activeIndex.current) === 1;
     setActive(next);
     activeIndex.current = next;
     const reduce = window.matchMedia(
@@ -33,7 +34,7 @@ export function MuseumDeck({ children }: { children: ReactNode }) {
     ).matches;
     element.scrollTo({
       left: next * element.clientWidth,
-      behavior: smooth && !reduce ? 'smooth' : 'instant',
+      behavior: smooth && adjacent && !reduce ? 'smooth' : 'instant',
     });
   }, []);
 
@@ -66,7 +67,9 @@ export function MuseumDeck({ children }: { children: ReactNode }) {
       );
       if (index < 0) return;
       event.preventDefault();
-      go(index);
+      // Direct destinations must not animate through unrelated exhibits or
+      // race a second numbered selection against an unfinished swipe.
+      go(index, false);
     };
     fromHash();
     window.addEventListener('hashchange', fromHash);
@@ -133,6 +136,19 @@ export function MuseumDeck({ children }: { children: ReactNode }) {
         >
           <span>Next</span> →
         </button>
+      </nav>
+      <nav className="deck-numbers" aria-label="Jump to an exhibit">
+        {slides.map(([id, title], index) => (
+          <a
+            key={id}
+            href={`#${id}`}
+            title={`${String(index + 1).padStart(2, '0')} · ${title}`}
+            aria-label={`Exhibit ${index + 1}: ${title}`}
+            aria-current={active === index ? 'step' : undefined}
+          >
+            {String(index + 1).padStart(2, '0')}
+          </a>
+        ))}
       </nav>
       <div className="deck-progress" aria-hidden="true">
         <i style={{ width: `${((active + 1) / slides.length) * 100}%` }} />

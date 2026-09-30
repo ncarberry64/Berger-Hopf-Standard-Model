@@ -152,7 +152,7 @@
 }
 
 .matter-scene {
-  grid-template-columns: 1fr;
+  grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr);
 }
 .matter-family {
   padding: 1rem 1.5rem;
@@ -162,4 +162,85 @@
   width: 100%;
   height: auto;
   border-radius: 6px;
+}
+
+/* Keep the instruments readable at desktop widths, instead of enlarging
+   every illustration to fill the monitor. Small screens retain one column. */
+.cosmic-presentation {
+  display: grid;
+  grid-template-columns: minmax(0, 1.25fr) minmax(280px, 1fr);
+  align-items: start;
+  gap: 1.4rem;
+  margin-top: 1rem;
+}
+.cosmic-cycle .cosmic-stage {
+  padding: 0;
+  margin: 0;
+  background: #030813;
+}
+.cosmic-cycle > .data-label {
+  margin: 0;
+  padding: 0.5rem 0.65rem;
+  font-size: 0.7rem;
+}
+.cosmic-stage svg {
+  max-height: min(440px, 52dvh);
+}
+.cosmic-panel-controls {
+  min-width: 0;
+}
+.cosmic-panel-controls .media-toolbar {
+  margin-top: 0;
+}
+.cosmic-panel-controls .cycle-phase-buttons {
+  gap: 0.35rem;
+}
+.cosmic-panel-controls .cycle-phase-buttons button {
+  padding: 0.45rem 0.6rem;
+  font-size: 0.8rem;
+  min-height: 40px;
+}
+.cosmic-panel-controls .event-story {
+  padding: 1rem;
+  margin-top: 1rem;
+}
+.cosmic-panel-controls .event-story h4 {
+  font-size: 1.1rem;
+}
+.cosmic-panel-controls .event-story p {
+  font-size: 0.85rem;
+}
+.cosmic-panel-controls .cycle-legend {
+  padding: 0;
+  background: transparent;
+}
+.original-proposal-details {
+  margin-top: 1.5rem;
+}
+.original-proposal-details summary {
+  cursor: pointer;
+  color: #ffbc77;
+  padding: 1rem 0;
+}
+.original-proposal-details .other-work-card {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+}
+.original-proposal-details .other-work-visual > img {
+  max-height: 360px;
+  object-fit: contain;
+}
+@media (max-width: 900px) {
+  .cosmic-presentation {
+    grid-template-columns: 1fr;
+  }
+  .cosmic-stage svg {
+    max-height: 360px;
+  }
+}
+@media (max-width: 700px) {
+  .matter-scene,
+  .original-proposal-details .other-work-card {
+    grid-template-columns: 1fr;
+  }
 }

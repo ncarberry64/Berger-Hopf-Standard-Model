@@ -7,7 +7,7 @@ import { MagneticLab } from './magnetic-lab';
 import { MassStudy } from './mass-study';
 import { MuonResult } from './muon-result';
 import { ForceTree } from './force-tree';
-import { ScienceConsole } from './science-console';
+import { GeometryField, ScienceConsole } from './science-console';
 type Result = {
   classification: string;
   value: number | number[];
@@ -148,8 +148,8 @@ export function PrototypeScience({
         intro="The repeating pattern is three particle families: each contains a charged lepton, a neutrino, an up-type quark and a down-type quark. The electric charges repeat across families, while the charged particles have different masses. Select a family to explore the pattern."
         accent="lavender"
       >
-        <MassStudy motion={motion} />
         <div className="matter-scene">
+          <GeometryField motion={motion} />
           <div className="matter-family" key={family}>
             <p className="eyebrow">{selected.name}</p>
             <div className="particle-quartet">
@@ -168,6 +168,10 @@ export function PrototypeScience({
             <p>{selected.meaning}</p>
           </div>
         </div>
+        <p className="console-caption">
+          Rotating Hopf fibers show the underlying mathematical geometry. The
+          viewing rotation is independent of the selected particle family.
+        </p>
         <div className="console-selector">
           {generations.map((g, i) => (
             <button
@@ -179,6 +183,7 @@ export function PrototypeScience({
             </button>
           ))}
         </div>
+        <MassStudy motion={motion} />
         <p className="console-caption">
           <b>Conditional BHSM structure</b> · The family selector shows the
           established charge pattern. The mass animation follows BHSM’s

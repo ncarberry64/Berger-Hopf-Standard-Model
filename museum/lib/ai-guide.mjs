@@ -152,7 +152,7 @@ const topics = {
     keywords:
       'cosmology original january cosmic cycle hypersphere light proposal universe expansion',
     summary:
-      'The original cosmology exhibit preserves the January proposal as a selectable static storyboard. Its uncomputed evolution is no longer animated.',
+      'The original cosmology exhibit preserves the January proposal as selectable illustrated panels with a six-second guided tour. Playback is presentation cadence, not computed cosmic evolution. The original still illustration is expandable below.',
     scope:
       'Historical conceptual illustration, not a sky map, current numerical fit or demonstrated physical cosmic cycle.',
     sources: [
