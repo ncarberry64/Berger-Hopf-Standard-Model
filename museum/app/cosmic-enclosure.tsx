@@ -78,7 +78,7 @@ export function CosmicEnclosure({ motion }: { motion: boolean }) {
         const index = phases.findIndex((p) => p.start === value);
         return phases[(index + 1) % phases.length].start;
       });
-    }, 6000);
+    }, 3000);
     return () => {
       observer.disconnect();
       window.clearInterval(timer);
@@ -444,7 +444,7 @@ export function CosmicEnclosure({ motion }: { motion: boolean }) {
         </div>
       </div>
       <p className="console-caption">
-        Guided historical storyboard · one panel every six seconds while
+        Guided historical storyboard · one panel every three seconds while
         visible. Select any panel to pause and inspect it. Playback presents the
         proposal; it does not simulate cosmic time. The numerical R1 response is
         animated in the next exhibit. System reduced-motion and museum pause

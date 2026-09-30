@@ -1,4 +1,43 @@
 /* Phone-first refinements. Desktop instruments retain their bounded widths. */
+.console-explanation {
+  margin: 1rem 0 1.5rem;
+  color: #d9cfe3;
+  line-height: 1.7;
+}
+.family-study svg,
+.mass-visual svg {
+  display: block;
+  width: 100%;
+  height: auto;
+  max-height: 420px;
+}
+.family-study .matter-scene {
+  margin-top: 0.5rem;
+}
+.mass-visual {
+  max-width: 850px;
+  margin-inline: auto;
+}
+.mass-visual-key {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem 1.4rem;
+  margin: 0.75rem 0;
+  color: #c7b8d6;
+  font-size: 0.8rem;
+}
+.museum-track .console-intro {
+  margin-bottom: 0.5rem;
+}
+.museum-track .console-content {
+  padding-top: 0.7rem;
+}
+.family-study svg {
+  max-height: 320px;
+}
+.family-study .particle-quartet > div {
+  padding-block: 8px;
+}
 @media (max-width: 900px) {
   .prediction-museum .site-header {
     min-height: 48px;
@@ -83,6 +122,15 @@
   }
   .matter-scene {
     grid-template-columns: 1fr;
+  }
+  .family-study .matter-family {
+    padding: 0.4rem 0;
+  }
+  .family-study svg {
+    max-height: 280px;
+  }
+  .console-explanation {
+    font-size: 1rem;
   }
   .particle-quartet {
     grid-template-columns: repeat(2, minmax(0, 1fr));

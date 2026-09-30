@@ -101,7 +101,7 @@ const topics = {
     keywords:
       'matter particles mass masses spectrum standard model generations yukawa mixing neutrino ledger',
     summary:
-      'Explore the particle ledger, conditional structural framework and the distinction between reference properties and proposed BHSM calculations.',
+      'Explore three cycling charged-lepton Hopf phase patterns from the frozen mode ledger, reference particle families, and the author’s displaced-energy mass illustration. The quark/thread/cloud scene is a conceptual interpretation; the formal mass contract is composite-minus-matched-parent rest energy.',
     scope:
       'Conditional structural results and historical screens do not establish physical masses or mixing predictions.',
     sources: [
@@ -152,7 +152,7 @@ const topics = {
     keywords:
       'cosmology original january cosmic cycle hypersphere light proposal universe expansion',
     summary:
-      'The original cosmology exhibit preserves the January proposal as selectable illustrated panels with a six-second guided tour. Playback is presentation cadence, not computed cosmic evolution. The original still illustration is expandable below.',
+      'The original cosmology exhibit preserves the January proposal as selectable illustrated panels with a three-second guided tour. Playback is presentation cadence, not computed cosmic evolution. The original still illustration is expandable below.',
     scope:
       'Historical conceptual illustration, not a sky map, current numerical fit or demonstrated physical cosmic cycle.',
     sources: [

@@ -1,7 +1,7 @@
 'use client';
 /* oxlint-disable next/no-html-link-for-pages -- The evidence link reads a static Markdown file. */
 /* oxlint-disable jsx-a11y/prefer-tag-over-role -- Inline SVG needs image semantics; an HTML img cannot contain this interactive drawing. */
-import { useEffect, useRef, useState, type ReactNode } from 'react';
+import { Children, useEffect, useRef, useState, type ReactNode } from 'react';
 import { ChildrenOfBHSM } from './children-of-bhsm';
 import { AIInterfaceButton } from './ai-access';
 import { ExhibitStatement, ExhibitReview } from './exhibit-review';
@@ -35,6 +35,7 @@ export function ScienceConsole({
   title,
   intro,
   children,
+  introAfter = 1,
   accent = 'amber',
 }: {
   id: string;
@@ -43,8 +44,10 @@ export function ScienceConsole({
   title: string;
   intro: string;
   children: ReactNode;
+  introAfter?: number;
   accent?: string;
 }) {
+  const panels = Children.toArray(children);
   return (
     <article id={id} className={`science-console console-${accent}`}>
       <div className="console-cap">
@@ -62,10 +65,13 @@ export function ScienceConsole({
         <div className="console-content">
           <header className="console-intro">
             <h3>{title}</h3>
-            <ExhibitStatement id={id} />
-            <p>{intro}</p>
           </header>
-          {children}
+          {panels.slice(0, introAfter)}
+          <div className="console-explanation">
+            <p>{intro}</p>
+            <ExhibitStatement id={id} />
+          </div>
+          {panels.slice(introAfter)}
           <ExhibitReview id={id} />
         </div>
       </div>
@@ -234,12 +240,22 @@ export function EngineHero({
         <p className="eyebrow">Berger–Hopf Standard Model</p>
         <h2 id="bhsm-abstract-title">Abstract</h2>
         <p>
-          BHSM investigates whether matter, interactions and cosmic structure
-          can be described through one geometric action with
-          environment-dependent realizations. Hopf fibers organize internal
-          modes; Berger geometry changes their relative metric. The programme
-          connects these structures to particle representations, conserved
-          currents, relative energies and experimentally testable observables.
+          BHSM proposes one closed hyperspherical energy–geometry system as the
+          foundation of reality, from the structure beneath particles to the
+          largest cosmic structures. Its hyperspherical cosmology models space
+          as a three-sphere, S³. Hopf’s linked circles organize internal modes,
+          while Berger geometry changes their relative metric. The ambition is
+          one action connecting quarks, atoms, matter, stars, galaxies and the
+          cosmic web through environment-dependent realizations.
+        </p>
+        <p>
+          In BHSM’s proposed cosmic picture, all black holes lead to the same
+          underlying core: Aether, the absence of ordinary spacetime support.
+          This is a shared pregeometric foundation, rather than a destination
+          located elsewhere in space. Localized envelopments give rise to
+          particle structure, and mass is interpreted through displaced energy.
+          The common-core interpretation is an author proposition; its physical
+          core-to-spacetime map remains to be derived.
         </p>
         <p>
           The research record includes conditional Standard Model structure,
@@ -253,6 +269,10 @@ export function EngineHero({
         </p>
         <a href="https://github.com/ncarberry64/Berger-Hopf-Standard-Model/blob/main/docs/current_bhsm_status.md">
           Read the research status and claim boundaries ↗
+        </a>
+        {' · '}
+        <a href="./research/mass-and-hypersphere-context.md">
+          Hypersphere, common core and mass: source context ↗
         </a>
       </section>
       <p className="console-caption">
