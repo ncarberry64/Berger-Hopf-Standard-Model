@@ -201,7 +201,7 @@ export function EngineHero({
             test what follows.
           </p>
           <a className="enter-museum" href="#berger-hopf">
-            Enter the science →
+            Enter with music →
           </a>
           <AIInterfaceButton />
           <small>

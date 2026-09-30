@@ -1,0 +1,213 @@
+/* Phone-first refinements. Desktop instruments retain their bounded widths. */
+@media (max-width: 900px) {
+  .prediction-museum .site-header {
+    min-height: 48px;
+    padding: 0.35rem max(0.8rem, env(safe-area-inset-left));
+  }
+  .prediction-museum .wordmark-image {
+    width: 30px;
+    height: 30px;
+  }
+  .prediction-museum .wordmark small {
+    display: none;
+  }
+  .deck-controls {
+    gap: 0.45rem;
+    padding: 0.3rem 0.6rem;
+  }
+  .deck-controls label > span {
+    font-size: 0.65rem;
+  }
+  .deck-controls select {
+    font-size: 1rem;
+    padding: 0.1rem 0.25rem;
+  }
+  .deck-controls button {
+    padding: 0.4rem 0.7rem;
+  }
+  .deck-numbers {
+    scrollbar-width: none;
+    padding-block: 0;
+  }
+  .deck-numbers::-webkit-scrollbar {
+    display: none;
+  }
+  .deck-numbers a {
+    font-size: 0.8rem;
+  }
+  .museum-track > .engine-hero,
+  .museum-track .science-console,
+  .museum-track > .other-work-wing,
+  .museum-track > .museum-details,
+  .museum-track > #creator,
+  .museum-track > footer {
+    padding: 1rem max(0.85rem, env(safe-area-inset-left))
+      max(2rem, env(safe-area-inset-bottom));
+  }
+  .museum-track .console-body {
+    display: block;
+  }
+  .museum-track .console-rail {
+    display: none;
+  }
+  .museum-track .console-content {
+    padding: 0.8rem 0 0;
+  }
+  .museum-track .console-intro h3,
+  .museum-track .section-heading h2 {
+    font-size: clamp(1.65rem, 5vw, 2.2rem);
+  }
+  .museum-track .console-intro p,
+  .museum-track .section-heading > p:not(.eyebrow),
+  .museum-track .exhibit-statement > p:last-child {
+    font-size: 1rem;
+    line-height: 1.6;
+  }
+  .museum-track .exhibit-statement {
+    padding: 0.7rem;
+    margin: 0.75rem 0;
+  }
+  .museum-track :is(button, summary, select) {
+    touch-action: manipulation;
+  }
+  .console-selector button,
+  .cycle-phase-buttons button,
+  .structure-options button,
+  .particle-properties button {
+    min-height: 44px;
+  }
+  .museum-track .console-caption,
+  .museum-track .matter-family > p:last-child {
+    font-size: 0.875rem;
+    line-height: 1.65;
+  }
+  .matter-scene {
+    grid-template-columns: 1fr;
+  }
+  .particle-quartet {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+  .particle-quartet span {
+    font-size: 0.8rem;
+  }
+  .cosmic-cycle {
+    padding: 0.75rem;
+  }
+  .cosmic-presentation {
+    gap: 0.8rem;
+  }
+  .cosmic-cycle > .data-label {
+    font-size: 0.65rem;
+    line-height: 1.5;
+  }
+  .cosmic-stage svg {
+    max-height: none;
+  }
+  .cosmic-panel-controls .cycle-phase-buttons {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+  .cosmic-panel-controls .cycle-phase-buttons button {
+    min-height: 48px;
+    font-size: 0.85rem;
+    text-align: left;
+  }
+  .cosmic-panel-controls .event-story p {
+    font-size: 0.95rem;
+  }
+  .evidence-feature {
+    padding: 0.9rem;
+  }
+  .evidence-feature p,
+  .bhsm-abstract p {
+    font-size: 1rem;
+  }
+  .mass-steps {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+  .muon-readouts {
+    grid-template-columns: 1fr;
+  }
+}
+@media (max-width: 650px) {
+  .museum-track .hero-layout {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 0.8rem;
+    padding: 0.8rem 0;
+  }
+  .hero-copy {
+    display: contents;
+  }
+  .hero-copy > .eyebrow {
+    display: none;
+  }
+  .museum-track .hero-copy h1 {
+    grid-row: 1;
+    font-size: clamp(2rem, 8.5vw, 2.7rem);
+    margin: 0;
+  }
+  .hero-engine {
+    grid-row: 2;
+  }
+  .hero-engine .geometry-field svg {
+    height: 170px;
+    width: 100%;
+  }
+  .hero-engine .engine-sequence {
+    display: none;
+  }
+  .museum-track .enter-museum {
+    grid-row: 3;
+    margin: 0;
+    text-align: center;
+    padding: 0.85rem;
+    min-height: 48px;
+  }
+  .hero-copy > p:not(.eyebrow) {
+    grid-row: 4;
+    margin: 0;
+  }
+  .hero-copy > .ai-copy-control {
+    grid-row: 5;
+  }
+  .hero-copy > small {
+    grid-row: 6;
+    margin: 0;
+    font-size: 0.8rem;
+  }
+  .hero-overline {
+    min-height: 44px;
+  }
+  .hero-overline > span {
+    display: none;
+  }
+  .hero-overline button {
+    margin-left: auto;
+    min-height: 44px;
+    font-size: 0.75rem;
+  }
+  .children-map small,
+  .children-scope {
+    font-size: 0.85rem;
+  }
+  .children-map h3 {
+    font-size: 0.8rem;
+  }
+  .children-example {
+    scroll-margin-top: 3rem;
+  }
+  .museum-track .bhsm-children {
+    padding: 0.8rem 0.5rem;
+  }
+  .children-panel {
+    height: min(600px, 65dvh);
+    padding-inline: 0.6rem;
+  }
+  .bhsm-abstract {
+    padding: 0.85rem;
+  }
+  .museum-track .magnet-stage svg {
+    min-width: 0;
+  }
+}

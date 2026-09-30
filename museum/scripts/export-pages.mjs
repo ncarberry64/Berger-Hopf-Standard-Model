@@ -3,6 +3,12 @@ import { spawn } from 'node:child_process';
 import { dirname, relative, resolve } from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { slides } from '../lib/museum-slides.mjs';
+import {
+  socialImageFile,
+  freshSharePath,
+  freshShareURL,
+  makeFreshShareHTML,
+} from '../lib/social-preview.mjs';
 
 const museumRoot = resolve(dirname(fileURLToPath(import.meta.url)), '..');
 const distRoot = resolve(museumRoot, 'dist');
@@ -66,11 +72,23 @@ try {
   const html = sourceHtml.replaceAll('/_next/', './_next/');
 
   await writeFile(resolve(pagesRoot, 'index.html'), html, 'utf8');
+  const shareDirectory = resolve(pagesRoot, freshSharePath);
+  await mkdir(shareDirectory, { recursive: true });
+  const shareHTML = makeFreshShareHTML(html);
+  for (const expected of [
+    `<base href="${publicUrl}"`,
+    `rel="canonical" href="${freshShareURL}"`,
+    `property="og:url" content="${freshShareURL}"`,
+  ]) {
+    if (!shareHTML.includes(expected))
+      throw new Error(`Fresh share is missing: ${expected}`);
+  }
+  await writeFile(resolve(shareDirectory, 'index.html'), shareHTML, 'utf8');
   await writeFile(resolve(pagesRoot, '.nojekyll'), '', 'utf8');
 
   const written = await readFile(resolve(pagesRoot, 'index.html'), 'utf8');
   // Social crawlers read this static HTML without running the museum app.
-  const socialImage = `${publicUrl}bhsm-museum-social-2026-09-27.png`;
+  const socialImage = `${publicUrl}${socialImageFile}`;
   for (const tag of [
     `property="og:image" content="${socialImage}"`,
     'property="og:image:width" content="1200"',
@@ -81,9 +99,7 @@ try {
     if (!written.includes(tag))
       throw new Error(`Missing social metadata: ${tag}`);
   }
-  const preview = await readFile(
-    resolve(pagesRoot, 'bhsm-museum-social-2026-09-27.png'),
-  );
+  const preview = await readFile(resolve(pagesRoot, socialImageFile));
   if (preview.readUInt32BE(16) !== 1200 || preview.readUInt32BE(20) !== 630)
     throw new Error('Social preview must be a 1200 × 630 PNG.');
   for (const expected of [

@@ -110,7 +110,7 @@ if (!existsSync(sourceRoot)) {
 
 // Keep the legacy image URL current as well as the versioned sharing URL.
 await cp(
-  join(publicRoot, 'bhsm-museum-social-2026-09-27.png'),
+  join(publicRoot, 'bhsm-museum-social-2026-09-30.png'),
   join(publicRoot, 'og.png'),
 );
 

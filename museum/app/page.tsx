@@ -22,6 +22,7 @@ import { ComputeAchievement } from './compute-achievement';
 import { MuseumDeck } from './museum-deck';
 import { BergerHopf } from './berger-hopf';
 import { AIAccess } from './ai-access';
+import { freshShareURL } from '../lib/social-preview.mjs';
 import {
   ExhibitStatement,
   ExhibitReview,
@@ -381,6 +382,7 @@ export default function Home() {
             <a href={REPOSITORY}>Academic repository</a>
             <a href={`${SCIENCE}/LICENSE.md`}>License</a>
             <a href="#top">Back to the future ↑</a>
+            <a href={freshShareURL}>Fresh Facebook sharing link ↗</a>
           </div>
           <MuseumSoundtrack />
           <OpenReviewInvitation />

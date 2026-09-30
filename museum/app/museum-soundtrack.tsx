@@ -4,6 +4,7 @@ import { Music2, Pause, Play, Volume2, VolumeX } from 'lucide-react';
 import { useEffect, useRef, useState } from 'react';
 import { startSoundtrackOnInteraction } from '../lib/start-soundtrack';
 import { manageSoundtrackSession } from '../lib/soundtrack-session';
+import { advanceSoundtrack } from '../lib/advance-soundtrack';
 
 const TRACKS = [
   {
@@ -19,19 +20,18 @@ const TRACKS = [
 ] as const;
 
 export function MuseumSoundtrack() {
-  const audioRefs = useRef<Array<HTMLAudioElement | null>>([]);
+  const audioRef = useRef<HTMLAudioElement>(null);
   const [trackIndex, setTrackIndex] = useState(0);
   const [playing, setPlaying] = useState(false);
   const [muted, setMuted] = useState(false);
   const currentTrack = useRef(0);
   const manuallyPaused = useRef(false);
   const stopGesture = useRef<() => void>(() => {});
+  const armPlayback = useRef<() => void>(() => {});
   const track = TRACKS[trackIndex];
 
   useEffect(() => {
-    const players = audioRefs.current.filter(
-      (audio): audio is HTMLAudioElement => audio !== null,
-    );
+    const players = audioRef.current ? [audioRef.current] : [];
     const isActive = () => !document.hidden && document.hasFocus();
     const shouldStart = (event: Event) => {
       if (!isActive()) return false;
@@ -50,7 +50,7 @@ export function MuseumSoundtrack() {
     };
     const armGesture = () => {
       stopGesture.current();
-      const audio = audioRefs.current[currentTrack.current];
+      const audio = audioRef.current;
       if (audio && !manuallyPaused.current)
         stopGesture.current = startSoundtrackOnInteraction(
           window,
@@ -58,6 +58,7 @@ export function MuseumSoundtrack() {
           shouldStart,
         );
     };
+    armPlayback.current = armGesture;
     let channel: BroadcastChannel | undefined;
     try {
       if (typeof BroadcastChannel !== 'undefined')
@@ -82,19 +83,20 @@ export function MuseumSoundtrack() {
     };
   }, []);
 
-  async function play(index: number) {
-    const audio = audioRefs.current[index];
+  async function play() {
+    const audio = audioRef.current;
     if (!audio || document.hidden || !document.hasFocus()) return;
 
     try {
       await audio.play();
     } catch {
       setPlaying(false);
+      armPlayback.current();
     }
   }
 
   function togglePlayback() {
-    const audio = audioRefs.current[trackIndex];
+    const audio = audioRef.current;
     if (!audio) return;
 
     if (playing) {
@@ -106,41 +108,45 @@ export function MuseumSoundtrack() {
     }
 
     manuallyPaused.current = false;
-    void play(trackIndex);
+    void play();
   }
 
-  function advancePlaylist(endedIndex: number) {
-    const endedTrack = audioRefs.current[endedIndex];
-    if (endedTrack) endedTrack.currentTime = 0;
-
-    const nextIndex = (endedIndex + 1) % TRACKS.length;
+  function advancePlaylist() {
+    const audio = audioRef.current;
+    if (
+      !audio ||
+      manuallyPaused.current ||
+      document.hidden ||
+      !document.hasFocus()
+    )
+      return;
+    const nextIndex = (currentTrack.current + 1) % TRACKS.length;
     currentTrack.current = nextIndex;
     setTrackIndex(nextIndex);
-    void play(nextIndex);
+    void advanceSoundtrack(audio, TRACKS[nextIndex].source).catch(() => {
+      setPlaying(false);
+      armPlayback.current();
+    });
   }
 
   function toggleMute() {
     const nextMuted = !muted;
-    audioRefs.current.forEach((audio) => {
-      if (audio) audio.muted = nextMuted;
-    });
+    if (audioRef.current) audioRef.current.muted = nextMuted;
     setMuted(nextMuted);
   }
 
   return (
     <aside className="soundtrack-dock" aria-label="Museum soundtrack">
-      {TRACKS.map((item, index) => (
-        // oxlint-disable-next-line jsx-a11y/media-has-caption -- The soundtrack is instrumental and contains no speech.
-        <audio
-          key={item.source}
-          ref={(element) => {
-            audioRefs.current[index] = element;
-          }}
-          src={item.source}
-          preload="auto"
-          onEnded={() => advancePlaylist(index)}
-        />
-      ))}
+      {/* Keep the same user-activated media element for every playlist track.
+          A second element can require a fresh playback gesture on iOS. */}
+      {/* oxlint-disable-next-line jsx-a11y/media-has-caption -- Instrumental music has no speech. */}
+      <audio
+        ref={audioRef}
+        src={TRACKS[0].source}
+        preload="metadata"
+        playsInline
+        onEnded={advancePlaylist}
+      />
       <div className="soundtrack-mark" aria-hidden="true">
         <Music2 />
       </div>
