@@ -152,7 +152,7 @@ const topics = {
     keywords:
       'cosmology original january cosmic cycle hypersphere light proposal universe expansion',
     summary:
-      'The original cosmology exhibit preserves the January proposal as selectable illustrated panels with a 1.5-second guided tour. Playback is presentation cadence, not computed cosmic evolution. The original still illustration is expandable below.',
+      'The original cosmology exhibit continuously animates the BHSM cosmic cycle, with about 1.5 seconds per stage. All black holes are proposed to lead to the same core/singularity. After heat death, at zero core–surface differential, the entire cosmos becomes a white hole instantaneously in one global event. Playback and the brief heat-death hold are explanatory, not computed cosmic evolution. The original January illustration is expandable below; the shared-core and white-hole interpretation follows the author’s clarification of 1 October 2026.',
     scope:
       'Historical conceptual illustration, not a sky map, current numerical fit or demonstrated physical cosmic cycle.',
     sources: [

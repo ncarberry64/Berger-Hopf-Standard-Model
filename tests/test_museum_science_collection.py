@@ -82,5 +82,5 @@ def test_primary_exhibits_collider_and_other_work_are_not_replaced_by_comparison
     assert 'row.uncertainty' in magnetic and 'vector lengths are normalized' in magnetic
     assert '<CosmicEnclosure motion={motion}' in page
     assert page.index('id="cosmology-original"') < page.index('<CosmicEnclosure') < page.index('<CosmologyRealization') < page.index('<ScienceGallery') < page.index('<footer id="museum-exit">')
-    for text in ('White-hole surface release', 'Cooling, flows and active topology', 'Smooth surface / heat death', 'HISTORICAL BHSM STORYBOARD', 'not observational data', 'does not simulate cosmic time'):
+    for text in ('The whole cosmos becomes a white hole', 'Cooling, flows and active topology', 'Smooth surface / heat death', 'BHSM COSMOLOGY PROPOSAL', 'not a computed cosmic history', 'physical time scale', 'all black holes lead to the same core/singularity'):
         assert text in cosmic

@@ -127,13 +127,13 @@ export default function Home() {
           </div>
           <CosmicEnclosure motion={motion} />
           <p>
-            Explore the original geometric proposal and its selectable
-            storyboard from a sea of light through the cosmic web to a proposed
-            cycle.
+            Follow the animated BHSM proposal from a sea of light through the
+            cosmic web to black holes sharing one core, heat death, and one
+            instantaneous whole-cosmos white-hole event.
           </p>
           <ExhibitStatement id="cosmology-original" />
           <p className="other-work-boundary">
-            Historical conceptual storyboard · BHSM cosmology proposal
+            Continuous conceptual animation · BHSM cosmology proposal
           </p>
           <div className="creator-links">
             <a href="#other-work">

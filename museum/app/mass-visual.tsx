@@ -41,6 +41,13 @@ export function MassVisual({ motion }: { motion: boolean }) {
       : view === 'internal'
         ? 0
         : smooth((cycle - 4) / 2) * smooth((14 - cycle) / 2);
+  // Show the proton first; attach its electron cloud only after it resolves.
+  const cloud =
+    view === 'stable' || !motion
+      ? 1
+      : view === 'internal'
+        ? 0
+        : smooth((cycle - 6) / 1.2) * smooth((12 - cycle) / 1.2);
   // Clear once, then retain the stable envelope instead of repeatedly dissolving it.
   const cleared = motion ? smooth(time / 2) : 1;
   const rx = 148 * cleared;
@@ -109,7 +116,11 @@ export function MassVisual({ motion }: { motion: boolean }) {
             />
           );
         })}
-        <g transform={`rotate(${12 * Math.sin(time * 0.3)} 340 196)`}>
+        <g
+          className="mass-electron-cloud"
+          opacity={cloud}
+          transform={`rotate(${12 * Math.sin(time * 0.3)} 340 196)`}
+        >
           <ellipse cx="278" cy="196" rx="72" ry="66" fill="url(#mass-cloud)" />
           <ellipse cx="402" cy="196" rx="72" ry="66" fill="url(#mass-cloud)" />
           {[0, 1, 2].map((i) => (
@@ -222,7 +233,14 @@ export function MassVisual({ motion }: { motion: boolean }) {
         <text x="24" y="362" fill="#dfc896" fontSize="14">
           Virtual-particle sea · visual metaphor
         </text>
-        <text x="655" y="362" textAnchor="end" fill="#95cfff" fontSize="14">
+        <text
+          x="655"
+          y="362"
+          textAnchor="end"
+          fill="#95cfff"
+          fontSize="14"
+          opacity={cloud}
+        >
           Electron cloud · enlarged
         </text>
         <text x="340" y="320" textAnchor="middle" fill="#ffcf99" fontSize="15">
