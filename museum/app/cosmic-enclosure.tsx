@@ -16,8 +16,8 @@ import {
 const phases = [
   {
     start: 0,
-    title: 'White-hole surface release',
-    text: 'In this historical BHSM cyclic interpretation, a global loss of cohesion releases the whole support surface. “White hole” names this conceptual release, not an established spacetime solution.',
+    title: 'The whole cosmos becomes a white hole',
+    text: 'BHSM proposes one white-hole event: after heat death, at the instant no differential remains between the shared core and the surface, the whole cosmos becomes a white hole simultaneously. It is a global event, not a separate white hole at each black hole.',
   },
   {
     start: 10,
@@ -37,7 +37,7 @@ const phases = [
   {
     start: 68,
     title: 'Accretion and concentration',
-    text: 'In the BHSM enclosure interpretation, structure and surface flows concentrate toward black holes. The inward streams and thinning web illustrate the hypothesis, not a computed cosmic history.',
+    text: 'BHSM proposes that all black holes lead to the same core/singularity. Surface concentrations are many entrances to this one shared core; the converging paths show that proposed connection, not measured trajectories through spacetime.',
   },
   {
     start: 89,
@@ -47,7 +47,7 @@ const phases = [
   {
     start: 96,
     title: 'Smooth surface / heat death',
-    text: 'The displayed surface is completely smooth. The proposed cycle then passes directly into another global release; that transition has not been derived.',
+    text: 'After heat death, the proposed core–surface differential reaches zero. At that very instant, BHSM proposes that the whole cosmos becomes the one white-hole event. The animation holds this boundary briefly so it can be inspected; the proposal specifies no waiting period or spreading front.',
   },
 ];
 const clamp = (v: number) => Math.max(0, Math.min(1, v));
@@ -58,10 +58,16 @@ const f = (n: number) => n.toFixed(2);
 // A stable, evenly sampled subset preserves the illustrative web without
 // thousands of SVG nodes. These are synthetic marks, not survey records.
 const displayParticles = webParticles.filter((_, i) => i % 8 === 0);
+// Pre-sample the static skeleton once; only project these bounded paths per frame.
+const displayEdges = edges.map((edge) => ({
+  weight: edge.weight,
+  points: Array.from({ length: 17 }, (_, k) => filamentPoint(edge, k / 16)),
+}));
+const STAGE_SECONDS = 1.5;
 
 export function CosmicEnclosure({ motion }: { motion: boolean }) {
-  const sceneRef = useRef<HTMLElement>(null);
-  const [phase, setPhase] = useState(0);
+  const sceneRef = useRef<HTMLButtonElement>(null);
+  const [progress, setProgress] = useState(0);
   const [playing, setPlaying] = useState(true);
   useEffect(() => {
     if (!motion || !playing) return;
@@ -71,21 +77,23 @@ export function CosmicEnclosure({ motion }: { motion: boolean }) {
       visible = entry.isIntersecting;
     });
     if (sceneRef.current) observer.observe(sceneRef.current);
-    // Tour cadence, not a physical clock. No frame-by-frame geometry rebuild.
+    // Continuous 20-fps presentation clock, not a physical cosmic timescale.
+    // Never catch up after an offscreen/hidden interval.
     const timer = window.setInterval(() => {
       if (!visible || document.hidden || reduced.matches) return;
-      setPhase((value) => {
-        const index = phases.findIndex((p) => p.start === value);
-        return phases[(index + 1) % phases.length].start;
-      });
-    }, 1500);
+      setProgress((value) => (value + 0.05 / STAGE_SECONDS) % phases.length);
+    }, 50);
     return () => {
       observer.disconnect();
       window.clearInterval(timer);
     };
   }, [motion, playing]);
-  const active = phases.reduce((a, p, i) => (phase >= p.start ? i : a), 0),
-    release = phase < 10,
+  const active = Math.floor(progress);
+  const phase =
+    phases[active].start +
+    (progress - active) *
+      ((phases[active + 1]?.start ?? 100) - phases[active].start);
+  const release = phase < 10,
     smooth = phase >= 96;
   const turn = phase * 0.006,
     web = clamp((phase - 34) / 16) * (1 - clamp((phase - 74) / 22)),
@@ -93,37 +101,39 @@ export function CosmicEnclosure({ motion }: { motion: boolean }) {
     collapse = clamp((phase - 68) / 28),
     plasma = 1 - clamp((phase - 4) / 18);
   const shellOpacity = clamp((phase - 10) / 8) * (1 - clamp((phase - 32) / 16));
-  const line = (edge: (typeof edges)[number], offset = 0) => {
+  const line = (edge: (typeof displayEdges)[number]) => {
     let visible = false;
-    return Array.from({ length: 25 }, (_, k) => {
-      const p = project(filamentPoint(edge, k / 24, offset), turn);
-      if (p[2] < -0.025) {
-        visible = false;
-        return '';
-      }
-      const prefix = visible ? 'L' : 'M';
-      visible = true;
-      return `${prefix}${f(p[0])} ${f(p[1])}`;
-    }).join(' ');
+    return edge.points
+      .map((v) => {
+        const p = project(v, turn);
+        if (p[2] < -0.025) {
+          visible = false;
+          return '';
+        }
+        const prefix = visible ? 'L' : 'M';
+        visible = true;
+        return `${prefix}${f(p[0])} ${f(p[1])}`;
+      })
+      .join(' ');
   };
   return (
-    <article
-      id="cosmic-enclosure-cycle"
-      className="cosmic-cycle"
-      ref={sceneRef}
-    >
-      <p className="data-label">HISTORICAL BHSM STORYBOARD</p>
+    <article id="cosmic-enclosure-cycle" className="cosmic-cycle">
+      <p className="data-label">
+        BHSM COSMOLOGY PROPOSAL · CONTINUOUS ANIMATION
+      </p>
       <div className="cosmic-presentation">
         <button
           className="event-stage cosmic-stage"
-          aria-label={'Next historical storyboard panel'}
+          ref={sceneRef}
+          aria-label="Next stage of the BHSM cosmic cycle"
           onClick={() => {
             setPlaying(false);
-            setPhase(phases[(active + 1) % phases.length].start);
+            setProgress((active + 1) % phases.length);
           }}
         >
           <svg
             viewBox="0 0 960 650"
+            data-cycle-progress={progress.toFixed(4)}
             role="img"
             aria-label={`Cosmic hypersphere: ${phases[active].title}. Irregular filaments, broad voids and dense cluster knots evolve into dark concentrations and finally a smooth surface.`}
           >
@@ -201,7 +211,7 @@ export function CosmicEnclosure({ motion }: { motion: boolean }) {
                   })}
                 {web > 0 && (
                   <g opacity={web}>
-                    {edges.map((edge, k) => (
+                    {displayEdges.map((edge, k) => (
                       <g key={k}>
                         <path
                           d={line(edge)}
@@ -211,17 +221,14 @@ export function CosmicEnclosure({ motion }: { motion: boolean }) {
                           fill="none"
                           strokeLinecap="round"
                         />
-                        {[-0.012, 0, 0.012].map((offset, j) => (
-                          <path
-                            key={j}
-                            d={line(edge, offset)}
-                            stroke={j === 1 ? '#c2cfdf' : '#728aa7'}
-                            strokeWidth={j === 1 ? 0.55 : 0.35}
-                            fill="none"
-                            opacity={0.1 * edge.weight}
-                            strokeLinecap="round"
-                          />
-                        ))}
+                        <path
+                          d={line(edge)}
+                          stroke="#c2cfdf"
+                          strokeWidth="0.65"
+                          fill="none"
+                          opacity={0.1 * edge.weight}
+                          strokeLinecap="round"
+                        />
                       </g>
                     ))}
                   </g>
@@ -395,6 +402,71 @@ export function CosmicEnclosure({ motion }: { motion: boolean }) {
                 )}
               </g>
             )}
+            {phase >= 68 && phase < 96 && (
+              <g
+                className="cosmic-shared-core"
+                opacity={clamp((phase - 68) / 5) * (1 - evap)}
+              >
+                {webHubs.map((i, k) => {
+                  const p = point(i, turn);
+                  const travel = (progress * 2 + k / webHubs.length) % 1;
+                  return (
+                    <g key={i}>
+                      <path
+                        d={`M${f(p[0])} ${f(p[1])} L480 310`}
+                        fill="none"
+                        stroke="#baa8ed"
+                        opacity=".5"
+                        strokeDasharray="3 6"
+                      />
+                      <circle
+                        cx={p[0] + (480 - p[0]) * travel}
+                        cy={p[1] + (310 - p[1]) * travel}
+                        r="3"
+                        fill="#e9dbff"
+                      />
+                    </g>
+                  );
+                })}
+                <circle
+                  cx="480"
+                  cy="310"
+                  r="32"
+                  fill="#060911"
+                  stroke="#c7b7f5"
+                  strokeWidth="2"
+                />
+                <text
+                  x="480"
+                  y="315"
+                  textAnchor="middle"
+                  fill="#eee6ff"
+                  fontSize="14"
+                >
+                  ONE CORE
+                </text>
+                <text
+                  x="480"
+                  y="585"
+                  textAnchor="middle"
+                  fill="#d2c0ff"
+                  fontSize="16"
+                >
+                  All black holes → the same core / singularity · schematic
+                </text>
+              </g>
+            )}
+            {smooth && (
+              <text
+                x="480"
+                y="310"
+                textAnchor="middle"
+                fill="#f4ebd5"
+                fontSize="22"
+              >
+                Core–surface differential = 0
+              </text>
+            )}
             <text
               x="480"
               y="615"
@@ -409,10 +481,10 @@ export function CosmicEnclosure({ motion }: { motion: boolean }) {
         <div className="cosmic-panel-controls">
           <div className="media-toolbar">
             <button onClick={() => setPlaying(!playing)} aria-pressed={playing}>
-              {playing ? 'Pause guided tour' : 'Play guided tour'}
+              {playing ? 'Pause animation' : 'Play animation'}
             </button>
             <span>
-              Panel {active + 1} / {phases.length}
+              Stage {active + 1} / {phases.length}
             </span>
           </div>
           <div className="cycle-phase-buttons">
@@ -422,7 +494,7 @@ export function CosmicEnclosure({ motion }: { motion: boolean }) {
                 aria-pressed={active === i}
                 onClick={() => {
                   setPlaying(false);
-                  setPhase(p.start);
+                  setProgress(i);
                 }}
               >
                 {i + 1}. {p.title}
@@ -441,12 +513,14 @@ export function CosmicEnclosure({ motion }: { motion: boolean }) {
         </div>
       </div>
       <p className="console-caption">
-        This is not observational data or a BHSM closure result. Guided
-        historical storyboard · one panel every 1.5 seconds while visible.
-        Select any panel to pause and inspect it. Playback presents the
-        proposal; it does not simulate cosmic time. The numerical R1 response is
-        animated in the next exhibit. System reduced-motion and museum pause
-        settings stop automatic playback.
+        Continuous animation of the BHSM proposal · about 1.5 seconds per stage
+        while visible. Select a stage to pause and inspect it. The brief hold at
+        heat death makes the boundary readable; BHSM proposes an instantaneous,
+        whole-cosmos white-hole event when the core–surface differential
+        vanishes. This is a conceptual visualization, not a computed cosmic
+        history or physical time scale. The numerical R1 response is animated in
+        the next exhibit. System reduced-motion and museum pause settings stop
+        automatic playback.
       </p>
       <div className="cosmic-context">
         <div>
@@ -473,14 +547,22 @@ export function CosmicEnclosure({ motion }: { motion: boolean }) {
           </a>
         </div>
         <div>
-          <h4>Historical BHSM enclosure interpretation</h4>
+          <h4>One shared core. One whole-cosmos white-hole event.</h4>
           <p>
-            The historical Bubble/Wave picture connects surface modes and
-            harmonics with a hypothesized restoration of support through
-            black-hole evaporation. The whole-surface release cycle extends that
-            interpretation; the smooth-to-release transition remains unproved.
-            It is separate from the late-time cosmology preprint and from
-            action-derived BHSM results.
+            BHSM proposes that all black holes lead to the same
+            core/singularity. There are many black-hole entrances, but one
+            shared core. The one white-hole event occurs after heat death: at
+            the moment there is no differential between the core and the
+            surface, the entire cosmos becomes a white hole instantaneously. It
+            does not begin at one location and travel across the cosmos.
+          </p>
+          <p>
+            This is the author’s BHSM cosmological proposal, clarified on 1
+            October 2026. The shared-core connection and zero-differential
+            transition are proposed physical interpretations; this exhibit
+            supplies no derived metric or evolution law for them. They remain
+            distinct from the late-time cosmology preprint and the numerical
+            results in the next exhibit.
           </p>
           <p>
             The sphere is an illustrative cross-sectional view of an S³ spatial

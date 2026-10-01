@@ -44,12 +44,13 @@ export function MassStudy({ motion }: { motion: boolean }) {
       <p>
         BHSM proposes that a localized configuration displaces the surrounding
         energy–geometry response. Here three quarks, connected by color threads,
-        move inside a fixed nucleus frame, surrounded by an electron cloud.
+        move inside a fixed nucleus frame, initially without an electron cloud.
         Virtual-particle marks pop in and out beyond the cleared region. The
         view then resolves into a stationary proton: the same bound system, seen
-        without resolving its internal motion. In this picture, mass expresses
-        the energy involved in maintaining that displacement: how much of the
-        surrounding response is held back.
+        without resolving its internal motion. Only then does the electron
+        probability cloud appear around the proton. In this picture, mass
+        expresses the energy involved in maintaining that displacement: how much
+        of the surrounding response is held back.
       </p>
       <p className="console-caption">
         Author’s conceptual illustration, using a proton’s uud content and an

@@ -13,6 +13,29 @@ The proposed sequence is:
    in this conceptual picture as heat death.
 4. At that moment the whole surface loses cohesion again and the cycle restarts.
 
+## Author clarification, 1 October 2026
+
+BHSM proposes that **all black holes lead to the same core/singularity**.
+The many black-hole concentrations are entrances to that shared core, not
+independent terminal singularities in this interpretation.
+
+The **one white-hole event** occurs after heat death: at the exact moment
+there is no differential between the core and the surface, **the whole cosmos
+becomes a white hole instantaneously**. There is no localized white-hole
+source at each black hole, spreading release front, or waiting period after
+the differential vanishes. This clarifies the earlier “global loss of cohesion”
+description. It is the author's supplied cosmological hypothesis; no metric,
+definition of the differential, or dynamical derivation is supplied by the
+exhibit, and no new completion condition is introduced.
+
+The museum now interpolates the geometry continuously at a bounded 20 updates
+per second, with about 1.5 seconds per presentation stage. It retains only an
+evenly sampled subset of the density marks and a pre-sampled filament skeleton.
+Playback stops offscreen, in hidden tabs, on pause, and for reduced motion.
+Converging schematic paths identify one shared core. The heat-death boundary
+is held briefly for reading; this presentation hold does not imply a physical
+delay before the instantaneous whole-cosmos release.
+
 This is the author's requested cyclic hypothesis. It is not established
 cosmology, an observation, a thermodynamic theorem or an implication of BHSM
 closure. In particular, the final smooth-to-release transition has not been

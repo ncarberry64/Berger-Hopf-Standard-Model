@@ -43,9 +43,9 @@ export const reviewEntries = {
       'Does the exported transition record conserve the stated quantities, and which boundary inputs are needed to determine branch probabilities or rates?',
   },
   'cosmology-original': {
-    classification: 'Historical BHSM cosmology proposal',
+    classification: 'BHSM cosmology proposal',
     statement:
-      'BHSM proposes a hyperspherical account of cosmic structure and a possible cycle of release, concentration and renewal.',
+      'BHSM proposes that all black holes lead to the same core/singularity. After heat death, the moment no core–surface differential remains, the whole cosmos becomes a white hole instantaneously: one global event.',
     question:
       'Which observation could distinguish this proposed cosmic cycle from alternatives, and where is its quantitative evolution specified?',
   },
