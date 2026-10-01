@@ -38,6 +38,21 @@
 .family-study .particle-quartet > div {
   padding-block: 8px;
 }
+/* One content tree at every width; wrap source links instead of truncating text. */
+.museum-track :is(#details, #museum-exit) {
+  overflow-wrap: anywhere;
+}
+.museum-track
+  #museum-exit
+  > :is(p, .footer-links, .open-review-invitation, .ai-access) {
+  width: 100%;
+  max-width: 1100px;
+}
+.museum-track #museum-exit .soundtrack-copy :is(small, strong, a) {
+  white-space: normal;
+  overflow: visible;
+  text-overflow: clip;
+}
 @media (max-width: 900px) {
   .prediction-museum .site-header {
     min-height: 48px;
@@ -131,6 +146,12 @@
   }
   .console-explanation {
     font-size: 1rem;
+  }
+  .museum-track #details .method-intro,
+  .museum-track #details .review-card p,
+  .museum-track #museum-exit :is(p, small, .footer-links a) {
+    font-size: 0.95rem;
+    line-height: 1.7;
   }
   .particle-quartet {
     grid-template-columns: repeat(2, minmax(0, 1fr));

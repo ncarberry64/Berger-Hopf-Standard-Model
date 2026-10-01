@@ -78,7 +78,7 @@ export function CosmicEnclosure({ motion }: { motion: boolean }) {
         const index = phases.findIndex((p) => p.start === value);
         return phases[(index + 1) % phases.length].start;
       });
-    }, 3000);
+    }, 1500);
     return () => {
       observer.disconnect();
       window.clearInterval(timer);
@@ -442,7 +442,7 @@ export function CosmicEnclosure({ motion }: { motion: boolean }) {
       </div>
       <p className="console-caption">
         This is not observational data or a BHSM closure result. Guided
-        historical storyboard · one panel every three seconds while visible.
+        historical storyboard · one panel every 1.5 seconds while visible.
         Select any panel to pause and inspect it. Playback presents the
         proposal; it does not simulate cosmic time. The numerical R1 response is
         animated in the next exhibit. System reduced-motion and museum pause
