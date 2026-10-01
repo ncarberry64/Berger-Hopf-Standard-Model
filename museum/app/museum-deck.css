@@ -197,8 +197,13 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
+  justify-content: flex-start;
   gap: 3rem;
+}
+.museum-track footer > * {
+  flex-shrink: 0;
+  min-width: 0;
+  max-width: 100%;
 }
 .force-lines-restored {
   margin-top: 2rem;

@@ -44,18 +44,21 @@ export function MassStudy({ motion }: { motion: boolean }) {
       <p>
         BHSM proposes that a localized configuration displaces the surrounding
         energy–geometry response. Here three quarks, connected by color threads,
-        move within an electron cloud as a region clears in the surrounding
-        virtual-particle sea. In this picture, mass expresses the energy
-        involved in maintaining that displacement: how much of the surrounding
-        response is held back.
+        move inside a fixed nucleus frame, surrounded by an electron cloud.
+        Virtual-particle marks pop in and out beyond the cleared region. The
+        view then resolves into a stationary proton: the same bound system, seen
+        without resolving its internal motion. In this picture, mass expresses
+        the energy involved in maintaining that displacement: how much of the
+        surrounding response is held back.
       </p>
       <p className="console-caption">
         Author’s conceptual illustration, using a proton’s uud content and an
         enlarged electron probability cloud. Threads depict color interaction;
-        the cloud’s rotating view is not an electron orbit. The sea represents
-        vacuum response, not a measured gas of virtual particles. Sizes, motion
-        and the cleared area are explanatory, not a QCD solution or a mass
-        scale.
+        the cloud’s rotating view is not an electron orbit. The stable nucleus
+        view is an illustrative change of resolution, not a computed formation
+        process or quantum time average. The sea represents vacuum response, not
+        a measured gas of virtual particles. Sizes, motion and the cleared area
+        are explanatory, not a QCD solution or a mass scale.
       </p>
       <h4>From that picture to the mass calculation.</h4>
       <p>
