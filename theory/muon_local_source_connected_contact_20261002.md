@@ -71,6 +71,12 @@ these inputs has only n=0,1,2. The full rectangular Xi has 56 output and
 support for **one action on these inputs**, not a resolvent, repeated-action
 or native heat tail bound.
 
+In `local_source_actions.npz`, J_complete, V_complete and Xi_complete are
+unit-Haar angular maps. The evaluated b-source includes f_R once:
+`Xi_actions_E0_nodes` already has that factor. The action on an already
+generated f_R V_B E0 spinor, `Xi_actions_generated_midpoint_profiles`, has
+f_R squared because the source and its input each carry one factor.
+
 For the actual input span, the complete source-pair contact is
 
 \[
@@ -244,7 +250,7 @@ was run; no canonical child norm or old scalar potential-four/Lambda-only
 cache was substituted into it. Native length, strong subset, grading,
 relative-zeta/eta subtraction and finite local/native matching are preserved.
 
-New numerical source, contact and form arrays were executed once. Three
+The source, contact and form production arrays were generated once. Three
 focused tests passed in 0.94 seconds: source/frame/conjugation compatibility;
 independent SU(2) Haar quadrature including n2 (no Gaunt routine in that
 check); and direct first-order pairing on the actual history/test columns.
