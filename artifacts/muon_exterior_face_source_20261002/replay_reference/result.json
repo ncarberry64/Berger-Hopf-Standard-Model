@@ -1,0 +1,191 @@
+{
+  "H_reconstruction_scope": {
+    "errors_identified": false,
+    "old_arrays_modified": false,
+    "parent": "endpoint zeros are reconstruction placeholders",
+    "source_affine_H": 0.09356155097592357
+  },
+  "QQ_connection_Gram_eigenvalues": [
+    1.4999999999999996,
+    1.4999999999999996,
+    1.4999999999999996,
+    1.4999999999999996,
+    2.500000000000001,
+    2.500000000000001,
+    2.500000000000001,
+    2.500000000000001
+  ],
+  "actual_execution": {
+    "action_derived_parent_angular_source_directions": 0,
+    "conditional_angular_controls": 8,
+    "continued_local_source_directions": 8,
+    "exterior_source_response_directions": 0,
+    "native_E1_evaluations": 0,
+    "old_frame_contact_normalization_covariance_calculations_repeated": false,
+    "parent_weak_solves": 0,
+    "physical_transfer_directions": 0,
+    "shifted_resolvent_applications": 0
+  },
+  "angular_QQ_equation": "K_Q W nu C_rho/(r R4) * (curl*curl + lambda^2 C_Q); C_Q=<*[jmath(theta),YQ],*[jmath(theta),YQ]>/Tr16 Q^2",
+  "checkpoint": "BHSM_MUON_C2_FACE_SAME_SOURCE_ANGULAR_COMPLEMENT_20261002",
+  "checks": {
+    "QQ_cross_norm": 0.0,
+    "canonical_stop_descriptor": 0.0,
+    "charge_complement_Q_trace_residual": 0.0,
+    "frontier_charge_complement_norm": 1.0560490022498719,
+    "frontier_logR_saved_profile_difference": 0.0,
+    "frontier_saved_tube_radius": 1.0183219028996276e-10,
+    "frontier_weighted_center_difference": 6.0689642906101e-18,
+    "primitive_angular_Hermitian_residual": 0.0,
+    "upstream_local_source_norm": 2.868897479689303
+  },
+  "classification": "CONTINUED_LOCAL_TEST_SOURCE_AND_TEMPORAL_KINEMATICS; CONDITIONAL_ANGULAR_FRAME_DIAGNOSTIC; NO_EXTERIOR_RESPONSE",
+  "commutator_Tr16_Gram": [
+    [
+      8.0,
+      0.0,
+      0.0
+    ],
+    [
+      0.0,
+      8.0,
+      0.0
+    ],
+    [
+      0.0,
+      0.0,
+      0.0
+    ]
+  ],
+  "coordinate": "b; beta=T_b b, A_Q=sqrt(2) beta; source=-i Q T_b Y",
+  "cut_composition_evaluation": null,
+  "error_scope": {
+    "H_interval": "reused step1222 certification; not a certification of the entire numerical stop history",
+    "affine_logR_error": null,
+    "angular_coefficients": "conditional matched-frame diagnostic, not a certified parent coefficient",
+    "complement_evolution_tail": null,
+    "cut_composition_error": null,
+    "geometry_tube_to_source_error": null,
+    "moving_term": "propagates certified H at fixed saved electric coefficient; not a full parent error enclosure",
+    "native_remainder": null,
+    "parent_H_error": null,
+    "source_frame_matching": null,
+    "source_values": "binary64 evaluation at retained proof centers"
+  },
+  "exterior_Calderon": null,
+  "exterior_affine_return": null,
+  "first_unresolved_operand": {
+    "complete_native_operator": false,
+    "consumer": "d_Omega of the continued source, then complete mixed zero-trace gauge/BRST rows in the causal prefix stationary problem",
+    "equation": "Omega_saved=U rho(F_B^* omega) U^-1-dU U^-1 and S_saved=U(-iQ)U^-1; omega=lambda theta_u+(1-lambda)theta_v",
+    "input": "retained quotient A,B; theta_u,theta_v; the existing Wigner/body photon coframe and rank16 source frame",
+    "later_mixed_row": "A nonzero first-order curvature image does not prove a nonzero complete Hessian row; retain <dOmega v,W dOmega a> + <F_Omega,W(v wedge a+a wedge v)> and same-owner induced terms",
+    "name": "mechanical-connection coefficient in the saved photon coframe/carrier",
+    "output": "Omega_saved,a(tau,rho,w) and the same-source S_saved, or their contracted eight-mode Gaunt actions",
+    "producer": "diagonal_quotient_contract gives mechanical omega; angular_derham_blocks and saved Wigner modes give the other frame; their actual coframe/carrier pullback is not instantiated in the inspected source chain",
+    "status": "uncomputed source-frame matching, not a missing independent forcing profile and not a selected new cap or environment"
+  },
+  "frontier_H_reused_certified_interval": [
+    0.08877816713689007,
+    0.08877816820779219
+  ],
+  "frontier_lambda": 0.5066207222913062,
+  "frontier_source": {
+    "H": 0.08877816767234145,
+    "T_b": 0.22565333970481702,
+    "T_b_prime": -0.010016545014069036,
+    "complete_temporal_momentum": null,
+    "exterior_affine_return": null,
+    "f_R": 0.22680626023337117,
+    "f_R_prime": -0.030203166300202398,
+    "radial_jet": null,
+    "temporal_known_moving_frame_term": -58.64153078485478,
+    "temporal_radial_jet_coefficient": 2.434197193029561e-13
+  },
+  "frozen_local": {
+    "a_mu_QED_local": "0.00116550200495813",
+    "a_mu_selected_local_open_interval": [
+      "0.0011655039493",
+      "0.0011655109506"
+    ],
+    "already_combined_selected_local": true,
+    "calibration_convention": "alpha_inverse=137.035999084; standard uncertainty=2.1e-8; other original conditional inputs fixed",
+    "calibration_only_standard_uncertainty": "1.79e-13",
+    "delta_a_mu_h_local_1_open_interval": [
+      "0",
+      "3.500331e-9"
+    ],
+    "native_added": false,
+    "publication_paths": "Portable logical provenance; original local metadata and evaluated revision snapshot preserved in standalone handoff."
+  },
+  "frozen_parent_H_at_frontier": 0.0,
+  "interval": {
+    "future": "stored numerical representative of canonical first stop/domain exit",
+    "material": "rho=pi/2; independent spatial boundary",
+    "past": "C2 certified step1222 frontier; artificial cut, not E0 or E1 reset",
+    "proper_time_origin": "zero reset at cached frontier",
+    "retained_duration": 0.00014753362308861907
+  },
+  "known_moving_frame_term_interval_at_fixed_saved_e": [
+    -58.64153113854141,
+    -58.64153043116772
+  ],
+  "native_ledger": {
+    "completion_counterterm": null,
+    "contact": null,
+    "domain_boundary": null,
+    "native_bulk_heat": null,
+    "state_variation": null,
+    "strong_within_native": null
+  },
+  "orientations": {
+    "future_core_outward": 1,
+    "future_exterior_outward": null,
+    "future_face": "owned canonical stop",
+    "material_outward": "radial conormal, not temporal momentum",
+    "past_core_outward": -1,
+    "past_prefix_outward": 1,
+    "transmission": "core_outward_traction=-prefix_outward_traction"
+  },
+  "physical_a_mu": null,
+  "physical_g_mu": null,
+  "primitive_weak_form": "NOT ASSEMBLED: conditional QQ angular row was not fed into the actual weak form",
+  "publication_start_HEAD": "36a4ea6fcfc005a75bf385cf55d4b00e6f171705",
+  "scientific_reference": "524ed90689bd5923c249bba2e699abf627e703cd",
+  "section": "(u,v)=(w,1); omega=lambda*w^-1*dw; lambda=A^2/(A^2+B^2)",
+  "source_frame_matching": {
+    "actual_parent_angular_coefficient": null,
+    "carrier_gauge_alternative": "h=w^-1: omega_prime=(lambda-1)theta_R; Q_prime=Ad_w Q; Q may not be held constant",
+    "conditional_arrays": "angular_plain, angular_connection, QQ_*, frontier_curvature*, mechanical_lambda, angular_density_per_kappa1, QQ_covariant_angular_matrix, QQ_angular_stiffness_per_kappa1",
+    "left_frame_alternative": "curl=-*d requires the corresponding commutator-Hodge sign",
+    "mechanical": "theta_L=w^-1 dw in the (u,v)=(w,1) section",
+    "right_frame_equation": "theta_R=Ad_w theta_L; omega_a=lambda sum_d (Ad_w^-1)_{da} jmath_d",
+    "saved": "curl=2I+S.P; with curl=*d this is the right Maurer coframe",
+    "status": "NOT_ESTABLISHED"
+  },
+  "strong_is_native_subset": true,
+  "upstream_local_sources": [
+    {
+      "H": 0.08877816767234113,
+      "T_b": 0.22565333970481702,
+      "T_b_prime": -0.010016545014069,
+      "complete_temporal_momentum": null,
+      "exterior_affine_return": null,
+      "f_R": 0.22680626023337117,
+      "f_R_prime": -0.03020316630020229,
+      "radial_jet": null,
+      "state": "center_state"
+    },
+    {
+      "H": 0.08877816767234145,
+      "T_b": 0.22565333970481702,
+      "T_b_prime": -0.010016545014069036,
+      "complete_temporal_momentum": null,
+      "exterior_affine_return": null,
+      "f_R": 0.22680626023337117,
+      "f_R_prime": -0.030203166300202398,
+      "radial_jet": null,
+      "state": "endpoint_predictor_center"
+    }
+  ]
+}
