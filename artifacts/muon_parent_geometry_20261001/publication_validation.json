@@ -1,5 +1,74 @@
 {
-  "audits": [
+  "fetch_note": "Remote main was read successfully. Git automatic maintenance reported permission-denied worktree metadata cleanup errors. No explicit cleanup, reset or force checkout was requested or run.",
+  "final_public_readiness_passed": true,
+  "full_suite_run": false,
+  "managed_worktree_attempt_failed_without_creating_a_checkout": true,
+  "manual_worktree_created": true,
+  "primary_HEAD_preserved": "524ed90689bd5923c249bba2e699abf627e703cd",
+  "primary_branch_preserved": "codex/n12-current-finite-stop-witness",
+  "publication_base_audits": [
+    {
+      "audit": "audit_bhsm_status",
+      "command": [
+        "python",
+        "tools/audit_bhsm_status.py"
+      ],
+      "returncode": 0,
+      "stdout_sha256": "67dcb4844fb5ae22fa81b02fe4297a270cb8895184979d7e4fe1920f0ec1958e",
+      "validation_revision": "72c934cc37407ab4bdf2970c84ef33a0b405b93e",
+      "validation_set": "publication_checks_main"
+    },
+    {
+      "audit": "audit_forbidden_claims",
+      "command": [
+        "python",
+        "tools/audit_forbidden_claims.py"
+      ],
+      "returncode": 0,
+      "stdout_sha256": "ab19067cf15e0a20b3e28374c77f15f1dbd1277938c682f675d8726d2dc1460a",
+      "validation_revision": "72c934cc37407ab4bdf2970c84ef33a0b405b93e",
+      "validation_set": "publication_checks_main"
+    },
+    {
+      "audit": "audit_frozen_prediction_integrity",
+      "command": [
+        "python",
+        "tools/audit_frozen_prediction_integrity.py"
+      ],
+      "returncode": 0,
+      "stdout_sha256": "97694acc837bc21d90c8390c12cd39ba5bdc76e6e7209601e985561136d5b884",
+      "validation_revision": "72c934cc37407ab4bdf2970c84ef33a0b405b93e",
+      "validation_set": "publication_checks_main"
+    },
+    {
+      "audit": "verify_precision",
+      "command": [
+        "python",
+        "tools/verify_precision.py"
+      ],
+      "returncode": 0,
+      "stdout_sha256": "9aeba488a47f2f68d79b46c5cb04fea049e2ffccd6b5411d475e43a748ade6e2",
+      "validation_revision": "72c934cc37407ab4bdf2970c84ef33a0b405b93e",
+      "validation_set": "publication_checks_main"
+    },
+    {
+      "audit": "audit_public_readiness",
+      "command": [
+        "python",
+        "tools/audit_public_readiness.py",
+        "--format",
+        "json"
+      ],
+      "returncode": 0,
+      "stdout_sha256": "8b9be85f2a9c43a9c5d94b806b977f369260120afc91280e0b157cbfba55cf85",
+      "validation_revision": "72c934cc37407ab4bdf2970c84ef33a0b405b93e",
+      "validation_set": "publication_checks_main"
+    }
+  ],
+  "publication_base_revision": "f7f0513c365b7b0f339395d5742e148c5e1440a6",
+  "publication_branch": "codex/muon-parent-maxwell-density-review",
+  "publication_scope_correction": "Copied only the milestone commit onto main; original reference branch carried unrelated unmerged history. Scientific inputs, results and algorithms unchanged.",
+  "reference_base_audits": [
     {
       "audit": "audit_bhsm_status",
       "command": [
@@ -46,15 +115,12 @@
       "stdout_sha256": "d903a8a1a2ae8753699e6da26392a20cdec90eeabf620a67735df5a9478f4946"
     }
   ],
-  "fetch_note": "Remote main was read successfully. Git automatic maintenance reported permission-denied worktree metadata cleanup errors. No explicit cleanup, reset or force checkout was requested or run.",
-  "full_suite_run": false,
-  "managed_worktree_attempt_failed_without_creating_a_checkout": true,
-  "manual_worktree_created": true,
-  "primary_HEAD_preserved": "524ed90689bd5923c249bba2e699abf627e703cd",
-  "primary_branch_preserved": "codex/n12-current-finite-stop-witness",
-  "public_readiness_failure": "baseline tracked-file hygiene; all eight other categories pass; new files untracked at audit time",
+  "reference_base_public_readiness_failure": "baseline tracked-file hygiene; all eight other categories pass; new files untracked at audit time",
+  "reference_scientific_revision": "524ed90689bd5923c249bba2e699abf627e703cd",
   "remote_main_at_publication_preparation": "f7f0513c",
   "repository_layout_targeted_test_command": "python -m pytest tests/test_muon_parent_maxwell_velocity.py -q",
-  "repository_layout_targeted_test_seconds": 4.14,
-  "repository_layout_targeted_tests_passed": 3
+  "repository_layout_targeted_test_seconds": 2.67,
+  "repository_layout_targeted_tests_passed": 3,
+  "superseded_draft_closed": true,
+  "superseded_draft_pull_request": "https://github.com/ncarberry64/Berger-Hopf-Standard-Model/pull/464"
 }

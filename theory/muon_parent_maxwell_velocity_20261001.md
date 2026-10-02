@@ -301,11 +301,16 @@ positive realization, boundary condition or new full-history solve fills it.
 
 ## Publication validation and byte conventions
 
-The repository-layout focused tests also passed (3 tests, 4.14 seconds).
-The status, forbidden-claim, frozen-integrity and precision audits passed.
-Public-readiness exited 1 on baseline tracked-file hygiene; its other eight
-categories passed. The exact new additions passed the same hygiene function
-in a focused check. No baseline hygiene repair or full test suite is included.
+The final publication is based on GitHub main
+`f7f0513c365b7b0f339395d5742e148c5e1440a6`, with only this milestone's files
+added. Its repository-layout focused tests passed (3 tests, 2.67 seconds),
+and all five required publication audits passed, including public readiness.
+The scientific inputs remain pinned to reference revision 524ed906.
+The earlier reference-branch preparation audit had a tracked-file hygiene
+failure; that receipt is preserved separately. The initial draft inherited
+unrelated reference-branch history and was closed. Only the new milestone
+commit was transferred to the main-based branch; no unrelated history or
+baseline hygiene repair is published. No full test suite was run.
 
 The two original replays and raw hashes remain intact in the standalone
 packet. Published JSON uses the repository's canonical LF convention; its
