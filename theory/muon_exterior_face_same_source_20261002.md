@@ -33,6 +33,18 @@ backreaction arrays were inspected and their states, proper times, logR and
 log lapse exactly match the downloaded parent inputs; their producer was not
 rerun.
 
+The local current center differs from the Git reference cache: SHA-256
+`6d966cb6c731dc545d520522f897b82250e0a7817c0447f262363d6d22858635`
+versus reference
+`086c41068b9f3a6c0e5f8040b661202e067d017c909a381010e45ff352498d00`.
+Their later states differ by at most3.959810044307233e-6 in raw coordinates
+and their terminal arclengths by4.490726638550768e-6. They are not asserted
+scientifically interchangeable. This calculation consumed only the initial
+state and terminal descriptor; those are exactly equal. A compact two-face
+snapshot of the newer local cache is now the replay input, with its full
+producer identity recorded separately. The initial evaluated manifest and
+reference are preserved, and no unchanged source calculation is repeated.
+
 At the past cut, core-outward orientation is -d_tau and prefix-outward is
 +d_tau. Thus lambda_core=-lambda_prefix. At the future physical stop, the
 core-outward orientation is +d_tau and the owned endpoint-domain prescription
@@ -234,7 +246,9 @@ hash-addressed repository inputs listed in input_refs.json. It reproduces
 local source kinematics and **conditional** angular controls, not a native
 anomaly. The new calculation ran once. Three targeted controls passed
 (2.55s); after the frame-scope correction the changed controls passed again
-(2.13s). No old replay, normalization, angular n2 contact, covariance witness,
+(2.13s). After reconciliation with the newer local history, an additional
+consumed-face identity check was added: four targeted checks passed in2.14s.
+No old replay, normalization, angular n2 contact, covariance witness,
 history solve, expensive native calculation or broad audit was rerun.
 Old publication audit evidence is retained, not claimed freshly executed.
 

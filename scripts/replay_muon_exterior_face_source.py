@@ -170,6 +170,7 @@ def run(manifest, output):
         exterior_affine_return=None, exterior_Calderon=None, cut_composition_evaluation=None,
         native_ledger={k:None for k in ('native_bulk_heat','state_variation','contact','domain_boundary','completion_counterterm','strong_within_native')},
         strong_is_native_subset=True, physical_a_mu=None, physical_g_mu=None)
+    result['current_history_reconciliation'] = refs.get('current_history_reconciliation')
     result = classify_frame_attempt(result)
     save(output/'result.json', result)
     save(output/'output_hashes.json', dict(files=[dict(path=p.name,sha256=sha(p)) for p in

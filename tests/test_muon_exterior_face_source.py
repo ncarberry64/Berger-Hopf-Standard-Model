@@ -46,3 +46,16 @@ def test_frontier_is_a_cut_with_nonzero_source_frame_derivative():
     assert data['physical_a_mu'] is None and data['exterior_affine_return'] is None
     assert data['source_frame_matching']['actual_parent_angular_coefficient'] is None
     assert data['actual_execution']['action_derived_parent_angular_source_directions']==0
+
+
+def test_newer_local_history_has_identical_consumed_face_fields():
+    base=REF.parent
+    refs=json.loads((base/'input_refs.json').read_text())
+    with np.load(ROOT/refs['inputs']['center']['repository_path']) as current:
+        with np.load(REF/'continued_source_and_angular_coefficients.npz') as saved:
+            np.testing.assert_array_equal(current['centers'][0],saved['core_initial_state'])
+        assert current['signed_descriptors'][-1]==0
+        assert current['centers'].shape==(2,98)
+    proof=json.loads((base/'current_history_reconciliation.json').read_text())
+    assert proof['entire_center_arrays_identical'] is False
+    assert proof['numerical_rerun'] is False

@@ -1,23 +1,14 @@
 {
-  "current_history_reconciliation": {
-    "consumed_fields": {
-      "initial_state": "byte-value identical",
-      "terminal_descriptor": "identical zero"
-    },
-    "current_face_snapshot_path": "artifacts/muon_exterior_face_source_20261002/inputs/current_center_faces.npz",
-    "current_face_snapshot_sha256": "8337b1ae853b9b88f56fcf310419959512eac3e046139ca7755697991f4d4e13",
-    "current_local_center_path": "C:\\Users\\carbe\\OneDrive\\Documents\\CODEX\\Berger-Hopf-Standard-Model\\artifacts\\flagship_integration\\BHSM_N12_C2_STOP_HIGH_ORDER_QUARTER_STEP_RETAINED_RECONNAISSANCE.npz",
-    "current_local_center_sha256": "6d966cb6c731dc545d520522f897b82250e0a7817c0447f262363d6d22858635",
-    "entire_center_arrays_identical": false,
-    "full_history_recertified": false,
-    "max_action_length_difference": 4.490726638550768e-06,
-    "max_state_absolute_difference": 3.959810044307233e-06,
-    "numerical_rerun": false,
-    "reason": "Only initial state and terminal descriptor were consumed from the baseline center. They exactly equal the newer current local center. Replay now uses its compact faces; cached arrays remain valid.",
-    "reference_center_sha256": "086c41068b9f3a6c0e5f8040b661202e067d017c909a381010e45ff352498d00",
-    "reference_path": "artifacts/flagship_integration/BHSM_N12_C2_STOP_HIGH_ORDER_QUARTER_STEP_RETAINED_RECONNAISSANCE.npz"
+  "current_local_center_producer_sha256": "6d966cb6c731dc545d520522f897b82250e0a7817c0447f262363d6d22858635",
+  "implementation": {
+    "module_sha256": "4e95f7b984c1c735e614a3c77cd4c2312421480f484ca68d1373cb6434b63cb4",
+    "replay_sha256": "94b6c239a73a7156b904ff54c2debc8996a1ca701143ef08596db0da0d3e26df"
   },
-  "inputs": {
+  "implementation_LF": {
+    "module": "4e95f7b984c1c735e614a3c77cd4c2312421480f484ca68d1373cb6434b63cb4",
+    "replay": "94b6c239a73a7156b904ff54c2debc8996a1ca701143ef08596db0da0d3e26df"
+  },
+  "replay_inputs": {
     "center": {
       "repository_path": "artifacts/muon_exterior_face_source_20261002/inputs/current_center_faces.npz",
       "role": "compact actual newer local center faces; only initial state and terminal descriptor consumed",
@@ -56,7 +47,5 @@
       "sha256": "d55dad66ec719a3c88530be15322671d448bd5b81253902c18fc7a6aea12899d"
     }
   },
-  "publication_start_HEAD": "36a4ea6fcfc005a75bf385cf55d4b00e6f171705",
-  "repository": "C:\\Users\\carbe\\Downloads\\BHSM_muon_parent_maxwell_worktree_20261001",
-  "scientific_reference": "524ed90689bd5923c249bba2e699abf627e703cd"
+  "scientific_array_sha256": "260a1446adbd55acf9555519afcd7b5466f64d5c322b6f568854a2158de1dc84"
 }
