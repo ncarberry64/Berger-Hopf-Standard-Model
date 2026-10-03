@@ -1,4 +1,4 @@
-"""Replay only exact eta-attachment identities; never historical production."""
+"""Replay daughter identities and one local curve; never historical production."""
 from __future__ import annotations
 
 import argparse
@@ -62,6 +62,13 @@ def save(path, value):
 
 
 def git(root, *args):
+    archive = root / 'reproduction_revision.json'
+    if archive.exists() and not (root/'.git').exists():
+        record = json.loads(archive.read_text())
+        if args == ('rev-parse', 'HEAD'):return record['published_source_commit']
+        if args == ('branch', '--show-current'):return record['branch']
+        if args == ('status', '--short'):return 'portable source archive; no Git working tree'
+        raise ValueError('unsupported Git operation for portable source archive')
     return subprocess.check_output(
         ["git", "-c", "gc.auto=0", "-c", "maintenance.auto=false", *args],
         cwd=root, text=True,
@@ -104,7 +111,8 @@ def run(root, output):
     head = git(root, "rev-parse", "HEAD")
     branch = git(root, "branch", "--show-current")
     status = git(root, "status", "--short")
-    diff = subprocess.check_output(["git", "diff", "--binary", "HEAD"], cwd=root)
+    archive_only = (root/'reproduction_revision.json').exists() and not (root/'.git').exists()
+    diff = b'' if archive_only else subprocess.check_output(["git", "diff", "--binary", "HEAD"], cwd=root)
     (output / "tracked_working_diff.patch").write_bytes(diff)
     save(output / "retained_equations.json", retained)
     save(output / "exact_identities.json", identities)
@@ -155,7 +163,8 @@ def run(root, output):
     hashes = [dict(path=name, sha256=sha(root/name), role="source" if name in sources else "preserved input") for name in [*sources, *PRESERVED]]
     save(output / "input_hashes.json", hashes)
     save(output / "workspace.json", dict(path=str(root), HEAD=head, branch=branch,
-        status=status, start_commit_ancestor=subprocess.run(["git", "merge-base", "--is-ancestor", START, "HEAD"], cwd=root).returncode == 0,
+        status=status, source_identity='archived published revision and source hashes' if archive_only else 'actual Git HEAD and working tree',
+        start_commit_ancestor=None if archive_only else subprocess.run(["git", "merge-base", "--is-ancestor", START, "HEAD"], cwd=root).returncode == 0,
         tracked_diff="tracked_working_diff.patch", untracked_files_recorded_in_status=True,
         intentional_scientific_source_changes="new daughter collar-profile module and replay; historical producer identity recovered; no historical producer modified",
         primary_workspace_modified=False))
