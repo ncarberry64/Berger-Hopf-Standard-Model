@@ -1,0 +1,45 @@
+{
+  "Clifford_trace_map_unitarity_residual": 3.570699413771539e-15,
+  "N_out_application": null,
+  "checks": {
+    "n1_b": {
+      "norm": 119.61640126545615,
+      "opposite_outward_residual": 0.0
+    },
+    "n1_b_tau": {
+      "norm": 5.530615910399275,
+      "opposite_outward_residual": 0.0
+    },
+    "n3_b": {
+      "norm": 86.29727109445152,
+      "opposite_outward_residual": 0.0
+    },
+    "n3_b_tau": {
+      "norm": 3.9107360143815386,
+      "opposite_outward_residual": 0.0
+    }
+  },
+  "classification": "evaluated canonical M5 cut trial conormal on corrected SAME source image",
+  "connected_output": "full n1+n3, all 64 outputs, 8 source directions, 4 input spin coordinates retained",
+  "derivation": "Boundary integration of q_can(v,u)=integral nu C r^3 (D5v)^dagger D5u; partial_tau coefficient i gamma0/nu",
+  "equation": "Gamma1_tau,can u=epsilon_tau (-i gamma0 D5 u), paired in 2*pi^2 C r^3 d_rho normalized_Haar",
+  "error_scope": "binary64 canonical trial actions; inherits repaired finite-array H uncertainty, plus unresolved body/interpolation/trace matching errors. Not native or exterior-response error bound.",
+  "execution": {
+    "body_recomputed": false,
+    "canonical_trial_conormal_applications": 4,
+    "corrected_source_arrays_reused": true,
+    "native_heat_evaluations": 0,
+    "physical_transfer_directions": 0,
+    "stationary_exterior_response_applications": 0
+  },
+  "full_shifted_source_solution": null,
+  "interpretation": "same local cut frame; no new reset lift chosen, radial/material conormal is distinct",
+  "orientations": {
+    "future_exterior": 1,
+    "past_core": -1
+  },
+  "physical_a_mu": null,
+  "physical_g_mu": null,
+  "start_HEAD": "c6c4be76609f0f005f2b827a13a16d01f37a5c83",
+  "stationary_exterior_solution": null
+}

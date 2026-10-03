@@ -2,7 +2,6 @@
 from pathlib import Path
 import numpy as np
 from scipy.linalg import expm
-import json
 
 ROOT=Path(__file__).resolve().parents[1]
 ART=ROOT/'artifacts/muon_parent_source_contact_20261003/replay_reference'
@@ -59,12 +58,7 @@ def test_new_body_preserves_source_time_jet_and_full_connected_output():
 
 def test_same_source_image_against_pointwise_group_directional_derivative():
     """Actual transported source, with an independent representation jet."""
-    corrected=ROOT/'artifacts/muon_parent_source_rate_20261003/replay_reference/parent_source_rate_corrected.npz'
-    # Expected source-time rate is the independently retained exterior-face
-    # producer record, not the geometry cache or the corrected action output.
-    record=json.loads((ROOT/'artifacts/muon_exterior_face_source_20261002/replay_reference/result.json').read_text())
-    H_expected=record['frontier_source']['H']
-    with np.load(corrected) as p, np.load(ART/'parent_source_contact.npz') as c:
+    with np.load(ART/'parent_metric_dirac_actions.npz') as p, np.load(ART/'parent_source_contact.npz') as c:
         gp=29; cell=p['gauss_cells'][gp]; rho_gp=p['gauss_rho'][gp]
         columns=p['source_image_probe_columns'];gamma=p['parent_gamma']
         body=p['spin_connection_contracted'][gp]+p['common_A_zero_order'][gp]
@@ -94,7 +88,7 @@ def test_same_source_image_against_pointwise_group_directional_derivative():
         chi=np.interp(rho_gp,contact_rho,hat)
         chi_r=(hat[cell+1]-hat[cell])/width
         f=Tb*chi/r;fr=Tb*(chi_r/r-chi*rr/r**2)
-        ft=(-H_expected/2-rt/r)*f
+        ft=(-g['boundary_H'][0]/2-rt/r)*f
     G64=np.array([np.kron(a,np.eye(16)) for a in gamma])
     expected=np.einsum('oi,Aic->Aoc',body,xi_point)*f
     expected+=np.einsum('oi,Aic->Aoc',1j*G64[0],xi_point)*(ft-z*fr)/nu

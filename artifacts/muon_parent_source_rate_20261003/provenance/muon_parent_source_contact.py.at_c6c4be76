@@ -170,62 +170,7 @@ def evaluate_cut(source, geometry):
     return arrays, scalars, pair_checks
 
 
-def retained_source_cut_rate(repository):
-    """Bind the SAME source derivative to the recovered step1222 record.
-
-    The geometry cache's endpoint boundary_H is a reconstruction placeholder.
-    This is an explicit existing producer binding, not a new rate selection.
-    """
-    import hashlib
-    import json
-    from pathlib import Path
-    root=Path(repository)
-    result_path=root/'artifacts/muon_exterior_face_source_20261002/replay_reference/result.json'
-    refs_path=root/'artifacts/muon_exterior_face_source_20261002/input_refs.json'
-    result=json.loads(result_path.read_text())
-    refs=json.loads(refs_path.read_text())
-    h=float(result['frontier_source']['H'])
-    interval=result['frontier_H_reused_certified_interval']
-    if not interval[0]<=h<=interval[1]:raise ValueError('retained rate outside its certified interval')
-    return dict(value=h,interval=interval,cut_id='C2_step1222',
-        T_b=float(result['frontier_source']['T_b']),
-        coordinate='D_tau log R4; inherited boundary proper time',
-        result_path=result_path.relative_to(root).as_posix(),
-        result_sha256=hashlib.sha256(result_path.read_bytes()).hexdigest(),
-        defining_equation='H=(D_q log R4 . qdot)/N_boundary',
-        producer='aether_forward_boundary_radius.proper_time_log_radius_rate',
-        state_key='endpoint_predictor_center',order=12,
-        prefix_state=refs['inputs']['prefix'],prefix_certificate=refs['inputs']['prefix_report'],
-        excluded_affine_logR_slope=result['H_reconstruction_scope']['source_affine_H'],
-        uncertainty_scope='inherited step1222 interval at fixed other saved inputs; separate from body/interpolation error')
-
-
-def repair_source_time_rate(old, *, H_used, cut_rate):
-    """Apply only the supplied affine source-time repair; keep body/contact.
-
-    C_b,new=C_b,old-(H_new-H_used) C_b_tau,old/2. H_used is documented from
-    the consumed old cache/code. The caller preserves the historical arrays.
-    """
-    if cut_rate['cut_id']!='C2_step1222':raise ValueError('wrong source cut')
-    new={k:old[k] for k in old}
-    delta_h=float(cut_rate['value'])-float(H_used)
-    delta={}
-    for n in (1,3):
-        key=f'D5_on_same_source_image_b_coefficient_n{n}'
-        tau=f'D5_on_same_source_image_b_tau_coefficient_n{n}'
-        change=-(delta_h/2)*old[tau]
-        new[key]=old[key]+change
-        delta[f'C_b_old_n{n}']=old[key]
-        delta[f'C_b_new_n{n}']=new[key]
-        delta[f'C_b_delta_n{n}']=change
-    key='source_kernel_time_log_derivative'
-    new[key]=old[key]-delta_h/2
-    delta.update(kernel_log_derivative_old=old[key],kernel_log_derivative_new=new[key],
-                 kernel_log_derivative_delta=np.full_like(old[key],-delta_h/2))
-    return new,delta
-
-
-def cut_metric_dirac_actions(source, geometry, contact, *, cut_rate):
+def cut_metric_dirac_actions(source, geometry, contact):
     """Canonical metric/common-A summand, on the same compact probes.
 
     Coframe: theta0=nu dtau, theta4=C(drho+zeta dtau), thetaa=r thetaR_a.
@@ -272,9 +217,7 @@ def cut_metric_dirac_actions(source, geometry, contact, *, cut_rate):
     Dprobe=(body*chi[:,None,None]
             +(-zeta*chi_r/nu)[:,None,None]*(1j*G64[0])
             +(chi_r/C)[:,None,None]*(1j*G64[4]))
-    if cut_rate['cut_id']!='C2_step1222':raise ValueError('wrong source cut')
-    Tb=float(source['T_b']); H=float(cut_rate['value'])
-    if Tb!=cut_rate['T_b']:raise ValueError('retained rate and source refer to different cut frames')
+    Tb=float(source['T_b']); H=float(geometry['boundary_H'][0])
     Q=1j*(np.sqrt(2)*source['unit_trace_carrier_basis'][2]
           +np.sqrt(10/3)*source['unit_trace_carrier_basis'][3])
     # A computational charged weak-doublet carrier coordinate, not LSZ or
