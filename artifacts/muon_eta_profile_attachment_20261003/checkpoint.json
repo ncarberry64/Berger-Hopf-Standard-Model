@@ -1,0 +1,56 @@
+{
+  "action": "BHSM-AE-4.0.0; adopted eta-bound common-A effective Dirac sector",
+  "branch": "codex/muon-parent-maxwell-density-review",
+  "checkpoint_id": "BHSM_MUON_DAUGHTER_ETA_CURRENT_COLLAR_20261003",
+  "evaluated_code_base_HEAD": "1eb713fa12e26858c78913951b600643027714d5",
+  "field_identity": "f_eta,current=f_child o X=chi o X=rho(X)/2 on the retained daughter eta-clock branch",
+  "finite_result": {
+    "B54": null,
+    "actual_overlap_T": null,
+    "atol": 2e-12,
+    "classification": "evaluated daughter profile on one finite inward collar curve in the cached bilinear Lorentz metric",
+    "finite_chart_jacobian_evaluated": false,
+    "full_source_support_covered": false,
+    "m_eta_endpoints": [
+      0.5209738896552569,
+      0.5215383505509632
+    ],
+    "maximum_spacelike_unit_norm_residual": 7.127631818093505e-14,
+    "normalized_u0": null,
+    "ode_function_evaluations": 689,
+    "rho_range": [
+      1.5697543648492294,
+      1.5707963267948966
+    ],
+    "rtol": 2e-10,
+    "s_extent": 0.001,
+    "scope": "single curve, not a full-rank chart or global normal-mode normalization; solver tolerances and norm residual are not rigorous continuum bounds",
+    "solver": "DOP853",
+    "temporal_reconstruction": "cached bilinear nu/C/shift; repaired H source rate unchanged and not used as a replacement metric derivative",
+    "time_range": [
+      9.357921607859299e-05,
+      9.585390525338264e-05
+    ],
+    "wall_base_tau": 9.585390525338264e-05
+  },
+  "history": "same selected C2 arm, step1222 artificial cut, physical prefix and canonical stop preserved",
+  "missing_operand": "replay_reference/missing_matching_equation.json",
+  "next": "Evaluate X/J/Spin x SM pullback on saved source support with inherited prefix/patches; consume fixed daughter profile in T/B54 and coupled exterior K/M",
+  "normal_mass": "m_eta=-(rho_s/2)cot(rho/2)",
+  "physical_a_mu": null,
+  "physical_g_mu": null,
+  "replay_command": "python scripts/replay_muon_eta_profile_attachment.py --output <fresh-directory>",
+  "result": "replay_reference/result.json",
+  "scientific_reference": "524ed90689bd5923c249bba2e699abf627e703cd",
+  "start_HEAD": "1eb713fa12e26858c78913951b600643027714d5",
+  "validation": {
+    "cached_finite_curve_check": "1 passed; no integration rerun",
+    "exact_symbolic_identities": 7,
+    "failed_check_repair": "join expression rewritten in sine; exact equation unchanged",
+    "failed_check_targeted_rerun": "1 passed",
+    "final_targeted_checks": 4,
+    "full_suite_run": false,
+    "initial_algebra_run": "2 passed, 1 simplification-expression failure",
+    "old_checks_or_production_rerun": false
+  }
+}

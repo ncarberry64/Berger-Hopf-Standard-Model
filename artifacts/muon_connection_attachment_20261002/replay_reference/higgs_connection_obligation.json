@@ -1,0 +1,55 @@
+{
+  "DH_norm2_over_nu2_unit_coframe": "3*lambda**2",
+  "Q_H": [
+    "0",
+    "0"
+  ],
+  "conditional_equations": [
+    "H1=U_H H0; Q1=U_H Q0 U_H^-1; Q1 H1=0",
+    "Omega1=(lambda-1)e_a theta_R^a, dH1=e_a theta_R^a H1, D_Omega1 H1=lambda e_a theta_R^a H1",
+    "F_Omega1,*a=2lambda(lambda-1)e_a; sum ||F_*a H1||^2=12lambda^2(lambda-1)^2 ||H0||^2",
+    "R_angular^-2 Delta_Omega H0=-3lambda^2/R_angular^2 H0 in fixed sigma0 local-Higgs chart",
+    "No nonzero covariantly constant H exists where these curvature components span su2",
+    "For q_H(v,H)=<D v,D H> and a H=0, delta_a q_H(v,H)=<v,a^dagger D H>; this mixed Higgs row need not vanish",
+    "This does not exclude a nonconstant Higgs solution or prove any alternative background solves the full equations"
+  ],
+  "covariant_angular_laplacian_H_over_nu_unit_coframe": [
+    "0",
+    "-3*lambda**2"
+  ],
+  "curvature_H_images": [
+    [
+      "-2*I*lambda*(lambda - 1)",
+      "0"
+    ],
+    [
+      "-2*lambda*(lambda - 1)",
+      "0"
+    ],
+    [
+      "0",
+      "2*I*lambda*(lambda - 1)"
+    ]
+  ],
+  "curvature_H_norm2_over_nu2_unit_coframe": "12*lambda**2*(lambda - 1)**2",
+  "exact_checks": {
+    "Q_annihilates_H": true,
+    "curvature_identity": true,
+    "derivative_identity": true
+  },
+  "one_curvature_component_determinant": "4*lambda**2*(lambda - 1)**2",
+  "photon_Higgs_mixed_kernel_per_lambda_nu": [
+    [
+      "1",
+      "0"
+    ],
+    [
+      "-I",
+      "0"
+    ],
+    [
+      "0",
+      "0"
+    ]
+  ]
+}

@@ -1,0 +1,76 @@
+{
+  "checkpoint": "BHSM_MUON_PARENT_SOURCE_TIME_RATE_REPAIR_20261003",
+  "checks": {
+    "H_from_saved_kernel_max_residual": 1.7763568394002505e-15,
+    "H_new": 0.08877816767234145,
+    "H_used": 0.0,
+    "kernel_log_derivative_shift": -0.044389083836170726,
+    "n1": {
+      "delta_norm": 0.24549897331237316,
+      "new_norm": 119.61640126545615,
+      "old_norm": 119.60684614428256
+    },
+    "n3": {
+      "delta_norm": 0.17359398880351434,
+      "new_norm": 86.29727109445152,
+      "old_norm": 86.29064894176535
+    },
+    "unchanged_array_count": 17,
+    "unchanged_arrays_byte_preserved": true
+  },
+  "contact_certificate": "unchanged; nodal interpolation-model scope only",
+  "execution": {
+    "earlier_source_normalization_or_covariance_replay": false,
+    "exterior_response_applications": 0,
+    "full_shifted_source_solves": 0,
+    "native_heat_evaluations": 0,
+    "old_body_recomputed": false,
+    "old_contact_recomputed": false,
+    "physical_transfer_directions": 0
+  },
+  "formula": "C_b,new=C_b,old-(H_new-H_used)/2 C_b_tau,old",
+  "inherited_H_uncertainty": {
+    "1": {
+      "H_only_Frobenius_bound": "[1.48068796488985356731156846325966573771557038283612969927e-9 +/- 1.95e-66]",
+      "H_only_bound_upper_float": 1.4806879648898538e-09,
+      "additive_repair_roundoff_bound": "[5.32251332465969229743672668803326654300185420365977883802e-14 +/- 3.68e-71]",
+      "scope": "stored finite source coefficient arrays at fixed remaining inputs; no body/interpolation/operator-tail bound"
+    },
+    "3": {
+      "H_only_Frobenius_bound": "[1.04700450106917062350562048868136753535421488943045377559e-9 +/- 1.26e-66]",
+      "H_only_bound_upper_float": 1.0470045010691708e-09,
+      "additive_repair_roundoff_bound": "[3.83978373367304852374992889110034084818304398667794779831e-14 +/- 2.45e-71]",
+      "scope": "stored finite source coefficient arrays at fixed remaining inputs; no body/interpolation/operator-tail bound"
+    }
+  },
+  "interpolation_body_error": "unresolved and unchanged; not identified with inherited H interval or affine-logR slope",
+  "physical_a_mu": null,
+  "physical_g_mu": null,
+  "source_rate": {
+    "T_b": 0.22565333970481702,
+    "coordinate": "D_tau log R4; inherited boundary proper time",
+    "cut_id": "C2_step1222",
+    "defining_equation": "H=(D_q log R4 . qdot)/N_boundary",
+    "excluded_affine_logR_slope": 0.09356155097592357,
+    "interval": [
+      0.08877816713689007,
+      0.08877816820779219
+    ],
+    "order": 12,
+    "prefix_certificate": {
+      "repository_path": "artifacts/flagship_integration/BHSM_N12_C2_LOHNER_STEP_1222.json",
+      "sha256": "5ec231ef5d66376be5f39cc95f57b74c9b20bc29f77e5bdbc07d7859f5c8f294"
+    },
+    "prefix_state": {
+      "repository_path": "artifacts/flagship_integration/BHSM_N12_C2_LOHNER_STEP_1222.npz",
+      "sha256": "97cc1860028a0f24638823f6ecc4543668f1dcb8de875ca595836318cf1102b0"
+    },
+    "producer": "aether_forward_boundary_radius.proper_time_log_radius_rate",
+    "result_path": "artifacts/muon_exterior_face_source_20261002/replay_reference/result.json",
+    "result_sha256": "523e452440810f87da8fd0f54d1106c0ce9ba09ac6b76ceb1633e7f2e3b3f096",
+    "state_key": "endpoint_predictor_center",
+    "uncertainty_scope": "inherited step1222 interval at fixed other saved inputs; separate from body/interpolation error",
+    "value": 0.08877816767234145
+  },
+  "start_HEAD": "c6c4be76609f0f005f2b827a13a16d01f37a5c83"
+}

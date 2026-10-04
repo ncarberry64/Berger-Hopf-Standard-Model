@@ -1,0 +1,122 @@
+{
+  "archive_or_CG_required": false,
+  "inputs": [
+    {
+      "functions": [
+        "weak_extension_contract"
+      ],
+      "repository_path": "src/bhsm/interface/muon_source_weak_extension.py",
+      "role": "Existing zero-trace prescription; no physical weak solve",
+      "sha256": "9fb8483b1fa591d7b1788f8cf9c3e3ce30b63f73a189168604cd37cbefe44274"
+    },
+    {
+      "functions": [
+        "solve_retarded_event_kkt",
+        "assembly_contract"
+      ],
+      "repository_path": "src/bhsm/interface/ae4_c2_stratified_event_flux_assembly.py",
+      "role": "Actual supplied-block KKT consumer",
+      "sha256": "145486b4b279dccf1994c5a0991fd29a57290d20e5460ba193810e0b260b6bce"
+    },
+    {
+      "functions": [
+        "future_collapse_domain_contract"
+      ],
+      "repository_path": "src/bhsm/interface/ae4_future_collapse_relative_boundary_domain.py",
+      "role": "Inherited retarded relation",
+      "sha256": "bfa7f7584eb7fdc646398fec06426ef67889fa50eaee41bf1712d3721c397ca2"
+    },
+    {
+      "functions": [
+        "microscopic_owner_contract",
+        "native_spectral_length_contract"
+      ],
+      "repository_path": "src/bhsm/interface/ae4_stratified_dirac_zeta_induced_owner.py",
+      "role": "Heat owner and native length prescription",
+      "sha256": "bc0bb5c7d7b006ae2194ed8c15b73756e49e002567b54c3f30e220d06046e1ec"
+    },
+    {
+      "functions": [
+        "generalized_e1_coordinate_jet"
+      ],
+      "repository_path": "src/bhsm/interface/ae4_current_c2_hs_frechet_hessian.py",
+      "role": "Fixed-M supplied-pencilled recipe only",
+      "sha256": "3ad93c2e6550f04c3b21084ac8e8229276e6c567b3ce8c3ae199179ebf3b33eb"
+    },
+    {
+      "functions": [
+        "frechet_second_response"
+      ],
+      "repository_path": "src/bhsm/interface/aether_common_source_frechet_response_v15_99.py",
+      "role": "Supplied-source mixed response recipe",
+      "sha256": "77270564530e129b9160cdf5a3303b907194691b5fa0975c60f4c3dd850c7cb8"
+    },
+    {
+      "functions": [
+        "mechanical_background_action"
+      ],
+      "repository_path": "src/bhsm/interface/muon_owned_connection_application.py",
+      "role": "Resolved evaluated insertion producer, read only",
+      "sha256": "2f5b82ee6135208e61ce7a98aeef57310c7a739d7a7ee96e0f266a93da4ad97c"
+    },
+    {
+      "repository_path": "theory/muon_owned_horizontal_connection_20261002.md",
+      "role": "Resolved common-A scope and four checks, not rerun",
+      "sha256": "d60d57326d0e697694afd191c7415665a643575c429df8aaf5e2d54d8781810d"
+    },
+    {
+      "functions": [
+        "mixed_direction",
+        "mixed"
+      ],
+      "original_local_path": "C:\\Users\\carbe\\OneDrive\\Documents\\CODEX\\Berger-Hopf-Standard-Model\\src\\bhsm\\interface\\arb_heat_pencil_contractions.py",
+      "repository_path": "artifacts/muon_zero_trace_forcing_20261002/primary_source_snapshot/arb_heat_pencil_contractions.py",
+      "role": "Actual current primary matrix-free contraction code inspected, not executed",
+      "sha256": "04d59793892439a824b68b66f461ce7d6adce9054ffe7569cea8d927ebdd374e"
+    },
+    {
+      "functions": [
+        "implicit_objective_adjoint",
+        "reduce_implicit_mixed"
+      ],
+      "original_local_path": "C:\\Users\\carbe\\OneDrive\\Documents\\CODEX\\Berger-Hopf-Standard-Model\\src\\bhsm\\interface\\heat_zeta_mixed_boundary_launch.py",
+      "repository_path": "artifacts/muon_zero_trace_forcing_20261002/primary_source_snapshot/heat_zeta_mixed_boundary_launch.py",
+      "role": "Actual current primary matrix-free contraction code inspected, not executed",
+      "sha256": "9f5539480c52082816b348ab7f60ea0c26feb6282609df7fb739c1f6933d3ca2"
+    },
+    {
+      "repository_path": "artifacts/muon_owned_connection_20261002/replay_reference/owned_connection_actions.npz",
+      "role": "Preserved full weak/neutral-left and higher-angular insertion arrays; no repeated action",
+      "sha256": "5353ef87017b71babfdc06ebf421cc757ebe247c9bf9e30d49180c5bf9cbf3e7"
+    },
+    {
+      "repository_path": "artifacts/muon_matched_mechanical_source_20261002/replay_reference/matched_source_and_weak_actions.npz",
+      "role": "Preserved actual cut primitive rows and connected source actions",
+      "sha256": "146435df28178967c321c0aa7e89a1511395d196f96b8715532aa98e3e312c2b"
+    },
+    {
+      "repository_path": "artifacts/muon_source_weak_extension_20261002/replay_reference/inherited_parent_weak_coefficients.npz",
+      "role": "Preserved parent Lorentz principal coefficients, not a heat pencil",
+      "sha256": "609d893a9670117d930499abf463da3fa89d14bfa278355b291b54fccc9a7120"
+    },
+    {
+      "repository_path": "artifacts/muon_connection_attachment_20261002/replay_reference/conditional_higgs_source_actions.npz",
+      "role": "Preserved conditional Higgs row",
+      "sha256": "46a68674e849878a7eb674978a07e1c2fa6a1e49e57db56f55813c5b7cdb5d0c"
+    },
+    {
+      "repository_path": "artifacts/muon_connection_attachment_20261002/frozen_local.json",
+      "role": "Frozen local and calibration convention",
+      "sha256": "5b1bc79bced15d64d087ff322ba7cfff890092f3fc970a059e7e527bdb1b3b74"
+    },
+    {
+      "repository_path": "artifacts/muon_connection_attachment_20261002/native_ledger.json",
+      "role": "All physical native entries unevaluated",
+      "sha256": "325dd4751ccaa6afdc42fe6ddf86b9d53e2432b52d6978380a65b42ad9ee088d"
+    }
+  ],
+  "old_calculations_repeated": false,
+  "repository": "C:\\Users\\carbe\\Downloads\\BHSM_muon_parent_maxwell_worktree_20261001",
+  "scientific_reference": "524ed90689bd5923c249bba2e699abf627e703cd",
+  "start_HEAD": "3c6be0cc0e09e73abe01588479db5c88d704016a"
+}
