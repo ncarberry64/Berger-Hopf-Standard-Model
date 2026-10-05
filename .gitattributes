@@ -36,5 +36,10 @@ src/bhsm/interface/predictions.py text eol=crlf
 # Download research packets are immutable byte-for-byte source archives.
 docs/research_packets/2026-08-03/*.md -text -diff
 
+# Retained-tail source identities use LF on every checkout.
+src/bhsm/interface/muon_retained_tail_core.py text eol=lf
+tests/test_muon_retained_tail_core.py text eol=lf
+theory/muon_retained_tail_core_20261005.md text eol=lf
+
 # Preserve downloaded museum research snapshots and their recorded hashes.
 museum/public/research/** -text whitespace=cr-at-eol
