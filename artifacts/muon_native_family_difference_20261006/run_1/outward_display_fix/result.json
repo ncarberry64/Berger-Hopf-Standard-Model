@@ -1,0 +1,197 @@
+{
+  "absolute_electron_native_reference": null,
+  "calibrated_GeV_mass_used": false,
+  "classification": "NATIVE_ROUTE_ACTUAL_FAMILY_SOURCE_JETS_AND_POLYNOMIAL_FORM_CHECK_NOT_NATIVE_PAULI",
+  "contributions": {
+    "completion_counterterm": {
+      "classification": "UNEVALUATED",
+      "paired_contribution": null
+    },
+    "contact": {
+      "classification": "UNEVALUATED",
+      "evaluated_subterm": "fixed charged spatial K_sb=0 by mass/source representation; complete native contacts uncomputed",
+      "paired_contribution": null
+    },
+    "domain_boundary": {
+      "classification": "UNEVALUATED",
+      "paired_contribution": null
+    },
+    "native_bulk_heat": {
+      "classification": "UNEVALUATED",
+      "paired_contribution": null
+    },
+    "state_variation": {
+      "classification": "UNEVALUATED",
+      "paired_contribution": null
+    },
+    "strong_within_native": {
+      "classification": "UNEVALUATED",
+      "paired_contribution": null
+    }
+  },
+  "experimental_comparison": false,
+  "form_family_quadrature": {
+    "Delta_r": {
+      "arb": "[0.0597771798680448506356901340973550000000000000000000000000 +/- 1.12e-59]",
+      "interval": [
+        0.059777179868044844,
+        0.05977717986804486
+      ]
+    },
+    "array_comparison_norm": 0.0,
+    "classification": "ACTUAL_FINITE_ACTION_FORM_POLYNOMIAL_CHECK_NOT_NATIVE_HEAT_QUADRATURE",
+    "difference_squared": {
+      "arb": "[0.00360885367585590662756562359254774765081068281617250447089 +/- 3.48e-60]",
+      "interval": [
+        0.0036088536758559064,
+        0.0036088536758559072
+      ]
+    },
+    "difference_squared_from_exact_retained_decimals": "0.003608853675855906627565623592547747650810682816172504470888280975",
+    "endpoint_minus_integral_kappa_background": {
+      "arb": "[+/- 2.10e-59]",
+      "interval": [
+        -2.0925496662327945e-59,
+        2.0925496662327945e-59
+      ]
+    },
+    "endpoint_minus_integral_kappa_squared": {
+      "arb": "[+/- 8.84e-60]",
+      "interval": [
+        -8.835592664218568e-60,
+        5.101783497501883e-60
+      ]
+    },
+    "integral_mass_squared_coefficient": {
+      "arb": "[0.0036088536758559066275656235925477476508106828161725044709 +/- 1.98e-59]",
+      "interval": [
+        0.0036088536758559064,
+        0.0036088536758559072
+      ]
+    },
+    "kappa_numerical": null,
+    "native_heat_quadrature": null,
+    "nodes": [
+      {
+        "arb": "[0.211324865405187117745425609749021272176199124364936561991 +/- 3.87e-58]",
+        "interval": [
+          0.21132486540518708,
+          0.21132486540518713
+        ]
+      },
+      {
+        "arb": "[0.788675134594812882254574390250978727823800875635063438009 +/- 4.67e-58]",
+        "interval": [
+          0.7886751345948128,
+          0.788675134594813
+        ]
+      }
+    ],
+    "numerical_heat_length": null,
+    "ratios": {
+      "Delta_r": "0.059777179868044850635690134097355",
+      "difference_squared": "0.00360885367585590662756562359254775",
+      "r_e": "0.000297291064564924397291856041345",
+      "r_mu": "0.0600744709326097750329819901387",
+      "sum_r": "0.060371761997174699430273846180045"
+    },
+    "scope": "Arb arithmetic encloses polynomial coefficients of supplied decimal ratios; matrices binary64 canonical angular coefficients; no continuum or physical-input bound",
+    "supplied_decimal_rounding_consistent": true,
+    "supplied_squared_difference_retained": true,
+    "weights": [
+      "1/2",
+      "1/2"
+    ]
+  },
+  "generalized_jet_equations": {
+    "A_b": "solve(M,K_b-M_b A)",
+    "A_s": "solve(M,K_s-M_s A)",
+    "A_sb": "solve(M,K_sb-M_sb A-M_s A_b-M_b A_s)",
+    "Gamma_sb": "STr(DQ[A_b] A_s+Q A_sb); retain [bar_zeta zeta] and signed-transfer Pauli derivative"
+  },
+  "native_heat": {
+    "Gamma_sb": null,
+    "default_length_used": false,
+    "ell_star": null,
+    "endpoint_vs_integrated_heat": null,
+    "family_quadrature": null,
+    "first_missing_operand": {
+      "available": "primitive Maxwell/mixed source actions and parent component response; not an evaluated complete positive same-owner photon body",
+      "common_block_does_not_cancel": "mass dependence of the fermion branch changes its mixed heat weight with the same photon body",
+      "consumer": "boson block of the sourced generalized heat pencil used by HeatPencil.mixed or equivalent graded coefficient contractions",
+      "equation": "M_0,Q A_0,Q w=K_0,Q w; K_0,Q(v,w)=delta_A^2 S_AE4(v,w) on the inherited BRST/zero-mode quotient",
+      "first_current": "retained actual Gamma_s_unit_source_fermion_boson_external, same b source and mass interpolation; inverse is full owned response, not isolated8x8 compression",
+      "name": "zero-source coexact photon form action on the reached NGE source currents",
+      "not_a_new_datum": "action/implementation application required, not a selected seam parameter or a demand for a new history",
+      "producer": "same AE4 positive coexact electromagnetic Hessian, primitive component/Q norm plus induced matching remainder, constraints, domain and completion",
+      "sufficient_application": "u_zeta=solve(K_0,Q+zeta M_0,Q,J_gamma); J_gamma is produced by Gamma_s and Gamma_bar, including their connected output"
+    },
+    "invocations": 0,
+    "kernel": "HeatPencil.mixed/mixed_direction recovered unchanged",
+    "paired_Pauli": null
+  },
+  "numerical_scope": "Arb coefficients from retained decimal ratios; actual source/action maps binary64; no native numerical, spectral-tail, continuum or theoretical uncertainty bound",
+  "physical_a_mu": null,
+  "physical_g_mu": null,
+  "preserved": {
+    "QED_Higgs_weak_locals_unchanged": true,
+    "accepted_parent_solution": true,
+    "electron_QED_difference_not_added": true,
+    "seam_campaign_run": false,
+    "seam_proposal_historical_unadopted": true
+  },
+  "proof": {
+    "D_sb": "zero at fixed geometry/domain/current source and fixed external test columns",
+    "actual_weak_photon_shape": [
+      8,
+      180,
+      30
+    ],
+    "bare_upper_mass_composition_norm": 5.65685424949238,
+    "canonical_covariant_mass_residual": 0.0,
+    "canonical_covariant_source_residual": 0.0,
+    "canonical_mass_matches_saved": 0.0,
+    "complete_open_pair_source_norm": 5.656854249492379,
+    "complete_photon_shape": [
+      8,
+      56,
+      20
+    ],
+    "direct_canonical_K_sb_norm": 1.6616296724220897e-15,
+    "direct_covariant_K_sb_norm": 1.6616296724220897e-15,
+    "direct_typed_weak_K_sb_norm": 1.6616296724220897e-15,
+    "family_centrality_residual": 0.0,
+    "fixed_family_Gram_mass_commutator": 0.0,
+    "local_M_s": "zero in fixed geometric source/test frame",
+    "local_M_sb": "zero in same frame",
+    "mass_scale": "kappa=M_heavy in geometric inverse-clock units remains symbolic; no GeV conversion installed",
+    "moving_external_column_jets": null,
+    "native_M_s": null,
+    "native_M_sb": null,
+    "neutrino_mass_block_norm": 0.0,
+    "no_action_index_in_vertex": true,
+    "no_measured_mass": true,
+    "saved_open_pair_source_residual": 0.0,
+    "source_coordinate": "b_A amplitude, beta=T_b b, A_Q=sqrt(2) beta; not physical transfer t",
+    "weak_mass_background_form_norm": 3.9999999999999996
+  },
+  "signed_transfer": {
+    "central_quotients": null,
+    "native_directions": 0,
+    "post_division_errors": null,
+    "values": null
+  },
+  "source": {
+    "fermion_legs": "actual Gamma_s/Gamma_bar retained as canonical test sources with full n2 output",
+    "fixed_bare_current_mass_jets": "zero at fixed E0; moving physical injections remain unevaluated",
+    "photon": "b_A, amplitude source; not physical soft transfer",
+    "physical_external_state_jets": null,
+    "physical_mass_dependent_Pauli_projector_jet": null
+  },
+  "state": {
+    "common_X_only": "if a derived state map supplies SAME X, evaluate W_mu^- minus W_e^-; equality not supplied by common spin structure",
+    "complete_paired_visible_kernel": null,
+    "fixed_entire_sourced_family": "state-independent; paired derivative zero in this scope",
+    "independent_family_variations": "W_mu^- and W_e^- must EACH vanish for state independence on unrestricted admissible family-diagonal tangents"
+  }
+}
