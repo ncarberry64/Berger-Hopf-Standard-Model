@@ -73,3 +73,18 @@ def test_fixed_form_scope_and_native_three_point_guard(evidence):
     assert all(x['classification']=='UNEVALUATED' and x['paired_contribution'] is None for x in r['contributions'].values())
     assert not r['preserved']['seam_campaign_run'] and r['preserved']['electron_QED_difference_not_added']
     assert r['physical_a_mu'] is None and r['physical_g_mu'] is None
+
+def test_mass_time_interference_by_complex_norm_polarization(evidence):
+    a,_=evidence
+    with np.load(OUT/'temporal_completion/mass_time_actions.npz') as z:t={k:np.array(z[k]) for k in z.files}
+    x=t['mass_action_per_kappa_r'][:,:,None]
+    y=t['B_H_time_action'][:,None,:]
+    norm=lambda v:np.sum(np.abs(v)**2,axis=0)
+    polarized=(norm(x+y)-norm(x-y))/4+1j*(norm(x-1j*y)-norm(x+1j*y))/4
+    cross=t['mass_time_0tau_per_kappa_Delta_r']
+    assert np.linalg.norm(polarized-cross)<1e-13
+    assert np.linalg.norm(cross+1j*a['weak_mass_tau'])==0
+    assert np.array_equal(t['mass_time_tau0_per_kappa_Delta_r'],cross.conj().T)
+    assert np.linalg.norm(cross)>4.4
+    assert np.array_equal(t['endpoint_time_0tau_per_kappa'],t['integral_time_0tau_per_kappa'])
+    assert np.array_equal(t['endpoint_time_tau0_per_kappa'],t['integral_time_tau0_per_kappa'])

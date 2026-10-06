@@ -25,3 +25,10 @@ cancellation requires the appropriate kernel, not merely common spin.
 Frozen local/electron QED differences are already included; do not re-add.
 
 Publish each later substantive milestone on PR465 with tests/hashes/replay.
+
+
+Time-jet completion: run_1/temporal_completion adds the missing canonical
+mass/time cross and reverse dual. The amplitude endpoint/integral arrays
+remain unchanged. Five current checks pass through the two receipts; the
+previous four were not rerun. The full moving temporal/native action is
+still unevaluated. Reproduce with the added complete_muon_native_family_time_jet.py.

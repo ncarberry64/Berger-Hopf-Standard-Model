@@ -2,6 +2,8 @@
   "absolute_native_reference": null,
   "accepted_arrays": "run_1/family_source_actions.npz",
   "accepted_result": "run_1/outward_display_fix/result.json",
+  "accepted_temporal_arrays": "run_1/temporal_completion/mass_time_actions.npz",
+  "accepted_temporal_result": "run_1/temporal_completion/result.json",
   "branch": "codex/muon-parent-maxwell-density-review",
   "first_missing_operand": {
     "available": "primitive Maxwell/mixed source actions and parent component response; not an evaluated complete positive same-owner photon body",
@@ -14,15 +16,17 @@
     "producer": "same AE4 positive coexact electromagnetic Hessian, primitive component/Q norm plus induced matching remainder, constraints, domain and completion",
     "sufficient_application": "u_zeta=solve(K_0,Q+zeta M_0,Q,J_gamma); J_gamma is produced by Gamma_s and Gamma_bar, including their connected output"
   },
+  "first_publication_commit": "86cead3120c82948c592e348b72046a25b6506b6",
   "id": "BHSM_MUON_NATIVE_FAMILY_JETS_20261006",
   "native_difference": null,
   "native_heat_calls": 0,
-  "new": "actual family-central source/mass square jets and complete background form; endpoint/integral ACTION-form check",
+  "new": "actual family-central source/mass square jets and complete background form; endpoint/integral ACTION-form check; canonical mass/time and reverse-dual cross coefficients evaluated",
   "optional_seam_campaign": "stopped, unadopted and historical",
   "physical_a_mu": null,
   "physical_g_mu": null,
-  "replay": "scripts/replay_muon_native_family_difference.py --output <fresh_path>; new replay automatically includes corrected outward displays",
+  "replay": "scripts/replay_muon_native_family_difference.py --output <fresh_path>; new replay automatically includes corrected outward displays; then scripts/complete_muon_native_family_time_jet.py with that new input and a fresh temporal output",
   "scientific_reference": "524ed90689bd5923c249bba2e699abf627e703cd",
+  "scope_correction": "previous coefficient comparison covers angular amplitude only; mass/time cross added, full moving temporal/native action still unevaluated",
   "starting_PR_HEAD": "b0b5cdec48735f6e2ae40051a32662297882b7e4",
-  "targeted_tests": 4
+  "targeted_tests": 5
 }

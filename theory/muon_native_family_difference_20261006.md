@@ -126,7 +126,7 @@ forms are
  P_{\rm ch}=L^\dagger L.
 \]
 \[
- \Delta K_{\rm mass}
+ \Delta K_{00,\rm mass}
  =\kappa a_{\rm bg}\Delta_r C_{\rm bg}
   +\kappa^2(r_\mu^2-r_e^2)P_{\rm ch}.
 \]
@@ -136,6 +136,27 @@ point; it is not a new Wilson coefficient. Both coefficients are saved
 separately, with full background output. No value of kappa or a new
 history point is selected. There is no assumption that the native square
 is merely kinetic plus m squared.
+
+This is the **instantaneous angular amplitude** coefficient, not the full
+time-dependent norm form. The first published presentation omitted this
+qualification. On the same canonical fixed angular frame the first-order
+time action is F1=i*incidence, while the mass action is -kappa*r*L. Hence
+the additional mass/time coefficients are
+
+\[
+ \Delta K_{0\tau}=-i\kappa\Delta_r T_{\rm ch},\qquad
+ \Delta K_{\tau0}=+i\kappa\Delta_r T_{\rm ch}.
+\]
+
+The density retains c^dagger DeltaK_0tau c_tau and its actual reverse dual
+together with the amplitude coefficient. `run_1/temporal_completion`
+evaluates both terms on the same typed mass/incidence maps, without
+repeating the prior source actions. Their coefficient Frobenius norm is
+sqrt(20); an independent complex norm-form polarization verifies the
+interference. The family derivative is constant, so its two-node weighted
+integral equals the endpoint coefficient. No temporal boundary law or
+new clock is selected. Moving source-profile/domain terms and the full
+temporal weak action are not supplied by this local coefficient check.
 
 The derivative is affine in the interpolation parameter, so a two-node
 Gauss rule integrates these two **action-form coefficients** exactly in
@@ -281,6 +302,7 @@ difference is already included and is not added again.
 
 ```
 C:\Python314\python.exe scripts/replay_muon_native_family_difference.py --output artifacts/muon_native_family_difference_20261006/replay_new
+C:\Python314\python.exe scripts/complete_muon_native_family_time_jet.py --input artifacts/muon_native_family_difference_20261006/replay_new --output artifacts/muon_native_family_difference_20261006/replay_new/temporal_completion
 C:\Python314\python.exe -m pytest --noconftest -q tests/test_muon_native_family_difference.py
 ```
 
