@@ -1,0 +1,737 @@
+diff --git a/scripts/control_muon_impedance_eigenbranch.py b/scripts/control_muon_impedance_eigenbranch.py
+new file mode 100644
+index 00000000..edc98cba
+--- /dev/null
++++ b/scripts/control_muon_impedance_eigenbranch.py
+@@ -0,0 +1,48 @@
++"""Small normalization/resolvent controls, never physical BHSM energies."""
++from __future__ import annotations
++import numpy as np
++from scipy.linalg import eigh
++from bhsm.interface.muon_native_impedance_energy_response import generalized_simple_mode_jets
++
++
++def control_data():
++    M=np.diag([1.3,.9,1.1]);H=np.diag([2.6,4.5,9.9])
++    psi=np.array([1/np.sqrt(1.3),0,0]);E=2.
++    Hx=np.array([[.2,.14,-.07],[.14,-.1,.03],[-.07,.03,.06]])
++    Hy=np.array([[-.12,.05,.08],[.05,.07,-.02],[.08,-.02,.03]])
++    Hxy=np.array([[.05,.01,-.02],[.01,.04,.006],[-.02,.006,-.01]])
++    Mx=np.array([[.03,.02,0],[.02,-.01,.005],[0,.005,.02]])
++    My=np.array([[-.02,0,.01],[0,.015,0],[.01,0,-.01]])
++    Mxy=np.array([[.004,.003,0],[.003,.002,-.001],[0,-.001,-.003]])
++    return H,M,psi,E,Hx,Hy,Hxy,Mx,My,Mxy
++
++
++def execute_control():
++    H,M,psi,E,Hx,Hy,Hxy,Mx,My,Mxy=control_data()
++    out=generalized_simple_mode_jets(*control_data())
++    def branch(x,y):
++        h=H+x*Hx+y*Hy+x*y*Hxy;m=M+x*Mx+y*My+x*y*Mxy
++        values,columns=eigh(h,m)
++        # Match the analytically supplied control eigenline by overlap,
++        # never assign a physical branch by sorted eigenvalue index.
++        overlaps=abs(psi.conj()@M@columns)
++        index=int(np.argmax(overlaps))
++        return float(values[index]),float(overlaps[index]),float(abs(np.vdot(columns[:,index],m@columns[:,index])-1))
++    fd=[]
++    for h in (1e-3,5e-4,2.5e-4):
++        plus=branch(h,0);minus=branch(-h,0)
++        yplus=branch(0,h);yminus=branch(0,-h)
++        mixed=(branch(h,h)[0]-branch(h,-h)[0]-branch(-h,h)[0]+branch(-h,-h)[0])/(4*h*h)
++        fd.append(dict(step=h,E_x=(plus[0]-minus[0])/(2*h),E_y=(yplus[0]-yminus[0])/(2*h),
++            E_xy=mixed,mixed_error=abs(mixed-out['E_xy'].real),
++            x_error=abs((plus[0]-minus[0])/(2*h)-out['E_x'].real),
++            y_error=abs((yplus[0]-yminus[0])/(2*h)-out['E_y'].real),
++            min_branch_overlap=min(plus[1],minus[1],yplus[1],yminus[1]),
++            max_M_normalization_residual=max(plus[2],minus[2],yplus[2],yminus[2])))
++    fixed=generalized_simple_mode_jets(H,M,psi,E,Hx,Hy,Hxy,np.zeros_like(M),np.zeros_like(M),np.zeros_like(M))
++    return dict(classification='ARITHMETIC_CONTROL_ONLY__NO_PHYSICAL_ENERGY',dimension=3,
++        E=E,E_x=float(out['E_x'].real),E_y=float(out['E_y'].real),E_xy=float(out['E_xy'].real),
++        checks=out['checks'],finite_differences=fd,
++        fixed_M_mixed=float(fixed['E_xy'].real),moving_M_changes_mixed=float(abs(fixed['E_xy']-out['E_xy'])),
++        M_x_norm=float(np.linalg.norm(Mx)),M_y_norm=float(np.linalg.norm(My)),M_xy_norm=float(np.linalg.norm(Mxy)),
++        explicit_inverse_formed=False,selected_physical_mode=False),out
+diff --git a/scripts/replay_muon_native_impedance_energy_response.py b/scripts/replay_muon_native_impedance_energy_response.py
+new file mode 100644
+index 00000000..825a1951
+--- /dev/null
++++ b/scripts/replay_muon_native_impedance_energy_response.py
+@@ -0,0 +1,142 @@
++"""New owner reconciliation and perturbation controls; no production replay."""
++from __future__ import annotations
++import argparse
++import hashlib
++import json
++from pathlib import Path
++import subprocess
++import sys
++import time
++import numpy as np
++import sympy as sp
++ROOT=Path(__file__).resolve().parents[1]
++sys.path.insert(0,str(ROOT/'src'));sys.path.insert(0,str(ROOT/'scripts'))
++from bhsm.interface.muon_native_impedance_energy_response import reconcile_owners
++from bhsm.interface.ae4_stratified_dirac_zeta_induced_owner import native_spectral_length_contract
++from control_muon_impedance_eigenbranch import execute_control
++
++
++def save(path,value):path.write_text(json.dumps(value,indent=2,sort_keys=True,allow_nan=False)+'\n',encoding='utf8')
++def sha(path):return hashlib.sha256(path.read_bytes()).hexdigest()
++
++
++def exact_reduction_identities():
++    z,s,d,m=sp.symbols('Z S D M',real=True);Eres=(z+s)/m;Ebulk=z/m;Edrive=d/m
++    residual=sp.simplify((Ebulk-Edrive).subs(d,z+s))
++    # Exact implication control: a simple formation eigenline is not, in
++    # general, a resistance-energy eigenline. These are NOT physical inputs.
++    x,y=sp.symbols('x y',real=True);u=x+y;tau=u*u
++    A=sp.Matrix([[tau,u],[u,1]]);R=sp.Matrix([[2,1],[1,3]])
++    line=sp.Matrix([1,-u]);psi=line/sp.sqrt(1+u*u)
++    Eline=sp.simplify((psi.T*R*psi)[0])
++    result=dict(classification='EXACT_ALGEBRA_AND_IDENTIFICATION_CONTROL_ONLY',
++        one_mode_ratio='D/(gamma J+Z); no independently selected scalar impedance',
++        total_resistance_threshold_identity=str(sp.simplify((Eres-Edrive).subs(d,z+s))),
++        bulk_only_threshold_residual=str(residual),
++        geometric_pairing_not_assumed_identity=True,
++        formation_vs_energy=dict(control_R=[[int(v) for v in row] for row in R.tolist()],
++            control_A_at_zero=[[int(v) for v in row] for row in A.subs({x:0,y:0}).tolist()],
++            analytic_crossing='tau=(x+y)^2',
++            formation_equation=sp.simplify(A*psi)==sp.zeros(2,1),
++            line_normalized=sp.simplify((psi.T*psi)[0])==1,
++            selected_energy=str(Eline),
++            energy_eigenline_residual_squared_at_zero=int(((R-2*sp.eye(2))*sp.Matrix([1,0])).norm()**2),
++            E_x=int(sp.diff(Eline,x).subs({x:0,y:0})),
++            E_y=int(sp.diff(Eline,y).subs({x:0,y:0})),
++            E_xy=int(sp.diff(Eline,x,y).subs({x:0,y:0})),
++            bare_R_x=0,bare_R_y=0,bare_R_xy=0,
++            crossing_tau_x=0,crossing_tau_y=0,crossing_tau_xy=2,
++            hypothetical_formation_example_not_installed=True))
++    return result
++
++
++def run(output):
++    if output.exists():raise FileExistsError('Fresh output required; preserve checkpoints')
++    output.mkdir(parents=True);start=time.perf_counter()
++    paths=dict(
++        AE4_owner=ROOT/'src/bhsm/interface/ae4_stratified_dirac_zeta_induced_owner.py',
++        mechanics=ROOT/'src/bhsm/interface/covariant_bubble_interface_mechanics.py',
++        Track2_decision=ROOT/'src/bhsm/interface/owner_authorized_encapsulation_interface_action.py',
++        mechanics_record=ROOT/'artifacts/action_extension/BHSM_COVARIANT_BUBBLE_INTERFACE_MECHANICS.json',
++        Track2_record=ROOT/'artifacts/action_extension/BHSM_OWNER_AUTHORIZED_ENCAPSULATION_INTERFACE_ACTION_CLASSIFICATION.json',
++        AE4_report=ROOT/'theory/ae4_stratified_dirac_zeta_induced_owner.md',
++        mechanics_report=ROOT/'theory/bhsm_covariant_bubble_interface_mechanics.md',
++        Track2_report=ROOT/'theory/bhsm_owner_authorized_encapsulation_interface_action.md',
++        earlier_source_result=ROOT/'artifacts/muon_native_induced_polarization_20261006/run_1/result.json',
++        earlier_source_contacts=ROOT/'artifacts/muon_native_induced_polarization_20261006/run_1/affine_source_contacts.npz',
++        earlier_weak_rows=ROOT/'artifacts/muon_native_induced_polarization_20261006/run_1/compact_weak_first_jets.npz',
++        frozen=ROOT/'artifacts/muon_source_jet_20261002/frozen_local.json',
++        builder=ROOT/'src/bhsm/interface/muon_native_impedance_energy_response.py',
++        control=ROOT/'scripts/control_muon_impedance_eigenbranch.py',replay=Path(__file__))
++    save(output/'input_hashes.json',{k:dict(path=p.relative_to(ROOT).as_posix(),sha256=sha(p),
++        canonical_LF_sha256=hashlib.sha256(p.read_bytes().replace(b'\r\n',b'\n')).hexdigest()) for k,p in paths.items()})
++    git=lambda *args:subprocess.check_output(['git',*args],cwd=ROOT,text=True).strip()
++    save(output/'starting_revision.json',dict(HEAD=git('rev-parse','HEAD'),branch=git('branch','--show-current'),
++        scientific_reference='524ed90689bd5923c249bba2e699abf627e703cd',working_tree_status=git('status','--short')))
++    chronology={k:git('log','--follow','-1','--format=%H|%aI|%cI|%s','--',str(paths[k].relative_to(ROOT)))
++                for k in ('AE4_owner','Track2_decision','mechanics')}
++    save(output/'owner_chronology.json',chronology)
++    mechanics=json.loads(paths['mechanics_record'].read_text());interface=json.loads(paths['Track2_record'].read_text())
++    reconciliation=reconcile_owners(native_spectral_length_contract(),mechanics,interface)
++    save(output/'owner_reconciliation.json',reconciliation)
++    save(output/'checkpoint.json',dict(stage='actual owner reconciliation saved; no physical scalar selected'))
++    exact=exact_reduction_identities();save(output/'exact_reduction_identities.json',exact)
++    # SymPy integers in lists are rendered as ordinary integers in this record.
++    control,arrays=execute_control();save(output/'arithmetic_eigenbranch_control.json',control)
++    np.savez_compressed(output/'control_reduced_actions.npz',
++        **{k:v for k,v in arrays.items() if isinstance(v,(np.ndarray,int,float,complex))})
++    formulas=dict(classification='DERIVED_CONDITIONAL_OPERATOR_REDUCTION_FORMULAS',
++        threshold='R=gamma J_Sigma+H_impedance; A_form=R-D; (R-D)psi_star=0',
++        normalization='psi_dagger M_E psi=1 only once the physical M_E is derived; M_E=I not declared',
++        selected_line_energy='E_R=psi_dagger R psi/(psi_dagger M_E psi)',
++        selected_line_first='E_R,x=psi_dagger(R_x-E_R M_x)psi + psi_x_dagger(R-E_R M)psi + psi_dagger(R-E_R M)psi_x',
++        normalized_line_mixed='E_R,xy=N_xy-E_R d_xy with N=psi_dagger R psi and d=psi_dagger M psi=1; all psi_x,psi_y,psi_xy, R/M first/mixed jets retained',
++        energy_eigenbranch_extra_hypothesis='H_owned psi=E M_owned psi simple isolated, common differentiable form pullback',
++        T_x='H_x-E M_x',E_x='psi_dagger T_x psi',
++        reduced_solve='[H-E M, M psi; psi_dagger M,0] [r_x;lambda_x]=[-T_x psi;0]; psi_x=r_x-(psi_dagger M_x psi)psi/2',
++        energy_mixed='psi_dagger(H_xy-E M_xy-E_x M_y-E_y M_x)psi + psi_dagger T_x r_y + psi_dagger T_y r_x',
++        phase='Im(psi_dagger M psi_x)=0 for real Hermitian source directions',
++        complex_current='extend real-coordinate Hessian coefficients linearly using the frozen current weights, never conjugate them',
++        crossing='differentiate the selected formation eigenvalue lambda=0; tau_x=-lambda_x/lambda_tau and the full mixed implicit derivative',
++        total_surface='E_total,x=E_x+E_tau tau_x; E_total,xy=E_xy+E_tau_x tau_y+E_tau_y tau_x+E_tau_tau tau_x tau_y+E_tau tau_xy',
++        crossing_and_eigenline_motion_counted_once=True,
++        ell='1/E_total',ell_x='-E_total,x/E_total^2',ell_xy='2 E_total,x E_total,y/E_total^3-E_total,xy/E_total^2',
++        c_x='-2 E_total,x/E_total^3',c_xy='6 E_total,x E_total,y/E_total^4-2 E_total,xy/E_total^3',
++        physical_values=None)
++    save(output/'conditional_response_equations.json',formulas)
++    prior=json.loads(paths['earlier_source_result'].read_text())
++    result=dict(classification=reconciliation['classification'],
++        preferred_physical_E_vJ_evaluated=False,
++        new_result='operator-level supersession and exact one-mode threshold residual; missing AE4 energy/surface identification established without inventing a scalar law',
++        reconciliation=reconciliation,exact_reduction=exact,arithmetic_control=control,
++        physical=dict(H_owned=None,M_owned=None,psi_star=None,H_v=None,H_J=None,H_vJ=None,
++            M_v=None,M_J=None,M_vJ=None,E=None,E_v=None,E_J=None,E_vJ=None,
++            crossing_jets=None,ell_jets=None,c_jets=None,AE4_length_contribution=None,
++            R_ind=None,completed_photon_response=None,family_native_heat=None,a_mu=None,g_mu=None),
++        native_heat_default_length_used=False,synthetic_rho_hold_inserted=False,
++        new_scalar_constitutive_law_inserted=False,physical_eigenvalue_or_frequency_chosen=False,
++        inherited_domains_changed=False,Gate7_invoked=False,
++        prior_local_source_result_preserved=dict(contacts_norm=prior['checks']['mixed_contact_norm'],
++            compact_K_J_norm=prior['checks']['local_weak_K_J_norm'],targeted_checks_not_rerun=7),
++        frozen_local=json.loads(paths['frozen'].read_text()),
++        error_scope=dict(identities='exact symbolic identities',
++            finite_control='binary64 generalized eigensolve, directional/normalization residuals and finite-difference consistency; NOT a rigorous truncation or physical error bound',
++            physical_numerical=None,physical_theoretical=None),
++        execution=dict(old_producers_replayed=0,old_targeted_checks_rerun=0,
++            physical_eigenbranches_evaluated=0,physical_heat_contractions=0,
++            new_control_dimension=3,elapsed_seconds=time.perf_counter()-start))
++    save(output/'result.json',result)
++    save(output/'minimal_owner_amendment.json',reconciliation['minimal_amendment'])
++    save(output/'checkpoint.json',dict(id='BHSM_MUON_AE4_RHO_B2_LENGTH_OWNER_RECONCILIATION_20261006',
++        stage='definition amendment identified; no independent scalar-law numerical solve authorized',
++        result='result.json',physical_E_vJ=None,physical_a_mu=None,
++        next='same-action selected-line common-charge energy and support-loss/formation-event identification'))
++    save(output/'output_hashes.json',{p.name:sha(p) for p in sorted(output.iterdir()) if p.is_file()})
++    print(json.dumps(dict(output=str(output),classification=result['classification'],
++        physical_E_vJ_evaluated=False,control_E_xy=control['E_xy'],
++        control_last_mixed_fd_error=control['finite_differences'][-1]['mixed_error'],seconds=result['execution']['elapsed_seconds'])))
++
++
++if __name__=='__main__':
++    parser=argparse.ArgumentParser();parser.add_argument('--output',type=Path,required=True)
++    run(parser.parse_args().output)
+diff --git a/src/bhsm/interface/muon_native_impedance_energy_response.py b/src/bhsm/interface/muon_native_impedance_energy_response.py
+new file mode 100644
+index 00000000..b5c0363a
+--- /dev/null
++++ b/src/bhsm/interface/muon_native_impedance_energy_response.py
+@@ -0,0 +1,94 @@
++"""Reconcile the retained formation operator with AE4's length prescription.
++
++No independent impedance-energy functional is selected here. The formation
++quotient fixes a resistance operator; it does not by itself identify AE4's
++energy-normalization or support-loss event. Finite eigenbranch routines below
++evaluate SUPPLIED arithmetic-control matrices, not physical BHSM operators.
++"""
++from __future__ import annotations
++import numpy as np
++
++
++def reconcile_owners(ae4,mechanics,interface):
++    """Read the actual retained owner statements without materializing them."""
++    form=mechanics['formation_number']
++    if form['classification']!='RHO-B2':raise ValueError('retained operator-valued owner required')
++    return dict(
++        classification='AE4_LENGTH_IDENTIFICATION_UNRECONCILED_AFTER_RHO_B2',
++        formation_authority=mechanics['action_version'],
++        current_formation_operator='R=gamma J_Sigma+H_impedance; D=H_event,drive; A_form=R-D on the common reduced space',
++        actual_formation_definition=form['definition'],
++        actual_historical_relation=form['historical_relation'],
++        actual_formation_threshold=form['threshold'],
++        actual_AE4_surface=ae4['surface_rule'],
++        actual_AE4_length=ae4['spectral_length_rule_natural_units'],
++        resistance_in_historical_formation_ratio='gamma J_Sigma+H_impedance, not H_impedance alone',
++        scalar_formation_reduction='rho_line=(psi_dagger D psi)/(psi_dagger R psi) on the same common-charge line',
++        bulk_only_threshold_residual='at (R-D)psi=0: psi_dagger(H_impedance-D)psi=-gamma psi_dagger J_Sigma psi',
++        surface_term_proved_zero=False,
++        interface_scalar_exclusion=interface['interface_action']['invariant_controls']['excluded'],
++        independent_scalar_law_route_withdrawn=True,
++        full_heat_owner_superseded=False,
++        scalar_holding_hypothesis_superseded_by_RHO_B2=True,
++        AE4_inverse_energy_amended_by_mechanics=False,
++        selected_event_equivalence_supplied=False,
++        common_charge_energy_pairing_supplied=False,
++        physical_H_owned=None,physical_M_owned=None,physical_psi_star=None,
++        physical_E=None,physical_E_v=None,physical_E_J=None,physical_E_vJ=None,
++        minimal_amendment=dict(
++            name='same-action one-mode/common-charge identification of AE4 length and crossing',
++            equation='E_impedance_AE4 = iota_star_dagger R iota_star / (iota_star_dagger M_E iota_star); E_core_AE4 = iota_star_dagger D iota_star / (iota_star_dagger M_E iota_star)',
++            required_derivation='FOR THIS historical formation-ratio compatibility schema: identify the SAME AE4 support-loss surface/eigenline with the relevant constrained formation branch, and derive M_E with energy units from the owned common-charge/clock pairing',
++            scope='compatibility schema for the historical formation-ratio interpretation; NOT adopted here and NOT uniquely fixed by RHO-B2',
++            alternative='a different already-owned scalarization/event relation would require its explicit action equality and provenance',
++            prohibited='no arbitrary function, fitted scale, M_E=I shortcut, ell_s=ell_star equality, inverse eigenvalue/frequency choice or surface-term deletion'),
++        not_a_logical_no_go_for_compatible_future_matching=True,
++        not_an_unfinished_scalar_numerical_solve=True)
++
++
++def generalized_simple_mode_jets(H,M,psi,E,Hx,Hy,Hxy,Mx,My,Mxy):
++    """Conditional Hermitian simple ENERGY eigenbranch, supplied matrices.
++
++    Both source parameters are REAL. Complex current directions must be
++    obtained by complex-linear extension of the real Hessian coefficients,
++    not by conjugating complex current weights in a quadratic formula.
++    The bordered solve is the reduced action; no inverse is formed.
++    A simple FORMATION zero mode need not satisfy this energy eigenproblem.
++    """
++    H=np.asarray(H,complex);M=np.asarray(M,complex);psi=np.asarray(psi,complex)
++    n=len(psi);A=H-E*M;mpsi=M@psi
++    if abs(np.vdot(psi,mpsi)-1)>1e-12:raise ValueError('M-normalized supplied eigenline required')
++    if np.linalg.norm(A@psi)>1e-12:raise ValueError('energy eigenline, not an arbitrary formation mode, required')
++    border=np.zeros((n+1,n+1),complex)
++    border[:n,:n]=A;border[:n,n]=mpsi;border[n,:n]=mpsi.conj()
++    Tx=Hx-E*Mx;Ty=Hy-E*My
++    Ex=np.vdot(psi,Tx@psi);Ey=np.vdot(psi,Ty@psi)
++    rx=np.linalg.solve(border,np.r_[-Tx@psi,0])[:n]
++    ry=np.linalg.solve(border,np.r_[-Ty@psi,0])[:n]
++    mx=np.vdot(psi,Mx@psi);my=np.vdot(psi,My@psi)
++    psix=rx-mx*psi/2;psiy=ry-my*psi/2
++    # r_x=-R_red T_x psi, so these are the signed pair terms.
++    mixed=np.vdot(psi,(Hxy-E*Mxy-Ex*My-Ey*Mx)@psi)
++    mixed+=np.vdot(Tx@psi,ry)+np.vdot(Ty@psi,rx)
++    reverse=np.vdot(psi,(Hxy-E*Mxy-Ey*Mx-Ex*My)@psi)
++    reverse+=np.vdot(Ty@psi,rx)+np.vdot(Tx@psi,ry)
++    checks=dict(eigen_residual=float(np.linalg.norm(A@psi)),
++        M_norm_residual=float(abs(np.vdot(psi,M@psi)-1)),
++        x_directional_residual=float(np.linalg.norm(A@psix+(Tx-Ex*M)@psi)),
++        y_directional_residual=float(np.linalg.norm(A@psiy+(Ty-Ey*M)@psi)),
++        x_normalization_residual=float(abs(2*np.vdot(psi,M@psix).real+mx)),
++        y_normalization_residual=float(abs(2*np.vdot(psi,M@psiy).real+my)),
++        mixed_symmetry_residual=float(abs(mixed-reverse)))
++    return dict(E=E,E_x=Ex,E_y=Ey,E_xy=mixed,
++        r_x=rx,r_y=ry,psi_x=psix,psi_y=psiy,checks=checks)
++
++
++def moving_rayleigh_first(R,M,psi,psix,Rx,Mx):
++    """Energy contraction on a selected normalized line, not assumed stationary.
++
++    Shows the embedding term which bare Hellmann--Feynman would omit.
++    """
++    E=np.vdot(psi,R@psi)/np.vdot(psi,M@psi)
++    explicit=np.vdot(psi,(Rx-E*Mx)@psi)
++    motion=np.vdot(psix,(R-E*M)@psi)+np.vdot(psi,(R-E*M)@psix)
++    return E,explicit+motion,explicit,motion
+diff --git a/tests/test_muon_native_impedance_energy_response.py b/tests/test_muon_native_impedance_energy_response.py
+new file mode 100644
+index 00000000..78524257
+--- /dev/null
++++ b/tests/test_muon_native_impedance_energy_response.py
+@@ -0,0 +1,108 @@
++"""New owner/perturbation checks; old muon production/checks are frozen."""
++from pathlib import Path
++import json
++import sys
++import numpy as np
++import sympy as sp
++ROOT=Path(__file__).resolve().parents[1]
++sys.path.insert(0,str(ROOT/'src'));sys.path.insert(0,str(ROOT/'scripts'))
++from bhsm.interface.muon_native_impedance_energy_response import generalized_simple_mode_jets,moving_rayleigh_first
++from control_muon_impedance_eigenbranch import control_data
++OUT=ROOT/'artifacts/muon_native_impedance_energy_response_20261006/run_1'
++
++
++def read(name):return json.loads((OUT/name).read_text())
++
++
++def test_actual_owner_supersession_has_no_cutoff_scalar_identification():
++    r=read('owner_reconciliation.json');c=read('owner_chronology.json')
++    assert r['actual_formation_definition'].endswith('<psi,(gamma_s J_Sigma+H_impedance)psi>')
++    assert 'one-mode common-charge reduction' in r['actual_historical_relation']
++    assert r['scalar_holding_hypothesis_superseded_by_RHO_B2']
++    assert not r['AE4_inverse_energy_amended_by_mechanics']
++    assert not r['selected_event_equivalence_supplied']
++    assert not r['common_charge_energy_pairing_supplied']
++    assert any('synthetic' in x for x in r['interface_scalar_exclusion'])
++    assert c['AE4_owner'].startswith('999be702') and c['mechanics'].startswith('c4eeb2d5')
++
++
++def test_one_mode_total_resistance_threshold_and_bulk_residual():
++    r=read('exact_reduction_identities.json')
++    assert r['total_resistance_threshold_identity']=='0'
++    assert r['bulk_only_threshold_residual']=='-S/M'
++    Z,S,D,M=sp.symbols('Z S D M',nonzero=True)
++    # Same normalization cancels in the quotient, but not in the dimensional
++    # resistance scale. Neither M nor S may be chosen away by convenience.
++    assert sp.simplify((D/M)/((Z+S)/M)-D/(Z+S))==0
++    assert sp.simplify(Z/M-(Z+S)/M)==-S/M
++
++
++def test_formation_line_motion_is_not_bare_energy_hellmann_feynman():
++    r=read('exact_reduction_identities.json')['formation_vs_energy']
++    assert r['formation_equation'] and r['line_normalized']
++    assert r['energy_eigenline_residual_squared_at_zero']==1
++    assert r['bare_R_x']==0 and r['E_x']==-2 and r['E_xy']==2
++    R=np.array([[2.,1.],[1.,3.]]);M=np.eye(2);psi=np.array([1.,0.]);px=np.array([0.,-1.])
++    E,Ex,bare,motion=moving_rayleigh_first(R,M,psi,px,np.zeros((2,2)),np.zeros((2,2)))
++    assert E==2 and Ex==-2 and bare==0 and motion==-2
++
++
++def test_generalized_energy_jets_against_actual_control_perturbations():
++    r=read('arithmetic_eigenbranch_control.json')
++    assert r['classification']=='ARITHMETIC_CONTROL_ONLY__NO_PHYSICAL_ENERGY'
++    assert not r['explicit_inverse_formed'] and not r['selected_physical_mode']
++    assert max(r['checks'].values())<2e-15
++    assert all(p['x_error']<1e-9 and p['y_error']<1e-9 and p['mixed_error']<1e-8 for p in r['finite_differences'])
++    assert all(p['min_branch_overlap']>.9999 for p in r['finite_differences'])
++    assert all(p['max_M_normalization_residual']<2e-15 for p in r['finite_differences'])
++    assert r['M_x_norm']>0 and r['M_y_norm']>0 and r['M_xy_norm']>0
++    assert r['moving_M_changes_mixed']>.002
++
++
++def test_independent_second_variation_and_mixed_normalization():
++    H,M,p,E,Hx,Hy,Hxy,Mx,My,Mxy=control_data()
++    with np.load(OUT/'control_reduced_actions.npz') as z:
++        px=z['psi_x'];py=z['psi_y'];Ex=z['E_x'];Ey=z['E_y'];Exy=z['E_xy']
++    A=H-E*M;Tx=Hx-E*Mx;Ty=Hy-E*My;Bxy=Hxy-E*Mxy-Ex*My-Ey*Mx
++    rhs=-(Tx-Ex*M)@py-(Ty-Ey*M)@px-Bxy@p
++    remainder=(np.vdot(px,M@py)+np.vdot(py,M@px)+
++        np.vdot(px,My@p)+np.vdot(p,My@px)+
++        np.vdot(py,Mx@p)+np.vdot(p,Mx@py)+np.vdot(p,Mxy@p))
++    border=np.block([[A,(M@p)[:,None]],[(p@M)[None,:],np.zeros((1,1))]])
++    solved=np.linalg.solve(border,np.r_[rhs,-remainder/2])
++    pxy=solved[:3];independent=-solved[3]
++    assert abs(independent-Exy)<1e-16
++    assert abs(2*np.vdot(p,M@pxy)+remainder)<1e-16
++    assert np.linalg.norm(A@pxy-Exy*M@p+(Tx-Ex*M)@py+(Ty-Ey*M)@px+Bxy@p)<1e-16
++
++
++def test_fixed_M_familiar_reduced_resolvent_formula():
++    _,_,_,_,Hx,Hy,Hxy,_,_,_=control_data()
++    H=np.diag([2.,5.,9.]);M=np.eye(3);p=np.array([1.,0,0]);zero=np.zeros((3,3))
++    r=generalized_simple_mode_jets(H,M,p,2,Hx,Hy,Hxy,zero,zero,zero)
++    # Exact explicit diagonal reduced action in this CONTROL, not an inverse
++    # or model of any retained BHSM operator.
++    red=np.diag([0.,1/3,1/7])
++    expected=np.vdot(p,Hxy@p)-np.vdot(Hx@p,red@Hy@p)-np.vdot(Hy@p,red@Hx@p)
++    assert abs(expected-r['E_xy'])<1e-16
++
++
++def test_crossing_motion_chain_rule_counts_mixed_surface_once():
++    x,y,t=sp.symbols('x y t');e,a,b,c,d,f,g,h=sp.symbols('e a b c d f g h')
++    F=t-(x+y)**2;tx=-sp.diff(F,x)/sp.diff(F,t);ty=-sp.diff(F,y)/sp.diff(F,t)
++    tx0=tx.subs({x:0,y:0,t:0});ty0=ty.subs({x:0,y:0,t:0})
++    txy=-(sp.diff(F,x,y)+sp.diff(F,t,x)*ty0+sp.diff(F,t,y)*tx0+sp.diff(F,t,t)*tx0*ty0)/sp.diff(F,t)
++    assert txy==2
++    energy=e+a*t+b*x+c*y+d*x*y+f*t*x+g*t*y+h*t*t/2
++    total=sp.diff(energy.subs(t,(x+y)**2),x,y).subs({x:0,y:0})
++    assert sp.simplify(total-d-a*txy)==0
++
++
++def test_no_physical_scalar_or_cutoff_installed_and_frozen_work_not_replayed():
++    r=read('result.json')
++    assert all(value is None for value in r['physical'].values())
++    assert not r['synthetic_rho_hold_inserted'] and not r['new_scalar_constitutive_law_inserted']
++    assert not r['native_heat_default_length_used'] and not r['physical_eigenvalue_or_frequency_chosen']
++    assert r['execution']['old_producers_replayed']==0 and r['execution']['old_targeted_checks_rerun']==0
++    assert r['execution']['physical_eigenbranches_evaluated']==0
++    assert not r['Gate7_invoked'] and not r['inherited_domains_changed']
+diff --git a/theory/muon_native_impedance_energy_response_20261006.md b/theory/muon_native_impedance_energy_response_20261006.md
+new file mode 100644
+index 00000000..97f41fba
+--- /dev/null
++++ b/theory/muon_native_impedance_energy_response_20261006.md
+@@ -0,0 +1,315 @@
++# AE4 length and the retained operator-valued formation owner
++
++Starting revision: `bec47682373873a6e6d8d5427a4ee20aa894b125`.
++Scientific reference: `524ed90689bd5923c249bba2e699abf627e703cd`.
++Branch: `codex/muon-parent-maxwell-density-review`, PR #465.
++
++The new result is an **owner reconciliation and exact mode-reduction
++derivation**. The September 6 operator-valued formation rule supersedes the
++old scalar holding-ratio interpretation. It does not supply the additional
++identity connecting that formation mode to AE4's dimensional cutoff energy
++and support-loss surface. The independent scalar constitutive-law route in
++the earlier next-step wording is withdrawn.
++
++This is a precise incomplete owner definition, not an unfinished scalar
++numerical solve. It is not a proof that no compatible future amendment can
++exist, and it does not supersede the AE4 finite-E1 heat functional itself.
++Physical `E_vJ`, length jets, `R_ind`, native photon/family heat response,
++`a_mu` and `g_mu` remain unevaluated.
++
++## Chronology and current authority
++
++| Record | Commit and committed time (UTCâˆ’05) | Actual prescription |
++|---|---|---|
++| AE4 spectral owner | `999be702056dce48850e1e91329d3beb12b98401`, September 1, 19:16:52 | `ell_star=1/E_impedance` at impedance/core equality **and outward-support loss** |
++| Track-2 interface-action decision | `520b37207cb7a2de45440535dd9cfd196579d8c4`, September 6, 07:16:11 | excludes synthetic holding/impedance values and guessed scalar conservation laws |
++| Minimal covariant interface mechanics | `c4eeb2d548b8e49d811af23e4ce58a743a136414`, September 6, 09:07:10 | selects the regular worldvolume action and `RHO-B2`; historical scalar ratio is only a valid one-mode/common-charge reduction |
++
++These dates come from file-specific Git histories, not version-number
++ordering. The three corresponding primary-checkout sources are byte-identical
++to the PR copies; no newer primary-source change was discarded. The retained
++materialized Track-2 decision and mechanics JSON are also read as scientific
++provenance, rather than treating Git as the entire record.
++
++The actual equations are in:
++
++- `ae4_stratified_dirac_zeta_induced_owner.native_spectral_length_contract`,
++  lines 68â€“91;
++- `owner_authorized_encapsulation_interface_action.invariant_control_arguments`,
++  its exclusion of historical synthetic scalar values, and the total-action
++  Noether conservation rule;
++- `covariant_bubble_interface_mechanics`, lines 213â€“265, including the
++  formation Hessian, harmonic inertia and `RHO-B2` denominator;
++- `theory/bhsm_covariant_bubble_interface_mechanics.md`, lines 110â€“117 and
++ 152â€“156, for the one-mode/common-charge restriction and Track-2 scope.
++
++The older `IF5` functional freedom is not reopened: September 6 mechanics
++selects its minimal area member. Its environmental stiffness is
++`gamma_s=alpha_FSC ell_s^(-m_s)`. The actual record uses the regular length
++in `Lambda_s`, with `ell_kappa` as the existing reference. It does not
++declare `ell_s=ell_star`. No equality or additional scale is inserted here.
++
++## What the formation quotient actually determines
++
++On the relevant common constrained response space write
++
++\[
++ Z=H_{\rm impedance},\quad S=\gamma J_\Sigma,\quad
++ R=S+Z,\quad D=H_{\rm event,drive},\quad A_{\rm form}=R-D.
++\]
++
++Here the identification of the constrained bulk response with the impedance
++in the quotient is the **same response/domain identification in the retained
++formation statement**, not replacement by the muon photon or spinor matrices.
++The formation number is
++
++\[
++ \rho_B=\sup_{\psi\ne0}
++       \frac{\langle\psi,D\psi\rangle}
++            {\langle\psi,R\psi\rangle}.
++\]
++
++For an admissible selected simple crossing line,
++`(R-D)psi_star=0`. A valid common-charge scalar reduction on that line,
++with an **action-derived** positive normalization form `M_E`, gives
++
++\[
++ E_R=\frac{\langle\psi,R\psi\rangle}
++             {\langle\psi,M_E\psi\rangle},\quad
++ E_D=\frac{\langle\psi,D\psi\rangle}
++             {\langle\psi,M_E\psi\rangle},\quad E_R-E_D=0.
++\]
++
++The denominator of this historical formation-ratio reduction is therefore
++the **total resistance**, not bulk impedance alone. Using Z alone instead
++gives the exact threshold residual
++
++\[
++ \frac{\langle\psi,(Z-D)\psi\rangle}
++      {\langle\psi,M_E\psi\rangle}
++ =-\frac{\gamma\langle\psi,J_\Sigma\psi\rangle}
++          {\langle\psi,M_E\psi\rangle}.
++\]
++
++It vanishes only when that particular surface contraction vanishes. The
++retained equations do not establish its vanishing on a selected muon
++crossing line. The new symbolic calculation preserves this residual exactly;
++no surface term is dropped and no synthetic numerical `rho_hold` is computed.
++
++This identifies the formation-ratio denominator. It does **not** identify
++either R or Z as AE4's `E_impedance`: neither the equation
++`E_core_AE4=E_D` nor the equality of the formation and support-loss events
++is supplied by these records.
++
++## Formation eigenline versus energy eigenline
++
++An important distinction controls the proposed derivative calculation:
++
++\[
++ (R-D)\psi=0\quad\not\Rightarrow\quad R\psi=E M_E\psi.
++\]
++
++A simple formation mode need not make the resistance Rayleigh quotient
++stationary. For an `M_E`-normalized moving line,
++
++\[
++ E_{R,x}=\psi^\dagger(R_x-E_R M_x)\psi
++   +\psi_x^\dagger(R-E_R M)\psi
++   +\psi^\dagger(R-E_R M)\psi_x.
++\]
++
++The embedding terms disappear only if the actual energy eigenproblem
++holds, or if a proved restricted identity removes them. A one-dimensional
++compression is possible, but its derivative includes derivatives of the
++embedding `iota_star`; the bare operator jet does not suffice.
++
++An exact **identification control**, not a BHSM realization, demonstrates
++this implication failure. Let `u=x+y`,
++
++\[
++ A(\tau,u)=\begin{pmatrix}\tau&u\\u&1\end{pmatrix},\qquad
++ R=\begin{pmatrix}2&1\\1&3\end{pmatrix},\qquad
++ \tau_*(u)=u^2,\quad
++ \psi_*(u)=\frac{(1,-u)^T}{\sqrt{1+u^2}}.
++\]
++
++The line is exactly normalized and `A(tau_*,u)psi_*=0`, with a simple
++crossing near zero. Yet `R psi_*(0)=(2,1)^T` is not `2 psi_*(0)`. Although
++`R_x=R_y=R_xy=0`, its selected-line contraction is
++`(2âˆ’2u+3uÂ²)/(1+uÂ²)`, with first derivativesâˆ’2 and mixed derivative 2.
++Bare Hellmannâ€“Feynman on R would incorrectly return zero. No such matrix,
++mode or number is installed in the physical action.
++
++## Complete generalized energy-eigenbranch response, when justified
++
++For a **genuine**, isolated Hermitian energy eigenbranch on a common
++differentiable form pullback,
++
++\[
++ H\psi=E M\psi,\quad \psi^\dagger M\psi=1,\quad
++ T_x=H_x-E M_x,\quad E_x=\psi^\dagger T_x\psi,
++\]
++
++the required complement response is obtained by a bordered linear solve:
++
++\[
++ \begin{pmatrix}H-EM&M\psi\\\psi^\dagger M&0\end{pmatrix}
++ \binom{r_x}{\lambda_x}=\binom{-T_x\psi}{0},\qquad
++ \psi_x=r_x-\tfrac12(\psi^\dagger M_x\psi)\psi.
++\]
++
++No full inverse is formed. This fixes `psiâ€ M r_x=0` and the phase gauge
++`Im(psiâ€ M psi_x)=0` for real Hermitian source parameters. The mixed result is
++
++\[
++ E_{xy}=\psi^\dagger(H_{xy}-E M_{xy}-E_xM_y-E_yM_x)\psi
++       +\psi^\dagger T_xr_y+\psi^\dagger T_yr_x.
++\]
++
++Equivalently, the two pair terms are minus the corresponding reduced
++resolvent contractions. For fixed M this reduces to the familiar
++`<H_xy>âˆ’<H_x psi,R_red H_y psi>âˆ’<H_y psi,R_red H_x psi>`.
++Both first M-jets, the mixed M-jet, energy-metric cross terms and longitudinal
++normalization are retained. Unit modal norm does not establish `M=I` as an
++operator or prove its source jets zero.
++
++For the actual complex current directions, extend coefficients of the real
++`v,b_A` Hessian using the frozen current weights. Daggering a complex-linear
++direction directly would conjugate those weights incorrectly. The local
++32Ã—8 sources,224 current labels, `b/beta/A_Q` conversions and their source
++directions remain unchanged; no photon variation is relabeled as a shape
++variation or multiplied by the action-index factor 2/3.
++
++If the selected physical line is only a formation eigenline, differentiate
++that formation pencil and retain its first **and mixed** eigenline response
++in the normalized resistance contraction. In particular the mixed terms
++`psi_xyâ€ (R-E_R M)psi + adjoint` need not disappear. The code's energy-
++eigenbranch routine cannot silently replace this calculation.
++
++## Crossing and AE4 consumption
++
++Only after the same-action energy/surface identification is justified may
++the existing length formulas be consumed. On a simple selected crossing
++`F=0`, implicit differentiation gives
++
++\[
++ \tau_x=-F_x/F_\tau,\quad
++ \tau_{xy}=-\frac{F_{xy}+F_{\tau x}\tau_y+F_{\tau y}\tau_x
++                         +F_{\tau\tau}\tau_x\tau_y}{F_\tau}.
++\]
++
++For an energy branch defined at fixed tau, the total selected-surface response
++is `E_total,x=E_x+E_tau tau_x` and
++
++\[
++ E_{\mathrm{total},xy}=E_{xy}+E_{\tau x}\tau_y+E_{\tau y}\tau_x
++                 +E_{\tau\tau}\tau_x\tau_y+E_\tau\tau_{xy}.
++\]
++
++Intrinsic eigenline motion belongs in the fixed tau energy jet; surface
++motion is then included once. A direct computation along the surface already
++contains both and must not receive a second crossing correction.
++
++The previously derived `ell=1/E_total` and `c=ellÂ²` chain rules remain valid
++conditionally. The AE4 lower-limit mixed contribution remains the retained
++
++\[
++ -\tfrac12c_x\operatorname{STr}(e^{-cP}P_y)
++ -\tfrac12c_y\operatorname{STr}(e^{-cP}P_x)
++ +\frac{T(c)}{2c}c_{xy}
++ -\tfrac12\left[\frac{\operatorname{STr}(Pe^{-cP})}{c}
++                 +\frac{T(c)}{c^2}\right]c_xc_y.
++\]
++
++No physical E/length jet has been supplied by this reconciliation, so no
++numeric length contribution is inserted and no `ell=1` default is used.
++`R_ind`, the completed photon response and the family heat consumer remain
++unevaluated. No later Pauli requirement is used as a gate for this work.
++
++## Exact owner amendment required
++
++The unresolved owner identification concerns AE4's scalar inverse-energy/
++support-loss prescription and the later operator/common-charge restriction
++on the old scalar picture. The latter is current for formation; it is
++**not** an amendment selecting a numerical cutoff energy. These distinct
++event rules are not proved contradictory.
++
++For the historical formation-ratio compatibility schema below, the smallest
++useful matching statement must identify:
++
++1. the same selected constrained eigenline/event, including the relation
++   between the formation zero and AE4's support-loss/core surface;
++2. the common-charge energy normalization `M_E`, with units making
++   `E_impedance` an energy and `ell_starÂ² P_strat` dimensionless;
++3. the operator combination whose normalized contraction is AE4's scalar.
++
++A compatibility schema for the historical formation interpretation is
++
++\[
++ E_{\rm impedance}^{\rm AE4}
++   =\frac{\iota_*^\dagger R\iota_*}{\iota_*^\dagger M_E\iota_*},\qquad
++ E_{\rm core}^{\rm AE4}
++   =\frac{\iota_*^\dagger D\iota_*}{\iota_*^\dagger M_E\iota_*}.
++\]
++
++This schema is **not adopted** here. Its normalization and event identities
++are not consequences of the quotient. A different already-owned scalarization
++would need its explicit action equality/provenance instead. Choosing Z alone,
++choosing R by name, normalizing with an arbitrary identity matrix, or choosing
++inverse eigenvalue versus inverse frequency would add a new assumption.
++The harmonic equation `I_lambda D_tauÂ² a +(gamma j+Z)a=f` provides inertia;
++it does not by itself identify its stiffness eigenvalue with an energy.
++No observed mass, lifetime, anomaly, alpha, fitted scale or new function is
++requested or inserted.
++
++This is an explicit same-action matching amendment to the existing owner,
++not a demand to reconstruct the entire history or close every Track-2/Gate-7
++condition. It cannot be resolved by more precision on the frozen muon
++matrices. A compatible amendment could exist; an absolute incompatibility
++theorem for all possible reductions is not claimed.
++
++## Executed checks and provenance
++
++Eight new targeted checks pass. They include the actual owner equations and
++chronology, exact total-resistance/bulk-only residual, formation-versus-energy
++line distinction, generalized first/mixed perturbation, an independent mixed
++equation and normalization solve, fixed-M reduction, and once-only crossing
++chain rule. The old seven checks and all production were not rerun.
++
++The 3-dimensional supplied **arithmetic control** uses a nonidentity M with
++nonzero first/mixed M-jets. Its first directional equation residual is
++6.94e-18 and mixed symmetry residual is zero. Its mixed derivative is
++0.033374773374773375; direct two-parameter differences agree to 1.46e-11 at
++step 1e-3. Smaller steps have larger subtraction roundoff (up to 3.35e-9 at
++2.5e-4), so no convergent enclosure or rigorous remainder is inferred.
++Perturbed M-normalization residuals are at most 6.66e-16. Dropping moving M
++changes that control's mixed derivative by 0.00221704221704222. These numbers
++are neither BHSM physical operands nor muon anomalies/error estimates.
++
++The initial fetch emitted stale-worktree metadata permission warnings from
++Git automatic maintenance. A fetch with automatic maintenance disabled
++completed; no manual deletion, cleaning or metadata repair was attempted.
++The working branch and PR head were verified. Physical domains, source
++continuation, accepted parent solution, family/time jets, corrected source
++arrays, primitive response and frozen local values are unchanged.
++
++New artifacts are under
++`artifacts/muon_native_impedance_energy_response_20261006/run_1/`.
++They include 15 input/source SHA-256 identities, exact chronology,
++reconciliation, normalized complement-control actions, conditional response
++equations, the minimal amendment, error scope and checkpoint. Physical
++H/M/state/source-jet and downstream quantities are explicitly null.
++
++Reproduce into a fresh directory:
++
++```powershell
++C:\Python314\python.exe scripts/replay_muon_native_impedance_energy_response.py --output <fresh-directory>
++C:\Python314\python.exe -m pytest --noconftest -q tests/test_muon_native_impedance_energy_response.py
++```
++
++Source snapshots preserve executed bytes; canonical-LF hashes distinguish
++line-ending changes from scientific source differences. Publication metadata
++records the exact scientific revision and verified PR head. The older
++checkpoint's local evaluated arrays and generic implicit-length identities
++remain evidence; its independent scalar-law next-step wording is superseded
++by this report.
