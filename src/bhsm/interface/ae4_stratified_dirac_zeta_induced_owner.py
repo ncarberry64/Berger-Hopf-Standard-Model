@@ -20,6 +20,7 @@ from typing import Any
 ACTION_VERSION = "BHSM-AE-4.0.0"
 PREDECESSOR_ACTION_VERSION = "BHSM-AE-3.1.0"
 CLASSIFICATION = "AE4_STRATIFIED_DIRAC_ZETA_INDUCED_ACTION_OWNER_SELECTED"
+CUTOFF_OWNER_TAG = "BHSM-AE4-MODE-FREQUENCY-CUTOFF-2026-10-07"
 RELEVANT_MOMENT_ORDERS = (8, 6, 5, 4, 3, 2)
 
 
@@ -66,15 +67,32 @@ def proper_time_moment_ratio(
 
 
 def native_spectral_length_contract() -> dict[str, Any]:
-    """Bind the sole spectral length to the BHSM collapse surface.
+    """Bind the length to the adopted support-loss mode-frequency owner.
 
     The rule is an owner selection, not a numerical evaluation.  In natural
-    units the length is the inverse of the action-derived impedance energy at
-    the first future surface where exterior spacetime support reaches the core
-    threshold.  No astrophysical or particle datum is used to set it.
+    units E^2 is total restoring resistance divided by kinetic inertia on the
+    continuously transported physical branch at AE4's support-loss event.
+    Formation is not identified with that event. No particle datum sets it.
     """
 
     return {
+        "cutoff_owner_tag": CUTOFF_OWNER_TAG,
+        "definition_status": "ADOPTED_OWNER__PHYSICAL_BRANCH_CONTRACTIONS_UNEVALUATED",
+        "total_restoring_resistance": "R_star=gamma_star J_Sigma+H_impedance",
+        "kinetic_inertia": (
+            "I_star=positive action-owned kinetic inertia in "
+            "I_lambda D_tau^2 a_lambda+R_lambda a_lambda=f_lambda"
+        ),
+        "branch_rule": (
+            "CONTINUOUS_TRANSPORT_OF_ACTION_SELECTED_FORMATION_BRANCH_TO_"
+            "AE4_FIRST_FUTURE_SUPPORT_LOSS_EVENT"
+        ),
+        "impedance_energy_rule_natural_units": (
+            "E_impedance=sqrt(<psi_star,R_star psi_star>/<psi_star,I_star psi_star>)"
+        ),
+        "core_energy_rule_natural_units": (
+            "E_core=sqrt(<psi_star,H_event,drive psi_star>/<psi_star,I_star psi_star>)"
+        ),
         "surface_rule": (
             "Sigma_star=FIRST_FUTURE_SURFACE_WHERE_"
             "E_impedance[Phi;Sigma]=E_core[Phi;Sigma]_AND_OUTWARD_"
@@ -83,12 +101,79 @@ def native_spectral_length_contract() -> dict[str, Any]:
         "spectral_length_rule_natural_units": (
             "ell_star=1/E_impedance[Phi_star;Sigma_star]"
         ),
+        "heat_length_squared_rule": (
+            "c_star=ell_star^2=<psi_star,I_star psi_star>/<psi_star,R_star psi_star>"
+        ),
+        "proper_clock_units": "hbar=c_light=1; frequency energy uses the owned physical D_tau",
+        "formation_zero_is_support_loss_by_default": False,
+        "surface_Jacobi_contribution_retained": True,
+        "bulk_impedance_only_cutoff_allowed": False,
+        "selected_mode_is_resistance_eigenvector_by_default": False,
+        "source_jets_are_total_branch_derivatives": True,
+        "physical_default_ell_equals_one_allowed": False,
+        "measured_particle_or_anomaly_input": False,
         "ell_star_is_BHSM_native_geometry_functional": True,
         "ell_star_is_free_universal_cutoff": False,
         "first_crossing_not_singular_endpoint_evaluation": True,
         "black_hole_magnetar_neutron_and_atomic_data_set_ell_star": False,
         "those_systems_are_downstream_tests_of_one_surface_rule": True,
         "numerical_ell_star_evaluated_on_current_C2": False,
+    }
+
+
+def native_mode_frequency_energy(
+    *, surface_jacobi: float, bulk_impedance: float, kinetic_inertia: float
+) -> float:
+    """Evaluate supplied SAME-branch contractions, not a branch producer.
+
+    ``surface_jacobi`` is <psi,gamma J psi> and is required, even if a
+    separate action proof gives zero. Unknown terms must not be passed as zero.
+    Positivity is required of the total resistance and inertia, not of J alone.
+    """
+    surface = float(surface_jacobi)
+    bulk = float(bulk_impedance)
+    if not math.isfinite(surface) or not math.isfinite(bulk):
+        raise ValueError("both restoring contributions must be finite and supplied")
+    resistance = _positive_finite(surface + bulk, "total resistance")
+    inertia = _positive_finite(kinetic_inertia, "kinetic inertia")
+    return math.sqrt(resistance / inertia)
+
+
+def native_heat_length_squared(
+    *, surface_jacobi: float, bulk_impedance: float, kinetic_inertia: float
+) -> float:
+    """Evaluate c=i/r directly, with both restoring terms required."""
+    surface = float(surface_jacobi)
+    bulk = float(bulk_impedance)
+    if not math.isfinite(surface) or not math.isfinite(bulk):
+        raise ValueError("both restoring contributions must be finite and supplied")
+    resistance = _positive_finite(surface + bulk, "total resistance")
+    return _positive_finite(kinetic_inertia, "kinetic inertia") / resistance
+
+
+def native_heat_length_squared_jets(
+    *, r: float, i: float, r_x: complex, r_y: complex, r_xy: complex,
+    i_x: complex, i_y: complex, i_xy: complex
+) -> dict[str, Any]:
+    """Chain rule on SUPPLIED TOTAL branch contractions; x=v, y=J.
+
+    Include embedding, event, pairing, domain and source motion in r/i jets
+    before calling. A second event-motion correction would double count it.
+    Complex current weights are extended linearly, never conjugated here.
+    No eigenvector stationarity or source-independent length is assumed.
+    """
+    r = _positive_finite(r, "total resistance contraction")
+    i = _positive_finite(i, "inertia contraction")
+    jets = [complex(z) for z in (r_x, r_y, r_xy, i_x, i_y, i_xy)]
+    if not all(math.isfinite(z.real) and math.isfinite(z.imag) for z in jets):
+        raise ValueError("all total branch jets must be finite and supplied")
+    rx, ry, rxy, ix, iy, ixy = jets
+    return {
+        "c": i/r,
+        "c_x": ix/r-i*rx/r**2,
+        "c_y": iy/r-i*ry/r**2,
+        "c_xy": ixy/r-(ix*ry+iy*rx+i*rxy)/r**2+2*i*rx*ry/r**3,
+        "scope": "CHAIN_RULE_ON_SUPPLIED_TOTAL_BRANCH_CONTRACTIONS",
     }
 
 
@@ -110,9 +195,18 @@ def forward_time_domain_contract() -> dict[str, Any]:
 
 
 def enclosure_holding_threshold_hypothesis() -> dict[str, Any]:
-    """Record the native cross-scale stability hypothesis fail-closed."""
+    """Preserve the historical scalar hypothesis, superseded by RHO-B2."""
 
     return {
+        "classification": "HISTORICAL_SCALAR_HOLDING_HYPOTHESIS_SUPERSEDED",
+        "active_owner": False,
+        "current_owner": "RHO-B2_OPERATOR_VALUED_FORMATION_QUOTIENT",
+        "current_definition": (
+            "rho_B=sup_(psi!=0) <psi,H_event,drive psi>/"
+            "<psi,(gamma J_Sigma+H_impedance)psi>"
+        ),
+        "scalar_reduction_scope": "one-mode common-charge reduction only",
+        "formation_zero_is_support_loss_by_default": False,
         "dimensionless_control_candidate": (
             "rho_hold=E_mode/E_impedance[Phi;Sigma_enclosure]"
         ),
@@ -238,6 +332,7 @@ def claim_boundary() -> dict[str, Any]:
         "AE4_POSITIVE_ORDER_M8_M5_M4_MOMENT_RATIOS_DERIVED": True,
         "AE4_INDEPENDENT_CROSS_STRATUM_WILSON_ONTOLOGY_RETIRED": True,
         "AE4_ELL_STAR_NATIVE_COLLAPSE_SURFACE_OWNER_RULE_SELECTED": True,
+        "AE4_MODE_FREQUENCY_CUTOFF_OWNER_DEFINITION_ADOPTED": True,
         "AE4_FUTURE_DIRECTED_PARENT_CHILD_DOMAIN_SELECTED": True,
         "AE4_COMMON_SPECTRAL_LENGTH_PHYSICAL_ORIGIN_DERIVED": False,
         "AE4_CURRENT_C2_COLLAPSE_IMPEDANCE_ENERGY_EVALUATED": False,
@@ -248,10 +343,9 @@ def claim_boundary() -> dict[str, Any]:
         "AE4_PHYSICAL_M8_M5_M4_NUMERICAL_COEFFICIENTS_DERIVED": False,
         "FULL_BHSM_COMPLETE": False,
         "exact_next_calculation": (
-            "CONSTRUCT_THE_GLOBAL_OPERATOR_VALUED_RELATIVE_BOUNDARY_DIRAC_DOMAIN_"
-            "THEN_EVALUATE_THE_FIRST_FUTURE_CURRENT_C2_IMPEDANCE_CROSSING_"
-            "TO_OBTAIN_ELL_STAR_AND_THE_STRATIFIED_HEAT_COEFFICIENTS_AND_"
-            "RELATIVE_ZETA_ETA_TERMS"
+            "EVALUATE_THE_TRANSPORTED_PHYSICAL_BRANCH_AT_AE4_SUPPORT_LOSS:_"
+            "TOTAL_RESISTANCE_AND_INERTIA_CONTRACTIONS_AND_TOTAL_SOURCE_JETS;_"
+            "CONSUME_c=i/r_IN_THE_SAME_STRATIFIED_HEAT_AND_RELATIVE_COMPLETION"
         ),
     }
 
@@ -259,6 +353,7 @@ def claim_boundary() -> dict[str, Any]:
 __all__ = [
     "ACTION_VERSION",
     "CLASSIFICATION",
+    "CUTOFF_OWNER_TAG",
     "PREDECESSOR_ACTION_VERSION",
     "RELEVANT_MOMENT_ORDERS",
     "claim_boundary",
@@ -268,6 +363,9 @@ __all__ = [
     "induced_local_weight_ledger",
     "microscopic_owner_contract",
     "native_spectral_length_contract",
+    "native_mode_frequency_energy",
+    "native_heat_length_squared",
+    "native_heat_length_squared_jets",
     "proper_time_moment",
     "proper_time_moment_ratio",
 ]
