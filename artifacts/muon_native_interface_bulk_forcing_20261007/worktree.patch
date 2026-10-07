@@ -1,0 +1,1049 @@
+diff --git a/.gitattributes b/.gitattributes
+index 969e641b..59d075de 100644
+--- a/.gitattributes
++++ b/.gitattributes
+@@ -49,3 +49,11 @@ theory/muon_joint_variational_attachment_20261005.md text eol=lf
+ 
+ # Preserve downloaded museum research snapshots and their recorded hashes.
+ museum/public/research/** -text whitespace=cr-at-eol
++
++# Recovered seven-port sources retain their original scientific bytes.
++src/bhsm/interface/joint_boundary_port_reduction.py -text whitespace=cr-at-eol
++src/bhsm/interface/heat_zeta_mixed_boundary_launch.py -text whitespace=cr-at-eol
++src/bhsm/interface/geometric_material_port.py -text whitespace=cr-at-eol
++src/bhsm/interface/muon_native_interface_bulk_forcing.py text eol=lf
++tests/test_muon_native_interface_bulk_forcing.py text eol=lf
++theory/muon_native_interface_bulk_forcing_20261007.md text eol=lf
+diff --git a/scripts/control_muon_interface_forcing.py b/scripts/control_muon_interface_forcing.py
+new file mode 100644
+index 00000000..de13d5e1
+--- /dev/null
++++ b/scripts/control_muon_interface_forcing.py
+@@ -0,0 +1,101 @@
++"""Exact finite KKT control; no BHSM physical source or action is selected."""
++import sympy as sp
++from flint import arb_mat, ctx
++
++from bhsm.interface.muon_native_interface_bulk_forcing import (
++    seven_port_forcing_direction, solve_bulk_forcing_column,
++    real_stationary_impedance_column,
++)
++from bhsm.interface.joint_boundary_port_reduction import reduce_seven_port, moving_port_jet
++
++
++def amat(matrix):
++    return arb_mat([[str(x) for x in row] for row in sp.Matrix(matrix).tolist()])
++
++
++def exact_control():
++    q = sp.Rational
++    T = sp.eye(3)
++    direction = sp.Matrix([q(1, 5), q(2, 7), -q(1, 3)])
++    shape = sp.Matrix([q(1, 11), -q(1, 13), q(1, 17)])
++    momentum = sp.Matrix([q(2, 5), -q(3, 7)])
++    force = sp.Matrix([q(11, 13), q(5, 17)])
++    conormal = sp.Matrix([q(1, 19), -q(2, 23)])
++    mixed = sp.Matrix([q(3, 29), -q(5, 31)])
++    rate = sp.Matrix([q(7, 37), q(11, 41)])
++    b = (T * direction + shape).col_join(momentum).col_join(force - conormal - mixed - rate)
++    A = sp.Matrix([[4, 1], [1, 3]])
++    d = sp.Matrix([[1, 1]])
++    C = sp.Matrix([[q(1, k + 2) for k in range(7)],
++                   [(-1)**k * q(1, k + 3) for k in range(7)]])
++    s = sp.Matrix([[q(1, k + 7) for k in range(7)]])
++    D = 9 * sp.eye(7)
++    n0, n1, lam, t = sp.symbols('n0 n1 lam t', real=True)
++    n = sp.Matrix([n0, n1]); variables = sp.Matrix([n0, n1, lam])
++    # L = 1/2 physical Q plus the same source-dependent constraint.
++    L = ((n.T * A * n)[0] / 2 + t * (n.T * C * b)[0]
++         + t**2 * (b.T * D * b)[0] / 2 + lam * ((d * n)[0] - t * (s * b)[0]))
++    E = sp.Matrix([sp.diff(L, x) for x in variables])
++    H = E.jacobian(variables)
++    f = E.diff(t)
++    delta = H.LUsolve(-f)
++    qxx = (b.T * D * b)[0]
++    physical_direct = sp.expand((delta[:2, :].T * A * delta[:2, :])[0]
++                               + 2 * (delta[:2, :].T * C * b)[0] + qxx)
++    schur = qxx + (f.T * delta)[0]
++    # A nonunitary residual-row scaling preserves response but not impedance.
++    row_map = sp.diag(2, 3, 5)
++    wrong_schur = qxx + ((row_map * f).T * delta)[0]
++    gp = sp.Matrix([q(k + 1, 17) for k in range(7)])
++    gn = sp.Matrix([[q(k + 1, 13), q(1, k + 11), -q(1, k + 19)] for k in range(7)])
++    B = sp.Matrix([[q(k + 1, 23), q(1, k + 29)] for k in range(7)])
++    Bdot = sp.Matrix([[q(1, k + 31), -q(1, k + 37)] for k in range(7)])
++    reaction = sp.Matrix([q(2, 3), -q(1, 5)])
++    reaction_dot = sp.Matrix([q(1, 7), q(3, 11)])
++    moving_exact = sp.diff((B + t * Bdot) * (reaction + t * reaction_dot), t).subs(t, 0)
++    return locals()
++
++
++def execute_control():
++    ctx.prec = 256
++    x = exact_control()
++    b = seven_port_forcing_direction(**{key: amat(x[name]) for key, name in (
++        ('trace_map', 'T'), ('state_direction', 'direction'), ('trace_shape', 'shape'),
++        ('momentum', 'momentum'), ('force', 'force'), ('conormal', 'conormal'),
++        ('momentum_mixed', 'mixed'), ('momentum_rate_direction', 'rate'))})
++    solved = real_stationary_impedance_column(amat(x['H']), amat(x['f']), str(x['qxx']))
++    # Arithmetic coercion: Q_XX is a scalar in the same real Arb field.
++    reduced = reduce_seven_port(amat(x['H']), amat(x['f']),
++                               {'control': dict(p=amat(x['gp']), n=amat(x['gn']))})
++    row_solved = solve_bulk_forcing_column(amat(x['row_map'] * x['H']), amat(x['row_map'] * x['f']))
++    moved = moving_port_jet(amat(x['B']), amat(x['reaction']), amat(x['reaction_dot']), [amat(x['Bdot'])])
++    def enclosed(matrix, expected):
++        target = amat(expected)
++        return all((matrix[i, j] - target[i, j]).contains(0)
++                   for i in range(matrix.nrows()) for j in range(matrix.ncols()))
++    checks = dict(
++        seven_components=enclosed(b, x['b']) and (b.nrows(), b.ncols()) == (7, 1),
++        mixed_derivative_exact=x['f'] == (x['C'] * x['b']).col_join(-x['s'] * x['b']),
++        source_dependent_constraint_retained=(x['d'] * x['delta'][:2, :])[0] == (x['s'] * x['b'])[0],
++        response_contains_exact=enclosed(solved['response'], x['delta']),
++        stationary_residual_contains_zero=all(v.contains(0) for v in solved['replay'].entries()),
++        direct_physical_schur_exact=sp.simplify(x['physical_direct'] - x['schur']) == 0,
++        direct_schur_arb_overlap=solved['difference'].contains(0),
++        signed_output_forward_adjoint=enclosed(reduced['reduced'], x['gp'] + x['gn'] * x['delta']),
++        moving_port_full_product_rule=enclosed(moved, x['moving_exact']),
++        nonunitary_row_map_preserves_response=enclosed(row_solved['response'], x['delta']),
++        residual_row_schur_is_wrong=sp.simplify(x['wrong_schur'] - x['schur']) != 0,
++    )
++    report = dict(classification='EXACT_AND_ARB_FINITE_CONTROL__NOT_NATIVE_BHSM',
++                  checks=checks, all_checks_pass=all(checks.values()), precision_bits=ctx.prec,
++                  b_control=[str(v) for v in x['b']], f_control=[str(v) for v in x['f']],
++                  response_control=[str(v) for v in x['delta']], impedance_control=str(x['schur']),
++                  wrong_residual_row_impedance=str(x['wrong_schur']),
++                  response_replay=[str(v) for v in solved['replay'].entries()],
++                  direct_schur_difference=str(solved['difference']),
++                  counts=dict(solved_forcing_columns=1, physical_forcing_columns=0,
++                              heat_evaluations=0, full_7x73_recomputations=0),
++                  error_scope='Arb rounding enclosures for prescribed exact finite entries only; no physical, continuum, history or soft-transfer error bound')
++    arrays = {name: sp.Matrix(x[name]) for name in ('T', 'direction', 'shape', 'momentum', 'force',
++              'conormal', 'mixed', 'rate', 'b', 'A', 'd', 'C', 's', 'D', 'H', 'f', 'delta', 'row_map', 'gp', 'gn')}
++    return report, arrays
+diff --git a/scripts/replay_muon_native_interface_bulk_forcing.py b/scripts/replay_muon_native_interface_bulk_forcing.py
+new file mode 100644
+index 00000000..06cfdf53
+--- /dev/null
++++ b/scripts/replay_muon_native_interface_bulk_forcing.py
+@@ -0,0 +1,181 @@
++"""Recover port identities and execute one finite forcing-column control.
++
++Frozen Gate7 producers and all physical/history solvers are never invoked.
++Cached matrices are inspected for identities/shapes, not re-evaluated.
++"""
++from __future__ import annotations
++import argparse
++import hashlib
++import json
++from pathlib import Path
++import shutil
++import subprocess
++import sys
++import time
++import numpy as np
++
++ROOT = Path(__file__).resolve().parents[1]
++sys.path.insert(0, str(ROOT / 'src'))
++sys.path.insert(0, str(ROOT / 'scripts'))
++from control_muon_interface_forcing import execute_control
++from bhsm.interface.ae4_stratified_dirac_zeta_induced_owner import native_spectral_length_contract
++
++
++def save(path, value):
++    path.write_text(json.dumps(value, indent=2, sort_keys=True, allow_nan=False) + '\n', encoding='utf8')
++
++
++def git(where, *args):
++    return subprocess.check_output(['git', '-c', 'gc.auto=0', '-c', 'maintenance.auto=false', *args], cwd=where, text=True).strip()
++
++
++def identity(path):
++    raw = path.read_bytes()
++    return dict(path=str(path.resolve()), sha256=hashlib.sha256(raw).hexdigest(),
++                canonical_LF_sha256=hashlib.sha256(raw.replace(b'\r\n', b'\n')).hexdigest()
++                if path.suffix in ('.py', '.json', '.md') else None)
++
++
++def run(output, history):
++    if output.exists():
++        raise FileExistsError('Fresh output required; preserve earlier scientific caches')
++    output.mkdir(parents=True)
++    start = time.perf_counter()
++    base = history / 'artifacts/flagship_integration'
++    cache_names = dict(geometric_material='gate7_geometric_material_port_20260927',
++                       joint_port='gate7_joint_port_20260927',
++                       residual_jet='gate7_coupled_fiber_center_20260927/jet',
++                       launch='gate7_launch_response_20260927')
++    paths = {name: ROOT / relative for name, relative in dict(
++        replay='scripts/replay_muon_native_interface_bulk_forcing.py',
++        control='scripts/control_muon_interface_forcing.py',
++        adapter='src/bhsm/interface/muon_native_interface_bulk_forcing.py',
++        tests='tests/test_muon_native_interface_bulk_forcing.py',
++        recovered_port='src/bhsm/interface/joint_boundary_port_reduction.py',
++        recovered_heat='src/bhsm/interface/heat_zeta_mixed_boundary_launch.py',
++        recovered_material='src/bhsm/interface/geometric_material_port.py',
++        current_owner='src/bhsm/interface/ae4_stratified_dirac_zeta_induced_owner.py',
++        current_branch_jets='src/bhsm/interface/muon_native_support_loss_cutoff.py',
++        frozen_local='artifacts/muon_source_jet_20261002/frozen_local.json').items()}
++    for name, relative in dict(residual_producer='scripts/solve_n12_gate7_fiber_constrained_center.py',
++                               port_producer='scripts/derive_n12_gate7_joint_port_reduction.py',
++                               material_producer='scripts/bind_n12_gate7_geometric_material_port.py',
++                               signed_owner_ledger='scripts/evaluate_n12_gate7_current_contractions.py',
++                               trace_source='src/bhsm/interface/aether_cross_resolution_reconnaissance_v21_35.py').items():
++        paths[name] = history / relative
++    cache_roles = {}
++    selected = dict(geometric_material=('trace_action_3x98_mid_q', 'local_required_material_4x73_mid_q'),
++                    joint_port=('local125_forcing_mid_q', 'local125_port_normal_derivative_mid_q'),
++                    residual_jet=('J125_mid_q',),
++                    launch=('launch_action_mid_q', 'corrected_state_action_mid_q', 'native_event_7x98_mid_q'))
++    for name, folder in cache_names.items():
++        arrays = base / folder / 'arrays.npz'; report_path = base / folder / 'report.json'
++        paths[name + '_arrays'] = arrays; paths[name + '_report'] = report_path
++        report = json.loads(report_path.read_text(encoding='utf8'))
++        with np.load(arrays, allow_pickle=False) as z:
++            shapes = {key: list(z[key].shape) for key in selected[name]}
++        cache_roles[name] = dict(shapes=shapes, saved_status=report['status'],
++                                 saved_arrays_sha256=report['arrays_SHA256'], physical_operator_replayed=False)
++        if identity(arrays)['sha256'].upper() != report['arrays_SHA256'].upper():
++            raise ValueError('Required cache identity changed: ' + name)
++        if name == 'geometric_material':
++            cache_roles[name].update(rows=report['rows'], no_double_counting=report['no_double_counting'],
++                                     seven_action_seed_requirement_retired=report['seven_action_seed_requirement_retired'])
++    recovered = {}
++    for name in ('joint_boundary_port_reduction.py', 'heat_zeta_mixed_boundary_launch.py', 'geometric_material_port.py'):
++        original = history / 'src/bhsm/interface' / name
++        copied = ROOT / 'src/bhsm/interface' / name
++        if original.read_bytes() != copied.read_bytes():
++            raise ValueError('Recovered helper differs from scientific source: ' + name)
++        paths['original_' + name] = original
++        recovered[name] = dict(sha256=identity(original)['sha256'], copied_byte_identical=True,
++                               last_source_commit=git(history, 'log', '-1', '--format=%H', '--', 'src/bhsm/interface/' + name))
++    save(output / 'input_hashes.json', {name: identity(path) for name, path in paths.items()})
++    save(output / 'starting_revision.json', dict(HEAD=git(ROOT, 'rev-parse', 'HEAD'),
++        branch=git(ROOT, 'branch', '--show-current'), working_tree_status=git(ROOT, 'status', '--short'),
++        scientific_reference='524ed90689bd5923c249bba2e699abf627e703cd',
++        read_only_history_HEAD=git(history, 'rev-parse', 'HEAD'), read_only_history_branch=git(history, 'branch', '--show-current')))
++    (output / 'starting_worktree.diff').write_text(git(ROOT, 'diff', '--binary') + '\n', encoding='utf8')
++    save(output / 'recovered_helpers.json', recovered)
++    save(output / 'cache_roles.json', cache_roles)
++    identification = dict(
++        actual_cached_residual='F_local=[C_left/s_left; C_right/s_right; T_test HS_13; (lambda_left-s_descriptor,left)/1e-7]',
++        HS_13='z1-z0-h*(f0+4*fmid+f1)/6, h=1/4',
++        row_count={'left_constraints': 25, 'right_constraints': 25, 'flow_matching': 74, 'descriptor': 1},
++        recovered_F_n='J125 (125x125), local corrected interval-13 constraint/flow/descriptor derivative',
++        recovered_F_p='local125_forcing (125x73), launch forcing; not F_b',
++        recovered_g_n='local125_port_normal_derivative (7x125), output derivative; not F_b',
++        required_identification='F_local=C E_owner in common internal coordinates and inherited domains',
++        source_partial='D_s F_local=C h_psi+(D_s C)E_owner at fixed internal coordinates',
++        internal_partial='F_n=C H_owner+(D_n C)E_owner',
++        at_owned_stationarity='E_owner=0 => f_local=C h_psi and F_n=C H_owner; same response if the consumed row/dual map is valid',
++        dual_contraction='h_psi^dagger H_owner^-1 h_psi=f_local^dagger C^-dagger F_n^-1 f_local; row transformations are not form congruences',
++        signed_action_ledger='Gamma_attached-Gamma_SM_zeta+Gamma_heat=Gamma_classical+Gamma_heat',
++        retained_caveat='The attached-action flow is not assumed stationary for L_classical after vacuum subtraction',
++        same_current_AE4_support_loss_base_proved=False, row_or_consumed_dual_map_C=None,
++        physical_seven_port_source_map_provided=False,
++        scope='Examined concrete producers and retained cache roles; no assertion of absence from all scientific records')
++    save(output / 'row_identification.json', identification)
++    # Execute the new finite control exactly once; never invoke the old producers.
++    control, arrays = execute_control()
++    if not control['all_checks_pass']:
++        raise ArithmeticError('New finite control failed')
++    save(output / 'control.json', control)
++    save(output / 'control_exact_arrays.json', {name: [[str(v) for v in row] for row in matrix.tolist()]
++                                               for name, matrix in arrays.items()})
++    ownership = dict(
++        geometric_trace=dict(status='RECOVERED_LOCAL_GEOMETRIC_MAP', note='T Dq + explicit shape/frame; not three action seeds'),
++        material_momentum_flux=dict(status='RECOVERED_LOCAL_DYNAMIC_MAP', note='DP, DF-DG-D2P[X,u]-DP[DXu]; no static replacement'),
++        reset_contact_Wentzell_scalar_constraint=dict(status='RETAINED_SIGNED_DEPENDENCIES', note='Count once when same-owner assembly is supplied; no independent zero-filled additions'),
++        same_owner_stationary_forcing=dict(status='UNEVALUATED', value=None),
++        surface_Jacobi=dict(status='UNEVALUATED', value=None),
++        kinetic_inertia=dict(status='UNEVALUATED', value=None),
++        native_bulk_heat=dict(status='UNEVALUATED', value=None),
++        state_variation=dict(status='UNEVALUATED', value=None),
++        contact=dict(status='UNEVALUATED', value=None),
++        domain_boundary=dict(status='UNEVALUATED', value=None),
++        completion_counterterm=dict(status='UNEVALUATED', value=None),
++        strong_within_native=dict(status='UNEVALUATED_SUBSET_OF_NATIVE', value=None))
++    next_operand = dict(
++        name='same-owner normal-source Euler column in the existing seven-port coordinates',
++        symbol='h_psi=D_b E_owner[b_psi], b_psi=B_boundary[xi_psi]',
++        defining_weak_equation='<eta,h_psi>=D_Phi D_X S_bulk^owner[eta,xi_psi] for allowed zero-trace eta',
++        input_space='action-selected support-loss normal direction, mapped to 3 trace + 2 momentum + 2 dynamic-flux coordinates',
++        output_space='owned internal Euler/constraint dual (or its one consumed local-row/dual image)',
++        concrete_producer='same-owner bulk/interface variation with moving-seam trace, canonical momentum, conormal and momentum-rate pullback',
++        concrete_consumer='solve_bulk_forcing_column: F_n delta=-f_local, then owned-dual impedance contraction',
++        assembly_stop='No supplied physical normal-to-state/material column or C E_owner identification; cached F_p and g_n cannot form F_b b_psi',
++        not_required='all seven physical directions, all 73 launches, full 7x73 materialization or Gate7 closure',
++        value=None, physical_missing_postulate_not_asserted=True)
++    physical = dict(xi_psi=None, b_psi=[None] * 7, F_n_same_owner=None, f_psi=None,
++                    deltaPhi_psi=None, owned_residual_norm=None, z_psi=None,
++                    r=None, i=None, c=None, R_ind=None, a_mu=None, g_mu=None)
++    result = dict(classification='SEVEN_PORT_OWNER_RECONCILIATION_AND_ONE_COLUMN_CONTROL__NO_NATIVE_EVALUATION',
++                  physical=physical, next_operand=next_operand, ownership=ownership,
++                  owner_contract=native_spectral_length_contract(),
++                  frozen_local=json.loads(paths['frozen_local'].read_text(encoding='utf8')),
++                  execution=dict(new_finite_control_runs=1, historical_producer_runs=0,
++                                 physical_forcing_columns=0, physical_response_solves=0,
++                                 physical_transfer_directions=0, full_7x73_recomputations=0, physical_heat_applications=0),
++                  numerical_error_scope=control['error_scope'], same_owner_identification=identification)
++    save(output / 'result.json', result)
++    save(output / 'checkpoint.json', dict(id='BHSM_MUON_SEVEN_PORT_ONE_COLUMN_20261007',
++         completed='existing 3/4 map and one-column algebra recovered; cached F_p/g_n distinguished; row/dual correction derived and tested',
++         next_operand=next_operand, native_values_evaluated=False, replay_old_production=False))
++    snapshots = output / 'executed_source'; snapshots.mkdir()
++    for name in ('adapter', 'replay', 'control', 'tests', 'recovered_port', 'recovered_heat', 'recovered_material'):
++        shutil.copy2(paths[name], snapshots / paths[name].name)
++    save(output / 'replay_receipt.json', dict(elapsed_seconds=time.perf_counter() - start,
++         finite_control_checks=control['checks'], old_producers_invoked=[],
++         output_hashes={p.name: identity(p)['sha256'] for p in output.iterdir() if p.is_file()},
++         test_history=[dict(passed=11, failed=1, reason='new test passed a string to Arb.contains; corrected explicit scalar conversion'),
++                       dict(passed=12, failed=0, command='pytest --noconftest -q tests/test_muon_native_interface_bulk_forcing.py')]))
++    print(json.dumps(dict(output=str(output.resolve()), control_passed=control['all_checks_pass'], physical_evaluations=0)))
++
++
++if __name__ == '__main__':
++    parser = argparse.ArgumentParser(description=__doc__)
++    parser.add_argument('--output', type=Path, required=True)
++    parser.add_argument('--history-repository', type=Path, default=Path(r'C:\Users\carbe\OneDrive\Documents\CODEX\Berger-Hopf-Standard-Model'))
++    args = parser.parse_args()
++    run(args.output, args.history_repository)
+diff --git a/src/bhsm/interface/geometric_material_port.py b/src/bhsm/interface/geometric_material_port.py
+new file mode 100644
+index 00000000..0470271a
+--- /dev/null
++++ b/src/bhsm/interface/geometric_material_port.py
+@@ -0,0 +1,82 @@
++"""The owned 3-geometric/4-material port, with its dynamic-flux operator.
++
++Trace coordinates are not action seeds. Configuration virtual work is force;
++the native dynamic flux additionally contains conormal and momentum-rate
++terms. All inputs must be owned and evaluated in the same material frame.
++"""
++from flint import arb_mat
++from bhsm.interface.heat_zeta_mixed_boundary_launch import heat_divided_difference
++
++TRACE_OBJECT = 'GEOMETRIC_TRACE_HISTORY_JET_3x73'
++MATERIAL_OBJECT = 'CURRENT_CENTER_HEAT_ZETA_MIXED_MATERIAL_LAUNCH_JET_4x73'
++
++
++def geometric_trace_jet(trace_map, state_jet, explicit_shape):
++    """D(Tq)=T Dq plus an explicitly supplied shape/frame derivative.
++
++    The retained fixed material section has constant T. Shape motion already
++    present in Dq must not be added a second time as an explicit shape term.
++    """
++    if trace_map.nrows()!=3 or trace_map.ncols()!=state_jet.nrows():
++        raise ValueError('three geometric traces and common state coordinates required')
++    if explicit_shape is None or (explicit_shape.nrows(),explicit_shape.ncols())!=(3,state_jet.ncols()):
++        raise ValueError('explicit owned trace shape term required, including proved zero')
++    return trace_map*state_jet+explicit_shape
++
++
++def required_material_jet(momentum, force, conormal, momentum_mixed, momentum_rate_direction):
++    """D[P; F-G-DP[X]] in common columns, before support.
++
++    The last two inputs are D2P[X,u] and DP[DX u]. This is a differential
++    operator on canonical action data, not a constant 4x4 change of basis.
++    """
++    terms=(momentum,force,conormal,momentum_mixed,momentum_rate_direction)
++    if any(x is None for x in terms):
++        raise ValueError('all five owned material terms required')
++    if any(x.nrows()!=2 for x in terms) or len({x.ncols() for x in terms})!=1:
++        raise ValueError('two canonical channels in common parameter columns required')
++    flux=force-conormal-momentum_mixed-momentum_rate_direction
++    return arb_mat(momentum.tolist()+flux.tolist())
++
++
++def heat_pair_4x73(eigenvalues, material_first, launch_first, heat_length=1):
++    """Stream Tr(DQ[P_j] P_Balpha), using four actual supplied directions.
++
++    Conditional on an owned common real spectral frame. No trace-action
++    seeds or zero-padded seven-direction contractions are introduced.
++    """
++    n=len(eigenvalues)
++    if n<1 or len(material_first)!=4 or len(launch_first)!=73:
++        raise ValueError('four material and 73 launch jets required')
++    if any((m.nrows(),m.ncols())!=(n,n) for m in list(material_first)+list(launch_first)):
++        raise ValueError('operator jets must share the owned spectral frame')
++    result=arb_mat(4,73)
++    for k,x in enumerate(eigenvalues):
++        for l,y in enumerate(eigenvalues):
++            b=arb_mat(4,1,[m[l,k] for m in material_first])
++            p=arb_mat(1,73,[m[k,l] for m in launch_first])
++            result+=(b*p)*heat_divided_difference(x,y,heat_length)
++    return result
++
++
++def reduce_material_mixed(*, L_bp, L_bn, L_np, L_nn, F_n, F_b, F_p, moving_seed):
++    """Four-direction general implicit-objective adjoint, with PLUS seed motion.
++
++    L_uv = Gamma_uv - eta^T F_uv, F_n^T eta = Gamma_n^T. These must be
++    full, signed, common-frame blocks; a history-only objective is not assumed
++    separately stationary. This yields canonical action contractions. Apply
++    the actual dynamic-flux operator before calling them native material rows.
++    """
++    n=F_n.nrows()
++    blocks=((L_bp,4,73),(L_bn,4,n),(L_np,n,73),(L_nn,n,n),
++            (F_n,n,n),(F_b,n,4),(F_p,n,73),(moving_seed,4,73))
++    if any(x is None or (x.nrows(),x.ncols())!=(r,c) for x,r,c in blocks):
++        raise ValueError(MATERIAL_OBJECT+': complete four-direction mixed inputs required')
++    phi=-F_n.solve(F_b)
++    normal=L_bn+phi.transpose()*L_nn
++    adjoint=F_n.transpose().solve(normal.transpose())
++    fixed=L_bp+phi.transpose()*L_np-adjoint.transpose()*F_p
++    return dict(fixed_seed=fixed,moving_seed=moving_seed,total=fixed+moving_seed,
++                boundary_normal=phi,adjoint=adjoint,
++                boundary_replay=F_n*phi+F_b,
++                adjoint_replay=F_n.transpose()*adjoint-normal.transpose())
+diff --git a/src/bhsm/interface/heat_zeta_mixed_boundary_launch.py b/src/bhsm/interface/heat_zeta_mixed_boundary_launch.py
+new file mode 100644
+index 00000000..9635f5fd
+--- /dev/null
++++ b/src/bhsm/interface/heat_zeta_mixed_boundary_launch.py
+@@ -0,0 +1,155 @@
++"""Only the seven boundary by 73 launch contractions, not a full Hessian.
++
++Every numerical routine is conditional on supplied, co-based owned inputs.
++No native output covector is reinterpreted as a boundary direction; no local
++border is substituted for the complete internal stationarity system.
++"""
++from math import factorial
++from flint import arb, arb_mat
++from bhsm.interface.joint_boundary_port_reduction import reduce_seven_port
++
++OBJECT = 'CURRENT_CENTER_HEAT_ZETA_MIXED_BOUNDARY_LAUNCH_JET_7x73'
++
++
++def exponential_moment(delta, degree, terms=32):
++    """Outward integral_0^1 u^degree exp(-delta*u) du, including delta=0."""
++    delta=arb(delta)
++    if degree < 0 or terms < 2 or not abs(delta) <= 1:
++        raise ValueError('small-difference moment chart requires |delta|<=1')
++    result=arb(0);power=arb(1)
++    for k in range(terms):
++        result+=power/(factorial(k)*(k+degree+1))
++        power*=(-delta)
++    magnitude=abs(delta).upper()
++    tail=magnitude**terms*magnitude.exp()/(factorial(terms)*(terms+degree+1))
++    return result+arb(0,tail.upper())
++
++
++def heat_divided_difference(x, y, heat_length=1):
++    """q[x,y] for q(t)=exp(-ell^2*t)/(2t), without a spectral-gap divisor."""
++    x,y,ell=arb(x),arb(y),arb(heat_length)
++    if not x>0 or not y>0 or not ell>0:
++        raise ValueError('strictly positive spectral enclosures and heat length required')
++    a=ell*ell;delta=a*(y-x)
++    if abs(delta)<=1:
++        moment=exponential_moment(delta,0)
++    elif not delta.contains(0):
++        moment=-(-delta).expm1()/delta
++    else:
++        # Monotonicity of the integral in delta, including a wide crossing.
++        low,high=delta.lower(),delta.upper()
++        def endpoint(t):
++            return exponential_moment(t,0) if abs(t)<=1 else -(-t).expm1()/t
++        lo,hi=endpoint(high).lower(),endpoint(low).upper()
++        moment=(lo+hi)/2+arb(0,((hi-lo)/2).upper())
++    return -(-a*x).exp()*(1+a*x*moment)/(2*x*y)
++
++
++def heat_pair_7x73(eigenvalues, boundary_first, launch_first, heat_length=1):
++    """Tr(DQ[P_j] P_ba) in a supplied certified common real spectral frame.
++
++    Eigenvalues alone do not certify that frame: caller must own the operator,
++    its frame and all jets. This is a conditional contraction, not an eigensolve.
++    It streams spectral entries and never allocates a mixed operator tensor.
++    """
++    n=len(eigenvalues)
++    if len(boundary_first)!=7 or len(launch_first)!=73 or n<1:
++        raise ValueError('exactly seven boundary and 73 launch first jets required')
++    if any((m.nrows(),m.ncols())!=(n,n) for m in list(boundary_first)+list(launch_first)):
++        raise ValueError('first jets must share the owned spectral frame')
++    result=arb_mat(7,73)
++    for k,x in enumerate(eigenvalues):
++        for l,y in enumerate(eigenvalues):
++            weight=heat_divided_difference(x,y,heat_length)
++            b=arb_mat(7,1,[m[l,k] for m in boundary_first])
++            p=arb_mat(1,73,[m[k,l] for m in launch_first])
++            result+=(b*p)*weight
++    return result
++
++
++def element_mixed(*, x, h, xb, xp, xbp, hb, hp, hbp,
++                  channel, value, chirality=1):
++    """One mixed directional action-form jet of the existing AE2 element.
++
++    x is midpoint log radius. xbp/hbp are required inputs, not default zeros.
++    Returned K_bp,M_bp are form jets; K alone is not the heat operator.
++    """
++    x,h,xb,xp,xbp,hb,hp,hbp,value=map(arb,(x,h,xb,xp,xbp,hb,hp,hbp,value))
++    if not h>0 or not value>=0:raise ValueError('positive duration and nonnegative mode required')
++    S=arb_mat([[1,-1],[-1,1]]);A=arb_mat([[2,1],[1,2]]);C=arb_mat([[-1,0],[0,1]])
++    W=arb(0)
++    if channel=='scalar':V=value*(-2*x).exp()
++    elif channel=='product_Dirac' and chirality in (-1,1):
++        W=chirality*value*(-x).exp();V=W*W
++    else:raise ValueError('owned scalar or signed product_Dirac channel required')
++    Vb=-2*V*xb;Vp=-2*V*xp;Vbp=V*(4*xb*xp-2*xbp)
++    kinetic=S*(2*hb*hp/(h*h*h)-hbp/(h*h))
++    potential=A*((h*Vbp+hb*Vp+hp*Vb+V*hbp)/6)
++    factorized=C*(W*(xb*xp-xbp))
++    return dict(K_bp=kinetic+potential+factorized,M_bp=A*(hbp/6),
++                kinetic=kinetic,potential=potential,factorized=factorized)
++
++
++def zeta_element_mixed(*, xl, xr, h, xb, xp, xbp, hb, hp, hbp):
++    """Exact mixed jet of -59/30*h*integral exp(-linear x) on one element."""
++    xl,xr,h,hb,hp,hbp=map(arb,(xl,xr,h,hb,hp,hbp))
++    if not h>0:raise ValueError('positive proper duration required')
++    if any(len(v)!=2 for v in (xb,xp,xbp)):raise ValueError('two endpoint jets required')
++    b0,b1=map(arb,xb);p0,p1=map(arb,xp);c0,c1=map(arb,xbp)
++    db=b1-b0;dp=p1-p0;dc=c1-c0
++    polynomials=[h*(b0*p0-c0)-hb*p0-hp*b0+hbp,
++                 h*(b0*dp+db*p0-dc)-hb*dp-hp*db,h*db*dp]
++    return -(arb(59)/30)*(-xl).exp()*sum(
++        (v*exponential_moment(xr-xl,k) for k,v in enumerate(polynomials)),arb(0))
++
++
++def reduce_mixed_reactions(*, pair, mixed_operator_trace, zeta_mixed,
++                           Gamma_bn, F_n, F_p, moving_seed):
++    """Stationary-envelope Schur/adjoint reduction with both seed conventions.
++
++    Requires F=Gamma_n (or the corresponding owned bordered stationary action)
++    and boundary reactions Gamma_b. For arbitrary constraints use the Lagrange
++    adjoint Hessian identity instead; this shortcut is not valid in general.
++    mixed_operator_trace is the streamed Tr(Q P_ba,pj), not a tensor.
++    """
++    if mixed_operator_trace is None:
++        raise ValueError(OBJECT+': genuine mixed operator contraction required')
++    for value in (pair,mixed_operator_trace,zeta_mixed,moving_seed):
++        if (value.nrows(),value.ncols())!=(7,73):raise ValueError('7x73 contractions required')
++    if F_p.ncols()!=73:raise ValueError('73 common launch columns required')
++    direct=pair+mixed_operator_trace-zeta_mixed
++    result=reduce_seven_port(F_n,F_p,{'joint_history':{'p':direct,'n':Gamma_bn}})
++    result.update(ordinary_reaction_derivative=result['reduced']+moving_seed,
++                  requested_minus_seed_convention=result['reduced']-moving_seed,
++                  moving_seed=moving_seed)
++    return result
++
++
++def implicit_objective_adjoint(F_n, Gamma_n):
++    """L=Gamma-eta^T F with F_n^T eta=Gamma_n^T at the common base."""
++    if Gamma_n.nrows()!=1 or Gamma_n.ncols()!=F_n.nrows():
++        raise ValueError('one objective-normal row required')
++    eta=F_n.transpose().solve(Gamma_n.transpose())
++    return eta,F_n.transpose()*eta-Gamma_n.transpose()
++
++
++def reduce_implicit_mixed(*, L_bp, L_bn, L_np, L_nn, F_n, F_b, F_p):
++    """General history-sector objective on an implicit full-system graph.
++
++    L_uv=Gamma_uv-eta^T F_uv, with eta supplied by the objective adjoint.
++    All four L blocks must include those contractions. Seven boundary solves
++    and seven adjoint solves avoid forming either Phi_bp or 73 normal solves.
++    The result is the fixed-seed Hessian; add the owned moving-seed term later.
++    """
++    n=F_n.nrows()
++    required=((L_bp,7,73),(L_bn,7,n),(L_np,n,73),(L_nn,n,n),
++              (F_n,n,n),(F_b,n,7),(F_p,n,73))
++    if any((v.nrows(),v.ncols())!=(r,c) for v,r,c in required):
++        raise ValueError('common internal frame and 7x73 mixed blocks required')
++    Phi_b=-F_n.solve(F_b)
++    combined_normal=L_bn+Phi_b.transpose()*L_nn
++    adjoint=F_n.transpose().solve(combined_normal.transpose())
++    reduced=L_bp+Phi_b.transpose()*L_np-adjoint.transpose()*F_p
++    return dict(reduced=reduced,boundary_normal=Phi_b,adjoint=adjoint,
++                boundary_replay=F_n*Phi_b+F_b,
++                adjoint_replay=F_n.transpose()*adjoint-combined_normal.transpose())
+diff --git a/src/bhsm/interface/joint_boundary_port_reduction.py b/src/bhsm/interface/joint_boundary_port_reduction.py
+new file mode 100644
+index 00000000..a6260221
+--- /dev/null
++++ b/src/bhsm/interface/joint_boundary_port_reduction.py
+@@ -0,0 +1,42 @@
++"""Signed seven-output implicit/adjoint reduction for supplied owned blocks.
++
++Conditional algebra only: callers must supply the full internal residual and
++the actual seven-port output derivatives at one base point in common frames.
++The routine never infers that a local border is the complete joint operator.
++"""
++from flint import arb_mat
++
++
++def reduce_seven_port(K, Fp, pieces):
++    """F_n=K, Phi_p=-K^-1 Fp; Dg_red=sum(g_p)-lambda^T Fp.
++
++K^T lambda=(sum(g_n))^T. Compose signed sectors before this common solve;
++no sector is independently supported, normed, eliminated or zero-filled.
++"""
++    n=K.nrows();p=Fp.ncols()
++    if K.ncols()!=n or Fp.nrows()!=n or not pieces:
++        raise ValueError('square common internal block and explicit pieces required')
++    gp=arb_mat(7,p);gn=arb_mat(7,n)
++    for name,piece in pieces.items():
++        if set(piece)!={'p','n'}:raise ValueError('each piece requires p and n derivatives: '+name)
++        if (piece['p'].nrows(),piece['p'].ncols())!=(7,p):raise ValueError('port p shape differs')
++        if (piece['n'].nrows(),piece['n'].ncols())!=(7,n):raise ValueError('port n shape differs')
++        gp+=piece['p'];gn+=piece['n']
++    adjoint=K.transpose().solve(gn.transpose())
++    correction=-adjoint.transpose()*Fp
++    return dict(reduced=gp+correction,direct=gp,internal=gn,adjoint=adjoint,
++                correction=correction,adjoint_replay=K.transpose()*adjoint-gn.transpose())
++
++
++def moving_port_jet(B, reaction, reaction_jet, dB):
++    """D(B Lambda)[u]=(DB[u])Lambda+B D Lambda[u], with explicit DB."""
++    if B.nrows()!=7 or reaction.ncols()!=1 or B.ncols()!=reaction.nrows():
++        raise ValueError('seven-row port and reaction column required')
++    if reaction_jet.nrows()!=reaction.nrows() or len(dB)!=reaction_jet.ncols():
++        raise ValueError('reaction and port derivatives must share directions')
++    columns=[]
++    for k,derivative in enumerate(dB):
++        if (derivative.nrows(),derivative.ncols())!=(7,B.ncols()):raise ValueError('DB shape differs')
++        column=arb_mat([[reaction_jet[i,k]] for i in range(reaction.nrows())])
++        columns.append(B*column+derivative*reaction)
++    return arb_mat([[columns[k][i,0] for k in range(len(columns))] for i in range(7)])
+diff --git a/src/bhsm/interface/muon_native_interface_bulk_forcing.py b/src/bhsm/interface/muon_native_interface_bulk_forcing.py
+new file mode 100644
+index 00000000..22f6951f
+--- /dev/null
++++ b/src/bhsm/interface/muon_native_interface_bulk_forcing.py
+@@ -0,0 +1,66 @@
++"""One consumed column of the retained seven-port implicit machinery.
++
++These helpers operate on supplied, common-frame weak-form covectors. They
++produce no physical displacement, owner Euler derivative, or domain map.
++In particular a seven-row output derivative g_n is never treated as F_b.
++The real Arb pairing is the algebraic dual pairing of supplied form entries;
++the physical geometric pairing must already be in those entries.
++"""
++from flint import arb, arb_mat
++
++from .geometric_material_port import geometric_trace_jet, required_material_jet
++
++
++def seven_port_forcing_direction(*, trace_map, state_direction, trace_shape,
++                                 momentum, force, conormal, momentum_mixed,
++                                 momentum_rate_direction):
++    """Assemble one [trace(3), momentum(2), dynamic flux(2)] column.
++
++    All moving-seam terms are explicit operands. A proved zero is supplied
++    as an explicit zero column; absence is never interpreted as zero.
++    This reuses the existing 3/4 split without introducing an action seed
++    for a trace or an eighth port coordinate.
++    """
++    if state_direction is None or state_direction.ncols() != 1:
++        raise ValueError('one supplied state/displacement direction required')
++    trace = geometric_trace_jet(trace_map, state_direction, trace_shape)
++    material = required_material_jet(momentum, force, conormal,
++                                     momentum_mixed, momentum_rate_direction)
++    if material.ncols() != 1:
++        raise ValueError('one supplied material direction required')
++    return arb_mat(trace.tolist() + material.tolist())
++
++
++def solve_bulk_forcing_column(F_n, f_column):
++    """Solve F_n delta=-f for one column, retaining every supplied KKT row.
++
++    The replay is in the supplied residual-row coordinates. Its enclosure is
++    not an owned norm or a continuum bound unless that row/norm map is
++    established separately. No inverse, symmetry or regularizer is used.
++    """
++    if F_n is None or f_column is None:
++        raise ValueError('the residual action and consumed forcing are required')
++    n = F_n.nrows()
++    if n == 0 or F_n.ncols() != n or (f_column.nrows(), f_column.ncols()) != (n, 1):
++        raise ValueError('square residual action and exactly one forcing column required')
++    response = -F_n.solve(f_column)
++    return dict(response=response, replay=F_n * response + f_column)
++
++
++def real_stationary_impedance_column(H, f_column, Q_XX_column):
++    """Conditional real stationary weak-action Schur contraction.
++
++    H/f must be the SAME Hermitian stationary action blocks with their dual
++    pairings and constraints, not arbitrary residual-row transformations.
++    KKT multipliers remain in H; positivity is on the allowed physical
++    tangent. Q_XX is the contracted full quadratic form, with no 1/2.
++    This function does not establish the action/positivity identification
++    and must not be applied to a causal nonsymmetric residual as impedance.
++    """
++    solved = solve_bulk_forcing_column(H, f_column)
++    response = solved['response']
++    qxx = arb(Q_XX_column)
++    schur = qxx + (f_column.transpose() * response)[0, 0]
++    direct = (qxx + (response.transpose() * H * response)[0, 0]
++              + 2 * (response.transpose() * f_column)[0, 0])
++    return dict(**solved, schur=schur, direct=direct, difference=direct - schur)
+diff --git a/tests/test_muon_native_interface_bulk_forcing.py b/tests/test_muon_native_interface_bulk_forcing.py
+new file mode 100644
+index 00000000..0541d64c
+--- /dev/null
++++ b/tests/test_muon_native_interface_bulk_forcing.py
+@@ -0,0 +1,113 @@
++"""Targeted one-column controls; no physical BHSM or historical producer runs."""
++from pathlib import Path
++import sys
++import pytest
++import sympy as sp
++from flint import arb, arb_mat, ctx
++
++ROOT = Path(__file__).resolve().parents[1]
++sys.path.insert(0, str(ROOT / 'src'))
++sys.path.insert(0, str(ROOT / 'scripts'))
++from control_muon_interface_forcing import exact_control, amat
++from bhsm.interface.muon_native_interface_bulk_forcing import (
++    seven_port_forcing_direction, solve_bulk_forcing_column, real_stationary_impedance_column,
++)
++from bhsm.interface.joint_boundary_port_reduction import reduce_seven_port, moving_port_jet
++
++
++@pytest.fixture(scope='module')
++def data():
++    ctx.prec = 256
++    return exact_control()
++
++
++def overlaps(actual, expected):
++    return all((actual[i, j] - amat(expected)[i, j]).contains(0)
++               for i in range(actual.nrows()) for j in range(actual.ncols()))
++
++
++def port(data):
++    return seven_port_forcing_direction(**{key: amat(data[name]) for key, name in (
++        ('trace_map', 'T'), ('state_direction', 'direction'), ('trace_shape', 'shape'),
++        ('momentum', 'momentum'), ('force', 'force'), ('conormal', 'conormal'),
++        ('momentum_mixed', 'mixed'), ('momentum_rate_direction', 'rate'))})
++
++
++def test_complete_seven_rows_and_dynamic_kinematics(data):
++    got = port(data)
++    assert (got.nrows(), got.ncols()) == (7, 1)
++    assert overlaps(got, data['b'])
++    for key in ('shape', 'conormal', 'mixed', 'rate'):
++        changed = dict(data); changed[key] = sp.zeros(*data[key].shape)
++        assert not overlaps(port(changed), data['b'])
++
++
++def test_direct_mixed_action_derivative_includes_constraint_source(data):
++    assert data['f'] == (data['C'] * data['b']).col_join(-data['s'] * data['b'])
++    assert data['f'][2] != 0
++    assert (data['d'] * data['delta'][:2, :])[0] == (data['s'] * data['b'])[0]
++    assert data['delta'][2] != 0  # Reaction remains in the solve.
++
++
++def test_single_column_response_and_residual(data):
++    got = solve_bulk_forcing_column(amat(data['H']), amat(data['f']))
++    assert overlaps(got['response'], data['delta'])
++    assert all(v.contains(0) for v in got['replay'].entries())
++
++
++def test_same_owner_direct_physical_quadratic_equals_schur(data):
++    assert sp.simplify(data['physical_direct'] - data['schur']) == 0
++    got = real_stationary_impedance_column(amat(data['H']), amat(data['f']), str(data['qxx']))
++    assert (got['schur'] - arb(str(data['schur']))).contains(0)
++    assert got['difference'].contains(0)
++    # The bordered block is indefinite although physical A is positive.
++    assert data['A'].det() > 0 and data['H'].det() < 0
++
++
++def test_signed_output_uses_existing_one_column_adjoint(data):
++    got = reduce_seven_port(amat(data['H']), amat(data['f']),
++                           {'control': dict(p=amat(data['gp']), n=amat(data['gn']))})
++    assert overlaps(got['reduced'], data['gp'] + data['gn'] * data['delta'])
++    assert all(v.contains(0) for v in got['adjoint_replay'].entries())
++
++
++def test_moving_port_keeps_DB_reaction(data):
++    got = moving_port_jet(amat(data['B']), amat(data['reaction']),
++                         amat(data['reaction_dot']), [amat(data['Bdot'])])
++    assert overlaps(got, data['moving_exact'])
++    assert data['moving_exact'] != data['B'] * data['reaction_dot']
++
++
++def test_residual_row_scaling_preserves_response_but_changes_naive_impedance(data):
++    got = solve_bulk_forcing_column(amat(data['row_map'] * data['H']), amat(data['row_map'] * data['f']))
++    assert overlaps(got['response'], data['delta'])
++    assert sp.simplify(data['wrong_schur'] - data['schur']) != 0
++    corrected = data['qxx'] + ((data['row_map'] * data['f']).T
++                              * data['row_map'].T.LUsolve(data['delta']))[0]
++    assert sp.simplify(corrected - data['schur']) == 0
++
++
++def test_row_identification_requires_derivatives_away_from_stationarity():
++    s, n = sp.symbols('s n')
++    C = sp.Matrix([[2 + s, n], [0, 3 - s]])
++    E = sp.Matrix([n + s, n - 2 * s])
++    F = C * E
++    assert sp.simplify(F.diff(s) - C * E.diff(s) - C.diff(s) * E) == sp.zeros(2, 1)
++    assert sp.simplify(F.diff(n) - C * E.diff(n) - C.diff(n) * E) == sp.zeros(2, 1)
++    assert (C.diff(s) * E).subs({s: 1, n: 2}) != sp.zeros(2, 1)
++
++
++@pytest.mark.parametrize('forcing', [None, arb_mat(2, 1), arb_mat(3, 2)])
++def test_no_missing_or_multiple_forcing_columns(data, forcing):
++    with pytest.raises(ValueError):
++        solve_bulk_forcing_column(amat(data['H']), forcing)
++
++
++def test_missing_material_is_not_zero(data):
++    kwargs = {key: amat(data[name]) for key, name in (
++        ('trace_map', 'T'), ('state_direction', 'direction'), ('trace_shape', 'shape'),
++        ('momentum', 'momentum'), ('force', 'force'), ('conormal', 'conormal'),
++        ('momentum_mixed', 'mixed'), ('momentum_rate_direction', 'rate'))}
++    kwargs['conormal'] = None
++    with pytest.raises(ValueError):
++        seven_port_forcing_direction(**kwargs)
+diff --git a/theory/muon_native_interface_bulk_forcing_20261007.md b/theory/muon_native_interface_bulk_forcing_20261007.md
+new file mode 100644
+index 00000000..4a9759d8
+--- /dev/null
++++ b/theory/muon_native_interface_bulk_forcing_20261007.md
+@@ -0,0 +1,245 @@
++# Seven-port forcing: exact cache roles and one-column owner identification
++
++Starting HEAD: `0f13a65082d4df0ba510540a32071bf938c7716e`.
++Branch: `codex/muon-parent-maxwell-density-review`, PR #465.
++Scientific reference: `524ed90689bd5923c249bba2e699abf627e703cd`.
++
++The existing machinery supports one consumed boundary forcing column. This
++continuation recovers that machinery byte-for-byte from the primary scientific
++checkout, evaluates the one-column algebra on an exact finite control, and
++identifies precisely why the frozen local matrices cannot yet evaluate the
++physical column. It produces **zero physical forcing columns, response solves,
++heat evaluations or transfer directions**. No control is a BHSM impedance,
++cutoff, anomaly or uncertainty estimate.
++
++The new mathematical identification is that a residual-row transformation can
++preserve the response equation while failing to preserve the impedance dual
++contraction. The consumed row/dual map is required in addition to an action
++identification. A concrete control demonstrates this failure and its correction.
++
++## Reuse the established seven-port map
++
++The quotient has three geometric trace rows, two canonical momentum rows and
++two dynamic-flux rows. The recovered `geometric_material_port.py` gives
++
++\[
++ b_\psi=\begin{bmatrix}
++ T u_\psi+(D_\psi T)q\\
++ D_\psi P\\
++ D_\psi F-D_\psi G-D^2P[X,u_\psi]-DP[D_\psi X]
++ \end{bmatrix}\in\mathbb R^7.
++\]
++
++Here the source-direction state jet and explicit trace-shape term are supplied
++in the same inherited frame; state motion must not also be added as explicit
++shape motion. `geometric_trace_jet` and `required_material_jet` are the actual
++producer functions for the supplied algebra. They do not generate the
++support-loss normal direction or its same-action state/material variation.
++The thin muon adapter calls them with exactly one column.
++
++The frozen material producer `bind_n12_gate7_geometric_material_port.py`
++retains the action-dependent momentum, force, radial conormal and two
++momentum-rate terms. Its sources are `_trace_jacobian_at_order`,
++`_attachment_jacobian_at_order`, `_canonical_pair_at_order`,
++`_metric_radial_flux_covector_at_order`, and `_child_rows_at_order` in
++`aether_cross_resolution_reconnaissance_v21_35.py`. The saved trace map has
++shape 3x98. The constant trace section at chi=pi/4 belongs to that retained
++local realization; it does not justify a zero shape term for a new moving
++normal source. Child/event signs are +/− in the first five rows and −/+ in
++the last two. The saved canonical order is momentum, then dynamic flux.
++
++The later 3/4 split explicitly retires the seven-action-seed requirement.
++The geometric trace is already the local top output block, not an additional
++trace-history reaction. `moving_port_jet` retains
++`(DB)[u] Lambda+B D Lambda[u]`. No eighth coordinate, trace-only forcing or
++new generic interface framework is introduced.
++
++## What the concrete frozen blocks actually differentiate
++
++`solve_n12_gate7_fiber_constrained_center.py`, function `evaluate`, defines
++
++\[
++ F_{\rm local}=\begin{bmatrix}
++ C_L/s_L\\C_R/s_R\\T_{\rm test}\,HS_{13}\\
++ (\lambda_L-s_{\rm descriptor,L})/10^{-7}
++ \end{bmatrix},\qquad
++ HS_{13}=z_1-z_0-\frac h6(f_0+4f_m+f_1),\quad h=\frac14.
++\]
++
++There are 25+25 constraint rows, 74 Hermite–Simpson flow-matching rows and
++one descriptor row. `gate7_coupled_fiber_center_20260927/jet/arrays.npz`
++contains its `J125` derivative. This is the corrected historical interval-13
++constraint/evolution border, not an exhibited current AE4 mechanical
++stationarity Hessian.
++
++The construction in `derive_n12_gate7_joint_port_reduction.py` makes the
++roles unambiguous:
++
++| Saved array | Shape | Actual derivative |
++|---|---:|---|
++| `J125` | 125x125 | local residual derivative F_n |
++| `local125_forcing` | 125x73 | launch forcing F_p |
++| `local125_port_normal_derivative` | 7x125 | output derivative g_n |
++| `native_event_7x98` | 7x98 | local event output/state derivative |
++| `trace_action_3x98` | 3x98 | geometric trace/state map |
++| `local_required_material_4x73` | 4x73 | local material launch output |
++
++In particular the seven-row matrix is not F_b, and the 125x73 forcing does
++not acquire a physical normal input by multiplication with a convenient
++right inverse. No launch, canonical seed, SVD gain vector or descriptor
++normal is selected as xi_psi. The retained caches provide local coordinate
++scaffolding, not a source-selection equation for this support-loss branch.
++
++`evaluate_n12_gate7_current_contractions.py` also retains the signed ledger
++
++\[
++ \Gamma_{\rm attached}-\Gamma_{\rm SM\,zeta}+\Gamma_{\rm heat}
++ =\Gamma_{\rm classical}+\Gamma_{\rm heat},
++\]
++
++and explicitly does not assume that the attached-action flow is stationary
++for the classical action after subtraction. A flow-matching border therefore
++cannot be relabeled as the owner Euler derivative from its dimensions.
++Nonsymmetry alone would not settle this identification either. The old
++supplied-matrix heat/zeta adapters do not themselves supply the current AE4
++support-loss base, length, domain, grading or completion.
++
++## The exact condition for reusing the local solve
++
++Let E_owner be the same-owner Euler/constraint residual in common internal
++coordinates. A possible reuse needs a row/dual identification
++
++\[
++ F_{\rm local}=C\,E_{\rm owner}.
++\]
++
++For source partial differentiation at fixed internal coordinates,
++
++\[
++ D_sF_{\rm local}=C h_\psi+(D_sC)E_{\rm owner},\qquad
++ F_n=C H_{\rm owner}+(D_nC)E_{\rm owner},
++ \quad h_\psi=D_bE_{\rm owner}[b_\psi].
++\]
++
++At an **owned stationary base**, the gradient terms vanish. If C identifies
++the relevant residual/quotient spaces, the old local solve can then supply
++the same response from one column `f_local=C h_psi`. Away from that base,
++the displayed gradient terms remain. A consumed row/dual action can suffice;
++neither a full global C nor all seven columns is required for a justified
++contracted calculation. No examined producer supplies this identification.
++
++Even when the response is identical, the physical quadratic contraction is
++
++\[
++ z_\psi=Q_{XX}[\xi_\psi,\xi_\psi]
++       -h_\psi^\dagger H_{\rm owner}^{-1}h_\psi,
++ \qquad
++ h_\psi^\dagger H_{\rm owner}^{-1}h_\psi
++ =f_{\rm local}^\dagger C^{-\dagger}F_n^{-1}f_{\rm local}.
++\]
++
++The inverses in these equations denote applications of linear solves.
++The implementation forms no inverse. A row transformation is not a form
++congruence; even unitarity alone would not justify dropping C's dual factor.
++The recovered `reduce_seven_port` instead provides the valid general implicit
++output reduction `g_b b_psi+g_n deltaPhi_psi` through its existing adjoint
++solve. No Hermitian or positive interpretation is imposed on causal outputs.
++
++For a source-dependent constraint R(eta,s)=0, use the full KKT variation of
++L=Gamma+lambda^dagger R:
++
++\[
++ H=\begin{pmatrix}L_{\eta\eta}&R_\eta^\dagger\\R_\eta&0\end{pmatrix},
++ \quad h=\binom{L_{\eta s}}{R_s},\qquad
++ z=L_{ss}-h^\dagger\operatorname{solve}(H,h).
++\]
++
++Constraint-source rows, multiplier contacts and L_ss stay present. Positivity
++belongs to the allowed physical tangent, not to the indefinite KKT matrix.
++The geometric/action dual pairing must already be encoded in these weak
++form entries; Euclidean coordinates cannot replace it by default.
++
++## New execution and error scope
++
++The exact rational finite control has two internal fields, one constraint
++multiplier and one prescribed seven-component column. Its action has positive
++physical A, a source-dependent constraint and a symmetric indefinite KKT
++border. Direct mixed differentiation generates the forcing. At 256-bit Arb
++precision the one-column solve encloses the exact solution and its residual
++contains zero. The direct physical quadratic equals the Schur expression
++exactly. The existing signed seven-output adjoint agrees with the forward
++response, and the moving-port product rule retains DB.
++
++A second representation of the same control rescales residual rows. It gives
++the same response and a different naive impedance. The targeted row-dual
++test evaluates the corrected contraction exactly; the replay control records
++the owner contraction and the incorrect row contraction separately.
++These values are saved as **control** values only.
++They are not the source or environmental resistance of any BHSM child.
++Arb errors here cover rounding of supplied finite entries. An interval
++residual containing zero is consistency evidence, not a proof of exact
++physical cancellation or a continuum/error bound.
++
++Twelve targeted new tests pass. The first attempt had one test API failure
++from passing a string to Arb.contains; explicit scalar conversion corrected
++that test. The new replay ran once. The historical 7x73 producer, field
++campaigns, heat contractions, normalization and muon production were not run.
++Frozen caches were read for provenance and shape roles, never regenerated.
++The recovered three source modules are byte-identical to the primary copies;
++their hashes and original commits are in `run_1/recovered_helpers.json`.
++Executed sources and raw/canonical input hashes are retained.
++
++## Assembly stop and one next consumed operand
++
++Physical assembly stops before the right-hand side is formed. The examined
++records do not provide the action-selected xi_psi-to-state/material source
++column or an identification of the local residual with the current owner
++Euler/constraint dual. This is a demonstrated limitation of these concrete
++producers, not an exhaustive absence theorem or proof of physical
++non-identifiability. No new boundary or constitutive assumption is installed.
++
++The next operand is **one same-owner normal-source Euler column**, represented
++in the established seven-port coordinates and, if the local border is used,
++its consumed row/dual coordinates:
++
++\[
++ \boxed{\quad b_\psi=B_{\rm boundary}[\xi_\psi],\qquad
++ \langle\eta,f_{\psi,\mathrm{bulk}}\rangle
++ =D_\Phi D_X S_{\rm bulk}^{\rm owner}[\eta,\xi_\psi].\quad}
++\]
++
++This boxed covector is the physical bulk mixed-action part. In unreduced
++constrained coordinates, the consumed forcing is instead the complete
++`h_psi=(L_eta,s,R_s)`, where
++`L_eta,s=f_psi,bulk+lambda^dagger R_eta,s` in the common action convention.
++The constraint-source row and multiplier contact must be generated by that
++same prescription; the boxed bulk formula does not replace them. The packet's
++`defining_weak_equation` names this physical bulk part, while its Euler/constraint
++column and solver accept the full augmented column when constraints are kept.
++
++Its producer is the same-owner bulk/interface variation with the retained
++trace, momentum, conormal, rate, reset and constraint pullbacks. Its immediate
++consumer is the one-column solve, then the owned-dual impedance contraction.
++This requirement is not the old Gate7 closure label and does not demand all
++73 launches. Once supplied, the retained total resistance `gamma J_Sigma+H`,
++inertia, quotient jets and AE4 heat lower-limit algebra can consume it.
++They remain null here, as do R_ind, the native anomaly and g_mu.
++
++Reset, contact, Wentzell, scalar/topographic and constraint reactions are kept
++as shared signed dependencies and counted once. The strong term remains a
++subset of the full native owner, not an additional zero or independent addend.
++State, domain, pairing and completion terms remain unevaluated explicitly.
++All local QED/Higgs/weak contributions and their original calibration-only
++uncertainty convention remain frozen; the already combined interval is not
++summed again. No external anomaly or discrepancy enters the calculation.
++
++Reproduction uses a fresh output directory and the read-only primary record:
++
++```powershell
++C:\Python314\python.exe scripts/replay_muon_native_interface_bulk_forcing.py --output <fresh-directory>
++C:\Python314\python.exe -m pytest --noconftest -q tests/test_muon_native_interface_bulk_forcing.py
++```
++
++The standalone Downloads launcher points to these retained sources; it is not
++a downloadable muon-number prediction. No reset, cleaning, cache overwrite,
++new physical state or future tail is performed.
