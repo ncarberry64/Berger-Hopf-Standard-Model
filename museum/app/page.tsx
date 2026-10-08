@@ -22,6 +22,7 @@ import { ComputeAchievement } from './compute-achievement';
 import { MuseumDeck } from './museum-deck';
 import { BergerHopf } from './berger-hopf';
 import { AIAccess } from './ai-access';
+import { BigQuestions } from './big-questions';
 import { freshShareURL } from '../lib/social-preview.mjs';
 import {
   ExhibitStatement,
@@ -372,6 +373,7 @@ export default function Home() {
             </div>
           </div>
         </section>
+        <BigQuestions motion={motion} />
         <footer id="museum-exit">
           <p>
             <strong>BHSM Museum</strong>

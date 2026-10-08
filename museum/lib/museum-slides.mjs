@@ -12,5 +12,6 @@ export const slides = [
   ['research-exhibit', 'CMS & research'],
   ['details', 'Evidence & predictive tests'],
   ['creator', 'Scientific record'],
+  ['big-questions', 'Big Questions'],
   ['museum-exit', 'Sources & links'],
 ];
