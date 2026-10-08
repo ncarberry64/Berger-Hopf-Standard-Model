@@ -42,24 +42,22 @@ export function MassStudy({ motion }: { motion: boolean }) {
       <h4>Holding back the surrounding field.</h4>
       <MassVisual motion={motion} />
       <p>
-        BHSM proposes that a localized configuration displaces the surrounding
-        energy–geometry response. Here three quarks, connected by color threads,
-        move inside a fixed nucleus frame, initially without an electron cloud.
-        Virtual-particle marks pop in and out beyond the cleared region. The
-        view then resolves into a stationary proton: the same bound system, seen
-        without resolving its internal motion. Only then does the electron
-        probability cloud appear around the proton. In this picture, mass
-        expresses the energy involved in maintaining that displacement: how much
-        of the surrounding response is held back.
+        Start with the virtual particle field alone. Quarks emerge, clear out
+        space and bind into a shared bubble. That bound system resolves into a
+        proton. An electron then emerges from the surrounding field, is
+        attracted to the proton and binds with it to form a hydrogen atom. The
+        electron becomes a probability cloud, and the bubble expands. In BHSM’s
+        physical picture, mass is the bubble holding back the virtual particle
+        field: its energy is the cost of maintaining that displacement.
       </p>
       <p className="console-caption">
-        Author’s conceptual illustration, using a proton’s uud content and an
-        enlarged electron probability cloud. Threads depict color interaction;
-        the cloud’s rotating view is not an electron orbit. The stable nucleus
-        view is an illustrative change of resolution, not a computed formation
-        process or quantum time average. The sea represents vacuum response, not
-        a measured gas of virtual particles. Sizes, motion and the cleared area
-        are explanatory, not a QCD solution or a mass scale.
+        Author’s conceptual formation sequence. Two up quarks and one down quark
+        label the proton’s valence content; one proton and one electron make
+        hydrogen. Color bonds and the electron’s arrival are schematic. The
+        enlarged cloud depicts a bound electron’s probability distribution, not
+        an orbit. Emergence from the field illustrates the BHSM proposal, not a
+        calculated particle-creation process. The field marks represent vacuum
+        response; timing, sizes and bubble area do not measure mass.
       </p>
       <h4>From that picture to the mass calculation.</h4>
       <p>
