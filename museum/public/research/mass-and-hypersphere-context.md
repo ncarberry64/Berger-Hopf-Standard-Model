@@ -1,6 +1,6 @@
 # Hypersphere, common core and mass: exhibit source context
 
-Updated 30 September 2026. This note records the source and scope of the welcome abstract and Exhibit 4. It does not change the research completion definition or add completion gates.
+Updated 8 October 2026. This note records the source and scope of the welcome abstract and Exhibit 4. It does not change the research completion definition or add completion gates.
 
 ## The scale of BHSM
 
@@ -24,7 +24,7 @@ The original three linked Hopf-fiber views have been restored, with the same ren
 
 ## The new mass scene
 
-The author requested a three-quark/color-thread configuration, an enlarged electron cloud and a sea whose response is held outside a cleared region. The animation realizes this **BHSM displaced-energy interpretation**. The uud labels use a proton's reference valence content. Color threads are schematic interactions. The cloud is a qualitative probability-envelope illustration at a deliberately enlarged scale; its viewing motion is not an electron following a classical orbit. The virtual-particle sea is a visual metaphor for vacuum response, not particles measured as a literal fluid. The cleared area has no numerical mass calibration. Virtual-particle marks have independent appearance/disappearance intervals. The cleared envelope forms once and persists. Quarks follow bounded illustrative paths with a fixed center; the view fades to a stationary proton depiction of the same system. Only after that proton resolves does the enlarged electron cloud appear; it is absent in the internal-quark view and disappears before the view returns to quarks. This is a change of visual resolution, not a calculated formation process or quantum time average. Scene motion and display cadence are presentation choices, not a computed QCD or BHSM solution.
+The author's 8 October 2026 clarification starts with the virtual particle field alone. Three quarks emerge in sequence and displace nearby field marks. Color bonds draw the quarks together and their local clearings merge into a shared bubble, then the bound uud configuration resolves into a proton. Only after the proton is fully visible does an electron emerge outside the bubble, move inward under illustrative attraction and become a bound probability cloud. One proton plus one electron forms hydrogen. Its enlarged bubble keeps the field outside; the completed atom persists until Replay formation is selected. Inside the proton and Hydrogen atom controls allow inspection. This is the author's **BHSM mass-as-field-displacement picture**, not a computed QCD or particle-creation history. The sea symbolizes vacuum response, and the cleared area has no numerical mass calibration. Field marks have independent appearance/disappearance intervals; the bound cloud is not an electron orbit. Motion stops when paused, offscreen or in a hidden tab. Reduced-motion mode shows a static completed atom.
 
 The current formal anchor is the matched relative energy:
 

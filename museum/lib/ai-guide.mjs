@@ -101,7 +101,7 @@ const topics = {
     keywords:
       'matter particles mass masses spectrum standard model generations yukawa mixing neutrino ledger',
     summary:
-      'Explore the restored three linked Hopf-fiber views, cycling reference particle families, and the author’s displaced-energy mass illustration. The quark/thread/cloud scene is a conceptual interpretation; the formal mass contract is composite-minus-matched-parent rest energy.',
+      'Explore three linked Hopf-fiber views, reference particle families and the author’s mass-bubble formation sequence: virtual particle field alone, emerging quarks and shared clearing, bound proton, then electron attraction and a hydrogen atom. The bubble holds back the field. This conceptual sequence retains the composite-minus-matched-parent rest-energy mass contract.',
     scope:
       'Conditional structural results and historical screens do not establish physical masses or mixing predictions.',
     sources: [
@@ -265,7 +265,7 @@ const topics = {
 export const catalog = {
   schema_version: '1.0',
   title: 'BHSM Museum AI navigation index',
-  updated: '2026-09-30',
+  updated: '2026-10-08',
   museum_url: museumUrl,
   repository_url: repository,
   guide_url: local('llms.txt'),
