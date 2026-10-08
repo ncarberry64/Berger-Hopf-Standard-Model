@@ -1,0 +1,2450 @@
+{
+  "adopted_event": {
+    "branch_rule": "Continuously transported action-selected physical formation branch, evaluated at the first future surface satisfying both adopted event conditions.",
+    "conjunction_evaluated": false,
+    "energy_equality": {
+      "core_frequency_squared": "<psi,H_event,drive psi>/<psi,I psi>",
+      "equivalence_scope": "Same mode, common action-owned pairing and positive kinetic inertia",
+      "formula": "<psi,(R-H_event,drive)psi>=0",
+      "impedance_frequency_squared": "<psi,R psi>/<psi,I psi>",
+      "status": "OWNER_DEFINED_CONDITIONAL_FORMULA__PHYSICAL_BRANCH_NOT_EVALUATED"
+    },
+    "event_located": false,
+    "outward_support_cessation": {
+      "action_derived_equivalence": null,
+      "observable": null,
+      "operational_predicate": null,
+      "oriented_full_normal_section_evaluation": null,
+      "status": "OWNER_DEFINITION_GAP",
+      "value": null
+    },
+    "source_refs": [
+      {
+        "lines": [
+          88,
+          91,
+          94,
+          96,
+          97,
+          98,
+          99,
+          108,
+          117
+        ],
+        "path": "src/bhsm/interface/ae4_stratified_dirac_zeta_induced_owner.py",
+        "symbol": "native_spectral_length_contract"
+      },
+      {
+        "lines": [
+          39,
+          40,
+          41,
+          42,
+          43,
+          44
+        ],
+        "path": "theory/ae4_mode_frequency_cutoff_owner_20261007.md",
+        "symbol": "adopted event conjunction and equality reduction"
+      },
+      {
+        "lines": [
+          111,
+          112,
+          113,
+          114,
+          125,
+          126
+        ],
+        "path": "theory/muon_native_support_loss_cutoff_20261007.md",
+        "symbol": "independent outward-support condition"
+      }
+    ]
+  },
+  "audited_equations": [
+    {
+      "cessation_equivalence": "NONE_IDENTIFIED",
+      "equations": [
+        "S_total=S_bulk,event+S_bulk,child+S_owned_boundary_corner-sum_s integral_Ws gamma_s dmu_h",
+        "jump(T^(mu nu)n_nu)+nabla_a(S_Sigma^(ab)e_b^mu)=0",
+        "jump(T_nn)=gamma_s K+I_bulk,response",
+        "h_a^mu jump(T_mu_n)=D_a gamma_s",
+        "I_lambda D_tau^2 a_lambda+[gamma_s j_lambda+Z_lambda]a_lambda=f_event,lambda"
+      ],
+      "id": "minimal_membrane_total_action",
+      "kind": "CLASSICAL_REGISTERED_MECHANICS",
+      "meaning": "Total-action normal and tangential stress balance and the selected mode's restoring mechanics.",
+      "reason": "These equations balance two sides and the interface while support can persist. The payload defines decay as forward loss of stability plus conserved outgoing/multiple-child flux; it does not identify a support-cessation observable or evaluate it at the adopted energy equality.",
+      "source_refs": [
+        {
+          "lines": [
+            139,
+            140,
+            181,
+            184,
+            187,
+            188,
+            209,
+            210,
+            234,
+            235,
+            238,
+            295,
+            298,
+            299,
+            300,
+            328
+          ],
+          "path": "src/bhsm/interface/covariant_bubble_interface_mechanics.py",
+          "symbol": "build_payload"
+        },
+        {
+          "lines": [
+            86
+          ],
+          "path": "theory/bhsm_covariant_bubble_interface_mechanics.md",
+          "symbol": "selected membrane mechanics and computed outward loss"
+        }
+      ]
+    },
+    {
+      "cessation_equivalence": "NONE_IDENTIFIED",
+      "equations": [
+        "Pr_normal([T_bulk.n]_e,c+E_iota(S_enc))=0",
+        "Pi_e+E_qe(S_enc)=0",
+        "Pi_c+E_qc(S_enc)=0",
+        "d J_total_xi=0",
+        "J_event+J_child+J_interface+J_environment=0",
+        "H_xi(e)=H_xi(c)+H_xi(interface/environment)+sum_i H_xi(c_i)+Phi_out"
+      ],
+      "id": "same_action_seam_and_noether_balance",
+      "kind": "ORIENTED_CONSERVATION",
+      "meaning": "Oriented total-action seam stationarity, Ward identity and conditional integrated charge ledger.",
+      "reason": "A zero total oriented balance permits nonzero individual outward currents and reactions. Conservation fixes accounting, not an outward-support extinction event. The integrated ledger itself requires the selected flow, reference, ensemble and common domain.",
+      "source_refs": [
+        {
+          "lines": [
+            389,
+            406,
+            410
+          ],
+          "path": "src/bhsm/interface/owner_authorized_encapsulation_interface_action.py",
+          "symbol": "euler_lagrange_system"
+        },
+        {
+          "lines": [
+            447,
+            448,
+            450,
+            451,
+            452
+          ],
+          "path": "src/bhsm/interface/owner_authorized_encapsulation_interface_action.py",
+          "symbol": "no_ex_nihilo_noether_structure"
+        },
+        {
+          "lines": [
+            275,
+            279,
+            280,
+            281,
+            283,
+            284,
+            286,
+            287,
+            288,
+            290
+          ],
+          "path": "src/bhsm/interface/energetically_admissible_encapsulation_carrier_adjudication.py",
+          "symbol": "conservation_firewall"
+        }
+      ]
+    },
+    {
+      "cessation_equivalence": "NONE_IDENTIFIED",
+      "equations": [
+        "P=v_lift^T L_v",
+        "F=q_lift^T L_q",
+        "G_child=q_lift^T Pi_radial,child",
+        "M=F-G-DP[X]",
+        "D M[u]=D F[u]-D G[u]-D2P[X,u]-DP[DX[u]]",
+        "child matching residual=G_child+DP[X]-F+G_event"
+      ],
+      "id": "material_dynamic_flux",
+      "kind": "RETAINED_ACTION_BOUNDARY_DYNAMICS",
+      "meaning": "Canonical momentum, virtual-work force, radial conormal and momentum-rate terms in the two-channel moving boundary form.",
+      "reason": "The computed zero is the signed child/event dynamic matching residual, not either one-sided conormal or an oriented spacetime-support observable. D M is a source/output derivative; its vanishing would not operationally define support cessation.",
+      "source_refs": [
+        {
+          "lines": [
+            2998,
+            3020,
+            3021
+          ],
+          "path": "src/bhsm/interface/aether_cross_resolution_reconnaissance_v21_35.py",
+          "symbol": "_canonical_pair_at_order"
+        },
+        {
+          "lines": [
+            3133,
+            3150,
+            3159
+          ],
+          "path": "src/bhsm/interface/aether_cross_resolution_reconnaissance_v21_35.py",
+          "symbol": "_metric_radial_flux_covector_at_order"
+        },
+        {
+          "lines": [
+            3199,
+            3223,
+            3274,
+            3280
+          ],
+          "path": "src/bhsm/interface/aether_cross_resolution_reconnaissance_v21_35.py",
+          "symbol": "_child_rows_at_order"
+        },
+        {
+          "lines": [
+            27,
+            28,
+            29,
+            30,
+            31,
+            38,
+            39
+          ],
+          "path": "src/bhsm/interface/geometric_material_port.py",
+          "symbol": "required_material_jet"
+        }
+      ]
+    },
+    {
+      "cessation_equivalence": "NONE_IDENTIFIED",
+      "equations": [
+        "Pi_parent+Pi_child_return+J+C^dagger lambda=0",
+        "Noether residual=sum_i 2 Re <Tq,Pi_i>"
+      ],
+      "id": "event_canonical_noether_contraction",
+      "kind": "RETAINED_EVENT_MATCHING_STRUCTURE",
+      "meaning": "Canonical event traction balance and contraction with an anti-Hermitian infinitesimal symmetry generator.",
+      "reason": "The total traction sum and its symmetry contraction vanish by stationarity/matching with potentially nonzero individual tractions. The helper neither supplies a selected outward support generator/current nor equates this residual with the cessation condition.",
+      "source_refs": [
+        {
+          "lines": [
+            163,
+            164,
+            165,
+            166,
+            167
+          ],
+          "path": "src/bhsm/interface/ae4_c2_stratified_event_flux_assembly.py",
+          "symbol": "solve_retarded_event_kkt"
+        },
+        {
+          "lines": [
+            207,
+            208,
+            214,
+            215,
+            236
+          ],
+          "path": "src/bhsm/interface/ae4_c2_stratified_event_flux_assembly.py",
+          "symbol": "canonical_noether_flux_balance"
+        },
+        {
+          "lines": [
+            256
+          ],
+          "path": "src/bhsm/interface/ae4_c2_stratified_event_flux_assembly.py",
+          "symbol": "assembly_contract"
+        },
+        {
+          "lines": [
+            132,
+            137,
+            139,
+            140
+          ],
+          "path": "src/bhsm/interface/ae4_event_response_jet_integration.py",
+          "symbol": "canonical_noether_flux_balance_jet"
+        }
+      ]
+    },
+    {
+      "cessation_equivalence": "NONE_IDENTIFIED",
+      "equations": [
+        "Sigma_enc={sigma=0}",
+        "[Pi_geometry^n]=0 after opposite-normal orientation",
+        "[eta]=0 and [Pi_eta^n]=0",
+        "[i_X^*A]=0 and [Pi_A^n]=0",
+        "[T_nn]_resolved=0",
+        "[n_A J_Noether^A]=0"
+      ],
+      "id": "resolved_internal_interface",
+      "kind": "SMOOTH_INTERNAL_JUMP_MATCHING",
+      "meaning": "Splitting one smooth action at a resolved internal material level set preserves traces and matches oriented fluxes.",
+      "reason": "The source explicitly classifies this level set as an internal material interface, not a terminal boundary or reset locus. Equal one-sided fluxes can both be nonzero; a zero jump is not cessation of outward support.",
+      "source_refs": [
+        {
+          "lines": [
+            237,
+            238,
+            241,
+            254,
+            255,
+            257,
+            261,
+            265,
+            266
+          ],
+          "path": "src/bhsm/interface/ae3_reciprocal_join_localization.py",
+          "symbol": "interface_variation_ledger"
+        }
+      ]
+    },
+    {
+      "cessation_equivalence": "NONE_IDENTIFIED",
+      "equations": [
+        "q_D=-lambda_D log upsilon",
+        "Z_upsilon,reduced=lambda_D^2/upsilon^2",
+        "L_D=-1/2 G^AB partial_A q_D partial_B q_D",
+        "Pi_D=sqrt|h| n^A partial_A q_D",
+        "j_shift^A=lambda_D nabla^A q_D"
+      ],
+      "id": "canonical_support_kinetic_sector",
+      "kind": "LATER_SELECTED_SUPPORT_ACTION",
+      "meaning": "v11.0 selects Haar-depth kinematics and the canonical regular support kinetic term; its regular boundary momentum and isolated shift current are action-derived.",
+      "reason": "This later selection supersedes the v10.4 constant-vs-logarithmic kinetic ambiguity. upsilon=0 lies at q_D=+infinity outside the regular domain. The known isolated current is not asserted to be a complete outward spacetime-support observable at a finite transported-branch energy crossing.",
+      "source_refs": [
+        {
+          "lines": [
+            100,
+            102,
+            104,
+            105,
+            107,
+            108,
+            115
+          ],
+          "path": "src/bhsm/interface/envelopment/support_composition_v11_0.py",
+          "symbol": "composition_payload"
+        },
+        {
+          "lines": [
+            58,
+            59,
+            60
+          ],
+          "path": "src/bhsm/interface/envelopment/core_stratum_action_v11_0.py",
+          "symbol": "core_action_payload"
+        },
+        {
+          "lines": [
+            40,
+            41,
+            42,
+            50,
+            51,
+            52,
+            53
+          ],
+          "path": "src/bhsm/interface/completion/support_noether_current_v11_2.py",
+          "symbol": "current_payload"
+        }
+      ]
+    },
+    {
+      "cessation_equivalence": "NONE_IDENTIFIED",
+      "equations": [
+        "S_attach=int_M5 dmu5 <Lambda85,upsilon^(-1/2)I_W-upsilon^(1/2)I_C>",
+        "I_W=upsilon I_C",
+        "delta S_attach/delta q_D=(2 lambda_D)^(-1)<Lambda85,upsilon^(-1/2)I_W+upsilon^(1/2)I_C>",
+        "J_attach=-(2 lambda_D)^(-1)<Lambda85,upsilon^(-1/2)I_W+upsilon^(1/2)I_C>",
+        "Box_G q_D=J_shift,inherited+J_attach"
+      ],
+      "id": "selected_reciprocal_support_attachment",
+      "kind": "LATER_SELECTED_SUPPORT_ACTION_AND_SOURCE",
+      "meaning": "v11.3 selects reciprocal half-characters, the algebraic incidence constraint and the signed scalar support source. It is an actual later action selection, not the earlier unselected action family.",
+      "reason": "Regular support evolution and compatibility do not identify the adopted cessation event. No retained equation equates I_W=upsilon I_C, J_attach=0 or any q_D derivative with outward support cessation at <psi,(R-H_event,drive)psi>=0.",
+      "source_refs": [
+        {
+          "lines": [
+            54,
+            58,
+            59,
+            60,
+            61
+          ],
+          "path": "src/bhsm/interface/completion/reciprocal_attachment_action_v11_3.py",
+          "symbol": "action_payload"
+        },
+        {
+          "lines": [
+            25,
+            26,
+            30,
+            31,
+            32
+          ],
+          "path": "src/bhsm/interface/completion/reciprocal_attachment_action_v11_3.py",
+          "symbol": "qd_source"
+        }
+      ]
+    },
+    {
+      "cessation_equivalence": "NONE_IDENTIFIED",
+      "equations": [
+        "Q_C^B+Q_W^B+Q_D^B=0 on the multiplier and field equations",
+        "normal_momentum_shift,attachment=0",
+        "boundary_flux_attachment=0"
+      ],
+      "id": "attachment_exchange_and_boundary",
+      "kind": "LATER_SELECTED_WARD_TRANSFER",
+      "meaning": "The reciprocal attachment supplies scalar J_attach and total stratified diffeomorphism stress transfer. Because the attachment is algebraic, it adds no new derivative boundary flux or normal momentum.",
+      "reason": "The source explicitly distinguishes the scalar exchange source from an independent vector displacement current. Zero additional attachment flux is a structural property of this algebraic term; it does not set inherited fluxes to zero or show that outward support ceases.",
+      "source_refs": [
+        {
+          "lines": [
+            29,
+            30,
+            31,
+            32,
+            33,
+            34,
+            35,
+            36,
+            37,
+            39,
+            40,
+            41,
+            42,
+            43,
+            45,
+            46
+          ],
+          "path": "src/bhsm/interface/completion/attachment_exchange_current_v11_3.py",
+          "symbol": "current_payload"
+        },
+        {
+          "lines": [
+            16,
+            28,
+            29,
+            30,
+            31,
+            32,
+            33
+          ],
+          "path": "src/bhsm/interface/completion/attachment_boundary_core_domain_v11_3.py",
+          "symbol": "boundary_payload"
+        }
+      ]
+    },
+    {
+      "cessation_equivalence": "NONE_IDENTIFIED",
+      "equations": [
+        "upsilon->0, q_D->+infinity, bounded I_C, I_W=O(upsilon)",
+        "upsilon^(-1/2)I_W=upsilon^(1/2)I_C=O(sqrt(upsilon))",
+        "I_W/I_C=upsilon->0"
+      ],
+      "id": "reciprocal_attachment_asymptotic_core_closure",
+      "kind": "LATER_SELECTED_ASYMPTOTIC_SUPPORT_SUPPRESSION",
+      "meaning": "The later selected attachment has conditional finite asymptotic action/source and suppresses the wall incidence on its constraint.",
+      "reason": "This is a conditional asymptotic core closure, not a finite support-loss surface criterion. The source retains the inherited finite-flux q_D domain, keeps intrinsic h_enc fixed and neutral, and requires a separate topology-changing/de-envelopment domain for core entry. No equivalence to the adopted first future energy equality is given.",
+      "source_refs": [
+        {
+          "lines": [
+            40,
+            54,
+            55,
+            56,
+            61,
+            62,
+            63,
+            64,
+            65
+          ],
+          "path": "src/bhsm/interface/completion/attachment_boundary_core_domain_v11_3.py",
+          "symbol": "core_payload"
+        },
+        {
+          "lines": [
+            81,
+            82,
+            83
+          ],
+          "path": "src/bhsm/interface/completion/mark_ii_gate_v11_3.py",
+          "symbol": "completion_payload"
+        }
+      ]
+    },
+    {
+      "cessation_equivalence": "NONE_IDENTIFIED",
+      "equations": [
+        "Pi_D,regular+delta S_core-total/delta q_D=0",
+        "omega_regular+omega_Sigma+omega_core=0"
+      ],
+      "id": "core_flux_and_conservative_ensembles",
+      "kind": "KNOWN_REGULAR_BOUNDARY_STRUCTURE",
+      "meaning": "Regular/core matching form. Finite-cutoff terminal Dirichlet and reflecting Neumann ensembles both have zero regular symplectic flux without absorption.",
+      "reason": "Zero flux can occur for reflection or fixed terminal data. Conservation alone does not select transfer or support extinction. The later v11.3 algebraic attachment closure is retained separately and does not turn these examples into a current physical cessation predicate.",
+      "source_refs": [
+        {
+          "lines": [
+            29,
+            30,
+            31,
+            32,
+            33,
+            34,
+            36,
+            37,
+            38,
+            39,
+            40,
+            41,
+            42,
+            62,
+            66,
+            67,
+            68,
+            69
+          ],
+          "path": "src/bhsm/interface/envelopment/core_stratum_action_v11_0.py",
+          "symbol": "core_action_payload"
+        },
+        {
+          "lines": [
+            17,
+            19,
+            20,
+            24,
+            27,
+            29
+          ],
+          "path": "src/bhsm/interface/completion/core_asymptotic_domain_v11_2.py",
+          "symbol": "core_domain_payload"
+        }
+      ]
+    },
+    {
+      "cessation_equivalence": "NONE_IDENTIFIED",
+      "equations": [
+        "child_condition=FUTURE_RETARDED_REGULARITY_OR_OUTGOING_SUPPORT_ONLY",
+        "canonical stop selects Friedrichs closure of the retained nonnegative minimal form"
+      ],
+      "id": "retarded_support_and_canonical_stop",
+      "kind": "CAUSAL_AND_ENDPOINT_DOMAIN",
+      "meaning": "Future outgoing/retarded child boundary selection and the separately certified canonical-stop endpoint domain.",
+      "reason": "Outgoing support is an allowed causal boundary behavior, not proof of its cessation. The canonical-stop bridge determines an endpoint form-domain consequence from supplied certifications; it does not compute the adopted support-cessation conjunction.",
+      "source_refs": [
+        {
+          "lines": [
+            93,
+            105,
+            106,
+            107,
+            113,
+            114
+          ],
+          "path": "src/bhsm/interface/ae4_future_collapse_relative_boundary_domain.py",
+          "symbol": "future_collapse_domain_contract"
+        },
+        {
+          "lines": [
+            13,
+            24,
+            25,
+            26,
+            27,
+            28,
+            50,
+            51,
+            52,
+            65,
+            68
+          ],
+          "path": "src/bhsm/interface/ae4_current_c2_canonical_stop_domain_bridge.py",
+          "symbol": "canonical_stop_domain_bridge"
+        },
+        {
+          "lines": [
+            39,
+            40,
+            41,
+            42,
+            43,
+            44
+          ],
+          "path": "theory/ae4_mode_frequency_cutoff_owner_20261007.md",
+          "symbol": "event distinctions"
+        }
+      ]
+    },
+    {
+      "cessation_equivalence": "NONE_IDENTIFIED",
+      "equations": [
+        "tau_decay=inf{tau>0:z_child(tau) notin B_child}"
+      ],
+      "id": "whole_child_first_exit",
+      "kind": "HISTORICAL_PERSISTENCE_DOMAIN_EVENT",
+      "meaning": "Decay as first exit from the reconstructed child's full admissible persistence domain.",
+      "reason": "B_child includes topology, carrier, regular metric/lapse, hyperregularity, constraints, reconstruction and dynamic existence. Exiting this domain is not proved equivalent to loss of outward spacetime support at the adopted energy equality.",
+      "source_refs": [
+        {
+          "lines": [
+            152,
+            158,
+            167,
+            170,
+            171,
+            172,
+            174,
+            177,
+            185,
+            195,
+            197
+          ],
+          "path": "src/bhsm/interface/aether_persistent_nonequilibrium_child_v17_87.py",
+          "symbol": "persistence_and_decay_contract"
+        }
+      ]
+    },
+    {
+      "assumptions": [
+        "An absolutely continuous regular support path with 0<upsilon<=1 and fixed positive finite lambda_D.",
+        "A finite positive exterior-clock interval Delta_tau.",
+        "Finite nonnegative squared Haar speed integral K_D on that interval.",
+        "K_D is the positive support kinetic integral. Finiteness of a signed Lorentzian total action, or cancellation of sectors in that action, does not by itself establish this hypothesis."
+      ],
+      "cessation_equivalence": "NONE_IDENTIFIED",
+      "derived_status": "DERIVED_CONDITIONAL",
+      "equations": [
+        "q_D=-lambda_D log(upsilon), lambda_D>0; ds_D^2=lambda_D^2 dupsilon^2/upsilon^2",
+        "d(upsilon_0,upsilon_1)=lambda_D abs(log(upsilon_0/upsilon_1))",
+        "K_D=integral_(tau_0)^(tau_1) abs(dq_D/dtau)^2 dtau; S_D,positive=K_D/2",
+        "abs(q_D(tau_1)-q_D(tau_0)) <= L_D=integral abs(dq_D/dtau) dtau <= sqrt(Delta_tau K_D)=sqrt(2 Delta_tau S_D,positive)",
+        "Delta_tau<infinity and K_D<infinity imply the regular path cannot reach upsilon=0 (q_D=+infinity)"
+      ],
+      "id": "finite_positive_haar_action_endpoint_exclusion_v15_0",
+      "kind": "DERIVED_CONDITIONAL_REGULAR_ENDPOINT_EXCLUSION",
+      "meaning": "The retained positive Haar metric gives a conditional mathematical exclusion of ordinary finite-duration access to the zero-support endpoint.",
+      "new_analytic_result": "CONDITIONAL_ENDPOINT_EXCLUSION__NOT_A_CESSATION_EVENT_DEFINITION",
+      "numerical_execution": false,
+      "physical_operands": {
+        "Delta_tau": null,
+        "K_D": null,
+        "energy_equality_at_event": null,
+        "oriented_outward_support_cessation": null,
+        "transported_support_path": null
+      },
+      "physical_operands_status": "UNEVALUATED",
+      "reason": "This excludes one proposed proxy under the stated assumptions; it does not define outward spacetime support cessation at a positive regular upsilon, an oriented flux event, or a cross-stratum transition. No equivalence to the separate same-mode energy equality follows.",
+      "source_refs": [
+        {
+          "lines": [
+            9,
+            19,
+            20,
+            50,
+            51,
+            57,
+            60,
+            67,
+            68,
+            69,
+            70,
+            71,
+            72,
+            85,
+            86,
+            87,
+            88
+          ],
+          "path": "src/bhsm/interface/completion/aether_haar_barrier_v15_0.py",
+          "symbol": "support_depth; haar_distance; finite_action_length_bound; haar_barrier_payload"
+        },
+        {
+          "lines": [
+            5,
+            6,
+            7
+          ],
+          "path": "artifacts/BHSM_aether_haar_barrier_v15_0.json",
+          "symbol": "saved finite_event_regular_trajectory_gate and regular Haar metric"
+        }
+      ]
+    },
+    {
+      "cessation_equivalence": "NONE_IDENTIFIED",
+      "derived_status": "DERIVED_CONDITIONAL_ABSTRACT_COMPOSITION__PHYSICAL_EVENT_LAW_NOT_ACTION_OWNED",
+      "equations": [
+        "S=G_A disjoint_union C_A; C_A != {upsilon=0}",
+        "EventSpan(A_minus,A_mid,E1,I).then(EventSpan(A_mid,A_plus,E2,I))=EventSpan(A_minus,A_plus,E1 E2,I)",
+        "Abstract invariant signatures match under event-span composition"
+      ],
+      "id": "separate_core_and_abstract_event_span_v15_0",
+      "kind": "RETAINED_TYPED_CORE_DISTINCTION_AND_ABSTRACT_EVENT_CALCULUS",
+      "meaning": "The later retained schema separates the nongeometric core from the infinite regular Haar endpoint and implements associative boundary-to-boundary composition.",
+      "physical_operands": {
+        "action_owned_transition_law": null,
+        "core_adjacency": null,
+        "first_future_support_loss_surface": null,
+        "receiving_domain": null
+      },
+      "physical_operands_status": "UNEVALUATED",
+      "reason": "The executable calculus takes already named boundaries and event words. It supplies no action-derived trigger, full normal-section support predicate or first-future event locator. Its physical projection to ADM, Brown-York, Noether or cap currents is expressly conditional.",
+      "source_refs": [
+        {
+          "lines": [
+            18,
+            23,
+            24,
+            25,
+            29,
+            59,
+            61,
+            69,
+            79
+          ],
+          "path": "src/bhsm/interface/completion/aether_parent_stratification_v15_0.py",
+          "symbol": "AetherState.__post_init__; parent_stratification_payload"
+        },
+        {
+          "lines": [
+            31,
+            32,
+            33,
+            34,
+            35,
+            36,
+            51,
+            77,
+            78,
+            79,
+            80,
+            81,
+            82
+          ],
+          "path": "src/bhsm/interface/completion/aether_encapsulation_correspondence_v15_0.py",
+          "symbol": "EventSpan.then; event_correspondence_payload"
+        },
+        {
+          "lines": [
+            51,
+            60,
+            61,
+            75,
+            77,
+            78,
+            177,
+            178
+          ],
+          "path": "src/bhsm/interface/completion/aether_completion_gate_v15_0.py",
+          "symbol": "microscopic_action_audit; completion_payload"
+        }
+      ]
+    },
+    {
+      "cessation_equivalence": "NONE_IDENTIFIED",
+      "derived_status": "DERIVED_CONDITIONAL_TYPED_ADMISSIBILITY__NOT_AN_EVOLUTION_EVENT",
+      "equations": [
+        "Rec(A)=all declared operator/domain reconstruction conditions",
+        "E_s models R_child iff required_structures subset Available(E_s) union Produced(tau_s) and invariants/scale/energy/causal/incidence predicates hold"
+      ],
+      "id": "reconstruction_and_environment_support_predicates",
+      "kind": "RETAINED_CONDITIONAL_ADMISSIBILITY_EVALUATORS",
+      "meaning": "Callable reconstruction and environmental compatibility functions classify supplied evidence as reconstructible, supported, excluded or unresolved.",
+      "physical_operands": {
+        "action_owned_transition_generator_to_domain_loss_map": null,
+        "branch_reconstruction_evidence": null,
+        "cessation_event": null
+      },
+      "physical_operands_status": "UNEVALUATED",
+      "reason": "The functions consume supplied booleans, structure sets and invariant/energy metadata, rather than deriving their loss from the total-action solution. No temporal first-exit or oriented outward-current criterion is coupled to the energy equality. The retained regime classifier explicitly distinguishes the Legendre firewall from a spacetime edge.",
+      "source_refs": [
+        {
+          "lines": [
+            21,
+            22,
+            24,
+            33,
+            61,
+            66,
+            70,
+            73
+          ],
+          "path": "src/bhsm/interface/completion/aether_reconstruction_v15_0.py",
+          "symbol": "reconstruction_predicate; reconstruction_payload; high_excitation_counterexample"
+        },
+        {
+          "lines": [
+            207,
+            238,
+            244,
+            263,
+            272,
+            273,
+            274,
+            279,
+            280,
+            426,
+            430,
+            458,
+            459,
+            461,
+            464,
+            467,
+            471,
+            473,
+            474,
+            475,
+            476
+          ],
+          "path": "src/bhsm/interface/environmental_child_compatibility_selection.py",
+          "symbol": "spacetime_regime_classification; compatibility_relation"
+        }
+      ]
+    },
+    {
+      "assumptions": [
+        "Fixed declared action-whitened attachment coordinates and reciprocal constraint tangent.",
+        "Positive kinetic Gram; positive h_C and k_D for the recovered positive-response theorem.",
+        "Declared reflection-symmetric scalar incidence and retained boundary pairing; physical parameters must be obtained from the same stationary global solution."
+      ],
+      "cessation_equivalence": "NONE_IDENTIFIED",
+      "derived_status": "DERIVED_CONDITIONAL",
+      "equations": [
+        "K_parallel=[[2,1],[1,2]], H_parallel=[[h_C,h_C],[h_C,h_C+k_D]]",
+        "3 mu^2-2(h_C+k_D)mu+h_C k_D=0; W_att=K_parallel^(-1/2)H_parallel K_parallel^(-1/2)",
+        "h_C=V_RR/M_RR on the globally stationary reduced core branch",
+        "k_D,eff=H_xx-H_xI H_II,perp^(-1)H_Ix in x_D=-log(upsilon)",
+        "J=J0 N; E=J(J^dagger J)^(-1/2); W_boundary=E W_att E^dagger",
+        "p_(v,1)+p_(v,2)+sum_w W_vw u_w=0 on the continuity subspace"
+      ],
+      "id": "later_attachment_curvature_and_coupled_wentzell_v14_68",
+      "kind": "DERIVED_CONDITIONAL_ATTACHMENT_RESPONSE_AND_DOMAIN_MATCHING",
+      "meaning": "The retained sequence recovers the common attachment Gram/Hessian, derives global curvature outputs, and replaces the v14.67 uniform lift by the v14.68 incidence-derived coupled Wentzell response in the declared reduced symmetric sector.",
+      "physical_operands": {
+        "physical_h_C": null,
+        "physical_k_D": null,
+        "stationary_global_profile": null,
+        "support_cessation_predicate": null,
+        "transported_support_loss_mode": null
+      },
+      "physical_operands_status": "UNEVALUATED",
+      "reason": "Positive response roots and a self-adjoint matching domain describe restoring response and balanced boundary data. The oriented momentum sum can vanish with nonzero one-sided momenta. No equation declares these roots, the Schur curvature or the Wentzell balance to be the outward-support cessation event.",
+      "source_refs": [
+        {
+          "lines": [
+            67,
+            68,
+            73,
+            74,
+            75,
+            76,
+            85
+          ],
+          "path": "src/bhsm/interface/completion/common_attachment_response_v11_4.py",
+          "symbol": "response_roots; response_payload"
+        },
+        {
+          "lines": [
+            155,
+            163,
+            178,
+            182,
+            183,
+            184,
+            185,
+            226,
+            231,
+            233
+          ],
+          "path": "src/bhsm/interface/completion/action_attachment_wentzell_v14_67.py",
+          "symbol": "attachment_response_roots; attachment_wentzell_response; uniform_theorem_wentzell_blocks"
+        },
+        {
+          "lines": [
+            145,
+            155,
+            166,
+            231,
+            238,
+            241,
+            243,
+            265,
+            268,
+            269,
+            270,
+            271,
+            284,
+            290,
+            293,
+            294,
+            302,
+            310,
+            313,
+            316,
+            320,
+            324,
+            470,
+            480,
+            486,
+            488,
+            489,
+            522,
+            523,
+            548,
+            549
+          ],
+          "path": "src/bhsm/interface/completion/global_attachment_incidence_curvature_v14_68.py",
+          "symbol": "core_global_curvature; depth_global_curvature; tangent_stratum_incidence; canonical_incidence_isometry; boundary_attachment_operator; coupled_wentzell_extension_matrices; global_curvature_payload; incidence_map_payload; coupled_wentzell_payload; scalar_stratum_incidence_map"
+        }
+      ]
+    },
+    {
+      "assumptions": [
+        "Declared bundle-like metric splitting and compatible trace embedding.",
+        "Round reflection-symmetric spatial S3 seam in a round S4 cap for the explicit second-shape formula.",
+        "Complete bulk, GHY, constraint reactions and other owned sectors are not replaced by the area-only Jacobi form."
+      ],
+      "cessation_equivalence": "NONE_IDENTIFIED",
+      "derived_status": "DERIVED_CONDITIONAL",
+      "equations": [
+        "Q_H(G)=A-B C^(-1)B^dagger",
+        "DQ_H[dG]=dA-dB C^(-1)B^dagger-B C^(-1)dB^dagger+B C^(-1)dC C^(-1)B^dagger",
+        "delta h=T^dagger delta g T+2 xi K, plus tangential Lie derivative",
+        "D2h[xi,eta]=d xi tensor d eta+d eta tensor d xi-2 xi eta h/a^2 on the round spatial equator",
+        "Q_Sigma[xi,eta]=integral(<grad xi,grad eta>-3 xi eta/a^2)dmu; J_l=(l-1)(l+3)/a^2"
+      ],
+      "id": "later_tensor_and_second_shape_response_v14_69_v14_70",
+      "kind": "DERIVED_CONDITIONAL_METRIC_INCIDENCE_AND_SHAPE_DERIVATIVES",
+      "meaning": "Later metric tensor differentials/adjoints and the second normal shape response are explicitly retained; their algebra must not be described as absent.",
+      "physical_operands": {
+        "complete_cessation_event": null,
+        "full_physical_stationary_background": null,
+        "oriented_complete_normal_section": null
+      },
+      "physical_operands_status": "UNEVALUATED",
+      "reason": "A zero first metric trace at a round equator (K=0) is a shape-derivative kernel, not cessation of geometric support. The retained second variation is nontrivial. The area Jacobi eigenvalues are restoring/symmetry data, and the source explicitly does not identify the area Jacobi form with the complete BHSM Hessian or an extinction event.",
+      "source_refs": [
+        {
+          "lines": [
+            161,
+            162,
+            170,
+            173,
+            184,
+            185,
+            186,
+            189,
+            220,
+            232,
+            233,
+            237,
+            343,
+            348,
+            510,
+            511,
+            512,
+            514,
+            516,
+            517
+          ],
+          "path": "src/bhsm/interface/completion/tensor_differential_incidence_v14_69.py",
+          "symbol": "horizontal_quotient_metric; horizontal_quotient_differential; horizontal_quotient_adjoint; trace_differential; moving_trace_differential; provenance_gate_payload; round_shape_kernel_payload"
+        },
+        {
+          "lines": [
+            117,
+            124,
+            125,
+            126,
+            127,
+            128,
+            129,
+            130,
+            131,
+            132,
+            267,
+            275,
+            286,
+            287,
+            295,
+            297,
+            349,
+            350
+          ],
+          "path": "src/bhsm/interface/completion/second_shape_jacobi_triplet_v14_70.py",
+          "symbol": "round_graph_metric_second_bilinear; second_shape_metric_payload; jacobi_spectrum_payload; provenance_gate_payload"
+        }
+      ]
+    },
+    {
+      "assumptions": [
+        "Declared Lorentzian P1 metric domain and canonical constraints.",
+        "Homogeneous M8 I x S7 truncation only for the explicit zero-relative/nonzero-common-momentum observation.",
+        "Same domain and actual dynamical coupling/kinetic operands needed for any physical response."
+      ],
+      "cessation_equivalence": "NONE_IDENTIFIED",
+      "derived_status": "DERIVED_CONDITIONAL_CANONICAL_GENERAL_FORM_AND_HOMOGENEOUS_SECTOR_RESULT",
+      "equations": [
+        "S_P1=(1/2)integral_M8 sqrt(-G)(kappa1 R-kappa0)+kappa1 integral_boundary epsilon K",
+        "pi^ij=(kappa1/2)sqrt(h)(K^ij-K h^ij)",
+        "DeltaPi=Pi_plus-R^dagger Pi_minus R",
+        "DeltaH(omega)=-B^dagger[K_dyn-omega^2 M_dyn]^(-1)B away from poles"
+      ],
+      "id": "full_preimage_dynamic_canonical_momentum_v14_90",
+      "kind": "RETAINED_CLASSICAL_CANONICAL_MOMENTUM_AND_CONDITIONAL_REDUCTION",
+      "meaning": "The retained Lorentzian action owns genuine dynamical metric momentum; the homogeneous explicit sector is cap-common and has zero relative cap momentum.",
+      "physical_operands": {
+        "full_support_loss_domain": null,
+        "nonhomogeneous_physical_cap_momenta": null,
+        "outward_cessation_event": null
+      },
+      "physical_operands_status": "UNEVALUATED",
+      "reason": "Stationary shift, homogeneous reflection-relative momentum or a conditional shape Schur correction is not an outward-support event. A zero relative cap momentum can coexist with nonzero common expansion momentum, and no evolution/energy-equality equivalence is supplied.",
+      "source_refs": [
+        {
+          "lines": [
+            313,
+            338,
+            339,
+            340,
+            341,
+            342,
+            343,
+            347,
+            348,
+            350,
+            355,
+            356,
+            357,
+            368,
+            370,
+            380,
+            381,
+            382,
+            383,
+            387,
+            388,
+            389,
+            390
+          ],
+          "path": "src/bhsm/interface/completion/intrinsic_full_preimage_dynamical_momentum_gate_v14_90.py",
+          "symbol": "completion_payload"
+        }
+      ]
+    },
+    {
+      "cessation_equivalence": "NONE_IDENTIFIED",
+      "derived_status": "RETAINED_CALLABLE_HISTORICAL_EVENT_FORMULA__NOT_CURRENT_SUPPORT_LOSS_EQUIVALENCE",
+      "equations": [
+        "v_terminal=(D_SBP q)_terminal/T; E_terminal=ordered_eigenvalue_6(H_EulerDirac(q_terminal,v_terminal,m_terminal))",
+        "D E_terminal[delta]=v_6^dagger (D H_EulerDirac[delta])v_6 with exact SBP/period pullback"
+      ],
+      "id": "callable_selected_historical_terminal_event_evaluator",
+      "kind": "CALLABLE_HISTORICAL_ORDERED_EIGENVALUE_EVENT_VALUE_AND_DERIVATIVES",
+      "meaning": "A concrete selected terminal event scalar and its derivatives do exist in the retained N3 historical owner. This is not a blanket missing-event-evaluator claim.",
+      "numerical_execution": false,
+      "physical_operands": {
+        "current_support_loss_event": null,
+        "current_transported_psi": null,
+        "current_xi_psi": null
+      },
+      "physical_operands_status": "UNEVALUATED",
+      "reason": "The event is the ordered terminal Euler-Dirac eigenvalue in the historical anchored SBP chart. Neither its callable value nor its later eigenpair derivative asserts equivalence to the adopted continuously transported support-loss mode energy equality together with outward-support cessation. No historical terminal eigenline or multipliers are borrowed.",
+      "source_refs": [
+        {
+          "lines": [
+            51,
+            52,
+            53,
+            54
+          ],
+          "path": "src/bhsm/interface/aether_n3_fresh_sbp_kkt_v16_58.py",
+          "symbol": "sbp_event_value_from_base"
+        },
+        {
+          "lines": [
+            31,
+            32,
+            33,
+            34,
+            35,
+            36,
+            40,
+            41,
+            42,
+            49,
+            53,
+            54,
+            55,
+            56
+          ],
+          "path": "src/bhsm/interface/aether_n3_rayleigh_event_covector_v20_80.py",
+          "symbol": "_terminal_data; _event_hessian; rayleigh_sbp_event_covector"
+        },
+        {
+          "lines": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            56,
+            59,
+            62,
+            63,
+            64,
+            65,
+            66,
+            67
+          ],
+          "path": "src/bhsm/interface/aether_n3_isolated_eigenpair_event_hessian_v21_17.py",
+          "symbol": "module owner statement; _local_eigenpair_hessian"
+        }
+      ]
+    }
+  ],
+  "bounded_scope": {
+    "additional_inspected_producer_groups": [
+      "finite_positive_haar_action_endpoint_exclusion_v15_0",
+      "separate_core_and_abstract_event_span_v15_0",
+      "reconstruction_and_environment_support_predicates",
+      "later_attachment_curvature_and_coupled_wentzell_v14_68",
+      "later_tensor_and_second_shape_response_v14_69_v14_70",
+      "full_preimage_dynamic_canonical_momentum_v14_90",
+      "callable_selected_historical_terminal_event_evaluator"
+    ],
+    "all_classical_actions_absent_claim": false,
+    "event_dependent_work_stops_at_exact_missing_definition": true,
+    "exhaustive_absence_claim": false,
+    "expanded_inspection_HEAD": "3ea1ef306c0da8fea7894944a03c5361d83910ae",
+    "historical_sector_gaps_promoted_to_current_global_gaps": false,
+    "numerical_producers_invoked": [],
+    "scope": "Named retained total-action, minimal membrane, reciprocal support attachment, material dynamic flux, conormal, canonical momentum, Noether, regular/core and causal-domain equations at the starting HEAD."
+  },
+  "classification": "ACTION_BOUNDARY_NOETHER_AUDIT__OUTWARD_SUPPORT_CESSATION_NOT_OPERATIONALLY_DEFINED",
+  "expanded_retained_action_search": {
+    "Gate7_campaign_run": false,
+    "current_first_gap_unchanged": "OUTWARD_SPACETIME_SUPPORT_CESSATION_EVENT_CONDITION",
+    "existing_selected_event_evaluator_identified": true,
+    "finite_controls_executed": false,
+    "historical_event_equivalence_to_current_support_loss_proved": false,
+    "inspection_HEAD": "3ea1ef306c0da8fea7894944a03c5361d83910ae",
+    "new_audited_equation_groups": [
+      "finite_positive_haar_action_endpoint_exclusion_v15_0",
+      "separate_core_and_abstract_event_span_v15_0",
+      "reconstruction_and_environment_support_predicates",
+      "later_attachment_curvature_and_coupled_wentzell_v14_68",
+      "later_tensor_and_second_shape_response_v14_69_v14_70",
+      "full_preimage_dynamic_canonical_momentum_v14_90",
+      "callable_selected_historical_terminal_event_evaluator"
+    ],
+    "new_operational_cessation_definition_identified": false,
+    "new_precise_analytic_result": {
+      "cross_stratum_transition_excluded": false,
+      "finite_positive_upsilon_cessation_excluded": false,
+      "new_physical_support_loss_value": null,
+      "physical_operands_status": "UNEVALUATED",
+      "positive_kinetic_finiteness_not_inferred_from_signed_total_action": true,
+      "result": "Finite exterior duration and finite positive regular Haar kinetic integral exclude ordinary regular access to upsilon=0.",
+      "scope": "An endpoint exclusion under explicit path, clock and positive kinetic hypotheses; not an extinction predicate and not a nonexistence theorem for any support-loss event.",
+      "status": "DERIVED_CONDITIONAL"
+    },
+    "numerical_producers_invoked": [],
+    "starting_scientific_identity_preserved": true,
+    "symbolic_nonimplications": [
+      {
+        "derived_nonimplication": "An oriented conserved sum constrains the total only; it permits nonzero individual outward currents balanced by other sectors. It does not imply the selected one-sided outward current or spacetime support is zero.",
+        "equation": "J_event+J_child+J_interface+J_environment=0",
+        "physical_outward_flux": null,
+        "source_refs": [
+          {
+            "lines": [
+              447,
+              448,
+              450,
+              451,
+              452
+            ],
+            "path": "src/bhsm/interface/owner_authorized_encapsulation_interface_action.py",
+            "symbol": "no_ex_nihilo_noether_structure"
+          }
+        ],
+        "status": "DERIVED_SYMBOLIC_NONIMPLICATION"
+      },
+      {
+        "derived_nonimplication": "For fixed lambda_D>0 on a connected nondegenerate regular domain, vanishing of the full isolated shift current implies constant q_D, not upsilon=0. Any finite constant q_D keeps upsilon positive. A vanishing normal current component is weaker still. No inference about other inherited currents or the adopted cessation/energy-equality conjunction follows.",
+        "equation": "j_shift^A=lambda_D nabla^A q_D; upsilon=exp(-q_D/lambda_D)",
+        "physical_shift_current": null,
+        "physical_upsilon": null,
+        "source_refs": [
+          {
+            "lines": [
+              40,
+              42,
+              43,
+              44,
+              45,
+              52,
+              53
+            ],
+            "path": "src/bhsm/interface/completion/support_noether_current_v11_2.py",
+            "symbol": "current_payload"
+          },
+          {
+            "lines": [
+              36,
+              37,
+              100,
+              102
+            ],
+            "path": "src/bhsm/interface/envelopment/support_composition_v11_0.py",
+            "symbol": "support_from_depth; composition_payload"
+          }
+        ],
+        "status": "DERIVED_CONDITIONAL_SYMBOLIC_NONIMPLICATION"
+      }
+    ]
+  },
+  "first_missing_definition": {
+    "name": "OUTWARD_SPACETIME_SUPPORT_CESSATION_EVENT_CONDITION",
+    "required_operational_definition": "An action-derived condition on the oriented full normal section that identifies cessation of outward spacetime support on the transported physical branch, at the first future surface where that condition and the separate energy equality both hold.",
+    "status": "UNDEFINED_IN_INSPECTED_OWNER",
+    "value": null
+  },
+  "first_stop": {
+    "arbitrary_flux_set_to_zero": false,
+    "downstream_scope": "No physical event, psi_star/xi_psi at that event, KKT source, impedance, resistance/inertia jets or native Pauli value is evaluated past this event-definition stop.",
+    "exact_missing_definition": "An action-derived condition on the oriented full normal section that identifies cessation of outward spacetime support on the transported physical branch, at the first future surface where that condition and the separate energy equality both hold.",
+    "id": "ACTION_OWNED_OUTWARD_SPACETIME_SUPPORT_CESSATION_DEFINITION",
+    "invented_scalar_condition": false,
+    "missing_definition_is_not": "Generic KKT algebra or a blanket claim that no classical action exists",
+    "why_first": "Without this operational second event condition the classical realization cannot select Sigma_star or distinguish its support-loss event from formation, a canonical stop, a descriptor zero or a cached endpoint."
+  },
+  "inspected_equations": [
+    {
+      "actual_role": "Total-action normal and tangential stress balance and the selected mode's restoring mechanics.",
+      "all_source_refs": [
+        {
+          "lines": [
+            139,
+            140,
+            181,
+            184,
+            187,
+            188,
+            209,
+            210,
+            234,
+            235,
+            238,
+            295,
+            298,
+            299,
+            300,
+            328
+          ],
+          "path": "src/bhsm/interface/covariant_bubble_interface_mechanics.py",
+          "symbol": "build_payload"
+        },
+        {
+          "lines": [
+            86
+          ],
+          "path": "theory/bhsm_covariant_bubble_interface_mechanics.md",
+          "symbol": "selected membrane mechanics and computed outward loss"
+        }
+      ],
+      "classification": "CLASSICAL_REGISTERED_MECHANICS",
+      "equation": "S_total=S_bulk,event+S_bulk,child+S_owned_boundary_corner-sum_s integral_Ws gamma_s dmu_h; jump(T^(mu nu)n_nu)+nabla_a(S_Sigma^(ab)e_b^mu)=0; jump(T_nn)=gamma_s K+I_bulk,response; h_a^mu jump(T_mu_n)=D_a gamma_s; I_lambda D_tau^2 a_lambda+[gamma_s j_lambda+Z_lambda]a_lambda=f_event,lambda",
+      "line_refs": [
+        139,
+        140,
+        181,
+        184,
+        187,
+        188,
+        209,
+        210,
+        234,
+        235,
+        238,
+        295,
+        298,
+        299,
+        300,
+        328
+      ],
+      "source_path": "src/bhsm/interface/covariant_bubble_interface_mechanics.py",
+      "symbol": "build_payload",
+      "why_not_cessation": "These equations balance two sides and the interface while support can persist. The payload defines decay as forward loss of stability plus conserved outgoing/multiple-child flux; it does not identify a support-cessation observable or evaluate it at the adopted energy equality."
+    },
+    {
+      "actual_role": "Oriented total-action seam stationarity, Ward identity and conditional integrated charge ledger.",
+      "all_source_refs": [
+        {
+          "lines": [
+            389,
+            406,
+            410
+          ],
+          "path": "src/bhsm/interface/owner_authorized_encapsulation_interface_action.py",
+          "symbol": "euler_lagrange_system"
+        },
+        {
+          "lines": [
+            447,
+            448,
+            450,
+            451,
+            452
+          ],
+          "path": "src/bhsm/interface/owner_authorized_encapsulation_interface_action.py",
+          "symbol": "no_ex_nihilo_noether_structure"
+        },
+        {
+          "lines": [
+            275,
+            279,
+            280,
+            281,
+            283,
+            284,
+            286,
+            287,
+            288,
+            290
+          ],
+          "path": "src/bhsm/interface/energetically_admissible_encapsulation_carrier_adjudication.py",
+          "symbol": "conservation_firewall"
+        }
+      ],
+      "classification": "ORIENTED_CONSERVATION",
+      "equation": "Pr_normal([T_bulk.n]_e,c+E_iota(S_enc))=0; Pi_e+E_qe(S_enc)=0; Pi_c+E_qc(S_enc)=0; d J_total_xi=0; J_event+J_child+J_interface+J_environment=0; H_xi(e)=H_xi(c)+H_xi(interface/environment)+sum_i H_xi(c_i)+Phi_out",
+      "line_refs": [
+        389,
+        406,
+        410
+      ],
+      "source_path": "src/bhsm/interface/owner_authorized_encapsulation_interface_action.py",
+      "symbol": "euler_lagrange_system",
+      "why_not_cessation": "A zero total oriented balance permits nonzero individual outward currents and reactions. Conservation fixes accounting, not an outward-support extinction event. The integrated ledger itself requires the selected flow, reference, ensemble and common domain."
+    },
+    {
+      "actual_role": "Canonical momentum, virtual-work force, radial conormal and momentum-rate terms in the two-channel moving boundary form.",
+      "all_source_refs": [
+        {
+          "lines": [
+            2998,
+            3020,
+            3021
+          ],
+          "path": "src/bhsm/interface/aether_cross_resolution_reconnaissance_v21_35.py",
+          "symbol": "_canonical_pair_at_order"
+        },
+        {
+          "lines": [
+            3133,
+            3150,
+            3159
+          ],
+          "path": "src/bhsm/interface/aether_cross_resolution_reconnaissance_v21_35.py",
+          "symbol": "_metric_radial_flux_covector_at_order"
+        },
+        {
+          "lines": [
+            3199,
+            3223,
+            3274,
+            3280
+          ],
+          "path": "src/bhsm/interface/aether_cross_resolution_reconnaissance_v21_35.py",
+          "symbol": "_child_rows_at_order"
+        },
+        {
+          "lines": [
+            27,
+            28,
+            29,
+            30,
+            31,
+            38,
+            39
+          ],
+          "path": "src/bhsm/interface/geometric_material_port.py",
+          "symbol": "required_material_jet"
+        }
+      ],
+      "classification": "RETAINED_ACTION_BOUNDARY_DYNAMICS",
+      "equation": "P=v_lift^T L_v; F=q_lift^T L_q; G_child=q_lift^T Pi_radial,child; M=F-G-DP[X]; D M[u]=D F[u]-D G[u]-D2P[X,u]-DP[DX[u]]; child matching residual=G_child+DP[X]-F+G_event",
+      "line_refs": [
+        2998,
+        3020,
+        3021
+      ],
+      "source_path": "src/bhsm/interface/aether_cross_resolution_reconnaissance_v21_35.py",
+      "symbol": "_canonical_pair_at_order",
+      "why_not_cessation": "The computed zero is the signed child/event dynamic matching residual, not either one-sided conormal or an oriented spacetime-support observable. D M is a source/output derivative; its vanishing would not operationally define support cessation."
+    },
+    {
+      "actual_role": "Canonical event traction balance and contraction with an anti-Hermitian infinitesimal symmetry generator.",
+      "all_source_refs": [
+        {
+          "lines": [
+            163,
+            164,
+            165,
+            166,
+            167
+          ],
+          "path": "src/bhsm/interface/ae4_c2_stratified_event_flux_assembly.py",
+          "symbol": "solve_retarded_event_kkt"
+        },
+        {
+          "lines": [
+            207,
+            208,
+            214,
+            215,
+            236
+          ],
+          "path": "src/bhsm/interface/ae4_c2_stratified_event_flux_assembly.py",
+          "symbol": "canonical_noether_flux_balance"
+        },
+        {
+          "lines": [
+            256
+          ],
+          "path": "src/bhsm/interface/ae4_c2_stratified_event_flux_assembly.py",
+          "symbol": "assembly_contract"
+        },
+        {
+          "lines": [
+            132,
+            137,
+            139,
+            140
+          ],
+          "path": "src/bhsm/interface/ae4_event_response_jet_integration.py",
+          "symbol": "canonical_noether_flux_balance_jet"
+        }
+      ],
+      "classification": "RETAINED_EVENT_MATCHING_STRUCTURE",
+      "equation": "Pi_parent+Pi_child_return+J+C^dagger lambda=0; Noether residual=sum_i 2 Re <Tq,Pi_i>",
+      "line_refs": [
+        163,
+        164,
+        165,
+        166,
+        167
+      ],
+      "source_path": "src/bhsm/interface/ae4_c2_stratified_event_flux_assembly.py",
+      "symbol": "solve_retarded_event_kkt",
+      "why_not_cessation": "The total traction sum and its symmetry contraction vanish by stationarity/matching with potentially nonzero individual tractions. The helper neither supplies a selected outward support generator/current nor equates this residual with the cessation condition."
+    },
+    {
+      "actual_role": "Splitting one smooth action at a resolved internal material level set preserves traces and matches oriented fluxes.",
+      "all_source_refs": [
+        {
+          "lines": [
+            237,
+            238,
+            241,
+            254,
+            255,
+            257,
+            261,
+            265,
+            266
+          ],
+          "path": "src/bhsm/interface/ae3_reciprocal_join_localization.py",
+          "symbol": "interface_variation_ledger"
+        }
+      ],
+      "classification": "SMOOTH_INTERNAL_JUMP_MATCHING",
+      "equation": "Sigma_enc={sigma=0}; [Pi_geometry^n]=0 after opposite-normal orientation; [eta]=0 and [Pi_eta^n]=0; [i_X^*A]=0 and [Pi_A^n]=0; [T_nn]_resolved=0; [n_A J_Noether^A]=0",
+      "line_refs": [
+        237,
+        238,
+        241,
+        254,
+        255,
+        257,
+        261,
+        265,
+        266
+      ],
+      "source_path": "src/bhsm/interface/ae3_reciprocal_join_localization.py",
+      "symbol": "interface_variation_ledger",
+      "why_not_cessation": "The source explicitly classifies this level set as an internal material interface, not a terminal boundary or reset locus. Equal one-sided fluxes can both be nonzero; a zero jump is not cessation of outward support."
+    },
+    {
+      "actual_role": "v11.0 selects Haar-depth kinematics and the canonical regular support kinetic term; its regular boundary momentum and isolated shift current are action-derived.",
+      "all_source_refs": [
+        {
+          "lines": [
+            100,
+            102,
+            104,
+            105,
+            107,
+            108,
+            115
+          ],
+          "path": "src/bhsm/interface/envelopment/support_composition_v11_0.py",
+          "symbol": "composition_payload"
+        },
+        {
+          "lines": [
+            58,
+            59,
+            60
+          ],
+          "path": "src/bhsm/interface/envelopment/core_stratum_action_v11_0.py",
+          "symbol": "core_action_payload"
+        },
+        {
+          "lines": [
+            40,
+            41,
+            42,
+            50,
+            51,
+            52,
+            53
+          ],
+          "path": "src/bhsm/interface/completion/support_noether_current_v11_2.py",
+          "symbol": "current_payload"
+        }
+      ],
+      "classification": "LATER_SELECTED_SUPPORT_ACTION",
+      "equation": "q_D=-lambda_D log upsilon; Z_upsilon,reduced=lambda_D^2/upsilon^2; L_D=-1/2 G^AB partial_A q_D partial_B q_D; Pi_D=sqrt|h| n^A partial_A q_D; j_shift^A=lambda_D nabla^A q_D",
+      "line_refs": [
+        100,
+        102,
+        104,
+        105,
+        107,
+        108,
+        115
+      ],
+      "source_path": "src/bhsm/interface/envelopment/support_composition_v11_0.py",
+      "symbol": "composition_payload",
+      "why_not_cessation": "This later selection supersedes the v10.4 constant-vs-logarithmic kinetic ambiguity. upsilon=0 lies at q_D=+infinity outside the regular domain. The known isolated current is not asserted to be a complete outward spacetime-support observable at a finite transported-branch energy crossing."
+    },
+    {
+      "actual_role": "v11.3 selects reciprocal half-characters, the algebraic incidence constraint and the signed scalar support source. It is an actual later action selection, not the earlier unselected action family.",
+      "all_source_refs": [
+        {
+          "lines": [
+            54,
+            58,
+            59,
+            60,
+            61
+          ],
+          "path": "src/bhsm/interface/completion/reciprocal_attachment_action_v11_3.py",
+          "symbol": "action_payload"
+        },
+        {
+          "lines": [
+            25,
+            26,
+            30,
+            31,
+            32
+          ],
+          "path": "src/bhsm/interface/completion/reciprocal_attachment_action_v11_3.py",
+          "symbol": "qd_source"
+        }
+      ],
+      "classification": "LATER_SELECTED_SUPPORT_ACTION_AND_SOURCE",
+      "equation": "S_attach=int_M5 dmu5 <Lambda85,upsilon^(-1/2)I_W-upsilon^(1/2)I_C>; I_W=upsilon I_C; delta S_attach/delta q_D=(2 lambda_D)^(-1)<Lambda85,upsilon^(-1/2)I_W+upsilon^(1/2)I_C>; J_attach=-(2 lambda_D)^(-1)<Lambda85,upsilon^(-1/2)I_W+upsilon^(1/2)I_C>; Box_G q_D=J_shift,inherited+J_attach",
+      "line_refs": [
+        54,
+        58,
+        59,
+        60,
+        61
+      ],
+      "source_path": "src/bhsm/interface/completion/reciprocal_attachment_action_v11_3.py",
+      "symbol": "action_payload",
+      "why_not_cessation": "Regular support evolution and compatibility do not identify the adopted cessation event. No retained equation equates I_W=upsilon I_C, J_attach=0 or any q_D derivative with outward support cessation at <psi,(R-H_event,drive)psi>=0."
+    },
+    {
+      "actual_role": "The reciprocal attachment supplies scalar J_attach and total stratified diffeomorphism stress transfer. Because the attachment is algebraic, it adds no new derivative boundary flux or normal momentum.",
+      "all_source_refs": [
+        {
+          "lines": [
+            29,
+            30,
+            31,
+            32,
+            33,
+            34,
+            35,
+            36,
+            37,
+            39,
+            40,
+            41,
+            42,
+            43,
+            45,
+            46
+          ],
+          "path": "src/bhsm/interface/completion/attachment_exchange_current_v11_3.py",
+          "symbol": "current_payload"
+        },
+        {
+          "lines": [
+            16,
+            28,
+            29,
+            30,
+            31,
+            32,
+            33
+          ],
+          "path": "src/bhsm/interface/completion/attachment_boundary_core_domain_v11_3.py",
+          "symbol": "boundary_payload"
+        }
+      ],
+      "classification": "LATER_SELECTED_WARD_TRANSFER",
+      "equation": "Q_C^B+Q_W^B+Q_D^B=0 on the multiplier and field equations; normal_momentum_shift,attachment=0; boundary_flux_attachment=0",
+      "line_refs": [
+        29,
+        30,
+        31,
+        32,
+        33,
+        34,
+        35,
+        36,
+        37,
+        39,
+        40,
+        41,
+        42,
+        43,
+        45,
+        46
+      ],
+      "source_path": "src/bhsm/interface/completion/attachment_exchange_current_v11_3.py",
+      "symbol": "current_payload",
+      "why_not_cessation": "The source explicitly distinguishes the scalar exchange source from an independent vector displacement current. Zero additional attachment flux is a structural property of this algebraic term; it does not set inherited fluxes to zero or show that outward support ceases."
+    },
+    {
+      "actual_role": "The later selected attachment has conditional finite asymptotic action/source and suppresses the wall incidence on its constraint.",
+      "all_source_refs": [
+        {
+          "lines": [
+            40,
+            54,
+            55,
+            56,
+            61,
+            62,
+            63,
+            64,
+            65
+          ],
+          "path": "src/bhsm/interface/completion/attachment_boundary_core_domain_v11_3.py",
+          "symbol": "core_payload"
+        },
+        {
+          "lines": [
+            81,
+            82,
+            83
+          ],
+          "path": "src/bhsm/interface/completion/mark_ii_gate_v11_3.py",
+          "symbol": "completion_payload"
+        }
+      ],
+      "classification": "LATER_SELECTED_ASYMPTOTIC_SUPPORT_SUPPRESSION",
+      "equation": "upsilon->0, q_D->+infinity, bounded I_C, I_W=O(upsilon); upsilon^(-1/2)I_W=upsilon^(1/2)I_C=O(sqrt(upsilon)); I_W/I_C=upsilon->0",
+      "line_refs": [
+        40,
+        54,
+        55,
+        56,
+        61,
+        62,
+        63,
+        64,
+        65
+      ],
+      "source_path": "src/bhsm/interface/completion/attachment_boundary_core_domain_v11_3.py",
+      "symbol": "core_payload",
+      "why_not_cessation": "This is a conditional asymptotic core closure, not a finite support-loss surface criterion. The source retains the inherited finite-flux q_D domain, keeps intrinsic h_enc fixed and neutral, and requires a separate topology-changing/de-envelopment domain for core entry. No equivalence to the adopted first future energy equality is given."
+    },
+    {
+      "actual_role": "Regular/core matching form. Finite-cutoff terminal Dirichlet and reflecting Neumann ensembles both have zero regular symplectic flux without absorption.",
+      "all_source_refs": [
+        {
+          "lines": [
+            29,
+            30,
+            31,
+            32,
+            33,
+            34,
+            36,
+            37,
+            38,
+            39,
+            40,
+            41,
+            42,
+            62,
+            66,
+            67,
+            68,
+            69
+          ],
+          "path": "src/bhsm/interface/envelopment/core_stratum_action_v11_0.py",
+          "symbol": "core_action_payload"
+        },
+        {
+          "lines": [
+            17,
+            19,
+            20,
+            24,
+            27,
+            29
+          ],
+          "path": "src/bhsm/interface/completion/core_asymptotic_domain_v11_2.py",
+          "symbol": "core_domain_payload"
+        }
+      ],
+      "classification": "KNOWN_REGULAR_BOUNDARY_STRUCTURE",
+      "equation": "Pi_D,regular+delta S_core-total/delta q_D=0; omega_regular+omega_Sigma+omega_core=0",
+      "line_refs": [
+        29,
+        30,
+        31,
+        32,
+        33,
+        34,
+        36,
+        37,
+        38,
+        39,
+        40,
+        41,
+        42,
+        62,
+        66,
+        67,
+        68,
+        69
+      ],
+      "source_path": "src/bhsm/interface/envelopment/core_stratum_action_v11_0.py",
+      "symbol": "core_action_payload",
+      "why_not_cessation": "Zero flux can occur for reflection or fixed terminal data. Conservation alone does not select transfer or support extinction. The later v11.3 algebraic attachment closure is retained separately and does not turn these examples into a current physical cessation predicate."
+    },
+    {
+      "actual_role": "Future outgoing/retarded child boundary selection and the separately certified canonical-stop endpoint domain.",
+      "all_source_refs": [
+        {
+          "lines": [
+            93,
+            105,
+            106,
+            107,
+            113,
+            114
+          ],
+          "path": "src/bhsm/interface/ae4_future_collapse_relative_boundary_domain.py",
+          "symbol": "future_collapse_domain_contract"
+        },
+        {
+          "lines": [
+            13,
+            24,
+            25,
+            26,
+            27,
+            28,
+            50,
+            51,
+            52,
+            65,
+            68
+          ],
+          "path": "src/bhsm/interface/ae4_current_c2_canonical_stop_domain_bridge.py",
+          "symbol": "canonical_stop_domain_bridge"
+        },
+        {
+          "lines": [
+            39,
+            40,
+            41,
+            42,
+            43,
+            44
+          ],
+          "path": "theory/ae4_mode_frequency_cutoff_owner_20261007.md",
+          "symbol": "event distinctions"
+        }
+      ],
+      "classification": "CAUSAL_AND_ENDPOINT_DOMAIN",
+      "equation": "child_condition=FUTURE_RETARDED_REGULARITY_OR_OUTGOING_SUPPORT_ONLY; canonical stop selects Friedrichs closure of the retained nonnegative minimal form",
+      "line_refs": [
+        93,
+        105,
+        106,
+        107,
+        113,
+        114
+      ],
+      "source_path": "src/bhsm/interface/ae4_future_collapse_relative_boundary_domain.py",
+      "symbol": "future_collapse_domain_contract",
+      "why_not_cessation": "Outgoing support is an allowed causal boundary behavior, not proof of its cessation. The canonical-stop bridge determines an endpoint form-domain consequence from supplied certifications; it does not compute the adopted support-cessation conjunction."
+    },
+    {
+      "actual_role": "Decay as first exit from the reconstructed child's full admissible persistence domain.",
+      "all_source_refs": [
+        {
+          "lines": [
+            152,
+            158,
+            167,
+            170,
+            171,
+            172,
+            174,
+            177,
+            185,
+            195,
+            197
+          ],
+          "path": "src/bhsm/interface/aether_persistent_nonequilibrium_child_v17_87.py",
+          "symbol": "persistence_and_decay_contract"
+        }
+      ],
+      "classification": "HISTORICAL_PERSISTENCE_DOMAIN_EVENT",
+      "equation": "tau_decay=inf{tau>0:z_child(tau) notin B_child}",
+      "line_refs": [
+        152,
+        158,
+        167,
+        170,
+        171,
+        172,
+        174,
+        177,
+        185,
+        195,
+        197
+      ],
+      "source_path": "src/bhsm/interface/aether_persistent_nonequilibrium_child_v17_87.py",
+      "symbol": "persistence_and_decay_contract",
+      "why_not_cessation": "B_child includes topology, carrier, regular metric/lapse, hyperregularity, constraints, reconstruction and dynamic existence. Exiting this domain is not proved equivalent to loss of outward spacetime support at the adopted energy equality."
+    },
+    {
+      "actual_role": "The retained positive Haar metric gives a conditional mathematical exclusion of ordinary finite-duration access to the zero-support endpoint.",
+      "all_source_refs": [
+        {
+          "lines": [
+            9,
+            19,
+            20,
+            50,
+            51,
+            57,
+            60,
+            67,
+            68,
+            69,
+            70,
+            71,
+            72,
+            85,
+            86,
+            87,
+            88
+          ],
+          "path": "src/bhsm/interface/completion/aether_haar_barrier_v15_0.py",
+          "symbol": "support_depth; haar_distance; finite_action_length_bound; haar_barrier_payload"
+        },
+        {
+          "lines": [
+            5,
+            6,
+            7
+          ],
+          "path": "artifacts/BHSM_aether_haar_barrier_v15_0.json",
+          "symbol": "saved finite_event_regular_trajectory_gate and regular Haar metric"
+        }
+      ],
+      "classification": "DERIVED_CONDITIONAL_REGULAR_ENDPOINT_EXCLUSION",
+      "derived_status": "DERIVED_CONDITIONAL",
+      "equation": "q_D=-lambda_D log(upsilon), lambda_D>0; ds_D^2=lambda_D^2 dupsilon^2/upsilon^2; d(upsilon_0,upsilon_1)=lambda_D abs(log(upsilon_0/upsilon_1)); K_D=integral_(tau_0)^(tau_1) abs(dq_D/dtau)^2 dtau; S_D,positive=K_D/2; abs(q_D(tau_1)-q_D(tau_0)) <= L_D=integral abs(dq_D/dtau) dtau <= sqrt(Delta_tau K_D)=sqrt(2 Delta_tau S_D,positive); Delta_tau<infinity and K_D<infinity imply the regular path cannot reach upsilon=0 (q_D=+infinity)",
+      "line_refs": [
+        9,
+        19,
+        20,
+        50,
+        51,
+        57,
+        60,
+        67,
+        68,
+        69,
+        70,
+        71,
+        72,
+        85,
+        86,
+        87,
+        88
+      ],
+      "physical_operands_status": "UNEVALUATED",
+      "source_path": "src/bhsm/interface/completion/aether_haar_barrier_v15_0.py",
+      "symbol": "support_depth; haar_distance; finite_action_length_bound; haar_barrier_payload",
+      "why_not_cessation": "This excludes one proposed proxy under the stated assumptions; it does not define outward spacetime support cessation at a positive regular upsilon, an oriented flux event, or a cross-stratum transition. No equivalence to the separate same-mode energy equality follows."
+    },
+    {
+      "actual_role": "The later retained schema separates the nongeometric core from the infinite regular Haar endpoint and implements associative boundary-to-boundary composition.",
+      "all_source_refs": [
+        {
+          "lines": [
+            18,
+            23,
+            24,
+            25,
+            29,
+            59,
+            61,
+            69,
+            79
+          ],
+          "path": "src/bhsm/interface/completion/aether_parent_stratification_v15_0.py",
+          "symbol": "AetherState.__post_init__; parent_stratification_payload"
+        },
+        {
+          "lines": [
+            31,
+            32,
+            33,
+            34,
+            35,
+            36,
+            51,
+            77,
+            78,
+            79,
+            80,
+            81,
+            82
+          ],
+          "path": "src/bhsm/interface/completion/aether_encapsulation_correspondence_v15_0.py",
+          "symbol": "EventSpan.then; event_correspondence_payload"
+        },
+        {
+          "lines": [
+            51,
+            60,
+            61,
+            75,
+            77,
+            78,
+            177,
+            178
+          ],
+          "path": "src/bhsm/interface/completion/aether_completion_gate_v15_0.py",
+          "symbol": "microscopic_action_audit; completion_payload"
+        }
+      ],
+      "classification": "RETAINED_TYPED_CORE_DISTINCTION_AND_ABSTRACT_EVENT_CALCULUS",
+      "derived_status": "DERIVED_CONDITIONAL_ABSTRACT_COMPOSITION__PHYSICAL_EVENT_LAW_NOT_ACTION_OWNED",
+      "equation": "S=G_A disjoint_union C_A; C_A != {upsilon=0}; EventSpan(A_minus,A_mid,E1,I).then(EventSpan(A_mid,A_plus,E2,I))=EventSpan(A_minus,A_plus,E1 E2,I); Abstract invariant signatures match under event-span composition",
+      "line_refs": [
+        18,
+        23,
+        24,
+        25,
+        29,
+        59,
+        61,
+        69,
+        79
+      ],
+      "physical_operands_status": "UNEVALUATED",
+      "source_path": "src/bhsm/interface/completion/aether_parent_stratification_v15_0.py",
+      "symbol": "AetherState.__post_init__; parent_stratification_payload",
+      "why_not_cessation": "The executable calculus takes already named boundaries and event words. It supplies no action-derived trigger, full normal-section support predicate or first-future event locator. Its physical projection to ADM, Brown-York, Noether or cap currents is expressly conditional."
+    },
+    {
+      "actual_role": "Callable reconstruction and environmental compatibility functions classify supplied evidence as reconstructible, supported, excluded or unresolved.",
+      "all_source_refs": [
+        {
+          "lines": [
+            21,
+            22,
+            24,
+            33,
+            61,
+            66,
+            70,
+            73
+          ],
+          "path": "src/bhsm/interface/completion/aether_reconstruction_v15_0.py",
+          "symbol": "reconstruction_predicate; reconstruction_payload; high_excitation_counterexample"
+        },
+        {
+          "lines": [
+            207,
+            238,
+            244,
+            263,
+            272,
+            273,
+            274,
+            279,
+            280,
+            426,
+            430,
+            458,
+            459,
+            461,
+            464,
+            467,
+            471,
+            473,
+            474,
+            475,
+            476
+          ],
+          "path": "src/bhsm/interface/environmental_child_compatibility_selection.py",
+          "symbol": "spacetime_regime_classification; compatibility_relation"
+        }
+      ],
+      "classification": "RETAINED_CONDITIONAL_ADMISSIBILITY_EVALUATORS",
+      "derived_status": "DERIVED_CONDITIONAL_TYPED_ADMISSIBILITY__NOT_AN_EVOLUTION_EVENT",
+      "equation": "Rec(A)=all declared operator/domain reconstruction conditions; E_s models R_child iff required_structures subset Available(E_s) union Produced(tau_s) and invariants/scale/energy/causal/incidence predicates hold",
+      "line_refs": [
+        21,
+        22,
+        24,
+        33,
+        61,
+        66,
+        70,
+        73
+      ],
+      "physical_operands_status": "UNEVALUATED",
+      "source_path": "src/bhsm/interface/completion/aether_reconstruction_v15_0.py",
+      "symbol": "reconstruction_predicate; reconstruction_payload; high_excitation_counterexample",
+      "why_not_cessation": "The functions consume supplied booleans, structure sets and invariant/energy metadata, rather than deriving their loss from the total-action solution. No temporal first-exit or oriented outward-current criterion is coupled to the energy equality. The retained regime classifier explicitly distinguishes the Legendre firewall from a spacetime edge."
+    },
+    {
+      "actual_role": "The retained sequence recovers the common attachment Gram/Hessian, derives global curvature outputs, and replaces the v14.67 uniform lift by the v14.68 incidence-derived coupled Wentzell response in the declared reduced symmetric sector.",
+      "all_source_refs": [
+        {
+          "lines": [
+            67,
+            68,
+            73,
+            74,
+            75,
+            76,
+            85
+          ],
+          "path": "src/bhsm/interface/completion/common_attachment_response_v11_4.py",
+          "symbol": "response_roots; response_payload"
+        },
+        {
+          "lines": [
+            155,
+            163,
+            178,
+            182,
+            183,
+            184,
+            185,
+            226,
+            231,
+            233
+          ],
+          "path": "src/bhsm/interface/completion/action_attachment_wentzell_v14_67.py",
+          "symbol": "attachment_response_roots; attachment_wentzell_response; uniform_theorem_wentzell_blocks"
+        },
+        {
+          "lines": [
+            145,
+            155,
+            166,
+            231,
+            238,
+            241,
+            243,
+            265,
+            268,
+            269,
+            270,
+            271,
+            284,
+            290,
+            293,
+            294,
+            302,
+            310,
+            313,
+            316,
+            320,
+            324,
+            470,
+            480,
+            486,
+            488,
+            489,
+            522,
+            523,
+            548,
+            549
+          ],
+          "path": "src/bhsm/interface/completion/global_attachment_incidence_curvature_v14_68.py",
+          "symbol": "core_global_curvature; depth_global_curvature; tangent_stratum_incidence; canonical_incidence_isometry; boundary_attachment_operator; coupled_wentzell_extension_matrices; global_curvature_payload; incidence_map_payload; coupled_wentzell_payload; scalar_stratum_incidence_map"
+        }
+      ],
+      "classification": "DERIVED_CONDITIONAL_ATTACHMENT_RESPONSE_AND_DOMAIN_MATCHING",
+      "derived_status": "DERIVED_CONDITIONAL",
+      "equation": "K_parallel=[[2,1],[1,2]], H_parallel=[[h_C,h_C],[h_C,h_C+k_D]]; 3 mu^2-2(h_C+k_D)mu+h_C k_D=0; W_att=K_parallel^(-1/2)H_parallel K_parallel^(-1/2); h_C=V_RR/M_RR on the globally stationary reduced core branch; k_D,eff=H_xx-H_xI H_II,perp^(-1)H_Ix in x_D=-log(upsilon); J=J0 N; E=J(J^dagger J)^(-1/2); W_boundary=E W_att E^dagger; p_(v,1)+p_(v,2)+sum_w W_vw u_w=0 on the continuity subspace",
+      "line_refs": [
+        67,
+        68,
+        73,
+        74,
+        75,
+        76,
+        85
+      ],
+      "physical_operands_status": "UNEVALUATED",
+      "source_path": "src/bhsm/interface/completion/common_attachment_response_v11_4.py",
+      "symbol": "response_roots; response_payload",
+      "why_not_cessation": "Positive response roots and a self-adjoint matching domain describe restoring response and balanced boundary data. The oriented momentum sum can vanish with nonzero one-sided momenta. No equation declares these roots, the Schur curvature or the Wentzell balance to be the outward-support cessation event."
+    },
+    {
+      "actual_role": "Later metric tensor differentials/adjoints and the second normal shape response are explicitly retained; their algebra must not be described as absent.",
+      "all_source_refs": [
+        {
+          "lines": [
+            161,
+            162,
+            170,
+            173,
+            184,
+            185,
+            186,
+            189,
+            220,
+            232,
+            233,
+            237,
+            343,
+            348,
+            510,
+            511,
+            512,
+            514,
+            516,
+            517
+          ],
+          "path": "src/bhsm/interface/completion/tensor_differential_incidence_v14_69.py",
+          "symbol": "horizontal_quotient_metric; horizontal_quotient_differential; horizontal_quotient_adjoint; trace_differential; moving_trace_differential; provenance_gate_payload; round_shape_kernel_payload"
+        },
+        {
+          "lines": [
+            117,
+            124,
+            125,
+            126,
+            127,
+            128,
+            129,
+            130,
+            131,
+            132,
+            267,
+            275,
+            286,
+            287,
+            295,
+            297,
+            349,
+            350
+          ],
+          "path": "src/bhsm/interface/completion/second_shape_jacobi_triplet_v14_70.py",
+          "symbol": "round_graph_metric_second_bilinear; second_shape_metric_payload; jacobi_spectrum_payload; provenance_gate_payload"
+        }
+      ],
+      "classification": "DERIVED_CONDITIONAL_METRIC_INCIDENCE_AND_SHAPE_DERIVATIVES",
+      "derived_status": "DERIVED_CONDITIONAL",
+      "equation": "Q_H(G)=A-B C^(-1)B^dagger; DQ_H[dG]=dA-dB C^(-1)B^dagger-B C^(-1)dB^dagger+B C^(-1)dC C^(-1)B^dagger; delta h=T^dagger delta g T+2 xi K, plus tangential Lie derivative; D2h[xi,eta]=d xi tensor d eta+d eta tensor d xi-2 xi eta h/a^2 on the round spatial equator; Q_Sigma[xi,eta]=integral(<grad xi,grad eta>-3 xi eta/a^2)dmu; J_l=(l-1)(l+3)/a^2",
+      "line_refs": [
+        161,
+        162,
+        170,
+        173,
+        184,
+        185,
+        186,
+        189,
+        220,
+        232,
+        233,
+        237,
+        343,
+        348,
+        510,
+        511,
+        512,
+        514,
+        516,
+        517
+      ],
+      "physical_operands_status": "UNEVALUATED",
+      "source_path": "src/bhsm/interface/completion/tensor_differential_incidence_v14_69.py",
+      "symbol": "horizontal_quotient_metric; horizontal_quotient_differential; horizontal_quotient_adjoint; trace_differential; moving_trace_differential; provenance_gate_payload; round_shape_kernel_payload",
+      "why_not_cessation": "A zero first metric trace at a round equator (K=0) is a shape-derivative kernel, not cessation of geometric support. The retained second variation is nontrivial. The area Jacobi eigenvalues are restoring/symmetry data, and the source explicitly does not identify the area Jacobi form with the complete BHSM Hessian or an extinction event."
+    },
+    {
+      "actual_role": "The retained Lorentzian action owns genuine dynamical metric momentum; the homogeneous explicit sector is cap-common and has zero relative cap momentum.",
+      "all_source_refs": [
+        {
+          "lines": [
+            313,
+            338,
+            339,
+            340,
+            341,
+            342,
+            343,
+            347,
+            348,
+            350,
+            355,
+            356,
+            357,
+            368,
+            370,
+            380,
+            381,
+            382,
+            383,
+            387,
+            388,
+            389,
+            390
+          ],
+          "path": "src/bhsm/interface/completion/intrinsic_full_preimage_dynamical_momentum_gate_v14_90.py",
+          "symbol": "completion_payload"
+        }
+      ],
+      "classification": "RETAINED_CLASSICAL_CANONICAL_MOMENTUM_AND_CONDITIONAL_REDUCTION",
+      "derived_status": "DERIVED_CONDITIONAL_CANONICAL_GENERAL_FORM_AND_HOMOGENEOUS_SECTOR_RESULT",
+      "equation": "S_P1=(1/2)integral_M8 sqrt(-G)(kappa1 R-kappa0)+kappa1 integral_boundary epsilon K; pi^ij=(kappa1/2)sqrt(h)(K^ij-K h^ij); DeltaPi=Pi_plus-R^dagger Pi_minus R; DeltaH(omega)=-B^dagger[K_dyn-omega^2 M_dyn]^(-1)B away from poles",
+      "line_refs": [
+        313,
+        338,
+        339,
+        340,
+        341,
+        342,
+        343,
+        347,
+        348,
+        350,
+        355,
+        356,
+        357,
+        368,
+        370,
+        380,
+        381,
+        382,
+        383,
+        387,
+        388,
+        389,
+        390
+      ],
+      "physical_operands_status": "UNEVALUATED",
+      "source_path": "src/bhsm/interface/completion/intrinsic_full_preimage_dynamical_momentum_gate_v14_90.py",
+      "symbol": "completion_payload",
+      "why_not_cessation": "Stationary shift, homogeneous reflection-relative momentum or a conditional shape Schur correction is not an outward-support event. A zero relative cap momentum can coexist with nonzero common expansion momentum, and no evolution/energy-equality equivalence is supplied."
+    },
+    {
+      "actual_role": "A concrete selected terminal event scalar and its derivatives do exist in the retained N3 historical owner. This is not a blanket missing-event-evaluator claim.",
+      "all_source_refs": [
+        {
+          "lines": [
+            51,
+            52,
+            53,
+            54
+          ],
+          "path": "src/bhsm/interface/aether_n3_fresh_sbp_kkt_v16_58.py",
+          "symbol": "sbp_event_value_from_base"
+        },
+        {
+          "lines": [
+            31,
+            32,
+            33,
+            34,
+            35,
+            36,
+            40,
+            41,
+            42,
+            49,
+            53,
+            54,
+            55,
+            56
+          ],
+          "path": "src/bhsm/interface/aether_n3_rayleigh_event_covector_v20_80.py",
+          "symbol": "_terminal_data; _event_hessian; rayleigh_sbp_event_covector"
+        },
+        {
+          "lines": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            56,
+            59,
+            62,
+            63,
+            64,
+            65,
+            66,
+            67
+          ],
+          "path": "src/bhsm/interface/aether_n3_isolated_eigenpair_event_hessian_v21_17.py",
+          "symbol": "module owner statement; _local_eigenpair_hessian"
+        }
+      ],
+      "classification": "CALLABLE_HISTORICAL_ORDERED_EIGENVALUE_EVENT_VALUE_AND_DERIVATIVES",
+      "derived_status": "RETAINED_CALLABLE_HISTORICAL_EVENT_FORMULA__NOT_CURRENT_SUPPORT_LOSS_EQUIVALENCE",
+      "equation": "v_terminal=(D_SBP q)_terminal/T; E_terminal=ordered_eigenvalue_6(H_EulerDirac(q_terminal,v_terminal,m_terminal)); D E_terminal[delta]=v_6^dagger (D H_EulerDirac[delta])v_6 with exact SBP/period pullback",
+      "line_refs": [
+        51,
+        52,
+        53,
+        54
+      ],
+      "physical_operands_status": "UNEVALUATED",
+      "source_path": "src/bhsm/interface/aether_n3_fresh_sbp_kkt_v16_58.py",
+      "symbol": "sbp_event_value_from_base",
+      "why_not_cessation": "The event is the ordered terminal Euler-Dirac eigenvalue in the historical anchored SBP chart. Neither its callable value nor its later eigenpair derivative asserts equivalence to the adopted continuously transported support-loss mode energy equality together with outward-support cessation. No historical terminal eigenline or multipliers are borrowed."
+    }
+  ],
+  "no_valid_event_replacement": true,
+  "owner_separation": {
+    "finite_E1_inserted_as_extra_classical_sector": false,
+    "heat_owner": "Gamma_AE4=-(1/2)STr E1(c P_strat)+relative-zeta/eta completion consumes c=i/r downstream.",
+    "inspected_AE4_event_balance_scope": "The retained AE4 event/Noether assembly is audited as a matching and conservation structure; its quantum functional is not inserted as an extra classical restoring term.",
+    "support_loss_owner": "Classical constrained bulk plus selected minimal membrane/interface mechanics supplies resistance, inertia, interface motion and the support-loss branch."
+  },
+  "rejected_substitutions": [
+    "zero total oriented traction sum",
+    "zero Noether balance residual",
+    "zero material dynamic matching residual",
+    "zero jump of a smooth current",
+    "zero extra boundary flux from the algebraic attachment",
+    "zero canonical momentum chosen without an event theorem",
+    "zero descriptor",
+    "zero proper-time density at a cached stop",
+    "initial formation zero",
+    "canonical Friedrichs stop",
+    "last cached history point",
+    "upsilon=0 asserted as a finite regular root",
+    "historical B_child first exit without equivalence proof"
+  ],
+  "retained_nonzero_flux_evidence": {
+    "new_physical_data_consumed": false,
+    "physical_cessation_value": null,
+    "saved_historical_attachment_flux": [
+      344.9638098588559,
+      15.692600043014362
+    ],
+    "saved_historical_flux_norm": 345.3205580449083,
+    "scientific_role": "Historical evidence that one-sided outward conormal can remain nonzero and enter the balanced dynamic Wentzell equation.",
+    "source_refs": [
+      {
+        "lines": [
+          79,
+          80,
+          81,
+          88,
+          90,
+          91,
+          92
+        ],
+        "path": "src/bhsm/interface/aether_n3_event_projected_calderon_flux_v17_92.py",
+        "symbol": "event_projected_calderon_flux"
+      },
+      {
+        "lines": [
+          16,
+          17,
+          18,
+          24,
+          37,
+          38,
+          60
+        ],
+        "path": "artifacts/BHSM_aether_n3_event_projected_calderon_flux_v17_92.json",
+        "symbol": "retained historical event flux"
+      },
+      {
+        "lines": [
+          202,
+          205,
+          206,
+          207,
+          208,
+          209
+        ],
+        "path": "src/bhsm/interface/aether_n3_required_child_cauchy_flux_v17_93.py",
+        "symbol": "required_child_cauchy_flux"
+      }
+    ]
+  },
+  "retained_progress": {
+    "canonical_support_kinetic_term_later_selected": true,
+    "classical_membrane_law_known": true,
+    "finite_positive_haar_action_endpoint_exclusion_derived_conditionally": true,
+    "historical_selected_terminal_event_evaluator_exists": true,
+    "later_metric_incidence_and_second_shape_algebra_retained": true,
+    "oriented_matching_and_conservation_structures_known": true,
+    "reciprocal_support_attachment_later_selected": true,
+    "scalar_attachment_exchange_source_action_derived": true,
+    "support_cessation_equivalence_operationally_identified": false,
+    "support_loss_event_physically_instantiated": false
+  },
+  "scientific_reference": "524ed90689bd5923c249bba2e699abf627e703cd",
+  "scope": {
+    "Gate7_campaign_run": false,
+    "cached_rows_modified": false,
+    "conclusion": "The inspected retained equations provide regular support evolution, oriented matching, conservation and material flux variations. They do not identify an action-owned observable or predicate whose occurrence is equivalent to outward spacetime support cessation on the transported physical branch.",
+    "exhaustive_scientific_absence_claim": false,
+    "generic_controls_added": false,
+    "numerical_producers_invoked": [],
+    "read_only_source_audit": true,
+    "selected_condition": "outward spacetime support ceases",
+    "task": "Operational second condition of the adopted support-loss event"
+  },
+  "starting_HEAD": "00fa89d62e4c74ee9fd0b41611b3468ad035b5db",
+  "valid_event_replacement": null
+}
