@@ -1,0 +1,1028 @@
+/**
+ * Source-backed visitor questions. Interpretations and conditional mathematical
+ * results retain their individual claim boundaries; the drawings are schematic.
+ */
+const source = {
+  aether: {
+    title: 'Aether, support and harmonics',
+    path: 'docs/BHSM_AUTHOR_AETHER_SCALE_CLARIFICATION_20260908.md',
+  },
+  synthesis: {
+    title: 'Canonical BHSM picture',
+    path: 'docs/BHSM_CANONICAL_SYNTHESIS_v11_0.md',
+  },
+  axioms: {
+    title: 'Author axioms and derived status',
+    path: 'docs/BHSM_AUTHOR_AXIOMS_AND_DERIVED_STATUS_v11_0.md',
+  },
+  plain: {
+    title: 'BHSM in plain language',
+    path: 'docs/bhsm_in_plain_language.md',
+  },
+  corpus: {
+    title: 'Particle and field distinctions',
+    path: 'docs/BHSM_NORMAN_SCHOOL_FULL_CORPUS_RECONSTRUCTION.md',
+  },
+  claims: { title: 'Scientific claim boundaries', path: 'CLAIMS.md' },
+  monopole: {
+    title: 'No-monopole framework boundary',
+    path: 'docs/bhsm_parent_m5_to_m4_boundary_reduction_v6_1_1.md',
+  },
+  parent: {
+    title: 'One common parent system',
+    path: 'docs/BHSM_NONLINEAR_NORMAN_CYCLE_BVP_AND_MAIN_SYNC_V15_7.md',
+  },
+  actualization: {
+    title: 'Unique Actualization and its open proof',
+    path: 'docs/BHSM_GLOBAL_PREGEOMETRIC_MASTER_CLOSURE_V15_5.md',
+  },
+  expansion: {
+    title: 'Black-hole de-envelopment hypothesis',
+    path: 'docs/BHSM_BLACK_HOLE_DE_ENVELOPMENT_HYPOTHESIS_v11_2.md',
+  },
+  expansionAudit: {
+    title: 'Expansion-driver audit',
+    path: 'docs/BHSM_DRIVEN_HYPERSPHERE_BLACK_HOLE_FLUX_GATE_V14_81.md',
+  },
+  darkMatter: {
+    title: 'Collective-curvature candidate',
+    path: 'theory/collective_curvature_dark_matter_interpretation.md',
+  },
+  cosmology: {
+    title: 'Cosmological parent and moving boundaries',
+    path: 'docs/BHSM_COSMOLOGICAL_PARENT_DYNAMIC_ENVELOPMENT_V14_54.md',
+  },
+  cosmologyTests: {
+    title: 'Frozen cosmology comparisons',
+    path: 'museum/public/research/sn-sightline-report.md',
+  },
+  mixing: {
+    title: 'Family bases and weak-current mixing',
+    path: 'docs/bhsm_composite_carrier_current_reduction_v8_4.md',
+  },
+  inverse: {
+    title: 'Physical flavor and symmetry requirements',
+    path: 'docs/BHSM_PHYSICAL_INVERSE_CLOSURE_V16_36.md',
+  },
+  clock: {
+    title: 'Proper-time clock on the retained domain',
+    path: 'theory/n12_forward_proper_time_form_ownership.md',
+  },
+  entropy: {
+    title: 'Time, entropy and conservation audit',
+    path: 'docs/bhsm_time_entropy_conservation_v10_1.md',
+  },
+  mass: {
+    title: 'Mass-bubble interpretation and energy',
+    path: 'museum/public/research/mass-and-hypersphere-context.md',
+  },
+  energy: {
+    title: 'Matched relative energy',
+    path: 'docs/BHSM_AETHER_BOUNDARY_IDENTITY_EJECTION_V15_13.md',
+  },
+  enclosure: {
+    title: 'Reciprocal-join enclosure theorem',
+    path: 'theory/ae3_reciprocal_join_localization_enclosure.md',
+  },
+  forcePicture: {
+    title: 'Museum force interpretation',
+    path: 'docs/MUSEUM_SCIENCE_UPDATE.md',
+  },
+  buoyancy: {
+    title: 'Topological Buoyancy proposal',
+    path: 'docs/bhsm_topological_buoyancy_v10_1.md',
+  },
+  weakField: {
+    title: 'Weak-field gravity boundary',
+    path: 'docs/bhsm_buoyancy_weak_field_limit_v10_2.md',
+  },
+  higgs: {
+    title: 'Higgs and buoyancy identification',
+    path: 'docs/BHSM_TOPOLOGICAL_BUOYANCY_AND_HIGGS_v11_1.md',
+  },
+  downstream: {
+    title: 'Physical interpretation and open targets',
+    path: 'docs/BHSM_DOWNSTREAM_PHYSICAL_DOCTRINE_LEDGER_V19_03.md',
+  },
+  quantum: {
+    title: 'Quantum core and measurement',
+    path: 'docs/BHSM_QUANTUM_CORE_AND_MEASUREMENT_v11_1.md',
+  },
+  quantumTransfer: {
+    title: 'Quantum transfer and probability gate',
+    path: 'docs/bhsm_quantum_core_transition_v11_0.md',
+  },
+  spin: {
+    title: 'Conditional spin and exchange signs',
+    path: 'docs/bhsm_topological_fr_neutral_dispersion_v6_6_0.md',
+  },
+  spinGlue: {
+    title: 'Foundational Dirac action and spin bundle',
+    path: 'docs/BHSM_FOUNDATIONAL_DIRAC_SPIN_GLUE_V14_45.md',
+  },
+  physicalTopology: {
+    title: 'Physical topology and the FR limitation',
+    path: 'docs/BHSM_PATH_B_PHYSICAL_TOPOLOGY_AND_FR_GATE_V14_32.md',
+  },
+  fermionState: {
+    title: 'Admitted fermion state and CAR interface',
+    path: 'theory/ae31_c2_fermion_hadamard_state_class.md',
+  },
+  charge: {
+    title: 'Conditional boundary hypercharge operator',
+    path: 'theory/derived_boundary_hypercharge_operator.md',
+  },
+  chargeClosure: {
+    title: 'Yukawa hypercharge consistency',
+    path: 'theory/derived_yukawa_hypercharge_closure.md',
+  },
+  phase: {
+    title: 'Integer Hopf phase admissibility',
+    path: 'theory/derived_hopf_phase_closure.md',
+  },
+  hierarchy: {
+    title: 'Family-hierarchy interface',
+    path: 'theory/ae3_family_hierarchy_interface.md',
+  },
+  leptonAction: {
+    title: 'Attached charged-lepton action and conditional tree poles',
+    path: 'theory/ae31_c2_intrinsic_m4_lepton_action.md',
+  },
+  leptonComposite: {
+    title: 'Higgs/lepton composite mixing structure',
+    path: 'theory/ae31_c2_lepton_composite_mixing_structure.md',
+  },
+  weakCurrent: {
+    title: 'Current charged weak response and mixing theorem',
+    path: 'theory/ae31_c2_coexact_su2l_charged_current.md',
+  },
+  massAudit: {
+    title: 'Physical mass and mixing dependency audit',
+    path: 'docs/BHSM_MASS_MIXING_DEPENDENCY_AUDIT_2026_09_07.md',
+  },
+  cycles: {
+    title: 'Physical sector-cycle boundaries',
+    path: 'docs/bhsm_particle_cycles_v11_0.md',
+  },
+  neutrino: {
+    title: 'Neutral propagation and physical scale',
+    path: 'docs/neutrino_numerical_closure.md',
+  },
+  neutrinoCapture: {
+    title: 'Flavor source and necessary propagation conditions',
+    path: 'theory/ae31_c2_capture_neutrino_propagation_gate.md',
+  },
+  neutrinoTransport: {
+    title: 'Neutral response gaps and no-mixing boundary',
+    path: 'theory/ae31_c2_neutral_semigroup_response_transport.md',
+  },
+  neutrinoIdentity: {
+    title: 'Dirac and Majorana observable questions',
+    path: 'docs/bhsm_neutrino_relational_identity_v10_1.md',
+  },
+  photon: {
+    title: 'Physical photon scope audit',
+    path: 'theory/ae3_c2_photon_symbol_audit.md',
+  },
+  cosmicCycle: {
+    title: 'Shared core and cosmic cycle',
+    path: 'docs/museum/norman_cosmic_enclosure_cycle.md',
+  },
+  information: {
+    title: 'Information and conserved receiving channels',
+    path: 'docs/bhsm_primordial_boundary_tension_action_source_closure_v5_12.md',
+  },
+  coreTransfer: {
+    title: 'Core transfer remains open',
+    path: 'docs/BHSM_CORE_TRANSFER_OPERATOR_v11_2.md',
+  },
+  anomalyLedger: {
+    title: 'Conditional chiral ledger and anomaly cancellation',
+    path: 'docs/bhsm_particle_chirality_anomaly_normalization_v6_3_0.md',
+  },
+  anomalyBridge: {
+    title: 'Integer-charge anomaly consistency check',
+    path: 'theory/boundary_integer_anomaly_closure_gate.md',
+  },
+  gaugeScreens: {
+    title: 'Historical prediction and screen ledger',
+    path: 'theory/bhsm_prediction_ledger.md',
+  },
+  gaugeAttachment: {
+    title: 'Gauge-coupling action-attachment audit',
+    path: 'docs/bhsm_gauge_coupling_action_attachment_killscreen_v4_7.md',
+  },
+  scaleCandidate: {
+    title: 'Retained electroweak-scale candidate',
+    path: 'AGENTS.md',
+  },
+  scaleBridge: {
+    title: 'Relative scale and absolute-unit boundary',
+    path: 'theory/bhsm_scale_bridge_dimensional_closure.md',
+  },
+  localMagnetic: {
+    title: 'Local electromagnetic vertex and Ward identity',
+    path: 'theory/ae31_c2_local_em_ward_identity.md',
+  },
+  magneticReadout: {
+    title: 'Muon Pauli readout and local tree result',
+    path: 'theory/muon_minimum_pauli_readout_20260930.md',
+  },
+  collisionReadout: {
+    title: 'Collision and decay phase-space readout',
+    path: 'src/bhsm/interface/universal_decay_collision.py',
+  },
+  definitionOfDone: {
+    title: 'Existing physical completion requirements',
+    path: 'docs/BHSM_1_0_DEFINITION_OF_DONE.md',
+  },
+  predictionFreeze: {
+    title: 'Frozen prediction policy',
+    path: 'docs/frozen_predictions.md',
+  },
+};
+
+export const questionTopics = [
+  {
+    id: 'big-puzzles',
+    title: 'The big puzzles',
+    description:
+      'Monopoles, one cosmos, expansion, dark matter, dark energy and CP violation.',
+  },
+  {
+    id: 'reality-time',
+    title: 'Reality & time',
+    description:
+      'The common foundation, geometry, vacuum, clocks and conservation.',
+  },
+  {
+    id: 'matter-forces',
+    title: 'Matter & forces',
+    description:
+      'Mass bubbles, their boundaries and the interactions that organize matter.',
+  },
+  {
+    id: 'quantum',
+    title: 'Quantum questions',
+    description: 'Waves, measurement, entanglement, uncertainty and spin.',
+  },
+  {
+    id: 'particles',
+    title: 'The particle pattern',
+    description: 'Charges, families, antimatter, neutrinos and flavor mixing.',
+  },
+  {
+    id: 'cosmos',
+    title: 'The cosmos',
+    description:
+      'Light, black holes, information, beginnings and the proposed cosmic cycle.',
+  },
+  {
+    id: 'physics-lab',
+    title: 'Physics in the lab',
+    description:
+      'Charge consistency, force strengths, the electroweak scale, magnetic moments, collisions and independent tests.',
+  },
+];
+
+export const physicsQuestions = [
+  {
+    id: 'monopoles',
+    topic: 'big-puzzles',
+    title: 'Why does BHSM have no magnetic monopoles?',
+    answer:
+      'BHSM constructs its magnetic interpretation without isolated magnetic charges. Its Hopf winding and bundle geometry are not identified with magnetic monopoles.',
+    detail:
+      'The framework explicitly excludes magnetic-monopole sectors, Dirac strings, monopole harmonics and monopole-generated particle families. A geometric winding or Chern class needs an additional physical map before it can be called a magnetic charge.',
+    status: 'Framework position',
+    boundary:
+      'This is a defined framework exclusion, not a proof that nature cannot contain magnetic monopoles.',
+    formula: null,
+    sources: [source.monopole, source.claims],
+    visual: 'monopole',
+    caption:
+      'Closed illustrative field lines make the absence of an isolated pole visible; they are not a computed BHSM magnetic field.',
+  },
+  {
+    id: 'multiverse',
+    topic: 'big-puzzles',
+    title: 'Why one cosmos rather than a multiverse?',
+    answer:
+      'BHSM starts with one all-encompassing parent system and common core. It seeks one physical realization selected by that system rather than an explanation chosen from many universes.',
+    detail:
+      'The author calls the selection requirement Unique Actualization: a completed theory must have one physical equivalence class after genuine gauge freedoms are removed. Multiple mathematical possibilities presently signal an incomplete selection law.',
+    status: 'Framework position',
+    boundary:
+      'Unique Actualization is an author completion principle; the number of completed physical solutions is still undefined.',
+    formula: null,
+    sources: [source.parent, source.actualization],
+    visual: 'geometry',
+    caption:
+      'One continuous schematic geometry represents the common parent; smaller patterns do not stand for separate universes.',
+  },
+  {
+    id: 'expansion',
+    topic: 'big-puzzles',
+    title: 'What makes the universe expand?',
+    answer:
+      'BHSM explores expansion as a response of the common cosmic geometry to redistributed energy. The author proposes that black-hole de-envelopment can transfer enclosure content into the receiving cosmic surface.',
+    detail:
+      'A candidate response would connect black-hole activity to changes in the cosmic geometric state. The audit distinguishes this proposed transfer from ordinary accretion: positive black-hole energy does not generically imply outward expansion in general relativity.',
+    status: 'BHSM proposal',
+    boundary:
+      'The transfer trigger, receiving channel, rate and expansion equation remain underived; no Hubble-scale result follows.',
+    formula: null,
+    sources: [source.expansion, source.expansionAudit],
+    visual: 'expansion',
+    caption:
+      'Growing separations illustrate changing spatial geometry, not a calculated expansion rate or black-hole energy flux.',
+  },
+  {
+    id: 'dark-matter',
+    topic: 'big-puzzles',
+    title: 'Could dark matter be collective geometry?',
+    answer:
+      'One BHSM candidate treats the extra gravitational effect as collective curvature. It is the residual between the geometry of the whole system and the curvature expected from visible matter alone.',
+    detail:
+      'Local mass-related curvatures may organize a larger stable collective envelope. In this interpretation the envelope supplies an effective dark component rather than an independently inserted particle distribution.',
+    status: 'Candidate interpretation',
+    boundary:
+      'Rotation curves, lensing, colliding clusters, the CMB and structure growth must still be tested; particle dark matter is not rejected.',
+    formula: 'K_DM,eff = K_observed − K_visible',
+    sources: [source.darkMatter],
+    visual: 'darkmatter',
+    caption:
+      'An extended schematic halo shows the proposed collective contribution; it is not a fitted galaxy or lensing map.',
+  },
+  {
+    id: 'dark-energy',
+    topic: 'big-puzzles',
+    title: 'Could cosmic topography explain dark energy?',
+    answer:
+      'The connected topographic cosmology program investigates whether large-scale geometric patterns can leave related changes in expansion and observed distances. BHSM seeks a common connection between this cosmic response and its particle geometry.',
+    detail:
+      'The reference cosmology can respond to supplied matter and radiation patterns. Its supernova comparisons have mixed outcomes: one frozen held-out test slightly favors the template while the separate DES transfer favors the null.',
+    status: 'Conditional cosmology',
+    boundary:
+      'A shared cosmology–BHSM normalization and an independently confirmed signal remain open; dark energy has not been solved.',
+    formula: null,
+    sources: [source.cosmology, source.cosmologyTests],
+    visual: 'expansion',
+    caption:
+      'A changing broad pattern illustrates geometric response; the animation contains no survey data or acceleration measurement.',
+  },
+  {
+    id: 'cp-violation',
+    topic: 'big-puzzles',
+    title: 'Where could CP violation come from?',
+    answer:
+      'BHSM investigates CP violation through relative geometric family bases and oriented boundary responses. Noncommuting responses can support a complex mixing phase.',
+    detail:
+      'A moving-boundary construction contains a nonzero Jarlskog capability witness. Common family-central responses and the two FR signs cannot supply a continuous CP phase; the physical action must select the different bases, amplitudes and phases.',
+    status: 'Conditional capability',
+    boundary:
+      'An action-selected physical CP-odd invariant remains open; the capability witness does not predict a CKM phase or explain the cosmic matter surplus.',
+    formula: 'V_cycle = W_u† W_d',
+    sources: [source.cosmology, source.mixing, source.inverse],
+    visual: 'symmetry',
+    caption:
+      'Two differently oriented patterns illustrate basis mismatch; their motion does not calculate a physical CP asymmetry.',
+  },
+  {
+    id: 'spacetime',
+    topic: 'reality-time',
+    title: 'What is spacetime made of?',
+    answer:
+      'BHSM proposes one energy–geometry foundation. Stretched Aether supplies ordinary spacetime support, while condensed Aether manifests as energy.',
+    detail:
+      'The pregeometric core is not assigned ordinary coordinates, distance or a spacetime metric. The regular supported geometry supplies the arena in which those familiar quantities become meaningful.',
+    status: 'BHSM proposal',
+    boundary:
+      'The microscopic map from the pregeometric foundation to regular spacetime remains open.',
+    formula: null,
+    sources: [source.aether, source.synthesis, source.downstream],
+    visual: 'geometry',
+    caption:
+      'A continuous changing surface illustrates support and concentration; it is a metaphor for three-dimensional spherical space.',
+  },
+  {
+    id: 'geometry',
+    topic: 'reality-time',
+    title: 'Why Berger–Hopf geometry?',
+    answer:
+      'Linked Hopf fibers and a stretched Berger sphere provide an organized space of geometric modes. BHSM asks whether their allowed patterns can organize the observed particle ledger.',
+    detail:
+      'A Hopf fibration arranges linked fibers over a base, while Berger deformation changes relative directions of the three-sphere. Single-valued phase closure yields integer admissibility, but a harmonic label alone does not identify a physical particle.',
+    status: 'Conditional geometry',
+    boundary:
+      'Physical mode selection, normalized states and the map from internal modes to observed particles still require derivation.',
+    formula: 'exp(i 2πd) = 1 ⇒ d is an integer',
+    sources: [source.plain, source.phase, source.corpus],
+    visual: 'geometry',
+    caption:
+      'Linked loops illustrate the Hopf organization; they are not generation eigenfunctions or particle paths.',
+  },
+  {
+    id: 'vacuum',
+    topic: 'reality-time',
+    title: 'Is empty space really empty?',
+    answer:
+      'The BHSM picture treats the vacuum and localized matter as organizations of one underlying system. In the mass exhibit, the virtual particle field represents the surrounding vacuum response.',
+    detail:
+      'The moving sea is a visitor-facing illustration of the author’s displacement picture. It is not a literal population of observed particles, and its blinking marks are not a calculation of particle creation or vacuum energy.',
+    status: 'BHSM interpretation',
+    boundary:
+      'A physical vacuum state and its response must come from the common action; animated dot density cannot determine vacuum energy or mass.',
+    formula: null,
+    sources: [source.mass, source.aether, source.corpus],
+    visual: 'mass',
+    caption:
+      'Appearing field marks symbolize vacuum response around a localized clearing; their counts have no physical calibration.',
+  },
+  {
+    id: 'time',
+    topic: 'reality-time',
+    title: 'What is a clock measuring?',
+    answer:
+      'On BHSM’s regular spacetime branch, one positive proper-time clock measures physical evolution. The lapse connects coordinate time to that clock.',
+    detail:
+      'The retained positive boundary lapse defines dτ = N_boundary dt. Pulling the temporal action to proper time removes the freedom to choose a second independent clock coefficient for the same source operator.',
+    status: 'Derived in the retained domain',
+    boundary:
+      'This clock construction does not derive the origin of time or a clock inside the pregeometric core.',
+    formula: 'dτ = N_boundary dt,  N_boundary > 0',
+    sources: [source.clock, source.downstream],
+    visual: 'wave',
+    caption:
+      'A moving phase marker illustrates ordering along one clock; its playback speed does not represent physical seconds.',
+  },
+  {
+    id: 'arrow-of-time',
+    topic: 'reality-time',
+    title: 'Why does time have an arrow?',
+    answer:
+      'BHSM does not insert an unexplained fundamental thermodynamic arrow. It seeks an account of entropy in the relation between resolved structure and degrees of freedom left unresolved.',
+    detail:
+      'The author describes local entropy through unresolved breathing of the common system. Real derivative terms and a chosen forward clock do not by themselves produce a coarse-graining map or prove that entropy must increase.',
+    status: 'Open derivation',
+    boundary:
+      'A microscopic measure, subsystem, entropy functional and monotonicity or recurrence analysis remain missing.',
+    formula: null,
+    sources: [source.entropy],
+    visual: 'cycle',
+    caption:
+      'Ordered phases illustrate a possible history, not an entropy calculation or a derived time-reversal violation.',
+  },
+  {
+    id: 'conservation',
+    topic: 'reality-time',
+    title: 'Where does energy go when structure changes?',
+    answer:
+      'BHSM requires exchanges to be accounted for across the whole action and its boundaries. Its covariant conservation identity closes when the field equations and boundary flux conditions close.',
+    detail:
+      'An outgoing contribution must have a receiving channel rather than disappear from the ledger. In a closed generally covariant universe, an integral of a coordinate energy density is not automatically a unique total cosmic energy.',
+    status: 'Conditional conservation identity',
+    boundary:
+      'The complete equations and flux conditions must be satisfied; no coordinate-independent scalar total cosmic energy is presently selected.',
+    formula: '∇_A T_total^AB = 0  when equations and boundary fluxes close',
+    sources: [source.entropy, source.information],
+    visual: 'test',
+    caption:
+      'Symbolic comparison lanes illustrate checking a ledger; their lengths are not a physical energy readout.',
+  },
+  {
+    id: 'mass',
+    topic: 'matter-forces',
+    title: 'Why does a particle have mass?',
+    answer:
+      'In the author’s BHSM picture, mass is the bubble holding back the surrounding virtual particle field. Formally, its mass belongs to the energy of the localized configuration relative to its matched parent.',
+    detail:
+      'The existing exhibit shows quark clearings combining into a proton, followed by an electron and a hydrogen atom. The formal energy includes the configuration, boundaries and reference subtraction; empty volume alone is not an independent mass formula.',
+    status: 'BHSM interpretation',
+    boundary:
+      'A completed physical state, clock, scale and relative-energy calculation are required before this picture gives a numerical mass.',
+    formula:
+      'ΔH_ξ = Q_ξ[Φ_parent+child] − Q_ξ[Φ_parent matched];  E_rel = mc² in a stable rest frame',
+    sources: [source.mass, source.energy],
+    visual: 'mass',
+    caption:
+      'The field clearing illustrates mass as displacement; its radius and number of omitted marks do not measure mass.',
+  },
+  {
+    id: 'bubble-boundary',
+    topic: 'matter-forces',
+    title: 'What defines the edge of a mass bubble?',
+    answer:
+      'BHSM’s retained enclosure construction selects a material level set at σ = 0. A localization profile weights the supported structure around that seam.',
+    detail:
+      'The reciprocal-join profile has one transverse zero in the retained orbit interval. Splitting the same smooth action there derives matched traces and opposite-normal flux cancellation without inserting an independent surface tension.',
+    status: 'Conditional enclosure result',
+    boundary:
+      'This same-spacetime carrier does not yet prove a persistent full-field particle, an isolated spacetime pocket or the edge of spacetime.',
+    formula: 'Σ_enc = {σ = 0};  Λ(σ) = 1 − 4σ²',
+    sources: [source.enclosure],
+    visual: 'mass',
+    caption:
+      'A highlighted rim marks the selected seam; the enclosing drawing is not a solved full-field particle.',
+  },
+  {
+    id: 'forces',
+    topic: 'matter-forces',
+    title: 'Could all forces share one origin?',
+    answer:
+      'BHSM interprets the interactions as manifestations of one system at different degrees of concentration and spacetime support. Strong, weak, electromagnetic and gravitational regimes appear through progressively stretched support.',
+    detail:
+      'The force hierarchy is the author’s geometric interpretation of how the common foundation is organized. Existing effective Standard Model machinery stays in place until a common-action replacement is derived.',
+    status: 'BHSM proposal',
+    boundary:
+      'A spectral map, normalized interaction vertices and scale dependence must still establish the proposed physical hierarchy.',
+    formula: null,
+    sources: [source.aether, source.forcePicture, source.downstream],
+    visual: 'forces',
+    caption:
+      'Branching strands illustrate the conceptual hierarchy; spacing does not encode measured energy or coupling strength.',
+  },
+  {
+    id: 'gravity',
+    topic: 'matter-forces',
+    title: 'Why does gravity pull things together?',
+    answer:
+      'BHSM proposes Topological Buoyancy: local concentrated energy and the surrounding cosmic geometry seek a common radial or normal balance. Gravity is intended to emerge from that balance.',
+    detail:
+      'The candidate equilibrium combines local stress, geometry and the global background rather than adding a separate force term by hand. A controlled proxy has a stable stationary radius, but it is not a physical Newtonian gravity solution.',
+    status: 'Structural postulate',
+    boundary:
+      'The physical restoring operator, attraction sign, inverse-square law and universal-free-fall behavior remain open for this mechanism.',
+    formula: null,
+    sources: [source.buoyancy, source.weakField],
+    visual: 'forces',
+    caption:
+      'Curved schematic strands illustrate a proposed geometric balance, not a calculated force or orbit.',
+  },
+  {
+    id: 'higgs',
+    topic: 'matter-forces',
+    title: 'What would the Higgs mean in BHSM?',
+    answer:
+      'BHSM interprets the Higgs as a scalar buoyancy mode of the common geometry. Its role is to connect the scalar response to the organization of particle interactions and mass.',
+    detail:
+      'The intrinsic M4 action already includes a Higgs potential and connects it to the admitted charged-lepton hierarchy. Identifying the physical scalar with the proposed buoyancy mode and evaluating finite composite mixing remain open.',
+    status: 'Working geometric identification',
+    boundary:
+      'The normalized physical buoyancy/Higgs identification, finite composite mixing and observable scalar readout remain open.',
+    formula: null,
+    sources: [
+      source.higgs,
+      source.axioms,
+      source.leptonAction,
+      source.leptonComposite,
+    ],
+    visual: 'wave',
+    caption:
+      'A broad breathing mode illustrates a scalar response; its frequency is not a Higgs mass calculation.',
+  },
+  {
+    id: 'confinement',
+    topic: 'matter-forces',
+    title: 'Why can we not pull out a single quark?',
+    answer:
+      'BHSM pictures a quark as a color-open sub-envelopment within a color-neutral hadron. The confinement target is to derive how the enclosing structure supports those constituents.',
+    detail:
+      'Quarks, gluons and hadrons are not assigned the same closure mechanism as a charged-lepton candidate. The common-action program must recover color structure, bound-state behavior and the observed scale dependence of strong interactions.',
+    status: 'Open completion target',
+    boundary:
+      'The nonperturbative color stress, Wilson functional and physical bound spectrum remain open; no Yang–Mills confinement proof is claimed.',
+    formula: null,
+    sources: [source.cosmology, source.downstream, source.corpus],
+    visual: 'forces',
+    caption:
+      'Connected schematic structures illustrate the confinement question; no quark potential is calculated.',
+  },
+  {
+    id: 'wave-particle',
+    topic: 'quantum',
+    title: 'Why do particles also behave like waves?',
+    answer:
+      'BHSM distinguishes extended fields and geometric modes from localized particle configurations. It seeks a common dynamical description of these different organizations of one system.',
+    detail:
+      'An internal harmonic is not automatically an on-shell particle, and a localized enclosure is not the assumed mechanism for every field. The physical quantum amplitudes linking those descriptions still need to be derived.',
+    status: 'BHSM interpretation',
+    boundary:
+      'A complete quantum state space, transition law and observable particle map remain open.',
+    formula: null,
+    sources: [source.corpus, source.quantumTransfer],
+    visual: 'wave',
+    caption:
+      'An extended pattern gathers into a localized schematic packet; it is not a calculated wavefunction or collapse.',
+  },
+  {
+    id: 'double-slit',
+    topic: 'quantum',
+    title: 'How would BHSM explain the double slit?',
+    answer:
+      'A BHSM explanation must recover interference from the common system’s modes and their coupling to the apparatus. The repository has not yet derived a distinct quantitative double-slit mechanism.',
+    detail:
+      'The geometric-mode viewpoint supplies a research direction, but the fringe amplitudes and their measurement probabilities require physical dynamics. The familiar wave illustration below shows the question the completed theory must answer.',
+    status: 'Open derivation',
+    boundary:
+      'An action-derived amplitude, detector coupling and Born probability law are needed before a BHSM fringe prediction can be made.',
+    formula: null,
+    sources: [source.plain, source.quantum, source.quantumTransfer],
+    visual: 'wave',
+    caption:
+      'Overlapping waves illustrate interference; the pattern is explanatory and contains no derived BHSM probabilities.',
+  },
+  {
+    id: 'measurement',
+    topic: 'quantum',
+    title: 'What changes when we measure a particle?',
+    answer:
+      'BHSM proposes measurement as relational, core-mediated resynchronization of the surface state. The measured system, interaction and environment must be described together.',
+    detail:
+      'This is a proposed physical interpretation, not a derived collapse mechanism. A measurement interaction is a physical coupling or boundary condition; it does not require a conscious observer to make particles exist.',
+    status: 'Structural postulate',
+    boundary:
+      'Core transfer, detector/environment coupling, a probability rule and no-signalling measurement dynamics remain open.',
+    formula: null,
+    sources: [source.axioms, source.quantum, source.neutrinoIdentity],
+    visual: 'correlation',
+    caption:
+      'Coupled schematic patterns represent system and detector interaction; synchronization is not a computed measurement outcome.',
+  },
+  {
+    id: 'entanglement',
+    topic: 'quantum',
+    title: 'How can distant particles be entangled?',
+    answer:
+      'BHSM’s relational viewpoint asks how separated configurations retain information about a common whole. A specific quantitative BHSM account of entanglement remains to be derived.',
+    detail:
+      'The common-foundation picture is a conceptual starting point for correlated states. It does not establish instantaneous messages through the core or replace the required quantum correlation and no-signalling calculations.',
+    status: 'Open derivation',
+    boundary:
+      'Physical joint states, correlation probabilities and a no-signalling proof are still required.',
+    formula: null,
+    sources: [source.synthesis, source.quantumTransfer],
+    visual: 'correlation',
+    caption:
+      'Paired changes illustrate correlation, not a signal traveling between particles or a calculated Bell-test result.',
+  },
+  {
+    id: 'uncertainty',
+    topic: 'quantum',
+    title: 'Where would quantum uncertainty come from?',
+    answer:
+      'BHSM must recover quantum uncertainty within its physical state and observable structure. The current geometric interpretation does not yet derive a new uncertainty mechanism.',
+    detail:
+      'Uncertainty in a mathematical calculation, an unselected quantum state and quantum uncertainty are different questions. The missing physical probability and state-selection laws cannot be replaced by jitter in an animation.',
+    status: 'Open derivation',
+    boundary:
+      'Action-owned quantum observables, their state representation and the probability law must be completed.',
+    formula: null,
+    sources: [source.quantum, source.quantumTransfer],
+    visual: 'uncertainty',
+    caption:
+      'A varying schematic packet visualizes the question of spread; it is not a BHSM uncertainty distribution.',
+  },
+  {
+    id: 'spin',
+    topic: 'quantum',
+    title: 'How could geometry produce spin?',
+    answer:
+      'BHSM uses spinor geometry to describe fermions on its admitted effective branch. A full turn changes a spinor’s sign; two full turns restore it.',
+    detail:
+      'The current construction adopts a Dirac action and one global spin bundle as effective physical data. Earlier Finkelstein–Rubinstein parity results use a conditional topology and do not derive this physical fermion sector. The admitted anticommuting fermion states encode Pauli exclusion: identical fermions cannot occupy the same state.',
+    status: 'Adopted effective structure',
+    boundary:
+      'The origin of the physical fermion sector from the underlying bosonic geometry remains open; the adopted Dirac action is not a derivation from that action.',
+    formula: 'ψ(2π) = −ψ(0);  ψ(4π) = ψ(0)',
+    sources: [source.spinGlue, source.physicalTopology, source.fermionState],
+    visual: 'symmetry',
+    caption:
+      'A spinor phase illustrates the sign change and restoration; it is not a tiny spinning solid object.',
+  },
+  {
+    id: 'charge',
+    topic: 'particles',
+    title: 'Why do particles have particular charges?',
+    answer:
+      'BHSM organizes charge through boundary and representation data. Conditional charge and hypercharge operators reproduce a consistent algebraic ledger before the interaction dynamics are complete.',
+    detail:
+      'The boundary hypercharge is the residual after removing the active weak-orientation generator. The associated Yukawa classes satisfy the charge sums, but this algebraic consistency does not set the physical electromagnetic coupling.',
+    status: 'Conditional charge skeleton',
+    boundary:
+      'The normalized physical gauge dynamics and its same-action particle/current map remain required.',
+    formula: 'Q = T₃ + Y/2',
+    sources: [source.charge, source.chargeClosure],
+    visual: 'symmetry',
+    caption:
+      'Distinct oriented marks illustrate representation assignments; their colors are not measured electric fields.',
+  },
+  {
+    id: 'generations',
+    topic: 'particles',
+    title: 'Why are there three particle generations?',
+    answer:
+      'BHSM proposes an order-three synchronization structure for the family slots. The recurring families are intended to arise from the organization of the common geometry.',
+    detail:
+      'The three-slot ledger is retained as an upstream structure. Family-common localization alone cannot split it. The newer attached charged-lepton action includes a noncentral Yukawa operator and three distinct conditional local tree mass shells; this advances the hierarchy while retaining the inherited scale and mode assumptions.',
+    status: 'Author family axiom · conditional local hierarchy',
+    boundary:
+      'Independent physical mode identification and the global, dressed mass readout remain open; the conditional tree shells are not completed physical pole-mass predictions.',
+    formula: null,
+    sources: [
+      source.axioms,
+      source.hierarchy,
+      source.leptonAction,
+      source.massAudit,
+    ],
+    visual: 'geometry',
+    caption:
+      'Linked schematic patterns illustrate family organization, not independently derived family eigenfunctions.',
+  },
+  {
+    id: 'antimatter',
+    topic: 'particles',
+    title: 'What is antimatter in BHSM?',
+    answer:
+      'BHSM interprets antimatter through complementary orientation in the common structure. The intended particle–antiparticle relation must carry the physical charges and interaction data consistently.',
+    detail:
+      'Complementary orientation is an author axiom, not a completed action involution. A reversed arrow in the illustration does not by itself establish physical charge conjugation, masses or annihilation dynamics.',
+    status: 'BHSM proposal',
+    boundary:
+      'The complete physical antimatter involution, sector cycles and normalized state map remain open.',
+    formula: null,
+    sources: [source.axioms, source.cycles],
+    visual: 'symmetry',
+    caption:
+      'Complementary orientations illustrate the proposed relationship without calculating antiparticle dynamics.',
+  },
+  {
+    id: 'matter-excess',
+    topic: 'particles',
+    title: 'Why is there more matter than antimatter?',
+    answer:
+      'BHSM seeks the asymmetry within a common action and its oriented histories. A geometric CP-capability example is a possible ingredient, not a derived explanation of the cosmic matter surplus.',
+    detail:
+      'A successful explanation needs physical particle–antiparticle dynamics and a cosmic history that generates the observed imbalance. The current CP construction does not produce a baryogenesis calculation or an abundance.',
+    status: 'Open derivation',
+    boundary:
+      'A physical asymmetry-generating history and its abundance readout have not been derived.',
+    formula: null,
+    sources: [source.cosmology, source.cycles, source.neutrinoIdentity],
+    visual: 'test',
+    caption:
+      'Two symbolic lanes pose the matter–antimatter comparison question; their lengths are not predicted cosmic abundances.',
+  },
+  {
+    id: 'neutrinos',
+    topic: 'particles',
+    title: 'Why do neutrinos change flavor?',
+    answer:
+      'BHSM seeks flavor change through relative phases and different production and propagation bases. A shared geometric phase alone cannot change flavor.',
+    detail:
+      'The retained family-common response has an exact no-oscillation result. A newer noncentral internal response has two gaps, but its projectors still commute with the source: it supplies neither flavor mixing nor physical mass-squared differences. A physical propagation operator must also mix the produced flavor state. The Dirac-versus-Majorana observable map remains open.',
+    status: 'Conditional no-oscillation result; mechanism open',
+    boundary:
+      'A returned Lorentzian neutral self-energy, noncommuting propagation, PMNS mixing and physical mass splittings are still required.',
+    formula: 'U_common = exp(−iΦ) I₃ ⇒ no flavor change',
+    sources: [
+      source.neutrinoCapture,
+      source.neutrinoTransport,
+      source.neutrinoIdentity,
+    ],
+    visual: 'wave',
+    caption:
+      'Changing relative phases illustrate flavor evolution; they are not fitted oscillation probabilities or a PMNS prediction.',
+  },
+  {
+    id: 'mixing',
+    topic: 'particles',
+    title: 'Why do quark families mix?',
+    answer:
+      'BHSM interprets CKM mixing as a mismatch between the physical up- and down-family bases. A common basis change cancels, so the action must select genuinely different sector embeddings.',
+    detail:
+      'Normalized geometric intertwiner channels are available as a conditional representation library. Their coefficients, phases and physical component states must be selected together rather than fitted to the known CKM matrix.',
+    status: 'Conditional mixing architecture',
+    boundary:
+      'The left-handed up/down embeddings need different family-noncentral dressing; the common-current response alone gives an identity matrix, not the observed CKM matrix.',
+    formula: 'V_CKM = U_u† U_d  for the stated common-current basis',
+    sources: [
+      source.mixing,
+      source.inverse,
+      source.weakCurrent,
+      source.massAudit,
+    ],
+    visual: 'symmetry',
+    caption:
+      'Two rotated family patterns illustrate relative bases; the angle is schematic and not a measured mixing angle.',
+  },
+  {
+    id: 'light',
+    topic: 'cosmos',
+    title: 'What is light, and why its special speed?',
+    answer:
+      'The BHSM interpretation places the photon in a higher harmonic with more spacetime support and fewer interactions than concentrated strong-force configurations. Recovering its observed propagation is a physical test of that picture.',
+    detail:
+      'The supplied harmonic description does not by itself derive zero rest mass or the universal speed of light. The current frozen-trace audit has no local Maxwell pole; this scoped obstruction does not exclude photons from every completion.',
+    status: 'BHSM proposal; propagation open',
+    boundary:
+      'A normalized physical photon propagator, electromagnetic mixing map and Ward-consistent vertex remain required.',
+    formula: null,
+    sources: [source.aether, source.photon],
+    visual: 'wave',
+    caption:
+      'A schematic causal cone illustrates constrained propagation; its geometry does not calculate the physical photon propagator or c.',
+  },
+  {
+    id: 'black-holes',
+    topic: 'cosmos',
+    title: 'Do all black holes lead to the same core?',
+    answer:
+      'BHSM proposes that every black hole leads to one shared pregeometric core. Many black-hole concentrations are entrances to that common foundation rather than separate terminal singularities.',
+    detail:
+      'The author clarified this common-core picture on 1 October 2026. The core has no ordinary spacetime support, so “the same place” is intuitive wording rather than an ordinary spatial destination.',
+    status: 'Author cosmological hypothesis',
+    boundary:
+      'A physical core-to-spacetime correspondence and transfer law remain open; no traversable connection is demonstrated.',
+    formula: null,
+    sources: [source.cosmicCycle, source.mass, source.coreTransfer],
+    visual: 'core',
+    caption:
+      'Converging schematic paths illustrate one shared core, not trajectories through a derived black-hole metric.',
+  },
+  {
+    id: 'information',
+    topic: 'cosmos',
+    title: 'Does a black hole destroy information?',
+    answer:
+      'BHSM requires the whole-system account to retain charges, protected topology and complete-state correlations when accessible structure changes. It does not declare information destroyed.',
+    detail:
+      'The source uses deconstruction for loss of externally accessible bound-state and local-history labels in a reduced description. Preserving the required ledger is a constraint on the proposed mechanism, not a completed black-hole information theorem.',
+    status: 'Framework requirement; dynamics open',
+    boundary:
+      'The core transfer operator, quantum unitarity and coarse-grained entropy evolution remain underived.',
+    formula: null,
+    sources: [source.information, source.coreTransfer, source.entropy],
+    visual: 'core',
+    caption:
+      'Marked paths enter a common schematic region; the diagram does not calculate information recovery.',
+  },
+  {
+    id: 'big-bang',
+    topic: 'cosmos',
+    title: 'How did the universe begin?',
+    answer:
+      'The author’s BHSM picture proposes a whole-cosmos white-hole origin event, followed by cooling and the organization of cosmic structure. Spacetime formation is interpreted as a scaled process in the common system.',
+    detail:
+      'The exhibit’s plasma and acoustic imagery supplies a conceptual chronology. The early release, hot-plasma production and connection to the later cosmic state have not been derived from a completed common action.',
+    status: 'Author cosmological hypothesis',
+    boundary:
+      'An action-derived release history, initial state and physical cosmic normalization remain open.',
+    formula: null,
+    sources: [source.plain, source.cosmicCycle, source.information],
+    visual: 'cycle',
+    caption:
+      'A global release followed by cooling illustrates the proposed origin; timing and temperature are uncalibrated.',
+  },
+  {
+    id: 'white-hole',
+    topic: 'cosmos',
+    title: 'What is the white hole in this picture?',
+    answer:
+      'BHSM’s proposed white-hole event is one instantaneous release of the whole cosmos. It occurs when the core–surface differential vanishes, rather than at a separate local source for each black hole.',
+    detail:
+      'The author’s October clarification makes the whole-cosmos transition simultaneous in the conceptual picture. There is no spreading release front or physical waiting period after the differential vanishes; a pause in the display is only for reading.',
+    status: 'Author cosmological hypothesis',
+    boundary:
+      'The differential, metric and transition dynamics remain undefined; this is not an asserted exact white-hole spacetime solution.',
+    formula: null,
+    sources: [source.cosmicCycle],
+    visual: 'cycle',
+    caption:
+      'The full schematic surface brightens together to represent the author’s global event; it is not a causal-front simulation.',
+  },
+  {
+    id: 'cosmic-fate',
+    topic: 'cosmos',
+    title: 'Will the universe end—or begin again?',
+    answer:
+      'In the author’s cycle, concentrations relax until the cosmic surface becomes smooth, described as heat death. At zero core–surface differential, the whole cosmos releases again and the cycle restarts.',
+    detail:
+      'The Museum links cooling, structure, black-hole concentration and relaxation into this proposed sequence. A smooth drawing is a visual endpoint, not a thermodynamic proof or a calculation of the universe’s future.',
+    status: 'Author cyclic hypothesis',
+    boundary:
+      'No entropy theorem, recurrence analysis or action-derived smooth-to-release transition presently proves the cycle.',
+    formula: null,
+    sources: [source.cosmicCycle, source.entropy],
+    visual: 'cycle',
+    caption:
+      'The loop illustrates the proposed cosmic sequence; phase lengths do not forecast real cosmic times.',
+  },
+  {
+    id: 'anomaly-consistency',
+    topic: 'physics-lab',
+    title: 'Why must all the particle charges fit together?',
+    answer:
+      'BHSM requires the admitted particle representations to form one consistent ledger. Their charges must allow the interactions and cancel the quantum anomalies that would otherwise spoil gauge consistency.',
+    detail:
+      'The conditional chiral construction reproduces the local anomaly sums and the even weak-doublet parity check. Its Yukawa charge classes also balance. These are exact consistency results for admitted representation and boundary data, rather than a derivation of every Standard Model ingredient from geometry alone.',
+    status: 'Conditional consistency result',
+    boundary:
+      'The physical representation selection, global polarization and normalized gauge dynamics must still be action-derived.',
+    formula: 'Σ n_i Y_i = 0;  Σ n_i Y_i³ = 0  in the stated left-handed ledger',
+    sources: [source.anomalyLedger, source.anomalyBridge, source.chargeClosure],
+    visual: 'symmetry',
+    caption:
+      'Balanced schematic charge marks illustrate the consistency sums; their positions are not particle trajectories.',
+  },
+  {
+    id: 'force-strengths',
+    topic: 'physics-lab',
+    title: 'Why do the forces have different strengths?',
+    answer:
+      'BHSM has explored geometric mode weights as a way to organize the relative interaction strengths. Its retained coupling formulas are historical electroweak matching screens whose physical action attachment remains a separate question.',
+    detail:
+      'A numerical match does not establish a normalized gauge coupling. The conditional representation traces also reject the historical 1:2:7 pattern as a trace-derived ratio: an additional action-owned geometric or localization transfer would be needed to explain that pattern.',
+    status: 'Historical matching screens',
+    boundary:
+      'Physical kinetic normalization, sector transfer and controlled running and threshold matching remain required before the screens become predictions.',
+    formula: null,
+    sources: [
+      source.gaugeScreens,
+      source.gaugeAttachment,
+      source.anomalyLedger,
+    ],
+    visual: 'forces',
+    caption:
+      'Differently drawn strands pose the relative-strength question; their widths do not encode derived coupling values.',
+  },
+  {
+    id: 'electroweak-hierarchy',
+    topic: 'physics-lab',
+    title: 'Why is the electroweak scale so far below the Planck scale?',
+    answer:
+      'A retained BHSM candidate uses geometric exponential suppression to connect a Planck energy scale to an electroweak scale. It illustrates how a large hierarchy could arise from a common structural rule.',
+    detail:
+      'The candidate inherits its dimensional energy anchor and a declared fine-structure input; it does not generate an absolute unit from dimensionless geometry. The current scale audit separates relative ratios, a single universal calibration and genuine absolute-unit generation.',
+    status: 'Retained scale candidate',
+    boundary:
+      'Current-action ownership of the suppression, the physical scale bridge and its observable map remain open; numerical agreement is a screen.',
+    formula:
+      'v_candidate = 2√2 E_P exp[−4π² − ε_α/(4π²)]\nε_α = α⁻¹/(12π²) − 1',
+    sources: [source.scaleCandidate, source.gaugeScreens, source.scaleBridge],
+    visual: 'geometry',
+    caption:
+      'Nested schematic scales illustrate a hierarchy; their sizes are not calibrated Planck or electroweak lengths.',
+  },
+  {
+    id: 'magnetic-moments',
+    topic: 'physics-lab',
+    title: 'What would BHSM predict for a magnetic moment?',
+    answer:
+      'The attached local charged-lepton action supplies a charge vertex and its Ward identity. Its minimal tree vertex has no Pauli correction; the physical quantum magnetic correction must come from the renormalized interaction.',
+    detail:
+      'The muon readout has been reduced to one projected soft-transfer derivative. After factoring out electric charge, the convention below reads the anomaly from F₂(0). Charge conservation alone cannot fix this transverse coefficient, so the local tree result does not substitute for a quantum-corrected moment.',
+    status: 'Local tree result; quantum readout open',
+    boundary:
+      'The normalized photon, physical external state and finite renormalized quantum vertex remain necessary; no physical BHSM muon anomaly has been computed.',
+    formula: 'F₂,tree = 0;  a_μ = lim(q² → 0) F₂(q²)',
+    sources: [source.localMagnetic, source.magneticReadout],
+    visual: 'symmetry',
+    caption:
+      'A turning schematic response illustrates a magnetic moment; its cadence is not a derived moment or muon g−2 value.',
+  },
+  {
+    id: 'collisions',
+    topic: 'physics-lab',
+    title: 'What happens when particles collide?',
+    answer:
+      'BHSM seeks interaction-driven changes between physical configurations through the same common action. Its collision software computes phase-space and energy–momentum bookkeeping from supplied states while the physical interaction amplitudes remain to be completed.',
+    detail:
+      'A collision or de-envelopment can be a later event producing a different outgoing configuration. The Museum separates illustrative two-body kinematics from real CMS input records; neither an animation nor a coordinate transformation derives a BHSM scattering probability.',
+    status: 'Implemented kinematics; physical rates open',
+    boundary:
+      'Same-action physical states, amplitudes, normalization and complete channel inventories are needed for cross sections, decay rates and branching fractions.',
+    formula: null,
+    sources: [source.corpus, source.forcePicture, source.collisionReadout],
+    visual: 'test',
+    caption:
+      'Incoming and outgoing schematic marks illustrate an interaction; their paths and brightness are not calculated scattering probabilities.',
+  },
+  {
+    id: 'testing-bhsm',
+    topic: 'physics-lab',
+    title: 'How can we tell whether BHSM is right?',
+    answer:
+      'BHSM must derive its physical outputs, freeze their assumptions and compare them with independent evidence. Measurements may grade an answer, but may not secretly select the branch, coefficient or formula that produced it.',
+    detail:
+      'The existing completion definition requires one common action, closed physical maps and a reproducible benchmark and falsification record. Mathematical consistency, software validation and experimental agreement answer different questions; each result keeps its own classification.',
+    status: 'Existing test and publication policy',
+    boundary:
+      'Physical prediction claims wait for their existing action, state, unit and observable requirements; present comparisons do not establish empirical validation.',
+    formula: null,
+    sources: [source.definitionOfDone, source.predictionFreeze, source.claims],
+    visual: 'test',
+    caption:
+      'A schematic comparison panel illustrates derive, freeze and test; it displays no new experimental result.',
+  },
+];

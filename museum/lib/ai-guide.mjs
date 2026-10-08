@@ -247,6 +247,21 @@ const topics = {
       { title: 'Archival DOI', url: 'https://doi.org/10.5281/zenodo.20663419' },
     ],
   },
+  'big-questions': {
+    keywords:
+      'physics questions monopoles multiverse expansion dark matter dark energy CP violation spacetime mass quantum measurement entanglement time antimatter neutrinos black holes big bang white hole cosmic fate',
+    summary:
+      'Popular physics questions have short BHSM explanations, expandable reasoning and source links, plus animated conceptual diagrams. Priority puzzles include the no-monopole and no-multiverse framework positions, expansion, dark matter and CP violation, alongside questions about the laboratory calculations and physical tests.',
+    scope:
+      'Framework exclusions and geometric proposals are not universal no-go theorems or completed physical predictions. Each answer states its retained scope and open derivation or observational test.',
+    sources: [
+      source(
+        'All questions, explanations and supporting paths',
+        'data/physics-questions.json',
+      ),
+      ...currentSources,
+    ],
+  },
   'museum-exit': {
     keywords:
       'sources links ai assistant access guide json download license music soundtrack',

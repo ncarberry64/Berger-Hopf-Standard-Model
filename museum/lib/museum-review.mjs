@@ -82,4 +82,11 @@ export const reviewEntries = {
       'BHSM makes its research record available for inspection, reproduction and scientific criticism.',
     question: null,
   },
+  'big-questions': {
+    classification: 'BHSM positions · proposals and scoped results',
+    statement:
+      'BHSM connects popular physics questions to its geometric framework, distinguishing its proposed explanations from completed physical derivations.',
+    question:
+      'Which explanation can you trace to the stated source, and what independent calculation or observation would test that explanation?',
+  },
 };

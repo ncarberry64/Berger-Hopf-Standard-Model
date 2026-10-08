@@ -112,9 +112,10 @@ export function OpenReviewInvitation() {
         evidence and challenge the reasoning.
       </p>
       <p>
-        Use “Review this result” in science exhibits 1–10 to find sources and a
-        concrete question. Contributions may reproduce a calculation, identify a
-        discrepancy, challenge an assumption or propose an independent test.
+        Use “Review this result” in the science exhibits and Big Questions to
+        find sources and a concrete question. Contributions may reproduce a
+        calculation, identify a discrepancy, challenge an assumption or propose
+        an independent test.
       </p>
       <p>
         Open review here invites scientific scrutiny; it does not certify

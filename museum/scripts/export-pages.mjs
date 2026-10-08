@@ -124,6 +124,8 @@ try {
     'BHSM Transition Diagram',
     'Active boundary imbalance',
     'Download transition record',
+    'The questions that keep us curious.',
+    'physics-question-answer',
   ]) {
     if (!written.includes(expected))
       throw new Error(`Static export is missing: ${expected}`);
@@ -160,6 +162,19 @@ try {
     throw new Error('Static export lost the AI interface or its exhibit map.');
   }
   await readFile(resolve(pagesRoot, 'llms.txt'), 'utf8');
+  const questions = JSON.parse(
+    await readFile(resolve(pagesRoot, 'data/physics-questions.json'), 'utf8'),
+  );
+  if (
+    questions.schema !== 'bhsm-physics-questions/v1' ||
+    !questions.questions.length ||
+    !questions.questions.every(
+      (question) => question.boundary && question.sources.length,
+    )
+  )
+    throw new Error(
+      'Static export lost the physics question catalog or its claim boundaries.',
+    );
   if (
     data.classification !== 'COMPARISON_ONLY' ||
     data.rows.length !== 10 ||

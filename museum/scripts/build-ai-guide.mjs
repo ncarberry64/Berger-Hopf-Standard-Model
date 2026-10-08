@@ -1,9 +1,28 @@
 import { mkdir, writeFile } from 'node:fs/promises';
 await import('./build-ai-snapshot.mjs');
 const { catalog, aiHandoffJSON } = await import('../lib/ai-guide.mjs');
+const { questionTopics, physicsQuestions } =
+  await import('../lib/physics-questions.mjs');
 
 const publicRoot = new URL('../public/', import.meta.url);
 await mkdir(new URL('ai/', publicRoot), { recursive: true });
+await mkdir(new URL('data/', publicRoot), { recursive: true });
+await writeFile(
+  new URL('data/physics-questions.json', publicRoot),
+  `${JSON.stringify(
+    {
+      schema: 'bhsm-physics-questions/v1',
+      updated: catalog.updated,
+      source_base_url: `${catalog.repository_url}/blob/main/`,
+      scope:
+        'Source-linked BHSM positions, proposals and scoped results. Animations are conceptual illustrations, not numerical predictions.',
+      topics: questionTopics,
+      questions: physicsQuestions,
+    },
+    null,
+    2,
+  )}\n`,
+);
 await writeFile(new URL('ai/handoff.json', publicRoot), `${aiHandoffJSON}\n`);
 await writeFile(
   new URL('ai/index.json', publicRoot),
