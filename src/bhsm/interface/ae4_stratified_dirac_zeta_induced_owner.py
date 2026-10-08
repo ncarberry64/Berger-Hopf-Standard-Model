@@ -16,11 +16,15 @@ from __future__ import annotations
 import math
 from typing import Any
 
+from .ae4_branch_relative_support_transition import (
+    CUTOFF_OWNER, branch_relative_cutoff_contract,
+)
+
 
 ACTION_VERSION = "BHSM-AE-4.0.0"
 PREDECESSOR_ACTION_VERSION = "BHSM-AE-3.1.0"
 CLASSIFICATION = "AE4_STRATIFIED_DIRAC_ZETA_INDUCED_ACTION_OWNER_SELECTED"
-CUTOFF_OWNER_TAG = "BHSM-AE4-MODE-FREQUENCY-CUTOFF-2026-10-07"
+CUTOFF_OWNER_TAG = CUTOFF_OWNER
 RELEVANT_MOMENT_ORDERS = (8, 6, 5, 4, 3, 2)
 
 
@@ -67,15 +71,16 @@ def proper_time_moment_ratio(
 
 
 def native_spectral_length_contract() -> dict[str, Any]:
-    """Bind the length to the adopted support-loss mode-frequency owner.
+    """Bind the length to the created branch's birth-side frequency owner.
 
     The rule is an owner selection, not a numerical evaluation.  In natural
     units E^2 is total restoring resistance divided by kinetic inertia on the
-    continuously transported physical branch at AE4's support-loss event.
-    Formation is not identified with that event. No particle datum sets it.
+    newly realized child side of the common parent-loss/child-birth surface.
+    Its later support-loss/decay event is a separate application. The adopted
+    same-mode energy equality must still be tested at birth.
     """
 
-    return {
+    contract = {
         "cutoff_owner_tag": CUTOFF_OWNER_TAG,
         "definition_status": "ADOPTED_OWNER__PHYSICAL_BRANCH_CONTRACTIONS_UNEVALUATED",
         "total_restoring_resistance": "R_star=gamma_star J_Sigma+H_impedance",
@@ -83,20 +88,11 @@ def native_spectral_length_contract() -> dict[str, Any]:
             "I_star=positive action-owned kinetic inertia in "
             "I_lambda D_tau^2 a_lambda+R_lambda a_lambda=f_lambda"
         ),
-        "branch_rule": (
-            "CONTINUOUS_TRANSPORT_OF_ACTION_SELECTED_FORMATION_BRANCH_TO_"
-            "AE4_FIRST_FUTURE_SUPPORT_LOSS_EVENT"
-        ),
         "impedance_energy_rule_natural_units": (
             "E_impedance=sqrt(<psi_star,R_star psi_star>/<psi_star,I_star psi_star>)"
         ),
         "core_energy_rule_natural_units": (
             "E_core=sqrt(<psi_star,H_event,drive psi_star>/<psi_star,I_star psi_star>)"
-        ),
-        "surface_rule": (
-            "Sigma_star=FIRST_FUTURE_SURFACE_WHERE_"
-            "E_impedance[Phi;Sigma]=E_core[Phi;Sigma]_AND_OUTWARD_"
-            "SPACETIME_SUPPORT_CEASES"
         ),
         "spectral_length_rule_natural_units": (
             "ell_star=1/E_impedance[Phi_star;Sigma_star]"
@@ -114,11 +110,13 @@ def native_spectral_length_contract() -> dict[str, Any]:
         "measured_particle_or_anomaly_input": False,
         "ell_star_is_BHSM_native_geometry_functional": True,
         "ell_star_is_free_universal_cutoff": False,
-        "first_crossing_not_singular_endpoint_evaluation": True,
+        "birth_child_side_requires_owned_endpoint_pullback": True,
         "black_hole_magnetar_neutron_and_atomic_data_set_ell_star": False,
         "those_systems_are_downstream_tests_of_one_surface_rule": True,
         "numerical_ell_star_evaluated_on_current_C2": False,
     }
+    contract.update(branch_relative_cutoff_contract())
+    return contract
 
 
 def native_mode_frequency_energy(

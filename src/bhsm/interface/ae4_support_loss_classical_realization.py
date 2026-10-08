@@ -2,7 +2,8 @@
 
 The classical bulk/interface action supplies the mechanical KKT response.
 The quantum AE4 heat owner consumes its cutoff c=i/r downstream. This module
-records the concrete event-definition stop found in the retained equations;
+preserves the 2026-10-07 inspected event-definition stop as historical data.
+The current report consumes the 2026-10-08 branch-transfer owner amendment;
 it adds no KKT algebra, trial flux condition, mode or numerical control.
 """
 from __future__ import annotations
@@ -60,6 +61,7 @@ class SupportLossClassicalRealization:
     classical_audit: Mapping[str, Any]
     outward_audit: Mapping[str, Any]
     physical_audit: Mapping[str, Any]
+    repository: Path = ROOT
 
     def __post_init__(self):
         # Capture independent producer snapshots. Frozen dataclasses alone do
@@ -91,6 +93,12 @@ class SupportLossClassicalRealization:
             raise ValueError('quantum E1 heat is downstream, not an extra classical restoring sector')
 
     def report(self):
+        """Current report; the old semantic gap has been superseded."""
+        from .ae4_branch_relative_support_transition import current_muon_birth_realization
+        return current_muon_birth_realization(self.repository)
+
+    def historical_report(self):
+        """Original inspected receipt; never the current owner frontier."""
         self._validate()
         payload = dict(
             classification=CLASSIFICATION,
@@ -237,4 +245,5 @@ def inspected_support_loss_realization(repository: Path | str = ROOT):
     )
     outputs = tuple(RealizationOutput(name, binding_identity, definitions[name], provenances)
                     for name in REQUIRED_OUTPUTS)
-    return SupportLossClassicalRealization(binding_identity, outputs, classical, outward, physical)
+    return SupportLossClassicalRealization(binding_identity, outputs, classical, outward, physical,
+                                           repository=repository)

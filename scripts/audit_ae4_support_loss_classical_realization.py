@@ -1,4 +1,8 @@
-"""Materialize the inspected definition contract; run no numerical producer."""
+"""Historical 2026-10-07 audit; use its original Git revision for replay.
+
+Current owner: scripts/audit_ae4_branch_relative_support_transition.py.
+The archived source hashes deliberately bind the original owner revision.
+"""
 from __future__ import annotations
 
 import argparse
@@ -121,7 +125,7 @@ def materialize(output: Path):
         data = path.read_bytes().replace(b'\r\n', b'\n')
         hashes.append(dict(path=relative, canonical_LF_bytes=len(data),
                            canonical_LF_sha256=sha256(data).hexdigest()))
-    report = realization.report()
+    report = realization.historical_report()
     manifest = dict(classification='SUPPORT_LOSS_DEFINITION_AUDIT_SOURCE_MANIFEST',
                     hash_convention='UTF-8 source bytes with CRLF normalized to LF',
                     numerical_producers_executed=False,

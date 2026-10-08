@@ -1,5 +1,7 @@
 # AE4 classical support-loss realization: operational event-definition stop
 
+**Historical receipt, superseded 2026-10-08.** Norman's branch-relative support law now supplies `BRANCH_REALIZATION_TRANSFER_EVENT`; the old definition gap below is no longer current. The heat cutoff uses the created muon's side of precursor-loss/muon-birth, while muon decay is a later event. See [the current transition audit](ae4_branch_relative_support_transition_20261008.md). `SupportLossClassicalRealization.report()` publishes that current audit; `historical_report()` preserves this original finding and its committed receipts.
+
 The first missing definition is **OUTWARD_SPACETIME_SUPPORT_CESSATION_EVENT_CONDITION**: an action-derived condition on the oriented full normal section that identifies cessation of outward spacetime support on the transported physical branch, at the first future surface where it and the separate energy equality both hold. No equation in the bounded inspection below operationally defines that condition. This milestone stops there as required; it does not select an event by an arbitrary zero or attempt a physical KKT solve.
 
 Starting HEAD: `00fa89d62e4c74ee9fd0b41611b3468ad035b5db`. Scientific reference: `524ed90689bd5923c249bba2e699abf627e703cd`. Branch: `codex/muon-parent-maxwell-density-review`. The separate retention commit `3ea1ef306c0da8fea7894944a03c5361d83910ae` changes historical-artifact bookkeeping only.

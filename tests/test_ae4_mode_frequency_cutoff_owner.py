@@ -33,11 +33,15 @@ def test_bulk_only_and_unsupplied_surface_input_are_rejected():
         surface_jacobi=2, bulk_impedance=4, kinetic_inertia=2)**2, 3)
 
 
-def test_formation_is_distinct_and_scalar_holding_is_historical():
+def test_birth_is_parent_loss_and_decay_is_distinct_scalar_holding_historical():
     c = native_spectral_length_contract()
     h = enclosure_holding_threshold_hypothesis()
     assert not c['formation_zero_is_support_loss_by_default']
-    assert 'AND_OUTWARD_SPACETIME_SUPPORT_CEASES' in c['surface_rule']
+    assert c['surface_rule'] == 'Sigma_star^mu=Sigma_(P->mu)=Sigma_P,out=Sigma_mu,in'
+    assert c['evaluation_side'] == 'MUON_CHILD_PLUS_SIDE_AT_BIRTH'
+    assert c['parent_loss_and_child_formation_can_share_event']
+    assert not c['decay_surface_sets_birth_cutoff']
+    assert not c['energy_equality_automatically_removed_by_transfer']
     assert not h['active_owner'] and 'SUPERSEDED' in h['classification']
     assert h['current_owner'] == 'RHO-B2_OPERATOR_VALUED_FORMATION_QUOTIENT'
 

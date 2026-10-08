@@ -1,4 +1,4 @@
-"""Scientific ownership and event-definition gates; no numerical controls."""
+"""Archived 2026-10-07 scientific receipt gates; no numerical controls."""
 from copy import deepcopy
 from dataclasses import replace
 
@@ -17,7 +17,7 @@ def realization():
 
 
 def test_classical_KKT_owner_and_consuming_heat_owner_remain_separate(realization):
-    report = realization.report()
+    report = realization.historical_report()
     owners = report['owner_separation']
     assert owners['support_loss_classical_owner'] == CLASSICAL_OWNER
     assert owners['downstream_heat_owner'] == HEAT_OWNER
@@ -28,7 +28,7 @@ def test_classical_KKT_owner_and_consuming_heat_owner_remain_separate(realizatio
 
 
 def test_all_required_outputs_bind_one_pending_action_base_domain(realization):
-    report = realization.report()
+    report = realization.historical_report()
     assert tuple(report['required_outputs']) == REQUIRED_OUTPUTS
     assert {x['binding_identity'] for x in report['required_outputs'].values()} == {realization.binding_identity}
     assert report['required_outputs']['b_psi']['value'] == [None] * 7
@@ -37,12 +37,12 @@ def test_all_required_outputs_bind_one_pending_action_base_domain(realization):
 
 
 def test_energy_equality_without_cessation_condition_cannot_select_event(realization):
-    event = realization.report()['event_conditions']
+    event = realization.historical_report()['event_conditions']
     assert event['energy_equality']['equation'] == '<psi_star,(R_total-H_event,drive)psi_star>=0'
     assert event['conjunction_required'] and event['first_future_selection']
     assert event['outward_support_cessation']['value'] is None
     assert event['event_surface'] is None and not event['root_search_performed']
-    assert realization.report()['first_missing_definition']['name'] == FIRST_MISSING_DEFINITION
+    assert realization.historical_report()['first_missing_definition']['name'] == FIRST_MISSING_DEFINITION
 
 
 @pytest.mark.parametrize('replacement', [0, 'descriptor=0', 'canonical_stop', 'sum Pi=0'])
@@ -60,10 +60,10 @@ def test_mixed_requirement_identity_is_rejected(realization):
 
 
 def test_report_nested_mutation_cannot_publish_arbitrary_cessation(realization):
-    detached = realization.report()
+    detached = realization.historical_report()
     detached['event_conditions']['outward_support_cessation']['value'] = 0
     detached['classical_owner_provenance']['classical_owner']['quantum_heat_in_classical_action'] = True
-    report = realization.report()
+    report = realization.historical_report()
     assert report['event_conditions']['outward_support_cessation']['value'] is None
     assert report['classical_owner_provenance']['classical_owner']['quantum_heat_in_classical_action'] is False
 
@@ -71,7 +71,7 @@ def test_report_nested_mutation_cannot_publish_arbitrary_cessation(realization):
 def test_direct_provenance_mutation_fails_closed_on_publication(realization):
     realization.outward_audit['first_missing_definition']['value'] = 'arbitrary flux=0'
     with pytest.raises(ValueError, match='operational outward-support'):
-        realization.report()
+        realization.historical_report()
 
 
 def test_quantum_determinant_cannot_be_registered_as_extra_classical_resistance(realization):
@@ -96,7 +96,7 @@ def test_registered_strata_and_derived_boundary_outputs_are_not_duplicate_scalar
 
 
 def test_complete_normal_section_and_kinetic_normalization_are_retained(realization):
-    report = realization.report()
+    report = realization.historical_report()
     normal = report['normal_section']
     assert normal['full_active_section_required']
     assert normal['registered_regular_strata'] == ['M8', 'M5+', 'M5-', 'M4']
@@ -122,7 +122,7 @@ def test_existing_later_support_evolution_is_not_misreported_as_absent(realizati
 
 
 def test_no_physical_or_generic_control_execution_after_exact_definition_stop(realization):
-    report = realization.report()
+    report = realization.historical_report()
     assert all(x['value'] is None for x in report['downstream_status'].values())
     assert all(x['blocked_by'] == FIRST_MISSING_DEFINITION for x in report['downstream_status'].values())
     assert report['execution']['new_generic_KKT_algebra'] == 0
