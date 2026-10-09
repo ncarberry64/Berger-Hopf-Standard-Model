@@ -1,0 +1,2804 @@
+{
+  "Gate7_closed": false,
+  "action_selected": false,
+  "base_head": "914505d4f4e649be8a62bf066f01b09e01586b04",
+  "claim_classes": {
+    "CONTROL_ONLY": [
+      "flat local matched reference, not an E1 stationary realization"
+    ],
+    "DERIVED": [
+      "matched local Pauli tensor reduction and common LSZ/charge cancellation",
+      "fixed-Y matching constraints; exact input dependency gradients",
+      "source-directed native resolvent reduction with surviving completion and overlap"
+    ],
+    "EVALUATED": [
+      "local Higgs weak residual Newton solve",
+      "local spin-sector poles and descriptor normalization",
+      "signed one-loop Pauli limit; complete local QED alpha and alpha^2",
+      "fixed-Y local neutral scalar loop and matching discrepancies"
+    ],
+    "OWNER_DEFINITION_GAP": [],
+    "UNEVALUATED": [
+      "complete interacting pole/self-energy matching",
+      "positive native photon source application, completion and overlap",
+      "birth cutoff on the owned formation section; complete Pauli prediction and error"
+    ]
+  },
+  "classification": "EVALUATED_CALIBRATED_LOCAL_PAULI_COMPONENTS_AND_LOCAL_HIGGS_SOLVE",
+  "contribution_accounting": {
+    "disjoint_native_after_owned_overlap": null,
+    "evaluated": {
+      "local_QED_one_loop": 0.001161409731851883,
+      "local_QED_two_loop_electron_VP": 5.904060869095057e-06,
+      "local_QED_two_loop_mass_independent": -1.7723050597130995e-06,
+      "local_QED_two_loop_tau_VP": 4.2114919292546455e-10,
+      "local_fixed_Y_radial_Higgs_one_loop": 2.1614509207310445e-14
+    },
+    "evaluated_partial_a_mu": 0.0011655419088320725,
+    "evaluated_partial_g_mu": 2.0023310838176642,
+    "full_a_mu": null,
+    "full_g_mu": null,
+    "historical_frozen_local_values_added": false,
+    "local_QED_alpha3_and_higher": null,
+    "remaining_local_weak": null,
+    "strong_contributions": "reserved to the unevaluated native/overlap ledger; no separate strong total added"
+  },
+  "independent_Yukawas_fitted": false,
+  "input_identities": [
+    {
+      "path": "src/bhsm/interface/muon_calibrated_matching.py",
+      "sha256": "24f46ea0be28c8fc34bff3cbfbb7eb14f1b7d9dd38953f11e24c7aa2f7917dbc"
+    },
+    {
+      "path": "src/bhsm/interface/muon_calibrated_local_pauli.py",
+      "sha256": "f8adec351b3a1fcc606f8b27deb8f32d6a308e5b718173f2974ce856760c9d27"
+    },
+    {
+      "path": "src/bhsm/interface/muon_calibrated_decay_matching.py",
+      "sha256": "e31971b1cc7004ff6c00c2f76632f2a315d2d041023c32d4f60f77f2d8aaf395"
+    },
+    {
+      "path": "src/bhsm/interface/muon_intrinsic_lepton_primal.py",
+      "sha256": "42d4193340504fe47831b669bd7848f9fb1a794868b817e41eb14fe20e283027"
+    },
+    {
+      "path": "src/bhsm/interface/ae31_c2_intrinsic_m4_lepton_action.py",
+      "sha256": "f3fee1ef24a3f13ef94d4ce5b146f9ac7a827045e369819b35ee8af5ccf0678a"
+    },
+    {
+      "path": "src/bhsm/interface/universal_lsz.py",
+      "sha256": "e9375d9cb0ea72d9727091f74c1ff7b8a720fee66a37bf0837498505a53d8bd3"
+    },
+    {
+      "path": "src/bhsm/interface/universal_quadratic_spectrum.py",
+      "sha256": "4784c051394ece5b6d84eea062d2ef99e164a6500b8d2fce9370cc9107b23db0"
+    },
+    {
+      "path": "src/bhsm/interface/universal_precision_form_factor.py",
+      "sha256": "612627b59deebf70cffcd3130699e0d54d4ab0c7bf5a942034a2d4be83380877"
+    },
+    {
+      "path": "src/bhsm/interface/muon_native_kkt_downstream.py",
+      "sha256": "767d7ff88303e09080e18899eb3745d1e820501039bc9a9628f4c09c49750751"
+    },
+    {
+      "path": "src/bhsm/interface/muon_native_photon_response.py",
+      "sha256": "1d633e7370a0ded6f01adf3b3547637c9acc0f32e0ad246655e6863637de5cea"
+    },
+    {
+      "path": "theory/muon_minimum_pauli_readout_20260930.md",
+      "sha256": "9b3561b30598c01fade16d524a3f228316e130c177ea5ea6dc7b380ed042cd9b"
+    },
+    {
+      "path": "artifacts/muon_calibrated_pauli_20261009/inputs.json",
+      "sha256": "0b614ab6f26d169ca04a4878f767f78eb3668484840867e46aebbebf186369da"
+    },
+    {
+      "path": "scripts/evaluate_muon_calibrated_pauli.py",
+      "sha256": "ffbed47bc7faf3351efa1dbdabf5c67b9699dda9984c55ffc81e7f897e3f4681"
+    }
+  ],
+  "interacting_birth_base_stationary": false,
+  "local_Higgs_Newton": {
+    "Gate7_closed": false,
+    "H_dagger_H_minus_nu_squared_GeV_squared": 2.5320332497358322e-09,
+    "action_selected": false,
+    "classical_body_source_owner": "muon_intrinsic_lepton_primal.classical_bosonic_body_source",
+    "classification": "CALIBRATED_TREE_LOCAL_BROKEN_VACUUM_ONLY",
+    "converged": true,
+    "current_E1_stationary_base_solved": false,
+    "fermi_constant_GeV_inverse_squared": 1.1663772930435853e-05,
+    "final_weak_radial_jacobian_GeV_squared": -15652.512100001957,
+    "final_weak_residual_GeV_cubed": -1.6096463888074067e-07,
+    "full_native_pauli_evaluated": false,
+    "full_prediction_uncertainty_established": false,
+    "gauge_orientation": "positive neutral component, fixed within matched broken phase",
+    "higgs_mass_GeV": 125.11,
+    "history": [
+      {
+        "accepted_correction_GeV": 77.07750238855614,
+        "damping": 1.0,
+        "full_newton_correction_GeV": 77.07750238855614,
+        "initial_residual_GeV_cubed": 554970.0078363406,
+        "iteration": 0,
+        "radial_h_after_GeV": 274.0533418259774,
+        "radial_h_before_GeV": 196.97583943742126,
+        "updated_residual_GeV_cubed": -512322.11128608265,
+        "weak_jacobian_GeV_squared": -7200.155565999998
+      },
+      {
+        "accepted_correction_GeV": -24.09704419596018,
+        "damping": 1.0,
+        "full_newton_correction_GeV": -24.09704419596018,
+        "initial_residual_GeV_cubed": -512322.11128608265,
+        "iteration": 1,
+        "radial_h_after_GeV": 249.95629763001722,
+        "radial_h_before_GeV": 274.0533418259774,
+        "updated_residual_GeV_cubed": -59823.63818406567,
+        "weak_jacobian_GeV_squared": -21260.78647322116
+      },
+      {
+        "accepted_correction_GeV": -3.6543514520007423,
+        "damping": 1.0,
+        "full_newton_correction_GeV": -3.6543514520007423,
+        "initial_residual_GeV_cubed": -59823.63818406567,
+        "iteration": 2,
+        "radial_h_after_GeV": 246.30194617801646,
+        "radial_h_before_GeV": 249.95629763001722,
+        "updated_residual_GeV_cubed": -1286.4486033176313,
+        "weak_jacobian_GeV_squared": -16370.521273018903
+      },
+      {
+        "accepted_correction_GeV": -0.08210580293703344,
+        "damping": 1.0,
+        "full_newton_correction_GeV": -0.08210580293703344,
+        "initial_residual_GeV_cubed": -1286.4486033176313,
+        "iteration": 3,
+        "radial_h_after_GeV": 246.21984037507943,
+        "radial_h_before_GeV": 246.30194617801646,
+        "updated_residual_GeV_cubed": -0.6429787933066499,
+        "weak_jacobian_GeV_squared": -15668.181264900397
+      },
+      {
+        "accepted_correction_GeV": -4.1078292569468085e-05,
+        "damping": 1.0,
+        "full_newton_correction_GeV": -4.1078292569468085e-05,
+        "initial_residual_GeV_cubed": -0.6429787933066499,
+        "iteration": 4,
+        "radial_h_after_GeV": 246.21979929678685,
+        "radial_h_before_GeV": 246.21984037507943,
+        "updated_residual_GeV_cubed": -1.6096463888074067e-07,
+        "weak_jacobian_GeV_squared": -15652.519934203674
+      }
+    ],
+    "initial_fraction": 0.8,
+    "initial_radial_h_GeV": 196.97583943742126,
+    "initial_weak_residual_GeV_cubed": 554970.0078363406,
+    "lambda_H": 0.12909460903411638,
+    "local_neutral_amplitude_GeV": 174.1036897451487,
+    "local_potential_density_GeV_fourth": 8.276503734504411e-19,
+    "local_radial_h_GeV": 246.21979929678685,
+    "matched_higgs_mass_squared_GeV_squared": 15652.5121,
+    "mechanical_formation_section_selected": false,
+    "native_cutoff_assigned": false,
+    "normalized_final_weak_residual": 4.176605523097395e-14,
+    "nu_squared_GeV_squared": 30312.094782872464,
+    "physical_retarded_boundary_conditions_selected": false,
+    "potential_radial_curvature_GeV_squared": 15652.512100001957,
+    "quantum_effects_deleted": false,
+    "quantum_induced_H_load_evaluated": false,
+    "radial_parameter": "canonical real h=sqrt(2)*a in H=(0,a)",
+    "radiative_matching_error_bounded": false,
+    "represented_domain": "FLAT_LOCAL_M4_UNIT_CELL; constant fields; no endpoint is prescribed"
+  },
+  "local_QED": {
+    "Gate7_closed": false,
+    "a_mu_local_QED_through_two_loops": 0.001165541908810458,
+    "action_selected": false,
+    "coefficient_two_loop": 0.7658575511614127,
+    "contributions": {
+      "local_QED_one_loop": 0.001161409731851883,
+      "local_QED_two_loop_electron_VP": 5.904060869095057e-06,
+      "local_QED_two_loop_mass_independent": -1.7723050597130995e-06,
+      "local_QED_two_loop_tau_VP": 4.2114919292546455e-10
+    },
+    "derivative_alpha": 0.16028745708872397,
+    "derivative_log_muon_electron_ratio": 1.7382538993228442e-06,
+    "derivative_log_muon_tau_ratio": 8.378537053811556e-10,
+    "electron_VP_application": {
+      "coefficient": 1.094258460962066,
+      "derivative_error_estimate": 3.580480866544706e-15,
+      "derivative_log_mass_ratio": 0.3221679245535741,
+      "error_scope": "QUADPACK outer error estimate plus exact-arithmetic series truncation bound; binary64 roundoff is not enclosed",
+      "integrated_derivative_series_truncation_bound": 1.01871384370629e-21,
+      "integrated_series_truncation_bound": 1.5435058237974092e-23,
+      "mass_ratio": 206.76838,
+      "numerical_method": "analytic VP inner integral; stable beta series and one adaptive outer integral",
+      "quadrature_error_estimate": 1.0258460749079952e-13,
+      "rigorous_quadrature_enclosure": false,
+      "scope": "LOCAL_QED_TWO_LOOP_LEPTON_VP_ONLY",
+      "series_switch_k": 1.0,
+      "series_terms": 32,
+      "source": "https://arxiv.org/abs/1205.5370",
+      "vacuum_polarization_equations": "14-15 and36",
+      "vacuum_polarization_integral_source": "https://arxiv.org/abs/2210.11071"
+    },
+    "full_a_mu": null,
+    "full_g_mu": null,
+    "g_mu_local_QED_through_two_loops": 2.0023310838176207,
+    "measured_anomaly_used": false,
+    "native_remainder": null,
+    "perturbative_truncation_bound": null,
+    "quadrature_error_estimate": 9.616876250830067e-19,
+    "scope": "CALIBRATED_LOCAL_QED_COMPONENT_ONLY; not a completed BHSM prediction",
+    "tau_VP_application": {
+      "coefficient": 7.805577854021534e-05,
+      "derivative_error_estimate": 6.779372660756404e-14,
+      "derivative_log_mass_ratio": 0.00015528778013805848,
+      "error_scope": "QUADPACK outer error estimate plus exact-arithmetic series truncation bound; binary64 roundoff is not enclosed",
+      "integrated_derivative_series_truncation_bound": 1.01871384370629e-21,
+      "integrated_series_truncation_bound": 1.5435058237974092e-23,
+      "mass_ratio": 0.05945586619721249,
+      "numerical_method": "analytic VP inner integral; stable beta series and one adaptive outer integral",
+      "quadrature_error_estimate": 7.565454753859158e-14,
+      "rigorous_quadrature_enclosure": false,
+      "scope": "LOCAL_QED_TWO_LOOP_LEPTON_VP_ONLY",
+      "series_switch_k": 1.0,
+      "series_terms": 32,
+      "source": "https://arxiv.org/abs/1205.5370",
+      "vacuum_polarization_equations": "14-15 and36",
+      "vacuum_polarization_integral_source": "https://arxiv.org/abs/2210.11071"
+    },
+    "weak_and_strong_accounted": false
+  },
+  "local_decay_matching_application": {
+    "Gate7_closed": false,
+    "action_selected": false,
+    "alpha_0": 0.007297352562787135,
+    "complete_GF_matching": false,
+    "complete_decay_factor": null,
+    "complete_order_alpha_squared_correction": null,
+    "delta_q0": -0.0001870506527100327,
+    "delta_q1_massless_alpha_0": -0.004203843776879088,
+    "derivative_alpha_0": -0.5760779324705507,
+    "derivative_log_muon_electron_ratio": 0.0003739744242888919,
+    "electron_muon_squared_ratio": 2.339008229058023e-05,
+    "finite_electron_mass_one_loop_remainder": null,
+    "finite_electron_mass_tree_evaluated": true,
+    "higher_local_order_correction": null,
+    "input_configuration_changed": false,
+    "massless_neutrinos_assumed": true,
+    "massless_one_loop_coefficient_alpha_over_2pi": -3.619604401089358,
+    "measured_muon_anomaly_used": false,
+    "muon_electron_ratio": 206.76838,
+    "native_lifetime_correction": null,
+    "normalization": "Gamma=G_F^2*m_mu^5/(192*pi^3)*(1+sum delta_q_i); additive in Gamma/Gamma_0",
+    "partial_decay_factor_tree_plus_massless_one_loop": 0.9956091055704108,
+    "perturbative_truncation_bound": null,
+    "reference_comparison": {
+      "comparison_is_rounding_only": false,
+      "massless_alpha_0_delta_q1_minus_rounded_MuLan": 2.985622312091235e-05,
+      "partial_factor_minus_reference": -6.443776879194729e-06,
+      "reference_decay_factor": 0.99561554934729,
+      "reference_one_loop_scope": "alpha_e(m_mu) and nonzero electron-mass terms; MuLan2013 p28",
+      "reference_role": "CALLER_SUPPLIED_COMPARISON_ONLY",
+      "reference_two_loop_scope": "photonic, electron, muon, tau, hadronic loops and finite-electron-mass amendment; MuLan2013 p28",
+      "relative_partial_factor_minus_reference": -6.472153717740348e-06,
+      "rounded_MuLan_delta_q1": -0.0042337,
+      "rounded_MuLan_delta_q2": 3.63e-05
+    },
+    "running_coupling_reorganization_included": false,
+    "scope": "CALIBRATED_LOCAL_FERMI_DECAY_TREE_PLUS_MASSLESS_ONE_LOOP_COMPONENT_ONLY",
+    "sources": {
+      "decay_formula": {
+        "equations": "2.6-2.8; alpha_e scheme discussion4.13",
+        "url": "https://arxiv.org/abs/hep-ph/9904240"
+      },
+      "reference": {
+        "equations": "23; pp27-28",
+        "url": "https://arxiv.org/abs/1211.0960"
+      }
+    },
+    "tree_phase_space": 0.9998129493472899
+  },
+  "local_poles": [
+    {
+      "Gate7_closed": false,
+      "LSZ_descriptor_residual": 0.0,
+      "action_selected": false,
+      "analytic_energy_GeV": 0.10565842526040435,
+      "energy_GeV": 0.10565842526040435,
+      "full_spin_degeneracy": 2,
+      "interacting_BHSM_LSZ_evaluated": false,
+      "left_mode": {
+        "imag": [
+          0.0,
+          0.0
+        ],
+        "real": [
+          1.0,
+          0.0
+        ]
+      },
+      "normalization_scope": "local on-shell matched quadratic symbol only",
+      "pole_residual": 0.0,
+      "residue": {
+        "imag": [
+          [
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0
+          ]
+        ],
+        "real": [
+          [
+            1.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0
+          ]
+        ]
+      },
+      "right_mode": {
+        "imag": [
+          0.0,
+          0.0
+        ],
+        "real": [
+          1.0,
+          0.0
+        ]
+      },
+      "simple_within_spin_sector": true
+    },
+    {
+      "Gate7_closed": false,
+      "LSZ_descriptor_residual": 0.0,
+      "action_selected": false,
+      "analytic_energy_GeV": 0.10565842526040435,
+      "energy_GeV": 0.10565842526040435,
+      "full_spin_degeneracy": 2,
+      "interacting_BHSM_LSZ_evaluated": false,
+      "left_mode": {
+        "imag": [
+          0.0,
+          0.0
+        ],
+        "real": [
+          1.0,
+          0.0
+        ]
+      },
+      "normalization_scope": "local on-shell matched quadratic symbol only",
+      "pole_residual": 0.0,
+      "residue": {
+        "imag": [
+          [
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0
+          ]
+        ],
+        "real": [
+          [
+            1.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0
+          ]
+        ]
+      },
+      "right_mode": {
+        "imag": [
+          0.0,
+          0.0
+        ],
+        "real": [
+          1.0,
+          0.0
+        ]
+      },
+      "simple_within_spin_sector": true
+    },
+    {
+      "Gate7_closed": false,
+      "LSZ_descriptor_residual": 2.220446049250313e-16,
+      "action_selected": false,
+      "analytic_energy_GeV": 0.10618540321905613,
+      "energy_GeV": 0.10618540321905613,
+      "full_spin_degeneracy": 2,
+      "interacting_BHSM_LSZ_evaluated": false,
+      "left_mode": {
+        "imag": [
+          0.0,
+          0.0
+        ],
+        "real": [
+          0.9987585269247992,
+          0.04981370188015978
+        ]
+      },
+      "normalization_scope": "local on-shell matched quadratic symbol only",
+      "pole_residual": 4.14981833813801e-18,
+      "residue": {
+        "imag": [
+          [
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0
+          ]
+        ],
+        "real": [
+          [
+            0.9975185951049945,
+            0.04975185951049947
+          ],
+          [
+            -0.04975185951049947,
+            -0.002481404895005433
+          ]
+        ]
+      },
+      "right_mode": {
+        "imag": [
+          0.0,
+          0.0
+        ],
+        "real": [
+          0.9987585269247992,
+          -0.04981370188015978
+        ]
+      },
+      "simple_within_spin_sector": true
+    },
+    {
+      "Gate7_closed": false,
+      "LSZ_descriptor_residual": 2.220446049250313e-16,
+      "action_selected": false,
+      "analytic_energy_GeV": 0.10618540321905613,
+      "energy_GeV": 0.10618540321905613,
+      "full_spin_degeneracy": 2,
+      "interacting_BHSM_LSZ_evaluated": false,
+      "left_mode": {
+        "imag": [
+          0.0,
+          0.0
+        ],
+        "real": [
+          0.9987585269247992,
+          -0.04981370188015978
+        ]
+      },
+      "normalization_scope": "local on-shell matched quadratic symbol only",
+      "pole_residual": 4.14981833813801e-18,
+      "residue": {
+        "imag": [
+          [
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0
+          ]
+        ],
+        "real": [
+          [
+            0.9975185951049945,
+            -0.04975185951049947
+          ],
+          [
+            0.04975185951049947,
+            -0.002481404895005433
+          ]
+        ]
+      },
+      "right_mode": {
+        "imag": [
+          0.0,
+          0.0
+        ],
+        "real": [
+          0.9987585269247992,
+          0.04981370188015978
+        ]
+      },
+      "simple_within_spin_sector": true
+    }
+  ],
+  "local_radial_Higgs": {
+    "a_mu_local_radial_Higgs_one_loop": 2.1614509207310445e-14,
+    "asymptotic_difference": 4.6544545184120267e-20,
+    "derivative_log_higgs_mass": -3.9900424493322035e-14,
+    "derivative_log_muon_mass": 3.9900424493322035e-14,
+    "derivative_quadrature_error_estimate": 4.528476973943286e-25,
+    "fixed_Y_mu": 0.0006070420455456903,
+    "full_scalar_matching_and_interacting_LSZ_evaluated": false,
+    "heavy_mass_asymptotic": 2.161446266276526e-14,
+    "independent_Y_mu_fitted": false,
+    "integral": 9.262485931688915e-06,
+    "measured_muon_mass_used_only_as_pole": true,
+    "native_evaluated": false,
+    "quadrature_error_estimate": 1.684489943966058e-26,
+    "radial_scalar_coupling": 0.0004292435468707106,
+    "scope": "CALIBRATED_LOCAL_RADIAL_HIGGS_LOOP_ONLY",
+    "source": "https://arxiv.org/abs/1403.2309",
+    "source_equation": "35 and64, neutral scalar, equal fermion masses"
+  },
+  "matching": {
+    "Gate7_closed": false,
+    "action_selected": false,
+    "classification": "CALIBRATED_TREE_MATCHING_AND_REQUIRED_POLE_CORRECTIONS",
+    "common_scale_matches_all_supplied_central_mass_ratios": false,
+    "cp_real_pole_equation": "m_f/M0_f=(1+Sigma_m(m_f^2)/M0_f)/sqrt(A_L*A_R)",
+    "family_rows": [
+      {
+        "family": "tau",
+        "fixed_yukawa": 0.010104825496118923,
+        "kinetic_product_if_no_masslike_shift": 0.9800646842385162,
+        "mass_only_shift_if_A_left_A_right_equal_one_GeV": 0.017802596894916256,
+        "measured_pole_mass_GeV": 1.77709,
+        "pole_minus_tree_GeV": 0.017802596894916256,
+        "required_pole_factor": 1.010119208983987,
+        "required_relative_pole_shift": 0.010119208983986994,
+        "tree_mass_GeV": 1.7592874031050838,
+        "v_required_with_unmodified_tree_kinetics_GeV": 248.71134890185598
+      },
+      {
+        "family": "muon",
+        "fixed_yukawa": 0.0006070420455456903,
+        "kinetic_product_if_no_masslike_shift": 1.000564818407375,
+        "mass_only_shift_if_A_left_A_right_equal_one_GeV": -2.983469953850293e-05,
+        "measured_pole_mass_GeV": 0.10565842526040435,
+        "pole_minus_tree_GeV": -2.983469953850293e-05,
+        "required_pole_factor": 0.9997177103724689,
+        "required_relative_pole_shift": -0.0002822896275310738,
+        "tree_mass_GeV": 0.10568825995994285,
+        "v_required_with_unmodified_tree_kinetics_GeV": 246.15029400134227
+      },
+      {
+        "family": "electron",
+        "fixed_yukawa": 3.0040743289839823e-06,
+        "kinetic_product_if_no_masslike_shift": 1.047604321839723,
+        "mass_only_shift_if_A_left_A_right_equal_one_GeV": -1.2021474039394082e-05,
+        "measured_pole_mass_GeV": 0.000510998950905377,
+        "pole_minus_tree_GeV": -1.2021474039394082e-05,
+        "required_pole_factor": 0.9770152876139331,
+        "required_relative_pole_shift": -0.02298471238606692,
+        "tree_mass_GeV": 0.0005230204249447711,
+        "v_required_with_unmodified_tree_kinetics_GeV": 240.560508026185
+      }
+    ],
+    "fixed_yukawa_owner": "ae31_c2_intrinsic_m4_lepton_action.charged_lepton_yukawa_operator",
+    "full_native_pauli_evaluated": false,
+    "full_prediction_uncertainty_established": false,
+    "independent_yukawas_introduced": false,
+    "input_covariance": [
+      [
+        6.089524106058618e-22,
+        0.0,
+        0.0,
+        -2.082789753679931e-18,
+        -3.851791267579138e-28
+      ],
+      [
+        0.0,
+        0.0121,
+        0.0,
+        0.0,
+        0.0
+      ],
+      [
+        0.0,
+        0.0,
+        1.8500000000000004e-08,
+        0.0,
+        0.0
+      ],
+      [
+        -2.082789753679931e-18,
+        0.0,
+        0.0,
+        7.546366202766637e-15,
+        1.3956862918763308e-24
+      ],
+      [
+        -3.851791267579138e-28,
+        0.0,
+        0.0,
+        1.3956862918763308e-24,
+        6.749998679083961e-27
+      ]
+    ],
+    "input_covariance_scope": "Illustrative propagation from independent primitives; not the measured cross-source covariance",
+    "input_jacobian": [
+      [
+        -10554895.091205098,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      [
+        -2598824150.955051,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      [
+        11067.997448514488,
+        0.0020636976905781534,
+        0.0,
+        0.0,
+        0.0
+      ],
+      [
+        -75416.73751699753,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      [
+        -4530.620605797128,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      [
+        -22.420722182441647,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      [
+        75416.73751699753,
+        0.0,
+        1.0,
+        0.0,
+        0.0
+      ],
+      [
+        4530.620605797128,
+        0.0,
+        0.0,
+        1.0,
+        0.0
+      ],
+      [
+        22.420722182441647,
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ],
+      [
+        43301.56352530436,
+        0.0,
+        0.5684119594302973,
+        0.0,
+        0.0
+      ],
+      [
+        42855.674417485054,
+        0.0,
+        0.0,
+        9.461788853170752,
+        0.0
+      ],
+      [
+        41882.47205432453,
+        0.0,
+        0.0,
+        0.0,
+        1911.9712200639124
+      ],
+      [
+        0.0,
+        0.0,
+        139.9542785688153,
+        0.0,
+        0.0
+      ],
+      [
+        0.0,
+        0.0,
+        0.0,
+        2329.67975241618,
+        0.0
+      ],
+      [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        470765.1700653495
+      ],
+      [
+        0.0,
+        0.0,
+        0.5685724615386896,
+        -9.562932943450186,
+        0.0
+      ],
+      [
+        0.0,
+        0.0,
+        0.0,
+        9.684381578386898,
+        -2002.423890264902
+      ],
+      [
+        0.0,
+        0.0,
+        0.5817840996311052,
+        0.0,
+        -2023.2579808268283
+      ]
+    ],
+    "input_order": [
+      "G_F_GeV_inverse_squared",
+      "m_h_GeV",
+      "m_tau_GeV",
+      "m_muon_GeV",
+      "m_electron_GeV"
+    ],
+    "input_uncertainty_method": "FIRST_ORDER_COVARIANCE",
+    "input_values": [
+      1.1663772930435853e-05,
+      125.11,
+      1.77709,
+      0.10565842526040435,
+      0.000510998950905377
+    ],
+    "lambda_H": 0.12909460903411638,
+    "mass_input_assigns_residue": false,
+    "matching_order": "TREE; radiative and BHSM corrections remain to be calculated",
+    "muon_anomaly_calibration_used": false,
+    "native_cutoff_assigned": false,
+    "nu_squared_GeV_squared": 30312.094782872464,
+    "output_covariance": [
+      [
+        6.784083679026463e-08,
+        1.670375721862433e-05,
+        -7.11387656638478e-11,
+        4.847357114338408e-10,
+        2.912024140653018e-11,
+        1.441075956848024e-13,
+        -4.847357114338408e-10,
+        -7.1366140594015985e-12,
+        -1.441075916192771e-13,
+        -2.7831771689812684e-10,
+        -6.74473562153742e-11,
+        -2.691965997210945e-10,
+        0.0,
+        5.121481151526807e-08,
+        1.9139076971381112e-15,
+        -2.102279541743883e-10,
+        2.1289782756574954e-10,
+        -8.225606457383074e-18
+      ],
+      [
+        1.670375721862433e-05,
+        0.004112795749871765,
+        -1.751577260397302e-08,
+        1.1935152958122046e-07,
+        7.169979994589542e-09,
+        3.548214328665306e-11,
+        -1.1935152958122046e-07,
+        -1.757175681364416e-09,
+        -3.5482142285640244e-11,
+        -6.852733239539386e-08,
+        -1.6606874510447634e-08,
+        -6.628153275470258e-08,
+        0.0,
+        1.2610100612311542e-05,
+        4.712419690619016e-13,
+        -5.1762284683389817e-08,
+        5.241966037395858e-08,
+        -2.02530717103113e-15
+      ],
+      [
+        -7.113876566384778e-11,
+        -1.751577260397302e-08,
+        5.15321373099969e-08,
+        -5.083000419231124e-13,
+        -3.053585609355434e-14,
+        -1.5111306058171766e-16,
+        5.083000419231124e-13,
+        7.48354441403274e-15,
+        1.5111305631855608e-16,
+        2.918475033514654e-13,
+        7.072615692057793e-14,
+        2.822829836882511e-13,
+        0.0,
+        -5.370450376616848e-11,
+        -2.0069479919575675e-18,
+        2.2044771078277855e-13,
+        -2.2324737403173547e-13,
+        8.625475714927796e-21
+      ],
+      [
+        4.847357114338408e-10,
+        1.1935152958122046e-07,
+        -5.083000419231125e-13,
+        3.463529063854214e-12,
+        2.0806967607075905e-13,
+        1.0296762425447743e-15,
+        -3.463529063854214e-12,
+        -5.0992467914387743e-14,
+        -1.0296762134958212e-15,
+        -1.98863314322526e-12,
+        -4.819242177166481e-13,
+        -1.923461022227562e-12,
+        0.0,
+        3.6593959140795985e-10,
+        1.3675235346213767e-17,
+        -1.5021188085437454e-12,
+        1.5211955628856888e-12,
+        -5.87735261936887e-20
+      ],
+      [
+        2.912024140653018e-11,
+        7.169979994589542e-09,
+        -3.0535856093554344e-14,
+        2.0806967607075903e-13,
+        1.2499675707070341e-14,
+        6.185725550275487e-17,
+        -2.0806967607075903e-13,
+        -3.0633455315049214e-15,
+        -6.185725375765438e-17,
+        -1.1946608395831025e-13,
+        -2.8951342408939495e-14,
+        -1.1555090326981753e-13,
+        0.0,
+        2.1983627347128575e-11,
+        8.2153252830271655e-19,
+        -9.023899270118763e-14,
+        9.138501862539125e-14,
+        -3.530788490929731e-21
+      ],
+      [
+        1.441075956848024e-13,
+        3.548214328665306e-11,
+        -1.5111306058171769e-16,
+        1.0296762425447743e-15,
+        6.185725550275488e-17,
+        3.0611354630334698e-19,
+        -1.0296762425447743e-15,
+        -1.5159605071061077e-17,
+        -3.061135376673528e-19,
+        -5.912028641785288e-16,
+        -1.432717637246007e-16,
+        -5.718277749471692e-16,
+        0.0,
+        1.0879057069612573e-13,
+        4.0655252742517695e-21,
+        -4.4656649969496545e-16,
+        4.522378483017254e-16,
+        -1.747284417035617e-23
+      ],
+      [
+        -4.847357114338408e-10,
+        -1.1935152958122046e-07,
+        5.083000419231125e-13,
+        -3.463529063854214e-12,
+        -2.0806967607075905e-13,
+        -1.0296762425447743e-15,
+        1.850346352906386e-08,
+        5.0992467914387743e-14,
+        1.0296762134958212e-15,
+        1.0517609882603728e-08,
+        4.819242177166481e-13,
+        1.923461022227562e-12,
+        2.5891541535230837e-06,
+        -3.6593959140795985e-10,
+        -1.3675235346213767e-17,
+        1.0520092657274304e-08,
+        -1.5211955628856888e-12,
+        1.0763005843234221e-08
+      ],
+      [
+        -7.136614059401599e-12,
+        -1.7571756813644153e-09,
+        7.483544414032743e-15,
+        -5.099246791438774e-14,
+        -3.0633455315049218e-15,
+        -1.5159605071061068e-17,
+        5.099246791438774e-14,
+        1.173381558706139e-15,
+        1.515960472164687e-17,
+        2.927803112948569e-14,
+        1.1094106464440325e-14,
+        2.8318522284796373e-14,
+        0.0,
+        -4.4030108002253674e-12,
+        -1.6449203374967862e-19,
+        1.807359873741147e-14,
+        -1.830313158231211e-14,
+        7.069550621603423e-22
+      ],
+      [
+        -1.441075916192771e-13,
+        -3.5482142285640244e-11,
+        1.5111305631855608e-16,
+        -1.0296762134958212e-15,
+        -6.185725375765439e-17,
+        -3.0611353766735274e-19,
+        1.0296762134958212e-15,
+        1.5159604721646873e-17,
+        3.0611353578135724e-19,
+        5.912028474996703e-16,
+        1.4327176042317843e-16,
+        5.718277717207183e-16,
+        0.0,
+        -1.0879056744462364e-13,
+        -8.878609981519241e-22,
+        4.46566486348111e-16,
+        -4.522378483017255e-16,
+        3.815855472328996e-24
+      ],
+      [
+        -2.7831771689812684e-10,
+        -6.852733239539386e-08,
+        2.918475033514654e-13,
+        -1.98863314322526e-12,
+        -1.1946608395831025e-13,
+        -5.912028641785288e-16,
+        1.0517609882603727e-08,
+        2.9278031129485696e-14,
+        5.912028474996704e-16,
+        5.978346680272267e-09,
+        2.767034588725982e-13,
+        1.104381764375075e-12,
+        1.4717061856711488e-06,
+        -2.1010928058515331e-10,
+        -7.851825623378384e-18,
+        5.97975512071581e-09,
+        -8.734154840079083e-13,
+        6.117821240712841e-09
+      ],
+      [
+        -6.74473562153742e-11,
+        -1.660687451044763e-08,
+        7.072615692057793e-14,
+        -4.819242177166483e-13,
+        -2.895134240893948e-14,
+        -1.4327176372460064e-16,
+        4.819242177166483e-13,
+        1.109410646444032e-14,
+        1.4327176042317838e-16,
+        2.7670345887259814e-13,
+        1.0489276486316348e-13,
+        2.676352460914028e-13,
+        0.0,
+        -4.1601641014018115e-11,
+        -1.5541946068609328e-18,
+        1.7076754989261383e-13,
+        -1.7293628021096926e-13,
+        6.679628914885285e-21
+      ],
+      [
+        -2.691965997210945e-10,
+        -6.628153275470258e-08,
+        2.822829836882511e-13,
+        -1.923461022227562e-12,
+        -1.1555090326981753e-13,
+        -5.718277749471692e-16,
+        1.923461022227562e-12,
+        2.831852228479637e-14,
+        5.718277717207184e-16,
+        1.104381764375075e-12,
+        2.676352460914028e-13,
+        1.0681886368743398e-12,
+        0.0,
+        -2.0322351173585797e-10,
+        -1.5189006607320326e-18,
+        8.341974098572564e-13,
+        -8.447916569894444e-13,
+        6.5279423358415194e-21
+      ],
+      [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        2.5891541535230837e-06,
+        0.0,
+        0.0,
+        1.4717061856711488e-06,
+        0.0,
+        0.0,
+        0.00036236320165977486,
+        0.0,
+        0.0,
+        1.4721217503717418e-06,
+        0.0,
+        1.5063287180135636e-06
+      ],
+      [
+        5.121481151526807e-08,
+        1.2610100612311544e-05,
+        -5.370450376616849e-11,
+        3.6593959140795985e-10,
+        2.1983627347128575e-11,
+        1.0879057069612574e-13,
+        -3.6593959140795985e-10,
+        -4.40301080022537e-12,
+        -1.0879056744462365e-13,
+        -2.1010928058515334e-10,
+        -4.1601641014018115e-11,
+        -2.0322351173585795e-10,
+        0.0,
+        4.095720640431325e-08,
+        1.5306939366777256e-15,
+        -1.681222571425461e-10,
+        1.702573925126278e-10,
+        -6.5786275632000015e-18
+      ],
+      [
+        1.9139076971381112e-15,
+        4.712419690619015e-13,
+        -2.0069479919575675e-18,
+        1.3675235346213767e-17,
+        8.215325283027165e-19,
+        4.0655252742517695e-21,
+        -1.3675235346213767e-17,
+        -1.644920337496786e-19,
+        -8.878609981519241e-22,
+        -7.851825623378382e-18,
+        -1.5541946068609328e-18,
+        -1.5189006607320322e-18,
+        0.0,
+        1.5306939366777256e-15,
+        1.4959336633487293e-15,
+        -6.283234190542048e-18,
+        4.680789368371437e-34,
+        -6.429234607007318e-18
+      ],
+      [
+        -2.102279541743883e-10,
+        -5.176228468338982e-08,
+        2.2044771078277855e-13,
+        -1.5021188085437454e-12,
+        -9.023899270118763e-14,
+        -4.4656649969496545e-16,
+        1.0520092657274304e-08,
+        1.8073598737411474e-14,
+        4.46566486348111e-16,
+        5.979755120715811e-09,
+        1.7076754989261373e-13,
+        8.341974098572564e-13,
+        1.472121750371742e-06,
+        -1.681222571425461e-10,
+        -6.283234190542049e-18,
+        5.9812710271963604e-09,
+        -6.988771851737666e-13,
+        6.119548725836568e-09
+      ],
+      [
+        2.128978275657495e-10,
+        5.241966037395858e-08,
+        -2.2324737403173545e-13,
+        1.5211955628856886e-12,
+        9.138501862539123e-14,
+        4.522378483017254e-16,
+        -1.5211955628856886e-12,
+        -1.830313158231211e-14,
+        -4.522378483017254e-16,
+        -8.734154840079083e-13,
+        -1.7293628021096923e-13,
+        -8.447916569894443e-13,
+        0.0,
+        1.702573925126278e-10,
+        3.1916923214026964e-34,
+        -6.988771851737666e-13,
+        7.077528805937475e-13,
+        -1.3717278533425263e-36
+      ],
+      [
+        -8.225606457383074e-18,
+        -2.0253071710311294e-15,
+        8.625475714927794e-21,
+        -5.877352619368871e-20,
+        -3.53078849092973e-21,
+        -1.7472844170356167e-23,
+        1.0763005843234221e-08,
+        7.06955062160342e-22,
+        3.815855472328995e-24,
+        6.117821240712842e-09,
+        6.679628914885285e-21,
+        6.527942335841521e-21,
+        1.5063287180135636e-06,
+        -6.578627563200001e-18,
+        -6.4292346070073176e-18,
+        6.1195487258365675e-09,
+        -6.978826493394483e-36,
+        6.2617456638237846e-09
+      ]
+    ],
+    "output_order": [
+      "v_GeV",
+      "nu_squared_GeV_squared",
+      "lambda_H",
+      "m_tree_tau_GeV",
+      "m_tree_muon_GeV",
+      "m_tree_electron_GeV",
+      "pole_minus_tree_tau_GeV",
+      "pole_minus_tree_muon_GeV",
+      "pole_minus_tree_electron_GeV",
+      "required_pole_factor_tau",
+      "required_pole_factor_muon",
+      "required_pole_factor_electron",
+      "v_from_tau_GeV",
+      "v_from_muon_GeV",
+      "v_from_electron_GeV",
+      "tau_muon_ratio_factor",
+      "muon_electron_ratio_factor",
+      "tau_electron_ratio_factor"
+    ],
+    "output_standard_uncertainties": [
+      0.0002604627358956836,
+      0.06413108255652453,
+      0.00022700691026926228,
+      1.861055900249698e-06,
+      1.1180194858351236e-07,
+      5.53275289800066e-10,
+      0.00013602743667754627,
+      3.425465747465794e-08,
+      5.532752802912464e-10,
+      7.731976901331423e-05,
+      3.2387152524290165e-07,
+      1.0335321170018568e-06,
+      0.019035839925250864,
+      0.00020237886847275643,
+      3.8677301655476555e-08,
+      7.733867743371592e-05,
+      8.412805005429209e-07,
+      7.913119273601141e-05
+    ],
+    "output_values": [
+      246.21979929677656,
+      30312.094782872464,
+      0.12909460903411638,
+      1.7592874031050838,
+      0.10568825995994285,
+      0.0005230204249447711,
+      0.017802596894916256,
+      -2.983469953850293e-05,
+      -1.2021474039394082e-05,
+      1.010119208983987,
+      0.9997177103724689,
+      0.9770152876139331,
+      248.71134890185598,
+      246.15029400134227,
+      240.560508026185,
+      1.01040443567579,
+      1.0232365071932288,
+      1.0338827056134408
+    ],
+    "pole_equation": "m_f^2*A_L(m_f^2)*A_R(m_f^2)=B_L(m_f^2)*B_R(m_f^2)",
+    "ratio_rows": [
+      {
+        "denominator": "muon",
+        "fixed_yukawa_ratio": 16.6460059402234,
+        "measured_pole_ratio": 16.81919823828727,
+        "numerator": "tau",
+        "relative_ratio_discrepancy": 0.01040443567578997,
+        "required_relative_pole_factor": 1.01040443567579
+      },
+      {
+        "denominator": "electron",
+        "fixed_yukawa_ratio": 202.0729113420439,
+        "measured_pole_ratio": 206.76838,
+        "numerator": "muon",
+        "relative_ratio_discrepancy": 0.023236507193228784,
+        "required_relative_pole_factor": 1.0232365071932288
+      },
+      {
+        "denominator": "electron",
+        "fixed_yukawa_ratio": 3363.706882557899,
+        "measured_pole_ratio": 3477.678372629513,
+        "numerator": "tau",
+        "relative_ratio_discrepancy": 0.033882705613440756,
+        "required_relative_pole_factor": 1.0338827056134408
+      }
+    ],
+    "required_corrections_fitted": false,
+    "stationary_base_solved": false,
+    "tree_equations": [
+      "v^2=1/(sqrt(2)*G_F)",
+      "nu^2=v^2/2",
+      "lambda_H=m_h^2/(2*v^2)",
+      "M_l=v*Y_l/sqrt(2)"
+    ],
+    "v_GeV": 246.21979929677656
+  },
+  "muon_anomaly_used": false,
+  "native_Pauli_evaluated": false,
+  "native_reduction": {
+    "Ward_projection": "q_mu P^mu=0; the charge condition constrains A1, not transverse A2",
+    "charge_reduction": "a=A2(0)/A1(0); a common multiplicative LSZ factor cancels, but internal response and source motion do not",
+    "cutoff": "c_mu=i_mu_plus/r_mu_plus on child-plus at birth; no finite time offset",
+    "cutoff_owner": "BHSM-AE4-BRANCH-BIRTH-CUTOFF-2026-10-08",
+    "first_native_application": "complete positive quotient photon form and its source-directed action on the matched current",
+    "full_PF_CAR_or_history_proved_necessary": false,
+    "full_completion_cutoff_cancellation_established": false,
+    "mass_or_lifetime_implies_cutoff": false,
+    "minimal_response_application": "R_ind u paired with the downstream adjoint p, and its soft/source/domain jets; not a full R_ind matrix",
+    "minimal_scalar": "d/dt <L_u,[Gamma_AE4-Gamma_owned_overlap]_R(tu)> at t=0, with matched pole injections and charge division",
+    "native_photon_source": "J_gamma=bar_gamma B_tilde r_in on the owned quotient",
+    "owner_definition_gap": false,
+    "physical_underdetermination_claim": false,
+    "raw_heat_cutoff_derivative": "d_c[(Q_c(x)-Q_c(y))/(x-y)]=(exp(-c*y)-exp(-c*x))/(2*(x-y)); diagonal=c*exp(-c*x)/2",
+    "reached_native_contraction": "l_out^dagger gamma u_zeta; differentiate with source, heat weights, completion, contacts, overlap and external-mode motion",
+    "reached_native_equation": "(K0_Q+zeta M0_Q) u_zeta=J_gamma",
+    "resolvent_remainder_identity": "A u=J; A0 u0=J; A0^dagger p=L; L^dagger(u-u0)=-p^dagger R_ind u, where A=A0+R_ind on one common quotient",
+    "retained_angular_component_scope": "negative Lorentzian angular density only; not a positive proper-time operator, temporal completion or quotient",
+    "smallest_remaining_calculation": "same-action positive sourced photon response on the matched pole current, plus its soft derivative and relative completion/overlap"
+  },
+  "renormalization": "local QED on-shell Thomson charge and selected poles through alpha^2; fixed-Y local neutral scalar one-loop skeleton",
+  "signed_soft_transfer": [
+    {
+      "Dirac_annihilation_residual": 0.0,
+      "F1": {
+        "imag": 0.0,
+        "real": 1.0000000000000004
+      },
+      "F2": {
+        "imag": 0.0,
+        "real": 0.0011614095382836333
+      },
+      "Pauli_unit_pairing_residual": 0.0,
+      "absolute_limit_difference": 1.93568250187251e-10,
+      "direction": [
+        1.0,
+        0.0,
+        0.0
+      ],
+      "exact_one_loop_limit": 0.001161409731851883,
+      "form_factor_projection_residual": 4.440892098500159e-16,
+      "local_external_pole": {
+        "Gate7_closed": false,
+        "LSZ_descriptor_residual": 2.220446049250313e-16,
+        "action_selected": false,
+        "analytic_energy_GeV": 0.10565843846770669,
+        "energy_GeV": 0.1056584384677067,
+        "full_spin_degeneracy": 2,
+        "interacting_BHSM_LSZ_evaluated": false,
+        "left_mode": {
+          "imag": [
+            0.0,
+            0.0
+          ],
+          "real": [
+            0.9999999687500055,
+            -0.0002499999765625038
+          ]
+        },
+        "normalization_scope": "local on-shell matched quadratic symbol only",
+        "pole_residual": 1.6900054303177004e-17,
+        "residue": {
+          "imag": [
+            [
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0
+            ]
+          ],
+          "real": [
+            [
+              0.9999999375000118,
+              -0.0002499999687500059
+            ],
+            [
+              0.0002499999687500059,
+              -6.249998828125244e-08
+            ]
+          ]
+        },
+        "right_mode": {
+          "imag": [
+            0.0,
+            0.0
+          ],
+          "real": [
+            0.9999999687500055,
+            0.0002499999765625038
+          ]
+        },
+        "simple_within_spin_sector": true
+      },
+      "physical_native_promotion": false,
+      "projected_derivative": {
+        "imag": 0.0,
+        "real": 0.001161409538283633
+      },
+      "quadrature_error_estimate": 1.2894236104217617e-17,
+      "soft_bias_bound": 1.935682886419805e-10,
+      "t": 0.001
+    },
+    {
+      "Dirac_annihilation_residual": 0.0,
+      "F1": {
+        "imag": 0.0,
+        "real": 1.0000000000000004
+      },
+      "F2": {
+        "imag": 0.0,
+        "real": 0.0011614095382836333
+      },
+      "Pauli_unit_pairing_residual": 0.0,
+      "absolute_limit_difference": 1.93568250187251e-10,
+      "direction": [
+        0.0,
+        1.0,
+        0.0
+      ],
+      "exact_one_loop_limit": 0.001161409731851883,
+      "form_factor_projection_residual": 4.4408920985001597e-16,
+      "local_external_pole": {
+        "Gate7_closed": false,
+        "LSZ_descriptor_residual": 2.220446049250313e-16,
+        "action_selected": false,
+        "analytic_energy_GeV": 0.10565843846770669,
+        "energy_GeV": 0.1056584384677067,
+        "full_spin_degeneracy": 2,
+        "interacting_BHSM_LSZ_evaluated": false,
+        "left_mode": {
+          "imag": [
+            0.0,
+            0.0
+          ],
+          "real": [
+            0.9999999687500055,
+            -0.0002499999765625038
+          ]
+        },
+        "normalization_scope": "local on-shell matched quadratic symbol only",
+        "pole_residual": 1.6900054303177004e-17,
+        "residue": {
+          "imag": [
+            [
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0
+            ]
+          ],
+          "real": [
+            [
+              0.9999999375000118,
+              -0.0002499999687500059
+            ],
+            [
+              0.0002499999687500059,
+              -6.249998828125244e-08
+            ]
+          ]
+        },
+        "right_mode": {
+          "imag": [
+            0.0,
+            0.0
+          ],
+          "real": [
+            0.9999999687500055,
+            0.0002499999765625038
+          ]
+        },
+        "simple_within_spin_sector": true
+      },
+      "physical_native_promotion": false,
+      "projected_derivative": {
+        "imag": 0.0,
+        "real": 0.001161409538283633
+      },
+      "quadrature_error_estimate": 1.2894236104217617e-17,
+      "soft_bias_bound": 1.935682886419805e-10,
+      "t": 0.001
+    },
+    {
+      "Dirac_annihilation_residual": 0.0,
+      "F1": {
+        "imag": 0.0,
+        "real": 1.0000000000000004
+      },
+      "F2": {
+        "imag": 0.0,
+        "real": 0.0011614095382836333
+      },
+      "Pauli_unit_pairing_residual": 0.0,
+      "absolute_limit_difference": 1.93568250187251e-10,
+      "direction": [
+        0.0,
+        0.0,
+        1.0
+      ],
+      "exact_one_loop_limit": 0.001161409731851883,
+      "form_factor_projection_residual": 4.4408920985001597e-16,
+      "local_external_pole": {
+        "Gate7_closed": false,
+        "LSZ_descriptor_residual": 2.220446049250313e-16,
+        "action_selected": false,
+        "analytic_energy_GeV": 0.10565843846770669,
+        "energy_GeV": 0.1056584384677067,
+        "full_spin_degeneracy": 2,
+        "interacting_BHSM_LSZ_evaluated": false,
+        "left_mode": {
+          "imag": [
+            0.0,
+            0.0
+          ],
+          "real": [
+            0.9999999687500055,
+            -0.0002499999765625038
+          ]
+        },
+        "normalization_scope": "local on-shell matched quadratic symbol only",
+        "pole_residual": 1.6900054303177004e-17,
+        "residue": {
+          "imag": [
+            [
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0
+            ]
+          ],
+          "real": [
+            [
+              0.9999999375000118,
+              -0.0002499999687500059
+            ],
+            [
+              0.0002499999687500059,
+              -6.249998828125244e-08
+            ]
+          ]
+        },
+        "right_mode": {
+          "imag": [
+            0.0,
+            0.0
+          ],
+          "real": [
+            0.9999999687500055,
+            0.0002499999765625038
+          ]
+        },
+        "simple_within_spin_sector": true
+      },
+      "physical_native_promotion": false,
+      "projected_derivative": {
+        "imag": 0.0,
+        "real": 0.001161409538283633
+      },
+      "quadrature_error_estimate": 1.2894236104217617e-17,
+      "soft_bias_bound": 1.935682886419805e-10,
+      "t": 0.001
+    },
+    {
+      "Dirac_annihilation_residual": 0.0,
+      "F1": {
+        "imag": 0.0,
+        "real": 1.0000000000000004
+      },
+      "F2": {
+        "imag": 0.0,
+        "real": 0.0011614095382836333
+      },
+      "Pauli_unit_pairing_residual": 0.0,
+      "absolute_limit_difference": 1.93568250187251e-10,
+      "direction": [
+        1.0,
+        0.0,
+        0.0
+      ],
+      "exact_one_loop_limit": 0.001161409731851883,
+      "form_factor_projection_residual": 4.440892098500159e-16,
+      "local_external_pole": {
+        "Gate7_closed": false,
+        "LSZ_descriptor_residual": 2.220446049250313e-16,
+        "action_selected": false,
+        "analytic_energy_GeV": 0.10565843846770669,
+        "energy_GeV": 0.1056584384677067,
+        "full_spin_degeneracy": 2,
+        "interacting_BHSM_LSZ_evaluated": false,
+        "left_mode": {
+          "imag": [
+            0.0,
+            0.0
+          ],
+          "real": [
+            0.9999999687500055,
+            -0.0002499999765625038
+          ]
+        },
+        "normalization_scope": "local on-shell matched quadratic symbol only",
+        "pole_residual": 1.6900054303177004e-17,
+        "residue": {
+          "imag": [
+            [
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0
+            ]
+          ],
+          "real": [
+            [
+              0.9999999375000118,
+              -0.0002499999687500059
+            ],
+            [
+              0.0002499999687500059,
+              -6.249998828125244e-08
+            ]
+          ]
+        },
+        "right_mode": {
+          "imag": [
+            0.0,
+            0.0
+          ],
+          "real": [
+            0.9999999687500055,
+            0.0002499999765625038
+          ]
+        },
+        "simple_within_spin_sector": true
+      },
+      "physical_native_promotion": false,
+      "projected_derivative": {
+        "imag": -0.0,
+        "real": 0.001161409538283633
+      },
+      "quadrature_error_estimate": 1.2894236104217617e-17,
+      "soft_bias_bound": 1.935682886419805e-10,
+      "t": -0.001
+    },
+    {
+      "Dirac_annihilation_residual": 0.0,
+      "F1": {
+        "imag": 0.0,
+        "real": 1.0000000000000004
+      },
+      "F2": {
+        "imag": 0.0,
+        "real": 0.0011614095382836333
+      },
+      "Pauli_unit_pairing_residual": 0.0,
+      "absolute_limit_difference": 1.93568250187251e-10,
+      "direction": [
+        0.0,
+        1.0,
+        0.0
+      ],
+      "exact_one_loop_limit": 0.001161409731851883,
+      "form_factor_projection_residual": 4.4408920985001597e-16,
+      "local_external_pole": {
+        "Gate7_closed": false,
+        "LSZ_descriptor_residual": 2.220446049250313e-16,
+        "action_selected": false,
+        "analytic_energy_GeV": 0.10565843846770669,
+        "energy_GeV": 0.1056584384677067,
+        "full_spin_degeneracy": 2,
+        "interacting_BHSM_LSZ_evaluated": false,
+        "left_mode": {
+          "imag": [
+            0.0,
+            0.0
+          ],
+          "real": [
+            0.9999999687500055,
+            -0.0002499999765625038
+          ]
+        },
+        "normalization_scope": "local on-shell matched quadratic symbol only",
+        "pole_residual": 1.6900054303177004e-17,
+        "residue": {
+          "imag": [
+            [
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0
+            ]
+          ],
+          "real": [
+            [
+              0.9999999375000118,
+              -0.0002499999687500059
+            ],
+            [
+              0.0002499999687500059,
+              -6.249998828125244e-08
+            ]
+          ]
+        },
+        "right_mode": {
+          "imag": [
+            0.0,
+            0.0
+          ],
+          "real": [
+            0.9999999687500055,
+            0.0002499999765625038
+          ]
+        },
+        "simple_within_spin_sector": true
+      },
+      "physical_native_promotion": false,
+      "projected_derivative": {
+        "imag": -0.0,
+        "real": 0.001161409538283633
+      },
+      "quadrature_error_estimate": 1.2894236104217617e-17,
+      "soft_bias_bound": 1.935682886419805e-10,
+      "t": -0.001
+    },
+    {
+      "Dirac_annihilation_residual": 0.0,
+      "F1": {
+        "imag": 0.0,
+        "real": 1.0000000000000004
+      },
+      "F2": {
+        "imag": 0.0,
+        "real": 0.0011614095382836333
+      },
+      "Pauli_unit_pairing_residual": 0.0,
+      "absolute_limit_difference": 1.93568250187251e-10,
+      "direction": [
+        0.0,
+        0.0,
+        1.0
+      ],
+      "exact_one_loop_limit": 0.001161409731851883,
+      "form_factor_projection_residual": 4.4408920985001597e-16,
+      "local_external_pole": {
+        "Gate7_closed": false,
+        "LSZ_descriptor_residual": 2.220446049250313e-16,
+        "action_selected": false,
+        "analytic_energy_GeV": 0.10565843846770669,
+        "energy_GeV": 0.1056584384677067,
+        "full_spin_degeneracy": 2,
+        "interacting_BHSM_LSZ_evaluated": false,
+        "left_mode": {
+          "imag": [
+            0.0,
+            0.0
+          ],
+          "real": [
+            0.9999999687500055,
+            -0.0002499999765625038
+          ]
+        },
+        "normalization_scope": "local on-shell matched quadratic symbol only",
+        "pole_residual": 1.6900054303177004e-17,
+        "residue": {
+          "imag": [
+            [
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0
+            ]
+          ],
+          "real": [
+            [
+              0.9999999375000118,
+              -0.0002499999687500059
+            ],
+            [
+              0.0002499999687500059,
+              -6.249998828125244e-08
+            ]
+          ]
+        },
+        "right_mode": {
+          "imag": [
+            0.0,
+            0.0
+          ],
+          "real": [
+            0.9999999687500055,
+            0.0002499999765625038
+          ]
+        },
+        "simple_within_spin_sector": true
+      },
+      "physical_native_promotion": false,
+      "projected_derivative": {
+        "imag": -0.0,
+        "real": 0.001161409538283633
+      },
+      "quadrature_error_estimate": 1.2894236104217617e-17,
+      "soft_bias_bound": 1.935682886419805e-10,
+      "t": -0.001
+    },
+    {
+      "Dirac_annihilation_residual": 0.0,
+      "F1": {
+        "imag": 0.0,
+        "real": 1.0000000000000004
+      },
+      "F2": {
+        "imag": 0.0,
+        "real": 0.0011614097299162004
+      },
+      "Pauli_unit_pairing_residual": 0.0,
+      "absolute_limit_difference": 1.935683167572644e-12,
+      "direction": [
+        1.0,
+        0.0,
+        0.0
+      ],
+      "exact_one_loop_limit": 0.001161409731851883,
+      "form_factor_projection_residual": 4.440892098500621e-16,
+      "local_external_pole": {
+        "Gate7_closed": false,
+        "LSZ_descriptor_residual": 0.0,
+        "action_selected": false,
+        "analytic_energy_GeV": 0.10565842539247738,
+        "energy_GeV": 0.10565842539247738,
+        "full_spin_degeneracy": 2,
+        "interacting_BHSM_LSZ_evaluated": false,
+        "left_mode": {
+          "imag": [
+            0.0,
+            0.0
+          ],
+          "real": [
+            0.9999999996875,
+            -2.4999999976562498e-05
+          ]
+        },
+        "normalization_scope": "local on-shell matched quadratic symbol only",
+        "pole_residual": 1.5726565848095725e-18,
+        "residue": {
+          "imag": [
+            [
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0
+            ]
+          ],
+          "real": [
+            [
+              0.999999999375,
+              -2.4999999968749998e-05
+            ],
+            [
+              2.4999999968749995e-05,
+              -6.249999988281248e-10
+            ]
+          ]
+        },
+        "right_mode": {
+          "imag": [
+            0.0,
+            0.0
+          ],
+          "real": [
+            0.9999999996875,
+            2.4999999976562495e-05
+          ]
+        },
+        "simple_within_spin_sector": true
+      },
+      "physical_native_promotion": false,
+      "projected_derivative": {
+        "imag": 0.0,
+        "real": 0.0011614097299162
+      },
+      "quadrature_error_estimate": 1.2894238231766499e-17,
+      "soft_bias_bound": 1.9356828864198053e-12,
+      "t": 0.0001
+    },
+    {
+      "Dirac_annihilation_residual": 0.0,
+      "F1": {
+        "imag": 0.0,
+        "real": 1.0000000000000004
+      },
+      "F2": {
+        "imag": 0.0,
+        "real": 0.0011614097299162004
+      },
+      "Pauli_unit_pairing_residual": 0.0,
+      "absolute_limit_difference": 1.935683167572644e-12,
+      "direction": [
+        0.0,
+        1.0,
+        0.0
+      ],
+      "exact_one_loop_limit": 0.001161409731851883,
+      "form_factor_projection_residual": 4.440892098500621e-16,
+      "local_external_pole": {
+        "Gate7_closed": false,
+        "LSZ_descriptor_residual": 0.0,
+        "action_selected": false,
+        "analytic_energy_GeV": 0.10565842539247738,
+        "energy_GeV": 0.10565842539247738,
+        "full_spin_degeneracy": 2,
+        "interacting_BHSM_LSZ_evaluated": false,
+        "left_mode": {
+          "imag": [
+            0.0,
+            0.0
+          ],
+          "real": [
+            0.9999999996875,
+            -2.4999999976562498e-05
+          ]
+        },
+        "normalization_scope": "local on-shell matched quadratic symbol only",
+        "pole_residual": 1.5726565848095725e-18,
+        "residue": {
+          "imag": [
+            [
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0
+            ]
+          ],
+          "real": [
+            [
+              0.999999999375,
+              -2.4999999968749998e-05
+            ],
+            [
+              2.4999999968749995e-05,
+              -6.249999988281248e-10
+            ]
+          ]
+        },
+        "right_mode": {
+          "imag": [
+            0.0,
+            0.0
+          ],
+          "real": [
+            0.9999999996875,
+            2.4999999976562495e-05
+          ]
+        },
+        "simple_within_spin_sector": true
+      },
+      "physical_native_promotion": false,
+      "projected_derivative": {
+        "imag": 0.0,
+        "real": 0.0011614097299162
+      },
+      "quadrature_error_estimate": 1.2894238231766499e-17,
+      "soft_bias_bound": 1.9356828864198053e-12,
+      "t": 0.0001
+    },
+    {
+      "Dirac_annihilation_residual": 0.0,
+      "F1": {
+        "imag": 0.0,
+        "real": 1.0000000000000004
+      },
+      "F2": {
+        "imag": 0.0,
+        "real": 0.0011614097299162004
+      },
+      "Pauli_unit_pairing_residual": 0.0,
+      "absolute_limit_difference": 1.935683167572644e-12,
+      "direction": [
+        0.0,
+        0.0,
+        1.0
+      ],
+      "exact_one_loop_limit": 0.001161409731851883,
+      "form_factor_projection_residual": 4.440892098500622e-16,
+      "local_external_pole": {
+        "Gate7_closed": false,
+        "LSZ_descriptor_residual": 0.0,
+        "action_selected": false,
+        "analytic_energy_GeV": 0.10565842539247738,
+        "energy_GeV": 0.10565842539247738,
+        "full_spin_degeneracy": 2,
+        "interacting_BHSM_LSZ_evaluated": false,
+        "left_mode": {
+          "imag": [
+            0.0,
+            0.0
+          ],
+          "real": [
+            0.9999999996875,
+            -2.4999999976562498e-05
+          ]
+        },
+        "normalization_scope": "local on-shell matched quadratic symbol only",
+        "pole_residual": 1.5726565848095725e-18,
+        "residue": {
+          "imag": [
+            [
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0
+            ]
+          ],
+          "real": [
+            [
+              0.999999999375,
+              -2.4999999968749998e-05
+            ],
+            [
+              2.4999999968749995e-05,
+              -6.249999988281248e-10
+            ]
+          ]
+        },
+        "right_mode": {
+          "imag": [
+            0.0,
+            0.0
+          ],
+          "real": [
+            0.9999999996875,
+            2.4999999976562495e-05
+          ]
+        },
+        "simple_within_spin_sector": true
+      },
+      "physical_native_promotion": false,
+      "projected_derivative": {
+        "imag": 0.0,
+        "real": 0.0011614097299162
+      },
+      "quadrature_error_estimate": 1.2894238231766499e-17,
+      "soft_bias_bound": 1.9356828864198053e-12,
+      "t": 0.0001
+    },
+    {
+      "Dirac_annihilation_residual": 0.0,
+      "F1": {
+        "imag": 0.0,
+        "real": 1.0000000000000004
+      },
+      "F2": {
+        "imag": 0.0,
+        "real": 0.0011614097299162004
+      },
+      "Pauli_unit_pairing_residual": 0.0,
+      "absolute_limit_difference": 1.935683167572644e-12,
+      "direction": [
+        1.0,
+        0.0,
+        0.0
+      ],
+      "exact_one_loop_limit": 0.001161409731851883,
+      "form_factor_projection_residual": 4.440892098500621e-16,
+      "local_external_pole": {
+        "Gate7_closed": false,
+        "LSZ_descriptor_residual": 0.0,
+        "action_selected": false,
+        "analytic_energy_GeV": 0.10565842539247738,
+        "energy_GeV": 0.10565842539247738,
+        "full_spin_degeneracy": 2,
+        "interacting_BHSM_LSZ_evaluated": false,
+        "left_mode": {
+          "imag": [
+            0.0,
+            0.0
+          ],
+          "real": [
+            0.9999999996875,
+            -2.4999999976562498e-05
+          ]
+        },
+        "normalization_scope": "local on-shell matched quadratic symbol only",
+        "pole_residual": 1.5726565848095725e-18,
+        "residue": {
+          "imag": [
+            [
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0
+            ]
+          ],
+          "real": [
+            [
+              0.999999999375,
+              -2.4999999968749998e-05
+            ],
+            [
+              2.4999999968749995e-05,
+              -6.249999988281248e-10
+            ]
+          ]
+        },
+        "right_mode": {
+          "imag": [
+            0.0,
+            0.0
+          ],
+          "real": [
+            0.9999999996875,
+            2.4999999976562495e-05
+          ]
+        },
+        "simple_within_spin_sector": true
+      },
+      "physical_native_promotion": false,
+      "projected_derivative": {
+        "imag": -0.0,
+        "real": 0.0011614097299162
+      },
+      "quadrature_error_estimate": 1.2894238231766499e-17,
+      "soft_bias_bound": 1.9356828864198053e-12,
+      "t": -0.0001
+    },
+    {
+      "Dirac_annihilation_residual": 0.0,
+      "F1": {
+        "imag": 0.0,
+        "real": 1.0000000000000004
+      },
+      "F2": {
+        "imag": 0.0,
+        "real": 0.0011614097299162004
+      },
+      "Pauli_unit_pairing_residual": 0.0,
+      "absolute_limit_difference": 1.935683167572644e-12,
+      "direction": [
+        0.0,
+        1.0,
+        0.0
+      ],
+      "exact_one_loop_limit": 0.001161409731851883,
+      "form_factor_projection_residual": 4.440892098500621e-16,
+      "local_external_pole": {
+        "Gate7_closed": false,
+        "LSZ_descriptor_residual": 0.0,
+        "action_selected": false,
+        "analytic_energy_GeV": 0.10565842539247738,
+        "energy_GeV": 0.10565842539247738,
+        "full_spin_degeneracy": 2,
+        "interacting_BHSM_LSZ_evaluated": false,
+        "left_mode": {
+          "imag": [
+            0.0,
+            0.0
+          ],
+          "real": [
+            0.9999999996875,
+            -2.4999999976562498e-05
+          ]
+        },
+        "normalization_scope": "local on-shell matched quadratic symbol only",
+        "pole_residual": 1.5726565848095725e-18,
+        "residue": {
+          "imag": [
+            [
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0
+            ]
+          ],
+          "real": [
+            [
+              0.999999999375,
+              -2.4999999968749998e-05
+            ],
+            [
+              2.4999999968749995e-05,
+              -6.249999988281248e-10
+            ]
+          ]
+        },
+        "right_mode": {
+          "imag": [
+            0.0,
+            0.0
+          ],
+          "real": [
+            0.9999999996875,
+            2.4999999976562495e-05
+          ]
+        },
+        "simple_within_spin_sector": true
+      },
+      "physical_native_promotion": false,
+      "projected_derivative": {
+        "imag": -0.0,
+        "real": 0.0011614097299162
+      },
+      "quadrature_error_estimate": 1.2894238231766499e-17,
+      "soft_bias_bound": 1.9356828864198053e-12,
+      "t": -0.0001
+    },
+    {
+      "Dirac_annihilation_residual": 0.0,
+      "F1": {
+        "imag": 0.0,
+        "real": 1.0000000000000004
+      },
+      "F2": {
+        "imag": 0.0,
+        "real": 0.0011614097299162004
+      },
+      "Pauli_unit_pairing_residual": 0.0,
+      "absolute_limit_difference": 1.935683167572644e-12,
+      "direction": [
+        0.0,
+        0.0,
+        1.0
+      ],
+      "exact_one_loop_limit": 0.001161409731851883,
+      "form_factor_projection_residual": 4.440892098500622e-16,
+      "local_external_pole": {
+        "Gate7_closed": false,
+        "LSZ_descriptor_residual": 0.0,
+        "action_selected": false,
+        "analytic_energy_GeV": 0.10565842539247738,
+        "energy_GeV": 0.10565842539247738,
+        "full_spin_degeneracy": 2,
+        "interacting_BHSM_LSZ_evaluated": false,
+        "left_mode": {
+          "imag": [
+            0.0,
+            0.0
+          ],
+          "real": [
+            0.9999999996875,
+            -2.4999999976562498e-05
+          ]
+        },
+        "normalization_scope": "local on-shell matched quadratic symbol only",
+        "pole_residual": 1.5726565848095725e-18,
+        "residue": {
+          "imag": [
+            [
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0
+            ]
+          ],
+          "real": [
+            [
+              0.999999999375,
+              -2.4999999968749998e-05
+            ],
+            [
+              2.4999999968749995e-05,
+              -6.249999988281248e-10
+            ]
+          ]
+        },
+        "right_mode": {
+          "imag": [
+            0.0,
+            0.0
+          ],
+          "real": [
+            0.9999999996875,
+            2.4999999976562495e-05
+          ]
+        },
+        "simple_within_spin_sector": true
+      },
+      "physical_native_promotion": false,
+      "projected_derivative": {
+        "imag": -0.0,
+        "real": 0.0011614097299162
+      },
+      "quadrature_error_estimate": 1.2894238231766499e-17,
+      "soft_bias_bound": 1.9356828864198053e-12,
+      "t": -0.0001
+    },
+    {
+      "Dirac_annihilation_residual": 0.0,
+      "F1": {
+        "imag": 0.0,
+        "real": 1.0000000000000004
+      },
+      "F2": {
+        "imag": 0.0,
+        "real": 0.0011614097318325258
+      },
+      "Pauli_unit_pairing_residual": 0.0,
+      "absolute_limit_difference": 1.9356911906687202e-14,
+      "direction": [
+        1.0,
+        0.0,
+        0.0
+      ],
+      "exact_one_loop_limit": 0.001161409731851883,
+      "form_factor_projection_residual": 4.440892098500626e-16,
+      "local_external_pole": {
+        "Gate7_closed": false,
+        "LSZ_descriptor_residual": 2.220446049250313e-16,
+        "action_selected": false,
+        "analytic_energy_GeV": 0.10565842526172509,
+        "energy_GeV": 0.10565842526172509,
+        "full_spin_degeneracy": 2,
+        "interacting_BHSM_LSZ_evaluated": false,
+        "left_mode": {
+          "imag": [
+            0.0,
+            0.0
+          ],
+          "real": [
+            0.9999999999968752,
+            -2.499999999976563e-06
+          ]
+        },
+        "normalization_scope": "local on-shell matched quadratic symbol only",
+        "pole_residual": 4.872135095215051e-18,
+        "residue": {
+          "imag": [
+            [
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0
+            ]
+          ],
+          "real": [
+            [
+              0.9999999999937501,
+              -2.49999999996875e-06
+            ],
+            [
+              2.4999999999687506e-06,
+              -6.249999999882814e-12
+            ]
+          ]
+        },
+        "right_mode": {
+          "imag": [
+            0.0,
+            0.0
+          ],
+          "real": [
+            0.9999999999968752,
+            2.4999999999765632e-06
+          ]
+        },
+        "simple_within_spin_sector": true
+      },
+      "physical_native_promotion": false,
+      "projected_derivative": {
+        "imag": 0.0,
+        "real": 0.0011614097318325262
+      },
+      "quadrature_error_estimate": 1.2894238253041993e-17,
+      "soft_bias_bound": 1.9356828864198055e-14,
+      "t": 1e-05
+    },
+    {
+      "Dirac_annihilation_residual": 0.0,
+      "F1": {
+        "imag": 0.0,
+        "real": 1.0000000000000004
+      },
+      "F2": {
+        "imag": 0.0,
+        "real": 0.0011614097318325258
+      },
+      "Pauli_unit_pairing_residual": 0.0,
+      "absolute_limit_difference": 1.9356911906687202e-14,
+      "direction": [
+        0.0,
+        1.0,
+        0.0
+      ],
+      "exact_one_loop_limit": 0.001161409731851883,
+      "form_factor_projection_residual": 4.440892098500626e-16,
+      "local_external_pole": {
+        "Gate7_closed": false,
+        "LSZ_descriptor_residual": 2.220446049250313e-16,
+        "action_selected": false,
+        "analytic_energy_GeV": 0.10565842526172509,
+        "energy_GeV": 0.10565842526172509,
+        "full_spin_degeneracy": 2,
+        "interacting_BHSM_LSZ_evaluated": false,
+        "left_mode": {
+          "imag": [
+            0.0,
+            0.0
+          ],
+          "real": [
+            0.9999999999968752,
+            -2.499999999976563e-06
+          ]
+        },
+        "normalization_scope": "local on-shell matched quadratic symbol only",
+        "pole_residual": 4.872135095215051e-18,
+        "residue": {
+          "imag": [
+            [
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0
+            ]
+          ],
+          "real": [
+            [
+              0.9999999999937501,
+              -2.49999999996875e-06
+            ],
+            [
+              2.4999999999687506e-06,
+              -6.249999999882814e-12
+            ]
+          ]
+        },
+        "right_mode": {
+          "imag": [
+            0.0,
+            0.0
+          ],
+          "real": [
+            0.9999999999968752,
+            2.4999999999765632e-06
+          ]
+        },
+        "simple_within_spin_sector": true
+      },
+      "physical_native_promotion": false,
+      "projected_derivative": {
+        "imag": 0.0,
+        "real": 0.0011614097318325262
+      },
+      "quadrature_error_estimate": 1.2894238253041993e-17,
+      "soft_bias_bound": 1.9356828864198055e-14,
+      "t": 1e-05
+    },
+    {
+      "Dirac_annihilation_residual": 0.0,
+      "F1": {
+        "imag": 0.0,
+        "real": 1.0000000000000004
+      },
+      "F2": {
+        "imag": 0.0,
+        "real": 0.0011614097318325258
+      },
+      "Pauli_unit_pairing_residual": 0.0,
+      "absolute_limit_difference": 1.9356911906687202e-14,
+      "direction": [
+        0.0,
+        0.0,
+        1.0
+      ],
+      "exact_one_loop_limit": 0.001161409731851883,
+      "form_factor_projection_residual": 4.440892098500626e-16,
+      "local_external_pole": {
+        "Gate7_closed": false,
+        "LSZ_descriptor_residual": 2.220446049250313e-16,
+        "action_selected": false,
+        "analytic_energy_GeV": 0.10565842526172509,
+        "energy_GeV": 0.10565842526172509,
+        "full_spin_degeneracy": 2,
+        "interacting_BHSM_LSZ_evaluated": false,
+        "left_mode": {
+          "imag": [
+            0.0,
+            0.0
+          ],
+          "real": [
+            0.9999999999968752,
+            -2.499999999976563e-06
+          ]
+        },
+        "normalization_scope": "local on-shell matched quadratic symbol only",
+        "pole_residual": 4.872135095215051e-18,
+        "residue": {
+          "imag": [
+            [
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0
+            ]
+          ],
+          "real": [
+            [
+              0.9999999999937501,
+              -2.49999999996875e-06
+            ],
+            [
+              2.4999999999687506e-06,
+              -6.249999999882814e-12
+            ]
+          ]
+        },
+        "right_mode": {
+          "imag": [
+            0.0,
+            0.0
+          ],
+          "real": [
+            0.9999999999968752,
+            2.4999999999765632e-06
+          ]
+        },
+        "simple_within_spin_sector": true
+      },
+      "physical_native_promotion": false,
+      "projected_derivative": {
+        "imag": 0.0,
+        "real": 0.0011614097318325262
+      },
+      "quadrature_error_estimate": 1.2894238253041993e-17,
+      "soft_bias_bound": 1.9356828864198055e-14,
+      "t": 1e-05
+    },
+    {
+      "Dirac_annihilation_residual": 0.0,
+      "F1": {
+        "imag": 0.0,
+        "real": 1.0000000000000004
+      },
+      "F2": {
+        "imag": 0.0,
+        "real": 0.0011614097318325258
+      },
+      "Pauli_unit_pairing_residual": 0.0,
+      "absolute_limit_difference": 1.9356911906687202e-14,
+      "direction": [
+        1.0,
+        0.0,
+        0.0
+      ],
+      "exact_one_loop_limit": 0.001161409731851883,
+      "form_factor_projection_residual": 4.440892098500626e-16,
+      "local_external_pole": {
+        "Gate7_closed": false,
+        "LSZ_descriptor_residual": 2.220446049250313e-16,
+        "action_selected": false,
+        "analytic_energy_GeV": 0.10565842526172509,
+        "energy_GeV": 0.10565842526172509,
+        "full_spin_degeneracy": 2,
+        "interacting_BHSM_LSZ_evaluated": false,
+        "left_mode": {
+          "imag": [
+            0.0,
+            0.0
+          ],
+          "real": [
+            0.9999999999968752,
+            -2.499999999976563e-06
+          ]
+        },
+        "normalization_scope": "local on-shell matched quadratic symbol only",
+        "pole_residual": 4.872135095215051e-18,
+        "residue": {
+          "imag": [
+            [
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0
+            ]
+          ],
+          "real": [
+            [
+              0.9999999999937501,
+              -2.49999999996875e-06
+            ],
+            [
+              2.4999999999687506e-06,
+              -6.249999999882814e-12
+            ]
+          ]
+        },
+        "right_mode": {
+          "imag": [
+            0.0,
+            0.0
+          ],
+          "real": [
+            0.9999999999968752,
+            2.4999999999765632e-06
+          ]
+        },
+        "simple_within_spin_sector": true
+      },
+      "physical_native_promotion": false,
+      "projected_derivative": {
+        "imag": -0.0,
+        "real": 0.0011614097318325262
+      },
+      "quadrature_error_estimate": 1.2894238253041993e-17,
+      "soft_bias_bound": 1.9356828864198055e-14,
+      "t": -1e-05
+    },
+    {
+      "Dirac_annihilation_residual": 0.0,
+      "F1": {
+        "imag": 0.0,
+        "real": 1.0000000000000004
+      },
+      "F2": {
+        "imag": 0.0,
+        "real": 0.0011614097318325258
+      },
+      "Pauli_unit_pairing_residual": 0.0,
+      "absolute_limit_difference": 1.9356911906687202e-14,
+      "direction": [
+        0.0,
+        1.0,
+        0.0
+      ],
+      "exact_one_loop_limit": 0.001161409731851883,
+      "form_factor_projection_residual": 4.440892098500626e-16,
+      "local_external_pole": {
+        "Gate7_closed": false,
+        "LSZ_descriptor_residual": 2.220446049250313e-16,
+        "action_selected": false,
+        "analytic_energy_GeV": 0.10565842526172509,
+        "energy_GeV": 0.10565842526172509,
+        "full_spin_degeneracy": 2,
+        "interacting_BHSM_LSZ_evaluated": false,
+        "left_mode": {
+          "imag": [
+            0.0,
+            0.0
+          ],
+          "real": [
+            0.9999999999968752,
+            -2.499999999976563e-06
+          ]
+        },
+        "normalization_scope": "local on-shell matched quadratic symbol only",
+        "pole_residual": 4.872135095215051e-18,
+        "residue": {
+          "imag": [
+            [
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0
+            ]
+          ],
+          "real": [
+            [
+              0.9999999999937501,
+              -2.49999999996875e-06
+            ],
+            [
+              2.4999999999687506e-06,
+              -6.249999999882814e-12
+            ]
+          ]
+        },
+        "right_mode": {
+          "imag": [
+            0.0,
+            0.0
+          ],
+          "real": [
+            0.9999999999968752,
+            2.4999999999765632e-06
+          ]
+        },
+        "simple_within_spin_sector": true
+      },
+      "physical_native_promotion": false,
+      "projected_derivative": {
+        "imag": -0.0,
+        "real": 0.0011614097318325262
+      },
+      "quadrature_error_estimate": 1.2894238253041993e-17,
+      "soft_bias_bound": 1.9356828864198055e-14,
+      "t": -1e-05
+    },
+    {
+      "Dirac_annihilation_residual": 0.0,
+      "F1": {
+        "imag": 0.0,
+        "real": 1.0000000000000004
+      },
+      "F2": {
+        "imag": 0.0,
+        "real": 0.0011614097318325258
+      },
+      "Pauli_unit_pairing_residual": 0.0,
+      "absolute_limit_difference": 1.9356911906687202e-14,
+      "direction": [
+        0.0,
+        0.0,
+        1.0
+      ],
+      "exact_one_loop_limit": 0.001161409731851883,
+      "form_factor_projection_residual": 4.440892098500626e-16,
+      "local_external_pole": {
+        "Gate7_closed": false,
+        "LSZ_descriptor_residual": 2.220446049250313e-16,
+        "action_selected": false,
+        "analytic_energy_GeV": 0.10565842526172509,
+        "energy_GeV": 0.10565842526172509,
+        "full_spin_degeneracy": 2,
+        "interacting_BHSM_LSZ_evaluated": false,
+        "left_mode": {
+          "imag": [
+            0.0,
+            0.0
+          ],
+          "real": [
+            0.9999999999968752,
+            -2.499999999976563e-06
+          ]
+        },
+        "normalization_scope": "local on-shell matched quadratic symbol only",
+        "pole_residual": 4.872135095215051e-18,
+        "residue": {
+          "imag": [
+            [
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0
+            ]
+          ],
+          "real": [
+            [
+              0.9999999999937501,
+              -2.49999999996875e-06
+            ],
+            [
+              2.4999999999687506e-06,
+              -6.249999999882814e-12
+            ]
+          ]
+        },
+        "right_mode": {
+          "imag": [
+            0.0,
+            0.0
+          ],
+          "real": [
+            0.9999999999968752,
+            2.4999999999765632e-06
+          ]
+        },
+        "simple_within_spin_sector": true
+      },
+      "physical_native_promotion": false,
+      "projected_derivative": {
+        "imag": -0.0,
+        "real": 0.0011614097318325262
+      },
+      "quadrature_error_estimate": 1.2894238253041993e-17,
+      "soft_bias_bound": 1.9356828864198055e-14,
+      "t": -1e-05
+    }
+  ],
+  "uncertainty": {
+    "GF_reextraction_and_BHSM_decay_correction_bound": null,
+    "binary64_roundoff_enclosure": null,
+    "combined_gradient": [
+      -8.535511958602247e-06,
+      7.635448348702e-17,
+      8.410820807942925e-09,
+      0.0,
+      -3.189227439319162e-16,
+      -4.714751112105496e-10
+    ],
+    "complete_observable_uncertainty": false,
+    "complete_scalar_and_weak_matching_bound": null,
+    "continuum_and_native_response_bound": null,
+    "exact_arithmetic_total_VP_observable_series_tail_bound": 1.6655941280071175e-28,
+    "fixed_Y_Higgs_gradient": [
+      5.823349298652763e-16,
+      3.6359942145293144e-21,
+      1.9297159697881288e-16,
+      0.0,
+      -3.189227439319162e-16,
+      0.0
+    ],
+    "higher_local_QED_order_bound": null,
+    "illustrative_input_standard_uncertainty_assuming_independent_primitives": 1.4343531283933382e-12,
+    "input_standard_uncertainty_upper_over_all_primitive_correlations": 1.5878928059341156e-12,
+    "input_uncertainty_scope": "linear input standard uncertainty only; not a probability enclosure",
+    "local_QED_gradient": [
+      -8.535511959184582e-06,
+      7.635084749280547e-17,
+      8.410820614971328e-09,
+      0.0,
+      0.0,
+      -4.714751112105496e-10
+    ],
+    "measured_cross_source_covariance": null,
+    "native_remainder_and_overlap_bound": null,
+    "one_loop_signed_soft_bias_bounds": [
+      1.935682886419805e-10,
+      1.935682886419805e-10,
+      1.935682886419805e-10,
+      1.935682886419805e-10,
+      1.935682886419805e-10,
+      1.935682886419805e-10,
+      1.9356828864198053e-12,
+      1.9356828864198053e-12,
+      1.9356828864198053e-12,
+      1.9356828864198053e-12,
+      1.9356828864198053e-12,
+      1.9356828864198053e-12,
+      1.9356828864198055e-14,
+      1.9356828864198055e-14,
+      1.9356828864198055e-14,
+      1.9356828864198055e-14,
+      1.9356828864198055e-14,
+      1.9356828864198055e-14
+    ],
+    "primitive_order": [
+      "alpha_inverse_0",
+      "R_infinity_m_minus1",
+      "muon_electron_mass_ratio",
+      "lifetime_ps",
+      "higgs_GeV",
+      "tau_GeV"
+    ],
+    "quadrature_error_estimate": 9.61687641927906e-19
+  }
+}
