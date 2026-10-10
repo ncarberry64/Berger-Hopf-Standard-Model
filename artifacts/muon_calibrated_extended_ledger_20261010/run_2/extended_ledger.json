@@ -1,0 +1,1443 @@
+{
+  "Gate7_closed": false,
+  "HLbL_exact_selected_input_gradient": null,
+  "HLbL_omitted_gradient_is_not_zero": true,
+  "action_selected": false,
+  "approximation_order": "local leptonic QED through alpha5; hadronic VP through alpha4; published connected HLbL alpha3; explicitly evaluated local EW sectors only",
+  "classification": "EVALUATED_ADDITIVE_COMPONENT_LEDGER_WITH_SHARED_BOSONIC_LOG_DEPENDENCIES",
+  "complete_native_response": false,
+  "complete_observable": false,
+  "component_gradients": [
+    [
+      -8.535511958602247e-06,
+      7.635448348702e-17,
+      8.410820807942925e-09,
+      0.0,
+      -3.189227439319162e-16,
+      -4.714751112105496e-10,
+      0.0,
+      0.0,
+      0.0
+    ],
+    [
+      -6.711323306035686e-09,
+      2.6455792699951608e-18,
+      4.550572704214582e-10,
+      0.0,
+      0.0,
+      -1.6336750952958688e-11,
+      0.0,
+      0.0,
+      0.0
+    ],
+    [
+      -1.1489740163387502e-11,
+      -8.01662405250299e-17,
+      -4.256162772554918e-12,
+      -4.004046050312416e-16,
+      8.343327981157216e-16,
+      9.04116801976776e-12,
+      -3.929570496093707e-13,
+      9.05553897773868e-13,
+      -3.87108181066683e-13
+    ],
+    [
+      8.416771143127769e-10,
+      1.1494185136371663e-14,
+      6.11055054185853e-10,
+      0.0,
+      0.0,
+      -6.338121446246591e-13,
+      0.0,
+      0.0,
+      0.0
+    ],
+    [
+      8.897304730525646e-16,
+      1.1110651706214211e-20,
+      5.89670961151702e-16,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      -7.125967818257182e-16
+    ],
+    [
+      3.600023562515174e-12,
+      1.2699530197668482e-17,
+      6.741835080021043e-13,
+      4.873940266236659e-17,
+      -0.0,
+      3.248718465752971e-19,
+      -1.157910337597323e-12,
+      6.664083470467448e-13,
+      0.0
+    ]
+  ],
+  "contribution_table": [
+    {
+      "component": "retained local QED alpha1,alpha2 and literal fixed-Y H1",
+      "owner": "artifacts/muon_calibrated_pauli_20261009/run_1/calibrated_pauli.json",
+      "reused": true,
+      "value": 0.0011655419088320725
+    },
+    {
+      "component": "local leptonic QED alpha3-alpha5",
+      "owner": "artifacts/muon_calibrated_higher_qed_20261010/run_1/higher_qed.json",
+      "value": 3.052798240740239e-07
+    },
+    {
+      "component": "rematched leading EW, fermionic-rest, VVA and fixed-Y lepton Hgamma/HZ",
+      "owner": "artifacts/muon_calibrated_weak_decay_20261010/run_1/weak_decay.json",
+      "value": 1.7592934564604527e-09
+    },
+    {
+      "component": "hadronic two-current LO,NLO,NNLO",
+      "owner": "artifacts/muon_calibrated_hvp_spectral_20261010/hadronic_ledger_run_1/physical_hadronic_ledger.json",
+      "value": 6.883273877717739e-08
+    },
+    {
+      "component": "published connected hadronic four-current projection",
+      "evaluated_at_source_metrology": true,
+      "owner": "artifacts/muon_calibrated_hvp_spectral_20261010/hadronic_ledger_run_1/physical_hadronic_ledger.json",
+      "value": 1.019e-09
+    },
+    {
+      "component": "lowest electromagnetic top two-current VP",
+      "five_flavor_data_overlap": 0.0,
+      "owner": "literal normalized Dirac-vector current, color-charge factor4/3; independently measured top pole mass",
+      "value": 6.096275717098775e-14
+    },
+    {
+      "component": "bosonic EW2 leading logarithm, closed fermion loops excluded",
+      "owner": "artifacts/muon_calibrated_bosonic_weak_log_20261010/run_1/bosonic_weak_log.json",
+      "value": -2.1415901496597387e-10
+    }
+  ],
+  "errors": {
+    "QED_coefficients_and_truncation": {
+      "C3_anchor_rounding_and_reference_rounding_allowance": 2.506549958876889e-16,
+      "C3_masspoint_update_truncation_estimate": 5.683494049105303e-16,
+      "C4_C5_reference_masspoint_approximation_allowance": 1e-14,
+      "C4_leading_log_masspoint_shift_diagnostic": 4.3135862745960344e-16,
+      "C5_leading_log_masspoint_shift_diagnostic": -1.3132200988658543e-17,
+      "all_orders_remainder_enclosure": null,
+      "approximation_scope": "near-reference mass sensitivity and omitted-order estimates, not rigorous enclosures",
+      "mixed_C3_quadrature_error_estimate": 2.5289669447474932e-21,
+      "omitted_alpha6_estimated_standard_uncertainty": 1e-12,
+      "published_C4_integration_standard_uncertainty": 1.746682016755068e-13,
+      "published_C5_integration_standard_uncertainty": 5.82770049652891e-14
+    },
+    "bosonic_logarithm": {
+      "GF_omitted_order_induced_allowance_estimate": 1.0755108395217065e-18,
+      "GF_source_correlation_scope": "same decay theory source as retained weak packet; sensitivities must be summed before propagating it",
+      "GF_source_induced_estimated_standard_uncertainty": 3.666977500409093e-18,
+      "GF_source_sensitivity": -1.8361039107525323e-05,
+      "GF_source_standard_uncertainty": 1.997151402453128e-13,
+      "bosonic_remainder_enclosure": null,
+      "complete_uncertainty": false,
+      "float64_minus_independent_70_digit_application_absolute": 1.0045105484634551e-26,
+      "independent_70_digit_decimal": "-0.00000000021415901496597387773166854830720429151164820663525267528016314825",
+      "logarithm_endpoint_MZ_minus_MW_diagnostic": -4.080407069406875e-12,
+      "logarithm_endpoint_difference_is_uncertainty_bound": false,
+      "missing_bosonic_constant_standard_uncertainty": null,
+      "numerical_comparison_scope": "independent arithmetic comparison at the same selected float inputs, not an interval enclosure",
+      "quadrature_not_used": true,
+      "suppressed_mass_ratio_is_remainder_bound": false,
+      "suppressed_weak_mass_ratio_squared": 1.7287263406414243e-06
+    },
+    "complete_observable_uncertainty": null,
+    "full_bosonic_finite_remainder": null,
+    "gamma_Z_correlator_standard_uncertainty": 3.846091521395926e-14,
+    "hadronic": {
+      "HLbL_metrology_approximation_allowance": 4.2405338922142075e-13,
+      "HLbL_metrology_approximation_is_rigorous_bound": false,
+      "HLbL_publication_standard_uncertainty": 7.9e-11,
+      "HVP_HLbL_cross_covariance": null,
+      "NNLO_kernel_approximation_estimate": 4e-12,
+      "NNLO_kernel_error_meaning": "conservative sum of four published O(1e-12) approximation scales; not a rigorous bound",
+      "UV_tail_LO": {
+        "included_as_exact_zero": false,
+        "numerical_endpoint_GeV": 1000000.0,
+        "remaining_leading_asymptotic_estimate": 2.4539635139343985e-20,
+        "scope": "fixed-order five-flavor source ultraviolet model; exact full-QCD upper enclosure not asserted"
+      },
+      "UV_tail_NLO": {
+        "classes": [
+          -6.950995125626098e-21,
+          3.8671210324003843e-22,
+          3.539215783297265e-23
+        ],
+        "meaning": "source constant-R asymptotic model; not upper bound",
+        "value": -6.528890864553087e-21
+      },
+      "UV_tail_NNLO": {
+        "added_to_frozen_centers": false,
+        "classes": {
+          "6a": 2.0266865897244284e-21,
+          "6b": -3.983465550670439e-22,
+          "6bll": 1.0528839818503162e-21,
+          "6c1": -5.421424919569226e-22,
+          "6c2": -2.3581368498665966e-22,
+          "6c3": 1.0246217762331384e-24,
+          "6c4": 1.7761917869094595e-25,
+          "6d": 1.4792040342298936e-25
+        },
+        "constant_R": 3.6666666666666665,
+        "double_order": 32,
+        "meaning": "nominal omitted five-flavor constant-R ultraviolet model; not a rigorous bound",
+        "outer_order": 24,
+        "photon_tail_formula": "delta h(Q)=alpha*(11/3)/(3*pi)*log1p(Q/1e12)",
+        "spectral_cutoff_s_GeV2": 1000000000000.0,
+        "spectral_order": 8,
+        "sum_absolute_classes": 4.257223464943718e-21,
+        "value": 1.9046180009224656e-21
+      },
+      "combined_marginal_standard_uncertainty_range": [
+        3.1422964803041446e-10,
+        4.722296480304144e-10
+      ],
+      "combined_range_meaning": "Cauchy covariance range from supplied marginal standard uncertainties; not a probability interval or rigorous observable bound",
+      "cross_source_covariance_status": "not supplied; two-current and four-current fits may share experimental inputs",
+      "estimates_form_joint_enclosure": false,
+      "next_order_hadronic_estimates": {
+        "HLbL_NLO_leading_electron_log": {
+          "added_to_evaluated_subtotal": false,
+          "caveat": "RG leading-log estimate using current published LO center, not an evaluated full NLO tensor projection or error enclosure; source Eq9 used older LO input",
+          "equation": "8",
+          "formula": "2*alpha/pi*log(m_mu/m_e)",
+          "multiplier": 0.024768684926317945,
+          "source": "https://arxiv.org/html/1403.7512v2",
+          "source_full_NLO_estimate": 3e-11,
+          "source_model_uncertainty": 2e-11,
+          "value": 2.5239289939917987e-11
+        },
+        "HVP_N3LO": {
+          "reason": "no evaluated O(alpha^5) kernel supplied; observed NNLO enhancement does not justify a geometric error bound",
+          "value": null
+        }
+      },
+      "numerical_refinement": {
+        "LO": {
+          "meaning": "finite numerical refinement estimates, not rigorous integration enclosures",
+          "pQCD_interpolation_difference": 1.1383633120175165e-17,
+          "pQCD_nodes_per_interval": [
+            2401,
+            4801
+          ],
+          "quadrature_difference": 0.0,
+          "quadrature_orders": [
+            8,
+            32
+          ],
+          "resonance_component_differences": {
+            "RESONANCE_10": 0.0,
+            "RESONANCE_11": 0.0,
+            "RESONANCE_12": 3.0623454122934843e-24,
+            "RESONANCE_13": 0.0,
+            "RESONANCE_14": 1.0097419586828951e-28,
+            "RESONANCE_15": 0.0,
+            "RESONANCE_4": 1.0339757656912846e-25,
+            "RESONANCE_5": 2.5849394142282115e-26,
+            "RESONANCE_6": 0.0
+          }
+        },
+        "NLO": {
+          "class_quadrature_differences": {
+            "4a_photonic_and_muon_VP": 2.895132143935597e-24,
+            "4b_electron_tau_VP": 5.726281867490217e-20,
+            "4c_double_hadronic_VP": 6.462348535570529e-27
+          },
+          "classification": "numerical refinement estimates; not rigorous enclosures",
+          "endpoint_coordinates": [
+            32,
+            48
+          ],
+          "endpoint_extension_difference": 7.028553664863076e-21,
+          "interpolation_difference": 6.685501185322022e-19,
+          "outer_orders": [
+            32,
+            48
+          ],
+          "pQCD_nodes_per_interval": [
+            2401,
+            4801
+          ],
+          "quadrature_difference": 5.72657138070461e-20,
+          "spectral_orders": [
+            20,
+            32
+          ]
+        },
+        "NNLO": {
+          "class_refinement_differences": {
+            "6a": 3.764240473787406e-21,
+            "6b": 7.99218030439614e-22,
+            "6bll": 1.9640886657188796e-21,
+            "6c1": 5.655160813799422e-22,
+            "6c2": 5.615975249345103e-17,
+            "6c3": 5.856503360360792e-27,
+            "6c4": 5.048709793414476e-29,
+            "6d": 1.5146129380243427e-28
+          },
+          "double_orders": [
+            16,
+            32
+          ],
+          "endpoint_coordinates": [
+            32,
+            40
+          ],
+          "interpolation_difference": 7.959206817228245e-20,
+          "outer_orders": [
+            24,
+            40
+          ],
+          "pQCD_nodes_per_interval": [
+            2401,
+            4801
+          ],
+          "refinement_difference": 5.615538890892466e-17,
+          "scope": "numerical estimates; primary kernel approximation and omitted tau allowances remain separate",
+          "spectral_orders": [
+            8,
+            16
+          ]
+        }
+      },
+      "omitted_NNLO_tau_estimate": 1e-12,
+      "spectral_covariance_scope": {
+        "higher_QCD_order_error_not_enclosed": true,
+        "missing_full_cross_experiment_covariance": true,
+        "omega_phi": "third array column ABSOLUTE; separate channel systematic errors, independent of background; background third column FRACTIONAL",
+        "pQCD": "source alpha_s +/-0.0007 finite difference; same parameter correlated between the two intervals",
+        "point_covariance": "C_ij=delta_ij stat_i^2+sys_i*sys_j inside each source energy range; different ranges independent",
+        "quadrature": "numerical convergence estimate, not rigorous enclosure",
+        "ranges_GeV": [
+          [
+            0.27914036,
+            0.318
+          ],
+          [
+            0.318,
+            1.05
+          ],
+          [
+            1.05,
+            1.4
+          ],
+          [
+            1.4,
+            2.0
+          ],
+          [
+            2.0,
+            3.2
+          ],
+          [
+            3.2,
+            3.6
+          ],
+          [
+            3.6,
+            5.2
+          ],
+          [
+            5.2,
+            9.46
+          ],
+          [
+            9.46,
+            11.5
+          ]
+        ],
+        "resonance": "retained source STAPS/SYSPS/STAYP/SYSYP parameter-error approximation; not invented full PDG joint covariance",
+        "undressing": "source error separately summed conservatively; not treated as independent from underlying spectral measurements"
+      },
+      "spectral_rows_combined_coherently": true,
+      "strict_all_orders_lower_threshold": "pi0-gamma permits threshold below two-pion; this source does not materialize that lower radiative channel here; no exact all-orders completion claim",
+      "undressing_absolute_estimate": 3.108887535180911e-13,
+      "undressing_meaning": "source conservative absolute estimates; not additional independent statistical rows"
+    },
+    "hadronic_metrology_derivative_scope": {
+      "HLbL_exact_selected_input_gradient": null,
+      "HLbL_gradient_omission_is_not_zero": true,
+      "HLbL_nearby_metrology_allowance": {
+        "absolute_published_sector_sum": 1.593e-09,
+        "allowance_factor": 100,
+        "alpha_dependence": "exact cubic at fixed four-current function and mass; source alpha0 numeric not given in the two inspected primary papers",
+        "exact_alternative_producer": "re-evaluate2412.00190 Eq4 kernels T_i(Sigma,r,phi;mselected) on source12Pi_bar functions/TFF/SDC inputs",
+        "formula": "2*(abs(m-selected minus m-representative)+sigma_m)/m-representative*sum_abs_published_sectors; generous estimate multiplies100",
+        "generous_sensitivity_allowance_estimate": 4.2405338922142075e-13,
+        "justification": "massive Euclidean lepton kernels are smooth near the physical muon mass; leading m^2/log behavior gives order-unity logarithmic sensitivity and100 is a deliberately generous modeling allowance",
+        "leading_dimensional_sensitivity_estimate": 4.2405338922142075e-15,
+        "limitation": "no actual HLbL tensor derivative norm integrated; this is a nearby-mass modeling estimate, NOT an exact derivative or rigorous bound; published center is not rescaled",
+        "reference_role": "known configured MuLan2013 reference only, NOT attributed to HLbL paper",
+        "representative_older_muon_mass_GeV": 0.1056583715,
+        "selected_muon_mass_GeV": 0.10565842526040435,
+        "selected_muon_mass_standard_uncertainty_GeV": 8.686982331492701e-08
+      },
+      "alpha_partial_by_order": {
+        "LO": 1.9101112621748562e-05,
+        "NLO": -4.048337601216771e-07,
+        "NNLO": 6.780564899613267e-08
+      },
+      "alpha_scaling": "exact powers 2/3/4 at fixed masses and frozen current spectrum",
+      "consumer_vs_primitive_jacobian": [
+        [
+          -4.255733164284165e-07,
+          -2.6572029892655824e-12,
+          -1.4103521489584984e-07,
+          -2.6545010281694045e-12,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          1.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ],
+        [
+          0.0015420535607081295,
+          9.62830415569653e-09,
+          0.000510998950905377,
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          7.457879007941782e-06,
+          4.656565068458016e-11,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ]
+      ],
+      "illustrative_independent_primitive_standard_uncertainty": 1.0387939540124394e-13,
+      "included": "HVP LO/NLO/NNLO only; same input spectrum held fixed",
+      "input_standard_uncertainty_upper_over_correlations": 1.0397592887355746e-13,
+      "mass_method": "central logarithmic differences h=1e-4,1e-5 with separate kernel/quadrature refinement",
+      "no_GF_or_Higgs_dependence": "these retained minimal hadronic kernels do not consume GF or Higgs mass; no general native zero follows",
+      "physical_primitive_covariance": null,
+      "primitive_standard_uncertainties": [
+        1.1e-08,
+        9.6e-05,
+        0.00017,
+        2.2,
+        0.11,
+        0.00013601470508735444
+      ]
+    },
+    "metrological_inputs": {
+      "mu_minus": {
+        "minus": {
+          "accounting": {
+            "a_mu": 0.001165918585590328,
+            "charge_sign": -1,
+            "completeness_determined_by_contribution_ledger": true,
+            "da_to_dg": 2.0,
+            "da_to_dmoment_J_per_T": -4.4852167734065794e-26,
+            "dmass_to_dmoment_J_per_T_per_GeV": 4.249965073713716e-25,
+            "g_mu": 2.0023318371711807,
+            "magnetic_moment_Sz_plus_hbar_over_2_J_per_T": -4.490446171003096e-26,
+            "muon_magneton_J_per_T": 4.4852167734065794e-26,
+            "sign_convention": "mu=g*q*S/(2m); positive spin projection; q=charge_sign*e"
+          },
+          "complete_observable": false,
+          "error_scope": "first-order shared metrological inputs of evaluated components only; no omitted-component or probability enclosure",
+          "input_standard_uncertainties": [
+            1.6632404744182286e-12,
+            3.3264809488364573e-12,
+            3.691929927257964e-32
+          ],
+          "input_standard_uncertainty_upper_over_all_correlations": [
+            2.1884032431491283e-12,
+            4.376806486298257e-12,
+            3.6926926360028355e-32
+          ],
+          "output_gradient": [
+            [
+              -8.541389493620841e-06,
+              1.1505729599453023e-14,
+              9.473351742956645e-09,
+              -3.5166520236887503e-16,
+              5.154100541838054e-16,
+              -4.794045059634934e-10,
+              -1.5508673872066937e-12,
+              1.5719622448206128e-12,
+              -3.8782077784850867e-13
+            ],
+            [
+              -1.7082778987241682e-05,
+              2.3011459198906046e-14,
+              1.894670348591329e-08,
+              -7.033304047377501e-16,
+              1.0308201083676108e-15,
+              -9.588090119269868e-10,
+              -3.1017347744133875e-12,
+              3.1439244896412256e-12,
+              -7.756415556970173e-13
+            ],
+            [
+              6.557504773147923e-28,
+              4.091995122023374e-33,
+              2.1717234450485883e-28,
+              1.5772946642882975e-41,
+              -2.3117258202075976e-41,
+              2.150233131394155e-35,
+              6.955976418428699e-38,
+              -7.050591427631272e-38,
+              1.7394602578817178e-38
+            ]
+          ],
+          "output_order": [
+            "a_subtotal",
+            "g_subtotal",
+            "mu_z_subtotal_J_per_T"
+          ],
+          "primitive_independence_is_only_illustrative": true,
+          "propagated_covariance": [
+            [
+              2.7663688757429745e-24,
+              5.532737751485949e-24,
+              5.945673016538667e-44
+            ],
+            [
+              5.532737751485949e-24,
+              1.1065475502971898e-23,
+              1.1891346033077333e-43
+            ],
+            [
+              5.945673016538667e-44,
+              1.1891346033077333e-43,
+              1.3630346587782998e-63
+            ]
+          ],
+          "summed_a_gradient": [
+            -8.541389493620841e-06,
+            1.1505729599453023e-14,
+            9.473351742956645e-09,
+            -3.5166520236887503e-16,
+            5.154100541838054e-16,
+            -4.794045059634934e-10,
+            -1.5508673872066937e-12,
+            1.5719622448206128e-12,
+            -3.8782077784850867e-13
+          ],
+          "supplied_primitive_covariance": null
+        },
+        "plus": {
+          "accounting": {
+            "a_mu": 0.001165918585590328,
+            "charge_sign": -1,
+            "completeness_determined_by_contribution_ledger": true,
+            "da_to_dg": 2.0,
+            "da_to_dmoment_J_per_T": -4.4852167734065794e-26,
+            "dmass_to_dmoment_J_per_T_per_GeV": 4.249965073713716e-25,
+            "g_mu": 2.0023318371711807,
+            "magnetic_moment_Sz_plus_hbar_over_2_J_per_T": -4.490446171003096e-26,
+            "muon_magneton_J_per_T": 4.4852167734065794e-26,
+            "sign_convention": "mu=g*q*S/(2m); positive spin projection; q=charge_sign*e"
+          },
+          "complete_observable": false,
+          "error_scope": "first-order shared metrological inputs of evaluated components only; no omitted-component or probability enclosure",
+          "input_standard_uncertainties": [
+            1.6812289725184322e-12,
+            3.3624579450368644e-12,
+            3.6919299272581284e-32
+          ],
+          "input_standard_uncertainty_upper_over_all_correlations": [
+            2.2577229430031893e-12,
+            4.5154458860063785e-12,
+            3.692692946916716e-32
+          ],
+          "output_gradient": [
+            [
+              -8.541389493620841e-06,
+              1.1505729599453023e-14,
+              9.473351742956645e-09,
+              -3.5166520236887503e-16,
+              5.154100541838054e-16,
+              -4.794045059634934e-10,
+              -1.5508673872066937e-12,
+              1.5719622448206128e-12,
+              -3.8782077784850867e-13
+            ],
+            [
+              -1.7082778987241682e-05,
+              2.3011459198906046e-14,
+              1.894670348591329e-08,
+              -7.033304047377501e-16,
+              1.0308201083676108e-15,
+              -9.588090119269868e-10,
+              -3.1017347744133875e-12,
+              3.1439244896412256e-12,
+              -7.756415556970173e-13
+            ],
+            [
+              6.557504773147923e-28,
+              4.091995122023374e-33,
+              2.1717234450485883e-28,
+              1.5772946642882975e-41,
+              -2.3117258202075976e-41,
+              2.150233131394155e-35,
+              6.955976418428699e-38,
+              -7.050591427631272e-38,
+              1.7394602578817178e-38
+            ]
+          ],
+          "output_order": [
+            "a_subtotal",
+            "g_subtotal",
+            "mu_z_subtotal_J_per_T"
+          ],
+          "primitive_independence_is_only_illustrative": true,
+          "propagated_covariance": [
+            [
+              2.8265308580353834e-24,
+              5.653061716070767e-24,
+              5.945672746699135e-44
+            ],
+            [
+              5.653061716070767e-24,
+              1.1306123432141534e-23,
+              1.189134549339827e-43
+            ],
+            [
+              5.945672746699135e-44,
+              1.189134549339827e-43,
+              1.363034658778421e-63
+            ]
+          ],
+          "summed_a_gradient": [
+            -8.541389493620841e-06,
+            1.1505729599453023e-14,
+            9.473351742956645e-09,
+            -3.5166520236887503e-16,
+            5.154100541838054e-16,
+            -4.794045059634934e-10,
+            -1.5508673872066937e-12,
+            1.5719622448206128e-12,
+            -3.8782077784850867e-13
+          ],
+          "supplied_primitive_covariance": null
+        }
+      },
+      "mu_plus": {
+        "minus": {
+          "accounting": {
+            "a_mu": 0.001165918585590328,
+            "charge_sign": 1,
+            "completeness_determined_by_contribution_ledger": true,
+            "da_to_dg": 2.0,
+            "da_to_dmoment_J_per_T": 4.4852167734065794e-26,
+            "dmass_to_dmoment_J_per_T_per_GeV": -4.249965073713716e-25,
+            "g_mu": 2.0023318371711807,
+            "magnetic_moment_Sz_plus_hbar_over_2_J_per_T": 4.490446171003096e-26,
+            "muon_magneton_J_per_T": 4.4852167734065794e-26,
+            "sign_convention": "mu=g*q*S/(2m); positive spin projection; q=charge_sign*e"
+          },
+          "complete_observable": false,
+          "error_scope": "first-order shared metrological inputs of evaluated components only; no omitted-component or probability enclosure",
+          "input_standard_uncertainties": [
+            1.6632404744182286e-12,
+            3.3264809488364573e-12,
+            3.691929927257964e-32
+          ],
+          "input_standard_uncertainty_upper_over_all_correlations": [
+            2.1884032431491283e-12,
+            4.376806486298257e-12,
+            3.6926926360028355e-32
+          ],
+          "output_gradient": [
+            [
+              -8.541389493620841e-06,
+              1.1505729599453023e-14,
+              9.473351742956645e-09,
+              -3.5166520236887503e-16,
+              5.154100541838054e-16,
+              -4.794045059634934e-10,
+              -1.5508673872066937e-12,
+              1.5719622448206128e-12,
+              -3.8782077784850867e-13
+            ],
+            [
+              -1.7082778987241682e-05,
+              2.3011459198906046e-14,
+              1.894670348591329e-08,
+              -7.033304047377501e-16,
+              1.0308201083676108e-15,
+              -9.588090119269868e-10,
+              -3.1017347744133875e-12,
+              3.1439244896412256e-12,
+              -7.756415556970173e-13
+            ],
+            [
+              -6.557504773147923e-28,
+              -4.091995122023374e-33,
+              -2.1717234450485883e-28,
+              -1.5772946642882975e-41,
+              2.3117258202075976e-41,
+              -2.150233131394155e-35,
+              -6.955976418428699e-38,
+              7.050591427631272e-38,
+              -1.7394602578817178e-38
+            ]
+          ],
+          "output_order": [
+            "a_subtotal",
+            "g_subtotal",
+            "mu_z_subtotal_J_per_T"
+          ],
+          "primitive_independence_is_only_illustrative": true,
+          "propagated_covariance": [
+            [
+              2.7663688757429745e-24,
+              5.532737751485949e-24,
+              -5.945673016538667e-44
+            ],
+            [
+              5.532737751485949e-24,
+              1.1065475502971898e-23,
+              -1.1891346033077333e-43
+            ],
+            [
+              -5.945673016538667e-44,
+              -1.1891346033077333e-43,
+              1.3630346587782998e-63
+            ]
+          ],
+          "summed_a_gradient": [
+            -8.541389493620841e-06,
+            1.1505729599453023e-14,
+            9.473351742956645e-09,
+            -3.5166520236887503e-16,
+            5.154100541838054e-16,
+            -4.794045059634934e-10,
+            -1.5508673872066937e-12,
+            1.5719622448206128e-12,
+            -3.8782077784850867e-13
+          ],
+          "supplied_primitive_covariance": null
+        },
+        "plus": {
+          "accounting": {
+            "a_mu": 0.001165918585590328,
+            "charge_sign": 1,
+            "completeness_determined_by_contribution_ledger": true,
+            "da_to_dg": 2.0,
+            "da_to_dmoment_J_per_T": 4.4852167734065794e-26,
+            "dmass_to_dmoment_J_per_T_per_GeV": -4.249965073713716e-25,
+            "g_mu": 2.0023318371711807,
+            "magnetic_moment_Sz_plus_hbar_over_2_J_per_T": 4.490446171003096e-26,
+            "muon_magneton_J_per_T": 4.4852167734065794e-26,
+            "sign_convention": "mu=g*q*S/(2m); positive spin projection; q=charge_sign*e"
+          },
+          "complete_observable": false,
+          "error_scope": "first-order shared metrological inputs of evaluated components only; no omitted-component or probability enclosure",
+          "input_standard_uncertainties": [
+            1.6812289725184322e-12,
+            3.3624579450368644e-12,
+            3.6919299272581284e-32
+          ],
+          "input_standard_uncertainty_upper_over_all_correlations": [
+            2.2577229430031893e-12,
+            4.5154458860063785e-12,
+            3.692692946916716e-32
+          ],
+          "output_gradient": [
+            [
+              -8.541389493620841e-06,
+              1.1505729599453023e-14,
+              9.473351742956645e-09,
+              -3.5166520236887503e-16,
+              5.154100541838054e-16,
+              -4.794045059634934e-10,
+              -1.5508673872066937e-12,
+              1.5719622448206128e-12,
+              -3.8782077784850867e-13
+            ],
+            [
+              -1.7082778987241682e-05,
+              2.3011459198906046e-14,
+              1.894670348591329e-08,
+              -7.033304047377501e-16,
+              1.0308201083676108e-15,
+              -9.588090119269868e-10,
+              -3.1017347744133875e-12,
+              3.1439244896412256e-12,
+              -7.756415556970173e-13
+            ],
+            [
+              -6.557504773147923e-28,
+              -4.091995122023374e-33,
+              -2.1717234450485883e-28,
+              -1.5772946642882975e-41,
+              2.3117258202075976e-41,
+              -2.150233131394155e-35,
+              -6.955976418428699e-38,
+              7.050591427631272e-38,
+              -1.7394602578817178e-38
+            ]
+          ],
+          "output_order": [
+            "a_subtotal",
+            "g_subtotal",
+            "mu_z_subtotal_J_per_T"
+          ],
+          "primitive_independence_is_only_illustrative": true,
+          "propagated_covariance": [
+            [
+              2.8265308580353834e-24,
+              5.653061716070767e-24,
+              -5.945672746699135e-44
+            ],
+            [
+              5.653061716070767e-24,
+              1.1306123432141534e-23,
+              -1.189134549339827e-43
+            ],
+            [
+              -5.945672746699135e-44,
+              -1.189134549339827e-43,
+              1.363034658778421e-63
+            ]
+          ],
+          "summed_a_gradient": [
+            -8.541389493620841e-06,
+            1.1505729599453023e-14,
+            9.473351742956645e-09,
+            -3.5166520236887503e-16,
+            5.154100541838054e-16,
+            -4.794045059634934e-10,
+            -1.5508673872066937e-12,
+            1.5719622448206128e-12,
+            -3.8782077784850867e-13
+          ],
+          "supplied_primitive_covariance": null
+        }
+      }
+    },
+    "parent_native_error_allowance": null,
+    "top_current": {
+      "color_charge_factor": 1.3333333333333333,
+      "current_scope": "lowest electromagnetic Dirac top vector-current loop; no five-flavor spectral overlap",
+      "derivative_alpha": 1.6708184686558097e-11,
+      "derivative_muon_mass": 1.1539572832917476e-12,
+      "derivative_top_mass": -7.125967818257182e-16,
+      "error_scope": "quadrature estimate and deliberately conservative100%-of-leading higher-interaction size estimate, not a full BHSM bound",
+      "full_top_current_evaluated": false,
+      "heavy_leading_upper": 6.096286712911148e-14,
+      "quadrature_error_estimate": 3.490701167414627e-24,
+      "top_Higgs_Yukawa_assigned": false,
+      "uncomputed_QCD_weak_width_correction_estimate": 6.096275717098775e-14,
+      "upper_provenance": "log(1+z)<=z in the Thomson-subtracted one-loop VP integral",
+      "value": 6.096275717098775e-14
+    },
+    "weak_decay_estimated_standard_uncertainty": 2.645802603894407e-17,
+    "weak_decay_omitted_order_estimate": 7.760040467675991e-18,
+    "weak_source_uncertainty_and_mass_approximation": {
+      "a_mu_VVA": -1.4326786032916142e-10,
+      "contributions": [
+        {
+          "a_mu": -2.0799996805982312e-11,
+          "generation": "u,d,e",
+          "source_standard_uncertainty": 2.9999995393243724e-13
+        },
+        {
+          "a_mu": -4.139999364267633e-11,
+          "generation": "c,s,mu",
+          "source_standard_uncertainty": 2.799999570036081e-12
+        },
+        {
+          "a_mu": -8.106786988050277e-11,
+          "generation": "t,b,tau",
+          "published_reference_prefactor_rescaled_value": -8.119998753104633e-11,
+          "source_standard_uncertainty": 9.999998464414574e-14
+        }
+      ],
+      "equations": "4,6,22,Table I; first/second generation primary dispersive kernels",
+      "internal_mass_source_scope": "2503.04883 footnote1, mb/mc converted to OS through alpha_s; source alpha_s variation also covers its reference Monte Carlo top-to-pole correction",
+      "mass_shape_approximation_allowance": 1e-13,
+      "mass_shape_approximation_scope": "0.07% of VVA magnitude estimate covers uncomputed kernel, alpha_s-mass/tail changes; top/tau one-loop mass difference executed, not a bound or full derivative",
+      "native_evaluated": false,
+      "prefactor_rescaling": 0.9999998464414575,
+      "published_sector_covariance": null,
+      "reference_internal_masses_GeV": {
+        "bottom_MSbar": 4.183,
+        "charm_MSbar": 1.273,
+        "tau": 1.77686,
+        "top_source_MC_parameter": 172.57
+      },
+      "reference_prefactor_inputs": {
+        "GF_GeV_minus2": 1.1663787e-05,
+        "alpha_inverse": 137.035999,
+        "muon_mass_GeV": 0.1056583755
+      },
+      "selected_Higgs_Yukawa": false,
+      "source": "https://arxiv.org/abs/2503.04883",
+      "source_standard_uncertainty_quadrature_if_uncorrelated": 2.817800128023727e-12,
+      "source_standard_uncertainty_sum_over_all_correlations": 3.199999508612664e-12,
+      "third_generation_perturbative_masspoint_shifts": [
+        {
+          "a_mu_shift": 1.3003523675927543e-13,
+          "equations": "1-3, wT=wL/2",
+          "fermion": "top",
+          "log_Q_squared_interval": [
+            -40,
+            50
+          ],
+          "quadrature_error_estimate": 2.4750804485250565e-21,
+          "reference_mass_GeV": 172.57,
+          "selected_mass_GeV": 171.1,
+          "separately_physical_generation_sector": false,
+          "source": "https://arxiv.org/abs/2503.04883",
+          "uncomputed_mass_dependence": "alpha_s/nonperturbative corrections and finite tail retained in separate approximation allowance"
+        },
+        {
+          "a_mu_shift": 2.0824137842846376e-15,
+          "equations": "1-3, wT=wL/2",
+          "fermion": "tau",
+          "log_Q_squared_interval": [
+            -40,
+            50
+          ],
+          "quadrature_error_estimate": 7.069109816415779e-21,
+          "reference_mass_GeV": 1.77686,
+          "selected_mass_GeV": 1.77709,
+          "separately_physical_generation_sector": false,
+          "source": "https://arxiv.org/abs/2503.04883",
+          "uncomputed_mass_dependence": "alpha_s/nonperturbative corrections and finite tail retained in separate approximation allowance"
+        }
+      ],
+      "whole_EW_evaluated": false,
+      "whole_EW_total_imported": false
+    },
+    "weak_unexecuted_sectors": {
+      "bosonic_finite_remainder": null,
+      "bosonic_logarithm_now_evaluated": true,
+      "bosonic_scope": "ordinary reference bosonic result uses minimally matched gauge-Higgs/Goldstone counterterms; no full literal BHSM matching evaluated here",
+      "bosonic_two_loop": null,
+      "enclosure": null,
+      "estimate_basis": "twice sum of absolute published omitted two-loop sectors; conditional minimal matched low-energy perturbative scale, not a bound on an arbitrary quark-Y completion",
+      "finite_order_allowance_estimate": 4.292e-10,
+      "full_EW_two_loop_evaluated": false,
+      "prior_finite_order_allowance_not_a_bound": true,
+      "prior_whole_bosonic_reference_not_added": true,
+      "published_Higgs_reference": -1.5e-11,
+      "published_bosonic_reference": -1.996e-10,
+      "quark_Hgamma_HZ": null,
+      "quark_Y_owner": "ae31_c2_intrinsic_m4_lepton_action.action_composition_contract",
+      "quark_Y_status": "up_down_Yukawa_terms_added=False; fixed ratios alone do not supply absolute transported action prefactors",
+      "source": "https://arxiv.org/abs/2503.04883",
+      "table": "I, individual reference sectors only",
+      "three_loop_NLL_estimated_standard_uncertainty": 2e-12,
+      "top_Higgs_Yukawa_from_pole_mass_assigned": false
+    }
+  },
+  "evaluated_subtotal": 0.001165918585590328,
+  "gradient_component_order": [
+    "retained local QED alpha1,alpha2 and literal fixed-Y H1",
+    "local leptonic QED alpha3-alpha5",
+    "rematched leading EW, fermionic-rest, VVA and fixed-Y lepton Hgamma/HZ",
+    "hadronic two-current LO,NLO,NNLO",
+    "lowest electromagnetic top two-current VP",
+    "bosonic EW2 leading logarithm, closed fermion loops excluded"
+  ],
+  "input_hashes": [
+    {
+      "bytes": 51167,
+      "path": "artifacts/muon_calibrated_component_ledger_20261010/run_5/component_ledger.json",
+      "sha256": "937843127402028a13ab8fd96df80ec63b9f54bd4e450fb34b028ffa6a29e945"
+    },
+    {
+      "bytes": 10881,
+      "path": "artifacts/muon_calibrated_bosonic_weak_log_20261010/run_1/bosonic_weak_log.json",
+      "sha256": "64b89011c453108e651cb2a1d461b97f8c68d2f61ee20ce096ad18677f57f85c"
+    },
+    {
+      "bytes": 24253,
+      "path": "artifacts/muon_calibrated_weak_decay_20261010/run_1/weak_decay.json",
+      "sha256": "9c31575ce0889571790f8767cf53ffe043cb9906e0a45a96b194971320a0aad7"
+    },
+    {
+      "bytes": 19492,
+      "path": "artifacts/muon_calibrated_pauli_20261009/inputs.json",
+      "sha256": "0b614ab6f26d169ca04a4878f767f78eb3668484840867e46aebbebf186369da"
+    }
+  ],
+  "input_uncertainty": {
+    "mu_minus": {
+      "minus": {
+        "accounting": {
+          "a_mu": 0.001165918585590328,
+          "charge_sign": -1,
+          "completeness_determined_by_contribution_ledger": true,
+          "da_to_dg": 2.0,
+          "da_to_dmoment_J_per_T": -4.4852167734065794e-26,
+          "dmass_to_dmoment_J_per_T_per_GeV": 4.249965073713716e-25,
+          "g_mu": 2.0023318371711807,
+          "magnetic_moment_Sz_plus_hbar_over_2_J_per_T": -4.490446171003096e-26,
+          "muon_magneton_J_per_T": 4.4852167734065794e-26,
+          "sign_convention": "mu=g*q*S/(2m); positive spin projection; q=charge_sign*e"
+        },
+        "complete_observable": false,
+        "error_scope": "first-order shared metrological inputs of evaluated components only; no omitted-component or probability enclosure",
+        "input_standard_uncertainties": [
+          1.6632404744182286e-12,
+          3.3264809488364573e-12,
+          3.691929927257964e-32
+        ],
+        "input_standard_uncertainty_upper_over_all_correlations": [
+          2.1884032431491283e-12,
+          4.376806486298257e-12,
+          3.6926926360028355e-32
+        ],
+        "output_gradient": [
+          [
+            -8.541389493620841e-06,
+            1.1505729599453023e-14,
+            9.473351742956645e-09,
+            -3.5166520236887503e-16,
+            5.154100541838054e-16,
+            -4.794045059634934e-10,
+            -1.5508673872066937e-12,
+            1.5719622448206128e-12,
+            -3.8782077784850867e-13
+          ],
+          [
+            -1.7082778987241682e-05,
+            2.3011459198906046e-14,
+            1.894670348591329e-08,
+            -7.033304047377501e-16,
+            1.0308201083676108e-15,
+            -9.588090119269868e-10,
+            -3.1017347744133875e-12,
+            3.1439244896412256e-12,
+            -7.756415556970173e-13
+          ],
+          [
+            6.557504773147923e-28,
+            4.091995122023374e-33,
+            2.1717234450485883e-28,
+            1.5772946642882975e-41,
+            -2.3117258202075976e-41,
+            2.150233131394155e-35,
+            6.955976418428699e-38,
+            -7.050591427631272e-38,
+            1.7394602578817178e-38
+          ]
+        ],
+        "output_order": [
+          "a_subtotal",
+          "g_subtotal",
+          "mu_z_subtotal_J_per_T"
+        ],
+        "primitive_independence_is_only_illustrative": true,
+        "propagated_covariance": [
+          [
+            2.7663688757429745e-24,
+            5.532737751485949e-24,
+            5.945673016538667e-44
+          ],
+          [
+            5.532737751485949e-24,
+            1.1065475502971898e-23,
+            1.1891346033077333e-43
+          ],
+          [
+            5.945673016538667e-44,
+            1.1891346033077333e-43,
+            1.3630346587782998e-63
+          ]
+        ],
+        "summed_a_gradient": [
+          -8.541389493620841e-06,
+          1.1505729599453023e-14,
+          9.473351742956645e-09,
+          -3.5166520236887503e-16,
+          5.154100541838054e-16,
+          -4.794045059634934e-10,
+          -1.5508673872066937e-12,
+          1.5719622448206128e-12,
+          -3.8782077784850867e-13
+        ],
+        "supplied_primitive_covariance": null
+      },
+      "plus": {
+        "accounting": {
+          "a_mu": 0.001165918585590328,
+          "charge_sign": -1,
+          "completeness_determined_by_contribution_ledger": true,
+          "da_to_dg": 2.0,
+          "da_to_dmoment_J_per_T": -4.4852167734065794e-26,
+          "dmass_to_dmoment_J_per_T_per_GeV": 4.249965073713716e-25,
+          "g_mu": 2.0023318371711807,
+          "magnetic_moment_Sz_plus_hbar_over_2_J_per_T": -4.490446171003096e-26,
+          "muon_magneton_J_per_T": 4.4852167734065794e-26,
+          "sign_convention": "mu=g*q*S/(2m); positive spin projection; q=charge_sign*e"
+        },
+        "complete_observable": false,
+        "error_scope": "first-order shared metrological inputs of evaluated components only; no omitted-component or probability enclosure",
+        "input_standard_uncertainties": [
+          1.6812289725184322e-12,
+          3.3624579450368644e-12,
+          3.6919299272581284e-32
+        ],
+        "input_standard_uncertainty_upper_over_all_correlations": [
+          2.2577229430031893e-12,
+          4.5154458860063785e-12,
+          3.692692946916716e-32
+        ],
+        "output_gradient": [
+          [
+            -8.541389493620841e-06,
+            1.1505729599453023e-14,
+            9.473351742956645e-09,
+            -3.5166520236887503e-16,
+            5.154100541838054e-16,
+            -4.794045059634934e-10,
+            -1.5508673872066937e-12,
+            1.5719622448206128e-12,
+            -3.8782077784850867e-13
+          ],
+          [
+            -1.7082778987241682e-05,
+            2.3011459198906046e-14,
+            1.894670348591329e-08,
+            -7.033304047377501e-16,
+            1.0308201083676108e-15,
+            -9.588090119269868e-10,
+            -3.1017347744133875e-12,
+            3.1439244896412256e-12,
+            -7.756415556970173e-13
+          ],
+          [
+            6.557504773147923e-28,
+            4.091995122023374e-33,
+            2.1717234450485883e-28,
+            1.5772946642882975e-41,
+            -2.3117258202075976e-41,
+            2.150233131394155e-35,
+            6.955976418428699e-38,
+            -7.050591427631272e-38,
+            1.7394602578817178e-38
+          ]
+        ],
+        "output_order": [
+          "a_subtotal",
+          "g_subtotal",
+          "mu_z_subtotal_J_per_T"
+        ],
+        "primitive_independence_is_only_illustrative": true,
+        "propagated_covariance": [
+          [
+            2.8265308580353834e-24,
+            5.653061716070767e-24,
+            5.945672746699135e-44
+          ],
+          [
+            5.653061716070767e-24,
+            1.1306123432141534e-23,
+            1.189134549339827e-43
+          ],
+          [
+            5.945672746699135e-44,
+            1.189134549339827e-43,
+            1.363034658778421e-63
+          ]
+        ],
+        "summed_a_gradient": [
+          -8.541389493620841e-06,
+          1.1505729599453023e-14,
+          9.473351742956645e-09,
+          -3.5166520236887503e-16,
+          5.154100541838054e-16,
+          -4.794045059634934e-10,
+          -1.5508673872066937e-12,
+          1.5719622448206128e-12,
+          -3.8782077784850867e-13
+        ],
+        "supplied_primitive_covariance": null
+      }
+    },
+    "mu_plus": {
+      "minus": {
+        "accounting": {
+          "a_mu": 0.001165918585590328,
+          "charge_sign": 1,
+          "completeness_determined_by_contribution_ledger": true,
+          "da_to_dg": 2.0,
+          "da_to_dmoment_J_per_T": 4.4852167734065794e-26,
+          "dmass_to_dmoment_J_per_T_per_GeV": -4.249965073713716e-25,
+          "g_mu": 2.0023318371711807,
+          "magnetic_moment_Sz_plus_hbar_over_2_J_per_T": 4.490446171003096e-26,
+          "muon_magneton_J_per_T": 4.4852167734065794e-26,
+          "sign_convention": "mu=g*q*S/(2m); positive spin projection; q=charge_sign*e"
+        },
+        "complete_observable": false,
+        "error_scope": "first-order shared metrological inputs of evaluated components only; no omitted-component or probability enclosure",
+        "input_standard_uncertainties": [
+          1.6632404744182286e-12,
+          3.3264809488364573e-12,
+          3.691929927257964e-32
+        ],
+        "input_standard_uncertainty_upper_over_all_correlations": [
+          2.1884032431491283e-12,
+          4.376806486298257e-12,
+          3.6926926360028355e-32
+        ],
+        "output_gradient": [
+          [
+            -8.541389493620841e-06,
+            1.1505729599453023e-14,
+            9.473351742956645e-09,
+            -3.5166520236887503e-16,
+            5.154100541838054e-16,
+            -4.794045059634934e-10,
+            -1.5508673872066937e-12,
+            1.5719622448206128e-12,
+            -3.8782077784850867e-13
+          ],
+          [
+            -1.7082778987241682e-05,
+            2.3011459198906046e-14,
+            1.894670348591329e-08,
+            -7.033304047377501e-16,
+            1.0308201083676108e-15,
+            -9.588090119269868e-10,
+            -3.1017347744133875e-12,
+            3.1439244896412256e-12,
+            -7.756415556970173e-13
+          ],
+          [
+            -6.557504773147923e-28,
+            -4.091995122023374e-33,
+            -2.1717234450485883e-28,
+            -1.5772946642882975e-41,
+            2.3117258202075976e-41,
+            -2.150233131394155e-35,
+            -6.955976418428699e-38,
+            7.050591427631272e-38,
+            -1.7394602578817178e-38
+          ]
+        ],
+        "output_order": [
+          "a_subtotal",
+          "g_subtotal",
+          "mu_z_subtotal_J_per_T"
+        ],
+        "primitive_independence_is_only_illustrative": true,
+        "propagated_covariance": [
+          [
+            2.7663688757429745e-24,
+            5.532737751485949e-24,
+            -5.945673016538667e-44
+          ],
+          [
+            5.532737751485949e-24,
+            1.1065475502971898e-23,
+            -1.1891346033077333e-43
+          ],
+          [
+            -5.945673016538667e-44,
+            -1.1891346033077333e-43,
+            1.3630346587782998e-63
+          ]
+        ],
+        "summed_a_gradient": [
+          -8.541389493620841e-06,
+          1.1505729599453023e-14,
+          9.473351742956645e-09,
+          -3.5166520236887503e-16,
+          5.154100541838054e-16,
+          -4.794045059634934e-10,
+          -1.5508673872066937e-12,
+          1.5719622448206128e-12,
+          -3.8782077784850867e-13
+        ],
+        "supplied_primitive_covariance": null
+      },
+      "plus": {
+        "accounting": {
+          "a_mu": 0.001165918585590328,
+          "charge_sign": 1,
+          "completeness_determined_by_contribution_ledger": true,
+          "da_to_dg": 2.0,
+          "da_to_dmoment_J_per_T": 4.4852167734065794e-26,
+          "dmass_to_dmoment_J_per_T_per_GeV": -4.249965073713716e-25,
+          "g_mu": 2.0023318371711807,
+          "magnetic_moment_Sz_plus_hbar_over_2_J_per_T": 4.490446171003096e-26,
+          "muon_magneton_J_per_T": 4.4852167734065794e-26,
+          "sign_convention": "mu=g*q*S/(2m); positive spin projection; q=charge_sign*e"
+        },
+        "complete_observable": false,
+        "error_scope": "first-order shared metrological inputs of evaluated components only; no omitted-component or probability enclosure",
+        "input_standard_uncertainties": [
+          1.6812289725184322e-12,
+          3.3624579450368644e-12,
+          3.6919299272581284e-32
+        ],
+        "input_standard_uncertainty_upper_over_all_correlations": [
+          2.2577229430031893e-12,
+          4.5154458860063785e-12,
+          3.692692946916716e-32
+        ],
+        "output_gradient": [
+          [
+            -8.541389493620841e-06,
+            1.1505729599453023e-14,
+            9.473351742956645e-09,
+            -3.5166520236887503e-16,
+            5.154100541838054e-16,
+            -4.794045059634934e-10,
+            -1.5508673872066937e-12,
+            1.5719622448206128e-12,
+            -3.8782077784850867e-13
+          ],
+          [
+            -1.7082778987241682e-05,
+            2.3011459198906046e-14,
+            1.894670348591329e-08,
+            -7.033304047377501e-16,
+            1.0308201083676108e-15,
+            -9.588090119269868e-10,
+            -3.1017347744133875e-12,
+            3.1439244896412256e-12,
+            -7.756415556970173e-13
+          ],
+          [
+            -6.557504773147923e-28,
+            -4.091995122023374e-33,
+            -2.1717234450485883e-28,
+            -1.5772946642882975e-41,
+            2.3117258202075976e-41,
+            -2.150233131394155e-35,
+            -6.955976418428699e-38,
+            7.050591427631272e-38,
+            -1.7394602578817178e-38
+          ]
+        ],
+        "output_order": [
+          "a_subtotal",
+          "g_subtotal",
+          "mu_z_subtotal_J_per_T"
+        ],
+        "primitive_independence_is_only_illustrative": true,
+        "propagated_covariance": [
+          [
+            2.8265308580353834e-24,
+            5.653061716070767e-24,
+            -5.945672746699135e-44
+          ],
+          [
+            5.653061716070767e-24,
+            1.1306123432141534e-23,
+            -1.189134549339827e-43
+          ],
+          [
+            -5.945672746699135e-44,
+            -1.189134549339827e-43,
+            1.363034658778421e-63
+          ]
+        ],
+        "summed_a_gradient": [
+          -8.541389493620841e-06,
+          1.1505729599453023e-14,
+          9.473351742956645e-09,
+          -3.5166520236887503e-16,
+          5.154100541838054e-16,
+          -4.794045059634934e-10,
+          -1.5508673872066937e-12,
+          1.5719622448206128e-12,
+          -3.8782077784850867e-13
+        ],
+        "supplied_primitive_covariance": null
+      }
+    }
+  },
+  "mass_gradient": [
+    0.0015420535607081295,
+    9.62830415569653e-09,
+    0.000510998950905377,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0
+  ],
+  "measured_anomaly_used": false,
+  "native_application_in_progress": "full-Q same-action parent Euler/constraint and event boundary application on the singular birth germ, followed by the charge-subtracted DtN/native Pauli contraction",
+  "overlap_ledger": {
+    "HVP_internal_radiation": "inclusive source radiation not added again as class4d",
+    "HVP_vs_HLbL": "two-current insertions versus connected four-current; exclusive/OPE light poles removed once in published HLbL",
+    "bosonic_logarithm": "no closed fermion loop; excluded from prior weak and local Higgs packets; added once",
+    "complete_common_action_native_overlap": null,
+    "hadronic_vs_leptonic_QED": "disjoint electromagnetic current flavor content",
+    "preserved_QED12_vs_new_QED345": "disjoint perturbative orders",
+    "weak": "provisional old leading EW and lepton Hgamma/HZ replaced by rematched packet; not added twice"
+  },
+  "primitive_order": [
+    "alpha_inverse_0",
+    "R_infinity_m_minus1",
+    "muon_electron_mass_ratio",
+    "lifetime_ps",
+    "higgs_GeV",
+    "tau_GeV",
+    "MW_GeV",
+    "MZ_GeV",
+    "top_pole_GeV"
+  ],
+  "producer_hashes": [
+    {
+      "bytes": 5463,
+      "path": "scripts/evaluate_muon_calibrated_extended_ledger.py",
+      "sha256": "74043265666c71bb63371ef6148d7dbf39a98c55e2b238a10a6c34ab0b169a85"
+    }
+  ],
+  "remaining_parent_term_order_and_size_established": false,
+  "shared_decay_theory_propagation": {
+    "GF_source_standard_uncertainty": 1.997151402453128e-13,
+    "estimated_standard_uncertainty": 2.645802603894407e-17,
+    "omitted_order_allowance_estimate": 7.760040467675991e-18,
+    "scope": "common decay-theory source only; not total weak/native uncertainty",
+    "summed_GF_sensitivity": 0.00013247881961500426
+  },
+  "status": {
+    "CONTROL_ONLY": [
+      "primitive independence illustration when covariance is unsupplied"
+    ],
+    "DERIVED": [
+      "signed common GF theory-source propagation"
+    ],
+    "EVALUATED": [
+      "retained local QED alpha1,alpha2 and literal fixed-Y H1",
+      "local leptonic QED alpha3-alpha5",
+      "rematched leading EW, fermionic-rest, VVA and fixed-Y lepton Hgamma/HZ",
+      "hadronic two-current LO,NLO,NNLO",
+      "published connected hadronic four-current projection",
+      "lowest electromagnetic top two-current VP",
+      "bosonic EW2 leading logarithm, closed fermion loops excluded"
+    ],
+    "OWNER_DEFINITION_GAP": [],
+    "UNEVALUATED": [
+      "full native overlap and charge-subtracted Pauli response",
+      "finite weak remainder"
+    ]
+  },
+  "strong_sectors_counted_once": true
+}
