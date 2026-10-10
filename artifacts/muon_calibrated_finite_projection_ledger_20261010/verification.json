@@ -1,0 +1,123 @@
+{
+  "byte_identical": true,
+  "complete_observable": false,
+  "corrected_error": "The partial projection packet stores only the GF sensitivity. Reused the SAME GF source standard uncertainty from the previously published additive ledger; no physical input changed.",
+  "cwd": "C:\\Users\\carbe\\Downloads\\BHSM_muon_parent_maxwell_worktree_20261001",
+  "error_scope": {
+    "complete_observable": false,
+    "full_native_response": false,
+    "native_remainder_unknown_not_truncation_allowance": true,
+    "shared_GF_sensitivity_summed_before_uncertainty": true
+  },
+  "evaluated_subtotal": 0.0011659186179552334,
+  "focused_math_verification": "The independently integrated finite W/Hgamma producer has its own verification and 18 focused tests; this script only adds signed common-source accounting.",
+  "g_subtotal": 2.0023318372359107,
+  "initial_attempts": [
+    {
+      "argv": [
+        "C:\\Python314\\python.exe",
+        "scripts/evaluate_muon_calibrated_finite_projection_ledger.py",
+        "--output",
+        "artifacts/muon_calibrated_finite_projection_ledger_20261010/run_1"
+      ],
+      "chunk_id": "93a237",
+      "exit_code": 1,
+      "original_token_count": 218,
+      "output": "Traceback (most recent call last):\r\n  File \"C:\\Users\\carbe\\Downloads\\BHSM_muon_parent_maxwell_worktree_20261001\\scripts\\evaluate_muon_calibrated_finite_projection_ledger.py\", line 80, in <module>\r\n    if __name__=='__main__':main()\r\n                            ~~~~^^\r\n  File \"C:\\Users\\carbe\\Downloads\\BHSM_muon_parent_maxwell_worktree_20261001\\scripts\\evaluate_muon_calibrated_finite_projection_ledger.py\", line 73, in main\r\n    packet=evaluate();args.output.mkdir(parents=True)\r\n  File \"C:\\Users\\carbe\\Downloads\\BHSM_muon_parent_maxwell_worktree_20261001\\scripts\\evaluate_muon_calibrated_finite_projection_ledger.py\", line 47, in evaluate\r\n    GF_source_standard_uncertainty=projection['errors']['GF_source_standard_uncertainty'],\r\n                                   ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\r\nKeyError: 'GF_source_standard_uncertainty'\r\n",
+      "wall_time_seconds": 1.2440657
+    },
+    {
+      "argv": [
+        "C:\\Python314\\python.exe",
+        "scripts/evaluate_muon_calibrated_finite_projection_ledger.py",
+        "--output",
+        "artifacts/muon_calibrated_finite_projection_ledger_20261010/run_2"
+      ],
+      "chunk_id": "212e5c",
+      "exit_code": 1,
+      "original_token_count": 218,
+      "output": "Traceback (most recent call last):\r\n  File \"C:\\Users\\carbe\\Downloads\\BHSM_muon_parent_maxwell_worktree_20261001\\scripts\\evaluate_muon_calibrated_finite_projection_ledger.py\", line 80, in <module>\r\n    if __name__=='__main__':main()\r\n                            ~~~~^^\r\n  File \"C:\\Users\\carbe\\Downloads\\BHSM_muon_parent_maxwell_worktree_20261001\\scripts\\evaluate_muon_calibrated_finite_projection_ledger.py\", line 73, in main\r\n    packet=evaluate();args.output.mkdir(parents=True)\r\n  File \"C:\\Users\\carbe\\Downloads\\BHSM_muon_parent_maxwell_worktree_20261001\\scripts\\evaluate_muon_calibrated_finite_projection_ledger.py\", line 47, in evaluate\r\n    GF_source_standard_uncertainty=projection['errors']['GF_source_standard_uncertainty'],\r\n                                   ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\r\nKeyError: 'GF_source_standard_uncertainty'\r\n",
+      "wall_time_seconds": 1.2687069
+    }
+  ],
+  "native_remainder_enclosed": false,
+  "producer_hashes": [
+    {
+      "bytes": 4991,
+      "path": "scripts/evaluate_muon_calibrated_finite_projection_ledger.py",
+      "sha256": "09ad6072065c7eae20c3fad3f42ae248c0f349ad5b1558812614b20012ff3cde"
+    },
+    {
+      "bytes": 2034,
+      "path": "scripts/verify_muon_finite_projection_ledger.py",
+      "sha256": "dd544fd1d06ddfaf74ae44b36d3423d7cb7b409ce210cd2855ab4bdef837a689"
+    }
+  ],
+  "replay": [
+    {
+      "bytes": 55396,
+      "path": "artifacts/muon_calibrated_finite_projection_ledger_20261010/run_1/finite_projection_ledger.json",
+      "sha256": "00b998a3349256b32e13a2dbe0de9a78abe72e52a4aba68c29e13a6d006b87a3"
+    },
+    {
+      "bytes": 55396,
+      "path": "artifacts/muon_calibrated_finite_projection_ledger_20261010/run_2/finite_projection_ledger.json",
+      "sha256": "00b998a3349256b32e13a2dbe0de9a78abe72e52a4aba68c29e13a6d006b87a3"
+    }
+  ],
+  "scientific_classification": {
+    "CONTROL_ONLY": [
+      "primitive-independence covariance illustration"
+    ],
+    "DERIVED": [
+      "same signed common GF source propagation and fixed-Y mass tangent"
+    ],
+    "EVALUATED": [
+      "retained local QED alpha1,alpha2 and literal fixed-Y H1",
+      "local leptonic QED alpha3-alpha5",
+      "rematched leading EW, fermionic-rest, VVA and fixed-Y lepton Hgamma/HZ",
+      "hadronic two-current LO,NLO,NNLO",
+      "published connected hadronic four-current projection",
+      "lowest electromagnetic top two-current VP",
+      "bosonic EW2 leading logarithm, closed fermion loops excluded",
+      "finite transverse W/Hgamma projection with fixed Y_mu"
+    ],
+    "OWNER_DEFINITION_GAP": [],
+    "UNEVALUATED": [
+      "non-Barr-Zee/HZ/counterterm finite bosonic completion",
+      "full native overlap and Pauli remainder"
+    ]
+  },
+  "signed_moment_subtotal": {
+    "mu_minus": -4.4904461711482596e-26,
+    "mu_plus": 4.4904461711482596e-26
+  },
+  "successful_runs": [
+    {
+      "argv": [
+        "C:\\Python314\\python.exe",
+        "scripts/evaluate_muon_calibrated_finite_projection_ledger.py",
+        "--output",
+        "artifacts/muon_calibrated_finite_projection_ledger_20261010/run_1"
+      ],
+      "chunk_id": "55b1da",
+      "exit_code": 0,
+      "original_token_count": 71,
+      "output": "{\"bytes\": 55396, \"complete_observable\": false, \"evaluated_subtotal\": 0.0011659186179552334, \"path\": \"artifacts\\\\muon_calibrated_finite_projection_ledger_20261010\\\\run_1\\\\finite_projection_ledger.json\", \"sha256\": \"00b998a3349256b32e13a2dbe0de9a78abe72e52a4aba68c29e13a6d006b87a3\"}\r\n",
+      "wall_time_seconds": 1.2676007
+    },
+    {
+      "argv": [
+        "C:\\Python314\\python.exe",
+        "scripts/evaluate_muon_calibrated_finite_projection_ledger.py",
+        "--output",
+        "artifacts/muon_calibrated_finite_projection_ledger_20261010/run_2"
+      ],
+      "chunk_id": "0be603",
+      "exit_code": 0,
+      "original_token_count": 71,
+      "output": "{\"bytes\": 55396, \"complete_observable\": false, \"evaluated_subtotal\": 0.0011659186179552334, \"path\": \"artifacts\\\\muon_calibrated_finite_projection_ledger_20261010\\\\run_2\\\\finite_projection_ledger.json\", \"sha256\": \"00b998a3349256b32e13a2dbe0de9a78abe72e52a4aba68c29e13a6d006b87a3\"}\r\n",
+      "wall_time_seconds": 1.2872905000000001
+    }
+  ]
+}

@@ -1,0 +1,44 @@
+{
+  "environment": {
+    "OPENBLAS_NUM_THREADS": "1",
+    "PYTHONPATH": "src"
+  },
+  "files": {
+    "scripts/evaluate_muon_native_coupled_source_heat.py": {
+      "bytes": 8986,
+      "sha256": "9ec586d2ba27e6d95e989a9690181a91c1aab551ecf9c9f1bf61f8429e9d4be3"
+    },
+    "src/bhsm/interface/muon_native_coupled_source_heat.py": {
+      "bytes": 14499,
+      "sha256": "6b37426c0564b5b87b78048a65e1b020c1b64710f1fc766f9e9f9f7f9be47dfe"
+    },
+    "tests/test_muon_native_coupled_source_heat.py": {
+      "bytes": 4479,
+      "sha256": "d9bd23814f03162bf3d2a4d9e92a771e8e55d1a0e3726d7600cbce5dc7b92921"
+    }
+  },
+  "paired_outputs": {
+    "coupled_source_heat.json": {
+      "byte_identical": true,
+      "bytes": 3621134,
+      "sha256": "70e0a8acdfe9fa4ff48b131a8b52684621ff3b7f65a2dd24f544edccfa098e36"
+    },
+    "source_mass_vertices.npz": {
+      "byte_identical": true,
+      "bytes": 87816,
+      "sha256": "a2ec6ab31603658829b1f3f739166a0739ee26de975cee505ddbe701447a8491"
+    }
+  },
+  "producer_commands": [
+    "C:\\Python314\\python.exe scripts/evaluate_muon_native_coupled_source_heat.py --output artifacts/muon_native_coupled_source_heat_20261010/run_1",
+    "C:\\Python314\\python.exe scripts/evaluate_muon_native_coupled_source_heat.py --output artifacts/muon_native_coupled_source_heat_20261010/run_2"
+  ],
+  "producer_exit_codes": [
+    0,
+    0
+  ],
+  "scope": "actual same-source H80 fixed-Y mass and full complementary first-response heat applications; genuine H_vJ scalar mean not assigned zero; no complete native heat/Pauli claim",
+  "test_command": "C:\\Python314\\python.exe -m pytest --noconftest -q tests/test_muon_native_coupled_source_heat.py",
+  "test_exit_code": 0,
+  "test_stdout": "5 passed in 3.45s"
+}
