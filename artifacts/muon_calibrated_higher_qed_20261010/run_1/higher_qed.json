@@ -1,0 +1,290 @@
+{
+  "Gate7_closed": false,
+  "Hgamma_lepton_term_separately_evaluated_not_yet_summed": true,
+  "action_selected": false,
+  "additional_weak_measurements": {
+    "W_mass": {
+      "edition": "CMS2026 Nature652321; arxiv2412.13872",
+      "measured_anomaly_used": false,
+      "scheme": "running-width",
+      "source": "https://arxiv.org/abs/2412.13872",
+      "standard_uncertainty_GeV": 0.0099,
+      "value_GeV": 80.3602
+    },
+    "Z_mass": {
+      "edition": "LEP2006 Table2.13 without lepton universality",
+      "scheme": "running-width",
+      "source": "https://arxiv.org/abs/hep-ex/0509008",
+      "standard_uncertainty_GeV": 0.0021,
+      "value_GeV": 91.1876
+    },
+    "dependency": "CMS W mass uses LEP Z for its closure uncertainty: TableA.1 impact1.7MeV. Signed W/Z covariance not supplied; independence is illustrative only.",
+    "no_electroweak_fit_or_measured_muon_anomaly_selected": true
+  },
+  "classification": "CALIBRATED_LOCAL_HIGHER_QED_AND_FIXED_Y_LEPTON_HGAMMA_APPLICATION",
+  "complete_a_mu": null,
+  "complete_g_mu": null,
+  "complete_magnetic_moment": null,
+  "complete_uncertainty": false,
+  "completed_native_response": null,
+  "execution": "python scripts/evaluate_muon_calibrated_higher_qed.py --output <new-directory>",
+  "fixed_Y_charged_lepton_HZ_two_loop": {
+    "a_mu_HZ_charged_leptons": -8.64399371867813e-17,
+    "action_selected": false,
+    "contributions": [
+      {
+        "a_mu": -8.589267561547288e-17,
+        "internal_lepton": "tau",
+        "kernel": {
+          "equation": "17",
+          "quadrature_error_estimate": 8.303771732720566e-12,
+          "source": "https://arxiv.org/abs/1306.5546",
+          "value": -0.00391868844268672
+        },
+        "quadrature_error_estimate": 1.8200813416401533e-25
+      },
+      {
+        "a_mu": -5.47237608012131e-19,
+        "internal_lepton": "muon",
+        "kernel": {
+          "equation": "17",
+          "quadrature_error_estimate": 8.363840437559337e-11,
+          "source": "https://arxiv.org/abs/1306.5546",
+          "value": -2.4709576175217197e-05
+        },
+        "quadrature_error_estimate": 1.852321546265807e-24
+      },
+      {
+        "a_mu": -2.3963296292451492e-23,
+        "internal_lepton": "electron",
+        "kernel": {
+          "equation": "17",
+          "quadrature_error_estimate": 9.522602248628806e-11,
+          "source": "https://arxiv.org/abs/1306.5546",
+          "value": -1.0574501214822167e-09
+        },
+        "quadrature_error_estimate": 2.1579546356210285e-24
+      }
+    ],
+    "equation": "13 with fixed g_hmu*g_hf replacing m_mu*m_f/v\u00b2",
+    "fixed_Y_owner": "ae31_c2_intrinsic_m4_lepton_action.charged_lepton_yukawa_operator",
+    "quark_HZ_included": false,
+    "source": "https://arxiv.org/abs/1306.5546",
+    "whole_EW_evaluated": false
+  },
+  "fixed_Y_charged_lepton_Hgamma_two_loop": {
+    "HZ_included": false,
+    "a_mu_Hgamma_charged_leptons": -6.85127341783822e-14,
+    "action_selected": false,
+    "contributions": [
+      {
+        "a_mu": -6.781949994022558e-14,
+        "higgs_coupling": 0.00714519063101241,
+        "internal_lepton": "tau",
+        "kernel": {
+          "equation": "14",
+          "quadrature_error_estimate": 7.619722908192017e-11,
+          "source": "https://arxiv.org/abs/1306.5546",
+          "value": -0.012642022344505182
+        },
+        "quadrature_error_estimate": 4.0876829927553062e-22
+      },
+      {
+        "a_mu": -6.931811911065324e-16,
+        "higgs_coupling": 0.0004292435468707106,
+        "internal_lepton": "muon",
+        "kernel": {
+          "equation": "14",
+          "quadrature_error_estimate": 3.8696534475010647e-11,
+          "source": "https://arxiv.org/abs/1306.5546",
+          "value": -0.0001278832003631134
+        },
+        "quadrature_error_estimate": 2.0975163104238275e-22
+      },
+      {
+        "a_mu": -5.3047050090689936e-20,
+        "higgs_coupling": 2.1242013292130012e-06,
+        "internal_lepton": "electron",
+        "kernel": {
+          "equation": "14",
+          "quadrature_error_estimate": 9.188481238162795e-11,
+          "source": "https://arxiv.org/abs/1306.5546",
+          "value": -9.564272422633891e-09
+        },
+        "quadrature_error_estimate": 5.09627709207342e-22
+      }
+    ],
+    "equation": "1306.5546 Eq12 with m_mu*m_f/v\u00b2 replaced by g_hmu*g_hf",
+    "fixed_Y_owner": "ae31_c2_intrinsic_m4_lepton_action.charged_lepton_yukawa_operator",
+    "included": "charged-lepton H\u03b3 only",
+    "quark_Hgamma_included": false,
+    "source": "https://arxiv.org/abs/1306.5546",
+    "whole_EW_evaluated": false
+  },
+  "input_config": {
+    "bytes": 19492,
+    "sha256": "0b614ab6f26d169ca04a4878f767f78eb3668484840867e46aebbebf186369da"
+  },
+  "input_uncertainty": {
+    "C4_C5_masspoint_uncertainty_accounted_in_approximation_allowance": true,
+    "gradient": [
+      -6.711323306035686e-09,
+      2.6455792699951608e-18,
+      4.550572704214582e-10,
+      0.0,
+      0.0,
+      -1.6336750952958688e-11
+    ],
+    "illustrative_standard_uncertainty_independent_primitives": 7.73916769049142e-14,
+    "measured_cross_source_covariance": null,
+    "primitive_order": [
+      "alpha_inverse_0",
+      "R_infinity_m_minus1",
+      "muon_electron_mass_ratio",
+      "lifetime_ps",
+      "higgs_GeV",
+      "tau_GeV"
+    ],
+    "scope": "linear C3 mass dependencies and alpha dependence; no full-observable uncertainty",
+    "standard_uncertainty_upper_over_all_primitive_correlations": 7.965559914494214e-14
+  },
+  "leading_EW": {
+    "a_mu_leading_EW": 1.9479386785802476e-09,
+    "derivatives": {
+      "GF": 0.00016700759610102054,
+      "muon_mass": 3.6872377641051983e-08,
+      "w_mass": 6.400789404500518e-12,
+      "z_mass": -5.640774806043175e-12
+    },
+    "equation": "8",
+    "full_EW_evaluated": false,
+    "input_uncertainty": {
+      "GF_scope": "PROVISIONAL_REFERENCE_QED_CALIBRATED_MATCHING",
+      "actual_cross_source_covariance": null,
+      "gradient": [
+        -1.421479530828976e-11,
+        -8.875461671793816e-17,
+        -4.7122059133822825e-12,
+        -4.4332183556225966e-16,
+        0.0,
+        0.0,
+        6.400789404500518e-12,
+        -5.640774806043175e-12
+      ],
+      "illustrative_independent_primitive_standard_uncertainty": 6.447783975368761e-14,
+      "standard_uncertainty_upper_over_all_primitive_correlations": 7.698999012394936e-14
+    },
+    "native_evaluated": false,
+    "omitted_terms": "terms suppressed by m_mu\u00b2/M_Z\u00b2 or m_mu\u00b2/M_H\u00b2; higher EW orders",
+    "radial_Higgs_one_loop_included": false,
+    "sin_squared_theta_W": 0.22337664470480512,
+    "source": "https://arxiv.org/abs/1306.5546"
+  },
+  "local_QED_through_alpha5_plus_preserved_fixed_Y_Higgs_one_loop": 0.0011658471886561465,
+  "measured_muon_anomaly_used": false,
+  "prior_subtotal": {
+    "path": "artifacts/muon_calibrated_pauli_20261009/run_1/calibrated_pauli.json",
+    "rerun": false,
+    "reused": true,
+    "sha256": "20a4b5a169439f2db2ff8d37c9746bb7a43c6887a266d6c3e5262d8500fad419",
+    "value": 0.0011655419088320725
+  },
+  "producer_source": {
+    "sha256": "da58048f891504419159d558b44d4a0c6cb4cbf703aca7884dd515d88f99ae3a"
+  },
+  "qed": {
+    "C3_masspoint_updates": {
+      "electron": 3.4736949245939286e-06,
+      "electron_order1": 3.4705167344384336e-06,
+      "tau": -1.9278437963138372e-07,
+      "tau_order2": -2.122807586739904e-07
+    },
+    "Gate7_closed": false,
+    "action_selected": false,
+    "classification": "CALIBRATED_LOCAL_ON_SHELL_LEPTONIC_QED_THROUGH_ALPHA5_INCREMENT",
+    "coefficients": {
+      "C3": 24.050513079976053,
+      "C4": 130.87817033507358,
+      "C5": 750.1524
+    },
+    "complete_observable": false,
+    "contributions": {
+      "local_leptonic_QED_3_loop": 3.014190628579103e-07,
+      "local_leptonic_QED_4_loop": 3.81003566368141e-09,
+      "local_leptonic_QED_5_loop": 5.0725552432206665e-11
+    },
+    "derivative_alpha": 0.000126038991685956,
+    "derivative_log_muon_electron_ratio": 9.406242273551584e-08,
+    "derivative_log_muon_tau_ratio": 2.9031876750993355e-11,
+    "derivative_scope": "C3 selected-mass derivative; C4/C5 reference-point mass derivatives estimated separately",
+    "errors": {
+      "C3_anchor_rounding_and_reference_rounding_allowance": 2.506549958876889e-16,
+      "C3_masspoint_update_truncation_estimate": 5.683494049105303e-16,
+      "C4_C5_reference_masspoint_approximation_allowance": 1e-14,
+      "C4_leading_log_masspoint_shift_diagnostic": 4.3135862745960344e-16,
+      "C5_leading_log_masspoint_shift_diagnostic": -1.3132200988658543e-17,
+      "all_orders_remainder_enclosure": null,
+      "approximation_scope": "near-reference mass sensitivity and omitted-order estimates, not rigorous enclosures",
+      "mixed_C3_quadrature_error_estimate": 2.5289669447474932e-21,
+      "omitted_alpha6_estimated_standard_uncertainty": 1e-12,
+      "published_C4_integration_standard_uncertainty": 1.746682016755068e-13,
+      "published_C5_integration_standard_uncertainty": 5.82770049652891e-14
+    },
+    "increment": 3.052798240740239e-07,
+    "inputs": {
+      "alpha": 0.007297352562787135,
+      "muon_electron_ratio": 206.76838,
+      "muon_tau_ratio": 0.05945586619721249
+    },
+    "measured_anomaly_used": false,
+    "mixed_three_loop": {
+      "coefficient": 0.0005276024783071421,
+      "derivative_log_electron_ratio": 0.00010405326312170693,
+      "derivative_log_tau_ratio": 0.0010478466756115292,
+      "derivative_quadrature_error_estimates": [
+        1.979739046511519e-12,
+        7.703969203489636e-13
+      ],
+      "equation": "mixed two-VP diagram, Eq.10",
+      "quadrature_error_estimate": 2.0178867257691913e-13,
+      "source": "https://arxiv.org/abs/hep-ph/9812394"
+    },
+    "native_remainder": null,
+    "old_two_loop_subtotal_included": false,
+    "reference_mass_point": {
+      "muon_electron_ratio": 206.7682843,
+      "muon_tau_ratio": 0.0594649,
+      "role": "published-integral reference only; not selected mass calibration"
+    },
+    "sources": {
+      "C3_anchor": {
+        "equations": "9, with reference mass ratios",
+        "url": "https://arxiv.org/abs/1205.5370"
+      },
+      "C3_series": {
+        "equations": "6.15-6.17",
+        "url": "https://arxiv.org/abs/2006.04822"
+      },
+      "C4": {
+        "equations": "6.8,6.18-6.20",
+        "url": "https://arxiv.org/abs/2006.04822"
+      },
+      "C5_mass_dependent": {
+        "equations": "6.21-6.23",
+        "url": "https://arxiv.org/abs/2006.04822"
+      },
+      "C5_universal": {
+        "equation": "7.19",
+        "primary": [
+          "https://arxiv.org/abs/2404.00649",
+          "https://arxiv.org/abs/2412.06473"
+        ],
+        "weighted_average_source": "https://arxiv.org/abs/2505.21476"
+      },
+      "alpha6_estimate": {
+        "equations": "6.24-6.25, Table18",
+        "url": "https://arxiv.org/abs/2006.04822"
+      }
+    }
+  }
+}
