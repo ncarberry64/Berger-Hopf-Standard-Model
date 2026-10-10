@@ -1,0 +1,26 @@
+{
+  "all_five_in_one_invocation": false,
+  "classification": "cache tests of NEW first-order component; no earlier production/check campaign repeated",
+  "current_checks": 5,
+  "current_passing": 5,
+  "executions": [
+    {
+      "command": "C:\\Python314\\python.exe -m pytest --noconftest -q tests/test_muon_first_order_complement.py",
+      "exit_code": 1,
+      "failure": "exact cached Ms00.imag==0 was too strict: imag=-2.1631794498974807e-17,real=21.55833924335777",
+      "output": "1 failed, 3 passed in 0.45s"
+    },
+    {
+      "change": "only affected assertion changed to relative binary64 arithmetic threshold; no production rerun",
+      "command": "C:\\Python314\\python.exe -m pytest --noconftest -q tests/test_muon_first_order_complement.py::test_actual_formal_eta_dual_and_reached_complement",
+      "exit_code": 0,
+      "output": "1 passed in 0.42s"
+    },
+    {
+      "command": "C:\\Python314\\python.exe -m pytest --noconftest -q tests/test_muon_first_order_complement.py::test_once_owned_intrinsic_LL_completion",
+      "exit_code": 0,
+      "output": "1 passed in 0.43s"
+    }
+  ],
+  "full_suite_run": false
+}

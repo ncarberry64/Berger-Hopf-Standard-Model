@@ -1,0 +1,34 @@
+{
+  "calculation_HEAD": "0ec64ea11cd52661b567c2efaf96ebedefc41e4f",
+  "checks": {
+    "K0_cut_Hermitian_residual": 0.0,
+    "K0_cut_norm": 4639.038988497706,
+    "parent_Clifford_residual": 7.953175920042868e-15,
+    "probe_Gram_consistency_residual": 1.1102230246251565e-16,
+    "source_image_n1_body_action_norm": 119.60684614428256,
+    "source_image_n3_body_action_norm": 86.29064894176535
+  },
+  "classification": "canonical metric/common-A bulk Dirac summand on compact cut probes/source image",
+  "equations": {
+    "C_spin": "i gamma0 h0+i gamma4 h4-3i gamma1 gamma2 gamma3/(2r)",
+    "D5": "i gamma0/nu (partial_tau-zeta partial_rho)+i gamma4/C partial_rho+i gammaa/r E_a+C_spin+i gammaa ((lambda-1)/r) jmath_a",
+    "E_a": "coefficient action +2iJ_a on active m, saved RIGHT coframe",
+    "coframe": "theta0=nu dtau; theta4=C(drho+zeta dtau); thetaa=r thetaR_a",
+    "h0": "[(partial_tau-zeta partial_rho)log(C r^3)-partial_rho zeta]/(2nu)",
+    "h4": "partial_rho log(nu r^3)/(2C)",
+    "source_image_time_jet": "D5(Xi_A chi b)=D5_image_b*b+D5_image_b_tau*partial_tau b; T_b_prime=-H T_b/2"
+  },
+  "error_scope": "binary64 body/actions and four-point cut quadrature; no certified rational-Dirac quadrature, interpolation/history or complement error",
+  "execution": {
+    "causal_returns": 0,
+    "native_heat_actions": 0,
+    "old_producers": 0,
+    "physical_transfer_directions": 0,
+    "source_contact_recomputed": false
+  },
+  "input_interpolation": "piecewise affine rho; right derivative on first inherited forward time cell",
+  "physical_a_mu": null,
+  "physical_g_mu": null,
+  "scope": "one sheet, one family, canonical metric/common-A summand. Owned additional zero-order/interface/quotient/temporal-domain terms unevaluated, never assigned zero.",
+  "source_scope": "all n1+n3 and 64 output components retained for four spin probes on one charged weak-doublet coordinate; no physical-state choice"
+}

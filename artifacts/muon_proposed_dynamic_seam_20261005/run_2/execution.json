@@ -1,0 +1,25 @@
+{
+  "accepted_run": "run_2",
+  "cache_application": {
+    "command": "C:\\Python314\\python.exe scripts/replay_muon_proposed_dynamic_seam.py --output artifacts/muon_proposed_dynamic_seam_20261005/run_2",
+    "exit_code": 0,
+    "reason": "accepted corrected partial-kernel label and conjugate bookkeeping provenance; source/readout values unchanged",
+    "wall_seconds": 0.8817616
+  },
+  "independent_review": "read-only review of new seam Green/action/charge-conjugation/matching equations by schur_jet_check; no computations delegated",
+  "new_parent_or_visibility_solves": 0,
+  "old_production_checks_executed": 0,
+  "physical_native_transfer_directions_executed": 0,
+  "source_identity_guards": "only equality of actual state, saved source coordinate, and saved source basis between the two directly consumed NPZ inputs",
+  "targeted_tests": {
+    "affected_recheck": {
+      "command": "C:\\Python314\\python.exe -m pytest --noconftest -q tests/test_muon_proposed_dynamic_seam.py::test_actual_readout_retains_unmatched_spin_and_carrier",
+      "passed": 1,
+      "pytest_seconds": 0.81,
+      "three_unchanged_checks_reused": true
+    },
+    "command": "C:\\Python314\\python.exe -m pytest --noconftest -q tests/test_muon_proposed_dynamic_seam.py",
+    "passed": 4,
+    "pytest_seconds": 0.87
+  }
+}

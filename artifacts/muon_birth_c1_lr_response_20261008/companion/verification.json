@@ -1,0 +1,54 @@
+{
+  "commands_executed": [
+    "python verify_all.py --source-root source_snapshot --out run_1",
+    "python verify_all.py --source-root source_snapshot --out run_2",
+    "python verify_all.py --out <temporary portable-check directory>"
+  ],
+  "control_breakdown": {
+    "local_LR_CAR": 32,
+    "response_reduction": 6,
+    "scalar_response": 5
+  },
+  "date": "2026-10-08",
+  "exact_control_groups_passed": 43,
+  "inherited_carrier_constants_match_pinned_sources": true,
+  "new_bound_arithmetic": "Exact fractions and outward decimal rounding",
+  "physical_status": {
+    "actual_LR_perturbation_norm_and_variation": null,
+    "actual_LR_same_quadratic_form_perturbation": null,
+    "complete_CAR_verdict": null,
+    "complete_E1_kernel": null,
+    "incoming_H_C1": null,
+    "incoming_active_Higgs_domain_and_source_binding": null,
+    "incoming_consumed_Higgs_variation": null,
+    "minimal_physical_moment_rank": null,
+    "physical_a_mu": null,
+    "physical_g_mu": null,
+    "physical_member_or_covariance_selected": false,
+    "physical_member_selection_proved_necessary": false
+  },
+  "pinned_source_files_checked": 43,
+  "portable_replay_mathematics_matches_source_checked_replays": true,
+  "portable_replay_without_repository_succeeds": true,
+  "reference_commit": "ad750077f1a3138418a2dc4ee65f7c50236b5608",
+  "replay_summaries_byte_identical": true,
+  "result_bytes": 19350,
+  "result_sha256": "269452297e37de4d19450413d8422e281ae2402cef52acd4a4d811083ddffcf0",
+  "runtime_requirement": "Python 3 standard library",
+  "schema": "BHSM_C1_LR_CONTINUATION_VERIFICATION_V1",
+  "scope": [
+    "Exact finite controls verify the stated identities, including nonzero omitted-contact examples.",
+    "New numerical bounds apply to the retained lowest carrier channel and normalized proper-time L2 spaces.",
+    "The bounded-perturbation numerical criterion requires a verified common quadratic realization and unchanged trace domain, or explicitly controlled pullback contacts.",
+    "The incoming physical Higgs restriction, its consumed variation, and its source/domain/response binding remain unevaluated.",
+    "No physical carrier member or covariance was selected.",
+    "Repository-wide tests and five publication audits were not rerun for this standalone companion.",
+    "Repository source files are not bundled; the immutable source manifest permits independent retrieval and checking."
+  ],
+  "source_hash_methods": [
+    "Git blob SHA-1",
+    "SHA-256"
+  ],
+  "two_source_checked_replays_byte_identical": true,
+  "verification_passed": true
+}

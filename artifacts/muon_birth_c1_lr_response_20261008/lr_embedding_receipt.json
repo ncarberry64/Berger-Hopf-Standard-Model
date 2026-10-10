@@ -1,0 +1,258 @@
+{
+  "action_and_tensor_ledger": {
+    "Euler_equations": [
+      "i slash(D) L_L-Y_l H e_R=0",
+      "i slash(D) e_R-Y_l^dagger H^dagger L_L=0"
+    ],
+    "additive_action": "S_H=-integral dmu4[bar(Psi_+) Y_f H Psi_-+h.c.]",
+    "covariant_mass": "M(m)=m P_R+conjugate(m)P_L=Re(m)I+i Im(m)gamma5",
+    "gamma_convention": "gamma0=diag(I2,-I2); gammai=[[0,sigmai],[-sigmai,0]]; signature(+---); gamma5=[[0,I2],[I2,0]]",
+    "global_mass_L2_bound": "For a canonically normalized fixed-domain multiplication form, ||B(m)||=ess sup |m|. Finite family-fiber boundedness does not supply this spacetime/family-uniform supremum.",
+    "literal_kinetic_guard": "The retained AE2 antisymmetrized kinetic expression annihilates a beta-Hermitian insertion P_Y=-M: beta P_Y-P_Y^dagger beta=0. It does not represent the separate additive density -Psi^dagger B(m)Psi.",
+    "muon_compression_scope": "m_mu=y_mu h is a local fixed-family, fixed spin trivialization compression. Charged-Higgs/off-family/source-response terms are not set to zero by this compression.",
+    "normal_pullback": "integral ds J |u0|^2=1; two-sheet overlap=1; inherited Y_f unchanged",
+    "ordered_action_mass": "B(m)=beta M(m)=Re(m)beta+i Im(m)beta gamma5; B^dagger=B; B^2=|m|^2 I"
+  },
+  "conditional_new_form_result": {
+    "actual_E_or_a": null,
+    "amplitude_weighted_criterion": "If T_lambda<=a_duration lambda^2 and e_weighted=sup lambda^2||E_lambda||, then w<=a_duration e_weighted/(3/2-S a_duration lambda_star^2). Sufficient e_weighted<(2/5)(3/2-S a_duration lambda_star^2)/a_duration.",
+    "classification": "CONDITIONAL_EXACT_COMMON_DOMAIN_MAJORANT_NOT_PHYSICAL_LR_BOUND",
+    "exact_difference": "q1[u]-q0[u]=2 Re<A0u,Eu>+||Eu||^2, q0=||A0u||^2+kappa^2||u||^2",
+    "hypothesis": "A1=A0+E in the SAME normalized geometric L2 pairing and full one-end H1 form domain; u(0)=0; arbitrary u(T); ||W||<=S; ||E||<=a",
+    "interior_difference": "(E^dagger-E)partial_tau-partial_tau(E)+W^dagger E+E^dagger W+E^dagger E",
+    "one_end_bound": "||u||<=ell q0[u]^(1/2), ell=T/(3/2-S T), S T<3/2",
+    "rational_insertion_threshold": "a<(2/5)(3/2-S T)/T",
+    "rational_sufficient_criterion": "w<2/5 gives eta<24/25<1",
+    "regularity_note": "The form estimate needs only bounded E, not E derivatives. The displayed differential expansion assumes regular E and fixed normalized derivative principal symbol. A generic E leaves a first-order cross term; Hermitian E cancels that principal cross but leaves E derivatives, quadratic and conormal terms.",
+    "relative_bound": "|q1[u]-q0[u]|<=eta q0[u], eta=2w+w^2, w=a ell",
+    "response_consequence": "(1-eta)M0<=M1<=(1+eta)M0 by minimization at each terminal trace. With the same nonnegative returned-child load, S1>=(1-eta)S0 and ||S1^-1||<=b/(1-eta). This is the AE2 positive seam subcase; no complete retarded AE4 KKT coercivity is inferred.",
+    "sharp_criterion": "w<sqrt(2)-1",
+    "terminal_conormal": "Gamma1,1 u=Gamma1,0 u+E(T)u(T). This boundary contact is already included in the polarized form, not independently added again."
+  },
+  "directional_response_target": {
+    "coefficient": "t_alpha=b_alpha m_mu+delta_alpha m_mu=y_mu(b_alpha h+delta_alpha h) in the fixed-family/frame scope",
+    "consumed_scalar_family": "k_alpha,a=ReTr[X_a^dagger E_L^dagger(delta_alpha L_LR)E_R] plus explicit source/readout/domain contacts booked once",
+    "current_value": null,
+    "interpretation": "X_a runs over the inherited consumed projected CAR tangent/readout directions, not a chosen covariance. E_L,E_R are the actual same-domain stationary left/right extensions; E_R need not equal E_L for the selected retarded class.",
+    "local_direct_cotangent": "K_alpha,LR=-B(t_alpha), with moving beta/gamma5/family terms retained",
+    "no_generic_full_kernel_or_full_history_requirement": true,
+    "same_open_operand": "INCOMING_C1_ADDITIVE_LR_BRIDGE_ACTION_COTANGENT",
+    "scalar_adjoint_route": "If the relevant Higgs jet is h_alpha=A_H^-1 f_alpha and this scalar pairing defines ell_alpha,a(h_alpha), solve A_H^dagger p_alpha,a=ell_alpha,a and consume <p_alpha,a,f_alpha> with scalar boundary multipliers. This can be enclosed without selecting C or reconstructing all field/matrix entries. The scalar Jacobi operator and adjoint use real-linear duality, including conjugate Higgs and constrained boundary components.",
+    "stationary_reduction": "delta Lambda=E_L^dagger(delta L)E_R; extension-solution jets cancel but explicit source/readout/measure/domain jets remain",
+    "unbound_value": "The actual incoming action-bound h_alpha/source/trace and the resulting consumed scalar pairing; not an undefined action or new boundary law."
+  },
+  "exact_positive_vs_algebraic_partner": {
+    "Dkin": "i gamma^a nabla_a",
+    "algebraic_product": "(Dkin+M^dagger)(Dkin-M)=Dkin^2-i gamma^a(nabla_a M)-M^dagger M",
+    "bulk_L2_V_from_partner_promoted": false,
+    "derivative_note": "nabla_a M contains coefficient, gauge and spin/family bundle transport; spatial gradients need not preserve a separated carrier angular channel.",
+    "exact_positive_symbol": "(gamma.p-M)^dagger(gamma.p-M)=(gamma.p)^dagger(gamma.p)+|m|^2 I-2p0 B(m), all real p_a",
+    "heat_realization_guard": "AE4 uses D_strat^dagger D_strat; no Wick rotation, positive radial-sign replacement or unproved Lorentz-body/heat identification is performed.",
+    "intertwining": "gamma^a M=M^dagger gamma^a for each a",
+    "normal_cross": "nonzero as a symbolic coefficient for general m and p0; no selected physical momentum or mass",
+    "partner_is_L2_adjoint": false,
+    "positive_carrier_scope": "The executable carrier is A0=partial_tau+chi mu exp(-x), K0=A0^star A0, on its retained normalized proper-time/zero-birth reference. Identifying the additive Euler operator with A0+E requires the same full pairing, channel, domain and source/conormal transport; it is not supplied by the local partner identity.",
+    "real_mass_normal_cross": "-2 m p0 beta; beta-positive diagonal entry=-2 m p0",
+    "spatial_principal_mass_cross": "zero by gamma^i^dagger=-gamma^i and gamma^i M=M^dagger gamma^i"
+  },
+  "first_consumed_unavailable_contraction": {
+    "argument": "parent_jet[0]",
+    "consumed_pairing": "p^dagger (P_full-P_car) r=p^dagger E_0,L^dagger V E_1,R r, with actual full-minus-carrier quadratic V and boundary contacts; equivalently the consumed pairing of W-V_bi(A_0+V_ii)^(-1)V_ib",
+    "derivative_order": 0,
+    "operand": "P_F",
+    "primitive_LR_pairing": "-integral_C1 dmu u_L^dagger beta M_LR(H_C1)u_R in the actual action pairing",
+    "scope": "Zero-order parent response precedes the separate directional t_alpha/adjoint contraction. No whole matrix reconstruction is required if these consumed pairings are enclosed directly.",
+    "unavailable_physical_quantity": "The action-bound incoming additive LR paired response/enclosure on the retained whole family; raw mass or cancelling algebraic partner is not a substitute.",
+    "value": null
+  },
+  "primary_result": {
+    "actual_incoming_LR_uniform_enclosure": null,
+    "actual_positive_carrier_embedding_established": false,
+    "actual_pulled_back_LR_cancellation": null,
+    "classification": "EXACT_ACTION_SPECIFIC_LOCAL_SYMBOL_DERIVATION_WITH_UNBOUND_PHYSICAL_RESPONSE",
+    "different_missing_gap_introduced": false,
+    "statement": "The additive LR action produces a zero-order Euler mass. Its cancelling algebraic partner is not the geometric L2 adjoint of the retained Lorentzian operator; the positive square retains a normal first-order mass cross term. Hence the companion bulk-L2 V criterion cannot consume only the raw mass norm or the algebraically cancelling partner."
+  },
+  "schema": "BHSM_C1_LR_ACTION_TO_FORM_EMBEDDING_RECEIPT_V1",
+  "scope": {
+    "CAR_covariance_selected": false,
+    "a_mu": null,
+    "baseline_commit": "ad750077f1a3138418a2dc4ee65f7c50236b5608",
+    "current_C2_Higgs_vacuum_transplanted": false,
+    "g_mu": null,
+    "incoming": "C1/branch23/E1-minus",
+    "physical_amplitude_selected": false
+  },
+  "sources": [
+    {
+      "bytes": 20770,
+      "path": "src/bhsm/interface/completion/foundational_dirac_spin_glue_v14_45.py",
+      "raw_sha256": "ad05ede643af517ded29823b6f5d3076ae64bc2e985ebf500ba48564ad8c8015",
+      "symbols": [
+        {
+          "end_line": 89,
+          "start_line": 79,
+          "symbol": "dirac_gamma_matrices"
+        },
+        {
+          "end_line": 134,
+          "start_line": 92,
+          "symbol": "foundational_action_payload"
+        },
+        {
+          "end_line": 227,
+          "start_line": 185,
+          "symbol": "zero_mode_pullback_payload"
+        }
+      ]
+    },
+    {
+      "bytes": 10856,
+      "path": "src/bhsm/interface/ae31_c2_intrinsic_m4_lepton_action.py",
+      "raw_sha256": "f3fee1ef24a3f13ef94d4ce5b146f9ac7a827045e369819b35ee8af5ccf0678a",
+      "symbols": [
+        {
+          "end_line": 63,
+          "start_line": 29,
+          "symbol": "action_composition_contract"
+        },
+        {
+          "end_line": 88,
+          "start_line": 66,
+          "symbol": "charged_lepton_yukawa_operator"
+        },
+        {
+          "end_line": 173,
+          "start_line": 148,
+          "symbol": "first_variation_and_pole_gate"
+        }
+      ]
+    },
+    {
+      "bytes": 8799,
+      "path": "src/bhsm/interface/ae31_c2_chiral_green_domain.py",
+      "raw_sha256": "98fdf6a943a8934c7d2bf82f3510fc5ea30226aac60a24a965e7aa28874ac146",
+      "symbols": [
+        {
+          "end_line": 59,
+          "start_line": 25,
+          "symbol": "domain_provenance_reconciliation"
+        },
+        {
+          "end_line": 90,
+          "start_line": 62,
+          "symbol": "chiral_operator_assembly"
+        }
+      ]
+    },
+    {
+      "bytes": 8073,
+      "path": "src/bhsm/interface/action_extension_global_spin_reset_ae2.py",
+      "raw_sha256": "cc46df6372196e610ebfe0921cbb7f438f08d645f5b144faebdf1c6d2a991ccb",
+      "symbols": [
+        {
+          "end_line": 194,
+          "start_line": 156,
+          "symbol": "action_definition"
+        }
+      ]
+    },
+    {
+      "bytes": 38636,
+      "path": "src/bhsm/interface/aether_forward_channel_transfer.py",
+      "raw_sha256": "fe5cf24ef6b6be45af0a77d9559e855cb3b08f79f2ac5c6cc0cde19ebfe56eea",
+      "symbols": [
+        {
+          "end_line": 93,
+          "start_line": 68,
+          "symbol": "product_dirac_channel_transfer_generator"
+        }
+      ]
+    },
+    {
+      "bytes": 15673,
+      "path": "src/bhsm/interface/ae4_stratified_dirac_zeta_induced_owner.py",
+      "raw_sha256": "067438afb5cc01cfbf76b715e67d5aa35a097484184e99217354cb78abffd34c",
+      "symbols": [
+        {
+          "end_line": 302,
+          "start_line": 272,
+          "symbol": "microscopic_owner_contract"
+        }
+      ]
+    },
+    {
+      "bytes": 13437,
+      "path": "theory/muon_parent_source_contact_and_dirac_body_20261003.md",
+      "raw_sha256": "2313493fb7d30970aa73a44bf2bb6784bfc0cb9a59fe5baf15529adde090df30",
+      "span": {
+        "end_line": 216,
+        "start_line": 189
+      }
+    },
+    {
+      "bytes": 14063,
+      "path": "artifacts/muon_birth_c1_lr_response_20261008/companion/analysis_car.md",
+      "raw_sha256": "28aa668ad71bb7cbb17a0dd653029d20a91ad0d8f3497335a0de53e872b281be",
+      "span": {
+        "end_line": 136,
+        "start_line": 63
+      }
+    },
+    {
+      "bytes": 19247,
+      "path": "artifacts/muon_birth_c1_lr_response_20261008/companion/analysis_response.md",
+      "raw_sha256": "259e5bbea78903ffd41282cde4ccec5c5d7dc402a16d030a2f45cf720c0233d4",
+      "span": {
+        "end_line": 109,
+        "start_line": 32
+      }
+    },
+    {
+      "bytes": 9955,
+      "path": "src/bhsm/interface/muon_birth_c1_lr_form_response.py",
+      "raw_sha256": "caf50aa77ed2ee76426a41d29b16a5de0576ddcfd08780fcd8a503ec6576b2ba",
+      "symbols": [
+        {
+          "end_line": 110,
+          "start_line": 38,
+          "symbol": "exact_lr_symbol_identity"
+        },
+        {
+          "end_line": 152,
+          "start_line": 113,
+          "symbol": "conditional_squared_extension_form_bound"
+        },
+        {
+          "end_line": 182,
+          "start_line": 155,
+          "symbol": "conditional_amplitude_weighted_form_bound"
+        },
+        {
+          "end_line": 204,
+          "start_line": 185,
+          "symbol": "exact_squared_form_and_conormal_identity"
+        }
+      ]
+    }
+  ],
+  "verification": {
+    "coefficient_basis_symbolic_proof": true,
+    "command": "C:\\Python314\\python.exe -m pytest tests/test_muon_birth_c1_lr_form_response.py -q",
+    "exit_code": 0,
+    "latest_focused_recheck": {
+      "command": "C:\\Python314\\python.exe -m pytest tests/test_muon_birth_c1_lr_form_response.py -q",
+      "exit_code": 0,
+      "scope": "includes independent polarized differential-form/contact checks added during review",
+      "stdout": "15 passed in 3.23s"
+    },
+    "physical_numerical_campaign": false,
+    "source_binding_recheck": {
+      "AST_symbol_span_count": 15,
+      "all_verified": true,
+      "old_producer_rerun": false,
+      "raw_source_hash_count": 10
+    },
+    "stdout": "13 passed in 3.10s"
+  }
+}

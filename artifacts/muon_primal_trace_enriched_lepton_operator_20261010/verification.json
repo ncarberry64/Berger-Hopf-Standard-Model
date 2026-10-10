@@ -1,0 +1,200 @@
+{
+  "Gate7_closed": false,
+  "action_selected": false,
+  "classification": "VERIFIED_ACTUAL_INTERACTING_PAIRED_ENDPOINT_LEPTON_ACTION",
+  "commands": [
+    {
+      "argv": [
+        "C:\\Python314\\python.exe",
+        "scripts/evaluate_muon_primal_trace_enriched_lepton_operator.py",
+        "--endpoint",
+        "artifacts/muon_parent_gauge_geometry_correction_20261010/paired_field_endpoint_enriched_run_1",
+        "--output",
+        "artifacts/muon_primal_trace_enriched_lepton_operator_20261010/run_1"
+      ],
+      "cwd": "C:\\Users\\carbe\\Downloads\\BHSM_muon_parent_maxwell_worktree_20261001",
+      "environment_overrides": {
+        "OPENBLAS_NUM_THREADS": "1",
+        "PYTHONPATH": "src"
+      },
+      "python_exit_code": 0,
+      "stderr": {
+        "bytes": 0,
+        "path": "artifacts/muon_primal_trace_enriched_lepton_operator_run1.stderr.txt",
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      "stdout": {
+        "bytes": 2597,
+        "path": "artifacts/muon_primal_trace_enriched_lepton_operator_run1.stdout.txt",
+        "sha256": "3c6f587079844ea957c5f2f0feed8670db14ce5d1926a8abc9470fbd10295885"
+      }
+    },
+    {
+      "argv": [
+        "C:\\Python314\\python.exe",
+        "scripts/evaluate_muon_primal_trace_enriched_lepton_operator.py",
+        "--endpoint",
+        "artifacts/muon_parent_gauge_geometry_correction_20261010/paired_field_endpoint_enriched_run_1",
+        "--output",
+        "artifacts/muon_primal_trace_enriched_lepton_operator_20261010/run_2"
+      ],
+      "cwd": "C:\\Users\\carbe\\Downloads\\BHSM_muon_parent_maxwell_worktree_20261001",
+      "environment_overrides": {
+        "OPENBLAS_NUM_THREADS": "1",
+        "PYTHONPATH": "src"
+      },
+      "python_exit_code": 0,
+      "stderr": {
+        "bytes": 0,
+        "path": "artifacts/muon_primal_trace_enriched_lepton_operator_run2.stderr.txt",
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      "stdout": {
+        "bytes": 2597,
+        "path": "artifacts/muon_primal_trace_enriched_lepton_operator_run2.stdout.txt",
+        "sha256": "3c6f587079844ea957c5f2f0feed8670db14ce5d1926a8abc9470fbd10295885"
+      }
+    }
+  ],
+  "common_birth_comparison": {
+    "Omega_t_difference_norm": 5.176750712695971e-16,
+    "Omega_tau_difference_norm": 5.6984829586993e-16,
+    "W_difference_norm": 1.2378930609455885e-23,
+    "instantaneous_operator_agreement_is_relative_heat_cancellation": false,
+    "proper_time_Haar_measure_difference": 8.248238204839481
+  },
+  "complete_observable": false,
+  "consumed_owner_identities": [
+    {
+      "bytes": 7741163,
+      "path": "artifacts/muon_parent_gauge_geometry_correction_20261010/paired_field_endpoint_enriched_run_1/application.npz",
+      "sha256": "6b6b5226a0f93ad0ddc2bd4b0671814514a7cf3ca470fe66ee1052b589282eb5"
+    },
+    {
+      "bytes": 19474,
+      "path": "artifacts/muon_parent_gauge_geometry_correction_20261010/paired_field_endpoint_enriched_run_1/result.json",
+      "sha256": "0cce61cbfd7d9c1c8f2dbabcc9caaffea12e84537eb7104003b16a2fc5904f2c"
+    },
+    {
+      "bytes": 6309,
+      "path": "scripts/evaluate_muon_primal_trace_enriched_lepton_operator.py",
+      "sha256": "ca90c792407940564aa10cd45b47b748915c668bf4e5bf8dfee2298245adb956"
+    },
+    {
+      "bytes": 8350,
+      "path": "scripts/evaluate_muon_reached_trace_action.py",
+      "sha256": "f2ecf5b614f8b3b1b5f9bf2b73490e539321049633f7deb467bdf60a81e0c260"
+    },
+    {
+      "bytes": 11117,
+      "path": "src/bhsm/interface/muon_birth_trace_enriched_action.py",
+      "sha256": "c36c48482dd58ebe369ab935574b78b3693036f717fb49035dfac01164956dce"
+    },
+    {
+      "bytes": 10458,
+      "path": "src/bhsm/interface/muon_intrinsic_m4_normal_pullback.py",
+      "sha256": "43187eee35f2879a43fe0fd02ae447502811349ccf2f2a78aa14beb8aa706bf0"
+    },
+    {
+      "bytes": 20369,
+      "path": "src/bhsm/interface/muon_native_dirac_hamiltonian.py",
+      "sha256": "7344b1dfc0358962a281fffea59c8d40c1449a6fbcf9b171f514a28eb7b26ccd"
+    },
+    {
+      "bytes": 44797,
+      "path": "src/bhsm/interface/muon_native_product_factor_graph.py",
+      "sha256": "4a5feeb0e32edc0505a44b45a19d6bdc821220cc9cf5187e35f59fe7720a7c18"
+    },
+    {
+      "bytes": 4942,
+      "path": "src/bhsm/interface/muon_primal_intrinsic_lepton_operator.py",
+      "sha256": "d3415b13dea7831997c8ffeff5d457b3a008d4393048e642d7df831036e8ffe4"
+    },
+    {
+      "bytes": 3783,
+      "path": "src/bhsm/interface/muon_primal_trace_enriched_lepton_operator.py",
+      "sha256": "c6956d8b195c80e8a4488b1ef2c2e4b2bd8544736b6e1735bc7de3108597ec2f"
+    }
+  ],
+  "continued_production_required": true,
+  "error_scope": "binary64 analytic first operator applications on saved finite Newton fields; no continuum, rounding, matching or Pauli enclosure",
+  "focused_tests": {
+    "argv": [
+      "C:\\Python314\\python.exe",
+      "-m",
+      "pytest",
+      "--noconftest",
+      "-q",
+      "tests/test_muon_primal_trace_enriched_lepton_operator.py"
+    ],
+    "exit_code": 0,
+    "source": {
+      "bytes": 3783,
+      "path": "src/bhsm/interface/muon_primal_trace_enriched_lepton_operator.py",
+      "sha256": "c6956d8b195c80e8a4488b1ef2c2e4b2bd8544736b6e1735bc7de3108597ec2f"
+    },
+    "stderr": "",
+    "stderr_file": {
+      "bytes": 0,
+      "path": "artifacts/muon_primal_trace_enriched_lepton_operator_tests.stderr.txt",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "stdout": "..........                                                               [100%]\n10 passed in 6.48s\n",
+    "stdout_file": {
+      "bytes": 101,
+      "path": "artifacts/muon_primal_trace_enriched_lepton_operator_tests.stdout.txt",
+      "sha256": "fa3d88924914f5cda920c712049b16261fafa9696c9322f38760a12e880929a6"
+    },
+    "test": {
+      "bytes": 3390,
+      "path": "tests/test_muon_primal_trace_enriched_lepton_operator.py",
+      "sha256": "43ba9c74420d4eaa2fbb3d93fc80739d155e08925fec980eb4f36948b7fab62d"
+    }
+  },
+  "independent_process_replays": [
+    {
+      "byte_identical": true,
+      "first": {
+        "bytes": 37769,
+        "path": "artifacts/muon_primal_trace_enriched_lepton_operator_20261010/run_1/application.npz",
+        "sha256": "06eb22eb19135e8f004ca438c4d7c6536d00b68a85cea7b0039a131881cf1d5d"
+      },
+      "second": {
+        "bytes": 37769,
+        "path": "artifacts/muon_primal_trace_enriched_lepton_operator_20261010/run_2/application.npz",
+        "sha256": "06eb22eb19135e8f004ca438c4d7c6536d00b68a85cea7b0039a131881cf1d5d"
+      }
+    },
+    {
+      "byte_identical": true,
+      "first": {
+        "bytes": 6089,
+        "path": "artifacts/muon_primal_trace_enriched_lepton_operator_20261010/run_1/result.json",
+        "sha256": "d9c49ed9e332a875cf0d6868d015010adda999baa19493cbb1ec54d0bf3c8211"
+      },
+      "second": {
+        "bytes": 6089,
+        "path": "artifacts/muon_primal_trace_enriched_lepton_operator_20261010/run_2/result.json",
+        "sha256": "d9c49ed9e332a875cf0d6868d015010adda999baa19493cbb1ec54d0bf3c8211"
+      }
+    }
+  ],
+  "no_covariance_or_carrier_member_selected": true,
+  "runtime": {
+    "executable": "C:\\Python314\\python.exe",
+    "packages": {
+      "numpy": "2.4.6",
+      "pytest": "9.0.3",
+      "python-flint": "0.9.0",
+      "scipy": "1.17.1"
+    },
+    "python": "3.14.3 (tags/v3.14.3:323c59a, Feb  3 2026, 16:04:56) [MSC v.1944 64 bit (AMD64)]"
+  },
+  "scientific_classification": {
+    "CONTROL_ONLY": "finite assigned nu-squared4/gamma-null action member, fixed q endpoint and numerical radial frame",
+    "DERIVED": "exact action reduction through all20 wall components; full raw268 analytic first jets via fixed-frame trace map; no bulk radial action projection",
+    "EVALUATED": "complete C18 all-family lepton operator and first jets on both nonzero interacting gauge/H paired endpoint fields",
+    "OWNER_DEFINITION_GAP": "none established",
+    "UNEVALUATED": "physical matching/cutoff and complete relative domain/LSZ/soft Pauli observable"
+  }
+}

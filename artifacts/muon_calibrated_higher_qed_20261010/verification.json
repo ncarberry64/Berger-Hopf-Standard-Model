@@ -1,0 +1,46 @@
+{
+  "Gate7_closed": false,
+  "action_selected": false,
+  "byte_identical": true,
+  "classification": "FOCUSED_CALIBRATED_LOCAL_QED_WEAK_PARTIAL_VERIFICATION",
+  "commands": [
+    "C:\\Python314\\python.exe -m pytest --noconftest -q tests\\test_muon_calibrated_higher_qed.py",
+    "C:\\Python314\\python.exe scripts\\evaluate_muon_calibrated_higher_qed.py --output artifacts\\muon_calibrated_higher_qed_20261010\\run_1",
+    "C:\\Python314\\python.exe scripts\\evaluate_muon_calibrated_higher_qed.py --output artifacts\\muon_calibrated_higher_qed_20261010\\run_2"
+  ],
+  "files": [
+    {
+      "bytes": 14731,
+      "path": "src/bhsm/interface/muon_calibrated_higher_qed.py",
+      "sha256": "da58048f891504419159d558b44d4a0c6cb4cbf703aca7884dd515d88f99ae3a"
+    },
+    {
+      "bytes": 6156,
+      "path": "tests/test_muon_calibrated_higher_qed.py",
+      "sha256": "c0335d65b22cf164636347882245b3a3caebfcdd6b357f35838a5e62ddc10082"
+    },
+    {
+      "bytes": 6239,
+      "path": "scripts/evaluate_muon_calibrated_higher_qed.py",
+      "sha256": "fde869addaf60d8c6b0323f1b39813d385a70baec9dc33feba45dd55ee8e8262"
+    },
+    {
+      "bytes": 10853,
+      "path": "artifacts/muon_calibrated_higher_qed_20261010/run_1/higher_qed.json",
+      "sha256": "4c1c5cb7ba7481b28c009adc9d8817cb6cd70c6d1f642616d4c703663ffc694b"
+    },
+    {
+      "bytes": 10853,
+      "path": "artifacts/muon_calibrated_higher_qed_20261010/run_2/higher_qed.json",
+      "sha256": "4c1c5cb7ba7481b28c009adc9d8817cb6cd70c6d1f642616d4c703663ffc694b"
+    }
+  ],
+  "full_observable_evaluated": false,
+  "native_evaluated": false,
+  "scope": "Numerical replay and focused algebra/integral tests only; not physical completion or a global truncation enclosure.",
+  "tests": {
+    "exit_code": 0,
+    "output": "................... [100%]\n19 passed in 1.61s",
+    "previous_failed_run": "1 failed, 16 passed in 4.20s: independent reference quadrature used default epsrel at k=1e6; tightened reference epsrel to1e-13. Producer unchanged by repair."
+  }
+}

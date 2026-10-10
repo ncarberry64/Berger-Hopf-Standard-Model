@@ -1,0 +1,983 @@
+diff --git a/scripts/control_muon_induced_heat.py b/scripts/control_muon_induced_heat.py
+new file mode 100644
+index 00000000..f24a127b
+--- /dev/null
++++ b/scripts/control_muon_induced_heat.py
+@@ -0,0 +1,97 @@
++"""Three-dimensional arithmetic CONTROL, never a native operator model.
++
++One common D generates all jets. Explicit control ell=0.7 (not physical).
++Tests signed mixed contacts, noncommuting jets and moving M using the
++existing Arb HeatPencil. No BHSM physical input is replaced by this block.
++"""
++from __future__ import annotations
++import numpy as np
++from scipy.integrate import quad
++from scipy.linalg import expm, expm_frechet
++from bhsm.interface.muon_native_induced_polarization import generalized_form_jets
++
++
++def control_data():
++    D=np.diag([1.,1.5,2.])
++    v=np.outer([.2,-.1,.3],[.1,.4,-.2])
++    j=np.outer([-.1,.2,.15],[.3,-.2,.1])
++    vj=np.outer([.01,.02,-.01],[.1,-.2,.3])
++    M=np.array([[1.2,.1,0],[.1,1.1,.04],[0,.04,.9]])
++    Mv=np.diag([.02,-.01,.03]);Mj=np.array([[0,.01,0],[.01,.02,0],[0,0,-.01]])
++    Mvj=np.diag([.003,.002,-.001])
++    return D,v,j,vj,M,Mv,Mj,Mvj
++
++
++def execute_control():
++    from flint import arb_mat,ctx
++    from bhsm.interface.arb_heat_pencil_contractions import HeatPencil
++    D,v,j,vj,M,Mv,Mj,Mvj=control_data()
++    ell=.7;c=ell**2;zero=np.zeros_like(M)
++    fixed=generalized_form_jets(D,v,j,vj,np.eye(3),zero,zero,zero)
++    P,V,J,C=[fixed[k] for k in ('A','A_v','A_J','A_vJ')]
++    lam,U=np.linalg.eigh(P);q=np.exp(-c*lam)/(2*lam)
++    qp=-np.exp(-c*lam)*(c/lam+1/lam**2)/2
++    dd=np.array([[qp[i] if i==k else (q[i]-q[k])/(lam[i]-lam[k])
++                  for k in range(3)] for i in range(3)])
++    dense_contact=float(np.sum(q*np.diag(U.T@C@U)))
++    dense_pair=float(np.sum(dd*(U.T@J@U)*(U.T@V@U).T))
++    E=expm(-c*P);dE=expm_frechet(-c*P,-c*J,compute_expm=False)
++    Q=np.linalg.solve(P.T,E.T).T/2
++    dQ=np.linalg.solve(P.T,(dE/2-Q@J).T).T
++    block_value=float(np.trace(Q@C+dQ@V))
++    # Factor only the supplied CONTROL jets; no native finite-rank assertion.
++    ve,vu=np.linalg.eigh(V);je,ju=np.linalg.eigh(J);ce,cu=np.linalg.eigh(C)
++    def factor_contact(t):
++        H=expm(-t*P)
++        return sum(ce[a]*(cu[:,a]@H@cu[:,a]) for a in range(3))/2
++    def factor_pair(t,u):
++        HL=expm(-(t-u)*P);HR=expm(-u*P)
++        return sum(ve[a]*je[b]*(ju[:,b]@HL@vu[:,a])*
++                   (vu[:,a]@HR@ju[:,b]) for a in range(3) for b in range(3))/2
++    contact,contact_err=quad(factor_contact,c,np.inf,epsabs=2e-12,epsrel=2e-12)
++    # Exact finite-dimensional spectral identity for the inner convolution;
++    # the outer integral is an independent proper-time quadrature.
++    Vm=U.T@V@U;Jm=U.T@J@U
++    def integrated_pair(t):
++        weights=np.array([[t*np.exp(-t*lam[i]) if i==k else
++                    (np.exp(-t*lam[k])-np.exp(-t*lam[i]))/(lam[i]-lam[k])
++                    for k in range(3)] for i in range(3)])
++        return float(np.sum(weights*Vm*Jm.T))/2
++    pair,pair_err=quad(integrated_pair,c,np.inf,epsabs=2e-12,epsrel=2e-12)
++    # One actual rank-factorized inner application, compared to dense trace.
++    t=.9;u=.3
++    fact=factor_pair(t,u)
++    direct=float(np.trace(expm(-(t-u)*P)@V@expm(-u*P)@J))/2
++    moving=generalized_form_jets(D,v,j,vj,M,Mv,Mj,Mvj)
++    def arb_value(jets,m,mv,mj,mvj):
++        with ctx.workprec(192):
++            a=lambda x:arb_mat(np.asarray(x).tolist())
++            h=HeatPencil(a(jets['K']),a(m),heat_length=ell)
++            ans=h.mixed(a(jets['K_v']),a(mv),a(jets['K_J']),a(mj),a(jets['K_vJ']),a(mvj))
++            return str(ans['value']),float(ans['value'].mid()),float(ans['value'].rad().upper())
++    fixed_interval,fixed_value,fixed_rad=arb_value(fixed,np.eye(3),zero,zero,zero)
++    moving_interval,moving_value,moving_rad=arb_value(moving,M,Mv,Mj,Mvj)
++    # Independent noncommuting block-exponential calculation for moving M.
++    A,Av,Aj,Avj=[moving[k] for k in ('A','A_v','A_J','A_vJ')]
++    E=expm(-c*A);dE=expm_frechet(-c*A,-c*Aj,compute_expm=False)
++    Q=np.linalg.solve(A.T,E.T).T/2
++    dQ=np.linalg.solve(A.T,(dE/2-Q@Aj).T).T
++    moving_dense=float(np.trace(dQ@Av+Q@Avj))
++    return dict(classification='ARITHMETIC_CONTROL_ONLY',dimension=3,
++        control_ell=ell,physical_ell_assigned=False,
++        all_jets_from_one_D=True,nonzero_D_vJ_norm=float(np.linalg.norm(vj)),
++        fixed_dense_contact=dense_contact,fixed_dense_pair=dense_pair,
++        fixed_dense_value=dense_contact+dense_pair,
++        fixed_block_value=block_value,proper_time_contact=contact,
++        proper_time_pair=-pair,proper_time_value=contact-pair,
++        scipy_quadrature_estimate_not_certified=contact_err+pair_err,
++        rank_factor_application_residual=abs(fact-direct),
++        Arb_fixed_interval=fixed_interval,Arb_fixed_midpoint=fixed_value,
++        Arb_fixed_radius=fixed_rad,Arb_moving_interval=moving_interval,
++        Arb_moving_midpoint=moving_value,Arb_moving_radius=moving_rad,
++        moving_dense_value=moving_dense,
++        moving_two_mass_terms_retained=True,
++        max_fixed_method_difference=max(abs(x-(dense_contact+dense_pair)) for x in
++            (block_value,contact-pair,fixed_value)),
++        moving_method_difference=abs(moving_value-moving_dense),
++        native_grading_quotient_domain_tails_supplied=False)
+diff --git a/scripts/replay_muon_native_induced_polarization.py b/scripts/replay_muon_native_induced_polarization.py
+new file mode 100644
+index 00000000..5a00043f
+--- /dev/null
++++ b/scripts/replay_muon_native_induced_polarization.py
+@@ -0,0 +1,159 @@
++"""New cache-based source-form evaluations; no old production replay.
++
++Use a fresh output. Full native induced polarization is not supplied by the
++finite carrier contact or compact weak elements computed here.
++"""
++from __future__ import annotations
++import argparse
++import hashlib
++import json
++from pathlib import Path
++import subprocess
++import sys
++import time
++import numpy as np
++ROOT=Path(__file__).resolve().parents[1]
++sys.path.insert(0,str(ROOT/'src'))
++sys.path.insert(0,str(ROOT/'scripts'))
++from bhsm.interface import muon_native_induced_polarization as impl
++from control_muon_induced_heat import execute_control
++
++
++def save(path,value):
++    path.write_text(json.dumps(value,indent=2,sort_keys=True,allow_nan=False)+'\n',encoding='utf8')
++
++
++def load(path):
++    with np.load(path,allow_pickle=False) as z:return {k:np.array(z[k]) for k in z.files}
++
++
++def sha(path):return hashlib.sha256(path.read_bytes()).hexdigest()
++
++
++def run(output):
++    if output.exists():raise FileExistsError('Fresh output required; preserve prior evidence')
++    output.mkdir(parents=True);start=time.perf_counter()
++    base=ROOT/'artifacts/muon_native_photon_response_20261006/run_1'
++    paths=dict(component=base/'component_action_and_current.npz',frame=base/'enriched_frame.npz',
++        source=ROOT/'artifacts/muon_matched_mechanical_source_20261002/replay_reference/matched_source_and_weak_actions.npz',
++        parent=ROOT/'artifacts/muon_parent_source_contact_20261003/replay_reference/parent_source_contact.npz',
++        rate=ROOT/'artifacts/muon_parent_source_rate_20261003/replay_reference/parent_source_rate_corrected.npz',
++        rate_contract=ROOT/'artifacts/muon_exterior_face_source_20261002/replay_reference/result.json',
++        frozen=ROOT/'artifacts/muon_source_jet_20261002/frozen_local.json',
++        owner=ROOT/'src/bhsm/interface/ae4_stratified_dirac_zeta_induced_owner.py',
++        extension=ROOT/'src/bhsm/interface/muon_source_weak_extension.py',
++        fixed_trace=ROOT/'src/bhsm/interface/aether_unified_m5_m4_pushforward_v15_69.py',
++        source_compiler=ROOT/'src/bhsm/interface/muon_parent_source_contact.py',
++        scalar_impedance=ROOT/'src/bhsm/interface/covariant_bubble_interface_mechanics.py',
++        threshold=ROOT/'src/bhsm/interface/action_extension_ae2_nonfermion_threshold.py',
++        relative_zeta=ROOT/'src/bhsm/interface/completion/stratified_dirac_zeta_micro_source_v14_63.py',
++        relative_boundary=ROOT/'src/bhsm/interface/completion/boundary_triple_heat_semigroup_v14_65.py',
++        kernel=ROOT/'src/bhsm/interface/arb_heat_pencil_contractions.py',
++        builder=Path(impl.__file__),control=ROOT/'scripts/control_muon_induced_heat.py',replay=Path(__file__))
++    hashes={k:dict(path=p.relative_to(ROOT).as_posix(),sha256=sha(p)) for k,p in paths.items()}
++    git=lambda *args:subprocess.check_output(['git',*args],cwd=ROOT,text=True).strip()
++    save(output/'input_hashes.json',hashes)
++    save(output/'starting_revision.json',dict(HEAD=git('rev-parse','HEAD'),branch=git('branch','--show-current'),
++        scientific_reference='524ed90689bd5923c249bba2e699abf627e703cd',
++        working_tree_status=git('status','--short'),intentional_differences='new source-form/length-jet work only'))
++    (output/'starting_diff.patch').write_text(git('diff','--binary')+'\n',encoding='utf8')
++    component,frame,source,parent,rate=[load(paths[k]) for k in ('component','frame','source','parent','rate')]
++    save(output/'checkpoint.json',dict(stage='read frozen inputs; no prior producer or solve rerun'))
++    actions,checks=impl.affine_cut_jets(component,frame['M_orthonormal_frame'],source,parent)
++    np.savez_compressed(output/'affine_source_contacts.npz',**actions)
++    save(output/'checkpoint.json',dict(stage='new local32x8x64x64 contact evaluated; NOT a heat trace'))
++    weak,weak_checks=impl.compact_weak_first_jets(actions['real_test_frame'],component,source,parent,rate)
++    np.savez_compressed(output/'compact_weak_first_jets.npz',**weak)
++    checks.update(weak_checks)
++    local=impl.local_subtraction_component(component,actions['real_test_frame'],actions['local_Riesz_current_coordinates'])
++    old_coordinates=(frame['M_orthonormal_frame'].conj().T@component['K_per_kappa1']@
++        (component['source_inclusion']@actions['local_Riesz_current_coordinates']))
++    same=actions['real_frame_from_frozen_coordinates'].conj().T@old_coordinates
++    residual=float(np.linalg.norm(local-same))
++    # Floating consistency tolerance is propagated from the measured change-
++    # of-frame residual, not advertised as a certified native error bound.
++    allowance=float(checks['same_frozen_span_residual']*
++        np.linalg.norm(component['K_per_kappa1']@(component['source_inclusion']@actions['local_Riesz_current_coordinates'])))
++    np.savez_compressed(output/'owned_local_angular_operand.npz',
++        angular_Maxwell_curvature_per_kappa1=local,same_operand_in_frozen_coordinates=old_coordinates)
++    checks.update(local_subtraction_same_frame_residual=residual,
++                  propagated_change_of_frame_allowance=allowance)
++    control=execute_control();save(output/'arithmetic_control.json',control)
++    length=dict(rule='F=I-C=0, E=I(tau_star), ell=1/E, c=ell^2',
++        scope='conditional simple persistent first-future/support crossing; no new surface chosen',
++        tau_v='-F_v/F_tau',tau_J='-F_J/F_tau',
++        tau_vJ='-(F_vJ+F_tau_v*tau_J+F_tau_J*tau_v+F_tau_tau*tau_v*tau_J)/F_tau',
++        E_v='I_v+I_tau*tau_v',E_J='I_J+I_tau*tau_J',
++        E_vJ='I_vJ+I_tau_v*tau_J+I_tau_J*tau_v+I_tau_tau*tau_v*tau_J+I_tau*tau_vJ',
++        ell_v='-E_v/E^2',ell_J='-E_J/E^2',ell_vJ='2E_vE_J/E^3-E_vJ/E^2',
++        c_v='-2E_v/E^3',c_J='-2E_J/E^3',c_vJ='6E_vE_J/E^4-2E_vJ/E^3',
++        jets=dict(ell='UNEVALUATED',ell_v='UNEVALUATED',ell_J='UNEVALUATED',ell_vJ='UNEVALUATED'),
++        zero_jet_theorem=False,absolute_physical_length_selected=False,
++        lower_limit_mixed='-c_v STr(e^-cP P_J)/2-c_J STr(e^-cP P_v)/2+T(c)c_vJ/(2c)-(STr(P e^-cP)/c+T(c)/c^2)c_v c_J/2',
++        no_source_independence_inferred_from_fixed_geometry=True)
++    save(output/'length_jets.json',length)
++    completion=dict(status='UNEVALUATED',owner='same AE4 relative-zeta/logarithmic plus eta/phase completion',
++        exact_recovered_historical_identity='logdet_zeta(P/mu^2)=-zeta_P_prime(0)-2 log(mu) zeta_P(0)',
++        scope='historical supplied-operator identity, not an extra determinant added to finite E1',
++        current_relative_reference_subtraction_phase_source_actions_supplied=False,
++        no_relative_boundary_diamond_substitute=True,numerical_contribution=None)
++    save(output/'relative_completion.json',completion)
++    ledger={name:dict(status='UNEVALUATED',value=None) for name in
++        ('primitive_Maxwell','common_A_background','Higgs_gauge_local_mixed','gauge_fixing_ghost',
++         'induced_heat','relative_zeta_eta','domain_interface','completion')}
++    ledger['primitive_Maxwell'].update(evaluated_operand='owned_local_angular_operand.npz; angular Maxwell and background curvature contact per inherited kappa1 only',
++        ownership='OWNED_LOCAL; subtraction from the full Gamma Hessian remains UNEVALUATED',
++        full_primitive_diagnostic_subtracted=False)
++    ledger['common_A_background']['shared_with']='primitive angular curvature subterm; not another addend'
++    domain={name:dict(first_jet='UNEVALUATED',mixed_jet='UNEVALUATED') for name in
++            ('reset','material_interface','canonical_stop','BRST_quotient','global_source_pullback')}
++    domain['compact_fixed_test_pairing']=dict(first_jet='EXACT_ZERO',mixed_jet='EXACT_ZERO',
++        proof='fixed unreduced fields/metric/frame at cut; geometric volume/Cauchy weights contain no b')
++    domain['local_affine_D_vJ']=dict(mixed_jet='EXACT_ZERO',proof='local connection insertion linear in fixed-frame b; no source-dependent carrier U')
++    save(output/'contribution_ownership.json',ledger);save(output/'domain_pairing_jets.json',domain)
++    missing=impl.first_length_response();save(output/'one_explicit_unprovided_operand.json',missing)
++    result=dict(classification='EVALUATED_LOCAL_SOURCE_CONTACT_AND_COMPACT_WEAK_JETS__NOT_NATIVE_HEAT',
++        target='same-owner R_ind(v,J)',target_evaluated=False,
++        new_objects=['local affine mixed contact in real32 test frame,8 saved b directions and full64 carrier',
++                     'factorized complex-bilinear extension to all224 reached current labels',
++                     'unreduced compact K_v/K_J amplitude and BOTH time-jet weak cross rows',
++                     'same-frame already-owned angular subtraction operand',
++                     'implicit crossing/lower-limit length jets; energy response not supplied'],
++        checks=checks,arithmetic_control=control,
++        P0_identity='D_strat_dagger D_strat on the inherited zero-mode/BRST quotient',
++        local_K_v='D_v_dagger D0+D0_dagger D_v evaluated on compact parent p_A,phi tests',
++        local_K_vJ='D_v_dagger D_J+D_J_dagger D_v; local affine D_vJ=0 only',
++        local_contact_pairing='unit normalized Haar; full64 spin/carrier, Euclidean fibre adjoint appropriate to supplied Ddagger D form; no physical graded trace',
++        native_P_v=None,native_P_J=None,native_P_vJ=None,
++        source=dict(coordinate='b; beta=T_b b; A_Q=sqrt2 beta',Dirac_vertex_action_index=False,
++            current_direction='S solve(Sdagger S,current_covector)/M_geom at the cut, not raw covector',
++            all_current_labels=224,all_test_directions=32,old_response_space_enriched=False),
++        pairing=dict(local_unreduced_M_v='EXACT_ZERO',local_unreduced_M_J='EXACT_ZERO',local_unreduced_M_vJ='EXACT_ZERO',
++            reduced_moving_Gram_jets='UNEVALUATED',moving_mass_control_terms_both_retained=True),
++        length=length,relative_completion=completion,ownership=ledger,domain=domain,
++        bulk_heat=dict(contact=None,paired=None,full=None,physical_default_length_used=False,
++            primitive_Lorentz_inserted_as_native=False,finite_source_harmonics_do_not_imply_finite_rank=True,
++            native_complement_bound=None),
++        error_scope=dict(new_source_and_weak_jets='binary64 consistency only; inherited frozen right-cell/Gauss parent-component model',
++            time_history_integral_evaluated=False,new_native_numerical_bound=None,
++            control_Arb_intervals='exact supplied three-dimensional arithmetic-control matrices only',
++            old_consumed_certificate='frozen unchanged; not reused as a bound for new source/heat actions',
++            H_rate='corrected cached source time jet consumed; inherited rate and body/interpolation errors remain distinct'),
++        downstream=dict(completed_photon_response=None,family_mixed_native_heat=None),
++        one_explicit_unprovided_operand=missing,frozen_local=json.loads(paths['frozen'].read_text()),
++        physical_a_mu=None,physical_g_mu=None,physical_transfer_directions=0,
++        execution=dict(previous_production_replays=0,previous_shifted_solves=0,
++            new_native_heat_applications=0,new_physical_operator_spectra=0,
++            arithmetic_control_dimension=3,elapsed_seconds=time.perf_counter()-start))
++    save(output/'result.json',result)
++    save(output/'checkpoint.json',dict(id='BHSM_MUON_UNREDUCED_SOURCE_CONTACT_LENGTH_JETS_20261006',
++        stage='new local actions evaluated; full native heat remains unevaluated',
++        result='result.json',next_explicit_operand=missing['operand'],physical_a_mu=None))
++    save(output/'output_hashes.json',{p.name:sha(p) for p in sorted(output.iterdir()) if p.is_file()})
++    print(json.dumps(dict(output=str(output),checks=checks,control_max_difference=control['max_fixed_method_difference'],
++        target_evaluated=False,seconds=result['execution']['elapsed_seconds'])))
++
++
++if __name__=='__main__':
++    parser=argparse.ArgumentParser();parser.add_argument('--output',type=Path,required=True)
++    run(parser.parse_args().output)
+diff --git a/src/bhsm/interface/muon_native_induced_polarization.py b/src/bhsm/interface/muon_native_induced_polarization.py
+new file mode 100644
+index 00000000..7551e1ef
+--- /dev/null
++++ b/src/bhsm/interface/muon_native_induced_polarization.py
+@@ -0,0 +1,237 @@
++"""Actual reached-direction source contacts and the next native source jet.
++
++The frozen angular responses are not repeated or used as native P0. This
++module constructs NEW affine cut source contacts in the same Spin4 x SM16
++carrier. It does not equate a cut contact with a heat-weighted global trace.
++"""
++from __future__ import annotations
++import numpy as np
++from bhsm.interface.muon_parent_source_contact import parent_insertion
++
++
++def split_coefficients(columns):
++    """Frozen angular coefficient order: coframe, carrier, m, k at n1,n3."""
++    x=np.asarray(columns)
++    if x.shape[0]!=240:raise ValueError('retained 240 coefficient directions required')
++    return {1:x[:48].T.reshape(-1,3,4,2,2),3:x[48:].T.reshape(-1,3,4,4,4)}
++
++
++def reality(columns):
++    """Antilinear real-one-form involution in the SAVED Wigner convention."""
++    out=[]
++    for n,x in split_coefficients(columns).items():
++        k=np.arange(n+1);phase=(-1.)**(k[None,:]-k[:,None])
++        y=x[...,::-1,::-1].conj()*phase
++        out.append(y.reshape(len(x),-1).T)
++    return np.vstack(out)
++
++
++def real_source_frame(frozen,m):
++    """Real coordinates in the SAME frozen32 space, without enrichment.
++
++    Real photon variations must obey harmonic reality. Complex current loads
++    are then treated by complex-bilinear extension of the real Hessian.
++    """
++    candidates=np.column_stack(((frozen+reality(frozen))/2,
++                                (frozen-reality(frozen))/(2j)))
++    columns=[]
++    for i in range(candidates.shape[1]):
++        v=candidates[:,i].copy()
++        for _ in range(2):
++            for w in columns:v-=w*(m*np.vdot(w,v)).real
++        norm=np.sqrt(m*np.vdot(v,v).real)
++        if norm>1e-10:columns.append(v/norm)
++    if len(columns)!=32:
++        raise ArithmeticError('frozen response span does not admit the expected real32 coordinates')
++    F=np.column_stack(columns)
++    U=m*frozen.conj().T@F
++    checks=dict(real_frame_reality_residual=float(np.linalg.norm(F-reality(F))),
++        real_frame_M_Gram_residual=float(np.linalg.norm(m*F.conj().T@F-np.eye(32))),
++        same_frozen_span_residual=float(np.linalg.norm(F-frozen@U)),
++        source_basis_changed_not_enriched=True)
++    return F,U,checks
++
++
++def affine_cut_jets(component, frozen_frame, saved_source, cached_parent):
++    """NEW mixed source-square contacts on the32 test directions and8 modes.
++
++    This uses source-affine, unreduced fixed-frame connection coordinates:
++    Xi_v=f_R c_src(v); D_vA=0 at this LOCAL scope. The full stationary
++    source lift/domain jet is deliberately not assigned zero.
++    """
++    m=float(component['M_geometric_scalar']);fR=float(component['f_R'])
++    F,U,checks=real_source_frame(frozen_frame,m)
++    coeff=split_coefficients(F)
++    contacts=np.zeros((32,8,64,64),complex)
++    source_actions={}
++    for n,val in coeff.items():
++        # Source-index factors NEVER enter the Clifford insertion.
++        Xv=fR*parent_insertion(saved_source['saved_gamma_LR'],val,
++                              saved_source['unit_trace_carrier_basis'])
++        Xa=fR*cached_parent[f'Xi_A_unit_n{n}']
++        v=Xv.transpose(0,1,3,4,2).reshape(32,-1,64)
++        a=Xa.transpose(0,1,3,4,2).reshape(8,-1,64)
++        contacts+=np.einsum('voi,aoj->vaij',v.conj(),a,optimize=True)
++        contacts+=np.einsum('aoi,voj->vaij',a.conj(),v,optimize=True)
++        source_actions[f'Xi_v_cut_n{n}']=Xv
++    S=component['source_inclusion'];G=S.conj().T@S
++    # J is a covector, not automatically a photon field. This is its LOCAL
++    # geometric Riesz identification. Native continuation is a different jet.
++    eta=np.linalg.solve(G,component['mode_current_covector'])/m
++    # Complex-bilinear extension: no accidental conjugation of eta in the
++    # reverse term. The64 x64 fibre action is not physically supertraced.
++    # Retain the exact factorization for ALL224 labels. A dense32x224x64x64
++    # tensor would add no information. No column is dropped or heat-restricted.
++    flat=contacts.transpose(1,0,2,3).reshape(8,-1)
++    contact_gram=flat.conj()@flat.T
++    column_norm2=np.einsum('ac,ab,bc->c',eta.conj(),contact_gram,eta).real
++    reached_norm=float(np.sqrt(np.sum(column_norm2)))
++    fibre_trace=np.einsum('va,ac->vc',np.trace(contacts,axis1=2,axis2=3),eta)
++    checks.update(contact_real_direction_Hermiticity=float(np.linalg.norm(contacts-contacts.conj().transpose(0,1,3,2))),
++        source_inclusion_reality_residual=float(np.linalg.norm(S-reality(S))),
++        local_Riesz_identity_residual=float(np.linalg.norm(m*S@eta-component['reached_current_dual'])),
++        mixed_contact_norm=float(np.linalg.norm(contacts)),
++        reached_contact_norm=reached_norm,
++        real_frame_dimension=32,full_carrier_input_dimension=64,
++        connected_n3_test_source_action_norm=float(np.linalg.norm(source_actions['Xi_v_cut_n3'])))
++    return dict(real_test_frame=F,real_frame_from_frozen_coordinates=U,
++        local_Riesz_current_coordinates=eta,local_real_contact_P_vA=contacts,
++        reached_contact_fibre_trace=fibre_trace,
++        reached_contact_column_norms=np.sqrt(np.maximum(column_norm2,0)),
++        # Xi_v is exactly reconstructible from F, gamma, carrier and fR.
++        # Save its norms rather than duplicate40MiB of coefficients.
++        local_contact_source_Gram=contact_gram),checks
++
++
++def owner_length_jet(I,C,Ftau,*,Itau,Itautau,Ftautau,Iv,Ij,Ivj,Fv,Fj,Fvj,Itauv,Itauj,Ftauv,Ftauj):
++    """Implicit differentiation of the ADOPTED crossing, not a new cutoff.
++
++    Conditional on a simple first-future crossing and persistent support
++    branch. The retained physical coefficients have not been supplied.
++    Works on symbolic scalars; does not invent an impedance-energy evaluator.
++    """
++    tv=-Fv/Ftau;tj=-Fj/Ftau
++    tvj=-(Fvj+Ftauv*tj+Ftauj*tv+Ftautau*tv*tj)/Ftau
++    Ev=Iv+Itau*tv;Ej=Ij+Itau*tj
++    Evj=Ivj+Itauv*tj+Itauj*tv+Itautau*tv*tj+Itau*tvj
++    return dict(tau_v=tv,tau_J=tj,tau_vJ=tvj,E_v=Ev,E_J=Ej,E_vJ=Evj,
++        ell=1/I,ell_v=-Ev/I**2,ell_J=-Ej/I**2,
++        ell_vJ=2*Ev*Ej/I**3-Evj/I**2,
++        c_v=-2*Ev/I**3,c_J=-2*Ej/I**3,
++        c_vJ=6*Ev*Ej/I**4-2*Evj/I**3)
++
++
++def compact_weak_first_jets(frame,component,source,parent,rate):
++    """Actual unreduced parent K_v/K_J on cached compact source directions.
++
++    Columns: the SAME eight p_A=Xi_A phi diagnostic fields and four compact
++    charged-carrier phi columns. They are not a native Hilbert basis. Use the
++    corrected cached D0 p, not a new history or point-action campaign.
++    K_x(p_A,phi)=<D0 p_A,Xi_x phi>+<p_A,Xi_x^dagger D0 phi>.
++    Local source-affinity fixes these trial columns during this derivative;
++    movement of global physical states/domain is not inferred from it.
++    """
++    coeff=split_coefficients(frame);indices=rate['source_image_probe_columns']
++    rho=rate['gauss_rho'];nodes=parent['rho']
++    chi=np.interp(rho,nodes,parent['spinor_probe_hat_nodes'])
++    r=np.interp(rho,nodes,parent['base_radius'])
++    nu=np.interp(rho,nodes,parent['nu'])
++    kernel=float(parent['T_b'])/r;f=kernel*chi
++    weights=rate['node_volume_quadrature_weights']
++    d0=rate['D5_metric_common_A_on_compact_probes'][:,:,indices]
++    G0=np.kron(rate['parent_gamma'][0],np.eye(16))
++    d0tau=(1j*G0[:,indices])[None]*((chi/nu)[:,None,None])
++    result={k:np.zeros((40,8,4,4),complex) for k in ('K_0','K_tau0','K_0tau')}
++    for n,val in coeff.items():
++        xv=parent_insertion(source['saved_gamma_LR'],val,source['unit_trace_carrier_basis'])
++        xa=parent[f'Xi_A_unit_n{n}']
++        x=np.concatenate((xv,xa),axis=0)
++        px=xa[:,:,indices]
++        dx=rate[f'D5_on_same_source_image_b_coefficient_n{n}']
++        dxtau=rate[f'D5_on_same_source_image_b_tau_coefficient_n{n}']
++        xp=x[:,:,indices]
++        # Dagger of the COMPLETE angular field: both fibre dagger and saved
++        # harmonic-conjugation involution. Merely daggering each coefficient
++        # misses the reversed weights and phase in the second weak product.
++        k=np.arange(n+1);phase=(-1.)**(k[None,:]-k[:,None])
++        xd=x[...,::-1,::-1].conj().transpose(0,2,1,3,4)*phase
++        first=np.einsum('g,gAocxy,vodxy->vAcd',weights*f,dx.conj(),xp,optimize=True)
++        first_tau=np.einsum('g,gAocxy,vodxy->vAcd',weights*f,dxtau.conj(),xp,optimize=True)
++        contracted=np.einsum('Aocxy,voixy->vAci',px.conj(),xd,optimize=True)
++        second=np.einsum('vAci,gid,g->vAcd',contracted,d0,weights*f*kernel,optimize=True)
++        second_tau=np.einsum('vAci,gid,g->vAcd',contracted,d0tau,weights*f*kernel,optimize=True)
++        result['K_0']+=first+second
++        result['K_tau0']+=first_tau
++        result['K_0tau']+=second_tau
++    S=component['source_inclusion']
++    eta=np.linalg.solve(S.conj().T@S,component['mode_current_covector'])/float(component['M_geometric_scalar'])
++    arrays={}
++    for name,value in result.items():
++        arrays[f'parent_compact_{name}_v']=value[:32]
++        arrays[f'parent_compact_{name}_A']=value[32:]
++        arrays[f'parent_compact_{name}_J']=np.einsum('aAcd,aj->jAcd',value[32:],eta)
++    arrays['compact_phi_carrier_indices']=indices
++    checks=dict(local_weak_K_v_norm=float(np.linalg.norm(result['K_0'][:32])),
++        local_weak_K_J_norm=float(np.linalg.norm(arrays['parent_compact_K_0_J'])),
++        local_weak_K_v_tau0_norm=float(np.linalg.norm(result['K_tau0'][:32])),
++        local_weak_K_v_0tau_norm=float(np.linalg.norm(result['K_0tau'][:32])),
++        corrected_D0_source_actions_consumed=True,
++        endpoint_H_placeholder_consumed=False,radial_quadrature_repeated=False,
++        local_radial_integral_only_not_temporal_history=True)
++    return arrays,checks
++
++
++def generalized_form_jets(D0,Dv,Dj,Dvj,M,Mv,Mj,Mvj):
++    """Algebra control for supplied SAME-convention first-order actions.
++
++    Native data are not generated here. Both moving-M terms are retained.
++    """
++    K=D0.conj().T@D0
++    Kv=Dv.conj().T@D0+D0.conj().T@Dv
++    Kj=Dj.conj().T@D0+D0.conj().T@Dj
++    Kvj=Dv.conj().T@Dj+Dj.conj().T@Dv+Dvj.conj().T@D0+D0.conj().T@Dvj
++    A=np.linalg.solve(M,K)
++    Av=np.linalg.solve(M,Kv-Mv@A);Aj=np.linalg.solve(M,Kj-Mj@A)
++    Avj=np.linalg.solve(M,Kvj-Mvj@A-Mv@Aj-Mj@Av)
++    return dict(K=K,K_v=Kv,K_J=Kj,K_vJ=Kvj,A=A,A_v=Av,A_J=Aj,A_vJ=Avj)
++
++
++def first_length_response():
++    """One concrete scalar operand INSIDE the retained mixed length jet.
++
++    A stationary source extension is NOT a prerequisite for differentiating
++    the unreduced fixed-trace functional. Do not introduce that circular gate.
++    """
++    return dict(name='mixed impedance-energy response on the selected crossing',
++        operand='E_vJ = d_v d_J I(tau_star(v,J),v,J)',
++        defining_equation='I=E_impedance; F=I-E_core=0 at the first future support-loss crossing; ell=1/I',
++        contraction='E_vJ=I_vJ+I_tau_v tau_J+I_tau_J tau_v+I_tau_tau tau_v tau_J+I_tau tau_vJ',
++        consumer='c_vJ=6 E_v E_J/E^4-2 E_vJ/E^3 in [STr exp(-c P)/(2c)] c_vJ, plus the SAME relative completion length jet',
++        input_space='the32 real fixed-background b directions and224 complex-linearly extended geometric Riesz current directions, continued by the same owned source prescription',
++        output_space='one scalar bilinear per consumed v,J at the selected crossing, not a full history reconstruction',
++        producer='ae4_stratified_dirac_zeta_induced_owner.native_spectral_length_contract, together with the action-defined scalar impedance/core energy functional and its same-source response',
++        inspected_equations='native_spectral_length_contract supplies the crossing/rule; seam_wronskian_lower sums supplied lower bounds; H_impedance is an operator ratio; spectral_formation_number accepts an impedance input',
++        retained_data_insufficiency='None of those producers supplies I(tau,b), its source-energy response, or a scalar-energy contraction of H_impedance. The stored primitive photon resolvents and Spin4xSM16 parent solution are not that scalar functional.',
++        classification='UNEVALUATED owner-required scalar response; no zero-jet theorem or numerical energy supplied by the inspected equations',
++        other_native_terms_remain_unevaluated=True,supplied_value=None)
++
++
++def local_subtraction_component(component,frame,current_coordinates):
++    """Only the already-owned angular Maxwell/curvature density per kappa1.
++
++    This is an evaluated subtraction operand, not subtraction from an
++    unevaluated full Hessian. Temporal/radial/other local terms are not zero.
++    """
++    field=component['source_inclusion']@current_coordinates
++    return frame.conj().T@component['K_per_kappa1']@field
++
++
++def lower_limit_mixed(c,cv,cj,cvj,trace_heat,trace_P_heat,trace_heat_Pv,trace_heat_Pj):
++    """Exact moving-lower-limit terms for Gamma=-integral_c^inf T(t)/2t.
++
++    Input traces include the SAME grading/quotient. No trace is supplied or
++    generated by this scalar identity, and no physical length default exists.
++    """
++    return (-cv*trace_heat_Pj/2-cj*trace_heat_Pv/2
++            +trace_heat*cvj/(2*c)
++            -(trace_P_heat/c+trace_heat/c**2)*cv*cj/2)
+diff --git a/tests/test_muon_native_induced_polarization.py b/tests/test_muon_native_induced_polarization.py
+new file mode 100644
+index 00000000..b09f6e2a
+--- /dev/null
++++ b/tests/test_muon_native_induced_polarization.py
+@@ -0,0 +1,133 @@
++"""Focused NEW local-action and arithmetic checks; not native anomaly tests."""
++import json
++from pathlib import Path
++import sys
++import numpy as np
++import sympy as sp
++ROOT=Path(__file__).resolve().parents[1]
++sys.path.insert(0,str(ROOT/'src'))
++from bhsm.interface import muon_native_induced_polarization as impl
++OUT=ROOT/'artifacts/muon_native_induced_polarization_20261006/run_1'
++
++
++def load(path):
++    with np.load(path) as z:return {k:np.array(z[k]) for k in z.files}
++
++
++def test_actual_real_frame_contact_and_current_duality():
++    a=load(OUT/'affine_source_contacts.npz')
++    c=json.loads((OUT/'result.json').read_text())['checks']
++    assert a['real_test_frame'].shape==(240,32)
++    assert np.linalg.norm(impl.reality(a['real_test_frame'])-a['real_test_frame'])==0
++    assert c['same_frozen_span_residual']<4e-13
++    assert c['real_frame_M_Gram_residual']<2e-14
++    assert c['local_Riesz_identity_residual']<2e-15
++    assert c['contact_real_direction_Hermiticity']<2e-15
++    assert c['connected_n3_test_source_action_norm']>0
++    assert a['local_real_contact_P_vA'].shape==(32,8,64,64)
++    assert a['local_Riesz_current_coordinates'].shape==(8,224)
++
++
++def test_factorized_contact_preserves_all_current_labels():
++    a=load(OUT/'affine_source_contacts.npz')
++    # One actually reached column, without allocating the full tensor.
++    i=int(np.argmax(a['reached_contact_column_norms']))
++    column=np.einsum('vaij,a->vij',a['local_real_contact_P_vA'],a['local_Riesz_current_coordinates'][:,i])
++    assert np.isclose(np.linalg.norm(column),a['reached_contact_column_norms'][i],rtol=2e-14)
++    assert np.allclose(np.trace(column,axis1=1,axis2=2),a['reached_contact_fibre_trace'][:,i],atol=1e-16)
++    assert np.count_nonzero(a['reached_contact_column_norms'])==32
++
++
++def test_compact_weak_first_row_against_actual_direct_coefficient_sum():
++    from bhsm.interface.muon_parent_source_contact import parent_insertion
++    a=load(OUT/'affine_source_contacts.npz');w=load(OUT/'compact_weak_first_jets.npz')
++    parent=load(ROOT/'artifacts/muon_parent_source_contact_20261003/replay_reference/parent_source_contact.npz')
++    source=load(ROOT/'artifacts/muon_matched_mechanical_source_20261002/replay_reference/matched_source_and_weak_actions.npz')
++    rate=load(ROOT/'artifacts/muon_parent_source_rate_20261003/replay_reference/parent_source_rate_corrected.npz')
++    rho=rate['gauss_rho'];nodes=parent['rho'];indices=rate['source_image_probe_columns']
++    chi=np.interp(rho,nodes,parent['spinor_probe_hat_nodes'])
++    r=np.interp(rho,nodes,parent['base_radius']);kernel=float(parent['T_b'])/r;f=kernel*chi
++    value=0j;coeff=impl.split_coefficients(a['real_test_frame'])
++    # An actual scalar entry, independently applying the coefficient matrices
++    # node by node instead of the implementation's contracted einsums.
++    vi=7;Ai=2;ci=1;di=3
++    for n in (1,3):
++        x=parent_insertion(source['saved_gamma_LR'],coeff[n][vi:vi+1],source['unit_trace_carrier_basis'])[0]
++        xa=parent[f'Xi_A_unit_n{n}'][Ai,:,indices[ci]]
++        dp=rate[f'D5_on_same_source_image_b_coefficient_n{n}'][:,Ai,:,ci]
++        # Source-adjoint is an anti-Hermitian full field in this convention.
++        phase=(-1.)**(np.arange(n+1)[None,:]-np.arange(n+1)[:,None])
++        xd=x[...,::-1,::-1].conj().transpose(1,0,2,3)*phase
++        assert np.linalg.norm(xd+x)<2e-14
++        for g in range(64):
++            dw=rate['D5_metric_common_A_on_compact_probes'][g,:,indices[di]]
++            for m in range(n+1):
++                for k in range(n+1):
++                    value+=rate['node_volume_quadrature_weights'][g]*(
++                        np.vdot(dp[g,:,m,k],f[g]*x[:,indices[di],m,k])+
++                        np.vdot(f[g]*xa[:,m,k],kernel[g]*(xd[:,:,m,k]@dw)))
++    assert np.allclose(value,w['parent_compact_K_0_v'][vi,Ai,ci,di],rtol=2e-13,atol=2e-15)
++    assert np.linalg.norm(w['parent_compact_K_0_J'])>0
++    assert np.linalg.norm(w['parent_compact_K_tau0_v'])>0
++    assert np.linalg.norm(w['parent_compact_K_0tau_v'])>0
++
++
++def test_all_control_heat_representations_and_moving_mass():
++    c=json.loads((OUT/'arithmetic_control.json').read_text())
++    assert c['classification']=='ARITHMETIC_CONTROL_ONLY'
++    assert c['dimension']==3 and c['control_ell']==.7
++    assert c['max_fixed_method_difference']<1e-13
++    assert c['rank_factor_application_residual']<1e-14
++    assert c['moving_method_difference']<1e-13
++    assert c['nonzero_D_vJ_norm']>0
++    assert c['moving_two_mass_terms_retained']
++    sys.path.insert(0,str(ROOT/'scripts'))
++    from control_muon_induced_heat import control_data
++    j=impl.generalized_form_jets(*control_data())
++    _,_,_,_,M,Mv,Mj,Mvj=control_data()
++    rhs=j['K_vJ']-Mvj@j['A']-Mv@j['A_J']-Mj@j['A_v']
++    assert np.linalg.norm(M@j['A_vJ']-rhs)<1e-15
++    assert np.linalg.norm(Mv@j['A_J'])>0 and np.linalg.norm(Mj@j['A_v'])>0
++
++
++def test_crossing_rule_does_not_select_mixed_impedance_response():
++    q=dict(I=sp.Symbol('E',positive=True),C=sp.Symbol('C'),Ftau=sp.Symbol('Ft',nonzero=True),
++        Itau=sp.Symbol('It'),Itautau=sp.Symbol('Itt'),Ftautau=sp.Symbol('Ftt'),
++        Iv=sp.Symbol('Iv'),Ij=sp.Symbol('Ij'),Ivj=sp.Symbol('Ivj'),
++        Fv=sp.Symbol('Fv'),Fj=sp.Symbol('Fj'),Fvj=sp.Symbol('Fvj'),
++        Itauv=sp.Symbol('Itv'),Itauj=sp.Symbol('Itj'),Ftauv=sp.Symbol('Ftv'),Ftauj=sp.Symbol('Ftj'))
++    r=impl.owner_length_jet(**q)
++    v,j=sp.symbols('v j');t=r['tau_v']*v+r['tau_J']*j+r['tau_vJ']*v*j
++    energy=(q['I']+q['Iv']*v+q['Ij']*j+q['Ivj']*v*j+q['Itau']*t+
++        q['Itauv']*t*v+q['Itauj']*t*j+q['Itautau']*t*t/2)
++    assert sp.simplify(sp.diff(energy,v,j).subs({v:0,j:0})-r['E_vJ'])==0
++    assert sp.simplify(sp.diff(1/energy,v,j).subs({v:0,j:0})-r['ell_vJ'])==0
++    # Add k*v*j to BOTH I and C: F/crossing remains identical. This is only
++    # an insufficiency proof for the displayed owner rule, not a BHSM model.
++    k=sp.Symbol('k');q2=dict(q,Ivj=q['Ivj']+k);r2=impl.owner_length_jet(**q2)
++    assert sp.simplify(r2['E_vJ']-r['E_vJ']-k)==0
++    assert sp.simplify(r2['ell_vJ']-r['ell_vJ']+k/q['I']**2)==0
++
++
++def test_lower_limit_formula_including_mixed_length():
++    v,j=sp.symbols('v j');p,c=sp.symbols('p c',positive=True)
++    pv,pj,pvj,cv,cj,cvj=sp.symbols('pv pj pvj cv cj cvj')
++    P=p+pv*v+pj*j+pvj*v*j;C=c+cv*v+cj*j+cvj*v*j
++    exact=sp.diff(-sp.expint(1,C*P)/2,v,j).subs({v:0,j:0})
++    Q=sp.exp(-c*p)/(2*p);Qp=sp.diff(Q,p)
++    lower=impl.lower_limit_mixed(c,cv,cj,cvj,sp.exp(-c*p),p*sp.exp(-c*p),pv*sp.exp(-c*p),pj*sp.exp(-c*p))
++    assert sp.simplify(exact-Q*pvj-Qp*pv*pj-lower)==0
++
++
++def test_owned_local_operand_frame_conversion_and_claim_boundary():
++    r=json.loads((OUT/'result.json').read_text());c=r['checks']
++    assert c['local_subtraction_same_frame_residual']<c['propagated_change_of_frame_allowance']
++    assert c['endpoint_H_placeholder_consumed'] is False
++    assert r['physical_a_mu'] is None and r['physical_g_mu'] is None
++    assert r['bulk_heat']['full'] is None and not r['target_evaluated']
++    assert r['execution']['previous_production_replays']==0
++    assert r['execution']['previous_shifted_solves']==0
++    assert not r['bulk_heat']['physical_default_length_used']
++    assert not r['bulk_heat']['primitive_Lorentz_inserted_as_native']
++    assert r['relative_completion']['status']=='UNEVALUATED'
++    assert r['one_explicit_unprovided_operand']['operand'].startswith('E_vJ')
+diff --git a/theory/muon_native_induced_polarization_20261006.md b/theory/muon_native_induced_polarization_20261006.md
+new file mode 100644
+index 00000000..1ec6b81c
+--- /dev/null
++++ b/theory/muon_native_induced_polarization_20261006.md
+@@ -0,0 +1,327 @@
++# Unreduced photon source jets and the native length response
++
++Continuation of PR #465 at `229c20ff0c556ab9e6a1b74d4555a470c778dee4`;
++scientific reference `524ed90689bd5923c249bba2e699abf627e703cd`.
++
++The new result is an **evaluated local mixed source-square contact and
++compact first-form/time-jet rows**, followed by the differentiated native
++length rule. The complete `R_ind(v,J)` has not been evaluated. These
++matrices, their norms, and the arithmetic control are not a muon anomaly.
++
++## Preserved evidence and execution
++
++The actual branch is `codex/muon-parent-maxwell-density-review`. Initial
++status was clean, fetch succeeded, and GitHub PR #465 contained the supplied
++head. The primary checkout and unrelated work were not changed. The
++starting revision/status and intentional new files are recorded in
++`artifacts/muon_native_induced_polarization_20261006/run_1/starting_revision.json`.
++
++The previous 240-dimensional primitive angular form, 32-dimensional response
++space, 224 current labels, three shifted solves, six checks and consumed
++stored-matrix certificate remain frozen. There were **zero** replays of
++earlier producers/shifted solves and **zero** native heat evaluations.
++The new source evaluation took approximately0.56 seconds. Seven new targeted
++checks passed. The accepted parent solution, family mass/time jets, profile,
++common-A prescription, fixed normalization and local calibration were reused
++as provenance and were not recalculated.
++
++## Physical inputs, source coordinates and pairing
++
++The source coordinate is `b`, with `beta=T_b b` and `A_Q=sqrt(2) beta`.
++The saved orthonormal coframe gives the local insertion `Xi=f_R c_src(a)`
++at the cut, `f_R=T_b/r`. Both this factor and the coframe/carrier conversion
++are applied once. The quadratic-action index2/3 is already in the owned
++primitive form and never multiplies a Dirac vertex.
++
++The source compiler is `muon_parent_source_contact.parent_insertion`:
++`i gamma_LR^a` contracted with the actual coefficients in the retained
++anti-Hermitian primitive-Tr16 carrier basis. All 64 Spin4Ã—SM16 fibre rows and
++columns are kept. There is no second charge-conjugate trace or family factor.
++Normalized harmonics are `phi_nmk=sqrt(n+1) conjugate(D_mk^(n/2))`; their
++unit-Haar pairing is the identity. No extra `1/(n+1)` is inserted.
++
++| Input | Producer / realization | Classification and scope |
++|---|---|---|
++| Actual source and Clifford/carrier coefficients | saved matched-source packet; `parent_insertion` | evaluated realization data, same section/coframe |
++| Cut one-form geometric pairing | frozen `M_geometric_scalar=0.959045109007034` | evaluated local scalar density; not the full stratifiedM |
++|32 test directions | frozen residual-enriched frame | computational seed; no new enrichment or physical state selection |
++|224 current covectors | family `Gamma_bar_complete`, frozen component packet | evaluated canonical test-current data, not LSZ states |
++| Corrected compact `D0 p_A`, `D0 phi` | `parent_source_rate_corrected.npz` | frozen parent-component right-cell/Gauss model; H-rate repair retained |
++| Full native source/operator/quotient action | AE4 owner and inherited domain | unevaluated; local actions are not its substitute |
++| Native length and scalar energy source response | AE4 first-future impedance/core crossing rule | rule derived/adopted; values/jets unevaluated |
++| Frozen local anomaly terms | unchanged `frozen_local.json` | conditional local; alpha calibration convention unchanged |
++
++The current is a **covector**. Its local field direction is explicitly
++
++\[
++ a_J=S\eta_J,\qquad
++ \eta=(S^\dagger S)^{-1}C/M_{\rm geom},\qquad
++ M_{\rm geom}S\eta=J_{\rm dual}.
++\]
++
++No raw covector is used as a connection variation. This is a cut geometric
++Riesz identification; it does not supply its global physical continuation.
++
++The complex span of the frozen 32-column frame is expressed in 32 real photon coordinates using
++the **existing** harmonic involution. This changes coordinates only:
++the M-Gram residual is 1.61e-15 and the same-span residual is 3.36e-13.
++The reality residual is exactly zero in the stored operations. The full
++224-column current is treated by complex-bilinear extension of this real
++Hessian, retaining the 48+192 n1/n3 coefficient order.
++
++## Evaluated mixed contact
++
++On the local, unreduced, fixed-frame affine connection path,
++
++\[
++ D_{vA}=0,\qquad
++ C_{vA}=\langle\Xi_v^\dagger\Xi_A+\Xi_A^\dagger\Xi_v\rangle_{S^3}.
++\]
++
++This supplies the **source-square part** of the mixed form, evaluated for
++32 real directions Ã—8 saved sources on all 64 fibre inputs/outputs. It
++does not supply the full global `P_vJ`: the remaining pullback/domain and
++`D_vJ` terms are not assigned zero. Full mixed jets are
++
++\[
++ K_{vJ}=D_v^\dagger D_J+D_J^\dagger D_v
++       +D_{vJ}^\dagger D_0+D_0^\dagger D_{vJ}.
++\]
++
++`affine_source_contacts.npz` stores the factorization
++`C_vJ=sum_A C_vA eta_AJ` for **all224 labels**. It preserves the whole
++64-carrier action without allocating a redundant32Ã—224Ã—64Ã—64 tensor.
++There are32 nonzero reached columns. Its finite-coefficient Frobenius norm
++is 0.058316529673110365. The real32Ã—8 contact norm is 0.6575736489779195;
++Hermiticity residual 2.15e-17. These are coordinate-dependent local operator
++diagnostics, not graded heat traces, dimensionless anomalies or error bounds.
++The connected n3 source action is retained (norm 1.721800503656227).
++
++## Evaluated first-form and temporal cross rows
++
++No stationary photon extension is demanded before unreduced differentiation.
++The retained `muon_source_weak_extension.weak_extension_contract` explicitly
++allows differentiating the unreduced fixed-trace functional/coupled equations.
++Demanding a completed induced stationary source lift before constructing
++that Hessian would be circular. A pointwise normal derivative is also not
++necessary to evaluate the compact weak form below.
++
++Use the SAME cached compact `phi` columns and eight insertion images
++`p_A=Xi_A phi`, as diagnostic tests, not a native Hilbert basis or a selected
++wall input. Their frozen local dependence is affine, so these tests are
++held fixed in this local derivative:
++
++\[
++ K_x(p_A,\phi)=\langle D_0p_A,\Xi_x\phi\rangle_5
++                 +\langle p_A,\Xi_x^\dagger D_0\phi\rangle_5.
++\]
++
++The volume quadrature, radial profiles, corrected `D0p_A` amplitudes and
++time jets are consumed from the existing packet. No point/body actions or
++quadrature refinement are rerun. For the second product the complete
++angular-field adjoint includes the saved weight reversal and phase:
++
++\[
++ (\Xi^\dagger)_{mk}=(-1)^{(m-k)/2}\Xi_{-m,-k}^\dagger.
++\]
++
++The builder evaluates amplitude, left-time and right-time rows separately,
++retaining the full output before pairing. `compact_weak_first_jets.npz`
++contains the 32-direction rows and their complex-linear 224-current versions.
++The local norms are `||K_v||=1.2354479551530708`,
++`||K_J||=0.19919498467801033`, and both temporal cross norms are approximately
++0.223121527065135. A nonzero checked entry is
++`K_v[7,2,1,3]=-0.02235799257268061+0.0005495312412234953 i`.
++The independent test sums the actual coefficient products node by node.
++Reverse local rows are the adjoints in this fixed positive form pairing;
++this does **not** impose reciprocity on a retarded reduced response.
++
++These are radial integrals at the inherited cut in the frozen nodal/Gauss
++model, not time-history elements or continuum-certified native `P_J`.
++Both local `M` and local `D_vJ` jets are exactly zero only because the
++unreduced geometric metric, frame and test fields are fixed and the
++connection source is affine. Moving reduced embeddings/Gram matrices,
++reset/material/stop/BRST and global source-map jets remain unevaluated.
++The historical H=0 placeholder is not consumed. The corrected cached rate
++and the declared right-cell body/interpolation errors remain distinct.
++
++## Differentiate the owner length rule
++
++Let `I=E_impedance`, `C=E_core`, `F=I-C`. On a simple persistent selected
++first-future/support-loss branch, `F(tau_star,b)=0` gives
++
++\[
++ \tau_v=-F_v/F_\tau,\quad \tau_J=-F_J/F_\tau,
++\]
++\[
++ \tau_{vJ}=-\frac{F_{vJ}+F_{\tau v}\tau_J+F_{\tau J}\tau_v
++                       +F_{\tau\tau}\tau_v\tau_J}{F_\tau}.
++\]
++
++For `E(b)=I(tau_star(b),b)`:
++
++\[
++ E_v=I_v+I_\tau\tau_v,
++\quad E_{vJ}=I_{vJ}+I_{\tau v}\tau_J+I_{\tau J}\tau_v
++       +I_{\tau\tau}\tau_v\tau_J+I_\tau\tau_{vJ}.
++\]
++
++Then `ell=1/E`, `c=ellÂ²`:
++
++\[
++ \ell_v=-E_v/E^2,\quad
++ \ell_{vJ}=2E_vE_J/E^3-E_{vJ}/E^2,
++\]
++\[
++ c_v=-2E_v/E^3,\quad c_{vJ}=6E_vE_J/E^4-2E_{vJ}/E^3.
++\]
++
++If the crossing is not simple, these formulas require an appropriate
++branch representation; no new crossing is selected here. Fixed geometry
++alone does not establish independence of the energy/source pullback. The
++retained rule does not identify which source-response components of Phi
++are fixed or produce the scalar energy action. Neither zero nor nonzero
++physical length jets have been established; all are `UNEVALUATED`.
++
++For `T(c)=STr exp(-cP)`, add to the fixed-length mixed heat Hessian:
++
++\[
++ -\tfrac12c_v\operatorname{STr}(e^{-cP}P_J)
++ -\tfrac12c_J\operatorname{STr}(e^{-cP}P_v)
++ +\frac{T(c)}{2c}c_{vJ}
++ -\tfrac12\left[\frac{\operatorname{STr}(Pe^{-cP})}{c}
++                    +\frac{T(c)}{c^2}\right]c_vc_J.
++\]
++
++Source/domain/event motion belongs in the same total P-jets; it must not be
++counted again. Relative-completion length derivatives are also part of the
++same owner. No physical length is chosen, fitted, or set to1.
++
++## One explicit unavailable operand
++
++The exhibited operand is
++
++\[
++ \boxed{E_{vJ}=\delta_v\delta_J
++ E_{\rm impedance}[\Phi(b);\Sigma_*(b)]}.
++\]
++
++This is one scalar contracted response per consumed direction pair, not
++the sole remaining input to the full native calculation. It enters
++`c_vJ` and hence `[T(c)/(2c)]c_vJ`. No theorem making that whole graded term
++cancel has been established. Other native P and completion actions are
++explicitly null/unevaluated in the saved ledger.
++
++The concrete producer `native_spectral_length_contract` supplies the
++first-future crossing and inverse-energy rule, but no callable scalar
++`I(tau,b)` or its source jets. `seam_wronskian_lower` only combines supplied
++DtN/Wentzell lower bounds; it is not that scalar energy. The retained
++`H_impedance` operator ratio and `spectral_formation_number`'s supplied
++impedance argument do not define the needed scalar-energy contraction.
++The240-dimensional primitive photon response and 72-coordinate SpinÃ—SM
++parent solution have different operators/input spaces and supply no such
++energy response.
++
++There is a precise insufficiency statement for the **displayed crossing
++rule**: adding `k b_v b_J` to both I and C leaves F, the crossing/support
++branch, unsourced values and first source jets unchanged, while changing
++`E_vJ` by k. Thus the rule alone cannot determine its value. This is not a
++new BHSM solution, a physical coefficient, or a parameter to sweep. The
++needed next equation is the action-owned scalar impedance/core energy
++pullback under the SAME photon source, sufficient to evaluate this mixed
++response (or a derived source-independence/cancellation identity).
++
++## Heat, completion and local ownership
++
++The fixed-length bulk expression remains
++`STr[Q(P0)P_vJ + DQ[P_J]P_v]`, with
++`P0=D_stratâ€ D_strat` on the inherited zero-mode/BRST quotient and
++`Q(x)=exp(-ellÂ²x)/(2x)`. Both pieces are unevaluated on that native space.
++The 32 test frame is only a source seed. Multiplication by a nonzero smooth
++source is **not finite rank on the continuum Hilbert space**: on an open
++region where its fibre action is nonzero, infinitely many disjoint-support
++smooth tests have linearly independent images. Finite harmonic support
++implies finite support for one specified finite-input action, not a heat
++or repeated-action complement theorem. The evaluated64-fibre contact
++therefore cannot replace the graded/native trace.
++
++The relative completion belongs to this same functional. The recovered
++historical zeta identity is
++`logdet_zeta(P/muÂ²)=-zeta_P'(0)-2 log(mu) zeta_P(0)`.
++Its source/phase response requires the current relative reference,
++subtraction and eta/domain prescription; the inspected source supplies
++the identity, not their current numerical contractions. The exact
++reduced-diamond boundary-zeta implementation is not substituted for the
++current stratified one. No second independent determinant is added.
++
++`owned_local_angular_operand.npz` evaluates only
++`H_angular(v,J)/kappa1=F_realâ€  K_angular S eta` in the SAME source frame.
++It contains the already-owned local Maxwell angular kinetic and curvature
++contact terms, with their existing pointwise weight/index normalization.
++It is an eligible subtraction operand, not a completed subtraction from
++an unknown Gamma Hessian. Frame conversion residual 7.11e-13 is below the
++propagated binary64 same-span consistency allowance 4.78e-10; neither is a
++native error certificate. The whole primitive diagnostic is not subtracted.
++
++| Ledger entry | Full-native subtraction/remainder status | Actually available |
++|---|---|---|
++| Primitive Maxwell | UNEVALUATED | angular kinetic/curvature subtraction operand; other components not assembled here |
++| common-A/background | UNEVALUATED | shared angular background contact already in previous row; no extra addend |
++| Higgs/gauge local mixed | UNEVALUATED | retained conditional prior rows, not promoted here |
++| gauge-fixing/ghost | UNEVALUATED | quotient/partner actions required, not filled with zeros |
++| induced heat | UNEVALUATED | evaluated local source-square/weak ingredients only |
++| relative-zeta/eta | UNEVALUATED | historical identity, not current response |
++| domain/interface | UNEVALUATED | inherited reset/material/stop class retained |
++| completion | UNEVALUATED | same-owner completion retained, no adjustable subtraction |
++
++No entry is marked `OWNED_LOCAL_SUBTRACTED`, `NATIVE_REMAINDER`, or
++`COMMON_CANCELLED` before that operation/cancellation has been evaluated.
++The complete photon response and electron-muon family heat consumer remain
++unevaluated; no isolated Lorentz/angular/probe block is heated as native P0.
++
++## Arithmetic checks and uncertainty scope
++
++The deliberately generated 3-dimensional common-D **arithmetic control**,
++with explicit test length 0.7, retains nonzero D_vJ and both moving-M terms.
++Dense divided differences, a noncommuting block FrÃ©chet action, factorized
++source application and proper-time quadrature agree to 4.34e-19 for its
++fixed-M value. The existing 192-bit Arb HeatPencil encloses
++`-0.00261262804513669149575061570783754199924178185656379924804`
++for that supplied control. The moving-M control value is approximately
++`-0.003723219480725369087773827411965874044566369257823251882`;
++independent block-action agreement 2.60e-18. The SciPy quadrature error is
++an estimate; Arb intervals enclose only the exact supplied finite control
++matrices. These are extraction/arithmetic checks, never physical operands.
++
++New actual local rows have binary64 consistency checks at their declared
++frozen-component scope; no certified full-operator numerical bound,
++spectral-tail bound, continuum error or native theoretical uncertainty is
++assigned. The prior stored-matrix certificate is preserved and is not used
++to certify these new actions. Increasing a native source-generated Krylov
++space and bounding its consumed contraction have **not** been executed.
++
++Frozen local values are unchanged:
++`a_QED_local=0.00116550200495813`, calibration-only standard uncertainty
++`1.79e-13`, using inverse alpha 137.035999084 with standard uncertainty 2.1e-8
++and the other original conditional inputs fixed. The already-combined
++selected-local interval remains `(0.0011655039493,0.0011655109506)`.
++No QED/Higgs term is added again. There is no new physical a_mu, g_mu,
++strong-sector value, total error bound or experimental comparison.
++
++## Reproduction and checkpoint
++
++From the PR worktree, use a **fresh** output directory:
++
++```powershell
++C:\Python314\python.exe scripts/replay_muon_native_induced_polarization.py --output <fresh-directory>
++C:\Python314\python.exe -m pytest --noconftest -q tests/test_muon_native_induced_polarization.py
++```
++
++All source/input SHA-256 identities are in `run_1/input_hashes.json`;
++the actual executed source bytes are archived separately with text
++conversion disabled. Source canonical-LF identities are also recorded,
++so line-ending-only checkout differences do not trigger a replay campaign.
++`compact_weak_first_jets.npz`, `affine_source_contacts.npz`, length equations,
++ownership/domain ledgers, output hashes, test receipt and publication
++receipt provide a resumable checkpoint. A context restart need not rerun
++the previous photon, parent, family or calibration production.

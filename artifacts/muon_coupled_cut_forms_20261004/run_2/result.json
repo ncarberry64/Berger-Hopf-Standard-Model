@@ -1,0 +1,92 @@
+{
+  "actual_source_quotient_reconstruction_residual": 3.313200613935019e-15,
+  "block_quadrature_comparison": {
+    "K_WW": {
+      "absolute_difference": 9953759748668.018,
+      "certified_bound": false,
+      "relative_difference": 3.589572798357875e-14
+    },
+    "K_Wp": {
+      "absolute_difference": 0.5281306828138075,
+      "certified_bound": false,
+      "relative_difference": 1.367718161567545e-14
+    },
+    "K_pp": {
+      "absolute_difference": 5.119309816640593e-13,
+      "certified_bound": false,
+      "relative_difference": 2.507078706417183e-15
+    }
+  },
+  "bulk_M_Wchi_offdiagonal_norm": 1.9229626863835638e-16,
+  "classification": "new cut diagonal, interface and moving connected-complement actions",
+  "continuum_or_full_exterior_error": null,
+  "direct_energy_vs_weak_output_difference": 7.105427357601002e-15,
+  "direct_full_output_energy_per_tau": 33.09993716968329,
+  "direct_full_output_mass_per_tau": 0.05291030326001822,
+  "direct_mass_vs_reused_certificate_difference": 6.938893903907228e-18,
+  "exact_frozen_local": {
+    "a_mu_QED_local": "0.00116550200495813",
+    "a_mu_selected_local_open_interval": [
+      "0.0011655039493",
+      "0.0011655109506"
+    ],
+    "already_combined_selected_local": true,
+    "calibration_convention": "alpha_inverse=137.035999084; standard uncertainty=2.1e-8; other original conditional inputs fixed",
+    "calibration_only_standard_uncertainty": "1.79e-13",
+    "delta_a_mu_h_local_1_open_interval": [
+      "0",
+      "3.500331e-9"
+    ],
+    "native_added": false,
+    "publication_paths": "Portable logical provenance; original local metadata and evaluated revision snapshot preserved in standalone handoff."
+  },
+  "execution": {
+    "exterior_solutions": 0,
+    "full_cap_form_replays": 0,
+    "heat_evaluations": 0,
+    "new_old_endpoint_extractions": 0,
+    "new_small_block_contractions": true
+  },
+  "material_complement_trace_norm": 0.027409755590308733,
+  "new_K_Wchi_norm": 2.3974331185121297e+24,
+  "new_K_chichi_norm": 3.928153262992277e+23,
+  "omission_of_B_tau_action_weighted_norm": 363136713897.20654,
+  "physical_a_mu": null,
+  "physical_g_mu": null,
+  "physical_source_applied_using": "J coefficients cancelled first, then known Dp; not subtraction of large complement quadratic forms",
+  "raw_large_action_sum_error_weighted": 1.3372198763861878e-05,
+  "scope": "actual retained source quotient, not a physical muon state or a complete exterior trial space",
+  "solve_attempt": {
+    "cut_matrix_inverted": false,
+    "full_shifted_source_rhs": "p is the saved continued source; its history/test pairing is not yet materialized",
+    "heat_of_cut_matrix_taken": false,
+    "local_action_rhs_K": "coupled_cut_source_actions.npz::rhs_K",
+    "local_action_rhs_M": "coupled_cut_source_actions.npz::rhs_M",
+    "local_operator_applied_to_actual_source": true,
+    "missing": {
+      "block": "connected_history_weak_action: K_ext,chi-chi and coupled trace rows",
+      "consumer": "(K_ext+s M_ext)u=p with total inclusion-plus-complement reset/material traces, then Gamma1^owner u and the stratified fermion-family retarded response",
+      "current_data": "endpoint rates and right-cell nodal geometric reconstructions available; no owned non-cut action-jet family was supplied to this assembly",
+      "endpoint_constant_extension": false,
+      "equation": "q_ext,0^owner(v_chi,chi)=integral_Iext <D5,0 v_chi,D5,0 chi>_5 d tau + owned interface/seam/domain terms; m_ext=integral_Iext <v_chi,chi>_5 d tau",
+      "first_coefficient": "a0(tau,rho)=[-I_tau/(2I)-L_nu/2+3H/2+C_tau/(2C)-zeta C_rho/(2C)-zeta_rho/2+zeta nu_rho/(2nu)-zeta cot(rho/2)/2]/nu",
+      "first_unavailable_action": "this coefficient and B_tau in D5 chi on a non-cut, source-reached part of the inherited exterior history, with full coupled traces",
+      "input_space": "source-reached connected spinor sections in the inherited AE2 reset/material/past-prefix/canonical-stop form domain; not the child16 or the whole exterior space",
+      "new_boundary_law": false,
+      "output_space": "dual weak functional on those same sections and their coupled temporal traces",
+      "producer": "same v14.45 common-A + radial-eta Dirac action; current action-field rows74:86 and q_tau=v/N_b from audit_n12_c2_exact_center_fixed_s_field_matrix.py and certify_n12_c2_cancelled_field_lohner_step.py, consumed at the actual exterior states",
+      "status": "uncomputed prescribed history action/domain realization, not an unselected new physical boundary parameter"
+    },
+    "output_contraction_available": "local <p,D5^dagger D5 p> cut density, not Gamma1 u",
+    "reason": "K_ext,chi-chi and its coupled trace action: integral_Iext <D5,0 chi_i,D5,0 chi_j>_5 d tau + owned seam/domain terms; M_ext,chi-chi=integral_Iext <chi_i,chi_j>_5 d tau. The endpoint density is not this inherited-history action.",
+    "solution": null,
+    "stationary_conormal": null,
+    "stationary_residual": null,
+    "status": "assembly stopped before inversion"
+  },
+  "source_column": 0,
+  "source_energy_4_8_point_difference": 9.237055564881302e-14,
+  "source_local_Dirac_energy_per_tau": 33.099937169683294,
+  "temporal_Cauchy_Wchi_offdiagonal_norm": 0.048564341805514666,
+  "total_material_trace_residual": 3.878959614448864e-18
+}

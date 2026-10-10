@@ -1,0 +1,556 @@
+{
+  "Gamma_reset_and_family": {
+    "CAR_automorphism": "alpha_R(A(F))=A(U_R F).",
+    "Hadamard_reset": "Smooth spin/gauge bundle isomorphism intertwines Dirac principal symbols and future null covectors, preserving Hadamard wavefront/polarization; every admissible state is transported, none selected.",
+    "antiunitary_definition": "Gamma(v)=G*conjugate(v), G unitary and G*conjugate(G)=I.",
+    "localization_guard": "T_enc includes P_D L_sigma, with P_D a restriction and L_sigma a nonprojector weight. It is not the unitary AE2 CAR automorphism. A kernel T_enc C T_enc_dagger has transformed anticommutator T_enc T_enc_dagger; one must use the induced pairing/image rather than silently impose identity I on that weighted kernel.",
+    "matrix_reality": "C+G*conjugate(C)*G_dagger=I.",
+    "muon_family": "Existing charged-lepton slot1/(5,2) projector is inherited; reset has family factor I_F. No new family/species selector or spectrum rebuild.",
+    "principal_doubling": "In the displayed particle/conjugate chart: C_Had_principal=diag(P_plus,I-conjugate(P_plus)); G=[[0,I],[I,0]], U_SD=diag(U_particle,conjugate(U_particle)). This is principal-symbol evidence, not a full physical covariance.",
+    "refs": [
+      "reset_covariance",
+      "principal_doubling",
+      "principal_doubling_theory",
+      "family_enclosure",
+      "current_enclosure",
+      "state_class"
+    ],
+    "reset_covariance": "C_child=U_R C_event U_R_dagger; inverse C_event=U_R_dagger C_child U_R.",
+    "reset_intertwining": "U_R G_event=G_child conjugate(U_R).",
+    "same_state_identification": "For action-owned causal Cauchy evolution V_(Sigma,E1) on the same retained child: C_mu,Sigma_BHSM=Pi_mu_SD V_(Sigma,E1) U_R C_C1,E1_minus_BHSM U_R_dagger V_(Sigma,E1)_dagger Pi_mu_SD. This is the earlier muon covariance operand transported from the incoming covariance; no second independent state is introduced.",
+    "self_dual_family_compression": "Pi_mu_SD=Pi_mu_particle direct_sum conjugate(Pi_mu_particle), equivalently a projector invariant under Gamma. C_mu=Pi_mu_SD C Pi_mu_SD satisfies compressed self-dual CAR with identity Pi_mu_SD on its image. Particle-only compression is not the entire self-dual CAR sector."
+  },
+  "actual_action_and_sign": {
+    "AE2_boundary": "Independent normal matter boundary action S_Sigma_F_AE2=0: reset is internal gluing of a single global field domain, without delta-supported matter density.",
+    "AE2_bulk": "S_F_AE2=(1/2) integral_(M_event union_R M_child) [barPsi*iD*Psi-overline(iD*Psi)*Psi] dmu, with retained canonical normalization.",
+    "AE31_intrinsic_lepton": "S_4_lH=integral_M4 [|D H|^2-V_BH(H)+i barL_L slashD L_L+i bare_R slashD e_R-(barL_L Y_l H e_R+h.c.)].",
+    "fermion_statistics": "AE4 ghost/fermion supertrace signs must be inherited through the owned Hessian/tractions. No new sign or normalization can be inserted in the sector assembly.",
+    "historical_source_caution": "The v6.7 boundary_matter_dynamics source ledger explicitly records its adopted historical action; its source tensor forms are audited as provenance of the bilinear classification, not as an additional current AE3.1 wall term or a physical value.",
+    "kinetic_half_scope": "The AE2 kinetic factor 1/2 symmetrizes left/right differentiation of the canonical action. It is not evidence that an arbitrary covariance contraction should receive a further self-dual doubling factor 1/2, nor a Wick normal-order prescription.",
+    "refs": [
+      "AE2_action",
+      "AE31_action",
+      "charged_current",
+      "historical_matter_variations",
+      "noether_contraction"
+    ],
+    "source_order": "Gauge and Higgs source/stress variations are ordered bilinears barPsi K Psi or derivatives thereof; Dirac Euler equations and linear domain traces are different consumers."
+  },
+  "audit_scope": "Retained AE2/AE3.1 CAR state representation, current action bilinear/source consumers, reset/family/enclosure maps, and the retained external canonical fermion-body convention. Read-only source audit; no covariance, ray, occupation, trajectory, reset residual, subtraction, or physical value selected.",
+  "consumer_classifications": [
+    {
+      "class": "LINEAR_TRACE",
+      "consumer": "AE2 transmit_trace; Dirac Euler field/domain equation",
+      "datum": "Supplied field/test/Cauchy coefficient or operator-valued linear field; its state expectation may vanish. No general physical quasifree-state ray requirement.",
+      "refs": [
+        "AE2_action",
+        "AE31_action"
+      ]
+    },
+    {
+      "class": "BILINEAR_CURRENT",
+      "consumer": "barPsi gamma^mu T Psi; charged-current J_plus and Hermitian conjugate; scalar source bar e_R Y_dagger L_L",
+      "datum": "Owned bilinear kernel; expectation is a two-point contraction with its retained order. Nonzero one-point is unnecessary.",
+      "refs": [
+        "charged_current",
+        "AE31_action",
+        "historical_matter_variations"
+      ]
+    },
+    {
+      "class": "STRESS_ENERGY",
+      "consumer": "Metric variation of S_F; minimal (i/4) barPsi Gamma_(mu) leftrightarrow D_(nu) Psi plus retained measure/improvements",
+      "datum": "Two-point covariance and derivatives for state-specific expectation, with a local subtraction prescription for absolute continuum values. Mechanical formation-mode expectation is a separate object.",
+      "refs": [
+        "historical_matter_variations",
+        "AE2_action",
+        "AE31_action"
+      ]
+    },
+    {
+      "class": "GREEN_PAIRING",
+      "consumer": "AE2 opposite-normal Green form and maximal-isotropic trace graph",
+      "datum": "Sesquilinear domain form; the joined operator/form vanishes on every transmitted pair before covariance selection.",
+      "refs": [
+        "AE2_action",
+        "family_enclosure"
+      ]
+    },
+    {
+      "class": "TWO_POINT/COVARIANCE",
+      "consumer": "AE3.1 self-dual CAR state, Feynman propagator, reset Hadamard class",
+      "datum": "C_C1,E1_minus_BHSM and its transported/restricted version; retarded free CAR kernel is state independent while Feynman kernel depends on C.",
+      "refs": [
+        "state_class",
+        "reset_covariance",
+        "two_point_convention",
+        "external_fermion_body"
+      ]
+    },
+    {
+      "class": "EXTERNAL_ONE_PARTICLE_STATE",
+      "consumer": "universal_lsz normalized simple-pole amplitude and minimum Pauli readout",
+      "datum": "Action-selected simple isolated pole modes with unit descriptor residue. This is a legitimate ray/mode requirement of this separate consumer; not a replacement for CAR covariance or inference from family/eta/rotor/mechanical-mode data.",
+      "refs": [
+        "external_LSZ",
+        "external_state_readout",
+        "body_probe_scope"
+      ]
+    }
+  ],
+  "frozen_geometric_reset_values_recomputed": false,
+  "local_quantum_contraction_limit": {
+    "absolute_continuum_local_value": "Pointwise barPsi(x) K Psi(x) and derivative stress products require a specified coincident-point contraction/subtraction prescription; Hadamard class fixes singularity structure but does not select the smooth state part or all finite local subtraction terms.",
+    "affine_test_limit": "ae31_c2_state_observable_audit.affine_response_screen explicitly assumes F(C)=constant+Tr(B C) for a finite four-mode diagnostic. It is not an owner for every physical current/stress or a nonlinear dressed pole.",
+    "classical_kernel_owned": "The action owns the Dirac bilinear/current/stress variation kernels and causal/domain maps.",
+    "normal_order_reference_in_inspected_owner": null,
+    "physical_absolute_local_normal_order_rule_found": false,
+    "refs": [
+      "state_class",
+      "AE31_action",
+      "AE2_action",
+      "affine_diagnostic",
+      "two_point_convention",
+      "historical_matter_variations"
+    ],
+    "relative_state_values": "For Hadamard states on the same fixed action/domain, the difference of two-point functions is a smooth bisolution. Relative current/stress differences can therefore be formed by applying the same action-derived bidifferential kernel to that smooth difference, with the ordering sign above; this does not produce a selected reference state or an absolute renormalized value.",
+    "search_scope": "Inspected the cited state/action/transport/source/observable owners and searched src/bhsm/interface plus theory Python/Markdown for normal-order, Wick, point-split, Hadamard-subtraction and fermion-renormalization terms. No exhaustive absence claim about all repository history or external theory.",
+    "status": "BOUNDED_OWNER_AUDIT"
+  },
+  "ordinary_convention_reconciliation": {
+    "conversion": "N=I_particle-C_plus; delta N=-delta C_plus. This is an ordinary particle-block conversion, not a particle-number interpretation of every entry of the full doubled self-dual covariance.",
+    "doubling_guard": "A physical self-dual quadratic must be embedded with the correct conjugate kernel and without double counting. The inspected owners do not define every local observable by Tr(C A) on the doubled space; no universal extra factor or sign is inserted here.",
+    "equality": "The two G_F conventions agree after N=I-C_plus away from the equal-time distribution convention, which the external body leaves to its caller.",
+    "external_G_F": "later: -i U_t (I-N) U_s_dagger; earlier: +i U_t N U_s_dagger; delta G_F=+i U_t delta N U_s_dagger.",
+    "ordered_ordinary_quadratic": "For a finite or admissibly smeared ordinary operator Q_A=chi_dagger A chi with the displayed occupation index convention, omega(Q_A)=Tr(A N). Equivalently Tr[A(I-C_plus)]; blindly using Tr(A C_plus) changes the ordering/convention.",
+    "ordinary_occupation_covariance": "N_ij=<chi_j_dagger chi_i>, exactly the argument named occupation_covariance by external_fermion_body.feynman_kernel.",
+    "ordinary_positive_two_point_covariance": "On the ordinary particle block, C_plus,ij=<chi_i chi_j_dagger>; W_plus(t,s)=U_t C_plus U_s_dagger.",
+    "refs": [
+      "two_point_convention",
+      "external_fermion_body",
+      "principal_doubling"
+    ],
+    "relative_ordinary_quadratic": "For two admissible states and the same ordered kernel/domain, delta omega(Q_A)=Tr(A delta N)=-Tr(A delta C_plus). This is a derived CAR contraction, not selection of A, N, a state, or an absolute local subtraction.",
+    "retained_AE31_G_F": "G_F=-i U_t [C_plus-theta(s-t) I] U_s_dagger; delta G_F=-i U_t delta C_plus U_s_dagger.",
+    "status": "DERIVED_BY_MATCHING_RETAINED_KERNEL_CONVENTIONS"
+  },
+  "reference_head": "1d94ce8ed77f8bfe1f13c729dd3d8885dbee5b69",
+  "schema": "BHSM_MUON_BIRTH_FERMION_OWNER_STATE_RECEIPT_V1",
+  "selectors_and_value_boundary": {
+    "audited_candidates": [
+      "AE2 reset lift",
+      "current-C2 time orientation",
+      "Hadamard microlocal condition",
+      "instantaneous Hamiltonian diagonalization",
+      "finite-order adiabatic vacuum",
+      "KMS/thermal state",
+      "Euclidean cap/reflection positivity",
+      "in/out asymptotic vacuum",
+      "proper-history resolvent parameter z"
+    ],
+    "conditional_next_operand": "C_C1,E1_minus_BHSM only for a consumer whose actual covariance dependence survives state-independent operator/form cancellation.",
+    "mechanical_mode_boundary": "The geometric branch23/24 ordered lines, eta inclusion, FR rotor/frozen family rays, quantum covariance and mechanical formation mode are different objects. None is substituted for another.",
+    "not_extra_missing_operands": [
+      "new family projector",
+      "nonzero classical one-point ray for every quasifree state",
+      "independently selected outgoing covariance"
+    ],
+    "operand_value": null,
+    "owned_selection_found": false,
+    "refs": [
+      "state_class",
+      "external_LSZ",
+      "body_probe_scope",
+      "current_enclosure"
+    ],
+    "selector_audit_result": "Each retained candidate defines transport, causal/singularity structure or an uninstantiated proposal; the inspected owner selects no covariance smooth part. No temperature, Bogoliubov angle or diagonalized numerical vacuum is chosen.",
+    "status": "UNEVALUATED_PHYSICAL_COVARIANCE"
+  },
+  "sources": [
+    {
+      "raw_sha256": "fcc2372382f794383208ea7164704b42e985b291df17f32f90846ab48961591d",
+      "ref_id": "state_class",
+      "source_path": "src/bhsm/interface/ae31_c2_fermion_hadamard_state_class.py",
+      "symbol_references": [
+        {
+          "end_line": 65,
+          "start_line": 29,
+          "symbol": "hadamard_class_existence_theorem"
+        },
+        {
+          "end_line": 100,
+          "start_line": 68,
+          "symbol": "cauchy_covariance_selection_contract"
+        },
+        {
+          "end_line": 168,
+          "start_line": 103,
+          "symbol": "retained_state_selector_audit"
+        }
+      ]
+    },
+    {
+      "raw_sha256": "0e01844141c4e91ade8c4057b4f1b94903b1fd4c5395404ef5cc3464a5ab01c2",
+      "ref_id": "reset_covariance",
+      "source_path": "src/bhsm/interface/ae31_c2_reset_hadamard_transport.py",
+      "symbol_references": [
+        {
+          "end_line": 144,
+          "start_line": 36,
+          "symbol": "transport_self_dual_covariance"
+        },
+        {
+          "end_line": 217,
+          "start_line": 183,
+          "symbol": "reset_hadamard_transport_theorem"
+        }
+      ]
+    },
+    {
+      "raw_sha256": "cc46df6372196e610ebfe0921cbb7f438f08d645f5b144faebdf1c6d2a991ccb",
+      "ref_id": "AE2_action",
+      "source_path": "src/bhsm/interface/action_extension_global_spin_reset_ae2.py",
+      "symbol_references": [
+        {
+          "end_line": 60,
+          "start_line": 51,
+          "symbol": "transmit_trace"
+        },
+        {
+          "end_line": 85,
+          "start_line": 63,
+          "symbol": "opposite_normal_green_residual"
+        },
+        {
+          "end_line": 118,
+          "start_line": 88,
+          "symbol": "transmission_graph_certificate"
+        },
+        {
+          "end_line": 194,
+          "start_line": 156,
+          "symbol": "action_definition"
+        }
+      ]
+    },
+    {
+      "raw_sha256": "f3fee1ef24a3f13ef94d4ce5b146f9ac7a827045e369819b35ee8af5ccf0678a",
+      "ref_id": "AE31_action",
+      "source_path": "src/bhsm/interface/ae31_c2_intrinsic_m4_lepton_action.py",
+      "symbol_references": [
+        {
+          "end_line": 63,
+          "start_line": 29,
+          "symbol": "action_composition_contract"
+        },
+        {
+          "end_line": 173,
+          "start_line": 148,
+          "symbol": "first_variation_and_pole_gate"
+        },
+        {
+          "end_line": 224,
+          "start_line": 176,
+          "symbol": "local_tangent_frame_poles"
+        }
+      ]
+    },
+    {
+      "raw_sha256": "98fdf6a943a8934c7d2bf82f3510fc5ea30226aac60a24a965e7aa28874ac146",
+      "ref_id": "chiral_domain",
+      "source_path": "src/bhsm/interface/ae31_c2_chiral_green_domain.py",
+      "symbol_references": [
+        {
+          "end_line": 90,
+          "start_line": 62,
+          "symbol": "chiral_operator_assembly"
+        },
+        {
+          "end_line": 114,
+          "start_line": 93,
+          "symbol": "family_reset_intertwiner_certificate"
+        },
+        {
+          "end_line": 169,
+          "start_line": 117,
+          "symbol": "green_operator_feasibility"
+        }
+      ]
+    },
+    {
+      "raw_sha256": "50e3b74eaae51d38c97cb7c01481737a0d7e48c705fa65d111c6e6d17fce4763",
+      "ref_id": "principal_doubling",
+      "source_path": "src/bhsm/interface/ae31_c2_calderon_principal_symbol.py",
+      "symbol_references": [
+        {
+          "end_line": 113,
+          "start_line": 44,
+          "symbol": "family_dirac_projectors"
+        },
+        {
+          "end_line": 152,
+          "start_line": 116,
+          "symbol": "self_dual_principal_covariance"
+        },
+        {
+          "end_line": 210,
+          "start_line": 155,
+          "symbol": "reset_equivariance_witness"
+        }
+      ]
+    },
+    {
+      "raw_sha256": "44f961297850021f3d68362e52012b67a4cd4697e8a7f9ee6f9ae626e1dbb9dc",
+      "ref_id": "affine_diagnostic",
+      "source_path": "src/bhsm/interface/ae31_c2_state_observable_audit.py",
+      "symbol_references": [
+        {
+          "end_line": 57,
+          "start_line": 35,
+          "symbol": "affine_response_screen"
+        }
+      ]
+    },
+    {
+      "raw_sha256": "1c73e9b6ff5a6d15ca0f103013364b2bc5de9815cf0408c1825ebdf03866603c",
+      "ref_id": "family_enclosure",
+      "source_path": "src/bhsm/interface/ae3_reciprocal_join_localization.py",
+      "symbol_references": [
+        {
+          "end_line": 267,
+          "start_line": 237,
+          "symbol": "interface_variation_ledger"
+        },
+        {
+          "end_line": 388,
+          "start_line": 324,
+          "symbol": "family_fiber_transport_certificate"
+        },
+        {
+          "end_line": 503,
+          "start_line": 391,
+          "symbol": "enclosure_transport_square_certificate"
+        }
+      ]
+    },
+    {
+      "raw_sha256": "b4fb189c0b5c0e9cebd84b6ff46a102e6d5fc9b40f26dfe0fe14e59fc97ba46c",
+      "ref_id": "current_enclosure",
+      "source_path": "src/bhsm/interface/ae4_current_c2_physical_enclosure_state_integration.py",
+      "symbol_references": [
+        {
+          "end_line": 44,
+          "start_line": 20,
+          "symbol": "transport_composition_contract"
+        },
+        {
+          "end_line": 95,
+          "start_line": 47,
+          "symbol": "reconciled_identification_rows"
+        }
+      ]
+    },
+    {
+      "raw_sha256": "cc5261d914b370e8dabb75e649dc078375c4b626c7892710d14581726a9e6cf9",
+      "ref_id": "historical_matter_variations",
+      "source_path": "src/bhsm/interface/boundary_matter_dynamics_neutral_response.py",
+      "symbol_references": [
+        {
+          "end_line": 120,
+          "start_line": 93,
+          "symbol": "complete_action_ledger"
+        },
+        {
+          "end_line": 164,
+          "start_line": 123,
+          "symbol": "variation_ledger"
+        },
+        {
+          "end_line": 223,
+          "start_line": 167,
+          "symbol": "source_ledgers"
+        }
+      ]
+    },
+    {
+      "raw_sha256": "52199e2d6e98524d2086a35cd7fd338e9ed93a1c4fb7c342a36c004d888ecf59",
+      "ref_id": "charged_current",
+      "source_path": "src/bhsm/interface/ae31_c2_coexact_su2l_charged_current.py",
+      "symbol_references": [
+        {
+          "end_line": 52,
+          "start_line": 21,
+          "symbol": "weak_charged_representation_ledger"
+        },
+        {
+          "end_line": 91,
+          "start_line": 55,
+          "symbol": "lowest_weyl_coexact_su2l_charged_source_jets"
+        }
+      ]
+    },
+    {
+      "raw_sha256": "145486b4b279dccf1994c5a0991fd29a57290d20e5460ba193810e0b260b6bce",
+      "ref_id": "noether_contraction",
+      "source_path": "src/bhsm/interface/ae4_c2_stratified_event_flux_assembly.py",
+      "symbol_references": [
+        {
+          "end_line": 103,
+          "start_line": 60,
+          "symbol": "assemble_stratified_direct_sum"
+        },
+        {
+          "end_line": 241,
+          "start_line": 207,
+          "symbol": "canonical_noether_flux_balance"
+        }
+      ]
+    },
+    {
+      "raw_sha256": "6aaab74462fa802fe294f74113a78675a056b70321884f636c4ab147491c337e",
+      "ref_id": "external_fermion_body",
+      "source_path": "artifacts/muon_native_family_difference_20261006/inputs/fermion_body.py",
+      "symbol_references": [
+        {
+          "end_line": 28,
+          "start_line": 22,
+          "symbol": "chiral_generators"
+        },
+        {
+          "end_line": 47,
+          "start_line": 31,
+          "symbol": "photon_source_generators"
+        },
+        {
+          "end_line": 85,
+          "start_line": 81,
+          "symbol": "retarded_kernel"
+        },
+        {
+          "end_line": 103,
+          "start_line": 88,
+          "symbol": "feynman_kernel"
+        },
+        {
+          "end_line": 145,
+          "start_line": 106,
+          "symbol": "fermion_body_data"
+        }
+      ]
+    },
+    {
+      "raw_sha256": "e9375d9cb0ea72d9727091f74c1ff7b8a720fee66a37bf0837498505a53d8bd3",
+      "ref_id": "external_LSZ",
+      "source_path": "src/bhsm/interface/universal_lsz.py",
+      "symbol_references": [
+        {
+          "end_line": 43,
+          "start_line": 34,
+          "symbol": "LSZExternalMode.require_physical_external_state"
+        },
+        {
+          "end_line": 77,
+          "start_line": 46,
+          "symbol": "normalize_simple_pole"
+        },
+        {
+          "end_line": 93,
+          "start_line": 80,
+          "symbol": "lsz_amplitude"
+        }
+      ]
+    },
+    {
+      "line_references": [
+        {
+          "end_line": 68,
+          "start_line": 63
+        },
+        {
+          "end_line": 164,
+          "start_line": 137
+        }
+      ],
+      "raw_sha256": "f312a13a2381e93f7ad03a899d2dd0022bdd9fe51500e1d62b49f4610718019a",
+      "ref_id": "two_point_convention",
+      "source_path": "theory/ae31_c2_state_observable_audit.md"
+    },
+    {
+      "line_references": [
+        {
+          "end_line": 42,
+          "start_line": 19
+        }
+      ],
+      "raw_sha256": "51ab1d7a8c3969e3ad8a7467e31daf2d046133fc9956ec4adde98126f004d115",
+      "ref_id": "principal_doubling_theory",
+      "source_path": "theory/ae31_c2_calderon_principal_symbol.md"
+    },
+    {
+      "line_references": [
+        {
+          "end_line": 42,
+          "start_line": 34
+        },
+        {
+          "end_line": 105,
+          "start_line": 101
+        }
+      ],
+      "raw_sha256": "9b3561b30598c01fade16d524a3f228316e130c177ea5ea6dc7b380ed042cd9b",
+      "ref_id": "external_state_readout",
+      "source_path": "theory/muon_minimum_pauli_readout_20260930.md"
+    },
+    {
+      "line_references": [
+        {
+          "end_line": 43,
+          "start_line": 36
+        },
+        {
+          "end_line": 63,
+          "start_line": 60
+        }
+      ],
+      "raw_sha256": "2313493fb7d30970aa73a44bf2bb6784bfc0cb9a59fe5baf15529adde090df30",
+      "ref_id": "body_probe_scope",
+      "source_path": "theory/muon_parent_source_contact_and_dirac_body_20261003.md"
+    }
+  ],
+  "state_adjudication": {
+    "Cauchy_pairing": "Completion of smooth compact spinor Cauchy data in the action-owned Dirac inner product; causal evolution and CAR pairing are action-owned.",
+    "Hadamard": "Positive-frequency principal polarization modulo smoothing; local singularity class fixed, smooth bisolution part not selected by this contract.",
+    "constraints": [
+      "C=C_dagger",
+      "0<=C<=I",
+      "C+Gamma*C*Gamma=I"
+    ],
+    "linear_API_scope": "AE2 transmit_trace applies U_R to a supplied domain/test/field coefficient vector. It does not require a nonzero classical ray as the datum of every physical quasifree state.",
+    "one_point_vs_state": "A gauge-invariant quasifree state has vanishing odd one-point expectations. A vanishing expectation of the linear spinor trace does not set the two-point covariance, quadratic current, stress, family content, or covariance transport to zero.",
+    "physical_quasifree_state_datum": "C_C1,E1_minus_BHSM: self-dual CAR Cauchy covariance on the action-owned Cauchy-data Hilbert space",
+    "physical_value": null,
+    "prior_trace_as_universal_blocker_valid": false,
+    "pure_state_only_if_owned": "C*C=C is an optional pure-state specialization, not a required selector.",
+    "refs": [
+      "state_class",
+      "AE2_action"
+    ],
+    "status": "DERIVED_REPRESENTATION_ADJUDICATION",
+    "value_status": "UNEVALUATED"
+  },
+  "state_independent_interface_results": {
+    "Green_identity": "J_child=-U_R J_event U_R_dagger and Gamma0_child=U_R Gamma0_event imply <psi,J_event phi>+<U_R psi,J_child U_R phi>=0 for every admitted pair.",
+    "graph_identity": "For graph G_R=(I,U_R)^T and J_total=diag(J_event,-U_R J_event U_R_dagger), G_R_dagger J_total G_R=0. Therefore the matched Green form and its admissibly smeared covariance contraction vanish independently of the selected covariance.",
+    "noether_scope": "AE4 2 Re <Tq,Pi_i> is an algebraic action/traction contraction. Vanishing total traction gives zero total Noether contraction; it does not set each sector flux or physical interacting state expectation to zero. A quadratic-kernel lift can be checked before covariance selection; full physical value claims require the actual owned kernels/domain.",
+    "not_proved": "No physical nonzero-sector current/stress, quantum magnetic response, external pole state, mechanical birth energy, or complete interacting covariance independence follows from the displayed interface identities alone.",
+    "refs": [
+      "AE2_action",
+      "family_enclosure",
+      "two_point_convention",
+      "noether_contraction"
+    ],
+    "retarded_free_identity": "W_plus+W_minus=U_t U_s_dagger; G_R=-i theta(t-s) U_t U_s_dagger is state independent on the fixed quadratic CAR problem.",
+    "status": "DERIVED_OPERATOR_OR_FORM_IDENTITIES_ON_OWNED_DOMAIN",
+    "surface_action": "S_Sigma_F_AE2=0 is action-owned, not a zero-field assumption and not a proof that upstream bulk current/stress/force is zero."
+  }
+}

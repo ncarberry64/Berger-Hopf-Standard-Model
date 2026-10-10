@@ -1,0 +1,25 @@
+{
+  "targeted_commands": [
+    {
+      "command": "python -m pytest -q tests/test_muon_matched_mechanical_source.py",
+      "exit_code": 0,
+      "passed": 4,
+      "reported_seconds": 3.08
+    },
+    {
+      "command": "python -m pytest -q --noconftest tests/test_muon_matched_mechanical_source.py::test_source_sign_matches_saved_lepton_Xi_without_new_contact_calculation",
+      "exit_code": 0,
+      "passed": 1,
+      "reported_seconds": 1.28
+    }
+  ],
+  "total_distinct_checks": 5,
+  "old_producers_rerun": false,
+  "full_suite_run": false,
+  "numerical_attempts": [
+    "preliminary saved-curl transpose mismatch corrected before persisted calculation",
+    "focused eight-mode covariance application",
+    "one persisted full source/weak coefficient application"
+  ],
+  "native_evaluations": 0
+}

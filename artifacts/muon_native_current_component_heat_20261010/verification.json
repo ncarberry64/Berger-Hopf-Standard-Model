@@ -1,0 +1,63 @@
+{
+  "complete_native_or_Pauli_evaluated": false,
+  "focused_test_command": "C:\\Python314\\python.exe -m pytest --noconftest -q tests/test_muon_native_current_component_heat.py",
+  "focused_test_exit_code": 0,
+  "focused_test_stdout": "5 passed in 3.06s",
+  "pair_records": [
+    {
+      "bytes": 207218,
+      "independent_replay_byte_identical": true,
+      "name": "component_and_heat.npz",
+      "sha256": "49e5d8620518763a35979047b6333b07e63a55ea11100fe7b2e3282d072058d7"
+    },
+    {
+      "bytes": 183385,
+      "independent_replay_byte_identical": true,
+      "name": "current_component_heat.json",
+      "sha256": "895220e6e3ca439aef7264c971d79694b0435fcbb52ca040405af53d90b5b595"
+    },
+    {
+      "bytes": 9694329,
+      "independent_replay_byte_identical": true,
+      "name": "source_jets.npz",
+      "sha256": "d4125e9d9b40c35b5584bd72222d835b787d9384bbc9ad92f9829b45ed9c064c"
+    },
+    {
+      "bytes": 3625605,
+      "independent_replay_byte_identical": true,
+      "name": "source_Q.npz",
+      "sha256": "e8a9ed1d634b94e4f74c8f0d3c4faaa95088df6a8805c66e3b0f87d39e5692e3"
+    },
+    {
+      "bytes": 4087876,
+      "independent_replay_byte_identical": true,
+      "name": "source_Qdot.npz",
+      "sha256": "d38f077db88a7ab981b8a5e2c17c540e035a8443d25aa0504bf46c0a0812c307"
+    }
+  ],
+  "producer_commands": [
+    "C:\\Python314\\python.exe scripts/evaluate_muon_native_current_component_heat.py --output artifacts/muon_native_current_component_heat_20261010/run_1",
+    "C:\\Python314\\python.exe scripts/evaluate_muon_native_current_component_heat.py --output artifacts/muon_native_current_component_heat_20261010/run_2"
+  ],
+  "producer_exit_codes": [
+    0,
+    0
+  ],
+  "source_records": [
+    {
+      "bytes": 14355,
+      "path": "src/bhsm/interface/muon_native_current_component_heat.py",
+      "sha256": "3d1eb504032ddb526c03f9caf773ffbb64ee22d4fb43cb28703ce6312b74b487"
+    },
+    {
+      "bytes": 7248,
+      "path": "scripts/evaluate_muon_native_current_component_heat.py",
+      "sha256": "85ce07611d57260a7d5e058484e7c26895c0e7bfdaa396c219f9171f02d5f5f8"
+    },
+    {
+      "bytes": 6035,
+      "path": "tests/test_muon_native_current_component_heat.py",
+      "sha256": "6b14b0a35fddd1120acae1d93b0024dfbf76d24a8fa840d55a7debe6ca49ea08"
+    }
+  ]
+}

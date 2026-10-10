@@ -1,0 +1,70 @@
+{
+  "continuous_causal_regularity_or_native_Pauli_certified": false,
+  "focused_test_command": "C:\\Python314\\python.exe -m pytest --noconftest -q tests/test_muon_native_mean_phase_export.py",
+  "focused_test_exit_code": 0,
+  "focused_test_stdout": "1 passed in 1.80s",
+  "pair_records": [
+    {
+      "bytes": 902473,
+      "independent_replay_byte_identical": true,
+      "name": "mean_causal_32_midpoint.npz",
+      "sha256": "c14146ff159711b3644b4fa4a98a6d3b16f29f192c81c298a843893124deef25"
+    },
+    {
+      "bytes": 1111663,
+      "independent_replay_byte_identical": true,
+      "name": "mean_causal_32_midpoint_errors.npz",
+      "sha256": "cbb6e81143c39ed3fcfd8cc8a872b2057d08d15419b0bf9830b439c3b621ee6e"
+    },
+    {
+      "bytes": 1035633,
+      "independent_replay_byte_identical": true,
+      "name": "mean_causal_32_phase.npz",
+      "sha256": "57e6fe8d0ae4a5814fb48b5bbb9b9d71ed83496c413db99a99a215110020659e"
+    },
+    {
+      "bytes": 1529988,
+      "independent_replay_byte_identical": true,
+      "name": "mean_causal_32_phase_errors.npz",
+      "sha256": "0c8b88008c9574c45b1858d289a2f9b6a3e6e07b79d233720a7412e0524e3528"
+    },
+    {
+      "bytes": 25396,
+      "independent_replay_byte_identical": true,
+      "name": "mean_causal_32_readout.npz",
+      "sha256": "5d31c1cb0b18064ef43957b1f68d98e8522f54d3e9e6b3d011e26cb2039735fe"
+    },
+    {
+      "bytes": 13063,
+      "independent_replay_byte_identical": true,
+      "name": "mean_phase_export.json",
+      "sha256": "1a9a87830b8bf9014c2e1cefb7b4494f30e0eb97932e824e50ac7e3e890e7141"
+    }
+  ],
+  "phase_and_midpoint_bit_identical_to_original_run_3_32_mesh": true,
+  "producer_commands": [
+    "C:\\Python314\\python.exe scripts/evaluate_muon_native_mean_phase_export.py --steps 32 --precision-bits 512 --output artifacts/muon_native_mean_causal_heat_20261010/phase_32_run_1",
+    "C:\\Python314\\python.exe scripts/evaluate_muon_native_mean_phase_export.py --steps 32 --precision-bits 512 --output artifacts/muon_native_mean_causal_heat_20261010/phase_32_run_2"
+  ],
+  "producer_exit_codes": [
+    0,
+    0
+  ],
+  "source_records": [
+    {
+      "bytes": 9587,
+      "path": "src/bhsm/interface/muon_native_mean_phase_export.py",
+      "sha256": "697acaec5fddd83d55c677f827d04882389d5ff44fbd31c512179c3e2597bfc7"
+    },
+    {
+      "bytes": 5915,
+      "path": "scripts/evaluate_muon_native_mean_phase_export.py",
+      "sha256": "0a449ec5ca982eedc898688e362e894b0755d60e35d89d3076595a4e1c62c504"
+    },
+    {
+      "bytes": 1673,
+      "path": "tests/test_muon_native_mean_phase_export.py",
+      "sha256": "ba1b010385e856f06fbd487aae1711d6c96a509a50acb7d0703f1c544db52a99"
+    }
+  ]
+}

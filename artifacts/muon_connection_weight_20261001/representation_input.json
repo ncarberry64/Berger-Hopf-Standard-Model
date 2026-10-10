@@ -1,0 +1,92 @@
+{
+  "bundle": {
+    "base": "hybrid_M4=R_t_times_S3_on_each_open_flow_segment",
+    "chirality": "all_fermions_written_as_left_Weyl_fields",
+    "covering_gauge_group": "SU3_times_Sp1_times_U1_Y",
+    "faithful_gauge_group": "(SU3_times_Sp1_times_U1_Y)/Z6",
+    "families": 3,
+    "family_source": "C3_triality_projectors_P0_P1_P2",
+    "multiplets": [
+      {
+        "Y": "1/6",
+        "color_dimension": 3,
+        "dimension": 6,
+        "name": "Q_L",
+        "representation": "(3,2)_1/6",
+        "weak_dimension": 2
+      },
+      {
+        "Y": "-1/2",
+        "color_dimension": 1,
+        "dimension": 2,
+        "name": "L_L",
+        "representation": "(1,2)_-1/2",
+        "weak_dimension": 2
+      },
+      {
+        "Y": "-2/3",
+        "color_dimension": 3,
+        "dimension": 3,
+        "name": "u_c",
+        "representation": "(conjugate(3),1)_-2/3",
+        "weak_dimension": 1
+      },
+      {
+        "Y": "1/3",
+        "color_dimension": 3,
+        "dimension": 3,
+        "name": "d_c",
+        "representation": "(conjugate(3),1)_1/3",
+        "weak_dimension": 1
+      },
+      {
+        "Y": "1",
+        "color_dimension": 1,
+        "dimension": 1,
+        "name": "e_c",
+        "representation": "(1,1)_1",
+        "weak_dimension": 1
+      },
+      {
+        "Y": "0",
+        "color_dimension": 1,
+        "dimension": 1,
+        "name": "nu_c",
+        "representation": "(1,1)_0",
+        "weak_dimension": 1
+      }
+    ],
+    "neutral_singlet": "nu_c=(1,1)_0_completes_the_rank_16_family;_its_mass_operator_is_not_fixed_by_anomaly_cancellation",
+    "one_family_complex_dimension": 16,
+    "scalar_doublet": "H=(1,2)_(1/2)"
+  },
+  "classification": "RETAINED_PREDECESSOR_REALIZATION_DATA__CURRENT_AE4_MATCHING_NOT_INFERRED",
+  "common_trace_extension": {
+    "boundary_effective_action": "Gamma_boundary=-log_integral_over_fixed-trace_bulk_fields_exp(-S5[A5,Psi5])",
+    "carrier_extension": "one_rank16_trace_extends_the_diagonal_Sp1_operator_to_(SU3_times_Sp1_times_U1Y)/Z6",
+    "one_loop_term": "Gamma_1loop=(1/2)*STr_log(H5_with_boundary_sources)",
+    "one_pushforward_only": true,
+    "parent_fields": "bulk_connection_A5_and_global_spinor_Psi5_with_wall_trace_B",
+    "single_boundary_trace": "B=(Dirichlet_trace,_normal_flux_trace,_normalized_wall_spinor_trace)",
+    "single_parent_quadratic_operator": "H5=diag(K_F^(5)*Delta_Maxwell5,_D5)_with_action-owned_domains",
+    "tree_Schur_term": "Gamma_tree=(K_F^(5)/2)<a,N_DtN*a>-(1/(2*K_F^(5)))<J,G_DtN*J>",
+    "wall_normalization": "integral_ds*J*abs(u0)^2=1"
+  },
+  "norm_inheritance": {
+    "connection_one_forms_transported_as_pregeometric_primitives": false,
+    "event_transport": "representation_labels,_C3_family_projectors,_hypercharge_operator,_and_FR_parity_are_part_of_the_discrete_gluing_data",
+    "fermion_vacuum": "zero_classical_field_with_the_odd_FR_spin_domain",
+    "hybrid_bundle_returns_to_same_isomorphism_class": true,
+    "open_segment_bundle": "P_SM=P_SU3_times_P_Sp1_times_P_U1_mod_Z6_over_M4",
+    "post_event_connections": "reconstructed_in_the_selected_zero-background_sector_with_the_Sp1_kinetic_norm_inherited_from_the_parent_diagonal_quotient"
+  },
+  "pointwise_weight": {
+    "DtN_form": "<a,N[W_t]a>=min_(B A=a) integral_M5 W_t*abs(d_A A)^2",
+    "Green_operator": "G[W_t]=B*A_t^(-1)*B^dagger_on_the_Gauss_quotient",
+    "Lambda": "1-4*sigma^2",
+    "one_operator_only": true,
+    "parent_quadratic_form": "Q_t[A]=(K_F^(5)/2)*integral_M5 W_t*Tr_16(d_A A,d_A A)",
+    "weight_field": "W_t(rho)=Lambda(sigma_t(rho))*(1+X_eta,t(rho)^3)",
+    "weighted_operator": "A_t=d_A^dagger*W_t*d_A_on_the_gauge-fixed_domain"
+  }
+}

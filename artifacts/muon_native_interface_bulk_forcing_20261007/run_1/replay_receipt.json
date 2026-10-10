@@ -1,0 +1,41 @@
+{
+  "elapsed_seconds": 0.4157499000430107,
+  "finite_control_checks": {
+    "direct_physical_schur_exact": true,
+    "direct_schur_arb_overlap": true,
+    "mixed_derivative_exact": true,
+    "moving_port_full_product_rule": true,
+    "nonunitary_row_map_preserves_response": true,
+    "residual_row_schur_is_wrong": true,
+    "response_contains_exact": true,
+    "seven_components": true,
+    "signed_output_forward_adjoint": true,
+    "source_dependent_constraint_retained": true,
+    "stationary_residual_contains_zero": true
+  },
+  "old_producers_invoked": [],
+  "output_hashes": {
+    "cache_roles.json": "cdd8c363075e071e8685fcdb979a46f130b970f82bfe7a0f870d24c0fd29a516",
+    "checkpoint.json": "3d938deccabcda723ef025756a81ea22d377ee14ba5cc2bff8f3c9f5e8e642b1",
+    "control.json": "867895b56ceebe668e469bfcbe34b259a97fe11e3b16d72d0e0e87b00fe4c737",
+    "control_exact_arrays.json": "183d500fc196346e0302b2dbe3972888900a635307bd0640c34c19862a82e3b5",
+    "input_hashes.json": "0553d4da111dfb6e5c395ac06c359bf406ae0e3ea9a65d0bd03af0ee2ea2af10",
+    "recovered_helpers.json": "4b022e72af6e5e87f2ce139a74623da999e683a8fc1da7bf56a12724a0112ed2",
+    "result.json": "43dc526cfbffa735abd2d90ea6f3c2733b357f2f4169b795e488d94741becf69",
+    "row_identification.json": "a8caf346becacad50d38710f51adb47fc62a2ef01d3ae7fa0d2d700d15ab8981",
+    "starting_revision.json": "0178b9d674322cba615c41a68d0e2e54839a3f139064477ab1b7555391788869",
+    "starting_worktree.diff": "7eb70257593da06f682a3ddda54a9d260d4fc514f645237f5ca74b08f8da61a6"
+  },
+  "test_history": [
+    {
+      "failed": 1,
+      "passed": 11,
+      "reason": "new test passed a string to Arb.contains; corrected explicit scalar conversion"
+    },
+    {
+      "command": "pytest --noconftest -q tests/test_muon_native_interface_bulk_forcing.py",
+      "failed": 0,
+      "passed": 12
+    }
+  ]
+}
