@@ -1,0 +1,30 @@
+..F..                                                                    [100%]
+================================== FAILURES ===================================
+_ test_direct_adjoint_agrees_with_complete_forward_and_retains_reactions[radial] _
+
+representation = {'E0_policy': 'the local numerical interval is not identified with E0; external birth-source domain retains M_f=M11', ...0326734,  0.00079716,  0.00400448,  0.        ]), 'affine_interior_projection': array([-0.00326734,  0.00079716]), ...}
+frame = 'radial'
+
+    @pytest.mark.parametrize('frame',['temporal','radial'])
+    def test_direct_adjoint_agrees_with_complete_forward_and_retains_reactions(representation,frame):
+        rng=np.random.default_rng(197);J=np.diag(np.linspace(.7,2.1,358))
+        J+=.00003*rng.normal(size=J.shape)
+        target=rng.normal(size=268);load=rng.normal(size=(268,2,3));h=.000027
+        a=contract_phase_native_target(J,representation,h,target,load,frame=frame)
+        border=native_phase_named_border(J,representation,frame=frame)
+        rhs=np.vstack((-a['phase_source_rows'].reshape(358,6),np.zeros((2,6))))
+        forward=solve(border['matrix'],rhs)
+        expected=a['phase_target_row']@forward[:358]
+        assert np.allclose(a['native_mean_response_pair'].ravel(),expected,rtol=3e-12,atol=3e-12)
+        assert np.allclose(a['auxiliary_Gauss_reactions'].reshape(2,6),forward[358:],rtol=3e-12,atol=3e-12)
+        residual=J@forward[:358]+a['phase_source_rows'].reshape(358,6)
+        assert np.allclose(residual,a['original_Euler_Gauss_reaction_rows'].reshape(358,6),rtol=3e-12,atol=3e-12)
+        assert a['auxiliary_Gauss_reaction_norm']>0
+        assert a['original_adjoint_defect_norm']>0
+>       assert a['bordered_adjoint_residual_norm']<1e-10
+E       assert 1.6818443560349674e-08 < 1e-10
+
+tests\test_muon_primal_native_phase_adjoint.py:52: AssertionError
+=========================== short test summary info ===========================
+FAILED tests/test_muon_primal_native_phase_adjoint.py::test_direct_adjoint_agrees_with_complete_forward_and_retains_reactions[radial]
+1 failed, 4 passed in 3.90s

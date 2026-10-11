@@ -1,0 +1,71 @@
+{
+  "classification": "FOCUSED_TEST_AND_INDEPENDENT_REPLAY_VERIFICATION",
+  "deterministic_pairs": [
+    {
+      "byte_identical": true,
+      "left": "artifacts/muon_current_source_motion_mean_load_20261010/run_3/mean_load.json",
+      "right": "artifacts/muon_current_source_motion_mean_load_20261010/run_4/mean_load.json",
+      "sha256": "27efe24a763fc457fb77949452a71843b14ca55dfb70d91c1bce067a2429715b"
+    },
+    {
+      "byte_identical": true,
+      "left": "artifacts/muon_current_source_motion_mean_load_20261010/run_3/mean_load.npz",
+      "right": "artifacts/muon_current_source_motion_mean_load_20261010/run_4/mean_load.npz",
+      "sha256": "def5dc0616d6036454dfa755a13ed2b6dbcaec2f93be54abfd414b0125f03dc1"
+    }
+  ],
+  "no_commit_or_push": true,
+  "producers": [
+    {
+      "command": "C:/Python314/python.exe scripts/evaluate_muon_current_source_motion_mean_load.py --incoming-response artifacts/muon_trace_enriched_reached_action_20261010/incoming_run_1 --outgoing-response artifacts/muon_trace_enriched_reached_action_20261010/outgoing_run_1 --output artifacts/muon_current_source_motion_mean_load_20261010/run_3",
+      "exit_code": 0,
+      "stdout_final_archive": {
+        "bytes": 298830,
+        "path": "mean_load.npz",
+        "sha256": "def5dc0616d6036454dfa755a13ed2b6dbcaec2f93be54abfd414b0125f03dc1"
+      },
+      "stdout_final_receipt_sha256": "27efe24a763fc457fb77949452a71843b14ca55dfb70d91c1bce067a2429715b"
+    },
+    {
+      "command": "C:/Python314/python.exe scripts/evaluate_muon_current_source_motion_mean_load.py --incoming-response artifacts/muon_trace_enriched_reached_action_20261010/incoming_run_1 --outgoing-response artifacts/muon_trace_enriched_reached_action_20261010/outgoing_run_1 --output artifacts/muon_current_source_motion_mean_load_20261010/run_4",
+      "exit_code": 0,
+      "stdout_final_archive": {
+        "bytes": 298830,
+        "path": "mean_load.npz",
+        "sha256": "def5dc0616d6036454dfa755a13ed2b6dbcaec2f93be54abfd414b0125f03dc1"
+      },
+      "stdout_final_receipt_sha256": "27efe24a763fc457fb77949452a71843b14ca55dfb70d91c1bce067a2429715b"
+    }
+  ],
+  "review_scope": "finite scientific contractions on declared numerical component; no physical-domain or completed native Pauli certification",
+  "runtime_environment": {
+    "OPENBLAS_NUM_THREADS": "1",
+    "PYTHONPATH": "src"
+  },
+  "source_records": [
+    {
+      "bytes": 12863,
+      "path": "src/bhsm/interface/muon_current_source_motion_mean_load.py",
+      "sha256": "e4798f31d46c6d17bc2833234d5adaf1be33350fa9b53df00484cb71890b3de2"
+    },
+    {
+      "bytes": 7125,
+      "path": "scripts/evaluate_muon_current_source_motion_mean_load.py",
+      "sha256": "572ba6a5471ea3a47c53254a093092339e0c3810489ec14f0fa2d14beeb2e432"
+    },
+    {
+      "bytes": 8839,
+      "path": "tests/test_muon_current_source_motion_mean_load.py",
+      "sha256": "3523e6422ab8b91b33640b6d5f253c73c87e94d863f48f589d646b196f09c450"
+    }
+  ],
+  "tests": {
+    "command": "C:/Python314/python.exe -m pytest --noconftest -q tests/test_muon_current_source_motion_mean_load.py",
+    "exit_code": 0,
+    "passed": 6,
+    "prior_test_failure_and_correction": [
+      "Initial test assertion required a nonzero mean gauge-rate on a bare spatial-only restriction; corrected to the literal action-zero and added a nonzero general-total-first test. No production formula change."
+    ],
+    "seconds": 26.79
+  }
+}
