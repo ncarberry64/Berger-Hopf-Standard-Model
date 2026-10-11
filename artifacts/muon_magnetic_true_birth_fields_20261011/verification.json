@@ -1,0 +1,33 @@
+{
+  "all_input_hashes_current": true,
+  "classification": "VERIFIED_TRUE_BIRTH_CONSTITUTIVE_APPLICATION",
+  "commands": [
+    {
+      "command": "$env:PYTHONPATH=\"src\"; $env:OPENBLAS_NUM_THREADS=\"1\"; C:/Python314/python.exe -m pytest --noconftest -q tests/test_muon_magnetic_true_birth_fields.py",
+      "exit_code": 0,
+      "output": ".. [100%]\n2 passed in1.69s"
+    },
+    {
+      "command": "$env:PYTHONPATH=\"src\"; $env:OPENBLAS_NUM_THREADS=\"1\"; C:/Python314/python.exe scripts/evaluate_muon_magnetic_true_birth_fields.py --output artifacts/muon_magnetic_true_birth_fields_20261011/run_1",
+      "exit_code": 0
+    },
+    {
+      "command": "$env:PYTHONPATH=\"src\"; $env:OPENBLAS_NUM_THREADS=\"1\"; C:/Python314/python.exe scripts/evaluate_muon_magnetic_true_birth_fields.py --output artifacts/muon_magnetic_true_birth_fields_20261011/run_2",
+      "exit_code": 0
+    }
+  ],
+  "no_prior_test_or_replay_failure": true,
+  "physical_native_or_Pauli_completed": false,
+  "replay_files": {
+    "application.npz": {
+      "byte_identical": true,
+      "bytes": 773662,
+      "sha256": "6299a63f7b083989e69d42b578aaf8cc2b69b4696d7e3b6b3e6c0861603d8f4a"
+    },
+    "result.json": {
+      "byte_identical": true,
+      "bytes": 11021,
+      "sha256": "9be36499a344c6b68fafb9dc629f24d29c1385a9313d9a6d6789063f73eb1c12"
+    }
+  }
+}
