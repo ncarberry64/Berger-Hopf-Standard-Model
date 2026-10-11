@@ -1,0 +1,40 @@
+{
+  "all_output_files_byte_identical": true,
+  "classification": "VERIFIED_IMMUTABLE_ADDATIVE_SCIENTIFIC_APPLICATION",
+  "consumed_input_hash_count": 90,
+  "consumed_input_hashes_current": true,
+  "focused_test": {
+    "command": "C:/Python314/python.exe -m pytest --noconftest -q tests/test_muon_intrinsic_normal_coordinate_readout.py",
+    "exit_code": 0,
+    "passed": 4,
+    "tool_chunk_id": "fdb2a0"
+  },
+  "output_pairs": [
+    {
+      "bytes": 2138795,
+      "first": "artifacts/muon_intrinsic_normal_coordinate_readout_20261011/run_1/application.npz",
+      "second": "artifacts/muon_intrinsic_normal_coordinate_readout_20261011/run_2/application.npz",
+      "sha256": "6ecc426e241c16c7a5592d1d196683069fb59397b6393d101b602ce61cbb9535"
+    },
+    {
+      "bytes": 20005,
+      "first": "artifacts/muon_intrinsic_normal_coordinate_readout_20261011/run_1/result.json",
+      "second": "artifacts/muon_intrinsic_normal_coordinate_readout_20261011/run_2/result.json",
+      "sha256": "6a789ab024b15a03cc64ceba523167c05f5816ba97e065f6402a029dc09ef2f3"
+    }
+  ],
+  "physical_a_mu": null,
+  "physical_g_mu": null,
+  "producer_runs": [
+    {
+      "command": "C:/Python314/python.exe scripts/evaluate_muon_intrinsic_normal_coordinate_readout.py --output artifacts/muon_intrinsic_normal_coordinate_readout_20261011/run_1",
+      "exit_code": 0,
+      "tool_chunk_id": "b84e28"
+    },
+    {
+      "command": "C:/Python314/python.exe scripts/evaluate_muon_intrinsic_normal_coordinate_readout.py --output artifacts/muon_intrinsic_normal_coordinate_readout_20261011/run_2",
+      "exit_code": 0,
+      "tool_chunk_id": "1f1db9"
+    }
+  ]
+}

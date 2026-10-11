@@ -1,0 +1,218 @@
+{
+  "classification": "VERIFIED_SAME_GERM_PROFILE_PRESERVING_SAMPLE_AND_TEMPORAL_REFINEMENT",
+  "error_scope": "independent byte replay and observed binary64 temporal refinement only; no rigorous action-rounding or continuum error bound",
+  "pairs": [
+    {
+      "application": "incoming_sample",
+      "byte_identical": true,
+      "bytes": 7171,
+      "filename": "result.json",
+      "sha256": "b518a9630ca20785d317c0c5ad46bd2777b0cc1322726c08e736437a07be005c"
+    },
+    {
+      "application": "incoming_sample",
+      "byte_identical": true,
+      "bytes": 22483,
+      "filename": "application.npz",
+      "sha256": "5ce58c55fed4c026482fceb869b6c3be40f6018fb3a392da290f259c6c93241c"
+    },
+    {
+      "application": "outgoing_sample",
+      "byte_identical": true,
+      "bytes": 7188,
+      "filename": "result.json",
+      "sha256": "88be65e4e94a5d47201bf8a5eed7553f6f6da911c4eb830ed816274afab24401"
+    },
+    {
+      "application": "outgoing_sample",
+      "byte_identical": true,
+      "bytes": 22814,
+      "filename": "application.npz",
+      "sha256": "6c9d5744114b9d66575ed366c7584b00419285fa50263653d82f811c11f7e5d4"
+    },
+    {
+      "application": "incoming_2steps",
+      "byte_identical": true,
+      "bytes": 9337,
+      "filename": "result.json",
+      "sha256": "56d2abcdd9f00e06d75a83a5dcc68f0e3ef7a4e17e9469d46eb42c89eb38a36f"
+    },
+    {
+      "application": "incoming_2steps",
+      "byte_identical": true,
+      "bytes": 1074741,
+      "filename": "application.npz",
+      "sha256": "c998998f9db50848eb23e7dfba72d5df154e2479e129022efc505df27452b2fc"
+    },
+    {
+      "application": "incoming_4steps",
+      "byte_identical": true,
+      "bytes": 12212,
+      "filename": "result.json",
+      "sha256": "301e34e129ce9030a2ec784aa87b58b11b514362dda3c9652e2c2e771f46df5c"
+    },
+    {
+      "application": "incoming_4steps",
+      "byte_identical": true,
+      "bytes": 2136318,
+      "filename": "application.npz",
+      "sha256": "bea75e8aa19d4929f7fbae60f3b1f97670c9ad3763cc470f80491b6e599b652b"
+    },
+    {
+      "application": "outgoing_2steps",
+      "byte_identical": true,
+      "bytes": 8631,
+      "filename": "result.json",
+      "sha256": "6bec1aa32e5776d36ca686c751bc6785dbcc761298ff3942a749f20b003c956d"
+    },
+    {
+      "application": "outgoing_2steps",
+      "byte_identical": true,
+      "bytes": 1049152,
+      "filename": "application.npz",
+      "sha256": "6af989ed015a66cceb44b6001f4f8dad4702a21a5b320fceda62f3a8c0bbfc4b"
+    },
+    {
+      "application": "outgoing_4steps",
+      "byte_identical": true,
+      "bytes": 10776,
+      "filename": "result.json",
+      "sha256": "1e068a6d047711880f10685e58e25d5af94328827576e1c14125cae24eb06348"
+    },
+    {
+      "application": "outgoing_4steps",
+      "byte_identical": true,
+      "bytes": 2077341,
+      "filename": "application.npz",
+      "sha256": "65addc78cb060f1957ff9bb290affaad325987d4669f6fae05bc864f167518b2"
+    }
+  ],
+  "physical_history_or_mode_or_cutoff_or_Pauli_selected": false,
+  "refinement": [
+    {
+      "all_stages_converged": true,
+      "maximum_stage_scaled_residual": 3.44659118785096e-13,
+      "represented_stage_ranks": [
+        356
+      ],
+      "side": "incoming",
+      "steps": 1
+    },
+    {
+      "all_stages_converged": true,
+      "maximum_stage_scaled_residual": 3.4312324660776115e-13,
+      "represented_stage_ranks": [
+        356
+      ],
+      "side": "incoming",
+      "steps": 2
+    },
+    {
+      "all_stages_converged": true,
+      "maximum_stage_scaled_residual": 2.1737506909468623e-14,
+      "represented_stage_ranks": [
+        356
+      ],
+      "side": "incoming",
+      "steps": 4
+    },
+    {
+      "interpretation": "observed refinement of the same finite signed interval, not a certified continuum or physical-history error",
+      "one_to_two_norm": 2.4495886997549875e-08,
+      "quantity": "x_final",
+      "ratio": 3.998830750677909,
+      "side": "incoming",
+      "two_to_four_norm": 6.1257623852665345e-09
+    },
+    {
+      "interpretation": "observed refinement of the same finite signed interval, not a certified continuum or physical-history error",
+      "one_to_two_norm": 2.7346169680169645e-09,
+      "quantity": "p_final",
+      "ratio": 3.9999251548391594,
+      "side": "incoming",
+      "two_to_four_norm": 6.836670342965269e-10
+    },
+    {
+      "all_stages_converged": true,
+      "maximum_stage_scaled_residual": 5.597056731664353e-15,
+      "represented_stage_ranks": [
+        356
+      ],
+      "side": "outgoing",
+      "steps": 1
+    },
+    {
+      "all_stages_converged": true,
+      "maximum_stage_scaled_residual": 5.501867677875106e-15,
+      "represented_stage_ranks": [
+        356
+      ],
+      "side": "outgoing",
+      "steps": 2
+    },
+    {
+      "all_stages_converged": true,
+      "maximum_stage_scaled_residual": 5.459769477751951e-15,
+      "represented_stage_ranks": [
+        356
+      ],
+      "side": "outgoing",
+      "steps": 4
+    },
+    {
+      "interpretation": "observed refinement of the same finite signed interval, not a certified continuum or physical-history error",
+      "one_to_two_norm": 3.6306034543618554e-09,
+      "quantity": "x_final",
+      "ratio": 3.9985206969302793,
+      "side": "outgoing",
+      "two_to_four_norm": 9.079866604539826e-10
+    },
+    {
+      "interpretation": "observed refinement of the same finite signed interval, not a certified continuum or physical-history error",
+      "one_to_two_norm": 2.0345249604933048e-09,
+      "quantity": "p_final",
+      "ratio": 3.999802585075759,
+      "side": "outgoing",
+      "two_to_four_norm": 5.086563442117405e-10
+    }
+  ],
+  "sample_norms": [
+    {
+      "aggregate_Frobenius_coordinate_rate": 2.2793809485684036,
+      "aggregate_is_over_all_sample_axes": true,
+      "individual_coordinate_rate_norms": [
+        1.1396918005396075,
+        1.1396909981213534,
+        1.1396899507687424,
+        1.1396891477053193
+      ],
+      "individual_proper_rate_norms": [
+        1.0282062478528697,
+        1.028205547101185,
+        1.028204632437128,
+        1.0282039311047673
+      ],
+      "samples": 4,
+      "side": "incoming"
+    },
+    {
+      "aggregate_Frobenius_coordinate_rate": 1.6071673987829578,
+      "aggregate_is_over_all_sample_axes": true,
+      "individual_coordinate_rate_norms": [
+        0.8035893886321588,
+        0.8035859452568989,
+        0.8035814531170544,
+        0.8035780105132486
+      ],
+      "individual_proper_rate_norms": [
+        1.1510440066692045,
+        1.1510389849049312,
+        1.1510324336286337,
+        1.151027412973704
+      ],
+      "samples": 4,
+      "side": "outgoing"
+    }
+  ],
+  "sampling_scope": "solved midpoint cells: x affine, v/y fixed per cell; explicit parent/reference affine clock composed once"
+}

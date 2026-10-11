@@ -1,0 +1,51 @@
+{
+  "classification": "VERIFIED_INDEPENDENT_LITERAL_LOCAL_WICK_ACTION_REPLAY",
+  "earlier_test_fixture_errors": [
+    "zero-dimensional old Jet max guard",
+    "missing old Maxwell clock metadata",
+    "keyword-only old Higgs action call"
+  ],
+  "error_scope": "binary64 local action polynomial comparison and independent replay; analytic-contour/domain/production uncertainty not certified",
+  "pairs": [
+    {
+      "byte_identical": true,
+      "paths": [
+        "artifacts/muon_local_wick_action_20261011/incoming_run_1/application.npz",
+        "artifacts/muon_local_wick_action_20261011/incoming_run_2/application.npz"
+      ],
+      "sha256": "36b5f370af081d96186816074ca4ba284c0d067c387e74526147bf29c9e39c97"
+    },
+    {
+      "byte_identical": true,
+      "paths": [
+        "artifacts/muon_local_wick_action_20261011/incoming_run_1/result.json",
+        "artifacts/muon_local_wick_action_20261011/incoming_run_2/result.json"
+      ],
+      "sha256": "9cd76e3b2177b05f85ba393011b4ed6c753ed730076e3083c23c91ba600b225d"
+    },
+    {
+      "byte_identical": true,
+      "paths": [
+        "artifacts/muon_local_wick_action_20261011/outgoing_run_1/application.npz",
+        "artifacts/muon_local_wick_action_20261011/outgoing_run_2/application.npz"
+      ],
+      "sha256": "f6e5d25a38525fb42a1644cbda973e3bcb404b4a4a14d4527e7ee495b7488a33"
+    },
+    {
+      "byte_identical": true,
+      "paths": [
+        "artifacts/muon_local_wick_action_20261011/outgoing_run_1/result.json",
+        "artifacts/muon_local_wick_action_20261011/outgoing_run_2/result.json"
+      ],
+      "sha256": "3904b56122b6fcfb47bd3c9ce80148299bfa9562538cc64502a1e89e5730e252"
+    }
+  ],
+  "physical_native_heat_or_Pauli_completed": false,
+  "source_dependencies_verified": true,
+  "tests": {
+    "command": "PYTHONPATH=src C:/Python314/python.exe -m pytest --noconftest tests/test_muon_local_wick_action.py -q",
+    "exit_code": 0,
+    "scope": "literal action, nonlinear Hessian, source rates, conormal, FP and canonical-row checks",
+    "stdout": "7 passed in 2.93s"
+  }
+}
