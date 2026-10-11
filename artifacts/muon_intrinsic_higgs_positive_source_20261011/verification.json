@@ -1,0 +1,43 @@
+{
+  "classification": "DETERMINISTIC_ACTUAL_POSITIVE_HIGGS_SOURCE_IMAGE_VERIFICATION",
+  "commands": [
+    {
+      "command": "PYTHONPATH=src OPENBLAS_NUM_THREADS=1 C:/Python314/python.exe -m pytest --noconftest -q tests/test_muon_intrinsic_higgs_positive_source.py",
+      "exit_code": 0,
+      "output": "4 passed in 3.14s"
+    },
+    {
+      "command": "PYTHONPATH=src OPENBLAS_NUM_THREADS=1 C:/Python314/python.exe scripts/evaluate_muon_intrinsic_higgs_positive_source.py --output artifacts/muon_intrinsic_higgs_positive_source_20261011/run_1 --common-cutoff 1e-11",
+      "exit_code": 0
+    },
+    {
+      "command": "PYTHONPATH=src OPENBLAS_NUM_THREADS=1 C:/Python314/python.exe scripts/evaluate_muon_intrinsic_higgs_positive_source.py --output artifacts/muon_intrinsic_higgs_positive_source_20261011/run_2 --common-cutoff 1e-11",
+      "exit_code": 0
+    }
+  ],
+  "error_scope": "No outward physical/continuum or LSZ enclosure; explicit common probe cutoff.",
+  "prior_failure": {
+    "cause": "Independent test angular derivative contraction used the coefficient index incorrectly; fixed to values @ E @ coefficients. Production deltaD placement unchanged.",
+    "command": "focused tests above",
+    "output": "1 failed, 3 passed in 3.43s"
+  },
+  "replays": [
+    {
+      "byte_identical": true,
+      "bytes": 1703377,
+      "file": "application.npz",
+      "sha256": "df427bc1387869a6e50d5a9290f3d553226b748e6b5ddc7a39447ee536aa0bd1"
+    },
+    {
+      "byte_identical": true,
+      "bytes": 22123,
+      "file": "result.json",
+      "sha256": "23bdf3d1402e28d7cc3b1e32f08f5f472dbcde961d528d3487481632ab9540cb"
+    }
+  ],
+  "source_hashes": {
+    "scripts/evaluate_muon_intrinsic_higgs_positive_source.py": "d89890917da73deb3a55bfedea137797aed85ccb58604167a583a5adaf2fd5f5",
+    "src/bhsm/interface/muon_intrinsic_higgs_positive_source.py": "6d971e4c04898727096739873f18f8118a957c6b029554b3730cf4313e078435",
+    "tests/test_muon_intrinsic_higgs_positive_source.py": "160ad47a69c3c34031031c827ea61c5dedf61e74d30bfbecbb3a5d944923335a"
+  }
+}
