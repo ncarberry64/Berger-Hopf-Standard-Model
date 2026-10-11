@@ -1,4 +1,14 @@
-# Coupled current action and complete soft source-image applications
+# Chronological current, same-background contacts and soft source applications
+
+The joined chronological birth adjoint is now carried into the same
+changing n0/C6 temporal8 heat target as the magnetic source-square contact
+and both ordered insertion terms. The192-coordinate n1 source image is
+assembled before the functional calculus. The resulting ungraded paired
+traces at the explicit positive-reference `c=1e-11` are
+`-2.9122198500617505e-20` incoming and `-1.3562038110267147e-20` child.
+They are not a physical native remainder: the actual contour/relative
+domain, graded starting-loop complement, local graph subtraction and
+normalized bilocal Pauli contraction remain in continuing production.
 
 The complete retained Higgs source-image graph now evaluates both
 constant-input `n0 -> n1` and tangent-input `n1 -> n0+n2` current columns
@@ -475,6 +485,216 @@ physical positive-inertia normalization at that conditional germ;
 its positive ratio is not inserted as physical c. Neither this local
 symbol nor the boundary parameter-family root is an action-selected
 physical formation section or a native cutoff.
+
+## True birth mean and chronological target
+
+The second moving-birth application now differentiates all226 endpoint
+rows, including the six-port conormal saddle, clock work and inherited
+parent profile. The two Ward redundancies are retained through the
+explicit rank224 quotient. The exact stored quotient residual is bounded
+by `2.01e-39` and all226 original rows by `9.54e-28`; the exported
+binary64 residual is `2.78e-16`. The conormal derivative step comparison
+`7.63e-10` is a numerical diagnostic, not a certified production bound.
+
+The canonical mean uses `p_mean=H_v delta+g_v` once. The child retains
+the nonzero cross-parent cotangent of norm `0.28532008598` and its
+midpoint forcing `0.28535505052`. These are distinct from the inherited
+parent heat target. The true endpoint fields are reconstructed before
+forming the birth equations; midpoint velocities are not relabeled as
+endpoint velocities.
+
+The joined chronological calculation carries these canonical means into
+the same changing heat target. It computes the incoming far mean as an
+output of the original signed action and uses that value on chronological
+reversal. It also includes the explicit initial half of the midpoint
+heat target. The resulting ungraded contact traces are
+`-2.912219851340268e-20` incoming and `-1.3562038111312744e-20` child.
+The explicit initial contacts have norms `6.3335547632919244e-21` and
+`2.081817908641386e-21`; the child inherited parameter contact has norm
+`3.9631047242742696e-32`. The actual far canonical mean norms are
+`2.152856022653625` and `1.9266416849411978`.
+
+Primal/adjoint contact differences are `2.1610184464316753e-28` and
+`2.023854894100277e-31`. Original and chronological primal residuals
+are at most `2.20e-15`; adjoint residuals are at most `3.994e-26`.
+Both named frames agree. This supersedes the held-initial application
+for this joined finite-domain contact, while preserving its prior bytes
+and stated scope. The result still has no fermion statistics factor or
+completed physical Pauli normalization.
+
+The original full488 canonical inverse has also been continued before
+inversion on `tau=i(t-t0)`. Its continued/Lorentz state agreement is
+`1.14e-13`, and its source/adjoint pairing difference is at most
+`3.62e-25`. The 16/32/64-cell endpoint differences against the saved
+DOP853 result are `2.82868`, `0.176793`, and `0.0110495`. This is the
+inherited Lorentz contour image; it does not assert a deformation to a
+real Euclidean axis or equality with the real positive reference heat.
+
+## Joined canonical current and source applications
+
+The actual canonical factor now uses `A_E=-D_L` on
+`tau=i(t-t0)`, with the temporal gauge vertex `-i G/N`. Its common
+C6 coefficients and both magnetic midpoint halves are assembled before
+the inverse. The first-order inhomogeneous domain fixes the initial trace
+and leaves the future final trace free. The action-induced squared form
+inherits that domain. The identity
+`(A†G_source A)^(-1) A†G_source R=A^(-1)R` agrees to `3.94e-18`;
+this identity does not identify its conjugated Riesz square with the
+continued formal adjoint or the real-Euclidean native loop.
+
+Joining the two arms before inversion retains the common represented
+birth trace. At64 cells per arm the literal current has norm
+`3.2636838337922e-10`. The artificial final-Dirichlet interior has norm
+`1.57312758220e-15`; its exact same-domain boundary return has norm
+`3.26368383367993e-10`. Thus that return cannot be discarded. The
+original first-order residual is `3.41e-12` and the squared birth/final
+variational residual is `2.84e-14`. These are finite-domain residuals,
+not a physical outer-face or anomaly estimate.
+
+The actual variable-Gram relative boundary heat also includes the square
+derivative and acted-numerator contact. At the explicit
+`c=1.0329133712274834e-11` probe and32 cells per arm, the proper-pairing
+unit-charge magnetic current is `1.71407640725e-16`, split into
+`9.94830717014e-17` boundary return and `7.19245690383e-17` final-Dirichlet
+reference. Its16/32 change is `4.2162e-20`. These are current-operator
+components with the full finite spectral weight `exp(-cP)/P`; using the
+zero-frequency Schur return as a finite-c heat operator would omit that
+spectral dependence. The probe remains separate from a physical cutoff.
+
+Near-family subtraction is replaced by literal common-Y coefficients,
+including odd powers of the full C6 current. The exact stored per-arm
+inverse recurrence has an Arb192 coefficient and remainder certificate.
+For the child64-cell first current, the middle-minus-light norm is
+`7.318573335655446e-20`; its stored-array arithmetic/Y-tail bound is
+`2.061442372508546e-32`. This bound excludes entry production, temporal
+continuum, source variation and physical native matching. It is not
+transferred to the different joined magnetic domain.
+
+The joined coefficient application retains the actual n1-from-n0 source,
+the n1-input-to-n0+n2 momentum image and both literal reverse directions.
+It guards the reached n3 source as exactly zero before reducing that
+image. At64 cells per arm the paired constant/momentum forward norms are
+`3.3784265611076983e-26` and `6.756853294226938e-26`.
+Their32/64 changes are `7.9097779920e-29` and `1.5819556045e-28`.
+The independent analytic-transpose adjoint differences over all common-Y
+coefficients are `4.169015136006049e-31` and `1.012530226033142e-30`.
+The inherited common birth frame in this calculation is the represented
+`T=I`; it is not a selected full worldvolume trace graph or a matter state.
+
+The normal current consumer now applies these operator components to
+the mass-affine and Foldy-Wouthuysen covectors before any mass scale is
+selected. The child64 first-Weyl mass coefficient has norm
+`3.56521279008e-29`, and its FW constant has norm `3.62152636419e-30`.
+The moving-input-center contact retains the differentiated
+`-x_j D_j S[1]` term. These finite first moments do not determine the
+complete bilocal Wilson symbol or its soft remainder. The canonical
+current inverse is not substituted for the Gaussian self-energy; its
+unsupplied energy residue is not filled with zero.
+
+## Matched normalization applications
+
+The same changing full18 Gaussian kernel now has separate left/right
+external-energy moments, with all coupled gauge/Higgs field blocks and
+the complete six charged/neutral family fibers. Its energy probe
+`0.0006483689988282711` is a fixed-Y tree coefficient, not a matched
+interacting pole. Separate middle/light E0 moments are produced for the
+domain of the ongoing magnetic loop. A normalized local kinetic pencil
+adds the explicit pole-Gram contact
+`{Sigma_E,+, e sigma_B/(2m)}/2`. The exact pure wavefunction term cancels
+its magnetic contact; this does not cancel finite-cutoff, domain or
+transverse contributions. Actual complex coefficients and Hermitian
+defects remain in the consumer.
+
+The corrected full358 Gauss field current, rather than the older attached
+operator, has also been tested against the measured-GF matching tensor.
+The source and paired boundary frames agree to
+`8.82e-28/1.37e-29`. Its short-cell projected Lorentz Fermi tensor retains
+relative remainders enclosed by
+`[0.8660340334508556,0.8660340334508564]` incoming and
+`[0.8660273443862168,0.8660273443862178]` child. Consequently the scalar
+least-squares coefficients `2578.535.../3259.441...` are not used as
+physical unit conversion factors. The actual same-action matching
+application remains necessary; a scalar fit does not remove that tensor
+remainder.
+
+## Same-background heat and analytic adjoint
+
+The new changing source heat uses precisely the saved differentiated
+base: the n0 weak matrix difference is exactly zero at both split
+quadratures. Its source-square contact norms are
+`7.646681081489712e-30` incoming and `6.036750983540116e-31` child.
+The ordered insertion norms are `1.3257737160226382e-31` and
+`1.366833817395517e-41`; the other source order is retained separately.
+The contact, both insertions and the previously evaluated joined birth
+mean have a literal sum. The12/16 source-rule comparison refines the
+direct source quadrature, coefficient circle and lag rule; it reuses
+the same frozen16-point mean target and does not independently refine
+that mean. Two independent production runs have identical source arrays
+and reports (archive SHA256
+`f6e03f05cc6b653f8442672cccee7256c0ffbac25a88eb1babc005ec3fad332e`).
+
+The fixed-geometry first source is affine in gauge/H fields, so its
+second factor derivative is zero in that partial. The actual nonzero
+second interacting/geometry response is retained separately through the
+all268 action mean, six-port birth constraints, canonical mean, incoming
+far response and child inherited target. It is not deleted by that
+partial or added twice. The mean/source targets all use ungraded TrE1;
+no statistics factor is applied before matching the native graded owner.
+
+The original action also supplies an actual independent analytic left
+Euler operator and its doubled Grassmann bilinear. This left operator
+uses the formal transpose and the continued action measure, with a
+future final-zero domain paired to the right initial-zero inverse.
+At32 cells per arm the Green endpoint identity residual is `1.11e-16`,
+the original Euler residual `1.42e-13`, the inverse-action agreement
+`1.46e-19` and the literal transpose-current agreement `1.03e-25`.
+The contour action and current obey `S_L=i S_E` and `C_E=i C_L`.
+The analytic left action differs from the ordinary Hermitian dual on
+the imaginary slice. Its continued heat principal coefficient `c/r²`
+is negative at `r=i` with a fixed positive c. Thus the represented
+positive Riesz square on that slice cannot simply be substituted for
+the continued real-Euclidean heat. The action reality/reflection and
+the required contour/domain application are being implemented; no
+independent data or theory-definition gap is inferred.
+
+## On-shell Ward and directly consumed Gaussian tests
+
+The corrected chronological C6/n1/n3 fundamental operators now evaluate
+the localized gauge-orbit action and its explicit `b'` amputation
+contact on every initial column. The nonzero orbit current norms
+`1.1370e-7/7.16136e-8` cancel against that contact with integrated
+residual at most `2.95e-18`; the transport unitary defect is at most
+`1.86e-15`. The identity holds for any inherited trace without selecting
+a matter state. The independent spatial tent lacks the orbit's At/H
+completion and leaves transported differences
+`1.81920e-6/1.14582e-6`; that current cannot be removed as pure gauge.
+These numerical-cell ODE/quadrature checks are not LSZ or angular-tail
+enclosures.
+
+Direct weighted projection also replaces a cancellation-sensitive
+Casimir subtraction in the longitudinal field diagnostic. The wall
+profile leading Gram/action are
+`9.654052586e-9/168676.3121` incoming and
+`6.317019406e-9/249965.2676` child. The interior-profile current squared
+limit is only `3.10e-23/2.04e-23`; the older subtractive `1e-13`
+diagnostic was spurious and its bytes are preserved with that scope.
+This finite-reference application is not used as a physical Pauli tail.
+
+The first complete incoming middle-family Gaussian constant application
+has passed through all seven action placements into the normal
+consumer. Its right-symbol mass coefficient norm is
+`6.82938317926e-7` and FW coefficient norm `1.89924122406e-6`.
+The tensors retain their complex anisotropy; neither their norms nor
+the incomplete constant-only Weyl term is an anomaly value. Exact
+structural external covectors now apply before the Green contractions.
+Full C6 constant tests and18 coordinate tests retain the neutral return;
+a charged-only restriction leaves relative FW projection defects
+`0.182–0.185/0.238–0.2396` and is rejected. A complete actual starting
+block gives per-placement/total equivalence with maximum difference
+`4.54e-20` and uncancelled-scale relative difference `4.31e-15`.
+The ongoing producer computes the remaining momentum covectors and
+combines them with the same-frequency energy-residue contacts before
+the graph-resolved local overlap and normalized soft readout.
 
 | Classification | Result |
 | --- | --- |

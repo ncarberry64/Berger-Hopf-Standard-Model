@@ -1,0 +1,66 @@
+{
+  "classification": "VERIFIED_CORRECTED_MOVING226_BIRTH_MEAN_REPLAY",
+  "commands": [
+    {
+      "argv": [
+        "C:\\Python314\\python.exe",
+        "scripts/evaluate_muon_corrected_birth_mean.py",
+        "--output",
+        "artifacts/muon_corrected_birth_mean_20261011/run_1"
+      ],
+      "cwd": "C:\\Users\\carbe\\Downloads\\BHSM_muon_parent_maxwell_worktree_20261001",
+      "environment_overrides": {
+        "PYTHONPATH": "src"
+      },
+      "exit_code": 0,
+      "path": "artifacts/muon_corrected_birth_mean_20261011/execution_logs/run_1.command.json",
+      "stderr_path": "run_1.stderr.txt",
+      "stdout_path": "run_1.stdout.txt"
+    },
+    {
+      "argv": [
+        "C:\\Python314\\python.exe",
+        "scripts/evaluate_muon_corrected_birth_mean.py",
+        "--output",
+        "artifacts/muon_corrected_birth_mean_20261011/run_2"
+      ],
+      "cwd": "C:\\Users\\carbe\\Downloads\\BHSM_muon_parent_maxwell_worktree_20261001",
+      "environment_overrides": {
+        "PYTHONPATH": "src"
+      },
+      "exit_code": 0,
+      "path": "artifacts/muon_corrected_birth_mean_20261011/execution_logs/run_2.command.json",
+      "stderr_path": "run_2.stderr.txt",
+      "stdout_path": "run_2.stdout.txt"
+    }
+  ],
+  "earlier_fixture_or_loader_corrections": [
+    "first algebraic test tolerance 3e-16 was below its observed 1.22e-15 summed Gauss rounding; final tolerance 3e-15"
+  ],
+  "error_scope": "Arb certificate applies to exact stored 226-row arrays; upstream action/Dg step-halving, representation, domain, and physical Pauli errors are excluded",
+  "pairs": [
+    {
+      "byte_identical": true,
+      "paths": [
+        "artifacts/muon_corrected_birth_mean_20261011/run_1/application.npz",
+        "artifacts/muon_corrected_birth_mean_20261011/run_2/application.npz"
+      ],
+      "sha256": "ed3b473933df96436d9948917d2bfcecfd0cde75ebdf53dd35e9785a75b18698"
+    },
+    {
+      "byte_identical": true,
+      "paths": [
+        "artifacts/muon_corrected_birth_mean_20261011/run_1/result.json",
+        "artifacts/muon_corrected_birth_mean_20261011/run_2/result.json"
+      ],
+      "sha256": "a500becff5c3b7f95640deeaa9a90388a0e4d9bbea2280fe13780cf48354dd84"
+    }
+  ],
+  "physical_native_heat_or_Pauli_completed": false,
+  "source_dependencies_verified": true,
+  "tests": {
+    "command": "PYTHONPATH=src C:/Python314/python.exe -m pytest --noconftest tests/test_muon_corrected_birth_mean.py -q",
+    "exit_code": 0,
+    "stdout": "2 passed in 1.73s"
+  }
+}

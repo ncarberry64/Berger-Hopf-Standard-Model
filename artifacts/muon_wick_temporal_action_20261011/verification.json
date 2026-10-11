@@ -1,0 +1,68 @@
+{
+  "classification": "VERIFIED_LITERAL_FULL488_TEMPORAL_WICK_ACTION_REPLAY",
+  "commands": [
+    {
+      "argv": [
+        "C:\\Python314\\python.exe",
+        "scripts/evaluate_muon_wick_temporal_action.py",
+        "--output",
+        "artifacts/muon_wick_temporal_action_20261011/run_2"
+      ],
+      "captured_text_newline_policy": "CRLF normalized to LF; stdout/stderr content unchanged",
+      "cwd": "C:\\Users\\carbe\\Downloads\\BHSM_muon_parent_maxwell_worktree_20261001",
+      "environment_overrides": {
+        "PYTHONPATH": "src"
+      },
+      "exit_code": 0,
+      "path": "artifacts/muon_wick_temporal_action_20261011/execution_logs/run_2.command.json",
+      "stderr_path": "run_2.stderr.txt",
+      "stdout_path": "run_2.stdout.txt"
+    },
+    {
+      "argv": [
+        "C:\\Python314\\python.exe",
+        "scripts/evaluate_muon_wick_temporal_action.py",
+        "--output",
+        "artifacts/muon_wick_temporal_action_20261011/run_3"
+      ],
+      "captured_text_newline_policy": "CRLF normalized to LF; stdout/stderr content unchanged",
+      "cwd": "C:\\Users\\carbe\\Downloads\\BHSM_muon_parent_maxwell_worktree_20261001",
+      "environment_overrides": {
+        "PYTHONPATH": "src"
+      },
+      "exit_code": 0,
+      "path": "artifacts/muon_wick_temporal_action_20261011/execution_logs/run_3.command.json",
+      "stderr_path": "run_3.stderr.txt",
+      "stdout_path": "run_3.stdout.txt"
+    }
+  ],
+  "earlier_fixture_or_loader_corrections": [
+    "run_1 failed on the original static-array time indexing before output; the corrected producer completed runs 2 and 3"
+  ],
+  "error_scope": "binary64 literal continued action/Gauss/canonical comparisons; no positive-real heat, exterior contour, continuum, or physical Pauli identification",
+  "pairs": [
+    {
+      "byte_identical": true,
+      "paths": [
+        "artifacts/muon_wick_temporal_action_20261011/run_2/application.npz",
+        "artifacts/muon_wick_temporal_action_20261011/run_3/application.npz"
+      ],
+      "sha256": "57e351ef7cacc85723c8feb6fbe0c41a5e2e53b93c0c18f1eac56fe37e435f62"
+    },
+    {
+      "byte_identical": true,
+      "paths": [
+        "artifacts/muon_wick_temporal_action_20261011/run_2/result.json",
+        "artifacts/muon_wick_temporal_action_20261011/run_3/result.json"
+      ],
+      "sha256": "e9b6e2d6bd3c0083200d5f921a636f14887bcdcc1eccf1a2cae1ec237a633f4b"
+    }
+  ],
+  "physical_native_heat_or_Pauli_completed": false,
+  "source_dependencies_verified": true,
+  "tests": {
+    "command": "PYTHONPATH=src C:/Python314/python.exe -m pytest --noconftest tests/test_muon_wick_temporal_action.py -q",
+    "exit_code": 0,
+    "stdout": "3 passed in 0.90s"
+  }
+}

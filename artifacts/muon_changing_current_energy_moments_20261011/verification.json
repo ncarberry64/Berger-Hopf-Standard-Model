@@ -1,0 +1,45 @@
+{
+  "classification": "VERIFIED_SAME_CHANGING_CURRENT_ENERGY_APPLICATION",
+  "test": {
+    "passed": 4,
+    "exit_code": 0,
+    "command": "python -m pytest --noconftest -q tests/test_muon_changing_current_energy_moments.py",
+    "runtime_chunk": "59248c",
+    "seconds": 1.94
+  },
+  "runs": [
+    {
+      "exit_code": 0,
+      "command": "python scripts/evaluate_muon_changing_current_energy_moments.py --output artifacts/muon_changing_current_energy_moments_20261011/run_1",
+      "runtime_chunk": "972055",
+      "output": "run_1"
+    },
+    {
+      "exit_code": 0,
+      "command": "python scripts/evaluate_muon_changing_current_energy_moments.py --output artifacts/muon_changing_current_energy_moments_20261011/run_2",
+      "runtime_chunk": "e64c48",
+      "output": "run_2"
+    }
+  ],
+  "environment": {
+    "PYTHONPATH": "src",
+    "OPENBLAS_NUM_THREADS": "1"
+  },
+  "compared_files": [
+    {
+      "sha256": "49ee827ce24cb28669be641c65e04bfb067307252054d408053d2a50e8d037b2",
+      "byte_identical": true,
+      "bytes": 19862,
+      "name": "application.npz"
+    },
+    {
+      "sha256": "db6ec3ffed39f3146b2dc57185bde6773406a032ce2fee41ebba58b19e0b2502",
+      "byte_identical": true,
+      "bytes": 54550,
+      "name": "result.json"
+    }
+  ],
+  "input_hash_count": 272,
+  "all_pins_current": true,
+  "physical_LSZ_or_Pauli_completed": false
+}
