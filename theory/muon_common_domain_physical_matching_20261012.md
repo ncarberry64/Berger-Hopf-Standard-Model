@@ -1,36 +1,90 @@
 # Common-domain native/current matching application
 
-The common two-arm action now includes the full algebraic-field response
-`L_yy`, its source derivative and the corrected forced boundary numerator.
-The same-candidate normal-source application now reconstitutes each arm
-with its own canonical momentum and inherited source. The normal trial's
-own parent momentum differs from the joint graph momentum by norm
-`210.43742725708623`; substituting one for the other changes the problem.
-One admitted parent area-source component was evaluated through the
-original 358-row coefficient-germ action and its analytic transpose:
-original rows `8.58e-12`, transpose rows `2.08e-17`, proper-normal pairing
-`-3.67038e-10 - 8.29869e-10 i`. This is a conditional action component,
-not the physical muon section or changing-body chronological response.
-The child normal-source admission still has original row defect
-`1.2927483851132434e-8` against the unchanged `2e-10` guard.
-The evaluated nonlinear reset decreases its largest original row from
-**397.7381613146046** to **4.424045503132994e-6** after12 corrections.
-Other field, energy and position-trace rows are at most `6.35e-12`.
-The attachment defect is `4.424045503132994e-6` and the common normal
-temporal-dual defect is `1.0847582502816176e-6`; both remain.
-A single192-bit solve of the exact stored302-row projection changes the
-port by `1.4647418e-6`, leaving an original reset defect of
-**3.3821932e-6**. Linear solve arithmetic contributes to the defect but
-does not remove it. The unchanged absolute `2e-10` reset guard is false;
-the scaled merit is not substituted for that guard.
+The incoming magnetic response is now reconstituted on the actual parent
+birth action at preserved free `q,Pi`, matched to the child on its named
+constraint domain, and propagated with the source already on. The maximum
+free equation/conormal-range defect is `3.709141974507642e-14`. The nonzero
+birth source cotangent has norm `0.019112646775840215`; its complete normal
+and area first derivatives have norms `2.20564398166` and `0.02695961747`.
+They include both momentum-response slots as well as the direct moving
+source contact. No reset condition is inserted as a continuous bulk load.
 
-This is an evaluated same-action reset/source application on the retained
-candidate, with its tree lambda and unassigned tension kept explicit.
-The physical event, exterior domain, pole and residue have not been
-selected from it. Consequently the disjoint native Pauli contribution,
-complete `a_mu`, `g_mu` and total uncertainty remain unevaluated.
-Production heat refinements remain paused while the larger physical
-normalization and domain applications are addressed.
+This response is consumed in all three independent unsquared current
+placements and their normal/area first jets, and in the complete supplied
+signed quadratic field action. Its recomputed normal first derivative has
+norm `8.752548894354111e-8`, and its area first derivative has norm
+`2.763534475972669e-9`. Birth, prescribed-wall, coefficient-corner and outer
+returns are evaluated on that same source-on domain. The older outgoing
+`1.74843959646e9` derivative is preserved as a restarted-zero child control;
+its fields, rates and contractions cannot be used for the joined child.
+The field-only third-action contact does not supply the complete derivative.
+
+At the retained tree-lambda/unassigned-tension candidate, the full coupled
+reset guard still fails original226 row223 (zero-based, one-based row224):
+`1.66043418109e-6 - 4.69874850950e-6 i`, absolute value
+`4.98350069984e-6`, against the unchanged `2e-10` guard. This common
+attachment temporal-dual equation belongs to the full coupled birth
+action; it is separate from the passing prescribed-field equations.
+The field-sector match does not establish a stationary formation section,
+an exterior pole or its residue. The complete native Pauli remainder,
+final `a_mu`, `g_mu` and total uncertainty consequently remain unevaluated.
+No action-definition gap or physical underdetermination is inferred.
+
+The incoming and outgoing **changing canonical source responses have now
+been evaluated**, using the retained tree-lambda/unassigned-tension action,
+its full inherited profile and all original Legendre/Gauss rows. Two actual
+nonlinear midpoint stages and their reconstructed endpoints are evaluated
+on each arm. The largest base358 residual is `5.946264650536273e-11`;
+the largest endpoint146 residual is `8.977151858918912e-11`, against the
+unchanged `2e-10` guard. Both normal and area source directions are carried
+as explicit high/low pairs through the stage action and its independently
+solved literal transpose. Their largest literal original358 residual is
+`3.2316938440904524e-17` for the supplied stage coefficients. The last
+outgoing endpoint proper-normal displacement is
+`1.0237533863586994 + 0.15844076507139362 i` for the normal trial and
+`-0.0016866396207860452 + 0.00027314168956921344 i` for the area trial.
+These are computational source responses, without physical inertia or
+external-state normalization.
+
+The full moving-reference source and its complementary function are
+applied to the Maxwell, metric/measure, parent-profile and scalar/Higgs
+action contacts **before** finite field restriction. The complementary
+action-dual gradient norm is `699.6837554516085` and `699.6790143536454`
+on the two outgoing stages. Full-source application reproduces the
+retained exact reference-clock gradient with stored difference0;
+full minus represented minus complement is at most
+`4.62671908852022e-13`. A zero old coefficient-offset clock partial
+therefore cannot remove this source.
+
+The bounded stored148 investigation is complete. Three corrections leave
+all four exact-stored original146 high/low responses below `1.52e-11`;
+frame reactions are below `4.59e-20`. A single rounded normal-child state
+still has accurately reevaluated original residual `2.15017e-9`.
+The changed-stage implementation retains both terms, freshly reassembles
+the parent source, then applies its inherited child source exactly once.
+It preserves the original base and variation momentum targets and frames.
+Original73 birth/reset traces remain endpoint conditions. They are never
+added as continuous bulk loads.
+
+The responses are consumed by the full18 holomorphic current and by fresh
+full302/all226 birth matching. The fresh endpoint Hessian equals the pinned
+Hessian exactly, but ordinary port reevaluation gives original reset defect
+`4.9835007e-6`, still above `2e-10`. Natural-port derivative step differences
+are `13.10%` for the normal direction and `81.85%` for the area direction.
+These are action/matching source-quality diagnostics; they cannot be
+replaced by the tiny stored-matrix residual. Limited fresh action-gradient
+checks likewise worsen on halving, while their existing literal normal
+readout effects remain at most `1.42e-11` and `7.26e-13`. None of these
+diagnostics is an `a_mu` uncertainty or a complete action enclosure.
+
+The physical stationary birth/formation and exterior pole matching have
+not been solved by the computational trial amplitudes or initial-held
+current domain. The disjoint native Pauli remainder and supported final
+`a_mu`, `g_mu` and total uncertainty remain unevaluated. The one consolidated
+table retains the evaluated matched local subtotal
+`0.0011659186179552334` and the historical first row
+`0.0011655419088320725`. Production heat refinements remain paused while
+the larger matching, domain and normalization applications are addressed.
 
 The original interacting action now supplies compatible canonical launch
 data and two canonical steps from the retained complex terminal, at the
@@ -1142,3 +1196,604 @@ replay or software pass is converted into a native remainder or total
 uncertainty. Publication audit commands and exact outputs are recorded
 separately in the selected-index audit verification; these repository
 checks do not certify the physical Pauli normalization.
+
+## Changing-background source application and its actual consumers
+
+The new application consumes the corrected normal and area directions,
+not just the admission receipt. At each of the two stages on each arm,
+the original action supplies fresh `G`, `H`, profile, wall, density, lapse,
+shift, coframe and source rows. The midpoint canonical equations are
+
+```
+dx_f - dx_i - h dv = 0
+dPi_f - dPi_i - h (H eta + g)_x = 0
+(H eta + g)_v - (dPi_i + dPi_f)/2 = 0
+(H eta + g)_y = 0,
+eta = ((dx_i+dx_f)/2, dv, dy).
+```
+
+The exported source audits apply the literal fresh action rows, separately
+from the assembled bordered matrix, and separately from the named frame
+reaction. Both high and low solution terms enter the next application.
+They are not rounded to an ordinary coefficient vector before contraction.
+The incoming canonical arm retains negative orientation; the child's
+inherited parent/reference uses the retained same-coordinate affine
+extension at positive increments. A solved incoming future is not grafted
+into that source. The original 73 birth/reset trace equations remain
+endpoint conditions.
+
+Fresh birth normal admission has original-row upper bounds
+`7.521994163783402e-21` (parent) and `4.5813510196522426e-20`
+(child). The actual changing nonlinear base residuals are at most
+`5.946264650536273e-11`; the fresh true-face endpoint residuals are at
+most `8.977151858918912e-11`, below the unchanged `2e-10` guard.
+The eight source stage applications have original-row bounds at most
+`3.2316938440904524e-17`. These are checks of supplied finite action
+coefficients, not action-coefficient or temporal/continuum enclosures.
+
+The full moving-reference field source and its complementary function
+enter the original weak action before coefficient restriction. At the
+two outgoing stages, the complementary source's master-gradient norms
+are `699.6837554516085` and `699.6790143536454`. The full source reproduces
+the owned clock gradient exactly in the recorded binary application;
+full minus represented minus complementary gradients has maximum defect
+`4.62671908852022e-13`. This evaluates the function source missed by the
+old zero coefficient-clock derivative. It does not identify a physical
+formation section or inertia.
+
+The endpoint consumer reconstructs the full joint derivative and both
+signed temporal duals, `theta_P = 2 own_deltaPi_P - joint_deltaPi_P`
+and `theta_C = -joint_deltaPi_C`.
+Inherited parent feedback occurs once; the separately reconstructed child
+source is not appended to the joint Hessian again. All 226 original reset
+rows are reevaluated. The natural attachment and normal forces remain
+readouts, rather than additional continuous bulk constraints.
+The reevaluated birth reset defect is `4.9835007e-6`, above the original
+guard. Directional step comparisons of these natural responses differ by
+about 13.10% (normal) and 81.85% (area). These calculations do not establish
+converged reset derivatives, and those percentages are not uncertainties
+on the projected anomaly. The separate outgoing action-gradient controls
+also worsen on halving the step; their actual defects remain in the linked
+receipt rather than being replaced by the small matrix residual.
+
+The same high/low stage directions now enter the full18 unsquared current
+and the actual Higgs-aligned electromagnetic generator. The finite test
+source is `J_R=-Q(H)/N`, with the independently declared analytic dual
+`L_T=J_R.T`. Its derivative retains `-dQ/N+Q dN/N^2`, the operator/clock
+insertion and both current-leg placements. No Hilbert adjoint or real-part
+projection is used for these analytic derivatives. Four normal/area and
+incoming/outgoing applications are replayed. The finite unit-current norm
+is `6.92820323027551e-16`; large individual source placements cancel in
+the combined finite test. Neither this norm nor that cancellation is a
+Pauli contraction or an omitted-sector bound. The initial-held/free-final
+test has `Gamma=I`; it has no physical pole and supplies no LSZ factor.
+
+Reproducibility for this part is pinned by the following immutable replay
+manifests (all SHA256):
+
+| Application | Manifest hash |
+|---|---|
+| Bounded stored148 correction | `3e403233d7aebc7b7ffd7e2f4710857de5ed4e9c1c88a0f99b4284afb4194b2b` |
+| Changing stages, true endpoints and full function source | `7cecc2628b8f38b9129c7e25b4080d518bc4d729734fe5171397ab7b0fb3ce12` |
+| Corrected birth endpoint consumption | `a3a586f76fa7f17f46c3dd0d6f202d9d1fb80917b0a07c3000fa3cf195d8b410` |
+| Reached action-gradient accuracy controls | `87e6454dd224146a2efc7f95debe6a4c9f993a730625e08138997a51361b8aac` |
+
+The completed changing application uses the producer
+`C:/Python314/python.exe scripts/evaluate_muon_changing_canonical_source.py
+--output artifacts/muon_changing_canonical_source_20261012/run_3` and
+the corresponding `run_4` output. These interface invocations summarize
+the recorded producer and its default parameters; they do not recover
+otherwise unrecorded shell argv. Both result files have SHA256
+`7e3c7d558c41d692454e5729952f4c7705aea9ce1f0bdf78c13ff805bf367d39`;
+68 selected files and 360 input pins are checked in the pair manifest.
+Both execution logs have SHA256
+`66a9949afc6a6ccb982f1af05d6d4d171b67794f9a6a4901847679847fed6b89`.
+The earlier failed run and its failure receipt are preserved. The fresh
+parent Hessian differs from its saved binary seed by at most
+`4.440892098500626e-16`; the implementation exports that difference and
+reassembles the fresh sources with unchanged momenta, rather than treating
+binary array identity as action identity. Exact argv, outputs, focused
+tests, pins and error scopes for the consumers that record them are in
+their verification; the source pair retains the supplied execution-output
+evidence without claiming a shell-argv transcript.
+
+DERIVED: the same signed canonical/source equations, literal analytic
+dual, full reference-function weak application, joint endpoint feedback
+and three ordered unit-current placements.
+
+EVALUATED: fresh two-arm sources, changing finite stages and true endpoints,
+the complementary weak-action gradient, all226 reset response rows and
+the full18 electromagnetic current components.
+
+CONTROL_ONLY: stored binary coefficient arithmetic, limited directional
+step checks and initial-held/free-final finite current domains.
+
+UNEVALUATED: stationary physical birth/formation and exterior matching,
+the physical pole/residue/charge/LSZ factors, normalized soft Pauli native
+remainder, surviving finite weak/quark complement and total uncertainty.
+
+OWNER_DEFINITION_GAP: none established. The unresolved relations are action
+applications and matching equations; absence of a finished packet is not
+evidence of an independent missing physical datum.
+
+## Signed magnetic source, causal variations and complete quadratic field derivative
+
+The original field representation has 84 coordinates per scalar harmonic:
+80 gauge coordinates in four radial profiles and four Higgs coordinates.
+The n1 application retains four harmonics, hence 336 field coordinates,
+including all64 At/Gauss rows. The complete20 gauge wall trace is prescribed;
+Higgs remains natural. The named central-Ar wall row is the proved duplicate
+of a named frame row, so the border has76 independent wall and16 frame rows.
+No numerical singular-vector choice defines a physical quotient.
+
+The source uses the actual Higgs-aligned charge and `e R4^2/2` exactly once,
+including its coordinate-time derivative. The owned C2 pulse and a single
+Hermite polynomial preserve source value/rate continuity across the two
+saved stage germs. Both forward and reverse time placements enter the weak
+action. The weak initial-held/free-final control and the positive future
+zero-Cauchy application remain distinct. For the latter, the incoming
+stages are reversed into future order without changing the sign of their
+future Qdot germs. Child initial zero is a separate control until the
+owned birth reset consumes the incoming result.
+
+On the named zero-wall interior, all48 interior At rows are eliminated by
+literal analytic Schur reduction, leaving196 dynamic/Higgs coordinates.
+The signed original canonical equations are
+
+```
+xdot = M_red^(-1) (p - B_reverse,red x - g_rate)
+pdot = K_red x + B_forward,red xdot + g_value.
+```
+
+The normal/area high and low first directions differentiate the same
+inverse, mass, both mixed blocks and full Q/Qdot/Qddot source. They are
+integrated with the base, rather than borrowed from the weak BVP. The
+original Gauss, Euler, wall, frame and momentum returns are reconstructed.
+The stored momentum is Lorentz `p`; the continued weak momentum is `-i p`.
+Both causal Green responses, coframe/wall-vertex motion, induced Higgs and
+the charge-projector Hessian enter the three magnetic current placements.
+The current domain is still a declared coordinate test, without physical
+spin, exterior pole or LSZ normalization.
+
+The causal reconstructed Euler residual maxima are `38.112460984970184`
+(incoming) and `1030.1371641480812` (outgoing), with uncancelled maxima
+`4.20245e15` and `6.54220e16`. The maximum rowwise ratio is1, on near-zero
+At rows with scales about `7.63505e-22` and `1.82456e-20`; it is not a
+successful scaled admission test. Normal first Gauss residuals are
+`1.5728399755926745e-5` and `5.806365231457656e-4`.
+These binary signed-source checks are retained, not hidden behind the
+finite current norms. They neither replace the unchanged canonical guard
+nor enclose physical matching or anomaly error. No extra matrix or heat
+refinement is used to hide the remaining physical-domain problem.
+
+The actual causal B fields and rates then enter all15 signed D3S point
+applications, even0/2 target versus odd/source1. Both angular derivative
+placements, the Maxwell curvature contact and intrinsic DH/Hdot/quartic
+contacts are retained. The source-only E-transpose API correction changes
+neither trial orientation nor source coefficients. The evaluated
+homogeneous normal/area field trial occupies only its owned constant
+harmonic; this does not discard physical inhomogeneous variations.
+All four value/rate placements are pulled back with the saved `-i dt`
+quadrature measure, including the initial-face source and free-face forces.
+
+The already supplied full stage-form derivatives also evaluate the
+geometry, density, shift, mechanical parent/reference profile, coframe
+and Higgs contribution. The complete supplied quadratic field derivative is
+
+```
+.5 B_a.T deltaForms B_b
+  + .5 deltaB_a.T Forms B_b
+  + .5 B_a.T Forms deltaB_b,
+```
+
+with K, B_forward, B_reverse and M applied separately. Subtracting only
+the matched `.5 D3S_field[B_a, field_trial, B_b]` identifies the remaining
+geometry/profile/coframe contribution. This is not a continuum overlap
+subtraction or an independently isolated metric-only contribution.
+
+| Evaluated matrix norm | Normal direction | Area direction |
+|---|---:|---:|
+| D3S field/B/B contraction | 1.89280796245e7 | 6.08559324974e5 |
+| Complete coefficient motion, `.5 B.T deltaForms B` | 1.44305739733e9 | 6.20147321e7 |
+| Geometry/profile/coframe complement | 1.45122085444e9 | 6.22492044255e7 |
+| Complete supplied quadratic field derivative, both response slots included | 1.74843959646e9 | 6.53482934881e7 |
+
+Norms in this table are not additive scalar contributions to `a_mu`.
+The signed complex matrices, all placements and high/low terms are saved.
+Large early C2-pulse fields and rates dominate these integrals; replacing
+them by the small post-pulse fields would discard the source application.
+Fixed-geometry field D3S has M variation exactly zero because both retained
+Maxwell and scalar kinetic Hessians are independent of the background field
+at fixed geometry. Full coefficient motion includes M variation; the
+physical total inertia derivative is not inferred zero. Likewise, the
+direct area coefficient has no field-quadratic derivative by its retained
+geometry-only action dependency, while the induced area background response
+and geometry variation are nonzero and retained.
+
+The four magnetic replay manifest SHA256 hashes are:
+
+| Pair | SHA256 |
+|---|---|
+| Incoming normal | `a9d9c9245a7fb0d0a05fb491fe9715b98b02e0bd4e07bc1e105d923d3478c127` |
+| Incoming area | `f483552ea0442e67edfee16c65001e322d191f1c9fda6aa7db60f8cf84a357b2` |
+| Outgoing normal | `795de860ebf492b1556754298abef43a63bb87f9d697cf2894d1c497f277114e` |
+| Outgoing area | `7e696a60e9268fad2e252b972f320372269f02892ca086603c5dd48acfd15be6` |
+
+Each pair has15 byte-identical scientific outputs and340 current input/source
+pins. Exact eight argv/environment/stdout records and row-localized
+diagnostics are consolidated in
+`artifacts/muon_holomorphic_n1_magnetic_action_20261012/consumption_summary.json`,
+SHA256 `f58e7a71d56cee480f1a9cccf0215add28fc77b93154029afc790ea9037cd66f`.
+Thirteen focused controls pass in27.53 seconds; the captured stdout SHA256
+is `86c4217adb01926defca4bba1380d8e4f5d4a7d40d5b7f958d82841bb602ffdd`.
+The independent reference current implementation is CONTROL_ONLY and is
+not a second production solve.
+
+The outgoing D3S replay manifest is
+`artifacts/muon_holomorphic_n1_magnetic_operands_20261012/pair_verification_outgoing_normal_basis_area_source/publication_manifest.json`,
+SHA256 `333b110fbe7e13108d870054972275e74d68c67225a150e507c7feabcea19054`.
+Its local full-matrix verification records887 files and360 verified pins.
+The additive compact publication manifest at
+`artifacts/muon_holomorphic_n1_magnetic_operands_20261012/compact_publication_run_1/publication_manifest.json`,
+SHA256 `f28bedc05a1d478d02d705f843d1fef7af379d74522bef4b900a44f48f8e46b1`,
+selects59 files and27,441,323 bytes. It preserves the evaluated action/source
+arrays, all219-per-run archive hash lists, receipts, executed logs and
+producer/input closure. The864 dense point/cell arrays remain unchanged
+locally and are reproducible by the pinned driver; they are not all included
+in the compact commit. The metadata-only compact manifests themselves
+replay byte-identically. This does not claim clean-ancestor regeneration.
+The full quadratic-action replay
+manifest is
+`artifacts/muon_holomorphic_n1_magnetic_quadratic_action_20261012/pair_verification/publication_manifest.json`,
+SHA256 `b45cb70c6df70b784821589a7189992515fc6ba2c2a432f5c1481ce3e8bfda0a`.
+It selects15 files and379 pins. Four focused action/contraction controls pass.
+The earlier producer preflight and serialization failures remain preserved;
+they are implementation failures, not physical action obstructions.
+
+DERIVED: the same signed original action, named-domain Schur/source equations,
+analytic dual and complete quadratic product rule at fixed supplied time.
+
+EVALUATED: finite causal B/base/first responses, all three current placements,
+the signed D3S contacts, initial/free-face sources, actual coefficient motion
+including geometry/profile/coframe and both response slots.
+
+CONTROL_ONLY: the finite C2/Hermite pulse, initial-held/free-final comparison,
+independent current reference and numerical/row-summation tests.
+
+UNEVALUATED: the physically matched birth/exterior/adiabatic domain and moving
+physical stop, complete geometry/event/native sectors, the native own mean
+and both ordered quantum inverse insertions, same-background continuum
+overlap subtraction, physical pole/residue/charge/LSZ normalization and
+signed soft Pauli limit. The retained even0/2 source force still requires its
+same-domain action response; a field-action contact cannot replace its native
+positive realization and own heat cotangent.
+
+OWNER_DEFINITION_GAP: none established. Each unfinished item above is an
+action or matching application; no arbitrary physical covariance, fitted
+counterterm, positive reference or supplied carrier member is introduced.
+
+The source1×odd3 action is also evaluated into both even2 and even4 on the
+actual outgoing normal causal source at sigma0.75. Complete source At,
+radial, H and Hdot germs and both angular/temporal placements remain.
+The named24 wall/H test-image K norms are `90.62136537` (n2) and
+`145.34727867` (n4); BF/BR norms are `33.99698030` and `43.88991284`.
+Field-direction M is zero at fixed geometry, with the same kinetic
+dependency proof above. The independent reverse placement differs by at
+most `1.77636e-15`. The checked wall-trace right inverse is a test-image
+contract; it does not prove a full84 inverse-domain reduction or select a
+physical source/adjoint. Thus the reached n4 image is retained, rather than
+assigned zero, while full native angular and loop completion remains open.
+The29 scientific outputs per run replay byte-identically, with338 current
+pins. Manifest
+`artifacts/muon_holomorphic_n3_magnetic_return_20261012/pair_verification/publication_manifest.json`
+has SHA256 `743f58e66b1ca6a503626c8b0464afd73101b000cc096a797c08fb2c0b60d315`.
+Two focused tests pass in5.05 seconds, stdout SHA256
+`8f8f6b18dac099a3586e6d1ef013e325009a2ec48cbc43d61909ebdd01407ecc`.
+No old Green field or different positive reference is used in this action.
+
+## Actual born action, inherited source-on child and combined weak returns
+
+The additive application reconstitutes the incoming finite-prefix endpoint
+on the **actual parent birth action** while preserving the free field value
+and canonical momentum. It then solves the child interior Legendre/Gauss
+equations on its actual birth action, with the action-owned full20 magnetic
+wall value/rate. Holding an old endpoint rate and reevaluating its momentum
+is only a comparison; it is not the admitted parent datum. The actual
+parent full momentum change is `3.2393183288885895e-9` after reconstitution.
+The independent direct source and the parent response are each applied once.
+
+The wall/frame constraint `C` and the original zero-wall interior lift `S`
+are inherited from the signed84-field representation. Original64 dynamic
+gauge and4 Higgs trace rows remain distinct from algebraic At. The maximum
+free projection or named constraint-dual range defect is
+`3.709141974507642e-14`. Larger raw wall momentum/Gauss rows are retained
+as `C^T lambda`, with their actual prescribed-source cotangents, rather than
+being forced to zero or promoted to free-equation failures. The source At
+pairing and named frame source are exactly zero by their declared source
+support; spatial magnetic source work is nonzero.
+
+The endpoint source-action matrix is computed directly:
+
+`C_B = qP^T PiP - qC^T PiC`,
+
+`D_s C_B = D_s qP^T PiP + qP^T D_s PiP
+             - D_s qC^T PiC - qC^T D_s PiC`.
+
+Its value agrees with the complete prescribed-source representation to
+`7.263377772265779e-16`. Its norm is `0.019112646775840215`, with diagonal
+`0.0024308086939502363 - 0.010310767318939488 i`,
+`0.0024308082383055945 - 0.010310766746117177 i`,
+`0.003982012233753034 - 0.011180132027491078 i`.
+The normal and area complete first norms are `2.20564398166` and
+`0.02695961747`, while the direct moving-Q contacts alone are
+`0.22335925089` and `0.00252626452`. Both independent momentum-response
+slots are therefore materially required. Full versus prescribed-source
+first differences are at most `6.83e-14` and `2.50e-15`. These are action
+identities at the stored field domain, not observable error bounds.
+
+This is an **O(B_a B_b)** source-action coefficient: `q` and `Pi` here
+are first magnetic responses. It contributes to the natural geometric
+endpoint variation at that order; it does not repair the zero-magnetic
+stationary base or determine its linear soft magnetic normalization.
+
+The child inherits the reconstituted free `x,p` with the source already
+on. Its actual birth, two midpoint and two **true endpoint** Q/coordinateQt
+germs define a declared C1 piecewise Hermite source. Qtt is the derivative
+of that interpolant, not a claimed physical acceleration. The canonical
+source equations and all original At/Gauss, Higgs, wall and frame returns
+are reevaluated on the two signed stages. The maximum reconstructed original
+row is `4.3995762754203747e-13`; twenty source points are retained. The final
+canonical-state norm is `0.3075794449590549`. The actual high/low initial
+maps are differentiated before propagation: free first-momentum jumps
+are `1.2186937509766231e-12` (normal) and `5.3667915741293896e-14` (area).
+Dynamic trace jumps are about `1.7332e-13` and `1.6709e-14`. Raw full first
+field jumps `3.7410928418936287` and `0.19507662163191214` occur in algebraic
+At, which is not the inherited dynamic trace. Every raw row is preserved.
+
+The original unsquared current consumes these fields, their induced Higgs
+response and both analytic high/low jets in operator, right-current and
+literal-left placements. The current norm is `4.2185972719682805e-26`;
+normal/area first norms are `4.5977804770624504e-24` and
+`2.625420741991838e-25`. No conjugation or real-part projection replaces
+an analytic dual. These are finite current values without physical
+pole/residue/charge normalization; their size supplies no anomaly bound.
+
+The coefficient corner has a nonzero full wall momentum jump, norm about
+`1.15659e-6`, with free/range defect about `7.44e-15`. Its source cotangent
+norm is `1.94968292583e-7`, and first high norms are `0.000757336` and
+`0.0000315057`. It is a distributional weak return; point Euler residuals
+do not include it. Corrected face runs3/4 use the **left** source polynomial
+second germ on the left corner and the right germ on the right. The
+earlier face runs1/2 used the right second germ on both sides; their q/Pi
+and source cotangents remain identical, while At rate/first evidence is
+superseded. All old runs are preserved. The primary source-on ODE producer
+is unchanged by this additive face correction.
+
+The combined weak-action consumer independently evaluates the full signed
+`M,B_forward,B_reverse,K` bulk quadratic action and its coefficient plus
+both source-response first placements on the actual twenty source points.
+Its original bulk norm is `4.988737891173127e-10` on both cases. The complete
+normal first norm is `8.752548894354111e-8`, with coefficient motion
+`6.32860524645592e-8` and left/right response norms each
+`1.57961993552256e-8`. The area first norm is `2.763534475972669e-9`, with
+coefficient motion `2.263619787577587e-9` and left/right norms each
+`4.06400574212279e-10`. Norms are not additive signed contributions.
+Geometry, pairing/density, coframe, parent/reference profile and induced-H
+contacts remain in the full supplied coefficient derivative.
+
+All temporal returns and wall-force work are consumed in the same check:
+
+`2 L_B = q^T (force-Pi_dot) + d_t(q^T Pi)`,
+
+`S_B = -i/2 [q^T Pi]_(initial)^(outer)
+        -i/2 (q_left^T Pi_left - q_right^T Pi_right)_(corner)
+        + integral (-i dt) q^T Euler/2`.
+
+The first variation retains `dq^T Euler + q^T dEuler`, both face momentum
+placements, and every coefficient contact. The fixed named constraint map
+reconstructs `dEuler=C^T dReaction+dOriginalRows`; neither the reaction nor
+the source work is discarded. The numerical coordinate span and supplied
+quadrature are held for this application, while physical event/stop/domain
+motion remains a separate owned matching solve. The action is computed
+directly from its forms. This identity is a check, not a replacement by
+Green cancellation or a quantum/native mean.
+
+The integrated pointwise action-identity defect has norm about `3.30e-23`. The finite
+five-point-per-source-segment integration has retained bulk versus complete
+weak-return defects `1.192086727269256e-9` (base),
+`1.3323309234715069e-7` (normal first), `5.455022124780366e-9` (area first).
+They are comparable to the small combined values after cancellation and
+are **not** treated as an admitted accuracy result or a Pauli uncertainty.
+No heat/contour or precision campaign is launched to reduce them while the
+larger physical matching/domain problem remains unresolved.
+
+The old outgoing restarted-zero child has field/rate norms of order
+`3.36e7`/`2.05e16`, compared with actual inherited maxima
+`0.49944673`/`17.01558`. Its D3/quadratic/n3 values remain evaluated
+**CONTROL_ONLY** at that source. Their angular/action primitives remain
+reusable; their source-dependent contractions cannot be promoted to the
+joined child. The cheap complete supplied quadratic direction above is
+recomputed on the joined child, rather than substituting the old norm.
+
+The exact zero-source full-reset equation still failing is the first
+normalized common attachment temporal dual. Its producer
+`coupled_reset_application` evaluates
+
+`rows[223:225] = sqrt(B0 B0^T)
+                 [common^T L^T theta]_(attachment)`,
+
+`theta = (2 PiP_own - PiP_graph, -PiC_graph, 0_y)`.
+
+Here `L` is the full292 Legendre/constraint phase lift from the original302
+bordered saddle and four named frames. The attachment coordinates are
+`qw=log(2 R4/RADIUS0)` and `q0-qw`; row223 is their first normalized
+combination, not a bare coordinate. Zero-based row223 (one-based224) is
+`1.6604341810934722e-6 - 4.698748509499356e-6 i`, modulus
+`4.983500699836006e-6`. Rows224/225 have moduli about `3.64578e-6` and
+`2.39653e-6`. The unchanged absolute guard is `2e-10` and is not satisfied.
+Stored full302 phase/transpose residuals `3.89e-9`/`1.40e-9` retain their
+arithmetic scope; no outward action or physical residual enclosure follows.
+This natural endpoint relation is separate from the prescribed magnetic
+wall conormal, passing free field equations and O(B²) source coefficients.
+
+The subsequent physical consumer remains the same-domain unsquared
+`Gamma2` at its owned formation/energy/tension/exterior restriction. At an
+actual semisimple spin-doublet pole it requires independent analytic L,R,
+`Z=L Gamma2_E R` invertible, and `H_B=-Z^(-1)L Gamma2_B R`. The one proper
+clock must match `Mphys=kappa Re(Ep)` and
+`Gamma_phys=-2 kappa Im(Ep)=hbar/tau`; mass and lifetime cannot choose
+separate clock factors. The initial-I current control, source-column Gram
+or six-state affine symbol is not substituted for these equations. Missing
+boundary-map derivatives must remain explicit in the stricter owned
+unsquared boundary-source jet consumer; they are not silently defaulted
+to zero. The failed natural stationarity above is an evaluated unfinished
+action application, not evidence of a new independent physical datum.
+
+DERIVED: constrained-domain face reconstitution, signed canonical flow,
+complete endpoint-source first, independent weak action/return identity
+with its corner sign, and physical pole/residue consumer equations.
+
+EVALUATED: actual born field match, inherited source-on child and its
+high/low responses, all three current placements, complete supplied
+quadratic direction, actual birth/wall/corner/outer source returns and the
+explicit failed full natural endpoint row.
+
+CONTROL_ONLY: restarted-zero child D3/quadratic/n3 contractions and the
+finite initial-I current restriction. Computational magnetic/normal bases
+do not select a physical formation section or covariance member.
+
+UNEVALUATED: full stationary formation/energy/gamma(c) and exterior match,
+physical pole/residue/charge/LSZ, corrected positive native realization
+with own mean and both ordered loop insertions, same-background overlap,
+surviving weak/quark complement and normalized soft Pauli remainder.
+Consequently final `a_mu`, `g_mu` and total uncertainty remain null in the
+one contribution/error ledger, while the matched local subtotal stays
+`0.0011659186179552334`.
+
+OWNER_DEFINITION_GAP: none established. The exact remaining natural
+endpoint and matching equations have action owners. This report neither
+calls an unexecuted solve physical underdetermination nor promotes an
+absence of a prepared packet to a theory-definition result.
+
+Reproduction of the final weak combination uses Python314, `PYTHONPATH=src;scripts`,
+`OPENBLAS_NUM_THREADS=1`, `OMP_NUM_THREADS=1`:
+
+```text
+C:/Python314/python.exe scripts/evaluate_muon_inherited_magnetic_weak_combination.py --source-folder artifacts/muon_holomorphic_magnetic_inherited_cauchy_20261012/run_1 --faces-folder artifacts/muon_holomorphic_magnetic_source_corner_20261012/run_3 --output artifacts/muon_inherited_magnetic_weak_combination_20261012/run_3
+C:/Python314/python.exe scripts/evaluate_muon_inherited_magnetic_weak_combination.py --source-folder artifacts/muon_holomorphic_magnetic_inherited_cauchy_20261012/run_1 --faces-folder artifacts/muon_holomorphic_magnetic_source_corner_20261012/run_3 --output artifacts/muon_inherited_magnetic_weak_combination_20261012/run_4
+C:/Python314/python.exe scripts/verify_muon_inherited_magnetic_weak_combination_pair.py --runs 3 4 --output pair_verification_final
+```
+
+Each final producer exits0 with two archives/404 pins and result SHA256
+`bc78547bc072609419556269767be3efae2453b87d9e9419d5017d8480689621`.
+Both stdout files have SHA256
+`00f0020d1be6636d493e5a41436547c38c05483f2bec03ee1e7f7787d0ceea73`;
+stderr is empty. Exact argv/environment/output hashes are retained in
+`artifacts/muon_inherited_magnetic_weak_combination_20261012/final_execution_records.json`.
+The final pair verifier exits0, twelve selected files/404 pins, all three
+science outputs per run byte-identical; manifest SHA256
+`7a447eaaf2d6c12e0b63dcb0bead5b3758354a9f1b78f09a6aaa5df7a567ab83`.
+Two independent complex canonical/source/metric/corner controls pass in1.01s;
+their executed command and actual tool output are retained in
+`artifacts/muon_inherited_magnetic_weak_combination_tests_20261012.tool_result.json`.
+The complete endpoint consumer replays three files/run with283 pins,
+manifest SHA256 `2e03f3e6af95ad8326435aff2bb00d037ada49fc1c9a3c55b0335155f708a561`.
+Additional exact source-on/one-sided-face commands and hashes remain in
+their linked pair receipts; binary replay does not establish action,
+continuum, domain, matching or Pauli error bounds.
+
+The combined birth/source-on/corrected-face pair verifier exits0 with
+63 selected files/414 current pins and manifest SHA256
+`59c141b72048d4e259a98a1a761db7010328e3aa1696967de590291d83ceb613`:
+`artifacts/muon_holomorphic_magnetic_birth_source_20261012/pair_verification/publication_manifest.json`.
+It verifies birth1/2, inherited source-on1/2 and corrected corner3/4,
+with all science outputs byte-identical. Seven focused tests pass; their
+exact ENV4 argv/stdout paths and hashes are retained. The older corner1/2
+result receipts are excluded from authoritative selection; their code
+copies, stdout and historical comparison digests remain preserved.
+
+## Consumed unsquared magnetic transfer operand
+
+The actual inherited20-point source is also consumed beyond its current
+bilinear in the unsquared transfer application:
+
+`U_B = integral U(outer,t) [-i N(t) Xi_B(t)] U(t,initial) dt`.
+
+Each independent high/low source derivative retains the left propagator,
+insertion `-i(dN Xi_B+N dXi_B)` and right propagator placements. `dXi_B`
+includes both induced-field motion and moving canonical vertices. The
+fixed coordinate weights are `dt=1j*scale`; no physical endpoint motion
+is assigned zero by this application. All18 charged/neutral fibers are
+retained within the90-dimensional n0+n1 fermion test restriction. The
+reached n1-to-n2 full image is explicitly outside this restriction; it is
+not assigned a zero remainder or a native angular enclosure.
+
+The evaluated `U_B` norm is `6.327895907952054e-10`; normal/area first high
+norms are `6.896670715593681e-8` and `3.938131112987777e-9`, with low norms
+about `5.30273e-22` and `6.24272e-23`. Both propagator placements are
+nonzero and retained, about `5.424e-17` each for normal and `2.939e-18`
+for area. Rebuilt Xi differs from the same-source current archive by
+`1.39e-17` at scale0.07154. The independent literal-transpose product
+defect is `7.23e-27`. These finite comparisons are neither physical
+pole/residue tests nor uncertainties for the anomaly.
+
+This executed transfer supplies an operand of the existing boundary
+consumer `Gamma_B=Bi_B+Bf_B U+Bf U_B`. It is distinct from the separately
+evaluated `J^T A^-1 J` current and from a positive native square. Physical
+Bi/Bf, their source/domain derivatives, Gamma_E, the pole and invertible
+residue are not replaced by a coordinate boundary choice. The same pinned
+zero-field common-attachment row223 still fails at the retained candidate.
+Solving that natural endpoint relation together with the owned formation,
+energy and gamma(c) equations and exterior traces is the actual remaining
+matching application before these derivatives can yield a physical Pauli
+contraction. No physical failure for every branch or definition gap is
+claimed from this candidate residual.
+
+DERIVED: ordered Duhamel transfer/source jet and its boundary-pencil role.
+EVALUATED: actual inherited magnetic transfer and all three first slots.
+CONTROL_ONLY: the n0+n1 coordinate-test restriction as an external state.
+UNEVALUATED: its physical boundary/pole/residue and reached angular
+complement, completed native mean/inverse insertions/overlap/soft Pauli.
+OWNER_DEFINITION_GAP: none established.
+
+The driver `scripts/evaluate_muon_inherited_magnetic_pure_trace.py` runs
+twice with exact argv/environment/stdout/stderr retained in
+`artifacts/muon_inherited_magnetic_pure_trace_20261012/run_{1,2}.execution.json`.
+Both runs exit0 and all5 scientific files/run replay byte-identically with
+344 current pins. Result SHA256 is
+`bf80be3f64d2a048d0346abc59be49bfdcc2f569070991c692bb2c2a459decc9`;
+stdout SHA256 is
+`7f23badf6726a11b5c5d517c8e024876f1e13d6bb269667d46a9b3d5df4f8503`.
+One independent whole-complex two-stage finite-difference control passes;
+its actual command/output is recorded in `focused_tests_run_1.execution.json`.
+The pair verifier exits0,25 selected files, manifest SHA256
+`72f033433435078ba2fbb0f09191b433dfbd4a4d784f410a65fdee02b1ff5283`.
+No further production heat refinement is performed.
+
+## Consolidated accounting and publication evidence
+
+The existing `artifacts/muon_observable_combination_20261011/contribution_error_table.json`
+and `.md` are the sole active contribution/error table. Reused matched local
+rows remain disjoint, with subtotal `0.0011659186179552334`; the historical
+first row `0.0011655419088320725` is preserved. New action values and residuals
+are evidence for the same native consumer, not independently additive
+anomaly rows. Native completion, surviving finite weak/quark complement,
+complete `a_mu`, `g_mu` and total uncertainty remain open. No measured
+anomaly or spin-precession target is used to calibrate this work.
+
+Explicit reviewed pair manifests and current source/input pins are selected
+by `scripts/verify_muon_changing_source_publication.py`, with specification
+and verification in `artifacts/muon_changing_source_publication_20261012/`.
+Selection uses the compact D3 result/action membership above; full dense
+local replay archives are preserved and not silently expanded into the
+publication. The review distinguishes all five scientific classifications
+and preserves frozen prediction files. Exact accounting/selection commands,
+outputs and hashes are recorded with the specification and execution logs.
+
+After explicit index selection, the five required checks are executed by
+`scripts/record_muon_matching_publication_audits.py --output artifacts/muon_changing_source_publication_audits_20261012/run_1`.
+Their actual argv, exit codes, stdout/stderr, hashes and checked index tree
+are retained in that directory's `verification.json`. These are repository,
+claim, frozen-precision and public-readiness checks; passing them cannot
+replace the failed candidate natural endpoint equation, native/continuum
+matching or a supported uncertainty for the observable.
