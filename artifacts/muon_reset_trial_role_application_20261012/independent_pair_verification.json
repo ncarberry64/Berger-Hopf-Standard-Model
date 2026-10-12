@@ -1,0 +1,38 @@
+{
+  "all_consumed_pins_current": true,
+  "canonical_runs": [
+    "run_3",
+    "run_4"
+  ],
+  "classification": "INDEPENDENT_REPLAY_RESET_TRIAL_ROLE_AND_SOURCE_AUDIT",
+  "earlier_runs_scope": "run_1/run_2 numerical arrays identical; receipts predate complete imported-source and reference/parameter guard. They remain local and excluded from this canonical publication closure.",
+  "environment": {
+    "OMP_NUM_THREADS": "1",
+    "OPENBLAS_NUM_THREADS": "1",
+    "PYTHONPATH": "src;scripts"
+  },
+  "focused_control": {
+    "command": "C:/Python314/python.exe -m pytest --noconftest -q tests/test_muon_reset_trial_role_application.py",
+    "observed_tool_exit_code": 0,
+    "observed_tool_result": "1 passed in 0.80s",
+    "source_sha256": "a617463cb6d4864ee741ab92badb23a004c183e8b0c080821cec78316d04a898"
+  },
+  "materialization_commands": [
+    "C:/Python314/python.exe scripts/evaluate_muon_reset_trial_role_application.py --output artifacts/muon_reset_trial_role_application_20261012/run_3",
+    "C:/Python314/python.exe scripts/evaluate_muon_reset_trial_role_application.py --output artifacts/muon_reset_trial_role_application_20261012/run_4"
+  ],
+  "natural_traction_role": "actual force/energy readout, not forbidden variation or forced zero; internal natural matching follows the later action-derived choice of free boundary variations",
+  "pairs": {
+    "application.npz": {
+      "bytes": 67330,
+      "identical": true,
+      "sha256": "68d48a096baf587b667d03a7cb039fd2d15cb889bd462b075abdc871129529f7"
+    },
+    "result.json": {
+      "bytes": 64732,
+      "identical": true,
+      "sha256": "ae0007cdf9ed53d408a122ab51a89c72ce0c2564933930856823ddc89566c0f2"
+    }
+  },
+  "physical_formation_or_Pauli_selected": false
+}

@@ -1,0 +1,100 @@
+{
+  "checkpoint_role": "Accepted checkpoints retained locally; compact final action and complete histories selected for publication.",
+  "classification": "IMMUTABLE_COMPLETED_ALL148_CANONICAL_RESIDUAL_EXECUTION_EVIDENCE",
+  "coframe_prototype_consumed_by_these_runs": false,
+  "components": {
+    "direct_run_1": {
+      "accepted_checkpoint_count": 71,
+      "application_sha256": "c30539a8c3aab37bf31db5b907918eec872fb6198fcde65b8d1b5c59f40afd8f",
+      "exit_code": 0,
+      "independent_replay_executed": false,
+      "original_algebraic_residual_max": 0.08310765977014667,
+      "original_momentum_residual_max": 0.05919349622920164,
+      "original_rows_max": 0.08310765977014667,
+      "result_sha256": "8529e940312e4412c23e08dcd3b2af0eccaeb8e5602231bd79f11a002617748a",
+      "status": "NUMERICAL_OPTIMIZER_TERMINATED_WITH_ORIGINAL_RESIDUAL"
+    },
+    "resumed_run_1": {
+      "accepted_checkpoint_count": 167,
+      "application_sha256": "e53fd9de8f9d51c0db6868df65e6c504441ae78d6226be9a9f78deb6d44b03f0",
+      "exit_code": 0,
+      "independent_replay_executed": false,
+      "original_algebraic_residual_max": 0.007452523740186712,
+      "original_momentum_residual_max": 0.03173737470412458,
+      "original_rows_max": 0.03173737470412458,
+      "result_sha256": "5d12bbd7c7e9a2aefd6e6a1f46a1dad20b01efe2591860ba3857ecf7c4bcd531",
+      "status": "NUMERICAL_OPTIMIZER_TERMINATED_WITH_ORIGINAL_RESIDUAL"
+    }
+  },
+  "consumed_source_pin_count": 351,
+  "consumed_sources_current": true,
+  "executions": [
+    {
+      "argv": [
+        "C:/Python314/python.exe",
+        "scripts/evaluate_muon_safeguarded_complex_constitutive.py",
+        "--output",
+        "artifacts/muon_safeguarded_complex_constitutive_20261011/direct_run_1",
+        "--max-evaluations",
+        "80"
+      ],
+      "environment": {
+        "OMP_NUM_THREADS": "1",
+        "OPENBLAS_NUM_THREADS": "1",
+        "PYTHONPATH": "src;."
+      },
+      "exit_code": 0,
+      "stdout_capture": "Tool returned streamed stdout; complete accepted history is in result.json. No raw shell capture was requested."
+    },
+    {
+      "argv": [
+        "C:/Python314/python.exe",
+        "scripts/continue_muon_safeguarded_complex_constitutive.py",
+        "--previous",
+        "artifacts/muon_safeguarded_complex_constitutive_20261011/direct_run_1",
+        "--output",
+        "artifacts/muon_safeguarded_complex_constitutive_20261011/resumed_run_1",
+        "--max-evaluations",
+        "200"
+      ],
+      "environment": {
+        "OMP_NUM_THREADS": "1",
+        "OPENBLAS_NUM_THREADS": "1",
+        "PYTHONPATH": "src;."
+      },
+      "exit_code": 0,
+      "stdout_capture": "Actual complete PowerShell Tee-Object bytes copied without transformation.",
+      "stdout_sha256": "010b4491ba908c7f16c51d2f63f7f1c64b2e85990fa4d8300ec2cdda69a94510"
+    },
+    {
+      "argv": [
+        "C:/Python314/python.exe",
+        "-m",
+        "pytest",
+        "--noconftest",
+        "-q",
+        "tests/test_muon_safeguarded_complex_constitutive.py"
+      ],
+      "environment": {
+        "OMP_NUM_THREADS": "1",
+        "OPENBLAS_NUM_THREADS": "1",
+        "PYTHONPATH": "src;."
+      },
+      "exit_code": 0,
+      "passed": 2,
+      "reported_seconds": 0.81,
+      "stdout_capture": "Actual tool-returned test summary; no raw shell capture requested.",
+      "warning_scope": "Two SciPy zero-gradient division warnings in deliberately incompatible toy control; its original source remained unsolved."
+    }
+  ],
+  "optimizer_success_promoted_to_stationarity": false,
+  "original_action_source_position_momentum_and_named_frame_preserved": true,
+  "own_source_hashes": {
+    "scripts/continue_muon_safeguarded_complex_constitutive.py": "12319d3b112d7597388a1629437661fe3827f3d7b4de6521fd667bce1d43c48c",
+    "scripts/evaluate_muon_safeguarded_complex_constitutive.py": "5dffdb6ff456ba9828fb74b03dd7cdf0c84bc5f9dd0a18ff45206ffa6126cbd4",
+    "scripts/freeze_muon_safeguarded_complex_constitutive.py": "6519709d3162265aace09762e923718f344a95fcd5978120d945479e2796590a",
+    "src/bhsm/interface/muon_safeguarded_complex_constitutive.py": "73a40b10b4411c0332adda3c385704ce757e25458da594aba20c4b004ad4ce61",
+    "tests/test_muon_safeguarded_complex_constitutive.py": "090b9251653f3d1501c8a7a7164c359c07d3d2b58092dc5c2ea89665dbc4e8ed"
+  },
+  "physical_compatibility_or_Pauli_claim": false
+}

@@ -1,0 +1,30 @@
+F..                                                                      [100%]
+================================== FAILURES ===================================
+__________ test_complex_normal_parameter_and_independent_sector_dual __________
+
+    def test_complex_normal_parameter_and_independent_sector_dual():
+        rng=np.random.default_rng(172);n=3;m=2;A=rng.normal(size=(8,8))+1j*rng.normal(size=(8,8))*.2
+        H=A.T@A+np.diag([2,3,4,5,6,7,8,9]);dH=rng.normal(size=(8,8))+1j*rng.normal(size=(8,8))*.1;dH=(dH+dH.T)/2
+        normal=np.array([1,.2+.1j,-.3]);C=np.array([[0,1,0,0,0]],complex);lapse=.8+.13j
+        app=analytic_normal_frequency_jet(H,normal,C,lapse=lapse);gamma=frequency_parameter_jet(app,dH)
+        h=1e-5
+        plus=analytic_normal_frequency_jet(H+h*dH,normal,C,lapse=lapse)
+        minus=analytic_normal_frequency_jet(H-h*dH,normal,C,lapse=lapse)
+        assert np.max(abs((plus['response_taylor']-minus['response_taylor'])/(2*h)-gamma['response_taylor_parameter']))<2e-8
+        assert np.max(abs(app['right_original_rows']))<3e-14
+        assert np.max(abs(app['left_original_rows']))<3e-14
+        assert np.max(abs(gamma['parameter_original_rows']))<3e-14
+        sectors=analytic_frequency_sector_pairings(app,{'first':.7*H+.3*dH,'second':.3*H-.3*dH})
+        assert np.max(abs(sectors['total_minus_reduced_response']))<3e-14
+        # This truly nonreal action must not be silently paired with a dagger.
+        z=app['right_taylor'][:5,0]
+>       assert abs(np.vdot(z,app['action_polynomial'][0]@z)-app['response_taylor'][0])>1e-3
+E       assert np.float64(8.881784197001252e-16) > 0.001
+E        +  where np.float64(8.881784197001252e-16) = abs((np.complex128(4.745714616384516+0.3230319394323565j) - np.complex128(4.745714616384517+0.3230319394323565j)))
+E        +    where np.complex128(4.745714616384516+0.3230319394323565j) = <function vdot at 0x000001ED411B9870>(array([ 9.52809698e-01+8.62494377e-03j,  3.68517390e-17+3.49190946e-17j,\n       -1.57301007e-01+2.87498126e-02j,  8.83741894e-02-3.91208128e-02j,\n        2.43177622e-01-1.88010643e-02j]), (array([[ 5.58027147+0.01162372j,  2.67130562+0.52719944j,\n        -1.01618722-0.18931352j, -0.87067249+0.4644614j ,\n  ..., -2.1927283 +0.34250475j,\n         1.37035615-0.47212788j,  0.8943067 -0.54732472j,\n        11.79924742-1.28651736j]]) @ array([ 9.52809698e-01+8.62494377e-03j,  3.68517390e-17+3.49190946e-17j,\n       -1.57301007e-01+2.87498126e-02j,  8.83741894e-02-3.91208128e-02j,\n        2.43177622e-01-1.88010643e-02j])))
+E        +      where <function vdot at 0x000001ED411B9870> = np.vdot
+
+tests\test_muon_complex_paired_normal_action.py:24: AssertionError
+=========================== short test summary info ===========================
+FAILED tests/test_muon_complex_paired_normal_action.py::test_complex_normal_parameter_and_independent_sector_dual
+1 failed, 2 passed in 2.15s

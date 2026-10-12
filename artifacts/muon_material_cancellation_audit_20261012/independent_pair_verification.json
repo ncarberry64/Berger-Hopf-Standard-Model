@@ -1,0 +1,63 @@
+{
+  "all_output_byte_identical": true,
+  "all_output_count": 2,
+  "all_output_sha256": {
+    "application.npz": "a88922c98579cc6c88c1f94ea5085aaaae6fa095c3675a22b0d04fb043373530",
+    "result.json": "fd99d07b7135178b22f82f84772ccb87844e5f828a3e0927f9a4ebe03504d7c9"
+  },
+  "classification": "INDEPENDENT_REPLAY_OF_CONDITIONAL_CANONICAL_ACTION_DIAGNOSTIC",
+  "executions": [
+    {
+      "argv": [
+        "C:/Python314/python.exe",
+        "scripts/evaluate_muon_material_cancellation_audit.py",
+        "--checkpoint",
+        "artifacts/muon_material_rate_canonical_geometry_20261011/continued_run_1/iteration_0013.npz",
+        "--output",
+        "artifacts/muon_material_cancellation_audit_20261012/run_1"
+      ],
+      "cwd": "C:\\Users\\carbe\\Downloads\\BHSM_muon_parent_maxwell_worktree_20261001",
+      "environment": {
+        "OMP_NUM_THREADS": "1",
+        "OPENBLAS_NUM_THREADS": "1",
+        "PYTHONPATH": "src;scripts"
+      },
+      "exit_code": 0
+    },
+    {
+      "argv": [
+        "C:/Python314/python.exe",
+        "scripts/evaluate_muon_material_cancellation_audit.py",
+        "--checkpoint",
+        "artifacts/muon_material_rate_canonical_geometry_20261011/continued_run_1/iteration_0013.npz",
+        "--output",
+        "artifacts/muon_material_cancellation_audit_20261012/run_2"
+      ],
+      "cwd": "C:\\Users\\carbe\\Downloads\\BHSM_muon_parent_maxwell_worktree_20261001",
+      "environment": {
+        "OMP_NUM_THREADS": "1",
+        "OPENBLAS_NUM_THREADS": "1",
+        "PYTHONPATH": "src;scripts"
+      },
+      "exit_code": 0
+    }
+  ],
+  "full_ancestor_rematerialization_executed": false,
+  "input_pin_count": 361,
+  "input_pins_current": true,
+  "new_physical_constraint_or_error_bound_claimed": false,
+  "stdout": {
+    "run_1.stdout.txt": {
+      "bytes": 1165,
+      "capture": "Complete actual PowerShell Tee-Object bytes",
+      "sha256": "7711fbfeb935b6c4e7e4fa3f569d993306117483416ea88d15d43bdf53b2b73e"
+    },
+    "run_2.stdout.txt": {
+      "bytes": 1165,
+      "capture": "Complete actual PowerShell Tee-Object bytes",
+      "sha256": "7711fbfeb935b6c4e7e4fa3f569d993306117483416ea88d15d43bdf53b2b73e"
+    }
+  },
+  "test": null,
+  "verifier_source_sha256": "cd75dc33c18ce38e2615d1ffa0ac7d462e1c38f66c4122fffe898fa5aed206a0"
+}

@@ -1,0 +1,130 @@
+{
+  "classification": "ACTUAL_CAUCHY_POINT_SOURCE_COMPLETE_CURRENT_REPLAY_RUNTIME",
+  "commands": [
+    {
+      "command": [
+        "C:/Python314/python.exe",
+        "scripts/evaluate_muon_chronological_cauchy_trace_current.py",
+        "--action-folder",
+        "artifacts/muon_chronological_n1_field_action_20261011/run_1",
+        "--trace-folder",
+        "artifacts/muon_shifted_boundary_source_20261011/run_1",
+        "--baseline-transfer-folder",
+        "artifacts/muon_chronological_current_matching_20261011/incoming_family_1_run_1",
+        "--source-side",
+        "incoming",
+        "--output",
+        "artifacts/muon_chronological_cauchy_trace_current_20261011/incoming_run_1"
+      ],
+      "completion_chunk": "db89ea",
+      "environment": {
+        "OPENBLAS_NUM_THREADS": "4",
+        "PYTHONPATH": "src"
+      },
+      "exit_code": 0
+    },
+    {
+      "command": [
+        "C:/Python314/python.exe",
+        "scripts/evaluate_muon_chronological_cauchy_trace_current.py",
+        "--action-folder",
+        "artifacts/muon_chronological_n1_field_action_20261011/run_1",
+        "--trace-folder",
+        "artifacts/muon_shifted_boundary_source_20261011/run_1",
+        "--baseline-transfer-folder",
+        "artifacts/muon_chronological_current_matching_20261011/incoming_family_1_run_1",
+        "--source-side",
+        "incoming",
+        "--output",
+        "artifacts/muon_chronological_cauchy_trace_current_20261011/incoming_run_2"
+      ],
+      "completion_chunk": "2ba9c7",
+      "environment": {
+        "OPENBLAS_NUM_THREADS": "4",
+        "PYTHONPATH": "src"
+      },
+      "exit_code": 0
+    },
+    {
+      "command": [
+        "C:/Python314/python.exe",
+        "scripts/evaluate_muon_chronological_cauchy_trace_current.py",
+        "--action-folder",
+        "artifacts/muon_chronological_n1_field_action_20261011/run_1",
+        "--trace-folder",
+        "artifacts/muon_shifted_boundary_source_20261011/run_1",
+        "--baseline-transfer-folder",
+        "artifacts/muon_chronological_current_matching_20261011/outgoing_family_1_run_1",
+        "--source-side",
+        "outgoing",
+        "--output",
+        "artifacts/muon_chronological_cauchy_trace_current_20261011/outgoing_run_1"
+      ],
+      "completion_chunk": "a63ce0",
+      "environment": {
+        "OPENBLAS_NUM_THREADS": "4",
+        "PYTHONPATH": "src"
+      },
+      "exit_code": 0
+    },
+    {
+      "command": [
+        "C:/Python314/python.exe",
+        "scripts/evaluate_muon_chronological_cauchy_trace_current.py",
+        "--action-folder",
+        "artifacts/muon_chronological_n1_field_action_20261011/run_1",
+        "--trace-folder",
+        "artifacts/muon_shifted_boundary_source_20261011/run_1",
+        "--baseline-transfer-folder",
+        "artifacts/muon_chronological_current_matching_20261011/outgoing_family_1_run_1",
+        "--source-side",
+        "outgoing",
+        "--output",
+        "artifacts/muon_chronological_cauchy_trace_current_20261011/outgoing_run_2"
+      ],
+      "completion_chunk": "4f3e27",
+      "environment": {
+        "OPENBLAS_NUM_THREADS": "4",
+        "PYTHONPATH": "src"
+      },
+      "exit_code": 0
+    }
+  ],
+  "focused_tests": {
+    "command": [
+      "C:/Python314/python.exe",
+      "-m",
+      "pytest",
+      "--noconftest",
+      "tests/test_muon_chronological_cauchy_trace_current.py",
+      "-q"
+    ],
+    "completion_chunk": "843f7e",
+    "passed": 2,
+    "seconds": 0.8
+  },
+  "independent_read_only_science_review": "Validation accepted structural external C6 action, independent left trace, all original rows and energy contact placements",
+  "independent_replays": [
+    {
+      "all_files_byte_identical": true,
+      "complete_energy_cancellation_norm": 1.0678963236636571e-22,
+      "complete_file_count": 1745,
+      "complete_transfer_norm": 0.9233752273936346,
+      "left": "artifacts/muon_chronological_cauchy_trace_current_20261011/incoming_run_1",
+      "result_sha256": "a3e478c92573fa99aef4f6183e4e9a10da97987fea3356913356c963f08b339d",
+      "right": "artifacts/muon_chronological_cauchy_trace_current_20261011/incoming_run_2",
+      "transported_minus_fixed_frame_current_norm": 8.973674508722119e-06
+    },
+    {
+      "all_files_byte_identical": true,
+      "complete_energy_cancellation_norm": 1.7280012215621087e-22,
+      "complete_file_count": 1745,
+      "complete_transfer_norm": 2.4944521108339504,
+      "left": "artifacts/muon_chronological_cauchy_trace_current_20261011/outgoing_run_1",
+      "result_sha256": "33acd60a8b44993dcdfdf890ef066e2f08c5bb4db838ddf6f1d229a9d9fda062",
+      "right": "artifacts/muon_chronological_cauchy_trace_current_20261011/outgoing_run_2",
+      "transported_minus_fixed_frame_current_norm": 4.906107030970209e-05
+    }
+  ],
+  "physical_spectral_trace_or_band_selected": false
+}
