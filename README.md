@@ -58,6 +58,11 @@ links the current dependencies. The merged full-field boundary research is
 scoped to its retained action/domain; local assembly is not a substitute for
 its missing physical reset and interface data.
 
+The [whole-system integration overview](docs/BHSM_WHOLE_SYSTEM_PUZZLE_20261013.md)
+connects the existing enclosure, terminal-HS response, mixed event balance,
+particle poles and cosmological stress dependencies. Its executable bridges
+retain explicit physical inputs and the current completion gates.
+
 ## Portable first run
 
 Use Python 3.12 for the institutional baseline; the core declares Python 3.10+.
