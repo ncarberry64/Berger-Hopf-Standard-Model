@@ -44,15 +44,28 @@ def verify(specification, output):
     for rel in spec['manifests']:
         manifests[rel] = add(rel, spec['manifest_hashes'][rel])
         record = json.loads((ROOT/rel).read_bytes())
-        if 'files' in record:
-            members = record['files'].items()
-        elif 'selected' in record:
-            members = ((row['path'], row) for row in record['selected'])
-        else:
+        key = next((k for k in ('files','selected_files','selected') if k in record), None)
+        if key is None:
             raise ValueError('unrecognized explicit manifest membership: '+rel)
+        declared = record[key]
+        if isinstance(declared, dict):
+            members = declared.items()
+        elif isinstance(declared, list):
+            members = ((row['path'], row) for row in declared)
+        else:
+            raise ValueError('explicit manifest members must be a map or path records: '+rel)
         for name, expected in members:
             add(name, expected)
+        proof = record.get('verification')
+        if isinstance(proof,dict) and 'path' in proof:
+            add(proof['path'],proof.get('sha256'))
+        if 'verification_path' in record:
+            add(record['verification_path'],record.get('verification_sha256'))
         manifest_pins = dict(record.get('input_hashes', {}))
+        for name, expected in record.get('current_input_pins', {}).items():
+            if name in manifest_pins and manifest_pins[name] != expected:
+                raise ValueError('manifest current/input pin disagreement: '+name)
+            manifest_pins[name] = expected
         for name, expected in record.get('producer_input_hashes', {}).items():
             if name in manifest_pins and manifest_pins[name] != expected:
                 raise ValueError('manifest producer/input pin disagreement: '+name)

@@ -26,3 +26,11 @@ EVALUATED: the unchanged matched local subtotal and action applications linked i
 CONTROL_ONLY: finite source-cell sewing, cutoff probes and conditional decay-scale restrictions remain at their declared scope.
 UNEVALUATED: the complete physically matched native row, the surviving finite weak/quark complement, and total observable uncertainty.
 OWNER_DEFINITION_GAP: none established by unfinished implementations.
+
+## Coupled birth and normal-domain action applications
+
+The matched local subtotal remains **0.0011659186179552334**. The actual complex continuation passes its original action equations, but complete natural/formation/energy/gamma/exterior matching and physical pole/residue normalization remain unadmitted. Its material current/frame correction is retained in the existing native consumer; it is not an additive anomaly row. The corrected complete67 work changes by only 8.435421026188149e-12, while the finite work and full terminal return remain nonzero. Partial normal integrals and real-linear interpolation returns do not supply physical normalization or an observable uncertainty.
+
+The existing disjoint native and surviving weak/quark rows, complete a_mu, g_mu and total uncertainty remain null. See [the executed action/domain report](../../theory/muon_coupled_birth_normal_domain_matching_20261012.md) for actual operands, residuals, commands, hashes and the five scientific classifications.
+
+The incoming OWN-parent normal drive, source-completed conditional birth transmission and linked child response have now been consumed together in their own D5 coefficient, density, Poisson/energy, Spin, Green and intrinsic-seam application. The BASE attachment and normal natural rows remain 4.42404550e-6 and 1.08475825e-6. The required next coupled derivative is the chronological weak shape Hessian and full boundary functional on three common-port lifts and one analytic adjoint. Unit-source norms and passing conditional equations are not a physical pole, native contribution or uncertainty; all evaluated contribution and local-error rows remain unchanged.
