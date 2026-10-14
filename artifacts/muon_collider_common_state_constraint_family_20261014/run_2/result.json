@@ -1,0 +1,212 @@
+{
+  "actual_computations": [
+    {
+      "checks": {
+        "bare_matter_marginal_change_after_flux_correlation": 0.3952847075210476,
+        "beam_Fock_isometry_residual": 6.661338147750939e-16,
+        "compressed_charge_mean_difference": 1.3245670534058392e-18,
+        "compressed_only_local_charge_variance": 1.754477878968227e-36,
+        "exact_pair_embedding_density_residual": 2.220446049250313e-16,
+        "infinitesimal_local_phase_leakage_identity_residual": 5.551115123125783e-17,
+        "local_charge_mean": 0.0,
+        "local_charge_mean_formula_residual": 0.0,
+        "local_charge_variance": 0.15000000000000002,
+        "local_charge_variance_formula_residual": 5.551115123125783e-17,
+        "lost_second_moment": 0.15000000000000002,
+        "prepared_pair_global_charge_mean": 0.0,
+        "prepared_pair_global_charge_second_moment": 0.0,
+        "reduced_regional_Gauss_joint_norm_residual": 4.440892098500626e-16,
+        "reduced_regional_Gauss_joint_residual": 0.0,
+        "second_moment_compression_defect_minimum_eigenvalue": 0.0,
+        "second_moment_loss_minus_variance": 0.0
+      },
+      "label": "algebraic_half_half",
+      "parameters": {
+        "p_e": 0.5,
+        "p_p": 0.5
+      }
+    },
+    {
+      "checks": {
+        "bare_matter_marginal_change_after_flux_correlation": 0.3671043788897103,
+        "beam_Fock_isometry_residual": 2.220446049250313e-16,
+        "compressed_charge_mean_difference": 0.0,
+        "compressed_only_local_charge_variance": 0.0,
+        "exact_pair_embedding_density_residual": 1.1102230246251565e-16,
+        "infinitesimal_local_phase_leakage_identity_residual": 0.0,
+        "local_charge_mean": 0.273861278752583,
+        "local_charge_mean_formula_residual": 5.551115123125783e-17,
+        "local_charge_variance": 0.11249999999999996,
+        "local_charge_variance_formula_residual": 1.3877787807814457e-17,
+        "lost_second_moment": 0.11249999999999996,
+        "prepared_pair_global_charge_mean": 0.0,
+        "prepared_pair_global_charge_second_moment": 0.0,
+        "reduced_regional_Gauss_joint_norm_residual": 1.1102230246251565e-16,
+        "reduced_regional_Gauss_joint_residual": 0.0,
+        "second_moment_compression_defect_minimum_eigenvalue": 0.0,
+        "second_moment_loss_minus_variance": 0.0
+      },
+      "label": "algebraic_quarter_threequarter",
+      "parameters": {
+        "p_e": 0.25,
+        "p_p": 0.75
+      }
+    },
+    {
+      "checks": {
+        "bare_matter_marginal_change_after_flux_correlation": 0.0,
+        "beam_Fock_isometry_residual": 0.0,
+        "compressed_charge_mean_difference": 0.0,
+        "compressed_only_local_charge_variance": 0.0,
+        "exact_pair_embedding_density_residual": 0.0,
+        "infinitesimal_local_phase_leakage_identity_residual": 0.0,
+        "local_charge_mean": 0.5477225575051661,
+        "local_charge_mean_formula_residual": 0.0,
+        "local_charge_variance": 0.0,
+        "local_charge_variance_formula_residual": 0.0,
+        "lost_second_moment": 0.0,
+        "prepared_pair_global_charge_mean": 0.0,
+        "prepared_pair_global_charge_second_moment": 0.0,
+        "reduced_regional_Gauss_joint_norm_residual": 0.0,
+        "reduced_regional_Gauss_joint_residual": 0.0,
+        "second_moment_compression_defect_minimum_eigenvalue": 0.0,
+        "second_moment_loss_minus_variance": 0.0
+      },
+      "label": "algebraic_endpoint",
+      "parameters": {
+        "p_e": 0.0,
+        "p_p": 1.0
+      }
+    }
+  ],
+  "actual_native_coefficients": {
+    "component_scope": "The active right charged-singlet fiber of the frozen light family, full18 indices16,17, supplies the numerical charge normalization. It is not selected as a physical electron pole or a replacement for the full LR packet.",
+    "coupling_added": false,
+    "derived_square_exact": "3/10",
+    "square": 0.29999999999999993,
+    "unitTr16_right_charged_singlet_Y": -0.5477225575051661
+  },
+  "archives": {
+    "algebraic_endpoint.npz": "390b024f718f47b6513c6113372665e8d06b038ab097f939ad04ea8c2328421f",
+    "algebraic_half_half.npz": "ea85a5cdb217b38b1ce80f097cb0284fa1b5430a7bd6dd50cc50afc6dd69249d",
+    "algebraic_quarter_threequarter.npz": "73683662a17b58e7d4dd79e0515bb7956fad545fa631690ce5ea05a15a617ddc"
+  },
+  "classification": "EXACT_PARAMETERIZED_CAR_SPATIAL_COMPLEMENT_AND_REDUCED_REGIONAL_GAUSS_CONSTRAINT_FAMILY_WITH_COMMON_PHYSICAL_CAUCHY_STATE_OPEN",
+  "construction_scope": {
+    "full_field_particle_antiparticle_embedding_selected": false,
+    "physical_Cauchy_state": false,
+    "physical_Maxwell_Higgs_gravity_constraint_solution": false,
+    "physical_gauge_CCR_or_BRST_representation_selected": false,
+    "prior_finite_excitation_difference_current_results_remain_valid": true,
+    "smallest_constructed": "An exact finite spatial CAR extension of the already prepared pair, and a one-regional-Gauss kernel correlation parameterized by overlap probabilities and an unselected other-load shift.",
+    "spectral_packet_or_background_selected": false,
+    "zero_continuum_vacuum_or_exterior_selected": false
+  },
+  "exact_equations": {
+    "classical_flux_minimum": "min_c <(c+b_other_flux+J_D)^2>=Var(J_D), attained at c=-b_other_flux-<J_D>. This tests full operator constraint only when that is the intended target; a declared semiclassical mean constraint has a different, weaker requirement.",
+    "compression": "P J^2 P-(PJP)^2=P J(1-P)J P; it is positive semidefinite for a Hermitian local charge.",
+    "correlated_finite_Gauss": "V_G|n>=|n>|flux_label=m(n)>; Phi(m,b)=-q*m-b; (Phi+J_D+b)V_G=0 for arbitrary b.",
+    "correlated_other_observables": "V_G is an isometry. Abstract input observables are preserved under V_G O V_G^dagger, while the bare fermion marginal generally dephases across regional charge sectors. This is not an unchanged bare beam covariance or a demonstrated physical dressing.",
+    "cotangent_lift": "Pi=-L*j+Pi_free, D*L*j=j, D*Pi_free=0; supplied boundary compatibility and all homogeneous flux data are mandatory. Changing the coordinate lift changes the homogeneous representative, not the physical selection.",
+    "local_mean": "q_unitTrY*(p_e - p_p)",
+    "local_phase_leakage": "||(1-P)1_D f||^2=p*(1-p); a finite beam sector with0<p<1 is not invariant under local phase multiplication.",
+    "local_variance": "q_unitTrY**2*(p_e*(1 - p_e) + p_p*(1 - p_p))",
+    "smooth_domain_version": "For a smooth real gauge parameter g, ||(1-P)g f||^2=<f,g^2 f>-||P g f||^2. A nonzero finite smooth L2 subspace on a connected open region cannot be invariant under all smooth multipliers: powers of a multiplier varying on the support generate arbitrarily many independent functions."
+  },
+  "free_retarded_qualification": "The spatial-complement obstruction does not make a free retarded Green operator depend on a chosen matter covariance. State-independent free propagation and algebraically cancelled contractions retain their existing scope.",
+  "immutable_preparation": {
+    "packet_sha256": "20db0b3b1a5cb09be1979b0fb24027bbb70f713d4001bd8c50e9807137a136d3",
+    "path": "C:\\Users\\carbe\\OneDrive\\Documents\\CODEX\\outputs\\bhsm_collider_ee_mumu_preparation_20261014\\run_1\\result.json",
+    "sha256": "4eb26ad104914e6d78cd686157aecbad83e8bb376e642eb514430377d35fe369"
+  },
+  "input_hashes": {
+    "C:\\Users\\carbe\\Downloads\\BHSM_muon_parent_maxwell_worktree_20261001\\AGENTS.md": "9af4237c9acf478143682fd00214db09c52053c7194a9682c4e042c8a3e024a9",
+    "C:\\Users\\carbe\\OneDrive\\Documents\\CODEX\\outputs\\bhsm_collider_ee_mumu_preparation_20261014\\run_1\\executed_producer.py": "af20441573fc7d63407f90ad66a8ed714d7d0c3c467eb8c7226035a0e41b2c3c"
+  },
+  "no_completed_source_D5_profile_canonical_or_pairing_integration_restarted": true,
+  "original_coupled_consumer_audit": {
+    "evaluated_body_J_H_max": 0.0,
+    "evaluated_body_source_classification": "DERIVED_CLASSICAL_BODY_ZERO_OF_LOCAL_GRASSMANN_YUKAWA_SOURCE",
+    "meaning": "This derived classical-body zero is correct in its stated scope. It is not the prepared pair current or an action-owned declaration of zero quantum current.",
+    "quantum_induced_H_load_evaluated": false,
+    "source_representation": "CLASSICAL_BOSONIC_BODY",
+    "target_convention": "The supplied coupled routine is classical-body; retained AE4 also has quantum determinant/BRST sectors. No source in this audit declares that a prepared pair may be completed by a mean-field closure alone. We therefore evaluate the mean and quantum constraint distinctions without imposing either new physical closure."
+  },
+  "parameter_family": {
+    "numerical_points_are_algebraic_certificates_not_physical_beam_preparations": true,
+    "other_load": "b_other_flux is retained as a symbolic commuting other-load parameter; full other quantum loads require their supplied operator and state.",
+    "p_e": "Integral over an arbitrary region D of the action-normalized electron packet density on its actual Cauchy slice; not a chosen width or spatial profile.",
+    "p_p": "Corresponding positron region probability. Up/down spins share an envelope in this declared unpolarized algebraic family.",
+    "ranges": "0<=p_e,p_p<=1"
+  },
+  "precise_missing_operands": [
+    "A same-action collision Cauchy geometry/domain, canonical spatial pairing and gauge/Higgs data or their coupled constraint solution; no old C2 or v15 vacuum is a substitute.",
+    "Actual positive/negative-frequency full18 packet sections and their spatial complement on that domain, with beam energy/width/separation/profile as explicit preparation inputs or selected parameter family.",
+    "The action-owned state/source application specifying classical-body, explicitly justified semiclassical expectation, or full quantum/BRST constraint treatment, including induced Higgs/stress loads where used.",
+    "For a full quantum target, an actual joint gauge/matter representation/domain and admissible incoming state or dressing, including normal flux and radiative/homogeneous data. The finite flux-label isometry above does not supply the physical CCR, spectrum or boundary condition.",
+    "For local interacting products and the magnetic-moment vertex, actual common-domain propagators/current products, subtraction and physical pole/residue extraction. Four prepared modes alone are not the full local field algebra."
+  ],
+  "prediction_scope": "No muon magnetic moment, measured mass/coupling calibration, Pauli coefficient, collider rate or full outgoing realization is computed or fitted.",
+  "preparation_authority": "User-selected e\u2212e+ collider, head-on equal central energy and unpolarized baseline. No numerical energy, width, separation, profile, geometry or incoming radiation is newly selected.",
+  "producer_sha256": "4609a7c41d3b2360fceb16680904d27bd13dcc564e74b0a352b2e8117f764d99",
+  "source_citations": {
+    "actual_coupled_source": {
+      "first_line": 128,
+      "last_line": 134,
+      "path": "C:\\Users\\carbe\\Downloads\\BHSM_muon_parent_maxwell_worktree_20261001\\src\\bhsm\\interface\\muon_intrinsic_coupled_primal.py",
+      "sha256": "7ea36d5ae4ee9ba93815f8199bb7d79c2828e2c80fddcb3e763866b1a7553aa8"
+    },
+    "body_is_not_quantum_load": {
+      "first_line": 21,
+      "last_line": 46,
+      "path": "C:\\Users\\carbe\\Downloads\\BHSM_muon_parent_maxwell_worktree_20261001\\src\\bhsm\\interface\\muon_intrinsic_lepton_primal.py",
+      "sha256": "42d4193340504fe47831b669bd7848f9fb1a794868b817e41eb14fe20e283027"
+    },
+    "coupled_source_representation": {
+      "first_line": 56,
+      "last_line": 61,
+      "path": "C:\\Users\\carbe\\Downloads\\BHSM_muon_parent_maxwell_worktree_20261001\\src\\bhsm\\interface\\muon_intrinsic_coupled_primal.py",
+      "sha256": "7ea36d5ae4ee9ba93815f8199bb7d79c2828e2c80fddcb3e763866b1a7553aa8"
+    },
+    "earlier_finite_difference_scope": {
+      "first_line": 45,
+      "last_line": 48,
+      "path": "C:\\Users\\carbe\\Downloads\\BHSM_muon_parent_maxwell_worktree_20261001\\audits\\bhsm_collider_incoming_field_current.py",
+      "sha256": "0a42e6f0f271d2704b7b4ae0142167a9f17fa28a2979093b46c2b65a796d1b1f"
+    },
+    "native_free_retarded_scope": {
+      "first_line": 230,
+      "last_line": 234,
+      "path": "C:\\Users\\carbe\\Downloads\\BHSM_muon_parent_maxwell_worktree_20261001\\src\\bhsm\\interface\\muon_birth_fermion_state_representation.py",
+      "sha256": "62824c456bea534b7ead28e6071fd361a1e78ac9caaaeec76eb580e3d3e6b0ee"
+    },
+    "original_unit_trace_charge": {
+      "first_line": 49,
+      "last_line": 65,
+      "path": "C:\\Users\\carbe\\Downloads\\BHSM_muon_parent_maxwell_worktree_20261001\\src\\bhsm\\interface\\muon_native_product_factor_graph.py",
+      "sha256": "4a5feeb0e32edc0505a44b45a19d6bdc821220cc9cf5187e35f59fe7720a7c18"
+    },
+    "parameter_family_vs_physical_solve": {
+      "first_line": 197,
+      "last_line": 206,
+      "path": "C:\\Users\\carbe\\Downloads\\BHSM_muon_parent_maxwell_worktree_20261001\\src\\bhsm\\interface\\muon_intrinsic_coupled_primal.py",
+      "sha256": "7ea36d5ae4ee9ba93815f8199bb7d79c2828e2c80fddcb3e763866b1a7553aa8"
+    },
+    "physical_BRST_scope": {
+      "first_line": 127,
+      "last_line": 131,
+      "path": "C:\\Users\\carbe\\Downloads\\BHSM_muon_parent_maxwell_worktree_20261001\\src\\bhsm\\interface\\ae4_current_c2_stop_gauge_brst_calderon.py",
+      "sha256": "60fda91cc0e566a3974622197c4c61fab657e79c1a93ba1ab93ddd61a8c5d01c"
+    },
+    "scalar_quantum_sector_separate": {
+      "first_line": 7,
+      "last_line": 8,
+      "path": "C:\\Users\\carbe\\Downloads\\BHSM_muon_parent_maxwell_worktree_20261001\\src\\bhsm\\interface\\muon_intrinsic_higgs_gauge_action.py",
+      "sha256": "c19354209300ab06c0f1ab6bf4e111dbb5de0cd9e8d1d31a71af357a829118d4"
+    }
+  },
+  "symbolic_checks": {
+    "classical_flux_minimum_identity": "0",
+    "correlated_regional_Gauss_identity": "0"
+  }
+}
