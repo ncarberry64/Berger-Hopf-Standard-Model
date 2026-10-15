@@ -1,0 +1,212 @@
+FIXED REAL EW4 / H / FP CELL: RADIAL32/64/128 AND ROUNDING DIAGNOSTIC
+2026-10-16. Two independently executed, byte-identical actual readouts.
+
+1. CONSTRUCTION AND SAME-ACTION CORRESPONDENCE
+
+Canonical new audit producer:
+ audits/bhsm_real_changing_cell_ew_radial_refinement_20261016.py
+ SHA256 5421fc2b1d856a67846cb78e0827581f1f74e7d5de25d30cfabb23f9eca82aa4
+The frozen4da9bf48, original changing7f1805c0 and density-stable2a536410
+producers and their outputs are unchanged. This producer consumes the
+12 preserved real TIME6 raw/rawtime snapshots on each incoming/inherited
+child cell. It does not replay or solve either history. The common
+coordinate interval is1e-5, incoming t=u-L and child t=u; actual different
+proper lapses remain. These backgrounds are provisional retained iterates.
+
+The original trace-enriched field basis is evaluated on new radial nodes
+using its recorded reference states, projection, wall coefficient and
+normalization. None of these operands is refitted or renormalized. The
+ordinary and both ghost parities, all20 n1+n3 angular harmonics, all1200
+field and320 ghost coordinates remain. The intrinsic scalar wall matrices
+are evaluated at the same12 actual wall times; the radial rule does not
+multiply them or change their stratum.
+
+The actual owned holomorphic_geometry_rows value-only branch retains
+stable4p(1-p) Maxwell densities and full moving original metric. A(t,rho)
+is the same fixed field basis plus the same mechanical profile. The
+child profile is parent minus reference-parent plus reference-child,
+with its value/time/radial derivatives retained. At=field-basis*rawtime
+plus M*lambda_tau. The producer explicitly verifies rawtime[q]=raw[v]
+and rawtime[s]=raw[sdot]; on these coherent affine histories the owned
+lambda_tau is exactly the fixed-material-rho time derivative, including
+moving-wall advection. An independent source/chain-rule review confirmed
+this identity. No extra Ar advection or shared proper clock is imposed.
+
+The point maps reproduce one_form_point_row. Their large numerical
+products are evaluated with sparse storage that drops exact zeros only.
+There is no numerical threshold or mode removal. The cache C1 is
+A-independent: it is precisely the part with only the ordinary V_time
+map nonzero. All other curvature, DG-image and curvature-contact pieces
+remain. Independent read-only algebra review found no actionable issue.
+Nine independent original dense point evaluations per arm and rule are
+retained at time first/middle/last and radial first/middle/last.
+
+All old matrices are retained. The q32 check uses the original corrected
+TIME6 archive, not an updated preferred baseline. All15 complete matrix
+comparisons and all coefficient comparisons are saved. At q32 the
+coefficient max-entry-scaled discrepancy is4.372370521199542e-15 incoming
+and8.008188296521057e-15 child; the point controls show binary64
+accumulation differences. Full-matrix entry discrepancies are larger in
+small Lorenz entries, and are deliberately not hidden by their tiny
+Frobenius norm. This is a precision diagnostic, not a2e-10 admission.
+
+2. COMPLETE RETAINED-CHART RULE COMPARISONS
+
+The entry-scaled metric is max_ij |new-old|/max(1,|old|,|new|).
+The JSON separately retains absolute maxima, worst entry indices and
+values, global relative maxima and Frobenius ratios for every matrix.
+The numbers below are entry-scaled, in the original coefficient units.
+For q32, the comparison is fast sparse versus ORIGINAL dense q32.
+For q64 and q128, it is the adjacent fast rule on the same snapshots.
+
+RULE 32->32: incoming / inherited child
+ FP_Hessian_per_kappa: 4.5463339672689097e-11 / 1.1213914283843293e-10
+ common_Gram: 3.7891911830456593e-13 / 1.0992144694466077e-12
+ common_kinetic_Hessian: 3.8437233508354327e-16 / 4.6505167018938798e-16
+ curvature_contact_per_kappa: 1.6699011964882438e-13 / 9.1076511893093846e-14
+ finite_Lorenz_fixing: 1.2980817153066131e-09 / 1.2306969572990233e-08
+ finite_Lorenz_slice_projector: 5.1507060259071667e-15 / 4.5710852472319178e-15
+ ghost_Gram_per_kappa: 0 / 0
+ one_form_Gram_per_kappa: 6.9021457651757362e-11 / 1.1235204108351891e-10
+ one_form_Hessian_per_kappa: 3.8000456730954979e-13 / 4.3768875202671449e-13
+ scalar_Gram: 0 / 0
+ scalar_kinetic_Hessian: 0 / 0
+ scalar_lambda_coefficient: 0 / 0
+ scalar_lambda_nu_squared_coefficient: 0 / 0
+ weak_Lorenz: 2.1641516307251022e-09 / 6.2451626941568268e-10
+ weak_gradient_pairing: 6.9021457651757362e-11 / 1.1235204108351891e-10
+
+RULE 32->64: incoming / inherited child
+ FP_Hessian_per_kappa: 1.8099524004059241e-09 / 2.0840231991203086e-10
+ common_Gram: 2.3236206361798573e-11 / 1.575100496530702e-12
+ common_kinetic_Hessian: 1.1586263420695e-12 / 8.7195117069036751e-13
+ curvature_contact_per_kappa: 2.0667858642771452e-09 / 1.7328878889801532e-09
+ finite_Lorenz_fixing: 2.511904011524425e-08 / 2.4237896600043158e-08
+ finite_Lorenz_slice_projector: 3.4338040172555497e-15 / 3.0473908333853128e-15
+ ghost_Gram_per_kappa: 1.0164395367051604e-17 / 9.8797922967741592e-18
+ one_form_Gram_per_kappa: 1.8099524004059241e-09 / 2.0840231991203086e-10
+ one_form_Hessian_per_kappa: 1.1951521498810777e-09 / 1.3965427035286804e-09
+ scalar_Gram: 0 / 0
+ scalar_kinetic_Hessian: 0 / 0
+ scalar_lambda_coefficient: 0 / 0
+ scalar_lambda_nu_squared_coefficient: 0 / 0
+ weak_Lorenz: 1.6887348674417313e-08 / 1.1022240989824219e-09
+ weak_gradient_pairing: 1.8099524004059241e-09 / 2.0840231991203086e-10
+
+RULE 64->128: incoming / inherited child
+ FP_Hessian_per_kappa: 3.2716573197156495e-10 / 3.240708704223182e-10
+ common_Gram: 4.2001610522923727e-12 / 2.2776763114462639e-12
+ common_kinetic_Hessian: 1.5169086147771849e-14 / 1.4437505704734709e-14
+ curvature_contact_per_kappa: 3.9763635092948668e-13 / 1.2798128442431667e-13
+ finite_Lorenz_fixing: 6.991279868877869e-09 / 1.177974373566072e-07
+ finite_Lorenz_slice_projector: 3.4338040172552334e-15 / 1.523695416679189e-15
+ ghost_Gram_per_kappa: 1.111307226797642e-18 / 7.0473141211557788e-19
+ one_form_Gram_per_kappa: 3.2716573197156495e-10 / 3.240708704223182e-10
+ one_form_Hessian_per_kappa: 4.7283399418063254e-11 / 3.5121627828260671e-11
+ scalar_Gram: 0 / 0
+ scalar_kinetic_Hessian: 0 / 0
+ scalar_lambda_coefficient: 0 / 0
+ scalar_lambda_nu_squared_coefficient: 0 / 0
+ weak_Lorenz: 1.49029860384978e-08 / 1.6639264838820631e-09
+ weak_gradient_pairing: 3.2716573197156495e-10 / 3.240708704223182e-10
+
+The radial64->128 curvature contact difference is3.976363509294867e-13
+incoming /1.2798128442431667e-13 child, with absolute differences
+9.805489753489383e-13 /9.947598300641403e-13. The original strong one-form
+Hessian and common kinetic block also contract below2e-10 under this
+entry metric. These statements concern fixed test-form quadrature on
+the retained backgrounds only. They do not imply the physical state,
+full common operator or outgoing response has converged.
+
+The complete15-matrix comparison FAILS2e-10: incoming weak Lorenz reaches
+1.49029860384978e-8, and child finite fixing reaches1.177974373566072e-7.
+The FP/gradient Gram entries also remain approximately3.3e-10. No favorable
+Frobenius statistic is substituted, and no full radial pass is asserted.
+The scalar wall blocks are identical across radial rules as required.
+
+3. WHY A HIGHER-PRECISION LINEAR SOLVE ALONE IS INSUFFICIENT
+
+Root's separate MP80 diagnosis on the q32 comparison constructs the
+exact4x4 ghost Gram factor in Gghost=G4 tensor I80. The old/new G4 are
+bit-identical, with condition numbers about278.7 incoming/296.96 child.
+Thus a large condition-number claim about that4x4 solve would be wrong.
+The small Gram eigenvalues, however, amplify absolute integration and
+contraction rounding in the weak-gradient pairing B. The old/new B
+has maximum absolute difference7.450580596923828e-9.
+
+MP80 using the recorded old/new G and B reproduces the observed failed
+Lorenz and fixing entry shifts. The binary solve errors in those chosen
+entries are much smaller than the B-induced shift. Increasing only the
+Cholesky-solve precision therefore cannot repair the operand error.
+A structure-preserving evaluation of the same angular and temporal
+contractions is the next numerical repair. It must retain the variable
+coefficients, all source terms and the actual saved chart; a
+constant-coefficient moment is not the changing action.
+
+The local C:\Python314 NumPy np.longdouble was explicitly checked and
+has exactly the same15-digit/2.220446049250313e-16 epsilon as float64.
+It cannot provide extended precision on this installation.
+
+Canonical independent MP diagnosis owner:
+ audits/bhsm_changing_lorenz_mp_precision_diagnosis_20261016.py
+ SHA256 2bed6e643a37d92028e65a335d537ee572c3947059df59d89ac05b11850a6185
+Its repeated JSON pair, under WORK/outputs/,
+ lorenz_canonical_diagnosis_20261016_run_1.json and _run_2.json
+ SHA256 b7f61ab11ab78a1e4d93fe25bbfc599077889b2f8dc777a4207d638b6b1fc734.
+This diagnosis itself does not recompute a physical field or derivative.
+
+4. REPRODUCIBLE OUTPUT PAIR AND PRESERVED FAILURE EVIDENCE
+
+WORK/outputs/bhsm_real_changing_cell_ew_radial_refinement_20261016/
+ run_1 and run_2 are independent executions. Every corresponding file
+is byte-identical, every input/source pin was checked, and each archive
+is below10MiB. The exact pair receipt is pair_verification.json
+ SHA256 5306335889507c779cc4b91d35d5d114eee8da3ced972fb696c4342fa129b89d.
+Its complete file inventory follows (same hash in both executions):
+ incoming_radial128/forms.npz (1782381 bytes)
+ SHA256 27ed6bb16a1624ab46dd6e02926b3da44682c03e457eec9df52b679097ff7c7c
+ incoming_radial128/result.json (19177 bytes)
+ SHA256 244f0c0726f98c9e1d844e383c37d2971189a02bccaca47d1b2541abba6626f4
+ incoming_radial32/forms.npz (1351991 bytes)
+ SHA256 ef907bd9f9d1cc3e298d10a67beaf810fd63025686445f3284105f3b65b2ef02
+ incoming_radial32/result.json (52978 bytes)
+ SHA256 118f7703cfb49767849cb4511d378ae584277a15dd5f7b0e0ccf982f1bd547b8
+ incoming_radial64/forms.npz (1494211 bytes)
+ SHA256 b6dcfa96936b55f6b02796b2fd17d0dd2889ffe4dc50e1f0ec7edd6fa759bcda
+ incoming_radial64/result.json (19156 bytes)
+ SHA256 53135f447c6d2ff08e19ebbb53bef333626848906ab0d700b241f53cd725fa08
+ outgoing_radial128/forms.npz (1772296 bytes)
+ SHA256 31ee4d175c89cef7d1d86ea1db94d538c4a1bfe3b5b4685edddc0267975543ed
+ outgoing_radial128/result.json (19156 bytes)
+ SHA256 f36e6fd4261040aa7ef723adb22c48a0d759b82df3f82df508dfb607a68d5d24
+ outgoing_radial32/forms.npz (1347314 bytes)
+ SHA256 6938b1b59aad31e6f85c6447c71617742f7d02736a3f71277d56690ea61df6dd
+ outgoing_radial32/result.json (53040 bytes)
+ SHA256 359e2c89b4d6e921f24a363b87f2b3bc88dc1d46b6eb04df19c114229c487e55
+ outgoing_radial64/forms.npz (1487480 bytes)
+ SHA256 8f49073ad9f0f6105e5460be566f8a8f357240e314e3fc2c389dab87fc3ad7a8
+ outgoing_radial64/result.json (19154 bytes)
+ SHA256 f312b6e63ed8f6a89c21497ba545fb8aea6a43208790ad0f49cc3995586a9ace
+ result.json (250582 bytes)
+ SHA256 e6d1d804ef9f3e9e0388b52b033e471bee7878a61aad7ac758b58b33f27a078c
+
+The initial standalone q32 validation is separately preserved as
+ validation_run_1. Its numerical q32 arrays match the repeated pair; it
+was never silently replaced. The original corrected TIME6 source NPZ is
+SHA2569a132366d729c85ea1d83815a5482fbf6352b117507e9f447abb4c3b7534739d;
+its exact raw byte chunks and prior naive/time4 comparisons remain in
+the stable-weight packet and companion proof. The new reports bind
+that original input hash explicitly.
+
+These are actual EW4 classical positive-reference forms with exact
+unassigned lambda_H and lambda_H*nu_action^2 coefficient matrices.
+They are not the microscopic P_strat, its completed graded determinant,
+or a full physical BRST quotient. Color8 is a separate constituent
+assembly. Native/exterior loads and physical reset incidence are not
+set to zero. The real histories are retained provisional iterates.
+TIME6 corrects the degree10 polynomial test moment but has not yet been
+shown converged for all changing temporal coefficients; a later6->8
+check remains necessary. Neither this diagnostic nor its local matrix
+stability establishes the physical energy/field derivative, all226 rows,
+Maxwell completion, normalized spin states or the magnetic moment.
+No coupled correction has been applied.

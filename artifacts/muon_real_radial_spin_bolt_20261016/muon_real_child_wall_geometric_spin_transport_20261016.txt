@@ -1,0 +1,205 @@
+ACTUAL M5 GEOMETRIC SPIN CONNECTION AND SUPPORTED CHILD-WALL TRANSPORT
+2026-10-16. Ambient/adapted Levi-Civita Spin factor, not a chosen reset/state.
+
+REPO=C:/Users/carbe/Downloads/BHSM_muon_parent_maxwell_worktree_20261001
+WORK=C:/Users/carbe/OneDrive/Documents/CODEX
+New canonical sources:
+  src/bhsm/interface/muon_m5_geometric_spin_connection.py
+    SHA5e0edeaae78589596f07141f925cf261292bae67624bc12876c8d603414d3fca
+  tests/test_muon_m5_geometric_spin_connection.py
+    SHA718fa99b0684bc2807c0636b3913f2df16c3b08ec93718f4de0309f21e7f8875
+  audits/bhsm_real_child_wall_geometric_spin_transport_20261016.py
+    SHA0c3b8a7e2d2009276f460d316259a92efb8450e65a8362badc6edcb987cce7d3
+Four new tests passed in13.70s. Independent variational source review PASS.
+Actual independent runs:
+  WORK/outputs/bhsm_real_child_wall_geometric_spin_20261016/final_run_1
+  WORK/outputs/bhsm_real_child_wall_geometric_spin_20261016/final_run_2
+Both pairs byte-identical:
+  application.npz222662bytes
+    SHA287888657ad739da19982a6dbe71958b300e20c655e9fa66a38fcd4f05b514de
+  result.json105796bytes
+    SHA5570df52560a1cfdd16543decbdac2fdf9f983cce5db5fdc2c454b981d2d4273
+Earlier pilot application_run_1 remains preserved separately.
+
+1. DERIVE BEFORE CONTRACTING THE DIRAC OPERATOR
+
+The original M5 coframe is
+  e0=N dt, e4=C(drho+z dt), ea=R theta^a, a=1,2,3,
+with Lorentz signature(+----), material C=C_chi*wall/WALL and full material
+z=(beta+rho*wall_dot/WALL)/(wall/WALL). RIGHT Maurer theta obeys
+  dtheta^a=epsilon_abc theta^b wedge theta^c,
+dual bracket[E_a,E_b]=-2epsilon_abc E_c. This is the owned D5 convention;
+it is not the opposite original-M8 LEFT-Maurer convention.
+
+Set
+  a=N_rho/(N C),
+  k=(C_t-z C_rho-C z_rho)/(N C),
+  H0=(R_t-z R_rho)/(N R), H4=R_rho/(C R).
+Direct exterior differentiation gives
+  de0=-a e0 wedge e4, de4=k e0 wedge e4,
+  dea=H0 e0 wedge ea+H4 e4 wedge ea+epsilon_abc eb wedge ec/R.
+The LOWER Lorentz connection satisfying
+  de^A+omega^A_B wedge e^B=0, omega_AB=-omega_BA,
+is
+  omega04=a e0+k e4,
+  omega0a=H0 ea, omega4a=H4 ea,
+  omegaab=-epsilon_abc ec/R.
+For the original sheet convention e4_eps=eps e4, the first/radial terms
+transform consistently: omega04=eps*a e0+k e4_eps and omega4a=eps*H4 ea.
+
+The Spin convention is the FULL ordered sum
+  Omega=(1/4)sum_(A,B)omega_AB Gamma^A Gamma^B.
+No connection is inferred from contracted h. AFTER deriving it, contraction
+checks the source body exactly:
+  i Gamma^A Omega(E_A)
+   =i Gamma0*(k+3H0)/2+i eps Gamma4*(a+3H4)/2
+      -3i Gamma1 Gamma2 Gamma3/(2R).
+The minus triple is the correct RIGHT-Maurer D5 sign. Both half-divergences
+and the full ordered1/4 factor are independently checked by the tests.
+
+2. ACTUAL M5 WALL PULLBACK AND MOVING SPIN FRAME
+
+The supported actual material-wall tangent is X=partial_t at fixedrho=WALL
+and fixed angular material label. Thus ea(X)=0, and
+  omega04(X)=N_rho/C+C z k=:omega(t).
+The other connection forms vanish on this particular homogeneous tangent,
+but their complete angular one-form matrices are saved and are not discarded.
+With K=Gamma0 Gamma4, K^2=I,
+  Omega_t,eps=eps*omega(t)K/2.
+
+The actual wall velocity is Uwall=Cz/N, eta=atanh(Uwall). The existing trace
+owner applies B_eps=S(-eps Uwall)=exp[+eps eta K/2]. Therefore the ADAPTED
+connection is the ordered transformed one,
+  B^-1 Omega B+B^-1 Bdot=eps*(omega+eta_dot)K/2.
+The PLUS eta_dot sign is essential. Its value and source first are checked
+through the full existing128-dimensional boost matrices; the source check
+retains B^-1_source,Omega_source,B_source and B_second contacts.
+
+This is ambient M5 LC transported into the wall coframe, including its
+normal/tangent boost. It is not an identification with the intrinsic4D LC
+connection, whose normal Clifford direction is absent. It is also distinct
+from U2 gauge transport and the original f_eta zero-order Dirac contact.
+The latter is saved separately for both particle/conjugate blocks and both
+eps signs; its norm at the first selected point is about6.03789, not zero.
+It is NEVER inserted into this geometric Spin parallel generator.
+
+3. ACTUAL SUPPORTED INTEGRATION AND CARRIER LIFT
+
+The only history consumed is the original complete REAL child cell
+  artifacts/muon_inherited_finite_normal_phase_20261011/run_1,
+with t in[0,1e-5]. Geometry is its exact represented affine x with fixed
+midpoint v/y and the supplied inside-cell rawtime germ. Actual qdot/v and
+source-rate coherence are checked before using the material coframe.
+No fields, histories, profiles, external normal charts or exteriors are
+resolved or extrapolated. MP derivatives below are derivatives of this
+supplied affine coefficient germ, not a new exterior/preparation.
+
+The fundamental ambient Spin factor solves
+  Pdot=-Omega_t P, P(0)=I.
+For Iomega=integral_0^h omega dt,
+  P_eps=exp[-eps Iomega K/2].
+The fundamental adapted factor is
+  Pad_eps=B_eps(h)^-1 P_eps B_eps(0)
+         =exp[-eps*(Iomega+eta(h)-eta(0))*K/2].
+These I initial values define operators; physical initial Spin/reset lift
+L0 remains arbitrary, and the transported lift is P_eps L0.
+
+The gamma set is the EXISTING fullD5 gamma5D_self_dual128 returned by
+full_d5_localized_lepton_trace, reordered(0,4,1,2,3). The full384 carrier is
+its existing3-family repetition. No geometric Spin16 from M8 is identified
+with an SM trace/statistics carrier, and no internal gauge factor is added.
+Both orientation signs, all128/384 rows and all angular connection kernels
+are retained. Lorentz Spin boosts are not incorrectly made Hilbert-unitary:
+  P dagger Gamma0 P=Gamma0
+is checked, with full384 defect at most2.22044604925e-16; source pseudo-
+isometry defects are about1.1e-21. No normalization/projection is applied.
+
+Gauss8/16/32 integration and independent RK4 use the boost-algebra increment
+P-I. With alpha=Iomega/2, stable coefficients are
+  cosh(alpha)-1=2sinh(alpha/2)^2, -sinh(alpha).
+The variational RK4 retains the explicit derivative of both coefficients.
+At Gauss32:
+  ambient integral(value,source first)
+    (4.449730763786733e-6,-1.2178852171141633e-5),
+  adapted integral(value,source first)
+    (2.4103561598498414e-6,-1.1659198855573385e-5).
+All8/16/32 tables remain in the report. Worst RK4 value/source relative
+comparison is2.90597306984e-15. MP80 hyperbolic component controls, including
+the quadratic increment and source first, agree within2.27065418815e-16.
+
+4. INDEPENDENT GEOMETRIC AND PRECISION VALIDATION
+
+The coordinate validation does not reuse Cartan contacts. At the unit-SU2
+quaternion-chart origin,
+  theta^a=dx^a+epsilon_abc x^b dx^c+O(x^2).
+Its coframe first derivatives, all t/rho derivatives, metric g=e^T eta e,
+and all5 coordinate Christoffels are constructed explicitly. The independent
+connection is
+  omega^A_B,mu=(e*Gamma_mu-partial_mu e)*e^-1.
+It checks the tetrad postulate and every angular/right-Maurer sign. Actual
+Christoffel/Cartan maximum absolute difference is3.55271367880e-15; torsion
+is identically zero. A separate MP64 test differentiates the full independent
+5D coordinate construction on a smooth nonzero-shift control and checks all
+value/source connection components. The control is not a physical state.
+Actual contracted h0/h4 are compared only as an additional owner check.
+
+Raw binary64 endpoint identities remain visible, including their failures:
+  integral omega_source versus omega(h)-omega(0):1.18438e-10 relative;
+  adapted value identity using endpoint rapidity subtraction:2.20393e-10;
+  adapted source identity:2.61410e-10;
+  ordered B1^-1 P B0 SOURCE matrix comparison:2.60684e-10.
+Their absolute discrepancies are at most3.05e-15. These rows were not removed
+or relabeled a2e-10 pass.
+
+An independent MP80/100 precision control evaluates the literal ORIGINAL
+N/C/z Fourier coframe on exact binary64 midpoint/rate/h input operands.
+It does not use Jet, contracted Dirac h or the Cartan helper. It differentiates
+the metric/coframe partials to form omega and uses independent MP Gauss16.
+Its source integral is checked through endpoint omega and eta derivatives
+at high precision. Original FLOAT pi/4,WALL,RADIUS0 are converted exactly,
+so no changed normalization enters. All4 ambient/adapted value/source
+integrals agree with the production quadratures at worst9.57577048758e-16
+relative, while MP80/100 differ by at most6.93463e-81 absolute. This resolves
+the displayed constituent endpoint-subtraction precision limit; the failed
+binary64 raw checks are still preserved. It is not a full physical E/B or
+outgoing-domain derivative gate or a global numerical error enclosure.
+
+5. KEEP PHYSICAL ENERGY/FIELD AND MOVING-DOMAIN SOURCES ACTIVE
+
+Numerically applied source first means ONLY the given affine-cell rawtime
+germ, at fixed initial/final coordinate times. The reusable helper preserves
+all10 local cohomogeneous primitive variations
+  (N,C,z,R,N_rho,C_t,C_rho,z_rho,R_t,R_rho).
+For example its complete stored wall covector differentiates
+  omega=N_rho/C+C z k,
+  delta k=(delta C_t-delta z*C_rho-z*delta C_rho
+              -delta C*z_rho-C*delta z_rho)/(NC)
+             -k*(delta N/N+delta C/C).
+These primitive kernels are not a claim that physical E/B responses remain
+cohomogeneous. Off-ansatz metric/coframe sources remain unevaluated, not zero.
+For a general delta e and delta g their LC source is constructively fixed by
+  delta omega^A_B,mu
+   =[(delta e)*Gamma_mu+e*delta Gamma_mu-partial_mu(delta e)]e^-1
+      -omega_mu*(delta e)*e^-1,
+  delta Gamma^lambda_mu nu
+   =g^(lambda sigma)/2*(nabla_mu delta g_sigma nu
+                      +nabla_nu delta g_sigma mu
+                      -nabla_sigma delta g_mu nu),
+followed by the same ordered1/4 Clifford contraction. This includes angular
+shifts/frame rotations when the physical field solve supplies them.
+
+The pulled source also contains trajectory contacts
+  delta Omega_mu X^mu+partial_nu Omega_mu*delta F^nu X^mu
+       +Omega_mu delta X^mu.
+All angular Omega matrices are supplied rather than assuming these vanish.
+The general NONCOMMUTING response kernel is the usual ordered variation
+  delta P(t1,t0)=-integral P(t1,s) delta Omega(s) P(s,t0)ds
+                 -Omega(t1)P delta t1+P Omega(t0)delta t0.
+Physical delta L0 is independent:
+  delta(P L0)=(delta P)L0+P delta L0.
+The present background's commuting boost is not used to commute an unknown
+E/B insertion through this kernel or delete spin rotation channels.
+
+No physical initial/reset Spin lift, full outgoing/native domain, energy/B
+source solution, normalized two-spin state, magnetic moment, coupled
+correction or final Maxwell/all226-row validation is inferred.

@@ -1,0 +1,249 @@
+ORIGINAL M8 GEOMETRIC EXPRESSION: THE S3 BOLT AND ITS LOCAL DOMAIN
+2026-10-16. Untwisted geometric component; no full native/state claim.
+
+1. WHICH ENDPOINT THE ACTUAL SOURCE DESCRIBES
+
+The original coframe is
+  e0=N dt, echi=C(dchi+beta dt),
+  eua=A theta_u,a, eva=B theta_v,a,  a=1,2,3,
+where each theta is LEFT Maurer and its dual has bracket +2 epsilon.
+The positive coordinate density is mu8=N C A^3 B^3. This is the original
+(u,v) frame, not the adapted horizontal/fibre KK frame. The source
+geometric expression is muon_original_m8_geometric_expression.py. Its
+Spin16 is the geometric Cl(1,7) fibre; it is not an SM representation,
+extra particle multiplicity or choice of internal twist/statistics.
+
+The actual coframe owner muon_holomorphic_normal_geometry._fields:101-118
+sets, with L=RADIUS0 exp(q0),
+  C=L exp(u+w), A=L exp(u+b) coschi, B=L exp(u-b) sinchi,
+  u=sum_{j=1}^12 q_j cos(4j chi),
+  w=sin(2chi)^2 sum_{j=0}^11 q_(13+j) cos(4j chi),
+  b=sin(2chi)^2 sum_{j=0}^11 q_(25+j) cos(4j chi),
+  N=exp(sum_{j=1}^12 m_(j-1) cos(4j chi)),
+  beta=sin(4chi) sum_{j=0}^11 m_(12+j) cos(4j chi).
+The older explicit topology owner is
+aether_post_cut_nonround_lorentzian_cap_v15_48.lorentzian_cap_contract:
+  0<=chi<=pi/4, C_child=B4 times S3.
+
+On every compact real regular coefficient/time segment,
+  C=a0+O(chi^2), A=a0+O(chi^2), B=a0 chi+O(chi^3),
+  N=n0+O(chi^2), beta=beta1 chi+O(chi^3),
+  a0=RADIUS0 exp(q0+sum q_1...q_12)>0, n0=exp(sum m_0...m_11)>0.
+The radial arclength at fixed time is r=int_0^chi C(t,s)ds. Therefore
+  B=r+O(r^3), A=a0+O(r^2), N=n0+O(r^2).
+The endpoint is an S3_u BOLT with a normal B4_v, not a point in seven
+spatial dimensions and not an eight-dimensional point. There is no
+independent normal cone angle: B_chi(0)/C(0)=1 identically in the ansatz.
+The time-dependent change chi->r produces an O(r) radial shift, retaining
+all actual time contacts. In a material rho chart chi=j(t)rho, the same
+statement follows after multiplying C by j and transforming the shift;
+one must not identify rho with proper r.
+
+Explicit next coefficients provide cancellation-sensitive source controls:
+  u2=-8 sum j^2 q_j, w2=4 sum q_13...q_24, b2=4 sum q_25...q_36,
+  c2=u2+w2, a2=u2+b2-1/2,
+  (B/r-1)/chi^2 -> u2-b2-1/6-c2/3,
+  (C/a0-1)/chi^2 -> c2, (A/a0-1)/chi^2 -> a2,
+  (N/n0-1)/chi^2 -> -8 sum j^2 m_(j-1), beta/r -> beta1/a0.
+These follow from the owned finite cosine ansatz; no background is solved.
+
+2. EXACT ORIGINAL LEFT-MAURER NORMAL SPIN OPERATOR
+
+Use the actual geometric gamma matrices with signature(+-------), indices
+  0, chi, u1,u2,u3, v1,v2,v3.
+The source original expression includes BOTH spin triples with PLUS sign:
+  D_L=i Gamma0 Dtau+i Gammachi(C^-1 partial_chi+hchi8)
+      +(i sum Gamma_u,a U_a+(3i/2)Gamma_u123)/A
+      +(i sum Gamma_v,a V_a+(3i/2)Gamma_v123)/B.
+Here hchi8=(N_chi/N+3 A_chi/A+3 B_chi/B)/(2C), as independently
+derived from the same density in muon_m8_m5_geometric_coefficients. Thus
+hchi8=3/(2r)+O(r). The time half-divergence h08 is bounded in the regular
+moving chart. No combined-f eta contact is part of this UNTWISTED
+geometric M8 block. A possible action-owned internal endomorphism is not
+declared zero by discussing this particular geometric component.
+
+The leading normal expression is
+  D_N=i Gammachi[partial_r+(3/2+K)/r],
+  K=-Gammachi[sum_a Gamma_v,a V_a+(3/2)Gamma_v123].
+K is Hermitian in unit Haar/current pairing. With alpha=Gamma0 Gammachi,
+  alpha^dagger=alpha, alpha^2=I, {alpha,K}=0.
+The full Spin16 is retained. At scalar v Peter-Weyl level n, the spectrum is
+  +/-(n+3/2), multiplicity 4(n+1)(n+2) EACH,
+  +/-(n+1/2), multiplicity 4n(n+1) EACH for n>=1.
+The factor4 is already the remaining dimension of the geometric Spin16
+under this normal Spin4 decomposition. It is not a new physical copy.
+Taking ALL levels yields |kappa|>=3/2. No u harmonic is fixed or removed.
+
+These are the original LEFT-Maurer maps, not the right-body maps reused
+without conversion. In the same phi=sqrt(n+1)conj(D_mk) coordinates, the
+owned conversion is E_left=-P_swap E_right^* P_swap, bracket +2epsilon.
+Its scalar level n includes both spin-addition branches, rather than
+identifying scalar n with only one spinor harmonic.
+
+3. THE UNITARY POLAR SPIN FRAME IS FIXED BY THAT SIGN
+
+Let q=q4 I+i q_a sigma_a parametrize the collapsing S3_v. The original
+dual acts by RIGHT multiplication q->q exp(-it sigma_a), so
+  V_a q4=q_a, V_a q_b=-q4 delta_ab+epsilon_abc q_c.
+Set Omega_v=Gamma_v123 Gammachi and P+/-=(I+/-Omega_v)/2. Define
+  S_L(q)=P-+[q4 I+q_a Gamma_v,a Gammachi]P+.
+The projected generators J_a=Gamma_v,a Gammachi P+ obey
+  J_a^dagger=-J_a, J_a J_b=-delta_ab P+ -epsilon_abc J_c.
+Consequently S_L is UNITARY, commutes with Gamma0 and all three Gamma_u,
+and satisfies
+  V_a S_L=-S_L J_a,
+  sum Gamma_v,a S_L^dagger V_a S_L
+      =(3/2)Gammachi+(3/2)Gamma_v123.
+This exactly reproduces the owned radial3/(2r) and PLUS v spin triple.
+The selected projected chirality is opposite to the earlier RIGHT-body
+M5 polar formula; reusing that formula would give the wrong triple sign.
+
+The smooth inclusion is psi_polar=S_L^dagger psi_cartesian in the normal
+B4, with tangent S3_u spin frame untouched. It preserves the original
+positive geometric current pairing. It is a geometric spin-frame change,
+not the nonunitary sin(f) similarity used to check the separate M5 eta
+coefficient. Multiplication by S_L generally shifts scalar PW n by1;
+an untruncated smooth-spin inclusion must keep its actual output. A finite
+PW projection is not the exact smooth-spin transformation.
+
+4. FORM PLACEMENT AND ALL TANGENTIAL FREQUENCIES
+
+The following H1 statement concerns the already exposed GEOMETRIC
+plus_product A=Dtau+W (or the spatial geometric Dirac form). It is NOT an
+ellipticity claim for positive-L2 D_L^dagger D_L: a Lorentzian principal
+symbol has null characteristics. Nor does this choose a microscopic
+native D_strat/P_strat, its carrier, statistics, twist or wall domain.
+
+Freeze a regular bolt time and use proper center time tau. After the
+geometric radial density isometry U=r^(3/2)psi, up to the harmless frozen
+factor sqrt(n0 a0^3), the leading plus factor is
+  A0=partial_tau+W_N+W_B,
+  W_N=-i alpha[partial_r+K/r],
+  W_B=-(i/a0)Gamma0[sum Gamma_u,a U_a+(3/2)Gamma_u123].
+The round S3_u operator W_B is formally self-adjoint in its unit Haar
+pairing. Every coefficient of W_B commutes with K and anticommutes with
+alpha; its u derivatives commute with the v derivatives. Therefore
+  {W_B,W_N}=0
+on the full tensor harmonic core, not just a fixed finite u level.
+W_N is likewise formally self-adjoint in dr after the density isometry,
+because {alpha,K}=0. On compactly supported smooth tests the exact frozen
+form is
+  ||A0 U||^2=||partial_tau U||^2+||partial_r U||^2
+       +<U,K(K+1)U/r^2>+||W_B U||^2.
+All time/u/normal-angular directions are retained. Since |kappa|>=3/2,
+  kappa(kappa+1)>=3/4,
+  kappa(kappa+1)>=kappa^2/3.
+Thus this is uniformly equivalent to
+  ||partial_tau U||^2+||partial_r U||^2+||K U/r||^2+||W_B U||^2,
+with constants independent of BOTH angular spectra and time frequency.
+No estimate treats the unbounded tangential u spectrum as a bounded mass.
+
+The actual smooth cap replaces 1/B by1/r+O(r),1/A by1/a0+O(r^2),
+and the frozen lapse by n0+O(r^2), while its radial shift is O(r).
+Normal errors O(r)V are small relative to K/r uniformly in v, and
+tangent errors O(r^2)U are small relative to the full W_B graph norm
+uniformly in u. The source smooth time dependence produces bounded
+half-divergence contacts and first-order commutators controlled by
+epsilon times the leading first-order norm plus C_epsilon||U||.
+Localizing to a sufficiently small regular coordinate patch absorbs
+the principal errors. A bounded full-fibre internal endomorphism is an
+L2-bounded form perturbation; a smooth bounded connection has the same
+local estimate. These are CONDITIONS on a later coupled component,
+not evaluations of an unspecified twist and not deletion of it.
+
+Equivalently, the unitary polar frame turns this into a smooth strongly
+elliptic geometric plus factor on a timelike regular coframe, so its local
+graph/form closure is the ordinary smooth-spin H1 space near the bolt.
+For rougher or singular twists, the above bound must actually be proved;
+none is presumed from the word 'coupled'. A degenerating lapse or a
+nonregular metric is outside this local result.
+
+5. WHAT IS AND IS NOT AN ENDPOINT CONDITION
+
+The singular set has normal dimension4. For a bounded smooth test spinor,
+a radial cutoff deleting r<epsilon has derivative contribution
+  O(epsilon^-2 int_0^(2epsilon) r^3 dr)=O(epsilon^2).
+The L2 cost also vanishes. After integrating over compact tangent bolt/time
+support, smooth tests that include the bolt and punctured smooth tests
+have the SAME local H1/geometric-plus form closure. Thus no additional
+Dirichlet value, arbitrary 'free' boundary condition, normal-mode amplitude
+or distributional point trace is to be appended at this regular bolt.
+An H1 field need not have a pointwise normal limit. This conclusion is
+about the form closure; it does not impose an artificial endpoint value
+on every polar coefficient in a finite Galerkin space.
+
+At fixed frozen tangential spectral parameters, the radial positive square
+in a K channel is
+  T_kappa^dagger T_kappa=-partial_r^2+kappa(kappa+1)/r^2,
+  T_kappa=partial_r+kappa/r.
+Its two zero-energy powers for U are -kappa and kappa+1. For
+kappa=-(ell+3/2), the L2 branch is U~r^(ell+3/2), psi~r^ell;
+for kappa=+(ell+3/2), it is U~r^(ell+5/2), psi~r^(ell+1).
+The other branch is not L2(dr), including the logarithmic threshold
+U~r^-1/2 when the coefficient is3/4. This exhibits limit-point normal
+radial behavior in every angular channel, with no center extension
+parameter. First-order normal zero solutions only use U~r^-kappa and
+must not be confused with all strong-square or finite-form fields.
+
+For the UNTWISTED smooth geometric operator the local strong square
+domain is H2 in its smooth Cartesian spin frame (with the other actual
+boundaries/domains held fixed). It is distinct from the H1 form domain.
+A merely bounded rough endomorphism retains the H1 form result, but does
+not by itself imply a classical H2 description for its strong square;
+that domain is defined weakly by A^dagger A and needs the relevant
+coefficient regularity. The radial powers are frozen leading normal
+branches, not a demand that every field equal an isolated exact power.
+
+An arbitrary bounded radial P1 polar coefficient with finite smooth angular
+content can have finite form energy, since its 1/r angular terms have
+integrable r^3/r^2 density. It may fail strong-square regularity or smooth
+Cartesian pointwise extension. That does not license a new bolt trace law.
+Quadrature on such a fixed test space does not prove physical radial-space,
+spinor-mode, outgoing-domain or magnetic-moment convergence.
+
+6. SCOPE AND REPRODUCIBLE SOURCE CONTROLS
+
+New WORK producer: bhsm_original_m8_bolt_controls_20261016.py.
+It consumes the unchanged saved24 real time6 raw snapshots and independently
+checks original A/B/C/N/beta values against MP64 elementary formulas and
+proper radial integration, with all three asymptotic steps retained.
+It also checks the original source LEFT angular maps, full Spin16 normal
+K at v levels0...4, and the new left-polar unitary frame against actual
+PW-differentiated quaternion values and literal right SU2 flow steps.
+The finite controls test this source convention; the proof above is over
+all angular levels. No field history, normal response, or solver is replayed.
+
+This constructs only the local endpoint domain of the original untwisted
+geometric component under its regular real cap premises. It does not fix
+the full microscopic graded carrier/twist/stratified incidence, physical
+background, material wall/transmission/exterior domain, outgoing response,
+source/domain jets, normalized muon poles or two-spin state. No physical
+derivative pass, coupled correction, Maxwell/all226 afterstate or muon
+magnetic-moment prediction is asserted.
+
+7. FINAL INDEPENDENT CONTROL PAIR
+
+WORK source SHA256
+  4cd562b0736e2daecf5dae1493049daa3a9406eaf2c2e1df8054afb599b0e5fd.
+Independent outputs are
+  outputs/bhsm_original_m8_bolt_controls_20261016/run_1
+  outputs/bhsm_original_m8_bolt_controls_20261016/run_2.
+The two controls.npz files are byte-identical, SHA256
+  37ae51632298e8fd220d5f52531fd3f5b9b8f41b57ed120467f99a282b2f7932.
+The two result.json files are byte-identical, SHA256
+  f9945df97352caeafdac73dd3503ef7ab76a3ff22311cb47c577e63eed55ceaf.
+The24 real coframe snapshots have a0 range1.9189344992...1.9238276951;
+the independent MP64 coframe comparison has maximum entry-scaled error
+3.4716e-16. All endpoint-ratio values, finite-step asymptotic errors and
+the original binary64 snapshots remain in the receipt/archive. Finite
+asymptotic steps are not passed off as an exact endpoint evaluation.
+
+The full original Spin16 angular controls at levels0...4 have maximum
+spectrum error2.66454e-14 and alpha/K anticommutator2.46083e-16. K is
+Hermitian up to3.79676e-33 in the supplied fixed gamma basis. Tangential
+u coefficient commutators with K are at most7.61297e-32 and their alpha
+anticommutators at most6.71135e-17. The polar connection identity has
+maximum error6.66342e-15, with literal independent right-SU2-flow
+finite-difference error9.09094e-13 across all retained steps. These are
+finite source-convention controls of the equations supporting the proof,
+not the full physical E/B derivative gate or a normalized muon state.
