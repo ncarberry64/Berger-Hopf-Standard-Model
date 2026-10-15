@@ -1,0 +1,10 @@
+Tests executed 2026-10-15 with C:\Python314\python.exe and PYTHONPATH=<repository>/src.
+
+python -m pytest --noconftest -q tests/test_muon_worldvolume_spatial_birth_jet.py
+...... 6 passed in 1.98s
+
+python -m pytest --noconftest -q tests/test_muon_intrinsic_worldvolume_scalar_transport.py tests/test_muon_intrinsic_scalar_birth_rows.py tests/test_gauge_connection_reset_bundle_lift_adjudication.py
+................................................. 49 passed in 2.65s
+
+These checks exercise numerical controls and existing local transport laws.
+They do not admit the full physical outgoing derivative or a matching correction.
