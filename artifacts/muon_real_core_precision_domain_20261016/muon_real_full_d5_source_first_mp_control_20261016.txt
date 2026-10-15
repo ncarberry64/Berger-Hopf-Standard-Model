@@ -1,0 +1,80 @@
+Independent MP80/100 full-fibre source-first control
+2026-10-16. Numerical derivative of the supplied finite germ, not a physical
+energy/field/outgoing-domain derivative certificate.
+
+Canonical producer:
+  audits/bhsm_real_full_d5_source_first_mp_control_20261016.py
+  SHA256 eb03183cbc9157931aa89faddad34cd34ad09454f24245faad4c7fc5c091d75f
+
+Two independent actual executions in WORK:
+  outputs/bhsm_real_full_d5_source_first_mp_20261016/control_run_1/result.json
+  outputs/bhsm_real_full_d5_source_first_mp_20261016/control_run_2/result.json
+They are BYTE-IDENTICAL, each 376,063 bytes:
+  SHA256 5542be86977952ba885e24fda34e8de2a09b01006032d399b43bfd44a2c65589
+
+The input is the unchanged canonical source-first packet:
+  artifacts/muon_real_coupled_open_operator_20261016/source_first_run_1
+  application.npz SHA256
+    7da8ddd5fa4bda397aa6a2d50e845338a3ef92fb3f0e837a5a6d0d166915e177
+  result.json SHA256
+    d15def102e329c38f35b62c137d8398aa72eeda626924498a426246d66c88df1
+The original source-first producer, its two numerical executions and all
+unfavorable binary64 finite-difference steps are preserved unchanged.
+
+The control evaluates all eight actual saved-midpoint cases: incoming and
+outgoing, complete n<=0/n<=1 Haar spaces, eta orientations +/-1. Every
+384h row remains in the full contracted weak 4x3, positive 3x3 and direct
+phase-partial 4x3 forms. These are the complete supplied probe forms,
+not an operator-norm claim over every possible test vector.
+
+Fixed gamma, gauge and angular Kronecker actions are applied sparsely at
+MP80 and MP100. Binary64 input values are converted exactly to MP numbers,
+without substituting rounded decimal strings. The original literal
+covariant-time/spatial/gauge/combined-eta expression is then contracted
+with the actual density and independent analytic left. The product
+placement is A=D_tau-Gamma0*D_spatial-i E ell/N; non-Hermitian eta remains.
+Here D_spatial names the complete original spatial/eta/gauge block and
+includes the eta f0 zero-order contact as well as its radial component.
+The derivative is taken with mp.diff on the COMPLETE contracted forms,
+not with the source-first implementation or its derivative formulas.
+
+The source axis is still the original supplied coordinate-time first
+frozen inside its represented cell. Polynomial test-function contacts,
+independent-left first and density first are retained. No field equation,
+new physical history, missing acceleration, exterior, or spin state is
+invented. The separately supplied phase coefficient is evaluated directly;
+no E=1 minus E=0 extraction can discard a small phase contact.
+
+Both ABSOLUTE and nonzero-RELATIVE derivative comparisons pass 2e-10:
+
+  form                 maximum absolute error       maximum relative error
+  weak first           4.637859187928051e-14         2.360014908575754e-15
+  positive first       3.584143054667255e-13         6.723550147770318e-16
+  phase/time mixed     8.864427683577070e-15         2.117227946728337e-15
+
+The MP80-to-MP100 first comparison has maximum relative difference
+9.981032075884519e-82. Thus this check verifies the actual supplied-germ
+form derivative, rather than selecting a favorable finite-difference step.
+
+The old positive-form finite differences reached relative error
+1.9135363212903188e-9. Their nonzero form maxima are 93.66 to 166.63,
+and nonzero first maxima are 369.09 to 538.04. At h=5e-7, the ratio
+value/(h*first) is about 5e5 to 6.6e5. The fourth-order central stencil
+amplifies absolute value-evaluation error by at most 18/(12h), provided
+the four value errors have a supplied common absolute bound. The stored
+single-rounding scale estimates use u*value for that error and therefore
+are estimates, NOT rigorous total roundoff or truncation bounds.
+
+The actual baseline binary64 positive-value differences from MP100 reach
+1.2017642083774237e-13. Such accumulated value error is amplified strongly
+by a small subtraction step. Error growth as the step shrinks is consistent
+with cancellation; the independent MP derivative shows that the analytic
+source-first implementation itself agrees far below 2e-10. No claim that
+every old finite-difference error is purely roundoff is needed or made.
+
+This is NOT the full physical derivative gate. Retarded exterior/domain
+jets, common real stationary background, intrinsic normalized seam and
+temporal incidence, physical radial/angular limits, normalized two-spin
+state and magnetic moment remain outside this local supplied-germ check.
+No coupled correction, after-correction Maxwell/226 validation, new fit,
+eta deletion, or physical magnetic-moment prediction was performed.
