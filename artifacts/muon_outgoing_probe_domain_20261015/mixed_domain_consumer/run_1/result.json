@@ -1,0 +1,33 @@
+{
+  "actual_physical_outgoing_operator_supplied": false,
+  "allowed_frame_basis_scope": "V->V H(E,B), a->H(0,0)^-1 a. Complete transverse mixed sum invariant under nonconstant allowed-frame basis; transport-only term generally changes.",
+  "boundary_row_basis_scope": "An energy/field dependent change of C rows changes the fixed-frame mixed pairing through lower derivative contacts. No unconditional row-basis invariance is claimed.",
+  "checks": {
+    "allowed_basis_first_invariance_max": 2.7755575615628914e-17,
+    "allowed_basis_mixed_invariance_max": 5.551115123125783e-17,
+    "annihilator_jet_identity_max": 5.551115123125783e-17,
+    "chain_rule_max": 3.779896173582386e-17,
+    "independent_polynomial_E_B_EB_difference_max": 4.225965944920207e-13,
+    "nonannihilating_jet_chain_rule_max": 5.1751776094289745e-17,
+    "off_pole_chain_rule_max": 5.553824967135427e-17,
+    "omitted_first_domain_contacts_mixed_error": 0.09084408335273678,
+    "retained_nonannihilating_mixed_identity_max": 0.16393915304457596,
+    "retained_off_pole_contact_max": 0.04941564450429699,
+    "transport_only_allowed_basis_change": 0.014297543696451101
+  },
+  "classification": "EVALUATED_ALGEBRAIC_TWO_PARAMETER_OUTGOING_TRACE_JET_CONSUMER_CHECKS",
+  "coupled_matching_corrections_applied": 0,
+  "derivative_scope": "Literal E/B/EB derivatives of Gamma=C T, projected on supplied fixed analytic left/right frames. Total pole-path EB derivative additionally requires moving mode jets.",
+  "exact_mixed_contact": "L C (T_EB R-V_EB a)+L C_E (T_B R-V_B a)+L C_B (T_E R-V_E a)",
+  "exact_remainder": "L C_EB (T R-V a)+L (C_EB V+C_E V_B+C_B V_E+C V_EB) a",
+  "fixture": "Explicit nontrivial bivariate polynomial graph C(E,B)V(E,B)=0 with independent joined trace T(E,B). This is an algebraic test, not physical exterior data.",
+  "missing_physical_jets_assumed_zero": false,
+  "physical_derivative_gate_passed": false,
+  "physical_magnetic_moment": null,
+  "physical_two_spin_normalization": null,
+  "source_sha256": {
+    "bhsm_outgoing_trace_two_parameter_jet_20261015.py": "d625dc58e4869bc6c685017da0f31e2d12c0e144b622a8368210c751d4c954cd",
+    "evaluate_bhsm_outgoing_trace_two_parameter_jet_20261015.py": "5e0a654dc2150bed0b53c7efa8e4d99f1373b6f76c2cd1467a0c5be31c33c83b",
+    "test_bhsm_outgoing_trace_two_parameter_jet_20261015.py": "debbb4ba2bc4b09b492e65c5f9a031c841fd82d7b39c80bf58c590870564af9b"
+  }
+}
