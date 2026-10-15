@@ -1,0 +1,12 @@
+From repository root; use NEW output directories when repeating frozen applications.
+PYTHONPATH=src; OPENBLAS_NUM_THREADS=1
+C:\Python314\python.exe audits/bhsm_isotropic_seam_saved_germs_20261016.py --output artifacts/muon_isotropic_seam_domain_20261016/application_run_2
+C:\Python314\python.exe audits/bhsm_isotropic_seam_saved_germs_20261016.py --output artifacts/muon_isotropic_seam_domain_20261016/application_run_3
+C:\Python314\python.exe audits/bhsm_isotropic_seam_controls_20261016.py --output artifacts/muon_isotropic_seam_domain_20261016/controls_run_1
+C:\Python314\python.exe audits/bhsm_isotropic_seam_controls_20261016.py --output artifacts/muon_isotropic_seam_domain_20261016/controls_run_2
+C:\Python314\python.exe -m pytest --noconftest -q tests/test_muon_isotropic_seam_transfer.py
+C:\Python314\python.exe artifacts/muon_isotropic_seam_domain_20261016/run_publication_checks.py
+C:\Python314\python.exe audits/bind_muon_isotropic_seam_domain_20261016.py --repository . --output artifacts/muon_isotropic_seam_domain_20261016/publication_manifest_run_1.json
+C:\Python314\python.exe audits/bind_muon_isotropic_seam_domain_20261016.py --repository . --output artifacts/muon_isotropic_seam_domain_20261016/publication_manifest_run_2.json
+
+Application_run_1 is the preserved failed input-location version, not the successful application pair. No physics campaign replay is included. Manifest serialization is not a physical solver repetition.
