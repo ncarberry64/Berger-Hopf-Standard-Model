@@ -1,0 +1,214 @@
+REGULAR SAME-E1 FP / BRST INTERFACE DOMAIN AND ITS MOVING JETS
+
+Constructive mathematical component; no physical map or exterior selected.
+Repository C:/Users/carbe/Downloads/BHSM_muon_parent_maxwell_worktree_20261001
+New module WORK/muon_regular_reset_brst_domain_20261016.py
+New independent audit WORK/bhsm_regular_reset_brst_domain_audit_20261016.py
+
+1. Exact owned scope
+
+The regular minimal-area owner is
+ covariant_bubble_interface_mechanics.build_payload.carrier_reset:
+ q_e=C(F_B)q_c,
+ Pi_c+C(F_B)*Pi_e=-delta S_Sigma/delta q_c.
+Its actual F_B is induced by the solved worldvolume and bundle transport;
+it is not an independently selectable nonfermionic constitutive graph.
+The same-E1 scalar law and positive-time canonical density convention are
+already implemented by muon_intrinsic_scalar_birth_rows.py.  The affine
+connection law is owned by
+ gauge_connection_reset_bundle_lift_adjudication.induced_connection_transport.
+Neither existing gauge/scalar implementation is changed here.
+
+Use the direction F:Sigma_parent -> Sigma_child and U at parent labels.
+The following construction is a fixed regular incidence's FP interface
+component.  The actual physical differential FP operator, gauge-fixing
+functional, complete background, function-space closure and exterior are
+not selected by this module.  The retained FP cross-Green pairing is the
+input from nonfermion_relative_boundary_variation.ghost_green_form.
+
+2. Ghost incidence, weighted adjoint, and independent antighost
+
+For scalar adjoint-bundle sections,
+ (Cq)(F(x))=U(x) q(x) U(x)^dagger.
+Let J=F* dmu_child / dmu_parent >0, using the actual boundary measures.
+Then the exact integrated adjoint is
+ (C*p)(x)=J(x) U(x)^dagger p(F(x)) U(x).
+This is obtained directly by changing variables in the boundary pairing.
+It is not inferred by assuming that a pointwise unitary U is an L2-unitary
+map between different measured interfaces.
+
+The ghost domain rows are
+ r_q = q_child(F)-Ad_U q_parent,
+ r_p = p_parent + J Ad_(U^dagger) p_child(F).
+The two p's here are OUTWARD conormal Riesz values, relative to the two
+displayed measures.  This fixes the plus sign.  A positive-time endpoint
+canonical momentum has its inherited endpoint sign; a canonical density
+already contains its metric density and must not receive that factor twice.
+
+The antighost is an INDEPENDENT field.  It is not assigned the ghost's
+value, complex conjugate, or momentum.  For ghost and independent antighost
+boundary traces the full cross-Green form on the common parent labels is
+
+ B = <barq_p,p_p>-<barp_p,q_p>
+       +J[<barq_c,p_c>-<barp_c,q_c>].
+
+With residuals bar r_q=barq_c-Ad_U barq_p and
+ bar r_p=barp_p+J Ad_(U^dagger) barp_c, its EXACT off-domain factorization is
+
+ B = <barq_p,r_p>-<bar r_p,q_p>
+       +J<bar r_q,p_c>-J<barp_c,r_q>.
+
+Therefore, on the ghost domain, its adjoint domain is precisely
+ bar r_q=bar r_p=0, provided the trace variables have the usual independent
+surjective Green-pair ranges on the regular operator domain.  That is the
+standard interface/closure hypothesis, not a theorem established by these
+finite matrix controls.  Thus an independent scalar antighost field has the
+SAME primal incidence C and its OWN weighted conormal balance.  Only an
+explicitly represented boundary DUAL DENSITY uses (C*)^-1, with J^-1.  That
+dual representation must not be silently substituted for the antighost
+field.  The bilinear formal adjoint uses each side's actual Green conormal;
+no assertion that a generic Lorenz FP bulk operator is self-adjoint follows.
+
+3. Internal BRST compatibility is constructed, not separately chosen
+
+In anti-Hermitian convention the owned connection incidence is
+ F* A_c=U A_p U^dagger-dU U^dagger.
+For c_c(F)=Ad_U c_p, direct differentiation gives
+ F*(D_c c_c)=Ad_U(D_p c_p).
+This is checked by the second module function against explicit child
+pulled connection operands, and independently against the existing affine
+owner in the audit.  No A_t=0 is used; all four nonzero axes are kept in
+the algebraic controls.  Supplying only three axes certifies only the
+spatial relation, not moving-endpoint time incidence.
+
+Ad_U also intertwines Lie brackets, so it preserves the internal ghost
+BRST algebra s c=-[c,c]/2 in its graded-coefficient sense.  The independent
+antighost/Nakanishi-Lautrup BRST pair may use the same associated-bundle
+incidence.  This does not construct a spacetime-diffeomorphism ghost
+complex or choose a gauge-fixing fermion.  The owned minimal area has no
+independent ghost surface source.
+
+4. Moving-interface first and mixed jets
+
+Let x,y be REAL parameters.  All module operands carry
+ (f,f_x,f_y,f_xy), with explicit zeros if owned.  Products retain
+ (ab)_xy=a_xy b+a_x b_y+a_y b_x+a b_xy.
+Conjugate-transpose acts on every supplied jet; complex directional
+continuation is not silently substituted for these real source derivatives.
+
+Every child operand is a TOTAL material pullback.  For xi=delta F o F^-1,
+ delta[F* q_c]=F*(delta q_c+L_xi q_c).
+For an adjoint scalar q, with chi=(delta U)U^dagger,
+ delta q_c(F)=Ad_U delta q_p +[chi,q_c(F)]-F*L_xi q_c.
+The connection incidence has the exact moving variation
+ F*(delta A_c+L_xi A_c)=Ad_U delta A_p-D_(F*A_c)chi.
+Equivalently, using L_xi A=i_xi F_A+D_A(i_xi A),
+ F*delta A_c=Ad_U delta A_p-F*(i_xi curvature(A_c))
+                 -D_(F*A_c)(chi+F*(i_xi A_c)).
+Here xi is the child vector field; its contractions precede pullback. The curvature
+term is not discarded.  In a noncoordinate S3 frame its existing bracket
+term must be retained when assembling that curvature.
+
+The actual density jet is
+ delta log J=F*[delta log dmu_c+div_c xi]-delta log dmu_p.
+For a total induced-metric variation,
+ delta log dmu=tr(h^-1 delta h)/2.
+Normal shape motion is already contained in that total delta h.  These
+formulas explain what is required of the supplied jets; the module does
+not recompute or invent endpoint/shape data.  The mixed jet uses the full
+product rule, including both cross terms of J, U and each pulled field.
+Differentiating D_c C=C_1 D_p gives
+ delta D_c C+D_c delta C=delta C_1 D_p+C_1 delta D_p.
+Thus there is no additional independent ghost graph derivative after the
+actual moving connection/bundle incidence has been supplied.
+
+5. Relation to the current physical outgoing operator
+
+This constructs a previously unassembled regular FP interface domain
+component with weighted adjoint and moving jets.  It does not construct
+the entire exterior Calderon projector.  Internal transmission glues a
+field domain; the actual future-retarded solution of the completed bulk
+operator supplies its outgoing response.  That response is not an
+arbitrary terminal row or a new freely chosen physical coupling.
+
+No actual physical F/U/spatial-j1 packet was found in the current regular
+birth response artifacts: their spatial-map runs are explicitly the
+manufactured controls from the earlier public j1 module.  The present
+independent audit therefore uses only source-level controls, including
+noncommuting bundle jets, nonunit density ratios, independent antighosts
+and nonzero temporal connection.  It does not relabel an older real cell
+or the complex current candidate as a full physical birth realization.
+
+The same-dimensional reset is also distinct from microscopic M8/M5/M4
+incidence.  AE4's microscopic_owner_contract (lines272-306) supplies the
+geometric graded Hilbert direct sum and the functional E1(c D*D), and
+claim_boundary (lines327-343) expressly leaves the complete stratified
+Dirac domain and Calderon/Wentzell seam unconstructed.  The exact later
+tensor quotient Q=A-BC^-1B* and h=T*QT are REAL owned geometry maps, not
+missing geometry and not a codimension-three embedded trace.  They do not
+by themselves define the spinor/ghost off-diagonal differential blocks or
+their closed compatibility domains.  The finite incidence Dirac in
+completion/envelopment_spectral_correspondence_v14_64.py:111-115 is itself
+explicitly a theorem witness rather than the continuum operator.
+
+Logical precision: the bare expression H8+H5++H5-+H4 and P=D*D is not a
+differential/closed-domain definition.  It is consistent with multiple
+closed block operators, so it cannot be evaluated as one without the
+missing correspondence.  This observation does NOT show that two such
+operators both satisfy the complete later BHSM action.  Nor does the
+absence of an evaluated physical background establish a new constitutive
+freedom.  The regular action-derived incidence above is retained exactly.
+
+No collider history is imposed as a prerequisite for an intrinsic pole,
+and no absolute-unit conversion is imposed as a prerequisite for g.  Full
+outgoing, native cutoff and relative-completion evaluation, normalized spin
+poles and the magnetic moment remain pending; derivative gate false,
+coupled corrections zero.
+
+6. A precise current-C2 positive-operator binding still to construct
+
+This issue is distinct from both the regular trace incidence and any
+unprovided global cross-stratum correspondence.  In the current native
+source muon_native_dirac_hamiltonian.canonical_product_factor_contract,
+the formal positive factor is
+ A=partial_tau+Omega_factor+W,
+with anti-Hermitian Omega_factor and Hermitian W relative to its declared
+positive pairing.  That source explicitly returns
+ factor_temporal_native_binding=None,
+ Lorentz_to_native_analytic_continuation_automatically_asserted=False.
+By contrast muon_intrinsic_fermion_wick_application owns the actual first
+continued germ Omega_E=-i Omega_L, with the continued frame inverse not
+silently replaced by its conjugate transpose, and explicitly does not
+identify a complete finite contour or a positive native square.
+
+The mismatch cannot be repaired by relabeling the temporal coefficient.
+An exact one-component algebraic control shows why.  On a fixed interval,
+fixed d_tau pairing and common Dirichlet form core let Omega_L=i a and
+W=w, with real NONZERO a,w.  The anti-Hermitian native-form candidate is
+
+ A_+=(partial_tau+i a+w),
+ A_+*A_+=-partial_tau^2-2i a partial_tau+a^2+w^2.
+
+The literal continued coefficient instead gives
+
+ A_E=(partial_tau+a+w),
+ A_E*A_E=-partial_tau^2+(a+w)^2
+
+on that same fixed pairing/core.  These operators differ.  In particular
+the former is unitarily gauge-equivalent to -partial_tau^2+w^2 on that
+Dirichlet interval; assigning the latter the unchanged real pairing does
+not implement that equivalence.  This is NOT an alternate physical domain
+choice and does not claim that either bare candidate is the actual native
+completion.  It proves only that one cannot identify the two prescriptions
+algebraically while retaining nonzero temporal coefficients and the same
+pairing.  A completed same-owner continuation must transport its frame,
+inverse, pairing and endpoint/domain, or directly construct the native
+positive realization.  Setting a=0 would evade the issue rather than solve
+it and is not done here.
+
+Thus the smallest unresolved positive-operator application is concrete:
+bind the actual nonzero-field factor temporal connection, positive pairing
+and trace/conormal domain as one realization, then differentiate that same
+realization.  The regular FP graph above is a reusable interface component
+of it; it is not the whole binding.  No empirical coefficient, extra quiet
+state or incoming collider history is inferred from this algebraic test.

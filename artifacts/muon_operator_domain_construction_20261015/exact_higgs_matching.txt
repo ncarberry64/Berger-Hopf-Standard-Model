@@ -1,0 +1,173 @@
+EXACT INTRINSIC-HIGGS MATCHING AND THE MINIMAL UNREALIZED OPERATOR MAP
+2026-10-15; read-only source derivation, no new finite probe or correction
+
+1. WHAT IS ALREADY SPECIFIED
+
+The local intrinsic Higgs/lepton action is explicit in
+src/bhsm/interface/ae31_c2_intrinsic_m4_lepton_action.py:32-63:
+  |D H|^2-lambda_H(H^dagger H-nu_BH^2)^2
+  +i barL slashD L+i bare slashD e-(barL Y_l H e+h.c.).
+Its inherited noncentral Y_l is explicitly returned by
+charged_lepton_yukawa_operator, lines66-88. The general complex-H LR mass
+map, including both spin copies and both Hermitian LR placements, is
+executable in muon_native_dirac_hamiltonian.py:86-100. This supersedes the
+older v15.61 diagnosis of a zero finite LR block. A finite intrinsic
+Yukawa/H map is not a missing foundational datum in the present action.
+
+The common intrinsic/charged-lepton-HS incidences are also explicit in
+ae31_c2_lepton_composite_mixing_structure.py:46-81:
+  V_h=sigma1_LR tensor Y_l, V_s=sigma1_LR tensor I3,
+  P_hs=V_h^dagger V_s+V_s^dagger V_h=2 I_LR tensor Y_l.
+They are different scalar coordinates. Identifying them would remove an
+owned mixed contact and change the scalar theory. The up/down HS channels
+and existing projectors are owned separately. The common intrinsic-to-
+quark odd endomorphism is explicitly not specified in this source; its
+stated alternative is an action-derived nonzero quark gap. No lepton
+prefactor can be copied onto those supports. This omission is relevant
+when constructing a common physical scalar with those components, not
+an obstruction to taking the partial derivative in the existing h slot.
+
+2. THE SELECTED MASTER FUNCTIONAL DOES NOT LEAVE A NEW FREE LAMBDA
+
+ae4_stratified_dirac_zeta_induced_owner.py:277-299 selects
+  H_strat=H8 direct_sum H5+ direct_sum H5- direct_sum H4,
+  P_strat=D_strat^dagger D_strat on the zero-mode/BRST quotient,
+  Gamma_ind=-1/2 STr E1(c P_strat), c=ell_star^2,
+with the common relative-zeta/eta completion. Independent stratum Wilson
+owners and independent fitted gauge/Yukawa normalizations are retired.
+For a supplied positive self-adjoint realization with trace-class heat
+semigroup and convergent large-s integral, fixed c>0 gives a definite
+finite E1 functional. No additional arbitrary H^4 counterterm follows
+from this definition. Calling the unevaluated induced lambda a new free
+parameter would contradict the selected owner.
+
+The historical v16.00 replacement is
+  Gamma_Q=Gamma_attached_zeta-Gamma_SM_zeta[Phi;0,0,0]
+          +Gamma_SM_heat[Phi;A,H,Psi].
+At fixed Phi, the subtracted zero-source term has exactly zero partial
+H derivative of every positive order. It cannot supply an independent
+unknown fourth-H contact. With moving geometry or a coupled saddle its
+geometry derivatives must be retained; that is a different total
+variation. Nor does the phrase 'relative zeta/eta completion' authorize
+adding a second independent determinant.
+
+3. EXACT SOURCE-MATCHING IDENTITIES
+
+Fix the geometric/gauge coefficients and the actual common domain, and
+let h be the owned real neutral intrinsic coordinate ReH2. Define
+  A(h)=c(h) P_strat(h), A_j=d^j A/dh^j at h=0,
+  f(A)=E1(A).
+The exact fourth derivative, before any finite truncation, is
+  Gamma_hhhh=-1/2 STr[
+    Df(A)[A4]+4 D2f(A)[A1,A3]+3 D2f(A)[A2,A2]
+    +6 D3f(A)[A1,A1,A2]+D4f(A)[A1,A1,A1,A1] ]
+  + the same derivative of the owned relative completion, if nonzero.
+For an explicitly held-cutoff partial matching, c(h) is constant. A
+physical total source derivative must instead retain every owned native
+c_j and domain/pullback contact in A_j; no stationary-mode shortcut sets
+them to zero. All Frechet derivatives are symmetric multilinear derivatives; their
+operator products preserve noncommuting order. No spin term or mixed
+contact can be dropped. If the actual completed D(h)=D0+h B on this
+fixed domain, then P1=D0^dagger B+B^dagger D0, P2=2 B^dagger B,
+P3=P4=0. This reduction is a conclusion about the supplied operator
+family; it cannot be assigned to unspecified interface/domain motion.
+
+The corresponding exact second derivative is
+  Gamma_hh=-1/2 STr[Df(A)[A2]+D2f(A)[A1,A1]]+completion_hh.
+The kinetic residue is the coefficient of the derivative/low-momentum
+part of this same two-source kernel, not a freely assigned norm.
+
+For a physical scalar direction eta in the full intrinsic/HS field
+space, use the same multilinear derivatives contracted four times with
+eta and the same quadratic kinetic matrix Z_ab contracted twice with
+eta. The existing partial-h derivative can be evaluated before eta is
+known; it is not automatically the normalized physical scalar quartic.
+For a constant canonical-real source phi with potential density U and
+kinetic coefficient Z, the local four-point coupling is
+  lambda_4=U_phiphiphiphi/(6 Z^2).
+This convention uses H2=phi/sqrt(2), with phi the bare real source and
+phi_can=sqrt(Z) phi. It does not declare the exact E1 potential quartic.
+For the quartic Mexican-hat truncation about the symmetric origin,
+  nu_bare^2=-3 U''/U'''', nu_can^2=Z nu_bare^2=-3 Z U''/U''''.
+These formulas do not apply to the unrestricted E1 potential. For the full
+nonpolynomial E1 potential the actual nonzero branch instead solves
+U'(phi_star)=0, with its curvature and kinetic normalization evaluated
+at that same branch. The mass, quartic vertex and vacuum value must not
+be conflated.
+
+4. THE MINIMAL UNREALIZED COMPUTATIONAL OPERAND
+
+The saved magnetic mixed-Green factors specify only
+  P_cell=12/(N^2 L^2) I+A_cell^dagger A_cell
+on the stated coefficient-cell tent and angular spaces. Their original
+source, muon_magnetic_mixed_green.py:64-97, does not identify these factors
+with P_strat or construct its relative trace. The new neutral-H result
+therefore supplies an exact reached component, not the missing identity.
+
+The minimal missing operand for the exact matching above is the actual
+common resolvent/heat germ with its intrinsic-H insertions through fourth
+order on the realized action domain:
+  R(z,h)=(z-P_strat(h))^(-1),
+  together with the actual trace/BRST quotient, native c and the owned
+  relative logarithmic/phase completion.
+The retained heat-minus-old-Casimir-zeta accounting does not automatically
+subtract a second identical heat-reference functional. A relative heat
+germ R_rel=R-R_reference is used only where an actual owner prescribes
+that relative pair; it is not an additional prerequisite imposed here.
+If an owned reference is H-independent at fixed geometry, its positive
+H derivatives are zero and no new reference-H contact is required.
+An equivalent representation can use the full boundary Weyl/Schur germ
+plus the exterior trace and the same owned completion. This is one
+operator realization and source map, not a list of new coefficients.
+The fixed-coordinate H insertion is already owned locally. Its extension
+through all retained strata, physical exterior and common trace is what
+has not been supplied by the saved cell factor.
+
+For any actual core/exterior splitting, write the physical operator as
+  P(h)=[[P_cc(h),T(h)],[T(h)^dagger,P_ee(h)]].
+The exact core resolvent is
+  R_cc(z,h)=[z-P_cc(h)-T(h)(z-P_ee(h))^(-1)T(h)^dagger]^(-1).
+Consequently, knowing P_cc and its local H vertices does not determine
+the full resolvent: the exterior self-energy germ
+  Sigma_e(z,h)=T(h)(z-P_ee(h))^(-1)T(h)^dagger
+and its H contacts remain in every source derivative. The full trace
+also retains the exterior contribution and any actually prescribed
+relative term. A retarded/outgoing condition
+selects the appropriate boundary value of a supplied exterior operator;
+it does not produce that operator's coefficients, embedding or H
+incidence from a finite core matrix. This is an exact block identity,
+not evidence from failure of a numerical search. It explains why the
+saved finite spectra cannot determine the full induced quartic.
+
+Once the complete operator/domain, quotient, native c and owned completion
+are supplied, the formulas above determine the response. The absence of
+its realized resolvent germ in the retained finite packets is not a proof that the
+completed BHSM has an arbitrary extra lambda or an arbitrary state.
+
+5. PRECISE COVARIANCE NON-INFERENCE, WITH ITS LIMITS
+
+The source's separate composite matching relation is
+  chi_hs,h=Tr(G V_s G V_h),
+as stated in ae31_c2_lepton_composite_mixing_structure.py:84-108.
+Local Dirac equations and the universal Hadamard singularity alone do
+not determine its finite Feynman/covariance part. For a smooth bisolution
+W, D_x W=W D_y^dagger=0, replacing G by G+W preserves the inhomogeneous
+Dirac equations and singularity, while
+  delta chi=Tr(W V_s G V_h+G V_s W V_h+W V_s W V_h)
+is generally nonzero. Thus the universal pole and local Y matrix cannot
+by themselves supply the finite mixed residue or physical scalar line.
+
+This statement concerns Feynman/quantum covariances. On a completed
+globally hyperbolic history, the retarded Green operator is unique;
+adding a general W violates its retarded support and is not allowed.
+Likewise, a fully specified positive self-adjoint heat operator/domain
+and c already define their E1 trace without an extra arbitrary-state
+choice. The covariance argument is not a new prerequisite placed on a
+completed intrinsic vacuum pole. The primary missing operand remains
+the common realized operator/exterior/H-source germ above.
+
+No new coefficient, state, units, collar Gram, collider history, scalar
+identification or boundary condition was selected in this derivation.
+No source/D5/profile campaign was repeated. No physical outgoing
+derivative pass, Maxwell/226-row validation, matching correction or muon
+moment is claimed.
