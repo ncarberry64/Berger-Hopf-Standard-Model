@@ -1,0 +1,3760 @@
+{
+  "Maxwell_or_226_after_correction_validated": false,
+  "abs_Q_or_Wick_or_eta_deletion": false,
+  "classification": "ACTUAL_REAL_FULL384_D5_FROZEN_CELL_SOURCE_FIRST_APPLICATION",
+  "core_measure": "original Gauss4 coordinate weights times 2pi\u00b2 and actual NCR\u00b3 density ONCE",
+  "coupled_corrections": 0,
+  "eta_owner": "combined original f-gradient collar coefficient continued analytically; not a global unit normal",
+  "exact_phase_partial_and_time_phase_mixed_retained": true,
+  "finite_difference_scope": "affine extension of supplied first germ for numerical verification only; NOT reevaluated physical histories",
+  "full_native_or_stratified_domain_selected": false,
+  "full_physical_derivative_at_2e_minus10": false,
+  "independent_left_conjugated": false,
+  "inherited_background_parameter_scope": "historical provisional real finite iterate; no new physical preparation or matching imposed",
+  "inherited_failure_input_lineage": {
+    "WORK/bhsm_real_d5_normal_chart_failure_20261016.py": "36c04b6a6de0183239f29cd4009a2ee14061cf87a7448188babce2e35d527e2a",
+    "WORK/bhsm_real_full_d5_open_form_20261016.py": "cbea64a38d0fdcc55c2ebcafbbc3c7a5ad5c849865cfaef14ca68b47a307f1cb",
+    "artifacts/flagship_integration/BHSM_N12_C2_REFINED_RESET_ROOT_CENTER.npz": "59dd88661b15cbeec96bc19294f9d9c64f754cccbfbc385c32329fa9c864a8fe",
+    "artifacts/flagship_integration/BHSM_N12_FULL_RESET_ACTION_JACOBIAN.npz": "35bb2b67ff784206d3a5b9dc82881f5ffd8f844b55342f2032d29cdafb38a67a",
+    "artifacts/muon_birth_transfer_value_20261008/retained_reset/run_1/result.json": "d0fec0f8e8a05818fcce67e88ed8db73744484220a2cb213825893f481cb0a72",
+    "artifacts/muon_calibrated_pauli_20261009/inputs.json": "0b614ab6f26d169ca04a4878f767f78eb3668484840867e46aebbebf186369da",
+    "artifacts/muon_calibrated_weak_decay_20261010/run_1/weak_decay.json": "9c31575ce0889571790f8767cf53ffe043cb9906e0a45a96b194971320a0aad7",
+    "artifacts/muon_finite_normal_phase_20261011/incoming_run_1/application.npz": "254491c04531387f3ef3ae761cb4efccfbed54055683af00fbd8259a2520a8f9",
+    "artifacts/muon_finite_normal_phase_20261011/incoming_run_1/result.json": "8547be3232459deb8cb1d325a3d956bc0380ba0c767371ccce4bf7f5140b399f",
+    "artifacts/muon_inherited_finite_normal_phase_20261011/run_1/application.npz": "7a513c82e9e4f3e2560e2989867e00e8af3453e637a29559286c29eb7c184a59",
+    "artifacts/muon_inherited_finite_normal_phase_20261011/run_1/result.json": "d283c45cb81e86628ecec96159eae5327829d15f440bf01c78164f4b12434c51",
+    "artifacts/muon_matched_mechanical_source_20261002/replay_reference/matched_source_and_weak_actions.npz": "146435df28178967c321c0aa7e89a1511395d196f96b8715532aa98e3e312c2b",
+    "artifacts/muon_parent_gauge_geometry_correction_20261010/finite_moving_trace_run_1/application.npz": "c67363c17adfb519f399614463d5a13dbcd019aa53246d452421eea8ba982455",
+    "artifacts/muon_parent_gauge_geometry_correction_20261010/finite_moving_trace_run_1/result.json": "06867e31959910ec21385e8491bd5b794060c68e8404ae0524e3d0c9b544faa6",
+    "src/bhsm/interface/__init__.py": "1c45484d2d5345e3f53559f7207d710205cbf960b29f23ab4c75eefba7f758a1",
+    "src/bhsm/interface/action_extension_global_spin_reset_ae2.py": "cc46df6372196e610ebfe0921cbb7f438f08d645f5b144faebdf1c6d2a991ccb",
+    "src/bhsm/interface/ae31_c2_intrinsic_m4_lepton_action.py": "f3fee1ef24a3f13ef94d4ce5b146f9ac7a827045e369819b35ee8af5ccf0678a",
+    "src/bhsm/interface/ae3_c2_hopf_semigroup_transport.py": "78a55f79e63881724497d6bb61b769e3100fa411330e6ce87c32522082817937",
+    "src/bhsm/interface/ae3_c2_photon_symbol_audit.py": "51322c9319bb2247d2f223a5e3870de437b80e77db48a422b0bd28776e80cae4",
+    "src/bhsm/interface/ae3_family_harmonic_energy_pullback.py": "a377d8f38fe217adaaa4dbc526bbc3e6ceac6556091770a0347a21762f0364d6",
+    "src/bhsm/interface/aether_backward_closure_existing_answer_audit_v15_8.py": "945cdacb9b66f9263be0b1414ac8e39383f3378edf77414e90e8f667ffb2e7c7",
+    "src/bhsm/interface/aether_canonical_momentum_action_jacobian.py": "d0ade20dc8a999e43073b45ca3ef59e05c65c55e37a1d6565d4e389176295cb1",
+    "src/bhsm/interface/aether_common_source_frechet_response_v15_99.py": "77270564530e129b9160cdf5a3303b907194691b5fa0975c60f4c3dd850c7cb8",
+    "src/bhsm/interface/aether_constraint_consistent_sobolev_lift_v15_84.py": "e3724e9bfb51e28eeb8f3776d03f2246ecdb9f244d74ed8923cd980495c1bc02",
+    "src/bhsm/interface/aether_cross_resolution_reconnaissance_v21_35.py": "7b284ba9a777cc8cdeb375cb9b6df1d9f697ff416fc11f79c1fc07e109d414ed",
+    "src/bhsm/interface/aether_cycle_sigma_coefficient_reconstruction_v15_10.py": "5827aea91ba460f6c7c31ba88c47103b59f868507aaccdfa73ce8e6883e9e0a2",
+    "src/bhsm/interface/aether_cycle_spread_concentration_v15_9.py": "afc847aa47d834cf765b3e74acadf838d8c6e20e75b5702ce6447483d9152557",
+    "src/bhsm/interface/aether_dense_proper_joint_pushforward_v15_97.py": "a402c6850d872d35949802124f7d26bd2abc5ad7cc9497399044b89cac635a85",
+    "src/bhsm/interface/aether_diagonal_sp1_m4_attachment_v15_50.py": "e6482614dcb54f4890a5e66fbe724d4c302405d575a4b73ddbb64a075cb1827e",
+    "src/bhsm/interface/aether_event_algebra_state_v15_4.py": "73e7bcf49494bc49b1d2a03b93de47f12ac251798835958a5ee58b61cae4d7c1",
+    "src/bhsm/interface/aether_exact_radial_schur_lift_v15_83.py": "465c43ab417f70ee8bfe03f2e33365d21e81774a20ac98cd551fac94fac52581",
+    "src/bhsm/interface/aether_full_reset_action_jacobian.py": "243e9348e52f0f54a236ffbd448a309dcb4feec9bf4b45adbeea42763e2e745c",
+    "src/bhsm/interface/aether_high_precision_velocity_jet.py": "ac92c7b5a11cb0eb733aebe7e62b67a83c066973a7b88fb4c6bb94e4279264f2",
+    "src/bhsm/interface/aether_hybrid_flavor_spectrum_v15_54.py": "46924f972787579876771f96f58b611dd4d0cf0bbd401a076a60c02ceefadde6",
+    "src/bhsm/interface/aether_hybrid_standard_model_bundle_v15_53.py": "a983350de429125b2e2b4271c35b8abd14e984381c61b3596121ee946e6bc23a",
+    "src/bhsm/interface/aether_invariant_sobolev_schur_pushforward_v15_82.py": "3c85578eca77b0af9adc5d17d9763e0367526308c5457063c5da65ffba84ea55",
+    "src/bhsm/interface/aether_lorentzian_child_galerkin_v15_44.py": "574a9a6267d9228170c7309bd4be3cafb36b7515a6ee558509beb968e97bdab7",
+    "src/bhsm/interface/aether_m4_standard_model_zeta_backreaction_v15_51.py": "ff8bd13db6b78dd052d53bce5f358627695ea46cfa235b5cacef9edc1b6b96ea",
+    "src/bhsm/interface/aether_master_closure_v15_5.py": "d66d474a32566771f6b1dd2e424f728cebaf9e4082ba7e0edc45dccad1329093",
+    "src/bhsm/interface/aether_n3_analytic_kkt_covector_v16_12.py": "a0ce5d68552a6c0e98962161ca52996963a07146c82105d48547419c12f766dc",
+    "src/bhsm/interface/aether_n3_constraint_solved_orbit_v16_08.py": "0d72335ed9a27d6cab13380b96bdbab4d9de2b6707bc8421427f31ad9f50f863",
+    "src/bhsm/interface/aether_n3_exact_full_local_action_jet_v17_60.py": "25ec0f9268faaa9989a8cce7a7f6f8172244cca45f9ba054cb3273a25f81fc1b",
+    "src/bhsm/interface/aether_n3_exact_local_jet_sbp_covector_v17_61.py": "c932346da800f710da69e6089eb4637032d45e2cd5dd7b10a0cfa0a0487696c7",
+    "src/bhsm/interface/aether_n3_fresh_sbp_asymmetric_period_v0_priority_v17_42.py": "303512e27d61bf91154b46dfd2a9d61ce93afed0bc553b098b0498d4717b0d3f",
+    "src/bhsm/interface/aether_n3_fresh_sbp_coupled_owner_cone_v16_94.py": "5baf4ce5849fbcd37f687afb9d1b996661c356a8e0829671a0c316c58471cee5",
+    "src/bhsm/interface/aether_n3_fresh_sbp_expanded_measured_tangent_v17_07.py": "4e66fdf80f6a982546287a11431fc5cb0b1123d8f4417cd93bc90ddefac0238b",
+    "src/bhsm/interface/aether_n3_fresh_sbp_first_descent_v16_59.py": "d4b71b041969aa2e964d29ba665c83a1f97034187a53926b757afe160551a2c5",
+    "src/bhsm/interface/aether_n3_fresh_sbp_kkt_v16_58.py": "4efcedb793293d92615dae0d7e38cfbdf970e6a65903b352c9ef075c526bd77e",
+    "src/bhsm/interface/aether_n3_fresh_sbp_owner_balanced_metric_v16_93.py": "8f770a6ce35d03d7660821234fbaea269f7bc86a0f6722d21f48ad8d89da2470",
+    "src/bhsm/interface/aether_n3_fresh_sbp_pareto_balanced_selection_v16_89.py": "f706019a00713c7158d9eeeafabd554ca5e99ee8a4f74d9007ca1216499debd2",
+    "src/bhsm/interface/aether_n3_fresh_sbp_period_priority_family_v17_25.py": "d99fb3dbc977a2967abeb12fec621cc04fe75976b18eea3f53d2c8557dc9fcbb",
+    "src/bhsm/interface/aether_n3_fresh_sbp_post_measured_audit_v17_04.py": "68b759ad04c9d3b154a1eb68992536bd088bcd70d30a6706cfb95cbe1cb7d5f3",
+    "src/bhsm/interface/aether_n3_fresh_sbp_post_pareto_audit_v16_92.py": "86310738912c8b51426bc03b49de770976133330d13e18ad1fb81722b43b18c8",
+    "src/bhsm/interface/aether_n3_fresh_sbp_post_priority_audit_v17_24.py": "9fabcaaf8f67cbe7f03864ee7d41ce72ec326db6cf604d822f624cab62f36142",
+    "src/bhsm/interface/aether_n3_fresh_sbp_second_six_owner_measured_cone_v17_06.py": "1198279c97aa4fa04991a90bc93632cce8cdc41894f1bf1a69bab94d16e8f60d",
+    "src/bhsm/interface/aether_n3_fresh_sbp_six_owner_measured_cone_v17_05.py": "adeb09fdf7745f104d890fa457f35d4c1985b97fb7778a48b03e3e688001ddaa",
+    "src/bhsm/interface/aether_n3_fresh_sbp_third_v0_priority_v17_31.py": "2215474de2fd582a470f5e92577708332d4b5252456c1c1e9574e61151f336c9",
+    "src/bhsm/interface/aether_n3_high_accuracy_action_covector_v17_57.py": "08d0aff3659508890c2e895f0848eee77c8c20be4a6e318d993bf11b953903be",
+    "src/bhsm/interface/aether_n3_kkt_newton_step_v16_13.py": "536bb1db7f9ab969f9645ac4f795f57b19030dcabdcfb7db5f250895c1a9c98b",
+    "src/bhsm/interface/aether_n3_parallel_physical_jacobian_v17_32.py": "645bb9a12469eab8c5fb713df9a77711a64670c2bb6311187906bbd962ce0160",
+    "src/bhsm/interface/aether_n3_period_log_direction_bracket_v17_70.py": "7ca30d9a178e52974ca0da389fad5ecf2fbe48e8a235a35d750ecb522d3318b4",
+    "src/bhsm/interface/aether_n3_post_curvature_compensation_audit_v17_54.py": "a3cb2763322bedeb3752883ad775b1041ddbeea209e54810780e1ac9a26a62b3",
+    "src/bhsm/interface/aether_n3_post_scale_manifold_audit_v17_64.py": "13e1838fbad8c26bd4ef8c1991574efbd2ec2e056c724622d7894a509d189926",
+    "src/bhsm/interface/aether_n3_refined_scale_v0_period_manifold_v17_69.py": "58f859402ebe23f9d4aad6cd40c29fe7ca61b1b83f586ce717c03bcfb06525be",
+    "src/bhsm/interface/aether_n3_replacement_global_kkt_v16_11.py": "1016a0da159edcfaf70968be505c6fe98fe5a78ca279dea32b311d653e0829e9",
+    "src/bhsm/interface/aether_n3_sbp_redirect_audit_v16_57.py": "cd402c25d06d829ef5b8071f6b88954502693b40c35a6c5ce38f1195e1dd873c",
+    "src/bhsm/interface/aether_n3_scale_corrected_period_log_continuation_v17_76.py": "3a31a7672cc5f822f94620e3aac96fb8519bb3efec93a65d986d2367cb178219",
+    "src/bhsm/interface/aether_n3_soft_event_constrained_v17_51.py": "92c871167cd6445961f8df01761cc87b1626d65072857b42a9220bf71710f350",
+    "src/bhsm/interface/aether_nonlinear_norman_cycle_bvp_v15_7.py": "9d3b6edda91f8b118df1466d9c443be29092d9a4b64c5d950c81b044aeaf8a4e",
+    "src/bhsm/interface/aether_one_cycle_joint_residues_v15_86.py": "46001d0b95866999f26b832a59062849de9f3eee5bb40f790fe22e99599bc955",
+    "src/bhsm/interface/aether_physical_inverse_closure_v16_36.py": "4c3177d2aaaafe66fcb60855deccaa921d680f6ab4e3749bd0cbb079c13c4157",
+    "src/bhsm/interface/aether_post_cut_child_cap_reconstruction_v15_46.py": "a4da55f2a36c4300bfa578c5b50ac22268e4f4210117f0f36c0e80ddc1b30dde",
+    "src/bhsm/interface/aether_post_cut_dirac_constraint_reduction_v15_49.py": "5fda23fa0f6397358bc4357412c247ef29399a138436ef15288dad72f381ded8",
+    "src/bhsm/interface/aether_post_cut_nonround_lorentzian_cap_v15_48.py": "e9d3e3fe48a6c84963d6b83551112cd76e3db18c2f08c7691696d23261f2a917",
+    "src/bhsm/interface/aether_rank16_u1_hs_vertex_matrices_v16_01.py": "4577e62845b336e17268be75dc72608cb312de9847c22168ec56b3ca701d710e",
+    "src/bhsm/interface/aether_replacement_geometry_force_v16_06.py": "a1102d7b0f5a4c4c4ff188b86abdf463bc55538c3e7feaa6597f042fea437ad3",
+    "src/bhsm/interface/aether_response_constrained_child_galerkin_v15_41.py": "2f8bd678f316f27290a10150eb356cc3a8438e767a285b72491dd4e0fc871494",
+    "src/bhsm/interface/aether_sampled_event_shell_pushforward_v15_74.py": "7aedb2a6aff7847544224d9f3ece770dfa24a2ea05a227b02dcf7e952b2b4253",
+    "src/bhsm/interface/aether_sobolev_galerkin_pencil_lift_v15_81.py": "66e8e41674839203f86e228a960fc09f7a577891c6234f58ca7efc6c9040c9ec",
+    "src/bhsm/interface/aether_sobolev_metric_soft_mode_lift_v16_07.py": "cc6a347fee19035e682dc836dd330a88b9d8b807df3b996b4e3d33a34dec7cce",
+    "src/bhsm/interface/aether_unified_heat_pushforward_gap_v15_70.py": "3c0ce2704c385d5a9a240d9938c6c2f64a328d891e2b1e669a80592bc5232a9b",
+    "src/bhsm/interface/artifact_adapters.py": "8950efa316285da23a64446598a09431a2930623e0ee250a905dcf60576b4ad8",
+    "src/bhsm/interface/artifact_report.py": "6a9643445bb0fe3c3d7aa58880b79c9e3714babf69522d76e5c5c6ec2bf8582e",
+    "src/bhsm/interface/artifact_sources.py": "9b7ffe5a9864732ea644d4ac5ecf5588340bb254bc8c8936b9058fa71a354520",
+    "src/bhsm/interface/bhsm_standard_model_gauge_vertices.py": "f652d1ec576ab138e58cdeb3a0cecc5da84b4e9cb7f6d8464c7ad24e3bb7c5bf",
+    "src/bhsm/interface/boundary_adapters.py": "6e69c8a7fb766533ea34aa79efa55703f7bccbe70b84d65b5ecff84314e5bc58",
+    "src/bhsm/interface/charged_closure/__init__.py": "9f4d01e56f25aae0d5e33b2fe638e91690790a769a97159e1ea7ec7da497fad9",
+    "src/bhsm/interface/charged_closure/action_stiffness.py": "684f77df29aefc283a1a4dc80d57d292ce00fcfe7d4cd427525a34aa8be1b51c",
+    "src/bhsm/interface/charged_closure/ckm_exponent_source.py": "8e787e5181b7e78f29c089f688a2b3b6bca35f7b311588822df6cff2b5a3bd54",
+    "src/bhsm/interface/charged_closure/closure_report.py": "53923d40f6d62b961b9c7a4084d7b873d14436dc03500c080ea772e69f79a2fc",
+    "src/bhsm/interface/charged_closure/common.py": "345a08069b2d41a6b2c013272d976153461a350f30c5bba119c94859aeb99187",
+    "src/bhsm/interface/charged_closure/dimensional_audit.py": "c74d9f05992d55e670a51f641c2f8b2ecdc5c9a858e3f2e9be3ba34a1054076c",
+    "src/bhsm/interface/charged_closure/eta_l_source.py": "9f6e86caf5577ebbe4864c96609d07d9f67250ac5bece0e11adc794ecbd8d7ae",
+    "src/bhsm/interface/charged_closure/mixing_law_source.py": "4251678bae83af4ca1eaefde5faf30f52b07cc996e8fee3113f02feeefdc22be",
+    "src/bhsm/interface/charged_closure/source_search.py": "4fb78633f57d7e346ff0c58809d049eea694942a4c81c4d043b0ed4bb63e81bb",
+    "src/bhsm/interface/common_16/__init__.py": "21c8fe1df1f5be6145e2e5c022e3a79ee76b8a4bbd8260c2fca72207cb94d30e",
+    "src/bhsm/interface/common_16/bridge_beta_audit.py": "d3df18d2d40531ffbc9de10b9345f7d69d5dd83152ce3560d4141dae4a95e524",
+    "src/bhsm/interface/common_16/ckm_transport_audit.py": "d10575977e2edf1c06dc8889836db54b1acbbf1b82cf893e1f7737f0e7e301b7",
+    "src/bhsm/interface/common_16/closure_report.py": "c4c30d8a361d8424a6cb453db357164dddaf26a916030ec57572e7e52f248b1f",
+    "src/bhsm/interface/common_16/common.py": "f8e0f35e38c6305f9502ee216b243448de703df3e0ce89627d799beb37de130c",
+    "src/bhsm/interface/common_16/incidence_audit.py": "7f4bd72199a78a478ab342697c710d6263363bf3ae94ff5a0cf2fdfb25507f94",
+    "src/bhsm/interface/common_16/provenance_audit.py": "09d17e0099541ba0a0645ab0dc4c382cab61f2a36922046c178c3291e9dcaf40",
+    "src/bhsm/interface/common_16/source_search.py": "d74c9a60251dee76b8eda61555b5bb8b24252989b9f6cd171b2b5ecb9b75e5eb",
+    "src/bhsm/interface/completion/__init__.py": "4a5993bcf487d5d9ce15053c752ad211703acdd55c34a28d2b89ed904c0e8aac",
+    "src/bhsm/interface/completion/exact_berger_dirac_cap_obstruction_v14_59.py": "78c0c0824294b0375d605fac811d8d97a62061eafa00148467e82dc8c6203c04",
+    "src/bhsm/interface/completion/foundational_dirac_spin_glue_v14_45.py": "ad05ede643af517ded29823b6f5d3076ae64bc2e985ebf500ba48564ad8c8015",
+    "src/bhsm/interface/constants.py": "cc41161a2fadfbedde9dfb155045f3fb083249137a22c7ba57f8f68357b5999f",
+    "src/bhsm/interface/covariant_bubble_interface_mechanics.py": "6ef60e88da66e131874312cf43c90590c530b3b94da65a57f2a9cc958cf2b98d",
+    "src/bhsm/interface/current_program_status.py": "1d25e801c4ce76391e82b3dede22a56402de7c6f8958410f5a85ed5171ea81ee",
+    "src/bhsm/interface/formula_registry.py": "536abd7727009d5b97c31b048f7bae0a87ea0a404bf3832b89fa025fa8f61b78",
+    "src/bhsm/interface/full_completion/__init__.py": "1808cd9b88d167c3a9906a97696916ac5995de5c76c8641e130357058e7c7a9d",
+    "src/bhsm/interface/full_completion/boundary_measure_closure.py": "d5b4193c48ad2e9b6c30ba4997555797822a406a72dd0e27b047cd68b4bcfd04",
+    "src/bhsm/interface/full_completion/common.py": "8fa412cf03d3749e963ebfa118519bb4c45408f683d32cd8a64d1c55a51d7cd3",
+    "src/bhsm/interface/full_completion/ledger.py": "8f7d3fb91585fc04a72ab03aa25d801a60f85514b2d3e904082cfe710b899397",
+    "src/bhsm/interface/full_completion/priority.py": "bb8c48452b152aae45ad37f70db1c764a22c7dd03d8779e3efecdad6ac7f7c9b",
+    "src/bhsm/interface/full_completion/report.py": "b6d890f11319f4ce43a05c0f73710ced11410448787e08699c0986b058b4bfb8",
+    "src/bhsm/interface/gallery.py": "2edfc43bb48142e070837c8ec01fcdf22ff7a2f64cbe3cc28724cbadc64c4d17",
+    "src/bhsm/interface/geometry.py": "67d932a8a477b619dd7d83d80580db4a1c316c7e54336047dd056f8409d076e3",
+    "src/bhsm/interface/live_pdg.py": "bb45a33500edac061e5a5ee118bb7fed5c1536daf9d6ec42bc6b8a7d62849b8a",
+    "src/bhsm/interface/mass_ratio_adapters.py": "d99da500cb46b5823a69475bef3aa91af80820cdce5d8f721660bf34be2e0d87",
+    "src/bhsm/interface/master_action/__init__.py": "a6d9d7f1ec6bfcd319029c091eeb7b37bafb5dc425380a187fef65b20ac5f804",
+    "src/bhsm/interface/master_action/coefficients.py": "c1e0a357e0943b33659c9ec8e117563eb38f51c41735f5943943fa032d3faf88",
+    "src/bhsm/interface/master_action/common.py": "cfb8b121835de2586a65b663caa37630e9b1236768e2f315cad53f7e0264241f",
+    "src/bhsm/interface/master_action/fields.py": "d8363c18c38cca546b8a3787fbad29915e53d4ae8067438d5f1a52ba6edb3d3b",
+    "src/bhsm/interface/master_action/hessians.py": "b460c467521feb999de844bb0a490de7edb6f6856b56999353eebafffa65cb20",
+    "src/bhsm/interface/master_action/measures.py": "b933aae4c78023291ed973c114adc27773ea5ddd5cbc89f429215c6f75b1a24b",
+    "src/bhsm/interface/master_action/reduction.py": "12e446647111398cf25adc7117426837397589ddc57f44b12755444d44a2f544",
+    "src/bhsm/interface/master_action/reductions.py": "8e7924afe8c84e2b38fdfe7a978ca1072fa4f23e84a8eaf61dbe3bae11ac02e3",
+    "src/bhsm/interface/master_action/report.py": "fc86fc6fd483bf8a8029116fcdd2dc4da53f5e435da6b0d449376f52cd316d04",
+    "src/bhsm/interface/master_action/symmetries.py": "b2cc404c081b747cb26e5ff40c4acc169c1d6aee314900bf7bb3b5224b6ce0cc",
+    "src/bhsm/interface/master_action/terms.py": "1641f950a7177b31be85a065748c7d7831071c175dd3beef0c70497a780be378",
+    "src/bhsm/interface/master_action/topographic_profile_component_selection.py": "93468aceba61e110fc0d23e0a42407ca813d95b638a8825c172aef7b36369586",
+    "src/bhsm/interface/master_action/validation.py": "ccc7dc6fe27fb959486855963ed6c557bda2d65f65ba17416d1f3b3bd12cbebb",
+    "src/bhsm/interface/master_action/variations.py": "61e02ae34256917540faf73123be6ed011adae8d26f750645412a3749dc11d32",
+    "src/bhsm/interface/matrix_adapters.py": "8b5d00cbfc48cd2eec0748c4a36775b52ae087ae7b5c071ca77c6338254a720f",
+    "src/bhsm/interface/minimal_action/__init__.py": "ae83e294ddd664038f036e143ecd95ce6d317f5029d6a4327f48707455b0fcfc",
+    "src/bhsm/interface/minimal_action/action_terms.py": "96ffec675b391dc36a7ef74185024d18a2b33ed562d813e38304b037aaf77c6f",
+    "src/bhsm/interface/minimal_action/author_ontology.py": "c39f9bffe7de4f01d421f96ee447004a3036272addb8a173c33be0b1f3c11a17",
+    "src/bhsm/interface/minimal_action/closure_report.py": "6317206c7330975e795a274bbacd5dfc4bc32aa352fd902782a43a5e67bdeca8",
+    "src/bhsm/interface/minimal_action/common.py": "e1045af378956cf5d2a8f6c7d26ebcfd0d8b35cdd501ddc2c8d44f293864b28f",
+    "src/bhsm/interface/minimal_action/couplings.py": "5780514c0d17200f1aebf358329a4cc646d3f1c8daa9076e5dc85c1d2bd18157",
+    "src/bhsm/interface/minimal_action/cp_o_int_closure.py": "abd6aaaeacebbeb35f9b8147acc675d2b1bb4fc82e08cbfe05945059ea1450da",
+    "src/bhsm/interface/minimal_action/field_representations.py": "0ed97ee1a12310f0eed2fddc96a1cc434a3cc03e72e33e5ea971fd508c54f644",
+    "src/bhsm/interface/minimal_action/gauge_admissibility.py": "65e0df0ffa1e6ea3f9a33ce5a375e17648f7f06d937059f96533ab0524ed308d",
+    "src/bhsm/interface/minimal_action/lorentz_structures.py": "1b2ca76acb0ae07c2e85b854c231951df88cec0f25499ed266b0d2d458de2c08",
+    "src/bhsm/interface/minimal_action/neutrino_basis_closure.py": "0d0a11996be2b4464ffbb7dde57560b6e66ace08ee00c379c64c70e256f450af",
+    "src/bhsm/interface/minimal_action/registry_updates.py": "ae0f3814f46338848bcf7783050c95a7a998862c8352b26f6c7af1bbb4794fb8",
+    "src/bhsm/interface/minimal_action/sector_projectors.py": "a6f15b97a9cbb35e96b7df3f3d0e5c192344462db28f39249fd18055ed7d132b",
+    "src/bhsm/interface/minimal_action/x_ch_closure.py": "e220d2772e837982deccda079983f504df52a0596c4f0f179af31916a849f475",
+    "src/bhsm/interface/muon_birth_attached_phase.py": "948c1505e9b68cffbe8050be31dcb5727d8f8d4f25399f9037cfc94a9ae9fdeb",
+    "src/bhsm/interface/muon_birth_candidate_geometry_action.py": "ef4eab1d8855cb73c6d05cc12ef48953df56e27d86e8a358b8a004b9eb98443e",
+    "src/bhsm/interface/muon_birth_chronological_boundary_action.py": "ad8f6ecbf1734544c635e8aa158b1f0ad9150cbb18a9ad4c76aec89ad8190224",
+    "src/bhsm/interface/muon_birth_chronological_normal_inertia.py": "909f322d0b375ab03fc0b0a148c9d710ac77e371e029c5e92c9bfbde86883b05",
+    "src/bhsm/interface/muon_birth_coupled_primal_midpoint.py": "ce321f641fa51d98710d006e246aac5cf6bd046be93a74fab452808597c599ce",
+    "src/bhsm/interface/muon_birth_finite_geometric_trace_endpoint.py": "4f5c36144222d5d1e657061aa9352f8e86d5ae61a0ebdf05991a477e68d4be5f",
+    "src/bhsm/interface/muon_birth_finite_normal_phase.py": "660ed731bdbe0bbb71eda750c9dbffd20e7ce9f63be2a6087e5a385d76850361",
+    "src/bhsm/interface/muon_birth_finite_normal_trace_graph.py": "20eafd9a6abff3d3a89a2f6085d099584684ba19b600673dafda634cb56aad18",
+    "src/bhsm/interface/muon_birth_full_field_attachment.py": "58b3bd8a4ae5fe7c63b5551e4d0f26d82ab82a27d4389066c894a5e1b4728d03",
+    "src/bhsm/interface/muon_birth_inherited_finite_normal_phase.py": "86b082dfa0b525e9d8bb510a6c02e53c517d7ecdd8c6c9aec956d175d829add4",
+    "src/bhsm/interface/muon_birth_normal_constrained_action.py": "fe66a9116816e075cfc5e7c5f5f3c2c02d539311303b693a1d89cbc08ea62577",
+    "src/bhsm/interface/muon_birth_normal_trace_graph.py": "d012a0455d84be2ce7aae8d6833f8b482f9bbc1e9ee1b899042a421c2a782896",
+    "src/bhsm/interface/muon_birth_paired_attachment_endpoint.py": "71a69275ebeef226fd8dc7585745c5c8acac687e497a8441fe37a37553178f23",
+    "src/bhsm/interface/muon_birth_paired_field_endpoint.py": "f22b6a17b65c72b30571b3d9f721f347737a5916fa08e50bd833ad22df3cd035",
+    "src/bhsm/interface/muon_birth_phase_continuation.py": "9169a1c56bf5084d1f240043ca12d431c87e4adaff24fe09bdf7bf27fc5eb0be",
+    "src/bhsm/interface/muon_birth_reset_evaluation.py": "01bf39191bbc036b16780100e19ce6097a7ea9522892c7357f5f3b552ee3ceba",
+    "src/bhsm/interface/muon_birth_trace_enriched_action.py": "c36c48482dd58ebe369ab935574b78b3693036f717fb49035dfac01164956dce",
+    "src/bhsm/interface/muon_birth_trace_enriched_phase.py": "591754957f1cc452bfd53d8adc1087308459902a822876105315b7423c2fd676",
+    "src/bhsm/interface/muon_birth_two_arm_assigned_action.py": "cf6c58dc68700315d701fb9a1e9e99e927d18d90016a6ae7f86470c36136c77a",
+    "src/bhsm/interface/muon_chronological_clifford_graph.py": "5cef2e254dac97a97ec64134289b8d3d7c8fea6042f203c7e60e692f96ee3d71",
+    "src/bhsm/interface/muon_chronological_spectral_blocks.py": "012f82e6c555b78b20cc792b78fd8d7e5cd93f31ff63497c75db5b4c551c8990",
+    "src/bhsm/interface/muon_continued_action_dual.py": "7a3fd9e0a234e27c3380d3e1a7b3ae523e7a73babae80a68508153d0fc5b2af3",
+    "src/bhsm/interface/muon_continued_action_reality.py": "4fab563163cb00b82dd79482d542dffb249a05237d5bad12a3e138ff3cedd287",
+    "src/bhsm/interface/muon_exact_material_response.py": "a530651e157a000dbe6935e9de1cedbce5679f98c599c6c7c641158b749307bf",
+    "src/bhsm/interface/muon_full_d5_differential_form.py": "76af63d0ae17660a8c5761b8cc1c071f3f887fa6d293902e0ee37b01667cc8ec",
+    "src/bhsm/interface/muon_full_d5_localized_lepton_trace.py": "1dd35d202dcb9b50b2bf09197d190fb4a49b2f9cf5c9f7393f88df204abb80ac",
+    "src/bhsm/interface/muon_holomorphic_current_source.py": "5042e774fa133a7f9a666f715c16848704e2eb813cfe279955e260010358f1fe",
+    "src/bhsm/interface/muon_holomorphic_d5_trace_action.py": "9cb2b7277455fa2ad2e4606534352231b39c6c579b7cd425da015b4a923d28f1",
+    "src/bhsm/interface/muon_holomorphic_normal_geometry.py": "92d8613e3022ab7931225e596d36749076aafb71ab3fa51837dd788a0f2ce3f4",
+    "src/bhsm/interface/muon_inherited_intrinsic_lepton_operator.py": "f335af74e1f6e820b0a4947a32ccfa599125cb3cc66a8dbd92f44ef095d3768c",
+    "src/bhsm/interface/muon_inherited_wall_lepton_application.py": "1b4a0deecc315015b1a9ab982f176792ef29f7c3e96ff00efcaa0460034db075",
+    "src/bhsm/interface/muon_intrinsic_higgs_gauge_action.py": "c19354209300ab06c0f1ab6bf4e111dbb5de0cd9e8d1d31a71af357a829118d4",
+    "src/bhsm/interface/muon_intrinsic_higgs_weak_action.py": "6f61f85cadf99e8e4a049f6a4965b030db8fc8eaf9b1c1a903df77b1c7491be5",
+    "src/bhsm/interface/muon_intrinsic_lepton_primal.py": "42d4193340504fe47831b669bd7848f9fb1a794868b817e41eb14fe20e283027",
+    "src/bhsm/interface/muon_intrinsic_m4_normal_pullback.py": "43187eee35f2879a43fe0fd02ae447502811349ccf2f2a78aa14beb8aa706bf0",
+    "src/bhsm/interface/muon_intrinsic_scalar_discretization.py": "eaf8028999836e8df3cbbb9e16c5bf2b1a8adb5cdc62be1a360ec8a497159d47",
+    "src/bhsm/interface/muon_local_source_jet.py": "caa3da0f665d64c2fb6810d4afa276c7ac0ada0e2d0c7a4d2923b275613d258b",
+    "src/bhsm/interface/muon_matched_mechanical_source.py": "ab119bb053280d8da2a8d03db2e521aba4033ae0966c9d3520ca902a027c05de",
+    "src/bhsm/interface/muon_material_higgs_gauge_action.py": "8bca013820283614c6578be4f44c29c4ea1c919f516aa9a2783f0eb38127d035",
+    "src/bhsm/interface/muon_moving_geometric_action.py": "bf560fdb9766f563d97d3100ccb266e2a4350c910ac14a51d57576c2b5371392",
+    "src/bhsm/interface/muon_native_dirac_hamiltonian.py": "7344b1dfc0358962a281fffea59c8d40c1449a6fbcf9b171f514a28eb7b26ccd",
+    "src/bhsm/interface/muon_native_product_factor_graph.py": "4a5feeb0e32edc0505a44b45a19d6bdc821220cc9cf5187e35f59fe7720a7c18",
+    "src/bhsm/interface/muon_native_reset_friedrichs_return.py": "962e6ecd5b94fd2606bd30a67744eca80beb02817e4845fa83880c95f96353b2",
+    "src/bhsm/interface/muon_native_unsquared_domain_matching.py": "70c5ed09550b17ff63363c200cb217df76f235067b82a1beec5e6dc67acbb4cb",
+    "src/bhsm/interface/muon_parent_gauge_geometry_correction.py": "fa29f5764dca39196c807d64e7976d5894589e7de3ffa9d4a5ddecfb136b4816",
+    "src/bhsm/interface/muon_parent_maxwell_background_euler.py": "fbb2c99d4b1c58247ac42a769fad3e1b16ccc76a1744fe0c5334e50c4a974bee",
+    "src/bhsm/interface/muon_parent_maxwell_corrected_retarded.py": "00bf7053e289297afd4f10dc0ef9522ac8326f2bd07609c9979bb9f5f6f74a4d",
+    "src/bhsm/interface/muon_parent_maxwell_full_q_application.py": "936386142f5f0732210fa7ddba38f3e497341089e2eafe8ff5d1b4b959b8249b",
+    "src/bhsm/interface/muon_parent_maxwell_full_retarded.py": "1ecf85a6da94b84b69af1ff4394301232d9d4cad4b0f0bc08de56d5943e0c478",
+    "src/bhsm/interface/muon_parent_maxwell_full_weak.py": "c1fb703967a644306d3521d457a6d7c778a49d89c1e081b401487a25b7491565",
+    "src/bhsm/interface/muon_parent_maxwell_geometry_weak.py": "f0b4a49934e17ad18c40e9164b66c54e1b2cb146fb476f59b0e500f2dd6c9153",
+    "src/bhsm/interface/muon_parent_maxwell_velocity.py": "61ee61202ee08ee76a5669adaadd03b6694874ef9a855bde02f42b2ea6a4605d",
+    "src/bhsm/interface/muon_parent_mean_causal_action.py": "2a84b1be22625b1a5ae88d10c76631d7a5b602d2b0e22e57f00201bb74a593ad",
+    "src/bhsm/interface/muon_parent_retarded_hypercharge.py": "2eb97a704bce63f601cc0d6e0f647266d4b4aac7f746d34dceb41b72018c3510",
+    "src/bhsm/interface/muon_pointwise_full_field_action.py": "d57cd5953de00bcae857d0e458bbead1e463e5fffe8d947c5b9e71806aabaff6",
+    "src/bhsm/interface/muon_primal_charged_current_response.py": "df2c278056e2058feccb3d893c553f8e0ad3f3b09188a7578bb1c01051d6c176",
+    "src/bhsm/interface/muon_primal_intrinsic_lepton_operator.py": "d3415b13dea7831997c8ffeff5d457b3a008d4393048e642d7df831036e8ffe4",
+    "src/bhsm/interface/muon_primal_trace_enriched_lepton_operator.py": "c6956d8b195c80e8a4488b1ef2c2e4b2bd8544736b6e1735bc7de3108597ec2f",
+    "src/bhsm/interface/muon_profile_preserving_phase_sample.py": "27ce99bf8c286b0e3fe56dc4d7f0f215dee51b228dcce1805006e1b2c8998418",
+    "src/bhsm/interface/muon_trace_enriched_charged_current_response.py": "c78da2c9edeb82bed0214dd35b313ba8e0133be54a17c1dc70a53ca14f0bc72c",
+    "src/bhsm/interface/muon_unsquared_forced_boundary_attachment.py": "2fc4ea06e6cb2c3e21f19676276194e10e860a28d5b75cc6f03e82a78743faee",
+    "src/bhsm/interface/neutrino_action/__init__.py": "420213e3838f83a42a9fe4662830ef86afb7f1f2521b5d2ac64c30d661f8b0c9",
+    "src/bhsm/interface/neutrino_action/action_closure_report.py": "c35ec6ae9a3513c5c10f90a6a5dba577f75e90b2656963fb15e4f8d5d9be25d6",
+    "src/bhsm/interface/neutrino_action/action_source_search.py": "879304c8c189276619dd8caed7f81f0b3ddf95f5d94eba2c49ea33c6ed56e43e",
+    "src/bhsm/interface/neutrino_action/common.py": "a2eed4ade6153bd8864777553e37d8c4061fcc847ed659677fee0790963a758c",
+    "src/bhsm/interface/neutrino_action/curvature_unit_map.py": "5990bc42f9f40458e22d6e330f092e999ab45eaf984dc59d9f71c7bce5bf22b0",
+    "src/bhsm/interface/neutrino_action/neutral_action_terms.py": "ec8a67e04b25588a8a5d7405016e67c73db2e3a9130a1d728c19747049bcef48",
+    "src/bhsm/interface/neutrino_action/response_cone_derivation.py": "576caaede57de35800d6e03a4b8880bd68e301e8f87bf6070b23cf35f55e4ace",
+    "src/bhsm/interface/neutrino_action/stiffness_extraction.py": "11f78a71ec64e6250ed0c35447891904e6711eb697e404a1f40fd3fd8b69a908",
+    "src/bhsm/interface/neutrino_closure_status.py": "5a698680c69625914eabd0cc80cb56d78fc441720291e9eb3caf156f1e7c17e8",
+    "src/bhsm/interface/neutrino_propagation/__init__.py": "a22f1301ad00f6b53cd53f3e0f0e0ebb34759e04022a07eb242bda2c25f0dd28",
+    "src/bhsm/interface/neutrino_propagation/closure_report.py": "8acf64a7902aefa2d1cb309c4e944ecfb92569eb293ff8602c28755fec938bd9",
+    "src/bhsm/interface/neutrino_propagation/common.py": "792b1cb9fb03eccd384287258caf854fe8f513f976bf17ab36e364cff8f57d4c",
+    "src/bhsm/interface/neutrino_propagation/curvature_threshold.py": "aa577d76ff29ebaabf8e71f0a9e4781d733bdf22469ec946a2c2fa216a2a3458",
+    "src/bhsm/interface/neutrino_propagation/effective_mass.py": "c11c29d7a8238a9da8972daa19b61574fdac51ce63ec2aad0204451379802c67",
+    "src/bhsm/interface/neutrino_propagation/neutral_kernel.py": "d30f3e041af93ea395ef7e977894395fe8447a4558001115c75007d03064f4d4",
+    "src/bhsm/interface/neutrino_propagation/numerical_closure.py": "ed617fc71507269c14194db71368ef352c73d16ab09741c3d35915a9ac9f771a",
+    "src/bhsm/interface/neutrino_propagation/observable_map.py": "412383acbd922fc1736dd7804016a943c4c9f1034e1aa1bd15e370c3312a259c",
+    "src/bhsm/interface/neutrino_propagation/propagation_state.py": "ef8ca6d77288b962b364399ec3078778827ade15f0bec98a541f369c810e595b",
+    "src/bhsm/interface/neutrino_propagation/validation_policy.py": "58d7a3f804d5c300a5b70099916c7d864868f662f58ecded68055dba2908a740",
+    "src/bhsm/interface/neutrino_scale/__init__.py": "c0cbe3196a900ce01c553d8f9fa878f546988e8d56dad855f4307f87ad8e04fc",
+    "src/bhsm/interface/neutrino_scale/artifact_search.py": "ee98ecec3993615061a7503e733b32ce8511fa51885dd7ca2d5e9fbde59cc170",
+    "src/bhsm/interface/neutrino_scale/boundary_measure.py": "5ffbae5e86cac8315435ba3aad4550afe32345037df840b0afcf225ccdf43420",
+    "src/bhsm/interface/neutrino_scale/boundary_stiffness.py": "401a48f8db9985ca6f7ca4cf7d781e05858b2d97ed57f7d0963ccce1c7a55e14",
+    "src/bhsm/interface/neutrino_scale/common.py": "8ab57a2a56ade33b6d0cd527702fe45ab7cf103be04f1ddb642b0eadce9716ec",
+    "src/bhsm/interface/neutrino_scale/curvature_mass_functional.py": "7a8af7dd5e5c7dcb8ef4c7c9069098c3ffbd6be230e74ff55d8ff5511ef1727e",
+    "src/bhsm/interface/neutrino_scale/legacy_artifact_parser.py": "42c912dc4ad1fc95de013aaebdf8917f24c834945428c90e9662a62f41b1e3de",
+    "src/bhsm/interface/neutrino_scale/legacy_curvature_threshold.py": "be511c3f868f2118edd72b4ca7714b23d0d390b6c366da6fbd10eb2e6d361f8d",
+    "src/bhsm/interface/neutrino_scale/legacy_neutral_scale_candidate.py": "ae279395b04f1e088d6f7c463f75066ad8b415b6d784b820d25017db91ee02a0",
+    "src/bhsm/interface/neutrino_scale/legacy_scale_report.py": "6c49b06ca1b82ab7e9484eb61629c470d54bf37107cccce69416c1458f704ad3",
+    "src/bhsm/interface/neutrino_scale/neutral_curvature_mapping.py": "0904d914467a44471c16b3a0f074f96f9a355ddae22d0693c23fa22d2b20ee14",
+    "src/bhsm/interface/neutrino_scale/neutral_mass_candidate.py": "93fff4d68a09c3eb44d8bfcf100286fdb5d19cde1dfe7eaa6a42db216fec416e",
+    "src/bhsm/interface/neutrino_scale/neutral_physical_curvature.py": "2efcd29a875cfed05266b948d6523cd477b1e9c0bec430d5417667d27519e8b3",
+    "src/bhsm/interface/neutrino_scale/neutral_radius_curvature_report.py": "4f20eea9b93044b19603e492e7f5157cfbfd41fb757dd17cf776687fcc57b641",
+    "src/bhsm/interface/neutrino_scale/neutral_scale_candidates.py": "ae24f2927e7da1c0e8b64c806d1bcb2981d9fa203125f893fc1fa829875bd8e2",
+    "src/bhsm/interface/neutrino_scale/propagation_radius.py": "b5732be46136cdd57b908c9967f8287502b80db5ba69eb5ff0527ff760dc57db",
+    "src/bhsm/interface/neutrino_scale/propagation_radius_search.py": "14f319ffd7dabcf9b947ca2b2a9df37b56d16f82ddbdece12861b30a1ce5ffdc",
+    "src/bhsm/interface/neutrino_scale/radius_curvature_common.py": "5a6efd132699eab41c901126ba47549c18cf48fcb54edb8eb7b22b7c1eba1854",
+    "src/bhsm/interface/neutrino_scale/scale_report.py": "a6e589467e6714d97e49a67d4db0a24600e29b96628a8c3bcb51afc1df4cef93",
+    "src/bhsm/interface/neutrino_scale/threshold_energy_map.py": "5e0d59fac5cf569ffba83f5a2b5d8423fc5d968eb8f6a3b3719d2db52810ed53",
+    "src/bhsm/interface/neutrino_scale/transport_normalization.py": "4763490ed4d4cec317315a1b8609f451ccf73d8962f9bd2298cc7f438a112759",
+    "src/bhsm/interface/neutrino_scale/unit_map.py": "65b44c5e7e0d8e837e61d9c382369e0fbbf12a3c965fd28599f45bb1293a6c6c",
+    "src/bhsm/interface/neutrino_spectral/__init__.py": "bd365e251d56bee58de308b193a31bf41cb18091b7d78390e30b706ed683541f",
+    "src/bhsm/interface/neutrino_spectral/admissible_domain.py": "0e9b78238a5c122a60613d9d8173d29fe1772408fe8ed8c3306640af587044d2",
+    "src/bhsm/interface/neutrino_spectral/common.py": "580434529092b015b0f3e1316ca3fc2c916763f383b68f41ce18c1d96a21fb6b",
+    "src/bhsm/interface/neutrino_spectral/legacy_dimensional_gate.py": "5879ee165b397ba5d3c2557d4ec9dfac384e2c882a8e91f3602425df8de1e1a4",
+    "src/bhsm/interface/neutrino_spectral/mass_gap_action.py": "bf478bbad5c3a59f1adeb94242c7d8a5b696a91e1e77dc513bc0e043353a5636",
+    "src/bhsm/interface/neutrino_spectral/neutral_kernel_positivity.py": "d231e6e85cf3e931d32371da2456a02348d7bf5631dc1e6f7248f60ebdd18ac9",
+    "src/bhsm/interface/neutrino_spectral/neutral_quadratic_form.py": "273fbf3bdc4dfbc8f69a2745d0849aff421156cac69a8ac58dd699164ce9795c",
+    "src/bhsm/interface/neutrino_spectral/neutral_spectral_gap.py": "358facef25f83894fae2f420830d42e91af362ee8f0d59a22d0bbe80e6deb7ab",
+    "src/bhsm/interface/neutrino_spectral/positivity_counterexample.py": "1b5e3544fafa50b89691bf7cc45be6fbc8a820129fff5eb53dcdf7de26604e32",
+    "src/bhsm/interface/neutrino_spectral/positivity_proof.py": "4e8a29d93d1c4110f8ffec5d7fd5a66525c0e6e5c95998882e5df100fa13cc95",
+    "src/bhsm/interface/neutrino_spectral/positivity_report.py": "6a57e261db43874ba307a98811d654e20e62bc3dc618a43ab01ccf000ac5456f",
+    "src/bhsm/interface/neutrino_spectral/projected_kernel.py": "e1abf25719b89bd5946f9a082dc3efd2d301d208401c89ccc2664382e9a63b1a",
+    "src/bhsm/interface/neutrino_spectral/spectral_report.py": "5a38de6ff4f2559efb68c6bfd1b7afa71a4aea47b694e4867a549e3b8f684356",
+    "src/bhsm/interface/neutrino_spectral/stiffness_ratio.py": "1e8ade154906b52ab958d85a6a8914f27d79596f2e457f3070ea1ce7b5c11f6d",
+    "src/bhsm/interface/notebook_pack.py": "c4deb988abe0720bfd591cdf2edd48c3d1d39e3014f8c3805067616b5975ff5b",
+    "src/bhsm/interface/particle_chirality_anomaly_normalization.py": "1ef8f932d6dc7d0e0cdfe10a88157ec02d8d1f11fb05f68706ecb29fe928967f",
+    "src/bhsm/interface/pdg_interface.py": "b88ed81e4a4ffaab98a552cc85ce7b590aeabdd33a6b5686246967bbd644de1d",
+    "src/bhsm/interface/predictions.py": "ea0539bef06184c619dd028eafafb76ea15e92a444483ff93637593f0eaa1fed",
+    "src/bhsm/interface/provenance.py": "9ef213c0fb59a2d3e40b468ac42b9e9f35391a824d61292d6c0a0b52627a478a",
+    "src/bhsm/interface/report.py": "16f3ef6f26080f65e0c3b2e8c19b062a75d09157713c80ed5be6a791f34c5f4c",
+    "src/bhsm/interface/scalar_wall_backreacted_bifurcation.py": "ae8c3052e20692e7ea33c04d3ac5ed48afe295f38cb31f19b0cc6b9e5d5891b5",
+    "src/bhsm/interface/scalar_wall_puiseux_fold.py": "f8e1fdd2854d26be3979a9517af85646527ba1097d8547e8775f6487eeec5ddd",
+    "src/bhsm/interface/solver.py": "070609100a7f9f81422ab992624301be57d3d3f1b13212f48788e10936f4bfb4",
+    "src/bhsm/interface/speculative.py": "223e540cf1ad24e32913581d8fb286df34c121010c71e3bccf48cd5458d8091c",
+    "src/bhsm/interface/theorem_blockers.py": "a322910c7dfe87e41ca9611003619e3a3a0be2dcac2c34c3dcb79af9b5670a7e",
+    "src/bhsm/interface/theorem_closure/__init__.py": "2cb9cc80460e3189727e56b27cec497d97b1f0114b9a80ebba356f3a90ae857b",
+    "src/bhsm/interface/theorem_closure/closure_report.py": "6047c50c919e6ba0c332f3e18d9b9edd13bc9e0c1e44e36c4016c5faa607e660",
+    "src/bhsm/interface/theorem_closure/common.py": "f4ae599640c1e25e9d3eac87724bce7ad914d0b666a28e196e067b01a30b57aa",
+    "src/bhsm/interface/theorem_closure/cp_o_int.py": "7746425bf850a65ae55e42d2a9537543ad03a91f874d3f1a7319a8bda4fbcaf2",
+    "src/bhsm/interface/theorem_closure/cp_o_int_action.py": "159decd853d193d34f5365f94313185479dfebaef35134113eda3cb96e9a05f9",
+    "src/bhsm/interface/theorem_closure/cp_o_int_action_candidate.py": "e12a2fef8744b63967eb205d863a3ad3c3fd35ca23f417c9101ce21d5cbd5f2e",
+    "src/bhsm/interface/theorem_closure/cp_o_int_admissibility.py": "15f9a969d6cbe3cde136c41ebcd294f206434e20dc8048ce92dd065e1e0ec267",
+    "src/bhsm/interface/theorem_closure/cp_o_int_attachment.py": "87bcfd06ea1db2fba5f24908ea6e6003f90135419edfd27cba9713d1e51cebe0",
+    "src/bhsm/interface/theorem_closure/cp_o_int_callable.py": "0edc4e002cc647be6f0e96ff95a227ac3d420debedf475811485e58963ce391f",
+    "src/bhsm/interface/theorem_closure/cp_o_int_coupling.py": "d2257b4e85fcd4e333ed7ed135d1b1c1e36188a87c260cfa6f56ea613e95264e",
+    "src/bhsm/interface/theorem_closure/cp_o_int_field_action.py": "50b947f54de093b125df55710d76aff71036cf24f666ce0483a707f075975461",
+    "src/bhsm/interface/theorem_closure/cp_o_int_gauge.py": "4c7d1bdfffefc403bfafbd938c72c5236eb9c0ecf3b9a3782931b6d0676c7ed4",
+    "src/bhsm/interface/theorem_closure/cp_o_int_lorentz.py": "80831480b6ba0fbd3352f44f4251d2d7719703e9b900180c731368b990d07de9",
+    "src/bhsm/interface/theorem_closure/cp_o_int_operator.py": "58f1a7193abfee7edb6be6619a63e414b0634a7ad09b469991737a5002efe964",
+    "src/bhsm/interface/theorem_closure/cp_o_int_report.py": "ef08fe95577a680a79b0ba1d2eb8c210d4b417448eb38621c6b487fec79ca5e7",
+    "src/bhsm/interface/theorem_closure/cp_o_int_sprint_c_report.py": "43e85858aee39e3f5cda019160f0898687382d8129f582368b49cee7a2743685",
+    "src/bhsm/interface/theorem_closure/neutrino_basis_scale.py": "821432458e612d30ff39a278a263f37854f18feb358bb5a02b37f0ab6518f695",
+    "src/bhsm/interface/theorem_closure/proof_gates.py": "9267c79df36753730ae1f10522eb93f98715db7dd46e454b09d40f2a5e2d6783",
+    "src/bhsm/interface/theorem_closure/registry_update.py": "a64297b27ecf0f5fbfad1d943b3f17de2743eb7156d1d82499dc9b0a8de40413",
+    "src/bhsm/interface/theorem_closure/x_ch.py": "e39defa47ec4dd69319d50c11c77f1940b9d20b2f13702e6ff78ed9106f463db",
+    "src/bhsm/interface/triality_generation_scale_architecture.py": "cf0e940de4e1c792a2dee8aef807783036004d207d771e4d834f588fa6838101",
+    "src/bhsm/interface/units.py": "e925590ce36a6fffa05164083083bcd578f580a3c8b5a7a63e1bcf3ec3bc6715",
+    "src/bhsm/interface/validation.py": "f5cb86a4ca982155e743401847ff2716ef599137fe3008abe7274aed7d402b49"
+  },
+  "input_and_source_sha256": {
+    "artifacts/muon_real_coupled_open_operator_20261016/normal_chart_failure_run_1/actual_real_coefficients_and_normal_squares.npz": "3237d90c3cba1234a115ed3b47eb7fb67ff7c56b5d14b266e6cd23728062f6ca",
+    "artifacts/muon_real_coupled_open_operator_20261016/normal_chart_failure_run_1/result.json": "7c3c1ac4e98d48b65adc842439675b2c0c6c163afaa4334e588b03504e943514",
+    "audits/bhsm_real_full_d5_source_first_application_20261016.py": "c96814490c43faa21b35a4b2f14926d48929fa60cc6f2af774a148225dd65aa9",
+    "src/bhsm/interface/__init__.py": "1c45484d2d5345e3f53559f7207d710205cbf960b29f23ab4c75eefba7f758a1",
+    "src/bhsm/interface/action_extension_global_spin_reset_ae2.py": "cc46df6372196e610ebfe0921cbb7f438f08d645f5b144faebdf1c6d2a991ccb",
+    "src/bhsm/interface/ae31_c2_intrinsic_m4_lepton_action.py": "f3fee1ef24a3f13ef94d4ce5b146f9ac7a827045e369819b35ee8af5ccf0678a",
+    "src/bhsm/interface/ae3_c2_hopf_semigroup_transport.py": "78a55f79e63881724497d6bb61b769e3100fa411330e6ce87c32522082817937",
+    "src/bhsm/interface/ae3_c2_photon_symbol_audit.py": "51322c9319bb2247d2f223a5e3870de437b80e77db48a422b0bd28776e80cae4",
+    "src/bhsm/interface/ae3_family_harmonic_energy_pullback.py": "a377d8f38fe217adaaa4dbc526bbc3e6ceac6556091770a0347a21762f0364d6",
+    "src/bhsm/interface/aether_backward_closure_existing_answer_audit_v15_8.py": "945cdacb9b66f9263be0b1414ac8e39383f3378edf77414e90e8f667ffb2e7c7",
+    "src/bhsm/interface/aether_canonical_momentum_action_jacobian.py": "d0ade20dc8a999e43073b45ca3ef59e05c65c55e37a1d6565d4e389176295cb1",
+    "src/bhsm/interface/aether_common_source_frechet_response_v15_99.py": "77270564530e129b9160cdf5a3303b907194691b5fa0975c60f4c3dd850c7cb8",
+    "src/bhsm/interface/aether_constraint_consistent_sobolev_lift_v15_84.py": "e3724e9bfb51e28eeb8f3776d03f2246ecdb9f244d74ed8923cd980495c1bc02",
+    "src/bhsm/interface/aether_cross_resolution_reconnaissance_v21_35.py": "7b284ba9a777cc8cdeb375cb9b6df1d9f697ff416fc11f79c1fc07e109d414ed",
+    "src/bhsm/interface/aether_cycle_sigma_coefficient_reconstruction_v15_10.py": "5827aea91ba460f6c7c31ba88c47103b59f868507aaccdfa73ce8e6883e9e0a2",
+    "src/bhsm/interface/aether_cycle_spread_concentration_v15_9.py": "afc847aa47d834cf765b3e74acadf838d8c6e20e75b5702ce6447483d9152557",
+    "src/bhsm/interface/aether_dense_proper_joint_pushforward_v15_97.py": "a402c6850d872d35949802124f7d26bd2abc5ad7cc9497399044b89cac635a85",
+    "src/bhsm/interface/aether_diagonal_sp1_m4_attachment_v15_50.py": "e6482614dcb54f4890a5e66fbe724d4c302405d575a4b73ddbb64a075cb1827e",
+    "src/bhsm/interface/aether_event_algebra_state_v15_4.py": "73e7bcf49494bc49b1d2a03b93de47f12ac251798835958a5ee58b61cae4d7c1",
+    "src/bhsm/interface/aether_exact_radial_schur_lift_v15_83.py": "465c43ab417f70ee8bfe03f2e33365d21e81774a20ac98cd551fac94fac52581",
+    "src/bhsm/interface/aether_full_reset_action_jacobian.py": "243e9348e52f0f54a236ffbd448a309dcb4feec9bf4b45adbeea42763e2e745c",
+    "src/bhsm/interface/aether_high_precision_velocity_jet.py": "ac92c7b5a11cb0eb733aebe7e62b67a83c066973a7b88fb4c6bb94e4279264f2",
+    "src/bhsm/interface/aether_hybrid_flavor_spectrum_v15_54.py": "46924f972787579876771f96f58b611dd4d0cf0bbd401a076a60c02ceefadde6",
+    "src/bhsm/interface/aether_hybrid_standard_model_bundle_v15_53.py": "a983350de429125b2e2b4271c35b8abd14e984381c61b3596121ee946e6bc23a",
+    "src/bhsm/interface/aether_invariant_sobolev_schur_pushforward_v15_82.py": "3c85578eca77b0af9adc5d17d9763e0367526308c5457063c5da65ffba84ea55",
+    "src/bhsm/interface/aether_m4_standard_model_zeta_backreaction_v15_51.py": "ff8bd13db6b78dd052d53bce5f358627695ea46cfa235b5cacef9edc1b6b96ea",
+    "src/bhsm/interface/aether_master_closure_v15_5.py": "d66d474a32566771f6b1dd2e424f728cebaf9e4082ba7e0edc45dccad1329093",
+    "src/bhsm/interface/aether_n3_analytic_kkt_covector_v16_12.py": "a0ce5d68552a6c0e98962161ca52996963a07146c82105d48547419c12f766dc",
+    "src/bhsm/interface/aether_n3_constraint_solved_orbit_v16_08.py": "0d72335ed9a27d6cab13380b96bdbab4d9de2b6707bc8421427f31ad9f50f863",
+    "src/bhsm/interface/aether_n3_exact_full_local_action_jet_v17_60.py": "25ec0f9268faaa9989a8cce7a7f6f8172244cca45f9ba054cb3273a25f81fc1b",
+    "src/bhsm/interface/aether_n3_exact_local_jet_sbp_covector_v17_61.py": "c932346da800f710da69e6089eb4637032d45e2cd5dd7b10a0cfa0a0487696c7",
+    "src/bhsm/interface/aether_n3_fresh_sbp_asymmetric_period_v0_priority_v17_42.py": "303512e27d61bf91154b46dfd2a9d61ce93afed0bc553b098b0498d4717b0d3f",
+    "src/bhsm/interface/aether_n3_fresh_sbp_coupled_owner_cone_v16_94.py": "5baf4ce5849fbcd37f687afb9d1b996661c356a8e0829671a0c316c58471cee5",
+    "src/bhsm/interface/aether_n3_fresh_sbp_expanded_measured_tangent_v17_07.py": "4e66fdf80f6a982546287a11431fc5cb0b1123d8f4417cd93bc90ddefac0238b",
+    "src/bhsm/interface/aether_n3_fresh_sbp_first_descent_v16_59.py": "d4b71b041969aa2e964d29ba665c83a1f97034187a53926b757afe160551a2c5",
+    "src/bhsm/interface/aether_n3_fresh_sbp_kkt_v16_58.py": "4efcedb793293d92615dae0d7e38cfbdf970e6a65903b352c9ef075c526bd77e",
+    "src/bhsm/interface/aether_n3_fresh_sbp_owner_balanced_metric_v16_93.py": "8f770a6ce35d03d7660821234fbaea269f7bc86a0f6722d21f48ad8d89da2470",
+    "src/bhsm/interface/aether_n3_fresh_sbp_pareto_balanced_selection_v16_89.py": "f706019a00713c7158d9eeeafabd554ca5e99ee8a4f74d9007ca1216499debd2",
+    "src/bhsm/interface/aether_n3_fresh_sbp_period_priority_family_v17_25.py": "d99fb3dbc977a2967abeb12fec621cc04fe75976b18eea3f53d2c8557dc9fcbb",
+    "src/bhsm/interface/aether_n3_fresh_sbp_post_measured_audit_v17_04.py": "68b759ad04c9d3b154a1eb68992536bd088bcd70d30a6706cfb95cbe1cb7d5f3",
+    "src/bhsm/interface/aether_n3_fresh_sbp_post_pareto_audit_v16_92.py": "86310738912c8b51426bc03b49de770976133330d13e18ad1fb81722b43b18c8",
+    "src/bhsm/interface/aether_n3_fresh_sbp_post_priority_audit_v17_24.py": "9fabcaaf8f67cbe7f03864ee7d41ce72ec326db6cf604d822f624cab62f36142",
+    "src/bhsm/interface/aether_n3_fresh_sbp_second_six_owner_measured_cone_v17_06.py": "1198279c97aa4fa04991a90bc93632cce8cdc41894f1bf1a69bab94d16e8f60d",
+    "src/bhsm/interface/aether_n3_fresh_sbp_six_owner_measured_cone_v17_05.py": "adeb09fdf7745f104d890fa457f35d4c1985b97fb7778a48b03e3e688001ddaa",
+    "src/bhsm/interface/aether_n3_fresh_sbp_third_v0_priority_v17_31.py": "2215474de2fd582a470f5e92577708332d4b5252456c1c1e9574e61151f336c9",
+    "src/bhsm/interface/aether_n3_high_accuracy_action_covector_v17_57.py": "08d0aff3659508890c2e895f0848eee77c8c20be4a6e318d993bf11b953903be",
+    "src/bhsm/interface/aether_n3_kkt_newton_step_v16_13.py": "536bb1db7f9ab969f9645ac4f795f57b19030dcabdcfb7db5f250895c1a9c98b",
+    "src/bhsm/interface/aether_n3_parallel_physical_jacobian_v17_32.py": "645bb9a12469eab8c5fb713df9a77711a64670c2bb6311187906bbd962ce0160",
+    "src/bhsm/interface/aether_n3_period_log_direction_bracket_v17_70.py": "7ca30d9a178e52974ca0da389fad5ecf2fbe48e8a235a35d750ecb522d3318b4",
+    "src/bhsm/interface/aether_n3_post_curvature_compensation_audit_v17_54.py": "a3cb2763322bedeb3752883ad775b1041ddbeea209e54810780e1ac9a26a62b3",
+    "src/bhsm/interface/aether_n3_post_scale_manifold_audit_v17_64.py": "13e1838fbad8c26bd4ef8c1991574efbd2ec2e056c724622d7894a509d189926",
+    "src/bhsm/interface/aether_n3_refined_scale_v0_period_manifold_v17_69.py": "58f859402ebe23f9d4aad6cd40c29fe7ca61b1b83f586ce717c03bcfb06525be",
+    "src/bhsm/interface/aether_n3_replacement_global_kkt_v16_11.py": "1016a0da159edcfaf70968be505c6fe98fe5a78ca279dea32b311d653e0829e9",
+    "src/bhsm/interface/aether_n3_sbp_redirect_audit_v16_57.py": "cd402c25d06d829ef5b8071f6b88954502693b40c35a6c5ce38f1195e1dd873c",
+    "src/bhsm/interface/aether_n3_scale_corrected_period_log_continuation_v17_76.py": "3a31a7672cc5f822f94620e3aac96fb8519bb3efec93a65d986d2367cb178219",
+    "src/bhsm/interface/aether_n3_soft_event_constrained_v17_51.py": "92c871167cd6445961f8df01761cc87b1626d65072857b42a9220bf71710f350",
+    "src/bhsm/interface/aether_nonlinear_norman_cycle_bvp_v15_7.py": "9d3b6edda91f8b118df1466d9c443be29092d9a4b64c5d950c81b044aeaf8a4e",
+    "src/bhsm/interface/aether_one_cycle_joint_residues_v15_86.py": "46001d0b95866999f26b832a59062849de9f3eee5bb40f790fe22e99599bc955",
+    "src/bhsm/interface/aether_physical_inverse_closure_v16_36.py": "4c3177d2aaaafe66fcb60855deccaa921d680f6ab4e3749bd0cbb079c13c4157",
+    "src/bhsm/interface/aether_post_cut_child_cap_reconstruction_v15_46.py": "a4da55f2a36c4300bfa578c5b50ac22268e4f4210117f0f36c0e80ddc1b30dde",
+    "src/bhsm/interface/aether_post_cut_dirac_constraint_reduction_v15_49.py": "5fda23fa0f6397358bc4357412c247ef29399a138436ef15288dad72f381ded8",
+    "src/bhsm/interface/aether_post_cut_nonround_lorentzian_cap_v15_48.py": "e9d3e3fe48a6c84963d6b83551112cd76e3db18c2f08c7691696d23261f2a917",
+    "src/bhsm/interface/aether_rank16_u1_hs_vertex_matrices_v16_01.py": "4577e62845b336e17268be75dc72608cb312de9847c22168ec56b3ca701d710e",
+    "src/bhsm/interface/aether_replacement_geometry_force_v16_06.py": "a1102d7b0f5a4c4c4ff188b86abdf463bc55538c3e7feaa6597f042fea437ad3",
+    "src/bhsm/interface/aether_response_constrained_child_galerkin_v15_41.py": "2f8bd678f316f27290a10150eb356cc3a8438e767a285b72491dd4e0fc871494",
+    "src/bhsm/interface/aether_sampled_event_shell_pushforward_v15_74.py": "7aedb2a6aff7847544224d9f3ece770dfa24a2ea05a227b02dcf7e952b2b4253",
+    "src/bhsm/interface/aether_sobolev_galerkin_pencil_lift_v15_81.py": "66e8e41674839203f86e228a960fc09f7a577891c6234f58ca7efc6c9040c9ec",
+    "src/bhsm/interface/aether_sobolev_metric_soft_mode_lift_v16_07.py": "cc6a347fee19035e682dc836dd330a88b9d8b807df3b996b4e3d33a34dec7cce",
+    "src/bhsm/interface/aether_unified_heat_pushforward_gap_v15_70.py": "3c0ce2704c385d5a9a240d9938c6c2f64a328d891e2b1e669a80592bc5232a9b",
+    "src/bhsm/interface/artifact_adapters.py": "8950efa316285da23a64446598a09431a2930623e0ee250a905dcf60576b4ad8",
+    "src/bhsm/interface/artifact_report.py": "6a9643445bb0fe3c3d7aa58880b79c9e3714babf69522d76e5c5c6ec2bf8582e",
+    "src/bhsm/interface/artifact_sources.py": "9b7ffe5a9864732ea644d4ac5ecf5588340bb254bc8c8936b9058fa71a354520",
+    "src/bhsm/interface/bhsm_standard_model_gauge_vertices.py": "f652d1ec576ab138e58cdeb3a0cecc5da84b4e9cb7f6d8464c7ad24e3bb7c5bf",
+    "src/bhsm/interface/boundary_adapters.py": "6e69c8a7fb766533ea34aa79efa55703f7bccbe70b84d65b5ecff84314e5bc58",
+    "src/bhsm/interface/charged_closure/__init__.py": "9f4d01e56f25aae0d5e33b2fe638e91690790a769a97159e1ea7ec7da497fad9",
+    "src/bhsm/interface/charged_closure/action_stiffness.py": "684f77df29aefc283a1a4dc80d57d292ce00fcfe7d4cd427525a34aa8be1b51c",
+    "src/bhsm/interface/charged_closure/ckm_exponent_source.py": "8e787e5181b7e78f29c089f688a2b3b6bca35f7b311588822df6cff2b5a3bd54",
+    "src/bhsm/interface/charged_closure/closure_report.py": "53923d40f6d62b961b9c7a4084d7b873d14436dc03500c080ea772e69f79a2fc",
+    "src/bhsm/interface/charged_closure/common.py": "345a08069b2d41a6b2c013272d976153461a350f30c5bba119c94859aeb99187",
+    "src/bhsm/interface/charged_closure/dimensional_audit.py": "c74d9f05992d55e670a51f641c2f8b2ecdc5c9a858e3f2e9be3ba34a1054076c",
+    "src/bhsm/interface/charged_closure/eta_l_source.py": "9f6e86caf5577ebbe4864c96609d07d9f67250ac5bece0e11adc794ecbd8d7ae",
+    "src/bhsm/interface/charged_closure/mixing_law_source.py": "4251678bae83af4ca1eaefde5faf30f52b07cc996e8fee3113f02feeefdc22be",
+    "src/bhsm/interface/charged_closure/source_search.py": "4fb78633f57d7e346ff0c58809d049eea694942a4c81c4d043b0ed4bb63e81bb",
+    "src/bhsm/interface/common_16/__init__.py": "21c8fe1df1f5be6145e2e5c022e3a79ee76b8a4bbd8260c2fca72207cb94d30e",
+    "src/bhsm/interface/common_16/bridge_beta_audit.py": "d3df18d2d40531ffbc9de10b9345f7d69d5dd83152ce3560d4141dae4a95e524",
+    "src/bhsm/interface/common_16/ckm_transport_audit.py": "d10575977e2edf1c06dc8889836db54b1acbbf1b82cf893e1f7737f0e7e301b7",
+    "src/bhsm/interface/common_16/closure_report.py": "c4c30d8a361d8424a6cb453db357164dddaf26a916030ec57572e7e52f248b1f",
+    "src/bhsm/interface/common_16/common.py": "f8e0f35e38c6305f9502ee216b243448de703df3e0ce89627d799beb37de130c",
+    "src/bhsm/interface/common_16/incidence_audit.py": "7f4bd72199a78a478ab342697c710d6263363bf3ae94ff5a0cf2fdfb25507f94",
+    "src/bhsm/interface/common_16/provenance_audit.py": "09d17e0099541ba0a0645ab0dc4c382cab61f2a36922046c178c3291e9dcaf40",
+    "src/bhsm/interface/common_16/source_search.py": "d74c9a60251dee76b8eda61555b5bb8b24252989b9f6cd171b2b5ecb9b75e5eb",
+    "src/bhsm/interface/completion/__init__.py": "4a5993bcf487d5d9ce15053c752ad211703acdd55c34a28d2b89ed904c0e8aac",
+    "src/bhsm/interface/completion/exact_berger_dirac_cap_obstruction_v14_59.py": "78c0c0824294b0375d605fac811d8d97a62061eafa00148467e82dc8c6203c04",
+    "src/bhsm/interface/completion/foundational_dirac_spin_glue_v14_45.py": "ad05ede643af517ded29823b6f5d3076ae64bc2e985ebf500ba48564ad8c8015",
+    "src/bhsm/interface/constants.py": "cc41161a2fadfbedde9dfb155045f3fb083249137a22c7ba57f8f68357b5999f",
+    "src/bhsm/interface/covariant_bubble_interface_mechanics.py": "6ef60e88da66e131874312cf43c90590c530b3b94da65a57f2a9cc958cf2b98d",
+    "src/bhsm/interface/current_program_status.py": "1d25e801c4ce76391e82b3dede22a56402de7c6f8958410f5a85ed5171ea81ee",
+    "src/bhsm/interface/formula_registry.py": "536abd7727009d5b97c31b048f7bae0a87ea0a404bf3832b89fa025fa8f61b78",
+    "src/bhsm/interface/full_completion/__init__.py": "1808cd9b88d167c3a9906a97696916ac5995de5c76c8641e130357058e7c7a9d",
+    "src/bhsm/interface/full_completion/boundary_measure_closure.py": "d5b4193c48ad2e9b6c30ba4997555797822a406a72dd0e27b047cd68b4bcfd04",
+    "src/bhsm/interface/full_completion/common.py": "8fa412cf03d3749e963ebfa118519bb4c45408f683d32cd8a64d1c55a51d7cd3",
+    "src/bhsm/interface/full_completion/ledger.py": "8f7d3fb91585fc04a72ab03aa25d801a60f85514b2d3e904082cfe710b899397",
+    "src/bhsm/interface/full_completion/priority.py": "bb8c48452b152aae45ad37f70db1c764a22c7dd03d8779e3efecdad6ac7f7c9b",
+    "src/bhsm/interface/full_completion/report.py": "b6d890f11319f4ce43a05c0f73710ced11410448787e08699c0986b058b4bfb8",
+    "src/bhsm/interface/gallery.py": "2edfc43bb48142e070837c8ec01fcdf22ff7a2f64cbe3cc28724cbadc64c4d17",
+    "src/bhsm/interface/geometry.py": "67d932a8a477b619dd7d83d80580db4a1c316c7e54336047dd056f8409d076e3",
+    "src/bhsm/interface/live_pdg.py": "bb45a33500edac061e5a5ee118bb7fed5c1536daf9d6ec42bc6b8a7d62849b8a",
+    "src/bhsm/interface/mass_ratio_adapters.py": "d99da500cb46b5823a69475bef3aa91af80820cdce5d8f721660bf34be2e0d87",
+    "src/bhsm/interface/master_action/__init__.py": "a6d9d7f1ec6bfcd319029c091eeb7b37bafb5dc425380a187fef65b20ac5f804",
+    "src/bhsm/interface/master_action/coefficients.py": "c1e0a357e0943b33659c9ec8e117563eb38f51c41735f5943943fa032d3faf88",
+    "src/bhsm/interface/master_action/common.py": "cfb8b121835de2586a65b663caa37630e9b1236768e2f315cad53f7e0264241f",
+    "src/bhsm/interface/master_action/fields.py": "d8363c18c38cca546b8a3787fbad29915e53d4ae8067438d5f1a52ba6edb3d3b",
+    "src/bhsm/interface/master_action/hessians.py": "b460c467521feb999de844bb0a490de7edb6f6856b56999353eebafffa65cb20",
+    "src/bhsm/interface/master_action/measures.py": "b933aae4c78023291ed973c114adc27773ea5ddd5cbc89f429215c6f75b1a24b",
+    "src/bhsm/interface/master_action/reduction.py": "12e446647111398cf25adc7117426837397589ddc57f44b12755444d44a2f544",
+    "src/bhsm/interface/master_action/reductions.py": "8e7924afe8c84e2b38fdfe7a978ca1072fa4f23e84a8eaf61dbe3bae11ac02e3",
+    "src/bhsm/interface/master_action/report.py": "fc86fc6fd483bf8a8029116fcdd2dc4da53f5e435da6b0d449376f52cd316d04",
+    "src/bhsm/interface/master_action/symmetries.py": "b2cc404c081b747cb26e5ff40c4acc169c1d6aee314900bf7bb3b5224b6ce0cc",
+    "src/bhsm/interface/master_action/terms.py": "1641f950a7177b31be85a065748c7d7831071c175dd3beef0c70497a780be378",
+    "src/bhsm/interface/master_action/topographic_profile_component_selection.py": "93468aceba61e110fc0d23e0a42407ca813d95b638a8825c172aef7b36369586",
+    "src/bhsm/interface/master_action/validation.py": "ccc7dc6fe27fb959486855963ed6c557bda2d65f65ba17416d1f3b3bd12cbebb",
+    "src/bhsm/interface/master_action/variations.py": "61e02ae34256917540faf73123be6ed011adae8d26f750645412a3749dc11d32",
+    "src/bhsm/interface/matrix_adapters.py": "8b5d00cbfc48cd2eec0748c4a36775b52ae087ae7b5c071ca77c6338254a720f",
+    "src/bhsm/interface/minimal_action/__init__.py": "ae83e294ddd664038f036e143ecd95ce6d317f5029d6a4327f48707455b0fcfc",
+    "src/bhsm/interface/minimal_action/action_terms.py": "96ffec675b391dc36a7ef74185024d18a2b33ed562d813e38304b037aaf77c6f",
+    "src/bhsm/interface/minimal_action/author_ontology.py": "c39f9bffe7de4f01d421f96ee447004a3036272addb8a173c33be0b1f3c11a17",
+    "src/bhsm/interface/minimal_action/closure_report.py": "6317206c7330975e795a274bbacd5dfc4bc32aa352fd902782a43a5e67bdeca8",
+    "src/bhsm/interface/minimal_action/common.py": "e1045af378956cf5d2a8f6c7d26ebcfd0d8b35cdd501ddc2c8d44f293864b28f",
+    "src/bhsm/interface/minimal_action/couplings.py": "5780514c0d17200f1aebf358329a4cc646d3f1c8daa9076e5dc85c1d2bd18157",
+    "src/bhsm/interface/minimal_action/cp_o_int_closure.py": "abd6aaaeacebbeb35f9b8147acc675d2b1bb4fc82e08cbfe05945059ea1450da",
+    "src/bhsm/interface/minimal_action/field_representations.py": "0ed97ee1a12310f0eed2fddc96a1cc434a3cc03e72e33e5ea971fd508c54f644",
+    "src/bhsm/interface/minimal_action/gauge_admissibility.py": "65e0df0ffa1e6ea3f9a33ce5a375e17648f7f06d937059f96533ab0524ed308d",
+    "src/bhsm/interface/minimal_action/lorentz_structures.py": "1b2ca76acb0ae07c2e85b854c231951df88cec0f25499ed266b0d2d458de2c08",
+    "src/bhsm/interface/minimal_action/neutrino_basis_closure.py": "0d0a11996be2b4464ffbb7dde57560b6e66ace08ee00c379c64c70e256f450af",
+    "src/bhsm/interface/minimal_action/registry_updates.py": "ae0f3814f46338848bcf7783050c95a7a998862c8352b26f6c7af1bbb4794fb8",
+    "src/bhsm/interface/minimal_action/sector_projectors.py": "a6f15b97a9cbb35e96b7df3f3d0e5c192344462db28f39249fd18055ed7d132b",
+    "src/bhsm/interface/minimal_action/x_ch_closure.py": "e220d2772e837982deccda079983f504df52a0596c4f0f179af31916a849f475",
+    "src/bhsm/interface/muon_birth_attached_phase.py": "948c1505e9b68cffbe8050be31dcb5727d8f8d4f25399f9037cfc94a9ae9fdeb",
+    "src/bhsm/interface/muon_birth_candidate_geometry_action.py": "ef4eab1d8855cb73c6d05cc12ef48953df56e27d86e8a358b8a004b9eb98443e",
+    "src/bhsm/interface/muon_birth_chronological_boundary_action.py": "ad8f6ecbf1734544c635e8aa158b1f0ad9150cbb18a9ad4c76aec89ad8190224",
+    "src/bhsm/interface/muon_birth_chronological_normal_inertia.py": "909f322d0b375ab03fc0b0a148c9d710ac77e371e029c5e92c9bfbde86883b05",
+    "src/bhsm/interface/muon_birth_coupled_primal_midpoint.py": "ce321f641fa51d98710d006e246aac5cf6bd046be93a74fab452808597c599ce",
+    "src/bhsm/interface/muon_birth_finite_geometric_trace_endpoint.py": "4f5c36144222d5d1e657061aa9352f8e86d5ae61a0ebdf05991a477e68d4be5f",
+    "src/bhsm/interface/muon_birth_finite_normal_phase.py": "660ed731bdbe0bbb71eda750c9dbffd20e7ce9f63be2a6087e5a385d76850361",
+    "src/bhsm/interface/muon_birth_finite_normal_trace_graph.py": "20eafd9a6abff3d3a89a2f6085d099584684ba19b600673dafda634cb56aad18",
+    "src/bhsm/interface/muon_birth_full_field_attachment.py": "58b3bd8a4ae5fe7c63b5551e4d0f26d82ab82a27d4389066c894a5e1b4728d03",
+    "src/bhsm/interface/muon_birth_inherited_finite_normal_phase.py": "86b082dfa0b525e9d8bb510a6c02e53c517d7ecdd8c6c9aec956d175d829add4",
+    "src/bhsm/interface/muon_birth_normal_constrained_action.py": "fe66a9116816e075cfc5e7c5f5f3c2c02d539311303b693a1d89cbc08ea62577",
+    "src/bhsm/interface/muon_birth_normal_trace_graph.py": "d012a0455d84be2ce7aae8d6833f8b482f9bbc1e9ee1b899042a421c2a782896",
+    "src/bhsm/interface/muon_birth_phase_continuation.py": "9169a1c56bf5084d1f240043ca12d431c87e4adaff24fe09bdf7bf27fc5eb0be",
+    "src/bhsm/interface/muon_birth_reset_evaluation.py": "01bf39191bbc036b16780100e19ce6097a7ea9522892c7357f5f3b552ee3ceba",
+    "src/bhsm/interface/muon_birth_trace_enriched_action.py": "c36c48482dd58ebe369ab935574b78b3693036f717fb49035dfac01164956dce",
+    "src/bhsm/interface/muon_birth_trace_enriched_phase.py": "591754957f1cc452bfd53d8adc1087308459902a822876105315b7423c2fd676",
+    "src/bhsm/interface/muon_chronological_clifford_graph.py": "5cef2e254dac97a97ec64134289b8d3d7c8fea6042f203c7e60e692f96ee3d71",
+    "src/bhsm/interface/muon_chronological_spectral_blocks.py": "012f82e6c555b78b20cc792b78fd8d7e5cd93f31ff63497c75db5b4c551c8990",
+    "src/bhsm/interface/muon_combined_f_eta_contact.py": "2b40186121b9434c84aec0a7327cae3b875bf9f44c0919c3bc3ddc0ad9767a5f",
+    "src/bhsm/interface/muon_continued_action_dual.py": "7a3fd9e0a234e27c3380d3e1a7b3ae523e7a73babae80a68508153d0fc5b2af3",
+    "src/bhsm/interface/muon_continued_action_reality.py": "4fab563163cb00b82dd79482d542dffb249a05237d5bad12a3e138ff3cedd287",
+    "src/bhsm/interface/muon_exact_material_response.py": "a530651e157a000dbe6935e9de1cedbce5679f98c599c6c7c641158b749307bf",
+    "src/bhsm/interface/muon_full_d5_differential_form.py": "76af63d0ae17660a8c5761b8cc1c071f3f887fa6d293902e0ee37b01667cc8ec",
+    "src/bhsm/interface/muon_full_d5_localized_lepton_trace.py": "1dd35d202dcb9b50b2bf09197d190fb4a49b2f9cf5c9f7393f88df204abb80ac",
+    "src/bhsm/interface/muon_full_d5_source_first.py": "4e6cc706b060efb4125b551d810e3915893d20d7847e479db2186587563b5079",
+    "src/bhsm/interface/muon_holomorphic_current_source.py": "5042e774fa133a7f9a666f715c16848704e2eb813cfe279955e260010358f1fe",
+    "src/bhsm/interface/muon_holomorphic_d5_trace_action.py": "9cb2b7277455fa2ad2e4606534352231b39c6c579b7cd425da015b4a923d28f1",
+    "src/bhsm/interface/muon_holomorphic_normal_geometry.py": "92d8613e3022ab7931225e596d36749076aafb71ab3fa51837dd788a0f2ce3f4",
+    "src/bhsm/interface/muon_inherited_intrinsic_lepton_operator.py": "f335af74e1f6e820b0a4947a32ccfa599125cb3cc66a8dbd92f44ef095d3768c",
+    "src/bhsm/interface/muon_inherited_wall_lepton_application.py": "1b4a0deecc315015b1a9ab982f176792ef29f7c3e96ff00efcaa0460034db075",
+    "src/bhsm/interface/muon_intrinsic_higgs_gauge_action.py": "c19354209300ab06c0f1ab6bf4e111dbb5de0cd9e8d1d31a71af357a829118d4",
+    "src/bhsm/interface/muon_intrinsic_higgs_weak_action.py": "6f61f85cadf99e8e4a049f6a4965b030db8fc8eaf9b1c1a903df77b1c7491be5",
+    "src/bhsm/interface/muon_intrinsic_lepton_primal.py": "42d4193340504fe47831b669bd7848f9fb1a794868b817e41eb14fe20e283027",
+    "src/bhsm/interface/muon_intrinsic_m4_normal_pullback.py": "43187eee35f2879a43fe0fd02ae447502811349ccf2f2a78aa14beb8aa706bf0",
+    "src/bhsm/interface/muon_intrinsic_scalar_discretization.py": "eaf8028999836e8df3cbbb9e16c5bf2b1a8adb5cdc62be1a360ec8a497159d47",
+    "src/bhsm/interface/muon_local_source_jet.py": "caa3da0f665d64c2fb6810d4afa276c7ac0ada0e2d0c7a4d2923b275613d258b",
+    "src/bhsm/interface/muon_matched_mechanical_source.py": "ab119bb053280d8da2a8d03db2e521aba4033ae0966c9d3520ca902a027c05de",
+    "src/bhsm/interface/muon_material_higgs_gauge_action.py": "8bca013820283614c6578be4f44c29c4ea1c919f516aa9a2783f0eb38127d035",
+    "src/bhsm/interface/muon_moving_geometric_action.py": "bf560fdb9766f563d97d3100ccb266e2a4350c910ac14a51d57576c2b5371392",
+    "src/bhsm/interface/muon_native_dirac_hamiltonian.py": "7344b1dfc0358962a281fffea59c8d40c1449a6fbcf9b171f514a28eb7b26ccd",
+    "src/bhsm/interface/muon_native_product_factor_graph.py": "4a5feeb0e32edc0505a44b45a19d6bdc821220cc9cf5187e35f59fe7720a7c18",
+    "src/bhsm/interface/muon_native_reset_friedrichs_return.py": "962e6ecd5b94fd2606bd30a67744eca80beb02817e4845fa83880c95f96353b2",
+    "src/bhsm/interface/muon_native_unsquared_domain_matching.py": "70c5ed09550b17ff63363c200cb217df76f235067b82a1beec5e6dc67acbb4cb",
+    "src/bhsm/interface/muon_parent_gauge_geometry_correction.py": "fa29f5764dca39196c807d64e7976d5894589e7de3ffa9d4a5ddecfb136b4816",
+    "src/bhsm/interface/muon_parent_maxwell_background_euler.py": "fbb2c99d4b1c58247ac42a769fad3e1b16ccc76a1744fe0c5334e50c4a974bee",
+    "src/bhsm/interface/muon_parent_maxwell_corrected_retarded.py": "00bf7053e289297afd4f10dc0ef9522ac8326f2bd07609c9979bb9f5f6f74a4d",
+    "src/bhsm/interface/muon_parent_maxwell_full_q_application.py": "936386142f5f0732210fa7ddba38f3e497341089e2eafe8ff5d1b4b959b8249b",
+    "src/bhsm/interface/muon_parent_maxwell_full_retarded.py": "1ecf85a6da94b84b69af1ff4394301232d9d4cad4b0f0bc08de56d5943e0c478",
+    "src/bhsm/interface/muon_parent_maxwell_full_weak.py": "c1fb703967a644306d3521d457a6d7c778a49d89c1e081b401487a25b7491565",
+    "src/bhsm/interface/muon_parent_maxwell_geometry_weak.py": "f0b4a49934e17ad18c40e9164b66c54e1b2cb146fb476f59b0e500f2dd6c9153",
+    "src/bhsm/interface/muon_parent_maxwell_velocity.py": "61ee61202ee08ee76a5669adaadd03b6694874ef9a855bde02f42b2ea6a4605d",
+    "src/bhsm/interface/muon_parent_mean_causal_action.py": "2a84b1be22625b1a5ae88d10c76631d7a5b602d2b0e22e57f00201bb74a593ad",
+    "src/bhsm/interface/muon_parent_retarded_hypercharge.py": "2eb97a704bce63f601cc0d6e0f647266d4b4aac7f746d34dceb41b72018c3510",
+    "src/bhsm/interface/muon_pointwise_full_field_action.py": "d57cd5953de00bcae857d0e458bbead1e463e5fffe8d947c5b9e71806aabaff6",
+    "src/bhsm/interface/muon_primal_charged_current_response.py": "df2c278056e2058feccb3d893c553f8e0ad3f3b09188a7578bb1c01051d6c176",
+    "src/bhsm/interface/muon_primal_intrinsic_lepton_operator.py": "d3415b13dea7831997c8ffeff5d457b3a008d4393048e642d7df831036e8ffe4",
+    "src/bhsm/interface/muon_primal_trace_enriched_lepton_operator.py": "c6956d8b195c80e8a4488b1ef2c2e4b2bd8544736b6e1735bc7de3108597ec2f",
+    "src/bhsm/interface/muon_profile_preserving_phase_sample.py": "27ce99bf8c286b0e3fe56dc4d7f0f215dee51b228dcce1805006e1b2c8998418",
+    "src/bhsm/interface/muon_trace_enriched_charged_current_response.py": "c78da2c9edeb82bed0214dd35b313ba8e0133be54a17c1dc70a53ca14f0bc72c",
+    "src/bhsm/interface/muon_unsquared_forced_boundary_attachment.py": "2fc4ea06e6cb2c3e21f19676276194e10e860a28d5b75cc6f03e82a78743faee",
+    "src/bhsm/interface/neutrino_action/__init__.py": "420213e3838f83a42a9fe4662830ef86afb7f1f2521b5d2ac64c30d661f8b0c9",
+    "src/bhsm/interface/neutrino_action/action_closure_report.py": "c35ec6ae9a3513c5c10f90a6a5dba577f75e90b2656963fb15e4f8d5d9be25d6",
+    "src/bhsm/interface/neutrino_action/action_source_search.py": "879304c8c189276619dd8caed7f81f0b3ddf95f5d94eba2c49ea33c6ed56e43e",
+    "src/bhsm/interface/neutrino_action/common.py": "a2eed4ade6153bd8864777553e37d8c4061fcc847ed659677fee0790963a758c",
+    "src/bhsm/interface/neutrino_action/curvature_unit_map.py": "5990bc42f9f40458e22d6e330f092e999ab45eaf984dc59d9f71c7bce5bf22b0",
+    "src/bhsm/interface/neutrino_action/neutral_action_terms.py": "ec8a67e04b25588a8a5d7405016e67c73db2e3a9130a1d728c19747049bcef48",
+    "src/bhsm/interface/neutrino_action/response_cone_derivation.py": "576caaede57de35800d6e03a4b8880bd68e301e8f87bf6070b23cf35f55e4ace",
+    "src/bhsm/interface/neutrino_action/stiffness_extraction.py": "11f78a71ec64e6250ed0c35447891904e6711eb697e404a1f40fd3fd8b69a908",
+    "src/bhsm/interface/neutrino_closure_status.py": "5a698680c69625914eabd0cc80cb56d78fc441720291e9eb3caf156f1e7c17e8",
+    "src/bhsm/interface/neutrino_propagation/__init__.py": "a22f1301ad00f6b53cd53f3e0f0e0ebb34759e04022a07eb242bda2c25f0dd28",
+    "src/bhsm/interface/neutrino_propagation/closure_report.py": "8acf64a7902aefa2d1cb309c4e944ecfb92569eb293ff8602c28755fec938bd9",
+    "src/bhsm/interface/neutrino_propagation/common.py": "792b1cb9fb03eccd384287258caf854fe8f513f976bf17ab36e364cff8f57d4c",
+    "src/bhsm/interface/neutrino_propagation/curvature_threshold.py": "aa577d76ff29ebaabf8e71f0a9e4781d733bdf22469ec946a2c2fa216a2a3458",
+    "src/bhsm/interface/neutrino_propagation/effective_mass.py": "c11c29d7a8238a9da8972daa19b61574fdac51ce63ec2aad0204451379802c67",
+    "src/bhsm/interface/neutrino_propagation/neutral_kernel.py": "d30f3e041af93ea395ef7e977894395fe8447a4558001115c75007d03064f4d4",
+    "src/bhsm/interface/neutrino_propagation/numerical_closure.py": "ed617fc71507269c14194db71368ef352c73d16ab09741c3d35915a9ac9f771a",
+    "src/bhsm/interface/neutrino_propagation/observable_map.py": "412383acbd922fc1736dd7804016a943c4c9f1034e1aa1bd15e370c3312a259c",
+    "src/bhsm/interface/neutrino_propagation/propagation_state.py": "ef8ca6d77288b962b364399ec3078778827ade15f0bec98a541f369c810e595b",
+    "src/bhsm/interface/neutrino_propagation/validation_policy.py": "58d7a3f804d5c300a5b70099916c7d864868f662f58ecded68055dba2908a740",
+    "src/bhsm/interface/neutrino_scale/__init__.py": "c0cbe3196a900ce01c553d8f9fa878f546988e8d56dad855f4307f87ad8e04fc",
+    "src/bhsm/interface/neutrino_scale/artifact_search.py": "ee98ecec3993615061a7503e733b32ce8511fa51885dd7ca2d5e9fbde59cc170",
+    "src/bhsm/interface/neutrino_scale/boundary_measure.py": "5ffbae5e86cac8315435ba3aad4550afe32345037df840b0afcf225ccdf43420",
+    "src/bhsm/interface/neutrino_scale/boundary_stiffness.py": "401a48f8db9985ca6f7ca4cf7d781e05858b2d97ed57f7d0963ccce1c7a55e14",
+    "src/bhsm/interface/neutrino_scale/common.py": "8ab57a2a56ade33b6d0cd527702fe45ab7cf103be04f1ddb642b0eadce9716ec",
+    "src/bhsm/interface/neutrino_scale/curvature_mass_functional.py": "7a8af7dd5e5c7dcb8ef4c7c9069098c3ffbd6be230e74ff55d8ff5511ef1727e",
+    "src/bhsm/interface/neutrino_scale/legacy_artifact_parser.py": "42c912dc4ad1fc95de013aaebdf8917f24c834945428c90e9662a62f41b1e3de",
+    "src/bhsm/interface/neutrino_scale/legacy_curvature_threshold.py": "be511c3f868f2118edd72b4ca7714b23d0d390b6c366da6fbd10eb2e6d361f8d",
+    "src/bhsm/interface/neutrino_scale/legacy_neutral_scale_candidate.py": "ae279395b04f1e088d6f7c463f75066ad8b415b6d784b820d25017db91ee02a0",
+    "src/bhsm/interface/neutrino_scale/legacy_scale_report.py": "6c49b06ca1b82ab7e9484eb61629c470d54bf37107cccce69416c1458f704ad3",
+    "src/bhsm/interface/neutrino_scale/neutral_curvature_mapping.py": "0904d914467a44471c16b3a0f074f96f9a355ddae22d0693c23fa22d2b20ee14",
+    "src/bhsm/interface/neutrino_scale/neutral_mass_candidate.py": "93fff4d68a09c3eb44d8bfcf100286fdb5d19cde1dfe7eaa6a42db216fec416e",
+    "src/bhsm/interface/neutrino_scale/neutral_physical_curvature.py": "2efcd29a875cfed05266b948d6523cd477b1e9c0bec430d5417667d27519e8b3",
+    "src/bhsm/interface/neutrino_scale/neutral_radius_curvature_report.py": "4f20eea9b93044b19603e492e7f5157cfbfd41fb757dd17cf776687fcc57b641",
+    "src/bhsm/interface/neutrino_scale/neutral_scale_candidates.py": "ae24f2927e7da1c0e8b64c806d1bcb2981d9fa203125f893fc1fa829875bd8e2",
+    "src/bhsm/interface/neutrino_scale/propagation_radius.py": "b5732be46136cdd57b908c9967f8287502b80db5ba69eb5ff0527ff760dc57db",
+    "src/bhsm/interface/neutrino_scale/propagation_radius_search.py": "14f319ffd7dabcf9b947ca2b2a9df37b56d16f82ddbdece12861b30a1ce5ffdc",
+    "src/bhsm/interface/neutrino_scale/radius_curvature_common.py": "5a6efd132699eab41c901126ba47549c18cf48fcb54edb8eb7b22b7c1eba1854",
+    "src/bhsm/interface/neutrino_scale/scale_report.py": "a6e589467e6714d97e49a67d4db0a24600e29b96628a8c3bcb51afc1df4cef93",
+    "src/bhsm/interface/neutrino_scale/threshold_energy_map.py": "5e0d59fac5cf569ffba83f5a2b5d8423fc5d968eb8f6a3b3719d2db52810ed53",
+    "src/bhsm/interface/neutrino_scale/transport_normalization.py": "4763490ed4d4cec317315a1b8609f451ccf73d8962f9bd2298cc7f438a112759",
+    "src/bhsm/interface/neutrino_scale/unit_map.py": "65b44c5e7e0d8e837e61d9c382369e0fbbf12a3c965fd28599f45bb1293a6c6c",
+    "src/bhsm/interface/neutrino_spectral/__init__.py": "bd365e251d56bee58de308b193a31bf41cb18091b7d78390e30b706ed683541f",
+    "src/bhsm/interface/neutrino_spectral/admissible_domain.py": "0e9b78238a5c122a60613d9d8173d29fe1772408fe8ed8c3306640af587044d2",
+    "src/bhsm/interface/neutrino_spectral/common.py": "580434529092b015b0f3e1316ca3fc2c916763f383b68f41ce18c1d96a21fb6b",
+    "src/bhsm/interface/neutrino_spectral/legacy_dimensional_gate.py": "5879ee165b397ba5d3c2557d4ec9dfac384e2c882a8e91f3602425df8de1e1a4",
+    "src/bhsm/interface/neutrino_spectral/mass_gap_action.py": "bf478bbad5c3a59f1adeb94242c7d8a5b696a91e1e77dc513bc0e043353a5636",
+    "src/bhsm/interface/neutrino_spectral/neutral_kernel_positivity.py": "d231e6e85cf3e931d32371da2456a02348d7bf5631dc1e6f7248f60ebdd18ac9",
+    "src/bhsm/interface/neutrino_spectral/neutral_quadratic_form.py": "273fbf3bdc4dfbc8f69a2745d0849aff421156cac69a8ac58dd699164ce9795c",
+    "src/bhsm/interface/neutrino_spectral/neutral_spectral_gap.py": "358facef25f83894fae2f420830d42e91af362ee8f0d59a22d0bbe80e6deb7ab",
+    "src/bhsm/interface/neutrino_spectral/positivity_counterexample.py": "1b5e3544fafa50b89691bf7cc45be6fbc8a820129fff5eb53dcdf7de26604e32",
+    "src/bhsm/interface/neutrino_spectral/positivity_proof.py": "4e8a29d93d1c4110f8ffec5d7fd5a66525c0e6e5c95998882e5df100fa13cc95",
+    "src/bhsm/interface/neutrino_spectral/positivity_report.py": "6a57e261db43874ba307a98811d654e20e62bc3dc618a43ab01ccf000ac5456f",
+    "src/bhsm/interface/neutrino_spectral/projected_kernel.py": "e1abf25719b89bd5946f9a082dc3efd2d301d208401c89ccc2664382e9a63b1a",
+    "src/bhsm/interface/neutrino_spectral/spectral_report.py": "5a38de6ff4f2559efb68c6bfd1b7afa71a4aea47b694e4867a549e3b8f684356",
+    "src/bhsm/interface/neutrino_spectral/stiffness_ratio.py": "1e8ade154906b52ab958d85a6a8914f27d79596f2e457f3070ea1ce7b5c11f6d",
+    "src/bhsm/interface/notebook_pack.py": "c4deb988abe0720bfd591cdf2edd48c3d1d39e3014f8c3805067616b5975ff5b",
+    "src/bhsm/interface/particle_chirality_anomaly_normalization.py": "1ef8f932d6dc7d0e0cdfe10a88157ec02d8d1f11fb05f68706ecb29fe928967f",
+    "src/bhsm/interface/pdg_interface.py": "b88ed81e4a4ffaab98a552cc85ce7b590aeabdd33a6b5686246967bbd644de1d",
+    "src/bhsm/interface/predictions.py": "ea0539bef06184c619dd028eafafb76ea15e92a444483ff93637593f0eaa1fed",
+    "src/bhsm/interface/provenance.py": "9ef213c0fb59a2d3e40b468ac42b9e9f35391a824d61292d6c0a0b52627a478a",
+    "src/bhsm/interface/report.py": "16f3ef6f26080f65e0c3b2e8c19b062a75d09157713c80ed5be6a791f34c5f4c",
+    "src/bhsm/interface/scalar_wall_backreacted_bifurcation.py": "ae8c3052e20692e7ea33c04d3ac5ed48afe295f38cb31f19b0cc6b9e5d5891b5",
+    "src/bhsm/interface/scalar_wall_puiseux_fold.py": "f8e1fdd2854d26be3979a9517af85646527ba1097d8547e8775f6487eeec5ddd",
+    "src/bhsm/interface/solver.py": "070609100a7f9f81422ab992624301be57d3d3f1b13212f48788e10936f4bfb4",
+    "src/bhsm/interface/speculative.py": "223e540cf1ad24e32913581d8fb286df34c121010c71e3bccf48cd5458d8091c",
+    "src/bhsm/interface/theorem_blockers.py": "a322910c7dfe87e41ca9611003619e3a3a0be2dcac2c34c3dcb79af9b5670a7e",
+    "src/bhsm/interface/theorem_closure/__init__.py": "2cb9cc80460e3189727e56b27cec497d97b1f0114b9a80ebba356f3a90ae857b",
+    "src/bhsm/interface/theorem_closure/closure_report.py": "6047c50c919e6ba0c332f3e18d9b9edd13bc9e0c1e44e36c4016c5faa607e660",
+    "src/bhsm/interface/theorem_closure/common.py": "f4ae599640c1e25e9d3eac87724bce7ad914d0b666a28e196e067b01a30b57aa",
+    "src/bhsm/interface/theorem_closure/cp_o_int.py": "7746425bf850a65ae55e42d2a9537543ad03a91f874d3f1a7319a8bda4fbcaf2",
+    "src/bhsm/interface/theorem_closure/cp_o_int_action.py": "159decd853d193d34f5365f94313185479dfebaef35134113eda3cb96e9a05f9",
+    "src/bhsm/interface/theorem_closure/cp_o_int_action_candidate.py": "e12a2fef8744b63967eb205d863a3ad3c3fd35ca23f417c9101ce21d5cbd5f2e",
+    "src/bhsm/interface/theorem_closure/cp_o_int_admissibility.py": "15f9a969d6cbe3cde136c41ebcd294f206434e20dc8048ce92dd065e1e0ec267",
+    "src/bhsm/interface/theorem_closure/cp_o_int_attachment.py": "87bcfd06ea1db2fba5f24908ea6e6003f90135419edfd27cba9713d1e51cebe0",
+    "src/bhsm/interface/theorem_closure/cp_o_int_callable.py": "0edc4e002cc647be6f0e96ff95a227ac3d420debedf475811485e58963ce391f",
+    "src/bhsm/interface/theorem_closure/cp_o_int_coupling.py": "d2257b4e85fcd4e333ed7ed135d1b1c1e36188a87c260cfa6f56ea613e95264e",
+    "src/bhsm/interface/theorem_closure/cp_o_int_field_action.py": "50b947f54de093b125df55710d76aff71036cf24f666ce0483a707f075975461",
+    "src/bhsm/interface/theorem_closure/cp_o_int_gauge.py": "4c7d1bdfffefc403bfafbd938c72c5236eb9c0ecf3b9a3782931b6d0676c7ed4",
+    "src/bhsm/interface/theorem_closure/cp_o_int_lorentz.py": "80831480b6ba0fbd3352f44f4251d2d7719703e9b900180c731368b990d07de9",
+    "src/bhsm/interface/theorem_closure/cp_o_int_operator.py": "58f1a7193abfee7edb6be6619a63e414b0634a7ad09b469991737a5002efe964",
+    "src/bhsm/interface/theorem_closure/cp_o_int_report.py": "ef08fe95577a680a79b0ba1d2eb8c210d4b417448eb38621c6b487fec79ca5e7",
+    "src/bhsm/interface/theorem_closure/cp_o_int_sprint_c_report.py": "43e85858aee39e3f5cda019160f0898687382d8129f582368b49cee7a2743685",
+    "src/bhsm/interface/theorem_closure/neutrino_basis_scale.py": "821432458e612d30ff39a278a263f37854f18feb358bb5a02b37f0ab6518f695",
+    "src/bhsm/interface/theorem_closure/proof_gates.py": "9267c79df36753730ae1f10522eb93f98715db7dd46e454b09d40f2a5e2d6783",
+    "src/bhsm/interface/theorem_closure/registry_update.py": "a64297b27ecf0f5fbfad1d943b3f17de2743eb7156d1d82499dc9b0a8de40413",
+    "src/bhsm/interface/theorem_closure/x_ch.py": "e39defa47ec4dd69319d50c11c77f1940b9d20b2f13702e6ff78ed9106f463db",
+    "src/bhsm/interface/triality_generation_scale_architecture.py": "cf0e940de4e1c792a2dee8aef807783036004d207d771e4d834f588fa6838101",
+    "src/bhsm/interface/units.py": "e925590ce36a6fffa05164083083bcd578f580a3c8b5a7a63e1bcf3ec3bc6715",
+    "src/bhsm/interface/validation.py": "f5cb86a4ca982155e743401847ff2716ef599137fe3008abe7274aed7d402b49"
+  },
+  "midpoint_fields_are_saved_real_trial_backgrounds": true,
+  "new_history_profile_source_or_D5_integrations": 0,
+  "numerical_sha256": "7da8ddd5fa4bda397aa6a2d50e845338a3ef92fb3f0e837a5a6d0d166915e177",
+  "off_shell_phase_frequency": 0.23,
+  "phase_frequency_source_first": 0.0,
+  "physical_E_B_or_outgoing_domain_derivative": false,
+  "physical_exterior_load": null,
+  "physical_muon_magnetic_moment": null,
+  "physical_normal_mode_normalization_or_spin_state": false,
+  "physical_radial_or_angular_convergence": false,
+  "physical_stationary_background_solved": false,
+  "positive_current_Gram": "owned real fixed-Eulerian I384; Gram source first zero in this fixed representation",
+  "records": [
+    {
+      "MP64_core_coefficient_first": {
+        "full_fibre_operator_or_domain_not_inferred": true,
+        "maximum": {
+          "absolute": 7.106294666405892e-15,
+          "scaled": 5.333641769954529e-16
+        },
+        "precision_decimal_digits": 64,
+        "scaled_by_coefficient": {
+          "A_body": 4.261744490545098e-16,
+          "A_energy": 1.3877787807814457e-17,
+          "A_radial": 3.905457612179399e-16,
+          "A_time": 1.3877787807814457e-17,
+          "Dtau_body": 2.349111464967252e-25,
+          "Dtau_radial": 5.551115123125783e-17,
+          "Dtau_time": 1.3877787807814457e-17,
+          "W_body": 4.261744490545098e-16,
+          "W_radial": 3.905457612179399e-16,
+          "body": 4.261744490545099e-16,
+          "energy": 1.3877787807814457e-17,
+          "radial": 3.9054576121794e-16,
+          "sigma_eta_contact": 5.333641769954529e-16,
+          "time": 1.3877787807814457e-17
+        },
+        "source_affine_germ_only": true
+      },
+      "MP64_wall_coefficient_first": {
+        "full_fibre_operator_or_domain_not_inferred": true,
+        "maximum": {
+          "absolute": 8.881784197001252e-16,
+          "scaled": 1.2029363229183843e-16
+        },
+        "precision_decimal_digits": 64,
+        "scaled_by_coefficient": {
+          "A_body": 8.326672684688674e-17,
+          "A_energy": 1.3010426069826053e-18,
+          "A_radial": 1.181088641168568e-16,
+          "A_time": 8.673617379884035e-19,
+          "Dtau_body": 6.462348535570529e-27,
+          "Dtau_radial": 1.1102230246251565e-16,
+          "Dtau_time": 8.673617379884035e-19,
+          "W_body": 8.326672684688674e-17,
+          "W_radial": 1.181088641168568e-16,
+          "body": 5.551115123125783e-17,
+          "energy": 1.3010426069826053e-18,
+          "radial": 1.1810886411685682e-16,
+          "sigma_eta_contact": 1.2029363229183843e-16,
+          "time": 8.673617379884035e-19
+        },
+        "source_affine_germ_only": true
+      },
+      "affine_germ_FD_sweep": [
+        {
+          "positive_form_first": {
+            "absolute": 5.07057176581653e-08,
+            "scaled": 1.2498236647981103e-10
+          },
+          "step": 2e-06,
+          "weak_first": {
+            "absolute": 1.5896908908766625e-09,
+            "scaled": 2.442682676096198e-11
+          }
+        },
+        {
+          "positive_form_first": {
+            "absolute": 6.358357184869324e-08,
+            "scaled": 1.5672444146166367e-10
+          },
+          "step": 1e-06,
+          "weak_first": {
+            "absolute": 2.8572357625232724e-09,
+            "scaled": 4.390363144425435e-11
+          }
+        },
+        {
+          "positive_form_first": {
+            "absolute": 1.2408281702353032e-07,
+            "scaled": 3.0584645730943265e-10
+          },
+          "step": 5e-07,
+          "weak_first": {
+            "absolute": 3.0476090864263794e-09,
+            "scaled": 4.6828864414148884e-11
+          }
+        }
+      ],
+      "angular_count": 1,
+      "angular_level": 0,
+      "coefficient_contact_norm": 62.79497856159123,
+      "coordinate_time": -5e-06,
+      "core_radial_count": 4,
+      "density_contact": {
+        "imag": [
+          [
+            -15.989965986410889,
+            -2.7268172587659594,
+            -1.322213481404735
+          ],
+          [
+            0.06472264588177284,
+            3.9698232530527275,
+            -7.942257995010777
+          ],
+          [
+            -1.1916320580799509,
+            -11.847744424949989,
+            11.530017346727027
+          ],
+          [
+            1.728339957026947,
+            0.2344494816725416,
+            -2.410973262319153
+          ]
+        ],
+        "real": [
+          [
+            -1.2115085865239639,
+            2.8943242156398665,
+            2.221881448315404
+          ],
+          [
+            1.1203150999529907,
+            -51.61230339414297,
+            -3.7998696912605094
+          ],
+          [
+            1.8787774881822894,
+            17.03262404788015,
+            -24.34589385662922
+          ],
+          [
+            0.20361851343458456,
+            5.8494977263178125,
+            1.2369516582617566
+          ]
+        ]
+      },
+      "eta_orientation": -1,
+      "exact_phase_partial_norm": 4.544448490683974,
+      "exact_time_phase_mixed_norm": 0.5999734612143773,
+      "full_fibre_count": 384,
+      "independent_left_contact": {
+        "imag": [
+          [
+            -0.8540288515605093,
+            -0.12423762473077024,
+            -0.0411898549840447
+          ],
+          [
+            0.13032123851421232,
+            0.5349472277065127,
+            -0.10145880526418483
+          ],
+          [
+            -0.058921645269644544,
+            -0.27921112958300864,
+            0.79959132754072
+          ],
+          [
+            0.030891095575311316,
+            0.0048667713097509165,
+            -0.06284220889465965
+          ]
+        ],
+        "real": [
+          [
+            -0.21563021817900513,
+            0.15620842896203974,
+            0.06423489112404804
+          ],
+          [
+            -0.0046611333995139285,
+            -0.8861248605624317,
+            -0.19208339684842227
+          ],
+          [
+            0.013433854814613764,
+            0.733738336279865,
+            -0.1380556699525397
+          ],
+          [
+            0.005132086320213603,
+            0.047451834901804796,
+            0.13322623002857648
+          ]
+        ]
+      },
+      "literal_value_point": {
+        "absolute": 8.95090418262362e-16,
+        "scaled": 6.781305281255918e-16
+      },
+      "literal_value_weak": {
+        "absolute": 4.577566798522238e-15,
+        "scaled": 5.101175848027442e-16
+      },
+      "minimum_actual_core_Q_f": -0.46120115302545317,
+      "minimum_actual_core_Q_sigma": -0.45557037947385587,
+      "moving_trial_contact_norm": 3.899531674574021,
+      "nonzero_terms": {
+        "conjugate": {
+          "angular": 0.0,
+          "body_first": 284.7943411704872,
+          "eta": 84.39700383041429,
+          "eta_first": 176.0248214878152,
+          "gauge": 2.644442329754361,
+          "round_spin": 11.999999999999995,
+          "shift": 19.24262652800614,
+          "time": 16.688864166126795,
+          "wall_eta": 4.249367167498307,
+          "wall_eta_first": 29.6106703886563
+        },
+        "particle": {
+          "angular": 0.0,
+          "body_first": 284.7943411704872,
+          "eta": 84.39700383041429,
+          "eta_first": 176.0248214878152,
+          "gauge": 2.644442329754361,
+          "round_spin": 11.999999999999995,
+          "shift": 19.24262652800614,
+          "time": 16.688864166126795,
+          "wall_eta": 4.249367167498307,
+          "wall_eta_first": 29.6106703886563
+        }
+      },
+      "positive_first": {
+        "imag": [
+          [
+            -1.3322676295501878e-15,
+            31.642033360435025,
+            5.031306093022193
+          ],
+          [
+            -31.642033360435022,
+            5.329070518200751e-15,
+            3.3565530806544714
+          ],
+          [
+            -5.031306093022202,
+            -3.3565530806544723,
+            1.7763568394002505e-15
+          ]
+        ],
+        "real": [
+          [
+            404.8640908237371,
+            28.763710187905673,
+            -11.42609982718852
+          ],
+          [
+            28.763710187905684,
+            405.7029730378488,
+            23.927431829232606
+          ],
+          [
+            -11.42609982718852,
+            23.927431829232606,
+            391.4665842689502
+          ]
+        ]
+      },
+      "positive_value": {
+        "imag": [
+          [
+            -1.0920832846641137e-16,
+            8.089722928202438,
+            1.7768747160966338
+          ],
+          [
+            -8.089722928202434,
+            -8.192666778477123e-17,
+            5.070112652077088
+          ],
+          [
+            -1.7768747160966336,
+            -5.070112652077087,
+            -2.2040263155677885e-16
+          ]
+        ],
+        "real": [
+          [
+            110.89944324010338,
+            3.9882524316906487,
+            -2.5699802383796193
+          ],
+          [
+            3.988252431690649,
+            112.9023418508986,
+            4.5595074929943085
+          ],
+          [
+            -2.56998023837962,
+            4.559507492994308,
+            109.16925525613055
+          ]
+        ]
+      },
+      "positive_value_minimum_eigenvalue": 101.27866189591738,
+      "separate_actual_wall_count": 1,
+      "side": "incoming",
+      "weak_first": {
+        "imag": [
+          [
+            -23.717547171615244,
+            -4.562172812554045,
+            -1.2912685439475506
+          ],
+          [
+            0.7641036951830686,
+            5.625251044028025,
+            -10.51769011734854
+          ],
+          [
+            -1.849505781527936,
+            -15.437283307356239,
+            15.731504823254259
+          ],
+          [
+            2.1827213595035855,
+            -0.2434316604169249,
+            -3.0778083294041627
+          ]
+        ],
+        "real": [
+          [
+            -2.40558782832312,
+            6.806261443972855,
+            2.5838846572843956
+          ],
+          [
+            -3.137604742711391,
+            -64.83614484914023,
+            -5.657430825787633
+          ],
+          [
+            2.2613391480663614,
+            23.652522787269344,
+            -31.404438299034428
+          ],
+          [
+            -0.3735820260899799,
+            6.821835179943532,
+            2.9949183938744603
+          ]
+        ]
+      },
+      "weak_value": {
+        "imag": [
+          [
+            -7.680639808450368,
+            -0.7493640549177669,
+            -0.22191757358310316
+          ],
+          [
+            1.103583838578329,
+            2.7683388514730303,
+            -1.2334296504346365
+          ],
+          [
+            -0.4724433051576406,
+            -0.9181485586513733,
+            6.503081259797749
+          ],
+          [
+            0.2715258434038757,
+            0.14082644203342723,
+            -0.27226478853933367
+          ]
+        ],
+        "real": [
+          [
+            -0.15618437275264102,
+            1.5732841944981517,
+            0.6265202629674106
+          ],
+          [
+            -0.29499400891183725,
+            -8.535861989527598,
+            -1.425658363044741
+          ],
+          [
+            0.22815662088261787,
+            6.790962890648893,
+            -2.7166303878837
+          ],
+          [
+            -0.018690575373200853,
+            0.38771038322511325,
+            1.2593655331865699
+          ]
+        ]
+      }
+    },
+    {
+      "MP64_core_coefficient_first": {
+        "full_fibre_operator_or_domain_not_inferred": true,
+        "maximum": {
+          "absolute": 7.106294666405892e-15,
+          "scaled": 5.333641769954529e-16
+        },
+        "precision_decimal_digits": 64,
+        "scaled_by_coefficient": {
+          "A_body": 4.261744490545098e-16,
+          "A_energy": 1.3877787807814457e-17,
+          "A_radial": 3.905457612179399e-16,
+          "A_time": 1.3877787807814457e-17,
+          "Dtau_body": 2.349111464967252e-25,
+          "Dtau_radial": 5.551115123125783e-17,
+          "Dtau_time": 1.3877787807814457e-17,
+          "W_body": 4.261744490545098e-16,
+          "W_radial": 3.905457612179399e-16,
+          "body": 4.261744490545099e-16,
+          "energy": 1.3877787807814457e-17,
+          "radial": 3.9054576121794e-16,
+          "sigma_eta_contact": 5.333641769954529e-16,
+          "time": 1.3877787807814457e-17
+        },
+        "source_affine_germ_only": true
+      },
+      "MP64_wall_coefficient_first": {
+        "full_fibre_operator_or_domain_not_inferred": true,
+        "maximum": {
+          "absolute": 8.881784197001252e-16,
+          "scaled": 1.512977553998507e-16
+        },
+        "precision_decimal_digits": 64,
+        "scaled_by_coefficient": {
+          "A_body": 1.512977553998507e-16,
+          "A_energy": 1.3010426069826053e-18,
+          "A_radial": 1.181088641168568e-16,
+          "A_time": 8.673617379884035e-19,
+          "Dtau_body": 6.462348535570529e-27,
+          "Dtau_radial": 1.1102230246251565e-16,
+          "Dtau_time": 8.673617379884035e-19,
+          "W_body": 1.512977553998507e-16,
+          "W_radial": 1.181088641168568e-16,
+          "body": 5.551115123125783e-17,
+          "energy": 1.3010426069826053e-18,
+          "radial": 1.1810886411685682e-16,
+          "sigma_eta_contact": 1.2029363229183843e-16,
+          "time": 8.673617379884035e-19
+        },
+        "source_affine_germ_only": true
+      },
+      "affine_germ_FD_sweep": [
+        {
+          "positive_form_first": {
+            "absolute": 6.322204925331318e-08,
+            "scaled": 1.5744882107760342e-10
+          },
+          "step": 2e-06,
+          "weak_first": {
+            "absolute": 1.2728346794415631e-09,
+            "scaled": 1.9096639267625746e-11
+          }
+        },
+        {
+          "positive_form_first": {
+            "absolute": 8.539996120076261e-08,
+            "scaled": 2.1268091385741496e-10
+          },
+          "step": 1e-06,
+          "weak_first": {
+            "absolute": 1.4821323670140115e-09,
+            "scaled": 2.223678189857702e-11
+          }
+        },
+        {
+          "positive_form_first": {
+            "absolute": 1.905285406312763e-07,
+            "scaled": 4.74494174959797e-10
+          },
+          "step": 5e-07,
+          "weak_first": {
+            "absolute": 3.3335655000057194e-09,
+            "scaled": 5.0014270394941526e-11
+          }
+        }
+      ],
+      "angular_count": 1,
+      "angular_level": 0,
+      "coefficient_contact_norm": 62.773872295560764,
+      "coordinate_time": -5e-06,
+      "core_radial_count": 4,
+      "density_contact": {
+        "imag": [
+          [
+            -16.418879741969565,
+            -1.680395669757902,
+            -1.1895844674447884
+          ],
+          [
+            0.2605342900203364,
+            3.8311663978481034,
+            -7.585428351739143
+          ],
+          [
+            -0.5376424586430962,
+            -11.885221025144531,
+            12.205300633193136
+          ],
+          [
+            1.5917248957246166,
+            -0.05918601596641199,
+            -2.84626801274254
+          ]
+        ],
+        "real": [
+          [
+            -1.297372200132616,
+            -1.7191981145129471,
+            2.2076269370201427
+          ],
+          [
+            4.872636320776004,
+            -52.11249668328815,
+            -3.6816151456139528
+          ],
+          [
+            1.88249368033785,
+            16.821675239840616,
+            -23.102454118406385
+          ],
+          [
+            0.5291795154490226,
+            6.416203702300371,
+            0.4402896231906408
+          ]
+        ]
+      },
+      "eta_orientation": 1,
+      "exact_phase_partial_norm": 4.544448490683974,
+      "exact_time_phase_mixed_norm": 0.5999734612143773,
+      "full_fibre_count": 384,
+      "independent_left_contact": {
+        "imag": [
+          [
+            -0.8761691979237378,
+            -0.004935807282370901,
+            -0.03379124547313785
+          ],
+          [
+            0.09016674998990937,
+            0.5341848862996142,
+            -0.0836732014049985
+          ],
+          [
+            -0.023441084596797657,
+            -0.2783917292249172,
+            0.8194474016516695
+          ],
+          [
+            0.019061965835448627,
+            -0.01875741320074685,
+            -0.07570759860914794
+          ]
+        ],
+        "real": [
+          [
+            -0.22610107345292144,
+            -0.08027673191637562,
+            0.0652557677898599
+          ],
+          [
+            0.2018508173626171,
+            -0.9151769741501323,
+            -0.18082851898158478
+          ],
+          [
+            0.02248840022208417,
+            0.7217703162737148,
+            -0.06135944525478219
+          ],
+          [
+            0.020970348789288697,
+            0.07426587268184683,
+            0.08405174541629348
+          ]
+        ]
+      },
+      "literal_value_point": {
+        "absolute": 8.671119018262734e-16,
+        "scaled": 6.531342347661979e-16
+      },
+      "literal_value_weak": {
+        "absolute": 1.293207299340885e-14,
+        "scaled": 1.407404163935956e-15
+      },
+      "minimum_actual_core_Q_f": -0.46120115302545317,
+      "minimum_actual_core_Q_sigma": -0.45557037947385587,
+      "moving_trial_contact_norm": 3.891508438518354,
+      "nonzero_terms": {
+        "conjugate": {
+          "angular": 0.0,
+          "body_first": 284.7943411704872,
+          "eta": 84.39700383041429,
+          "eta_first": 176.0248214878152,
+          "gauge": 2.644442329754361,
+          "round_spin": 11.999999999999995,
+          "shift": 19.24262652800614,
+          "time": 16.688864166126795,
+          "wall_eta": 4.249367167498307,
+          "wall_eta_first": 29.6106703886563
+        },
+        "particle": {
+          "angular": 0.0,
+          "body_first": 284.7943411704872,
+          "eta": 84.39700383041429,
+          "eta_first": 176.0248214878152,
+          "gauge": 2.644442329754361,
+          "round_spin": 11.999999999999995,
+          "shift": 19.24262652800614,
+          "time": 16.688864166126795,
+          "wall_eta": 4.249367167498307,
+          "wall_eta_first": 29.6106703886563
+        }
+      },
+      "positive_first": {
+        "imag": [
+          [
+            -3.552713678800501e-15,
+            12.655444637730822,
+            6.686720879936335
+          ],
+          [
+            -12.655444637730817,
+            -5.329070518200751e-15,
+            0.41392670609607496
+          ],
+          [
+            -6.686720879936325,
+            -0.41392670609607174,
+            0.0
+          ]
+        ],
+        "real": [
+          [
+            401.5403152631564,
+            27.617134969521267,
+            -10.13943790043068
+          ],
+          [
+            27.617134969521267,
+            390.8450841252536,
+            18.480265586406432
+          ],
+          [
+            -10.139437900430682,
+            18.48026558640641,
+            390.04220878893375
+          ]
+        ]
+      },
+      "positive_value": {
+        "imag": [
+          [
+            8.326672684688674e-17,
+            4.627572006770217,
+            1.428375092677085
+          ],
+          [
+            -4.6275720067702135,
+            1.425438395011964e-16,
+            4.787710413082084
+          ],
+          [
+            -1.4283750926770833,
+            -4.787710413082083,
+            -2.761327408049019e-19
+          ]
+        ],
+        "real": [
+          [
+            110.9086489781929,
+            5.754903341324452,
+            -2.144889728919165
+          ],
+          [
+            5.754903341324454,
+            110.67157709782946,
+            3.58807570266616
+          ],
+          [
+            -2.144889728919164,
+            3.588075702666158,
+            109.25948025176116
+          ]
+        ]
+      },
+      "positive_value_minimum_eigenvalue": 101.36386758804662,
+      "separate_actual_wall_count": 1,
+      "side": "incoming",
+      "weak_first": {
+        "imag": [
+          [
+            -25.04740321577034,
+            -0.2261060011615661,
+            -0.8708138466748441
+          ],
+          [
+            0.530812120716124,
+            5.302271352441673,
+            -9.421929688218402
+          ],
+          [
+            0.20699356899658672,
+            -15.507433231063924,
+            17.574397605095797
+          ],
+          [
+            1.6792676613635047,
+            -1.2954246008844195,
+            -4.266859289340196
+          ]
+        ],
+        "real": [
+          [
+            -2.7727784338767094,
+            -7.470256081982466,
+            2.5690609729321867
+          ],
+          [
+            8.710880965209277,
+            -66.44105107952335,
+            -5.204659008057522
+          ],
+          [
+            2.421050428839181,
+            22.98043131863067,
+            -27.339947324430028
+          ],
+          [
+            0.6196569353967316,
+            8.53813613485828,
+            0.39023217783881053
+          ]
+        ]
+      },
+      "weak_value": {
+        "imag": [
+          [
+            -7.8893791426176785,
+            -0.19737739184269756,
+            -0.1570095722683255
+          ],
+          [
+            1.1659864448520896,
+            2.7050438700074424,
+            -1.0601862411337664
+          ],
+          [
+            -0.1530395187734175,
+            -0.9345850383660923,
+            6.821903609702613
+          ],
+          [
+            0.20191315113274727,
+            -0.007618000935365299,
+            -0.47782421050325297
+          ]
+        ],
+        "real": [
+          [
+            -0.2019234293383445,
+            -0.6708891391165299,
+            0.6207326501080375
+          ],
+          [
+            1.5395360093423758,
+            -8.781406252635222,
+            -1.3647367421583028
+          ],
+          [
+            0.23576518887506198,
+            6.687594411665426,
+            -2.1032987774760112
+          ],
+          [
+            0.13911723378700452,
+            0.6619128125535161,
+            0.8663853663987102
+          ]
+        ]
+      }
+    },
+    {
+      "MP64_core_coefficient_first": {
+        "full_fibre_operator_or_domain_not_inferred": true,
+        "maximum": {
+          "absolute": 7.106294666405892e-15,
+          "scaled": 5.333641769954529e-16
+        },
+        "precision_decimal_digits": 64,
+        "scaled_by_coefficient": {
+          "A_body": 4.261744490545098e-16,
+          "A_energy": 1.3877787807814457e-17,
+          "A_radial": 3.905457612179399e-16,
+          "A_time": 1.3877787807814457e-17,
+          "Dtau_body": 2.349111464967252e-25,
+          "Dtau_radial": 5.551115123125783e-17,
+          "Dtau_time": 1.3877787807814457e-17,
+          "W_body": 4.261744490545098e-16,
+          "W_radial": 3.905457612179399e-16,
+          "body": 4.261744490545099e-16,
+          "energy": 1.3877787807814457e-17,
+          "radial": 3.9054576121794e-16,
+          "sigma_eta_contact": 5.333641769954529e-16,
+          "time": 1.3877787807814457e-17
+        },
+        "source_affine_germ_only": true
+      },
+      "MP64_wall_coefficient_first": {
+        "full_fibre_operator_or_domain_not_inferred": true,
+        "maximum": {
+          "absolute": 8.881784197001252e-16,
+          "scaled": 1.2029363229183843e-16
+        },
+        "precision_decimal_digits": 64,
+        "scaled_by_coefficient": {
+          "A_body": 8.326672684688674e-17,
+          "A_energy": 1.3010426069826053e-18,
+          "A_radial": 1.181088641168568e-16,
+          "A_time": 8.673617379884035e-19,
+          "Dtau_body": 6.462348535570529e-27,
+          "Dtau_radial": 1.1102230246251565e-16,
+          "Dtau_time": 8.673617379884035e-19,
+          "W_body": 8.326672684688674e-17,
+          "W_radial": 1.181088641168568e-16,
+          "body": 5.551115123125783e-17,
+          "energy": 1.3010426069826053e-18,
+          "radial": 1.1810886411685682e-16,
+          "sigma_eta_contact": 1.2029363229183843e-16,
+          "time": 8.673617379884035e-19
+        },
+        "source_affine_germ_only": true
+      },
+      "affine_germ_FD_sweep": [
+        {
+          "positive_form_first": {
+            "absolute": 2.0889183408350138e-07,
+            "scaled": 3.882452212737043e-10
+          },
+          "step": 2e-06,
+          "weak_first": {
+            "absolute": 4.768015410288673e-10,
+            "scaled": 6.105338236330132e-11
+          }
+        },
+        {
+          "positive_form_first": {
+            "absolute": 2.064678198472039e-07,
+            "scaled": 3.8373996172141547e-10
+          },
+          "step": 1e-06,
+          "weak_first": {
+            "absolute": 8.314974267223148e-10,
+            "scaled": 1.0647140572837695e-10
+          }
+        },
+        {
+          "positive_form_first": {
+            "absolute": 6.687677513699346e-07,
+            "scaled": 1.242968087669163e-09
+          },
+          "step": 5e-07,
+          "weak_first": {
+            "absolute": 2.148415613307066e-09,
+            "scaled": 2.7509986573629764e-10
+          }
+        }
+      ],
+      "angular_count": 5,
+      "angular_level": 1,
+      "coefficient_contact_norm": 84.02496686072263,
+      "coordinate_time": -5e-06,
+      "core_radial_count": 4,
+      "density_contact": {
+        "imag": [
+          [
+            -3.403652350265017,
+            0.6852851718924367,
+            0.6410470023800188
+          ],
+          [
+            0.794285000117149,
+            1.224673507945039,
+            2.777109204467394
+          ],
+          [
+            -0.6108622471927451,
+            0.22420347250301673,
+            -3.519821252810811
+          ],
+          [
+            0.9655584680031024,
+            1.3330826272036493,
+            -0.233972533983777
+          ]
+        ],
+        "real": [
+          [
+            5.5228202891580755,
+            2.3956767106405388,
+            0.3336920816957024
+          ],
+          [
+            0.5316728432857571,
+            -0.434983426253676,
+            -0.6580374302708809
+          ],
+          [
+            0.3793344198444945,
+            -2.01675166943628,
+            -0.5157478998088043
+          ],
+          [
+            -0.08249085954173299,
+            -2.037592373357323,
+            -0.6368001134792599
+          ]
+        ]
+      },
+      "eta_orientation": -1,
+      "exact_phase_partial_norm": 4.5436584643689475,
+      "exact_time_phase_mixed_norm": 0.5998691592680248,
+      "full_fibre_count": 1920,
+      "independent_left_contact": {
+        "imag": [
+          [
+            -0.2614059536261873,
+            0.0025680384303763326,
+            0.025167315979176257
+          ],
+          [
+            0.002200620898508923,
+            0.076174100658602,
+            0.12293178056008393
+          ],
+          [
+            -0.014400529726771865,
+            0.026222098012728366,
+            -0.1533267323450953
+          ],
+          [
+            0.023241633825423377,
+            0.045449346903179234,
+            -0.024170511080318962
+          ]
+        ],
+        "real": [
+          [
+            -0.01468549399654206,
+            0.0024499312955256836,
+            0.028860791536618295
+          ],
+          [
+            0.04131847756139078,
+            0.018045325144528168,
+            0.0024588687408030607
+          ],
+          [
+            -0.0005233487551508569,
+            -0.10835383917142515,
+            -0.008790460170687527
+          ],
+          [
+            0.0037350914842819534,
+            -0.020732388327002547,
+            0.030018881818227323
+          ]
+        ]
+      },
+      "literal_value_point": {
+        "absolute": 6.473657049138937e-16,
+        "scaled": 6.473657049138937e-16
+      },
+      "literal_value_weak": {
+        "absolute": 2.2822105384036855e-15,
+        "scaled": 1.0020110133784026e-15
+      },
+      "minimum_actual_core_Q_f": -0.46120115302545317,
+      "minimum_actual_core_Q_sigma": -0.45557037947385587,
+      "moving_trial_contact_norm": 5.174443177352995,
+      "nonzero_terms": {
+        "conjugate": {
+          "angular": 27.712812921102035,
+          "body_first": 893.018944142629,
+          "eta": 188.7174376621165,
+          "eta_first": 393.6034665740203,
+          "gauge": 2.644442329754361,
+          "round_spin": 26.832815729997453,
+          "shift": 43.0278209822625,
+          "time": 37.31743474271986,
+          "wall_eta": 9.501873847881951,
+          "wall_eta_first": 66.21147184837558
+        },
+        "particle": {
+          "angular": 27.712812921102035,
+          "body_first": 893.018944142629,
+          "eta": 188.7174376621165,
+          "eta_first": 393.6034665740203,
+          "gauge": 2.644442329754361,
+          "round_spin": 26.832815729997453,
+          "shift": 43.0278209822625,
+          "time": 37.31743474271986,
+          "wall_eta": 9.501873847881951,
+          "wall_eta_first": 66.21147184837558
+        }
+      },
+      "positive_first": {
+        "imag": [
+          [
+            8.881784197001252e-16,
+            -8.707151070667686,
+            4.920088925394599
+          ],
+          [
+            8.707151070667681,
+            -2.6645352591003757e-15,
+            179.6300847737027
+          ],
+          [
+            -4.9200889253946,
+            -179.63008477370275,
+            -8.881784197001252e-16
+          ]
+        ],
+        "real": [
+          [
+            505.925440592994,
+            -2.130927667713276,
+            -0.4843823414901677
+          ],
+          [
+            -2.1309276677132774,
+            538.0409663903959,
+            2.4473878160178626
+          ],
+          [
+            -0.48438234149016596,
+            2.447387816017874,
+            485.8463302786161
+          ]
+        ]
+      },
+      "positive_value": {
+        "imag": [
+          [
+            -5.1146019877141994e-17,
+            -0.9430341458536176,
+            0.9498892365647065
+          ],
+          [
+            0.9430341458536171,
+            -1.7391121654347684e-17,
+            52.96438801983322
+          ],
+          [
+            -0.9498892365647063,
+            -52.96438801983322,
+            -1.911281372695433e-16
+          ]
+        ],
+        "real": [
+          [
+            154.31117564731017,
+            -0.47807076583611274,
+            -0.2023928580313215
+          ],
+          [
+            -0.4780707658361115,
+            166.6328735076888,
+            0.18888151664142167
+          ],
+          [
+            -0.20239285803132165,
+            0.18888151664142144,
+            146.75455280495257
+          ]
+        ]
+      },
+      "positive_value_minimum_eigenvalue": 102.77244459992347,
+      "separate_actual_wall_count": 1,
+      "side": "incoming",
+      "weak_first": {
+        "imag": [
+          [
+            -4.850291573595443,
+            0.836361508362143,
+            0.9854848993462105
+          ],
+          [
+            0.8184159448854869,
+            5.589315519214509,
+            4.354385181570691
+          ],
+          [
+            -0.8091902943291277,
+            0.143150725936247,
+            -3.0670830349486464
+          ],
+          [
+            1.2299016240290088,
+            1.6210933791912903,
+            -0.9984757635131138
+          ]
+        ],
+        "real": [
+          [
+            6.120807118160198,
+            2.9564392874805048,
+            0.4681609719760101
+          ],
+          [
+            0.7595424345176616,
+            -0.338728880525842,
+            -1.1843493561446568
+          ],
+          [
+            0.45208453029724394,
+            -3.217769778034972,
+            -0.7061652850168592
+          ],
+          [
+            -0.035906553362347354,
+            -2.509599558319578,
+            -0.3072608897129308
+          ]
+        ]
+      },
+      "weak_value": {
+        "imag": [
+          [
+            -2.2456073764701414,
+            0.028818623652922586,
+            0.27027508873245776
+          ],
+          [
+            0.09880680366206435,
+            0.6829825353711221,
+            1.0485084534375515
+          ],
+          [
+            -0.12254366571997226,
+            0.010050929126637015,
+            -1.3202059938245858
+          ],
+          [
+            0.204112729626814,
+            0.3429614667786573,
+            -0.1481711213702765
+          ]
+        ],
+        "real": [
+          [
+            0.38058745328994625,
+            0.012171146458754615,
+            0.19587858844090314
+          ],
+          [
+            0.3462680701395383,
+            0.0054133244259425995,
+            -0.22067933114914087
+          ],
+          [
+            0.023809485294147885,
+            -0.9723963998233588,
+            0.22826855295613133
+          ],
+          [
+            -0.014457007696275637,
+            -0.2642729368549615,
+            0.30386482919832425
+          ]
+        ]
+      }
+    },
+    {
+      "MP64_core_coefficient_first": {
+        "full_fibre_operator_or_domain_not_inferred": true,
+        "maximum": {
+          "absolute": 7.106294666405892e-15,
+          "scaled": 5.333641769954529e-16
+        },
+        "precision_decimal_digits": 64,
+        "scaled_by_coefficient": {
+          "A_body": 4.261744490545098e-16,
+          "A_energy": 1.3877787807814457e-17,
+          "A_radial": 3.905457612179399e-16,
+          "A_time": 1.3877787807814457e-17,
+          "Dtau_body": 2.349111464967252e-25,
+          "Dtau_radial": 5.551115123125783e-17,
+          "Dtau_time": 1.3877787807814457e-17,
+          "W_body": 4.261744490545098e-16,
+          "W_radial": 3.905457612179399e-16,
+          "body": 4.261744490545099e-16,
+          "energy": 1.3877787807814457e-17,
+          "radial": 3.9054576121794e-16,
+          "sigma_eta_contact": 5.333641769954529e-16,
+          "time": 1.3877787807814457e-17
+        },
+        "source_affine_germ_only": true
+      },
+      "MP64_wall_coefficient_first": {
+        "full_fibre_operator_or_domain_not_inferred": true,
+        "maximum": {
+          "absolute": 8.881784197001252e-16,
+          "scaled": 1.512977553998507e-16
+        },
+        "precision_decimal_digits": 64,
+        "scaled_by_coefficient": {
+          "A_body": 1.512977553998507e-16,
+          "A_energy": 1.3010426069826053e-18,
+          "A_radial": 1.181088641168568e-16,
+          "A_time": 8.673617379884035e-19,
+          "Dtau_body": 6.462348535570529e-27,
+          "Dtau_radial": 1.1102230246251565e-16,
+          "Dtau_time": 8.673617379884035e-19,
+          "W_body": 1.512977553998507e-16,
+          "W_radial": 1.181088641168568e-16,
+          "body": 5.551115123125783e-17,
+          "energy": 1.3010426069826053e-18,
+          "radial": 1.1810886411685682e-16,
+          "sigma_eta_contact": 1.2029363229183843e-16,
+          "time": 8.673617379884035e-19
+        },
+        "source_affine_germ_only": true
+      },
+      "affine_germ_FD_sweep": [
+        {
+          "positive_form_first": {
+            "absolute": 1.286247766087743e-07,
+            "scaled": 2.3951554153256384e-10
+          },
+          "step": 2e-06,
+          "weak_first": {
+            "absolute": 4.117684563878925e-10,
+            "scaled": 4.3549268231195364e-11
+          }
+        },
+        {
+          "positive_form_first": {
+            "absolute": 4.949046115782074e-07,
+            "scaled": 9.215747477276877e-10
+          },
+          "step": 1e-06,
+          "weak_first": {
+            "absolute": 1.5148344445237752e-09,
+            "scaled": 1.6021123161963878e-10
+          }
+        },
+        {
+          "positive_form_first": {
+            "absolute": 9.214439376731664e-07,
+            "scaled": 1.715844719446838e-09
+          },
+          "step": 5e-07,
+          "weak_first": {
+            "absolute": 1.7744009467827022e-09,
+            "scaled": 1.8766338598293e-10
+          }
+        }
+      ],
+      "angular_count": 5,
+      "angular_level": 1,
+      "coefficient_contact_norm": 84.4091220605438,
+      "coordinate_time": -5e-06,
+      "core_radial_count": 4,
+      "density_contact": {
+        "imag": [
+          [
+            -3.4567671736190513,
+            0.6434464644725483,
+            0.5657814275357614
+          ],
+          [
+            0.8140437996508723,
+            -3.1737209670587747,
+            2.504590663378915
+          ],
+          [
+            -0.5622445890119216,
+            0.41976264991776907,
+            -4.643765907554541
+          ],
+          [
+            0.9869492011158629,
+            1.349340441100742,
+            0.009039562449489724
+          ]
+        ],
+        "real": [
+          [
+            6.101948255154203,
+            2.5261295548138323,
+            0.3565689599162838
+          ],
+          [
+            0.5902208182708205,
+            0.012916532460192684,
+            -0.3386503187966098
+          ],
+          [
+            0.4967220639479117,
+            -2.012609484096248,
+            -0.30094958792371024
+          ],
+          [
+            -0.02051517852815212,
+            -2.077734339970484,
+            -0.6872247495349283
+          ]
+        ]
+      },
+      "eta_orientation": 1,
+      "exact_phase_partial_norm": 4.5436584643689475,
+      "exact_time_phase_mixed_norm": 0.5998691592680248,
+      "full_fibre_count": 1920,
+      "independent_left_contact": {
+        "imag": [
+          [
+            -0.2721309422052419,
+            -0.0014708918693719496,
+            0.020768512291667533
+          ],
+          [
+            0.0024815774735679,
+            -0.16885098558614844,
+            0.1038026679954369
+          ],
+          [
+            -0.01334816427922643,
+            0.03679064118738554,
+            -0.21729756430780858
+          ],
+          [
+            0.02356485367136059,
+            0.046876000842243866,
+            -0.010285242322909576
+          ]
+        ],
+        "real": [
+          [
+            0.01605920055324125,
+            0.00897101209143222,
+            0.0290848558039202
+          ],
+          [
+            0.04476681655581176,
+            -0.01715884408046882,
+            0.016122067280771864
+          ],
+          [
+            0.006512358592791151,
+            -0.10548163482077412,
+            -0.012334729793125112
+          ],
+          [
+            0.00739174616153602,
+            -0.0226932055771093,
+            0.030568843738440897
+          ]
+        ]
+      },
+      "literal_value_point": {
+        "absolute": 7.108895957933346e-16,
+        "scaled": 7.108895957933346e-16
+      },
+      "literal_value_weak": {
+        "absolute": 1.609823385706477e-15,
+        "scaled": 6.788920796282076e-16
+      },
+      "minimum_actual_core_Q_f": -0.46120115302545317,
+      "minimum_actual_core_Q_sigma": -0.45557037947385587,
+      "moving_trial_contact_norm": 5.2037393204575455,
+      "nonzero_terms": {
+        "conjugate": {
+          "angular": 27.712812921102035,
+          "body_first": 893.0189441426289,
+          "eta": 188.7174376621165,
+          "eta_first": 393.6034665740203,
+          "gauge": 2.644442329754361,
+          "round_spin": 26.832815729997453,
+          "shift": 43.0278209822625,
+          "time": 37.31743474271986,
+          "wall_eta": 9.501873847881951,
+          "wall_eta_first": 66.21147184837558
+        },
+        "particle": {
+          "angular": 27.712812921102035,
+          "body_first": 893.0189441426289,
+          "eta": 188.7174376621165,
+          "eta_first": 393.6034665740203,
+          "gauge": 2.644442329754361,
+          "round_spin": 26.832815729997453,
+          "shift": 43.0278209822625,
+          "time": 37.31743474271986,
+          "wall_eta": 9.501873847881951,
+          "wall_eta_first": 66.21147184837558
+        }
+      },
+      "positive_first": {
+        "imag": [
+          [
+            5.329070518200751e-15,
+            -5.640299679365021,
+            4.260851037726399
+          ],
+          [
+            5.640299679365009,
+            -2.6645352591003757e-15,
+            178.62083487335588
+          ],
+          [
+            -4.2608510377264,
+            -178.62083487335585,
+            -8.881784197001252e-16
+          ]
+        ],
+        "real": [
+          [
+            507.0576160401832,
+            -1.8647678820693487,
+            -0.09978533811242371
+          ],
+          [
+            -1.8647678820693467,
+            537.020586554141,
+            2.8399735548809364
+          ],
+          [
+            -0.09978533811242148,
+            2.839973554880938,
+            493.164455887166
+          ]
+        ]
+      },
+      "positive_value": {
+        "imag": [
+          [
+            -1.8785877869032137e-16,
+            -0.4294446370213365,
+            0.8754502276275986
+          ],
+          [
+            0.4294446370213365,
+            1.6461434173309125e-16,
+            52.79861489430594
+          ],
+          [
+            -0.8754502276275997,
+            -52.798614894305956,
+            -7.928535435743631e-17
+          ]
+        ],
+        "real": [
+          [
+            154.43770018851828,
+            -0.45161718058295464,
+            -0.16582296715319372
+          ],
+          [
+            -0.4516171805829558,
+            166.48464105016924,
+            0.9231204450426588
+          ],
+          [
+            -0.16582296715319458,
+            0.9231204450426573,
+            148.05673017892616
+          ]
+        ]
+      },
+      "positive_value_minimum_eigenvalue": 103.6447067521435,
+      "separate_actual_wall_count": 1,
+      "side": "incoming",
+      "weak_first": {
+        "imag": [
+          [
+            -5.148458766121352,
+            0.6752179727687153,
+            0.7435343167012964
+          ],
+          [
+            0.8673223205784438,
+            -8.348663584737263,
+            3.4247995347014717
+          ],
+          [
+            -0.6828163238697722,
+            0.757409235492104,
+            -6.651438834492653
+          ],
+          [
+            1.2831659761313954,
+            1.681323230979989,
+            -0.2225880278056008
+          ]
+        ],
+        "real": [
+          [
+            7.930623808201718,
+            3.357352257012098,
+            0.523092515509825
+          ],
+          [
+            0.9481965511364863,
+            0.07477763571788229,
+            -0.24129212717953408
+          ],
+          [
+            0.8323700431704476,
+            -3.1604772693425938,
+            -0.28483427141905804
+          ],
+          [
+            0.16389990220063996,
+            -2.6321996670913106,
+            -0.410886091144846
+          ]
+        ]
+      },
+      "weak_value": {
+        "imag": [
+          [
+            -2.2766811971508454,
+            0.007227168713432947,
+            0.2333094814482977
+          ],
+          [
+            0.1079392009805542,
+            -1.4693506499002729,
+            0.912569336260652
+          ],
+          [
+            -0.09983659400581969,
+            0.10553376587114136,
+            -1.871091812095352
+          ],
+          [
+            0.2140118690296475,
+            0.3512580846260519,
+            -0.02902684922477379
+          ]
+        ],
+        "real": [
+          [
+            0.662987989694385,
+            0.07551930636003404,
+            0.20638589556985457
+          ],
+          [
+            0.375040459391565,
+            0.1852234362600816,
+            -0.06709102814630062
+          ],
+          [
+            0.08157735339175143,
+            -0.9686408012440667,
+            0.32322875172626836
+          ],
+          [
+            0.016004077525473098,
+            -0.2837359822670571,
+            0.281388005948056
+          ]
+        ]
+      }
+    },
+    {
+      "MP64_core_coefficient_first": {
+        "full_fibre_operator_or_domain_not_inferred": true,
+        "maximum": {
+          "absolute": 7.107378653578542e-15,
+          "scaled": 4.1725479871608825e-16
+        },
+        "precision_decimal_digits": 64,
+        "scaled_by_coefficient": {
+          "A_body": 4.1725479871608815e-16,
+          "A_energy": 6.938893903907228e-18,
+          "A_radial": 1.964894749560738e-16,
+          "A_time": 3.469446951953614e-18,
+          "Dtau_body": 1.0339757656912846e-25,
+          "Dtau_radial": 5.551115123125783e-17,
+          "Dtau_time": 3.469446951953614e-18,
+          "W_body": 4.1725479871608815e-16,
+          "W_radial": 1.964894749560738e-16,
+          "body": 4.1725479871608825e-16,
+          "energy": 6.938893903907228e-18,
+          "radial": 1.9648947495607382e-16,
+          "sigma_eta_contact": 3.0890034470965633e-16,
+          "time": 1.3877787807814457e-17
+        },
+        "source_affine_germ_only": true
+      },
+      "MP64_wall_coefficient_first": {
+        "full_fibre_operator_or_domain_not_inferred": true,
+        "maximum": {
+          "absolute": 4.440892098500626e-16,
+          "scaled": 1.6432149615624928e-16
+        },
+        "precision_decimal_digits": 64,
+        "scaled_by_coefficient": {
+          "A_body": 1.6432149615624926e-16,
+          "A_energy": 3.469446951953614e-18,
+          "A_radial": 1.9046277855358253e-17,
+          "A_time": 0.0,
+          "Dtau_body": 2.465190328815662e-32,
+          "Dtau_radial": 0.0,
+          "Dtau_time": 0.0,
+          "W_body": 1.6432149615624926e-16,
+          "W_radial": 8.458246483370792e-33,
+          "body": 1.6432149615624928e-16,
+          "energy": 6.938893903907228e-18,
+          "radial": 1.9046277855358256e-17,
+          "sigma_eta_contact": 1.5587128014483848e-16,
+          "time": 0.0
+        },
+        "source_affine_germ_only": true
+      },
+      "affine_germ_FD_sweep": [
+        {
+          "positive_form_first": {
+            "absolute": 5.494906245647962e-08,
+            "scaled": 1.4887768013027155e-10
+          },
+          "step": 2e-06,
+          "weak_first": {
+            "absolute": 6.904892657816053e-10,
+            "scaled": 1.5056399638417017e-11
+          }
+        },
+        {
+          "positive_form_first": {
+            "absolute": 1.641351178664191e-07,
+            "scaled": 4.447037763174361e-10
+          },
+          "step": 1e-06,
+          "weak_first": {
+            "absolute": 9.9069033877484e-10,
+            "scaled": 2.1602406290280545e-11
+          }
+        },
+        {
+          "positive_form_first": {
+            "absolute": 1.7095147977560255e-07,
+            "scaled": 4.6317186465201085e-10
+          },
+          "step": 5e-07,
+          "weak_first": {
+            "absolute": 1.4474879644224657e-09,
+            "scaled": 3.156306454575605e-11
+          }
+        }
+      ],
+      "angular_count": 1,
+      "angular_level": 0,
+      "coefficient_contact_norm": 70.97626205091103,
+      "coordinate_time": 5e-06,
+      "core_radial_count": 4,
+      "density_contact": {
+        "imag": [
+          [
+            -4.7802718239881035,
+            -1.4893952931483903,
+            -0.7027093397542032
+          ],
+          [
+            -0.43749848336125713,
+            1.5933789928277635,
+            -3.7049394437586325
+          ],
+          [
+            -0.6486689034872015,
+            -5.828248500120622,
+            3.5046664943440864
+          ],
+          [
+            0.8525715472582636,
+            0.14686173866439764,
+            -1.0032130684630038
+          ]
+        ],
+        "real": [
+          [
+            -0.46253450639203414,
+            2.0756720099125996,
+            0.9291307885158371
+          ],
+          [
+            -0.13422805925757647,
+            -23.48870589444765,
+            -1.487847121361265
+          ],
+          [
+            0.8814303274463029,
+            5.869901960697769,
+            -12.052594484086924
+          ],
+          [
+            0.09508307065049477,
+            2.7647920981452327,
+            0.24269212613233684
+          ]
+        ]
+      },
+      "eta_orientation": -1,
+      "exact_phase_partial_norm": 3.603573758816805,
+      "exact_time_phase_mixed_norm": 0.5976490423100295,
+      "full_fibre_count": 384,
+      "independent_left_contact": {
+        "imag": [
+          [
+            -0.6501024791513668,
+            -0.048678104354567535,
+            -0.025233649320004763
+          ],
+          [
+            0.08676484394920629,
+            0.3680421015347166,
+            -0.06259789574778606
+          ],
+          [
+            -0.030562909198563484,
+            -0.1889238549480642,
+            0.5874867354471305
+          ],
+          [
+            0.01702715517856146,
+            -0.0005563597797129272,
+            -0.04894981889584504
+          ]
+        ],
+        "real": [
+          [
+            -0.16385934812215666,
+            0.04318557030694864,
+            0.047235362872445105
+          ],
+          [
+            0.05925123841318452,
+            -0.6127811797950276,
+            -0.13347677697409513
+          ],
+          [
+            0.011318634406532257,
+            0.5511061691410075,
+            -0.045126875080022735
+          ],
+          [
+            0.006562952338612824,
+            0.035379098048390525,
+            0.08853786904846885
+          ]
+        ]
+      },
+      "literal_value_point": {
+        "absolute": 8.005932084973443e-16,
+        "scaled": 6.110671926984728e-16
+      },
+      "literal_value_weak": {
+        "absolute": 6.408593517931132e-15,
+        "scaled": 1.0330001223533263e-15
+      },
+      "minimum_actual_core_Q_f": -0.9770203373624197,
+      "minimum_actual_core_Q_sigma": -0.9609501074656888,
+      "moving_trial_contact_norm": 3.904598712621374,
+      "nonzero_terms": {
+        "conjugate": {
+          "angular": 0.0,
+          "body_first": 318.73199988576647,
+          "eta": 82.9864583523425,
+          "eta_first": 169.90114398061837,
+          "gauge": 2.6444063539640585,
+          "round_spin": 11.999999999999995,
+          "shift": 21.23777236112915,
+          "time": 20.54922307221962,
+          "wall_eta": 4.269318824112505,
+          "wall_eta_first": 23.065617917276814
+        },
+        "particle": {
+          "angular": 0.0,
+          "body_first": 318.73199988576647,
+          "eta": 82.9864583523425,
+          "eta_first": 169.90114398061837,
+          "gauge": 2.6444063539640585,
+          "round_spin": 11.999999999999995,
+          "shift": 21.23777236112915,
+          "time": 20.54922307221962,
+          "wall_eta": 4.269318824112505,
+          "wall_eta_first": 23.065617917276814
+        }
+      },
+      "positive_first": {
+        "imag": [
+          [
+            5.329070518200751e-15,
+            28.08236275055323,
+            7.172572648482377
+          ],
+          [
+            -28.082362750553234,
+            1.7763568394002505e-15,
+            4.829252932256434
+          ],
+          [
+            -7.172572648482377,
+            -4.829252932256432,
+            5.329070518200751e-15
+          ]
+        ],
+        "real": [
+          [
+            368.44505327551326,
+            14.706545528011933,
+            -10.098210922647418
+          ],
+          [
+            14.706545528011926,
+            369.08865318305067,
+            20.355964366376607
+          ],
+          [
+            -10.098210922647418,
+            20.35596436637661,
+            357.2739300351199
+          ]
+        ]
+      },
+      "positive_value": {
+        "imag": [
+          [
+            8.320743454057894e-17,
+            5.506933475106672,
+            1.2530125445227445
+          ],
+          [
+            -5.506933475106672,
+            -2.338497031109145e-16,
+            4.470131333859242
+          ],
+          [
+            -1.2530125445227442,
+            -4.470131333859241,
+            4.3249502286804575e-18
+          ]
+        ],
+        "real": [
+          [
+            93.48877741075157,
+            3.982998679329074,
+            -1.7817582974793176
+          ],
+          [
+            3.9829986793290733,
+            93.99673382333268,
+            3.2648192177969673
+          ],
+          [
+            -1.781758297479319,
+            3.264819217796965,
+            92.04517117781774
+          ]
+        ]
+      },
+      "positive_value_minimum_eigenvalue": 85.37546425916474,
+      "separate_actual_wall_count": 1,
+      "side": "outgoing",
+      "weak_first": {
+        "imag": [
+          [
+            -11.367669094999817,
+            -3.7882316020253084,
+            -0.9875325995109858
+          ],
+          [
+            -0.5723800998340236,
+            2.0844337420742947,
+            -7.781895251305297
+          ],
+          [
+            -1.4381236137335147,
+            -12.21872303053032,
+            6.0702800130179275
+          ],
+          [
+            1.665272839169735,
+            -0.13911605285592182,
+            -2.1090823714356897
+          ]
+        ],
+        "real": [
+          [
+            -1.8451113156003642,
+            6.534662280979046,
+            1.5514844851405558
+          ],
+          [
+            -4.1859095947446985,
+            -45.8127892748236,
+            -3.3359470453639894
+          ],
+          [
+            1.6626274738909022,
+            12.732194147937598,
+            -24.49700071786534
+          ],
+          [
+            -0.4221848303096384,
+            5.1188500196736655,
+            1.545082552812594
+          ]
+        ]
+      },
+      "weak_value": {
+        "imag": [
+          [
+            -5.85406561168638,
+            -0.3260312563240802,
+            -0.12076339456015067
+          ],
+          [
+            0.855731956251094,
+            1.905826578303147,
+            -0.7894639650068331
+          ],
+          [
+            -0.23615441022620898,
+            -0.5210369469098586,
+            4.895572326406785
+          ],
+          [
+            0.15673999440055048,
+            0.06852279583523693,
+            -0.24337084527734512
+          ]
+        ],
+        "real": [
+          [
+            -0.12543836240731776,
+            0.46225853159625024,
+            0.4513889936616263
+          ],
+          [
+            0.3372663482077024,
+            -5.903877417468789,
+            -1.0078599365782916
+          ],
+          [
+            0.15541844674430794,
+            5.066040359105987,
+            -1.5122754797585523
+          ],
+          [
+            0.02131317864552652,
+            0.29800436574876243,
+            0.8513913649729217
+          ]
+        ]
+      }
+    },
+    {
+      "MP64_core_coefficient_first": {
+        "full_fibre_operator_or_domain_not_inferred": true,
+        "maximum": {
+          "absolute": 7.107378653578542e-15,
+          "scaled": 4.1725479871608825e-16
+        },
+        "precision_decimal_digits": 64,
+        "scaled_by_coefficient": {
+          "A_body": 4.1725479871608815e-16,
+          "A_energy": 6.938893903907228e-18,
+          "A_radial": 1.964894749560738e-16,
+          "A_time": 3.469446951953614e-18,
+          "Dtau_body": 1.0339757656912846e-25,
+          "Dtau_radial": 5.551115123125783e-17,
+          "Dtau_time": 3.469446951953614e-18,
+          "W_body": 4.1725479871608815e-16,
+          "W_radial": 1.964894749560738e-16,
+          "body": 4.1725479871608825e-16,
+          "energy": 6.938893903907228e-18,
+          "radial": 1.9648947495607382e-16,
+          "sigma_eta_contact": 3.0890034470965633e-16,
+          "time": 1.3877787807814457e-17
+        },
+        "source_affine_germ_only": true
+      },
+      "MP64_wall_coefficient_first": {
+        "full_fibre_operator_or_domain_not_inferred": true,
+        "maximum": {
+          "absolute": 4.440892098500626e-16,
+          "scaled": 1.6432149615624928e-16
+        },
+        "precision_decimal_digits": 64,
+        "scaled_by_coefficient": {
+          "A_body": 1.6432149615624926e-16,
+          "A_energy": 3.469446951953614e-18,
+          "A_radial": 1.9046277855358253e-17,
+          "A_time": 0.0,
+          "Dtau_body": 2.465190328815662e-32,
+          "Dtau_radial": 0.0,
+          "Dtau_time": 0.0,
+          "W_body": 1.6432149615624926e-16,
+          "W_radial": 8.458246483370792e-33,
+          "body": 1.6432149615624928e-16,
+          "energy": 6.938893903907228e-18,
+          "radial": 1.9046277855358256e-17,
+          "sigma_eta_contact": 1.5587128014483848e-16,
+          "time": 0.0
+        },
+        "source_affine_germ_only": true
+      },
+      "affine_germ_FD_sweep": [
+        {
+          "positive_form_first": {
+            "absolute": 5.915907492512932e-08,
+            "scaled": 1.598054689182227e-10
+          },
+          "step": 2e-06,
+          "weak_first": {
+            "absolute": 8.557258548629295e-10,
+            "scaled": 1.8026565855315383e-11
+          }
+        },
+        {
+          "positive_form_first": {
+            "absolute": 1.2413086757923002e-07,
+            "scaled": 3.353127399094772e-10
+          },
+          "step": 1e-06,
+          "weak_first": {
+            "absolute": 6.332990081711402e-10,
+            "scaled": 1.3340962192520666e-11
+          }
+        },
+        {
+          "positive_form_first": {
+            "absolute": 1.0679577541163267e-07,
+            "scaled": 2.884857308424462e-10
+          },
+          "step": 5e-07,
+          "weak_first": {
+            "absolute": 1.5279890465738914e-09,
+            "scaled": 3.218834048006207e-11
+          }
+        }
+      ],
+      "angular_count": 1,
+      "angular_level": 0,
+      "coefficient_contact_norm": 70.87643519347934,
+      "coordinate_time": 5e-06,
+      "core_radial_count": 4,
+      "density_contact": {
+        "imag": [
+          [
+            -5.124122295226072,
+            -0.47765835999643314,
+            -0.5949212941748966
+          ],
+          [
+            -0.4135896995404277,
+            1.499151838096776,
+            -3.4205551370742064
+          ],
+          [
+            -0.1198215019758041,
+            -5.851001634036534,
+            4.006308744205694
+          ],
+          [
+            0.7304029359178814,
+            -0.1109551467603182,
+            -1.3267515834112966
+          ]
+        ],
+        "real": [
+          [
+            -0.5473566281994334,
+            -1.6184821093533606,
+            0.9223540948135811
+          ],
+          [
+            2.9078606302766703,
+            -23.89825718666517,
+            -1.3794088540304694
+          ],
+          [
+            0.90787352447545,
+            5.697932597292579,
+            -11.02263571245535
+          ],
+          [
+            0.35351768971210484,
+            3.2126500133779787,
+            -0.41728916571345626
+          ]
+        ]
+      },
+      "eta_orientation": 1,
+      "exact_phase_partial_norm": 3.603573758816805,
+      "exact_time_phase_mixed_norm": 0.5976490423100295,
+      "full_fibre_count": 384,
+      "independent_left_contact": {
+        "imag": [
+          [
+            -0.6528692471005565,
+            -0.04332899107189506,
+            -0.02438996041792346
+          ],
+          [
+            0.08910653330613218,
+            0.3670104441195131,
+            -0.06028251585426049
+          ],
+          [
+            -0.02638120837441038,
+            -0.18922469962497215,
+            0.5921646679529639
+          ],
+          [
+            0.0162484130999368,
+            -0.0022688060454816696,
+            -0.05196384836182593
+          ]
+        ],
+        "real": [
+          [
+            -0.164283640458969,
+            0.013389717212767143,
+            0.04710571529669187
+          ],
+          [
+            0.08318103181745543,
+            -0.6159383831970885,
+            -0.13282448713314882
+          ],
+          [
+            0.011152420742074235,
+            0.5497685673113942,
+            -0.03737435489192879
+          ],
+          [
+            0.008683781105297984,
+            0.03908705435283806,
+            0.08357165912222667
+          ]
+        ]
+      },
+      "literal_value_point": {
+        "absolute": 8.005932084973443e-16,
+        "scaled": 6.130262990530654e-16
+      },
+      "literal_value_weak": {
+        "absolute": 6.233089088255906e-15,
+        "scaled": 1.00174349083708e-15
+      },
+      "minimum_actual_core_Q_f": -0.9770203373624197,
+      "minimum_actual_core_Q_sigma": -0.9609501074656888,
+      "moving_trial_contact_norm": 3.8986509671300102,
+      "nonzero_terms": {
+        "conjugate": {
+          "angular": 0.0,
+          "body_first": 318.73199988576647,
+          "eta": 82.9864583523425,
+          "eta_first": 169.90114398061837,
+          "gauge": 2.6444063539640585,
+          "round_spin": 11.999999999999995,
+          "shift": 21.23777236112915,
+          "time": 20.54922307221962,
+          "wall_eta": 4.269318824112505,
+          "wall_eta_first": 23.065617917276814
+        },
+        "particle": {
+          "angular": 0.0,
+          "body_first": 318.73199988576647,
+          "eta": 82.9864583523425,
+          "eta_first": 169.90114398061837,
+          "gauge": 2.6444063539640585,
+          "round_spin": 11.999999999999995,
+          "shift": 21.23777236112915,
+          "time": 20.54922307221962,
+          "wall_eta": 4.269318824112505,
+          "wall_eta_first": 23.065617917276814
+        }
+      },
+      "positive_first": {
+        "imag": [
+          [
+            -5.329070518200751e-15,
+            6.068093659639159,
+            2.985083232650435
+          ],
+          [
+            -6.068093659639164,
+            1.7763568394002505e-15,
+            4.075256366800067
+          ],
+          [
+            -2.9850832326504317,
+            -4.075256366800063,
+            1.7763568394002505e-15
+          ]
+        ],
+        "real": [
+          [
+            370.1943075969647,
+            33.132220556056225,
+            -7.06750711360103
+          ],
+          [
+            33.132220556056225,
+            354.6307388772067,
+            14.147726691202841
+          ],
+          [
+            -7.067507113601025,
+            14.147726691202834,
+            358.5333994754628
+          ]
+        ]
+      },
+      "positive_value": {
+        "imag": [
+          [
+            2.905915932145328e-17,
+            5.205184766675213,
+            1.321350516857359
+          ],
+          [
+            -5.205184766675213,
+            2.0485534180992616e-16,
+            4.417253208540203
+          ],
+          [
+            -1.3213505168573598,
+            -4.417253208540202,
+            -8.233626115432789e-17
+          ]
+        ],
+        "real": [
+          [
+            93.3895457406031,
+            3.882861888525294,
+            -1.7831194923020344
+          ],
+          [
+            3.882861888525293,
+            93.66407711194381,
+            3.173126428012346
+          ],
+          [
+            -1.7831194923020344,
+            3.173126428012346,
+            91.98564602198795
+          ]
+        ]
+      },
+      "positive_value_minimum_eigenvalue": 85.47494612601788,
+      "separate_actual_wall_count": 1,
+      "side": "outgoing",
+      "weak_first": {
+        "imag": [
+          [
+            -12.711067937495688,
+            0.6607733988425956,
+            -0.5622142079456972
+          ],
+          [
+            -0.8610005078894178,
+            1.7649023703481166,
+            -6.675643685723989
+          ],
+          [
+            0.6411324980521421,
+            -12.286685974316661,
+            7.9161352783417325
+          ],
+          [
+            1.1516592718264471,
+            -1.210742261832987,
+            -3.3001237076674936
+          ]
+        ],
+        "real": [
+          [
+            -2.222403153475142,
+            -7.885490488569686,
+            1.538360579516827
+          ],
+          [
+            7.796742032114905,
+            -47.43744471681988,
+            -2.8731379794888507
+          ],
+          [
+            1.8333023977734357,
+            12.052121634166493,
+            -20.37793820038964
+          ],
+          [
+            0.5801501077312285,
+            6.8500595338661086,
+            -1.0946110551182038
+          ]
+        ]
+      },
+      "weak_value": {
+        "imag": [
+          [
+            -5.8781288641791845,
+            -0.3447670072509484,
+            -0.11397774908829209
+          ],
+          [
+            0.9263390812676484,
+            1.8904616490354638,
+            -0.7686930216638587
+          ],
+          [
+            -0.20150630730702973,
+            -0.5264062246181009,
+            4.951252841148593
+          ],
+          [
+            0.15474217746423968,
+            0.062092488313946294,
+            -0.27918485848130675
+          ]
+        ],
+        "real": [
+          [
+            -0.12309248518634669,
+            0.20145456214353485,
+            0.4485054738117676
+          ],
+          [
+            0.5325762885140213,
+            -5.928105404958833,
+            -1.007335257194643
+          ],
+          [
+            0.14511388808193887,
+            5.055485385564041,
+            -1.4573550156969521
+          ],
+          [
+            0.04072518963190383,
+            0.3326914119486201,
+            0.8162467446966212
+          ]
+        ]
+      }
+    },
+    {
+      "MP64_core_coefficient_first": {
+        "full_fibre_operator_or_domain_not_inferred": true,
+        "maximum": {
+          "absolute": 7.107378653578542e-15,
+          "scaled": 4.1725479871608825e-16
+        },
+        "precision_decimal_digits": 64,
+        "scaled_by_coefficient": {
+          "A_body": 4.1725479871608815e-16,
+          "A_energy": 6.938893903907228e-18,
+          "A_radial": 1.964894749560738e-16,
+          "A_time": 3.469446951953614e-18,
+          "Dtau_body": 1.0339757656912846e-25,
+          "Dtau_radial": 5.551115123125783e-17,
+          "Dtau_time": 3.469446951953614e-18,
+          "W_body": 4.1725479871608815e-16,
+          "W_radial": 1.964894749560738e-16,
+          "body": 4.1725479871608825e-16,
+          "energy": 6.938893903907228e-18,
+          "radial": 1.9648947495607382e-16,
+          "sigma_eta_contact": 3.0890034470965633e-16,
+          "time": 1.3877787807814457e-17
+        },
+        "source_affine_germ_only": true
+      },
+      "MP64_wall_coefficient_first": {
+        "full_fibre_operator_or_domain_not_inferred": true,
+        "maximum": {
+          "absolute": 4.440892098500626e-16,
+          "scaled": 1.6432149615624928e-16
+        },
+        "precision_decimal_digits": 64,
+        "scaled_by_coefficient": {
+          "A_body": 1.6432149615624926e-16,
+          "A_energy": 3.469446951953614e-18,
+          "A_radial": 1.9046277855358253e-17,
+          "A_time": 0.0,
+          "Dtau_body": 2.465190328815662e-32,
+          "Dtau_radial": 0.0,
+          "Dtau_time": 0.0,
+          "W_body": 1.6432149615624926e-16,
+          "W_radial": 8.458246483370792e-33,
+          "body": 1.6432149615624928e-16,
+          "energy": 6.938893903907228e-18,
+          "radial": 1.9046277855358256e-17,
+          "sigma_eta_contact": 1.5587128014483848e-16,
+          "time": 0.0
+        },
+        "source_affine_germ_only": true
+      },
+      "affine_germ_FD_sweep": [
+        {
+          "positive_form_first": {
+            "absolute": 8.722578151375133e-08,
+            "scaled": 2.0573602148008826e-10
+          },
+          "step": 2e-06,
+          "weak_first": {
+            "absolute": 4.100242074805565e-10,
+            "scaled": 6.484584357255453e-11
+          }
+        },
+        {
+          "positive_form_first": {
+            "absolute": 2.8144080624047755e-07,
+            "scaled": 6.638233643967214e-10
+          },
+          "step": 1e-06,
+          "weak_first": {
+            "absolute": 4.792701818075885e-10,
+            "scaled": 7.579718141363127e-11
+          }
+        },
+        {
+          "positive_form_first": {
+            "absolute": 8.11280882553913e-07,
+            "scaled": 1.9135363212903188e-09
+          },
+          "step": 5e-07,
+          "weak_first": {
+            "absolute": 1.1357039332840312e-09,
+            "scaled": 1.7961300397157028e-10
+          }
+        }
+      ],
+      "angular_count": 5,
+      "angular_level": 1,
+      "coefficient_contact_norm": 93.15267681819725,
+      "coordinate_time": 5e-06,
+      "core_radial_count": 4,
+      "density_contact": {
+        "imag": [
+          [
+            -0.8872547747401185,
+            0.32070265747393967,
+            0.23727816097644358
+          ],
+          [
+            0.3937529555583259,
+            1.4549726023402527,
+            1.054590774326765
+          ],
+          [
+            -0.2870357111414738,
+            0.06729347850088219,
+            -1.058460108668232
+          ],
+          [
+            0.41674887999612864,
+            0.5892735390835169,
+            -0.0531068511242727
+          ]
+        ],
+        "real": [
+          [
+            2.652660347279896,
+            1.2209313519607237,
+            0.0891059602343099
+          ],
+          [
+            0.12059218781694284,
+            -0.2682138219043756,
+            -0.30266152096289617
+          ],
+          [
+            0.14326420716819505,
+            -0.6022322709433544,
+            -0.39604068912144963
+          ],
+          [
+            -0.05624140462752225,
+            -0.9429821505130853,
+            -0.5003123831809085
+          ]
+        ]
+      },
+      "eta_orientation": -1,
+      "exact_phase_partial_norm": 3.6029472981795156,
+      "exact_time_phase_mixed_norm": 0.5975451444505767,
+      "full_fibre_count": 1920,
+      "independent_left_contact": {
+        "imag": [
+          [
+            -0.19694806661607425,
+            0.0017803066763876303,
+            0.017309942738351933
+          ],
+          [
+            0.00027006151409329906,
+            -0.020891883331273422,
+            0.0849449348186782
+          ],
+          [
+            -0.00959192432024764,
+            0.022489174461936608,
+            -0.13370546770678812
+          ],
+          [
+            0.016475844897164214,
+            0.03175507971647298,
+            -0.01568474067497213
+          ]
+        ],
+        "real": [
+          [
+            -0.010692978281995643,
+            -0.0005484427803456897,
+            0.02160864431076581
+          ],
+          [
+            0.031834544962954604,
+            -0.000681595785979473,
+            0.005356570361652331
+          ],
+          [
+            0.0018338504469650096,
+            -0.08085153783753174,
+            -0.006363428716767418
+          ],
+          [
+            0.003689762130007064,
+            -0.01420607175730811,
+            0.02557153081690347
+          ]
+        ]
+      },
+      "literal_value_point": {
+        "absolute": 7.108895957933346e-16,
+        "scaled": 7.108895957933346e-16
+      },
+      "literal_value_weak": {
+        "absolute": 2.7109682159298164e-15,
+        "scaled": 1.577598943141716e-15
+      },
+      "minimum_actual_core_Q_f": -0.9770203373624197,
+      "minimum_actual_core_Q_sigma": -0.9609501074656888,
+      "moving_trial_contact_norm": 5.190988951450209,
+      "nonzero_terms": {
+        "conjugate": {
+          "angular": 27.712812921102035,
+          "body_first": 983.8748279464811,
+          "eta": 185.5633620877929,
+          "eta_first": 379.9105073956419,
+          "gauge": 2.6444063539640585,
+          "round_spin": 26.832815729997453,
+          "shift": 47.489102690151014,
+          "time": 45.94945967429013,
+          "wall_eta": 9.54648710833503,
+          "wall_eta_first": 51.57628960606805
+        },
+        "particle": {
+          "angular": 27.712812921102035,
+          "body_first": 983.8748279464811,
+          "eta": 185.5633620877929,
+          "eta_first": 379.9105073956419,
+          "gauge": 2.6444063539640585,
+          "round_spin": 26.832815729997453,
+          "shift": 47.489102690151014,
+          "time": 45.94945967429013,
+          "wall_eta": 9.54648710833503,
+          "wall_eta_first": 51.57628960606805
+        }
+      },
+      "positive_first": {
+        "imag": [
+          [
+            -5.329070518200751e-15,
+            -7.805311143062539,
+            4.0166031821346495
+          ],
+          [
+            7.805311143062539,
+            0.0,
+            148.55032855749036
+          ],
+          [
+            -4.016603182134648,
+            -148.55032855749036,
+            0.0
+          ]
+        ],
+        "real": [
+          [
+            409.98899961449376,
+            -1.6716404074666102,
+            -0.41543474778926787
+          ],
+          [
+            -1.6716404074666078,
+            423.96941909462026,
+            -1.429384633577893
+          ],
+          [
+            -0.4154347477892677,
+            -1.429384633577894,
+            398.8683677198017
+          ]
+        ]
+      },
+      "positive_value": {
+        "imag": [
+          [
+            7.464390497405836e-17,
+            -0.5379454540243516,
+            0.7405230872536872
+          ],
+          [
+            0.5379454540243513,
+            2.1630895440992332e-17,
+            44.51265869021189
+          ],
+          [
+            -0.7405230872536872,
+            -44.51265869021189,
+            6.125987781748906e-17
+          ]
+        ],
+        "real": [
+          [
+            129.68013603458883,
+            -0.3127470203037872,
+            -0.15382421665551912
+          ],
+          [
+            -0.31274702030378654,
+            139.97639217731535,
+            0.4385258537536806
+          ],
+          [
+            -0.15382421665551915,
+            0.43852585375368114,
+            124.14822648287387
+          ]
+        ]
+      },
+      "positive_value_minimum_eigenvalue": 86.83058643735109,
+      "separate_actual_wall_count": 1,
+      "side": "outgoing",
+      "weak_first": {
+        "imag": [
+          [
+            -1.6406914631450134,
+            0.7028261687794674,
+            0.5770989346694396
+          ],
+          [
+            0.5954854735985915,
+            6.309632014193421,
+            2.6857743630080884
+          ],
+          [
+            -0.5820252346701744,
+            0.022466332350706192,
+            -0.6403866511513935
+          ],
+          [
+            0.8172423806977736,
+            1.0180695596071188,
+            -0.7745573688303273
+          ]
+        ],
+        "real": [
+          [
+            4.522259342613802,
+            2.4405158667547138,
+            0.17736794496490588
+          ],
+          [
+            0.23380982903724934,
+            -0.41187489658533727,
+            -0.9025358468793766
+          ],
+          [
+            0.28708889202447985,
+            -1.6438345759830635,
+            -0.9442899072093843
+          ],
+          [
+            -0.054484201588873876,
+            -1.8320643722703978,
+            -0.6191681147594457
+          ]
+        ]
+      },
+      "weak_value": {
+        "imag": [
+          [
+            -1.6940265837937583,
+            0.015671251060223112,
+            0.18932909553275126
+          ],
+          [
+            0.06371143348679105,
+            -0.1817542077967053,
+            0.7324826112092656
+          ],
+          [
+            -0.07749868864608149,
+            0.033549770464549974,
+            -1.1511989646864282
+          ],
+          [
+            0.146882281651937,
+            0.24061743179618778,
+            -0.08480547075446333
+          ]
+        ],
+        "real": [
+          [
+            0.2884802228164976,
+            -0.010674441343179885,
+            0.15008078869311103
+          ],
+          [
+            0.2700448838218362,
+            0.03326535666965662,
+            -0.12060306638500881
+          ],
+          [
+            0.03449009734530528,
+            -0.7321731941283931,
+            0.20794233784618402
+          ],
+          [
+            -0.0011638390759352683,
+            -0.182246153769176,
+            0.2493760170213697
+          ]
+        ]
+      }
+    },
+    {
+      "MP64_core_coefficient_first": {
+        "full_fibre_operator_or_domain_not_inferred": true,
+        "maximum": {
+          "absolute": 7.107378653578542e-15,
+          "scaled": 4.1725479871608825e-16
+        },
+        "precision_decimal_digits": 64,
+        "scaled_by_coefficient": {
+          "A_body": 4.1725479871608815e-16,
+          "A_energy": 6.938893903907228e-18,
+          "A_radial": 1.964894749560738e-16,
+          "A_time": 3.469446951953614e-18,
+          "Dtau_body": 1.0339757656912846e-25,
+          "Dtau_radial": 5.551115123125783e-17,
+          "Dtau_time": 3.469446951953614e-18,
+          "W_body": 4.1725479871608815e-16,
+          "W_radial": 1.964894749560738e-16,
+          "body": 4.1725479871608825e-16,
+          "energy": 6.938893903907228e-18,
+          "radial": 1.9648947495607382e-16,
+          "sigma_eta_contact": 3.0890034470965633e-16,
+          "time": 1.3877787807814457e-17
+        },
+        "source_affine_germ_only": true
+      },
+      "MP64_wall_coefficient_first": {
+        "full_fibre_operator_or_domain_not_inferred": true,
+        "maximum": {
+          "absolute": 4.440892098500626e-16,
+          "scaled": 1.6432149615624928e-16
+        },
+        "precision_decimal_digits": 64,
+        "scaled_by_coefficient": {
+          "A_body": 1.6432149615624926e-16,
+          "A_energy": 3.469446951953614e-18,
+          "A_radial": 1.9046277855358253e-17,
+          "A_time": 0.0,
+          "Dtau_body": 2.465190328815662e-32,
+          "Dtau_radial": 0.0,
+          "Dtau_time": 0.0,
+          "W_body": 1.6432149615624926e-16,
+          "W_radial": 8.458246483370792e-33,
+          "body": 1.6432149615624928e-16,
+          "energy": 6.938893903907228e-18,
+          "radial": 1.9046277855358256e-17,
+          "sigma_eta_contact": 1.5587128014483848e-16,
+          "time": 0.0
+        },
+        "source_affine_germ_only": true
+      },
+      "affine_germ_FD_sweep": [
+        {
+          "positive_form_first": {
+            "absolute": 1.1542920319628598e-07,
+            "scaled": 2.7283389040855964e-10
+          },
+          "step": 2e-06,
+          "weak_first": {
+            "absolute": 2.554089746099942e-10,
+            "scaled": 3.278917520702155e-11
+          }
+        },
+        {
+          "positive_form_first": {
+            "absolute": 5.068877731478834e-07,
+            "scaled": 1.1981037661411192e-09
+          },
+          "step": 1e-06,
+          "weak_first": {
+            "absolute": 5.612785453137991e-10,
+            "scaled": 7.205643650392686e-11
+          }
+        },
+        {
+          "positive_form_first": {
+            "absolute": 6.598240887035593e-07,
+            "scaled": 1.5595912292489158e-09
+          },
+          "step": 5e-07,
+          "weak_first": {
+            "absolute": 1.2952217695625243e-09,
+            "scaled": 1.6627940971748507e-10
+          }
+        }
+      ],
+      "angular_count": 5,
+      "angular_level": 1,
+      "coefficient_contact_norm": 93.59302079234963,
+      "coordinate_time": 5e-06,
+      "core_radial_count": 4,
+      "density_contact": {
+        "imag": [
+          [
+            -0.9509712837844437,
+            0.2821862459420781,
+            0.17557962496947008
+          ],
+          [
+            0.40763668084209376,
+            -2.1187277322644387,
+            0.822717662993075
+          ],
+          [
+            -0.25191811613797954,
+            0.22532340044894003,
+            -1.9752624544850468
+          ],
+          [
+            0.4318297570862043,
+            0.6038622865411655,
+            0.1452609818524415
+          ]
+        ],
+        "real": [
+          [
+            3.1191854682822577,
+            1.324948958543482,
+            0.10491263177915441
+          ],
+          [
+            0.16865692110904074,
+            -0.0635566303321773,
+            -0.05409110381757935
+          ],
+          [
+            0.2399557343597104,
+            -0.5918735064271675,
+            -0.2625800761467633
+          ],
+          [
+            -0.00534568117454675,
+            -0.9748684079789462,
+            -0.5323894896159682
+          ]
+        ]
+      },
+      "eta_orientation": 1,
+      "exact_phase_partial_norm": 3.6029472981795156,
+      "exact_time_phase_mixed_norm": 0.5975451444505767,
+      "full_fibre_count": 1920,
+      "independent_left_contact": {
+        "imag": [
+          [
+            -0.19711937879430644,
+            0.0015507468369668513,
+            0.016835453597840954
+          ],
+          [
+            0.0004133763037454691,
+            -0.04887846690947537,
+            0.08329563785624595
+          ],
+          [
+            -0.009247037982070916,
+            0.02374048757459618,
+            -0.14082787748966774
+          ],
+          [
+            0.0166305874764486,
+            0.03184734726842189,
+            -0.014145935740820013
+          ]
+        ],
+        "real": [
+          [
+            -0.006975480430059956,
+            0.00029762880828426935,
+            0.021776747473916787
+          ],
+          [
+            0.032203072761687275,
+            0.003459235222034361,
+            0.007477409528285883
+          ],
+          [
+            0.002570127331916721,
+            -0.0808818645394199,
+            -0.004663852023392052
+          ],
+          [
+            0.004079727461711738,
+            -0.014467401371407864,
+            0.025178602292881314
+          ]
+        ]
+      },
+      "literal_value_point": {
+        "absolute": 7.447602459741819e-16,
+        "scaled": 7.447602459741819e-16
+      },
+      "literal_value_weak": {
+        "absolute": 5.555554240287111e-15,
+        "scaled": 3.2344832697320727e-15
+      },
+      "minimum_actual_core_Q_f": -0.9770203373624197,
+      "minimum_actual_core_Q_sigma": -0.9609501074656888,
+      "moving_trial_contact_norm": 5.21706477007973,
+      "nonzero_terms": {
+        "conjugate": {
+          "angular": 27.712812921102035,
+          "body_first": 983.8748279464811,
+          "eta": 185.5633620877929,
+          "eta_first": 379.9105073956419,
+          "gauge": 2.6444063539640585,
+          "round_spin": 26.832815729997453,
+          "shift": 47.489102690151014,
+          "time": 45.94945967429013,
+          "wall_eta": 9.54648710833503,
+          "wall_eta_first": 51.57628960606805
+        },
+        "particle": {
+          "angular": 27.712812921102035,
+          "body_first": 983.8748279464811,
+          "eta": 185.5633620877929,
+          "eta_first": 379.9105073956419,
+          "gauge": 2.6444063539640585,
+          "round_spin": 26.832815729997453,
+          "shift": 47.489102690151014,
+          "time": 45.94945967429013,
+          "wall_eta": 9.54648710833503,
+          "wall_eta_first": 51.57628960606805
+        }
+      },
+      "positive_first": {
+        "imag": [
+          [
+            0.0,
+            -4.735122285429997,
+            3.716597960684309
+          ],
+          [
+            4.735122285429995,
+            -3.552713678800501e-15,
+            147.47282255605165
+          ],
+          [
+            -3.7165979606843096,
+            -147.47282255605165,
+            0.0
+          ]
+        ],
+        "real": [
+          [
+            410.7134214910342,
+            -1.5053403225409467,
+            -0.3024891494159
+          ],
+          [
+            -1.5053403225409485,
+            423.07501836899587,
+            5.688267622095466
+          ],
+          [
+            -0.3024891494158977,
+            5.688267622095466,
+            406.34290865778564
+          ]
+        ]
+      },
+      "positive_value": {
+        "imag": [
+          [
+            1.0228338413635423e-16,
+            -0.48842867729368944,
+            0.7284032011980948
+          ],
+          [
+            0.4884286772936903,
+            7.994995758367571e-17,
+            44.492441493768816
+          ],
+          [
+            -0.7284032011980947,
+            -44.492441493768816,
+            3.134838476862108e-17
+          ]
+        ],
+        "real": [
+          [
+            129.70946602274773,
+            -0.3046193707020143,
+            -0.1462223979332809
+          ],
+          [
+            -0.3046193707020134,
+            139.95519890711915,
+            0.41868470602471586
+          ],
+          [
+            -0.14622239793328046,
+            0.4186847060247162,
+            124.23969338409859
+          ]
+        ]
+      },
+      "positive_value_minimum_eigenvalue": 86.89694056075417,
+      "separate_actual_wall_count": 1,
+      "side": "outgoing",
+      "weak_first": {
+        "imag": [
+          [
+            -1.9503057069387368,
+            0.5380617615261523,
+            0.33214328525697207
+          ],
+          [
+            0.6441113482365869,
+            -7.789231214743197,
+            1.7413893202237147
+          ],
+          [
+            -0.455899584669035,
+            0.6434794710213295,
+            -4.267516309956783
+          ],
+          [
+            0.870226388205382,
+            1.0795316627919203,
+            0.010644627004252227
+          ]
+        ],
+        "real": [
+          [
+            6.351402468600996,
+            2.8452873671808696,
+            0.23185083716687144
+          ],
+          [
+            0.42483406464980694,
+            -0.05560444622643883,
+            0.04715056874144854
+          ],
+          [
+            0.672275574750352,
+            -1.583157911150519,
+            -0.5340836205532122
+          ],
+          [
+            0.14783901042158126,
+            -1.9557957485417425,
+            -0.7205269484990783
+          ]
+        ]
+      },
+      "weak_value": {
+        "imag": [
+          [
+            -1.6875366895329034,
+            0.01555315029140716,
+            0.1857157570412767
+          ],
+          [
+            0.06569654785311073,
+            -0.40718611914670577,
+            0.7231979491348491
+          ],
+          [
+            -0.07304248905609864,
+            0.04395908406934675,
+            -1.2071935315822218
+          ],
+          [
+            0.14900874492388708,
+            0.24083272177670376,
+            -0.07276262916542094
+          ]
+        ],
+        "real": [
+          [
+            0.31996221045954354,
+            -0.003103201868741026,
+            0.1524992473716801
+          ],
+          [
+            0.27282412295534275,
+            0.12757900647172904,
+            -0.09933538200135517
+          ],
+          [
+            0.03991788331113462,
+            -0.735094211775878,
+            0.23734983030773207
+          ],
+          [
+            0.0017704818453282544,
+            -0.18463024771790731,
+            0.24280709925842364
+          ]
+        ]
+      }
+    }
+  ],
+  "sigma_normal_failure_preserved": true,
+  "solved_field_acceleration_or_second_source_jet_fabricated": false,
+  "source_axis": "sole saved c[*_first][0]: coordinate-time direction frozen inside the original represented cell",
+  "source_coefficients_conjugated": false,
+  "supplied_test_maps": "declared dense algebraic polynomial probes; exact V_x=V_t and V_rho,x/V_t,x contacts",
+  "worst_MP64_scaled": 5.333641769954529e-16,
+  "worst_literal_value_scaled": 3.2344832697320727e-15
+}

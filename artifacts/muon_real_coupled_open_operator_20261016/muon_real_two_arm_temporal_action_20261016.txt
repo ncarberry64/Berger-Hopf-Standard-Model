@@ -1,0 +1,105 @@
+WHOLE-TEMPORAL REAL TWO-ARM CLASSICAL ACTION BACKEND
+2026-10-16. No physical mean, outgoing condition or matching correction.
+
+The module muon_real_two_arm_temporal_action.py reuses the actual direct
+real finite_normal_trace_graph_action_two_jet and pointwise_finite_normal_
+action, with generic_coordinate_lift of all80 original gauge coefficients.
+The exact local counts are each arm raw268/master252=(x106,v106,y40).
+The paired counts are x212,v212,y80; y includes every multiplier/At row.
+
+The temporal rule is the existing real discrete action from
+muon_birth_phase_continuation.discrete_action_cotangents:
+  h L((x_left+x_right)/2,(x_right-x_left)/h,y_mid).
+Each supplied parent/child coordinate-time interval records its signed h.
+Both endpoint positions, all interior positions, and all cell y variables
+are retained. The caller supplies the actual paired node/time incidence
+and reference pairs; no physical correspondence or common proper clock
+is inferred. Proper-time factors already inside L are not applied again.
+Crucially, the default inherited-profile owner uses a COMMON COORDINATE
+clock for lambda_tau, so it REJECTS unequal h_parent/h_child. Equal h
+retains both actual independent proper lapses; it does not identify their
+proper times. Unequal-clock custom evaluators require an explicit caller
+assertion that their source-clock incidence is already bound. Presence
+of two callbacks alone is not accepted as that binding.
+
+At a paired cell the joint density is L_pair=L_parent+L_child_inherited.
+For supplied coordinate action weights w_parent,w_child the literal action
+is therefore
+  S_cell=w_child L_pair+(w_parent-w_child)L_parent.
+This ensures each own density is counted once, while every derivative of
+the inherited child with respect to BOTH arms survives. Using simply
+w_parent L_pair would incorrectly impose a common measure on the child.
+This measure identity by itself does NOT transform the parent's temporal
+profile into a different child coordinate clock. Default weights equal
+the supplied common signed h, exactly as in the existing oriented action.
+For custom bound-clock fixtures each h remains signed. A reversed incoming
+list is not silently made compatible with the default same-clock owner.
+
+Let J_cell map all global endpoint positions/cell algebraic coefficients
+to the raw536 cell pair. This map contains 1/2 and +/-1/h_arm, followed by
+the exact raw268/master252 coefficient lift on each arm. It is affine and
+held in this variation, so
+  g=sum J_cell^T g_weighted,
+  H=sum J_cell^T H_weighted J_cell
+are exact. There is no omitted second-incidence term for this declared
+constant temporal map. A varying physical clock/domain would require its
+actual additional first/second contacts, not a different silent 1/h.
+
+For each arm the exported initial/final cotangents are
+  g_weighted,x/2 - g_weighted,v/h_arm,
+  g_weighted,x/2 + g_weighted,v/h_arm.
+They sum to the assembled node position cotangent. Every algebraic cell
+cotangent is exported. No endpoint cotangent is set to zero, no initial
+node is removed, and no temporal Cauchy or reset load is invented.
+These are CLASSICAL action cotangents; a later nonlocal native term can
+also contribute to boundary variations and is separately retained.
+
+The optional native and boundary callbacks return actual whole-history
+value/gradient/Hessian. In particular a nonlocal native Hessian can couple
+non-neighbor cells; it is not forced into a tridiagonal local stencil.
+If absent the corresponding application is None, not a physical zero.
+An optional caller-supplied nonlinear constraint application returns all
+constraint rows, their Jacobian, and the Hessian of the multiplier
+contraction. The resulting KKT matrix retains the moving-incidence
+contact Hessian and both constraint placements. The module does not
+select those physical reset/frame equations on the caller's behalf.
+
+The full un-subtracted classical gradient is used; g(0) is never removed.
+The original local cap/independent-Maxwell baseline subtraction inside
+the actual action owner is preserved, because it avoids double counting
+the mechanical cap contribution. These are distinct operations.
+
+Six tests pass, including:
+  * independent literal all-coordinate polynomial two-arm action checks
+    of the global gradient and Hessian with nonzero source curvature;
+  * all endpoint face sums on declared custom unequal/signed-clock action
+    fixtures, and rejection of missing custom clock-incidence assertions;
+  * a genuinely nonlocal whole-history native callback plus nonlinear
+    constraint multiplier Hessian, checked by an independent derivative;
+  * complex input, zero-step and incomplete-native rejection;
+  * the ACTUAL direct real action at a saved real two-arm iterate, using
+    its frozen affine source-image basis, three explicit radial nodes
+    and the owner's minimum24-point normal/cap rule. Its assembled
+    gradient is compared with the independent literal action-value owner
+    under simultaneous nonzero geometry, gauge, Higgs and At variations
+    on both arms. This is a new derivative control, not a replay of the
+    stored phase solve, a radial convergence test, or a physical gate.
+  * an independent original-profile clock-chain test: scaling parent
+    qdot37 and normal_rate by r=-1.7 leaves lambda and lambda_rho unchanged
+    and multiplies lambda_tau by r, with BOTH gradient and Hessian pulled
+    through the scaling map. This proves the missing contact cannot be
+    supplied by a measure change. A future unequal-clock adapter must
+    apply that map to the inherited source and reference-parent rates,
+    while keeping the own parent cap in its own clock. Such an adapter is
+    not implemented or silently asserted by the present default backend.
+
+The last test consumes the actual real finite_moving_trace_run_1 archive
+under artifacts/muon_parent_gauge_geometry_correction_20261010. The root
+and native-assembly agent separately retain the stronger real incoming/
+inherited-child one-cell histories as candidate whole-history iterates.
+
+The source intentionally returns complete_physical_mean_residual=None
+even when arbitrary callbacks are supplied: construction of a callable
+finite equation is not admission of a complete physical operator/domain.
+No full physical derivative at2e-10, Maxwell/226 validation, radial/angular
+limit, physical spin normalization or magnetic moment is asserted.
