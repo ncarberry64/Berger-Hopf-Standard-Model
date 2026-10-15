@@ -1,0 +1,251 @@
+NATIVE CONORMAL GRAPH: OUTGOING SUBSPACE, JETS, SOURCES AND ACTUAL CORNERS
+Analytic construction / read-only review. No tail load or state is selected.
+
+Repository: C:/Users/carbe/Downloads/BHSM_muon_parent_maxwell_worktree_20261001
+Source paths below are relative to that repository.
+
+1. The actual local operator is available; its terminal subspace is separate
+
+muon_reflected_native_conormal_graph.py constructs the strong graph of the
+EXISTING positive reflected-geometric form, not of the independent-dual
+analytic action by relabeling. For A=b d_s+C and positive density G,
+
+  p=conj(b) G A u,       Y=(u,p),
+  Y'=H(z)Y,             H=[[a,B],[c,d]],
+  a=-C/b, B=(|b|^2 G)^(-1), c=-zG, d=C^dagger/conj(b)=-a^dagger.
+
+The derivative of b and G is absorbed in this canonical p, not deleted.
+The formal adjoint is
+  A*_G=-conj(b)d_s+G^-1 C^dagger G-G^-1 d_s(conj(b)G).
+All displayed inverses are implemented by solves. Quadrature weights are
+not pointwise momentum densities. The integrated root audit correctly
+strips the reference quadrature before binding G.
+
+The actual application at
+artifacts/muon_native_conormal_operator_20261015/application_run_1/result.json
+consumes all 3832 saved full-C18 coefficient nodes from
+artifacts/muon_transported_native_pairing_20261011/run_1/native_coframe_nodes_*.npz.
+It retains complex clocks and unrestricted non-Hermitian C, including the
+existing spin, gauge and Higgs bodies. Independent literal-generator and
+real-axis Green checks agree to 3.112e-16 and 4.994e-17 relative; the p
+definition check is 4.949e-16 relative. These are actual local evaluations,
+not an unsquared physical-energy or weak-magnetic outgoing derivative.
+
+The older generic unbound factor slot does not prove absence of a real
+native component: muon_owned_native_product_connection.py already derives
+A=(partial_t+Omega_L,t)/N+W from the real common-A fields, with the native
+temporal vertex distinct from -i Omega in H_can. That owner still explicitly
+withholds the complete physical reset/exterior/relative domain.
+
+2. Riccati graph and frame-invariant jets
+
+Let an allowed subspace frame be Y=[U;P]. In a chart where U is invertible,
+Z=P U^(-1) is independent of the arbitrary frame basis Y -> Y S. It obeys
+
+  Z'=F(Z)=c+dZ-Za-ZBZ.
+
+This is a matrix equation with the original noncommuting order. A zero of
+det U is a chart failure; the full allowed frame need not be singular.
+Keeping frames or changing Riccati charts must not select a new subspace.
+
+For any two REAL source parameters x,y (literal derivatives, no Taylor
+factorials), define
+
+  L=d-ZB, R=a+BZ,
+  F_Z[V]=LV-VR,
+  F_x=c_x+d_x Z-Z a_x-Z B_x Z,
+  F_xy=c_xy+d_xy Z-Z a_xy-Z B_xy Z,
+  F_Zx[V]=(d_x-Z B_x)V-V(a_x+B_x Z),
+  F_ZZ[V,W]=-V B W-W B V.
+
+Then the complete propagated jets are
+
+  Z_x'=F_Z[Z_x]+F_x,
+  Z_y'=F_Z[Z_y]+F_y,
+  Z_xy'=F_Z[Z_xy]+F_xy+F_Zx[Z_y]+F_Zy[Z_x]+F_ZZ[Z_x,Z_y].
+
+No genuine mixed generator term has been set to zero. The coefficient jets
+must already include the same physical field, moving embedding, pairing,
+clock and domain contacts. For U,P frames, the basis-invariant alternative
+is to solve ZU=P and its derivatives:
+
+  Z_x U=P_x-Z U_x,
+  Z_xy U=P_xy-Z U_xy-Z_x U_y-Z_y U_x.
+
+Use literal right solves. Independent holomorphic energy/source axes must
+not be conjugated as if they were real-source Hilbert jets. In particular,
+z of the positive pencil is not identified with unsquared E or E^2 here.
+
+3. Forced source return uses the same graph
+
+For u'=a u+Bp+f and p'=c u+dp+g, an affine graph p=Zu+r satisfies
+
+  r'=(d-ZB)r+g-Zf = Lr+h.
+
+The full first/mixed source jets follow
+  r_x'=L r_x+L_x r+h_x,
+  r_xy'=L r_xy+L_x r_y+L_y r_x+L_xy r+h_xy,
+where
+  L_x=d_x-Z_x B-Z B_x,
+  L_xy=d_xy-Z_xy B-Z_x B_y-Z_y B_x-Z B_xy,
+  h_x=g_x-Z_x f-Z f_x,
+  h_xy=g_xy-Z_xy f-Z_x f_y-Z_y f_x-Z f_xy.
+
+Thus a boundary-value continuation must return both the homogeneous
+allowed subspace and the forced particular return. Source transport alone
+does not select the homogeneous outgoing state. A zero retarded SOURCE
+response before support is an inverse-domain condition, not zero primal
+exterior fields or a selected quantum state.
+
+4. Exact finite-prefix return and its unresolved tail remainder
+
+Let T be the actual canonical transfer from a to b, with blocks T_ij, and
+let the true future return at b be p_b=Z_b u_b+r_b. Including a particular
+transfer source (s_u,s_p), the return at a is obtained without an inverse:
+
+  D=T22-Z_b T12,
+  D Z_a=Z_b T11-T21,
+  D r_a=r_b+Z_b s_u-s_p.
+
+Differentiate these SAME solves to first/mixed order:
+  D X_x=J_x-D_x X,
+  D X_xy=J_xy-D_xy X-D_x X_y-D_y X_x.
+This retains both first-domain contacts and every source/endpoint contact.
+It is the same ordered logic as muon_retarded_spinor_tail_jet.py, whose
+independent H_cp is correctly not replaced by H_pc^dagger off the real
+self-adjoint slice. muon_outgoing_trace_probe_jet.py consumes the resulting
+full E/B/EB annihilator/allowed-frame jets before pole normalization.
+
+There is also an EXACT tail-error identity, for the same fixed prefix:
+
+  Z_a^(1)-Z_a^(2)
+    = D_1^(-1) [Z_b^(1)-Z_b^(2)] [T11+T12 Z_a^(2)].
+
+It identifies the physical outgoing remainder that a finite prefix cannot
+remove. Its norm gain is bounded by ||D_1^(-1)|| times the right factor's
+norm. No universal damping follows from a short finite prefix or from
+unitarity of a different first-order Lorentz current propagator. A limit
+or enclosure of the actual Z_b and its source jets is required before a
+finite exhaustion edge can stand for the physical outgoing continuation.
+
+5. Green invariant, orientation and the role of the surface action
+
+For J=[[0,I],[-I,0]], exact graph solutions satisfy
+
+  d_s(Y1^dagger J Y2)=(conj(z1)-z2)u1^dagger G u2.
+
+At real z the transfer is J-unitary, not generally Euclidean unitary. A
+Hermitian Z is a Lagrangian graph in this canonical form. At Im z>0,
+Im(u^dagger p)'=-Im(z)u^dagger G u. For a genuinely decaying future tail
+with zero limiting flux, the returned Z has Im Z nonnegative. The outward
+child conormal at its LEFT endpoint is -p; its DtN sign is therefore the
+opposite. This native positive-pencil statement must not be conflated with
+AE4's Lorentz retarded passivity convention or with a z-to-E substitution.
+
+On an invertible common trace sector at a regular corner take
+u_plus=T u_minus and let the SAME action's surface generating functional
+have linearized derivative W u_minus+j. A rectangular incidence instead
+requires its complete constraint/KKT graph, not the inverse below. The owned
+variation, with opposite outward normals, gives
+
+  p_plus=T^(-dagger)[p_minus+W u_minus+j],
+  Z_plus=T^(-dagger)(Z_minus+W)T^(-1),
+  r_plus=T^(-dagger)(r_minus+j).
+
+For real-source Hilbert data the homogeneous corner map is J-unitary iff
+W=W^dagger. T need not be unitary. Its adjoint here is the action-owned
+measure adjoint in common canonical coordinates, not a second Jacobian
+inserted into an already density-valued p. The previously derived regular
+bundle/ghost maps with total boundary measure are instances of this rule.
+All T/W/j jets must be differentiated. The surface W is built from the
+full area second incidence and constrained bulk reduction, not a guessed
+constant Robin load. Pure numerical clock corners do not acquire a new
+physical membrane action by convention.
+
+6. ACTUAL analytic dual corners are not that Hilbert corner by relabeling
+
+The stored archive
+artifacts/muon_native_dual_density_graph_20261011/run_1/actual_dual_corner_maps.npz
+has SHA256 b8220177cf9e34fac1107a6a914d5dee44054be1d2f38750c0af3c990abc83c5.
+muon_native_dual_density_graph.py:76-117 explicitly derives
+
+  u_plus=u_minus,
+  p_native,plus=t p_native,minus,       t=rho_minus/rho_plus,
+  bar_u_native,plus=t^(-1)bar_u_native,minus.
+
+Its exported native conormal factor is |w|/w_sharp; this equals the strong
+canonical p coefficient G/conj(w) in the saved reflected-geometric graph.
+Thus for UNCHANGED primal field incidence the candidate right map is
+M_R=diag(I,t I), and exactly
+
+  M_R^dagger J M_R-J
+    =[[0,(t-1)I],[-(conj(t)-1)I,0]].
+
+The operator norm per scalar channel is |t-1|, even if |t|=1. On the actual
+1149 stored corners the maximum is 1.8477590652457272; every corner exceeds
+1e-12 (958 exceed 2e-10). The largest ratio is approximately
+-0.707106781599+0.707106780774 i. The moduli lie between
+0.9999999999999997 and 1.0000000000000002.
+
+This is NOT a failed physical corner equation. The original left field is
+an independent analytic dual. In canonical independent-dual variables the
+contragredient map M_L=diag(t^(-1)I,I) instead gives
+
+  M_L^T J M_R=J.
+
+The stored left/right ratio product differs from one by at most
+2.2204460492503165e-16. That exact bilinear cancellation is compatible with
+the nonzero Hermitian J defect above. The full dual conormal and source
+maps must continue to be taken from the same action, not inferred by
+replacing the independent left trace with the primal dagger.
+
+The joint map also has a BULK contact: density_transported_left_factor in
+muon_native_dual_density_graph.py retains -(partial_s log rho)/w_sharp in
+the transported reflected left body. Repairing corner coordinates alone
+and then replacing that operator by C^dagger would discard this term.
+The legitimate strong graph of the declared positive geometric form does
+not, by itself, prove equivalence to this transported analytic-dual action.
+
+Keeping u unchanged cannot repair a complex t merely by selecting a new
+positive scalar boundary weight: weighted Hermitian Green preservation
+would require w_plus*t=w_minus=w_plus*conj(t), with positive real weights.
+It therefore requires t positive real. An arbitrary square-root phase
+redistribution changes the field identification and is not a derivation.
+
+What the joint lift must supply is the action-owned primal map, independent
+dual map, their actual Riesz/measure identification on a real physical
+domain, and their first/mixed derivatives, including canonical conormals,
+sources and all corner contacts. Either one proves their induced common
+geometric graph satisfies the Hermitian Green relation, or one retains the
+analytic dual realization without calling it that positive self-adjoint
+domain. The original packet itself keeps these realizations distinct.
+
+7. Physical continuation and current evaluation boundary
+
+The regular interface law, local real native temporal binding, strong
+conormal generator, and local full coefficient algebra are usable now.
+The physical exterior is produced by solving the SAME coupled real
+Euler/constraint/interface problem and imposing the retained future
+retarded/outgoing support. It is not an arbitrary load. Its implicit branch
+derivatives, on the actual reduced domain, obey
+
+  F_Y Y_x=-F_x,
+  F_Y Y_xy=-F_xy-F_Yx Y_y-F_Yy Y_x-F_YY[Y_x,Y_y].
+
+Fixed-reference domain pullbacks must include moving embedding, frame,
+measure, event and corner jets before the Riccati/Schur derivatives above.
+For moving time endpoints one can pull t=a+(b-a)s to [0,1] and differentiate
+the resulting (b-a)H(t) and forcing; this retains endpoint/clock contacts.
+
+AE4's future-domain prescription is owned by
+ae4_future_collapse_relative_boundary_domain.py:99-129: future retarded
+regularity/outgoing support, upper-half-plane boundary value, same BRST
+partner prescription, no reciprocal reflected cap. The actual physical
+nonzero maximal-history boundary subspace and weak-B jets have not been
+produced by the local 3832-node application. Native birth cutoff is still
+the separately owned child-plus c=i/r, including its full branch jets;
+it is neither a chosen exterior spectral z nor a gamma length identity.
+
+No old field/source/profile/history campaign is rerun by this derivation.
+No new terminal load, projector, phase choice, physical state, complete
+outgoing derivative pass, matching correction, spin norm or moment follows.
