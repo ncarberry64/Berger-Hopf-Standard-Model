@@ -1,0 +1,164 @@
+ACTUAL REAL RESET FP DENSITY/CONORMAL CONSTITUENTS
+2026-10-16. No physical reset map, ghost load, or correction selected.
+
+Producer:
+  REPO/audits/bhsm_real_reset_fp_conormal_constituents_20261016.py
+  SHA256 68046f2e73de60ba7daa8b5f4301a98b535c05ed9d22af4848d7a84b38f8b790
+REPO=C:/Users/carbe/Downloads/BHSM_muon_parent_maxwell_worktree_20261001
+Outputs:
+  WORK/outputs/bhsm_real_reset_fp_conormal_20261016/final_run_1
+  WORK/outputs/bhsm_real_reset_fp_conormal_20261016/final_run_2
+WORK=C:/Users/carbe/OneDrive/Documents/CODEX
+Both independently executed application.npz and result.json are byte-identical.
+NPZ 136810 bytes SHA256
+  223af3709c8e2c500b19d0f0157e467dc12aab664b250f6f44e5935ec9c4e7c2
+JSON 50164 bytes SHA256
+  6a532c389bcd0dbc5265b66b9fd2f3f59b02a595f017d0775ecb55a779781fee
+The earlier application_run_1 pilot remains preserved separately.
+
+1. ACTUAL SOURCE APPLICATION, NOT A NEW IVP
+
+The producer loads both original complete real one-cell phases, applies their
+owned profile-preserving sampler at their common t=0 birth endpoint, and
+evaluates the original48 radial nodes plus a separate actual wall. It does
+not propagate/reintegrate a history, source, radial profile, or correction.
+The coefficient first is the supplied inside-cell future-coordinate-time
+germ: position changes while the saved cell's v/y coefficients stay fixed.
+On the child, parent/reference affine clock derivatives are composed once
+by d5_trial_stage_coefficients. It is not an E/B or moving physical-domain jet.
+
+The full4-component Lie algebra, At, Ar, and all3 spatial gauge components
+are retained. At/Ar are material coefficients, so no extra wall-rate Ar
+advection is added. Gauge value norms are9.878632755 on each side; source
+norms13.0055895153 and9.69885425591. Each spatial gauge-component norm is
+about5.70343127. The small but nonzero temporal/radial flux bodies remain.
+
+2. WEIGHTED FP FLUX FROM THE ACTUAL POSITIVE REFERENCE FORM
+
+Source: muon_parent_positive_brst_ghost._ghost_form_row and
+muon_parent_maxwell_geometry_weak.geometric_connection_coefficient_jets;
+production uses the exact finite-response replacement in
+muon_exact_material_response.exact_geometric_connection_coefficient_jets.
+Write C for the material C_rho=C_chi*wall/WALL, z for its full material shift,
+R=AB/sqrt(A^2+B^2), LF=sqrt(A^2+B^2), and
+
+  w=2*pi^4*LF^5*(1-4*sigma^2),
+  mu=w*N*C*R^3,
+  gt=w*C*R^3/N, gr=w*N*R^3/C, gs=w*N*C*R.
+
+The scalar FP form has temporal/radial part
+  gt <(Dt-z Dr)c,(Dt-z Dr)c> + gr <Dr c,Dr c>,
+and angular coefficient gs. Its formal flux DENSITIES are therefore
+
+  time face:  orientation*gt*(Dt-z Dr)c;
+  rho wall:   -gt*z*Dt c+(gr+gt*z^2)*Dr c.
+
+These fluxes include the connection commutator body, not just ordinary
+derivative coefficients. The stored value/source-first maps retain the
+derivative of gt,gr,z and of ad(A_t),ad(A_rho). Incoming-final orientation
+is+ and child-initial orientation is-. Antighost fields remain independent;
+no antighost solution or zero conormal is inserted.
+
+All geometric/weight derivatives are retained. Boundary-density first norms
+are116992.051999 and86827.3363013. Independent stable one-jet reconstruction
+from the analytic field/response implementation agrees with the real owner
+at worst3.78923163271e-13 relative. Other displayed metric/source identities
+have worst2.36025016727e-14 relative; maximum absolute row1.38243194669e-10.
+These are constituent algebra checks, not a full physical derivative gate.
+
+Production evaluates the identical weight as4*p*(1-p), with p the owned
+normalized cumulative response. Reconstructing1-4*sigma^2 from rounded
+binary64 sigma loses up to4.60276601342e-8 relative on the near-polar48-node
+grid. That diagnostic remains saved; it does not overwrite production.
+
+3. THREE DIFFERENT FACES; NO CLOCK/MAP TYPE SUBSTITUTION
+
+(a) The4D birth Cauchy cap is radial x S3. Its displayed positive-reference
+    measure is b_time=w*C*R^3 drho dOmega3; relative conormal is
+    orientation*(Dt-z Dr)/N. A cap reset map acts on these4 spatial variables.
+    A wall proper-clock relation does not determine its radial/spatial map.
+
+(b) The4D material worldvolume wall is time x S3. Its Lorentz induced measure
+    is b_Lwall=w*R^3*ell dt dOmega3, ell=N*sqrt(1-U_wall^2).
+    The positive FP reference metric instead has induced measure
+    b_+wall=w*R^3*sqrt(N^2+C^2*z^2) dt dOmega3.
+    Both measures are saved with distinct labels. The positive form is not
+    declared a proved physical FP restriction/native domain by this audit.
+    ONLY the separate final wall entry of the stored Lorentz-wall array is
+    that wall measure: surface_proper_clock_rate is the actual wall ell,
+    repeated by the original coefficient constructor over its radial array.
+    Earlier entries in that one array are its algebraic wall-clock lift,
+    not measures of independent interior constant-rho Lorentz hypersurfaces.
+    Cap arrays apply on all original nodes; positive-reference rho-flux
+    coefficients and positive induced wall weights use local N,C,z.
+
+(c) Their3D corner is S3. The saved coefficient b_corner=w*R^3 is the
+    weighted angular measure coefficient. It is not an independent corner
+    ghost action, imposed corner conormal, or proof of a codimension2 domain.
+
+regular_reset_fp_domain_jets is explicitly a material-pullback evaluator;
+it selects no physical face/dimension or exterior. Its REGULAR_OWNER,
+covariant_bubble_interface_mechanics.build_payload.carrier_reset, induces
+event-to-child trace transport from a solved worldvolume/first crossing.
+The homogeneous transport evaluator supplies the spatial S3 flow and a
+separate proper clock. Neither the4D Cauchy cap map nor a completed4D
+worldvolume map is selected merely by importing this evaluator.
+
+Actual same-coordinate child/parent WALL coefficients (value,source first):
+  weighted S3 corner: (1.000000000000001,-0.5433632490587003)
+  Lorentz wall:      (0.6298470049230805,-0.32887841192622747)
+  positive wall:     (0.635909425551736,-0.3583288787222374)
+  temporal cap:     (1.000000228110229,-2.124579999975137)
+The last number is evaluated at the separate wall endpoint of the cap,
+not its integrated measure. None of these same-coordinate ratios is total
+J for an unsolved base map, and their supplied firsts are not physical
+constraint-tangent/domain jets.
+
+For a HOMOGENEOUS time x S3 map F(t,q)=(T(t),Phi(q)), IF Phi is the required
+fixed angular isometry and the actual induced metrics obey
+Rp(t)=Rc(T(t)), ellp(t)=ellc(T(t))*T'(t), an orientation-preserving clock
+solves T'=ellp(t)/ellc(T). The Lorentz wall measure then pulls back with
+J_wall=w_c(T)/w_p(t). This cancellation uses all the stated metric matching
+conditions; it does not set J=1, establish those equations on this off-shell
+pair, choose Phi, or define a cap map. Its source jets also require T's
+moving initial/end contacts. No such ODE or assumed isometry was inserted.
+
+4. DETERMINED GAUGE REPRESENTATIVE AND REMAINING COUPLED MAP
+
+AE2 action_definition owns the common reset frame
+U_R=I_UP_TO_GLOBAL_SPIN_SIGN_AND_GAUGE_FRAME. The existing
+common_reset_gauge_vertical_one_jet(4,2) consequently returns G_R=I2 and
+its zero gauge-vertical derivative in that common representative. This is
+the action's simultaneous common gauge-frame choice, not F_B=Id, At=0,
+a vanishing spin-lift derivative, or independent relative phase selection.
+Its exact operands are saved. The gauge profile and source terms above
+remain nonzero.
+
+For a chosen appropriate face with displayed scalar density b, M=DF_B,
+the domain helper requires the TOTAL ratio
+  J=(b_child composed F_B)*|det M|/b_parent,
+plus the total pulled ghost/antighost fields and conormals. In a fixed
+orientation chart, its logarithmic source contact is
+  dlogJ=tr(M^-1 dM)+(db_c+grad b_c dot dF)/b_c-db_p/b_p.
+The mixed log-J contact contains
+  tr(M^-1 M_xy-M^-1 M_y M^-1 M_x)
+and the total mixed derivative of log(b_child composed F_B)-log b_parent.
+For any scalar/field q_child, the latter total composition requires
+  (q_c composed F)_xy=q_c,xy+grad(q_c,x)Fy+grad(q_c,y)Fx
+                    +Hess(q_c)[Fx,Fy]+grad(q_c)Fxy.
+These F/DF and moving-contact operands remain coupled field unknowns,
+to be obtained from the existing stationary worldvolume/first-crossing
+problem, not newly requested external user input or an unprovided new law.
+
+Once supplied, the unchanged regular_reset_fp_domain_jets constructs
+  q_child(F)=Ad_U q_parent,
+  p_parent+J Ad_(U dagger) p_child(F)=0,
+and the same trace/conormal graph for the independent antighost. Its
+cross-Green identity accounts for J once. We do not call it with fabricated
+identity F, J=1, compact-trial zero endpoints or missing mixed jets.
+No pure connection pullback constraint is imposed on this off-shell
+coupled gauge/Higgs/source trial to infer DF or claim a physical no-go.
+
+No physical outgoing solve, complete common native domain, physical E/B
+derivative, spin normalization, muon moment, coupled correction, or final
+Maxwell/all226-row validation is inferred by this constituent application.

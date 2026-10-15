@@ -1,0 +1,205 @@
+REAL SAVED-BACKGROUND EW4 / INTRINSIC-H / FP COMMON TEST COMPLEX
+2026-10-16. Actual finite constituent assembly; no microscopic P_strat identity.
+
+1. THE CONSTRUCTED COMPONENT
+
+Canonical producer:
+  audits/bhsm_real_ew_higgs_fp_common_forms_20261016.py
+  SHA256 4da9bf48b9e759c296d35c6d5813cf36309e245e19b7a2062f8fa2416a75c4f9
+
+This builds real 1200-coordinate common field forms and their 320-coordinate
+ghost/constraint maps on BOTH actual REAL midpoint backgrounds already used
+by the full384 D5 source-first packet. Core integration is the same original
+Gauss4 material-rho readout, with a SEPARATE actual material-wall evaluation.
+All20 real n=1 plus n=3 scalar harmonics are retained. They define 800 ordinary
+five-component EW4 one-form tent coefficients, 320 exact covariant-gradient
+one-form images, and80 independent intrinsic real-doublet coefficients.
+The appended320 field images also contain their required scalar variation
+-eta H. They are functions of the same ghost coordinates, not new particles.
+
+The construction advances the actual common coefficient/test/constraint
+assembly, not a new local variational action: the existing forms and their
+coefficient maps are now bound to the SAME preserved real fields as D5.
+It is only the EW4 component. It neither assembles nor deletes the eight
+color-complement operators of the full SM12 gauge sector. Exact source
+color representation tensors are bhsm_standard_model_gauge_vertices:
+su3_fundamental_generators:35 and multiplet_generators:57; those alone do
+not license inventing a multiplicity/coupling in the current EW action.
+
+2. EXACT SAVED OPERANDS AND THE ACTION'S DENSITY
+
+Input packet:
+ artifacts/muon_real_coupled_open_operator_20261016/source_first_run_1
+ result.json SHA d15def102e329c38f35b62c137d8398aa72eeda626924498a426246d66c88df1
+ application.npz SHA7da8ddd5fa4bda397aa6a2d50e845338a3ef92fb3f0e837a5a6d0d166915e177
+Its c fields and raw268 arrays have EXACTLY zero imaginary part, checked
+before conversion to real dtype. No complex finite germ was projected.
+
+The saved raw80 gauge coefficients use the original four radial functions:
+two interior Jacobi functions, the fixed actual affine-profile complement,
+and the independent wall lift. This is NOT regular_radial_basis(order3).
+The owner is muon_birth_trace_enriched_action.trace_enriched_radial_basis:
+31-38, with reference states/projection/normalization read from the pinned
+original finite_moving_trace_run_1 arrays and receipt. Its existing frozen
+coordinate map is evaluated at these five nodes; this is not a new source
+or physical normal-mode campaign. Both A reconstructions match saved c
+exactly, including inherited mechanical_profile. The actual radial jet is
+  A_rho=B_rho*raw_gauge+M*saved_mechanical_profile[:,2].
+The temporal jet is the saved c['gauge_connection_material_first'][0],
+the original inside-cell future-coordinate derivative. No extra Ar
+advection or a fabricated algebraic acceleration is inserted.
+
+The positive YM/FP test pairing includes the PUSHFORWARD weight
+  common=2*pi^4*LF^5*(1-4*sigma^2), LF=sqrt(A_orbit^2+B_orbit^2).
+This is owned by muon_exact_material_response:
+exact_geometric_connection_coefficient_jets:245-294, particularly280-288.
+The producer uses the saved sigma and local _fields orbit coefficients.
+Writing N,C,R,z for the saved material coframe, the coefficient densities are
+  e=common*C*R/N, r=common*N*R/C,
+  d=common*N*C/R, k=common*R^3/(N*C), beta=z.
+The scalar ghost measure is mu=d*R^4=common*N*C*R^3; the one-form metric
+coefficients are (mu,eR^2,rR^2,dR^2,beta,R). Their k=e*r/d identity has
+relative residual2.59e-16 at worst. Dropping common and substituting the
+bare D5 fermion NCR^3 pairing would change the owned bosonic form.
+
+Intrinsic wall weights use the same retained induced clock ell and R4:
+  wT=R4^3/ell, wS=ell*R4, wV=ell*R4^3,
+as muon_intrinsic_m4_normal_pullback:68-80. Actual material At and Ar remain.
+No fictitious shared proper clock is imposed. The reference interval is
+the recorded cell's coordinate length1e-5 for each separate background.
+
+3. FINITE FORMS AND CONSTRAINT MAPS
+
+The literal one-form Hessian is
+  K1=(d_A a,d_A b)_2+(F,[a,b])_2,
+with EVERY retained temporal/radial/angular curvature and mixed contact.
+Existing numerical owners are
+ muon_parent_positive_gauge_form.one_form_cell_row:171-213,
+ positive_curvature_contact_matrix:131-145;
+ muon_parent_positive_brst_ghost.covariant_ghost_gradient_images:85-114,
+ _linear_curvature:117-124, _ghost_form_row:146-167;
+ muon_parent_positive_coupled_temporal.one_form_point_row:23-62.
+The returned K1, G1, curvature-contact matrix, ghost Gram G0 and FP form
+KFP all use the same field/ghost images and the action-owned positive
+reference pairing. No Lorentz Hessian is squared to make it positive.
+No negative mode is shifted or silently removed.
+
+Let D inject the320 appended exact DG coordinates into the1200 common
+field coordinates. Its scalar image is already in the coefficient maps:
+  deltaH=-eta H,
+  deltaHdot=-etadot H-eta Hdot.
+The exact coefficient-image identity delta(DH)=-eta(DH) is retained,
+including the two off-shell DH(deltaOmega h) Hessian placements, by
+muon_parent_positive_coupled_temporal.paired_scalar_orbit_maps:65-83 and
+intrinsic_coupled_point_form:86-113. The new audit extracts the literal
+scalar coefficient polynomial without assigning matching values:
+  K_H=K_kin+lambda_H*K_lambda+(lambda_H*nu_action^2)*K_lambda_nu2.
+Here
+  K_lambda=(2wV/V) h^T[(4HH^T+2|H|^2 I4) tensor I20]h,
+  K_lambda_nu2=-(4wV/V)h^T h, V=2*pi^2.
+The fixed coefficient evaluation lambda=1,nu=0 is used only to compare
+this polynomial against the existing callable owner. It is not a new
+physical lambda, nu, branch, or empirical fit.
+
+Define B=(D^T G1,0_independentH). The executable finite maps are
+  F_weak=G0^-1 B,
+  F_weak D=G0^-1 KFP,
+  Pi=I-D KFP^-1 B.
+The same H2 ghost bubbles vanish with their first derivative at the
+temporal faces; no arbitrary periodic ghost state is substituted.
+Cholesky solves of the actual finite FP/Gram are used, not a pseudoinverse.
+Pi is a DECLARED FINITE LORENZ REPRESENTATIVE projector. The fixing term
+is kappa B^T G0^-1 B, without an Rxi scalar-mass term. The common Gram
+also retains the dependent scalar image and its nonzero shared cross Gram.
+
+The off-shell Hessian does not vanish on D. Gauge covariance instead gives
+  S''[z,R_eta]+S'[dR_eta(z)]=0,
+  dR_eta(z)=([z_A,eta],-eta z_H).
+The independent literal control computes the second term as the actual
+first Euler action on these unprojected products. It does NOT define it
+as minus the first term, or declare a gauge nullspace by deletion. Thus
+Pi alone is not the physical BRST quotient of this nonstationary iterate.
+
+4. ACTUAL REACHED NUMBERS AND UNFAVORABLE CONTROLS
+
+Incoming / inherited-child readouts respectively:
+  ||A_time||=4.583261104196092 /2.870666935381053
+  ||A_rho||=4.294208359095307 /4.294358239338871
+  ||H||=1.068079227104526 /1.068079227106394
+  ||Hdot||=6.194151093195987e-7 /2.457028850255028e-7
+  ||curvature contact||=872.4121080493875 /517.5544486380761
+  ||gauge/H kinetic cross||=4.320239509005139e-6 /2.721093503246994e-6
+  ||dependent ghost/H Gram cross||=7.373482084652399e-8 /4.644180632975910e-8
+  ||common kinetic Hessian*D||=1.9612171831126345e-5 /9.999179789246633e-6.
+All these contacts remain nonzero. The FP=D^T G1 D relative residual is
+8.923225590091470e-17 /6.562913183044564e-17; Pi's largest idempotence
+residual is3.25e-15, and ||F Pi||/||F|| is at most7.42e-16.
+
+Independent controls evaluate the literal unprojected full Haar action,
+not a projection of nonlinear products back into the20 harmonics. The
+existing source degree12 Haar rule integrates the relevant products.
+At the actual wall point, the YM Ward Hessian/Euler contacts are
+  +1.137490025821025 /-1.137490025821043 (incoming),
+  -1.463612045367932 /+1.463612045367927 (child).
+The tiny intrinsic kinetic Ward contact is ~2.27e-11 for the child;
+its raw matrix contraction cancels to2.39e-20 absolute, but only
+1.052114581683077e-9 relative. This is NOT a uniform2e-10 precision pass.
+The displayed point covariance defect up to4.19e-13 likewise includes
+large temporal-image cancellation and is not a full derivative norm.
+
+Every mixed-direction FD step(.08,.04,.02) is preserved. Its gauge and
+kinetic coefficients agree well, but the tiny potential direction was
+scaled by the1e-5 cell length and has severe background-subtraction
+cancellation: relative errors reach0.4345571073474121. These unfavorable
+results have NOT been removed or relabeled as passes. A SEPARATE disclosed
+well-scaled independent intrinsic-scalar direction checks the same actual
+potential coefficient matrices against direct Haar polynomial coefficients:
+maximum relative disagreement4.67e-16, with all three literal potential
+FD steps at most5.77e-12. This additional control does not replace the
+mixed-direction evidence or certify the full physical derivative.
+
+5. RESET, QUOTIENT AND STRATIFIED OPERATOR OWNERSHIP
+
+For an ACTUAL supplied regular reset F,U and total boundary measure ratio J,
+muon_regular_reset_brst_domain.regular_reset_fp_domain_jets:64-124 already
+provides ghost trace AdU, independent antighost same primal graph, and the
+weighted outward-conormal law p_parent+J AdU^dagger p_child=0. Its exact
+off-graph Green factorization includes all supplied real first/mixed jets.
+regular_reset_internal_brst_intertwiner:127-174 supplies the linear
+sA=D_A c covariance incidence, not full nonlinear/diffeomorphism nilpotence.
+The present real midpoint packet has no evaluated physical F/U boundary
+maps, so this producer does not insert an identity reset or zero boundary
+load. This is an uncomputed incidence realization, not a new parameter.
+
+master_action/reduction.py:334-392 owns the constrained Euler/KKT incidence,
+kernel-preserving complement inverse and reduced Hessian. Its formulas do
+not assert that these EW classical Hessians ARE the microscopic heat
+operator. The common actual local test/constraint matrices constructed here
+are usable ingredients for that larger assembly, while retaining all
+stratum labels. No SM12/M8 multiplicity, D5=H4 identification, ghost-loop
+weight, matched potential coefficient, completed global quotient or native
+quantum force is inferred merely from these finite matrices.
+
+6. DETERMINISTIC PAIR / LIMITS
+
+Final independent executions:
+ WORK/outputs/bhsm_real_ew_higgs_fp_20261016/run_2
+ WORK/outputs/bhsm_real_ew_higgs_fp_20261016/run_3
+Each forms.npz is1,979,103 bytes, SHA256
+03f7e6b12f348d62cc9c2722e373f4bba8d101f4ba5ba87549e202ff1027fb3d.
+Each result.json is52,890 bytes, SHA256
+b05b563d075fc96537bb034d78caeb572e3aae7c7b8c5d25e0d58f3fd4616470.
+Both files are byte-identical, and every current input/source pin was
+independently checked afterward. Sparse CSR storage preserves all entries.
+The preliminary run_1 and producer_at_preliminary_run.py are retained.
+Its forms.npz is identical; the later producer fixes only an output
+division-warning edge case and adds the separate disclosed scalar probe.
+
+This is a frozen coefficient-FIRST-GERM test-cell reference. Background
+values and their independently supplied first jets are held in its local
+constitutive evaluation; it is not a new holonomic physical time history.
+Temporal trial moments are integrated exactly on that declared reference;
+radial Gauss4 is only the inherited readout, not radial convergence.
+Native quantum/boundary loads remain unevaluated, physical outgoing/E/B
+derivatives are not declared, both physical spin states are unnormalized,
+zero coupled corrections were applied, and no magnetic moment is predicted.
