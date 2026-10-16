@@ -1,0 +1,138 @@
+FRESH FRAMED CLOCK CANDIDATE -- ORIGINAL EA02 OPEN D4 FAMILY
+2026-10-16. This is a local computational diagnostic, not a physical clock.
+
+1. Exact equation and purpose
+
+The saved open277 RHS f from source8d4a7fe4fe24501c6d2e00681ed9ca4f1e2b5eb9d0793b3e775bab4c92b58574
+is consumed without recomputing HqR, J(h,R), parent source clocks or known qdot.
+The exact projected equation remains Z^T H_phase omega=chi, chi=Z^T f.
+No full exact left-null certificate is assumed and chi is not enforcedzero.
+The earlier source's frozen bytes and independent pair remain unchanged.
+
+The cached original-binary277 Hessian, with the explicit fixed allAt36 frame,
+is used only as a preconditioner for a numerical omega/reaction proposal.
+The actual equations checked are
+
+    original = H_fresh omega - f,
+    framed   = original + F^T reaction,
+    frame    = F omega.
+
+F selects At coordinate clocks, solely to define this computational particular.
+No physical outgoing frame or c31 value is selected. The initial momentum
+family's31 coordinates remain open. No initial all158 old momenta are promoted
+to physical boundary conditions; their fixed values belonged only to the prior
+fixed-q/source diagnostic. A coupled source/domain realization can adjust old
+and new Cauchy complements while preserving actual physical proper inputs.
+
+The saved nonzero reaction is not counted as satisfying any unframed equation.
+A failed imposed-frame candidate does not exclude another unframed solution,
+and does not prove a stationary mean is required or that BHSM has no solution.
+
+2. Stable numerical proposal versus physical interval operands
+
+Only numerical UNKNOWN omega and reaction proposals are replaced by their
+exact dyadic midpoints after cached preconditioning/refinement. Their chosen
+point values are then freshly tested against the FULL physical operator/map/
+source/RHS interval balls. No physical RHS, source, coframe, h, Tt, Wh, or
+coefficient ball is centered or changed. Midpoint and interval-radius residual
+readouts are reported separately. This is a choice of numerical test points,
+not a change to the action or a new physical free-coordinate assignment.
+
+One refinement was necessary; no further refinement was run after the framed
+problem passed. Two fresh7-right action matvecs were evaluated per execution.
+No mean, profile, history, source, or geometric/D5 campaign was replayed.
+
+3. Final actual diagnostic
+
+ Iteration0 framed residual upper       3.346758742459507e-8
+ Iteration1 framed residual upper       3.2634096883174172e-22
+ Computational frame                   0
+ ORIGINAL277 residual upper             1.0925678628070804e-7
+ Explicit reaction upper                1.0925678628070804e-7
+ Actual projected LHS Z^T H omega upper 1.0731607328792862e-17
+ Actual projected LHS minus chi upper   1.0925678628070804e-7
+ Projected residual product guard       1.4939206785819486e-30
+ Projected LHS-chi+reaction upper        7.4709581281085465e-31
+ Original residual radius envelope      3.237318651251028e-32
+ Framed residual midpoint upper         3.263409688315925e-22
+ Framed residual radius envelope        3.237318651251028e-32
+ Numerical candidate coefficient max   27850320589.359287
+
+The framed problem passes2e-10, but the original277 equations DO NOT pass2e-10
+for this candidate. The remaining original residual is not an interval-floor
+effect: its midpoint is1.0925678628070804e-7, while its radius is3.24e-32.
+The coordinate maximum2.785e10 is disclosed; it is not an action norm or a
+physical smallness assertion. No numerical candidate is applied to the primal.
+
+The final midpoint residual by disjoint original row block is
+ canonical217 momentum-clock rows  1.73037493143371e-22
+ mechanical24 Gauss-clock rows     3.2634096883159244e-22
+ temporal36 Gauss-clock rows       1.0925678628070804e-7.
+These are labelled hi+lo midpoint readouts; the full residual radius above is
+also retained. A small canonical/mechanical block does not bypass temporal36.
+
+The full candidate Rdot, if needed for a later diagnostic, is reconstructed
+without new action evaluation as saved known_parent_and_qdot_clock from the
+open-clock packet plus E_phase times this saved omega. Its response momentum
+clock is J_v(h,R)+H_v s_known+H_v omega; its defect from HqR+E0*b is the first
+217 original rows above. Its complete Gauss clock is the final60 original
+rows. It is therefore explicitly not a solved full continuous clock. Bare
+primal Pi0 and Pi0dot remain separate from the response, and outer correction0.
+
+4. Preserved failed attempts
+
+run_1 stopped before any action matvec: a1e-40 projected-RHS equality-radius
+guard was tighter than the same exported packet's1.4939e-30 radius. The final
+guard requires every difference enclose0 and upper<1e-25; exact source/archive
+byte pins remain. No physical input or admission tolerance was changed.
+
+run_2, source4d90e609b318da6077a39c6aea4f2264d8c84b3b3bb13daedad5570044a24182,
+retained interval-valued unknown proposals throughout refinement. All five
+fresh applications, failed result, source and failure packet are preserved.
+Its upper residuals grew through2.3e7,6.4e26,1.8e46,5.0e65. The saved no-action
+diagnostic separates midpoints from radii: after iteration1 its framed midpoint
+was0.00499 versus radius2.30e7. It therefore cannot be reported as a successful
+solver or as evidence for physical instability/nonexistence. The final source
+uses deterministic numerical point proposals while retaining full physical
+interval validation, avoiding that irrelevant unknown-proposal wrapping.
+
+5. Frozen source and final pair
+
+Canonical source:
+ REPO/audits/bhsm_original_ea02_open_d4_clock_candidate_20261016.py
+ SHA2569dfa4106cf342144657327aea1a84303651264474091f2a9affe8f39bb19c60c
+
+Independent final directories:
+ C:/Users/carbe/OneDrive/Documents/CODEX/outputs/bhsm_original_ea02_open_d4_clock_candidate_20261016/run_3
+ C:/Users/carbe/OneDrive/Documents/CODEX/outputs/bhsm_original_ea02_open_d4_clock_candidate_20261016/run_4
+
+All five files are byte-identical in the independently executed final pair.
+
+ actual_open_D4_clock_candidate_original_rows_and_reactions.npz,1614488bytes
+ SHA256f26c230209ba793905793bcd71aabed6e6e26051370a5f8ac578a24ea9f3c609
+ fresh_clock_candidate_application_00.npz,1250987bytes
+ SHA256c2830c21f82b17cb026a5b422f0c14923cc364e820ac96df92bc51b07acae538
+ fresh_clock_candidate_application_01.npz,1251223bytes
+ SHA256e5462ccd144dd5f97a8bbfe997e388d88af6bed433f071916a43daf88a83f038
+ result.json,49588bytes
+ SHA256d1b12e7644777145e4f2da836a5d923432e4ea53f6857352233b88c05f1fe6e5
+ executed_producer.py,9858bytes; final source SHA above.
+There are337 source/input pins in each result. The preserved run_2 source and
+all failed applications are separately pinned by their own result/metadata.
+
+Pair receipt:
+ WORK/outputs/bhsm_original_ea02_open_d4_clock_candidate_20261016/pair_receipt.json
+ SHA25688a43aa9ac816373a32f87b5ad7bfbbd7be380208588f88633b6eba116b736d0
+Saved failed interval/midpoint diagnostic (no new action application):
+ WORK/outputs/bhsm_original_ea02_open_d4_clock_candidate_20261016/failed_run2_interval_midpoint_diagnostic.json
+ SHA256ee43f1be543610346b229020bc9ff0c75d4189bc6f3807664397958075a84278
+
+Independent root source review of9dfa4106 PASS: numerical unknown centering
+is confined to proposals, full physical balls are retained in fresh checks,
+and the nonzero frame reaction is not treated as an original-equation pass.
+
+This does not solve the full source/q/domain compatibility, physical retarded
+history, exterior/native functional, full derivative, Maxwell226, physical
+radial convergence, normalized spins, or muon magnetic moment. It constructs
+and honestly checks a particular computational clock hypothesis. No original
+outer coupled correction is applied.
