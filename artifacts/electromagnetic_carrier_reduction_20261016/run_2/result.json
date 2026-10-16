@@ -1,0 +1,293 @@
+{
+  "canonical_equals_unmodified_source_json_controls": true,
+  "classification": "EXACT_CONTROL_AND_CONDITIONAL_MATHEMATICS",
+  "environment": {
+    "numpy": "2.4.6",
+    "python": "3.14.3",
+    "scipy": "1.17.1",
+    "sympy": "1.14.0"
+  },
+  "erratum": "Unrestricted CAR optimizer retains tiny nonzero eigenvalues; original source archive unchanged.",
+  "module_sha256": "a2bbd371b8250d38dfc689f9a21c2adcccba45438b9652553820b329ae2da67c",
+  "numerical": {
+    "all_passed": true,
+    "group_count": 3,
+    "groups": {
+      "bosonic_reference_controls": {
+        "covariances_equal": false,
+        "hbar": 1,
+        "passed": true,
+        "primordial_reference_selected": false,
+        "same_retarded_evolution": true,
+        "states": [
+          {
+            "energy_control_units": 4.0,
+            "minimum_uncertainty_eigenvalue": 0.0,
+            "occupation_control_n": 0,
+            "stationarity_residual": 1.236726586479995e-17
+          },
+          {
+            "energy_control_units": 28.0,
+            "minimum_uncertainty_eigenvalue": 1.7028052091960062,
+            "occupation_control_n": 3,
+            "stationarity_residual": 8.963751526034389e-17
+          }
+        ],
+        "symplectic_residual": 4.94690634591998e-17
+      },
+      "normal_source_derivative": {
+        "error_ratios": [
+          4.000944835436806,
+          4.000236287148333,
+          4.000058861994505
+        ],
+        "passed": true,
+        "scope": "independent finite-difference control, not the physical outgoing derivative",
+        "table": [
+          {
+            "h": 0.02,
+            "max_absolute_error": 1.9220984066259383e-05
+          },
+          {
+            "h": 0.01,
+            "max_absolute_error": 4.804111242928677e-06
+          },
+          {
+            "h": 0.005,
+            "max_absolute_error": 1.2009568680637628e-06
+          },
+          {
+            "h": 0.0025,
+            "max_absolute_error": 3.002347989111698e-07
+          }
+        ]
+      },
+      "quadratic_bosonic_energy_bound": {
+        "checks": [
+          {
+            "dominating_bound": 3.226267650163207,
+            "energy": 4.0,
+            "quadratic_observable": 0.1124999999999999
+          },
+          {
+            "dominating_bound": 22.583873551142446,
+            "energy": 28.0,
+            "quadratic_observable": 0.7874999999999994
+          }
+        ],
+        "kappa": 0.8065669125408017,
+        "minimum_matrix_order_eigenvalue": -5.637851296924623e-17,
+        "muon_error_bound": null,
+        "passed": true,
+        "physical_energy_budget": null
+      }
+    }
+  },
+  "physical_status": {
+    "a_mu": null,
+    "coupled_corrections_applied": 0,
+    "fresh_adopted_preparation_226_rows": null,
+    "fresh_adopted_preparation_Maxwell": null,
+    "full_outgoing_derivative_passed": false,
+    "g_mu": null,
+    "matching_guard": 2e-10,
+    "physical_carrier_domain_completed": false,
+    "physical_packets": false,
+    "physical_reference_selected": false,
+    "total_uncertainty": null
+  },
+  "producer_sha256": "33fc703e211627906c4acb96b0081b254390c530960f5ce5366ee6f1d2ffc2e9",
+  "source_replays": {
+    "electromagnetic": {
+      "archive_sha256": "d79d6bae950060cd7b38af37bb3a79440c8af1d6748116182fdfabdbd1e58fa0",
+      "fresh_result": "source_controls\\electromagnetic\\result.json",
+      "fresh_sha256": "a04425909076cb2dc0d728e1dc01afcf27c271e6fb5141c3410c75febda02065",
+      "historical_bytes_identical": false,
+      "historical_json_differences": [],
+      "historical_result_file": "run_1.json",
+      "historical_sha256": "0db120a262a37fd55521a7a8a226a37b275305cc88e0aa23736c5d09f4029ff8",
+      "source_script_sha256": "f76c648ffc716deb88146c59af4892adafd4bddd9dfb99a63e18cecebecffcbd",
+      "verified_inner_file_count": 6
+    },
+    "operator": {
+      "archive_sha256": "d9b72e1cbc4557b508fa9981953ca24b2336825a2f1d182f1327797e2321c810",
+      "fresh_result": "source_controls\\operator\\result.json",
+      "fresh_sha256": "ebeaba8165c1c7edf42572ff9f526c45aff3ae847a41b02c3dbf8f753d88d1a0",
+      "historical_bytes_identical": false,
+      "historical_json_differences": [
+        {
+          "fresh": "2.4.6",
+          "historical": "2.3.5",
+          "path": "/environment/numpy"
+        },
+        {
+          "fresh": "1.17.1",
+          "historical": "1.17.0",
+          "path": "/environment/scipy"
+        },
+        {
+          "absolute_difference": 2.491945077259019e-13,
+          "fresh": 4.117084525159213e-07,
+          "historical": 4.1170820332141355e-07,
+          "path": "/finite_reference/independent_source_derivative_errors/0"
+        },
+        {
+          "absolute_difference": 2.1763924763214323e-13,
+          "fresh": 1.0292781468277234e-07,
+          "historical": 1.0292759704352471e-07,
+          "path": "/finite_reference/independent_source_derivative_errors/1"
+        },
+        {
+          "absolute_difference": 2.4836083927441555e-13,
+          "fresh": 2.5731591669166802e-08,
+          "historical": 2.5731840030006076e-08,
+          "path": "/finite_reference/independent_source_derivative_errors/2"
+        },
+        {
+          "absolute_difference": 5.090871300905686e-16,
+          "fresh": 0.0004436413817025079,
+          "historical": 0.000443641381703017,
+          "path": "/finite_reference/past_limit_refinement/0/difference_to_next_start"
+        },
+        {
+          "absolute_difference": 3.30512256018628e-16,
+          "fresh": 6.0042558077853785e-05,
+          "historical": 6.004255807752327e-05,
+          "path": "/finite_reference/past_limit_refinement/1/difference_to_next_start"
+        },
+        {
+          "absolute_difference": 2.8003925675763874e-16,
+          "fresh": 8.12591732420212e-06,
+          "historical": 8.12591732392208e-06,
+          "path": "/finite_reference/past_limit_refinement/2/difference_to_next_start"
+        },
+        {
+          "absolute_difference": 1.2953401932945603e-17,
+          "fresh": 3.7852057378303063e-13,
+          "historical": 3.785335271849636e-13,
+          "path": "/finite_reference/purity_error"
+        },
+        {
+          "absolute_difference": 2.4577459335844357e-17,
+          "fresh": 5.356156131769422e-13,
+          "historical": 5.355910357176064e-13,
+          "path": "/finite_reference/self_dual_CAR_error"
+        },
+        {
+          "absolute_difference": 8.489382708425992e-16,
+          "fresh": 5.062821156520735e-13,
+          "historical": 5.071310539229161e-13,
+          "path": "/finite_reference/self_dual_CAR_jet_error"
+        },
+        {
+          "absolute_difference": 5.551115123125783e-17,
+          "fresh": 0.1000000000000001,
+          "historical": 0.10000000000000005,
+          "path": "/finite_reference/two_references_final_operator_norm_difference"
+        },
+        {
+          "absolute_difference": 5.963126293559313e-16,
+          "fresh": 5.367671289041883e-13,
+          "historical": 5.361708162748324e-13,
+          "path": "/finite_reference/unitarity_error"
+        }
+      ],
+      "historical_result_file": "results_run_1.json",
+      "historical_sha256": "b56ef33dc178c873d664e082305fd96252f439039e820173f5f4c2d91fe1a147",
+      "source_script_sha256": "ca81567246432dc15c37b5fab0e1a44f4561422866eb8e91004e389f27b798ab",
+      "verified_inner_file_count": 8
+    },
+    "scalar": {
+      "archive_sha256": "618bf4c2712c41169399aaa92bee6967b9dbaf70b5ecb5018c0396d109bda3e0",
+      "fresh_result": "source_controls\\scalar\\result.json",
+      "fresh_sha256": "ec7bd23bd9f30b5fa2a5bc0232847e42e741cf616b557b299d336533613658df",
+      "historical_bytes_identical": false,
+      "historical_json_differences": [],
+      "historical_result_file": "results_run_1.json",
+      "historical_sha256": "e91fd9823f2f8a71705eefe2923d15118f236d914daa4e6dd0fa2400298836cf",
+      "source_script_sha256": "6352db5f0b9aefb0205c5151d9597bd28d6af3af362aa115faf9ba035804929e",
+      "verified_inner_file_count": 8
+    }
+  },
+  "symbolic": {
+    "all_passed": true,
+    "group_count": 10,
+    "groups": {
+      "dimension_specific_conformal_weight": {
+        "4D_Maxwell_weight": "a^0",
+        "8D_Maxwell_weight": "a^4",
+        "passed": true,
+        "scale_selected": false
+      },
+      "exact_volume_gram": {
+        "passed": true,
+        "radius_R_normalization": "alpha/sqrt(2*pi^2*R), for unit Maxwell kinetic coefficient",
+        "unit_sphere_unnormalized_gram": "2*pi^2 I4"
+      },
+      "full_equation_admission_not_just_reduced_rows": {
+        "BHSM_physical_residual": null,
+        "diagnostic_energy_derivative": "zero exactly",
+        "diagnostic_full_norm": 0.7861650943380503,
+        "diagnostic_full_norm_squared": "89/144",
+        "diagnostic_reduced_rows": "zero exactly",
+        "exact_source_free_locked_orbits": "sigma_dot=0, theta_dot=+/-Omega",
+        "normal_loads": [
+          "sqrt(b)*r*(Omega^2-theta_dot^2)",
+          "2*sqrt(b)*r*sigma_dot*theta_dot/sqrt(sigma^2+r^2)"
+        ],
+        "passed": true
+      },
+      "global_smooth_s3_forms": {
+        "number_of_forms": 4,
+        "passed": true
+      },
+      "nonlinear_constraints_identified": {
+        "constraints": [
+          "q3^2+q4^2=b*r^2",
+          "q1*q4-q2*q3=0"
+        ],
+        "imposed_by_source_free_Maxwell": false,
+        "passed": true
+      },
+      "offshell_second_map_contact": {
+        "explains_saved_muon_discrepancy": false,
+        "naive_theta_theta": "b*Omega^2*(sigma^2+r^2)",
+        "original_theta_theta": 0,
+        "passed": true,
+        "second_map_theta_theta": "-b*Omega^2*(sigma^2+r^2)"
+      },
+      "potential_comparison": {
+        "G0_generated_by_fixed_round_linear_Maxwell": false,
+        "Maxwell_potential": "b*Omega^2*(sigma^2+r^2)/2",
+        "missing_field_dependent_potential": "(A0-b*Omega^2)*sigma^2/2+G0*sigma^4/4",
+        "passed": true
+      },
+      "retained_scalar_kinetic_match": {
+        "coordinates": [
+          "sigma",
+          "theta"
+        ],
+        "passed": true,
+        "pullback_metric": "diag(b, Zchi*(1+g*sigma^2)) in (sigma,chi)",
+        "r": "1/sqrt(g)",
+        "scope": "homogeneous kinetic matrix; full local spacetime action reduction not established",
+        "theta": "sqrt(Zchi*g/b)*chi"
+      },
+      "tangent_normal_projectors_and_curvature": {
+        "gaussian_curvature": "-g/(b*(1+g*sigma^2)^2)",
+        "passed": true
+      },
+      "transversality_and_curl": {
+        "mode_has_nonzero_field_strength": true,
+        "passed": true,
+        "positive_square_eigenvalue": "4/R^2",
+        "unit_radius_curl_eigenvalues": [
+          -2,
+          -2,
+          2,
+          2
+        ]
+      }
+    }
+  }
+}
