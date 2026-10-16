@@ -1,0 +1,8 @@
+The first seam pilot rejected its input coverage check before evaluating
+or saving a Higgs/seam numeric result: incoming_c_eta_profile is absent
+from the earlier gauge saved_geometry export. The frozen gauge producer's
+substring filter omitted eta-named source fields; its primary source_first
+archive remains fully pinned and contains those fields. The new producer
+will compare the exported subset, require all needed wall/Higgs fields,
+and use the exact primary source hash for non-exported eta operands.
+No old numerical output or source is changed.

@@ -1,0 +1,247 @@
+REAL POSITIVE-COFRAME D5 COVECTOR BINDING, 2026-10-16
+
+Scope and result
+----------------
+This constructs the local full-carrier coefficient on the EXISTING real
+positive-coframe geometric branch, carrying the SAME action-owned connection
+one-form -d log sin(f). It does not choose a time contour, a new coupling, a
+new carrier by dimension, or the full AE4 stratified input/adjoint/outgoing
+domain. Its conditional premise is explicit in code and numerical receipts.
+
+The current formal D_tau+W placement and the covector-compatible positive
+Clifford expression differ by the nonzero scalar contact
+
+    Delta A = -(1+i) f_0 cot(f) I,
+    f_0 = (f_t-z f_rho)/N,        f_4 = f_rho/C_rho.
+
+This coefficient and its owned real-time first were applied to the saved
+full1920 trial germs on both eta sheets and both historical real arms, with
+all existing three families, particle/conjugate branches, Spin4, SM16 and
+five angular input harmonics retained. No D5 coefficient, action, profile,
+history or exterior solution was recomputed. No coupled correction was made.
+
+1. Exact owners and what they supply
+-----------------------------------
+All paths in this section are relative to repository
+C:/Users/carbe/Downloads/BHSM_muon_parent_maxwell_worktree_20261001.
+
+* src/bhsm/interface/completion/foundational_dirac_spin_glue_v14_45.py:103-128
+  owns the first-order collar action, m_eta=-partial_s log sin(f), canonical
+  fermion residue, two collar orientations, and once-only S_H. It does not
+  identify the complete AE4 positive stratified realization.
+* src/bhsm/interface/aether_eta_wall_material_response_v15_26.py:171-190 owns
+  grad(f)/|grad(f)| on the regular wall collar, and explicitly classifies
+  the eta term as a Clifford-domain coefficient. It is not a global unit
+  normal prescription through a null gradient.
+* src/bhsm/interface/muon_combined_f_eta_contact.py:1-46 owns the algebraic
+  combined contact -i cot(f)(Gamma0 f_0+eps Gamma4 f_4). Its normalizing
+  square root has canceled BEFORE extending the coefficient through f-gradient
+  causal changes. It still requires sin(f)!=0 or the separate endpoint domain.
+* src/bhsm/interface/muon_holomorphic_d5_trace_action.py:66-105 supplies the
+  actual material coframe, shift, profile time/radial derivatives, spin
+  half-divergences, volume density mu=N*C_rho*R^3 and Cauchy density C_rho*R^3.
+* src/bhsm/interface/muon_full_d5_differential_form.py:45-85 supplies the
+  actual full384-times-angular Lorentz differential expression, exact
+  D_tau/W split and explicitly formal A=D_tau+W placement. Its complete
+  particle/conjugate gamma, family and internal representation are used here.
+* src/bhsm/interface/muon_owned_native_product_connection.py:1-6,34-75 owns
+  the real common-A native product placement (partial_t+Omega_L,t)/N+W and
+  proper-clock geometric pairing after density isometry in the retained
+  sector. It does not assert a completed stratified realization. In
+  particular, Omega_factor is not inferred to be -i Omega_L.
+* src/bhsm/interface/muon_native_dirac_hamiltonian.py:57-79,244-280 supplies
+  the positive fermion current Gram and the product factor/positive pairing
+  convention. The current Gram is identity after its canonical geometric
+  density rescaling. The new bulk rescaling below also includes C_rho.
+* The already derived original-M8 positive Cartan controls establish the
+  geometric real-coframe Clifford/output map. This use is a local geometric
+  identity, not a new proof that our full H5 block is the AE4 graded module.
+* src/bhsm/interface/ae4_stratified_dirac_zeta_induced_owner.py:274-300 owns
+  canonical geometric L2 on H8 direct_sum H5+ direct_sum H5- direct_sum H4,
+  statistics/BRST supertrace, and P_strat=D_strat^dagger D_strat. These rules
+  do not justify inferring a full native carrier/domain or physical E map
+  from the finite trial dimensions.
+
+2. Local coframe, Clifford and eta conversion
+--------------------------------------------
+For REAL regular N,C_rho,R>0 and real material shift z, use
+
+    E_0=(partial_t-z partial_rho)/N,
+    E_4=partial_rho/C_rho, E_a=right_body_E_a/R.
+
+The same field t is used on the positive coframe; no t=-i tau substitution
+or phase of f_t is made. With the existing (+----) Lorentz matrices,
+
+    gamma_E0=Gamma0, gamma_Ej=-i Gammaj, U_out=-i gamma_E0,
+
+the geometric positive Clifford operator uses i gamma_E^a nabla_a and
+U_out is a constant output unitary. The right-Maurer angular spin body,
+shift, half-divergences and existing gauge one-form follow the same map;
+none are set to zero or moved between independent source clocks.
+
+The original combined f term is
+
+    Eta_L=-i cot(f)(Gamma0 f_0+eps Gamma4 f_4).
+
+In the retained formal split its contribution to A_formal=D_tau+W is
+
+    A_formal,eta=+i f_0 cot(f) I
+                 +i eps Gamma0 Gamma4 f_4 cot(f).
+
+By contrast, applying the real positive Clifford/output map to the SAME
+real covector connection -d log sin(f) gives
+
+    D_E,eta=-i cot(f)(gamma_E0 f_0+eps gamma_E4 f_4),
+    U_out D_E,eta=-f_0 cot(f) I
+                 +i eps Gamma0 Gamma4 f_4 cot(f).
+
+Their difference is exactly Delta A above. The spatial eta body is retained;
+this result is not a radial-normal projection. The scalar identity extends
+over the already owned full fibre without adding species or statistics.
+
+For any supplied analytic source axis x, without conjugating that source,
+
+    (f_0)_x=(f_tx-z_x f_rho-z f_rho,x)/N-f_0 N_x/N,
+    (Delta A)_x=-(1+i)[(f_0)_x cot(f)-f_0 csc(f)^2 f_x] I.
+
+The application uses only the supplied real reference-time axis x=0 of the
+source_first packet. It does not reinterpret a complex analytic source as
+a real Hermitian-pairing direction. Actual full trial products are
+
+    A_cov psi=A0 psi+delta psi,
+    (A_cov psi)_t=(A0 psi)_t+delta_t psi+delta psi_t.
+
+Thus the reference time derivative is inserted once, with its actual
+material shift, profile time derivative and trial time derivative.
+
+3. Action-owned fermion pairing and density isometry
+---------------------------------------------------
+The positive future-current Gram in the existing Lorentz spin/current
+convention is I. The canonical geometric spacetime fermion norm is
+
+    <u,v>_mu = integral dt d rho dOmega N C_rho R^3 u^dagger v.
+
+This is NOT the bosonic Yang-Mills common pushforward density. Define
+
+    s=sqrt(C_rho R^3), chi=s psi, A_tilde=s A_cov s^-1.
+
+Multiplication by s is an input AND output isometry to the N-weighted
+proper-clock measure. Consequently
+
+    <A_cov u,A_cov v>_mu=<A_tilde(su),A_tilde(sv)>_N.
+
+Its first is s_x=s(C_x/C+3 R_x/R)/2. On the actual time axis the geometric
+contacts satisfy
+
+    h_4=(N_rho/N+3 R_rho/R)/(2 C_rho),
+    h_4-E_4 log s=(N_rho/N-C_rho,rho/C_rho)/(2 C_rho),
+    h_0-E_0 log s=-z_rho/(2N).
+
+The last term generally does NOT vanish. All were checked on the saved
+core+wall coefficients. sin(f) is excluded from s.
+
+Locally A_cov=sin(f) A_min sin(f)^-1, but this is NONUNITARY in geometric
+L2 and singular at polar sin(f)=0. It never licenses removing eta, changing
+the Riesz density, assigning a constant normal mode, or importing a free
+operator's spectrum/domain. The real scalar covector connection is not
+anti-Hermitian in that metric; D_E,cov need not be formally selfadjoint.
+The output-unitary identity proves A_cov^dagger A_cov=D_E,cov^dagger D_E,cov
+on matched closed input domains. It does NOT imply D_E,cov squared, nor
+that the geometric untwisted heat coefficients apply to the eta operator.
+
+4. Boundary scope
+-----------------
+For A_cov=B^mu partial_mu+C, the positive-form conormal is
+mu (B^mu n_mu)^dagger A_cov u. Here B^t=I/N and
+B^rho=-z I/N-i eps Gamma0 Gamma4/C_rho. At rho=w(t), the coordinate face
+has n=(-w_dot,1); its conormal is therefore
+
+    mu [-(z+w_dot)I/N+i eps Gamma0 Gamma4/C_rho] A_cov u.
+
+For the already material-fixed wall use w_dot=0; its physical wall motion
+is already in z and must not be counted twice. A zero-order delta changes
+the positive conormal by mu B_n^dagger delta u; it does not change the
+unsquared Lorentz principal Green current. The archive exports the temporal
+conormal CONTACT correction at saved core nodes, not an evaluated full
+wall conormal/outgoing domain. A full surface/seam conversion requires its
+owned common positive weak form and trace/adjoint incidence; the Dirac-bar
+seam cannot simply be renamed a positive mass by choosing an i phase.
+
+5. Numerical evidence and exact provenance
+-----------------------------------------
+Canonical new sources:
+src/bhsm/interface/muon_real_positive_d5_covector_binding.py
+  SHA256 16bac3276041f21260c1fa2ad931d7cf9e563a4ed0c5f62def3694d2563ebe95
+tests/test_muon_real_positive_d5_covector_binding.py
+  SHA256 49ae5685c2fe9be23122216597face92058ba37c0d4d726b0f66a033b89b2e45
+audits/bhsm_real_d5_positive_covector_application_20261016.py
+  SHA256 99492ff4d3b12beaa3b5a7f0801020d3859bf151203cbe17ce5c680984fb39d0
+
+Four direct unittest controls passed in 0.298 s: MP70 literal value/source
+derivatives for both branches/orientations; a noncommuting-body local
+similarity product identity; density isometry and first; and rejection of
+nonreal coframes/polar f=0. No physical derivative gate is inferred.
+
+Exact primary input archive and receipt under
+artifacts/muon_real_coupled_open_operator_20261016/source_first_run_1:
+application.npz SHA256
+  7da8ddd5fa4bda397aa6a2d50e845338a3ef92fb3f0e837a5a6d0d166915e177
+result.json SHA256
+  d15def102e329c38f35b62c137d8398aa72eeda626924498a426246d66c88df1
+The full1920 A0 recovery is the frozen gauge-insertion pilot_run_3 producer
+SHA256 4a9ea459bb95a3f470562098c9d82509c982677997542f86ed3626f968e9ded3.
+Its receipt must consume exactly the primary archive. Every overlapping
+geometry value/first is bitwise checked, and each recovery archive SHA is
+checked against that receipt. Authoritative f fields come from the primary
+input rather than being assumed duplicated in the compact geometry archive.
+
+Outputs in WORK/outputs/bhsm_real_d5_positive_covector_application_20261016/
+final_run_1 and final_run_2 are byte-identical for ALL THREE files:
+actual_full1920_positive_covector_binding.npz (9,929,363 bytes)
+  f6f31cf45e138a53188fb8286da870da791e87d3a74c0aa7157372170d7ec380
+result.json
+  4a159edd6d1c5c2d392c1dfe69b70b1c802a8b2bd385df1483fac5d9297a8779
+executed_producer.py
+  99492ff4d3b12beaa3b5a7f0801020d3859bf151203cbe17ce5c680984fb39d0
+Each receipt pins 254 consumed input/source paths, including imported bhsm
+sources. The root publication binder may copy exact external pilot operands;
+the WORK paths in this receipt are literal consumed files, not fake repo pins.
+
+On the five saved nodes (four core plus wall), max absolute delta is 4.05351
+incoming and 2.95272 outgoing. Full1920 operator Frobenius maxima are 177.616
+and 129.382. Applied to the THREE declared trial columns, delta norms are
+10.04735 and 8.38286; their actual time-first norms are 6.89625 and 7.01932.
+The temporal term is therefore not zero, nor does angular/family contraction
+erase it. These are trial-column diagnostics, not a trace, state or moment.
+
+Actual pairing isometry error <=2.25e-16, pairing time-first <=7.06e-16;
+Clifford contact <=1.78e-15; mu agreement exactly zero; its first <=9.47e-16;
+radial half-divergence <=3.91e-16; time density half-divergence <=1.72e-15.
+
+Preserved pilot failure: WORK/outputs/.../run_1 contains executed bytes and
+failure.json. It attempted to read a duplicated eta_profile key that the
+compact geometry archive does not contain. No numerical binding was made.
+The final producer uses the exact primary c archive and verifies the frozen
+recovery's primary archive SHA plus all overlapping fields. The failure was
+not relabeled as a failed physical equation or silently overwritten.
+
+6. What this advances and what it does not establish
+--------------------------------------------------
+This provides a reusable complete local coefficient/first map and actual
+full1920 trial action/first operands on the real positive-coframe branch,
+with the fermion input/output density pairing and coframe contacts bound.
+It supplies the nonzero contact needed before calling the formal fullD5
+base a same-covector positive operator. Gauge insertion source squares at
+held geometry/f are unchanged, but their first-force contractions must use
+this corrected base if that branch is selected; no protected formal result
+has been edited or retrospectively promoted.
+
+Still unproved here: global AE4 graded-carrier/operator equality; common
+H8/H5/H4 positive incidence/adjoint closure; topological/surface/outgoing
+domain and moving domain jets; physical native energy dictionary; solved
+coupled physical fields; normalized two-spin poles; full outgoing energy/
+field derivative; Maxwell and all226 rows at2e-10; the muon moment.
+The actual same-covector premise is a local constitutive compatibility
+identity on the already existing positive real branch, not a theorem that
+the entire action has selected that global realization. Zero original
+coupled corrections have been applied.

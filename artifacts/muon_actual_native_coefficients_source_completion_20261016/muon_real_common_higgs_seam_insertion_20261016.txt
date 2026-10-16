@@ -1,0 +1,78 @@
+ACTUAL SAME-REAL COMMON1200 HIGGS TWO-SHEET SEAM COEFFICIENTS
+2026-10-16. Repository: C:/Users/carbe/Downloads/BHSM_muon_parent_maxwell_worktree_20261001
+Work: C:/Users/carbe/OneDrive/Documents/CODEX
+
+Result and scope
+The original action now has an executable complete common1200 Higgs-seam coefficient map, with its actual wall H/Hdot, noncentral fixed Yukawa matrices, all three families, both eta sheets, distinct moving boosts and complete connected angular products. The normalized intrinsic18 coefficient is fully evaluable without assigning the ambient normal amplitudes. Ambient384 coefficients are evaluated as numerators with the exact unknown independent normal factors and their source jets left explicit. This is a Lorentz action coefficient construction, not a positive-native seam identification, an outgoing domain, a physical pole/state normalization, or a magnetic moment. No original coupled matching correction was applied.
+
+Source ownership
+1. src/bhsm/interface/muon_holomorphic_d5_trace_action.py:199 principal_normal_point_trace and :272 normalized_two_sheet_point_action. The latter's literal weak action is K_seam=-rho C M(H) B (:311), with off-diagonal eta-sheet partition PL rank12, PR rank6. These are eta sheets, not temporal incoming/child arms. Its full border retains the ambient complement. No second intrinsic kinetic term or bulk D5 Higgs mass is added.
+2. src/bhsm/interface/muon_full_d5_localized_lepton_trace.py:104 lift_localized_analytic_source and :207 normalized_d5_dirac_bar_trace own the full384 lift and independent normalized Dirac-bar maps. Gamma0 occurs once in the left numerator. The full one-sheet carrier is three families times Spin4 times SM32 particle/conjugate; the selected lepton trace is18, with no deletion of the other bulk rows.
+3. src/bhsm/interface/muon_native_dirac_hamiltonian.py:86 fixed_y_higgs_hamiltonian owns M(H). The four real-coordinate matrices V_c=M(e_c) are fixed before complex source coefficients are combined linearly. This avoids conjugating complex analytic source directions.
+4. src/bhsm/interface/muon_parent_positive_coupled_temporal.py:65 paired_scalar_orbit_maps owns the original1200 scalar image. It contains independent scalar80 and dependent -eta H from all320 ghost-gradient coordinates. Its time image is -eta_dot H-eta Hdot plus the independent tent derivative. Ordinary gauge800 have zero scalar image in this held partial; that does not assert a zero full physical Higgs response.
+
+Exact same-real input epoch
+artifacts/muon_real_coupled_open_operator_20261016/source_first_run_1/result.json
+  d15def102e329c38f35b62c137d8398aa72eeda626924498a426246d66c88df1
+artifacts/muon_real_coupled_open_operator_20261016/source_first_run_1/application.npz
+  7da8ddd5fa4bda397aa6a2d50e845338a3ef92fb3f0e837a5a6d0d166915e177
+These contain original Gauss4 interior coefficients plus the separate actual wall, all c_first slots, real H/Hdot, U/Udot, C/R and Lorentz ell_L/first. The temporal midpoints are incoming -5e-6 and inherited child +5e-6 on their retained signed coordinate charts. Neither field histories nor D5 expressions/profiles are replayed.
+
+The exact connected angular map is consumed from the verified gauge-insertion pair:
+outputs/bhsm_real_full_d5_common_gauge_insertion_20261016/reviewed_run_1/angular_product_incidence.npz
+  003aa0f9e221a11e527d9fec93a2bfcf23b92648cea582883cba6fca1d628329
+Its source real harmonics n=1,3 multiply all input n<=1 harmonics into the complete55 output harmonics n<=4. Both branches are retained. No added spectral/statistical multiplicity follows from this operator product map.
+
+That old gauge producer's saved_geometry export excludes keys containing '_eta', so it is a PARTIAL c export. This does not alter its computations, which used the complete pinned primary archive. The new seam audit compares every actually exported geometry field and requires every wall operand it uses, but takes the primary pinned source as authoritative for omitted eta fields. Its first pilot deliberately stopped at this coverage guard; pilot_run_1 preserves the source/helper snapshots and failure.txt. pilot_run_2 is the successful prefinal metadata version. No failed numerical seam result was admitted or erased.
+
+Constructive identity
+Let W:18->384 be the owned inclusion, D its literal dual, G0=Gamma0 on384, and S_sigma the actual boost returned at argument -epsilon_sigma U. Each sheet has normalized maps B_sigma=D S_sigma^-1/u_R,sigma and C_sigma=S_sigma G0 W/u_L,sigma. Its mode lifts are E_R,sigma=u_R,sigma S_sigma W and E_L,sigma=u_L,sigma D G0 S_sigma^-1. Left and right normal values/source jets are independent; no source conjugation, equality, or unit value is assigned.
+
+For LR=plus<-minus (and oppositely RL), the evaluated ambient numerator is
+ N_LR,c=-rho S_plus G0 [W PL V_c PR D] S_minus^-1,
+ alpha_LR=1/(u_L,plus u_R,minus),
+ alpha_LR_dot=-alpha_LR(u_L,plus_dot/u_L,plus+u_R,minus_dot/u_R,minus).
+All boost, rho, Hdot and source-first contacts are retained. Applying the two mode lifts cancels alpha exactly and gives -rho PL V_c PR. Adding LR and RL gives the fully evaluable intrinsic18 partial coefficient -rho V_c. Its time derivative is -rho_dot V_c; the background derivative is -rho_dot M(H)-rho M(Hdot). This is cancellation in the normalized intrinsic source equation, not normalization of the full physical two-spin state. Affine bare M(H) does not make inverse Green or quantum Higgs susceptibility affine or zero.
+
+rho=ell_L R^3 uses the ORIGINAL timelike Lorentz wall clock. Gaunt coefficients use unit Haar normalization; an angularly integrated weak action multiplies unit-S3 volume2pi^2 once. The scalar image includes both tent slopes +/-2/L, even where the odd temporal tent vanishes in value at the midpoint. At each actual midpoint all80 independent scalar columns and80 dependent scalar value columns are nonzero; all1200 columns and all time images remain represented.
+
+The full known operator coefficients are stored compactly, rather than evaluated only on a few saved trial columns. The80x80 coefficient Gram contracts every output/input angular mode and every18/384 carrier row. All1200 column Frobenius norms are then recovered from the original scalar map. These are complete-operator diagnostics, not a determinant or spectral trace, and do not choose a physical trial state.
+
+Density representation, separate from native identification
+The already-owned real bulk density isometry is s=sqrt(C R^3), with its actual time first. Pulling the original Lorentz bilinear to the scaled bulk coordinates changes N to N/s^2 and each trace by s^-1. Thus rho/s^2=ell_L/C. Rescaling both mode lifts by s recovers the SAME normalized intrinsic -rho M(H), including all time contacts. This is only a representation change of the original bilinear. No positive ell_E replacement, new phase, native Hamiltonian seam, delta-square, or closed-domain identification is inferred.
+
+Actual controls
+Normalized intrinsic recovery (max relative norm, value/time): incoming8.661143588413e-16 /6.397555229640e-16; child4.125342582183e-16 /4.280318830034e-16. Worst density-isometry recovery/time relative error8.988669543071e-15. rho/s^2=ell_L/C value/time maximum absolute mismatch1.776356839400e-15. These are finite binary64 coefficient controls, not a physical derivative certificate.
+All independent H80 columns are nonzero: incoming norm min0.04486651112908395, child min0.028259129087495193. The actual fixed-Y gauge covariance M(-T_H,a H)=-[T_F,a,M(H)] is checked for all four EW generators and its time first; worst value absolute2.710505431214e-20 and worst time absolute2.019483917366e-28. This checks the -eta H sign and representation normalization without fitting a charge.
+The saved scalar maps and complete coefficient Grams reconstruct all1200 norms bit-identically for intrinsic, ambient LR and ambient RL, on both tent signs, both sides (12 checks).
+
+Final source pins (frozen)
+src/bhsm/interface/muon_common_higgs_seam_insertion.py
+  a05a91c78dc181b7114289d3db3f2dad858f30050051e86d1544e848ca6599b3
+audits/bhsm_real_common_higgs_seam_insertion_20261016.py
+  3339d14ade6a8dd9bc2cdc008390de70251874aa2bb3c46814b922d625171fe0
+tests/test_muon_common_higgs_seam_insertion.py
+  a2355c5f97e3ece2d9a0ba20371f87c2098df3b41cbf5a9dbb195528c0e4e033
+
+Two independent complete executions
+outputs/bhsm_real_common_higgs_seam_insertion_20261016/run_1
+outputs/bhsm_real_common_higgs_seam_insertion_20261016/run_2
+All five files identical,359188 bytes/run, largest133028 bytes:
+ common_angular_and_full_trace_incidence.npz (21350)
+   2abe947d576ddfdfdd2a6023aa94047bcb5395d8626f989d8b548818b683e27e
+ incoming_common_higgs_seam_coefficients.npz (132900)
+   85e7c21b8d8b26227014818b41b55b971e48f7c2ae34b448209c52a82a84fea5
+ outgoing_common_higgs_seam_coefficients.npz (133028)
+   66e255303a70714d9a42cf4412e48a488446711a7dea7042bed0e00e5c005b70
+ executed_producer.py (15747), hash equals the audit pin above
+ result.json (56163)
+   bac39253088ff2d69363ceb79163b2d6809cd1d8cc1f7b69199d59c47cf3ba8c
+final_pair_verification.json:
+  5d1c10d674178611a7125f1dcaf4090458065bb1f58b506ac3ce8b1e4e21e232
+
+Focused tests:3 passed in6.03s. The tests independently compare actual coefficient formulas to principal_normal_point_trace using disclosed nonunit independent complex normal TEST fixtures; check complete -eta H/Hdot source maps; and verify complex-linear combination of the four fixed real-H matrices. Test fixture amplitudes are never adopted as physical normal modes. JUnit seam_tests.xml:
+  05c5b022bafe09f710002630ea2466dfe35a3e7495ed7388002ad1aad2127c96
+Root independently reviewed helper/audit formulas and scope PASS before this receipt. No test or scientific job is active.
+
+Remaining concrete integration
+This supplies the formerly absent common Higgs seam COEFFICIENT and normalized intrinsic source partial, alongside the completed common-to-full-D5 gauge insertion. To form a full ambient coupled native operator, use a same-primal realized normal trace/mode (if required), a justified native/seam action correspondence, full domain and exterior, and their total source/energy/field jets. No ambient normal factor is implicitly supplied here. Physical native/outgoing derivative, global radial solution convergence, Maxwell/all226 after correction, normalized two-spin state and muon magnetic moment remain unevaluated. Original coupled matching corrections=0.
