@@ -31,7 +31,8 @@ These are inherited data references, not new pair-kinematics controls.
 
 The existing receipt explicitly leaves `E_beam` an external scan parameter;
 no numerical energy or scan grid has been recovered. The following remain
-unresolved preparation operands, including functions rather than just numbers:
+unresolved inputs and action-owned construction/solution operands, including
+functions rather than just numbers:
 
 1. Particle/antiparticle spectral coefficients and packet profiles, widths,
    separation, encounter timing, and observable coherence/phase data.
@@ -43,6 +44,14 @@ unresolved preparation operands, including functions rather than just numbers:
 4. The same-action collision incidence `Phi_coll` and its first/second
    derivatives, connecting the prepared incoming fields to the event/history.
 5. Physical same-domain electron/muon poles, residues, and owned energy units.
+
+Items 4 and 5 are action-owned constructions or solution values, not extra
+experimental knobs. Likewise the constrained background, future fields,
+retarded exterior graph and their jets must be solved consistently from the
+action and supplied preparation. The genuine external choices include the
+incoming packets, admissible initial/characteristic data, and any selected
+quantum in-state. Neither changing beam energy alone nor asking for an
+independent fitted exterior graph supplies the missing connected realization.
 
 The reaction label and retained interior enclosure supply none of these
 missing full exterior data. No free-space packet, vacuum, zero exterior,
